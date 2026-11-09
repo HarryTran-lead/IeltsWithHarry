@@ -135,45 +135,124 @@
   margin: 0 8px;
   background: var(--line);
 }
+/* Filter bar: four tappable filter tiles and the search field. */
 .news-feed-bar {
   display: grid;
-  grid-template-columns: minmax(160px, 190px) minmax(160px, 190px) minmax(190px, 240px) minmax(180px, 1fr);
+  grid-template-columns: repeat(4, minmax(130px, 1fr)) minmax(190px, 1.25fr);
   align-items: stretch;
-  gap: 8px;
+  gap: 6px;
+  padding: 6px;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.92);
+  box-shadow: var(--shadow);
 }
 .news-filter-select {
-  display: flex;
-  align-items: center;
-  gap: 7px;
+  position: relative;
+  display: block;
   min-width: 0;
-  height: 38px;
-  padding: 0 9px;
-  border: 1px solid var(--line-strong);
-  border-radius: 11px;
-  background: #fff;
-  transition: border-color 0.2s, box-shadow 0.2s;
+  height: 50px;
+  border-radius: 13px;
+  background: #f4f8f8;
+  transition:
+    background-color 0.2s,
+    box-shadow 0.2s;
 }
-.news-filter-select span {
-  color: var(--muted);
-  font-size: 12px;
-  font-weight: 700;
+.news-filter-select:hover {
+  background: #eaf4f4;
+}
+.news-filter-icon,
+.news-filter-select > span,
+.news-filter-caret {
+  position: absolute;
+  z-index: 1;
+  pointer-events: none;
+}
+.news-filter-icon {
+  top: 50%;
+  left: 10px;
+  box-sizing: content-box;
+  width: 15px;
+  height: 15px;
+  padding: 7px;
+  border-radius: 10px;
+  background: #fff;
+  color: var(--teal-strong);
+  box-shadow: 0 1px 2px rgba(16, 35, 63, 0.08);
+  translate: 0 -50%;
+  transition:
+    background-color 0.2s,
+    color 0.2s,
+    scale 0.35s var(--ease-spring);
+}
+.news-filter-select:hover .news-filter-icon {
+  scale: 1.06;
+}
+.news-filter-select > span {
+  top: 8px;
+  left: 50px;
+  color: var(--subtle);
+  font-size: 10.5px;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  line-height: 1.2;
+  text-transform: uppercase;
   white-space: nowrap;
 }
-.news-filter-select select {
-  flex: 1;
-  min-width: 0;
+.news-filter-caret {
+  top: 50%;
+  right: 11px;
+  width: 16px;
+  height: 16px;
+  color: var(--subtle);
+  translate: 0 -50%;
+  transition:
+    color 0.2s,
+    rotate 0.25s var(--ease-out);
+}
+/* The select covers the whole tile, so a tap anywhere opens it. */
+.news-feed-bar .news-filter-select select {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 19px 32px 0 50px;
   border: 0;
+  border-radius: inherit;
   outline: 0;
   background: transparent;
   color: var(--navy);
   font: inherit;
-  font-size: 13px;
+  font-size: 13.5px;
   font-weight: 700;
+  text-overflow: ellipsis;
   cursor: pointer;
+  appearance: none;
+  -webkit-appearance: none;
 }
 .news-filter-select:focus-within {
-  border-color: #9fdadd;
-  box-shadow: 0 0 0 4px rgba(18, 161, 171, 0.12);
+  background: #fff;
+  box-shadow:
+    0 0 0 1.5px #8fd6da,
+    0 0 0 5px rgba(18, 161, 171, 0.12);
+}
+.news-filter-select:focus-within .news-filter-caret {
+  color: var(--teal-strong);
+}
+/* A filter that narrows the list is tinted, so it is clear why fewer stories show. */
+.news-filter-select[data-active] {
+  background: var(--teal-soft);
+}
+.news-filter-select[data-active] .news-filter-icon {
+  background: var(--teal-strong);
+  color: #fff;
+}
+.news-filter-select[data-active] > span {
+  color: var(--teal-strong);
+}
+.news-feed-bar .news-filter-select[data-active] select {
+  color: #075f67;
 }
 .news-archive-filters {
   display: flex;
@@ -216,21 +295,31 @@
 .news-feed-search {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 9px;
   min-width: 0;
-  height: 38px;
-  padding: 0 12px;
-  border: 1px solid var(--line-strong);
-  border-radius: 11px;
-  background: #fff;
+  height: 50px;
+  padding: 0 14px;
+  border: 1px solid transparent;
+  border-radius: 13px;
+  background: #f4f8f8;
   color: var(--subtle);
   transition:
+    background-color 0.2s,
     border-color 0.2s,
-    box-shadow 0.2s;
+    box-shadow 0.2s,
+    color 0.2s;
+}
+.news-feed-search:hover {
+  background: #eaf4f4;
 }
 .news-feed-search:focus-within {
-  border-color: #9fdadd;
+  border-color: #8fd6da;
+  background: #fff;
+  color: var(--teal-strong);
   box-shadow: 0 0 0 4px rgba(18, 161, 171, 0.12);
+}
+.news-feed-search svg {
+  flex: none;
 }
 .news-feed-search input {
   width: 100%;
@@ -239,6 +328,12 @@
   outline: 0;
   background: transparent;
   color: var(--navy);
+  font-size: 14px;
+  font-weight: 600;
+}
+.news-feed-search input::placeholder {
+  color: var(--subtle);
+  font-weight: 500;
 }
 .news-card-skeleton {
   display: grid;
@@ -269,6 +364,14 @@
     display: none;
   }
 }
+@container news (max-width: 1080px) {
+  .news-feed-bar {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+  .news-feed-search {
+    grid-column: 1 / -1;
+  }
+}
 @container news (max-width: 860px) {
   .news-masthead {
     flex-direction: column;
@@ -277,12 +380,6 @@
   }
   .news-masthead-meta {
     justify-content: flex-start;
-  }
-  .news-feed-bar {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
-  .news-feed-search {
-    grid-column: 1 / -1;
   }
 }
 @container news (max-width: 640px) {
@@ -301,9 +398,19 @@
   }
   .news-feed-bar {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 5px;
+    padding: 5px;
+    border-radius: 16px;
   }
-  .news-filter-select:nth-child(3) {
-    grid-column: 1 / -1;
+  .news-filter-select,
+  .news-feed-search {
+    height: 46px;
+  }
+  .news-filter-select > span {
+    top: 6px;
+  }
+  .news-feed-bar .news-filter-select select {
+    padding-top: 17px;
   }
   .news-archive-filters select {
     flex: 1;

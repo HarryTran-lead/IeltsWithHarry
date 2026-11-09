@@ -8,6 +8,7 @@ import { demoMode } from "@/lib/runtime";
 import { createClient } from "@/lib/supabase/browser";
 import { liveStreams } from "./live-streams";
 import { useStudyPresence, type StudyRoomMessage } from "./study-presence";
+import { loadYouTubeIframeApi, type YouTubePlayer } from "@/lib/youtube-iframe-api";
 
 type Message = StudyRoomMessage;
 const pageSize = 60;
@@ -30,6 +31,46 @@ function StudyScene() {
   </div>;
 }
 
+function StudyYouTube({ streamId, title, onReady, onStateChange, onDispose }: {
+  streamId: string;
+  title: string;
+  onReady: (player: YouTubePlayer) => void;
+  onStateChange: (state: number) => void;
+  onDispose: (player: YouTubePlayer) => void;
+}) {
+  const mount = useRef<HTMLDivElement | null>(null);
+  const callbacks = useRef({ onReady, onStateChange, onDispose });
+  useEffect(() => { callbacks.current = { onReady, onStateChange, onDispose }; }, [onReady, onStateChange, onDispose]);
+  useEffect(() => {
+    let alive = true;
+    let player: YouTubePlayer | null = null;
+    const target = mount.current;
+    if (!target) return;
+    const iframe = document.createElement("iframe");
+    iframe.title = `${title} — YouTube livestream`;
+    iframe.src = `https://www.youtube-nocookie.com/embed/${encodeURIComponent(streamId)}?enablejsapi=1&playsinline=1&rel=0&origin=${encodeURIComponent(window.location.origin)}`;
+    iframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";
+    iframe.allowFullscreen = true;
+    iframe.referrerPolicy = "strict-origin-when-cross-origin";
+    target.append(iframe);
+    void loadYouTubeIframeApi().then((api) => {
+      if (!alive) return;
+      player = new api.Player(iframe, {
+        events: {
+          onReady: (event) => { if (alive) callbacks.current.onReady(event.target); },
+          onStateChange: (event) => { if (alive) callbacks.current.onStateChange(event.data); },
+        },
+      });
+    }).catch(() => { /* The video can be retried by reopening the room. */ });
+    return () => {
+      alive = false;
+      if (player) { callbacks.current.onDispose(player); player.destroy(); }
+      iframe.remove();
+    };
+  }, [streamId, title]);
+  return <div className="study-youtube" ref={mount} role="group" aria-label={`${title} — YouTube livestream`} />;
+}
+
 type StudyRoomProps = {
   canManage?: boolean;
   showVideo: boolean;
@@ -41,9 +82,12 @@ type StudyRoomProps = {
   onVolumeChange: (volume: number) => void;
   onSelectVideo: (mode: "youtube" | "harry") => Promise<void>;
   onSelectStream: (id: string) => Promise<void>;
+  onYoutubeReady: (player: YouTubePlayer) => void;
+  onYoutubeStateChange: (state: number) => void;
+  onYoutubeDispose: (player: YouTubePlayer) => void;
 };
 
-export function StudyRoom({ canManage = false, showVideo, videoMode, streamId, musicPlaying, volume, onToggleMusic, onVolumeChange, onSelectVideo, onSelectStream }: StudyRoomProps) {
+export function StudyRoom({ canManage = false, showVideo, videoMode, streamId, musicPlaying, volume, onToggleMusic, onVolumeChange, onSelectVideo, onSelectStream, onYoutubeReady, onYoutubeStateChange, onYoutubeDispose }: StudyRoomProps) {
   const [messages, setMessages] = useState<Message[]>([]);
   const [currentUser, setCurrentUser] = useState("");
   const { online, status, sessionActive, setSessionActive, studySeconds, subscribeMessages } = useStudyPresence();
@@ -167,7 +211,7 @@ export function StudyRoom({ canManage = false, showVideo, videoMode, streamId, m
     <div className="study-room-grid">
       {showVideo && <div className={`study-room-main ${videoMode === "youtube" ? "has-youtube" : ""}`}>
         <section className="study-visual-card">
-          {videoMode === "youtube" ? <div className="study-youtube"><iframe key={selectedStream.id} title={`${selectedStream.title} — ${selectedStream.channel} livestream`} src={`https://www.youtube-nocookie.com/embed/${selectedStream.id}?rel=0`} allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen loading="lazy" referrerPolicy="strict-origin-when-cross-origin" /></div> : <StudyScene />}
+          {videoMode === "youtube" ? <StudyYouTube streamId={selectedStream.id} title={`${selectedStream.title} — ${selectedStream.channel}`} onReady={onYoutubeReady} onStateChange={onYoutubeStateChange} onDispose={onYoutubeDispose} /> : <StudyScene />}
           <div className="study-visual-footer"><div><span className="study-on-air"><i /> {videoMode === "youtube" ? "YOUTUBE LIVE" : "STUDY SESSION"}</span><strong>{videoMode === "youtube" ? selectedStream.title : "Một góc nhỏ để tập trung mỗi ngày"}</strong><small>{videoMode === "youtube" ? <>{selectedStream.channel} · <a href={`https://www.youtube.com/watch?v=${selectedStream.id}`} target="_blank" rel="noopener noreferrer">Mở livestream trên YouTube ↗</a></> : "Hoạt cảnh và nhạc lặp tạo riêng cho IeltsWithHarry"}</small></div><Sticker name="headphones" size={40} tilt={8} className="study-visual-sparkle" /></div>
         </section>
       </div>}

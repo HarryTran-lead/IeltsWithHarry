@@ -1,22 +1,7 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
 import type { Cue } from "@/lib/listening/youtube";
-
-type Player = { destroy(): void; seekTo(seconds: number, allowSeekAhead: boolean): void; playVideo(): void; pauseVideo(): void; getCurrentTime(): number; getAvailablePlaybackRates(): number[]; getPlaybackRate(): number; setPlaybackRate(rate: number): void };
-type YTApi = { Player: new (target: HTMLElement, options: { videoId: string; width: string; height: string; playerVars: Record<string, number>; events: { onReady: () => void; onError: (event: { data: number }) => void; onPlaybackRateChange: () => void } }) => Player };
-declare global { interface Window { YT?: YTApi; onYouTubeIframeAPIReady?: () => void } }
-
-let loader: Promise<YTApi> | null = null;
-function loadYoutube(): Promise<YTApi> {
-  if (window.YT?.Player) return Promise.resolve(window.YT);
-  if (!loader) loader = new Promise((resolve, reject) => {
-    const previous = window.onYouTubeIframeAPIReady;
-    window.onYouTubeIframeAPIReady = () => { previous?.(); if (window.YT) resolve(window.YT); else reject(new Error("YouTube player unavailable")); };
-    const script = document.createElement("script"); script.src = "https://www.youtube.com/iframe_api"; script.async = true;
-    script.onerror = () => reject(new Error("Could not load the YouTube player")); document.head.append(script);
-  });
-  return loader;
-}
+import { loadYouTubeIframeApi, type YouTubePlayer as Player } from "@/lib/youtube-iframe-api";
 
 export function YoutubePlayer({ id, segment, request, loop = false, onTime }: { id: string; segment?: Cue | null; request: number; loop?: boolean; onTime?: (seconds: number) => void }) {
   const mount = useRef<HTMLDivElement>(null);
@@ -34,7 +19,7 @@ export function YoutubePlayer({ id, segment, request, loop = false, onTime }: { 
     let alive = true;
     const target = mount.current;
     if (!target) return;
-    void loadYoutube().then((yt) => {
+    void loadYouTubeIframeApi().then((yt) => {
       if (!alive) return;
       player.current = new yt.Player(target, { videoId: id, width: "100%", height: "100%", playerVars: { controls: 1, playsinline: 1, rel: 0 }, events: {
         onReady: () => { if (!alive || !player.current) return; setReady(true); setRates(player.current.getAvailablePlaybackRates()); },

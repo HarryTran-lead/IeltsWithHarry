@@ -192,3 +192,48 @@
 .sld-lab .sld-steps{flex-wrap:wrap;justify-content:flex-end}
 .sld-lab .sld-steps button{white-space:nowrap}
 @media(max-width:700px){.sld-lab .sld-steps{flex-wrap:nowrap;justify-content:flex-start}}
+
+/* 2026-11 visual refresh: lesson header, step switcher, player, answer box and sentence grid. */
+.sld-lab .voa-lesson-header h1{font-family:var(--font-display),var(--font-sans),sans-serif}
+.sld-lab .sld-mode{padding:4px;border-radius:14px;background:#eef3f6;border-color:transparent}
+.sld-lab .sld-mode button{border-radius:11px}
+.sld-lab .sld-mode button:not(:disabled):hover{background:#ffffffa6}
+.sld-lab .sld-mode button.active{background:#fff;color:#0a7f89;box-shadow:0 2px 8px #10233f1a}
+.sld-lab .sld-steps button.done:not(.active){color:#0b7a50}
+.sld-player{border-color:#d9ecee;background:linear-gradient(135deg,#f3fbfb,#fff)}
+.sld-lab .sld-player .voa-primary-button{border-radius:12px}
+.sld-dictation-heading label{font-family:var(--font-display),var(--font-sans),sans-serif}
+.sld-lab .sld-dictation-answer{border-radius:14px}
+.sld-dictation-view .sld-dictation-answer{font-size:17px}
+.sld-dictation-feedback{border:1px solid #f1d9c6;border-left-width:4px;border-left-color:#f0995f;animation:voa-pop .22s ease-out}
+.sld-dictation-feedback.correct{border-color:#bfe6d2;border-left-color:#1ba672}
+.sld-dictation-feedback.skipped{border-left-color:#c9b37f}
+.sld-dictation-meter,.sld-meter-inline{background:#e8eff3}
+.sld-dictation-meter span{background:linear-gradient(90deg,#0a7f89,#3cc4a8)}
+.sld-lab .sld-dictation-grid button{border-radius:11px;background:#f7fafc}
+.sld-lab .sld-dictation-grid button:not(:disabled):hover{border-color:#a9d9dd;background:#f2fbfb}
+.sld-lab .sld-dictation-grid button.active{border-color:#12a1ab;background:#e2f5f4;color:#0a7f89;box-shadow:0 0 0 3px #12a1ab1f}
+.sld-lab .sld-dictation-grid button.passed{border-color:#a4e0c4;background:#effaf4;color:#0b7a50}
+.sld-lab .sld-dictation-grid button.retry{border-color:#f1cfae;background:#fff7f0;color:#b45a1c}
+.sld-turn-nav{border-radius:18px}
+.sld-stage-progress{border-radius:18px;box-shadow:0 1px 2px #10233f08}
+.sld-stage-progress strong{font-family:var(--font-display),var(--font-sans),sans-serif}
+.sld-filter-bar{border-radius:18px;box-shadow:0 1px 2px #10233f08}
+.sld-lab .sld-skill-chips button{background:#fff}
+.sld-lab .sld-skill-chips button[aria-pressed=true]{border-color:#0a7f89;background:#0a7f89;color:#fff}
+/* Lesson cards: tinted art tile, clearer state pill, lift on hover. */
+.sld-lab .sld-card{border-radius:20px;transition:transform .18s,box-shadow .18s,border-color .18s}
+.sld-lab button.sld-card:not(:disabled):hover{transform:translateY(-3px);border-color:#a9d9dd;background-color:#fff;box-shadow:0 18px 32px -22px #10233f80}
+.sld-card strong{font-family:var(--font-display),var(--font-sans),sans-serif;font-size:16.5px}
+.sld-card-art{background:linear-gradient(135deg,#eef9f9,#f6f9fc)}
+.sld-card.sld-started .sld-card-art{background:linear-gradient(135deg,#fff6e3,#fffaf0)}
+.sld-card.sld-done .sld-card-art{background:linear-gradient(135deg,#e5f6ed,#f3fbf6)}
+.sld-pill{border-radius:99px;padding:3px 9px}
+.sld-pill-new{background:#e2f5f4;color:#0a7f89}
+.sld-summary-hero{border-color:#d9ecee;background:radial-gradient(circle at 100% 0,#fff1c9,transparent 35%),linear-gradient(135deg,#fff,#f3fbfb)}
+.sld-summary-hero h2{font-family:var(--font-display),var(--font-sans),sans-serif}
+.sld-summary-stats div{border:1px solid #e3eef1;background:#fff}
+.sld-question{border-radius:18px}
+.sld-lab .sld-options label{border-radius:12px;transition:border-color .15s,background .15s}
+.sld-lab .sld-options label:hover{border-color:#a9d9dd;background:#f6fbfb}
+@media(prefers-reduced-motion:reduce){.sld-dictation-feedback{animation:none}}

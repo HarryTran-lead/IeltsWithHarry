@@ -3,7 +3,7 @@ import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
-import { Archive, ArrowLeft, ArrowRight, Bookmark, BookOpenText, CalendarDays, CalendarPlus, ChartNoAxesColumn, CheckCircle2, Clock3, ExternalLink, Flame, Headphones, History, ListChecks, Newspaper, Search, Sparkles, Trophy, Volume2, type LucideIcon } from "lucide-react";
+import { Archive, ArrowLeft, ArrowRight, Bookmark, BookOpenText, CalendarDays, CalendarPlus, ChartNoAxesColumn, CheckCircle2, ChevronDown, Clock3, ExternalLink, Flame, Globe2, Headphones, History, LayoutGrid, ListChecks, Newspaper, Search, Sparkles, Tag, Trophy, Volume2, type LucideIcon } from "lucide-react";
 import { createClient } from "@/lib/supabase/browser";
 import { releaseLocks } from "@/lib/runtime";
 import { Sticker, type StickerName } from "@/components/stickers/stickers";
@@ -16,7 +16,7 @@ import { NewsRecommendations } from "./news-recommendations";
 import { NewsReadingTools } from "./news-reading-tools";
 import { NewsAutoQuiz, QuestionTypePicker, type QuestionType, type TypeCount } from "./news-auto-quiz";
 import { countNewsSince, newsSeenBefore } from "./news-unread";
-import { formatDuration, percent, sumBreakdowns, summarizeAttempts, typeLabels, type PracticeAttempt } from "@/lib/news/practice-stats";
+import { formatDuration, percent, questionTypes, sumBreakdowns, summarizeAttempts, typeLabels, type PracticeAttempt } from "@/lib/news/practice-stats";
 import "./news-masthead.css";
 
 type NewsRow = { id: string; title: string; publisher: string; canonical_url: string; category: NewsCategory; published_at: string; fetched_at: string; attribution_text: string; sensitive: boolean; origin_region?: "vietnam" | "international" };
@@ -102,6 +102,7 @@ function NewsHome() {
   const [category, setCategory] = useState<string>("All News");
   const [region, setRegion] = useState<"all" | "vietnam" | "international">("all");
   const [interest, setInterest] = useState("all");
+  const [questionType, setQuestionType] = useState<QuestionType | "all">("all");
   const [randomBusy, setRandomBusy] = useState(false);
   const [randomError, setRandomError] = useState("");
   const [query, setQuery] = useState("");
@@ -120,6 +121,7 @@ function NewsHome() {
   const [saved, setSaved] = useState<string[]>([]);
   const [readIds, setReadIds] = useState<string[]>([]);
   const [quizCounts, setQuizCounts] = useState<Record<string, { total: number; types: Record<string, number> }>>({});
+  const [matchingIds, setMatchingIds] = useState<string[]>([]);
   const [readToday, setReadToday] = useState(0);
   const [latest, setLatest] = useState<string | null>(null);
   const [learn, setLearn] = useState<LearnRow[]>([]);
@@ -174,33 +176,83 @@ function NewsHome() {
       if (hot.error) { setError(hot.error.message); setLoading(false); return; }
       hotIds = (hot.data ?? []).map((row) => row.article_id);
     }
-    // Only articles readable on site are listed; teaser-only items wait until their text arrives.
-    let list = db.from("news_archive_catalog").select(CATALOG_COLUMNS, { count: "exact" }).eq("publication_status", "published").eq("sensitive", false).eq("readable", true);
-    if (region !== "all") list = list.eq("origin_region", region);
-    if (interest !== "all") list = list.contains("interest_topics", [interest]);
-    if (category !== "All News") list = list.eq("category", category);
-    if (hotIds) list = list.in("id", hotIds.length ? hotIds : ["00000000-0000-0000-0000-000000000000"]);
-    if (feed === "today") list = list.gte("published_at", start.toISOString()).lt("published_at", end.toISOString());
     const archive = feed === "archive";
-    if (archive && source !== "all") list = list.eq("source_id", source);
-    if (archive && year !== "all") list = list.gte("published_at", `${year}-01-01T00:00:00Z`).lt("published_at", `${Number(year) + 1}-01-01T00:00:00Z`);
-    if (search.trim()) list = list.ilike("title", `%${search.trim().replace(/[%_,]/g, "")}%`);
-    if (archive && sort === "oldest") list = list.order("published_at", { ascending: true });
-    else if (archive && sort === "added") list = list.order("fetched_at", { ascending: false });
-    else if (archive && sort === "category") list = list.order("category").order("published_at", { ascending: false });
-    else list = list.order("published_at", { ascending: false });
-    const articles = await list.range(page * PAGE_SIZE, page * PAGE_SIZE + PAGE_SIZE - 1);
+    // Only articles readable on site are listed; teaser-only items wait until their text arrives.
+    let found: ArchiveRow[];
+    let total: number;
+    if (questionType === "all") {
+      let list = db.from("news_archive_catalog").select(CATALOG_COLUMNS, { count: "exact" }).eq("publication_status", "published").eq("sensitive", false).eq("readable", true);
+      if (region !== "all") list = list.eq("origin_region", region);
+      if (interest !== "all") list = list.contains("interest_topics", [interest]);
+      if (category !== "All News") list = list.eq("category", category);
+      if (hotIds) list = list.in("id", hotIds.length ? hotIds : ["00000000-0000-0000-0000-000000000000"]);
+      if (feed === "today") list = list.gte("published_at", start.toISOString()).lt("published_at", end.toISOString());
+      if (archive && source !== "all") list = list.eq("source_id", source);
+      if (archive && year !== "all") list = list.gte("published_at", `${year}-01-01T00:00:00Z`).lt("published_at", `${Number(year) + 1}-01-01T00:00:00Z`);
+      if (search.trim()) list = list.ilike("title", `%${search.trim().replace(/[%_,]/g, "")}%`);
+      if (archive && sort === "oldest") list = list.order("published_at", { ascending: true });
+      else if (archive && sort === "added") list = list.order("fetched_at", { ascending: false });
+      else if (archive && sort === "category") list = list.order("category").order("published_at", { ascending: false });
+      else list = list.order("published_at", { ascending: false });
+      const articles = await list.range(page * PAGE_SIZE, page * PAGE_SIZE + PAGE_SIZE - 1);
+      if (request !== latestRequest.current) return;
+      if (articles.error) { setError(articles.error.message); setLoading(false); return; }
+      found = (articles.data ?? []) as ArchiveRow[];
+      total = articles.count ?? 0;
+      setMatchingIds([]);
+    } else {
+      // Resolve the whole filtered result before slicing; page-local filtering would skip matches.
+      const matches = new Set<string>();
+      for (let offset = 0; ; offset += 1000) {
+        const result = await db.from("news_auto_questions").select("article_id").eq("question_type", questionType).order("article_id").order("sort_order").range(offset, offset + 999);
+        if (request !== latestRequest.current) return;
+        if (result.error) { setError(result.error.message); setLoading(false); return; }
+        for (const row of result.data ?? []) matches.add(row.article_id);
+        if ((result.data?.length ?? 0) < 1000) break;
+      }
+      const candidates: { id: string; category: string; published_at: string; fetched_at: string }[] = [];
+      if (matches.size) for (let offset = 0; ; offset += 1000) {
+        let list = db.from("news_archive_catalog").select("id,category,published_at,fetched_at").eq("publication_status", "published").eq("sensitive", false).eq("readable", true);
+        if (region !== "all") list = list.eq("origin_region", region);
+        if (interest !== "all") list = list.contains("interest_topics", [interest]);
+        if (category !== "All News") list = list.eq("category", category);
+        if (hotIds) list = list.in("id", hotIds.length ? hotIds : ["00000000-0000-0000-0000-000000000000"]);
+        if (feed === "today") list = list.gte("published_at", start.toISOString()).lt("published_at", end.toISOString());
+        if (archive && source !== "all") list = list.eq("source_id", source);
+        if (archive && year !== "all") list = list.gte("published_at", `${year}-01-01T00:00:00Z`).lt("published_at", `${Number(year) + 1}-01-01T00:00:00Z`);
+        if (search.trim()) list = list.ilike("title", `%${search.trim().replace(/[%_,]/g, "")}%`);
+        const result = await list.order("id").range(offset, offset + 999);
+        if (request !== latestRequest.current) return;
+        if (result.error) { setError(result.error.message); setLoading(false); return; }
+        for (const row of result.data ?? []) if (matches.has(row.id)) candidates.push(row);
+        if ((result.data?.length ?? 0) < 1000) break;
+      }
+      candidates.sort((a, b) => archive && sort === "oldest" ? a.published_at.localeCompare(b.published_at) || a.id.localeCompare(b.id)
+        : archive && sort === "added" ? b.fetched_at.localeCompare(a.fetched_at) || a.id.localeCompare(b.id)
+        : archive && sort === "category" ? a.category.localeCompare(b.category) || b.published_at.localeCompare(a.published_at) || a.id.localeCompare(b.id)
+        : b.published_at.localeCompare(a.published_at) || a.id.localeCompare(b.id));
+      const orderedIds = candidates.map((row) => row.id);
+      const pageIds = orderedIds.slice(page * PAGE_SIZE, (page + 1) * PAGE_SIZE);
+      total = orderedIds.length;
+      setMatchingIds(orderedIds);
+      if (!pageIds.length) found = [];
+      else {
+        const articles = await db.from("news_archive_catalog").select(CATALOG_COLUMNS).in("id", pageIds);
+        if (request !== latestRequest.current) return;
+        if (articles.error) { setError(articles.error.message); setLoading(false); return; }
+        const byId = new Map(((articles.data ?? []) as ArchiveRow[]).map((row) => [row.id, row]));
+        found = pageIds.flatMap((id) => byId.has(id) ? [byId.get(id)!] : []);
+      }
+    }
     // A slower, older request must not replace the list for the newest filters.
     if (request !== latestRequest.current) return;
-    if (articles.error) { setError(articles.error.message); setLoading(false); return; }
-    const found = (articles.data ?? []) as ArchiveRow[];
     const ids = found.map((row) => row.id);
     const [reads, quizzes] = found.length ? await Promise.all([
       db.from("user_news_article_reads").select("article_id").in("article_id", ids),
       db.from("news_auto_questions").select("article_id,question_type").in("article_id", ids).limit(PAGE_SIZE * 30),
     ]) : [null, null];
     if (request !== latestRequest.current) return;
-    setRows(found); setCount(articles.count ?? 0);
+    setRows(found); setCount(total);
     setReadIds((reads?.data ?? []).map((row) => row.article_id));
     const counts: Record<string, { total: number; types: Record<string, number> }> = {};
     for (const question of quizzes?.data ?? []) {
@@ -212,7 +264,7 @@ function NewsHome() {
     if (quizzes?.error) setError("Chưa tải được trạng thái luyện đề. Hãy thử tải lại trang.");
     setLoadedAt(new Date().toISOString()); setArrived(0);
     setLoading(false);
-  }, [db, feed, category, region, interest, search, sort, source, year, page]);
+  }, [db, feed, category, region, interest, questionType, search, sort, source, year, page]);
 
   useEffect(() => { const timer = setTimeout(() => setSearch(query), 300); return () => clearTimeout(timer); }, [query]);
   useEffect(() => { void Promise.resolve().then(loadStats); }, [loadStats]);
@@ -235,6 +287,11 @@ function NewsHome() {
     if (randomBusy) return;
     setRandomBusy(true); setRandomError("");
     try {
+      if (questionType !== "all") {
+        if (!matchingIds.length) { setRandomError("Chưa có bài đọc phù hợp với dạng câu hỏi này."); return; }
+        router.push(`/app/news/${matchingIds[Math.floor(Math.random() * matchingIds.length)]}`);
+        return;
+      }
       let pool = db.from("news_archive_catalog").select("id", { count: "exact", head: true })
         .eq("publication_status", "published").eq("sensitive", false).eq("readable", true);
       if (category !== "All News") pool = pool.eq("category", category);
@@ -263,20 +320,21 @@ function NewsHome() {
     {latest && now - new Date(latest).valueOf() > 2 * 3600000 && <p className="news-stale">Tin đã lưu vẫn xem được. Lần đồng bộ gần nhất: {newsDate(latest)}.</p>}
     <section className="news-feed" id="news-archive" ref={listTop}>
       <div className="news-feed-bar" role="group" aria-label="Lọc tin tức">
-        <label className="news-filter-select"><span>Nguồn</span><select value={region} onChange={(event) => { setRegion(event.target.value as typeof region); setPage(0); }}>{([["all", "Tất cả nguồn"], ["vietnam", "Báo Việt Nam"], ["international", "Báo quốc tế"]] as const).map(([id, label]) => <option key={id} value={id}>{label}</option>)}</select></label>
-        <label className="news-filter-select"><span>Danh mục</span><select value={category} onChange={(event) => { setCategory(event.target.value); setPage(0); }}>{["All News", ...NEWS_CATEGORIES].map((item) => <option key={item} value={item}>{item}</option>)}</select></label>
-        <label className="news-filter-select"><span>Chủ đề</span><select value={interest} onChange={(event) => { setInterest(event.target.value); setPage(0); }}>{interestFilters.map((item) => <option key={item.id} value={item.id}>{item.label}</option>)}</select></label>
+        <label className="news-filter-select" data-active={region !== "all" || undefined}><Globe2 className="news-filter-icon" aria-hidden /><span>Khu vực</span><ChevronDown className="news-filter-caret" aria-hidden /><select value={region} onChange={(event) => { setRegion(event.target.value as typeof region); setPage(0); }}>{([["all", "Tất cả khu vực"], ["vietnam", "Tin Việt Nam"], ["international", "Tin quốc tế"]] as const).map(([id, label]) => <option key={id} value={id}>{label}</option>)}</select></label>
+        <label className="news-filter-select" data-active={category !== "All News" || undefined}><LayoutGrid className="news-filter-icon" aria-hidden /><span>Danh mục</span><ChevronDown className="news-filter-caret" aria-hidden /><select value={category} onChange={(event) => { setCategory(event.target.value); setPage(0); }}>{["All News", ...NEWS_CATEGORIES].map((item) => <option key={item} value={item}>{item}</option>)}</select></label>
+        <label className="news-filter-select" data-active={interest !== "all" || undefined}><Tag className="news-filter-icon" aria-hidden /><span>Chủ đề</span><ChevronDown className="news-filter-caret" aria-hidden /><select value={interest} onChange={(event) => { setInterest(event.target.value); setPage(0); }}>{interestFilters.map((item) => <option key={item.id} value={item.id}>{item.label}</option>)}</select></label>
+        <label className="news-filter-select" data-active={questionType !== "all" || undefined}><ListChecks className="news-filter-icon" aria-hidden /><span>Dạng câu hỏi</span><ChevronDown className="news-filter-caret" aria-hidden /><select value={questionType} onChange={(event) => { setQuestionType(event.target.value as QuestionType | "all"); setPage(0); }}><option value="all">Mọi dạng câu hỏi</option>{questionTypes.map((type) => <option key={type} value={type}>{typeLabels[type]}</option>)}</select></label>
         <label className="news-feed-search"><Search size={16} /><input type="search" value={query} onChange={(event) => { setQuery(event.target.value); setPage(0); }} placeholder="Tìm theo tiêu đề..." aria-label="Tìm tin theo tiêu đề" /></label>
       </div>
       {feed === "archive" && <div className="news-archive-filters"><select aria-label="Nguồn tin" value={source} onChange={(event) => { setSource(event.target.value); setPage(0); }}><option value="all">Mọi nguồn</option>{sources.map((item)=><option key={item.id} value={item.id}>{item.name}</option>)}</select><select aria-label="Năm xuất bản" value={year} onChange={(event) => { setYear(event.target.value); setPage(0); }}><option value="all">Mọi năm</option>{yearOptions.map((value)=><option key={value} value={value}>{value}</option>)}</select><select aria-label="Sắp xếp tin" value={sort} onChange={(event) => { setSort(event.target.value); setPage(0); }}><option value="newest">Mới nhất</option><option value="oldest">Cũ nhất</option><option value="added">Mới thêm</option><option value="category">Danh mục</option></select></div>}
       <div className="news-feed-tools">
         <div className="news-feed-count"><feedInfo.icon size={15} /><b>{loading ? "…" : count.toLocaleString("vi-VN")} bài</b><span>{feedInfo.hint}</span>
           {arrived > 0 && <button type="button" className="news-arrived" onClick={() => { if (page) setPage(0); else void loadList(); }}><Sparkles size={14} /> {arrived} tin mới · Xem ngay</button>}</div>
-        <div className="news-random-picker"><button type="button" className="button subtle" aria-label="Chọn bài ngẫu nhiên" onClick={() => void openRandomArticle()} disabled={randomBusy}><Sparkles size={15}/><span>{randomBusy ? "Đang chọn…" : "Ngẫu nhiên"}</span></button></div>
+        <div className="news-random-picker"><button type="button" className="button subtle" aria-label="Chọn bài ngẫu nhiên" onClick={() => void openRandomArticle()} disabled={randomBusy || loading}><Sparkles size={15}/><span>{randomBusy ? "Đang chọn…" : "Ngẫu nhiên"}</span></button></div>
       </div>
       {randomError && <p className="form-error" role="alert">{randomError}</p>}
       {error && <p className="form-error" role="alert">{error}</p>}
-      {loading && !rows.length ? <div className="news-grid" aria-busy="true">{[0, 1, 2].map((item) => <div key={item} className="news-card news-card-skeleton"><span className="skeleton" /><span className="skeleton" /><span className="skeleton" /></div>)}</div> : rows.length ? <div className={`news-grid stagger ${loading ? "is-loading" : ""}`} aria-busy={loading}>{rows.map((row) => <NewsCard key={row.id} row={row} saved={saved.includes(row.id)} read={readIds.includes(row.id)} quizInfo={quizCounts[row.id]} fresh={Date.parse(row.fetched_at) > Date.parse(seenBefore)} onSave={() => void toggleSave(row.id)} onSite={row.readable} image={newsImage(row)} learnSlug={releaseLocks ? undefined : learn.find((item) => item.related_news_id === row.id)?.slug} />)}</div> : <div className="news-empty"><Sticker name={feed === "today" ? "calendar" : feed === "hot" ? "flame" : "newspaper"} size={72} tilt={-6} /><h3>{search ? `Không có tin nào khớp “${search}”` : feed === "today" ? "Hôm nay chưa có tin mới" : feed === "hot" ? "Chưa có tin nổi bật" : "Chưa có tin phù hợp"}</h3><p>{feed === "archive" ? "Hãy đổi năm, nguồn hoặc thứ tự. Kho tin cũ đang được nhập thêm theo lịch." : feed === "latest" ? "Kho tin được đồng bộ theo lịch. Hãy thử danh mục khác." : "Thử danh mục khác hoặc xem tab Mới nhất."}</p>{feed === "latest" && !releaseLocks ? <Link href="/app/news/learn" className="button primary">Learn with News</Link> : <Link href="/app/news" scroll={false} className="button primary">Xem tin mới nhất</Link>}</div>}
+      {loading && !rows.length ? <div className="news-grid" aria-busy="true">{[0, 1, 2].map((item) => <div key={item} className="news-card news-card-skeleton"><span className="skeleton" /><span className="skeleton" /><span className="skeleton" /></div>)}</div> : rows.length ? <div className={`news-grid stagger ${loading ? "is-loading" : ""}`} aria-busy={loading}>{rows.map((row) => <NewsCard key={row.id} row={row} saved={saved.includes(row.id)} read={readIds.includes(row.id)} quizInfo={quizCounts[row.id]} fresh={Date.parse(row.fetched_at) > Date.parse(seenBefore)} onSave={() => void toggleSave(row.id)} onSite={row.readable} image={newsImage(row)} learnSlug={releaseLocks ? undefined : learn.find((item) => item.related_news_id === row.id)?.slug} />)}</div> : <div className="news-empty"><Sticker name={feed === "today" ? "calendar" : feed === "hot" ? "flame" : "newspaper"} size={72} tilt={-6} /><h3>{questionType !== "all" ? `Chưa có bài với dạng ${typeLabels[questionType]}` : search ? `Không có tin nào khớp “${search}”` : feed === "today" ? "Hôm nay chưa có tin mới" : feed === "hot" ? "Chưa có tin nổi bật" : "Chưa có tin phù hợp"}</h3><p>{questionType !== "all" ? "Hãy thử dạng câu hỏi khác hoặc bỏ bớt bộ lọc." : feed === "archive" ? "Hãy đổi năm, nguồn hoặc thứ tự. Kho tin cũ đang được nhập thêm theo lịch." : feed === "latest" ? "Kho tin được đồng bộ theo lịch. Hãy thử danh mục khác." : "Thử danh mục khác hoặc xem tab Mới nhất."}</p>{feed === "latest" && !releaseLocks ? <Link href="/app/news/learn" className="button primary">Learn with News</Link> : <Link href="/app/news" scroll={false} className="button primary">Xem tin mới nhất</Link>}</div>}
       {pages > 1 && <div className="news-pagination"><button disabled={page === 0 || loading} onClick={() => goToPage(page - 1)}>← Trước</button><span>Trang <b>{page + 1}</b> / {pages}</span><button disabled={page + 1 >= pages || loading} onClick={() => goToPage(page + 1)}>Tiếp →</button></div>}
     </section>
       {!releaseLocks && learn.length > 0 && <section className="news-section"><div className="news-section-heading"><div><span className="eyebrow">HỌC QUA BÀI ĐỌC GỐC</span><h2>Learn with News</h2><p>Bài đọc và câu hỏi do người biên soạn, có đáp án rõ ràng.</p></div><Link href="/app/news/learn">Xem tất cả →</Link></div><div className="news-grid">{learn.slice(0,3).map((item) => <LearnCard key={item.id} item={item}/>)}</div></section>}
@@ -314,7 +372,7 @@ function NewsCard({ row, saved, onSave, learnSlug, onSite = false, image, read =
       {read ? <em className="news-card-flag read"><CheckCircle2 size={13} /> Đã đọc</em> : fresh ? <em className="news-card-flag">Mới</em> : null}
     </Link>
     <div className="news-card-body">
-      <div className="news-card-meta"><span>{row.publisher}{row.origin_region && <em className="news-origin-label"> · {row.origin_region === "vietnam" ? "Báo Việt Nam" : "Báo quốc tế"}</em>}</span><time dateTime={row.published_at} title={newsDate(row.published_at)}>{relativeTime(row.published_at)}</time></div>
+      <div className="news-card-meta"><span>{row.publisher}{row.origin_region && <em className="news-origin-label"> · {row.origin_region === "vietnam" ? "Tin Việt Nam" : "Tin quốc tế"}</em>}</span><time dateTime={row.published_at} title={newsDate(row.published_at)}>{relativeTime(row.published_at)}</time></div>
       <h3><Link href={href}>{plainText(row.title)}</Link></h3>
       {quizInfo && quizInfo.total > 0 && <div className="news-card-quiz-wrap"><span className="news-card-quiz"><ListChecks size={14} aria-hidden="true"/> Có đề luyện · {quizInfo.total} câu</span><small className="news-card-quiz-types" aria-label="Question types">{Object.entries(quizInfo.types).map(([type, count]) => <span key={type}>{quizTypeLabels[type] ?? type} {count}</span>)}</small></div>}
       <div className="news-card-foot">

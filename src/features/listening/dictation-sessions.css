@@ -1,57 +1,87 @@
 /* "Luyện nhanh" and "Sổ câu sai": skill cards, the shared sentence runner and its summary. */
-.voa-lab.dq-practice-page > *{width:100%;max-width:760px;margin-inline:auto}
-.dq-skill-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:12px}
-.dq-page .dq-skill-card{position:relative;display:flex;flex-direction:column;align-items:flex-start;gap:5px;min-height:132px;padding:18px;text-align:left}
-.dq-page button.dq-skill-card:not(:disabled):hover{border-color:#64b9c1;box-shadow:0 12px 28px #173e5c17;transform:translateY(-2px)}
-.dq-skill-card strong{font-size:17px}
-.dq-skill-card span{color:var(--voa-muted);font-size:13px;line-height:1.45}
-.dq-skill-card small{margin-top:auto;color:#008b97;font-weight:750}
-.dq-skill-card svg{position:absolute;right:16px;bottom:16px;color:#008b97}
-.dq-session{max-width:760px;padding:18px}
-.dq-session-head{display:flex;flex-wrap:wrap;justify-content:space-between;gap:4px 12px}
-.dq-dots{display:flex;gap:5px;margin:10px 0 14px}
-.dq-dots span{flex:1;height:6px;border-radius:99px;background:#e6eef3}
-.dq-dots .current{background:#8fd3d6}
+.voa-lab.dq-practice-page > *{width:100%;max-width:820px;margin-inline:auto}
+.dq-page>.dq-session,.dq-page>.dq-summary,.dq-page>.slp-outcome{max-width:820px;margin-inline:auto}
+.dq-skill-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:12px}
+.dq-page .dq-skill-card{--accent:#0a7f89;--soft:#e2f5f4;position:relative;display:grid;grid-template-columns:auto minmax(0,1fr);align-items:start;gap:4px 14px;min-height:118px;padding:16px;border-radius:20px;text-align:left;background:radial-gradient(circle at 100% 0,var(--soft),transparent 50%),#fff}
+.dq-page button.dq-skill-card:not(:disabled):hover{transform:translateY(-3px);border-color:color-mix(in srgb,var(--accent) 35%,#fff);background-color:#fff;box-shadow:0 18px 32px -22px #10233f80}
+.dq-skill-icon{grid-row:1/4;display:grid;place-items:center;width:44px;height:44px;border-radius:14px;background:var(--soft);color:var(--accent)}
+.dq-skill-card strong{font-family:var(--font-display),var(--font-sans),sans-serif;font-size:16.5px}
+.dq-skill-card>span:not(.dq-skill-icon){color:var(--voa-muted);font-size:13px;line-height:1.45}
+.dq-skill-card small{margin-top:6px;color:var(--accent);font-weight:750}
+.dq-skill-card>svg{position:absolute;right:16px;bottom:16px;color:var(--accent);transition:transform .18s}
+.dq-skill-card:hover>svg{transform:translateX(3px)}
+.dq-skill-card.is-numbers{--accent:#216db6;--soft:#e9f3ff}
+.dq-skill-card.is-spelling{--accent:#7c66dc;--soft:#f1eefe}
+.dq-skill-card.is-dates{--accent:#c2410c;--soft:#fff0e6}
+.dq-skill-card.is-sounds{--accent:#0a7f89;--soft:#e2f5f4}
+.dq-skill-card.is-places{--accent:#108258;--soft:#e5f6ed}
+.dq-skill-card.is-everyday{--accent:#b7791f;--soft:#fff6dd}
+.dq-skill-card.is-academic{--accent:#10233f;--soft:#eaeef5}
+
+.dq-skeleton{min-height:118px;border-style:solid;background:linear-gradient(90deg,#eef2f6 25%,#f7f9fb 50%,#eef2f6 75%)!important;background-size:200% 100%!important;animation:dh-shimmer 1.3s linear infinite}
+@keyframes dh-shimmer{to{background-position:-200% 0}}
+
+/* The sentence runner: a focused card with one big play button. */
+.dq-session{padding:clamp(16px,2.4vw,26px)}
+.dq-session-head{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:6px 12px}
+.dq-session-head .voa-eyebrow{display:inline-flex;align-items:center;gap:8px}
+.dq-count{display:inline-grid;place-items:center;min-width:52px;padding:4px 10px;border-radius:99px;background:#e2f5f4;color:#0a7f89;font-size:12px;font-weight:800;letter-spacing:0}
+.dq-dots{display:flex;gap:5px;margin:14px 0 18px}
+.dq-dots span{flex:1;height:7px;border-radius:99px;background:#e6eef3;transition:background .25s}
+.dq-dots .current{background:#12a1ab;box-shadow:0 0 0 3px #12a1ab26}
 .dq-dots .passed{background:#1ba672}
-.dq-dots .failed{background:#e0794a}
-.dq-player{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin-bottom:12px}
-.dq-page .dq-play{display:grid;place-items:center;width:58px;height:58px;padding:0;border:0;border-radius:50%;background:#008d98;color:#fff;box-shadow:0 8px 18px #008d9833}
+.dq-dots .failed{background:#f0995f}
+.dq-player{display:flex;flex-wrap:wrap;align-items:center;gap:12px 14px;margin-bottom:6px;padding:14px;border:1px solid #d9ecee;border-radius:18px;background:linear-gradient(135deg,#f3fbfb,#f8fafc)}
+.dq-page .dq-play{position:relative;display:grid;place-items:center;width:62px;height:62px;padding:0;border:0;border-radius:50%;background:linear-gradient(135deg,#12a1ab,#0a7f89);color:#fff;box-shadow:0 12px 24px -10px #0a7f89}
+.dq-page .dq-play:not(:disabled):hover{background:linear-gradient(135deg,#0f97a1,#086c75);transform:scale(1.04)}
+.dq-page .dq-play.is-playing::after{content:"";position:absolute;inset:-6px;border:2px solid #12a1ab;border-radius:50%;animation:dq-pulse 1.4s ease-out infinite}
+@keyframes dq-pulse{from{opacity:.7;transform:scale(.92)}to{opacity:0;transform:scale(1.25)}}
 .dq-page .dq-player>button:not(.dq-play){display:inline-flex;align-items:center;gap:6px}
-.dq-session .sld-dictation-answer{width:100%;min-height:72px}
-.dq-session .sld-dictation-feedback{margin-top:10px;padding:10px 12px;border:1px solid var(--voa-line);border-radius:12px;background:#f7fafc}
-.dq-session .sld-dictation-feedback.correct{border-color:#bfe6d2;background:#f0faf5}
-.dq-session .sld-dictation-feedback.wrong{border-color:#f1cdbb;background:#fff6f1}
-.dq-session .sld-dictation-feedback p{margin:6px 0 0}
-.dq-session .sld-dictation-actions{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:8px;margin-top:12px}
+.dq-player .dp-progress{flex-basis:100%;margin-top:0}
+.dq-session .sld-dictation-answer{width:100%;min-height:96px;margin-top:14px;padding:14px 16px;border-radius:16px;font-size:18px;line-height:1.5}
+.dq-session .sld-dictation-feedback{margin-top:12px;padding:12px 14px;border:1px solid var(--voa-line);border-left-width:4px;border-radius:14px;background:#f7fafc;animation:voa-pop .22s ease-out}
+.dq-session .sld-dictation-feedback.correct{border-color:#bfe6d2;border-left-color:#1ba672;background:#effaf4}
+.dq-session .sld-dictation-feedback.wrong{border-color:#f1d9c6;border-left-color:#f0995f;background:#fff7f0}
+.dq-session .sld-dictation-feedback p{margin:6px 0 0;letter-spacing:.01em}
+.dq-session .sld-dictation-actions{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px;margin-top:14px}
 .dq-session .sld-dictation-actions>div{display:flex;flex-wrap:wrap;gap:8px}
-.dq-summary{max-width:760px;padding:20px}
+.dq-page kbd{display:inline-grid;place-items:center;min-width:22px;padding:1px 6px;border:1px solid #d6dee6;border-bottom-width:2px;border-radius:6px;background:#fff;color:var(--voa-ink);font:700 11px/1.4 var(--font-sans),system-ui,sans-serif}
+
+/* Summary */
+.dq-summary{padding:clamp(18px,2.4vw,28px)}
+.dq-summary-top{display:flex;align-items:center;gap:18px;flex-wrap:wrap}
+.dq-score{position:relative;display:grid;place-items:center;flex:none;width:96px;height:96px;border-radius:50%;background:conic-gradient(var(--tone,#1ba672) calc(var(--share,0)*1%),#e8eef3 0)}
+.dq-score::before{content:"";position:absolute;inset:9px;border-radius:50%;background:#fff}
+.dq-score b{position:relative;font:800 24px/1 var(--font-display),var(--font-sans),sans-serif;font-variant-numeric:tabular-nums}
+.dq-score small{position:relative;display:block;margin-top:2px;color:var(--voa-muted);font-size:11px;font-weight:700;text-align:center}
 .dq-summary h2{margin:4px 0;font-size:26px}
-.dq-summary-list{display:grid;gap:8px;margin:14px 0;padding:0;list-style:none}
-.dq-summary-list li{display:flex;gap:9px;align-items:flex-start;padding:9px 11px;border:1px solid var(--voa-line);border-radius:11px}
-.dq-summary-list li.passed svg{color:#1ba672}
-.dq-summary-list li.failed svg{color:#d2643a}
+.dq-summary-list{display:grid;gap:8px;margin:18px 0;padding:0;list-style:none}
+.dq-summary-list li{display:flex;gap:10px;align-items:flex-start;padding:10px 12px;border:1px solid var(--voa-line);border-radius:14px}
+.dq-summary-list li>svg{flex:none;margin-top:2px;padding:3px;width:22px;height:22px;border-radius:50%}
+.dq-summary-list li.passed{background:#f6fcf8}
+.dq-summary-list li.passed>svg{background:#dff5e8;color:#108258}
+.dq-summary-list li.failed>svg{background:#ffeadf;color:#c2410c}
 .dq-summary-list li div{display:grid;gap:2px}
 .dq-summary-list small{color:var(--voa-muted)}
 .dq-summary-actions{display:flex;flex-wrap:wrap;gap:8px;justify-content:flex-end}
+.dq-summary-actions a.button{display:inline-flex;align-items:center;padding:10px 14px;border:1px solid var(--voa-line);border-radius:12px;background:#fff;color:var(--voa-ink);font-weight:650;text-decoration:none}
 .dq-back{margin-top:14px;font-size:13px}
-.dq-back a{display:inline-flex;align-items:center;gap:5px;color:#087e91;font-weight:700;text-decoration:none}
-.dq-review-counts{display:flex;flex-wrap:wrap;gap:8px 18px;margin:0 0 12px;color:var(--voa-muted);font-size:13px}
-.dq-review-counts strong{color:var(--voa-ink);font-size:18px}
-.dq-review-list{display:grid;gap:8px;margin:0;padding:0;list-style:none}
-.dq-review-list li{display:flex;flex-wrap:wrap;align-items:center;gap:8px 12px;padding:10px 14px}
-.dq-review-list li>span:nth-child(2){flex:1;min-width:180px}
-.dq-source{border-radius:7px;background:#eef4f8;color:#4c6a82;padding:3px 8px;font-size:11px;font-weight:800}
+.dq-back a{display:inline-flex;align-items:center;gap:5px;color:#0a7f89;font-weight:700;text-decoration:none}
 
-/* Dictation home: "Hôm nay" shortcuts */
-.voa-today{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px;margin:4px 0 22px}
-.voa-today-card.is-mock{border-color:#c9b8f0;background:linear-gradient(135deg,#f5f1ff,#fff)}
-.voa-lab .voa-today-card{display:flex;flex-direction:column;align-items:flex-start;gap:4px;min-height:118px;padding:16px;text-align:left;text-decoration:none;color:var(--voa-ink)}
-.voa-lab .voa-today-card:hover{border-color:#64b9c1;box-shadow:0 12px 28px #173e5c17}
-.voa-today-card strong{font-size:16px}
-.voa-today-card span{color:var(--voa-muted);font-size:13px;line-height:1.45}
-.voa-today-card small{margin-top:auto;color:#008b97;font-weight:750}
-.voa-today-card.is-primary{border-color:#9fd8dc;background:linear-gradient(135deg,#effafa,#fff)}
-@media(max-width:900px){.voa-today{grid-template-columns:1fr}}
+/* Sổ câu sai */
+.dq-review-counts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin:0 0 14px}
+.dq-review-counts span{--accent:#0a7f89;--soft:#e2f5f4;display:grid;gap:2px;padding:14px 16px;border:1px solid var(--voa-line);border-radius:18px;background:radial-gradient(circle at 100% 0,var(--soft),transparent 55%),#fff;color:var(--voa-muted);font-size:13px;font-weight:650}
+.dq-review-counts span:nth-child(2){--accent:#216db6;--soft:#e9f3ff}
+.dq-review-counts span:nth-child(3){--accent:#7c66dc;--soft:#f1eefe}
+.dq-review-counts strong{color:var(--accent);font:800 26px/1.1 var(--font-display),var(--font-sans),sans-serif}
+.dq-review-list{display:grid;gap:8px;margin:0;padding:0;list-style:none}
+.dq-review-list li{display:flex;flex-wrap:wrap;align-items:center;gap:8px 12px;padding:12px 14px;border-radius:16px}
+.dq-review-list li>span:nth-child(2){flex:1;min-width:180px;font-weight:600}
+.dq-source{border-radius:99px;background:#e2f5f4;color:#0a7f89;padding:3px 10px;font-size:11px;font-weight:800}
+.dq-source.is-voa{background:#e9f3ff;color:#216db6}
+.dq-source.is-quick{background:#f1eefe;color:#5b47b8}
+@media(max-width:600px){.dq-review-counts{grid-template-columns:repeat(3,minmax(0,1fr));gap:6px}.dq-review-counts span{padding:10px}.dq-review-counts strong{font-size:21px}.dq-page .dq-play{width:56px;height:56px}.dq-session .sld-dictation-answer{font-size:17px}}
+@media(prefers-reduced-motion:reduce){.dq-page .dq-play.is-playing::after{animation:none}}
 
 /* Skill Lab path: placement, weekly goal, stage map */
 .slp-top{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:12px;margin-bottom:20px}
@@ -118,20 +148,34 @@
 .sld-summary-redo li{display:flex;align-items:center;gap:10px}
 .sld-summary-redo small{flex:1;color:var(--voa-muted)}
 @media(max-width:600px){.sld-summary-stats{grid-template-columns:1fr}}
-.voa-stage-section h2 .voa-stage-map-link{margin-left:10px;color:#087e91;font-size:13px;font-weight:750;text-decoration:none}
 /* Links styled as buttons (the shared button rules only cover <button>). */
-.slp-page a.voa-primary-button,.slp-page a.voa-continue-button,.slp-outcome a.voa-primary-button,.dq-page a.voa-primary-button{display:inline-flex;align-items:center;gap:6px;padding:10px 14px;border-radius:10px;text-decoration:none;white-space:nowrap}
-/* Dictation home: personal progress on the stage cards */
-.voa-stage-meter{display:block;width:100%;height:6px;margin-top:10px;border-radius:99px;background:#e6eef3;overflow:hidden}
-.voa-stage-meter span{display:block;height:100%;border-radius:inherit;background:linear-gradient(90deg,#008d98,#3cc4a8)}
-.voa-lab .voa-stage-card.is-suggested{border-color:#e8a33d;box-shadow:0 0 0 3px #f6dfb6}
-.voa-stage-suggested{position:absolute;right:16px;top:16px;border-radius:99px;background:#fff3df;color:#8a5a10;padding:3px 8px;font-size:11px;font-weight:800}
-/* Quick Dictation: sets of 20 */
-.voa-set-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:12px}
-.voa-lab .voa-set-card{display:flex;flex-direction:column;align-items:stretch;gap:6px;padding:16px;text-align:left}
-.voa-lab .voa-set-card:hover{border-color:#64b9c1;box-shadow:0 12px 28px #173e5c17}
-.voa-set-top{display:flex;justify-content:space-between;align-items:center}
-.voa-set-top strong{font-size:17px}
-.voa-set-top span{border-radius:99px;background:#eef4f8;color:#4c6a82;padding:3px 8px;font-size:11px;font-weight:800}
-.voa-set-meta{color:var(--voa-muted);font-size:12.5px}
-.voa-set-foot{display:flex;justify-content:space-between;align-items:center;margin-top:4px;color:#008b97;font-size:12.5px;font-weight:750}
+.slp-page a.voa-primary-button,.slp-page a.voa-continue-button,.slp-outcome a.voa-primary-button,.dq-page a.voa-primary-button,.sld-lab a.voa-primary-button{display:inline-flex;align-items:center;gap:6px;padding:10px 14px;border-radius:12px;text-decoration:none;white-space:nowrap}
+.dq-score>span{position:relative;display:grid;justify-items:center}
+
+/* Path map refresh */
+.slp-placement{border-color:#f3dfa8;background:radial-gradient(circle at 100% 0,#fff1c9,transparent 55%),#fff}
+.slp-placement>svg{display:block;box-sizing:content-box;padding:10px;border-radius:14px;background:#fff6dd;color:#c58a06}
+.slp-goal-card{background:radial-gradient(circle at 100% 0,#e2f5f4,transparent 55%),#fff}
+.slp-map::before{left:25px;width:3px;background:linear-gradient(#12a1ab,#dfe9f0 85%)}
+.slp-node{background:#fff;color:#0a7f89;border:3px solid #cdeaec;box-shadow:0 6px 14px -6px #10233f40}
+.slp-stage.active .slp-node{border-color:#0a7f89;background:linear-gradient(135deg,#12a1ab,#0a7f89);color:#fff}
+.slp-stage.passed .slp-node{border-color:#1ba672;background:#1ba672;color:#fff}
+.slp-stage.later .slp-node{border-color:#e3e8ee;background:#f4f6f8;color:#8aa0b2}
+.slp-card{border-radius:20px;transition:transform .18s,box-shadow .18s,border-color .18s}
+.slp-card:hover{border-color:#cfe6e9;box-shadow:0 18px 32px -24px #10233f80}
+.slp-card-head strong{font-family:var(--font-display),var(--font-sans),sans-serif;font-size:18px}
+.slp-stage.later .slp-card{opacity:1;background:#fbfcfd}
+.slp-stage.later .slp-card-head,.slp-stage.later .slp-meter-row{opacity:.75}
+.slp-chip{background:#e2f5f4;color:#0a7f89!important}
+.slp-stage.later .slp-chip{background:#eef3f7;color:#6b8195!important}
+.slp-stage.recommended .slp-chip{background:#fff3d6;color:#8a5a10!important}
+.slp-outcome{border-radius:22px}
+.slp-outcome strong{font-family:var(--font-display),var(--font-sans),sans-serif;font-size:22px}
+/* Phones: once a session is running, the page banner shrinks so the sentence is on screen. */
+@media(max-width:640px){
+  .voa-bank-hero{flex-direction:column;align-items:stretch;padding:16px 18px;border-radius:20px}
+  .dq-page:has(.dq-session) .voa-bank-hero{margin-bottom:12px;padding:12px 16px}
+  .dq-page:has(.dq-session) .voa-bank-hero p{display:none}
+  .dq-page:has(.dq-session) .voa-bank-hero h1{margin:2px 0 0;font-size:22px}
+  .dq-player{padding:12px}
+}

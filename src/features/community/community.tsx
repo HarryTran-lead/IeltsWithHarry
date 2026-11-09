@@ -5,12 +5,14 @@ import { usePathname, useRouter } from "next/navigation";
 import Link from "next/link";
 import {
   ArrowLeft, ArrowRight, Bell, Bookmark, Check, CheckCircle2, ChevronDown,
-  Flag, Heart, MessageCircle, MoreHorizontal, PenLine, Plus, Search,
-  Send, ShieldAlert, Sparkles, UsersRound, X,
+  Flag, Heart, HelpCircle, Lightbulb, MessageCircle, MessagesSquare, Mic, MoreHorizontal,
+  PenLine, Search, Send, ShieldAlert, Sparkles, UsersRound, X,
 } from "lucide-react";
 import { demoMode } from "@/lib/runtime";
 import { AvatarFrame } from "@/components/account/avatar-frame";
+import { PageHeader } from "@/components/ui/page-header";
 import { Sticker } from "@/components/stickers/stickers";
+import { createClient } from "@/lib/supabase/browser";
 
 type PostKind = "discussion" | "question" | "writing_review" | "speaking_review";
 type Topic = "IELTS" | "Grammar" | "Vocabulary" | "Writing" | "Speaking" | "Reading" | "Listening";
@@ -21,23 +23,39 @@ type Notification = { id: string; actor_name: string; post_id: string; kind: str
 type Report = { id: string; post_id: string; reason: string; detail: string; created_at: string };
 type FeedResult = { posts: Post[]; hasMore: boolean; userId: string };
 type DetailResult = { post: Post; replies: Comment[]; userId: string };
+type Draft = { kind: PostKind; title?: string; topic?: Topic };
+type Me = { avatar: string; frame: string; name: string } | null;
 
 const samplePosts: Post[] = [
   { id: "sample-1", author_id: "sample", author_name: "Minh Anh", kind: "question", topic: "Grammar", title: "Phân biệt ‘despite’ và ‘although’ như thế nào?", body: "Mình thường nhầm khi làm Writing Task 2. Có ai giải thích giúp mình kèm ví dụ dễ hiểu không? Cảm ơn mọi người!", status: "published", accepted_comment_id: null, created_at: new Date().toISOString(), likes: 0, comments: 0, liked: false, saved: false },
   { id: "sample-2", author_id: "sample", author_name: "Hoàng Nam", kind: "writing_review", topic: "Writing", title: "Nhờ mọi người góp ý bài Writing của mình", body: "Some people believe that studying abroad offers more opportunities than studying in their home country. To what extent do you agree or disagree?", status: "published", accepted_comment_id: null, created_at: new Date().toISOString(), likes: 0, comments: 0, liked: false, saved: false },
   { id: "sample-3", author_id: "sample", author_name: "Lan Chi", kind: "discussion", topic: "Speaking", title: "Cách cải thiện phát âm /θ/ và /ð/?", body: "Mình hay phát âm thành /t/ và /d/. Có bài tập nào giúp luyện hai âm này không ạ?", status: "published", accepted_comment_id: null, created_at: new Date().toISOString(), likes: 0, comments: 0, liked: false, saved: false },
 ];
-const tabs = [
+const kindTabs = [
   { label: "Tất cả", key: "all" }, { label: "Hỏi đáp", key: "question" },
-  { label: "Sửa bài", key: "review" }, { label: "IELTS", key: "IELTS" },
-  { label: "Grammar", key: "Grammar" }, { label: "Vocabulary", key: "Vocabulary" },
+  { label: "Sửa bài", key: "review" }, { label: "Thảo luận", key: "discussion" },
 ];
 const kinds: { key: PostKind; label: string }[] = [
-  { key: "discussion", label: "Bài đăng" }, { key: "question", label: "Câu hỏi" },
-  { key: "writing_review", label: "Sửa bài Writing" }, { key: "speaking_review", label: "Sửa bài Speaking" },
+  { key: "question", label: "Câu hỏi" }, { key: "writing_review", label: "Sửa bài Writing" },
+  { key: "speaking_review", label: "Sửa bài Speaking" }, { key: "discussion", label: "Thảo luận" },
 ];
+const kindMeta: Record<PostKind, { label: string; hint: string; tone: string; Icon: typeof HelpCircle }> = {
+  question: { label: "Câu hỏi", hint: "Ngữ pháp, từ vựng, chiến lược làm bài", tone: "sky", Icon: HelpCircle },
+  writing_review: { label: "Sửa bài Writing", hint: "Nhận góp ý cho Task 1 và Task 2", tone: "lavender", Icon: PenLine },
+  speaking_review: { label: "Sửa bài Speaking", hint: "Góp ý ý tưởng, từ vựng, phát âm", tone: "coral", Icon: Mic },
+  discussion: { label: "Thảo luận", hint: "Chia sẻ kinh nghiệm và tài liệu học", tone: "teal", Icon: MessagesSquare },
+};
 const topics: Topic[] = ["IELTS", "Grammar", "Vocabulary", "Writing", "Speaking", "Reading", "Listening"];
-const kindText: Record<PostKind, string> = { discussion: "Thảo luận", question: "Hỏi đáp", writing_review: "Writing Task", speaking_review: "Speaking" };
+const starters: Draft[] = [
+  { kind: "question", topic: "Grammar", title: "Khi nào dùng ‘despite’ và khi nào dùng ‘although’?" },
+  { kind: "question", topic: "Reading", title: "Làm sao để không bị hết giờ ở Reading Passage 3?" },
+  { kind: "discussion", topic: "Vocabulary", title: "Mọi người ôn từ vựng IELTS mỗi ngày như thế nào?" },
+];
+const rules = [
+  "Đặt tiêu đề rõ ràng, nêu đúng phần bạn cần giúp.",
+  "Góp ý cụ thể, kèm ví dụ hoặc cách sửa.",
+  "Tôn trọng người học khác — ai cũng từng bắt đầu.",
+];
 
 async function api<T>(method: "GET" | "POST" | "PATCH", queryOrBody: string | object): Promise<T> {
   const response = await fetch(`/api/community${method === "GET" ? `?${queryOrBody}` : ""}`, {
@@ -58,52 +76,85 @@ function when(value: string) {
 }
 
 function Avatar({ name, card, small = false }: { name: string; card?: AuthorCard; small?: boolean }) {
-  return card ? <AvatarFrame avatar={card.avatar} frame={card.frame} size={small ? 35 : 43} alt={`Ảnh đại diện của ${name}`} />
-    : <span className="community-avatar" aria-hidden="true">{name.trim().charAt(0).toLocaleUpperCase("vi-VN") || "H"}</span>;
+  return card ? <AvatarFrame avatar={card.avatar} frame={card.frame} size={small ? 36 : 44} alt={`Ảnh đại diện của ${name}`} />
+    : <span className={`community-avatar${small ? " small" : ""}`} aria-hidden="true">{name.trim().charAt(0).toLocaleUpperCase("vi-VN") || "H"}</span>;
 }
 
 function Level({ card }: { card?: AuthorCard }) {
   return card && Number.isFinite(card.level) ? <span className="community-level" title={`Cấp học tập ${card.level}`}>Lv.{card.level}</span> : null;
 }
 
-function PostCard({ post, onAction, busy, userId }: { post: Post; onAction: (action: string, post: Post) => void; busy: boolean; userId: string }) {
+function KindBadge({ kind }: { kind: PostKind }) {
+  const { label, tone, Icon } = kindMeta[kind];
+  return <span className={`community-kind tone-${tone}`}><Icon size={13} strokeWidth={2.4} /> {label}</span>;
+}
+
+function PostCard({ post, onAction, busy, userId, detail = false }: { post: Post; onAction: (action: string, post: Post) => void; busy: boolean; userId: string; detail?: boolean }) {
   const [menu, setMenu] = useState(false);
-  return <article className="community-post">
+  const menuRef = useRef<HTMLDivElement>(null);
+  useEffect(() => {
+    if (!menu) return;
+    const close = (event: MouseEvent | KeyboardEvent) => {
+      if (event instanceof KeyboardEvent ? event.key === "Escape" : !menuRef.current?.contains(event.target as Node)) setMenu(false);
+    };
+    document.addEventListener("mousedown", close); document.addEventListener("keydown", close);
+    return () => { document.removeEventListener("mousedown", close); document.removeEventListener("keydown", close); };
+  }, [menu]);
+  const href = `/app/community/posts/${post.id}`;
+  const bodyContent = <>
+    <h2>{post.title}</h2>
+    <p className={post.kind === "writing_review" ? "community-quote" : ""}>{post.body}</p>
+    {post.accepted_comment_id && <span className="community-solved"><CheckCircle2 size={14} /> Đã giải đáp</span>}
+  </>;
+  return <article className={`community-post${detail ? " detail" : ""}`}>
     <div className="community-post-head">
       <Avatar name={post.author_name} card={post.author_card} />
-      <div className="community-post-author"><strong>{post.author_name}</strong><Level card={post.author_card} /><span>· {when(post.created_at)}</span></div>
-      <span className={`community-topic topic-${post.topic.toLowerCase()}`}>{post.topic}</span>
-      {!demoMode && <div className="community-menu-wrap"><button type="button" className="community-icon" aria-label="Tùy chọn bài viết" aria-expanded={menu} onClick={() => setMenu(!menu)}><MoreHorizontal size={19} /></button>{menu && <div className="community-menu">{post.author_id === userId ? <button onClick={() => { onAction("delete", post); setMenu(false); }}><X size={14} /> Xóa bài viết</button> : <><button onClick={() => { onAction("report", post); setMenu(false); }}><Flag size={14} /> Báo cáo</button><button onClick={() => { onAction("block", post); setMenu(false); }}><ShieldAlert size={14} /> Chặn tác giả</button></>}<button onClick={() => setMenu(false)}><X size={14} /> Đóng</button></div>}</div>}
+      <div className="community-post-author">
+        <span className="community-post-name"><strong>{post.author_name}</strong><Level card={post.author_card} /></span>
+        <span className="community-post-time">{when(post.created_at)}</span>
+      </div>
+      <div className="community-post-tags"><KindBadge kind={post.kind} /><span className={`community-topic topic-${post.topic.toLowerCase()}`}>{post.topic}</span></div>
+      {!demoMode && <div className="community-menu-wrap" ref={menuRef}>
+        <button type="button" className="community-icon" aria-label="Tùy chọn bài viết" aria-expanded={menu} onClick={() => setMenu(!menu)}><MoreHorizontal size={18} /></button>
+        {menu && <div className="community-menu" role="menu">
+          {post.author_id === userId
+            ? <button role="menuitem" className="danger" onClick={() => { onAction("delete", post); setMenu(false); }}><X size={15} /> Xóa bài viết</button>
+            : <><button role="menuitem" onClick={() => { onAction("report", post); setMenu(false); }}><Flag size={15} /> Báo cáo</button><button role="menuitem" onClick={() => { onAction("block", post); setMenu(false); }}><ShieldAlert size={15} /> Chặn tác giả</button></>}
+        </div>}
+      </div>}
     </div>
-    <Link className="community-post-body" href={`/app/community/posts/${post.id}`}>
-      {post.kind !== "discussion" && <span className="community-kind">{kindText[post.kind]}</span>}
-      <h2>{post.title}</h2>
-      <p className={post.kind === "writing_review" ? "community-quote" : ""}>{post.body}</p>
-      {post.accepted_comment_id && <span className="community-solved"><CheckCircle2 size={14} /> Đã giải đáp</span>}
-    </Link>
+    {detail ? <div className="community-post-body">{bodyContent}</div> : <Link className="community-post-body" href={href}>{bodyContent}</Link>}
     <div className="community-post-actions">
-      <button type="button" className={post.liked ? "selected" : ""} disabled={busy || demoMode} onClick={() => onAction("like", post)} aria-label={post.liked ? "Bỏ thích" : "Thích bài viết"}><Heart size={18} fill={post.liked ? "currentColor" : "none"} /> {post.likes}</button>
-      <Link href={`/app/community/posts/${post.id}`}><MessageCircle size={18} /> {post.comments} bình luận</Link>
-      <button type="button" className={post.saved ? "selected" : ""} disabled={busy || demoMode} onClick={() => onAction("save", post)}><Bookmark size={18} fill={post.saved ? "currentColor" : "none"} /> {post.saved ? "Đã lưu" : "Lưu"}</button>
-      <Link className="community-action-cta" href={`/app/community/posts/${post.id}`}>{post.kind === "writing_review" ? "Góp ý bài viết" : "Thảo luận"} <ArrowRight size={16} /></Link>
+      <button type="button" className={`community-like${post.liked ? " selected" : ""}`} disabled={busy || demoMode} onClick={() => onAction("like", post)} aria-label={post.liked ? "Bỏ thích" : "Thích bài viết"} aria-pressed={post.liked}><Heart size={17} fill={post.liked ? "currentColor" : "none"} /> {post.likes}</button>
+      <Link href={href}><MessageCircle size={17} /> {post.comments}<span className="community-hide-sm"> bình luận</span></Link>
+      <button type="button" className={post.saved ? "selected" : ""} disabled={busy || demoMode} onClick={() => onAction("save", post)} aria-pressed={post.saved}><Bookmark size={17} fill={post.saved ? "currentColor" : "none"} /> {post.saved ? "Đã lưu" : "Lưu"}</button>
+      {!detail && <Link className="community-action-cta" href={href}>{post.kind === "writing_review" || post.kind === "speaking_review" ? "Góp ý" : post.kind === "question" ? "Trả lời" : "Thảo luận"} <ArrowRight size={15} /></Link>}
     </div>
   </article>;
 }
 
-function Composer({ onCreate }: { onCreate: (kind?: PostKind) => void }) {
+function Composer({ me, onCreate }: { me: Me; onCreate: (draft: Draft) => void }) {
   return <section className="community-composer" aria-label="Tạo bài viết">
-    <div className="community-composer-main"><Avatar name="B" /><button onClick={() => onCreate()} className="community-composer-prompt">Bạn muốn chia sẻ điều gì?</button><button className="community-primary" onClick={() => onCreate()}>Đăng bài</button></div>
-    <div className="community-composer-types"><button onClick={() => onCreate("question")}><Search size={16} /> Câu hỏi</button><button onClick={() => onCreate("writing_review")}><PenLine size={16} /> Sửa bài Writing</button><button onClick={() => onCreate("speaking_review")}><MessageCircle size={16} /> Sửa bài Speaking</button><button onClick={() => onCreate("discussion")}><Plus size={16} /> Thảo luận</button></div>
+    <div className="community-composer-main">
+      {me ? <AvatarFrame avatar={me.avatar} frame={me.frame} size={44} alt="Ảnh đại diện của bạn" /> : <span className="community-avatar" aria-hidden="true"><UsersRound size={20} /></span>}
+      <button type="button" onClick={() => onCreate({ kind: "question" })} className="community-composer-prompt"><span>{me?.name ? `${me.name.split(" ").at(-1)}, bạn` : "Bạn"} đang thắc mắc điều gì về IELTS?</span><span className="community-composer-send"><Send size={16} /></span></button>
+    </div>
+    <div className="community-composer-types">
+      {kinds.map(({ key }) => { const { label, hint, tone, Icon } = kindMeta[key]; return <button type="button" key={key} className={`tone-${tone}`} onClick={() => onCreate({ kind: key })}>
+        <span className="community-type-icon"><Icon size={18} strokeWidth={2.2} /></span>
+        <span className="community-type-copy"><strong>{label}</strong><small>{hint}</small></span>
+      </button>; })}
+    </div>
   </section>;
 }
 
-function CreateDialog({ initialKind, onClose, onCreated }: { initialKind: PostKind; onClose: () => void; onCreated: (id: string) => void }) {
+function CreateDialog({ draft, onClose, onCreated }: { draft: Draft; onClose: () => void; onCreated: (id: string) => void }) {
   const dialogRef = useRef<HTMLElement>(null);
-  const [kind, setKind] = useState<PostKind>(initialKind), [topic, setTopic] = useState<Topic>("IELTS");
-  const [title, setTitle] = useState(""), [body, setBody] = useState(""), [error, setError] = useState(""), [busy, setBusy] = useState(false);
+  const [kind, setKind] = useState<PostKind>(draft.kind), [topic, setTopic] = useState<Topic>(draft.topic ?? (draft.kind === "writing_review" ? "Writing" : draft.kind === "speaking_review" ? "Speaking" : "IELTS"));
+  const [title, setTitle] = useState(draft.title ?? ""), [body, setBody] = useState(""), [error, setError] = useState(""), [busy, setBusy] = useState(false);
   useEffect(() => {
     const dialog = dialogRef.current;
-    dialog?.querySelector<HTMLInputElement>("input")?.focus();
+    dialog?.querySelector<HTMLInputElement>(draft.title ? "textarea" : "input")?.focus();
     const onKey = (event: KeyboardEvent) => {
       if (event.key === "Escape") onClose();
       if (event.key !== "Tab" || !dialog) return;
@@ -114,7 +165,7 @@ function CreateDialog({ initialKind, onClose, onCreated }: { initialKind: PostKi
     };
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
-  }, [onClose]);
+  }, [onClose, draft.title]);
   async function submit(event: React.FormEvent) {
     event.preventDefault(); setError("");
     if (demoMode) { setError("Bản xem trước không lưu bài. Hãy đăng nhập vào hệ thống thật để đăng."); return; }
@@ -123,17 +174,23 @@ function CreateDialog({ initialKind, onClose, onCreated }: { initialKind: PostKi
     catch (cause) { setError(cause instanceof Error ? cause.message : "Không thể đăng bài"); }
     finally { setBusy(false); }
   }
+  const { hint } = kindMeta[kind];
   return <div className="community-dialog-backdrop" onMouseDown={(event) => { if (event.target === event.currentTarget) onClose(); }}><section ref={dialogRef} role="dialog" aria-modal="true" aria-labelledby="community-dialog-title" className="community-dialog">
-    <header><h2 id="community-dialog-title">Tạo bài đăng</h2><button type="button" onClick={onClose} aria-label="Đóng"><X size={20} /></button></header>
-    <form onSubmit={submit}><div className="community-kind-tabs" role="group" aria-label="Loại bài viết">{kinds.map((option) => <button type="button" key={option.key} className={kind === option.key ? "active" : ""} onClick={() => setKind(option.key)}>{option.label}</button>)}</div>
-      <label>Tiêu đề<input required minLength={8} maxLength={160} value={title} onChange={(event) => setTitle(event.target.value)} placeholder={kind === "question" ? "Bạn đang thắc mắc điều gì?" : "Đặt tiêu đề rõ ràng cho bài viết"} /></label>
-      <label>Nội dung<textarea required minLength={20} maxLength={12000} rows={8} value={body} onChange={(event) => setBody(event.target.value)} placeholder={kind === "writing_review" ? "Dán bài viết và nêu phần bạn muốn nhận góp ý…" : "Viết nội dung hoặc câu hỏi của bạn…"} /></label>
+    <header><div><h2 id="community-dialog-title">Tạo bài viết</h2><p>{hint}</p></div><button type="button" className="community-icon" onClick={onClose} aria-label="Đóng"><X size={20} /></button></header>
+    <form onSubmit={submit}>
+      <div className="community-kind-tabs" role="radiogroup" aria-label="Loại bài viết">{kinds.map((option) => { const { tone, Icon } = kindMeta[option.key]; return <button type="button" role="radio" aria-checked={kind === option.key} key={option.key} className={`tone-${tone}${kind === option.key ? " active" : ""}`} onClick={() => setKind(option.key)}><Icon size={15} /> {option.label}</button>; })}</div>
+      <label>Tiêu đề<input required minLength={8} maxLength={160} value={title} onChange={(event) => setTitle(event.target.value)} placeholder={kind === "question" ? "Ví dụ: Khi nào dùng present perfect trong Task 1?" : kind === "writing_review" ? "Ví dụ: Nhờ góp ý Task 2 – chủ đề Education" : "Đặt tiêu đề rõ ràng cho bài viết"} /><small className="community-count">{title.length}/160</small></label>
+      <label>Nội dung<textarea required minLength={20} maxLength={12000} rows={8} value={body} onChange={(event) => setBody(event.target.value)} placeholder={kind === "writing_review" ? "Dán đề bài và bài viết, sau đó nêu phần bạn muốn được góp ý (ý tưởng, từ vựng, ngữ pháp…)" : kind === "speaking_review" ? "Ghi câu hỏi Speaking và câu trả lời của bạn, hoặc mô tả âm bạn khó phát âm…" : "Viết nội dung hoặc câu hỏi của bạn…"} /><small className="community-count">{body.trim().length < 20 ? `Tối thiểu 20 ký tự · ${body.trim().length}/20` : `${body.length}/12000`}</small></label>
       <div className="community-form-row"><label>Chủ đề<select value={topic} onChange={(event) => setTopic(event.target.value as Topic)}>{topics.map((value) => <option key={value}>{value}</option>)}</select></label><div className="community-visibility"><UsersRound size={16} /><span>Công khai với cộng đồng học tập</span></div></div>
-      {kind === "speaking_review" && <p className="community-form-note">Hãy mô tả câu hỏi Speaking hoặc phần phát âm cần góp ý. Tải âm thanh sẽ được mở sau khi luồng lưu trữ riêng tư hoàn tất.</p>}
+      {kind === "speaking_review" && <p className="community-form-note">Tải âm thanh sẽ được mở sau khi luồng lưu trữ riêng tư hoàn tất. Hiện tại hãy mô tả bằng chữ.</p>}
       {error && <p className="community-error" role="alert">{error}</p>}
-      <footer><button type="button" className="community-secondary" onClick={onClose}>Hủy</button><button type="submit" className="community-primary" disabled={busy || !title.trim() || !body.trim()}>{busy ? "Đang đăng…" : "Đăng bài"}</button></footer>
+      <footer><button type="button" className="button subtle" onClick={onClose}>Hủy</button><button type="submit" className="button primary" disabled={busy || title.trim().length < 8 || body.trim().length < 20}><Send size={15} /> {busy ? "Đang đăng…" : "Đăng bài"}</button></footer>
     </form>
   </section></div>;
+}
+
+function Skeleton() {
+  return <div className="community-skeleton" aria-hidden="true"><div><i className="circle" /><i className="line short" /></div><i className="line" /><i className="line" /><i className="line half" /></div>;
 }
 
 export function Community({ canManage = false }: { canManage?: boolean }) {
@@ -143,15 +200,34 @@ export function Community({ canManage = false }: { canManage?: boolean }) {
   const unavailable = Boolean(special && !["posts", "new", "saved", "mine", "notifications", "moderation"].includes(special));
   const [posts, setPosts] = useState<Post[]>([]), [post, setPost] = useState<Post | null>(null), [replies, setReplies] = useState<Comment[]>([]), [userId, setUserId] = useState("");
   const [notifications, setNotifications] = useState<Notification[]>([]), [reports, setReports] = useState<Report[]>([]);
-  const [filter, setFilter] = useState("all"), [query, setQuery] = useState(""), [appliedQuery, setAppliedQuery] = useState("");
+  const [kindFilter, setKindFilter] = useState("all"), [topicFilter, setTopicFilter] = useState<Topic | "">(""), [query, setQuery] = useState(""), [appliedQuery, setAppliedQuery] = useState("");
   const [page, setPage] = useState(0), [hasMore, setHasMore] = useState(false), [loading, setLoading] = useState(true), [busy, setBusy] = useState(false), [error, setError] = useState(""), [notice, setNotice] = useState("");
-  const [createKind, setCreateKind] = useState<PostKind | null>(null), [comment, setComment] = useState(""), [replyTo, setReplyTo] = useState<string | null>(null);
+  const [draft, setDraft] = useState<Draft | null>(null), [comment, setComment] = useState(""), [replyTo, setReplyTo] = useState<string | null>(null);
   const [reportPost, setReportPost] = useState<Post | null>(null), [reportReason, setReportReason] = useState("spam");
+  const [me, setMe] = useState<Me>(null);
+  const filtered = kindFilter !== "all" || Boolean(topicFilter) || Boolean(appliedQuery);
+  const feedView = !detailId && !special;
+
+  useEffect(() => {
+    if (demoMode) return;
+    let active = true;
+    void (async () => {
+      const db = createClient();
+      const { data: auth } = await db.auth.getUser();
+      if (!auth.user) return;
+      const { data } = await db.from("profiles").select("avatar,avatar_frame,display_name").eq("id", auth.user.id).maybeSingle();
+      if (active) setMe({ avatar: data?.avatar || "harry", frame: data?.avatar_frame || "classic", name: data?.display_name && data.display_name.trim() !== "Learner" ? data.display_name.trim() : "" });
+    })();
+    return () => { active = false; };
+  }, []);
 
   const load = useCallback(async (nextPage = 0, append = false) => {
     setLoading(true); setError("");
     if (unavailable || special === "moderation" && !canManage) { setLoading(false); return; }
-    if (demoMode) { setPosts(samplePosts.filter((item) => filter === "all" || filter === "review" && item.kind.includes("review") || item.kind === filter || item.topic === filter).filter((item) => !appliedQuery || `${item.title} ${item.body}`.toLowerCase().includes(appliedQuery.toLowerCase()))); setPost(samplePosts.find((item) => item.id === detailId) ?? null); setLoading(false); return; }
+    if (demoMode) {
+      setPosts(samplePosts.filter((item) => kindFilter === "all" || kindFilter === "review" && item.kind.includes("review") || item.kind === kindFilter).filter((item) => !topicFilter || item.topic === topicFilter).filter((item) => !appliedQuery || `${item.title} ${item.body}`.toLowerCase().includes(appliedQuery.toLowerCase())));
+      setPost(samplePosts.find((item) => item.id === detailId) ?? null); setLoading(false); return;
+    }
     try {
       if (detailId) {
         const result = await api<DetailResult>("GET", new URLSearchParams({ view: "post", id: detailId }).toString());
@@ -162,21 +238,24 @@ export function Community({ canManage = false }: { canManage?: boolean }) {
         const result = await api<{ reports: Report[] }>("GET", "view=reports"); setReports(result.reports);
       } else {
         const params = new URLSearchParams({ view: special === "saved" ? "saved" : special === "mine" ? "mine" : "feed", page: String(nextPage) });
-        if (filter === "review" || ["question", "discussion", "writing_review", "speaking_review"].includes(filter)) params.set("kind", filter);
-        else if (topics.includes(filter as Topic)) params.set("topic", filter);
+        if (kindFilter !== "all") params.set("kind", kindFilter);
+        if (topicFilter) params.set("topic", topicFilter);
         if (appliedQuery) params.set("q", appliedQuery);
         const result = await api<FeedResult>("GET", params.toString());
         setPosts((current) => append ? [...current, ...result.posts] : result.posts); setHasMore(result.hasMore); setPage(nextPage); setUserId(result.userId);
       }
     } catch (cause) { setError(cause instanceof Error ? cause.message : "Không thể tải dữ liệu"); }
     finally { setLoading(false); }
-  }, [detailId, special, filter, appliedQuery, unavailable, canManage]);
+  }, [detailId, special, kindFilter, topicFilter, appliedQuery, unavailable, canManage]);
 
   useEffect(() => {
     let active = true;
     queueMicrotask(() => { if (active) void load(); });
     return () => { active = false; };
   }, [load]);
+
+  function clearFilters() { setKindFilter("all"); setTopicFilter(""); setQuery(""); setAppliedQuery(""); }
+  function pickTopic(item: Topic) { if (special) router.push("/app/community"); setTopicFilter((current) => current === item ? "" : item); }
 
   async function action(type: string, item: Post) {
     if (type === "report") { setReportPost(item); return; }
@@ -241,35 +320,60 @@ export function Community({ canManage = false }: { canManage?: boolean }) {
     finally { setBusy(false); }
   }
 
+  const navLinks = [
+    { href: "/app/community", key: "", label: "Bảng tin", Icon: UsersRound },
+    { href: "/app/community/saved", key: "saved", label: "Bài đã lưu", Icon: Bookmark },
+    { href: "/app/community/mine", key: "mine", label: "Bài của tôi", Icon: PenLine },
+    { href: "/app/community/notifications", key: "notifications", label: "Thông báo", Icon: Bell },
+    ...(canManage ? [{ href: "/app/community/moderation", key: "moderation", label: "Kiểm duyệt", Icon: Flag }] : []),
+  ];
+  const activeNav = detailId ? "posts" : special;
+
+  const emptyFeed = special === "saved" ? <section className="community-empty"><Sticker name="star" size={64} tilt={-6} /><h2>Chưa có bài nào được lưu</h2><p>Nhấn <Bookmark size={13} /> Lưu ở bài viết hữu ích để đọc lại sau.</p><Link className="button primary" href="/app/community">Khám phá bảng tin <ArrowRight size={15} /></Link></section>
+    : special === "mine" ? <section className="community-empty"><Sticker name="pencil" size={64} tilt={-6} /><h2>Bạn chưa đăng bài nào</h2><p>Đặt câu hỏi đầu tiên hoặc nhờ cộng đồng góp ý bài viết của bạn.</p><button className="button primary" onClick={() => setDraft({ kind: "question" })}><HelpCircle size={16} /> Đặt câu hỏi</button></section>
+    : filtered ? <section className="community-empty"><Sticker name="globe" size={64} tilt={-6} /><h2>Không có bài viết khớp bộ lọc</h2><p>Thử bỏ bớt bộ lọc, hoặc là người đầu tiên mở chủ đề này.</p><div className="community-empty-actions"><button className="button subtle" onClick={clearFilters}><X size={15} /> Xóa bộ lọc</button><button className="button primary" onClick={() => setDraft({ kind: kindFilter === "review" ? "writing_review" : kindFilter === "all" ? "question" : kindFilter as PostKind, topic: topicFilter || undefined })}><Sparkles size={15} /> Tạo bài viết</button></div></section>
+    : <section className="community-empty welcome"><Sticker name="bubble" size={72} tilt={-6} /><h2>Hãy mở đầu cuộc trò chuyện!</h2><p>Bảng tin đang chờ bài viết đầu tiên. Một câu hỏi nhỏ của bạn cũng có thể giúp nhiều người khác.</p>
+      <div className="community-starters"><span><Lightbulb size={15} /> Gợi ý để bắt đầu</span>{starters.map((item) => <button type="button" key={item.title} onClick={() => setDraft(item)}><KindBadge kind={item.kind} /><strong>{item.title}</strong><ArrowRight size={16} /></button>)}</div>
+      <div className="community-empty-actions"><button className="button primary" onClick={() => setDraft({ kind: "question" })}><HelpCircle size={16} /> Đặt câu hỏi</button><button className="button subtle" onClick={() => setDraft({ kind: "writing_review" })}><PenLine size={16} /> Nhờ sửa Writing</button></div></section>;
+
   return <div className="community-page">
     {demoMode && <div className="community-demo-note">Bản xem trước · Nội dung minh họa, chưa phải bài đăng thật.</div>}
-    {notice && <div className="community-notice" role="status">{notice}<button onClick={() => setNotice("")} aria-label="Đóng thông báo"><X size={15} /></button></div>}
-    {error && <div className="community-error" role="alert">{error}<button onClick={() => { setError(""); void load(); }}>Thử lại</button></div>}
+    {feedView && <PageHeader className="community-head" eyebrow="Cộng đồng học tập" title="Hỏi nhanh, sửa bài, cùng tiến bộ" description="Đặt câu hỏi IELTS, nhờ góp ý Writing – Speaking và học cùng những người có chung mục tiêu." sticker="bubble" actions={<button type="button" className="button primary" onClick={() => setDraft({ kind: "question" })}><PenLine size={16} /> Tạo bài viết</button>} />}
+    {notice && <div className="community-notice" role="status"><CheckCircle2 size={17} /><span>{notice}</span><button onClick={() => setNotice("")} aria-label="Đóng thông báo"><X size={15} /></button></div>}
+    {error && <div className="community-error" role="alert"><ShieldAlert size={17} /><span>{error}</span><button onClick={() => { setError(""); void load(); }}>Thử lại</button></div>}
     <div className="community-layout"><main className="community-main">
       {detailId ? <>
         <Link className="community-back" href="/app/community"><ArrowLeft size={16} /> Bảng tin cộng đồng</Link>
-        {loading && !post ? <div className="community-skeleton" /> : post ? <>
-          <PostCard post={post} onAction={action} busy={busy} userId={userId} />
-          <section className="community-comments"><div className="community-section-title"><h2>Câu trả lời ({replies.length})</h2>{post.kind === "question" && post.accepted_comment_id && <span className="community-solved"><CheckCircle2 size={15} /> Đã giải đáp</span>}</div>
-            {replies.length ? replies.filter((item) => !item.parent_id).map((item) => <div className="community-comment" key={item.id}><Avatar name={item.author_name} card={item.author_card} small /><div className="community-comment-content"><div><strong>{item.author_name}</strong><Level card={item.author_card} /><span> · {when(item.created_at)}</span>{post.accepted_comment_id === item.id && <em><Check size={13} /> Câu trả lời hữu ích nhất</em>}</div><p>{item.body}</p><div className="community-comment-actions"><button onClick={() => setReplyTo(item.id)}>Trả lời</button>{post.kind === "question" && post.author_id === userId && <button onClick={() => void accept(item.id)} disabled={busy}>{post.accepted_comment_id === item.id ? "Bỏ chọn" : "Chọn hữu ích nhất"}</button>}{item.author_id === userId && <button onClick={() => void deleteComment(item.id)} disabled={busy}>Xóa</button>}</div>{replies.filter((reply) => reply.parent_id === item.id).map((reply) => <div className="community-comment nested" key={reply.id}><Avatar name={reply.author_name} card={reply.author_card} small /><div><strong>{reply.author_name}</strong><Level card={reply.author_card} /><span> · {when(reply.created_at)}</span><p>{reply.body}</p>{reply.author_id === userId && <button className="community-comment-delete" onClick={() => void deleteComment(reply.id)}>Xóa</button>}</div></div>)}</div></div>) : <p className="community-empty-inline">Chưa có phản hồi. Hãy bắt đầu cuộc thảo luận.</p>}
-            {!demoMode && <form onSubmit={sendComment} className="community-comment-form"><label htmlFor="community-comment">Viết bình luận</label>{replyTo && <div className="community-replying">Đang trả lời bình luận <button type="button" onClick={() => setReplyTo(null)}>Hủy</button></div>}<textarea id="community-comment" minLength={2} maxLength={3000} required rows={3} placeholder="Góp ý cụ thể và tôn trọng người học khác…" value={comment} onChange={(event) => setComment(event.target.value)} /><button className="community-primary" disabled={busy || !comment.trim()}><Send size={15} /> Gửi bình luận</button></form>}
+        {loading && !post ? <Skeleton /> : post ? <>
+          <PostCard post={post} onAction={action} busy={busy} userId={userId} detail />
+          <section className="community-comments"><div className="community-section-title"><h2>Câu trả lời <span className="community-count-pill">{replies.length}</span></h2>{post.kind === "question" && post.accepted_comment_id && <span className="community-solved"><CheckCircle2 size={15} /> Đã giải đáp</span>}</div>
+            {replies.length ? replies.filter((item) => !item.parent_id).map((item) => <div className={`community-comment${post.accepted_comment_id === item.id ? " accepted" : ""}`} key={item.id}><Avatar name={item.author_name} card={item.author_card} small /><div className="community-comment-content"><div className="community-comment-meta"><strong>{item.author_name}</strong><Level card={item.author_card} /><span>{when(item.created_at)}</span>{post.accepted_comment_id === item.id && <em><Check size={13} /> Hữu ích nhất</em>}</div><p>{item.body}</p><div className="community-comment-actions"><button onClick={() => { setReplyTo(item.id); document.getElementById("community-comment")?.focus(); }}>Trả lời</button>{post.kind === "question" && post.author_id === userId && <button onClick={() => void accept(item.id)} disabled={busy}>{post.accepted_comment_id === item.id ? "Bỏ chọn" : "Chọn hữu ích nhất"}</button>}{item.author_id === userId && <button onClick={() => void deleteComment(item.id)} disabled={busy}>Xóa</button>}</div>{replies.filter((reply) => reply.parent_id === item.id).map((reply) => <div className="community-comment nested" key={reply.id}><Avatar name={reply.author_name} card={reply.author_card} small /><div className="community-comment-content"><div className="community-comment-meta"><strong>{reply.author_name}</strong><Level card={reply.author_card} /><span>{when(reply.created_at)}</span></div><p>{reply.body}</p>{reply.author_id === userId && <div className="community-comment-actions"><button onClick={() => void deleteComment(reply.id)}>Xóa</button></div>}</div></div>)}</div></div>) : <div className="community-empty-inline"><MessageCircle size={20} /> Chưa có phản hồi. Hãy là người đầu tiên góp ý!</div>}
+            {!demoMode && <form onSubmit={sendComment} className="community-comment-form"><label htmlFor="community-comment">Viết bình luận</label>{replyTo && <div className="community-replying">Đang trả lời {replies.find((item) => item.id === replyTo)?.author_name ?? "bình luận"} <button type="button" onClick={() => setReplyTo(null)}>Hủy</button></div>}<textarea id="community-comment" minLength={2} maxLength={3000} required rows={3} placeholder="Góp ý cụ thể và tôn trọng người học khác…" value={comment} onChange={(event) => setComment(event.target.value)} /><button className="button primary" disabled={busy || !comment.trim()}><Send size={15} /> Gửi bình luận</button></form>}
           </section>
-        </> : !loading && <section className="community-empty">Không tìm thấy bài viết. <Link href="/app/community">Quay về bảng tin</Link></section>}
-      </> : special === "notifications" ? <section className="community-panel"><div className="community-section-title"><h1>Thông báo cộng đồng</h1><Bell size={22} /></div>{loading ? <div className="community-skeleton" /> : notifications.length ? notifications.map((item) => <button className={`community-notification ${item.read_at ? "" : "unread"}`} key={item.id} disabled={busy} onClick={() => void openNotification(item)}><MessageCircle size={19} /><span><strong>{item.actor_name}</strong> đã bình luận về bài viết của bạn <small>{when(item.created_at)}</small></span><ArrowRight size={16} /></button>) : <div className="community-empty">Chưa có thông báo mới.</div>}</section>
-      : special === "moderation" && canManage ? <section className="community-panel"><div className="community-section-title"><h1>Báo cáo cần xem xét</h1><Flag size={22} /></div>{loading ? <div className="community-skeleton" /> : reports.length ? reports.map((item) => <div className="community-report" key={item.id}><div><strong>{item.reason}</strong><p>{item.detail || "Không có mô tả thêm"}</p><small>{when(item.created_at)}</small></div><div><Link href={`/app/community/posts/${item.post_id}`}>Xem bài</Link><button disabled={busy} onClick={() => void moderate(item, true)}>Ẩn bài</button><button disabled={busy} onClick={() => void moderate(item, false)}>Bỏ qua</button></div></div>) : <div className="community-empty">Không có báo cáo đang chờ.</div>}</section>
-      : special === "moderation" || unavailable ? <section className="community-empty"><Sticker name="lock" size={60} tilt={-6} /><h1>{unavailable ? "Chức năng này chưa mở" : "Bạn không có quyền xem trang này"}</h1><p>{unavailable ? "Trang này sẽ xuất hiện khi dữ liệu và quyền riêng tư được hoàn thiện." : "Khu vực kiểm duyệt chỉ dành cho quản trị viên."}</p><Link href="/app/community">Về bảng tin</Link></section>
+        </> : !loading && <section className="community-empty"><Sticker name="globe" size={64} tilt={-6} /><h2>Không tìm thấy bài viết</h2><p>Bài viết có thể đã bị xóa hoặc ẩn.</p><Link className="button primary" href="/app/community">Quay về bảng tin</Link></section>}
+      </> : special === "notifications" ? <section className="community-panel"><div className="community-section-title"><h1><Bell size={20} /> Thông báo cộng đồng</h1></div>{loading ? <Skeleton /> : notifications.length ? notifications.map((item) => <button className={`community-notification ${item.read_at ? "" : "unread"}`} key={item.id} disabled={busy} onClick={() => void openNotification(item)}><span className="community-notification-icon"><MessageCircle size={17} /></span><span><strong>{item.actor_name}</strong> đã bình luận về bài viết của bạn <small>{when(item.created_at)}</small></span><ArrowRight size={16} /></button>) : <div className="community-empty bare"><Sticker name="bubble" size={60} tilt={-6} /><h2>Chưa có thông báo mới</h2><p>Khi có người bình luận bài viết của bạn, thông báo sẽ xuất hiện ở đây.</p></div>}</section>
+      : special === "moderation" && canManage ? <section className="community-panel"><div className="community-section-title"><h1><Flag size={20} /> Báo cáo cần xem xét</h1></div>{loading ? <Skeleton /> : reports.length ? reports.map((item) => <div className="community-report" key={item.id}><div><strong>{item.reason}</strong><p>{item.detail || "Không có mô tả thêm"}</p><small>{when(item.created_at)}</small></div><div><Link href={`/app/community/posts/${item.post_id}`}>Xem bài</Link><button disabled={busy} onClick={() => void moderate(item, true)}>Ẩn bài</button><button disabled={busy} onClick={() => void moderate(item, false)}>Bỏ qua</button></div></div>) : <div className="community-empty bare"><Sticker name="stamp" size={60} tilt={-6} /><h2>Không có báo cáo đang chờ</h2></div>}</section>
+      : special === "moderation" || unavailable ? <section className="community-empty"><ShieldAlert size={30} /><h1>{unavailable ? "Chức năng này chưa mở" : "Bạn không có quyền xem trang này"}</h1><p>{unavailable ? "Trang này sẽ xuất hiện khi dữ liệu và quyền riêng tư được hoàn thiện." : "Khu vực kiểm duyệt chỉ dành cho quản trị viên."}</p><Link className="button primary" href="/app/community">Về bảng tin</Link></section>
       : <>
-        <div className="community-toolbar"><div className="community-tabs" role="tablist" aria-label="Lọc bảng tin">{tabs.map((tab) => <button role="tab" aria-selected={filter === tab.key} className={filter === tab.key ? "active" : ""} key={tab.key} onClick={() => setFilter(tab.key)}>{tab.label}</button>)}</div><form className="community-search" onSubmit={(event) => { event.preventDefault(); setAppliedQuery(query.trim()); }}><Search size={16} /><input aria-label="Tìm bài viết cộng đồng" placeholder="Tìm bài viết…" value={query} onChange={(event) => setQuery(event.target.value)} /><button type="submit" aria-label="Tìm kiếm">→</button></form></div>
-        {special === "saved" || special === "mine" ? <div className="community-list-title"><Link href="/app/community"><ArrowLeft size={16} /> Bảng tin</Link><h1>{special === "saved" ? "Bài đã lưu" : "Bài của tôi"}</h1></div> : <Composer onCreate={(kind) => setCreateKind(kind ?? "discussion")} />}
-        <div className="community-feed">{loading && !posts.length ? <><div className="community-skeleton" /><div className="community-skeleton" /></> : posts.length ? posts.map((item) => <PostCard key={item.id} post={item} onAction={action} busy={busy} userId={userId} />) : <section className="community-empty"><Sparkles size={30} /><h2>Chưa có bài viết phù hợp</h2><p>Hãy thử chủ đề khác hoặc đặt câu hỏi đầu tiên cho cộng đồng.</p><button className="community-primary" onClick={() => setCreateKind("question")}>Đặt câu hỏi</button></section>}</div>
+        {special === "saved" || special === "mine" ? <div className="community-list-title"><Link href="/app/community"><ArrowLeft size={16} /> Bảng tin</Link><h1>{special === "saved" ? "Bài đã lưu" : "Bài của tôi"}</h1></div> : <Composer me={me} onCreate={setDraft} />}
+        <div className="community-toolbar">
+          <div className="community-toolbar-row">
+            <div className="community-tabs" role="tablist" aria-label="Loại bài viết">{kindTabs.map((tab) => <button role="tab" aria-selected={kindFilter === tab.key} className={kindFilter === tab.key ? "active" : ""} key={tab.key} onClick={() => setKindFilter(tab.key)}>{tab.label}</button>)}</div>
+            <form className="community-search" role="search" onSubmit={(event) => { event.preventDefault(); setAppliedQuery(query.trim()); }}><Search size={16} /><input aria-label="Tìm bài viết cộng đồng" placeholder="Tìm bài viết…" value={query} onChange={(event) => { setQuery(event.target.value); if (!event.target.value) setAppliedQuery(""); }} />{query && <button type="button" className="community-search-clear" aria-label="Xóa tìm kiếm" onClick={() => { setQuery(""); setAppliedQuery(""); }}><X size={14} /></button>}<button type="submit" className="community-search-go" aria-label="Tìm kiếm"><ArrowRight size={15} /></button></form>
+          </div>
+          <div className="community-topic-row" role="group" aria-label="Lọc theo chủ đề"><button className={!topicFilter ? "active" : ""} aria-pressed={!topicFilter} onClick={() => setTopicFilter("")}>Mọi chủ đề</button>{topics.map((item) => <button key={item} className={`topic-${item.toLowerCase()}${topicFilter === item ? " active" : ""}`} aria-pressed={topicFilter === item} onClick={() => setTopicFilter(topicFilter === item ? "" : item)}>{item}</button>)}</div>
+        </div>
+        {filtered && !loading && posts.length > 0 && <div className="community-filter-summary"><span>{posts.length}{hasMore ? "+" : ""} bài viết{appliedQuery && <> cho “<strong>{appliedQuery}</strong>”</>}</span><button onClick={clearFilters}><X size={13} /> Xóa bộ lọc</button></div>}
+        <div className="community-feed" aria-busy={loading}>{loading && !posts.length ? <><Skeleton /><Skeleton /></> : posts.length ? posts.map((item) => <PostCard key={item.id} post={item} onAction={action} busy={busy} userId={userId} />) : emptyFeed}</div>
         {hasMore && <button className="community-more" onClick={() => void load(page + 1, true)} disabled={loading}>{loading ? "Đang tải…" : "Xem thêm bài viết"} <ChevronDown size={16} /></button>}
       </>}
     </main><aside className="community-rail" aria-label="Khám phá cộng đồng">
-      <section className="community-rail-card"><h2>Khám phá</h2><Link href="/app/community"><UsersRound size={18} /> Bảng tin <ArrowRight size={15} /></Link><Link href="/app/community/saved"><Bookmark size={18} /> Bài đã lưu <ArrowRight size={15} /></Link><Link href="/app/community/mine"><PenLine size={18} /> Bài của tôi <ArrowRight size={15} /></Link><Link href="/app/community/notifications"><Bell size={18} /> Thông báo <ArrowRight size={15} /></Link>{canManage && <Link href="/app/community/moderation"><Flag size={18} /> Kiểm duyệt <ArrowRight size={15} /></Link>}</section>
-      <section className="community-rail-card"><h2>Chủ đề học tập</h2><p>Chọn kỹ năng bạn muốn cùng thảo luận.</p><div className="community-topic-links">{topics.slice(0, 5).map((item) => <button key={item} onClick={() => { router.push("/app/community"); setFilter(item); }}>{item}</button>)}</div></section>
-      <section className="community-rail-card community-featured-card"><h2>Bài viết gần đây</h2>{posts.slice(0, 3).length ? posts.slice(0, 3).map((item) => <Link key={item.id} href={`/app/community/posts/${item.id}`}><span>{item.title}<small>{item.author_name}</small></span><ArrowRight size={14} /></Link>) : <p>Bài viết mới sẽ xuất hiện ở đây.</p>}</section>
+      <section className="community-rail-card"><h2>Khám phá</h2><nav className="community-rail-nav">{navLinks.map(({ href, key, label, Icon }) => <Link key={href} href={href} className={activeNav === key ? "active" : ""} aria-current={activeNav === key ? "page" : undefined}><span className="community-rail-icon"><Icon size={17} /></span>{label}<ArrowRight size={15} /></Link>)}</nav></section>
+      <section className="community-rail-card"><h2>Chủ đề học tập</h2><p>Lọc nhanh theo kỹ năng bạn quan tâm.</p><div className="community-topic-links">{topics.map((item) => <button key={item} className={`topic-${item.toLowerCase()}${topicFilter === item ? " active" : ""}`} aria-pressed={topicFilter === item} onClick={() => pickTopic(item)}>{item}</button>)}</div></section>
+      {posts.length > 0 && feedView && <section className="community-rail-card community-featured-card"><h2>Bài viết gần đây</h2>{posts.slice(0, 3).map((item) => <Link key={item.id} href={`/app/community/posts/${item.id}`}><span>{item.title}<small>{item.author_name} · {when(item.created_at)}</small></span><ArrowRight size={14} /></Link>)}</section>}
+      <section className="community-rail-card community-rules"><h2><Sparkles size={16} /> Để nhận góp ý tốt</h2><ol>{rules.map((item) => <li key={item}>{item}</li>)}</ol></section>
     </aside></div>
-    {(createKind || special === "new") && <CreateDialog initialKind={createKind ?? "discussion"} onClose={() => { setCreateKind(null); if (special === "new") router.push("/app/community"); }} onCreated={(id) => { setCreateKind(null); router.push(`/app/community/posts/${id}`); }} />}
-    {reportPost && <div className="community-dialog-backdrop"><form className="community-report-dialog" onSubmit={submitReport} role="dialog" aria-modal="true" aria-label="Báo cáo bài viết"><div className="community-section-title"><h2>Báo cáo bài viết</h2><button type="button" onClick={() => setReportPost(null)} aria-label="Đóng"><X size={19} /></button></div><p>Quản trị viên sẽ xem xét báo cáo của bạn.</p><label>Lý do<select value={reportReason} onChange={(event) => setReportReason(event.target.value)}><option value="spam">Spam</option><option value="abuse">Ngôn từ không phù hợp</option><option value="privacy">Thông tin cá nhân</option><option value="other">Khác</option></select></label>{error && <p className="community-error" role="alert">{error}</p>}<button className="community-primary" disabled={busy}>Gửi báo cáo</button></form></div>}
+    {(draft || special === "new") && <CreateDialog key={`${draft?.kind}-${draft?.title ?? ""}`} draft={draft ?? { kind: "discussion" }} onClose={() => { setDraft(null); if (special === "new") router.push("/app/community"); }} onCreated={(id) => { setDraft(null); router.push(`/app/community/posts/${id}`); }} />}
+    {reportPost && <div className="community-dialog-backdrop" onMouseDown={(event) => { if (event.target === event.currentTarget) setReportPost(null); }}><form className="community-report-dialog" onSubmit={submitReport} role="dialog" aria-modal="true" aria-label="Báo cáo bài viết"><div className="community-section-title"><h2>Báo cáo bài viết</h2><button type="button" className="community-icon" onClick={() => setReportPost(null)} aria-label="Đóng"><X size={19} /></button></div><p>Quản trị viên sẽ xem xét báo cáo của bạn.</p><label>Lý do<select value={reportReason} onChange={(event) => setReportReason(event.target.value)}><option value="spam">Spam</option><option value="abuse">Ngôn từ không phù hợp</option><option value="privacy">Thông tin cá nhân</option><option value="other">Khác</option></select></label>{error && <p className="community-error" role="alert">{error}</p>}<div className="community-report-actions"><button type="button" className="button subtle" onClick={() => setReportPost(null)}>Hủy</button><button className="button primary" disabled={busy}><Flag size={15} /> Gửi báo cáo</button></div></form></div>}
   </div>;
 }
