@@ -1,5 +1,5 @@
 import { randomUUID } from "node:crypto";
-import { factDossierSchema } from "./fact-dossier-schema";
+import { factDossierSchema, factualSourceHosts } from "./fact-dossier-schema";
 import { writeArticleFromFacts } from "./fact-dossier";
 import { AiQuotaError, geminiJson } from "./enrichment";
 import { pressDiscoveryFeedUrls, rssProvider, type NewsItem, type NewsSource } from "./providers";
@@ -13,6 +13,11 @@ const searchSchema = { type: "object", additionalProperties: false, required: ["
   facts: { type: "array", items: { type: "object", additionalProperties: false, required: ["claim", "source_url"], properties: { claim: { type: "string" }, source_url: { type: "string" } } } },
 } } as const;
 const eligible = (item: NewsItem) => !item.sensitive && Date.now() - new Date(item.published_at).valueOf() < 48 * 3600000;
+/** A rejected topic consumes a research attempt, not one of the article slots. */
+export function discoveryBudget(articleCount: number, rejectedCount: number, articleLimit: number) {
+  const attemptLimit = Math.min(articleLimit * 4, 24);
+  return articleLimit > 0 && articleCount < articleLimit && articleCount + rejectedCount < attemptLimit;
+}
 function repeatsHeadlinePhrase(text: string, headline: string) {
   const words = (value: string) => value.toLocaleLowerCase("en").match(/[a-z0-9]+/g) ?? [];
   const source = words(headline);
@@ -23,7 +28,7 @@ function repeatsHeadlinePhrase(text: string, headline: string) {
 /** A press headline is a search lead only. Factual notes must come from other pages. */
 export async function findIndependentDossier(item: NewsItem, fetcher: typeof fetch = fetch) {
   const { data } = await geminiJson<{ topic?: string; facts?: { claim: string; source_url: string }[] }>(
-    "Research the event named in the title using Google Search. Use only independently published primary pages or reviewed open sources at nasa.gov, noaa.gov, gov.uk, gov.vn, who.int, un.org, worldbank.org, esa.int or globalvoices.org. Never use a newspaper, the title itself, a search snippet or your memory as factual evidence. Return 8–16 distinct, atomic facts directly supported by at most four specific source pages and a short neutral topic in your own words. If independent pages do not establish enough facts, return an empty facts array. Do not quote source prose or repeat the search-lead headline.",
+    `Research the event named in the title using Google Search. Search in English and the relevant local language. Use only independently published primary pages or reviewed open sources at these domains: ${factualSourceHosts.join(", ")}. Government announcements and original agency data are preferred. Never use a newspaper, the title itself, a search snippet or your memory as factual evidence. Return 8–16 distinct, atomic facts directly supported by at most four specific source pages and a short neutral topic in your own words. Background facts must be directly relevant to the event. If independent pages do not establish enough facts, return an empty facts array. Do not quote source prose or repeat the search-lead headline.`,
     `Event search lead: ${item.title}\nFind independently verifiable facts about this event.`,
     searchSchema, { fetcher, googleSearch: true, temperature: 0, maxOutputTokens: 2200 });
   const dossier = factDossierSchema.safeParse({ topic: data.topic, category: item.category, facts: data.facts ?? [] });
@@ -31,7 +36,7 @@ export async function findIndependentDossier(item: NewsItem, fetcher: typeof fet
   return dossier;
 }
 
-/** One bounded attempt per run; every accepted article remains an unpublished draft. */
+/** One bounded attempt per run; only a fully verified original article becomes public. */
 export async function discoverPressFacts(db: Db, result: DiscoveryRun, settings: NewsAdminSettings, fetcher: typeof fetch = fetch) {
   if (!process.env.GEMINI_API_KEY || settings.daily_rewrite_limit <= 0) return;
   const today = new Date(); today.setUTCHours(0, 0, 0, 0);
@@ -41,7 +46,7 @@ export async function discoverPressFacts(db: Db, result: DiscoveryRun, settings:
     db.from("news_sources").select("*").eq("provider", "ai_rewrite").eq("enabled", true).eq("policy_status", "METADATA_ONLY"),
   ]);
   if (drafts.error || rejected.error || sources.error) throw drafts.error ?? rejected.error ?? sources.error;
-  if ((drafts.count ?? 0) + (rejected.count ?? 0) >= settings.daily_rewrite_limit) return;
+  if (!discoveryBudget(drafts.count ?? 0, rejected.count ?? 0, settings.daily_rewrite_limit)) return;
   const feeds = await Promise.allSettled(((sources.data ?? []) as NewsSource[]).filter((source) => source.feed_url && pressDiscoveryFeedUrls.has(source.feed_url))
     .map(async (source) => {
       const { data: claimed, error: claimError } = await db.rpc("news_claim_source", { p_source_id: source.id });
@@ -98,8 +103,13 @@ export async function discoverPressFacts(db: Db, result: DiscoveryRun, settings:
       rights_basis: `Original AI-assisted draft from verified primary/open facts. Discovery lead: ${item.canonical_url}. Editorial dossier: ${JSON.stringify({ topic: written.dossier.topic, category: written.dossier.category, facts: written.dossier.facts, model: written.model, verified_with: written.verified_with, reviewed_with: written.reviewed_with })}`,
     });
     if (bodyError) { await db.from("news_articles").delete().eq("id", id); throw bodyError; }
-    const { error: dossierError } = await db.from("news_fact_dossiers").insert({ article_id: id, dossier: written.dossier, verification_model: written.verified_with });
+    const { error: dossierError } = await db.from("news_fact_dossiers").insert({
+      article_id: id, dossier: written.dossier, verification_model: written.verified_with,
+      ai_reviewed_at: new Date().toISOString(), ai_review_model: written.reviewed_with,
+    });
     if (dossierError) { await db.from("news_articles").delete().eq("id", id); throw dossierError; }
+    const { error: publishError } = await db.from("news_articles").update({ publication_status: "published" }).eq("id", id);
+    if (publishError) throw publishError;
     result.rewritesAdded++;
   } catch (cause) {
     const message = cause instanceof Error ? cause.message : "Press discovery failed";

@@ -17,6 +17,13 @@ it("rejects a newspaper source and a thin or duplicated dossier", () => {
   expect(factDossierSchema.safeParse({ topic: "A new science launch", category: "Science", facts: facts.map(() => facts[0]) }).success).toBe(false);
 });
 
+it("accepts relevant official Vietnam and regional sources without admitting lookalike hosts", () => {
+  for (const host of ["chinhphu.vn", "mot.gov.sg", "lta.gov.sg", "unesco.org"]) {
+    expect(factDossierSchema.safeParse({ topic: "A regional policy change", category: "World News", facts: facts.map((fact) => ({ ...fact, source_url: `https://${host}/announcement` })) }).success).toBe(true);
+  }
+  expect(factDossierSchema.safeParse({ topic: "A regional policy change", category: "World News", facts: facts.map((fact) => ({ ...fact, source_url: "https://mot.gov.sg.example.com/announcement" })) }).success).toBe(false);
+});
+
 it("checks factual notes against the cited page before asking AI to write", async () => {
   const previous = process.env.GEMINI_API_KEY;
   process.env.GEMINI_API_KEY = "test-key";

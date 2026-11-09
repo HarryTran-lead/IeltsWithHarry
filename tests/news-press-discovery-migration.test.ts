@@ -3,7 +3,7 @@ import { resolve } from "node:path";
 import { expect, it } from "vitest";
 import { PGlite } from "@electric-sql/pglite";
 
-it("re-enables discovery only and publishes original text only after dossier review", async () => {
+it("re-enables discovery only and publishes original text after AI or admin review", async () => {
   const db = new PGlite();
   try {
     await db.exec(`
@@ -23,6 +23,7 @@ it("re-enables discovery only and publishes original text only after dossier rev
     `);
     const migration = readFileSync(resolve("supabase/migrations/202611080006_press_fact_discovery.sql"), "utf8").split("-- Primary-source search")[0];
     await db.exec(migration);
+    await db.exec(readFileSync(resolve("supabase/migrations/202611090001_ai_reviewed_fact_publication.sql"), "utf8"));
     expect((await db.query<{ enabled: boolean; auto_publish: boolean }>("select enabled,auto_publish from public.news_sources")).rows[0]).toEqual({ enabled: true, auto_publish: false });
     expect((await db.query<{ daily_rewrite_limit: number }>("select daily_rewrite_limit from public.news_admin_settings")).rows[0].daily_rewrite_limit).toBe(4);
     await db.exec(`
@@ -39,5 +40,17 @@ it("re-enables discovery only and publishes original text only after dossier rev
     await db.exec("update public.news_articles set publication_status='published' where provider='manual'");
     expect((await db.query<{ publication_status: string }>("select publication_status from public.news_articles")).rows[0].publication_status).toBe("published");
     await expect(db.exec("update public.news_article_bodies set body_text='A modified passage'")).rejects.toThrow("Unpublish and re-review");
+    await db.exec(`
+      insert into public.news_articles values ('44444444-4444-4444-8444-444444444444','manual','review','{"fact_discovery":true}');
+      insert into public.news_article_bodies values ('44444444-4444-4444-8444-444444444444',true,'Another original verified passage',null,'https://chinhphu.vn/test');
+      insert into public.news_fact_dossiers(article_id,dossier,verification_model,ai_reviewed_at,ai_review_model) values
+        ('44444444-4444-4444-8444-444444444444','{"facts":[{},{},{},{},{},{},{},{}]}','gemini-test',now(),'gemini-review');
+      update public.news_articles set publication_status='published' where id='44444444-4444-4444-8444-444444444444';
+    `);
+    expect((await db.query<{ publication_status: string }>("select publication_status from public.news_articles where id='44444444-4444-4444-8444-444444444444'")).rows[0].publication_status).toBe("published");
+    await db.exec("update public.news_articles set publication_status='review' where id='44444444-4444-4444-8444-444444444444'");
+    await db.exec("update public.news_article_bodies set body_text='A changed draft' where article_id='44444444-4444-4444-8444-444444444444'");
+    expect((await db.query<{ ai_reviewed_at: string | null }>("select ai_reviewed_at from public.news_fact_dossiers where article_id='44444444-4444-4444-8444-444444444444'")).rows[0].ai_reviewed_at).toBeNull();
+    await expect(db.exec("update public.news_articles set publication_status='published' where id='44444444-4444-4444-8444-444444444444'")).rejects.toThrow("fact dossier");
   } finally { await db.close(); }
 }, 30000);
