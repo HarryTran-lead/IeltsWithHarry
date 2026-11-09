@@ -53,7 +53,7 @@ export async function writeArticleFromFacts(input: unknown, fetcher: typeof fetc
     const body = String(data.body ?? "").trim();
     const words = body.split(/\s+/).filter(Boolean).length;
     const quoted = /[“”"«»]/.test(body);
-    if (title.length >= 5 && title.length <= 180 && words >= 350 && words <= 650 && !quoted) {
+    if (title.length >= 5 && title.length <= 180 && words >= 300 && words <= 650 && !quoted) {
       accepted = { title, body, model };
       break;
     }
