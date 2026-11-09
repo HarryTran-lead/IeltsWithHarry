@@ -85933,6 +85933,30 @@
    ],
    "timing_source": "single_sentence"
   },
+  "FND2-052/T02": {
+   "file": "/dictation-skill-lab/audio/FND2-052/T02.mp3",
+   "duration_ms": 5988,
+   "voice": "Orus",
+   "accent": "australian",
+   "style": "Read exactly the words given, with an Australian English accent, speaking a little slower than natural conversation, clearly articulated. Each item is a separate recording: leave a clear pause of about two seconds after each item.",
+   "model": "gemini-3.8-flash-lite-tts",
+   "batch": "2026-11-09T09-30-36-356Z-a76bf2aad9",
+   "batch_size": 1,
+   "text_sha256": "707c8088976ef6e4c9b61dfb4d5678ff36da61e6cd01787ba552a0ae39205147",
+   "audio_sha256": "eea33dc8ec60a03f3635254109ee573825fbaa3d0a13352590ce38c467f45a06",
+   "words_per_second": 1.67,
+   "asr_model": "base.en",
+   "asr_wer": 0.2,
+   "asr_check": "review",
+   "generated_at": "2026-11-09T09:30:36.358Z",
+   "sentences": [
+    {
+     "start_ms": 0,
+     "end_ms": 5988
+    }
+   ],
+   "timing_source": "single_sentence"
+  },
   "FND2-052/T03": {
    "file": "/dictation-skill-lab/audio/FND2-052/T03.mp3",
    "duration_ms": 4996,
@@ -153630,6 +153654,30 @@
    ],
    "timing_source": "single_sentence"
   },
+  "S3-SIM-006/T11": {
+   "file": "/dictation-skill-lab/audio/S3-SIM-006/T11.mp3",
+   "duration_ms": 8420,
+   "voice": "Zephyr",
+   "accent": "new_zealand",
+   "style": "Read exactly the words given, with a New Zealand English accent, speaking the natural, steady pace of an IELTS Listening recording. Each item is a separate recording: leave a clear pause of about two seconds after each item.",
+   "model": "gemini-3.8-flash-lite-tts",
+   "batch": "2026-11-09T09-30-39-752Z-2e5b1c666e",
+   "batch_size": 2,
+   "text_sha256": "9a22475b42c24789a0d29c4225d3da866ee4a2a6085489a8e8b5722637149408",
+   "audio_sha256": "50ddf9b3722c11f16cecc269b0b9bb08993710beec8fe88e1a227d0b7d08d449",
+   "words_per_second": 2.38,
+   "asr_model": "base.en",
+   "asr_wer": 0.0,
+   "asr_check": "pass",
+   "generated_at": "2026-11-09T09:30:39.753Z",
+   "sentences": [
+    {
+     "start_ms": 0,
+     "end_ms": 8420
+    }
+   ],
+   "timing_source": "single_sentence"
+  },
   "S3-SIM-006/T12": {
    "file": "/dictation-skill-lab/audio/S3-SIM-006/T12.mp3",
    "duration_ms": 11683,
@@ -163470,6 +163518,42 @@
    ],
    "timing_source": "asr"
   },
+  "S4-EXP-007/T04": {
+   "file": "/dictation-skill-lab/audio/S4-EXP-007/T04.mp3",
+   "duration_ms": 23054,
+   "voice": "Zephyr",
+   "accent": "new_zealand",
+   "style": "Read exactly the words given, with a New Zealand English accent, speaking the natural, steady pace of an IELTS Listening recording. Each item is a separate recording: leave a clear pause of about two seconds after each item.",
+   "model": "gemini-3.8-flash-lite-tts",
+   "batch": "2026-11-09T09-30-39-752Z-2e5b1c666e",
+   "batch_size": 2,
+   "text_sha256": "076a8ba805fadd25f336830913a7b7a57f1d0825a196531c94ecb95602213819",
+   "audio_sha256": "74e4afba1fe92d6fa952c4f905f0849e42f5c1ba1b5f1a223beaca70c972956e",
+   "words_per_second": 2.39,
+   "asr_model": "base.en",
+   "asr_wer": 0.031,
+   "asr_check": "pass",
+   "generated_at": "2026-11-09T09:30:39.753Z",
+   "sentences": [
+    {
+     "start_ms": 0,
+     "end_ms": 3180
+    },
+    {
+     "start_ms": 3180,
+     "end_ms": 9560
+    },
+    {
+     "start_ms": 9560,
+     "end_ms": 19460
+    },
+    {
+     "start_ms": 19460,
+     "end_ms": 23054
+    }
+   ],
+   "timing_source": "asr"
+  },
   "S4-EXP-007/T05": {
    "file": "/dictation-skill-lab/audio/S4-EXP-007/T05.mp3",
    "duration_ms": 24029,
@@ -164974,6 +165058,42 @@
     {
      "start_ms": 17310,
      "end_ms": 26649
+    }
+   ],
+   "timing_source": "asr"
+  },
+  "S4-EXP-012/T07": {
+   "file": "/dictation-skill-lab/audio/S4-EXP-012/T07.mp3",
+   "duration_ms": 25191,
+   "voice": "Kore",
+   "accent": "north_american",
+   "style": "Read exactly the words given, with a Southern British English accent, speaking the natural, steady pace of an IELTS Listening recording. Each item is a separate recording: leave a clear pause of about two seconds after each item.",
+   "model": "gemini-3.8-flash-lite-tts",
+   "batch": "2026-11-09T09-30-43-625Z-f0cd3f33b2",
+   "batch_size": 1,
+   "text_sha256": "e7cab756248c6a857479db5850ff0f2ba9907b35761b51e2c12739b775358d13",
+   "audio_sha256": "f58dd32d14f54b0c5f57c37addb37221efc2350e9514fa675261181fac4eef5c",
+   "words_per_second": 2.1,
+   "asr_model": "base.en",
+   "asr_wer": 0.0,
+   "asr_check": "pass",
+   "generated_at": "2026-11-09T09:30:43.626Z",
+   "sentences": [
+    {
+     "start_ms": 0,
+     "end_ms": 6500
+    },
+    {
+     "start_ms": 6500,
+     "end_ms": 13670
+    },
+    {
+     "start_ms": 13670,
+     "end_ms": 16750
+    },
+    {
+     "start_ms": 16750,
+     "end_ms": 25191
     }
    ],
    "timing_source": "asr"
@@ -173683,5 +173803,5 @@
    "timing_source": "asr"
   }
  },
- "updated_at": "2026-11-09T08:40:54.851107+00:00"
+ "updated_at": "2026-11-09T09:30:57.704214+00:00"
 }
