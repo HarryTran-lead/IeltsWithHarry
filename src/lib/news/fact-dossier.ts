@@ -6,7 +6,7 @@ const articleSchema = { type: "object", additionalProperties: false, required: [
 const reviewSchema = { type: "object", additionalProperties: false, required: ["grounded", "independent_expression", "unsupported"], properties: { grounded: { type: "boolean" }, independent_expression: { type: "boolean" }, unsupported: { type: "array", items: { type: "string" } } } } as const;
 const sourceCheckSchema = { type: "object", additionalProperties: false, required: ["evaluations"], properties: { evaluations: { type: "array", items: { type: "object", additionalProperties: false, required: ["index", "supported"], properties: { index: { type: "integer" }, supported: { type: "boolean" } } } } } } as const;
 
-async function readFactualSource(url: string, fetcher: typeof fetch) {
+export async function readFactualSource(url: string, fetcher: typeof fetch) {
   const response = await fetcher(url, { redirect: "manual", signal: AbortSignal.timeout(9000), headers: { Accept: "text/html, text/plain" } });
   if (!response.ok || response.redirected || response.headers.get("location")) throw new Error("Factual source unavailable or redirected");
   const type = response.headers.get("content-type")?.split(";")[0].trim().toLowerCase();
