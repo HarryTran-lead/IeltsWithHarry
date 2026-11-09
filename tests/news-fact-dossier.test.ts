@@ -53,13 +53,13 @@ it("retries a short draft once, then reviews only a complete article", async () 
     if (system.startsWith("Check each atomic")) response = { evaluations: facts.map((_, index) => ({ index: index + 1, supported: true })) };
     else if (system.startsWith("Write an original")) {
       drafts++;
-      response = { title: "A new science mission", body: Array.from({ length: drafts === 1 ? 250 : 400 }, () => "mission").join(" ") };
+      response = { title: "A new science mission", body: Array.from({ length: drafts === 1 ? 250 : 311 }, () => "mission").join(" ") };
     } else { reviews++; response = { grounded: true, independent_expression: true, unsupported: [] }; }
     return Response.json({ candidates: [{ finishReason: "STOP", content: { parts: [{ text: JSON.stringify(response) }] } }] });
   }) as typeof fetch;
   try {
     const article = await writeArticleFromFacts({ topic: "A new science launch", category: "Science", facts }, fetcher);
-    expect(article.body.split(/\s+/)).toHaveLength(400);
+    expect(article.body.split(/\s+/)).toHaveLength(311);
     expect(drafts).toBe(2);
     expect(reviews).toBe(1);
   } finally { if (previous === undefined) delete process.env.GEMINI_API_KEY; else process.env.GEMINI_API_KEY = previous; }
