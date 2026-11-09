@@ -7,10 +7,10 @@ export const factualSourceHosts = [
   "who.int", "un.org", "unesco.org", "unicef.org", "worldbank.org",
   "esa.int", "asean.org", "globalvoices.org",
 ] as const;
-function approvedFactualSource(raw: string) {
+export function approvedFactualSource(raw: string) {
   try {
     const url = new URL(raw);
-    return url.protocol === "https:" && !url.username && !url.password
+    return url.protocol === "https:" && !url.username && !url.password && !url.port
       && factualSourceHosts.some((host) => url.hostname === host || url.hostname.endsWith(`.${host}`));
   } catch { return false; }
 }

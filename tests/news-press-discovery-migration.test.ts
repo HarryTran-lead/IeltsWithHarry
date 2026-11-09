@@ -11,7 +11,8 @@ it("re-enables discovery only and publishes original text after AI or admin revi
       create schema auth; create table auth.users(id uuid primary key);
       create schema storage; create table storage.objects(bucket_id text, name text);
       create function public.is_admin() returns boolean language sql as $$select true$$;
-      create table public.news_sources(id uuid primary key, provider text, feed_url text, enabled boolean, auto_publish boolean, policy_status text, reviewed_basis text);
+      create table public.news_sources(id uuid primary key default gen_random_uuid(), name text, provider text, feed_url text, category text, enabled boolean, auto_publish boolean, policy_status text, reviewed_basis text, attribution_text text, min_interval_minutes integer, origin_region text);
+      create unique index news_sources_feed_unique on public.news_sources(feed_url) where feed_url is not null;
       create table public.news_admin_settings(id boolean primary key, daily_rewrite_limit integer);
       create table public.news_articles(id uuid primary key, provider text, publication_status text, metadata jsonb);
       create table public.news_article_bodies(article_id uuid, ai_generated boolean, body_text text, image_url text, source_url text);
@@ -19,12 +20,14 @@ it("re-enables discovery only and publishes original text after AI or admin revi
       create table public.lesson_blocks(lesson_id uuid, kind text);
       insert into auth.users values ('11111111-1111-4111-8111-111111111111');
       insert into public.news_admin_settings values (true,0);
-      insert into public.news_sources values ('22222222-2222-4222-8222-222222222222','ai_rewrite','https://news.tuoitre.vn/rss',false,false,'METADATA_ONLY','old');
+      insert into public.news_sources(id,provider,feed_url,enabled,auto_publish,policy_status,reviewed_basis) values ('22222222-2222-4222-8222-222222222222','ai_rewrite','https://news.tuoitre.vn/rss',false,false,'METADATA_ONLY','old');
     `);
     const migration = readFileSync(resolve("supabase/migrations/202611080006_press_fact_discovery.sql"), "utf8").split("-- Primary-source search")[0];
     await db.exec(migration);
     await db.exec(readFileSync(resolve("supabase/migrations/202611090001_ai_reviewed_fact_publication.sql"), "utf8"));
-    expect((await db.query<{ enabled: boolean; auto_publish: boolean }>("select enabled,auto_publish from public.news_sources")).rows[0]).toEqual({ enabled: true, auto_publish: false });
+    await db.exec(readFileSync(resolve("supabase/migrations/202611090002_vietnam_official_fact_feed.sql"), "utf8"));
+    expect((await db.query<{ enabled: boolean; auto_publish: boolean }>("select enabled,auto_publish from public.news_sources where feed_url='https://news.tuoitre.vn/rss'")).rows[0]).toEqual({ enabled: true, auto_publish: false });
+    expect((await db.query<{ enabled: boolean; auto_publish: boolean }>("select enabled,auto_publish from public.news_sources where feed_url='https://mst.gov.vn/rss/tin-tuc-su-kien.rss'")).rows[0]).toEqual({ enabled: true, auto_publish: false });
     expect((await db.query<{ daily_rewrite_limit: number }>("select daily_rewrite_limit from public.news_admin_settings")).rows[0].daily_rewrite_limit).toBe(4);
     await db.exec(`
       create trigger press_guard before update on public.news_sources for each row execute function public.news_block_press_rewrites();
