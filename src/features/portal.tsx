@@ -28,6 +28,7 @@ const IeltsModePreview = dynamic(() => import("@/features/ielts/ielts-mode-previ
 const BankStudent = dynamic(() => import("@/features/ielts/bank-student").then((module) => module.BankStudent));
 const SpeakingMock = dynamic(() => import("@/features/ielts/speaking-mock").then((module) => module.SpeakingMock));
 const YoutubeLab = dynamic(() => import("@/features/listening/youtube-lab").then((module) => module.YoutubeLab));
+const DictationHome = dynamic(() => import("@/features/listening/dictation-home").then((module) => module.DictationHome));
 const VoaDictation = dynamic(() => import("@/features/listening/voa-dictation").then((module) => module.VoaDictation));
 const ClipDictation = dynamic(() => import("@/features/listening/clip-dictation").then((module) => module.ClipDictation));
 const SkillLabDictation = dynamic(() => import("@/features/listening/skill-lab-dictation").then((module) => module.SkillLabDictation));
@@ -71,7 +72,8 @@ function PortalContent({ canManage }: { canManage: boolean }) {
         ) : section === "notebook" ? (
           smartNotebookV1 ? <SmartNotebook /> : <NotebookPage />
         ) : section === "dictation" ? (
-          skillMode === "practice" ? <Suspense fallback={<div className="content-page">Đang mở Luyện nhanh…</div>}><DictationQuickPractice /></Suspense>
+          !skillMode ? <DictationHome />
+            : skillMode === "practice" ? <Suspense fallback={<div className="content-page">Đang mở Luyện nhanh…</div>}><DictationQuickPractice /></Suspense>
             : skillMode === "review" ? <DictationReview />
             : skillMode === "banks" && pathname.split("/")[4] === "skill-lab" ? (() => {
               // /skill-lab → path map · /skill-lab/placement · /skill-lab/stage/S1/test → checks · otherwise stage catalog or lesson

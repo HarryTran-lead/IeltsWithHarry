@@ -6,14 +6,9 @@ import { ArrowLeft, ArrowRight, Check, Info, Pause, Play, RotateCcw, Search, Set
 import { createClient } from "@/lib/supabase/browser";
 import { wordDifferences } from "@/lib/listening/youtube";
 import { percentPassed } from "@/lib/dictation/pass";
-import { listPracticeResults } from "@/features/learning/practice-results";
 import { DICTATION_SPEEDS, usePlaybackSettings } from "./dictation-playback";
-import { skillLabStages, skillLabStageOf, skillLabStageUrl } from "@/lib/dictation-skill-lab/stages";
 import "./voa-dictation.css";
 import { Sticker } from "@/components/stickers/stickers";
-import { useDemo } from "@/features/demo/demo-store";
-import { todayISO } from "@/lib/demo-data";
-import "./dictation-sessions.css";
 
 type Lesson = { id: string; title: string; topic: string; cefr: string; source_url: string; attribution: string; status: string };
 type Segment = { id: string; ordinal: number; start_ms: number; end_ms: number; reference_text: string; speaker: string };
@@ -43,7 +38,8 @@ export function VoaDictation() {
   const router = useRouter();
   const routeParts = pathname.split("/").filter(Boolean);
   const routeLessonId = routeParts[2] === "lessons" ? routeParts[3] : undefined;
-  const view = routeLessonId ? "practice" : routeParts[2] === "banks" ? "bank" : "home";
+  // The Dictation home is DictationHome; this component serves the VOA library and its lessons.
+  const view = routeLessonId ? "practice" : "bank";
   const db = useMemo(() => createClient(), []);
   const audio = useRef<HTMLAudioElement>(null);
   const readList = useRef<HTMLDivElement>(null);
@@ -84,18 +80,11 @@ export function VoaDictation() {
   const [catalogPage, setCatalogPage] = useState(1);
   const [lastLessonId, setLastLessonId] = useState("");
   const [totalSentences, setTotalSentences] = useState<number | null>(null);
-  const [clipBankCounts, setClipBankCounts] = useState<Record<string, number> | null>(null);
-  const [skillLabCounts, setSkillLabCounts] = useState<Record<string, number> | null>(null);
-  const [skillLabDone, setSkillLabDone] = useState<Record<string, number>>({});
-  const [suggestedStage, setSuggestedStage] = useState("");
   const [collection, setCollection] = useState("all");
   const [time, setTime] = useState(0);
   const [isPlaying, setIsPlaying] = useState(false);
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(true);
-  const [lastSkillLab, setLastSkillLab] = useState("");
-  const [plannerState, setPlannerState] = useState<"idle" | "saving" | "added" | "error">("idle");
-  const { addTask } = useDemo();
 
   useEffect(() => { let alive = true; void db.from("voa_dictation_lessons")
     .select("id,title,topic,cefr,source_url,attribution,status")
@@ -105,7 +94,7 @@ export function VoaDictation() {
       if (!alive) return;
       if (failure) setError(failure.message);
       else setLessons((data ?? []) as Lesson[]);
-      try { setLastLessonId(window.localStorage.getItem("voa-last-lesson") ?? ""); setLastSkillLab(window.localStorage.getItem("skill-lab-last-lesson") ?? ""); } catch { /* Catalog works without local storage. */ }
+      try { setLastLessonId(window.localStorage.getItem("voa-last-lesson") ?? ""); } catch { /* Catalog works without local storage. */ }
       setLoading(false);
     }); return () => { alive = false; }; }, [db]);
 
@@ -115,40 +104,6 @@ export function VoaDictation() {
     .select("id", { count: "exact", head: true }).then(({ count }) => {
       if (alive) setTotalSentences(count);
     }); return () => { alive = false; }; }, [db]);
-
-  useEffect(() => {
-    let alive = true;
-    // Skill Lab lessons live in content files; only count lessons with complete audio.
-    void fetch("/api/dictation/skill-lab").then(async (response) => {
-      const data = response.ok ? await response.json().catch(() => null) as { lessons?: { lesson_id: string; audio_ready: boolean; turns: number; stage?: string; level?: string }[] } | null : null;
-      if (!alive) return;
-      const counts = Object.fromEntries(skillLabStages.map((stage) => [stage.id, 0]));
-      for (const lesson of data?.lessons ?? []) if (lesson.audio_ready) counts[skillLabStageOf(lesson)] = (counts[skillLabStageOf(lesson)] ?? 0) + 1;
-      setSkillLabCounts(counts);
-      // Personal progress per stage (lessons whose every sentence passed) and the placement suggestion.
-      const [dictation, placement] = await Promise.all([listPracticeResults("skill-lab-dictation:"), listPracticeResults("skill-lab-placement:")]).catch(() => [{}, {}] as const);
-      if (!alive) return;
-      const done: Record<string, number> = {};
-      for (const lesson of data?.lessons ?? []) {
-        const row = (dictation as Record<string, { correct: number }>)[`skill-lab-dictation:${lesson.lesson_id}`];
-        if (lesson.audio_ready && row && row.correct >= lesson.turns) done[skillLabStageOf(lesson)] = (done[skillLabStageOf(lesson)] ?? 0) + 1;
-      }
-      setSkillLabDone(done);
-      const latest = Object.entries(placement as Record<string, { updatedAt?: string }>).sort(([, a], [, b]) => (b.updatedAt ?? "").localeCompare(a.updatedAt ?? ""))[0];
-      setSuggestedStage(latest ? latest[0].slice("skill-lab-placement:".length) : "");
-    }).catch(() => { if (alive) setSkillLabCounts(Object.fromEntries(skillLabStages.map((stage) => [stage.id, 0]))); });
-    return () => { alive = false; };
-  }, []);
-
-  useEffect(() => {
-    let alive = true;
-    void Promise.all(["quick"].map(async (bank) => {
-      const { count } = await db.from("dictation_clips").select("id", { count: "exact", head: true })
-        .eq("bank", bank).in("status", ["preview", "published"]);
-      return [bank, count ?? 0] as const;
-    })).then((entries) => { if (alive) setClipBankCounts(Object.fromEntries(entries)); });
-    return () => { alive = false; };
-  }, [db]);
 
   useEffect(() => {
     if (!lesson) return;
@@ -309,50 +264,10 @@ export function VoaDictation() {
     setFeedback("skipped"); setChecked(true); setShowFullAnswer(true);
   }
 
-  const banks = [
-    { name: "VOA Learning English", description: "Hội thoại theo khóa học Let’s Learn English. Nghe từng câu, chép và ôn lại câu sai.", href: "/app/dictation/banks/voa", count: loading ? null : lessons.length, unit: "bài có audio" },
-    { name: "Quick Dictation · nâng cao", description: "Câu đọc từ sách nói tiếng Anh, văn phong cũ và nhiều từ khó. Chia bộ 20 câu từ ngắn đến dài.", href: "/app/dictation/banks/quick", count: clipBankCounts ? clipBankCounts.quick ?? 0 : null, unit: "câu có audio" },
-  ];
-  const openBanks = banks.filter((bank) => bank.count !== 0);
-
   return (
     <main className="voa-lab">
       {error && <p role="alert" className="voa-alert">{error}</p>}
-      {view === "home" ? (
-        <>
-          <nav className="voa-breadcrumb" aria-label="Đường dẫn"><Link href="/app/dashboard">Dashboard</Link><span>›</span><span>Dictation</span></nav>
-          <header className="voa-bank-hero"><div><span className="voa-eyebrow">DICTATION LIBRARY</span><h1>Luyện nghe chép</h1><p>Đi theo lộ trình IELTS, luyện nhanh một kỹ năng, hoặc ôn lại những câu chưa đạt.</p></div>
-            <button type="button" className="voa-primary-button" onClick={() => router.push(lastSkillLab ? `/app/dictation/banks/skill-lab/${lastSkillLab}` : "/app/dictation/banks/skill-lab")}>{lastSkillLab ? "Tiếp tục lộ trình IELTS" : "Bắt đầu lộ trình IELTS"} <ArrowRight size={17} /></button></header>
-          <section className="voa-today" aria-label="Hôm nay">
-            <Link className="voa-today-card voa-surface is-mock" href="/app/listening/mock"><strong>Đề Listening thi thử</strong><span>Đề 4 phần, 40 câu như phòng thi: đọc đề, nghe một lần, nộp bài xem điểm và transcript.</span><small>Vào phòng thi →</small></Link>
-            <Link className="voa-today-card voa-surface is-primary" href="/app/dictation/practice"><strong>Luyện nhanh 5 phút</strong><span>10 câu theo một kỹ năng: số và giờ, đánh vần, ngày tháng, chỉ đường…</span><small>Chọn kỹ năng →</small></Link>
-            <Link className="voa-today-card voa-surface" href="/app/dictation/review"><strong>Sổ câu sai</strong><span>Các câu chưa đạt ở mọi kho, chép lại đến khi đạt.</span><small>Ôn câu sai →</small></Link>
-            <button type="button" className="voa-today-card voa-surface" disabled={plannerState === "saving" || plannerState === "added"} onClick={async () => {
-              setPlannerState("saving");
-              try { await addTask({ title: "Dictation 15 phút", skill: "Listening", date: todayISO(), time: "", completed: false, priority: "Medium", lesson: "dictation" }); setPlannerState("added"); }
-              catch { setPlannerState("error"); }
-            }}><strong>Đặt lịch hôm nay</strong><span>Thêm “Dictation 15 phút” vào Planner. Đánh dấu xong trong Planner để giữ chuỗi ngày học.</span><small>{plannerState === "added" ? "Đã thêm vào Planner ✓" : plannerState === "saving" ? "Đang thêm…" : plannerState === "error" ? "Chưa thêm được, thử lại" : "Thêm vào Planner →"}</small></button>
-          </section>
-          <section className="voa-stage-section" aria-label="Các chặng IELTS"><h2>Chặng nghe chép IELTS <Link className="voa-stage-map-link" href="/app/dictation/banks/skill-lab">Xem bản đồ lộ trình →</Link></h2><div className="voa-bank-grid voa-stage-grid">
-            {skillLabStages.map((stage) => {
-              const count = skillLabCounts?.[stage.id] ?? 0;
-              const done = skillLabDone[stage.id] ?? 0;
-              return <button type="button" key={stage.id} className={`voa-bank-card voa-surface voa-stage-card${suggestedStage === stage.id ? " is-suggested" : ""}`} disabled={skillLabCounts !== null && count === 0} onClick={() => router.push(skillLabStageUrl(stage.id))}>
-                <span className="voa-stage-code">{stage.id}</span>{suggestedStage === stage.id && <span className="voa-stage-suggested">Gợi ý cho bạn</span>}<strong>{stage.label} IELTS</strong><span>{stage.detail}</span>
-                {count > 0 && <span className="voa-stage-audio-count">{count} bài có audio</span>}
-                {count > 0 && <span className="voa-stage-meter" aria-hidden><span style={{ width: `${Math.round(100 * done / count)}%` }} /></span>}
-                <span className="voa-bank-foot">{skillLabCounts === null ? "Đang tải bài…" : count === 0 ? "Đang tạo audio" : `${done}/${count} bài xong`}{count > 0 && <ArrowRight size={18} />}</span>
-              </button>;
-            })}
-          </div></section>
-          <section className="voa-stage-section" aria-label="Kho nghe chép khác"><h2>Kho nghe chép khác</h2>
-          <div className="voa-bank-grid">
-            {openBanks.map((bank) => bank.count === null
-              ? <div key={bank.name} className="voa-bank-card voa-surface voa-bank-unavailable"><span className="voa-bank-icon"><Sticker name="headphones" size={44} tilt={-6} pop={false} /></span><span className="voa-bank-status">Đang tải…</span><strong>{bank.name}</strong><span>{bank.description}</span><span className="voa-bank-foot">Đang kiểm tra dữ liệu</span></div>
-              : <button type="button" key={bank.name} className="voa-bank-card voa-surface" onClick={() => router.push(bank.href)}><span className="voa-bank-icon"><Sticker name="headphones" size={44} tilt={-6} pop={false} /></span><span className="voa-bank-status">Đang mở</span><strong>{bank.name}</strong><span>{bank.description}</span><span className="voa-bank-foot">{bank.count} {bank.unit} <ArrowRight size={18} /></span></button>)}
-          </div></section>
-        </>
-      ) : view === "bank" ? (
+      {view === "bank" ? (
         <>
           <header className="voa-library-header">
             <nav className="voa-breadcrumb" aria-label="Đường dẫn"><Link href="/app/dictation">Dictation</Link><span>›</span><span>VOA Learning English</span></nav>
