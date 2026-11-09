@@ -4,6 +4,7 @@
 import { Fragment, useState, type ReactNode } from "react";
 import { Flag } from "lucide-react";
 import type { ExamQuestion } from "@/lib/ielts-bank/schema";
+import { RichText } from "./rich-text";
 
 export type AnswerProps = {
   answers: Record<string, string>;
@@ -12,6 +13,9 @@ export type AnswerProps = {
   toggleFlag: (id: string) => void;
   /** Number shown to the learner for each question id (1-based, across the whole test). */
   numberOf: (id: string) => number;
+  /** "groupKey:optionKey" picked from a word bank, shared so the passage's heading slots can take it too. */
+  held?: string | null;
+  setHeld?: (value: string | null) => void;
 };
 
 /** "A — Naysmith" → A, "iii — A short day" → iii, " — B. text" → B, "C. text" → C; the key is what gets scored. */
@@ -52,7 +56,8 @@ export function groupQuestions(questions: ExamQuestion[]): QuestionGroup[] {
   for (const question of questions) {
     const kind = kindOf(question);
     const last = groups[groups.length - 1];
-    const sameOptions = last && JSON.stringify(last.options) === JSON.stringify(question.options);
+    // Single-answer multiple choice prints each question with its own A–D under one "Questions 23–26" heading.
+    const sameOptions = last && (kind === "choice" || JSON.stringify(last.options) === JSON.stringify(question.options));
     if (last && last.kind === kind && last.type === question.type && (!question.instructions || question.instructions === last.instructions) && sameOptions) last.questions.push(question);
     else groups.push({ key: question.id, kind, type: question.type, instructions: question.instructions, questions: [question], options: question.options });
   }
@@ -123,7 +128,8 @@ function GapGroup({ group, props }: { group: QuestionGroup; props: AnswerProps }
     {group.questions.filter((question) => !covered.has(question.id) && !carriers.includes(question)).map((question) => {
       const hasGap = GAP.test(question.prompt) || /\*\*\d+\*\*/.test(question.prompt);
       const onlyGap = !question.prompt.replace(/\*\*\d+\*\*|\{\{gap[^}]*\}\}|_{3,}/g, "").trim();
-      return <div className="bq-gap-row" key={question.id}>
+      // A question without a gap in its sentence (short answer) gets its answer box on its own line.
+      return <div className={`bq-gap-row ${!hasGap && !onlyGap ? "is-short" : ""}`} key={question.id}>
         {hasGap && !onlyGap ? <div className="bq-inline">{richBlocks(question.prompt, () => <GapInput question={question} props={props} />)}</div>
           : <><NumberBadge number={props.numberOf(question.id)} flagged={props.flags.includes(question.id)} onFlag={() => props.toggleFlag(question.id)} /><div className="bq-inline">{!onlyGap && richBlocks(question.prompt, () => null)}<GapInput question={question} props={props} badge={false} /></div></>}
       </div>;
@@ -141,16 +147,17 @@ function PrintedGapGroup({ group, props, printed }: { group: QuestionGroup; prop
   })}</div>;
 }
 
-function ChoiceList({ question, props, options, many = false }: { question: ExamQuestion; props: AnswerProps; options: { key: string; label: string }[]; many?: boolean }) {
+function ChoiceList({ question, props, options, many = false, compact = false }: { question: ExamQuestion; props: AnswerProps; options: { key: string; label: string }[]; many?: boolean; compact?: boolean }) {
   const value = props.answers[question.id] || "";
   const picked = many ? value.split(",").filter(Boolean) : [value];
   const number = props.numberOf(question.id);
-  return <div className="bq-question" id={`q-${question.id}`}>
+  // TRUE / FALSE / NOT GIVEN sit on one line under the statement, so a block of six statements stays on one screen.
+  return <div className={`bq-question ${compact ? "is-judge" : ""} ${value ? "is-answered" : ""}`} id={`q-${question.id}`}>
     <div className="bq-stem"><NumberBadge number={number} flagged={props.flags.includes(question.id)} onFlag={() => props.toggleFlag(question.id)} /><div>{richBlocks(question.prompt, () => <span className="bq-blank" />)}</div></div>
-    <div className="bq-choices" role={many ? "group" : "radiogroup"} aria-label={`Đáp án câu ${number}`}>{options.map((option) => {
+    <div className={`bq-choices ${compact ? "is-inline" : ""}`} role={many ? "group" : "radiogroup"} aria-label={`Đáp án câu ${number}`}>{options.map((option) => {
       const on = picked.includes(option.key);
       return <label key={option.key} className={on ? "is-on" : ""}>
-        <input type={many ? "checkbox" : "radio"} name={`q-${question.id}`} checked={on} onChange={() => props.setAnswer(question.id, many ? (on ? picked.filter((item) => item !== option.key) : [...picked, option.key]).sort().join(",") : option.key)} />
+        <input type={many ? "checkbox" : "radio"} name={`q-${question.id}`} checked={on} onChange={() => props.setAnswer(question.id, many ? (on ? picked.filter((item) => item !== option.key) : [...picked, option.key]).sort().join(",") : option.key)} onClick={() => { if (compact && on) props.setAnswer(question.id, ""); }} />
         {option.key !== option.label && <b>{option.key}</b>}<span data-highlight-block>{option.label}</span>
       </label>;
     })}</div>
@@ -176,7 +183,7 @@ function ManyGroup({ group, props }: { group: QuestionGroup; props: AnswerProps 
       questions.forEach((question, index) => props.setAnswer(question.id, next[index] || ""));
     };
     return <fieldset className="bq-many-set" key={questions[0].id}>
-      <legend data-highlight-block>{questions[0].prompt}</legend>
+      <legend data-highlight-block><RichText text={questions[0].prompt} /></legend>
       <p>Chọn {questions.length} đáp án cho câu {props.numberOf(questions[0].id)}–{props.numberOf(questions.at(-1)!.id)}.</p>
       <div className="bq-many-options">{options.map((option) => <label key={option.key} className={picked.includes(option.key) ? "is-on" : ""}><input type="checkbox" checked={picked.includes(option.key)} onChange={() => choose(option.key)} /><b>{option.key}</b><span data-highlight-block>{option.label}</span></label>)}</div>
     </fieldset>;
@@ -201,7 +208,11 @@ function Matrix({ group, props }: { group: QuestionGroup; props: AnswerProps }) 
 
 /** Headings, sentence endings, people or word banks: drag an option onto a slot, or tap an option then a slot. */
 function PickGroup({ group, props, printed }: { group: QuestionGroup; props: AnswerProps; printed?: string }) {
-  const [held, setHeld] = useState<string | null>(null);
+  const [localHeld, setLocalHeld] = useState<string | null>(null);
+  const shared = Boolean(props.setHeld);
+  const heldValue = shared ? props.held ?? null : localHeld;
+  const held = heldValue?.startsWith(`${group.key}:`) ? heldValue.slice(group.key.length + 1) : null;
+  const setHeld = (key: string | null) => { const value = key ? `${group.key}:${key}` : null; if (props.setHeld) props.setHeld(value); else setLocalHeld(value); };
   const options = group.options.map((option) => ({ key: optionKey(option), label: optionLabel(option) }));
   const labelOf = (key: string) => options.find((option) => option.key === key);
   const used = new Set(group.questions.map((question) => props.answers[question.id]).filter(Boolean));
@@ -218,15 +229,10 @@ function PickGroup({ group, props, printed }: { group: QuestionGroup; props: Ans
     </span>;
   };
   const byNumber = new Map(group.questions.map((question) => [props.numberOf(question.id), question]));
-  return <div className="bq-pick">
-    {printed ? <div className="bq-flow-sheet">{richBlocks(printed, (_key, number) => {
-      const question = number === undefined ? undefined : byNumber.get(number);
-      return question ? slot(question) : <span className="bq-blank" />;
-    })}</div> : <ol className="bq-slots">{group.questions.map((question) => <li key={question.id}>
-      <span className="bq-slot-stem">{richBlocks(question.prompt, () => null)}</span>{slot(question)}
-    </li>)}</ol>}
-    <div className="bq-bank">
-      <small>Kéo đáp án thả vào ô trống, hoặc bấm chọn đáp án rồi bấm vào ô trống.</small>
+  const headings = /matching[_-]headings/.test(group.type);
+  const bank = <div className={`bq-bank ${headings ? "is-headings" : ""}`}>
+      {headings && <strong className="bq-bank-title">List of Headings</strong>}
+      <small>Kéo đáp án thả vào ô trống{headings ? " (ở đây hoặc ngay trên đoạn văn bên trái)" : ""}, hoặc bấm chọn đáp án rồi bấm vào ô.</small>
       <div>{options.map((option) => <button
         type="button"
         key={option.key}
@@ -236,7 +242,17 @@ function PickGroup({ group, props, printed }: { group: QuestionGroup; props: Ans
         onClick={() => setHeld(held === option.key ? null : option.key)}
         aria-pressed={held === option.key}
       ><b>{option.key}</b>{option.label !== option.key && <span data-highlight-block>{option.label}</span>}</button>)}</div>
-    </div>
+    </div>;
+  // The IELTS paper prints the list of headings above the paragraphs; word banks and endings follow their sentences.
+  return <div className="bq-pick">
+    {headings && bank}
+    {printed ? <div className="bq-flow-sheet">{richBlocks(printed, (_key, number) => {
+      const question = number === undefined ? undefined : byNumber.get(number);
+      return question ? slot(question) : <span className="bq-blank" />;
+    })}</div> : <ol className="bq-slots">{group.questions.map((question) => GAP.test(question.prompt) || /\*\*\d+\*\*/.test(question.prompt)
+      ? <li key={question.id} className="is-inline"><span className="bq-slot-stem bq-inline">{richBlocks(question.prompt, () => slot(question))}</span></li>
+      : <li key={question.id}><span className="bq-slot-stem">{richBlocks(question.prompt, () => null)}</span>{slot(question)}</li>)}</ol>}
+    {!headings && bank}
   </div>;
 }
 
@@ -258,6 +274,6 @@ export function QuestionGroupView({ group, props, printed }: { group: QuestionGr
       : group.kind === "matrix" ? <Matrix group={group} props={props} />
       : group.kind === "pick" ? <PickGroup group={group} props={props} printed={printed} />
       : group.kind === "many" ? <ManyGroup group={group} props={props} />
-      : group.questions.map((question) => <ChoiceList key={question.id} question={question} props={props} many={group.kind === "many"} options={group.kind === "judge" ? judgeOptions(question.type) : question.options.map((option) => ({ key: optionKey(option), label: optionLabel(option) }))} />)}
+      : group.questions.map((question) => <ChoiceList key={question.id} question={question} props={props} many={group.kind === "many"} compact={group.kind === "judge"} options={group.kind === "judge" ? judgeOptions(question.type) : question.options.map((option) => ({ key: optionKey(option), label: optionLabel(option) }))} />)}
   </section>;
 }

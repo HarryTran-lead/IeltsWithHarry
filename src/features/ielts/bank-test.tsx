@@ -1,10 +1,10 @@
 "use client";
 
-import { useCallback, useEffect, useMemo, useRef, useState, type CSSProperties, type Dispatch, type SetStateAction } from "react";
+import { Fragment, useCallback, useEffect, useMemo, useRef, useState, type CSSProperties, type Dispatch, type SetStateAction } from "react";
 import { AArrowDown, AArrowUp, ChevronLeft, ChevronRight, Eraser, Highlighter, NotebookPen, Pause, Play, RotateCcw, RotateCw, X } from "lucide-react";
-import type { ExamContent } from "@/lib/ielts-bank/schema";
+import type { ExamContent, ExamQuestion } from "@/lib/ielts-bank/schema";
 import { RichText, type BankExam } from "./bank-exam";
-import { groupQuestions, QuestionGroupView, type AnswerProps } from "./bank-questions";
+import { groupQuestions, optionKey, optionLabel, QuestionGroupView, type AnswerProps } from "./bank-questions";
 import { encodeReadingMarks, rangeAt, savedReadingMarks, textOffset, type ReadingMark } from "./reading-highlights";
 import "./bank-test.css";
 
@@ -50,6 +50,23 @@ function AudioDock({ src, title, autoPlayNext, onEnded, examMode, started, finis
   </div>;
 }
 
+/** A paragraph's heading slot inside the passage, as on the computer-delivered test: drop a heading here or clear it. */
+function HeadingDrop({ question, number, value, held, onPlace, onClear, onLocate }: { question: ExamQuestion; number: number; value: string; held: string | null; onPlace: (key: string) => void; onClear: () => void; onLocate: () => void }) {
+  const [over, setOver] = useState(false);
+  const chosen = value ? question.options.find((option) => optionKey(option) === value) : undefined;
+  return <div className={`bt-heading-drop ${chosen ? "is-filled" : ""} ${over || held ? "is-over" : ""}`}
+    onClick={(event) => { if (held && !(event.target as HTMLElement).closest("button")) onPlace(held); }}
+    onDragOver={(event) => { event.preventDefault(); setOver(true); }}
+    onDragLeave={() => setOver(false)}
+    onDrop={(event) => { event.preventDefault(); setOver(false); const key = event.dataTransfer.getData("text/plain"); if (question.options.some((option) => optionKey(option) === key)) onPlace(key); }}>
+    <button type="button" className="bt-heading-no" onClick={onLocate} title={`Đến câu ${number}`} aria-label={`Đến câu ${number}`}>{number}</button>
+    {chosen ? <span><b>{optionKey(chosen)}</b> {optionLabel(chosen)}</span> : <i>{held ? "Bấm để đặt heading vào đây" : "Kéo heading vào đây"}</i>}
+    {chosen && <button type="button" className="bt-heading-clear" onClick={onClear} aria-label={`Bỏ heading câu ${number}`}><X size={14} /></button>}
+  </div>;
+}
+
+type CaretDocument = Document & { caretPositionFromPoint?: (x: number, y: number) => { offsetNode: Node; offset: number } | null; caretRangeFromPoint?: (x: number, y: number) => Range | null };
+
 /**
  * Reading and Listening as on test day: a passage (or the recording) per part,
  * every question group of that part, and a part-by-part question bar.
@@ -81,6 +98,9 @@ export function TestRunner({ exam, content, scope, answers, setAnswer, flags, se
   const [highlightEnabled, setHighlightEnabled] = useState(true);
   const [markError, setMarkError] = useState("");
   const [navigationError, setNavigationError] = useState("");
+  const [current, setCurrent] = useState<string | null>(null);
+  const [held, setHeld] = useState<string | null>(null);
+  const [markPop, setMarkPop] = useState<{ x: number; y: number; mark: ReadingMark } | null>(null);
   const marks = useMemo(() => savedReadingMarks(notes.reading_highlights), [notes.reading_highlights]);
   const setMarks = useCallback((next: ReadingMark[] | ((previous: ReadingMark[]) => ReadingMark[])) => {
     const updated = typeof next === "function" ? next(marks) : next;
@@ -93,11 +113,23 @@ export function TestRunner({ exam, content, scope, answers, setAnswer, flags, se
   const body = useRef<HTMLDivElement>(null);
   const section = sections[Math.min(part, sections.length - 1)];
   const groups = useMemo(() => groupQuestions(section?.questions ?? []), [section]);
+  // "Paragraph C" in a Matching Headings group also gets a drop slot above paragraph C of the passage.
+  const headingSlots = useMemo(() => {
+    const slots = new Map<string, ExamQuestion>();
+    for (const question of section?.questions ?? []) {
+      const letter = /matching[_-]headings/.test(question.type) ? /^\s*paragraph\s+([A-Z])\s*$/i.exec(question.prompt)?.[1] : undefined;
+      if (letter && question.options.length) slots.set(letter.toUpperCase(), question);
+    }
+    return slots;
+  }, [section]);
   const props: AnswerProps = {
     answers, setAnswer, flags,
     toggleFlag: (id) => setFlags(flags.includes(id) ? flags.filter((item) => item !== id) : [...flags, id]),
     numberOf: (id) => numbers.get(id) ?? 0,
+    held, setHeld,
   };
+  const headingGroupKey = (question: ExamQuestion) => groups.find((group) => group.questions.includes(question))?.key ?? "";
+  const heldFor = (question: ExamQuestion) => { const key = headingGroupKey(question); return key && held?.startsWith(`${key}:`) ? held.slice(key.length + 1) : null; };
 
   const goTo = useCallback((sectionIndex: number, questionId?: string, playNext = false) => {
     if (listening && notes.__view === "exam" && sectionIndex !== part && !playNext && section && (notes.listening_played || "").split(",").includes(section.id) && !(notes.listening_finished || "").split(",").includes(section.id)) {
@@ -105,12 +137,24 @@ export function TestRunner({ exam, content, scope, answers, setAnswer, flags, se
       return;
     }
     setNavigationError("");
+    const changed = sectionIndex !== part;
     setPart(sectionIndex);
     setAutoPlayPart(playNext ? sectionIndex : null);
+    setCurrent(questionId ?? null);
+    if (changed) setHeld(null);
+    setMarkPop(null);
     window.setTimeout(() => {
-      const target = questionId ? document.getElementById(`q-${questionId}`) : document.querySelector(".bt-questions");
-      target?.scrollIntoView({ behavior: "smooth", block: questionId ? "center" : "start" });
-      (target?.querySelector("input:not([type=radio]):not([type=checkbox])") as HTMLInputElement | null)?.focus({ preventScroll: true });
+      const pane = questionPane.current;
+      // Each pane scrolls on its own; scrollIntoView would also shift the fixed test sheet sideways.
+      if (changed) passage.current?.scrollTo({ top: 0 });
+      if (!pane) return;
+      const target = questionId ? document.getElementById(`q-${questionId}`) : null;
+      const scrollsItself = pane.scrollHeight > pane.clientHeight + 1;
+      if (!target) { if (scrollsItself) pane.scrollTo({ top: 0, behavior: changed ? "auto" : "smooth" }); else pane.scrollIntoView({ block: "start" }); return; }
+      if (scrollsItself) pane.scrollTo({ top: target.getBoundingClientRect().top - pane.getBoundingClientRect().top + pane.scrollTop - pane.clientHeight / 3, behavior: changed ? "auto" : "smooth" });
+      else target.scrollIntoView({ behavior: "smooth", block: "center" });
+      const input = (target.matches("input") ? target : target.querySelector("input:not([type=radio]):not([type=checkbox])")) as HTMLInputElement | null;
+      input?.focus({ preventScroll: true });
     }, 60);
   }, [listening, notes, part, section]);
 
@@ -156,6 +200,34 @@ export function TestRunner({ exam, content, scope, answers, setAnswer, flags, se
     chosen.removeAllRanges();
   }, [canMark, highlightEnabled, section, setMarks]);
 
+  // A plain click on highlighted text offers to remove just that highlight.
+  const pickMark = useCallback((x: number, y: number, target: EventTarget | null) => {
+    if (!canMark || !section || !passage.current || !questionPane.current || (target as HTMLElement | null)?.closest?.("input,button,label,select,textarea,.bt-heading-drop")) { setMarkPop(null); return; }
+    if (window.getSelection() && !window.getSelection()?.isCollapsed) return;
+    const caret = document as CaretDocument;
+    const position = caret.caretPositionFromPoint?.(x, y);
+    const range = position ? null : caret.caretRangeFromPoint?.(x, y);
+    const node = position?.offsetNode ?? range?.startContainer;
+    const element = node ? (node.nodeType === Node.TEXT_NODE ? node.parentElement : node as Element) : null;
+    const inPassage = Boolean(element && passage.current.contains(element));
+    const pane: ReadingMark["pane"] | null = inPassage ? "passage" : element && questionPane.current.contains(element) ? "questions" : null;
+    const selector = inPassage ? "[data-paragraph]" : "[data-highlight-block]";
+    const block = element?.closest<HTMLElement>(selector);
+    if (!node || !pane || !block) { setMarkPop(null); return; }
+    const index = [...(inPassage ? passage.current : questionPane.current).querySelectorAll(selector)].indexOf(block);
+    const at = textOffset(block, node, position?.offset ?? range?.startOffset ?? 0);
+    const hit = marks.find((mark) => mark.section === section.id && mark.pane === pane && mark.block === index && at >= mark.start && at <= mark.end);
+    setMarkPop(hit ? { x, y, mark: hit } : null);
+  }, [canMark, marks, section]);
+
+  useEffect(() => {
+    if (!markPop) return;
+    const close = () => setMarkPop(null);
+    const panes = [passage.current, questionPane.current];
+    panes.forEach((pane) => pane?.addEventListener("scroll", close, { passive: true }));
+    return () => panes.forEach((pane) => pane?.removeEventListener("scroll", close));
+  }, [markPop]);
+
   useEffect(() => {
     if (!canMark) return;
     const onKey = (event: KeyboardEvent) => {
@@ -198,22 +270,33 @@ export function TestRunner({ exam, content, scope, answers, setAnswer, flags, se
     </div></div>
 
     <div ref={body} className={`bt-body ${listening ? "" : "is-split"} ${showRail ? "has-tools" : ""}`} style={{ "--bt-left": `${split}%` } as CSSProperties}>
-      {showRail && <aside className="bt-tool-rail" aria-label="Công cụ luyện tập"><button type="button" className={highlightEnabled ? "is-on" : ""} aria-pressed={highlightEnabled} title="Bật hoặc tắt bút tô sáng (H)" onMouseDown={(event) => event.preventDefault()} onClick={() => { if (window.getSelection() && !window.getSelection()?.isCollapsed) { setHighlightEnabled(true); captureSelection(true); } else setHighlightEnabled((enabled) => !enabled); }}><Highlighter size={19} />Tô sáng<small>{highlightEnabled ? "H · Đang bật" : "H · Đã tắt"}</small></button></aside>}
-      {!listening && <article className="bt-passage" ref={passage} tabIndex={-1} onMouseUp={() => captureSelection()}>
+      {showRail && <aside className="bt-tool-rail" aria-label="Công cụ luyện tập"><button type="button" className={highlightEnabled ? "is-on" : ""} aria-pressed={highlightEnabled} title="Bật hoặc tắt bút tô sáng (H)" onMouseDown={(event) => event.preventDefault()} onClick={() => { if (window.getSelection() && !window.getSelection()?.isCollapsed) { setHighlightEnabled(true); captureSelection(true); } else setHighlightEnabled((enabled) => !enabled); }}><Highlighter size={19} />Tô sáng<small>{highlightEnabled ? "H · Đang bật" : "H · Đã tắt"}</small></button>
+        <button type="button" className={notesOpen ? "is-on" : ""} aria-pressed={notesOpen} title="Ghi chú từ khóa, paraphrase" onClick={() => setNotesOpen(!notesOpen)}><NotebookPen size={19} />Ghi chú<small>{notes.__general ? "Đã ghi" : "Mở"}</small></button>
+        {marks.some((mark) => mark.section === section.id) && <button type="button" title="Xóa mọi tô sáng của phần này" onClick={() => { setMarks(marks.filter((mark) => mark.section !== section.id)); setMarkPop(null); }}><Eraser size={19} />Xóa tô<small>{marks.filter((mark) => mark.section === section.id).length} đoạn</small></button>}
+      </aside>}
+      {!listening && <article className="bt-passage" ref={passage} tabIndex={-1} onMouseUp={(event) => { if (window.getSelection()?.isCollapsed) pickMark(event.clientX, event.clientY, event.target); else captureSelection(); }}>
         <h2>{section.title}</h2>
-        {section.passage.split(/\n\s*\n/).map((paragraph, index) => <p key={index} data-paragraph={index}><RichText text={paragraph} /></p>)}
+        {section.passage.split(/\n\s*\n/).map((paragraph, index) => {
+          const letter = /^\s*\*\*([A-Z])\*\*/.exec(paragraph)?.[1];
+          const slot = letter ? headingSlots.get(letter) : undefined;
+          return <Fragment key={index}>
+            {slot && <HeadingDrop question={slot} number={numbers.get(slot.id) ?? 0} value={answers[slot.id] || ""} held={heldFor(slot)} onPlace={(key) => { setAnswer(slot.id, key); setHeld(null); }} onClear={() => setAnswer(slot.id, "")} onLocate={() => goTo(part, slot.id)} />}
+            <p data-paragraph={index}><RichText text={paragraph} /></p>
+          </Fragment>;
+        })}
       </article>}
       {!listening && <div className="bt-divider" role="separator" aria-label="Độ rộng bài đọc" aria-orientation="vertical" aria-valuemin={30} aria-valuemax={70} aria-valuenow={split} tabIndex={0}
         onPointerDown={(event) => { if (window.matchMedia("(min-width: 901px)").matches) { event.currentTarget.setPointerCapture(event.pointerId); resize(event.clientX); } }}
         onPointerMove={(event) => { if (event.currentTarget.hasPointerCapture(event.pointerId)) resize(event.clientX); }}
         onKeyDown={(event) => { if (event.key === "ArrowLeft" || event.key === "ArrowRight") { event.preventDefault(); setSplit((value) => Math.max(30, Math.min(70, value + (event.key === "ArrowRight" ? 5 : -5)))); } }}><span>⋮</span></div>}
-      <div className="bt-questions" ref={questionPane} onMouseUp={() => captureSelection()}>
+      <div className="bt-questions" ref={questionPane} onMouseUp={(event) => { if (window.getSelection()?.isCollapsed) pickMark(event.clientX, event.clientY, event.target); else captureSelection(); }} onFocus={(event) => { const id = (event.target as HTMLElement).closest("[id^='q-']")?.id.slice(2); if (id) setCurrent(id); }}>
         {listening && <header className="bt-part-head"><span>{label(part)}</span><h2>{section.title}</h2></header>}
         {groups.map((group) => <QuestionGroupView key={group.key} group={group} props={props} printed={listening && (group.kind === "gap" || /flow[_-]?chart[_-]completion/.test(group.type)) ? printedListeningLayout(section.passage, group.questions.map((question) => question.number), group.kind === "pick") : undefined} />)}
         <div className="bt-part-end">{part + 1 < sections.length ? <button type="button" className="bx-next" onClick={() => goTo(part + 1)}>Sang {label(part + 1)} <ChevronRight size={17} /></button> : <button type="button" className="bx-submit" onClick={onFinish}>Hoàn thành & nộp bài</button>}</div>
       </div>
     </div>
 
+    {markPop && <div className="bt-mark-pop" style={{ left: markPop.x, top: markPop.y }}><button type="button" onClick={() => { const hit = markPop.mark; setMarks(marks.filter((mark) => !(mark.section === hit.section && mark.pane === hit.pane && mark.block === hit.block && mark.start === hit.start && mark.end === hit.end))); setMarkPop(null); }}><Eraser size={15} /> Bỏ tô sáng</button></div>}
     {markError && <p className="bt-mark-error" role="status">{markError}</p>}
     {navigationError && <p className="bt-mark-error" role="status">{navigationError}</p>}
 
@@ -229,16 +312,21 @@ export function TestRunner({ exam, content, scope, answers, setAnswer, flags, se
         onEnded={() => { if (notes.__view === "exam") { setNotes((current) => ({ ...current, listening_finished: [...new Set([...(current.listening_finished || "").split(",").filter(Boolean), section.id])].join(",") })); if (!scope && sections.length === 4 && part + 1 < sections.length) goTo(part + 1, undefined, true); } }} />}
       <nav className="bt-parts" aria-label="Chọn câu hỏi">
         <button type="button" className="bt-arrow" disabled={part === 0} onClick={() => goTo(part - 1)} aria-label="Phần trước"><ChevronLeft size={18} /></button>
-        <div className="bt-part-list">{sections.map((item, index) => <div key={item.id} className={`bt-part ${index === part ? "is-current" : ""}`}>
-          <button type="button" className="bt-part-name" onClick={() => goTo(index)}>{label(index)}</button>
-          <div>{item.questions.map((question) => <button
-            type="button"
-            key={question.id}
-            className={`${answers[question.id] ? "is-answered" : ""} ${flags.includes(question.id) ? "is-flagged" : ""}`}
-            onClick={() => goTo(index, question.id)}
-            aria-label={`Câu ${numbers.get(question.id)}${answers[question.id] ? ", đã trả lời" : ""}`}
-          >{numbers.get(question.id)}</button>)}</div>
-        </div>)}</div>
+        {/* Like the computer-delivered test: the open part lists its numbers, the others fold into "Passage 2 · 3/13". */}
+        <div className="bt-part-list">{sections.map((item, index) => {
+          const done = item.questions.filter((question) => answers[question.id]).length;
+          return <div key={item.id} className={`bt-part ${index === part ? "is-current" : "is-folded"}`}>
+            <button type="button" className="bt-part-name" onClick={() => goTo(index)} aria-label={`${label(index)}: đã làm ${done}/${item.questions.length} câu`}>{label(index)}{index !== part && <small className={done === item.questions.length ? "is-complete" : ""}>{done}/{item.questions.length}</small>}</button>
+            {index === part && <div>{item.questions.map((question) => <button
+              type="button"
+              key={question.id}
+              className={`${answers[question.id] ? "is-answered" : ""} ${flags.includes(question.id) ? "is-flagged" : ""} ${current === question.id ? "is-active" : ""}`}
+              onClick={() => goTo(index, question.id)}
+              aria-current={current === question.id ? "step" : undefined}
+              aria-label={`Câu ${numbers.get(question.id)}${answers[question.id] ? ", đã trả lời" : ""}${flags.includes(question.id) ? ", đã đánh dấu" : ""}`}
+            >{numbers.get(question.id)}</button>)}</div>}
+          </div>;
+        })}</div>
         <button type="button" className="bt-arrow" disabled={part + 1 >= sections.length} onClick={() => goTo(part + 1)} aria-label="Phần sau"><ChevronRight size={18} /></button>
         <button type="button" className="bx-submit bt-finish" onClick={onFinish}>Hoàn thành</button>
       </nav>

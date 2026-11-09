@@ -87,3 +87,20 @@ body:has(.br-review) { overflow: hidden; }
 .br-summary, .br-review { font-family: var(--font-sans), system-ui, sans-serif; }
 .br-summary-card h1, .br-result-hero > strong, .br-result-hero > div b,
 .br-passage h1, .br-questions h2 { font-family: var(--font-sans), system-ui, sans-serif; letter-spacing: normal; }
+
+/* Per-type breakdown on the result summary. */
+.br-type-breakdown { margin: 22px 0 4px; padding: 18px 20px; border: 1px solid #dce8e4; border-radius: 12px; }
+.br-type-breakdown h2 { margin: 0 0 3px; color: #203e34; font-size: 16px; }
+.br-type-breakdown > p { margin: 0 0 14px; color: #6a7f78; font-size: 12.5px; }
+.br-type-breakdown ul { display: grid; gap: 10px; margin: 0; padding: 0; list-style: none; }
+.br-type-breakdown li { display: grid; grid-template-columns: minmax(150px, 34%) minmax(0, 1fr) 46px 92px; align-items: center; gap: 12px; font-size: 13px; }
+.br-type-name { color: #24394a; font-weight: 700; }
+.br-type-bar { height: 8px; overflow: hidden; border-radius: 999px; background: #edf2f1; }
+.br-type-bar i { display: block; height: 100%; border-radius: inherit; background: #1f9d68; }
+.br-type-breakdown li.is-mid .br-type-bar i { background: #d79a1e; }
+.br-type-breakdown li.is-low .br-type-bar i { background: #d4594c; }
+.br-type-breakdown li b { color: #1f3a4c; text-align: right; font-variant-numeric: tabular-nums; }
+.br-type-breakdown li small { color: #6a7f78; white-space: nowrap; }
+.br-review-dock nav > div.is-folded button small { margin-left: 6px; padding: 1px 7px; border-radius: 999px; background: #e9eeee; color: #4d6070; font-size: 11px; }
+.br-review-dock nav button.is-active { outline: 2px solid #173349; outline-offset: 1px; }
+@media (max-width: 650px) { .br-type-breakdown { padding: 14px; } .br-type-breakdown li { grid-template-columns: minmax(0, 1fr) 40px 70px; } .br-type-bar { grid-column: 1 / -1; grid-row: 2; } }
