@@ -421,3 +421,54 @@ body:has(.bx-exam-mode) { overflow: hidden; }
   .bx-exam-mode .bt-tools > button { width: auto; padding: 0 9px; white-space: nowrap; }
   .bx-exam-mode .bt-tool-rail button { padding: 6px 2px; }
 }
+
+/* Flow chart: boxed steps joined by arrows. Notes/table rows without a printed layout sit in one framed sheet. */
+.bq-gaps.is-flow { gap: 0; justify-items: center; }
+.bq-gaps.is-flow .bq-gap-row { position: relative; width: min(100%, 640px); box-sizing: border-box; margin-bottom: 28px; padding: 10px 14px; border: 1px solid #cfdde5; border-radius: 9px; background: #f8fbfc; line-height: 2; }
+.bq-gaps.is-flow .bq-gap-row:last-child { margin-bottom: 0; }
+.bq-gaps.is-flow .bq-gap-row:not(:last-child)::after { content: "↓"; position: absolute; left: 50%; top: calc(100% + 2px); transform: translateX(-50%); color: #5788a5; font-size: 18px; font-weight: 800; line-height: 1.3; }
+.bq-gaps.is-boxed { gap: 0; padding: 4px 16px; border: 1px solid #e6dcc6; border-radius: 12px; background: #fffdf7; }
+.bq-gaps.is-boxed .bq-gap-row { padding: 8px 0; border-bottom: 1px dashed #ece3d0; }
+.bq-gaps.is-boxed .bq-gap-row:last-child { border-bottom: 0; }
+
+/* Choose TWO/THREE: a live counter and a note when the limit is reached. */
+.bq-many-head { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin-bottom: 8px; }
+.bq-many-head small { color: #6d8296; font-size: 12px; }
+.bq-many-count { padding: 2px 10px; border-radius: 999px; background: #eef2f4; color: #4d6070; font-size: 12px; font-weight: 800; }
+.bq-many-count.is-full { background: #e3f6ea; color: #17733f; }
+.bq-many-note { margin: 8px 0 0; padding: 7px 10px; border-radius: 8px; background: #fff4d6; color: #6b4a00; font-size: 12.5px; }
+.bq-chip-count { padding: 0 6px; border-radius: 999px; background: #eef2f4; color: #4d6070; font-size: 11px; font-weight: 800; }
+.bq-chip.is-held .bq-chip-count { background: rgba(255, 255, 255, .25); color: #fff; }
+
+/* Display settings: one "Aa · 110%" button opening a roomy panel. */
+.bx-exam-mode .bt-tools > .bt-display-toggle { width: auto; padding: 0 12px; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.bx-exam-mode .bt-settings { display: grid; gap: 14px; width: 300px; min-width: 0; padding: 16px; border-radius: 12px; }
+.bt-settings .bt-set-block { display: grid; gap: 6px; }
+.bt-settings .bt-set-block > label, .bt-settings .bt-set-block > span { display: flex; justify-content: space-between; color: #213444; font-size: 13px; font-weight: 700; }
+.bt-settings .bt-set-block b { color: #b3473a; font-variant-numeric: tabular-nums; }
+.bt-set-scale { display: flex; align-items: center; gap: 8px; }
+.bt-set-scale input { flex: 1; min-width: 0; accent-color: var(--bl-accent); }
+.bx-exam-mode .bt-settings .bt-set-scale button { width: 34px; height: 34px; padding: 0; justify-content: center; }
+.bt-seg { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 3px; padding: 3px; border-radius: 9px; background: #eef2f4; }
+.bx-exam-mode .bt-settings .bt-seg button { width: auto; height: 30px; justify-content: center; border: 0; border-radius: 7px; background: none; color: #56697b; font-size: 12.5px; }
+.bx-exam-mode .bt-settings .bt-seg button[aria-pressed="true"] { background: #fff; color: #213444; font-weight: 800; box-shadow: 0 1px 3px rgba(23, 61, 95, .15); }
+.bt-set-line { display: flex; align-items: center; justify-content: space-between; gap: 10px; padding-top: 12px; border-top: 1px solid #eef2f4; font-size: 12.5px; }
+.bx-exam-mode .bt-settings .bt-set-line button { width: auto; height: 30px; padding: 0 10px; border: 0; background: #fdecea; color: #b42318; font-size: 12.5px; }
+.bt-set-keys { margin: 0; padding: 10px 12px; border-radius: 9px; background: #f6f8fa; color: #4d6070; font-size: 12px; line-height: 1.7; }
+.bt-set-keys b { color: #213444; }
+.bt-passage p { line-height: var(--bt-leading, 1.7); }
+
+/* Phones and narrow tablets: one pane at a time, switched by tabs. */
+.bt-mobile-tabs { display: none; }
+@media (max-width: 900px) {
+  .bx-exam-mode .bt-mobile-tabs { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 3px; flex: none; margin: 6px 10px; padding: 3px; border-radius: 11px; background: #f1e6da; }
+  .bx-real-mode .bt-mobile-tabs { background: #e5e9ea; }
+  .bt-mobile-tabs button { height: 38px; border: 0; border-radius: 9px; background: none; color: #6a5a4c; font: inherit; font-size: 13px; font-weight: 700; cursor: pointer; }
+  .bt-mobile-tabs button[aria-selected="true"] { background: #fff; color: #213444; font-weight: 800; box-shadow: 0 1px 3px rgba(60, 40, 20, .2); }
+  .bx-exam-mode .bt-body.is-split { grid-template-rows: minmax(0, 1fr); }
+  .bx-exam-mode .bt-body.is-split.shows-passage .bt-questions, .bx-exam-mode .bt-body.is-split.shows-questions .bt-passage, .bx-exam-mode .bt-body.is-split.shows-questions .bt-tool-rail { display: none; }
+  .bx-exam-mode .bt-passage { border-bottom: 0; }
+}
+/* The "Choose TWO" question sits inside its box rather than on the border. */
+.bq-many-set legend { float: left; width: 100%; margin: 0 0 8px; padding: 0; line-height: 1.5; }
+.bq-many-set legend + * { clear: both; }

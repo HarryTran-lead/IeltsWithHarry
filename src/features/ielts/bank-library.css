@@ -217,3 +217,7 @@
 @media (max-width: 980px) { .bl-results-head { align-items: stretch; flex-direction: column; } .bl-results-controls { justify-content: flex-start; } }
 @media (max-width: 560px) { .bl-grid-sectioned, .bl-tone-reading .bl-grid-sectioned { grid-template-columns: 1fr; } .bl-grid-sectioned .bl-card-shelf { flex-direction: row; min-height: 130px; } .bl-grid-sectioned .bl-thumb { width: 112px; aspect-ratio: auto; } .bl-grid-sectioned .bl-brand-art img { width: 54px; } .bl-grid-sectioned .bl-brand-wordmark { font-size: 12px; } .bl-grid-sectioned .bl-brand-art small { display: none; } .bl-results-controls { width: 100%; } .bl-results-head .bl-search { width: 100%; } }
 @media (max-width: 560px) { .bl-grid-sectioned .bl-source { display: none; } .bl-grid-sectioned .bl-cta { opacity: 1; transform: none; } }
+
+/* Full test cover: the test's three passage pictures side by side. */
+.bl-collage { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 2px; background: #fff; }
+.bl-collage img, .bl-card:hover .bl-collage img { width: 100%; height: 100%; object-fit: cover; transform: none; }

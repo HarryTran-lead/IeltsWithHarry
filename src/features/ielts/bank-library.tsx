@@ -426,7 +426,9 @@ export function ExamCard({ exam, attempt, section }: { exam: CatalogExam; attemp
   return <Link href={href} className="bl-card bl-card-shelf">
     <span className="bl-thumb">
       {/* eslint-disable-next-line @next/next/no-img-element */}
-      {readingFullCover ? <figure className="bl-art bl-brand-art">
+      {/* A full test shows its own three passage covers side by side, so seven tests no longer share one mascot. */}
+      {readingFullCover && suppliedReadingTest ? <figure className="bl-art bl-collage">{[1, 2, 3].map((part) => <img key={part} src={`/images/ielts/reading/test-${suppliedReadingTest}-passage-${part}.${Number(suppliedReadingTest) >= 6 ? "webp" : "png"}`} alt="" loading="lazy" />)}</figure>
+      : readingFullCover ? <figure className="bl-art bl-brand-art">
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img src="/ieltswithharry-mascot.webp" alt="" loading="lazy" />
         <span className="bl-brand-wordmark">Ielts<b>WithHarry</b></span>

@@ -71,7 +71,7 @@ type CaretDocument = Document & { caretPositionFromPoint?: (x: number, y: number
  * Reading and Listening as on test day: a passage (or the recording) per part,
  * every question group of that part, and a part-by-part question bar.
  */
-export function TestRunner({ exam, content, scope, answers, setAnswer, flags, setFlags, notes, setNotes, onFinish }: {
+export function TestRunner({ exam, content, scope, answers, setAnswer, flags, setFlags, notes, setNotes, onFinish, jumpTo }: {
   exam: BankExam;
   content: ExamContent;
   scope: string[] | null;
@@ -82,6 +82,8 @@ export function TestRunner({ exam, content, scope, answers, setAnswer, flags, se
   notes: Record<string, string>;
   setNotes: Dispatch<SetStateAction<Record<string, string>>>;
   onFinish: () => void;
+  /** Set by the submit dialog to open a question; `at` makes a repeat jump to the same question fire again. */
+  jumpTo?: { id: string; at: number } | null;
 }) {
   const listening = exam.skill === "Listening";
   const canMark = !listening;
@@ -101,6 +103,32 @@ export function TestRunner({ exam, content, scope, answers, setAnswer, flags, se
   const [current, setCurrent] = useState<string | null>(null);
   const [held, setHeld] = useState<string | null>(null);
   const [markPop, setMarkPop] = useState<{ x: number; y: number; mark: ReadingMark } | null>(null);
+  const [leading, setLeading] = useState<"tight" | "normal" | "loose">("normal");
+  const [pane, setPane] = useState<"passage" | "questions">("passage");
+  const tools = useRef<HTMLDivElement>(null);
+  // Font size and line spacing are a reader's own preference: remember them on this device.
+  useEffect(() => {
+    try {
+      const saved = JSON.parse(window.localStorage.getItem("ielts-reading-display") || "{}") as { scale?: number; leading?: string };
+      const frame = window.requestAnimationFrame(() => {
+        if (typeof saved.scale === "number" && saved.scale >= 0.85 && saved.scale <= 1.4) setScale(saved.scale);
+        if (saved.leading === "tight" || saved.leading === "normal" || saved.leading === "loose") setLeading(saved.leading);
+      });
+      return () => window.cancelAnimationFrame(frame);
+    } catch { /* Private mode: keep the defaults. */ }
+  }, []);
+  const saveDisplay = (next: { scale?: number; leading?: string }) => {
+    try { window.localStorage.setItem("ielts-reading-display", JSON.stringify({ scale, leading, ...next })); } catch { /* Not stored. */ }
+  };
+  const changeScale = (value: number) => { const next = Math.max(0.85, Math.min(1.4, Math.round(value * 100) / 100)); setScale(next); saveDisplay({ scale: next }); };
+  useEffect(() => {
+    if (!settingsOpen) return;
+    const close = (event: MouseEvent) => { if (!tools.current?.contains(event.target as Node)) setSettingsOpen(false); };
+    const escape = (event: KeyboardEvent) => { if (event.key === "Escape") setSettingsOpen(false); };
+    document.addEventListener("mousedown", close);
+    document.addEventListener("keydown", escape);
+    return () => { document.removeEventListener("mousedown", close); document.removeEventListener("keydown", escape); };
+  }, [settingsOpen]);
   const marks = useMemo(() => savedReadingMarks(notes.reading_highlights), [notes.reading_highlights]);
   const setMarks = useCallback((next: ReadingMark[] | ((previous: ReadingMark[]) => ReadingMark[])) => {
     const updated = typeof next === "function" ? next(marks) : next;
@@ -141,6 +169,7 @@ export function TestRunner({ exam, content, scope, answers, setAnswer, flags, se
     setPart(sectionIndex);
     setAutoPlayPart(playNext ? sectionIndex : null);
     setCurrent(questionId ?? null);
+    if (questionId) setPane("questions");
     if (changed) setHeld(null);
     setMarkPop(null);
     window.setTimeout(() => {
@@ -157,6 +186,16 @@ export function TestRunner({ exam, content, scope, answers, setAnswer, flags, se
       input?.focus({ preventScroll: true });
     }, 60);
   }, [listening, notes, part, section]);
+
+  useEffect(() => {
+    if (!jumpTo) return;
+    const index = sections.findIndex((item) => item.questions.some((question) => question.id === jumpTo.id));
+    if (index < 0) return;
+    const frame = window.requestAnimationFrame(() => goTo(index, jumpTo.id));
+    return () => window.cancelAnimationFrame(frame);
+    // Only a new request should move the sheet, not every re-render of goTo.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [jumpTo]);
 
   // Paint saved highlights in both panes without changing the answer controls' DOM.
   useEffect(() => {
@@ -258,18 +297,34 @@ export function TestRunner({ exam, content, scope, answers, setAnswer, flags, se
     setSplit(Math.round(Math.max(30, Math.min(70, ((clientX - bounds.left) / bounds.width) * 100))));
   };
 
-  return <div className={`bt-runner ${listening ? "is-listening" : "is-reading"}`} style={{ "--bt-scale": scale } as CSSProperties}>
-    <div className="bt-context"><div className="bt-context-copy"><strong>{label(part)}</strong><span>{listening ? "Listen and answer" : "Read the text and answer"} questions {firstNumber}–{lastNumber}</span></div><div className="bt-tools" role="toolbar" aria-label="Công cụ làm bài">
-      {!listening && <button type="button" className={settingsOpen ? "is-on" : ""} onClick={() => setSettingsOpen(!settingsOpen)}>Cài đặt</button>}
-      {settingsOpen && !listening && <div className="bt-settings" role="group" aria-label="Cài đặt giao diện"><span>Cỡ chữ</span>
-      <button type="button" onClick={() => setScale((value) => Math.max(0.85, Math.round((value - 0.1) * 10) / 10))} aria-label="Chữ nhỏ hơn"><AArrowDown size={17} /></button>
-      <button type="button" onClick={() => setScale((value) => Math.min(1.4, Math.round((value + 0.1) * 10) / 10))} aria-label="Chữ lớn hơn"><AArrowUp size={17} /></button>
-      {marks.some((mark) => mark.section === section.id) && <button type="button" onClick={() => setMarks(marks.filter((mark) => mark.section !== section.id))}><Eraser size={16} /> Xóa tô sáng</button>}
+  const sectionDone = section.questions.filter((question) => answers[question.id]).length;
+  return <div className={`bt-runner ${listening ? "is-listening" : "is-reading"}`} style={{ "--bt-scale": scale, "--bt-leading": leading === "tight" ? 1.5 : leading === "loose" ? 1.95 : 1.7 } as CSSProperties}>
+    <div className="bt-context"><div className="bt-context-copy"><strong>{label(part)}</strong><span>{listening ? "Listen and answer" : "Read the text and answer"} questions {firstNumber}–{lastNumber}</span></div><div className="bt-tools" ref={tools} role="toolbar" aria-label="Công cụ làm bài">
+      {!listening && <button type="button" className={`bt-display-toggle ${settingsOpen ? "is-on" : ""}`} aria-expanded={settingsOpen} aria-label={`Hiển thị: cỡ chữ ${Math.round(scale * 100)}%`} onClick={() => setSettingsOpen(!settingsOpen)}>Aa · {Math.round(scale * 100)}%</button>}
+      {settingsOpen && !listening && <div className="bt-settings" role="group" aria-label="Hiển thị">
+        <div className="bt-set-block">
+          <label htmlFor="bt-scale">Cỡ chữ <b>{Math.round(scale * 100)}%</b></label>
+          <div className="bt-set-scale">
+            <button type="button" onClick={() => changeScale(scale - 0.05)} aria-label="Chữ nhỏ hơn"><AArrowDown size={17} /></button>
+            <input id="bt-scale" type="range" min={85} max={140} step={5} value={Math.round(scale * 100)} onChange={(event) => changeScale(Number(event.target.value) / 100)} />
+            <button type="button" onClick={() => changeScale(scale + 0.05)} aria-label="Chữ lớn hơn"><AArrowUp size={17} /></button>
+          </div>
+        </div>
+        <div className="bt-set-block">
+          <span>Giãn dòng bài đọc</span>
+          <div className="bt-seg" role="group" aria-label="Giãn dòng bài đọc">{([["tight", "Hẹp"], ["normal", "Vừa"], ["loose", "Rộng"]] as const).map(([id, name]) => <button type="button" key={id} aria-pressed={leading === id} onClick={() => { setLeading(id); saveDisplay({ leading: id }); }}>{name}</button>)}</div>
+        </div>
+        {marks.some((mark) => mark.section === section.id) && <div className="bt-set-line"><span><b>Tô sáng</b> · {marks.filter((mark) => mark.section === section.id).length} đoạn ở {label(part)}</span><button type="button" onClick={() => { setMarks(marks.filter((mark) => mark.section !== section.id)); setMarkPop(null); }}>Xóa hết</button></div>}
+        <p className="bt-set-keys"><b>Mẹo</b><br />Bôi đen chữ để tô sáng · H: bật/tắt bút tô · bấm vào chỗ đã tô để bỏ</p>
       </div>}
       {listening && <><button type="button" onClick={() => setScale((value) => Math.max(0.85, Math.round((value - 0.1) * 10) / 10))} aria-label="Chữ nhỏ hơn"><AArrowDown size={17} /></button><button type="button" onClick={() => setScale((value) => Math.min(1.4, Math.round((value + 0.1) * 10) / 10))} aria-label="Chữ lớn hơn"><AArrowUp size={17} /></button>{notes.__view !== "exam" && <button type="button" className={notesOpen ? "is-on" : ""} onClick={() => setNotesOpen(!notesOpen)}><NotebookPen size={16} /> Ghi chú</button>}</>}
     </div></div>
 
-    <div ref={body} className={`bt-body ${listening ? "" : "is-split"} ${showRail ? "has-tools" : ""}`} style={{ "--bt-left": `${split}%` } as CSSProperties}>
+    {!listening && <div className="bt-mobile-tabs" role="tablist" aria-label="Chế độ xem">
+      <button type="button" role="tab" aria-selected={pane === "passage"} onClick={() => setPane("passage")}>Bài đọc</button>
+      <button type="button" role="tab" aria-selected={pane === "questions"} onClick={() => setPane("questions")}>Câu hỏi · {sectionDone}/{section.questions.length}</button>
+    </div>}
+    <div ref={body} className={`bt-body ${listening ? "" : "is-split"} ${showRail ? "has-tools" : ""} shows-${pane}`} style={{ "--bt-left": `${split}%` } as CSSProperties}>
       {showRail && <aside className="bt-tool-rail" aria-label="Công cụ luyện tập"><button type="button" className={highlightEnabled ? "is-on" : ""} aria-pressed={highlightEnabled} title="Bật hoặc tắt bút tô sáng (H)" onMouseDown={(event) => event.preventDefault()} onClick={() => { if (window.getSelection() && !window.getSelection()?.isCollapsed) { setHighlightEnabled(true); captureSelection(true); } else setHighlightEnabled((enabled) => !enabled); }}><Highlighter size={19} />Tô sáng<small>{highlightEnabled ? "H · Đang bật" : "H · Đã tắt"}</small></button>
         <button type="button" className={notesOpen ? "is-on" : ""} aria-pressed={notesOpen} title="Ghi chú từ khóa, paraphrase" onClick={() => setNotesOpen(!notesOpen)}><NotebookPen size={19} />Ghi chú<small>{notes.__general ? "Đã ghi" : "Mở"}</small></button>
         {marks.some((mark) => mark.section === section.id) && <button type="button" title="Xóa mọi tô sáng của phần này" onClick={() => { setMarks(marks.filter((mark) => mark.section !== section.id)); setMarkPop(null); }}><Eraser size={19} />Xóa tô<small>{marks.filter((mark) => mark.section === section.id).length} đoạn</small></button>}

@@ -47,6 +47,11 @@ const beforeYouStart: Record<string, string[]> = {
   Speaking: ["Cho phép trình duyệt dùng micro để ghi âm câu trả lời.", "Bản ghi âm chỉ phát lại trên máy của bạn, không tải lên.", "Ghi ý chính vào ô bên dưới để lưu lại và ôn sau."],
 };
 
+/** "Passage 3: Should Public Data…" → "Should Public Data…"; a bare "Passage 3" gives "". */
+function bareTitle(title: string) {
+  return title.replace(/^(?:reading\s+)?(?:passage|part|section)\s*\d+\s*(?:[:\-–—]\s*)?/i, "").trim();
+}
+
 /** The exam's cover page: what it is, what to expect, and when to practise it. */
 export function ExamIntro({ exam, backHref, busy, error, onStart, scheduleSlot }: { exam: BankExam; backHref: string; busy: boolean; error: string; onStart: (scope?: { section: string; ids: string[] }, options?: { view: "practice" | "exam"; minutes?: number }) => void; scheduleSlot: ReactNode }) {
   const searchParams = useSearchParams();
@@ -72,11 +77,11 @@ export function ExamIntro({ exam, backHref, busy, error, onStart, scheduleSlot }
     const count = chosen ? chosen.questions.length : examQuestions(exam.content).length;
     return <main className={`bx-reading-launch bl-tone-${toneOf(exam.skill)}`}>
       <div className="br-launch-dialog" role="dialog" aria-modal="true" aria-labelledby="br-launch-title">
-        <header className="br-launch-head"><div><span className="bx-kicker">IELTS {exam.skill}</span><h1 id="br-launch-title">{displayExamTitle(exam.title)}</h1></div><Link href={backHref} aria-label="Đóng và về danh sách đề"><X size={19} /></Link></header>
+        <header className="br-launch-head"><div><span className="bx-kicker">IELTS {exam.skill}{chosen ? ` · ${displayExamTitle(exam.title)}` : ""}</span><h1 id="br-launch-title">{chosen ? `${partName(readingPart - 1)}: ${bareTitle(chosen.title)}` : displayExamTitle(exam.title)}</h1></div><Link href={backHref} aria-label="Đóng và về danh sách đề"><X size={19} /></Link></header>
         <div className="br-launch-scroll">
           <section className="br-launch-card"><h2>Bước 1: Chọn chế độ luyện tập</h2><div className="br-launch-choices">
             <div className={`br-launch-choice ${readingPart === 0 ? "is-on" : ""}`}><div className="br-launch-choice-head"><strong>Làm full test</strong><select value={readingMinutes} onChange={(event) => setReadingMinutes(Number(event.target.value))} aria-label="Thời gian làm full đề">{fullTimes.map((minutes) => <option key={minutes} value={minutes}>{minutes} phút</option>)}</select></div><small>Làm toàn bộ bài {exam.skill}</small><label><input type="radio" name="exam-part" checked={readingPart === 0} onChange={() => setReadingPart(0)} /><span>Full test</span><em>{examQuestions(exam.content).length} câu</em></label></div>
-            <div className={`br-launch-choice br-launch-parts ${readingPart > 0 ? "is-on" : ""}`}><div className="br-launch-choice-head"><strong>Luyện từng phần</strong><select value={passageMinutes} onChange={(event) => setPassageMinutes(Number(event.target.value))} aria-label="Thời gian làm từng phần">{partTimes.map((minutes) => <option key={minutes} value={minutes}>{minutes} phút</option>)}</select></div><small>Chọn phần bạn muốn luyện</small>{parts.map((part, index) => <label key={part.id}><input type="radio" name="exam-part" checked={readingPart === index + 1} onChange={() => setReadingPart(index + 1)} /><span>{partName(index)}</span><em>{part.questions.length} câu</em></label>)}</div>
+            <div className={`br-launch-choice br-launch-parts ${readingPart > 0 ? "is-on" : ""}`}><div className="br-launch-choice-head"><strong>Luyện từng phần</strong><select value={passageMinutes} onChange={(event) => setPassageMinutes(Number(event.target.value))} aria-label="Thời gian làm từng phần">{partTimes.map((minutes) => <option key={minutes} value={minutes}>{minutes} phút</option>)}</select></div><small>Chọn phần bạn muốn luyện</small>{parts.map((part, index) => <label key={part.id}><input type="radio" name="exam-part" checked={readingPart === index + 1} onChange={() => setReadingPart(index + 1)} /><span>{partName(index)}{bareTitle(part.title) && <small className="br-launch-part-title">{bareTitle(part.title)}</small>}</span><em>{part.questions.length} câu</em></label>)}</div>
           </div></section>
           <section className="br-launch-card"><h2>Bước 2: Chọn giao diện làm bài</h2><div className="br-launch-choices">
             <label className={`br-launch-choice br-launch-view ${readingView === "practice" ? "is-on" : ""}`}><div className="br-launch-preview is-practice"><i /><span /><span /><b /></div><div><input type="radio" name="exam-view" checked={readingView === "practice"} onChange={() => setReadingView("practice")} /><strong>Giao diện Luyện tập</strong></div><small>{listening ? "Có điều khiển âm thanh, ghi chú và chuyển Part để luyện." : "Có tô sáng và điều chỉnh cỡ chữ. Bài đọc và câu hỏi ở hai khung."}</small></label>
@@ -224,17 +229,31 @@ export function SpeakingAnswer({ value, onChange, index }: { value: string; onCh
 }
 
 /** Asks before submitting, with what is still unanswered or flagged. */
-export function SubmitDialog({ unanswered, flagged, busy, onCancel, onConfirm }: { unanswered: number; flagged: number; busy: boolean; onCancel: () => void; onConfirm: () => void }) {
+export type QuestionRef = { id: string; number: number };
+
+/** Asks before submitting, with what is still unanswered or flagged; with `onJump`, each number opens that question. */
+export function SubmitDialog({ unanswered, flagged, busy, onCancel, onConfirm, answered, unansweredList, flaggedList, onJump }: { unanswered: number; flagged: number; busy: boolean; onCancel: () => void; onConfirm: () => void; answered?: number; unansweredList?: QuestionRef[]; flaggedList?: QuestionRef[]; onJump?: (id: string) => void }) {
   const confirm = useRef<HTMLButtonElement>(null);
   const continueButton = useRef<HTMLButtonElement>(null);
   useEffect(() => { (unanswered || flagged ? continueButton : confirm).current?.focus(); const escape = (event: KeyboardEvent) => { if (event.key === "Escape") onCancel(); }; window.addEventListener("keydown", escape); return () => window.removeEventListener("keydown", escape); }, [onCancel, unanswered, flagged]);
+  const numbers = (list: QuestionRef[], tone: string) => <div className="bx-jump-list">{list.map((item) => <button type="button" key={item.id} className={tone} onClick={() => onJump?.(item.id)} aria-label={`Mở câu ${item.number}`}>{item.number}</button>)}</div>;
+  const detailed = Boolean(onJump && (unansweredList?.length || flaggedList?.length));
   return <div className="bx-dialog-layer" role="dialog" aria-modal="true" aria-labelledby="bx-submit-title">
     <button type="button" className="bx-dialog-backdrop" aria-label="Đóng" tabIndex={-1} onClick={onCancel} />
-    <div className="bx-dialog">
+    <div className={`bx-dialog ${detailed ? "is-detailed" : ""}`}>
       <button type="button" className="bx-dialog-close" onClick={onCancel} aria-label="Đóng"><X size={18} /></button>
       <h2 id="bx-submit-title">Nộp bài ngay?</h2>
-      {unanswered || flagged ? <ul>{unanswered > 0 && <li><CircleAlert size={16} /> Còn <b>{unanswered}</b> câu chưa trả lời</li>}{flagged > 0 && <li><Flag size={16} /> <b>{flagged}</b> câu đang đánh dấu xem lại</li>}</ul> : <p>Bạn đã trả lời tất cả câu hỏi.</p>}
-      <div className="bx-dialog-actions"><button ref={continueButton} type="button" className="bx-ghost" onClick={onCancel}>Làm tiếp</button><button ref={confirm} type="button" className="bx-submit" disabled={busy} onClick={onConfirm}>{busy ? "Đang nộp…" : "Nộp bài"}</button></div>
+      {detailed ? <>
+        <div className="bx-submit-stats">
+          {answered !== undefined && <span className="is-done"><b>{answered}</b>đã làm</span>}
+          <span className="is-empty"><b>{unanswered}</b>còn trống</span>
+          <span className="is-flag"><b>{flagged}</b>đang đánh dấu</span>
+        </div>
+        {unansweredList && unansweredList.length > 0 && <div className="bx-jump-group"><strong>Câu còn trống</strong>{numbers(unansweredList, "is-empty")}</div>}
+        {flaggedList && flaggedList.length > 0 && <div className="bx-jump-group"><strong>Đang đánh dấu xem lại</strong>{numbers(flaggedList, "is-flag")}</div>}
+        <p className="bx-jump-hint">Bấm một số để đóng hộp này và mở câu đó.</p>
+      </> : unanswered || flagged ? <ul>{unanswered > 0 && <li><CircleAlert size={16} /> Còn <b>{unanswered}</b> câu chưa trả lời</li>}{flagged > 0 && <li><Flag size={16} /> <b>{flagged}</b> câu đang đánh dấu xem lại</li>}</ul> : <p>Bạn đã trả lời tất cả câu hỏi.</p>}
+      <div className="bx-dialog-actions"><button ref={continueButton} type="button" className="bx-ghost" onClick={onCancel}>Làm tiếp</button><button ref={confirm} type="button" className="bx-submit" disabled={busy} onClick={onConfirm}>{busy ? "Đang nộp…" : unanswered ? "Vẫn nộp bài" : "Nộp bài"}</button></div>
     </div>
   </div>;
 }
