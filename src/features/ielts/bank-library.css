@@ -183,11 +183,13 @@
 .bl-results-controls { display: flex; align-items: center; justify-content: flex-end; flex-wrap: wrap; gap: 9px; min-width: 0; }
 .bl-results-head .bl-search { flex: none; width: 290px; }
 .bl-grid-sectioned { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; margin-top: 18px; }
+.bl-tone-reading .bl-grid-sectioned { grid-template-columns: repeat(4, minmax(0, 1fr)); }
 .bl-grid-sectioned .bl-card-shelf { min-width: 0; min-height: 278px; }
 .bl-grid-sectioned .bl-thumb { aspect-ratio: 16 / 9; }
 .bl-grid-sectioned .bl-title { font-size: 14px; }
 .bl-grid-sectioned .bl-types { min-height: 33px; }
-@media (max-width: 1180px) { .bl-grid-sectioned { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 1450px) { .bl-tone-reading .bl-grid-sectioned { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+@media (max-width: 1180px) { .bl-grid-sectioned, .bl-tone-reading .bl-grid-sectioned { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 @media (max-width: 980px) { .bl-results-head { align-items: stretch; flex-direction: column; } .bl-results-controls { justify-content: flex-start; } }
-@media (max-width: 560px) { .bl-grid-sectioned { grid-template-columns: 1fr; } .bl-grid-sectioned .bl-card-shelf { flex-direction: row; min-height: 130px; } .bl-grid-sectioned .bl-thumb { width: 112px; aspect-ratio: auto; } .bl-grid-sectioned .bl-brand-art img { width: 54px; } .bl-grid-sectioned .bl-brand-wordmark { font-size: 12px; } .bl-grid-sectioned .bl-brand-art small { display: none; } .bl-results-controls { width: 100%; } .bl-results-head .bl-search { width: 100%; } }
+@media (max-width: 560px) { .bl-grid-sectioned, .bl-tone-reading .bl-grid-sectioned { grid-template-columns: 1fr; } .bl-grid-sectioned .bl-card-shelf { flex-direction: row; min-height: 130px; } .bl-grid-sectioned .bl-thumb { width: 112px; aspect-ratio: auto; } .bl-grid-sectioned .bl-brand-art img { width: 54px; } .bl-grid-sectioned .bl-brand-wordmark { font-size: 12px; } .bl-grid-sectioned .bl-brand-art small { display: none; } .bl-results-controls { width: 100%; } .bl-results-head .bl-search { width: 100%; } }
 @media (max-width: 560px) { .bl-grid-sectioned .bl-source { display: none; } .bl-grid-sectioned .bl-cta { opacity: 1; transform: none; } }

@@ -16,7 +16,7 @@ const StudyRoom = dynamic(() => import("./study-room").then((module) => module.S
 
 type Bounds = { x: number; y: number; width: number; height: number };
 type Gesture = { kind: "drag" | "resize" | "resize-width"; startX: number; startY: number; bounds: Bounds };
-type PipMode = "full" | "chat" | "clock";
+type PipMode = "full" | "chat" | "clock" | "bar";
 
 const small = { width: 500, height: 800 };
 const large = { width: 610, height: 900 };
@@ -76,6 +76,7 @@ export function StudyRoomLayer({ canManage }: { canManage: boolean }) {
   const [youtubeVolume, setYoutubeVolume] = useState(100);
   const player = useRef<LofiPlayer | null>(null);
   const youtubePlayer = useRef<YouTubePlayer | null>(null);
+  const chosenYoutubeVolume = useRef<number | null>(null);
   const wasInRoom = useRef(inRoom);
 
   useEffect(() => {
@@ -122,6 +123,7 @@ export function StudyRoomLayer({ canManage }: { canManage: boolean }) {
   function changeVolume(next: number) {
     if (videoMode === "youtube") {
       setYoutubeVolume(next);
+      chosenYoutubeVolume.current = next;
       youtubePlayer.current?.setVolume(next);
       return;
     }
@@ -150,6 +152,7 @@ export function StudyRoomLayer({ canManage }: { canManage: boolean }) {
   function onYoutubeReady(next: YouTubePlayer) {
     youtubePlayer.current = next;
     setYoutubeReady(true);
+    if (chosenYoutubeVolume.current !== null) next.setVolume(chosenYoutubeVolume.current);
     setYoutubeVolume(next.getVolume());
     setYoutubePlaying(next.getPlayerState() === 1);
   }
@@ -188,7 +191,7 @@ export function StudyRoomLayer({ canManage }: { canManage: boolean }) {
   if (quietPage || (!inRoom && (!entered || !visible))) return null;
 
   function begin(event: React.PointerEvent<HTMLElement>, kind: Gesture["kind"]) {
-    if (inRoom || !bounds || event.button !== 0 || (kind === "resize" && pipMode === "clock") || (kind === "resize-width" && pipMode !== "clock") || (event.target as HTMLElement).closest("button,a,input")) return;
+    if (inRoom || !bounds || event.button !== 0 || (kind === "resize" && (pipMode === "clock" || pipMode === "bar")) || (kind === "resize-width" && pipMode !== "clock" && pipMode !== "bar") || (event.target as HTMLElement).closest("button,a,input")) return;
     gesture.current = { kind, startX: event.clientX, startY: event.clientY, bounds };
     event.currentTarget.setPointerCapture(event.pointerId);
     event.preventDefault();
@@ -228,8 +231,9 @@ export function StudyRoomLayer({ canManage }: { canManage: boolean }) {
     setBounds((current) => clampBounds({ ...(current ?? initialBounds()), ...next }));
   }
 
-  function toggleMode(nextMode: Exclude<PipMode, "full">) {
-    const next = pipMode === nextMode ? "full" : nextMode;
+  function toggleMode(nextMode: "clock" | "chat") {
+    const next: PipMode = nextMode === "clock" ? pipMode === "bar" ? "clock" : pipMode === "clock" ? videoMode === "youtube" ? "bar" : "full" : "clock" : pipMode === "chat" ? "full" : "chat";
+    if (next === "bar") youtubePlayer.current?.pauseVideo();
     setChatPeek(false);
     setChatPinned(false);
     setHeaderPeek(false);
@@ -238,7 +242,7 @@ export function StudyRoomLayer({ canManage }: { canManage: boolean }) {
       if (!current) return null;
       if (next === "full") return clampBounds({ ...(previousBounds.current ?? current), x: current.x, y: current.y });
       const base = pipMode === "full" ? current : previousBounds.current ?? current;
-      return clampBounds({ ...current, width: next === "clock" ? clockWidth.current ?? Math.min(380, window.innerWidth - 16) : base.width, height: next === "clock" ? 47 : Math.min(base.height, 500) });
+      return clampBounds({ ...current, width: next === "clock" || next === "bar" ? clockWidth.current ?? Math.min(380, window.innerWidth - 16) : base.width, height: next === "clock" || next === "bar" ? 47 : Math.min(base.height, 500) });
     });
     setPipMode(next);
   }
@@ -248,27 +252,28 @@ export function StudyRoomLayer({ canManage }: { canManage: boolean }) {
   const compactChatVisible = compactYoutube && (chatPeek || chatPinned);
   const videoHeight = bounds ? Math.max(headerPeek ? 200 : 208, Math.ceil(bounds.width * 9 / 16)) + (headerPeek ? 47 : 2) : 210;
   const peekHeight = compactChatVisible ? Math.max(0, Math.min(260, window.innerHeight - videoHeight - 16)) : 0;
-  const windowHeight = compactYoutube ? videoHeight + peekHeight : bounds?.height;
+  const windowHeight = pipMode === "bar" && !inRoom ? 47 : compactYoutube ? videoHeight + peekHeight : bounds?.height;
   const windowTop = compactYoutube && bounds ? Math.min(bounds.y, window.innerHeight - (windowHeight ?? videoHeight) - 8) : bounds?.y;
   const activePlaying = videoMode === "youtube" ? youtubePlaying : musicPlaying;
   const activeVolume = videoMode === "youtube" ? youtubeVolume : volume;
+  const youtubeHidden = videoMode === "youtube" && pipMode === "bar";
   return <div className={`study-room-host ${inRoom ? "full" : `pip pip-${pipMode}${videoMode === "youtube" ? " pip-youtube" : ""}${compactChatVisible ? " chat-peek" : ""}${compactYoutube && headerPeek ? " header-peek" : ""}`}`} style={!inRoom && bounds ? { left: bounds.x, top: windowTop, width: bounds.width, height: windowHeight } : undefined} onPointerEnter={() => { if (compactYoutube) { setHeaderPeek(true); setChatPeek(true); } }} onPointerLeave={() => { setHeaderPeek(false); setChatPeek(false); }} onFocusCapture={() => { if (compactYoutube) setHeaderPeek(true); }}>
     {compactYoutube && !headerPeek && <div className="study-pip-header-trigger" aria-hidden="true" onPointerEnter={() => { setHeaderPeek(true); setChatPeek(true); }} />}
     {!inRoom && <div className="study-pip-header" onPointerDown={(event) => begin(event, "drag")} onPointerMove={move} onPointerUp={end} onPointerCancel={end}>
       <GripHorizontal size={17} aria-hidden="true" /><strong>Cùng học</strong><span className={sessionActive ? "active" : ""}>{clock}</span>
       <button type="button" onClick={() => setSessionActive(!sessionActive)} aria-label={sessionActive ? "Dừng tính thời gian học" : "Tiếp tục tính thời gian học"} title={sessionActive ? "Dừng học" : "Tiếp tục học"}>{sessionActive ? <Pause size={16} /> : <Play size={16} />}</button>
       <div className="study-pip-music" role="group" aria-label={videoMode === "youtube" ? "Điều khiển YouTube live" : "Điều khiển nhạc lofi"}>
-        <button type="button" onClick={() => void toggleAudio()} disabled={videoMode === "youtube" && !youtubeReady} aria-label={activePlaying ? "Tạm dừng nhạc" : "Phát nhạc"} title={activePlaying ? "Tạm dừng nhạc" : "Phát nhạc"}>{activePlaying ? <Pause size={16} /> : <Play size={16} />}</button>
+        <button type="button" onClick={() => void toggleAudio()} disabled={videoMode === "youtube" && !youtubeReady} aria-label={activePlaying ? "Tạm dừng nhạc" : "Phát nhạc"} title={youtubeHidden ? "Mở video để phát YouTube" : activePlaying ? "Tạm dừng nhạc" : "Phát nhạc"}>{activePlaying ? <Pause size={16} /> : <Play size={16} />}</button>
         {activeVolume === 0 ? <VolumeX size={15} aria-hidden="true" /> : <Volume2 size={15} aria-hidden="true" />}
-        <input type="range" min="0" max="100" value={activeVolume} onChange={(event) => changeVolume(Number(event.target.value))} aria-label={videoMode === "youtube" ? "Âm lượng YouTube live" : "Âm lượng nhạc lofi"} />
+        <input type="range" min="0" max="100" value={activeVolume} onChange={(event) => changeVolume(Number(event.target.value))} disabled={youtubeHidden} aria-label={videoMode === "youtube" ? "Âm lượng YouTube live" : "Âm lượng nhạc lofi"} />
       </div>
-      <button type="button" onClick={() => toggleMode("clock")} aria-label={pipMode === "clock" ? "Hiện lại phòng học" : videoMode === "youtube" ? "Thu nhỏ video YouTube" : "Chỉ hiện thanh giờ"} aria-pressed={pipMode === "clock"} title={pipMode === "clock" ? "Hiện lại phòng học" : videoMode === "youtube" ? "Video nhỏ" : "Chỉ thanh giờ"}><PanelTopClose size={16} /></button>
+      <button type="button" onClick={() => toggleMode("clock")} aria-label={pipMode === "bar" ? "Hiện lại video YouTube" : pipMode === "clock" ? "Chỉ hiện thanh điều khiển" : videoMode === "youtube" ? "Thu nhỏ video YouTube" : "Chỉ hiện thanh giờ"} aria-pressed={pipMode === "clock" || pipMode === "bar"} title={pipMode === "bar" ? "Hiện video" : pipMode === "clock" ? "Chỉ thanh điều khiển" : videoMode === "youtube" ? "Video nhỏ" : "Chỉ thanh giờ"}><PanelTopClose size={16} /></button>
       <button type="button" onClick={() => { if (compactYoutube) { if (chatPinned) setChatPeek(false); setChatPinned(!chatPinned); } else toggleMode("chat"); }} aria-label={compactYoutube ? chatPinned ? "Ẩn chat" : "Ghim chat mở" : pipMode === "chat" ? "Hiện lại phòng học" : videoMode === "youtube" ? "Hiện video và phòng chat" : "Chỉ hiện phòng chat chung"} aria-pressed={compactYoutube ? chatPinned : pipMode === "chat"} title={compactYoutube ? chatPinned ? "Ẩn chat" : "Ghim chat mở" : pipMode === "chat" ? "Hiện phòng học" : videoMode === "youtube" ? "Video và chat" : "Chỉ phòng chat"}><MessageCircle size={16} /></button>
-      {pipMode !== "clock" && <button type="button" className="study-pip-size" onClick={toggleSize} aria-label={expanded ? "Thu nhỏ cửa sổ" : "Phóng to cửa sổ"} title={expanded ? "Thu nhỏ" : "Phóng to"}>{expanded ? <Minimize2 size={16} /> : <Expand size={16} />}</button>}
+      {pipMode !== "clock" && pipMode !== "bar" && <button type="button" className="study-pip-size" onClick={toggleSize} aria-label={expanded ? "Thu nhỏ cửa sổ" : "Phóng to cửa sổ"} title={expanded ? "Thu nhỏ" : "Phóng to"}>{expanded ? <Minimize2 size={16} /> : <Expand size={16} />}</button>}
       <Link href="/app/study-together" aria-label="Mở phòng học đầy đủ" title="Mở phòng học"><Maximize2 size={16} /></Link>
       <button type="button" onClick={() => { setVisible(false); setSessionActive(false); youtubePlayer.current?.pauseVideo(); void player.current?.stop(); player.current = null; setMusicPlaying(false); }} aria-label="Đóng cửa sổ cùng học" title="Đóng"><X size={16} /></button>
     </div>}
-    {!inRoom && pipMode === "clock" && <div
+    {!inRoom && (pipMode === "clock" || pipMode === "bar") && <div
       className="study-pip-width-resize"
       role="separator"
       tabIndex={0}
@@ -286,7 +291,7 @@ export function StudyRoomLayer({ canManage }: { canManage: boolean }) {
         resizeClockWidth(bounds.width + (event.key === "ArrowLeft" ? -20 : 20));
       }}
     />}
-    <StudyRoom canManage={canManage} showVideo={inRoom || pipMode === "full" || videoMode === "youtube"} videoMode={videoMode} streamId={streamId} musicPlaying={musicPlaying} volume={volume} onToggleMusic={toggleAudio} onVolumeChange={changeVolume} onSelectVideo={selectVideo} onSelectStream={selectStream} onYoutubeReady={onYoutubeReady} onYoutubeStateChange={(state) => setYoutubePlaying(state === 1)} onYoutubeDispose={onYoutubeDispose} />
-    {!inRoom && pipMode !== "clock" && <div className="study-pip-resize" role="separator" aria-label="Kéo để đổi kích thước cửa sổ" onPointerDown={(event) => begin(event, "resize")} onPointerMove={move} onPointerUp={end} onPointerCancel={end} />}
+    <StudyRoom canManage={canManage} showVideo={inRoom || pipMode === "full" || (videoMode === "youtube" && pipMode !== "bar")} videoMode={videoMode} streamId={streamId} musicPlaying={musicPlaying} volume={volume} onToggleMusic={toggleAudio} onVolumeChange={changeVolume} onSelectVideo={selectVideo} onSelectStream={selectStream} onYoutubeReady={onYoutubeReady} onYoutubeStateChange={(state) => setYoutubePlaying(state === 1)} onYoutubeDispose={onYoutubeDispose} />
+    {!inRoom && pipMode !== "clock" && pipMode !== "bar" && <div className="study-pip-resize" role="separator" aria-label="Kéo để đổi kích thước cửa sổ" onPointerDown={(event) => begin(event, "resize")} onPointerMove={move} onPointerUp={end} onPointerCancel={end} />}
   </div>;
 }

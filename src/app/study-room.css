@@ -42,8 +42,11 @@ body:has(.app-frame.sidebar-collapsed) .study-room-host.full{left:0}
 .study-pip-header button,.study-pip-header a{flex:none;display:grid;place-items:center;width:26px;height:26px;padding:0;border:0;border-radius:7px;background:transparent;color:#527184;cursor:pointer;text-decoration:none}.study-pip-header button:hover,.study-pip-header a:hover{background:#dcefee;color:#0c8992}
 .study-pip-header button[aria-pressed="true"]{background:#d6f2ed;color:#078a83}.study-pip-header button:focus-visible,.study-pip-header a:focus-visible{outline:2px solid #078a83;outline-offset:2px}
 .study-pip-music{display:flex;align-items:center;flex:none;gap:4px;padding:2px 5px;border-radius:9px;background:#e2f4f3;color:#278b88}.study-pip-music input{width:62px;height:16px;accent-color:#078a83;cursor:pointer}.study-pip-music svg{flex:none}
+.study-pip-music button:disabled,.study-pip-music input:disabled{opacity:.45;cursor:not-allowed}
 .study-room-host.pip{container-type:inline-size}.study-room-host.pip-clock{min-height:47px}.study-room-host.pip-chat .study-chat-card{border-top:0}
 .study-room-host.pip.pip-clock .study-room-page{display:none}
+.study-room-host.pip.pip-bar{min-height:47px}
+.study-room-host.pip.pip-bar .study-room-page{display:none}
 .study-room-host.pip.pip-clock.pip-youtube .study-room-page{display:flex}
 .study-room-host.pip-clock.pip-youtube .study-chat-card{display:none}
 .study-room-host.pip-clock.pip-youtube .study-room-grid{flex:none}
