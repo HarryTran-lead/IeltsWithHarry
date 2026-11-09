@@ -1,7 +1,10 @@
 "use client";
 
 import { Fragment, useCallback, useEffect, useMemo, useRef, useState, type CSSProperties, type Dispatch, type SetStateAction } from "react";
-import { AArrowDown, AArrowUp, ChevronLeft, ChevronRight, Eraser, Highlighter, NotebookPen, Pause, Play, RotateCcw, RotateCw, X } from "lucide-react";
+import { AArrowDown, AArrowUp, BookmarkPlus, Check, ChevronLeft, ChevronRight, Eraser, Highlighter, NotebookPen, Pause, Play, RotateCcw, RotateCw, Search, Volume2, X } from "lucide-react";
+import { useOptionalNotebook } from "@/features/notebook/notebook-store";
+import { translateEnglishToVietnamese } from "@/lib/news/browser-translation";
+import { quickDefine } from "@/lib/vocabulary/quick-define";
 import type { ExamContent, ExamQuestion } from "@/lib/ielts-bank/schema";
 import { RichText, type BankExam } from "./bank-exam";
 import { groupQuestions, optionKey, optionLabel, QuestionGroupView, type AnswerProps } from "./bank-questions";
@@ -65,6 +68,62 @@ function HeadingDrop({ question, number, value, held, onPlace, onClear, onLocate
   </div>;
 }
 
+/** A selection worth looking up: one to three English words, returned lower-case without edge punctuation. */
+function lookupWord(text: string) {
+  const word = text.trim().replace(/^[^A-Za-z]+|[^A-Za-z]+$/g, "").replace(/\s+/g, " ");
+  return word.length <= 40 && /^[A-Za-z][A-Za-z'-]*(?: [A-Za-z][A-Za-z'-]*){0,2}$/.test(word) ? word.toLowerCase() : null;
+}
+
+/** Vietnamese meaning, pronunciation and a definition for a word picked in the passage, with "save to notebook". */
+function LookupCard({ word, x, y, onClose }: { word: string; x: number; y: number; onClose: () => void }) {
+  const notebook = useOptionalNotebook();
+  const card = useRef<HTMLDivElement>(null);
+  const [found, setFound] = useState<{ phonetic: string; part: string; definition: string; example: string } | null>(null);
+  const [meaningVi, setMeaningVi] = useState<string | null>(null);
+  const [saved, setSaved] = useState<"idle" | "saving" | "saved" | "error">("idle");
+  // Each source fills its part as soon as it answers; a slow translation stops waiting after 8 s.
+  useEffect(() => {
+    let live = true;
+    void quickDefine(word).then((value) => { if (live) setFound({ phonetic: value.phonetic ?? "", part: value.part ?? "", definition: value.definition ?? "", example: value.example ?? "" }); });
+    const timeout = new Promise<string[]>((resolve) => window.setTimeout(() => resolve([""]), 8000));
+    void Promise.race([translateEnglishToVietnamese([word]), timeout]).then((value) => { if (live) setMeaningVi(value[0] ?? ""); }, () => { if (live) setMeaningVi(""); });
+    return () => { live = false; };
+  }, [word]);
+  useEffect(() => {
+    const close = (event: MouseEvent) => { if (!card.current?.contains(event.target as Node)) onClose(); };
+    const escape = (event: KeyboardEvent) => { if (event.key === "Escape") onClose(); };
+    document.addEventListener("mousedown", close);
+    document.addEventListener("keydown", escape);
+    return () => { document.removeEventListener("mousedown", close); document.removeEventListener("keydown", escape); };
+  }, [onClose]);
+  const already = notebook?.entries.some((entry) => entry.kind === "word" && entry.title.toLowerCase() === word);
+  async function save() {
+    if (!notebook || !meaningVi) return;
+    setSaved("saving");
+    try { await notebook.addEntry({ kind: "word", title: word, body: "", meaningVi: meaningVi.slice(0, 200), example: (found?.example ?? "").slice(0, 500) }, window.location.pathname); setSaved("saved"); }
+    catch { setSaved("error"); }
+  }
+  const left = Math.max(12, Math.min(x - 170, (typeof window === "undefined" ? 1200 : window.innerWidth) - 352));
+  const top = Math.max(12, Math.min(y + 28, (typeof window === "undefined" ? 800 : window.innerHeight) - 330));
+  return <div ref={card} className="bt-lookup" role="dialog" aria-label={`Tra từ ${word}`} style={{ left, top }}>
+    <header>
+      <div><strong>{word}</strong>{found?.phonetic && <span>{found.phonetic}</span>}</div>
+      <button type="button" aria-label="Nghe phát âm" onClick={() => { if ("speechSynthesis" in window) { const voice = new SpeechSynthesisUtterance(word); voice.lang = "en-US"; window.speechSynthesis.speak(voice); } }}><Volume2 size={17} /></button>
+      <button type="button" aria-label="Đóng" onClick={onClose}><X size={17} /></button>
+    </header>
+    {meaningVi === null ? <p className="bt-lookup-loading" role="status">Đang dịch…</p> : meaningVi ? <p className="bt-lookup-vi">{meaningVi}</p> : <p className="bt-lookup-muted">Chưa dịch được từ này.</p>}
+    {found === null ? <p className="bt-lookup-loading" role="status">Đang tra từ điển…</p> : found.definition ? <>
+      <p className="bt-lookup-def">{found.part && <em>{found.part}</em>}{found.definition}</p>
+      {found.example && <p className="bt-lookup-ex">“{found.example}”</p>}
+    </> : <p className="bt-lookup-muted">Từ điển chưa có mục từ này.</p>}
+    <footer>
+      {notebook && <button type="button" disabled={!meaningVi || already || saved === "saving" || saved === "saved"} onClick={() => void save()}>{already || saved === "saved" ? <><Check size={15} /> Đã có trong Sổ tay</> : <><BookmarkPlus size={15} /> {saved === "saving" ? "Đang lưu…" : "Lưu vào Sổ tay"}</>}</button>}
+      {saved === "error" && <small role="alert">Chưa lưu được.</small>}
+      <small>Từ điển mở · dịch máy</small>
+    </footer>
+  </div>;
+}
+
 type CaretDocument = Document & { caretPositionFromPoint?: (x: number, y: number) => { offsetNode: Node; offset: number } | null; caretRangeFromPoint?: (x: number, y: number) => Range | null };
 
 /**
@@ -102,7 +161,11 @@ export function TestRunner({ exam, content, scope, answers, setAnswer, flags, se
   const [navigationError, setNavigationError] = useState("");
   const [current, setCurrent] = useState<string | null>(null);
   const [held, setHeld] = useState<string | null>(null);
-  const [markPop, setMarkPop] = useState<{ x: number; y: number; mark: ReadingMark } | null>(null);
+  const [markPop, setMarkPop] = useState<{ x: number; y: number; mark?: ReadingMark; word?: string | null } | null>(null);
+  const [lookup, setLookup] = useState<{ word: string; x: number; y: number } | null>(null);
+  // The dictionary is a practice aid: the real-test view keeps the sheet clean.
+  const lookupAllowed = canMark && notes.__view !== "exam";
+  const closeLookup = useCallback(() => setLookup(null), []);
   const [leading, setLeading] = useState<"tight" | "normal" | "loose">("normal");
   const [pane, setPane] = useState<"passage" | "questions">("passage");
   const tools = useRef<HTMLDivElement>(null);
@@ -236,8 +299,22 @@ export function TestRunner({ exam, content, scope, answers, setAnswer, flags, se
     });
     if (!captured.length) return;
     setMarks((previous) => [...previous, ...captured.filter((mark) => !previous.some((item) => item.section === mark.section && item.pane === mark.pane && item.block === mark.block && item.start === mark.start && item.end === mark.end))]);
+    // A word or short phrase just highlighted can be looked up straight away.
+    const word = lookupAllowed ? lookupWord(range.toString()) : null;
+    if (word) { const box = range.getBoundingClientRect(); setMarkPop({ x: box.left + box.width / 2, y: box.top, mark: captured.length === 1 ? captured[0] : undefined, word }); }
     chosen.removeAllRanges();
-  }, [canMark, highlightEnabled, section, setMarks]);
+  }, [canMark, highlightEnabled, section, setMarks, lookupAllowed]);
+
+  // With the highlighter off, selecting a word only offers the dictionary.
+  const offerLookup = useCallback(() => {
+    if (!lookupAllowed) return;
+    const chosen = window.getSelection();
+    if (!chosen || chosen.isCollapsed || !passage.current?.contains(chosen.getRangeAt(0).commonAncestorContainer)) return;
+    const word = lookupWord(chosen.toString());
+    if (!word) return;
+    const box = chosen.getRangeAt(0).getBoundingClientRect();
+    setMarkPop({ x: box.left + box.width / 2, y: box.top, word });
+  }, [lookupAllowed]);
 
   // A plain click on highlighted text offers to remove just that highlight.
   const pickMark = useCallback((x: number, y: number, target: EventTarget | null) => {
@@ -256,8 +333,9 @@ export function TestRunner({ exam, content, scope, answers, setAnswer, flags, se
     const index = [...(inPassage ? passage.current : questionPane.current).querySelectorAll(selector)].indexOf(block);
     const at = textOffset(block, node, position?.offset ?? range?.startOffset ?? 0);
     const hit = marks.find((mark) => mark.section === section.id && mark.pane === pane && mark.block === index && at >= mark.start && at <= mark.end);
-    setMarkPop(hit ? { x, y, mark: hit } : null);
-  }, [canMark, marks, section]);
+    const word = hit && lookupAllowed ? lookupWord((block.textContent ?? "").slice(hit.start, hit.end)) : null;
+    setMarkPop(hit ? { x, y, mark: hit, word } : null);
+  }, [canMark, marks, section, lookupAllowed]);
 
   useEffect(() => {
     if (!markPop) return;
@@ -329,7 +407,7 @@ export function TestRunner({ exam, content, scope, answers, setAnswer, flags, se
         <button type="button" className={notesOpen ? "is-on" : ""} aria-pressed={notesOpen} title="Ghi chú từ khóa, paraphrase" onClick={() => setNotesOpen(!notesOpen)}><NotebookPen size={19} />Ghi chú<small>{notes.__general ? "Đã ghi" : "Mở"}</small></button>
         {marks.some((mark) => mark.section === section.id) && <button type="button" title="Xóa mọi tô sáng của phần này" onClick={() => { setMarks(marks.filter((mark) => mark.section !== section.id)); setMarkPop(null); }}><Eraser size={19} />Xóa tô<small>{marks.filter((mark) => mark.section === section.id).length} đoạn</small></button>}
       </aside>}
-      {!listening && <article className="bt-passage" ref={passage} tabIndex={-1} onMouseUp={(event) => { if (window.getSelection()?.isCollapsed) pickMark(event.clientX, event.clientY, event.target); else captureSelection(); }}>
+      {!listening && <article className="bt-passage" ref={passage} tabIndex={-1} onMouseUp={(event) => { if (window.getSelection()?.isCollapsed) pickMark(event.clientX, event.clientY, event.target); else if (highlightEnabled) captureSelection(); else offerLookup(); }}>
         <h2>{section.title}</h2>
         {section.passage.split(/\n\s*\n/).map((paragraph, index) => {
           const letter = /^\s*\*\*([A-Z])\*\*/.exec(paragraph)?.[1];
@@ -344,14 +422,18 @@ export function TestRunner({ exam, content, scope, answers, setAnswer, flags, se
         onPointerDown={(event) => { if (window.matchMedia("(min-width: 901px)").matches) { event.currentTarget.setPointerCapture(event.pointerId); resize(event.clientX); } }}
         onPointerMove={(event) => { if (event.currentTarget.hasPointerCapture(event.pointerId)) resize(event.clientX); }}
         onKeyDown={(event) => { if (event.key === "ArrowLeft" || event.key === "ArrowRight") { event.preventDefault(); setSplit((value) => Math.max(30, Math.min(70, value + (event.key === "ArrowRight" ? 5 : -5)))); } }}><span>⋮</span></div>}
-      <div className="bt-questions" ref={questionPane} onMouseUp={(event) => { if (window.getSelection()?.isCollapsed) pickMark(event.clientX, event.clientY, event.target); else captureSelection(); }} onFocus={(event) => { const id = (event.target as HTMLElement).closest("[id^='q-']")?.id.slice(2); if (id) setCurrent(id); }}>
+      <div className="bt-questions" ref={questionPane} onMouseUp={(event) => { if (window.getSelection()?.isCollapsed) pickMark(event.clientX, event.clientY, event.target); else if (highlightEnabled) captureSelection(); else offerLookup(); }} onFocus={(event) => { const id = (event.target as HTMLElement).closest("[id^='q-']")?.id.slice(2); if (id) setCurrent(id); }}>
         {listening && <header className="bt-part-head"><span>{label(part)}</span><h2>{section.title}</h2></header>}
         {groups.map((group) => <QuestionGroupView key={group.key} group={group} props={props} printed={listening && (group.kind === "gap" || /flow[_-]?chart[_-]completion/.test(group.type)) ? printedListeningLayout(section.passage, group.questions.map((question) => question.number), group.kind === "pick") : undefined} />)}
         <div className="bt-part-end">{part + 1 < sections.length ? <button type="button" className="bx-next" onClick={() => goTo(part + 1)}>Sang {label(part + 1)} <ChevronRight size={17} /></button> : <button type="button" className="bx-submit" onClick={onFinish}>Hoàn thành & nộp bài</button>}</div>
       </div>
     </div>
 
-    {markPop && <div className="bt-mark-pop" style={{ left: markPop.x, top: markPop.y }}><button type="button" onClick={() => { const hit = markPop.mark; setMarks(marks.filter((mark) => !(mark.section === hit.section && mark.pane === hit.pane && mark.block === hit.block && mark.start === hit.start && mark.end === hit.end))); setMarkPop(null); }}><Eraser size={15} /> Bỏ tô sáng</button></div>}
+    {markPop && (markPop.word || markPop.mark) && <div className="bt-mark-pop" style={{ left: markPop.x, top: markPop.y }}>
+      {markPop.word && <button type="button" onMouseDown={(event) => event.preventDefault()} onClick={() => { setLookup({ word: markPop.word!, x: markPop.x, y: markPop.y }); setMarkPop(null); window.getSelection()?.removeAllRanges(); }}><Search size={15} /> Tra “{markPop.word}”</button>}
+      {markPop.mark && <button type="button" onClick={() => { const hit = markPop.mark!; setMarks(marks.filter((mark) => !(mark.section === hit.section && mark.pane === hit.pane && mark.block === hit.block && mark.start === hit.start && mark.end === hit.end))); setMarkPop(null); }}><Eraser size={15} /> Bỏ tô sáng</button>}
+    </div>}
+    {lookup && <LookupCard key={lookup.word} word={lookup.word} x={lookup.x} y={lookup.y} onClose={closeLookup} />}
     {markError && <p className="bt-mark-error" role="status">{markError}</p>}
     {navigationError && <p className="bt-mark-error" role="status">{navigationError}</p>}
 

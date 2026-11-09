@@ -53,7 +53,7 @@ function PreviewBody() {
     </div>
     <BankLibraryView skill="Reading" exams={previewCatalog} attempts={previewAttempts} loading={false} error="" />
   </main>;
-  if (view === "intro") return <ExamIntro exam={previewExam} backHref={`${here}?view=library`} busy={false} error="" scheduleSlot={null}
+  if (view === "intro") return <ExamIntro exam={previewExam} backHref={`${here}?view=library`} busy={false} error="" scheduleSlot={null} resumable={params.get("resume") ? [{ id: "preview-attempt", part: 2, minutesLeft: 12 }] : []}
     onStart={(chosen, options) => {
       const index = chosen ? previewContent.sections.findIndex((section) => section.id === chosen.section) + 1 : 0;
       router.push(`${here}?view=${options?.view === "exam" ? "exam" : "practice"}${index ? `&part=${index}` : ""}`);
@@ -61,7 +61,7 @@ function PreviewBody() {
   if (view === "review") {
     const scoped = part ? previewReview.filter((item) => previewContent.sections[part - 1].questions.some((question) => question.id === item.id)) : previewReview;
     const content = part ? { ...previewContent, sections: [previewContent.sections[part - 1]] } : previewContent;
-    return <ReadingReview title={previewExam.title} content={content} review={scoped} format="Academic" partNumber={part} backHref={`${here}?view=library`} retryHref={`${here}?view=intro`} startedAt="2026-11-09T08:00:00Z" submittedAt="2026-11-09T08:52:00Z" />;
+    return <ReadingReview title={previewExam.title} content={content} review={scoped} format="Academic" partNumber={part} examId={previewExam.id} suggestionSource={{ exams: previewCatalog, attempts: previewAttempts }} backHref={`${here}?view=library`} retryHref={`${here}?view=intro`} startedAt="2026-11-09T08:00:00Z" submittedAt="2026-11-09T08:52:00Z" />;
   }
   return <main className={`bx-page bx-run bx-exam-mode bx-reading-mode ${view === "exam" ? "bx-real-mode" : "bx-practice-mode"} bl-tone-reading`}>
     {view !== "exam" && <div className="br-practice-ribbon"><strong>Ielts<span>WithHarry</span></strong><nav aria-label="Điều hướng kỹ năng"><span>Reading</span><span>{part ? `Passage ${part}` : "Full test"}</span></nav><small>Giao diện luyện tập</small></div>}

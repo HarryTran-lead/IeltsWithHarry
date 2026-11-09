@@ -6,7 +6,7 @@ import { X } from "lucide-react";
 import { attemptContent, attemptMinutes, type ExamContent } from "@/lib/ielts-bank/schema";
 import { catalogHref, catalogSkills } from "@/lib/ielts-bank/catalog";
 import { BankCatalog } from "./bank-catalog";
-import { AnswerInput, ExamBar, ExamIntro, ExamResult, QuestionNav, RichText, SpeakingAnswer, SubmitDialog, toneOf, typeLabel } from "./bank-exam";
+import { type ResumableAttempt, AnswerInput, ExamBar, ExamIntro, ExamResult, QuestionNav, RichText, SpeakingAnswer, SubmitDialog, toneOf, typeLabel } from "./bank-exam";
 import { TestRunner } from "./bank-test";
 import { ReadingReview } from "./bank-reading-review";
 import { WritingFeedbackPanel, WritingStudio } from "./bank-writing";
@@ -26,6 +26,21 @@ export function BankStudent({ examId, resultId, attemptId }: { examId?: string; 
   const [answers, setAnswers] = useState<Record<string,string>>({}), [flags, setFlags] = useState<string[]>([]), [notes, setNotes] = useState<Record<string,string>>({}), [active, setActive] = useState(0), [error, setError] = useState(""), [busy, setBusy] = useState(false), [clock, setClock] = useState(0), [serverOffset, setServerOffset] = useState(0);
   const [dueDate, setDueDate] = useState(""), [scheduled, setScheduled] = useState(false);
   const [jump, setJump] = useState<{ id: string; at: number } | null>(null);
+  const [resumable, setResumable] = useState<ResumableAttempt[]>([]);
+  // On the cover page, offer this learner's unfinished attempts of the exam (from any device).
+  useEffect(() => {
+    if (!exam || attempt || resultId || attemptId) return;
+    let live = true;
+    void fetch("/api/ielts/bank/attempt").then((response) => response.ok ? response.json() : { attempts: [] }).then((data: { attempts?: { id: string; exam_id: string; state: string; started_at: string; notes?: Record<string, string> | null }[] }) => {
+      if (!live) return;
+      setResumable((data.attempts ?? []).filter((item) => item.exam_id === exam.id && item.state === "in_progress").map((item) => ({
+        id: item.id,
+        part: Number(item.notes?.__part) || 0,
+        minutesLeft: Math.max(0, Math.ceil((new Date(item.started_at).getTime() + attemptMinutes(exam.skill, exam.duration_minutes, item.notes) * 60000 - Date.now()) / 60000)),
+      })));
+    }).catch(() => { /* The cover page works without the list. */ });
+    return () => { live = false; };
+  }, [exam, attempt, resultId, attemptId]);
   const [saveState, setSaveState] = useState<"idle" | "saving" | "saved" | "error">("idle"), [confirming, setConfirming] = useState(false);
   const [leaving, setLeaving] = useState(false);
   const loadAttempt = useCallback(async (id: string) => { const data = await api(`attempt?id=${encodeURIComponent(id)}`); setAttempt(data.attempt); setExam(data.attempt.ielts_exams || null); setAnswers(data.attempt.answers || {}); setFlags(data.attempt.flags || []); setNotes(data.attempt.notes || {}); setResult(data.result); setServerOffset(typeof data.serverNow === "number" ? data.serverNow - Date.now() : 0); setClock(Date.now()); }, []);
@@ -70,7 +85,7 @@ export function BankStudent({ examId, resultId, attemptId }: { examId?: string; 
     const score = scope && result.total ? review.filter((item) => item.correct).length : result.score;
     const skill = exam?.skill || attempt?.ielts_exams?.skill || "Reading";
     const attemptRef = attempt?.id || resultId;
-    if ((skill === "Reading" || skill === "Listening") && content && review.length) return <ReadingReview skill={skill} title={exam?.title || attempt?.ielts_exams?.title || `Bài ${skill}`} content={content} review={review} format={exam?.format || "Academic"} attribution={exam?.attribution} savedHighlights={skill === "Reading" ? notes.reading_highlights : undefined} attemptId={attempt?.id} partNumber={part} startedAt={attempt?.started_at} submittedAt={attempt?.submitted_at} backHref={backHref} retryHref={exam?.id ? `/app/question-bank/exam/${exam.id}${part > 0 ? `?part=${part}` : ""}` : undefined} onRetry={examId && !resultId ? () => { setResult(null); setAttempt(null); setAnswers({}); setFlags([]); setNotes({}); setActive(0); setSaveState("idle"); } : undefined} />;
+    if ((skill === "Reading" || skill === "Listening") && content && review.length) return <ReadingReview skill={skill} title={exam?.title || attempt?.ielts_exams?.title || `Bài ${skill}`} content={content} review={review} format={exam?.format || "Academic"} attribution={exam?.attribution} savedHighlights={skill === "Reading" ? notes.reading_highlights : undefined} attemptId={attempt?.id} examId={exam?.id} partNumber={part} startedAt={attempt?.started_at} submittedAt={attempt?.submitted_at} backHref={backHref} retryHref={exam?.id ? `/app/question-bank/exam/${exam.id}${part > 0 ? `?part=${part}` : ""}` : undefined} onRetry={examId && !resultId ? () => { setResult(null); setAttempt(null); setAnswers({}); setFlags([]); setNotes({}); setActive(0); setSaveState("idle"); } : undefined} />;
     return <ExamResult title={attempt?.ielts_exams?.title || exam?.title || "Bài luyện"} skill={skill} format={exam?.format} score={total ? score : null} total={total} review={review} response={response} backHref={backHref} retryHref={exam?.id ? `/app/question-bank/exam/${exam.id}${part > 0 ? `?part=${part}` : ""}` : undefined}
       numberOf={questions.length ? numberOf : undefined}
       extra={skill === "Writing" && attemptRef && response ? <WritingFeedbackPanel attemptId={attemptRef} type={exam?.practice_type} essay={response} /> : undefined}
@@ -78,7 +93,7 @@ export function BankStudent({ examId, resultId, attemptId }: { examId?: string; 
       onRetry={examId && !resultId ? () => { setResult(null); setAttempt(null); setAnswers({}); setFlags([]); setNotes({}); setActive(0); setSaveState("idle"); } : undefined} />;
   }
   if (!exam) return <main className="bx-page"><div className="bx-loading"><span /><span /><span /></div></main>;
-  if (!attempt) return <ExamIntro exam={exam} backHref={backHref} busy={busy} error={error} onStart={(scope, options) => void start(scope, options)} scheduleSlot={<div className="bx-schedule">
+  if (!attempt) return <ExamIntro exam={exam} backHref={backHref} busy={busy} error={error} resumable={resumable} onStart={(scope, options) => void start(scope, options)} scheduleSlot={<div className="bx-schedule">
     <input type="date" value={dueDate} onChange={(e) => setDueDate(e.target.value)} aria-label="Ngày luyện" />
     <button type="button" className="bx-ghost" disabled={!dueDate || busy} onClick={() => { void api("attempt", { action: "schedule", examId: exam.id, dueDate }).then(() => setScheduled(true)).catch((e) => setError(String(e))); }}>Lưu lịch</button>
     {scheduled && <span role="status">Đã thêm vào Study Planner.</span>}

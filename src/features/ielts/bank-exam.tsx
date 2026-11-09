@@ -53,7 +53,9 @@ function bareTitle(title: string) {
 }
 
 /** The exam's cover page: what it is, what to expect, and when to practise it. */
-export function ExamIntro({ exam, backHref, busy, error, onStart, scheduleSlot }: { exam: BankExam; backHref: string; busy: boolean; error: string; onStart: (scope?: { section: string; ids: string[] }, options?: { view: "practice" | "exam"; minutes?: number }) => void; scheduleSlot: ReactNode }) {
+export type ResumableAttempt = { id: string; part: number; minutesLeft: number };
+
+export function ExamIntro({ exam, backHref, busy, error, onStart, scheduleSlot, resumable = [] }: { exam: BankExam; backHref: string; busy: boolean; error: string; onStart: (scope?: { section: string; ids: string[] }, options?: { view: "practice" | "exam"; minutes?: number }) => void; scheduleSlot: ReactNode; resumable?: ResumableAttempt[] }) {
   const searchParams = useSearchParams();
   const parts = (exam.content?.sections ?? []).filter((section) => section.questions.length);
   const partNumber = Number(searchParams.get("part"));
@@ -78,6 +80,13 @@ export function ExamIntro({ exam, backHref, busy, error, onStart, scheduleSlot }
     return <main className={`bx-reading-launch bl-tone-${toneOf(exam.skill)}`}>
       <div className="br-launch-dialog" role="dialog" aria-modal="true" aria-labelledby="br-launch-title">
         <header className="br-launch-head"><div><span className="bx-kicker">IELTS {exam.skill}{chosen ? ` · ${displayExamTitle(exam.title)}` : ""}</span><h1 id="br-launch-title">{chosen ? `${partName(readingPart - 1)}: ${bareTitle(chosen.title)}` : displayExamTitle(exam.title)}</h1></div><Link href={backHref} aria-label="Đóng và về danh sách đề"><X size={19} /></Link></header>
+        {(() => {
+          // An unfinished attempt of the part being chosen (or of any part) is offered before starting again.
+          const open = resumable.find((item) => item.part === readingPart) ?? resumable[0];
+          if (!open) return null;
+          const what = open.part ? partName(open.part - 1) : "Full test";
+          return <div className="br-launch-resume" role="status"><span>Bạn có một lượt làm dở <b>{what}</b> · {open.minutesLeft > 0 ? `còn ${open.minutesLeft} phút` : "đã hết giờ, mở để nộp"}.</span><Link href={`/app/question-bank/attempt/${open.id}`}>Làm tiếp <ArrowRight size={15} /></Link></div>;
+        })()}
         <div className="br-launch-scroll">
           <section className="br-launch-card"><h2>Bước 1: Chọn chế độ luyện tập</h2><div className="br-launch-choices">
             <div className={`br-launch-choice ${readingPart === 0 ? "is-on" : ""}`}><div className="br-launch-choice-head"><strong>Làm full test</strong><select value={readingMinutes} onChange={(event) => setReadingMinutes(Number(event.target.value))} aria-label="Thời gian làm full đề">{fullTimes.map((minutes) => <option key={minutes} value={minutes}>{minutes} phút</option>)}</select></div><small>Làm toàn bộ bài {exam.skill}</small><label><input type="radio" name="exam-part" checked={readingPart === 0} onChange={() => setReadingPart(0)} /><span>Full test</span><em>{examQuestions(exam.content).length} câu</em></label></div>
@@ -88,7 +97,7 @@ export function ExamIntro({ exam, backHref, busy, error, onStart, scheduleSlot }
             <label className={`br-launch-choice br-launch-view ${readingView === "exam" ? "is-on" : ""}`}><div className="br-launch-preview is-exam"><i /><span /><span /><b /></div><div><input type="radio" name="exam-view" checked={readingView === "exam"} onChange={() => setReadingView("exam")} /><strong>Giao diện Thi thật</strong></div><small>{listening ? "Bố cục thi máy tập trung vào âm thanh, câu hỏi và đồng hồ." : "Bố cục thi máy gọn, tập trung vào đồng hồ, bài đọc và câu hỏi."}</small></label>
           </div></section>
         </div>
-        <footer className="br-launch-footer"><span>{count} câu · {chosen ? passageMinutes : readingMinutes} phút · {readingView === "practice" ? "Luyện tập" : "Thi thật"}</span><button type="button" className="bx-start" disabled={busy} onClick={() => onStart(chosen ? { section: chosen.id, ids: chosen.questions.map((question) => question.id) } : undefined, { view: readingView, minutes: chosen ? passageMinutes : readingMinutes })}>{busy ? "Đang mở đề…" : "Bắt đầu làm bài"} <ArrowRight size={18} /></button></footer>
+        <footer className="br-launch-footer"><span>{count} câu · {chosen ? passageMinutes : readingMinutes} phút · {readingView === "practice" ? "Luyện tập" : "Thi thật"}</span><button type="button" className="bx-start" disabled={busy} onClick={() => onStart(chosen ? { section: chosen.id, ids: chosen.questions.map((question) => question.id) } : undefined, { view: readingView, minutes: chosen ? passageMinutes : readingMinutes })}>{busy ? "Đang mở đề…" : resumable.some((item) => item.part === readingPart) ? "Bắt đầu lượt mới" : "Bắt đầu làm bài"} <ArrowRight size={18} /></button></footer>
         {error && <p className="bx-error" role="alert">{error}</p>}
       </div>
     </main>;

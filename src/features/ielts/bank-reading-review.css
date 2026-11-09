@@ -116,3 +116,28 @@ body:has(.br-review) { overflow: hidden; }
 .br-result-hero.is-low { border-color: #f3d2ca; background: linear-gradient(115deg, #fdeee9, #fffaf8); }
 .br-result-hero.is-mid > div b { color: #4a3600; }
 .br-result-hero.is-low > div b { color: #4a1f19; }
+
+/* Shared notes form / table shown once in the review, each gap carrying the learner's answer. */
+.br-sheet { margin: 0 0 18px; padding: 14px 16px; border: 1px solid #e6dcc6; border-radius: 12px; background: #fffdf7; line-height: 2.1; }
+.br-sheet p { margin: 0; }
+.br-sheet .bq-bullets { margin: 2px 0 6px; padding-left: 22px; list-style: disc; }
+.br-sheet .bq-table { width: 100%; border-collapse: collapse; }
+.br-sheet .bq-table th, .br-sheet .bq-table td { padding: 6px 10px; border: 1px solid #e3ecf1; text-align: left; }
+.br-gap { display: inline-flex; align-items: center; gap: 6px; margin: 0 3px; padding: 0 9px 0 4px; border: 1.5px solid; border-radius: 999px; font: inherit; font-size: 13px; font-weight: 700; line-height: 26px; vertical-align: middle; cursor: pointer; }
+.br-gap b { display: grid; place-items: center; min-width: 20px; height: 20px; border-radius: 999px; background: rgba(255, 255, 255, .8); font-size: 11px; }
+.br-gap.is-right { border-color: #8fd0aa; background: #e4f7eb; color: #165d39; }
+.br-gap.is-wrong { border-color: #e4a79d; background: #fff0ec; color: #963b31; text-decoration: line-through; text-decoration-thickness: 1px; }
+.br-gap.is-wrong b { text-decoration: none; }
+.br-gap.is-empty { border-color: #cdd9dd; background: #f5f8f8; color: #536675; }
+
+/* Next passages for the weakest question type. */
+.br-suggest { margin: 18px 0 4px; padding: 18px 20px; border-radius: 12px; background: #f6f8f7; }
+.br-suggest h2 { margin: 0 0 2px; color: #203e34; font-size: 16px; }
+.br-suggest > p { margin: 0 0 12px; color: #6a7f78; font-size: 12.5px; }
+.br-suggest-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; }
+.br-suggest-grid a { display: grid; gap: 3px; padding: 12px 14px; border: 1px solid #dfe8e9; border-radius: 12px; background: #fff; color: #173349; text-decoration: none; transition: border-color .15s, transform .15s; }
+.br-suggest-grid a:hover { border-color: #e46f67; transform: translateY(-2px); }
+.br-suggest-grid span { overflow: hidden; color: #c9503e; font-size: 10.5px; font-weight: 900; letter-spacing: .06em; white-space: nowrap; text-overflow: ellipsis; }
+.br-suggest-grid strong { font-size: 14px; line-height: 1.35; }
+.br-suggest-grid small { color: #6d8296; font-size: 12px; }
+@media (max-width: 760px) { .br-suggest-grid { grid-template-columns: 1fr; } }

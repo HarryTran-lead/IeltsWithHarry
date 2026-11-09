@@ -472,3 +472,22 @@ body:has(.bx-exam-mode) { overflow: hidden; }
 /* The "Choose TWO" question sits inside its box rather than on the border. */
 .bq-many-set legend { float: left; width: 100%; margin: 0 0 8px; padding: 0; line-height: 1.5; }
 .bq-many-set legend + * { clear: both; }
+
+/* Word lookup card (practice view). */
+.bt-mark-pop { display: flex; gap: 4px; }
+.bt-lookup { position: fixed; z-index: 125; display: grid; gap: 8px; width: 340px; max-width: calc(100vw - 24px); box-sizing: border-box; padding: 14px 16px 12px; border: 1px solid #e6dccf; border-radius: 14px; background: #fff; color: #213444; font-size: 14px; line-height: 1.5; box-shadow: 0 22px 50px -22px rgba(20, 40, 60, .45); }
+.bt-lookup header { display: flex; align-items: flex-start; gap: 6px; }
+.bt-lookup header > div { display: grid; flex: 1; min-width: 0; }
+.bt-lookup header strong { font-size: 18px; font-weight: 800; overflow-wrap: anywhere; }
+.bt-lookup header span { color: #6d8296; font-size: 13px; }
+.bt-lookup header button { display: grid; place-items: center; flex: none; width: 32px; height: 32px; border: 0; border-radius: 8px; background: #f3f6f8; color: #4d6070; cursor: pointer; }
+.bt-lookup header button:hover { background: #fff0eb; color: #b3473a; }
+.bt-lookup p { margin: 0; }
+.bt-lookup-vi { color: #9a4638; font-size: 16px; font-weight: 800; }
+.bt-lookup-def em { margin-right: 6px; padding: 1px 7px; border-radius: 999px; background: #eef2f4; color: #4d6070; font-size: 11.5px; font-style: normal; font-weight: 800; }
+.bt-lookup-ex { color: #5c6f80; font-size: 13px; font-style: italic; }
+.bt-lookup-loading, .bt-lookup-muted { color: #6d8296; font-size: 13px; }
+.bt-lookup footer { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; padding-top: 8px; border-top: 1px solid #eef2f4; }
+.bt-lookup footer button { display: inline-flex; align-items: center; gap: 6px; height: 32px; padding: 0 12px; border: 0; border-radius: 8px; background: #df6b59; color: #fff; font: inherit; font-size: 12.5px; font-weight: 800; cursor: pointer; }
+.bt-lookup footer button:disabled { background: #eef2f4; color: #4d6070; cursor: default; }
+.bt-lookup footer small { margin-left: auto; color: #8195a8; font-size: 11px; }

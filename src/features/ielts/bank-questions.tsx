@@ -65,7 +65,7 @@ export function groupQuestions(questions: ExamQuestion[]): QuestionGroup[] {
 }
 
 /** Bold, line breaks, bullet lists and markdown tables, with each gap replaced by `gap(index, numberHint)`. */
-function richBlocks(text: string, gap: (key: string, number?: number) => ReactNode): ReactNode {
+export function richBlocks(text: string, gap: (key: string, number?: number) => ReactNode): ReactNode {
   let gapIndex = 0;
   const inline = (line: string) => line.split(/(\*\*\d+\*\*\s*(?:\{\{gap[^}]*\}\}|_{3,})?|\{\{gap[^}]*\}\}|_{3,}|\*\*[^*]+\*\*)/g).map((part, index) => {
     const numbered = /^\*\*(\d+)\*\*\s*(\{\{gap[^}]*\}\}|_{3,})?$/.exec(part);
