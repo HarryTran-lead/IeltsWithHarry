@@ -4,22 +4,45 @@
 import Link from "next/link";
 import { useEffect, useMemo, useRef, useState, type CSSProperties } from "react";
 import { ArrowLeft, ChevronLeft, ChevronRight, RotateCcw } from "lucide-react";
-import type { ExamContent } from "@/lib/ielts-bank/schema";
+import type { ExamContent, ExamQuestion } from "@/lib/ielts-bank/schema";
 import { displayExamTitle } from "@/lib/ielts-bank/display-title";
 import { estimateBand, type ReviewItem, typeLabel } from "./bank-exam";
-import { optionKey, optionLabel, groupQuestions } from "./bank-questions";
+import { optionKey, optionLabel, groupQuestions, richBlocks, withoutOwnNumber } from "./bank-questions";
 import { RichText } from "./rich-text";
 import { ReadingShare } from "./reading-share";
 import { ListeningTranscript } from "./listening-transcript";
 import { explanationWithoutEvidence } from "@/lib/ielts-bank/reading-evidence";
-import { catalogQuestionTypeIds, catalogQuestionTypes } from "@/lib/ielts-bank/catalog";
+import { catalogQuestionTypeIds, catalogQuestionTypes, catalogSectionEntries, type CatalogExam } from "@/lib/ielts-bank/catalog";
 import { rangeAt, savedReadingMarks } from "./reading-highlights";
 import "./bank-reading-review.css";
 
-type Props = { title: string; skill?: "Reading" | "Listening"; content: ExamContent; review: ReviewItem[]; format: string; attribution?: string; savedHighlights?: string; attemptId?: string; partNumber?: number; startedAt?: string; submittedAt?: string; backHref: string; retryHref?: string; onRetry?: () => void };
+type Props = { title: string; skill?: "Reading" | "Listening"; content: ExamContent; review: ReviewItem[]; format: string; attribution?: string; savedHighlights?: string; attemptId?: string; partNumber?: number; startedAt?: string; submittedAt?: string; backHref: string; retryHref?: string; onRetry?: () => void;
+  /** The exam just done, so suggestions skip it; `suggestionSource` replaces the catalog request (local preview). */
+  examId?: string; suggestionSource?: { exams: CatalogExam[]; attempts: SuggestionAttempt[] } };
+type SuggestionAttempt = { exam_id: string; state: string; notes?: Record<string, string> | null };
+type Suggestion = { href: string; part?: number; title: string; test: string; kind: string };
 
-export function ReadingReview({ title, skill = "Reading", content, review, format, attribution, savedHighlights, attemptId, partNumber, startedAt, submittedAt, backHref, retryHref, onRetry }: Props) {
+/** The line of a shared form that holds this question's gap, else the question's own prompt without its printed number. */
+function reviewPrompt(questions: ExamQuestion[], question: ExamQuestion, number: number) {
+  const carrier = questions.find((item) => (item.prompt.match(/\*\*\d+\*\*/g) ?? []).length >= 2);
+  const line = carrier?.prompt.split(/\r?\n/).find((text) => text.includes(`**${number}**`));
+  if (line) return line.replace(/^\s*[-•]\s*/, "").replace(/\s*\|\s*/g, " · ").replace(/^·\s*|\s*·$/g, "").replace(`**${number}**`, "______").replace(/\*\*(\d+)\*\*/g, "______");
+  return withoutOwnNumber(question.prompt, number);
+}
+
+export function ReadingReview({ title, skill = "Reading", content, review, format, attribution, savedHighlights, attemptId, partNumber, startedAt, submittedAt, backHref, retryHref, onRetry, examId, suggestionSource }: Props) {
   const [summary, setSummary] = useState(true);
+  const [library, setLibrary] = useState<{ exams: CatalogExam[]; attempts: SuggestionAttempt[] } | null>(suggestionSource ?? null);
+  useEffect(() => {
+    if (suggestionSource || !summary) return;
+    let live = true;
+    void Promise.all([
+      fetch(`/api/ielts/bank/catalog?skill=${skill}`).then((response) => response.ok ? response.json() : { exams: [] }),
+      fetch("/api/ielts/bank/attempt").then((response) => response.ok ? response.json() : { attempts: [] }),
+    ]).then(([catalog, mine]: [{ exams?: CatalogExam[] }, { attempts?: SuggestionAttempt[] }]) => { if (live) setLibrary({ exams: catalog.exams ?? [], attempts: mine.attempts ?? [] }); })
+      .catch(() => { /* The result stands without suggestions. */ });
+    return () => { live = false; };
+  }, [skill, summary, suggestionSource]);
   const [guided, setGuided] = useState(false);
   const [part, setPart] = useState(0);
   const [active, setActive] = useState<string | null>(null);
@@ -102,6 +125,19 @@ export function ReadingReview({ title, skill = "Reading", content, review, forma
   const partTitle = onePart ? onePart.title.replace(/^(?:reading\s+)?(?:passage|part|section)\s*\d+\s*[:\-–—]\s*/i, "") : "";
   const level = accuracy >= 75 ? "is-good" : accuracy >= 50 ? "is-mid" : "is-low";
   const verdict = accuracy >= 75 ? "Làm tốt lắm" : accuracy >= 50 ? "Khá ổn, còn vài chỗ cần xem lại" : "Cần luyện thêm";
+  // Up to three passages that train the weakest question type and have not been done yet.
+  const weakest = byType.find(([, row]) => row.right / row.total < 0.75 && row.id !== "other");
+  const suggestions: Suggestion[] = weakest && library ? catalogSectionEntries(library.exams, skill).filter((entry) => {
+    if (entry.exam.id === examId && (entry.part ?? 0) === (partNumber || 0)) return false;
+    if (!catalogQuestionTypeIds(entry.questionTypes).includes(weakest[1].id)) return false;
+    return !library.attempts.some((item) => item.exam_id === entry.exam.id && item.state !== "in_progress" && (entry.splitFromFull ? Number(item.notes?.__part) === entry.part : !item.notes?.__section));
+  }).slice(0, 3).map((entry) => ({
+    href: entry.splitFromFull && entry.part ? `/app/question-bank/exam/${entry.exam.id}?part=${entry.part}` : `/app/question-bank/exam/${entry.exam.id}`,
+    part: entry.part,
+    title: displayExamTitle(entry.title).replace(/^(?:reading\s+)?(?:passage|part|section)\s*\d\s*[:\-–—]\s*/i, ""),
+    test: displayExamTitle(entry.exam.title),
+    kind: weakest[0],
+  })) : [];
   const practiceHref = (kind: string) => `/app/${skill.toLowerCase()}?type=${skill === "Reading" ? "passage" : "part"}&kind=${encodeURIComponent(kind)}`;
   if (summary) return <main className={`bx-page br-summary bl-tone-${skill.toLowerCase()}`}><nav className="bx-crumbs"><Link href={backHref}><ArrowLeft size={15} /> {skill}</Link><span>/</span>Kết quả</nav>
     <section className="br-summary-card"><span className="bx-kicker">KẾT QUẢ BÀI LÀM{onePart ? ` · ${sectionLabel(0).toUpperCase()}` : ""}</span><h1>{partTitle || displayTitle}</h1><p>{partTitle ? `${displayTitle} · ` : ""}Mở lại bài để đối chiếu đáp án với {skill === "Listening" ? "transcript và âm thanh" : "từng đoạn đọc"}.</p>
@@ -116,6 +152,9 @@ export function ReadingReview({ title, skill = "Reading", content, review, forma
         </li>; })}</ul>
       </div>}
       <div className="br-summary-actions"><button type="button" className="bx-start" onClick={() => setSummary(false)}>Xem lại bài làm <ChevronRight size={18} /></button><button type="button" className="bx-ghost" onClick={startGuided}>Ôn từng bước</button>{onRetry ? <button type="button" className="bx-ghost" onClick={onRetry}><RotateCcw size={16} /> Làm lại</button> : retryHref && <Link href={retryHref} className="bx-ghost"><RotateCcw size={16} /> Làm lại</Link>}{skill === "Reading" && attemptId && <ReadingShare attemptId={attemptId} />}</div>
+      {suggestions.length > 0 && <div className="br-suggest"><h2>Gợi ý bài tiếp theo</h2><p>Luyện thêm dạng <b>{suggestions[0].kind}</b> với các bài bạn chưa làm.</p>
+        <div className="br-suggest-grid">{suggestions.map((item) => <Link key={item.href} href={item.href}><span>{item.part ? `${skill === "Listening" ? "SECTION" : "PASSAGE"} ${item.part}` : "BÀI LẺ"} · {item.kind.toUpperCase()}</span><strong>{item.title}</strong><small>{item.test} · {skill === "Reading" ? 20 : 10} phút</small></Link>)}</div>
+      </div>}
       <small>{uncalibrated ? "Đề chưa hiệu chuẩn. Kết quả chỉ phản ánh số câu đúng, chưa quy đổi thành IELTS Band." : "Band chỉ là ước tính từ bài luyện tập."}</small>
     </section></main>;
 
@@ -124,7 +163,17 @@ export function ReadingReview({ title, skill = "Reading", content, review, forma
     <div className="br-review-body" ref={body}>
       <article className="br-passage" ref={passagePane} aria-label={skill === "Listening" ? "Bản ghi và transcript" : "Bài đọc"}><span>{sectionLabel(part)}</span><h1>{section?.title}</h1>{skill === "Listening" && section?.audioUrl && <audio controls preload="metadata" src={section.audioUrl} aria-label={`Nghe lại ${section.title}`} />}{skill === "Listening" && <h2>Transcript</h2>}{skill === "Listening" && (section?.transcript ? <ListeningTranscript transcript={section.transcript} evidence={evidenceQuote} /> : <p>Part này chưa có transcript để đối chiếu.</p>)}{skill === "Reading" && section?.passage.split(/\n\s*\n/).map((paragraph, index) => { const letter = evidence?.paragraph.split("-").at(-1); const matchingParagraph = Boolean(letter && paragraph.startsWith(`**${letter}**`)); const start = evidence?.quote ? paragraph.toLowerCase().indexOf(evidence.quote.toLowerCase()) : -1; return <p key={index} data-paragraph={index} className={matchingParagraph || start >= 0 ? "is-evidence" : undefined}>{start >= 0 && evidence ? <><RichText text={paragraph.slice(0, start)} /><mark><RichText text={paragraph.slice(start, start + evidence.quote.length)} /></mark><RichText text={paragraph.slice(start + evidence.quote.length)} /></> : <RichText text={paragraph} />}</p>; })}</article>
       <div className="br-divider" role="separator" tabIndex={0} aria-label="Độ rộng bài đọc" aria-orientation="vertical" aria-valuemin={30} aria-valuemax={70} aria-valuenow={split} onPointerDown={(event) => { if (window.matchMedia("(min-width: 901px)").matches) { event.currentTarget.setPointerCapture(event.pointerId); resize(event.clientX); } }} onPointerMove={(event) => { if (event.currentTarget.hasPointerCapture(event.pointerId)) resize(event.clientX); }} onKeyDown={(event) => { if (event.key === "ArrowLeft" || event.key === "ArrowRight") { event.preventDefault(); setSplit((value) => Math.max(30, Math.min(70, value + (event.key === "ArrowRight" ? 5 : -5)))); } }}><span>⋮</span></div>
-      <div className="br-questions" ref={questionPane} aria-label="Câu hỏi và giải thích" id="br-question-start">{groups.map((group) => <section className="br-group" key={group.key}><h2 data-review-text>Questions {numberOf(group.questions[0].id)}–{numberOf(group.questions.at(-1)!.id)}</h2><p className="br-instructions" data-review-text><RichText text={group.instructions} /></p>{group.questions.find((question) => question.mediaUrl)?.mediaUrl && <figure className="br-group-media"><img src={group.questions.find((question) => question.mediaUrl)!.mediaUrl} alt={`Sơ đồ cho câu ${numberOf(group.questions[0].id)}–${numberOf(group.questions.at(-1)!.id)}`} /></figure>}{group.questions.map((question) => {
+      <div className="br-questions" ref={questionPane} aria-label="Câu hỏi và giải thích" id="br-question-start">{groups.map((group) => <section className="br-group" key={group.key}><h2 data-review-text>Questions {numberOf(group.questions[0].id)}–{numberOf(group.questions.at(-1)!.id)}</h2><p className="br-instructions" data-review-text><RichText text={group.instructions} /></p>{group.questions.find((question) => question.mediaUrl)?.mediaUrl && <figure className="br-group-media"><img src={group.questions.find((question) => question.mediaUrl)!.mediaUrl} alt={`Sơ đồ cho câu ${numberOf(group.questions[0].id)}–${numberOf(group.questions.at(-1)!.id)}`} /></figure>}{(() => {
+        // A shared notes form or table is shown once, as in the test, with each gap replaced by the learner's answer.
+        const carrier = group.questions.find((question) => (question.prompt.match(/\*\*\d+\*\*/g) ?? []).length >= 2);
+        if (!carrier) return null;
+        return <div className="br-sheet" data-review-text>{richBlocks(carrier.prompt, (_key, number) => {
+          const target = number === undefined ? undefined : group.questions.find((question) => numberOf(question.id) === number);
+          if (!target) return <span className="br-gap is-empty">____</span>;
+          const item = result.get(target.id);
+          return <button type="button" className={`br-gap ${item?.correct ? "is-right" : item?.given ? "is-wrong" : "is-empty"}`} onClick={() => pickQuestion(questions.indexOf(target))} aria-label={`Câu ${number}: ${item?.correct ? "đúng" : item?.given ? "sai" : "bỏ trống"}`}><b>{number}</b>{item?.given || "—"}</button>;
+        })}</div>;
+      })()}{group.questions.map((question) => {
         const item = result.get(question.id);
         const open = active === question.id;
         const fixed = /true[_-]false/.test(question.type) ? ["TRUE", "FALSE", "NOT GIVEN"] : /yes[_-]no/.test(question.type) ? ["YES", "NO", "NOT GIVEN"] : [];
@@ -132,7 +181,7 @@ export function ReadingReview({ title, skill = "Reading", content, review, forma
         const acceptedAnswers = question.group ? [...new Set(questions.filter((candidate) => candidate.group === question.group).flatMap((candidate) => result.get(candidate.id)?.answers || []))] : item?.answers || [];
         const explanation = open ? evidenceReview?.explanation : item?.explanation;
         const cleanExplanation = skill === "Reading" ? explanationWithoutEvidence(explanation || "") : explanation || "";
-        return <div className={`br-question ${item?.correct ? "is-right" : item?.given ? "is-wrong" : "is-skipped"}`} key={question.id} id={`br-q-${question.id}`}><div className="br-question-title"><span>{numberOf(question.id)}</span><div data-review-text><RichText text={question.prompt} /></div><button type="button" aria-expanded={open} onClick={() => setActive(open ? null : question.id)}>{open ? "Ẩn giải thích" : "Xem giải thích"}</button></div>
+        return <div className={`br-question ${item?.correct ? "is-right" : item?.given ? "is-wrong" : "is-skipped"}`} key={question.id} id={`br-q-${question.id}`}><div className="br-question-title"><span>{numberOf(question.id)}</span><div data-review-text><RichText text={reviewPrompt(group.questions, question, numberOf(question.id))} /></div><button type="button" aria-expanded={open} onClick={() => setActive(open ? null : question.id)}>{open ? "Ẩn giải thích" : "Xem giải thích"}</button></div>
           {options.length > 0 && <ul className="br-options">{options.map((option) => { const key = optionKey(option), chosen = item?.given && (option === item.given || key === item.given), answer = acceptedAnswers.some((value) => value === option || value === key); return <li key={option} className={`${chosen ? "is-chosen" : ""} ${answer ? "is-answer" : ""}`}><b>{key}</b><span data-review-text>{optionLabel(option) || option}</span>{chosen && <small>Bạn chọn</small>}{answer && <small>Đáp án</small>}</li>; })}</ul>}
           <div className="br-answer-feedback"><span className={item?.correct ? "is-correct" : item?.given ? "is-incorrect" : "is-empty"}>{item?.correct ? "Đúng" : item?.given ? "Sai" : "Chưa trả lời"} · Bạn: <strong>{item?.given || "—"}</strong></span><span className="is-correct">Đáp án đúng: <strong>{acceptedAnswers.join(" / ") || "—"}</strong>{question.group && " · Không cần đúng thứ tự"}</span></div>
           {open && <div className="br-explanation"><small>{typeLabel(question.type)}</small>{evidence?.quote && <blockquote><b>{guided ? "Bước 1 · Tìm dẫn chứng" : skill === "Listening" ? "Dẫn chứng trong transcript" : "Dẫn chứng trong bài đọc"}</b><br />“{evidence.quote}”</blockquote>}{guided && <b className="br-step-label">Bước 2 · Phân tích đáp án</b>}{cleanExplanation && !cleanExplanation.startsWith("Evidence:") ? <p><RichText text={cleanExplanation} /></p> : !evidence?.quote && <p>Đối chiếu đáp án với {skill === "Listening" ? "transcript bên trái" : "bài đọc bên trái"}.</p>}{guided && <div className="br-step-actions"><button type="button" disabled={guidedIndex <= 0} onClick={() => pickQuestion(guidedIndex - 1)}>Câu trước</button><button type="button" disabled={guidedIndex + 1 >= questions.length} onClick={() => pickQuestion(guidedIndex + 1)}>Câu tiếp <ChevronRight size={15} /></button></div>}</div>}

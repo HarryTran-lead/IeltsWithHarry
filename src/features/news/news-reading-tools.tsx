@@ -7,28 +7,10 @@ import { createClient } from "@/lib/supabase/browser";
 import { useNotebook } from "@/features/notebook/notebook-store";
 import { Sticker } from "@/components/stickers/stickers";
 import { translateEnglishToVietnamese } from "@/lib/news/browser-translation";
+import { quickDefine as define } from "@/lib/vocabulary/quick-define";
 import { ReadingWorkspace, type ReadingPractice } from "@/features/reading/reading-workspace";
 
-type DictionaryEntry = { phonetic?: string; meanings?: { partOfSpeech?: string; definitions?: { definition?: string; example?: string }[] }[] };
 type Lookup = { word: string; phonetic: string; part: string; definition: string; example: string; meaningVi: string };
-
-function forms(word: string) {
-  return [...new Set([word, word.replace(/ies$/, "y"), word.replace(/(ing|ed|es|s)$/, ""), word.replace(/ing$/, "e")])].filter(Boolean);
-}
-
-async function define(word: string): Promise<Partial<Lookup>> {
-  for (const form of forms(word)) {
-    try {
-      const response = await fetch(`https://api.dictionaryapi.dev/api/v2/entries/en/${encodeURIComponent(form)}`);
-      if (!response.ok) continue;
-      const entry = (await response.json() as DictionaryEntry[])[0];
-      const meaning = entry?.meanings?.[0];
-      const definition = meaning?.definitions?.[0];
-      if (definition?.definition) return { phonetic: entry.phonetic ?? "", part: meaning?.partOfSpeech ?? "", definition: definition.definition, example: definition.example ?? "" };
-    } catch { /* The Vietnamese lookup and manual entry remain available. */ }
-  }
-  return {};
-}
 
 export function NewsReadingTools({ articleId, title, paragraphs, initialTranslations, onReadEnd, practice, children }: { articleId: string; title: string; paragraphs: string[]; initialTranslations?: string[] | null; onReadEnd?: () => void; practice?: ReadingPractice; children: React.ReactNode }) {
   const db = useMemo(() => createClient(), []);
