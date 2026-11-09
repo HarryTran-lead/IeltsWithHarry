@@ -14,6 +14,7 @@ import { skillLabStages, skillLabStageOf, skillLabStageUrl } from "@/lib/dictati
 import { DEFAULT_WEEKLY_GOAL, recommendStage, STAGE_TEST_PASS, stageIndex, UNLOCK_SHARE, weekStart, weeklyGoalChoices, type StageId } from "@/lib/dictation-skill-lab/path";
 import { loadResults, type LessonProgress } from "./skill-lab-dictation";
 import { SentenceRunner, skillLabItem, type RunnerResult, type SentenceItem } from "./dictation-sessions";
+import { fetchSkillLabCatalog } from "./skill-lab-catalog";
 import "./voa-dictation.css";
 import "./skill-lab-dictation.css";
 import "./dictation-sessions.css";
@@ -32,13 +33,11 @@ type PathData = {
 const lessonDone = (lesson: CatalogEntry, progress: Record<string, LessonProgress>) => (progress[lesson.lesson_id]?.dictation?.correct ?? 0) >= lesson.turns;
 
 async function loadPath(): Promise<PathData> {
-  const response = await fetch("/api/dictation/skill-lab");
-  const data = await response.json().catch(() => ({})) as { lessons?: CatalogEntry[]; error?: string };
-  if (!response.ok || !data.lessons) throw new Error(data.error ?? "Không tải được lộ trình.");
-  const [progress, placements, tests, goals] = await Promise.all([loadResults(), listPracticeResults(PLACEMENT), listPracticeResults(STAGE_TEST), listPracticeResults(GOAL)]);
+  // The catalog and the learner's results load together; the catalog is shared with the other Dictation pages.
+  const [lessons, progress, placements, tests, goals] = await Promise.all([fetchSkillLabCatalog(), loadResults(), listPracticeResults(PLACEMENT), listPracticeResults(STAGE_TEST), listPracticeResults(GOAL)]);
   const latest = Object.entries(placements).sort(([, a], [, b]) => (b.updatedAt ?? "").localeCompare(a.updatedAt ?? ""))[0];
   return {
-    lessons: data.lessons, progress,
+    lessons, progress,
     placement: latest ? { stage: latest[0].slice(PLACEMENT.length) as StageId, at: latest[1].updatedAt } : null,
     tests: Object.fromEntries(Object.entries(tests).map(([slug, value]) => [slug.slice(STAGE_TEST.length), value])),
     goal: goals[GOAL]?.total || DEFAULT_WEEKLY_GOAL,

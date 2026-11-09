@@ -8,7 +8,7 @@
 import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
 import { useEffect, useMemo, useRef, useState } from "react";
-import { ArrowLeft, ArrowRight, Check, Info, Pause, Play, RotateCcw, X } from "lucide-react";
+import { ArrowLeft, ArrowRight, BookOpenText, CalendarDays, Check, Hash, Info, MapPin, MessageCircle, Pause, Play, RotateCcw, SpellCheck, AudioLines, X, type LucideIcon } from "lucide-react";
 import { createClient } from "@/lib/supabase/browser";
 import { demoMode } from "@/lib/runtime";
 import { percentPassed } from "@/lib/dictation/pass";
@@ -16,6 +16,7 @@ import { correctPrefixWords, maskedAnswer, nextHintCount, wordCount } from "@/li
 import { listPracticeResults, savePracticeSnapshot } from "@/features/learning/practice-results";
 import { TURN_PREFIX, TURN_SLUG } from "./skill-lab-dictation";
 import { ClipProgress, PlaybackControls, useControlReplay, usePlaybackSettings } from "./dictation-playback";
+import { fetchSkillLabCatalog } from "./skill-lab-catalog";
 import "./dictation-playback.css";
 import "./voa-dictation.css";
 import "./skill-lab-dictation.css";
@@ -160,9 +161,12 @@ export function SentenceRunner({ items, onFinish, finishLabel, exam = false, onC
     const passed = list.filter(({ result: value }) => value?.passed).length;
     return (
       <section className="dq-summary voa-surface" aria-live="polite">
-        <span className="voa-eyebrow">KẾT QUẢ</span>
-        <h2>{passed}/{items.length} câu đạt</h2>
-        <p className="sld-muted">{exam ? "Đáp án từng câu ở dưới. " : ""}Câu chưa đạt được lưu vào Sổ câu sai để ôn lại sau.</p>
+        <div className="dq-summary-top">
+          <span className="dq-score" style={{ "--share": Math.round(100 * passed / Math.max(1, items.length)), "--tone": passed / Math.max(1, items.length) >= 0.8 ? "#1ba672" : passed / Math.max(1, items.length) >= 0.5 ? "#12a1ab" : "#f0995f" } as React.CSSProperties}><span><b>{passed}/{items.length}</b><small>câu đạt</small></span></span>
+          <div><span className="voa-eyebrow">KẾT QUẢ</span>
+            <h2>{passed === items.length ? "Tuyệt vời, đạt cả bộ!" : passed / Math.max(1, items.length) >= 0.7 ? "Làm tốt lắm!" : "Cố thêm chút nữa nhé"}</h2>
+            <p className="sld-muted">{exam ? "Đáp án từng câu ở dưới. " : ""}Câu chưa đạt được lưu vào Sổ câu sai để ôn lại sau.</p></div>
+        </div>
         <ol className="dq-summary-list">{list.map(({ entry, result: value }) => <li key={entry.key} className={value?.passed ? "passed" : "failed"}>
           {value?.passed ? <Check size={15} /> : <X size={15} />}<div><strong>{value?.reference ?? entry.title}</strong><small>{entry.source} · {entry.title}</small></div></li>)}</ol>
         <div className="dq-summary-actions">
@@ -177,15 +181,15 @@ export function SentenceRunner({ items, onFinish, finishLabel, exam = false, onC
     : `Chưa đúng · nghe lại, chép đủ từng từ (${Math.round(result.accuracy * 100)}%)`;
   return (
     <section className="dq-session voa-surface" aria-label={`Câu ${index + 1} trên ${items.length}`}>
-      <div className="dq-session-head"><span className="voa-eyebrow">CÂU {index + 1}/{items.length} · {item.source}</span><small className="sld-muted">{item.title}</small></div>
+      <div className="dq-session-head"><span className="voa-eyebrow"><span className="dq-count">{index + 1}/{items.length}</span>{item.source.toUpperCase()}</span><small className="sld-muted">{item.title}</small></div>
       <div className="dq-dots" aria-hidden>{items.map((entry, position) => <span key={entry.key} className={position === index ? "current" : results[entry.key]?.passed ? "passed" : results[entry.key] ? "failed" : ""} />)}</div>
       <audio ref={audio} preload="metadata" onPlay={() => setPlaying(true)} onPause={() => { setPlaying(false); if (boundaryFrame.current !== null) cancelAnimationFrame(boundaryFrame.current); boundaryFrame.current = null; }} onEnded={clipEnded} onTimeUpdate={onTime} />
       <div className="dq-player">
-        <button type="button" className="dq-play" disabled={exam && played[item.key] && !playing} aria-label={playing ? "Tạm dừng" : "Nghe câu"} onClick={() => { if (playing) { if (!exam) { cancelReplay(); audio.current?.pause(); } } else play(); }}>{playing ? <Pause size={26} fill="currentColor" /> : <Play size={26} fill="currentColor" />}</button>
+        <button type="button" className={`dq-play${playing ? " is-playing" : ""}`} disabled={exam && played[item.key] && !playing} aria-label={playing ? "Tạm dừng" : "Nghe câu"} onClick={() => { if (playing) { if (!exam) { cancelReplay(); audio.current?.pause(); } } else play(); }}>{playing ? <Pause size={26} fill="currentColor" /> : <Play size={26} fill="currentColor" />}</button>
         {exam ? <span className="sld-muted">{played[item.key] ? "Đã nghe (mỗi câu chỉ nghe một lần)" : "Bấm để nghe — mỗi câu chỉ nghe một lần"}</span> : <button type="button" onClick={play}><RotateCcw size={15} /> Nghe lại</button>}
         <PlaybackControls settings={settings} lockSpeed={exam} />
+        <ClipProgress audio={audio} startMs={item.audio.startMs} endMs={item.audio.endMs} />
       </div>
-      <ClipProgress audio={audio} startMs={item.audio.startMs} endMs={item.audio.endMs} />
       <textarea ref={input} className="sld-dictation-answer" rows={2} value={answer} autoFocus spellCheck={false} autoComplete="off" autoCapitalize="off" placeholder="Gõ câu bạn nghe được…"
         onChange={(event) => { setAnswer(event.target.value); if (result?.passed || result?.skipped) { setResults((current) => { const copy = { ...current }; delete copy[item.key]; return copy; }); setReveal(false); setRevealedWords(0); } }}
         onKeyDown={(event) => {
@@ -214,12 +218,13 @@ export function SentenceRunner({ items, onFinish, finishLabel, exam = false, onC
           : <button type="button" className="voa-primary-button" disabled={busy || (exam && !answer.trim())} onClick={() => { if (result && !exam && answer === checkedAnswer) { setRevealedWords((count) => nextHintCount(result.reference, answer, count)); play(); } else void check(); }}><Check size={15} /> {busy ? "Đang kiểm tra…" : exam ? "Nộp câu này" : "Gợi ý / Kiểm tra"}</button>}
         {!(result && (result.passed || result.skipped)) && <button type="button" disabled={busy} onClick={() => void check(true)}>{exam ? "Không nghe được · Câu tiếp" : "Bỏ qua · Xem đáp án"}</button>}
         {result && !result.passed && !result.skipped && <button type="button" onClick={next}>Để sau <ArrowRight size={15} /></button>}
-      </div><span className="sld-muted sld-shortcuts">{exam ? "Enter nộp câu này và sang câu tiếp" : "Enter: kiểm tra hoặc lộ thêm 1 từ; chép đúng rồi sang câu tiếp · Ctrl nghe lại"}</span></div>
+      </div><span className="sld-muted sld-shortcuts">{exam ? <><kbd>Enter</kbd> nộp câu này và sang câu tiếp</> : <><kbd>Enter</kbd> kiểm tra / gợi ý 1 từ · <kbd>Ctrl</kbd> nghe lại</>}</span></div>
     </section>
   );
 }
 
 type SkillSummary = { id: string; label: string; detail: string; sentences: number };
+const skillIcons: Record<string, LucideIcon> = { numbers: Hash, spelling: SpellCheck, dates: CalendarDays, sounds: AudioLines, places: MapPin, everyday: MessageCircle, academic: BookOpenText };
 
 export function DictationQuickPractice() {
   const router = useRouter();
@@ -262,8 +267,9 @@ export function DictationQuickPractice() {
       {error && <p className="sld-error" role="alert">{error}</p>}
       {!skill ? (
         <div className="dq-skill-grid">
-          {skills === null ? <p className="sld-muted">Đang tải…</p> : skills.map((item) => (
-            <button type="button" key={item.id} className="dq-skill-card voa-surface" disabled={item.sentences < 5} onClick={() => router.push(`/app/dictation/practice?skill=${item.id}`)}>
+          {skills === null ? Array.from({ length: 6 }, (_, index) => <span key={index} className="dq-skill-card voa-surface dq-skeleton" aria-hidden />) : skills.map((item) => (
+            <button type="button" key={item.id} className={`dq-skill-card voa-surface is-${item.id}`} disabled={item.sentences < 5} onClick={() => router.push(`/app/dictation/practice?skill=${item.id}`)}>
+              <span className="dq-skill-icon" aria-hidden>{(() => { const Icon = skillIcons[item.id] ?? AudioLines; return <Icon size={21} />; })()}</span>
               <strong>{item.label}</strong><span>{item.detail}</span><small>{item.sentences} câu có audio</small><ArrowRight size={17} aria-hidden />
             </button>
           ))}
@@ -283,8 +289,8 @@ async function loadMistakes(): Promise<Mistake[]> {
   const found: Mistake[] = [];
   const lessonTitles = new Map<string, string>();
   const turnRows = await listPracticeResults(TURN_PREFIX);
-  const catalog = await fetch("/api/dictation/skill-lab").then((response) => response.ok ? response.json() : { lessons: [] }).catch(() => ({ lessons: [] })) as { lessons?: { lesson_id: string; title: string }[] };
-  for (const lesson of catalog.lessons ?? []) lessonTitles.set(lesson.lesson_id, lesson.title);
+  const catalog = await fetchSkillLabCatalog().catch(() => []);
+  for (const lesson of catalog) lessonTitles.set(lesson.lesson_id, lesson.title);
   const lessonIds = [...new Set(Object.keys(turnRows).map((slug) => slug.slice(TURN_PREFIX.length).split("/")[0]).filter(Boolean))];
   const playable = new Map<string, { audio_url: string | null; start_ms: number; end_ms: number | null }>();
   for (let start = 0; start < lessonIds.length; start += 12) {
@@ -384,7 +390,7 @@ export function DictationReview() {
           : !mistakes.length ? <section className="voa-surface sld-empty"><h2>Chưa có câu nào cần ôn</h2><p>Câu nào chưa đạt khi bạn nghe chép sẽ xuất hiện ở đây.</p><Link className="voa-primary-button" href="/app/dictation/practice">Luyện nhanh 5 phút</Link></section>
             : <>
               <div className="dq-review-counts">{(Object.entries(counts) as [string, number][]).map(([source, count]) => <span key={source}><strong>{count}</strong> {source}</span>)}</div>
-              <ol className="dq-review-list">{mistakes.slice(0, 60).map((entry) => <li key={entry.item.key} className="voa-surface"><span className="dq-source">{entry.item.source}</span><span>{entry.item.title}</span>
+              <ol className="dq-review-list">{mistakes.slice(0, 60).map((entry) => <li key={entry.item.key} className="voa-surface"><span className={`dq-source is-${entry.item.source === "Skill Lab" ? "skill" : entry.item.source.toLowerCase()}`}>{entry.item.source}</span><span>{entry.item.title}</span>
                 <button type="button" onClick={() => setSession([entry.item])}>Ôn câu này</button></li>)}</ol>
               {mistakes.length > 60 && <p className="sld-muted">Và {mistakes.length - 60} câu khác.</p>}
               {demoMode && <p className="sld-muted">Chế độ demo chỉ có câu của IELTS Skill Lab.</p>}

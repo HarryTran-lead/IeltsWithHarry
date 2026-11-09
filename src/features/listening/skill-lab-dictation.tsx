@@ -18,6 +18,7 @@ import { correctPrefixWords, maskedAnswer, nextHintCount, wordCount } from "@/li
 import { celebrate } from "@/lib/celebrate";
 import { topicIllustration } from "@/lib/topic-illustration";
 import { ClipProgress, PlaybackControls, useControlReplay, usePlaybackSettings } from "./dictation-playback";
+import { fetchSkillLabCatalog } from "./skill-lab-catalog";
 import "./dictation-playback.css";
 import "./voa-dictation.css";
 import "./skill-lab-dictation.css";
@@ -89,14 +90,13 @@ function SkillLabCatalog({ stageId }: { stageId: string }) {
 
   useEffect(() => {
     let alive = true;
-    void fetch("/api/dictation/skill-lab").then(async (response) => {
-      const data = await response.json().catch(() => ({})) as { lessons?: CatalogEntry[]; error?: string };
+    // Saved results load alongside the (cached) catalog instead of after it.
+    loadResults().then((found) => { if (alive) setResults(found); }).catch(() => undefined);
+    void fetchSkillLabCatalog().then((lessons) => {
       if (!alive) return;
-      if (!response.ok || !data.lessons) { setError(data.error ?? "Không tải được kho bài."); setLessons([]); return; }
-      setLessons(data.lessons);
+      setLessons(lessons);
       try { setLast(window.localStorage.getItem("skill-lab-last-lesson") ?? ""); } catch { /* optional */ }
-      loadResults().then((found) => { if (alive) setResults(found); }).catch(() => undefined);
-    });
+    }).catch((failure: unknown) => { if (alive) { setError(failure instanceof Error ? failure.message : "Không tải được kho bài."); setLessons([]); } });
     return () => { alive = false; };
   }, []);
 
@@ -149,7 +149,7 @@ function SkillLabCatalog({ stageId }: { stageId: string }) {
                       <span className="sld-card-art" aria-hidden>
                         {/* eslint-disable-next-line @next/next/no-img-element -- small static topic SVG */}
                         <img src={topicIllustration(`${lesson.topic} ${lesson.title}`).src} alt="" loading="lazy" />
-                        <svg className="sld-ring" viewBox="0 0 36 36"><circle cx="18" cy="18" r="15.5" /><circle cx="18" cy="18" r="15.5" style={{ strokeDasharray: `${share * 97.4} 97.4` }} /></svg>
+                        <svg className="sld-ring" viewBox="0 0 36 36"><circle cx="18" cy="18" r="15.5" /><circle cx="18" cy="18" r="15.5" style={{ strokeDasharray: `${share * 97.4} 97.4`, opacity: share > 0 ? 1 : 0 }} /></svg>
                         <b>{Math.round(share * 100)}%</b>
                       </span>
                       <span className="sld-card-top"><span className="sld-code">{levelLabel(lesson.level)} · {formats[lesson.content_format] ?? lesson.content_format}</span><span className={`sld-pill sld-pill-${state}`}>{state === "done" ? "Đã xong" : state === "started" ? "Đang học" : "Mới"}</span></span>
@@ -795,9 +795,9 @@ function LessonSummary({ lesson, dictationResults, questionResults, questions, o
   const stage = skillLabStageOf(lesson);
   useEffect(() => {
     let alive = true;
-    Promise.all([fetch("/api/dictation/skill-lab").then((response) => response.json() as Promise<{ lessons?: CatalogEntry[] }>), loadResults()]).then(([data, progress]) => {
+    Promise.all([fetchSkillLabCatalog(), loadResults()]).then(([lessons, progress]) => {
       if (!alive) return;
-      const inStage = (data.lessons ?? []).filter((item) => item.audio_ready && skillLabStageOf(item) === stage);
+      const inStage = lessons.filter((item) => item.audio_ready && skillLabStageOf(item) === stage);
       const after = inStage.findIndex((item) => item.lesson_id === lesson.lesson_id);
       const isDone = (item: CatalogEntry) => item.lesson_id === lesson.lesson_id || (progress[item.lesson_id]?.dictation?.correct ?? 0) >= item.turns;
       setNext([...inStage.slice(after + 1), ...inStage.slice(0, Math.max(0, after))].find((item) => !isDone(item)) ?? null);
