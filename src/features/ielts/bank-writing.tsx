@@ -1,7 +1,7 @@
 "use client";
 
-import { useEffect, useState, type ReactNode } from "react";
-import { BookOpenText, Lightbulb, Loader2, PenLine, Search, Sparkles, Wand2 } from "lucide-react";
+import { useEffect, useMemo, useRef, useState, type ReactNode } from "react";
+import { BookOpenText, Lightbulb, Loader2, PenLine, Search, Sparkles, Wand2, X } from "lucide-react";
 import type { ExamContent } from "@/lib/ielts-bank/schema";
 import { RichText, type BankExam } from "./bank-exam";
 import "./bank-writing.css";
@@ -148,16 +148,78 @@ export function WritingStudio({ exam, content, answers, setAnswers, visual }: { 
   </div>;
 }
 
-type Feedback = {
+type Criterion = "TR" | "CC" | "LR" | "GR";
+type CriterionKey = "task_response" | "coherence_cohesion" | "lexical_resource" | "grammatical_range";
+type Correction = { criterion?: Criterion; issue_vi?: string; original: string; improved: string; explanation_vi: string };
+export type WritingFeedback = {
   overall: number; task_response: number; coherence_cohesion: number; lexical_resource: number; grammatical_range: number;
   summary_vi: string; strengths_vi: string[]; improvements_vi: string[];
-  corrections: { original: string; improved: string; explanation_vi: string }[];
+  /** Added later: older stored feedback has no per-criterion notes, criterion tags or full rewrite. */
+  criteria_vi?: Record<CriterionKey, string>;
+  corrections: Correction[];
   upgraded_paragraph: string;
+  upgraded_essay?: string;
 };
 
+const criteriaFor = (type?: string): { id: Criterion; key: CriterionKey; label: string; short: string; vi: string }[] => [
+  { id: "TR", key: "task_response", label: type === "task2" ? "Task Response" : "Task Achievement", short: "TR", vi: type === "task2" ? "Trả lời đúng, đủ yêu cầu đề" : "Mô tả đúng, đủ dữ liệu và overview" },
+  { id: "CC", key: "coherence_cohesion", label: "Coherence & Cohesion", short: "CC", vi: "Mạch lạc và liên kết" },
+  { id: "LR", key: "lexical_resource", label: "Lexical Resource", short: "LR", vi: "Vốn từ vựng" },
+  { id: "GR", key: "grammatical_range", label: "Grammatical Range", short: "GR", vi: "Ngữ pháp đa dạng, chính xác" },
+];
+const bandTone = (band: number) => band >= 7 ? "is-high" : band >= 5.5 ? "is-mid" : "is-low";
+
+type Located = { start: number; end: number; index: number };
+/** Where each correction's quoted words sit in the essay (first free match, exact then case-insensitive). */
+function locateCorrections(essay: string, corrections: Correction[]): Located[] {
+  const found: Located[] = [];
+  const lower = essay.toLowerCase();
+  const free = (start: number, end: number) => found.every((item) => end <= item.start || start >= item.end);
+  corrections.forEach((correction, index) => {
+    const needles = [...new Set([correction.original.trim(), correction.original.trim().replace(/[.,;:!?]+$/, "")])].filter((text) => text.length > 1);
+    for (const needle of needles) {
+      for (const [haystack, target] of [[essay, needle], [lower, needle.toLowerCase()]] as const) {
+        let at = haystack.indexOf(target);
+        while (at >= 0 && !free(at, at + target.length)) at = haystack.indexOf(target, at + 1);
+        if (at >= 0) { found.push({ start: at, end: at + target.length, index }); return; }
+      }
+    }
+  });
+  return found.sort((a, b) => a.start - b.start);
+}
+
+type Piece = { text: string; changed: boolean };
+/** Word-level difference of two texts: words kept in order are plain, the rest are marked as changed. */
+function diffWords(before: string, after: string): { left: Piece[]; right: Piece[] } | null {
+  const a = before.match(/\S+|\s+/g) ?? [], b = after.match(/\S+|\s+/g) ?? [];
+  const wa = a.flatMap((token, index) => /\S/.test(token) ? [index] : []), wb = b.flatMap((token, index) => /\S/.test(token) ? [index] : []);
+  if (wa.length > 1500 || wb.length > 1500) return null;
+  const key = (token: string) => token.toLowerCase().replace(/[“”"'’.,;:!?()]/g, "");
+  const n = wa.length, m = wb.length, table = new Uint16Array((n + 1) * (m + 1));
+  for (let i = n - 1; i >= 0; i--) for (let j = m - 1; j >= 0; j--) {
+    table[i * (m + 1) + j] = key(a[wa[i]]) === key(b[wb[j]]) ? table[(i + 1) * (m + 1) + j + 1] + 1 : Math.max(table[(i + 1) * (m + 1) + j], table[i * (m + 1) + j + 1]);
+  }
+  const keepA = new Set<number>(), keepB = new Set<number>();
+  for (let i = 0, j = 0; i < n && j < m;) {
+    if (key(a[wa[i]]) === key(b[wb[j]])) { keepA.add(wa[i]); keepB.add(wb[j]); i++; j++; }
+    else if (table[(i + 1) * (m + 1) + j] >= table[i * (m + 1) + j + 1]) i++; else j++;
+  }
+  const pieces = (tokens: string[], keep: Set<number>) => {
+    const marked = tokens.map((token, index) => ({ text: token, changed: /\S/.test(token) ? !keep.has(index) : false }));
+    // A space between two changed words joins them into one highlighted phrase.
+    marked.forEach((piece, index) => { if (!/\S/.test(piece.text) && !piece.text.includes("\n") && marked[index - 1]?.changed && marked[index + 1]?.changed) piece.changed = true; });
+    return marked.reduce<Piece[]>((runs, piece) => {
+      const last = runs[runs.length - 1];
+      if (last && last.changed === piece.changed) last.text += piece.text; else runs.push({ ...piece });
+      return runs;
+    }, []);
+  };
+  return { left: pieces(a, keepA), right: pieces(b, keepB) };
+}
+
 /** Asks the AI examiner for band scores and comments on a submitted essay, then shows them. */
-export function WritingFeedbackPanel({ attemptId, type, essay }: { attemptId: string; type?: string; essay: string }) {
-  const [feedback, setFeedback] = useState<Feedback | null>(null), [busy, setBusy] = useState(false), [error, setError] = useState(""), [tab, setTab] = useState<"essay" | "fix" | "upgrade">("essay");
+export function WritingFeedbackPanel({ attemptId, type, essay, prompt }: { attemptId: string; type?: string; essay: string; prompt?: string }) {
+  const [feedback, setFeedback] = useState<WritingFeedback | null>(null), [busy, setBusy] = useState(false), [error, setError] = useState("");
   async function grade(silent = false) {
     setBusy(true); setError("");
     try {
@@ -173,32 +235,135 @@ export function WritingFeedbackPanel({ attemptId, type, essay }: { attemptId: st
     fetch(`/api/ielts/bank/writing-feedback?attemptId=${encodeURIComponent(attemptId)}`).then((response) => response.ok ? response.json() : null).then((data) => { if (live && data?.feedback) setFeedback(data.feedback); }, () => undefined);
     return () => { live = false; };
   }, [attemptId]);
-  const criteria = feedback ? [
-    { label: type === "task2" ? "Task Response" : "Task Achievement", value: feedback.task_response },
-    { label: "Coherence & Cohesion", value: feedback.coherence_cohesion },
-    { label: "Lexical Resource", value: feedback.lexical_resource },
-    { label: "Grammatical Range", value: feedback.grammatical_range },
-  ] : [];
+  if (feedback) return <WritingFeedbackView feedback={feedback} type={type} essay={essay} prompt={prompt} />;
   return <section className="bw-feedback">
-    {!feedback ? <div className="bw-grade-cta">
-      <div><h2><Sparkles size={19} /> Chấm bài bằng AI</h2><p>Nhận band ước tính cho 4 tiêu chí, nhận xét tiếng Việt và câu sửa cụ thể. Kết quả chỉ để luyện tập, không phải điểm IELTS chính thức.</p></div>
+    <div className="bw-grade-cta">
+      <div><h2><Sparkles size={19} /> Chấm bài bằng AI</h2><p>Nhận band ước tính cho 4 tiêu chí, lỗi được đánh dấu ngay trên bài, giải thích tiếng Việt và bản nâng cấp cả bài. Kết quả chỉ để luyện tập, không phải điểm IELTS chính thức.</p></div>
       <button type="button" className="bx-start" disabled={busy} onClick={() => void grade()}>{busy ? <><Loader2 size={17} className="bw-spin" /> Đang chấm…</> : <><Wand2 size={17} /> Chấm bài</>}</button>
       {error && <p className="bx-error" role="alert">{error}</p>}
-    </div> : <>
-      <div className="bw-scores">
-        <div className="bw-overall"><span>Overall (ước tính)</span><b>{feedback.overall.toFixed(1)}</b></div>
-        {criteria.map((item) => <div key={item.label}><span>{item.label}</span><b>{item.value.toFixed(1)}</b></div>)}
-      </div>
-      <p className="bw-summary">{feedback.summary_vi}</p>
-      <div className="bl-chips bw-tabs" role="group" aria-label="Phần nhận xét">
-        <button type="button" aria-pressed={tab === "essay"} onClick={() => setTab("essay")}>Bài viết của bạn</button>
-        <button type="button" aria-pressed={tab === "fix"} onClick={() => setTab("fix")}>Sửa bài <b>{feedback.corrections.length}</b></button>
-        <button type="button" aria-pressed={tab === "upgrade"} onClick={() => setTab("upgrade")}>Gợi ý nâng cấp</button>
-      </div>
-      {tab === "essay" && <div className="bw-feedback-grid"><article className="bw-essay">{essay.split(/\n\s*\n/).map((paragraph, index) => <p key={index}>{paragraph}</p>)}</article>
-        <aside><h3>Điểm mạnh</h3><ul className="bw-good">{feedback.strengths_vi.map((item) => <li key={item}>{item}</li>)}</ul><h3>Cần cải thiện</h3><ul className="bw-todo">{feedback.improvements_vi.map((item) => <li key={item}>{item}</li>)}</ul></aside></div>}
-      {tab === "fix" && <ol className="bw-fixes">{feedback.corrections.map((item, index) => <li key={index}><p className="bw-before">{item.original}</p><p className="bw-after">{item.improved}</p><small>{item.explanation_vi}</small></li>)}</ol>}
-      {tab === "upgrade" && <article className="bw-upgrade"><h3>Một đoạn được viết lại ở mức ~7.5</h3><p>{feedback.upgraded_paragraph}</p></article>}
-    </>}
+    </div>
+  </section>;
+}
+
+type FeedbackTab = "essay" | "fix" | "upgrade";
+
+/**
+ * A graded essay in three views: the learner's text with the examiner's notes,
+ * the same text with every error highlighted by criterion (click one to see
+ * why and how to fix it), and a side-by-side upgrade showing what changed.
+ */
+export function WritingFeedbackView({ feedback, type, essay, prompt }: { feedback: WritingFeedback; type?: string; essay: string; prompt?: string }) {
+  const [tab, setTab] = useState<FeedbackTab>("fix");
+  const [filter, setFilter] = useState<Criterion | "all">("all");
+  const [active, setActive] = useState<{ index: number; top: number; left: number } | null>(null);
+  const textBox = useRef<HTMLDivElement>(null);
+  const criteria = criteriaFor(type);
+  const located = useMemo(() => locateCorrections(essay, feedback.corrections), [essay, feedback.corrections]);
+  const placed = new Set(located.map((item) => item.index));
+  const countFor = (id: Criterion | "all") => feedback.corrections.filter((item) => id === "all" || item.criterion === id).length;
+  const shown = (correction: Correction) => filter === "all" || correction.criterion === filter;
+  const unplaced = feedback.corrections.map((item, index) => ({ item, index })).filter(({ item, index }) => !placed.has(index) && shown(item));
+  const upgraded = useMemo(() => {
+    if (feedback.upgraded_essay?.trim()) return feedback.upgraded_essay.trim();
+    // Older feedback has no full rewrite: apply the examiner's own corrections to the learner's text.
+    let text = essay;
+    for (const item of [...located].sort((a, b) => b.start - a.start)) text = text.slice(0, item.start) + feedback.corrections[item.index].improved + text.slice(item.end);
+    return text;
+  }, [feedback, essay, located]);
+  const diff = useMemo(() => tab === "upgrade" ? diffWords(essay, upgraded) : null, [tab, essay, upgraded]);
+  const words = countWords(essay);
+
+  useEffect(() => {
+    if (!active) return;
+    const close = (event: MouseEvent) => { if (!(event.target as HTMLElement).closest(".wf-pop, .wf-mark")) setActive(null); };
+    const escape = (event: KeyboardEvent) => { if (event.key === "Escape") setActive(null); };
+    document.addEventListener("mousedown", close);
+    document.addEventListener("keydown", escape);
+    return () => { document.removeEventListener("mousedown", close); document.removeEventListener("keydown", escape); };
+  }, [active]);
+
+  function openMark(index: number, target: HTMLElement) {
+    const box = textBox.current?.getBoundingClientRect(), rect = target.getBoundingClientRect();
+    if (!box) return;
+    const width = Math.min(340, box.width);
+    setActive({ index, top: rect.bottom - box.top + 8, left: Math.max(0, Math.min(rect.left - box.left, box.width - width)) });
+  }
+  function focusCriterion(id: Criterion) { setTab("fix"); setFilter(id); setActive(null); }
+
+  const highlighted: ReactNode[] = [];
+  let cursor = 0;
+  for (const item of located) {
+    const correction = feedback.corrections[item.index];
+    if (!shown(correction)) continue;
+    if (item.start > cursor) highlighted.push(essay.slice(cursor, item.start));
+    // A <mark> (not a <button>) so a long highlight wraps with the sentence instead of breaking onto its own line.
+    highlighted.push(<mark key={item.index} role="button" tabIndex={0} aria-label={`${correction.issue_vi || "Lỗi"}: ${essay.slice(item.start, item.end)}`} className={`wf-mark is-${(correction.criterion ?? "x").toLowerCase()} ${active?.index === item.index ? "is-active" : ""}`}
+      onClick={(event) => openMark(item.index, event.currentTarget)}
+      onKeyDown={(event) => { if (event.key === "Enter" || event.key === " ") { event.preventDefault(); openMark(item.index, event.currentTarget); } }}>{essay.slice(item.start, item.end)}</mark>);
+    cursor = item.end;
+  }
+  highlighted.push(essay.slice(cursor));
+  const current = active ? feedback.corrections[active.index] : null;
+  const currentCriterion = current?.criterion ? criteria.find((item) => item.id === current.criterion) : undefined;
+  const promptBox = prompt?.trim() ? <div className="wf-prompt"><RichText text={prompt} /></div> : null;
+
+  return <section className="bw-feedback wf">
+    <div className="wf-scorecard">
+      <div className={`wf-overall ${bandTone(feedback.overall)}`}><span>Overall</span><b>{feedback.overall.toFixed(1)}</b><small>band ước tính</small></div>
+      {criteria.map((item) => <button type="button" key={item.id} className="wf-criterion" onClick={() => focusCriterion(item.id)} title={`Xem lỗi ${item.label}`}>
+        <span>{item.label}</span><b>{feedback[item.key].toFixed(1)}</b><small>{countFor(item.id) ? `${countFor(item.id)} lỗi` : item.vi}</small>
+      </button>)}
+    </div>
+    <p className="wf-meta"><Sparkles size={15} /> Chấm bởi Harry AI Examiner · {words} từ · {feedback.corrections.length} điểm cần sửa · chỉ để luyện tập, không phải điểm thi chính thức.</p>
+
+    <div className="wf-tabs" role="tablist" aria-label="Phần nhận xét">
+      <button type="button" role="tab" aria-selected={tab === "essay"} onClick={() => setTab("essay")}><BookOpenText size={15} /> Bài viết của bạn</button>
+      <button type="button" role="tab" aria-selected={tab === "fix"} onClick={() => setTab("fix")}><PenLine size={15} /> Sửa bài <b>{feedback.corrections.length}</b></button>
+      <button type="button" role="tab" aria-selected={tab === "upgrade"} onClick={() => setTab("upgrade")}><Wand2 size={15} /> Gợi ý nâng cấp</button>
+    </div>
+
+    {tab === "essay" && <div className="wf-layout">
+      <article className="wf-paper">{promptBox}<div className="wf-text">{essay}</div></article>
+      <aside className="wf-side">
+        <div className="wf-note"><h3>Nhận xét chung</h3><p>{feedback.summary_vi}</p></div>
+        <div className="wf-note"><h3>Điểm mạnh</h3><ul className="bw-good">{feedback.strengths_vi.map((item) => <li key={item}>{item}</li>)}</ul></div>
+        <div className="wf-note"><h3>Cần cải thiện</h3><ul className="bw-todo">{feedback.improvements_vi.map((item) => <li key={item}>{item}</li>)}</ul></div>
+      </aside>
+    </div>}
+
+    {tab === "fix" && <div className="wf-layout">
+      <article className="wf-paper">
+        <div className="wf-filters" role="group" aria-label="Lọc lỗi theo tiêu chí">
+          <button type="button" aria-pressed={filter === "all"} onClick={() => { setFilter("all"); setActive(null); }}>Tất cả <b>{countFor("all")}</b></button>
+          {criteria.map((item) => <button type="button" key={item.id} className={`is-${item.id.toLowerCase()}`} aria-pressed={filter === item.id} onClick={() => { setFilter(item.id); setActive(null); }}>{item.short} <b>{countFor(item.id)}</b></button>)}
+        </div>
+        <p className="wf-hint"><Lightbulb size={15} /> Bấm vào phần được tô màu để xem lỗi, cách sửa và lý do.</p>
+        {promptBox}
+        <div className="wf-text-box" ref={textBox}>
+          <div className="wf-text">{highlighted}</div>
+          {active && current && <div className="wf-pop" role="dialog" aria-label={current.issue_vi || "Gợi ý sửa"} style={{ top: active.top, left: active.left }}>
+            <header><span className={`wf-pop-tag is-${(current.criterion ?? "x").toLowerCase()}`}>{currentCriterion?.short ?? "Lỗi"}</span><strong>{current.issue_vi || currentCriterion?.label || "Cần sửa"}</strong><button type="button" onClick={() => setActive(null)} aria-label="Đóng"><X size={15} /></button></header>
+            <p className="wf-pop-why">{current.explanation_vi}</p>
+            <p className="wf-pop-fix"><span>Sửa lại:</span> {current.improved}</p>
+          </div>}
+        </div>
+        {unplaced.length > 0 && <div className="wf-extra"><h3>Góp ý khác</h3><ol className="bw-fixes">{unplaced.map(({ item, index }) => <li key={index}>{item.issue_vi && <strong>{item.issue_vi}</strong>}<p className="bw-before">{item.original}</p><p className="bw-after">{item.improved}</p><small>{item.explanation_vi}</small></li>)}</ol></div>}
+      </article>
+      <aside className="wf-side">
+        <h3 className="wf-side-title">Nhận xét 4 tiêu chí</h3>
+        {criteria.map((item) => <button type="button" key={item.id} className={`wf-crit-card is-${item.id.toLowerCase()} ${filter === item.id ? "is-selected" : ""}`} onClick={() => focusCriterion(item.id)}>
+          <span className="wf-crit-head"><strong>{item.label}</strong><b>{feedback[item.key].toFixed(1)}</b></span>
+          <small>{item.vi}{countFor(item.id) ? ` · ${countFor(item.id)} lỗi` : ""}</small>
+          {feedback.criteria_vi?.[item.key] && <span className="wf-crit-why">{feedback.criteria_vi[item.key]}</span>}
+        </button>)}
+        {!feedback.criteria_vi && <div className="wf-note"><p>{feedback.summary_vi}</p></div>}
+      </aside>
+    </div>}
+
+    {tab === "upgrade" && <div className="wf-upgrade">
+      <article className="wf-paper"><h3>Bài viết của bạn</h3><div className="wf-text">{diff ? diff.left.map((piece, index) => piece.changed ? <del key={index}>{piece.text}</del> : piece.text) : essay}</div></article>
+      <article className="wf-paper is-upgraded"><h3>Gợi ý nâng cấp <small>~ band 7.5</small></h3><div className="wf-text">{diff ? diff.right.map((piece, index) => piece.changed ? <ins key={index}>{piece.text}</ins> : piece.text) : upgraded}</div></article>
+      {!feedback.upgraded_essay && feedback.upgraded_paragraph && <article className="bw-upgrade"><h3>Một đoạn được viết lại ở mức ~7.5</h3><p>{feedback.upgraded_paragraph}</p></article>}
+    </div>}
   </section>;
 }

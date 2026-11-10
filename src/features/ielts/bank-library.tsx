@@ -8,10 +8,11 @@ import { TopicArt } from "@/components/illustrations/topic-art";
 import { catalogGroups, catalogSkills, balancedCatalog, catalogEntriesForSelection, catalogQuestionTypes, catalogQuestionTypeIds, type CatalogExam, type CatalogSkill } from "@/lib/ielts-bank/catalog";
 import { displayExamTitle } from "@/lib/ielts-bank/display-title";
 import type { MockCatalogEntry } from "@/lib/listening-mocks/mocks";
+import { WritingLibrary } from "./bank-writing-library";
 import "./bank-library.css";
 import { Sticker } from "@/components/stickers/stickers";
 
-type Attempt = { id: string; exam_id: string; state: string; score: number | null; total: number | null; notes?: Record<string, string> | null };
+export type Attempt = { id: string; exam_id: string; state: string; score: number | null; total: number | null; notes?: Record<string, string> | null };
 
 export const librarySkills: Record<CatalogSkill, { icon: typeof BookOpen; href: string; tone: string }> = {
   Reading: { icon: BookOpen, href: "/app/reading", tone: "reading" },
@@ -42,7 +43,7 @@ const questionTypes = [
 ] as const;
 const otherType = { id: "other", label: "Other Types" };
 
-const writingKinds: Record<string, string> = {
+export const writingKinds: Record<string, string> = {
   line: "Line Graph", bar: "Bar Chart", pie: "Pie Chart", table: "Table", process: "Process", map: "Map", mixed: "Mixed Graph", chart: "Biểu đồ", letter: "Letter", essay: "Essay",
 };
 
@@ -55,13 +56,13 @@ function typeGroups(exam: CatalogExam) {
   return [...found.entries()].map(([id, label]) => ({ id, label }));
 }
 
-function writingKind(exam: CatalogExam) {
+export function writingKind(exam: CatalogExam) {
   if (exam.practice_type === "task2") return "essay";
   if (exam.practice_type === "task1_general") return "letter";
   return visualKind(String(exam.visual?.kind ?? exam.visual_kind ?? exam.task_type ?? ""));
 }
 
-function visualKind(value: string) {
+export function visualKind(value: string) {
   const kind = value.toLowerCase();
   if (/line/.test(kind)) return "line";
   if (/bar|column/.test(kind)) return "bar";
@@ -89,13 +90,13 @@ function shelfTitle(title: string) {
 }
 
 /** Words for the illustration: the topic code without its prefix, plus the title. */
-function artTopic(exam: CatalogExam) {
+export function artTopic(exam: CatalogExam) {
   return `${(exam.topic ?? "").replace(/^topic_/, "").replace(/_/g, " ")} ${exam.title}`;
 }
 
 const sentence = (text: string) => text.charAt(0).toLocaleUpperCase() + text.slice(1);
 
-function sourceLabel(exam: CatalogExam) {
+export function sourceLabel(exam: CatalogExam) {
   return exam.attribution.split(/[·,(]/)[0].trim() || exam.source_id || "Nguồn khác";
 }
 
@@ -127,9 +128,10 @@ export function BankLibrary({ skill }: { skill: CatalogSkill }) {
   return <BankLibraryView skill={skill} exams={current?.exams ?? []} attempts={current?.attempts ?? []} loading={!current} error={current?.error ?? ""} />;
 }
 
-type LibraryViewProps = { skill: CatalogSkill; exams: CatalogExam[]; attempts: Attempt[]; loading: boolean; error: string };
+export type LibraryViewProps = { skill: CatalogSkill; exams: CatalogExam[]; attempts: Attempt[]; loading: boolean; error: string };
 
 export function BankLibraryView(props: LibraryViewProps) {
+  if (props.skill === "Writing") return <WritingLibrary {...props} />;
   return props.skill === "Reading" || props.skill === "Listening"
     ? <SectionedLibrary {...props} skill={props.skill} />
     : <LegacyBankLibraryView {...props} />;
@@ -354,7 +356,7 @@ function Check({ checked, onChange, label, count }: { checked: boolean; onChange
   return <label className="bl-check"><input type="checkbox" checked={checked} onChange={onChange} /><span>{label}</span>{count !== undefined && <small>{count}</small>}</label>;
 }
 
-function Pager({ page, count, onPage }: { page: number; count: number; onPage: (page: number) => void }) {
+export function Pager({ page, count, onPage }: { page: number; count: number; onPage: (page: number) => void }) {
   const numbers = [...new Set([0, page - 1, page, page + 1, count - 1].filter((value) => value >= 0 && value < count))].sort((a, b) => a - b);
   return <nav className="bl-pager" aria-label="Phân trang đề">
     <button type="button" disabled={page === 0} onClick={() => onPage(page - 1)}><ChevronLeft size={16} /> Trang trước</button>
@@ -448,7 +450,7 @@ export function ExamCard({ exam, attempt, section }: { exam: CatalogExam; attemp
 }
 
 /** A small drawing of a Writing Task 1 visual: lines, bars, a pie, a table, a process or a map. */
-function VisualThumb({ visual, kind }: { visual: Record<string, unknown>; kind: string }) {
+export function VisualThumb({ visual, kind }: { visual: Record<string, unknown>; kind: string }) {
   const panel = Array.isArray(visual.panels) && visual.panels[0] && typeof visual.panels[0] === "object" ? visual.panels[0] as Record<string, unknown> : visual;
   if (panel !== visual) kind = visualKind(String(panel.kind ?? kind));
   const series = (Array.isArray(panel.series) ? panel.series : []).slice(0, 4) as Record<string, unknown>[];
