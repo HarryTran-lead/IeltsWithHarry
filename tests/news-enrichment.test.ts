@@ -1,5 +1,11 @@
 import { describe, expect, it } from "vitest";
-import { AiQuotaError, findNewsIllustration, generateNewsQuiz, imageClaimLimit, imageKeywords, normalizeAnswer, quizExcerpt, tfngOptions, validateGeneratedQuiz as validateWithPlan } from "../src/lib/news/enrichment";
+import { AiQuotaError, findNewsIllustration, generateNewsQuiz, imageClaimLimit, imageKeywords, normalizeAnswer, quizExcerpt, scheduledNewsWorkSlot, tfngOptions, validateGeneratedQuiz as validateWithPlan } from "../src/lib/news/enrichment";
+
+it("reserves quiz work even while translation, image and discovery backlogs exist", () => {
+  const slot = (hour: number, minute: number) => scheduledNewsWorkSlot(new Date(`2026-11-11T${String(hour).padStart(2, "0")}:${String(minute).padStart(2, "0")}:00Z`));
+  expect([5, 15, 25, 35, 45, 55].map((minute) => slot(0, minute))).toEqual(["quiz", "discovery", "image", "discovery", "translation", "discovery"]);
+  expect([5, 15, 25, 35, 45, 55].map((minute) => slot(1, minute))).toEqual(["quiz", "discovery", "image", "discovery", "quiz", "discovery"]);
+});
 
 const passage = "The Artemis team tested a new spacecraft on Tuesday. The spacecraft will carry instruments to study the Moon. Scientists will use the results to prepare later missions. The test took place at Kennedy Space Center in Florida. Engineers measured the heat shield during the flight.";
 const quote = "The Artemis team tested a new spacecraft on Tuesday.";
