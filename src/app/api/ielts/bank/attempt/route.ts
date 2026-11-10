@@ -4,6 +4,7 @@ import { attemptContent, attemptMinutes, contentSchema, publicContent, listening
 import { learnerSkillAvailable, releaseLocks } from "@/lib/runtime";
 import readingEvidence from "@/data/ielts-reading-evidence.json";
 import { evidenceFromExplanation } from "@/lib/ielts-bank/reading-evidence";
+import { enqueueWritingAttempt, gradingEnabled } from "@/lib/writing-grading/server";
 export const runtime = "nodejs";
 const unavailable = () => Response.json({ error: "Question bank is not available yet." }, { status: 404 });
 function withEvidence(result: ReturnType<typeof scoreAnswers>) {
@@ -69,7 +70,12 @@ export async function POST(request: Request) {
       const linkedExam = Array.isArray(existing.ielts_exams) ? existing.ielts_exams[0] : existing.ielts_exams;
       if (!learnerSkillAvailable(linkedExam?.skill)) return unavailable();
     }
-    return Response.json(withEvidence(await submitAttempt(body.attemptId, user.id, body.answers, body.expired ? "expired" : "submitted", { notes: body.notes, flags: body.flags, difficulty: body.difficulty })));
+    const submitted = await submitAttempt(body.attemptId, user.id, body.answers, body.expired ? "expired" : "submitted", { notes: body.notes, flags: body.flags, difficulty: body.difficulty });
+    if (gradingEnabled()) {
+      // Queue failures must never erase or roll back an already submitted essay.
+      await enqueueWritingAttempt(body.attemptId, user.id).catch(() => undefined);
+    }
+    return Response.json(withEvidence(submitted));
   } catch (error) { return requestError(error); }
 }
 export async function GET(request: Request) {
