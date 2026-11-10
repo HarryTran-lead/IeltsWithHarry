@@ -45,7 +45,7 @@ import { NotificationBell } from "@/components/account/notification-bell";
 import { AvatarFrame } from "@/components/account/avatar-frame";
 import { levelProgress, rankForLevel } from "@/lib/gamification";
 import { useNewsUnread } from "@/features/news/news-unread";
-import { HeaderSkyBackdrop, HeaderWeatherEffects, HeaderWeatherProvider, HeaderWeatherWidget, useHeaderWeather } from "@/components/header-weather";
+import { HeaderSkyBackdrop, HeaderWeatherProvider, HeaderWeatherWidget, useHeaderWeather } from "@/components/header-weather";
 import weatherStyles from "@/components/header-weather/headerWeather.module.css";
 
 const groups = [
@@ -518,7 +518,6 @@ function AppShellContent({ children, canManage }: { children: React.ReactNode; c
       <main className="main-area">
         {error && <div className="save-error" role="alert">{error} <button onClick={clearError} aria-label="Dismiss error">×</button></div>}
         <div className="page-enter" key={section}>{children}</div>
-        <HeaderWeatherEffects />
       </main>
       <nav className="bottom-nav" aria-label="Mobile navigation">
         {links.filter(({ href }) => ["/app/dashboard", "/app/learn", "/app/study-together", "/app/planner"].includes(href)).map(

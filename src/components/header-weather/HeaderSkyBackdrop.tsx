@@ -2,6 +2,7 @@
 
 import { useEffect, useReducer, useRef } from 'react';
 import { useHeaderWeather } from './HeaderWeatherProvider';
+import { HeaderSkyWeather } from './HeaderWeatherEffects';
 import { initialScene, sceneReducer } from './sceneTransition';
 import { nextPhase } from './time';
 import { isRainyWeather } from './weatherApi';
@@ -74,9 +75,13 @@ export function HeaderSkyBackdrop() {
 
   const showRainClouds = mode === 'full' && weather !== null && isRainyWeather(weather.weatherCode);
 
-  return <div className={styles.skyBackdrop} aria-hidden="true">
-    {scene.current && <span className={`${styles.skyScene} ${nightClass(scene.current)}`} style={{ backgroundImage: `url('${SCENE_ASSETS[scene.current]}')` }} />}
-    {scene.incoming && <span className={`${styles.skyScene} ${styles.skySceneNext} ${scene.fading ? styles.skySceneVisible : ''} ${nightClass(scene.incoming)}`} style={{ backgroundImage: `url('${SCENE_ASSETS[scene.incoming]}')` }} />}
-    {showRainClouds && <span className={styles.rainClouds} />}
-  </div>;
+  return <>
+    <div className={styles.skyBackdrop} aria-hidden="true">
+      {scene.current && <span className={`${styles.skyScene} ${nightClass(scene.current)}`} style={{ backgroundImage: `url('${SCENE_ASSETS[scene.current]}')` }} />}
+      {scene.incoming && <span className={`${styles.skyScene} ${styles.skySceneNext} ${scene.fading ? styles.skySceneVisible : ''} ${nightClass(scene.incoming)}`} style={{ backgroundImage: `url('${SCENE_ASSETS[scene.incoming]}')` }} />}
+      {showRainClouds && <span className={styles.rainClouds} />}
+    </div>
+    {/* Outside the clipped, masked backdrop so the weather can hang below the header and fade out. */}
+    <HeaderSkyWeather className={styles.skyWeather} />
+  </>;
 }
