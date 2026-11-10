@@ -1,7 +1,7 @@
 /** Run on a private worker host: npx tsx scripts/writing-grading-worker.ts [--once]. */
 import { randomUUID } from "node:crypto";
 import { createClient } from "@supabase/supabase-js";
-import { gradeWithLocalModel } from "../src/lib/writing-grading/local-provider";
+import { gradeWithLocalModel, verifyLocalModelRevision } from "../src/lib/writing-grading/local-provider";
 import { rubricVersion, schemaVersion, verifyModelDraft, type TaskType } from "../src/lib/writing-grading/contract";
 
 const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
@@ -20,7 +20,7 @@ type Job = {
 };
 
 async function processOne() {
-  const { data: job, error } = await db.rpc("writing_claim_grading_job", { p_lease_seconds: 180 });
+  const { data: job, error } = await db.rpc("writing_claim_grading_job", { p_lease_seconds: 900 });
   if (error) throw new Error(`Queue claim failed: ${error.message}`);
   if (!job) return false;
   const item = job as Job;
@@ -68,6 +68,7 @@ async function processOne() {
 }
 
 async function main() {
+  await verifyLocalModelRevision({ url: modelUrl, model: modelId, revision: revisionId });
   const once = process.argv.includes("--once");
   do {
     const claimed = await processOne();
