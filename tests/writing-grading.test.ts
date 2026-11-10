@@ -1,6 +1,7 @@
 import { afterEach, describe, expect, it, vi } from "vitest";
 import { combineWritingBands, countEnglishWords, displayHalfBand, verifyModelDraft } from "../src/lib/writing-grading/contract";
 import { gradeWithLocalModel } from "../src/lib/writing-grading/local-provider";
+import { cloudflareWritingModel, gradeWithCloudflare } from "../src/lib/writing-grading/cloudflare-provider";
 
 const essay = "Emoji 😀 and café.\r\nThe same claim appears again: same.";
 const start = essay.lastIndexOf("same");
@@ -51,5 +52,34 @@ describe("local model boundary (mock response; no live model)", () => {
     const request = JSON.parse(fetchMock.mock.calls[0][1].body as string);
     expect(request.messages[0].role).toBe("system");
     expect(JSON.parse(request.messages[1].content).essay).toBe(essay);
+  });
+});
+
+describe("Cloudflare model boundary (mock response; no live model)", () => {
+  const input = { taskType: "academic_task2" as const, prompt: "Why?", essay, visual: null, verifiedFacts: [] };
+  const options = { accountId: "a".repeat(32), apiToken: "test-secret" };
+
+  it("sends the essay only from the server to the fixed Workers AI model", async () => {
+    const fetcher = vi.fn().mockResolvedValue({ ok: true, json: async () => ({ success: true, result: { response: draft("academic_task2") } }) });
+    const result = await gradeWithCloudflare(input, { ...options, fetcher });
+    expect(result.criteria).toHaveLength(4);
+    expect(fetcher.mock.calls[0][0]).toBe(`https://api.cloudflare.com/client/v4/accounts/${options.accountId}/ai/run/${cloudflareWritingModel}`);
+    expect(fetcher.mock.calls[0][1].headers.Authorization).toBe("Bearer test-secret");
+    const request = JSON.parse(fetcher.mock.calls[0][1].body as string);
+    expect(JSON.parse(request.messages[1].content).essay).toBe(essay);
+    expect(request.response_format.type).toBe("json_schema");
+  });
+
+  it("rejects missing credentials and malformed hosted output", async () => {
+    await expect(gradeWithCloudflare(input, { ...options, accountId: "invalid" })).rejects.toThrow("CLOUDFLARE_NOT_CONFIGURED");
+    const fetcher = vi.fn().mockResolvedValue({ ok: true, json: async () => ({ success: true, result: { response: "not JSON" } }) });
+    await expect(gradeWithCloudflare(input, { ...options, fetcher })).rejects.toThrow("CLOUDFLARE_INVALID_JSON");
+  });
+
+  it("distinguishes the free daily quota from other rate limits", async () => {
+    const quota = vi.fn().mockResolvedValue({ ok: false, status: 429, json: async () => ({ errors: [{ code: 3036 }] }) });
+    await expect(gradeWithCloudflare(input, { ...options, fetcher: quota })).rejects.toThrow("CLOUDFLARE_QUOTA_EXCEEDED");
+    const rateLimit = vi.fn().mockResolvedValue({ ok: false, status: 429, json: async () => ({ errors: [{ code: 9999 }] }) });
+    await expect(gradeWithCloudflare(input, { ...options, fetcher: rateLimit })).rejects.toThrow("CLOUDFLARE_HTTP_429");
   });
 });

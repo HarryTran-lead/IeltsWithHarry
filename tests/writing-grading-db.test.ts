@@ -4,6 +4,7 @@ import { describe, expect, it } from "vitest";
 import { PGlite } from "@electric-sql/pglite";
 
 const migration = readFileSync(resolve("supabase/migrations/202611100004_writing_grading_foundation.sql"), "utf8");
+const hostedMigration = readFileSync(resolve("supabase/migrations/202611100005_writing_hosted_model_registry.sql"), "utf8");
 
 describe("Writing grading migration", () => {
   it("preserves attempt ownership and claims one idempotent job", async () => {
@@ -24,6 +25,7 @@ describe("Writing grading migration", () => {
         create table public.ielts_attempts(id uuid primary key);
       `);
       await db.exec(migration);
+      await db.exec(hostedMigration);
       await db.query("insert into auth.users(id) values ($1),($2)", [alice, bob]);
       const version = "33333333-3333-4333-8333-333333333333";
       const attempt = "44444444-4444-4444-8444-444444444444";
@@ -50,6 +52,8 @@ describe("Writing grading migration", () => {
       expect((await db.query("select id from public.writing_grading_results")).rows).toHaveLength(1);
       await expect(db.query("update public.writing_grading_results set model_version='changed'")).rejects.toThrow("immutable");
       await expect(db.query("insert into public.writing_model_registry(model_id,revision,task_type,weights_license,training_data_rights,artifact_sha256,evaluation_report_ref,status) values ('demo','v1','academic_task2','unknown','unknown',$1,'','approved')", ["a".repeat(64)])).rejects.toThrow();
+      await db.query("insert into public.writing_model_registry(model_id,revision,task_type,provider,provider_model_ref,weights_license,training_data_rights,evaluation_report_ref,status) values ('hosted','managed','academic_task2','cloudflare','@cf/demo','unknown','unverified','','blocked')");
+      await expect(db.query("insert into public.writing_model_registry(model_id,revision,task_type,provider,weights_license,training_data_rights,evaluation_report_ref,status) values ('bad-hosted','managed','academic_task2','cloudflare','unknown','unverified','','blocked')")).rejects.toThrow();
       await expect(db.query("insert into public.writing_dataset_manifest(source_ref,source_type,training_allowed) values ('unknown','third_party',true)")).rejects.toThrow();
       await db.exec(`set role authenticated; set request.jwt.claim.sub = '${bob}';`);
       expect((await db.query("select id from public.writing_grading_results")).rows).toEqual([]);
