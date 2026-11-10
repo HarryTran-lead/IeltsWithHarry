@@ -1,5 +1,5 @@
 import { expect, it } from "vitest";
-import { discoveryBudget, findIndependentDossier, rankDiscoveryCandidates, resolveFactualSourceUrl } from "../src/lib/news/press-discovery";
+import { discoveryBudget, eligibleDiscoveryLead, findIndependentDossier, rankDiscoveryCandidates, resolveFactualSourceUrl } from "../src/lib/news/press-discovery";
 import { pressDiscoveryFeedUrls, rssProvider, type NewsItem, type NewsSource } from "../src/lib/news/providers";
 
 const source: NewsSource = {
@@ -28,6 +28,15 @@ it("rotates research away from a category whose recent leads failed", () => {
     lead("education-next", "Education", 2),
   ], new Map(), new Set(["business-skipped"]));
   expect(ranked.find(({ item }) => item.canonical_hash !== "business-skipped")?.item.canonical_hash).toBe("education-next");
+});
+
+it("considers the last three days of leads without admitting older or future stories", () => {
+  const now = Date.parse("2026-11-10T06:00:00Z");
+  const lead = (hoursAgo: number) => ({ sensitive: false, published_at: new Date(now - hoursAgo * 3600000).toISOString() });
+  expect(eligibleDiscoveryLead(lead(70), now)).toBe(true);
+  expect(eligibleDiscoveryLead(lead(73), now)).toBe(false);
+  expect(eligibleDiscoveryLead(lead(-2), now)).toBe(false);
+  expect(eligibleDiscoveryLead({ ...lead(1), sensitive: true }, now)).toBe(false);
 });
 
 it("resolves Google grounding citations only when they lead to an approved original source", async () => {
