@@ -1,5 +1,5 @@
 import { expect, it } from "vitest";
-import { discoveryBudget, eligibleDiscoveryLead, findIndependentDossier, rankDiscoveryCandidates, resolveFactualSourceUrl } from "../src/lib/news/press-discovery";
+import { discoveryBudget, eligibleDiscoveryLead, findIndependentDossier, rankDiscoveryCandidates, resolveFactualSourceUrl, youthRelevanceForTitle } from "../src/lib/news/press-discovery";
 import { pressDiscoveryFeedUrls, rssProvider, type NewsItem, type NewsSource } from "../src/lib/news/providers";
 
 const source: NewsSource = {
@@ -23,7 +23,7 @@ it("keeps researching after thin topics while capping attempts and completed dra
 
 it("rotates research away from a category whose recent leads failed", () => {
   const lead = (hash: string, category: NewsItem["category"], hour: number) => ({
-    item: { canonical_hash: hash, canonical_url: `https://baochinhphu.vn/${hash}.htm`, category, published_at: `2026-11-10T${String(hour).padStart(2, "0")}:00:00Z` } as NewsItem,
+    item: { canonical_hash: hash, canonical_url: `https://baochinhphu.vn/${hash}.htm`, title: hash, category, published_at: `2026-11-10T${String(hour).padStart(2, "0")}:00:00Z` } as NewsItem,
     source,
   });
   const ranked = rankDiscoveryCandidates([
@@ -31,6 +31,20 @@ it("rotates research away from a category whose recent leads failed", () => {
     lead("education-next", "Education", 2),
   ], new Map(), new Set(["business-skipped"]));
   expect(ranked.find(({ item }) => item.canonical_hash !== "business-skipped")?.item.canonical_hash).toBe("education-next");
+});
+
+it("favors youth-relevant leads and a source absent from today's published passages", () => {
+  const lead = (hash: string, title: string, sourceName: string) => ({
+    item: { canonical_hash: hash, canonical_url: `https://baochinhphu.vn/${hash}.htm`, title, category: "Culture", published_at: "2026-11-10T04:00:00Z" } as NewsItem,
+    source: { ...source, name: sourceName },
+  });
+  expect(youthRelevanceForTitle("Sinh viên tham gia lễ hội âm nhạc", "Culture")).toBe(2);
+  expect(youthRelevanceForTitle("A university festival for young people", "Education")).toBe(4);
+  const ranked = rankDiscoveryCandidates([
+    lead("ministry", "A traditional industry meeting", "Vietnam Ministry of Science and Technology"),
+    lead("culture", "Sinh viên tham gia lễ hội âm nhạc", "Government News Culture"),
+  ], new Map(), new Set(), new Map([["Vietnam Ministry of Science and Technology", 4]]));
+  expect(ranked[0].item.canonical_hash).toBe("culture");
 });
 
 it("considers the last three days of leads without admitting older or future stories", () => {
@@ -58,13 +72,38 @@ it("reads an official Vietnamese feed page directly and extracts only its factua
   const fetcher = (async (url: RequestInfo | URL, init?: RequestInit) => {
     if (String(url) === page) return new Response(`<main>${"Ministry source detail about an official announcement. ".repeat(30)}</main>`, { headers: { "Content-Type": "text/html" } });
     if (String(init?.body).includes("googleSearch")) searchCalls++;
-    const facts = Array.from({ length: 8 }, (_, index) => ({ claim: `The official source establishes factual detail number ${index + 1} about the announcement.`, source_url: page }));
+    const facts = Array.from({ length: 12 }, (_, index) => ({ claim: `The official source establishes factual detail number ${index + 1} about the announcement.`, source_url: page }));
     return Response.json({ candidates: [{ finishReason: "STOP", content: { parts: [{ text: JSON.stringify({ topic: "A scientific development in Vietnam", facts }) }] } }] });
   }) as typeof fetch;
   try {
     const result = await findIndependentDossier({ title: "Tin khoa học mới ở Việt Nam", canonical_url: page, category: "Science" } as NewsItem, fetcher);
     expect(result.success).toBe(true);
     expect(searchCalls).toBe(0);
+  } finally { if (previous === undefined) delete process.env.GEMINI_API_KEY; else process.env.GEMINI_API_KEY = previous; }
+});
+
+it("seeks a second official page when the first page cannot support a full passage", async () => {
+  const previous = process.env.GEMINI_API_KEY;
+  process.env.GEMINI_API_KEY = "test-key";
+  const first = "https://mst.gov.vn/first-announcement.htm";
+  const second = "https://chinhphu.vn/related-announcement";
+  let searches = 0;
+  const fetcher = (async (url: RequestInfo | URL, init?: RequestInit) => {
+    if ([first, second].includes(String(url))) return new Response(`<main>${"Official detail about one event. ".repeat(30)}</main>`, { headers: { "Content-Type": "text/html" } });
+    const body = String(init?.body);
+    if (body.includes("googleSearch")) {
+      searches++;
+      return Response.json({ candidates: [{ finishReason: "STOP", content: { parts: [{ text: JSON.stringify({ source_urls: [first, second] }) }] } }] });
+    }
+    const count = body.includes(second) ? 13 : 8;
+    const facts = Array.from({ length: count }, (_, index) => ({ claim: `Official factual detail number ${index + 1} about the same event in Vietnam.`, source_url: index >= 8 ? second : first }));
+    return Response.json({ candidates: [{ finishReason: "STOP", content: { parts: [{ text: JSON.stringify({ topic: "A public development in Vietnam", facts }) }] } }] });
+  }) as typeof fetch;
+  try {
+    const result = await findIndependentDossier({ title: "Official event in Vietnam", canonical_url: first, category: "Education" } as NewsItem, fetcher);
+    expect(result.success).toBe(true);
+    expect(searches).toBe(1);
+    if (result.success) expect(result.data.facts).toHaveLength(13);
   } finally { if (previous === undefined) delete process.env.GEMINI_API_KEY; else process.env.GEMINI_API_KEY = previous; }
 });
 
@@ -95,7 +134,7 @@ it("filters newspaper citations from grounded facts before validating the dossie
     if (String(url) === newspaper) return new Response(null, { status: 302, headers: { location: "https://e.vnexpress.net/story" } });
     if (String(url) === "https://chinhphu.vn/announcement") return new Response(`<main>${"Independent official detail. ".repeat(30)}</main>`, { headers: { "Content-Type": "text/html" } });
     if (String(init?.body).includes("googleSearch")) return Response.json({ candidates: [{ finishReason: "STOP", content: { parts: [{ text: JSON.stringify({ source_urls: [official, newspaper] }) }] } }] });
-    const facts = Array.from({ length: 8 }, (_, index) => ({ claim: `An official announcement provides independent factual detail number ${index + 1}.`, source_url: "https://chinhphu.vn/announcement" }));
+    const facts = Array.from({ length: 12 }, (_, index) => ({ claim: `An official announcement provides independent factual detail number ${index + 1}.`, source_url: "https://chinhphu.vn/announcement" }));
     facts.push({ claim: "A newspaper gives an extra detail that must be discarded.", source_url: newspaper });
     return Response.json({ candidates: [{ finishReason: "STOP", content: { parts: [{ text: JSON.stringify({ topic: "A verified account of a public announcement", facts }) }] } }] });
   }) as typeof fetch;
@@ -148,7 +187,7 @@ it("searches independent sources from the event title without sending press pros
       searchPayload = payload;
       return Response.json({ candidates: [{ finishReason: "STOP", content: { parts: [{ text: JSON.stringify({ source_urls: ["https://www.nasa.gov/news-release/mission/"] }) }] } }] });
     }
-    const facts = Array.from({ length: 8 }, (_, index) => ({ claim: `NASA announced verified mission fact number ${index + 1} on its official website.`, source_url: "https://www.nasa.gov/news-release/mission/" }));
+    const facts = Array.from({ length: 12 }, (_, index) => ({ claim: `NASA announced verified mission fact number ${index + 1} on its official website.`, source_url: "https://www.nasa.gov/news-release/mission/" }));
     return Response.json({ candidates: [{ finishReason: "STOP", content: { parts: [{ text: JSON.stringify({ topic: "An independent look at a scientific mission", facts }) }] } }] });
   }) as typeof fetch;
   try {
