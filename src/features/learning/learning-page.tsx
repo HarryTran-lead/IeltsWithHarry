@@ -29,6 +29,7 @@ import { demoMode, learnStageAvailable, lockedLearnerPath, productionLearnStage,
 import { ProfilePage } from "@/features/account/profile-page";
 import { useNotebook } from "@/features/notebook/notebook-store";
 import { SavedWordReview } from "@/features/news/saved-word-review";
+import { PageSkeleton } from "@/components/layout/page-skeleton";
 
 const modules = [
   {
@@ -1004,7 +1005,7 @@ export function LearningPage({ section }: { section: string }) {
     return ready ? (
       <WritingPage />
     ) : (
-      <div className="content-page">Loading draft…</div>
+      <PageSkeleton label="Loading draft…" />
     );
   if (section === "speaking") return <SpeakingPage />;
   if (section === "progress" || section === "achievements")

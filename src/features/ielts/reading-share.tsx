@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { Link2, Share2, X } from "lucide-react";
+import { LoadingBlock } from "@/components/layout/loading-block";
 
 type ShareState = { enabled: boolean; token: string | null };
 
@@ -61,7 +62,7 @@ export function ReadingShare({ attemptId }: { attemptId: string }) {
         <header><div><h2 id="br-share-title">Chia sẻ bài Reading</h2><p>Ai có liên kết đều có thể xem bài đọc, câu trả lời và kết quả của bạn.</p></div><button type="button" aria-label="Đóng" onClick={() => setOpen(false)}><X size={18} /></button></header>
         {share && <label className="br-share-toggle"><span><b>Bật chia sẻ</b><small>Tắt để vô hiệu hóa liên kết cũ ngay lập tức.</small></span><input type="checkbox" checked={share.enabled} disabled={busy} onChange={() => void toggle()} /></label>}
         {link && <div className="br-share-link"><Link2 size={17} /><input aria-label="Liên kết chia sẻ" readOnly value={link} onFocus={(event) => event.currentTarget.select()} /><button type="button" onClick={() => void copy()}>{copied ? "Đã sao chép" : "Sao chép"}</button></div>}
-        {busy && <p role="status">Đang tải…</p>}
+        {busy && <p role="status"><LoadingBlock label="Đang tải…" /></p>}
         {error && <p className="br-share-error" role="alert">{error}</p>}
       </section>
     </div>}

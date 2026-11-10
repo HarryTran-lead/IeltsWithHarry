@@ -9,9 +9,10 @@ import { useStudyPresence } from "./study-presence";
 import { LofiPlayer } from "./lofi";
 import { liveStreams, savedStream, saveStream, STREAM_EVENT } from "./live-streams";
 import type { YouTubePlayer } from "@/lib/youtube-iframe-api";
+import { LoadingBlock } from "@/components/layout/loading-block";
 
 const StudyRoom = dynamic(() => import("./study-room").then((module) => module.StudyRoom), {
-  loading: () => <div className="study-room-page">Đang mở phòng học…</div>,
+  loading: () => <div className="study-room-page"><LoadingBlock label="Đang mở phòng học…" /></div>,
 });
 
 type Bounds = { x: number; y: number; width: number; height: number };

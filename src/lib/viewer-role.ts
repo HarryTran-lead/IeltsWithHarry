@@ -14,8 +14,11 @@ export const getViewerRole = cache(async (): Promise<ViewerRole> => {
   if (demoMode) return parseDemoRole((await cookies()).get(DEMO_ROLE_COOKIE)?.value);
   if (!supabaseConfigured) return "guest";
   const supabase = await createClient();
-  const { data, error } = await supabase.auth.getClaims();
+  // Ask both at once: each is a round trip to the database, and is_admin is simply false for a guest.
+  const [{ data, error }, { data: isAdmin }] = await Promise.all([
+    supabase.auth.getClaims(),
+    supabase.rpc("is_admin"),
+  ]);
   if (error || !data?.claims) return "guest";
-  const { data: isAdmin } = await supabase.rpc("is_admin");
   return isAdmin === true ? "admin" : "student";
 });

@@ -243,10 +243,14 @@ function AppShellContent({ children, canManage }: { children: React.ReactNode; c
     const db = createClient();
     let active = true;
     async function loadAvatar() {
-      const { data: user } = await db.auth.getUser();
-      if (!user.user) return;
+      // The local session is enough to address our own profile row (RLS still checks it on the server);
+      // getUser() would add a round trip to the auth server before anything else could start.
+      const { data: session } = await db.auth.getSession();
+      const userId = session.session?.user.id;
+      if (!userId) return;
+      // Claim first: the summary must include today's login bonus.
       const [{ data }, claim] = await Promise.all([
-        db.from("profiles").select("avatar,avatar_frame").eq("id", user.user.id).maybeSingle(),
+        db.from("profiles").select("avatar,avatar_frame").eq("id", userId).maybeSingle(),
         db.rpc("claim_daily_login_xp"),
       ]);
       if (active && data?.avatar) setAvatar(data.avatar);
@@ -255,10 +259,24 @@ function AppShellContent({ children, canManage }: { children: React.ReactNode; c
       const summary = await db.rpc("learner_xp_summary");
       if (active && !summary.error) setXpTotal(Number((summary.data as { xp?: number } | null)?.xp ?? 0));
     }
+    // Once per visit (the shell now stays mounted across pages); avatar changes and some XP awards announce themselves.
     void loadAvatar();
     window.addEventListener("account-avatar-updated", loadAvatar);
     window.addEventListener("learner-xp-updated", loadAvatar);
     return () => { active = false; window.removeEventListener("account-avatar-updated", loadAvatar); window.removeEventListener("learner-xp-updated", loadAvatar); };
+  }, []);
+
+  // XP is summed from many activities, most of which don't announce it, so re-read just the
+  // total in the background after each page change (skipping the first page, loaded above).
+  const xpPathname = useRef(pathname);
+  useEffect(() => {
+    if (demoMode || xpPathname.current === pathname) return;
+    xpPathname.current = pathname;
+    let active = true;
+    void createClient().rpc("learner_xp_summary").then((summary) => {
+      if (active && !summary.error) setXpTotal(Number((summary.data as { xp?: number } | null)?.xp ?? 0));
+    });
+    return () => { active = false; };
   }, [pathname]);
 
   useEffect(() => {

@@ -8,39 +8,44 @@ import { NotebookProvider } from "@/features/notebook/notebook-store";
 import type { IeltsSkill } from "@/features/ielts/ielts-live-page";
 import { communityEnabled, lockedLearnerPath, smartNotebookV1 } from "@/lib/runtime";
 import Link from "next/link";
+import { PageSkeleton } from "@/components/layout/page-skeleton";
+
+function SectionLoading() {
+  return <PageSkeleton />;
+}
 
 // The catch-all learner route loads only the section being viewed.
-const Dashboard = dynamic(() => import("@/features/dashboard/dashboard").then((module) => module.Dashboard));
-const PlannerPage = dynamic(() => import("@/features/planner/planner-page").then((module) => module.PlannerPage));
-const LearningPage = dynamic(() => import("@/features/learning/learning-page").then((module) => module.LearningPage));
-const ContentLab = dynamic(() => import("@/features/content-lab/content-lab").then((module) => module.ContentLab));
-const NotebookPage = dynamic(() => import("@/features/notebook/notebook-ui").then((module) => module.NotebookPage));
-const SmartNotebook = dynamic(() => import("@/features/notebook/smart-notebook").then((module) => module.SmartNotebook));
-const NewsPortal = dynamic(() => import("@/features/news/news-portal").then((module) => module.NewsPortal));
-const VocabularyHub = dynamic(() => import("@/features/vocabulary/vocabulary-hub").then((module) => module.VocabularyHub));
-const VocabularyLanding = dynamic(() => import("@/features/vocabulary/vocabulary-landing").then((module) => module.VocabularyLanding));
-const CollocationsPage = dynamic(() => import("@/features/vocabulary/collocations-page").then((module) => module.CollocationsPage));
-const WordFormationPage = dynamic(() => import("@/features/vocabulary/word-formation-page").then((module) => module.WordFormationPage));
-const ViEnTranslationPage = dynamic(() => import("@/features/vocabulary/vi-en-translation-page").then((module) => module.ViEnTranslationPage));
-const IeltsLivePage = dynamic(() => import("@/features/ielts/ielts-live-page").then((module) => module.IeltsLivePage));
-const IeltsSkillDashboard = dynamic(() => import("@/features/ielts/ielts-skill-dashboard").then((module) => module.IeltsSkillDashboard));
-const IeltsModePreview = dynamic(() => import("@/features/ielts/ielts-mode-preview").then((module) => module.IeltsModePreview));
-const BankStudent = dynamic(() => import("@/features/ielts/bank-student").then((module) => module.BankStudent));
-const SpeakingMock = dynamic(() => import("@/features/ielts/speaking-mock").then((module) => module.SpeakingMock));
-const YoutubeLab = dynamic(() => import("@/features/listening/youtube-lab").then((module) => module.YoutubeLab));
-const DictationHome = dynamic(() => import("@/features/listening/dictation-home").then((module) => module.DictationHome));
-const VoaDictation = dynamic(() => import("@/features/listening/voa-dictation").then((module) => module.VoaDictation));
-const ClipDictation = dynamic(() => import("@/features/listening/clip-dictation").then((module) => module.ClipDictation));
-const SkillLabDictation = dynamic(() => import("@/features/listening/skill-lab-dictation").then((module) => module.SkillLabDictation));
-const DictationQuickPractice = dynamic(() => import("@/features/listening/dictation-sessions").then((module) => module.DictationQuickPractice));
-const DictationReview = dynamic(() => import("@/features/listening/dictation-sessions").then((module) => module.DictationReview));
-const SkillLabPath = dynamic(() => import("@/features/listening/skill-lab-path").then((module) => module.SkillLabPath));
-const SkillLabCheck = dynamic(() => import("@/features/listening/skill-lab-path").then((module) => module.SkillLabCheck));
-const ListeningMock = dynamic(() => import("@/features/listening/listening-mock").then((module) => module.ListeningMock));
-const ListeningVocabularyPage = dynamic(() => import("@/features/listening/listening-vocabulary-page").then((module) => module.ListeningVocabularyPage));
-const ReadingVocabularyPage = dynamic(() => import("@/features/reading/reading-vocabulary-page").then((module) => module.ReadingVocabularyPage));
-const GrammarGarden = dynamic(() => import("@/features/grammar/grammar-garden").then((module) => module.GrammarGarden));
-const Community = dynamic(() => import("@/features/community/community").then((module) => module.Community));
+const Dashboard = dynamic(() => import("@/features/dashboard/dashboard").then((module) => module.Dashboard), { loading: SectionLoading });
+const PlannerPage = dynamic(() => import("@/features/planner/planner-page").then((module) => module.PlannerPage), { loading: SectionLoading });
+const LearningPage = dynamic(() => import("@/features/learning/learning-page").then((module) => module.LearningPage), { loading: SectionLoading });
+const ContentLab = dynamic(() => import("@/features/content-lab/content-lab").then((module) => module.ContentLab), { loading: SectionLoading });
+const NotebookPage = dynamic(() => import("@/features/notebook/notebook-ui").then((module) => module.NotebookPage), { loading: SectionLoading });
+const SmartNotebook = dynamic(() => import("@/features/notebook/smart-notebook").then((module) => module.SmartNotebook), { loading: SectionLoading });
+const NewsPortal = dynamic(() => import("@/features/news/news-portal").then((module) => module.NewsPortal), { loading: SectionLoading });
+const VocabularyHub = dynamic(() => import("@/features/vocabulary/vocabulary-hub").then((module) => module.VocabularyHub), { loading: SectionLoading });
+const VocabularyLanding = dynamic(() => import("@/features/vocabulary/vocabulary-landing").then((module) => module.VocabularyLanding), { loading: SectionLoading });
+const CollocationsPage = dynamic(() => import("@/features/vocabulary/collocations-page").then((module) => module.CollocationsPage), { loading: SectionLoading });
+const WordFormationPage = dynamic(() => import("@/features/vocabulary/word-formation-page").then((module) => module.WordFormationPage), { loading: SectionLoading });
+const ViEnTranslationPage = dynamic(() => import("@/features/vocabulary/vi-en-translation-page").then((module) => module.ViEnTranslationPage), { loading: SectionLoading });
+const IeltsLivePage = dynamic(() => import("@/features/ielts/ielts-live-page").then((module) => module.IeltsLivePage), { loading: SectionLoading });
+const IeltsSkillDashboard = dynamic(() => import("@/features/ielts/ielts-skill-dashboard").then((module) => module.IeltsSkillDashboard), { loading: SectionLoading });
+const IeltsModePreview = dynamic(() => import("@/features/ielts/ielts-mode-preview").then((module) => module.IeltsModePreview), { loading: SectionLoading });
+const BankStudent = dynamic(() => import("@/features/ielts/bank-student").then((module) => module.BankStudent), { loading: SectionLoading });
+const SpeakingMock = dynamic(() => import("@/features/ielts/speaking-mock").then((module) => module.SpeakingMock), { loading: SectionLoading });
+const YoutubeLab = dynamic(() => import("@/features/listening/youtube-lab").then((module) => module.YoutubeLab), { loading: SectionLoading });
+const DictationHome = dynamic(() => import("@/features/listening/dictation-home").then((module) => module.DictationHome), { loading: SectionLoading });
+const VoaDictation = dynamic(() => import("@/features/listening/voa-dictation").then((module) => module.VoaDictation), { loading: SectionLoading });
+const ClipDictation = dynamic(() => import("@/features/listening/clip-dictation").then((module) => module.ClipDictation), { loading: SectionLoading });
+const SkillLabDictation = dynamic(() => import("@/features/listening/skill-lab-dictation").then((module) => module.SkillLabDictation), { loading: SectionLoading });
+const DictationQuickPractice = dynamic(() => import("@/features/listening/dictation-sessions").then((module) => module.DictationQuickPractice), { loading: SectionLoading });
+const DictationReview = dynamic(() => import("@/features/listening/dictation-sessions").then((module) => module.DictationReview), { loading: SectionLoading });
+const SkillLabPath = dynamic(() => import("@/features/listening/skill-lab-path").then((module) => module.SkillLabPath), { loading: SectionLoading });
+const SkillLabCheck = dynamic(() => import("@/features/listening/skill-lab-path").then((module) => module.SkillLabCheck), { loading: SectionLoading });
+const ListeningMock = dynamic(() => import("@/features/listening/listening-mock").then((module) => module.ListeningMock), { loading: SectionLoading });
+const ListeningVocabularyPage = dynamic(() => import("@/features/listening/listening-vocabulary-page").then((module) => module.ListeningVocabularyPage), { loading: SectionLoading });
+const ReadingVocabularyPage = dynamic(() => import("@/features/reading/reading-vocabulary-page").then((module) => module.ReadingVocabularyPage), { loading: SectionLoading });
+const GrammarGarden = dynamic(() => import("@/features/grammar/grammar-garden").then((module) => module.GrammarGarden), { loading: SectionLoading });
+const Community = dynamic(() => import("@/features/community/community").then((module) => module.Community), { loading: SectionLoading });
 
 export function Portal({ canManage = false }: { canManage?: boolean }) {
   return <DemoProvider><NotebookProvider><PortalContent canManage={canManage} /></NotebookProvider></DemoProvider>;
@@ -49,7 +54,7 @@ export function Portal({ canManage = false }: { canManage?: boolean }) {
 function RetiredNumbersBank() {
   const router = useRouter();
   useEffect(() => { router.replace("/app/dictation"); }, [router]);
-  return <div className="content-page">Đang mở kho Dictation…</div>;
+  return <PageSkeleton label="Đang mở kho Dictation…" />;
 }
 
 function PortalContent({ canManage }: { canManage: boolean }) {
@@ -63,7 +68,7 @@ function PortalContent({ canManage }: { canManage: boolean }) {
     || (section === "news" && skillMode === "learn" && Boolean(pathname.split("/")[4]));
   return (
       <AppShell canManage={canManage}>
-        {lockedLearnerPath(pathname) ? <div className="content-page"><section className="card section-card"><h1>Chức năng đang chuẩn bị</h1><p>Nội dung đang được biên soạn và kiểm tra trước khi mở cho học viên.</p><Link className="button primary" href="/app/dashboard">Về Dashboard</Link></section></div> : !ready && needsStudyData ? <div className="content-page">Loading your learning space…</div> : section === "dashboard" ? (
+        {lockedLearnerPath(pathname) ? <div className="content-page"><section className="card section-card"><h1>Chức năng đang chuẩn bị</h1><p>Nội dung đang được biên soạn và kiểm tra trước khi mở cho học viên.</p><Link className="button primary" href="/app/dashboard">Về Dashboard</Link></section></div> : !ready && needsStudyData ? <PageSkeleton label="Loading your learning space…" /> : section === "dashboard" ? (
           <Dashboard />
         ) : section === "planner" ? (
           <PlannerPage />
@@ -73,7 +78,7 @@ function PortalContent({ canManage }: { canManage: boolean }) {
           smartNotebookV1 ? <SmartNotebook /> : <NotebookPage />
         ) : section === "dictation" ? (
           !skillMode ? <DictationHome />
-            : skillMode === "practice" ? <Suspense fallback={<div className="content-page">Đang mở Luyện nhanh…</div>}><DictationQuickPractice /></Suspense>
+            : skillMode === "practice" ? <Suspense fallback={<PageSkeleton label="Đang mở Luyện nhanh…" />}><DictationQuickPractice /></Suspense>
             : skillMode === "review" ? <DictationReview />
             : skillMode === "banks" && pathname.split("/")[4] === "skill-lab" ? (() => {
               // /skill-lab → path map · /skill-lab/placement · /skill-lab/stage/S1/test → checks · otherwise stage catalog or lesson
@@ -94,7 +99,7 @@ function PortalContent({ canManage }: { canManage: boolean }) {
         ) : skill === "vocabulary" && skillMode === "word-formation" ? (
           <WordFormationPage />
         ) : skill === "vocabulary" && skillMode === "translation" ? (
-          <Suspense fallback={<div className="content-page">Đang tải bài luyện dịch…</div>}><ViEnTranslationPage /></Suspense>
+          <Suspense fallback={<PageSkeleton label="Đang tải bài luyện dịch…" />}><ViEnTranslationPage /></Suspense>
         ) : skill === "vocabulary" && skillMode === "listening" ? (
           <ListeningVocabularyPage />
         ) : skill && !skillMode ? (
@@ -114,11 +119,11 @@ function PortalContent({ canManage }: { canManage: boolean }) {
         ) : skill && skillMode === "mode" ? (
           <IeltsModePreview skill={skill} modeId={pathname.split("/")[4] || ""} />
         ) : section === "vocabulary" ? (
-          <Suspense fallback={<div className="content-page">Đang tải từ vựng…</div>}><VocabularyHub /></Suspense>
+          <Suspense fallback={<PageSkeleton label="Đang tải từ vựng…" />}><VocabularyHub /></Suspense>
         ) : skill ? (
           <IeltsSkillDashboard key={skill} skill={skill} />
         ) : section === "news" ? (
-          <Suspense fallback={<div className="content-page">Đang tải Daily News…</div>}><NewsPortal /></Suspense>
+          <Suspense fallback={<PageSkeleton label="Đang tải Daily News…" />}><NewsPortal /></Suspense>
         ) : section === "question-bank" ? (
           <BankStudent examId={pathname.split("/")[3] === "exam" ? pathname.split("/")[4] : undefined} resultId={pathname.split("/")[3] === "result" ? pathname.split("/")[4] : undefined} attemptId={pathname.split("/")[3] === "attempt" ? pathname.split("/")[4] : undefined} />
         ) : section === "community" && communityEnabled ? (

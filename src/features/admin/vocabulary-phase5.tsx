@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { LoadingBlock } from "@/components/layout/loading-block";
 
 type Summary = {
   sourceTopics: number; learningTopics: number; targetNewUnique: number;
@@ -26,7 +27,7 @@ export function VocabularyPhase5() {
   return <section className="admin-content-form">
     <h2>Tiến độ bộ IELTS theo chủ đề học</h2>
     {error && <p role="alert">{error}</p>}
-    {!summary && !error && <p>Đang tải tiến độ…</p>}
+    {!summary && !error && <p><LoadingBlock label="Đang tải tiến độ…" /></p>}
     {summary && <>
       <p>{summary.originalEntries.toLocaleString("vi-VN")} mục CSV nguồn · {summary.publishedNew.toLocaleString("vi-VN")} mục biên soạn đã xuất bản · {summary.topicPlacements.toLocaleString("vi-VN")} lượt gắn chủ đề.</p>
       <p>{summary.approved} mục duyệt từ các lô đầu · {summary.packReviewed} mục duyệt từ ZIP mới · {summary.proposed} mục chờ rà soát.</p>

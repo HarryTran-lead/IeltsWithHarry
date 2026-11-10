@@ -5,6 +5,7 @@ import Link from "next/link";
 import { Bell, CalendarCheck, Megaphone, ShieldAlert } from "lucide-react";
 import { createClient } from "@/lib/supabase/browser";
 import "./account.css";
+import { LoadingBlock } from "@/components/layout/loading-block";
 
 type Note = { id: string; kind: "announcement" | "task" | "account"; title: string; body: string; link: string | null; created_at: string };
 const kindIcon = { announcement: Megaphone, task: CalendarCheck, account: ShieldAlert };
@@ -51,7 +52,7 @@ export function NotificationBell({ open, onToggle }: { open: boolean; onToggle: 
     </button>
     {open && <div className="small-popover notification-popover">
       <b>Thông báo</b>
-      {!loaded ? <p>Đang tải…</p> : items.length === 0 ? <p>Chưa có thông báo nào. Harry sẽ báo bạn khi có nhiệm vụ hoặc tin mới.</p> :
+      {!loaded ? <p><LoadingBlock label="Đang tải…" /></p> : items.length === 0 ? <p>Chưa có thông báo nào. Harry sẽ báo bạn khi có nhiệm vụ hoặc tin mới.</p> :
         <ul>{items.map((item) => {
           const Icon = kindIcon[item.kind] ?? Megaphone;
           const content = <><span className={`notification-icon ${item.kind}`}><Icon size={15} /></span><span><strong>{item.title}</strong>{item.body && <small>{item.body}</small>}<time dateTime={item.created_at}>{ago(item.created_at)}</time></span></>;

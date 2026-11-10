@@ -18,6 +18,7 @@ import { fetchSkillLabCatalog } from "./skill-lab-catalog";
 import "./voa-dictation.css";
 import "./skill-lab-dictation.css";
 import "./dictation-sessions.css";
+import { LoadingBlock } from "@/components/layout/loading-block";
 
 const BASE = "/app/dictation/banks/skill-lab";
 const PLACEMENT = "skill-lab-placement:";
@@ -106,7 +107,7 @@ export function SkillLabPath() {
         {current?.next && <button type="button" className="voa-primary-button" onClick={() => router.push(`${BASE}/${current.next!.lesson_id}`)}>Học tiếp: {current.stage.label} <ArrowRight size={17} /></button>}
       </header>
       {error && <p className="sld-error" role="alert">{error}</p>}
-      {!data ? !error && <p className="sld-muted">Đang tải lộ trình…</p> : <>
+      {!data ? !error && <p className="sld-muted"><LoadingBlock label="Đang tải lộ trình…" /></p> : <>
         <div className="slp-top">
           <section className="slp-placement voa-surface">
             <Sparkles size={20} aria-hidden />

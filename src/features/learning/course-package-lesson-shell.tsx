@@ -13,6 +13,7 @@ import { PackageLessonPractice, PracticeScoreReporter, type PackageLesson } from
 import { savePracticeResult, type PracticeResult } from "./practice-results";
 import { Sticker } from "@/components/stickers/stickers";
 import { Book2LessonPage, type Book2Content } from "./book2-lesson";
+import { PageSkeleton } from "@/components/layout/page-skeleton";
 
 type Props = {
   lesson: { slug: string; title: string; skill: string; summary: string };
@@ -53,14 +54,14 @@ function Content({ packageContent, canManage, ...lessonProps }: Props) {
 
   if (packageContent.type === "book2") return ready
     ? <Book2LessonPage lesson={lesson} content={packageContent as unknown as Book2Content} navigation={navigation} canManage={canManage} />
-    : <div className="content-page">Đang mở bài học…</div>;
+    : <PageSkeleton label="Đang mở bài học…" />;
 
   return <AppShell canManage={canManage}>{ready ? <div className="content-page package-lesson-page">
     <div className="package-route-bar"><Link href={backHref} className="package-back"><ArrowLeft size={16} /> Hành trình học</Link>{navigation && <><span>Bài {navigation.index}/{navigation.total}</span><div>{navigation.previous ? <Link href={`/app/lesson/${navigation.previous.slug}`} title={navigation.previous.title}><ArrowLeft size={15} /> Bài trước</Link> : <span>Đầu chặng</span>}{navigation.next ? <Link href={`/app/lesson/${navigation.next.slug}`} title={navigation.next.title}>Bài tiếp <ArrowRight size={15} /></Link> : <span>Cuối chặng</span>}</div></>}</div>
     <PackageLessonHeading lesson={lesson} packageContent={packageContent} />
     <PackageLessonSteps {...lessonProps} packageContent={packageContent} onStepChange={() => window.scrollTo({ top: 0, behavior: "smooth" })}
       finish={navigation?.next ? <Link className="button primary" href={`/app/lesson/${navigation.next.slug}`}>Bài tiếp theo <ArrowRight size={17} /></Link> : <Link className="button primary" href={backHref}>Về hành trình học <ArrowRight size={17} /></Link>} />
-  </div> : <div className="content-page">Đang mở bài học…</div>}</AppShell>;
+  </div> : <PageSkeleton label="Đang mở bài học…" />}</AppShell>;
 }
 
 export type PackageLessonProps = Omit<Props, "navigation" | "canManage">;

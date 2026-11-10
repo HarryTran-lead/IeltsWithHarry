@@ -26,6 +26,7 @@ import { pronounce, useIpa } from "@/lib/vocabulary/pronounce";
 import "@/app/vocabulary-hub.css";
 import "./vocabulary-learning-loop.css";
 import "./vocabulary-flashcard.css";
+import { LoadingBlock } from "@/components/layout/loading-block";
 
 type ReviewEvent = { notebook_entry_id: string; grade: ReviewGrade; reviewed_at: string };
 type PracticeAttempt = { id?: string; scope: string; score: number; total: number; wrong_words: string[]; submitted_at: string };
@@ -221,14 +222,14 @@ export function VocabularyHub() {
     {section !== "study" && <VocabPageHeader title={heading[0]} description={heading[1]} aside={<span className="vocab-header-count">{notebookReady ? `${saved.length} từ trong sổ` : "…"}</span>} />}
     {(error || notebookError) && <p className="vocab-error" role="alert">{error || notebookError}</p>}
     {retired ? <div className="vocab-panel">Đang chuyển trang…</div>
-      : ((loading && needsHubData) || (!notebookReady && section !== "study")) ? <div className="vocab-panel">Đang tải từ vựng…</div>
+      : ((loading && needsHubData) || (!notebookReady && section !== "study")) ? <div className="vocab-panel"><LoadingBlock label="Đang tải từ vựng…" /></div>
       : section === "learn" && parts[1] ? <WordDetail wordId={parts[1]} terms={terms} savedByWord={savedByWord} saveWord={saveWord} gradeWord={gradeWord} events={events} back="/app/vocabulary/library" />
       : section === "library" ? <Library savedByWord={savedByWord} saveWord={saveWord} />
       : section === "study" ? <VocabularyStudy />
       : section === "notebook" ? <SavedWords {...common} decks={decks} />
-      : section === "review" && deckFilter && !decks.loaded ? <div className="vocab-panel">Đang tải bộ thẻ…</div>
+      : section === "review" && deckFilter && !decks.loaded ? <div className="vocab-panel"><LoadingBlock label="Đang tải bộ thẻ…" /></div>
       : section === "review" ? <Review key={deckFilter ?? "all"} saved={deckSaved} deckName={deckName} reviewById={reviewById} gradeWord={gradeWord} starred={decks.starred} toggleStar={decks.toggleStar} />
-      : section === "practice" && deckFilter && !decks.loaded ? <div className="vocab-panel">Đang tải bộ thẻ…</div>
+      : section === "practice" && deckFilter && !decks.loaded ? <div className="vocab-panel"><LoadingBlock label="Đang tải bộ thẻ…" /></div>
       : section === "practice" ? <Practice key={deckFilter ?? "all"} saved={deckSaved} deckName={deckName} attempts={attempts} saveAttempt={saveAttempt} reviewById={reviewById} gradeWord={gradeWord} />
       : section === "explore" ? <Explore key={searchParams.get("q") ?? ""} {...common} />
       : section === "progress" ? <Progress saved={saved} reviewById={reviewById} now={now} due={due} reviewedToday={reviewedToday} totalCorrect={totalCorrect} totalQuestions={totalQuestions} attempts={attempts} addReviewTask={addReviewTask} />

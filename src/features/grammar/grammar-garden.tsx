@@ -19,6 +19,7 @@ import "./grammar-tokens.css";
 import "./grammar-garden.css";
 import "./grammar-garden-layout.css";
 import "./grammar-garden-v3.css";
+import { LoadingBlock } from "@/components/layout/loading-block";
 
 const stages = ["guided", "independent", "mastery", "spaced_review"] as const;
 const stageNames: Record<string, string> = { guided: "Có hướng dẫn", independent: "Tự luyện", mastery: "Vận dụng", spaced_review: "Ôn cách quãng" };
@@ -48,7 +49,7 @@ export function GrammarGarden() {
   return <div className="gg" id="che-do-hoc">
     {syncError && <div className="gg-sync" role="status">{syncError}</div>}
     {gate.error && <div className="gg-sync" role="alert">{gate.error}</div>}
-    {route === "lesson" ? (!isLevelOpen(parts[4]?.split("-")[0] as GrammarLevel, gate.unlocked) ? <LockedLevel level={parts[4]?.split("-")[0] as GrammarLevel} unlocked={gate.unlocked} /> : ready ? <LessonWorkspace key={parts[4]} code={parts[4]} progress={progress} update={update} initialTab={searchParams.get("tab") === "practice" ? "practice" : "theory"} initialStage={searchParams.get("stage") ?? "guided"} initialItem={searchParams.get("item") ?? ""} resume={searchParams.has("resume")} /> : <div className="gg-loading">Đang tải tiến độ…</div>)
+    {route === "lesson" ? (!isLevelOpen(parts[4]?.split("-")[0] as GrammarLevel, gate.unlocked) ? <LockedLevel level={parts[4]?.split("-")[0] as GrammarLevel} unlocked={gate.unlocked} /> : ready ? <LessonWorkspace key={parts[4]} code={parts[4]} progress={progress} update={update} initialTab={searchParams.get("tab") === "practice" ? "practice" : "theory"} initialStage={searchParams.get("stage") ?? "guided"} initialItem={searchParams.get("item") ?? ""} resume={searchParams.has("resume")} /> : <div className="gg-loading"><LoadingBlock label="Đang tải tiến độ…" /></div>)
       : route === "review" ? <ReviewPage progress={progress} update={update} />
       : route === "progress" ? <ProgressPage progress={progress} ready={ready} unlocked={gate.unlocked} />
       : route === "tests" ? (isLevelOpen(testLevel, gate.unlocked) ? <ChapterTestsPage key={testLevel} progress={progress} update={update} initialLevel={testLevel} unlocked={gate.unlocked} /> : <LockedLevel level={testLevel} unlocked={gate.unlocked} />)
@@ -159,7 +160,7 @@ function LessonWorkspace({ code, progress, update, initialTab, initialStage, ini
   }, [code, initialItem, initialStage, initialTab, resume, begin, beginSpaced]);
 
   if (error && !data) return <div className="gg-error"><p>{error}</p><Link href={ROOT}>Về lộ trình</Link></div>;
-  if (!data) return <div className="gg-loading">Đang tải bài học…</div>;
+  if (!data) return <div className="gg-loading"><LoadingBlock label="Đang tải bài học…" /></div>;
   const { guide, items } = data;
   const lesson = catalog.find((item) => item.code === code);
   const lessonProgress = progress[code];
@@ -390,7 +391,7 @@ function ProgressPage({ progress, ready, unlocked }: { progress: GrammarProgress
     .filter((row) => row.lesson && row.open > 0).sort((a, b) => b.open - a.open).slice(0, 5);
   const latest = [...weeks].reverse().find((week) => week.total);
   return <div className="gg-subpage gg-progress"><Link className="gg-back" href={ROOT}><ArrowLeft size={16} /> Lộ trình Grammar</Link><span className="gg-eyebrow">TIẾN ĐỘ</span><h1>Hành trình Grammar</h1><p>Muốn mở cấp tiếp theo, hãy đạt ít nhất {GRAMMAR_PASS_PERCENT}% trong bài kiểm tra của cấp trước. Điểm luyện tập từng bài không thay thế bài kiểm tra này.</p>
-    {!ready ? <div className="gg-loading">Đang tải tiến độ…</div> : <>
+    {!ready ? <div className="gg-loading"><LoadingBlock label="Đang tải tiến độ…" /></div> : <>
       <div className="gg-stat-tiles">
         <div><strong>{learned}</strong><span>Bài đã học xong</span></div>
         <div><strong>{responses.filter((response) => response.status === "UNDERSTOOD" || response.status === "NEED_REVIEW").length}</strong><span>Câu đã làm</span></div>

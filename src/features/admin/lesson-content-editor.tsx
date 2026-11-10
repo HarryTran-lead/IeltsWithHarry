@@ -6,6 +6,7 @@ import { createClient } from "@/lib/supabase/browser";
 import { VocabularyEditor } from "./vocabulary-editor";
 import { SkillMaterialEditor } from "./skill-material-editor";
 import type { SkillName } from "@/lib/skill-material";
+import { LoadingBlock } from "@/components/layout/loading-block";
 
 type Lesson = { id: string; slug: string; title: string; published: boolean; skill: SkillName };
 type Block = { id: string; kind: string; body: string; sort_order: number };
@@ -83,7 +84,7 @@ export function LessonContentEditor({ lessons, onPublish }: { lessons: Lesson[];
     {!selected && <div className="admin-empty-state admin-pick"><Sticker name="pencil" size={60} tilt={-10} /><div><h3>Chọn một bài để bắt đầu</h3><p>{lessons.length} bài {lessons[0]?.skill ?? ""} đang có. Chọn ở danh sách phía trên để nhập nội dung, câu hỏi và từ vựng.</p></div></div>}
     {selected && <><div className="admin-lesson-actions"><span className={selected.published ? "status-pill live" : "status-pill draft"}><i aria-hidden="true" />{selected.published ? "Đã xuất bản" : "Bản nháp"}</span><Link href={`/app/lesson/${selected.slug}`} className="button subtle">Xem trước trang học viên ↗</Link><button type="button" className="button primary" onClick={() => onPublish(selected)}>{selected.published ? "Gỡ xuất bản" : "Xuất bản bài học"}</button></div>
       <SkillMaterialEditor key={selected.id} lessonId={selected.id} skill={selected.skill} />
-      {contentLoading ? <p role="status">Đang tải câu hỏi và từ vựng…</p> : <>
+      {contentLoading ? <p role="status"><LoadingBlock label="Đang tải câu hỏi và từ vựng…" /></p> : <>
       <details className="admin-extra"><summary>Khối nội dung bổ sung</summary><h3>Content blocks</h3>
       {blocks.map((block) => <div className="admin-row" key={block.id}><div><strong>{block.kind}</strong><small>{block.body.slice(0, 130)}</small></div><div><button className="button subtle" onClick={async () => { const updated = window.prompt("Edit content", block.body); if (updated === null) return; const result = await supabase.from("lesson_blocks").update({ body: updated }).eq("id", block.id); if (result.error) setError(result.error.message); else await load(); }}>Edit</button><button className="button subtle" onClick={() => void remove("lesson_blocks", block.id)}>Delete</button></div></div>)}
       <form className="admin-content-form" onSubmit={addBlock}><label>Block type<select value={kind} onChange={(e) => setKind(e.target.value)}>{["paragraph","heading","tip","prompt","audio"].map((value) => <option key={value}>{value}</option>)}</select></label><label>Content<textarea required value={body} onChange={(e) => setBody(e.target.value)} /></label><button className="button primary" disabled={busy}>Add block</button></form></details>

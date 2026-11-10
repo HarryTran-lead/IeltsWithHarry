@@ -8,6 +8,7 @@ import { wordDifferences } from "@/lib/listening/youtube";
 import { percentPassed } from "@/lib/dictation/pass";
 import { DICTATION_SPEEDS, usePlaybackSettings } from "./dictation-playback";
 import "./voa-dictation.css";
+import { LoadingBlock } from "@/components/layout/loading-block";
 
 type Clip = { id: string; bank: "quick"; title: string; source_dataset: string; source_url: string; license_url: string; attribution: string; duration_ms: number; status: string };
 type Result = { accuracy: number; reference_text: string };
@@ -185,7 +186,7 @@ export function ClipDictation() {
       <header className="voa-library-heading"><div><span className="voa-eyebrow">NGHE CHÉP NÂNG CAO</span><h1>{bankName[bank as keyof typeof bankName] ?? "Kho bài"}</h1><p>Câu đọc từ sách nói tiếng Anh (LibriTTS, LJ Speech). Văn phong cũ, nhiều từ khó: hợp để thử thách tai nghe sau khi đã vững lộ trình IELTS.</p></div></header>
       <div className="voa-info-banner"><span>Mỗi bộ 20 câu, xếp từ ngắn đến dài. Bản thử nghiệm đang chờ nghe duyệt thủ công.</span></div>
       <section className="voa-library"><div className="voa-filter-bar voa-clip-filter"><label className="voa-search"><Search size={18} /><input value={query} onChange={(event) => { setQuery(event.target.value); setPage(1); }} placeholder="Tìm theo bộ dữ liệu…" aria-label="Tìm câu" /></label><span>{loading ? "Đang tải…" : `${filtered.length} câu · ${sets.length} bộ`}</span></div>
-        {loading ? <p className="voa-empty" role="status">Đang tải…</p> : sets.length ? <div className="voa-set-grid">{sets.slice((Math.min(page, Math.ceil(sets.length / 12)) - 1) * 12, Math.min(page, Math.ceil(sets.length / 12)) * 12).map((set) => {
+        {loading ? <p className="voa-empty" role="status"><LoadingBlock label="Đang tải…" /></p> : sets.length ? <div className="voa-set-grid">{sets.slice((Math.min(page, Math.ceil(sets.length / 12)) - 1) * 12, Math.min(page, Math.ceil(sets.length / 12)) * 12).map((set) => {
           const number = sets.indexOf(set) + 1;
           const passed = set.filter((item) => statuses[item.id] === "passed").length;
           const tried = set.filter((item) => statuses[item.id]).length;

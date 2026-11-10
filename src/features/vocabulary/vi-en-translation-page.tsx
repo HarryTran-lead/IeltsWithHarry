@@ -12,6 +12,7 @@ import { chooseTranslationSession, compareTranslation, matchesCopiedWord, nextTr
 import "./vi-en-translation-page.css";
 import { VocabPageHeader } from "./vocab-page-header";
 import { Sticker } from "@/components/stickers/stickers";
+import { LoadingBlock } from "@/components/layout/loading-block";
 
 type ModeFilter = "mixed" | "speaking" | "writing";
 type Selection = "new" | "due" | "all";
@@ -279,7 +280,7 @@ export function ViEnTranslationPage() {
       <div className="translation-stats"><span><strong>{filtered.length}</strong> câu trong bộ lọc</span><span><strong>{studied}</strong> câu đã luyện</span><span><strong>{due}</strong> câu đến hạn ôn</span></div>
     </>}
 
-    {loading && <section className="translation-empty">Đang tải bài luyện…</section>}
+    {loading && <section className="translation-empty"><LoadingBlock label="Đang tải bài luyện…" /></section>}
     {error && <p className="translation-error" role="alert">{error}</p>}
     {notice && <p className="translation-notice" role="status">{notice}</p>}
     {!loading && !exercises.length && <section className="translation-empty"><Sticker name="book" size={64} tilt={-6} /><h2>Chủ đề này chưa có câu luyện</h2><p>Hãy thử chủ đề khác.</p></section>}

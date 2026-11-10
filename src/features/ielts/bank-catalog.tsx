@@ -8,6 +8,7 @@ import { balancedCatalog, catalogGroups, catalogHref, catalogSkills, type Catalo
 import { BankLibrary, ExamCard } from "./bank-library";
 import "./bank.css";
 import { Sticker, type StickerName } from "@/components/stickers/stickers";
+import { LoadingBlock } from "@/components/layout/loading-block";
 
 const skillCopy = {
   Reading: { sticker: "book", icon: BookOpen, title: "Reading", detail: "Đọc hiểu và luyện câu hỏi có đáp án", tone: "reading" },
@@ -51,7 +52,7 @@ export function BankCatalog() {
       <span className="bank-catalog-count">{loading ? "Đang tải đề…" : `${exams.length.toLocaleString("vi-VN")} đề đã xuất bản`}</span>
     </header>
 
-    {loading && <p className="bank-catalog-state" role="status">Đang tải các bài luyện…</p>}
+    {loading && <p className="bank-catalog-state" role="status"><LoadingBlock label="Đang tải các bài luyện…" /></p>}
     {error && <p className="bank-catalog-state" role="alert">{error}</p>}
 
     {!loading && !error && !skill && <div className="bank-overview-grid">{catalogSkills.map((name) => {

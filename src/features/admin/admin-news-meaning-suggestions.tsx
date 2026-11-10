@@ -3,6 +3,7 @@
 import { useCallback, useEffect, useMemo, useState } from "react";
 import Link from "next/link";
 import { createClient } from "@/lib/supabase/browser";
+import { LoadingBlock } from "@/components/layout/loading-block";
 
 type Suggestion = {
   id: string;
@@ -63,7 +64,7 @@ export function AdminNewsMeaningSuggestions() {
     <h3>Góp ý nghĩa từ ({rows.filter((item) => item.status === "pending").length} chờ xem)</h3>
     <p>Góp ý của học viên không tự thay đổi nghĩa hiển thị. Xem ngữ cảnh bài đọc trước khi cập nhật nội dung hoặc nguồn dịch.</p>
     {error && <p className="form-error" role="alert">{error}</p>}
-    {loading ? <p>Đang tải góp ý…</p> : ordered.length === 0 ? <p>Chưa có góp ý nào.</p> : ordered.map((item) =>
+    {loading ? <p><LoadingBlock label="Đang tải góp ý…" /></p> : ordered.length === 0 ? <p>Chưa có góp ý nào.</p> : ordered.map((item) =>
       <article className="admin-news-row" key={item.id}>
         <div><strong>{item.word} · {item.status === "pending" ? "Chờ xem" : "Đã xem"}</strong>
           <small>{new Date(item.created_at).toLocaleString("vi-VN", { dateStyle: "medium", timeStyle: "short" })} · <Link href={`/app/news/${item.article_id}`}>{titles[item.article_id] ?? "Xem bài báo"}</Link></small>
