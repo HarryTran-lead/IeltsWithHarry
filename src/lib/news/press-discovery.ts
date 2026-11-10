@@ -22,7 +22,7 @@ export function eligibleDiscoveryLead(item: Pick<NewsItem, "sensitive" | "publis
 }
 /** A rejected topic consumes a research attempt, not one of the article slots. */
 export function discoveryBudget(articleCount: number, rejectedCount: number, articleLimit: number) {
-  const attemptLimit = Math.min(articleLimit * 4, 32);
+  const attemptLimit = Math.min(articleLimit * 4, 64);
   return articleLimit > 0 && articleCount < articleLimit && articleCount + rejectedCount < attemptLimit;
 }
 /** Failed leads count toward category rotation, so one busy feed cannot exhaust every research slot. */

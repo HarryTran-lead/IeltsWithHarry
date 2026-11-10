@@ -14,6 +14,9 @@ it("keeps researching after thin topics while capping attempts and completed dra
   expect(discoveryBudget(0, 16, 4)).toBe(false);
   expect(discoveryBudget(0, 24, 8)).toBe(true);
   expect(discoveryBudget(0, 32, 8)).toBe(false);
+  expect(discoveryBudget(0, 32, 30)).toBe(true);
+  expect(discoveryBudget(0, 64, 30)).toBe(false);
+  expect(discoveryBudget(30, 0, 30)).toBe(false);
   expect(discoveryBudget(4, 0, 4)).toBe(false);
   expect(discoveryBudget(0, 0, 0)).toBe(false);
 });
