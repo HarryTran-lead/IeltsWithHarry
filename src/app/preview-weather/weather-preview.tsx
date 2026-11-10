@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { useEffect } from 'react';
-import { HeaderSkyBackdrop, HeaderWeatherEffects, HeaderWeatherProvider, HeaderWeatherWidget, useHeaderWeather, type DayPhase } from '@/components/header-weather';
+import { HeaderSkyBackdrop, HeaderWeatherProvider, HeaderWeatherWidget, useHeaderWeather, type DayPhase } from '@/components/header-weather';
 import { PREVIEW_WEATHER, previewWeather, sceneForWeather } from '@/components/header-weather/weatherEffects';
 import { WeatherRenderer } from '@/components/header-weather/weatherRenderer';
 import weatherStyles from '@/components/header-weather/headerWeather.module.css';
@@ -28,7 +28,6 @@ function Frame() {
           <h3>Card {index + 1}</h3><p>Nội dung mẫu để xem hiệu ứng thời tiết đè lên giao diện học.</p>
         </section>)}
       </div>
-      <HeaderWeatherEffects />
     </main>
   </div>;
 }
@@ -40,8 +39,8 @@ function benchmark(key: string, width = 1200, height = 480, frames = 240) {
   const canvas = document.createElement('canvas');
   canvas.style.cssText = `position:fixed;left:-9999px;top:0;width:${width}px;height:${height}px`;
   document.body.append(canvas);
-  const renderer = new WeatherRenderer(canvas, 'page');
-  renderer.resize();
+  const renderer = new WeatherRenderer(canvas);
+  renderer.resize(64);
   renderer.setScene(sceneForWeather(previewWeather(`?weather=${key}`)), 'strong');
   const internal = renderer as unknown as Steppable;
   for (let i = 0; i < 120; i += 1) internal.step(1 / 60);

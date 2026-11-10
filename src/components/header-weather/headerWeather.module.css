@@ -4,7 +4,7 @@
 @property --sky-edge-right { syntax:"<color>"; inherits:true; initial-value:#dceaf4; }
 @property --sky-page { syntax:"<color>"; inherits:true; initial-value:#f6f5f0; }
 .headerSurface { isolation:isolate; border-bottom-color:transparent; background:linear-gradient(90deg,var(--sky-edge-left),var(--sky-edge-center) 50%,var(--sky-edge-right)),var(--sky-page); }
-.headerSurface > :not(.skyBackdrop) { position:relative; z-index:1; }
+.headerSurface > :not(.skyBackdrop):not(.skyWeather) { position:relative; z-index:1; }
 .skyBackdrop { position:absolute; inset:0; pointer-events:none; z-index:0; filter:saturate(.82) contrast(.96); -webkit-mask-image:linear-gradient(#000 0%,#000 84%,transparent 100%); mask-image:linear-gradient(#000 0%,#000 84%,transparent 100%); }
 .skyScene { position:absolute; inset:0; z-index:0; background-size:cover; background-position:center center; background-repeat:no-repeat; }
 .skySceneNext { z-index:1; opacity:0; transition:opacity 1.8s ease-in-out; }
@@ -12,7 +12,9 @@
 .skyBackdrop::before { content:""; position:absolute; inset:0; z-index:2; background:linear-gradient(180deg,rgba(246,245,240,.08),rgba(246,245,240,.2)); }
 .nightSky::after { content:""; position:absolute; inset:0; background:linear-gradient(90deg,rgba(255,255,255,.84),rgba(255,255,255,.50) 25%,transparent 54%); }
 .rainClouds { position:absolute; inset:0; z-index:3; pointer-events:none; background:radial-gradient(ellipse 38% 115% at 28% -15%,rgba(55,77,108,.24),transparent 80%),radial-gradient(ellipse 43% 120% at 76% -10%,rgba(55,77,108,.2),transparent 82%),linear-gradient(180deg,rgba(82,103,131,.1),transparent 80%); }
-.skyWeather { position:absolute; inset:0; z-index:4; display:block; width:100%; height:100%; pointer-events:none; }
+/* One weather layer: solid across the header, then it overhangs the page by --weather-tail and fades out gradually. */
+.skyWeather { --weather-tail:150px; position:absolute; top:0; left:0; right:0; z-index:0; display:block; width:100%; height:calc(100% + var(--weather-tail)); pointer-events:none; -webkit-mask-image:linear-gradient(180deg,#000 0,#000 calc(100% - var(--weather-tail) + 10px),rgba(0,0,0,.78) calc(100% - var(--weather-tail) * .72),rgba(0,0,0,.46) calc(100% - var(--weather-tail) * .46),rgba(0,0,0,.18) calc(100% - var(--weather-tail) * .22),transparent 100%); mask-image:linear-gradient(180deg,#000 0,#000 calc(100% - var(--weather-tail) + 10px),rgba(0,0,0,.78) calc(100% - var(--weather-tail) * .72),rgba(0,0,0,.46) calc(100% - var(--weather-tail) * .46),rgba(0,0,0,.18) calc(100% - var(--weather-tail) * .22),transparent 100%); }
+@media(max-width:750px){ .skyWeather { --weather-tail:110px; } }
 .skyFrame { --sky-page:var(--paper); --sky-edge-left:rgba(155,200,230,.48); --sky-edge-center:rgba(198,224,241,.52); --sky-edge-right:rgba(171,209,234,.48); --header-glass:rgba(255,255,255,.62); --header-glass-quiet:rgba(255,255,255,.5); transition:--sky-edge-left 1.8s ease-in-out,--sky-edge-center 1.8s ease-in-out,--sky-edge-right 1.8s ease-in-out,--sky-page 1.8s ease-in-out; }
 .skyFrame[data-sky-phase="earlyMorning"] { --sky-edge-left:rgba(168,202,226,.55); --sky-edge-center:rgba(237,185,191,.55); --sky-edge-right:rgba(188,213,232,.5); }
 .skyFrame[data-sky-phase="lateMorning"] { --sky-edge-left:rgba(155,200,230,.48); --sky-edge-center:rgba(198,224,241,.52); --sky-edge-right:rgba(171,209,234,.48); }

@@ -2,14 +2,16 @@ import type { HeaderEffectStrength } from './types';
 import type { WeatherScene } from './weatherEffects';
 
 /**
- * Canvas weather renderer shared by the header sky and the page overlay.
+ * Canvas weather renderer for one continuous layer: it starts at the top of the header, runs a little
+ * past the header's bottom edge and is faded out by a CSS mask, so weather never stops at a hard line.
+ * The top `band` px sit over the illustrated header sky; below it the layer sits over the light page.
  *
  * Every system (rain, snow, clouds, fog, sun, lightning) keeps its own "mix" that eases toward the
  * live scene, so a new API reading turns drizzle into a downpour (or clears it) smoothly instead of
  * swapping layers. Rain is drawn as motion-blurred streaks in three depth layers that share a gusting
- * wind angle; near drops break into a crown of droplets and a ripple where they land.
+ * wind angle. Streaks are pale over the sky art and turn into darker, glinting drops over the page,
+ * cross-faded by height so each drop keeps reading as it falls out of the header.
  */
-export type RenderVariant = 'page' | 'sky';
 
 const STRENGTH: Record<HeaderEffectStrength, { density: number; alpha: number }> = {
   light: { density: .45, alpha: .62 },
@@ -17,20 +19,15 @@ const STRENGTH: Record<HeaderEffectStrength, { density: number; alpha: number }>
   strong: { density: 1, alpha: 1 },
 };
 
-type RainLayer = { depth: number; speed: number; length: number; width: number; alpha: number; share: number; splash: number };
+type RainLayer = { depth: number; speed: number; length: number; width: number; alpha: number; share: number };
 
-const RAIN_LAYERS: Record<RenderVariant, RainLayer[]> = {
-  page: [
-    { depth: .4, speed: 640, length: 17, width: .9, alpha: .34, share: .48, splash: 0 },
-    { depth: .7, speed: 900, length: 27, width: 1.15, alpha: .5, share: .33, splash: .35 },
-    { depth: 1, speed: 1200, length: 40, width: 1.5, alpha: .66, share: .19, splash: 1 },
-  ],
-  sky: [
-    { depth: .35, speed: 420, length: 11, width: .8, alpha: .5, share: .55, splash: 0 },
-    { depth: .65, speed: 640, length: 18, width: 1, alpha: .64, share: .3, splash: 0 },
-    { depth: 1, speed: 900, length: 28, width: 1.3, alpha: .75, share: .15, splash: 0 },
-  ],
-};
+const RAIN_LAYERS: RainLayer[] = [
+  { depth: .35, speed: 460, length: 12, width: .8, alpha: .5, share: .52 },
+  { depth: .65, speed: 700, length: 20, width: 1.05, alpha: .64, share: .31 },
+  { depth: 1, speed: 980, length: 31, width: 1.35, alpha: .76, share: .17 },
+];
+/** Over the page the dark streaks are a little fainter than the pale ones over the sky art. */
+const PAGE_RAIN_ALPHA = 1;
 
 const SNOW_LAYERS = [
   { depth: .4, size: 1.8, speed: 26, sway: 7, alpha: .7, share: .5 },
@@ -43,9 +40,7 @@ const RAIN_DENSITY = 1.75e-3;
 const DRIZZLE_FACTOR = 1.7;
 const SNOW_DENSITY = .8e-3;
 
-type Drop = { x: number; y: number; layer: number; speed: number; length: number; alpha: number; endY: number; active: boolean };
-type Spark = { x: number; y: number; vx: number; vy: number; age: number; life: number; size: number };
-type Ripple = { x: number; y: number; age: number; life: number; size: number };
+type Drop = { x: number; y: number; layer: number; speed: number; length: number; alpha: number; active: boolean };
 type Flake = { x: number; y: number; layer: number; size: number; speed: number; phase: number; freq: number; active: boolean };
 type Mote = { x: number; y: number; vx: number; vy: number; size: number; phase: number };
 type Cloud = { x: number; y: number; sprite: number; scale: number; speed: number; alpha: number };
@@ -65,7 +60,7 @@ function mulberry32(seed: number) {
   };
 }
 
-// One storm clock for the whole page so the header flash and the page flash happen together.
+// One storm clock for the whole page, so every mounted layer flashes together.
 const stormClock = { next: 0, start: -100, seed: 1 };
 function stormStrike(now: number) {
   if (stormClock.next === 0) stormClock.next = now + rand(2.5, 5);
@@ -232,9 +227,10 @@ function targetMixes(scene: WeatherScene): Mixes {
 
 export class WeatherRenderer {
   private readonly ctx: CanvasRenderingContext2D;
-  private readonly variant: RenderVariant;
   private width = 0;
   private height = 0;
+  /** Height of the header sky inside the canvas; the rest of the canvas hangs over the page. */
+  private band = 0;
   private dpr = 1;
   private frame = 0;
   private last = 0;
@@ -249,23 +245,22 @@ export class WeatherRenderer {
   private drizzle = 0;
 
   private drops: Drop[] = [];
-  private sparks: Spark[] = [];
-  private ripples: Ripple[] = [];
   private flakes: Flake[] = [];
   private motes: Mote[] = [];
   private clouds: Cloud[] = [];
-  private streaks: Sprite[] = [];
-  private flakeSprite: Sprite | null = null;
+  private skyStreaks: Sprite[] = [];
+  private pageStreaks: Sprite[] = [];
+  private skyFlake: Sprite | null = null;
+  private pageFlake: Sprite | null = null;
   private moteSprite: Sprite | null = null;
   private fairClouds: Sprite[] = [];
   private rainClouds: Sprite[] = [];
   private mist: Sprite | null = null;
 
-  constructor(private readonly canvas: HTMLCanvasElement, variant: RenderVariant) {
+  constructor(private readonly canvas: HTMLCanvasElement) {
     const ctx = canvas.getContext('2d', { alpha: true });
     if (!ctx) throw new Error('Canvas 2D is unavailable');
     this.ctx = ctx;
-    this.variant = variant;
   }
 
   setScene(scene: WeatherScene, strength: HeaderEffectStrength) {
@@ -277,15 +272,18 @@ export class WeatherRenderer {
     if (!this.running) this.drawStatic();
   }
 
-  resize() {
+  /** `band`: how many px from the top are header sky (defaults to the canvas's parent height). */
+  resize(band?: number) {
     const rect = this.canvas.getBoundingClientRect();
     const width = Math.round(rect.width);
     const height = Math.round(rect.height);
+    const sky = Math.round(clamp(band ?? this.canvas.parentElement?.clientHeight ?? height, 1, Math.max(1, height)));
     const dpr = Math.min(2, window.devicePixelRatio || 1);
-    if (width === this.width && height === this.height && dpr === this.dpr) return;
+    if (width === this.width && height === this.height && sky === this.band && dpr === this.dpr) return;
     const firstLayout = this.width === 0;
     this.width = width;
     this.height = height;
+    this.band = sky;
     this.dpr = dpr;
     this.canvas.width = Math.max(1, Math.round(width * dpr));
     this.canvas.height = Math.max(1, Math.round(height * dpr));
@@ -331,23 +329,28 @@ export class WeatherRenderer {
   }
 
   private buildSprites(firstLayout: boolean) {
-    const page = this.variant === 'page';
-    const body = page ? '74,108,138' : '228,240,250';
-    this.streaks = RAIN_LAYERS[this.variant].map((layer) => streakSprite(layer.length, layer.width, this.dpr, body, page));
-    this.flakeSprite = page
-      ? dotSprite(4, 'rgba(226,236,246,1)', 'rgba(170,192,214,.55)', this.dpr)
-      : dotSprite(4, 'rgba(255,255,255,1)', 'rgba(255,255,255,.5)', this.dpr);
+    this.skyStreaks = RAIN_LAYERS.map((layer) => streakSprite(layer.length, layer.width, this.dpr, '228,240,250', false));
+    this.pageStreaks = RAIN_LAYERS.map((layer) => streakSprite(layer.length, layer.width, this.dpr, '74,108,138', true));
+    this.skyFlake = dotSprite(4, 'rgba(255,255,255,1)', 'rgba(255,255,255,.5)', this.dpr);
+    this.pageFlake = dotSprite(4, 'rgba(226,236,246,1)', 'rgba(170,192,214,.55)', this.dpr);
     this.moteSprite = dotSprite(4, 'rgba(255,236,170,1)', 'rgba(255,196,84,.5)', this.dpr);
     if (firstLayout) {
       this.fairClouds = [11, 23, 37, 41, 59].map((seed) => cloudSprite('fair', seed));
       this.rainClouds = [7, 19, 29, 43].map((seed) => cloudSprite('rain', seed));
-      this.mist = mistSprite(page ? '214,224,228' : '246,248,250', 5);
+      this.mist = mistSprite('236,242,245', 5);
     }
+  }
+
+  /** 0 over the header sky, 1 over the page: decides which sprite a particle at `y` uses. */
+  private pageShare(y: number) {
+    // The header art already fades to the page colour near its bottom edge, so switch a little before it.
+    const start = this.band * .6;
+    return clamp((y - start) / (this.band * .4 + 8));
   }
 
   private populate() {
     const { width: w, height: h } = this;
-    const layers = RAIN_LAYERS[this.variant];
+    const layers = RAIN_LAYERS;
     const maxDrops = Math.round(w * h * RAIN_DENSITY * DRIZZLE_FACTOR);
     this.drops = [];
     // Interleave layers so any prefix of the pool keeps the same depth mix.
@@ -356,7 +359,7 @@ export class WeatherRenderer {
       let layer = 0;
       let acc = 0;
       for (let l = 0; l < layers.length; l += 1) { acc += layers[l].share; if (pick <= acc) { layer = l; break; } layer = l; }
-      const drop: Drop = { x: 0, y: 0, layer, speed: 1, length: 1, alpha: 1, endY: h * 2, active: false };
+      const drop: Drop = { x: 0, y: 0, layer, speed: 1, length: 1, alpha: 1, active: false };
       this.respawnDrop(drop, true);
       this.drops.push(drop);
     }
@@ -375,35 +378,33 @@ export class WeatherRenderer {
 
     this.motes = Array.from({ length: Math.round(clamp(w / 1400, .3, 1.2) * 34) }, () => this.newMote(true));
 
-    const cloudCount = this.variant === 'page' ? Math.max(3, Math.round(w / 300)) : Math.max(4, Math.round(w / 220));
+    // Clouds live in the header sky band, so size and place them by the band, not the whole canvas.
+    const band = this.band || h;
+    const cloudCount = Math.max(4, Math.round(w / 220));
     this.clouds = Array.from({ length: cloudCount }, (_, index) => {
-      const sky = this.variant === 'sky';
-      const scale = sky ? clamp(h / 140, .45, 1) * rand(.7, 1.15) : clamp(w / 1500, .55, 1.05) * rand(.7, 1.1);
+      // Small enough that a cloud's base stays inside the header instead of hanging over the page.
+      const scale = clamp(band / 180, .3, .9) * rand(.75, 1.15);
       return {
         x: (index / cloudCount) * (w + 520 * scale) - 520 * scale + rand(-60, 60),
-        y: sky ? rand(-.55, .05) * h : rand(-.42, -.12) * 230 * scale,
+        y: rand(-.85, -.4) * band,
         sprite: index,
         scale,
         speed: rand(.6, 1.3),
         alpha: rand(.7, 1),
       };
     });
-    this.sparks = [];
-    this.ripples = [];
     this.updateActive();
   }
 
   private respawnDrop(drop: Drop, anywhere = false) {
     const { width: w, height: h } = this;
-    const layer = RAIN_LAYERS[this.variant][drop.layer];
+    const layer = RAIN_LAYERS[drop.layer];
     const slant = Math.abs(this.windTan()) * h;
     drop.speed = rand(.86, 1.14);
     drop.length = rand(.75, 1.25);
     drop.alpha = rand(.6, 1);
     drop.x = this.windTan() >= 0 ? rand(-slant - 20, w + 10) : rand(-10, w + slant + 20);
     drop.y = anywhere ? rand(-layer.length, h) : -layer.length * drop.length - rand(0, h * .3);
-    // Some drops land on a surface inside the view (splash); the rest fall past the fade-out.
-    drop.endY = layer.splash > 0 && Math.random() < layer.splash ? rand(h * .28, h * 1.1) : h * 3;
   }
 
   private newMote(anywhere: boolean): Mote {
@@ -443,7 +444,7 @@ export class WeatherRenderer {
     this.drizzle += ((this.scene.drizzle ? 1 : 0) - this.drizzle) * ease;
 
     const { width: w, height: h } = this;
-    const layers = RAIN_LAYERS[this.variant];
+    const layers = RAIN_LAYERS;
     const tan = this.windTan();
     const speedScale = 1 - this.drizzle * .5;
     const activeDrops = Math.round(this.drops.length * this.mix.rain * this.strength.density
@@ -460,25 +461,11 @@ export class WeatherRenderer {
       drop.y += vy * dt;
       drop.x += vy * tan * dt;
       const length = layer.length * drop.length * (1 - this.drizzle * .45);
-      if (drop.y >= drop.endY) {
-        if (this.mix.rain > .05 && this.drizzle < .5) this.splash(drop.x, drop.endY, layer.depth, vy * tan);
-        if (i >= activeDrops) drop.active = false;
-        else this.respawnDrop(drop);
-      } else if (drop.y - length > h || drop.x < -w * .5 || drop.x > w * 1.5) {
+      if (drop.y - length > h || drop.x < -w * .5 || drop.x > w * 1.5) {
         if (i >= activeDrops) drop.active = false;
         else this.respawnDrop(drop);
       }
     }
-
-    for (const spark of this.sparks) {
-      spark.age += dt;
-      spark.vy += 1250 * dt;
-      spark.x += spark.vx * dt;
-      spark.y += spark.vy * dt;
-    }
-    this.sparks = this.sparks.filter((spark) => spark.age < spark.life);
-    for (const ripple of this.ripples) ripple.age += dt;
-    this.ripples = this.ripples.filter((ripple) => ripple.age < ripple.life);
 
     const activeFlakes = Math.round(this.flakes.length * this.mix.snow * this.strength.density);
     for (let i = 0; i < this.flakes.length; i += 1) {
@@ -514,18 +501,6 @@ export class WeatherRenderer {
     }
   }
 
-  private splash(x: number, y: number, depth: number, drift: number) {
-    if (this.sparks.length > 420) return;
-    const count = depth >= 1 ? 2 + Math.floor(Math.random() * 3) : 1 + Math.floor(Math.random() * 2);
-    for (let i = 0; i < count; i += 1) {
-      this.sparks.push({
-        x, y, vx: rand(-1, 1) * 95 * depth + drift * .06, vy: -rand(80, 190) * depth,
-        age: 0, life: rand(.28, .46), size: rand(.7, 1.35) * (.6 + depth * .5),
-      });
-    }
-    if (this.ripples.length < 160) this.ripples.push({ x, y, age: 0, life: rand(.38, .55), size: rand(6, 12) * depth });
-  }
-
   private draw() {
     const { ctx, width: w, height: h, dpr } = this;
     ctx.setTransform(1, 0, 0, 1, 0, 0);
@@ -533,18 +508,20 @@ export class WeatherRenderer {
     if (!this.scene || !w || !h) return;
     ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
     const alpha = this.strength.alpha;
-    const page = this.variant === 'page';
+    const band = this.band || h;
     const strike = this.mix.storm > .05 ? stormStrike(this.time) : null;
     const flash = strike ? flashEnvelope(this.time - strike.start) * this.mix.storm : 0;
 
     // Overcast light: the sky dims before the rain, and lightning briefly lifts it.
     const overcast = Math.max(this.mix.dark * .7, this.mix.fog * .5);
     if (overcast > .01) {
+      // Darkest across the header sky, thinning out over the page so text below stays readable.
       const gradient = ctx.createLinearGradient(0, 0, 0, h);
       const tone = this.mix.fog > this.mix.dark ? '206,216,220' : '46,68,92';
-      const strengthTone = page ? .2 : .4;
-      gradient.addColorStop(0, `rgba(${tone},${strengthTone * overcast * alpha * (1 - flash * .8)})`);
-      gradient.addColorStop(page ? .8 : 1, `rgba(${tone},0)`);
+      const top = .4 * overcast * alpha * (1 - flash * .8);
+      gradient.addColorStop(0, `rgba(${tone},${top})`);
+      gradient.addColorStop(clamp(band / h), `rgba(${tone},${top * .55})`);
+      gradient.addColorStop(1, `rgba(${tone},0)`);
       ctx.fillStyle = gradient;
       ctx.fillRect(0, 0, w, h);
     }
@@ -558,16 +535,19 @@ export class WeatherRenderer {
 
     if (flash > .01 && strike) {
       ctx.globalAlpha = 1;
-      ctx.fillStyle = `rgba(236,242,255,${(page ? .22 : .42) * flash * alpha})`;
+      const light = ctx.createLinearGradient(0, 0, 0, h);
+      light.addColorStop(0, `rgba(236,242,255,${.42 * flash * alpha})`);
+      light.addColorStop(1, `rgba(236,242,255,${.16 * flash * alpha})`);
+      ctx.fillStyle = light;
       ctx.fillRect(0, 0, w, h);
-      if (!page) this.drawBolt(strike.seed, flash * alpha);
+      this.drawBolt(strike.seed, flash * alpha);
     }
     ctx.globalAlpha = 1;
   }
 
   private drawRain(alpha: number) {
     const { ctx, dpr } = this;
-    const layers = RAIN_LAYERS[this.variant];
+    const layers = RAIN_LAYERS;
     const tan = this.windTan();
     // Streaks align with the velocity vector, tail pointing back up-wind.
     const angle = Math.atan2(-tan, 1);
@@ -578,55 +558,53 @@ export class WeatherRenderer {
     const mix = clamp(this.mix.rain * 1.6);
     for (let l = 0; l < layers.length; l += 1) {
       const layer = layers[l];
-      const sprite = this.streaks[l];
+      const sky = this.skyStreaks[l];
+      const page = this.pageStreaks[l];
       for (const drop of this.drops) {
         if (!drop.active || drop.layer !== l) continue;
-        const length = sprite.h * drop.length * stretch / Math.max(.6, cos);
-        ctx.globalAlpha = layer.alpha * drop.alpha * mix * alpha * (1 - this.drizzle * .3);
+        const length = sky.h * drop.length * stretch / Math.max(.6, cos);
+        const base = layer.alpha * drop.alpha * mix * alpha * (1 - this.drizzle * .3);
+        // Judge the drop by the middle of its streak, so it changes colour as it crosses the header edge.
+        const onPage = this.pageShare(drop.y - length * .5);
         ctx.setTransform(dpr * cos, dpr * sin, -dpr * sin, dpr * cos, dpr * drop.x, dpr * drop.y);
-        ctx.drawImage(sprite.canvas, -sprite.w * thin / 2, -length, sprite.w * thin, length);
+        if (onPage < .99) {
+          ctx.globalAlpha = base * (1 - onPage);
+          ctx.drawImage(sky.canvas, -sky.w * thin / 2, -length, sky.w * thin, length);
+        }
+        if (onPage > .01) {
+          ctx.globalAlpha = base * onPage * PAGE_RAIN_ALPHA;
+          ctx.drawImage(page.canvas, -page.w * thin / 2, -length, page.w * thin, length);
+        }
       }
     }
     ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-
-    if (this.variant !== 'page') return;
-    ctx.strokeStyle = 'rgb(74,108,138)';
-    ctx.lineWidth = .8;
-    for (const ripple of this.ripples) {
-      const t = ripple.age / ripple.life;
-      const rx = ripple.size * (.25 + .75 * t);
-      ctx.globalAlpha = (1 - t) ** 1.6 * .5 * mix * alpha;
-      ctx.beginPath();
-      ctx.ellipse(ripple.x, ripple.y, rx, rx * .26, 0, 0, Math.PI * 2);
-      ctx.stroke();
-    }
-    ctx.fillStyle = 'rgb(90,124,154)';
-    for (const spark of this.sparks) {
-      ctx.globalAlpha = (1 - spark.age / spark.life) * .75 * mix * alpha;
-      ctx.beginPath();
-      ctx.arc(spark.x, spark.y, spark.size, 0, Math.PI * 2);
-      ctx.fill();
-    }
   }
 
   private drawSnow(alpha: number) {
-    const sprite = this.flakeSprite;
-    if (!sprite) return;
+    const sky = this.skyFlake;
+    const page = this.pageFlake;
+    if (!sky || !page) return;
     const mix = clamp(this.mix.snow * 1.6);
     for (const flake of this.flakes) {
       if (!flake.active) continue;
       const size = flake.size * 2;
-      this.ctx.globalAlpha = SNOW_LAYERS[flake.layer].alpha * mix * alpha;
-      this.ctx.drawImage(sprite.canvas, flake.x - size / 2, flake.y - size / 2, size, size);
+      const base = SNOW_LAYERS[flake.layer].alpha * mix * alpha;
+      const onPage = this.pageShare(flake.y);
+      if (onPage < .99) {
+        this.ctx.globalAlpha = base * (1 - onPage);
+        this.ctx.drawImage(sky.canvas, flake.x - size / 2, flake.y - size / 2, size, size);
+      }
+      if (onPage > .01) {
+        this.ctx.globalAlpha = base * onPage;
+        this.ctx.drawImage(page.canvas, flake.x - size / 2, flake.y - size / 2, size, size);
+      }
     }
   }
 
   private drawClouds(alpha: number) {
     const { ctx } = this;
-    const sky = this.variant === 'sky';
-    const fair = this.mix.fair * (sky ? .95 : .62);
-    // Storm clouds belong in the header sky; on the page the overcast tint carries the mood instead.
-    const dark = sky ? this.mix.dark * .9 : 0;
+    const fair = this.mix.fair * .95;
+    const dark = this.mix.dark * .78;
     if (fair < .01 && dark < .01) return;
     const night = this.scene && !this.scene.isDay ? .75 : 1;
     for (let i = 0; i < this.clouds.length; i += 1) {
@@ -653,8 +631,8 @@ export class WeatherRenderer {
     const bands = layerIndex === 0
       ? [{ y: -.1, speed: 7, a: .9, scale: 1.1 }, { y: .22, speed: 12, a: .7, scale: .9 }]
       : [{ y: .45, speed: 19, a: .55, scale: .8 }];
-    // Keep page text readable: mist over the content is thinner than mist over the header sky.
-    const veil = this.variant === 'page' ? .7 : 1;
+    // Keep page text readable under the faded tail of the layer.
+    const veil = .85;
     for (const band of bands) {
       const bandHeight = h * .7 * band.scale;
       const tileWidth = Math.max(w * .9, sprite.w * (bandHeight / sprite.h));
@@ -725,7 +703,8 @@ export class WeatherRenderer {
     const startX = w * (.12 + random() * .76);
     const points: [number, number][] = [[startX, -4]];
     let x = startX;
-    const end = h * (.75 + random() * .4);
+    // The bolt stays in the header sky; only its glow spills over the page.
+    const end = (this.band || h) * (.8 + random() * .3);
     for (let y = 0; y < end;) {
       y += 5 + random() * 11;
       x += (random() - .5) * 18;
