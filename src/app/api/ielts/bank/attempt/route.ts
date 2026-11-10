@@ -5,6 +5,7 @@ import { learnerSkillAvailable, releaseLocks } from "@/lib/runtime";
 import readingEvidence from "@/data/ielts-reading-evidence.json";
 import { evidenceFromExplanation } from "@/lib/ielts-bank/reading-evidence";
 import { enqueueWritingAttempt, gradingEnabled } from "@/lib/writing-grading/server";
+import { cloudflareGradingSelected } from "@/lib/writing-grading/cloudflare-worker";
 export const runtime = "nodejs";
 const unavailable = () => Response.json({ error: "Question bank is not available yet." }, { status: 404 });
 function withEvidence(result: ReturnType<typeof scoreAnswers>) {
@@ -71,7 +72,7 @@ export async function POST(request: Request) {
       if (!learnerSkillAvailable(linkedExam?.skill)) return unavailable();
     }
     const submitted = await submitAttempt(body.attemptId, user.id, body.answers, body.expired ? "expired" : "submitted", { notes: body.notes, flags: body.flags, difficulty: body.difficulty });
-    if (gradingEnabled()) {
+    if (gradingEnabled() && !cloudflareGradingSelected()) {
       // Queue failures must never erase or roll back an already submitted essay.
       await enqueueWritingAttempt(body.attemptId, user.id).catch(() => undefined);
     }

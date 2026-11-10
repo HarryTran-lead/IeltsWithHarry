@@ -10,7 +10,7 @@ type Grade = {
   errors: Finding[]; strengths_vi: string[]; improvements_vi: string[]; summary_vi: string; summary_en: string;
   revised_paragraph: string | null; source_facts_status: string;
 };
-type GradingState = { status: string; id?: string; attempt_no?: number; result: Grade | null; model_version?: string | null; rubric_version?: string | null };
+type GradingState = { status: string; id?: string; attempt_no?: number; error_code?: string | null; result: Grade | null; model_version?: string | null; rubric_version?: string | null; provider?: "local" | "cloudflare" };
 const names: Record<string, string> = { TA: "Task Achievement", TR: "Task Response", CC: "Coherence & Cohesion", LR: "Lexical Resource", GRA: "Grammatical Range & Accuracy" };
 
 function EssayWithFindings({ essay, findings }: { essay: string; findings: Finding[] }) {
@@ -61,14 +61,14 @@ export function WritingAutoGradingPanel({ attemptId, essay }: { attemptId: strin
   }
   const grade = state?.result;
   return <section className="wg-panel" aria-live="polite">
-    <div className="wg-heading"><div><span>IELTS WRITING · CHẤM TỰ HOST</span><h2>Đánh giá bài viết</h2></div><p>Band dự đoán để luyện tập, không phải điểm IELTS chính thức.</p></div>
+    <div className="wg-heading"><div><span>IELTS WRITING · CHẤM TỰ ĐỘNG</span><h2>Đánh giá bài viết</h2></div><p>Band dự đoán để luyện tập từ AI thử nghiệm, chưa đối chiếu với điểm giáo viên và không phải điểm IELTS chính thức.</p></div>
     {!state && !error && <p>Đang kiểm tra trạng thái bài viết…</p>}
     {state?.status === "unavailable" && <p>Bài viết đã được lưu. Hệ thống chấm tự động chưa sẵn sàng; bạn vẫn có thể xem lại bài và luyện tiếp.</p>}
-    {state?.status === "not_requested" && <button className="bx-start" type="button" disabled={busy} onClick={() => void requestGrade("grade")}>Gửi bài để chấm</button>}
+    {state?.status === "not_requested" && <>{state.provider === "cloudflare" && <p>Bấm gửi bài đồng nghĩa với việc bài viết của bạn được chuyển tới Cloudflare Workers AI để phân tích.</p>}<button className="bx-start" type="button" disabled={busy} onClick={() => void requestGrade("grade")}>Gửi bài để chấm</button></>}
     {state?.status === "queued" && <p>Bài đã vào hàng đợi. Kết quả sẽ hiện ở đây khi dịch vụ xử lý xong.</p>}
     {state?.status === "analyzing" && <p>Hệ thống đang phân tích bài viết. Bạn có thể rời trang và quay lại sau.</p>}
     {state?.status === "needs_review" && <p>Đề Task 1 cần xác minh dữ liệu nguồn trước khi chấm. Bài viết của bạn vẫn được lưu.</p>}
-    {state?.status === "failed" && <><p>Chưa thể chấm bài lúc này. Bài viết vẫn được lưu nguyên vẹn.</p>{(state.attempt_no ?? 3) < 3 && <button className="bx-start" type="button" disabled={busy} onClick={() => void requestGrade("retry")}>Thử chấm lại</button>}</>}
+    {state?.status === "failed" && <><p>{state.error_code === "CLOUDFLARE_QUOTA_EXCEEDED" ? "Đã hết hạn mức chấm miễn phí hôm nay. Bạn có thể thử lại sau 07:00 giờ Việt Nam." : "Chưa thể chấm bài lúc này. Bài viết vẫn được lưu nguyên vẹn."}</p>{(state.attempt_no ?? 3) < 3 && <button className="bx-start" type="button" disabled={busy} onClick={() => void requestGrade("retry")}>Thử chấm lại</button>}</>}
     {error && <p className="bx-error" role="alert">{error}</p>}
     {grade && <>
       <div className="wg-band"><span>Band dự đoán · {grade.task_type === "academic_task1" ? "Academic Task 1" : "Academic Task 2"}</span><strong>{grade.task_band_display.toFixed(1)}</strong><p>{grade.summary_vi}</p></div>
