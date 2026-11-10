@@ -91,7 +91,7 @@ export async function GET(request: Request) {
       return Response.json({ attempt: { ...data, ielts_exam_versions: undefined, content: visibleContent }, result, serverNow: Date.now() });
     }
     let query = client.from("ielts_attempts").select("id,exam_id,version_id,state,score,total,started_at,submitted_at,notes,ielts_exams!inner(title,skill)").eq("user_id", user.id).order("started_at", { ascending: false }).limit(30);
-    if (releaseLocks) query = query.in("ielts_exams.skill", ["Reading", "Listening"]);
+    if (releaseLocks) query = query.in("ielts_exams.skill", ["Reading", "Listening", "Writing"]);
     const { data, error } = await query;
     if (error) throw new Error(error.message);
     return Response.json({ attempts: data });

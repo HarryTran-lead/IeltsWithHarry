@@ -6,7 +6,7 @@ afterEach(() => {
 });
 
 describe("production learner routes", () => {
-  it("opens Reading and Listening practice while other IELTS skills remain closed", async () => {
+  it("opens Reading, Listening, and Writing practice while unreleased IELTS skills remain closed", async () => {
     vi.stubEnv("NODE_ENV", "production");
     vi.stubEnv("NEXT_PUBLIC_UNLOCK_DEV_FEATURES", "false");
     vi.resetModules();
@@ -21,11 +21,19 @@ describe("production learner routes", () => {
     expect(lockedLearnerPath("/app/reading/mock")).toBe(true);
     expect(lockedLearnerPath("/app/listening")).toBe(false);
     expect(lockedLearnerPath("/app/listening/vocabulary")).toBe(true);
+    expect(lockedLearnerPath("/app/writing")).toBe(false);
+    expect(lockedLearnerPath("/app/writing/live")).toBe(false);
+    expect(lockedLearnerPath("/app/writing/task-1")).toBe(false);
+    expect(lockedLearnerPath("/app/writing/task-2")).toBe(false);
+    expect(lockedLearnerPath("/app/writing/mode/unreleased")).toBe(true);
+    expect(lockedLearnerPath("/app/speaking")).toBe(true);
     expect(lockedLearnerPath("/app/question-bank")).toBe(true);
     expect(learnerSkillAvailable("Reading")).toBe(true);
     expect(learnerSkillAvailable("reading")).toBe(true);
     expect(learnerSkillAvailable("Listening")).toBe(true);
-    expect(learnerSkillAvailable("Writing")).toBe(false);
+    expect(learnerSkillAvailable("Writing")).toBe(true);
+    expect(learnerSkillAvailable("writing")).toBe(true);
+    expect(learnerSkillAvailable("Speaking")).toBe(false);
     expect(learnerSkillAvailable(null)).toBe(false);
   });
 });

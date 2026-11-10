@@ -16,7 +16,7 @@ export const smartNotebookV1 = liveMode && process.env.NEXT_PUBLIC_SMART_NOTEBOO
 /** Keep launch locks in production; the isolated develop Preview can expose work in progress. */
 export const releaseLocks = process.env.NODE_ENV === "production" && process.env.NEXT_PUBLIC_UNLOCK_DEV_FEATURES !== "true";
 export function learnerSkillAvailable(skill: string | null | undefined) {
-  return !releaseLocks || ["Reading", "reading", "Listening", "listening"].includes(skill ?? "");
+  return !releaseLocks || ["Reading", "reading", "Listening", "listening", "Writing", "writing"].includes(skill ?? "");
 }
 export const productionLearnStage = "ielts-builder";
 const releasedLearnStages = [productionLearnStage];
@@ -27,7 +27,7 @@ export function learnStageAvailable(stageId: string) {
 
 export function lockedLearnerPath(pathname: string) {
   if (!releaseLocks) return false;
-  if (["/app/reading", "/app/reading/live", "/app/reading/vocabulary", "/app/listening"].includes(pathname)) return false;
+  if (["/app/reading", "/app/reading/live", "/app/reading/vocabulary", "/app/listening", "/app/writing", "/app/writing/live", "/app/writing/task-1", "/app/writing/task-2"].includes(pathname)) return false;
   if (/^\/app\/question-bank\/(?:exam|attempt|result)\/[^/]+$/.test(pathname)) return false;
   // Listening mock tests open per test once their audio exists; the rest of Listening stays locked.
   if (/^\/app\/listening\/mock(?:\/M\d{2}-LISTENING-MOCK-\d{2})?$/.test(pathname)) return false;
