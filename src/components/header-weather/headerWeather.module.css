@@ -5,8 +5,27 @@
 @property --sky-page { syntax:"<color>"; inherits:true; initial-value:#f6f5f0; }
 .headerSurface { isolation:isolate; border-bottom-color:transparent; background:linear-gradient(90deg,var(--sky-edge-left),var(--sky-edge-center) 50%,var(--sky-edge-right)),var(--sky-page); }
 .headerSurface > :not(.skyBackdrop):not(.skyWeather) { position:relative; z-index:1; }
-.skyBackdrop { position:absolute; inset:0; pointer-events:none; z-index:0; filter:saturate(.82) contrast(.96); -webkit-mask-image:linear-gradient(#000 0%,#000 84%,transparent 100%); mask-image:linear-gradient(#000 0%,#000 84%,transparent 100%); }
-.skyScene { position:absolute; inset:0; z-index:0; background-size:cover; background-position:center center; background-repeat:no-repeat; }
+.skyBackdrop { position:absolute; inset:0; pointer-events:none; z-index:0; container-type:size; filter:saturate(.82) contrast(.96); -webkit-mask-image:linear-gradient(#000 0%,#000 84%,transparent 100%); mask-image:linear-gradient(#000 0%,#000 84%,transparent 100%); }
+/* Scenes are 2172×160 and keep that ratio (never stretched). The painted sun/moon (--sky-focus-x/y,
+   fractions of the image, set per scene) is aimed at --sky-target across the bar and ~40% down it:
+   where the art puts it, but no further right than the header controls allow (they take ~510px; on
+   narrow laptops there is no clear gap, so it stays put rather than zooming for nothing), and
+   at 45% on phones. Base size fills the bar's width (or height on phones); it grows up to 1.4× only when
+   that is what it takes to slide the sun/moon clear of the controls. Clamps keep the image covering the bar. */
+.skyScene {
+  --fx: var(--sky-focus-x, .5);
+  --fy: var(--sky-focus-y, .5);
+  --sky-base: max(100cqw, 1357.5cqh);
+  --sky-target: min(calc(var(--fx) * 100cqw), max(calc(100cqw - 560px), 700px));
+  --sky-w: clamp(var(--sky-base), calc((100cqw - var(--sky-target)) / (1 - var(--fx))), calc(var(--sky-base) * 1.4));
+  --sky-h: calc(var(--sky-w) * 160 / 2172);
+  position:absolute; inset:0; z-index:0; background-repeat:no-repeat;
+  background-size: var(--sky-w) var(--sky-h);
+  background-position:
+    clamp(calc(100cqw - var(--sky-w)), calc(var(--sky-target) - var(--fx) * var(--sky-w)), 0px)
+    clamp(calc(100cqh - var(--sky-h)), calc(40cqh - var(--fy) * var(--sky-h)), 0px);
+}
+@media(max-width:767px){ .skyScene { --sky-target: 45cqw; } }
 .skySceneNext { z-index:1; opacity:0; transition:opacity 1.8s ease-in-out; }
 .skySceneVisible { opacity:1; }
 .skyBackdrop::before { content:""; position:absolute; inset:0; z-index:2; background:linear-gradient(180deg,rgba(246,245,240,.08),rgba(246,245,240,.2)); }
