@@ -65,6 +65,23 @@ it("reads an official Vietnamese feed page directly and extracts only its factua
   } finally { if (previous === undefined) delete process.env.GEMINI_API_KEY; else process.env.GEMINI_API_KEY = previous; }
 });
 
+it("classifies varied ministry leads before fact research without copying feed content", async () => {
+  const official = { ...source, name: "Vietnam Ministry of Science and Technology", feed_url: "https://mst.gov.vn/rss/tin-tuc-su-kien.rss", category: "Science" as const };
+  const titles = [
+    ["VNeID cho phép tích hợp giấy khai sinh và giấy tờ hộ tịch số", "Technology"],
+    ["Lan tỏa giá trị văn hóa Việt và khát vọng đổi mới sáng tạo", "Culture"],
+    ["Doanh nghiệp nhỏ thực hành AI để nâng cao hiệu quả kinh doanh", "Business"],
+    ["Công bố chương trình đào tạo sinh viên mới", "Education"],
+    ["Nghiên cứu công nghệ sản xuất vắc xin", "Health"],
+    ["Công bố kết quả nghiên cứu vật liệu mới", "Science"],
+  ] as const;
+  const xml = `<rss><channel>${titles.map(([title], index) => `<item><title>${title}</title><link>https://mst.gov.vn/example-${index}.htm</link><pubDate>Tue, 10 Nov 2026 09:00:00 +0700</pubDate><description>Source prose that must stay out of the fact writer.</description></item>`).join("")}</channel></rss>`;
+  const result = await rssProvider.fetch(official, (async () => new Response(xml)) as typeof fetch);
+  expect(result.items.map((item) => item.category)).toEqual(titles.map(([, category]) => category));
+  expect(result).not.toHaveProperty("summaries");
+  expect(result).not.toHaveProperty("bodies");
+});
+
 it("filters newspaper citations from grounded facts before validating the dossier", async () => {
   const previous = process.env.GEMINI_API_KEY;
   process.env.GEMINI_API_KEY = "test-key";

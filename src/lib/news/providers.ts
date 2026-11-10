@@ -42,7 +42,7 @@ export function canonicalUrl(raw: string): string | null {
   } catch { return null; }
 }
 export function newsHash(url: string): string { return createHash("sha256").update(url).digest("hex"); }
-function makeItem(source: NewsSource, raw: { url: unknown; title: unknown; date: unknown; publisher?: unknown; language?: unknown; externalId?: unknown }): NewsItem | null {
+function makeItem(source: NewsSource, raw: { url: unknown; title: unknown; date: unknown; publisher?: unknown; language?: unknown; externalId?: unknown; category?: NewsCategory }): NewsItem | null {
   const canonical_url = canonicalUrl(String(raw.url ?? ""));
   const title = cleanText(raw.title, 400);
   const published_at = parsePublishedDate(raw.date);
@@ -51,7 +51,7 @@ function makeItem(source: NewsSource, raw: { url: unknown; title: unknown; date:
   const flagged = sensitive.test(title);
   return { source_id: source.id, provider: source.provider, external_id: raw.externalId ? cleanText(raw.externalId, 400) : null,
     canonical_hash: newsHash(canonical_url), canonical_url, title, publisher: cleanText(raw.publisher || (source.name.startsWith("Global Voices") ? "Global Voices" : source.name), 150), language: "English",
-    category: source.category, origin_region: source.origin_region ?? "international", interest_topics: [...new Set([...interestTopicsForTitle(title), ...(source.interest_topic ? [source.interest_topic] : [])])], published_at, publication_status: source.auto_publish && !flagged && source.reviewed_basis.length >= 12 && ["METADATA_ONLY","FULL_REUSE_ALLOWED"].includes(source.policy_status) ? "published" : "review",
+    category: raw.category ?? source.category, origin_region: source.origin_region ?? "international", interest_topics: [...new Set([...interestTopicsForTitle(title), ...(source.interest_topic ? [source.interest_topic] : [])])], published_at, publication_status: source.auto_publish && !flagged && source.reviewed_basis.length >= 12 && ["METADATA_ONLY","FULL_REUSE_ALLOWED"].includes(source.policy_status) ? "published" : "review",
     attribution_text: source.attribution_text, sensitive: flagged, metadata: {} };
 }
 
@@ -108,6 +108,17 @@ function rssSummaries(xml: string): Record<string, string> {
     return url && summary ? [[newsHash(url), summary]] : [];
   }));
 }
+function officialVietnamCategory(title: string): NewsCategory {
+  const words = title.normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/đ/gi, "d").toLowerCase();
+  if (/\b(vac xin|vaccine|y te|suc khoe|benh vien|duoc|cham soc suc khoe)\b/.test(words)) return "Health";
+  if (/\b(giao duc|hoc sinh|sinh vien|dai hoc|truong hoc|dao tao|hoc tap)\b/.test(words)) return "Education";
+  if (/\b(van hoa|di san|du lich|nghe thuat|bao tang|le hoi)\b/.test(words)) return "Culture";
+  if (/\b(moi truong|khi hau|phat thai|nang luong|bao ton)\b/.test(words)) return "Environment";
+  if (/\b(doanh nghiep|kinh doanh|thuong mai|thi truong|kinh te|khoi nghiep)\b/.test(words)) return "Business";
+  if (/\b(chuyen doi so|tri tue nhan tao|ai|vien thong|5g|vneid|internet|ten mien|nen tang so)\b/.test(words)) return "Technology";
+  return "Science";
+}
+
 export function parseRss(xml: string, source: NewsSource): NewsItem[] {
   const { rss, entries } = rssEntries(xml);
   return entries.map((row) => {
@@ -121,6 +132,8 @@ export function parseRss(xml: string, source: NewsSource): NewsItem[] {
       : rawDate;
     return makeItem(source, { url: rss ? xmlText(row.link) : atomLink(row.link), title: xmlText(row.title),
       date,
+      category: source.feed_url === "https://mst.gov.vn/rss/tin-tuc-su-kien.rss"
+        ? officialVietnamCategory(xmlText(row.title)) : source.category,
       publisher: source.name.startsWith("Global Voices") ? "Global Voices" : source.name, language: "English", externalId: row.guid ? xmlText(row.guid) : row.id ? xmlText(row.id) : undefined });
   }).filter((item): item is NewsItem => item !== null);
 }
