@@ -2,6 +2,7 @@
 
 import { useEffect, useReducer, useRef } from 'react';
 import { useHeaderWeather } from './HeaderWeatherProvider';
+import { HeaderSkyWeather } from './HeaderWeatherEffects';
 import { initialScene, sceneReducer } from './sceneTransition';
 import { nextPhase } from './time';
 import { isRainyWeather } from './weatherApi';
@@ -78,5 +79,6 @@ export function HeaderSkyBackdrop() {
     {scene.current && <span className={`${styles.skyScene} ${nightClass(scene.current)}`} style={{ backgroundImage: `url('${SCENE_ASSETS[scene.current]}')` }} />}
     {scene.incoming && <span className={`${styles.skyScene} ${styles.skySceneNext} ${scene.fading ? styles.skySceneVisible : ''} ${nightClass(scene.incoming)}`} style={{ backgroundImage: `url('${SCENE_ASSETS[scene.incoming]}')` }} />}
     {showRainClouds && <span className={styles.rainClouds} />}
+    <HeaderSkyWeather className={styles.skyWeather} />
   </div>;
 }

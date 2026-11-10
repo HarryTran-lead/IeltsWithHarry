@@ -7,7 +7,7 @@ export async function fetchCurrentWeather(location: SelectedLocation, signal?: A
   const params = new URLSearchParams({
     latitude: String(location.latitude),
     longitude: String(location.longitude),
-    current: 'temperature_2m,weather_code,is_day,cloud_cover',
+    current: 'temperature_2m,weather_code,is_day,cloud_cover,precipitation,wind_speed_10m,wind_direction_10m',
     timezone: 'auto',
     forecast_days: '1',
   });
@@ -25,9 +25,16 @@ export async function fetchCurrentWeather(location: SelectedLocation, signal?: A
     weatherCode: typeof current.weather_code === 'number' ? current.weather_code : -1,
     isDay: current.is_day === 1,
     cloudCover: typeof current.cloud_cover === 'number' ? current.cloud_cover : null,
+    precipitationMm: finiteOrNull(current.precipitation),
+    windSpeedKmh: finiteOrNull(current.wind_speed_10m),
+    windDirectionDeg: finiteOrNull(current.wind_direction_10m),
     timezone: typeof result.timezone === 'string' ? result.timezone : undefined,
     observedAt: typeof current.time === 'string' ? current.time : undefined,
   };
+}
+
+function finiteOrNull(value: unknown): number | null {
+  return typeof value === 'number' && Number.isFinite(value) ? value : null;
 }
 
 export async function searchCities(query: string, signal?: AbortSignal): Promise<GeocodingResult[]> {

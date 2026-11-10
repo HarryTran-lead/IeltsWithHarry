@@ -2,6 +2,7 @@
 
 import { createContext, useCallback, useContext, useEffect, useMemo, useState, type ReactNode } from 'react';
 import { fetchCurrentWeather } from './weatherApi';
+import { previewWeather } from './weatherEffects';
 import { deviceTimeZone, phaseAt } from './time';
 import { CITY_KEY, MODE_KEY, STRENGTH_KEY, readManualCity, readMode, readStrength, saveManualCity, saveMode, saveStrength } from './storage';
 import type { DayPhase, HeaderDisplayMode, HeaderEffectStrength, SelectedLocation, WeatherSnapshot } from './types';
@@ -44,9 +45,12 @@ export function HeaderWeatherProvider({ children, previewPhase = null }: {
   const [locating, setLocating] = useState(false);
   const [locationError, setLocationError] = useState('');
   const [now, setNow] = useState<Date | null>(null);
+  // Development only: `?weather=storm` (see PREVIEW_WEATHER) forces a scene to review the effects.
+  const [previewSnapshot, setPreviewSnapshot] = useState<WeatherSnapshot | null>(null);
 
   useEffect(() => {
     const initialTimer = window.setTimeout(() => {
+      if (process.env.NODE_ENV !== 'production') setPreviewSnapshot(previewWeather(window.location.search));
       changeMode(readMode());
       changeStrength(readStrength());
       setLocation(readManualCity());
@@ -144,7 +148,7 @@ export function HeaderWeatherProvider({ children, previewPhase = null }: {
     let lastFetch = 0;
     const controller = new AbortController();
     const refreshWeather = async () => {
-      if (!active || document.visibilityState !== 'visible' || fetching || Date.now() - lastFetch < 20 * 60_000) return;
+      if (!active || document.visibilityState !== 'visible' || fetching || Date.now() - lastFetch < 10 * 60_000) return;
       fetching = true;
       lastFetch = Date.now();
       setWeatherLoading(true);
@@ -163,7 +167,7 @@ export function HeaderWeatherProvider({ children, previewPhase = null }: {
       }
     };
     void refreshWeather();
-    // Check once a minute; fetch only after 20 minutes of visible time.
+    // Check once a minute; Open-Meteo refreshes current conditions every 15 minutes, so fetch at most every 10.
     const timer = window.setInterval(() => void refreshWeather(), 60_000);
     const onVisible = () => { if (document.visibilityState === 'visible') void refreshWeather(); };
     document.addEventListener('visibilitychange', onVisible);
@@ -181,9 +185,9 @@ export function HeaderWeatherProvider({ children, previewPhase = null }: {
 
   const state = useMemo<WeatherContextState>(() => ({
     hydrated, mode, setMode, strength, setStrength, location, chooseCity, clearCity, requestCurrentLocation,
-    locating, locationError, weather, weatherError, weatherLoading, now, timezone, phase,
+    locating, locationError, weather: previewSnapshot ?? weather, weatherError, weatherLoading, now, timezone, phase,
   }), [hydrated, mode, setMode, strength, setStrength, location, chooseCity, clearCity, requestCurrentLocation,
-    locating, locationError, weather, weatherError, weatherLoading, now, timezone, phase]);
+    locating, locationError, previewSnapshot, weather, weatherError, weatherLoading, now, timezone, phase]);
 
   return <Context.Provider value={state}>{children}</Context.Provider>;
 }
