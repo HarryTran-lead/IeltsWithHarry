@@ -5,6 +5,7 @@ import { useEffect, useMemo, useState } from "react";
 import { createClient } from "@/lib/supabase/browser";
 import { emptySkillMaterial, skillMaterialSchema, type SkillMaterial, type SkillName } from "@/lib/skill-material";
 import { ListeningAudioGenerator } from "./listening-audio-generator";
+import { LoadingBlock } from "@/components/layout/loading-block";
 
 export function SkillMaterialEditor({ lessonId, skill }: { lessonId: string; skill: SkillName }) {
   const supabase = useMemo(() => createClient(), []);
@@ -63,7 +64,7 @@ export function SkillMaterialEditor({ lessonId, skill }: { lessonId: string; ski
     if (result.error) setError(result.error.message); else { setSaved(parsed.data); setMessage("Đã lưu dữ liệu bài học."); }
   }
 
-  if (loading) return <div className="admin-material-form" role="status">Đang tải dữ liệu bài học…</div>;
+  if (loading) return <div className="admin-material-form" role="status"><LoadingBlock label="Đang tải dữ liệu bài học…" /></div>;
   if (loadFailed) return <p className="form-error" role="alert">Không tải được dữ liệu bài học: {error}</p>;
 
   return <form className="admin-material-form" onSubmit={save}>

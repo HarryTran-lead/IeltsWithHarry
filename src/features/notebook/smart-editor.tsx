@@ -9,6 +9,8 @@ import { createClient } from "@/lib/supabase/browser";
 import { QuickForm } from "./notebook-ui";
 import { SmartCoverPicker } from "./smart-create-dialog";
 import { IMAGE_BUCKET, PAGE_HEIGHT, PAGE_WIDTH, clearDraft, documentSchema, draftKey, emptyDocument, readDraft, sanitizeTextHtml, writeDraft, type Book, type ImageElement, type Page, type PageDocument, type Paper, type Point, type Stroke, type TextElement } from "./smart-model";
+import { LoadingBlock } from "@/components/layout/loading-block";
+import { PageSkeleton } from "@/components/layout/page-skeleton";
 
 type PageSummary = Pick<Page, "id" | "position" | "paper" | "revision" | "updated_at" | "document">;
 type Tool = "select" | "text" | "pen" | "marker" | "eraser";
@@ -176,7 +178,7 @@ export function SmartEditor({ bookId }: { bookId: string }) {
     setExporting(false);
   }
 
-  if (!ready) return <div className="content-page">Đang mở sổ tay…</div>;
+  if (!ready) return <PageSkeleton label="Đang mở sổ tay…" />;
   if (!book) return <div className="content-page"><p className="form-error" role="alert">{error || "Không tìm thấy sổ tay."}</p><Link className="button subtle" href="/app/notebook">Về thư viện</Link></div>;
   const index = pages.findIndex((page) => page.id === activeId);
   return <div className="content-page smart-editor"><header className="smart-editor-head">
@@ -389,7 +391,7 @@ function PageCanvas({ db, bookId, pageId, userId, zoom, onChanged }: { db: Retur
     await clearDraft(key); setMessage("Đã lưu bản cục bộ vào trang mới. Hãy mở trang mới trong danh sách."); setStatus("saved"); onChanged();
   }
 
-  if (!ready) return <div className="smart-page-loading">Đang tải trang…</div>;
+  if (!ready) return <div className="smart-page-loading"><LoadingBlock label="Đang tải trang…" /></div>;
   const labels = { saved: "Đã đồng bộ", local: "Đã lưu trên thiết bị", saving: "Đang lưu…", offline: "Ngoại tuyến — sẽ đồng bộ khi có mạng", error: "Lưu thất bại", conflict: "Xung đột phiên bản" };
   return <><div className="smart-toolbar"><div className="smart-tool-group smart-tool-primary"><button className="smart-write-button" onClick={startWriting}><Type size={19} /><span>Viết tự do</span></button>{([ ["pen", Pencil, "Bút"], ["marker", Highlighter, "Highlight"], ["eraser", Eraser, "Tẩy"], ["select", MousePointer2, "Chọn"], ["text", Type, "Văn bản"] ] as const).map(([name, Icon, label]) => <button key={name} className={tool === name ? "active" : ""} aria-label={label} aria-pressed={tool === name} onClick={() => setTool(name)}><Icon size={19} /> <span>{label}</span></button>)}<button onClick={() => fileRef.current?.click()}><FileImage size={19} /><span>Hình ảnh</span></button><button onClick={() => { addText(65,90,"<table><tbody><tr><td>Ô 1</td><td>Ô 2</td></tr><tr><td></td><td></td></tr></tbody></table>"); setInspectorTab("insert"); }}><Grid2X2 size={19} /><span>Bảng</span></button><input ref={fileRef} type="file" hidden accept="image/png,image/jpeg,image/webp" onChange={(event) => { const file = event.target.files?.[0]; if (file) void addImage(file); event.target.value = ""; }} /></div><div className="smart-tool-group smart-tool-secondary"><button disabled={!history.length} aria-label="Hoàn tác" onClick={undo}><Undo2 size={18} /></button><button disabled={!future.length} aria-label="Làm lại" onClick={redo}><Redo2 size={18} /></button><span className="smart-tool-divider" /><div className="smart-color-swatches">{["#153a55", "#e84646", "#2867e8", "#18a385", "#f2bc3b"].map((item) => <button key={item} aria-label={`Màu ${item}`} aria-pressed={color === item} className={color === item ? "active" : ""} style={{ background: item }} onClick={() => setColor(item)} />)}<input type="color" aria-label="Chọn màu khác" value={color} onChange={(event) => setColor(event.target.value)} /></div><label className="smart-width-slider"><input type="range" min="2" max="8" value={width} onChange={(event) => setWidth(Number(event.target.value))} aria-label="Độ dày nét bút" />{width}px</label><button onClick={() => setInspectorTab("page")}><Settings2 size={18} /><span>Trang</span></button></div></div>
     <div className="smart-save-line"><span role="status" className={`smart-save-${status}`}>{labels[status]}</span>{message && <span role="alert">{message}</span>}{status === "error" && <button onClick={() => void persist()}>Thử lại</button>}{status === "conflict" && <><button onClick={() => void resolveConflict("copy")}>Tạo trang từ bản cục bộ</button><button onClick={() => void resolveConflict("server")}>Dùng bản máy chủ</button></>}</div>

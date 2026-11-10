@@ -23,6 +23,7 @@ import "./dictation-playback.css";
 import "./voa-dictation.css";
 import "./skill-lab-dictation.css";
 import "./dictation-sessions.css";
+import { LoadingBlock } from "@/components/layout/loading-block";
 
 type Mode = "dictation" | "practice" | "ielts" | "summary";
 type Review = { transcript: { turn_id: string; speaker_id: string; text_en: string; translation_vi: string }[]; vocabulary: LessonVocabulary[] };
@@ -138,7 +139,7 @@ function SkillLabCatalog({ stageId }: { stageId: string }) {
               <button type="button" aria-pressed={skill === "all"} onClick={() => setSkill("all")}>Mọi kỹ năng</button>
               {stageSkills.map((item) => <button type="button" key={item.id} aria-pressed={skill === item.id} title={item.detail} onClick={() => setSkill(item.id)}>{item.label}</button>)}
             </div>}
-            {lessons === null ? <p className="sld-muted">Đang tải kho bài…</p> : !visible.length ? <p className="sld-muted">Không có bài phù hợp bộ lọc.</p> : (
+            {lessons === null ? <p className="sld-muted"><LoadingBlock label="Đang tải kho bài…" /></p> : !visible.length ? <p className="sld-muted">Không có bài phù hợp bộ lọc.</p> : (
               <div className="sld-grid">
                 {visible.map((lesson) => {
                   const { dictation, questions } = results[lesson.lesson_id] ?? {};
@@ -520,7 +521,7 @@ function SkillLabLesson({ lessonId }: { lessonId: string }) {
   }
 
   if (error && !lesson) return <div className="voa-lab sld-lab"><nav className="voa-breadcrumb"><Link href={BASE}><ArrowLeft size={14} /> IELTS Skill Lab</Link></nav><section className="voa-surface sld-empty"><h2>Chưa mở được bài</h2><p>{error}</p></section></div>;
-  if (!lesson) return <div className="voa-lab sld-lab"><p className="sld-muted">Đang tải bài…</p></div>;
+  if (!lesson) return <div className="voa-lab sld-lab"><p className="sld-muted"><LoadingBlock label="Đang tải bài…" /></p></div>;
 
   const correctCount = orderedQuestions.filter((question) => results[question.question_id]?.correct).length;
   const checkedCount = orderedQuestions.filter((question) => results[question.question_id]).length;

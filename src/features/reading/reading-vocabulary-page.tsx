@@ -12,6 +12,7 @@ import {
 } from "@/lib/reading/vocabulary";
 import "./reading-vocabulary-page.css";
 import { Sticker } from "@/components/stickers/stickers";
+import { LoadingBlock } from "@/components/layout/loading-block";
 
 type Tab = "library" | "context" | "flashcard" | "recall" | "srs" | "mistakes" | "progress" | "planner" | "translation";
 const tabs: { id: Tab; label: string; icon: typeof BookOpen }[] = [
@@ -161,7 +162,7 @@ export function ReadingVocabularyPage() {
     <div className="reading-vocab-stats"><span><strong>{format(progress.length)}</strong> / {format(words.length || 607)} từ đã học</span><span><strong>{due.length}</strong> đến hạn ôn</span><span><strong>{mistakes.length}</strong> từ trong sổ lỗi</span><span><strong>{mastered.length}</strong> đã vững</span></div>
     <nav className="reading-vocab-tabs" aria-label="Chức năng từ vựng Reading">{tabs.map((item) => <button key={item.id} className={tab === item.id ? "active" : ""} onClick={() => changeTab(item.id)}><item.icon size={17} />{item.label}</button>)}</nav>
     {error && <p className="reading-vocab-error" role="alert">{error}</p>}
-    {loading ? <div className="reading-vocab-empty">Đang tải bộ từ IELTS Reading…</div>
+    {loading ? <div className="reading-vocab-empty"><LoadingBlock label="Đang tải bộ từ IELTS Reading…" /></div>
       : !db ? <div className="reading-vocab-empty">Đăng nhập để học và lưu tiến độ Reading.</div>
         : <div className="reading-vocab-content">
           {tab === "library" && <section><div className="reading-vocab-section-head"><div><h2>Kho từ IELTS Reading</h2><p>{searched.length} từ · chọn một từ để học theo câu.</p></div><div className="reading-vocab-filters"><label>Chủ đề<select value={topic} onChange={(event) => { setTopic(event.target.value); setPage(0); }}><option value="all">Tất cả 11 chủ đề</option>{topics.map((item) => <option key={item}>{item}</option>)}</select></label><label className="reading-vocab-search"><Search size={16} /><input value={query} onChange={(event) => { setQuery(event.target.value); setPage(0); }} placeholder="Tìm từ hoặc nghĩa…" /></label></div></div><div className="reading-vocab-list">{shown.map((word) => <article key={word.id}><button onClick={() => setExpandedId(expandedId === word.id ? null : word.id)}><span className="reading-vocab-order">{String(word.source_order).padStart(3, "0")}</span><span><strong>{word.headword}</strong><small>{word.pos} · {word.meaning_vi}</small></span><span className="reading-vocab-topic">{word.topic}</span><span className={byId.has(word.id) ? "reading-vocab-learned" : ""}>{byId.has(word.id) ? "Đã học" : "Chưa học"}</span><ArrowRight size={16} /></button>{expandedId === word.id && <div className="reading-vocab-list-detail"><p>{word.example_en}</p><p>{word.example_vi}</p><button onClick={() => selectWord(word, "context")}>Học từ này <ArrowRight size={15} /></button></div>}</article>)}</div><div className="reading-vocab-pagination"><button disabled={page === 0} onClick={() => setPage(page - 1)}>← Trước</button><span>Trang {page + 1}/{Math.max(1, Math.ceil(searched.length / 30))}</span><button disabled={(page + 1) * 30 >= searched.length} onClick={() => setPage(page + 1)}>Tiếp →</button></div></section>}

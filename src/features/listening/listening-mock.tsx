@@ -13,6 +13,7 @@ import { savePracticeResult } from "@/features/learning/practice-results";
 import type { MockCatalogEntry, MockResult, PublicMock } from "@/lib/listening-mocks/mocks";
 import "./voa-dictation.css";
 import "./listening-mock.css";
+import { LoadingBlock } from "@/components/layout/loading-block";
 
 const BASE = "/app/listening/mock";
 const draftKey = (id: string, part: number) => `listening-mock:v1:${id}${part ? `:part-${part}` : ""}`;
@@ -58,7 +59,7 @@ function MockList() {
         <p>Đề gốc 4 phần, 40 câu, theo cấu trúc IELTS Listening. Mỗi phần có thời gian đọc câu hỏi, audio chỉ nghe một lần, nộp bài để xem điểm, đáp án và transcript.</p></div></header>
       <p className="lm-draft"><Info size={15} /> Bản nháp: đề và audio (Gemini TTS) chưa được giáo viên duyệt. Điểm là số câu đúng trên 40, không quy đổi Band IELTS chính thức.</p>
       {error && <p className="sld-error" role="alert">{error}</p>}
-      {tests === null ? <p className="lm-muted">Đang tải…</p> : <>
+      {tests === null ? <p className="lm-muted"><LoadingBlock label="Đang tải…" /></p> : <>
         <div className="lm-grid">
           {ready.map((test) => (
             <button type="button" key={test.test_id} className="lm-card voa-surface" onClick={() => router.push(`${BASE}/${test.test_id}`)}>
@@ -189,7 +190,7 @@ function MockExam({ testId, selectedPart }: { testId: string; selectedPart: numb
   }, [phase]); // eslint-disable-line react-hooks/exhaustive-deps
 
   if (error && !test) return <div className="voa-lab lm-page"><nav className="voa-breadcrumb"><Link href={BASE}>Đề Listening thi thử</Link></nav><section className="voa-surface lm-empty"><h2>Chưa mở được đề</h2><p>{error}</p></section></div>;
-  if (!test) return <div className="voa-lab lm-page"><p className="lm-muted">Đang tải đề…</p></div>;
+  if (!test) return <div className="voa-lab lm-page"><p className="lm-muted"><LoadingBlock label="Đang tải đề…" /></p></div>;
 
   const results = new Map((outcome?.results ?? []).map((result) => [String(result.number), result]));
   const part = test.parts.find((item) => item.part_number === viewPart) ?? test.parts[0];
