@@ -262,6 +262,7 @@ export async function submitAttempt(attemptId: string, userId: string, answers: 
   const notes = input?.notes ? { ...savedNotes, ...input.notes, ...Object.fromEntries(Object.entries(savedNotes).filter(([key]) => key.startsWith("__"))) } : savedNotes;
   const result = scoreAnswers(attemptContent(content, notes), answers);
   const exam = Array.isArray(attempt.ielts_exams) ? attempt.ielts_exams[0] : attempt.ielts_exams;
+  if (exam.skill === "Writing" && state === "submitted" && !String(answers.__response ?? "").trim()) throw new Error("Hãy viết bài trước khi nộp.");
   const expired = Date.now() > new Date(attempt.started_at).getTime() + attemptMinutes(exam.skill, exam.duration_minutes, notes) * 60000;
   const finalNotes = input?.difficulty && exam.skill === "Reading" ? { ...notes, reading_difficulty: input.difficulty } : notes;
   const { data: updated, error: updateError } = await client.from("ielts_attempts").update({ answers, flags: input?.flags ?? attempt.flags, notes: finalNotes, state: expired ? "expired" : state, score: result.total ? result.score : null, total: result.total || null, submitted_at: new Date().toISOString() }).eq("id", attemptId).eq("state", "in_progress").select("id").single();

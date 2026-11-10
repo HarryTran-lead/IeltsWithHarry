@@ -3,6 +3,7 @@
 import { useEffect, useMemo, useRef, useState, type ReactNode } from "react";
 import { BookOpenText, Lightbulb, Loader2, PenLine, Search, Sparkles, Wand2, X } from "lucide-react";
 import type { ExamContent } from "@/lib/ielts-bank/schema";
+import { countEnglishWords } from "@/lib/writing-grading/contract";
 import { RichText, type BankExam } from "./bank-exam";
 import "./bank-writing.css";
 
@@ -56,7 +57,7 @@ const guide: Record<string, { title: string; points: string[] }[]> = {
   ],
 };
 
-const countWords = (text: string) => text.trim().split(/\s+/).filter(Boolean).length;
+const countWords = countEnglishWords;
 
 export function Lookup() {
   const [word, setWord] = useState(""), [busy, setBusy] = useState(false);
@@ -217,32 +218,16 @@ function diffWords(before: string, after: string): { left: Piece[]; right: Piece
   return { left: pieces(a, keepA), right: pieces(b, keepB) };
 }
 
-/** Asks the AI examiner for band scores and comments on a submitted essay, then shows them. */
+/** Displays feedback saved before the self-hosted grading migration. */
 export function WritingFeedbackPanel({ attemptId, type, essay, prompt }: { attemptId: string; type?: string; essay: string; prompt?: string }) {
-  const [feedback, setFeedback] = useState<WritingFeedback | null>(null), [busy, setBusy] = useState(false), [error, setError] = useState("");
-  async function grade(silent = false) {
-    setBusy(true); setError("");
-    try {
-      const response = await fetch("/api/ielts/bank/writing-feedback", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ attemptId }) });
-      const data = await response.json();
-      if (!response.ok) throw new Error(data.error || "Chưa chấm được bài.");
-      setFeedback(data.feedback);
-    } catch (cause) { if (!silent) setError(cause instanceof Error ? cause.message : String(cause)); } finally { setBusy(false); }
-  }
+  const [feedback, setFeedback] = useState<WritingFeedback | null>(null);
   // Show feedback straight away if this attempt was graded before (reading it never calls the AI).
   useEffect(() => {
     let live = true;
     fetch(`/api/ielts/bank/writing-feedback?attemptId=${encodeURIComponent(attemptId)}`).then((response) => response.ok ? response.json() : null).then((data) => { if (live && data?.feedback) setFeedback(data.feedback); }, () => undefined);
     return () => { live = false; };
   }, [attemptId]);
-  if (feedback) return <WritingFeedbackView feedback={feedback} type={type} essay={essay} prompt={prompt} />;
-  return <section className="bw-feedback">
-    <div className="bw-grade-cta">
-      <div><h2><Sparkles size={19} /> Chấm bài bằng AI</h2><p>Nhận band ước tính cho 4 tiêu chí, lỗi được đánh dấu ngay trên bài, giải thích tiếng Việt và bản nâng cấp cả bài. Kết quả chỉ để luyện tập, không phải điểm IELTS chính thức.</p></div>
-      <button type="button" className="bx-start" disabled={busy} onClick={() => void grade()}>{busy ? <><Loader2 size={17} className="bw-spin" /> Đang chấm…</> : <><Wand2 size={17} /> Chấm bài</>}</button>
-      {error && <p className="bx-error" role="alert">{error}</p>}
-    </div>
-  </section>;
+  return feedback ? <WritingFeedbackView feedback={feedback} type={type} essay={essay} prompt={prompt} /> : null;
 }
 
 type FeedbackTab = "essay" | "fix" | "upgrade";
@@ -314,7 +299,7 @@ export function WritingFeedbackView({ feedback, type, essay, prompt }: { feedbac
         <span>{item.label}</span><b>{feedback[item.key].toFixed(1)}</b><small>{countFor(item.id) ? `${countFor(item.id)} lỗi` : item.vi}</small>
       </button>)}
     </div>
-    <p className="wf-meta"><Sparkles size={15} /> Chấm bởi Harry AI Examiner · {words} từ · {feedback.corrections.length} điểm cần sửa · chỉ để luyện tập, không phải điểm thi chính thức.</p>
+    <p className="wf-meta"><Sparkles size={15} /> Nhận xét AI đã lưu trước đây · {words} từ · {feedback.corrections.length} điểm cần sửa · chỉ để luyện tập, không phải điểm thi chính thức.</p>
 
     <div className="wf-tabs" role="tablist" aria-label="Phần nhận xét">
       <button type="button" role="tab" aria-selected={tab === "essay"} onClick={() => setTab("essay")}><BookOpenText size={15} /> Bài viết của bạn</button>

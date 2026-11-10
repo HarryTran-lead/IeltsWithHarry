@@ -1,0 +1,21 @@
+.wg-panel { margin: 22px 0; padding: 22px; border: 1px solid #d7e4e5; border-radius: 18px; background: #fff; color: #203447; }
+.wg-heading { display: flex; justify-content: space-between; align-items: end; gap: 16px; flex-wrap: wrap; }
+.wg-heading span { color: #087f87; font-size: 12px; font-weight: 800; letter-spacing: .08em; }
+.wg-heading h2 { margin: 4px 0 0; }
+.wg-heading p { max-width: 340px; font-size: 13px; }
+.wg-band { margin: 20px 0; padding: 18px; background: #eef9f6; border-radius: 14px; }
+.wg-band span { display: block; font-weight: 700; }
+.wg-band strong { display: block; font-size: 42px; line-height: 1.1; color: #087f87; }
+.wg-criteria { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+.wg-criteria article, .wg-columns > div { padding: 16px; border: 1px solid #dce7ea; border-radius: 12px; }
+.wg-criteria h3 { display: flex; justify-content: space-between; gap: 12px; margin: 0; font-size: 16px; }
+.wg-criteria h3 b { color: #087f87; }
+.wg-criteria p, .wg-criteria li { font-size: 14px; line-height: 1.55; }
+.wg-essay { white-space: pre-wrap; line-height: 1.8; border: 1px solid #dce7ea; padding: 16px; border-radius: 12px; }
+.wg-highlight mark { background: #fff0ae; color: inherit; text-decoration: underline wavy #c55b25; }
+.wg-highlight small { display: inline; margin: 0 4px; color: #8a421f; font-size: 12px; }
+.wg-findings li { margin: 10px 0; }
+.wg-findings p { margin: 3px 0; }
+.wg-columns { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; margin: 18px 0; }
+.wg-provenance { color: #607383; font-size: 12px; }
+@media (max-width: 700px) { .wg-panel { padding: 16px; } .wg-criteria, .wg-columns { grid-template-columns: 1fr; } }
