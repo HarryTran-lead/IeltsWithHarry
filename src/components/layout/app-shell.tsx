@@ -132,9 +132,14 @@ const skillPracticeLinks: Record<string, SkillPracticeLink[]> = {
     ],
   } : {}),
   writing: [
-    ...(!demoMode ? [{ label: "Ngân hàng đề", href: "/app/writing#ngan-hang-de" }] : []),
-    { label: "Academic Task 1", href: "/app/writing/task-1" },
-    { label: "Academic Task 2", href: "/app/writing/task-2" },
+    ...(!demoMode ? [
+      { label: "Bài lẻ", href: "/app/writing?type=all", kind: "parent" as const },
+      { label: "Task 1 · Academic", href: "/app/writing?type=task1_academic", kind: "child" as const },
+      { label: "Task 1 · General", href: "/app/writing?type=task1_general", kind: "child" as const },
+      { label: "Task 2 · Essay", href: "/app/writing?type=task2", kind: "child" as const },
+    ] : []),
+    { label: "Task 1 · Số liệu World Bank", href: "/app/writing/task-1", ...(!demoMode ? { kind: "full" as const } : {}) },
+    { label: "Task 2 · Chủ đề thời sự", href: "/app/writing/task-2" },
   ],
   speaking: [
     ...(!demoMode ? [{ label: "Ngân hàng đề", href: "/app/speaking#ngan-hang-de" }] : []),
@@ -448,7 +453,8 @@ function AppShellContent({ children, canManage }: { children: React.ReactNode; c
               {group.links.map(({ href, label, icon: Icon, tone }) => {
                 const skill = href.split("/")[2];
                 const practiceLinks = skillPracticeLinks[skill];
-                const examSkill = skill === "reading" || skill === "listening";
+                const examSkill = skill === "reading" || skill === "listening" || (skill === "writing" && !demoMode);
+                const currentType = searchParams.get("type") ?? (skill === "reading" ? "passage" : skill === "listening" ? "part" : "all");
                 const expanded = expandedSkill === skill && Boolean(practiceLinks);
                 const active = isActive(pathname, href);
                 if (lockedLearnerPath(href)) return <div key={href} className="nav-link nav-link-locked" aria-label={`${label} đang chuẩn bị`} title={`${label} đang chuẩn bị`}>
@@ -478,9 +484,10 @@ function AppShellContent({ children, canManage }: { children: React.ReactNode; c
                     {practiceLinks.filter((practice) => !lockedLearnerPath(practice.href)).map((practice) => {
                       const target = new URL(practice.href, "https://ieltswithharry.local");
                       const selected = examSkill
-                        ? target.pathname !== href ? pathname === target.pathname : pathname === target.pathname && (searchParams.get("type") ?? (skill === "reading" ? "passage" : "part")) === target.searchParams.get("type") && (searchParams.get("part") ?? "") === (target.searchParams.get("part") ?? "")
+                        ? target.pathname !== href ? pathname === target.pathname : pathname === target.pathname && currentType === target.searchParams.get("type") && (searchParams.get("part") ?? "") === (target.searchParams.get("part") ?? "")
                         : pathname === target.pathname && (!target.search || searchParams.get("collection") === target.searchParams.get("collection"));
-                      const parentSelected = examSkill && practice.kind === "parent" && pathname === target.pathname && (searchParams.get("type") ?? (skill === "reading" ? "passage" : "part")) === target.searchParams.get("type");
+                      // Writing's tasks sit under "Bài lẻ" with their own type, so any Writing task lights the parent.
+                      const parentSelected = examSkill && practice.kind === "parent" && pathname === target.pathname && (skill === "writing" || currentType === target.searchParams.get("type"));
                       return <Link
                         key={practice.href}
                         href={practice.href}
