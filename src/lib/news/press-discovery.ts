@@ -16,7 +16,10 @@ const searchSchema = { type: "object", additionalProperties: false, required: ["
 const sourceSearchSchema = { type: "object", additionalProperties: false, required: ["source_urls"], properties: {
   source_urls: { type: "array", items: { type: "string" } },
 } } as const;
-const eligible = (item: NewsItem) => !item.sensitive && Date.now() - new Date(item.published_at).valueOf() < 48 * 3600000;
+export function eligibleDiscoveryLead(item: Pick<NewsItem, "sensitive" | "published_at">, now = Date.now()) {
+  const age = now - new Date(item.published_at).valueOf();
+  return !item.sensitive && age >= -3600000 && age < 72 * 3600000;
+}
 /** A rejected topic consumes a research attempt, not one of the article slots. */
 export function discoveryBudget(articleCount: number, rejectedCount: number, articleLimit: number) {
   const attemptLimit = Math.min(articleLimit * 4, 32);
@@ -105,7 +108,7 @@ export async function discoverPressFacts(db: Db, result: DiscoveryRun, settings:
       }
     }));
   for (const outcome of feeds) if (outcome.status === "rejected") result.errors.push(`Press feed: ${outcome.reason instanceof Error ? outcome.reason.message : "Unavailable"}`);
-  const candidates = feeds.flatMap((outcome) => outcome.status === "fulfilled" && outcome.value ? outcome.value.feed.items.filter(eligible).map((item) => ({ item, source: outcome.value!.source })) : []);
+  const candidates = feeds.flatMap((outcome) => outcome.status === "fulfilled" && outcome.value ? outcome.value.feed.items.filter((item) => eligibleDiscoveryLead(item)).map((item) => ({ item, source: outcome.value!.source })) : []);
   if (!candidates.length) return;
   const categoryCounts = new Map<string, number>();
   for (const article of drafts.data ?? []) categoryCounts.set(article.category, (categoryCounts.get(article.category) ?? 0) + 1);
