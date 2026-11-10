@@ -127,7 +127,7 @@ export function IeltsSkillDashboard({ skill }: { skill: IeltsSkill }) {
   const displayedModes = allModes.filter((mode) => modeFilter === "all" || (modeFilter === "live" ? mode.available : mode.planned));
 
   const showLibrary = !demoMode && Boolean(bankSkill);
-  if (showLibrary && bankSkill && (skill === "reading" || skill === "listening")) {
+  if (showLibrary && bankSkill && (skill === "reading" || skill === "listening" || skill === "writing")) {
     return <main className={`ielts-dashboard ielts-dashboard-${config.tone} has-library`}>
       <div className="ielts-dashboard-titlebar">
         <span className="ielts-dashboard-titlebar-icon"><Icon size={18} /></span>
