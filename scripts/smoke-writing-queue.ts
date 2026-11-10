@@ -31,8 +31,8 @@ async function main() {
       .select("id").single();
     if (attemptError || !attempt) throw new Error("TEST_ATTEMPT_CREATE_FAILED");
     attemptId = attempt.id;
-    const queuedJob = await enqueueWritingAttempt(attemptId, userId);
-    if (queuedJob.status !== "queued") throw new Error("TEST_JOB_NOT_QUEUED");
+    const queuedJob = await enqueueWritingAttempt(attempt.id, userId);
+    if (queuedJob.status !== "queued" || !("id" in queuedJob)) throw new Error("TEST_JOB_NOT_QUEUED");
     const processed = await processOneCloudflareJob();
     if (!processed) throw new Error("TEST_JOB_NOT_CLAIMED");
     const { data: job, error: jobError } = await db.from("writing_grading_jobs")
