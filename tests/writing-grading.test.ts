@@ -1,6 +1,6 @@
 import { afterEach, describe, expect, it, vi } from "vitest";
 import { combineWritingBands, countEnglishWords, displayHalfBand, verifyModelDraft } from "../src/lib/writing-grading/contract";
-import { gradeWithLocalModel } from "../src/lib/writing-grading/local-provider";
+import { gradeWithLocalModel, verifyLocalModelRevision } from "../src/lib/writing-grading/local-provider";
 
 const essay = "Emoji 😀 and café.\r\nThe same claim appears again: same.";
 const start = essay.lastIndexOf("same");
@@ -51,5 +51,16 @@ describe("local model boundary (mock response; no live model)", () => {
     const request = JSON.parse(fetchMock.mock.calls[0][1].body as string);
     expect(request.messages[0].role).toBe("system");
     expect(JSON.parse(request.messages[1].content).essay).toBe(essay);
+    expect(request.format.properties.criteria.type).toBe("array");
+    expect(request.options.num_predict).toBe(3000);
+  });
+  it("refuses an unpinned or changed local model", async () => {
+    const revision = "a".repeat(64);
+    const fetchMock = vi.fn().mockResolvedValue({ ok: true, json: async () => ({ models: [{ name: "qwen3:4b-instruct", digest: revision }] }) });
+    vi.stubGlobal("fetch", fetchMock);
+    await verifyLocalModelRevision({ url: "http://127.0.0.1:11434", model: "qwen3:4b-instruct", revision });
+    await expect(verifyLocalModelRevision({ url: "http://127.0.0.1:11434", model: "qwen3:4b-instruct", revision: "b".repeat(64) })).rejects.toThrow("LOCAL_MODEL_REVISION_MISMATCH");
+    await expect(verifyLocalModelRevision({ url: "http://127.0.0.1:11434", model: "qwen3:4b-instruct", revision: "latest" })).rejects.toThrow("LOCAL_MODEL_REVISION_REQUIRED");
+    expect(fetchMock.mock.calls[0][0].toString()).toBe("http://127.0.0.1:11434/api/tags");
   });
 });
