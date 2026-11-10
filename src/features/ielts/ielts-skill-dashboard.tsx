@@ -26,7 +26,7 @@ const copy: Record<IeltsSkill, { title: string; intro: string; icon: typeof Book
   grammar: { title: "IELTS Grammar", intro: "Nhận diện cấu trúc trong câu thật, bắt đầu với các từ nối thường dùng khi viết và nói.", icon: ListChecks, tone: "lavender" },
   reading: { title: "IELTS Reading", intro: "Chọn Passage hoặc full đề, lọc theo dạng câu hỏi rồi bắt đầu luyện.", icon: BookOpen, tone: "peach" },
   listening: { title: "IELTS Listening", intro: "Chọn Section hoặc full đề, lọc theo dạng câu hỏi rồi bắt đầu nghe.", icon: Headphones, tone: "blue" },
-  writing: { title: "IELTS Writing", intro: "Luyện Academic Task 1 bằng số liệu thật và Task 2 bằng chủ đề thời sự.", icon: NotebookPen, tone: "yellow" },
+  writing: { title: "IELTS Writing", intro: "Chọn đề Academic, nộp bài rồi bấm Gửi bài để chấm thử.", icon: NotebookPen, tone: "yellow" },
   speaking: { title: "IELTS Speaking", intro: "Chuẩn bị ý, bấm giờ và ghi âm với cue card từ các chủ đề đang diễn ra.", icon: Mic, tone: "pink" },
 };
 
