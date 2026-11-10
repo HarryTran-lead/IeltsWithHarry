@@ -12,6 +12,8 @@ const source: NewsSource = {
 it("keeps researching after thin topics while capping attempts and completed drafts", () => {
   expect(discoveryBudget(0, 4, 4)).toBe(true);
   expect(discoveryBudget(0, 16, 4)).toBe(false);
+  expect(discoveryBudget(0, 24, 8)).toBe(true);
+  expect(discoveryBudget(0, 32, 8)).toBe(false);
   expect(discoveryBudget(4, 0, 4)).toBe(false);
   expect(discoveryBudget(0, 0, 0)).toBe(false);
 });
@@ -72,6 +74,25 @@ it("press feeds return only event metadata even when RSS contains full prose and
   expect(result).not.toHaveProperty("bodies");
   expect(result).not.toHaveProperty("images");
   expect(result.items[0].publication_status).toBe("review");
+});
+
+it("keeps Government News feeds as discovery leads in distinct learning categories", async () => {
+  for (const [feed_url, category] of [
+    ["https://baochinhphu.vn/giao-duc.rss", "Education"],
+    ["https://baochinhphu.vn/y-te.rss", "Health"],
+    ["https://baochinhphu.vn/kinh-te.rss", "Business"],
+    ["https://baochinhphu.vn/van-hoa.rss", "Culture"],
+  ] as const) {
+    expect(pressDiscoveryFeedUrls.has(feed_url)).toBe(true);
+    const xml = `<rss><channel><item><title>Vietnam announces a new public programme</title><link>https://baochinhphu.vn/example-123.htm</link><pubDate>11/10/2026 9:00:00 AM</pubDate><description>Protected publisher wording.</description><enclosure url="https://baochinhphu.vn/photo.jpg" /></item></channel></rss>`;
+    const result = await rssProvider.fetch({ ...source, feed_url, category }, (async () => new Response(xml)) as typeof fetch);
+    expect(result.items).toHaveLength(1);
+    expect(result.items[0].category).toBe(category);
+    expect(result.items[0].published_at).toBe("2026-11-10T02:00:00.000Z");
+    expect(result.items[0].publication_status).toBe("review");
+    expect(result).not.toHaveProperty("summaries");
+    expect(result).not.toHaveProperty("images");
+  }
 });
 
 it("searches independent sources from the event title without sending press prose or URL", async () => {
