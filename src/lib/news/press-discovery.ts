@@ -7,6 +7,7 @@ import type { NewsAdminSettings } from "./settings";
 import type { newsAdminClient } from "./sync";
 
 type Db = ReturnType<typeof newsAdminClient>;
+type DiscoveryCandidate = { item: NewsItem; source: NewsSource };
 export type DiscoveryRun = { rewritesChecked: number; rewritesAdded: number; quotaLimited: boolean; errors: string[] };
 const searchSchema = { type: "object", additionalProperties: false, required: ["topic", "facts"], properties: {
   topic: { type: "string" },
@@ -20,6 +21,17 @@ const eligible = (item: NewsItem) => !item.sensitive && Date.now() - new Date(it
 export function discoveryBudget(articleCount: number, rejectedCount: number, articleLimit: number) {
   const attemptLimit = Math.min(articleLimit * 4, 32);
   return articleLimit > 0 && articleCount < articleLimit && articleCount + rejectedCount < attemptLimit;
+}
+/** Failed leads count toward category rotation, so one busy feed cannot exhaust every research slot. */
+export function rankDiscoveryCandidates(candidates: DiscoveryCandidate[], published: Map<string, number>, rejectedHashes: Set<string>) {
+  const rejected = new Map<string, number>();
+  for (const { item } of candidates) if (rejectedHashes.has(item.canonical_hash)) {
+    rejected.set(item.category, (rejected.get(item.category) ?? 0) + 1);
+  }
+  const attempts = (category: string) => (published.get(category) ?? 0) + (rejected.get(category) ?? 0);
+  return candidates.sort((a, b) => attempts(a.item.category) - attempts(b.item.category)
+    || Number(approvedFactualSource(b.item.canonical_url)) - Number(approvedFactualSource(a.item.canonical_url))
+    || new Date(b.item.published_at).valueOf() - new Date(a.item.published_at).valueOf());
 }
 function repeatsHeadlinePhrase(text: string, headline: string) {
   const words = (value: string) => value.toLocaleLowerCase("en").match(/[a-z0-9]+/g) ?? [];
@@ -97,10 +109,7 @@ export async function discoverPressFacts(db: Db, result: DiscoveryRun, settings:
   if (!candidates.length) return;
   const categoryCounts = new Map<string, number>();
   for (const article of drafts.data ?? []) categoryCounts.set(article.category, (categoryCounts.get(article.category) ?? 0) + 1);
-  const ordered = [...new Map(candidates.map((candidate) => [candidate.item.canonical_hash, candidate])).values()]
-    .sort((a, b) => (categoryCounts.get(a.item.category) ?? 0) - (categoryCounts.get(b.item.category) ?? 0)
-      || Number(approvedFactualSource(b.item.canonical_url)) - Number(approvedFactualSource(a.item.canonical_url))
-      || new Date(b.item.published_at).valueOf() - new Date(a.item.published_at).valueOf());
+  const ordered = [...new Map(candidates.map((candidate) => [candidate.item.canonical_hash, candidate])).values()];
   const hashes = ordered.map(({ item }) => item.canonical_hash);
   const [existing, skipped] = await Promise.all([
     db.from("news_articles").select("canonical_hash").in("canonical_hash", hashes),
@@ -108,7 +117,8 @@ export async function discoverPressFacts(db: Db, result: DiscoveryRun, settings:
   ]);
   if (existing.error || skipped.error) throw existing.error ?? skipped.error;
   const seen = new Set([...(existing.data ?? []), ...(skipped.data ?? [])].map((row) => row.canonical_hash));
-  const candidate = ordered.find(({ item }) => !seen.has(item.canonical_hash));
+  const rejectedHashes = new Set((skipped.data ?? []).map((row) => row.canonical_hash));
+  const candidate = rankDiscoveryCandidates(ordered, categoryCounts, rejectedHashes).find(({ item }) => !seen.has(item.canonical_hash));
   if (!candidate) return;
   const { item, source } = candidate;
   result.rewritesChecked++;
