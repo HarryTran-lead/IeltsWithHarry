@@ -8,7 +8,7 @@ import { TopicArt } from "@/components/illustrations/topic-art";
 import { catalogGroups, catalogSkills, balancedCatalog, catalogEntriesForSelection, catalogQuestionTypes, catalogQuestionTypeIds, type CatalogExam, type CatalogSkill } from "@/lib/ielts-bank/catalog";
 import { displayExamTitle } from "@/lib/ielts-bank/display-title";
 import type { MockCatalogEntry } from "@/lib/listening-mocks/mocks";
-import { WritingLibrary } from "./bank-writing-library";
+import { gradedBand, visualKind, writingCardTitle, writingFacets, writingKind, writingKindOptions, writingKinds, writingTasks, writingTopicOptions } from "./bank-writing-library";
 import "./bank-library.css";
 import { Sticker } from "@/components/stickers/stickers";
 
@@ -43,9 +43,7 @@ const questionTypes = [
 ] as const;
 const otherType = { id: "other", label: "Other Types" };
 
-export const writingKinds: Record<string, string> = {
-  line: "Line Graph", bar: "Bar Chart", pie: "Pie Chart", table: "Table", process: "Process", map: "Map", mixed: "Mixed Graph", chart: "Biểu đồ", letter: "Letter", essay: "Essay",
-};
+
 
 function typeGroups(exam: CatalogExam) {
   const found = new Map<string, string>();
@@ -56,23 +54,6 @@ function typeGroups(exam: CatalogExam) {
   return [...found.entries()].map(([id, label]) => ({ id, label }));
 }
 
-export function writingKind(exam: CatalogExam) {
-  if (exam.practice_type === "task2") return "essay";
-  if (exam.practice_type === "task1_general") return "letter";
-  return visualKind(String(exam.visual?.kind ?? exam.visual_kind ?? exam.task_type ?? ""));
-}
-
-export function visualKind(value: string) {
-  const kind = value.toLowerCase();
-  if (/line/.test(kind)) return "line";
-  if (/bar|column/.test(kind)) return "bar";
-  if (/pie/.test(kind)) return "pie";
-  if (/table/.test(kind)) return "table";
-  if (/process|flow|step|diagram/.test(kind)) return "process";
-  if (/map|plan/.test(kind)) return "map";
-  if (/mixed|panel/.test(kind)) return "mixed";
-  return "chart";
-}
 
 /** "Passage 2", "Section 1", "Part 3", "Full test"… for the badge on a card. */
 function partBadge(exam: CatalogExam) {
@@ -131,7 +112,7 @@ export function BankLibrary({ skill }: { skill: CatalogSkill }) {
 export type LibraryViewProps = { skill: CatalogSkill; exams: CatalogExam[]; attempts: Attempt[]; loading: boolean; error: string };
 
 export function BankLibraryView(props: LibraryViewProps) {
-  if (props.skill === "Writing") return <WritingLibrary {...props} />;
+  if (props.skill === "Writing") return <WritingLibraryView {...props} />;
   return props.skill === "Reading" || props.skill === "Listening"
     ? <SectionedLibrary {...props} skill={props.skill} />
     : <LegacyBankLibraryView {...props} />;
@@ -315,6 +296,112 @@ function SectionedLibrary({ skill, exams, attempts, loading, error }: LibraryVie
     </div>
   </section>;
 }
+
+/**
+ * Writing uses the same shelf as Reading: the sidebar picks the task, the head
+ * holds status tabs and search, chip rows filter by kind (and Task 2 topic),
+ * and each task is a picture card.
+ */
+function WritingLibraryView({ exams, attempts, loading, error }: LibraryViewProps) {
+  const params = useSearchParams();
+  const router = useRouter();
+  const pathname = usePathname();
+  const requestedTask = params.get("type") ?? "";
+  const task = writingTasks.find((item) => item.id === requestedTask);
+  const [query, setQuery] = useState("");
+  const [page, setPage] = useState(0);
+  const [status, setStatus] = useState<LibraryStatus>("all");
+  const latest = new Map<string, Attempt>();
+  for (const attempt of attempts) if (!latest.has(attempt.exam_id)) latest.set(attempt.exam_id, attempt);
+  const items = exams
+    .filter((exam) => task ? exam.practice_type === task.id : writingTasks.some((item) => item.id === exam.practice_type))
+    .map((exam) => ({ exam, facets: writingFacets(exam) }));
+  const kindCounts = new Map<string, number>(), topicCounts = new Map<string, number>();
+  for (const { facets } of items) {
+    kindCounts.set(facets.kind, (kindCounts.get(facets.kind) ?? 0) + 1);
+    if (facets.topic) topicCounts.set(facets.topic, (topicCounts.get(facets.topic) ?? 0) + 1);
+  }
+  const selectedKind = kindCounts.has(params.get("kind") ?? "") ? params.get("kind")! : "";
+  const selectedTopic = topicCounts.has(params.get("topic") ?? "") ? params.get("topic")! : "";
+  const statusOf = (attempt?: Attempt): Exclude<LibraryStatus, "all"> => !attempt ? "todo" : attempt.state === "in_progress" ? "progress" : "done";
+  const needle = query.trim().toLocaleLowerCase();
+  const matches = items.filter(({ exam, facets }) => (!selectedKind || facets.kind === selectedKind)
+    && (!selectedTopic || facets.topic === selectedTopic)
+    && (!needle || `${exam.title} ${exam.topic ?? ""} ${exam.prompt_preview ?? ""}`.toLocaleLowerCase().includes(needle)));
+  const statusCounts = { all: matches.length, todo: 0, progress: 0, done: 0 };
+  for (const { exam } of matches) statusCounts[statusOf(latest.get(exam.id))]++;
+  const filtered = matches.filter(({ exam }) => status === "all" || statusOf(latest.get(exam.id)) === status);
+  const pageSize = 12;
+  const pageCount = Math.max(1, Math.ceil(filtered.length / pageSize));
+  const currentPage = Math.min(page, pageCount - 1);
+  const visible = filtered.slice(currentPage * pageSize, (currentPage + 1) * pageSize);
+  const kindOptions = writingKindOptions.filter((item) => kindCounts.has(item.id));
+  // Themes only mean something for essays, so the topic chips appear on Task 2 alone.
+  const topicOptions = task?.id === "task2" ? writingTopicOptions.filter((item) => topicCounts.has(item.id)) : [];
+  const choose = (key: "kind" | "topic", value: string) => {
+    const search = new URLSearchParams(params.toString());
+    if (value && value !== search.get(key)) search.set(key, value); else search.delete(key);
+    setPage(0);
+    router.replace(`${pathname}${search.size ? `?${search}` : ""}`, { scroll: false });
+  };
+  const clearAll = () => {
+    const search = new URLSearchParams(params.toString());
+    search.delete("kind"); search.delete("topic");
+    setQuery(""); setStatus("all"); setPage(0);
+    router.replace(`${pathname}${search.size ? `?${search}` : ""}`, { scroll: false });
+  };
+  const filtersOn = Boolean(selectedKind || selectedTopic || needle || status !== "all");
+
+  return <section id="ngan-hang-de" className="bl-library bl-sectioned bl-tone-writing" aria-label="Ngân hàng đề Writing">
+    <div className="bl-results">
+      <div className="bl-results-head"><div><span className="bl-results-kicker">WRITING · NGÂN HÀNG ĐỀ</span><h2>{task?.label ?? "Bài lẻ"}</h2><p>{loading ? "Đang tải đề…" : `${filtered.length} bài phù hợp`}</p></div><div className="bl-results-controls">
+        <div className="bl-status-tabs" role="group" aria-label="Trạng thái bài luyện">{libraryStatuses.map((item) => <button type="button" key={item.id} aria-pressed={status === item.id} onClick={() => { setStatus(item.id); setPage(0); }}>{item.label}{!loading && <b>{statusCounts[item.id]}</b>}</button>)}</div>
+        <label className="bl-search"><Search size={17} /><input type="search" value={query} onChange={(event) => { setQuery(event.target.value); setPage(0); }} placeholder="Tìm tên đề hoặc chủ đề…" aria-label="Tìm đề Writing" /></label>
+      </div></div>
+      {kindOptions.length > 1 && <div className="bl-kind-row" role="group" aria-label="Lọc theo dạng đề"><span className="bl-kind-label"><Filter size={14} /> Dạng đề</span>
+        <button type="button" aria-pressed={!selectedKind} onClick={() => choose("kind", "")}>Tất cả</button>
+        {kindOptions.map((item) => <button type="button" key={item.id} aria-pressed={selectedKind === item.id} onClick={() => choose("kind", item.id)}>{item.label} <small>{kindCounts.get(item.id)}</small></button>)}
+        {filtersOn && !(topicOptions.length > 1) && <button type="button" className="bl-kind-clear" onClick={clearAll}><X size={13} /> Xóa lọc</button>}
+      </div>}
+      {topicOptions.length > 1 && <div className="bl-kind-row" role="group" aria-label="Lọc theo chủ đề"><span className="bl-kind-label"><Filter size={14} /> Chủ đề</span>
+        <button type="button" aria-pressed={!selectedTopic} onClick={() => choose("topic", "")}>Tất cả</button>
+        {topicOptions.map((item) => <button type="button" key={item.id} aria-pressed={selectedTopic === item.id} onClick={() => choose("topic", item.id)}>{item.label} <small>{topicCounts.get(item.id)}</small></button>)}
+        {filtersOn && <button type="button" className="bl-kind-clear" onClick={clearAll}><X size={13} /> Xóa lọc</button>}
+      </div>}
+      {error && <p className="bl-state" role="alert">{error}</p>}
+      {loading && <div className="bl-grid bl-grid-sectioned">{Array.from({ length: 6 }, (_, index) => <div key={index} className="bl-card bl-skeleton"><span /><i /><i /></div>)}</div>}
+      {!loading && !error && <div className="bl-grid bl-grid-sectioned">{visible.map(({ exam, facets }) => <WritingShelfCard key={exam.id} exam={exam} facets={facets} attempt={latest.get(exam.id)} />)}</div>}
+      {!loading && !error && !visible.length && <p className="bl-state">{status === "done" ? "Bạn chưa nộp bài nào trong mục này." : status === "progress" ? "Không có bài nào đang viết dở." : "Chưa có đề phù hợp. Hãy thử dạng đề khác, đổi từ khóa hoặc chọn Task khác trong sidebar."}</p>}
+      {!loading && pageCount > 1 && <Pager page={currentPage} count={pageCount} onPage={(next) => { setPage(next); document.getElementById("ngan-hang-de")?.scrollIntoView({ behavior: "smooth", block: "start" }); }} />}
+    </div>
+  </section>;
+}
+
+/** A Writing task on the shared shelf: the chart (or a topic picture), the task badge, its kind and theme. */
+function WritingShelfCard({ exam, facets, attempt }: { exam: CatalogExam; facets: ReturnType<typeof writingFacets>; attempt?: Attempt }) {
+  const href = attempt?.state === "in_progress" ? `/app/question-bank/attempt/${attempt.id}` : `/app/question-bank/exam/${exam.id}`;
+  const kind = writingKind(exam);
+  const task = writingTasks.find((item) => item.id === exam.practice_type) ?? writingTasks[2];
+  const band = gradedBand(attempt);
+  const aiCover = Boolean(!exam.visual && exam.image_url?.includes("/ielts-images/covers/"));
+  const details = [facets.kindLabel, facets.topicLabel, `Tối thiểu ${task.minimum} từ`].filter(Boolean);
+  return <Link href={href} className="bl-card bl-card-shelf bl-card-writing-shelf" title={exam.prompt_preview ?? undefined}>
+    <span className={`bl-thumb ${exam.visual ? "is-visual" : ""}`}>
+      {/* Figures come from many hosts, so a plain lazy image is used rather than next/image. */}
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      {exam.visual ? <VisualThumb visual={exam.visual} kind={kind} /> : exam.image_url ? <figure className="bl-art"><img src={exam.image_url} alt="" loading="lazy" /></figure> : <TopicArt topic={artTopic(exam)} className="bl-art" />}
+      <span className="bl-usage"><Clock3 size={13} /> {exam.duration_minutes} phút</span>
+      <b className="bl-badge">{task.badge}</b>
+      {aiCover && <em className="bl-ai-badge" title="Ảnh minh họa do AI tạo theo chủ đề bài luyện">Ảnh AI</em>}
+    </span>
+    <span className="bl-body">
+      <strong className="bl-title">{writingCardTitle(exam)}</strong>
+      <ul className="bl-types">{details.map((item) => <li key={item}>{item}</li>)}</ul>
+      <span className="bl-foot">{band !== null ? <span className="bl-mine">Band {band.toFixed(1)}</span> : <AttemptChip attempt={attempt} />}<span className="bl-source">{sourceLabel(exam)}</span><span className="bl-cta">{attempt?.state === "in_progress" ? "Viết tiếp" : attempt ? "Viết lại" : "Viết bài"} <ArrowRight size={15} /></span></span>
+    </span>
+  </Link>;
+}
+
 
 function MockLibraryCard({ test, part, title, questionTypes }: { test: MockCatalogEntry; part: number; title: string; questionTypes: string[] }) {
   const section = test.parts.find((item) => item.number === part);
