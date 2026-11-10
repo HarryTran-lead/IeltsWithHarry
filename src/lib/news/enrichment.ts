@@ -554,34 +554,48 @@ async function createAiIllustration(db: Db, article: Claim, query: string, fetch
   };
 }
 
+export function scheduledNewsWorkSlot(now: Date): "quiz" | "image" | "translation" | "discovery" {
+  const minute = now.getUTCMinutes();
+  if (minute % 20 === 15) return "discovery";
+  if (minute === 25) return "image";
+  if (minute === 45 && now.getUTCHours() % 2 === 0) return "translation";
+  return "quiz";
+}
+
 export async function enrichNews({ scheduled = false }: { scheduled?: boolean } = {}) {
   const db = newsAdminClient();
   await pauseLegacyPressRewrites(db);
   const settings = await loadNewsSettings(db);
   const result = { imagesChecked: 0, imagesAdded: 0, quizzesChecked: 0, quizzesAdded: 0, rewritesChecked: 0, rewritesAdded: 0, translationsChecked: 0, translationsAdded: 0, aiConfigured: Boolean(process.env.GEMINI_API_KEY), paused: scheduled && !settings.auto_enrich_enabled, quotaLimited: false, errors: [] as string[] };
   if (result.paused) return result;
-  // Use three scheduled slots per hour to translate stored full-text articles.
-  // The other slots remain available for image and quiz work.
-  if (!scheduled || new Date().getUTCMinutes() % 20 === 5) {
+  const slot = scheduled ? scheduledNewsWorkSlot(new Date()) : null;
+  // Reserve 36 quiz slots, 24 image slots, 12 translation slots and 72 fact
+  // discovery slots per day. A busy backlog in one kind cannot starve quizzes.
+  if (slot === "quiz") {
+    await enrichQuiz(db, result, settings, true);
+    if (result.quizzesChecked) return result;
+  }
+  if (slot === "image") {
+    await enrichImages(db, result);
+    if (result.imagesChecked) return result;
+  }
+  if (!scheduled || slot === "translation") {
     const { translateNextNewsArticle } = await import("./article-translation");
-    const translated = await translateNextNewsArticle(db, fetch, new Date().getUTCMinutes() !== 25);
+    const translated = await translateNextNewsArticle(db, fetch, true);
     result.translationsChecked = translated.checked;
     result.translationsAdded = translated.added;
     if (translated.error) result.errors.push(`Translation: ${translated.error}`);
     if (translated.quotaLimited) result.quotaLimited = true;
     if (translated.checked) return result;
   }
-  // Separate scheduled slots search independently sourced facts for press-discovered events.
-  if (!scheduled || new Date().getUTCMinutes() % 20 === 15) {
+  if (!scheduled || slot === "discovery") {
     const { discoverPressFacts } = await import("./press-discovery");
     await discoverPressFacts(db, result, settings);
     if (result.rewritesChecked) return result;
   }
-  // On scheduled runs, give the available AI capacity to recent article images
-  // first. Quiz work uses the other ten-minute slots.
   if (scheduled) {
-    await enrichImages(db, result);
-    if (!result.imagesChecked) await enrichQuiz(db, result, settings, scheduled);
+    if (slot !== "image") await enrichImages(db, result);
+    if (!result.imagesChecked && slot !== "quiz") await enrichQuiz(db, result, settings, true);
   } else {
     await Promise.all([enrichImages(db, result), enrichQuiz(db, result, settings, scheduled)]);
   }
