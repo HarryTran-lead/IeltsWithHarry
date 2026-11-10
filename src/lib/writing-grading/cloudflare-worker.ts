@@ -19,18 +19,21 @@ export async function processOneCloudflareJob() {
   const key = process.env.SUPABASE_SERVICE_ROLE_KEY;
   const accountId = process.env.CLOUDFLARE_ACCOUNT_ID;
   const apiToken = process.env.CLOUDFLARE_AI_API_TOKEN;
+  const proxyUrl = process.env.WRITING_CLOUDFLARE_PROXY_URL;
+  const proxySecret = process.env.WRITING_CLOUDFLARE_PROXY_SECRET;
   const revision = process.env.WRITING_CLOUDFLARE_MODEL_REVISION;
-  if (!url || !key || !accountId || !apiToken || !revision) throw new Error("CLOUDFLARE_GRADING_NOT_CONFIGURED");
+  if (!url || !key || !accountId || !(apiToken || (proxyUrl && proxySecret)) || !revision) throw new Error("CLOUDFLARE_GRADING_NOT_CONFIGURED");
   const db = createClient(url, key, { auth: { persistSession: false, autoRefreshToken: false } });
   const { data: job, error } = await db.rpc("writing_claim_grading_job", { p_lease_seconds: 75 });
   if (error) throw new Error(`Queue claim failed: ${error.message}`);
   if (!job) return false;
   const item = job as Job;
   try {
+    const allowedStatus = process.env.WRITING_GRADING_ALLOW_PILOT === "true" ? ["pilot", "approved"] : ["approved"];
     const { data: approved, error: registryError } = await db.from("writing_model_registry").select("id")
       .eq("model_id", cloudflareWritingModel).eq("revision", revision).eq("task_type", item.task_type)
       .eq("provider", "cloudflare")
-      .eq("status", "approved").maybeSingle();
+      .in("status", allowedStatus).maybeSingle();
     if (registryError || !approved) throw new Error("MODEL_NOT_APPROVED");
     let facts: { id: string; claim: string }[] = [];
     if (item.task_type === "academic_task1") {
@@ -47,7 +50,7 @@ export async function processOneCloudflareJob() {
     }
     const draft = await gradeWithCloudflare(
       { taskType: item.task_type, prompt: item.prompt_snapshot, essay: item.essay_snapshot, visual: item.visual_snapshot, verifiedFacts: facts },
-      { accountId, apiToken },
+      { accountId, apiToken: proxyUrl ? proxySecret! : apiToken!, proxyUrl },
     );
     const verified = verifyModelDraft(draft, item.task_type, item.essay_snapshot, facts.map((fact) => fact.id));
     const resultId = randomUUID();

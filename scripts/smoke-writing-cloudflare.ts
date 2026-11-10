@@ -3,8 +3,9 @@ import { cloudflareWritingModel, gradeWithCloudflare } from "../src/lib/writing-
 import { verifyModelDraft } from "../src/lib/writing-grading/contract";
 
 const accountId = process.env.CLOUDFLARE_ACCOUNT_ID;
-const apiToken = process.env.CLOUDFLARE_AI_API_TOKEN;
-if (!accountId || !apiToken) throw new Error("CLOUDFLARE_ACCOUNT_ID and CLOUDFLARE_AI_API_TOKEN are required");
+const apiToken = process.env.WRITING_CLOUDFLARE_PROXY_SECRET ?? process.env.CLOUDFLARE_AI_API_TOKEN;
+const proxyUrl = process.env.WRITING_CLOUDFLARE_PROXY_URL;
+if (!accountId || !apiToken) throw new Error("Cloudflare account ID and inference credential are required");
 
 const essay = `Some people believe that cities should spend more money on public transport than on new roads. I agree because reliable buses and trains can move many people through limited space. A city with frequent services also gives people who cannot drive a practical way to reach work, school and health care.
 
@@ -14,10 +15,17 @@ Another reason is access. Building roads mainly helps households that own vehicl
 
 In conclusion, public transport deserves the larger share of investment because it can reduce congestion and improve access. Road maintenance remains necessary, but expanding roads should not be the first response to every traffic problem.`;
 
-const started = Date.now();
-const draft = await gradeWithCloudflare(
-  { taskType: "academic_task2", prompt: "Cities should spend more money on public transport than new roads. To what extent do you agree or disagree?", essay, visual: null, verifiedFacts: [] },
-  { accountId, apiToken },
-);
-const checked = verifyModelDraft(draft, "academic_task2", essay, []);
-console.log(JSON.stringify({ model: cloudflareWritingModel, elapsed_ms: Date.now() - started, criteria: checked.criteria.map(({ key, score_display }) => ({ key, score_display })), evidence_count: checked.criteria.reduce((sum, item) => sum + item.evidence.length, 0), error_count: checked.errors.length }));
+async function main() {
+  const started = Date.now();
+  const draft = await gradeWithCloudflare(
+    { taskType: "academic_task2", prompt: "Cities should spend more money on public transport than new roads. To what extent do you agree or disagree?", essay, visual: null, verifiedFacts: [] },
+    { accountId: accountId!, apiToken: apiToken!, proxyUrl },
+  );
+  const checked = verifyModelDraft(draft, "academic_task2", essay, []);
+  console.log(JSON.stringify({ model: cloudflareWritingModel, elapsed_ms: Date.now() - started, criteria: checked.criteria.map(({ key, score_display }) => ({ key, score_display })), evidence_count: checked.criteria.reduce((sum, item) => sum + item.evidence.length, 0), error_count: checked.errors.length }));
+}
+
+main().catch((error: unknown) => {
+  console.error(error instanceof Error ? error.message : String(error));
+  process.exitCode = 1;
+});

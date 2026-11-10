@@ -61,7 +61,7 @@ export function WritingAutoGradingPanel({ attemptId, essay }: { attemptId: strin
   }
   const grade = state?.result;
   return <section className="wg-panel" aria-live="polite">
-    <div className="wg-heading"><div><span>IELTS WRITING · CHẤM TỰ ĐỘNG</span><h2>Đánh giá bài viết</h2></div><p>Band dự đoán để luyện tập, không phải điểm IELTS chính thức.</p></div>
+    <div className="wg-heading"><div><span>IELTS WRITING · CHẤM TỰ ĐỘNG</span><h2>Đánh giá bài viết</h2></div><p>Band dự đoán để luyện tập từ AI thử nghiệm, chưa đối chiếu với điểm giáo viên và không phải điểm IELTS chính thức.</p></div>
     {!state && !error && <p>Đang kiểm tra trạng thái bài viết…</p>}
     {state?.status === "unavailable" && <p>Bài viết đã được lưu. Hệ thống chấm tự động chưa sẵn sàng; bạn vẫn có thể xem lại bài và luyện tiếp.</p>}
     {state?.status === "not_requested" && <>{state.provider === "cloudflare" && <p>Bấm gửi bài đồng nghĩa với việc bài viết của bạn được chuyển tới Cloudflare Workers AI để phân tích.</p>}<button className="bx-start" type="button" disabled={busy} onClick={() => void requestGrade("grade")}>Gửi bài để chấm</button></>}

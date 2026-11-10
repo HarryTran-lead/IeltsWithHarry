@@ -76,10 +76,32 @@ describe("Cloudflare model boundary (mock response; no live model)", () => {
     await expect(gradeWithCloudflare(input, { ...options, fetcher })).rejects.toThrow("CLOUDFLARE_INVALID_JSON");
   });
 
+  it("resolves model offsets only for verbatim essay spans", async () => {
+    const inaccurate = draft("academic_task2");
+    inaccurate.criteria[0].evidence[0] = { ...evidence, start: 0, end: 4 };
+    inaccurate.errors[0] = { ...inaccurate.errors[0], start: 0, end: 4 };
+    const fetcher = vi.fn().mockResolvedValue({ ok: true, json: async () => ({ success: true, result: { response: inaccurate } }) });
+    const result = await gradeWithCloudflare(input, { ...options, fetcher });
+    expect(verifyModelDraft(result, "academic_task2", essay, []).criteria[0].evidence[0].start).toBe(essay.indexOf("same"));
+    expect(result.errors[0].start).toBe(essay.indexOf("same"));
+
+    inaccurate.criteria[0].evidence[0] = { ...evidence, quote: "fabricated quote", start: 0, end: 16 };
+    await expect(gradeWithCloudflare(input, { ...options, fetcher })).rejects.toThrow("CLOUDFLARE_QUOTE_NOT_IN_ESSAY");
+  });
+
   it("distinguishes the free daily quota from other rate limits", async () => {
     const quota = vi.fn().mockResolvedValue({ ok: false, status: 429, json: async () => ({ errors: [{ code: 3036 }] }) });
     await expect(gradeWithCloudflare(input, { ...options, fetcher: quota })).rejects.toThrow("CLOUDFLARE_QUOTA_EXCEEDED");
     const rateLimit = vi.fn().mockResolvedValue({ ok: false, status: 429, json: async () => ({ errors: [{ code: 9999 }] }) });
     await expect(gradeWithCloudflare(input, { ...options, fetcher: rateLimit })).rejects.toThrow("CLOUDFLARE_HTTP_429");
+  });
+
+  it("uses only the configured Cloudflare Worker proxy with a shared secret", async () => {
+    const proxyUrl = "https://ielts-writing-ai-proxy.example.workers.dev";
+    const fetcher = vi.fn().mockResolvedValue({ ok: true, json: async () => ({ success: true, result: { response: draft("academic_task2") } }) });
+    await gradeWithCloudflare(input, { ...options, apiToken: "proxy-secret", proxyUrl, fetcher });
+    expect(fetcher.mock.calls[0][0]).toBe(proxyUrl);
+    expect(fetcher.mock.calls[0][1].headers.Authorization).toBe("Bearer proxy-secret");
+    await expect(gradeWithCloudflare(input, { ...options, proxyUrl: "http://127.0.0.1:8787", fetcher })).rejects.toThrow("CLOUDFLARE_PROXY_INVALID");
   });
 });
