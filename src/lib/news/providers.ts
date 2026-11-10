@@ -111,8 +111,16 @@ function rssSummaries(xml: string): Record<string, string> {
 export function parseRss(xml: string, source: NewsSource): NewsItem[] {
   const { rss, entries } = rssEntries(xml);
   return entries.map((row) => {
+    const rawDate = xmlText(row.pubDate ?? row["dc:date"] ?? row.published ?? row.updated);
+    // Government News publishes local wall-clock times without an offset.
+    const vietnamTime = source.feed_url?.startsWith("https://baochinhphu.vn/")
+      ? /^(\d{1,2})\/(\d{1,2})\/(\d{4}) (\d{1,2}):(\d{2}):(\d{2}) (AM|PM)$/i.exec(rawDate)
+      : null;
+    const date = vietnamTime
+      ? `${vietnamTime[3]}-${vietnamTime[1].padStart(2, "0")}-${vietnamTime[2].padStart(2, "0")}T${String(Number(vietnamTime[4]) % 12 + (vietnamTime[7].toUpperCase() === "PM" ? 12 : 0)).padStart(2, "0")}:${vietnamTime[5]}:${vietnamTime[6]}+07:00`
+      : rawDate;
     return makeItem(source, { url: rss ? xmlText(row.link) : atomLink(row.link), title: xmlText(row.title),
-      date: row.pubDate ?? row["dc:date"] ?? row.published ?? row.updated,
+      date,
       publisher: source.name.startsWith("Global Voices") ? "Global Voices" : source.name, language: "English", externalId: row.guid ? xmlText(row.guid) : row.id ? xmlText(row.id) : undefined });
   }).filter((item): item is NewsItem => item !== null);
 }

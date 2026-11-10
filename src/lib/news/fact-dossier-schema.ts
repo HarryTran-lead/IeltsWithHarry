@@ -21,10 +21,10 @@ export const factDossierSchema = z.object({
   facts: z.array(z.object({
     claim: z.string().trim().min(20).max(300).refine((value) => !/[“”"«»]/.test(value), "Use an atomic fact, not a quotation"),
     source_url: z.url().refine(approvedFactualSource, "Use a reviewed primary or open source URL"),
-  })).min(8).max(24),
+  })).min(6).max(24),
 }).superRefine((dossier, ctx) => {
   const unique = new Set(dossier.facts.map((fact) => fact.claim.toLocaleLowerCase("en").replace(/\W+/g, " ")));
-  if (unique.size < 8) ctx.addIssue({ code: "custom", message: "At least eight distinct verified facts are required", path: ["facts"] });
+  if (unique.size < 6) ctx.addIssue({ code: "custom", message: "At least six distinct verified facts are required", path: ["facts"] });
   if (new Set(dossier.facts.map((fact) => fact.source_url)).size > 4) ctx.addIssue({ code: "custom", message: "Use at most four primary or open source pages per article", path: ["facts"] });
 });
 export type FactDossier = z.infer<typeof factDossierSchema>;
