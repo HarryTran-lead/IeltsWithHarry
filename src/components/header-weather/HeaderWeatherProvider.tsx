@@ -2,7 +2,7 @@
 
 import { createContext, useCallback, useContext, useEffect, useMemo, useState, type ReactNode } from 'react';
 import { fetchCurrentWeather } from './weatherApi';
-import { previewWeather } from './weatherEffects';
+import { previewWeather, weatherPreviewAllowed } from './weatherEffects';
 import { deviceTimeZone, phaseAt } from './time';
 import { CITY_KEY, MODE_KEY, STRENGTH_KEY, readManualCity, readMode, readStrength, saveManualCity, saveMode, saveStrength } from './storage';
 import type { DayPhase, HeaderDisplayMode, HeaderEffectStrength, SelectedLocation, WeatherSnapshot } from './types';
@@ -45,12 +45,12 @@ export function HeaderWeatherProvider({ children, previewPhase = null }: {
   const [locating, setLocating] = useState(false);
   const [locationError, setLocationError] = useState('');
   const [now, setNow] = useState<Date | null>(null);
-  // Development only: `?weather=storm` (see PREVIEW_WEATHER) forces a scene to review the effects.
+  // Dev and Vercel preview only: `?weather=storm` (see PREVIEW_WEATHER) forces a scene to review the effects.
   const [previewSnapshot, setPreviewSnapshot] = useState<WeatherSnapshot | null>(null);
 
   useEffect(() => {
     const initialTimer = window.setTimeout(() => {
-      if (process.env.NODE_ENV !== 'production') setPreviewSnapshot(previewWeather(window.location.search));
+      if (weatherPreviewAllowed()) setPreviewSnapshot(previewWeather(window.location.search));
       changeMode(readMode());
       changeStrength(readStrength());
       setLocation(readManualCity());

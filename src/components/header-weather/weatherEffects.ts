@@ -71,7 +71,12 @@ export function sceneForWeather(weather: WeatherSnapshot | null): WeatherScene {
   };
 }
 
-/** Dev-only scene override, e.g. /app/dashboard?weather=storm — never used in production builds. */
+/** `?weather=` overrides are for local dev and Vercel preview deployments, never the production site. */
+export function weatherPreviewAllowed(): boolean {
+  return process.env.NODE_ENV !== 'production' || process.env.NEXT_PUBLIC_VERCEL_ENV === 'preview';
+}
+
+/** Scene presets for `?weather=storm` etc. on dev and preview deployments. */
 export const PREVIEW_WEATHER: Record<string, Partial<WeatherSnapshot> & { weatherCode: number }> = {
   drizzle: { weatherCode: 53, precipitationMm: .3, windSpeedKmh: 8, windDirectionDeg: 250 },
   'rain-light': { weatherCode: 61, precipitationMm: .6, windSpeedKmh: 6, windDirectionDeg: 260 },
