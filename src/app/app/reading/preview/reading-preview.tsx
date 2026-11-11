@@ -1,9 +1,8 @@
 "use client";
 
-import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
-import { ArrowRight, BookOpen, X } from "lucide-react";
+import { X } from "lucide-react";
 import { AppShell } from "@/components/layout/app-shell";
 import { DemoProvider, useDemo } from "@/features/demo/demo-store";
 import { NotebookProvider } from "@/features/notebook/notebook-store";
@@ -45,12 +44,7 @@ function PreviewBody() {
 
   // Same header markup as the Reading page in ielts-skill-dashboard.tsx.
   if (view === "library") return <main className="ielts-dashboard ielts-dashboard-peach has-library">
-    <div className="ielts-dashboard-titlebar">
-      <span className="ielts-dashboard-titlebar-icon"><BookOpen size={18} /></span>
-      <h1>IELTS Reading</h1>
-      <p>Chọn Passage hoặc full đề, lọc theo dạng câu hỏi rồi bắt đầu luyện.</p>
-      <Link className="ielts-dashboard-start" href="/app/reading/vocabulary">Học 607 từ IELTS Reading <ArrowRight size={17} /></Link>
-    </div>
+    <h1 className="bl-sr-only">IELTS Reading</h1>
     <BankLibraryView skill="Reading" exams={previewCatalog} attempts={previewAttempts} loading={false} error="" />
   </main>;
   if (view === "intro") return <ExamIntro exam={previewExam} backHref={`${here}?view=library`} busy={false} error="" scheduleSlot={null} resumable={params.get("resume") ? [{ id: "preview-attempt", part: 2, minutesLeft: 12 }] : []}

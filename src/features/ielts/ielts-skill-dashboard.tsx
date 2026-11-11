@@ -128,14 +128,9 @@ export function IeltsSkillDashboard({ skill }: { skill: IeltsSkill }) {
 
   const showLibrary = !demoMode && Boolean(bankSkill);
   if (showLibrary && bankSkill && (skill === "reading" || skill === "listening" || skill === "writing")) {
+    // The shelf's own head carries the title, filters and word-list link; the page title stays for screen readers.
     return <main className={`ielts-dashboard ielts-dashboard-${config.tone} has-library`}>
-      <div className="ielts-dashboard-titlebar">
-        <span className="ielts-dashboard-titlebar-icon"><Icon size={18} /></span>
-        <h1>{config.title}</h1>
-        <p title={config.intro}>{config.intro}</p>
-        {skill === "listening" && <Link className="ielts-dashboard-start" href="/app/listening/vocabulary">Học 1.200 từ IELTS Listening <ArrowRight size={17} /></Link>}
-        {skill === "reading" && <Link className="ielts-dashboard-start" href="/app/reading/vocabulary">Học 607 từ IELTS Reading <ArrowRight size={17} /></Link>}
-      </div>
+      <h1 className="bl-sr-only">{config.title}</h1>
       <BankLibrary skill={bankSkill} />
     </main>;
   }

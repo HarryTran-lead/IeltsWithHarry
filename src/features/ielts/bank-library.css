@@ -15,6 +15,7 @@
 /* Skill pages that lead with the library sit closer to the app chrome. */
 .ielts-dashboard.has-library { padding: 0 2px 40px; }
 .ielts-dashboard.has-library .ielts-dashboard-titlebar { margin-bottom: 8px; min-height: 40px; }
+.ielts-dashboard.has-library > .bl-sectioned:first-of-type { margin-top: 2px; }
 
 /* Filter bar */
 .bl-filterbar { display: grid; gap: 8px; padding: 10px 12px; border: 1px solid #e3ecf1; border-radius: 16px; background: #fff; box-shadow: 0 6px 18px -16px #173d5f66; }
@@ -176,12 +177,30 @@
 /* Reading and Listening let the app sidebar choose the section. */
 .bl-sectioned { margin-top: 8px; }
 .bl-results { min-width: 0; }
-.bl-results-head { display: flex; justify-content: space-between; align-items: end; gap: 18px; min-height: 74px; padding: 5px 0 14px; border-bottom: 1px solid #e1e9ed; }
-.bl-results-head h2 { margin: 2px 0 1px; color: #183652; font-size: 22px; line-height: 1.2; }
-.bl-results-head p { margin: 0; color: #6d8296; font-size: 12px; }
-.bl-results-kicker { color: #74909d; font-size: 10px; font-weight: 900; letter-spacing: .1em; }
-.bl-results-controls { display: flex; align-items: center; justify-content: flex-end; flex-wrap: wrap; gap: 9px; min-width: 0; }
-.bl-results-head .bl-search { flex: none; width: 290px; }
+.bl-sr-only { position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
+
+/* Shelf head: one frosted panel — title, status, search and word list on a line, chip rows beneath. */
+.bl-head {
+  position: relative; display: grid; gap: 0; padding: 12px 14px; border: 1px solid #ffffffd9; border-radius: 18px;
+  background:
+    radial-gradient(90% 160% at 0% 0%, color-mix(in srgb, var(--bl-wash) 85%, transparent) 0, transparent 42%),
+    #ffffffc7;
+  box-shadow: 0 0 0 1px #14284b0d, 0 14px 34px -26px #173d5f8c;
+  backdrop-filter: blur(12px) saturate(1.15); -webkit-backdrop-filter: blur(12px) saturate(1.15);
+}
+.bl-head-top { display: flex; align-items: center; gap: 10px; min-width: 0; }
+.bl-head-title { display: flex; align-items: center; gap: 10px; flex: 1 1 auto; min-width: 0; margin-right: auto; }
+.bl-head-icon { flex: none; display: grid; place-items: center; width: 38px; height: 38px; border-radius: 12px; background: var(--bl-wash); color: var(--bl-accent); box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--bl-accent) 16%, transparent); }
+.bl-head-title > div { min-width: 0; }
+.bl-head h2 { margin: 0; overflow: hidden; color: var(--bl-ink); font-size: 18px; font-weight: 850; line-height: 1.2; letter-spacing: -.01em; white-space: nowrap; text-overflow: ellipsis; }
+.bl-head-title p { margin: 1px 0 0; color: #6d8296; font-size: 12px; font-weight: 600; white-space: nowrap; }
+.bl-head .bl-search { flex: 0 1 250px; min-width: 170px; width: auto; height: 36px; border-color: #dfe7ec; border-radius: 10px; background: #fff; }
+.bl-head .bl-search:focus-within { border-color: var(--bl-accent); box-shadow: 0 0 0 3px color-mix(in srgb, var(--bl-accent) 14%, transparent); }
+.bl-head-vocab { flex: none; display: inline-flex; align-items: center; gap: 6px; height: 36px; padding: 0 13px; border-radius: 10px; background: var(--bl-accent); color: #fff; font-size: 13px; font-weight: 800; white-space: nowrap; text-decoration: none; box-shadow: 0 6px 14px -8px var(--bl-accent); transition: filter .15s, transform .15s; }
+.bl-head-vocab:hover { filter: brightness(1.05); transform: translateY(-1px); }
+.bl-head-vocab svg:last-child { opacity: .85; }
+.bl-head .bl-kind-row { margin-top: 10px; padding: 10px 0 0; border-top: 1px dashed #14284b17; }
+.bl-head .bl-kind-row + .bl-kind-row { margin-top: 8px; padding-top: 8px; }
 /* Column counts per skill (Reading: 4 → 3 → 2); cards stay compact so a learner scans a dozen passages without scrolling far. */
 .bl-grid-sectioned { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; margin-top: 14px; }
 .bl-tone-reading .bl-grid-sectioned, .bl-sectioned.bl-tone-writing .bl-grid-sectioned { grid-template-columns: repeat(4, minmax(0, 1fr)); }
@@ -202,23 +221,39 @@
 .bl-mine.is-low { background: #fdecea; color: #b42318; }
 
 /* Status tabs + question-type chips (the filters a learner reaches for most). */
-.bl-status-tabs { display: inline-flex; gap: 2px; padding: 3px; border-radius: 11px; background: #eef2f4; }
-.bl-status-tabs button { display: inline-flex; align-items: center; gap: 6px; height: 32px; padding: 0 12px; border: 0; border-radius: 8px; background: none; color: #56697b; font: inherit; font-size: 13px; font-weight: 800; white-space: nowrap; cursor: pointer; }
+.bl-status-tabs { flex: none; display: inline-flex; gap: 2px; padding: 3px; border-radius: 11px; background: #14284b0d; }
+.bl-status-tabs button { display: inline-flex; align-items: center; gap: 5px; height: 30px; padding: 0 11px; border: 0; border-radius: 8px; background: none; color: #56697b; font: inherit; font-size: 13px; font-weight: 800; white-space: nowrap; cursor: pointer; }
 .bl-status-tabs button b { color: #8aa0b3; font-size: 11px; font-variant-numeric: tabular-nums; }
 .bl-status-tabs button:hover { color: var(--bl-ink); }
 .bl-status-tabs button[aria-pressed="true"] { background: #fff; color: var(--bl-ink); box-shadow: 0 1px 3px #173d5f26; }
 .bl-status-tabs button[aria-pressed="true"] b { color: var(--bl-accent); }
-.bl-kind-row { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; padding: 12px 0 2px; }
-.bl-kind-label { display: inline-flex; align-items: center; gap: 5px; margin-right: 4px; color: #6d8296; font-size: 12px; font-weight: 800; }
-.bl-kind-row button { display: inline-flex; align-items: center; gap: 5px; height: 30px; padding: 0 11px; border: 1px solid #dce6ec; border-radius: 999px; background: #fff; color: #3d5368; font: inherit; font-size: 12.5px; font-weight: 700; white-space: nowrap; cursor: pointer; transition: border-color .15s, background .15s; }
-.bl-kind-row button small { color: #8aa0b3; font-size: 11px; font-weight: 800; }
-.bl-kind-row button:hover { border-color: var(--bl-accent); }
+.bl-kind-row { display: flex; flex-wrap: wrap; align-items: center; gap: 5px; padding: 12px 0 2px; }
+.bl-kind-label { display: inline-flex; align-items: center; gap: 5px; margin-right: 4px; color: #7a8ea0; font-size: 11px; font-weight: 850; letter-spacing: .04em; text-transform: uppercase; white-space: nowrap; }
+.bl-kind-row button { display: inline-flex; align-items: center; gap: 5px; height: 28px; padding: 0 10px; border: 1px solid #14284b14; border-radius: 999px; background: #ffffffe6; color: #3d5368; font: inherit; font-size: 12.5px; font-weight: 700; white-space: nowrap; cursor: pointer; transition: border-color .15s, background .15s, color .15s; }
+.bl-kind-row button small { color: #93a6b6; font-size: 11px; font-weight: 800; font-variant-numeric: tabular-nums; }
+.bl-kind-row button:hover { border-color: color-mix(in srgb, var(--bl-accent) 55%, transparent); color: var(--bl-ink); }
 .bl-kind-row button[aria-pressed="true"] { border-color: var(--bl-accent); background: var(--bl-wash); color: var(--bl-ink); }
 .bl-kind-row button[aria-pressed="true"] small { color: var(--bl-accent); }
 .bl-kind-row .bl-kind-clear { border-color: transparent; background: none; color: var(--bl-accent); }
-@media (max-width: 760px) { .bl-kind-row { flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; margin-inline: -2px; padding-inline: 2px; } .bl-kind-label { display: none; } .bl-status-tabs { overflow-x: auto; max-width: 100%; } }
-@media (max-width: 980px) { .bl-results-head { align-items: stretch; flex-direction: column; } .bl-results-controls { justify-content: flex-start; } }
-@media (max-width: 560px) { .bl-grid-sectioned, .bl-tone-reading .bl-grid-sectioned, .bl-sectioned.bl-tone-writing .bl-grid-sectioned { grid-template-columns: 1fr; } .bl-grid-sectioned .bl-card-shelf { flex-direction: row; min-height: 130px; } .bl-grid-sectioned .bl-thumb { width: 112px; aspect-ratio: auto; } .bl-grid-sectioned .bl-brand-art img { width: 54px; } .bl-grid-sectioned .bl-brand-wordmark { font-size: 12px; } .bl-grid-sectioned .bl-brand-art small { display: none; } .bl-results-controls { width: 100%; } .bl-results-head .bl-search { width: 100%; } }
+/* The head wraps by its own width (the app sidebar takes a varying share of the viewport). */
+.bl-head { container-type: inline-size; container-name: bl-head; }
+@container bl-head (max-width: 900px) {
+  .bl-head-top { display: grid; grid-template-columns: auto minmax(0, 1fr); grid-template-areas: "title vocab" "tabs search"; gap: 10px; }
+  .bl-head-title { grid-area: title; margin: 0; }
+  .bl-head-top .bl-head-vocab { grid-area: vocab; justify-self: end; }
+  .bl-head-top .bl-status-tabs { grid-area: tabs; }
+  .bl-head-top .bl-search { grid-area: search; min-width: 0; }
+}
+@container bl-head (max-width: 560px) {
+  .bl-head-top { grid-template-columns: minmax(0, 1fr) auto; grid-template-areas: "title vocab" "tabs tabs" "search search"; }
+  .bl-head-top .bl-status-tabs { min-width: 0; overflow-x: auto; scrollbar-width: none; }
+  .bl-head-vocab { padding: 0 11px; }
+  .bl-head-top .bl-status-tabs button { flex: 1 0 auto; justify-content: center; gap: 4px; padding: 0 7px; font-size: 12.5px; }
+  .bl-head .bl-kind-row { flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; margin-inline: -2px; padding-inline: 2px; }
+  .bl-head .bl-kind-label { display: none; }
+}
+@media (max-width: 760px) { .bl-head { padding: 10px; border-radius: 16px; } }
+@media (max-width: 560px) { .bl-grid-sectioned, .bl-tone-reading .bl-grid-sectioned, .bl-sectioned.bl-tone-writing .bl-grid-sectioned { grid-template-columns: 1fr; } .bl-grid-sectioned .bl-card-shelf { flex-direction: row; min-height: 130px; } .bl-grid-sectioned .bl-thumb { width: 112px; aspect-ratio: auto; } .bl-grid-sectioned .bl-brand-art img { width: 54px; } .bl-grid-sectioned .bl-brand-wordmark { font-size: 12px; } .bl-grid-sectioned .bl-brand-art small { display: none; } }
 @media (max-width: 560px) { .bl-grid-sectioned .bl-source { display: none; } .bl-grid-sectioned .bl-cta { opacity: 1; transform: none; } }
 
 /* Full test cover: the test's three passage pictures side by side. */

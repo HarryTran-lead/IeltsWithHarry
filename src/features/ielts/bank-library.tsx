@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { useEffect, useMemo, useRef, useState, type ReactNode } from "react";
-import { ArrowRight, BookOpen, ChevronDown, ChevronLeft, ChevronRight, Clock3, Filter, Headphones, Mic, NotebookPen, PlayCircle, Search, X } from "lucide-react";
+import { ArrowRight, BookOpen, ChevronDown, ChevronLeft, ChevronRight, Clock3, Filter, Headphones, Languages, Mic, NotebookPen, PlayCircle, Search, X } from "lucide-react";
 import { TopicArt } from "@/components/illustrations/topic-art";
 import { catalogGroups, catalogSkills, balancedCatalog, catalogEntriesForSelection, catalogQuestionTypes, catalogQuestionTypeIds, type CatalogExam, type CatalogSkill } from "@/lib/ielts-bank/catalog";
 import { displayExamTitle } from "@/lib/ielts-bank/display-title";
@@ -208,6 +208,37 @@ const libraryStatuses: { id: LibraryStatus; label: string }[] = [
   { id: "all", label: "Tất cả" }, { id: "todo", label: "Chưa làm" }, { id: "progress", label: "Đang làm" }, { id: "done", label: "Đã làm" },
 ];
 
+/** The skill's own word list, offered beside the shelf it belongs to. */
+const vocabularyLinks: Partial<Record<CatalogSkill, { href: string; label: string; title: string }>> = {
+  Reading: { href: "/app/reading/vocabulary", label: "607 từ vựng", title: "Học 607 từ IELTS Reading" },
+  Listening: { href: "/app/listening/vocabulary", label: "1.200 từ vựng", title: "Học 1.200 từ IELTS Listening" },
+};
+
+/**
+ * One compact panel on top of every shelf: section title and count, status tabs,
+ * search and the skill's word list on one line, the filter chip rows under it.
+ */
+function LibraryHead({ skill, heading, count, busy, status, statusCounts, onStatus, query, onQuery, placeholder, children }: {
+  skill: CatalogSkill; heading: string; count: number; busy: boolean;
+  status: LibraryStatus; statusCounts: Record<LibraryStatus, number>; onStatus: (status: LibraryStatus) => void;
+  query: string; onQuery: (query: string) => void; placeholder: string; children?: ReactNode;
+}) {
+  const Icon = librarySkills[skill].icon;
+  const vocabulary = vocabularyLinks[skill];
+  return <div className="bl-head">
+    <div className="bl-head-top">
+      <div className="bl-head-title">
+        <span className="bl-head-icon" aria-hidden="true"><Icon size={18} /></span>
+        <div><h2>{heading}</h2><p role="status">{busy ? "Đang tải đề…" : `${count} bài phù hợp`}</p></div>
+      </div>
+      <div className="bl-status-tabs" role="group" aria-label="Trạng thái bài luyện">{libraryStatuses.map((item) => <button type="button" key={item.id} aria-pressed={status === item.id} onClick={() => onStatus(item.id)}>{item.label}{!busy && <b>{statusCounts[item.id]}</b>}</button>)}</div>
+      <label className="bl-search"><Search size={16} /><input type="search" value={query} onChange={(event) => onQuery(event.target.value)} placeholder={placeholder} aria-label={`Tìm đề ${skill}`} /></label>
+      {vocabulary && <Link className="bl-head-vocab" href={vocabulary.href} title={vocabulary.title}><Languages size={15} /> {vocabulary.label} <ArrowRight size={14} /></Link>}
+    </div>
+    {children}
+  </div>;
+}
+
 function SectionedLibrary({ skill, exams, attempts, loading, error }: LibraryViewProps & { skill: "Reading" | "Listening" }) {
   const params = useSearchParams();
   const router = useRouter();
@@ -278,15 +309,14 @@ function SectionedLibrary({ skill, exams, attempts, loading, error }: LibraryVie
 
   return <section id="ngan-hang-de" className={`bl-library bl-sectioned bl-tone-${skill.toLowerCase()}`} aria-label={`Ngân hàng đề ${skill}`}>
     <div className="bl-results">
-      <div className="bl-results-head"><div><span className="bl-results-kicker">{skill.toUpperCase()} · NGÂN HÀNG ĐỀ</span><h2>{heading}</h2><p>{busy ? "Đang tải đề…" : `${filtered.length} bài phù hợp`}</p></div><div className="bl-results-controls">
-        <div className="bl-status-tabs" role="group" aria-label="Trạng thái bài luyện">{libraryStatuses.map((item) => <button type="button" key={item.id} aria-pressed={status === item.id} onClick={() => { setStatus(item.id); setPage(0); }}>{item.label}{!busy && <b>{statusCounts[item.id]}</b>}</button>)}</div>
-        <label className="bl-search"><Search size={17} /><input type="search" value={query} onChange={(event) => { setQuery(event.target.value); setPage(0); }} placeholder="Tìm tên bài hoặc chủ đề…" aria-label={`Tìm đề ${skill}`} /></label>
-      </div></div>
-      {kindOptions.length > 1 && <div className="bl-kind-row" role="group" aria-label="Lọc theo dạng câu hỏi"><span className="bl-kind-label"><Filter size={14} /> Dạng câu hỏi</span>
-        <button type="button" aria-pressed={!selectedKind} onClick={() => chooseKind("")}>Tất cả</button>
-        {kindOptions.map((item) => <button type="button" key={item.id} aria-pressed={selectedKind === item.id} onClick={() => chooseKind(item.id)}>{item.label} <small>{kindCounts.get(item.id)}</small></button>)}
-        {filtersOn && <button type="button" className="bl-kind-clear" onClick={() => { setQuery(""); setStatus("all"); chooseKind(""); }}><X size={13} /> Xóa lọc</button>}
-      </div>}
+      <LibraryHead skill={skill} heading={heading} count={filtered.length} busy={busy} status={status} statusCounts={statusCounts}
+        onStatus={(next) => { setStatus(next); setPage(0); }} query={query} onQuery={(next) => { setQuery(next); setPage(0); }} placeholder="Tìm tên bài hoặc chủ đề…">
+        {kindOptions.length > 1 && <div className="bl-kind-row" role="group" aria-label="Lọc theo dạng câu hỏi"><span className="bl-kind-label"><Filter size={13} /> Dạng câu hỏi</span>
+          <button type="button" aria-pressed={!selectedKind} onClick={() => chooseKind("")}>Tất cả</button>
+          {kindOptions.map((item) => <button type="button" key={item.id} aria-pressed={selectedKind === item.id} onClick={() => chooseKind(item.id)}>{item.label} <small>{kindCounts.get(item.id)}</small></button>)}
+          {filtersOn && <button type="button" className="bl-kind-clear" onClick={() => { setQuery(""); setStatus("all"); chooseKind(""); }}><X size={13} /> Xóa lọc</button>}
+        </div>}
+      </LibraryHead>
       {displayError && <p className="bl-state" role="alert">{displayError}</p>}
       {busy && <div className="bl-grid bl-grid-sectioned">{Array.from({ length: 6 }, (_, index) => <div key={index} className="bl-card bl-skeleton"><span /><i /><i /></div>)}</div>}
       {!busy && !displayError && <div className="bl-grid bl-grid-sectioned">{visible.map(({ kind, entry }) => kind === "mock"
@@ -355,20 +385,19 @@ function WritingLibraryView({ exams, attempts, loading, error }: LibraryViewProp
 
   return <section id="ngan-hang-de" className="bl-library bl-sectioned bl-tone-writing" aria-label="Ngân hàng đề Writing">
     <div className="bl-results">
-      <div className="bl-results-head"><div><span className="bl-results-kicker">WRITING · NGÂN HÀNG ĐỀ</span><h2>{task?.label ?? "Bài lẻ"}</h2><p>{loading ? "Đang tải đề…" : `${filtered.length} bài phù hợp`}</p></div><div className="bl-results-controls">
-        <div className="bl-status-tabs" role="group" aria-label="Trạng thái bài luyện">{libraryStatuses.map((item) => <button type="button" key={item.id} aria-pressed={status === item.id} onClick={() => { setStatus(item.id); setPage(0); }}>{item.label}{!loading && <b>{statusCounts[item.id]}</b>}</button>)}</div>
-        <label className="bl-search"><Search size={17} /><input type="search" value={query} onChange={(event) => { setQuery(event.target.value); setPage(0); }} placeholder="Tìm tên đề hoặc chủ đề…" aria-label="Tìm đề Writing" /></label>
-      </div></div>
-      {kindOptions.length > 1 && <div className="bl-kind-row" role="group" aria-label="Lọc theo dạng đề"><span className="bl-kind-label"><Filter size={14} /> Dạng đề</span>
-        <button type="button" aria-pressed={!selectedKind} onClick={() => choose("kind", "")}>Tất cả</button>
-        {kindOptions.map((item) => <button type="button" key={item.id} aria-pressed={selectedKind === item.id} onClick={() => choose("kind", item.id)}>{item.label} <small>{kindCounts.get(item.id)}</small></button>)}
-        {filtersOn && !(topicOptions.length > 1) && <button type="button" className="bl-kind-clear" onClick={clearAll}><X size={13} /> Xóa lọc</button>}
-      </div>}
-      {topicOptions.length > 1 && <div className="bl-kind-row" role="group" aria-label="Lọc theo chủ đề"><span className="bl-kind-label"><Filter size={14} /> Chủ đề</span>
-        <button type="button" aria-pressed={!selectedTopic} onClick={() => choose("topic", "")}>Tất cả</button>
-        {topicOptions.map((item) => <button type="button" key={item.id} aria-pressed={selectedTopic === item.id} onClick={() => choose("topic", item.id)}>{item.label} <small>{topicCounts.get(item.id)}</small></button>)}
-        {filtersOn && <button type="button" className="bl-kind-clear" onClick={clearAll}><X size={13} /> Xóa lọc</button>}
-      </div>}
+      <LibraryHead skill="Writing" heading={task?.label ?? "Bài lẻ"} count={filtered.length} busy={loading} status={status} statusCounts={statusCounts}
+        onStatus={(next) => { setStatus(next); setPage(0); }} query={query} onQuery={(next) => { setQuery(next); setPage(0); }} placeholder="Tìm tên đề hoặc chủ đề…">
+        {kindOptions.length > 1 && <div className="bl-kind-row" role="group" aria-label="Lọc theo dạng đề"><span className="bl-kind-label"><Filter size={13} /> Dạng đề</span>
+          <button type="button" aria-pressed={!selectedKind} onClick={() => choose("kind", "")}>Tất cả</button>
+          {kindOptions.map((item) => <button type="button" key={item.id} aria-pressed={selectedKind === item.id} onClick={() => choose("kind", item.id)}>{item.label} <small>{kindCounts.get(item.id)}</small></button>)}
+          {filtersOn && !(topicOptions.length > 1) && <button type="button" className="bl-kind-clear" onClick={clearAll}><X size={13} /> Xóa lọc</button>}
+        </div>}
+        {topicOptions.length > 1 && <div className="bl-kind-row" role="group" aria-label="Lọc theo chủ đề"><span className="bl-kind-label"><Filter size={13} /> Chủ đề</span>
+          <button type="button" aria-pressed={!selectedTopic} onClick={() => choose("topic", "")}>Tất cả</button>
+          {topicOptions.map((item) => <button type="button" key={item.id} aria-pressed={selectedTopic === item.id} onClick={() => choose("topic", item.id)}>{item.label} <small>{topicCounts.get(item.id)}</small></button>)}
+          {filtersOn && <button type="button" className="bl-kind-clear" onClick={clearAll}><X size={13} /> Xóa lọc</button>}
+        </div>}
+      </LibraryHead>
       {error && <p className="bl-state" role="alert">{error}</p>}
       {loading && <div className="bl-grid wl-grid">{Array.from({ length: 6 }, (_, index) => <div key={index} className="bl-card bl-skeleton"><span /><i /><i /></div>)}</div>}
       {!loading && !error && <div className="bl-grid wl-grid">{visible.map(({ exam, facets }) => <WritingShelfCard key={exam.id} exam={exam} facets={facets} attempt={latest.get(exam.id)} />)}</div>}
