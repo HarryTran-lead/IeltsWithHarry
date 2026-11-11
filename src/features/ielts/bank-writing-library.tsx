@@ -1,5 +1,6 @@
 import type { CatalogExam } from "@/lib/ielts-bank/catalog";
 import { displayExamTitle } from "@/lib/ielts-bank/display-title";
+import type { StickerName } from "@/components/stickers/stickers";
 import type { Attempt } from "./bank-library";
 
 /**
@@ -13,7 +14,7 @@ export const writingKinds: Record<string, string> = {
   line: "Line Graph", bar: "Bar Chart", pie: "Pie Chart", table: "Table", process: "Process", map: "Map", mixed: "Mixed Graph", chart: "Biểu đồ", letter: "Letter", essay: "Essay",
 };
 
-export function writingKind(exam: CatalogExam) {
+export function writingKind(exam: Pick<CatalogExam, "practice_type" | "visual" | "visual_kind" | "task_type">) {
   if (exam.practice_type === "task2") return "essay";
   if (exam.practice_type === "task1_general") return "letter";
   return visualKind(String(exam.visual?.kind ?? exam.visual_kind ?? exam.task_type ?? ""));
@@ -86,7 +87,7 @@ const firstMatch = (options: Option[], ...texts: (string | null | undefined)[]) 
 };
 
 /** The title without "Writing Task 2:" and the type words the card already shows. */
-export function writingCardTitle(exam: CatalogExam) {
+export function writingCardTitle(exam: Pick<CatalogExam, "title">) {
   const title = displayExamTitle(exam.title)
     .replace(/^IELTS\s+/i, "")
     .replace(/^(?:Academic\s+|General\s+(?:Training\s+)?)?Writing\s+Task\s*[12]\s*(?:·\s*\w+\s*)?[:–-]\s*/i, "")
@@ -97,7 +98,10 @@ export function writingCardTitle(exam: CatalogExam) {
   return title || displayExamTitle(exam.title);
 }
 
-export function writingFacets(exam: CatalogExam) {
+/** The fields a Writing task is classified by; the exam page passes the same from its content. */
+export type WritingFacetInput = Pick<CatalogExam, "title" | "practice_type" | "topic" | "prompt_preview" | "visual" | "visual_kind" | "task_type">;
+
+export function writingFacets(exam: WritingFacetInput) {
   const titleType = exam.title.replace(/^.*?Task\s*[12]\s*[:–-]\s*/i, "").split(/\s+/).slice(0, 3).join(" ");
   if (exam.practice_type === "task2") {
     const type = firstMatch(essayTypes, titleType, exam.prompt_preview) ?? (/\?[^?]+\?/.test(exam.prompt_preview ?? "") ? essayTypes.find((item) => item.id === "two_part") : undefined);
@@ -118,3 +122,12 @@ export function gradedBand(attempt?: Attempt) {
   if (!raw) return null;
   try { const overall = Number(JSON.parse(raw).overall); return Number.isFinite(overall) ? overall : null; } catch { return null; }
 }
+
+/** Our stickers stand in for Task 2 cover pictures, one per essay theme. */
+const topicStickers: Record<string, { name: StickerName; tone: string }> = {
+  education: { name: "cap", tone: "#e8f1ff" }, environment: { name: "tree", tone: "#e6f6ea" }, work: { name: "clipboard", tone: "#fff1dc" },
+  government: { name: "scroll", tone: "#f3ecff" }, technology: { name: "rocket", tone: "#e6f4ff" }, health: { name: "heart", tone: "#ffe9ec" },
+  media: { name: "newspaper", tone: "#f1f3f6" }, society: { name: "bubble", tone: "#e9f8f6" }, economy: { name: "chart", tone: "#fff6d8" },
+  travel: { name: "plane", tone: "#e7f4ff" }, other: { name: "bulb", tone: "#fff4d6" },
+};
+export const writingSticker = (topic: string) => topicStickers[topic] ?? topicStickers.other;

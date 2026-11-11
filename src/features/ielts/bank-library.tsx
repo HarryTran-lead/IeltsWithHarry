@@ -8,9 +8,9 @@ import { TopicArt } from "@/components/illustrations/topic-art";
 import { catalogGroups, catalogSkills, balancedCatalog, catalogEntriesForSelection, catalogQuestionTypes, catalogQuestionTypeIds, type CatalogExam, type CatalogSkill } from "@/lib/ielts-bank/catalog";
 import { displayExamTitle } from "@/lib/ielts-bank/display-title";
 import type { MockCatalogEntry } from "@/lib/listening-mocks/mocks";
-import { gradedBand, visualKind, writingCardTitle, writingFacets, writingKind, writingKindOptions, writingKinds, writingTasks, writingTopicOptions } from "./bank-writing-library";
+import { gradedBand, visualKind, writingCardTitle, writingFacets, writingKind, writingKindOptions, writingKinds, writingSticker, writingTasks, writingTopicOptions } from "./bank-writing-library";
 import "./bank-library.css";
-import { Sticker, type StickerName } from "@/components/stickers/stickers";
+import { Sticker } from "@/components/stickers/stickers";
 import { TaskFigure } from "./writing-figure";
 
 export type Attempt = { id: string; exam_id: string; state: string; score: number | null; total: number | null; notes?: Record<string, string> | null };
@@ -378,14 +378,6 @@ function WritingLibraryView({ exams, attempts, loading, error }: LibraryViewProp
   </section>;
 }
 
-/** Our stickers stand in for Task 2 cover pictures, one per essay theme. */
-const topicStickers: Record<string, { name: StickerName; tone: string }> = {
-  education: { name: "cap", tone: "#e8f1ff" }, environment: { name: "tree", tone: "#e6f6ea" }, work: { name: "clipboard", tone: "#fff1dc" },
-  government: { name: "scroll", tone: "#f3ecff" }, technology: { name: "rocket", tone: "#e6f4ff" }, health: { name: "heart", tone: "#ffe9ec" },
-  media: { name: "newspaper", tone: "#f1f3f6" }, society: { name: "bubble", tone: "#e9f8f6" }, economy: { name: "chart", tone: "#fff6d8" },
-  travel: { name: "plane", tone: "#e7f4ff" }, other: { name: "bulb", tone: "#fff4d6" },
-};
-
 /**
  * A Writing task laid out like a workbook entry: the figure on the left (the
  * Task 1 chart itself, or a sticker for the Task 2 theme), the title and the
@@ -396,7 +388,7 @@ function WritingShelfCard({ exam, facets, attempt }: { exam: CatalogExam; facets
   const task1 = exam.practice_type === "task1_academic";
   const task = writingTasks.find((item) => item.id === exam.practice_type) ?? writingTasks[1];
   const band = gradedBand(attempt);
-  const sticker = topicStickers[facets.topic] ?? topicStickers.other;
+  const sticker = writingSticker(facets.topic);
   const figure = task1 ? exam.figure_url || (exam.image_url && !exam.image_url.includes("/ielts-images/covers/") ? exam.image_url : "") : "";
   const prompt = exam.prompt_preview?.replace(/\s+/g, " ").trim() || "Mở đề để xem yêu cầu đầy đủ.";
   return <Link href={href} className={`bl-card wl-card ${band !== null ? "is-graded" : ""}`}>
@@ -494,24 +486,8 @@ export function ExamCard({ exam, attempt, section }: { exam: CatalogExam; attemp
       : null
     : exam.image_url;
   const aiCover = Boolean(!exam.visual && (coverUrl?.includes("/ielts-images/covers/") || (section && suppliedReadingTest && Number(suppliedReadingTest) >= 6)));
-  if (exam.skill === "Writing") {
-    const kind = writingKind(exam);
-    return <Link href={href} className="bl-card bl-card-writing">
-      <span className={`bl-writing-thumb ${aiCover ? "has-cover" : ""}`}>
-        {/* Source figures come from many hosts, so a plain lazy image is used rather than next/image. */}
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        {exam.visual ? <VisualThumb visual={exam.visual} kind={kind} /> : exam.image_url ? <img src={exam.image_url} alt="" loading="lazy" /> : <TopicArt topic={artTopic(exam)} className="bl-art" />}
-        <b className="bl-kind">{writingKinds[kind]}</b>
-        {aiCover && <em className="bl-ai-badge" title="Ảnh minh họa do AI tạo theo chủ đề bài luyện">Ảnh AI</em>}
-      </span>
-      <span className="bl-writing-copy">
-        <span className="bl-writing-meta"><span>{exam.practice_type === "task2" ? "Task 2" : exam.practice_type === "task1_general" ? "Task 1 · GT" : "Task 1 · Academic"}</span><AttemptChip attempt={attempt} /></span>
-        <strong className="bl-title">{displayExamTitle(exam.title)}</strong>
-        {exam.prompt_preview && <span className="bl-prompt">{exam.prompt_preview}</span>}
-        <span className="bl-foot">{usage}<span>{sourceLabel(exam)}</span>{cta}</span>
-      </span>
-    </Link>;
-  }
+  // Writing has its own card: the task figure or a theme sticker, never a stock picture.
+  if (exam.skill === "Writing") return <WritingShelfCard exam={exam} facets={writingFacets(exam)} attempt={attempt} />;
 
   if (exam.skill === "Speaking") {
     const previews = exam.question_preview?.length ? exam.question_preview : exam.prompt_preview ? [exam.prompt_preview] : [];
