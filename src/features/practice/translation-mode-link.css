@@ -5,7 +5,7 @@
   margin: 14px 0 18px;
   padding: 10px 14px;
   border: 1px solid var(--line);
-  border-radius: 14px;
+  border-radius: var(--r-md);
   background: var(--surface);
   color: var(--ink);
   text-decoration: none;
@@ -21,7 +21,7 @@
   place-items: center;
   width: 34px;
   height: 34px;
-  border-radius: 10px;
+  border-radius: var(--r-md);
   background: var(--teal-soft);
   color: var(--teal-strong);
 }

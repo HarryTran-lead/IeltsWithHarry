@@ -18,14 +18,14 @@
   align-items: center;
   gap: 6px;
   min-height: 36px;
-  color: #0b8f98;
+  color: var(--teal-strong);
   font-size: 14px;
   font-weight: 800;
   text-decoration: none;
 }
 .vocab-page-label {
   margin-left: auto;
-  color: #0b8f98;
+  color: var(--teal-strong);
   font-size: 12px;
   font-weight: 800;
   letter-spacing: 0.08em;
@@ -38,7 +38,7 @@
   font: 800 clamp(26px, 2.4vw, 30px) / 1.15 var(--font-display);
   letter-spacing: -0.02em;
 }
-.vocab-page-title h1 em { color: #0b8f98; font-style: normal; }
+.vocab-page-title h1 em { color: var(--teal-strong); font-style: normal; }
 .vocab-page-title p {
   margin: 4px 0 0;
   color: #5f768c;
@@ -48,9 +48,9 @@
 .vocab-page-head .vocab-header-count {
   padding: 7px 12px;
   border: 1px solid #dce9ed;
-  border-radius: 999px;
+  border-radius: var(--r-pill);
   background: #fff;
-  color: #0b8f98;
+  color: var(--teal-strong);
   font-size: 13px;
   font-weight: 800;
   white-space: nowrap;

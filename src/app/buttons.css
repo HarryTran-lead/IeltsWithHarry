@@ -1,0 +1,74 @@
+/*
+ * One action-button shape across the portal.
+ *
+ * Feature pages grew their own primary buttons (practice-primary, translation-primary,
+ * vocab-button, gg-primary, voa-primary-button…), each with its own height (36–46px),
+ * radius (9–14px), size and weight. They keep their markup and their own colour
+ * themes; this file only gives them the `.button` proportions from globals.css, and
+ * the plain teal ones the shared teal. `body .app-frame` outranks the feature rules,
+ * which load after this file.
+ *
+ * Deliberately left alone: the exam screens (bx-, bt-, cd-: they mirror the official
+ * test UI), Book 2 lessons (large touch targets by design) and the skill library
+ * cards (bl-cta uses each skill's accent).
+ */
+body .app-frame :is(
+  .practice-primary,
+  .practice-secondary,
+  .translation-primary,
+  .vocab-button,
+  .gg-primary,
+  .ielts-primary,
+  .voa-primary-button,
+  .vocabulary-landing-hero-actions a
+) {
+  min-height: var(--btn-h-md);
+  padding-block: 0;
+  padding-inline: 16px;
+  border-radius: var(--r-md);
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-bold);
+}
+
+/* Plain teal call-to-action buttons share the primary teal and its hover. */
+body .app-frame :is(
+  .practice-primary,
+  .translation-primary,
+  .vocab-button.primary,
+  .ielts-primary,
+  .voa-primary-button
+) {
+  border-color: var(--teal-strong);
+  background: var(--teal-strong);
+  color: #fff;
+}
+body .app-frame :is(
+  .practice-primary,
+  .translation-primary,
+  .vocab-button.primary,
+  .ielts-primary,
+  .voa-primary-button
+):not(:disabled):hover {
+  border-color: var(--teal-hover);
+  background: var(--teal-hover);
+}
+
+/* The study room renders on its own layer outside `.app-frame`. */
+body .study-room-page :is(.study-session-toggle, .study-focus-start, .study-play) {
+  background: var(--teal-strong);
+  color: #fff;
+}
+body .study-room-page :is(.study-session-toggle, .study-focus-start, .study-play):hover {
+  background: var(--teal-hover);
+}
+body .study-room-page .study-session-toggle {
+  min-height: var(--btn-h-md);
+  border-radius: var(--r-md);
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-bold);
+}
+
+/* Study screens keep one larger main action, on the shared large size. */
+body .app-frame :is(.practice-setup-actions .practice-primary, .translation-control-footer .translation-primary) {
+  min-height: var(--btn-h-lg);
+}

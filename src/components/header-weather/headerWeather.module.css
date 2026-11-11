@@ -44,17 +44,17 @@
 .skyFrame[data-sky-phase="lateNight"] { --sky-edge-left:rgba(146,157,196,.16); --sky-edge-center:rgba(137,152,193,.14); --sky-edge-right:rgba(145,162,203,.16); --header-glass:rgba(255,255,255,.76); --header-glass-quiet:rgba(255,255,255,.68); }
 .skyFrame :global(.main-area) { background:var(--dot-grid) 0 0 / 22px 22px,linear-gradient(180deg,transparent,var(--sky-page) 450px),linear-gradient(90deg,var(--sky-edge-left),var(--sky-edge-center) 50%,var(--sky-edge-right)) right top / 100vw 100%; }
 .skyFrame :global(.sidebar) { background:linear-gradient(180deg,rgba(255,255,255,.88),#fff 440px),linear-gradient(90deg,var(--sky-edge-left),var(--sky-edge-center) 50%,var(--sky-edge-right)) left top / 100vw 100%; }
-.headerSurface :global(.brand) { width:auto; padding:3px 9px 3px 3px; border-radius:999px; background:rgba(255,255,255,.72); box-shadow:0 2px 10px rgba(28,39,67,.07); backdrop-filter:blur(10px); -webkit-backdrop-filter:blur(10px); }
+.headerSurface :global(.brand) { width:auto; padding:3px 9px 3px 3px; border-radius:var(--r-pill); background:rgba(255,255,255,.72); box-shadow:0 2px 10px rgba(28,39,67,.07); backdrop-filter:blur(10px); -webkit-backdrop-filter:blur(10px); }
 .headerSurface :global(.header-search),
 .headerSurface :global(.stat-pill),
 .headerSurface :global(.notification-button),
 .headerSurface .weatherChip,
 .headerSurface .settingsButton { background:var(--header-glass); border:1px solid rgba(255,255,255,.42); box-shadow:0 2px 10px rgba(28,39,67,.07); backdrop-filter:blur(9px); -webkit-backdrop-filter:blur(9px); }
-.headerSurface :global(.header-search) { max-width:320px; height:36px; border-radius:999px; }
+.headerSurface :global(.header-search) { max-width:320px; height:36px; border-radius:var(--r-pill); }
 .headerSurface :global(.header-search:focus-within) { background:rgba(255,255,255,.9); }
 .headerSurface :global(.header-search kbd) { background:rgba(255,255,255,.5); }
 .headerSurface :global(.header-actions) { gap:6px; }
-.headerSurface :global(.stat-pill) { min-height:40px; padding:4px 10px 4px 8px; border-radius:999px; grid-template-columns:19px auto; column-gap:5px; background:var(--header-glass-quiet); }
+.headerSurface :global(.stat-pill) { min-height:40px; padding:4px 10px 4px 8px; border-radius:var(--r-pill); grid-template-columns:19px auto; column-gap:5px; background:var(--header-glass-quiet); }
 .headerSurface :global(.stat-pill strong) { font-size:13px; line-height:15px; }
 .headerSurface :global(.stat-pill small) { font-size:9.5px; }
 .headerSurface :global(.stat-pill.streak) { min-height:34px; padding:4px 7px; gap:4px; border-color:transparent; background:rgba(255,255,255,.3); box-shadow:none; display:inline-flex; color:#344b68; }
@@ -63,7 +63,7 @@
 .headerSurface :global(.header-divider) { background:rgba(255,255,255,.35); margin:0 1px; }
 .headerSurface :global(.notification-button) { width:32px; height:32px; border:0; border-radius:50%; background:rgba(255,255,255,.3); box-shadow:none; }
 .widgetRoot { position:relative; z-index:10; display:flex; align-items:center; flex:0 0 auto; gap:4px; font-family:inherit; }
-.weatherChip { min-width:0; width:104px; max-width:108px; height:34px; display:flex; align-items:center; gap:5px; padding:4px 8px; color:#152c51; border-radius:999px; overflow:hidden; }
+.weatherChip { min-width:0; width:104px; max-width:108px; height:34px; display:flex; align-items:center; gap:5px; padding:4px 8px; color:#152c51; border-radius:var(--r-pill); overflow:hidden; }
 .headerSurface .weatherChip { background:rgba(255,255,255,.48); border-color:rgba(255,255,255,.3); box-shadow:none; }
 .weatherEmoji { font-size:22px; line-height:1; }
 .weatherText { display:flex; min-width:0; flex-direction:column; gap:1px; }
@@ -73,37 +73,37 @@
 .weatherCompactValue { display:none; }
 .weatherText .cityLabel { display:none; font-size:10px; color:#243c5c; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; max-width:108px; }
 .metaLine { display:none; font-size:9.5px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
-.settingsButton { width:29px; height:29px; padding:0; border:1px solid rgba(49,95,132,.15); border-radius:9px; background:rgba(255,255,255,.9); color:#284263; font-size:17px; cursor:pointer; flex-shrink:0; }
+.settingsButton { width:29px; height:29px; padding:0; border:1px solid rgba(49,95,132,.15); border-radius:var(--r-sm); background:rgba(255,255,255,.9); color:#284263; font-size:17px; cursor:pointer; flex-shrink:0; }
 .headerSurface .settingsButton { width:26px; height:26px; border-radius:50%; background:rgba(255,255,255,.45); box-shadow:none; }
 .settingsButton:hover { background:#ecfaff; }
-.settingsButton:focus-visible,.closeButton:focus-visible,.locationButton:focus-visible,.citySearchForm button:focus-visible,.citySearchForm input:focus-visible,.modeOption input:focus-visible,.strengthOption input:focus-visible { outline:3px solid #0f91aa; outline-offset:2px; }
-.popover { position:absolute; top:calc(100% + 16px); right:0; width:min(350px,calc(100vw - 20px)); border-radius:18px; background:#fff; padding:17px; box-shadow:0 18px 55px #132b4d2b; border:1px solid #e4eaf1; color:#1d3456; z-index:120; font-size:13px; }
+.settingsButton:focus-visible,.closeButton:focus-visible,.locationButton:focus-visible,.citySearchForm button:focus-visible,.citySearchForm input:focus-visible,.modeOption input:focus-visible,.strengthOption input:focus-visible { outline:3px solid var(--teal); outline-offset:2px; }
+.popover { position:absolute; top:calc(100% + 16px); right:0; width:min(350px,calc(100vw - 20px)); border-radius:var(--r-lg); background:#fff; padding:17px; box-shadow:0 18px 55px #132b4d2b; border:1px solid #e4eaf1; color:#1d3456; z-index:120; font-size:13px; }
 .popoverHeading { display:flex; justify-content:space-between; align-items:center; gap:8px; margin-bottom:13px; }
 .popoverHeading strong { display:block; font-size:16px; }
 .popoverHeading small,.modeOption small { display:block; color:#65768e; font-size:11px; margin-top:3px; }
-.closeButton { cursor:pointer; width:30px; height:30px; border:0; border-radius:9px; font-size:22px; background:#f0f4f8; color:#324760; }
+.closeButton { cursor:pointer; width:30px; height:30px; border:0; border-radius:var(--r-sm); font-size:22px; background:#f0f4f8; color:#324760; }
 .modeOptions { display:flex; flex-direction:column; gap:6px; padding-bottom:13px; border-bottom:1px solid #e8edf2; }
-.modeOption { cursor:pointer; display:flex; gap:9px; align-items:center; padding:9px; border-radius:9px; border:1px solid #e9edf3; }
+.modeOption { cursor:pointer; display:flex; gap:9px; align-items:center; padding:9px; border-radius:var(--r-sm); border:1px solid #e9edf3; }
 .modeOption:has(input:checked) { border-color:#7ac7d4; background:#eafafd; }
-.modeOption input { accent-color:#078ca3; }
+.modeOption input { accent-color:var(--teal-strong); }
 .modeOption strong { display:block; font-size:12px; }
 .strengthOptions { margin:12px 0 0; padding:0 0 13px; border:0; border-bottom:1px solid #e8edf2; }
 .strengthOptions legend { padding:0; font-size:12px; font-weight:800; }
 .strengthOptions p { margin:3px 0 9px; color:#65768e; font-size:11px; }
 .strengthOptions > div { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:7px; }
-.strengthOption { display:flex; align-items:center; gap:8px; padding:9px; border:1px solid #e9edf3; border-radius:9px; font-size:12px; font-weight:700; cursor:pointer; }
+.strengthOption { display:flex; align-items:center; gap:8px; padding:9px; border:1px solid #e9edf3; border-radius:var(--r-sm); font-size:12px; font-weight:700; cursor:pointer; }
 .strengthOption:has(input:checked) { border-color:#7ac7d4; background:#eafafd; }
-.strengthOption input { accent-color:#078ca3; }
+.strengthOption input { accent-color:var(--teal-strong); }
 .locationSection { padding-top:12px; }
 .locationSection>strong { display:block; margin-bottom:3px; }
 .locationSection p { font-size:11px; color:#65758e; margin:5px 0 10px; }
-.locationButton { border:1px solid #bbdbe4; background:#ecfaff; width:100%; padding:10px; color:#087e95; border-radius:9px; cursor:pointer; font-weight:700; }
+.locationButton { border:1px solid #bbdbe4; background:#ecfaff; width:100%; padding:10px; color:var(--teal-strong); border-radius:var(--r-sm); cursor:pointer; font-weight:700; }
 .locationButton:disabled { opacity:.55; cursor:wait; }
 .citySearchForm { display:flex; margin-top:9px; gap:5px; }
-.citySearchForm input { min-width:0; flex:1; border:1px solid #d7e0ea; border-radius:9px; padding:9px; color:#243b5a; background:#fff; }
-.citySearchForm button { cursor:pointer; border:0; background:#0f929e; border-radius:9px; padding:0 12px; color:white; font-weight:700; }
+.citySearchForm input { min-width:0; flex:1; border:1px solid #d7e0ea; border-radius:var(--r-sm); padding:9px; color:#243b5a; background:#fff; }
+.citySearchForm button { cursor:pointer; border:0; background:var(--teal-strong); border-radius:var(--r-sm); padding:0 12px; color:white; font-weight:700; }
 .citySearchForm button:disabled { opacity:.6; }
-.cityResults { list-style:none; margin:8px 0 0; padding:0; max-height:154px; overflow:auto; border:1px solid #e6edf5; border-radius:10px; }
+.cityResults { list-style:none; margin:8px 0 0; padding:0; max-height:154px; overflow:auto; border:1px solid #e6edf5; border-radius:var(--r-md); }
 .cityResults li+li { border-top:1px solid #ecf0f3; }
 .cityResults button { width:100%; cursor:pointer; text-align:left; border:0; background:#fff; padding:9px; color:#17395d; }
 .cityResults button:hover { background:#eafaff; }
@@ -111,7 +111,7 @@
 .cityResults small { font-size:11px; color:#5e7188; }
 .selectedCity { display:flex; align-items:center; justify-content:space-between; gap:6px; font-size:11px; margin-top:11px; }
 .selectedCity button { color:#b12d41; background:transparent; border:0; text-decoration:underline; cursor:pointer; }
-.locationSection .error { color:#a5382f; background:#fff2ed; padding:8px; border-radius:8px; }
+.locationSection .error { color:#a5382f; background:#fff2ed; padding:8px; border-radius:var(--r-sm); }
 .credit { font-size:10px; color:#5d6e85; border-top:1px solid #e8edf2; padding-top:11px; margin-top:14px; }
 .credit a { color:#0b7895; }
 

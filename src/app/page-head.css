@@ -8,7 +8,7 @@
   margin-bottom: 12px;
   padding: 9px 16px;
   border: 1px solid #d9ece8;
-  border-radius: 14px;
+  border-radius: var(--r-md);
   background:
     var(--dot-grid) 0 0 / 18px 18px,
     linear-gradient(120deg, #e7f7f5, #f6faf4 60%, #fff8e8);
@@ -82,7 +82,7 @@
   gap: 6px;
   padding: 5px 11px;
   border: 1px solid var(--line);
-  border-radius: 999px;
+  border-radius: var(--r-pill);
   background: rgba(255, 255, 255, 0.85);
   color: var(--muted);
   font-size: 12.5px;
@@ -238,7 +238,7 @@
 .app-frame .dh-hero {
   gap: 18px;
   padding: 16px 22px;
-  border-radius: 20px;
+  border-radius: var(--r-lg);
   grid-template-columns: minmax(0, 1fr) auto;
 }
 .app-frame .dh-hero h1 {
@@ -263,7 +263,7 @@
   align-items: center;
   gap: 16px;
   padding: 10px 14px;
-  border-radius: 16px;
+  border-radius: var(--r-lg);
 }
 .app-frame .dh-numbers div {
   padding: 7px 10px;
@@ -313,7 +313,7 @@
 .app-frame .voa-bank-hero {
   margin: 2px 0 12px;
   padding: 12px 18px;
-  border-radius: 16px;
+  border-radius: var(--r-lg);
 }
 .app-frame .voa-library-heading h1,
 .app-frame .voa-bank-hero h1 {
