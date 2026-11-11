@@ -11,6 +11,7 @@ import { promptWordHints, type PromptHint } from "@/lib/vocabulary/vi-en-word-hi
 import { chooseTranslationSession, compareTranslation, matchesCopiedWord, nextTranslationProgress, type TranslationExercise, type TranslationProgress, type TranslationRating, type WordComparison } from "@/lib/vocabulary/vi-en-translation";
 import "./vi-en-translation-page.css";
 import { VocabPageHeader } from "./vocab-page-header";
+import { TranslationModeLink } from "@/features/practice/translation-mode-link";
 import { Sticker } from "@/components/stickers/stickers";
 import { LoadingBlock } from "@/components/layout/loading-block";
 
@@ -258,8 +259,8 @@ export function ViEnTranslationPage() {
   }
 
   return <main className={"translation-page" + (sessionActive ? " is-active" : "")}>
-    <VocabPageHeader label="Luyện dịch Việt → Anh" title={sessionActive ? "Luyện dịch câu Việt → Anh" : <>Viết câu tiếng Anh <em>theo ý của bạn</em></>}
-      description={sessionActive ? undefined : "Chọn câu, tự dịch, đối chiếu câu mẫu rồi đánh giá để lên lịch ôn phù hợp."}
+    <VocabPageHeader label="Từ vựng IELTS · Áp dụng" title={sessionActive ? "Dịch câu với từ vựng IELTS" : <>Dịch câu với <em>từ vựng IELTS</em></>}
+      description={sessionActive ? undefined : "Chọn chủ đề, dùng chính những từ trong bộ IELTS để dịch câu Speaking và Writing, rồi đánh giá để lên lịch ôn."}
       action={sessionActive && <button type="button" className="translation-settings-toggle" onClick={leaveSession}>Chọn bài khác</button>} />
 
     {!sessionActive && <>
@@ -278,6 +279,7 @@ export function ViEnTranslationPage() {
         </div>}
       </section>
       <div className="translation-stats"><span><strong>{filtered.length}</strong> câu trong bộ lọc</span><span><strong>{studied}</strong> câu đã luyện</span><span><strong>{due}</strong> câu đến hạn ôn</span></div>
+      <TranslationModeLink to="band" />
     </>}
 
     {loading && <section className="translation-empty"><LoadingBlock label="Đang tải bài luyện…" /></section>}
