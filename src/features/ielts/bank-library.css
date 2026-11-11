@@ -224,3 +224,34 @@
 /* Full test cover: the test's three passage pictures side by side. */
 .bl-collage { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 2px; background: #fff; }
 .bl-collage img, .bl-card:hover .bl-collage img { width: 100%; height: 100%; object-fit: cover; transform: none; }
+
+/* Writing: workbook-style cards — the task figure on the left, title and question on the right. */
+.wl-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; margin-top: 14px; }
+.wl-card { flex-direction: row; min-height: 190px; border-radius: 14px; }
+.wl-card.is-graded { border: 1.5px solid #8fd1a8; }
+.wl-cover { position: relative; flex: none; display: grid; place-items: center; width: 38%; max-width: 250px; overflow: hidden; border-right: 1px solid #eef1f4; background: #fff; }
+.wl-cover.is-figure { padding: 30px 8px 8px; }
+.wl-cover img { width: 100%; height: 100%; max-height: 170px; object-fit: contain; transition: transform 0.3s var(--ease-out); }
+.wl-figure-svg { display: block; width: 100%; height: auto; max-height: 160px; transition: transform 0.3s var(--ease-out); }
+.wl-card:hover .wl-cover img, .wl-card:hover .wl-figure-svg { transform: scale(1.04); }
+.wl-cover.is-sticker { padding-top: 22px; }
+.wl-cover.is-sticker .sticker { transition: transform 0.3s var(--ease-out); }
+.wl-card:hover .wl-cover.is-sticker .sticker { transform: rotate(0deg) scale(1.08); }
+.wl-kind { position: absolute; top: 0; left: 0; z-index: 1; max-width: 92%; overflow: hidden; padding: 5px 12px; border-radius: 0 0 12px 0; background: var(--bl-ink); color: #fff; font-size: 12px; font-weight: 800; text-overflow: ellipsis; white-space: nowrap; }
+.wl-copy { display: flex; flex: 1; flex-direction: column; gap: 5px; min-width: 0; padding: 12px 15px 11px; }
+.wl-meta { display: flex; align-items: center; justify-content: space-between; gap: 8px; min-height: 22px; }
+.wl-task { padding: 3px 9px; border-radius: 999px; background: var(--bl-wash); color: #8a5a00; font-size: 11px; font-weight: 800; }
+.wl-title { display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; overflow: hidden; color: #1d5fa6; font: 800 14.5px/1.35 var(--font-display), var(--font-sans), sans-serif; }
+.wl-sub { color: #7b8b9b; font-size: 12px; font-weight: 700; }
+.wl-prompt { display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 3; overflow: hidden; color: #34495e; font-size: 13.5px; line-height: 1.5; }
+.wl-foot { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 12px; margin-top: auto; padding-top: 6px; color: #8195a8; font-size: 11.5px; font-weight: 700; }
+.wl-foot > span { display: inline-flex; align-items: center; gap: 4px; min-width: 0; }
+.wl-foot .bl-source { flex: 1; }
+.wl-grid .bl-skeleton { min-height: 190px; }
+@media (max-width: 1080px) { .wl-grid { grid-template-columns: 1fr; } }
+@media (max-width: 560px) {
+  .wl-card { flex-direction: column; }
+  .wl-cover { width: 100%; max-width: none; height: 168px; border-right: 0; border-bottom: 1px solid #eef1f4; }
+  .wl-foot .bl-source { display: none; }
+  .wl-foot .bl-cta { opacity: 1; transform: none; }
+}

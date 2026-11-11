@@ -135,7 +135,6 @@ const skillPracticeLinks: Record<string, SkillPracticeLink[]> = {
     ...(!demoMode ? [
       { label: "Bài lẻ", href: "/app/writing?type=all", kind: "parent" as const },
       { label: "Task 1 · Academic", href: "/app/writing?type=task1_academic", kind: "child" as const },
-      { label: "Task 1 · General", href: "/app/writing?type=task1_general", kind: "child" as const },
       { label: "Task 2 · Essay", href: "/app/writing?type=task2", kind: "child" as const },
     ] : []),
     { label: "Task 1 · Số liệu World Bank", href: "/app/writing/task-1", ...(!demoMode ? { kind: "full" as const } : {}) },

@@ -10,7 +10,8 @@ import { displayExamTitle } from "@/lib/ielts-bank/display-title";
 import type { MockCatalogEntry } from "@/lib/listening-mocks/mocks";
 import { gradedBand, visualKind, writingCardTitle, writingFacets, writingKind, writingKindOptions, writingKinds, writingTasks, writingTopicOptions } from "./bank-writing-library";
 import "./bank-library.css";
-import { Sticker } from "@/components/stickers/stickers";
+import { Sticker, type StickerName } from "@/components/stickers/stickers";
+import { TaskFigure } from "./writing-figure";
 
 export type Attempt = { id: string; exam_id: string; state: string; score: number | null; total: number | null; notes?: Record<string, string> | null };
 
@@ -369,39 +370,52 @@ function WritingLibraryView({ exams, attempts, loading, error }: LibraryViewProp
         {filtersOn && <button type="button" className="bl-kind-clear" onClick={clearAll}><X size={13} /> Xóa lọc</button>}
       </div>}
       {error && <p className="bl-state" role="alert">{error}</p>}
-      {loading && <div className="bl-grid bl-grid-sectioned">{Array.from({ length: 6 }, (_, index) => <div key={index} className="bl-card bl-skeleton"><span /><i /><i /></div>)}</div>}
-      {!loading && !error && <div className="bl-grid bl-grid-sectioned">{visible.map(({ exam, facets }) => <WritingShelfCard key={exam.id} exam={exam} facets={facets} attempt={latest.get(exam.id)} />)}</div>}
+      {loading && <div className="bl-grid wl-grid">{Array.from({ length: 6 }, (_, index) => <div key={index} className="bl-card bl-skeleton"><span /><i /><i /></div>)}</div>}
+      {!loading && !error && <div className="bl-grid wl-grid">{visible.map(({ exam, facets }) => <WritingShelfCard key={exam.id} exam={exam} facets={facets} attempt={latest.get(exam.id)} />)}</div>}
       {!loading && !error && !visible.length && <p className="bl-state">{status === "done" ? "Bạn chưa nộp bài nào trong mục này." : status === "progress" ? "Không có bài nào đang viết dở." : "Chưa có đề phù hợp. Hãy thử dạng đề khác, đổi từ khóa hoặc chọn Task khác trong sidebar."}</p>}
       {!loading && pageCount > 1 && <Pager page={currentPage} count={pageCount} onPage={(next) => { setPage(next); document.getElementById("ngan-hang-de")?.scrollIntoView({ behavior: "smooth", block: "start" }); }} />}
     </div>
   </section>;
 }
 
-/** A Writing task on the shared shelf: the chart (or a topic picture), the task badge, its kind and theme. */
+/** Our stickers stand in for Task 2 cover pictures, one per essay theme. */
+const topicStickers: Record<string, { name: StickerName; tone: string }> = {
+  education: { name: "cap", tone: "#e8f1ff" }, environment: { name: "tree", tone: "#e6f6ea" }, work: { name: "clipboard", tone: "#fff1dc" },
+  government: { name: "scroll", tone: "#f3ecff" }, technology: { name: "rocket", tone: "#e6f4ff" }, health: { name: "heart", tone: "#ffe9ec" },
+  media: { name: "newspaper", tone: "#f1f3f6" }, society: { name: "bubble", tone: "#e9f8f6" }, economy: { name: "chart", tone: "#fff6d8" },
+  travel: { name: "plane", tone: "#e7f4ff" }, other: { name: "bulb", tone: "#fff4d6" },
+};
+
+/**
+ * A Writing task laid out like a workbook entry: the figure on the left (the
+ * Task 1 chart itself, or a sticker for the Task 2 theme), the title and the
+ * question beside it.
+ */
 function WritingShelfCard({ exam, facets, attempt }: { exam: CatalogExam; facets: ReturnType<typeof writingFacets>; attempt?: Attempt }) {
   const href = attempt?.state === "in_progress" ? `/app/question-bank/attempt/${attempt.id}` : `/app/question-bank/exam/${exam.id}`;
-  const kind = writingKind(exam);
-  const task = writingTasks.find((item) => item.id === exam.practice_type) ?? writingTasks[2];
+  const task1 = exam.practice_type === "task1_academic";
+  const task = writingTasks.find((item) => item.id === exam.practice_type) ?? writingTasks[1];
   const band = gradedBand(attempt);
-  const aiCover = Boolean(!exam.visual && exam.image_url?.includes("/ielts-images/covers/"));
-  const details = [facets.kindLabel, facets.topicLabel, `Tối thiểu ${task.minimum} từ`].filter(Boolean);
-  return <Link href={href} className="bl-card bl-card-shelf bl-card-writing-shelf" title={exam.prompt_preview ?? undefined}>
-    <span className={`bl-thumb ${exam.visual ? "is-visual" : ""}`}>
-      {/* Figures come from many hosts, so a plain lazy image is used rather than next/image. */}
+  const sticker = topicStickers[facets.topic] ?? topicStickers.other;
+  const figure = task1 ? exam.figure_url || (exam.image_url && !exam.image_url.includes("/ielts-images/covers/") ? exam.image_url : "") : "";
+  const prompt = exam.prompt_preview?.replace(/\s+/g, " ").trim() || "Mở đề để xem yêu cầu đầy đủ.";
+  return <Link href={href} className={`bl-card wl-card ${band !== null ? "is-graded" : ""}`}>
+    <span className={`wl-cover ${task1 ? "is-figure" : "is-sticker"}`} style={task1 ? undefined : { background: sticker.tone }}>
+      {/* Task figures come from many hosts, so a plain lazy image is used rather than next/image. */}
       {/* eslint-disable-next-line @next/next/no-img-element */}
-      {exam.visual ? <VisualThumb visual={exam.visual} kind={kind} /> : exam.image_url ? <figure className="bl-art"><img src={exam.image_url} alt="" loading="lazy" /></figure> : <TopicArt topic={artTopic(exam)} className="bl-art" />}
-      <span className="bl-usage"><Clock3 size={13} /> {exam.duration_minutes} phút</span>
-      <b className="bl-badge">{task.badge}</b>
-      {aiCover && <em className="bl-ai-badge" title="Ảnh minh họa do AI tạo theo chủ đề bài luyện">Ảnh AI</em>}
+      {task1 ? figure ? <img src={figure} alt="" loading="lazy" /> : exam.visual ? <TaskFigure visual={exam.visual} /> : <Sticker name="chart" size={78} tilt={-5} pop={false} />
+        : <Sticker name={sticker.name} size={92} tilt={-6} pop={false} />}
+      <b className="wl-kind">{task1 ? facets.kindLabel : facets.topicLabel}</b>
     </span>
-    <span className="bl-body">
-      <strong className="bl-title">{writingCardTitle(exam)}</strong>
-      <ul className="bl-types">{details.map((item) => <li key={item}>{item}</li>)}</ul>
-      <span className="bl-foot">{band !== null ? <span className="bl-mine">Band {band.toFixed(1)}</span> : <AttemptChip attempt={attempt} />}<span className="bl-source">{sourceLabel(exam)}</span><span className="bl-cta">{attempt?.state === "in_progress" ? "Viết tiếp" : attempt ? "Viết lại" : "Viết bài"} <ArrowRight size={15} /></span></span>
+    <span className="wl-copy">
+      <span className="wl-meta"><span className="wl-task">{task.label}</span>{band !== null ? <span className="bl-mine">Band {band.toFixed(1)}</span> : <AttemptChip attempt={attempt} />}</span>
+      <strong className="wl-title">{writingCardTitle(exam)}</strong>
+      {!task1 && <span className="wl-sub">{facets.kindLabel}</span>}
+      <span className="wl-prompt">{prompt}</span>
+      <span className="wl-foot"><span><Clock3 size={13} /> {exam.duration_minutes} phút</span><span>Tối thiểu {task.minimum} từ</span><span className="bl-source">{sourceLabel(exam)}</span><span className="bl-cta">{attempt?.state === "in_progress" ? "Viết tiếp" : attempt ? "Viết lại" : "Viết bài"} <ArrowRight size={15} /></span></span>
     </span>
   </Link>;
 }
-
 
 function MockLibraryCard({ test, part, title, questionTypes }: { test: MockCatalogEntry; part: number; title: string; questionTypes: string[] }) {
   const section = test.parts.find((item) => item.number === part);

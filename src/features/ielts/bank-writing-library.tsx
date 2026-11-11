@@ -34,7 +34,6 @@ export function visualKind(value: string) {
 
 export const writingTasks = [
   { id: "task1_academic", label: "Task 1 · Academic", badge: "Task 1", minimum: 150 },
-  { id: "task1_general", label: "Task 1 · General", badge: "Task 1 GT", minimum: 150 },
   { id: "task2", label: "Task 2 · Essay", badge: "Task 2", minimum: 250 },
 ] as const;
 
@@ -72,7 +71,6 @@ const otherTopic = { id: "other", label: "Chủ đề khác" };
 /** Every kind chip in display order: Task 1 visuals, letter tones, then essay types. */
 export const writingKindOptions: { id: string; label: string }[] = [
   ...Object.entries(writingKinds).filter(([id]) => !["letter", "essay"].includes(id)).map(([id, label]) => ({ id, label })),
-  ...letterTones.map(({ id, label }) => ({ id, label })),
   ...essayTypes.map(({ id, label }) => ({ id, label })),
   { id: "other", label: "Dạng khác" },
 ];
