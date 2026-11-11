@@ -298,16 +298,16 @@ export function ExamResult({ title, skill, format = "Academic", score, total, re
   }, new Map<string, { total: number; right: number; wrong: number; skipped: number }>())];
   return <main className={`bx-page bl-tone-${toneOf(skill)}`}>
     <nav className="bx-crumbs"><Link href={backHref}><ArrowLeft size={15} /> {skill}</Link><span>/</span>Kết quả</nav>
-    <section className="bx-result-hero">
+    <section className={`bx-result-hero${skill === "Writing" ? " bx-writing-result-hero" : ""}`}>
       {band !== null ? <span className="bx-band"><small>Band ước tính</small><b>{band.toFixed(1)}</b></span> : null}
-      <span className="bx-ring" style={{ "--ratio": percent === null ? 1 : percent / 100 } as React.CSSProperties}>{percent === null ? <Check size={34} /> : <><b>{score}</b><small>/{total}</small></>}</span>
+      {skill !== "Writing" && <span className="bx-ring" style={{ "--ratio": percent === null ? 1 : percent / 100 } as React.CSSProperties}>{percent === null ? <Check size={34} /> : <><b>{score}</b><small>/{total}</small></>}</span>}
       <div>
         <span className="bx-kicker">{skill} · Kết quả bài luyện</span>
         <h1>{title}</h1>
         <p className="bx-verdict">{verdict}</p>
         {total > 0 && <div className="bx-tally"><span className="is-right">Đúng <b>{score}</b></span><span className="is-wrong">Sai <b>{wrong}</b></span><span>Bỏ qua <b>{skipped}</b></span></div>}
         <p className="bx-muted">{total ? `Band quy đổi theo bảng điểm IELTS${total !== 40 ? ", ước tính từ số câu bạn đã làm" : ""}; đây là bài luyện tập, không phải điểm chính thức.` : "Bài của bạn đã được lưu để xem lại."}</p>
-        <div className="bx-hero-actions">{onRetry ? <button type="button" className="bx-start" onClick={onRetry}><RotateCcw size={17} /> Làm lại</button> : retryHref && <Link className="bx-start" href={retryHref}><RotateCcw size={17} /> Làm lại</Link>}<Link className="bx-ghost" href={backHref}>Về ngân hàng đề <ArrowRight size={16} /></Link></div>
+        <div className="bx-hero-actions">{skill === "Writing" && <a className="bx-ghost" href="#writing-review">Xem đánh giá ↓</a>}{onRetry ? <button type="button" className="bx-start" onClick={onRetry}><RotateCcw size={17} /> Làm lại</button> : retryHref && <Link className="bx-start" href={retryHref}><RotateCcw size={17} /> Làm lại</Link>}<Link className="bx-ghost" href={backHref}>Về ngân hàng đề <ArrowRight size={16} /></Link></div>
       </div>
     </section>
     {extra}
