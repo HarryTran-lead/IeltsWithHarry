@@ -85,6 +85,29 @@ it("checks factual notes against the cited page before asking AI to write", asyn
   } finally { if (previous === undefined) delete process.env.GEMINI_API_KEY; else process.env.GEMINI_API_KEY = previous; }
 });
 
+it("accepts a complete nine-paragraph passage from eight verified facts", async () => {
+  const previous = process.env.GEMINI_API_KEY;
+  process.env.GEMINI_API_KEY = "test-key";
+  const shortFacts = facts.slice(0, 8);
+  let reviews = 0;
+  const fetcher = (async (input: RequestInfo | URL, init?: RequestInit) => {
+    if (String(input).startsWith("https://www.nasa.gov/")) return new Response(`<main>${"Official mission facts. ".repeat(50)}</main>`, { headers: { "Content-Type": "text/html" } });
+    const request = JSON.parse(String(init?.body)) as { systemInstruction: { parts: { text: string }[] } };
+    const system = request.systemInstruction.parts[0].text;
+    let response: unknown;
+    if (system.startsWith("Check each atomic")) response = { evaluations: shortFacts.map((_, index) => ({ index: index + 1, supported: true })) };
+    else if (system.startsWith("Write an original")) response = { title: "A new science mission", body: Array.from({ length: 9 }, () => Array(45).fill("mission").join(" ")).join("\n\n") };
+    else { reviews++; response = { grounded: true, independent_expression: true, unsupported: [] }; }
+    return Response.json({ candidates: [{ finishReason: "STOP", content: { parts: [{ text: JSON.stringify(response) }] } }] });
+  }) as typeof fetch;
+  try {
+    const article = await writeArticleFromFacts({ topic: "A new science launch", category: "Science", facts: shortFacts }, fetcher);
+    expect(article.body.split(/\s+/)).toHaveLength(405);
+    expect(article.body.split(/\n\s*\n/)).toHaveLength(9);
+    expect(reviews).toBe(1);
+  } finally { if (previous === undefined) delete process.env.GEMINI_API_KEY; else process.env.GEMINI_API_KEY = previous; }
+});
+
 it("retries a short draft once, then reviews only a complete article", async () => {
   const previous = process.env.GEMINI_API_KEY;
   process.env.GEMINI_API_KEY = "test-key";
