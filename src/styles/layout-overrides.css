@@ -23,9 +23,9 @@
 .nav-link-locked { opacity: .55; cursor: not-allowed; }
 .stat-pill.streak { color: var(--navy); text-decoration: none; }
 .avatar-button > img { border-radius: 50%; box-shadow: 0 0 0 2px #fff, 0 0 0 3.5px #bfe7e8; }
-.nav-link-locked small { margin-left: auto; font-size: 10px; font-weight: 700; white-space: nowrap; }
+.nav-link-locked small { margin-left: auto; font-size: var(--fs-2xs); font-weight: 700; white-space: nowrap; }
 .nav-sub-links { display: flex; gap: 6px; padding: 2px 8px 8px 54px; }
-.nav-sub-links a { border-radius: var(--r-sm); padding: 5px 7px; color: var(--muted); font-size: 11px; font-weight: 700; text-decoration: none; }
+.nav-sub-links a { border-radius: var(--r-sm); padding: 5px 7px; color: var(--muted); font-size: var(--fs-2xs); font-weight: 700; text-decoration: none; }
 .nav-sub-links a:hover { background: #e5f4f3; color: var(--teal-strong); }
 
 /* Keep the sidebar visible in lessons while trimming the header. */
@@ -60,12 +60,12 @@
 .vocabulary-layout .reading-vocab-page, .vocabulary-layout .translation-page { box-sizing: border-box; width: 100%; max-width: none; margin: 0; padding: 5px 8px 30px; }
 .vocabulary-layout .listening-vocab-hero, .vocabulary-layout .collocations-header, .vocabulary-layout .word-formation-hero { margin: 5px 0 9px; }
 .vocabulary-layout .listening-vocab-hero h1, .vocabulary-layout .collocations-header h1, .vocabulary-layout .word-formation-hero h1 { font-size: clamp(24px, 2.3vw, 30px); margin: 2px 0 3px; }
-.vocabulary-layout .listening-vocab-hero p, .vocabulary-layout .collocations-header p, .vocabulary-layout .word-formation-hero p { font-size: 14px; line-height: 1.45; }
+.vocabulary-layout .listening-vocab-hero p, .vocabulary-layout .collocations-header p, .vocabulary-layout .word-formation-hero p { font-size: var(--fs-base); line-height: 1.45; }
 .vocabulary-layout .listening-vocab-hero-icon, .vocabulary-layout .collocations-total, .vocabulary-layout .word-formation-hero > svg { display: none; }
 .vocabulary-layout .listening-vocab-back, .vocabulary-layout .collocations-top, .vocabulary-layout .word-formation-back { min-height: 25px; }
 .vocabulary-layout .listening-vocab-controls, .vocabulary-layout .collocations-toolbar { padding: 8px 10px; border-radius: var(--r-md); }
 .vocabulary-layout .listening-vocab-controls select, .vocabulary-layout .collocations-toolbar select { height: 36px; }
-.vocabulary-layout .listening-vocab-stats, .vocabulary-layout .collocations-stats { padding: 6px 3px; gap: 17px; font-size: 13px; }
+.vocabulary-layout .listening-vocab-stats, .vocabulary-layout .collocations-stats { padding: 6px 3px; gap: 17px; font-size: var(--fs-sm); }
 .vocabulary-layout .listening-vocab-tabs { margin-bottom: 8px; }
 .vocabulary-layout .listening-vocab-tabs button { padding: 7px 12px; }
 .vocabulary-layout .listening-vocab-topics, .vocabulary-layout .listening-vocab-library, .vocabulary-layout .listening-vocab-study,
@@ -74,8 +74,8 @@
 /* The study card sits centred in its panel instead of leaving an empty strip on the right. */
 .vocabulary-layout .listening-vocab-card, .vocabulary-layout .collocations-card { margin-inline: auto; }
 .vocabulary-layout .collocations-progress { margin: 10px 0 12px; }
-.vocabulary-layout .word-formation-stats { gap: 17px; margin: 5px 0 10px; font-size: 13px; }
-.vocabulary-layout .word-formation-stats strong { font-size: 17px; }
+.vocabulary-layout .word-formation-stats { gap: 17px; margin: 5px 0 10px; font-size: var(--fs-sm); }
+.vocabulary-layout .word-formation-stats strong { font-size: var(--fs-lg); }
 .vocabulary-layout .word-formation-layout { gap: 10px; }
 .vocabulary-layout .reading-vocab-back { margin-bottom: 6px; }
 .vocabulary-layout .reading-vocab-hero { padding: 10px 14px; }
@@ -117,18 +117,18 @@
 /* Vocabulary readability (2026-11 audit): learning content is never under 12px, and Vietnamese meanings in lists are 13px. */
 .vocabulary-layout .word-formation-list > button > span,
 .vocabulary-layout .word-formation-list small,
-.vocabulary-layout .reading-vocab-page small { font-size: 13px; }
+.vocabulary-layout .reading-vocab-page small { font-size: var(--fs-sm); }
 .vocabulary-layout .word-formation-note,
 .vocabulary-layout .word-formation-prompt > span,
 .vocabulary-layout .word-formation-toolbar label,
 .vocabulary-layout .reading-vocab-topic,
-.vocabulary-layout .vocab-tag { font-size: 12px; }
+.vocabulary-layout .vocab-tag { font-size: var(--fs-xs); }
 /* Library: no repeated topic picture, and the "not reviewed" note no longer outshines the meaning. */
 .vocabulary-layout .vocab-library-art { display: none; }
 .vocabulary-layout .vocab-library-card { gap: 8px; padding: 16px; }
-.vocabulary-layout .vocab-reference-badge { justify-self: start; padding: 0; border: 0; background: none; color: #5f768c; font-size: 12px; font-weight: 700; }
+.vocabulary-layout .vocab-reference-badge { justify-self: start; padding: 0; border: 0; background: none; color: #5f768c; font-size: var(--fs-xs); font-weight: 700; }
 .vocabulary-layout .vocab-library-card > strong { font-size: 16px; line-height: 1.45; }
-.vocabulary-layout .vocab-library-card small { font-size: 12.5px; }
+.vocabulary-layout .vocab-library-card small { font-size: var(--fs-xs); }
 /* On phones the quick-notebook bubble would sit on the study controls; it stays on other pages. */
 @media (max-width: 700px) {
   .learning-focus .notebook-bubble { display: none; }

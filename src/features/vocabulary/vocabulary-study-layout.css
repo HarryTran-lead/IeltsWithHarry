@@ -3,17 +3,17 @@
 .vocab-study-toolbar,.vocab-study .vocab-study-board{box-sizing:border-box;width:min(100%,1020px);max-width:1020px;margin-inline:auto}
 .vocab-study-toolbar{padding:12px 14px;border:1px solid #dce9ed;border-radius:var(--r-lg);background:#fff;box-shadow:0 8px 24px #173d5f0a}
 .vocab-study-toolbar-row{display:grid;grid-template-columns:auto minmax(170px,1.15fr) minmax(160px,1fr) minmax(140px,.8fr) auto;align-items:center;gap:8px}
-.vocab-study-back,.vocab-study-library{display:inline-flex;align-items:center;justify-content:center;min-height:40px;padding:0 10px;color:var(--teal-strong);font-size:13px;font-weight:800;text-decoration:none;white-space:nowrap}
-.vocab-study-toolbar-row select{width:100%;min-width:0;height:40px;padding:0 10px;border:1px solid #dce9ed;border-radius:var(--r-sm);background:#f8fbfc;color:#24445d;font:inherit;font-size:13px;font-weight:750;cursor:pointer}
+.vocab-study-back,.vocab-study-library{display:inline-flex;align-items:center;justify-content:center;min-height:40px;padding:0 10px;color:var(--teal-strong);font-size:var(--fs-sm);font-weight:800;text-decoration:none;white-space:nowrap}
+.vocab-study-toolbar-row select{width:100%;min-width:0;height:40px;padding:0 10px;border:1px solid #dce9ed;border-radius:var(--r-sm);background:#f8fbfc;color:#24445d;font:inherit;font-size:var(--fs-sm);font-weight:750;cursor:pointer}
 .vocab-study-toolbar .vocab-study-modes{display:flex;gap:6px;margin-top:9px;padding-top:9px;border-top:1px solid #e9eff2}
 .vocab-study-toolbar .vocab-study-modes button{display:block;flex:1;min-height:35px;padding:7px 10px;text-align:center;border-radius:var(--r-sm);background:transparent}
 .vocab-study-toolbar .vocab-study-modes button.active{background:#e7f9f7}
-.vocab-study-toolbar .vocab-study-modes button strong{font-size:12px}
+.vocab-study-toolbar .vocab-study-modes button strong{font-size:var(--fs-xs)}
 .vocab-study-toolbar a:focus-visible,.vocab-study-toolbar select:focus-visible,.vocab-study-toolbar button:focus-visible,.vocab-study-board button:focus-visible{outline:3px solid #48bec5;outline-offset:2px}
 .vocab-study .vocab-study-board{padding:18px 20px}
 .vocab-study-progress{margin-bottom:16px}
-.vocab-study-progress .vocab-study-meta{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:8px;color:#526d83;font-size:12px}
-.vocab-study-progress .vocab-study-meta strong{color:#173455;font-size:15px;font-weight:800}
+.vocab-study-progress .vocab-study-meta{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:8px;color:#526d83;font-size:var(--fs-xs)}
+.vocab-study-progress .vocab-study-meta strong{color:#173455;font-size:var(--fs-md);font-weight:800}
 .vocab-study-progress progress{display:block;width:100%;height:10px;overflow:hidden;border:0;border-radius:var(--r-pill);background:#e8f0f2;accent-color:var(--teal)}
 .vocab-study-progress progress::-webkit-progress-bar{border-radius:var(--r-pill);background:#e8f0f2}
 .vocab-study-progress progress::-webkit-progress-value{border-radius:var(--r-pill);background:linear-gradient(90deg,var(--teal),#10b999)}
@@ -21,65 +21,65 @@
 .vocab-study-card{display:grid;grid-template-columns:minmax(160px,220px) minmax(0,1fr);align-items:center;gap:24px;min-height:310px;padding:20px;border:1px solid #dce9ed;border-radius:var(--r-lg);background:linear-gradient(135deg,#f8fbff,#f0fbf8)}
 .vocab-study-card-image{display:flex;flex-direction:column;gap:6px;min-width:0}
 .vocab-study-card-image .vocab-card-art{width:100%;height:216px;border:0;border-radius:var(--r-md)}
-.vocab-study-card-image small{color:#617c8f;font-size:11px}
+.vocab-study-card-image small{color:#617c8f;font-size:var(--fs-2xs)}
 .vocab-study-card-word{display:flex;flex-direction:column;align-items:flex-start;justify-content:center;min-width:0}
-.vocab-study-card-word>span,.vocab-study-card-definition>span{color:#347587;font-size:11px;font-weight:800;letter-spacing:.08em;text-transform:uppercase}
+.vocab-study-card-word>span,.vocab-study-card-definition>span{color:#347587;font-size:var(--fs-2xs);font-weight:800;letter-spacing:.08em;text-transform:uppercase}
 .vocab-study .vocab-study-card-word h2{max-width:100%;margin:8px 0 10px;color:#102f52;font:800 clamp(38px,4.4vw,58px)/1.04 var(--font-display);letter-spacing:-.04em;overflow-wrap:anywhere}
-.vocab-study-card-word .vocab-study-ipa{margin:0 0 6px;color:#526c83;font-size:15px}
+.vocab-study-card-word .vocab-study-ipa{margin:0 0 6px;color:#526c83;font-size:var(--fs-md)}
 .vocab-study-card-definition{max-width:650px;min-width:0}
-.vocab-study-card-definition:not(.revealed) p{margin:5px 0;color:#425e75;font-size:15px;line-height:1.5}
+.vocab-study-card-definition:not(.revealed) p{margin:5px 0;color:#425e75;font-size:var(--fs-md);line-height:1.5}
 .vocab-study-card-definition.revealed{width:100%;padding:15px 18px;border:1px solid #cce7e5;border-radius:var(--r-md);background:#fff}
 .vocab-study .vocab-study-card-definition h3{margin:7px 0 0;color:#153854;font:800 clamp(18px,2vw,24px)/1.32 var(--font-display);letter-spacing:0;text-transform:none;overflow-wrap:anywhere}
-.vocab-study-card-definition p{margin:7px 0 0;color:#254c64;font-size:15px;line-height:1.55}
+.vocab-study-card-definition p{margin:7px 0 0;color:#254c64;font-size:var(--fs-md);line-height:1.55}
 .vocab-study-card-definition blockquote{margin:10px 0 0;padding:5px 0 5px 12px;border-left:3px solid var(--teal);color:#294c61;font-size:16px;line-height:1.6}
 .vocab-study-card-controls{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-top:16px}
-.vocab-study-speak{padding:8px 0;border:0;background:transparent;color:var(--teal-strong);font-family:inherit;font-size:13px;font-weight:800;cursor:pointer}
-.vocab-study-reveal{padding:10px 15px;border:0;border-radius:var(--r-md);background:var(--teal);color:#fff;font-family:inherit;font-size:13px;font-weight:800;cursor:pointer}
+.vocab-study-speak{padding:8px 0;border:0;background:transparent;color:var(--teal-strong);font-family:inherit;font-size:var(--fs-sm);font-weight:800;cursor:pointer}
+.vocab-study-reveal{padding:10px 15px;border:0;border-radius:var(--r-md);background:var(--teal);color:#fff;font-family:inherit;font-size:var(--fs-sm);font-weight:800;cursor:pointer}
 .vocab-study-reveal:hover{background:var(--teal-strong)}
 .vocab-study .vocab-study-actions{justify-content:flex-end;margin:14px 0 0}
 .vocab-study-question{display:grid;grid-template-columns:132px minmax(0,1fr);align-items:center;gap:18px;margin:12px 0 14px}
 .vocab-study-question .vocab-card-art{width:132px;height:100px;border-radius:var(--r-md)}
 .vocab-study-question h2{margin:5px 0 0;font:800 clamp(23px,2.7vw,34px)/1.2 var(--font-display);overflow-wrap:anywhere}
 .vocab-study-board-choice .vocab-options{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px;margin:10px 0}
-.vocab-study-board-choice .vocab-options button{min-height:59px;padding:10px 13px;font-size:13px;line-height:1.35}
+.vocab-study-board-choice .vocab-options button{min-height:59px;padding:10px 13px;font-size:var(--fs-sm);line-height:1.35}
 .vocab-study-board-type .vocab-study-input{margin:8px 0}
 .vocab-study-board-match .vocab-match-grid{margin:12px 0}
 .vocab-study-board-match .vocab-match-grid button{min-height:54px}
-.vocab-study .vocab-muted{margin:14px 0 0;font-size:11px;line-height:1.45}
+.vocab-study .vocab-muted{margin:14px 0 0;font-size:var(--fs-2xs);line-height:1.45}
 @media(max-width:800px){.vocab-study-toolbar-row{grid-template-columns:repeat(2,minmax(0,1fr))}.vocab-study-back{justify-content:flex-start}.vocab-study-library{justify-content:flex-end}}
-@media(max-width:650px){.vocab-hub-study{padding-top:4px}.vocab-study-toolbar{padding:10px}.vocab-study-toolbar-row select{font-size:12px}.vocab-study-toolbar .vocab-study-modes{display:grid;grid-template-columns:repeat(4,minmax(0,1fr))}.vocab-study-toolbar .vocab-study-modes button{min-height:38px;padding:5px 2px}.vocab-study-toolbar .vocab-study-modes button strong{font-size:11px}.vocab-study .vocab-study-board{padding:14px}.vocab-study-card{grid-template-columns:105px minmax(0,1fr);gap:12px;min-height:0;padding:12px}.vocab-study-card-image .vocab-card-art{height:105px}.vocab-study-card-image small{font-size:10px}.vocab-study .vocab-study-card-word h2{font-size:clamp(30px,7vw,42px)}.vocab-study-card-definition.revealed{padding:11px}.vocab-study-progress .vocab-study-meta{font-size:11px;flex-wrap:wrap}.vocab-study-question{grid-template-columns:94px minmax(0,1fr);gap:11px}.vocab-study-question .vocab-card-art{width:94px;height:80px}.vocab-study-board-choice .vocab-options{grid-template-columns:1fr}}
+@media(max-width:650px){.vocab-hub-study{padding-top:4px}.vocab-study-toolbar{padding:10px}.vocab-study-toolbar-row select{font-size:var(--fs-xs)}.vocab-study-toolbar .vocab-study-modes{display:grid;grid-template-columns:repeat(4,minmax(0,1fr))}.vocab-study-toolbar .vocab-study-modes button{min-height:38px;padding:5px 2px}.vocab-study-toolbar .vocab-study-modes button strong{font-size:var(--fs-2xs)}.vocab-study .vocab-study-board{padding:14px}.vocab-study-card{grid-template-columns:105px minmax(0,1fr);gap:12px;min-height:0;padding:12px}.vocab-study-card-image .vocab-card-art{height:105px}.vocab-study-card-image small{font-size:var(--fs-2xs)}.vocab-study .vocab-study-card-word h2{font-size:clamp(30px,7vw,42px)}.vocab-study-card-definition.revealed{padding:11px}.vocab-study-progress .vocab-study-meta{font-size:var(--fs-2xs);flex-wrap:wrap}.vocab-study-question{grid-template-columns:94px minmax(0,1fr);gap:11px}.vocab-study-question .vocab-card-art{width:94px;height:80px}.vocab-study-board-choice .vocab-options{grid-template-columns:1fr}}
 @media(max-width:430px){.vocab-study-card{grid-template-columns:1fr}.vocab-study-card-image{flex-direction:row;align-items:center}.vocab-study-card-image .vocab-card-art{width:92px;height:72px}.vocab-study-card-word{align-items:flex-start}}
 .vocab-to-translation{display:inline-flex;align-items:center;margin:0 0 16px;padding:9px 13px;border:1px solid #a9dcda;border-radius:var(--r-sm);background:#eaf8f7;color:var(--teal-strong);font-weight:800;text-decoration:none}.vocab-to-translation:hover{background:#d9f3f1}
-.vocab-study-toolbar-heading{display:flex;align-items:center;gap:12px;min-height:32px;color:#315a70;font-size:13px;font-weight:800}
+.vocab-study-toolbar-heading{display:flex;align-items:center;gap:12px;min-height:32px;color:#315a70;font-size:var(--fs-sm);font-weight:800}
 .vocab-study-toolbar-heading>span{overflow:hidden;white-space:nowrap;text-overflow:ellipsis}
-.vocab-study-toolbar-heading>button{flex:none;margin-left:auto;border:1px solid #cde5e5;border-radius:var(--r-sm);padding:7px 10px;background:#eff9f8;color:var(--teal-strong);font:800 12px var(--font-display);cursor:pointer}
+.vocab-study-toolbar-heading>button{flex:none;margin-left:auto;border:1px solid #cde5e5;border-radius:var(--r-sm);padding:7px 10px;background:#eff9f8;color:var(--teal-strong);font:800 var(--fs-xs) var(--font-display);cursor:pointer}
 .vocab-study-toolbar-row{grid-template-columns:minmax(150px,1.1fr) minmax(160px,1fr) minmax(140px,.8fr) auto;margin-top:8px}
 .vocab-study-card{grid-template-columns:minmax(0,1fr);min-height:235px;padding:24px}
 .vocab-study .vocab-study-card-word h2{font-size:clamp(30px,3.2vw,44px)}
 .vocab-study-question{grid-template-columns:minmax(0,1fr);min-height:95px;margin:0 0 12px}
-.vocab-study-board-choice .vocab-options button{font-size:15px;line-height:1.45}
+.vocab-study-board-choice .vocab-options button{font-size:var(--fs-md);line-height:1.45}
 .vocab-study-board-choice .vocab-options button.correct{border-color:#40bc8c;background:#effcf4;color:#166b50}
 .vocab-study-board-choice .vocab-options button.wrong{border-color:#ed8990;background:#fff5f6;color:#ab4354}
-.vocab-study .vocab-feedback small{display:block;margin-top:7px;font-size:12px}
-.vocab-study-hint{border:0;background:transparent;color:var(--teal-strong);font:800 12px var(--font-display);cursor:pointer}
-.vocab-study-hint-text{margin-left:10px;color:#526d83;font-size:12px}
+.vocab-study .vocab-feedback small{display:block;margin-top:7px;font-size:var(--fs-xs)}
+.vocab-study-hint{border:0;background:transparent;color:var(--teal-strong);font:800 var(--fs-xs) var(--font-display);cursor:pointer}
+.vocab-study-hint-text{margin-left:10px;color:#526d83;font-size:var(--fs-xs)}
 .vocab-study-complete{padding:24px;border:1px solid #cfe9e5;border-radius:var(--r-md);background:#f0faf7}
 .vocab-study-complete h2{margin:0 0 10px;color:#12435d}
 .vocab-study-complete p{color:#385c70}
 .vocab-study-complete-actions{display:flex;align-items:center;flex-wrap:wrap;gap:9px;margin-top:18px}
-.vocab-study-complete-actions>a{color:var(--teal-strong);font-size:13px;font-weight:800}
+.vocab-study-complete-actions>a{color:var(--teal-strong);font-size:var(--fs-sm);font-weight:800}
 @media(max-width:650px){.vocab-study-toolbar-row{grid-template-columns:1fr 1fr}.vocab-study-card{grid-template-columns:1fr;padding:16px}.vocab-study-question{grid-template-columns:1fr}.vocab-study .vocab-study-actions{position:sticky;bottom:8px;z-index:2;padding:8px;border:1px solid #dce9ed;border-radius:var(--r-md);background:#fffffff0;backdrop-filter:blur(8px)}.vocab-study .vocab-study-actions .vocab-button{min-height:44px;width:100%}}
 /* Learning loop (2026-11): one card shape for every mode, big rating buttons, keyboard hints. */
 .vocab-study{--vs-ink:#13304f;--vs-muted:#5f768c;--vs-line:#dce9ed;--vs-teal:#0b8f98;--vs-teal-soft:#e7f7f6;--vs-good:#1c9a6c;--vs-good-soft:#e8f8f0;--vs-bad:#c9434b;--vs-bad-soft:#fdf0f1}
 .vocab-study-toolbar .vocab-study-modes{display:grid;grid-template-columns:repeat(5,minmax(0,1fr))}
 .vocab-study-toolbar .vocab-study-modes button{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1px;min-height:44px;border:1px solid transparent;color:var(--vs-muted)}
-.vocab-study-toolbar .vocab-study-modes button strong{font-size:13.5px;color:inherit}
-.vocab-study-toolbar .vocab-study-modes button small{color:var(--vs-teal);font-size:11px;font-weight:800}
+.vocab-study-toolbar .vocab-study-modes button strong{font-size:var(--fs-sm);color:inherit}
+.vocab-study-toolbar .vocab-study-modes button small{color:var(--vs-teal);font-size:var(--fs-2xs);font-weight:800}
 .vocab-study-toolbar .vocab-study-modes button.active{border-color:#b8e3e1;background:var(--vs-teal-soft);color:var(--vs-ink)}
-.vocab-study-speak-toggle{display:inline-flex;align-items:center;gap:6px;flex:none;margin-left:auto;min-height:36px;padding:0 10px;border:1px solid var(--vs-line);border-radius:var(--r-md);background:#fff;color:var(--vs-muted);font:800 12.5px var(--font-display);cursor:pointer}
+.vocab-study-speak-toggle{display:inline-flex;align-items:center;gap:6px;flex:none;margin-left:auto;min-height:36px;padding:0 10px;border:1px solid var(--vs-line);border-radius:var(--r-md);background:#fff;color:var(--vs-muted);font:800 var(--fs-xs) var(--font-display);cursor:pointer}
 .vocab-study-speak-toggle[aria-pressed=true]{color:var(--vs-teal);border-color:#b8e3e1}
 .vocab-study-toolbar-heading>.vocab-study-speak-toggle+button{margin-left:0}
-.vocab-stage{display:inline-flex;align-items:center;margin:0 0 10px;padding:4px 10px;border-radius:var(--r-pill);background:var(--vs-teal-soft);color:var(--vs-teal);font-size:12.5px;font-weight:800}
+.vocab-stage{display:inline-flex;align-items:center;margin:0 0 10px;padding:4px 10px;border-radius:var(--r-pill);background:var(--vs-teal-soft);color:var(--vs-teal);font-size:var(--fs-xs);font-weight:800}
 .vocab-stage-choice{background:#eef3ff;color:#3d5fc4}
 .vocab-stage-type{background:#fff3e2;color:#a3610b}
 .vocab-study-card{min-height:min(52vh,420px);align-content:center}
@@ -97,43 +97,43 @@
 .vocab-study-stage-choice .vocab-options button:not(:disabled):hover{border-color:#8fd0d2;transform:translateY(-1px)}
 .vocab-study-stage-choice .vocab-options button.correct{border-color:var(--vs-good);background:var(--vs-good-soft);color:#14573f}
 .vocab-study-stage-choice .vocab-options button.wrong{border-color:var(--vs-bad);background:var(--vs-bad-soft);color:#93323a;animation:vocab-shake .2s}
-.vocab-study kbd{display:inline-grid;place-items:center;min-width:24px;height:22px;padding:0 6px;border:1px solid currentColor;border-radius:var(--r-sm);font:800 11.5px var(--font-display);opacity:.7}
+.vocab-study kbd{display:inline-grid;place-items:center;min-width:24px;height:22px;padding:0 6px;border:1px solid currentColor;border-radius:var(--r-sm);font:800 var(--fs-2xs) var(--font-display);opacity:.7}
 .vocab-options kbd{flex:none;opacity:.55}
 @keyframes vocab-shake{25%{transform:translateX(-4px)}75%{transform:translateX(4px)}}
 .vocab-study-type{display:grid;gap:8px;margin:6px 0}
 .vocab-study-type .vocab-study-input{width:100%;min-height:56px;padding:0 16px;border:1.5px solid var(--vs-line);border-radius:var(--r-md);font:700 20px var(--font-display);color:var(--vs-ink)}
 .vocab-study-type .vocab-study-input:focus{border-color:var(--vs-teal);outline:3px solid #bfe8e9}
-.vocab-study-type .vocab-study-hint-text{margin:0;font-size:13px}
-.vocab-study .vocab-feedback{display:flex;align-items:center;flex-wrap:wrap;gap:8px;margin:10px 0 0;padding:12px 14px;border-radius:var(--r-md);font-size:15px}
+.vocab-study-type .vocab-study-hint-text{margin:0;font-size:var(--fs-sm)}
+.vocab-study .vocab-feedback{display:flex;align-items:center;flex-wrap:wrap;gap:8px;margin:10px 0 0;padding:12px 14px;border-radius:var(--r-md);font-size:var(--fs-md)}
 .vocab-study .vocab-feedback.correct{background:var(--vs-good-soft);color:#14573f}
 .vocab-study .vocab-feedback.wrong{background:var(--vs-bad-soft);color:#93323a}
-.vocab-overrule{margin-left:auto;min-height:34px;padding:0 12px;border:1px solid currentColor;border-radius:var(--r-sm);background:#fff;color:inherit;font:800 12.5px var(--font-display);cursor:pointer}
+.vocab-overrule{margin-left:auto;min-height:34px;padding:0 12px;border:1px solid currentColor;border-radius:var(--r-sm);background:#fff;color:inherit;font:800 var(--fs-xs) var(--font-display);cursor:pointer}
 .vocab-study .vocab-study-actions{display:flex;align-items:center;justify-content:flex-end;gap:10px}
-.vocab-study .vocab-study-actions .vocab-button{min-height:48px;padding:0 20px;font-size:15px;gap:10px}
+.vocab-study .vocab-study-actions .vocab-button{min-height:48px;padding:0 20px;font-size:var(--fs-md);gap:10px}
 .vocab-study .vocab-study-actions .vocab-button kbd{border-color:#ffffff99;color:#fff}
 .vocab-rate{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;width:min(100%,460px)}
-.vocab-rate button{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:52px;border:1.5px solid;border-radius:var(--r-md);font:800 15.5px var(--font-display);cursor:pointer;transition:transform .15s}
+.vocab-rate button{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:52px;border:1.5px solid;border-radius:var(--r-md);font:800 var(--fs-md) var(--font-display);cursor:pointer;transition:transform .15s}
 .vocab-rate button:hover{transform:translateY(-1px)}
 .vocab-rate-unknown{border-color:#f0b4b8;background:var(--vs-bad-soft);color:#93323a}
 .vocab-rate-known{border-color:#9fdcc3;background:var(--vs-good-soft);color:#14573f}
-.vocab-study-keys{display:inline-flex;align-items:center;gap:6px;color:var(--vs-muted);font-size:13px}
+.vocab-study-keys{display:inline-flex;align-items:center;gap:6px;color:var(--vs-muted);font-size:var(--fs-sm)}
 .vocab-study-match-title{margin:0 0 6px;font-size:20px}
 .vocab-study-hard{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:8px;margin:12px 0 0;padding:0;list-style:none}
 .vocab-study-hard li{display:grid;gap:2px;padding:10px 12px;border:1px solid #f1d2b2;border-radius:var(--r-md);background:#fff8ef}
-.vocab-study-hard strong{color:var(--vs-ink);font-size:15px}
-.vocab-study-hard span{color:#6b5a45;font-size:13.5px}
-.vocab-study .vocab-muted{font-size:12.5px;color:var(--vs-muted)}
+.vocab-study-hard strong{color:var(--vs-ink);font-size:var(--fs-md)}
+.vocab-study-hard span{color:#6b5a45;font-size:var(--fs-sm)}
+.vocab-study .vocab-muted{font-size:var(--fs-xs);color:var(--vs-muted)}
 @media(prefers-reduced-motion:reduce){.vocab-study-card-definition.revealed,.vocab-study-stage-choice .vocab-options button.wrong{animation:none}}
 @media(max-width:650px){
   .vocab-study-toolbar .vocab-study-modes{grid-template-columns:repeat(5,minmax(0,1fr));gap:4px}
   .vocab-study-toolbar .vocab-study-modes button{min-height:44px;padding:4px 2px}
-  .vocab-study-toolbar .vocab-study-modes button strong{font-size:12px;line-height:1.2}
+  .vocab-study-toolbar .vocab-study-modes button strong{font-size:var(--fs-xs);line-height:1.2}
   .vocab-study-toolbar .vocab-study-modes button small{display:none}
   .vocab-study-speak-toggle span{display:none}
   .vocab-study-card{min-height:min(46vh,380px)}
   .vocab-study .vocab-study-card-word h2{font-size:clamp(32px,9vw,42px)}
   .vocab-study-stage-choice .vocab-options{grid-template-columns:1fr}
-  .vocab-study-stage-choice .vocab-options button{min-height:56px;font-size:15px}
+  .vocab-study-stage-choice .vocab-options button{min-height:56px;font-size:var(--fs-md)}
   .vocab-study .vocab-study-actions{bottom:calc(76px + env(safe-area-inset-bottom))}
   .vocab-rate{width:100%}
   .vocab-study kbd{display:none}
@@ -143,16 +143,16 @@
 /* UX pass (2026-11-04): the speak button moved into .vocab-study-card-tools, so it lost its pill style and its icon stacked above the label. */
 .vocab-study-card-tools .vocab-study-speak{display:inline-flex;align-items:center;gap:6px;min-height:40px;padding:0 14px;border:1px solid #cfe6e8;border-radius:var(--r-pill);background:#fff}
 .vocab-study-card-tools .vocab-star{width:40px;height:40px}
-.vocab-study-forms{margin:-4px 0 6px;color:var(--vs-muted);font-size:14px}
+.vocab-study-forms{margin:-4px 0 6px;color:var(--vs-muted);font-size:var(--fs-base)}
 /* A shorter card keeps the main button in view on laptop screens; content starts at the top instead of floating mid-card. */
 .vocab-study-card{min-height:min(40vh,340px);align-content:start}
 .vocab-study-match-head{display:flex;align-items:center;justify-content:space-between;gap:12px}
-.vocab-study-match-clock{flex:none;padding:4px 10px;border-radius:var(--r-pill);background:var(--vs-teal-soft);color:var(--vs-teal);font:800 13px var(--font-display);font-variant-numeric:tabular-nums}
-.vocab-study-match-help{margin:0;color:var(--vs-muted);font-size:13.5px}
-.vocab-study-board-match .vocab-match-grid button{display:flex;align-items:center;gap:8px;font-size:15px;line-height:1.4}
+.vocab-study-match-clock{flex:none;padding:4px 10px;border-radius:var(--r-pill);background:var(--vs-teal-soft);color:var(--vs-teal);font:800 var(--fs-sm) var(--font-display);font-variant-numeric:tabular-nums}
+.vocab-study-match-help{margin:0;color:var(--vs-muted);font-size:var(--fs-sm)}
+.vocab-study-board-match .vocab-match-grid button{display:flex;align-items:center;gap:8px;font-size:var(--fs-md);line-height:1.4}
 .vocab-study-board-match .vocab-match-grid button:disabled{opacity:1;border-color:#b5e3cd;background:var(--vs-good-soft);color:#4f7a68}
 .vocab-study-board-match .vocab-match-grid button:disabled svg{flex:none;color:var(--vs-good)}
 .vocab-study-board-match .vocab-match-grid button.wrong{border-color:var(--vs-bad);background:var(--vs-bad-soft);animation:vocab-shake .2s}
 @media(prefers-reduced-motion:reduce){.vocab-study-board-match .vocab-match-grid button.wrong{animation:none}}
-@media(max-width:650px){.vocab-study-card{min-height:0}.vocab-study-board-match .vocab-match-grid button{font-size:14px}}
+@media(max-width:650px){.vocab-study-card{min-height:0}.vocab-study-board-match .vocab-match-grid button{font-size:var(--fs-base)}}
 .vocab-study-toolbar-heading>button{min-height:36px}

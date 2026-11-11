@@ -45,7 +45,7 @@
   margin: 0;
   overflow: hidden;
   color: var(--muted);
-  font-size: 13px;
+  font-size: var(--fs-sm);
   line-height: 1.4;
   white-space: nowrap;
   text-overflow: ellipsis;
@@ -61,7 +61,7 @@
 .page-head-actions .button {
   min-height: 34px;
   padding: 0 13px;
-  font-size: 13px;
+  font-size: var(--fs-sm);
 }
 .page-head-link {
   display: inline-flex;
@@ -69,7 +69,7 @@
   gap: 5px;
   padding: 0 6px;
   color: var(--muted);
-  font-size: 13px;
+  font-size: var(--fs-sm);
   font-weight: 600;
   transition: color 0.2s;
 }
@@ -85,7 +85,7 @@
   border-radius: var(--r-pill);
   background: rgba(255, 255, 255, 0.85);
   color: var(--muted);
-  font-size: 12.5px;
+  font-size: var(--fs-xs);
   font-weight: 600;
   white-space: nowrap;
 }
@@ -141,7 +141,7 @@
 }
 .vocab-hub .vocab-header p {
   margin: 0;
-  font-size: 13.5px;
+  font-size: var(--fs-sm);
 }
 
 /* Dashboard welcome stays friendly but shorter. */
@@ -152,7 +152,7 @@
   padding: 20px 0 20px 28px;
 }
 .welcome-greeting {
-  font-size: 18px;
+  font-size: var(--fs-lg);
 }
 .welcome-copy h1 {
   font-size: var(--fs-page-title);
@@ -269,7 +269,7 @@
   padding: 7px 10px;
 }
 .app-frame .dh-numbers dd {
-  font-size: 19px;
+  font-size: var(--fs-lg);
 }
 
 /* Vocabulary landing: title and the three steps in one row. */
@@ -302,7 +302,7 @@
   padding: 7px 10px;
 }
 .app-frame .vocabulary-today-steps li span {
-  font-size: 12px;
+  font-size: var(--fs-xs);
 }
 .app-frame .vocabulary-today-steps li span > :not(b) {
   display: none;
@@ -322,7 +322,7 @@
 }
 .app-frame .voa-library-heading p,
 .app-frame .voa-bank-hero p {
-  font-size: 13.5px;
+  font-size: var(--fs-sm);
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -358,7 +358,7 @@
 }
 .app-frame .page-title-row p {
   margin: 2px 0 0;
-  font-size: 13px;
+  font-size: var(--fs-sm);
 }
 
 /* Reading vocabulary. */
@@ -516,7 +516,7 @@ body .app-frame :is(
     flex: 1 1 0;
     min-width: 0;
     padding: 0 8px;
-    font-size: 12.5px;
+    font-size: var(--fs-xs);
   }
   .app-frame .voa-library-heading p,
   .app-frame .voa-bank-hero p {

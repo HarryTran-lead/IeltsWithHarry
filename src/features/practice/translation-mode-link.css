@@ -32,10 +32,10 @@
   min-width: 0;
 }
 .translation-mode-link-copy strong {
-  font-size: 13.5px;
+  font-size: var(--fs-sm);
   font-weight: 700;
 }
 .translation-mode-link-copy small {
   color: var(--muted);
-  font-size: 12px;
+  font-size: var(--fs-xs);
 }

@@ -12,7 +12,7 @@ body {
   background: var(--paper);
   color: var(--navy);
   font-family: var(--font-sans), "Be Vietnam Pro", system-ui, sans-serif;
-  font-size: 14px;
+  font-size: var(--fs-base);
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
