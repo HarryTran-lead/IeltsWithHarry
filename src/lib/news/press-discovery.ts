@@ -22,8 +22,21 @@ export function eligibleDiscoveryLead(item: Pick<NewsItem, "sensitive" | "publis
 }
 /** A rejected topic consumes a research attempt, not one of the article slots. */
 export function discoveryBudget(articleCount: number, rejectedCount: number, articleLimit: number) {
-  const attemptLimit = Math.min(articleLimit * 4, 64);
+  const attemptLimit = Math.min(articleLimit * 4, 200);
   return articleLimit > 0 && articleCount < articleLimit && articleCount + rejectedCount < attemptLimit;
+}
+export function discoveryBatchLimit(articleCount: number, rejectedCount: number, articleLimit: number) {
+  return discoveryBudget(articleCount, rejectedCount, articleLimit)
+    ? Math.min(2, articleLimit - articleCount, Math.min(articleLimit * 4, 200) - articleCount - rejectedCount) : 0;
+}
+/** Alternate feed groups so each 20-minute discovery slot has fresh leads. */
+export function discoveryFeedGroup(now: Date) {
+  return Math.floor(now.getTime() / (20 * 60 * 1000)) % 2;
+}
+export function vietnamDayStart(now = new Date()) {
+  const local = new Date(now.getTime() + 7 * 60 * 60 * 1000);
+  local.setUTCHours(0, 0, 0, 0);
+  return new Date(local.getTime() - 7 * 60 * 60 * 1000);
 }
 /** Failed leads count toward category rotation, so one busy feed cannot exhaust every research slot. */
 export function youthRelevanceForTitle(title: string, category: string) {
@@ -109,18 +122,23 @@ export async function findIndependentDossier(item: NewsItem, fetcher: typeof fet
   return extract([...pages, ...(await readPages(relatedUrls))]);
 }
 
-/** One bounded attempt per run; only a fully verified original article becomes public. */
-export async function discoverPressFacts(db: Db, result: DiscoveryRun, settings: NewsAdminSettings, fetcher: typeof fetch = fetch) {
+/** Two bounded attempts per run; only fully verified original articles become public. */
+export async function discoverPressFacts(db: Db, result: DiscoveryRun, settings: NewsAdminSettings, fetcher: typeof fetch = fetch, scheduled = false) {
   if (!process.env.GEMINI_API_KEY || settings.daily_rewrite_limit <= 0) return;
-  const today = new Date(); today.setUTCHours(0, 0, 0, 0);
+  const today = vietnamDayStart();
   const [drafts, rejected, sources] = await Promise.all([
     db.from("news_articles").select("id,category,metadata", { count: "exact" }).like("external_id", "press-discovery:%").gte("published_at", today.toISOString()),
     db.from("news_skipped_urls").select("canonical_hash", { count: "exact", head: true }).eq("reason", "ai_rewrite").gte("skipped_at", today.toISOString()),
     db.from("news_sources").select("*").eq("provider", "ai_rewrite").eq("enabled", true).eq("policy_status", "METADATA_ONLY"),
   ]);
   if (drafts.error || rejected.error || sources.error) throw drafts.error ?? rejected.error ?? sources.error;
-  if (!discoveryBudget(drafts.count ?? 0, rejected.count ?? 0, settings.daily_rewrite_limit)) return;
-  const feeds = await Promise.allSettled(((sources.data ?? []) as NewsSource[]).filter((source) => source.feed_url && pressDiscoveryFeedUrls.has(source.feed_url))
+  const batchLimit = discoveryBatchLimit(drafts.count ?? 0, rejected.count ?? 0, settings.daily_rewrite_limit);
+  if (!batchLimit) return;
+  const approvedSources = ((sources.data ?? []) as NewsSource[]).filter((source) => source.feed_url && pressDiscoveryFeedUrls.has(source.feed_url))
+    .sort((a, b) => a.name.localeCompare(b.name));
+  const feedGroup = discoveryFeedGroup(new Date());
+  const dueSources = scheduled ? approvedSources.filter((_, index) => index % 2 === feedGroup) : approvedSources;
+  const feeds = await Promise.allSettled(dueSources
     .map(async (source) => {
       const { data: claimed, error: claimError } = await db.rpc("news_claim_source", { p_source_id: source.id });
       if (claimError) throw claimError;
@@ -153,52 +171,61 @@ export async function discoverPressFacts(db: Db, result: DiscoveryRun, settings:
   if (existing.error || skipped.error) throw existing.error ?? skipped.error;
   const seen = new Set([...(existing.data ?? []), ...(skipped.data ?? [])].map((row) => row.canonical_hash));
   const rejectedHashes = new Set((skipped.data ?? []).map((row) => row.canonical_hash));
-  const candidate = rankDiscoveryCandidates(ordered, categoryCounts, rejectedHashes, sourceCounts).find(({ item }) => !seen.has(item.canonical_hash));
-  if (!candidate) return;
-  const { item, source } = candidate;
-  result.rewritesChecked++;
-  try {
-    const dossier = await findIndependentDossier(item, fetcher);
-    if (!dossier.success) {
-      await db.from("news_skipped_urls").upsert({ canonical_hash: item.canonical_hash, reason: "ai_rewrite", detail: "Insufficient independent primary-source facts" }, { onConflict: "canonical_hash" });
-      return;
-    }
-    const written = await writeArticleFromFacts(dossier.data, fetcher);
-    if (repeatsHeadlinePhrase(`${written.title} ${written.body}`, item.title)) throw new Error("Original draft repeated the discovery headline");
-    const { data: manual, error: manualError } = await db.from("news_sources").select("id").eq("provider", "manual").single();
-    if (manualError || !manual) throw manualError ?? new Error("Manual source unavailable");
-    const id = randomUUID();
-    const sourceUrl = written.dossier.facts[0].source_url;
-    const { error: articleError } = await db.from("news_articles").insert({
-      id, source_id: manual.id, provider: "manual", external_id: `press-discovery:${item.canonical_hash}`,
-      canonical_hash: item.canonical_hash, canonical_url: sourceUrl, title: written.title,
-      publisher: "IeltsWithHarry", category: item.category, published_at: new Date().toISOString(),
-      origin_region: source.origin_region ?? "vietnam", interest_topics: item.interest_topics,
-      publication_status: "review", sensitive: false, attribution_text: "Independent factual sources in editorial dossier",
-      metadata: { discovery_url: item.canonical_url, discovery_source: source.name,
-        fact_source_urls: [...new Set(written.dossier.facts.map((fact) => fact.source_url))] },
-    });
-    if (articleError) throw articleError;
-    const { error: bodyError } = await db.from("news_article_bodies").insert({
-      article_id: id, body_text: written.body, source_url: sourceUrl, ai_generated: true,
-      byline: "IeltsWithHarry editorial",
-      rights_basis: `Original AI-assisted draft from verified primary/open facts. Discovery lead: ${item.canonical_url}. Editorial dossier: ${JSON.stringify({ topic: written.dossier.topic, category: written.dossier.category, facts: written.dossier.facts, model: written.model, verified_with: written.verified_with, reviewed_with: written.reviewed_with })}`,
-    });
-    if (bodyError) { await db.from("news_articles").delete().eq("id", id); throw bodyError; }
-    const { error: dossierError } = await db.from("news_fact_dossiers").insert({
-      article_id: id, dossier: written.dossier, verification_model: written.verified_with,
-      ai_reviewed_at: new Date().toISOString(), ai_review_model: written.reviewed_with,
-    });
-    if (dossierError) { await db.from("news_articles").delete().eq("id", id); throw dossierError; }
-    const { error: publishError } = await db.from("news_articles").update({ publication_status: "published" }).eq("id", id);
-    if (publishError) throw publishError;
-    result.rewritesAdded++;
-  } catch (cause) {
-    const message = cause instanceof Error ? cause.message : "Press discovery failed";
-    result.errors.push(`Discovery ${item.canonical_url}: ${message}`);
-    if (cause instanceof AiQuotaError) result.quotaLimited = true;
-    if (/not verified|did not support|failed factual or originality review|repeated the discovery headline/.test(message)) {
-      await db.from("news_skipped_urls").upsert({ canonical_hash: item.canonical_hash, reason: "ai_rewrite", detail: message.slice(0, 300) }, { onConflict: "canonical_hash" });
-    }
+  const selected: DiscoveryCandidate[] = [];
+  for (let index = 0; index < batchLimit; index++) {
+    const candidate = rankDiscoveryCandidates(ordered, categoryCounts, rejectedHashes, sourceCounts)
+      .find(({ item }) => !seen.has(item.canonical_hash));
+    if (!candidate) break;
+    selected.push(candidate);
+    seen.add(candidate.item.canonical_hash);
+    categoryCounts.set(candidate.item.category, (categoryCounts.get(candidate.item.category) ?? 0) + 1);
+    sourceCounts.set(candidate.source.name, (sourceCounts.get(candidate.source.name) ?? 0) + 1);
   }
+  await Promise.all(selected.map(async ({ item, source }) => {
+    result.rewritesChecked++;
+    try {
+      const dossier = await findIndependentDossier(item, fetcher);
+      if (!dossier.success) {
+        await db.from("news_skipped_urls").upsert({ canonical_hash: item.canonical_hash, reason: "ai_rewrite", detail: "Insufficient independent primary-source facts" }, { onConflict: "canonical_hash" });
+        return;
+      }
+      const written = await writeArticleFromFacts(dossier.data, fetcher);
+      if (repeatsHeadlinePhrase(`${written.title} ${written.body}`, item.title)) throw new Error("Original draft repeated the discovery headline");
+      const { data: manual, error: manualError } = await db.from("news_sources").select("id").eq("provider", "manual").single();
+      if (manualError || !manual) throw manualError ?? new Error("Manual source unavailable");
+      const id = randomUUID();
+      const sourceUrl = written.dossier.facts[0].source_url;
+      const { error: articleError } = await db.from("news_articles").insert({
+        id, source_id: manual.id, provider: "manual", external_id: `press-discovery:${item.canonical_hash}`,
+        canonical_hash: item.canonical_hash, canonical_url: sourceUrl, title: written.title,
+        publisher: "IeltsWithHarry", category: item.category, published_at: new Date().toISOString(),
+        origin_region: source.origin_region ?? "vietnam", interest_topics: item.interest_topics,
+        publication_status: "review", sensitive: false, attribution_text: "Independent factual sources in editorial dossier",
+        metadata: { discovery_url: item.canonical_url, discovery_source: source.name,
+          fact_source_urls: [...new Set(written.dossier.facts.map((fact) => fact.source_url))] },
+      });
+      if (articleError) throw articleError;
+      const { error: bodyError } = await db.from("news_article_bodies").insert({
+        article_id: id, body_text: written.body, source_url: sourceUrl, ai_generated: true,
+        byline: "IeltsWithHarry editorial",
+        rights_basis: `Original AI-assisted draft from verified primary/open facts. Discovery lead: ${item.canonical_url}. Editorial dossier: ${JSON.stringify({ topic: written.dossier.topic, category: written.dossier.category, facts: written.dossier.facts, model: written.model, verified_with: written.verified_with, reviewed_with: written.reviewed_with })}`,
+      });
+      if (bodyError) { await db.from("news_articles").delete().eq("id", id); throw bodyError; }
+      const { error: dossierError } = await db.from("news_fact_dossiers").insert({
+        article_id: id, dossier: written.dossier, verification_model: written.verified_with,
+        ai_reviewed_at: new Date().toISOString(), ai_review_model: written.reviewed_with,
+      });
+      if (dossierError) { await db.from("news_articles").delete().eq("id", id); throw dossierError; }
+      const { error: publishError } = await db.from("news_articles").update({ publication_status: "published" }).eq("id", id);
+      if (publishError) throw publishError;
+      result.rewritesAdded++;
+    } catch (cause) {
+      const message = cause instanceof Error ? cause.message : "Press discovery failed";
+      result.errors.push(`Discovery ${item.canonical_url}: ${message}`);
+      if (cause instanceof AiQuotaError) result.quotaLimited = true;
+      if (/not verified|did not support|failed factual or originality review|repeated the discovery headline/.test(message)) {
+        await db.from("news_skipped_urls").upsert({ canonical_hash: item.canonical_hash, reason: "ai_rewrite", detail: message.slice(0, 300) }, { onConflict: "canonical_hash" });
+      }
+    }
+  }));
 }

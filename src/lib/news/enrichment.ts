@@ -590,7 +590,7 @@ export async function enrichNews({ scheduled = false }: { scheduled?: boolean } 
   }
   if (!scheduled || slot === "discovery") {
     const { discoverPressFacts } = await import("./press-discovery");
-    await discoverPressFacts(db, result, settings);
+    await discoverPressFacts(db, result, settings, fetch, scheduled);
     if (result.rewritesChecked) return result;
   }
   if (scheduled) {
