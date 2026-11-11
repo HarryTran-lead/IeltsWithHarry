@@ -1,0 +1,204 @@
+/* Tablet and phone layouts for the public, guest and auth pages. */
+
+@media (max-width: 1050px) {
+  .guest-hero {
+    grid-template-columns: 1fr;
+    padding: 40px 32px;
+  }
+  .guest-board {
+    height: 400px;
+    max-width: 560px;
+    width: 100%;
+    margin: 0 auto;
+  }
+  .roadmap-track {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+  .roadmap-track::before {
+    display: none;
+  }
+  .guest-tools {
+    grid-template-columns: 1fr 1fr;
+  }
+  .tool-news {
+    grid-row: auto;
+    grid-column: 1 / -1;
+  }
+  .public-course-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .auth-layout {
+    grid-template-columns: minmax(0, 1fr) 340px;
+    gap: 28px;
+  }
+}
+@media (max-width: 850px) {
+  .public-course-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .public-header nav {
+    gap: 2px;
+  }
+  .guest-skills,
+  .about-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .guest-steps ol {
+    grid-template-columns: 1fr;
+  }
+  .step-arrow {
+    display: none;
+  }
+  .stage-detail,
+  .about-now {
+    grid-template-columns: 1fr;
+  }
+  .public-footer-inner {
+    grid-template-columns: 1fr 1fr;
+  }
+  .public-footer-brand {
+    grid-column: 1 / -1;
+  }
+  .public-footer-sticker {
+    display: none;
+  }
+  .auth-layout {
+    grid-template-columns: 1fr;
+  }
+  .auth-aside {
+    display: none;
+  }
+}
+@media (max-width: 650px) {
+  .public-header {
+    height: 60px;
+    padding: 0 14px;
+  }
+  .public-brand {
+    font-size: 17px;
+  }
+  .public-brand img {
+    width: 32px;
+    height: 32px;
+  }
+  .public-header nav > a:not(.button) {
+    display: none;
+  }
+  .public-header nav .button {
+    min-height: 36px;
+    font-size: 12.5px;
+    padding: 0 12px;
+  }
+  .public-container {
+    padding: 32px 16px 56px;
+  }
+  .public-page-head {
+    margin-bottom: 20px;
+  }
+  .public-course-grid,
+  .guest-skills,
+  .about-grid,
+  .guest-tools {
+    grid-template-columns: 1fr;
+  }
+  .stage-skill-list {
+    grid-template-columns: 1fr 1fr;
+  }
+  .guest-skill {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr);
+    column-gap: 14px;
+    align-items: center;
+    padding: 16px;
+  }
+  .guest-skill .sticker {
+    grid-row: span 2;
+    width: 48px !important;
+    height: 48px !important;
+  }
+  .guest-skill h3 {
+    margin: 0 0 2px;
+    font-size: 17px;
+  }
+  .guest-skill p {
+    font-size: 13.5px;
+  }
+  .guest-home {
+    padding: 16px 14px 24px;
+  }
+  .guest-hero {
+    padding: 30px 20px 10px;
+    border-radius: var(--r-lg);
+    gap: 14px;
+  }
+  .guest-facts {
+    gap: 14px;
+    flex-wrap: wrap;
+  }
+  .guest-facts dt {
+    font-size: 26px;
+  }
+  .guest-board {
+    height: 360px;
+  }
+  .board-word {
+    left: 0;
+    top: 70px;
+    width: 230px;
+  }
+  .board-word strong {
+    font-size: 32px;
+  }
+  .board-plan {
+    width: 210px;
+    bottom: 10px;
+  }
+  .board-harry {
+    width: 110px !important;
+    height: 110px !important;
+    right: 0;
+    top: 0;
+  }
+  .board-bubble {
+    right: auto;
+    left: 0;
+    top: 0;
+    width: 80px !important;
+    height: 80px !important;
+  }
+  .board-star,
+  .board-plane,
+  .board-swirl {
+    display: none;
+  }
+  .board-headphones {
+    top: 160px;
+  }
+  .guest-section,
+  .guest-cta {
+    margin-top: 48px;
+  }
+  .guest-section-head {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+  .roadmap-track {
+    grid-template-columns: 1fr 1fr;
+  }
+  .guest-cta {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 30px 22px;
+  }
+  .guest-cta-art {
+    display: none;
+  }
+  .auth-layout {
+    padding: 28px 16px 48px;
+  }
+  .public-footer-inner {
+    padding: 30px 16px 20px;
+    gap: 22px;
+  }
+}
