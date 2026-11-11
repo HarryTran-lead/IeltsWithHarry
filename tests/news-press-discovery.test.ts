@@ -1,5 +1,5 @@
 import { expect, it } from "vitest";
-import { discoveryBudget, eligibleDiscoveryLead, findIndependentDossier, rankDiscoveryCandidates, resolveFactualSourceUrl, youthRelevanceForTitle } from "../src/lib/news/press-discovery";
+import { discoveryBatchLimit, discoveryBudget, discoveryFeedGroup, eligibleDiscoveryLead, findIndependentDossier, rankDiscoveryCandidates, resolveFactualSourceUrl, vietnamDayStart, youthRelevanceForTitle } from "../src/lib/news/press-discovery";
 import { pressDiscoveryFeedUrls, rssProvider, type NewsItem, type NewsSource } from "../src/lib/news/providers";
 
 const source: NewsSource = {
@@ -15,10 +15,25 @@ it("keeps researching after thin topics while capping attempts and completed dra
   expect(discoveryBudget(0, 24, 8)).toBe(true);
   expect(discoveryBudget(0, 32, 8)).toBe(false);
   expect(discoveryBudget(0, 32, 30)).toBe(true);
-  expect(discoveryBudget(0, 64, 30)).toBe(false);
+  expect(discoveryBudget(0, 64, 30)).toBe(true);
+  expect(discoveryBudget(0, 120, 30)).toBe(false);
+  expect(discoveryBudget(0, 199, 50)).toBe(true);
+  expect(discoveryBudget(0, 200, 50)).toBe(false);
   expect(discoveryBudget(30, 0, 30)).toBe(false);
   expect(discoveryBudget(4, 0, 4)).toBe(false);
   expect(discoveryBudget(0, 0, 0)).toBe(false);
+});
+
+it("uses two research slots when available and alternates feed groups every 20 minutes", () => {
+  expect(discoveryBatchLimit(0, 0, 50)).toBe(2);
+  expect(discoveryBatchLimit(49, 0, 50)).toBe(1);
+  expect(discoveryBatchLimit(0, 199, 50)).toBe(1);
+  expect(discoveryBatchLimit(50, 0, 50)).toBe(0);
+  const first = discoveryFeedGroup(new Date("2026-11-11T04:15:00Z"));
+  expect(discoveryFeedGroup(new Date("2026-11-11T04:35:00Z"))).toBe(1 - first);
+  expect(discoveryFeedGroup(new Date("2026-11-11T04:55:00Z"))).toBe(first);
+  expect(vietnamDayStart(new Date("2026-11-11T16:59:00Z")).toISOString()).toBe("2026-11-10T17:00:00.000Z");
+  expect(vietnamDayStart(new Date("2026-11-11T17:00:00Z")).toISOString()).toBe("2026-11-11T17:00:00.000Z");
 });
 
 it("rotates research away from a category whose recent leads failed", () => {
