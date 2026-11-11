@@ -1,0 +1,1872 @@
+[
+  {
+    "id": "band-1.0-001",
+    "practiceLevel": "1.0",
+    "type": "word",
+    "topic": "Bản thân",
+    "targetTerm": "name",
+    "meaningVi": "tên",
+    "promptVi": "tên",
+    "referenceAnswers": [
+      "name"
+    ],
+    "grammarTags": [
+      "isolated-word"
+    ],
+    "explanationVi": "Ghi nhớ cách viết từ riêng lẻ trước khi ghép thành câu.",
+    "commonErrors": [],
+    "editorialStatus": "pilot",
+    "source": "original-starter",
+    "version": 2,
+    "calibrationStatus": "internal_review",
+    "rationaleVi": "Nhận biết và viết đúng từ thông dụng riêng lẻ. Bài này luyện: Ghi nhớ cách viết từ riêng lẻ trước khi ghép thành câu."
+  },
+  {
+    "id": "band-1.0-002",
+    "practiceLevel": "1.0",
+    "type": "word",
+    "topic": "Gia đình",
+    "targetTerm": "mother",
+    "meaningVi": "mẹ",
+    "promptVi": "mẹ",
+    "referenceAnswers": [
+      "mother"
+    ],
+    "grammarTags": [
+      "isolated-word"
+    ],
+    "explanationVi": "Mother là danh từ chỉ mẹ; trong câu đầy đủ có thể thêm my hoặc the.",
+    "commonErrors": [],
+    "editorialStatus": "pilot",
+    "source": "original-starter",
+    "version": 2,
+    "calibrationStatus": "internal_review",
+    "rationaleVi": "Nhận biết và viết đúng từ thông dụng riêng lẻ. Bài này luyện: Mother là danh từ chỉ mẹ; trong câu đầy đủ có thể thêm my hoặc the."
+  },
+  {
+    "id": "band-1.0-003",
+    "practiceLevel": "1.0",
+    "type": "word",
+    "topic": "Trường học",
+    "targetTerm": "book",
+    "meaningVi": "sách",
+    "promptVi": "sách",
+    "referenceAnswers": [
+      "book"
+    ],
+    "grammarTags": [
+      "isolated-word"
+    ],
+    "explanationVi": "Book là danh từ đếm được; khi dùng trong câu thường cần mạo từ hoặc dạng số nhiều.",
+    "commonErrors": [],
+    "editorialStatus": "pilot",
+    "source": "original-starter",
+    "version": 2,
+    "calibrationStatus": "internal_review",
+    "rationaleVi": "Nhận biết và viết đúng từ thông dụng riêng lẻ. Bài này luyện: Book là danh từ đếm được; khi dùng trong câu thường cần mạo từ hoặc dạng số nhiều."
+  },
+  {
+    "id": "band-1.5-004",
+    "practiceLevel": "1.5",
+    "type": "phrase",
+    "topic": "Bản thân",
+    "targetTerm": "happy",
+    "meaningVi": "vui",
+    "promptVi": "rất vui",
+    "referenceAnswers": [
+      "very happy"
+    ],
+    "grammarTags": [
+      "adverb-adjective"
+    ],
+    "explanationVi": "Very đứng trước tính từ happy để tăng mức độ.",
+    "commonErrors": [],
+    "editorialStatus": "pilot",
+    "source": "original-starter",
+    "version": 2,
+    "calibrationStatus": "internal_review",
+    "rationaleVi": "Ghép hai đến bốn từ thành cụm quen thuộc; trật tự tính từ và danh từ. Bài này luyện: Very đứng trước tính từ happy để tăng mức độ."
+  },
+  {
+    "id": "band-1.5-005",
+    "practiceLevel": "1.5",
+    "type": "phrase",
+    "topic": "Ăn uống",
+    "targetTerm": "water",
+    "meaningVi": "nước",
+    "promptVi": "một cốc nước",
+    "referenceAnswers": [
+      "a glass of water"
+    ],
+    "grammarTags": [
+      "quantity-phrase"
+    ],
+    "explanationVi": "A glass of là cụm chỉ lượng dùng với water.",
+    "commonErrors": [],
+    "editorialStatus": "pilot",
+    "source": "original-starter",
+    "version": 2,
+    "calibrationStatus": "internal_review",
+    "rationaleVi": "Ghép hai đến bốn từ thành cụm quen thuộc; trật tự tính từ và danh từ. Bài này luyện: A glass of là cụm chỉ lượng dùng với water."
+  },
+  {
+    "id": "band-1.5-006",
+    "practiceLevel": "1.5",
+    "type": "phrase",
+    "topic": "Nhà cửa",
+    "targetTerm": "room",
+    "meaningVi": "phòng",
+    "promptVi": "căn phòng nhỏ",
+    "referenceAnswers": [
+      "a small room"
+    ],
+    "grammarTags": [
+      "adjective-noun"
+    ],
+    "explanationVi": "Tính từ small đứng trước danh từ room trong tiếng Anh.",
+    "commonErrors": [],
+    "editorialStatus": "pilot",
+    "source": "original-starter",
+    "version": 2,
+    "calibrationStatus": "internal_review",
+    "rationaleVi": "Ghép hai đến bốn từ thành cụm quen thuộc; trật tự tính từ và danh từ. Bài này luyện: Tính từ small đứng trước danh từ room trong tiếng Anh."
+  },
+  {
+    "id": "band-2.0-007",
+    "practiceLevel": "2.0",
+    "type": "phrase",
+    "topic": "Thói quen",
+    "targetTerm": "every day",
+    "meaningVi": "mỗi ngày",
+    "promptVi": "mỗi ngày",
+    "referenceAnswers": [
+      "every day"
+    ],
+    "grammarTags": [
+      "time-phrase"
+    ],
+    "explanationVi": "Every day là cụm chỉ tần suất; khác everyday là tính từ.",
+    "commonErrors": [],
+    "editorialStatus": "pilot",
+    "source": "original-starter",
+    "version": 2,
+    "calibrationStatus": "internal_review",
+    "rationaleVi": "Dùng cụm chỉ người, thời gian, nơi chốn và nhu cầu hằng ngày. Bài này luyện: Every day là cụm chỉ tần suất; khác everyday là tính từ."
+  },
+  {
+    "id": "band-2.0-008",
+    "practiceLevel": "2.0",
+    "type": "phrase",
+    "topic": "Gia đình",
+    "targetTerm": "brother",
+    "meaningVi": "anh hoặc em trai",
+    "promptVi": "em trai tôi",
+    "referenceAnswers": [
+      "my younger brother"
+    ],
+    "grammarTags": [
+      "possessive-phrase"
+    ],
+    "explanationVi": "My younger brother nêu rõ người em trai trong gia đình.",
+    "commonErrors": [],
+    "editorialStatus": "pilot",
+    "source": "original-starter",
+    "version": 2,
+    "calibrationStatus": "internal_review",
+    "rationaleVi": "Dùng cụm chỉ người, thời gian, nơi chốn và nhu cầu hằng ngày. Bài này luyện: My younger brother nêu rõ người em trai trong gia đình."
+  },
+  {
+    "id": "band-2.0-009",
+    "practiceLevel": "2.0",
+    "type": "phrase",
+    "topic": "Ăn uống",
+    "targetTerm": "breakfast",
+    "meaningVi": "bữa sáng",
+    "promptVi": "bữa sáng lúc bảy giờ",
+    "referenceAnswers": [
+      "breakfast at seven o'clock"
+    ],
+    "grammarTags": [
+      "time-phrase"
+    ],
+    "explanationVi": "At seven o'clock nêu thời điểm cụ thể.",
+    "commonErrors": [],
+    "editorialStatus": "pilot",
+    "source": "original-starter",
+    "version": 2,
+    "calibrationStatus": "internal_review",
+    "rationaleVi": "Dùng cụm chỉ người, thời gian, nơi chốn và nhu cầu hằng ngày. Bài này luyện: At seven o'clock nêu thời điểm cụ thể."
+  },
+  {
+    "id": "band-2.5-010",
+    "practiceLevel": "2.5",
+    "type": "phrase",
+    "topic": "Thói quen",
+    "targetTerm": "usually",
+    "meaningVi": "thường",
+    "promptVi": "thường vào buổi tối",
+    "referenceAnswers": [
+      "usually in the evening"
+    ],
+    "grammarTags": [
+      "frequency-adverb"
+    ],
+    "explanationVi": "Usually thường đứng trước động từ chính trong câu đầy đủ.",
+    "commonErrors": [],
+    "editorialStatus": "pilot",
+    "source": "original-starter",
+    "version": 2,
+    "calibrationStatus": "internal_review",
+    "rationaleVi": "Chuyển từ cụm từ sang câu ngắn với chủ ngữ và động từ quen thuộc. Bài này luyện: Usually thường đứng trước động từ chính trong câu đầy đủ."
+  },
+  {
+    "id": "band-2.5-011",
+    "practiceLevel": "2.5",
+    "type": "phrase",
+    "topic": "Du lịch",
+    "targetTerm": "bus",
+    "meaningVi": "xe buýt",
+    "promptVi": "đi bằng xe buýt",
+    "referenceAnswers": [
+      "go by bus"
+    ],
+    "grammarTags": [
+      "transport-preposition"
+    ],
+    "explanationVi": "Go by bus dùng by để chỉ phương tiện.",
+    "commonErrors": [],
+    "editorialStatus": "pilot",
+    "source": "original-starter",
+    "version": 2,
+    "calibrationStatus": "internal_review",
+    "rationaleVi": "Chuyển từ cụm từ sang câu ngắn với chủ ngữ và động từ quen thuộc. Bài này luyện: Go by bus dùng by để chỉ phương tiện."
+  },
+  {
+    "id": "band-2.5-012",
+    "practiceLevel": "2.5",
+    "type": "phrase",
+    "topic": "Sở thích",
+    "targetTerm": "weekend",
+    "meaningVi": "cuối tuần",
+    "promptVi": "vào cuối tuần",
+    "referenceAnswers": [
+      "at the weekend"
+    ],
+    "grammarTags": [
+      "time-preposition"
+    ],
+    "explanationVi": "At the weekend là cách dùng phổ biến trong Anh-Anh.",
+    "commonErrors": [],
+    "editorialStatus": "pilot",
+    "source": "original-starter",
+    "version": 2,
+    "calibrationStatus": "internal_review",
+    "rationaleVi": "Chuyển từ cụm từ sang câu ngắn với chủ ngữ và động từ quen thuộc. Bài này luyện: At the weekend là cách dùng phổ biến trong Anh-Anh."
+  },
+  {
+    "id": "band-3.0-013",
+    "practiceLevel": "3.0",
+    "type": "sentence",
+    "topic": "Quá khứ",
+    "targetTerm": "yesterday",
+    "meaningVi": "hôm qua",
+    "promptVi": "Hôm qua tôi đã thăm ông bà.",
+    "referenceAnswers": [
+      "I visited my grandparents yesterday."
+    ],
+    "grammarTags": [
+      "past-simple"
+    ],
+    "explanationVi": "Visited là quá khứ của visit; yesterday xác định thời điểm đã qua.",
+    "commonErrors": [],
+    "editorialStatus": "pilot",
+    "source": "original-starter",
+    "version": 1,
+    "calibrationStatus": "internal_review",
+    "rationaleVi": "Câu đơn về trải nghiệm cá nhân, thì hiện tại hoặc quá khứ đơn. Bài này luyện: Visited là quá khứ của visit; yesterday xác định thời điểm đã qua."
+  },
+  {
+    "id": "band-3.0-014",
+    "practiceLevel": "3.0",
+    "type": "sentence",
+    "topic": "Du lịch",
+    "targetTerm": "ticket",
+    "meaningVi": "vé",
+    "promptVi": "Tôi đã mua hai vé tàu sáng nay.",
+    "referenceAnswers": [
+      "I bought two train tickets this morning."
+    ],
+    "grammarTags": [
+      "past-simple-irregular"
+    ],
+    "explanationVi": "Bought là quá khứ bất quy tắc của buy.",
+    "commonErrors": [],
+    "editorialStatus": "pilot",
+    "source": "original-starter",
+    "version": 1,
+    "calibrationStatus": "internal_review",
+    "rationaleVi": "Câu đơn về trải nghiệm cá nhân, thì hiện tại hoặc quá khứ đơn. Bài này luyện: Bought là quá khứ bất quy tắc của buy."
+  },
+  {
+    "id": "band-3.0-015",
+    "practiceLevel": "3.0",
+    "type": "sentence",
+    "topic": "Thời tiết",
+    "targetTerm": "rain",
+    "meaningVi": "mưa",
+    "promptVi": "Trời mưa nên chúng tôi ở nhà.",
+    "referenceAnswers": [
+      "It rained, so we stayed at home."
+    ],
+    "grammarTags": [
+      "past-simple-cause"
+    ],
+    "explanationVi": "Rained và stayed là quá khứ; so nối nguyên nhân với kết quả.",
+    "commonErrors": [],
+    "editorialStatus": "pilot",
+    "source": "original-starter",
+    "version": 1,
+    "calibrationStatus": "internal_review",
+    "rationaleVi": "Câu đơn về trải nghiệm cá nhân, thì hiện tại hoặc quá khứ đơn. Bài này luyện: Rained và stayed là quá khứ; so nối nguyên nhân với kết quả."
+  },
+  {
+    "id": "band-3.5-016",
+    "practiceLevel": "3.5",
+    "type": "sentence",
+    "topic": "Kế hoạch",
+    "targetTerm": "next month",
+    "meaningVi": "tháng tới",
+    "promptVi": "Tháng tới tôi sẽ học bơi.",
+    "referenceAnswers": [
+      "I will learn to swim next month."
+    ],
+    "grammarTags": [
+      "future-will"
+    ],
+    "explanationVi": "Will và động từ nguyên mẫu diễn đạt kế hoạch tương lai trong câu mẫu.",
+    "commonErrors": [],
+    "editorialStatus": "pilot",
+    "source": "original-starter",
+    "version": 1,
+    "calibrationStatus": "internal_review",
+    "rationaleVi": "Nói kế hoạch, mục đích và so sánh đơn giản. Bài này luyện: Will và động từ nguyên mẫu diễn đạt kế hoạch tương lai trong câu mẫu."
+  },
+  {
+    "id": "band-3.5-017",
+    "practiceLevel": "3.5",
+    "type": "sentence",
+    "topic": "Sức khỏe",
+    "targetTerm": "exercise",
+    "meaningVi": "tập thể dục",
+    "promptVi": "Tôi tập thể dục ba lần một tuần để khỏe hơn.",
+    "referenceAnswers": [
+      "I exercise three times a week to stay healthy."
+    ],
+    "grammarTags": [
+      "purpose-infinitive"
+    ],
+    "explanationVi": "To stay healthy diễn đạt mục đích của việc tập thể dục.",
+    "commonErrors": [],
+    "editorialStatus": "pilot",
+    "source": "original-starter",
+    "version": 1,
+    "calibrationStatus": "internal_review",
+    "rationaleVi": "Nói kế hoạch, mục đích và so sánh đơn giản. Bài này luyện: To stay healthy diễn đạt mục đích của việc tập thể dục."
+  },
+  {
+    "id": "band-3.5-018",
+    "practiceLevel": "3.5",
+    "type": "sentence",
+    "topic": "Mua sắm",
+    "targetTerm": "cheaper",
+    "meaningVi": "rẻ hơn",
+    "promptVi": "Chiếc áo màu xanh rẻ hơn chiếc áo màu đỏ.",
+    "referenceAnswers": [
+      "The blue shirt is cheaper than the red one."
+    ],
+    "grammarTags": [
+      "comparative"
+    ],
+    "explanationVi": "Cheaper than là cấu trúc so sánh hơn.",
+    "commonErrors": [],
+    "editorialStatus": "pilot",
+    "source": "original-starter",
+    "version": 1,
+    "calibrationStatus": "internal_review",
+    "rationaleVi": "Nói kế hoạch, mục đích và so sánh đơn giản. Bài này luyện: Cheaper than là cấu trúc so sánh hơn."
+  },
+  {
+    "id": "band-4.0-019",
+    "practiceLevel": "4.0",
+    "type": "sentence",
+    "topic": "Giáo dục",
+    "targetTerm": "improve",
+    "meaningVi": "cải thiện",
+    "promptVi": "Tôi đang học tiếng Anh vì muốn cải thiện kỹ năng giao tiếp.",
+    "referenceAnswers": [
+      "I am studying English because I want to improve my communication skills."
+    ],
+    "grammarTags": [
+      "because-clause"
+    ],
+    "explanationVi": "Because nối việc học tiếng Anh với lý do.",
+    "commonErrors": [],
+    "editorialStatus": "pilot",
+    "source": "original-starter",
+    "version": 1,
+    "calibrationStatus": "internal_review",
+    "rationaleVi": "Giải thích nguyên nhân và hệ quả trong chủ đề quen thuộc. Bài này luyện: Because nối việc học tiếng Anh với lý do."
+  },
+  {
+    "id": "band-4.0-020",
+    "practiceLevel": "4.0",
+    "type": "sentence",
+    "topic": "Môi trường",
+    "targetTerm": "recycle",
+    "meaningVi": "tái chế",
+    "promptVi": "Gia đình tôi tái chế giấy và chai nhựa mỗi tuần.",
+    "referenceAnswers": [
+      "My family recycles paper and plastic bottles every week."
+    ],
+    "grammarTags": [
+      "present-simple-habit"
+    ],
+    "explanationVi": "Recycles diễn đạt thói quen của chủ ngữ số ít my family.",
+    "commonErrors": [],
+    "editorialStatus": "pilot",
+    "source": "original-starter",
+    "version": 1,
+    "calibrationStatus": "internal_review",
+    "rationaleVi": "Giải thích nguyên nhân và hệ quả trong chủ đề quen thuộc. Bài này luyện: Recycles diễn đạt thói quen của chủ ngữ số ít my family."
+  },
+  {
+    "id": "band-4.0-021",
+    "practiceLevel": "4.0",
+    "type": "sentence",
+    "topic": "Công việc",
+    "targetTerm": "experience",
+    "meaningVi": "kinh nghiệm",
+    "promptVi": "Công việc bán thời gian giúp cô ấy có thêm kinh nghiệm.",
+    "referenceAnswers": [
+      "Her part-time job helps her gain experience."
+    ],
+    "grammarTags": [
+      "help-someone-verb"
+    ],
+    "explanationVi": "Help someone gain experience diễn đạt tác dụng của công việc.",
+    "commonErrors": [],
+    "editorialStatus": "pilot",
+    "source": "original-starter",
+    "version": 1,
+    "calibrationStatus": "internal_review",
+    "rationaleVi": "Giải thích nguyên nhân và hệ quả trong chủ đề quen thuộc. Bài này luyện: Help someone gain experience diễn đạt tác dụng của công việc."
+  },
+  {
+    "id": "band-4.5-022",
+    "practiceLevel": "4.5",
+    "type": "sentence",
+    "topic": "Đô thị",
+    "targetTerm": "public transport",
+    "meaningVi": "giao thông công cộng",
+    "promptVi": "Giao thông công cộng thuận tiện hơn khi có nhiều tuyến xe buýt.",
+    "referenceAnswers": [
+      "Public transport is more convenient when there are more bus routes."
+    ],
+    "grammarTags": [
+      "comparative-when"
+    ],
+    "explanationVi": "More convenient so sánh mức độ; when nêu điều kiện.",
+    "commonErrors": [],
+    "editorialStatus": "pilot",
+    "source": "original-starter",
+    "version": 1,
+    "calibrationStatus": "internal_review",
+    "rationaleVi": "Diễn đạt điều kiện hoặc nhượng bộ cơ bản, với từ vựng phổ biến theo chủ đề. Bài này luyện: More convenient so sánh mức độ; when nêu điều kiện."
+  },
+  {
+    "id": "band-4.5-023",
+    "practiceLevel": "4.5",
+    "type": "sentence",
+    "topic": "Sức khỏe",
+    "targetTerm": "balanced diet",
+    "meaningVi": "chế độ ăn cân bằng",
+    "promptVi": "Một chế độ ăn cân bằng có thể giúp trẻ em phát triển khỏe mạnh.",
+    "referenceAnswers": [
+      "A balanced diet can help children grow up healthy."
+    ],
+    "grammarTags": [
+      "modal-can"
+    ],
+    "explanationVi": "Can help diễn đạt khả năng, không khẳng định tuyệt đối.",
+    "commonErrors": [],
+    "editorialStatus": "pilot",
+    "source": "original-starter",
+    "version": 1,
+    "calibrationStatus": "internal_review",
+    "rationaleVi": "Diễn đạt điều kiện hoặc nhượng bộ cơ bản, với từ vựng phổ biến theo chủ đề. Bài này luyện: Can help diễn đạt khả năng, không khẳng định tuyệt đối."
+  },
+  {
+    "id": "band-4.5-024",
+    "practiceLevel": "4.5",
+    "type": "sentence",
+    "topic": "Công nghệ",
+    "targetTerm": "online learning",
+    "meaningVi": "học trực tuyến",
+    "promptVi": "Học trực tuyến cho phép tôi xem lại bài giảng sau giờ học.",
+    "referenceAnswers": [
+      "Online learning allows me to review lessons after class."
+    ],
+    "grammarTags": [
+      "allow-someone-to"
+    ],
+    "explanationVi": "Allow someone to do something là cấu trúc cần giữ đúng giới từ to.",
+    "commonErrors": [],
+    "editorialStatus": "pilot",
+    "source": "original-starter",
+    "version": 1,
+    "calibrationStatus": "internal_review",
+    "rationaleVi": "Diễn đạt điều kiện hoặc nhượng bộ cơ bản, với từ vựng phổ biến theo chủ đề. Bài này luyện: Allow someone to do something là cấu trúc cần giữ đúng giới từ to."
+  },
+  {
+    "id": "band-5.0-025",
+    "practiceLevel": "5.0",
+    "type": "sentence",
+    "topic": "Giáo dục",
+    "targetTerm": "opportunity",
+    "meaningVi": "cơ hội",
+    "promptVi": "Học bổng này tạo cơ hội cho sinh viên ở vùng nông thôn theo học đại học.",
+    "referenceAnswers": [
+      "This scholarship gives students from rural areas the opportunity to attend university."
+    ],
+    "grammarTags": [
+      "opportunity-to"
+    ],
+    "explanationVi": "Opportunity to attend university nêu cơ hội tiếp cận đại học.",
+    "commonErrors": [],
+    "editorialStatus": "pilot",
+    "source": "original-starter",
+    "version": 1,
+    "calibrationStatus": "internal_review",
+    "rationaleVi": "Nêu quan điểm và một lý do cụ thể về vấn đề xã hội quen thuộc. Bài này luyện: Opportunity to attend university nêu cơ hội tiếp cận đại học."
+  },
+  {
+    "id": "band-5.0-026",
+    "practiceLevel": "5.0",
+    "type": "sentence",
+    "topic": "Môi trường",
+    "targetTerm": "reduce waste",
+    "meaningVi": "giảm rác thải",
+    "promptVi": "Các cửa hàng có thể giảm rác thải bằng cách dùng ít bao bì hơn.",
+    "referenceAnswers": [
+      "Shops can reduce waste by using less packaging."
+    ],
+    "grammarTags": [
+      "by-gerund"
+    ],
+    "explanationVi": "By using less packaging nêu phương thức giảm rác thải.",
+    "commonErrors": [],
+    "editorialStatus": "pilot",
+    "source": "original-starter",
+    "version": 1,
+    "calibrationStatus": "internal_review",
+    "rationaleVi": "Nêu quan điểm và một lý do cụ thể về vấn đề xã hội quen thuộc. Bài này luyện: By using less packaging nêu phương thức giảm rác thải."
+  },
+  {
+    "id": "band-5.0-027",
+    "practiceLevel": "5.0",
+    "type": "sentence",
+    "topic": "Công việc",
+    "targetTerm": "flexible hours",
+    "meaningVi": "giờ làm linh hoạt",
+    "promptVi": "Giờ làm linh hoạt giúp cha mẹ cân bằng công việc và gia đình.",
+    "referenceAnswers": [
+      "Flexible hours help parents balance work and family life."
+    ],
+    "grammarTags": [
+      "balance-work-family"
+    ],
+    "explanationVi": "Balance work and family life là cách kết hợp từ tự nhiên.",
+    "commonErrors": [],
+    "editorialStatus": "pilot",
+    "source": "original-starter",
+    "version": 1,
+    "calibrationStatus": "internal_review",
+    "rationaleVi": "Nêu quan điểm và một lý do cụ thể về vấn đề xã hội quen thuộc. Bài này luyện: Balance work and family life là cách kết hợp từ tự nhiên."
+  },
+  {
+    "id": "band-5.5-028",
+    "practiceLevel": "5.5",
+    "type": "sentence",
+    "topic": "Sức khỏe",
+    "targetTerm": "prevent",
+    "meaningVi": "phòng ngừa",
+    "promptVi": "Tập thể dục thường xuyên có thể giúp phòng ngừa một số bệnh mãn tính.",
+    "referenceAnswers": [
+      "Regular exercise can help prevent some chronic diseases."
+    ],
+    "grammarTags": [
+      "prevent-disease"
+    ],
+    "explanationVi": "Prevent đi với danh từ chỉ bệnh; can help giữ sắc thái thận trọng.",
+    "commonErrors": [],
+    "editorialStatus": "pilot",
+    "source": "original-starter",
+    "version": 1,
+    "calibrationStatus": "internal_review",
+    "rationaleVi": "So sánh hai mặt của một vấn đề, dùng mệnh đề nhượng bộ và kết hợp từ tự nhiên. Bài này luyện: Prevent đi với danh từ chỉ bệnh; can help giữ sắc thái thận trọng."
+  },
+  {
+    "id": "band-5.5-029",
+    "practiceLevel": "5.5",
+    "type": "sentence",
+    "topic": "Đô thị",
+    "targetTerm": "traffic congestion",
+    "meaningVi": "ùn tắc giao thông",
+    "promptVi": "Ùn tắc giao thông nghiêm trọng hơn khi nhiều người lái xe một mình.",
+    "referenceAnswers": [
+      "Traffic congestion gets worse when more people drive alone."
+    ],
+    "grammarTags": [
+      "when-clause"
+    ],
+    "explanationVi": "When nối tình huống lái xe một mình với ùn tắc tăng.",
+    "commonErrors": [],
+    "editorialStatus": "pilot",
+    "source": "original-starter",
+    "version": 1,
+    "calibrationStatus": "internal_review",
+    "rationaleVi": "So sánh hai mặt của một vấn đề, dùng mệnh đề nhượng bộ và kết hợp từ tự nhiên. Bài này luyện: When nối tình huống lái xe một mình với ùn tắc tăng."
+  },
+  {
+    "id": "band-5.5-030",
+    "practiceLevel": "5.5",
+    "type": "sentence",
+    "topic": "Giáo dục",
+    "targetTerm": "practical skills",
+    "meaningVi": "kỹ năng thực tế",
+    "promptVi": "Trường học nên dạy thêm kỹ năng thực tế bên cạnh kiến thức học thuật.",
+    "referenceAnswers": [
+      "Schools should teach more practical skills alongside academic knowledge."
+    ],
+    "grammarTags": [
+      "alongside-phrase"
+    ],
+    "explanationVi": "Alongside nối kỹ năng thực tế với kiến thức học thuật.",
+    "commonErrors": [],
+    "editorialStatus": "pilot",
+    "source": "original-starter",
+    "version": 1,
+    "calibrationStatus": "internal_review",
+    "rationaleVi": "So sánh hai mặt của một vấn đề, dùng mệnh đề nhượng bộ và kết hợp từ tự nhiên. Bài này luyện: Alongside nối kỹ năng thực tế với kiến thức học thuật."
+  },
+  {
+    "id": "band-6.0-031",
+    "practiceLevel": "6.0",
+    "type": "sentence",
+    "topic": "Công nghệ",
+    "targetTerm": "privacy",
+    "meaningVi": "quyền riêng tư",
+    "promptVi": "Người dùng cần hiểu cách ứng dụng thu thập dữ liệu để bảo vệ quyền riêng tư.",
+    "referenceAnswers": [
+      "Users need to understand how apps collect data in order to protect their privacy."
+    ],
+    "grammarTags": [
+      "in-order-to"
+    ],
+    "explanationVi": "In order to nêu mục đích bảo vệ quyền riêng tư.",
+    "commonErrors": [],
+    "editorialStatus": "pilot",
+    "source": "original-starter",
+    "version": 1,
+    "calibrationStatus": "internal_review",
+    "rationaleVi": "Diễn đạt quan hệ nguyên nhân, điều kiện và hệ quả bằng cấu trúc đa dạng nhưng rõ ràng. Bài này luyện: In order to nêu mục đích bảo vệ quyền riêng tư."
+  },
+  {
+    "id": "band-6.0-032",
+    "practiceLevel": "6.0",
+    "type": "sentence",
+    "topic": "Môi trường",
+    "targetTerm": "renewable energy",
+    "meaningVi": "năng lượng tái tạo",
+    "promptVi": "Đầu tư vào năng lượng tái tạo có thể giảm sự phụ thuộc vào nhiên liệu hóa thạch.",
+    "referenceAnswers": [
+      "Investing in renewable energy can reduce dependence on fossil fuels."
+    ],
+    "grammarTags": [
+      "gerund-subject"
+    ],
+    "explanationVi": "Investing in renewable energy là cụm -ing làm chủ ngữ.",
+    "commonErrors": [],
+    "editorialStatus": "pilot",
+    "source": "original-starter",
+    "version": 1,
+    "calibrationStatus": "internal_review",
+    "rationaleVi": "Diễn đạt quan hệ nguyên nhân, điều kiện và hệ quả bằng cấu trúc đa dạng nhưng rõ ràng. Bài này luyện: Investing in renewable energy là cụm -ing làm chủ ngữ."
+  },
+  {
+    "id": "band-6.0-033",
+    "practiceLevel": "6.0",
+    "type": "sentence",
+    "topic": "Xã hội",
+    "targetTerm": "equal access",
+    "meaningVi": "tiếp cận bình đẳng",
+    "promptVi": "Chính phủ cần bảo đảm mọi trẻ em được tiếp cận giáo dục chất lượng một cách bình đẳng.",
+    "referenceAnswers": [
+      "Governments should ensure that all children have equal access to quality education."
+    ],
+    "grammarTags": [
+      "ensure-that"
+    ],
+    "explanationVi": "Ensure that nối khuyến nghị của chính phủ với kết quả cần bảo đảm.",
+    "commonErrors": [],
+    "editorialStatus": "pilot",
+    "source": "original-starter",
+    "version": 1,
+    "calibrationStatus": "internal_review",
+    "rationaleVi": "Diễn đạt quan hệ nguyên nhân, điều kiện và hệ quả bằng cấu trúc đa dạng nhưng rõ ràng. Bài này luyện: Ensure that nối khuyến nghị của chính phủ với kết quả cần bảo đảm."
+  },
+  {
+    "id": "band-6.5-034",
+    "practiceLevel": "6.5",
+    "type": "sentence",
+    "topic": "Đô thị",
+    "targetTerm": "urban planning",
+    "meaningVi": "quy hoạch đô thị",
+    "promptVi": "Quy hoạch đô thị tốt có thể rút ngắn thời gian đi lại và cải thiện chất lượng không khí.",
+    "referenceAnswers": [
+      "Effective urban planning can shorten commutes and improve air quality."
+    ],
+    "grammarTags": [
+      "parallel-verbs"
+    ],
+    "explanationVi": "Shorten và improve là hai động từ song song sau can.",
+    "commonErrors": [],
+    "editorialStatus": "pilot",
+    "source": "original-starter",
+    "version": 1,
+    "calibrationStatus": "internal_review",
+    "rationaleVi": "Kết hợp nhiều mệnh đề và đối chiếu giải pháp với hạn chế trong một ý mạch lạc. Bài này luyện: Shorten và improve là hai động từ song song sau can."
+  },
+  {
+    "id": "band-6.5-035",
+    "practiceLevel": "6.5",
+    "type": "sentence",
+    "topic": "Giáo dục",
+    "targetTerm": "critical thinking",
+    "meaningVi": "tư duy phản biện",
+    "promptVi": "Thay vì chỉ ghi nhớ sự kiện, học sinh nên được khuyến khích phát triển tư duy phản biện.",
+    "referenceAnswers": [
+      "Rather than simply memorising facts, students should be encouraged to develop critical thinking."
+    ],
+    "grammarTags": [
+      "rather-than"
+    ],
+    "explanationVi": "Rather than đối chiếu ghi nhớ máy móc với tư duy phản biện.",
+    "commonErrors": [],
+    "editorialStatus": "pilot",
+    "source": "original-starter",
+    "version": 1,
+    "calibrationStatus": "internal_review",
+    "rationaleVi": "Kết hợp nhiều mệnh đề và đối chiếu giải pháp với hạn chế trong một ý mạch lạc. Bài này luyện: Rather than đối chiếu ghi nhớ máy móc với tư duy phản biện."
+  },
+  {
+    "id": "band-6.5-036",
+    "practiceLevel": "6.5",
+    "type": "sentence",
+    "topic": "Công việc",
+    "targetTerm": "job satisfaction",
+    "meaningVi": "sự hài lòng trong công việc",
+    "promptVi": "Lương cao không phải lúc nào cũng dẫn đến sự hài lòng trong công việc nếu nhân viên thiếu quyền tự chủ.",
+    "referenceAnswers": [
+      "A high salary does not always lead to job satisfaction if employees lack autonomy."
+    ],
+    "grammarTags": [
+      "if-clause"
+    ],
+    "explanationVi": "If nêu điều kiện khiến lương cao chưa chắc tạo hài lòng công việc.",
+    "commonErrors": [],
+    "editorialStatus": "pilot",
+    "source": "original-starter",
+    "version": 1,
+    "calibrationStatus": "internal_review",
+    "rationaleVi": "Kết hợp nhiều mệnh đề và đối chiếu giải pháp với hạn chế trong một ý mạch lạc. Bài này luyện: If nêu điều kiện khiến lương cao chưa chắc tạo hài lòng công việc."
+  },
+  {
+    "id": "band-7.0-037",
+    "practiceLevel": "7.0",
+    "type": "paragraph",
+    "topic": "Môi trường",
+    "targetTerm": "long-term impact",
+    "meaningVi": "tác động dài hạn",
+    "promptVi": "Các chính sách môi trường cần được đánh giá dựa trên tác động dài hạn thay vì lợi ích trước mắt. Một dự án có thể tạo việc làm ngay, nhưng cũng gây ô nhiễm kéo dài nhiều năm. Vì vậy, báo cáo đánh giá nên tính cả chi phí xử lý về sau.",
+    "referenceAnswers": [
+      "Environmental policies should be evaluated by their long-term impact rather than their immediate benefits. A project may create jobs immediately while causing pollution for years. Its assessment should therefore include the cost of future clean-up."
+    ],
+    "grammarTags": [
+      "rather-than-evaluation"
+    ],
+    "explanationVi": "Nối lợi ích ngắn hạn với chi phí dài hạn rồi rút ra tiêu chí đánh giá.",
+    "commonErrors": [],
+    "editorialStatus": "pilot",
+    "source": "original-starter",
+    "version": 2,
+    "calibrationStatus": "internal_review",
+    "rationaleVi": "Viết đoạn ngắn có luận điểm, giải thích và giới hạn của luận điểm. Bài này luyện: Nối lợi ích ngắn hạn với chi phí dài hạn rồi rút ra tiêu chí đánh giá."
+  },
+  {
+    "id": "band-7.0-038",
+    "practiceLevel": "7.0",
+    "type": "paragraph",
+    "topic": "Công nghệ",
+    "targetTerm": "digital divide",
+    "meaningVi": "khoảng cách số",
+    "promptVi": "Nếu thiếu hạ tầng phù hợp, học trực tuyến có thể làm gia tăng khoảng cách số giữa các nhóm học sinh. Học sinh có đường truyền ổn định có thể tham gia đầy đủ hơn những em phải dùng chung thiết bị. Nhà trường nên hỗ trợ thiết bị và điểm truy cập trước khi coi hình thức này là giải pháp bình đẳng.",
+    "referenceAnswers": [
+      "Without adequate infrastructure, online learning may widen the digital divide between groups of students. Students with reliable connections can participate more fully than those who share devices. Schools should provide equipment and access points before treating this model as an equal opportunity for all."
+    ],
+    "grammarTags": [
+      "conditional-may"
+    ],
+    "explanationVi": "Giải thích cơ chế chênh lệch và đưa ra một điều kiện thực hiện.",
+    "commonErrors": [],
+    "editorialStatus": "pilot",
+    "source": "original-starter",
+    "version": 2,
+    "calibrationStatus": "internal_review",
+    "rationaleVi": "Viết đoạn ngắn có luận điểm, giải thích và giới hạn của luận điểm. Bài này luyện: Giải thích cơ chế chênh lệch và đưa ra một điều kiện thực hiện."
+  },
+  {
+    "id": "band-7.0-039",
+    "practiceLevel": "7.0",
+    "type": "paragraph",
+    "topic": "Xã hội",
+    "targetTerm": "social mobility",
+    "meaningVi": "khả năng cải thiện vị thế xã hội",
+    "promptVi": "Giáo dục chất lượng có thể thúc đẩy sự dịch chuyển xã hội, nhưng học phí cao lại hạn chế cơ hội này. Một học sinh có năng lực vẫn có thể bỏ lỡ đại học vì gia đình không đủ khả năng chi trả. Học bổng theo nhu cầu sẽ giúp lợi ích của giáo dục đến được nhiều nhóm hơn.",
+    "referenceAnswers": [
+      "Quality education can promote social mobility, but high tuition fees limit this opportunity. A capable student may still miss out on university if their family cannot afford it. Need-based scholarships could help the benefits of education reach more groups."
+    ],
+    "grammarTags": [
+      "concession-but"
+    ],
+    "explanationVi": "Dùng ví dụ cụ thể để làm rõ giới hạn của cơ hội và đề xuất giải pháp.",
+    "commonErrors": [],
+    "editorialStatus": "pilot",
+    "source": "original-starter",
+    "version": 2,
+    "calibrationStatus": "internal_review",
+    "rationaleVi": "Viết đoạn ngắn có luận điểm, giải thích và giới hạn của luận điểm. Bài này luyện: Dùng ví dụ cụ thể để làm rõ giới hạn của cơ hội và đề xuất giải pháp."
+  },
+  {
+    "id": "band-7.5-040",
+    "practiceLevel": "7.5",
+    "type": "paragraph",
+    "topic": "Sức khỏe",
+    "targetTerm": "public health intervention",
+    "meaningVi": "biện pháp y tế công cộng",
+    "promptVi": "Một biện pháp y tế công cộng chỉ hiệu quả bền vững khi cộng đồng tin tưởng vào bằng chứng đứng sau nó. Ngay cả một chương trình có kết quả thử nghiệm tốt cũng có thể thất bại nếu người dân không hiểu cách dữ liệu được thu thập. Công bố sự bất định và giải thích quyết định một cách dễ hiểu có thể củng cố niềm tin đó.",
+    "referenceAnswers": [
+      "A public health intervention is only sustainable when the community trusts the evidence behind it. Even a programme with strong trial results may fail if people do not understand how the data were collected. Disclosing uncertainty and explaining decisions clearly can help build that trust."
+    ],
+    "grammarTags": [
+      "only-when"
+    ],
+    "explanationVi": "Phân biệt bằng chứng hiệu quả với niềm tin cộng đồng và nêu cách kết nối hai yếu tố.",
+    "commonErrors": [],
+    "editorialStatus": "pilot",
+    "source": "original-starter",
+    "version": 2,
+    "calibrationStatus": "internal_review",
+    "rationaleVi": "Xử lý phản biện và kết nối các hệ quả đối với nhiều nhóm. Bài này luyện: Phân biệt bằng chứng hiệu quả với niềm tin cộng đồng và nêu cách kết nối hai yếu tố."
+  },
+  {
+    "id": "band-7.5-041",
+    "practiceLevel": "7.5",
+    "type": "paragraph",
+    "topic": "Đô thị",
+    "targetTerm": "housing affordability",
+    "meaningVi": "khả năng chi trả nhà ở",
+    "promptVi": "Dù tái thiết đô thị có thể cải thiện cơ sở hạ tầng, nó cũng có nguy cơ làm giảm khả năng chi trả nhà ở. Nếu khu vực được cải tạo trở nên đắt đỏ, cư dân lâu năm có thể phải chuyển đi trước khi được hưởng lợi. Vì thế, cần kết hợp đầu tư công với bảo vệ người thuê nhà và theo dõi giá thuê theo thời gian.",
+    "referenceAnswers": [
+      "Although urban renewal can improve infrastructure, it may also undermine housing affordability. If the renewed area becomes more expensive, long-term residents may be displaced before they benefit. Public investment should therefore be paired with tenant protections and monitoring of rents over time."
+    ],
+    "grammarTags": [
+      "although-may"
+    ],
+    "explanationVi": "Đánh giá lợi ích và chi phí theo nhóm dân cư, rồi đề xuất điều kiện bảo vệ.",
+    "commonErrors": [],
+    "editorialStatus": "pilot",
+    "source": "original-starter",
+    "version": 2,
+    "calibrationStatus": "internal_review",
+    "rationaleVi": "Xử lý phản biện và kết nối các hệ quả đối với nhiều nhóm. Bài này luyện: Đánh giá lợi ích và chi phí theo nhóm dân cư, rồi đề xuất điều kiện bảo vệ."
+  },
+  {
+    "id": "band-7.5-042",
+    "practiceLevel": "7.5",
+    "type": "paragraph",
+    "topic": "Giáo dục",
+    "targetTerm": "standardised testing",
+    "meaningVi": "kiểm tra chuẩn hóa",
+    "promptVi": "Việc quá phụ thuộc vào các kỳ thi chuẩn hóa có thể khiến trường học xem nhẹ sự sáng tạo và năng lực hợp tác. Điểm thi giúp so sánh kết quả giữa các trường, nhưng chỉ phản ánh một phần việc học. Đánh giá chất lượng nên bổ sung bài tập dự án và phản hồi của giáo viên, đồng thời thừa nhận rằng các thước đo này cũng có giới hạn.",
+    "referenceAnswers": [
+      "Overreliance on standardised testing may cause schools to neglect creativity and collaboration. Test scores allow comparisons between schools, but capture only part of learning. Evaluation should also include project work and teacher feedback, while recognising that these measures have limitations too."
+    ],
+    "grammarTags": [
+      "overreliance"
+    ],
+    "explanationVi": "Cân bằng ưu điểm của thước đo chuẩn hóa với hạn chế và phương án bổ sung.",
+    "commonErrors": [],
+    "editorialStatus": "pilot",
+    "source": "original-starter",
+    "version": 2,
+    "calibrationStatus": "internal_review",
+    "rationaleVi": "Xử lý phản biện và kết nối các hệ quả đối với nhiều nhóm. Bài này luyện: Cân bằng ưu điểm của thước đo chuẩn hóa với hạn chế và phương án bổ sung."
+  },
+  {
+    "id": "band-8.0-043",
+    "practiceLevel": "8.0",
+    "type": "paragraph",
+    "topic": "Môi trường",
+    "targetTerm": "policy trade-off",
+    "meaningVi": "sự đánh đổi trong chính sách",
+    "promptVi": "Khi thiết kế thuế carbon, nhà hoạch định chính sách phải cân nhắc sự đánh đổi giữa hiệu quả môi trường và gánh nặng cho hộ thu nhập thấp. Mức thuế đủ cao có thể thay đổi hành vi, song cũng làm tăng chi phí năng lượng của người nghèo. Hoàn trả một phần doanh thu theo thu nhập sẽ giúp duy trì tín hiệu giá mà giảm tác động bất công.",
+    "referenceAnswers": [
+      "When designing a carbon tax, policymakers must weigh the trade-off between environmental effectiveness and the burden on low-income households. A sufficiently high tax can change behaviour, yet it may also raise energy costs for poorer households. Returning some revenue according to income would preserve the price signal while reducing an unfair burden."
+    ],
+    "grammarTags": [
+      "weigh-trade-off"
+    ],
+    "explanationVi": "Phân tích đánh đổi rồi nêu cơ chế xử lý mà không xóa mục tiêu môi trường.",
+    "commonErrors": [],
+    "editorialStatus": "pilot",
+    "source": "original-starter",
+    "version": 2,
+    "calibrationStatus": "internal_review",
+    "rationaleVi": "Phân tích sự đánh đổi và phân biệt tác động trước mắt với tác động dài hạn. Bài này luyện: Phân tích đánh đổi rồi nêu cơ chế xử lý mà không xóa mục tiêu môi trường."
+  },
+  {
+    "id": "band-8.0-044",
+    "practiceLevel": "8.0",
+    "type": "paragraph",
+    "topic": "Công nghệ",
+    "targetTerm": "algorithmic bias",
+    "meaningVi": "thiên lệch thuật toán",
+    "promptVi": "Nếu dữ liệu huấn luyện phản ánh bất bình đẳng sẵn có, các hệ thống tự động có thể củng cố thiên lệch thuật toán trong tuyển dụng. Ngay cả khi mô hình dự đoán chính xác trên toàn bộ mẫu, sai số vẫn có thể tập trung ở một số nhóm ứng viên. Vì vậy, cần kiểm tra kết quả theo nhóm và rà soát tiêu chí tuyển dụng thay vì chỉ xem một tỷ lệ chính xác chung.",
+    "referenceAnswers": [
+      "If training data reflects existing inequalities, automated systems may reinforce algorithmic bias in recruitment. Even if a model is accurate overall, its errors may be concentrated among particular groups of applicants. Results should therefore be checked by group, and hiring criteria reviewed, rather than relying on a single accuracy figure."
+    ],
+    "grammarTags": [
+      "conditional-reinforce"
+    ],
+    "explanationVi": "Phân biệt độ chính xác chung với tác động phân bố, rồi suy ra cách kiểm tra phù hợp.",
+    "commonErrors": [],
+    "editorialStatus": "pilot",
+    "source": "original-starter",
+    "version": 2,
+    "calibrationStatus": "internal_review",
+    "rationaleVi": "Phân tích sự đánh đổi và phân biệt tác động trước mắt với tác động dài hạn. Bài này luyện: Phân biệt độ chính xác chung với tác động phân bố, rồi suy ra cách kiểm tra phù hợp."
+  },
+  {
+    "id": "band-8.0-045",
+    "practiceLevel": "8.0",
+    "type": "paragraph",
+    "topic": "Xã hội",
+    "targetTerm": "intergenerational inequality",
+    "meaningVi": "bất bình đẳng giữa các thế hệ",
+    "promptVi": "Giá nhà tăng nhanh có thể làm sâu sắc thêm bất bình đẳng giữa các thế hệ, ngay cả khi tiền lương trung bình tiếp tục tăng. Người sở hữu nhà được hưởng lợi từ giá tài sản tăng, còn người trẻ đi thuê phải tiết kiệm lâu hơn. Đánh giá thị trường nhà ở chỉ qua mức lương trung bình vì thế có thể bỏ sót khoảng cách tài sản đang hình thành.",
+    "referenceAnswers": [
+      "Rapidly rising house prices can deepen intergenerational inequality, even if average wages continue to grow. Homeowners gain from rising asset values, whereas younger renters must save for longer. Assessing the housing market through average pay alone can therefore miss a widening gap in wealth."
+    ],
+    "grammarTags": [
+      "even-if"
+    ],
+    "explanationVi": "So sánh hai thế hệ theo tài sản và thu nhập để giải thích vì sao chỉ số trung bình chưa đủ.",
+    "commonErrors": [],
+    "editorialStatus": "pilot",
+    "source": "original-starter",
+    "version": 2,
+    "calibrationStatus": "internal_review",
+    "rationaleVi": "Phân tích sự đánh đổi và phân biệt tác động trước mắt với tác động dài hạn. Bài này luyện: So sánh hai thế hệ theo tài sản và thu nhập để giải thích vì sao chỉ số trung bình chưa đủ."
+  },
+  {
+    "id": "band-8.5-046",
+    "practiceLevel": "8.5",
+    "type": "paragraph",
+    "topic": "Y tế",
+    "targetTerm": "unintended consequence",
+    "meaningVi": "hệ quả ngoài dự kiến",
+    "promptVi": "Chính sách trợ cấp thuốc có thể tạo ra hệ quả ngoài dự kiến nếu nó khuyến khích kê đơn quá mức mà không cải thiện kết quả điều trị. Số đơn thuốc tăng có thể trông giống như khả năng tiếp cận được cải thiện, nhưng tự nó không chứng minh bệnh nhân khỏe hơn. Cần đối chiếu dữ liệu kê đơn với kết quả điều trị và theo dõi liệu tác động có khác nhau giữa các nhóm bệnh nhân hay không.",
+    "referenceAnswers": [
+      "A medicine subsidy may have unintended consequences if it encourages overprescribing without improving patient outcomes. More prescriptions may appear to indicate better access, but they do not by themselves show that patients are healthier. Prescription data should be compared with treatment outcomes, including whether effects differ across patient groups."
+    ],
+    "grammarTags": [
+      "unintended-consequences"
+    ],
+    "explanationVi": "Phân biệt chỉ số hoạt động với kết quả sức khỏe và yêu cầu kiểm tra tác động theo nhóm.",
+    "commonErrors": [],
+    "editorialStatus": "pilot",
+    "source": "original-starter",
+    "version": 2,
+    "calibrationStatus": "internal_review",
+    "rationaleVi": "Nêu điều kiện của kết luận, giả định và giới hạn của bằng chứng. Bài này luyện: Phân biệt chỉ số hoạt động với kết quả sức khỏe và yêu cầu kiểm tra tác động theo nhóm."
+  },
+  {
+    "id": "band-8.5-047",
+    "practiceLevel": "8.5",
+    "type": "paragraph",
+    "topic": "Giáo dục",
+    "targetTerm": "evidence-based reform",
+    "meaningVi": "cải cách dựa trên bằng chứng",
+    "promptVi": "Cải cách giáo dục dựa trên bằng chứng đòi hỏi phải xem xét bối cảnh địa phương, thay vì giả định rằng một mô hình sẽ phù hợp ở mọi nơi. Một phương pháp hiệu quả ở trường có ít học sinh có thể không đạt kết quả tương tự tại lớp đông và thiếu giáo viên. Trước khi mở rộng, người làm chính sách cần nêu giả định về nguồn lực và thử nghiệm ở những bối cảnh khác nhau.",
+    "referenceAnswers": [
+      "Evidence-based education reform requires attention to local context rather than the assumption that one model will work everywhere. An approach that works in a small school may not achieve the same results in crowded, understaffed classrooms. Before scaling it up, policymakers should state their assumptions about resources and test it in different settings."
+    ],
+    "grammarTags": [
+      "rather-than-assumption"
+    ],
+    "explanationVi": "Nêu giới hạn của khả năng áp dụng bằng chứng và cách kiểm tra trước khi nhân rộng.",
+    "commonErrors": [],
+    "editorialStatus": "pilot",
+    "source": "original-starter",
+    "version": 2,
+    "calibrationStatus": "internal_review",
+    "rationaleVi": "Nêu điều kiện của kết luận, giả định và giới hạn của bằng chứng. Bài này luyện: Nêu giới hạn của khả năng áp dụng bằng chứng và cách kiểm tra trước khi nhân rộng."
+  },
+  {
+    "id": "band-8.5-048",
+    "practiceLevel": "8.5",
+    "type": "paragraph",
+    "topic": "Môi trường",
+    "targetTerm": "distributional effect",
+    "meaningVi": "tác động phân bổ",
+    "promptVi": "Trước khi triển khai chương trình giao dịch phát thải, chính phủ nên đánh giá tác động phân bổ của nó đối với các hộ dễ bị tổn thương. Giá phát thải tăng có thể khuyến khích giảm ô nhiễm, nhưng hộ dùng phương tiện cũ khó thay đổi nhanh. Dữ liệu về mức tiêu dùng và thu nhập sẽ giúp thiết kế hỗ trợ đúng đối tượng mà vẫn giữ động lực cắt giảm phát thải.",
+    "referenceAnswers": [
+      "Before introducing an emissions trading scheme, governments should assess its distributional effects on vulnerable households. Higher emissions prices may encourage cuts in pollution, but households using older vehicles cannot adapt quickly. Data on consumption and income can inform targeted support without removing the incentive to reduce emissions."
+    ],
+    "grammarTags": [
+      "distributional-effects"
+    ],
+    "explanationVi": "Xem xét tác động phân bổ cùng mục tiêu chính sách và nêu dữ liệu cần có để điều chỉnh.",
+    "commonErrors": [],
+    "editorialStatus": "pilot",
+    "source": "original-starter",
+    "version": 2,
+    "calibrationStatus": "internal_review",
+    "rationaleVi": "Nêu điều kiện của kết luận, giả định và giới hạn của bằng chứng. Bài này luyện: Xem xét tác động phân bổ cùng mục tiêu chính sách và nêu dữ liệu cần có để điều chỉnh."
+  },
+  {
+    "id": "band-9.0-049",
+    "practiceLevel": "9.0",
+    "type": "paragraph",
+    "topic": "Xã hội",
+    "targetTerm": "structural inequality",
+    "meaningVi": "bất bình đẳng mang tính cấu trúc",
+    "promptVi": "Đánh giá một chính sách chỉ bằng mức tăng trưởng tổng thể có thể che khuất bất bình đẳng mang tính cấu trúc trong cách lợi ích được phân chia. Hai chương trình có cùng mức tăng GDP vẫn có thể mang lại cơ hội rất khác nhau cho các nhóm thu nhập. Muốn kết luận chương trình nào công bằng hơn, cần xem lợi ích được phân chia ra sao và liệu những thay đổi quan sát được có thực sự do chính sách tạo ra hay không.",
+    "referenceAnswers": [
+      "Assessing a policy solely by aggregate growth can obscure structural inequality in how its benefits are distributed. Two programmes with the same contribution to GDP may nonetheless create very different opportunities across income groups. Judging which is fairer requires examining the distribution of gains and whether the observed changes can actually be attributed to the policy."
+    ],
+    "grammarTags": [
+      "obscure-inequality"
+    ],
+    "explanationVi": "Nối chỉ số tổng hợp với phân bố lợi ích và giới hạn suy luận nhân quả, tránh kết luận quá chắc chắn.",
+    "commonErrors": [],
+    "editorialStatus": "pilot",
+    "source": "original-starter",
+    "version": 2,
+    "calibrationStatus": "internal_review",
+    "rationaleVi": "Duy trì lập luận tinh tế, chính xác và nhất quán qua nhiều câu. Bài này luyện: Nối chỉ số tổng hợp với phân bố lợi ích và giới hạn suy luận nhân quả, tránh kết luận quá chắc chắn."
+  },
+  {
+    "id": "band-9.0-050",
+    "practiceLevel": "9.0",
+    "type": "paragraph",
+    "topic": "Công nghệ",
+    "targetTerm": "causal inference",
+    "meaningVi": "suy luận nhân quả",
+    "promptVi": "Nếu không có thiết kế nghiên cứu đủ chặt chẽ, rất khó tách tác động của công nghệ giáo dục khỏi những yếu tố gây nhiễu khác. Trường áp dụng công cụ mới thường cũng có nguồn lực và đội ngũ khác với trường không áp dụng. Vì thế, chênh lệch điểm số sau can thiệp chỉ là bằng chứng gợi ý; một so sánh đáng tin cậy phải xử lý khác biệt ban đầu và công khai những yếu tố chưa đo được.",
+    "referenceAnswers": [
+      "Without a sufficiently rigorous study design, it is difficult to make causal inferences about educational technology while accounting for other confounding factors. Schools adopting a new tool often differ in resources and staffing from those that do not. A subsequent gap in scores is therefore suggestive rather than conclusive; a credible comparison must address baseline differences and disclose what remains unmeasured."
+    ],
+    "grammarTags": [
+      "causal-inference"
+    ],
+    "explanationVi": "Phân biệt tương quan với suy luận nhân quả và chỉ rõ điều kiện, giới hạn của bằng chứng.",
+    "commonErrors": [],
+    "editorialStatus": "pilot",
+    "source": "original-starter",
+    "version": 2,
+    "calibrationStatus": "internal_review",
+    "rationaleVi": "Duy trì lập luận tinh tế, chính xác và nhất quán qua nhiều câu. Bài này luyện: Phân biệt tương quan với suy luận nhân quả và chỉ rõ điều kiện, giới hạn của bằng chứng."
+  },
+  {
+    "id": "band-9.0-051",
+    "practiceLevel": "9.0",
+    "type": "paragraph",
+    "topic": "Môi trường",
+    "targetTerm": "competing priorities",
+    "meaningVi": "những ưu tiên cạnh tranh",
+    "promptVi": "Một chiến lược chuyển đổi năng lượng đáng tin cậy phải dung hòa các ưu tiên cạnh tranh về an ninh nguồn cung, khả năng chi trả và cắt giảm phát thải. Ưu tiên một mục tiêu mà bỏ qua hai mục tiêu còn lại có thể làm chính sách mất tính khả thi về chính trị hoặc kinh tế. Chiến lược thuyết phục cần nêu rõ ai chịu chi phí trước mắt, ai nhận lợi ích về sau và những giả định nào có thể thay đổi khi điều kiện biến động.",
+    "referenceAnswers": [
+      "A credible energy transition strategy must reconcile competing priorities of supply security, affordability and emissions reduction. Prioritising one goal while neglecting the others could make the policy politically or economically unworkable. A persuasive strategy must specify who bears immediate costs, who receives later benefits and which assumptions may change as conditions shift."
+    ],
+    "grammarTags": [
+      "reconcile-priorities"
+    ],
+    "explanationVi": "Làm rõ đánh đổi theo thời gian và nhóm chịu tác động, đồng thời thừa nhận tính bất định.",
+    "commonErrors": [],
+    "editorialStatus": "pilot",
+    "source": "original-starter",
+    "version": 2,
+    "calibrationStatus": "internal_review",
+    "rationaleVi": "Duy trì lập luận tinh tế, chính xác và nhất quán qua nhiều câu. Bài này luyện: Làm rõ đánh đổi theo thời gian và nhóm chịu tác động, đồng thời thừa nhận tính bất định."
+  },
+  {
+    "id": "band-1.0-cal-01",
+    "practiceLevel": "1.0",
+    "type": "word",
+    "topic": "Trường học",
+    "targetTerm": "school",
+    "meaningVi": "trường học",
+    "promptVi": "trường học",
+    "referenceAnswers": [
+      "school"
+    ],
+    "grammarTags": [
+      "high-frequency-word"
+    ],
+    "explanationVi": "Một từ thông dụng chỉ nơi học.",
+    "rationaleVi": "Từ riêng lẻ, không đòi hỏi cấu trúc câu.",
+    "commonErrors": [],
+    "calibrationStatus": "internal_review",
+    "editorialStatus": "pilot",
+    "source": "original-level-authored",
+    "version": 1
+  },
+  {
+    "id": "band-1.0-cal-02",
+    "practiceLevel": "1.0",
+    "type": "word",
+    "topic": "Quan hệ",
+    "targetTerm": "friend",
+    "meaningVi": "bạn bè",
+    "promptVi": "người bạn",
+    "referenceAnswers": [
+      "friend"
+    ],
+    "grammarTags": [
+      "high-frequency-word"
+    ],
+    "explanationVi": "Friend là danh từ chỉ một người bạn.",
+    "rationaleVi": "Từ riêng lẻ trong ngữ cảnh quen thuộc.",
+    "commonErrors": [],
+    "calibrationStatus": "internal_review",
+    "editorialStatus": "pilot",
+    "source": "original-level-authored",
+    "version": 1
+  },
+  {
+    "id": "band-1.5-cal-01",
+    "practiceLevel": "1.5",
+    "type": "phrase",
+    "topic": "Đồ dùng",
+    "targetTerm": "small bag",
+    "meaningVi": "túi nhỏ",
+    "promptVi": "một chiếc túi nhỏ",
+    "referenceAnswers": [
+      "a small bag"
+    ],
+    "grammarTags": [
+      "adjective-noun"
+    ],
+    "explanationVi": "Tính từ small đứng trước danh từ bag.",
+    "rationaleVi": "Cụm ba từ với mạo từ và trật tự tính từ.",
+    "commonErrors": [],
+    "calibrationStatus": "internal_review",
+    "editorialStatus": "pilot",
+    "source": "original-level-authored",
+    "version": 1
+  },
+  {
+    "id": "band-1.5-cal-02",
+    "practiceLevel": "1.5",
+    "type": "phrase",
+    "topic": "Trường học",
+    "targetTerm": "blue pens",
+    "meaningVi": "bút màu xanh",
+    "promptVi": "hai cây bút màu xanh",
+    "referenceAnswers": [
+      "two blue pens"
+    ],
+    "grammarTags": [
+      "number-adjective-noun"
+    ],
+    "explanationVi": "Số lượng đứng trước tính từ; pens thêm -s ở số nhiều.",
+    "rationaleVi": "Cụm danh từ ngắn với số lượng và màu sắc.",
+    "commonErrors": [],
+    "calibrationStatus": "internal_review",
+    "editorialStatus": "pilot",
+    "source": "original-level-authored",
+    "version": 1
+  },
+  {
+    "id": "band-2.0-cal-01",
+    "practiceLevel": "2.0",
+    "type": "phrase",
+    "topic": "Gia đình",
+    "targetTerm": "my sister",
+    "meaningVi": "chị hoặc em gái của tôi",
+    "promptVi": "chị gái tôi ở nhà",
+    "referenceAnswers": [
+      "my sister at home"
+    ],
+    "grammarTags": [
+      "possessive-place-phrase"
+    ],
+    "explanationVi": "At home là cụm chỉ vị trí, không dùng mạo từ trước home.",
+    "rationaleVi": "Cụm chỉ người và nơi chốn rất quen thuộc.",
+    "commonErrors": [],
+    "calibrationStatus": "internal_review",
+    "editorialStatus": "pilot",
+    "source": "original-level-authored",
+    "version": 1
+  },
+  {
+    "id": "band-2.0-cal-02",
+    "practiceLevel": "2.0",
+    "type": "phrase",
+    "topic": "Thời gian",
+    "targetTerm": "after school",
+    "meaningVi": "sau giờ học",
+    "promptVi": "sau giờ học",
+    "referenceAnswers": [
+      "after school"
+    ],
+    "grammarTags": [
+      "time-phrase"
+    ],
+    "explanationVi": "After school là cụm thời gian quen thuộc.",
+    "rationaleVi": "Cụm giới từ ngắn, chưa yêu cầu mệnh đề.",
+    "commonErrors": [],
+    "calibrationStatus": "internal_review",
+    "editorialStatus": "pilot",
+    "source": "original-level-authored",
+    "version": 1
+  },
+  {
+    "id": "band-2.5-cal-01",
+    "practiceLevel": "2.5",
+    "type": "sentence",
+    "topic": "Đồ dùng",
+    "targetTerm": "blue bag",
+    "meaningVi": "túi màu xanh",
+    "promptVi": "Tôi có một chiếc túi màu xanh.",
+    "referenceAnswers": [
+      "I have a blue bag."
+    ],
+    "grammarTags": [
+      "present-simple"
+    ],
+    "explanationVi": "Have diễn đạt sở hữu; a đứng trước danh từ số ít.",
+    "rationaleVi": "Một mệnh đề hiện tại đơn với đồ vật quen thuộc.",
+    "commonErrors": [],
+    "calibrationStatus": "internal_review",
+    "editorialStatus": "pilot",
+    "source": "original-level-authored",
+    "version": 1
+  },
+  {
+    "id": "band-2.5-cal-02",
+    "practiceLevel": "2.5",
+    "type": "sentence",
+    "topic": "Ăn uống",
+    "targetTerm": "eats rice",
+    "meaningVi": "ăn cơm",
+    "promptVi": "Cậu ấy ăn cơm ở nhà.",
+    "referenceAnswers": [
+      "He eats rice at home."
+    ],
+    "grammarTags": [
+      "third-person-present"
+    ],
+    "explanationVi": "Với he, động từ eat thêm -s ở hiện tại đơn.",
+    "rationaleVi": "Một ý, có chủ ngữ và động từ ở ngôi thứ ba.",
+    "commonErrors": [],
+    "calibrationStatus": "internal_review",
+    "editorialStatus": "pilot",
+    "source": "original-level-authored",
+    "version": 1
+  },
+  {
+    "id": "band-3.0-cal-01",
+    "practiceLevel": "3.0",
+    "type": "sentence",
+    "topic": "Đời sống",
+    "targetTerm": "lost my key",
+    "meaningVi": "đánh mất chìa khóa",
+    "promptVi": "Hôm qua tôi làm mất chìa khóa.",
+    "referenceAnswers": [
+      "I lost my key yesterday."
+    ],
+    "grammarTags": [
+      "past-simple-irregular"
+    ],
+    "explanationVi": "Lost là quá khứ bất quy tắc của lose.",
+    "rationaleVi": "Câu đơn về trải nghiệm đã qua, từ vựng cụ thể.",
+    "commonErrors": [],
+    "calibrationStatus": "internal_review",
+    "editorialStatus": "pilot",
+    "source": "original-level-authored",
+    "version": 1
+  },
+  {
+    "id": "band-3.0-cal-02",
+    "practiceLevel": "3.0",
+    "type": "sentence",
+    "topic": "Gia đình",
+    "targetTerm": "visits her grandmother",
+    "meaningVi": "thăm bà",
+    "promptVi": "Cô ấy thăm bà vào mỗi Chủ nhật.",
+    "referenceAnswers": [
+      "She visits her grandmother every Sunday."
+    ],
+    "grammarTags": [
+      "third-person-present"
+    ],
+    "explanationVi": "Với she, visit thêm -s để chỉ thói quen.",
+    "rationaleVi": "Câu đơn diễn đạt thói quen cá nhân.",
+    "commonErrors": [],
+    "calibrationStatus": "internal_review",
+    "editorialStatus": "pilot",
+    "source": "original-level-authored",
+    "version": 1
+  },
+  {
+    "id": "band-3.5-cal-01",
+    "practiceLevel": "3.5",
+    "type": "sentence",
+    "topic": "Kế hoạch",
+    "targetTerm": "call you",
+    "meaningVi": "gọi cho bạn",
+    "promptVi": "Tôi sẽ gọi cho bạn sau giờ học vì tôi cần giúp đỡ.",
+    "referenceAnswers": [
+      "I will call you after class because I need help."
+    ],
+    "grammarTags": [
+      "future-reason"
+    ],
+    "explanationVi": "Will diễn đạt việc sẽ làm; because nêu lý do.",
+    "rationaleVi": "Hai ý gần nhau nối bằng lý do trực tiếp.",
+    "commonErrors": [],
+    "calibrationStatus": "internal_review",
+    "editorialStatus": "pilot",
+    "source": "original-level-authored",
+    "version": 1
+  },
+  {
+    "id": "band-3.5-cal-02",
+    "practiceLevel": "3.5",
+    "type": "sentence",
+    "topic": "Mua sắm",
+    "targetTerm": "lighter than",
+    "meaningVi": "nhẹ hơn",
+    "promptVi": "Chiếc túi này nhẹ hơn chiếc túi của tôi.",
+    "referenceAnswers": [
+      "This bag is lighter than mine."
+    ],
+    "grammarTags": [
+      "comparative"
+    ],
+    "explanationVi": "Lighter than là so sánh hơn; mine thay cho my bag.",
+    "rationaleVi": "So sánh đơn giản trong ngữ cảnh quen thuộc.",
+    "commonErrors": [],
+    "calibrationStatus": "internal_review",
+    "editorialStatus": "pilot",
+    "source": "original-level-authored",
+    "version": 1
+  },
+  {
+    "id": "band-4.0-cal-01",
+    "practiceLevel": "4.0",
+    "type": "sentence",
+    "topic": "Đi lại",
+    "targetTerm": "missed the first lesson",
+    "meaningVi": "lỡ tiết học đầu",
+    "promptVi": "Vì xe buýt đến muộn, tôi đã lỡ tiết học đầu.",
+    "referenceAnswers": [
+      "Because the bus was late, I missed the first lesson."
+    ],
+    "grammarTags": [
+      "reason-past"
+    ],
+    "explanationVi": "Because đặt ở đầu câu để nêu nguyên nhân; cả hai hành động ở quá khứ.",
+    "rationaleVi": "Một mối quan hệ nguyên nhân–kết quả rõ ràng.",
+    "commonErrors": [],
+    "calibrationStatus": "internal_review",
+    "editorialStatus": "pilot",
+    "source": "original-level-authored",
+    "version": 1
+  },
+  {
+    "id": "band-4.0-cal-02",
+    "practiceLevel": "4.0",
+    "type": "sentence",
+    "topic": "Môi trường",
+    "targetTerm": "reusable bottles",
+    "meaningVi": "chai có thể tái sử dụng",
+    "promptVi": "Chúng tôi dùng chai có thể tái sử dụng để tạo ra ít rác nhựa hơn.",
+    "referenceAnswers": [
+      "We use reusable bottles to produce less plastic waste."
+    ],
+    "grammarTags": [
+      "purpose-infinitive"
+    ],
+    "explanationVi": "To produce nêu mục đích; less dùng với waste không đếm được.",
+    "rationaleVi": "Câu trực tiếp về mục đích trong chủ đề quen thuộc.",
+    "commonErrors": [],
+    "calibrationStatus": "internal_review",
+    "editorialStatus": "pilot",
+    "source": "original-level-authored",
+    "version": 1
+  },
+  {
+    "id": "band-4.5-cal-01",
+    "practiceLevel": "4.5",
+    "type": "sentence",
+    "topic": "Giáo dục",
+    "targetTerm": "stays open longer",
+    "meaningVi": "mở cửa lâu hơn",
+    "promptVi": "Nếu thư viện mở cửa lâu hơn, nhiều học sinh có thể học ở đó.",
+    "referenceAnswers": [
+      "If the library stays open longer, more students can study there."
+    ],
+    "grammarTags": [
+      "first-conditional"
+    ],
+    "explanationVi": "If nêu điều kiện có thể xảy ra; can nêu kết quả.",
+    "rationaleVi": "Câu điều kiện cơ bản với từ vựng thông dụng.",
+    "commonErrors": [],
+    "calibrationStatus": "internal_review",
+    "editorialStatus": "pilot",
+    "source": "original-level-authored",
+    "version": 1
+  },
+  {
+    "id": "band-4.5-cal-02",
+    "practiceLevel": "4.5",
+    "type": "sentence",
+    "topic": "Công nghệ",
+    "targetTerm": "uses too much data",
+    "meaningVi": "dùng quá nhiều dữ liệu",
+    "promptVi": "Mặc dù ứng dụng tiện lợi, đôi khi nó dùng quá nhiều dữ liệu.",
+    "referenceAnswers": [
+      "Although the app is convenient, it sometimes uses too much data."
+    ],
+    "grammarTags": [
+      "basic-concession"
+    ],
+    "explanationVi": "Although nêu sự tương phản giữa tiện ích và hạn chế.",
+    "rationaleVi": "Một nhượng bộ đơn giản về trải nghiệm thường ngày.",
+    "commonErrors": [],
+    "calibrationStatus": "internal_review",
+    "editorialStatus": "pilot",
+    "source": "original-level-authored",
+    "version": 1
+  },
+  {
+    "id": "band-5.0-cal-01",
+    "practiceLevel": "5.0",
+    "type": "sentence",
+    "topic": "Giáo dục",
+    "targetTerm": "financial skills",
+    "meaningVi": "kỹ năng tài chính",
+    "promptVi": "Trường học nên dạy kỹ năng tài chính cơ bản vì nhiều học sinh chưa biết lập ngân sách.",
+    "referenceAnswers": [
+      "Schools should teach basic financial skills because many students do not know how to budget."
+    ],
+    "grammarTags": [
+      "supported-claim"
+    ],
+    "explanationVi": "Because bổ sung lý do cụ thể cho đề xuất.",
+    "rationaleVi": "Quan điểm về chủ đề xã hội có lý do rõ ràng.",
+    "commonErrors": [],
+    "calibrationStatus": "internal_review",
+    "editorialStatus": "pilot",
+    "source": "original-level-authored",
+    "version": 1
+  },
+  {
+    "id": "band-5.0-cal-02",
+    "practiceLevel": "5.0",
+    "type": "sentence",
+    "topic": "Đô thị",
+    "targetTerm": "public parks",
+    "meaningVi": "công viên công cộng",
+    "promptVi": "Công viên công cộng cho trẻ em một nơi an toàn để chơi, nhất là ở thành phố đông đúc.",
+    "referenceAnswers": [
+      "Public parks give children a safe place to play, especially in crowded cities."
+    ],
+    "grammarTags": [
+      "specific-example"
+    ],
+    "explanationVi": "Especially giới hạn đối tượng được hưởng lợi rõ hơn.",
+    "rationaleVi": "Nhận định được cụ thể hóa bằng nhóm người và bối cảnh.",
+    "commonErrors": [],
+    "calibrationStatus": "internal_review",
+    "editorialStatus": "pilot",
+    "source": "original-level-authored",
+    "version": 1
+  },
+  {
+    "id": "band-5.5-cal-01",
+    "practiceLevel": "5.5",
+    "type": "sentence",
+    "topic": "Giáo dục",
+    "targetTerm": "online classes",
+    "meaningVi": "lớp học trực tuyến",
+    "promptVi": "Dù lớp học trực tuyến tiết kiệm thời gian đi lại, một số học sinh khó tập trung ở nhà.",
+    "referenceAnswers": [
+      "Although online classes save travel time, some students find it hard to concentrate at home."
+    ],
+    "grammarTags": [
+      "concession"
+    ],
+    "explanationVi": "Although nêu lợi ích trước khi chỉ ra hạn chế cụ thể.",
+    "rationaleVi": "Cân bằng hai mặt của cùng một lựa chọn.",
+    "commonErrors": [],
+    "calibrationStatus": "internal_review",
+    "editorialStatus": "pilot",
+    "source": "original-level-authored",
+    "version": 1
+  },
+  {
+    "id": "band-5.5-cal-02",
+    "practiceLevel": "5.5",
+    "type": "sentence",
+    "topic": "Đi lại",
+    "targetTerm": "safe bike lanes",
+    "meaningVi": "làn xe đạp an toàn",
+    "promptVi": "Đạp xe đi làm tốt cho sức khỏe, nhưng sẽ kém thực tế ở thành phố thiếu làn xe đạp an toàn.",
+    "referenceAnswers": [
+      "Cycling to work is healthy, but it is less practical in cities without safe bike lanes."
+    ],
+    "grammarTags": [
+      "qualified-comparison"
+    ],
+    "explanationVi": "Less practical giới hạn lợi ích theo điều kiện hạ tầng.",
+    "rationaleVi": "Có đánh giá cân bằng và điều kiện cụ thể.",
+    "commonErrors": [],
+    "calibrationStatus": "internal_review",
+    "editorialStatus": "pilot",
+    "source": "original-level-authored",
+    "version": 1
+  },
+  {
+    "id": "band-6.0-cal-01",
+    "practiceLevel": "6.0",
+    "type": "sentence",
+    "topic": "Đô thị",
+    "targetTerm": "reliable buses",
+    "meaningVi": "xe buýt đáng tin cậy",
+    "promptVi": "Khi có xe buýt đúng giờ và ổn định, người đi làm dễ chọn chúng thay cho ô tô hơn, nhờ đó có thể giảm ùn tắc.",
+    "referenceAnswers": [
+      "When reliable buses are available, commuters are more likely to use them instead of cars, which can reduce congestion."
+    ],
+    "grammarTags": [
+      "relative-result-clause"
+    ],
+    "explanationVi": "Which can reduce congestion liên hệ lựa chọn đi lại với hệ quả có thể xảy ra.",
+    "rationaleVi": "Quan hệ điều kiện và hệ quả qua nhiều mệnh đề rõ ràng.",
+    "commonErrors": [],
+    "calibrationStatus": "internal_review",
+    "editorialStatus": "pilot",
+    "source": "original-level-authored",
+    "version": 1
+  },
+  {
+    "id": "band-6.0-cal-02",
+    "practiceLevel": "6.0",
+    "type": "sentence",
+    "topic": "Y tế",
+    "targetTerm": "remote communities",
+    "meaningVi": "cộng đồng xa xôi",
+    "promptVi": "Chính phủ có thể trợ giá vắc xin cho gia đình thu nhập thấp, miễn là phòng khám tiếp cận được cộng đồng xa xôi.",
+    "referenceAnswers": [
+      "The government could subsidise vaccines for low-income families, provided that clinics can reach remote communities."
+    ],
+    "grammarTags": [
+      "provided-that"
+    ],
+    "explanationVi": "Provided that đặt điều kiện cho tính khả thi của chính sách.",
+    "rationaleVi": "Khuyến nghị có điều kiện thực hiện và nhóm hưởng lợi.",
+    "commonErrors": [],
+    "calibrationStatus": "internal_review",
+    "editorialStatus": "pilot",
+    "source": "original-level-authored",
+    "version": 1
+  },
+  {
+    "id": "band-6.5-cal-01",
+    "practiceLevel": "6.5",
+    "type": "sentence",
+    "topic": "Giáo dục",
+    "targetTerm": "train teachers",
+    "meaningVi": "đào tạo giáo viên",
+    "promptVi": "Thay vì chỉ mua thiết bị mới, trường học cần đào tạo giáo viên sử dụng chúng hiệu quả.",
+    "referenceAnswers": [
+      "Rather than simply buying new devices, schools need to train teachers to use them effectively."
+    ],
+    "grammarTags": [
+      "rather-than"
+    ],
+    "explanationVi": "Rather than đối chiếu việc mua thiết bị với giải pháp đào tạo.",
+    "rationaleVi": "Đánh giá giải pháp bằng cách đối chiếu đầu vào với hiệu quả.",
+    "commonErrors": [],
+    "calibrationStatus": "internal_review",
+    "editorialStatus": "pilot",
+    "source": "original-level-authored",
+    "version": 1
+  },
+  {
+    "id": "band-6.5-cal-02",
+    "practiceLevel": "6.5",
+    "type": "sentence",
+    "topic": "Môi trường",
+    "targetTerm": "affordable alternatives",
+    "meaningVi": "lựa chọn thay thế có giá phải chăng",
+    "promptVi": "Cấm túi nhựa có thể giảm rác thải, nhưng hiệu quả sẽ hạn chế nếu không có lựa chọn thay thế với giá phải chăng.",
+    "referenceAnswers": [
+      "A ban on plastic bags may reduce waste, but its effect will be limited unless affordable alternatives are available."
+    ],
+    "grammarTags": [
+      "unless-clause"
+    ],
+    "explanationVi": "Unless nêu điều kiện thiếu thì chính sách khó đạt hiệu quả.",
+    "rationaleVi": "Có lợi ích, hạn chế và điều kiện cụ thể trong một câu.",
+    "commonErrors": [],
+    "calibrationStatus": "internal_review",
+    "editorialStatus": "pilot",
+    "source": "original-level-authored",
+    "version": 1
+  },
+  {
+    "id": "band-7.0-cal-01",
+    "practiceLevel": "7.0",
+    "type": "paragraph",
+    "topic": "Đô thị",
+    "targetTerm": "remote work",
+    "meaningVi": "làm việc từ xa",
+    "promptVi": "Nhiều thành phố khuyến khích làm việc từ xa để giảm ùn tắc. Biện pháp này giúp một số nhân viên tiết kiệm thời gian đi lại. Tuy nhiên, lao động dịch vụ thường không có lựa chọn tương tự.",
+    "referenceAnswers": [
+      "Many cities encourage remote work to ease congestion. It saves some employees commuting time. However, service workers often do not have the same option."
+    ],
+    "grammarTags": [
+      "qualified-paragraph"
+    ],
+    "explanationVi": "Đoạn có lợi ích cụ thể và giới hạn theo nhóm lao động.",
+    "rationaleVi": "Ba câu liên kết, có luận điểm và giới hạn của luận điểm.",
+    "commonErrors": [],
+    "calibrationStatus": "internal_review",
+    "editorialStatus": "pilot",
+    "source": "original-level-authored",
+    "version": 1
+  },
+  {
+    "id": "band-7.0-cal-02",
+    "practiceLevel": "7.0",
+    "type": "paragraph",
+    "topic": "Giáo dục",
+    "targetTerm": "digital divide",
+    "meaningVi": "khoảng cách số",
+    "promptVi": "Học trực tuyến giúp học sinh ở xa tiếp cận bài giảng. Tuy nhiên, những em thiếu thiết bị hoặc mạng ổn định có thể bị bỏ lại phía sau. Vì vậy, trường học cần thu hẹp khoảng cách số trước khi mở rộng hình thức này.",
+    "referenceAnswers": [
+      "Online learning gives students in remote areas access to lessons. However, those without devices or reliable internet may be left behind. Schools therefore need to narrow the digital divide before expanding this approach."
+    ],
+    "grammarTags": [
+      "paragraph-cause-response"
+    ],
+    "explanationVi": "Therefore nối vấn đề tiếp cận với đề xuất xử lý.",
+    "rationaleVi": "Đoạn có lợi ích, rủi ro và giải pháp nối mạch.",
+    "commonErrors": [],
+    "calibrationStatus": "internal_review",
+    "editorialStatus": "pilot",
+    "source": "original-level-authored",
+    "version": 1
+  },
+  {
+    "id": "band-7.5-cal-01",
+    "practiceLevel": "7.5",
+    "type": "paragraph",
+    "topic": "Đô thị",
+    "targetTerm": "housing affordability",
+    "meaningVi": "khả năng chi trả nhà ở",
+    "promptVi": "Tái thiết đô thị có thể cải thiện giao thông và không gian công cộng. Dù vậy, giá thuê tăng có thể buộc cư dân lâu năm chuyển đi. Một kế hoạch đáng tin cậy cần bảo vệ khả năng chi trả nhà ở ngay từ đầu.",
+    "referenceAnswers": [
+      "Urban redevelopment can improve transport and public spaces. Even so, rising rents may force long-term residents to leave. A credible plan must protect housing affordability from the outset."
+    ],
+    "grammarTags": [
+      "counterargument-paragraph"
+    ],
+    "explanationVi": "Even so dẫn từ lợi ích sang tác động phân bổ; from the outset nhấn mạnh thời điểm can thiệp.",
+    "rationaleVi": "Đoạn cân bằng lợi ích với tác động lên một nhóm cụ thể.",
+    "commonErrors": [],
+    "calibrationStatus": "internal_review",
+    "editorialStatus": "pilot",
+    "source": "original-level-authored",
+    "version": 1
+  },
+  {
+    "id": "band-7.5-cal-02",
+    "practiceLevel": "7.5",
+    "type": "paragraph",
+    "topic": "Giáo dục",
+    "targetTerm": "standardised tests",
+    "meaningVi": "bài kiểm tra chuẩn hóa",
+    "promptVi": "Bài kiểm tra chuẩn hóa giúp so sánh kết quả giữa các trường. Tuy nhiên, nếu kết quả thi quyết định mọi nguồn lực, giáo viên có thể thu hẹp nội dung dạy. Vì thế, việc đánh giá nên kết hợp điểm thi với bằng chứng khác về quá trình học.",
+    "referenceAnswers": [
+      "Standardised tests allow results to be compared across schools. However, if test scores determine all funding, teachers may narrow what they teach. Assessment should therefore combine scores with other evidence of learning."
+    ],
+    "grammarTags": [
+      "counterargument-paragraph"
+    ],
+    "explanationVi": "If giới hạn điều kiện phát sinh hệ quả; therefore dẫn sang giải pháp cân bằng.",
+    "rationaleVi": "Xem cả giá trị đo lường lẫn tác dụng phụ của chính sách.",
+    "commonErrors": [],
+    "calibrationStatus": "internal_review",
+    "editorialStatus": "pilot",
+    "source": "original-level-authored",
+    "version": 1
+  },
+  {
+    "id": "band-8.0-cal-01",
+    "practiceLevel": "8.0",
+    "type": "paragraph",
+    "topic": "Môi trường",
+    "targetTerm": "carbon pricing",
+    "meaningVi": "định giá carbon",
+    "promptVi": "Định giá carbon có thể khiến doanh nghiệp giảm phát thải bằng cách đưa chi phí ô nhiễm vào quyết định sản xuất. Tuy nhiên, nếu chi phí được chuyển hết sang người tiêu dùng, hộ thu nhập thấp sẽ chịu gánh nặng lớn hơn. Chính sách vì vậy cần đi kèm hỗ trợ có mục tiêu.",
+    "referenceAnswers": [
+      "Carbon pricing can encourage firms to cut emissions by incorporating pollution costs into production decisions. Yet if those costs are passed on to consumers, low-income households bear a disproportionate burden. The policy should therefore be accompanied by targeted support."
+    ],
+    "grammarTags": [
+      "distributional-trade-off"
+    ],
+    "explanationVi": "Đoạn phân tích cơ chế, tác động phân bổ và biện pháp giảm gánh nặng.",
+    "rationaleVi": "Lập luận chính sách nhiều bước với từ vựng chính xác.",
+    "commonErrors": [],
+    "calibrationStatus": "internal_review",
+    "editorialStatus": "pilot",
+    "source": "original-level-authored",
+    "version": 1
+  },
+  {
+    "id": "band-8.0-cal-02",
+    "practiceLevel": "8.0",
+    "type": "paragraph",
+    "topic": "Công nghệ",
+    "targetTerm": "algorithmic bias",
+    "meaningVi": "thiên lệch thuật toán",
+    "promptVi": "Hệ thống tuyển dụng tự động có thể xử lý số lượng lớn hồ sơ nhanh hơn con người. Nhưng nếu dữ liệu huấn luyện phản ánh định kiến tuyển dụng cũ, hệ thống có thể lặp lại bất công đó dưới dạng thiên lệch thuật toán. Kiểm toán thường xuyên là cần thiết, dù nó không thể thay thế trách nhiệm của người ra quyết định.",
+    "referenceAnswers": [
+      "Automated hiring systems can process large numbers of applications faster than people. But if their training data reflects past hiring prejudice, they may reproduce that unfairness as algorithmic bias. Regular audits are necessary, although they cannot replace human accountability."
+    ],
+    "grammarTags": [
+      "qualified-technology-claim"
+    ],
+    "explanationVi": "Đoạn nêu lợi ích, cơ chế gây lệch và giới hạn của biện pháp kiểm toán.",
+    "rationaleVi": "Có quan hệ nhân quả được giải thích, cùng giới hạn giải pháp.",
+    "commonErrors": [],
+    "calibrationStatus": "internal_review",
+    "editorialStatus": "pilot",
+    "source": "original-level-authored",
+    "version": 1
+  },
+  {
+    "id": "band-8.5-cal-01",
+    "practiceLevel": "8.5",
+    "type": "paragraph",
+    "topic": "Y tế",
+    "targetTerm": "unintended consequences",
+    "meaningVi": "hệ quả ngoài dự kiến",
+    "promptVi": "Trợ giá thuốc có thể giúp bệnh nhân nghèo tiếp cận điều trị. Tuy nhiên, mức dùng thuốc tăng chưa chứng minh sức khỏe được cải thiện; nó cũng có thể phản ánh việc kê đơn quá mức. Cần đánh giá kết quả điều trị trước khi mở rộng chương trình để tránh hệ quả ngoài dự kiến.",
+    "referenceAnswers": [
+      "Medicine subsidies may improve access for poorer patients. Yet higher drug use does not, by itself, show better health outcomes; it may also reflect overprescribing. Treatment results should be evaluated before the programme is expanded to avoid unintended consequences."
+    ],
+    "grammarTags": [
+      "evidence-limits"
+    ],
+    "explanationVi": "Phân biệt chỉ số sử dụng thuốc với kết quả điều trị; tránh suy luận nhân quả vội.",
+    "rationaleVi": "Đoạn có giả thuyết thay thế và điều kiện đánh giá bằng chứng.",
+    "commonErrors": [],
+    "calibrationStatus": "internal_review",
+    "editorialStatus": "pilot",
+    "source": "original-level-authored",
+    "version": 1
+  },
+  {
+    "id": "band-8.5-cal-02",
+    "practiceLevel": "8.5",
+    "type": "paragraph",
+    "topic": "Giáo dục",
+    "targetTerm": "evidence-based reform",
+    "meaningVi": "cải cách dựa trên bằng chứng",
+    "promptVi": "Một phương pháp giảng dạy thành công ở một thành phố chưa chắc hiệu quả ở vùng nông thôn. Nguồn lực, trình độ giáo viên và nhu cầu học sinh đều có thể khác. Cải cách dựa trên bằng chứng vì thế phải kiểm tra tính phù hợp với bối cảnh trước khi nhân rộng.",
+    "referenceAnswers": [
+      "A teaching method that succeeds in one city may not work equally well in rural areas. Resources, teacher preparation and student needs may differ. Evidence-based reform therefore requires testing how well an approach fits a new context before it is scaled up."
+    ],
+    "grammarTags": [
+      "contextual-validity"
+    ],
+    "explanationVi": "May not work equally well và requires testing tránh suy rộng quá mức từ một trường hợp.",
+    "rationaleVi": "Lập luận về giới hạn khả năng áp dụng của bằng chứng.",
+    "commonErrors": [],
+    "calibrationStatus": "internal_review",
+    "editorialStatus": "pilot",
+    "source": "original-level-authored",
+    "version": 1
+  },
+  {
+    "id": "band-9.0-cal-01",
+    "practiceLevel": "9.0",
+    "type": "paragraph",
+    "topic": "Xã hội",
+    "targetTerm": "structural inequality",
+    "meaningVi": "bất bình đẳng mang tính cấu trúc",
+    "promptVi": "Thu nhập trung bình tăng có thể tạo ấn tượng rằng mọi người đều khá lên. Nếu phần lớn lợi ích chỉ đến với nhóm đã có tài sản, con số tổng hợp che khuất bất bình đẳng mang tính cấu trúc. Đánh giá chính sách cần xem ai được hưởng lợi, ai gánh chi phí và vì sao sự chênh lệch vẫn tồn tại.",
+    "referenceAnswers": [
+      "Rising average income may suggest that everyone is better off. If most gains accrue to people who already own assets, the aggregate figure obscures structural inequality. Policy evaluation must ask who benefits, who bears the costs and why the gap persists."
+    ],
+    "grammarTags": [
+      "sustained-argument"
+    ],
+    "explanationVi": "Đoạn phân biệt số trung bình với phân bố lợi ích và đặt câu hỏi đánh giá cụ thể.",
+    "rationaleVi": "Lập luận nhất quán qua ba câu với sắc thái phân bổ chính xác.",
+    "commonErrors": [],
+    "calibrationStatus": "internal_review",
+    "editorialStatus": "pilot",
+    "source": "original-level-authored",
+    "version": 1
+  },
+  {
+    "id": "band-9.0-cal-02",
+    "practiceLevel": "9.0",
+    "type": "paragraph",
+    "topic": "Nghiên cứu",
+    "targetTerm": "causal inference",
+    "meaningVi": "suy luận nhân quả",
+    "promptVi": "Một trường áp dụng ứng dụng học tập mới rồi ghi nhận điểm thi tăng. Điều đó chưa đủ để kết luận ứng dụng tạo ra tiến bộ, vì thành phần học sinh và cách dạy có thể đã thay đổi cùng lúc. Suy luận nhân quả đáng tin cậy cần một thiết kế nghiên cứu tách được các yếu tố gây nhiễu đó.",
+    "referenceAnswers": [
+      "A school introduces a new learning app and subsequently records higher test scores. That alone cannot establish that the app caused the improvement, since the student intake and teaching methods may have changed at the same time. Credible causal inference requires a study design that can separate those confounding factors."
+    ],
+    "grammarTags": [
+      "causal-reasoning"
+    ],
+    "explanationVi": "That alone cannot establish phân biệt tương quan với nguyên nhân; câu cuối nêu điều kiện kiểm định.",
+    "rationaleVi": "Có giả thuyết thay thế và giới hạn suy luận được diễn đạt chính xác.",
+    "commonErrors": [],
+    "calibrationStatus": "internal_review",
+    "editorialStatus": "pilot",
+    "source": "original-level-authored",
+    "version": 1
+  }
+]

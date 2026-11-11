@@ -18,6 +18,7 @@ const NotebookPage = dynamic(() => import("@/features/notebook/notebook-ui").the
 const SmartNotebook = dynamic(() => import("@/features/notebook/smart-notebook").then((module) => module.SmartNotebook));
 const NewsPortal = dynamic(() => import("@/features/news/news-portal").then((module) => module.NewsPortal));
 const VocabularyHub = dynamic(() => import("@/features/vocabulary/vocabulary-hub").then((module) => module.VocabularyHub));
+const TranslationWorkspace = dynamic(() => import("@/features/practice/translation-workspace").then((module) => module.TranslationWorkspace));
 const VocabularyLanding = dynamic(() => import("@/features/vocabulary/vocabulary-landing").then((module) => module.VocabularyLanding));
 const CollocationsPage = dynamic(() => import("@/features/vocabulary/collocations-page").then((module) => module.CollocationsPage));
 const WordFormationPage = dynamic(() => import("@/features/vocabulary/word-formation-page").then((module) => module.WordFormationPage));
@@ -60,6 +61,8 @@ function PortalContent({ canManage }: { canManage: boolean }) {
           smartNotebookV1 ? <SmartNotebook /> : <NotebookPage />
         ) : section === "dictation" ? (
           skillMode === "clips" || (skillMode === "banks" && ["numbers", "quick"].includes(pathname.split("/")[4])) ? <ClipDictation /> : <VoaDictation />
+        ) : section === "practice" && skillMode === "translation" ? (
+          <TranslationWorkspace />
         ) : section === "grammar" && skillMode !== "live" ? (
           <GrammarGarden />
         ) : skill === "vocabulary" && !skillMode ? (
