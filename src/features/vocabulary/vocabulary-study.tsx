@@ -198,7 +198,7 @@ export function VocabularyStudy() {
   const stage = mode === "learn" ? learnItem?.stage : mode === "cards" ? "intro" : mode === "choice" ? "choice" : mode === "type" ? "type" : undefined;
   const currentId = mode === "learn" ? learnItem?.id : deck[position];
   const current = currentId ? byId.get(currentId) : undefined;
-  const ipa = useIpa(current?.headword ?? "", current?.source_ipa ?? "");
+  const ipa = useIpa(current ? mainForm(current) : "", current?.source_ipa ?? "");
   const optionKey = `${currentId}:${stage}:${mode === "learn" ? learnQueue.length : position}`;
   const options = useMemo(() => {
     if (!current) return [];
@@ -429,7 +429,7 @@ export function VocabularyStudy() {
             : <span className="vocab-study-keys"><Keyboard size={15} /> Bấm 1–4 để chọn</span>}
         </div>}
       </> : null}
-      <p className="vocab-muted">Phát âm: bản ghi giọng người từ Wiktionary / Wikimedia Commons (CC BY-SA) khi có, còn lại dùng giọng đọc của thiết bị. {collection === "ielts" ? "Band là gợi ý học tập ước lượng, không phải band chính thức của từng từ." : <>Nguồn nghĩa Việt: <a href="https://github.com/thichhoc-org/thichhoc-dict" target="_blank" rel="noopener noreferrer">Thichhoc</a> / <a href="https://github.com/skypediacode/english-vietnamese-dictionary" target="_blank" rel="noopener noreferrer">Skypedia</a> (CC BY-SA 4.0). Định nghĩa Anh: <a href="https://en-word.net/" target="_blank" rel="noopener noreferrer">Open English WordNet</a>.</>}</p>
+      <p className="vocab-muted">Phát âm: bản ghi giọng người từ Wiktionary / Wikimedia Commons (CC BY-SA) khi có, còn lại dùng giọng đọc của thiết bị. {current && mainForm(current) === "a.m." && <>Bản thu a.m.: <a href="https://commons.wikimedia.org/wiki/File:En-us-a.m..ogg" target="_blank" rel="noopener noreferrer">Dvortygirl · CC BY-SA 3.0</a>. </>}{collection === "ielts" ? "Band là gợi ý học tập ước lượng, không phải band chính thức của từng từ." : <>Nguồn nghĩa Việt: <a href="https://github.com/thichhoc-org/thichhoc-dict" target="_blank" rel="noopener noreferrer">Thichhoc</a> / <a href="https://github.com/skypediacode/english-vietnamese-dictionary" target="_blank" rel="noopener noreferrer">Skypedia</a> (CC BY-SA 4.0). Định nghĩa Anh: <a href="https://en-word.net/" target="_blank" rel="noopener noreferrer">Open English WordNet</a>.</>}</p>
     </section>}
   </div>;
 }
