@@ -5,18 +5,18 @@
 .vbank-intro{display:flex;justify-content:space-between;gap:25px;align-items:center;background:linear-gradient(115deg,#e6faf8,#fff9f1)!important}
 .vbank-intro p{max-width:780px;margin:8px 0 0}
 .vbank-counts{display:flex;gap:12px;flex-wrap:wrap}
-.vbank-counts span{display:grid;gap:4px;min-width:115px;padding:13px 17px;border-radius:14px;background:#ffffffbf;font-size:12px;color:#6b8096}
-.vbank-counts strong{font:800 26px var(--font-display);color:#078f98}
+.vbank-counts span{display:grid;gap:4px;min-width:115px;padding:13px 17px;border-radius:var(--r-md);background:#ffffffbf;font-size:12px;color:#6b8096}
+.vbank-counts strong{font:800 26px var(--font-display);color:var(--teal-strong)}
 .vbank-import code{font-size:13px}
 .vbank-file{display:grid;gap:7px;max-width:510px;margin:18px 0;font-weight:800}
-.vbank-file input{border:1px dashed #9bcbd0;border-radius:11px;padding:12px;background:#f5fbfb}
+.vbank-file input{border:1px dashed #9bcbd0;border-radius:var(--r-md);padding:12px;background:#f5fbfb}
 .vbank-muted{font-size:13px;color:#8293a7!important}
 .vbank-preview{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0}
-.vbank-preview span{border:1px solid #deebed;border-radius:9px;padding:8px 11px;background:#f8fbfc;font-size:12px}
+.vbank-preview span{border:1px solid #deebed;border-radius:var(--r-sm);padding:8px 11px;background:#f8fbfc;font-size:12px}
 .vbank-heading{display:flex;align-items:center;justify-content:space-between;gap:15px;margin-bottom:16px}
 .vbank-heading span{font-size:13px;color:#8194a7}
 .vbank-filters{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:18px}
-.vbank-filters input,.vbank-filters select,.vbank-editor input,.vbank-editor textarea,.vbank-editor select{border:1px solid #dce7ed;border-radius:10px;background:#fff;color:#17314e;padding:11px 12px;min-height:42px}
+.vbank-filters input,.vbank-filters select,.vbank-editor input,.vbank-editor textarea,.vbank-editor select{border:1px solid #dce7ed;border-radius:var(--r-md);background:#fff;color:#17314e;padding:11px 12px;min-height:42px}
 .vbank-filters input{flex:1;min-width:210px}
 .vbank-list{display:grid}
 .vbank-row{display:flex;justify-content:space-between;align-items:center;gap:14px;padding:12px 3px;border:0;border-bottom:1px solid #eaf0f3;background:none;text-align:left;cursor:pointer;color:#17314e}
@@ -30,5 +30,5 @@
 .vbank-editor input,.vbank-editor textarea,.vbank-editor select{width:100%;font:inherit}
 .vbank-example{border-left:3px solid #7dccce;padding:8px 14px;background:#f3fbfb}
 .vbank-actions{display:flex;justify-content:flex-end;gap:8px}
-.vbank-notice{border:1px solid #b6e6d2;border-radius:11px;background:#effbf4;padding:12px 15px;color:#176c4c!important}
+.vbank-notice{border:1px solid #b6e6d2;border-radius:var(--r-md);background:#effbf4;padding:12px 15px;color:#176c4c!important}
 @media(max-width:700px){.vbank-intro{align-items:flex-start;flex-direction:column}.vbank-admin .card{padding:17px}.vbank-filters>*{flex:1}}

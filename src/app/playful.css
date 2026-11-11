@@ -43,7 +43,7 @@
   position: absolute;
   translate: -50% -50%;
   padding: 6px 14px;
-  border-radius: 999px;
+  border-radius: var(--r-pill);
   background: var(--navy);
   color: #fff;
   font: 700 15px/1.2 var(--font-display);
@@ -154,7 +154,7 @@
   place-items: center;
   width: 28px;
   height: 28px;
-  border-radius: 9px;
+  border-radius: var(--r-sm);
   transition:
     transform 0.4s var(--ease-spring),
     background-color 0.2s,
@@ -169,14 +169,14 @@
 .nav-link:hover .nav-icon {
   transform: rotate(-10deg) scale(1.1);
 }
-.nav-icon.tone-teal { color: #0a7f89; background: #e2f5f4; }
+.nav-icon.tone-teal { color: var(--teal-strong); background: #e2f5f4; }
 .nav-icon.tone-coral { color: #d84b44; background: #ffece8; }
 .nav-icon.tone-sun { color: #b77a06; background: #fff3d4; }
 .nav-icon.tone-lavender { color: #6448d2; background: #efebfd; }
 .nav-icon.tone-sky { color: #2f72c8; background: #e6effc; }
 .nav-icon.tone-mint { color: #128461; background: #e0f5ec; }
 .nav-link.active .nav-icon { color: #fff; box-shadow: 0 4px 10px -4px rgba(16, 35, 63, 0.4); }
-.nav-link.active .nav-icon.tone-teal { background: #0a7f89; }
+.nav-link.active .nav-icon.tone-teal { background: var(--teal-strong); }
 .nav-link.active .nav-icon.tone-coral { background: #e5554e; }
 .nav-link.active .nav-icon.tone-sun { background: #e0a020; }
 .nav-link.active .nav-icon.tone-lavender { background: #6a52d6; }
@@ -377,7 +377,7 @@
   max-width: max-content;
   margin: 0 0 2px;
   padding: 3px 10px;
-  border-radius: 999px;
+  border-radius: var(--r-pill);
   background: #fff4e8;
   color: #c2560f;
   font-size: 12.5px;
@@ -402,7 +402,7 @@
   width: 100%;
   padding: 7px 10px;
   border: 1px solid var(--line);
-  border-radius: 10px;
+  border-radius: var(--r-md);
   background: #fff;
   color: var(--ink);
   font-size: 13px;
@@ -425,7 +425,7 @@
   place-items: center;
   width: 18px;
   height: 18px;
-  border-radius: 6px;
+  border-radius: var(--r-sm);
   color: #fff;
   opacity: 0.3;
   transition:
@@ -489,7 +489,7 @@
   min-height: 200px;
   padding: 22px 22px 18px;
   border: 1px solid var(--line);
-  border-radius: 16px;
+  border-radius: var(--r-lg);
   background: #fff;
   box-shadow: var(--shadow-lg);
   backface-visibility: hidden;
@@ -532,7 +532,7 @@
   gap: 5px;
   padding: 5px 11px;
   border: 1px solid var(--line);
-  border-radius: 999px;
+  border-radius: var(--r-pill);
   background: #fff;
   color: var(--ink);
   font-size: 12.5px;

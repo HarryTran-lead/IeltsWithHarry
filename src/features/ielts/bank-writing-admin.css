@@ -1,7 +1,7 @@
 .wga-layout { display: grid; gap: 16px; }
-.wga-job { display: flex; justify-content: space-between; gap: 12px; width: 100%; padding: 12px; margin-top: 8px; border: 1px solid #d7e1e5; border-radius: 10px; background: #fff; text-align: left; cursor: pointer; }
-.wga-job:hover, .wga-job:focus-visible { border-color: #15868b; }
+.wga-job { display: flex; justify-content: space-between; gap: 12px; width: 100%; padding: 12px; margin-top: 8px; border: 1px solid #d7e1e5; border-radius: var(--r-md); background: #fff; text-align: left; cursor: pointer; }
+.wga-job:hover, .wga-job:focus-visible { border-color: var(--teal-strong); }
 .wga-label { display: grid; gap: 6px; margin: 12px 0; font-weight: 700; }
-.wga-label input, .wga-label textarea { width: 100%; padding: 9px; border: 1px solid #bfcdd3; border-radius: 8px; font: inherit; }
-.wga-essay { max-height: 400px; overflow: auto; white-space: pre-wrap; overflow-wrap: anywhere; padding: 14px; border: 1px solid #d7e1e5; border-radius: 10px; font: inherit; }
+.wga-label input, .wga-label textarea { width: 100%; padding: 9px; border: 1px solid #bfcdd3; border-radius: var(--r-sm); font: inherit; }
+.wga-essay { max-height: 400px; overflow: auto; white-space: pre-wrap; overflow-wrap: anywhere; padding: 14px; border: 1px solid #d7e1e5; border-radius: var(--r-md); font: inherit; }
 @media (max-width: 650px) { .wga-job { flex-direction: column; } }

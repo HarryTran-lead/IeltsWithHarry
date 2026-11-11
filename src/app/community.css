@@ -38,7 +38,7 @@
 .community-demo-note {
   padding: 8px 14px;
   margin-bottom: 12px;
-  border-radius: 12px;
+  border-radius: var(--r-md);
   background: var(--sun-soft);
   color: #735a17;
   font-size: 12.5px;
@@ -51,7 +51,7 @@
   gap: 10px;
   margin: 0 0 14px;
   padding: 11px 14px;
-  border-radius: 12px;
+  border-radius: var(--r-md);
   background: var(--mint);
   color: #076b5c;
   font-size: 13.5px;
@@ -81,7 +81,7 @@
 .community-empty {
   background: var(--surface);
   border: 1px solid var(--line);
-  border-radius: 18px;
+  border-radius: var(--r-lg);
   box-shadow: var(--shadow);
 }
 
@@ -112,7 +112,7 @@
   gap: 10px;
   padding: 0 6px 0 16px;
   border: 1px solid var(--line);
-  border-radius: 14px;
+  border-radius: var(--r-md);
   background: var(--surface-2);
   color: var(--subtle);
   font-size: 14px;
@@ -127,7 +127,7 @@
   height: 36px;
   display: grid;
   place-items: center;
-  border-radius: 10px;
+  border-radius: var(--r-md);
   background: var(--teal-strong);
   color: #fff;
 }
@@ -144,7 +144,7 @@
   min-width: 0;
   padding: 10px 12px;
   border: 1px solid var(--line);
-  border-radius: 14px;
+  border-radius: var(--r-md);
   background: #fff;
   color: var(--navy);
   text-align: left;
@@ -161,7 +161,7 @@
   height: 36px;
   display: grid;
   place-items: center;
-  border-radius: 11px;
+  border-radius: var(--r-md);
   background: var(--tone-soft);
   color: var(--tone);
 }
@@ -184,7 +184,7 @@
 .community-topic-row::-webkit-scrollbar { display: none; }
 .community-tabs button {
   border: 0;
-  border-radius: 12px;
+  border-radius: var(--r-md);
   background: transparent;
   color: var(--muted);
   padding: 10px 16px;
@@ -204,7 +204,7 @@
   height: 42px;
   padding: 0 4px 0 12px;
   border: 1px solid var(--line);
-  border-radius: 12px;
+  border-radius: var(--r-md);
   background: var(--surface-2);
   color: var(--subtle);
   transition: border-color .2s, background-color .2s;
@@ -218,7 +218,7 @@
   display: grid;
   place-items: center;
   border: 0;
-  border-radius: 9px;
+  border-radius: var(--r-sm);
 }
 .community-search-clear { width: 26px; height: 26px; background: transparent; color: var(--subtle); }
 .community-search-clear:hover { background: var(--line); color: var(--navy); }
@@ -237,7 +237,7 @@
 .community-topic-links button {
   flex: none;
   border: 1px solid transparent;
-  border-radius: 999px;
+  border-radius: var(--r-pill);
   background: var(--surface-2);
   color: var(--ink);
   padding: 6px 12px;
@@ -293,7 +293,7 @@
   align-items: center;
   gap: 5px;
   padding: 4px 10px;
-  border-radius: 999px;
+  border-radius: var(--r-pill);
   background: var(--tone-soft);
   color: var(--tone);
   font-size: 11.5px;
@@ -302,7 +302,7 @@
 }
 .community-topic {
   padding: 4px 10px;
-  border-radius: 999px;
+  border-radius: var(--r-pill);
   background: var(--surface-2);
   border: 1px solid var(--line);
   color: var(--ink);
@@ -315,9 +315,9 @@
   align-items: center;
   padding: 1px 6px;
   border: 1px solid #b8e2dc;
-  border-radius: 6px;
+  border-radius: var(--r-sm);
   background: #e7f7f3;
-  color: #087c70;
+  color: var(--teal-strong);
   font-size: 10.5px;
   font-weight: 800;
   white-space: nowrap;
@@ -329,7 +329,7 @@
   width: 32px;
   height: 32px;
   border: 0;
-  border-radius: 9px;
+  border-radius: var(--r-sm);
   background: transparent;
   color: var(--muted);
 }
@@ -343,7 +343,7 @@
   padding: 6px;
   background: #fff;
   border: 1px solid var(--line);
-  border-radius: 12px;
+  border-radius: var(--r-md);
   box-shadow: var(--shadow-lg);
 }
 .community-menu button {
@@ -353,7 +353,7 @@
   gap: 8px;
   padding: 9px 10px;
   border: 0;
-  border-radius: 8px;
+  border-radius: var(--r-sm);
   background: transparent;
   color: var(--ink);
   font-size: 13px;
@@ -388,7 +388,7 @@ a.community-post-body:hover h2 { color: var(--teal-strong); }
 .community-post-body .community-quote {
   padding: 10px 14px;
   border-left: 3px solid #c9bff2;
-  border-radius: 10px;
+  border-radius: var(--r-md);
   background: var(--lavender-soft);
   color: #4d4a75;
   font-style: italic;
@@ -399,7 +399,7 @@ a.community-post-body:hover h2 { color: var(--teal-strong); }
   gap: 5px;
   margin-top: 8px;
   padding: 3px 9px;
-  border-radius: 999px;
+  border-radius: var(--r-pill);
   background: var(--mint);
   color: #168e64;
   font-size: 12px;
@@ -423,7 +423,7 @@ a.community-post-body:hover h2 { color: var(--teal-strong); }
   gap: 6px;
   padding: 7px 10px;
   border: 0;
-  border-radius: 10px;
+  border-radius: var(--r-md);
   background: transparent;
   color: inherit;
   white-space: nowrap;
@@ -450,14 +450,14 @@ a.community-post-body:hover h2 { color: var(--teal-strong); }
   gap: 10px;
   padding: 18px;
   border: 1px solid var(--line);
-  border-radius: 18px;
+  border-radius: var(--r-lg);
   background: #fff;
 }
 .community-skeleton > div { display: flex; align-items: center; gap: 12px; margin-bottom: 4px; }
 .community-skeleton i {
   display: block;
   height: 12px;
-  border-radius: 6px;
+  border-radius: var(--r-sm);
   background: linear-gradient(95deg, #f1f1ec, #fafaf6, #f1f1ec);
   background-size: 200% 100%;
   animation: community-shimmer 1.4s linear infinite;
@@ -513,7 +513,7 @@ a.community-post-body:hover h2 { color: var(--teal-strong); }
   gap: 10px;
   padding: 11px 14px;
   border: 1px solid var(--line);
-  border-radius: 14px;
+  border-radius: var(--r-md);
   background: #fff;
   color: var(--navy);
   text-align: left;
@@ -541,7 +541,7 @@ a.community-post-body:hover h2 { color: var(--teal-strong); }
   gap: 10px;
   min-height: 42px;
   padding: 0 8px;
-  border-radius: 12px;
+  border-radius: var(--r-md);
   color: var(--ink);
   font-size: 13.5px;
   font-weight: 700;
@@ -557,7 +557,7 @@ a.community-post-body:hover h2 { color: var(--teal-strong); }
   height: 30px;
   display: grid;
   place-items: center;
-  border-radius: 9px;
+  border-radius: var(--r-sm);
   background: var(--surface-2);
   color: var(--teal-strong);
 }
@@ -636,7 +636,7 @@ a.community-post-body:hover h2 { color: var(--teal-strong); }
 .community-section-title h1 svg { color: var(--teal-strong); }
 .community-count-pill {
   padding: 1px 9px;
-  border-radius: 999px;
+  border-radius: var(--r-pill);
   background: var(--teal-soft);
   color: var(--teal-strong);
   font-size: 12.5px;
@@ -646,7 +646,7 @@ a.community-post-body:hover h2 { color: var(--teal-strong); }
 .community-comment.accepted {
   margin: 0 -12px;
   padding: 14px 12px;
-  border-radius: 14px;
+  border-radius: var(--r-md);
   border-top-color: transparent;
   background: #f1faf6;
 }
@@ -659,7 +659,7 @@ a.community-post-body:hover h2 { color: var(--teal-strong); }
   align-items: center;
   gap: 4px;
   padding: 3px 8px;
-  border-radius: 999px;
+  border-radius: var(--r-pill);
   background: #dcf4e9;
   color: #11956b;
   font-size: 11.5px;
@@ -683,7 +683,7 @@ a.community-post-body:hover h2 { color: var(--teal-strong); }
   align-items: center;
   gap: 8px;
   padding: 16px;
-  border-radius: 12px;
+  border-radius: var(--r-md);
   background: var(--surface-2);
   color: var(--muted);
   font-size: 13.5px;
@@ -697,7 +697,7 @@ a.community-post-body:hover h2 { color: var(--teal-strong); }
   align-items: center;
   justify-content: space-between;
   padding: 7px 12px;
-  border-radius: 10px;
+  border-radius: var(--r-md);
   background: var(--teal-soft);
   color: var(--teal-strong);
   font-size: 12.5px;
@@ -712,7 +712,7 @@ a.community-post-body:hover h2 { color: var(--teal-strong); }
   width: 100%;
   padding: 11px 13px;
   border: 1px solid var(--line-strong);
-  border-radius: 12px;
+  border-radius: var(--r-md);
   background: #fff;
   color: var(--navy);
   font-size: 14px;
@@ -732,7 +732,7 @@ a.community-post-body:hover h2 { color: var(--teal-strong); }
   margin: 14px 0;
   padding: 12px;
   border: 1px solid #cce8e7;
-  border-radius: 14px;
+  border-radius: var(--r-md);
   background: #effafa;
   color: var(--teal-strong);
   font-size: 13.5px;
@@ -762,7 +762,7 @@ a.community-post-body:hover h2 { color: var(--teal-strong); }
   height: 34px;
   display: grid;
   place-items: center;
-  border-radius: 10px;
+  border-radius: var(--r-md);
   background: var(--teal-soft);
   color: var(--teal-strong);
 }
@@ -776,7 +776,7 @@ a.community-post-body:hover h2 { color: var(--teal-strong); }
 .community-report a {
   padding: 7px 11px;
   border: 1px solid var(--line);
-  border-radius: 9px;
+  border-radius: var(--r-sm);
   background: #fff;
   color: var(--teal-strong);
   font-size: 12.5px;
@@ -801,7 +801,7 @@ a.community-post-body:hover h2 { color: var(--teal-strong); }
   max-height: min(92vh, 900px);
   overflow: auto;
   padding: 22px 24px;
-  border-radius: 20px;
+  border-radius: var(--r-lg);
   background: #fff;
   box-shadow: 0 24px 70px #10233f40;
   animation: community-rise .3s var(--ease-out);
@@ -820,7 +820,7 @@ a.community-post-body:hover h2 { color: var(--teal-strong); }
   gap: 6px;
   padding: 10px 8px;
   border: 1px solid var(--line);
-  border-radius: 12px;
+  border-radius: var(--r-md);
   background: #fff;
   color: var(--ink);
   font-size: 12.5px;
@@ -849,13 +849,13 @@ a.community-post-body:hover h2 { color: var(--teal-strong); }
   gap: 8px;
   height: 44px;
   padding: 0 12px;
-  border-radius: 12px;
+  border-radius: var(--r-md);
   background: var(--mint);
   color: #087e6e;
   font-size: 12.5px;
   font-weight: 700;
 }
-.community-form-note { margin: 0; padding: 10px 12px; border-radius: 10px; background: var(--sun-soft); color: #6f5718; font-size: 12.5px; }
+.community-form-note { margin: 0; padding: 10px 12px; border-radius: var(--r-md); background: var(--sun-soft); color: #6f5718; font-size: 12.5px; }
 .community-dialog footer,
 .community-report-actions { display: flex; justify-content: flex-end; gap: 8px; padding-top: 14px; border-top: 1px solid #efeee8; }
 .community-report-dialog { max-width: 440px; display: grid; gap: 14px; }
@@ -881,7 +881,7 @@ a.community-post-body:hover h2 { color: var(--teal-strong); }
   .community-composer-types { display: flex; overflow-x: auto; scrollbar-width: none; gap: 8px; }
   .community-composer-types button { flex: none; padding: 8px 12px 8px 8px; }
   .community-type-copy small { display: none; }
-  .community-type-icon { width: 30px; height: 30px; border-radius: 9px; }
+  .community-type-icon { width: 30px; height: 30px; border-radius: var(--r-sm); }
   .community-post { padding: 14px; }
   .community-post-head { flex-wrap: wrap; }
   .community-post-tags { order: 3; flex-basis: 100%; justify-content: flex-start; }
