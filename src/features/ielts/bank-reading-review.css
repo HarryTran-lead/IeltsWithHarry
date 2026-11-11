@@ -141,3 +141,68 @@ body:has(.br-review) { overflow: hidden; }
 .br-suggest-grid strong { font-size: 14px; line-height: 1.35; }
 .br-suggest-grid small { color: #6d8296; font-size: 12px; }
 @media (max-width: 760px) { .br-suggest-grid { grid-template-columns: 1fr; } }
+
+/* Result summary: a mood card beside the score card with its ring, as on the reference result page. */
+.br-result-cards { display: grid; grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.25fr); gap: 16px; margin: 18px 0 6px; }
+.br-mood { position: relative; display: grid; align-content: space-between; justify-items: center; gap: 10px; min-height: 236px; overflow: hidden; padding: 20px 18px 0; border-radius: 22px; background: linear-gradient(160deg, #7c73e6, #5b6ad8); color: #fff; text-align: center; }
+.br-result-cards.is-good .br-mood { background: linear-gradient(160deg, #39b884, #1f9c6c); }
+.br-result-cards.is-mid .br-mood { background: linear-gradient(160deg, #f2a94b, #e07a2f); }
+.br-mood p { margin: 0; max-width: 28ch; font: 800 16px/1.4 var(--font-display), var(--font-sans), sans-serif; }
+.br-mood img { width: 150px; height: auto; margin-bottom: -6px; filter: drop-shadow(0 12px 18px #0003); animation: br-mood-in .5s var(--ease-out); }
+.br-mood-sticker { position: absolute; right: 18px; bottom: 26px; }
+@keyframes br-mood-in { from { opacity: 0; transform: translateY(14px) scale(.96); } }
+.br-score-card { display: grid; gap: 10px; padding: 16px 20px 16px; border: 1px solid #ece4da; border-radius: 22px; background: #fff; box-shadow: 0 10px 26px -22px #6b4f2f; }
+.br-score-card header { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; }
+.br-score-card header b { color: #213444; font: 800 16px/1.3 var(--font-display), var(--font-sans), sans-serif; }
+.br-score-card header small { display: grid; justify-items: end; gap: 1px; color: #7a8a99; font-size: 11.5px; font-weight: 700; }
+.br-score-card header small svg { display: none; }
+.br-score-card header strong { color: #213444; font: 800 15px/1.2 var(--font-sans), sans-serif; font-variant-numeric: tabular-nums; }
+.br-donut-row { display: flex; align-items: center; justify-content: center; gap: 26px; }
+.br-donut { flex: none; width: 150px; height: 150px; }
+.br-donut circle { transition: stroke-dasharray .6s var(--ease-out); }
+.br-donut-score { fill: #213444; font: 800 24px var(--font-display), var(--font-sans), sans-serif; }
+.br-donut-label { fill: #6d8296; font: 700 12px var(--font-sans), sans-serif; }
+.br-legend { display: grid; gap: 10px; margin: 0; padding: 0; list-style: none; }
+.br-legend li { display: grid; grid-template-columns: 12px 64px auto; align-items: center; gap: 8px; color: #56697b; font-size: 13.5px; font-weight: 700; }
+.br-legend i { width: 12px; height: 12px; border-radius: 50%; background: #d5dde3; }
+.br-legend b { color: #213444; }
+.br-legend .is-right i { background: #2fa36b; }
+.br-legend .is-wrong i { background: #e5594b; }
+.br-score-card footer { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 10px; padding-top: 10px; border-top: 1px dashed #ece4da; }
+.br-band-chip { display: inline-flex; align-items: baseline; gap: 6px; color: #6d7f91; font-size: 12.5px; font-weight: 700; }
+.br-band-chip b { color: #b3473a; font: 800 22px/1 var(--font-display), var(--font-sans), sans-serif; }
+.br-score-card footer button { display: inline-flex; align-items: center; gap: 4px; height: 36px; padding: 0 16px; border: 1.5px solid #f0c9b8; border-radius: 999px; background: #fff7f2; color: #b3473a; font: 800 13px/1 var(--font-sans), sans-serif; cursor: pointer; transition: background .15s, border-color .15s; }
+.br-score-card footer button:hover { border-color: #df6b59; background: #ffece4; }
+
+/* Review: a matching block as one grid — the chosen cell red or green, the answer ringed in green */
+.br-grid-legend { display: grid; gap: 4px; margin: 4px 0 12px; padding: 12px 14px; border: 1px solid #e6edf1; border-radius: 12px; background: #fbfcfd; list-style: none; }
+.br-grid-legend li { display: grid; grid-template-columns: 34px minmax(0, 1fr); gap: 6px; color: #34495e; font-size: 13.5px; line-height: 1.45; }
+.br-grid-legend b { color: #213444; }
+.br-grid-wrap { overflow-x: auto; border: 1px solid #e3eaee; border-radius: 12px; }
+.br-grid { width: 100%; border-collapse: collapse; font-size: 13.5px; }
+.br-grid th, .br-grid td { padding: 9px 8px; border-bottom: 1px solid #edf1f4; text-align: center; }
+.br-grid thead th { background: #f6f8fa; color: #56697b; font-weight: 800; }
+.br-grid tbody th { display: flex; align-items: flex-start; gap: 8px; min-width: 220px; color: #213444; font-weight: 500; line-height: 1.45; text-align: left; }
+.br-grid tbody tr:last-child th, .br-grid tbody tr:last-child td { border-bottom: 0; }
+.br-grid-no { display: grid; place-items: center; flex: none; min-width: 26px; height: 26px; border-radius: 50%; background: #eef2f4; color: #46607a; font-size: 12px; font-weight: 800; }
+.br-grid tr.is-right .br-grid-no { background: #2fa36b; color: #fff; }
+.br-grid tr.is-wrong .br-grid-no { background: #e5594b; color: #fff; }
+.br-grid tr.is-open { background: #fffaf3; }
+.br-grid td i { display: inline-block; width: 16px; height: 16px; border: 1.5px solid #c6d1d9; border-radius: 50%; background: #fff; vertical-align: middle; }
+.br-grid td.is-answer { background: #eaf8ef; }
+.br-grid td.is-answer i { border: 2px solid #2fa36b; }
+.br-grid td.is-chosen-right i { border-color: #2fa36b; background: radial-gradient(circle, #2fa36b 0 4.5px, #fff 5px); }
+.br-grid td.is-chosen-wrong { background: #fdecea; }
+.br-grid td.is-chosen-wrong i { border-color: #e5594b; background: radial-gradient(circle, #e5594b 0 4.5px, #fff 5px); }
+.br-grid td:last-child { width: 1%; white-space: nowrap; }
+.br-grid td button { height: 28px; padding: 0 10px; border: 1px solid #f0c9b8; border-radius: 999px; background: #fff; color: #b3473a; font: 800 12px/1 var(--font-sans), sans-serif; cursor: pointer; }
+.br-grid tr.is-open td button { background: #b3473a; border-color: #b3473a; color: #fff; }
+.br-question.is-grid-note { margin-top: 10px; }
+
+@media (max-width: 760px) {
+  .br-result-cards { grid-template-columns: 1fr; }
+  .br-mood { min-height: 190px; }
+  .br-mood img { width: 116px; }
+  .br-donut-row { gap: 16px; }
+  .br-donut { width: 124px; height: 124px; }
+}
