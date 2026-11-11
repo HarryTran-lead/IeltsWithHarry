@@ -95,8 +95,8 @@ it("seeks a second official page when the first page cannot support a full passa
       searches++;
       return Response.json({ candidates: [{ finishReason: "STOP", content: { parts: [{ text: JSON.stringify({ source_urls: [first, second] }) }] } }] });
     }
-    const count = body.includes(second) ? 13 : 8;
-    const facts = Array.from({ length: count }, (_, index) => ({ claim: `Official factual detail number ${index + 1} about the same event in Vietnam.`, source_url: index >= 8 ? second : first }));
+    const count = body.includes(second) ? 13 : 7;
+    const facts = Array.from({ length: count }, (_, index) => ({ claim: `Official factual detail number ${index + 1} about the same event in Vietnam.`, source_url: index >= 7 ? second : first }));
     return Response.json({ candidates: [{ finishReason: "STOP", content: { parts: [{ text: JSON.stringify({ topic: "A public development in Vietnam", facts }) }] } }] });
   }) as typeof fetch;
   try {
@@ -154,6 +154,33 @@ it("press feeds return only event metadata even when RSS contains full prose and
   expect(result).not.toHaveProperty("bodies");
   expect(result).not.toHaveProperty("images");
   expect(result.items[0].publication_status).toBe("review");
+});
+
+it("uses a limited report excerpt for at most three cited facts after finding an original page", async () => {
+  const previous = process.env.GEMINI_API_KEY;
+  process.env.GEMINI_API_KEY = "test-key";
+  const report = "https://news.tuoitre.vn/students-event.html";
+  const original = "https://chinhphu.vn/students-event";
+  const fetcher = (async (url: RequestInfo | URL, init?: RequestInit) => {
+    if (String(url) === original) return new Response(`<main>${"Official information about the student event. ".repeat(25)}</main>`, { headers: { "Content-Type": "text/html" } });
+    if (String(url) === report) return new Response(`<article>${Array.from({ length: 9 }, (_, index) => `<p>Newspaper factual paragraph ${index + 1} about students taking part in the event on a published date.</p>`).join("")}</article>`, { headers: { "Content-Type": "text/html" } });
+    if (String(init?.body).includes("googleSearch")) return Response.json({ candidates: [{ finishReason: "STOP", content: { parts: [{ text: JSON.stringify({ source_urls: [original] }) }] } }] });
+    const facts = Array.from({ length: 8 }, (_, index) => ({ claim: `Original announcement establishes distinct fact number ${index + 1} about the student event.`, source_url: original }));
+    facts.push(...Array.from({ length: 5 }, (_, index) => ({ claim: `The press report supplies objective detail number ${index + 1} about the same student event.`, source_url: report })));
+    return Response.json({ candidates: [{ finishReason: "STOP", content: { parts: [{ text: JSON.stringify({ topic: "A student event in Vietnam", facts }) }] } }] });
+  }) as typeof fetch;
+  try {
+    const result = await findIndependentDossier({ title: "Students gather for a new event", canonical_url: report, category: "Education" } as NewsItem, fetcher);
+    expect(result.success).toBe(true);
+    if (result.success) expect(result.data.facts.filter((fact) => fact.source_url === report)).toHaveLength(3);
+  } finally { if (previous === undefined) delete process.env.GEMINI_API_KEY; else process.env.GEMINI_API_KEY = previous; }
+});
+
+it("classifies broader English Vietnam leads into learning topics", async () => {
+  const titles = ["Students receive new scholarships", "Football festival draws young fans", "Coastal pollution threatens marine life", "Robots help local shops"];
+  const xml = `<rss><channel>${titles.map((title, index) => `<item><title>${title}</title><link>https://news.tuoitre.vn/story-${index}.html</link><pubDate>Tue, 10 Nov 2026 09:00:00 +0700</pubDate></item>`).join("")}</channel></rss>`;
+  const result = await rssProvider.fetch(source, (async () => new Response(xml)) as typeof fetch);
+  expect(result.items.map((item) => item.category)).toEqual(["Education", "Culture", "Environment", "Technology"]);
 });
 
 it("keeps Government News feeds as discovery leads in distinct learning categories", async () => {

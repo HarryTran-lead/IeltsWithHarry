@@ -34,7 +34,7 @@ export function AdminNewsFacts() {
   }
 
   return <section className="card admin-news-panel"><h2>Tạo bài từ hồ sơ dữ kiện</h2>
-    <p>Chỉ nhập các dữ kiện ngắn từ nguồn gốc hoặc nguồn mở được duyệt. Mỗi dòng: dữ kiện | URL HTTPS. Hệ thống đọc tối đa bốn trang nguồn để kiểm tra từng dữ kiện trước khi viết passage 520–820 từ. Không dán toàn văn, tiêu đề, đoạn trích hoặc ảnh của báo. Thiếu mười hai dữ kiện riêng biệt thì bỏ tin.</p>
+    <p>Nhập ít nhất tám dữ kiện ngắn, trong đó ít nhất năm từ nguồn gốc hoặc nguồn mở đã duyệt; tối đa ba dữ kiện khách quan từ báo VnExpress/Tuổi Trẻ. Mỗi dòng: dữ kiện | URL HTTPS. Hệ thống kiểm tra từng dữ kiện trước khi viết bài 450–820 từ. Không dán toàn văn, lời bình, đoạn trích hoặc ảnh của báo.</p>
     <form className="admin-news-form" onSubmit={(event) => void submit(event)}>
       <label className="wide">Chủ đề do biên tập viên đặt<input required minLength={12} maxLength={160} value={topic} onChange={(event) => setTopic(event.target.value)} /></label>
       <label>Danh mục<select value={category} onChange={(event) => setCategory(event.target.value as typeof category)}>{NEWS_CATEGORIES.map((item) => <option key={item}>{item}</option>)}</select></label>

@@ -108,15 +108,16 @@ function rssSummaries(xml: string): Record<string, string> {
     return url && summary ? [[newsHash(url), summary]] : [];
   }));
 }
-function officialVietnamCategory(title: string): NewsCategory {
+export function vietnamLeadCategory(title: string, fallback: NewsCategory): NewsCategory {
   const words = title.normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/đ/gi, "d").toLowerCase();
-  if (/\b(vac xin|vaccine|y te|suc khoe|benh vien|duoc|cham soc suc khoe)\b/.test(words)) return "Health";
-  if (/\b(giao duc|hoc sinh|sinh vien|dai hoc|truong hoc|dao tao|hoc tap)\b/.test(words)) return "Education";
-  if (/\b(van hoa|di san|du lich|nghe thuat|bao tang|le hoi)\b/.test(words)) return "Culture";
-  if (/\b(moi truong|khi hau|phat thai|nang luong|bao ton)\b/.test(words)) return "Environment";
-  if (/\b(doanh nghiep|kinh doanh|thuong mai|thi truong|kinh te|khoi nghiep)\b/.test(words)) return "Business";
-  if (/\b(chuyen doi so|tri tue nhan tao|ai|vien thong|5g|vneid|internet|ten mien|nen tang so)\b/.test(words)) return "Technology";
-  return "Science";
+  if (/\b(vac xin|vaccine|y te|suc khoe|benh vien|duoc|hospital|health|flu|medical|mental health)\b/.test(words)) return "Health";
+  if (/\b(giao duc|hoc sinh|sinh vien|dai hoc|truong hoc|dao tao|hoc tap|students?|schools?|universit(?:y|ies)|education|scholarship|exam|campus)\b/.test(words)) return "Education";
+  if (/\b(van hoa|di san|du lich|nghe thuat|bao tang|le hoi|concert|music|films?|cinema|festival|touris[mt]|travel|football|sports?|food)\b/.test(words)) return "Culture";
+  if (/\b(moi truong|khi hau|phat thai|nang luong|bao ton|environment|climate|emissions?|conservation|pollution)\b/.test(words)) return "Environment";
+  if (/\b(doanh nghiep|kinh doanh|thuong mai|thi truong|kinh te|khoi nghiep|business|economy|market|startups?|jobs?|wages?|housing)\b/.test(words)) return "Business";
+  if (/\b(chuyen doi so|tri tue nhan tao|ai|vien thong|5g|vneid|internet|ten mien|nen tang so|digital|robots?|technology|apps?)\b/.test(words)) return "Technology";
+  if (/\b(nghien cuu|khoa hoc|research|science|space)\b/.test(words)) return "Science";
+  return fallback;
 }
 
 export function parseRss(xml: string, source: NewsSource): NewsItem[] {
@@ -132,8 +133,8 @@ export function parseRss(xml: string, source: NewsSource): NewsItem[] {
       : rawDate;
     return makeItem(source, { url: rss ? xmlText(row.link) : atomLink(row.link), title: xmlText(row.title),
       date,
-      category: source.feed_url === "https://mst.gov.vn/rss/tin-tuc-su-kien.rss"
-        ? officialVietnamCategory(xmlText(row.title)) : source.category,
+      category: source.feed_url && pressDiscoveryFeedUrls.has(source.feed_url) && !source.feed_url.startsWith("https://baochinhphu.vn/")
+        ? vietnamLeadCategory(xmlText(row.title), source.category) : source.category,
       publisher: source.name.startsWith("Global Voices") ? "Global Voices" : source.name, language: "English", externalId: row.guid ? xmlText(row.guid) : row.id ? xmlText(row.id) : undefined });
   }).filter((item): item is NewsItem => item !== null);
 }
