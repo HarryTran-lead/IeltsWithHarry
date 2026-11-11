@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { useEffect, useMemo, useRef, useState, type ReactNode } from "react";
-import { ArrowRight, BookOpen, ChevronDown, ChevronLeft, ChevronRight, Clock3, Filter, Headphones, Languages, Mic, NotebookPen, PlayCircle, Search, X } from "lucide-react";
+import { ArrowRight, BookOpen, ChevronDown, ChevronLeft, ChevronRight, Clock3, Filter, Headphones, Languages, Mic, NotebookPen, PlayCircle, RotateCcw, Search, X } from "lucide-react";
 import { TopicArt } from "@/components/illustrations/topic-art";
 import { catalogGroups, catalogSkills, balancedCatalog, catalogEntriesForSelection, catalogQuestionTypes, catalogQuestionTypeIds, type CatalogExam, type CatalogSkill } from "@/lib/ielts-bank/catalog";
 import { displayExamTitle } from "@/lib/ielts-bank/display-title";
@@ -413,14 +413,16 @@ function WritingLibraryView({ exams, attempts, loading, error }: LibraryViewProp
  * question beside it.
  */
 function WritingShelfCard({ exam, facets, attempt }: { exam: CatalogExam; facets: ReturnType<typeof writingFacets>; attempt?: Attempt }) {
-  const href = attempt?.state === "in_progress" ? `/app/question-bank/attempt/${attempt.id}` : `/app/question-bank/exam/${exam.id}`;
+  const done = Boolean(attempt && attempt.state !== "in_progress");
+  const retryHref = `/app/question-bank/exam/${exam.id}`;
+  const href = attempt?.state === "in_progress" ? `/app/question-bank/attempt/${attempt.id}` : done ? `/app/question-bank/result/${attempt!.id}` : retryHref;
   const task1 = exam.practice_type === "task1_academic";
   const task = writingTasks.find((item) => item.id === exam.practice_type) ?? writingTasks[1];
   const band = gradedBand(attempt);
   const sticker = writingSticker(facets.topic);
   const figure = task1 ? exam.figure_url || (exam.image_url && !exam.image_url.includes("/ielts-images/covers/") ? exam.image_url : "") : "";
   const prompt = exam.prompt_preview?.replace(/\s+/g, " ").trim() || "Mở đề để xem yêu cầu đầy đủ.";
-  return <Link href={href} className={`bl-card wl-card ${band !== null ? "is-graded" : ""}`}>
+  const card = <Link href={href} className={`bl-card wl-card ${band !== null ? "is-graded" : ""}`}>
     <span className={`wl-cover ${task1 ? "is-figure" : "is-sticker"}`} style={task1 ? undefined : { background: sticker.tone }}>
       {/* Task figures come from many hosts, so a plain lazy image is used rather than next/image. */}
       {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -433,9 +435,10 @@ function WritingShelfCard({ exam, facets, attempt }: { exam: CatalogExam; facets
       <strong className="wl-title">{writingCardTitle(exam)}</strong>
       {!task1 && <span className="wl-sub">{facets.kindLabel}</span>}
       <span className="wl-prompt">{prompt}</span>
-      <span className="wl-foot"><span><Clock3 size={13} /> {exam.duration_minutes} phút</span><span>Tối thiểu {task.minimum} từ</span><span className="bl-source">{sourceLabel(exam)}</span><span className="bl-cta">{attempt?.state === "in_progress" ? "Viết tiếp" : attempt ? "Viết lại" : "Viết bài"} <ArrowRight size={15} /></span></span>
+      <span className="wl-foot"><span><Clock3 size={13} /> {exam.duration_minutes} phút</span><span>Tối thiểu {task.minimum} từ</span><span className="bl-source">{sourceLabel(exam)}</span><span className={`bl-cta ${done ? "is-shown" : ""}`}>{attempt?.state === "in_progress" ? "Viết tiếp" : done ? band !== null ? "Xem bài chấm" : "Xem bài làm" : "Viết bài"} <ArrowRight size={15} /></span></span>
     </span>
   </Link>;
+  return done ? <div className="bl-card-slot is-writing">{card}<Link className="bl-retry" href={retryHref} aria-label={`Viết lại ${exam.title}`}><RotateCcw size={13} /> Viết lại</Link></div> : card;
 }
 
 function MockLibraryCard({ test, part, title, questionTypes }: { test: MockCatalogEntry; part: number; title: string; questionTypes: string[] }) {
@@ -497,10 +500,14 @@ function AttemptChip({ attempt }: { attempt?: Attempt }) {
 
 /** One exam on the shelf; its shape follows the skill, like a printed practice book. */
 export function ExamCard({ exam, attempt, section }: { exam: CatalogExam; attempt?: Attempt; section?: { part: number; title: string; questionTypes: string[]; questionCount: number } }) {
-  const href = attempt?.state === "in_progress" ? `/app/question-bank/attempt/${attempt.id}` : section ? `/app/question-bank/exam/${exam.id}?part=${section.part}` : `/app/question-bank/exam/${exam.id}`;
+  // A finished exam opens its result and review; "Làm lại" starts a fresh attempt.
+  const done = Boolean(attempt && attempt.state !== "in_progress");
+  const retryHref = section ? `/app/question-bank/exam/${exam.id}?part=${section.part}` : `/app/question-bank/exam/${exam.id}`;
+  const href = attempt?.state === "in_progress" ? `/app/question-bank/attempt/${attempt.id}` : done ? `/app/question-bank/result/${attempt!.id}` : retryHref;
   const duration = section ? exam.skill === "Reading" ? 20 : 10 : exam.duration_minutes;
   const usage = !section && exam.attempt_count ? <span className="bl-usage"><PlayCircle size={13} /> {exam.attempt_count.toLocaleString("vi-VN")} lượt làm</span> : <span className="bl-usage"><Clock3 size={13} /> {duration} phút</span>;
-  const cta = <span className="bl-cta">{attempt?.state === "in_progress" ? "Làm tiếp" : attempt ? "Luyện lại" : "Luyện đề"} <ArrowRight size={15} /></span>;
+  const cta = <span className={`bl-cta ${done ? "is-shown" : ""}`}>{attempt?.state === "in_progress" ? "Làm tiếp" : done ? "Xem lại bài" : "Luyện đề"} <ArrowRight size={15} /></span>;
+  const retry = done ? <Link className="bl-retry" href={retryHref} aria-label={`Làm lại ${exam.title}`}><RotateCcw size={13} /> Làm lại</Link> : null;
 
   const readingFullCover = exam.skill === "Reading" && exam.practice_type === "full_test" && !section;
   const suppliedReadingTest = exam.skill === "Reading"
@@ -531,7 +538,7 @@ export function ExamCard({ exam, attempt, section }: { exam: CatalogExam; attemp
   }
 
   const types = section ? catalogQuestionTypeIds(section.questionTypes).map((id) => ({ id, label: catalogQuestionTypes.find((group) => group.id === id)?.label ?? "Other Types" })) : typeGroups(exam);
-  return <Link href={href} className="bl-card bl-card-shelf">
+  const card = <Link href={href} className="bl-card bl-card-shelf">
     <span className="bl-thumb">
       {/* eslint-disable-next-line @next/next/no-img-element */}
       {/* A full test shows its three supplied passage covers side by side. */}
@@ -553,6 +560,7 @@ export function ExamCard({ exam, attempt, section }: { exam: CatalogExam; attemp
       <span className="bl-foot"><AttemptChip attempt={attempt} /><span className="bl-source">{sourceLabel(exam)}</span>{cta}</span>
     </span>
   </Link>;
+  return retry ? <div className="bl-card-slot">{card}{retry}</div> : card;
 }
 
 /** A small drawing of a Writing Task 1 visual: lines, bars, a pie, a table, a process or a map. */

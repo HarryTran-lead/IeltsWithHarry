@@ -290,3 +290,12 @@
   .wl-foot .bl-source { display: none; }
   .wl-foot .bl-cta { opacity: 1; transform: none; }
 }
+
+/* A finished exam: the card opens its review; "Làm lại" sits in the picture corner. */
+.bl-card-slot { position: relative; display: flex; min-width: 0; }
+.bl-card-slot > .bl-card { flex: 1; min-width: 0; }
+.bl-retry { position: absolute; top: 8px; right: 8px; z-index: 3; display: inline-flex; align-items: center; gap: 5px; height: 28px; padding: 0 10px; border-radius: 999px; background: rgba(255, 255, 255, 0.94); color: #33475b; font-size: 12px; font-weight: 800; text-decoration: none; box-shadow: 0 4px 12px -6px rgba(16, 35, 63, 0.45); transition: transform 0.2s var(--ease-out), background 0.15s, color 0.15s; }
+.bl-retry:hover { background: #fff; color: var(--bl-accent); }
+.bl-card-slot:hover .bl-retry { transform: translateY(-3px); }
+.bl-card-slot.is-writing .bl-retry { top: auto; right: auto; left: 8px; bottom: 8px; }
+.bl-cta.is-shown { opacity: 1; transform: none; }
