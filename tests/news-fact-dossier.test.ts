@@ -25,10 +25,11 @@ it("rejects a press-only, thin or duplicated dossier", () => {
 });
 
 it("accepts relevant official Vietnam and regional sources without admitting lookalike hosts", () => {
-  for (const host of ["chinhphu.vn", "mot.gov.sg", "lta.gov.sg", "unesco.org"]) {
+  for (const host of ["chinhphu.vn", "baochinhphu.vn", "mot.gov.sg", "lta.gov.sg", "unesco.org"]) {
     expect(factDossierSchema.safeParse({ topic: "A regional policy change", category: "World News", facts: facts.map((fact) => ({ ...fact, source_url: `https://${host}/announcement` })) }).success).toBe(true);
   }
   expect(factDossierSchema.safeParse({ topic: "A regional policy change", category: "World News", facts: facts.map((fact) => ({ ...fact, source_url: "https://mot.gov.sg.example.com/announcement" })) }).success).toBe(false);
+  expect(factDossierSchema.safeParse({ topic: "A regional policy change", category: "World News", facts: facts.map((fact) => ({ ...fact, source_url: "https://baochinhphu.vn.example.com/announcement" })) }).success).toBe(false);
 });
 
 it("limits newspaper evidence to a short excerpt and rejects unreviewed hosts", async () => {
