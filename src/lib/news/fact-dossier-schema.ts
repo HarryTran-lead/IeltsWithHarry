@@ -2,7 +2,7 @@ import { z } from "zod";
 import { NEWS_CATEGORIES } from "./constants";
 
 export const factualSourceHosts = [
-  "nasa.gov", "noaa.gov", "gov.uk", "gov.vn", "chinhphu.vn",
+  "nasa.gov", "noaa.gov", "gov.uk", "gov.vn", "chinhphu.vn", "baochinhphu.vn",
   "gov.sg", "gov.my", "go.th", "go.jp", "gov.au",
   "who.int", "un.org", "unesco.org", "unicef.org", "worldbank.org",
   "esa.int", "asean.org", "globalvoices.org",
