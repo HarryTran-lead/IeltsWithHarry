@@ -1,5 +1,5 @@
 import { geminiJson } from "./enrichment";
-import { factDossierSchema } from "./fact-dossier-schema";
+import { approvedFactSource, approvedPressFactSource, factDossierSchema } from "./fact-dossier-schema";
 import { load } from "cheerio";
 
 const articleSchema = { type: "object", additionalProperties: false, required: ["title", "body"], properties: { title: { type: "string" }, body: { type: "string" } } } as const;
@@ -7,6 +7,7 @@ const reviewSchema = { type: "object", additionalProperties: false, required: ["
 const sourceCheckSchema = { type: "object", additionalProperties: false, required: ["evaluations"], properties: { evaluations: { type: "array", items: { type: "object", additionalProperties: false, required: ["index", "supported"], properties: { index: { type: "integer" }, supported: { type: "boolean" } } } } } } as const;
 
 export async function readFactualSource(url: string, fetcher: typeof fetch) {
+  if (!approvedFactSource(url)) throw new Error("Factual source host is not approved");
   const response = await fetcher(url, { redirect: "manual", signal: AbortSignal.timeout(9000), headers: { Accept: "text/html, text/plain" } });
   if (!response.ok || response.redirected || response.headers.get("location")) throw new Error("Factual source unavailable or redirected");
   const type = response.headers.get("content-type")?.split(";")[0].trim().toLowerCase();
@@ -16,10 +17,13 @@ export async function readFactualSource(url: string, fetcher: typeof fetch) {
   if (raw.length > 1_000_000) throw new Error("Factual source is too large");
   const $ = load(raw);
   $("script,style,nav,footer,header,form,aside,iframe").remove();
-  const content = ($("main").first().text() || $("article").first().text() || $("body").text() || raw)
-    .replace(/\s+/g, " ").trim().slice(0, 30_000);
-  if (content.length < 300) throw new Error("Factual source contains too little readable evidence");
-  return content;
+  const press = approvedPressFactSource(url);
+  const content = (press
+    ? $(".fck_detail p, .detail-content p, article p").toArray().map((node) => $(node).text().trim()).filter((text) => text.length >= 30).slice(0, 5).join(" ")
+    : "") || $("main").first().text() || $("article").first().text() || $("body").text() || raw;
+  const trimmed = content.replace(/\s+/g, " ").trim().slice(0, press ? 4_000 : 30_000);
+  if (trimmed.length < 300) throw new Error("Factual source contains too little readable evidence");
+  return trimmed;
 }
 
 async function verifyFactualSources(dossier: ReturnType<typeof factDossierSchema.parse>, fetcher: typeof fetch) {
@@ -42,7 +46,8 @@ export async function writeArticleFromFacts(input: unknown, fetcher: typeof fetc
   const dossier = factDossierSchema.parse(input);
   const verifiedWith = await verifyFactualSources(dossier, fetcher);
   const facts = dossier.facts.map((fact, index) => `${index + 1}. ${fact.claim} [${fact.source_url}]`).join("\n");
-  const range = dossier.facts.length >= 18 ? { min: 650, max: 820 } : { min: 520, max: 680 };
+  const range = dossier.facts.length >= 18 ? { min: 650, max: 820 }
+    : dossier.facts.length >= 12 ? { min: 520, max: 680 } : { min: 450, max: 620 };
   let accepted: { title: string; body: string; model: string } | null = null;
   let lastShape = "";
   for (let attempt = 0; attempt < 2; attempt++) {
