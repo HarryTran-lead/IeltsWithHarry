@@ -1,14 +1,14 @@
 "use client";
 
 import { Fragment, useCallback, useEffect, useMemo, useRef, useState, type CSSProperties, type Dispatch, type SetStateAction } from "react";
-import { AArrowDown, AArrowUp, BookmarkPlus, Check, ChevronLeft, ChevronRight, Eraser, Highlighter, NotebookPen, Pause, Play, RotateCcw, RotateCw, Search, Volume2, X } from "lucide-react";
+import { AArrowDown, AArrowUp, BookmarkPlus, Check, ChevronLeft, ChevronRight, Copy, Eraser, EyeOff, Highlighter, Languages, MessageSquarePlus, NotebookPen, Pause, Play, RotateCcw, RotateCw, Search, Sun, Trash2, Volume2, X } from "lucide-react";
 import { useOptionalNotebook } from "@/features/notebook/notebook-store";
 import { translateEnglishToVietnamese } from "@/lib/news/browser-translation";
 import { quickDefine } from "@/lib/vocabulary/quick-define";
 import type { ExamContent, ExamQuestion } from "@/lib/ielts-bank/schema";
 import { RichText, type BankExam } from "./bank-exam";
 import { groupQuestions, optionKey, optionLabel, QuestionGroupView, type AnswerProps } from "./bank-questions";
-import { encodeReadingMarks, rangeAt, savedReadingMarks, textOffset, type ReadingMark } from "./reading-highlights";
+import { encodeReadingMarks, encodeReadingNotes, rangeAt, savedReadingMarks, savedReadingNotes, textOffset, type ReadingMark, type ReadingNote } from "./reading-highlights";
 import "./bank-test.css";
 
 const canHighlight = () => typeof window !== "undefined" && "Highlight" in window && Boolean((CSS as unknown as { highlights?: unknown }).highlights);
@@ -75,27 +75,29 @@ function lookupWord(text: string) {
 }
 
 /** Vietnamese meaning, pronunciation and a definition for a word picked in the passage, with "save to notebook". */
-function LookupCard({ word, x, y, onClose }: { word: string; x: number; y: number; onClose: () => void }) {
+function LookupCard({ word, x, y, sentence, docked = false, onClose }: { word: string; x: number; y: number; sentence?: string; docked?: boolean; onClose: () => void }) {
   const notebook = useOptionalNotebook();
   const card = useRef<HTMLDivElement>(null);
   const [found, setFound] = useState<{ phonetic: string; part: string; definition: string; example: string } | null>(null);
   const [meaningVi, setMeaningVi] = useState<string | null>(null);
+  const [sentenceVi, setSentenceVi] = useState<string | null>(null);
+  const [copied, setCopied] = useState(false);
   const [saved, setSaved] = useState<"idle" | "saving" | "saved" | "error">("idle");
   // Each source fills its part as soon as it answers; a slow translation stops waiting after 8 s.
   useEffect(() => {
     let live = true;
     void quickDefine(word).then((value) => { if (live) setFound({ phonetic: value.phonetic ?? "", part: value.part ?? "", definition: value.definition ?? "", example: value.example ?? "" }); });
     const timeout = new Promise<string[]>((resolve) => window.setTimeout(() => resolve([""]), 8000));
-    void Promise.race([translateEnglishToVietnamese([word]), timeout]).then((value) => { if (live) setMeaningVi(value[0] ?? ""); }, () => { if (live) setMeaningVi(""); });
+    void Promise.race([translateEnglishToVietnamese(sentence ? [word, sentence] : [word]), timeout]).then((value) => { if (live) { setMeaningVi(value[0] ?? ""); setSentenceVi(value[1] ?? ""); } }, () => { if (live) { setMeaningVi(""); setSentenceVi(""); } });
     return () => { live = false; };
-  }, [word]);
+  }, [word, sentence]);
   useEffect(() => {
-    const close = (event: MouseEvent) => { if (!card.current?.contains(event.target as Node)) onClose(); };
+    const close = (event: MouseEvent) => { if (!card.current?.contains(event.target as Node) && !(docked && (event.target as HTMLElement).closest(".bt-passage, .bt-questions"))) onClose(); };
     const escape = (event: KeyboardEvent) => { if (event.key === "Escape") onClose(); };
     document.addEventListener("mousedown", close);
     document.addEventListener("keydown", escape);
     return () => { document.removeEventListener("mousedown", close); document.removeEventListener("keydown", escape); };
-  }, [onClose]);
+  }, [onClose, docked]);
   const already = notebook?.entries.some((entry) => entry.kind === "word" && entry.title.toLowerCase() === word);
   async function save() {
     if (!notebook || !meaningVi) return;
@@ -105,7 +107,9 @@ function LookupCard({ word, x, y, onClose }: { word: string; x: number; y: numbe
   }
   const left = Math.max(12, Math.min(x - 170, (typeof window === "undefined" ? 1200 : window.innerWidth) - 352));
   const top = Math.max(12, Math.min(y + 28, (typeof window === "undefined" ? 800 : window.innerHeight) - 330));
-  return <div ref={card} className="bt-lookup" role="dialog" aria-label={`Tra từ ${word}`} style={{ left, top }}>
+  const pattern = new RegExp(`(\\b${word.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}\\b)`, "i");
+  const marked = sentence ? sentence.split(pattern) : [];
+  return <div ref={card} className={`bt-lookup ${docked ? "is-docked" : ""}`} role="dialog" aria-label={`Tra từ ${word}`} style={docked ? undefined : { left, top }}>
     <header>
       <div><strong>{word}</strong>{found?.phonetic && <span>{found.phonetic}</span>}</div>
       <button type="button" aria-label="Nghe phát âm" onClick={() => { if ("speechSynthesis" in window) { const voice = new SpeechSynthesisUtterance(word); voice.lang = "en-US"; window.speechSynthesis.speak(voice); } }}><Volume2 size={17} /></button>
@@ -116,9 +120,15 @@ function LookupCard({ word, x, y, onClose }: { word: string; x: number; y: numbe
       <p className="bt-lookup-def">{found.part && <em>{found.part}</em>}{found.definition}</p>
       {found.example && <p className="bt-lookup-ex">“{found.example}”</p>}
     </> : <p className="bt-lookup-muted">Từ điển chưa có mục từ này.</p>}
+    {sentence && <div className="bt-lookup-context">
+      <span>Trong bài đọc</span>
+      <p>{marked.map((part, index) => index % 2 ? <mark key={index}>{part}</mark> : part)}</p>
+      {sentenceVi === null ? <small role="status">Đang dịch câu…</small> : sentenceVi ? <small>{sentenceVi}</small> : null}
+    </div>}
     <footer>
       {notebook && <button type="button" disabled={!meaningVi || already || saved === "saving" || saved === "saved"} onClick={() => void save()}>{already || saved === "saved" ? <><Check size={15} /> Đã có trong Sổ tay</> : <><BookmarkPlus size={15} /> {saved === "saving" ? "Đang lưu…" : "Lưu vào Sổ tay"}</>}</button>}
       {saved === "error" && <small role="alert">Chưa lưu được.</small>}
+      <button type="button" className="bt-lookup-copy" onClick={() => { void navigator.clipboard?.writeText(meaningVi ? `${word}: ${meaningVi}` : word).then(() => setCopied(true), () => undefined); }}>{copied ? <><Check size={15} /> Đã chép</> : <><Copy size={15} /> Sao chép</>}</button>
       <small>Từ điển mở · dịch máy</small>
     </footer>
   </div>;
@@ -156,13 +166,17 @@ export function TestRunner({ exam, content, scope, answers, setAnswer, flags, se
   const [scale, setScale] = useState(1);
   const [notesOpen, setNotesOpen] = useState(false);
   const [settingsOpen, setSettingsOpen] = useState(false);
-  const [highlightEnabled, setHighlightEnabled] = useState(true);
+  // One tool at a time, as in a workbook: highlighter, sticky note or dictionary (H / N / T).
+  const [tool, setTool] = useState<"highlight" | "note" | "lookup" | null>("highlight");
+  const highlightEnabled = tool === "highlight";
+  const [noteFocus, setNoteFocus] = useState<string | null>(null);
+  const [eyeCare, setEyeCare] = useState(false);
   const [markError, setMarkError] = useState("");
   const [navigationError, setNavigationError] = useState("");
   const [current, setCurrent] = useState<string | null>(null);
   const [held, setHeld] = useState<string | null>(null);
   const [markPop, setMarkPop] = useState<{ x: number; y: number; mark?: ReadingMark; word?: string | null } | null>(null);
-  const [lookup, setLookup] = useState<{ word: string; x: number; y: number } | null>(null);
+  const [lookup, setLookup] = useState<{ word: string; x: number; y: number; sentence?: string; spot?: ReadingMark } | null>(null);
   // The dictionary is a practice aid: the real-test view keeps the sheet clean.
   const lookupAllowed = canMark && notes.__view !== "exam";
   const closeLookup = useCallback(() => setLookup(null), []);
@@ -172,16 +186,17 @@ export function TestRunner({ exam, content, scope, answers, setAnswer, flags, se
   // Font size and line spacing are a reader's own preference: remember them on this device.
   useEffect(() => {
     try {
-      const saved = JSON.parse(window.localStorage.getItem("ielts-reading-display") || "{}") as { scale?: number; leading?: string };
+      const saved = JSON.parse(window.localStorage.getItem("ielts-reading-display") || "{}") as { scale?: number; leading?: string; eyeCare?: boolean };
       const frame = window.requestAnimationFrame(() => {
         if (typeof saved.scale === "number" && saved.scale >= 0.85 && saved.scale <= 1.4) setScale(saved.scale);
         if (saved.leading === "tight" || saved.leading === "normal" || saved.leading === "loose") setLeading(saved.leading);
+        if (saved.eyeCare === true) setEyeCare(true);
       });
       return () => window.cancelAnimationFrame(frame);
     } catch { /* Private mode: keep the defaults. */ }
   }, []);
-  const saveDisplay = (next: { scale?: number; leading?: string }) => {
-    try { window.localStorage.setItem("ielts-reading-display", JSON.stringify({ scale, leading, ...next })); } catch { /* Not stored. */ }
+  const saveDisplay = (next: { scale?: number; leading?: string; eyeCare?: boolean }) => {
+    try { window.localStorage.setItem("ielts-reading-display", JSON.stringify({ scale, leading, eyeCare, ...next })); } catch { /* Not stored. */ }
   };
   const changeScale = (value: number) => { const next = Math.max(0.85, Math.min(1.4, Math.round(value * 100) / 100)); setScale(next); saveDisplay({ scale: next }); };
   useEffect(() => {
@@ -199,6 +214,12 @@ export function TestRunner({ exam, content, scope, answers, setAnswer, flags, se
     if (encoded.length <= 14000) { setNotes((current) => ({ ...current, reading_highlights: encoded })); setMarkError(""); }
     else setMarkError("Đã đạt giới hạn tô sáng cho bài này. Xóa vài đoạn để tiếp tục.");
   }, [marks, setNotes]);
+  const pinned = useMemo(() => savedReadingNotes(notes.reading_notes), [notes.reading_notes]);
+  const setPinned = useCallback((next: ReadingNote[]) => {
+    const encoded = encodeReadingNotes(next);
+    if (encoded.length <= 14000) { setNotes((current) => ({ ...current, reading_notes: encoded })); setMarkError(""); }
+    else setMarkError("Đã đạt giới hạn ghi chú cho bài này. Xóa bớt vài ghi chú để tiếp tục.");
+  }, [setNotes]);
   const passage = useRef<HTMLDivElement>(null);
   const questionPane = useRef<HTMLDivElement>(null);
   const body = useRef<HTMLDivElement>(null);
@@ -272,9 +293,13 @@ export function TestRunner({ exam, content, scope, answers, setAnswer, flags, se
       return block ? rangeAt(block, mark.start, mark.end) : null;
     }).filter((range): range is Range => Boolean(range));
     const registry = (CSS as unknown as { highlights: Map<string, unknown> }).highlights;
-    registry.set("bank-mark", new (window as unknown as { Highlight: new (...ranges: Range[]) => unknown }).Highlight(...ranges));
-    return () => { registry.delete("bank-mark"); };
-  }, [marks, section, scale, answers]);
+    const Highlight = (window as unknown as { Highlight: new (...ranges: Range[]) => unknown }).Highlight;
+    const toRanges = (items: ReadingMark[]) => items.filter((item) => item.section === section.id).map((item) => { const block = blocks[item.pane][item.block]; return block ? rangeAt(block, item.start, item.end) : null; }).filter((range): range is Range => Boolean(range));
+    registry.set("bank-mark", new Highlight(...ranges));
+    registry.set("bank-note", new Highlight(...toRanges(pinned)));
+    registry.set("bank-context", new Highlight(...toRanges(lookup?.spot ? [lookup.spot] : [])));
+    return () => { registry.delete("bank-mark"); registry.delete("bank-note"); registry.delete("bank-context"); };
+  }, [marks, pinned, lookup, section, scale, answers]);
 
   const captureSelection = useCallback((force = false) => {
     if (!canMark || (!highlightEnabled && !force)) return;
@@ -305,6 +330,62 @@ export function TestRunner({ exam, content, scope, answers, setAnswer, flags, se
     chosen.removeAllRanges();
   }, [canMark, highlightEnabled, section, setMarks, lookupAllowed]);
 
+  /** The current selection as saved positions in the passage or question blocks (nothing saved yet). */
+  const selectedSpots = useCallback((): { spots: ReadingMark[]; range: Range | null } => {
+    const chosen = window.getSelection();
+    if (!chosen || chosen.isCollapsed || !passage.current || !questionPane.current || !section) return { spots: [], range: null };
+    const range = chosen.getRangeAt(0);
+    const pane = passage.current.contains(range.commonAncestorContainer) ? "passage" : questionPane.current.contains(range.commonAncestorContainer) ? "questions" : null;
+    if (!pane) return { spots: [], range: null };
+    const spots: ReadingMark[] = [];
+    (pane === "passage" ? passage.current : questionPane.current).querySelectorAll<HTMLElement>(pane === "passage" ? "[data-paragraph]" : "[data-highlight-block]").forEach((block, index) => {
+      if (!range.intersectsNode(block)) return;
+      const whole = document.createRange();
+      whole.selectNodeContents(block);
+      const portion = range.cloneRange();
+      if (portion.compareBoundaryPoints(Range.START_TO_START, whole) < 0) portion.setStart(whole.startContainer, whole.startOffset);
+      if (portion.compareBoundaryPoints(Range.END_TO_END, whole) > 0) portion.setEnd(whole.endContainer, whole.endOffset);
+      const start = textOffset(block, portion.startContainer, portion.startOffset), end = textOffset(block, portion.endContainer, portion.endOffset);
+      if (end > start) spots.push({ section: section.id, pane, block: index, start, end, quote: portion.toString().slice(0, 180) });
+    });
+    return { spots, range };
+  }, [section]);
+
+  const blockOf = useCallback((spot: ReadingMark) => (spot.pane === "passage" ? passage.current : questionPane.current)?.querySelectorAll<HTMLElement>(spot.pane === "passage" ? "[data-paragraph]" : "[data-highlight-block]")[spot.block], []);
+
+  /** A sticky note on the selected words (or on a highlight): the note column opens on it. */
+  const noteSelection = useCallback((from?: ReadingMark) => {
+    const spot = from ?? selectedSpots().spots[0];
+    if (!spot) return;
+    const quote = (spot.quote || (blockOf(spot)?.textContent ?? "").slice(spot.start, spot.end)).slice(0, 180);
+    const id = `n${Date.now().toString(36)}`;
+    setPinned([...pinned, { ...spot, id, text: "", quote }]);
+    window.getSelection()?.removeAllRanges();
+    setNotesOpen(true);
+    setNoteFocus(id);
+    setMarkPop(null);
+  }, [pinned, selectedSpots, setPinned, blockOf]);
+
+  /** The dictionary docked under the passage, showing the sentence the word came from. */
+  const lookUpSelection = useCallback(() => {
+    if (!lookupAllowed) return;
+    const { spots, range } = selectedSpots();
+    const word = range ? lookupWord(range.toString()) : null;
+    if (!word || !range || !spots[0]) return;
+    const spot = spots[0];
+    const text = blockOf(spot)?.textContent ?? "";
+    // The sentence runs from just after the last full stop before the word to the next one after it.
+    const lead = text.slice(0, spot.start);
+    const stop = Math.max(lead.lastIndexOf(". "), lead.lastIndexOf("? "), lead.lastIndexOf("! "));
+    const start = stop < 0 ? 0 : stop + 2;
+    const after = /[.!?](\s|$)/.exec(text.slice(spot.end));
+    const end = after ? spot.end + after.index + 1 : text.length;
+    const box = range.getBoundingClientRect();
+    setLookup({ word, x: box.left + box.width / 2, y: box.top, sentence: text.slice(start, end).trim(), spot: { ...spot, start, end, quote: undefined } });
+    window.getSelection()?.removeAllRanges();
+    setMarkPop(null);
+  }, [lookupAllowed, selectedSpots, blockOf]);
+
   // With the highlighter off, selecting a word only offers the dictionary.
   const offerLookup = useCallback(() => {
     if (!lookupAllowed) return;
@@ -332,10 +413,12 @@ export function TestRunner({ exam, content, scope, answers, setAnswer, flags, se
     if (!node || !pane || !block) { setMarkPop(null); return; }
     const index = [...(inPassage ? passage.current : questionPane.current).querySelectorAll(selector)].indexOf(block);
     const at = textOffset(block, node, position?.offset ?? range?.startOffset ?? 0);
+    const note = pinned.find((item) => item.section === section.id && item.pane === pane && item.block === index && at >= item.start && at <= item.end);
+    if (note) { setNotesOpen(true); setNoteFocus(note.id); setMarkPop(null); return; }
     const hit = marks.find((mark) => mark.section === section.id && mark.pane === pane && mark.block === index && at >= mark.start && at <= mark.end);
     const word = hit && lookupAllowed ? lookupWord((block.textContent ?? "").slice(hit.start, hit.end)) : null;
     setMarkPop(hit ? { x, y, mark: hit, word } : null);
-  }, [canMark, marks, section, lookupAllowed]);
+  }, [canMark, marks, pinned, section, lookupAllowed]);
 
   useEffect(() => {
     if (!markPop) return;
@@ -351,15 +434,40 @@ export function TestRunner({ exam, content, scope, answers, setAnswer, flags, se
       const target = event.target as HTMLElement;
       if (event.altKey || event.ctrlKey || event.metaKey || target.isContentEditable || target.closest("textarea,select,input:not([type=radio]):not([type=checkbox])")) return;
       const key = event.key.toLowerCase();
+      const selected = Boolean(window.getSelection() && !window.getSelection()?.isCollapsed);
       if (key === "h") {
         event.preventDefault();
-        if (window.getSelection() && !window.getSelection()?.isCollapsed) { setHighlightEnabled(true); captureSelection(true); }
-        else setHighlightEnabled((enabled) => !enabled);
+        if (selected) { setTool("highlight"); captureSelection(true); }
+        else setTool((current) => current === "highlight" ? null : "highlight");
+      } else if (key === "n" && notes.__view !== "exam") {
+        event.preventDefault();
+        if (selected) { setTool("note"); noteSelection(); }
+        else setTool((current) => current === "note" ? null : "note");
+      } else if (key === "t" && lookupAllowed) {
+        event.preventDefault();
+        if (selected) { setTool("lookup"); lookUpSelection(); }
+        else setTool((current) => current === "lookup" ? null : "lookup");
       }
     };
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
-  }, [canMark, captureSelection]);
+  }, [canMark, captureSelection, noteSelection, lookUpSelection, lookupAllowed, notes.__view]);
+
+  const onPaneMouseUp = (event: { clientX: number; clientY: number; target: EventTarget | null }) => {
+    if (window.getSelection()?.isCollapsed) { pickMark(event.clientX, event.clientY, event.target); return; }
+    if (tool === "highlight") captureSelection();
+    else if (tool === "note") noteSelection();
+    else if (tool === "lookup") lookUpSelection();
+    else offerLookup();
+  };
+  const pickTool = (next: "highlight" | "note" | "lookup") => {
+    const selected = Boolean(window.getSelection() && !window.getSelection()?.isCollapsed);
+    if (selected) { setTool(next); if (next === "highlight") captureSelection(true); else if (next === "note") noteSelection(); else lookUpSelection(); return; }
+    setTool(tool === next ? null : next);
+  };
+  // An empty sticky note means nothing: it goes when the column is put away.
+  const closeNotes = () => { setNotesOpen(false); setNoteFocus(null); if (pinned.some((item) => !item.text.trim())) setPinned(pinned.filter((item) => item.text.trim())); };
+  const sectionNotes = section ? pinned.filter((item) => item.section === section.id) : [];
 
   if (!section) return <p className="bx-muted">Đề này chưa có câu hỏi.</p>;
   const scopedPart = Number(notes.__part);
@@ -376,12 +484,17 @@ export function TestRunner({ exam, content, scope, answers, setAnswer, flags, se
   };
 
   const sectionDone = section.questions.filter((question) => answers[question.id]).length;
-  return <div className={`bt-runner ${listening ? "is-listening" : "is-reading"}`} style={{ "--bt-scale": scale, "--bt-leading": leading === "tight" ? 1.5 : leading === "loose" ? 1.95 : 1.7 } as CSSProperties}>
+  return <div className={`bt-runner ${listening ? "is-listening" : "is-reading"} ${eyeCare ? "is-eyecare" : ""}`} style={{ "--bt-scale": scale, "--bt-leading": leading === "tight" ? 1.5 : leading === "loose" ? 1.95 : 1.7 } as CSSProperties}>
     <div className="bt-context"><div className="bt-context-copy"><strong>{label(part)}</strong><span>{listening ? "Listen and answer" : "Read the text and answer"} questions {firstNumber}–{lastNumber}</span></div><div className="bt-tools" ref={tools} role="toolbar" aria-label="Công cụ làm bài">
       {!listening && <button type="button" className={`bt-display-toggle ${settingsOpen ? "is-on" : ""}`} aria-expanded={settingsOpen} aria-label={`Hiển thị: cỡ chữ ${Math.round(scale * 100)}%`} onClick={() => setSettingsOpen(!settingsOpen)}>Aa · {Math.round(scale * 100)}%</button>}
       {settingsOpen && !listening && <div className="bt-settings" role="group" aria-label="Hiển thị">
+        <div className="bt-set-line bt-set-eye"><span><Sun size={15} /> <b>Chế độ bảo vệ mắt</b><br /><small>Nền giấy ấm, dịu mắt khi đọc lâu</small></span><button type="button" role="switch" aria-checked={eyeCare} className={`bt-switch ${eyeCare ? "is-on" : ""}`} onClick={() => { setEyeCare(!eyeCare); saveDisplay({ eyeCare: !eyeCare }); }}><i /></button></div>
         <div className="bt-set-block">
-          <label htmlFor="bt-scale">Cỡ chữ <b>{Math.round(scale * 100)}%</b></label>
+          <span>Kích cỡ chữ</span>
+          <div className="bt-seg" role="group" aria-label="Kích cỡ chữ">{([["S", 0.9], ["M", 1], ["L", 1.15]] as const).map(([name, value]) => <button type="button" key={name} aria-pressed={Math.abs(scale - value) < 0.03} onClick={() => changeScale(value)}>{name}</button>)}</div>
+        </div>
+        <div className="bt-set-block">
+          <label htmlFor="bt-scale">Tinh chỉnh <b>{Math.round(scale * 100)}%</b></label>
           <div className="bt-set-scale">
             <button type="button" onClick={() => changeScale(scale - 0.05)} aria-label="Chữ nhỏ hơn"><AArrowDown size={17} /></button>
             <input id="bt-scale" type="range" min={85} max={140} step={5} value={Math.round(scale * 100)} onChange={(event) => changeScale(Number(event.target.value) / 100)} />
@@ -393,7 +506,7 @@ export function TestRunner({ exam, content, scope, answers, setAnswer, flags, se
           <div className="bt-seg" role="group" aria-label="Giãn dòng bài đọc">{([["tight", "Hẹp"], ["normal", "Vừa"], ["loose", "Rộng"]] as const).map(([id, name]) => <button type="button" key={id} aria-pressed={leading === id} onClick={() => { setLeading(id); saveDisplay({ leading: id }); }}>{name}</button>)}</div>
         </div>
         {marks.some((mark) => mark.section === section.id) && <div className="bt-set-line"><span><b>Tô sáng</b> · {marks.filter((mark) => mark.section === section.id).length} đoạn ở {label(part)}</span><button type="button" onClick={() => { setMarks(marks.filter((mark) => mark.section !== section.id)); setMarkPop(null); }}>Xóa hết</button></div>}
-        <p className="bt-set-keys"><b>Mẹo</b><br />Bôi đen chữ để tô sáng · H: bật/tắt bút tô · bấm vào chỗ đã tô để bỏ</p>
+        <p className="bt-set-keys"><b>Phím tắt</b><br />H: bút tô sáng · N: ghi chú · T: tra từ · bấm vào chỗ đã tô để bỏ hoặc thêm ghi chú</p>
       </div>}
       {listening && <><button type="button" onClick={() => setScale((value) => Math.max(0.85, Math.round((value - 0.1) * 10) / 10))} aria-label="Chữ nhỏ hơn"><AArrowDown size={17} /></button><button type="button" onClick={() => setScale((value) => Math.min(1.4, Math.round((value + 0.1) * 10) / 10))} aria-label="Chữ lớn hơn"><AArrowUp size={17} /></button>{notes.__view !== "exam" && <button type="button" className={notesOpen ? "is-on" : ""} onClick={() => setNotesOpen(!notesOpen)}><NotebookPen size={16} /> Ghi chú</button>}</>}
     </div></div>
@@ -402,12 +515,16 @@ export function TestRunner({ exam, content, scope, answers, setAnswer, flags, se
       <button type="button" role="tab" aria-selected={pane === "passage"} onClick={() => setPane("passage")}>Bài đọc</button>
       <button type="button" role="tab" aria-selected={pane === "questions"} onClick={() => setPane("questions")}>Câu hỏi · {sectionDone}/{section.questions.length}</button>
     </div>}
-    <div ref={body} className={`bt-body ${listening ? "" : "is-split"} ${showRail ? "has-tools" : ""} shows-${pane}`} style={{ "--bt-left": `${split}%` } as CSSProperties}>
-      {showRail && <aside className="bt-tool-rail" aria-label="Công cụ luyện tập"><button type="button" className={highlightEnabled ? "is-on" : ""} aria-pressed={highlightEnabled} title="Bật hoặc tắt bút tô sáng (H)" onMouseDown={(event) => event.preventDefault()} onClick={() => { if (window.getSelection() && !window.getSelection()?.isCollapsed) { setHighlightEnabled(true); captureSelection(true); } else setHighlightEnabled((enabled) => !enabled); }}><Highlighter size={19} />Tô sáng<small>{highlightEnabled ? "H · Đang bật" : "H · Đã tắt"}</small></button>
-        <button type="button" className={notesOpen ? "is-on" : ""} aria-pressed={notesOpen} title="Ghi chú từ khóa, paraphrase" onClick={() => setNotesOpen(!notesOpen)}><NotebookPen size={19} />Ghi chú<small>{notes.__general ? "Đã ghi" : "Mở"}</small></button>
-        {marks.some((mark) => mark.section === section.id) && <button type="button" title="Xóa mọi tô sáng của phần này" onClick={() => { setMarks(marks.filter((mark) => mark.section !== section.id)); setMarkPop(null); }}><Eraser size={19} />Xóa tô<small>{marks.filter((mark) => mark.section === section.id).length} đoạn</small></button>}
+    <div ref={body} className={`bt-body ${listening ? "" : "is-split"} ${showRail ? "has-tools" : ""} ${showRail && notesOpen ? "has-notes" : ""} shows-${pane}`} style={{ "--bt-left": `${split}%` } as CSSProperties}>
+      {showRail && <aside className="bt-tool-rail" aria-label="Công cụ luyện tập">
+        <span className="bt-rail-title">Công cụ</span>
+        <button type="button" className={tool === "highlight" ? "is-on" : ""} aria-pressed={tool === "highlight"} title="Bút tô sáng: bôi đen chữ là tô (phím H)" onMouseDown={(event) => event.preventDefault()} onClick={() => pickTool("highlight")}><Highlighter size={19} />Tô sáng<small>Phím H</small></button>
+        <button type="button" className={tool === "note" ? "is-on" : ""} aria-pressed={tool === "note"} title="Ghi chú: bôi đen chữ để ghi chú vào đó (phím N)" onMouseDown={(event) => event.preventDefault()} onClick={() => pickTool("note")}><MessageSquarePlus size={19} />Ghi chú<small>Phím N</small></button>
+        {lookupAllowed && <button type="button" className={tool === "lookup" ? "is-on" : ""} aria-pressed={tool === "lookup"} title="Tra từ: bôi đen một từ để xem nghĩa trong câu (phím T)" onMouseDown={(event) => event.preventDefault()} onClick={() => pickTool("lookup")}><Languages size={19} />Tra từ<small>Phím T</small></button>}
+        <button type="button" className={`bt-rail-notes ${notesOpen ? "is-open" : ""}`} aria-pressed={notesOpen} title="Mở cột ghi chú" onClick={() => notesOpen ? closeNotes() : setNotesOpen(true)}><NotebookPen size={17} />Sổ ghi<small>{sectionNotes.length || (notes.__general ? "1" : "0")}</small></button>
+        {marks.some((mark) => mark.section === section.id) && <button type="button" className="bt-rail-clear" title="Xóa mọi tô sáng của phần này" onClick={() => { setMarks(marks.filter((mark) => mark.section !== section.id)); setMarkPop(null); }}><Eraser size={17} />Xóa tô<small>{marks.filter((mark) => mark.section === section.id).length} đoạn</small></button>}
       </aside>}
-      {!listening && <article className="bt-passage" ref={passage} tabIndex={-1} onMouseUp={(event) => { if (window.getSelection()?.isCollapsed) pickMark(event.clientX, event.clientY, event.target); else if (highlightEnabled) captureSelection(); else offerLookup(); }}>
+      {!listening && <article className={`bt-passage ${tool ? `uses-${tool}` : ""}`} ref={passage} tabIndex={-1} onMouseUp={onPaneMouseUp}>
         <h2>{section.title}</h2>
         {section.passage.split(/\n\s*\n/).map((paragraph, index) => {
           const letter = /^\s*\*\*([A-Z])\*\*/.exec(paragraph)?.[1];
@@ -422,22 +539,36 @@ export function TestRunner({ exam, content, scope, answers, setAnswer, flags, se
         onPointerDown={(event) => { if (window.matchMedia("(min-width: 901px)").matches) { event.currentTarget.setPointerCapture(event.pointerId); resize(event.clientX); } }}
         onPointerMove={(event) => { if (event.currentTarget.hasPointerCapture(event.pointerId)) resize(event.clientX); }}
         onKeyDown={(event) => { if (event.key === "ArrowLeft" || event.key === "ArrowRight") { event.preventDefault(); setSplit((value) => Math.max(30, Math.min(70, value + (event.key === "ArrowRight" ? 5 : -5)))); } }}><span>⋮</span></div>}
-      <div className="bt-questions" ref={questionPane} onMouseUp={(event) => { if (window.getSelection()?.isCollapsed) pickMark(event.clientX, event.clientY, event.target); else if (highlightEnabled) captureSelection(); else offerLookup(); }} onFocus={(event) => { const id = (event.target as HTMLElement).closest("[id^='q-']")?.id.slice(2); if (id) setCurrent(id); }}>
+      <div className="bt-questions" ref={questionPane} onMouseUp={onPaneMouseUp} onFocus={(event) => { const id = (event.target as HTMLElement).closest("[id^='q-']")?.id.slice(2); if (id) setCurrent(id); }}>
         {listening && <header className="bt-part-head"><span>{label(part)}</span><h2>{section.title}</h2></header>}
         {groups.map((group) => <QuestionGroupView key={group.key} group={group} props={props} printed={listening && (group.kind === "gap" || /flow[_-]?chart[_-]completion/.test(group.type)) ? printedListeningLayout(section.passage, group.questions.map((question) => question.number), group.kind === "pick") : undefined} />)}
         <div className="bt-part-end">{part + 1 < sections.length ? <button type="button" className="bx-next" onClick={() => goTo(part + 1)}>Sang {label(part + 1)} <ChevronRight size={17} /></button> : <button type="button" className="bx-submit" onClick={onFinish}>Hoàn thành & nộp bài</button>}</div>
       </div>
+      {showRail && lookup && <LookupCard key={`${lookup.word}:${lookup.sentence ?? ""}`} word={lookup.word} x={lookup.x} y={lookup.y} sentence={lookup.sentence} docked onClose={closeLookup} />}
+      {showRail && notesOpen && <aside className="bt-note-column" aria-label="Ghi chú">
+        <header><b><NotebookPen size={16} /> Ghi chú</b><button type="button" onClick={closeNotes}><EyeOff size={15} /> Ẩn</button>{sectionNotes.length > 0 && <button type="button" onClick={() => { setPinned(pinned.filter((item) => item.section !== section.id)); setNoteFocus(null); }}><Trash2 size={15} /> Xoá tất cả</button>}</header>
+        {!sectionNotes.length && <p className="bt-note-hint">Bật <b>Ghi chú</b> (phím N) rồi bôi đen chữ trong bài để ghi chú ngay tại chỗ đó.</p>}
+        {sectionNotes.map((item) => <div key={item.id} className={`bt-note-card ${noteFocus === item.id ? "is-focus" : ""}`}>
+          <p>“{item.quote}”</p>
+          <textarea value={item.text} autoFocus={noteFocus === item.id} maxLength={600} placeholder="Nhập ghi chú, Enter để lưu…" onFocus={() => setNoteFocus(item.id)}
+            onChange={(event) => setPinned(pinned.map((entry) => entry.id === item.id ? { ...entry, text: event.target.value } : entry))}
+            onKeyDown={(event) => { if (event.key === "Enter" && !event.shiftKey) { event.preventDefault(); (event.target as HTMLTextAreaElement).blur(); setNoteFocus(null); } }} />
+          <button type="button" onClick={() => setPinned(pinned.filter((entry) => entry.id !== item.id))} aria-label="Xóa ghi chú"><Trash2 size={14} /></button>
+        </div>)}
+        <label className="bt-note-general"><span>Ghi chú chung</span><textarea value={notes.__general || ""} maxLength={2000} onChange={(event) => setNotes({ ...notes, __general: event.target.value })} placeholder="Từ khóa, paraphrase, câu cần xem lại…" /></label>
+      </aside>}
     </div>
 
     {markPop && (markPop.word || markPop.mark) && <div className="bt-mark-pop" style={{ left: markPop.x, top: markPop.y }}>
-      {markPop.word && <button type="button" onMouseDown={(event) => event.preventDefault()} onClick={() => { setLookup({ word: markPop.word!, x: markPop.x, y: markPop.y }); setMarkPop(null); window.getSelection()?.removeAllRanges(); }}><Search size={15} /> Tra “{markPop.word}”</button>}
+      {markPop.word && <button type="button" onMouseDown={(event) => event.preventDefault()} onClick={() => { if (window.getSelection() && !window.getSelection()?.isCollapsed) lookUpSelection(); else { setLookup({ word: markPop.word!, x: markPop.x, y: markPop.y }); setMarkPop(null); } }}><Search size={15} /> Tra “{markPop.word}”</button>}
+      {markPop.mark && showRail && <button type="button" onClick={() => noteSelection(markPop.mark)}><MessageSquarePlus size={15} /> Thêm ghi chú</button>}
       {markPop.mark && <button type="button" onClick={() => { const hit = markPop.mark!; setMarks(marks.filter((mark) => !(mark.section === hit.section && mark.pane === hit.pane && mark.block === hit.block && mark.start === hit.start && mark.end === hit.end))); setMarkPop(null); }}><Eraser size={15} /> Bỏ tô sáng</button>}
     </div>}
-    {lookup && <LookupCard key={lookup.word} word={lookup.word} x={lookup.x} y={lookup.y} onClose={closeLookup} />}
+    {!showRail && lookup && <LookupCard key={lookup.word} word={lookup.word} x={lookup.x} y={lookup.y} onClose={closeLookup} />}
     {markError && <p className="bt-mark-error" role="status">{markError}</p>}
     {navigationError && <p className="bt-mark-error" role="status">{navigationError}</p>}
 
-    {notesOpen && <aside className="bt-notes" aria-label="Ghi chú">
+    {notesOpen && !showRail && <aside className="bt-notes" aria-label="Ghi chú">
       <header><b>Ghi chú</b><button type="button" onClick={() => setNotesOpen(false)} aria-label="Đóng"><X size={16} /></button></header>
       <textarea value={notes.__general || ""} maxLength={2000} onChange={(event) => setNotes({ ...notes, __general: event.target.value })} placeholder="Từ khóa, paraphrase, câu cần xem lại…" />
       <small>Ghi chú được lưu cùng bài làm.</small>
