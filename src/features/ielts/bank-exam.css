@@ -22,6 +22,10 @@
 .bx-hero-art { position: relative; overflow: hidden; border-radius: 18px; background: #fff; aspect-ratio: 4 / 3; box-shadow: 0 12px 26px -18px #173d5f99; }
 .bx-art { position: absolute; inset: 0; margin: 0; }
 .bx-art img { width: 100%; height: 100%; object-fit: cover; }
+.bx-hero-art.is-figure, .bx-hero-art.is-sticker { display: grid; place-items: center; }
+.bx-hero-art.is-figure { padding: 40px 14px 14px; background: #fff; border: 1px solid #eef1f4; }
+.bx-hero-art.is-figure img, .bx-hero-art.is-figure .wl-figure-svg { width: 100%; height: 100%; max-height: none; object-fit: contain; }
+.bx-hero-kind { position: absolute; top: 0; left: 0; padding: 7px 14px; border-radius: 0 0 14px 0; background: var(--bl-ink, #14284b); color: #fff; font-size: 13px; font-weight: 800; }
 .bx-hero-icon { position: absolute; left: 14px; bottom: 14px; display: grid; place-items: center; width: 46px; height: 46px; border-radius: 14px; background: var(--bl-accent); color: #fff; box-shadow: 0 6px 14px -6px rgba(0, 0, 0, 0.4); }
 .bx-hero-copy { display: flex; flex-direction: column; gap: 12px; min-width: 0; padding: 6px 4px; }
 .bx-hero-copy h1 { margin: 0; font: 800 clamp(26px, 2.6vw, 38px) / 1.12 var(--font-display), sans-serif; letter-spacing: -0.03em; }

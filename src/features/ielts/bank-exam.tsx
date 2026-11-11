@@ -10,6 +10,9 @@ import { listeningFullMinutes, listeningPartMinutes, readingFullMinutes, reading
 import { catalogGroups, type CatalogSkill } from "@/lib/ielts-bank/catalog";
 import { displayExamTitle } from "@/lib/ielts-bank/display-title";
 import { librarySkills } from "./bank-library";
+import { writingFacets, writingSticker } from "./bank-writing-library";
+import { TaskFigure } from "./writing-figure";
+import { Sticker } from "@/components/stickers/stickers";
 import { RichText } from "./rich-text";
 import "./bank-exam.css";
 
@@ -50,6 +53,26 @@ const beforeYouStart: Record<string, string[]> = {
 /** "Passage 3: Should Public Data…" → "Should Public Data…"; a bare "Passage 3" gives "". */
 function bareTitle(title: string) {
   return title.replace(/^(?:reading\s+)?(?:passage|part|section)\s*\d+\s*(?:[:\-–—]\s*)?/i, "").trim();
+}
+
+/**
+ * A Writing task's cover: Task 1 shows its own figure (the image, or the chart
+ * drawn from its data), Task 2 a sticker for the essay theme, never a stock picture.
+ */
+function WritingHeroArt({ exam }: { exam: BankExam }) {
+  const content = exam.content;
+  const facets = writingFacets({ title: exam.title, topic: exam.topic, practice_type: exam.practice_type ?? "task2", prompt_preview: content?.prompt ?? null, visual: (content?.visual as Record<string, unknown> | undefined) ?? null, task_type: content?.taskType ?? null });
+  if (exam.practice_type === "task1_academic") return <div className="bx-hero-art is-figure">
+    {/* The figure is the task itself, hosted wherever the source keeps it. */}
+    {/* eslint-disable-next-line @next/next/no-img-element */}
+    {content?.imageUrl ? <img src={content.imageUrl} alt={content.figureDescription || "Hình của đề"} /> : content?.visual ? <TaskFigure visual={content.visual} /> : <Sticker name="chart" size={120} tilt={-5} pop={false} />}
+    <b className="bx-hero-kind">{facets.kindLabel}</b>
+  </div>;
+  const sticker = writingSticker(facets.topic);
+  return <div className="bx-hero-art is-sticker" style={{ background: sticker.tone }}>
+    <Sticker name={sticker.name} size={150} tilt={-6} pop={false} />
+    <b className="bx-hero-kind">{facets.topicLabel}</b>
+  </div>;
 }
 
 /** The exam's cover page: what it is, what to expect, and when to practise it. */
@@ -105,7 +128,8 @@ export function ExamIntro({ exam, backHref, busy, error, onStart, scheduleSlot, 
   return <main className={`bx-page bl-tone-${toneOf(exam.skill)}`}>
     <nav className="bx-crumbs"><Link href={backHref}><ArrowLeft size={15} /> {exam.skill}</Link><span>/</span>{selectedLabel}</nav>
     <section className="bx-hero">
-      <div className="bx-hero-art"><TopicArt topic={`${(exam.topic ?? "").replace(/^topic_/, "")} ${exam.title}`} className="bx-art" /><span className="bx-hero-icon"><Icon size={22} /></span></div>
+      {exam.skill === "Writing" ? <WritingHeroArt exam={exam} />
+        : <div className="bx-hero-art"><TopicArt topic={`${(exam.topic ?? "").replace(/^topic_/, "")} ${exam.title}`} className="bx-art" /><span className="bx-hero-icon"><Icon size={22} /></span></div>}
       <div className="bx-hero-copy">
         <span className="bx-kicker">{exam.skill} · {selectedLabel}</span>
         <h1>{selectedPart && !/^(?:reading\s+)?passage\s*\d+\s*$|^(?:listening\s+)?(?:section|part)\s*\d+\s*$/i.test(selectedPart.title) ? selectedPart.title : displayExamTitle(exam.title)}</h1>

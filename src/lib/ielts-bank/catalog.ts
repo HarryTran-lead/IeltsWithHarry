@@ -56,6 +56,16 @@ export type CatalogExam = {
 
 type CatalogSummary = Pick<CatalogExam, "question_types" | "question_count" | "task_type" | "visual_kind" | "visual" | "image_url" | "prompt_preview" | "question_preview" | "attempt_count"> & { exam_id: string };
 
+/** The question as a card shows it: one paragraph, without the closing word-count line. */
+export function writingPromptPreview(prompt?: string | null) {
+  const text = (prompt ?? "")
+    .replace(/^\s*Write about the following topic:\s*/i, "")
+    .replace(/\s*Write at least \d+ words\.?\s*$/i, "")
+    .replace(/\s+/g, " ")
+    .trim();
+  return text ? text.slice(0, 420) : "";
+}
+
 /** Adds the card details to each exam that has a summary row. */
 export function withSummaries(exams: CatalogExam[], summaries: CatalogSummary[]) {
   const byId = new Map(summaries.map(({ exam_id, ...summary }) => [exam_id, summary]));
