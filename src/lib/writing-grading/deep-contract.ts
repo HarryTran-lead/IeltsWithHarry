@@ -45,13 +45,28 @@ export type DeepReport = z.infer<typeof deepReportSchema>;
 export function verifyDeepReport(input: unknown, taskType: TaskType, essay: string, errorCount: number) {
   const report = deepReportSchema.parse(input);
   const inEssay = (quote: string | null) => quote === null || essay.includes(quote);
-  if (report.coverage.some((item) => !inEssay(item.evidence_quote) || (item.status === "missing" && item.evidence_quote !== null))) throw new Error("DEEP_COVERAGE_QUOTE_INVALID");
-  if (report.paragraphs.some((item) => !inEssay(item.anchor_quote))) throw new Error("DEEP_PARAGRAPH_QUOTE_INVALID");
-  if (report.lexical.some((item) => !inEssay(item.original_text))) throw new Error("DEEP_LEXICAL_QUOTE_INVALID");
-  if (report.grammar.some((item) => !inEssay(item.anchor_quote))) throw new Error("DEEP_GRAMMAR_QUOTE_INVALID");
-  const indices = report.error_audit.map((item) => item.error_index);
-  if (indices.some((index) => index >= errorCount) || new Set(indices).size !== indices.length) throw new Error("DEEP_AUDIT_INDEX_INVALID");
   const allowed = new Set(criterionKeys[taskType]);
-  if (report.drills.some((item) => !allowed.has(item.criterion))) throw new Error("DEEP_DRILL_CRITERION_INVALID");
-  return { ...report, version: deepReportVersion, task_type: taskType, estimated_only: true as const };
+  const coverage = report.coverage.map((item) => {
+    if (item.status === "missing") return { ...item, evidence_quote: null };
+    if (!inEssay(item.evidence_quote) || (item.status === "covered" && !item.evidence_quote)) {
+      return { ...item, status: "partial" as const, evidence_quote: null };
+    }
+    return item;
+  });
+  const paragraphs = report.paragraphs.filter((item) => inEssay(item.anchor_quote));
+  const lexical = report.lexical.filter((item) => inEssay(item.original_text));
+  const grammar = report.grammar.filter((item) => inEssay(item.anchor_quote));
+  const seen = new Set<number>();
+  const error_audit = report.error_audit.filter((item) => {
+    if (item.error_index >= errorCount || seen.has(item.error_index)) return false;
+    seen.add(item.error_index);
+    return true;
+  });
+  const drills = report.drills.filter((item) => allowed.has(item.criterion));
+  const omitted_count = report.paragraphs.length - paragraphs.length + report.lexical.length - lexical.length
+    + report.grammar.length - grammar.length + report.error_audit.length - error_audit.length
+    + report.drills.length - drills.length
+    + report.coverage.filter((item, index) => item.evidence_quote !== coverage[index].evidence_quote).length;
+  return { ...report, coverage, paragraphs, lexical, grammar, error_audit, drills, omitted_count,
+    version: deepReportVersion, task_type: taskType, estimated_only: true as const };
 }

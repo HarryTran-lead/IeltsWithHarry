@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import type { DeepReport } from "@/lib/writing-grading/deep-contract";
 import { countEnglishWords } from "@/lib/writing-grading/contract";
 
-type InsightState = { status: string; result: (DeepReport & { version: string }) | null; error_code?: string | null; attempt_no?: number;
+type InsightState = { status: string; result: (DeepReport & { version: string; omitted_count?: number }) | null; error_code?: string | null; attempt_no?: number;
   history?: { created_at: string; band: number; criteria: { key: string; score: number }[] }[] };
 type ErrorRef = { original_text: string };
 const statusLabel = { covered: "Đã thể hiện", partial: "Cần làm rõ", missing: "Còn thiếu" };
@@ -63,11 +63,12 @@ export function WritingDeepInsights({ attemptId, essay, taskType, errors }: {
       <div className="wg-deep-report">
         <p className="wg-deep-priority"><strong>Việc nên sửa trước:</strong> {report.priority_vi}</p>
         <section><h4>Đáp ứng yêu cầu đề</h4><div className="wg-deep-cards">{report.coverage.map((item, index) => <article key={index}><span className={`wg-status-${item.status}`}>{statusLabel[item.status]}</span><strong>{item.requirement_vi}</strong>{item.evidence_quote && <q lang="en">{item.evidence_quote}</q>}<p>{item.action_vi}</p></article>)}</div></section>
-        <section><h4>Góp ý từng đoạn</h4><div className="wg-deep-cards">{report.paragraphs.map((item, index) => <article key={index}><strong>{item.role_vi}</strong><q lang="en">{item.anchor_quote}</q><p>{item.strength_vi}</p><p><b>Thử sửa:</b> {item.revision_vi}</p></article>)}</div></section>
+        <section><h4>Góp ý từng đoạn</h4>{report.paragraphs.length ? <div className="wg-deep-cards">{report.paragraphs.map((item, index) => <article key={index}><strong>{item.role_vi}</strong><q lang="en">{item.anchor_quote}</q><p>{item.strength_vi}</p><p><b>Thử sửa:</b> {item.revision_vi}</p></article>)}</div> : <p>Chưa có góp ý từng đoạn đủ bằng chứng để hiển thị.</p>}</section>
         <section><h4>Từ vựng theo ngữ cảnh</h4>{report.lexical.length ? <div className="wg-deep-cards">{report.lexical.map((item, index) => <article key={index}><p lang="en"><s>{item.original_text}</s> → <strong>{item.replacement}</strong></p><p>{item.why_vi}</p><small lang="en">{item.example_en}</small></article>)}</div> : <p>Model không tìm thấy thay thế đủ chắc chắn cho bài này.</p>}</section>
         <section><h4>Cấu trúc câu có thể luyện</h4>{report.grammar.length ? <div className="wg-deep-cards">{report.grammar.map((item, index) => <article key={index}><strong>{item.pattern_vi}</strong><q lang="en">{item.anchor_quote}</q><p>{item.fix_vi}</p><small>{item.micro_practice_vi}</small></article>)}</div> : <p>Không có gợi ý cấu trúc câu riêng cho bài này.</p>}</section>
         {report.error_audit.length > 0 && <section><h4>Kiểm tra lại nhận xét</h4><div className="wg-deep-cards">{report.error_audit.map((item) => <article key={item.error_index}><span>{auditLabel[item.verdict]}</span><strong>Nhận xét {item.error_index + 1}: <q lang="en">{errors[item.error_index]?.original_text}</q></strong><p>{item.reason_vi}</p></article>)}</div></section>}
         <section><h4>Bài tập tiếp theo</h4><ol className="wg-deep-drills">{report.drills.map((item, index) => <li key={index}><strong>{item.criterion} · {item.task_vi}</strong><p>Tự kiểm tra: {item.check_vi}</p></li>)}</ol></section>
+        {(report.omitted_count ?? 0) > 0 && <p className="wg-deep-omitted">Đã ẩn {report.omitted_count} mục vì trích dẫn không khớp bài gốc hoặc không đúng tiêu chí.</p>}
         <small className="wg-deep-note">Nhận xét do AI tạo; hãy đối chiếu với đề và bài gốc trước khi áp dụng. Trích dẫn đã được kiểm tra là có trong bài.</small>
       </div>
     </div>}
