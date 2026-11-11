@@ -40,3 +40,24 @@ export function rangeAt(root: Node, start: number, end: number) {
   }
   return null;
 }
+
+/** A note pinned to a stretch of text in the real-test view: where it sits, plus what the learner wrote. */
+export type ReadingNote = ReadingMark & { id: string; text: string };
+
+export function savedReadingNotes(value: string | undefined): ReadingNote[] {
+  if (!value) return [];
+  try {
+    const parsed: unknown = JSON.parse(value);
+    if (!Array.isArray(parsed)) return [];
+    return parsed.flatMap((item): ReadingNote[] => {
+      if (!Array.isArray(item) || typeof item[0] !== "string" || typeof item[1] !== "string") return [];
+      const [id, section, pane, block, start, end, text, quote] = item;
+      if ((pane !== "p" && pane !== "q") || ![block, start, end].every((part) => Number.isInteger(part) && part >= 0) || end <= start) return [];
+      return [{ id, section, pane: pane === "p" ? "passage" : "questions", block, start, end, text: typeof text === "string" ? text : "", quote: typeof quote === "string" && quote ? quote : undefined }];
+    });
+  } catch { return []; }
+}
+
+export function encodeReadingNotes(notes: ReadingNote[]) {
+  return JSON.stringify(notes.map(({ id, section, pane, block, start, end, text, quote }) => [id, section, pane === "passage" ? "p" : "q", block, start, end, text, quote ?? ""]));
+}

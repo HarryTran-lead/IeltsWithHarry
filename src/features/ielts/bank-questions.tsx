@@ -11,6 +11,8 @@ export type AnswerProps = {
   setAnswer: (id: string, value: string) => void;
   flags: string[];
   toggleFlag: (id: string) => void;
+  /** The real-test sheet: gaps show their number inside the box, as on the computer-delivered test. */
+  examLook?: boolean;
   /** Number shown to the learner for each question id (1-based, across the whole test). */
   numberOf: (id: string) => number;
   /** "groupKey:optionKey" picked from a word bank, shared so the passage's heading slots can take it too. */
@@ -116,7 +118,7 @@ function GapInput({ question, props, badge = true }: { question: ExamQuestion; p
   const number = props.numberOf(question.id);
   return <span className="bq-gap" id={`q-${question.id}`}>
     {badge && <NumberBadge number={number} flagged={props.flags.includes(question.id)} onFlag={() => props.toggleFlag(question.id)} />}
-    <input value={props.answers[question.id] || ""} onChange={(event) => props.setAnswer(question.id, event.target.value)} aria-label={`Câu ${number}`} autoComplete="off" spellCheck={false} />
+    <input value={props.answers[question.id] || ""} onChange={(event) => props.setAnswer(question.id, event.target.value)} aria-label={`Câu ${number}`} placeholder={props.examLook ? String(number) : undefined} autoComplete="off" spellCheck={false} />
   </span>;
 }
 

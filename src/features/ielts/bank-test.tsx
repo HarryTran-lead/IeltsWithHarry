@@ -54,7 +54,7 @@ function AudioDock({ src, title, autoPlayNext, onEnded, examMode, started, finis
 }
 
 /** A paragraph's heading slot inside the passage, as on the computer-delivered test: drop a heading here or clear it. */
-function HeadingDrop({ question, number, value, held, onPlace, onClear, onLocate }: { question: ExamQuestion; number: number; value: string; held: string | null; onPlace: (key: string) => void; onClear: () => void; onLocate: () => void }) {
+export function HeadingDrop({ question, number, value, held, onPlace, onClear, onLocate }: { question: ExamQuestion; number: number; value: string; held: string | null; onPlace: (key: string) => void; onClear: () => void; onLocate: () => void }) {
   const [over, setOver] = useState(false);
   const chosen = value ? question.options.find((option) => optionKey(option) === value) : undefined;
   return <div className={`bt-heading-drop ${chosen ? "is-filled" : ""} ${over || held ? "is-over" : ""}`}
