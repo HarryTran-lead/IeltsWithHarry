@@ -13,6 +13,7 @@ ROOT = Path(__file__).resolve().parents[1]
 SOURCE = ROOT / "data/translation-practice/starter-51.json"
 DEST = ROOT / "src/data/translation/band-exercises.json"
 ADDITIONAL = ROOT / "data/translation-practice/level-authored-34.json"
+EXPANDED = ROOT / "data/translation-practice/level-authored-expanded.json"
 ADVANCED_PARAGRAPHS = ROOT / "data/translation-practice/advanced-starter-paragraphs.json"
 RUBRIC = ROOT / "data/translation-practice/level-rubric.json"
 CANDIDATES = ROOT / "data/translation-practice/pattern-candidates.json"
@@ -274,23 +275,29 @@ if __name__ == "__main__":
             ]
             row["explanationVi"] = extension["note"]
             row["version"] += 1
+        if row["id"] in {"band-8.0-043", "band-8.5-047"}:
+            row["version"] += 1  # Target term changed after the previous publication.
         row["calibrationStatus"] = "internal_review"
         row["rationaleVi"] = f"{rubrics[row['practiceLevel']]['focusVi']} Bài này luyện: {row['explanationVi']}"
-    added_counts = {}
-    for source in json.loads(ADDITIONAL.read_text(encoding="utf-8")):
-        band = source["level"]
-        added_counts[band] = added_counts.get(band, 0) + 1
-        core.append({
-            "id": f"band-{band}-cal-{added_counts[band]:02d}",
-            "practiceLevel": band, "type": source["type"],
-            "topic": source["topic"], "targetTerm": source["term"],
-            "meaningVi": source["meaning"], "promptVi": source["prompt"],
-            "referenceAnswers": [source["answer"]],
-            "grammarTags": [source["tag"]], "explanationVi": source["explanation"],
-            "rationaleVi": source["rationale"], "commonErrors": [],
-            "calibrationStatus": "internal_review", "editorialStatus": "pilot",
-            "source": "original-level-authored", "version": 1,
-        })
+    for path, prefix, origin in (
+        (ADDITIONAL, "cal", "original-level-authored"),
+        (EXPANDED, "exp", "ai-assisted-level-draft"),
+    ):
+        added_counts = {}
+        for source in json.loads(path.read_text(encoding="utf-8")):
+            band = source["level"]
+            added_counts[band] = added_counts.get(band, 0) + 1
+            core.append({
+                "id": f"band-{band}-{prefix}-{added_counts[band]:0{2 if prefix == 'cal' else 3}d}",
+                "practiceLevel": band, "type": source["type"],
+                "topic": source["topic"], "targetTerm": source["term"],
+                "meaningVi": source["meaning"], "promptVi": source["prompt"],
+                "referenceAnswers": [source["answer"]],
+                "grammarTags": [source["tag"]], "explanationVi": source["explanation"],
+                "rationaleVi": source["rationale"], "commonErrors": [],
+                "calibrationStatus": "internal_review", "editorialStatus": "pilot",
+                "source": origin, "version": 1,
+            })
     candidates = []
     for row in rows[51:]:
         candidate = dict(row)

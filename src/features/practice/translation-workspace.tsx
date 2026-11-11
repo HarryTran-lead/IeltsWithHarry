@@ -51,6 +51,7 @@ function speak(value: string) {
 
 export function TranslationWorkspace() {
   const [band, setBand] = useState("5.0");
+  const [sessionSize, setSessionSize] = useState(10);
   const [reviewOnly, setReviewOnly] = useState(false);
   const [reviews, setReviews] = useState<Record<string, SavedReview>>({});
   const [storageKey, setStorageKey] = useState("");
@@ -94,7 +95,7 @@ export function TranslationWorkspace() {
         : "Bạn đã làm hết bài mới ở band này. Chọn ôn câu khó hoặc band khác.");
       return;
     }
-    setSession(interleavePatterns(eligible));
+    setSession(interleavePatterns(eligible).slice(0, sessionSize));
     setPosition(0);
     setPhase("copy");
     setCopyAnswer("");
@@ -144,10 +145,10 @@ export function TranslationWorkspace() {
     </div>
 
       <section className="practice-setup" aria-label="Chọn mức luyện tập">
-        <div className="practice-section-heading"><div><span>01 / CHỌN MỨC</span><h2>Chọn mức để bắt đầu</h2></div><p>Mỗi mức có 5 bài soạn theo tiêu chí riêng. Đây là bài luyện hướng tới band, không phải điểm IELTS được chấm chính thức.</p></div>
+        <div className="practice-section-heading"><div><span>01 / CHỌN MỨC</span><h2>Chọn mức để bắt đầu</h2></div><p>Mức {band} có {bandItems.length} bài thử nghiệm theo tiêu chí riêng. Đây là bài luyện hướng tới band, không phải điểm IELTS được chấm chính thức.</p></div>
         <div className="practice-band-grid">{practiceBands.map((item) => <button key={item} type="button" className={band === item ? "selected" : ""} aria-pressed={band === item} onClick={() => { setBand(item); setSession([]); setFinished(false); setMessage(""); }}>Band <strong>{item}</strong></button>)}</div>
-        {currentRubric && <div className="practice-level-focus"><strong>Mức {band} luyện gì?</strong><p>{currentRubric.focusVi}</p><small>{currentRubric.noteVi}</small></div>}
-        <div className="practice-setup-actions"><label><input type="checkbox" checked={reviewOnly} onChange={(event) => { setReviewOnly(event.target.checked); setSession([]); setFinished(false); }} /> Chỉ ôn bài đã đánh dấu khó</label><button className="practice-primary" type="button" onClick={start}>{session.length ? "Bắt đầu lại" : "Bắt đầu luyện"}<ArrowRight size={18} /></button></div>
+        {currentRubric && <div className="practice-level-focus"><strong>Mức {band} luyện gì?</strong><p>{currentRubric.focusVi}</p><small>{currentRubric.noteVi}{Number(band) >= 7 && " Các nghiên cứu và ví dụ trong bài là tình huống minh họa, không phải dữ kiện trích nguồn."}</small></div>}
+        <div className="practice-setup-actions"><label><input type="checkbox" checked={reviewOnly} onChange={(event) => { setReviewOnly(event.target.checked); setSession([]); setFinished(false); }} /> Chỉ ôn bài đã đánh dấu khó</label><label>Số bài mỗi lượt <select value={sessionSize} onChange={(event) => { setSessionSize(Number(event.target.value)); setSession([]); setFinished(false); }}><option value={5}>5 bài</option><option value={10}>10 bài</option><option value={15}>15 bài</option></select></label><button className="practice-primary" type="button" onClick={start}>{session.length ? "Bắt đầu lại" : "Bắt đầu luyện"}<ArrowRight size={18} /></button></div>
       </section>
 
       {message && <p className="practice-message" role="status">{message}</p>}
