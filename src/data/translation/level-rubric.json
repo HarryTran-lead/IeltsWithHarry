@@ -1,0 +1,172 @@
+[
+  {
+    "level": "1.0",
+    "unit": "word",
+    "focusVi": "Nhận biết và viết đúng từ thông dụng riêng lẻ.",
+    "features": [
+      "high-frequency-word"
+    ],
+    "noteVi": "Mức luyện nhập môn; không suy ra điểm IELTS từ một từ."
+  },
+  {
+    "level": "1.5",
+    "unit": "phrase",
+    "focusVi": "Ghép hai đến bốn từ thành cụm quen thuộc; trật tự tính từ và danh từ.",
+    "features": [
+      "short-phrase",
+      "word-order"
+    ],
+    "noteVi": "Cụm từ cố định trong tình huống rất quen thuộc."
+  },
+  {
+    "level": "2.0",
+    "unit": "phrase",
+    "focusVi": "Dùng cụm chỉ người, thời gian, nơi chốn và nhu cầu hằng ngày.",
+    "features": [
+      "basic-noun-phrase",
+      "time-phrase"
+    ],
+    "noteVi": "Chưa yêu cầu diễn đạt ý phức tạp."
+  },
+  {
+    "level": "2.5",
+    "unit": "phrase-or-short-sentence",
+    "focusVi": "Chuyển từ cụm từ sang câu ngắn với chủ ngữ và động từ quen thuộc.",
+    "features": [
+      "basic-clause",
+      "present-simple"
+    ],
+    "noteVi": "Một ý rõ trong bối cảnh đời sống."
+  },
+  {
+    "level": "3.0",
+    "unit": "sentence",
+    "focusVi": "Câu đơn về trải nghiệm cá nhân, thì hiện tại hoặc quá khứ đơn.",
+    "features": [
+      "simple-sentence",
+      "past-simple"
+    ],
+    "noteVi": "Từ vựng cụ thể, ít mệnh đề phụ."
+  },
+  {
+    "level": "3.5",
+    "unit": "sentence",
+    "focusVi": "Nói kế hoạch, mục đích và so sánh đơn giản.",
+    "features": [
+      "future",
+      "comparison",
+      "purpose"
+    ],
+    "noteVi": "Có thể nối hai ý gần nhau bằng because hoặc so."
+  },
+  {
+    "level": "4.0",
+    "unit": "sentence",
+    "focusVi": "Giải thích nguyên nhân và hệ quả trong chủ đề quen thuộc.",
+    "features": [
+      "reason-clause",
+      "cause-effect"
+    ],
+    "noteVi": "Cấu trúc vẫn trực tiếp và dễ theo dõi."
+  },
+  {
+    "level": "4.5",
+    "unit": "sentence",
+    "focusVi": "Diễn đạt điều kiện hoặc nhượng bộ cơ bản, với từ vựng phổ biến theo chủ đề.",
+    "features": [
+      "basic-complex-sentence",
+      "topic-vocabulary"
+    ],
+    "noteVi": "Chưa yêu cầu sắc thái học thuật tinh vi."
+  },
+  {
+    "level": "5.0",
+    "unit": "sentence",
+    "focusVi": "Nêu quan điểm và một lý do cụ thể về vấn đề xã hội quen thuộc.",
+    "features": [
+      "supported-claim",
+      "common-collocation"
+    ],
+    "noteVi": "Tránh khẳng định chung chung không có ví dụ."
+  },
+  {
+    "level": "5.5",
+    "unit": "sentence",
+    "focusVi": "So sánh hai mặt của một vấn đề, dùng mệnh đề nhượng bộ và kết hợp từ tự nhiên.",
+    "features": [
+      "concession",
+      "balanced-view"
+    ],
+    "noteVi": "Đã có giới hạn hoặc điều kiện cho nhận định."
+  },
+  {
+    "level": "6.0",
+    "unit": "sentence",
+    "focusVi": "Diễn đạt quan hệ nguyên nhân, điều kiện và hệ quả bằng cấu trúc đa dạng nhưng rõ ràng.",
+    "features": [
+      "controlled-complexity",
+      "qualification"
+    ],
+    "noteVi": "Chọn từ chính xác hơn thay cho từ chung chung."
+  },
+  {
+    "level": "6.5",
+    "unit": "sentence",
+    "focusVi": "Kết hợp nhiều mệnh đề và đối chiếu giải pháp với hạn chế trong một ý mạch lạc.",
+    "features": [
+      "varied-clauses",
+      "policy-nuance"
+    ],
+    "noteVi": "Thể hiện sự kiểm soát ngữ pháp và sắc thái."
+  },
+  {
+    "level": "7.0",
+    "unit": "paragraph",
+    "focusVi": "Viết đoạn ngắn có luận điểm, giải thích và giới hạn của luận điểm.",
+    "features": [
+      "paragraph-coherence",
+      "qualified-claim"
+    ],
+    "noteVi": "Bài dịch đoạn luyện tổ chức ý; câu đơn chỉ là bước khởi động."
+  },
+  {
+    "level": "7.5",
+    "unit": "paragraph",
+    "focusVi": "Xử lý phản biện và kết nối các hệ quả đối với nhiều nhóm.",
+    "features": [
+      "counterargument",
+      "distributional-effect"
+    ],
+    "noteVi": "Tránh dùng từ nâng cao khi không đúng ngữ cảnh."
+  },
+  {
+    "level": "8.0",
+    "unit": "paragraph",
+    "focusVi": "Phân tích sự đánh đổi và phân biệt tác động trước mắt với tác động dài hạn.",
+    "features": [
+      "trade-off",
+      "precise-lexis"
+    ],
+    "noteVi": "Sắc thái và độ chính xác quan trọng hơn độ dài."
+  },
+  {
+    "level": "8.5",
+    "unit": "paragraph",
+    "focusVi": "Nêu điều kiện của kết luận, giả định và giới hạn của bằng chứng.",
+    "features": [
+      "evidence-limits",
+      "causal-reasoning"
+    ],
+    "noteVi": "Tránh biến tương quan thành kết luận nhân quả."
+  },
+  {
+    "level": "9.0",
+    "unit": "paragraph",
+    "focusVi": "Duy trì lập luận tinh tế, chính xác và nhất quán qua nhiều câu.",
+    "features": [
+      "sustained-argument",
+      "lexical-precision"
+    ],
+    "noteVi": "Đây là bài tập hướng tới năng lực cao, không phải chấm band 9 chính thức."
+  }
+]

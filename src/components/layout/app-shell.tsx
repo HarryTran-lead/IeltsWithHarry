@@ -60,7 +60,10 @@ const groups = [
   },
   {
     label: "Luyện tập",
-    links: [{ href: "/app/dictation", label: "Dictation", icon: Headphones, tone: "teal" }],
+    links: [
+      { href: "/app/dictation", label: "Dictation", icon: Headphones, tone: "teal" },
+      { href: "/app/practice/translation", label: "Dịch Việt–Anh theo mức", icon: Languages, tone: "mint" },
+    ],
   },
   {
     label: "Tổng quan",

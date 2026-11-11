@@ -23,6 +23,7 @@ const NotebookPage = dynamic(() => import("@/features/notebook/notebook-ui").the
 const SmartNotebook = dynamic(() => import("@/features/notebook/smart-notebook").then((module) => module.SmartNotebook), { loading: SectionLoading });
 const NewsPortal = dynamic(() => import("@/features/news/news-portal").then((module) => module.NewsPortal), { loading: SectionLoading });
 const VocabularyHub = dynamic(() => import("@/features/vocabulary/vocabulary-hub").then((module) => module.VocabularyHub), { loading: SectionLoading });
+const TranslationWorkspace = dynamic(() => import("@/features/practice/translation-workspace").then((module) => module.TranslationWorkspace), { loading: SectionLoading });
 const VocabularyLanding = dynamic(() => import("@/features/vocabulary/vocabulary-landing").then((module) => module.VocabularyLanding), { loading: SectionLoading });
 const CollocationsPage = dynamic(() => import("@/features/vocabulary/collocations-page").then((module) => module.CollocationsPage), { loading: SectionLoading });
 const WordFormationPage = dynamic(() => import("@/features/vocabulary/word-formation-page").then((module) => module.WordFormationPage), { loading: SectionLoading });
@@ -90,6 +91,8 @@ function PortalContent({ canManage }: { canManage: boolean }) {
             })()
             : skillMode === "banks" && pathname.split("/")[4] === "numbers" ? <RetiredNumbersBank />
               : skillMode === "clips" || (skillMode === "banks" && pathname.split("/")[4] === "quick") ? <ClipDictation /> : <VoaDictation />
+        ) : section === "practice" && skillMode === "translation" ? (
+          <TranslationWorkspace />
         ) : section === "grammar" && skillMode !== "live" ? (
           <GrammarGarden />
         ) : skill === "vocabulary" && !skillMode ? (
