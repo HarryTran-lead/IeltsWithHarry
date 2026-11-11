@@ -19,9 +19,11 @@ const draft = () => ({
 describe("deep Writing coaching", () => {
   it("accepts only essay-anchored suggestions and valid criterion keys", () => {
     expect(verifyDeepReport(draft(), "academic_task2", essay, 1).lexical).toHaveLength(1);
-    expect(() => verifyDeepReport({ ...draft(), lexical: [{ ...draft().lexical[0], original_text: "invented" }] }, "academic_task2", essay, 1)).toThrow("DEEP_LEXICAL_QUOTE_INVALID");
-    expect(() => verifyDeepReport({ ...draft(), error_audit: [{ error_index: 2, verdict: "valid", reason_vi: "Sai." }] }, "academic_task2", essay, 1)).toThrow("DEEP_AUDIT_INDEX_INVALID");
-    expect(() => verifyDeepReport(draft(), "academic_task1", essay, 1)).toThrow("DEEP_DRILL_CRITERION_INVALID");
+    const ungrounded = verifyDeepReport({ ...draft(), lexical: [{ ...draft().lexical[0], original_text: "invented" }] }, "academic_task2", essay, 1);
+    expect(ungrounded.lexical).toEqual([]);
+    expect(ungrounded.omitted_count).toBe(1);
+    expect(verifyDeepReport({ ...draft(), error_audit: [{ error_index: 2, verdict: "valid", reason_vi: "Sai." }] }, "academic_task2", essay, 1).error_audit).toEqual([]);
+    expect(verifyDeepReport(draft(), "academic_task1", essay, 1).drills).toHaveLength(1);
   });
   it("uses the fixed hosted model and keeps credentials server-side", async () => {
     const fetcher = vi.fn().mockResolvedValue({ ok: true, json: async () => ({ success: true, result: { response: draft() } }) });

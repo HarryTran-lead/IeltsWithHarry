@@ -113,6 +113,7 @@
 .wg-deep-drills li { margin-bottom: 10px; padding: 10px; border: 1px solid #dce7ea; border-radius: 8px; font-size: 13px; }
 .wg-deep-drills p { margin: 5px 0 0; color: #526a7b; }
 .wg-deep-note { display: block; color: #617487; font-size: 11px; line-height: 1.5; }
+.wg-deep-omitted { padding: 9px 12px; border-radius: 8px; background: #fff8e7; color: #77541b; font-size: 12px; }
 @media (max-width: 860px) { .wg-deep-workspace { grid-template-columns: minmax(0, 1fr); }.wg-deep-essay { position: static; }.wg-deep-essay > div { max-height: 40vh; } }
 @media (max-width: 700px) { .wg-deep-intro { flex-direction: column; }.wg-deep-metrics { text-align: left; }.wg-deep-cards { grid-template-columns: minmax(0, 1fr); } }
 @media (max-width: 860px) { .wg-workspace { grid-template-columns: minmax(0, 1fr); }.wg-essay { max-height: 55vh; }.wg-feedback-pane { height: auto; }.wg-findings { max-height: 320px; }.wg-rewrite textarea { height: 150px; } }
