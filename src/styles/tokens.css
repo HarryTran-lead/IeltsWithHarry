@@ -1,0 +1,97 @@
+/* Design tokens: colours, shadows, type scale, weights, radii, button sizes. */
+
+:root {
+  --app-header-height: 64px;
+  --app-sidebar-width: 238px;
+  --navy: #10233f;
+  --ink: #2a3f5f;
+  --muted: #5d6f8c;
+  --subtle: #8391a6;
+  --teal: #12a1ab;
+  --teal-strong: #0a7f89;
+  --teal-soft: #e2f5f4;
+  --mint: #e6f6f0;
+  --coral: #f2665f;
+  --coral-soft: #fff0ec;
+  --sun: #ffc94a;
+  --sun-soft: #fff6dd;
+  --lavender: #7c66dc;
+  --lavender-soft: #f1eefe;
+  --sky: #4f8fe0;
+  --sky-soft: #eaf2fd;
+  --cream: #fffbf3;
+  --paper: #f6f5f0;
+  --surface: #ffffff;
+  --surface-2: #f8f8f4;
+  --line: #e7e6df;
+  --line-strong: #d8d8cf;
+  --shadow: 0 1px 2px rgba(16, 35, 63, 0.04), 0 8px 24px -14px rgba(16, 35, 63, 0.16);
+  --shadow-lg: 0 2px 4px rgba(16, 35, 63, 0.05), 0 22px 40px -20px rgba(16, 35, 63, 0.28);
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --dot-grid: radial-gradient(rgba(16, 35, 63, 0.07) 1px, transparent 1.3px);
+  --background: #f6f5f0;
+  --foreground: #10233f;
+  --card: #fff;
+  --card-foreground: #10233f;
+  --popover: #fff;
+  --popover-foreground: #10233f;
+  --primary: #0a7f89;
+  --primary-foreground: #fff;
+  --secondary: #e6f6f0;
+  --secondary-foreground: #10233f;
+  --muted-foreground: #5d6f8c;
+  --accent: #e2f5f4;
+  --accent-foreground: #10233f;
+  --destructive: #e5534b;
+  --border: #e7e6df;
+  --input: #d8d8cf;
+  --ring: #12a1ab;
+  --chart-1: #12a1ab;
+  --chart-2: #f2665f;
+  --chart-3: #7c66dc;
+  --chart-4: #ffc94a;
+  --chart-5: #2fb889;
+  --radius: 0.9rem;
+  --sidebar: #fff;
+  --sidebar-foreground: #10233f;
+  --sidebar-primary: #0a7f89;
+  --sidebar-primary-foreground: #fff;
+  --sidebar-accent: #e2f5f4;
+  --sidebar-accent-foreground: #10233f;
+  --sidebar-border: #e7e6df;
+  --sidebar-ring: #12a1ab;
+
+  /*
+   * Design scale. New and edited styles use these steps instead of one-off values,
+   * so every page shares the same type sizes, weights and corner radii.
+   */
+  --fs-2xs: 11px; /* uppercase eyebrows, badges: the smallest readable size */
+  --fs-xs: 12px; /* meta lines, captions */
+  --fs-sm: 13.5px; /* secondary copy, buttons */
+  --fs-base: 14px; /* body copy */
+  --fs-md: 15px; /* card titles */
+  --fs-lg: 18px; /* section headings (h2) */
+  --fs-xl: 22px; /* large numbers */
+  --fs-page-title: clamp(20px, 1.9vw, 24px); /* the one h1 of a portal page */
+  --fs-article-title: clamp(24px, 2.4vw, 32px); /* lesson, article and exam titles */
+  --fw-regular: 400;
+  --fw-medium: 500;
+  --fw-semibold: 600;
+  --fw-bold: 700;
+  --fw-heavy: 800; /* the heaviest loaded weight: 850, 900 and 950 render the same */
+  --r-sm: 8px; /* chips, inputs, small buttons */
+  --r-md: 12px; /* buttons, tiles */
+  --r-lg: 18px; /* cards and panels */
+  --r-pill: 999px;
+  --btn-h-sm: 32px; /* chips, compact toolbars */
+  --btn-h-md: 40px; /* the default action button */
+  --btn-h-lg: 46px; /* the one main call to action of a study screen */
+  --teal-hover: #096f78;
+}
+@media (max-width: 700px) {
+  :root {
+    --fs-page-title: 19px;
+    --fs-article-title: clamp(22px, 6vw, 26px);
+  }
+}

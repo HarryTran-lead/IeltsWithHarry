@@ -4,6 +4,7 @@
 
 ```text
 src/app/                 Định tuyến Next.js, kiểm tra phiên trên server
+src/styles/              CSS dùng chung, tách theo khu vực; src/app/globals.css import theo thứ tự cascade
 src/components/          Giao diện chung, thiết kế, minh họa
 src/features/            Từng miền nghiệp vụ: auth, dashboard, planner, learning, admin, demo
 src/features/content-lab/  Bản thử luyện tập từ gói JSON do người soạn nạp
@@ -17,6 +18,12 @@ supabase/seed.sql        Nội dung học gốc; không thêm tiến độ giả
 tests/                  Kiểm tra đầu vào, nghiệp vụ và migration/RLS bằng PGlite
 .github/workflows/      CI cho typecheck, lint, test, build
 ```
+
+## CSS và biến thiết kế
+
+- Biến thiết kế nằm trong `src/styles/tokens.css`: màu (`--teal`, `--teal-strong`, `--teal-hover`…), cỡ chữ `--fs-*` (gồm `--fs-page-title`, `--fs-article-title`), độ đậm `--fw-*`, bo góc `--r-sm/md/lg/pill`, chiều cao nút `--btn-h-sm/md/lg`. Style mới dùng các biến này thay cho giá trị rời.
+- Thứ tự `@import` trong `src/app/globals.css` là thứ tự cascade. Thêm rule vào file con đúng khu vực của nó, không dồn xuống cuối.
+- Cỡ tiêu đề trang dùng chung nằm ở `src/app/page-head.css`, hình dạng nút hành động dùng chung nằm ở `src/app/buttons.css`. Màn hình thi (`bank-exam*`, `bank-test*`) giữ giao diện theo đề thật, không áp các quy tắc chung này.
 
 ## Hai chế độ chạy tách biệt
 
