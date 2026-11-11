@@ -5,5 +5,5 @@ export const pressDiscoveryFeedUrls = new Set([
   "https://mst.gov.vn/rss/tin-tuc-su-kien.rss",
   "https://baochinhphu.vn/giao-duc.rss", "https://baochinhphu.vn/y-te.rss",
   "https://baochinhphu.vn/kinh-te.rss", "https://baochinhphu.vn/van-hoa.rss",
-  "https://baochinhphu.vn/du-lich.rss",
+  "https://baochinhphu.vn/du-lich.rss", "https://baochinhphu.vn/home.rss",
 ]);

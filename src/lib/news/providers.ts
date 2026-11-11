@@ -133,7 +133,8 @@ export function parseRss(xml: string, source: NewsSource): NewsItem[] {
       : rawDate;
     return makeItem(source, { url: rss ? xmlText(row.link) : atomLink(row.link), title: xmlText(row.title),
       date,
-      category: source.feed_url && pressDiscoveryFeedUrls.has(source.feed_url) && !source.feed_url.startsWith("https://baochinhphu.vn/")
+      category: source.feed_url && pressDiscoveryFeedUrls.has(source.feed_url)
+        && (!source.feed_url.startsWith("https://baochinhphu.vn/") || source.feed_url === "https://baochinhphu.vn/home.rss")
         ? vietnamLeadCategory(xmlText(row.title), source.category) : source.category,
       publisher: source.name.startsWith("Global Voices") ? "Global Voices" : source.name, language: "English", externalId: row.guid ? xmlText(row.guid) : row.id ? xmlText(row.id) : undefined });
   }).filter((item): item is NewsItem => item !== null);

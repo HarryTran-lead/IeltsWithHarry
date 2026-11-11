@@ -16,7 +16,7 @@ export const newsSourceSchema = z.object({
   min_interval_minutes: z.number().int().min(30).max(1440),
 }).superRefine((value, ctx) => {
   if (value.provider === "ai_rewrite" && value.auto_publish) ctx.addIssue({ code: "custom", message: "Press discovery feeds cannot publish articles directly", path: ["auto_publish"] });
-  if (value.provider === "ai_rewrite" && (!value.feed_url || !pressDiscoveryFeedUrls.has(value.feed_url))) ctx.addIssue({ code: "custom", message: "Only the four reviewed discovery feeds can be enabled", path: ["feed_url"] });
+  if (value.provider === "ai_rewrite" && (!value.feed_url || !pressDiscoveryFeedUrls.has(value.feed_url))) ctx.addIssue({ code: "custom", message: "Only reviewed discovery feeds can be enabled", path: ["feed_url"] });
   if (value.provider === "rss" && (!value.feed_url || !value.feed_url.startsWith("https://"))) ctx.addIssue({ code: "custom", message: "RSS feed must use HTTPS", path: ["feed_url"] });
   if (value.enabled && (!(["METADATA_ONLY", "FULL_REUSE_ALLOWED"].includes(value.policy_status)) || value.reviewed_basis.trim().length < 12)) ctx.addIssue({ code: "custom", message: "Review and record the metadata-use basis before enabling", path: ["reviewed_basis"] });
   if (value.auto_publish && !value.enabled) ctx.addIssue({ code: "custom", message: "Enable the source before automatic publication", path: ["auto_publish"] });

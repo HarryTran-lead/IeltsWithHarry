@@ -1,6 +1,6 @@
 import { expect, it } from "vitest";
 import { discoveryBatchLimit, discoveryBudget, discoveryFeedGroup, eligibleDiscoveryLead, findIndependentDossier, rankDiscoveryCandidates, resolveFactualSourceUrl, vietnamDayStart, youthRelevanceForTitle } from "../src/lib/news/press-discovery";
-import { pressDiscoveryFeedUrls, rssProvider, type NewsItem, type NewsSource } from "../src/lib/news/providers";
+import { parseRss, pressDiscoveryFeedUrls, rssProvider, type NewsItem, type NewsSource } from "../src/lib/news/providers";
 
 const source: NewsSource = {
   id: "11111111-1111-4111-8111-111111111111", name: "Tuoi Tre News", provider: "rss", feed_url: "https://news.tuoitre.vn/rss",
@@ -8,6 +8,15 @@ const source: NewsSource = {
   attribution_text: "", auto_publish: false, enabled: true, etag: null, last_modified: null,
   min_interval_minutes: 60, archive_next_page: null,
 };
+
+it("classifies official latest-feed stories across Vietnam topics", () => {
+  const latest = { ...source, name: "Government News Latest", feed_url: "https://baochinhphu.vn/home.rss", category: "World News" as const };
+  const xml = `<rss><channel><item><title>Việt Nam phát triển trí tuệ nhân tạo</title><link>https://baochinhphu.vn/ai.htm</link><pubDate>11/11/2026 2:42:00 PM</pubDate></item><item><title>Sinh viên tham gia chương trình giáo dục mới</title><link>https://baochinhphu.vn/education.htm</link><pubDate>11/11/2026 2:30:00 PM</pubDate></item></channel></rss>`;
+  expect(pressDiscoveryFeedUrls.has(latest.feed_url)).toBe(true);
+  const stories = parseRss(xml, latest);
+  expect(stories.map((story) => story.category)).toEqual(["Technology", "Education"]);
+  expect(stories[0].published_at).toBe("2026-11-11T07:42:00.000Z");
+});
 
 it("keeps researching after thin topics while capping attempts and completed drafts", () => {
   expect(discoveryBudget(0, 4, 4)).toBe(true);
