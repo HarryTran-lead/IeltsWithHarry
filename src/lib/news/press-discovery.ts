@@ -27,8 +27,10 @@ export function discoveryBudget(articleCount: number, rejectedCount: number, art
 }
 export function discoveryBatchLimit(articleCount: number, rejectedCount: number, articleLimit: number) {
   return discoveryBudget(articleCount, rejectedCount, articleLimit)
-    ? Math.min(2, articleLimit - articleCount, Math.min(articleLimit * 4, 200) - articleCount - rejectedCount) : 0;
+    ? Math.min(3, articleLimit - articleCount, Math.min(articleLimit * 4, 200) - articleCount - rejectedCount) : 0;
 }
+const temporaryAiFailures = ["AI response was incomplete", "AI returned no content"];
+export function temporaryDiscoveryFailure(message: string) { return temporaryAiFailures.includes(message); }
 /** Alternate feed groups so each 20-minute discovery slot has fresh leads. */
 export function discoveryFeedGroup(now: Date) {
   return Math.floor(now.getTime() / (20 * 60 * 1000)) % 2;
@@ -122,10 +124,13 @@ export async function findIndependentDossier(item: NewsItem, fetcher: typeof fet
   return extract([...pages, ...(await readPages(relatedUrls))]);
 }
 
-/** Two bounded attempts per run; only fully verified original articles become public. */
+/** Three bounded attempts per run; only fully verified original articles become public. */
 export async function discoverPressFacts(db: Db, result: DiscoveryRun, settings: NewsAdminSettings, fetcher: typeof fetch = fetch, scheduled = false) {
   if (!process.env.GEMINI_API_KEY || settings.daily_rewrite_limit <= 0) return;
   const today = vietnamDayStart();
+  const { error: expiredError } = await db.from("news_skipped_urls").delete().eq("reason", "ai_rewrite")
+    .in("detail", temporaryAiFailures).lt("skipped_at", new Date(Date.now() - 24 * 3600000).toISOString());
+  if (expiredError) throw expiredError;
   const [drafts, rejected, sources] = await Promise.all([
     db.from("news_articles").select("id,category,metadata", { count: "exact" }).like("external_id", "press-discovery:%").gte("published_at", today.toISOString()),
     db.from("news_skipped_urls").select("canonical_hash", { count: "exact", head: true }).eq("reason", "ai_rewrite").gte("skipped_at", today.toISOString()),
@@ -223,7 +228,7 @@ export async function discoverPressFacts(db: Db, result: DiscoveryRun, settings:
       const message = cause instanceof Error ? cause.message : "Press discovery failed";
       result.errors.push(`Discovery ${item.canonical_url}: ${message}`);
       if (cause instanceof AiQuotaError) result.quotaLimited = true;
-      if (/not verified|did not support|failed factual or originality review|repeated the discovery headline/.test(message)) {
+      if (temporaryDiscoveryFailure(message) || /not verified|did not support|failed factual or originality review|repeated the discovery headline/.test(message)) {
         await db.from("news_skipped_urls").upsert({ canonical_hash: item.canonical_hash, reason: "ai_rewrite", detail: message.slice(0, 300) }, { onConflict: "canonical_hash" });
       }
     }
