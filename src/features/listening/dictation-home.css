@@ -6,7 +6,7 @@
 .dh :is(a,button):focus-visible{outline:3px solid #6ccbd0;outline-offset:3px}
 .dh h1,.dh h2,.dh h3,.dh p{margin:0}
 .dh-breadcrumb{display:flex;align-items:center;gap:8px;margin:0 0 12px;color:#8c9bb0;font-size:13px}
-.dh-breadcrumb a{color:var(--dh-teal);font-weight:650}
+.dh-breadcrumb a{color:var(--dh-teal);font-weight:700}
 
 /* Hero */
 .dh-hero{position:relative;isolation:isolate;display:grid;grid-template-columns:minmax(0,1.35fr) minmax(290px,.8fr);gap:28px;align-items:center;overflow:hidden;
@@ -30,7 +30,7 @@
 .dh-cta>svg{flex:none;color:var(--dh-teal)}
 .dh-ghost{display:inline-flex;align-items:center;gap:7px;padding:11px 15px;border:1px solid rgba(255,255,255,.35);border-radius:14px;color:#fff!important;font-size:14px;font-weight:700;transition:background .15s}
 .dh-ghost:hover{background:rgba(255,255,255,.12)}
-.dh-steps{display:flex;flex-wrap:wrap;gap:8px 18px;margin:22px 0 0;padding:0;list-style:none;color:rgba(255,255,255,.78);font-size:13px;font-weight:650}
+.dh-steps{display:flex;flex-wrap:wrap;gap:8px 18px;margin:22px 0 0;padding:0;list-style:none;color:rgba(255,255,255,.78);font-size:13px;font-weight:700}
 .dh-steps li{display:flex;align-items:center;gap:7px}
 .dh-steps span{display:grid;place-items:center;width:22px;height:22px;border-radius:50%;background:rgba(255,255,255,.16);color:#fff;font-size:11.5px;font-weight:800}
 .dh-steps li:not(:last-child)::after{content:"";width:18px;height:1px;margin-left:11px;background:rgba(255,255,255,.35)}
@@ -53,7 +53,7 @@
 .dh-stats .dh-ring small{color:rgba(255,255,255,.75);font-size:14px;font-weight:700}
 .dh-numbers{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin:0}
 .dh-numbers div{padding:10px 12px;border-radius:14px;background:rgba(255,255,255,.1)}
-.dh-numbers dt{color:rgba(255,255,255,.72);font-size:11.5px;font-weight:650}
+.dh-numbers dt{color:rgba(255,255,255,.72);font-size:11.5px;font-weight:700}
 .dh-numbers dd{margin:2px 0 0;font-size:22px;font-weight:800;font-variant-numeric:tabular-nums;font-family:var(--font-display),var(--font-sans),sans-serif}
 
 /* Quick actions */
@@ -84,7 +84,7 @@
 .dh-path{margin-bottom:34px}
 .dh-group+.dh-group{margin-top:18px}
 .dh-group h3{display:flex;align-items:baseline;gap:10px;margin:0 0 10px;color:var(--dh-ink);font-size:14px;font-weight:800}
-.dh-group h3 small{color:var(--dh-muted);font-size:12.5px;font-weight:550}
+.dh-group h3 small{color:var(--dh-muted);font-size:12.5px;font-weight:600}
 .dh-track{position:relative;display:grid;gap:12px;margin:0;padding:0;list-style:none}
 .dh-track-3{grid-template-columns:repeat(3,minmax(0,1fr))}
 .dh-track-4{grid-template-columns:repeat(4,minmax(0,1fr))}
@@ -97,7 +97,7 @@ a.dh-stage-body:hover{transform:translateY(-3px);border-color:color-mix(in srgb,
 .dh-stage-top{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:8px}
 .dh-stage .dh-ring{background:#fff;border-radius:50%}
 .dh-stage .dh-ring circle:last-child{stroke:var(--accent)}
-.dh-stage .dh-ring b{color:var(--accent);font-size:14px;font-weight:850}
+.dh-stage .dh-ring b{color:var(--accent);font-size:14px;font-weight:800}
 .dh-stage .dh-ring svg+span svg{color:#fff}
 .dh-stage-body>strong{font-family:var(--font-display),var(--font-sans),sans-serif;font-size:17px;letter-spacing:-.01em}
 .dh-stage-body>span:not(.dh-stage-foot){color:var(--dh-muted);font-size:13px;line-height:1.4}

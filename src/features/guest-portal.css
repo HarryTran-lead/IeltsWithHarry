@@ -9,7 +9,7 @@
 .guest-portal-sidebar nav { display: grid; gap: 20px; }
 .guest-portal-nav-group { display: grid; gap: 3px; }
 .guest-portal-nav-group > span { padding: 0 11px 7px; color: var(--subtle); font-size: 11px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
-.guest-portal-nav-group a { display: flex; align-items: center; gap: 11px; min-height: 39px; padding: 8px 11px; border-radius: 11px; font-size: 13px; font-weight: 650; color: var(--ink); }
+.guest-portal-nav-group a { display: flex; align-items: center; gap: 11px; min-height: 39px; padding: 8px 11px; border-radius: 11px; font-size: 13px; font-weight: 700; color: var(--ink); }
 .guest-portal-nav-group a:hover, .guest-portal-nav-group a[aria-current="page"] { background: var(--teal-soft); color: var(--teal-strong); }
 .guest-portal-sidebar-note { margin-top: 28px; padding: 16px; background: var(--sun-soft); border-radius: 16px; font-size: 13px; }
 .guest-portal-sidebar-note p { margin: 7px 0 12px; color: var(--muted); line-height: 1.5; }

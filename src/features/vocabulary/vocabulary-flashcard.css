@@ -6,21 +6,21 @@
 .vocab-flip-card-face { display: flex; position: absolute; inset: 0; box-sizing: border-box; flex-direction: column; align-items: center; overflow: auto; padding: 25px clamp(18px, 4vw, 35px); border: 1px solid #b8e3e1; border-radius: 22px; box-shadow: 0 14px 34px #173d5f0d; backface-visibility: hidden; -webkit-backface-visibility: hidden; }
 .vocab-flip-card-front { justify-content: space-between; background: linear-gradient(145deg,#f7fcfd,#e7f7f6); color: var(--vs-ink); }
 .vocab-flip-card-back { gap: 12px; background: linear-gradient(145deg,#fff,#f1faf9); color: var(--vs-ink); transform: rotateY(180deg); }
-.vocab-flip-card-kicker { align-self: stretch; color: #086f78; font-size: 10px; font-weight: 900; letter-spacing: .15em; text-align: left; text-transform: uppercase; }
+.vocab-flip-card-kicker { align-self: stretch; color: #086f78; font-size: 10px; font-weight: 800; letter-spacing: .15em; text-align: left; text-transform: uppercase; }
 .vocab-flip-card-center { display: grid; justify-items: center; gap: 5px; width: 100%; }
-.vocab-flip-card-center strong { max-width: 100%; font: 900 clamp(30px, 5vw, 52px)/1.1 var(--font-display); overflow-wrap: anywhere; }
+.vocab-flip-card-center strong { max-width: 100%; font: 800 clamp(30px, 5vw, 52px)/1.1 var(--font-display); overflow-wrap: anywhere; }
 .vocab-flip-card-ipa { color: var(--vs-muted); font-size: 13px; }
 .vocab-flip-card-pos { margin-top: 8px; padding: 7px 11px; border: 1px solid #b8e3e1; border-radius: 999px; background: #fff; color: #086f78; font-size: 11px; font-weight: 800; text-transform: uppercase; }
 .vocab-flip-card-hint { display: inline-flex; align-items: center; gap: 6px; color: #086f78; font-size: 11px; }
 .vocab-flip-card-back .vocab-flip-card-hint { margin-top: auto; }
-.vocab-flip-card-meaning { display: block; max-width: 100%; font: 900 clamp(23px, 3.4vw, 34px)/1.2 var(--font-display); overflow-wrap: anywhere; }
+.vocab-flip-card-meaning { display: block; max-width: 100%; font: 800 clamp(23px, 3.4vw, 34px)/1.2 var(--font-display); overflow-wrap: anywhere; }
 .vocab-flip-card-usage { display: block; max-width: 100%; padding: 9px 13px; border-radius: 11px; background: var(--vs-teal-soft); color: var(--vs-ink); font-size: 12px; font-weight: 700; line-height: 1.5; }
 .vocab-flip-card-usage b { margin-right: 7px; padding: 4px 7px; border-radius: 6px; background: #087f87; color: #fff; font-size: 10px; }
 .vocab-flip-card-examples { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 9px; width: 100%; }
 .vocab-flip-card-example { display: flex; align-items: flex-start; gap: 9px; padding: 12px; border: 1px solid var(--vs-line); border-radius: 12px; background: #fff; color: var(--vs-ink); font-size: 12px; line-height: 1.5; text-align: left; }
 .vocab-flip-card-example > span:last-child { min-width: 0; overflow-wrap: anywhere; }
 .vocab-flip-card-example small { display: block; margin-top: 5px; color: var(--vs-muted); font-size: 11px; }
-.vocab-flip-card-number { flex: none; padding: 3px 5px; border-radius: 5px; background: var(--vs-teal-soft); color: #086f78; font-size: 10px; font-weight: 900; }
+.vocab-flip-card-number { flex: none; padding: 3px 5px; border-radius: 5px; background: var(--vs-teal-soft); color: #086f78; font-size: 10px; font-weight: 800; }
 .vocab-flip-card-actions { display: flex; align-items: center; justify-content: center; gap: 14px; margin: 16px 0; }
 .vocab-study-arrow { display: grid; flex: none; place-items: center; width: 44px; height: 44px; border: 1px solid #cfe3df; border-radius: 12px; background: #fff; color: #005d5a; cursor: pointer; }
 .vocab-study-arrow:disabled { opacity: .4; cursor: default; }

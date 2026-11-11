@@ -12,6 +12,13 @@ import {
 } from "@/lib/demo-data";
 import { useDemo } from "@/features/demo/demo-store";
 import { Button } from "@/components/ui/button";
+import { viDate, viDayMonth } from "@/lib/format-date";
+
+/** Skill names stay as IELTS terms; only the two non-skill buckets read in Vietnamese. */
+export function skillLabel(skill: Skill) {
+  return skill === "Review" ? "Ôn tập" : skill === "Personal" ? "Cá nhân" : skill;
+}
+const priorityLabels: Record<StudyTask["priority"], string> = { Low: "Thấp", Medium: "Vừa", High: "Cao" };
 
 export function TaskList({
   tasks,
@@ -28,7 +35,7 @@ export function TaskList({
   if (!tasks.length)
     return (
       <div className="empty-state">
-        No tasks here yet. Add one to plan your next step.
+        Chưa có nhiệm vụ nào. Thêm một việc nhỏ để lên kế hoạch cho bước tiếp theo.
       </div>
     );
   return (
@@ -53,12 +60,12 @@ export function TaskList({
               <GripVertical
                 size={16}
                 className="drag-handle"
-                aria-label="Drag to sort"
+                aria-label="Kéo để sắp xếp"
               />
             )}
             <button
               className={`task-check ${task.completed ? "checked" : ""}`}
-              aria-label={`${task.completed ? "Unmark" : "Complete"} ${task.title}`}
+              aria-label={`${task.completed ? "Bỏ đánh dấu" : "Hoàn thành"} ${task.title}`}
               aria-pressed={task.completed}
               onClick={(event) => {
                 if (!task.completed) celebrate(event.currentTarget, { label: "Xong!", pieces: 18 });
@@ -75,7 +82,7 @@ export function TaskList({
               {task.lesson === "vocabulary-review" ? <Link href="/app/vocabulary/review">{task.title} →</Link> : task.lesson === "dictation" ? <Link href="/app/dictation">{task.title} →</Link> : task.lesson?.startsWith("ielts:") ? <Link href={`/app/question-bank/exam/${task.lesson.slice(6)}`}>{task.title} →</Link> : <span>{task.title}</span>}
               {editable && (
                 <small>
-                  {task.skill} · {task.date} · {task.priority} priority
+                  {skillLabel(task.skill)} · {viDate(task.date)} · Ưu tiên {priorityLabels[task.priority].toLowerCase()}
                 </small>
               )}
             </div>
@@ -83,15 +90,15 @@ export function TaskList({
             {editable && (
               <div className="task-actions">
                 <button
-                  aria-label={`Edit ${task.title}`}
+                  aria-label={`Sửa ${task.title}`}
                   onClick={() => setEditing(task)}
                 >
                   <Pencil size={15} />
                 </button>
                 <button
-                  aria-label={`Delete ${task.title}`}
+                  aria-label={`Xoá ${task.title}`}
                   onClick={() => {
-                    if (window.confirm(`Delete “${task.title}”?`))
+                    if (window.confirm(`Xoá “${task.title}”?`))
                       void deleteTask(task.id).catch(() => {});
                   }}
                 >
@@ -107,7 +114,7 @@ export function TaskList({
   );
 }
 
-const skills: Skill[] = [
+export const plannerSkills: Skill[] = [
   "Reading",
   "Listening",
   "Writing",
@@ -168,54 +175,54 @@ export function TaskModal({
       >
         <div className="modal-head">
           <h2 id="task-modal-title">
-            {task ? "Edit study task" : "Add a study task"}
+            {task ? "Sửa nhiệm vụ học" : "Thêm nhiệm vụ học"}
           </h2>
-          <button className="icon-button" onClick={onClose} aria-label="Close">
+          <button className="icon-button" onClick={onClose} aria-label="Đóng">
             <X size={20} />
           </button>
         </div>
-        <p>Make your next learning step concrete.</p>
+        <p>Biến bước học tiếp theo thành một việc cụ thể.</p>
         <form onSubmit={submit}>
           <label>
-            Task title
+            Tên nhiệm vụ
             <input
               autoFocus
               required
               maxLength={100}
               value={title}
               onChange={(e) => setTitle(e.target.value)}
-              placeholder="e.g. Review new vocabulary"
+              placeholder="VD: Ôn lại từ vựng mới"
             />
           </label>
           <div className="form-grid">
             <label>
-              Skill
+              Kỹ năng
               <select
                 value={skill}
                 onChange={(e) => setSkill(e.target.value as Skill)}
               >
-                {skills.map((value) => (
-                  <option key={value}>{value}</option>
+                {plannerSkills.map((value) => (
+                  <option key={value} value={value}>{skillLabel(value)}</option>
                 ))}
               </select>
             </label>
             <label>
-              Priority
+              Mức ưu tiên
               <select
                 value={priority}
                 onChange={(e) =>
                   setPriority(e.target.value as StudyTask["priority"])
                 }
               >
-                <option>Low</option>
-                <option>Medium</option>
-                <option>High</option>
+                {(Object.keys(priorityLabels) as StudyTask["priority"][]).map((value) => (
+                  <option key={value} value={value}>{priorityLabels[value]}</option>
+                ))}
               </select>
             </label>
           </div>
           <div className="form-grid">
             <label>
-              Due date
+              Ngày hạn
               <input
                 required
                 type="date"
@@ -224,7 +231,7 @@ export function TaskModal({
               />
             </label>
             <label>
-              Time
+              Giờ
               <input
                 type="time"
                 value={time}
@@ -234,11 +241,11 @@ export function TaskModal({
           </div>
           <div className="modal-actions">
             <button type="button" className="button subtle" onClick={onClose}>
-              Cancel
+              Huỷ
             </button>
             <Button type="submit" className="button primary" disabled={saving}>
               <Plus size={17} />
-              {saving ? "Saving…" : task ? "Save changes" : "Add task"}
+              {saving ? "Đang lưu…" : task ? "Lưu thay đổi" : "Thêm nhiệm vụ"}
             </Button>
           </div>
         </form>
@@ -269,7 +276,7 @@ export function PlannerMini() {
           <h2>Study Planner</h2>
         </div>
         <Link href="/app/planner" className="text-link">
-          Open planner →
+          Mở Planner →
         </Link>
       </div>
       <div className="planner-tabbar">
@@ -277,17 +284,17 @@ export function PlannerMini() {
           className={view === "week" ? "selected" : ""}
           onClick={() => setView("week")}
         >
-          This Week
+          Tuần này
         </button>
         <button
           className={view === "today" ? "selected" : ""}
           onClick={() => setView("today")}
         >
-          Today
+          Hôm nay
         </button>
         <span>
           {dates.length
-            ? `${new Date(dates[0] + "T00:00").toLocaleDateString("en", { month: "short", day: "numeric" })} – ${new Date(dates[dates.length - 1] + "T00:00").toLocaleDateString("en", { month: "short", day: "numeric" })}`
+            ? `${viDayMonth(dates[0])} – ${viDayMonth(dates[dates.length - 1])}`
             : ""}
         </span>
       </div>
@@ -296,7 +303,7 @@ export function PlannerMini() {
         className="button blue wide add-task"
         onClick={() => setModal(true)}
       >
-        <Plus size={18} /> Add a Task
+        <Plus size={18} /> Thêm nhiệm vụ
       </button>
       {modal && <TaskModal onClose={() => setModal(false)} />}
     </section>

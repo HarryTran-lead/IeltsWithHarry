@@ -12,7 +12,7 @@
 .bank-catalog-breadcrumb{display:flex;gap:10px;align-items:center;margin:0 2px 14px;color:#7890a7;font-size:13px;font-weight:700}
 .bank-catalog-breadcrumb a{color:#43838d;text-decoration:none}
 .bank-catalog-hero{display:flex;justify-content:space-between;align-items:center;gap:22px;padding:26px clamp(22px,3vw,38px);border:1px solid #dcebee;border-radius:26px;background:var(--dot-grid) 0 0/18px 18px,linear-gradient(110deg,#e3f8f5,#f6fbff 65%,#fff5df);box-shadow:var(--shadow)}
-.bank-catalog-kicker{color:var(--bank-accent);font-size:11px;font-weight:900;letter-spacing:.12em}
+.bank-catalog-kicker{color:var(--bank-accent);font-size:11px;font-weight:800;letter-spacing:.12em}
 .bank-catalog-hero h1{margin:7px 0 8px;font-size:clamp(27px,3vw,42px);line-height:1.12;letter-spacing:-.03em}
 .bank-catalog-hero p{margin:0;max-width:720px;color:#607892;font-size:14px;line-height:1.55}
 .bank-catalog-total{flex:none;display:grid;place-items:center;min-width:145px;padding:18px 25px;border:1px solid #d4ece9;border-radius:19px;background:#ffffffc9;text-align:center}
@@ -33,7 +33,7 @@
 .bank-overview-more{margin-top:auto}
 .bank-catalog-card{display:flex;flex-direction:column;gap:9px;min-width:0;min-height:168px;padding:16px;border:1px solid #e0eaf0;border-radius:17px;background:#fff;color:#173455;text-decoration:none;box-shadow:0 5px 15px #173d5f08;transition:transform .18s,border-color .18s}
 .bank-catalog-card:hover,.bank-catalog-card:focus-visible{transform:translateY(-3px);border-color:var(--bank-accent)}
-.bank-catalog-card-top{display:flex;align-items:center;justify-content:space-between;gap:6px;color:var(--bank-accent)}.bank-type-badge{display:inline-block;overflow:hidden;max-width:100%;padding:5px 8px;border-radius:7px;background:var(--bank-wash);text-overflow:ellipsis;white-space:nowrap;font-size:10px;font-weight:900}
+.bank-catalog-card-top{display:flex;align-items:center;justify-content:space-between;gap:6px;color:var(--bank-accent)}.bank-type-badge{display:inline-block;overflow:hidden;max-width:100%;padding:5px 8px;border-radius:7px;background:var(--bank-wash);text-overflow:ellipsis;white-space:nowrap;font-size:10px;font-weight:800}
 .bank-catalog-card h3{display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:3;overflow:hidden;margin:0;font-size:15px;line-height:1.35}.bank-catalog-card-meta{margin-top:auto;color:#59758c;font-size:11px;font-weight:700}.bank-catalog-card-source{overflow:hidden;color:#8298aa;font-size:10px;text-overflow:ellipsis;white-space:nowrap}
 .bank-skill-list{padding:24px;margin-top:13px}.bank-skill-list-heading,.bank-shelf-heading{display:flex;justify-content:space-between;align-items:center;gap:16px}.bank-skill-list-heading h2,.bank-shelf-heading h2{margin:4px 0;font-size:24px}.bank-skill-list-heading p,.bank-shelf-heading p{margin:0;color:#70889d;font-size:13px}.bank-type-tabs{margin:20px 0 12px}.bank-type-description{color:#668096;font-size:13px}
 .bank-list-tools{display:flex;justify-content:space-between;align-items:center;gap:13px;margin:18px 0 15px}.bank-list-tools label{display:flex;align-items:center;gap:8px;min-width:min(320px,100%);padding:9px 12px;border:1px solid #dce8ef;border-radius:12px;color:#7b93a6}.bank-list-tools input{width:100%;border:0;background:transparent;color:#173455;font:inherit;font-size:13px;outline:none}.bank-list-tools>span{color:#6c879b;font-size:12px;font-weight:800}

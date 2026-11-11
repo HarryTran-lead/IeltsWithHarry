@@ -21,6 +21,7 @@ import { Sticker, type StickerName } from "@/components/stickers/stickers";
 import { HeadIcon } from "@/components/ui/head-icon";
 import { PageHeader } from "@/components/ui/page-header";
 import { celebrateScore } from "@/lib/celebrate";
+import { viDate } from "@/lib/format-date";
 import { OpenCourses, StageLessons, usePublishedCourses } from "./stage-courses";
 import { loadPracticeResults, type PracticeResult } from "./practice-results";
 import { useDemo } from "@/features/demo/demo-store";
@@ -910,36 +911,36 @@ function ProgressPage() {
   return (
     <div className="content-page">
       <PageIntro
-        eyebrow="YOUR JOURNEY"
-        title="Learning progress"
-        description={demoMode ? "A snapshot of the activity saved in this browser." : "A snapshot of the activity saved to your account."}
+        eyebrow="HÀNH TRÌNH CỦA BẠN"
+        title="Tiến độ học tập"
+        description={demoMode ? "Tổng quan hoạt động đã lưu trong trình duyệt này." : "Tổng quan hoạt động đã lưu vào tài khoản của bạn."}
         icon="chart"
       />
       <div className="progress-stat-grid">
         <div className="card">
           <HeadIcon icon={CircleCheck} tone="mint" />
           <strong>{completed}</strong>
-          <small>Tasks completed</small>
+          <small>Nhiệm vụ đã xong</small>
         </div>
         <div className="card">
           <HeadIcon icon={Activity} tone="lavender" />
           <strong>{attempts.length}</strong>
-          <small>Practice attempts</small>
+          <small>Lượt luyện tập</small>
         </div>
         <div className="card">
           <HeadIcon icon={Target} tone="coral" />
           <strong>{goal}</strong>
-          <small>Daily task goal</small>
+          <small>Mục tiêu mỗi ngày</small>
         </div>
         <div className="card">
           <HeadIcon icon={TrendingUp} tone="teal" />
           <strong>{pct}%</strong>
-          <small>Planner completion</small>
+          <small>Hoàn thành Planner</small>
         </div>
       </div>
       <section className="card section-card">
         <div className="section-head">
-          <h2>Recent practice</h2>
+          <h2>Bài luyện gần đây</h2>
         </div>
         {attempts.length ? (
           <div className="attempt-list">
@@ -951,17 +952,17 @@ function ProgressPage() {
                   <strong>
                     {attempt.score}/{attempt.total}
                   </strong>
-                  <small>{attempt.date}</small>
+                  <small>{viDate(attempt.date)}</small>
                 </div>
               ))}
           </div>
         ) : (
           <div className="empty-state">
-            No practice attempts yet. Try a Reading or Grammar activity.
+            Chưa có bài luyện nào. Hãy thử một bài Reading hoặc Grammar.
           </div>
         )}
         <Link href="/app/learn" className="button primary">
-          Explore activities <ArrowRight size={16} />
+          Khám phá bài luyện <ArrowRight size={16} />
         </Link>
       </section>
     </div>

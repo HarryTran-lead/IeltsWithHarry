@@ -36,7 +36,7 @@
   flex: 0 1 auto;
   max-width: 100%;
   margin: 0;
-  font-size: 20px;
+  font-size: var(--fs-page-title);
   line-height: 1.3;
 }
 .page-head p {
@@ -127,7 +127,7 @@
 }
 .ielts-mode-preview .ielts-mode-preview-hero h1 {
   margin: 4px 0;
-  font-size: clamp(22px, 2.1vw, 28px);
+  font-size: var(--fs-page-title);
 }
 .ielts-mode-preview .ielts-mode-preview-art {
   display: none;
@@ -137,7 +137,7 @@
 }
 .vocab-hub .vocab-header h1 {
   margin: 2px 0 4px;
-  font-size: clamp(22px, 2.1vw, 28px);
+  font-size: var(--fs-page-title);
 }
 .vocab-hub .vocab-header p {
   margin: 0;
@@ -155,7 +155,7 @@
   font-size: 18px;
 }
 .welcome-copy h1 {
-  font-size: clamp(22px, 2vw, 27px);
+  font-size: var(--fs-page-title);
 }
 .welcome-actions {
   margin-top: 14px;
@@ -243,7 +243,7 @@
 }
 .app-frame .dh-hero h1 {
   margin: 8px 0 0;
-  font-size: clamp(22px, 2vw, 26px);
+  font-size: var(--fs-page-title);
   line-height: 1.15;
 }
 .app-frame .dh-hero h1 br,
@@ -284,7 +284,7 @@
 }
 .app-frame .vocabulary-landing-hero h1 {
   margin: 0;
-  font-size: clamp(19px, 1.7vw, 23px);
+  font-size: var(--fs-page-title);
 }
 .app-frame .vocabulary-landing-hero-actions {
   margin-top: 8px;
@@ -318,7 +318,7 @@
 .app-frame .voa-library-heading h1,
 .app-frame .voa-bank-hero h1 {
   margin: 2px 0;
-  font-size: clamp(20px, 1.9vw, 24px);
+  font-size: var(--fs-page-title);
 }
 .app-frame .voa-library-heading p,
 .app-frame .voa-bank-hero p {
@@ -338,7 +338,7 @@
 }
 .app-frame .bank-catalog-heading h1 {
   margin: 0 0 2px;
-  font-size: clamp(20px, 1.9vw, 24px);
+  font-size: var(--fs-page-title);
 }
 .app-frame .bank-catalog-kicker {
   display: none;
@@ -354,7 +354,7 @@
 }
 .app-frame .page-title-row h1 {
   margin: 0;
-  font-size: clamp(20px, 1.9vw, 24px);
+  font-size: var(--fs-page-title);
 }
 .app-frame .page-title-row p {
   margin: 2px 0 0;
@@ -367,7 +367,7 @@
 }
 .app-frame .reading-vocab-hero h1 {
   margin: 0;
-  font-size: clamp(20px, 1.9vw, 24px);
+  font-size: var(--fs-page-title);
 }
 
 /* Demo profile card. */
@@ -377,6 +377,71 @@
 .app-frame .profile-demo .sticker {
   width: 40px !important;
   height: 40px !important;
+}
+
+/*
+ * One title size across the portal. Each feature stylesheet used to pick its own h1
+ * size (20px to 43px); these lists hand every page title and every lesson/article
+ * title the shared tokens from globals.css. `body .app-frame` outranks the feature
+ * rules, which mostly use one or two classes and load after this file.
+ */
+body .app-frame :is(
+  .page-head,
+  .page-title-row,
+  .welcome-copy,
+  .learn-mission-main,
+  .learn-stage-heading,
+  .learn-overview .section-head,
+  .vocab-header,
+  .vocab-page-title,
+  .vocabulary-landing-hero,
+  .collocations-header,
+  .word-formation-hero,
+  .listening-vocab-hero,
+  .reading-vocab-hero,
+  .translation-heading,
+  .dh-hero,
+  .voa-library-heading,
+  .voa-bank-hero,
+  .practice-hero,
+  .bank-catalog-heading,
+  .ielts-dashboard-hero,
+  .ielts-dashboard-titlebar,
+  .ielts-mode-preview-hero,
+  .news-masthead,
+  .gg-hero,
+  .gg-hero-garden,
+  .gg-subpage,
+  .study-room-heading,
+  .quick-notes-header,
+  .smart-library-hero,
+  .notebook-page-hero,
+  .profile-id,
+  .community-list-title,
+  .community-section-title
+) h1,
+.app-frame .learn-overview .learn-mission:not(.learn-mission-selected) .learn-mission-main h1,
+/* The study room renders on its own layer outside `.app-frame`. */
+body .study-room-page .study-room-heading h1 {
+  font-size: var(--fs-page-title);
+  line-height: 1.15;
+}
+body .app-frame :is(
+  .gg-lesson-head,
+  .b2-hero,
+  .book2-hero,
+  .package-lesson-heading,
+  .reading-lesson-intro,
+  .news-detail-intro,
+  .news-reader-head,
+  .voa-lesson-header,
+  .lm-head,
+  .bx-hero-copy,
+  .br-launch-head,
+  .sm-intro
+) h1 {
+  font-size: var(--fs-article-title);
+  line-height: 1.18;
 }
 
 @media (max-width: 700px) {
@@ -390,7 +455,7 @@
   }
   .page-head h1,
   .content-page .page-head h1 {
-    font-size: 17px;
+    font-size: var(--fs-page-title);
   }
   .page-head p {
     display: none;

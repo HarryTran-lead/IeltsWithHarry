@@ -3,7 +3,7 @@
 .bx-page { max-width: 1320px; margin: 0 auto; padding: 0 2px 48px; color: var(--bl-ink); }
 .bx-crumbs { display: flex; align-items: center; gap: 8px; margin: 0 0 12px; color: #7890a7; font-size: 13px; font-weight: 700; }
 .bx-crumbs a { display: inline-flex; align-items: center; gap: 5px; color: var(--bl-accent); text-decoration: none; }
-.bx-kicker { color: var(--bl-accent); font-size: 11.5px; font-weight: 900; letter-spacing: 0.12em; text-transform: uppercase; }
+.bx-kicker { color: var(--bl-accent); font-size: 11.5px; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; }
 .bx-muted { color: #6d8296; font-size: 13.5px; }
 .bx-error { display: flex; align-items: center; gap: 8px; padding: 10px 14px; border-radius: 12px; background: #fdecea; color: #b42318; font-size: 13.5px; font-weight: 600; }
 
@@ -36,7 +36,7 @@
 .bx-prompt-preview { margin: 0; padding: 12px 14px; border-left: 4px solid var(--bl-accent); border-radius: 0 12px 12px 0; background: #fff; color: #34495e; font-size: 14.5px; line-height: 1.55; }
 .bx-question-preview { display: grid; gap: 6px; margin: 0; padding: 0; list-style: none; }
 .bx-question-preview li { padding: 9px 12px; border-radius: 10px; background: #fff; color: #34495e; font-size: 14px; }
-.bx-question-preview li::before { content: "Q"; margin-right: 8px; color: var(--bl-accent); font-weight: 900; }
+.bx-question-preview li::before { content: "Q"; margin-right: 8px; color: var(--bl-accent); font-weight: 800; }
 .bx-hero-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; margin-top: auto; padding-top: 4px; }
 .bx-hero-actions > span { color: #6d8296; font-size: 12.5px; font-weight: 600; }
 .bx-intro-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; margin-top: 14px; }
@@ -64,7 +64,7 @@
 .bx-bar-title strong { display: block; overflow: hidden; font-size: 14.5px; text-overflow: ellipsis; white-space: nowrap; }
 .bx-bar-title small { color: #6d8296; font-size: 12px; font-weight: 600; }
 .bx-bar-title > div { min-width: 0; }
-.bx-skill-chip { flex: none; padding: 5px 10px; border-radius: 8px; background: var(--bl-wash); color: var(--bl-accent); font-size: 12px; font-weight: 900; letter-spacing: 0.04em; text-transform: uppercase; }
+.bx-skill-chip { flex: none; padding: 5px 10px; border-radius: 8px; background: var(--bl-wash); color: var(--bl-accent); font-size: 12px; font-weight: 800; letter-spacing: 0.04em; text-transform: uppercase; }
 .bx-timer { display: inline-flex; align-items: center; gap: 7px; padding: 8px 16px; border-radius: 999px; background: #f3f6f8; color: var(--bl-ink); font: 800 19px/1 var(--font-display), sans-serif; font-variant-numeric: tabular-nums; }
 .bx-timer.is-warning { background: #fff4d6; color: #8a5a00; }
 .bx-timer.is-danger { background: #fdecea; color: #b42318; animation: bx-pulse 1s ease-in-out infinite; }
@@ -78,7 +78,7 @@
 .bx-nav button[aria-current="step"] { border-color: var(--bl-accent); background: var(--bl-accent); color: #fff; }
 .bx-panes { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); gap: 14px; align-items: start; }
 .bx-source-pane { position: sticky; top: 146px; max-height: calc(100vh - 160px); overflow-y: auto; overscroll-behavior: contain; padding: 18px 22px 22px; border: 1px solid #ebe3d2; border-radius: 18px; background: #fffdf7; background-image: radial-gradient(rgba(120, 90, 40, 0.035) 1px, transparent 1.2px); background-size: 5px 5px; }
-.bx-pane-label { display: inline-block; margin-bottom: 6px; padding: 3px 9px; border-radius: 6px; background: var(--bl-wash); color: var(--bl-accent); font-size: 11px; font-weight: 900; letter-spacing: 0.08em; text-transform: uppercase; }
+.bx-pane-label { display: inline-block; margin-bottom: 6px; padding: 3px 9px; border-radius: 6px; background: var(--bl-wash); color: var(--bl-accent); font-size: 11px; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; }
 .bx-source-pane h2 { margin: 0 0 12px; font: 800 20px/1.25 var(--font-display), sans-serif; letter-spacing: -0.01em; }
 .bx-passage p { margin: 0 0 12px; color: #26384c; font-size: 15px; line-height: 1.75; }
 .bx-audio { display: grid; gap: 6px; margin: 0 0 14px; padding: 12px; border-radius: 14px; background: #fff; border: 1px solid #e3ecf1; }

@@ -37,17 +37,17 @@
 .lm-group{margin-top:16px;padding-top:14px;border-top:1px solid var(--voa-line)}
 .lm-instructions{margin:0 0 8px;font-weight:800;color:#173959}
 .lm-group h3{margin:0 0 8px;font-size:16px}
-.lm-prompt{font-weight:650}
+.lm-prompt{font-weight:700}
 .lm-map{display:block;max-width:100%;max-height:420px;margin:8px auto 12px;border:1px solid var(--voa-line);border-radius:12px;background:#fff}
 .lm-option-list{margin:0 0 10px;padding:10px 14px 10px 30px;border-radius:12px;background:#f5f9fb;font-size:14px;line-height:1.6}
 .lm-question{margin:10px 0;padding:10px 12px;border:1px solid var(--voa-line);border-left-width:4px;border-radius:12px}
 .lm-question.correct{border-left-color:#1ba672}
 .lm-question.wrong{border-left-color:#e0794a}
-.lm-question>label{display:block;margin-bottom:8px;font-weight:650;line-height:1.5}
+.lm-question>label{display:block;margin-bottom:8px;font-weight:700;line-height:1.5}
 .lm-number{display:inline-grid;place-items:center;min-width:26px;height:26px;margin-right:6px;padding:0 6px;border-radius:99px;background:#eaf5f6;color:#007f89;font-size:12px;font-weight:800}
 .lm-page .lm-question input:not([type=radio]):not([type=checkbox]),.lm-page .lm-question select{width:100%;max-width:420px}
 .lm-options{display:grid;gap:6px}
-.lm-page .lm-options label{display:flex;align-items:flex-start;gap:9px;padding:8px 11px;border:1px solid var(--voa-line);border-radius:10px;font-size:14px;font-weight:550;color:var(--voa-ink);cursor:pointer}
+.lm-page .lm-options label{display:flex;align-items:flex-start;gap:9px;padding:8px 11px;border:1px solid var(--voa-line);border-radius:10px;font-size:14px;font-weight:600;color:var(--voa-ink);cursor:pointer}
 .lm-page .lm-options label.chosen{border-color:#5fb9c0;background:#f0fafa}
 .lm-choose-label{margin:0 0 8px;font-weight:700}
 .lm-feedback{margin-top:8px;padding:8px 10px;border-radius:10px;background:#f6f9fb;font-size:13.5px}

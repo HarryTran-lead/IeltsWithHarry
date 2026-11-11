@@ -77,9 +77,9 @@
 .bl-brand-art::before { left: -65px; bottom: -95px; }
 .bl-brand-art::after { right: -65px; top: -95px; }
 .bl-brand-art img, .bl-card:hover .bl-brand-art img { width: clamp(64px, 25%, 104px); height: auto; object-fit: contain; transform: none; }
-.bl-brand-wordmark { color: #153d58; font: 900 clamp(19px, 2vw, 29px)/1.1 var(--font-display), var(--font-sans), sans-serif; letter-spacing: -.045em; }
+.bl-brand-wordmark { color: #153d58; font: 800 clamp(19px, 2vw, 29px)/1.1 var(--font-display), var(--font-sans), sans-serif; letter-spacing: -.045em; }
 .bl-brand-wordmark b { color: #0b8f91; }
-.bl-brand-art small { color: #51818c; font-size: 10px; font-weight: 900; letter-spacing: .18em; }
+.bl-brand-art small { color: #51818c; font-size: 10px; font-weight: 800; letter-spacing: .18em; }
 .bl-thumb .bl-usage { position: absolute; top: 8px; left: 8px; padding: 4px 9px; border-radius: 999px; background: rgba(16, 35, 63, 0.66); color: #fff; font-size: 11.5px; font-weight: 700; backdrop-filter: blur(4px); }
 .bl-badge { position: absolute; left: 0; bottom: 10px; padding: 5px 12px 5px 10px; border-radius: 0 999px 999px 0; background: var(--bl-accent); color: #fff; font-size: 12px; font-weight: 800; box-shadow: 0 3px 8px -3px rgba(0, 0, 0, 0.35); }
 .bl-ai-badge { position: absolute; right: 8px; bottom: 8px; z-index: 1; padding: 2px 7px; border-radius: 999px; background: rgba(16, 35, 63, 0.65); color: rgba(255, 255, 255, 0.92); font-size: 10px; line-height: 1.3; font-style: normal; font-weight: 700; letter-spacing: 0.02em; backdrop-filter: blur(4px); }
@@ -169,7 +169,7 @@
 .bl-reading-part-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 9px; }
 .bl-reading-part-grid a { display: grid; gap: 5px; padding: 13px; border: 1px solid #efdedb; border-radius: 12px; background: #fff; color: #243c59; text-decoration: none; }
 .bl-reading-part-grid a:hover { border-color: #e46f67; }
-.bl-reading-part-grid span { color: #bd5751; font-size: 10px; font-weight: 900; letter-spacing: .07em; }
+.bl-reading-part-grid span { color: #bd5751; font-size: 10px; font-weight: 800; letter-spacing: .07em; }
 .bl-reading-part-grid strong { overflow: hidden; white-space: nowrap; text-overflow: ellipsis; font-size: 13px; }
 .bl-reading-part-grid small { display: flex; align-items: center; gap: 4px; color: #688193; }
 @media (max-width: 700px) { .bl-reading-part-grid { grid-template-columns: 1fr; } }
@@ -192,7 +192,7 @@
 .bl-head-title { display: flex; align-items: center; gap: 10px; flex: 1 1 auto; min-width: 0; margin-right: auto; }
 .bl-head-icon { flex: none; display: grid; place-items: center; width: 38px; height: 38px; border-radius: 12px; background: var(--bl-wash); color: var(--bl-accent); box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--bl-accent) 16%, transparent); }
 .bl-head-title > div { min-width: 0; }
-.bl-head h2 { margin: 0; overflow: hidden; color: var(--bl-ink); font-size: 18px; font-weight: 850; line-height: 1.2; letter-spacing: -.01em; white-space: nowrap; text-overflow: ellipsis; }
+.bl-head h2 { margin: 0; overflow: hidden; color: var(--bl-ink); font-size: 18px; font-weight: 800; line-height: 1.2; letter-spacing: -.01em; white-space: nowrap; text-overflow: ellipsis; }
 .bl-head-title p { margin: 1px 0 0; color: #6d8296; font-size: 12px; font-weight: 600; white-space: nowrap; }
 .bl-head .bl-search { flex: 0 1 250px; min-width: 170px; width: auto; height: 36px; border-color: #dfe7ec; border-radius: 10px; background: #fff; }
 .bl-head .bl-search:focus-within { border-color: var(--bl-accent); box-shadow: 0 0 0 3px color-mix(in srgb, var(--bl-accent) 14%, transparent); }
@@ -228,7 +228,7 @@
 .bl-status-tabs button[aria-pressed="true"] { background: #fff; color: var(--bl-ink); box-shadow: 0 1px 3px #173d5f26; }
 .bl-status-tabs button[aria-pressed="true"] b { color: var(--bl-accent); }
 .bl-kind-row { display: flex; flex-wrap: wrap; align-items: center; gap: 5px; padding: 12px 0 2px; }
-.bl-kind-label { display: inline-flex; align-items: center; gap: 5px; margin-right: 4px; color: #7a8ea0; font-size: 11px; font-weight: 850; letter-spacing: .04em; text-transform: uppercase; white-space: nowrap; }
+.bl-kind-label { display: inline-flex; align-items: center; gap: 5px; margin-right: 4px; color: #7a8ea0; font-size: 11px; font-weight: 800; letter-spacing: .04em; text-transform: uppercase; white-space: nowrap; }
 .bl-kind-row button { display: inline-flex; align-items: center; gap: 5px; height: 28px; padding: 0 10px; border: 1px solid #14284b14; border-radius: 999px; background: #ffffffe6; color: #3d5368; font: inherit; font-size: 12.5px; font-weight: 700; white-space: nowrap; cursor: pointer; transition: border-color .15s, background .15s, color .15s; }
 .bl-kind-row button small { color: #93a6b6; font-size: 11px; font-weight: 800; font-variant-numeric: tabular-nums; }
 .bl-kind-row button:hover { border-color: color-mix(in srgb, var(--bl-accent) 55%, transparent); color: var(--bl-ink); }
