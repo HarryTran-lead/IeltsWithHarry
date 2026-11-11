@@ -57,6 +57,7 @@ export async function GET(request: Request) {
 }
 
 export async function POST(request: Request) {
+  const started = Date.now();
   let lease: { jobId: string; token: string } | null = null;
   try {
     const user = await viewer();
@@ -121,12 +122,17 @@ export async function POST(request: Request) {
     return Response.json({ ...saved, history: await recentHistory(user.id, job.task_type) }, { headers: noCache });
   } catch (error) {
     const raw = error instanceof Error ? error.message : "";
-    const code = raw === "CLOUDFLARE_QUOTA_EXCEEDED" ? raw : "DEEP_ANALYSIS_FAILED";
+    const known = new Set(["CLOUDFLARE_QUOTA_EXCEEDED", "CLOUDFLARE_EMPTY", "CLOUDFLARE_INVALID_JSON", "DEEP_COVERAGE_QUOTE_INVALID", "DEEP_PARAGRAPH_QUOTE_INVALID", "DEEP_LEXICAL_QUOTE_INVALID", "DEEP_GRAMMAR_QUOTE_INVALID", "DEEP_AUDIT_INDEX_INVALID", "DEEP_DRILL_CRITERION_INVALID", "DEEP_REPORT_SAVE_FAILED", "GRADE_RESULT_MISSING", "SOURCE_FACTS_UNAVAILABLE", "MODEL_NOT_APPROVED"]);
+    const code = known.has(raw) ? raw : /^CLOUDFLARE_HTTP_\d{3}$/.test(raw) ? raw
+      : error instanceof z.ZodError ? "DEEP_SCHEMA_INVALID"
+      : error instanceof Error && error.name === "TimeoutError" ? "DEEP_TIMEOUT"
+      : "DEEP_ANALYSIS_FAILED";
+    if (lease) console.error(JSON.stringify({ event: "writing_deep_failed", code, job_id: lease.jobId, elapsed_ms: Date.now() - started }));
     if (lease) await bankClient().from("writing_deep_reports")
       .update({ status: "failed", error_code: code, lease_token: null, lease_until: null, updated_at: new Date().toISOString() })
       .eq("job_id", lease.jobId).eq("lease_token", lease.token);
     if (code === "CLOUDFLARE_QUOTA_EXCEEDED") return Response.json({ error: "Đã hết hạn mức AI miễn phí hôm nay. Hãy thử lại sau 07:00 giờ Việt Nam." }, { status: 429 });
-    if (lease) return Response.json({ error: "Phân tích sâu chưa hoàn tất. Hãy thử lại." }, { status: 503 });
+    if (lease) return Response.json({ error: "Phân tích sâu chưa hoàn tất. Hãy thử lại.", code }, { status: 503 });
     return requestError(error);
   }
 }
