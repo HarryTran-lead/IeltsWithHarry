@@ -3,11 +3,12 @@
 
 import Link from "next/link";
 import { useEffect, useMemo, useRef, useState, type CSSProperties } from "react";
-import { ArrowLeft, ChevronLeft, ChevronRight, RotateCcw } from "lucide-react";
+import { ArrowLeft, ChevronLeft, ChevronRight, Clock3, RotateCcw } from "lucide-react";
+import { Sticker } from "@/components/stickers/stickers";
 import type { ExamContent, ExamQuestion } from "@/lib/ielts-bank/schema";
 import { displayExamTitle } from "@/lib/ielts-bank/display-title";
 import { estimateBand, type ReviewItem, typeLabel } from "./bank-exam";
-import { optionKey, optionLabel, groupQuestions, richBlocks, withoutOwnNumber } from "./bank-questions";
+import { optionKey, optionLabel, groupQuestions, richBlocks, withoutOwnNumber, type QuestionGroup } from "./bank-questions";
 import { RichText } from "./rich-text";
 import { ReadingShare } from "./reading-share";
 import { ListeningTranscript } from "./listening-transcript";
@@ -28,6 +29,33 @@ function reviewPrompt(questions: ExamQuestion[], question: ExamQuestion, number:
   const line = carrier?.prompt.split(/\r?\n/).find((text) => text.includes(`**${number}**`));
   if (line) return line.replace(/^\s*[-•]\s*/, "").replace(/\s*\|\s*/g, " · ").replace(/^·\s*|\s*·$/g, "").replace(`**${number}**`, "______").replace(/\*\*(\d+)\*\*/g, "______");
   return withoutOwnNumber(question.prompt, number);
+}
+
+/** Matching blocks (one shared set of short keys, single answer each) read best as one grid, as on the test paper. */
+function gridOf(group: QuestionGroup) {
+  const first = group.questions[0];
+  // A summary or form printed once with its gaps already shows each answer in place; pairs (Choose TWO) stay lists.
+  if (group.questions.length < 2 || !first.options.length || group.questions.some((question) => question.group || (question.prompt.match(/\*\*\d+\*\*/g) ?? []).length >= 2)) return null;
+  const same = JSON.stringify(first.options);
+  if (group.questions.some((question) => JSON.stringify(question.options) !== same)) return null;
+  const keys = first.options.map(optionKey);
+  if (keys.some((key) => key.length > 4) || new Set(keys).size !== keys.length) return null;
+  const legend = first.options.map((option) => ({ key: optionKey(option), label: optionLabel(option) })).filter((item) => item.label && item.label !== item.key);
+  return { keys, legend };
+}
+
+const clock = (seconds: number) => [Math.floor(seconds / 3600), Math.floor(seconds / 60) % 60, seconds % 60].map((value) => String(value).padStart(2, "0")).join(":");
+
+/** Correct, wrong and skipped as one ring, the score in the middle. */
+function ScoreDonut({ right, wrong, skipped }: { right: number; wrong: number; skipped: number }) {
+  const total = Math.max(1, right + wrong + skipped), radius = 52, around = 2 * Math.PI * radius;
+  const arc = (value: number, offset: number, colour: string) => value ? <circle cx="64" cy="64" r={radius} fill="none" stroke={colour} strokeWidth="14" strokeDasharray={`${(value / total) * around} ${around}`} strokeDashoffset={-offset / total * around} transform="rotate(-90 64 64)" strokeLinecap="butt" /> : null;
+  return <svg className="br-donut" viewBox="0 0 128 128" role="img" aria-label={`${right} đúng, ${wrong} sai, ${skipped} bỏ qua`}>
+    <circle cx="64" cy="64" r={radius} fill="none" stroke="#e7ecef" strokeWidth="14" />
+    {arc(right, 0, "#2fa36b")}{arc(wrong, right, "#e5594b")}
+    <text x="64" y="60" textAnchor="middle" className="br-donut-score">{right}/{total}</text>
+    <text x="64" y="80" textAnchor="middle" className="br-donut-label">câu đúng</text>
+  </svg>;
 }
 
 export function ReadingReview({ title, skill = "Reading", content, review, format, attribution, savedHighlights, attemptId, partNumber, startedAt, submittedAt, backHref, retryHref, onRetry, examId, suggestionSource }: Props) {
@@ -65,7 +93,8 @@ export function ReadingReview({ title, skill = "Reading", content, review, forma
   const displayTitle = displayExamTitle(title);
   const band = uncalibrated ? null : estimateBand(skill, format, correct, review.length);
   const accuracy = review.length ? Math.round(correct / review.length * 100) : 0;
-  const duration = startedAt && submittedAt ? Math.max(0, Math.round((new Date(submittedAt).getTime() - new Date(startedAt).getTime()) / 60000)) : null;
+  const seconds = startedAt && submittedAt ? Math.max(0, Math.round((new Date(submittedAt).getTime() - new Date(startedAt).getTime()) / 1000)) : null;
+  const duration = seconds === null ? null : Math.round(seconds / 60);
   const section = sections[Math.min(part, sections.length - 1)];
   const sectionLabel = (index: number) => `${skill === "Listening" ? "Part" : "Passage"} ${content.sections.length === 1 && partNumber && partNumber > 0 ? partNumber : sections[index].originalIndex + 1}`;
   const selectedReview = active ? result.get(active) : null;
@@ -141,7 +170,21 @@ export function ReadingReview({ title, skill = "Reading", content, review, forma
   const practiceHref = (kind: string) => `/app/${skill.toLowerCase()}?type=${skill === "Reading" ? "passage" : "part"}&kind=${encodeURIComponent(kind)}`;
   if (summary) return <main className={`bx-page br-summary bl-tone-${skill.toLowerCase()}`}><nav className="bx-crumbs"><Link href={backHref}><ArrowLeft size={15} /> {skill}</Link><span>/</span>Kết quả</nav>
     <section className="br-summary-card"><span className="bx-kicker">KẾT QUẢ BÀI LÀM{onePart ? ` · ${sectionLabel(0).toUpperCase()}` : ""}</span><h1>{partTitle || displayTitle}</h1><p>{partTitle ? `${displayTitle} · ` : ""}Mở lại bài để đối chiếu đáp án với {skill === "Listening" ? "transcript và âm thanh" : "từng đoạn đọc"}.</p>
-      <div className={`br-result-hero ${level}`}><strong>{uncalibrated ? `${accuracy}%` : band === null ? "—" : band.toFixed(1)}<small>{uncalibrated ? "Tỉ lệ đúng" : "Band ước tính"}</small></strong><div><span>{verdict}</span><b>{correct}/{review.length} câu đúng</b><small>{accuracy}% chính xác{skipped ? ` · ${skipped} câu bỏ trống` : ""}</small></div></div>
+      <div className={`br-result-cards ${level}`}>
+        <div className="br-mood">
+          <p>{level === "is-good" ? "Xuất sắc! Giữ vững phong độ này nhé." : level === "is-mid" ? "Khá lắm! Xem lại vài câu sai là lên band." : "Hơi khó bạn nhỉ, bình tĩnh luyện tiếp cùng Harry nha!"}</p>
+          <img src="/ieltswithharry-mascot.webp" alt="" />
+          <Sticker name={level === "is-good" ? "star" : level === "is-mid" ? "target" : "coffee"} size={58} tilt={-10} className="br-mood-sticker" />
+        </div>
+        <div className="br-score-card">
+          <header><b>Kết quả làm bài</b>{seconds !== null && <small><Clock3 size={13} /> Thời gian làm bài<strong>{clock(seconds)}</strong></small>}</header>
+          <div className="br-donut-row">
+            <ScoreDonut right={correct} wrong={wrong} skipped={skipped} />
+            <ul className="br-legend"><li className="is-right"><i />Đúng<b>{correct} câu</b></li><li className="is-wrong"><i />Sai<b>{wrong} câu</b></li><li className="is-skipped"><i />Bỏ qua<b>{skipped} câu</b></li></ul>
+          </div>
+          <footer><span className="br-band-chip"><b>{uncalibrated ? `${accuracy}%` : band === null ? "—" : band.toFixed(1)}</b>{uncalibrated ? "tỉ lệ đúng" : "band ước tính"} · {verdict}</span><button type="button" onClick={() => setSummary(false)}>Xem giải thích <ChevronRight size={16} /></button></footer>
+        </div>
+      </div>
       <div className="br-result-table-wrap"><table className="br-result-table"><caption>Chi tiết bài làm</caption><thead><tr><th>Đề</th><th>Thời gian</th><th>Ngày nộp</th><th>Tổng câu</th><th>Đúng</th><th>Sai</th><th>Bỏ qua</th><th>Tỉ lệ đúng</th></tr></thead><tbody><tr><td>{displayTitle}</td><td>{duration === null ? "—" : `${duration} phút`}</td><td>{submittedAt ? new Date(submittedAt).toLocaleDateString("vi-VN") : "—"}</td><td>{review.length}</td><td className="is-right">{correct}</td><td className="is-wrong">{wrong}</td><td>{skipped}</td><td>{review.length ? Math.round(correct / review.length * 100) : 0}%</td></tr></tbody></table></div>
       {byType.length > 1 && <div className="br-type-breakdown"><h2>Phân tích theo dạng câu hỏi</h2><p>Sắp xếp từ dạng làm yếu nhất. Ưu tiên luyện thêm các dạng dưới 60%.</p>
         <ul>{byType.map(([label, row]) => { const rate = Math.round(row.right / row.total * 100); return <li key={label} className={rate >= 75 ? "is-good" : rate >= 50 ? "is-mid" : "is-low"}>
@@ -173,16 +216,39 @@ export function ReadingReview({ title, skill = "Reading", content, review, forma
           const item = result.get(target.id);
           return <button type="button" className={`br-gap ${item?.correct ? "is-right" : item?.given ? "is-wrong" : "is-empty"}`} onClick={() => pickQuestion(questions.indexOf(target))} aria-label={`Câu ${number}: ${item?.correct ? "đúng" : item?.given ? "sai" : "bỏ trống"}`}><b>{number}</b>{item?.given || "—"}</button>;
         })}</div>;
+      })()}{(() => {
+        const grid = gridOf(group);
+        if (!grid) return null;
+        return <>
+          {grid.legend.length > 0 && <ul className="br-grid-legend" data-review-text>{grid.legend.map((item) => <li key={item.key}><b>{item.key}</b><span>{item.label}</span></li>)}</ul>}
+          <div className="br-grid-wrap"><table className="br-grid">
+            <thead><tr><th scope="col">Câu</th>{grid.keys.map((key) => <th scope="col" key={key}>{key}</th>)}<th scope="col" aria-label="Giải thích" /></tr></thead>
+            <tbody>{group.questions.map((question) => {
+              const item = result.get(question.id);
+              const given = item?.given ? optionKey(item.given) : "";
+              const answers = (item?.answers ?? []).map(optionKey);
+              const open = active === question.id;
+              return <tr key={question.id} id={`br-q-${question.id}`} className={`${item?.correct ? "is-right" : item?.given ? "is-wrong" : "is-skipped"} ${open ? "is-open" : ""}`}>
+                <th scope="row"><span className="br-grid-no">{numberOf(question.id)}</span><span data-review-text>{reviewPrompt(group.questions, question, numberOf(question.id))}</span></th>
+                {grid.keys.map((key) => { const answer = answers.includes(key), chosen = given === key; return <td key={key} className={`${answer ? "is-answer" : ""} ${chosen ? (answer ? "is-chosen-right" : "is-chosen-wrong") : ""}`} aria-label={chosen ? (answer ? `${key}: bạn chọn, đúng` : `${key}: bạn chọn, sai`) : answer ? `${key}: đáp án` : undefined}><i /></td>; })}
+                <td><button type="button" aria-expanded={open} onClick={() => setActive(open ? null : question.id)}>{open ? "Ẩn" : "Giải thích"}</button></td>
+              </tr>;
+            })}</tbody>
+          </table></div>
+        </>;
       })()}{group.questions.map((question) => {
         const item = result.get(question.id);
         const open = active === question.id;
+        const inGrid = Boolean(gridOf(group));
+        // In a grid, only the row being explained gets a block underneath.
+        if (inGrid && !open) return null;
         const fixed = /true[_-]false/.test(question.type) ? ["TRUE", "FALSE", "NOT GIVEN"] : /yes[_-]no/.test(question.type) ? ["YES", "NO", "NOT GIVEN"] : [];
         const options = question.options.length ? question.options : fixed;
         const acceptedAnswers = question.group ? [...new Set(questions.filter((candidate) => candidate.group === question.group).flatMap((candidate) => result.get(candidate.id)?.answers || []))] : item?.answers || [];
         const explanation = open ? evidenceReview?.explanation : item?.explanation;
         const cleanExplanation = skill === "Reading" ? explanationWithoutEvidence(explanation || "") : explanation || "";
-        return <div className={`br-question ${item?.correct ? "is-right" : item?.given ? "is-wrong" : "is-skipped"}`} key={question.id} id={`br-q-${question.id}`}><div className="br-question-title"><span>{numberOf(question.id)}</span><div data-review-text><RichText text={reviewPrompt(group.questions, question, numberOf(question.id))} /></div><button type="button" aria-expanded={open} onClick={() => setActive(open ? null : question.id)}>{open ? "Ẩn giải thích" : "Xem giải thích"}</button></div>
-          {options.length > 0 && <ul className="br-options">{options.map((option) => { const key = optionKey(option), chosen = item?.given && (option === item.given || key === item.given), answer = acceptedAnswers.some((value) => value === option || value === key); return <li key={option} className={`${chosen ? "is-chosen" : ""} ${answer ? "is-answer" : ""}`}><b>{key}</b><span data-review-text>{optionLabel(option) || option}</span>{chosen && <small>Bạn chọn</small>}{answer && <small>Đáp án</small>}</li>; })}</ul>}
+        return <div className={`br-question ${item?.correct ? "is-right" : item?.given ? "is-wrong" : "is-skipped"} ${inGrid ? "is-grid-note" : ""}`} key={question.id} id={inGrid ? undefined : `br-q-${question.id}`}><div className="br-question-title"><span>{numberOf(question.id)}</span><div data-review-text>{inGrid ? <b>Giải thích câu {numberOf(question.id)}</b> : <RichText text={reviewPrompt(group.questions, question, numberOf(question.id))} />}</div><button type="button" aria-expanded={open} onClick={() => setActive(open ? null : question.id)}>{open ? "Ẩn giải thích" : "Xem giải thích"}</button></div>
+          {!inGrid && options.length > 0 && <ul className="br-options">{options.map((option) => { const key = optionKey(option), chosen = item?.given && (option === item.given || key === item.given), answer = acceptedAnswers.some((value) => value === option || value === key); return <li key={option} className={`${chosen ? "is-chosen" : ""} ${answer ? "is-answer" : ""}`}><b>{key}</b><span data-review-text>{optionLabel(option) || option}</span>{chosen && <small>Bạn chọn</small>}{answer && <small>Đáp án</small>}</li>; })}</ul>}
           <div className="br-answer-feedback"><span className={item?.correct ? "is-correct" : item?.given ? "is-incorrect" : "is-empty"}>{item?.correct ? "Đúng" : item?.given ? "Sai" : "Chưa trả lời"} · Bạn: <strong>{item?.given || "—"}</strong></span><span className="is-correct">Đáp án đúng: <strong>{acceptedAnswers.join(" / ") || "—"}</strong>{question.group && " · Không cần đúng thứ tự"}</span></div>
           {open && <div className="br-explanation"><small>{typeLabel(question.type)}</small>{evidence?.quote && <blockquote><b>{guided ? "Bước 1 · Tìm dẫn chứng" : skill === "Listening" ? "Dẫn chứng trong transcript" : "Dẫn chứng trong bài đọc"}</b><br />“{evidence.quote}”</blockquote>}{guided && <b className="br-step-label">Bước 2 · Phân tích đáp án</b>}{cleanExplanation && !cleanExplanation.startsWith("Evidence:") ? <p><RichText text={cleanExplanation} /></p> : !evidence?.quote && <p>Đối chiếu đáp án với {skill === "Listening" ? "transcript bên trái" : "bài đọc bên trái"}.</p>}{guided && <div className="br-step-actions"><button type="button" disabled={guidedIndex <= 0} onClick={() => pickQuestion(guidedIndex - 1)}>Câu trước</button><button type="button" disabled={guidedIndex + 1 >= questions.length} onClick={() => pickQuestion(guidedIndex + 1)}>Câu tiếp <ChevronRight size={15} /></button></div>}</div>}
         </div>;
