@@ -1,6 +1,8 @@
 "use client";
 
 import { useCallback, useEffect, useState } from "react";
+import { filterUnsupportedWritingErrors } from "@/lib/writing-grading/quality";
+import { WritingDeepInsights } from "./bank-writing-deep-insights";
 import "./bank-writing-grading.css";
 
 type Finding = { category: string; severity: string; start: number; end: number; original_text: string; suggestion: string | null; explanation_vi: string; explanation_en: string };
@@ -13,7 +15,7 @@ type Grade = {
 };
 type GradingState = { status: string; id?: string; attempt_no?: number; error_code?: string | null; result: Grade | null; model_version?: string | null; rubric_version?: string | null; provider?: "local" | "cloudflare" };
 const names: Record<string, string> = { TA: "Task Achievement", TR: "Task Response", CC: "Coherence & Cohesion", LR: "Lexical Resource", GRA: "Grammatical Range & Accuracy" };
-type ReviewTab = "review" | "overview" | "vocabulary" | "plan";
+type ReviewTab = "review" | "overview" | "vocabulary" | "plan" | "deep";
 
 function EssayWithFindings({ essay, findings, selected, onSelect, attemptId }: { essay: string; findings: Finding[]; selected: number | null; onSelect: (index: number) => void; attemptId: string }) {
   const anchored = findings.map((item, index) => ({ ...item, index })).filter((item) => item.start >= 0 && item.end <= essay.length && item.start < item.end && essay.slice(item.start, item.end) === item.original_text).sort((a, b) => a.start - b.start);
@@ -66,6 +68,7 @@ export function WritingAutoGradingPanel({ attemptId, essay }: { attemptId: strin
     finally { setBusy(false); }
   }
   const grade = state?.result;
+  const visibleErrors = grade ? filterUnsupportedWritingErrors(grade.errors) : [];
   const nextSteps = grade ? [...grade.criteria].sort((a, b) => a.score_display - b.score_display).slice(0, 3) : [];
   const nextBand = grade ? Math.min(9, grade.task_band_display + 0.5) : 0;
   const vocabulary = grade?.vocabulary_suggestions ?? [];
@@ -86,18 +89,19 @@ export function WritingAutoGradingPanel({ attemptId, essay }: { attemptId: strin
     {grade && <>
       <div className="wg-band"><div><span>Band luyện tập · {grade.task_type === "academic_task1" ? "Academic Task 1" : "Academic Task 2"}</span><strong>{grade.task_band_display.toFixed(1)}</strong></div><p>{grade.summary_vi}</p></div>
       <nav className="wg-tabs" role="tablist" aria-label="Xem đánh giá Writing">
-        {([ ["review", `Đối chiếu bài viết${grade.errors.length ? ` · ${grade.errors.length}` : ""}`], ["overview", "Điểm theo tiêu chí"], ["vocabulary", "Gợi ý từ vựng"], ["plan", "Cách cải thiện band"] ] as const).map(([id, label]) => <button key={id} type="button" role="tab" aria-selected={tab === id} className={tab === id ? "is-active" : ""} onClick={() => setTab(id)}>{label}</button>)}
+        {([ ["review", `Đối chiếu bài viết${visibleErrors.length ? ` · ${visibleErrors.length}` : ""}`], ["overview", "Điểm theo tiêu chí"], ["vocabulary", "Gợi ý từ vựng"], ["plan", "Cách cải thiện band"], ["deep", "Phân tích sâu"] ] as const).map(([id, label]) => <button key={id} type="button" role="tab" aria-selected={tab === id} className={tab === id ? "is-active" : ""} onClick={() => setTab(id)}>{label}</button>)}
       </nav>
       {tab === "review" && <div className="wg-workspace" role="tabpanel">
-        <section className="wg-essay-pane"><div className="wg-pane-heading"><h3>Bài viết của bạn</h3><span>Chạm vào đoạn tô màu để xem góp ý</span></div><EssayWithFindings essay={essay} findings={grade.errors} selected={selectedFinding} onSelect={(index) => selectFinding(index)} attemptId={attemptId} /></section>
-        <aside className="wg-feedback-pane"><div className="wg-pane-heading"><h3>Góp ý theo vị trí</h3><span>{grade.errors.length} điểm cần xem</span></div>
-          {grade.errors.length === 0 ? <p className="wg-empty">Chưa có lỗi được đánh dấu trực tiếp. Xem các tiêu chí và kế hoạch cải thiện để sửa bài.</p> : <ol className="wg-findings">{grade.errors.map((item, index) => <li key={`${item.start}-${index}`}><button type="button" className={`wg-finding ${selectedFinding === index ? "is-selected" : ""}`} onClick={() => selectFinding(index, true)}><span className="wg-finding-no">{index + 1}</span><span><strong>{item.original_text}</strong><small>{item.explanation_vi}</small>{item.suggestion && <em>Thử sửa: {item.suggestion}</em>}</span></button>{selectedFinding === index && <p className="wg-finding-en" lang="en">{item.explanation_en}</p>}</li>)}</ol>}
+        <section className="wg-essay-pane"><div className="wg-pane-heading"><h3>Bài viết của bạn</h3><span>Chạm vào đoạn tô màu để xem góp ý</span></div><EssayWithFindings essay={essay} findings={visibleErrors} selected={selectedFinding} onSelect={(index) => selectFinding(index)} attemptId={attemptId} /></section>
+        <aside className="wg-feedback-pane"><div className="wg-pane-heading"><h3>Góp ý theo vị trí</h3><span>{visibleErrors.length} điểm cần xem</span></div>
+          {visibleErrors.length === 0 ? <p className="wg-empty">Chưa có lỗi được đánh dấu trực tiếp. Xem các tiêu chí và kế hoạch cải thiện để sửa bài.</p> : <ol className="wg-findings">{visibleErrors.map((item, index) => <li key={`${item.start}-${index}`}><button type="button" className={`wg-finding ${selectedFinding === index ? "is-selected" : ""}`} onClick={() => selectFinding(index, true)}><span className="wg-finding-no">{index + 1}</span><span><strong>{item.original_text}</strong><small>{item.explanation_vi}</small>{item.suggestion && <em>Thử sửa: {item.suggestion}</em>}</span></button>{selectedFinding === index && <p className="wg-finding-en" lang="en">{item.explanation_en}</p>}</li>)}</ol>}
           <div className="wg-rewrite"><label htmlFor={`wg-revision-${attemptId}`}>Thử sửa bài ở đây</label><textarea id={`wg-revision-${attemptId}`} lang="en" value={revision} onChange={(event) => setRevisionState({ attemptId, text: event.target.value })} spellCheck /><small>Bản nháp chỉ tồn tại trong trang này. Dùng “Làm lại” ở trên để nộp bài mới.</small></div>
         </aside>
       </div>}
       {tab === "overview" && <div role="tabpanel"><div className="wg-criteria">{grade.criteria.map((item) => <article key={item.key}><h3>{names[item.key] ?? item.key} <b>{item.score_display.toFixed(1)}</b></h3><p>{item.reason_vi}</p><div className="wg-criterion-action"><strong>Bước cải thiện</strong><p>{item.next_step_vi}</p></div><details><summary>Xem bằng chứng trong bài</summary><ul>{item.evidence.map((evidence, index) => <li key={index}><q>{evidence.quote}</q> — {evidence.note_vi}</li>)}</ul><p lang="en">{item.reason_en}</p></details></article>)}</div><div className="wg-columns"><div><h3>Điểm mạnh</h3><ul>{grade.strengths_vi.map((item, index) => <li key={index}>{item}</li>)}</ul></div><div><h3>Ưu tiên cải thiện</h3><ol>{grade.improvements_vi.map((item, index) => <li key={index}>{item}</li>)}</ol></div></div></div>}
       {tab === "vocabulary" && <div className="wg-vocabulary" role="tabpanel"><p>Những cách diễn đạt có thể thử trong ngữ cảnh bài này. Hãy chọn từ phù hợp với ý bạn muốn nói, không thay máy móc.</p>{vocabulary.length ? <div className="wg-vocab-grid">{vocabulary.map((item, index) => <article key={`${item.start}-${index}`}><span>Trong bài</span><p lang="en"><s>{item.original_text}</s></p><span>Có thể thử</span><strong lang="en">{item.replacement}</strong><p>{item.reason_vi}</p><small lang="en">Ví dụ: {item.example_en}</small></article>)}</div> : <p className="wg-empty">Kết quả này chưa có đề xuất từ vựng theo từng cụm. Xem mục Lexical Resource trong “Điểm theo tiêu chí” và bài chấm mới để nhận gợi ý cụ thể.</p>}</div>}
       {tab === "plan" && <div className="wg-plan" role="tabpanel"><div className="wg-plan-intro"><h3>{nextBand > grade.task_band_display ? `Hướng tới band ${nextBand.toFixed(1)}` : "Giữ vững chất lượng bài viết"}</h3><p>Đây là mục tiêu luyện tập, không phải cam kết điểm. Bắt đầu từ những tiêu chí đang thấp nhất rồi viết lại một đoạn để kiểm tra tiến bộ.</p></div><ol>{nextSteps.map((item, index) => <li key={item.key}><span>{index + 1}</span><div><h4>{names[item.key] ?? item.key} · hiện tại {item.score_display.toFixed(1)}</h4><p>{item.next_step_vi}</p>{item.evidence[0] && <small>Bắt đầu từ: <q>{item.evidence[0].quote}</q></small>}</div></li>)}</ol>{grade.revised_paragraph && <details><summary>Xem đoạn viết tham khảo của AI</summary><p lang="en">{grade.revised_paragraph}</p><small>Đây là ví dụ minh họa; hãy tự viết lại theo ý của bạn.</small></details>}</div>}
+      {tab === "deep" && <WritingDeepInsights attemptId={attemptId} essay={essay} taskType={grade.task_type} errors={visibleErrors} />}
       <p className="wg-provenance">Model: {state?.model_version || "chưa rõ"} · Rubric: {state?.rubric_version || "chưa rõ"}</p>
     </>}
   </section>;

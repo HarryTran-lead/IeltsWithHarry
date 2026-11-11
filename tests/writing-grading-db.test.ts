@@ -5,6 +5,8 @@ import { PGlite } from "@electric-sql/pglite";
 
 const migration = readFileSync(resolve("supabase/migrations/202611100004_writing_grading_foundation.sql"), "utf8");
 const hostedMigration = readFileSync(resolve("supabase/migrations/202611100005_writing_hosted_model_registry.sql"), "utf8");
+const deepMigration = readFileSync(resolve("supabase/migrations/202611110004_writing_deep_reports.sql"), "utf8");
+const deepRetryMigration = readFileSync(resolve("supabase/migrations/202611110005_writing_deep_retry_limit.sql"), "utf8");
 
 describe("Writing grading migration", () => {
   it("preserves attempt ownership and claims one idempotent job", async () => {
@@ -26,6 +28,8 @@ describe("Writing grading migration", () => {
       `);
       await db.exec(migration);
       await db.exec(hostedMigration);
+      await db.exec(deepMigration);
+      await db.exec(deepRetryMigration);
       await db.query("insert into auth.users(id) values ($1),($2)", [alice, bob]);
       const version = "33333333-3333-4333-8333-333333333333";
       const attempt = "44444444-4444-4444-8444-444444444444";
@@ -50,6 +54,12 @@ describe("Writing grading migration", () => {
       expect((await finish("66666666-6666-4666-8666-666666666666")).rows[0].ok).toBe(false);
       expect((await finish(job.lease_token)).rows[0].ok).toBe(true);
       expect((await db.query("select id from public.writing_grading_results")).rows).toHaveLength(1);
+      const deepClaim = await db.query<{ token: string | null }>("select public.writing_claim_deep_report($1::uuid,$2::uuid) as token", [job.id, alice]);
+      expect(deepClaim.rows[0].token).toMatch(/[a-f0-9-]{36}/);
+      expect((await db.query<{ attempt_no: number }>("select attempt_no from public.writing_deep_reports where job_id=$1", [job.id])).rows[0].attempt_no).toBe(1);
+      expect((await db.query<{ token: string | null }>("select public.writing_claim_deep_report($1::uuid,$2::uuid) as token", [job.id, alice])).rows[0].token).toBeNull();
+      await db.query("update public.writing_deep_reports set status='completed', result='{}'::jsonb where job_id=$1 and lease_token=$2", [job.id, deepClaim.rows[0].token]);
+      expect((await db.query<{ token: string | null }>("select public.writing_claim_deep_report($1::uuid,$2::uuid) as token", [job.id, alice])).rows[0].token).toBeNull();
       await expect(db.query("update public.writing_grading_results set model_version='changed'")).rejects.toThrow("immutable");
       await expect(db.query("insert into public.writing_model_registry(model_id,revision,task_type,weights_license,training_data_rights,artifact_sha256,evaluation_report_ref,status) values ('demo','v1','academic_task2','unknown','unknown',$1,'','approved')", ["a".repeat(64)])).rejects.toThrow();
       await db.query("insert into public.writing_model_registry(model_id,revision,task_type,provider,provider_model_ref,weights_license,training_data_rights,evaluation_report_ref,status) values ('hosted','managed','academic_task2','cloudflare','@cf/demo','unknown','unverified','','blocked')");
@@ -57,6 +67,7 @@ describe("Writing grading migration", () => {
       await expect(db.query("insert into public.writing_dataset_manifest(source_ref,source_type,training_allowed) values ('unknown','third_party',true)")).rejects.toThrow();
       await db.exec(`set role authenticated; set request.jwt.claim.sub = '${bob}';`);
       expect((await db.query("select id from public.writing_grading_results")).rows).toEqual([]);
+      expect((await db.query("select job_id from public.writing_deep_reports")).rows).toEqual([]);
     } finally { await db.close(); }
   }, 15000);
 });

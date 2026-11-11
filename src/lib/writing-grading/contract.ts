@@ -1,4 +1,5 @@
 import { z } from "zod";
+import { filterUnsupportedWritingErrors } from "./quality";
 
 export const rubricVersion = "ielts-writing-public-2026-11";
 export const schemaVersion = "1.0";
@@ -79,7 +80,7 @@ export function verifyModelDraft(input: unknown, taskType: TaskType, essay: stri
     source_facts_status: taskType === "academic_task1" ? "verified" : "not_applicable",
     task_band_raw: taskBandRaw, task_band_display: displayHalfBand(taskBandRaw),
     criteria: draft.criteria.map((criterion) => ({ ...criterion, score_display: displayHalfBand(criterion.score_raw) })),
-    errors: draft.errors, vocabulary_suggestions: draft.vocabulary_suggestions,
+    errors: filterUnsupportedWritingErrors(draft.errors), vocabulary_suggestions: draft.vocabulary_suggestions,
     strengths_vi: draft.strengths_vi, improvements_vi: draft.improvements_vi,
     summary_vi: draft.summary_vi, summary_en: draft.summary_en, revised_paragraph: draft.revised_paragraph,
   };
