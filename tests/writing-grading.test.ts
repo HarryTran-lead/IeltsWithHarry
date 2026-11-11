@@ -2,6 +2,7 @@ import { afterEach, describe, expect, it, vi } from "vitest";
 import { combineWritingBands, countEnglishWords, displayHalfBand, verifyModelDraft } from "../src/lib/writing-grading/contract";
 import { gradeWithLocalModel } from "../src/lib/writing-grading/local-provider";
 import { cloudflareWritingModel, gradeWithCloudflare } from "../src/lib/writing-grading/cloudflare-provider";
+import { filterUnsupportedWritingErrors } from "../src/lib/writing-grading/quality";
 
 const essay = "Emoji 😀 and café.\r\nThe same claim appears again: same.";
 const start = essay.lastIndexOf("same");
@@ -14,6 +15,11 @@ const draft = (task: "academic_task1" | "academic_task2") => ({
 });
 
 describe("Writing scoring contract", () => {
+  it("does not mark the optional 'to' after help as a grammar error", () => {
+    const flagged = { category: "grammar", original_text: "help local businesses earn more money", suggestion: "help local businesses to earn more money" };
+    expect(filterUnsupportedWritingErrors([flagged])).toEqual([]);
+    expect(filterUnsupportedWritingErrors([{ ...flagged, suggestion: "help local businesses earning more money" }])).toHaveLength(1);
+  });
   it("uses raw criterion means and weights Task 2 twice before rounding", () => {
     expect(displayHalfBand(6.25)).toBe(6.5);
     expect(combineWritingBands(6, 7)).toEqual({ raw: 20 / 3, display: 6.5 });

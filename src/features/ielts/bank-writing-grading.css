@@ -74,5 +74,46 @@
 .wg-plan details p { white-space: pre-wrap; font-size: 14px; line-height: 1.6; }
 .wg-plan details small { color: #607383; }
 .wg-provenance { margin: 16px 0 0; color: #607383; font-size: 11px; overflow-wrap: anywhere; }
+.wg-deep-intro { display: flex; justify-content: space-between; align-items: start; gap: 18px; padding: 15px 18px; border-radius: 12px; background: #eef9f6; }
+.wg-deep-intro h3 { margin: 0 0 6px; font-size: 18px; }
+.wg-deep-intro p { max-width: 720px; margin: 0; color: #526a7b; font-size: 13px; line-height: 1.5; }
+.wg-deep-metrics { flex: none; display: grid; gap: 3px; text-align: right; }
+.wg-deep-metrics strong { color: #087f87; font-size: 17px; }
+.wg-deep-metrics span { color: #526a7b; font-size: 12px; }
+.wg-deep-history { margin: 14px 0; padding: 13px; border: 1px solid #dce7ea; border-radius: 12px; }
+.wg-deep-history h4 { margin: 0 0 9px; font-size: 14px; }
+.wg-deep-history > div { overflow-x: auto; }
+.wg-deep-history table { width: 100%; border-collapse: collapse; font-size: 12px; text-align: left; }
+.wg-deep-history th, .wg-deep-history td { padding: 7px 9px; border-bottom: 1px solid #e5eded; white-space: nowrap; }
+.wg-deep-history th { color: #526a7b; }
+.wg-deep-history td strong { color: #087f87; }
+.wg-deep-history small { display: block; margin-top: 7px; color: #65798a; font-size: 11px; }
+.wg-deep-start { margin: 16px 0; padding: 16px; border: 1px solid #dce7ea; border-radius: 12px; }
+.wg-deep-start p { margin: 0 0 12px; font-size: 13px; }
+.wg-deep-workspace { display: grid; grid-template-columns: minmax(280px, .8fr) minmax(0, 1.2fr); align-items: start; gap: 16px; margin-top: 16px; }
+.wg-deep-essay { position: sticky; top: 95px; min-width: 0; border: 1px solid #dce7ea; border-radius: 12px; overflow: hidden; }
+.wg-deep-essay h4 { margin: 0; padding: 11px 14px; border-bottom: 1px solid #dce7ea; background: #f8fbfb; }
+.wg-deep-essay > div { max-height: 70vh; padding: 14px; overflow-y: auto; white-space: pre-wrap; font-size: 14px; line-height: 1.7; }
+.wg-deep-report { min-width: 0; }
+.wg-deep-priority { margin: 0 0 16px; padding: 14px; border-left: 4px solid #087f87; border-radius: 8px; background: #eef9f6; font-size: 14px; line-height: 1.5; }
+.wg-deep-report section { margin: 0 0 20px; }
+.wg-deep-report h4 { margin: 0 0 9px; font-size: 16px; }
+.wg-deep-report section > p { font-size: 13px; color: #617487; }
+.wg-deep-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 9px; }
+.wg-deep-cards article { min-width: 0; padding: 13px; border: 1px solid #dce7ea; border-radius: 10px; }
+.wg-deep-cards article > span { display: inline-block; margin-bottom: 6px; color: #567080; font-size: 11px; font-weight: 800; }
+.wg-deep-cards article > .wg-status-covered { color: #087f87; }
+.wg-deep-cards article > .wg-status-partial { color: #a06815; }
+.wg-deep-cards article > .wg-status-missing { color: #ad4434; }
+.wg-deep-cards strong, .wg-deep-cards q { display: block; overflow-wrap: anywhere; font-size: 13px; line-height: 1.5; }
+.wg-deep-cards q { margin: 7px 0; color: #526a7b; font-style: italic; }
+.wg-deep-cards p { margin: 7px 0 0; font-size: 12px; line-height: 1.5; }
+.wg-deep-cards small { display: block; margin-top: 8px; color: #526a7b; line-height: 1.5; }
+.wg-deep-drills { margin: 0; padding-left: 22px; }
+.wg-deep-drills li { margin-bottom: 10px; padding: 10px; border: 1px solid #dce7ea; border-radius: 8px; font-size: 13px; }
+.wg-deep-drills p { margin: 5px 0 0; color: #526a7b; }
+.wg-deep-note { display: block; color: #617487; font-size: 11px; line-height: 1.5; }
+@media (max-width: 860px) { .wg-deep-workspace { grid-template-columns: minmax(0, 1fr); }.wg-deep-essay { position: static; }.wg-deep-essay > div { max-height: 40vh; } }
+@media (max-width: 700px) { .wg-deep-intro { flex-direction: column; }.wg-deep-metrics { text-align: left; }.wg-deep-cards { grid-template-columns: minmax(0, 1fr); } }
 @media (max-width: 860px) { .wg-workspace { grid-template-columns: minmax(0, 1fr); }.wg-essay { max-height: 55vh; }.wg-feedback-pane { height: auto; }.wg-findings { max-height: 320px; }.wg-rewrite textarea { height: 150px; } }
 @media (max-width: 700px) { .wg-panel { padding: 16px; }.wg-band { align-items: start; flex-direction: column; gap: 8px; }.wg-criteria, .wg-columns, .wg-vocab-grid { grid-template-columns: minmax(0, 1fr); }.wg-pane-heading { flex-wrap: wrap; } }
