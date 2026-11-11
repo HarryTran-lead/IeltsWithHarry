@@ -45,6 +45,8 @@ export type CatalogExam = {
   visual_kind?: string | null;
   visual?: Record<string, unknown> | null;
   image_url?: string | null;
+  /** Writing Task 1: the figure the question is about (its own image), when it has one. */
+  figure_url?: string | null;
   prompt_preview?: string | null;
   question_preview?: string[];
   attempt_count?: number;
