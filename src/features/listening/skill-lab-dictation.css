@@ -16,7 +16,7 @@
 .sld-pill{border-radius:7px;background:#eef4f8;color:#4c6a82;padding:3px 7px;font-size:11px;font-weight:750}
 .sld-card strong{font-size:16px;line-height:1.3}
 .sld-card-meta{color:var(--voa-muted);font-size:12.5px}
-.sld-card-foot{display:flex;justify-content:space-between;gap:8px;margin-top:auto;padding-top:8px;color:#557089;font-size:12px;font-weight:650}
+.sld-card-foot{display:flex;justify-content:space-between;gap:8px;margin-top:auto;padding-top:8px;color:#557089;font-size:12px;font-weight:700}
 .sld-card.sld-done .sld-card-foot span:last-child{color:#0b8a5a}
 .sld-meter{position:absolute;left:0;right:0;bottom:0;height:4px;background:#edf3f7}
 .sld-meter span{display:block;height:100%;background:#16a3a0}
@@ -93,11 +93,11 @@
 .sld-type{color:#557089;font-size:12px;font-weight:750;text-transform:uppercase;letter-spacing:.04em}
 .sld-limit{border-radius:7px;background:#fff3df;color:#8a5a10;padding:3px 8px;font-size:11px;font-weight:800}
 .sld-lab .sld-evidence{display:inline-flex;align-items:center;gap:5px;margin-left:auto;padding:5px 9px;font-size:12px;font-weight:700;color:#087e91}
-.sld-lab .sld-prompt{display:block;margin-bottom:8px;color:var(--voa-ink);font-size:15px;font-weight:650;line-height:1.5}
+.sld-lab .sld-prompt{display:block;margin-bottom:8px;color:var(--voa-ink);font-size:15px;font-weight:700;line-height:1.5}
 .sld-lab .sld-question input:not([type=radio]),.sld-lab .sld-question textarea{width:100%;min-height:0}
 .sld-lab .sld-question textarea{min-height:64px}
 .sld-options{display:grid;gap:6px}
-.sld-lab .sld-options label{display:flex;align-items:center;gap:9px;padding:9px 11px;border:1px solid var(--voa-line);border-radius:10px;color:var(--voa-ink);font-size:14px;font-weight:550;cursor:pointer}
+.sld-lab .sld-options label{display:flex;align-items:center;gap:9px;padding:9px 11px;border:1px solid var(--voa-line);border-radius:10px;color:var(--voa-ink);font-size:14px;font-weight:600;cursor:pointer}
 .sld-lab .sld-options label.chosen{border-color:#5fb9c0;background:#f0fafa}
 .sld-question-actions{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:8px;margin-top:8px}
 .sld-lab .sld-question-actions button,.sld-lab .sld-retry{display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:700}
@@ -147,14 +147,14 @@
 .sld-pill-started{background:#fff3df;color:#8a5a10}
 .sld-dictation-feedback.skipped{border-color:#e4d6bb;background:#fbf7ee}
 .sld-diff .focus{outline:2px solid #e8a33d;outline-offset:1px}
-.sld-reference{font-weight:650}
+.sld-reference{font-weight:700}
 .sld-explanation{display:flex;gap:6px;align-items:flex-start;margin:8px 0 0;padding:8px 10px;border-radius:9px;background:#eef7f8;color:#2f5f6e;font-size:13px}
 .sld-explanation svg{flex:none;margin-top:2px;color:#008d98}
 .sld-turn-words{display:grid;gap:6px;margin-top:8px;font-size:13px}
 .sld-turn-words>span{display:flex;flex-wrap:wrap;align-items:center;gap:4px 6px}
 .sld-lab .sld-save-word{display:inline-flex;align-items:center;gap:4px;margin-left:4px;padding:3px 9px;border-radius:99px;font-size:12px;font-weight:700;color:#087e91;border-color:#b9dce3;background:#f2fafb}
 .sld-vocab .sld-save-word{margin:6px 0 0}
-.sld-dictation-done{display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin:10px 0 0;color:#0b7a50;font-size:13px;font-weight:650}
+.sld-dictation-done{display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin:10px 0 0;color:#0b7a50;font-size:13px;font-weight:700}
 .sld-lab .sld-dictation-done button{padding:0;border:0;background:none;color:#087e91;font-weight:800;text-decoration:underline}
 .sld-lab .sld-replay-inline{display:inline-flex;align-items:center;gap:5px}
 

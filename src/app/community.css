@@ -189,7 +189,7 @@
   color: var(--muted);
   padding: 10px 16px;
   font-size: 13.5px;
-  font-weight: 650;
+  font-weight: 700;
   white-space: nowrap;
   transition: background-color .2s, color .2s;
 }
@@ -242,7 +242,7 @@
   color: var(--ink);
   padding: 6px 12px;
   font-size: 12.5px;
-  font-weight: 650;
+  font-weight: 700;
   white-space: nowrap;
   transition: background-color .2s, color .2s, border-color .2s;
 }
@@ -414,7 +414,7 @@ a.community-post-body:hover h2 { color: var(--teal-strong); }
   border-top: 1px solid #efeee8;
   color: var(--muted);
   font-size: 13px;
-  font-weight: 650;
+  font-weight: 700;
 }
 .community-post-actions > button,
 .community-post-actions > a {
@@ -701,7 +701,7 @@ a.community-post-body:hover h2 { color: var(--teal-strong); }
   background: var(--teal-soft);
   color: var(--teal-strong);
   font-size: 12.5px;
-  font-weight: 650;
+  font-weight: 700;
 }
 .community-replying button { border: 0; background: transparent; color: inherit; font-weight: 800; }
 .community-comment-form textarea,
@@ -853,7 +853,7 @@ a.community-post-body:hover h2 { color: var(--teal-strong); }
   background: var(--mint);
   color: #087e6e;
   font-size: 12.5px;
-  font-weight: 650;
+  font-weight: 700;
 }
 .community-form-note { margin: 0; padding: 10px 12px; border-radius: 10px; background: var(--sun-soft); color: #6f5718; font-size: 12.5px; }
 .community-dialog footer,

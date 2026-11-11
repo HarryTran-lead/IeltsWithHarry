@@ -47,7 +47,7 @@ function WelcomeBanner() {
   const { tasks, goal } = useDemo();
   const hour = new Date().getHours();
   const greeting =
-    hour < 12 ? "Good morning" : hour < 18 ? "Good afternoon" : "Good evening";
+    hour < 12 ? "Chào buổi sáng" : hour < 18 ? "Chào buổi chiều" : "Chào buổi tối";
   const doneToday = tasks.filter((t) => t.date === todayISO() && t.completed).length;
   return (
     <section className="welcome-banner">
@@ -55,16 +55,16 @@ function WelcomeBanner() {
       <div className="welcome-copy">
         <p className="welcome-greeting">{greeting}!</p>
         <h1>
-          Keep going, you’re doing <span className="hl">great</span>!
+          Cứ tiếp tục nhé, bạn đang làm <span className="hl">rất tốt</span>!
         </h1>
         <div className="welcome-row">
         <StreakWeek />
         <div className="welcome-actions">
           {releaseLocks ? <Link href="/app/learn/ielts-builder" className="button primary">Học Level 2 <ArrowRight size={16} /></Link> : <Link href="/app/lesson/technology-digital-life" className="button primary">
-            Continue learning <ArrowRight size={16} />
+            Học tiếp <ArrowRight size={16} />
           </Link>}
           <Link href="/app/planner" className="button ghost">
-            <CalendarDays size={16} /> {doneToday}/{goal} tasks today
+            <CalendarDays size={16} /> {doneToday}/{goal} nhiệm vụ hôm nay
           </Link>
         </div>
         </div>
@@ -116,7 +116,7 @@ function LearningPath() {
         <div className="head-title">
           <HeadIcon icon={Route} />
           <div>
-            <h2>Your Learning Path</h2>
+            <h2>Lộ trình học của bạn</h2>
             <p>4 chặng từ Foundation đến Level 3, hướng tới band 7.5.</p>
           </div>
         </div>
@@ -130,14 +130,14 @@ function LearningPath() {
           <Sticker name="abc" size={58} tilt={-4} delay={300} />
         </div>
         <div className="continue-body">
-          <span className="current-label">{releaseLocks ? "Chặng đang mở" : demoMode ? "Current unit" : "Featured unit"}</span>
+          <span className="current-label">{releaseLocks ? "Chặng đang mở" : demoMode ? "Bài đang học" : "Bài nổi bật"}</span>
           <h3>{releaseLocks ? "Level 2 · English Skill Lab Book 2" : "Technology & Digital Life"}</h3>
           <p>{releaseLocks ? "Học theo nhóm câu ngắn, xem tư liệu khi làm bài và ôn lại những câu cần sửa." : "Learn useful vocabulary, reading strategies, writing tasks and speaking skills for real-world topics."}</p>
           {releaseLocks ? <Link href="/app/learn/ielts-builder" className="button coral">Vào lộ trình <ArrowRight size={16} /></Link> : <Link
             href="/app/lesson/technology-digital-life"
             className="button coral"
           >
-            Continue learning <ArrowRight size={16} />
+            Học tiếp <ArrowRight size={16} />
           </Link>}
         </div>
         <div className="continue-skills">
@@ -181,10 +181,10 @@ function TodayGoal() {
           className="text-link"
           onClick={() => {
             const value = prompt(
-              "How many tasks is your daily goal?",
+              "Mỗi ngày bạn muốn hoàn thành bao nhiêu nhiệm vụ?",
               String(goal),
             );
-            if (value && /^d+$/.test(value)) void setGoal(Number(value)).catch(() => {});
+            if (value && /^\d+$/.test(value)) void setGoal(Number(value)).catch(() => {});
           }}
         >
           Mục tiêu {goal} <ChevronRight size={14} />
@@ -224,19 +224,19 @@ function PracticeNow() {
       <div className="card-head">
         <div className="head-title">
           <HeadIcon icon={Zap} tone="lavender" />
-          <h2>Practice Now</h2>
+          <h2>Luyện ngay</h2>
         </div>
         <Link href="/app/learn" className="text-link">
-          See all <ChevronRight size={14} />
+          Xem tất cả <ChevronRight size={14} />
         </Link>
       </div>
       <div className="practice-panel">
         <div>
-          <span className="purple-tag">Speaking practice</span>
+          <span className="purple-tag">Luyện Speaking</span>
           <h3>Talk about Technology</h3>
-          <p>Answer 3 simple questions and listen to your recording.</p>
+          <p>Trả lời 3 câu hỏi ngắn rồi nghe lại bản ghi âm của bạn.</p>
           <Link href="/app/speaking" className="button purple">
-            Start practice <ArrowRight size={16} />
+            Bắt đầu luyện <ArrowRight size={16} />
           </Link>
         </div>
         <Sticker name="mic" size={78} tilt={12} float className="practice-sticker" />
@@ -251,10 +251,10 @@ function Recommended() {
       <div className="card-head">
         <div className="head-title">
           <HeadIcon icon={Compass} tone="sky" />
-          <h2>Recommended for You</h2>
+          <h2>Gợi ý cho bạn</h2>
         </div>
         <Link href="/app/learn" className="text-link">
-          More lessons <ArrowRight size={14} />
+          Thêm bài học <ArrowRight size={14} />
         </Link>
       </div>
       <div className="recommend-grid">
@@ -280,29 +280,29 @@ function Recommended() {
 }
 
 const badges: { sticker: StickerName; label: string; detail: string; earned: boolean; tilt: number }[] = [
-  { sticker: "star", label: "First Steps", detail: "Complete 5 tasks", earned: true, tilt: -8 },
-  { sticker: "rocket", label: "On a Roll", detail: "7 day streak", earned: true, tilt: 6 },
-  { sticker: "mountain", label: "Explorer", detail: "Complete a unit", earned: true, tilt: -4 },
-  { sticker: "lock", label: "Word Master", detail: "Learn 100 words", earned: false, tilt: 5 },
+  { sticker: "star", label: "Bước đầu tiên", detail: "Hoàn thành 5 nhiệm vụ", earned: true, tilt: -8 },
+  { sticker: "rocket", label: "Đang vào guồng", detail: "Chuỗi 7 ngày", earned: true, tilt: 6 },
+  { sticker: "mountain", label: "Nhà thám hiểm", detail: "Hoàn thành một unit", earned: true, tilt: -4 },
+  { sticker: "lock", label: "Bậc thầy từ vựng", detail: "Học 100 từ", earned: false, tilt: 5 },
 ];
 
 function Achievements() {
   const { tasks, attempts } = useDemo();
-  if (!demoMode) return <section className="card achievements"><div className="card-head"><div className="head-title"><HeadIcon icon={Activity} tone="mint" /><h2>Your activity</h2></div><Link href="/app/progress" className="text-link">View all</Link></div><div className="activity-tiles"><div><strong>{tasks.filter((task) => task.completed).length}</strong><small>Completed tasks</small></div><div><strong>{attempts.length}</strong><small>Practice attempts</small></div></div></section>;
+  if (!demoMode) return <section className="card achievements"><div className="card-head"><div className="head-title"><HeadIcon icon={Activity} tone="mint" /><h2>Hoạt động của bạn</h2></div><Link href="/app/progress" className="text-link">Xem tất cả</Link></div><div className="activity-tiles"><div><strong>{tasks.filter((task) => task.completed).length}</strong><small>Nhiệm vụ đã xong</small></div><div><strong>{attempts.length}</strong><small>Lượt luyện tập</small></div></div></section>;
   return (
     <section className="card achievements">
       <div className="card-head">
         <div className="head-title">
           <HeadIcon icon={Medal} tone="sun" />
-          <h2>Your Progress</h2>
+          <h2>Thành tích của bạn</h2>
         </div>
         <Link href="/app/progress" className="text-link">
-          View all
+          Xem tất cả
         </Link>
       </div>
       <div className="achievement-tabs">
-        <span className="active">Achievements</span>
-        <Link href="/app/progress">Skill stats</Link>
+        <span className="active">Huy hiệu</span>
+        <Link href="/app/progress">Thống kê kỹ năng</Link>
       </div>
       <div className="badge-grid">
         {badges.map((badge, index) => (
@@ -324,7 +324,7 @@ export function Dashboard() {
   return (
     <div className="dashboard-grid">
       <div className="dashboard-main stagger">
-        {demoMode && <div className="demo-note"><i aria-hidden="true" /> Demo preview · Your changes are saved in this browser</div>}
+        {demoMode && <div className="demo-note"><i aria-hidden="true" /> Bản xem thử · Thay đổi của bạn được lưu trong trình duyệt này</div>}
         <WelcomeBanner />
         <LatestNews />
         <StudyProgress />

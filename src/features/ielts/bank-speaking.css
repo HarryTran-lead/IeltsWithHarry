@@ -9,7 +9,7 @@
 .bs-pills button.is-done svg { color: var(--bl-accent); }
 .bs-pills button[aria-current="step"] { border-color: var(--bl-accent); background: var(--bl-accent); color: #fff; }
 .bs-pills button[aria-current="step"] svg { color: #fff; }
-.bs-part-chip { padding: 5px 12px; border-radius: 999px; background: var(--bl-wash); color: var(--bl-accent); font-size: 13px; font-weight: 900; }
+.bs-part-chip { padding: 5px 12px; border-radius: 999px; background: var(--bl-wash); color: var(--bl-accent); font-size: 13px; font-weight: 800; }
 .bs-switches { display: flex; gap: 6px; }
 .bs-switches button { display: inline-flex; align-items: center; gap: 6px; height: 32px; padding: 0 11px; border: 1px solid #dbe6ec; border-radius: 10px; background: #fff; color: #8195a8; font: inherit; font-size: 12.5px; font-weight: 800; cursor: pointer; }
 .bs-switches button[aria-pressed="true"] { border-color: var(--bl-accent); color: var(--bl-accent); }
@@ -82,7 +82,7 @@
 .sm-bar { position: sticky; top: 72px; z-index: 15; display: flex; flex-wrap: wrap; align-items: center; gap: 12px; margin: 0 0 12px; padding: 10px 14px; border: 1px solid #e3ecf1; border-radius: 16px; background: rgba(255, 255, 255, 0.96); backdrop-filter: blur(8px); }
 .sm-bar h1 { margin: 0; font: 800 17px/1.2 var(--font-display), sans-serif; }
 .sm-parts { display: flex; gap: 4px; margin: 0 auto; }
-.sm-parts span { padding: 5px 12px; border-radius: 999px; background: #f3f6f8; color: #8195a8; font-size: 12.5px; font-weight: 900; }
+.sm-parts span { padding: 5px 12px; border-radius: 999px; background: #f3f6f8; color: #8195a8; font-size: 12.5px; font-weight: 800; }
 .sm-parts span.is-on { background: var(--bl-accent); color: #fff; }
 .sm-parts span.is-past { background: var(--bl-wash); color: var(--bl-ink); }
 .sm-time { color: #56697b; font-size: 13.5px; font-weight: 800; font-variant-numeric: tabular-nums; }

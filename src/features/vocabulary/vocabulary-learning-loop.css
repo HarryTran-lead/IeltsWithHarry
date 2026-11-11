@@ -64,7 +64,7 @@
 .vocab-dense-main strong,
 .vocab-dense-word {
   color: var(--vl-ink);
-  font: 850 16px var(--font-display);
+  font: 800 16px var(--font-display);
   text-decoration: none;
 }
 .vocab-dense-word:hover { color: var(--vl-teal); }
@@ -144,7 +144,7 @@
 .vocab-hub .vocab-review-card h2 {
   margin: 4px 0 0;
   color: var(--vl-ink);
-  font: 900 clamp(40px, 5vw, 60px) / 1.05 var(--font-display);
+  font: 800 clamp(40px, 5vw, 60px) / 1.05 var(--font-display);
   letter-spacing: -0.03em;
   overflow-wrap: anywhere;
 }
@@ -169,7 +169,7 @@
 }
 .vocab-review-back strong {
   color: var(--vl-ink);
-  font: 850 22px / 1.3 var(--font-display);
+  font: 800 22px / 1.3 var(--font-display);
 }
 .vocab-review-back p {
   margin: 0;
@@ -216,7 +216,7 @@
   transition: transform 0.15s;
 }
 .vocab-hub .vocab-rating button:not(:disabled):hover { transform: translateY(-1px); }
-.vocab-hub .vocab-rating strong { font: 850 16px var(--font-display); }
+.vocab-hub .vocab-rating strong { font: 800 16px var(--font-display); }
 .vocab-hub .vocab-rating small { font-size: 12.5px; font-weight: 700; opacity: 0.85; }
 .vocab-hub .vocab-rating kbd { position: absolute; top: 6px; right: 7px; }
 .vocab-hub .vocab-rating .grade-again { border-color: #f0b4b8; background: #fdf0f1; color: #a8333c; }
@@ -234,7 +234,7 @@
   margin-bottom: 14px;
 }
 .vocab-state-tile { display: grid; gap: 6px; }
-.vocab-state-tile strong { color: var(--vl-ink); font: 900 30px var(--font-display); }
+.vocab-state-tile strong { color: var(--vl-ink); font: 800 30px var(--font-display); }
 .vocab-state-tile small { color: var(--vl-muted); font-size: 13px; }
 .vocab-progress-grid {
   display: grid;
@@ -360,8 +360,8 @@
 .vocab-test-item { padding: 16px 18px; }
 .vocab-test-item.is-right { border-color: #9fdcc3; }
 .vocab-test-item.is-wrong { border-color: #f0b4b8; background: #fffafa; }
-.vocab-test-kind { color: var(--vl-teal); font-size: 12.5px; font-weight: 850; letter-spacing: 0.02em; }
-.vocab-hub .vocab-test-item h3 { margin: 6px 0 12px; color: var(--vl-ink); font: 850 20px / 1.35 var(--font-display); letter-spacing: 0; text-transform: none; }
+.vocab-test-kind { color: var(--vl-teal); font-size: 12.5px; font-weight: 800; letter-spacing: 0.02em; }
+.vocab-hub .vocab-test-item h3 { margin: 6px 0 12px; color: var(--vl-ink); font: 800 20px / 1.35 var(--font-display); letter-spacing: 0; text-transform: none; }
 .vocab-test-item h3 span { color: var(--vl-muted); font-weight: 600; }
 .vocab-test-options { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
 .vocab-test-options button { min-height: 50px; padding: 10px 12px; border: 1.5px solid var(--vl-line); border-radius: 11px; background: #fff; color: var(--vl-ink); font-size: 15px; text-align: left; cursor: pointer; }
@@ -390,7 +390,7 @@
 .vocab-lib-row > summary::-webkit-details-marker { display: none; }
 .vocab-lib-row > summary:hover, .vocab-lib-row[open] > summary { background: #f8fbfc; }
 .vocab-lib-word { display: grid; min-width: 0; }
-.vocab-lib-word strong { overflow: hidden; color: var(--vl-ink); font: 850 16px var(--font-display); text-overflow: ellipsis; white-space: nowrap; }
+.vocab-lib-word strong { overflow: hidden; color: var(--vl-ink); font: 800 16px var(--font-display); text-overflow: ellipsis; white-space: nowrap; }
 .vocab-lib-word small { overflow: hidden; color: var(--vl-muted); font-size: 12.5px; text-overflow: ellipsis; white-space: nowrap; }
 .vocab-lib-meaning { color: #2c4a63; font-size: 15px; line-height: 1.4; }
 .vocab-lib-tag { overflow: hidden; color: var(--vl-muted); font-size: 12.5px; font-weight: 700; text-overflow: ellipsis; white-space: nowrap; }

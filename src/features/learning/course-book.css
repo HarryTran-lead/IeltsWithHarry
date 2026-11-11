@@ -257,7 +257,7 @@
 .bk-band-photo img { width: 100%; height: 100%; object-fit: cover; transform: scale(1.15); }
 .bk-unit-tag { position: relative; display: inline-block; padding: 7px 10px; background: #fff; color: #10233f; box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.15); font: 800 13px/1 var(--font-display), sans-serif; text-transform: uppercase; }
 .bk-unit-tag em { font-style: normal; color: var(--unit); }
-.bk-skill-word { position: relative; z-index: 2; margin: 20px 0 0; font: 900 68px/0.9 var(--font-display), sans-serif; letter-spacing: -0.035em; text-transform: uppercase; color: var(--skill-ink); text-shadow: 3px 3px 0 rgba(0, 0, 0, 0.12); }
+.bk-skill-word { position: relative; z-index: 2; margin: 20px 0 0; font: 800 68px/0.9 var(--font-display), sans-serif; letter-spacing: -0.035em; text-transform: uppercase; color: var(--skill-ink); text-shadow: 3px 3px 0 rgba(0, 0, 0, 0.12); }
 .bk-skill-vi { position: relative; display: inline-flex; align-items: center; gap: 6px; margin-top: 10px; padding: 4px 9px; border-radius: 999px; background: rgba(255, 255, 255, 0.85); color: #10233f; font-size: 12px; font-weight: 700; }
 .bk-lesson-title { margin: 2px 0 0; font: 800 21px/1.2 var(--font-display), sans-serif; letter-spacing: -0.015em; color: var(--navy); }
 .bk-learn-box { padding: 12px 16px 12px 14px; border-left: 5px solid var(--skill); background: color-mix(in srgb, var(--skill) 9%, #fff); }
@@ -273,7 +273,7 @@
 .bk-sticky-note .washi { position: absolute; top: -8px; left: 50%; transform: translateX(-50%) rotate(-3deg); }
 .bk-sticky-note b { font-size: 19px; font-weight: 400; color: #a3201a; }
 .bk-sticky-note span { font-size: 15px; color: #4a3d00; line-height: 1.2; }
-.bk-stamp { position: absolute; right: 44px; bottom: 26px; display: inline-flex; align-items: center; gap: 6px; padding: 7px 14px; border: 3px double #c0392b; border-radius: 6px; color: #c0392b; font: 900 18px/1 var(--font-display), sans-serif; letter-spacing: 0.12em; text-transform: uppercase; opacity: 0.82; transform: rotate(-11deg); mix-blend-mode: multiply; }
+.bk-stamp { position: absolute; right: 44px; bottom: 26px; display: inline-flex; align-items: center; gap: 6px; padding: 7px 14px; border: 3px double #c0392b; border-radius: 6px; color: #c0392b; font: 800 18px/1 var(--font-display), sans-serif; letter-spacing: 0.12em; text-transform: uppercase; opacity: 0.82; transform: rotate(-11deg); mix-blend-mode: multiply; }
 
 /* Lesson practice preview */
 .bk-lesson-practice .bk-page-body { padding-top: 22px; gap: 10px; }
@@ -315,7 +315,7 @@
 .bk-cuecard p { margin: 0; font-weight: 700; color: var(--navy); }
 .bk-cuecard small { color: var(--book-muted); }
 .bk-tip { position: relative; margin: 4px 0 0 22px; padding: 12px 14px 12px 34px; border: 1.5px solid #10233f; background: #fff; font-size: 12.5px; box-shadow: 3px 3px 0 color-mix(in srgb, var(--skill) 70%, #fff); }
-.bk-tip-badge { position: absolute; left: -22px; top: 50%; display: grid; place-items: center; width: 44px; height: 44px; margin-top: -22px; border-radius: 50%; background: var(--skill); color: var(--skill-ink); font: 900 14px/1 var(--font-display), sans-serif; box-shadow: 0 0 0 3px #fff; }
+.bk-tip-badge { position: absolute; left: -22px; top: 50%; display: grid; place-items: center; width: 44px; height: 44px; margin-top: -22px; border-radius: 50%; background: var(--skill); color: var(--skill-ink); font: 800 14px/1 var(--font-display), sans-serif; box-shadow: 0 0 0 3px #fff; }
 .bk-tip p { margin: 0; }
 .bk-audio { display: flex; align-items: center; gap: 10px; padding: 6px 12px 6px 6px; border-radius: 999px; background: #eef1f4; }
 .bk-audio button { display: grid; place-items: center; width: 32px; height: 32px; border: 0; border-radius: 50%; background: var(--navy); color: #fff; cursor: pointer; }
