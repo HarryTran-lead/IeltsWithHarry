@@ -35,6 +35,8 @@ export function WritingAutoGradingPanel({ attemptId, essay }: { attemptId: strin
   const [error, setError] = useState("");
   const [tab, setTab] = useState<ReviewTab>("review");
   const [selectedFinding, setSelectedFinding] = useState<number | null>(null);
+  const [revisionState, setRevisionState] = useState({ attemptId, text: essay });
+  const revision = revisionState.attemptId === attemptId ? revisionState.text : essay;
   const load = useCallback(async () => {
     const response = await fetch(`/api/ielts/bank/writing-grading?attemptId=${encodeURIComponent(attemptId)}`, { cache: "no-store" });
     if (!response.ok) throw new Error("Chưa tải được trạng thái chấm bài.");
@@ -90,6 +92,7 @@ export function WritingAutoGradingPanel({ attemptId, essay }: { attemptId: strin
         <section className="wg-essay-pane"><div className="wg-pane-heading"><h3>Bài viết của bạn</h3><span>Chạm vào đoạn tô màu để xem góp ý</span></div><EssayWithFindings essay={essay} findings={grade.errors} selected={selectedFinding} onSelect={(index) => selectFinding(index)} attemptId={attemptId} /></section>
         <aside className="wg-feedback-pane"><div className="wg-pane-heading"><h3>Góp ý theo vị trí</h3><span>{grade.errors.length} điểm cần xem</span></div>
           {grade.errors.length === 0 ? <p className="wg-empty">Chưa có lỗi được đánh dấu trực tiếp. Xem các tiêu chí và kế hoạch cải thiện để sửa bài.</p> : <ol className="wg-findings">{grade.errors.map((item, index) => <li key={`${item.start}-${index}`}><button type="button" className={`wg-finding ${selectedFinding === index ? "is-selected" : ""}`} onClick={() => selectFinding(index, true)}><span className="wg-finding-no">{index + 1}</span><span><strong>{item.original_text}</strong><small>{item.explanation_vi}</small>{item.suggestion && <em>Thử sửa: {item.suggestion}</em>}</span></button>{selectedFinding === index && <p className="wg-finding-en" lang="en">{item.explanation_en}</p>}</li>)}</ol>}
+          <div className="wg-rewrite"><label htmlFor={`wg-revision-${attemptId}`}>Thử sửa bài ở đây</label><textarea id={`wg-revision-${attemptId}`} lang="en" value={revision} onChange={(event) => setRevisionState({ attemptId, text: event.target.value })} spellCheck /><small>Bản nháp chỉ tồn tại trong trang này. Dùng “Làm lại” ở trên để nộp bài mới.</small></div>
         </aside>
       </div>}
       {tab === "overview" && <div role="tabpanel"><div className="wg-criteria">{grade.criteria.map((item) => <article key={item.key}><h3>{names[item.key] ?? item.key} <b>{item.score_display.toFixed(1)}</b></h3><p>{item.reason_vi}</p><div className="wg-criterion-action"><strong>Bước cải thiện</strong><p>{item.next_step_vi}</p></div><details><summary>Xem bằng chứng trong bài</summary><ul>{item.evidence.map((evidence, index) => <li key={index}><q>{evidence.quote}</q> — {evidence.note_vi}</li>)}</ul><p lang="en">{item.reason_en}</p></details></article>)}</div><div className="wg-columns"><div><h3>Điểm mạnh</h3><ul>{grade.strengths_vi.map((item, index) => <li key={index}>{item}</li>)}</ul></div><div><h3>Ưu tiên cải thiện</h3><ol>{grade.improvements_vi.map((item, index) => <li key={index}>{item}</li>)}</ol></div></div></div>}
