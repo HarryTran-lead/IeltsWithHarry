@@ -1,5 +1,5 @@
 import { expect, it } from "vitest";
-import { discoveryBatchLimit, discoveryBudget, discoveryFeedGroup, eligibleDiscoveryLead, findIndependentDossier, rankDiscoveryCandidates, resolveFactualSourceUrl, vietnamDayStart, youthRelevanceForTitle } from "../src/lib/news/press-discovery";
+import { discoveryBatchLimit, discoveryBudget, discoveryFeedGroup, eligibleDiscoveryLead, findIndependentDossier, rankDiscoveryCandidates, resolveFactualSourceUrl, temporaryDiscoveryFailure, vietnamDayStart, youthRelevanceForTitle } from "../src/lib/news/press-discovery";
 import { parseRss, pressDiscoveryFeedUrls, rssProvider, type NewsItem, type NewsSource } from "../src/lib/news/providers";
 
 const source: NewsSource = {
@@ -33,8 +33,9 @@ it("keeps researching after thin topics while capping attempts and completed dra
   expect(discoveryBudget(0, 0, 0)).toBe(false);
 });
 
-it("uses two research slots when available and alternates feed groups every 20 minutes", () => {
-  expect(discoveryBatchLimit(0, 0, 50)).toBe(2);
+it("uses three research slots when available and alternates feed groups every 20 minutes", () => {
+  expect(discoveryBatchLimit(0, 0, 50)).toBe(3);
+  expect(discoveryBatchLimit(48, 0, 50)).toBe(2);
   expect(discoveryBatchLimit(49, 0, 50)).toBe(1);
   expect(discoveryBatchLimit(0, 199, 50)).toBe(1);
   expect(discoveryBatchLimit(50, 0, 50)).toBe(0);
@@ -43,6 +44,13 @@ it("uses two research slots when available and alternates feed groups every 20 m
   expect(discoveryFeedGroup(new Date("2026-11-11T04:55:00Z"))).toBe(first);
   expect(vietnamDayStart(new Date("2026-11-11T16:59:00Z")).toISOString()).toBe("2026-11-10T17:00:00.000Z");
   expect(vietnamDayStart(new Date("2026-11-11T17:00:00Z")).toISOString()).toBe("2026-11-11T17:00:00.000Z");
+});
+
+it("rests only incomplete AI replies for one day before retrying the lead", () => {
+  expect(temporaryDiscoveryFailure("AI response was incomplete")).toBe(true);
+  expect(temporaryDiscoveryFailure("AI returned no content")).toBe(true);
+  expect(temporaryDiscoveryFailure("The article failed factual or originality review")).toBe(false);
+  expect(temporaryDiscoveryFailure("Gemini daily free-tier quota reached")).toBe(false);
 });
 
 it("rotates research away from a category whose recent leads failed", () => {
