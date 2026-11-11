@@ -62,7 +62,7 @@ const groups = [
     label: "Luyện tập",
     links: [
       { href: "/app/dictation", label: "Dictation", icon: Headphones, tone: "teal" },
-      { href: "/app/practice/translation", label: "Dịch Việt–Anh theo mức", icon: Languages, tone: "mint" },
+      { href: "/app/practice/translation", label: "Dịch Việt–Anh", icon: Languages, tone: "mint" },
     ],
   },
   {
@@ -111,7 +111,7 @@ const skillPracticeLinks: Record<string, SkillPracticeLink[]> = {
     { label: "Từ IELTS Reading", href: "/app/reading/vocabulary" },
     { label: "Collocations", href: "/app/vocabulary/collocations" },
     { label: "Word Formation", href: "/app/vocabulary/word-formation" },
-    { label: "Dịch câu Việt → Anh", href: "/app/vocabulary/translation" },
+    { label: "Dịch câu theo chủ đề", href: "/app/vocabulary/translation" },
     { label: "Sổ từ & tiến độ", href: "/app/vocabulary/notebook" },
   ],
   grammar: [

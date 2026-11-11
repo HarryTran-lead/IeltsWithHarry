@@ -33,7 +33,7 @@ const categories: { id: Category; label: string }[] = [
   { id: "listening", label: "IELTS Listening" },
   { id: "reading", label: "IELTS Reading" },
   { id: "families", label: "Word Families" },
-  { id: "translation", label: "Luyện dịch câu" },
+  { id: "translation", label: "Dịch câu theo chủ đề" },
   { id: "personal", label: "Từ của tôi" },
 ];
 
@@ -83,7 +83,7 @@ export function VocabularyLanding() {
     { title: "Từ vựng IELTS Listening", detail: "1.200 từ · 35 chủ đề", description: "Luyện nghe, chọn nghĩa và chép chính tả.", href: "/app/vocabulary/listening", category: "listening", sticker: "headphones", art: "listening" },
     { title: "Từ vựng IELTS Reading", detail: "607 từ · 11 chủ đề", description: "Học theo câu, ôn SRS và theo lộ trình 84 ngày.", href: "/app/reading/vocabulary", category: "reading", sticker: "book", art: "reading" },
     { title: "Word Families", detail: "300 họ từ", description: "Học noun, verb, adjective và adverb cùng nhau.", href: "/app/vocabulary/word-formation", category: "families", sticker: "tree", art: "families" },
-    { title: "Luyện dịch câu Việt → Anh", detail: "40 chủ đề · 145 mốc học", description: "Dịch câu, đối chiếu cách diễn đạt và tự chọn lịch ôn.", href: "/app/vocabulary/translation", category: "translation", sticker: "bubble", art: "reading" },
+    { title: "Dịch câu với từ vựng IELTS", detail: "40 chủ đề · 145 mốc học", description: "Dùng từ IELTS đã học để dịch câu Speaking và Writing.", href: "/app/vocabulary/translation", category: "translation", sticker: "bubble", art: "reading" },
     { title: "Từ đã lưu", detail: `${ready ? saved.toLocaleString("vi-VN") : "…"} từ của bạn`, description: "Mở Sổ từ: lọc, gắn sao và ôn lại từ đã lưu.", href: "/app/vocabulary/notebook", category: "personal", sticker: "notebook", art: "saved" },
   ];
   const filteredCards = cards.filter((card) => (category === "all" || card.category === category)

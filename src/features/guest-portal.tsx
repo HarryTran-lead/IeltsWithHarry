@@ -19,7 +19,7 @@ const sections = [
     { slug: "news", name: "Daily News", icon: Newspaper, description: "Đọc tin tiếng Anh và học từ vựng theo ngữ cảnh hiện tại.", features: ["Tin mới mỗi ngày", "Từ vựng theo bài", "Câu hỏi đọc hiểu"] },
   ] },
   { label: "Kỹ năng IELTS", items: [
-    { slug: "vocabulary", name: "Vocabulary", icon: Languages, description: "Học từ theo chủ đề và ôn lại những từ đã gặp.", features: ["Học theo topic & level", "Thẻ từ vựng", "Luyện dịch câu"] },
+    { slug: "vocabulary", name: "Vocabulary", icon: Languages, description: "Học từ theo chủ đề và ôn lại những từ đã gặp.", features: ["Học theo topic & level", "Thẻ từ vựng", "Dịch câu theo chủ đề"] },
     { slug: "grammar", name: "Grammar", icon: SpellCheck, description: "Xây nền ngữ pháp và luyện dùng cấu trúc trong câu.", features: ["Lộ trình ngữ pháp", "Bài luyện theo cấp độ", "Ôn tập lỗi sai"] },
     { slug: "reading", name: "Reading", icon: BookOpenText, description: "Luyện đọc theo passage và các dạng câu hỏi IELTS.", features: ["Bài đọc theo dạng", "Luyện từng passage", "Full test"] },
     { slug: "listening", name: "Listening", icon: Headphones, description: "Luyện nghe từng section hoặc một đề hoàn chỉnh.", features: ["Bài nghe theo section", "Full test", "Video luyện nghe"] },
