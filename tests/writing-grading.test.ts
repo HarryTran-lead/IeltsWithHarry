@@ -80,12 +80,14 @@ describe("Cloudflare model boundary (mock response; no live model)", () => {
     const inaccurate = draft("academic_task2");
     inaccurate.criteria[0].evidence[0] = { ...evidence, start: 0, end: 4 };
     inaccurate.errors[0] = { ...inaccurate.errors[0], start: 0, end: 4 };
-    const fetcher = vi.fn().mockResolvedValue({ ok: true, json: async () => ({ success: true, result: { response: inaccurate } }) });
+    const withVocabulary = { ...inaccurate, vocabulary_suggestions: [{ original_text: "same", start: 0, end: 4, replacement: "similar", reason_vi: "Tránh lặp từ.", example_en: "A similar claim appears again." }] };
+    const fetcher = vi.fn().mockResolvedValue({ ok: true, json: async () => ({ success: true, result: { response: withVocabulary } }) });
     const result = await gradeWithCloudflare(input, { ...options, fetcher });
     expect(verifyModelDraft(result, "academic_task2", essay, []).criteria[0].evidence[0].start).toBe(essay.indexOf("same"));
     expect(result.errors[0].start).toBe(essay.indexOf("same"));
+    expect(result.vocabulary_suggestions[0].start).toBe(essay.indexOf("same"));
 
-    inaccurate.criteria[0].evidence[0] = { ...evidence, quote: "fabricated quote", start: 0, end: 16 };
+    withVocabulary.criteria[0].evidence[0] = { ...evidence, quote: "fabricated quote", start: 0, end: 16 };
     await expect(gradeWithCloudflare(input, { ...options, fetcher })).rejects.toThrow("CLOUDFLARE_QUOTE_NOT_IN_ESSAY");
   });
 

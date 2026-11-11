@@ -154,6 +154,11 @@
 
 /* Result */
 .bx-result-hero { display: grid; grid-template-columns: auto minmax(0, 1fr); align-items: center; gap: 26px; padding: 24px 26px; border: 1px solid #e3ecf1; border-radius: 24px; background: var(--dot-grid) 0 0 / 18px 18px, linear-gradient(115deg, var(--bl-wash), #fffdf7 60%); }
+.bx-writing-result-hero { display: block; padding: 16px 22px; border-radius: 16px; }
+.bx-writing-result-hero h1 { margin: 3px 0; font-size: clamp(19px, 2vw, 25px); }
+.bx-writing-result-hero .bx-verdict { font-size: 14px; }
+.bx-writing-result-hero .bx-muted { margin: 2px 0 8px; font-size: 12px; }
+.bx-writing-result-hero .bx-hero-actions { margin-top: 8px; }
 .bx-reading-launch { max-width: 1080px; }
 .br-launch-head { margin: 12px 0 24px; }
 .br-launch-head h1 { margin: 6px 0; color: #19324b; font: 800 clamp(25px, 3vw, 36px)/1.2 var(--font-display), sans-serif; }

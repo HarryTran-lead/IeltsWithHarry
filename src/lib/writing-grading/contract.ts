@@ -25,10 +25,15 @@ const errorSchema = z.object({
   affected_criterion: z.enum(["TA", "TR", "CC", "LR", "GRA"]).nullable(),
   fact_ref: z.string().max(100).optional(),
 });
+const vocabularySuggestionSchema = z.object({
+  original_text: z.string().min(1).max(160), start: z.number().int().nonnegative(), end: z.number().int().positive(),
+  replacement: z.string().min(1).max(160), reason_vi: z.string().min(1).max(500), example_en: z.string().min(1).max(500),
+});
 
 export const modelDraftSchema = z.object({
   criteria: z.array(criterionSchema).length(4),
   errors: z.array(errorSchema).max(20),
+  vocabulary_suggestions: z.array(vocabularySuggestionSchema).max(4).default([]),
   strengths_vi: z.array(z.string().max(500)).max(5),
   improvements_vi: z.array(z.string().max(500)).min(1).max(5),
   summary_vi: z.string().min(1).max(2000), summary_en: z.string().min(1).max(2000),
@@ -65,13 +70,17 @@ export function verifyModelDraft(input: unknown, taskType: TaskType, essay: stri
     if (!anchored(error.start, error.end, error.original_text)) throw new Error("ERROR_OFFSET_MISMATCH");
     if (error.category === "data_accuracy" && (!error.fact_ref || !factIds.has(error.fact_ref))) throw new Error("UNVERIFIED_DATA_CLAIM");
   }
+  for (const suggestion of draft.vocabulary_suggestions) {
+    if (!anchored(suggestion.start, suggestion.end, suggestion.original_text)) throw new Error("VOCABULARY_OFFSET_MISMATCH");
+  }
   const taskBandRaw = draft.criteria.reduce((sum, criterion) => sum + criterion.score_raw, 0) / 4;
   return {
     schema_version: schemaVersion, task_type: taskType, estimated_only: true,
     source_facts_status: taskType === "academic_task1" ? "verified" : "not_applicable",
     task_band_raw: taskBandRaw, task_band_display: displayHalfBand(taskBandRaw),
     criteria: draft.criteria.map((criterion) => ({ ...criterion, score_display: displayHalfBand(criterion.score_raw) })),
-    errors: draft.errors, strengths_vi: draft.strengths_vi, improvements_vi: draft.improvements_vi,
+    errors: draft.errors, vocabulary_suggestions: draft.vocabulary_suggestions,
+    strengths_vi: draft.strengths_vi, improvements_vi: draft.improvements_vi,
     summary_vi: draft.summary_vi, summary_en: draft.summary_en, revised_paragraph: draft.revised_paragraph,
   };
 }
