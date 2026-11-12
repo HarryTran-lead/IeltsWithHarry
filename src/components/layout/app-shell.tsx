@@ -62,7 +62,7 @@ const groups = [
     label: "Luyện tập",
     links: [
       { href: "/app/dictation", label: "Dictation", icon: Headphones, tone: "teal" },
-      { href: "/app/practice/translation", label: "Dịch Việt–Anh", icon: Languages, tone: "mint" },
+      { href: "/app/practice/translation", label: "Luyện diễn đạt", icon: Languages, tone: "mint" },
     ],
   },
   {

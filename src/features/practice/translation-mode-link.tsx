@@ -12,7 +12,7 @@ const modes = {
     href: "/app/practice/translation",
     icon: TrendingUp,
     question: "Muốn luyện tăng dần theo độ khó?",
-    target: "Dịch Việt–Anh theo band",
+    target: "Luyện diễn đạt theo band",
     section: "mục Luyện tập",
   },
   topic: {
