@@ -37,7 +37,7 @@ export function VocabularyFlashcard({ word, collection, flipped, onFlip, control
       aria-pressed={flipped}>
       <span className="vocab-flip-card-inner">
         <span className="vocab-flip-card-face vocab-flip-card-front">
-          <span className="vocab-flip-card-kicker">{collection === "ielts" ? "IELTS READING" : `${word.topics?.[0] || "TỪ VỰNG"} · ${word.study_lane}`}</span>
+          <span className="vocab-flip-card-kicker">{`${word.topics?.[0] || (collection === "ielts" ? "IELTS" : "TỪ VỰNG")} · ${word.study_lane}`}</span>
           <span className="vocab-flip-card-center">
             <strong>{word.headword}</strong>
             {word.source_ipa && <span className="vocab-flip-card-ipa">{word.source_ipa}</span>}

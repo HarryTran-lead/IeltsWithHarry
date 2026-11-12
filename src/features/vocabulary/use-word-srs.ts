@@ -2,6 +2,7 @@
 
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { createClient } from "@/lib/supabase/browser";
+import { fetchAllRows } from "@/lib/supabase/fetch-all";
 import { demoMode } from "@/lib/runtime";
 import { nextWordReview, type ReviewGrade, type WordReview } from "@/lib/news/review";
 import { useNotebook, type NotebookEntry } from "@/features/notebook/notebook-store";
@@ -22,7 +23,7 @@ export function useWordSrs() {
   useEffect(() => {
     if (!db) return;
     let alive = true;
-    void db.from("user_word_reviews").select(REVIEW_COLUMNS).limit(1000).then(({ data }) => {
+    void fetchAllRows<WordReview>((from, to) => db.from("user_word_reviews").select(REVIEW_COLUMNS).order("notebook_entry_id").range(from, to)).then(({ data }) => {
       if (!alive) return;
       setReviews(new Map(((data ?? []) as WordReview[]).map((row) => [row.notebook_entry_id, row])));
       setLoaded(true);

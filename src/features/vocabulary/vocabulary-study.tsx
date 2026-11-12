@@ -13,7 +13,8 @@ import ieltsLearningTopics from "@/lib/vocabulary/ielts-learning-topics.json";
 import { cefrLevels } from "@/lib/vocabulary/cefr-levels";
 import { ieltsBands } from "@/lib/vocabulary/ielts-bands";
 import { catalog } from "@/lib/vocabulary/catalog";
-import { buildLearnQueue, checkTyped, headwordForms, learnProgress, requeue, sessionGrade, type LearnItem } from "@/lib/vocabulary/study-session";
+import { buildLearnQueue, checkTyped, headwordForms, learnProgress, pickBatch, requeue, sessionGrade, type LearnItem } from "@/lib/vocabulary/study-session";
+import { fetchAllRows } from "@/lib/supabase/fetch-all";
 import { useStudiedWords } from "./use-studied-words";
 import { useWordSrs } from "./use-word-srs";
 import { useDecks } from "./use-decks";
@@ -58,9 +59,14 @@ export function VocabularyStudy() {
   const [topic, setTopic] = useState(() => [...sourceTopics, ...ieltsTopics, ...ieltsLearningTopics].includes(params.get("topic") ?? "") ? params.get("topic")! : "all");
   const [level, setLevel] = useState(() => [...cefrLevels, ...ieltsBands].some((item) => item === params.get("level")) ? params.get("level")! : "all");
   const [mode, setMode] = useState<Mode>(() => modes.some((item) => item.id === params.get("mode")) ? params.get("mode") as Mode : "learn");
-  const storageKey = `vocab-study-batch:${collection}|${topic}|${level}`;
-  // Each filter remembers its batch, so "Học 10 từ" continues where the learner stopped instead of restarting at word 1.
+  const legacyKey = `vocab-study-batch:${collection}|${topic}|${level}`;
+  const cursorKey = `vocab-study-cursor:${collection}|${topic}|${level}`;
+  // Each filter remembers its session number and where in the word list the next session starts,
+  // so "Học 10 từ" continues where the learner stopped instead of restarting at word 1.
   const [batchPage, setBatchPage] = useState<number | null>(null);
+  const [batchOffset, setBatchOffset] = useState(0);
+  const [nextOffset, setNextOffset] = useState(0);
+  const studiedIds = useRef(new Map<string, Set<string>>());
   const [words, setWords] = useState<Word[]>([]);
   const [totalAvailable, setTotalAvailable] = useState(0);
   const [loading, setLoading] = useState(false);
@@ -94,14 +100,22 @@ export function VocabularyStudy() {
   const advanceTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   useEffect(() => {
-    let stored = 0;
-    try { stored = Math.max(0, Number(localStorage.getItem(storageKey)) || 0); } catch { /* Starts at the first batch without storage. */ }
-    void Promise.resolve().then(() => setBatchPage(stored));
-  }, [storageKey]);
+    const cursor = { session: 0, offset: 0 };
+    try {
+      const saved = JSON.parse(localStorage.getItem(cursorKey) ?? "null") as { session?: unknown; offset?: unknown } | null;
+      if (saved && Number.isInteger(saved.session) && Number.isInteger(saved.offset)) {
+        cursor.session = Math.max(0, saved.session as number); cursor.offset = Math.max(0, saved.offset as number);
+      } else {
+        // Sessions saved before the word order changed keep their number; already studied words are skipped below.
+        cursor.session = Math.max(0, Number(localStorage.getItem(legacyKey)) || 0);
+      }
+    } catch { /* Starts at the first batch without storage. */ }
+    void Promise.resolve().then(() => { setBatchOffset(cursor.offset); setBatchPage(cursor.session); });
+  }, [cursorKey, legacyKey]);
   useEffect(() => {
     try { void Promise.resolve().then(() => setAutoSpeak(localStorage.getItem("vocab-auto-speak") !== "off")); } catch { /* Default on. */ }
   }, []);
-  const rememberBatch = useCallback((page: number) => { try { localStorage.setItem(storageKey, String(page)); } catch { /* Optional. */ } }, [storageKey]);
+  const rememberBatch = useCallback((session: number, offset: number) => { try { localStorage.setItem(cursorKey, JSON.stringify({ session, offset })); } catch { /* Optional. */ } }, [cursorKey]);
 
   const resetSession = useCallback((list: Word[], nextMode: Mode) => {
     const ids = list.map((word) => word.source_id);
@@ -123,13 +137,21 @@ export function VocabularyStudy() {
         meaning_status: "editor_reviewed", meaning_source: "demo", meaning_source_url: "", source_ipa: term.ipa, total_count: pool.length,
         source_pattern: term.collocations[0] ?? "", source_examples_en: [term.example].filter(Boolean), source_example_vi: term.vi,
       }));
-      void Promise.resolve().then(() => { setTotalAvailable(pool.length); setWords(batch); resetSession(batch, mode); });
+      void Promise.resolve().then(() => { setTotalAvailable(pool.length); setNextOffset((batchPage + 1) * batchSize); setWords(batch); resetSession(batch, mode); });
       return;
     }
     let active = true;
-    async function fetchWords(page: number) {
+    async function studiedFor(kind: "cefr" | "ielts") {
+      const cached = studiedIds.current.get(kind);
+      if (cached) return cached;
+      const result = await fetchAllRows<{ source_id: string }>((from, to) => db!.from("vocabulary_studied_words").select("source_id").eq("collection", kind).order("source_id").range(from, to));
+      const ids = new Set((result.data ?? []).map((row) => row.source_id));
+      if (!result.error) studiedIds.current.set(kind, ids);
+      return ids;
+    }
+    async function fetchWords(offset: number) {
       setLoading(true); setError("");
-      let fetched: Word[] = [];
+      let fetchChunk: (start: number, size: number) => Promise<Word[]>;
       if (collection === "ielts") {
         let linkedKeys: string[] | null = null;
         if (topic !== "all" && ieltsLearningTopics.includes(topic)) {
@@ -139,50 +161,59 @@ export function VocabularyStudy() {
           if (links.error) { setError(links.error.message); setLoading(false); return; }
           linkedKeys = links.data?.length ? links.data.map((item) => item.source_key) : ["__none__"];
         }
-        // Easier bands first, so a new learner meets core words before rare idioms.
-        let request = db!.from("ielts_vocabulary_entries").select("source_key,term,pos_raw,pattern,topic,definition_en,examples,band_level,content_status", { count: "exact" }).eq("published", true).order("band_level").order("term").order("source_key");
-        if (linkedKeys) request = request.in("source_key", linkedKeys);
-        else if (topic !== "all") request = request.eq("topic", topic);
-        if (level !== "all") request = request.eq("band_level", level);
-        const response = await request.range(page * batchSize, page * batchSize + batchSize - 1);
-        if (!active) return;
-        if (response.error) { setError(response.error.message); setLoading(false); return; }
-        setTotalAvailable(response.count ?? 0);
-        fetched = (response.data ?? []).map((row) => ({
-          source_id: row.source_key, headword: row.term, pos: row.pos_raw,
-          study_lane: `Band ${row.band_level} gợi ý`, topics: [linkedKeys ? topic : row.topic],
-          source_definition_en: row.definition_en, source_example_en: row.examples?.[0] ?? "",
-          meaning_vi: "", meaning_status: row.content_status, meaning_source: "",
-          meaning_source_url: "", source_ipa: "", total_count: response.count ?? 0,
-          source_pattern: row.pattern ?? "", source_examples_en: row.examples ?? [], source_example_vi: "",
-        }));
+        // Easier bands first, then one topic at a time, so a session's ten words belong together
+        // instead of being the next ten words of the alphabet.
+        fetchChunk = async (start, size) => {
+          let request = db!.from("ielts_vocabulary_entries").select("source_key,term,pos_raw,pattern,topic,definition_en,examples,band_level,content_status", { count: "exact" }).eq("published", true)
+            .order("band_level").order("topic").order("term").order("source_key");
+          if (linkedKeys) request = request.in("source_key", linkedKeys);
+          else if (topic !== "all") request = request.eq("topic", topic);
+          if (level !== "all") request = request.eq("band_level", level);
+          const response = await request.range(start, start + size - 1);
+          if (response.error) throw new Error(response.error.message);
+          if (active) setTotalAvailable(response.count ?? 0);
+          return (response.data ?? []).map((row) => ({
+            source_id: row.source_key, headword: row.term, pos: row.pos_raw,
+            study_lane: `Band ${row.band_level} gợi ý`, topics: [linkedKeys ? topic : row.topic],
+            source_definition_en: row.definition_en, source_example_en: row.examples?.[0] ?? "",
+            meaning_vi: "", meaning_status: row.content_status, meaning_source: "",
+            meaning_source_url: "", source_ipa: "", total_count: response.count ?? 0,
+            source_pattern: row.pattern ?? "", source_examples_en: row.examples ?? [], source_example_vi: "",
+          }));
+        };
       } else {
-        const input = { p_query: "", p_cefr: level === "all" ? "" : level, p_topic: topic === "all" ? "" : topic, p_page_size: batchSize };
-        const response = await db!.rpc("list_vocabulary_study_by_cefr", { ...input, p_page: page });
-        if (!active) return;
-        if (response.error) { setError(response.error.message); setLoading(false); return; }
-        setTotalAvailable(Number(response.data?.[0]?.total_count ?? 0));
-        fetched = (response.data ?? []).map((row: Word) => ({
-          ...row, source_pattern: "", source_examples_en: [row.source_example_en].filter(Boolean), source_example_vi: "",
-        }));
+        const input = { p_query: "", p_cefr: level === "all" ? "" : level, p_topic: topic === "all" ? "" : topic };
+        fetchChunk = async (start, size) => {
+          const response = await db!.rpc("list_vocabulary_study_by_cefr", { ...input, p_page_size: size, p_page: start / size });
+          if (response.error) throw new Error(response.error.message);
+          const rows = (response.data ?? []) as Word[];
+          if (active && rows.length) setTotalAvailable(Number(rows[0].total_count ?? 0));
+          return rows.map((row) => ({ ...row, source_pattern: "", source_examples_en: [row.source_example_en].filter(Boolean), source_example_vi: "" }));
+        };
       }
-      if (!active) return;
-      const seen = new Set<string>();
-      // A CEFR word needs an English definition unless an editor reviewed its Vietnamese meaning:
-      // auto-matched meanings of entries with no definition are often wrong ("a" → "ăng-strôm").
-      const batch = fetched.filter((word) => {
-        const usable = word.source_definition_en?.trim() || (collection === "cefr" && word.meaning_status === "editor_reviewed" && word.meaning_vi?.trim());
-        if (!usable || seen.has(word.source_id)) return false;
-        seen.add(word.source_id); return true;
-      });
-      setWords(batch); resetSession(batch, mode);
-      setLoading(false);
+      try {
+        const studied = await studiedFor(collection);
+        if (!active) return;
+        const seen = new Set<string>();
+        // A CEFR word needs an English definition unless an editor reviewed its Vietnamese meaning:
+        // auto-matched meanings of entries with no definition are often wrong ("a" → "ăng-strôm").
+        const { rows, next } = await pickBatch(offset, fetchChunk, (word) => {
+          const usable = word.source_definition_en?.trim() || (collection === "cefr" && word.meaning_status === "editor_reviewed" && word.meaning_vi?.trim());
+          if (!usable || seen.has(word.source_id) || studied.has(word.source_id)) return false;
+          seen.add(word.source_id); return true;
+        }, { batch: batchSize });
+        if (!active) return;
+        setNextOffset(next); setWords(rows); resetSession(rows, mode);
+      } catch (cause) {
+        if (active) setError(cause instanceof Error ? cause.message : "Không lấy được bộ từ.");
+      }
+      if (active) setLoading(false);
     }
-    void fetchWords(batchPage);
+    void fetchWords(batchOffset);
     return () => { active = false; };
     // The session restarts when the batch changes, not when the mode changes.
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [db, collection, topic, level, batchPage, resetSession]);
+  }, [db, collection, topic, level, batchPage, batchOffset, resetSession]);
   useEffect(() => () => { if (advanceTimer.current) clearTimeout(advanceTimer.current); if (wrongTimer.current) clearTimeout(wrongTimer.current); }, []);
   // The Match clock ticks on screen until the last pair is found.
   const matchRunning = mode === "match" && !sessionComplete && matchSeconds === null && matchStart > 0;
@@ -219,6 +250,7 @@ export function VocabularyStudy() {
   /** Records a studied word once per session: counted as studied, saved to the notebook and scheduled by FSRS. */
   const recordWord = useCallback((word: Word, value: ReviewGrade) => {
     markStudied(collection, word.source_id);
+    studiedIds.current.get(collection)?.add(word.source_id);
     if (graded.current.has(word.source_id)) return;
     graded.current.add(word.source_id);
     void srs.learn({ headword: word.headword, meaning: meaningOf(word), example: word.source_example_en, pos: word.pos, topic: word.topics[0] ?? "" }, value)
@@ -236,6 +268,7 @@ export function VocabularyStudy() {
           const entry = srs.entryFor(word.headword) ?? await srs.ensureEntry({ headword: word.headword, meaning: meaningOf(word), example: word.source_example_en, pos: word.pos, topic: word.topics[0] ?? "" });
           if (!entry || !await srs.grade(entry, status === "known" ? "good" : "again")) throw new Error("Chưa lưu được trạng thái thẻ. Hãy thử lại.");
           markStudied(collection, word.source_id);
+          studiedIds.current.get(collection)?.add(word.source_id);
           graded.current.add(word.source_id);
         }
       } catch (cause) {
@@ -246,7 +279,7 @@ export function VocabularyStudy() {
       setSavingCards(false);
     }
     setSessionComplete(true);
-    if (batchPage !== null && (batchPage + 1) * batchSize < totalAvailable) rememberBatch(batchPage + 1);
+    if (batchPage !== null && nextOffset < totalAvailable) rememberBatch(batchPage + 1, nextOffset);
   }
   function clearQuestion() { setFlipped(false); setAnswer(""); setPicked(""); setResult(null); if (advanceTimer.current) clearTimeout(advanceTimer.current); }
 
@@ -368,7 +401,7 @@ export function VocabularyStudy() {
   const progressValue = sessionComplete ? words.length : learnedCount;
   const hardWords = words.filter((word) => mode === "cards" ? cardStatuses[word.source_id] === "learning" : (misses[word.source_id] ?? 0) > 0);
   const markedCards = words.filter((word) => Boolean(cardStatuses[word.source_id])).length;
-  const hasNextBatch = batchPage !== null && (batchPage + 1) * batchSize < totalAvailable;
+  const hasNextBatch = batchPage !== null && nextOffset < totalAvailable;
 
   return <div className="vocab-study">
     <section className="vocab-study-toolbar" aria-label="Thiết lập buổi học">
@@ -384,7 +417,7 @@ export function VocabularyStudy() {
       <div className="vocab-study-modes" role="group" aria-label="Cách luyện từ">{modes.map((item) => <button key={item.id} type="button" title={item.detail} aria-pressed={mode === item.id} className={mode === item.id ? "active" : ""} onClick={() => changeMode(item.id)}><strong>{item.title}</strong>{item.id === "learn" && <small>Khuyên dùng</small>}</button>)}</div>
     </section>
     {error && <p className="vocab-error" role="alert">{error}</p>}
-    {loading || batchPage === null ? <section className="vocab-panel">Đang lấy bộ từ…</section> : !words.length ? <section className="vocab-panel">Không có từ trong bộ lọc này. Hãy chọn chủ đề hoặc trình độ khác.</section> : <section className={`vocab-panel vocab-study-board vocab-study-board-${mode}${stage && !sessionComplete ? ` vocab-study-stage-${stage}` : ""}`}>
+    {loading || batchPage === null ? <section className="vocab-panel">Đang lấy bộ từ…</section> : !words.length ? <section className="vocab-panel">{totalAvailable ? <>Bạn đã học hết từ trong bộ lọc này. <Link href="/app/vocabulary/review">Ôn từ đến hạn</Link> hoặc chọn chủ đề khác.</> : "Không có từ trong bộ lọc này. Hãy chọn chủ đề hoặc trình độ khác."}</section> : <section className={`vocab-panel vocab-study-board vocab-study-board-${mode}${stage && !sessionComplete ? ` vocab-study-stage-${stage}` : ""}`}>
       <div className="vocab-study-progress"><div className="vocab-study-meta"><strong>{sessionComplete ? "Hoàn thành buổi học" : `Buổi ${batchPage + 1} · ${mode === "learn" ? `Đã nắm ${mastered.length}/${words.length} từ` : mode === "match" ? `Nhóm ${matchGroup + 1}` : `Thẻ ${Math.min(position + 1, deck.length)}/${deck.length}`}`}</strong><span>{studiedCount !== null ? `${studiedCount.toLocaleString("vi-VN")} từ đã học` : ""}</span></div><progress aria-label="Tiến độ buổi học" value={mode === "match" ? matchGroup * groupSize + matched.length : progressValue} max={Math.max(1, words.length)} /></div>
 
       {sessionComplete ? <div className="vocab-study-complete">
@@ -393,7 +426,7 @@ export function VocabularyStudy() {
         {matchSeconds !== null && <p>Thời gian ghép: <b>{matchSeconds} giây</b></p>}
         {hardWords.length > 0 && <ul className="vocab-study-hard">{hardWords.map((word) => <li key={word.source_id}><strong>{mainForm(word)}</strong><span>{meaningOf(word)}</span></li>)}</ul>}
         <div className="vocab-study-complete-actions">
-          {hasNextBatch && <button className="vocab-button primary" onClick={() => setBatchPage(batchPage + 1)}>Học 10 từ tiếp theo →</button>}
+          {hasNextBatch && <button className="vocab-button primary" onClick={() => { setBatchOffset(nextOffset); setBatchPage(batchPage + 1); }}>Học 10 từ tiếp theo →</button>}
           <button className="vocab-button soft" onClick={() => changeMode(mode)}>Học lại buổi này</button>
           <Link className="vocab-button soft" href="/app/vocabulary/review">Ôn từ đến hạn</Link>
           {collection === "ielts" && hardWords[0] && <Link className="vocab-button soft" href={`/app/vocabulary/translation?word=${encodeURIComponent(hardWords[0].source_id)}`}>Viết câu với “{mainForm(hardWords[0])}” →</Link>}
