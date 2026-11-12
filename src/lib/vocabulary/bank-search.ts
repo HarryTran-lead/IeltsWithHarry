@@ -23,3 +23,11 @@ export function rankMatches<T>(rows: T[], lookup: string, headword: (row: T) => 
   return rows.map((row) => ({ row, rank: matchRank(headword(row), lookup) }))
     .sort((a, b) => a.rank - b.rank || headword(a.row).length - headword(b.row).length || headword(a.row).localeCompare(headword(b.row)));
 }
+
+/** Splits a sentence around the looked-up word (whole word, simple -s/-ed/-ing endings for a single word),
+ * matching the database search, so `sentence.split(marker)` puts the word at odd indexes. */
+export function readingMarker(word: string) {
+  const core = word.trim().replace(/^(a|an|the|to)\s+/i, "");
+  const escaped = core.replace(/[.*+?^${}()|[\]\\]/g, "\\$&").replace(/\s+/g, "\\s+");
+  return new RegExp(`(\\b${escaped}${/\s/.test(core) ? "" : "(?:s|es|ed|d|ing)?"}\\b)`, "i");
+}

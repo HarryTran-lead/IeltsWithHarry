@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { bankSearchText, matchRank, rankMatches } from "./bank-search";
+import { bankSearchText, matchRank, rankMatches, readingMarker } from "./bank-search";
 
 describe("bank search", () => {
   it("removes wildcard characters from the search text", () => {
@@ -17,5 +17,17 @@ describe("bank search", () => {
   it("orders rows by rank, then length", () => {
     const words = ["unsustainable", "sustainable development", "sustainable", "sustainably"];
     expect(rankMatches(words, "sustainable", (word) => word).map((item) => item.row)).toEqual(["sustainable", "sustainable development", "sustainably", "unsustainable"]);
+  });
+});
+
+describe("readingMarker", () => {
+  it("splits a sentence around the word and its simple endings", () => {
+    expect("Scientists mitigated some losses.".split(readingMarker("mitigate"))).toEqual(["Scientists ", "mitigated", " some losses."]);
+    expect("Sustainable  development matters.".split(readingMarker("sustainable development"))).toEqual(["", "Sustainable  development", " matters."]);
+    expect("The bill was paid.".split(readingMarker("a bill"))).toEqual(["The ", "bill", " was paid."]);
+  });
+
+  it("treats regex characters as text", () => {
+    expect("We use C++ daily.".split(readingMarker("c++")).length).toBe(1);
   });
 });
