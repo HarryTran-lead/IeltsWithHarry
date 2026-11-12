@@ -77,6 +77,8 @@
 .dash-leaderboard-rank.rank-2 { color: #718297; }
 .dash-leaderboard-rank.rank-3 { color: #b97958; }
 .dash-leaderboard-avatar { flex: none; display: grid; place-items: center; width: 32px; height: 32px; border-radius: 50%; background: var(--teal-soft); color: var(--teal-strong); font-size: var(--fs-base); font-weight: 800; }
+.dash-leaderboard-frame { display: inline-grid; flex: none; place-items: center; width: 44px; height: 44px; }
+.dash-leaderboard-list li:has(.dash-leaderboard-frame) { padding-block: 7px; }
 .dash-leaderboard-name { flex: 1; min-width: 0; overflow: hidden; color: var(--navy); font-size: var(--fs-sm); font-weight: 700; text-overflow: ellipsis; white-space: nowrap; }
 .dash-leaderboard-name small { color: var(--teal-strong); font-size: var(--fs-2xs); }
 .dash-leaderboard-days { display: flex; flex: none; align-items: center; gap: 3px; color: #c25a21; font-size: var(--fs-base); }

@@ -1,6 +1,7 @@
 import { addDays, localDay } from "./study-progress";
 
-export type StreakProfile = { id: string; display_name: string; timezone: string };
+/** Avatar and frame are the same public card community posts show; they ride along untouched. */
+export type StreakProfile = { id: string; display_name: string; timezone: string; avatar?: string | null; avatar_frame?: string | null };
 export type StreakDay = { user_id: string; day: string };
 
 /** Match learner_streak: today's run survives through tomorrow if today is still empty. */
