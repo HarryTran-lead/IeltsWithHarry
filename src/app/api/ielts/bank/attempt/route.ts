@@ -1,6 +1,6 @@
 import { z } from "zod";
 import { bankClient, requestError, submitAttempt, viewer } from "@/lib/ielts-bank/server";
-import { attemptContent, attemptMinutes, contentSchema, publicContent, listeningFullMinutes, listeningPartMinutes, readingFullMinutes, readingPassageMinutes, scoreAnswers } from "@/lib/ielts-bank/schema";
+import { attemptContent, attemptMinutes, contentSchema, publicContent, listeningFullMinutes, listeningPartMinutes, readingFullMinutes, readingPassageMinutes, scoreAnswers, withLatestFiveStep } from "@/lib/ielts-bank/schema";
 import { learnerSkillAvailable, releaseLocks } from "@/lib/runtime";
 import readingEvidence from "@/data/ielts-reading-evidence.json";
 import { evidenceFromExplanation } from "@/lib/ielts-bank/reading-evidence";
@@ -90,7 +90,14 @@ export async function GET(request: Request) {
       const version = Array.isArray(data.ielts_exam_versions) ? data.ielts_exam_versions[0] : data.ielts_exam_versions;
       const content = contentSchema.parse(version.content);
       const scopedContent = attemptContent(content, data.notes);
-      const result = data.state === "in_progress" ? null : withEvidence(scoreAnswers(scopedContent, data.answers));
+      let result = data.state === "in_progress" ? null : withEvidence(scoreAnswers(scopedContent, data.answers));
+      if (result && linkedExam?.skill === "Reading" && result.review.some((question) => !question.fiveStep)) {
+        // Older attempts point at a version from before the explanations were added.
+        const { data: live } = await client.from("ielts_exams").select("published_version_id,ielts_exam_versions!ielts_published_version_fk(content)").eq("id", data.exam_id).single();
+        const liveVersion = Array.isArray(live?.ielts_exam_versions) ? live.ielts_exam_versions[0] : live?.ielts_exam_versions;
+        const parsed = live && live.published_version_id !== data.version_id ? contentSchema.safeParse(liveVersion?.content) : null;
+        if (parsed?.success) result = { ...result, review: withLatestFiveStep(result.review, parsed.data) };
+      }
       const visibleContent = publicContent(scopedContent);
       if (data.state !== "in_progress" && linkedExam?.skill === "Listening") {
         visibleContent.sections = visibleContent.sections.map((section, index) => ({ ...section, transcript: scopedContent.sections[index]?.transcript || "" }));

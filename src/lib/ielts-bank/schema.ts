@@ -120,6 +120,20 @@ export function scoreAnswers(content: ExamContent, answers: Record<string, strin
   return { score: review.filter((q) => q.correct).length, total: review.length, review };
 }
 
+/**
+ * Explanations written after an attempt was graded: copy each question's five steps
+ * from the live version, but only while that question keeps the same answer key.
+ */
+export function withLatestFiveStep<T extends { id: string; answers: string[]; fiveStep?: FiveStep }>(review: T[], latest: ExamContent): T[] {
+  const live = new Map(latest.sections.flatMap((section) => section.questions).map((question) => [question.id, question]));
+  const key = (answers: string[]) => answers.map((answer) => answer.trim().replace(/\s+/g, " ").toLocaleLowerCase("en")).sort().join("|");
+  return review.map((item) => {
+    if (item.fiveStep) return item;
+    const question = live.get(item.id);
+    return question?.fiveStep && key(question.answers) === key(item.answers) ? { ...item, fiveStep: question.fiveStep } : item;
+  });
+}
+
 /** Limit grading to the passage chosen when the attempt began. */
 export function attemptContent(content: ExamContent, notes: Record<string, string> | null | undefined): ExamContent {
   const sectionId = notes?.__section;

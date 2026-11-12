@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { contentSchema, explanationMismatches, publicContent, scoreAnswers, type ExamContent, type FiveStep } from "../src/lib/ielts-bank/schema";
+import { contentSchema, explanationMismatches, publicContent, scoreAnswers, withLatestFiveStep, type ExamContent, type FiveStep } from "../src/lib/ielts-bank/schema";
 
 const step = (text: string) => ({ en: text, vi: text });
 const fiveStep: FiveStep = {
@@ -31,6 +31,14 @@ describe("five-step explanations", () => {
     const review = scoreAnswers(content, { Q01: "TRUE" }).review;
     expect(review.find((item) => item.id === "Q01")?.fiveStep?.final.answer).toBe("v");
     expect(review.find((item) => item.id === "Q24")).not.toHaveProperty("fiveStep");
+  });
+
+  it("reach older reviews only while the answer key is unchanged", () => {
+    const old = scoreAnswers(contentSchema.parse({ ...content, sections: content.sections.map((section) => ({ ...section, questions: section.questions.map((question) => { const plain = { ...question }; delete plain.fiveStep; return plain; }) })) }), { Q01: "TRUE" }).review;
+    expect(old.find((item) => item.id === "Q01")).not.toHaveProperty("fiveStep");
+    expect(withLatestFiveStep(old, content).find((item) => item.id === "Q01")?.fiveStep?.final.answer).toBe("v");
+    const rekeyed = old.map((item) => item.id === "Q01" ? { ...item, answers: ["FALSE"] } : item);
+    expect(withLatestFiveStep(rekeyed, content).find((item) => item.id === "Q01")).not.toHaveProperty("fiveStep");
   });
 
   it("attach only when every answer matches the live key", () => {
