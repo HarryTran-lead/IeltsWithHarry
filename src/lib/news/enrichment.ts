@@ -199,7 +199,7 @@ function geminiModels() {
  * configured model; anything else fails the request.
  */
 export type GeminiPart = { text: string } | { inlineData: { mimeType: string; data: string } };
-export async function geminiJson<T>(system: string, user: string | GeminiPart[], schema: unknown, { fetcher = fetch, maxOutputTokens = 16000, temperature = 0.4, googleSearch = false }: { fetcher?: typeof fetch; maxOutputTokens?: number; temperature?: number; googleSearch?: boolean } = {}): Promise<{ model: string; data: T }> {
+export async function geminiJson<T>(system: string, user: string | GeminiPart[], schema: unknown, { fetcher = fetch, maxOutputTokens = 16000, temperature = 0.4, googleSearch = false, models }: { fetcher?: typeof fetch; maxOutputTokens?: number; temperature?: number; googleSearch?: boolean; models?: string[] } = {}): Promise<{ model: string; data: T }> {
   const key = process.env.GEMINI_API_KEY;
   if (!key) throw new Error("GEMINI_API_KEY is not configured");
   const request = JSON.stringify({
@@ -209,13 +209,14 @@ export async function geminiJson<T>(system: string, user: string | GeminiPart[],
     generationConfig: { maxOutputTokens, temperature, responseFormat: { text: { mimeType: "APPLICATION_JSON", schema } } },
   });
   let lastError: Error = new Error("AI service unavailable");
-  for (const model of geminiModels()) {
+  for (const model of models ?? geminiModels()) {
     const response = await fetcher(`https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent`, {
       method: "POST", signal: AbortSignal.timeout(45000), cache: "no-store",
       headers: { "x-goog-api-key": key, "Content-Type": "application/json" }, body: request,
     });
     if (response.status === 429) { lastError = await quotaError(response); continue; }
     if (response.status === 404) { lastError = new Error(`AI model ${model} is unavailable`); continue; }
+    if (response.status >= 500) { lastError = new Error(`AI service returned HTTP ${response.status}`); continue; }
     if (!response.ok) {
       const detail = await response.json().then((body: { error?: { message?: string } }) => body.error?.message ?? "", () => "");
       throw new Error(`AI service returned HTTP ${response.status}${detail ? `: ${detail.slice(0, 200)}` : ""}`);

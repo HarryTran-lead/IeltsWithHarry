@@ -5,8 +5,20 @@ import { Highlighter, Languages, X } from "lucide-react";
 import { translateEnglishToVietnamese } from "@/lib/news/browser-translation";
 import { textOffset, type ReadingMark } from "./reading-highlights";
 
-type Selection = { text: string; range: Range; pane: ReadingMark["pane"]; x: number; y: number };
-type Translation = { source: string; value: string; loading: boolean; error: string };
+type Anchor = { pane: ReadingMark["pane"]; x: number; y: number };
+type Selection = Anchor & { text: string; range: Range };
+type Translation = Anchor & { source: string; value: string; loading: boolean; error: string };
+
+function anchorBelow(range: Range, pane: ReadingMark["pane"], root: HTMLElement | null, space: number): Anchor {
+  root?.classList.add("br-popover-open");
+  let rect = range.getBoundingClientRect();
+  const room = window.innerHeight - 72 - rect.bottom;
+  if (root && room < space) {
+    root.scrollBy(0, space - room);
+    rect = range.getBoundingClientRect();
+  }
+  return { pane, x: rect.left + rect.width / 2, y: rect.bottom + 10 };
+}
 
 export function ReadingReviewTools({ passage, questions, sectionId, marks, onMarksChange, saveError }: {
   passage: RefObject<HTMLElement | null>;
@@ -22,6 +34,15 @@ export function ReadingReviewTools({ passage, questions, sectionId, marks, onMar
   const requestId = useRef(0);
 
   useEffect(() => {
+    const activePane = selection?.pane ?? translation?.pane;
+    const passageNode = passage.current;
+    const questionsNode = questions.current;
+    passageNode?.classList.toggle("br-popover-open", activePane === "passage");
+    questionsNode?.classList.toggle("br-popover-open", activePane === "questions");
+    return () => { passageNode?.classList.remove("br-popover-open"); questionsNode?.classList.remove("br-popover-open"); };
+  }, [selection?.pane, translation?.pane, passage, questions]);
+
+  useEffect(() => {
     const capture = () => {
       const chosen = window.getSelection();
       if (!chosen || chosen.isCollapsed || !chosen.rangeCount) return;
@@ -30,8 +51,7 @@ export function ReadingReviewTools({ passage, questions, sectionId, marks, onMar
         : questions.current?.contains(range.commonAncestorContainer) ? "questions" : null;
       const text = chosen.toString().trim();
       if (!pane || !text) return;
-      const rect = range.getBoundingClientRect();
-      setSelection({ text, range: range.cloneRange(), pane, x: rect.left + rect.width / 2, y: rect.top });
+      setSelection({ text, range: range.cloneRange(), ...anchorBelow(range, pane, pane === "passage" ? passage.current : questions.current, 125) });
       setTranslation(null);
       setToolError("");
       // Native selection popups in Opera cover the action bar; keep the cloned range instead.
@@ -82,27 +102,28 @@ export function ReadingReviewTools({ passage, questions, sectionId, marks, onMar
 
   const translate = () => {
     if (!selection) return;
-    if (selection.text.length > 20000) { setToolError("Mỗi lần dịch tối đa 20.000 ký tự. Hãy chọn một đoạn ngắn hơn."); return; }
+    if (selection.text.length > 4000) { setToolError("Mỗi lần dịch tối đa 4.000 ký tự. Hãy chọn một đoạn ngắn hơn."); return; }
     const source = selection.text;
     const current = ++requestId.current;
-    setTranslation({ source, value: "", loading: true, error: "" });
+    const anchor = anchorBelow(selection.range, selection.pane, selection.pane === "passage" ? passage.current : questions.current, Math.min(340, window.innerHeight * 0.45));
+    setTranslation({ source, value: "", loading: true, error: "", ...anchor });
     setSelection(null);
     void translateEnglishToVietnamese([source]).then(([value]) => {
-      if (requestId.current === current) setTranslation({ source, value, loading: false, error: "" });
+      if (requestId.current === current) setTranslation({ source, value, loading: false, error: "", ...anchor });
     }).catch((error) => {
-      if (requestId.current === current) setTranslation({ source, value: "", loading: false, error: error instanceof Error ? error.message : "Không dịch được lúc này." });
+      if (requestId.current === current) setTranslation({ source, value: "", loading: false, error: error instanceof Error ? error.message : "Không dịch được lúc này.", ...anchor });
     });
   };
 
   return <>
-    {selection && <div className={`br-select-toolbar ${selection.y < 100 ? "is-below" : ""}`} style={{ "--tool-x": `${selection.x}px`, top: selection.y } as CSSProperties} role="toolbar" aria-label="Công cụ văn bản đã chọn">
+    {selection && <div className="br-select-toolbar" style={{ "--tool-x": `${selection.x}px`, top: selection.y } as CSSProperties} role="toolbar" aria-label="Công cụ văn bản đã chọn">
       <span title={selection.text}>{selection.text.length > 42 ? `${selection.text.slice(0, 42)}…` : selection.text}</span>
       <button type="button" onMouseDown={(event) => event.preventDefault()} onClick={highlight}><Highlighter size={16} /> Tô sáng</button>
       <button type="button" onMouseDown={(event) => event.preventDefault()} onClick={translate}><Languages size={16} /> {selection.text.split(/\s+/).length === 1 ? "Dịch từ" : "Dịch đoạn"}</button>
       <button type="button" className="br-tool-close" aria-label="Đóng công cụ" onClick={() => setSelection(null)}><X size={15} /></button>
       {toolError && <small role="alert">{toolError}</small>}
     </div>}
-    {translation && <aside className="br-translate-card" aria-label="Bản dịch tiếng Việt">
+    {translation && <aside className="br-translate-card" style={{ "--tool-x": `${translation.x}px`, "--pop-y": `${translation.y}px`, top: translation.y } as CSSProperties} aria-label="Bản dịch tiếng Việt">
       <header><strong><Languages size={17} /> Dịch sang tiếng Việt</strong><button type="button" aria-label="Đóng bản dịch" onClick={() => { requestId.current++; setTranslation(null); }}><X size={17} /></button></header>
       <p className="br-translate-source">{translation.source}</p>
       {translation.loading ? <p role="status">Đang dịch…</p> : translation.error ? <p role="alert" className="br-translate-error">{translation.error}</p> : <p lang="vi">{translation.value}</p>}
