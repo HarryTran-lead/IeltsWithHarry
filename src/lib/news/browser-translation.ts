@@ -4,6 +4,13 @@ type TranslatorInstance = { translate(text: string): Promise<string>; destroy?()
 type TranslatorFactory = { create(options: { sourceLanguage: "en"; targetLanguage: "vi" }): Promise<TranslatorInstance> };
 let translator: Promise<TranslatorInstance> | null = null;
 
+function withTimeout<T>(task: Promise<T>, milliseconds: number): Promise<T> {
+  return new Promise((resolve, reject) => {
+    const timer = setTimeout(() => reject(new Error("Browser translator timed out")), milliseconds);
+    task.then((value) => { clearTimeout(timer); resolve(value); }, (error) => { clearTimeout(timer); reject(error); });
+  });
+}
+
 function browserFactory(): TranslatorFactory | undefined {
   if (typeof window === "undefined") return undefined;
   return (window as Window & { Translator?: TranslatorFactory }).Translator;
@@ -23,10 +30,10 @@ export async function translateEnglishToVietnamese(texts: string[], onProgress?:
     // Creating the browser translator starts inside the user's click/selection gesture.
     translator ??= factory.create({ sourceLanguage: "en", targetLanguage: "vi" });
     try {
-      const instance = await translator;
+      const instance = await withTimeout(translator, 10000);
       const output: string[] = [];
       for (const text of texts) {
-        output.push(text.trim() ? await instance.translate(text) : "");
+        output.push(text.trim() ? await withTimeout(instance.translate(text), 20000) : "");
         onTranslated?.(output.length - 1, output[output.length - 1]);
         onProgress?.(output.length);
       }

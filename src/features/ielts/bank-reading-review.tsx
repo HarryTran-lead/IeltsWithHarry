@@ -15,7 +15,8 @@ import { ListeningReviewPane, transcriptLines } from "./listening-review";
 import { printedListeningLayout } from "./bank-test";
 import { explanationWithoutEvidence } from "@/lib/ielts-bank/reading-evidence";
 import { catalogQuestionTypeIds, catalogQuestionTypes, catalogSectionEntries, type CatalogExam } from "@/lib/ielts-bank/catalog";
-import { rangeAt, savedReadingMarks } from "./reading-highlights";
+import { encodeReadingMarks, rangeAt, savedReadingMarks, type ReadingMark } from "./reading-highlights";
+import { ReadingReviewTools } from "./reading-review-tools";
 import { FiveStepView, fiveStepEvidence } from "./reading-five-step";
 import "./bank-reading-review.css";
 
@@ -81,7 +82,22 @@ export function ReadingReview({ title, skill = "Reading", content, review, forma
   const body = useRef<HTMLDivElement>(null);
   const passagePane = useRef<HTMLElement>(null);
   const questionPane = useRef<HTMLDivElement>(null);
-  const savedMarks = useMemo(() => savedReadingMarks(savedHighlights), [savedHighlights]);
+  const marksKey = `${attemptId ?? "preview"}:${savedHighlights ?? ""}`;
+  const initialMarks = useMemo(() => savedReadingMarks(savedHighlights), [savedHighlights]);
+  const [markChanges, setMarkChanges] = useState<{ key: string; marks: ReadingMark[] } | null>(null);
+  const savedMarks = markChanges?.key === marksKey ? markChanges.marks : initialMarks;
+  const marksEdited = markChanges?.key === marksKey;
+  const [markError, setMarkError] = useState("");
+  useEffect(() => {
+    if (!marksEdited || !attemptId) return;
+    const highlights = encodeReadingMarks(savedMarks);
+    const timer = window.setTimeout(() => {
+      void fetch("/api/ielts/bank/review-highlights", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ attemptId, highlights }) })
+        .then(async (response) => { if (!response.ok) throw new Error((await response.json() as { error?: string }).error || "Không lưu được phần tô sáng."); setMarkError(""); })
+        .catch((error) => setMarkError(error instanceof Error ? error.message : "Không lưu được phần tô sáng."));
+    }, 500);
+    return () => window.clearTimeout(timer);
+  }, [attemptId, marksEdited, savedMarks]);
   const sections = useMemo(() => {
     const reviewed = new Set(review.map((item) => item.id));
     return content.sections.map((section, originalIndex) => ({ ...section, originalIndex, questions: section.questions.filter((question) => reviewed.has(question.id)) })).filter((section) => section.questions.length);
@@ -135,6 +151,8 @@ export function ReadingReview({ title, skill = "Reading", content, review, forma
     }).filter((range): range is Range => Boolean(range));
     const reviewBlocks = questionPane.current.querySelectorAll<HTMLElement>("[data-review-text]");
     const questionRanges = savedMarks.filter((mark) => mark.section === section.id && mark.pane === "questions" && mark.quote).map((mark) => {
+      const indexed = reviewBlocks[mark.block];
+      if (indexed?.textContent?.slice(mark.start, mark.end) === mark.quote) return rangeAt(indexed, mark.start, mark.end);
       for (const block of reviewBlocks) {
         const start = block.textContent?.indexOf(mark.quote!) ?? -1;
         if (start >= 0) return rangeAt(block, start, start + mark.quote!.length);
@@ -144,7 +162,7 @@ export function ReadingReview({ title, skill = "Reading", content, review, forma
     const registry = (CSS as unknown as { highlights: Map<string, unknown> }).highlights;
     registry.set("bank-review-mark", new (window as unknown as { Highlight: new (...ranges: Range[]) => unknown }).Highlight(...passageRanges, ...questionRanges));
     return () => { registry.delete("bank-review-mark"); };
-  }, [summary, skill, section, savedMarks, evidenceQuote]);
+  }, [summary, skill, section, savedMarks, evidenceQuote, active, guided]);
   const pick = (sectionIndex: number, questionId?: string) => {
     const targetId = questionId || (guided ? sections[sectionIndex]?.questions[0]?.id : undefined);
     setPart(sectionIndex);
@@ -216,6 +234,8 @@ export function ReadingReview({ title, skill = "Reading", content, review, forma
 
   return <main className={`br-review bl-tone-${skill.toLowerCase()}`} style={{ "--br-left": `${split}%` } as CSSProperties}>
     <header className="br-review-head"><Link href={backHref} aria-label="Về ngân hàng đề"><ArrowLeft size={18} /></Link><div><strong>{displayTitle}</strong><small>{guided ? `Ôn từng bước · Câu ${guidedIndex + 1}/${questions.length}` : `Xem lại bài ${skill} · ${correct}/${review.length} câu đúng${uncalibrated ? "" : ` · Band ${band?.toFixed(1) ?? "—"}`}`}</small></div>{skill === "Reading" && attemptId && <ReadingShare attemptId={attemptId} />}{guided ? <button type="button" onClick={() => setGuided(false)}>Thoát ôn tập</button> : <button type="button" onClick={startGuided}>Ôn từng bước</button>}<button type="button" onClick={() => { setGuided(false); setSummary(true); }}>Xem kết quả</button></header>
+    {skill === "Reading" && <p className="br-review-tip">Bôi đen một từ hoặc đoạn trong bài đọc hay câu hỏi để tô sáng và dịch.</p>}
+    {skill === "Reading" && section && <ReadingReviewTools key={section.id} passage={passagePane} questions={questionPane} sectionId={section.id} marks={savedMarks} onMarksChange={(next) => { if (encodeReadingMarks(next).length > 16000) { setMarkError("Đã đạt giới hạn lưu phần tô sáng của bài này."); return; } setMarkChanges({ key: marksKey, marks: next }); }} saveError={markError} />}
     <div className="br-review-body" ref={body}>
       <article className={`br-passage ${listening ? "is-listening" : ""}`} ref={passagePane} aria-label={listening ? "Bản ghi và transcript" : "Bài đọc"}>{!listening && <><span>{sectionLabel(part)}</span><h1>{section?.title}</h1></>}{listening && section && <ListeningReviewPane key={section.id} label={sectionLabel(part)} title={section.title} transcript={section.transcript} times={section.transcriptTimes} audioUrl={section.audioUrl} evidence={evidenceLines.length ? evidenceLines : []} seek={seek} />}{skill === "Reading" && section?.passage.split(/\n\s*\n/).map((paragraph, index) => { const letter = evidence?.paragraph.split("-").at(-1); const matchingParagraph = Boolean(letter && paragraph.startsWith(`**${letter}**`)); const start = evidence?.quote ? paragraph.toLowerCase().indexOf(evidence.quote.toLowerCase()) : -1; return <p key={index} data-paragraph={index} className={matchingParagraph || start >= 0 ? "is-evidence" : undefined}>{start >= 0 && evidence ? <><RichText text={paragraph.slice(0, start)} /><mark><RichText text={paragraph.slice(start, start + evidence.quote.length)} /></mark><RichText text={paragraph.slice(start + evidence.quote.length)} /></> : <RichText text={paragraph} />}</p>; })}</article>
       <div className="br-divider" role="separator" tabIndex={0} aria-label="Độ rộng bài đọc" aria-orientation="vertical" aria-valuemin={30} aria-valuemax={70} aria-valuenow={split} onPointerDown={(event) => { if (window.matchMedia("(min-width: 901px)").matches) { event.currentTarget.setPointerCapture(event.pointerId); resize(event.clientX); } }} onPointerMove={(event) => { if (event.currentTarget.hasPointerCapture(event.pointerId)) resize(event.clientX); }} onKeyDown={(event) => { if (event.key === "ArrowLeft" || event.key === "ArrowRight") { event.preventDefault(); setSplit((value) => Math.max(30, Math.min(70, value + (event.key === "ArrowRight" ? 5 : -5)))); } }}><span>⋮</span></div>
@@ -277,8 +297,8 @@ export function ReadingReview({ title, skill = "Reading", content, review, forma
         return <div className={`br-question ${item?.correct ? "is-right" : item?.given ? "is-wrong" : "is-skipped"} ${inGrid ? "is-grid-note" : ""}`} key={question.id} id={inGrid ? undefined : `br-q-${question.id}`}><div className="br-question-title">{listening && !inGrid ? playNo(question.id, numberOf(question.id)) : <span>{numberOf(question.id)}</span>}<div data-review-text>{inGrid ? <b>Giải thích câu {numberOf(question.id)}</b> : <RichText text={reviewPrompt(group.questions, question, numberOf(question.id))} />}</div><button type="button" aria-expanded={open} onClick={() => setActive(open ? null : question.id)}>{open ? "Ẩn giải thích" : "Xem giải thích"}</button></div>
           {!inGrid && options.length > 0 && <ul className="br-options">{options.map((option) => { const key = optionKey(option), chosen = item?.given && (option === item.given || key === item.given), answer = acceptedAnswers.some((value) => value === option || value === key); return <li key={option} className={`${chosen ? "is-chosen" : ""} ${answer ? "is-answer" : ""}`}><b>{key}</b><span data-review-text>{optionLabel(option) || option}</span>{chosen && <small>Bạn chọn</small>}{answer && <small>Đáp án</small>}</li>; })}</ul>}
           <div className="br-answer-feedback"><span className={item?.correct ? "is-correct" : item?.given ? "is-incorrect" : "is-empty"}>{item?.correct ? "Đúng" : item?.given ? "Sai" : "Chưa trả lời"} · Bạn: <strong>{item?.given || "—"}</strong></span><span className="is-correct">Đáp án đúng: <strong>{acceptedAnswers.join(" / ") || "—"}</strong>{question.group && " · Không cần đúng thứ tự"}</span></div>
-          {open && item?.fiveStep && <div className="br-explanation is-five"><small>{typeLabel(question.type)}</small><FiveStepView steps={item.fiveStep} />{guided && <div className="br-step-actions"><button type="button" disabled={guidedIndex <= 0} onClick={() => pickQuestion(guidedIndex - 1)}>Câu trước</button><button type="button" disabled={guidedIndex + 1 >= questions.length} onClick={() => pickQuestion(guidedIndex + 1)}>Câu tiếp <ChevronRight size={15} /></button></div>}</div>}
-          {open && !item?.fiveStep && <div className="br-explanation"><small>{typeLabel(question.type)}</small>{evidence?.quote && <blockquote><b>{guided ? "Bước 1 · Tìm dẫn chứng" : skill === "Listening" ? "Dẫn chứng trong transcript" : "Dẫn chứng trong bài đọc"}</b><br />“{evidence.quote}”</blockquote>}{guided && <b className="br-step-label">Bước 2 · Phân tích đáp án</b>}{cleanExplanation && !cleanExplanation.startsWith("Evidence:") ? <p><RichText text={cleanExplanation} /></p> : !evidence?.quote && <p>Đối chiếu đáp án với {skill === "Listening" ? "transcript bên trái" : "bài đọc bên trái"}.</p>}{guided && <div className="br-step-actions"><button type="button" disabled={guidedIndex <= 0} onClick={() => pickQuestion(guidedIndex - 1)}>Câu trước</button><button type="button" disabled={guidedIndex + 1 >= questions.length} onClick={() => pickQuestion(guidedIndex + 1)}>Câu tiếp <ChevronRight size={15} /></button></div>}</div>}
+          {open && item?.fiveStep && <div className="br-explanation is-five" data-review-text><small>{typeLabel(question.type)}</small><FiveStepView steps={item.fiveStep} />{guided && <div className="br-step-actions"><button type="button" disabled={guidedIndex <= 0} onClick={() => pickQuestion(guidedIndex - 1)}>Câu trước</button><button type="button" disabled={guidedIndex + 1 >= questions.length} onClick={() => pickQuestion(guidedIndex + 1)}>Câu tiếp <ChevronRight size={15} /></button></div>}</div>}
+          {open && !item?.fiveStep && <div className="br-explanation" data-review-text><small>{typeLabel(question.type)}</small>{evidence?.quote && <blockquote><b>{guided ? "Bước 1 · Tìm dẫn chứng" : skill === "Listening" ? "Dẫn chứng trong transcript" : "Dẫn chứng trong bài đọc"}</b><br />“{evidence.quote}”</blockquote>}{guided && <b className="br-step-label">Bước 2 · Phân tích đáp án</b>}{cleanExplanation && !cleanExplanation.startsWith("Evidence:") ? <p><RichText text={cleanExplanation} /></p> : !evidence?.quote && <p>Đối chiếu đáp án với {skill === "Listening" ? "transcript bên trái" : "bài đọc bên trái"}.</p>}{guided && <div className="br-step-actions"><button type="button" disabled={guidedIndex <= 0} onClick={() => pickQuestion(guidedIndex - 1)}>Câu trước</button><button type="button" disabled={guidedIndex + 1 >= questions.length} onClick={() => pickQuestion(guidedIndex + 1)}>Câu tiếp <ChevronRight size={15} /></button></div>}</div>}
         </div>;
       })}</section>)}<div className="br-next">{part + 1 < sections.length && <button type="button" onClick={() => pick(part + 1)}>Sang {sectionLabel(part + 1)} <ChevronRight size={17} /></button>}</div></div>
     </div>

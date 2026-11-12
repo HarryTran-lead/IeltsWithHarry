@@ -41,6 +41,7 @@ body:has(.br-review) { overflow: hidden; }
 .br-review-head > a { display: grid; place-items: center; width: 34px; height: 34px; border: 1px solid #d0dcde; border-radius: 7px; color: inherit; }
 .br-review-head > div:not(.br-share-layer) { display: grid; flex: 1; gap: 3px; min-width: 0; }.br-review-head > div:not(.br-share-layer) strong { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }.br-review-head > div:not(.br-share-layer) small { color: #687c8c; }
 .br-review-head > button, .br-review-dock > a { padding: 9px 13px; border: 1px solid #b8d4d2; border-radius: 7px; background: #e5f5f1; color: #097f77; font: inherit; font-weight: 700; text-decoration: none; cursor: pointer; }
+.br-review-tip { flex: none; margin: 0; padding: 6px 22px; border-bottom: 1px solid #e3ecea; background: #f6fbf9; color: #47697a; font-size: 12px; }
 .br-review-body { display: grid; flex: 1; grid-template-columns: minmax(0, calc(var(--br-left) - 4px)) 8px minmax(0, 1fr); min-height: 0; }
 .br-passage, .br-questions { height: 100%; min-width: 0; overflow-y: auto; padding: 28px clamp(20px, 3vw, 48px) 60px; }
 .br-passage > span { color: #0b9188; font-size: 12px; font-weight: 800; text-transform: uppercase; letter-spacing: .08em; }
@@ -49,6 +50,17 @@ body:has(.br-review) { overflow: hidden; }
 .br-passage h2 { margin: 0 0 15px; padding-bottom: 9px; border-bottom: 1px solid #dce5e9; color: #2c6587; font-size: 17px; }
 .br-passage p.is-evidence { border-left: 3px solid #50b996; padding-left: 10px; background: #f2faf4; }.br-passage mark { padding: 2px 0; background: #a9e0c4; color: inherit; }
 ::highlight(bank-review-mark) { background-color: #ffe17a; color: inherit; }
+.br-select-toolbar { position: fixed; z-index: 104; left: clamp(160px, var(--tool-x, 50vw), calc(100vw - 160px)); display: flex; flex-wrap: wrap; align-items: center; gap: 5px; max-width: min(95vw, 440px); padding: 6px; border: 1px solid #bdd7d2; border-radius: 10px; background: #fff; box-shadow: 0 10px 28px #17334930; transform: translate(-50%, calc(-100% - 10px)); font-size: 13px; }
+.br-select-toolbar.is-below { transform: translate(-50%, 10px); }
+.br-select-toolbar > span { flex-basis: 100%; overflow: hidden; padding: 1px 7px 4px; color: #597080; text-overflow: ellipsis; white-space: nowrap; }
+.br-select-toolbar button { display: inline-flex; align-items: center; gap: 5px; padding: 7px 9px; border: 0; border-radius: 6px; background: #e8f6f2; color: #087b71; font: inherit; font-weight: 700; cursor: pointer; }
+.br-select-toolbar button:hover { background: #d2eee6; }.br-select-toolbar .br-tool-close { margin-left: auto; padding: 7px; background: #f2f5f5; color: #526575; }
+.br-select-toolbar > small { flex-basis: 100%; padding: 3px 7px; color: #ad3d32; }
+.br-translate-card { position: fixed; z-index: 105; right: 18px; bottom: 76px; display: grid; gap: 9px; width: min(460px, calc(100vw - 36px)); max-height: min(60vh, 560px); overflow: auto; padding: 16px; border: 1px solid #b8d8d1; border-radius: 13px; background: #fff; box-shadow: 0 16px 45px #1733493d; font-size: 14px; line-height: 1.6; }
+.br-translate-card header { display: flex; align-items: center; justify-content: space-between; gap: 10px; }.br-translate-card header strong { display: inline-flex; align-items: center; gap: 6px; color: #087b71; }.br-translate-card header button { display: grid; place-items: center; padding: 5px; border: 0; border-radius: 6px; background: #f1f5f4; color: #526575; cursor: pointer; }
+.br-translate-card p { margin: 0; white-space: pre-wrap; }.br-translate-source { max-height: 120px; overflow: auto; padding: 9px 11px; border-radius: 7px; background: #f3f7f7; color: #536777; }.br-translate-card .br-translate-error { color: #ad3d32; }
+.br-mark-save-error { position: fixed; z-index: 103; right: 18px; bottom: 76px; max-width: 360px; margin: 0; padding: 10px 13px; border: 1px solid #f0bbb3; border-radius: 8px; background: #fff3ef; color: #a43c30; font-size: 13px; }
+@media (max-width: 500px) { .br-select-toolbar { left: 50vw; transform: translate(-50%, 8px); }.br-translate-card { right: 9px; bottom: 64px; width: calc(100vw - 18px); } }
 .br-transcript { display: grid; gap: 8px; }
 .br-transcript p { display: grid; grid-template-columns: minmax(90px, 22%) minmax(0, 1fr); gap: 12px; margin: 0; padding: 9px 12px; border-radius: 7px; font-size: 14px; line-height: 1.6; }
 .br-transcript p:nth-child(odd) { background: #f6f9fa; }
