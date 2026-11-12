@@ -165,7 +165,7 @@ export function VocabularyStudy() {
         // instead of being the next ten words of the alphabet.
         fetchChunk = async (start, size) => {
           let request = db!.from("ielts_vocabulary_entries").select("source_key,term,pos_raw,pattern,topic,definition_en,examples,band_level,content_status", { count: "exact" }).eq("published", true)
-            .order("band_level").order("topic").order("term").order("source_key");
+            .order("band_level").order("topic").order("sort_term").order("source_key");
           if (linkedKeys) request = request.in("source_key", linkedKeys);
           else if (topic !== "all") request = request.eq("topic", topic);
           if (level !== "all") request = request.eq("band_level", level);
