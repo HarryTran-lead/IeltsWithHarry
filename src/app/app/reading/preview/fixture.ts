@@ -73,7 +73,13 @@ const section2: ExamContent["sections"][number] = {
   questions: [
     q("matching_headings", "Paragraph A", { instructions: headingInstructions, options: headings, answers: ["vi"], explanation: "Đoạn A so sánh hoa với một quảng cáo: màu, mùi và hình dáng là tín hiệu nhắm tới khách ghé thăm. Dẫn chứng (P2-A): “A flower is, in a sense, an advertisement”" }),
     q("matching_headings", "Paragraph B", { instructions: headingInstructions, options: headings, answers: ["ii"] }),
-    q("matching_headings", "Paragraph C", { instructions: headingInstructions, options: headings, answers: ["v"] }),
+    q("matching_headings", "Paragraph C", { instructions: headingInstructions, options: headings, answers: ["v"], fiveStep: {
+      understand: { en: "Find the heading that sums up the whole of paragraph C, not one detail in it.", vi: "Tìm heading tóm được cả đoạn C, không phải một chi tiết lẻ trong đoạn." },
+      wordClass: { en: "\"Colour over fragrance\" is a noun phrase: one thing is preferred to another. The paragraph must compare the two senses.", vi: "\"Colour over fragrance\" là cụm danh từ: một thứ được ưu tiên hơn thứ kia. Đoạn văn phải so sánh hai giác quan." },
+      paraphrase: { en: "\"Colour\" returns as red and orange flowers and colour vision; \"over fragrance\" returns as a poor sense of smell and flowers almost without scent.", vi: "\"Colour\" xuất hiện lại qua hoa đỏ, cam và thị giác màu; \"over fragrance\" ứng với khứu giác kém và hoa gần như không có mùi.", pairs: [{ question: "colour", passage: "excellent colour vision in the red part of the spectrum" }, { question: "over fragrance", passage: "almost without scent" }] },
+      evidence: { en: "Paragraph C opens with the birds' weak smell and strong colour vision, then shows flowers built for them: red, tubular and nearly scentless.", vi: "Đoạn C mở đầu bằng việc chim kém khứu giác nhưng nhìn màu rất tốt, rồi tả loài hoa dành cho chúng: màu đỏ, hình ống và gần như không mùi.", quotes: [{ paragraph: "P2-C", quote: "Birds, by contrast, have a poor sense of smell but excellent colour vision in the red part of the spectrum.", role: "supports", exact: true }] },
+      final: { en: "v. The paragraph is about birds choosing by colour rather than scent.", vi: "Đáp án v. Đoạn văn nói chim chọn hoa theo màu chứ không theo mùi.", answer: "v", trapEn: "Heading iii also mentions scent, but it is about night visitors, which is paragraph D.", trapVi: "Heading iii cũng nói về mùi hương nhưng dành cho loài đi ăn đêm, đó là đoạn D.", tipEn: "Match a heading to the paragraph's contrast, not to a single repeated word.", tipVi: "Ghép heading theo ý đối lập của cả đoạn, đừng chỉ bắt một từ lặp lại." },
+    } }),
     q("matching_headings", "Paragraph D", { instructions: headingInstructions, options: headings, answers: ["iii"] }),
     q("matching_headings", "Paragraph E", { instructions: headingInstructions, options: headings, answers: ["i"] }),
     q("summary_completion_bank", "Bees can detect **19** light, which reveals hidden patterns on petals.", { instructions: summaryInstructions, options: summaryBank, answers: ["A"] }),
@@ -144,5 +150,5 @@ const given: Record<string, string> = { q1: "gate", q2: "valve", q5: "FALSE", q6
 export const previewReview: ReviewItem[] = all.map((question) => {
   const answer = given[question.id] ?? "";
   const correct = Boolean(answer) && question.answers.some((value) => value.toLowerCase() === answer.toLowerCase());
-  return { id: question.id, given: answer, correct, answers: question.answers, explanation: question.explanation, type: question.type, evidence: evidenceFromExplanation(question.explanation) };
+  return { id: question.id, given: answer, correct, answers: question.answers, explanation: question.explanation, type: question.type, evidence: evidenceFromExplanation(question.explanation), ...(question.fiveStep ? { fiveStep: question.fiveStep } : {}) };
 });

@@ -206,3 +206,39 @@ body:has(.br-review) { overflow: hidden; }
   .br-donut-row { gap: 16px; }
   .br-donut { width: 124px; height: 124px; }
 }
+
+/* Five-step explanation: numbered steps down a guide line, Vietnamese first with an English toggle. */
+.br-explanation.is-five { display: grid; gap: 8px; }
+.br-five { display: grid; gap: 10px; }
+.br-five header { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px; }
+.br-five header b { color: #213444; font: 800 15px/1.2 var(--font-display), var(--font-sans), sans-serif; }
+.br-five-lang { display: inline-flex; gap: 2px; padding: 3px; border-radius: 10px; background: #eef2f4; }
+.br-five-lang button { height: 28px; padding: 0 11px; border: 0; border-radius: 8px; background: none; color: #56697b; font: 800 12px/1 var(--font-sans), sans-serif; cursor: pointer; }
+.br-five-lang button[aria-pressed="true"] { background: #fff; color: #213444; box-shadow: 0 1px 3px #173d5f26; }
+.br-five ol { position: relative; display: grid; gap: 12px; margin: 0; padding: 0; list-style: none; }
+.br-five ol::before { content: ""; position: absolute; top: 14px; bottom: 14px; left: 13px; width: 2px; background: #e6dccf; }
+.br-five ol > li { position: relative; display: grid; grid-template-columns: 28px minmax(0, 1fr); gap: 12px; }
+.br-five ol > li > span { z-index: 1; display: grid; place-items: center; width: 28px; height: 28px; border-radius: 50%; background: #fff4ee; color: #b3473a; font: 800 13px/1 var(--font-sans), sans-serif; box-shadow: inset 0 0 0 2px #f0c9b8; }
+.br-five ol > li:last-child > span { background: #2fa36b; color: #fff; box-shadow: none; }
+.br-five h4 { margin: 3px 0 4px; color: #213444; font-size: 13.5px; font-weight: 800; }
+.br-five p { margin: 0; color: #34495e; font-size: 13.5px; line-height: 1.6; }
+.br-five-pairs { display: grid; gap: 6px; margin: 8px 0 0; padding: 0; list-style: none; }
+.br-five-pairs li { display: grid; grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr); align-items: center; gap: 8px; padding: 8px 10px; border-radius: 10px; background: #f6f8fa; font-size: 13px; line-height: 1.45; }
+.br-five-pairs q { color: #213444; quotes: "“" "”"; }
+.br-five-pairs q:last-child { color: #1f7a52; }
+.br-five-pairs i { color: #8195a8; font-style: normal; font-weight: 800; }
+.br-five blockquote { margin: 8px 0 0; padding: 8px 12px; border-left: 3px solid #2fa36b; border-radius: 0 10px 10px 0; background: #eef9f2; color: #213444; font-size: 13.5px; line-height: 1.55; }
+.br-five blockquote small { display: block; margin-bottom: 2px; color: #3f8a5c; font-size: 11px; font-weight: 800; letter-spacing: .03em; text-transform: uppercase; }
+.br-five blockquote.is-contradicts { border-left-color: #e5594b; background: #fdf0ee; }
+.br-five blockquote.is-contradicts small { color: #b42318; }
+.br-five blockquote.is-context_only, .br-five blockquote.is-main_idea { border-left-color: #8fa2b3; background: #f4f7f9; }
+.br-five blockquote.is-context_only small, .br-five blockquote.is-main_idea small { color: #56697b; }
+.br-five-answer { color: #213444 !important; font-weight: 700; }
+.br-five-answer b { padding: 1px 8px; border-radius: 6px; background: #2fa36b; color: #fff; }
+.br-five-note { display: grid; gap: 2px; margin-top: 8px !important; padding: 8px 12px; border-radius: 10px; font-size: 13px !important; }
+.br-five-note b { font-size: 11.5px; letter-spacing: .03em; text-transform: uppercase; }
+.br-five-note.is-trap { background: #fff4e5; }
+.br-five-note.is-trap b { color: #b5651d; }
+.br-five-note.is-tip { background: #edf5ff; }
+.br-five-note.is-tip b { color: #2c63a8; }
+@media (max-width: 560px) { .br-five-pairs li { grid-template-columns: 1fr; } .br-five-pairs i { display: none; } }

@@ -12,6 +12,21 @@ const supportedTypes = new Set([
   "flow_chart_completion", "flowchart-completion", "diagram_labelling", "diagram-labelling",
   "short_answer", "short-answer", "map_labelling", "map-labelling", "plan_labelling", "plan-labelling", "form_completion", "form-completion", "speaking",
 ]);
+const bilingual = { en: z.string().max(4000).default(""), vi: z.string().max(4000).default("") };
+/**
+ * A worked explanation in five steps (understand the question, word class, paraphrase,
+ * evidence, final answer and trap), in English and Vietnamese. It carries the answer, so
+ * like `answers` it never leaves the server before the attempt is graded.
+ */
+export const fiveStepSchema = z.object({
+  understand: z.object(bilingual),
+  wordClass: z.object(bilingual),
+  paraphrase: z.object({ ...bilingual, pairs: z.array(z.object({ question: z.string().max(400), passage: z.string().max(600) })).max(12).default([]) }),
+  evidence: z.object({ ...bilingual, quotes: z.array(z.object({ paragraph: z.string().max(40).default(""), quote: z.string().min(1).max(1200), role: z.string().max(40).default("supports"), exact: z.boolean().default(true) })).max(12).default([]) }),
+  final: z.object({ ...bilingual, answer: z.string().max(200).default(""), trapEn: z.string().max(2000).default(""), trapVi: z.string().max(2000).default(""), tipEn: z.string().max(2000).default(""), tipVi: z.string().max(2000).default("") }),
+});
+export type FiveStep = z.infer<typeof fiveStepSchema>;
+
 export const questionSchema = z.object({
   id: z.string().min(1), number: z.number().int().positive(),
   type: z.string().min(1), prompt: z.string().min(1), instructions: z.string().default(""),
@@ -21,6 +36,7 @@ export const questionSchema = z.object({
   // Questions sharing a group form one "Choose TWO letters" item: each is answered with one letter,
   // and every distinct correct letter in the group earns one mark, in any order.
   group: z.string().optional(),
+  fiveStep: fiveStepSchema.optional(),
 });
 export const sectionSchema = z.object({
   id: z.string().min(1), title: z.string().min(1), passage: z.string().default(""),
@@ -75,7 +91,7 @@ export function contentHash(content: unknown): string {
 
 export function publicContent(content: ExamContent): ExamContent {
   return { ...content, sections: content.sections.map((section) => ({
-    ...section, transcript: "", questions: section.questions.map((question) => ({ ...question, answers: [], explanation: "" })),
+    ...section, transcript: "", questions: section.questions.map((question) => { const visible = { ...question, answers: [], explanation: "" }; delete visible.fiveStep; return visible; }),
   })) };
 }
 
@@ -99,7 +115,7 @@ export function scoreAnswers(content: ExamContent, answers: Record<string, strin
       : /multiple[_-]answers/.test(q.type)
         ? q.answers.map(normalize).sort().join("|") === given.split(",").map((part) => normalize(optionKey(part))).filter(Boolean).sort().join("|")
         : q.answers.some((answer) => normalize(answer) === normalize(selected));
-    return { id: q.id, given, correct, answers: q.answers, explanation: q.explanation, type: q.type };
+    return { id: q.id, given, correct, answers: q.answers, explanation: q.explanation, type: q.type, ...(q.fiveStep ? { fiveStep: q.fiveStep } : {}) };
   });
   return { score: review.filter((q) => q.correct).length, total: review.length, review };
 }
@@ -132,4 +148,24 @@ export function attemptMinutes(skill: string, examMinutes: number, notes: Record
 export function qOptionKey(value: string) {
   const text = value.trim();
   return /^([A-Za-z]{1,2}|[ivxlc]{1,6})\s+—/.exec(text)?.[1] ?? /^—\s*([A-Z])\.\s/.exec(text)?.[1] ?? /^([A-Z])\.\s/.exec(text)?.[1] ?? text;
+}
+
+/**
+ * Why explanations cannot be attached to this content: a question that does not exist,
+ * or an answer the live key does not accept. A choose-several set must equal the keys of
+ * its whole group, in any order. An empty list means every item matches.
+ */
+export function explanationMismatches(content: ExamContent, items: { questionId: string; answers: string[] }[]) {
+  const questions = new Map(content.sections.flatMap((section) => section.questions).map((question) => [question.id, question]));
+  const normal = (value: string) => qOptionKey(value).trim().replace(/\s+/g, " ").toLocaleLowerCase("en");
+  const mismatches: string[] = [];
+  for (const item of items) {
+    const question = questions.get(item.questionId);
+    if (!question) { mismatches.push(`${item.questionId}: không có câu này trong đề đang chạy`); continue; }
+    const accepted = new Set((question.group ? [...questions.values()].filter((other) => other.group === question.group).flatMap((other) => other.answers) : question.answers).map(normal));
+    const wanted = item.answers.map(normal);
+    const same = question.group ? wanted.length === accepted.size && wanted.every((value) => accepted.has(value)) : wanted.length > 0 && wanted.every((value) => accepted.has(value));
+    if (!same) mismatches.push(`${item.questionId}: lời giải ghi “${item.answers.join(", ")}”, đề đang chạy chấm “${[...accepted].join(", ")}”`);
+  }
+  return mismatches;
 }

@@ -1,7 +1,7 @@
 import { z } from "zod";
-import { bankClient, requestError, reviewExam, runSync, saveRevision, viewer } from "@/lib/ielts-bank/server";
+import { attachExplanations, bankClient, requestError, reviewExam, runSync, saveRevision, viewer } from "@/lib/ielts-bank/server";
 import { sources } from "@/lib/ielts-bank/connectors";
-import { contentHash, contentSchema, validateExam } from "@/lib/ielts-bank/schema";
+import { contentHash, contentSchema, fiveStepSchema, validateExam } from "@/lib/ielts-bank/schema";
 export const runtime = "nodejs";
 
 export async function GET(request: Request) {
@@ -58,6 +58,7 @@ const command = z.discriminatedUnion("action", [
   z.object({ action: z.literal("pauseSkillSync"), skill: z.enum(["Reading", "Listening", "Writing", "Speaking"]), paused: z.boolean() }),
   z.object({ action: z.literal("manual"), permissionConfirmed: z.literal(true), exam: z.object({ externalId: z.string().min(1).max(200), skill: z.enum(["Reading","Listening","Writing","Speaking"]), title: z.string().min(3).max(160), format: z.string().max(80).default("Academic"), mode: z.string().max(80).default("practice"), durationMinutes: z.number().int().min(1).max(240), sourceUrl: z.url(), license: z.string().min(2).max(80), licenseUrl: z.url(), attribution: z.string().min(2).max(200), content: contentSchema }) }),
   z.object({ action: z.enum(["ready", "publish", "reject", "archive", "unpublish"]), examId: z.uuid(), note: z.string().max(2000).optional() }),
+  z.object({ action: z.literal("attachExplanations"), externalId: z.string().min(1).max(200), items: z.array(z.object({ questionId: z.string().min(1).max(120), answers: z.array(z.string().min(1).max(200)).min(1).max(10), fiveStep: fiveStepSchema })).min(1).max(60) }),
 ]);
 export async function POST(request: Request) {
   try {
@@ -149,6 +150,7 @@ export async function POST(request: Request) {
       if (logError) throw new Error(logError.message);
       return Response.json({ status: data, warnings, examId: saved.id });
     }
+    if (body.action === "attachExplanations") return Response.json(await attachExplanations(body.externalId, body.items, user.id));
     return Response.json(await reviewExam(body.examId, body.action, user.id, body.note));
   } catch (error) { return requestError(error); }
 }

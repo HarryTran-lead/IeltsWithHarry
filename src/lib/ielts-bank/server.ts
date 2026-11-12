@@ -3,7 +3,7 @@ import { randomUUID } from "node:crypto";
 import { createClient } from "@/lib/supabase/server";
 import { assertPublishRightsEvidence, type RightsEvidence } from "@/lib/content-rights";
 import { demoMode } from "@/lib/runtime";
-import { attemptContent, attemptMinutes, contentHash, contentSchema, scoreAnswers, validateExam, type ExamContent, type NormalizedExam } from "./schema";
+import { attemptContent, attemptMinutes, contentHash, contentSchema, explanationMismatches, fiveStepSchema, scoreAnswers, validateExam, type ExamContent, type FiveStep, type NormalizedExam } from "./schema";
 import { createConnector, sources, type SourceId } from "./connectors";
 
 export function bankClient() {
@@ -210,6 +210,33 @@ export async function saveRevision(examId: string, content: unknown, actorId: st
   if (logError) throw new Error(logError.message);
   return { versionId: row.id, warnings };
 }
+export type ExplanationItem = { questionId: string; answers: string[]; fiveStep: FiveStep };
+
+/**
+ * Attaches five-step explanations to the version learners are using now. Nothing is
+ * written unless every item names an existing question and its answer is the one the
+ * live key accepts (a choose-several set must equal the keys of its group); the new
+ * revision differs from the published one only by the explanations.
+ */
+export async function attachExplanations(externalId: string, items: ExplanationItem[], actorId: string) {
+  const client = bankClient();
+  const { data: exam, error } = await client.from("ielts_exams").select("id,skill,current_version_id,published_version_id").eq("source_id", "manual").eq("external_id", externalId).maybeSingle();
+  if (error) throw new Error(error.message);
+  if (!exam?.published_version_id) throw new Error(`${externalId}: chưa có bản đang xuất bản để gắn lời giải`);
+  if (exam.skill !== "Reading") throw new Error(`${externalId}: chỉ gắn lời giải cho đề Reading`);
+  if (exam.current_version_id !== exam.published_version_id) throw new Error(`${externalId}: đang có bản sửa chờ duyệt; duyệt hoặc bỏ bản đó trước`);
+  const { data: version, error: versionError } = await client.from("ielts_exam_versions").select("content").eq("id", exam.published_version_id).single();
+  if (versionError || !version) throw new Error(versionError?.message || "Published version unavailable");
+  const content = contentSchema.parse(version.content);
+  const mismatches = explanationMismatches(content, items);
+  if (mismatches.length) throw new Error(`${externalId}: không gắn vì ${mismatches.length} câu lệch đáp án — ${mismatches.slice(0, 5).join("; ")}`);
+  const byId = new Map(items.map((item) => [item.questionId, item.fiveStep]));
+  const merged = { ...content, sections: content.sections.map((section) => ({ ...section, questions: section.questions.map((question) => byId.has(question.id) ? { ...question, fiveStep: fiveStepSchema.parse(byId.get(question.id)) } : question) })) };
+  if (contentHash(merged) === contentHash(content)) return { examId: exam.id, attached: 0, unchanged: true };
+  const saved = await saveRevision(exam.id, merged, actorId, exam.current_version_id);
+  return { examId: exam.id, attached: byId.size, versionId: saved.versionId, warnings: saved.warnings };
+}
+
 export async function reviewExam(examId: string, action: "ready" | "publish" | "reject" | "archive" | "unpublish", actorId: string, note = "") {
   const client = bankClient();
   const { data: exam, error } = await client.from("ielts_exams").select("*,ielts_exam_versions!ielts_current_version_fk(content,warnings)").eq("id", examId).single();

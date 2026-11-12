@@ -5,7 +5,7 @@ import { useSearchParams } from "next/navigation";
 import { useEffect, useRef, useState, type ReactNode } from "react";
 import { ArrowLeft, ArrowRight, CalendarPlus, Check, CircleAlert, Clock3, Flag, Headphones, ListChecks, Maximize2, Mic, Minimize2, NotebookPen, RotateCcw, ShieldCheck, Square, X } from "lucide-react";
 import { TopicArt } from "@/components/illustrations/topic-art";
-import type { ExamContent, ExamQuestion } from "@/lib/ielts-bank/schema";
+import type { ExamContent, ExamQuestion, FiveStep } from "@/lib/ielts-bank/schema";
 import { listeningFullMinutes, listeningPartMinutes, readingFullMinutes, readingPassageMinutes } from "@/lib/ielts-bank/schema";
 import { catalogGroups, type CatalogSkill } from "@/lib/ielts-bank/catalog";
 import { displayExamTitle } from "@/lib/ielts-bank/display-title";
@@ -19,7 +19,7 @@ import "./bank-exam.css";
 export { RichText };
 
 export type BankExam = { id: string; title: string; skill: string; practice_type?: string; format: string; mode: string; duration_minutes: number; attribution: string; license: string; license_url: string; source_url: string; ai_generated: boolean; topic?: string | null; content?: ExamContent };
-export type ReviewItem = { id: string; given: string; correct: boolean; answers: string[]; explanation: string; type?: string; evidence?: { quote: string; paragraph: string } | null };
+export type ReviewItem = { id: string; given: string; correct: boolean; answers: string[]; explanation: string; type?: string; evidence?: { quote: string; paragraph: string } | null; fiveStep?: FiveStep };
 
 export const toneOf = (skill: string) => librarySkills[skill as CatalogSkill]?.tone ?? "reading";
 
