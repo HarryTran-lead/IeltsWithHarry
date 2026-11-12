@@ -109,8 +109,8 @@ export function BankStudent({ examId, resultId, attemptId }: { examId?: string; 
       unansweredList={inScope.filter((item) => !answers[item.id]).map((item) => ({ id: item.id, number: item.number }))}
       flaggedList={inScope.filter((item) => flags.includes(item.id)).map((item) => ({ id: item.id, number: item.number }))}
       onJump={(id) => { setConfirming(false); setJump({ id, at: Date.now() }); }} />;
-  // Reading in the real-test view is the computer-delivered screen; its tick leads to "Click next", which submits.
-  if (content && exam.skill === "Reading" && notes.__view === "exam") return <>
+  // Reading and Listening in the real-test view are the computer-delivered screen; its tick leads to "Click next", which submits.
+  if (content && (exam.skill === "Reading" || exam.skill === "Listening") && notes.__view === "exam") return <>
     <ExamSheet exam={exam} content={content} scope={scope} answers={answers} setAnswer={setAnswer} flags={flags} setFlags={setFlags} notes={notes} setNotes={setNotes} remaining={remaining} busy={busy} onSubmit={() => void submit()} onExit={() => setLeaving(true)} />
     {error && <p className="bx-error cd-error" role="alert">{error}</p>}
     {leaving && <div className="bx-dialog-layer cd-dialog"><button type="button" className="bx-dialog-backdrop" aria-label="Tiếp tục làm bài" tabIndex={-1} onClick={() => setLeaving(false)} /><section className="bx-dialog" role="dialog" aria-modal="true" aria-labelledby="bx-leave-title"><button type="button" className="bx-dialog-close" aria-label="Đóng" onClick={() => setLeaving(false)}><X size={18} /></button><h2 id="bx-leave-title">Rời bài làm?</h2><p>Bài làm hiện tại sẽ được lưu. Bạn có thể quay lại từ ngân hàng đề để tiếp tục.</p><div className="bx-dialog-actions"><button type="button" className="bx-ghost" onClick={() => setLeaving(false)}>Tiếp tục làm</button><button type="button" className="bx-submit" disabled={busy} onClick={() => { void exitAttempt(); }}>{busy ? "Đang lưu…" : "Lưu và rời bài"}</button></div></section></div>}

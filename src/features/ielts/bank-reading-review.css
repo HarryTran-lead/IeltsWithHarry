@@ -242,3 +242,40 @@ body:has(.br-review) { overflow: hidden; }
 .br-five-note.is-tip { background: #edf5ff; }
 .br-five-note.is-tip b { color: #2c63a8; }
 @media (max-width: 560px) { .br-five-pairs li { grid-template-columns: 1fr; } .br-five-pairs i { display: none; } }
+
+/* Listening review, YouPass-style: transcript that follows the audio, ▶ "Nghe từ đây" beside each answer. */
+.br-passage.is-listening { display: flex; flex-direction: column; padding: 0; overflow: hidden; }
+.lr-pane { display: flex; flex: 1; flex-direction: column; min-height: 0; }
+.lr-head { display: flex; align-items: flex-start; gap: 12px; padding: 22px clamp(18px, 3vw, 40px) 12px; border-bottom: 1px solid #e3eaee; }
+.lr-head > div { flex: 1; min-width: 0; }
+.lr-head span { color: #2476aa; font-size: 12px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
+.lr-head h1 { margin: 6px 0 0; font-size: 21px; line-height: 1.3; }
+.lr-focus { display: inline-flex; flex: none; align-items: center; gap: 8px; height: 34px; padding: 0 12px; border: 1px solid #dfe5ea; border-radius: 999px; background: #fff; color: #213444; font: 700 13px/1 var(--font-sans), sans-serif; cursor: pointer; }
+.lr-focus i { position: relative; width: 28px; height: 16px; border-radius: 999px; background: #d4dbe0; transition: background .2s; }
+.lr-focus i::after { content: ""; position: absolute; top: 2px; left: 2px; width: 12px; height: 12px; border-radius: 50%; background: #fff; box-shadow: 0 1px 3px #0003; transition: transform .2s; }
+.lr-focus.is-on i { background: #2fa36b; }
+.lr-focus.is-on i::after { transform: translateX(12px); }
+.lr-lines { flex: 1; min-height: 0; overflow-y: auto; padding: 14px clamp(14px, 2.6vw, 36px) 24px; }
+.lr-lines p { display: grid; grid-template-columns: minmax(84px, max-content) minmax(0, 1fr); gap: 10px; margin: 0 0 4px; padding: 7px 10px; border-radius: 8px; color: #252f38; font-size: 15.5px; line-height: 1.65; transition: background .2s, color .2s; }
+.lr-lines p.is-timed { cursor: pointer; }
+.lr-lines p.is-timed:hover { background: #f4f7f9; }
+.lr-lines p strong { color: #1d2a38; font-weight: 800; }
+.lr-lines p.is-now { background: #f1f4f6; color: #13a62e; }
+.lr-lines p.is-now strong { color: #13a62e; }
+.lr-lines p.is-evidence { background: #e5f5e8; animation: lr-blink .9s ease-out 1; }
+@keyframes lr-blink { 0% { background: #b7e6c2; } 100% { background: #e5f5e8; } }
+.lr-empty { margin: 14px 20px; color: #6b7a86; }
+.lr-dock { margin: 0; border-width: 1px 0 0; border-radius: 0; box-shadow: none; }
+.lr-play-no { display: inline-flex; align-items: center; justify-content: center; gap: 4px; min-width: 46px; height: 28px; padding: 0 9px; border: 0; border-radius: 999px; background: rgba(52, 199, 89, .14); color: #13802a; font: 800 13px/1 var(--font-sans), sans-serif; cursor: pointer; }
+.lr-play-no:hover { background: rgba(52, 199, 89, .26); }
+.br-question-title > .lr-play-no { flex: none; }
+.lr-sheet { line-height: 2.3; }
+.lr-gap { display: inline-flex; align-items: center; gap: 6px; margin: 0 2px; padding: 2px 4px 2px 2px; border-radius: 999px; vertical-align: middle; line-height: 1.4; }
+.lr-gap.is-active { outline: 2px solid #8fd3a1; }
+.lr-gap b { color: #13a62e; font-weight: 800; border-bottom: 1.5px solid currentColor; }
+.lr-gap s { color: #e5594b; font-weight: 700; }
+.lr-gap i { color: #8a97a3; font-size: 13px; }
+.lr-gap.is-wrong b, .lr-gap.is-empty b { color: #13a62e; }
+.lr-pin { display: grid; place-items: center; width: 24px; height: 24px; border: 0; border-radius: 6px; background: #f0f3f5; color: #3b4c5b; cursor: pointer; }
+.lr-pin:hover { background: #e2f3e6; color: #13802a; }
+@media (max-width: 900px) { .lr-head { padding: 14px 14px 10px; } .lr-lines p { grid-template-columns: 1fr; gap: 0; font-size: 14.5px; } }

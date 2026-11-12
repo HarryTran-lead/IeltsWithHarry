@@ -142,3 +142,23 @@
 /* Errors and the leave dialog sit above the full-screen sheet. */
 .cd-error { position: fixed; left: 50%; bottom: 72px; z-index: 1020; transform: translateX(-50%); }
 .cd-dialog { z-index: 1030; }
+
+/* Listening real-test view: the questions fill the sheet; the recording starts from a "click Play" gate. */
+.cd-title-row { display: flex; align-items: center; gap: 8px; min-height: 28px; }
+.cd-audio-chip { position: relative; display: flex; align-items: center; gap: 8px; }
+.cd-audio-chip > button { display: inline-flex; align-items: center; gap: 4px; height: 25px; padding: 0 8px; border: 1px solid #c1c1c1; border-radius: 999px; background: none; color: #242424; font: 500 12px/1 Arial, Helvetica, sans-serif; cursor: pointer; }
+.cd-audio-chip > button:hover { background: rgba(0, 0, 0, .05); }
+.cd-volume { display: inline-flex; align-items: center; }
+.cd-volume input { width: 120px; accent-color: #418ec8; }
+.cd-body.is-listening { grid-template-columns: minmax(0, 1fr); }
+.cd-body.is-listening .cd-questions { padding-right: 56px; }
+.cd-audio-gate { position: fixed; inset: 0; z-index: 1010; display: grid; place-items: center; background: rgba(0, 0, 0, .72); color: #fff; text-align: center; }
+.cd-audio-gate > div { display: grid; justify-items: center; gap: 14px; max-width: 640px; padding: 24px; }
+.cd-audio-gate p { margin: 0; font-size: 16px; line-height: 1.5; }
+.cd-audio-gate button { display: inline-flex; align-items: center; gap: 8px; height: 46px; padding: 0 22px; border: 0; border-radius: 4px; background: #000; color: #fff; font: 700 16px/1 Arial, Helvetica, sans-serif; cursor: pointer; }
+.cd-audio-gate button:hover { background: #262626; }
+.cd-audio-gate small { color: #ffd2c8; }
+.cd-audio-missing { position: fixed; top: 70px; right: 16px; z-index: 5; margin: 0; padding: 6px 10px; border: 1px solid #d5d5d5; border-radius: 4px; background: #fff7e6; font-size: 13px; }
+.cd-sheet .bq-printed { padding: 0; border: 0; border-radius: 0; background: none; line-height: 1.5em; }
+.cd-sheet .bq-printed > p > strong:first-child { color: #000; }
+.cd-sheet .bq-printed > p:first-child { text-align: center; font-size: 18px; }

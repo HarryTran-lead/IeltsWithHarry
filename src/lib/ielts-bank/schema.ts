@@ -37,10 +37,15 @@ export const questionSchema = z.object({
   // and every distinct correct letter in the group earns one mark, in any order.
   group: z.string().optional(),
   fiveStep: fiveStepSchema.optional(),
+  // Listening: the transcript lines (0-based) that answer this question; shown only after grading.
+  evidenceLines: z.array(z.number().int().nonnegative()).max(12).optional(),
 });
 export const sectionSchema = z.object({
   id: z.string().min(1), title: z.string().min(1), passage: z.string().default(""),
   transcript: z.string().default(""), audioUrl: z.string().url().optional(),
+  // Listening: when each transcript line starts in the recording (seconds), so review can follow the audio.
+  transcriptTimes: z.array(z.number().nonnegative()).max(400).optional(),
+  coverUrl: z.string().url().optional(),
   questions: z.array(questionSchema).default([]),
 });
 export const contentSchema = z.object({
@@ -91,7 +96,7 @@ export function contentHash(content: unknown): string {
 
 export function publicContent(content: ExamContent): ExamContent {
   return { ...content, sections: content.sections.map((section) => ({
-    ...section, transcript: "", questions: section.questions.map((question) => { const visible = { ...question, answers: [], explanation: "" }; delete visible.fiveStep; return visible; }),
+    ...section, transcript: "", questions: section.questions.map((question) => { const visible = { ...question, answers: [], explanation: "" }; delete visible.fiveStep; delete visible.evidenceLines; return visible; }),
   })) };
 }
 
@@ -115,7 +120,7 @@ export function scoreAnswers(content: ExamContent, answers: Record<string, strin
       : /multiple[_-]answers/.test(q.type)
         ? q.answers.map(normalize).sort().join("|") === given.split(",").map((part) => normalize(optionKey(part))).filter(Boolean).sort().join("|")
         : q.answers.some((answer) => normalize(answer) === normalize(selected));
-    return { id: q.id, given, correct, answers: q.answers, explanation: q.explanation, type: q.type, ...(q.fiveStep ? { fiveStep: q.fiveStep } : {}) };
+    return { id: q.id, given, correct, answers: q.answers, explanation: q.explanation, type: q.type, ...(q.fiveStep ? { fiveStep: q.fiveStep } : {}), ...(q.evidenceLines?.length ? { evidenceLines: q.evidenceLines } : {}) };
   });
   return { score: review.filter((q) => q.correct).length, total: review.length, review };
 }
