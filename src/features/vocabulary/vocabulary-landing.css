@@ -168,8 +168,10 @@
   .vh-feature{min-height:0;padding:18px}
   .vh-feature>.sticker{position:absolute;right:10px;top:12px;width:64px!important;height:64px!important;opacity:.9}
   .vh-feature h3{padding-right:62px}
-  .vh-tiles,.vh-use,.vh-side{grid-template-columns:1fr}
-  .vh-tile{min-height:0}
+  .vh-use,.vh-side{grid-template-columns:1fr}
+  .vh-tiles{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+  .vh-tile{min-height:0;padding:14px}
+  .vh-tile>span:not(.sticker){display:none}
   .vh-modes{grid-template-columns:repeat(2,minmax(0,1fr))}
   .vh-section-head{flex-direction:column;gap:2px}
 }
