@@ -170,10 +170,9 @@
   }
 }
 
-/* Short laptop screens (a 1080p screen at 150% scaling leaves about 590px): the Grammar home becomes a
-   one-screen board. Left: world banner, levels, search and the stage list (which scrolls inside its own
+/* Desktop: the Grammar home is a one-screen board at any height (compact sizes fit a 1280×590 window). Left: world banner, levels, search and the stage list (which scrolls inside its own
    panel). Right: today's tasks, the next-level test, level progress and the unlock rule. */
-@media (max-height: 760px) and (min-width: 1181px) {
+@media (min-width: 1181px) {
   .main-area:has(.gg-layout) { padding-top: 4px; padding-bottom: 8px; }
   .gg:has(> .gg-layout) { padding: 6px 14px 8px; }
   .gg:has(> .gg-layout) > .gg-crumb { display: none; }
@@ -212,4 +211,22 @@
   .gg-layout .gg-side-stats { margin-top: 10px; padding-top: 8px; }
   .gg-layout .gg-side-stats strong { font-size: 18px; }
   .gg-layout .gg-side-link { margin-top: 8px; }
+}
+
+/* Fill the screen: type and padding grow with the viewport height; tall screens show the world description. */
+@media (min-width: 1181px) {
+  .gg-layout { grid-template-columns: minmax(0, 1fr) clamp(320px, 22vw, 400px); gap: clamp(8px, 1.3vh, 14px) clamp(14px, 1.2vw, 20px); }
+  .gg-layout .gg-hero { padding: clamp(10px, 2vh, 24px) clamp(16px, 1.6vw, 26px); }
+  body .app-frame .gg-layout .gg-hero-garden h1 { font-size: clamp(20px, 3.2vh, 34px); }
+  .gg-layout .gg-hero-sticker { width: clamp(54px, 9vh, 96px) !important; height: clamp(54px, 9vh, 96px) !important; }
+  .gg-layout .gg-levels :is(a, button) { min-height: clamp(40px, 6vh, 60px); }
+  .gg-layout .gg-levels strong { font-size: clamp(14px, 1.9vh, 17px); }
+  .gg-layout .gt { padding: clamp(10px, 1.6vh, 18px); }
+  .gg-layout .gt-tile { padding: clamp(7px, 1.3vh, 14px) clamp(10px, 1vw, 14px); }
+  .gg-layout .gt-tile strong { font-size: clamp(14px, 1.9vh, 17px); }
+  .gg-layout .gg-side-stats strong { font-size: clamp(18px, 2.8vh, 28px); }
+}
+@media (min-width: 1181px) and (min-height: 820px) {
+  .gg-layout .gg-hero-copy > p { display: block; margin: 2px 0 8px; }
+  .gg-layout .gt-tile em { display: block; }
 }

@@ -158,20 +158,67 @@
 /* Wide content area: room for the next review card beside the plan */
 @container vh (min-width:1150px){.vh-hero{grid-template-columns:minmax(0,1fr) auto auto}.vh-stack{display:block}}
 
-/* Taller screens: bring back the explanatory copy and a little more air */
+/* Taller screens: bring back the explanatory copy */
 @media(min-height:760px){
-  .vh-main{gap:14px}
-  .vh-side{gap:12px}
-  .vh-hero{padding:20px 24px}
-  .vh-hero h1{margin:6px 0 8px;font-size:30px}
-  .vh-hero p{display:block}
-  .vh-stack{width:190px;height:120px}
-  .vh-feature{padding:18px 20px}
-  .vh-tile{min-height:72px;padding:12px 14px}
-  .vh-mode{min-height:54px}
-  .vh-more{display:block}
-  .vh-side section{padding:16px}
-  .vh-journey p,.vh-lookup p{display:block}
+  .vh-hero p,.vh-more,.vh-journey p,.vh-lookup p{display:block}
+}
+
+/* Fill the screen on desktop: the board is exactly one viewport tall at any height. Sections share the
+   spare height by weight, and type, icons and padding grow with the viewport height (vh) from the
+   compact sizes above, so a short laptop stays compact and a tall screen has no empty band at the bottom. */
+@media(min-width:1100px){
+  .vocabulary-layout .vocabulary-landing.vocab-home{display:flex;flex-direction:column;min-height:calc(100dvh - var(--app-header-height,64px) - 13px)}
+  .vh-board{flex:1;align-items:stretch;grid-template-columns:minmax(0,1fr) clamp(272px,17vw,340px);gap:clamp(12px,1.6vh,18px)}
+  .vh-main{display:flex;flex-direction:column;gap:clamp(8px,1.5vh,16px)}
+  .vh-main>.vh-hero{flex:1.15 1 auto;padding:clamp(11px,2.2vh,26px) clamp(18px,2vw,30px)}
+  .vh-main>.vh-featured{flex:1.1 1 auto}
+  .vh-main>section:not(.vh-hero):not(.vh-featured){display:flex;flex:1 1 auto;flex-direction:column}
+  .vh-main>section>:is(.vh-tiles,.vh-modes,.vh-use){flex:1}
+  .vh-label{font-size:clamp(14px,1.9vh,18px)}
+  .vh-hero h1{margin:clamp(4px,.8vh,8px) 0 clamp(10px,1.6vh,16px);font-size:clamp(24px,3.6vh,38px)}
+  .vh-hero p{font-size:clamp(14px,1.8vh,17px)}
+  .vh-path-dot{width:clamp(28px,4.2vh,40px);height:clamp(28px,4.2vh,40px)}
+  .vh-path b{font-size:clamp(13.5px,1.8vh,17px)}
+  .vh-path small{font-size:clamp(11px,1.45vh,14px)}
+  .vh-button{min-height:clamp(40px,5.6vh,54px);font-size:clamp(14px,1.8vh,17px)}
+  .vh-button.ghost{min-height:clamp(34px,4.8vh,48px)}
+  .vh-stack{width:clamp(170px,22vh,240px);height:clamp(96px,15vh,170px)}
+  .vh-stack-card.front strong{font-size:clamp(20px,3vh,30px)}
+  .vh-feature{align-content:center;padding:clamp(12px,2vh,24px) clamp(16px,1.6vw,26px);row-gap:clamp(8px,1.6vh,18px);grid-template-columns:auto minmax(0,1fr) auto}
+  .vh-feature>.sticker{width:clamp(40px,7.5vh,84px)!important;height:clamp(40px,7.5vh,84px)!important}
+  .vh-feature h3{font-size:clamp(18px,2.7vh,28px)}
+  .vh-feature-head p{font-size:clamp(12px,1.6vh,15px)}
+  .vh-meter{height:clamp(7px,1vh,10px)}
+  .vh-feature-go{min-height:clamp(34px,5vh,48px);padding:0 clamp(14px,1.4vw,20px);font-size:clamp(13.5px,1.8vh,16px)}
+  .vh-tile{gap:clamp(8px,1.2vw,14px);padding:clamp(8px,1.4vh,16px) clamp(10px,1vw,16px)}
+  .vh-tile>.sticker{width:clamp(30px,5.2vh,56px)!important;height:clamp(30px,5.2vh,56px)!important}
+  .vh-tile strong{font-size:clamp(14px,1.9vh,18px)}
+  .vh-tile small{font-size:clamp(11px,1.45vh,13.5px)}
+  .vh-tile .vh-more,.vh-mode small{font-size:clamp(11px,1.45vh,14px)}
+  .vh-mode{gap:clamp(7px,1vw,12px);padding:clamp(6px,1.2vh,14px) clamp(8px,.9vw,14px)}
+  .vh-mode-icon{width:clamp(28px,4.6vh,46px);height:clamp(28px,4.6vh,46px);border-radius:clamp(9px,1.3vh,13px)}
+  .vh-mode-icon svg{width:clamp(16px,2.4vh,22px);height:clamp(16px,2.4vh,22px)}
+  .vh-mode b{font-size:clamp(13.5px,1.9vh,17px)}
+  .vh-use-card{padding:clamp(7px,1.2vh,14px) clamp(12px,1.2vw,18px)}
+  .vh-use-card>.sticker{width:clamp(30px,5vh,48px)!important;height:clamp(30px,5vh,48px)!important}
+  .vh-use-card b{font-size:clamp(14px,1.9vh,17px)}
+  .vh-use-card small{font-size:clamp(12px,1.5vh,14px)}
+  .vh-side{display:flex;flex-direction:column;gap:clamp(10px,1.5vh,16px)}
+  .vh-side section{display:flex;flex-direction:column;padding:clamp(12px,1.8vh,20px) clamp(14px,1.2vw,18px)}
+  .vh-side>.vh-daily{flex:1 1 auto}
+  .vh-side>.vh-journey{flex:1 1 auto;justify-content:space-between}
+  .vh-side>.vh-lookup{flex:.55 1 auto;justify-content:center}
+  .vh-side h2{font-size:clamp(15px,2vh,19px)}
+  .vh-daily h2{margin-top:clamp(6px,1.2vh,12px);font-size:clamp(22px,3.5vh,36px)}
+  .vh-daily-meaning{font-size:clamp(13.5px,1.8vh,17px)}
+  .vh-daily blockquote{font-size:clamp(12px,1.6vh,15px);-webkit-line-clamp:4}
+  .vh-daily-actions{margin-top:auto;padding-top:10px}
+  .vh-daily-actions button{min-height:clamp(34px,4.8vh,46px);font-size:clamp(12px,1.6vh,15px)}
+  .vh-journey-bar{height:clamp(8px,1.2vh,12px)}
+  .vh-journey-steps b{font-size:clamp(18px,2.8vh,28px)}
+  .vh-journey-steps span{font-size:clamp(11px,1.35vh,13px)}
+  .vh-lookup input,.vh-lookup button{height:clamp(32px,4.6vh,44px)}
+  .vh-lookup button{width:clamp(32px,4.6vh,44px)}
 }
 
 /* Narrower content areas */
