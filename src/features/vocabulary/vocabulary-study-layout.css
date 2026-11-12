@@ -171,3 +171,20 @@
   .vocab-flip-card{margin:8px 0}
   .vocab-flip-card-actions{margin:8px 0}
 }
+/* Short laptop screens (2026-11-12): back link, set name, modes and the two toggles share one toolbar row,
+   so the session fits a 1280×590 window like the other Vocabulary pages. */
+@media(max-height:760px) and (min-width:1100px){
+  .vocab-study{--vs-chrome:390px}
+  .vocab-study-toolbar{display:flex;flex-wrap:wrap;align-items:center;gap:6px 10px;padding:6px 10px}
+  .vocab-study-toolbar-heading{display:contents}
+  .vocab-study-toolbar-heading>span{flex:none;max-width:160px}
+  .vocab-study-toolbar .vocab-study-modes{order:1;flex:1;min-width:0;margin:0;padding:0;border:0}
+  .vocab-study-toolbar .vocab-study-modes button{min-height:34px;padding:4px 6px}
+  .vocab-study-toolbar-heading>button{order:2}
+  .vocab-study-toolbar .vocab-study-toolbar-row{order:3;flex-basis:100%;margin-top:2px}
+  .vocabulary-layout .vocab-hub.vocab-hub-study{padding:2px 6px}
+  .vocab-flip-card{margin:5px 0}
+  .vocab-study .vocab-study-board>.vocab-muted{margin-top:2px}
+  .vocab-study-board-match .vocab-match-grid{margin:8px 0}
+  .vocab-study-board-match .vocab-match-grid button{min-height:42px;padding-block:6px}
+}
