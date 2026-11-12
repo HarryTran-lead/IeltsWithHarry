@@ -21,6 +21,7 @@ export default async function SharedReadingPage({ params }: { params: Promise<{ 
   const notes = (attempt.notes || {}) as Record<string, string>;
   const content = attemptContent(contentSchema.parse(version.content), notes);
   const result = scoreAnswers(content, (attempt.answers || {}) as Record<string, string>);
-  const review = result.review.map((question) => ({ ...question, evidence: readingEvidence[question.id as keyof typeof readingEvidence] || evidenceFromExplanation(question.explanation) }));
+  // The five-step explanations are for the learner who sat the test; a shared result shows the answers only.
+  const review = result.review.map((item) => { const question = { ...item }; delete question.fiveStep; return question; }).map((question) => ({ ...question, evidence: readingEvidence[question.id as keyof typeof readingEvidence] || evidenceFromExplanation(question.explanation) }));
   return <ReadingReview title={exam.title} content={content} review={review} format={exam.format} attribution={exam.attribution} startedAt={attempt.started_at} submittedAt={attempt.submitted_at || undefined} backHref="/" />;
 }
