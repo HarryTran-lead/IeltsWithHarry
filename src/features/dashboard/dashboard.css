@@ -95,3 +95,118 @@
   .dash-news-card { scroll-snap-align: start; }
 }
 @media (prefers-reduced-motion: reduce) { .dash-room-live.is-live i, .dash-room-onair i { animation: none; } }
+
+/* Tabs: one panel at a time under the welcome band, so the dashboard is a single screen. */
+.dash-tabs { display: flex; flex-direction: column; gap: 12px; min-width: 0; container-type: inline-size; }
+.dash-tablist { display: flex; gap: 4px; padding: 4px; overflow-x: auto; border: 1px solid var(--line); border-radius: var(--r-lg); background: #fff; box-shadow: var(--shadow); scrollbar-width: none; }
+.dash-tablist button { display: inline-flex; flex: 1 0 auto; align-items: center; justify-content: center; gap: 6px; padding: 7px 12px; border: 0; border-radius: var(--r-md); background: none; color: var(--muted); font-size: var(--fs-sm); font-weight: 700; white-space: nowrap; transition: background-color 0.2s, color 0.2s; }
+.dash-tablist button:hover { background: var(--surface-2); color: var(--navy); }
+.dash-tablist button[aria-selected="true"] { background: var(--teal-soft); color: var(--teal-strong); }
+.dash-tablist button:focus-visible, .dash-panel:focus-visible { outline: 2px solid var(--teal); outline-offset: 2px; }
+.dash-panel { min-width: 0; border-radius: var(--r-lg); }
+.dash-panel[hidden] { display: none !important; }
+.dash-panel > .card { margin: 0; }
+
+.dash-today, .dash-ranks { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; align-content: start; }
+.dash-today .goal-card { min-height: 0; }
+.dash-today .recommended { grid-column: 1 / -1; }
+.dash-today .gt-card { display: flex; flex-direction: column; }
+.dash-today .gt-more { margin-top: auto; padding-top: 8px; }
+/* Continue card: one column in a half-width tile; the sticker art and skill checklist sit in a row. */
+.dash-continue { display: flex; padding: 0; overflow: hidden; }
+.dash-continue .continue-card { display: flex; flex: 1; flex-direction: column; gap: 10px; min-height: 0; margin: 0; padding: 14px 16px; border: 0; border-radius: inherit; }
+.dash-continue .continue-art { display: none; }
+.dash-continue .continue-body { display: flex; flex: 1 0 auto; flex-direction: column; align-items: flex-start; padding: 0; }
+.dash-continue .continue-body h3 { margin: 6px 0 4px; font-size: var(--fs-lg); }
+.dash-continue .continue-body p { display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; overflow: hidden; margin: 0 0 10px; }
+.dash-continue .continue-body .button { margin-top: auto; }
+.dash-continue .continue-skills { flex-direction: row; flex-wrap: wrap; justify-content: flex-start; gap: 6px 12px; padding: 10px 0 0; border-left: 0; border-top: 1px dashed #f0c9bf; }
+.dash-ranks { align-items: start; }
+.dash-ranks .achievements .card-head .text-link { margin-right: 0; }
+
+/* Two tiles side by side need about 560px; a narrower main column stacks them. */
+@container (max-width: 560px) {
+  .dash-today, .dash-ranks { grid-template-columns: minmax(0, 1fr); }
+  .dash-tablist button { flex: none; }
+}
+
+/*
+ * Desktop: the board is exactly one screen tall at any size. The tab panel and the planner take
+ * whatever height is left and scroll inside when their content is longer; the "Hôm nay" tiles,
+ * news cards and achievement cards stretch to fill a tall screen. Spacing scales with vh.
+ */
+@media (min-width: 1100px) {
+  .main-area:has(.dash-board) { padding-top: 8px; padding-bottom: 8px; }
+  .dash-board { box-sizing: border-box; height: calc(100dvh - var(--app-header-height, 64px) - 16px); min-height: 460px; grid-template-columns: minmax(0, 1fr) clamp(300px, 22vw, 380px); gap: clamp(12px, 1.2vw, 18px); }
+  .dash-board > .dashboard-main, .dash-board > .dashboard-aside { min-height: 0; gap: clamp(10px, 1.4vh, 16px); }
+  .dash-board .dash-tabs { flex: 1 1 0; min-height: 0; gap: clamp(8px, 1.2vh, 12px); }
+  .dash-board .dash-tablist { flex: none; }
+  .dash-board .dash-tablist button { padding: clamp(5px, 0.8vh, 9px) 12px; }
+  .dash-board .dash-panel { flex: 1 1 0; min-height: 0; overflow: auto; overscroll-behavior: contain; scrollbar-width: thin; }
+  .dash-board .dash-today { grid-auto-rows: minmax(min-content, 1fr); gap: clamp(10px, 1.4vh, 16px); }
+  .dash-board .dash-ranks { grid-auto-rows: minmax(min-content, 1fr); align-items: stretch; gap: clamp(10px, 1.4vh, 16px); }
+
+  /* Tiến độ: the desktop two-column arrangement even in the narrower main column, with tighter cards. */
+  .dash-board .dash-progress .sp-overview { gap: 10px; margin-bottom: 12px; }
+  .dash-board .dash-progress .sp-overview > div { gap: 2px; padding: 10px 14px; }
+  .dash-board .dash-progress .sp-overview strong { font-size: 22px; }
+  .dash-board .dash-progress .sp-grid { grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 12px; }
+  .dash-board .dash-progress :is(.sp-goals, .sp-stats) { grid-column: span 7; }
+  .dash-board .dash-progress :is(.sp-exam, .sp-calendar) { grid-column: span 5; }
+  .dash-board .dash-progress .sp-card { padding: 12px 14px; }
+  .dash-board .dash-progress .sp-card .card-head { margin-bottom: 10px; }
+  .dash-board .dash-progress .sp-goal-overall select { font-size: 36px; }
+
+  .dash-board .goal-card, .dash-board .gt-card, .dash-board .slp-dashboard-card { padding: clamp(12px, 1.8vh, 20px) clamp(14px, 1.2vw, 20px); }
+  .dash-board .goal-card { display: flex; flex-direction: column; }
+  .dash-board .goal-card .card-head { margin-bottom: clamp(6px, 1.2vh, 14px); }
+  .dash-board .goal-content { flex: 1; }
+  .dash-board .progress-ring { width: clamp(84px, 13vh, 132px); height: clamp(84px, 13vh, 132px); padding: clamp(7px, 1vh, 10px); }
+  .dash-board .slp-dashboard-card { align-content: space-between; }
+  .dash-board .slp-dashboard-card .slp-actions { display: flex; flex-wrap: nowrap; align-items: center; gap: 14px; margin-top: 0; }
+  .dash-board .slp-dashboard-card .slp-actions > * { white-space: nowrap; }
+
+  .dash-board .dash-path > .learning-path { box-sizing: border-box; min-height: 100%; }
+  .dash-board .dash-news-panel > .dash-news { box-sizing: border-box; display: flex; flex-direction: column; min-height: 100%; }
+  .dash-board .dash-news-grid { flex: 1; }
+  .dash-board .dash-news-card { grid-template-rows: minmax(0, 1fr) auto auto; }
+  .dash-board .dash-news-img { aspect-ratio: auto; min-height: 120px; }
+
+  /* Welcome band on one row: streak on the left, both actions on the right. */
+  .app-frame .dash-board .welcome-copy { padding: clamp(8px, 1.2vh, 14px) 14px; }
+  .app-frame .dash-board .welcome-row { gap: 12px; }
+  .dash-board .welcome-row .streak-week { gap: 3px; }
+  .app-frame .dash-board .welcome-actions { flex-wrap: nowrap; gap: 8px; }
+  .app-frame .dash-board .welcome-actions .button { padding: 0 12px; white-space: nowrap; }
+
+  /* Grammar card: the roadmap link moves into the card corner; tiles stay one line each and share the height. */
+  .dash-board .gt-card { position: relative; }
+  .dash-board .gt-card .gt { display: flex; flex: 1; flex-direction: column; }
+  .dash-board .gt-card .gt-head { margin-bottom: clamp(6px, 1vh, 10px); }
+  .dash-board .gt-card .gt-tiles { flex: 1; grid-auto-rows: minmax(0, 1fr); gap: clamp(5px, 0.8vh, 10px); }
+  .dash-board .gt-card .gt-tile { min-height: 0; padding: clamp(5px, 0.9vh, 12px) 12px; gap: 10px; }
+  .dash-board .gt-card .gt-tile strong, .dash-board .gt-card .gt-tile em { white-space: nowrap; }
+  .dash-board .gt-card .gt-tile strong { font-size: var(--fs-sm); }
+  .dash-board .gt-card .gt-more { position: absolute; top: clamp(12px, 1.8vh, 20px); right: clamp(14px, 1.2vw, 20px); margin: 0; padding: 0; font-size: var(--fs-xs); }
+  .dash-board .dash-room-foot > span { white-space: nowrap; }
+
+  .dash-board .dash-room { flex: none; gap: clamp(8px, 1.2vh, 12px); padding: clamp(12px, 1.6vh, 16px); }
+  .dash-board .planner-mini { display: flex; flex: 1 1 0; flex-direction: column; min-height: 0; padding: clamp(12px, 1.6vh, 18px) 16px; }
+  .dash-board .planner-mini .card-head { margin-bottom: clamp(8px, 1.2vh, 14px); }
+  .dash-board .planner-mini .task-list { flex: 1 1 0; min-height: 0; overflow: auto; overscroll-behavior: contain; scrollbar-width: thin; }
+  .dash-board .planner-mini .add-task { flex: none; height: clamp(36px, 5vh, 42px); margin-top: 10px; }
+}
+/* Short laptop screens: the room card drops the stream picker and chat lines (both live on the room page). */
+@media (min-width: 1100px) and (max-height: 819px) {
+  .dash-board .dash-room-streams, .dash-board .dash-room-chat { display: none; }
+  .dash-board .dash-room-foot .button { min-height: 34px; }
+  .dash-board .gt-card .gt-tile em, .dash-board .dash-continue .continue-skills { display: none; }
+}
+/* Tall screens: the continue card gets its sticker scene back above the lesson. */
+@media (min-width: 1100px) and (min-height: 820px) {
+  .dash-board .dash-continue .continue-art { display: block; flex: 1 1 0; min-height: 90px; }
+  .dash-board .dash-continue .continue-body { flex: none; }
+}
+@media (min-width: 1100px) and (max-height: 679px) {
+  .dash-board .dash-continue .continue-body p { display: none; }
+}

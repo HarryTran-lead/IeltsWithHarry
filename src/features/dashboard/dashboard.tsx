@@ -1,4 +1,5 @@
 "use client";
+import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import {
   Activity,
@@ -11,8 +12,10 @@ import {
   Headphones,
   Medal,
   Mic,
+  Newspaper,
   PenLine,
   Route,
+  Sun,
   Target,
   Zap,
 } from "lucide-react";
@@ -123,6 +126,14 @@ function LearningPath() {
         <Link href="/app/learn" className="link-pill">Xem 4 chặng <ArrowRight size={15} /></Link>
       </div>
       <StageMap stops={stops} />
+    </section>
+  );
+}
+
+/** The lesson or stage to pick up next, shown on the "Hôm nay" tab. */
+function ContinueCard() {
+  return (
+    <section className="card dash-continue" aria-label="Học tiếp">
       <div className="continue-card">
         <div className="continue-art" aria-hidden="true">
           <Sticker name="globe" size={62} tilt={-8} delay={100} />
@@ -320,28 +331,83 @@ function Achievements() {
   );
 }
 
+const dashTabs = [
+  { id: "today", label: "Hôm nay", icon: Sun },
+  { id: "path", label: "Lộ trình", icon: Route },
+  { id: "progress", label: "Tiến độ", icon: Activity },
+  { id: "news", label: "Daily News", icon: Newspaper },
+  { id: "ranks", label: "Thành tích", icon: Medal },
+] as const;
+type DashTab = (typeof dashTabs)[number]["id"];
+const TAB_KEY = "ieltswithharry-dashboard-tab-v1";
+
+/**
+ * The dashboard is one screen: the welcome strip, then one tab at a time in the space left. Every
+ * panel stays mounted (hidden when not chosen) so switching is instant and keeps its state; a panel
+ * longer than the screen scrolls inside itself. The last tab chosen is remembered in this browser.
+ */
+function DashboardTabs() {
+  const [tab, setTab] = useState<DashTab>("today");
+  const list = useRef<HTMLDivElement>(null);
+  useEffect(() => {
+    const raf = requestAnimationFrame(() => {
+      try {
+        const saved = localStorage.getItem(TAB_KEY);
+        if (dashTabs.some((item) => item.id === saved)) setTab(saved as DashTab);
+      } catch { /* storage may be blocked */ }
+    });
+    return () => cancelAnimationFrame(raf);
+  }, []);
+  function choose(id: DashTab, focus = false) {
+    setTab(id);
+    try { localStorage.setItem(TAB_KEY, id); } catch { /* storage may be blocked */ }
+    if (focus) list.current?.querySelector<HTMLButtonElement>(`#dash-tab-${id}`)?.focus();
+  }
+  function onKey(event: React.KeyboardEvent) {
+    const index = dashTabs.findIndex((item) => item.id === tab);
+    const next = event.key === "ArrowRight" ? index + 1 : event.key === "ArrowLeft" ? index - 1 : event.key === "Home" ? 0 : event.key === "End" ? dashTabs.length - 1 : null;
+    if (next === null) return;
+    event.preventDefault();
+    choose(dashTabs[(next + dashTabs.length) % dashTabs.length].id, true);
+  }
+  const panel = (id: DashTab, className: string, children: React.ReactNode) => (
+    <div key={id} role="tabpanel" id={`dash-panel-${id}`} aria-labelledby={`dash-tab-${id}`} className={`dash-panel ${className}`} hidden={tab !== id} tabIndex={0}>{children}</div>
+  );
+  return (
+    <section className="dash-tabs" aria-label="Bảng điều khiển">
+      <div className="dash-tablist" role="tablist" aria-label="Chọn nội dung" ref={list} onKeyDown={onKey}>
+        {dashTabs.map(({ id, label, icon: Icon }) => (
+          <button key={id} type="button" role="tab" id={`dash-tab-${id}`} aria-selected={tab === id} aria-controls={`dash-panel-${id}`} tabIndex={tab === id ? 0 : -1} onClick={() => choose(id)}>
+            <Icon size={15} aria-hidden="true" /> {label}
+          </button>
+        ))}
+      </div>
+      {panel("today", "dash-today", <>
+        <TodayGoal />
+        <ContinueCard />
+        <GrammarTodayCard />
+        <DictationWeekCard />
+        {!releaseLocks && <><PracticeNow /><Recommended /></>}
+      </>)}
+      {panel("path", "dash-path", <LearningPath />)}
+      {panel("progress", "dash-progress", <StudyProgress />)}
+      {panel("news", "dash-news-panel", <LatestNews />)}
+      {panel("ranks", "dash-ranks", <><StreakLeaderboardCard /><Achievements /></>)}
+    </section>
+  );
+}
+
 export function Dashboard() {
   return (
-    <div className="dashboard-grid">
+    <div className="dashboard-grid dash-board">
       <div className="dashboard-main stagger">
         {demoMode && <div className="demo-note"><i aria-hidden="true" /> Bản xem thử · Thay đổi của bạn được lưu trong trình duyệt này</div>}
         <WelcomeBanner />
-        <LatestNews />
-        <StudyProgress />
-        <LearningPath />
-        <GrammarTodayCard />
-        <DictationWeekCard />
-        {releaseLocks ? <TodayGoal /> : <><div className="dashboard-duo">
-          <TodayGoal />
-          <PracticeNow />
-        </div>
-        <Recommended /></>}
+        <DashboardTabs />
       </div>
       <aside className="dashboard-aside stagger">
         <StudyRoomCard />
         <PlannerMini />
-        <StreakLeaderboardCard />
-        <Achievements />
       </aside>
     </div>
   );
