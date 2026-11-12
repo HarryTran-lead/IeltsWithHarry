@@ -444,6 +444,48 @@ body .app-frame :is(
   line-height: 1.18;
 }
 
+/*
+ * Section headings inside a page share one size, below the page title. They ranged
+ * from 18px to 31px, so a section ("Chọn band để bắt đầu") could outshout the page.
+ * Display text that is meant to be big stays as it is: the word on a flashcard, book
+ * covers, and the result/finish cards.
+ */
+body .app-frame :is(
+  .section-head,
+  .practice-section-heading,
+  .practice-stage,
+  .translation-stage,
+  .dh-section-head,
+  .ielts-dashboard-section-head,
+  .ielts-vocab-picker-heading,
+  .ielts-panel,
+  .bank-overview-heading,
+  .bank-skill-list-heading,
+  .bank-shelf-heading,
+  .bank-history,
+  .vocab-section-heading,
+  .vocab-panel,
+  .vocabulary-landing-section-head,
+  .listening-vocab-section-head,
+  .listening-vocab-library-head,
+  .listening-vocab-study-head,
+  .collocations-library-head,
+  .smart-section-heading,
+  .smart-recent-head,
+  .package-step-heading,
+  .news-next-reads,
+  .news-auto-quiz-heading,
+  .voa-section-title,
+  .voa-exercise-heading,
+  .gg-roadmap-toolbar,
+  .gg-practice-top,
+  .study-course-head,
+  .practice-main
+) h2 {
+  font-size: var(--fs-section);
+  line-height: 1.25;
+}
+
 @media (max-width: 700px) {
   .page-head {
     gap: 8px 10px;
