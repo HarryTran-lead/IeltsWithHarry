@@ -75,6 +75,7 @@
   --fs-xl: 22px; /* large numbers */
   --fs-page-title: clamp(20px, 1.9vw, 24px); /* the one h1 of a portal page */
   --fs-article-title: clamp(24px, 2.4vw, 32px); /* lesson, article and exam titles */
+  --fs-section: 20px; /* section headings (h2) inside a page: never larger than the page title */
   --fw-regular: 400;
   --fw-medium: 500;
   --fw-semibold: 600;
@@ -93,5 +94,6 @@
   :root {
     --fs-page-title: 19px;
     --fs-article-title: clamp(22px, 6vw, 26px);
+    --fs-section: 18px;
   }
 }
