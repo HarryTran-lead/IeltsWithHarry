@@ -156,3 +156,18 @@
 @media(prefers-reduced-motion:reduce){.vocab-study-board-match .vocab-match-grid button.wrong{animation:none}}
 @media(max-width:650px){.vocab-study-card{min-height:0}.vocab-study-board-match .vocab-match-grid button{font-size:var(--fs-base)}}
 .vocab-study-toolbar-heading>button{min-height:36px}
+/* Zoom-stable session (2026-11-12): spacing in fixed px, and the top chrome compacts in short windows
+   (high zoom or small laptops) so the card, its tools and the main button fit on one screen. */
+.vocab-study{--vs-chrome:470px}
+@media(max-height:820px){
+  .vocab-study{--vs-chrome:430px;gap:8px}
+  .vocab-study-toolbar{padding:8px 12px}
+  .vocab-study-toolbar .vocab-study-modes{margin-top:6px;padding-top:6px}
+  .vocab-study-toolbar .vocab-study-modes button{min-height:36px;padding:4px 8px}
+  .vocab-study-toolbar .vocab-study-modes button small{display:none}
+  .vocab-study .vocab-study-board{padding:12px 16px}
+  .vocab-study-progress{margin-bottom:8px}
+  .vocab-stage{margin-bottom:4px}
+  .vocab-flip-card{margin:8px 0}
+  .vocab-flip-card-actions{margin:8px 0}
+}
