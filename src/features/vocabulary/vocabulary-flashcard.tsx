@@ -46,9 +46,10 @@ export function VocabularyFlashcard({ word, collection, flipped, onFlip, control
           <span className="vocab-flip-card-hint"><RotateCcw size={14} /> Lật thẻ</span>
         </span>
         <span className="vocab-flip-card-face vocab-flip-card-back">
-          <span className="vocab-flip-card-kicker">NGHĨA · CÁCH DÙNG · VÍ DỤ</span>
+          <span className="vocab-flip-card-head"><b>{word.headword}</b>{[word.source_ipa, word.pos].filter(Boolean).join(" · ")}</span>
           <strong className="vocab-flip-card-meaning">{word.meaning_vi || word.source_definition_en}</strong>
-          {(word.source_pattern || definition) && <span className="vocab-flip-card-usage">{word.source_pattern && <b>Cách dùng</b>} {word.source_pattern || definition}</span>}
+          {definition && <span className="vocab-flip-card-definition">{definition}</span>}
+          {word.source_pattern && <span className="vocab-flip-card-usage"><b>Cách dùng</b> {word.source_pattern}</span>}
           {word.source_examples_en.length > 0 && <span className="vocab-flip-card-examples">
             {word.source_examples_en.slice(0, 2).map((example, exampleIndex) => <span className="vocab-flip-card-example" key={`${exampleIndex}-${example}`}>
               <span className="vocab-flip-card-number">{String(exampleIndex + 1).padStart(2, "0")}</span>
