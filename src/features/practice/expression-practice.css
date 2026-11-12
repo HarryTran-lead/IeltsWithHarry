@@ -559,3 +559,34 @@
     display: none;
   }
 }
+
+/* Short laptop screens (a 1080p screen at 150% scaling leaves about 590px): the setup fits one screen,
+   like the Vocabulary home. Slimmer hero, one row per stage with its bands, a tighter start panel. */
+@media (max-height: 760px) and (min-width: 1101px) {
+  .main-area:has(> .page-enter > .translation-workspace), .main-area:has(> .translation-workspace) { padding-top: 4px; padding-bottom: 8px; }
+  .translation-workspace .xp-hero { grid-template-columns: minmax(0, 1fr) minmax(260px, 400px); gap: 18px; padding: 9px 18px; }
+  .translation-workspace .xp-hero h1 { margin: 2px 0 0; font-size: 24px; }
+  .translation-workspace .xp-hero-copy > p, .translation-workspace .xp-hero .practice-eyebrow, .translation-workspace .xp-stages > h2, .xp-stage-meter { display: none; }
+  .xp-steps { margin-top: 8px; }
+  .xp-steps li { padding: 4px 10px 4px 4px; font-size: var(--fs-xs); }
+  .xp-example { gap: 2px; padding: 6px 12px; }
+  .xp-example svg { display: none; }
+  .xp-example p { font-size: var(--fs-sm); -webkit-line-clamp: 1; }
+  .xp-setup { gap: 14px; margin-top: 8px; }
+  .xp-stages { gap: 6px; }
+  .xp-stage { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.45fr); align-items: center; column-gap: 14px; padding: 8px 12px; }
+  .xp-stage-head { gap: 10px; }
+  .xp-stage-index { width: 30px; height: 30px; font-size: var(--fs-sm); }
+  .xp-stage-head strong { font-size: var(--fs-base); }
+  .xp-stage-head small { display: block; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
+  .xp-bands { gap: 6px; }
+  .xp-bands button { gap: 0; padding: 5px 4px; }
+  .xp-bands button strong { font-size: var(--fs-md); }
+  .xp-stages .translation-mode-link { margin: 0; padding: 5px 12px; }
+  .xp-panel { gap: 8px; padding: 12px 14px; }
+  .xp-panel-label { font-size: 17px; }
+  .xp-panel-focus { font-size: var(--fs-sm); line-height: 1.45; }
+  .xp-panel-stats div { padding: 5px 4px; }
+  .xp-panel-stats dd { font-size: var(--fs-md); }
+  .xp-panel-note { line-height: 1.4; }
+}
