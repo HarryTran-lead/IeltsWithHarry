@@ -306,26 +306,224 @@
   line-height: 1.5;
 }
 
-.xp-sessionbar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 12px;
-  margin: 18px 0 14px;
-  padding: 10px 14px;
+/* Practice session: one card at the top of the page, worked by keyboard. */
+.xp-session {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 18px 24px 22px;
   border: 1px solid var(--line);
   border-radius: var(--r-lg);
   background: var(--surface);
-  color: var(--muted);
-  font-size: var(--fs-sm);
+  box-shadow: var(--shadow);
   scroll-margin-top: 16px;
 }
-.xp-sessionbar strong {
+.xp-session-head {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--muted);
+  font-size: var(--fs-sm);
+}
+.xp-session-title {
+  flex: 1;
+  min-width: 0;
+}
+.xp-session-title strong {
   color: var(--teal-strong);
 }
-.xp-sessionbar .practice-secondary {
+.xp-session-count {
+  color: var(--navy);
+  font-weight: var(--fw-bold);
+}
+.xp-session-head .practice-secondary {
   min-height: var(--btn-h-sm);
   padding: 0 12px;
+  font-size: var(--fs-xs);
+}
+.xp-session .practice-progress {
+  height: 6px;
+  margin: 12px 0 14px;
+}
+.xp-session .practice-stepper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.xp-session .practice-stepper li {
+  padding: 4px 10px;
+  border-radius: var(--r-pill);
+  background: var(--surface-2);
+  color: var(--subtle);
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-bold);
+}
+.xp-session .practice-stepper li.active {
+  background: var(--teal-strong);
+  color: #fff;
+}
+.xp-session .practice-stepper li.done {
+  background: var(--teal-soft);
+  color: var(--teal-strong);
+}
+.xp-session .practice-stage {
+  max-width: none;
+  margin: 16px 0 0;
+}
+.xp-session .practice-stage-label {
+  display: block;
+  margin-bottom: 8px;
+  letter-spacing: 0;
+  font-size: var(--fs-sm);
+}
+.xp-session .practice-word {
+  margin: 0 0 14px;
+  padding: 16px 20px;
+}
+.xp-session .practice-stage blockquote {
+  margin: 0 0 14px;
+  padding: 16px 20px;
+  font-size: clamp(17px, 1.6vw, 21px);
+}
+.xp-session .practice-stage blockquote.is-compact {
+  padding: 10px 16px;
+  color: var(--muted);
+  font-size: var(--fs-base);
+}
+.xp-session .practice-field {
+  margin: 0 0 12px;
+}
+.xp-session .practice-field input,
+.xp-session .practice-field textarea {
+  font-size: 16px; /* 16px keeps iOS Safari from zooming into the field */
+}
+.xp-session .practice-actions {
+  gap: 10px;
+}
+.xp-session kbd {
+  display: inline-block;
+  margin-left: 2px;
+  padding: 1px 6px;
+  border: 1px solid currentColor;
+  border-radius: var(--r-sm);
+  font: var(--fw-semibold) var(--fs-2xs) / 1.4 var(--font-sans);
+  opacity: 0.7;
+}
+.xp-key-note {
+  color: var(--subtle);
+  font-size: var(--fs-xs);
+}
+.xp-session .practice-hint-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: var(--fs-sm);
+}
+.xp-session .practice-hint {
+  margin: 10px 0 0;
+}
+
+.xp-session .practice-comparison {
+  margin: 0 0 10px;
+}
+.xp-session .practice-comparison small {
+  font-size: var(--fs-xs);
+  text-transform: uppercase;
+}
+.xp-session .practice-comparison p {
+  margin: 6px 0 0;
+  font-size: var(--fs-md);
+  white-space: normal;
+}
+.xp-diff-extra {
+  border-radius: 4px;
+  background: #ffe9e3;
+  color: #a3412a;
+  text-decoration: line-through;
+  text-decoration-color: #e9967e;
+}
+.xp-diff-missing {
+  border-radius: 4px;
+  background: #d6f3ee;
+  color: var(--teal-strong);
+  font-weight: var(--fw-bold);
+}
+.xp-diff-legend {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px 10px;
+  margin: 0 0 10px;
+  color: var(--subtle);
+  font-size: var(--fs-xs);
+}
+.xp-diff-legend span {
+  padding: 1px 6px;
+  text-decoration: none;
+}
+.xp-tip {
+  margin: 0 0 14px;
+  padding: 10px 14px;
+  border-radius: var(--r-md);
+  background: var(--sun-soft);
+  color: var(--ink);
+  font-size: var(--fs-sm);
+  line-height: 1.5;
+}
+.xp-session .practice-ratings {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  margin: 0;
+}
+.xp-session .practice-ratings > span {
+  margin-right: 4px;
+  color: var(--navy);
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-bold);
+}
+.xp-session .practice-ratings button {
+  min-height: var(--btn-h-md);
+  padding: 0 14px;
+  border: 1px solid var(--line);
+  background: var(--surface);
+  color: var(--navy);
+}
+.xp-session .practice-ratings button kbd {
+  margin: 0 4px 0 0;
+}
+.xp-session .practice-ratings button.is-again {
+  border-color: #f3c3b7;
+  background: #fff3ef;
+  color: #b2452c;
+}
+.xp-session .practice-ratings button.is-hard {
+  border-color: #f3dda4;
+  background: var(--sun-soft);
+  color: #8a5a00;
+}
+.xp-session .practice-ratings button.is-good {
+  border-color: #a9dcd9;
+  background: var(--teal-soft);
+  color: var(--teal-strong);
+}
+.xp-session .practice-ratings button.is-easy {
+  border-color: #b8e2c9;
+  background: var(--mint);
+  color: #1d7a4c;
+}
+.xp-session .practice-done {
+  padding: 18px 0 6px;
+  text-align: center;
+}
+.xp-session .practice-done .practice-actions {
+  justify-content: center;
+}
+.xp-session .practice-done h2 {
+  margin: 8px 0 4px;
 }
 
 @media (max-width: 1100px) {
@@ -348,5 +546,16 @@
   }
   .xp-stage {
     padding: 12px;
+  }
+  .xp-session {
+    padding: 14px;
+  }
+  .xp-session-head {
+    flex-wrap: wrap;
+  }
+  /* Touch keyboards have no shortcut keys, so the key hints are hidden on phones. */
+  .xp-session kbd,
+  .xp-key-note {
+    display: none;
   }
 }

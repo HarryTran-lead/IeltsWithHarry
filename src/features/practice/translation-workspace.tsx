@@ -3,11 +3,13 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { ArrowDown, ArrowRight, Check, RotateCcw, Volume2 } from "lucide-react";
 import { TranslationModeLink } from "./translation-mode-link";
-import "./expression-practice.css";
 import { createClient } from "@/lib/supabase/browser";
 import { demoMode } from "@/lib/runtime";
 import { bandExercises, levelRubric, type BandExercise } from "@/lib/translation/band-practice";
+import { compareWords } from "@/lib/translation/compare-words";
 import "./translation-workspace.css";
+// Loaded after the older stylesheet so the "Luyện diễn đạt" layout wins equal-specificity ties.
+import "./expression-practice.css";
 
 type Rating = "again" | "hard" | "good" | "easy";
 type SavedReview = { rating: Rating; reviewedAt: string };
@@ -99,10 +101,10 @@ export function TranslationWorkspace() {
   const bandItems = useMemo(() => bandExercises.filter((item) => item.practiceLevel === band), [band]);
   const currentRubric = levelRubric.find((item) => item.level === band);
   const inSession = session.length > 0;
-  const sessionBarRef = useRef<HTMLDivElement>(null);
-  // Starting a session swaps the band picker for a slim bar; bring the exercise into view.
+  const sessionRef = useRef<HTMLElement>(null);
+  // A session replaces the hero and the band picker, so the exercise starts at the top.
   useEffect(() => {
-    if (inSession) sessionBarRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+    if (inSession) sessionRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
   }, [inSession]);
 
   function start() {
@@ -151,6 +153,41 @@ export function TranslationWorkspace() {
     setShowHint(false);
   }
 
+  function leaveSession() {
+    setSession([]);
+    setFinished(false);
+    setMessage("");
+  }
+
+  // Keyboard flow while practising: typing fields handle Enter themselves; these keys
+  // work anywhere else. 1–4 rate the comparison, Enter continues after a round,
+  // Alt+N plays the key word and Alt+G shows or hides the hint.
+  const keys = useRef({ rate, start, phase, finished, current, showHint });
+  useEffect(() => {
+    keys.current = { rate, start, phase, finished, current, showHint };
+  });
+  useEffect(() => {
+    if (!inSession) return;
+    function onKey(event: KeyboardEvent) {
+      const { rate: rateNow, start: startNow, phase: phaseNow, finished: done, current: item, showHint: hint } = keys.current;
+      if (event.altKey && !event.ctrlKey && !event.metaKey) {
+        const key = event.key.toLowerCase();
+        if (key === "n" && item) { event.preventDefault(); speak(item.targetTerm); }
+        if (key === "g" && phaseNow === "translate") { event.preventDefault(); setShowHint(!hint); }
+        return;
+      }
+      const target = event.target as HTMLElement | null;
+      if (event.ctrlKey || event.metaKey || target?.closest("input, textarea, select, [contenteditable='true']")) return;
+      if (done && event.key === "Enter") { event.preventDefault(); startNow(); return; }
+      if (!done && phaseNow === "review") {
+        const index = ["1", "2", "3", "4"].indexOf(event.key);
+        if (index >= 0) { event.preventDefault(); rateNow(ratingLabels[index].value); }
+      }
+    }
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [inSession]);
+
   const sample = bandItems.find((item) => item.type !== "word") ?? bandItems[0];
   const bandStats = (level: string) => {
     const items = bandExercises.filter((item) => item.practiceLevel === level);
@@ -167,7 +204,7 @@ export function TranslationWorkspace() {
   }
 
   return <div className="translation-workspace content-page">
-    <header className="practice-hero xp-hero">
+    {!inSession && <header className="practice-hero xp-hero">
       <div className="xp-hero-copy">
         <span className="practice-eyebrow">LUYỆN TẬP</span>
         <h1>Luyện diễn đạt</h1>
@@ -184,12 +221,74 @@ export function TranslationWorkspace() {
         <ArrowDown size={16} aria-hidden="true" />
         <p lang="en">{sample.referenceAnswers[0]}</p>
       </figure>}
-    </header>
+    </header>}
 
-    {inSession ? <div className="xp-sessionbar" ref={sessionBarRef}>
-      <span><strong>Band {band}</strong> · {unitLabel(currentRubric?.unit)}{finished ? " · Đã xong lượt này" : ` · Bài ${position + 1}/${session.length}`}</span>
-      <button type="button" className="practice-secondary" onClick={() => { setSession([]); setFinished(false); setMessage(""); }}><RotateCcw size={16} /> Đổi band</button>
-    </div> : <section className="xp-setup" aria-label="Chọn band luyện tập">
+    {inSession ? <section className="xp-session" ref={sessionRef} aria-label={`Luyện diễn đạt band ${band}`}>
+      <div className="xp-session-head">
+        <span className="xp-session-title"><strong>Band {band}</strong> · {unitLabel(currentRubric?.unit)}{current && !finished ? ` · ${current.topic}` : ""}</span>
+        <span className="xp-session-count">{finished ? "Xong lượt này" : `Bài ${position + 1}/${session.length}`}</span>
+        <button type="button" className="practice-secondary" onClick={leaveSession}><RotateCcw size={15} /> Đổi band</button>
+      </div>
+      <div className="practice-progress" aria-hidden="true"><i style={{ width: `${finished ? 100 : ((position + (phase === "copy" ? 0 : phase === "translate" ? 0.33 : 0.67)) / session.length) * 100}%` }} /></div>
+      {message && <p className="practice-message" role="status">{message}</p>}
+      {finished ? <div className="practice-done">
+        <Check size={34} />
+        <h2>Hoàn thành {session.length} bài ở band {band}</h2>
+        <p className="practice-muted">Tiến độ được lưu trên trình duyệt này. Luyện tiếp các bài mới ở band này, hoặc đổi sang band khác.</p>
+        <div className="practice-actions">
+          <button className="practice-primary" type="button" autoFocus onClick={start}>Luyện tiếp {sessionSize} bài <ArrowRight size={18} /><kbd>Enter</kbd></button>
+          <button className="practice-secondary" type="button" onClick={leaveSession}>Đổi band</button>
+        </div>
+      </div> : current ? <div className="xp-exercise" key={`${current.id}-${phase}`}>
+        <ol className="practice-stepper" aria-label="Các bước">
+          <li className={phase === "copy" ? "active" : "done"}>1 · Chép từ khóa</li>
+          <li className={phase === "translate" ? "active" : phase === "review" ? "done" : ""}>2 · Viết bằng tiếng Anh</li>
+          <li className={phase === "review" ? "active" : ""}>3 · So với câu mẫu</li>
+        </ol>
+        {phase === "copy" ? <div className="practice-stage">
+          <div className="practice-word"><strong>{current.targetTerm}</strong><span>{current.meaningVi}</span><button type="button" onClick={() => speak(current.targetTerm)} aria-label={`Nghe phát âm ${current.targetTerm}`} title="Nghe (Alt+N)"><Volume2 size={21} /></button></div>
+          <label className="practice-field">Gõ lại từ khóa để nhớ cách viết<input value={copyAnswer} onChange={(event) => { setCopyAnswer(event.target.value); setCopyError(false); }} onKeyDown={(event) => {
+            if (event.key !== "Enter") return;
+            event.preventDefault();
+            if (event.shiftKey) setPhase("translate"); else if (copyAnswer.trim()) checkCopy();
+          }} autoFocus placeholder={current.targetTerm} autoComplete="off" autoCapitalize="off" spellCheck={false} /></label>
+          {copyError && <p className="practice-error" role="alert">Chưa đúng. Nhìn lại từ phía trên và gõ lại.</p>}
+          <div className="practice-actions">
+            <button type="button" className="practice-primary" onClick={checkCopy} disabled={!copyAnswer.trim()}>Kiểm tra <kbd>Enter</kbd></button>
+            <button type="button" className="practice-secondary" onClick={() => setPhase("translate")}>Bỏ qua <kbd>Shift+Enter</kbd></button>
+          </div>
+        </div> : phase === "translate" ? <div className="practice-stage">
+          <span className="practice-stage-label">Diễn đạt {current.type === "word" ? "từ" : current.type === "phrase" ? "cụm từ" : current.type === "paragraph" ? "đoạn" : "câu"} này bằng tiếng Anh</span>
+          <blockquote lang="vi">{current.promptVi}</blockquote>
+          <label className="practice-field">Câu tiếng Anh của bạn<textarea lang="en" value={translation} onChange={(event) => setTranslation(event.target.value)} onKeyDown={(event) => {
+            if (event.key !== "Enter" || event.shiftKey || event.nativeEvent.isComposing) return;
+            event.preventDefault();
+            if (translation.trim()) setPhase("review");
+          }} rows={current.type === "paragraph" ? 5 : 3} maxLength={2000} autoFocus spellCheck={false} placeholder="Viết bằng tiếng Anh…" /></label>
+          <div className="practice-actions">
+            <button className="practice-primary" type="button" disabled={!translation.trim()} onClick={() => setPhase("review")}>Xem câu mẫu <kbd>Enter</kbd></button>
+            <button className="practice-hint-toggle" type="button" onClick={() => setShowHint(!showHint)}>{showHint ? "Ẩn gợi ý" : "Gợi ý từ khóa"} <kbd>Alt+G</kbd></button>
+            <small className="xp-key-note">Shift+Enter để xuống dòng</small>
+          </div>
+          {showHint && <p className="practice-hint">{current.targetTerm} · {current.meaningVi}</p>}
+        </div> : (() => {
+          const diff = compareWords(translation, current.referenceAnswers[0]);
+          return <div className="practice-stage">
+            <blockquote lang="vi" className="is-compact">{current.promptVi}</blockquote>
+            <div className="practice-comparison">
+              <div><small>Bạn viết</small><p lang="en">{diff.mine.map((token, index) => <span key={index} className={token.same ? undefined : "xp-diff-extra"}>{token.text} </span>)}</p></div>
+              <div><small>Câu mẫu</small><p lang="en">{diff.model.map((token, index) => <span key={index} className={token.same ? undefined : "xp-diff-missing"}>{token.text} </span>)}</p></div>
+            </div>
+            <p className="xp-diff-legend"><span className="xp-diff-extra">từ chỉ có trong câu của bạn</span><span className="xp-diff-missing">từ có trong câu mẫu</span> Một ý có nhiều cách diễn đạt đúng, nên chấm theo nghĩa, ngữ pháp và cách dùng từ.</p>
+            <p className="xp-tip"><strong>Lưu ý:</strong> {current.explanationVi}</p>
+            <div className="practice-ratings" role="group" aria-label="Bạn làm câu này thế nào?">
+              <span>Bạn làm câu này thế nào?</span>
+              {ratingLabels.map((item, index) => <button key={item.value} type="button" className={`is-${item.value}`} onClick={() => rate(item.value)}><kbd>{index + 1}</kbd>{item.label}</button>)}
+            </div>
+          </div>;
+        })()}
+      </div> : null}
+    </section> : <section className="xp-setup" aria-label="Chọn band luyện tập">
       <div className="xp-stages">
         <h2>Chọn chặng và band</h2>
         {stages.map((stage, index) => {
@@ -234,30 +333,5 @@ export function TranslationWorkspace() {
         <small className="xp-panel-note">{currentRubric?.noteVi} Band ở đây là mức luyện tập, không phải điểm IELTS được chấm chính thức.{Number(band) >= 7 && " Các nghiên cứu và ví dụ trong bài là tình huống minh họa, không phải dữ kiện trích nguồn."} Tiến độ được lưu trên trình duyệt này.</small>
       </aside>
     </section>}
-
-      {inSession && message && <p className="practice-message" role="status">{message}</p>}
-      {finished ? <section className="translation-practice-card practice-done"><Check size={38} /><h2>Hoàn thành {session.length} bài ở band {band}</h2><p>Tiến độ được lưu trên trình duyệt này. Bạn có thể luyện tiếp những bài còn lại hoặc chuyển sang band kế tiếp.</p><button className="practice-primary" onClick={() => { setSession([]); setFinished(false); setMessage(""); }}>Chọn bài tiếp theo <ArrowRight size={18} /></button></section>
-        : current ? <section className="translation-practice-card" key={current.id}>
-          <div className="translation-practice-card-top"><span>{current.topic} · Band {current.practiceLevel}</span><span>Bài {position + 1}/{session.length}</span></div>
-          <div className="practice-progress"><i style={{ width: `${((position + (phase === "copy" ? 0 : phase === "translate" ? 0.33 : 0.67)) / session.length) * 100}%` }} /></div>
-          <div className="practice-stepper"><span className={phase === "copy" ? "active" : ""}>01 · Chép từ</span><span className={phase === "translate" ? "active" : ""}>02 · Viết bằng tiếng Anh</span><span className={phase === "review" ? "active" : ""}>03 · Tự đánh giá</span></div>
-          {phase === "copy" ? <div className="practice-stage">
-            <span className="practice-stage-label">HỌC VÀ CHÉP TỪ</span><h2>Ghi nhớ từ khóa</h2><p className="practice-muted">Nhìn từ và nghĩa, sau đó tự gõ lại để nhớ cách viết.</p>
-            <div className="practice-word"><strong>{current.targetTerm}</strong><span>{current.meaningVi}</span><button type="button" onClick={() => speak(current.targetTerm)} aria-label={`Nghe phát âm ${current.targetTerm}`}><Volume2 size={21} /></button></div>
-            <label className="practice-field">Từ tiếng Anh của bạn<input value={copyAnswer} onChange={(event) => { setCopyAnswer(event.target.value); setCopyError(false); }} onKeyDown={(event) => { if (event.key === "Enter") checkCopy(); }} autoFocus placeholder="Gõ lại từ ở đây…" autoComplete="off" /></label>
-            {copyError && <p className="practice-error" role="alert">Chưa đúng. Hãy nhìn lại từ phía trên và thử lần nữa.</p>}
-            <div className="practice-actions"><button type="button" className="practice-primary" onClick={checkCopy} disabled={!copyAnswer.trim()}>Kiểm tra từ <ArrowRight size={18} /></button><button type="button" className="practice-secondary" onClick={() => setPhase("translate")}>Bỏ qua bước chép từ</button></div>
-          </div> : phase === "translate" ? <div className="practice-stage">
-            <span className="practice-stage-label">VIẾT BẰNG TIẾNG ANH</span><h2>Diễn đạt {current.type === "word" ? "từ" : current.type === "phrase" ? "cụm từ" : current.type === "paragraph" ? "đoạn" : "câu"} này bằng tiếng Anh</h2><blockquote>{current.promptVi}</blockquote>
-            <button className="practice-hint-toggle" type="button" onClick={() => setShowHint(!showHint)}>{showHint ? "Ẩn" : "Xem"} gợi ý từ khóa</button>
-            {showHint && <p className="practice-hint">{current.targetTerm} · {current.meaningVi}</p>}
-            <label className="practice-field">Câu tiếng Anh của bạn<textarea value={translation} onChange={(event) => setTranslation(event.target.value)} rows={4} maxLength={2000} placeholder="Viết câu tiếng Anh của bạn…" /></label>
-            <div className="practice-actions"><button className="practice-primary" type="button" disabled={!translation.trim()} onClick={() => setPhase("review")}>Xem câu mẫu <ArrowRight size={18} /></button></div>
-          </div> : <div className="practice-stage">
-            <span className="practice-stage-label">SO SÁNH VÀ TỰ ĐÁNH GIÁ</span><h2>Đối chiếu cách diễn đạt</h2><div className="practice-comparison"><div><small>BẠN ĐÃ VIẾT</small><p>{translation}</p></div><div><small>CÂU MẪU</small><p>{current.referenceAnswers[0]}</p></div></div><p className="practice-muted">{current.explanationVi}</p><p className="practice-muted"><strong>Vì sao ở band {band}:</strong> {current.rationaleVi}</p>
-            <p className="practice-muted">Một ý có thể có nhiều cách diễn đạt đúng. Hãy xét ý nghĩa, ngữ pháp và cách dùng từ trước khi chọn mức độ.</p>
-            <div className="practice-ratings">{ratingLabels.map((item) => <button key={item.value} type="button" onClick={() => rate(item.value)}>{item.label}</button>)}</div>
-          </div>}
-        </section> : null}
   </div>;
 }
