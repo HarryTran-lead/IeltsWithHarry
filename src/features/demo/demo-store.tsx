@@ -146,6 +146,7 @@ export function DemoProvider({ children }: { children: React.ReactNode }) {
           const result = await supabase!.rpc("submit_exercise", { p_lesson_slug: lesson, p_answers: exerciseAnswersSchema.parse(answers) });
           if (result.error) throw result.error;
           grade = result.data as Grade;
+          window.dispatchEvent(new Event("learner-activity"));
         }
         setAttempts((current) => [{ id: crypto.randomUUID(), lesson, score: grade.score, total: grade.total, date: todayISO(), submittedAt: new Date().toISOString() }, ...current]);
         setTasks((current) => completeNextLinkedTask(current, lesson));

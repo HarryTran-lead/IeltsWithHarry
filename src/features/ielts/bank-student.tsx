@@ -19,7 +19,7 @@ import "./bank.css";
 type Exam = { id: string; title: string; skill: string; practice_type?: string; format: string; mode: string; duration_minutes: number; attribution: string; license: string; license_url: string; source_url: string; ai_generated: boolean; content?: ExamContent };
 type Attempt = { id: string; state: string; started_at: string; submitted_at?: string; answers: Record<string,string>; flags: string[]; notes: Record<string,string>; content?: ExamContent; ielts_exams?: Exam };
 type Result = { score: number; total: number; review: { id: string; given: string; correct: boolean; answers: string[]; explanation: string; type?: string }[] };
-async function api(path: string, body?: unknown) { const response = await fetch(`/api/ielts/bank/${path}`, body ? { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(body) } : undefined); const data = await response.json(); if (!response.ok) throw new Error(data.error || "Request failed"); return data; }
+async function api(path: string, body?: unknown) { const response = await fetch(`/api/ielts/bank/${path}`, body ? { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(body) } : undefined); const data = await response.json(); if (!response.ok) throw new Error(data.error || "Request failed"); if (body && path.startsWith("attempt")) window.dispatchEvent(new Event("learner-activity")); return data; }
 
 export function BankStudent({ examId, resultId, attemptId }: { examId?: string; resultId?: string; attemptId?: string }) {
   const router = useRouter();

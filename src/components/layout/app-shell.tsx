@@ -38,6 +38,8 @@ import { HarryBuddy } from "@/components/fx/harry-buddy";
 import { useDemo } from "@/features/demo/demo-store";
 import { communityEnabled, demoMode, liveMode, lockedLearnerPath } from "@/lib/runtime";
 import { useLearnerStreak } from "@/features/account/use-learner-streak";
+import { StreakCelebration } from "@/features/account/streak-celebration";
+import { tierFor } from "@/lib/streak-milestones";
 import { createClient } from "@/lib/supabase/browser";
 import { NotebookWidget } from "@/features/notebook/notebook-ui";
 import { useStudyPresence } from "@/features/study-room/study-presence";
@@ -191,6 +193,9 @@ function AppShellContent({ children, canManage }: { children: React.ReactNode; c
   const learningRoute = /^\/app\/(?:vocabulary\/(?:study|review|practice|listening|collocations|word-formation|translation)(?:\/|$)|reading\/vocabulary(?:\/|$)|listening\/vocabulary(?:\/|$))/.test(pathname);
   const { online: studyOnline } = useStudyPresence();
   const learnerStreak = useLearnerStreak();
+  const streakCount = demoMode ? 12 : learnerStreak?.current;
+  const streakTier = tierFor(streakCount ?? 0);
+  const streakAtRisk = Boolean(learnerStreak && !learnerStreak.activeToday && learnerStreak.current > 0);
   const newsUnread = useNewsUnread(pathname, liveMode);
   const [profileOpen, setProfileOpen] = useState(false);
   const [avatar, setAvatar] = useState("harry");
@@ -367,10 +372,11 @@ function AppShellContent({ children, canManage }: { children: React.ReactNode; c
         <div className="header-actions">
           {loginBonus > 0 && <span className="login-xp-toast" role="status">+5 XP · Đăng nhập hôm nay</span>}
           <HeaderWeatherWidget />
-          <Link href="/app/progress" className="stat-pill streak" title="Chuỗi ngày học">
-            <Flame size={18} fill="#ff9b3d" color="#ef6a24" />
-            <strong>{demoMode ? 12 : learnerStreak?.current ?? "…"}</strong>
-            <small>ngày liên tiếp</small>
+          <Link href="/app/progress" className={`stat-pill streak ${streakAtRisk ? "at-risk" : ""}`}
+            title={streakAtRisk ? `Học một bài hôm nay để giữ chuỗi ${streakCount} ngày!` : "Chuỗi ngày học"}>
+            <Flame size={18} fill={streakTier.colors[1]} color={streakTier.colors[0]} />
+            <strong>{streakCount ?? "…"}</strong>
+            <small>{streakAtRisk ? "giữ chuỗi nhé!" : "ngày liên tiếp"}</small>
           </Link>
           <div className="popover-wrap">
             {!demoMode ? <NotificationBell open={notificationsOpen} onToggle={() => { setNotificationsOpen(!notificationsOpen); setProfileOpen(false); }} /> : <><button
@@ -554,6 +560,7 @@ function AppShellContent({ children, canManage }: { children: React.ReactNode; c
         )}
       </nav>
       {!learningRoute && <NotebookWidget />}
+      <StreakCelebration streak={learnerStreak} />
     </div>
   );
 }
