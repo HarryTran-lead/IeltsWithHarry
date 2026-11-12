@@ -511,8 +511,8 @@ export function ExamCard({ exam, attempt, section }: { exam: CatalogExam; attemp
 
   const readingFullCover = exam.skill === "Reading" && exam.practice_type === "full_test" && !section;
   const suppliedReadingTest = exam.skill === "Reading"
-    ? /^english-skill-lab-reading-0(0[1-9]|10)$/i.exec(exam.external_id ?? "")?.[1]
-      ?? /^English Skill Lab · Reading Test (0[1-9]|10)(?: \(Bản luyện thử\))?$/.exec(exam.title)?.[1]
+    ? /^english-skill-lab-reading-0(0[1-9]|1[0-2])$/i.exec(exam.external_id ?? "")?.[1]
+      ?? /^English Skill Lab · Reading Test (0[1-9]|1[0-2])(?: \(Bản luyện thử\))?$/.exec(exam.title)?.[1]
     : undefined;
   const coverUrl = readingFullCover
     ? null
