@@ -103,6 +103,44 @@ const dailyLines = [
   "Chuỗi dài thêm rồi! Mai gặp lại nhé.",
 ];
 
+export type Reminder = {
+  kind: "at-risk" | "rekindle";
+  /** Streak kept so far (at-risk) or the run that just went out (rekindle). */
+  current: number;
+  /** What the streak becomes after one activity today. */
+  target: number;
+  longest: number;
+  /** Milestone reached by doing today's activity, if any. */
+  milestone: StreakMilestone | null;
+  next: StreakMilestone;
+};
+
+/**
+ * Nudge shown on the first visit of a day before any activity: keep a live
+ * streak alive, or relight one that went out. Brand new learners get nothing.
+ */
+export function reminderFor(
+  streak: { current: number; longest: number; today: string; activeToday: boolean; totalDays: number },
+  seen: SeenStreak | null,
+  remindedDay: string | null,
+): Reminder | null {
+  if (streak.activeToday || remindedDay === streak.today || streak.totalDays < 1) return null;
+  if (streak.current > 0) {
+    const target = streak.current + 1;
+    return { kind: "at-risk", current: streak.current, target, longest: streak.longest, milestone: milestoneAt(target), next: nextMilestone(streak.current) };
+  }
+  const lost = seen && seen.count > 1 ? seen.count : streak.longest;
+  return { kind: "rekindle", current: lost, target: 1, longest: streak.longest, milestone: null, next: nextMilestone(0) };
+}
+
+/** Whole hours and minutes until local midnight, when today's chance to keep the streak ends. */
+export function timeLeftToday(now: Date) {
+  const midnight = new Date(now);
+  midnight.setHours(24, 0, 0, 0);
+  const minutes = Math.max(0, Math.floor((midnight.getTime() - now.getTime()) / 60000));
+  return { hours: Math.floor(minutes / 60), minutes: minutes % 60, urgent: minutes < 180 };
+}
+
 /**
  * Decide the celebration for today's first activity, or null when there is nothing new.
  * `seen` is what this browser already celebrated; it stops the popup repeating.

@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { celebrationFor, milestoneAt, milestoneProgress, nextSeen, tierFor } from "../src/lib/streak-milestones";
+import { celebrationFor, milestoneAt, milestoneProgress, nextSeen, reminderFor, tierFor, timeLeftToday } from "../src/lib/streak-milestones";
 
 const base = { current: 5, longest: 5, today: "2026-11-12", activeToday: true };
 
@@ -31,6 +31,28 @@ describe("streak celebration", () => {
   it("keeps the best finished run as the record to beat", () => {
     expect(nextSeen({ current: 3, longest: 20, today: "2026-11-12" }, null).pastBest).toBe(20);
     expect(nextSeen({ current: 25, longest: 25, today: "2026-11-12" }, { day: "2026-11-11", count: 24, pastBest: 20 }).pastBest).toBe(20);
+  });
+});
+
+describe("daily reminder", () => {
+  const idle = { current: 12, longest: 20, today: "2026-11-12", activeToday: false, totalDays: 30 };
+
+  it("reminds once a day about a streak at stake", () => {
+    expect(reminderFor(idle, null, null)).toMatchObject({ kind: "at-risk", current: 12, target: 13, next: { days: 14 } });
+    expect(reminderFor({ ...idle, current: 13 }, null, null)?.milestone?.days).toBe(14);
+    expect(reminderFor(idle, null, "2026-11-12")).toBeNull();
+    expect(reminderFor({ ...idle, activeToday: true }, null, null)).toBeNull();
+  });
+
+  it("invites a relight after a broken streak, and leaves brand new learners alone", () => {
+    expect(reminderFor({ ...idle, current: 0 }, { day: "2026-11-09", count: 9 }, null)).toMatchObject({ kind: "rekindle", current: 9, longest: 20 });
+    expect(reminderFor({ ...idle, current: 0 }, null, null)?.current).toBe(20);
+    expect(reminderFor({ ...idle, current: 0, longest: 0, totalDays: 0 }, null, null)).toBeNull();
+  });
+
+  it("counts down to local midnight", () => {
+    expect(timeLeftToday(new Date(2026, 10, 12, 21, 15))).toEqual({ hours: 2, minutes: 45, urgent: true });
+    expect(timeLeftToday(new Date(2026, 10, 12, 8, 0)).urgent).toBe(false);
   });
 });
 
