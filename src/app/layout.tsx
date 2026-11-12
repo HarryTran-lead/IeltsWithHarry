@@ -24,6 +24,7 @@ import "./stickers.css";
 import "./motion.css";
 import "./playful.css";
 import "./page-head.css";
+import "@/styles/screen-fit.css";
 import "./buttons.css";
 import { Be_Vietnam_Pro, Bricolage_Grotesque, Patrick_Hand } from "next/font/google";
 import { StickerDefs } from "@/components/stickers/stickers";
