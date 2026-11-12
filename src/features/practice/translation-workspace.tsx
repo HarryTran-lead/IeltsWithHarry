@@ -1,7 +1,8 @@
 "use client";
 
 import { useEffect, useMemo, useRef, useState } from "react";
-import { ArrowDown, ArrowRight, Check, RotateCcw, Volume2 } from "lucide-react";
+import { ArrowDown, ArrowRight, Check, CircleCheck, Flag, Layers, RotateCcw, Tags, Volume2 } from "lucide-react";
+import { Sticker, Tape, type StickerName } from "@/components/stickers/stickers";
 import { TranslationModeLink } from "./translation-mode-link";
 import { createClient } from "@/lib/supabase/browser";
 import { demoMode } from "@/lib/runtime";
@@ -26,11 +27,11 @@ const ratingLabels: { value: Rating; label: string }[] = [
  * The 17 practice bands grouped by what the learner writes: words and phrases, single
  * sentences, sentences that argue, then paragraphs (matching the rubric's units).
  */
-const stages = [
-  { name: "Từ và cụm từ", detail: "từ đơn đến câu ngắn", bands: ["1.0", "1.5", "2.0", "2.5"] },
-  { name: "Câu đơn", detail: "kể, kế hoạch, nguyên nhân", bands: ["3.0", "3.5", "4.0", "4.5"] },
-  { name: "Câu có lập luận", detail: "quan điểm, so sánh, hệ quả", bands: ["5.0", "5.5", "6.0", "6.5"] },
-  { name: "Đoạn văn", detail: "lập luận nhiều câu", bands: ["7.0", "7.5", "8.0", "8.5", "9.0"] },
+const stages: { name: string; detail: string; bands: string[]; sticker: StickerName; tone: string }[] = [
+  { name: "Từ và cụm từ", detail: "từ đơn đến câu ngắn", bands: ["1.0", "1.5", "2.0", "2.5"], sticker: "abc", tone: "mint" },
+  { name: "Câu đơn", detail: "kể, kế hoạch, nguyên nhân", bands: ["3.0", "3.5", "4.0", "4.5"], sticker: "bubble", tone: "sky" },
+  { name: "Câu có lập luận", detail: "quan điểm, so sánh, hệ quả", bands: ["5.0", "5.5", "6.0", "6.5"], sticker: "bulb", tone: "sun" },
+  { name: "Đoạn văn", detail: "lập luận nhiều câu", bands: ["7.0", "7.5", "8.0", "8.5", "9.0"], sticker: "scroll", tone: "lilac" },
 ];
 
 function unitLabel(unit?: string) {
@@ -196,6 +197,11 @@ export function TranslationWorkspace() {
   const bandDone = bandStats(band);
   const bandHard = bandItems.filter((item) => reviews[reviewKey(item)]?.rating === "again" || reviews[reviewKey(item)]?.rating === "hard").length;
   const bandTopics = new Set(bandItems.map((item) => item.topic)).size;
+  const stageIndex = Math.max(0, stages.findIndex((stage) => stage.bands.includes(band)));
+  const activeStage = stages[stageIndex];
+  const overallDone = bandExercises.filter((item) => Boolean(reviews[reviewKey(item)])).length;
+  const overallHard = bandExercises.filter((item) => reviews[reviewKey(item)]?.rating === "again" || reviews[reviewKey(item)]?.rating === "hard").length;
+  const percentOf = (done: number, total: number) => (total ? Math.round((done / total) * 100) : 0);
   function chooseBand(level: string) {
     setBand(level);
     setSession([]);
@@ -207,15 +213,27 @@ export function TranslationWorkspace() {
     {!inSession && <header className="practice-hero xp-hero">
       <div className="xp-hero-copy">
         <span className="practice-eyebrow">LUYỆN TẬP</span>
-        <h1>Luyện diễn đạt</h1>
-        <p>Nghĩ bằng tiếng Việt, viết ra tiếng Anh: từ một từ đến cả đoạn văn, qua 17 band luyện tập.</p>
-        <ol className="xp-steps" aria-label="Mỗi bài gồm ba bước">
-          <li><b>1</b> Học từ khóa</li>
-          <li><b>2</b> Viết câu tiếng Anh</li>
-          <li><b>3</b> So với câu mẫu</li>
-        </ol>
+        <h1>Luyện diễn đạt <span className="xp-tagline">nghĩ tiếng Việt, viết tiếng Anh</span></h1>
+        <p>Từ một từ đến cả đoạn văn, qua 17 band luyện tập. Mỗi lượt chỉ 5–15 bài ngắn.</p>
+        <div className="xp-hero-row">
+          <ol className="xp-steps" aria-label="Mỗi bài gồm ba bước">
+            <li><b>1</b> Học từ khóa</li>
+            <li><b>2</b> Viết câu tiếng Anh</li>
+            <li><b>3</b> So với câu mẫu</li>
+          </ol>
+          <span className="xp-overall" aria-label={`Đã luyện ${overallDone} trên ${bandExercises.length} bài${overallHard ? `, ${overallHard} câu cần ôn` : ""}`}>
+            <span className="xp-overall-bar" aria-hidden="true"><i style={{ width: `${Math.max(overallDone ? 2 : 0, percentOf(overallDone, bandExercises.length))}%` }} /></span>
+            <span aria-hidden="true"><b>{overallDone}</b>/{bandExercises.length} bài{overallHard ? <em> · {overallHard} cần ôn</em> : null}</span>
+          </span>
+        </div>
       </div>
-      {sample && <figure className="xp-example">
+      <div className="xp-hero-art" aria-hidden="true">
+        <Sticker name="harry" size={78} tilt={-4} float className="xp-art-harry" />
+        <Sticker name="bubble" size={40} tilt={10} delay={160} className="xp-art-bubble" />
+        <Sticker name="pencil" size={36} tilt={-14} delay={280} className="xp-art-pencil" />
+      </div>
+      {sample && <figure className={`xp-example tone-${activeStage.tone}`}>
+        <Tape tone="sun" className="xp-example-tape" />
         <figcaption>Ví dụ ở band {band} · {unitLabel(currentRubric?.unit)}</figcaption>
         <p lang="vi">{sample.promptVi}</p>
         <ArrowDown size={16} aria-hidden="true" />
@@ -296,17 +314,20 @@ export function TranslationWorkspace() {
           const done = counts.reduce((sum, item) => sum + item.done, 0);
           const total = counts.reduce((sum, item) => sum + item.total, 0);
           const open = stage.bands.includes(band);
-          return <div key={stage.name} className={`xp-stage ${open ? "is-open" : ""}`}>
+          return <div key={stage.name} className={`xp-stage tone-${stage.tone} ${open ? "is-open" : ""}`}>
             <div className="xp-stage-head">
-              <span className="xp-stage-index">{index + 1}</span>
-              <div><strong>{stage.name}</strong><small>Band {stage.bands[0]}–{stage.bands.at(-1)} · {stage.detail}</small></div>
+              <Sticker name={stage.sticker} size={44} tilt={index % 2 ? 7 : -7} pop={false} className="xp-stage-sticker" />
+              <div><small className="xp-stage-kicker">Chặng {index + 1}</small><strong>{stage.name}</strong><small className="xp-stage-detail">Band {stage.bands[0]}–{stage.bands.at(-1)} · {stage.detail}</small></div>
               <span className="xp-stage-count" aria-label={`Đã làm ${done} trên ${total} bài`}>{done}/{total}</span>
             </div>
-            <div className="xp-stage-meter" aria-hidden="true"><i style={{ width: `${total ? (done / total) * 100 : 0}%` }} /></div>
+            <div className="xp-stage-meter" aria-hidden="true"><i style={{ width: `${percentOf(done, total)}%` }} /></div>
             <div className="xp-bands">{stage.bands.map((level, bandIndex) => {
               const count = counts[bandIndex];
-              return <button key={level} type="button" className={band === level ? "selected" : ""} aria-pressed={band === level} onClick={() => chooseBand(level)}>
-                <strong>{level}</strong><small>{count.done === count.total && count.total ? <><Check size={12} /> Xong</> : `${count.done}/${count.total}`}</small>
+              const complete = count.done === count.total && count.total > 0;
+              return <button key={level} type="button" className={`xp-band ${band === level ? "selected" : ""} ${complete ? "is-done" : count.done ? "is-started" : ""}`} aria-pressed={band === level} onClick={() => chooseBand(level)}>
+                <strong>{level}</strong><small>{complete ? <><Check size={12} /> Xong</> : `${count.done}/${count.total}`}</small>
+                <i className="xp-band-bar" aria-hidden="true"><b style={{ width: `${percentOf(count.done, count.total)}%` }} /></i>
+                {complete && <span className="xp-band-badge" aria-hidden="true"><Check size={11} strokeWidth={3.5} /></span>}
               </button>;
             })}</div>
           </div>;
@@ -314,20 +335,29 @@ export function TranslationWorkspace() {
         <TranslationModeLink to="topic" />
       </div>
 
-      <aside className="xp-panel" aria-label={`Band ${band}`}>
-        <span className="xp-panel-label">Band {band} · {unitLabel(currentRubric?.unit)}</span>
+      <aside className={`xp-panel tone-${activeStage.tone}`} aria-label={`Band ${band}`}>
+        <div className="xp-panel-top">
+          <Sticker name={activeStage.sticker} size={56} tilt={-8} pop={false} className="xp-panel-sticker" />
+          <div className="xp-panel-title">
+            <span className="xp-panel-kicker">Chặng {stageIndex + 1} · {unitLabel(currentRubric?.unit)}</span>
+            <strong className="xp-panel-label">Band {band}</strong>
+          </div>
+          <span className="xp-panel-ring" style={{ "--p": `${percentOf(bandDone.done, bandDone.total)}%` } as React.CSSProperties} role="img" aria-label={`Đã làm ${bandDone.done} trên ${bandDone.total} bài`}>
+            <span><b>{percentOf(bandDone.done, bandDone.total)}%</b></span>
+          </span>
+        </div>
         {currentRubric && <p className="xp-panel-focus">{currentRubric.focusVi}</p>}
         <dl className="xp-panel-stats">
-          <div><dt>Bài</dt><dd>{bandItems.length}</dd></div>
-          <div><dt>Chủ đề</dt><dd>{bandTopics}</dd></div>
-          <div><dt>Đã làm</dt><dd>{bandDone.done}</dd></div>
-          <div><dt>Cần ôn</dt><dd>{bandHard}</dd></div>
+          <div className="is-total"><dt><Layers size={13} aria-hidden="true" /> Bài</dt><dd>{bandItems.length}</dd></div>
+          <div className="is-topics"><dt><Tags size={13} aria-hidden="true" /> Chủ đề</dt><dd>{bandTopics}</dd></div>
+          <div className="is-done"><dt><CircleCheck size={13} aria-hidden="true" /> Đã làm</dt><dd>{bandDone.done}</dd></div>
+          <div className="is-hard"><dt><Flag size={13} aria-hidden="true" /> Cần ôn</dt><dd>{bandHard}</dd></div>
         </dl>
         <div className="xp-size" role="group" aria-label="Số bài mỗi lượt">
           <span>Số bài mỗi lượt</span>
           <div>{[5, 10, 15].map((size) => <button key={size} type="button" aria-pressed={sessionSize === size} className={sessionSize === size ? "selected" : ""} onClick={() => setSessionSize(size)}>{size}</button>)}</div>
         </div>
-        <label className="xp-review-only"><input type="checkbox" checked={reviewOnly} onChange={(event) => setReviewOnly(event.target.checked)} /> Chỉ ôn câu đã đánh dấu khó</label>
+        <label className="xp-review-only"><input type="checkbox" role="switch" checked={reviewOnly} onChange={(event) => setReviewOnly(event.target.checked)} /> Chỉ ôn câu đã đánh dấu khó</label>
         <button className="practice-primary xp-start" type="button" onClick={start}>{reviewOnly ? "Ôn" : "Bắt đầu"} {sessionSize} bài <ArrowRight size={18} /></button>
         {message && <p className="practice-message" role="status">{message}</p>}
         <small className="xp-panel-note">{currentRubric?.noteVi} Band ở đây là mức luyện tập, không phải điểm IELTS được chấm chính thức.{Number(band) >= 7 && " Các nghiên cứu và ví dụ trong bài là tình huống minh họa, không phải dữ kiện trích nguồn."} Tiến độ được lưu trên trình duyệt này.</small>
