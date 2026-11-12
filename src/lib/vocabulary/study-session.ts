@@ -130,3 +130,23 @@ export function buildTest<T extends { id: string; title: string; meaningVi: stri
 export function testCorrect<T>(question: TestQuestion<T>, given: string) {
   return question.kind === "type" ? checkTyped(given, question.answer) !== "wrong" : given === question.answer;
 }
+
+/** The next study batch from an ordered word list, starting at `offset`: words the learner already studied
+ * (or that `accept` rejects) are skipped, so every session teaches new words. Rows are read in chunks aligned
+ * to `chunk`; `next` is where the following session starts. `fetchChunk` throws on a failed request. */
+export async function pickBatch<T>(offset: number, fetchChunk: (start: number, size: number) => Promise<T[]>, accept: (row: T) => boolean,
+  { batch = 10, chunk = 50, maxChunks = 8 }: { batch?: number; chunk?: number; maxChunks?: number } = {}) {
+  const rows: T[] = [];
+  let next = Math.max(0, offset);
+  let end = false;
+  for (let round = 0; round < maxChunks && rows.length < batch; round++) {
+    const start = Math.floor(next / chunk) * chunk;
+    const page = await fetchChunk(start, chunk);
+    for (let index = next - start; index < page.length && rows.length < batch; index++) {
+      next = start + index + 1;
+      if (accept(page[index])) rows.push(page[index]);
+    }
+    if (page.length < chunk) { end = next >= start + page.length; break; }
+  }
+  return { rows, next, end };
+}
