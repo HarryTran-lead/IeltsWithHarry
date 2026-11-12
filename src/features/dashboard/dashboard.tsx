@@ -4,6 +4,7 @@ import Link from "next/link";
 import {
   Activity,
   ArrowRight,
+  LayoutGrid,
   BookOpenText,
   CalendarDays,
   Check,
@@ -111,7 +112,7 @@ function StreakWeek() {
   );
 }
 
-function LearningPath() {
+function LearningPath({ withContinue = false }: { withContinue?: boolean }) {
   const stops = useStageStops();
   return (
     <section className="card learning-path">
@@ -126,14 +127,18 @@ function LearningPath() {
         <Link href="/app/learn" className="link-pill">Xem 4 chặng <ArrowRight size={15} /></Link>
       </div>
       <StageMap stops={stops} />
+      {withContinue && <ContinueBody />}
     </section>
   );
 }
 
 /** The lesson or stage to pick up next, shown on the "Hôm nay" tab. */
 function ContinueCard() {
+  return <section className="card dash-continue" aria-label="Học tiếp"><ContinueBody /></section>;
+}
+
+function ContinueBody() {
   return (
-    <section className="card dash-continue" aria-label="Học tiếp">
       <div className="continue-card">
         <div className="continue-art" aria-hidden="true">
           <Sticker name="globe" size={62} tilt={-8} delay={100} />
@@ -164,7 +169,6 @@ function ContinueCard() {
           )}
         </div>
       </div>
-    </section>
   );
 }
 
@@ -332,6 +336,7 @@ function Achievements() {
 }
 
 const dashTabs = [
+  { id: "overview", label: "Tổng quan", icon: LayoutGrid },
   { id: "today", label: "Hôm nay", icon: Sun },
   { id: "path", label: "Lộ trình", icon: Route },
   { id: "progress", label: "Tiến độ", icon: Activity },
@@ -342,12 +347,15 @@ type DashTab = (typeof dashTabs)[number]["id"];
 const TAB_KEY = "ieltswithharry-dashboard-tab-v1";
 
 /**
- * The dashboard is one screen: the welcome strip, then one tab at a time in the space left. Every
- * panel stays mounted (hidden when not chosen) so switching is instant and keeps its state; a panel
- * longer than the screen scrolls inside itself. The last tab chosen is remembered in this browser.
+ * The dashboard is one screen: the welcome strip, then one tab at a time in the space left. "Tổng quan"
+ * is the full dashboard as it was before the tabs, scrolling inside its panel. A panel is mounted the
+ * first time it is opened and then kept (hidden when not chosen), so switching back is instant and keeps
+ * its state; a panel longer than the screen scrolls inside itself. The last tab is remembered here.
  */
 function DashboardTabs() {
-  const [tab, setTab] = useState<DashTab>("today");
+  const [tab, setTab] = useState<DashTab>("overview");
+  const [opened, setOpened] = useState<DashTab[]>(["overview"]);
+  if (!opened.includes(tab)) setOpened([...opened, tab]);
   const list = useRef<HTMLDivElement>(null);
   useEffect(() => {
     const raf = requestAnimationFrame(() => {
@@ -371,7 +379,7 @@ function DashboardTabs() {
     choose(dashTabs[(next + dashTabs.length) % dashTabs.length].id, true);
   }
   const panel = (id: DashTab, className: string, children: React.ReactNode) => (
-    <div key={id} role="tabpanel" id={`dash-panel-${id}`} aria-labelledby={`dash-tab-${id}`} className={`dash-panel ${className}`} hidden={tab !== id} tabIndex={0}>{children}</div>
+    <div key={id} role="tabpanel" id={`dash-panel-${id}`} aria-labelledby={`dash-tab-${id}`} className={`dash-panel ${className}`} hidden={tab !== id} tabIndex={0}>{opened.includes(id) ? children : null}</div>
   );
   return (
     <section className="dash-tabs" aria-label="Bảng điều khiển">
@@ -382,6 +390,20 @@ function DashboardTabs() {
           </button>
         ))}
       </div>
+      {panel("overview", "dash-overview", <>
+        <div className="dash-overview-main">
+          <LatestNews />
+          <StudyProgress />
+          <LearningPath withContinue />
+          <GrammarTodayCard />
+          <DictationWeekCard />
+          {releaseLocks ? <TodayGoal /> : <><div className="dashboard-duo"><TodayGoal /><PracticeNow /></div><Recommended /></>}
+        </div>
+        <div className="dash-overview-side">
+          <StreakLeaderboardCard />
+          <Achievements />
+        </div>
+      </>)}
       {panel("today", "dash-today", <>
         <TodayGoal />
         <ContinueCard />

@@ -107,6 +107,10 @@
 .dash-panel[hidden] { display: none !important; }
 .dash-panel > .card { margin: 0; }
 
+/* Tổng quan: the full dashboard as before the tabs, main column and a narrow side column. */
+.dash-overview { display: grid; grid-template-columns: minmax(0, 1fr) minmax(260px, 0.42fr); gap: 16px; align-items: start; }
+.dash-overview-main, .dash-overview-side { display: flex; flex-direction: column; gap: 16px; min-width: 0; }
+.dash-overview .learning-path .continue-card { margin-top: 14px; }
 .dash-today, .dash-ranks { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; align-content: start; }
 .dash-today .goal-card { min-height: 0; }
 .dash-today .recommended { grid-column: 1 / -1; }
@@ -125,6 +129,9 @@
 .dash-ranks .achievements .card-head .text-link { margin-right: 0; }
 
 /* Two tiles side by side need about 560px; a narrower main column stacks them. */
+@container (max-width: 760px) {
+  .dash-overview { grid-template-columns: minmax(0, 1fr); }
+}
 @container (max-width: 560px) {
   .dash-today, .dash-ranks { grid-template-columns: minmax(0, 1fr); }
   .dash-tablist button { flex: none; }
@@ -141,7 +148,7 @@
   .dash-board > .dashboard-main, .dash-board > .dashboard-aside { min-height: 0; gap: clamp(10px, 1.4vh, 16px); }
   .dash-board .dash-tabs { flex: 1 1 0; min-height: 0; gap: clamp(8px, 1.2vh, 12px); }
   .dash-board .dash-tablist { flex: none; }
-  .dash-board .dash-tablist button { padding: clamp(5px, 0.8vh, 9px) 12px; }
+  .dash-board .dash-tablist button { gap: 5px; padding: clamp(5px, 0.8vh, 9px) clamp(8px, 0.7vw, 14px); }
   .dash-board .dash-panel { flex: 1 1 0; min-height: 0; overflow: auto; overscroll-behavior: contain; scrollbar-width: thin; }
   .dash-board .dash-today { grid-auto-rows: minmax(min-content, 1fr); gap: clamp(10px, 1.4vh, 16px); }
   .dash-board .dash-ranks { grid-auto-rows: minmax(min-content, 1fr); align-items: stretch; gap: clamp(10px, 1.4vh, 16px); }
@@ -194,6 +201,8 @@
   .dash-board .planner-mini { display: flex; flex: 1 1 0; flex-direction: column; min-height: 0; padding: clamp(12px, 1.6vh, 18px) 16px; }
   .dash-board .planner-mini .card-head { margin-bottom: clamp(8px, 1.2vh, 14px); }
   .dash-board .planner-mini .task-list { flex: 1 1 0; min-height: 0; overflow: auto; overscroll-behavior: contain; scrollbar-width: thin; }
+  .dash-board .planner-mini { overflow: hidden; }
+  .dash-board .planner-mini .empty-state { display: grid; flex: 1 1 0; place-items: center; min-height: 0; margin: 0; padding: 10px 14px; overflow: auto; }
   .dash-board .planner-mini .add-task { flex: none; height: clamp(36px, 5vh, 42px); margin-top: 10px; }
 }
 /* Short laptop screens: the room card drops the stream picker and chat lines (both live on the room page). */
