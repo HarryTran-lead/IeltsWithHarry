@@ -54,7 +54,7 @@
   grid-column: 1;
   grid-row: 3;
   margin: 0;
-  font-size: 12px;
+  font-size: var(--fs-xs);
   line-height: 1.35;
 }
 

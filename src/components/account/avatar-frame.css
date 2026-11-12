@@ -9,4 +9,4 @@
 .avatar-frame--book{--frame-a:#8f68cc;--frame-b:#eee2ff;--frame-glow:#8f68cc55}.avatar-frame--book::after{content:"✣"}
 .avatar-frame--mountain{--frame-a:#4385a1;--frame-b:#d7edf4;--frame-glow:#4385a155}.avatar-frame--mountain::after{content:"◆"}
 .avatar-frame--crown{--frame-a:#dca843;--frame-b:#fff1b8;--frame-glow:#dca84365}.avatar-frame--crown::after{content:"♛"}
-.login-xp-toast{position:fixed;right:18px;bottom:18px;z-index:80;padding:11px 16px;border:1px solid #b5e8d6;border-radius:var(--r-md);background:#e8fbf2;color:#087856;box-shadow:0 8px 28px #134b3930;font-size:13px;font-weight:800}
+.login-xp-toast{position:fixed;right:18px;bottom:18px;z-index:80;padding:11px 16px;border:1px solid #b5e8d6;border-radius:var(--r-md);background:#e8fbf2;color:#087856;box-shadow:0 8px 28px #134b3930;font-size:var(--fs-sm);font-weight:800}

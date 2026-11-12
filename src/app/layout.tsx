@@ -1,5 +1,25 @@
 import type { Metadata } from "next";
+// Global styles. The order is the cascade order: later files win ties, so add rules to
+// the partial where they belong rather than at the end. Tokens come first; globals.css
+// carries Tailwind and the theme mapping (Tailwind's own rules sit in @layer, so the
+// unlayered tokens still apply).
+import "@/styles/tokens.css";
 import "./globals.css";
+import "@/styles/base.css";
+import "@/styles/app-shell.css";
+import "@/styles/components.css";
+import "@/styles/dashboard.css";
+import "@/styles/portal-pages.css";
+import "@/styles/portal-responsive.css";
+import "@/styles/public-site.css";
+import "@/styles/guest-landing.css";
+import "@/styles/auth.css";
+import "@/styles/public-responsive.css";
+import "@/styles/content-lab.css";
+import "@/styles/admin.css";
+import "@/styles/learn.css";
+import "@/styles/course-studio.css";
+import "@/styles/layout-overrides.css";
 import "./stickers.css";
 import "./motion.css";
 import "./playful.css";

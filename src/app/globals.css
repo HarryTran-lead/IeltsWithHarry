@@ -3,25 +3,12 @@
 @import "shadcn/tailwind.css";
 
 /*
- * Global styles, split by area under src/styles. The order below is the cascade order:
- * later files win ties, so add new partials where their rules belong, not at the end.
+ * Only what needs Tailwind lives here: the theme mapping uses @theme and @apply.
+ * Every other global stylesheet (src/styles/*.css, then the files in src/app) is
+ * imported from src/app/layout.tsx, so the dev server reloads it on save. Turbopack
+ * caches this file by its own text, so a partial @imported here would not refresh.
+ * The import order in layout.tsx is the cascade order.
  */
-@import "../styles/tokens.css";
-@import "../styles/base.css";
-@import "../styles/app-shell.css";
-@import "../styles/components.css";
-@import "../styles/dashboard.css";
-@import "../styles/portal-pages.css";
-@import "../styles/portal-responsive.css";
-@import "../styles/public-site.css";
-@import "../styles/guest-landing.css";
-@import "../styles/auth.css";
-@import "../styles/public-responsive.css";
 @import "../styles/theme.css";
-@import "../styles/content-lab.css";
-@import "../styles/admin.css";
-@import "../styles/learn.css";
-@import "../styles/course-studio.css";
-@import "../styles/layout-overrides.css";
 
 @custom-variant dark (&:is(.dark *));

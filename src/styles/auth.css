@@ -16,7 +16,7 @@
 }
 .auth-lead {
   color: var(--muted);
-  font-size: 15.5px;
+  font-size: var(--fs-md);
   margin: 0 0 20px;
 }
 .auth-main .public-message {
@@ -31,7 +31,7 @@
   display: grid;
   gap: 6px;
   font-weight: 600;
-  font-size: 13.5px;
+  font-size: var(--fs-sm);
   color: var(--ink);
 }
 .auth-form input {
