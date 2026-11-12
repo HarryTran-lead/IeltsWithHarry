@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { useEffect, useMemo, useState } from "react";
 import { useRouter } from "next/navigation";
-import { ArrowRight, Bookmark, Check, Keyboard, Layers3, ListChecks, Puzzle, Search, Sparkles, Timer, Volume2 } from "lucide-react";
+import { ArrowRight, Bookmark, Check, Keyboard, Layers3, ListChecks, Search, Sparkles, Timer, Volume2 } from "lucide-react";
 import { useNotebook } from "@/features/notebook/notebook-store";
 import { createClient } from "@/lib/supabase/browser";
 import { demoMode } from "@/lib/runtime";
@@ -121,106 +121,98 @@ export function VocabularyLanding() {
     finally { setSavingDaily(false); }
   }
 
-  const stack = (queue ?? []).slice(0, 3);
+  const stack = (queue ?? []).slice(0, 1);
   const steps = [
     { title: "Ôn tập", detail: due === null ? "…" : due ? `${due} thẻ đến hạn` : "Không có thẻ", state: due ? "active" : "done" },
     { title: "Học từ mới", detail: "10 từ · xem, chọn, gõ", state: due ? "next" : "active" },
     { title: "Vào lịch ôn", detail: "FSRS nhắc đúng lúc", state: "next" },
   ];
   const featured = [
-    { key: "ielts", title: "Từ vựng IELTS", detail: `${vi(counts.ielts)} từ · 40 chủ đề`, note: "Theo chủ đề và band gợi ý 1–7+", studied: counts.studiedIelts, total: counts.ielts, sticker: "cap" as StickerName, study: "/app/vocabulary/study?collection=ielts", library: "/app/vocabulary/library?collection=ielts" },
-    { key: "cefr", title: "Từ A1–C2", detail: `${vi(counts.cefr)} từ · 36 chủ đề`, note: "Từ nền tảng đến nâng cao theo CEFR", studied: counts.studiedCefr, total: counts.cefr, sticker: "chart" as StickerName, study: "/app/vocabulary/study?collection=cefr", library: "/app/vocabulary/library?collection=cefr" },
+    { key: "ielts", title: "Từ vựng IELTS", hint: "Band trong bộ IELTS là gợi ý học tập ước lượng, không phải band chính thức của từng từ.", detail: `${vi(counts.ielts)} từ · 40 chủ đề`, studied: counts.studiedIelts, total: counts.ielts, sticker: "cap" as StickerName, study: "/app/vocabulary/study?collection=ielts", library: "/app/vocabulary/library?collection=ielts" },
+    { key: "cefr", title: "Từ A1–C2", hint: "Từ nền tảng đến nâng cao theo CEFR", detail: `${vi(counts.cefr)} từ · 36 chủ đề`, studied: counts.studiedCefr, total: counts.cefr, sticker: "chart" as StickerName, study: "/app/vocabulary/study?collection=cefr", library: "/app/vocabulary/library?collection=cefr" },
   ];
   const known = states.reviewing + states.mastered;
 
   return <div className="vocabulary-landing vocab-home">
-    <section className="vh-hero" aria-labelledby="vh-hero-title">
-      <div className="vh-hero-copy">
-        <span className="vh-eyebrow"><Sparkles size={14} /> HÔM NAY{minutes ? ` · KHOẢNG ${minutes} PHÚT` : ""}</span>
-        <h1 id="vh-hero-title">{due ? <>Ôn <em>{due} từ</em>, rồi học 10 từ mới</> : <>Sẵn sàng cho <em>10 từ mới</em></>}</h1>
-        <p>{due === null ? "Đang chuẩn bị kế hoạch học hôm nay…" : due ? "Ôn những từ sắp quên trước, sau đó học từ mới. Mỗi từ sẽ tự quay lại đúng lúc." : "Không có thẻ đến hạn. Học 10 từ mới, chúng sẽ tự vào lịch ôn."}</p>
-        <ol className="vh-path" aria-label="Các bước học hôm nay">
-          {steps.map((step, index) => <li key={step.title} className={`is-${step.state}`}><span className="vh-path-dot">{step.state === "done" ? <Check size={14} /> : index + 1}</span><span><b>{step.title}</b><small>{step.detail}</small></span></li>)}
-        </ol>
-        <div className="vh-hero-actions">
-          {due ? <Link className="vh-button primary" href="/app/vocabulary/review">Bắt đầu ôn {due} thẻ <ArrowRight size={18} /></Link> : <Link className="vh-button primary" href="/app/vocabulary/study?collection=ielts">Học 10 từ IELTS <ArrowRight size={18} /></Link>}
-          {due ? <Link className="vh-button ghost" href="/app/vocabulary/study?collection=ielts">Học 10 từ mới</Link> : <Link className="vh-button ghost" href="/app/vocabulary/study?collection=cefr">Học từ A1–C2</Link>}
-        </div>
-      </div>
-      <Link className="vh-stack" href={due ? "/app/vocabulary/review" : "/app/vocabulary/study?collection=ielts"} aria-label={due ? `Ôn ${due} thẻ đến hạn` : "Học 10 từ mới"}>
-        <span className="vh-stack-card back" aria-hidden="true" />
-        <span className="vh-stack-card middle" aria-hidden="true">{stack[1] && <b>{stack[1].title}</b>}</span>
-        <span className="vh-stack-card front">
-          {stack[0] ? <><small>Bạn còn nhớ?</small><strong>{stack[0].title}</strong><span className="vh-stack-hint">Lật để xem nghĩa <ArrowRight size={14} /></span></>
-            : <><Sticker name="rocket" size={64} tilt={-8} /><strong className="is-empty">10 từ mới</strong><span className="vh-stack-hint">Bắt đầu buổi học <ArrowRight size={14} /></span></>}
-        </span>
-        {due ? <span className="vh-stack-badge">{due}</span> : null}
-      </Link>
-    </section>
-
-    <div className="vh-layout">
+    <div className="vh-board">
       <div className="vh-main">
-        <section aria-labelledby="vh-paths-title">
-          <div className="vh-section-head"><h2 id="vh-paths-title">Lộ trình chính</h2><span>Chọn một bộ, mỗi buổi 10 từ</span></div>
-          <div className="vh-featured">
-            {featured.map((item) => <article key={item.key} className={`vh-feature ${item.key}`}>
-              <div className="vh-feature-copy">
-                <h3>{item.title}</h3>
-                <p className="vh-feature-detail">{item.detail}</p>
-                <p className="vh-feature-note">{item.note}</p>
-                <div className="vh-meter" role="img" aria-label={`Đã học ${vi(item.studied)} trên ${vi(item.total)} từ`}><span style={{ width: `${Math.max(item.studied ? 2 : 0, percent(item.studied, item.total))}%` }} /></div>
-                <small>Đã học {vi(item.studied)} / {vi(item.total)} từ</small>
-                <div className="vh-feature-actions"><Link href={item.study}>{item.studied ? "Học tiếp" : "Bắt đầu học"} <ArrowRight size={16} /></Link><Link href={item.library}>Xem chủ đề</Link></div>
-              </div>
-              <Sticker name={item.sticker} size={104} tilt={item.key === "ielts" ? -8 : 7} />
-            </article>)}
+        <section className="vh-hero" aria-labelledby="vh-hero-title">
+          <div className="vh-hero-copy">
+            <span className="vh-eyebrow"><Sparkles size={13} /> HÔM NAY{minutes ? ` · KHOẢNG ${minutes} PHÚT` : ""}</span>
+            <h1 id="vh-hero-title">{due ? <>Ôn <em>{due} từ</em>, rồi học 10 từ mới</> : <>Sẵn sàng cho <em>10 từ mới</em></>}</h1>
+            <p>{due === null ? "Đang chuẩn bị kế hoạch học hôm nay…" : due ? "Ôn những từ sắp quên trước, sau đó học từ mới. Mỗi từ sẽ tự quay lại đúng lúc." : "Không có thẻ đến hạn. Học 10 từ mới, chúng sẽ tự vào lịch ôn."}</p>
+            <ol className="vh-path" aria-label="Các bước học hôm nay">
+              {steps.map((step, index) => <li key={step.title} className={`is-${step.state}`}><span className="vh-path-dot">{step.state === "done" ? <Check size={13} /> : index + 1}</span><span><b>{step.title}</b><small>{step.detail}</small></span></li>)}
+            </ol>
+          </div>
+          <Link className="vh-stack" href={due ? "/app/vocabulary/review" : "/app/vocabulary/study?collection=ielts"} aria-label={due ? `Ôn ${due} thẻ đến hạn` : "Học 10 từ mới"}>
+            <span className="vh-stack-card back" aria-hidden="true" />
+            <span className="vh-stack-card front">
+              {stack[0] ? <><small>Bạn còn nhớ?</small><strong>{stack[0].title}</strong></>
+                : <><Sticker name="rocket" size={36} tilt={-8} pop={false} /><strong className="is-empty">10 từ mới</strong></>}
+            </span>
+            {due ? <span className="vh-stack-badge">{due}</span> : null}
+          </Link>
+          <div className="vh-hero-actions">
+            {due ? <Link className="vh-button primary" href="/app/vocabulary/review">Ôn {due} thẻ <ArrowRight size={17} /></Link> : <Link className="vh-button primary" href="/app/vocabulary/study?collection=ielts">Học 10 từ IELTS <ArrowRight size={17} /></Link>}
+            {due ? <Link className="vh-button ghost" href="/app/vocabulary/study?collection=ielts">Học 10 từ mới</Link> : <Link className="vh-button ghost" href="/app/vocabulary/study?collection=cefr">Học từ A1–C2</Link>}
           </div>
         </section>
 
+        <section className="vh-featured" aria-label="Lộ trình chính">
+          {featured.map((item) => <article key={item.key} className={`vh-feature ${item.key}`}>
+            <Sticker name={item.sticker} size={40} tilt={item.key === "ielts" ? -8 : 7} pop={false} />
+            <div className="vh-feature-head"><h3>{item.title}</h3><p title={item.hint}>{item.detail}</p></div>
+            <Link className="vh-feature-topics" href={item.library}>Chủ đề</Link>
+            <div className="vh-feature-progress">
+              <div className="vh-meter" role="img" aria-label={`Đã học ${vi(item.studied)} trên ${vi(item.total)} từ`}><span style={{ width: `${Math.max(item.studied ? 2 : 0, percent(item.studied, item.total))}%` }} /></div>
+              <small>Đã học {vi(item.studied)} / {vi(item.total)} từ</small>
+            </div>
+            <Link className="vh-feature-go" href={item.study}>{item.studied ? "Học tiếp" : "Bắt đầu"} <ArrowRight size={15} /></Link>
+          </article>)}
+        </section>
+
         <section aria-labelledby="vh-skills-title">
-          <div className="vh-section-head"><h2 id="vh-skills-title">Luyện theo kỹ năng</h2><span>Bộ từ gắn với từng phần thi</span></div>
+          <h2 className="vh-label" id="vh-skills-title">Luyện theo kỹ năng</h2>
           <div className="vh-tiles">
-            {skillSets.map((tile) => <Link key={tile.title} href={tile.href} className={`vh-tile ${tile.tone}`}>
-              <Sticker name={tile.sticker} size={52} tilt={-6} pop={false} />
-              <strong>{tile.title}</strong>
-              <small>{tile.detail}</small>
-              <span>{tile.description}</span>
-              <ArrowRight size={17} className="vh-tile-arrow" />
+            {skillSets.map((tile) => <Link key={tile.title} href={tile.href} className={`vh-tile ${tile.tone}`} title={tile.description}>
+              <Sticker name={tile.sticker} size={30} tilt={-6} pop={false} />
+              <span><strong>{tile.title}</strong><small>{tile.detail}</small><span className="vh-more">{tile.description}</span></span>
             </Link>)}
           </div>
         </section>
 
         <section aria-labelledby="vh-play-title">
-          <div className="vh-section-head"><h2 id="vh-play-title">Chơi với từ</h2><span>Cùng 10 từ IELTS, đổi cách luyện</span></div>
+          <h2 className="vh-label" id="vh-play-title">Chơi với từ <span>cùng 10 từ IELTS, đổi cách luyện</span></h2>
           <div className="vh-modes">
-            {playModes.map(({ id, title, detail, icon: Icon, tag }) => <Link key={id} href={`/app/vocabulary/study?collection=ielts&mode=${id}`} className={`vh-mode${tag ? " is-pick" : ""}`}>
-              <span className="vh-mode-icon"><Icon size={20} /></span>
-              <span><b>{title}</b><small>{detail}</small></span>
+            {playModes.map(({ id, title, detail, icon: Icon, tag }) => <Link key={id} href={`/app/vocabulary/study?collection=ielts&mode=${id}`} className={`vh-mode${tag ? " is-pick" : ""}`} title={detail}>
+              <span className="vh-mode-icon"><Icon size={16} /></span>
+              <span><b>{title}</b><small className="vh-more">{detail}</small></span>
               {tag && <em>{tag}</em>}
             </Link>)}
           </div>
         </section>
 
         <section aria-labelledby="vh-use-title">
-          <div className="vh-section-head"><h2 id="vh-use-title">Dùng từ đã học</h2></div>
+          <h2 className="vh-label" id="vh-use-title">Dùng từ đã học</h2>
           <div className="vh-use">
-            <Link href="/app/vocabulary/translation" className="vh-use-card"><Sticker name="bubble" size={46} tilt={-6} pop={false} /><span><b>Dịch câu với từ vựng IELTS</b><small>40 chủ đề · 145 mốc · câu Speaking và Writing</small></span><ArrowRight size={18} /></Link>
-            <Link href="/app/vocabulary/notebook" className="vh-use-card"><Sticker name="notebook" size={46} tilt={6} pop={false} /><span><b>Sổ từ của bạn</b><small>{ready ? `${vi(savedWords.length)} từ · lọc, gắn sao, ôn lại` : "…"}</small></span><ArrowRight size={18} /></Link>
+            <Link href="/app/vocabulary/translation" className="vh-use-card"><Sticker name="bubble" size={30} tilt={-6} pop={false} /><span><b>Dịch câu với từ vựng IELTS</b><small>40 chủ đề · câu Speaking và Writing</small></span><ArrowRight size={16} /></Link>
+            <Link href="/app/vocabulary/notebook" className="vh-use-card"><Sticker name="notebook" size={30} tilt={6} pop={false} /><span><b>Sổ từ của bạn</b><small>{ready ? `${vi(savedWords.length)} từ · lọc, gắn sao, ôn lại` : "…"}</small></span><ArrowRight size={16} /></Link>
           </div>
         </section>
       </div>
 
       <aside className="vh-side" aria-label="Từ của ngày, tiến độ và tra từ">
         <section className="vh-daily" aria-labelledby="vh-daily-title">
-          <div className="vh-daily-head"><span className="vh-eyebrow"><Sticker name="star" size={20} pop={false} /> TỪ CỦA NGÀY</span>{daily && <span className="vh-chip">{daily.band}</span>}</div>
+          <div className="vh-daily-head"><span className="vh-eyebrow"><Sticker name="star" size={18} pop={false} /> TỪ CỦA NGÀY</span>{daily && <span className="vh-chip">{daily.band}</span>}</div>
           {daily ? <>
             <h2 id="vh-daily-title">{daily.term}</h2>
             <p className="vh-daily-meta">{[daily.pos, daily.topic].filter(Boolean).join(" · ")}</p>
             <p className="vh-daily-meaning">{daily.meaning}</p>
             {daily.example && <blockquote>{daily.example}</blockquote>}
             <div className="vh-daily-actions">
-              <button type="button" onClick={() => void pronounce(daily.term)} aria-label={`Nghe phát âm ${daily.term}`}><Volume2 size={17} /> Nghe</button>
-              <button type="button" className={dailySaved ? "is-saved" : ""} disabled={dailySaved || savingDaily || !ready} onClick={() => void saveDaily()}>{dailySaved ? <><Check size={17} /> Đã lưu</> : <><Bookmark size={17} /> Lưu vào sổ</>}</button>
+              <button type="button" onClick={() => void pronounce(daily.term)} aria-label={`Nghe phát âm ${daily.term}`}><Volume2 size={16} /> Nghe</button>
+              <button type="button" className={dailySaved ? "is-saved" : ""} disabled={dailySaved || savingDaily || !ready} onClick={() => void saveDaily()}>{dailySaved ? <><Check size={16} /> Đã lưu</> : <><Bookmark size={16} /> Lưu vào sổ</>}</button>
             </div>
           </> : <p className="vh-daily-meaning" id="vh-daily-title">Đang chọn từ hôm nay…</p>}
         </section>
@@ -231,7 +223,7 @@ export function VocabularyLanding() {
             {journey.map(({ state }) => <span key={state} className={state} style={{ flexGrow: states[state] || 0.0001 }} />)}
           </div>
           <ol className="vh-journey-steps">
-            {journey.map(({ state, hint }) => <li key={state} className={state}><b>{loadedAll ? vi(states[state]) : "…"}</b><span>{wordStateLabels[state]}</span><small>{hint}</small></li>)}
+            {journey.map(({ state, hint }) => <li key={state} className={state} title={hint}><b>{loadedAll ? vi(states[state]) : "…"}</b><span>{wordStateLabels[state]}</span><small>{hint}</small></li>)}
           </ol>
           <p>{!loadedAll ? "…" : known ? `${vi(known)} từ đã qua bước học đầu. Ôn đều mỗi ngày để chúng thành “Đã thuộc”.` : savedWords.length ? "Ôn các từ mới vài lần để chúng sang bước “Đang ôn”." : "Học buổi đầu tiên để bắt đầu hành trình."}{studiedCount ? ` Đã học qua ${vi(studiedCount)} từ.` : ""}</p>
         </section>
@@ -240,13 +232,12 @@ export function VocabularyLanding() {
           <h2 id="vh-lookup-title">Gặp từ lạ?</h2>
           <p>Tra nghĩa, xem câu trong đề Reading và lưu vào Sổ từ.</p>
           <form onSubmit={(event) => { event.preventDefault(); if (lookup.trim()) router.push(`/app/vocabulary/explore?q=${encodeURIComponent(lookup.trim())}`); }}>
-            <Search size={17} aria-hidden="true" />
-            <input value={lookup} onChange={(event) => setLookup(event.target.value)} placeholder="Ví dụ: sustainable" aria-label="Tra từ tiếng Anh" />
-            <button type="submit" disabled={!lookup.trim()} aria-label="Tra từ"><ArrowRight size={17} /></button>
+            <Search size={16} aria-hidden="true" />
+            <input value={lookup} onChange={(event) => setLookup(event.target.value)} placeholder="Tra từ, ví dụ: sustainable" aria-label="Tra từ tiếng Anh" />
+            <button type="submit" disabled={!lookup.trim()} aria-label="Tra từ"><ArrowRight size={16} /></button>
           </form>
         </section>
       </aside>
     </div>
-    <p className="vh-note"><Puzzle size={13} aria-hidden="true" /> Band trong bộ IELTS là gợi ý học tập ước lượng, không phải band chính thức của từng từ.</p>
   </div>;
 }
