@@ -1,11 +1,11 @@
 "use client";
 
 import { Fragment, useCallback, useEffect, useMemo, useRef, useState, type CSSProperties, type Dispatch, type SetStateAction } from "react";
-import { ArrowLeft, ArrowLeftRight, ArrowRight, Bell, Bookmark, Check, Eye, EyeOff, Highlighter, Menu, MessageSquareText, Send, Wifi, X } from "lucide-react";
+import { ArrowLeft, ArrowLeftRight, ArrowRight, Bell, Bookmark, Check, Eye, EyeOff, Headphones, Highlighter, Menu, MessageSquareText, Play, Send, Volume2, Wifi, X } from "lucide-react";
 import type { ExamContent, ExamQuestion } from "@/lib/ielts-bank/schema";
 import { RichText, type BankExam } from "./bank-exam";
 import { groupQuestions, optionKey, optionLabel, QuestionGroupView, richBlocks, type AnswerProps, type QuestionGroup } from "./bank-questions";
-import { HeadingDrop } from "./bank-test";
+import { HeadingDrop, printedListeningLayout } from "./bank-test";
 import { encodeReadingMarks, encodeReadingNotes, rangeAt, savedReadingMarks, savedReadingNotes, textOffset, type ReadingMark, type ReadingNote } from "./reading-highlights";
 import "./bank-exam-sheet.css";
 
@@ -20,6 +20,11 @@ const sameSpot = (a: ReadingMark, b: ReadingMark) => a.section === b.section && 
  * questions side by side, a Note/Highlight bar on selected text, a bookmark to
  * flag the current question, the numbered question strip and a tick that leads
  * to the "Click next to continue" screen. Nothing here coaches the learner.
+ *
+ * Listening uses the same sheet without the passage: the questions fill the
+ * screen, the recording plays once from a "click Play" gate, runs on into the
+ * next part, and cannot be paused or rewound; the header's "Audio player"
+ * chip only opens the volume control.
  */
 export function ExamSheet({ exam, content, scope, answers, setAnswer, flags, setFlags, notes, setNotes, remaining, busy, onSubmit, onExit }: {
   exam: BankExam;
@@ -52,6 +57,18 @@ export function ExamSheet({ exam, content, scope, answers, setAnswer, flags, set
   const questionPane = useRef<HTMLDivElement>(null);
   const questionInner = useRef<HTMLDivElement>(null);
   const body = useRef<HTMLDivElement>(null);
+  const listening = exam.skill === "Listening";
+  const audio = useRef<HTMLAudioElement>(null);
+  const listOf = (key: string) => (notes[key] || "").split(",").filter(Boolean);
+  const played = listOf("listening_played"), finished = listOf("listening_finished");
+  // The part being heard: the first part whose recording has not finished.
+  const playing = Math.max(0, sections.findIndex((item) => !finished.includes(item.id)));
+  const heard = sections[playing];
+  const allHeard = listening && sections.every((item) => finished.includes(item.id));
+  const [volumeOpen, setVolumeOpen] = useState(false);
+  const [volume, setVolume] = useState(1);
+  const [audioError, setAudioError] = useState("");
+  const savedSecond = useRef(0);
   const section = sections[Math.min(part, sections.length - 1)];
   const groups = useMemo(() => groupQuestions(section?.questions ?? []), [section]);
   const marks = useMemo(() => savedReadingMarks(notes.reading_highlights), [notes.reading_highlights]);
@@ -102,8 +119,8 @@ export function ExamSheet({ exam, content, scope, answers, setAnswer, flags, set
 
   // Paint highlights and noted text, as two highlight colours, without touching the answer controls.
   useEffect(() => {
-    if (!canPaint() || !passage.current || !questionPane.current || !section || ended) return;
-    const blocks = { passage: passage.current.querySelectorAll<HTMLElement>("[data-paragraph]"), questions: questionPane.current.querySelectorAll<HTMLElement>("[data-highlight-block]") };
+    if (!canPaint() || !questionPane.current || !section || ended) return;
+    const blocks = { passage: passage.current?.querySelectorAll<HTMLElement>("[data-paragraph]") ?? ([] as unknown as NodeListOf<HTMLElement>), questions: questionPane.current.querySelectorAll<HTMLElement>("[data-highlight-block]") };
     const toRanges = (items: ReadingMark[]) => items.filter((item) => item.section === section.id).map((item) => { const block = blocks[item.pane][item.block]; return block ? rangeAt(block, item.start, item.end) : null; }).filter((range): range is Range => Boolean(range));
     const registry = (CSS as unknown as { highlights: Map<string, unknown> }).highlights;
     const Highlight = (window as unknown as { Highlight: new (...ranges: Range[]) => unknown }).Highlight;
@@ -136,11 +153,11 @@ export function ExamSheet({ exam, content, scope, answers, setAnswer, flags, set
   /** The selected text, split into passage paragraphs or question blocks, as saved positions. */
   const captured = (): ReadingMark[] => {
     const chosen = window.getSelection();
-    if (!chosen || chosen.isCollapsed || !passage.current || !questionPane.current || !section) return [];
+    if (!chosen || chosen.isCollapsed || !questionPane.current || !section) return [];
     const range = chosen.getRangeAt(0);
-    const pane = passage.current.contains(range.commonAncestorContainer) ? "passage" : questionPane.current.contains(range.commonAncestorContainer) ? "questions" : null;
+    const pane = passage.current?.contains(range.commonAncestorContainer) ? "passage" : questionPane.current.contains(range.commonAncestorContainer) ? "questions" : null;
     if (!pane) return [];
-    const blocks = (pane === "passage" ? passage.current : questionPane.current).querySelectorAll<HTMLElement>(pane === "passage" ? "[data-paragraph]" : "[data-highlight-block]");
+    const blocks = (pane === "passage" ? passage.current! : questionPane.current).querySelectorAll<HTMLElement>(pane === "passage" ? "[data-paragraph]" : "[data-highlight-block]");
     const out: ReadingMark[] = [];
     blocks.forEach((block, index) => {
       if (!range.intersectsNode(block)) return;
@@ -157,18 +174,18 @@ export function ExamSheet({ exam, content, scope, answers, setAnswer, flags, set
 
   /** Where a plain click landed: a highlight or a note under the pointer, if any. */
   const hitAt = (x: number, y: number) => {
-    if (!passage.current || !questionPane.current || !section) return null;
+    if (!questionPane.current || !section) return null;
     const caret = document as CaretDocument;
     const position = caret.caretPositionFromPoint?.(x, y);
     const range = position ? null : caret.caretRangeFromPoint?.(x, y);
     const node = position?.offsetNode ?? range?.startContainer;
     const element = node ? (node.nodeType === Node.TEXT_NODE ? node.parentElement : node as Element) : null;
-    const inPassage = Boolean(element && passage.current.contains(element));
+    const inPassage = Boolean(element && passage.current?.contains(element));
     const pane: ReadingMark["pane"] | null = inPassage ? "passage" : element && questionPane.current.contains(element) ? "questions" : null;
     const selector = inPassage ? "[data-paragraph]" : "[data-highlight-block]";
     const block = element?.closest<HTMLElement>(selector);
     if (!node || !pane || !block) return null;
-    const index = [...(inPassage ? passage.current : questionPane.current).querySelectorAll(selector)].indexOf(block);
+    const index = [...(inPassage ? passage.current! : questionPane.current).querySelectorAll(selector)].indexOf(block);
     const at = textOffset(block, node, position?.offset ?? range?.startOffset ?? 0);
     const inside = (item: ReadingMark) => item.section === section.id && item.pane === pane && item.block === index && at >= item.start && at <= item.end;
     return { note: pinned.find(inside), mark: marks.find(inside) };
@@ -214,6 +231,14 @@ export function ExamSheet({ exam, content, scope, answers, setAnswer, flags, set
     setSplit(Math.round(Math.max(25, Math.min(75, ((clientX - bounds.left) / bounds.width) * 100))));
   };
 
+  const addTo = (key: string, id: string) => setNotes((value) => ({ ...value, [key]: [...new Set([...(value[key] || "").split(",").filter(Boolean), id])].join(",") }));
+  const startAudio = () => {
+    const element = audio.current;
+    if (!element || !heard) return;
+    setAudioError("");
+    void element.play().then(() => { addTo("listening_played", heard.id); if (part !== playing) goTo(playing); }).catch(() => setAudioError("Audio could not start. Check your speakers and click Play again."));
+  };
+
   if (!section) return null;
   const props: AnswerProps = {
     answers, setAnswer, flags,
@@ -236,15 +261,20 @@ export function ExamSheet({ exam, content, scope, answers, setAnswer, flags, set
     <div className="cd-col">
     <header className="cd-header">
       <button type="button" className="cd-brand" onClick={onExit} title="Lưu và rời bài"><span>Ielts</span><b>WithHarry</b></button>
-      <div className="cd-title"><strong>{exam.title}</strong><span role="timer" aria-live="off">{remaining > 0 ? `${minutes} minute${minutes === 1 ? "" : "s"} remaining` : "Time is up"}</span></div>
+      <div className="cd-title"><strong>{exam.title}</strong><div className="cd-title-row">
+        {listening && <div className="cd-audio-chip"><button type="button" onClick={() => setVolumeOpen(!volumeOpen)} aria-expanded={volumeOpen} title="Âm lượng"><Volume2 size={14} /> Audio player</button>
+          {volumeOpen && <label className="cd-volume"><span className="sr-only">Volume</span><input type="range" min={0} max={1} step={0.05} value={volume} onChange={(event) => { const value = Number(event.target.value); setVolume(value); if (audio.current) audio.current.volume = value; }} /></label>}
+        </div>}
+        <span role="timer" aria-live="off">{remaining > 0 ? `${minutes} minute${minutes === 1 ? "" : "s"} remaining` : "Time is up"}</span>
+      </div></div>
       <div className="cd-icons"><Wifi size={24} aria-hidden="true" /><Bell size={24} aria-hidden="true" /><button type="button" onClick={() => notesOpen ? closeNotes() : setNotesOpen(true)} aria-label="Ghi chú" aria-pressed={notesOpen}><Menu size={24} /></button></div>
     </header>
 
     <div className="cd-main">
       {ended ? <div className="cd-end"><span>Click next to continue</span><button type="button" onClick={onSubmit} disabled={busy}><Send size={18} /> {busy ? "Submitting…" : "Next"}</button></div> : <>
-        <div className="cd-part"><strong>Part {partNumber(part)}</strong><span>Read the text and answer questions {first}-{last}</span></div>
-        <div className="cd-body" ref={body}>
-          <article className="cd-passage" ref={passage} onMouseUp={(event) => onPointerUp(event.clientX, event.clientY, event.target)}>
+        <div className="cd-part"><strong>Part {partNumber(part)}</strong><span>{listening ? "Listen and answer" : "Read the text and answer"} questions {first}-{last}</span></div>
+        <div className={`cd-body ${listening ? "is-listening" : ""}`} ref={body}>
+          {!listening && <><article className="cd-passage" ref={passage} onMouseUp={(event) => onPointerUp(event.clientX, event.clientY, event.target)}>
             <h2>{section.title}</h2>
             {section.passage.split(/\n\s*\n/).map((paragraph, index) => {
               const letter = /^\s*\*\*([A-Z])\*\*/.exec(paragraph)?.[1];
@@ -260,12 +290,12 @@ export function ExamSheet({ exam, content, scope, answers, setAnswer, flags, set
             onPointerMove={(event) => { if (event.currentTarget.hasPointerCapture(event.pointerId)) resize(event.clientX); }}
             onKeyDown={(event) => { if (event.key === "ArrowLeft" || event.key === "ArrowRight") { event.preventDefault(); setSplit((value) => Math.max(25, Math.min(75, value + (event.key === "ArrowRight" ? 5 : -5)))); } }}>
             <span><ArrowLeftRight size={18} /></span>
-          </div>
+          </div></>}
           <div className="cd-questions" ref={questionPane} onMouseUp={(event) => onPointerUp(event.clientX, event.clientY, event.target)}
             onFocus={(event) => { const id = (event.target as HTMLElement).closest("[id^='q-']")?.id.slice(2); if (id) setCurrent(id); }}
             onClick={(event) => { const id = (event.target as HTMLElement).closest("[id^='q-']")?.id.slice(2); if (id) setCurrent(id); }}>
             <div className="cd-q-inner" ref={questionInner}>
-              {groups.map((group) => pairedRuns(group) ? <Fragment key={group.key}>{pairedRuns(group)!.map((run) => <ChooseMany key={run[0].id} group={group} questions={run} props={props} />)}</Fragment> : <QuestionGroupView key={group.key} group={group} props={props} />)}
+              {groups.map((group) => pairedRuns(group) ? <Fragment key={group.key}>{pairedRuns(group)!.map((run) => <ChooseMany key={run[0].id} group={group} questions={run} props={props} />)}</Fragment> : <QuestionGroupView key={group.key} group={group} props={props} printed={listening && (group.kind === "gap" || /flow[_-]?chart[_-]completion/.test(group.type)) ? printedListeningLayout(section.passage, group.questions.map((question) => numbers.get(question.id) ?? question.number), group.kind === "pick") : undefined} />)}
               {current && flagTop !== null && <button type="button" className={`cd-flag ${currentFlagged ? "is-on" : ""}`} style={{ top: flagTop }} onClick={() => props.toggleFlag(current)} aria-pressed={currentFlagged} aria-label={currentFlagged ? "Bỏ đánh dấu xem lại" : "Đánh dấu xem lại"}><Bookmark size={18} fill={currentFlagged ? "currentColor" : "none"} /></button>}
             </div>
           </div>
@@ -279,6 +309,15 @@ export function ExamSheet({ exam, content, scope, answers, setAnswer, flags, set
         <button type="button" onMouseDown={(event) => event.preventDefault()} onClick={highlight}><Highlighter size={18} />Highlight</button>
       </> : <button type="button" onClick={() => { setMarks(marks.filter((mark) => !sameSpot(mark, tool.mark))); setTool(null); }}><X size={18} />Clear</button>}
     </div>}
+
+    {listening && heard?.audioUrl && <audio key={heard.id} ref={audio} src={heard.audioUrl} preload="auto"
+      onLoadedMetadata={(event) => { const at = Number(notes[`listening_position_${heard.id}`]) || 0; savedSecond.current = at; event.currentTarget.volume = volume; if (played.includes(heard.id) && at > 0) event.currentTarget.currentTime = Math.min(at, Math.max(0, event.currentTarget.duration - 1)); if (played.includes(heard.id)) void event.currentTarget.play().catch(() => undefined); }}
+      onTimeUpdate={(event) => { const at = Math.floor(event.currentTarget.currentTime / 5) * 5; if (at > savedSecond.current) { savedSecond.current = at; setNotes((value) => ({ ...value, [`listening_position_${heard.id}`]: String(at) })); } }}
+      onEnded={() => { addTo("listening_finished", heard.id); const next = sections[playing + 1]; if (next) { addTo("listening_played", next.id); goTo(playing + 1); } }} />}
+    {listening && heard && !played.includes(heard.id) && !allHeard && !ended && <div className="cd-audio-gate" role="dialog" aria-modal="true" aria-labelledby="cd-audio-gate-title">
+      <div><Headphones size={64} strokeWidth={1.6} /><p id="cd-audio-gate-title">You will be listening to an audio clip during this test. You will not be permitted to pause or rewind the audio while answering the questions.</p><p>To continue, click Play</p><button type="button" onClick={startAudio}><Play size={18} fill="currentColor" /> Play</button>{audioError && <small role="alert">{audioError}</small>}</div>
+    </div>}
+    {listening && heard && !heard.audioUrl && <p className="cd-audio-missing" role="status">This part has no recording yet.</p>}
 
     <div className="cd-arrows">
       <button type="button" className="is-prev" onClick={() => step(-1)} aria-label="Câu trước"><ArrowLeft size={30} /></button>

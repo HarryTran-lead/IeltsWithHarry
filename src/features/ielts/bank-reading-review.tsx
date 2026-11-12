@@ -3,7 +3,7 @@
 
 import Link from "next/link";
 import { useEffect, useMemo, useRef, useState, type CSSProperties } from "react";
-import { ArrowLeft, ChevronLeft, ChevronRight, Clock3, RotateCcw } from "lucide-react";
+import { ArrowLeft, ChevronLeft, ChevronRight, Clock3, MapPin, Play, RotateCcw } from "lucide-react";
 import { Sticker } from "@/components/stickers/stickers";
 import type { ExamContent, ExamQuestion } from "@/lib/ielts-bank/schema";
 import { displayExamTitle } from "@/lib/ielts-bank/display-title";
@@ -11,7 +11,8 @@ import { estimateBand, type ReviewItem, typeLabel } from "./bank-exam";
 import { optionKey, optionLabel, groupQuestions, richBlocks, withoutOwnNumber, type QuestionGroup } from "./bank-questions";
 import { RichText } from "./rich-text";
 import { ReadingShare } from "./reading-share";
-import { ListeningTranscript } from "./listening-transcript";
+import { ListeningReviewPane, transcriptLines } from "./listening-review";
+import { printedListeningLayout } from "./bank-test";
 import { explanationWithoutEvidence } from "@/lib/ielts-bank/reading-evidence";
 import { catalogQuestionTypeIds, catalogQuestionTypes, catalogSectionEntries, type CatalogExam } from "@/lib/ielts-bank/catalog";
 import { rangeAt, savedReadingMarks } from "./reading-highlights";
@@ -76,6 +77,7 @@ export function ReadingReview({ title, skill = "Reading", content, review, forma
   const [part, setPart] = useState(0);
   const [active, setActive] = useState<string | null>(null);
   const [split, setSplit] = useState(50);
+  const [seek, setSeek] = useState<{ at: number; nonce: number } | null>(null);
   const body = useRef<HTMLDivElement>(null);
   const passagePane = useRef<HTMLElement>(null);
   const questionPane = useRef<HTMLDivElement>(null);
@@ -100,7 +102,16 @@ export function ReadingReview({ title, skill = "Reading", content, review, forma
   const sectionLabel = (index: number) => `${skill === "Listening" ? "Part" : "Passage"} ${content.sections.length === 1 && partNumber && partNumber > 0 ? partNumber : sections[index].originalIndex + 1}`;
   const selectedReview = active ? result.get(active) : null;
   const evidenceReview = selectedReview;
-  const listeningQuote = skill === "Listening" ? evidenceReview?.explanation?.match(/^Evidence:\s*(.+)$/i)?.[1].split(" … ")[0] : null;
+  // Listening evidence: the transcript lines that answer the open question (older papers quote it in the explanation).
+  const listening = skill === "Listening";
+  const spoken = useMemo(() => listening && section ? transcriptLines(section.transcript) : [], [listening, section]);
+  const evidenceLines = listening ? evidenceReview?.evidenceLines ?? [] : [];
+  const lineQuote = evidenceLines.map((index) => spoken[index] ? `${spoken[index].speaker ? `${spoken[index].speaker}: ` : ""}${spoken[index].text}` : "").filter(Boolean).join(" ");
+  const listeningQuote = listening ? lineQuote || evidenceReview?.explanation?.match(/^Evidence:\s*(.+)$/i)?.[1].split(" … ")[0] : null;
+  /** "Nghe từ đây": play the part from the first evidence line of a question. */
+  const startOf = (id: string) => { const first = result.get(id)?.evidenceLines?.[0]; const at = first === undefined ? undefined : section?.transcriptTimes?.[first]; return at === undefined || !section?.audioUrl ? null : Math.max(0, at - 0.3); };
+  const playFrom = (id: string) => { const at = startOf(id); setActive(id); if (at !== null) setSeek((previous) => ({ at, nonce: (previous?.nonce ?? 0) + 1 })); };
+  const playNo = (id: string, number: number) => startOf(id) === null ? <span>{number}</span> : <button type="button" className="lr-play-no" onClick={() => playFrom(id)} title="Nghe từ đây" aria-label={`Nghe đoạn chứa đáp án câu ${number}`}><Play size={12} fill="currentColor" />{number}</button>;
   // A five-step explanation names its verbatim evidence; otherwise the stored evidence is used.
   const evidence = fiveStepEvidence(evidenceReview?.fiveStep) ?? evidenceReview?.evidence ?? (listeningQuote ? { quote: listeningQuote, paragraph: "transcript" } : null);
   const evidenceQuote = evidence?.quote;
@@ -206,11 +217,24 @@ export function ReadingReview({ title, skill = "Reading", content, review, forma
   return <main className={`br-review bl-tone-${skill.toLowerCase()}`} style={{ "--br-left": `${split}%` } as CSSProperties}>
     <header className="br-review-head"><Link href={backHref} aria-label="Về ngân hàng đề"><ArrowLeft size={18} /></Link><div><strong>{displayTitle}</strong><small>{guided ? `Ôn từng bước · Câu ${guidedIndex + 1}/${questions.length}` : `Xem lại bài ${skill} · ${correct}/${review.length} câu đúng${uncalibrated ? "" : ` · Band ${band?.toFixed(1) ?? "—"}`}`}</small></div>{skill === "Reading" && attemptId && <ReadingShare attemptId={attemptId} />}{guided ? <button type="button" onClick={() => setGuided(false)}>Thoát ôn tập</button> : <button type="button" onClick={startGuided}>Ôn từng bước</button>}<button type="button" onClick={() => { setGuided(false); setSummary(true); }}>Xem kết quả</button></header>
     <div className="br-review-body" ref={body}>
-      <article className="br-passage" ref={passagePane} aria-label={skill === "Listening" ? "Bản ghi và transcript" : "Bài đọc"}><span>{sectionLabel(part)}</span><h1>{section?.title}</h1>{skill === "Listening" && section?.audioUrl && <audio controls preload="metadata" src={section.audioUrl} aria-label={`Nghe lại ${section.title}`} />}{skill === "Listening" && <h2>Transcript</h2>}{skill === "Listening" && (section?.transcript ? <ListeningTranscript transcript={section.transcript} evidence={evidenceQuote} /> : <p>Part này chưa có transcript để đối chiếu.</p>)}{skill === "Reading" && section?.passage.split(/\n\s*\n/).map((paragraph, index) => { const letter = evidence?.paragraph.split("-").at(-1); const matchingParagraph = Boolean(letter && paragraph.startsWith(`**${letter}**`)); const start = evidence?.quote ? paragraph.toLowerCase().indexOf(evidence.quote.toLowerCase()) : -1; return <p key={index} data-paragraph={index} className={matchingParagraph || start >= 0 ? "is-evidence" : undefined}>{start >= 0 && evidence ? <><RichText text={paragraph.slice(0, start)} /><mark><RichText text={paragraph.slice(start, start + evidence.quote.length)} /></mark><RichText text={paragraph.slice(start + evidence.quote.length)} /></> : <RichText text={paragraph} />}</p>; })}</article>
+      <article className={`br-passage ${listening ? "is-listening" : ""}`} ref={passagePane} aria-label={listening ? "Bản ghi và transcript" : "Bài đọc"}>{!listening && <><span>{sectionLabel(part)}</span><h1>{section?.title}</h1></>}{listening && section && <ListeningReviewPane key={section.id} label={sectionLabel(part)} title={section.title} transcript={section.transcript} times={section.transcriptTimes} audioUrl={section.audioUrl} evidence={evidenceLines.length ? evidenceLines : []} seek={seek} />}{skill === "Reading" && section?.passage.split(/\n\s*\n/).map((paragraph, index) => { const letter = evidence?.paragraph.split("-").at(-1); const matchingParagraph = Boolean(letter && paragraph.startsWith(`**${letter}**`)); const start = evidence?.quote ? paragraph.toLowerCase().indexOf(evidence.quote.toLowerCase()) : -1; return <p key={index} data-paragraph={index} className={matchingParagraph || start >= 0 ? "is-evidence" : undefined}>{start >= 0 && evidence ? <><RichText text={paragraph.slice(0, start)} /><mark><RichText text={paragraph.slice(start, start + evidence.quote.length)} /></mark><RichText text={paragraph.slice(start + evidence.quote.length)} /></> : <RichText text={paragraph} />}</p>; })}</article>
       <div className="br-divider" role="separator" tabIndex={0} aria-label="Độ rộng bài đọc" aria-orientation="vertical" aria-valuemin={30} aria-valuemax={70} aria-valuenow={split} onPointerDown={(event) => { if (window.matchMedia("(min-width: 901px)").matches) { event.currentTarget.setPointerCapture(event.pointerId); resize(event.clientX); } }} onPointerMove={(event) => { if (event.currentTarget.hasPointerCapture(event.pointerId)) resize(event.clientX); }} onKeyDown={(event) => { if (event.key === "ArrowLeft" || event.key === "ArrowRight") { event.preventDefault(); setSplit((value) => Math.max(30, Math.min(70, value + (event.key === "ArrowRight" ? 5 : -5)))); } }}><span>⋮</span></div>
       <div className="br-questions" ref={questionPane} aria-label="Câu hỏi và giải thích" id="br-question-start">{groups.map((group) => <section className="br-group" key={group.key}><h2 data-review-text>Questions {numberOf(group.questions[0].id)}–{numberOf(group.questions.at(-1)!.id)}</h2><p className="br-instructions" data-review-text><RichText text={group.instructions} /></p>{group.questions.find((question) => question.mediaUrl)?.mediaUrl && <figure className="br-group-media"><img src={group.questions.find((question) => question.mediaUrl)!.mediaUrl} alt={`Sơ đồ cho câu ${numberOf(group.questions[0].id)}–${numberOf(group.questions.at(-1)!.id)}`} /></figure>}{(() => {
         // A shared notes form or table is shown once, as in the test, with each gap replaced by the learner's answer.
         const carrier = group.questions.find((question) => (question.prompt.match(/\*\*\d+\*\*/g) ?? []).length >= 2);
+        const printed = listening && !carrier && !group.questions[0].options.length && section ? printedListeningLayout(section.passage, group.questions.map((question) => numberOf(question.id))) : undefined;
+        // Listening forms and notes print as on the paper, each gap showing the answer, ▶ to hear it and a pin to see it in the transcript.
+        if (printed) return <div className="br-sheet lr-sheet" data-review-text>{richBlocks(printed, (_key, number) => {
+          const target = number === undefined ? undefined : group.questions.find((question) => numberOf(question.id) === number);
+          if (!target) return <span className="br-gap is-empty">____</span>;
+          const item = result.get(target.id);
+          const answer = (item?.answers ?? [])[0] ?? "";
+          return <span className={`lr-gap ${item?.correct ? "is-right" : item?.given ? "is-wrong" : "is-empty"} ${active === target.id ? "is-active" : ""}`} id={`br-q-${target.id}`}>
+            {playNo(target.id, number!)}
+            {item?.correct ? <b>{item.given}</b> : <>{item?.given ? <s>{item.given}</s> : <i>bỏ trống</i>}<span aria-hidden="true">→</span><b>{answer}</b></>}
+            <button type="button" className="lr-pin" onClick={() => setActive(active === target.id ? null : target.id)} title="Xem vị trí và giải thích" aria-label={`Xem vị trí câu ${number}`}><MapPin size={14} /></button>
+          </span>;
+        })}</div>;
         if (!carrier) return null;
         return <div className="br-sheet" data-review-text>{richBlocks(carrier.prompt, (_key, number) => {
           const target = number === undefined ? undefined : group.questions.find((question) => numberOf(question.id) === number);
@@ -231,7 +255,7 @@ export function ReadingReview({ title, skill = "Reading", content, review, forma
               const answers = (item?.answers ?? []).map(optionKey);
               const open = active === question.id;
               return <tr key={question.id} id={`br-q-${question.id}`} className={`${item?.correct ? "is-right" : item?.given ? "is-wrong" : "is-skipped"} ${open ? "is-open" : ""}`}>
-                <th scope="row"><span className="br-grid-no">{numberOf(question.id)}</span><span data-review-text>{reviewPrompt(group.questions, question, numberOf(question.id))}</span></th>
+                <th scope="row"><span className="br-grid-no">{listening ? playNo(question.id, numberOf(question.id)) : numberOf(question.id)}</span><span data-review-text>{reviewPrompt(group.questions, question, numberOf(question.id))}</span></th>
                 {grid.keys.map((key) => { const answer = answers.includes(key), chosen = given === key; return <td key={key} className={`${answer ? "is-answer" : ""} ${chosen ? (answer ? "is-chosen-right" : "is-chosen-wrong") : ""}`} aria-label={chosen ? (answer ? `${key}: bạn chọn, đúng` : `${key}: bạn chọn, sai`) : answer ? `${key}: đáp án` : undefined}><i /></td>; })}
                 <td><button type="button" aria-expanded={open} onClick={() => setActive(open ? null : question.id)}>{open ? "Ẩn" : "Giải thích"}</button></td>
               </tr>;
@@ -241,15 +265,16 @@ export function ReadingReview({ title, skill = "Reading", content, review, forma
       })()}{group.questions.map((question) => {
         const item = result.get(question.id);
         const open = active === question.id;
-        const inGrid = Boolean(gridOf(group));
-        // In a grid, only the row being explained gets a block underneath.
+        const inSheet = listening && !question.options.length && Boolean(section && printedListeningLayout(section.passage, group.questions.map((entry) => numberOf(entry.id))));
+        const inGrid = Boolean(gridOf(group)) || inSheet;
+        // In a grid or a printed form, only the item being explained gets a block underneath.
         if (inGrid && !open) return null;
         const fixed = /true[_-]false/.test(question.type) ? ["TRUE", "FALSE", "NOT GIVEN"] : /yes[_-]no/.test(question.type) ? ["YES", "NO", "NOT GIVEN"] : [];
         const options = question.options.length ? question.options : fixed;
         const acceptedAnswers = question.group ? [...new Set(questions.filter((candidate) => candidate.group === question.group).flatMap((candidate) => result.get(candidate.id)?.answers || []))] : item?.answers || [];
         const explanation = open ? evidenceReview?.explanation : item?.explanation;
         const cleanExplanation = skill === "Reading" ? explanationWithoutEvidence(explanation || "") : explanation || "";
-        return <div className={`br-question ${item?.correct ? "is-right" : item?.given ? "is-wrong" : "is-skipped"} ${inGrid ? "is-grid-note" : ""}`} key={question.id} id={inGrid ? undefined : `br-q-${question.id}`}><div className="br-question-title"><span>{numberOf(question.id)}</span><div data-review-text>{inGrid ? <b>Giải thích câu {numberOf(question.id)}</b> : <RichText text={reviewPrompt(group.questions, question, numberOf(question.id))} />}</div><button type="button" aria-expanded={open} onClick={() => setActive(open ? null : question.id)}>{open ? "Ẩn giải thích" : "Xem giải thích"}</button></div>
+        return <div className={`br-question ${item?.correct ? "is-right" : item?.given ? "is-wrong" : "is-skipped"} ${inGrid ? "is-grid-note" : ""}`} key={question.id} id={inGrid ? undefined : `br-q-${question.id}`}><div className="br-question-title">{listening && !inGrid ? playNo(question.id, numberOf(question.id)) : <span>{numberOf(question.id)}</span>}<div data-review-text>{inGrid ? <b>Giải thích câu {numberOf(question.id)}</b> : <RichText text={reviewPrompt(group.questions, question, numberOf(question.id))} />}</div><button type="button" aria-expanded={open} onClick={() => setActive(open ? null : question.id)}>{open ? "Ẩn giải thích" : "Xem giải thích"}</button></div>
           {!inGrid && options.length > 0 && <ul className="br-options">{options.map((option) => { const key = optionKey(option), chosen = item?.given && (option === item.given || key === item.given), answer = acceptedAnswers.some((value) => value === option || value === key); return <li key={option} className={`${chosen ? "is-chosen" : ""} ${answer ? "is-answer" : ""}`}><b>{key}</b><span data-review-text>{optionLabel(option) || option}</span>{chosen && <small>Bạn chọn</small>}{answer && <small>Đáp án</small>}</li>; })}</ul>}
           <div className="br-answer-feedback"><span className={item?.correct ? "is-correct" : item?.given ? "is-incorrect" : "is-empty"}>{item?.correct ? "Đúng" : item?.given ? "Sai" : "Chưa trả lời"} · Bạn: <strong>{item?.given || "—"}</strong></span><span className="is-correct">Đáp án đúng: <strong>{acceptedAnswers.join(" / ") || "—"}</strong>{question.group && " · Không cần đúng thứ tự"}</span></div>
           {open && item?.fiveStep && <div className="br-explanation is-five"><small>{typeLabel(question.type)}</small><FiveStepView steps={item.fiveStep} />{guided && <div className="br-step-actions"><button type="button" disabled={guidedIndex <= 0} onClick={() => pickQuestion(guidedIndex - 1)}>Câu trước</button><button type="button" disabled={guidedIndex + 1 >= questions.length} onClick={() => pickQuestion(guidedIndex + 1)}>Câu tiếp <ChevronRight size={15} /></button></div>}</div>}
