@@ -76,3 +76,32 @@ body:has(.app-frame.sidebar-collapsed) .study-room-host.full{left:0}
 .study-message.is-admin .study-message-meta { margin: 0; padding: 7px 10px 4px; flex-wrap: wrap; }
 .study-message-admin-label { order: -1; flex-basis: 100%; color: #9b5a08; font-size: var(--fs-2xs); font-weight: 800; letter-spacing: .12em; }
 .study-message.is-admin .study-message-avatar { background: #fff2d2; overflow: hidden; }
+
+/* Short laptop screens (a 1080p screen at 150% scaling leaves about 590px): the whole room, video and chat
+   included, fits one screen. The video takes whatever height is left after the heading and controls. */
+@media (max-height:760px) and (min-width:1151px){
+  .study-room-host.full .study-room-page{--sr-video:clamp(200px,calc(100dvh - 300px),620px);padding:6px 20px 8px}
+  .study-room-host.full .study-room-heading{margin-bottom:6px}
+  .study-room-host.full .study-eyebrow{display:none}
+  .study-room-host.full .study-room-heading h1{margin:0;font-size:22px}
+  .study-room-host.full .study-room-heading h1 .sticker{width:28px!important;height:28px!important}
+  .study-room-host.full :is(.study-online,.study-elapsed,.study-session-toggle){padding:6px 11px}
+  .study-room-host.full :is(.study-online,.study-elapsed) strong{font-size:var(--fs-md)}
+  .study-room-host.full .study-control-bar{gap:6px;margin-bottom:6px;padding:6px 10px}
+  .study-room-host.full .study-video-tabs button{padding:5px 11px}
+  .study-room-host.full .study-focus-compact :is(select,button){padding-block:5px}
+  .study-room-host.full .study-focus-compact strong{font-size:17px}
+  .study-room-host.full .study-stream-option{padding:4px 6px}
+  .study-room-host.full .study-stream-emoji{flex-basis:26px;width:26px;height:26px;font-size:var(--fs-base)}
+  .study-room-host.full .study-room-grid{gap:12px}
+  .study-room-host.full .study-youtube,.study-room-host.full .study-scene{height:var(--sr-video)}
+  .study-room-host.full .study-visual-footer{padding:7px 14px}
+  .study-room-host.full .study-visual-footer>div{gap:1px}
+  .study-room-host.full .study-on-air{display:none}
+  .study-room-host.full .study-visual-footer strong{font-size:var(--fs-md)}
+  .study-room-host.full .study-visual-footer small{font-size:var(--fs-xs)}
+  .study-room-host.full .study-chat-card{height:calc(var(--sr-video) + 54px)}
+  .study-room-host.full .study-chat-empty img{width:60px;height:60px}
+  .study-room-host.full .study-chat-empty h2{margin-top:6px;font-size:var(--fs-md)}
+  .study-room-host.full .study-chat-empty p{line-height:1.45}
+}
