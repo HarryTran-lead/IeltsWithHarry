@@ -77,10 +77,10 @@ body:has(.app-frame.sidebar-collapsed) .study-room-host.full{left:0}
 .study-message-admin-label { order: -1; flex-basis: 100%; color: #9b5a08; font-size: var(--fs-2xs); font-weight: 800; letter-spacing: .12em; }
 .study-message.is-admin .study-message-avatar { background: #fff2d2; overflow: hidden; }
 
-/* Short laptop screens (a 1080p screen at 150% scaling leaves about 590px): the whole room, video and chat
-   included, fits one screen. The video takes whatever height is left after the heading and controls. */
-@media (max-height:760px) and (min-width:1151px){
-  .study-room-host.full .study-room-page{--sr-video:clamp(200px,calc(100dvh - 300px),620px);padding:6px 20px 8px}
+/* Desktop: the whole room, video and chat included, is exactly one screen tall at any height. The video takes whatever height is left after the heading and controls. */
+@media (min-width:1151px){
+  .study-room-host.full .study-room-page{--sr-video:max(200px,calc(100dvh - 300px));padding:6px 20px 8px}
+  .study-room-host.full .study-room-grid{grid-template-columns:minmax(0,1fr) clamp(320px,24vw,440px)}
   .study-room-host.full .study-room-heading{margin-bottom:6px}
   .study-room-host.full .study-eyebrow{display:none}
   .study-room-host.full .study-room-heading h1{margin:0;font-size:22px}

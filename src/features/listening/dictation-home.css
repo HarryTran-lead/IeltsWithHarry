@@ -175,9 +175,10 @@ a.dh-stage-body:hover .dh-stage-foot svg{transform:translateX(3px)}
   .dh-bank-art{width:52px;height:52px;border-radius:var(--r-lg)}
 }
 
-/* Short laptop screens (a 1080p screen at 150% scaling leaves about 590px): the whole home fits one
-   screen, like the Vocabulary home. One hero row, actions as single lines, stages as compact rows. */
-@media(max-height:760px) and (min-width:981px){
+/* Desktop board: the whole home is exactly one screen tall at any height, like the Vocabulary home.
+   One hero row, actions as single lines, stages as compact rows; the compact sizes below fit a
+   1280×590 window and the fill rules after them grow everything with the viewport height. */
+@media(min-width:981px){
   .main-area:has(>.page-enter>.dh),.main-area:has(>.dh){padding-top:4px;padding-bottom:8px}
   .dh{padding:4px clamp(12px,1.6vw,24px) 8px}
   .dh-breadcrumb,.dh-eyebrow,.dh-hero-copy>p,.dh-steps,.dh-tips,.dh-kicker,.dh-action-text>span,.dh-stage-body>span:not(.dh-stage-foot),.dh-bank-text>span{display:none}
@@ -214,7 +215,7 @@ a.dh-stage-body:hover .dh-stage-foot svg{transform:translateX(3px)}
   .dh-group+.dh-group{margin-top:8px}
   .dh-group h3{margin-bottom:6px;font-size:var(--fs-sm)}
   .dh-track{gap:10px}
-  .dh-track::before{top:29px;left:34px;right:34px}
+  .dh-track::before{display:none}
   .dh-stage-body{display:grid;grid-template-columns:auto minmax(0,1fr) auto;align-items:center;gap:0 10px;padding:9px 12px}
   .dh-stage-top{display:contents}
   .dh-stage-top .dh-ring{grid-column:1;grid-row:1/3;width:40px!important;height:40px!important}
@@ -226,4 +227,50 @@ a.dh-stage-body:hover .dh-stage-foot svg{transform:translateX(3px)}
   .dh-bank{gap:12px;padding:10px 14px}
   .dh-bank-art{width:40px;height:40px;border-radius:var(--r-md)}
   .dh-bank-text strong{font-size:var(--fs-md)}
+}
+
+/* Fill the screen: sections share the spare height and type, icons and padding grow with vh. */
+@media(min-width:981px){
+  .dh{display:flex;flex-direction:column;min-height:calc(100dvh - var(--app-header-height,64px) - 12px)}
+  .app-frame .dh .dh-hero{flex:1 1 auto;padding:clamp(10px,2.2vh,28px) clamp(16px,1.8vw,30px)}
+  .app-frame .dh .dh-hero h1{font-size:clamp(24px,3.7vh,42px)}
+  .dh-hero-copy>p{font-size:clamp(14px,1.8vh,17px)}
+  .app-frame .dh .dh-hero-actions{margin-top:clamp(8px,1.6vh,18px)}
+  .dh-cta{padding:clamp(5px,.8vh,9px) 12px clamp(5px,.8vh,9px) clamp(5px,.8vh,9px)}
+  .dh-cta-icon{width:clamp(30px,4.6vh,46px);height:clamp(30px,4.6vh,46px)}
+  .dh-cta b{font-size:clamp(14px,1.9vh,17px)}
+  .dh-ghost{padding:clamp(7px,1.1vh,12px) 12px;font-size:clamp(12px,1.6vh,15px)}
+  .app-frame .dh .dh-stats{gap:clamp(10px,1.4vw,18px);padding:clamp(7px,1.4vh,16px) clamp(10px,1vw,16px)}
+  .dh-stats .dh-ring{width:clamp(48px,7.5vh,80px)!important;height:clamp(48px,7.5vh,80px)!important}
+  .dh-stats .dh-ring b{font-size:clamp(17px,2.6vh,26px)}
+  .dh-week strong{font-size:clamp(14px,1.9vh,17px)}
+  .dh-week span{font-size:clamp(12px,1.5vh,14px)}
+  .app-frame .dh .dh-numbers div{padding:clamp(4px,.9vh,10px) clamp(8px,.8vw,12px)}
+  .app-frame .dh .dh-numbers dd{font-size:clamp(15px,2.3vh,24px)}
+  .dh-actions{flex:.7 1 auto;margin:clamp(10px,1.6vh,18px) 0}
+  .dh .dh-action{padding:clamp(9px,1.5vh,18px) clamp(12px,1vw,18px)}
+  .dh-action-icon{width:clamp(34px,5vh,50px);height:clamp(34px,5vh,50px)}
+  .dh-action-text strong{font-size:clamp(14px,1.9vh,17px)}
+  .dh-action-text>span{font-size:clamp(12px,1.5vh,14px)}
+  .dh-section-head{margin-bottom:clamp(6px,1vh,12px)}
+  .dh-section-head h2{font-size:clamp(18px,2.5vh,26px)}
+  .dh-path{display:flex;flex:2 1 auto;flex-direction:column;margin-bottom:0}
+  .dh-group{display:flex;flex:1;flex-direction:column}
+  .dh-group+.dh-group{margin-top:clamp(8px,1.4vh,16px)}
+  .dh-group h3{font-size:clamp(13.5px,1.8vh,16px)}
+  .dh-track{flex:1}
+  .dh-stage-body{align-content:center;padding:clamp(9px,1.5vh,18px) clamp(12px,1vw,18px)}
+  .dh-stage-top .dh-ring{width:clamp(40px,6vh,60px)!important;height:clamp(40px,6vh,60px)!important}
+  .dh-stage .dh-ring b{font-size:clamp(14px,1.9vh,18px)}
+  .dh-stage-body>strong{font-size:clamp(15px,2.1vh,20px)}
+  .dh-stage-foot{font-size:clamp(12px,1.5vh,14px)}
+  .dh-banks{margin:clamp(10px,1.6vh,18px) 0 0}
+}
+/* Tall screens have room for the explanatory copy again. */
+@media(min-width:981px) and (min-height:820px){
+  .dh-hero-copy>p{display:block;margin-top:6px}
+  .dh-action-text>span{display:block}
+  .dh-stage-body>span:not(.dh-stage-foot){display:block;grid-column:2/4;grid-row:2;overflow:hidden;font-size:clamp(12.5px,1.6vh,15px);white-space:nowrap;text-overflow:ellipsis}
+  .dh-stage-top .dh-ring{grid-row:1/4}
+  .dh-stage-foot{grid-row:3;padding-top:4px}
 }

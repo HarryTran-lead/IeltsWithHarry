@@ -560,10 +560,11 @@
   }
 }
 
-/* Short laptop screens (a 1080p screen at 150% scaling leaves about 590px): the setup fits one screen,
-   like the Vocabulary home. Slimmer hero, one row per stage with its bands, a tighter start panel. */
-@media (max-height: 760px) and (min-width: 1101px) {
-  .main-area:has(> .page-enter > .translation-workspace), .main-area:has(> .translation-workspace) { padding-top: 4px; padding-bottom: 8px; }
+/* Desktop board: the setup is exactly one screen tall at any height, like the Vocabulary home. Slimmer
+   hero, one row per stage with its bands, a tighter start panel; the compact sizes below fit a 1280×590
+   window and the fill rules after them grow everything with the viewport height. */
+@media (min-width: 1101px) {
+  .main-area:has(.translation-workspace > .xp-setup) { padding-top: 4px; padding-bottom: 8px; }
   .translation-workspace .xp-hero { grid-template-columns: minmax(0, 1fr) minmax(260px, 400px); gap: 18px; padding: 9px 18px; }
   .translation-workspace .xp-hero h1 { margin: 2px 0 0; font-size: 24px; }
   .translation-workspace .xp-hero-copy > p, .translation-workspace .xp-hero .practice-eyebrow, .translation-workspace .xp-stages > h2, .xp-stage-meter { display: none; }
@@ -589,4 +590,40 @@
   .xp-panel-stats div { padding: 5px 4px; }
   .xp-panel-stats dd { font-size: var(--fs-md); }
   .xp-panel-note { line-height: 1.4; }
+}
+
+/* Fill the screen: the stages share the spare height and type, buttons and padding grow with vh. */
+@media (min-width: 1101px) {
+  .translation-workspace:has(> .xp-setup) { box-sizing: border-box; display: flex; flex-direction: column; min-height: calc(100dvh - var(--app-header-height, 64px) - 12px); padding-bottom: 0; }
+  .translation-workspace:has(> .xp-setup) > .xp-setup { flex: 1; align-items: stretch; margin-top: clamp(8px, 1.4vh, 16px); }
+  .translation-workspace .xp-hero { padding: clamp(9px, 2vh, 24px) clamp(18px, 1.8vw, 28px); }
+  .translation-workspace .xp-hero h1 { font-size: clamp(24px, 3.6vh, 38px); }
+  .xp-steps li { padding: clamp(4px, .6vh, 7px) 12px clamp(4px, .6vh, 7px) 4px; font-size: clamp(12px, 1.6vh, 15px); }
+  .xp-steps b { width: clamp(22px, 3vh, 28px); height: clamp(22px, 3vh, 28px); }
+  .xp-example { padding: clamp(6px, 1.2vh, 14px) clamp(12px, 1vw, 16px); }
+  .xp-example p { font-size: clamp(13.5px, 1.8vh, 16px); }
+  .xp-stages { display: flex; flex-direction: column; gap: clamp(6px, 1.1vh, 12px); }
+  .xp-stage { flex: 1 1 auto; padding: clamp(8px, 1.4vh, 16px) clamp(12px, 1vw, 18px); }
+  .xp-stage-index { width: clamp(30px, 4.6vh, 46px); height: clamp(30px, 4.6vh, 46px); font-size: clamp(13.5px, 1.9vh, 18px); }
+  .xp-stage-head strong { font-size: clamp(14px, 2vh, 18px); }
+  .xp-stage-head small { font-size: clamp(12px, 1.5vh, 14px); }
+  .xp-bands { gap: clamp(6px, .6vw, 10px); }
+  .xp-bands button { padding: clamp(5px, 1vh, 12px) 4px; }
+  .xp-bands button strong { font-size: clamp(15px, 2.3vh, 23px); }
+  .xp-bands button small { font-size: clamp(11px, 1.4vh, 13px); }
+  .xp-stages .translation-mode-link { padding: clamp(5px, 1vh, 12px) 14px; }
+  .xp-panel { align-content: space-between; gap: clamp(8px, 1.4vh, 16px); padding: clamp(12px, 2vh, 22px) clamp(14px, 1.2vw, 20px); }
+  .xp-panel-label { font-size: clamp(17px, 2.5vh, 26px); }
+  .xp-panel-focus { font-size: clamp(13.5px, 1.8vh, 16px); }
+  .xp-panel-stats div { padding: clamp(5px, 1vh, 12px) 4px; }
+  .xp-panel-stats dd { font-size: clamp(15px, 2.4vh, 24px); }
+  .xp-size, .xp-review-only { font-size: clamp(13px, 1.7vh, 15px); }
+  .translation-workspace .xp-start { min-height: clamp(40px, 5.6vh, 54px); }
+  .xp-panel-note { font-size: clamp(11px, 1.35vh, 13px); }
+}
+/* Tall screens have room for the explanatory copy again. */
+@media (min-width: 1101px) and (min-height: 820px) {
+  .translation-workspace .xp-hero-copy > p, .translation-workspace .xp-hero .practice-eyebrow, .translation-workspace .xp-stages > h2 { display: block; }
+  .translation-workspace .xp-hero-copy > p { margin-top: 4px; font-size: clamp(14px, 1.8vh, 17px); }
+  .xp-example p { -webkit-line-clamp: 2; }
 }
