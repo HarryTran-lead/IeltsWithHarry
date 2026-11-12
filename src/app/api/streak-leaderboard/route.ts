@@ -33,7 +33,7 @@ export async function GET() {
     for (let start = 0; start < ids.length; start += 200) {
       const batch = ids.slice(start, start + 200);
       const [people, controls] = await Promise.all([
-        db.from("profiles").select("id,display_name,timezone").in("id", batch),
+        db.from("profiles").select("id,display_name,timezone,avatar,avatar_frame").in("id", batch),
         db.from("account_controls").select("user_id,suspended_until").in("user_id", batch).gt("suspended_until", now.toISOString()),
       ]);
       const error = people.error || controls.error;
@@ -50,8 +50,8 @@ export async function GET() {
       }
     }
 
-    const leaders = topStreaks(profiles, activity, now, excluded).map(({ id, display_name, days }) => ({
-      name: display_name, days, isYou: id === user.id,
+    const leaders = topStreaks(profiles, activity, now, excluded).map(({ id, display_name, days, avatar, avatar_frame }) => ({
+      name: display_name, days, isYou: id === user.id, avatar: avatar || "harry", frame: avatar_frame || "classic",
     }));
     return Response.json({ leaders }, { headers: { "Cache-Control": "no-store" } });
   } catch (error) { return requestError(error); }
