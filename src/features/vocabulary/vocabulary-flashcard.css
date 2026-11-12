@@ -38,3 +38,14 @@
 .vocab-flip-card-status button:first-child.is-selected { border-color: #c67972; background: #fff0ec; color: #a44943; }
 @media (max-width: 560px) { .vocab-flip-card { height: 380px; } .vocab-flip-card-face { padding: 19px 15px; } .vocab-flip-card-examples { grid-template-columns: 1fr; } .vocab-flip-card-actions { gap: 7px; } .vocab-flip-card-status { gap: 5px; } .vocab-flip-card-status button { padding: 8px 10px; font-size: var(--fs-xs); } }
 @media (prefers-reduced-motion: reduce) { .vocab-flip-card-inner { transition: none; } }
+
+/* Zoom-stable card (2026-11-12). Browser zoom changes the CSS viewport, so a height tied to the screen
+   width grew or shrank against the rest of the page. The card now takes the height left in the window
+   (between 220 and 400px) and its text scales with the card, so card, tools and buttons stay in view at
+   80–150% zoom. --vs-chrome is the space the page needs above and below the card. */
+.vocab-flip-card { height: clamp(220px, calc(100vh - var(--vs-chrome, 470px)), 400px); height: clamp(220px, calc(100dvh - var(--vs-chrome, 470px)), 400px); container-type: size; }
+.vocab-flip-card-face { padding: clamp(14px, 6cqh, 26px) clamp(16px, 4cqw, 36px); }
+.vocab-flip-card-center strong { font-size: clamp(28px, 15cqh, 56px); }
+.vocab-flip-card-meaning { font-size: clamp(20px, 8.5cqh, 34px); }
+.vocab-flip-card-back { gap: clamp(6px, 3cqh, 12px); }
+@media (max-width: 560px) { .vocab-flip-card { height: clamp(260px, calc(100dvh - var(--vs-chrome, 470px)), 400px); } }
