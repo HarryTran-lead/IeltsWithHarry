@@ -199,9 +199,14 @@ function geminiModels() {
  * configured model; anything else fails the request.
  */
 export type GeminiPart = { text: string } | { inlineData: { mimeType: string; data: string } };
-export async function geminiJson<T>(system: string, user: string | GeminiPart[], schema: unknown, { fetcher = fetch, maxOutputTokens = 16000, temperature = 0.4, googleSearch = false, models }: { fetcher?: typeof fetch; maxOutputTokens?: number; temperature?: number; googleSearch?: boolean; models?: string[] } = {}): Promise<{ model: string; data: T }> {
-  const key = process.env.GEMINI_API_KEY;
-  if (!key) throw new Error("GEMINI_API_KEY is not configured");
+export function newsQuizFreeTierReady() {
+  return process.env.AI_FACTORY_FREE_TIER_ONLY === "true"
+    && process.env.AI_FACTORY_FREE_TIER_CONFIRMED === "true"
+    && Boolean(process.env.AI_FACTORY_GEMINI_API_KEY);
+}
+export async function geminiJson<T>(system: string, user: string | GeminiPart[], schema: unknown, { fetcher = fetch, maxOutputTokens = 16000, temperature = 0.4, googleSearch = false, models, freeTierOnly = false }: { fetcher?: typeof fetch; maxOutputTokens?: number; temperature?: number; googleSearch?: boolean; models?: string[]; freeTierOnly?: boolean } = {}): Promise<{ model: string; data: T }> {
+  const key = freeTierOnly ? (newsQuizFreeTierReady() ? process.env.AI_FACTORY_GEMINI_API_KEY : undefined) : process.env.GEMINI_API_KEY;
+  if (!key) throw new Error(freeTierOnly ? "Confirmed free-tier Gemini key is not configured" : "GEMINI_API_KEY is not configured");
   const request = JSON.stringify({
     systemInstruction: { parts: [{ text: system }] },
     contents: [{ role: "user", parts: typeof user === "string" ? [{ text: user }] : user }],
@@ -265,7 +270,7 @@ export async function generateNewsQuiz(title: string, body: string, fetcher: typ
 ${quizInstructionsFor(plan)}
 
 Additional editor guidance (apply only when consistent with the requirements above):
-${customPrompt.slice(0, 4000)}`, `Article title: ${title}\n\nArticle text:\n${excerpt}`, schema, { fetcher });
+${customPrompt.slice(0, 4000)}`, `Article title: ${title}\n\nArticle text:\n${excerpt}`, schema, { fetcher, freeTierOnly: true });
   return { model, ...finalizeQuiz(data, excerpt, plan) };
 }
 
@@ -671,7 +676,7 @@ async function enrichImages(db: Db, result: EnrichResult) {
 }
 
 async function enrichQuiz(db: Db, result: EnrichResult, settings: Awaited<ReturnType<typeof loadNewsSettings>>, scheduled: boolean) {
-  if (!result.aiConfigured) return;
+  if (!newsQuizFreeTierReady()) { result.errors.push("Confirmed free-tier Gemini key is not configured for news quizzes"); return; }
   if (scheduled) {
     const today = new Date(); today.setUTCHours(0, 0, 0, 0);
     const { count, error } = await db.from("news_enrichment_attempts").select("article_id", { count: "exact", head: true }).eq("kind", "quiz").gte("attempted_at", today.toISOString());
