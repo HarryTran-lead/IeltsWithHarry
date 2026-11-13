@@ -18,7 +18,7 @@ export type LearnerOverview = {
   profile: LearnerProfile;
   controls: AccountControls | null;
   streak: Streak;
-  stats: { lessons: number; lessonScore: number | null; newsQuizzes: number; newsScore: number | null; newsRead: number; words: number; tasksDone: number; tasksOpen: number; messages: number };
+  stats: { lessons: number; lessonScore: number | null; newsQuizzes: number; newsScore: number | null; newsRead: number; words: number; dictation?: number; ieltsAttempts?: number; tasksDone: number; tasksOpen: number; messages: number };
   openTasks: { id: string; title: string; skill: string; due: string; assigned: boolean }[];
   timeline: TimelineItem[];
 };
