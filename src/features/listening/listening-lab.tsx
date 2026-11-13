@@ -67,33 +67,32 @@ function RoadmapPage() {
   }, [summaries]);
   const visible = (unit: ListeningModule) => typeFilter === "all" || typesOf(unit).includes(typeFilter);
 
-  return <div className="ll-page">
+  return <div className="ll-page ll-roadmap">
     <header className="ll-hero">
       <Wave/>
       <div className="ll-hero-copy">
-        <span className="ll-eyebrow"><Headphones size={13}/> Listening Lab · bản thử nghiệm</span>
-        <h1>Nghe theo lộ trình, <em>luyện đúng từng dạng</em></h1>
-        <p>28 mô-đun qua 7 chặng — từ nhận âm, tên và số đến trọn Section 1–4. Mỗi mô-đun: nghe có hướng dẫn → luyện độc lập → chuyển giao sang bản ghi mới.</p>
+        <h1>Nghe theo lộ trình, <em>luyện đúng từng dạng.</em></h1>
         <div className="ll-hero-actions">
           <Link className="ll-cta" href={`${BASE}/module/${next.id}#${nextPhase}`}>
             <span className="ll-cta-icon"><Play size={18} fill="currentColor"/></span>
             <span><b>{started ? "Học tiếp" : done ? "Mô-đun tiếp theo" : "Bắt đầu học"}</b><small>Mô-đun {next.id} · {next.title} · bước {phaseInfo[nextPhase].step}/3</small></span>
             <ArrowRight size={18}/>
           </Link>
-          {!suggested && <Link className="ll-ghost" href={`${BASE}/placement`}><Compass size={16}/> Chưa biết bắt đầu từ đâu?</Link>}
+          {!suggested && <Link className="ll-ghost" href={`${BASE}/placement`}><Compass size={15}/> Chưa biết bắt đầu từ đâu?</Link>}
+          <span className="ll-draft-pill" title="Bài nghe nguồn đang chờ giáo viên kiểm duyệt">Thử nghiệm</span>
         </div>
       </div>
       <div className="ll-stats">
-        <div className="ll-stats-ring"><Ring value={done} total={28}/><div><strong>Mô-đun đã đạt</strong><span>Đạt khi độc lập ≥ 8/10 và chuyển giao ≥ 75%</span></div></div>
+        <div className="ll-stats-ring"><Ring value={done} total={28}/><div><strong>Mô-đun đã đạt</strong><span>Còn {28 - done} mô-đun</span></div></div>
         <dl><div><dt>Câu đã làm</dt><dd>{checked}</dd></div><div><dt>Độ chính xác</dt><dd>{checked ? `${Math.round((correct / checked) * 100)}%` : "—"}</dd></div><div><dt>Lỗi đến hạn</dt><dd>{due}</dd></div></dl>
       </div>
     </header>
 
     <nav className="ll-actions" aria-label="Lối tắt">
-      <ActionCard href={`${BASE}/placement`} tone="sun" icon={<Compass size={20}/>} title="Kiểm tra đầu vào" text={suggested ? `Đã làm · gợi ý bắt đầu mô-đun ${suggested}` : "12 câu · nghe một lượt · gợi ý chặng bắt đầu"}/>
-      <ActionCard href={`${BASE}/review`} tone="coral" icon={<RotateCcw size={20}/>} title="Ôn lỗi của tôi" text={wrong.length ? `${wrong.length} câu sai · ${due} câu đến hạn ôn` : "Câu sai được lưu kèm đoạn audio làm bằng chứng"} badge={due || undefined}/>
-      <ActionCard href="#luyen-theo-dang" tone="lav" icon={<Layers size={20}/>} title="Luyện theo dạng" text="Form, Note, MCQ, Map, Matching… chọn dạng bạn hay sai"/>
-      <ActionCard href="/app/dictation" tone="teal" icon={<Headphones size={20}/>} title="Nghe chép Dictation" text="Cùng kho bản ghi — chép từng câu để luyện tai"/>
+      <ActionCard href={`${BASE}/placement`} tone="sun" icon={<Compass size={20}/>} title={suggested ? `Đầu vào · gợi ý ${suggested}` : "Kiểm tra đầu vào"}/>
+      <ActionCard href={`${BASE}/review`} tone="coral" icon={<RotateCcw size={20}/>} title="Ôn lỗi của tôi" badge={due || undefined}/>
+      <ActionCard href="#luyen-theo-dang" tone="lav" icon={<Layers size={20}/>} title="Luyện theo dạng"/>
+      <ActionCard href="/app/dictation" tone="teal" icon={<Headphones size={20}/>} title="Nghe chép Dictation"/>
     </nav>
 
     <section className="ll-journey" aria-labelledby="ll-journey-title">
@@ -154,8 +153,8 @@ function ModuleCard({ unit, progress, types, isNext, isSuggested, size }: { unit
   </Link>;
 }
 
-function ActionCard({ href, tone, icon, title, text, badge }: { href: string; tone: string; icon: React.ReactNode; title: string; text: string; badge?: number }) {
-  const body = <><span className="ll-action-icon">{icon}</span><span className="ll-action-text"><strong>{title}</strong><span>{text}</span></span>{badge ? <span className="ll-badge">{badge}</span> : <ArrowRight className="ll-action-arrow" size={16}/>}</>;
+function ActionCard({ href, tone, icon, title, badge }: { href: string; tone: string; icon: React.ReactNode; title: string; badge?: number }) {
+  const body = <><span className="ll-action-icon">{icon}</span><span className="ll-action-text"><strong>{title}</strong></span>{badge ? <span className="ll-badge">{badge}</span> : <ArrowRight className="ll-action-arrow" size={16}/>}</>;
   return href.startsWith("#") ? <a className={`ll-action is-${tone}`} href={href}>{body}</a> : <Link className={`ll-action is-${tone}`} href={href}>{body}</Link>;
 }
 

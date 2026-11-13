@@ -361,6 +361,54 @@
 .ll-skeleton-row{height:56px}
 .ll-skeleton-card{height:260px}
 
+/* Compact page head, the same band as the Dictation home and the other practice pages:
+   a one-line title, the call to action and the numbers side by side, no intro paragraph. */
+.ll-hero{grid-template-columns:minmax(0,1fr) auto;gap:18px;padding:16px 22px}
+.ll-hero h1{margin:0;font-size:var(--fs-page-title);line-height:1.15;letter-spacing:-.02em}
+.ll-draft-pill{flex:none;padding:3px 9px;border-radius:var(--r-pill);background:rgba(255,255,255,.14);color:rgba(255,255,255,.85);font-size:var(--fs-2xs);font-weight:800;letter-spacing:.06em;text-transform:uppercase}
+.ll-hero-actions{margin-top:12px}
+.ll-wave{height:52px;opacity:.7}
+.ll-stats{display:flex;align-items:center;gap:14px;padding:10px 14px}
+.ll-stats dl{display:flex;gap:8px}
+.ll-stats dl div{min-width:86px}
+.ll-action-text strong{overflow:hidden;white-space:nowrap;text-overflow:ellipsis}
+
+/* Desktop: the same sizes as the Dictation home's one-screen board, so both heads match. */
+@media(min-width:981px){
+  .main-area:has(>.page-enter>.ll-roadmap),.main-area:has(>.ll-roadmap){padding-top:4px;padding-bottom:8px}
+  .ll-roadmap{padding-top:4px}
+  .ll-hero{gap:16px;padding:10px 16px;border-radius:18px}
+  .ll-hero h1{overflow:hidden;font-size:clamp(20px,1.75vw,24px);white-space:nowrap;text-overflow:ellipsis}
+  .ll-hero-actions{flex-wrap:nowrap;margin-top:8px;gap:8px}
+  .ll-cta{flex:0 1 auto;min-width:0;gap:8px;padding:5px 10px 5px 5px;border-radius:var(--r-md)}
+  .ll-cta-icon{width:30px;height:30px}
+  .ll-cta b{font-size:var(--fs-base);white-space:nowrap}
+  .ll-cta small{max-width:240px}
+  .ll-ghost{flex:none;padding:7px 10px;font-size:var(--fs-xs);white-space:nowrap}
+  .ll-stats{gap:10px;padding:7px 10px}
+  .ll-stats-ring{gap:8px}
+  .ll-ring.is-hero{width:48px;height:48px}
+  .ll-ring.is-hero b{font-size:17px}
+  .ll-ring.is-hero small{font-size:var(--fs-xs)}
+  .ll-stats-ring strong{font-size:var(--fs-base);white-space:nowrap}
+  .ll-stats-ring div span{font-size:var(--fs-xs)}
+  .ll-stats dl{gap:6px}
+  .ll-stats dl div{min-width:0;padding:4px 8px}
+  .ll-stats dt{white-space:nowrap}
+  .ll-stats dd{font-size:var(--fs-md)}
+  .ll-actions{gap:10px;margin:10px 0 14px}
+  .ll-action{align-items:center;gap:10px;padding:9px 12px}
+  .ll-action-icon{width:34px;height:34px}
+  .ll-action-text strong{font-size:var(--fs-base)}
+  .ll-action-arrow,.ll-badge{top:50%;margin-top:-10px}
+  .ll-section-head{align-items:center;margin-bottom:6px}
+  .ll-track-map a{padding:8px 6px}
+  .ll-node{width:34px;height:34px;margin-bottom:2px}
+  .ll-track-map::before{top:25px}
+  .ll-track-map small{min-height:0}
+  .ll-typebar{margin-top:16px}
+}
+
 /* Responsive */
 @media (max-width:1100px){
   .ll-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
@@ -368,19 +416,39 @@
   .ll-module-hero{grid-template-columns:auto minmax(0,1fr)}
   .ll-module-hero>:is(.ll-goal,.ll-facts){grid-column:1/-1}
 }
-@media (max-width:860px){
+@media (max-width:1180px){
   .ll-hero{grid-template-columns:1fr}
+  .ll-stats{justify-content:space-between}
+}
+@media (max-width:860px){
   .ll-track-map{grid-template-columns:none;grid-auto-flow:column;grid-auto-columns:128px;overflow-x:auto;padding:18px 2px 6px;scroll-snap-type:x mandatory}
   .ll-track-map li{scroll-snap-align:start}
-  .ll-track-map::before{top:49px;left:60px;right:auto;width:calc(128px * 6 + 48px)}
+  .ll-track-map::before{top:46px;left:60px;right:auto;width:calc(128px * 6 + 48px)}
   .ll-stepper{grid-template-columns:1fr}
   .ll-brief{flex-direction:column;align-items:flex-start}
 }
 @media (max-width:640px){
   .ll-page{padding:12px 14px 90px}
-  .ll-hero{padding:16px}
+  .ll-hero{padding:14px}
+  .ll-hero h1{font-size:20px}
+  .ll-hero-actions{margin-top:10px}
+  .ll-ghost{display:none}
+  .ll-stats{gap:8px;padding:8px 10px}
+  .ll-stats-ring>div{display:none}
+  .ll-ring.is-hero{width:46px;height:46px}
+  .ll-ring.is-hero b{font-size:16px}
+  .ll-stats dl{flex:1;gap:5px}
+  .ll-stats dl div{flex:1;min-width:0;padding:5px 7px}
+  .ll-stats dt{overflow:hidden;font-size:10px;white-space:nowrap;text-overflow:ellipsis}
+  .ll-stats dd{font-size:var(--fs-md)}
   .ll-cta small{max-width:220px}
-  .ll-grid,.ll-actions{grid-template-columns:1fr}
+  .ll-grid{grid-template-columns:1fr}
+  .ll-actions{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+  .ll-action{align-items:center;gap:8px;padding:9px 10px}
+  .ll-action-icon{width:32px;height:32px}
+  .ll-action-text{padding-right:0}
+  .ll-action-text strong{font-size:var(--fs-sm);line-height:1.3;white-space:normal}
+  .ll-action-arrow{display:none}
   .ll-stage-progress{margin-left:0;width:100%}
   .ll-module-hero{grid-template-columns:1fr;padding:16px}
   .ll-module-badge{width:56px;height:56px;border-radius:16px}
