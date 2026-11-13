@@ -40,6 +40,7 @@ import { useDemo } from "@/features/demo/demo-store";
 import { communityEnabled, demoMode, liveMode, lockedLearnerPath } from "@/lib/runtime";
 import { useLearnerStreak } from "@/features/account/use-learner-streak";
 import { StreakCelebration } from "@/features/account/streak-celebration";
+import { StudyCompanion } from "@/features/companion/study-companion";
 import { tierFor } from "@/lib/streak-milestones";
 import { createClient } from "@/lib/supabase/browser";
 import { NotebookWidget } from "@/features/notebook/notebook-ui";
@@ -202,6 +203,7 @@ function AppShellContent({ children, canManage }: { children: React.ReactNode; c
   const newsUnread = useNewsUnread(pathname, liveMode);
   const [profileOpen, setProfileOpen] = useState(false);
   const [avatar, setAvatar] = useState("harry");
+  const [learnerName, setLearnerName] = useState("");
   const [avatarFrame, setAvatarFrame] = useState("classic");
   const [xpTotal, setXpTotal] = useState<number | null>(null);
   const [loginBonus, setLoginBonus] = useState(0);
@@ -260,11 +262,12 @@ function AppShellContent({ children, canManage }: { children: React.ReactNode; c
       if (!userId) return;
       // Claim first: the summary must include today's login bonus.
       const [{ data }, claim] = await Promise.all([
-        db.from("profiles").select("avatar,avatar_frame").eq("id", userId).maybeSingle(),
+        db.from("profiles").select("avatar,avatar_frame,display_name").eq("id", userId).maybeSingle(),
         db.rpc("claim_daily_login_xp"),
       ]);
       if (active && data?.avatar) setAvatar(data.avatar);
       if (active && data?.avatar_frame) setAvatarFrame(data.avatar_frame);
+      if (active && data?.display_name) setLearnerName(data.display_name);
       if (active && !claim.error && Number(claim.data) === 5) setLoginBonus(5);
       const summary = await db.rpc("learner_xp_summary");
       if (active && !summary.error) setXpTotal(Number((summary.data as { xp?: number } | null)?.xp ?? 0));
@@ -564,6 +567,7 @@ function AppShellContent({ children, canManage }: { children: React.ReactNode; c
       </nav>
       {!learningRoute && <NotebookWidget />}
       <StreakCelebration streak={learnerStreak} />
+      <StudyCompanion streak={learnerStreak} newsUnread={newsUnread} name={learnerName} hidden={learningRoute} />
     </div>
   );
 }

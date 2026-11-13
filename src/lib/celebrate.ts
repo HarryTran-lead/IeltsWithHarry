@@ -1,3 +1,4 @@
+import { emitCompanion } from "@/lib/companion-events";
 /*
  * Small confetti burst plus an optional floating label, drawn with plain DOM
  * nodes so any client component can reward a finished task or a good score.
@@ -50,6 +51,7 @@ export function celebrate(origin?: Origin, { label, pieces = 26 }: { label?: str
 /** Celebrate a quiz result: a big burst for a perfect score, a small one for a passing score. */
 export function celebrateScore(score: number, total: number, origin?: Origin) {
   if (!total) return;
+  emitCompanion({ kind: "score", score, total });
   const ratio = score / total;
   if (ratio === 1) celebrate(origin, { label: "Hoàn hảo!", pieces: 40 });
   else if (ratio >= 0.6) celebrate(origin, { label: "Làm tốt lắm!", pieces: 20 });

@@ -1,0 +1,396 @@
+/* Harry, the floating study companion: character rig, speech bubble and menu. */
+
+/* ───────── 3D Harry ───────── */
+.harry-3d {
+  position: relative;
+  display: inline-block;
+  flex: none;
+}
+.harry-3d canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+  opacity: 1;
+  transition: opacity 0.5s ease;
+}
+.harry-3d.is-loading canvas {
+  opacity: 0;
+}
+.harry-3d.is-loading::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 46%;
+  aspect-ratio: 1;
+  translate: -50% -50%;
+  border-radius: 50%;
+  background: url("/ieltswithharry-mascot.webp") center / cover;
+  animation: harry-3d-wait 1.2s ease-in-out infinite;
+}
+.harry-3d img {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin-top: 12%;
+}
+@keyframes harry-3d-wait {
+  50% { scale: 0.92; }
+}
+
+/* Preview stage (dev fixture). */
+.harry-stage {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 280px;
+  gap: 18px;
+  margin-top: 24px;
+}
+.harry-stage-view {
+  display: grid;
+  place-items: center;
+  min-height: 420px;
+  border: 1px solid #e3eaf0;
+  border-radius: 24px;
+  background: radial-gradient(circle at 50% 35%, #ffffff, #f2f7f4 60%, #e4efef);
+  overflow: hidden;
+}
+.harry-stage-moods {
+  display: grid;
+  align-content: start;
+  gap: 6px;
+}
+.harry-stage-moods strong {
+  font-size: 0.95rem;
+}
+.harry-stage-moods button {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.55rem 0.8rem;
+  border: 1px solid #dbe5ec;
+  border-radius: 12px;
+  background: #fff;
+  font-weight: 750;
+  color: #10233f;
+  cursor: pointer;
+}
+.harry-stage-moods button small {
+  color: #8197aa;
+  font-weight: 600;
+}
+.harry-stage-moods button.active {
+  border-color: var(--teal, #14a3ad);
+  background: #e3f8f7;
+}
+.harry-stage-moods p {
+  margin: 6px 0 0;
+  font-size: 0.8rem;
+  color: #6b7f95;
+}
+@media (max-width: 760px) {
+  .harry-stage {
+    grid-template-columns: 1fr;
+  }
+  .harry-stage-moods {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .harry-stage-moods strong,
+  .harry-stage-moods p {
+    grid-column: 1 / -1;
+  }
+}
+
+/* ───────── Floating companion ───────── */
+.study-companion {
+  position: fixed;
+  right: 26px;
+  bottom: 88px;
+  z-index: 79;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  pointer-events: none;
+}
+.study-companion > * {
+  pointer-events: auto;
+}
+.companion-body {
+  display: block;
+  border: 0;
+  padding: 0;
+  background: none;
+  cursor: pointer;
+  border-radius: 24px;
+  transition: translate 0.35s var(--ease-spring);
+}
+.companion-body:hover {
+  translate: 0 -3px;
+}
+.companion-body:focus-visible {
+  outline: 3px solid var(--teal, #14a3ad);
+  outline-offset: 2px;
+}
+
+.companion-bubble {
+  position: relative;
+  width: max-content;
+  max-width: min(290px, calc(100vw - 48px));
+  margin: 0 18px 8px 0;
+  padding: 0.85rem 2.1rem 0.85rem 1rem;
+  border: 2px solid #10233f;
+  border-radius: 18px 18px 6px 18px;
+  background: #fffdf6;
+  color: #10233f;
+  box-shadow: 4px 5px 0 rgba(16, 35, 63, 0.9);
+  font-size: 0.92rem;
+  font-weight: 600;
+  line-height: 1.42;
+  transform-origin: 85% 100%;
+  animation: companion-bubble-in 0.45s var(--ease-spring) both;
+}
+.companion-bubble::after {
+  content: "";
+  position: absolute;
+  right: 26px;
+  bottom: -11px;
+  width: 18px;
+  height: 18px;
+  background: #fffdf6;
+  border-right: 2px solid #10233f;
+  border-bottom: 2px solid #10233f;
+  box-shadow: 4px 4px 0 -1px rgba(16, 35, 63, 0.9);
+  rotate: 45deg;
+  border-radius: 0 0 4px 0;
+}
+.companion-bubble p {
+  margin: 0;
+}
+@keyframes companion-bubble-in {
+  from { opacity: 0; transform: translateY(8px) scale(0.85); }
+}
+.companion-action {
+  display: inline-flex;
+  margin-top: 0.6rem;
+  padding: 0.42rem 0.85rem;
+  border: 2px solid #10233f;
+  border-radius: 999px;
+  background: var(--teal, #14a3ad);
+  color: #fff;
+  font-size: 0.82rem;
+  font-weight: 800;
+  text-decoration: none;
+  box-shadow: 2px 2px 0 #10233f;
+  cursor: pointer;
+  transition: translate 0.25s var(--ease-spring), box-shadow 0.25s;
+}
+.companion-action:hover {
+  translate: -1px -1px;
+  box-shadow: 3px 3px 0 #10233f;
+}
+.companion-close {
+  position: absolute;
+  top: 7px;
+  right: 7px;
+  display: grid;
+  place-items: center;
+  width: 24px;
+  height: 24px;
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  color: #6b7f95;
+  cursor: pointer;
+}
+.companion-close:hover {
+  background: #eef3f7;
+  color: #10233f;
+}
+.companion-live {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.companion-menu-toggle {
+  position: absolute;
+  right: -6px;
+  bottom: 4px;
+  display: grid;
+  place-items: center;
+  width: 26px;
+  height: 26px;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  background: #10233f;
+  color: #fff;
+  cursor: pointer;
+  opacity: 0;
+  scale: 0.8;
+  transition: opacity 0.2s, scale 0.3s var(--ease-spring);
+}
+.study-companion:hover .companion-menu-toggle,
+.companion-menu-toggle:focus-visible,
+.companion-menu-toggle[aria-expanded="true"] {
+  opacity: 1;
+  scale: 1;
+}
+@media (hover: none) {
+  .companion-menu-toggle {
+    opacity: 0.85;
+    scale: 1;
+  }
+}
+.companion-menu {
+  position: absolute;
+  right: 0;
+  bottom: 106px;
+  display: grid;
+  gap: 0.2rem;
+  width: 250px;
+  padding: 0.7rem;
+  border: 2px solid #10233f;
+  border-radius: 16px;
+  background: #fff;
+  box-shadow: 4px 5px 0 rgba(16, 35, 63, 0.9);
+  animation: companion-bubble-in 0.35s var(--ease-spring) both;
+}
+.companion-menu strong {
+  padding: 0.1rem 0.4rem 0.3rem;
+  font-size: 0.8rem;
+  color: #526b7d;
+}
+.companion-menu button {
+  display: grid;
+  gap: 0.05rem;
+  padding: 0.45rem 0.6rem;
+  border: 0;
+  border-radius: 10px;
+  background: transparent;
+  color: #10233f;
+  text-align: left;
+  cursor: pointer;
+}
+.companion-menu button span {
+  font-weight: 750;
+  font-size: 0.88rem;
+}
+.companion-menu button small {
+  font-size: 0.74rem;
+  color: #6b7f95;
+}
+.companion-menu button:hover {
+  background: #f1f6f9;
+}
+.companion-menu button.active {
+  background: #e3f8f7;
+  box-shadow: inset 3px 0 0 var(--teal, #14a3ad);
+}
+.companion-menu .companion-tuck {
+  margin-top: 0.25rem;
+  border-top: 1px dashed #d6e1ea;
+  border-radius: 0 0 10px 10px;
+  font-weight: 700;
+  font-size: 0.85rem;
+  color: #526b7d;
+}
+
+/* Tucked away: Harry peeks in from the right edge. */
+.companion-peek {
+  position: fixed;
+  right: -14px;
+  bottom: 96px;
+  z-index: 79;
+  display: block;
+  width: 62px;
+  height: 52px;
+  padding: 0;
+  border: 0;
+  overflow: hidden;
+  background: none;
+  cursor: pointer;
+  rotate: -14deg;
+  transition: right 0.35s var(--ease-spring), rotate 0.35s var(--ease-spring);
+}
+.companion-peek img {
+  display: block;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+}
+.companion-peek:hover,
+.companion-peek:focus-visible {
+  right: -4px;
+  rotate: -6deg;
+}
+.companion-peek.has-badge::after {
+  content: "";
+  position: absolute;
+  top: 6px;
+  left: 10px;
+  width: 12px;
+  height: 12px;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  background: #ff5a4f;
+  animation: harry-3d-wait 1.2s ease-in-out infinite;
+}
+
+@media (max-width: 767px) {
+  .study-companion {
+    right: 10px;
+    bottom: 140px;
+  }
+  .study-companion .harry-3d {
+    width: 92px !important;
+    height: 110px !important;
+  }
+  .companion-bubble {
+    max-width: calc(100vw - 40px);
+    margin-right: 10px;
+    font-size: 0.88rem;
+  }
+  .companion-peek {
+    bottom: 146px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .companion-bubble,
+  .companion-menu,
+  .harry-3d::after {
+    animation: none !important;
+  }
+}
+
+@media print {
+  .study-companion,
+  .companion-peek {
+    display: none;
+  }
+}
+
+.harry-stage-yaw {
+  display: grid;
+  gap: 4px;
+  margin-top: 6px;
+  font-size: 0.85rem;
+  font-weight: 750;
+}
+
+.harry-stage-file { display: grid; gap: 6px; margin-top: 10px; font-weight: 800; font-size: .85rem; color: #10233f; }
+.harry-stage-file input { font-size: .8rem; font-weight: 500; max-width: 100%; }
+.harry-stage-info { margin-top: 8px; padding: 10px 12px; border-radius: 12px; background: #eef6f8; font-size: .8rem; color: #334a60; }
+.harry-stage-info ul { margin: 6px 0 0; padding-left: 16px; line-height: 1.5; }
+.harry-stage-info code { color: #0a7f89; }
+
+.companion-choices { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px; }
+.companion-choices button {
+  padding: 5px 10px; border-radius: 999px; border: 1.5px solid #10233f; background: #fff;
+  font: inherit; font-size: .78rem; font-weight: 800; color: #10233f; cursor: pointer;
+  box-shadow: 0 2px 0 #10233f; transition: transform .12s ease, background .12s ease;
+}
+.companion-choices button:hover { background: #e6f7f8; transform: translateY(-1px); }
+.companion-choices button:active { transform: translateY(1px); box-shadow: 0 1px 0 #10233f; }
+.companion-choices button:focus-visible { outline: 2px solid #16a5ae; outline-offset: 2px; }
