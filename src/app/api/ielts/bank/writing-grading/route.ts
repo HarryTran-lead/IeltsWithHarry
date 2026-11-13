@@ -3,6 +3,7 @@ import { after } from "next/server";
 import { bankClient, requestError, viewer } from "@/lib/ielts-bank/server";
 import { enqueueWritingAttempt, gradingEnabled } from "@/lib/writing-grading/server";
 import { cloudflareGradingSelected, processOneCloudflareJob } from "@/lib/writing-grading/cloudflare-worker";
+import { queueEstimate } from "@/lib/writing-grading/queue-estimate";
 
 export const runtime = "nodejs";
 export const maxDuration = 60;
@@ -21,10 +22,17 @@ export async function GET(request: Request) {
     if (error) throw new Error("Grading status unavailable");
     if (!job) return Response.json({ status: gradingEnabled() ? "not_requested" : "unavailable", result: null, provider });
     if (gradingEnabled() && job.status === "queued" && cloudflareGradingSelected()) after(() => processOneCloudflareJob());
+    let queue: ReturnType<typeof queueEstimate> | null = null;
+    if (job.status === "queued") {
+      const { count, error: countError } = await client.from("writing_grading_jobs")
+        .select("id", { count: "exact", head: true })
+        .in("status", ["queued", "analyzing"]).lt("created_at", job.created_at);
+      if (!countError) queue = queueEstimate(count ?? 0);
+    }
     const { data: result, error: resultError } = await client.from("writing_grading_results").select("id,result,model_version,rubric_version,created_at")
       .eq("job_id", job.id).maybeSingle();
     if (resultError) throw new Error("Grading result unavailable");
-    return Response.json({ ...job, result: result?.result ?? null, model_version: result?.model_version ?? null, rubric_version: result?.rubric_version ?? null, provider }, { headers: { "Cache-Control": "private, no-store" } });
+    return Response.json({ ...job, queue, result: result?.result ?? null, model_version: result?.model_version ?? null, rubric_version: result?.rubric_version ?? null, provider }, { headers: { "Cache-Control": "private, no-store" } });
   } catch (error) { return requestError(error); }
 }
 

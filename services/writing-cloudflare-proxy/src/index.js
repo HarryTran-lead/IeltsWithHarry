@@ -22,7 +22,7 @@ export default {
       input.messages[0]?.role !== "system" || input.messages[1]?.role !== "user" ||
       typeof input.messages[0].content !== "string" || typeof input.messages[1].content !== "string" ||
       input.response_format?.type !== "json_schema" || !input.response_format.json_schema ||
-      input.temperature !== 0 || input.max_tokens !== 2500) {
+      input.temperature !== 0 || !Number.isInteger(input.max_tokens) || input.max_tokens < 2500 || input.max_tokens > 3500) {
       return new Response(null, { status: 400 });
     }
     try {

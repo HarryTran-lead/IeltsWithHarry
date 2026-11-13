@@ -37,7 +37,7 @@ describe("deep Writing coaching", () => {
     expect(url).toContain("@cf/meta/llama-3.3-70b-instruct-fp8-fast");
     expect(options.headers.Authorization).toBe("Bearer private-token");
     const request = JSON.parse(options.body);
-    expect(request.max_tokens).toBe(2500);
+    expect(request.max_tokens).toBe(3500);
     expect(request.messages[1].content).toContain(essay);
   });
 });

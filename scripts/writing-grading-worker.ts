@@ -3,6 +3,7 @@ import { randomUUID } from "node:crypto";
 import { createClient } from "@supabase/supabase-js";
 import { gradeWithLocalModel } from "../src/lib/writing-grading/local-provider";
 import { rubricVersion, schemaVersion, verifyModelDraft, type TaskType } from "../src/lib/writing-grading/contract";
+import { notifyWritingResult } from "../src/lib/writing-grading/notify-result";
 
 const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
 const key = process.env.SUPABASE_SERVICE_ROLE_KEY;
@@ -54,6 +55,8 @@ async function processOne() {
     });
     if (finishError) throw new Error("RESULT_WRITE_FAILED");
     if (!committed) return true; // Lease expired; a newer worker owns the job.
+    await notifyWritingResult(db, resultId, item.user_id, item.attempt_id)
+      .catch(() => console.error(JSON.stringify({ job_id: item.id, error_code: "WRITING_NOTICE_FAILED" })));
   } catch (cause) {
     const raw = cause instanceof Error ? cause.message : "";
     const known = new Set(["MODEL_NOT_APPROVED", "SOURCE_FACTS_INVALID", "SOURCE_FACTS_LOOKUP_FAILED", "LOCAL_MODEL_URL_REQUIRED", "LOCAL_MODEL_NOT_CONFIGURED", "LOCAL_MODEL_EMPTY", "LOCAL_MODEL_INVALID_JSON", "EVIDENCE_OFFSET_MISMATCH", "ERROR_OFFSET_MISMATCH", "UNVERIFIED_FACT_REFERENCE", "UNVERIFIED_DATA_CLAIM", "CRITERIA_MISMATCH", "RESULT_WRITE_FAILED"]);

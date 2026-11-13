@@ -16,6 +16,12 @@ After a grade is complete, the learner may request one separate coaching report 
 
 The second inference is explicit because it uses more of the shared free allocation. The app allows at most three deep reports per learner and fifteen new reports globally in a rolling 24-hour window, with three model attempts per essay. Cloudflare's own daily quota remains authoritative. Prior grades of the same task type are displayed as practice history, with a warning that different prompts are not directly comparable. The UI also filters the known false correction that treats `help someone do` as requiring `to`. This is a narrow safeguard, not a general grammar validator.
 
+## Learner queue and feedback
+
+The initial grade allows five jobs per learner in a rolling 24-hour window, subject to a shared 30-job rolling window and the Cloudflare Free quota. The GET status endpoint counts older queued or analyzing jobs and returns an approximate time range. The estimate assumes roughly two concurrent jobs and is not a deadline. A completed grade creates one persistent, user-specific notification linked to the saved result. The app bell refreshes every 30 seconds while visible and when the learner returns to the tab; closing the website does not send a browser push notification. A grading attempt that ultimately fails retains its failed status on the result page.
+
+The base Cloudflare and local Ollama prompts now request evidence-based explanations for all four criteria, review each paragraph, and include more distinct errors and vocabulary alternatives where justified. The UI shows the revision step for all four criteria. The separate deep report can cover up to five requirements and paragraphs. The model can still return fewer findings when it cannot support more from the essay; longer output consumes more of the free quota, so the shared admission limit is deliberately conservative.
+
 ## Deployment gates
 
 1. Back up and apply `202611100004_writing_grading_foundation.sql`, then `202611100005_writing_hosted_model_registry.sql` to development. Run authenticated Task 1/2 queue, RLS and retry checks before repeating against production. Do not reset either database.

@@ -13,7 +13,7 @@ type Grade = {
   errors: Finding[]; vocabulary_suggestions?: VocabularySuggestion[]; strengths_vi: string[]; improvements_vi: string[]; summary_vi: string; summary_en: string;
   revised_paragraph: string | null; source_facts_status: string;
 };
-type GradingState = { status: string; id?: string; attempt_no?: number; error_code?: string | null; result: Grade | null; model_version?: string | null; rubric_version?: string | null; provider?: "local" | "cloudflare" };
+type GradingState = { status: string; id?: string; attempt_no?: number; error_code?: string | null; queue?: { ahead: number; minMinutes: number; maxMinutes: number } | null; result: Grade | null; model_version?: string | null; rubric_version?: string | null; provider?: "local" | "cloudflare" };
 const names: Record<string, string> = { TA: "Task Achievement", TR: "Task Response", CC: "Coherence & Cohesion", LR: "Lexical Resource", GRA: "Grammatical Range & Accuracy" };
 type ReviewTab = "review" | "overview" | "vocabulary" | "plan" | "deep";
 
@@ -42,7 +42,9 @@ export function WritingAutoGradingPanel({ attemptId, essay }: { attemptId: strin
   const load = useCallback(async () => {
     const response = await fetch(`/api/ielts/bank/writing-grading?attemptId=${encodeURIComponent(attemptId)}`, { cache: "no-store" });
     if (!response.ok) throw new Error("Chưa tải được trạng thái chấm bài.");
-    setState(await response.json());
+    const next: GradingState = await response.json();
+    if (next.status === "completed") window.dispatchEvent(new Event("learner-notifications-refresh"));
+    setState(next);
   }, [attemptId]);
   useEffect(() => {
     let active = true;
@@ -69,7 +71,7 @@ export function WritingAutoGradingPanel({ attemptId, essay }: { attemptId: strin
   }
   const grade = state?.result;
   const visibleErrors = grade ? filterUnsupportedWritingErrors(grade.errors) : [];
-  const nextSteps = grade ? [...grade.criteria].sort((a, b) => a.score_display - b.score_display).slice(0, 3) : [];
+  const nextSteps = grade ? [...grade.criteria].sort((a, b) => a.score_display - b.score_display) : [];
   const nextBand = grade ? Math.min(9, grade.task_band_display + 0.5) : 0;
   const vocabulary = grade?.vocabulary_suggestions ?? [];
   const selectFinding = (index: number, jump = false) => {
@@ -80,9 +82,9 @@ export function WritingAutoGradingPanel({ attemptId, essay }: { attemptId: strin
     <div className="wg-heading"><div><span>IELTS WRITING · CHẤM TỰ ĐỘNG</span><h2>Đánh giá bài viết</h2></div><p>Band dự đoán để luyện tập từ AI thử nghiệm, chưa đối chiếu với điểm giáo viên và không phải điểm IELTS chính thức.</p></div>
     {!state && !error && <p>Đang kiểm tra trạng thái bài viết…</p>}
     {state?.status === "unavailable" && <p>Bài viết đã được lưu. Hệ thống chấm tự động chưa sẵn sàng; bạn vẫn có thể xem lại bài và luyện tiếp.</p>}
-    {state?.status === "not_requested" && <>{state.provider === "cloudflare" && <p>Bấm gửi bài đồng nghĩa với việc bài viết của bạn được chuyển tới Cloudflare Workers AI để phân tích.</p>}<button className="bx-start" type="button" disabled={busy} onClick={() => void requestGrade("grade")}>Gửi bài để chấm</button></>}
-    {state?.status === "queued" && <p>Bài đã vào hàng đợi. Kết quả sẽ hiện ở đây khi dịch vụ xử lý xong.</p>}
-    {state?.status === "analyzing" && <p>Hệ thống đang phân tích bài viết. Bạn có thể rời trang và quay lại sau.</p>}
+    {state?.status === "not_requested" && <>{state.provider === "cloudflare" && <p>Bấm gửi bài đồng nghĩa với việc bài viết của bạn được chuyển tới Cloudflare Workers AI để phân tích. Mỗi tài khoản có tối đa 5 lượt trong 24 giờ; lượt miễn phí chung có thể hết sớm.</p>}<button className="bx-start" type="button" disabled={busy} onClick={() => void requestGrade("grade")}>Gửi bài để chấm</button></>}
+    {state?.status === "queued" && <p>Bài đã vào hàng đợi. {state.queue ? `Có ${state.queue.ahead} bài gửi trước bạn đang chờ hoặc được xử lý. Dự kiến khoảng ${state.queue.minMinutes}–${state.queue.maxMinutes} phút; thời gian có thể thay đổi.` : "Đang tính thời gian chờ."} Bạn có thể rời trang; chuông thông báo trong website sẽ dẫn tới kết quả khi chấm xong.</p>}
+    {state?.status === "analyzing" && <p>Hệ thống đang phân tích bài viết. Thường cần thêm khoảng 1–3 phút. Bạn có thể rời trang; chuông thông báo trong website sẽ báo khi có kết quả.</p>}
     {state?.status === "needs_review" && <p>Đề Task 1 cần xác minh dữ liệu nguồn trước khi chấm. Bài viết của bạn vẫn được lưu.</p>}
     {state?.status === "failed" && <><p>{state.error_code === "CLOUDFLARE_QUOTA_EXCEEDED" ? "Đã hết hạn mức chấm miễn phí hôm nay. Bạn có thể thử lại sau 07:00 giờ Việt Nam." : "Chưa thể chấm bài lúc này. Bài viết vẫn được lưu nguyên vẹn."}</p>{(state.attempt_no ?? 3) < 3 && <button className="bx-start" type="button" disabled={busy} onClick={() => void requestGrade("retry")}>Thử chấm lại</button>}</>}
     {error && <p className="bx-error" role="alert">{error}</p>}

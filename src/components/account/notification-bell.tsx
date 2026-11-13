@@ -15,7 +15,7 @@ function ago(value: string) {
   return minutes < 60 ? `${minutes || 1} phút trước` : minutes < 1440 ? `${Math.floor(minutes / 60)} giờ trước` : `${Math.floor(minutes / 1440)} ngày trước`;
 }
 
-/** Announcements, assigned tasks and account notices from admins. Opening the list marks them read. */
+/** Persistent learner notices. Opening the list marks them read. */
 export function NotificationBell({ open, onToggle }: { open: boolean; onToggle: () => void }) {
   const db = useMemo(() => createClient(), []);
   const [items, setItems] = useState<Note[]>([]);
@@ -32,8 +32,11 @@ export function NotificationBell({ open, onToggle }: { open: boolean; onToggle: 
   }, [db]);
   useEffect(() => {
     const first = window.setTimeout(() => void load(), 0);
-    const timer = window.setInterval(() => { if (document.visibilityState === "visible") void load(); }, 120000);
-    return () => { window.clearTimeout(first); window.clearInterval(timer); };
+    const refresh = () => { if (document.visibilityState === "visible") void load(); };
+    const timer = window.setInterval(refresh, 30000);
+    document.addEventListener("visibilitychange", refresh);
+    window.addEventListener("learner-notifications-refresh", refresh);
+    return () => { window.clearTimeout(first); window.clearInterval(timer); document.removeEventListener("visibilitychange", refresh); window.removeEventListener("learner-notifications-refresh", refresh); };
   }, [load]);
   const unread = items.filter((item) => !read.has(item.id));
 

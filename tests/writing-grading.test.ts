@@ -57,6 +57,8 @@ describe("local model boundary (mock response; no live model)", () => {
     expect(fetchMock.mock.calls[0][0].toString()).toBe("http://127.0.0.1:11434/api/chat");
     const request = JSON.parse(fetchMock.mock.calls[0][1].body as string);
     expect(request.messages[0].role).toBe("system");
+    expect(request.messages[0].content).toContain("Examine every paragraph");
+    expect(request.messages[0].content).toContain("vocabulary_suggestions");
     expect(JSON.parse(request.messages[1].content).essay).toBe(essay);
   });
 });
@@ -74,6 +76,8 @@ describe("Cloudflare model boundary (mock response; no live model)", () => {
     const request = JSON.parse(fetcher.mock.calls[0][1].body as string);
     expect(JSON.parse(request.messages[1].content).essay).toBe(essay);
     expect(request.response_format.type).toBe("json_schema");
+    expect(request.max_tokens).toBe(3500);
+    expect(request.messages[0].content).toContain("never invent errors");
   });
 
   it("rejects missing credentials and malformed hosted output", async () => {
