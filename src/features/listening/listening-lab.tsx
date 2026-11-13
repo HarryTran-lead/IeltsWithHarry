@@ -54,7 +54,7 @@ function RoadmapPage() {
   const startIndex = Math.max(0, listeningModules.findIndex((item) => item.id === suggestedStart));
   const next = listeningModules.slice(startIndex).find((item) => !mastered(item.id, progress)) ?? listeningModules.at(-1)!;
   return <div className="ll-page">
-    <header className="ll-hero"><span className="ll-eyebrow">TỰ HỌC IELTS · LISTENING LAB</span><h1>Nghe theo lộ trình, luyện đúng từng dạng</h1>
+    <header className="ll-hero"><span className="ll-eyebrow">TỰ HỌC IELTS · LISTENING LAB · BẢN THỬ NGHIỆM</span><h1>Nghe theo lộ trình, luyện đúng từng dạng</h1>
       <p>28 mô-đun từ nhận âm, tên và số đến Section 1–4. Mỗi mô-đun có bài hướng dẫn, bài độc lập và bài chuyển giao từ những bản ghi khác nhau.</p>
       <div className="ll-actions"><Link className="ll-primary" href={`${BASE}/module/${next.id}`}>Tiếp tục · {next.title} <ArrowRight size={17}/></Link><Link className="ll-secondary" href={`${BASE}/placement`}>Kiểm tra đầu vào</Link><a className="ll-secondary" href="#luyen-theo-dang">Luyện theo dạng</a><Link className="ll-secondary" href={`${BASE}/review`}>Ôn lỗi của tôi</Link></div>
       <small>{done}/28 mô-đun đạt mục tiêu luyện tập · Cần ít nhất 8/10 câu độc lập và 75% câu chuyển giao. Mức 1.0–7.0+ là mức luyện nội bộ, không phải band IELTS.</small>
@@ -120,7 +120,7 @@ function ModulePage({ id }: { id: string }) {
   if (!plan) return <div className="ll-page"><Link href={BASE}>← Lộ trình Listening</Link><p role="alert">{error}</p></div>;
   const phaseCount = plan.counts[phase];
   return <div className="ll-page"><nav className="ll-breadcrumb"><Link href={BASE}>Listening Lab</Link><span>›</span><span>{plan.module.id}. {plan.module.title}</span></nav>
-    <header className="ll-module-hero"><span className="ll-eyebrow">CHẶNG {plan.module.level} · MÔ-ĐUN {plan.module.id}</span><h1>{plan.module.title}</h1><p>{plan.module.objective}</p><div className="ll-strategy"><strong>Trước khi nghe</strong><span>{plan.module.strategy}</span></div></header>
+    <header className="ll-module-hero"><span className="ll-eyebrow">BẢN THỬ NGHIỆM · CHẶNG {plan.module.level} · MÔ-ĐUN {plan.module.id}</span><h1>{plan.module.title}</h1><p>{plan.module.objective}</p><div className="ll-strategy"><strong>Trước khi nghe</strong><span>{plan.module.strategy}</span></div></header>
     <div className="ll-phase-tabs" role="tablist" aria-label="Các bước luyện">{phases.map((item) => <button type="button" role="tab" aria-selected={phase === item} key={item} onClick={() => setPhase(item)}>{phaseLabels[item]}{progress[phaseSlug(id, item)]?.checked ? <CheckCircle2 size={15}/> : null}</button>)}</div>
     <div className="ll-instructions"><strong>{phaseLabels[phase]}</strong><p>{phase === "guided" ? "Đọc câu hỏi, dự đoán câu trả lời rồi nghe. Bạn có thể nghe lại; bằng chứng hiện sau khi nộp." : phase === "independent" ? "Làm với bản ghi mới. Đọc yêu cầu và trả lời trước khi xem lời giải." : "Bản ghi mới để kiểm tra chuyển giao. Hãy nghe một lượt như khi làm bài thi."} {phaseCount} câu · {tasks.length} bản ghi.</p></div>
     {error && <p className="ll-error" role="alert">{error}</p>}

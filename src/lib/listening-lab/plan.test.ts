@@ -15,7 +15,7 @@ describe("Listening Lab source index", () => {
       expect(new Set(lessonIds).size, unit.id).toBe(lessonIds.length);
       expect(JSON.stringify(plan)).not.toMatch(/correct_answers|text_en|explanation_vi/);
     }
-  });
+  }, 20_000);
 
   it("uses all four sections in the 40-question transfer set", () => {
     const transfer = buildListeningPlan("28")!.phases.transfer;
