@@ -26,6 +26,7 @@ import "./playful.css";
 import "./page-head.css";
 import "@/styles/screen-fit.css";
 import "./buttons.css";
+import "./companion.css";
 import { Be_Vietnam_Pro, Bricolage_Grotesque, Patrick_Hand } from "next/font/google";
 import { StickerDefs } from "@/components/stickers/stickers";
 import { InteractionLayer } from "@/components/fx/interaction-layer";
