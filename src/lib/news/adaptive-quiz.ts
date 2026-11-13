@@ -209,7 +209,7 @@ async function reviewRiskyQuestions(
   let response: ReviewResponse;
   try {
     const reviewed = await geminiJson<ReviewResponse>(reviewPrompt, "ARTICLE:\n" + reviewText, reviewSchema,
-      { fetcher, maxOutputTokens: Math.min(9500, 1200 + batch.length * 520), temperature: 0.1 });
+      { fetcher, maxOutputTokens: Math.min(9500, 1200 + batch.length * 520), temperature: 0.1, freeTierOnly: true });
     response = reviewed.data;
   } catch (cause) {
     // If quota is exhausted here, publish only unflagged candidates.
@@ -336,7 +336,7 @@ Create ${candidateCount} candidate questions with this exact distribution: ${dis
 For choice types put options and correct_index 0-based, answer empty. For tfng options exactly ["True","False","Not Given"]; for ynng exactly ["Yes","No","Not Given"]. For written types put an answer of 1-3 exact words from ARTICLE, except note_completion must obey the shared group limit; options [], correct_index -1, option_notes []. Every supporting_sentence must be an exact contiguous excerpt from ARTICLE. Give a Vietnamese explanation (2-4 sentences) for every item and one Vietnamese option_note per choice. No repeated prompts or repeated tested facts. For NOT GIVEN, check the entire ARTICLE to ensure the statement is neither confirmed nor contradicted; give the nearest related evidence only as context, and explain that it does not confirm or contradict the claim. Never present a quote as proof that information is absent. Set needs_review=true and give a short Vietnamese review_reason only when uncertain about answerability, evidence, ambiguity, or form; otherwise set needs_review=false and review_reason="". image_query is 2-5 English words for a photographable subject, never a person's name.\n
 Editor guidance: ${customPrompt.slice(0, 4000)}`;
   const { model, data } = await geminiJson<{ questions?: RawQuestion[]; image_query?: unknown }>(system,
-    `Article title: ${title}\n\nARTICLE:\n${excerpt}`, schemaFor(candidatesByType), { fetcher, maxOutputTokens: candidateCount <= 4 ? 4500 : candidateCount <= 8 ? 8500 : 16000 });
+    `Article title: ${title}\n\nARTICLE:\n${excerpt}`, schemaFor(candidatesByType), { fetcher, maxOutputTokens: candidateCount <= 4 ? 4500 : candidateCount <= 8 ? 8500 : 16000, freeTierOnly: true });
   const candidates = validateAdaptiveQuiz(data, excerpt, selected, candidatesByType, noteWordLimits);
   const reviewed = await reviewRiskyQuestions(excerpt, body, candidates, noteWordLimits, fetcher);
   // Fill each question group with the less searchable candidates first. A

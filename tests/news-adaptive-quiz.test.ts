@@ -76,6 +76,7 @@ describe("adaptive IELTS passage quiz", () => {
     const requests: string[] = [];
     const reply = (value: unknown) => new Response(JSON.stringify({ candidates: [{ finishReason: "STOP", content: { parts: [{ text: JSON.stringify(value) }] } }] }), { status: 200 });
     const fetcher = async (_url: string | URL | Request, init?: RequestInit) => {
+      expect(init?.headers).toMatchObject({ "x-goog-api-key": "test-key" });
       const request = JSON.parse(String(init?.body)) as { systemInstruction: { parts: { text: string }[] } };
       const system = request.systemInstruction.parts[0].text;
       requests.push(system);
@@ -105,7 +106,11 @@ describe("adaptive IELTS passage quiz", () => {
         }));
       return reply({ questions, image_query: "research field station" });
     };
-    const previous = process.env.GEMINI_API_KEY; process.env.GEMINI_API_KEY = "test-key";
+    const previous = { key: process.env.AI_FACTORY_GEMINI_API_KEY,
+      confirmed: process.env.AI_FACTORY_FREE_TIER_CONFIRMED, only: process.env.AI_FACTORY_FREE_TIER_ONLY };
+    process.env.AI_FACTORY_GEMINI_API_KEY = "test-key";
+    process.env.AI_FACTORY_FREE_TIER_CONFIRMED = "true";
+    process.env.AI_FACTORY_FREE_TIER_ONLY = "true";
     try {
       const result = await generateAdaptiveNewsQuiz("Survey findings", passage, "long-article", fetcher as typeof fetch);
       expect(result.questions).toHaveLength(13);
@@ -119,7 +124,9 @@ describe("adaptive IELTS passage quiz", () => {
       expect(candidateCount).toBeGreaterThan(13);
       expect([...requests[1].matchAll(/"id":\d+/g)]).toHaveLength(candidateCount);
     } finally {
-      if (previous === undefined) delete process.env.GEMINI_API_KEY; else process.env.GEMINI_API_KEY = previous;
+      if (previous.key === undefined) delete process.env.AI_FACTORY_GEMINI_API_KEY; else process.env.AI_FACTORY_GEMINI_API_KEY = previous.key;
+      if (previous.confirmed === undefined) delete process.env.AI_FACTORY_FREE_TIER_CONFIRMED; else process.env.AI_FACTORY_FREE_TIER_CONFIRMED = previous.confirmed;
+      if (previous.only === undefined) delete process.env.AI_FACTORY_FREE_TIER_ONLY; else process.env.AI_FACTORY_FREE_TIER_ONLY = previous.only;
     }
   });
 });
