@@ -1,5 +1,5 @@
-import { allLessons, audioReady, type LessonQuestion, type StoredLesson } from "../dictation-skill-lab/lessons";
-import { listeningModuleById, type ListeningModule } from "./curriculum";
+import { allLessons, audioReady, catalog, getStoredLesson, type LessonQuestion, type StoredLesson } from "../dictation-skill-lab/lessons";
+import { listeningModuleById, listeningModules, type ListeningModule } from "./curriculum";
 
 export type ListeningPhase = "guided" | "independent" | "transfer";
 export type ListeningTask = { lessonId: string; questionIds: string[]; title: string; section: number; types: string[] };
@@ -61,13 +61,49 @@ export function buildListeningPlacement() {
     { moduleId: "01", take: 2 }, { moduleId: "02", take: 2 }, { moduleId: "05", take: 2 },
     { moduleId: "08", take: 2 }, { moduleId: "15", take: 2 }, { moduleId: "20", take: 1 }, { moduleId: "24", take: 1 },
   ];
+  // Neighbouring modules can open with the same recording; a question is asked once so it is not weighted twice.
+  const asked = new Set<string>();
   return sections.flatMap(({ moduleId, take }) => {
     const plan = buildListeningPlan(moduleId);
     let remaining = take;
     return (plan?.phases.guided ?? []).flatMap((task) => {
-      const ids = task.questionIds.slice(0, remaining);
+      const ids = task.questionIds.filter((id) => !asked.has(`${task.lessonId}:${id}`)).slice(0, Math.max(0, remaining));
+      ids.forEach((id) => asked.add(`${task.lessonId}:${id}`));
       remaining -= ids.length;
       return ids.length ? [{ ...task, questionIds: ids, moduleId }] : [];
     });
   });
+}
+
+export type ListeningModuleSummary = {
+  id: string;
+  counts: Record<ListeningPhase, number>;
+  recordings: number;
+  /** Question types the selected questions really use, with how many of each. */
+  types: Record<string, number>;
+  durationMs: number;
+};
+
+let summaryCache: { at: number; value: ListeningModuleSummary[] } | null = null;
+
+/** What each module really holds today, so the roadmap can show sizes and filter by the types actually selected. */
+export function summarizeListeningModules(): ListeningModuleSummary[] {
+  if (summaryCache && Date.now() - summaryCache.at < 60_000) return summaryCache.value;
+  const duration = new Map(catalog().map((entry) => [entry.lesson_id, entry.duration_ms]));
+  const value = listeningModules.flatMap((unit) => {
+    const plan = buildListeningPlan(unit.id);
+    if (!plan) return [];
+    const tasks = Object.values(plan.phases).flat();
+    const types: Record<string, number> = {};
+    for (const task of tasks) {
+      const lesson = getStoredLesson(task.lessonId);
+      for (const id of task.questionIds) {
+        const type = lesson?.questions.find((question) => question.question_id === id)?.type;
+        if (type) types[type] = (types[type] ?? 0) + 1;
+      }
+    }
+    return [{ id: unit.id, counts: plan.counts, recordings: tasks.length, types, durationMs: tasks.reduce((sum, task) => sum + (duration.get(task.lessonId) ?? 0), 0) }];
+  });
+  summaryCache = { at: Date.now(), value };
+  return value;
 }
