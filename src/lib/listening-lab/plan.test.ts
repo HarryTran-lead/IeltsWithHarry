@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 import { listeningModules } from "./curriculum";
-import { buildListeningPlacement, buildListeningPlan } from "./plan";
+import { buildListeningPlacement, buildListeningPlan, summarizeListeningModules } from "./plan";
 import { getStoredLesson } from "../dictation-skill-lab/lessons";
 import { gradeAnswer } from "../dictation-skill-lab/grade";
 
@@ -29,6 +29,21 @@ describe("Listening Lab source index", () => {
     expect(tasks.reduce((total, task) => total + task.questionIds.length, 0)).toBe(12);
     expect(JSON.stringify(tasks)).not.toMatch(/correct_answers|text_en|explanation_vi/);
   });
+
+  it("asks every placement question only once", () => {
+    const keys = buildListeningPlacement().flatMap((task) => task.questionIds.map((id) => `${task.lessonId}:${id}`));
+    expect(new Set(keys).size).toBe(keys.length);
+  });
+
+  it("summarises every module with its real question types and length", () => {
+    const summaries = summarizeListeningModules();
+    expect(summaries).toHaveLength(28);
+    for (const summary of summaries) {
+      expect(Object.values(summary.types).reduce((sum, count) => sum + count, 0), summary.id).toBe(Object.values(summary.counts).reduce((sum, count) => sum + count, 0));
+      expect(summary.durationMs, summary.id).toBeGreaterThan(0);
+    }
+    expect(JSON.stringify(summaries)).not.toMatch(/correct_answers|text_en|explanation_vi/);
+  }, 20_000);
 
   it("uses foundation answers in practice mode and IELTS completions with word limits", () => {
     const foundation = buildListeningPlan("02")!.phases.guided[0];
