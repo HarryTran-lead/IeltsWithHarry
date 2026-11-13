@@ -6,7 +6,6 @@ import {
   BookOpenText,
   CalendarDays,
   ChartNoAxesCombined,
-  FlaskConical,
   ChevronLeft,
   ChevronRight,
   ChevronDown,
@@ -16,6 +15,7 @@ import {
   LayoutDashboard,
   Languages,
   Library,
+  LockKeyhole,
   Menu,
   MessageCircle,
   Mic,
@@ -31,6 +31,7 @@ import {
   Newspaper,
   UserRound,
   UsersRound,
+  type LucideIcon,
 } from "lucide-react";
 import { HarryMascot } from "@/components/illustrations/harry";
 import { Tape } from "@/components/stickers/stickers";
@@ -50,54 +51,56 @@ import { useNewsUnread } from "@/features/news/news-unread";
 import { HeaderSkyBackdrop, HeaderWeatherProvider, HeaderWeatherWidget, useHeaderWeather } from "@/components/header-weather";
 import weatherStyles from "@/components/header-weather/headerWeather.module.css";
 
-const groups = [
+type SidebarLink = { href: string; label: string; icon: LucideIcon; tone: string; locked?: boolean };
+type SidebarGroup = { label: string; links: SidebarLink[] };
+
+const groups: SidebarGroup[] = [
   {
-    label: "HOT",
+    label: "Tổng quan",
+    links: [
+      { href: "/app/dashboard", label: "Dashboard", icon: LayoutDashboard, tone: "teal" },
+      { href: "/app/planner", label: "Kế hoạch học", icon: CalendarDays, tone: "coral" },
+      { href: "/app/progress", label: "Tiến độ", icon: ChartNoAxesCombined, tone: "lavender" },
+    ],
+  },
+  {
+    label: "Học & kết nối",
     links: [
       { href: "/app/news", label: "Daily News", icon: Newspaper, tone: "sky" },
       { href: "/app/study-together", label: "Cùng học", icon: UsersRound, tone: "lavender" },
       ...(communityEnabled ? [{ href: "/app/community", label: "Cộng đồng", icon: MessageCircle, tone: "teal" }] : []),
-      { href: "/app/learn", label: "Learn", icon: GraduationCap, tone: "sky" },
+      { href: "/app/notebook", label: "Ghi chú", icon: NotebookPen, tone: "sun" },
     ],
   },
   {
-    label: "Luyện tập",
+    label: "Tự học IELTS",
     links: [
+      { href: "/app/self-study", label: "Tổng quan lộ trình", icon: GraduationCap, tone: "sky", locked: true },
+      { href: "/app/self-study/writing-task-1", label: "Writing Task 1 Lab", icon: PenLine, tone: "sun", locked: true },
+      { href: "/app/self-study/writing-task-2", label: "Writing Task 2 Lab", icon: PenLine, tone: "coral", locked: true },
+      { href: "/app/self-study/speaking", label: "Speaking Lab", icon: Mic, tone: "lavender", locked: true },
+      { href: "/app/self-study/reading", label: "Reading Lab", icon: BookOpenText, tone: "coral", locked: true },
+      { href: "/app/self-study/listening", label: "Listening Lab", icon: Headphones, tone: "teal", locked: true },
+    ],
+  },
+  {
+    label: "Luyện tập bổ trợ",
+    links: [
+      { href: "/app/vocabulary", label: "Vocabulary", icon: Languages, tone: "mint" },
+      { href: "/app/grammar", label: "Grammar", icon: SpellCheck, tone: "sky" },
       { href: "/app/dictation", label: "Dictation", icon: Headphones, tone: "teal" },
       { href: "/app/practice/translation", label: "Luyện diễn đạt", icon: Languages, tone: "mint" },
     ],
   },
   {
-    label: "Tổng quan",
+    label: "Luyện đề",
     links: [
-      { href: "/app/dashboard", label: "Dashboard", icon: LayoutDashboard, tone: "teal" },
-      { href: "/app/planner", label: "Planner", icon: CalendarDays, tone: "coral" },
-      { href: "/app/progress", label: "Progress", icon: ChartNoAxesCombined, tone: "lavender" },
-    ],
-  },
-  {
-    label: "Kỹ năng IELTS",
-    links: [
-      { href: "/app/vocabulary", label: "Vocabulary", icon: Languages, tone: "mint" },
-      { href: "/app/grammar", label: "Grammar", icon: SpellCheck, tone: "sky" },
       { href: "/app/reading", label: "Reading", icon: BookOpenText, tone: "coral" },
       { href: "/app/listening", label: "Listening", icon: Headphones, tone: "teal" },
       { href: "/app/writing", label: "Writing", icon: PenLine, tone: "sun" },
       { href: "/app/speaking", label: "Speaking", icon: Mic, tone: "lavender" },
       ...(!demoMode ? [{ href: "/app/question-bank", label: "Ngân hàng đề", icon: Library, tone: "teal" }] : []),
-    ],
-  },
-  {
-    label: "Học với tin tức",
-    links: [
-      { href: "/app/news/learn", label: "Learn with News", icon: Library, tone: "mint" },
-    ],
-  },
-  {
-    label: "Không gian học",
-    links: [
-      { href: "/app/notebook", label: "Ghi chú", icon: NotebookPen, tone: "sun" },
-      { href: "/app/content-lab", label: "Content Lab", icon: FlaskConical, tone: "coral" },
+      ...(!demoMode ? [{ href: "/app/speaking/mock", label: "Thi thử Speaking", icon: Mic, tone: "lavender" }] : []),
     ],
   },
 ];
@@ -475,16 +478,16 @@ function AppShellContent({ children, canManage }: { children: React.ReactNode; c
         <nav aria-label="Main navigation">
           {groups.map((group) => (
             <div className="nav-group" key={group.label}>
-              <span className={`nav-group-label ${group.label === "HOT" ? "nav-group-hot" : ""}`}>{group.label === "HOT" && <Flame size={13} aria-hidden="true" />}{group.label}</span>
-              {group.links.map(({ href, label, icon: Icon, tone }) => {
+              <span className="nav-group-label">{group.label}</span>
+              {group.links.map(({ href, label, icon: Icon, tone, locked }) => {
                 const skill = href.split("/")[2];
-                const practiceLinks = skillPracticeLinks[skill];
-                const examSkill = skill === "reading" || skill === "listening" || (skill === "writing" && !demoMode);
+                const practiceLinks = href === `/app/${skill}` ? skillPracticeLinks[skill] : undefined;
+                const examSkill = Boolean(practiceLinks) && (skill === "reading" || skill === "listening" || (skill === "writing" && !demoMode));
                 const currentType = searchParams.get("type") ?? (skill === "reading" ? "passage" : skill === "listening" ? "part" : "all");
                 const expanded = expandedSkill === skill && Boolean(practiceLinks);
                 const active = isActive(pathname, href);
-                if (lockedLearnerPath(href)) return <div key={href} className="nav-link nav-link-locked" aria-label={`${label} đang chuẩn bị`} title={`${label} đang chuẩn bị`}>
-                  <b className={`nav-icon tone-${tone}`}><Icon size={17} strokeWidth={2.2} /></b><span>{label}</span><small>Sắp mở</small>
+                if (locked || lockedLearnerPath(href)) return <div key={href} className="nav-link nav-link-locked" aria-disabled="true" aria-label={`${label} đang chuẩn bị`} title={`${label} đang chuẩn bị`}>
+                  <b className={`nav-icon tone-${tone}`}><Icon size={17} strokeWidth={2.2} /></b><span>{label}</span><LockKeyhole size={12} aria-hidden="true" /><small>Sắp mở</small>
                 </div>;
                 return <div className={`nav-item ${examSkill ? `nav-exam-item nav-exam-${skill}` : ""}`} key={href}>
                   <Link
