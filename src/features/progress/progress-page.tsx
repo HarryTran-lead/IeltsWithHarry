@@ -364,7 +364,7 @@ function OtherStats({ overview }: { overview: LearnerOverview | null }) {
   const stats = overview?.stats;
   const tiles: { icon: typeof BookOpenText; label: string; value: ReactNode; note: string; href: string }[] = [
     { icon: BookOpenText, label: "Bài học khóa học", value: stats?.lessons ?? "—", note: stats?.lessonScore != null ? `Đúng trung bình ${stats.lessonScore}%` : "Chưa có điểm", href: "/app/learn" },
-    { icon: Headphones, label: "Câu Dictation", value: stats?.dictation ?? "—", note: "câu nghe chép đã kiểm tra", href: "/app/listening" },
+    { icon: Headphones, label: "Câu Dictation", value: stats?.dictation ?? "—", note: "câu nghe chép đã kiểm tra", href: "/app/dictation" },
     { icon: Newspaper, label: "Quiz Daily News", value: stats?.newsQuizzes ?? "—", note: stats?.newsScore != null ? `Đúng trung bình ${stats.newsScore}%` : `${stats?.newsRead ?? 0} bài báo đã đọc`, href: "/app/news" },
     { icon: CircleCheck, label: "Nhiệm vụ Planner", value: stats ? `${stats.tasksDone}/${stats.tasksDone + stats.tasksOpen}` : "—", note: stats ? `${stats.tasksOpen} nhiệm vụ đang mở` : "Lên kế hoạch học", href: "/app/planner" },
   ];
