@@ -33,13 +33,11 @@ export async function enqueueWritingAttempt(attemptId: string, userId: string) {
   const since = new Date(Date.now() - 86400000).toISOString();
   const { count, error: quotaError } = await client.from("writing_grading_jobs").select("id", { count: "exact", head: true }).eq("user_id", userId).gte("created_at", since);
   if (quotaError) throw new Error("Grading quota unavailable");
-  if ((count ?? 0) >= 10) throw new Error("Daily grading limit reached");
-  if (process.env.WRITING_GRADING_ALLOW_PILOT === "true") {
-    const { count: total, error: globalQuotaError } = await client.from("writing_grading_jobs")
-      .select("id", { count: "exact", head: true }).gte("created_at", since);
-    if (globalQuotaError) throw new Error("Grading quota unavailable");
-    if ((total ?? 0) >= 30) throw new Error("Đã hết 30 lượt chấm thử hôm nay. Hãy quay lại sau.");
-  }
+  if ((count ?? 0) >= 5) throw new Error("Bạn đã dùng hết 5 lượt chấm trong 24 giờ. Hãy quay lại sau.");
+  const { count: total, error: globalQuotaError } = await client.from("writing_grading_jobs")
+    .select("id", { count: "exact", head: true }).gte("created_at", since);
+  if (globalQuotaError) throw new Error("Grading quota unavailable");
+  if ((total ?? 0) >= 30) throw new Error("Đã hết lượt chấm miễn phí của hệ thống trong 24 giờ. Hãy quay lại sau.");
   const { data: job, error: insertError } = await client.from("writing_grading_jobs").insert({
     attempt_id: attemptId, user_id: userId, task_type: taskType, pipeline_version: versionId,
     prompt_snapshot: prompt, visual_snapshot: visual, essay_snapshot: essay,

@@ -2,9 +2,10 @@ import { randomUUID } from "node:crypto";
 import { createClient } from "@supabase/supabase-js";
 import { cloudflareWritingModel, gradeWithCloudflare } from "./cloudflare-provider";
 import { rubricVersion, schemaVersion, verifyModelDraft, type TaskType } from "./contract";
+import { notifyWritingResult } from "./notify-result";
 
 type Job = {
-  id: string; attempt_id: string; task_type: TaskType; prompt_snapshot: string;
+  id: string; attempt_id: string; user_id: string; task_type: TaskType; prompt_snapshot: string;
   essay_snapshot: string; visual_snapshot: unknown; exam_version_id: string;
   lease_token: string; attempt_no: number;
 };
@@ -66,6 +67,8 @@ export async function processOneCloudflareJob() {
       p_schema_version: schemaVersion, p_rubric_version: rubricVersion, p_model_version: modelVersion,
     });
     if (finishError) throw new Error("RESULT_WRITE_FAILED");
+    if (committed) await notifyWritingResult(db, resultId, item.user_id, item.attempt_id)
+      .catch(() => console.error(JSON.stringify({ job_id: item.id, error_code: "WRITING_NOTICE_FAILED" })));
     return Boolean(committed);
   } catch (cause) {
     const raw = cause instanceof Error ? cause.message : "";

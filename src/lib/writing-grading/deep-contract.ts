@@ -8,13 +8,13 @@ export const deepReportSchema = z.object({
     status: z.enum(["covered", "partial", "missing"]),
     evidence_quote: z.string().min(1).max(220).nullable(),
     action_vi: z.string().min(1).max(350),
-  })).min(1).max(3),
+  })).min(1).max(5),
   paragraphs: z.array(z.object({
     anchor_quote: z.string().min(1).max(220),
     role_vi: z.string().min(1).max(140),
     strength_vi: z.string().min(1).max(350),
     revision_vi: z.string().min(1).max(350),
-  })).min(1).max(3),
+  })).min(1).max(5),
   lexical: z.array(z.object({
     original_text: z.string().min(1).max(140),
     replacement: z.string().min(1).max(140),
