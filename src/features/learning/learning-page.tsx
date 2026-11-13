@@ -3,14 +3,10 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState, type CSSProperties } from "react";
 import {
-  Activity,
   ArrowRight,
   Check,
-  CircleCheck,
   Lightbulb,
   LockKeyhole,
-  Target,
-  TrendingUp,
   Mic,
   RotateCcw,
   Save,
@@ -18,16 +14,15 @@ import {
   Volume2,
 } from "lucide-react";
 import { Sticker, type StickerName } from "@/components/stickers/stickers";
-import { HeadIcon } from "@/components/ui/head-icon";
 import { PageHeader } from "@/components/ui/page-header";
 import { celebrateScore } from "@/lib/celebrate";
-import { viDate } from "@/lib/format-date";
 import { OpenCourses, StageLessons, usePublishedCourses } from "./stage-courses";
 import { loadPracticeResults, type PracticeResult } from "./practice-results";
 import { useDemo } from "@/features/demo/demo-store";
 import { stages, vocabulary } from "@/lib/demo-data";
 import { demoMode, learnStageAvailable, lockedLearnerPath, productionLearnStage, releaseLocks } from "@/lib/runtime";
 import { ProfilePage } from "@/features/account/profile-page";
+import { ProgressPage } from "@/features/progress/progress-page";
 import { useNotebook } from "@/features/notebook/notebook-store";
 import { SavedWordReview } from "@/features/news/saved-word-review";
 import { PageSkeleton } from "@/components/layout/page-skeleton";
@@ -900,71 +895,6 @@ function SpeakingPage() {
           </small>
         </aside>
       </div>
-    </div>
-  );
-}
-
-function ProgressPage() {
-  const { tasks, attempts, goal } = useDemo();
-  const completed = tasks.filter((t) => t.completed).length;
-  const pct = tasks.length ? Math.round((completed / tasks.length) * 100) : 0;
-  return (
-    <div className="content-page">
-      <PageIntro
-        eyebrow="HÀNH TRÌNH CỦA BẠN"
-        title="Tiến độ học tập"
-        description={demoMode ? "Tổng quan hoạt động đã lưu trong trình duyệt này." : "Tổng quan hoạt động đã lưu vào tài khoản của bạn."}
-        icon="chart"
-      />
-      <div className="progress-stat-grid">
-        <div className="card">
-          <HeadIcon icon={CircleCheck} tone="mint" />
-          <strong>{completed}</strong>
-          <small>Nhiệm vụ đã xong</small>
-        </div>
-        <div className="card">
-          <HeadIcon icon={Activity} tone="lavender" />
-          <strong>{attempts.length}</strong>
-          <small>Lượt luyện tập</small>
-        </div>
-        <div className="card">
-          <HeadIcon icon={Target} tone="coral" />
-          <strong>{goal}</strong>
-          <small>Mục tiêu mỗi ngày</small>
-        </div>
-        <div className="card">
-          <HeadIcon icon={TrendingUp} tone="teal" />
-          <strong>{pct}%</strong>
-          <small>Hoàn thành Planner</small>
-        </div>
-      </div>
-      <section className="card section-card">
-        <div className="section-head">
-          <h2>Bài luyện gần đây</h2>
-        </div>
-        {attempts.length ? (
-          <div className="attempt-list">
-            {attempts
-              .slice()
-              .map((attempt) => (
-                <div key={attempt.id}>
-                  <span>{attempt.lesson.replaceAll("-", " ")}</span>
-                  <strong>
-                    {attempt.score}/{attempt.total}
-                  </strong>
-                  <small>{viDate(attempt.date)}</small>
-                </div>
-              ))}
-          </div>
-        ) : (
-          <div className="empty-state">
-            Chưa có bài luyện nào. Hãy thử một bài Reading hoặc Grammar.
-          </div>
-        )}
-        <Link href="/app/learn" className="button primary">
-          Khám phá bài luyện <ArrowRight size={16} />
-        </Link>
-      </section>
     </div>
   );
 }
