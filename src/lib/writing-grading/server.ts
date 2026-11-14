@@ -2,6 +2,7 @@ import { createHash } from "node:crypto";
 import { bankClient } from "@/lib/ielts-bank/server";
 import { contentSchema } from "@/lib/ielts-bank/schema";
 import { countEnglishWords, type TaskType } from "./contract";
+import { vietnamMonthStart } from "./quota-window";
 
 export const gradingEnabled = () => process.env.WRITING_AUTOGRADING_ENABLED === "true";
 export const pipelineVersion = () => process.env.WRITING_GRADING_PIPELINE_VERSION || "local-v1";
@@ -30,10 +31,10 @@ export async function enqueueWritingAttempt(attemptId: string, userId: string) {
     .eq("attempt_id", attemptId).eq("pipeline_version", versionId).eq("request_kind", "initial").maybeSingle();
   if (lookupError) throw new Error("Grading queue unavailable");
   if (existing) return existing;
-  const since = new Date(Date.now() - 86400000).toISOString();
-  const { count, error: quotaError } = await client.from("writing_grading_jobs").select("id", { count: "exact", head: true }).eq("user_id", userId).gte("created_at", since);
+  const { count, error: quotaError } = await client.from("writing_grading_jobs").select("id", { count: "exact", head: true }).eq("user_id", userId).gte("created_at", vietnamMonthStart());
   if (quotaError) throw new Error("Grading quota unavailable");
-  if ((count ?? 0) >= 5) throw new Error("Bạn đã dùng hết 5 lượt chấm trong 24 giờ. Hãy quay lại sau.");
+  if ((count ?? 0) >= 20) throw new Error("Bạn đã dùng hết 20 lượt chấm trong tháng này. Lượt chấm sẽ được cấp lại đầu tháng sau (giờ Việt Nam).");
+  const since = new Date(Date.now() - 86400000).toISOString();
   const { count: total, error: globalQuotaError } = await client.from("writing_grading_jobs")
     .select("id", { count: "exact", head: true }).gte("created_at", since);
   if (globalQuotaError) throw new Error("Grading quota unavailable");
