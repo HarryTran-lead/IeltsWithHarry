@@ -167,3 +167,69 @@
 /* Second sidebar link sits under "Xem tiến độ chi tiết". */
 .gg-side-link + .gg-side-link{display:flex;align-items:center;gap:6px;margin-top:8px}
 .gg-levels + .gg-lab-banner{margin:12px 0}
+
+/* ---------------------------------------------------------------- Luyện thêm board (one screen) */
+.gg-labs-board{display:grid;grid-template-rows:auto minmax(0,1fr) auto;gap:10px;max-width:1280px;margin:0 auto}
+.glb-head{display:flex;align-items:center;gap:14px;padding:10px 14px;border:1px solid var(--gg-line);border-radius:var(--r-lg);background:linear-gradient(100deg,#eaf4fb 0%,var(--gg-brand-soft) 100%)}
+.glb-back{display:grid;place-items:center;flex:none;width:34px;height:34px;border:1px solid var(--gg-line);border-radius:var(--r-md);background:var(--gg-surface);color:var(--gg-brand-strong)}
+.glb-title{min-width:0}
+.glb-title h1{overflow:hidden;margin:2px 0 0;color:var(--gg-brand-ink);font-size:20px;line-height:1.2;text-overflow:ellipsis;white-space:nowrap}
+.glb-head .gg-lab-levels{flex-wrap:nowrap;margin:0 0 0 auto}
+.glb-head .gg-lab-levels a{min-width:42px;padding:6px 10px}
+.glb-stats{display:flex;gap:6px}
+.glb-stats span{padding:6px 10px;border-radius:var(--r-pill);background:#ffffffd9;color:var(--gg-muted);font-size:var(--fs-xs);white-space:nowrap}
+.glb-stats strong{color:var(--gg-brand-strong);font-size:var(--fs-base)}
+.glb-body{display:grid;grid-template-columns:280px minmax(0,1fr);gap:12px;min-height:0}
+.glb-nav{display:grid;grid-template-columns:minmax(0,1fr);align-content:start;gap:6px;min-height:0;overflow:auto}
+.glb-nav button{display:flex;align-items:center;gap:10px;width:100%;padding:10px 12px;border:1px solid var(--gg-line);border-radius:var(--r-md);background:var(--gg-surface);color:var(--gg-ink);text-align:left;cursor:pointer;transition:border-color .15s,background .15s}
+.glb-nav button:hover{border-color:#9fd2ca}
+.glb-nav button.active{border-color:var(--gg-brand);background:var(--gg-brand-soft);box-shadow:inset 3px 0 0 var(--gg-brand)}
+.glb-nav-text{display:flex;flex:1 1 auto;flex-direction:column;min-width:0}
+.glb-nav-text strong{overflow:hidden;font-size:var(--fs-sm);text-overflow:ellipsis;white-space:nowrap}
+.glb-nav-text small{overflow:hidden;color:var(--gg-muted);font-size:var(--fs-xs);text-overflow:ellipsis;white-space:nowrap}
+.glb-nav em{margin-left:auto;flex:none;padding:3px 8px;border-radius:var(--r-pill);background:var(--gg-soft);color:var(--gg-ink-2);font-size:var(--fs-xs);font-style:normal;font-weight:800}
+.glb-icon{display:grid;place-items:center;flex:none;width:34px;height:34px;border-radius:var(--r-md);background:#e8f4fb;color:#2a7fb8}
+.glb-ic-diagnostic .glb-icon,.glb-icon.glb-ic-diagnostic{background:#e7f3f7;color:#18829a}
+.glb-ic-clinic .glb-icon,.glb-icon.glb-ic-clinic{background:#fdeeee;color:#c4524f}
+.glb-ic-contrast .glb-icon,.glb-icon.glb-ic-contrast{background:#f1edfb;color:#7158c2}
+.glb-ic-transform .glb-icon,.glb-icon.glb-ic-transform{background:#eaf7f2;color:#178567}
+.glb-ic-context .glb-icon,.glb-icon.glb-ic-context{background:#fff4e5;color:#b8731b}
+.glb-ic-transfer .glb-icon,.glb-icon.glb-ic-transfer{background:#e8f4fb;color:#2a7fb8}
+.glb-panel{display:grid;grid-template-columns:minmax(0,1fr);grid-template-rows:auto minmax(0,1fr);gap:10px;min-height:0;padding:12px 14px;border:1px solid var(--gg-line);border-radius:var(--r-lg);background:var(--gg-surface)}
+.glb-panel.is-diagnostic{display:block;overflow:auto}
+.glb-panel.is-diagnostic>.gg-lab-section{margin:0;padding:4px;border:0;box-shadow:none}
+.glb-panel-head{display:flex;align-items:center;gap:12px}
+.glb-panel-head>div:not(.gg-search){flex:1 1 auto;min-width:0}
+.glb-panel-head h2{margin:0;color:var(--gg-ink);font-size:var(--fs-lg)}
+.glb-panel-head p{overflow:hidden;margin:2px 0 0;color:var(--gg-muted);font-size:var(--fs-xs);text-overflow:ellipsis;white-space:nowrap}
+.glb-panel-head .gg-search{flex:0 0 260px;margin:0 0 0 auto}
+.glb-list{min-height:0;overflow:auto;overscroll-behavior:contain;padding-right:4px}
+.glb-list .gg-lab-cards{grid-template-columns:repeat(auto-fill,minmax(210px,1fr))}
+.glb-list .gg-empty{min-height:200px;border:0}
+.gg-labs-board>.gg-lab-draft{margin:0;padding:5px 10px;font-size:var(--fs-2xs,11px)}
+
+/* Desktop and laptop: the board fills exactly one viewport; only the lab list scrolls. */
+@media (min-width:901px) and (min-height:520px){
+  .main-area:has(.gg-labs-board){padding-top:4px;padding-bottom:8px}
+  .gg:has(> .gg-labs-board){padding:6px 14px 8px}
+  .gg-labs-board{height:calc(100dvh - var(--app-header-height,70px) - 26px)}
+}
+@media (min-width:901px) and (max-height:700px){
+  .glb-nav-text small{display:none}
+  .glb-nav button{padding:7px 10px}
+}
+@media (max-width:1180px){
+  .glb-stats{display:none}
+  .glb-body{grid-template-columns:220px minmax(0,1fr)}
+}
+@media (max-width:900px){
+  .glb-head{flex-wrap:wrap}
+  .glb-head .gg-lab-levels{flex-wrap:wrap;margin:0}
+  .glb-body{grid-template-columns:minmax(0,1fr)}
+  .glb-nav{display:flex;overflow-x:auto;padding-bottom:4px}
+  .glb-nav button{flex:none;width:auto}
+  .glb-nav-text small{display:none}
+  .glb-panel-head{flex-wrap:wrap}
+  .glb-panel-head .gg-search{flex:1 1 100%;margin:0}
+  .glb-panel-head p{white-space:normal}
+}

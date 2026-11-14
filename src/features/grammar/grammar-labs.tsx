@@ -56,7 +56,7 @@ function Rich({ text }: { text?: string | null }) {
 }
 
 function DraftNote({ preview }: { preview: boolean }) {
-  return <p className="gg-lab-draft" role="note">{preview ? "Bản nháp biên tập · chưa được giáo viên duyệt. " : ""}Phòng luyện chỉ để tự học: không tính điểm thành thạo, không mở khóa cấp, không chứng nhận CEFR/IELTS.</p>;
+  return <p className="gg-lab-draft" role="note">{preview ? "Bản nháp biên tập · chưa được giáo viên duyệt. " : ""}Phần luyện thêm chỉ để tự học: không tính điểm thành thạo, không mở khóa cấp, không chứng nhận CEFR/IELTS.</p>;
 }
 
 // ------------------------------------------------------------------ lesson tab
@@ -71,37 +71,52 @@ export function LessonLabsPanel({ code }: { code: string }) {
     return () => { active = false; };
   }, [code]);
   if (error) return <div className="gg-error"><p>{error}</p></div>;
-  if (!data) return <div className="gg-loading">Đang tải phòng luyện…</div>;
+  if (!data) return <div className="gg-loading">Đang tải phần luyện thêm…</div>;
   if (open) return <LabPlayer lab={open.lab} id={open.id} onClose={() => setOpen(null)} onAttempt={record} />;
   const total = labKinds.reduce((sum, lab) => sum + data.labs[lab].length, 0);
   return <div className="gg-labs-panel">
     {data.concept && <section className="gg-lab-concept"><div><span className="gg-eyebrow">BẢN ĐỒ KIẾN THỨC · {data.concept.id}</span><h3>{data.concept.title}</h3><p>Nhóm: {data.concept.family}{data.concept.prerequisites.length ? ` · Cần nắm trước: ${data.concept.prerequisites.join(", ")}` : ""}</p></div>
       {data.concept.skills.length > 0 && <ol>{data.concept.skills.map((skill) => <li key={skill.id}><strong>{skill.title}</strong>{skill.formula && <code>{skill.formula}</code>}</li>)}</ol>}</section>}
     <DraftNote preview={data.draftPreview} />
-    {total === 0 ? <div className="gg-empty"><FlaskConical size={28} /><h2>Chưa có bài luyện chuyên sâu cho bài này</h2><p>Hãy luyện tập theo 4 giai đoạn, hoặc mở phòng luyện của cả cấp.</p><Link className="gg-primary" href={`${ROOT}/labs?level=${code.slice(0, 2)}`}>Phòng luyện {code.slice(0, 2)} <ArrowRight size={16} /></Link></div>
+    {total === 0 ? <div className="gg-empty"><FlaskConical size={28} /><h2>Chưa có bài luyện chuyên sâu cho bài này</h2><p>Hãy luyện tập theo 4 giai đoạn, hoặc mở phần luyện thêm của cả cấp.</p><Link className="gg-primary" href={`${ROOT}/labs?level=${code.slice(0, 2)}`}>Luyện thêm {code.slice(0, 2)} <ArrowRight size={16} /></Link></div>
       : labKinds.filter((lab) => data.labs[lab].length).map((lab) => <LabSection key={lab} lab={lab} items={data.labs[lab]} attempts={attempts} onOpen={(id) => setOpen({ lab, id })} />)}
   </div>;
 }
 
-function LabSection({ lab, items, attempts, onOpen, limit }: { lab: LabKind; items: LabSummary[]; attempts: Record<string, Attempt>; onOpen: (id: string) => void; limit?: number }) {
+function LabCards({ lab, items, attempts, onOpen }: { lab: LabKind; items: LabSummary[]; attempts: Record<string, Attempt>; onOpen: (id: string) => void }) {
+  return <div className="gg-lab-cards">{items.map((item) => { const attempt = attempts[`${lab}:${item.id}`]; return <button key={item.id} className={attempt ? "done" : ""} onClick={() => onOpen(item.id)}>
+    <span className="gg-lab-card-top"><small>{item.lessonIds.join(" · ")}</small>{attempt && <em><Check size={13} /> {attempt.total ? `${attempt.correct}/${attempt.total}` : "Đã làm"}</em>}</span>
+    <strong>{item.title}</strong>{item.subtitle && <span className="gg-lab-sub">{item.subtitle}</span>}<ChevronRight className="gg-lab-chevron" size={16} />
+  </button>; })}</div>;
+}
+
+function LabSection({ lab, items, attempts, onOpen }: { lab: LabKind; items: LabSummary[]; attempts: Record<string, Attempt>; onOpen: (id: string) => void }) {
   const Icon = icons[lab];
-  const [expanded, setExpanded] = useState(false);
-  const shown = limit && !expanded ? items.slice(0, limit) : items;
   const done = items.filter((item) => attempts[`${lab}:${item.id}`]).length;
   return <section className={`gg-lab-section gg-lab-${lab}`}>
     <header><span className="gg-lab-icon"><Icon size={20} /></span><div><h3>{labInfo[lab].name} <small>{labInfo[lab].milestone}</small></h3><p>{labInfo[lab].description}</p></div><span className="gg-lab-count">{done}/{items.length}</span></header>
-    <div className="gg-lab-cards">{shown.map((item) => { const attempt = attempts[`${lab}:${item.id}`]; return <button key={item.id} className={attempt ? "done" : ""} onClick={() => onOpen(item.id)}>
-      <span className="gg-lab-card-top"><small>{item.lessonIds.join(" · ")}</small>{attempt && <em><Check size={13} /> {attempt.total ? `${attempt.correct}/${attempt.total}` : "Đã làm"}</em>}</span>
-      <strong>{item.title}</strong>{item.subtitle && <span className="gg-lab-sub">{item.subtitle}</span>}<ChevronRight className="gg-lab-chevron" size={16} />
-    </button>; })}</div>
-    {limit && items.length > limit && <button className="gg-secondary gg-lab-more" onClick={() => setExpanded(!expanded)}>{expanded ? "Thu gọn" : `Xem tất cả ${items.length} bài`}</button>}
+    <LabCards lab={lab} items={items} attempts={attempts} onOpen={onOpen} />
   </section>;
 }
 
 // ------------------------------------------------------------------ hub page
+type Pane = LabKind | "diagnostic";
+const panes: Pane[] = ["diagnostic", ...labKinds];
+const paneIcons: Record<Pane, typeof Compass> = { diagnostic: Compass, ...icons };
+const paneName = (pane: Pane) => pane === "diagnostic" ? "Chẩn đoán nhanh" : labInfo[pane].name;
+const paneTagline: Record<Pane, string> = {
+  diagnostic: "12 câu · gợi ý bài nên ôn",
+  clinic: "Sửa lỗi hay gặp theo từng bước",
+  contrast: "Hai cấu trúc dễ nhầm",
+  transform: "Đổi cấu trúc, giữ nguyên nghĩa",
+  context: "Đọc đoạn văn, tìm và sửa lỗi",
+  transfer: "Viết hoặc nói một đoạn ngắn",
+};
+
+/** One-screen board: header row, lab list on the left, the chosen lab on the right (scrolls inside). */
 export function LabsHub({ levelParam, labParam, idParam, unlocked }: { levelParam: string | null; labParam: string | null; idParam: string | null; unlocked: GrammarLevel[] }) {
   const level = grammarLevels.includes(levelParam as GrammarLevel) ? levelParam as GrammarLevel : (idParam?.match(/(A1|A2|B1|B2|C1|C2)/)?.[1] as GrammarLevel | undefined) ?? "A1";
-  const [filter, setFilter] = useState<LabKind | "all" | "diagnostic">(labParam === "diagnostic" ? "diagnostic" : labKinds.includes(labParam as LabKind) ? labParam as LabKind : "all");
+  const [pane, setPane] = useState<Pane>(panes.includes(labParam as Pane) ? labParam as Pane : "clinic");
   const [loaded, setLoaded] = useState<LevelLabs | null>(null);
   const [failure, setFailure] = useState<{ level: GrammarLevel; message: string } | null>(null);
   const data = loaded?.level === level ? loaded : null;
@@ -116,33 +131,44 @@ export function LabsHub({ levelParam, labParam, idParam, unlocked }: { levelPara
     getJson<LevelLabs>(`/api/grammar/labs?level=${level}`).then((value) => { if (active) setLoaded(value); }).catch((cause) => { if (active) setFailure({ level, message: cause.message }); });
     return () => { active = false; };
   }, [level, levelOpen]);
-  const filtered = useMemo(() => {
-    if (!data) return null;
+  const items = useMemo(() => {
+    if (!data || pane === "diagnostic") return [];
     const q = query.trim().toLowerCase();
-    return Object.fromEntries(labKinds.map((lab) => [lab, data.labs[lab].filter((item) => !q || `${item.title} ${item.subtitle ?? ""} ${item.lessonIds.join(" ")}`.toLowerCase().includes(q))])) as Record<LabKind, LabSummary[]>;
-  }, [data, query]);
+    return data.labs[pane].filter((item) => !q || `${item.title} ${item.subtitle ?? ""} ${item.lessonIds.join(" ")}`.toLowerCase().includes(q));
+  }, [data, pane, query]);
   if (open) return <div className="gg-subpage gg-labs"><LabPlayer lab={open.lab} id={open.id} onClose={() => setOpen(null)} onAttempt={record} /></div>;
-  const totals = data ? labKinds.reduce((sum, lab) => sum + data.labs[lab].length, 0) : 0;
-  return <div className="gg-subpage gg-labs">
-    <Link className="gg-back" href={`${ROOT}/level/${level}`}><ArrowLeft size={16} /> Lộ trình {level}</Link>
-    <section className="gg-lab-hero"><div><span className="gg-eyebrow">PHÒNG LUYỆN CHUYÊN SÂU · {level}</span><h1>{grammarWorlds[level].icon} Luyện sâu {grammarWorlds[level].name}</h1><p>Chẩn đoán nhanh, chữa lỗi theo bước, phân biệt cấu trúc, viết lại câu, đọc ngữ cảnh và vận dụng vào Viết/Nói.</p></div>
-      {data && <div className="gg-lab-stats"><div><strong>{totals}</strong><span>bài luyện</span></div><div><strong>{data.diagnosticItems}</strong><span>câu chẩn đoán</span></div><div><strong>{Object.keys(attempts).filter((key) => data.labs[key.split(":")[0] as LabKind]?.some((x) => x.id === key.split(":").slice(1).join(":"))).length}</strong><span>đã làm</span></div></div>}</section>
-    <div className="gg-lab-levels" role="group" aria-label="Chọn cấp độ">{grammarLevels.map((item) => <Link key={item} className={item === level ? "active" : ""} aria-disabled={!isLevelOpen(item, unlocked)} href={isLevelOpen(item, unlocked) ? `${ROOT}/labs?level=${item}` : `${ROOT}/placement?target=${item}`}>{item}</Link>)}</div>
-    {!levelOpen ? <div className="gg-empty"><Layers size={28} /><h2>Cấp {level} đang khóa</h2><p>Mở cấp này trong lộ trình Grammar để vào phòng luyện.</p><Link className="gg-primary" href={`${ROOT}/placement?target=${level}`}>Kiểm tra mở cấp <ArrowRight size={16} /></Link></div>
+  const doneIn = (lab: LabKind) => data ? data.labs[lab].filter((item) => attempts[`${lab}:${item.id}`]).length : 0;
+  const total = data ? labKinds.reduce((sum, lab) => sum + data.labs[lab].length, 0) : 0;
+  const done = data ? labKinds.reduce((sum, lab) => sum + doneIn(lab), 0) : 0;
+  const PaneIcon = paneIcons[pane];
+  return <div className="gg-labs-board">
+    <header className="glb-head">
+      <Link className="glb-back" href={`${ROOT}/level/${level}`} aria-label={`Về lộ trình ${level}`}><ArrowLeft size={18} /></Link>
+      <div className="glb-title"><span className="gg-eyebrow">LUYỆN THÊM · TÙY CHỌN</span><h1>{grammarWorlds[level].icon} {grammarWorlds[level].name}</h1></div>
+      <div className="gg-lab-levels" role="group" aria-label="Chọn cấp độ">{grammarLevels.map((item) => <Link key={item} className={item === level ? "active" : ""} aria-disabled={!isLevelOpen(item, unlocked)} href={isLevelOpen(item, unlocked) ? `${ROOT}/labs?level=${item}` : `${ROOT}/placement?target=${item}`}>{item}</Link>)}</div>
+      {data && <div className="glb-stats"><span><strong>{total}</strong> bài</span><span><strong>{done}</strong> đã làm</span></div>}
+    </header>
+    {!levelOpen ? <div className="gg-empty"><Layers size={28} /><h2>Cấp {level} đang khóa</h2><p>Mở cấp này trong lộ trình Grammar để luyện thêm.</p><Link className="gg-primary" href={`${ROOT}/placement?target=${level}`}>Kiểm tra mở cấp <ArrowRight size={16} /></Link></div>
       : error ? <div className="gg-error"><p>{error}</p></div>
-        : !data || !filtered ? <div className="gg-loading">Đang tải phòng luyện…</div>
-          : <>
-            <div className="gg-stage-tabs gg-lab-filter" role="group" aria-label="Lọc phòng luyện">
-              <button className={filter === "all" ? "active" : ""} onClick={() => setFilter("all")}>Tất cả <small>{totals}</small></button>
-              <button className={filter === "diagnostic" ? "active" : ""} onClick={() => setFilter("diagnostic")}>Chẩn đoán <small>M21</small></button>
-              {labKinds.map((lab) => <button key={lab} className={filter === lab ? "active" : ""} onClick={() => setFilter(lab)}>{labInfo[lab].short} <small>{data.labs[lab].length}</small></button>)}
-            </div>
-            <DraftNote preview={data.draftPreview} />
-            {(filter === "all" || filter === "diagnostic") && <DiagnosticCard level={level} available={data.diagnosticItems > 0} expanded={filter === "diagnostic"} onOpenClinic={(id) => setOpen({ lab: "clinic", id })} />}
-            {filter !== "diagnostic" && <div className="gg-search"><Search size={17} /><input value={query} onChange={(event) => setQuery(event.target.value)} placeholder="Tìm theo mã bài, chủ điểm hoặc tình huống…" aria-label="Tìm bài luyện" />{query && <button onClick={() => setQuery("")}>Xóa</button>}</div>}
-            {filter !== "diagnostic" && labKinds.filter((lab) => (filter === "all" || filter === lab) && filtered[lab].length).map((lab) => <LabSection key={lab} lab={lab} items={filtered[lab]} attempts={attempts} limit={filter === "all" ? 6 : undefined} onOpen={(id) => setOpen({ lab, id })} />)}
-            {filter !== "diagnostic" && labKinds.every((lab) => !(filter === "all" || filter === lab) || !filtered[lab].length) && <div className="gg-empty"><Search size={26} /><h2>Không có bài phù hợp</h2></div>}
-          </>}
+        : !data ? <div className="gg-loading">Đang tải phần luyện thêm…</div>
+          : <div className="glb-body">
+            <nav className="glb-nav" aria-label="Chọn dạng luyện">{panes.map((item) => {
+              const Icon = paneIcons[item];
+              const count = item === "diagnostic" ? `${data.diagnosticItems} câu` : `${doneIn(item)}/${data.labs[item].length}`;
+              return <button key={item} className={`glb-ic-${item} ${pane === item ? "active" : ""}`} aria-pressed={pane === item} onClick={() => { setPane(item); setQuery(""); }}>
+                <span className="glb-icon"><Icon size={18} /></span><span className="glb-nav-text"><strong>{item === "diagnostic" ? "Chẩn đoán nhanh" : labInfo[item].short}</strong><small>{paneTagline[item]}</small></span><em>{count}</em>
+              </button>;
+            })}</nav>
+            <section className={`glb-panel ${pane === "diagnostic" ? "is-diagnostic" : ""}`} aria-label={paneName(pane)}>
+              {pane === "diagnostic" ? <DiagnosticCard level={level} available={data.diagnosticItems > 0} expanded onOpenClinic={(id) => setOpen({ lab: "clinic", id })} />
+                : <>
+                  <div className="glb-panel-head"><span className={`glb-icon glb-ic-${pane}`}><PaneIcon size={18} /></span><div><h2>{labInfo[pane].name}</h2><p>{labInfo[pane].description}</p></div>
+                    <div className="gg-search"><Search size={16} /><input value={query} onChange={(event) => setQuery(event.target.value)} placeholder="Tìm mã bài, chủ điểm…" aria-label="Tìm bài luyện" />{query && <button onClick={() => setQuery("")}>Xóa</button>}</div></div>
+                  <div className="glb-list">{items.length ? <LabCards lab={pane} items={items} attempts={attempts} onOpen={(id) => setOpen({ lab: pane, id })} /> : <div className="gg-empty"><Search size={24} /><h2>Không có bài phù hợp</h2></div>}</div>
+                </>}
+            </section>
+          </div>}
+    {data && <DraftNote preview={data.draftPreview} />}
   </div>;
 }
 

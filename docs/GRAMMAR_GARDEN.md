@@ -65,7 +65,7 @@ rewritten first. Every question keeps `publishable: false`.
 
 ## Practice labs
 
-`/app/grammar/labs?level=A1`, the **Phòng luyện** tab of each lesson, the roadmap
+`/app/grammar/labs?level=A1`, the **Luyện thêm** tab of each lesson (Grammar menu → Luyện thêm), the roadmap
 banner and the sidebar link use `/api/grammar/labs` (signed-in learners, open
 levels only):
 

@@ -178,8 +178,8 @@
   .gg:has(> .gg-layout) > .gg-crumb { display: none; }
   .gg-layout {
     grid-template-columns: minmax(0, 1fr) 320px;
-    grid-template-rows: auto auto auto auto minmax(0, 1fr) auto;
-    grid-template-areas: "hero today" "levels today" "search today" "chapters placement" "chapters aside" "note aside";
+    grid-template-rows: auto auto auto auto auto minmax(0, 1fr) auto;
+    grid-template-areas: "hero today" "levels today" "search today" "chapters placement" "chapters labs" "chapters aside" "note aside";
     gap: 8px 14px;
     height: calc(100dvh - var(--app-header-height, 70px) - 26px);
   }
@@ -206,6 +206,8 @@
   .gg-layout .gg-chapters { grid-area: chapters; align-self: stretch; min-height: 0; max-height: 100%; padding-right: 4px; overflow: auto; overscroll-behavior: contain; }
   .gg-layout .gg-preview-note { grid-area: note; margin: 0; font-size: var(--fs-2xs); line-height: 1.4; }
   .gg-layout .gg-aside { grid-area: aside; align-self: start; }
+  .gg-layout .gg-main > .gg-lab-banner { grid-area: labs; align-self: start; margin: 0; padding: 8px 12px; }
+  .gg-layout .gg-main > .gg-lab-banner small { display: none; }
   .gg-layout .gg-side-card { padding: 10px 14px; }
   .gg-layout .gg-side-card h3 { margin-bottom: 8px; }
   .gg-layout .gg-side-stats { margin-top: 10px; padding-top: 8px; }
