@@ -1,0 +1,3227 @@
+{
+  "B1-01": {
+    "lesson_id": "B1-01",
+    "overview_vi": "Chọn thì theo cách người nói định vị sự kiện: mốc đã khép lại hay trải nghiệm/kết quả liên quan hiện tại; không dựa vào một từ khóa đơn lẻ.",
+    "decision_steps_vi": [
+      "Xác định khoảng thời gian đã kết thúc hay chưa",
+      "Kiểm tra người nói có nhấn kết quả hiện tại không",
+      "Chọn Past Simple khi kể mốc cụ thể, Present Perfect khi liên kết với hiện tại"
+    ],
+    "patterns": [
+      {
+        "pattern": "have/has + V3",
+        "use_vi": "Kết quả còn liên quan hiện tại.",
+        "example_en": "The printer has stopped working, so we cannot print the tickets.",
+        "example_vi": "Máy in đã ngừng hoạt động nên chúng tôi không in được vé."
+      },
+      {
+        "pattern": "V2/ed + finished time",
+        "use_vi": "Sự kiện được đặt tại một mốc quá khứ xác định.",
+        "example_en": "The printer stopped working at nine this morning.",
+        "example_vi": "Máy in ngừng hoạt động lúc chín giờ sáng nay."
+      }
+    ],
+    "worked_examples": [
+      {
+        "situation_vi": "Bạn vừa nhận thấy điện thoại biến mất nên chưa gọi được.",
+        "answer_en": "I have lost my phone, so I cannot call her.",
+        "translation_vi": "Tôi làm mất điện thoại nên không thể gọi cho cô ấy.",
+        "reason_vi": "Trọng tâm là hệ quả hiện tại: không có điện thoại."
+      },
+      {
+        "situation_vi": "Bạn kể chuyến đi ngày Chủ nhật trước.",
+        "answer_en": "We visited the exhibition last Sunday.",
+        "translation_vi": "Chúng tôi đi xem triển lãm Chủ nhật trước.",
+        "reason_vi": "Last Sunday là thời gian đã kết thúc."
+      }
+    ],
+    "contrasts": [
+      {
+        "first_en": "I have finished the report.",
+        "second_en": "I finished the report at noon.",
+        "difference_vi": "Cả hai có thể đúng; câu đầu nhấn kết quả, câu sau xác định thời điểm."
+      }
+    ],
+    "common_mistakes": [
+      {
+        "wrong": "I have met her yesterday.",
+        "correct": "I met her yesterday.",
+        "why_vi": "Yesterday là mốc đã kết thúc nên dùng Past Simple."
+      },
+      {
+        "wrong": "I finished my homework just, so I can go out now.",
+        "correct": "I have just finished my homework, so I can go out now.",
+        "why_vi": "Trong ngữ cảnh nhấn kết quả hiện tại, dùng have just finished; vị trí just nằm sau have."
+      }
+    ],
+    "paragraph_transfer": {
+      "context_vi": "Bạn gửi báo cáo và báo tiến độ cho trưởng nhóm.",
+      "task_en": "Write two sentences: say you have finished the draft and say when you sent it.",
+      "model_paragraph_en": "I have finished the draft, so you can review it now. I sent the file at 10 a.m.",
+      "coaching_vi": "Dùng Present Perfect cho kết quả hiện tại; Past Simple cho hành động có mốc rõ."
+    },
+    "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED",
+    "question_import_policy": "SEPARATE_BANK_NO_OVERWRITE",
+    "title": "Present Perfect vs Past Simple",
+    "qa_teacher_review": "NOT_REVIEWED",
+    "draft_practice": [
+      {
+        "stage": "guided",
+        "prompt_en": "Complete: I ___ (lose) my access card, so I cannot enter.",
+        "draft_id": "M10-B1-01-DRAFT-01",
+        "assessment_mode": "SELF_REVIEW_REQUIRED"
+      },
+      {
+        "stage": "independent",
+        "prompt_en": "Rewrite with a finished time: I have met the supplier. (on Monday)",
+        "draft_id": "M10-B1-01-DRAFT-02",
+        "assessment_mode": "SELF_REVIEW_REQUIRED"
+      },
+      {
+        "stage": "mastery",
+        "prompt_en": "Write a two-sentence update: finish a project; submit it yesterday.",
+        "draft_id": "M10-B1-01-DRAFT-03",
+        "assessment_mode": "SELF_REVIEW_REQUIRED"
+      },
+      {
+        "stage": "spaced_review",
+        "prompt_en": "Correct: She has called me last night.",
+        "draft_id": "M10-B1-01-DRAFT-04",
+        "assessment_mode": "SELF_REVIEW_REQUIRED"
+      }
+    ]
+  },
+  "B1-02": {
+    "lesson_id": "B1-02",
+    "overview_vi": "Thời lượng với for/since có thể đi cùng Present Perfect; cần xem hành động còn tiếp diễn hay đã khép lại.",
+    "decision_steps_vi": [
+      "Xác định thời điểm bắt đầu hay độ dài",
+      "Hỏi hoạt động có còn đúng tới hiện tại không",
+      "Dùng since cho điểm bắt đầu và for cho khoảng thời gian"
+    ],
+    "patterns": [
+      {
+        "pattern": "have/has + V3 + for + duration",
+        "use_vi": "Khoảng thời gian từ trước đến nay.",
+        "example_en": "We have lived here for six years.",
+        "example_vi": "Chúng tôi đã sống ở đây được sáu năm."
+      },
+      {
+        "pattern": "have/has + V3 + since + point",
+        "use_vi": "Điểm bắt đầu của trạng thái còn tiếp tục.",
+        "example_en": "She has known Maya since 2020.",
+        "example_vi": "Cô ấy quen Maya từ năm 2020."
+      }
+    ],
+    "worked_examples": [
+      {
+        "situation_vi": "Một giáo viên dạy ở trường từ 2021 đến nay.",
+        "answer_en": "Mr Long has taught at this school since 2021.",
+        "translation_vi": "Thầy Long đã dạy ở trường này từ năm 2021.",
+        "reason_vi": "Since đi cùng mốc bắt đầu 2021."
+      },
+      {
+        "situation_vi": "Bạn làm quen người hàng xóm bốn năm trước và vẫn biết họ.",
+        "answer_en": "I have known my neighbour for four years.",
+        "translation_vi": "Tôi quen người hàng xóm được bốn năm.",
+        "reason_vi": "Know là động từ trạng thái nên dạng đơn thường phù hợp hơn dạng tiếp diễn."
+      }
+    ],
+    "contrasts": [
+      {
+        "first_en": "I have worked here for three months.",
+        "second_en": "I worked here for three months.",
+        "difference_vi": "Câu đầu thường gợi tình trạng tới hiện tại; câu sau nói về một khoảng thời gian đã khép lại."
+      }
+    ],
+    "common_mistakes": [
+      {
+        "wrong": "I have been here since three years.",
+        "correct": "I have been here for three years.",
+        "why_vi": "Three years chỉ độ dài nên dùng for."
+      },
+      {
+        "wrong": "She has known him since a long time.",
+        "correct": "She has known him for a long time.",
+        "why_vi": "A long time là khoảng thời gian, không phải mốc khởi đầu."
+      }
+    ],
+    "paragraph_transfer": {
+      "context_vi": "Bạn giới thiệu thời gian đã gắn bó với câu lạc bộ.",
+      "task_en": "Write two sentences about a membership that began in 2022 and continues now.",
+      "model_paragraph_en": "I have been a member of this club since 2022. I have made several friends here.",
+      "coaching_vi": "Câu đầu cho mốc bắt đầu còn hiệu lực; câu sau kể kết quả đến hiện tại."
+    },
+    "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED",
+    "question_import_policy": "SEPARATE_BANK_NO_OVERWRITE",
+    "title": "Present Perfect – Duration",
+    "qa_teacher_review": "NOT_REVIEWED",
+    "draft_practice": [
+      {
+        "stage": "guided",
+        "prompt_en": "Complete: My sister has worked here ___ March.",
+        "draft_id": "M10-B1-02-DRAFT-01",
+        "assessment_mode": "SELF_REVIEW_REQUIRED"
+      },
+      {
+        "stage": "independent",
+        "prompt_en": "Complete: They have been married ___ fifteen years.",
+        "draft_id": "M10-B1-02-DRAFT-02",
+        "assessment_mode": "SELF_REVIEW_REQUIRED"
+      },
+      {
+        "stage": "mastery",
+        "prompt_en": "Join: I joined the course in 2023. I am still on it.",
+        "draft_id": "M10-B1-02-DRAFT-03",
+        "assessment_mode": "SELF_REVIEW_REQUIRED"
+      },
+      {
+        "stage": "spaced_review",
+        "prompt_en": "Correct: He has owned the shop since five years.",
+        "draft_id": "M10-B1-02-DRAFT-04",
+        "assessment_mode": "SELF_REVIEW_REQUIRED"
+      }
+    ]
+  },
+  "B1-03": {
+    "lesson_id": "B1-03",
+    "overview_vi": "Present Perfect Continuous làm nổi bật quá trình hoặc thời lượng hoạt động từ quá khứ tới hiện tại; tránh áp dụng máy móc cho mọi động từ trạng thái.",
+    "decision_steps_vi": [
+      "Xem hành động bắt đầu trước hiện tại không",
+      "Kiểm tra có đang tiếp tục hay dấu hiệu mới kết thúc không",
+      "Ưu tiên have/has been V-ing khi nhấn quá trình"
+    ],
+    "patterns": [
+      {
+        "pattern": "have/has been + V-ing",
+        "use_vi": "Nhấn hoạt động còn kéo dài.",
+        "example_en": "I have been preparing for the interview all morning.",
+        "example_vi": "Tôi chuẩn bị cho buổi phỏng vấn cả sáng nay."
+      },
+      {
+        "pattern": "have/has been + V-ing + recently",
+        "use_vi": "Hoạt động gần đây giải thích dấu hiệu hiện tại.",
+        "example_en": "It has been raining, so the pavement is wet.",
+        "example_vi": "Trời vừa mưa nên vỉa hè ướt."
+      }
+    ],
+    "worked_examples": [
+      {
+        "situation_vi": "Một đồng nghiệp mệt vì đang làm báo cáo cả sáng.",
+        "answer_en": "She has been working on the report all morning.",
+        "translation_vi": "Cô ấy làm báo cáo cả sáng nay.",
+        "reason_vi": "Nhấn thời gian và sự nỗ lực liên tục."
+      },
+      {
+        "situation_vi": "Giải thích vì sao quần áo dính sơn.",
+        "answer_en": "I have been painting the bedroom.",
+        "translation_vi": "Tôi vừa sơn phòng ngủ.",
+        "reason_vi": "Quần áo dính sơn là bằng chứng quá trình gần đây."
+      }
+    ],
+    "contrasts": [
+      {
+        "first_en": "I have painted the room.",
+        "second_en": "I have been painting the room.",
+        "difference_vi": "Câu đầu thường nhấn thành quả/hoàn tất; câu sau nhấn quá trình, chưa xác nhận xong."
+      }
+    ],
+    "common_mistakes": [
+      {
+        "wrong": "I have been knowing her for years.",
+        "correct": "I have known her for years.",
+        "why_vi": "Know là động từ trạng thái, thường không dùng dạng tiếp diễn."
+      },
+      {
+        "wrong": "He has working since dawn.",
+        "correct": "He has been working since dawn.",
+        "why_vi": "Thiếu been trong cấu trúc hoàn thành tiếp diễn."
+      }
+    ],
+    "paragraph_transfer": {
+      "context_vi": "Bạn giải thích sự chậm trễ trước cuộc họp.",
+      "task_en": "Write two sentences explaining why you look tired and whether the task is complete.",
+      "model_paragraph_en": "I have been checking the data since breakfast, so I am tired. I have not finished the report yet.",
+      "coaching_vi": "Thể tiếp diễn giải thích quá trình, câu phủ định cho biết chưa hoàn tất."
+    },
+    "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED",
+    "question_import_policy": "SEPARATE_BANK_NO_OVERWRITE",
+    "title": "Present Perfect Continuous",
+    "qa_teacher_review": "NOT_REVIEWED",
+    "draft_practice": [
+      {
+        "stage": "guided",
+        "prompt_en": "Complete: We ___ (wait) for the bus for forty minutes.",
+        "draft_id": "M10-B1-03-DRAFT-01",
+        "assessment_mode": "SELF_REVIEW_REQUIRED"
+      },
+      {
+        "stage": "independent",
+        "prompt_en": "Explain the muddy shoes: play football.",
+        "draft_id": "M10-B1-03-DRAFT-02",
+        "assessment_mode": "SELF_REVIEW_REQUIRED"
+      },
+      {
+        "stage": "mastery",
+        "prompt_en": "Write two sentences contrasting process and result after a morning of studying.",
+        "draft_id": "M10-B1-03-DRAFT-03",
+        "assessment_mode": "SELF_REVIEW_REQUIRED"
+      },
+      {
+        "stage": "spaced_review",
+        "prompt_en": "Correct: She has been know the answer for years.",
+        "draft_id": "M10-B1-03-DRAFT-04",
+        "assessment_mode": "SELF_REVIEW_REQUIRED"
+      }
+    ]
+  },
+  "B1-04": {
+    "lesson_id": "B1-04",
+    "overview_vi": "Phân biệt Present Perfect Simple và Continuous theo góc nhìn: kết quả/số lượng so với quá trình/thời lượng.",
+    "decision_steps_vi": [
+      "Tìm thông tin đang được đo: kết quả hay quá trình",
+      "Nếu có số lượng hoàn tất, ưu tiên dạng đơn",
+      "Nếu nói mức độ kéo dài, ưu tiên dạng tiếp diễn"
+    ],
+    "patterns": [
+      {
+        "pattern": "have/has + V3",
+        "use_vi": "Đếm sản phẩm hoặc nhấn hoàn thành.",
+        "example_en": "I have written three emails today.",
+        "example_vi": "Hôm nay tôi đã viết ba email."
+      },
+      {
+        "pattern": "have/has been + V-ing",
+        "use_vi": "Nhấn thời gian nỗ lực hoặc hành động kéo dài.",
+        "example_en": "I have been writing emails for two hours.",
+        "example_vi": "Tôi đã viết email suốt hai giờ."
+      }
+    ],
+    "worked_examples": [
+      {
+        "situation_vi": "Đánh giá số trang đã dịch xong.",
+        "answer_en": "She has translated twelve pages.",
+        "translation_vi": "Cô ấy đã dịch xong mười hai trang.",
+        "reason_vi": "Số trang đã hoàn thành là trọng tâm."
+      },
+      {
+        "situation_vi": "Báo cáo rằng việc dịch chiếm cả buổi chiều.",
+        "answer_en": "She has been translating documents all afternoon.",
+        "translation_vi": "Cô ấy dịch tài liệu cả buổi chiều.",
+        "reason_vi": "Nhấn quá trình và thời lượng."
+      }
+    ],
+    "contrasts": [
+      {
+        "first_en": "How many chapters have you read?",
+        "second_en": "How long have you been reading?",
+        "difference_vi": "Một câu hỏi về số lượng hoàn tất; một câu hỏi về thời gian đọc."
+      }
+    ],
+    "common_mistakes": [
+      {
+        "wrong": "I have been finishing three reports.",
+        "correct": "I have finished three reports.",
+        "why_vi": "Số lượng báo cáo đã xong thường dùng dạng đơn."
+      },
+      {
+        "wrong": "How long have you written this essay?",
+        "correct": "How long have you been writing this essay?",
+        "why_vi": "Khi hỏi quá trình viết đang kéo dài, dạng tiếp diễn tự nhiên hơn."
+      }
+    ],
+    "paragraph_transfer": {
+      "context_vi": "Bạn báo cáo tiến độ dịch thuật.",
+      "task_en": "Write two sentences: say how long you have worked and how much you have completed.",
+      "model_paragraph_en": "I have been translating since 8 a.m. I have translated six pages so far.",
+      "coaching_vi": "Một câu nhấn thời lượng, một câu nhấn kết quả đếm được."
+    },
+    "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED",
+    "question_import_policy": "SEPARATE_BANK_NO_OVERWRITE",
+    "title": "Perfect Simple vs Continuous",
+    "qa_teacher_review": "NOT_REVIEWED",
+    "draft_practice": [
+      {
+        "stage": "guided",
+        "prompt_en": "Complete: They ___ (repair) two bikes so far.",
+        "draft_id": "M10-B1-04-DRAFT-01",
+        "assessment_mode": "SELF_REVIEW_REQUIRED"
+      },
+      {
+        "stage": "independent",
+        "prompt_en": "Complete: I ___ (repair) my bike all morning.",
+        "draft_id": "M10-B1-04-DRAFT-02",
+        "assessment_mode": "SELF_REVIEW_REQUIRED"
+      },
+      {
+        "stage": "mastery",
+        "prompt_en": "Contrast: hours practising; five exercises completed.",
+        "draft_id": "M10-B1-04-DRAFT-03",
+        "assessment_mode": "SELF_REVIEW_REQUIRED"
+      },
+      {
+        "stage": "spaced_review",
+        "prompt_en": "Correct: How many books have you been finished?",
+        "draft_id": "M10-B1-04-DRAFT-04",
+        "assessment_mode": "SELF_REVIEW_REQUIRED"
+      }
+    ]
+  },
+  "B1-05": {
+    "lesson_id": "B1-05",
+    "overview_vi": "Past Perfect định vị một sự kiện trước mốc quá khứ khác; không cần dùng nó cho mọi sự việc xuất hiện trước trong câu chuyện.",
+    "decision_steps_vi": [
+      "Xác định hai mốc đều thuộc quá khứ",
+      "Tìm sự kiện xảy ra sớm hơn và quan hệ thời gian cần làm rõ",
+      "Dùng had + V3 cho sự kiện đi trước khi cần"
+    ],
+    "patterns": [
+      {
+        "pattern": "had + V3 + before + past event",
+        "use_vi": "Làm rõ việc hoàn tất trước sự kiện sau.",
+        "example_en": "The train had left before we reached the station.",
+        "example_vi": "Tàu đã rời ga trước khi chúng tôi tới."
+      },
+      {
+        "pattern": "By the time + Past Simple, had + V3",
+        "use_vi": "Nhìn lại sự kiện đã hoàn tất khi mốc sau xảy ra.",
+        "example_en": "By the time I arrived, the lecture had started.",
+        "example_vi": "Khi tôi đến, bài giảng đã bắt đầu."
+      }
+    ],
+    "worked_examples": [
+      {
+        "situation_vi": "Khách không thể ăn vì nhà hàng đã đóng.",
+        "answer_en": "The restaurant had closed when the guests arrived.",
+        "translation_vi": "Khi khách đến, nhà hàng đã đóng.",
+        "reason_vi": "Việc đóng cửa xảy ra trước lúc khách đến."
+      },
+      {
+        "situation_vi": "Bạn đã cất tài liệu trước khi mất điện.",
+        "answer_en": "I had saved the file before the power went out.",
+        "translation_vi": "Tôi đã lưu tệp trước khi mất điện.",
+        "reason_vi": "Had saved làm rõ hành động đã hoàn tất trước sự cố."
+      }
+    ],
+    "contrasts": [
+      {
+        "first_en": "When I arrived, she left.",
+        "second_en": "When I arrived, she had left.",
+        "difference_vi": "Câu đầu có thể là cô ấy rời đi lúc tôi đến; câu sau xác định cô ấy rời đi trước."
+      }
+    ],
+    "common_mistakes": [
+      {
+        "wrong": "I had went home before it rained.",
+        "correct": "I had gone home before it rained.",
+        "why_vi": "Sau had dùng V3 gone, không phải V2 went."
+      },
+      {
+        "wrong": "She had finished yesterday.",
+        "correct": "She finished yesterday.",
+        "why_vi": "Không có mốc quá khứ thứ hai thì Past Simple thường tự nhiên hơn."
+      }
+    ],
+    "paragraph_transfer": {
+      "context_vi": "Bạn giải thích lý do tới buổi họp muộn.",
+      "task_en": "Write two sentences using Past Perfect for a missed event and Past Simple for your arrival.",
+      "model_paragraph_en": "The meeting had started when I entered the room. I apologised to the team.",
+      "coaching_vi": "Past Perfect dựng mốc trước; Past Simple kể hành động tiếp theo."
+    },
+    "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED",
+    "question_import_policy": "SEPARATE_BANK_NO_OVERWRITE",
+    "title": "Past Perfect",
+    "qa_teacher_review": "NOT_REVIEWED",
+    "draft_practice": [
+      {
+        "stage": "guided",
+        "prompt_en": "Complete: The film ___ (start) before we sat down.",
+        "draft_id": "M10-B1-05-DRAFT-01",
+        "assessment_mode": "SELF_REVIEW_REQUIRED"
+      },
+      {
+        "stage": "independent",
+        "prompt_en": "Join: He locked the door. Then I arrived.",
+        "draft_id": "M10-B1-05-DRAFT-02",
+        "assessment_mode": "SELF_REVIEW_REQUIRED"
+      },
+      {
+        "stage": "mastery",
+        "prompt_en": "Explain why you could not send a file: laptop broke first.",
+        "draft_id": "M10-B1-05-DRAFT-03",
+        "assessment_mode": "SELF_REVIEW_REQUIRED"
+      },
+      {
+        "stage": "spaced_review",
+        "prompt_en": "Correct: When we got there, the bus had went.",
+        "draft_id": "M10-B1-05-DRAFT-04",
+        "assessment_mode": "SELF_REVIEW_REQUIRED"
+      }
+    ]
+  },
+  "B1-06": {
+    "lesson_id": "B1-06",
+    "overview_vi": "Narrative Tenses giúp kể chuyện rõ trình tự: Past Simple đẩy sự kiện, Past Continuous làm bối cảnh, Past Perfect lùi về trước.",
+    "decision_steps_vi": [
+      "Chọn chuỗi sự kiện chính để dùng Past Simple",
+      "Chọn cảnh đang diễn ra để dùng Past Continuous",
+      "Thêm Past Perfect khi người đọc cần hiểu một sự kiện đã xảy ra trước"
+    ],
+    "patterns": [
+      {
+        "pattern": "was/were + V-ing when + Past Simple",
+        "use_vi": "Đang diễn ra thì sự việc khác xen vào.",
+        "example_en": "I was walking home when the lights went out.",
+        "example_vi": "Tôi đang đi về thì đèn tắt."
+      },
+      {
+        "pattern": "Past Perfect + Past Simple",
+        "use_vi": "Sự kiện sớm hơn giải thích tình huống sau.",
+        "example_en": "I realised I had left my keys at work.",
+        "example_vi": "Tôi nhận ra mình đã để quên chìa khóa ở chỗ làm."
+      }
+    ],
+    "worked_examples": [
+      {
+        "situation_vi": "Kể một lần bạn đang đợi tàu thì nghe thông báo.",
+        "answer_en": "We were waiting on the platform when an announcement came.",
+        "translation_vi": "Chúng tôi đang đợi trên sân ga thì có thông báo.",
+        "reason_vi": "Was/were waiting tạo nền; came đưa chuyện tiến lên."
+      },
+      {
+        "situation_vi": "Giải thích vì sao quay lại văn phòng.",
+        "answer_en": "I went back because I had forgotten my wallet.",
+        "translation_vi": "Tôi quay lại vì trước đó quên ví.",
+        "reason_vi": "Had forgotten diễn tả nguyên nhân có trước."
+      }
+    ],
+    "contrasts": [
+      {
+        "first_en": "I read when the phone rang.",
+        "second_en": "I was reading when the phone rang.",
+        "difference_vi": "Câu thứ hai làm rõ hành động đọc đang diễn ra khi chuông reo."
+      }
+    ],
+    "common_mistakes": [
+      {
+        "wrong": "While I walked home, it was suddenly raining.",
+        "correct": "While I was walking home, it suddenly started raining.",
+        "why_vi": "Hành động nền dùng tiếp diễn; sự kiện bất ngờ dùng Past Simple."
+      },
+      {
+        "wrong": "I had arrived and then had greeted everyone.",
+        "correct": "I arrived and then greeted everyone.",
+        "why_vi": "Chuỗi sự kiện liên tiếp thường dùng Past Simple, không cần Past Perfect."
+      }
+    ],
+    "paragraph_transfer": {
+      "context_vi": "Bạn viết một đoạn kể sự cố nhỏ tại nơi làm việc.",
+      "task_en": "Write three sentences about preparing a presentation, a power cut, and a saved backup.",
+      "model_paragraph_en": "I was preparing a presentation when the power went out. Luckily, I had saved a copy earlier. I restarted my laptop and continued.",
+      "coaching_vi": "Ba thì tạo bối cảnh, sự kiện sớm hơn và chuỗi hành động."
+    },
+    "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED",
+    "question_import_policy": "SEPARATE_BANK_NO_OVERWRITE",
+    "title": "Narrative Tenses",
+    "qa_teacher_review": "NOT_REVIEWED",
+    "draft_practice": [
+      {
+        "stage": "guided",
+        "prompt_en": "Complete: I ___ (cook) when she called.",
+        "draft_id": "M10-B1-06-DRAFT-01",
+        "assessment_mode": "SELF_REVIEW_REQUIRED"
+      },
+      {
+        "stage": "independent",
+        "prompt_en": "Complete: They were upset because they ___ (miss) the train.",
+        "draft_id": "M10-B1-06-DRAFT-02",
+        "assessment_mode": "SELF_REVIEW_REQUIRED"
+      },
+      {
+        "stage": "mastery",
+        "prompt_en": "Write a three-sentence story using past simple, past continuous and past perfect.",
+        "draft_id": "M10-B1-06-DRAFT-03",
+        "assessment_mode": "SELF_REVIEW_REQUIRED"
+      },
+      {
+        "stage": "spaced_review",
+        "prompt_en": "Correct: While she cooked, the doorbell was ringing suddenly.",
+        "draft_id": "M10-B1-06-DRAFT-04",
+        "assessment_mode": "SELF_REVIEW_REQUIRED"
+      }
+    ]
+  },
+  "B1-07": {
+    "lesson_id": "B1-07",
+    "overview_vi": "Phân biệt used to, would và be/get used to: thói quen quá khứ, hành động lặp lại trong ký ức và trạng thái quen với điều gì.",
+    "decision_steps_vi": [
+      "Hỏi nói về quá khứ hay sự thích nghi hiện tại",
+      "Phân biệt hành động lặp lại với trạng thái xưa",
+      "Chọn used to V, would V hoặc be used to V-ing"
+    ],
+    "patterns": [
+      {
+        "pattern": "used to + V",
+        "use_vi": "Thói quen hoặc trạng thái từng đúng trong quá khứ.",
+        "example_en": "I used to live near the sea.",
+        "example_vi": "Tôi từng sống gần biển."
+      },
+      {
+        "pattern": "be used to + noun/V-ing",
+        "use_vi": "Đã quen với một tình huống.",
+        "example_en": "She is used to working late.",
+        "example_vi": "Cô ấy quen làm việc muộn."
+      }
+    ],
+    "worked_examples": [
+      {
+        "situation_vi": "Nhớ lại thói quen đi bộ tới trường.",
+        "answer_en": "We used to walk to school together.",
+        "translation_vi": "Chúng tôi từng đi bộ đến trường cùng nhau.",
+        "reason_vi": "Used to diễn đạt việc lặp trước đây."
+      },
+      {
+        "situation_vi": "Mô tả bạn giờ đã quen dậy sớm.",
+        "answer_en": "I am used to getting up at six.",
+        "translation_vi": "Tôi đã quen dậy lúc sáu giờ.",
+        "reason_vi": "Be used to có to là giới từ nên theo sau V-ing."
+      }
+    ],
+    "contrasts": [
+      {
+        "first_en": "I used to wake up early.",
+        "second_en": "I am used to waking up early.",
+        "difference_vi": "Từng làm trước đây khác với hiện đã quen làm."
+      }
+    ],
+    "common_mistakes": [
+      {
+        "wrong": "I am used to wake up early.",
+        "correct": "I am used to waking up early.",
+        "why_vi": "Sau be used to, động từ ở dạng V-ing."
+      },
+      {
+        "wrong": "She would be shy as a child.",
+        "correct": "She used to be shy as a child.",
+        "why_vi": "Would không thường diễn tả trạng thái quá khứ như be shy."
+      }
+    ],
+    "paragraph_transfer": {
+      "context_vi": "Bạn nói về lịch sinh hoạt trước và sau khi đi làm.",
+      "task_en": "Write two sentences describing a former habit and something you are now accustomed to.",
+      "model_paragraph_en": "I used to sleep late at weekends. Now I am used to waking up early.",
+      "coaching_vi": "Đối chiếu thói quen xưa với mức độ quen hiện tại."
+    },
+    "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED",
+    "question_import_policy": "SEPARATE_BANK_NO_OVERWRITE",
+    "title": "Past Habits & Familiarity",
+    "qa_teacher_review": "NOT_REVIEWED",
+    "draft_practice": [
+      {
+        "stage": "guided",
+        "prompt_en": "Complete: I ___ to play outside after school.",
+        "draft_id": "M10-B1-07-DRAFT-01",
+        "assessment_mode": "SELF_REVIEW_REQUIRED"
+      },
+      {
+        "stage": "independent",
+        "prompt_en": "Complete: She is used to ___ (drive) in heavy traffic.",
+        "draft_id": "M10-B1-07-DRAFT-02",
+        "assessment_mode": "SELF_REVIEW_REQUIRED"
+      },
+      {
+        "stage": "mastery",
+        "prompt_en": "Contrast past and present routines using used to and be used to.",
+        "draft_id": "M10-B1-07-DRAFT-03",
+        "assessment_mode": "SELF_REVIEW_REQUIRED"
+      },
+      {
+        "stage": "spaced_review",
+        "prompt_en": "Correct: He used to living in Hanoi.",
+        "draft_id": "M10-B1-07-DRAFT-04",
+        "assessment_mode": "SELF_REVIEW_REQUIRED"
+      }
+    ]
+  },
+  "B1-08": {
+    "lesson_id": "B1-08",
+    "overview_vi": "Future Continuous mô tả hành động đang diễn ra tại một thời điểm tương lai; thường dùng để hỏi lịch trình một cách nhẹ nhàng.",
+    "decision_steps_vi": [
+      "Xác định mốc tương lai cụ thể",
+      "Kiểm tra hành động sẽ đang diễn ra đúng lúc đó",
+      "Dùng will be + V-ing, không dùng để xác nhận hoàn tất"
+    ],
+    "patterns": [
+      {
+        "pattern": "will be + V-ing + at future time",
+        "use_vi": "Hành động sẽ đang diễn ra ở mốc tương lai.",
+        "example_en": "At eight tomorrow, I will be travelling to Hue.",
+        "example_vi": "Tám giờ ngày mai tôi sẽ đang trên đường đến Huế."
+      },
+      {
+        "pattern": "Will + subject + be + V-ing?",
+        "use_vi": "Hỏi lịch trình dự kiến nhẹ nhàng.",
+        "example_en": "Will you be using the meeting room at three?",
+        "example_vi": "Ba giờ bạn có dùng phòng họp không?"
+      }
+    ],
+    "worked_examples": [
+      {
+        "situation_vi": "Bạn không thể nhận cuộc gọi lúc 9 giờ vì đang thi.",
+        "answer_en": "I will be taking an exam at nine tomorrow.",
+        "translation_vi": "Chín giờ ngày mai tôi sẽ đang làm bài thi.",
+        "reason_vi": "Hành động đang tiếp diễn ở mốc chín giờ."
+      },
+      {
+        "situation_vi": "Hỏi đồng nghiệp có dùng thiết bị lúc chiều không.",
+        "answer_en": "Will you be using the projector this afternoon?",
+        "translation_vi": "Chiều nay bạn có dùng máy chiếu không?",
+        "reason_vi": "Dùng câu hỏi về lịch trình dự kiến."
+      }
+    ],
+    "contrasts": [
+      {
+        "first_en": "At six, I will cook dinner.",
+        "second_en": "At six, I will be cooking dinner.",
+        "difference_vi": "Câu đầu có thể nêu quyết định/hành động sẽ làm; câu sau nhấn trạng thái đang làm lúc sáu giờ."
+      }
+    ],
+    "common_mistakes": [
+      {
+        "wrong": "I will be work at noon.",
+        "correct": "I will be working at noon.",
+        "why_vi": "Sau be dùng V-ing."
+      },
+      {
+        "wrong": "By noon, I will be finishing the whole report.",
+        "correct": "By noon, I will have finished the whole report.",
+        "why_vi": "Nếu muốn nhấn hoàn thành trước mốc, dùng Future Perfect."
+      }
+    ],
+    "paragraph_transfer": {
+      "context_vi": "Bạn giải thích lịch trình ngày mai với một người bạn.",
+      "task_en": "Write two sentences about being unavailable at 10 a.m. and free at lunchtime.",
+      "model_paragraph_en": "I will be attending training at ten tomorrow, so I cannot answer calls. I should be free at lunchtime.",
+      "coaching_vi": "Nhấn hoạt động đang diễn ra ở thời điểm tương lai."
+    },
+    "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED",
+    "question_import_policy": "SEPARATE_BANK_NO_OVERWRITE",
+    "title": "Future Continuous",
+    "qa_teacher_review": "NOT_REVIEWED",
+    "draft_practice": [
+      {
+        "stage": "guided",
+        "prompt_en": "Complete: At this time tomorrow, she ___ (fly) to Osaka.",
+        "draft_id": "M10-B1-08-DRAFT-01",
+        "assessment_mode": "SELF_REVIEW_REQUIRED"
+      },
+      {
+        "stage": "independent",
+        "prompt_en": "Ask politely about a colleague's schedule: use the lab at four.",
+        "draft_id": "M10-B1-08-DRAFT-02",
+        "assessment_mode": "SELF_REVIEW_REQUIRED"
+      },
+      {
+        "stage": "mastery",
+        "prompt_en": "Explain why you cannot join a call at 7 p.m.",
+        "draft_id": "M10-B1-08-DRAFT-03",
+        "assessment_mode": "SELF_REVIEW_REQUIRED"
+      },
+      {
+        "stage": "spaced_review",
+        "prompt_en": "Correct: At five I will working.",
+        "draft_id": "M10-B1-08-DRAFT-04",
+        "assessment_mode": "SELF_REVIEW_REQUIRED"
+      }
+    ]
+  },
+  "B1-09": {
+    "lesson_id": "B1-09",
+    "overview_vi": "Future Perfect giúp dự đoán việc sẽ hoàn tất trước một mốc tương lai, khác Future Continuous mô tả quá trình ở mốc đó.",
+    "decision_steps_vi": [
+      "Định vị hạn chót trong tương lai",
+      "Xác định việc cần hoàn tất trước hạn",
+      "Chọn will have + V3 và kiểm tra by/before"
+    ],
+    "patterns": [
+      {
+        "pattern": "will have + V3 + by time",
+        "use_vi": "Việc sẽ được hoàn thành không muộn hơn mốc.",
+        "example_en": "By Friday, we will have tested the new app.",
+        "example_vi": "Đến thứ Sáu, chúng tôi sẽ kiểm thử xong ứng dụng mới."
+      },
+      {
+        "pattern": "will not have + V3 + by time",
+        "use_vi": "Dự đoán chưa hoàn tất trước mốc.",
+        "example_en": "She will not have arrived by six.",
+        "example_vi": "Đến sáu giờ cô ấy sẽ chưa tới."
+      }
+    ],
+    "worked_examples": [
+      {
+        "situation_vi": "Báo rằng báo cáo xong trước tối mai.",
+        "answer_en": "I will have finished the report by tomorrow evening.",
+        "translation_vi": "Tới tối mai tôi sẽ làm xong báo cáo.",
+        "reason_vi": "By nhấn hạn chót; will have finished nhấn hoàn tất."
+      },
+      {
+        "situation_vi": "Đoán chuyến bay hạ cánh trước khi bạn đến.",
+        "answer_en": "The plane will have landed before we reach the airport.",
+        "translation_vi": "Máy bay sẽ hạ cánh trước khi chúng ta tới sân bay.",
+        "reason_vi": "Hai mốc tương lai được sắp thứ tự."
+      }
+    ],
+    "contrasts": [
+      {
+        "first_en": "At six, I will be writing the proposal.",
+        "second_en": "By six, I will have written the proposal.",
+        "difference_vi": "At six nhấn đang làm; by six nhấn đã xong."
+      }
+    ],
+    "common_mistakes": [
+      {
+        "wrong": "I will have finish by Tuesday.",
+        "correct": "I will have finished by Tuesday.",
+        "why_vi": "Sau have dùng V3."
+      },
+      {
+        "wrong": "By Friday I will be completed the training.",
+        "correct": "By Friday I will have completed the training.",
+        "why_vi": "Future Perfect chủ động dùng will have + V3."
+      }
+    ],
+    "paragraph_transfer": {
+      "context_vi": "Bạn cập nhật hạn bàn giao cho khách hàng.",
+      "task_en": "Write two sentences about completing tests by Thursday and sending results on Friday.",
+      "model_paragraph_en": "We will have completed the tests by Thursday. We will send the results on Friday.",
+      "coaching_vi": "Future Perfect cho hạn hoàn tất; Future Simple cho bước tiếp theo."
+    },
+    "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED",
+    "question_import_policy": "SEPARATE_BANK_NO_OVERWRITE",
+    "title": "Future Perfect",
+    "qa_teacher_review": "NOT_REVIEWED",
+    "draft_practice": [
+      {
+        "stage": "guided",
+        "prompt_en": "Complete: By July, they ___ (open) three new stores.",
+        "draft_id": "M10-B1-09-DRAFT-01",
+        "assessment_mode": "SELF_REVIEW_REQUIRED"
+      },
+      {
+        "stage": "independent",
+        "prompt_en": "Make negative: She will have finished by noon.",
+        "draft_id": "M10-B1-09-DRAFT-02",
+        "assessment_mode": "SELF_REVIEW_REQUIRED"
+      },
+      {
+        "stage": "mastery",
+        "prompt_en": "Write a deadline update using future perfect and future simple.",
+        "draft_id": "M10-B1-09-DRAFT-03",
+        "assessment_mode": "SELF_REVIEW_REQUIRED"
+      },
+      {
+        "stage": "spaced_review",
+        "prompt_en": "Correct: By ten, he will has arrived.",
+        "draft_id": "M10-B1-09-DRAFT-04",
+        "assessment_mode": "SELF_REVIEW_REQUIRED"
+      }
+    ]
+  },
+  "B1-10": {
+    "lesson_id": "B1-10",
+    "overview_vi": "Trong mệnh đề thời gian chỉ tương lai dùng when/as soon as/until, thường dùng hiện tại đơn dù hành động xảy ra ở tương lai.",
+    "decision_steps_vi": [
+      "Tìm mệnh đề nêu điều kiện thời gian",
+      "Xác định mệnh đề chính mang kết quả tương lai",
+      "Dùng Present Simple sau when/once/as soon as trong cách nói thông thường"
+    ],
+    "patterns": [
+      {
+        "pattern": "When + Present Simple, will + V",
+        "use_vi": "Hành động tương lai xảy ra khi có sự kiện mốc.",
+        "example_en": "When the client replies, I will call you.",
+        "example_vi": "Khi khách hàng trả lời, tôi sẽ gọi bạn."
+      },
+      {
+        "pattern": "will + V + as soon as + Present Simple",
+        "use_vi": "Làm ngay khi sự kiện xảy ra.",
+        "example_en": "We will leave as soon as the rain stops.",
+        "example_vi": "Chúng tôi sẽ đi ngay khi mưa tạnh."
+      }
+    ],
+    "worked_examples": [
+      {
+        "situation_vi": "Bạn hứa gửi thông tin khi quản lý duyệt.",
+        "answer_en": "I will send the schedule once my manager approves it.",
+        "translation_vi": "Tôi sẽ gửi lịch khi quản lý duyệt.",
+        "reason_vi": "Once đặt mốc tương lai nhưng động từ dùng hiện tại đơn."
+      },
+      {
+        "situation_vi": "Nói bạn sẽ đợi cho đến khi bạn đến.",
+        "answer_en": "I will wait until you arrive.",
+        "translation_vi": "Tôi sẽ đợi cho tới khi bạn đến.",
+        "reason_vi": "Until + Present Simple cho mốc đến."
+      }
+    ],
+    "contrasts": [
+      {
+        "first_en": "I will call when she arrives.",
+        "second_en": "I will call because she arrives.",
+        "difference_vi": "When nêu mốc thời gian; because nêu nguyên nhân, không thay thế tùy tiện."
+      }
+    ],
+    "common_mistakes": [
+      {
+        "wrong": "I will start when he will come.",
+        "correct": "I will start when he comes.",
+        "why_vi": "Mệnh đề when chỉ thời gian tương lai thường không dùng will."
+      },
+      {
+        "wrong": "As soon as she will finish, we will leave.",
+        "correct": "As soon as she finishes, we will leave.",
+        "why_vi": "Sau as soon as dùng Present Simple trong mệnh đề thời gian."
+      }
+    ],
+    "paragraph_transfer": {
+      "context_vi": "Bạn viết hướng dẫn bàn giao.",
+      "task_en": "Write two sentences about checking a file after it arrives and sending confirmation.",
+      "model_paragraph_en": "As soon as the file arrives, I will check it. I will send confirmation when the review is complete.",
+      "coaching_vi": "Mệnh đề thời gian dùng hiện tại đơn, mệnh đề chính dùng tương lai."
+    },
+    "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED",
+    "question_import_policy": "SEPARATE_BANK_NO_OVERWRITE",
+    "title": "Future Time Clauses",
+    "qa_teacher_review": "NOT_REVIEWED",
+    "draft_practice": [
+      {
+        "stage": "guided",
+        "prompt_en": "Complete: I'll text you when I ___ (arrive).",
+        "draft_id": "M10-B1-10-DRAFT-01",
+        "assessment_mode": "SELF_REVIEW_REQUIRED"
+      },
+      {
+        "stage": "independent",
+        "prompt_en": "Rewrite: After the train will leave, we will take a taxi.",
+        "draft_id": "M10-B1-10-DRAFT-02",
+        "assessment_mode": "SELF_REVIEW_REQUIRED"
+      },
+      {
+        "stage": "mastery",
+        "prompt_en": "Write two steps for reviewing an application after submission.",
+        "draft_id": "M10-B1-10-DRAFT-03",
+        "assessment_mode": "SELF_REVIEW_REQUIRED"
+      },
+      {
+        "stage": "spaced_review",
+        "prompt_en": "Correct: I will wait until she will be ready.",
+        "draft_id": "M10-B1-10-DRAFT-04",
+        "assessment_mode": "SELF_REVIEW_REQUIRED"
+      }
+    ]
+  },
+  "B1-11": {
+    "lesson_id": "B1-11",
+    "overview_vi": "First Conditional mở rộng cho phép dùng might, can hoặc mệnh lệnh trong mệnh đề chính; không phải lúc nào cũng là will.",
+    "decision_steps_vi": [
+      "Đặt điều kiện có khả năng xảy ra trong tương lai",
+      "Xác định kết quả chắc, có thể hoặc lời khuyên",
+      "Dùng hiện tại đơn trong if và chọn modal phù hợp ở mệnh đề chính"
+    ],
+    "patterns": [
+      {
+        "pattern": "If + Present Simple, may/might + V",
+        "use_vi": "Kết quả có thể xảy ra chứ không chắc chắn.",
+        "example_en": "If the weather improves, we might go hiking.",
+        "example_vi": "Nếu thời tiết tốt lên, chúng tôi có thể đi leo núi."
+      },
+      {
+        "pattern": "If + Present Simple, imperative",
+        "use_vi": "Đưa hướng dẫn dựa trên điều kiện.",
+        "example_en": "If you need help, ask the receptionist.",
+        "example_vi": "Nếu cần giúp đỡ, hãy hỏi lễ tân."
+      }
+    ],
+    "worked_examples": [
+      {
+        "situation_vi": "Bạn chưa chắc sẽ đổi lịch nếu khách vắng.",
+        "answer_en": "If fewer people attend, we may change the room.",
+        "translation_vi": "Nếu ít người tham dự, chúng tôi có thể đổi phòng.",
+        "reason_vi": "May biểu đạt khả năng chứ không hứa chắc."
+      },
+      {
+        "situation_vi": "Bạn dặn học viên khi không hiểu câu hỏi.",
+        "answer_en": "If you don't understand the question, read it again.",
+        "translation_vi": "Nếu không hiểu câu hỏi, hãy đọc lại.",
+        "reason_vi": "Mệnh đề chính là mệnh lệnh, không phải will."
+      }
+    ],
+    "contrasts": [
+      {
+        "first_en": "If you press the button, the screen will reset.",
+        "second_en": "If you press the button, the screen might reset.",
+        "difference_vi": "Will là kết quả được dự đoán chắc hơn; might nói khả năng."
+      }
+    ],
+    "common_mistakes": [
+      {
+        "wrong": "If she will call, I will answer.",
+        "correct": "If she calls, I will answer.",
+        "why_vi": "If chỉ điều kiện tương lai thường dùng hiện tại đơn."
+      },
+      {
+        "wrong": "If you feel ill, you will see a doctor!",
+        "correct": "If you feel ill, see a doctor.",
+        "why_vi": "Lời khuyên/mệnh lệnh tự nhiên hơn trong ngữ cảnh này."
+      }
+    ],
+    "paragraph_transfer": {
+      "context_vi": "Bạn viết hướng dẫn cho buổi hội thảo.",
+      "task_en": "Write two instructions for possible technical problems during the event.",
+      "model_paragraph_en": "If the microphone fails, ask the technician for help. If the internet drops, we may pause the session.",
+      "coaching_vi": "Hai điều kiện có hệ quả khác nhau: mệnh lệnh và khả năng."
+    },
+    "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED",
+    "question_import_policy": "SEPARATE_BANK_NO_OVERWRITE",
+    "title": "First Conditional – Extended",
+    "qa_teacher_review": "NOT_REVIEWED",
+    "draft_practice": [
+      {
+        "stage": "guided",
+        "prompt_en": "Complete: If the bus is late, we ___ take a taxi. (possibility)",
+        "draft_id": "M10-B1-11-DRAFT-01",
+        "assessment_mode": "SELF_REVIEW_REQUIRED"
+      },
+      {
+        "stage": "independent",
+        "prompt_en": "Give advice: you / feel tired / take a break.",
+        "draft_id": "M10-B1-11-DRAFT-02",
+        "assessment_mode": "SELF_REVIEW_REQUIRED"
+      },
+      {
+        "stage": "mastery",
+        "prompt_en": "Explain two possible outcomes if registrations increase.",
+        "draft_id": "M10-B1-11-DRAFT-03",
+        "assessment_mode": "SELF_REVIEW_REQUIRED"
+      },
+      {
+        "stage": "spaced_review",
+        "prompt_en": "Correct: If it will rain, we may stay home.",
+        "draft_id": "M10-B1-11-DRAFT-04",
+        "assessment_mode": "SELF_REVIEW_REQUIRED"
+      }
+    ]
+  },
+  "B1-12": {
+    "lesson_id": "B1-12",
+    "overview_vi": "Second Conditional diễn đạt tình huống giả định ít thực tế hoặc không có thật ở hiện tại/tương lai; lựa chọn if I were giúp giọng văn trang trọng.",
+    "decision_steps_vi": [
+      "Xác định tình huống là giả định chứ không phải kế hoạch thực",
+      "Dùng If + Past Simple để tạo khoảng cách giả định",
+      "Chọn would/could/might + V theo kết quả muốn nói"
+    ],
+    "patterns": [
+      {
+        "pattern": "If + Past Simple, would + V",
+        "use_vi": "Giả định khác thực tế hiện tại.",
+        "example_en": "If I had more time, I would volunteer.",
+        "example_vi": "Nếu có nhiều thời gian hơn, tôi sẽ làm tình nguyện."
+      },
+      {
+        "pattern": "If + Past Simple, could + V",
+        "use_vi": "Khả năng trong tình huống giả định.",
+        "example_en": "If we had a car, we could visit the coast.",
+        "example_vi": "Nếu có ô tô, chúng tôi có thể đi biển."
+      }
+    ],
+    "worked_examples": [
+      {
+        "situation_vi": "Khuyên bạn trong tình huống giả định.",
+        "answer_en": "If I were you, I would ask for feedback.",
+        "translation_vi": "Nếu là bạn, tôi sẽ xin phản hồi.",
+        "reason_vi": "Were thường được ưu tiên trong câu giả định If I were you."
+      },
+      {
+        "situation_vi": "Giải thích không thể đi chơi vì không có thời gian.",
+        "answer_en": "If I had a free weekend, I would travel.",
+        "translation_vi": "Nếu có cuối tuần rảnh, tôi sẽ đi du lịch.",
+        "reason_vi": "Past Simple ở đây không nói về thời quá khứ."
+      }
+    ],
+    "contrasts": [
+      {
+        "first_en": "If I get a free weekend, I will travel.",
+        "second_en": "If I had a free weekend, I would travel.",
+        "difference_vi": "First Conditional là khả năng thực; Second Conditional là giả định xa thực tế hơn."
+      }
+    ],
+    "common_mistakes": [
+      {
+        "wrong": "If I would have more money, I'd buy a laptop.",
+        "correct": "If I had more money, I'd buy a laptop.",
+        "why_vi": "Không đặt would vào mệnh đề if thông thường."
+      },
+      {
+        "wrong": "If I was you, I will apologise.",
+        "correct": "If I were you, I would apologise.",
+        "why_vi": "Giữ nhất quán cấu trúc giả định; was có thể xuất hiện khẩu ngữ nhưng were phù hợp mẫu dạy."
+      }
+    ],
+    "paragraph_transfer": {
+      "context_vi": "Bạn đưa lời khuyên cho một người muốn đổi nghề.",
+      "task_en": "Write two sentences: imagine being in their position and explain one possible result.",
+      "model_paragraph_en": "If I were in your position, I would take a short course first. Then I could test whether I enjoy the field.",
+      "coaching_vi": "Would nêu hành động giả định, could nêu khả năng."
+    },
+    "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED",
+    "question_import_policy": "SEPARATE_BANK_NO_OVERWRITE",
+    "title": "Second Conditional",
+    "qa_teacher_review": "NOT_REVIEWED",
+    "draft_practice": [
+      {
+        "stage": "guided",
+        "prompt_en": "Complete: If I ___ (be) you, I would rest.",
+        "draft_id": "M10-B1-12-DRAFT-01",
+        "assessment_mode": "SELF_REVIEW_REQUIRED"
+      },
+      {
+        "stage": "independent",
+        "prompt_en": "Rewrite as hypothetical: I don't have a bike, so I can't cycle to work.",
+        "draft_id": "M10-B1-12-DRAFT-02",
+        "assessment_mode": "SELF_REVIEW_REQUIRED"
+      },
+      {
+        "stage": "mastery",
+        "prompt_en": "Give advice to someone who is afraid to speak in meetings.",
+        "draft_id": "M10-B1-12-DRAFT-03",
+        "assessment_mode": "SELF_REVIEW_REQUIRED"
+      },
+      {
+        "stage": "spaced_review",
+        "prompt_en": "Correct: If she would know the answer, she would tell us.",
+        "draft_id": "M10-B1-12-DRAFT-04",
+        "assessment_mode": "SELF_REVIEW_REQUIRED"
+      }
+    ]
+  },
+  "B1-13": {
+    "lesson_id": "B1-13",
+    "overview_vi": "Would rather và prefer thể hiện lựa chọn; cấu trúc đi sau khác nhau nên cần phân biệt người chọn và người thực hiện.",
+    "decision_steps_vi": [
+      "Xác định muốn nói sở thích chung hay lựa chọn lúc này",
+      "Kiểm tra động từ hay danh từ theo sau",
+      "Dùng would rather + V hoặc prefer + V-ing/to V đúng mẫu"
+    ],
+    "patterns": [
+      {
+        "pattern": "would rather + V than + V",
+        "use_vi": "Ưu tiên cụ thể giữa hai hành động.",
+        "example_en": "I'd rather stay in than go out tonight.",
+        "example_vi": "Tối nay tôi thích ở nhà hơn ra ngoài."
+      },
+      {
+        "pattern": "prefer + V-ing/to V",
+        "use_vi": "Sở thích chung về hoạt động.",
+        "example_en": "I prefer travelling by train to flying.",
+        "example_vi": "Tôi thích đi tàu hơn bay."
+      }
+    ],
+    "worked_examples": [
+      {
+        "situation_vi": "Bạn muốn họp trực tuyến thay vì đến văn phòng hôm nay.",
+        "answer_en": "I'd rather meet online than travel to the office today.",
+        "translation_vi": "Hôm nay tôi muốn họp trực tuyến hơn là đến văn phòng.",
+        "reason_vi": "Would rather theo sau động từ nguyên mẫu."
+      },
+      {
+        "situation_vi": "Bạn nói sở thích nói chung về tài liệu số.",
+        "answer_en": "I prefer reading online to printing documents.",
+        "translation_vi": "Tôi thích đọc trực tuyến hơn in tài liệu.",
+        "reason_vi": "Prefer V-ing to V-ing so sánh hai hoạt động."
+      }
+    ],
+    "contrasts": [
+      {
+        "first_en": "I'd rather take the train today.",
+        "second_en": "I prefer taking the train in general.",
+        "difference_vi": "Câu đầu nói lựa chọn nhất thời; câu sau nói sở thích thường xuyên."
+      }
+    ],
+    "common_mistakes": [
+      {
+        "wrong": "I'd rather to wait here.",
+        "correct": "I'd rather wait here.",
+        "why_vi": "Sau would rather dùng động từ nguyên mẫu không to."
+      },
+      {
+        "wrong": "I prefer tea than coffee.",
+        "correct": "I prefer tea to coffee.",
+        "why_vi": "Mẫu prefer A to B, không dùng than ở đây."
+      }
+    ],
+    "paragraph_transfer": {
+      "context_vi": "Bạn đề xuất hình thức gặp khách hàng.",
+      "task_en": "Write two sentences comparing your general preference and today's choice.",
+      "model_paragraph_en": "I prefer meeting clients in person, but today I'd rather use a video call because the weather is bad.",
+      "coaching_vi": "Phân biệt sở thích chung với lựa chọn cụ thể."
+    },
+    "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED",
+    "question_import_policy": "SEPARATE_BANK_NO_OVERWRITE",
+    "title": "Preferences",
+    "qa_teacher_review": "NOT_REVIEWED",
+    "draft_practice": [
+      {
+        "stage": "guided",
+        "prompt_en": "Complete: I'd rather ___ (walk) home.",
+        "draft_id": "M10-B1-13-DRAFT-01",
+        "assessment_mode": "SELF_REVIEW_REQUIRED"
+      },
+      {
+        "stage": "independent",
+        "prompt_en": "Rewrite: I like tea more than coffee. Use prefer.",
+        "draft_id": "M10-B1-13-DRAFT-02",
+        "assessment_mode": "SELF_REVIEW_REQUIRED"
+      },
+      {
+        "stage": "mastery",
+        "prompt_en": "Explain a usual preference and a different choice for today.",
+        "draft_id": "M10-B1-13-DRAFT-03",
+        "assessment_mode": "SELF_REVIEW_REQUIRED"
+      },
+      {
+        "stage": "spaced_review",
+        "prompt_en": "Correct: She'd rather to stay here.",
+        "draft_id": "M10-B1-13-DRAFT-04",
+        "assessment_mode": "SELF_REVIEW_REQUIRED"
+      }
+    ]
+  },
+  "B1-14": {
+    "lesson_id": "B1-14",
+    "overview_vi": "Wish và if only diễn tả mong muốn hiện tại khác thực tế; không nhầm với một lời ước về sự kiện tương lai có thể xảy ra.",
+    "decision_steps_vi": [
+      "Xác định thực tế gây tiếc nuối lúc này",
+      "Viết mong muốn ngược lại bằng quá khứ đơn",
+      "Dùng wish/if only + could nếu nói khả năng đang thiếu"
+    ],
+    "patterns": [
+      {
+        "pattern": "wish + Past Simple",
+        "use_vi": "Mong tình trạng hiện tại khác đi.",
+        "example_en": "I wish I lived closer to my office.",
+        "example_vi": "Ước gì tôi sống gần nơi làm hơn."
+      },
+      {
+        "pattern": "if only + could + V",
+        "use_vi": "Nhấn điều muốn nhưng hiện không thể làm.",
+        "example_en": "If only I could speak French fluently.",
+        "example_vi": "Giá mà tôi nói tiếng Pháp trôi chảy."
+      }
+    ],
+    "worked_examples": [
+      {
+        "situation_vi": "Bạn tiếc vì không có phòng yên tĩnh.",
+        "answer_en": "I wish I had a quieter room.",
+        "translation_vi": "Ước gì tôi có căn phòng yên tĩnh hơn.",
+        "reason_vi": "Had ở đây diễn tả sự trái thực tại."
+      },
+      {
+        "situation_vi": "Bạn muốn có khả năng tham dự hội thảo.",
+        "answer_en": "If only I could attend the conference.",
+        "translation_vi": "Giá mà tôi có thể dự hội thảo.",
+        "reason_vi": "Could diễn đạt điều không làm được."
+      }
+    ],
+    "contrasts": [
+      {
+        "first_en": "I hope I pass the exam.",
+        "second_en": "I wish I knew the answers.",
+        "difference_vi": "Hope dành cho kết quả còn có thể xảy ra; wish thường diễn đạt điều trái thực tế."
+      }
+    ],
+    "common_mistakes": [
+      {
+        "wrong": "I wish I have more free time.",
+        "correct": "I wish I had more free time.",
+        "why_vi": "Wish về hiện tại trái thực tế đi với quá khứ đơn."
+      },
+      {
+        "wrong": "If only I can drive.",
+        "correct": "If only I could drive.",
+        "why_vi": "Could biểu đạt khả năng giả định không có hiện tại."
+      }
+    ],
+    "paragraph_transfer": {
+      "context_vi": "Bạn nhắn cho bạn về khó khăn khi học trực tuyến.",
+      "task_en": "Write two sentences about a noisy apartment and a missing skill.",
+      "model_paragraph_en": "I wish my apartment were quieter. If only I could concentrate for longer.",
+      "coaching_vi": "Hai mong muốn nói về trạng thái và khả năng hiện tại."
+    },
+    "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED",
+    "question_import_policy": "SEPARATE_BANK_NO_OVERWRITE",
+    "title": "Wish & If Only – Present",
+    "qa_teacher_review": "NOT_REVIEWED",
+    "draft_practice": [
+      {
+        "stage": "guided",
+        "prompt_en": "Complete: I wish I ___ (know) the answer.",
+        "draft_id": "M10-B1-14-DRAFT-01",
+        "assessment_mode": "SELF_REVIEW_REQUIRED"
+      },
+      {
+        "stage": "independent",
+        "prompt_en": "Rewrite: I can't swim. Use if only.",
+        "draft_id": "M10-B1-14-DRAFT-02",
+        "assessment_mode": "SELF_REVIEW_REQUIRED"
+      },
+      {
+        "stage": "mastery",
+        "prompt_en": "Write a short message with two present wishes related to studying.",
+        "draft_id": "M10-B1-14-DRAFT-03",
+        "assessment_mode": "SELF_REVIEW_REQUIRED"
+      },
+      {
+        "stage": "spaced_review",
+        "prompt_en": "Correct: She wishes she is taller.",
+        "draft_id": "M10-B1-14-DRAFT-04",
+        "assessment_mode": "SELF_REVIEW_REQUIRED"
+      }
+    ]
+  },
+  "B1-15": {
+    "lesson_id": "B1-15",
+    "overview_vi": "Passive Voice chuyển trọng tâm từ người thực hiện sang đối tượng chịu tác động; động từ vẫn phải giữ đúng thì.",
+    "decision_steps_vi": [
+      "Tìm đối tượng cần nhấn trong câu",
+      "Xác định thì và chủ ngữ mới",
+      "Dùng be chia theo thì + V3, chỉ thêm by khi người làm quan trọng"
+    ],
+    "patterns": [
+      {
+        "pattern": "am/is/are + V3",
+        "use_vi": "Bị động hiện tại: quy trình hoặc sự thật.",
+        "example_en": "The reports are checked every Friday.",
+        "example_vi": "Báo cáo được kiểm tra vào mỗi thứ Sáu."
+      },
+      {
+        "pattern": "was/were + V3",
+        "use_vi": "Bị động quá khứ: sự kiện đã xảy ra.",
+        "example_en": "The bridge was repaired last year.",
+        "example_vi": "Cây cầu được sửa năm ngoái."
+      }
+    ],
+    "worked_examples": [
+      {
+        "situation_vi": "Bạn mô tả quy trình kiểm tra đơn đăng ký.",
+        "answer_en": "Applications are reviewed within two days.",
+        "translation_vi": "Đơn đăng ký được xét trong hai ngày.",
+        "reason_vi": "Người xét không cần nêu; quy trình là trọng tâm."
+      },
+      {
+        "situation_vi": "Bạn kể một tòa nhà được xây năm 2010.",
+        "answer_en": "The library was built in 2010.",
+        "translation_vi": "Thư viện được xây năm 2010.",
+        "reason_vi": "Be quá khứ + V3 built."
+      }
+    ],
+    "contrasts": [
+      {
+        "first_en": "The team checks the forms.",
+        "second_en": "The forms are checked by the team.",
+        "difference_vi": "Câu chủ động nhấn đội thực hiện; bị động nhấn các biểu mẫu."
+      }
+    ],
+    "common_mistakes": [
+      {
+        "wrong": "The documents checked every week.",
+        "correct": "The documents are checked every week.",
+        "why_vi": "Bị động thiếu be."
+      },
+      {
+        "wrong": "The road was repair last month.",
+        "correct": "The road was repaired last month.",
+        "why_vi": "Sau was phải là V3 repaired."
+      }
+    ],
+    "paragraph_transfer": {
+      "context_vi": "Bạn giới thiệu cách trung tâm xử lý hồ sơ.",
+      "task_en": "Write two sentences about routine registration and a recent renovation.",
+      "model_paragraph_en": "All forms are checked by staff. The reception area was renovated last month.",
+      "coaching_vi": "Hai câu bị động ở hai thì khác nhau."
+    },
+    "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED",
+    "question_import_policy": "SEPARATE_BANK_NO_OVERWRITE",
+    "title": "Passive Voice – Present & Past",
+    "qa_teacher_review": "NOT_REVIEWED",
+    "draft_practice": [
+      {
+        "stage": "guided",
+        "prompt_en": "Complete: All tickets ___ (check) at the entrance.",
+        "draft_id": "M10-B1-15-DRAFT-01",
+        "assessment_mode": "SELF_REVIEW_REQUIRED"
+      },
+      {
+        "stage": "independent",
+        "prompt_en": "Change to passive: They repaired the lift yesterday.",
+        "draft_id": "M10-B1-15-DRAFT-02",
+        "assessment_mode": "SELF_REVIEW_REQUIRED"
+      },
+      {
+        "stage": "mastery",
+        "prompt_en": "Write two sentences describing how a museum is maintained.",
+        "draft_id": "M10-B1-15-DRAFT-03",
+        "assessment_mode": "SELF_REVIEW_REQUIRED"
+      },
+      {
+        "stage": "spaced_review",
+        "prompt_en": "Correct: The emails sent every morning.",
+        "draft_id": "M10-B1-15-DRAFT-04",
+        "assessment_mode": "SELF_REVIEW_REQUIRED"
+      }
+    ]
+  },
+  "B1-16": {
+    "lesson_id": "B1-16",
+    "overview_vi": "Bị động ở các thì khác cần giữ cả cấu trúc thời gian: is being repaired, has been repaired, will be repaired.",
+    "decision_steps_vi": [
+      "Xác định hành động đang diễn ra, đã xong hay sẽ xảy ra",
+      "Chia be theo thì phù hợp",
+      "Đặt V3 sau dạng be hoàn chỉnh"
+    ],
+    "patterns": [
+      {
+        "pattern": "is/are being + V3",
+        "use_vi": "Hành động bị động đang diễn ra.",
+        "example_en": "The main hall is being painted today.",
+        "example_vi": "Hôm nay sảnh chính đang được sơn."
+      },
+      {
+        "pattern": "has/have been + V3",
+        "use_vi": "Kết quả bị động đã hoàn thành.",
+        "example_en": "The errors have been corrected.",
+        "example_vi": "Các lỗi đã được sửa."
+      }
+    ],
+    "worked_examples": [
+      {
+        "situation_vi": "Báo rằng máy in đang được sửa ở thời điểm này.",
+        "answer_en": "The printer is being repaired right now.",
+        "translation_vi": "Máy in đang được sửa ngay lúc này.",
+        "reason_vi": "Present Continuous Passive: is being + V3."
+      },
+      {
+        "situation_vi": "Thông báo bản hợp đồng đã được ký.",
+        "answer_en": "The contract has been signed.",
+        "translation_vi": "Hợp đồng đã được ký.",
+        "reason_vi": "Present Perfect Passive nhấn kết quả."
+      }
+    ],
+    "contrasts": [
+      {
+        "first_en": "The screen is being replaced.",
+        "second_en": "The screen has been replaced.",
+        "difference_vi": "Đang thay khác với đã thay xong."
+      }
+    ],
+    "common_mistakes": [
+      {
+        "wrong": "The room is being clean today.",
+        "correct": "The room is being cleaned today.",
+        "why_vi": "Sau being cần V3."
+      },
+      {
+        "wrong": "The packages have delivered.",
+        "correct": "The packages have been delivered.",
+        "why_vi": "Perfect Passive cần been giữa have và V3."
+      }
+    ],
+    "paragraph_transfer": {
+      "context_vi": "Bạn báo tiến độ sửa hệ thống cho đồng nghiệp.",
+      "task_en": "Write two sentences contrasting current repairs and completed work.",
+      "model_paragraph_en": "The server is being updated now. The backup files have already been checked.",
+      "coaching_vi": "Dùng bị động tiếp diễn cho công việc hiện tại và hoàn thành cho kết quả."
+    },
+    "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED",
+    "question_import_policy": "SEPARATE_BANK_NO_OVERWRITE",
+    "title": "Passive Voice – Other Tenses",
+    "qa_teacher_review": "NOT_REVIEWED",
+    "draft_practice": [
+      {
+        "stage": "guided",
+        "prompt_en": "Complete: The walls ___ (paint) at the moment.",
+        "draft_id": "M10-B1-16-DRAFT-01",
+        "assessment_mode": "SELF_REVIEW_REQUIRED"
+      },
+      {
+        "stage": "independent",
+        "prompt_en": "Change to passive: Someone has fixed the leak.",
+        "draft_id": "M10-B1-16-DRAFT-02",
+        "assessment_mode": "SELF_REVIEW_REQUIRED"
+      },
+      {
+        "stage": "mastery",
+        "prompt_en": "Write an update using one ongoing passive and one completed passive.",
+        "draft_id": "M10-B1-16-DRAFT-03",
+        "assessment_mode": "SELF_REVIEW_REQUIRED"
+      },
+      {
+        "stage": "spaced_review",
+        "prompt_en": "Correct: The parcel has been send.",
+        "draft_id": "M10-B1-16-DRAFT-04",
+        "assessment_mode": "SELF_REVIEW_REQUIRED"
+      }
+    ]
+  },
+  "B1-17": {
+    "lesson_id": "B1-17",
+    "overview_vi": "By chỉ tác nhân thực hiện trong bị động; with chỉ công cụ hoặc vật liệu. Không thêm by khi tác nhân hiển nhiên hoặc không quan trọng.",
+    "decision_steps_vi": [
+      "Chọn có cần nêu người thực hiện không",
+      "Nếu cần, dùng by + người/tổ chức",
+      "Nếu nêu phương tiện/công cụ, dùng with + vật dụng"
+    ],
+    "patterns": [
+      {
+        "pattern": "passive + by + agent",
+        "use_vi": "Nhấn ai thực hiện.",
+        "example_en": "The mural was painted by local artists.",
+        "example_vi": "Bức tranh tường được các họa sĩ địa phương vẽ."
+      },
+      {
+        "pattern": "passive + with + instrument",
+        "use_vi": "Chỉ dụng cụ tạo tác động.",
+        "example_en": "The label was cut with scissors.",
+        "example_vi": "Nhãn được cắt bằng kéo."
+      }
+    ],
+    "worked_examples": [
+      {
+        "situation_vi": "Mô tả ai thiết kế bìa sách.",
+        "answer_en": "The cover was designed by a student.",
+        "translation_vi": "Bìa sách được một học sinh thiết kế.",
+        "reason_vi": "By chỉ tác nhân người thực hiện."
+      },
+      {
+        "situation_vi": "Mô tả cách mở hộp bằng dao nhỏ.",
+        "answer_en": "The box was opened with a small knife.",
+        "translation_vi": "Chiếc hộp được mở bằng dao nhỏ.",
+        "reason_vi": "With nêu dụng cụ."
+      }
+    ],
+    "contrasts": [
+      {
+        "first_en": "The window was broken by a football.",
+        "second_en": "The window was broken with a hammer.",
+        "difference_vi": "Football có thể là vật gây tác động, hammer là dụng cụ người sử dụng; không thay giới từ theo mẹo tuyệt đối, cần xét nghĩa."
+      }
+    ],
+    "common_mistakes": [
+      {
+        "wrong": "The letter was written with my aunt.",
+        "correct": "The letter was written by my aunt.",
+        "why_vi": "My aunt là người viết nên dùng by."
+      },
+      {
+        "wrong": "The cake was decorated by a knife.",
+        "correct": "The cake was decorated with a knife.",
+        "why_vi": "Knife là dụng cụ; cách diễn đạt with a knife tự nhiên hơn nếu thực sự dùng để trang trí."
+      }
+    ],
+    "paragraph_transfer": {
+      "context_vi": "Bạn mô tả hiện vật bảo tàng và cách làm.",
+      "task_en": "Write two passive sentences: who made the model and what tool was used.",
+      "model_paragraph_en": "The model was built by local volunteers. It was painted with small brushes.",
+      "coaching_vi": "By = người xây; with = dụng cụ sơn."
+    },
+    "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED",
+    "question_import_policy": "SEPARATE_BANK_NO_OVERWRITE",
+    "title": "Passive Agents & Instruments",
+    "qa_teacher_review": "NOT_REVIEWED",
+    "draft_practice": [
+      {
+        "stage": "guided",
+        "prompt_en": "Complete: The poster was designed ___ our art teacher.",
+        "draft_id": "M10-B1-17-DRAFT-01",
+        "assessment_mode": "SELF_REVIEW_REQUIRED"
+      },
+      {
+        "stage": "independent",
+        "prompt_en": "Complete: The ribbon was cut ___ scissors.",
+        "draft_id": "M10-B1-17-DRAFT-02",
+        "assessment_mode": "SELF_REVIEW_REQUIRED"
+      },
+      {
+        "stage": "mastery",
+        "prompt_en": "Describe a community mural using by and with.",
+        "draft_id": "M10-B1-17-DRAFT-03",
+        "assessment_mode": "SELF_REVIEW_REQUIRED"
+      },
+      {
+        "stage": "spaced_review",
+        "prompt_en": "Correct: The speech was delivered with the mayor.",
+        "draft_id": "M10-B1-17-DRAFT-04",
+        "assessment_mode": "SELF_REVIEW_REQUIRED"
+      }
+    ]
+  },
+  "B1-18": {
+    "lesson_id": "B1-18",
+    "overview_vi": "Defining relative clauses cung cấp thông tin thiết yếu xác định người/vật được nói đến; thường không đặt dấu phẩy.",
+    "decision_steps_vi": [
+      "Tìm danh từ cần xác định rõ",
+      "Kiểm tra mệnh đề quan hệ nói về người hay vật",
+      "Dùng who/which/that và giữ câu không dấu phẩy khi thông tin thiết yếu"
+    ],
+    "patterns": [
+      {
+        "pattern": "person + who/that + clause",
+        "use_vi": "Xác định người nào.",
+        "example_en": "The woman who manages the library is very helpful.",
+        "example_vi": "Người phụ nữ quản lý thư viện rất nhiệt tình."
+      },
+      {
+        "pattern": "thing + which/that + clause",
+        "use_vi": "Xác định vật nào.",
+        "example_en": "The app that tracks my expenses is free.",
+        "example_vi": "Ứng dụng theo dõi chi tiêu của tôi miễn phí."
+      }
+    ],
+    "worked_examples": [
+      {
+        "situation_vi": "Giới thiệu đồng nghiệp phụ trách đào tạo.",
+        "answer_en": "The colleague who leads our training joined last year.",
+        "translation_vi": "Đồng nghiệp phụ trách đào tạo vào làm năm ngoái.",
+        "reason_vi": "Mệnh đề who leads... giúp xác định người."
+      },
+      {
+        "situation_vi": "Giới thiệu tài liệu bạn cần.",
+        "answer_en": "I need the guide that explains the new rules.",
+        "translation_vi": "Tôi cần hướng dẫn giải thích các quy tắc mới.",
+        "reason_vi": "That explains... xác định đúng tài liệu."
+      }
+    ],
+    "contrasts": [
+      {
+        "first_en": "The students who applied early received emails.",
+        "second_en": "The students, who applied early, received emails.",
+        "difference_vi": "Dấu phẩy đổi từ thông tin phân loại sang thông tin bổ sung, có thể đổi nghĩa."
+      }
+    ],
+    "common_mistakes": [
+      {
+        "wrong": "The woman which called us is here.",
+        "correct": "The woman who called us is here.",
+        "why_vi": "Who dùng cho người."
+      },
+      {
+        "wrong": "The course, that starts in July, is full.",
+        "correct": "The course that starts in July is full.",
+        "why_vi": "Defining clause với that không đặt dấu phẩy."
+      }
+    ],
+    "paragraph_transfer": {
+      "context_vi": "Bạn giải thích cách chọn giáo viên và tài liệu.",
+      "task_en": "Write two sentences identifying a trainer and a resource you recommend.",
+      "model_paragraph_en": "Choose a tutor who gives clear feedback. Use a website that provides short practice tests.",
+      "coaching_vi": "Hai mệnh đề quan hệ giúp giới hạn người và tài liệu."
+    },
+    "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED",
+    "question_import_policy": "SEPARATE_BANK_NO_OVERWRITE",
+    "title": "Defining Relative Clauses",
+    "qa_teacher_review": "NOT_REVIEWED",
+    "draft_practice": [
+      {
+        "stage": "guided",
+        "prompt_en": "Complete: The student ___ won the prize is in my class.",
+        "draft_id": "M10-B1-18-DRAFT-01",
+        "assessment_mode": "SELF_REVIEW_REQUIRED"
+      },
+      {
+        "stage": "independent",
+        "prompt_en": "Join: This is an app. It helps me plan my studies.",
+        "draft_id": "M10-B1-18-DRAFT-02",
+        "assessment_mode": "SELF_REVIEW_REQUIRED"
+      },
+      {
+        "stage": "mastery",
+        "prompt_en": "Write advice using two defining relative clauses for people and resources.",
+        "draft_id": "M10-B1-18-DRAFT-03",
+        "assessment_mode": "SELF_REVIEW_REQUIRED"
+      },
+      {
+        "stage": "spaced_review",
+        "prompt_en": "Correct: The man which works here is my uncle.",
+        "draft_id": "M10-B1-18-DRAFT-04",
+        "assessment_mode": "SELF_REVIEW_REQUIRED"
+      }
+    ]
+  },
+  "B1-19": {
+    "lesson_id": "B1-19",
+    "overview_vi": "Non-defining relative clauses bổ sung thông tin, được ngăn bằng dấu phẩy; không dùng that thay who/which trong mệnh đề này.",
+    "decision_steps_vi": [
+      "Kiểm tra danh từ đã xác định độc lập chưa",
+      "Nếu thông tin chỉ bổ sung, đặt dấu phẩy hai phía khi ở giữa",
+      "Dùng who/which/whose tùy chức năng, không dùng that"
+    ],
+    "patterns": [
+      {
+        "pattern": "proper name, who ...,",
+        "use_vi": "Thêm thông tin về người đã xác định.",
+        "example_en": "Linh, who works in finance, will lead the meeting.",
+        "example_vi": "Linh, người làm ở bộ phận tài chính, sẽ chủ trì cuộc họp."
+      },
+      {
+        "pattern": "thing, which ...,",
+        "use_vi": "Bổ sung nhận xét về vật đã rõ.",
+        "example_en": "My laptop, which I bought in May, is already slow.",
+        "example_vi": "Máy tính tôi, mua hồi tháng Năm, đã chậm."
+      }
+    ],
+    "worked_examples": [
+      {
+        "situation_vi": "Nhắc về anh Minh, người đã được người nghe biết tới.",
+        "answer_en": "Minh, who lives next door, offered to help.",
+        "translation_vi": "Minh, người sống cạnh nhà, đã đề nghị giúp.",
+        "reason_vi": "Tên riêng đủ xác định; mệnh đề chỉ thêm thông tin."
+      },
+      {
+        "situation_vi": "Nhắc tới bảo tàng duy nhất trong thị trấn.",
+        "answer_en": "The town museum, which opened last year, is popular.",
+        "translation_vi": "Bảo tàng thị trấn, khai trương năm ngoái, rất được yêu thích.",
+        "reason_vi": "Thông tin về thời điểm khai trương không giới hạn bảo tàng nào."
+      }
+    ],
+    "contrasts": [
+      {
+        "first_en": "The teachers who joined recently need training.",
+        "second_en": "The teachers, who joined recently, need training.",
+        "difference_vi": "Không dấu phẩy chỉ một nhóm giáo viên; có dấu phẩy thường nói toàn bộ nhóm đã xác định."
+      }
+    ],
+    "common_mistakes": [
+      {
+        "wrong": "My father, that lives abroad, called.",
+        "correct": "My father, who lives abroad, called.",
+        "why_vi": "Không dùng that trong non-defining clause."
+      },
+      {
+        "wrong": "Anna who studies music, is arriving.",
+        "correct": "Anna, who studies music, is arriving.",
+        "why_vi": "Cần dấu phẩy mở và đóng mệnh đề chêm giữa."
+      }
+    ],
+    "paragraph_transfer": {
+      "context_vi": "Bạn viết lời giới thiệu khách mời.",
+      "task_en": "Write two sentences introducing a known speaker and a conference venue.",
+      "model_paragraph_en": "Ms Hoa, who founded the club, will speak first. The conference hall, which was renovated recently, is on the ground floor.",
+      "coaching_vi": "Tên người và địa điểm đã xác định, mệnh đề chỉ cung cấp thêm chi tiết."
+    },
+    "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED",
+    "question_import_policy": "SEPARATE_BANK_NO_OVERWRITE",
+    "title": "Non-defining Relative Clauses",
+    "qa_teacher_review": "NOT_REVIEWED",
+    "draft_practice": [
+      {
+        "stage": "guided",
+        "prompt_en": "Complete: Ben, ___ grew up in Canada, speaks French.",
+        "draft_id": "M10-B1-19-DRAFT-01",
+        "assessment_mode": "SELF_REVIEW_REQUIRED"
+      },
+      {
+        "stage": "independent",
+        "prompt_en": "Add punctuation: My tablet which I bought last year still works well.",
+        "draft_id": "M10-B1-19-DRAFT-02",
+        "assessment_mode": "SELF_REVIEW_REQUIRED"
+      },
+      {
+        "stage": "mastery",
+        "prompt_en": "Write one sentence introducing a named person with a non-defining clause.",
+        "draft_id": "M10-B1-19-DRAFT-03",
+        "assessment_mode": "SELF_REVIEW_REQUIRED"
+      },
+      {
+        "stage": "spaced_review",
+        "prompt_en": "Correct: Mr Nam, that lives nearby, can help.",
+        "draft_id": "M10-B1-19-DRAFT-04",
+        "assessment_mode": "SELF_REVIEW_REQUIRED"
+      }
+    ]
+  },
+  "B1-20": {
+    "lesson_id": "B1-20",
+    "overview_vi": "Có thể lược bỏ đại từ quan hệ làm tân ngữ trong defining clauses; không lược bỏ đại từ làm chủ ngữ hoặc trong non-defining clauses.",
+    "decision_steps_vi": [
+      "Xác định đại từ quan hệ đứng ở defining hay non-defining",
+      "Xem sau đại từ là động từ hay chủ ngữ khác",
+      "Chỉ lược nếu nó là tân ngữ trong defining clause"
+    ],
+    "patterns": [
+      {
+        "pattern": "object relative: noun + (that) + subject + verb",
+        "use_vi": "Có thể bỏ that/which/who khi là tân ngữ.",
+        "example_en": "The book (that) you recommended is useful.",
+        "example_vi": "Cuốn sách bạn giới thiệu rất hữu ích."
+      },
+      {
+        "pattern": "subject relative: noun + who/that + verb",
+        "use_vi": "Không bỏ đại từ quan hệ giữ vai trò chủ ngữ.",
+        "example_en": "The student who won the prize is here.",
+        "example_vi": "Học sinh đạt giải đang ở đây."
+      }
+    ],
+    "worked_examples": [
+      {
+        "situation_vi": "Rút gọn câu nói về bộ phim bạn đã xem.",
+        "answer_en": "The film we watched yesterday was excellent.",
+        "translation_vi": "Bộ phim chúng tôi xem hôm qua rất hay.",
+        "reason_vi": "Bỏ that vì sau đó có we làm chủ ngữ của watched."
+      },
+      {
+        "situation_vi": "Giải thích vì sao không bỏ who trong câu về người gọi.",
+        "answer_en": "The woman who called you is waiting.",
+        "translation_vi": "Người phụ nữ đã gọi bạn đang đợi.",
+        "reason_vi": "Who làm chủ ngữ của called nên phải giữ."
+      }
+    ],
+    "contrasts": [
+      {
+        "first_en": "The file that we shared is missing.",
+        "second_en": "The file we shared is missing.",
+        "difference_vi": "Hai câu đều đúng do that làm tân ngữ."
+      },
+      {
+        "first_en": "The file that disappeared is missing.",
+        "second_en": "The file disappeared is missing.",
+        "difference_vi": "Câu thứ hai thay đổi cấu trúc, không phải chỉ lược đại từ, vì that làm chủ ngữ."
+      }
+    ],
+    "common_mistakes": [
+      {
+        "wrong": "The student passed the test is my cousin.",
+        "correct": "The student who passed the test is my cousin.",
+        "why_vi": "Who làm chủ ngữ nên không thể lược."
+      },
+      {
+        "wrong": "My bike, I bought in 2020, was stolen.",
+        "correct": "My bike, which I bought in 2020, was stolen.",
+        "why_vi": "Non-defining clause cần đại từ quan hệ và dấu phẩy."
+      }
+    ],
+    "paragraph_transfer": {
+      "context_vi": "Bạn giới thiệu tài liệu và một chuyên gia.",
+      "task_en": "Write two sentences: one with an omitted object relative and one with a required subject relative.",
+      "model_paragraph_en": "The checklist we created is ready. The consultant who designed it will join the meeting.",
+      "coaching_vi": "Câu đầu lược that tân ngữ; câu sau giữ who chủ ngữ."
+    },
+    "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED",
+    "question_import_policy": "SEPARATE_BANK_NO_OVERWRITE",
+    "title": "Relative Pronouns & Omission",
+    "qa_teacher_review": "NOT_REVIEWED",
+    "draft_practice": [
+      {
+        "stage": "guided",
+        "prompt_en": "Remove optional relative pronoun: The report that we submitted was accepted.",
+        "draft_id": "M10-B1-20-DRAFT-01",
+        "assessment_mode": "SELF_REVIEW_REQUIRED"
+      },
+      {
+        "stage": "independent",
+        "prompt_en": "Complete: The nurse ___ helped me was kind.",
+        "draft_id": "M10-B1-20-DRAFT-02",
+        "assessment_mode": "SELF_REVIEW_REQUIRED"
+      },
+      {
+        "stage": "mastery",
+        "prompt_en": "Write two examples showing when a relative pronoun can and cannot be omitted.",
+        "draft_id": "M10-B1-20-DRAFT-03",
+        "assessment_mode": "SELF_REVIEW_REQUIRED"
+      },
+      {
+        "stage": "spaced_review",
+        "prompt_en": "Correct: The manager works here is friendly.",
+        "draft_id": "M10-B1-20-DRAFT-04",
+        "assessment_mode": "SELF_REVIEW_REQUIRED"
+      }
+    ]
+  },
+  "B1-21": {
+    "lesson_id": "B1-21",
+    "overview_vi": "Reported Statements cho biết người khác đã nói gì; lùi thì và đổi đại từ/mốc thời gian khi góc nhìn thay đổi, nhưng không lùi máy móc nếu sự thật còn đúng.",
+    "decision_steps_vi": [
+      "Xác định ai nói và thời điểm thuật lại",
+      "Đổi đại từ, địa điểm và thời gian theo người kể",
+      "Cân nhắc backshift khi câu dẫn ở quá khứ và góc nhìn thời gian thay đổi"
+    ],
+    "patterns": [
+      {
+        "pattern": "said (that) + subject + past verb",
+        "use_vi": "Tường thuật câu nói ở quá khứ.",
+        "example_en": "Mia said that she was tired.",
+        "example_vi": "Mia nói rằng cô ấy mệt."
+      },
+      {
+        "pattern": "told + person + (that) + clause",
+        "use_vi": "Tell cần đối tượng người nghe.",
+        "example_en": "The guide told us that the museum was closed.",
+        "example_vi": "Hướng dẫn viên nói với chúng tôi rằng bảo tàng đóng cửa."
+      }
+    ],
+    "worked_examples": [
+      {
+        "situation_vi": "Thuật lại một đồng nghiệp nói cô ấy sẽ đến muộn.",
+        "answer_en": "Hoa said that she would arrive late.",
+        "translation_vi": "Hoa nói rằng cô ấy sẽ đến muộn.",
+        "reason_vi": "Will có thể chuyển thành would khi nhìn từ mốc kể quá khứ."
+      },
+      {
+        "situation_vi": "Thuật lại thông báo người quản lý đưa cho cả nhóm.",
+        "answer_en": "The manager told us that the deadline had changed.",
+        "translation_vi": "Quản lý nói với chúng tôi rằng hạn chót đã thay đổi.",
+        "reason_vi": "Told cần us; lùi thì vì thay đổi xảy ra trước lúc kể."
+      }
+    ],
+    "contrasts": [
+      {
+        "first_en": "She said that she was ready.",
+        "second_en": "She said that she is ready.",
+        "difference_vi": "Cả hai có thể đúng nếu tình trạng vẫn đúng; chọn theo bối cảnh."
+      }
+    ],
+    "common_mistakes": [
+      {
+        "wrong": "He said me he was busy.",
+        "correct": "He told me he was busy.",
+        "why_vi": "Say không đi thẳng với tân ngữ người; dùng told me hoặc said to me."
+      },
+      {
+        "wrong": "She told that she would come.",
+        "correct": "She said that she would come.",
+        "why_vi": "Told thường cần người nhận lời nói."
+      }
+    ],
+    "paragraph_transfer": {
+      "context_vi": "Bạn gửi tóm tắt trao đổi cho người vắng họp.",
+      "task_en": "Write two sentences reporting what the designer and manager said yesterday.",
+      "model_paragraph_en": "The designer said that the mock-up was ready. The manager told us that the review would start on Friday.",
+      "coaching_vi": "Thống nhất góc nhìn người thuật lại và phân biệt said/told."
+    },
+    "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED",
+    "question_import_policy": "SEPARATE_BANK_NO_OVERWRITE",
+    "title": "Reported Statements",
+    "qa_teacher_review": "NOT_REVIEWED",
+    "draft_practice": [
+      {
+        "stage": "guided",
+        "prompt_en": "Report: “I am busy,” Tom said.",
+        "draft_id": "M10-B1-21-DRAFT-01",
+        "assessment_mode": "SELF_REVIEW_REQUIRED"
+      },
+      {
+        "stage": "independent",
+        "prompt_en": "Report: “We will call you,” they told me.",
+        "draft_id": "M10-B1-21-DRAFT-02",
+        "assessment_mode": "SELF_REVIEW_REQUIRED"
+      },
+      {
+        "stage": "mastery",
+        "prompt_en": "Write two reported statements from a meeting with different speakers.",
+        "draft_id": "M10-B1-21-DRAFT-03",
+        "assessment_mode": "SELF_REVIEW_REQUIRED"
+      },
+      {
+        "stage": "spaced_review",
+        "prompt_en": "Correct: She said me that she was ill.",
+        "draft_id": "M10-B1-21-DRAFT-04",
+        "assessment_mode": "SELF_REVIEW_REQUIRED"
+      }
+    ]
+  },
+  "B1-22": {
+    "lesson_id": "B1-22",
+    "overview_vi": "Reported Questions dùng trật tự câu trần thuật sau asked/wondered; bỏ trợ động từ do/does/did không còn chức năng hỏi.",
+    "decision_steps_vi": [
+      "Xem câu hỏi gốc yes/no hay wh-question",
+      "Dùng if/whether cho yes/no hoặc giữ từ để hỏi",
+      "Đổi trật tự thành subject + verb và điều chỉnh mốc thời gian"
+    ],
+    "patterns": [
+      {
+        "pattern": "asked + if/whether + S + V",
+        "use_vi": "Thuật lại câu hỏi yes/no.",
+        "example_en": "He asked if I had the ticket.",
+        "example_vi": "Anh ấy hỏi tôi có vé không."
+      },
+      {
+        "pattern": "asked + wh-word + S + V",
+        "use_vi": "Thuật lại câu hỏi với từ để hỏi.",
+        "example_en": "She asked where the meeting was.",
+        "example_vi": "Cô ấy hỏi cuộc họp ở đâu."
+      }
+    ],
+    "worked_examples": [
+      {
+        "situation_vi": "Thuật lại câu “Do you work here?”",
+        "answer_en": "The visitor asked whether I worked there.",
+        "translation_vi": "Khách hỏi liệu tôi có làm ở đó không.",
+        "reason_vi": "If/whether dẫn câu hỏi yes/no, bỏ do."
+      },
+      {
+        "situation_vi": "Thuật lại câu “Where is the station?”",
+        "answer_en": "He asked where the station was.",
+        "translation_vi": "Anh ấy hỏi ga ở đâu.",
+        "reason_vi": "Sau where dùng chủ ngữ the station trước động từ was."
+      }
+    ],
+    "contrasts": [
+      {
+        "first_en": "Where is the library?",
+        "second_en": "She asked where the library was.",
+        "difference_vi": "Câu hỏi trực tiếp đảo trợ động từ; câu tường thuật dùng trật tự trần thuật."
+      }
+    ],
+    "common_mistakes": [
+      {
+        "wrong": "She asked where was the hotel.",
+        "correct": "She asked where the hotel was.",
+        "why_vi": "Không đảo chủ ngữ và động từ trong reported question."
+      },
+      {
+        "wrong": "He asked did I need help.",
+        "correct": "He asked if I needed help.",
+        "why_vi": "Câu yes/no thuật lại dùng if/whether, không giữ did."
+      }
+    ],
+    "paragraph_transfer": {
+      "context_vi": "Bạn ghi lại hai câu hỏi của khách hàng.",
+      "task_en": "Report a yes/no question about delivery and a wh-question about price.",
+      "model_paragraph_en": "The customer asked whether the parcel had arrived. She also asked how much delivery cost.",
+      "coaching_vi": "Trật tự trần thuật trong cả hai câu hỏi thuật lại."
+    },
+    "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED",
+    "question_import_policy": "SEPARATE_BANK_NO_OVERWRITE",
+    "title": "Reported Questions",
+    "qa_teacher_review": "NOT_REVIEWED",
+    "draft_practice": [
+      {
+        "stage": "guided",
+        "prompt_en": "Report: “Are you free?” she asked.",
+        "draft_id": "M10-B1-22-DRAFT-01",
+        "assessment_mode": "SELF_REVIEW_REQUIRED"
+      },
+      {
+        "stage": "independent",
+        "prompt_en": "Report: “Where did you park?” he asked.",
+        "draft_id": "M10-B1-22-DRAFT-02",
+        "assessment_mode": "SELF_REVIEW_REQUIRED"
+      },
+      {
+        "stage": "mastery",
+        "prompt_en": "Report two questions a visitor asked about an exhibition.",
+        "draft_id": "M10-B1-22-DRAFT-03",
+        "assessment_mode": "SELF_REVIEW_REQUIRED"
+      },
+      {
+        "stage": "spaced_review",
+        "prompt_en": "Correct: He asked what time did the train leave.",
+        "draft_id": "M10-B1-22-DRAFT-04",
+        "assessment_mode": "SELF_REVIEW_REQUIRED"
+      }
+    ]
+  },
+  "B1-23": {
+    "lesson_id": "B1-23",
+    "overview_vi": "Reported commands and requests dùng told/asked + object + (not) to V. Phân biệt lời yêu cầu lịch sự với mệnh lệnh.",
+    "decision_steps_vi": [
+      "Xác định câu gốc là chỉ thị hay lời nhờ",
+      "Chọn told/asked theo sắc thái",
+      "Đưa người nhận vào giữa và dùng to V hoặc not to V"
+    ],
+    "patterns": [
+      {
+        "pattern": "told + someone + to V",
+        "use_vi": "Thuật lại chỉ thị.",
+        "example_en": "The coach told us to practise daily.",
+        "example_vi": "Huấn luyện viên bảo chúng tôi luyện tập hằng ngày."
+      },
+      {
+        "pattern": "asked + someone + not to V",
+        "use_vi": "Thuật lại lời nhờ tránh làm gì.",
+        "example_en": "She asked me not to share the photo.",
+        "example_vi": "Cô ấy nhờ tôi đừng chia sẻ ảnh."
+      }
+    ],
+    "worked_examples": [
+      {
+        "situation_vi": "Thuật lại “Please send me the file.”",
+        "answer_en": "The manager asked me to send her the file.",
+        "translation_vi": "Quản lý nhờ tôi gửi tệp cho bà ấy.",
+        "reason_vi": "Asked me to diễn đạt lời nhờ lịch sự."
+      },
+      {
+        "situation_vi": "Thuật lại “Don't touch the wires.”",
+        "answer_en": "The technician told us not to touch the wires.",
+        "translation_vi": "Kỹ thuật viên bảo chúng tôi không chạm dây điện.",
+        "reason_vi": "Not đứng trước to touch."
+      }
+    ],
+    "contrasts": [
+      {
+        "first_en": "He told me to wait.",
+        "second_en": "He asked me to wait.",
+        "difference_vi": "Cả hai cấu trúc đúng nhưng told thường thể hiện chỉ thị mạnh hơn asked."
+      }
+    ],
+    "common_mistakes": [
+      {
+        "wrong": "She asked to me open the door.",
+        "correct": "She asked me to open the door.",
+        "why_vi": "Tân ngữ người nhận đứng ngay sau asked."
+      },
+      {
+        "wrong": "They told us to not arrive late.",
+        "correct": "They told us not to arrive late.",
+        "why_vi": "Mẫu giảng chuẩn dùng not to; to not đôi khi xuất hiện, không quy thành sai tuyệt đối mọi bối cảnh."
+      }
+    ],
+    "paragraph_transfer": {
+      "context_vi": "Bạn tóm tắt hướng dẫn an toàn phòng thí nghiệm.",
+      "task_en": "Write two reported instructions: wear safety glasses; do not eat in the lab.",
+      "model_paragraph_en": "The supervisor told us to wear safety glasses. She asked us not to eat in the lab.",
+      "coaching_vi": "Khẳng định và phủ định với told/asked + object + to V."
+    },
+    "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED",
+    "question_import_policy": "SEPARATE_BANK_NO_OVERWRITE",
+    "title": "Reported Commands & Requests",
+    "qa_teacher_review": "NOT_REVIEWED",
+    "draft_practice": [
+      {
+        "stage": "guided",
+        "prompt_en": "Report: “Open your books,” the teacher said to us.",
+        "draft_id": "M10-B1-23-DRAFT-01",
+        "assessment_mode": "SELF_REVIEW_REQUIRED"
+      },
+      {
+        "stage": "independent",
+        "prompt_en": "Report: “Please don't use flash,” she said to me.",
+        "draft_id": "M10-B1-23-DRAFT-02",
+        "assessment_mode": "SELF_REVIEW_REQUIRED"
+      },
+      {
+        "stage": "mastery",
+        "prompt_en": "Write a two-sentence summary of a guide's instructions at a museum.",
+        "draft_id": "M10-B1-23-DRAFT-03",
+        "assessment_mode": "SELF_REVIEW_REQUIRED"
+      },
+      {
+        "stage": "spaced_review",
+        "prompt_en": "Correct: He told to me wait outside.",
+        "draft_id": "M10-B1-23-DRAFT-04",
+        "assessment_mode": "SELF_REVIEW_REQUIRED"
+      }
+    ]
+  },
+  "B1-24": {
+    "lesson_id": "B1-24",
+    "overview_vi": "Indirect Questions là cách hỏi lịch sự, dùng trật tự câu trần thuật sau Could you tell me..., Do you know... hoặc I wonder...",
+    "decision_steps_vi": [
+      "Chọn cụm mở đầu lịch sự",
+      "Thêm từ hỏi hoặc if/whether theo loại câu",
+      "Giữ subject + verb thay vì đảo trợ động từ bên trong mệnh đề"
+    ],
+    "patterns": [
+      {
+        "pattern": "Could you tell me + wh-word + S + V?",
+        "use_vi": "Hỏi thông tin một cách lịch sự.",
+        "example_en": "Could you tell me where the library is?",
+        "example_vi": "Bạn có thể cho tôi biết thư viện ở đâu không?"
+      },
+      {
+        "pattern": "Do you know + if/whether + S + V?",
+        "use_vi": "Hỏi gián tiếp dạng yes/no.",
+        "example_en": "Do you know if the office is open?",
+        "example_vi": "Bạn có biết văn phòng đang mở không?"
+      }
+    ],
+    "worked_examples": [
+      {
+        "situation_vi": "Hỏi lịch mở cửa một cách lịch sự.",
+        "answer_en": "Could you tell me when the workshop starts?",
+        "translation_vi": "Bạn có thể cho tôi biết buổi workshop bắt đầu lúc nào không?",
+        "reason_vi": "Sau when là chủ ngữ the workshop rồi starts."
+      },
+      {
+        "situation_vi": "Hỏi xem tàu có dừng tại đây không.",
+        "answer_en": "Do you know whether this train stops here?",
+        "translation_vi": "Bạn có biết tàu này có dừng ở đây không?",
+        "reason_vi": "Whether diễn đạt câu hỏi yes/no gián tiếp."
+      }
+    ],
+    "contrasts": [
+      {
+        "first_en": "Where is the station?",
+        "second_en": "Could you tell me where the station is?",
+        "difference_vi": "Câu hỏi trực tiếp đảo is; gián tiếp giữ station is."
+      }
+    ],
+    "common_mistakes": [
+      {
+        "wrong": "Could you tell me where is the station?",
+        "correct": "Could you tell me where the station is?",
+        "why_vi": "Không đảo vị trí is trong mệnh đề gián tiếp."
+      },
+      {
+        "wrong": "Do you know does the café open today?",
+        "correct": "Do you know if the café opens today?",
+        "why_vi": "Dùng if cho yes/no, bỏ does bên trong."
+      }
+    ],
+    "paragraph_transfer": {
+      "context_vi": "Bạn cần hỏi lễ tân ba thông tin.",
+      "task_en": "Write two polite questions about the start time and available seats.",
+      "model_paragraph_en": "Could you tell me when the session begins? Do you know whether any seats are available?",
+      "coaching_vi": "Dùng hai dạng indirect questions, giữ trật tự câu kể."
+    },
+    "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED",
+    "question_import_policy": "SEPARATE_BANK_NO_OVERWRITE",
+    "title": "Indirect Questions",
+    "qa_teacher_review": "NOT_REVIEWED",
+    "draft_practice": [
+      {
+        "stage": "guided",
+        "prompt_en": "Reorder: Could you tell me / the nearest bank / is / where?",
+        "draft_id": "M10-B1-24-DRAFT-01",
+        "assessment_mode": "SELF_REVIEW_REQUIRED"
+      },
+      {
+        "stage": "independent",
+        "prompt_en": "Make polite: Is the museum open on Sundays?",
+        "draft_id": "M10-B1-24-DRAFT-02",
+        "assessment_mode": "SELF_REVIEW_REQUIRED"
+      },
+      {
+        "stage": "mastery",
+        "prompt_en": "Write two polite information requests for a visitor.",
+        "draft_id": "M10-B1-24-DRAFT-03",
+        "assessment_mode": "SELF_REVIEW_REQUIRED"
+      },
+      {
+        "stage": "spaced_review",
+        "prompt_en": "Correct: I wonder where does she work.",
+        "draft_id": "M10-B1-24-DRAFT-04",
+        "assessment_mode": "SELF_REVIEW_REQUIRED"
+      }
+    ]
+  },
+  "B1-25": {
+    "lesson_id": "B1-25",
+    "overview_vi": "Question Tags phụ thuộc trợ động từ, thì và chủ ngữ; mục đích có thể là xác nhận hoặc mở lời, ngữ điệu thay đổi ý nghĩa.",
+    "decision_steps_vi": [
+      "Đọc động từ chính và thì của mệnh đề",
+      "Chọn trợ động từ lặp lại với dấu phủ định đối lập",
+      "Thay chủ ngữ bằng đại từ tương ứng"
+    ],
+    "patterns": [
+      {
+        "pattern": "affirmative, negative tag?",
+        "use_vi": "Mệnh đề chính khẳng định thì đuôi thường phủ định.",
+        "example_en": "You work here, don't you?",
+        "example_vi": "Bạn làm ở đây, phải không?"
+      },
+      {
+        "pattern": "negative, affirmative tag?",
+        "use_vi": "Mệnh đề chính phủ định thì đuôi thường khẳng định.",
+        "example_en": "She hasn't arrived, has she?",
+        "example_vi": "Cô ấy chưa đến, đúng không?"
+      }
+    ],
+    "worked_examples": [
+      {
+        "situation_vi": "Bạn hỏi xác nhận một người đã gửi email.",
+        "answer_en": "You sent the email, didn't you?",
+        "translation_vi": "Bạn gửi email rồi, đúng không?",
+        "reason_vi": "Sent là Past Simple động từ thường nên dùng didn't."
+      },
+      {
+        "situation_vi": "Xác nhận nhóm không đi xe buýt.",
+        "answer_en": "They aren't taking the bus, are they?",
+        "translation_vi": "Họ không đi xe buýt, phải không?",
+        "reason_vi": "Mệnh đề phủ định với are nên đuôi are they."
+      }
+    ],
+    "contrasts": [
+      {
+        "first_en": "You're ready, aren't you?",
+        "second_en": "You aren't ready, are you?",
+        "difference_vi": "Thay đổi cực tính của câu chính dẫn tới đuôi đối lập."
+      }
+    ],
+    "common_mistakes": [
+      {
+        "wrong": "He plays tennis, isn't he?",
+        "correct": "He plays tennis, doesn't he?",
+        "why_vi": "Động từ thường hiện tại đơn dùng does."
+      },
+      {
+        "wrong": "They didn't come, didn't they?",
+        "correct": "They didn't come, did they?",
+        "why_vi": "Mệnh đề phủ định cần đuôi khẳng định."
+      }
+    ],
+    "paragraph_transfer": {
+      "context_vi": "Bạn xác nhận lịch của nhóm trước sự kiện.",
+      "task_en": "Write two checking questions: one positive statement and one negative statement.",
+      "model_paragraph_en": "The meeting starts at nine, doesn't it? We aren't using the main hall, are we?",
+      "coaching_vi": "Chọn đúng trợ động từ và cực tính tương ứng."
+    },
+    "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED",
+    "question_import_policy": "SEPARATE_BANK_NO_OVERWRITE",
+    "title": "Question Tags",
+    "qa_teacher_review": "NOT_REVIEWED",
+    "draft_practice": [
+      {
+        "stage": "guided",
+        "prompt_en": "Complete: She is your teacher, ___?",
+        "draft_id": "M10-B1-25-DRAFT-01",
+        "assessment_mode": "SELF_REVIEW_REQUIRED"
+      },
+      {
+        "stage": "independent",
+        "prompt_en": "Complete: They finished early, ___?",
+        "draft_id": "M10-B1-25-DRAFT-02",
+        "assessment_mode": "SELF_REVIEW_REQUIRED"
+      },
+      {
+        "stage": "mastery",
+        "prompt_en": "Write two question tags about a schedule change and a missing attendee.",
+        "draft_id": "M10-B1-25-DRAFT-03",
+        "assessment_mode": "SELF_REVIEW_REQUIRED"
+      },
+      {
+        "stage": "spaced_review",
+        "prompt_en": "Correct: She doesn't drive, doesn't she?",
+        "draft_id": "M10-B1-25-DRAFT-04",
+        "assessment_mode": "SELF_REVIEW_REQUIRED"
+      }
+    ]
+  },
+  "B1-26": {
+    "lesson_id": "B1-26",
+    "overview_vi": "Modals of deduction thể hiện mức độ tin tưởng dựa vào bằng chứng hiện tại, không phải khẳng định kiến thức tuyệt đối.",
+    "decision_steps_vi": [
+      "Tìm chứng cứ thực tế",
+      "Đánh giá suy đoán gần chắc, có thể hoặc gần như không thể",
+      "Chọn must, might/could/may hoặc cannot + V"
+    ],
+    "patterns": [
+      {
+        "pattern": "must + be/V",
+        "use_vi": "Suy luận rất có cơ sở.",
+        "example_en": "The lights are on; someone must be home.",
+        "example_vi": "Đèn đang sáng; hẳn có người ở nhà."
+      },
+      {
+        "pattern": "might/may/could + V",
+        "use_vi": "Khả năng nhưng chưa chắc chắn.",
+        "example_en": "She might be in the library.",
+        "example_vi": "Có thể cô ấy đang ở thư viện."
+      }
+    ],
+    "worked_examples": [
+      {
+        "situation_vi": "Bạn thấy ô và áo mưa ướt ở cửa.",
+        "answer_en": "It must be raining outside.",
+        "translation_vi": "Chắc ngoài trời đang mưa.",
+        "reason_vi": "Có dấu hiệu hỗ trợ suy luận mạnh."
+      },
+      {
+        "situation_vi": "Bạn không thấy bạn cùng lớp, chưa có thông tin chắc chắn.",
+        "answer_en": "He might be in the computer lab.",
+        "translation_vi": "Có thể bạn ấy ở phòng máy.",
+        "reason_vi": "Chưa đủ bằng chứng nên might phù hợp."
+      }
+    ],
+    "contrasts": [
+      {
+        "first_en": "She must be the manager.",
+        "second_en": "She might be the manager.",
+        "difference_vi": "Must thể hiện suy luận mạnh hơn; might để ngỏ."
+      }
+    ],
+    "common_mistakes": [
+      {
+        "wrong": "He must to be tired.",
+        "correct": "He must be tired.",
+        "why_vi": "Sau modal dùng động từ nguyên mẫu không to."
+      },
+      {
+        "wrong": "That can't be true because I'm not sure.",
+        "correct": "That might not be true because I'm not sure.",
+        "why_vi": "Không chắc chắn không đủ để suy ra can't; cần bằng chứng loại trừ."
+      }
+    ],
+    "paragraph_transfer": {
+      "context_vi": "Bạn nhắn cho đồng nghiệp khi một người vắng mặt.",
+      "task_en": "Write two evidence-based guesses about where the colleague is.",
+      "model_paragraph_en": "Her bag is here, so she must still be in the building. She might be attending another meeting.",
+      "coaching_vi": "Một câu suy luận mạnh và một câu khả năng yếu hơn."
+    },
+    "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED",
+    "question_import_policy": "SEPARATE_BANK_NO_OVERWRITE",
+    "title": "Modals of Deduction – Present",
+    "qa_teacher_review": "NOT_REVIEWED",
+    "draft_practice": [
+      {
+        "stage": "guided",
+        "prompt_en": "Complete: The door is locked. They ___ be closed today. (strong deduction)",
+        "draft_id": "M10-B1-26-DRAFT-01",
+        "assessment_mode": "SELF_REVIEW_REQUIRED"
+      },
+      {
+        "stage": "independent",
+        "prompt_en": "Choose a weaker guess: He is perhaps at home.",
+        "draft_id": "M10-B1-26-DRAFT-02",
+        "assessment_mode": "SELF_REVIEW_REQUIRED"
+      },
+      {
+        "stage": "mastery",
+        "prompt_en": "Give one strong and one uncertain inference from seeing office lights on.",
+        "draft_id": "M10-B1-26-DRAFT-03",
+        "assessment_mode": "SELF_REVIEW_REQUIRED"
+      },
+      {
+        "stage": "spaced_review",
+        "prompt_en": "Correct: She might to be late.",
+        "draft_id": "M10-B1-26-DRAFT-04",
+        "assessment_mode": "SELF_REVIEW_REQUIRED"
+      }
+    ]
+  },
+  "B1-27": {
+    "lesson_id": "B1-27",
+    "overview_vi": "Must, have to, should, may và be allowed to có chức năng khác nhau: bắt buộc, lời khuyên, cho phép và cấm.",
+    "decision_steps_vi": [
+      "Tìm quy định bắt buộc hay ý kiến khuyên",
+      "Kiểm tra là cấm hay không cần thiết",
+      "Chọn modal và phủ định theo đúng ý nghĩa"
+    ],
+    "patterns": [
+      {
+        "pattern": "mustn't + V",
+        "use_vi": "Cấm thực hiện hành động.",
+        "example_en": "Visitors mustn't enter the laboratory.",
+        "example_vi": "Khách không được vào phòng thí nghiệm."
+      },
+      {
+        "pattern": "don't have to + V",
+        "use_vi": "Không bắt buộc, không phải cấm.",
+        "example_en": "You don't have to print the form.",
+        "example_vi": "Bạn không bắt buộc in biểu mẫu."
+      }
+    ],
+    "worked_examples": [
+      {
+        "situation_vi": "Bạn nói trong phòng thí nghiệm tuyệt đối không ăn.",
+        "answer_en": "You mustn't eat in the laboratory.",
+        "translation_vi": "Bạn không được ăn trong phòng thí nghiệm.",
+        "reason_vi": "Mustn't biểu thị cấm."
+      },
+      {
+        "situation_vi": "Bạn giải thích học sinh có thể in hoặc nộp online.",
+        "answer_en": "Students don't have to print their assignments.",
+        "translation_vi": "Học sinh không phải in bài.",
+        "reason_vi": "Được phép không in, khác với cấm in."
+      }
+    ],
+    "contrasts": [
+      {
+        "first_en": "You mustn't attend the session.",
+        "second_en": "You don't have to attend the session.",
+        "difference_vi": "Câu đầu cấm tham dự; câu sau nói không bắt buộc."
+      }
+    ],
+    "common_mistakes": [
+      {
+        "wrong": "You don't must bring a laptop.",
+        "correct": "You don't have to bring a laptop.",
+        "why_vi": "Phủ định nghĩa không cần dùng don't have to."
+      },
+      {
+        "wrong": "You mustn't pay a fee; it's optional.",
+        "correct": "You don't have to pay a fee; it's optional.",
+        "why_vi": "Optional nghĩa không bắt buộc, không phải bị cấm."
+      }
+    ],
+    "paragraph_transfer": {
+      "context_vi": "Bạn viết thông báo quy định cho lớp học.",
+      "task_en": "Write two rules: no food in the room; printing is optional.",
+      "model_paragraph_en": "Students mustn't bring food into the room. They don't have to print the worksheet.",
+      "coaching_vi": "Phân biệt điều cấm và điều không bắt buộc."
+    },
+    "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED",
+    "question_import_policy": "SEPARATE_BANK_NO_OVERWRITE",
+    "title": "Modals – Obligation & Permission",
+    "qa_teacher_review": "NOT_REVIEWED",
+    "draft_practice": [
+      {
+        "stage": "guided",
+        "prompt_en": "Complete: You ___ use your phone during the exam. (prohibited)",
+        "draft_id": "M10-B1-27-DRAFT-01",
+        "assessment_mode": "SELF_REVIEW_REQUIRED"
+      },
+      {
+        "stage": "independent",
+        "prompt_en": "Complete: You ___ wear formal clothes; jeans are fine.",
+        "draft_id": "M10-B1-27-DRAFT-02",
+        "assessment_mode": "SELF_REVIEW_REQUIRED"
+      },
+      {
+        "stage": "mastery",
+        "prompt_en": "Write a short notice with one ban and one optional action.",
+        "draft_id": "M10-B1-27-DRAFT-03",
+        "assessment_mode": "SELF_REVIEW_REQUIRED"
+      },
+      {
+        "stage": "spaced_review",
+        "prompt_en": "Correct: You mustn't buy a ticket because entry is free.",
+        "draft_id": "M10-B1-27-DRAFT-04",
+        "assessment_mode": "SELF_REVIEW_REQUIRED"
+      }
+    ]
+  },
+  "B1-28": {
+    "lesson_id": "B1-28",
+    "overview_vi": "Gerunds và Infinitives theo sau một số động từ theo mẫu; không thể đoán bằng nghĩa tiếng Việt “việc làm” hoặc “để làm” đơn thuần.",
+    "decision_steps_vi": [
+      "Nhận diện động từ đứng trước",
+      "Ghi nhớ hoặc tra mẫu của động từ đó",
+      "Phân biệt V-ing và to V theo ngữ pháp của động từ dẫn"
+    ],
+    "patterns": [
+      {
+        "pattern": "enjoy/avoid/finish + V-ing",
+        "use_vi": "Một nhóm động từ đi với danh động từ.",
+        "example_en": "I enjoy solving puzzles.",
+        "example_vi": "Tôi thích giải câu đố."
+      },
+      {
+        "pattern": "plan/decide/hope + to V",
+        "use_vi": "Một nhóm động từ đi với động từ nguyên mẫu có to.",
+        "example_en": "We decided to postpone the trip.",
+        "example_vi": "Chúng tôi quyết định hoãn chuyến đi."
+      }
+    ],
+    "worked_examples": [
+      {
+        "situation_vi": "Bạn nói bạn tránh kiểm tra điện thoại khi học.",
+        "answer_en": "I avoid checking my phone while studying.",
+        "translation_vi": "Tôi tránh kiểm tra điện thoại khi học.",
+        "reason_vi": "Avoid + V-ing."
+      },
+      {
+        "situation_vi": "Bạn giải thích quyết định đi học thêm.",
+        "answer_en": "She decided to take an evening course.",
+        "translation_vi": "Cô ấy quyết định học khóa buổi tối.",
+        "reason_vi": "Decide + to V."
+      }
+    ],
+    "contrasts": [
+      {
+        "first_en": "I enjoy reading before bed.",
+        "second_en": "I hope to read more this year.",
+        "difference_vi": "Enjoy đi với V-ing, hope với to V."
+      }
+    ],
+    "common_mistakes": [
+      {
+        "wrong": "He suggested to leave early.",
+        "correct": "He suggested leaving early.",
+        "why_vi": "Suggest + V-ing là mẫu thường dùng."
+      },
+      {
+        "wrong": "We decided going by train.",
+        "correct": "We decided to go by train.",
+        "why_vi": "Decide + to V."
+      }
+    ],
+    "paragraph_transfer": {
+      "context_vi": "Bạn viết về kế hoạch học kỹ năng mới.",
+      "task_en": "Write two sentences using one V-ing verb pattern and one to-infinitive pattern.",
+      "model_paragraph_en": "I enjoy learning languages, and I plan to practise every evening.",
+      "coaching_vi": "Hai động từ dẫn yêu cầu hai dạng bổ ngữ khác nhau."
+    },
+    "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED",
+    "question_import_policy": "SEPARATE_BANK_NO_OVERWRITE",
+    "title": "Gerunds & Infinitives",
+    "qa_teacher_review": "NOT_REVIEWED",
+    "draft_practice": [
+      {
+        "stage": "guided",
+        "prompt_en": "Complete: She enjoys ___ (cook) for friends.",
+        "draft_id": "M10-B1-28-DRAFT-01",
+        "assessment_mode": "SELF_REVIEW_REQUIRED"
+      },
+      {
+        "stage": "independent",
+        "prompt_en": "Complete: We hope ___ (visit) the museum.",
+        "draft_id": "M10-B1-28-DRAFT-02",
+        "assessment_mode": "SELF_REVIEW_REQUIRED"
+      },
+      {
+        "stage": "mastery",
+        "prompt_en": "Write a goal using decide and avoid.",
+        "draft_id": "M10-B1-28-DRAFT-03",
+        "assessment_mode": "SELF_REVIEW_REQUIRED"
+      },
+      {
+        "stage": "spaced_review",
+        "prompt_en": "Correct: He finished to write the email.",
+        "draft_id": "M10-B1-28-DRAFT-04",
+        "assessment_mode": "SELF_REVIEW_REQUIRED"
+      }
+    ]
+  },
+  "B1-29": {
+    "lesson_id": "B1-29",
+    "overview_vi": "Một số động từ đổi nghĩa theo V-ing/to V: remember, forget, stop, try. Phải xác định thứ tự hành động hoặc mục đích.",
+    "decision_steps_vi": [
+      "Xác định hai hành động có quan hệ thời gian nào",
+      "Kiểm tra nghĩa là nhớ đã làm hay nhớ phải làm",
+      "Chọn V-ing cho hồi tưởng/hoạt động dừng, to V cho nhiệm vụ/mục đích"
+    ],
+    "patterns": [
+      {
+        "pattern": "remember + V-ing",
+        "use_vi": "Nhớ một việc đã diễn ra.",
+        "example_en": "I remember meeting her at the conference.",
+        "example_vi": "Tôi nhớ đã gặp cô ấy ở hội thảo."
+      },
+      {
+        "pattern": "remember + to V",
+        "use_vi": "Nhớ nhiệm vụ cần làm.",
+        "example_en": "Remember to attach the file.",
+        "example_vi": "Hãy nhớ đính kèm tệp."
+      }
+    ],
+    "worked_examples": [
+      {
+        "situation_vi": "Bạn nhắc đồng nghiệp đừng quên khóa cửa.",
+        "answer_en": "Remember to lock the door before leaving.",
+        "translation_vi": "Hãy nhớ khóa cửa trước khi đi.",
+        "reason_vi": "To lock chỉ nhiệm vụ chưa thực hiện ở thời điểm nhắc."
+      },
+      {
+        "situation_vi": "Bạn kể ký ức đã khóa cửa.",
+        "answer_en": "I remember locking the door.",
+        "translation_vi": "Tôi nhớ mình đã khóa cửa.",
+        "reason_vi": "V-ing chỉ hành động đã xảy ra trong trí nhớ."
+      }
+    ],
+    "contrasts": [
+      {
+        "first_en": "She stopped smoking.",
+        "second_en": "She stopped to smoke.",
+        "difference_vi": "Câu đầu: bỏ hút thuốc; câu sau: dừng việc khác để hút thuốc."
+      }
+    ],
+    "common_mistakes": [
+      {
+        "wrong": "I remember to meeting him last week.",
+        "correct": "I remember meeting him last week.",
+        "why_vi": "Ký ức về sự kiện đã xảy ra dùng V-ing."
+      },
+      {
+        "wrong": "Stop to talk if you want silence.",
+        "correct": "Stop talking if you want silence.",
+        "why_vi": "Muốn ngừng việc nói thì stop talking."
+      }
+    ],
+    "paragraph_transfer": {
+      "context_vi": "Bạn kể một sai lầm khi gửi hồ sơ.",
+      "task_en": "Write two sentences explaining what you forgot and what you remember doing.",
+      "model_paragraph_en": "I forgot to attach the document. I remember checking the email subject, but not the attachment.",
+      "coaching_vi": "Forget to nói nhiệm vụ chưa làm; remember V-ing nói hành động đã làm."
+    },
+    "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED",
+    "question_import_policy": "SEPARATE_BANK_NO_OVERWRITE",
+    "title": "Verb Patterns – Meaning Changes",
+    "qa_teacher_review": "NOT_REVIEWED",
+    "draft_practice": [
+      {
+        "stage": "guided",
+        "prompt_en": "Complete: Don't forget ___ (save) your work.",
+        "draft_id": "M10-B1-29-DRAFT-01",
+        "assessment_mode": "SELF_REVIEW_REQUIRED"
+      },
+      {
+        "stage": "independent",
+        "prompt_en": "Complete: I remember ___ (visit) that gallery in 2022.",
+        "draft_id": "M10-B1-29-DRAFT-02",
+        "assessment_mode": "SELF_REVIEW_REQUIRED"
+      },
+      {
+        "stage": "mastery",
+        "prompt_en": "Explain the difference with stop: quit an activity vs pause to do another.",
+        "draft_id": "M10-B1-29-DRAFT-03",
+        "assessment_mode": "SELF_REVIEW_REQUIRED"
+      },
+      {
+        "stage": "spaced_review",
+        "prompt_en": "Correct: I forgot sending the email, so I never sent it.",
+        "draft_id": "M10-B1-29-DRAFT-04",
+        "assessment_mode": "SELF_REVIEW_REQUIRED"
+      }
+    ]
+  },
+  "B1-30": {
+    "lesson_id": "B1-30",
+    "overview_vi": "Phrasal verbs có thể tách hoặc không tách; đại từ tân ngữ thường buộc nằm giữa trong phrasal verb tách được.",
+    "decision_steps_vi": [
+      "Xác định phrasal verb mang nghĩa nào",
+      "Kiểm tra nó có thể tách không",
+      "Nếu tách được và có đại từ it/them, đặt đại từ giữa động từ và particle"
+    ],
+    "patterns": [
+      {
+        "pattern": "turn + object + off / turn it off",
+        "use_vi": "Phrasal verb tách được với tân ngữ là đại từ.",
+        "example_en": "Please turn it off before you leave.",
+        "example_vi": "Hãy tắt nó trước khi đi."
+      },
+      {
+        "pattern": "look after + object",
+        "use_vi": "Phrasal verb không tách được.",
+        "example_en": "She looks after her little brother.",
+        "example_vi": "Cô ấy trông em trai."
+      }
+    ],
+    "worked_examples": [
+      {
+        "situation_vi": "Bạn nhờ ai tắt màn hình.",
+        "answer_en": "Please switch it off when you finish.",
+        "translation_vi": "Hãy tắt màn hình khi xong.",
+        "reason_vi": "It đứng giữa switch và off."
+      },
+      {
+        "situation_vi": "Bạn nói ai chăm sóc con mèo khi đi vắng.",
+        "answer_en": "My neighbour looks after my cat when I travel.",
+        "translation_vi": "Hàng xóm trông mèo khi tôi đi.",
+        "reason_vi": "Look after không tách khi mang nghĩa chăm sóc."
+      }
+    ],
+    "contrasts": [
+      {
+        "first_en": "Turn off the light.",
+        "second_en": "Turn it off.",
+        "difference_vi": "Danh từ có thể đứng sau particle; đại từ phải đứng giữa."
+      }
+    ],
+    "common_mistakes": [
+      {
+        "wrong": "Please turn off it.",
+        "correct": "Please turn it off.",
+        "why_vi": "Đại từ của phrasal verb tách được nằm giữa."
+      },
+      {
+        "wrong": "She looks her brother after.",
+        "correct": "She looks after her brother.",
+        "why_vi": "Look after là cụm không tách."
+      }
+    ],
+    "paragraph_transfer": {
+      "context_vi": "Bạn viết hướng dẫn rời phòng học.",
+      "task_en": "Write two instructions using a separable and an inseparable phrasal verb.",
+      "model_paragraph_en": "Turn off the projector before you leave. Look after the equipment carefully.",
+      "coaching_vi": "Một cụm có thể tách; một cụm không thể tách."
+    },
+    "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED",
+    "question_import_policy": "SEPARATE_BANK_NO_OVERWRITE",
+    "title": "Phrasal Verb Grammar",
+    "qa_teacher_review": "NOT_REVIEWED",
+    "draft_practice": [
+      {
+        "stage": "guided",
+        "prompt_en": "Correct: Please turn off it.",
+        "draft_id": "M10-B1-30-DRAFT-01",
+        "assessment_mode": "SELF_REVIEW_REQUIRED"
+      },
+      {
+        "stage": "independent",
+        "prompt_en": "Complete: Can you look ___ my plants while I'm away?",
+        "draft_id": "M10-B1-30-DRAFT-02",
+        "assessment_mode": "SELF_REVIEW_REQUIRED"
+      },
+      {
+        "stage": "mastery",
+        "prompt_en": "Write two sentences using turn it down and look after someone.",
+        "draft_id": "M10-B1-30-DRAFT-03",
+        "assessment_mode": "SELF_REVIEW_REQUIRED"
+      },
+      {
+        "stage": "spaced_review",
+        "prompt_en": "Correct: She looks her cat after every day.",
+        "draft_id": "M10-B1-30-DRAFT-04",
+        "assessment_mode": "SELF_REVIEW_REQUIRED"
+      }
+    ]
+  },
+  "B1-31": {
+    "lesson_id": "B1-31",
+    "overview_vi": "Concession tạo tương phản “mặc dù” bằng although/even though + mệnh đề hoặc despite/in spite of + danh từ/V-ing.",
+    "decision_steps_vi": [
+      "Xác định ý trái kỳ vọng",
+      "Kiểm tra sau liên từ là mệnh đề hay cụm danh từ",
+      "Chọn although + clause hoặc despite + noun/V-ing"
+    ],
+    "patterns": [
+      {
+        "pattern": "although/even though + S + V",
+        "use_vi": "Theo sau là mệnh đề đầy đủ.",
+        "example_en": "Although it was raining, we went out.",
+        "example_vi": "Dù trời mưa, chúng tôi vẫn ra ngoài."
+      },
+      {
+        "pattern": "despite/in spite of + noun/V-ing",
+        "use_vi": "Theo sau là danh từ hoặc V-ing.",
+        "example_en": "Despite the rain, we went out.",
+        "example_vi": "Mặc dù trời mưa, chúng tôi vẫn ra ngoài."
+      }
+    ],
+    "worked_examples": [
+      {
+        "situation_vi": "Bạn viết về việc tiếp tục học dù mệt.",
+        "answer_en": "Although I was tired, I finished the lesson.",
+        "translation_vi": "Dù mệt tôi vẫn hoàn thành bài.",
+        "reason_vi": "Although nối với mệnh đề I was tired."
+      },
+      {
+        "situation_vi": "Bạn nói cuộc họp diễn ra dù mất điện.",
+        "answer_en": "Despite the power cut, the meeting continued.",
+        "translation_vi": "Dù mất điện, cuộc họp vẫn tiếp tục.",
+        "reason_vi": "After despite là danh từ the power cut."
+      }
+    ],
+    "contrasts": [
+      {
+        "first_en": "Although he was ill, he came.",
+        "second_en": "Despite being ill, he came.",
+        "difference_vi": "Hai câu tương đương ở nghĩa chính nhưng cấu trúc theo sau khác."
+      }
+    ],
+    "common_mistakes": [
+      {
+        "wrong": "Despite he was tired, he continued.",
+        "correct": "Although he was tired, he continued.",
+        "why_vi": "Despite không theo sau trực tiếp bằng mệnh đề có chủ ngữ và động từ."
+      },
+      {
+        "wrong": "Although it rained, but we went.",
+        "correct": "Although it rained, we went.",
+        "why_vi": "Trong cùng mệnh đề nhượng bộ thường không kết hợp although với but."
+      }
+    ],
+    "paragraph_transfer": {
+      "context_vi": "Bạn nhận xét một buổi sự kiện tổ chức trong điều kiện khó.",
+      "task_en": "Write two sentences using although and despite to explain unexpected success.",
+      "model_paragraph_en": "Although the venue was small, everyone enjoyed the event. Despite the noise outside, the speakers were easy to hear.",
+      "coaching_vi": "Chọn dạng mệnh đề và dạng danh ngữ phù hợp."
+    },
+    "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED",
+    "question_import_policy": "SEPARATE_BANK_NO_OVERWRITE",
+    "title": "Concession",
+    "qa_teacher_review": "NOT_REVIEWED",
+    "draft_practice": [
+      {
+        "stage": "guided",
+        "prompt_en": "Complete: ___ the rain, we played outside.",
+        "draft_id": "M10-B1-31-DRAFT-01",
+        "assessment_mode": "SELF_REVIEW_REQUIRED"
+      },
+      {
+        "stage": "independent",
+        "prompt_en": "Rewrite with although: Despite the traffic, we arrived on time.",
+        "draft_id": "M10-B1-31-DRAFT-02",
+        "assessment_mode": "SELF_REVIEW_REQUIRED"
+      },
+      {
+        "stage": "mastery",
+        "prompt_en": "Write two contrasting facts about a difficult lesson using although and despite.",
+        "draft_id": "M10-B1-31-DRAFT-03",
+        "assessment_mode": "SELF_REVIEW_REQUIRED"
+      },
+      {
+        "stage": "spaced_review",
+        "prompt_en": "Correct: Despite she was late, she joined.",
+        "draft_id": "M10-B1-31-DRAFT-04",
+        "assessment_mode": "SELF_REVIEW_REQUIRED"
+      }
+    ]
+  },
+  "B1-32": {
+    "lesson_id": "B1-32",
+    "overview_vi": "Purpose, reason và result có quan hệ logic khác nhau: to/in order to (mục đích), because (lý do), so/therefore (kết quả).",
+    "decision_steps_vi": [
+      "Hỏi câu trả lời “để làm gì”, “vì sao” hay “nên điều gì”",
+      "Chọn liên từ phù hợp với quan hệ logic",
+      "Kiểm tra sau từ nối là V, cụm danh từ hay mệnh đề"
+    ],
+    "patterns": [
+      {
+        "pattern": "to/in order to + V",
+        "use_vi": "Mục đích dự kiến của hành động.",
+        "example_en": "I joined the club to improve my speaking.",
+        "example_vi": "Tôi tham gia câu lạc bộ để cải thiện nói."
+      },
+      {
+        "pattern": "because + clause / so + clause",
+        "use_vi": "Because nêu nguyên nhân, so nêu kết quả.",
+        "example_en": "The road was closed, so we took another route.",
+        "example_vi": "Đường bị đóng nên chúng tôi đi đường khác."
+      }
+    ],
+    "worked_examples": [
+      {
+        "situation_vi": "Nói bạn mua sổ để ghi bài.",
+        "answer_en": "I bought a notebook to record new words.",
+        "translation_vi": "Tôi mua sổ để ghi từ mới.",
+        "reason_vi": "To record diễn đạt mục đích."
+      },
+      {
+        "situation_vi": "Giải thích bạn lỡ tàu do dậy muộn.",
+        "answer_en": "I woke up late, so I missed the train.",
+        "translation_vi": "Tôi dậy muộn nên lỡ tàu.",
+        "reason_vi": "So nối nguyên nhân với kết quả."
+      }
+    ],
+    "contrasts": [
+      {
+        "first_en": "I left early because I felt ill.",
+        "second_en": "I felt ill, so I left early.",
+        "difference_vi": "Hai câu có cùng tình huống nhưng góc nhìn và chiều quan hệ đảo nhau."
+      }
+    ],
+    "common_mistakes": [
+      {
+        "wrong": "I joined the class for improve my English.",
+        "correct": "I joined the class to improve my English.",
+        "why_vi": "Purpose + V dùng to V; for có thể theo sau danh từ/V-ing theo mẫu khác."
+      },
+      {
+        "wrong": "Because the bus was late, so I missed class.",
+        "correct": "Because the bus was late, I missed class.",
+        "why_vi": "Không cần dùng because và so cùng nối hai vế trong mẫu cơ bản này."
+      }
+    ],
+    "paragraph_transfer": {
+      "context_vi": "Bạn kể lý do tham gia khóa học và kết quả của thói quen.",
+      "task_en": "Write three connected sentences using purpose, reason and result.",
+      "model_paragraph_en": "I joined an evening course to practise speaking. I chose it because the timetable was flexible, so I could attend after work.",
+      "coaching_vi": "Ba ý nối có quan hệ mục đích, nguyên nhân và kết quả."
+    },
+    "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED",
+    "question_import_policy": "SEPARATE_BANK_NO_OVERWRITE",
+    "title": "Purpose, Reason & Result",
+    "qa_teacher_review": "NOT_REVIEWED",
+    "draft_practice": [
+      {
+        "stage": "guided",
+        "prompt_en": "Complete: She went to the shop ___ buy bread.",
+        "draft_id": "M10-B1-32-DRAFT-01",
+        "assessment_mode": "SELF_REVIEW_REQUIRED"
+      },
+      {
+        "stage": "independent",
+        "prompt_en": "Join: I was tired. I went home early. Use so.",
+        "draft_id": "M10-B1-32-DRAFT-02",
+        "assessment_mode": "SELF_REVIEW_REQUIRED"
+      },
+      {
+        "stage": "mastery",
+        "prompt_en": "Write two sentences using because and to about learning English.",
+        "draft_id": "M10-B1-32-DRAFT-03",
+        "assessment_mode": "SELF_REVIEW_REQUIRED"
+      },
+      {
+        "stage": "spaced_review",
+        "prompt_en": "Correct: She studied hard for pass the exam.",
+        "draft_id": "M10-B1-32-DRAFT-04",
+        "assessment_mode": "SELF_REVIEW_REQUIRED"
+      }
+    ]
+  },
+  "B1-33": {
+    "lesson_id": "B1-33",
+    "overview_vi": "Correlative Structures như both...and, either...or, neither...nor và not only...but also nối các thành phần có vai trò ngữ pháp tương đồng.",
+    "decision_steps_vi": [
+      "Xác định cả hai, một trong hai hay không bên nào",
+      "Giữ cấu trúc cân xứng hai vế",
+      "Kiểm tra chia động từ theo chủ ngữ trong trường hợp cần thiết"
+    ],
+    "patterns": [
+      {
+        "pattern": "both A and B",
+        "use_vi": "Khẳng định cả hai.",
+        "example_en": "Both the tutor and the students were ready.",
+        "example_vi": "Cả giáo viên và học sinh đều sẵn sàng."
+      },
+      {
+        "pattern": "either A or B / neither A nor B",
+        "use_vi": "Chọn một hoặc phủ định cả hai.",
+        "example_en": "Neither the app nor the website was available.",
+        "example_vi": "Cả ứng dụng lẫn website đều không dùng được."
+      }
+    ],
+    "worked_examples": [
+      {
+        "situation_vi": "Bạn mô tả hai cách học cùng hiệu quả.",
+        "answer_en": "Both reading and listening help me learn.",
+        "translation_vi": "Cả đọc và nghe đều giúp tôi học.",
+        "reason_vi": "Hai danh động từ song song."
+      },
+      {
+        "situation_vi": "Bạn nêu không đội nào có ngân sách.",
+        "answer_en": "Neither the design team nor the support team has the budget.",
+        "translation_vi": "Cả đội thiết kế và hỗ trợ đều không có ngân sách.",
+        "reason_vi": "Neither...nor nối hai cụm; cách chia gần chủ ngữ gần nhất thường gặp."
+      }
+    ],
+    "contrasts": [
+      {
+        "first_en": "Both Anna and Ben joined.",
+        "second_en": "Either Anna or Ben joined.",
+        "difference_vi": "Both xác nhận hai người; either...or nói một trong hai (tùy ngữ cảnh không phủ định cả hai một cách tuyệt đối)."
+      }
+    ],
+    "common_mistakes": [
+      {
+        "wrong": "Both she or he will attend.",
+        "correct": "Either she or he will attend.",
+        "why_vi": "Both đi với and, either đi với or."
+      },
+      {
+        "wrong": "Neither he or his brother can drive.",
+        "correct": "Neither he nor his brother can drive.",
+        "why_vi": "Neither đi với nor."
+      }
+    ],
+    "paragraph_transfer": {
+      "context_vi": "Bạn so sánh lựa chọn học theo nhóm.",
+      "task_en": "Write two sentences using both...and and either...or.",
+      "model_paragraph_en": "Both online lessons and study groups can be useful. You can either join a class or practise with a friend.",
+      "coaching_vi": "Hai cặp nối đúng ý và cân xứng từ loại."
+    },
+    "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED",
+    "question_import_policy": "SEPARATE_BANK_NO_OVERWRITE",
+    "title": "Correlative Structures",
+    "qa_teacher_review": "NOT_REVIEWED",
+    "draft_practice": [
+      {
+        "stage": "guided",
+        "prompt_en": "Complete: ___ Mai and Hoa are attending.",
+        "draft_id": "M10-B1-33-DRAFT-01",
+        "assessment_mode": "SELF_REVIEW_REQUIRED"
+      },
+      {
+        "stage": "independent",
+        "prompt_en": "Complete: You can either email me ___ call me.",
+        "draft_id": "M10-B1-33-DRAFT-02",
+        "assessment_mode": "SELF_REVIEW_REQUIRED"
+      },
+      {
+        "stage": "mastery",
+        "prompt_en": "Write two preferences with neither...nor and not only...but also.",
+        "draft_id": "M10-B1-33-DRAFT-03",
+        "assessment_mode": "SELF_REVIEW_REQUIRED"
+      },
+      {
+        "stage": "spaced_review",
+        "prompt_en": "Correct: Neither the phone or the tablet works.",
+        "draft_id": "M10-B1-33-DRAFT-04",
+        "assessment_mode": "SELF_REVIEW_REQUIRED"
+      }
+    ]
+  },
+  "B1-34": {
+    "lesson_id": "B1-34",
+    "overview_vi": "Determiners thể hiện số lượng và phạm vi. Phải phân biệt danh từ đếm được/không đếm được cũng như nghĩa ít/nhiều/tất cả.",
+    "decision_steps_vi": [
+      "Xác định danh từ đếm được số nhiều hay không đếm được",
+      "Tìm ý nghĩa mức độ: ít, nhiều, đủ, toàn bộ",
+      "Chọn a few/a little/fewer/less/each/every theo dạng danh từ và ý định"
+    ],
+    "patterns": [
+      {
+        "pattern": "a few + plural count noun",
+        "use_vi": "Một vài, số lượng tuy ít nhưng có.",
+        "example_en": "A few students stayed after class.",
+        "example_vi": "Một vài học sinh ở lại sau giờ học."
+      },
+      {
+        "pattern": "a little + uncountable noun",
+        "use_vi": "Một ít lượng không đếm được.",
+        "example_en": "There is a little water left.",
+        "example_vi": "Vẫn còn một ít nước."
+      }
+    ],
+    "worked_examples": [
+      {
+        "situation_vi": "Nói có một vài ý kiến phản hồi.",
+        "answer_en": "We received a few useful comments.",
+        "translation_vi": "Chúng tôi nhận được vài nhận xét hữu ích.",
+        "reason_vi": "Comments là danh từ đếm được số nhiều."
+      },
+      {
+        "situation_vi": "Bạn giải thích cần thêm ít thời gian.",
+        "answer_en": "We need a little more time.",
+        "translation_vi": "Chúng tôi cần thêm một chút thời gian.",
+        "reason_vi": "Time trong nghĩa lượng thời gian không đếm được."
+      }
+    ],
+    "contrasts": [
+      {
+        "first_en": "We have few options.",
+        "second_en": "We have a few options.",
+        "difference_vi": "Few nhấn thiếu lựa chọn; a few nhấn còn vài lựa chọn."
+      }
+    ],
+    "common_mistakes": [
+      {
+        "wrong": "There are much people here.",
+        "correct": "There are many people here.",
+        "why_vi": "People đếm được số nhiều nên many."
+      },
+      {
+        "wrong": "We have less chairs now.",
+        "correct": "We have fewer chairs now.",
+        "why_vi": "Với chairs đếm được dùng fewer trong văn phong chuẩn."
+      }
+    ],
+    "paragraph_transfer": {
+      "context_vi": "Bạn viết cập nhật nguồn lực cho một dự án.",
+      "task_en": "Write two sentences using a few and a little to report remaining resources.",
+      "model_paragraph_en": "We have a few volunteers available and a little time before the event starts.",
+      "coaching_vi": "Phân biệt volunteers đếm được và time không đếm được."
+    },
+    "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED",
+    "question_import_policy": "SEPARATE_BANK_NO_OVERWRITE",
+    "title": "Determiners",
+    "qa_teacher_review": "NOT_REVIEWED",
+    "draft_practice": [
+      {
+        "stage": "guided",
+        "prompt_en": "Complete with the comparative determiner: We need ___ information than yesterday.",
+        "draft_id": "M10-B1-34-DRAFT-01",
+        "assessment_mode": "SELF_REVIEW_REQUIRED"
+      },
+      {
+        "stage": "independent",
+        "prompt_en": "Choose a few or a little: We have ___ chairs for the visitors.",
+        "draft_id": "M10-B1-34-DRAFT-02",
+        "assessment_mode": "SELF_REVIEW_REQUIRED"
+      },
+      {
+        "stage": "mastery",
+        "prompt_en": "Write two sentences about budget and staff using a little and a few.",
+        "draft_id": "M10-B1-34-DRAFT-03",
+        "assessment_mode": "SELF_REVIEW_REQUIRED"
+      },
+      {
+        "stage": "spaced_review",
+        "prompt_en": "Correct: Our café sells less sandwiches now.",
+        "draft_id": "M10-B1-34-DRAFT-04",
+        "assessment_mode": "SELF_REVIEW_REQUIRED"
+      }
+    ]
+  },
+  "B1-35": {
+    "lesson_id": "B1-35",
+    "overview_vi": "Noun clauses đóng vai trò danh từ trong câu; sau what, why, whether, how... cần trật tự mệnh đề trần thuật khi làm tân ngữ.",
+    "decision_steps_vi": [
+      "Xác định mệnh đề phụ đang làm chủ ngữ hay tân ngữ",
+      "Chọn từ nối đúng ý: what/why/how/whether/that",
+      "Giữ trật tự S + V bên trong noun clause"
+    ],
+    "patterns": [
+      {
+        "pattern": "know/understand + what/why/how + S + V",
+        "use_vi": "Mệnh đề danh từ làm tân ngữ.",
+        "example_en": "I understand why the price increased.",
+        "example_vi": "Tôi hiểu vì sao giá tăng."
+      },
+      {
+        "pattern": "not sure + whether/if + S + V",
+        "use_vi": "Mệnh đề chỉ điều chưa chắc chắn.",
+        "example_en": "We are not sure whether the event will happen.",
+        "example_vi": "Chúng tôi không chắc sự kiện có diễn ra không."
+      }
+    ],
+    "worked_examples": [
+      {
+        "situation_vi": "Bạn giải thích không biết lịch đổi vì sao.",
+        "answer_en": "I don't know why the schedule changed.",
+        "translation_vi": "Tôi không biết vì sao lịch thay đổi.",
+        "reason_vi": "Why dẫn mệnh đề danh từ, không đảo did."
+      },
+      {
+        "situation_vi": "Bạn nói đã hiểu điều khách cần.",
+        "answer_en": "I understand what the client needs.",
+        "translation_vi": "Tôi hiểu điều khách cần.",
+        "reason_vi": "What the client needs làm tân ngữ của understand."
+      }
+    ],
+    "contrasts": [
+      {
+        "first_en": "Why did the meeting end?",
+        "second_en": "I know why the meeting ended.",
+        "difference_vi": "Câu hỏi trực tiếp đảo trợ động từ; noun clause giữ trật tự kể."
+      }
+    ],
+    "common_mistakes": [
+      {
+        "wrong": "I know why did she leave.",
+        "correct": "I know why she left.",
+        "why_vi": "Không đảo did trong noun clause."
+      },
+      {
+        "wrong": "We don't know whether will the train arrive.",
+        "correct": "We don't know whether the train will arrive.",
+        "why_vi": "Đặt chủ ngữ the train trước will."
+      }
+    ],
+    "paragraph_transfer": {
+      "context_vi": "Bạn viết báo cáo về hai điều chưa rõ.",
+      "task_en": "Write two sentences saying what you know and what remains uncertain about a project.",
+      "model_paragraph_en": "We understand why the deadline changed. We still don't know whether the supplier can deliver on time.",
+      "coaching_vi": "Noun clauses sau understand và know làm tân ngữ."
+    },
+    "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED",
+    "question_import_policy": "SEPARATE_BANK_NO_OVERWRITE",
+    "title": "Noun Clauses – Introduction",
+    "qa_teacher_review": "NOT_REVIEWED",
+    "draft_practice": [
+      {
+        "stage": "guided",
+        "prompt_en": "Complete: I know ___ the project failed. (reason)",
+        "draft_id": "M10-B1-35-DRAFT-01",
+        "assessment_mode": "SELF_REVIEW_REQUIRED"
+      },
+      {
+        "stage": "independent",
+        "prompt_en": "Correct: I wonder how does this device work.",
+        "draft_id": "M10-B1-35-DRAFT-02",
+        "assessment_mode": "SELF_REVIEW_REQUIRED"
+      },
+      {
+        "stage": "mastery",
+        "prompt_en": "Write two sentences about an event using why and whether clauses.",
+        "draft_id": "M10-B1-35-DRAFT-03",
+        "assessment_mode": "SELF_REVIEW_REQUIRED"
+      },
+      {
+        "stage": "spaced_review",
+        "prompt_en": "Correct: She explained why was the test delayed.",
+        "draft_id": "M10-B1-35-DRAFT-04",
+        "assessment_mode": "SELF_REVIEW_REQUIRED"
+      }
+    ]
+  }
+}

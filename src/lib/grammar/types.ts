@@ -26,6 +26,40 @@ export type GrammarGuide = {
   }[];
   mistakes: GrammarMistake[];
   caveats: string[];
+  /** Deeper teaching (M08–M13): patterns, worked examples, contrasts, self-correction. Editorial draft. */
+  deep?: GrammarGuide["sections"];
+  /** Step-by-step lesson with short checks (M19). Answers are checked by /api/grammar/guided-check. */
+  guided?: M19GuidedFlow;
+};
+
+export type M19GuidedStep = {
+  id: string;
+  kind: "scenario" | "check" | "explain" | "rule" | "demo" | "contrast" | "mistake" | "transfer" | "recap";
+  title: string;
+  bodyVi: string;
+  footnoteVi?: string;
+  formula?: string;
+  exampleEn?: string;
+  exampleVi?: string;
+  explanationVi?: string;
+  promptVi?: string;
+  checkId?: string;
+  options?: string[];
+  wrongEn?: string;
+  correctEn?: string;
+  modelEn?: string;
+  rubricVi?: string;
+  decisionSteps?: string[];
+  compareFirstEn?: string;
+  compareSecondEn?: string;
+  comparisonVi?: string;
+};
+export type M19GuidedFlow = {
+  code: string;
+  title: string;
+  version: "m19-a1-v1" | "m19b-a2-v1" | "m19c-b1-v1" | "m19d-b2-v1" | "m19e-c1-v1" | "m19f-c2-v1";
+  reviewStatus: "DRAFT_TEACHER_REVIEW_REQUIRED";
+  steps: M19GuidedStep[];
 };
 
 export type GrammarPracticeItem = {

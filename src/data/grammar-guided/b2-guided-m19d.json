@@ -1,0 +1,2277 @@
+{
+  "B2-01": {
+    "code": "B2-01",
+    "title": "Third Conditional",
+    "context_vi": "Bạn phân tích một dự án thất bại do bỏ qua bước thử nghiệm.",
+    "goal_vi": "Dùng Third Conditional để giữ đúng quan hệ thời gian, vai trò, mức độ chắc chắn và văn phong trong bài viết B2.",
+    "contrast_cue_vi": "Câu đầu tiếc một lần đã qua; câu sau giả định lịch mở cửa ở hiện tại hoặc tương lai.",
+    "checkpoints": [
+      {
+        "id": "B2-01-M19D-C1",
+        "prompt_vi": "Dự án đã ra mắt hôm qua nhưng trang thanh toán lỗi vì không được thử trước. Chọn câu nhìn lại đúng mốc thời gian.",
+        "options_en": [
+          "If we had tested the page, we might have found the defect.",
+          "If we would have tested the page, we might find the defect.",
+          "If we test the page, we might have found the defect."
+        ],
+        "correct_index": 0,
+        "option_feedback_vi": [
+          "Had tested nói về điều không xảy ra; might have found không khẳng định chắc chắn sẽ phát hiện lỗi.",
+          "Would have không dùng trong mệnh đề if thông thường; might find chuyển kết quả sang tương lai/hiện tại.",
+          "If + present mô tả khả năng còn mở, không đồng nhất với việc đã qua."
+        ],
+        "focus": "diagnose"
+      },
+      {
+        "id": "B2-01-M19D-C2",
+        "prompt_vi": "Người quản lý muốn tránh khẳng định chắc chắn rằng kiểm thử sẽ cứu được dự án. Chọn cách nói thận trọng.",
+        "options_en": [
+          "If we tested earlier, we might have spotted the issue yesterday.",
+          "Had we tested earlier, we might have spotted the issue.",
+          "Had we tested earlier, we definitely would have prevented every issue."
+        ],
+        "correct_index": 1,
+        "option_feedback_vi": [
+          "If + past simple không diễn đạt rõ điều kiện phản thực quá khứ trong bối cảnh này.",
+          "Might have phản ánh một kết quả quá khứ chỉ mang tính khả năng; had we là đảo điều kiện.",
+          "Definitely và every vượt quá bằng chứng; đổi luôn nội dung dự đoán."
+        ],
+        "focus": "context_decision"
+      },
+      {
+        "id": "B2-01-M19D-C3",
+        "prompt_vi": "Báo cáo ghi: nhóm thực tế KHÔNG kiểm thử. Câu nào không biến giả định thành sự kiện thật?",
+        "options_en": [
+          "We tested the system and found the bug.",
+          "If we will test the system, we might have found the bug.",
+          "We did not test the system; if we had, we might have found the bug."
+        ],
+        "correct_index": 2,
+        "option_feedback_vi": [
+          "Biến việc đã không xảy ra thành một sự kiện có thật.",
+          "Will không kết hợp như vậy với kết quả giả định của quá khứ.",
+          "Giữ sự kiện không kiểm thử và chỉ nêu kết quả có thể đã xảy ra."
+        ],
+        "focus": "revision"
+      }
+    ],
+    "transfer": {
+      "prompt_vi": "Tự viết đoạn 3–5 câu theo tình huống sau, giải thích lựa chọn cấu trúc và giới hạn của bằng chứng: Bạn phân tích một dự án thất bại do bỏ qua bước thử nghiệm.",
+      "sample_en": "The launch failed because the team skipped user testing. If we had tested the payment page earlier, we might have found the defect before release. The team will now introduce a mandatory testing checkpoint.",
+      "rubric_vi": "Đúng cấu trúc và mốc thời gian; không đổi tác nhân/sự thật; mức độ chắc chắn tương xứng chứng cứ; liên kết các câu tự nhiên. Điều kiện phản thực liên hệ trực tiếp nguyên nhân; might have diễn đạt khả năng, không khẳng định kết quả chắc chắn."
+    },
+    "review_status": "DRAFT_TEACHER_REVIEW_REQUIRED",
+    "assessment_mode": "FORMATIVE_ONLY",
+    "teacher_notes_vi": "Kiểm tra tính đa nghĩa của cấu trúc đối chiếu; phương án khác ngữ cảnh có thể đúng ngữ pháp nhưng không phải lựa chọn giữ đúng mục tiêu."
+  },
+  "B2-02": {
+    "code": "B2-02",
+    "title": "Mixed Conditionals",
+    "context_vi": "Bạn giải thích vì sao hiện nay nhóm thiếu chuyên gia.",
+    "goal_vi": "Dùng Mixed Conditionals để giữ đúng quan hệ thời gian, vai trò, mức độ chắc chắn và văn phong trong bài viết B2.",
+    "contrast_cue_vi": "Câu đầu có điều kiện quá khứ → hiện tại; câu sau có đặc điểm hiện tại → quyết định quá khứ.",
+    "checkpoints": [
+      {
+        "id": "B2-02-M19D-C1",
+        "prompt_vi": "Nhóm không tuyển chuyên gia năm ngoái, nên hiện tại vẫn thiếu người. Câu nào thể hiện đúng hai mốc?",
+        "options_en": [
+          "If we had hired an expert last year, we would have more capacity now.",
+          "If we hired an expert last year, we would have had more capacity now.",
+          "If we had hired an expert last year, we will have more capacity now."
+        ],
+        "correct_index": 0,
+        "option_feedback_vi": [
+          "Điều kiện trái thực tế trong quá khứ nối với kết quả hiện tại.",
+          "Hired không phù hợp với điều kiện đã khép lại; would have had nói về kết quả quá khứ.",
+          "Will khiến hệ quả trở thành dự báo chắc chắn thay vì giả định hiện tại."
+        ],
+        "focus": "diagnose"
+      },
+      {
+        "id": "B2-02-M19D-C2",
+        "prompt_vi": "Một người nói họ thiếu kỹ năng quản lý hiện nay nên đã xử lý sai cuộc họp tuần trước. Chọn dạng phù hợp.",
+        "options_en": [
+          "If she is more organised, she would have handled the meeting better.",
+          "If she were more organised, she would have handled the meeting better.",
+          "If she had been more organised, she would handle the meeting better yesterday."
+        ],
+        "correct_index": 1,
+        "option_feedback_vi": [
+          "If hiện tại không thường kết hợp với would have cho kiểu giả định này.",
+          "Phẩm chất được giả định ở hiện tại giải thích kết quả quá khứ; dùng were + would have V3.",
+          "Kết quả gắn yesterday phải là quá khứ, không dùng would handle."
+        ],
+        "focus": "context_decision"
+      },
+      {
+        "id": "B2-02-M19D-C3",
+        "prompt_vi": "Hãy giữ đúng ý: quyết định sai trong quá khứ còn tác động đến hiện tại.",
+        "options_en": [
+          "If I saved the file, I would not have been worried now.",
+          "If I have saved the file, I will not be worried yesterday.",
+          "If I had saved the file, I would not be worried now."
+        ],
+        "correct_index": 2,
+        "option_feedback_vi": [
+          "Dời lo lắng về quá khứ, trái với mốc now.",
+          "Đảo mốc thời gian và dùng thì không tương thích.",
+          "Had saved là sự kiện phản thực trước đây; would not be là tâm trạng hiện tại."
+        ],
+        "focus": "revision"
+      }
+    ],
+    "transfer": {
+      "prompt_vi": "Tự viết đoạn 3–5 câu theo tình huống sau, giải thích lựa chọn cấu trúc và giới hạn của bằng chứng: Bạn giải thích vì sao hiện nay nhóm thiếu chuyên gia.",
+      "sample_en": "The team did not hire a data specialist last year. If it had recruited one, it would now have more capacity to analyse customer feedback. A revised staffing plan could prevent the same bottleneck next year.",
+      "rubric_vi": "Đúng cấu trúc và mốc thời gian; không đổi tác nhân/sự thật; mức độ chắc chắn tương xứng chứng cứ; liên kết các câu tự nhiên. Would now have diễn đạt trạng thái hiện tại, dù điều kiện thuộc năm trước."
+    },
+    "review_status": "DRAFT_TEACHER_REVIEW_REQUIRED",
+    "assessment_mode": "FORMATIVE_ONLY",
+    "teacher_notes_vi": "Kiểm tra tính đa nghĩa của cấu trúc đối chiếu; phương án khác ngữ cảnh có thể đúng ngữ pháp nhưng không phải lựa chọn giữ đúng mục tiêu."
+  },
+  "B2-03": {
+    "code": "B2-03",
+    "title": "Wish & If Only – Past Regrets",
+    "context_vi": "Bạn viết một đoạn phản tỉnh sau khi bỏ lỡ chuyến tàu.",
+    "goal_vi": "Dùng Wish & If Only – Past Regrets để giữ đúng quan hệ thời gian, vai trò, mức độ chắc chắn và văn phong trong bài viết B2.",
+    "contrast_cue_vi": "Câu đầu tiếc vì đã không lưu; câu sau ước về kiến thức hiện tại.",
+    "checkpoints": [
+      {
+        "id": "B2-03-M19D-C1",
+        "prompt_vi": "Cuộc họp đã kết thúc và bạn tiếc vì không hỏi ý kiến đồng nghiệp. Chọn câu đúng.",
+        "options_en": [
+          "I wish I had asked for feedback before the meeting ended.",
+          "I wish I have asked for feedback before the meeting ended.",
+          "I wish I would ask for feedback before the meeting ended."
+        ],
+        "correct_index": 0,
+        "option_feedback_vi": [
+          "Wish + past perfect diễn đạt hối tiếc về một điều đã qua.",
+          "Present perfect không dùng trực tiếp theo wish để tiếc quá khứ.",
+          "Would ask nhấn ý định/hành vi mong thay đổi, không phải tiếc một sự kiện đã kết thúc."
+        ],
+        "focus": "diagnose"
+      },
+      {
+        "id": "B2-03-M19D-C2",
+        "prompt_vi": "Bạn muốn nói rằng hiện nay mình không có đủ thời gian, không phải tiếc một việc quá khứ.",
+        "options_en": [
+          "I wish I have more time to prepare.",
+          "I wish I had more time to prepare.",
+          "I wish I had had more time last year to prepare."
+        ],
+        "correct_index": 1,
+        "option_feedback_vi": [
+          "Have sau wish không tạo khoảng cách giả định chuẩn ở đây.",
+          "Wish + past simple biểu thị tình huống trái mong muốn ở hiện tại.",
+          "Wish + past perfect chuyển sang lời tiếc về quá khứ."
+        ],
+        "focus": "context_decision"
+      },
+      {
+        "id": "B2-03-M19D-C3",
+        "prompt_vi": "Người viết đã bỏ lỡ chuyến tàu hôm qua. Câu nào giữ đúng sự thật và mức độ tiếc nuối?",
+        "options_en": [
+          "If only I checked the timetable tomorrow.",
+          "If only I have checked the timetable yesterday.",
+          "If only I had checked the timetable before leaving."
+        ],
+        "correct_index": 2,
+        "option_feedback_vi": [
+          "Tomorrow không phù hợp với điều đáng tiếc đã qua.",
+          "Have checked không dùng sau if only để hối tiếc về yesterday.",
+          "If only + had V3 thể hiện điều đáng tiếc đã không làm."
+        ],
+        "focus": "revision"
+      }
+    ],
+    "transfer": {
+      "prompt_vi": "Tự viết đoạn 3–5 câu theo tình huống sau, giải thích lựa chọn cấu trúc và giới hạn của bằng chứng: Bạn viết một đoạn phản tỉnh sau khi bỏ lỡ chuyến tàu.",
+      "sample_en": "I missed the train because I left home too late. I wish I had checked the departure time the night before. Next time, I will leave a larger time buffer rather than relying on the last bus.",
+      "rubric_vi": "Đúng cấu trúc và mốc thời gian; không đổi tác nhân/sự thật; mức độ chắc chắn tương xứng chứng cứ; liên kết các câu tự nhiên. Wish + had checked phản ánh điều không thực hiện; câu cuối đưa kế hoạch thực tế."
+    },
+    "review_status": "DRAFT_TEACHER_REVIEW_REQUIRED",
+    "assessment_mode": "FORMATIVE_ONLY",
+    "teacher_notes_vi": "Kiểm tra tính đa nghĩa của cấu trúc đối chiếu; phương án khác ngữ cảnh có thể đúng ngữ pháp nhưng không phải lựa chọn giữ đúng mục tiêu."
+  },
+  "B2-04": {
+    "code": "B2-04",
+    "title": "Modal Perfects – Regret",
+    "context_vi": "Bạn đánh giá cách tổ chức một hội thảo quá đông người.",
+    "goal_vi": "Dùng Modal Perfects – Regret để giữ đúng quan hệ thời gian, vai trò, mức độ chắc chắn và văn phong trong bài viết B2.",
+    "contrast_cue_vi": "Should have phê bình việc đã không kiểm tra; could have chỉ khả năng đã có.",
+    "checkpoints": [
+      {
+        "id": "B2-04-M19D-C1",
+        "prompt_vi": "Bạn đang đánh giá lỗi tổ chức hội thảo tháng trước: nhóm đáng lẽ nên giới hạn số khách.",
+        "options_en": [
+          "We should have limited the number of guests.",
+          "We must have limited the number of guests.",
+          "We should limit the number of guests yesterday."
+        ],
+        "correct_index": 0,
+        "option_feedback_vi": [
+          "Should have + V3 phê bình việc lẽ ra nên làm trong quá khứ.",
+          "Must have là suy luận rằng việc đó có lẽ đã xảy ra, không phải lời trách.",
+          "Should + bare verb là lời khuyên cho hiện tại/tương lai, không gắn trực tiếp yesterday."
+        ],
+        "focus": "diagnose"
+      },
+      {
+        "id": "B2-04-M19D-C2",
+        "prompt_vi": "Nhân viên đã công bố dữ liệu mật. Bạn muốn nhận xét đó là quyết định KHÔNG nên xảy ra.",
+        "options_en": [
+          "They should not share the confidential figures last Monday.",
+          "They should not have shared the confidential figures.",
+          "They cannot have shared the confidential figures."
+        ],
+        "correct_index": 1,
+        "option_feedback_vi": [
+          "Should not share không đúng mốc thời gian quá khứ đã hoàn tất.",
+          "Should not have + V3 nêu đánh giá ngược về hành động đã xảy ra.",
+          "Cannot have suy luận việc không thể đã xảy ra, trái với sự thật được nêu."
+        ],
+        "focus": "context_decision"
+      },
+      {
+        "id": "B2-04-M19D-C3",
+        "prompt_vi": "Chọn phát biểu KHÔNG nhầm lời phê bình với suy đoán.",
+        "options_en": [
+          "We must have checked the venue capacity because the hall was overcrowded.",
+          "We ought have checked the venue capacity before sending invitations.",
+          "We ought to have checked the venue capacity before sending invitations."
+        ],
+        "correct_index": 2,
+        "option_feedback_vi": [
+          "Must have nêu suy đoán và còn mâu thuẫn bằng chứng hall overcrowded.",
+          "Thiếu to trong ought to have.",
+          "Ought to have + V3 cho việc lẽ ra nên thực hiện trước đó."
+        ],
+        "focus": "revision"
+      }
+    ],
+    "transfer": {
+      "prompt_vi": "Tự viết đoạn 3–5 câu theo tình huống sau, giải thích lựa chọn cấu trúc và giới hạn của bằng chứng: Bạn đánh giá cách tổ chức một hội thảo quá đông người.",
+      "sample_en": "The registration queue became unmanageable because staffing was too low. We should have opened a second check-in desk, although the team responded quickly once the problem became clear. The next event will have a backup staffing plan.",
+      "rubric_vi": "Đúng cấu trúc và mốc thời gian; không đổi tác nhân/sự thật; mức độ chắc chắn tương xứng chứng cứ; liên kết các câu tự nhiên. Nhận xét nên làm có chứng cứ; không coi should have là bằng chứng duy nhất rằng hành động đã không xảy ra."
+    },
+    "review_status": "DRAFT_TEACHER_REVIEW_REQUIRED",
+    "assessment_mode": "FORMATIVE_ONLY",
+    "teacher_notes_vi": "Kiểm tra tính đa nghĩa của cấu trúc đối chiếu; phương án khác ngữ cảnh có thể đúng ngữ pháp nhưng không phải lựa chọn giữ đúng mục tiêu."
+  },
+  "B2-05": {
+    "code": "B2-05",
+    "title": "Modal Perfects – Deduction",
+    "context_vi": "Bạn điều tra nguyên nhân báo cáo biến mất.",
+    "goal_vi": "Dùng Modal Perfects – Deduction để giữ đúng quan hệ thời gian, vai trò, mức độ chắc chắn và văn phong trong bài viết B2.",
+    "contrast_cue_vi": "Must have biểu thị suy luận mạnh hơn might have; đèn bật chưa chắc luôn đủ để kết luận.",
+    "checkpoints": [
+      {
+        "id": "B2-05-M19D-C1",
+        "prompt_vi": "Có chữ ký điện tử cùng dấu thời gian trên biên bản; cần suy luận mạnh về hành động đã qua.",
+        "options_en": [
+          "The supervisor must have approved the report.",
+          "The supervisor must approve the report yesterday.",
+          "The supervisor should have approved the report."
+        ],
+        "correct_index": 0,
+        "option_feedback_vi": [
+          "Must have V3 diễn đạt suy luận mạnh dựa trên bằng chứng quá khứ.",
+          "Must approve là nghĩa vụ hiện tại, không phải suy luận quá khứ.",
+          "Should have diễn đạt điều lẽ ra nên làm, không xác nhận dựa trên dấu vết."
+        ],
+        "focus": "diagnose"
+      },
+      {
+        "id": "B2-05-M19D-C2",
+        "prompt_vi": "Thẻ ra vào đã bị vô hiệu suốt ngày. Chọn suy luận phù hợp về việc vào phòng khóa.",
+        "options_en": [
+          "The technician cannot enter the locked room yesterday.",
+          "The technician cannot have entered the locked room using that card.",
+          "The technician must have entered the locked room using that card."
+        ],
+        "correct_index": 1,
+        "option_feedback_vi": [
+          "Cannot enter diễn đạt hiện tại; yesterday yêu cầu suy luận quá khứ.",
+          "Cannot have V3 phủ định khả năng một sự kiện quá khứ theo chứng cứ được cung cấp.",
+          "Must have khẳng định ngược với bằng chứng thẻ bị vô hiệu."
+        ],
+        "focus": "context_decision"
+      },
+      {
+        "id": "B2-05-M19D-C3",
+        "prompt_vi": "Dấu vết chỉ cho biết tập tin đã bị đổi, KHÔNG biết ai đổi. Chọn câu không quy lỗi sai.",
+        "options_en": [
+          "The new intern must have changed the file.",
+          "Someone must change the file last night.",
+          "Someone must have changed the file, but we do not know who."
+        ],
+        "correct_index": 2,
+        "option_feedback_vi": [
+          "Không có chứng cứ quy trách nhiệm cho thực tập sinh.",
+          "Must change mang nghĩa nghĩa vụ và sai với mốc last night.",
+          "Tách bằng chứng tập tin bị sửa khỏi danh tính người thực hiện chưa biết."
+        ],
+        "focus": "revision"
+      }
+    ],
+    "transfer": {
+      "prompt_vi": "Tự viết đoạn 3–5 câu theo tình huống sau, giải thích lựa chọn cấu trúc và giới hạn của bằng chứng: Bạn điều tra nguyên nhân báo cáo biến mất.",
+      "sample_en": "The access log shows that no employee entered the archive after midnight. The assistant can't have removed the files at two in the morning using her own card. However, the log alone does not rule out remote access, so the investigation remains open.",
+      "rubric_vi": "Đúng cấu trúc và mốc thời gian; không đổi tác nhân/sự thật; mức độ chắc chắn tương xứng chứng cứ; liên kết các câu tự nhiên. Suy luận phủ định chỉ mạnh trong phạm vi bằng chứng; câu sau tránh kết luận quá mức."
+    },
+    "review_status": "DRAFT_TEACHER_REVIEW_REQUIRED",
+    "assessment_mode": "FORMATIVE_ONLY",
+    "teacher_notes_vi": "Kiểm tra tính đa nghĩa của cấu trúc đối chiếu; phương án khác ngữ cảnh có thể đúng ngữ pháp nhưng không phải lựa chọn giữ đúng mục tiêu."
+  },
+  "B2-06": {
+    "code": "B2-06",
+    "title": "Modal Perfects – Possibility",
+    "context_vi": "Bạn viết email tìm nguyên nhân dữ liệu không xuất hiện.",
+    "goal_vi": "Dùng Modal Perfects – Possibility để giữ đúng quan hệ thời gian, vai trò, mức độ chắc chắn và văn phong trong bài viết B2.",
+    "contrast_cue_vi": "May have giữ giả thuyết mở; must have diễn đạt kết luận mạnh dựa bằng chứng.",
+    "checkpoints": [
+      {
+        "id": "B2-06-M19D-C1",
+        "prompt_vi": "Không ai chứng kiến; dữ liệu có thể đã được gửi trước buổi họp. Chọn suy đoán phù hợp.",
+        "options_en": [
+          "The analyst might have sent the data before the meeting.",
+          "The analyst must have sent the data before the meeting.",
+          "The analyst might send the data yesterday."
+        ],
+        "correct_index": 0,
+        "option_feedback_vi": [
+          "Might have V3 nêu một khả năng quá khứ chưa xác nhận.",
+          "Must have thể hiện suy luận rất mạnh, vượt bằng chứng “không ai thấy”.",
+          "Might send diễn đạt khả năng tương lai, không đi trực tiếp với yesterday."
+        ],
+        "focus": "diagnose"
+      },
+      {
+        "id": "B2-06-M19D-C2",
+        "prompt_vi": "Có ba nguyên nhân có thể gây mất kết nối; chưa xác định được. Chọn câu tránh khẳng định.",
+        "options_en": [
+          "A power cut could interrupted the connection.",
+          "A power cut could have interrupted the connection.",
+          "A power cut certainly interrupted the connection."
+        ],
+        "correct_index": 1,
+        "option_feedback_vi": [
+          "Sau modal perfect phải dùng have + V3.",
+          "Could have V3 đưa ra một giả thuyết về quá khứ.",
+          "Certainly biến giả thuyết thành kết luận thiếu căn cứ."
+        ],
+        "focus": "context_decision"
+      },
+      {
+        "id": "B2-06-M19D-C3",
+        "prompt_vi": "Bạn sửa báo cáo: “The server failed because of maintenance.” Nhưng chưa xác minh nguyên nhân. Chọn cách chỉnh chính xác.",
+        "options_en": [
+          "Maintenance definitely caused the server failure.",
+          "Maintenance may caused the server failure.",
+          "Maintenance may have contributed to the server failure."
+        ],
+        "correct_index": 2,
+        "option_feedback_vi": [
+          "Definitely caused nói mạnh hơn bằng chứng.",
+          "Sau may cần have + V3 để chỉ khả năng đã xảy ra.",
+          "May have V3 giữ mức độ chưa chắc chắn và tránh gán quan hệ nhân quả tuyệt đối."
+        ],
+        "focus": "revision"
+      }
+    ],
+    "transfer": {
+      "prompt_vi": "Tự viết đoạn 3–5 câu theo tình huống sau, giải thích lựa chọn cấu trúc và giới hạn của bằng chứng: Bạn viết email tìm nguyên nhân dữ liệu không xuất hiện.",
+      "sample_en": "The file may have failed to upload because the connection dropped. Alternatively, the user could have selected the wrong folder. We should examine the transfer log before identifying either explanation as the cause.",
+      "rubric_vi": "Đúng cấu trúc và mốc thời gian; không đổi tác nhân/sự thật; mức độ chắc chắn tương xứng chứng cứ; liên kết các câu tự nhiên. Hai khả năng cùng mở; có kế hoạch kiểm tra thay vì suy diễn."
+    },
+    "review_status": "DRAFT_TEACHER_REVIEW_REQUIRED",
+    "assessment_mode": "FORMATIVE_ONLY",
+    "teacher_notes_vi": "Kiểm tra tính đa nghĩa của cấu trúc đối chiếu; phương án khác ngữ cảnh có thể đúng ngữ pháp nhưng không phải lựa chọn giữ đúng mục tiêu."
+  },
+  "B2-07": {
+    "code": "B2-07",
+    "title": "Future Perfect Continuous",
+    "context_vi": "Bạn mô tả tiến độ dự án nghiên cứu dài hạn.",
+    "goal_vi": "Dùng Future Perfect Continuous để giữ đúng quan hệ thời gian, vai trò, mức độ chắc chắn và văn phong trong bài viết B2.",
+    "contrast_cue_vi": "Câu đầu đo thời lượng hành động; câu sau đo số lượng khóa hoàn thành.",
+    "checkpoints": [
+      {
+        "id": "B2-07-M19D-C1",
+        "prompt_vi": "Đến cuối tháng tới, nhóm nghiên cứu sẽ có đúng 18 tháng làm việc liên tục. Chọn thì nhấn thời lượng.",
+        "options_en": [
+          "By the end of next month, the team will have been working for 18 months.",
+          "By the end of next month, the team will be working for 18 months.",
+          "By the end of next month, the team will has been working for 18 months."
+        ],
+        "correct_index": 0,
+        "option_feedback_vi": [
+          "Will have been V-ing kết nối thời lượng với mốc tương lai.",
+          "Will be V-ing nhấn hoạt động tại thời điểm tương lai nhưng không biểu đạt rõ thời lượng tích lũy.",
+          "Sau will dùng have, không dùng has."
+        ],
+        "focus": "diagnose"
+      },
+      {
+        "id": "B2-07-M19D-C2",
+        "prompt_vi": "Bạn chỉ muốn nói dự án sẽ hoàn tất trước thứ Sáu; KHÔNG nhấn thời lượng.",
+        "options_en": [
+          "The team will completed the project by Friday.",
+          "The team will have completed the project by Friday.",
+          "The team will have been completing the project by Friday."
+        ],
+        "correct_index": 1,
+        "option_feedback_vi": [
+          "Sau will cần nguyên mẫu have cho perfect.",
+          "Future perfect đơn nhấn kết quả hoàn tất vào hạn chót.",
+          "Continuous không thay thế tự nhiên cho kết quả hoàn tất có điểm kết thúc rõ."
+        ],
+        "focus": "context_decision"
+      },
+      {
+        "id": "B2-07-M19D-C3",
+        "prompt_vi": "Viết báo cáo tiến độ, tránh nhầm thời điểm tương lai với thời lượng.",
+        "options_en": [
+          "In June, I will have managed this project since five years.",
+          "By June, I will have been manage this project for five years.",
+          "By June, I will have been managing this project for five years."
+        ],
+        "correct_index": 2,
+        "option_feedback_vi": [
+          "Since không đi với cụm thời lượng five years như cách này.",
+          "Sau been phải dùng V-ing.",
+          "By June định mốc; for five years đo khoảng thời gian tích lũy."
+        ],
+        "focus": "revision"
+      }
+    ],
+    "transfer": {
+      "prompt_vi": "Tự viết đoạn 3–5 câu theo tình huống sau, giải thích lựa chọn cấu trúc và giới hạn của bằng chứng: Bạn mô tả tiến độ dự án nghiên cứu dài hạn.",
+      "sample_en": "By next September, the team will have been collecting rainfall data for three years. Although the analysis is still ongoing, the extended record should help us distinguish seasonal variation from long-term trends.",
+      "rubric_vi": "Đúng cấu trúc và mốc thời gian; không đổi tác nhân/sự thật; mức độ chắc chắn tương xứng chứng cứ; liên kết các câu tự nhiên. Will have been collecting nhấn thời lượng; analysis ongoing nói dự án chưa kết thúc."
+    },
+    "review_status": "DRAFT_TEACHER_REVIEW_REQUIRED",
+    "assessment_mode": "FORMATIVE_ONLY",
+    "teacher_notes_vi": "Kiểm tra tính đa nghĩa của cấu trúc đối chiếu; phương án khác ngữ cảnh có thể đúng ngữ pháp nhưng không phải lựa chọn giữ đúng mục tiêu."
+  },
+  "B2-08": {
+    "code": "B2-08",
+    "title": "Advanced Perfect Aspect",
+    "context_vi": "Bạn tường thuật công tác chuẩn bị một đợt khảo sát.",
+    "goal_vi": "Dùng Advanced Perfect Aspect để giữ đúng quan hệ thời gian, vai trò, mức độ chắc chắn và văn phong trong bài viết B2.",
+    "contrast_cue_vi": "Past perfect cho biết phiên họp đã bắt đầu trước khi thẩm phán tới; past simple thường kể sự kiện sau hoặc cùng mốc.",
+    "checkpoints": [
+      {
+        "id": "B2-08-M19D-C1",
+        "prompt_vi": "Một lần kiểm tra bắt đầu lúc 10 giờ hôm qua; máy đã được sửa xong lúc 9 giờ. Chọn góc nhìn quá khứ.",
+        "options_en": [
+          "When the inspection began, the machine had already been repaired.",
+          "When the inspection began, the machine has already been repaired.",
+          "When the inspection began, the machine will already have been repaired."
+        ],
+        "correct_index": 0,
+        "option_feedback_vi": [
+          "Past perfect passive cho việc hoàn tất trước một mốc quá khứ khác.",
+          "Present perfect không neo vào thời điểm past began.",
+          "Future perfect chuyển điểm nhìn sang tương lai."
+        ],
+        "focus": "diagnose"
+      },
+      {
+        "id": "B2-08-M19D-C2",
+        "prompt_vi": "Người viết muốn nhấn một quá trình kéo dài từ thứ Hai tới hiện tại.",
+        "options_en": [
+          "The team has reviewed the figures before Monday and is still reviewing.",
+          "The team has been reviewing the figures since Monday.",
+          "The team had reviewed the figures since Monday, and they still are reviewing now."
+        ],
+        "correct_index": 1,
+        "option_feedback_vi": [
+          "Before Monday đổi thời gian bắt đầu, không giữ dữ kiện gốc.",
+          "Has been V-ing nhấn quá trình còn tiếp diễn từ mốc quá khứ.",
+          "Had reviewed chuyển điểm nhìn về quá khứ và không phù hợp logic với still now."
+        ],
+        "focus": "context_decision"
+      },
+      {
+        "id": "B2-08-M19D-C3",
+        "prompt_vi": "Sự kiện 1 đã xong trước khi sự kiện 2 xảy ra hôm qua. Chọn cách kể rõ thứ tự.",
+        "options_en": [
+          "The technician has checked the wiring before the system restarted yesterday.",
+          "The technician will have checked the wiring before the system restarted yesterday.",
+          "The technician had checked the wiring before the system restarted."
+        ],
+        "correct_index": 2,
+        "option_feedback_vi": [
+          "Has checked đặt kết quả hiện tại trong khi kể chuỗi quá khứ đã khép lại.",
+          "Will have checked không phù hợp với chuỗi hoàn tất yesterday.",
+          "Had checked nhấn việc xong trước sự kiện restarted quá khứ."
+        ],
+        "focus": "revision"
+      }
+    ],
+    "transfer": {
+      "prompt_vi": "Tự viết đoạn 3–5 câu theo tình huống sau, giải thích lựa chọn cấu trúc và giới hạn của bằng chứng: Bạn tường thuật công tác chuẩn bị một đợt khảo sát.",
+      "sample_en": "Before the survey began, the researchers had tested the questionnaire with volunteers. They have since been collecting responses across several regions. By August, they will have completed the initial analysis.",
+      "rubric_vi": "Đúng cấu trúc và mốc thời gian; không đổi tác nhân/sự thật; mức độ chắc chắn tương xứng chứng cứ; liên kết các câu tự nhiên. Ba cấu trúc perfect định vị ba quan hệ thời gian khác nhau; không dùng chỉ để làm câu dài hơn."
+    },
+    "review_status": "DRAFT_TEACHER_REVIEW_REQUIRED",
+    "assessment_mode": "FORMATIVE_ONLY",
+    "teacher_notes_vi": "Kiểm tra tính đa nghĩa của cấu trúc đối chiếu; phương án khác ngữ cảnh có thể đúng ngữ pháp nhưng không phải lựa chọn giữ đúng mục tiêu."
+  },
+  "B2-09": {
+    "code": "B2-09",
+    "title": "Perfect Infinitives",
+    "context_vi": "Bạn viết thông cáo khi thông tin chưa được xác nhận hoàn toàn.",
+    "goal_vi": "Dùng Perfect Infinitives để giữ đúng quan hệ thời gian, vai trò, mức độ chắc chắn và văn phong trong bài viết B2.",
+    "contrast_cue_vi": "Perfect infinitive nói về sự hiểu sai đã xảy ra; simple infinitive mô tả cách hiểu hiện tại.",
+    "checkpoints": [
+      {
+        "id": "B2-09-M19D-C1",
+        "prompt_vi": "Hồ sơ gợi ý người quản lý đã xem tài liệu trước thời điểm đưa ra nhận định. Chọn perfect infinitive.",
+        "options_en": [
+          "The manager appears to have read the report.",
+          "The manager appears to read the report yesterday.",
+          "The manager appears to has read the report."
+        ],
+        "correct_index": 0,
+        "option_feedback_vi": [
+          "Appears to have V3 chỉ sự việc trước thời điểm suy luận.",
+          "To read là hiện tại/thói quen; yesterday không được xử lý đúng.",
+          "Sau to phải có have, không dùng has."
+        ],
+        "focus": "diagnose"
+      },
+      {
+        "id": "B2-09-M19D-C2",
+        "prompt_vi": "Bạn viết về lời tự nhận của nhân viên, nhưng chưa có bằng chứng độc lập. Chọn câu không xác nhận sự thật.",
+        "options_en": [
+          "She claims to checked the records.",
+          "She claims to have checked the records.",
+          "She has definitely checked the records."
+        ],
+        "correct_index": 1,
+        "option_feedback_vi": [
+          "Perfect infinitive cần to have + V3.",
+          "Claims to have tách lời tuyên bố khỏi việc có thực sự hoàn thành hay không.",
+          "Definitely biến lời tự nhận thành khẳng định của người viết."
+        ],
+        "focus": "context_decision"
+      },
+      {
+        "id": "B2-09-M19D-C3",
+        "prompt_vi": "Người dẫn chương trình được cho là đã rời đi trước khi sự cố bắt đầu.",
+        "options_en": [
+          "The presenter seems to leave before the problem started.",
+          "The presenter seems to had left before the problem started.",
+          "The presenter seems to have left before the problem started."
+        ],
+        "correct_index": 2,
+        "option_feedback_vi": [
+          "To leave không nhấn hoàn thành trước.",
+          "To had là dạng không đúng sau seems.",
+          "To have left đánh dấu hành động xảy ra trước thời điểm nhận định."
+        ],
+        "focus": "revision"
+      }
+    ],
+    "transfer": {
+      "prompt_vi": "Tự viết đoạn 3–5 câu theo tình huống sau, giải thích lựa chọn cấu trúc và giới hạn của bằng chứng: Bạn viết thông cáo khi thông tin chưa được xác nhận hoàn toàn.",
+      "sample_en": "The agency appears to have underestimated demand during the initial forecast. Officials are reviewing the data, and no final explanation has yet been published. A revised estimate is expected next week.",
+      "rubric_vi": "Đúng cấu trúc và mốc thời gian; không đổi tác nhân/sự thật; mức độ chắc chắn tương xứng chứng cứ; liên kết các câu tự nhiên. Appears to have diễn đạt nhận định chưa chắc về một hành động trước hiện tại."
+    },
+    "review_status": "DRAFT_TEACHER_REVIEW_REQUIRED",
+    "assessment_mode": "FORMATIVE_ONLY",
+    "teacher_notes_vi": "Kiểm tra tính đa nghĩa của cấu trúc đối chiếu; phương án khác ngữ cảnh có thể đúng ngữ pháp nhưng không phải lựa chọn giữ đúng mục tiêu."
+  },
+  "B2-10": {
+    "code": "B2-10",
+    "title": "Impersonal Passive Reporting",
+    "context_vi": "Bạn tóm tắt một báo cáo nhưng chưa có xác nhận cuối cùng.",
+    "goal_vi": "Dùng Impersonal Passive Reporting để giữ đúng quan hệ thời gian, vai trò, mức độ chắc chắn và văn phong trong bài viết B2.",
+    "contrast_cue_vi": "Câu đầu có chủ thể phát biểu; câu sau làm mờ nguồn và không tự tăng độ tin cậy.",
+    "checkpoints": [
+      {
+        "id": "B2-10-M19D-C1",
+        "prompt_vi": "Báo cáo được nhiều nguồn truyền lại, chưa kiểm chứng độc lập. Chọn cấu trúc tường thuật vô nhân xưng.",
+        "options_en": [
+          "It is reported that the library will close for repairs.",
+          "It is reporting that the library will close for repairs.",
+          "The library definitely will close for repairs."
+        ],
+        "correct_index": 0,
+        "option_feedback_vi": [
+          "It is reported that ghi nhận nguồn báo cáo mà không coi nó là sự thật đã chứng minh.",
+          "Is reporting không tạo bị động trong khuôn này.",
+          "Definitely vượt quá mức chắc chắn từ nguồn tin chưa xác minh."
+        ],
+        "focus": "diagnose"
+      },
+      {
+        "id": "B2-10-M19D-C2",
+        "prompt_vi": "Muốn nêu niềm tin phổ biến chứ không khẳng định điều đó chắc chắn.",
+        "options_en": [
+          "The treatment is proven to be effective.",
+          "It is believed that the treatment is effective.",
+          "It is believing that the treatment is effective."
+        ],
+        "correct_index": 1,
+        "option_feedback_vi": [
+          "Proven làm tăng mức chứng cứ ngoài dữ kiện.",
+          "It is believed that giữ sự phân biệt giữa niềm tin và kết quả được kiểm chứng.",
+          "Is believing không phải dạng bị động tường thuật mong muốn."
+        ],
+        "focus": "context_decision"
+      },
+      {
+        "id": "B2-10-M19D-C3",
+        "prompt_vi": "Thông cáo dùng nguồn không nêu tên: chọn câu văn phong trang trọng, tránh gán chắc chắn.",
+        "options_en": [
+          "It has been suggesting that the plan needs further review.",
+          "The plan undeniably needs further review.",
+          "It has been suggested that the plan needs further review."
+        ],
+        "correct_index": 2,
+        "option_feedback_vi": [
+          "Has been suggesting thiếu cấu trúc bị động cần thiết.",
+          "Undeniably thay đổi độ chắc chắn của phát biểu.",
+          "Has been suggested là bị động hoàn thành của một đề xuất được đưa ra."
+        ],
+        "focus": "revision"
+      }
+    ],
+    "transfer": {
+      "prompt_vi": "Tự viết đoạn 3–5 câu theo tình huống sau, giải thích lựa chọn cấu trúc và giới hạn của bằng chứng: Bạn tóm tắt một báo cáo nhưng chưa có xác nhận cuối cùng.",
+      "sample_en": "It is reported that several neighbourhoods have experienced longer waiting times for buses. However, the transport authority has not yet published its final figures. The proposed timetable change should therefore be described as provisional.",
+      "rubric_vi": "Đúng cấu trúc và mốc thời gian; không đổi tác nhân/sự thật; mức độ chắc chắn tương xứng chứng cứ; liên kết các câu tự nhiên. Passive reporting tránh gán phát ngôn cho người chưa xác minh; câu sau phân biệt tin báo và dữ kiện."
+    },
+    "review_status": "DRAFT_TEACHER_REVIEW_REQUIRED",
+    "assessment_mode": "FORMATIVE_ONLY",
+    "teacher_notes_vi": "Kiểm tra tính đa nghĩa của cấu trúc đối chiếu; phương án khác ngữ cảnh có thể đúng ngữ pháp nhưng không phải lựa chọn giữ đúng mục tiêu."
+  },
+  "B2-11": {
+    "code": "B2-11",
+    "title": "Personal Passive Reporting",
+    "context_vi": "Bạn viết tóm tắt thông tin về một sáng kiến giáo dục.",
+    "goal_vi": "Dùng Personal Passive Reporting để giữ đúng quan hệ thời gian, vai trò, mức độ chắc chắn và văn phong trong bài viết B2.",
+    "contrast_cue_vi": "Câu đầu nói hoạt động hiện tại; câu sau nói hoạt động đã diễn ra trước thời điểm đưa tin.",
+    "checkpoints": [
+      {
+        "id": "B2-11-M19D-C1",
+        "prompt_vi": "Bản tin muốn đặt tác giả lên đầu và diễn đạt việc họ được cho là đã rời đi trước đó.",
+        "options_en": [
+          "The author is said to have left the city.",
+          "The author is said to leave the city yesterday.",
+          "The author is said have left the city."
+        ],
+        "correct_index": 0,
+        "option_feedback_vi": [
+          "Is said to have V3 chuyển trọng tâm tới chủ thể và hành động quá khứ.",
+          "To leave không chỉ rõ hành động hoàn tất trước thời điểm thuật lại.",
+          "Thiếu to trong cấu trúc is said to have."
+        ],
+        "focus": "diagnose"
+      },
+      {
+        "id": "B2-11-M19D-C2",
+        "prompt_vi": "Nguồn tin cho rằng cô ấy đang làm dự án vào lúc này.",
+        "options_en": [
+          "She is believed be working on the project.",
+          "She is believed to be working on the project.",
+          "She is believed to have worked on the project right now."
+        ],
+        "correct_index": 1,
+        "option_feedback_vi": [
+          "Thiếu to sau is believed.",
+          "To be V-ing tường thuật hành động được tin là đang diễn ra.",
+          "To have worked chỉ hoàn tất trước, không hợp nghĩa đang làm right now."
+        ],
+        "focus": "context_decision"
+      },
+      {
+        "id": "B2-11-M19D-C3",
+        "prompt_vi": "Thông tin người quản lý đã duyệt kế hoạch còn cần kiểm chứng; tránh viết như sự thật.",
+        "options_en": [
+          "The director definitely approved the plan.",
+          "The director is reported to has approved the plan.",
+          "The director is reported to have approved the plan."
+        ],
+        "correct_index": 2,
+        "option_feedback_vi": [
+          "Definitely đổi độ tin cậy so với thông tin chưa kiểm chứng.",
+          "Perfect infinitive phải là to have + V3.",
+          "Reported to have đánh dấu thông tin do nguồn báo, không chứng nhận sự kiện."
+        ],
+        "focus": "revision"
+      }
+    ],
+    "transfer": {
+      "prompt_vi": "Tự viết đoạn 3–5 câu theo tình huống sau, giải thích lựa chọn cấu trúc và giới hạn của bằng chứng: Bạn viết tóm tắt thông tin về một sáng kiến giáo dục.",
+      "sample_en": "The pilot programme is said to have begun in three schools last autumn. Its organisers are believed to be collecting feedback this term. Independent results are not yet available, so any claims of effectiveness remain preliminary.",
+      "rubric_vi": "Đúng cấu trúc và mốc thời gian; không đổi tác nhân/sự thật; mức độ chắc chắn tương xứng chứng cứ; liên kết các câu tự nhiên. Dạng perfect diễn đạt khởi động đã xảy ra; continuous diễn đạt hoạt động đang được nhắc tới."
+    },
+    "review_status": "DRAFT_TEACHER_REVIEW_REQUIRED",
+    "assessment_mode": "FORMATIVE_ONLY",
+    "teacher_notes_vi": "Kiểm tra tính đa nghĩa của cấu trúc đối chiếu; phương án khác ngữ cảnh có thể đúng ngữ pháp nhưng không phải lựa chọn giữ đúng mục tiêu."
+  },
+  "B2-12": {
+    "code": "B2-12",
+    "title": "Causative Structures",
+    "context_vi": "Bạn viết email thông báo việc bảo trì tòa nhà.",
+    "goal_vi": "Dùng Causative Structures để giữ đúng quan hệ thời gian, vai trò, mức độ chắc chắn và văn phong trong bài viết B2.",
+    "contrast_cue_vi": "Câu đầu cho biết nhờ bên khác sửa; câu sau thường cho biết chủ ngữ trực tiếp sửa.",
+    "checkpoints": [
+      {
+        "id": "B2-12-M19D-C1",
+        "prompt_vi": "Bạn thuê chuyên gia sửa máy hôm qua, không tự sửa. Chọn causative đúng.",
+        "options_en": [
+          "We had the machine repaired yesterday.",
+          "We repaired the machine ourselves yesterday.",
+          "We had repaired the machine yesterday."
+        ],
+        "correct_index": 0,
+        "option_feedback_vi": [
+          "Had + object + V3 diễn đạt đã thu xếp cho người khác sửa.",
+          "Tự sửa thay đổi người thực hiện so với tình huống.",
+          "Had repaired là quá khứ hoàn thành chủ động, không nói rõ thuê người khác."
+        ],
+        "focus": "diagnose"
+      },
+      {
+        "id": "B2-12-M19D-C2",
+        "prompt_vi": "Bạn trực tiếp yêu cầu nhân viên in báo cáo (tân ngữ là người). Chọn dạng đúng.",
+        "options_en": [
+          "I had the report print the assistant.",
+          "I had the assistant print the report.",
+          "I had the assistant printed the report."
+        ],
+        "correct_index": 1,
+        "option_feedback_vi": [
+          "Đảo vị trí người và đối tượng, làm cấu trúc và nghĩa không đúng.",
+          "Have/had + person + bare infinitive cho hành động nhờ/yêu cầu người thực hiện.",
+          "Sau had + person ở mẫu này dùng động từ nguyên mẫu."
+        ],
+        "focus": "context_decision"
+      },
+      {
+        "id": "B2-12-M19D-C3",
+        "prompt_vi": "Sau nhiều lần liên hệ, cuối cùng bạn sắp xếp để tường được sơn lại.",
+        "options_en": [
+          "We finally got the walls repaint.",
+          "We finally repainted the walls ourselves.",
+          "We finally got the walls repainted."
+        ],
+        "correct_index": 2,
+        "option_feedback_vi": [
+          "Object nhận hành động nên cần V3.",
+          "Tự sơn thay đổi người thực hiện theo tình huống.",
+          "Got + object + V3 nhấn việc thu xếp thành công."
+        ],
+        "focus": "revision"
+      }
+    ],
+    "transfer": {
+      "prompt_vi": "Tự viết đoạn 3–5 câu theo tình huống sau, giải thích lựa chọn cấu trúc và giới hạn của bằng chứng: Bạn viết email thông báo việc bảo trì tòa nhà.",
+      "sample_en": "We have had the ventilation system inspected by a licensed engineer. The contractor will replace two faulty components tomorrow, and residents should keep the service area clear until the work is complete.",
+      "rubric_vi": "Đúng cấu trúc và mốc thời gian; không đổi tác nhân/sự thật; mức độ chắc chắn tương xứng chứng cứ; liên kết các câu tự nhiên. Have had ... inspected nói việc nhờ người kiểm tra; không gán nhầm người cư trú là người thực hiện."
+    },
+    "review_status": "DRAFT_TEACHER_REVIEW_REQUIRED",
+    "assessment_mode": "FORMATIVE_ONLY",
+    "teacher_notes_vi": "Kiểm tra tính đa nghĩa của cấu trúc đối chiếu; phương án khác ngữ cảnh có thể đúng ngữ pháp nhưng không phải lựa chọn giữ đúng mục tiêu."
+  },
+  "B2-13": {
+    "code": "B2-13",
+    "title": "Get Passive vs Be Passive",
+    "context_vi": "Bạn đánh giá lựa chọn văn phong cho bản tin nhà trường.",
+    "goal_vi": "Dùng Get Passive vs Be Passive để giữ đúng quan hệ thời gian, vai trò, mức độ chắc chắn và văn phong trong bài viết B2.",
+    "contrast_cue_vi": "Cả hai có thể đúng; was rejected trung tính/formal hơn, got rejected thiên về sự kiện và thân mật.",
+    "checkpoints": [
+      {
+        "id": "B2-13-M19D-C1",
+        "prompt_vi": "Bản tin học thuật cần lối viết trung tính về việc hồ sơ được duyệt.",
+        "options_en": [
+          "The application was approved after the review.",
+          "The application got approved after the review, mate!",
+          "The application got be approved after the review."
+        ],
+        "correct_index": 0,
+        "option_feedback_vi": [
+          "Be passive là phương án trung tính phù hợp báo cáo trang trọng.",
+          "Get passive có thể đúng nhưng thêm mate khiến văn phong không phù hợp bản tin học thuật.",
+          "Get passive không có be sau got."
+        ],
+        "focus": "diagnose"
+      },
+      {
+        "id": "B2-13-M19D-C2",
+        "prompt_vi": "Trong cuộc trò chuyện thân mật, bạn kể bạn mình bị kẹt trong thang máy hôm qua.",
+        "options_en": [
+          "My friend got be stuck in the lift yesterday.",
+          "My friend got stuck in the lift yesterday.",
+          "My friend was being stuck in the lift yesterday."
+        ],
+        "correct_index": 1,
+        "option_feedback_vi": [
+          "Got be stuck không phải mẫu get passive.",
+          "Got stuck là cách nói thông dụng, nhấn sự kiện xảy ra.",
+          "Was being stuck không tự nhiên với trạng thái bị kẹt trong tình huống này."
+        ],
+        "focus": "context_decision"
+      },
+      {
+        "id": "B2-13-M19D-C3",
+        "prompt_vi": "Sửa báo cáo để rõ chủ thể chịu tác động và giữ ngữ điệu trung tính.",
+        "options_en": [
+          "Several files got be deleted accidentally.",
+          "Several files deleted accidentally.",
+          "Several files were accidentally deleted."
+        ],
+        "correct_index": 2,
+        "option_feedback_vi": [
+          "Get passive không nhận be sau got.",
+          "Thiếu be/passive; files không tự xóa trong ý định này.",
+          "Were deleted giữ nghĩa bị động và register trung tính."
+        ],
+        "focus": "revision"
+      }
+    ],
+    "transfer": {
+      "prompt_vi": "Tự viết đoạn 3–5 câu theo tình huống sau, giải thích lựa chọn cấu trúc và giới hạn của bằng chứng: Bạn đánh giá lựa chọn văn phong cho bản tin nhà trường.",
+      "sample_en": "Formal notice: The entrance was closed following a safety inspection. Informal account: Several students got delayed when the gate suddenly shut. The formal notice avoids conversational get-passive wording.",
+      "rubric_vi": "Đúng cấu trúc và mốc thời gian; không đổi tác nhân/sự thật; mức độ chắc chắn tương xứng chứng cứ; liên kết các câu tự nhiên. Chọn cấu trúc theo loại văn bản; không nói get passive luôn sai trong văn phong chính thức."
+    },
+    "review_status": "DRAFT_TEACHER_REVIEW_REQUIRED",
+    "assessment_mode": "FORMATIVE_ONLY",
+    "teacher_notes_vi": "Kiểm tra tính đa nghĩa của cấu trúc đối chiếu; phương án khác ngữ cảnh có thể đúng ngữ pháp nhưng không phải lựa chọn giữ đúng mục tiêu."
+  },
+  "B2-14": {
+    "code": "B2-14",
+    "title": "Passive with Modals & Perfect Forms",
+    "context_vi": "Bạn viết hướng dẫn đảm bảo an toàn dữ liệu.",
+    "goal_vi": "Dùng Passive with Modals & Perfect Forms để giữ đúng quan hệ thời gian, vai trò, mức độ chắc chắn và văn phong trong bài viết B2.",
+    "contrast_cue_vi": "Câu đầu là nghĩa vụ hiện tại; câu sau là suy luận mạnh về hành động quá khứ.",
+    "checkpoints": [
+      {
+        "id": "B2-14-M19D-C1",
+        "prompt_vi": "Quy định: tệp dữ liệu BẮT BUỘC được mã hóa trước khi gửi.",
+        "options_en": [
+          "The files must be encrypted before they are sent.",
+          "The files must have encrypted before they are sent.",
+          "The files must encrypted before they are sent."
+        ],
+        "correct_index": 0,
+        "option_feedback_vi": [
+          "Must be + V3 tạo bị động cho nghĩa vụ hiện tại.",
+          "Must have V3 mang ý suy luận về quá khứ và thiếu been nếu bị động.",
+          "Thiếu be trong modal passive."
+        ],
+        "focus": "diagnose"
+      },
+      {
+        "id": "B2-14-M19D-C2",
+        "prompt_vi": "Bạn đánh giá quy trình đã qua: hồ sơ LẼ RA phải được kiểm tra kỹ hơn.",
+        "options_en": [
+          "The records should be checked more carefully yesterday.",
+          "The records should have been checked more carefully.",
+          "The records should have checked more carefully."
+        ],
+        "correct_index": 1,
+        "option_feedback_vi": [
+          "Should be là lời khuyên hiện tại, không đặt trực tiếp với yesterday.",
+          "Should have been + V3 diễn tả đánh giá về việc bị động trong quá khứ.",
+          "Thiếu been khiến cấu trúc không thành bị động."
+        ],
+        "focus": "context_decision"
+      },
+      {
+        "id": "B2-14-M19D-C3",
+        "prompt_vi": "Sự việc được cho là đã hoàn tất trước cuộc họp, nhưng chưa rõ ai làm. Chọn câu giữ thể bị động.",
+        "options_en": [
+          "The report may have revised before the meeting.",
+          "The report may be revise before the meeting.",
+          "The report may have been revised before the meeting."
+        ],
+        "correct_index": 2,
+        "option_feedback_vi": [
+          "May have revised khiến report thành tác nhân sửa, sai vai trò.",
+          "Sau may be cần V3 là revised, không phải revise.",
+          "May have been V3 vừa giữ khả năng chưa xác minh vừa giữ bị động quá khứ."
+        ],
+        "focus": "revision"
+      }
+    ],
+    "transfer": {
+      "prompt_vi": "Tự viết đoạn 3–5 câu theo tình huống sau, giải thích lựa chọn cấu trúc và giới hạn của bằng chứng: Bạn viết hướng dẫn đảm bảo an toàn dữ liệu.",
+      "sample_en": "Sensitive records must be encrypted before transfer, and access requests should be reviewed by an authorised officer. The missing permissions may have been removed during the last update, but the audit has not confirmed this.",
+      "rubric_vi": "Đúng cấu trúc và mốc thời gian; không đổi tác nhân/sự thật; mức độ chắc chắn tương xứng chứng cứ; liên kết các câu tự nhiên. Must be nêu quy định, may have been nêu giả thuyết về quá khứ."
+    },
+    "review_status": "DRAFT_TEACHER_REVIEW_REQUIRED",
+    "assessment_mode": "FORMATIVE_ONLY",
+    "teacher_notes_vi": "Kiểm tra tính đa nghĩa của cấu trúc đối chiếu; phương án khác ngữ cảnh có thể đúng ngữ pháp nhưng không phải lựa chọn giữ đúng mục tiêu."
+  },
+  "B2-15": {
+    "code": "B2-15",
+    "title": "Present Participle Clauses",
+    "context_vi": "Bạn mô tả một hoạt động nghiên cứu hiện trường.",
+    "goal_vi": "Dùng Present Participle Clauses để giữ đúng quan hệ thời gian, vai trò, mức độ chắc chắn và văn phong trong bài viết B2.",
+    "contrast_cue_vi": "Câu đầu chủ ngữ Maya thực hiện walking; câu sau dễ hiểu sai là tiếng ồn đang đi bộ.",
+    "checkpoints": [
+      {
+        "id": "B2-15-M19D-C1",
+        "prompt_vi": "Người nghiên cứu vừa bước đi vừa ghi chú; hai hành động cùng chủ ngữ.",
+        "options_en": [
+          "Walking through the site, the researcher took notes.",
+          "Walking through the site, the notes were taken by the researcher.",
+          "Walked through the site, the researcher took notes."
+        ],
+        "correct_index": 0,
+        "option_feedback_vi": [
+          "V-ing clause quy chiếu về researcher, người thực hiện hai hành động.",
+          "Cụm Walking ban đầu bị treo vì chủ ngữ mệnh đề chính là notes.",
+          "Mở đầu participle chủ động phải dùng V-ing, không dùng walked đơn lẻ."
+        ],
+        "focus": "diagnose"
+      },
+      {
+        "id": "B2-15-M19D-C2",
+        "prompt_vi": "Bạn cần rút gọn câu “While she was examining the sample, she noticed a crack.”",
+        "options_en": [
+          "While examining the sample, a crack was noticed by her.",
+          "While examining the sample, she noticed a crack.",
+          "While examine the sample, she noticed a crack."
+        ],
+        "correct_index": 1,
+        "option_feedback_vi": [
+          "Chủ ngữ mệnh đề chính không còn là người đang examining, dễ thành dangling clause.",
+          "Lược she was vì chủ ngữ sau vẫn là she.",
+          "Sau while trong mệnh đề rút gọn cần V-ing."
+        ],
+        "focus": "context_decision"
+      },
+      {
+        "id": "B2-15-M19D-C3",
+        "prompt_vi": "Tài liệu ghi “Using a microscope, the particles were counted.” Hãy sửa để tránh chủ ngữ treo.",
+        "options_en": [
+          "Using a microscope, the particles were counted.",
+          "Using a microscope, the microscope counted the particles.",
+          "Using a microscope, the technician counted the particles."
+        ],
+        "correct_index": 2,
+        "option_feedback_vi": [
+          "Particles không thể là người sử dụng kính hiển vi.",
+          "Microscope là công cụ, không phải người thực hiện count trong ngữ cảnh này.",
+          "Technician là người dùng kính hiển vi; chủ thể của mệnh đề chính đúng hành động."
+        ],
+        "focus": "revision"
+      }
+    ],
+    "transfer": {
+      "prompt_vi": "Tự viết đoạn 3–5 câu theo tình huống sau, giải thích lựa chọn cấu trúc và giới hạn của bằng chứng: Bạn mô tả một hoạt động nghiên cứu hiện trường.",
+      "sample_en": "While interviewing residents, the researchers noticed several recurring concerns about noise. They recorded each complaint separately to avoid treating a single anecdote as representative. The team then compared the interviews with official measurements.",
+      "rubric_vi": "Đúng cấu trúc và mốc thời gian; không đổi tác nhân/sự thật; mức độ chắc chắn tương xứng chứng cứ; liên kết các câu tự nhiên. While interviewing thuộc về researchers; câu sau tách chứng cứ, tránh rút gọn quá mức."
+    },
+    "review_status": "DRAFT_TEACHER_REVIEW_REQUIRED",
+    "assessment_mode": "FORMATIVE_ONLY",
+    "teacher_notes_vi": "Kiểm tra tính đa nghĩa của cấu trúc đối chiếu; phương án khác ngữ cảnh có thể đúng ngữ pháp nhưng không phải lựa chọn giữ đúng mục tiêu."
+  },
+  "B2-16": {
+    "code": "B2-16",
+    "title": "Past & Perfect Participle Clauses",
+    "context_vi": "Bạn thuật lại quy trình kiểm định một thiết bị.",
+    "goal_vi": "Dùng Past & Perfect Participle Clauses để giữ đúng quan hệ thời gian, vai trò, mức độ chắc chắn và văn phong trong bài viết B2.",
+    "contrast_cue_vi": "Perfect participle làm rõ kiểm tra đã hoàn thành trước khi công bố; dạng V-ing có thể nhấn quá trình đồng thời.",
+    "checkpoints": [
+      {
+        "id": "B2-16-M19D-C1",
+        "prompt_vi": "Sau khi hoàn tất kiểm định, kỹ sư mới ký biên bản.",
+        "options_en": [
+          "Having completed the inspection, the engineer signed the report.",
+          "Completing the inspection, the report was signed by the engineer.",
+          "Having complete the inspection, the engineer signed the report."
+        ],
+        "correct_index": 0,
+        "option_feedback_vi": [
+          "Having + V3 nhấn hành động hoàn tất trước; cùng chủ ngữ engineer.",
+          "Mệnh đề V-ing bị treo vì report không phải người kiểm định.",
+          "Sau having cần V3 completed."
+        ],
+        "focus": "diagnose"
+      },
+      {
+        "id": "B2-16-M19D-C2",
+        "prompt_vi": "Thiết bị đã được thử nghiệm xong rồi mới đưa vào sử dụng. Chọn mệnh đề phân từ bị động.",
+        "options_en": [
+          "Having been testing, the device was put into service.",
+          "Having been tested, the device was put into service.",
+          "Having tested, the device was put into service."
+        ],
+        "correct_index": 1,
+        "option_feedback_vi": [
+          "Having been testing là chủ động tiếp diễn không tạo bị động hoàn thành.",
+          "Having been + V3 diễn đạt thiết bị chịu tác động trước.",
+          "Having tested làm device thành người thực hiện test nếu không có tân ngữ."
+        ],
+        "focus": "context_decision"
+      },
+      {
+        "id": "B2-16-M19D-C3",
+        "prompt_vi": "Câu nào tránh đổi vai trò khi rút gọn: “After the committee approved the plan, it was published.”",
+        "options_en": [
+          "Having approved the plan, the plan was published.",
+          "Having been approve by the committee, the plan was published.",
+          "Having been approved by the committee, the plan was published."
+        ],
+        "correct_index": 2,
+        "option_feedback_vi": [
+          "Plan không thể là người approved chính nó.",
+          "Sau been cần V3 approved.",
+          "Plan được phê duyệt rồi mới được công bố: cùng chủ ngữ plan trong bị động."
+        ],
+        "focus": "revision"
+      }
+    ],
+    "transfer": {
+      "prompt_vi": "Tự viết đoạn 3–5 câu theo tình huống sau, giải thích lựa chọn cấu trúc và giới hạn của bằng chứng: Bạn thuật lại quy trình kiểm định một thiết bị.",
+      "sample_en": "Having completed three calibration runs, the engineers approved the sensor for field use. The device was then sealed and labelled for transport. No performance claim was made before the calibration results had been reviewed.",
+      "rubric_vi": "Đúng cấu trúc và mốc thời gian; không đổi tác nhân/sự thật; mức độ chắc chắn tương xứng chứng cứ; liên kết các câu tự nhiên. Having completed nhấn xong bước đầu rồi mới duyệt; toàn bộ chủ ngữ liên kết rõ."
+    },
+    "review_status": "DRAFT_TEACHER_REVIEW_REQUIRED",
+    "assessment_mode": "FORMATIVE_ONLY",
+    "teacher_notes_vi": "Kiểm tra tính đa nghĩa của cấu trúc đối chiếu; phương án khác ngữ cảnh có thể đúng ngữ pháp nhưng không phải lựa chọn giữ đúng mục tiêu."
+  },
+  "B2-17": {
+    "code": "B2-17",
+    "title": "Reduced Relative Clauses",
+    "context_vi": "Bạn mô tả quy trình chọn hồ sơ nghiên cứu.",
+    "goal_vi": "Dùng Reduced Relative Clauses để giữ đúng quan hệ thời gian, vai trò, mức độ chắc chắn và văn phong trong bài viết B2.",
+    "contrast_cue_vi": "Technician là người sửa (V-ing); lift là đối tượng được sửa (V3).",
+    "checkpoints": [
+      {
+        "id": "B2-17-M19D-C1",
+        "prompt_vi": "Bạn mô tả hồ sơ đã được nhân viên xác minh; hồ sơ chịu tác động.",
+        "options_en": [
+          "The documents verified by the staff were archived.",
+          "The documents verifying by the staff were archived.",
+          "The documents verified the staff were archived."
+        ],
+        "correct_index": 0,
+        "option_feedback_vi": [
+          "V3 verified là mệnh đề quan hệ rút gọn bị động.",
+          "Verifying tạo nghĩa tài liệu đang đi xác minh ai đó và sai với by the staff.",
+          "Thiếu by nếu muốn nêu tác nhân người xác minh."
+        ],
+        "focus": "diagnose"
+      },
+      {
+        "id": "B2-17-M19D-C2",
+        "prompt_vi": "Bạn nói về những người đang chờ bên ngoài, chủ thể tự thực hiện hành động.",
+        "options_en": [
+          "The applicants being waited outside will be interviewed.",
+          "The applicants waiting outside will be interviewed.",
+          "The applicants waited outside will be interviewed."
+        ],
+        "correct_index": 1,
+        "option_feedback_vi": [
+          "Being waited không phải mẫu tự nhiên của wait ở đây.",
+          "Waiting = who are waiting, rút gọn mệnh đề quan hệ chủ động.",
+          "Waited không nối trực tiếp theo cách này trong mô tả chủ động."
+        ],
+        "focus": "context_decision"
+      },
+      {
+        "id": "B2-17-M19D-C3",
+        "prompt_vi": "Bạn muốn giữ ý “A device that was designed for children must be safe.”",
+        "options_en": [
+          "A device designing for children must be safe.",
+          "A device design for children must be safe.",
+          "A device designed for children must be safe."
+        ],
+        "correct_index": 2,
+        "option_feedback_vi": [
+          "Designing ngụ ý thiết bị tự thiết kế, sai vai trò.",
+          "Design không phải participle phù hợp để bổ nghĩa danh từ.",
+          "Designed là V3 bị động rút gọn từ that was designed."
+        ],
+        "focus": "revision"
+      }
+    ],
+    "transfer": {
+      "prompt_vi": "Tự viết đoạn 3–5 câu theo tình huống sau, giải thích lựa chọn cấu trúc và giới hạn của bằng chứng: Bạn mô tả quy trình chọn hồ sơ nghiên cứu.",
+      "sample_en": "Applicants submitting incomplete forms will receive an email requesting corrections. Documents verified by the review team will proceed to the next stage. These two groups should not be confused because the first describes applicants' actions and the second describes completed checks.",
+      "rubric_vi": "Đúng cấu trúc và mốc thời gian; không đổi tác nhân/sự thật; mức độ chắc chắn tương xứng chứng cứ; liên kết các câu tự nhiên. Submitting chủ động với applicants; verified bị động với documents."
+    },
+    "review_status": "DRAFT_TEACHER_REVIEW_REQUIRED",
+    "assessment_mode": "FORMATIVE_ONLY",
+    "teacher_notes_vi": "Kiểm tra tính đa nghĩa của cấu trúc đối chiếu; phương án khác ngữ cảnh có thể đúng ngữ pháp nhưng không phải lựa chọn giữ đúng mục tiêu."
+  },
+  "B2-18": {
+    "code": "B2-18",
+    "title": "Non-finite Clauses of Purpose & Result",
+    "context_vi": "Bạn viết nhận xét sau một thử nghiệm công nghệ.",
+    "goal_vi": "Dùng Non-finite Clauses of Purpose & Result để giữ đúng quan hệ thời gian, vai trò, mức độ chắc chắn và văn phong trong bài viết B2.",
+    "contrast_cue_vi": "To identify nêu mục đích ban đầu; only to discover nêu kết quả bất ngờ.",
+    "checkpoints": [
+      {
+        "id": "B2-18-M19D-C1",
+        "prompt_vi": "Nhóm mua cảm biến nhằm đo chất lượng không khí. Hãy diễn đạt MỤC ĐÍCH.",
+        "options_en": [
+          "The team bought a sensor to measure air quality.",
+          "The team bought a sensor, only to discover that it did not work.",
+          "The team bought a sensor to measuring air quality."
+        ],
+        "correct_index": 0,
+        "option_feedback_vi": [
+          "To measure nêu lý do chủ động của việc mua.",
+          "Only to discover nhấn kết quả bất ngờ khác hẳn mục đích đã nêu.",
+          "Sau to chỉ mục đích dùng động từ nguyên mẫu."
+        ],
+        "focus": "diagnose"
+      },
+      {
+        "id": "B2-18-M19D-C2",
+        "prompt_vi": "Nhóm kiểm thử nhiều lần nhưng bất ngờ phát hiện toàn bộ dữ liệu đã bị mất. Chọn cấu trúc KẾT QUẢ ngoài dự định.",
+        "options_en": [
+          "They ran the tests repeatedly to finding that the data had vanished.",
+          "They ran the tests repeatedly, only to find that the data had vanished.",
+          "They ran the tests repeatedly in order to find that the data had vanished."
+        ],
+        "correct_index": 1,
+        "option_feedback_vi": [
+          "To finding là dạng sai sau to-infinitive.",
+          "Only to find nêu kết quả bất ngờ sau nỗ lực.",
+          "In order to biến phát hiện dữ liệu mất thành mục đích có chủ ý."
+        ],
+        "focus": "context_decision"
+      },
+      {
+        "id": "B2-18-M19D-C3",
+        "prompt_vi": "Bạn sửa câu để không nhầm ý định với kết quả thực tế.",
+        "options_en": [
+          "She took the course only to improve her editing skills unexpectedly.",
+          "She took the course for improve her editing skills.",
+          "She took the course to improve her editing skills."
+        ],
+        "correct_index": 2,
+        "option_feedback_vi": [
+          "Only to ... unexpectedly làm sai quan hệ ngữ nghĩa vốn là mục đích.",
+          "Sau for không trực tiếp đi động từ nguyên mẫu.",
+          "To improve chỉ mục đích dự định."
+        ],
+        "focus": "revision"
+      }
+    ],
+    "transfer": {
+      "prompt_vi": "Tự viết đoạn 3–5 câu theo tình huống sau, giải thích lựa chọn cấu trúc và giới hạn của bằng chứng: Bạn viết nhận xét sau một thử nghiệm công nghệ.",
+      "sample_en": "The researchers extended the trial to obtain more reliable measurements. They repeated the test under controlled conditions, only to discover that the sensor was affected by humidity. A new calibration process was introduced before further testing.",
+      "rubric_vi": "Đúng cấu trúc và mốc thời gian; không đổi tác nhân/sự thật; mức độ chắc chắn tương xứng chứng cứ; liên kết các câu tự nhiên. To obtain là mục đích; only to discover là kết quả không dự định."
+    },
+    "review_status": "DRAFT_TEACHER_REVIEW_REQUIRED",
+    "assessment_mode": "FORMATIVE_ONLY",
+    "teacher_notes_vi": "Kiểm tra tính đa nghĩa của cấu trúc đối chiếu; phương án khác ngữ cảnh có thể đúng ngữ pháp nhưng không phải lựa chọn giữ đúng mục tiêu."
+  },
+  "B2-19": {
+    "code": "B2-19",
+    "title": "Advanced Reporting Verbs",
+    "context_vi": "Bạn tường thuật cuộc họp xử lý sự cố.",
+    "goal_vi": "Dùng Advanced Reporting Verbs để giữ đúng quan hệ thời gian, vai trò, mức độ chắc chắn và văn phong trong bài viết B2.",
+    "contrast_cue_vi": "Admitted xác nhận sự việc đã làm; promised nói cam kết về hành động dự kiến.",
+    "checkpoints": [
+      {
+        "id": "B2-19-M19D-C1",
+        "prompt_vi": "Người quản lý thừa nhận đã bỏ qua bước kiểm tra.",
+        "options_en": [
+          "The manager admitted skipping the final check.",
+          "The manager admitted to skip the final check.",
+          "The manager promised skipping the final check."
+        ],
+        "correct_index": 0,
+        "option_feedback_vi": [
+          "Admit + V-ing diễn đạt thừa nhận hành động đã thực hiện.",
+          "Admit to skip không dùng mẫu bổ ngữ này.",
+          "Promise + V-ing không diễn đạt thừa nhận việc đã xảy ra."
+        ],
+        "focus": "diagnose"
+      },
+      {
+        "id": "B2-19-M19D-C2",
+        "prompt_vi": "Kỹ sư hứa sẽ gửi báo cáo vào ngày mai.",
+        "options_en": [
+          "The engineer promised sending the report tomorrow.",
+          "The engineer promised to send the report tomorrow.",
+          "The engineer admitted sending the report tomorrow."
+        ],
+        "correct_index": 1,
+        "option_feedback_vi": [
+          "Promise trong khuôn này theo sau bởi to-infinitive.",
+          "Promise + to V chỉ cam kết cho hành động tương lai.",
+          "Admit V-ing chuyển nghĩa sang thừa nhận hành động, mâu thuẫn mốc tomorrow."
+        ],
+        "focus": "context_decision"
+      },
+      {
+        "id": "B2-19-M19D-C3",
+        "prompt_vi": "Trong biên bản, ai đó phủ nhận đã làm lộ tài liệu.",
+        "options_en": [
+          "She denied to leak the documents.",
+          "She insisted to leak the documents.",
+          "She denied leaking the documents."
+        ],
+        "correct_index": 2,
+        "option_feedback_vi": [
+          "Deny không dùng to V theo mẫu này.",
+          "Insist to leak không diễn đạt phủ nhận và dùng sai bổ ngữ.",
+          "Deny + V-ing cho hành động bị phủ nhận."
+        ],
+        "focus": "revision"
+      }
+    ],
+    "transfer": {
+      "prompt_vi": "Tự viết đoạn 3–5 câu theo tình huống sau, giải thích lựa chọn cấu trúc và giới hạn của bằng chứng: Bạn tường thuật cuộc họp xử lý sự cố.",
+      "sample_en": "The contractor admitted missing the inspection deadline but denied concealing any records. The site manager promised to publish a revised schedule, while the client insisted on receiving an independent report. No final decision about liability was reached.",
+      "rubric_vi": "Đúng cấu trúc và mốc thời gian; không đổi tác nhân/sự thật; mức độ chắc chắn tương xứng chứng cứ; liên kết các câu tự nhiên. Mỗi động từ biểu thị hành vi lời nói khác nhau và có pattern riêng."
+    },
+    "review_status": "DRAFT_TEACHER_REVIEW_REQUIRED",
+    "assessment_mode": "FORMATIVE_ONLY",
+    "teacher_notes_vi": "Kiểm tra tính đa nghĩa của cấu trúc đối chiếu; phương án khác ngữ cảnh có thể đúng ngữ pháp nhưng không phải lựa chọn giữ đúng mục tiêu."
+  },
+  "B2-20": {
+    "code": "B2-20",
+    "title": "Reported Speech – Advanced",
+    "context_vi": "Bạn tóm tắt phát biểu từ cuộc họp hôm qua.",
+    "goal_vi": "Dùng Reported Speech – Advanced để giữ đúng quan hệ thời gian, vai trò, mức độ chắc chắn và văn phong trong bài viết B2.",
+    "contrast_cue_vi": "Was open thường backshift; is open có thể đúng nếu sự thật vẫn được xác nhận ở hiện tại.",
+    "checkpoints": [
+      {
+        "id": "B2-20-M19D-C1",
+        "prompt_vi": "Hôm qua giám đốc nói: “We finished the audit on Monday.” Hôm nay thuật lại, giữ mốc quá khứ.",
+        "options_en": [
+          "The director said that they had finished the audit on Monday.",
+          "The director said that they have finished the audit the following Monday.",
+          "The director said that they will finish the audit last Monday."
+        ],
+        "correct_index": 0,
+        "option_feedback_vi": [
+          "Had finished biểu thị việc đã xong trước lời nói; Monday vẫn giữ nếu mốc có thể xác định.",
+          "Have finished không giữ được góc nhìn quá khứ; the following Monday đổi thời gian.",
+          "Will finish là tương lai, trái với sự kiện đã hoàn tất."
+        ],
+        "focus": "diagnose"
+      },
+      {
+        "id": "B2-20-M19D-C2",
+        "prompt_vi": "Hôm qua cô ấy nói: “I will send the file tomorrow.” Hôm nay thuật lại lịch hẹn tương lai theo góc nhìn hôm qua.",
+        "options_en": [
+          "She said she had sent the file the following day.",
+          "She said she would send the file the following day.",
+          "She said she will have sent the file the day before."
+        ],
+        "correct_index": 1,
+        "option_feedback_vi": [
+          "Had sent biến một dự định tương lai thành hành động đã xong.",
+          "Would send giữ “tương lai trong quá khứ”; the following day quy chiếu đúng.",
+          "The day before biến ngày mai thành hôm qua và chuyển mức độ hoàn tất."
+        ],
+        "focus": "context_decision"
+      },
+      {
+        "id": "B2-20-M19D-C3",
+        "prompt_vi": "Thông tin “Water boils at 100°C at sea level” vẫn là sự thật chung. Chọn cách thuật lại hợp lý.",
+        "options_en": [
+          "He said that water will boiled at 100°C at sea level.",
+          "He said that water is boiled yesterday at 100°C at sea level.",
+          "He said that water boils at 100°C at sea level."
+        ],
+        "correct_index": 2,
+        "option_feedback_vi": [
+          "Will boiled sai hình thái và nhầm thời gian.",
+          "Bị động và yesterday làm đổi tính chất sự thật chung.",
+          "Có thể giữ present simple cho một sự thật khoa học vẫn đúng; backshift không bắt buộc ở đây."
+        ],
+        "focus": "revision"
+      }
+    ],
+    "transfer": {
+      "prompt_vi": "Tự viết đoạn 3–5 câu theo tình huống sau, giải thích lựa chọn cấu trúc và giới hạn của bằng chứng: Bạn tóm tắt phát biểu từ cuộc họp hôm qua.",
+      "sample_en": "At yesterday's meeting, the coordinator said that the venue had passed its safety checks the previous week. She added that the organisers would publish the final schedule today. The schedule has since been released, as promised.",
+      "rubric_vi": "Đúng cấu trúc và mốc thời gian; không đổi tác nhân/sự thật; mức độ chắc chắn tương xứng chứng cứ; liên kết các câu tự nhiên. Had passed giữ sự kiện trước cuộc họp; would publish là tương lai nhìn từ quá khứ."
+    },
+    "review_status": "DRAFT_TEACHER_REVIEW_REQUIRED",
+    "assessment_mode": "FORMATIVE_ONLY",
+    "teacher_notes_vi": "Kiểm tra tính đa nghĩa của cấu trúc đối chiếu; phương án khác ngữ cảnh có thể đúng ngữ pháp nhưng không phải lựa chọn giữ đúng mục tiêu."
+  },
+  "B2-21": {
+    "code": "B2-21",
+    "title": "Future in the Past",
+    "context_vi": "Bạn viết phần lịch sử của một dự án bị hoãn.",
+    "goal_vi": "Dùng Future in the Past để giữ đúng quan hệ thời gian, vai trò, mức độ chắc chắn và văn phong trong bài viết B2.",
+    "contrast_cue_vi": "Were going to chỉ kế hoạch hồi đó, có thể không thực hiện; opened xác nhận sự kiện.",
+    "checkpoints": [
+      {
+        "id": "B2-21-M19D-C1",
+        "prompt_vi": "Năm 2022, nhóm dự định ra mắt sản phẩm năm 2023; nhìn lại từ năm 2026.",
+        "options_en": [
+          "In 2022, the team planned that it would launch the product in 2023.",
+          "In 2022, the team planned that it will launch the product in 2023.",
+          "In 2022, the team planned that it had launched the product in 2023."
+        ],
+        "correct_index": 0,
+        "option_feedback_vi": [
+          "Would launch nói về tương lai nhìn từ quá khứ, không xác nhận đã ra mắt.",
+          "Will launch đổi điểm nhìn sang hiện tại.",
+          "Had launched biến kế hoạch tương lai thành sự kiện hoàn thành trước."
+        ],
+        "focus": "diagnose"
+      },
+      {
+        "id": "B2-21-M19D-C2",
+        "prompt_vi": "Nhóm định tổ chức hội thảo nhưng cuối cùng bị hủy.",
+        "options_en": [
+          "We were going to holding the workshop, but it was cancelled.",
+          "We were going to hold the workshop, but it was cancelled.",
+          "We held the workshop, but it was cancelled before it began."
+        ],
+        "correct_index": 1,
+        "option_feedback_vi": [
+          "Sau going to cần động từ nguyên mẫu hold.",
+          "Was going to nêu ý định trong quá khứ, có thể không thực hiện.",
+          "Held khẳng định hội thảo đã được tổ chức, trái với bị hủy trước khi bắt đầu."
+        ],
+        "focus": "context_decision"
+      },
+      {
+        "id": "B2-21-M19D-C3",
+        "prompt_vi": "Báo cáo lịch sử cần tránh biến kỳ vọng thành sự thật.",
+        "options_en": [
+          "The project finished by December as expected.",
+          "The project was expecting finished by December, but it did not.",
+          "The project was expected to finish by December, but it did not."
+        ],
+        "correct_index": 2,
+        "option_feedback_vi": [
+          "Khẳng định hoàn tất làm đổi sự thật.",
+          "Cấu trúc was expecting finished không đúng hình thái.",
+          "Was expected to nêu dự báo cũ; but it did not xác nhận không hoàn thành."
+        ],
+        "focus": "revision"
+      }
+    ],
+    "transfer": {
+      "prompt_vi": "Tự viết đoạn 3–5 câu theo tình huống sau, giải thích lựa chọn cấu trúc và giới hạn của bằng chứng: Bạn viết phần lịch sử của một dự án bị hoãn.",
+      "sample_en": "The council was going to open the community centre in spring, but the contractor withdrew shortly before completion. Officials then announced that the centre would open in September. The revised date was later postponed again.",
+      "rubric_vi": "Đúng cấu trúc và mốc thời gian; không đổi tác nhân/sự thật; mức độ chắc chắn tương xứng chứng cứ; liên kết các câu tự nhiên. Was going to là kế hoạch không thành; would open ghi lại thông báo tương lai tại mốc quá khứ."
+    },
+    "review_status": "DRAFT_TEACHER_REVIEW_REQUIRED",
+    "assessment_mode": "FORMATIVE_ONLY",
+    "teacher_notes_vi": "Kiểm tra tính đa nghĩa của cấu trúc đối chiếu; phương án khác ngữ cảnh có thể đúng ngữ pháp nhưng không phải lựa chọn giữ đúng mục tiêu."
+  },
+  "B2-22": {
+    "code": "B2-22",
+    "title": "Complex Noun Clauses",
+    "context_vi": "Bạn phân tích một quyết định chưa đủ dữ liệu.",
+    "goal_vi": "Dùng Complex Noun Clauses để giữ đúng quan hệ thời gian, vai trò, mức độ chắc chắn và văn phong trong bài viết B2.",
+    "contrast_cue_vi": "Whether thường trang trọng và linh hoạt hơn trong vị trí bổ ngữ; if có thể tự nhiên trong một số ngữ cảnh.",
+    "checkpoints": [
+      {
+        "id": "B2-22-M19D-C1",
+        "prompt_vi": "Báo cáo muốn nêu điều còn chưa rõ: liệu phương án A có hiệu quả không.",
+        "options_en": [
+          "Whether option A will work remains uncertain.",
+          "If will option A work remains uncertain.",
+          "That will option A work remains uncertain."
+        ],
+        "correct_index": 0,
+        "option_feedback_vi": [
+          "Whether mở một mệnh đề danh ngữ có/không với trật tự trần thuật.",
+          "Đảo will option A là trật tự câu hỏi trực tiếp, không phải noun clause.",
+          "That không diễn đạt câu hỏi có/không và còn sai trật tự."
+        ],
+        "focus": "diagnose"
+      },
+      {
+        "id": "B2-22-M19D-C2",
+        "prompt_vi": "Bạn viết một câu hỏi gián tiếp về nguyên nhân máy chủ lỗi.",
+        "options_en": [
+          "The team is investigating why failed the server.",
+          "The team is investigating why the server failed.",
+          "The team is investigating why did the server fail."
+        ],
+        "correct_index": 1,
+        "option_feedback_vi": [
+          "Đảo failed the server là trật tự không phù hợp ở đây.",
+          "Noun clause dùng trật tự chủ ngữ + động từ, không đảo trợ động từ.",
+          "Why did the server fail chỉ phù hợp trong câu hỏi trực tiếp."
+        ],
+        "focus": "context_decision"
+      },
+      {
+        "id": "B2-22-M19D-C3",
+        "prompt_vi": "Bạn muốn diễn đạt “vấn đề là đội thiếu bằng chứng”.",
+        "options_en": [
+          "The problem is whether the team lacks evidence, and we know it does.",
+          "The problem is which the team lacks evidence.",
+          "The problem is that the team lacks evidence."
+        ],
+        "correct_index": 2,
+        "option_feedback_vi": [
+          "Whether đặt vấn đề chưa biết có/không, trái với thông tin đã biết.",
+          "Which không thay that trong kiểu mệnh đề chỉ nội dung này.",
+          "That giới thiệu nội dung mệnh đề làm bổ ngữ cho problem."
+        ],
+        "focus": "revision"
+      }
+    ],
+    "transfer": {
+      "prompt_vi": "Tự viết đoạn 3–5 câu theo tình huống sau, giải thích lựa chọn cấu trúc và giới hạn của bằng chứng: Bạn phân tích một quyết định chưa đủ dữ liệu.",
+      "sample_en": "The central question is whether the survey represents rural households adequately. We do not yet know how the missing responses might affect the result. Before revising the policy, the committee should request a clearer explanation of the sampling method.",
+      "rubric_vi": "Đúng cấu trúc và mốc thời gian; không đổi tác nhân/sự thật; mức độ chắc chắn tương xứng chứng cứ; liên kết các câu tự nhiên. Whether đặt vấn đề lựa chọn; how + S + V đúng trật tự mệnh đề phụ."
+    },
+    "review_status": "DRAFT_TEACHER_REVIEW_REQUIRED",
+    "assessment_mode": "FORMATIVE_ONLY",
+    "teacher_notes_vi": "Kiểm tra tính đa nghĩa của cấu trúc đối chiếu; phương án khác ngữ cảnh có thể đúng ngữ pháp nhưng không phải lựa chọn giữ đúng mục tiêu."
+  },
+  "B2-23": {
+    "code": "B2-23",
+    "title": "Advanced Relative Clauses",
+    "context_vi": "Bạn giới thiệu một dự án trao đổi quốc tế.",
+    "goal_vi": "Dùng Advanced Relative Clauses để giữ đúng quan hệ thời gian, vai trò, mức độ chắc chắn và văn phong trong bài viết B2.",
+    "contrast_cue_vi": "Không có dấu phẩy có thể chỉ một nhóm; có dấu phẩy gợi thông tin bổ sung về toàn bộ nhóm đã nêu.",
+    "checkpoints": [
+      {
+        "id": "B2-23-M19D-C1",
+        "prompt_vi": "Có đúng một dự án; phần sau chỉ bổ sung thông tin về nó. Chọn non-defining relative clause.",
+        "options_en": [
+          "The project, which began in April, is expanding.",
+          "The project, that began in April, is expanding.",
+          "The project which began in April is expanding."
+        ],
+        "correct_index": 0,
+        "option_feedback_vi": [
+          "Which giữa hai dấu phẩy nêu thông tin bổ sung không dùng để xác định dự án.",
+          "Không dùng that trong mệnh đề quan hệ không xác định có dấu phẩy.",
+          "Không có dấu phẩy dễ tạo nghĩa xác định dự án nào."
+        ],
+        "focus": "diagnose"
+      },
+      {
+        "id": "B2-23-M19D-C2",
+        "prompt_vi": "Bạn viết trang trọng “the issue / we spoke about the issue”. Đưa giới từ ra trước.",
+        "options_en": [
+          "The issue about who we spoke remains unresolved.",
+          "The issue about which we spoke remains unresolved.",
+          "The issue about that we spoke remains unresolved."
+        ],
+        "correct_index": 1,
+        "option_feedback_vi": [
+          "Who dùng cho người, trong khi issue là sự việc.",
+          "Preposition + which dùng khi đại từ thay vật/việc.",
+          "Không dùng that ngay sau giới từ đứng trước đại từ quan hệ."
+        ],
+        "focus": "context_decision"
+      },
+      {
+        "id": "B2-23-M19D-C3",
+        "prompt_vi": "Bạn nói về tác giả có tác phẩm được dịch sang sáu thứ tiếng.",
+        "options_en": [
+          "The author which books were translated gave a talk.",
+          "The author who books were translated gave a talk.",
+          "The author whose books were translated gave a talk."
+        ],
+        "correct_index": 2,
+        "option_feedback_vi": [
+          "Which không thể thay cho whose trước danh từ books.",
+          "Who không làm tính từ sở hữu trước books.",
+          "Whose biểu thị quan hệ sở hữu giữa tác giả và sách."
+        ],
+        "focus": "revision"
+      }
+    ],
+    "transfer": {
+      "prompt_vi": "Tự viết đoạn 3–5 câu theo tình huống sau, giải thích lựa chọn cấu trúc và giới hạn của bằng chứng: Bạn giới thiệu một dự án trao đổi quốc tế.",
+      "sample_en": "The partnership, which began as a small student exchange, now includes joint research activities. The university with which our department collaborates has published an independent evaluation. The findings will inform next year's funding decision.",
+      "rubric_vi": "Đúng cấu trúc và mốc thời gian; không đổi tác nhân/sự thật; mức độ chắc chắn tương xứng chứng cứ; liên kết các câu tự nhiên. Dấu phẩy xác định thông tin bổ sung; with which phù hợp văn phong học thuật."
+    },
+    "review_status": "DRAFT_TEACHER_REVIEW_REQUIRED",
+    "assessment_mode": "FORMATIVE_ONLY",
+    "teacher_notes_vi": "Kiểm tra tính đa nghĩa của cấu trúc đối chiếu; phương án khác ngữ cảnh có thể đúng ngữ pháp nhưng không phải lựa chọn giữ đúng mục tiêu."
+  },
+  "B2-24": {
+    "code": "B2-24",
+    "title": "Advanced Quantifiers",
+    "context_vi": "Bạn viết báo cáo kết quả khảo sát ở hai trường.",
+    "goal_vi": "Dùng Advanced Quantifiers để giữ đúng quan hệ thời gian, vai trò, mức độ chắc chắn và văn phong trong bài viết B2.",
+    "contrast_cue_vi": "A number of = một số, dùng số nhiều; the number of = số lượng, dùng số ít.",
+    "checkpoints": [
+      {
+        "id": "B2-24-M19D-C1",
+        "prompt_vi": "Có đúng hai bản nháp và KHÔNG bản nào đạt. Chọn lượng từ phù hợp.",
+        "options_en": [
+          "Neither of the two drafts meets the requirements.",
+          "Both of the two drafts meet the requirements.",
+          "Either of the two drafts meets the requirements."
+        ],
+        "correct_index": 0,
+        "option_feedback_vi": [
+          "Neither of the two = không bản nào trong hai bản.",
+          "Both khẳng định cả hai đạt, đảo nghĩa.",
+          "Either nói một trong hai đều có thể đạt, trái với bằng chứng."
+        ],
+        "focus": "diagnose"
+      },
+      {
+        "id": "B2-24-M19D-C2",
+        "prompt_vi": "Cả hai phương án đều chấp nhận được, học viên có thể chọn một trong hai.",
+        "options_en": [
+          "All of the two approaches is acceptable.",
+          "Either of the two approaches is acceptable.",
+          "Neither of the two approaches is acceptable."
+        ],
+        "correct_index": 1,
+        "option_feedback_vi": [
+          "All of the two không phù hợp và is không khớp all.",
+          "Either of the two cho một lựa chọn trong hai đều dùng được.",
+          "Neither nói cả hai đều không chấp nhận được."
+        ],
+        "focus": "context_decision"
+      },
+      {
+        "id": "B2-24-M19D-C3",
+        "prompt_vi": "Khảo sát có 20 sinh viên; rất ít người trả lời. Chọn câu không đổi dữ kiện.",
+        "options_en": [
+          "A few students responded, so the response rate was high.",
+          "Much students responded to the survey.",
+          "Few students responded to the survey."
+        ],
+        "correct_index": 2,
+        "option_feedback_vi": [
+          "A few không tự dẫn tới tỷ lệ cao, nhất là với dữ kiện rất ít người.",
+          "Students đếm được số nhiều, không dùng much trực tiếp.",
+          "Few nhấn số lượng ít, thường không đủ so với mong đợi."
+        ],
+        "focus": "revision"
+      }
+    ],
+    "transfer": {
+      "prompt_vi": "Tự viết đoạn 3–5 câu theo tình huống sau, giải thích lựa chọn cấu trúc và giới hạn của bằng chứng: Bạn viết báo cáo kết quả khảo sát ở hai trường.",
+      "sample_en": "Neither of the two schools achieved a complete response rate, although a number of teachers submitted detailed comments. The number of missing forms fell after the second reminder. These results describe the surveyed schools only, not the entire district.",
+      "rubric_vi": "Đúng cấu trúc và mốc thời gian; không đổi tác nhân/sự thật; mức độ chắc chắn tương xứng chứng cứ; liên kết các câu tự nhiên. Neither of giới hạn hai trường; a number of khác the number of về cấu trúc và nghĩa."
+    },
+    "review_status": "DRAFT_TEACHER_REVIEW_REQUIRED",
+    "assessment_mode": "FORMATIVE_ONLY",
+    "teacher_notes_vi": "Kiểm tra tính đa nghĩa của cấu trúc đối chiếu; phương án khác ngữ cảnh có thể đúng ngữ pháp nhưng không phải lựa chọn giữ đúng mục tiêu."
+  },
+  "B2-25": {
+    "code": "B2-25",
+    "title": "Determiner Contrasts",
+    "context_vi": "Bạn so sánh các phương pháp phân tích.",
+    "goal_vi": "Dùng Determiner Contrasts để giữ đúng quan hệ thời gian, vai trò, mức độ chắc chắn và văn phong trong bài viết B2.",
+    "contrast_cue_vi": "The other chỉ thành viên còn lại của cặp hai; another giới thiệu lựa chọn khác trong nhóm lớn hơn.",
+    "checkpoints": [
+      {
+        "id": "B2-25-M19D-C1",
+        "prompt_vi": "Trong phòng có đúng hai máy. Một chiếc mới, chiếc còn lại đã cũ.",
+        "options_en": [
+          "One machine is new; the other is old.",
+          "One machine is new; another is old.",
+          "One machine is new; others is old."
+        ],
+        "correct_index": 0,
+        "option_feedback_vi": [
+          "The other chỉ chiếc còn lại trong hai vật đã xác định.",
+          "Another có nghĩa một chiếc khác, không chỉ duy nhất chiếc còn lại.",
+          "Others là đại từ số nhiều và không kết hợp is."
+        ],
+        "focus": "diagnose"
+      },
+      {
+        "id": "B2-25-M19D-C2",
+        "prompt_vi": "Bạn cần xin thêm một bản sao báo cáo, không phải tất cả bản còn lại.",
+        "options_en": [
+          "Could you send me the others copy of the report?",
+          "Could you send me another copy of the report?",
+          "Could you send me other copy of the report?"
+        ],
+        "correct_index": 1,
+        "option_feedback_vi": [
+          "The others là đại từ, không bổ nghĩa trực tiếp cho copy.",
+          "Another + danh từ đếm được số ít diễn đạt thêm một bản.",
+          "Other trước danh từ số ít cần từ hạn định khác."
+        ],
+        "focus": "context_decision"
+      },
+      {
+        "id": "B2-25-M19D-C3",
+        "prompt_vi": "Có ba nhóm: một nhóm ở Hà Nội, hai nhóm còn lại ở Đà Nẵng.",
+        "options_en": [
+          "One team is in Hanoi; another two is in Da Nang.",
+          "One team is in Hanoi; the others team are in Da Nang.",
+          "One team is in Hanoi; the other two are in Da Nang."
+        ],
+        "correct_index": 2,
+        "option_feedback_vi": [
+          "Another two có thể diễn đạt thêm hai nhóm trong ngữ cảnh khác, nhưng is không khớp hai nhóm.",
+          "The others không đứng trước team và team cần số nhiều.",
+          "The other two chỉ đúng hai nhóm còn lại trong tập xác định."
+        ],
+        "focus": "revision"
+      }
+    ],
+    "transfer": {
+      "prompt_vi": "Tự viết đoạn 3–5 câu theo tình huống sau, giải thích lựa chọn cấu trúc và giới hạn của bằng chứng: Bạn so sánh các phương pháp phân tích.",
+      "sample_en": "Of the two existing methods, one is fast but imprecise, while the other produces more reliable results. The team is considering another approach that would reduce costs without sacrificing accuracy. Other methods remain possible but have not been tested.",
+      "rubric_vi": "Đúng cấu trúc và mốc thời gian; không đổi tác nhân/sự thật; mức độ chắc chắn tương xứng chứng cứ; liên kết các câu tự nhiên. One/the other tham chiếu nhóm hai; another giới thiệu một phương án thứ ba; other bổ nghĩa danh từ số nhiều."
+    },
+    "review_status": "DRAFT_TEACHER_REVIEW_REQUIRED",
+    "assessment_mode": "FORMATIVE_ONLY",
+    "teacher_notes_vi": "Kiểm tra tính đa nghĩa của cấu trúc đối chiếu; phương án khác ngữ cảnh có thể đúng ngữ pháp nhưng không phải lựa chọn giữ đúng mục tiêu."
+  },
+  "B2-26": {
+    "code": "B2-26",
+    "title": "Advanced Gerund & Infinitive Patterns",
+    "context_vi": "Bạn viết thư phản hồi yêu cầu điều chỉnh thiết kế.",
+    "goal_vi": "Dùng Advanced Gerund & Infinitive Patterns để giữ đúng quan hệ thời gian, vai trò, mức độ chắc chắn và văn phong trong bài viết B2.",
+    "contrast_cue_vi": "Look forward to chứa giới từ to nên theo sau V-ing; hope to theo sau infinitive.",
+    "checkpoints": [
+      {
+        "id": "B2-26-M19D-C1",
+        "prompt_vi": "Công ty mong được gặp đối tác tuần sau. Chọn đúng dạng sau look forward to.",
+        "options_en": [
+          "We look forward to meeting the partners.",
+          "We look forward to meet the partners.",
+          "We look forward meeting the partners."
+        ],
+        "correct_index": 0,
+        "option_feedback_vi": [
+          "To là giới từ trong look forward to; theo sau là V-ing.",
+          "To meet là infinitive, không theo cấu trúc cố định này.",
+          "Cấu trúc này phải có giới từ to trước động từ V-ing; thiếu to làm sai mẫu bổ ngữ."
+        ],
+        "focus": "diagnose"
+      },
+      {
+        "id": "B2-26-M19D-C2",
+        "prompt_vi": "Đại diện phản đối việc thay lịch không báo trước.",
+        "options_en": [
+          "The representative objected changing the schedule without notice.",
+          "The representative objected to changing the schedule without notice.",
+          "The representative objected to change the schedule without notice."
+        ],
+        "correct_index": 1,
+        "option_feedback_vi": [
+          "Cấu trúc này phải có giới từ to trước động từ V-ing; thiếu to làm sai mẫu bổ ngữ.",
+          "Object to + V-ing dùng khi phản đối một việc.",
+          "To change không theo mẫu object to trong ngữ cảnh này."
+        ],
+        "focus": "context_decision"
+      },
+      {
+        "id": "B2-26-M19D-C3",
+        "prompt_vi": "Chọn mẫu diễn đạt mục tiêu mà vẫn phân biệt giới từ to và to-infinitive.",
+        "options_en": [
+          "She agreed to revising the document after reviewing it.",
+          "She agreed revising the document after reviewing it.",
+          "She agreed to revise the document after reviewing it."
+        ],
+        "correct_index": 2,
+        "option_feedback_vi": [
+          "Sau agree to cần động từ nguyên mẫu revise.",
+          "Agree trong mẫu này không đi thẳng với revising.",
+          "Agree + to V, còn after + V-ing; hai mẫu khác nhau."
+        ],
+        "focus": "revision"
+      }
+    ],
+    "transfer": {
+      "prompt_vi": "Tự viết đoạn 3–5 câu theo tình huống sau, giải thích lựa chọn cấu trúc và giới hạn của bằng chứng: Bạn viết thư phản hồi yêu cầu điều chỉnh thiết kế.",
+      "sample_en": "We look forward to reviewing the revised design next week. However, we object to changing the safety specifications without further evidence. The project team plans to consult an independent engineer before agreeing to any alteration.",
+      "rubric_vi": "Đúng cấu trúc và mốc thời gian; không đổi tác nhân/sự thật; mức độ chắc chắn tương xứng chứng cứ; liên kết các câu tự nhiên. Reviewing/changing theo giới từ to; to consult theo plans."
+    },
+    "review_status": "DRAFT_TEACHER_REVIEW_REQUIRED",
+    "assessment_mode": "FORMATIVE_ONLY",
+    "teacher_notes_vi": "Kiểm tra tính đa nghĩa của cấu trúc đối chiếu; phương án khác ngữ cảnh có thể đúng ngữ pháp nhưng không phải lựa chọn giữ đúng mục tiêu."
+  },
+  "B2-27": {
+    "code": "B2-27",
+    "title": "Verb Patterns – Meaning Contrasts",
+    "context_vi": "Bạn thuật lại cách khắc phục một lỗi phần mềm.",
+    "goal_vi": "Dùng Verb Patterns – Meaning Contrasts để giữ đúng quan hệ thời gian, vai trò, mức độ chắc chắn và văn phong trong bài viết B2.",
+    "contrast_cue_vi": "Stopped checking = bỏ hành động kiểm tra; stopped to check = dừng việc khác để kiểm tra.",
+    "checkpoints": [
+      {
+        "id": "B2-27-M19D-C1",
+        "prompt_vi": "Bạn nhớ đã gửi email hôm qua, tức nhớ lại hành động đã làm.",
+        "options_en": [
+          "I remember sending the email yesterday.",
+          "I remember to send the email yesterday.",
+          "I remember send the email yesterday."
+        ],
+        "correct_index": 0,
+        "option_feedback_vi": [
+          "Remember + V-ing nói về ký ức của hành động đã thực hiện.",
+          "Remember to V nhấn nhớ việc cần làm, không phải hồi tưởng hành động đã xong.",
+          "Thiếu to hoặc V-ing sau remember."
+        ],
+        "focus": "diagnose"
+      },
+      {
+        "id": "B2-27-M19D-C2",
+        "prompt_vi": "Kỹ sư dừng đang sửa máy để gọi trợ giúp. Chọn câu đúng quan hệ hai hành động.",
+        "options_en": [
+          "The engineer stopped repair the machine to call for help.",
+          "The engineer stopped repairing the machine to call for help.",
+          "The engineer stopped to repair the machine to call for help."
+        ],
+        "correct_index": 1,
+        "option_feedback_vi": [
+          "Sau stop không đi trực tiếp bare verb repair trong mẫu này.",
+          "Stop repairing = ngừng sửa; to call diễn đạt mục đích mới.",
+          "Stop to repair = dừng một việc khác để bắt đầu sửa, đổi nghĩa."
+        ],
+        "focus": "context_decision"
+      },
+      {
+        "id": "B2-27-M19D-C3",
+        "prompt_vi": "Bạn đề xuất thử dùng công cụ khác như một giải pháp.",
+        "options_en": [
+          "Try to use a different browser when the page has already loaded successfully.",
+          "Try use a different browser to see whether the page loads.",
+          "Try using a different browser to see whether the page loads."
+        ],
+        "correct_index": 2,
+        "option_feedback_vi": [
+          "Try to V có thể đúng ở ngữ cảnh nỗ lực, nhưng “đã tải thành công” khiến mục đích khắc phục không còn phù hợp.",
+          "Thiếu to hoặc V-ing sau try.",
+          "Try V-ing = thử nghiệm một phương án để xem có cải thiện không."
+        ],
+        "focus": "revision"
+      }
+    ],
+    "transfer": {
+      "prompt_vi": "Tự viết đoạn 3–5 câu theo tình huống sau, giải thích lựa chọn cấu trúc và giới hạn của bằng chứng: Bạn thuật lại cách khắc phục một lỗi phần mềm.",
+      "sample_en": "The technician tried restarting the server, but the error persisted. She then tried to contact the administrator, only to find that the phone network was down. Before leaving, she remembered to save a copy of the diagnostic log.",
+      "rubric_vi": "Đúng cấu trúc và mốc thời gian; không đổi tác nhân/sự thật; mức độ chắc chắn tương xứng chứng cứ; liên kết các câu tự nhiên. Tried restarting = thử biện pháp; tried to contact = cố gắng; remembered to save = không quên làm."
+    },
+    "review_status": "DRAFT_TEACHER_REVIEW_REQUIRED",
+    "assessment_mode": "FORMATIVE_ONLY",
+    "teacher_notes_vi": "Kiểm tra tính đa nghĩa của cấu trúc đối chiếu; phương án khác ngữ cảnh có thể đúng ngữ pháp nhưng không phải lựa chọn giữ đúng mục tiêu."
+  },
+  "B2-28": {
+    "code": "B2-28",
+    "title": "Advanced Concession",
+    "context_vi": "Bạn viết nhận xét về tác động của một chương trình cộng đồng.",
+    "goal_vi": "Dùng Advanced Concession để giữ đúng quan hệ thời gian, vai trò, mức độ chắc chắn và văn phong trong bài viết B2.",
+    "contrast_cue_vi": "Cùng ý nhượng bộ nhưng despite theo noun phrase còn although theo mệnh đề.",
+    "checkpoints": [
+      {
+        "id": "B2-28-M19D-C1",
+        "prompt_vi": "Chương trình vẫn tiếp tục DÙ thiếu kinh phí. Chọn cấu trúc với cụm danh từ.",
+        "options_en": [
+          "Despite the funding shortage, the programme continued.",
+          "Despite of the funding shortage, the programme continued.",
+          "Although the funding shortage, the programme continued."
+        ],
+        "correct_index": 0,
+        "option_feedback_vi": [
+          "Despite + noun phrase diễn đạt nhượng bộ.",
+          "Despite là một giới từ đã hoàn chỉnh, vì vậy không được thêm of sau despite.",
+          "Although cần mệnh đề đầy đủ có chủ ngữ và động từ."
+        ],
+        "focus": "diagnose"
+      },
+      {
+        "id": "B2-28-M19D-C2",
+        "prompt_vi": "Bạn dùng although để nối hai mệnh đề đầy đủ.",
+        "options_en": [
+          "Despite the venue was small, the event attracted a large audience.",
+          "Although the venue was small, the event attracted a large audience.",
+          "Although the small venue, the event attracted a large audience."
+        ],
+        "correct_index": 1,
+        "option_feedback_vi": [
+          "Despite theo sau noun/V-ing, không theo một mệnh đề kiểu này.",
+          "Although + clause nêu trở ngại nhưng kết quả trái kỳ vọng.",
+          "The small venue chỉ là cụm danh từ, không phải mệnh đề."
+        ],
+        "focus": "context_decision"
+      },
+      {
+        "id": "B2-28-M19D-C3",
+        "prompt_vi": "Hãy giữ quan hệ nhượng bộ, không đổi thành nguyên nhân.",
+        "options_en": [
+          "Because of the delay, the team delivered the report.",
+          "In spite the delay, the team delivered the report.",
+          "In spite of the delay, the team delivered the report."
+        ],
+        "correct_index": 2,
+        "option_feedback_vi": [
+          "Because of biến độ trễ thành nguyên nhân, khác với nhượng bộ.",
+          "In spite of là cụm giới từ cố định; nếu bỏ of thì cấu trúc không hoàn chỉnh.",
+          "In spite of + noun cho biết kết quả vẫn xảy ra bất chấp trở ngại."
+        ],
+        "focus": "revision"
+      }
+    ],
+    "transfer": {
+      "prompt_vi": "Tự viết đoạn 3–5 câu theo tình huống sau, giải thích lựa chọn cấu trúc và giới hạn của bằng chứng: Bạn viết nhận xét về tác động của một chương trình cộng đồng.",
+      "sample_en": "Although the programme had a limited budget, it attracted participants from several neighbourhoods. Despite having only a small volunteer team, the organisers completed all scheduled workshops. However, attendance figures alone do not establish long-term impact.",
+      "rubric_vi": "Đúng cấu trúc và mốc thời gian; không đổi tác nhân/sự thật; mức độ chắc chắn tương xứng chứng cứ; liên kết các câu tự nhiên. Although + clause và despite + V-ing; câu cuối tránh kết luận nhân quả vượt bằng chứng."
+    },
+    "review_status": "DRAFT_TEACHER_REVIEW_REQUIRED",
+    "assessment_mode": "FORMATIVE_ONLY",
+    "teacher_notes_vi": "Kiểm tra tính đa nghĩa của cấu trúc đối chiếu; phương án khác ngữ cảnh có thể đúng ngữ pháp nhưng không phải lựa chọn giữ đúng mục tiêu."
+  },
+  "B2-29": {
+    "code": "B2-29",
+    "title": "Contrast Clauses",
+    "context_vi": "Bạn so sánh hai phương pháp giảng dạy.",
+    "goal_vi": "Dùng Contrast Clauses để giữ đúng quan hệ thời gian, vai trò, mức độ chắc chắn và văn phong trong bài viết B2.",
+    "contrast_cue_vi": "Cả hai có thể nêu tương phản; whereas ít mơ hồ nghĩa thời gian hơn.",
+    "checkpoints": [
+      {
+        "id": "B2-29-M19D-C1",
+        "prompt_vi": "Hai nhóm có quan điểm TRÁI NGƯỢC; bạn muốn viết câu so sánh, không nói thời gian.",
+        "options_en": [
+          "The first team preferred interviews, whereas the second used surveys.",
+          "The first team preferred interviews during the second used surveys.",
+          "The first team preferred interviews, despite the second used surveys."
+        ],
+        "correct_index": 0,
+        "option_feedback_vi": [
+          "Whereas liên kết hai mệnh đề có nội dung tương phản.",
+          "During là giới từ thời gian không đứng trước mệnh đề như vậy.",
+          "Despite không nối trực tiếp với mệnh đề “the second used”."
+        ],
+        "focus": "diagnose"
+      },
+      {
+        "id": "B2-29-M19D-C2",
+        "prompt_vi": "Chọn câu vừa đúng ngữ pháp vừa rõ hai lựa chọn đối lập.",
+        "options_en": [
+          "Despite the pilot group liked the app, the main group preferred paper forms.",
+          "While the pilot group liked the app, the main group preferred paper forms.",
+          "Unlike the pilot group liked the app, the main group preferred paper forms."
+        ],
+        "correct_index": 1,
+        "option_feedback_vi": [
+          "Despite cần noun phrase hoặc V-ing, không dùng với mệnh đề đầy đủ trực tiếp.",
+          "While liên kết hai mệnh đề tương phản (trong ngữ cảnh hai nhóm).",
+          "Unlike là giới từ, không đứng trước cả mệnh đề có liked."
+        ],
+        "focus": "context_decision"
+      },
+      {
+        "id": "B2-29-M19D-C3",
+        "prompt_vi": "Bạn muốn dùng unlike để đối chiếu hai nhóm cụ thể.",
+        "options_en": [
+          "Unlike the first group preferred apps, the second group used paper forms.",
+          "Unlike of the first group, the second group preferred paper forms.",
+          "Unlike the first group, the second group preferred paper forms."
+        ],
+        "correct_index": 2,
+        "option_feedback_vi": [
+          "Sau unlike không đặt mệnh đề đầy đủ kiểu này.",
+          "Unlike tự đóng vai trò giới từ, không đi kèm of trước danh từ đối chiếu.",
+          "Unlike + noun phrase tạo đối chiếu về chủ thể."
+        ],
+        "focus": "revision"
+      }
+    ],
+    "transfer": {
+      "prompt_vi": "Tự viết đoạn 3–5 câu theo tình huống sau, giải thích lựa chọn cấu trúc và giới hạn của bằng chứng: Bạn so sánh hai phương pháp giảng dạy.",
+      "sample_en": "Whereas self-paced courses offer flexible schedules, classroom lessons provide immediate interaction. Unlike a recorded video, a live session allows learners to clarify a misunderstanding before moving on. Neither approach is suitable for every learner.",
+      "rubric_vi": "Đúng cấu trúc và mốc thời gian; không đổi tác nhân/sự thật; mức độ chắc chắn tương xứng chứng cứ; liên kết các câu tự nhiên. Whereas nối hai mệnh đề; unlike nhận noun phrase; câu cuối cân bằng lập luận."
+    },
+    "review_status": "DRAFT_TEACHER_REVIEW_REQUIRED",
+    "assessment_mode": "FORMATIVE_ONLY",
+    "teacher_notes_vi": "Kiểm tra tính đa nghĩa của cấu trúc đối chiếu; phương án khác ngữ cảnh có thể đúng ngữ pháp nhưng không phải lựa chọn giữ đúng mục tiêu."
+  },
+  "B2-30": {
+    "code": "B2-30",
+    "title": "Result & Degree Clauses",
+    "context_vi": "Bạn mô tả vấn đề trong một buổi hội thảo.",
+    "goal_vi": "Dùng Result & Degree Clauses để giữ đúng quan hệ thời gian, vai trò, mức độ chắc chắn và văn phong trong bài viết B2.",
+    "contrast_cue_vi": "So...that kể hệ quả thật; too...to nói vượt mức cho một mục đích cụ thể.",
+    "checkpoints": [
+      {
+        "id": "B2-30-M19D-C1",
+        "prompt_vi": "Sự cố phức tạp đến mức nhóm cần thêm thời gian. Chọn so ... that.",
+        "options_en": [
+          "The problem was so complex that the team needed more time.",
+          "The problem was such complex that the team needed more time.",
+          "The problem was too complex that the team needed more time."
+        ],
+        "correct_index": 0,
+        "option_feedback_vi": [
+          "So + adjective + that clause chỉ mức độ và kết quả.",
+          "Such không trực tiếp theo sau bởi tính từ đơn không có danh từ.",
+          "Too thường đi với to-infinitive hoặc một cấu trúc khác, không phải too...that."
+        ],
+        "focus": "diagnose"
+      },
+      {
+        "id": "B2-30-M19D-C2",
+        "prompt_vi": "Đây là một nhiệm vụ rất khó đến mức đội cần trợ giúp. Chọn such a ... that.",
+        "options_en": [
+          "It was such difficult task that the team asked for help.",
+          "It was such a difficult task that the team asked for help.",
+          "It was so a difficult task that the team asked for help."
+        ],
+        "correct_index": 1,
+        "option_feedback_vi": [
+          "Task là danh từ đếm được số ít, cần a.",
+          "Such a + adjective + singular countable noun + that clause.",
+          "So không đặt trước a + adj + noun theo dạng này."
+        ],
+        "focus": "context_decision"
+      },
+      {
+        "id": "B2-30-M19D-C3",
+        "prompt_vi": "Vật quá nặng, một người không thể nâng được. Chọn câu biểu thị quá mức.",
+        "options_en": [
+          "The box was enough heavy for one person to lift.",
+          "The box was such heavy for one person to lift.",
+          "The box was too heavy for one person to lift."
+        ],
+        "correct_index": 2,
+        "option_feedback_vi": [
+          "Enough đứng sau adjective: heavy enough; hơn nữa nghĩa không đúng ý không thể nâng.",
+          "Such cần danh từ đi kèm, không dùng trực tiếp với heavy.",
+          "Too + adjective + for someone + to V nói quá mức cho khả năng thực hiện."
+        ],
+        "focus": "revision"
+      }
+    ],
+    "transfer": {
+      "prompt_vi": "Tự viết đoạn 3–5 câu theo tình huống sau, giải thích lựa chọn cấu trúc và giới hạn của bằng chứng: Bạn mô tả vấn đề trong một buổi hội thảo.",
+      "sample_en": "The entrance was so crowded that several participants missed the opening session. The hall itself was large enough to accommodate everyone, but the registration process was too slow to prevent delays. Organisers therefore plan to introduce staggered arrival times.",
+      "rubric_vi": "Đúng cấu trúc và mốc thời gian; không đổi tác nhân/sự thật; mức độ chắc chắn tương xứng chứng cứ; liên kết các câu tự nhiên. Ba cấu trúc diễn đạt hệ quả, đủ khả năng và vượt ngưỡng khác nhau."
+    },
+    "review_status": "DRAFT_TEACHER_REVIEW_REQUIRED",
+    "assessment_mode": "FORMATIVE_ONLY",
+    "teacher_notes_vi": "Kiểm tra tính đa nghĩa của cấu trúc đối chiếu; phương án khác ngữ cảnh có thể đúng ngữ pháp nhưng không phải lựa chọn giữ đúng mục tiêu."
+  },
+  "B2-31": {
+    "code": "B2-31",
+    "title": "As If / As Though",
+    "context_vi": "Bạn đánh giá cách một người trình bày kết quả nghiên cứu.",
+    "goal_vi": "Dùng As If / As Though để giữ đúng quan hệ thời gian, vai trò, mức độ chắc chắn và văn phong trong bài viết B2.",
+    "contrast_cue_vi": "Câu đầu có thể cho thấy người nói chấp nhận khả năng anh ấy biết; câu sau tạo khoảng cách nghi ngờ.",
+    "checkpoints": [
+      {
+        "id": "B2-31-M19D-C1",
+        "prompt_vi": "Một người mới vào công ty nhưng nói như thể họ là giám đốc, thực tế không phải.",
+        "options_en": [
+          "She speaks as though she were the director.",
+          "She speaks as though she is certainly the director.",
+          "She speaks as though she had been the director tomorrow."
+        ],
+        "correct_index": 0,
+        "option_feedback_vi": [
+          "Were tạo khoảng cách giả định với thực tế hiện tại.",
+          "Câu này có thể đúng trong ngữ cảnh khác nhưng certainly the director trái dữ kiện không phải giám đốc.",
+          "Had been + tomorrow không phù hợp mốc và quan hệ thời gian."
+        ],
+        "focus": "diagnose"
+      },
+      {
+        "id": "B2-31-M19D-C2",
+        "prompt_vi": "Có bằng chứng người hàng xóm đang bị ốm; bạn miêu tả vẻ ngoài như tình trạng có thể thật.",
+        "options_en": [
+          "He looks as if he had illness tomorrow.",
+          "He looks as if he is ill.",
+          "He looks as if he were ill, so he definitely is not ill."
+        ],
+        "correct_index": 1,
+        "option_feedback_vi": [
+          "Had illness tomorrow sai kết hợp thì và mốc thời gian.",
+          "Is ill phù hợp khi người nói coi khả năng bệnh là thực tế.",
+          "Were tạo khoảng cách giả định; vế definitely is not ill phủ nhận bằng chứng."
+        ],
+        "focus": "context_decision"
+      },
+      {
+        "id": "B2-31-M19D-C3",
+        "prompt_vi": "Bạn muốn diễn đạt thái độ không tin lời hứa nhưng tránh khẳng định chắc chắn.",
+        "options_en": [
+          "He acts as though he knows the answer, which proves he knows it.",
+          "He acts as though he know the answer, although he probably does not.",
+          "He acts as though he knew the answer, although he probably does not."
+        ],
+        "correct_index": 2,
+        "option_feedback_vi": [
+          "Proves khẳng định bằng chứng không có; knows có thể đúng nhưng không diễn đạt khoảng cách giả định.",
+          "He know sai hòa hợp chủ–vị.",
+          "Knew ở đây là quá khứ không thực, kết hợp probably giữ mức độ thận trọng."
+        ],
+        "focus": "revision"
+      }
+    ],
+    "transfer": {
+      "prompt_vi": "Tự viết đoạn 3–5 câu theo tình huống sau, giải thích lựa chọn cấu trúc và giới hạn của bằng chứng: Bạn đánh giá cách một người trình bày kết quả nghiên cứu.",
+      "sample_en": "The presenter spoke as though the experiment had answered every remaining question. In reality, the sample was small and several variables were not controlled. A more cautious summary would separate the observed results from broader interpretations.",
+      "rubric_vi": "Đúng cấu trúc và mốc thời gian; không đổi tác nhân/sự thật; mức độ chắc chắn tương xứng chứng cứ; liên kết các câu tự nhiên. As though + past perfect tạo khoảng cách với khẳng định về việc đã hoàn tất trước khi phát biểu."
+    },
+    "review_status": "DRAFT_TEACHER_REVIEW_REQUIRED",
+    "assessment_mode": "FORMATIVE_ONLY",
+    "teacher_notes_vi": "Kiểm tra tính đa nghĩa của cấu trúc đối chiếu; phương án khác ngữ cảnh có thể đúng ngữ pháp nhưng không phải lựa chọn giữ đúng mục tiêu."
+  },
+  "B2-32": {
+    "code": "B2-32",
+    "title": "Preferences & Unreal Time",
+    "context_vi": "Bạn viết phản hồi lịch họp còn chưa hợp lý.",
+    "goal_vi": "Dùng Preferences & Unreal Time để giữ đúng quan hệ thời gian, vai trò, mức độ chắc chắn và văn phong trong bài viết B2.",
+    "contrast_cue_vi": "Câu đầu nói lựa chọn của tôi; câu sau nói mong người khác rời đi.",
+    "checkpoints": [
+      {
+        "id": "B2-32-M19D-C1",
+        "prompt_vi": "Bạn muốn tự mình chờ thêm một ngày, không muốn quyết định ngay.",
+        "options_en": [
+          "I would rather wait another day than decide now.",
+          "I would rather to wait another day than decide now.",
+          "I would rather waiting another day than decide now."
+        ],
+        "correct_index": 0,
+        "option_feedback_vi": [
+          "Would rather + bare infinitive khi cùng chủ ngữ.",
+          "Không thêm to sau would rather trong mẫu này.",
+          "Không dùng V-ing sau would rather trong mẫu này."
+        ],
+        "focus": "diagnose"
+      },
+      {
+        "id": "B2-32-M19D-C2",
+        "prompt_vi": "Bạn muốn đồng nghiệp gửi bản sửa vào hôm nay, nhưng họ chưa làm. Chọn would rather + subject.",
+        "options_en": [
+          "I would rather you to send the revision today.",
+          "I would rather you sent the revision today.",
+          "I would rather you will send the revision today."
+        ],
+        "correct_index": 1,
+        "option_feedback_vi": [
+          "Không dùng to send trực tiếp sau chủ ngữ trong mẫu này.",
+          "Would rather + subject + past simple thể hiện mong muốn ở hiện tại/tương lai.",
+          "Will send không phải dạng thông thường của mẫu mong muốn này."
+        ],
+        "focus": "context_decision"
+      },
+      {
+        "id": "B2-32-M19D-C3",
+        "prompt_vi": "Cuộc họp liên tục bị hoãn; đến lúc nhóm phải chốt ngày cụ thể.",
+        "options_en": [
+          "It is high time we will set a firm date.",
+          "It is high time we to set a firm date.",
+          "It is high time we set a firm date."
+        ],
+        "correct_index": 2,
+        "option_feedback_vi": [
+          "Will set không theo cấu trúc high time điển hình.",
+          "Thiếu động từ chia thì sau chủ ngữ we.",
+          "It is high time + past simple nói đến sự cần thiết phải hành động ngay."
+        ],
+        "focus": "revision"
+      }
+    ],
+    "transfer": {
+      "prompt_vi": "Tự viết đoạn 3–5 câu theo tình huống sau, giải thích lựa chọn cấu trúc và giới hạn của bằng chứng: Bạn viết phản hồi lịch họp còn chưa hợp lý.",
+      "sample_en": "I would rather review the draft before the meeting than discuss it without preparation. I would also rather the organiser sent the agenda at least a day in advance. It is time we made that practice standard for the team.",
+      "rubric_vi": "Đúng cấu trúc và mốc thời gian; không đổi tác nhân/sự thật; mức độ chắc chắn tương xứng chứng cứ; liên kết các câu tự nhiên. Rather + V cho lựa chọn chủ ngữ; rather + S + past simple cho mong người khác; it is time + past simple."
+    },
+    "review_status": "DRAFT_TEACHER_REVIEW_REQUIRED",
+    "assessment_mode": "FORMATIVE_ONLY",
+    "teacher_notes_vi": "Kiểm tra tính đa nghĩa của cấu trúc đối chiếu; phương án khác ngữ cảnh có thể đúng ngữ pháp nhưng không phải lựa chọn giữ đúng mục tiêu."
+  },
+  "B2-33": {
+    "code": "B2-33",
+    "title": "Introduction to Inversion",
+    "context_vi": "Bạn viết bản tổng kết về một phát hiện quan trọng.",
+    "goal_vi": "Dùng Introduction to Inversion để giữ đúng quan hệ thời gian, vai trò, mức độ chắc chắn và văn phong trong bài viết B2.",
+    "contrast_cue_vi": "Cùng ý nhưng đảo ngữ tạo giọng nhấn mạnh/trang trọng.",
+    "checkpoints": [
+      {
+        "id": "B2-33-M19D-C1",
+        "prompt_vi": "Báo cáo trang trọng muốn nhấn điều hiếm khi xảy ra: chưa từng thấy số liệu như vậy.",
+        "options_en": [
+          "Never before have we seen figures like these.",
+          "Never before we have seen figures like these.",
+          "Never before did we have seen figures like these."
+        ],
+        "correct_index": 0,
+        "option_feedback_vi": [
+          "Never before đứng đầu kéo trợ động từ have lên trước chủ ngữ.",
+          "Thiếu đảo trợ động từ sau trạng từ phủ định.",
+          "Did không kết hợp với have seen như vậy."
+        ],
+        "focus": "diagnose"
+      },
+      {
+        "id": "B2-33-M19D-C2",
+        "prompt_vi": "Bạn muốn đặt Not until cuối tuần làm mốc; trước đó chưa phát hiện lỗi.",
+        "options_en": [
+          "Not until Friday did the team noticed the error.",
+          "Not until Friday did the team notice the error.",
+          "Not until Friday the team noticed the error."
+        ],
+        "correct_index": 1,
+        "option_feedback_vi": [
+          "Sau did phải là nguyên mẫu notice.",
+          "Not until đầu câu đảo trợ động từ did trước chủ ngữ; sau did dùng notice.",
+          "Khi trạng từ phủ định xuất hiện ở đầu câu, cần đưa trợ động từ lên trước chủ ngữ."
+        ],
+        "focus": "context_decision"
+      },
+      {
+        "id": "B2-33-M19D-C3",
+        "prompt_vi": "Văn bản: nhóm hiếm khi nhận phản hồi tiêu cực. Chọn đảo ngữ đúng.",
+        "options_en": [
+          "Rarely the team receives negative feedback.",
+          "Rarely do the team receives negative feedback.",
+          "Rarely does the team receive negative feedback."
+        ],
+        "correct_index": 2,
+        "option_feedback_vi": [
+          "Khi trạng từ phủ định xuất hiện ở đầu câu, cần đưa trợ động từ lên trước chủ ngữ.",
+          "Trong biến thể team coi là số ít, dùng does + receive (không receives).",
+          "Rarely đầu câu kéo does trước chủ ngữ số ít collective team trong cách dùng này."
+        ],
+        "focus": "revision"
+      }
+    ],
+    "transfer": {
+      "prompt_vi": "Tự viết đoạn 3–5 câu theo tình huống sau, giải thích lựa chọn cấu trúc và giới hạn của bằng chứng: Bạn viết bản tổng kết về một phát hiện quan trọng.",
+      "sample_en": "Rarely have researchers observed such a rapid recovery in this region. However, the measurements cover only two seasons, so the apparent improvement should not yet be described as permanent. Further monitoring is planned.",
+      "rubric_vi": "Đúng cấu trúc và mốc thời gian; không đổi tác nhân/sự thật; mức độ chắc chắn tương xứng chứng cứ; liên kết các câu tự nhiên. Rarely have + S + V3; không lạm dụng đảo ngữ để thay thế bằng chứng."
+    },
+    "review_status": "DRAFT_TEACHER_REVIEW_REQUIRED",
+    "assessment_mode": "FORMATIVE_ONLY",
+    "teacher_notes_vi": "Kiểm tra tính đa nghĩa của cấu trúc đối chiếu; phương án khác ngữ cảnh có thể đúng ngữ pháp nhưng không phải lựa chọn giữ đúng mục tiêu."
+  },
+  "B2-34": {
+    "code": "B2-34",
+    "title": "Ellipsis & Substitution",
+    "context_vi": "Bạn báo cáo kết quả hai nhóm làm việc.",
+    "goal_vi": "Dùng Ellipsis & Substitution để giữ đúng quan hệ thời gian, vai trò, mức độ chắc chắn và văn phong trong bài viết B2.",
+    "contrast_cue_vi": "Cả hai rút gọn lặp hành động nhưng cấu trúc trợ động từ khác nhau.",
+    "checkpoints": [
+      {
+        "id": "B2-34-M19D-C1",
+        "prompt_vi": "Hai thành viên đều đã hoàn thành bản nháp. Dùng phép thay thế tránh lặp present perfect.",
+        "options_en": [
+          "Mai has finished her draft, and so has An.",
+          "Mai has finished her draft, and so does An.",
+          "Mai has finished her draft, and so An has."
+        ],
+        "correct_index": 0,
+        "option_feedback_vi": [
+          "So + auxiliary + subject giữ trợ động từ has tương ứng với present perfect.",
+          "Does thay đổi thì/cấu trúc gốc.",
+          "So An has có thể xuất hiện trong cách diễn đạt khác nhưng không phải phép đảo với so trong ý đồng tình này."
+        ],
+        "focus": "diagnose"
+      },
+      {
+        "id": "B2-34-M19D-C2",
+        "prompt_vi": "Hai nhóm đều CHƯA nộp hồ sơ. Dùng neither để lược mệnh đề.",
+        "options_en": [
+          "Team A has not submitted its file, and neither Team B has.",
+          "Team A has not submitted its file, and neither has Team B.",
+          "Team A has not submitted its file, and neither does Team B."
+        ],
+        "correct_index": 1,
+        "option_feedback_vi": [
+          "Thiếu đảo ngữ sau neither.",
+          "Neither + auxiliary + subject dùng phép thay thế cho mệnh đề phủ định present perfect.",
+          "Does thay đổi trợ động từ, không đồng bộ với has submitted."
+        ],
+        "focus": "context_decision"
+      },
+      {
+        "id": "B2-34-M19D-C3",
+        "prompt_vi": "Bạn so sánh hai bản đồ; muốn nói bản thứ hai tốt hơn bản thứ nhất mà không lặp “map”.",
+        "options_en": [
+          "The second map is clearer than first.",
+          "The second map is clearer than the first ones.",
+          "The second map is clearer than the first one."
+        ],
+        "correct_index": 2,
+        "option_feedback_vi": [
+          "First cần cách chỉ định danh từ thích hợp khi lược map.",
+          "Ones là số nhiều, trong khi first map là số ít.",
+          "One thay cho danh từ số ít đếm được map đã được nhắc."
+        ],
+        "focus": "revision"
+      }
+    ],
+    "transfer": {
+      "prompt_vi": "Tự viết đoạn 3–5 câu theo tình huống sau, giải thích lựa chọn cấu trúc và giới hạn của bằng chứng: Bạn báo cáo kết quả hai nhóm làm việc.",
+      "sample_en": "The northern team has completed the inspection, and so has the southern team. Both groups used a revised checklist, but only the northern team has submitted its final report. The southern team is expected to do so tomorrow.",
+      "rubric_vi": "Đúng cấu trúc và mốc thời gian; không đổi tác nhân/sự thật; mức độ chắc chắn tương xứng chứng cứ; liên kết các câu tự nhiên. So has thay một hành động hoàn thành; do so tham chiếu submit its final report."
+    },
+    "review_status": "DRAFT_TEACHER_REVIEW_REQUIRED",
+    "assessment_mode": "FORMATIVE_ONLY",
+    "teacher_notes_vi": "Kiểm tra tính đa nghĩa của cấu trúc đối chiếu; phương án khác ngữ cảnh có thể đúng ngữ pháp nhưng không phải lựa chọn giữ đúng mục tiêu."
+  },
+  "B2-35": {
+    "code": "B2-35",
+    "title": "Emphasis & Cleft Sentences",
+    "context_vi": "Bạn viết bản giải thích vì sao dự án chậm tiến độ.",
+    "goal_vi": "Dùng Emphasis & Cleft Sentences để giữ đúng quan hệ thời gian, vai trò, mức độ chắc chắn và văn phong trong bài viết B2.",
+    "contrast_cue_vi": "Câu sau nhấn chính phần introduction, đặc biệt khi đối chiếu các phần khác.",
+    "checkpoints": [
+      {
+        "id": "B2-35-M19D-C1",
+        "prompt_vi": "Trong dự án, CHÍNH người phụ trách dữ liệu chứ không phải quản lý phát hiện lỗi.",
+        "options_en": [
+          "It was the data analyst who spotted the error, not the manager.",
+          "It was the data analyst which spotted the error, not the manager.",
+          "It was the error who the data analyst spotted, not the manager."
+        ],
+        "correct_index": 0,
+        "option_feedback_vi": [
+          "It-cleft nhấn đúng tác nhân phát hiện: data analyst.",
+          "Which không thường dùng cho người ở vị trí này.",
+          "Chuyển trọng tâm sang error và làm sai đối lập về tác nhân."
+        ],
+        "focus": "diagnose"
+      },
+      {
+        "id": "B2-35-M19D-C2",
+        "prompt_vi": "Ý cần nhấn là ĐIỀU nhóm cần nhất là thời gian, không phải tiền.",
+        "options_en": [
+          "What the team needs most are more time, not more money.",
+          "What the team needs most is more time, not more money.",
+          "Who the team needs most is more time, not more money."
+        ],
+        "correct_index": 1,
+        "option_feedback_vi": [
+          "Cụm what-clause hoạt động như chủ ngữ số ít trong cấu trúc thông thường này.",
+          "What-cleft nhấn đối tượng được cần đến là more time.",
+          "Who chỉ người, không biểu đạt vật/khái niệm more time."
+        ],
+        "focus": "context_decision"
+      },
+      {
+        "id": "B2-35-M19D-C3",
+        "prompt_vi": "Báo cáo yêu cầu không thay sự kiện “lỗi xuất hiện vào tháng Năm”; chỉ nhấn thời gian.",
+        "options_en": [
+          "It was May who first appeared the fault.",
+          "It was the fault that in May first appeared.",
+          "It was in May that the fault first appeared."
+        ],
+        "correct_index": 2,
+        "option_feedback_vi": [
+          "Who không dùng cho thời gian; cấu trúc thay đổi vai trò thành phần.",
+          "Câu gượng gạo, không làm rõ tiêu điểm thời gian như yêu cầu.",
+          "It-cleft nhấn trạng ngữ thời gian in May mà không đổi sự kiện."
+        ],
+        "focus": "revision"
+      }
+    ],
+    "transfer": {
+      "prompt_vi": "Tự viết đoạn 3–5 câu theo tình huống sau, giải thích lựa chọn cấu trúc và giới hạn của bằng chứng: Bạn viết bản giải thích vì sao dự án chậm tiến độ.",
+      "sample_en": "It was a shortage of specialist staff that delayed the second phase, not a lack of funding. What the project needs now is a realistic recruitment schedule. The team will therefore revise its staffing plan before changing the delivery date.",
+      "rubric_vi": "Đúng cấu trúc và mốc thời gian; không đổi tác nhân/sự thật; mức độ chắc chắn tương xứng chứng cứ; liên kết các câu tự nhiên. It-cleft nhấn nguyên nhân thật và đối chiếu nguyên nhân bị hiểu sai; what-cleft nhấn giải pháp."
+    },
+    "review_status": "DRAFT_TEACHER_REVIEW_REQUIRED",
+    "assessment_mode": "FORMATIVE_ONLY",
+    "teacher_notes_vi": "Kiểm tra tính đa nghĩa của cấu trúc đối chiếu; phương án khác ngữ cảnh có thể đúng ngữ pháp nhưng không phải lựa chọn giữ đúng mục tiêu."
+  }
+}

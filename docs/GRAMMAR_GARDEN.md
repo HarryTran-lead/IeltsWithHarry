@@ -63,30 +63,26 @@ safe to re-run after a fresh import:
 The 13 M26E patches to M25D passages are not applied: each needs its questions
 rewritten first. Every question keeps `publishable: false`.
 
-## Practice labs
+## Upgrade content inside the lessons
 
-`/app/grammar/labs?level=A1`, the **Luyện thêm** tab of each lesson (Grammar menu → Luyện thêm), the roadmap
-banner and the sidebar link use `/api/grammar/labs` (signed-in learners, open
-levels only):
+The Grammar A1–C2 upgrade is merged into the regular lessons rather than a separate page:
 
-| Lab | Bank | Items |
-|---|---|---|
-| M21 diagnostic | `grammar-assessment-private/m21-bank.json` | 72 (12 per level) |
-| M22 weakness clinic | `grammar-clinic-private/` | 100 |
-| M23 contrast | `grammar-contrast-private/` | 150 |
-| M24 sentence transformation | `grammar-transformation-private/` | 900 in 45 sets |
-| M25 context detective | `grammar-context-private/` (four banks) | 360 |
-| M26 writing/speaking transfer | `grammar-transfer-private/m26-task-bank.json` | 540 |
+- **Lý thuyết → Học từng bước** (M19, `grammar-guided/`): a short step-by-step lesson with quick
+  checks, answered by `/api/grammar/guided-check`. The full theory stays one click away.
+- **Lý thuyết → Học sâu** (M08–M13, `grammar-<level>-m0x/lessons.json`): patterns, worked
+  examples, contrasts and self-correction, appended after the original rules
+  (`src/lib/grammar/teaching/`, added to the guide by `publicEditorialLesson`).
+- **Luyện tập → Luyện sâu** (optional stage after the four regular stages): the lesson's M22
+  clinic, M23 contrast, M24 transformation, M25 context and M26 writing/speaking items, plus
+  the M20 concept map, via `/api/grammar/labs?lesson=…`. Lesson completion still means the
+  four regular stages; Luyện sâu never changes progress, XP, mastery or unlocks.
+- **Chẩn đoán nhanh** (`/app/grammar/diagnostic?level=A1`, roadmap card, sidebar, Grammar
+  menu): 12 M21 questions; each flagged lesson links to its Luyện sâu stage.
 
-The lesson tab also shows the M20 concept and its micro-skills
-(`grammar-knowledge/m20/`). Folders ending in `-private` hold answer keys: only
-`server-only` modules import them, and `src/lib/grammar/labs-server.ts` projects
-items to the key-free shapes in `labs-types.ts`. Feedback and reference answers
-are returned only after a submission. Labs are formative: they never write
-mastery, XP, CEFR claims or level unlocks; attempt badges stay in the browser.
+Folders ending in `-private` hold answer keys: only `server-only` modules import them, and
+`src/lib/grammar/labs-server.ts` projects items to the key-free shapes in `labs-types.ts`.
+Feedback and reference answers are returned only after a submission.
 
-None of the lab content has passed teacher review. Each lab keeps its own fail-closed
-gate (`*Live*` in `m22…m26-*-server.ts`). The owner approved showing the
-labelled drafts to learners in `src/data/grammar/labs-release-approval.json`;
-`src/lib/grammar/preview.ts` reads it. Set `owner_approved` to `false`, or
-`GRAMMAR_DRAFT_PREVIEW=false` on a deployment, to hide every lab again.
+None of this has passed teacher review. The owner approved showing the labelled drafts in
+`src/data/grammar/labs-release-approval.json`, read by `src/lib/grammar/preview.ts`. Set
+`owner_approved` to `false`, or `GRAMMAR_DRAFT_PREVIEW=false` on a deployment, to hide all of it.
