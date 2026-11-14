@@ -10,6 +10,7 @@ import { createClient } from "@/lib/supabase/browser";
 import { deleteLocalRecordings, getLocalRecording, listLocalRecordingIndexes, putLocalRecording } from "@/lib/speaking-recordings";
 import { HarryExaminer, useHarryVoice } from "./harry-examiner";
 import { CueCard } from "./bank-speaking";
+import { SpeakingCoachingPanel } from "./speaking-coaching-panel";
 import { clock, speakingItems, useMic, wordsIn, type SpeakingItem, type Take } from "./speaking-kit";
 import "./bank-exam.css";
 import "./bank-library.css";
@@ -107,6 +108,13 @@ export function SpeakingMock() {
   const { start: startMic, stop: stopMic, open: openMic } = mic;
 
   useEffect(() => { const timer = window.setInterval(() => setNow(Date.now()), 500); return () => window.clearInterval(timer); }, []);
+  useEffect(() => {
+    const requested = new URLSearchParams(window.location.search).get("coaching");
+    if (requested && /^[0-9a-f-]{36}$/i.test(requested)) {
+      const timer = window.setTimeout(() => setExpandedSession(requested), 0);
+      return () => window.clearTimeout(timer);
+    }
+  }, []);
   useEffect(() => { void (async () => {
     if (demoMode) { try {
       const sessions = JSON.parse(localStorage.getItem(historyKey) ?? "[]") as Session[];
@@ -129,7 +137,7 @@ export function SpeakingMock() {
   useEffect(() => () => { run.current += 1; advance.current?.("done"); }, []);
   useEffect(() => () => { if (playback) URL.revokeObjectURL(playback.url); }, [playback]);
 
-  const saveRecordings = async () => {
+  const saveRecordings = async (onlyPart2 = false) => {
     const savingSessionId = sessionId.current;
     if (!savingSessionId || !history.some((item) => item.id === savingSessionId)) return;
     setRecordingBusy(true); setHistoryError("");
@@ -137,6 +145,7 @@ export function SpeakingMock() {
       const userId = demoMode ? "" : (await db!.auth.getUser()).data.user?.id;
       if (!demoMode && !userId) throw new Error("Bạn cần đăng nhập để lưu bản ghi riêng tư.");
       for (const [answerIndex, entry] of log.entries()) {
+        if (onlyPart2 && entry.part !== 2) continue;
         if (!entry.take || recordingRefs.some((item) => item.session_id === savingSessionId && item.answer_index === answerIndex)) continue;
         const blob = await (await fetch(entry.take.url)).blob();
         if (!blob.size) continue;
@@ -279,7 +288,7 @@ export function SpeakingMock() {
           <div><b>{log.length}</b><span>câu đã trả lời</span></div>
           <div><b>{clock(spoken)}</b><span>thời gian bạn nói</span></div>
           <div><b>{words || "—"}</b><span>từ nhận dạng được</span></div>
-          <div><b>{words && spoken ? Math.round(words / (spoken / 60)) : "—"}</b><span>từ / phút (chuẩn 110–150)</span></div>
+          <div><b>{words && spoken ? Math.round(words / (spoken / 60)) : "—"}</b><span>từ / phút</span></div>
         </div>
         <div className="sm-actions">
           <button type="button" className="bx-submit" disabled={recordingBusy} onClick={() => void begin()}><RotateCcw size={16} /> Thi lại đề khác</button>
@@ -288,6 +297,7 @@ export function SpeakingMock() {
           <Link className="bx-ghost" href="/app/speaking">Về Speaking</Link>
         </div>
         <p className="bs-privacy">Nghe lại từng câu để tự đánh giá độ trôi chảy, phát âm và độ dài câu trả lời. Bấm lưu nếu muốn giữ bản ghi sau khi rời trang; {demoMode ? "bản demo lưu trên thiết bị này" : "tài khoản thật lưu trong kho riêng tư của bạn"}. Bản ghi chưa lưu sẽ mất khi đóng trang.</p>
+        {!demoMode && history.some((item) => item.id === sessionId.current) && <SpeakingCoachingPanel sessionId={sessionId.current} hasPart2Recording={log.some((entry, index) => entry.part === 2 && recordingRefs.some((recording) => recording.session_id === sessionId.current && recording.answer_index === index))} onSavePart2={() => void saveRecordings(true)} recordingBusy={recordingBusy} />}
         <section className="sm-log"><h2>Tự đánh giá theo 4 tiêu chí IELTS</h2><p>Fluency and coherence: ý có liền mạch? Lexical resource: từ dùng có phù hợp? Grammatical range and accuracy: cấu trúc có đa dạng và chính xác? Pronunciation: người nghe có hiểu rõ? Đây là gợi ý tự đánh giá, không phải band score chính thức.</p>{historyError && <p role="alert">{historyError}</p>}{historyError && !history.some((item) => item.id === sessionId.current) && <button type="button" className="bx-ghost" onClick={() => setHistoryRetry((current) => current + 1)}>Thử lưu lịch sử lại</button>}</section>
         <div className="sm-log">{([1, 2, 3] as const).map((part) => {
           const entries = log.filter((entry) => entry.part === part);
@@ -323,9 +333,9 @@ export function SpeakingMock() {
           </div>
         </div>
         <button type="button" className="bx-start sm-start" disabled={phase === "loading"} onClick={() => void begin()}>{phase === "loading" ? "Đang chọn đề…" : "Bắt đầu thi"} <ArrowRight size={18} /></button>
-        <div className="sm-log"><h2>Lịch sử luyện tập</h2><p>{history.length} phiên đã lưu · {clock(history.reduce((sum, item) => sum + item.speaking_seconds, 0))} đã nói. Chọn một phiên để đọc lại câu hỏi, bản chữ và nghe những bản ghi đã lưu.</p>{historyError && <p role="alert">{historyError}</p>}{history.slice(0, 10).map((item) => <section key={item.id} className="sm-entry">
+        <div className="sm-log"><h2>Lịch sử luyện tập</h2><p>{history.length} phiên đã lưu · {clock(history.reduce((sum, item) => sum + item.speaking_seconds, 0))} đã nói. Chọn một phiên để đọc lại câu hỏi, bản chữ và nghe những bản ghi đã lưu.</p>{historyError && <p role="alert">{historyError}</p>}{history.filter((item, index) => index < 10 || item.id === expandedSession).map((item) => <section key={item.id} className="sm-entry">
           <button type="button" className="bx-ghost" onClick={() => setExpandedSession((current) => current === item.id ? "" : item.id)} aria-expanded={expandedSession === item.id}>{new Date(item.completed_at).toLocaleString("vi-VN")} · {item.answers.length} câu · {clock(item.speaking_seconds)} nói</button>
-          {expandedSession === item.id && <><button type="button" className="bx-ghost" disabled={recordingBusy} onClick={() => void deleteSession(item)}><Trash2 size={15} /> Xoá phiên và bản ghi</button>{item.answers.map((answer, index) => {
+          {expandedSession === item.id && <><button type="button" className="bx-ghost" disabled={recordingBusy} onClick={() => void deleteSession(item)}><Trash2 size={15} /> Xoá phiên và bản ghi</button>{!demoMode && item.answers.some((answer, index) => answer.part === 2 && recordingRefs.some((recording) => recording.session_id === item.id && recording.answer_index === index)) && <SpeakingCoachingPanel sessionId={item.id} hasPart2Recording />}{item.answers.map((answer, index) => {
             const key = `${item.id}/${index}`;
             const hasAudio = recordingRefs.some((recording) => recording.session_id === item.id && recording.answer_index === index);
             return <article key={key} className="sm-entry"><b>Part {answer.part}: {answer.question}</b><p>{answer.transcript || "Không có bản chữ."}</p><small>{clock(answer.seconds)}</small>{hasAudio && <button type="button" className="bx-ghost" onClick={() => void playHistoryRecording(item.id, index)}><Volume2 size={15} /> Nghe bản ghi</button>}{playback?.key === key && <audio controls autoPlay src={playback.url} aria-label={`Bản ghi: ${answer.question}`} />}</article>;
