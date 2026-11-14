@@ -52,3 +52,15 @@ describe("Grammar practice labs", () => {
     expect(gradeDiagnostic("B1", { "M21-DIAG-NOPE": 0 }, ["A1"])).toBeNull();
   });
 });
+
+describe("Upgrade teaching merged into lessons", () => {
+  it("adds Học sâu sections and a step-by-step flow to every level without answer keys", { timeout: 60_000 }, async () => {
+    const { loadEditorialLesson, publicEditorialLesson } = await import("../src/lib/grammar/editorial");
+    for (const code of ["A1-01", "A2-23", "B1-16", "B2-07", "C1-12", "C2-04"]) {
+      const lesson = publicEditorialLesson((await loadEditorialLesson(code))!);
+      expect(lesson.guide.deep?.length, code).toBeGreaterThan(0);
+      expect(lesson.guide.guided?.steps.some((step) => step.kind === "check"), code).toBe(true);
+      expect(JSON.stringify(lesson.guide.guided), code).not.toMatch(/"(correct_index|correctIndex|correct|answer_index)"/);
+    }
+  });
+});

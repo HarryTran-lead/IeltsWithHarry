@@ -1,0 +1,3032 @@
+{
+  "C1-01": {
+    "lesson_id": "C1-01",
+    "overview_vi": "Đảo ngữ sau trạng ngữ phủ định tạo nhấn mạnh trang trọng; không nên dùng liên tục vì khiến văn viết khoa trương.",
+    "decision_steps_vi": [
+      "Xác định trạng ngữ hạn định có đặt ở đầu câu không",
+      "Chọn đúng trợ động từ theo thì và chủ ngữ",
+      "Đánh giá liệu đảo ngữ thực sự cần cho mục đích nhấn mạnh"
+    ],
+    "contrast": {
+      "first_en": "We have rarely seen such a rapid decline.",
+      "second_en": "Rarely have we seen such a rapid decline.",
+      "difference_vi": "Cả hai đúng; bản đảo ngữ đưa sự hiếm gặp lên đầu, tạo nhấn mạnh trang trọng hơn.",
+      "comparison_note": "Lựa chọn mẫu phải dựa vào ngữ cảnh; hai ví dụ có thể khác nhau về tính phù hợp hoặc độ đúng.",
+      "teacher_review_required": true
+    },
+    "discourse_transfer": {
+      "context_vi": "Báo cáo phân tích chuỗi số liệu đang suy giảm",
+      "task_en": "Write a cautious three-sentence report using one negative-fronting inversion.",
+      "model_paragraph_en": "Rarely have regional figures fallen this sharply within a single quarter. Nevertheless, the sample covers only three districts, so broader conclusions would be premature. The next report should include data from the remaining areas.",
+      "coaching_vi": "Đảo ngữ mở đầu nhấn sự bất thường; câu sau giới hạn bằng chứng để tránh cường điệu."
+    },
+    "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED",
+    "question_import_policy": "SEPARATE_BANK_NO_OVERWRITE",
+    "title": "Negative Adverbial Inversion",
+    "patterns": [
+      {
+        "pattern": "Never/Rarely/Seldom + have/has + S + V3",
+        "use_vi": "Dùng khi trải nghiệm hay sự kiện tính đến hiện tại được giới hạn mạnh bởi trạng từ ở đầu câu.",
+        "example_en": "Never have we encountered such an urgent request.",
+        "example_vi": "Chúng tôi chưa từng gặp yêu cầu khẩn cấp như vậy.",
+        "provenance_rule_id": "C1-01-R01"
+      },
+      {
+        "pattern": "Rarely/Seldom + do/does + S + V",
+        "use_vi": "Trong hiện tại đơn không có trợ động từ sẵn, thêm do/does và trả động từ chính về nguyên mẫu.",
+        "example_en": "Rarely does the panel change its mind.",
+        "example_vi": "Hội đồng hiếm khi thay đổi quyết định.",
+        "provenance_rule_id": "C1-01-R02"
+      }
+    ],
+    "worked_examples": [
+      {
+        "context_vi": "Negative fronting with present perfect",
+        "answer_en": "Never have we encountered such an urgent request.",
+        "translation_vi": "Chúng tôi chưa từng gặp yêu cầu khẩn cấp như vậy.",
+        "reason_vi": "Dùng khi trải nghiệm hay sự kiện tính đến hiện tại được giới hạn mạnh bởi trạng từ ở đầu câu.",
+        "provenance_rule_id": "C1-01-R01"
+      },
+      {
+        "context_vi": "Negative fronting with present simple",
+        "answer_en": "Rarely does the panel change its mind.",
+        "translation_vi": "Hội đồng hiếm khi thay đổi quyết định.",
+        "reason_vi": "Trong hiện tại đơn không có trợ động từ sẵn, thêm do/does và trả động từ chính về nguyên mẫu.",
+        "provenance_rule_id": "C1-01-R02"
+      }
+    ],
+    "common_mistakes": [
+      {
+        "wrong": "Never we have encountered such an urgent request.",
+        "correct": "Never have we encountered such an urgent request.",
+        "why_vi": "Trợ động từ phải đứng trước chủ ngữ khi Never đứng đầu.",
+        "provenance_rule_id": "C1-01-R01"
+      },
+      {
+        "wrong": "Rarely does the panel changes its mind.",
+        "correct": "Rarely does the panel change its mind.",
+        "why_vi": "Sau does phải dùng động từ nguyên mẫu change, không thêm -s.",
+        "provenance_rule_id": "C1-01-R02"
+      }
+    ],
+    "draft_practice": [
+      {
+        "stage": "guided",
+        "prompt_en": "Complete with inversion: Rarely ___ researchers encountered such a discrepancy.",
+        "draft_id": "M12-C1-01-DRAFT-01",
+        "assessment_mode": "SELF_REVIEW_REQUIRED",
+        "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED"
+      },
+      {
+        "stage": "independent",
+        "prompt_en": "Rewrite for formal emphasis: We have never observed this effect before.",
+        "draft_id": "M12-C1-01-DRAFT-02",
+        "assessment_mode": "SELF_REVIEW_REQUIRED",
+        "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED"
+      },
+      {
+        "stage": "mastery",
+        "prompt_en": "Write a cautious observation beginning with Seldom.",
+        "draft_id": "M12-C1-01-DRAFT-03",
+        "assessment_mode": "SELF_REVIEW_REQUIRED",
+        "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED"
+      },
+      {
+        "stage": "spaced_review",
+        "prompt_en": "Correct: Never the committee has received a written complaint.",
+        "draft_id": "M12-C1-01-DRAFT-04",
+        "assessment_mode": "SELF_REVIEW_REQUIRED",
+        "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED"
+      }
+    ]
+  },
+  "C1-02": {
+    "lesson_id": "C1-02",
+    "overview_vi": "No sooner...than và Hardly/Scarcely...when diễn đạt hai sự kiện nối sát nhau; đây không phải cách nối thời gian trung tính.",
+    "decision_steps_vi": [
+      "Xác định sự kiện nào xảy ra trước",
+      "Ghép no sooner với than, hardly/scarcely với when",
+      "Đảo had khi cụm phủ định đứng đầu"
+    ],
+    "contrast": {
+      "first_en": "No sooner had the lecture begun than the alarm sounded.",
+      "second_en": "After the lecture began, the alarm sounded.",
+      "difference_vi": "Câu đầu hàm ý việc thứ hai xảy ra gần như ngay lập tức; câu sau chỉ nói thứ tự.",
+      "comparison_note": "Lựa chọn mẫu phải dựa vào ngữ cảnh; hai ví dụ có thể khác nhau về tính phù hợp hoặc độ đúng.",
+      "teacher_review_required": true
+    },
+    "discourse_transfer": {
+      "context_vi": "Biên bản sự cố trong phòng thí nghiệm",
+      "task_en": "Write a three-sentence incident report using one sequencing inversion.",
+      "model_paragraph_en": "Hardly had the equipment been switched on when an error appeared on the display. The team shut the system down and recorded the message. An investigation is under way, but the initial cause remains uncertain.",
+      "coaching_vi": "Hardly...when nhấn khoảng cách thời gian rất ngắn; không đánh đồng kế tiếp với nguyên nhân."
+    },
+    "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED",
+    "question_import_policy": "SEPARATE_BANK_NO_OVERWRITE",
+    "title": "Sequencing Inversion",
+    "patterns": [
+      {
+        "pattern": "No sooner + had + S + V3 + than + S + V2",
+        "use_vi": "Diễn đạt hành động thứ hai xảy ra ngay sau hành động thứ nhất trong quá khứ.",
+        "example_en": "No sooner had the guests arrived than the show began.",
+        "example_vi": "Khách vừa tới thì chương trình bắt đầu.",
+        "provenance_rule_id": "C1-02-R01"
+      },
+      {
+        "pattern": "Hardly + had + S + V3 + when + S + V2",
+        "use_vi": "Hardly trong cấu trúc này không mang nghĩa “một cách khó khăn” mà là “vừa mới”.",
+        "example_en": "Hardly had we sat down when the phone rang.",
+        "example_vi": "Chúng tôi vừa ngồi xuống thì điện thoại reo.",
+        "provenance_rule_id": "C1-02-R02"
+      }
+    ],
+    "worked_examples": [
+      {
+        "context_vi": "No sooner ... than",
+        "answer_en": "No sooner had the guests arrived than the show began.",
+        "translation_vi": "Khách vừa tới thì chương trình bắt đầu.",
+        "reason_vi": "Diễn đạt hành động thứ hai xảy ra ngay sau hành động thứ nhất trong quá khứ.",
+        "provenance_rule_id": "C1-02-R01"
+      },
+      {
+        "context_vi": "Hardly ... when",
+        "answer_en": "Hardly had we sat down when the phone rang.",
+        "translation_vi": "Chúng tôi vừa ngồi xuống thì điện thoại reo.",
+        "reason_vi": "Hardly trong cấu trúc này không mang nghĩa “một cách khó khăn” mà là “vừa mới”.",
+        "provenance_rule_id": "C1-02-R02"
+      }
+    ],
+    "common_mistakes": [
+      {
+        "wrong": "No sooner the guests had arrived than the show began.",
+        "correct": "No sooner had the guests arrived than the show began.",
+        "why_vi": "No sooner ở đầu câu yêu cầu đảo had + chủ ngữ.",
+        "provenance_rule_id": "C1-02-R01"
+      },
+      {
+        "wrong": "Hardly had we sat down than the phone rang.",
+        "correct": "Hardly had we sat down when the phone rang.",
+        "why_vi": "Hardly trong mẫu mục tiêu thường đi với when, không phải than.",
+        "provenance_rule_id": "C1-02-R02"
+      }
+    ],
+    "draft_practice": [
+      {
+        "stage": "guided",
+        "prompt_en": "Choose the link: No sooner had the train left ___ the signal failed.",
+        "draft_id": "M12-C1-02-DRAFT-01",
+        "assessment_mode": "SELF_REVIEW_REQUIRED",
+        "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED"
+      },
+      {
+        "stage": "independent",
+        "prompt_en": "Rewrite: The call had barely started when the line went dead.",
+        "draft_id": "M12-C1-02-DRAFT-02",
+        "assessment_mode": "SELF_REVIEW_REQUIRED",
+        "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED"
+      },
+      {
+        "stage": "mastery",
+        "prompt_en": "Report an immediate interruption using No sooner...than.",
+        "draft_id": "M12-C1-02-DRAFT-03",
+        "assessment_mode": "SELF_REVIEW_REQUIRED",
+        "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED"
+      },
+      {
+        "stage": "spaced_review",
+        "prompt_en": "Correct: No sooner had we arrived when the rain began.",
+        "draft_id": "M12-C1-02-DRAFT-04",
+        "assessment_mode": "SELF_REVIEW_REQUIRED",
+        "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED"
+      }
+    ]
+  },
+  "C1-03": {
+    "lesson_id": "C1-03",
+    "overview_vi": "Đảo điều kiện Had/Were/Should không có if mang sắc thái trang trọng; không áp dụng máy móc cho mọi câu điều kiện.",
+    "decision_steps_vi": [
+      "Phân loại điều kiện thật, giả định hiện tại hay phản thực quá khứ",
+      "Chọn Should/Were/Had đúng với dạng điều kiện",
+      "Đảo đúng trợ động từ và tránh đặt if đồng thời"
+    ],
+    "contrast": {
+      "first_en": "If the plan had been approved, funding would have followed.",
+      "second_en": "Had the plan been approved, funding would have followed.",
+      "difference_vi": "Hai câu cùng điều kiện phản thực quá khứ; câu sau gọn và trang trọng hơn.",
+      "comparison_note": "Lựa chọn mẫu phải dựa vào ngữ cảnh; hai ví dụ có thể khác nhau về tính phù hợp hoặc độ đúng.",
+      "teacher_review_required": true
+    },
+    "discourse_transfer": {
+      "context_vi": "Bản ghi nhớ hội đồng cấp vốn",
+      "task_en": "Write a formal conditional recommendation without using if.",
+      "model_paragraph_en": "Should additional funding become available, the team will expand the pilot to two further sites. Had the initial review identified these risks, the current delay might have been avoided. Both possibilities require separate consideration.",
+      "coaching_vi": "Should mở khả năng tương lai, Had tạo phản thực quá khứ; không lẫn kết quả đã xảy ra với giả định."
+    },
+    "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED",
+    "question_import_policy": "SEPARATE_BANK_NO_OVERWRITE",
+    "title": "Conditional Inversion",
+    "patterns": [
+      {
+        "pattern": "Had + S + V3, S + would/could/might have + V3",
+        "use_vi": "Lược if trong điều kiện quá khứ trái thực tế bằng cách đảo had lên đầu.",
+        "example_en": "Had we left earlier, we would have caught the train.",
+        "example_vi": "Nếu rời đi sớm hơn, chúng tôi đã kịp tàu.",
+        "provenance_rule_id": "C1-03-R01"
+      },
+      {
+        "pattern": "Had + S + not + V3, result clause",
+        "use_vi": "Đặt not sau chủ ngữ trong mẫu đảo, không dùng did not.",
+        "example_en": "Had the guard not checked the door, the files might have been stolen.",
+        "example_vi": "Nếu bảo vệ không kiểm tra cửa, hồ sơ có lẽ đã bị lấy cắp.",
+        "provenance_rule_id": "C1-03-R02"
+      }
+    ],
+    "worked_examples": [
+      {
+        "context_vi": "Had inversion in third conditional",
+        "answer_en": "Had we left earlier, we would have caught the train.",
+        "translation_vi": "Nếu rời đi sớm hơn, chúng tôi đã kịp tàu.",
+        "reason_vi": "Lược if trong điều kiện quá khứ trái thực tế bằng cách đảo had lên đầu.",
+        "provenance_rule_id": "C1-03-R01"
+      },
+      {
+        "context_vi": "Negative Had inversion",
+        "answer_en": "Had the guard not checked the door, the files might have been stolen.",
+        "translation_vi": "Nếu bảo vệ không kiểm tra cửa, hồ sơ có lẽ đã bị lấy cắp.",
+        "reason_vi": "Đặt not sau chủ ngữ trong mẫu đảo, không dùng did not.",
+        "provenance_rule_id": "C1-03-R02"
+      }
+    ],
+    "common_mistakes": [
+      {
+        "wrong": "Had we leave earlier, we would have caught the train.",
+        "correct": "Had we left earlier, we would have caught the train.",
+        "why_vi": "Had cần V3 (left), không phải nguyên mẫu leave.",
+        "provenance_rule_id": "C1-03-R01"
+      },
+      {
+        "wrong": "Had the guard did not check the door, the files might have been stolen.",
+        "correct": "Had the guard not checked the door, the files might have been stolen.",
+        "why_vi": "Không kết hợp had với did not; phải dùng Had + S + not + V3.",
+        "provenance_rule_id": "C1-03-R02"
+      }
+    ],
+    "draft_practice": [
+      {
+        "stage": "guided",
+        "prompt_en": "Complete: ___ the results been verified earlier, the error might have been prevented.",
+        "draft_id": "M12-C1-03-DRAFT-01",
+        "assessment_mode": "SELF_REVIEW_REQUIRED",
+        "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED"
+      },
+      {
+        "stage": "independent",
+        "prompt_en": "Rewrite formally: If you should need further clarification, contact the coordinator.",
+        "draft_id": "M12-C1-03-DRAFT-02",
+        "assessment_mode": "SELF_REVIEW_REQUIRED",
+        "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED"
+      },
+      {
+        "stage": "mastery",
+        "prompt_en": "Write a polite future contingency using Should.",
+        "draft_id": "M12-C1-03-DRAFT-03",
+        "assessment_mode": "SELF_REVIEW_REQUIRED",
+        "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED"
+      },
+      {
+        "stage": "spaced_review",
+        "prompt_en": "Correct: Had if we known the price, we would have postponed.",
+        "draft_id": "M12-C1-03-DRAFT-04",
+        "assessment_mode": "SELF_REVIEW_REQUIRED",
+        "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED"
+      }
+    ]
+  },
+  "C1-04": {
+    "lesson_id": "C1-04",
+    "overview_vi": "So/Such đảo ngữ tạo nhấn mạnh về mức độ và kết quả; thường thấy trong văn phong văn chương, nhận xét trang trọng.",
+    "decision_steps_vi": [
+      "Xác định trung tâm là tính từ/trạng từ hay danh ngữ",
+      "Chọn So + adj/adv hoặc Such + noun phrase phù hợp",
+      "Kiểm tra đảo trợ động từ và mệnh đề that nếu diễn đạt kết quả"
+    ],
+    "contrast": {
+      "first_en": "The shortage was so severe that services stopped.",
+      "second_en": "So severe was the shortage that services stopped.",
+      "difference_vi": "Hai câu cùng mức độ và hệ quả; câu đảo ngữ nhấn severe ở vị trí mở đầu.",
+      "comparison_note": "Lựa chọn mẫu phải dựa vào ngữ cảnh; hai ví dụ có thể khác nhau về tính phù hợp hoặc độ đúng.",
+      "teacher_review_required": true
+    },
+    "discourse_transfer": {
+      "context_vi": "Báo cáo gián đoạn dịch vụ trong thành phố",
+      "task_en": "Write a concise description with one degree inversion, then qualify its scope.",
+      "model_paragraph_en": "So limited was access to the eastern route that deliveries had to be redirected. The disruption lasted less than a day, however, and the western route remained open. It would therefore be misleading to describe the entire network as closed.",
+      "coaching_vi": "So limited ... that nêu hệ quả, hai câu tiếp hạn định phạm vi kết luận."
+    },
+    "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED",
+    "question_import_policy": "SEPARATE_BANK_NO_OVERWRITE",
+    "title": "So / Such Inversion",
+    "patterns": [
+      {
+        "pattern": "So + adjective + be + S + that",
+        "use_vi": "Khi So + tính từ đứng đầu, động từ be đảo lên trước chủ ngữ.",
+        "example_en": "So serious was the response to the translation contract that the publication date was reconsidered.",
+        "example_vi": "Phản ứng trước tài liệu nghiêm trọng đến mức ngày xuất bản đã được xem xét lại.",
+        "provenance_rule_id": "C1-04-R01"
+      },
+      {
+        "pattern": "So + adverb + did + S + base verb",
+        "use_vi": "Trạng từ được đưa lên đầu khiến trợ động từ did đứng trước chủ ngữ; revise giữ nguyên mẫu.",
+        "example_en": "So quickly did the agricultural research centre revise the irrigation trial that the deadline had to be changed.",
+        "example_vi": "trung tâm nghiên cứu nông nghiệp sửa tài liệu nhanh đến mức thời hạn phải thay đổi.",
+        "provenance_rule_id": "C1-04-R02"
+      }
+    ],
+    "worked_examples": [
+      {
+        "context_vi": "So Adj Be",
+        "answer_en": "So serious was the response to the translation contract that the publication date was reconsidered.",
+        "translation_vi": "Phản ứng trước tài liệu nghiêm trọng đến mức ngày xuất bản đã được xem xét lại.",
+        "reason_vi": "Khi So + tính từ đứng đầu, động từ be đảo lên trước chủ ngữ.",
+        "provenance_rule_id": "C1-04-R01"
+      },
+      {
+        "context_vi": "So Adv Do",
+        "answer_en": "So quickly did the agricultural research centre revise the irrigation trial that the deadline had to be changed.",
+        "translation_vi": "trung tâm nghiên cứu nông nghiệp sửa tài liệu nhanh đến mức thời hạn phải thay đổi.",
+        "reason_vi": "Trạng từ được đưa lên đầu khiến trợ động từ did đứng trước chủ ngữ; revise giữ nguyên mẫu.",
+        "provenance_rule_id": "C1-04-R02"
+      }
+    ],
+    "common_mistakes": [
+      {
+        "wrong": "So serious the response was to the translation contract that the publication date was reconsidered.",
+        "correct": "So serious was the response to the translation contract that the publication date was reconsidered.",
+        "why_vi": "Thành phần được thay không đúng với khuôn cần dùng. Khi So + tính từ đứng đầu, động từ be đảo lên trước chủ ngữ.",
+        "provenance_rule_id": "C1-04-R01"
+      },
+      {
+        "wrong": "So quickly the agricultural research centre did revise the irrigation trial that the deadline had to be changed.",
+        "correct": "So quickly did the agricultural research centre revise the irrigation trial that the deadline had to be changed.",
+        "why_vi": "Thành phần được thay không đúng với khuôn cần dùng. Trạng từ được đưa lên đầu khiến trợ động từ did đứng trước chủ ngữ; revise giữ nguyên mẫu.",
+        "provenance_rule_id": "C1-04-R02"
+      }
+    ],
+    "draft_practice": [
+      {
+        "stage": "guided",
+        "prompt_en": "Complete: So serious ___ the damage that repairs took weeks.",
+        "draft_id": "M12-C1-04-DRAFT-01",
+        "assessment_mode": "SELF_REVIEW_REQUIRED",
+        "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED"
+      },
+      {
+        "stage": "independent",
+        "prompt_en": "Rewrite formally: The response was so slow that customers complained.",
+        "draft_id": "M12-C1-04-DRAFT-02",
+        "assessment_mode": "SELF_REVIEW_REQUIRED",
+        "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED"
+      },
+      {
+        "stage": "mastery",
+        "prompt_en": "Describe one unusually strong outcome using Such.",
+        "draft_id": "M12-C1-04-DRAFT-03",
+        "assessment_mode": "SELF_REVIEW_REQUIRED",
+        "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED"
+      },
+      {
+        "stage": "spaced_review",
+        "prompt_en": "Correct: So severe the storm was that flights stopped.",
+        "draft_id": "M12-C1-04-DRAFT-04",
+        "assessment_mode": "SELF_REVIEW_REQUIRED",
+        "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED"
+      }
+    ]
+  },
+  "C1-05": {
+    "lesson_id": "C1-05",
+    "overview_vi": "It-cleft nhấn một thành tố cụ thể và thường gợi đối chiếu với lựa chọn khác.",
+    "decision_steps_vi": [
+      "Xác định thành phần muốn đưa vào tiêu điểm",
+      "Giữ thông tin nền trong that/who clause",
+      "Kiểm tra presupposition và thông tin người đọc đã biết"
+    ],
+    "contrast": {
+      "first_en": "The committee rejected the proposal on Monday.",
+      "second_en": "It was on Monday that the committee rejected the proposal.",
+      "difference_vi": "Câu cleft nhấn thời điểm, không phải tác nhân hoặc kết quả.",
+      "comparison_note": "Lựa chọn mẫu phải dựa vào ngữ cảnh; hai ví dụ có thể khác nhau về tính phù hợp hoặc độ đúng.",
+      "teacher_review_required": true
+    },
+    "discourse_transfer": {
+      "context_vi": "Email làm rõ nguyên nhân trễ hạn",
+      "task_en": "Write a clarification in which one cleft corrects a misunderstanding.",
+      "model_paragraph_en": "The decision was not made by the finance team. It was the safety panel that requested further testing. The schedule will be updated after the new results have been reviewed.",
+      "coaching_vi": "It-cleft đặt safety panel vào vị trí nhấn để điều chỉnh hiểu lầm."
+    },
+    "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED",
+    "question_import_policy": "SEPARATE_BANK_NO_OVERWRITE",
+    "title": "It-cleft Sentences",
+    "patterns": [
+      {
+        "pattern": "It was + focus (subject) + that + rest",
+        "use_vi": "Câu chẻ nhấn mạnh chủ thể thực hiện hành động; phần sau that giữ mệnh đề.",
+        "example_en": "It was the national statistics team that presented the sampling methodology, not the outside consultants.",
+        "example_vi": "Chính nhóm thống kê quốc gia đã xử lý tài liệu, không phải tư vấn bên ngoài.",
+        "provenance_rule_id": "C1-05-R01"
+      },
+      {
+        "pattern": "It was + focus (object) + that + S + V",
+        "use_vi": "Câu chẻ đưa tân ngữ vào vị trí nhấn mạnh sau It was.",
+        "example_en": "It was the internal controls review that the financial compliance division updated, rather than the original schedule.",
+        "example_vi": "Chính tài liệu này được bộ phận tuân thủ tài chính xử lý chứ không phải lịch trình gốc.",
+        "provenance_rule_id": "C1-05-R02"
+      }
+    ],
+    "worked_examples": [
+      {
+        "context_vi": "It Subject",
+        "answer_en": "It was the national statistics team that presented the sampling methodology, not the outside consultants.",
+        "translation_vi": "Chính nhóm thống kê quốc gia đã xử lý tài liệu, không phải tư vấn bên ngoài.",
+        "reason_vi": "Câu chẻ nhấn mạnh chủ thể thực hiện hành động; phần sau that giữ mệnh đề.",
+        "provenance_rule_id": "C1-05-R01"
+      },
+      {
+        "context_vi": "It Object",
+        "answer_en": "It was the internal controls review that the financial compliance division updated, rather than the original schedule.",
+        "translation_vi": "Chính tài liệu này được bộ phận tuân thủ tài chính xử lý chứ không phải lịch trình gốc.",
+        "reason_vi": "Câu chẻ đưa tân ngữ vào vị trí nhấn mạnh sau It was.",
+        "provenance_rule_id": "C1-05-R02"
+      }
+    ],
+    "common_mistakes": [
+      {
+        "wrong": "It the national statistics team was that presented the sampling methodology, not the outside consultants.",
+        "correct": "It was the national statistics team that presented the sampling methodology, not the outside consultants.",
+        "why_vi": "Thành phần được thay không đúng với khuôn cần dùng. Câu chẻ nhấn mạnh chủ thể thực hiện hành động; phần sau that giữ mệnh đề.",
+        "provenance_rule_id": "C1-05-R01"
+      },
+      {
+        "wrong": "It were the internal controls review that the financial compliance division updated, rather than the original schedule.",
+        "correct": "It was the internal controls review that the financial compliance division updated, rather than the original schedule.",
+        "why_vi": "Thành phần được thay không đúng với khuôn cần dùng. Câu chẻ đưa tân ngữ vào vị trí nhấn mạnh sau It was.",
+        "provenance_rule_id": "C1-05-R02"
+      }
+    ],
+    "draft_practice": [
+      {
+        "stage": "guided",
+        "prompt_en": "Choose the focus: It was the revised timetable ___ caused confusion.",
+        "draft_id": "M12-C1-05-DRAFT-01",
+        "assessment_mode": "SELF_REVIEW_REQUIRED",
+        "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED"
+      },
+      {
+        "stage": "independent",
+        "prompt_en": "Rewrite to emphasise place: The error occurred in the archive room.",
+        "draft_id": "M12-C1-05-DRAFT-02",
+        "assessment_mode": "SELF_REVIEW_REQUIRED",
+        "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED"
+      },
+      {
+        "stage": "mastery",
+        "prompt_en": "Correct a mistaken agent using It was...that.",
+        "draft_id": "M12-C1-05-DRAFT-03",
+        "assessment_mode": "SELF_REVIEW_REQUIRED",
+        "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED"
+      },
+      {
+        "stage": "spaced_review",
+        "prompt_en": "Correct: It was yesterday when the board announced the decision. (Use a standard it-cleft with that.)",
+        "draft_id": "M12-C1-05-DRAFT-04",
+        "assessment_mode": "SELF_REVIEW_REQUIRED",
+        "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED"
+      }
+    ]
+  },
+  "C1-06": {
+    "lesson_id": "C1-06",
+    "overview_vi": "Wh-cleft dùng What...is/was... để nêu điều quan trọng hoặc hiệu chỉnh trọng tâm lập luận.",
+    "decision_steps_vi": [
+      "Xác định câu trả lời cho câu hỏi điều gì là trọng tâm",
+      "Chọn what-clause có động từ và sự hòa hợp với be",
+      "Phân biệt wh-cleft với câu hỏi trực tiếp"
+    ],
+    "contrast": {
+      "first_en": "We need clearer evidence.",
+      "second_en": "What we need is clearer evidence.",
+      "difference_vi": "Câu thứ hai biến nhu cầu thành trọng tâm, phù hợp khi bác bỏ đề xuất thiếu chứng cứ.",
+      "comparison_note": "Lựa chọn mẫu phải dựa vào ngữ cảnh; hai ví dụ có thể khác nhau về tính phù hợp hoặc độ đúng.",
+      "teacher_review_required": true
+    },
+    "discourse_transfer": {
+      "context_vi": "Cuộc họp xác định ưu tiên của nhóm nghiên cứu",
+      "task_en": "Write a proposal clarification using two contrasting priorities.",
+      "model_paragraph_en": "What the team needs is a reliable way to measure participation, not another promotional campaign. We can develop a short survey first and test whether it captures meaningful changes. The findings should guide any larger investment.",
+      "coaching_vi": "Wh-cleft đặt phương pháp đo lường ở trọng tâm, đối lập với truyền thông."
+    },
+    "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED",
+    "question_import_policy": "SEPARATE_BANK_NO_OVERWRITE",
+    "title": "Wh-cleft Sentences",
+    "patterns": [
+      {
+        "pattern": "What + clause + be + focus",
+        "use_vi": "What tạo mệnh đề danh ngữ làm chủ ngữ của was.",
+        "example_en": "What the film festival committee needed was a second opinion on the selection criteria.",
+        "example_vi": "Điều ban tổ chức liên hoan phim cần là ý kiến chuyên môn thứ hai.",
+        "provenance_rule_id": "C1-06-R01"
+      },
+      {
+        "pattern": "What + S + wanted + be",
+        "use_vi": "What đóng vai trò tân ngữ trong mệnh đề What the public wanted.",
+        "example_en": "What the public wanted was a clear account of the enforcement notice.",
+        "example_vi": "Điều công chúng muốn là lời giải thích rõ ràng.",
+        "provenance_rule_id": "C1-06-R02"
+      }
+    ],
+    "worked_examples": [
+      {
+        "context_vi": "What Subject",
+        "answer_en": "What the film festival committee needed was a second opinion on the selection criteria.",
+        "translation_vi": "Điều ban tổ chức liên hoan phim cần là ý kiến chuyên môn thứ hai.",
+        "reason_vi": "What tạo mệnh đề danh ngữ làm chủ ngữ của was.",
+        "provenance_rule_id": "C1-06-R01"
+      },
+      {
+        "context_vi": "What Wanted",
+        "answer_en": "What the public wanted was a clear account of the enforcement notice.",
+        "translation_vi": "Điều công chúng muốn là lời giải thích rõ ràng.",
+        "reason_vi": "What đóng vai trò tân ngữ trong mệnh đề What the public wanted.",
+        "provenance_rule_id": "C1-06-R02"
+      }
+    ],
+    "common_mistakes": [
+      {
+        "wrong": "Which the film festival committee needed was a second opinion on the selection criteria.",
+        "correct": "What the film festival committee needed was a second opinion on the selection criteria.",
+        "why_vi": "Thành phần được thay không đúng với khuôn cần dùng. What tạo mệnh đề danh ngữ làm chủ ngữ của was.",
+        "provenance_rule_id": "C1-06-R01"
+      },
+      {
+        "wrong": "That the public wanted was a clear account of the enforcement notice.",
+        "correct": "What the public wanted was a clear account of the enforcement notice.",
+        "why_vi": "Thành phần được thay không đúng với khuôn cần dùng. What đóng vai trò tân ngữ trong mệnh đề What the public wanted.",
+        "provenance_rule_id": "C1-06-R02"
+      }
+    ],
+    "draft_practice": [
+      {
+        "stage": "guided",
+        "prompt_en": "Complete: What matters most ___ the quality of the evidence.",
+        "draft_id": "M12-C1-06-DRAFT-01",
+        "assessment_mode": "SELF_REVIEW_REQUIRED",
+        "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED"
+      },
+      {
+        "stage": "independent",
+        "prompt_en": "Rewrite to focus the solution: We need a clearer timeline.",
+        "draft_id": "M12-C1-06-DRAFT-02",
+        "assessment_mode": "SELF_REVIEW_REQUIRED",
+        "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED"
+      },
+      {
+        "stage": "mastery",
+        "prompt_en": "Explain a practical priority with What...is.",
+        "draft_id": "M12-C1-06-DRAFT-03",
+        "assessment_mode": "SELF_REVIEW_REQUIRED",
+        "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED"
+      },
+      {
+        "stage": "spaced_review",
+        "prompt_en": "Correct: What did the team need is more time.",
+        "draft_id": "M12-C1-06-DRAFT-04",
+        "assessment_mode": "SELF_REVIEW_REQUIRED",
+        "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED"
+      }
+    ]
+  },
+  "C1-07": {
+    "lesson_id": "C1-07",
+    "overview_vi": "Fronting và topicalisation di chuyển thông tin ra đầu câu để nối mạch chủ đề, thường không đòi đảo trợ động từ.",
+    "decision_steps_vi": [
+      "Xác định thông tin cũ cần nối với đoạn trước",
+      "Chọn loại thành phần có thể đưa lên trước",
+      "Kiểm tra vị trí chủ ngữ và tính tự nhiên của cấu trúc kết quả"
+    ],
+    "contrast": {
+      "first_en": "We can address the budget problem next month.",
+      "second_en": "The budget problem, we can address next month.",
+      "difference_vi": "Câu thứ hai đặt budget problem thành chủ đề đã biết và đối lập với việc khác.",
+      "comparison_note": "Lựa chọn mẫu phải dựa vào ngữ cảnh; hai ví dụ có thể khác nhau về tính phù hợp hoặc độ đúng.",
+      "teacher_review_required": true
+    },
+    "discourse_transfer": {
+      "context_vi": "Bản cập nhật nhiều hạng mục công việc",
+      "task_en": "Write a coherent update contrasting what can and cannot be completed.",
+      "model_paragraph_en": "The survey design, we can finish this week. The participant interviews, however, will require ethical approval and may take longer. We should therefore distinguish work already under way from tasks still awaiting clearance.",
+      "coaching_vi": "Topicalisation đánh dấu hạng mục đang bàn; however làm rõ chuyển ý."
+    },
+    "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED",
+    "question_import_policy": "SEPARATE_BANK_NO_OVERWRITE",
+    "title": "Fronting & Topicalisation",
+    "patterns": [
+      {
+        "pattern": "Fronted object + S + V",
+        "use_vi": "Tân ngữ được chuyển lên đầu để làm chủ đề; mệnh đề sau giữ S + V.",
+        "example_en": "The revised syllabus, the school curriculum department reviewed in detail before making a recommendation.",
+        "example_vi": "Tài liệu đó thì bộ phận chương trình học đã xem xét kỹ trước khi đề xuất.",
+        "provenance_rule_id": "C1-07-R01"
+      },
+      {
+        "pattern": "Of importance + be + NP",
+        "use_vi": "Cụm bổ ngữ đứng đầu có thể kéo theo đảo be + danh ngữ.",
+        "example_en": "Of particular importance was the site documentation during the consultation process.",
+        "example_vi": "Tài liệu đặc biệt quan trọng trong quá trình tham vấn.",
+        "provenance_rule_id": "C1-07-R02"
+      }
+    ],
+    "worked_examples": [
+      {
+        "context_vi": "Object Front",
+        "answer_en": "The revised syllabus, the school curriculum department reviewed in detail before making a recommendation.",
+        "translation_vi": "Tài liệu đó thì bộ phận chương trình học đã xem xét kỹ trước khi đề xuất.",
+        "reason_vi": "Tân ngữ được chuyển lên đầu để làm chủ đề; mệnh đề sau giữ S + V.",
+        "provenance_rule_id": "C1-07-R01"
+      },
+      {
+        "context_vi": "Subject Complement",
+        "answer_en": "Of particular importance was the site documentation during the consultation process.",
+        "translation_vi": "Tài liệu đặc biệt quan trọng trong quá trình tham vấn.",
+        "reason_vi": "Cụm bổ ngữ đứng đầu có thể kéo theo đảo be + danh ngữ.",
+        "provenance_rule_id": "C1-07-R02"
+      }
+    ],
+    "common_mistakes": [
+      {
+        "wrong": "The revised syllabus, did the school curriculum department reviewed in detail before making a recommendation.",
+        "correct": "The revised syllabus, the school curriculum department reviewed in detail before making a recommendation.",
+        "why_vi": "Thành phần được thay không đúng với khuôn cần dùng. Tân ngữ được chuyển lên đầu để làm chủ đề; mệnh đề sau giữ S + V.",
+        "provenance_rule_id": "C1-07-R01"
+      },
+      {
+        "wrong": "Of particular importance the site documentation was during the consultation process.",
+        "correct": "Of particular importance was the site documentation during the consultation process.",
+        "why_vi": "Thành phần được thay không đúng với khuôn cần dùng. Cụm bổ ngữ đứng đầu có thể kéo theo đảo be + danh ngữ.",
+        "provenance_rule_id": "C1-07-R02"
+      }
+    ],
+    "draft_practice": [
+      {
+        "stage": "guided",
+        "prompt_en": "Identify the fronted topic: The schedule, we can revise; the budget, we cannot.",
+        "draft_id": "M12-C1-07-DRAFT-01",
+        "assessment_mode": "SELF_REVIEW_REQUIRED",
+        "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED"
+      },
+      {
+        "stage": "independent",
+        "prompt_en": "Rewrite with object fronting: We can replace the chairs, but we cannot replace the projector.",
+        "draft_id": "M12-C1-07-DRAFT-02",
+        "assessment_mode": "SELF_REVIEW_REQUIRED",
+        "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED"
+      },
+      {
+        "stage": "mastery",
+        "prompt_en": "Contrast two tasks by fronting the objects.",
+        "draft_id": "M12-C1-07-DRAFT-03",
+        "assessment_mode": "SELF_REVIEW_REQUIRED",
+        "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED"
+      },
+      {
+        "stage": "spaced_review",
+        "prompt_en": "Correct the missing object gap: The document we can examine it tomorrow. (Use fronting without resumption.)",
+        "draft_id": "M12-C1-07-DRAFT-04",
+        "assessment_mode": "SELF_REVIEW_REQUIRED",
+        "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED"
+      }
+    ]
+  },
+  "C1-08": {
+    "lesson_id": "C1-08",
+    "overview_vi": "Ellipsis lược thông tin đã suy ra được từ trước; cần bảo đảm mệnh đề sau vẫn giải thích được.",
+    "decision_steps_vi": [
+      "Xác định yếu tố đã xuất hiện và có thể phục hồi",
+      "Chọn lược phần nào mà không làm đổi nghĩa hoặc thời",
+      "Giữ trợ động từ cần thiết và kiểm tra nguy cơ mơ hồ"
+    ],
+    "contrast": {
+      "first_en": "Maya will attend the review, and Leo will attend too.",
+      "second_en": "Maya will attend the review, and Leo will too.",
+      "difference_vi": "Câu thứ hai lược attend the review vì người đọc khôi phục được.",
+      "comparison_note": "Lựa chọn mẫu phải dựa vào ngữ cảnh; hai ví dụ có thể khác nhau về tính phù hợp hoặc độ đúng.",
+      "teacher_review_required": true
+    },
+    "discourse_transfer": {
+      "context_vi": "Email phân công nhóm nghiên cứu",
+      "task_en": "Write a concise coordination message using safe ellipsis.",
+      "model_paragraph_en": "Linh has finished the coding checks, and Minh has too. The design team has not completed its review, but expects to by Friday. We will publish the results only after both groups confirm their findings.",
+      "coaching_vi": "Lược phần trùng bằng trợ động từ; câu cuối giữ rõ điều kiện công bố."
+    },
+    "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED",
+    "question_import_policy": "SEPARATE_BANK_NO_OVERWRITE",
+    "title": "Advanced Ellipsis",
+    "patterns": [
+      {
+        "pattern": "S + auxiliary + too",
+        "use_vi": "Dùng did too để lược bỏ động từ reviewed cùng tân ngữ khỏi mệnh đề hai.",
+        "example_en": "The pharmaceutical review board reviewed the labelling proposal; the external auditors did too.",
+        "example_vi": "hội đồng thẩm định dược phẩm đã thẩm định tài liệu; kiểm toán viên bên ngoài cũng vậy.",
+        "provenance_rule_id": "C1-08-R01"
+      },
+      {
+        "pattern": "If + adjective, + clause",
+        "use_vi": "If necessary là mệnh đề điều kiện rút gọn từ if it is necessary.",
+        "example_en": "If necessary, the drought response plan will be revised before publication.",
+        "example_vi": "Nếu cần thiết, tài liệu sẽ được sửa trước khi công bố.",
+        "provenance_rule_id": "C1-08-R02"
+      }
+    ],
+    "worked_examples": [
+      {
+        "context_vi": "Aux Ellipsis",
+        "answer_en": "The pharmaceutical review board reviewed the labelling proposal; the external auditors did too.",
+        "translation_vi": "hội đồng thẩm định dược phẩm đã thẩm định tài liệu; kiểm toán viên bên ngoài cũng vậy.",
+        "reason_vi": "Dùng did too để lược bỏ động từ reviewed cùng tân ngữ khỏi mệnh đề hai.",
+        "provenance_rule_id": "C1-08-R01"
+      },
+      {
+        "context_vi": "If Reduced",
+        "answer_en": "If necessary, the drought response plan will be revised before publication.",
+        "translation_vi": "Nếu cần thiết, tài liệu sẽ được sửa trước khi công bố.",
+        "reason_vi": "If necessary là mệnh đề điều kiện rút gọn từ if it is necessary.",
+        "provenance_rule_id": "C1-08-R02"
+      }
+    ],
+    "common_mistakes": [
+      {
+        "wrong": "The pharmaceutical review board reviewed the labelling proposal; the external auditors did also reviewed .",
+        "correct": "The pharmaceutical review board reviewed the labelling proposal; the external auditors did too.",
+        "why_vi": "Thành phần được thay không đúng với khuôn cần dùng. Dùng did too để lược bỏ động từ reviewed cùng tân ngữ khỏi mệnh đề hai.",
+        "provenance_rule_id": "C1-08-R01"
+      },
+      {
+        "wrong": "If it necessary , the drought response plan will be revised before publication.",
+        "correct": "If necessary, the drought response plan will be revised before publication.",
+        "why_vi": "Thành phần được thay không đúng với khuôn cần dùng. If necessary là mệnh đề điều kiện rút gọn từ if it is necessary.",
+        "provenance_rule_id": "C1-08-R02"
+      }
+    ],
+    "draft_practice": [
+      {
+        "stage": "guided",
+        "prompt_en": "Complete: I can review the tables, and she ___ too.",
+        "draft_id": "M12-C1-08-DRAFT-01",
+        "assessment_mode": "SELF_REVIEW_REQUIRED",
+        "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED"
+      },
+      {
+        "stage": "independent",
+        "prompt_en": "Shorten: Eva has checked the draft, and Tom has checked the draft too.",
+        "draft_id": "M12-C1-08-DRAFT-02",
+        "assessment_mode": "SELF_REVIEW_REQUIRED",
+        "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED"
+      },
+      {
+        "stage": "mastery",
+        "prompt_en": "Write a two-part update with ellipsis and a time marker.",
+        "draft_id": "M12-C1-08-DRAFT-03",
+        "assessment_mode": "SELF_REVIEW_REQUIRED",
+        "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED"
+      },
+      {
+        "stage": "spaced_review",
+        "prompt_en": "Correct: She may attend, and they may attend so.",
+        "draft_id": "M12-C1-08-DRAFT-04",
+        "assessment_mode": "SELF_REVIEW_REQUIRED",
+        "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED"
+      }
+    ]
+  },
+  "C1-09": {
+    "lesson_id": "C1-09",
+    "overview_vi": "Substitution dùng do so, one/ones, so/not để tránh lặp; không phải mọi trợ động từ đều thay được mọi nhóm động từ.",
+    "decision_steps_vi": [
+      "Xác định nội dung lặp thuộc verb phrase, noun phrase hay whole clause",
+      "Chọn do so, one/ones hoặc so/not đúng loại",
+      "Kiểm tra trợ động từ, chủ thể và ý nghĩa tham chiếu"
+    ],
+    "contrast": {
+      "first_en": "We collected the samples and analysed the samples later.",
+      "second_en": "We collected the samples and analysed them later.",
+      "difference_vi": "Đại từ them thay đúng samples; do so không thể tự nhiên thay một danh từ.",
+      "comparison_note": "Lựa chọn mẫu phải dựa vào ngữ cảnh; hai ví dụ có thể khác nhau về tính phù hợp hoặc độ đúng.",
+      "teacher_review_required": true
+    },
+    "discourse_transfer": {
+      "context_vi": "Nhóm nghiên cứu mô tả quy trình xử lý phản hồi",
+      "task_en": "Write a brief report using do so and one without ambiguous references.",
+      "model_paragraph_en": "Several teams tested the new form, and our group did so as well. One form worked on desktop, whereas the other displayed errors on smaller screens. We therefore postponed the rollout until the interface could be corrected.",
+      "coaching_vi": "Did so thay tested the new form; one thay form, nhưng phải giữ được đối tượng tham chiếu."
+    },
+    "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED",
+    "question_import_policy": "SEPARATE_BANK_NO_OVERWRITE",
+    "title": "Advanced Substitution",
+    "patterns": [
+      {
+        "pattern": "do so replaces verb phrase",
+        "use_vi": "Do so thay cho hành động review the document, không lặp toàn bộ cụm động từ.",
+        "example_en": "The regional tourism board reviewed the visitor-management policy last year and plans to do so again next year.",
+        "example_vi": "hội đồng du lịch vùng thẩm định tài liệu năm ngoái và dự định làm vậy năm sau.",
+        "provenance_rule_id": "C1-09-R01"
+      },
+      {
+        "pattern": "one substitutes singular count noun",
+        "use_vi": "One thay thế cho version (danh từ đếm được số ít) đã nhắc.",
+        "example_en": "The older version of the investigative outline was withdrawn, so the committee requested a revised one.",
+        "example_vi": "Bản tài liệu cũ bị thu hồi nên ủy ban yêu cầu một bản sửa đổi.",
+        "provenance_rule_id": "C1-09-R02"
+      }
+    ],
+    "worked_examples": [
+      {
+        "context_vi": "Do So",
+        "answer_en": "The regional tourism board reviewed the visitor-management policy last year and plans to do so again next year.",
+        "translation_vi": "hội đồng du lịch vùng thẩm định tài liệu năm ngoái và dự định làm vậy năm sau.",
+        "reason_vi": "Do so thay cho hành động review the document, không lặp toàn bộ cụm động từ.",
+        "provenance_rule_id": "C1-09-R01"
+      },
+      {
+        "context_vi": "One",
+        "answer_en": "The older version of the investigative outline was withdrawn, so the committee requested a revised one.",
+        "translation_vi": "Bản tài liệu cũ bị thu hồi nên ủy ban yêu cầu một bản sửa đổi.",
+        "reason_vi": "One thay thế cho version (danh từ đếm được số ít) đã nhắc.",
+        "provenance_rule_id": "C1-09-R02"
+      }
+    ],
+    "common_mistakes": [
+      {
+        "wrong": "The regional tourism board reviewed the visitor-management policy last year and plans to do it so again next year.",
+        "correct": "The regional tourism board reviewed the visitor-management policy last year and plans to do so again next year.",
+        "why_vi": "Thành phần được thay không đúng với khuôn cần dùng. Do so thay cho hành động review the document, không lặp toàn bộ cụm động từ.",
+        "provenance_rule_id": "C1-09-R01"
+      },
+      {
+        "wrong": "The older version of the investigative outline was withdrawn, so the committee requested a revised ones .",
+        "correct": "The older version of the investigative outline was withdrawn, so the committee requested a revised one.",
+        "why_vi": "Thành phần được thay không đúng với khuôn cần dùng. One thay thế cho version (danh từ đếm được số ít) đã nhắc.",
+        "provenance_rule_id": "C1-09-R02"
+      }
+    ],
+    "draft_practice": [
+      {
+        "stage": "guided",
+        "prompt_en": "Choose the substitution: The first team will publish the data, and the second team will do ___.",
+        "draft_id": "M12-C1-09-DRAFT-01",
+        "assessment_mode": "SELF_REVIEW_REQUIRED",
+        "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED"
+      },
+      {
+        "stage": "independent",
+        "prompt_en": "Replace repetition: We need a smaller table, not a larger table.",
+        "draft_id": "M12-C1-09-DRAFT-02",
+        "assessment_mode": "SELF_REVIEW_REQUIRED",
+        "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED"
+      },
+      {
+        "stage": "mastery",
+        "prompt_en": "Use did so to describe two teams taking the same action.",
+        "draft_id": "M12-C1-09-DRAFT-03",
+        "assessment_mode": "SELF_REVIEW_REQUIRED",
+        "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED"
+      },
+      {
+        "stage": "spaced_review",
+        "prompt_en": "Correct: We have two reports; the newer do so is more detailed.",
+        "draft_id": "M12-C1-09-DRAFT-04",
+        "assessment_mode": "SELF_REVIEW_REQUIRED",
+        "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED"
+      }
+    ]
+  },
+  "C1-10": {
+    "lesson_id": "C1-10",
+    "overview_vi": "Nominalisation làm ý tưởng trừu tượng và giúp nối lập luận nhưng có thể che tác nhân hành động.",
+    "decision_steps_vi": [
+      "Xác định có cần biến hành động thành khái niệm không",
+      "Đổi động từ/tính từ thành danh từ với giới từ phù hợp",
+      "Kiểm tra ai đã làm việc gì có bị che khuất không"
+    ],
+    "contrast": {
+      "first_en": "The team evaluated the policy carefully.",
+      "second_en": "The team carried out a careful evaluation of the policy.",
+      "difference_vi": "Danh hóa làm evaluation trở thành đối tượng thảo luận; câu đầu ngắn và rõ tác nhân hơn.",
+      "comparison_note": "Lựa chọn mẫu phải dựa vào ngữ cảnh; hai ví dụ có thể khác nhau về tính phù hợp hoặc độ đúng.",
+      "teacher_review_required": true
+    },
+    "discourse_transfer": {
+      "context_vi": "Báo cáo đánh giá một chính sách trường học",
+      "task_en": "Write a balanced paragraph using one nominalisation while retaining agency.",
+      "model_paragraph_en": "The school introduced a revised attendance policy in September. An evaluation of its first month showed fewer late arrivals, although the data came from only two classes. Teachers will review the policy again before recommending wider adoption.",
+      "coaching_vi": "Evaluation là danh hóa hữu ích; câu đầu và cuối vẫn nêu ai thực hiện hành động."
+    },
+    "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED",
+    "question_import_policy": "SEPARATE_BANK_NO_OVERWRITE",
+    "title": "Nominalisation",
+    "patterns": [
+      {
+        "pattern": "analyse → analysis",
+        "use_vi": "Danh từ hóa động từ analyse thành analysis để làm trung tâm danh ngữ với The formal ... of.",
+        "example_en": "The formal analysis of the rescue coordination plan was completed at the harbour authority office.",
+        "example_vi": "Việc phân tích chính thức tài liệu đã hoàn tất tại cơ sở chuyên môn.",
+        "provenance_rule_id": "C1-10-R01"
+      },
+      {
+        "pattern": "evaluate → evaluation",
+        "use_vi": "Danh từ hóa động từ evaluate thành evaluation để làm trung tâm danh ngữ với The formal ... of.",
+        "example_en": "The formal evaluation of the procedural amendment was completed at the justice ministry.",
+        "example_vi": "Việc đánh giá chính thức tài liệu đã hoàn tất tại cơ sở chuyên môn.",
+        "provenance_rule_id": "C1-10-R02"
+      }
+    ],
+    "worked_examples": [
+      {
+        "context_vi": "Nominal Analyse",
+        "answer_en": "The formal analysis of the rescue coordination plan was completed at the harbour authority office.",
+        "translation_vi": "Việc phân tích chính thức tài liệu đã hoàn tất tại cơ sở chuyên môn.",
+        "reason_vi": "Danh từ hóa động từ analyse thành analysis để làm trung tâm danh ngữ với The formal ... of.",
+        "provenance_rule_id": "C1-10-R01"
+      },
+      {
+        "context_vi": "Nominal Evaluate",
+        "answer_en": "The formal evaluation of the procedural amendment was completed at the justice ministry.",
+        "translation_vi": "Việc đánh giá chính thức tài liệu đã hoàn tất tại cơ sở chuyên môn.",
+        "reason_vi": "Danh từ hóa động từ evaluate thành evaluation để làm trung tâm danh ngữ với The formal ... of.",
+        "provenance_rule_id": "C1-10-R02"
+      }
+    ],
+    "common_mistakes": [
+      {
+        "wrong": "The formal analyse of the rescue coordination plan was completed at the harbour authority office.",
+        "correct": "The formal analysis of the rescue coordination plan was completed at the harbour authority office.",
+        "why_vi": "Thành phần được thay không đúng với khuôn cần dùng. Danh từ hóa động từ analyse thành analysis để làm trung tâm danh ngữ với The formal ... of.",
+        "provenance_rule_id": "C1-10-R01"
+      },
+      {
+        "wrong": "The formal evaluate of the procedural amendment was completed at the justice ministry.",
+        "correct": "The formal evaluation of the procedural amendment was completed at the justice ministry.",
+        "why_vi": "Thành phần được thay không đúng với khuôn cần dùng. Danh từ hóa động từ evaluate thành evaluation để làm trung tâm danh ngữ với The formal ... of.",
+        "provenance_rule_id": "C1-10-R02"
+      }
+    ],
+    "draft_practice": [
+      {
+        "stage": "guided",
+        "prompt_en": "Convert the verb: The panel investigated the complaint. → The panel carried out an ___ of the complaint.",
+        "draft_id": "M12-C1-10-DRAFT-01",
+        "assessment_mode": "SELF_REVIEW_REQUIRED",
+        "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED"
+      },
+      {
+        "stage": "independent",
+        "prompt_en": "Rewrite using nominalisation: Researchers analysed the responses carefully.",
+        "draft_id": "M12-C1-10-DRAFT-02",
+        "assessment_mode": "SELF_REVIEW_REQUIRED",
+        "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED"
+      },
+      {
+        "stage": "mastery",
+        "prompt_en": "Write a cautious finding using the noun assessment.",
+        "draft_id": "M12-C1-10-DRAFT-03",
+        "assessment_mode": "SELF_REVIEW_REQUIRED",
+        "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED"
+      },
+      {
+        "stage": "spaced_review",
+        "prompt_en": "Correct: The investigate of the incident took two weeks.",
+        "draft_id": "M12-C1-10-DRAFT-04",
+        "assessment_mode": "SELF_REVIEW_REQUIRED",
+        "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED"
+      }
+    ]
+  },
+  "C1-11": {
+    "lesson_id": "C1-11",
+    "overview_vi": "Complex noun phrases nén nhiều thông tin vào danh ngữ; khi quá nhiều modifier, ranh giới ý nghĩa bị mơ hồ.",
+    "decision_steps_vi": [
+      "Xác định head noun và thông tin nào bổ nghĩa cho nó",
+      "Xếp modifier theo trật tự và quan hệ đúng",
+      "Kiểm tra xem nên tách thành mệnh đề quan hệ để dễ đọc không"
+    ],
+    "contrast": {
+      "first_en": "The team reviewed a report that had been independently audited.",
+      "second_en": "The team reviewed an independently audited report.",
+      "difference_vi": "Câu thứ hai nén mệnh đề quan hệ, nhưng vẫn giữ nghĩa báo cáo đã được kiểm toán.",
+      "comparison_note": "Lựa chọn mẫu phải dựa vào ngữ cảnh; hai ví dụ có thể khác nhau về tính phù hợp hoặc độ đúng.",
+      "teacher_review_required": true
+    },
+    "discourse_transfer": {
+      "context_vi": "Bản mô tả thiết bị dùng trong thí nghiệm",
+      "task_en": "Describe a technical item with a compact noun phrase and a clarifying sentence.",
+      "model_paragraph_en": "The engineers tested a recently upgraded, temperature-sensitive sensor. The device performed reliably indoors but showed inconsistent readings outdoors. Further trials will determine whether the variation reflects calibration or environmental conditions.",
+      "coaching_vi": "Danh ngữ dài nhưng có head noun sensor rõ; câu sau giải nén chi tiết kỹ thuật."
+    },
+    "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED",
+    "question_import_policy": "SEPARATE_BANK_NO_OVERWRITE",
+    "title": "Complex Noun Phrases",
+    "patterns": [
+      {
+        "pattern": "article + adverb + participle + head noun",
+        "use_vi": "Trật tự tiền bổ nghĩa: carefully bổ nghĩa cho revised trước danh từ version.",
+        "example_en": "The committee circulated a carefully revised version of the quality assurance plan to every department.",
+        "example_vi": "Ủy ban gửi một phiên bản tài liệu đã được sửa rất cẩn thận.",
+        "provenance_rule_id": "C1-11-R01"
+      },
+      {
+        "pattern": "a + adjective + head noun + of + NP",
+        "use_vi": "Đưa of-phrase sau danh từ assessment để làm rõ đối tượng được đánh giá.",
+        "example_en": "The panel requested a detailed assessment of the collection schedule before making a final decision.",
+        "example_vi": "Hội đồng yêu cầu bản thẩm định chi tiết về tài liệu.",
+        "provenance_rule_id": "C1-11-R02"
+      }
+    ],
+    "worked_examples": [
+      {
+        "context_vi": "Premod",
+        "answer_en": "The committee circulated a carefully revised version of the quality assurance plan to every department.",
+        "translation_vi": "Ủy ban gửi một phiên bản tài liệu đã được sửa rất cẩn thận.",
+        "reason_vi": "Trật tự tiền bổ nghĩa: carefully bổ nghĩa cho revised trước danh từ version.",
+        "provenance_rule_id": "C1-11-R01"
+      },
+      {
+        "context_vi": "Post Of",
+        "answer_en": "The panel requested a detailed assessment of the collection schedule before making a final decision.",
+        "translation_vi": "Hội đồng yêu cầu bản thẩm định chi tiết về tài liệu.",
+        "reason_vi": "Đưa of-phrase sau danh từ assessment để làm rõ đối tượng được đánh giá.",
+        "provenance_rule_id": "C1-11-R02"
+      }
+    ],
+    "common_mistakes": [
+      {
+        "wrong": "The committee circulated a revised carefully version of the quality assurance plan to every department.",
+        "correct": "The committee circulated a carefully revised version of the quality assurance plan to every department.",
+        "why_vi": "Thành phần được thay không đúng với khuôn cần dùng. Trật tự tiền bổ nghĩa: carefully bổ nghĩa cho revised trước danh từ version.",
+        "provenance_rule_id": "C1-11-R01"
+      },
+      {
+        "wrong": "The panel requested a detailed of assessment the collection schedule before making a final decision.",
+        "correct": "The panel requested a detailed assessment of the collection schedule before making a final decision.",
+        "why_vi": "Thành phần được thay không đúng với khuôn cần dùng. Đưa of-phrase sau danh từ assessment để làm rõ đối tượng được đánh giá.",
+        "provenance_rule_id": "C1-11-R02"
+      }
+    ],
+    "draft_practice": [
+      {
+        "stage": "guided",
+        "prompt_en": "Identify the head noun: a carefully documented cross-regional study",
+        "draft_id": "M12-C1-11-DRAFT-01",
+        "assessment_mode": "SELF_REVIEW_REQUIRED",
+        "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED"
+      },
+      {
+        "stage": "independent",
+        "prompt_en": "Condense: We examined a procedure that had been independently verified.",
+        "draft_id": "M12-C1-11-DRAFT-02",
+        "assessment_mode": "SELF_REVIEW_REQUIRED",
+        "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED"
+      },
+      {
+        "stage": "mastery",
+        "prompt_en": "Write one precise noun phrase for a newly reviewed safety document.",
+        "draft_id": "M12-C1-11-DRAFT-03",
+        "assessment_mode": "SELF_REVIEW_REQUIRED",
+        "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED"
+      },
+      {
+        "stage": "spaced_review",
+        "prompt_en": "Correct: a revised carefully data collection protocol",
+        "draft_id": "M12-C1-11-DRAFT-04",
+        "assessment_mode": "SELF_REVIEW_REQUIRED",
+        "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED"
+      }
+    ]
+  },
+  "C1-12": {
+    "lesson_id": "C1-12",
+    "overview_vi": "Apposition bổ sung cách gọi hoặc diễn giải cùng một đối tượng; dấu phẩy/gạch ngang tạo khác biệt về nhịp và tính thiết yếu.",
+    "decision_steps_vi": [
+      "Xác định cụm thứ hai có thực sự đồng chỉ với cụm thứ nhất",
+      "Chọn apposition hạn định hay không hạn định",
+      "Dùng dấu câu nhất quán và tránh diễn giải thừa"
+    ],
+    "contrast": {
+      "first_en": "The director, Maria Chen, approved the draft.",
+      "second_en": "The director—Maria Chen—approved the draft.",
+      "difference_vi": "Cả hai cung cấp đồng vị không thiết yếu; gạch ngang nhấn mạnh hơn dấu phẩy.",
+      "comparison_note": "Lựa chọn mẫu phải dựa vào ngữ cảnh; hai ví dụ có thể khác nhau về tính phù hợp hoặc độ đúng.",
+      "teacher_review_required": true
+    },
+    "discourse_transfer": {
+      "context_vi": "Thông báo bổ nhiệm điều phối viên mới",
+      "task_en": "Write a short announcement with an appositive and an unambiguous role.",
+      "model_paragraph_en": "Our new coordinator, Dr Helen Moore, will lead the community survey. She has previously managed projects involving several schools. The first planning meeting is scheduled for Monday.",
+      "coaching_vi": "Dr Helen Moore là đồng vị chỉ cùng người với coordinator; câu tiếp cung cấp chứng cứ kinh nghiệm."
+    },
+    "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED",
+    "question_import_policy": "SEPARATE_BANK_NO_OVERWRITE",
+    "title": "Apposition",
+    "patterns": [
+      {
+        "pattern": "Name/NP, non-essential apposition, + V",
+        "use_vi": "Cụm đồng vị không xác định thêm thông tin nên được ngăn bằng hai dấu phẩy.",
+        "example_en": "The wildlife rehabilitation centre, a non-profit conservation facility, reviewed the release protocol before publication.",
+        "example_vi": "trung tâm cứu hộ động vật hoang dã, một đơn vị chuyên môn, đã xem xét tài liệu.",
+        "provenance_rule_id": "C1-12-R01"
+      },
+      {
+        "pattern": "NP — explanatory NP — + V",
+        "use_vi": "Dấu gạch ngang đôi bao cụm đồng vị giải thích thêm.",
+        "example_en": "The contingency schedule—the main subject of the hearing—was discussed for several hours.",
+        "example_vi": "Tài liệu, chủ đề chính của phiên điều trần, được thảo luận nhiều giờ.",
+        "provenance_rule_id": "C1-12-R02"
+      }
+    ],
+    "worked_examples": [
+      {
+        "context_vi": "Nonessential",
+        "answer_en": "The wildlife rehabilitation centre, a non-profit conservation facility, reviewed the release protocol before publication.",
+        "translation_vi": "trung tâm cứu hộ động vật hoang dã, một đơn vị chuyên môn, đã xem xét tài liệu.",
+        "reason_vi": "Cụm đồng vị không xác định thêm thông tin nên được ngăn bằng hai dấu phẩy.",
+        "provenance_rule_id": "C1-12-R01"
+      },
+      {
+        "context_vi": "Dash Appositive",
+        "answer_en": "The contingency schedule—the main subject of the hearing—was discussed for several hours.",
+        "translation_vi": "Tài liệu, chủ đề chính của phiên điều trần, được thảo luận nhiều giờ.",
+        "reason_vi": "Dấu gạch ngang đôi bao cụm đồng vị giải thích thêm.",
+        "provenance_rule_id": "C1-12-R02"
+      }
+    ],
+    "common_mistakes": [
+      {
+        "wrong": "The wildlife rehabilitation centre, a a non-profit conservation facility reviewed the release protocol before publication.",
+        "correct": "The wildlife rehabilitation centre, a non-profit conservation facility, reviewed the release protocol before publication.",
+        "why_vi": "Thành phần được thay không đúng với khuôn cần dùng. Cụm đồng vị không xác định thêm thông tin nên được ngăn bằng hai dấu phẩy.",
+        "provenance_rule_id": "C1-12-R01"
+      },
+      {
+        "wrong": "The contingency schedule— was the main subject of the hearing —was discussed for several hours.",
+        "correct": "The contingency schedule—the main subject of the hearing—was discussed for several hours.",
+        "why_vi": "Thành phần được thay không đúng với khuôn cần dùng. Dấu gạch ngang đôi bao cụm đồng vị giải thích thêm.",
+        "provenance_rule_id": "C1-12-R02"
+      }
+    ],
+    "draft_practice": [
+      {
+        "stage": "guided",
+        "prompt_en": "Identify the appositive: Our editor, a former journalist, will review the article.",
+        "draft_id": "M12-C1-12-DRAFT-01",
+        "assessment_mode": "SELF_REVIEW_REQUIRED",
+        "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED"
+      },
+      {
+        "stage": "independent",
+        "prompt_en": "Rewrite with dashes: The draft, a revised version of the report, was circulated.",
+        "draft_id": "M12-C1-12-DRAFT-02",
+        "assessment_mode": "SELF_REVIEW_REQUIRED",
+        "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED"
+      },
+      {
+        "stage": "mastery",
+        "prompt_en": "Introduce one researcher using an appositive.",
+        "draft_id": "M12-C1-12-DRAFT-03",
+        "assessment_mode": "SELF_REVIEW_REQUIRED",
+        "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED"
+      },
+      {
+        "stage": "spaced_review",
+        "prompt_en": "Correct punctuation: Our manager—a qualified engineer, joined the call.",
+        "draft_id": "M12-C1-12-DRAFT-04",
+        "assessment_mode": "SELF_REVIEW_REQUIRED",
+        "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED"
+      }
+    ]
+  },
+  "C1-13": {
+    "lesson_id": "C1-13",
+    "overview_vi": "Mandative subjunctive diễn đạt yêu cầu, khuyến nghị, đề xuất trong văn phong trang trọng; biến thể should và indicative tùy phương ngữ.",
+    "decision_steps_vi": [
+      "Xác định động từ/tính từ mang nghĩa yêu cầu",
+      "Chọn that + subject + base form hoặc should + base form",
+      "Kiểm tra văn phong và không dùng quy tắc như thể mọi phương ngữ giống nhau"
+    ],
+    "contrast": {
+      "first_en": "The board recommended that she attend the hearing.",
+      "second_en": "The board recommended that she should attend the hearing.",
+      "difference_vi": "Cả hai đều có thể đúng; bản không should phổ biến trong văn phong trang trọng, đặc biệt tiếng Anh Mỹ.",
+      "comparison_note": "Lựa chọn mẫu phải dựa vào ngữ cảnh; hai ví dụ có thể khác nhau về tính phù hợp hoặc độ đúng.",
+      "teacher_review_required": true
+    },
+    "discourse_transfer": {
+      "context_vi": "Biên bản hội đồng đánh giá an toàn",
+      "task_en": "Write a formal recommendation with a mandative construction.",
+      "model_paragraph_en": "The committee recommended that each site submit a revised safety checklist. It also requested that the findings be reviewed by an independent specialist. Implementation will begin only after the review is complete.",
+      "coaching_vi": "Submit và be là base forms sau recommend/request; câu cuối chỉ điều kiện triển khai."
+    },
+    "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED",
+    "question_import_policy": "SEPARATE_BANK_NO_OVERWRITE",
+    "title": "Mandative Subjunctive",
+    "patterns": [
+      {
+        "pattern": "recommend that S + (should) be + V3",
+        "use_vi": "Trong mandative subjunctive dùng be nguyên mẫu sau that, không phụ thuộc số ngôi.",
+        "example_en": "The ethics board recommended that the evening event plan be reviewed before implementation.",
+        "example_vi": "Hội đồng khuyến nghị tài liệu phải được thẩm định trước khi triển khai.",
+        "provenance_rule_id": "C1-13-R01"
+      },
+      {
+        "pattern": "insist that S + base verb",
+        "use_vi": "Insist với nghĩa yêu cầu thực hiện dùng động từ nguyên mẫu submit trong cấu trúc giả định.",
+        "example_en": "The director insisted that the historical records office submit the digitisation plan by Friday.",
+        "example_vi": "Giám đốc yêu cầu văn phòng lưu trữ lịch sử nộp tài liệu trước thứ Sáu.",
+        "provenance_rule_id": "C1-13-R02"
+      }
+    ],
+    "worked_examples": [
+      {
+        "context_vi": "That Be",
+        "answer_en": "The ethics board recommended that the evening event plan be reviewed before implementation.",
+        "translation_vi": "Hội đồng khuyến nghị tài liệu phải được thẩm định trước khi triển khai.",
+        "reason_vi": "Trong mandative subjunctive dùng be nguyên mẫu sau that, không phụ thuộc số ngôi.",
+        "provenance_rule_id": "C1-13-R01"
+      },
+      {
+        "context_vi": "That Base",
+        "answer_en": "The director insisted that the historical records office submit the digitisation plan by Friday.",
+        "translation_vi": "Giám đốc yêu cầu văn phòng lưu trữ lịch sử nộp tài liệu trước thứ Sáu.",
+        "reason_vi": "Insist với nghĩa yêu cầu thực hiện dùng động từ nguyên mẫu submit trong cấu trúc giả định.",
+        "provenance_rule_id": "C1-13-R02"
+      }
+    ],
+    "common_mistakes": [
+      {
+        "wrong": "The ethics board recommended that the evening event plan is reviewed before implementation.",
+        "correct": "The ethics board recommended that the evening event plan be reviewed before implementation.",
+        "why_vi": "Thành phần được thay không đúng với khuôn cần dùng. Trong mandative subjunctive dùng be nguyên mẫu sau that, không phụ thuộc số ngôi.",
+        "provenance_rule_id": "C1-13-R01"
+      },
+      {
+        "wrong": "The director insisted that the historical records office submits the digitisation plan by Friday.",
+        "correct": "The director insisted that the historical records office submit the digitisation plan by Friday.",
+        "why_vi": "Thành phần được thay không đúng với khuôn cần dùng. Insist với nghĩa yêu cầu thực hiện dùng động từ nguyên mẫu submit trong cấu trúc giả định.",
+        "provenance_rule_id": "C1-13-R02"
+      }
+    ],
+    "draft_practice": [
+      {
+        "stage": "guided",
+        "prompt_en": "Complete: The panel insisted that the report ___ revised.",
+        "draft_id": "M12-C1-13-DRAFT-01",
+        "assessment_mode": "SELF_REVIEW_REQUIRED",
+        "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED"
+      },
+      {
+        "stage": "independent",
+        "prompt_en": "Rewrite formally: It is essential for every student to be informed.",
+        "draft_id": "M12-C1-13-DRAFT-02",
+        "assessment_mode": "SELF_REVIEW_REQUIRED",
+        "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED"
+      },
+      {
+        "stage": "mastery",
+        "prompt_en": "Write one recommendation with require that.",
+        "draft_id": "M12-C1-13-DRAFT-03",
+        "assessment_mode": "SELF_REVIEW_REQUIRED",
+        "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED"
+      },
+      {
+        "stage": "spaced_review",
+        "prompt_en": "Correct: They recommended that he attends the meeting. (Use a mandative subjunctive.)",
+        "draft_id": "M12-C1-13-DRAFT-04",
+        "assessment_mode": "SELF_REVIEW_REQUIRED",
+        "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED"
+      }
+    ]
+  },
+  "C1-14": {
+    "lesson_id": "C1-14",
+    "overview_vi": "Counterfactual subjunctive tạo khoảng cách với thực tế, thường dùng were trong phong cách trang trọng.",
+    "decision_steps_vi": [
+      "Xác định thông tin thật và giả định trái thực",
+      "Đặt were/had theo mốc thời gian",
+      "Kiểm tra cách diễn đạt có đưa ra giả định không có bằng chứng hay không"
+    ],
+    "contrast": {
+      "first_en": "If I were the coordinator, I would request a second review.",
+      "second_en": "If I was the coordinator, I would request a second review.",
+      "difference_vi": "Were là dạng giả định chuẩn trang trọng; was có thể được nghe trong văn nói nên không phải lúc nào cũng lỗi.",
+      "comparison_note": "Lựa chọn mẫu phải dựa vào ngữ cảnh; hai ví dụ có thể khác nhau về tính phù hợp hoặc độ đúng.",
+      "teacher_review_required": true
+    },
+    "discourse_transfer": {
+      "context_vi": "Nhận xét về một quyết định quản trị",
+      "task_en": "Write a reflective paragraph that clearly distinguishes hypothetical advice from fact.",
+      "model_paragraph_en": "If I were responsible for the review, I would invite a second assessor. That does not mean the original decision was necessarily wrong; independent scrutiny could simply improve confidence in the result. The final recommendation should rest on the available evidence.",
+      "coaching_vi": "If I were nhấn điều không thực ở hiện tại; mệnh đề sau tránh gán lỗi thực tế."
+    },
+    "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED",
+    "question_import_policy": "SEPARATE_BANK_NO_OVERWRITE",
+    "title": "Counterfactual Subjunctive",
+    "patterns": [
+      {
+        "pattern": "If + S + were + ..., S + would/might",
+        "use_vi": "Were được ưu tiên trong giả định trái thực tế, kể cả chủ ngữ số ít/tập thể.",
+        "example_en": "If the workplace mediation service were more transparent about the confidential findings, the public might respond more positively.",
+        "example_vi": "Nếu đơn vị hòa giải lao động minh bạch hơn, công chúng có thể phản ứng tích cực hơn.",
+        "provenance_rule_id": "C1-14-R01"
+      },
+      {
+        "pattern": "wish + S + past subjunctive",
+        "use_vi": "Wish về hiện tại trái thực tế dùng were trong văn phong trang trọng.",
+        "example_en": "I wish the final recommendation were less ambiguous about the patient information sheet.",
+        "example_vi": "Tôi ước khuyến nghị cuối cùng rõ ràng hơn.",
+        "provenance_rule_id": "C1-14-R02"
+      }
+    ],
+    "worked_examples": [
+      {
+        "context_vi": "If Were",
+        "answer_en": "If the workplace mediation service were more transparent about the confidential findings, the public might respond more positively.",
+        "translation_vi": "Nếu đơn vị hòa giải lao động minh bạch hơn, công chúng có thể phản ứng tích cực hơn.",
+        "reason_vi": "Were được ưu tiên trong giả định trái thực tế, kể cả chủ ngữ số ít/tập thể.",
+        "provenance_rule_id": "C1-14-R01"
+      },
+      {
+        "context_vi": "Wish Present",
+        "answer_en": "I wish the final recommendation were less ambiguous about the patient information sheet.",
+        "translation_vi": "Tôi ước khuyến nghị cuối cùng rõ ràng hơn.",
+        "reason_vi": "Wish về hiện tại trái thực tế dùng were trong văn phong trang trọng.",
+        "provenance_rule_id": "C1-14-R02"
+      }
+    ],
+    "common_mistakes": [
+      {
+        "wrong": "If the workplace mediation service is more transparent about the confidential findings, the public might respond more positively.",
+        "correct": "If the workplace mediation service were more transparent about the confidential findings, the public might respond more positively.",
+        "why_vi": "Thành phần được thay không đúng với khuôn cần dùng. Were được ưu tiên trong giả định trái thực tế, kể cả chủ ngữ số ít/tập thể.",
+        "provenance_rule_id": "C1-14-R01"
+      },
+      {
+        "wrong": "I wish the final recommendation is less ambiguous about the patient information sheet.",
+        "correct": "I wish the final recommendation were less ambiguous about the patient information sheet.",
+        "why_vi": "Thành phần được thay không đúng với khuôn cần dùng. Wish về hiện tại trái thực tế dùng were trong văn phong trang trọng.",
+        "provenance_rule_id": "C1-14-R02"
+      }
+    ],
+    "draft_practice": [
+      {
+        "stage": "guided",
+        "prompt_en": "Complete a formal unreal hypothesis: If he ___ the chair, he would reopen the discussion.",
+        "draft_id": "M12-C1-14-DRAFT-01",
+        "assessment_mode": "SELF_REVIEW_REQUIRED",
+        "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED"
+      },
+      {
+        "stage": "independent",
+        "prompt_en": "Rewrite as hypothetical advice: I am not the organiser, so I cannot change the schedule.",
+        "draft_id": "M12-C1-14-DRAFT-02",
+        "assessment_mode": "SELF_REVIEW_REQUIRED",
+        "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED"
+      },
+      {
+        "stage": "mastery",
+        "prompt_en": "Make one cautious hypothetical suggestion using If I were.",
+        "draft_id": "M12-C1-14-DRAFT-03",
+        "assessment_mode": "SELF_REVIEW_REQUIRED",
+        "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED"
+      },
+      {
+        "stage": "spaced_review",
+        "prompt_en": "Correct: If I would be in charge, I would revise the plan.",
+        "draft_id": "M12-C1-14-DRAFT-04",
+        "assessment_mode": "SELF_REVIEW_REQUIRED",
+        "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED"
+      }
+    ]
+  },
+  "C1-15": {
+    "lesson_id": "C1-15",
+    "overview_vi": "Advanced modality cho phép điều chỉnh độ chắc chắn, đánh giá và mức độ kết luận.",
+    "decision_steps_vi": [
+      "Xác định người viết có bằng chứng ở mức nào",
+      "Chọn may well, might, must, cannot... theo lực suy luận",
+      "Tránh biến khả năng thành sự thật đã chứng minh"
+    ],
+    "contrast": {
+      "first_en": "The new timetable may improve attendance.",
+      "second_en": "The new timetable is bound to improve attendance.",
+      "difference_vi": "May diễn đạt khả năng; bound to rất chắc chắn và thường quá mạnh nếu chưa có số liệu.",
+      "comparison_note": "Lựa chọn mẫu phải dựa vào ngữ cảnh; hai ví dụ có thể khác nhau về tính phù hợp hoặc độ đúng.",
+      "teacher_review_required": true
+    },
+    "discourse_transfer": {
+      "context_vi": "Báo cáo sơ bộ về kết quả thử nghiệm",
+      "task_en": "Write a tentative interpretation of incomplete evidence.",
+      "model_paragraph_en": "The early results may well indicate a modest improvement in retention. However, the trial involved only one group and did not control for previous experience. It would be premature to claim that the intervention caused the change.",
+      "coaching_vi": "May well tăng độ tin cậy so với may nhưng không khẳng định quan hệ nhân quả."
+    },
+    "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED",
+    "question_import_policy": "SEPARATE_BANK_NO_OVERWRITE",
+    "title": "Advanced Modality",
+    "patterns": [
+      {
+        "pattern": "may well + base verb",
+        "use_vi": "May well diễn đạt khả năng tương đối đáng kể; theo sau là động từ nguyên mẫu revise.",
+        "example_en": "Given the latest evidence, the coastal research team may well revise the flood-risk assessment before the vote.",
+        "example_vi": "Dựa trên bằng chứng mới, nhóm nghiên cứu ven biển rất có thể sửa tài liệu.",
+        "provenance_rule_id": "C1-15-R01"
+      },
+      {
+        "pattern": "might conceivably + base verb",
+        "use_vi": "Might conceivably diễn đạt khả năng xa nhưng vẫn có thể xảy ra.",
+        "example_en": "In exceptional circumstances, the exhibition schedule might conceivably be withdrawn before the hearing.",
+        "example_vi": "Trong trường hợp đặc biệt, tài liệu có thể bị thu hồi.",
+        "provenance_rule_id": "C1-15-R02"
+      }
+    ],
+    "worked_examples": [
+      {
+        "context_vi": "May Well",
+        "answer_en": "Given the latest evidence, the coastal research team may well revise the flood-risk assessment before the vote.",
+        "translation_vi": "Dựa trên bằng chứng mới, nhóm nghiên cứu ven biển rất có thể sửa tài liệu.",
+        "reason_vi": "May well diễn đạt khả năng tương đối đáng kể; theo sau là động từ nguyên mẫu revise.",
+        "provenance_rule_id": "C1-15-R01"
+      },
+      {
+        "context_vi": "Might Conceivably",
+        "answer_en": "In exceptional circumstances, the exhibition schedule might conceivably be withdrawn before the hearing.",
+        "translation_vi": "Trong trường hợp đặc biệt, tài liệu có thể bị thu hồi.",
+        "reason_vi": "Might conceivably diễn đạt khả năng xa nhưng vẫn có thể xảy ra.",
+        "provenance_rule_id": "C1-15-R02"
+      }
+    ],
+    "common_mistakes": [
+      {
+        "wrong": "Given the latest evidence, the coastal research team may to well revise the flood-risk assessment before the vote.",
+        "correct": "Given the latest evidence, the coastal research team may well revise the flood-risk assessment before the vote.",
+        "why_vi": "Thành phần được thay không đúng với khuôn cần dùng. May well diễn đạt khả năng tương đối đáng kể; theo sau là động từ nguyên mẫu revise.",
+        "provenance_rule_id": "C1-15-R01"
+      },
+      {
+        "wrong": "In exceptional circumstances, the exhibition schedule might conceivably to be withdrawn before the hearing.",
+        "correct": "In exceptional circumstances, the exhibition schedule might conceivably be withdrawn before the hearing.",
+        "why_vi": "Thành phần được thay không đúng với khuôn cần dùng. Might conceivably diễn đạt khả năng xa nhưng vẫn có thể xảy ra.",
+        "provenance_rule_id": "C1-15-R02"
+      }
+    ],
+    "draft_practice": [
+      {
+        "stage": "guided",
+        "prompt_en": "Choose a cautious modal: Preliminary figures ___ suggest an improvement. (may / must)",
+        "draft_id": "M12-C1-15-DRAFT-01",
+        "assessment_mode": "SELF_REVIEW_REQUIRED",
+        "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED"
+      },
+      {
+        "stage": "independent",
+        "prompt_en": "Rewrite to reduce certainty: The intervention will definitely solve the problem.",
+        "draft_id": "M12-C1-15-DRAFT-02",
+        "assessment_mode": "SELF_REVIEW_REQUIRED",
+        "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED"
+      },
+      {
+        "stage": "mastery",
+        "prompt_en": "Describe a plausible but uncertain explanation using might.",
+        "draft_id": "M12-C1-15-DRAFT-03",
+        "assessment_mode": "SELF_REVIEW_REQUIRED",
+        "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED"
+      },
+      {
+        "stage": "spaced_review",
+        "prompt_en": "Correct: The evidence may well to support the claim.",
+        "draft_id": "M12-C1-15-DRAFT-04",
+        "assessment_mode": "SELF_REVIEW_REQUIRED",
+        "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED"
+      }
+    ]
+  },
+  "C1-16": {
+    "lesson_id": "C1-16",
+    "overview_vi": "Counterfactual modals thể hiện khả năng, đánh giá hoặc kết quả giả định trái thực trong quá khứ; would/could/might không đồng nghĩa.",
+    "decision_steps_vi": [
+      "Xác định tình huống không xảy ra trong quá khứ",
+      "Chọn would have cho kết quả dự kiến, could have cho khả năng, might have cho khả năng không chắc",
+      "Đánh giá có nên gán trách nhiệm khi chưa có chứng cứ không"
+    ],
+    "contrast": {
+      "first_en": "Without the reminder, she would have missed the deadline.",
+      "second_en": "Without the reminder, she might have missed the deadline.",
+      "difference_vi": "Would have thể hiện dự đoán mạnh; might have cho thấy chưa chắc sẽ trễ.",
+      "comparison_note": "Lựa chọn mẫu phải dựa vào ngữ cảnh; hai ví dụ có thể khác nhau về tính phù hợp hoặc độ đúng.",
+      "teacher_review_required": true
+    },
+    "discourse_transfer": {
+      "context_vi": "Biên bản đánh giá một cảnh báo sự cố",
+      "task_en": "Write a non-accusatory retrospective using two counterfactual modal strengths.",
+      "model_paragraph_en": "Without the automated alert, the team might have overlooked the unusual readings. Earlier maintenance could have reduced the risk, although the cause has not been confirmed. A further inspection is needed before responsibility can be assigned.",
+      "coaching_vi": "Might have và could have giúp cân bằng rủi ro với bằng chứng; câu cuối ngăn kết luận quy trách nhiệm quá sớm."
+    },
+    "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED",
+    "question_import_policy": "SEPARATE_BANK_NO_OVERWRITE",
+    "title": "Counterfactual Modals",
+    "patterns": [
+      {
+        "pattern": "without + noun, would have + V3",
+        "use_vi": "Would have + V3 diễn tả hệ quả trái với điều đã xảy ra trong quá khứ.",
+        "example_en": "The chair confirmed that without additional evidence, the curriculum team would have rejected the assessment rubric.",
+        "example_vi": "Chủ tọa xác nhận rằng nếu không có thêm bằng chứng, nhóm phát triển chương trình học đã bác bỏ bảng tiêu chí đánh giá.",
+        "provenance_rule_id": "C1-16-R01"
+      },
+      {
+        "pattern": "If + past perfect, could have + V3",
+        "use_vi": "Could have + V3 nói một khả năng đã không được thực hiện.",
+        "example_en": "If the deadline had been extended, the safety commission could have revised the inspection report more thoroughly.",
+        "example_vi": "Nếu hạn được gia hạn, ủy ban an toàn đã có thể sửa báo cáo kiểm tra kỹ hơn.",
+        "provenance_rule_id": "C1-16-R02"
+      }
+    ],
+    "worked_examples": [
+      {
+        "context_vi": "Counterfactual Result",
+        "answer_en": "The chair confirmed that without additional evidence, the curriculum team would have rejected the assessment rubric.",
+        "translation_vi": "Chủ tọa xác nhận rằng nếu không có thêm bằng chứng, nhóm phát triển chương trình học đã bác bỏ bảng tiêu chí đánh giá.",
+        "reason_vi": "Would have + V3 diễn tả hệ quả trái với điều đã xảy ra trong quá khứ.",
+        "provenance_rule_id": "C1-16-R01"
+      },
+      {
+        "context_vi": "Missed Opportunity",
+        "answer_en": "If the deadline had been extended, the safety commission could have revised the inspection report more thoroughly.",
+        "translation_vi": "Nếu hạn được gia hạn, ủy ban an toàn đã có thể sửa báo cáo kiểm tra kỹ hơn.",
+        "reason_vi": "Could have + V3 nói một khả năng đã không được thực hiện.",
+        "provenance_rule_id": "C1-16-R02"
+      }
+    ],
+    "common_mistakes": [
+      {
+        "wrong": "The chair confirmed that without additional evidence, the curriculum team will have rejected the assessment rubric.",
+        "correct": "The chair confirmed that without additional evidence, the curriculum team would have rejected the assessment rubric.",
+        "why_vi": "Không phù hợp với mẫu without + noun, would have + V3 trong câu này. Cần dùng «would have rejected», không phải «will have rejected». Would have + V3 diễn tả hệ quả trái với điều đã xảy ra trong quá khứ.",
+        "provenance_rule_id": "C1-16-R01"
+      },
+      {
+        "wrong": "If the deadline had been extended, the safety commission could revise the inspection report more thoroughly.",
+        "correct": "If the deadline had been extended, the safety commission could have revised the inspection report more thoroughly.",
+        "why_vi": "Không phù hợp với mẫu If + past perfect, could have + V3 trong câu này. Cần dùng «could have revised», không phải «could revise». Could have + V3 nói một khả năng đã không được thực hiện.",
+        "provenance_rule_id": "C1-16-R02"
+      }
+    ],
+    "draft_practice": [
+      {
+        "stage": "guided",
+        "prompt_en": "Choose a cautious counterfactual: Without her help, we ___ have completed the form on time. (might not / definitely)",
+        "draft_id": "M12-C1-16-DRAFT-01",
+        "assessment_mode": "SELF_REVIEW_REQUIRED",
+        "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED"
+      },
+      {
+        "stage": "independent",
+        "prompt_en": "Rewrite with could have: Better planning made earlier publication possible, but it did not happen.",
+        "draft_id": "M12-C1-16-DRAFT-02",
+        "assessment_mode": "SELF_REVIEW_REQUIRED",
+        "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED"
+      },
+      {
+        "stage": "mastery",
+        "prompt_en": "Write one cautious counterfactual with might have.",
+        "draft_id": "M12-C1-16-DRAFT-03",
+        "assessment_mode": "SELF_REVIEW_REQUIRED",
+        "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED"
+      },
+      {
+        "stage": "spaced_review",
+        "prompt_en": "Correct: They might avoided the delay with more staff.",
+        "draft_id": "M12-C1-16-DRAFT-04",
+        "assessment_mode": "SELF_REVIEW_REQUIRED",
+        "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED"
+      }
+    ]
+  },
+  "C1-17": {
+    "lesson_id": "C1-17",
+    "overview_vi": "Advanced non-finite clauses nén quan hệ thời gian, nguyên nhân hoặc mục đích; người đọc phải biết chủ ngữ ngầm là ai.",
+    "decision_steps_vi": [
+      "Xác định quan hệ thời gian và tính hoàn thành của hành động",
+      "Kiểm tra cùng chủ ngữ trước khi rút gọn",
+      "Chọn having + V3, V-ing hoặc to-infinitive sao cho không gây dangling modifier"
+    ],
+    "contrast": {
+      "first_en": "After the team had completed the inspection, it issued a report.",
+      "second_en": "Having completed the inspection, the team issued a report.",
+      "difference_vi": "Câu rút gọn nhấn hành động hoàn tất trước và giữ đúng chủ ngữ the team.",
+      "comparison_note": "Lựa chọn mẫu phải dựa vào ngữ cảnh; hai ví dụ có thể khác nhau về tính phù hợp hoặc độ đúng.",
+      "teacher_review_required": true
+    },
+    "discourse_transfer": {
+      "context_vi": "Báo cáo kiểm định và công bố kết quả",
+      "task_en": "Write a sequence of research actions using one non-finite clause.",
+      "model_paragraph_en": "Having reviewed all three datasets, the researchers identified a discrepancy in the second set. They then repeated the calculation using an independent method. The revised figures were published together with a note explaining the correction.",
+      "coaching_vi": "Having reviewed chỉ hành động trước của researchers, không lược tác nhân của các việc quan trọng khác."
+    },
+    "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED",
+    "question_import_policy": "SEPARATE_BANK_NO_OVERWRITE",
+    "title": "Advanced Non-finite Clauses",
+    "patterns": [
+      {
+        "pattern": "Having + V3, main clause",
+        "use_vi": "Having reviewed nhấn mạnh việc xem xét xong trước khi đưa khuyến nghị.",
+        "example_en": "Having reviewed the air-quality standard, the environment agency issued a recommendation.",
+        "example_vi": "Sau khi xem xét tiêu chuẩn chất lượng không khí, cơ quan môi trường đưa ra khuyến nghị.",
+        "provenance_rule_id": "C1-17-R01"
+      },
+      {
+        "pattern": "Not + V-ing, main clause",
+        "use_vi": "Not wishing là mệnh đề phân từ chủ động phủ định cùng chủ thể với mệnh đề chính.",
+        "example_en": "Not wishing to delay publication, the journalism network revised the source-protection policy immediately.",
+        "example_vi": "Không muốn trì hoãn xuất bản, mạng lưới báo chí lập tức sửa chính sách bảo vệ nguồn tin.",
+        "provenance_rule_id": "C1-17-R02"
+      }
+    ],
+    "worked_examples": [
+      {
+        "context_vi": "Perfect Participle",
+        "answer_en": "Having reviewed the air-quality standard, the environment agency issued a recommendation.",
+        "translation_vi": "Sau khi xem xét tiêu chuẩn chất lượng không khí, cơ quan môi trường đưa ra khuyến nghị.",
+        "reason_vi": "Having reviewed nhấn mạnh việc xem xét xong trước khi đưa khuyến nghị.",
+        "provenance_rule_id": "C1-17-R01"
+      },
+      {
+        "context_vi": "Negative Participle",
+        "answer_en": "Not wishing to delay publication, the journalism network revised the source-protection policy immediately.",
+        "translation_vi": "Không muốn trì hoãn xuất bản, mạng lưới báo chí lập tức sửa chính sách bảo vệ nguồn tin.",
+        "reason_vi": "Not wishing là mệnh đề phân từ chủ động phủ định cùng chủ thể với mệnh đề chính.",
+        "provenance_rule_id": "C1-17-R02"
+      }
+    ],
+    "common_mistakes": [
+      {
+        "wrong": "Having review the air-quality standard, the environment agency issued a recommendation.",
+        "correct": "Having reviewed the air-quality standard, the environment agency issued a recommendation.",
+        "why_vi": "Không phù hợp với mẫu Having + V3, main clause trong câu này. Cần dùng «Having reviewed», không phải «Having review». Having reviewed nhấn mạnh việc xem xét xong trước khi đưa khuyến nghị.",
+        "provenance_rule_id": "C1-17-R01"
+      },
+      {
+        "wrong": "Not wished to delay publication, the journalism network revised the source-protection policy immediately.",
+        "correct": "Not wishing to delay publication, the journalism network revised the source-protection policy immediately.",
+        "why_vi": "Không phù hợp với mẫu Not + V-ing, main clause trong câu này. Cần dùng «Not wishing», không phải «Not wished». Not wishing là mệnh đề phân từ chủ động phủ định cùng chủ thể với mệnh đề chính.",
+        "provenance_rule_id": "C1-17-R02"
+      }
+    ],
+    "draft_practice": [
+      {
+        "stage": "guided",
+        "prompt_en": "Complete: Having ___ the data, the analysts prepared a summary. (review)",
+        "draft_id": "M12-C1-17-DRAFT-01",
+        "assessment_mode": "SELF_REVIEW_REQUIRED",
+        "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED"
+      },
+      {
+        "stage": "independent",
+        "prompt_en": "Reduce safely: After the technicians had cleaned the equipment, they restarted it.",
+        "draft_id": "M12-C1-17-DRAFT-02",
+        "assessment_mode": "SELF_REVIEW_REQUIRED",
+        "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED"
+      },
+      {
+        "stage": "mastery",
+        "prompt_en": "Report a sequence using Having + V3 and a clear subject.",
+        "draft_id": "M12-C1-17-DRAFT-03",
+        "assessment_mode": "SELF_REVIEW_REQUIRED",
+        "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED"
+      },
+      {
+        "stage": "spaced_review",
+        "prompt_en": "Correct the dangling modifier: Having reviewed the figures, the conclusion was changed.",
+        "draft_id": "M12-C1-17-DRAFT-04",
+        "assessment_mode": "SELF_REVIEW_REQUIRED",
+        "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED"
+      }
+    ]
+  },
+  "C1-18": {
+    "lesson_id": "C1-18",
+    "overview_vi": "Absolute constructions có chủ ngữ riêng, thường nối bối cảnh với mệnh đề chính trong văn viết cô đọng.",
+    "decision_steps_vi": [
+      "Xác định cụm bối cảnh có chủ ngữ riêng hay không",
+      "Chọn N + participle/adj/prepositional phrase phù hợp",
+      "Xem cụm tuyệt đối có thực sự giúp đọc hiểu thay vì làm câu quá nặng"
+    ],
+    "contrast": {
+      "first_en": "When the inspections were complete, the staff left.",
+      "second_en": "The inspections complete, the staff left.",
+      "difference_vi": "Cấu trúc tuyệt đối cô đọng văn phong, phù hợp mô tả bối cảnh đã hoàn tất.",
+      "comparison_note": "Lựa chọn mẫu phải dựa vào ngữ cảnh; hai ví dụ có thể khác nhau về tính phù hợp hoặc độ đúng.",
+      "teacher_review_required": true
+    },
+    "discourse_transfer": {
+      "context_vi": "Biên bản kết thúc một hoạt động thực địa",
+      "task_en": "Write a formal fieldwork closure note with a clear absolute construction.",
+      "model_paragraph_en": "The final samples labelled and sealed, the field team returned to the laboratory. A technician logged each container before storage. The team will compare the new readings with last month’s baseline.",
+      "coaching_vi": "Absolute clause có chủ ngữ samples riêng; mệnh đề chính nói hành động của team."
+    },
+    "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED",
+    "question_import_policy": "SEPARATE_BANK_NO_OVERWRITE",
+    "title": "Absolute Constructions",
+    "patterns": [
+      {
+        "pattern": "N + having been + V3, main clause",
+        "use_vi": "Cụm tuyệt đối chỉ một hành động đã hoàn tất trước hành động chính.",
+        "example_en": "The evidence having been checked, the medicines board issued its findings on the dosage recommendation.",
+        "example_vi": "Sau khi bằng chứng đã được kiểm tra, hội đồng thẩm định thuốc công bố kết luận về khuyến nghị liều dùng.",
+        "provenance_rule_id": "C1-18-R01"
+      },
+      {
+        "pattern": "Weather permitting, main clause",
+        "use_vi": "Weather permitting là cấu trúc tuyệt đối nói điều kiện thời tiết.",
+        "example_en": "Weather permitting, the textile cooperative will complete its field visit tomorrow.",
+        "example_vi": "Nếu thời tiết thuận lợi, hợp tác xã dệt may sẽ hoàn tất chuyến thực địa ngày mai.",
+        "provenance_rule_id": "C1-18-R02"
+      }
+    ],
+    "worked_examples": [
+      {
+        "context_vi": "Perfect Passive Absolute",
+        "answer_en": "The evidence having been checked, the medicines board issued its findings on the dosage recommendation.",
+        "translation_vi": "Sau khi bằng chứng đã được kiểm tra, hội đồng thẩm định thuốc công bố kết luận về khuyến nghị liều dùng.",
+        "reason_vi": "Cụm tuyệt đối chỉ một hành động đã hoàn tất trước hành động chính.",
+        "provenance_rule_id": "C1-18-R01"
+      },
+      {
+        "context_vi": "Weather Absolute",
+        "answer_en": "Weather permitting, the textile cooperative will complete its field visit tomorrow.",
+        "translation_vi": "Nếu thời tiết thuận lợi, hợp tác xã dệt may sẽ hoàn tất chuyến thực địa ngày mai.",
+        "reason_vi": "Weather permitting là cấu trúc tuyệt đối nói điều kiện thời tiết.",
+        "provenance_rule_id": "C1-18-R02"
+      }
+    ],
+    "common_mistakes": [
+      {
+        "wrong": "The evidence has been checked, the medicines board issued its findings on the dosage recommendation.",
+        "correct": "The evidence having been checked, the medicines board issued its findings on the dosage recommendation.",
+        "why_vi": "Không phù hợp với mẫu N + having been + V3, main clause trong câu này. Cần dùng «The evidence having been checked,», không phải «The evidence has been checked,». Cụm tuyệt đối chỉ một hành động đã hoàn tất trước hành động chính.",
+        "provenance_rule_id": "C1-18-R01"
+      },
+      {
+        "wrong": "Weather permits, the textile cooperative will complete its field visit tomorrow.",
+        "correct": "Weather permitting, the textile cooperative will complete its field visit tomorrow.",
+        "why_vi": "Không phù hợp với mẫu Weather permitting, main clause trong câu này. Cần dùng «Weather permitting,», không phải «Weather permits,». Weather permitting là cấu trúc tuyệt đối nói điều kiện thời tiết.",
+        "provenance_rule_id": "C1-18-R02"
+      }
+    ],
+    "draft_practice": [
+      {
+        "stage": "guided",
+        "prompt_en": "Identify the separate subject: The discussion over, the participants left.",
+        "draft_id": "M12-C1-18-DRAFT-01",
+        "assessment_mode": "SELF_REVIEW_REQUIRED",
+        "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED"
+      },
+      {
+        "stage": "independent",
+        "prompt_en": "Rewrite more compactly: Once all the forms had been signed, the committee closed the meeting.",
+        "draft_id": "M12-C1-18-DRAFT-02",
+        "assessment_mode": "SELF_REVIEW_REQUIRED",
+        "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED"
+      },
+      {
+        "stage": "mastery",
+        "prompt_en": "Write an absolute construction about completed preparations.",
+        "draft_id": "M12-C1-18-DRAFT-03",
+        "assessment_mode": "SELF_REVIEW_REQUIRED",
+        "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED"
+      },
+      {
+        "stage": "spaced_review",
+        "prompt_en": "Correct the incomplete absolute: The report finishing, the chair approved publication. (The report was already finished.)",
+        "draft_id": "M12-C1-18-DRAFT-04",
+        "assessment_mode": "SELF_REVIEW_REQUIRED",
+        "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED"
+      }
+    ]
+  },
+  "C1-19": {
+    "lesson_id": "C1-19",
+    "overview_vi": "Proportional comparisons The more..., the more/less... mô tả sự đồng biến hoặc nghịch biến; không tự chứng minh quan hệ nhân quả.",
+    "decision_steps_vi": [
+      "Xác định hai đại lượng và chiều biến đổi",
+      "Chọn more/less/fewer theo tính đếm được và ý nghĩa",
+      "Kiểm tra chỉ đang mô tả tương quan hay khẳng định nguyên nhân"
+    ],
+    "contrast": {
+      "first_en": "The more reminders we sent, the higher attendance became.",
+      "second_en": "As reminders increased, attendance also increased.",
+      "difference_vi": "Câu đầu làm nổi tương quan theo mức độ; cả hai đều chưa đủ để kết luận reminders gây tăng attendance.",
+      "comparison_note": "Lựa chọn mẫu phải dựa vào ngữ cảnh; hai ví dụ có thể khác nhau về tính phù hợp hoặc độ đúng.",
+      "teacher_review_required": true
+    },
+    "discourse_transfer": {
+      "context_vi": "Nhận xét biểu đồ giữa thời gian học và độ chính xác",
+      "task_en": "Write a data-commentary paragraph with one proportional comparison and one caveat.",
+      "model_paragraph_en": "The longer participants spent reviewing the material, the fewer errors they made on the follow-up task. This pattern was strongest among those who had missed the initial session. Because the groups were not randomly assigned, the association should not be treated as proof of causation.",
+      "coaching_vi": "The longer/the fewer thể hiện quan hệ đồng biến ngược chiều, nhưng cần câu cảnh báo nhân quả."
+    },
+    "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED",
+    "question_import_policy": "SEPARATE_BANK_NO_OVERWRITE",
+    "title": "Proportional Comparisons",
+    "patterns": [
+      {
+        "pattern": "the more ..., the fewer + plural noun",
+        "use_vi": "The fewer dùng với danh từ đếm được số nhiều errors.",
+        "example_en": "The more carefully the accessibility unit checks the interface prototype, the fewer errors it is likely to miss.",
+        "example_vi": "Bộ phận hỗ trợ tiếp cận càng kiểm tra bản mẫu giao diện kỹ, đơn vị này càng ít bỏ sót lỗi.",
+        "provenance_rule_id": "C1-19-R01"
+      },
+      {
+        "pattern": "the longer ..., the more + adjective",
+        "use_vi": "Hai vế so sánh kép thể hiện hai mức độ thay đổi cùng nhau.",
+        "example_en": "The longer the review takes, the more costly it becomes for the weather service.",
+        "example_vi": "Việc rà soát càng kéo dài, chi phí đối với cơ quan khí tượng càng cao.",
+        "provenance_rule_id": "C1-19-R02"
+      }
+    ],
+    "worked_examples": [
+      {
+        "context_vi": "Fewer Plural",
+        "answer_en": "The more carefully the accessibility unit checks the interface prototype, the fewer errors it is likely to miss.",
+        "translation_vi": "Bộ phận hỗ trợ tiếp cận càng kiểm tra bản mẫu giao diện kỹ, đơn vị này càng ít bỏ sót lỗi.",
+        "reason_vi": "The fewer dùng với danh từ đếm được số nhiều errors.",
+        "provenance_rule_id": "C1-19-R01"
+      },
+      {
+        "context_vi": "Cost Increase",
+        "answer_en": "The longer the review takes, the more costly it becomes for the weather service.",
+        "translation_vi": "Việc rà soát càng kéo dài, chi phí đối với cơ quan khí tượng càng cao.",
+        "reason_vi": "Hai vế so sánh kép thể hiện hai mức độ thay đổi cùng nhau.",
+        "provenance_rule_id": "C1-19-R02"
+      }
+    ],
+    "common_mistakes": [
+      {
+        "wrong": "The more carefully the accessibility unit checks the interface prototype, the less errors it is likely to miss.",
+        "correct": "The more carefully the accessibility unit checks the interface prototype, the fewer errors it is likely to miss.",
+        "why_vi": "Không phù hợp với mẫu the more ..., the fewer + plural noun trong câu này. Cần dùng «the fewer», không phải «the less». The fewer dùng với danh từ đếm được số nhiều errors.",
+        "provenance_rule_id": "C1-19-R01"
+      },
+      {
+        "wrong": "The longer the review takes, more costly it becomes for the weather service.",
+        "correct": "The longer the review takes, the more costly it becomes for the weather service.",
+        "why_vi": "Không phù hợp với mẫu the longer ..., the more + adjective trong câu này. Cần dùng «the more costly», không phải «more costly». Hai vế so sánh kép thể hiện hai mức độ thay đổi cùng nhau.",
+        "provenance_rule_id": "C1-19-R02"
+      }
+    ],
+    "draft_practice": [
+      {
+        "stage": "guided",
+        "prompt_en": "Complete: The more examples students analyse, the ___ mistakes they tend to make. (fewer/less)",
+        "draft_id": "M12-C1-19-DRAFT-01",
+        "assessment_mode": "SELF_REVIEW_REQUIRED",
+        "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED"
+      },
+      {
+        "stage": "independent",
+        "prompt_en": "Rewrite: Accuracy improved as the participants practised more.",
+        "draft_id": "M12-C1-19-DRAFT-02",
+        "assessment_mode": "SELF_REVIEW_REQUIRED",
+        "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED"
+      },
+      {
+        "stage": "mastery",
+        "prompt_en": "Describe a relationship between waiting time and satisfaction.",
+        "draft_id": "M12-C1-19-DRAFT-03",
+        "assessment_mode": "SELF_REVIEW_REQUIRED",
+        "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED"
+      },
+      {
+        "stage": "spaced_review",
+        "prompt_en": "Correct: More carefully we checked, fewer errors appeared.",
+        "draft_id": "M12-C1-19-DRAFT-04",
+        "assessment_mode": "SELF_REVIEW_REQUIRED",
+        "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED"
+      }
+    ]
+  },
+  "C1-20": {
+    "lesson_id": "C1-20",
+    "overview_vi": "Advanced correlative comparisons như not so much A as B sửa trọng tâm diễn đạt, khác với more A than B theo ngữ cảnh.",
+    "decision_steps_vi": [
+      "Xác định người viết muốn sửa cách phân loại hay so độ lớn",
+      "Đặt A/B song song về ngữ pháp và ý nghĩa",
+      "Không biến tính đánh giá chủ quan thành dữ kiện chắc chắn"
+    ],
+    "contrast": {
+      "first_en": "The main issue is cost rather than time.",
+      "second_en": "The issue is not so much the cost as the lack of planning.",
+      "difference_vi": "Câu thứ hai giảm tầm quan trọng tương đối của cost, đưa lack of planning thành trọng tâm.",
+      "comparison_note": "Lựa chọn mẫu phải dựa vào ngữ cảnh; hai ví dụ có thể khác nhau về tính phù hợp hoặc độ đúng.",
+      "teacher_review_required": true
+    },
+    "discourse_transfer": {
+      "context_vi": "Bài phản biện về một dự án công nghệ",
+      "task_en": "Write a nuanced evaluation that corrects a simplistic diagnosis.",
+      "model_paragraph_en": "The delay was not so much a failure of the software as a consequence of incomplete requirements. Several teams interpreted the same specification differently, which led to repeated revisions. The next phase should therefore begin with a jointly reviewed brief.",
+      "coaching_vi": "Not so much...as... đổi trọng tâm giải thích; đoạn sau cung cấp lý do thay vì suy đoán."
+    },
+    "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED",
+    "question_import_policy": "SEPARATE_BANK_NO_OVERWRITE",
+    "title": "Advanced Correlative Comparisons",
+    "patterns": [
+      {
+        "pattern": "not so much A as B",
+        "use_vi": "Không hẳn là A mà chủ yếu là B; dùng cặp not so much ... as.",
+        "example_en": "The debate was not so much about the cost of the artefact inventory as about its long-term effects.",
+        "example_vi": "Cuộc tranh luận không hẳn về chi phí danh mục hiện vật mà chủ yếu về tác động dài hạn.",
+        "provenance_rule_id": "C1-20-R01"
+      },
+      {
+        "pattern": "V-ing rather than V-ing",
+        "use_vi": "Rather than nối hai hành động cùng dạng ngữ pháp.",
+        "example_en": "The reform committee focused on improving the consultation draft rather than replacing it altogether.",
+        "example_vi": "Ủy ban cải cách tập trung cải thiện bản dự thảo tham vấn hơn là thay thế hoàn toàn.",
+        "provenance_rule_id": "C1-20-R02"
+      }
+    ],
+    "worked_examples": [
+      {
+        "context_vi": "Not So Much As",
+        "answer_en": "The debate was not so much about the cost of the artefact inventory as about its long-term effects.",
+        "translation_vi": "Cuộc tranh luận không hẳn về chi phí danh mục hiện vật mà chủ yếu về tác động dài hạn.",
+        "reason_vi": "Không hẳn là A mà chủ yếu là B; dùng cặp not so much ... as.",
+        "provenance_rule_id": "C1-20-R01"
+      },
+      {
+        "context_vi": "Rather Than Parallel",
+        "answer_en": "The reform committee focused on improving the consultation draft rather than replacing it altogether.",
+        "translation_vi": "Ủy ban cải cách tập trung cải thiện bản dự thảo tham vấn hơn là thay thế hoàn toàn.",
+        "reason_vi": "Rather than nối hai hành động cùng dạng ngữ pháp.",
+        "provenance_rule_id": "C1-20-R02"
+      }
+    ],
+    "common_mistakes": [
+      {
+        "wrong": "The debate was not such much about the cost of the artefact inventory as about its long-term effects.",
+        "correct": "The debate was not so much about the cost of the artefact inventory as about its long-term effects.",
+        "why_vi": "Không phù hợp với mẫu not so much A as B trong câu này. Cần dùng «not so much», không phải «not such much». Không hẳn là A mà chủ yếu là B; dùng cặp not so much ... as.",
+        "provenance_rule_id": "C1-20-R01"
+      },
+      {
+        "wrong": "The reform committee focused on improving the consultation draft rather then replacing it altogether.",
+        "correct": "The reform committee focused on improving the consultation draft rather than replacing it altogether.",
+        "why_vi": "Không phù hợp với mẫu V-ing rather than V-ing trong câu này. Cần dùng «rather than», không phải «rather then». Rather than nối hai hành động cùng dạng ngữ pháp.",
+        "provenance_rule_id": "C1-20-R02"
+      }
+    ],
+    "draft_practice": [
+      {
+        "stage": "guided",
+        "prompt_en": "Complete: The challenge is not so much speed ___ reliability.",
+        "draft_id": "M12-C1-20-DRAFT-01",
+        "assessment_mode": "SELF_REVIEW_REQUIRED",
+        "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED"
+      },
+      {
+        "stage": "independent",
+        "prompt_en": "Rewrite to correct the emphasis: The problem was more about communication than budget.",
+        "draft_id": "M12-C1-20-DRAFT-02",
+        "assessment_mode": "SELF_REVIEW_REQUIRED",
+        "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED"
+      },
+      {
+        "stage": "mastery",
+        "prompt_en": "Write one qualification contrasting quantity with quality.",
+        "draft_id": "M12-C1-20-DRAFT-03",
+        "assessment_mode": "SELF_REVIEW_REQUIRED",
+        "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED"
+      },
+      {
+        "stage": "spaced_review",
+        "prompt_en": "Correct: It was not so much an error than a misunderstanding.",
+        "draft_id": "M12-C1-20-DRAFT-04",
+        "assessment_mode": "SELF_REVIEW_REQUIRED",
+        "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED"
+      }
+    ]
+  },
+  "C1-21": {
+    "lesson_id": "C1-21",
+    "overview_vi": "Advanced articles/determiners dùng the/zero article/each/every để đánh dấu tính xác định và phạm vi tham chiếu.",
+    "decision_steps_vi": [
+      "Xác định danh từ đang nói chung hay chỉ đối tượng đã xác định",
+      "Kiểm tra số ít/số nhiều/không đếm được",
+      "Phân biệt each/every/all theo phạm vi và góc nhìn"
+    ],
+    "contrast": {
+      "first_en": "Education can reduce inequality.",
+      "second_en": "The education provided in this programme may reduce inequality.",
+      "difference_vi": "Education không mạo từ nói chung; the education chỉ phần giáo dục xác định bởi cụm theo sau.",
+      "comparison_note": "Lựa chọn mẫu phải dựa vào ngữ cảnh; hai ví dụ có thể khác nhau về tính phù hợp hoặc độ đúng.",
+      "teacher_review_required": true
+    },
+    "discourse_transfer": {
+      "context_vi": "Bản giới thiệu chương trình hỗ trợ học sinh",
+      "task_en": "Write a precise programme description distinguishing general and specific reference.",
+      "model_paragraph_en": "Education can widen access to employment, but the training offered in this programme addresses only basic digital skills. Each participant receives a short assessment before the course begins. The results will be used to tailor the first workshop.",
+      "coaching_vi": "Education chung, the training chỉ khóa cụ thể; each nhấn từng người."
+    },
+    "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED",
+    "question_import_policy": "SEPARATE_BANK_NO_OVERWRITE",
+    "title": "Advanced Articles & Determiners",
+    "patterns": [
+      {
+        "pattern": "the + specified noun",
+        "use_vi": "Thiết bị đã được xác định cụ thể bằng mệnh đề specified in ..., nên dùng the.",
+        "example_en": "The inspectors examined the equipment specified in the heritage trail map.",
+        "example_vi": "Thanh tra xem xét thiết bị được quy định cụ thể trong bản đồ tuyến di sản.",
+        "provenance_rule_id": "C1-21-R01"
+      },
+      {
+        "pattern": "an + vowel sound",
+        "use_vi": "Independent bắt đầu bằng nguyên âm /ɪ/, do đó dùng an.",
+        "example_en": "The wildlife centre requested an independent estimate before approving the release protocol.",
+        "example_vi": "Trung tâm bảo tồn động vật yêu cầu một bản ước tính độc lập trước khi duyệt quy trình tái thả.",
+        "provenance_rule_id": "C1-21-R02"
+      }
+    ],
+    "worked_examples": [
+      {
+        "context_vi": "Definite Specific",
+        "answer_en": "The inspectors examined the equipment specified in the heritage trail map.",
+        "translation_vi": "Thanh tra xem xét thiết bị được quy định cụ thể trong bản đồ tuyến di sản.",
+        "reason_vi": "Thiết bị đã được xác định cụ thể bằng mệnh đề specified in ..., nên dùng the.",
+        "provenance_rule_id": "C1-21-R01"
+      },
+      {
+        "context_vi": "Indefinite Vowel",
+        "answer_en": "The wildlife centre requested an independent estimate before approving the release protocol.",
+        "translation_vi": "Trung tâm bảo tồn động vật yêu cầu một bản ước tính độc lập trước khi duyệt quy trình tái thả.",
+        "reason_vi": "Independent bắt đầu bằng nguyên âm /ɪ/, do đó dùng an.",
+        "provenance_rule_id": "C1-21-R02"
+      }
+    ],
+    "common_mistakes": [
+      {
+        "wrong": "The inspectors examined a equipment specified in the heritage trail map.",
+        "correct": "The inspectors examined the equipment specified in the heritage trail map.",
+        "why_vi": "Không phù hợp với mẫu the + specified noun trong câu này. Cần dùng «the», không phải «a». Thiết bị đã được xác định cụ thể bằng mệnh đề specified in ..., nên dùng the.",
+        "provenance_rule_id": "C1-21-R01"
+      },
+      {
+        "wrong": "The wildlife centre requested a independent estimate before approving the release protocol.",
+        "correct": "The wildlife centre requested an independent estimate before approving the release protocol.",
+        "why_vi": "Không phù hợp với mẫu an + vowel sound trong câu này. Cần dùng «an», không phải «a». Independent bắt đầu bằng nguyên âm /ɪ/, do đó dùng an.",
+        "provenance_rule_id": "C1-21-R02"
+      }
+    ],
+    "draft_practice": [
+      {
+        "stage": "guided",
+        "prompt_en": "The brochure has already identified a particular course. Complete the definite reference: ___ training provided by this centre is free. (The/Ø)",
+        "draft_id": "M12-C1-21-DRAFT-01",
+        "assessment_mode": "SELF_REVIEW_REQUIRED",
+        "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED"
+      },
+      {
+        "stage": "independent",
+        "prompt_en": "Rewrite with generic reference: The education offered in this class matters for society. (Make a general claim about education.)",
+        "draft_id": "M12-C1-21-DRAFT-02",
+        "assessment_mode": "SELF_REVIEW_REQUIRED",
+        "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED"
+      },
+      {
+        "stage": "mastery",
+        "prompt_en": "Write two sentences contrasting general research and a specific study.",
+        "draft_id": "M12-C1-21-DRAFT-03",
+        "assessment_mode": "SELF_REVIEW_REQUIRED",
+        "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED"
+      },
+      {
+        "stage": "spaced_review",
+        "prompt_en": "Correct: An information in the report is outdated.",
+        "draft_id": "M12-C1-21-DRAFT-04",
+        "assessment_mode": "SELF_REVIEW_REQUIRED",
+        "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED"
+      }
+    ]
+  },
+  "C1-22": {
+    "lesson_id": "C1-22",
+    "overview_vi": "Advanced tense/aspect dùng hoàn thành, tiếp diễn và thời điểm tham chiếu để kể lại chuỗi sự kiện chính xác.",
+    "decision_steps_vi": [
+      "Xác định mốc nhìn và thứ tự sự kiện",
+      "Chọn perfect để nêu xảy ra trước mốc nhìn",
+      "Chọn progressive khi muốn nhấn quá trình hoặc tính tạm thời"
+    ],
+    "contrast": {
+      "first_en": "By the time the team arrived, the meeting had begun.",
+      "second_en": "When the team arrived, the meeting began.",
+      "difference_vi": "Câu đầu cuộc họp đã bắt đầu trước lúc nhóm đến; câu sau hai việc xảy ra cùng thời điểm theo trật tự.",
+      "comparison_note": "Lựa chọn mẫu phải dựa vào ngữ cảnh; hai ví dụ có thể khác nhau về tính phù hợp hoặc độ đúng.",
+      "teacher_review_required": true
+    },
+    "discourse_transfer": {
+      "context_vi": "Bản tường thuật triển khai hệ thống mới",
+      "task_en": "Write a timeline report preserving the order of events.",
+      "model_paragraph_en": "By the time the inspectors arrived, the technicians had completed the first round of tests. They were checking the final sensor when the network connection failed. The results were saved locally and uploaded after the service was restored.",
+      "coaching_vi": "Past perfect đặt sự kiện trước mốc; progressive đặt việc đang diễn ra khi gián đoạn."
+    },
+    "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED",
+    "question_import_policy": "SEPARATE_BANK_NO_OVERWRITE",
+    "title": "Advanced Tense & Aspect",
+    "patterns": [
+      {
+        "pattern": "by the time + past, had + V3",
+        "use_vi": "Past Perfect đánh dấu hành động đã xong trước một mốc trong quá khứ.",
+        "example_en": "By the time the hearing began, the water department had already revised the drought response plan twice.",
+        "example_vi": "Trước khi phiên điều trần bắt đầu, sở tài nguyên nước đã sửa kế hoạch ứng phó hạn hán hai lần.",
+        "provenance_rule_id": "C1-22-R01"
+      },
+      {
+        "pattern": "has/have been + V-ing + since",
+        "use_vi": "Hiện tại hoàn thành tiếp diễn nhấn mạnh quá trình bắt đầu trong quá khứ và còn tiếp tục.",
+        "example_en": "The waste service has been monitoring the impact of the recycling guidelines since January, and the process is still under way.",
+        "example_vi": "Đơn vị xử lý rác đã theo dõi tác động của hướng dẫn tái chế từ tháng Một và vẫn đang tiếp tục.",
+        "provenance_rule_id": "C1-22-R02"
+      }
+    ],
+    "worked_examples": [
+      {
+        "context_vi": "Past Before Past",
+        "answer_en": "By the time the hearing began, the water department had already revised the drought response plan twice.",
+        "translation_vi": "Trước khi phiên điều trần bắt đầu, sở tài nguyên nước đã sửa kế hoạch ứng phó hạn hán hai lần.",
+        "reason_vi": "Past Perfect đánh dấu hành động đã xong trước một mốc trong quá khứ.",
+        "provenance_rule_id": "C1-22-R01"
+      },
+      {
+        "context_vi": "Continuing Present Perfect Progressive",
+        "answer_en": "The waste service has been monitoring the impact of the recycling guidelines since January, and the process is still under way.",
+        "translation_vi": "Đơn vị xử lý rác đã theo dõi tác động của hướng dẫn tái chế từ tháng Một và vẫn đang tiếp tục.",
+        "reason_vi": "Hiện tại hoàn thành tiếp diễn nhấn mạnh quá trình bắt đầu trong quá khứ và còn tiếp tục.",
+        "provenance_rule_id": "C1-22-R02"
+      }
+    ],
+    "common_mistakes": [
+      {
+        "wrong": "By the time the hearing began, the water department has already revised the drought response plan twice.",
+        "correct": "By the time the hearing began, the water department had already revised the drought response plan twice.",
+        "why_vi": "Không phù hợp với mẫu by the time + past, had + V3 trong câu này. Cần dùng «had already revised», không phải «has already revised». Past Perfect đánh dấu hành động đã xong trước một mốc trong quá khứ.",
+        "provenance_rule_id": "C1-22-R01"
+      },
+      {
+        "wrong": "The waste service has monitoring the impact of the recycling guidelines since January, and the process is still under way.",
+        "correct": "The waste service has been monitoring the impact of the recycling guidelines since January, and the process is still under way.",
+        "why_vi": "Không phù hợp với mẫu has/have been + V-ing + since trong câu này. Cần dùng «has been monitoring», không phải «has monitoring». Hiện tại hoàn thành tiếp diễn nhấn mạnh quá trình bắt đầu trong quá khứ và còn tiếp tục.",
+        "provenance_rule_id": "C1-22-R02"
+      }
+    ],
+    "draft_practice": [
+      {
+        "stage": "guided",
+        "prompt_en": "Complete a past report: Yesterday, by noon, the reviewers ___ finished the first round.",
+        "draft_id": "M12-C1-22-DRAFT-01",
+        "assessment_mode": "SELF_REVIEW_REQUIRED",
+        "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED"
+      },
+      {
+        "stage": "independent",
+        "prompt_en": "Rewrite to show prior completion: The inspection finished before the visitors arrived.",
+        "draft_id": "M12-C1-22-DRAFT-02",
+        "assessment_mode": "SELF_REVIEW_REQUIRED",
+        "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED"
+      },
+      {
+        "stage": "mastery",
+        "prompt_en": "Write two sentences contrasting completed and ongoing work at a past time.",
+        "draft_id": "M12-C1-22-DRAFT-03",
+        "assessment_mode": "SELF_REVIEW_REQUIRED",
+        "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED"
+      },
+      {
+        "stage": "spaced_review",
+        "prompt_en": "Correct: By the time we reached the station, the train has left.",
+        "draft_id": "M12-C1-22-DRAFT-04",
+        "assessment_mode": "SELF_REVIEW_REQUIRED",
+        "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED"
+      }
+    ]
+  },
+  "C1-23": {
+    "lesson_id": "C1-23",
+    "overview_vi": "Hedging giúp diễn đạt kết quả chưa chắc chắn trong nghiên cứu và tranh luận; quá nhiều hedge cũng làm luận điểm yếu.",
+    "decision_steps_vi": [
+      "Xác định giới hạn của dữ liệu và mức kết luận",
+      "Chọn appear/seem/tend/may/suggest đúng lực",
+      "Giữ mệnh đề chính đủ rõ thay vì phủ nhận mọi kết luận"
+    ],
+    "contrast": {
+      "first_en": "The intervention reduced anxiety.",
+      "second_en": "The results suggest that the intervention may have reduced anxiety.",
+      "difference_vi": "Câu hai gắn kết luận với bằng chứng, làm yếu khẳng định nhân quả chưa được xác minh.",
+      "comparison_note": "Lựa chọn mẫu phải dựa vào ngữ cảnh; hai ví dụ có thể khác nhau về tính phù hợp hoặc độ đúng.",
+      "teacher_review_required": true
+    },
+    "discourse_transfer": {
+      "context_vi": "Nhận xét một nghiên cứu có mẫu hạn chế",
+      "task_en": "Write a balanced two-claim discussion using measured hedging.",
+      "model_paragraph_en": "Participants who received weekly feedback tended to complete more tasks than those who did not. This pattern may reflect improved motivation, although the groups differed in prior experience. Further controlled research is needed to establish whether feedback itself caused the difference.",
+      "coaching_vi": "Tended to diễn tả xu hướng; may reflect đưa ra giả thuyết thay vì kết luận."
+    },
+    "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED",
+    "question_import_policy": "SEPARATE_BANK_NO_OVERWRITE",
+    "title": "Hedging",
+    "patterns": [
+      {
+        "pattern": "appear to + V",
+        "use_vi": "Appear to + V giảm độ chắc chắn của kết luận dựa trên dữ kiện sơ bộ.",
+        "example_en": "The preliminary figures appear to support the recommendation in the inspection report.",
+        "example_vi": "Các số liệu sơ bộ dường như ủng hộ khuyến nghị trong báo cáo kiểm tra.",
+        "provenance_rule_id": "C1-23-R01"
+      },
+      {
+        "pattern": "It seems that + clause",
+        "use_vi": "It seems that đưa nhận định dè dặt, tránh khẳng định tuyệt đối.",
+        "example_en": "It seems that the costs of the shoreline assessment were underestimated.",
+        "example_vi": "Có vẻ chi phí của bản đánh giá đường bờ biển đã bị đánh giá thấp.",
+        "provenance_rule_id": "C1-23-R02"
+      }
+    ],
+    "worked_examples": [
+      {
+        "context_vi": "Appear To",
+        "answer_en": "The preliminary figures appear to support the recommendation in the inspection report.",
+        "translation_vi": "Các số liệu sơ bộ dường như ủng hộ khuyến nghị trong báo cáo kiểm tra.",
+        "reason_vi": "Appear to + V giảm độ chắc chắn của kết luận dựa trên dữ kiện sơ bộ.",
+        "provenance_rule_id": "C1-23-R01"
+      },
+      {
+        "context_vi": "It Seems",
+        "answer_en": "It seems that the costs of the shoreline assessment were underestimated.",
+        "translation_vi": "Có vẻ chi phí của bản đánh giá đường bờ biển đã bị đánh giá thấp.",
+        "reason_vi": "It seems that đưa nhận định dè dặt, tránh khẳng định tuyệt đối.",
+        "provenance_rule_id": "C1-23-R02"
+      }
+    ],
+    "common_mistakes": [
+      {
+        "wrong": "The preliminary figures appears to support the recommendation in the inspection report.",
+        "correct": "The preliminary figures appear to support the recommendation in the inspection report.",
+        "why_vi": "Không phù hợp với mẫu appear to + V trong câu này. Cần dùng «appear to», không phải «appears to». Appear to + V giảm độ chắc chắn của kết luận dựa trên dữ kiện sơ bộ.",
+        "provenance_rule_id": "C1-23-R01"
+      },
+      {
+        "wrong": "It seem that the costs of the shoreline assessment were underestimated.",
+        "correct": "It seems that the costs of the shoreline assessment were underestimated.",
+        "why_vi": "Không phù hợp với mẫu It seems that + clause trong câu này. Cần dùng «seems», không phải «seem». It seems that đưa nhận định dè dặt, tránh khẳng định tuyệt đối.",
+        "provenance_rule_id": "C1-23-R02"
+      }
+    ],
+    "draft_practice": [
+      {
+        "stage": "guided",
+        "prompt_en": "Choose the cautious verb: The preliminary findings ___ to indicate a small effect. (appear/prove)",
+        "draft_id": "M12-C1-23-DRAFT-01",
+        "assessment_mode": "SELF_REVIEW_REQUIRED",
+        "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED"
+      },
+      {
+        "stage": "independent",
+        "prompt_en": "Rewrite with an evidence-aware hedge: The policy definitely improved health outcomes.",
+        "draft_id": "M12-C1-23-DRAFT-02",
+        "assessment_mode": "SELF_REVIEW_REQUIRED",
+        "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED"
+      },
+      {
+        "stage": "mastery",
+        "prompt_en": "Write one tentative explanation using may reflect.",
+        "draft_id": "M12-C1-23-DRAFT-03",
+        "assessment_mode": "SELF_REVIEW_REQUIRED",
+        "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED"
+      },
+      {
+        "stage": "spaced_review",
+        "prompt_en": "Correct: The findings appears to show a difference.",
+        "draft_id": "M12-C1-23-DRAFT-04",
+        "assessment_mode": "SELF_REVIEW_REQUIRED",
+        "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED"
+      }
+    ]
+  },
+  "C1-24": {
+    "lesson_id": "C1-24",
+    "overview_vi": "Distancing/evidentiality dùng source attribution và passive reporting để tách thông tin được báo cáo khỏi điều đã được xác minh.",
+    "decision_steps_vi": [
+      "Xác định nguồn gốc tuyên bố và có thể kiểm chứng không",
+      "Chọn according to/report/claim/appears appropriately",
+      "Không đánh đồng bị động báo cáo với sự thật khách quan"
+    ],
+    "contrast": {
+      "first_en": "The device is unsafe.",
+      "second_en": "An independent laboratory reports that the device is unsafe under certain conditions.",
+      "difference_vi": "Câu hai gắn khẳng định với một nguồn cụ thể và giới hạn điều kiện, không biến lời báo cáo thành sự thật vô điều kiện.",
+      "comparison_note": "Lựa chọn mẫu phải dựa vào ngữ cảnh; hai ví dụ có thể khác nhau về tính phù hợp hoặc độ đúng.",
+      "teacher_review_required": true
+    },
+    "discourse_transfer": {
+      "context_vi": "Bản tổng hợp thông tin về hiệu năng thiết bị",
+      "task_en": "Write a neutral briefing separating reported claims and independently checked facts.",
+      "model_paragraph_en": "The supplier reports that the revised model uses less energy. Independent measurements have not yet been published, so the claim cannot be verified from the available documents. The procurement team will seek test results before recommending a purchase.",
+      "coaching_vi": "Reports that nêu nguồn tuyên bố; hai câu sau làm rõ mức kiểm chứng."
+    },
+    "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED",
+    "question_import_policy": "SEPARATE_BANK_NO_OVERWRITE",
+    "title": "Distancing & Evidentiality",
+    "patterns": [
+      {
+        "pattern": "It has been reported that + clause",
+        "use_vi": "Cấu trúc bị động đưa thông tin có nguồn được báo cáo, không xác nhận tuyệt đối.",
+        "example_en": "It has been reported that the source-protection policy will be revised before publication.",
+        "example_vi": "Có thông tin cho rằng chính sách bảo vệ nguồn tin sẽ được sửa trước khi công bố.",
+        "provenance_rule_id": "C1-24-R01"
+      },
+      {
+        "pattern": "be said to be + V-ing",
+        "use_vi": "Be said to be considering nêu hành động đang được đưa tin ở hiện tại.",
+        "example_en": "The ethics committee is said to be considering changes to the consent procedure.",
+        "example_vi": "Có tin cho rằng hội đồng đạo đức đang cân nhắc sửa quy trình lấy sự đồng ý.",
+        "provenance_rule_id": "C1-24-R02"
+      }
+    ],
+    "worked_examples": [
+      {
+        "context_vi": "Impersonal Evidence",
+        "answer_en": "It has been reported that the source-protection policy will be revised before publication.",
+        "translation_vi": "Có thông tin cho rằng chính sách bảo vệ nguồn tin sẽ được sửa trước khi công bố.",
+        "reason_vi": "Cấu trúc bị động đưa thông tin có nguồn được báo cáo, không xác nhận tuyệt đối.",
+        "provenance_rule_id": "C1-24-R01"
+      },
+      {
+        "context_vi": "Personal Reporting",
+        "answer_en": "The ethics committee is said to be considering changes to the consent procedure.",
+        "translation_vi": "Có tin cho rằng hội đồng đạo đức đang cân nhắc sửa quy trình lấy sự đồng ý.",
+        "reason_vi": "Be said to be considering nêu hành động đang được đưa tin ở hiện tại.",
+        "provenance_rule_id": "C1-24-R02"
+      }
+    ],
+    "common_mistakes": [
+      {
+        "wrong": "It has reported that the source-protection policy will be revised before publication.",
+        "correct": "It has been reported that the source-protection policy will be revised before publication.",
+        "why_vi": "Không phù hợp với mẫu It has been reported that + clause trong câu này. Cần dùng «has been reported», không phải «has reported». Cấu trúc bị động đưa thông tin có nguồn được báo cáo, không xác nhận tuyệt đối.",
+        "provenance_rule_id": "C1-24-R01"
+      },
+      {
+        "wrong": "The ethics committee is said be considering changes to the consent procedure.",
+        "correct": "The ethics committee is said to be considering changes to the consent procedure.",
+        "why_vi": "Không phù hợp với mẫu be said to be + V-ing trong câu này. Cần dùng «said to be», không phải «said be». Be said to be considering nêu hành động đang được đưa tin ở hiện tại.",
+        "provenance_rule_id": "C1-24-R02"
+      }
+    ],
+    "draft_practice": [
+      {
+        "stage": "guided",
+        "prompt_en": "Choose attribution: According ___ the supplier, the update improves security.",
+        "draft_id": "M12-C1-24-DRAFT-01",
+        "assessment_mode": "SELF_REVIEW_REQUIRED",
+        "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED"
+      },
+      {
+        "stage": "independent",
+        "prompt_en": "Rewrite without asserting truth: The device is more reliable, the company says.",
+        "draft_id": "M12-C1-24-DRAFT-02",
+        "assessment_mode": "SELF_REVIEW_REQUIRED",
+        "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED"
+      },
+      {
+        "stage": "mastery",
+        "prompt_en": "Write one cautious evidential statement with reportedly.",
+        "draft_id": "M12-C1-24-DRAFT-03",
+        "assessment_mode": "SELF_REVIEW_REQUIRED",
+        "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED"
+      },
+      {
+        "stage": "spaced_review",
+        "prompt_en": "Correct: It is claimed the product is reliable by a source unnamed.",
+        "draft_id": "M12-C1-24-DRAFT-04",
+        "assessment_mode": "SELF_REVIEW_REQUIRED",
+        "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED"
+      }
+    ]
+  },
+  "C1-25": {
+    "lesson_id": "C1-25",
+    "overview_vi": "Advanced concession như Much as, Even if, While... giúp nhượng bộ có kiểm soát, phân biệt sự thật với giả định.",
+    "decision_steps_vi": [
+      "Xác định phần thông tin được thừa nhận là đúng hay chỉ giả định",
+      "Chọn although/while cho nhượng bộ thực tế, even if cho khả năng giả định",
+      "Đánh giá sắc thái đánh giá và mức độ trang trọng của much as"
+    ],
+    "contrast": {
+      "first_en": "Although I appreciate the proposal, I cannot support the schedule.",
+      "second_en": "Much as I appreciate the proposal, I cannot support the schedule.",
+      "difference_vi": "Cùng nhượng bộ; much as trang trọng và nhấn mạnh thiện chí người nói.",
+      "comparison_note": "Lựa chọn mẫu phải dựa vào ngữ cảnh; hai ví dụ có thể khác nhau về tính phù hợp hoặc độ đúng.",
+      "teacher_review_required": true
+    },
+    "discourse_transfer": {
+      "context_vi": "Thư góp ý một đề xuất chưa có bằng chứng",
+      "task_en": "Write a tactful rejection that preserves a constructive tone.",
+      "model_paragraph_en": "Much as we welcome the intention to broaden access, the current proposal lacks a workable evaluation plan. Even if additional funding became available, the team would still need to identify measurable outcomes. We suggest a smaller pilot before a full launch.",
+      "coaching_vi": "Much as thừa nhận thiện chí thật; even if nêu tình huống giả định."
+    },
+    "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED",
+    "question_import_policy": "SEPARATE_BANK_NO_OVERWRITE",
+    "title": "Advanced Concession & Qualification",
+    "patterns": [
+      {
+        "pattern": "Much as + S + V, main clause",
+        "use_vi": "Much as nghĩa là mặc dù rất...; trong câu trang trọng thể hiện nhượng bộ.",
+        "example_en": "Much as the textile cooperative respected the original design, it decided to revise the production proposal.",
+        "example_vi": "Dù hợp tác xã dệt may rất coi trọng thiết kế ban đầu, họ vẫn quyết định sửa đề xuất sản xuất.",
+        "provenance_rule_id": "C1-25-R01"
+      },
+      {
+        "pattern": "However + adverb + S + V",
+        "use_vi": "However carefully nghĩa là dù xem xét cẩn thận đến đâu.",
+        "example_en": "However carefully the planning department assessed the revised zoning plan, some uncertainty remained.",
+        "example_vi": "Dù phòng quy hoạch đánh giá bản quy hoạch phân vùng sửa đổi cẩn thận đến đâu, vẫn còn sự không chắc chắn.",
+        "provenance_rule_id": "C1-25-R02"
+      }
+    ],
+    "worked_examples": [
+      {
+        "context_vi": "Much As Concession",
+        "answer_en": "Much as the textile cooperative respected the original design, it decided to revise the production proposal.",
+        "translation_vi": "Dù hợp tác xã dệt may rất coi trọng thiết kế ban đầu, họ vẫn quyết định sửa đề xuất sản xuất.",
+        "reason_vi": "Much as nghĩa là mặc dù rất...; trong câu trang trọng thể hiện nhượng bộ.",
+        "provenance_rule_id": "C1-25-R01"
+      },
+      {
+        "context_vi": "However Adv",
+        "answer_en": "However carefully the planning department assessed the revised zoning plan, some uncertainty remained.",
+        "translation_vi": "Dù phòng quy hoạch đánh giá bản quy hoạch phân vùng sửa đổi cẩn thận đến đâu, vẫn còn sự không chắc chắn.",
+        "reason_vi": "However carefully nghĩa là dù xem xét cẩn thận đến đâu.",
+        "provenance_rule_id": "C1-25-R02"
+      }
+    ],
+    "common_mistakes": [
+      {
+        "wrong": "Much although the textile cooperative respected the original design, it decided to revise the production proposal.",
+        "correct": "Much as the textile cooperative respected the original design, it decided to revise the production proposal.",
+        "why_vi": "Không phù hợp với mẫu Much as + S + V, main clause trong câu này. Cần dùng «Much as», không phải «Much although». Much as nghĩa là mặc dù rất...; trong câu trang trọng thể hiện nhượng bộ.",
+        "provenance_rule_id": "C1-25-R01"
+      },
+      {
+        "wrong": "However careful the planning department assessed the revised zoning plan, some uncertainty remained.",
+        "correct": "However carefully the planning department assessed the revised zoning plan, some uncertainty remained.",
+        "why_vi": "Không phù hợp với mẫu However + adverb + S + V trong câu này. Cần dùng «However carefully», không phải «However careful». However carefully nghĩa là dù xem xét cẩn thận đến đâu.",
+        "provenance_rule_id": "C1-25-R02"
+      }
+    ],
+    "draft_practice": [
+      {
+        "stage": "guided",
+        "prompt_en": "Complete the concession: Much ___ I value the idea, I cannot approve it yet.",
+        "draft_id": "M12-C1-25-DRAFT-01",
+        "assessment_mode": "SELF_REVIEW_REQUIRED",
+        "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED"
+      },
+      {
+        "stage": "independent",
+        "prompt_en": "Rewrite politely: I admire the design, but I cannot recommend it.",
+        "draft_id": "M12-C1-25-DRAFT-02",
+        "assessment_mode": "SELF_REVIEW_REQUIRED",
+        "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED"
+      },
+      {
+        "stage": "mastery",
+        "prompt_en": "Write a concession using even if without asserting the condition is true.",
+        "draft_id": "M12-C1-25-DRAFT-03",
+        "assessment_mode": "SELF_REVIEW_REQUIRED",
+        "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED"
+      },
+      {
+        "stage": "spaced_review",
+        "prompt_en": "Correct: Much although I agree, the evidence is weak.",
+        "draft_id": "M12-C1-25-DRAFT-04",
+        "assessment_mode": "SELF_REVIEW_REQUIRED",
+        "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED"
+      }
+    ]
+  },
+  "C1-26": {
+    "lesson_id": "C1-26",
+    "overview_vi": "Alternative conditionals such as but for, otherwise, provided that diễn đạt điều kiện ngoài mệnh đề if thông thường.",
+    "decision_steps_vi": [
+      "Xác định điều kiện đã xảy ra, không xảy ra hay phải thỏa trong tương lai",
+      "Chọn but for cho phản thực, provided that cho điều kiện cần, otherwise cho hệ quả nếu không",
+      "Giữ đúng mốc thời gian của kết quả"
+    ],
+    "contrast": {
+      "first_en": "If the volunteer had not helped, the event would have failed.",
+      "second_en": "But for the volunteer’s help, the event would have failed.",
+      "difference_vi": "But for nén một điều kiện phản thực quá khứ thành noun phrase.",
+      "comparison_note": "Lựa chọn mẫu phải dựa vào ngữ cảnh; hai ví dụ có thể khác nhau về tính phù hợp hoặc độ đúng.",
+      "teacher_review_required": true
+    },
+    "discourse_transfer": {
+      "context_vi": "Đánh giá kế hoạch dự phòng tổ chức sự kiện",
+      "task_en": "Write a short contingency note using two alternative conditional forms.",
+      "model_paragraph_en": "The workshop can proceed provided that the accessibility checks are completed by Friday. Otherwise, the organisers will move the session to an alternative venue. But for the support of volunteers last year, the original pilot might not have taken place.",
+      "coaching_vi": "Provided that là điều kiện khả thi, otherwise là hệ quả, but for là phản thực về quá khứ."
+    },
+    "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED",
+    "question_import_policy": "SEPARATE_BANK_NO_OVERWRITE",
+    "title": "Alternative Conditional Structures",
+    "patterns": [
+      {
+        "pattern": "But for + noun, would have + V3",
+        "use_vi": "But for biểu thị một điều kiện ngầm trái thực tế.",
+        "example_en": "But for the additional funding, the weather service would have abandoned the storm-warning bulletin.",
+        "example_vi": "Nếu không có khoản tài trợ bổ sung, cơ quan khí tượng đã bỏ bản tin cảnh báo bão.",
+        "provenance_rule_id": "C1-26-R01"
+      },
+      {
+        "pattern": "Were it not for + NP, would + V",
+        "use_vi": "Cấu trúc đảo điều kiện giả định hiện tại, không dùng if.",
+        "example_en": "Were it not for the independent experts, the museum board would struggle to revise the restoration proposal.",
+        "example_vi": "Nếu không nhờ các chuyên gia độc lập, ban quản lý bảo tàng sẽ khó sửa đề án phục chế.",
+        "provenance_rule_id": "C1-26-R02"
+      }
+    ],
+    "worked_examples": [
+      {
+        "context_vi": "But For Past",
+        "answer_en": "But for the additional funding, the weather service would have abandoned the storm-warning bulletin.",
+        "translation_vi": "Nếu không có khoản tài trợ bổ sung, cơ quan khí tượng đã bỏ bản tin cảnh báo bão.",
+        "reason_vi": "But for biểu thị một điều kiện ngầm trái thực tế.",
+        "provenance_rule_id": "C1-26-R01"
+      },
+      {
+        "context_vi": "Were It Not",
+        "answer_en": "Were it not for the independent experts, the museum board would struggle to revise the restoration proposal.",
+        "translation_vi": "Nếu không nhờ các chuyên gia độc lập, ban quản lý bảo tàng sẽ khó sửa đề án phục chế.",
+        "reason_vi": "Cấu trúc đảo điều kiện giả định hiện tại, không dùng if.",
+        "provenance_rule_id": "C1-26-R02"
+      }
+    ],
+    "common_mistakes": [
+      {
+        "wrong": "But of the additional funding, the weather service would have abandoned the storm-warning bulletin.",
+        "correct": "But for the additional funding, the weather service would have abandoned the storm-warning bulletin.",
+        "why_vi": "Không phù hợp với mẫu But for + noun, would have + V3 trong câu này. Cần dùng «But for», không phải «But of». But for biểu thị một điều kiện ngầm trái thực tế.",
+        "provenance_rule_id": "C1-26-R01"
+      },
+      {
+        "wrong": "Were it not of the independent experts, the museum board would struggle to revise the restoration proposal.",
+        "correct": "Were it not for the independent experts, the museum board would struggle to revise the restoration proposal.",
+        "why_vi": "Không phù hợp với mẫu Were it not for + NP, would + V trong câu này. Cần dùng «Were it not for», không phải «Were it not of». Cấu trúc đảo điều kiện giả định hiện tại, không dùng if.",
+        "provenance_rule_id": "C1-26-R02"
+      }
+    ],
+    "draft_practice": [
+      {
+        "stage": "guided",
+        "prompt_en": "Complete: ___ for the translator's help, the briefing might have failed.",
+        "draft_id": "M12-C1-26-DRAFT-01",
+        "assessment_mode": "SELF_REVIEW_REQUIRED",
+        "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED"
+      },
+      {
+        "stage": "independent",
+        "prompt_en": "Rewrite with otherwise: If we do not receive approval, we will postpone the launch.",
+        "draft_id": "M12-C1-26-DRAFT-02",
+        "assessment_mode": "SELF_REVIEW_REQUIRED",
+        "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED"
+      },
+      {
+        "stage": "mastery",
+        "prompt_en": "Write one formal proviso with provided that.",
+        "draft_id": "M12-C1-26-DRAFT-03",
+        "assessment_mode": "SELF_REVIEW_REQUIRED",
+        "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED"
+      },
+      {
+        "stage": "spaced_review",
+        "prompt_en": "Correct: But for she helped us, we would have failed.",
+        "draft_id": "M12-C1-26-DRAFT-04",
+        "assessment_mode": "SELF_REVIEW_REQUIRED",
+        "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED"
+      }
+    ]
+  },
+  "C1-27": {
+    "lesson_id": "C1-27",
+    "overview_vi": "Academic cohesion yêu cầu quan hệ logic giữa câu: nhượng bộ, bổ sung, hệ quả và giới hạn; từ nối không thể sửa lập luận thiếu bằng chứng.",
+    "decision_steps_vi": [
+      "Xác định hai mệnh đề quan hệ hỗ trợ hay tương phản",
+      "Chọn connector phù hợp phép lập luận",
+      "Kiểm tra dấu câu và tham chiếu thông tin, tránh however/therefore vô cớ"
+    ],
+    "contrast": {
+      "first_en": "The sample was small. Therefore, the result needs verification.",
+      "second_en": "The sample was small. Nevertheless, the researchers published a preliminary report.",
+      "difference_vi": "Therefore thể hiện hệ quả; nevertheless thể hiện việc xảy ra bất chấp trở ngại.",
+      "comparison_note": "Lựa chọn mẫu phải dựa vào ngữ cảnh; hai ví dụ có thể khác nhau về tính phù hợp hoặc độ đúng.",
+      "teacher_review_required": true
+    },
+    "discourse_transfer": {
+      "context_vi": "Đoạn phân tích ưu và nhược của hình thức học trực tuyến",
+      "task_en": "Write a balanced paragraph with explicit contrast and a justified conclusion.",
+      "model_paragraph_en": "Online lessons allow learners to work at their own pace. However, those who need immediate feedback may struggle with recorded materials. For this reason, a blended approach could be appropriate for students with different learning needs.",
+      "coaching_vi": "However đánh dấu giới hạn; For this reason phải thực sự nối với nhận định trước."
+    },
+    "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED",
+    "question_import_policy": "SEPARATE_BANK_NO_OVERWRITE",
+    "title": "Academic Cohesion",
+    "patterns": [
+      {
+        "pattern": "statement. Nevertheless, contrast",
+        "use_vi": "Nevertheless nối hai phát biểu có quan hệ tương phản.",
+        "example_en": "The consultation draft appeared feasible. Nevertheless, the reform committee requested additional testing.",
+        "example_vi": "Bản dự thảo tham vấn có vẻ khả thi. Tuy nhiên, ủy ban cải cách vẫn yêu cầu thử nghiệm thêm.",
+        "provenance_rule_id": "C1-27-R01"
+      },
+      {
+        "pattern": "cause. Consequently, result",
+        "use_vi": "Consequently đánh dấu hệ quả trực tiếp, khác với bổ sung hoặc đối lập.",
+        "example_en": "The sample size was too small. Consequently, the admissions panel delayed publication of the scholarship policy.",
+        "example_vi": "Cỡ mẫu quá nhỏ. Vì vậy, hội đồng tuyển sinh hoãn công bố chính sách học bổng.",
+        "provenance_rule_id": "C1-27-R02"
+      }
+    ],
+    "worked_examples": [
+      {
+        "context_vi": "Contrast Nevertheless",
+        "answer_en": "The consultation draft appeared feasible. Nevertheless, the reform committee requested additional testing.",
+        "translation_vi": "Bản dự thảo tham vấn có vẻ khả thi. Tuy nhiên, ủy ban cải cách vẫn yêu cầu thử nghiệm thêm.",
+        "reason_vi": "Nevertheless nối hai phát biểu có quan hệ tương phản.",
+        "provenance_rule_id": "C1-27-R01"
+      },
+      {
+        "context_vi": "Cause Consequence",
+        "answer_en": "The sample size was too small. Consequently, the admissions panel delayed publication of the scholarship policy.",
+        "translation_vi": "Cỡ mẫu quá nhỏ. Vì vậy, hội đồng tuyển sinh hoãn công bố chính sách học bổng.",
+        "reason_vi": "Consequently đánh dấu hệ quả trực tiếp, khác với bổ sung hoặc đối lập.",
+        "provenance_rule_id": "C1-27-R02"
+      }
+    ],
+    "common_mistakes": [
+      {
+        "wrong": "The consultation draft appeared feasible. Consequently, the reform committee requested additional testing.",
+        "correct": "The consultation draft appeared feasible. Nevertheless, the reform committee requested additional testing.",
+        "why_vi": "Không phù hợp với mẫu statement. Nevertheless, contrast trong câu này. Cần dùng «Nevertheless,», không phải «Consequently,». Nevertheless nối hai phát biểu có quan hệ tương phản.",
+        "provenance_rule_id": "C1-27-R01"
+      },
+      {
+        "wrong": "The sample size was too small. Nevertheless, the admissions panel delayed publication of the scholarship policy.",
+        "correct": "The sample size was too small. Consequently, the admissions panel delayed publication of the scholarship policy.",
+        "why_vi": "Không phù hợp với mẫu cause. Consequently, result trong câu này. Cần dùng «Consequently,», không phải «Nevertheless,». Consequently đánh dấu hệ quả trực tiếp, khác với bổ sung hoặc đối lập.",
+        "provenance_rule_id": "C1-27-R02"
+      }
+    ],
+    "draft_practice": [
+      {
+        "stage": "guided",
+        "prompt_en": "Choose connector: The data were incomplete. ___, the team postponed its conclusion. (Therefore/Nevertheless)",
+        "draft_id": "M12-C1-27-DRAFT-01",
+        "assessment_mode": "SELF_REVIEW_REQUIRED",
+        "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED"
+      },
+      {
+        "stage": "independent",
+        "prompt_en": "Rewrite to mark concession: The sample was small, but the team completed the analysis.",
+        "draft_id": "M12-C1-27-DRAFT-02",
+        "assessment_mode": "SELF_REVIEW_REQUIRED",
+        "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED"
+      },
+      {
+        "stage": "mastery",
+        "prompt_en": "Write a three-sentence mini-argument using However and Therefore.",
+        "draft_id": "M12-C1-27-DRAFT-03",
+        "assessment_mode": "SELF_REVIEW_REQUIRED",
+        "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED"
+      },
+      {
+        "stage": "spaced_review",
+        "prompt_en": "Correct: The sample was small; however the results were reported.",
+        "draft_id": "M12-C1-27-DRAFT-04",
+        "assessment_mode": "SELF_REVIEW_REQUIRED",
+        "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED"
+      }
+    ]
+  },
+  "C1-28": {
+    "lesson_id": "C1-28",
+    "overview_vi": "Parallelism giúp các ý cùng vai trò ngữ pháp có cấu trúc tương xứng, đặc biệt trong danh sách và đối chiếu.",
+    "decision_steps_vi": [
+      "Xác định những mục có cùng vai trò cú pháp",
+      "Chọn đồng nhất to-infinitive, gerund, clause hoặc noun phrase",
+      "Không hy sinh nghĩa tự nhiên chỉ để đối xứng bề mặt"
+    ],
+    "contrast": {
+      "first_en": "The project aims to improve access, reduce costs and strengthening trust.",
+      "second_en": "The project aims to improve access, reduce costs and strengthen trust.",
+      "difference_vi": "Mệnh đề thứ hai giữ ba động từ cùng dạng sau aims to.",
+      "comparison_note": "Lựa chọn mẫu phải dựa vào ngữ cảnh; hai ví dụ có thể khác nhau về tính phù hợp hoặc độ đúng.",
+      "teacher_review_required": true
+    },
+    "discourse_transfer": {
+      "context_vi": "Bản công bố mục tiêu của một nhóm dự án",
+      "task_en": "Write a mission statement with three parallel goals and one realistic qualification.",
+      "model_paragraph_en": "The project aims to improve access, reduce delays and strengthen accountability. These goals will be reviewed after the six-month pilot. The team will publish both successful outcomes and unresolved problems.",
+      "coaching_vi": "Ba động từ sau aims to cùng dạng; câu cuối làm rõ tính minh bạch."
+    },
+    "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED",
+    "question_import_policy": "SEPARATE_BANK_NO_OVERWRITE",
+    "title": "Parallelism",
+    "patterns": [
+      {
+        "pattern": "to V, to V and to V",
+        "use_vi": "Các mục đồng chức năng của chuỗi giữ cùng dạng to-infinitive.",
+        "example_en": "The wildlife centre agreed to evaluate, to revise and to publish the release protocol according to the same timetable.",
+        "example_vi": "Trung tâm bảo tồn động vật đồng ý đánh giá, sửa và công bố quy trình tái thả theo cùng lịch.",
+        "provenance_rule_id": "C1-28-R01"
+      },
+      {
+        "pattern": "both noun and noun",
+        "use_vi": "Both ... and nối hai danh từ cùng chức năng.",
+        "example_en": "The revised strategy aims to improve both accuracy and transparency in the handling of the incident report.",
+        "example_vi": "Chiến lược sửa đổi nhằm nâng cao cả độ chính xác lẫn minh bạch trong xử lý báo cáo sự cố.",
+        "provenance_rule_id": "C1-28-R02"
+      }
+    ],
+    "worked_examples": [
+      {
+        "context_vi": "Infinitive Parallel",
+        "answer_en": "The wildlife centre agreed to evaluate, to revise and to publish the release protocol according to the same timetable.",
+        "translation_vi": "Trung tâm bảo tồn động vật đồng ý đánh giá, sửa và công bố quy trình tái thả theo cùng lịch.",
+        "reason_vi": "Các mục đồng chức năng của chuỗi giữ cùng dạng to-infinitive.",
+        "provenance_rule_id": "C1-28-R01"
+      },
+      {
+        "context_vi": "Both And",
+        "answer_en": "The revised strategy aims to improve both accuracy and transparency in the handling of the incident report.",
+        "translation_vi": "Chiến lược sửa đổi nhằm nâng cao cả độ chính xác lẫn minh bạch trong xử lý báo cáo sự cố.",
+        "reason_vi": "Both ... and nối hai danh từ cùng chức năng.",
+        "provenance_rule_id": "C1-28-R02"
+      }
+    ],
+    "common_mistakes": [
+      {
+        "wrong": "The wildlife centre agreed to evaluate, revising and publish the release protocol according to the same timetable.",
+        "correct": "The wildlife centre agreed to evaluate, to revise and to publish the release protocol according to the same timetable.",
+        "why_vi": "Không phù hợp với mẫu to V, to V and to V trong câu này. Cần dùng «to evaluate, to revise and to publish», không phải «to evaluate, revising and publish». Các mục đồng chức năng của chuỗi giữ cùng dạng to-infinitive.",
+        "provenance_rule_id": "C1-28-R01"
+      },
+      {
+        "wrong": "The revised strategy aims to improve both accurate and transparency in the handling of the incident report.",
+        "correct": "The revised strategy aims to improve both accuracy and transparency in the handling of the incident report.",
+        "why_vi": "Không phù hợp với mẫu both noun and noun trong câu này. Cần dùng «both accuracy and transparency», không phải «both accurate and transparency». Both ... and nối hai danh từ cùng chức năng.",
+        "provenance_rule_id": "C1-28-R02"
+      }
+    ],
+    "draft_practice": [
+      {
+        "stage": "guided",
+        "prompt_en": "Choose the parallel form: The scheme aims to recruit, train and ___ volunteers. (support/supporting)",
+        "draft_id": "M12-C1-28-DRAFT-01",
+        "assessment_mode": "SELF_REVIEW_REQUIRED",
+        "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED"
+      },
+      {
+        "stage": "independent",
+        "prompt_en": "Correct the list: She enjoys reading, discussing ideas and to design lessons.",
+        "draft_id": "M12-C1-28-DRAFT-02",
+        "assessment_mode": "SELF_REVIEW_REQUIRED",
+        "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED"
+      },
+      {
+        "stage": "mastery",
+        "prompt_en": "Write one sentence with three parallel verbs after plan to.",
+        "draft_id": "M12-C1-28-DRAFT-03",
+        "assessment_mode": "SELF_REVIEW_REQUIRED",
+        "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED"
+      },
+      {
+        "stage": "spaced_review",
+        "prompt_en": "Correct: The policy is designed to improve access, lower costs and that trust will increase.",
+        "draft_id": "M12-C1-28-DRAFT-04",
+        "assessment_mode": "SELF_REVIEW_REQUIRED",
+        "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED"
+      }
+    ]
+  },
+  "C1-29": {
+    "lesson_id": "C1-29",
+    "overview_vi": "Extraposition/anticipatory it đưa chủ ngữ dài xuống sau để cải thiện nhịp câu; không gán nghĩa thực thể cho it.",
+    "decision_steps_vi": [
+      "Xác định chủ ngữ là to-infinitive hoặc that-clause dài",
+      "Xem có lợi khi dùng anticipatory it không",
+      "Chọn tính từ và mệnh đề theo register, tránh cụm đánh giá quá mạnh"
+    ],
+    "contrast": {
+      "first_en": "To verify the results independently is essential.",
+      "second_en": "It is essential to verify the results independently.",
+      "difference_vi": "Câu sau dùng it giả để đặt trọng tâm đánh giá trước và chủ ngữ dài sau.",
+      "comparison_note": "Lựa chọn mẫu phải dựa vào ngữ cảnh; hai ví dụ có thể khác nhau về tính phù hợp hoặc độ đúng.",
+      "teacher_review_required": true
+    },
+    "discourse_transfer": {
+      "context_vi": "Khuyến nghị về minh bạch nghiên cứu",
+      "task_en": "Write a short recommendation using an anticipatory subject and a reason.",
+      "model_paragraph_en": "It is important to publish the full methodology before drawing broad conclusions. This would allow other researchers to identify possible sources of bias and reproduce the analysis. Any remaining uncertainty should be stated in the final report.",
+      "coaching_vi": "It là chủ ngữ giả, to publish mới là việc được đánh giá."
+    },
+    "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED",
+    "question_import_policy": "SEPARATE_BANK_NO_OVERWRITE",
+    "title": "Extraposition & Anticipatory Subjects",
+    "patterns": [
+      {
+        "pattern": "It is + adjective + to V",
+        "use_vi": "It là chủ ngữ giả; cụm nguyên mẫu mang nội dung chính.",
+        "example_en": "It is essential to distinguish observation from interpretation when discussing the recycling guidelines.",
+        "example_vi": "Điều thiết yếu là phân biệt quan sát và diễn giải khi thảo luận hướng dẫn tái chế.",
+        "provenance_rule_id": "C1-29-R01"
+      },
+      {
+        "pattern": "It seems likely that + clause",
+        "use_vi": "It làm chủ ngữ dự kiến trước một mệnh đề that dài.",
+        "example_en": "It seems likely that the energy commission will revise the feasibility study after the hearing.",
+        "example_vi": "Có vẻ ủy ban năng lượng sẽ sửa nghiên cứu khả thi sau phiên điều trần.",
+        "provenance_rule_id": "C1-29-R02"
+      }
+    ],
+    "worked_examples": [
+      {
+        "context_vi": "It To Infinitive",
+        "answer_en": "It is essential to distinguish observation from interpretation when discussing the recycling guidelines.",
+        "translation_vi": "Điều thiết yếu là phân biệt quan sát và diễn giải khi thảo luận hướng dẫn tái chế.",
+        "reason_vi": "It là chủ ngữ giả; cụm nguyên mẫu mang nội dung chính.",
+        "provenance_rule_id": "C1-29-R01"
+      },
+      {
+        "context_vi": "It Likely That",
+        "answer_en": "It seems likely that the energy commission will revise the feasibility study after the hearing.",
+        "translation_vi": "Có vẻ ủy ban năng lượng sẽ sửa nghiên cứu khả thi sau phiên điều trần.",
+        "reason_vi": "It làm chủ ngữ dự kiến trước một mệnh đề that dài.",
+        "provenance_rule_id": "C1-29-R02"
+      }
+    ],
+    "common_mistakes": [
+      {
+        "wrong": "It essential to distinguish observation from interpretation when discussing the recycling guidelines.",
+        "correct": "It is essential to distinguish observation from interpretation when discussing the recycling guidelines.",
+        "why_vi": "Không phù hợp với mẫu It is + adjective + to V trong câu này. Cần dùng «It is essential to», không phải «It essential to». It là chủ ngữ giả; cụm nguyên mẫu mang nội dung chính.",
+        "provenance_rule_id": "C1-29-R01"
+      },
+      {
+        "wrong": "It likely seems that the energy commission will revise the feasibility study after the hearing.",
+        "correct": "It seems likely that the energy commission will revise the feasibility study after the hearing.",
+        "why_vi": "Không phù hợp với mẫu It seems likely that + clause trong câu này. Cần dùng «It seems likely that», không phải «It likely seems that». It làm chủ ngữ dự kiến trước một mệnh đề that dài.",
+        "provenance_rule_id": "C1-29-R02"
+      }
+    ],
+    "draft_practice": [
+      {
+        "stage": "guided",
+        "prompt_en": "Complete: ___ is difficult to compare results from different years.",
+        "draft_id": "M12-C1-29-DRAFT-01",
+        "assessment_mode": "SELF_REVIEW_REQUIRED",
+        "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED"
+      },
+      {
+        "stage": "independent",
+        "prompt_en": "Rewrite with anticipatory it: To verify the findings independently is important.",
+        "draft_id": "M12-C1-29-DRAFT-02",
+        "assessment_mode": "SELF_REVIEW_REQUIRED",
+        "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED"
+      },
+      {
+        "stage": "mastery",
+        "prompt_en": "Recommend a research practice using It is advisable to.",
+        "draft_id": "M12-C1-29-DRAFT-03",
+        "assessment_mode": "SELF_REVIEW_REQUIRED",
+        "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED"
+      },
+      {
+        "stage": "spaced_review",
+        "prompt_en": "Correct: It essential to acknowledge the limitations.",
+        "draft_id": "M12-C1-29-DRAFT-04",
+        "assessment_mode": "SELF_REVIEW_REQUIRED",
+        "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED"
+      }
+    ]
+  },
+  "C1-30": {
+    "lesson_id": "C1-30",
+    "overview_vi": "Punctuation, scope và formal register ảnh hưởng quan hệ ý nghĩa; một dấu phẩy có thể làm thay đổi mệnh đề mà từ nối áp dụng.",
+    "decision_steps_vi": [
+      "Xác định phạm vi logic của trạng từ chuyển ý",
+      "Chọn dấu phẩy, chấm phẩy hoặc dấu chấm theo loại liên kết",
+      "Kiểm tra giọng văn trang trọng và tránh comma splice"
+    ],
+    "contrast": {
+      "first_en": "The review was delayed; however, the report was published.",
+      "second_en": "The review was delayed, however, the report was published.",
+      "difference_vi": "Câu đầu dùng dấu chấm phẩy để nối hai mệnh đề độc lập; câu sau bị comma splice trong mẫu trang trọng.",
+      "comparison_note": "Lựa chọn mẫu phải dựa vào ngữ cảnh; hai ví dụ có thể khác nhau về tính phù hợp hoặc độ đúng.",
+      "teacher_review_required": true
+    },
+    "discourse_transfer": {
+      "context_vi": "Đoạn giới thiệu phát hiện và giới hạn phương pháp",
+      "task_en": "Write a formal three-sentence summary with a correctly punctuated contrast.",
+      "model_paragraph_en": "The results indicate a small improvement; however, the evidence remains preliminary. Only two sites took part in the trial, and the groups were not randomly assigned. Further research is therefore necessary before a general recommendation can be made.",
+      "coaching_vi": "Semicolon trước however nối hai mệnh đề độc lập; therefore là suy luận có căn cứ."
+    },
+    "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED",
+    "question_import_policy": "SEPARATE_BANK_NO_OVERWRITE",
+    "title": "Punctuation, Scope & Formal Register",
+    "patterns": [
+      {
+        "pattern": "S, however, V",
+        "use_vi": "However là trạng từ nối được đặt giữa hai dấu phẩy khi xen giữa chủ ngữ và động từ.",
+        "example_en": "The committee, however, asked for further evidence before endorsing the shoreline assessment.",
+        "example_vi": "Tuy nhiên, ủy ban yêu cầu thêm bằng chứng trước khi tán thành bản đánh giá đường bờ biển.",
+        "provenance_rule_id": "C1-30-R01"
+      },
+      {
+        "pattern": "full clause: list",
+        "use_vi": "Dấu hai chấm dùng sau mệnh đề hoàn chỉnh để dẫn danh sách.",
+        "example_en": "The housing association requested three items: the source data, the final budget and the summary of the renovation plan.",
+        "example_vi": "Hiệp hội nhà ở yêu cầu ba thứ: dữ liệu nguồn, ngân sách cuối cùng và bản tóm tắt kế hoạch cải tạo.",
+        "provenance_rule_id": "C1-30-R02"
+      }
+    ],
+    "worked_examples": [
+      {
+        "context_vi": "However Parenthetical",
+        "answer_en": "The committee, however, asked for further evidence before endorsing the shoreline assessment.",
+        "translation_vi": "Tuy nhiên, ủy ban yêu cầu thêm bằng chứng trước khi tán thành bản đánh giá đường bờ biển.",
+        "reason_vi": "However là trạng từ nối được đặt giữa hai dấu phẩy khi xen giữa chủ ngữ và động từ.",
+        "provenance_rule_id": "C1-30-R01"
+      },
+      {
+        "context_vi": "Colon Enumeration",
+        "answer_en": "The housing association requested three items: the source data, the final budget and the summary of the renovation plan.",
+        "translation_vi": "Hiệp hội nhà ở yêu cầu ba thứ: dữ liệu nguồn, ngân sách cuối cùng và bản tóm tắt kế hoạch cải tạo.",
+        "reason_vi": "Dấu hai chấm dùng sau mệnh đề hoàn chỉnh để dẫn danh sách.",
+        "provenance_rule_id": "C1-30-R02"
+      }
+    ],
+    "common_mistakes": [
+      {
+        "wrong": "The committee, however asked for further evidence before endorsing the shoreline assessment.",
+        "correct": "The committee, however, asked for further evidence before endorsing the shoreline assessment.",
+        "why_vi": "Không phù hợp với mẫu S, however, V trong câu này. Cần dùng «however,», không phải «however». However là trạng từ nối được đặt giữa hai dấu phẩy khi xen giữa chủ ngữ và động từ.",
+        "provenance_rule_id": "C1-30-R01"
+      },
+      {
+        "wrong": "The housing association requested three items, the source data, the final budget and the summary of the renovation plan.",
+        "correct": "The housing association requested three items: the source data, the final budget and the summary of the renovation plan.",
+        "why_vi": "Không phù hợp với mẫu full clause: list trong câu này. Cần dùng «:», không phải «,». Dấu hai chấm dùng sau mệnh đề hoàn chỉnh để dẫn danh sách.",
+        "provenance_rule_id": "C1-30-R02"
+      }
+    ],
+    "draft_practice": [
+      {
+        "stage": "guided",
+        "prompt_en": "Choose punctuation: The sample was small ___ nevertheless, the trial continued. (;/,)",
+        "draft_id": "M12-C1-30-DRAFT-01",
+        "assessment_mode": "SELF_REVIEW_REQUIRED",
+        "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED"
+      },
+      {
+        "stage": "independent",
+        "prompt_en": "Correct formal punctuation: The trial ended, however, the results are not final.",
+        "draft_id": "M12-C1-30-DRAFT-02",
+        "assessment_mode": "SELF_REVIEW_REQUIRED",
+        "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED"
+      },
+      {
+        "stage": "mastery",
+        "prompt_en": "Write one formal contrast using a semicolon and nevertheless.",
+        "draft_id": "M12-C1-30-DRAFT-03",
+        "assessment_mode": "SELF_REVIEW_REQUIRED",
+        "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED"
+      },
+      {
+        "stage": "spaced_review",
+        "prompt_en": "Correct: The figures were incomplete therefore, publication was delayed.",
+        "draft_id": "M12-C1-30-DRAFT-04",
+        "assessment_mode": "SELF_REVIEW_REQUIRED",
+        "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED"
+      }
+    ]
+  }
+}

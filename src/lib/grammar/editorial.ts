@@ -1,4 +1,5 @@
 import "server-only";
+import { withTeaching } from "./teaching";
 import type { GrammarLevel } from "./types";
 import { normalizeGuide, normalizeItem, wrongFeedback, type SourceLesson, type SourceQuestion } from "./normalize";
 
@@ -24,7 +25,7 @@ export async function loadEditorialLesson(code: string) {
 }
 
 export function publicEditorialLesson(source: NonNullable<Awaited<ReturnType<typeof loadEditorialLesson>>>) {
-  return { guide: normalizeGuide(source.lesson), items: source.questions.map(normalizeItem) };
+  return { guide: withTeaching(normalizeGuide(source.lesson)), items: source.questions.map(normalizeItem) };
 }
 
 function normalizeAnswer(value: string, grading: Record<string, unknown> = {}) {

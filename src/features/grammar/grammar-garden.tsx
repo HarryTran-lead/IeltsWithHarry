@@ -15,7 +15,8 @@ import { CHAPTER, ChapterTestsPage } from "./grammar-tests";
 import { PracticeSession, resetForSession, SessionSummary, sessionScore, type SessionEntry, type SessionResult } from "./practice-session";
 import { GRAMMAR_PASS_PERCENT, isLevelOpen } from "@/lib/grammar/gate";
 import { GrammarUnlockPage, LockedLevel, useGrammarUnlocks } from "./grammar-unlock";
-import { LabsHub, LessonLabsPanel } from "./grammar-labs";
+import { DiagnosticPage, LessonLabsPanel } from "./grammar-labs";
+import { GuidedTheoryPlayer } from "./guided-theory-player";
 import "./grammar-tokens.css";
 import "./grammar-garden.css";
 import "./grammar-garden-layout.css";
@@ -51,7 +52,7 @@ export function GrammarGarden() {
     {syncError && <div className="gg-sync" role="status">{syncError}</div>}
     {gate.error && <div className="gg-sync" role="alert">{gate.error}</div>}
     {route === "lesson" ? (!isLevelOpen(parts[4]?.split("-")[0] as GrammarLevel, gate.unlocked) ? <LockedLevel level={parts[4]?.split("-")[0] as GrammarLevel} unlocked={gate.unlocked} /> : ready ? <LessonWorkspace key={parts[4]} code={parts[4]} progress={progress} update={update} initialTab={searchParams.get("tab") === "practice" ? "practice" : searchParams.get("tab") === "labs" ? "labs" : "theory"} initialStage={searchParams.get("stage") ?? "guided"} initialItem={searchParams.get("item") ?? ""} resume={searchParams.has("resume")} /> : <div className="gg-loading"><LoadingBlock label="Đang tải tiến độ…" /></div>)
-      : route === "labs" ? <LabsHub levelParam={searchParams.get("level")} labParam={searchParams.get("lab")} idParam={searchParams.get("id")} unlocked={gate.unlocked} />
+      : route === "diagnostic" || route === "labs" ? <DiagnosticPage levelParam={searchParams.get("level")} unlocked={gate.unlocked} />
       : route === "review" ? <ReviewPage progress={progress} update={update} />
       : route === "progress" ? <ProgressPage progress={progress} ready={ready} unlocked={gate.unlocked} />
       : route === "tests" ? (isLevelOpen(testLevel, gate.unlocked) ? <ChapterTestsPage key={testLevel} progress={progress} update={update} initialLevel={testLevel} unlocked={gate.unlocked} /> : <LockedLevel level={testLevel} unlocked={gate.unlocked} />)
@@ -93,7 +94,7 @@ function Roadmap({ level, progress, ready, chapterQuery, unlocked }: { level: Gr
       <Sticker name={worldSticker(level)} size={84} tilt={-6} float className="gg-hero-sticker" />
     </section>
     <nav className="gg-levels" id="gg-worlds" aria-label="Chọn cấp độ">{grammarLevels.map((item) => { const value = countForLevel(item, progress); const open = isLevelOpen(item, unlocked); return <Link className={`${item === level ? "selected" : ""} ${open ? "" : "is-locked"}`} aria-current={item === level ? "page" : undefined} href={open ? `${ROOT}/level/${item}` : `${ROOT}/placement?target=${item}`} key={item}>{open ? <Sticker name={worldSticker(item)} size={30} pop={false} /> : <LockKeyhole size={24} aria-hidden="true" />}<span><strong>{item}</strong><small>{open ? ready ? `${value.practiced}/${value.total}` : `${value.total} bài` : "Chưa mở"}</small></span></Link>; })}</nav>
-    <Link className="gg-lab-banner" href={`${ROOT}/labs?level=${level}`}><FlaskConical size={22} aria-hidden="true" /><span><strong>Luyện thêm {level}</strong><small>Chẩn đoán nhanh · Chữa lỗi · Phân biệt cấu trúc · Viết lại câu · Ngữ cảnh · Viết & Nói</small></span><ArrowRight size={18} aria-hidden="true" /></Link>
+    <Link className="gg-lab-banner" href={`${ROOT}/diagnostic?level=${level}`}><Compass size={22} aria-hidden="true" /><span><strong>Chẩn đoán nhanh {level}</strong><small>12 câu · biết ngay bài nào nên ôn và luyện sâu</small></span><ArrowRight size={18} aria-hidden="true" /></Link>
     <div className="gg-search"><Search size={17} /><input value={query} onChange={(event) => setQuery(event.target.value)} placeholder={`Tìm trong ${level} (${lessons.length} bài)...`} aria-label="Tìm bài Grammar" />{query && <button onClick={() => setQuery("")}>Xóa</button>}</div>
     {query.trim() ? <ol className="gg-path">{found.length ? found.map((lesson) => node(lesson, lessons.indexOf(lesson) + 1)) : <p className="gg-path-empty">Không tìm thấy bài phù hợp.</p>}</ol>
       : <div className="gg-chapters">{chapters.map((chunk, index) => {
@@ -115,20 +116,22 @@ function SidebarProgress({ level, progress }: { level: GrammarLevel; progress: G
   return <section className="gg-side-card"><h3>Tiến độ cấp độ {level}</h3><div className="gg-side-progress"><span>{counts.practiced}/{counts.total} bài đã học xong</span><strong>{Math.round(counts.practiced / counts.total * 100)}%</strong></div><div className="gg-meter"><span style={{ width: `${counts.practiced / counts.total * 100}%` }} /></div>
     <div className="gg-side-stats"><div><strong>{counts.started}</strong><small>Bài đã mở</small></div><div><strong>{due}</strong><small>Đến hạn ôn</small></div><div><strong>{needsReview}</strong><small>Câu cần ôn</small></div></div>
     <Link className="gg-side-link" href={`${ROOT}/progress`}>Xem tiến độ chi tiết <ArrowRight size={14} /></Link>
-    <Link className="gg-side-link" href={`${ROOT}/labs?level=${level}`}><FlaskConical size={14} aria-hidden="true" /> Luyện thêm (tùy chọn) <ArrowRight size={14} /></Link></section>;
+    <Link className="gg-side-link" href={`${ROOT}/diagnostic?level=${level}`}><Compass size={14} aria-hidden="true" /> Chẩn đoán nhanh <ArrowRight size={14} /></Link></section>;
 }
 
 type SessionKind = "stage" | "spaced" | "retry" | "item" | "check";
 type LessonView =
   | { type: "session"; id: number; kind: SessionKind; stage: string; entries: SessionEntry[] }
   | { type: "summary"; kind: SessionKind; stage: string; result: SessionResult; review?: GrammarReview; learned: boolean }
-  | { type: "locked" };
+  | { type: "locked" }
+  | { type: "deep" };
 
 function LessonWorkspace({ code, progress, update, initialTab, initialStage, initialItem, resume }: { code: string; progress: GrammarProgress; update: GrammarUpdate; initialTab: "theory" | "practice" | "labs"; initialStage: string; initialItem: string; resume: boolean }) {
-  const [tab, setTab] = useState<"theory" | "practice" | "labs">(initialItem || resume || initialStage !== "guided" ? "practice" : initialTab);
+  const deepFirst = initialTab === "labs" || initialStage === "deep";
+  const [tab, setTab] = useState<"theory" | "practice">(deepFirst || initialItem || resume || initialStage !== "guided" ? "practice" : "theory");
   const [data, setData] = useState<{ guide: GrammarGuide; items: GrammarPracticeItem[] } | null>(null);
   const [error, setError] = useState("");
-  const [view, setView] = useState<LessonView | null>(null);
+  const [view, setView] = useState<LessonView | null>(deepFirst ? { type: "deep" } : null);
   const [ruleOpen, setRuleOpen] = useState(false);
   const sessions = useRef(0);
   // Progress is loaded before this mounts; the ref lets the fetch pick the starting session without refetching on every answer.
@@ -155,13 +158,14 @@ function LessonWorkspace({ code, progress, update, initialTab, initialStage, ini
       const found = result.items.find((item) => item.id === initialItem);
       if (found) begin("item", found.stage, [found], current);
       else if (initialStage === "spaced_review") beginSpaced(result.items, current);
+      else if (deepFirst) return;
       else if (initialItem || resume || initialTab === "practice" || initialStage !== "guided") {
         const stage = mainStages.includes(initialStage as typeof mainStages[number]) && initialStage !== "guided" ? initialStage : openStage(result.items, current[code]);
         begin("stage", stage, stageQueue(result.items, stage, current[code]), current);
       }
     }).catch((cause) => { if (active) setError(cause.message); });
     return () => { active = false; };
-  }, [code, initialItem, initialStage, initialTab, resume, begin, beginSpaced]);
+  }, [code, initialItem, initialStage, initialTab, resume, begin, beginSpaced, deepFirst]);
 
   if (error && !data) return <div className="gg-error"><p>{error}</p><Link href={ROOT}>Về lộ trình</Link></div>;
   if (!data) return <div className="gg-loading"><LoadingBlock label="Đang tải bài học…" /></div>;
@@ -171,7 +175,6 @@ function LessonWorkspace({ code, progress, update, initialTab, initialStage, ini
   const levelLessons = catalog.filter((item) => item.level === lesson?.level);
   const next = levelLessons[levelLessons.findIndex((item) => item.code === code) + 1];
   const startStage = (stage: string) => begin("stage", stage, stageQueue(items, stage, lessonProgress), progress);
-  const openPractice = () => { setTab("practice"); if (!view) startStage(openStage(items, lessonProgress)); };
   const markRead = () => update(code, (value) => ({ ...value, theorySeen: true }));
   const quickCheck = () => {
     markRead();
@@ -210,10 +213,11 @@ function LessonWorkspace({ code, progress, update, initialTab, initialStage, ini
 
   return <div className="gg-lesson"><div className="gg-crumb"><Link href={`${ROOT}/level/${lesson?.level ?? "A1"}`}><ArrowLeft size={16} /> {lesson?.level} · Lộ trình</Link><ChevronRight size={15} /><span>{code}</span></div>
     <div className="gg-lesson-head"><div><span className="gg-eyebrow">{code} · BẢN NHÁP BIÊN TẬP</span><h1>{guide.title}</h1><p>{guide.overview || guide.objectives[0]}</p></div><span className="gg-lesson-score">{reviewedCount(lessonProgress)}/{items.length} câu đã làm</span></div>
-    <div className="gg-lesson-tabs"><button className={tab === "theory" ? "active" : ""} onClick={() => setTab("theory")}><BookOpen size={17} /> Lý thuyết</button><button className={tab === "practice" ? "active" : ""} onClick={openPractice}><PenLine size={17} /> Luyện tập · {items.length} câu</button><button className={tab === "labs" ? "active" : ""} onClick={() => setTab("labs")}><FlaskConical size={17} /> Luyện thêm</button></div>
-    {tab === "labs" ? <LessonLabsPanel code={code} /> : tab === "theory" ? <Theory code={code} guide={guide} onCheck={quickCheck} onPractice={() => { markRead(); setTab("practice"); startStage(openStage(items, lessonProgress)); }} />
+    <div className="gg-lesson-tabs"><button className={tab === "theory" ? "active" : ""} onClick={() => setTab("theory")}><BookOpen size={17} /> Lý thuyết</button><button className={tab === "practice" && view?.type !== "deep" ? "active" : ""} onClick={() => { setTab("practice"); if (!view || view.type === "deep") startStage(openStage(items, lessonProgress)); }}><PenLine size={17} /> Luyện tập · {items.length} câu</button><button className={tab === "practice" && view?.type === "deep" ? "active" : ""} onClick={() => { setTab("practice"); setView({ type: "deep" }); }}><FlaskConical size={17} /> Luyện sâu <small className="gg-tab-note">tùy chọn</small></button></div>
+    {tab === "theory" ? <Theory code={code} guide={guide} onCheck={quickCheck} onPractice={() => { markRead(); setTab("practice"); startStage(openStage(items, lessonProgress)); }} />
       : <div className="gg-practice">
-        <div className="gg-stage-tabs">{stages.map((stage) => { const stageItems = items.filter((question) => question.stage === stage); const done = stageItems.filter((question) => answered(lessonProgress, question.id)).length; const active = view?.type === "summary" ? view.stage === stage : view?.type === "locked" && stage === "spaced_review"; return <button key={stage} className={active ? "active" : ""} onClick={() => stage === "spaced_review" ? beginSpaced(items, progress) : startStage(stage)}>{stageNames[stage]} <small>{stage === "spaced_review" ? spacedLabel : `${done}/${stageItems.length}`}</small></button>; })}</div>
+        <div className="gg-stage-tabs">{stages.map((stage) => { const stageItems = items.filter((question) => question.stage === stage); const done = stageItems.filter((question) => answered(lessonProgress, question.id)).length; const active = view?.type === "summary" ? view.stage === stage : view?.type === "locked" && stage === "spaced_review"; return <button key={stage} className={active ? "active" : ""} onClick={() => stage === "spaced_review" ? beginSpaced(items, progress) : startStage(stage)}>{stageNames[stage]} <small>{stage === "spaced_review" ? spacedLabel : `${done}/${stageItems.length}`}</small></button>; })}<button className={`gg-stage-deep ${view?.type === "deep" ? "active" : ""}`} onClick={() => setView({ type: "deep" })}><FlaskConical size={15} aria-hidden="true" /> Luyện sâu <small>tùy chọn</small></button></div>
+        {view?.type === "deep" && <LessonLabsPanel code={code} />}
         {view?.type === "locked" && <div className="gg-empty gg-locked"><LockKeyhole size={28} /><h2>Ôn cách quãng {reviewState ? `mở ${formatDue(reviewState.due, clockNow())}` : "chưa mở"}</h2><p>{reviewState ? "Ôn đúng hạn giúp bạn nhớ lâu hơn ôn dồn. Bài này sẽ tự xuất hiện trong mục Hôm nay khi đến hạn." : "Làm hết ba phần Có hướng dẫn, Tự luyện và Vận dụng để mở lịch ôn cho bài này."}</p><button className="gg-primary" onClick={() => startStage(openStage(items, lessonProgress))}>Luyện tiếp bài này <ArrowRight size={16} /></button></div>}
         {view?.type === "summary" && <LessonSummary code={code} view={view} items={items} progress={progress} next={next}
           onStage={startStage} onSpaced={() => beginSpaced(items, progress)} onTheory={() => setTab("theory")}
@@ -277,7 +281,11 @@ function Example({ example, formula }: { example: GrammarExample; formula: strin
 }
 
 function Theory({ code, guide, compact = false, onCheck, onPractice }: { code?: string; guide: GrammarGuide; compact?: boolean; onCheck?: () => void; onPractice?: () => void }) {
+  const [stepByStep, setStepByStep] = useState(false);
+  if (!compact && stepByStep && guide.guided) return <div className="gg-theory"><button className="gg-back gg-guided-back" onClick={() => setStepByStep(false)}><ArrowLeft size={16} /> Xem toàn bộ lý thuyết</button><GuidedTheoryPlayer flow={guide.guided} onPractice={() => onPractice?.()} /></div>;
+  const deep = compact ? [] : guide.deep ?? [];
   return <div className={`gg-theory ${compact ? "is-compact" : ""}`}>
+    {!compact && guide.guided && <button className="gg-guided-start" onClick={() => setStepByStep(true)}><Sprout size={22} aria-hidden="true" /><span><strong>Học từng bước</strong><small>{guide.guided.steps.length} bước ngắn, có câu kiểm tra nhanh sau mỗi ý</small></span><ArrowRight size={18} aria-hidden="true" /></button>}
     {!compact && guide.objectives.length > 0 && <div className="gg-callout"><strong>Mục tiêu</strong><ul>{guide.objectives.map((objective, i) => <li key={i}>{objective}</li>)}</ul></div>}
     <div className="gg-rules">{guide.sections.map((section, position) => <article key={position} className="gg-rule"><span className="gg-rule-number">{String(position + 1).padStart(2, "0")}</span><div>
       <h3>{section.heading}</h3>
@@ -291,6 +299,14 @@ function Theory({ code, guide, compact = false, onCheck, onPractice }: { code?: 
     </div></article>)}</div>
     {guide.mistakes.length > 0 && <div className="gg-extra-notes"><h3>Lỗi thường gặp</h3>{guide.mistakes.map((mistake, i) => <MistakePair key={i} mistake={mistake} />)}</div>}
     {guide.caveats.length > 0 && <div className="gg-extra-notes"><h3>Lưu ý</h3><ul className="gg-points">{guide.caveats.map((caveat, i) => <li key={i}>{caveat}</li>)}</ul></div>}
+    {deep.length > 0 && <section className="gg-deep" aria-label="Học sâu"><header><span className="gg-eyebrow">HỌC SÂU</span><h3>Phân tích thêm: mẫu câu, ví dụ từng bước, so sánh và tự sửa lỗi</h3></header>
+      <div className="gg-rules">{deep.map((section, position) => <article key={position} className="gg-rule"><span className="gg-rule-number">{String(guide.sections.length + position + 1).padStart(2, "0")}</span><div>
+        <h3>{section.heading}</h3>
+        {section.formula && <p className="gg-formula">{section.formula}</p>}
+        {section.explanation && <p className="gg-rule-text">{section.explanation}</p>}
+        {section.examples.map((example, i) => <Example key={i} example={example} formula={section.formula} />)}
+        {section.mistake && <MistakePair mistake={section.mistake} />}
+      </div></article>)}</div></section>}
     {!compact && code && connectorLessons.has(code) && <Link className="gg-news-link" href={`${ROOT}/live`}><Newspaper size={20} aria-hidden="true" /><span><strong>Luyện thêm trên tin thật</strong><small>Điền từ nối còn thiếu trong các bài Daily News, có chấm đáp án.</small></span><ArrowRight size={16} aria-hidden="true" /></Link>}
     {!compact && code && /^[BC]/.test(code) && <IeltsApply code={code} />}
     {!compact && <div className="gg-theory-action"><div><strong>Đọc xong rồi?</strong><span>Trả lời 2 câu để chắc mình đã hiểu quy tắc.</span></div><button className="gg-secondary" onClick={onPractice}>Vào luyện tập</button><button className="gg-primary" onClick={onCheck}>Kiểm tra nhanh 2 câu <ArrowRight size={17} /></button></div>}
