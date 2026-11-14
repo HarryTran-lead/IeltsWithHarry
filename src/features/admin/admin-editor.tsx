@@ -218,7 +218,7 @@ export function AdminEditor() {
     actions={section === "overview" ? <Link prefetch={false} className="button primary" href="/admin/curriculum"><Plus size={16} /> Tạo nội dung</Link> : section === "curriculum" ? <button type="button" className="button primary" onClick={() => { const form = document.getElementById("tao-noi-dung"); form?.scrollIntoView({ behavior: "smooth", block: "center" }); form?.querySelector("input")?.focus({ preventScroll: true }); }}><Plus size={16} /> Tạo nội dung</button> : undefined}
     tabs={tabGroups ? <AdminTabs label={`Mục trong ${page.title}`} groups={tabGroups} /> : undefined}>
     {error && <AdminNotice tone="error">{error}</AdminNotice>}
-    {loading ? <section className="card admin-card admin-loading" role="status"><span className="skeleton" /><span className="skeleton" /><span className="skeleton" />Đang tải dữ liệu quản trị…</section> : <>
+    {loading && (section === "overview" || section === "curriculum" || currentSkill) ? <section className="card admin-card admin-loading" role="status"><span className="skeleton" /><span className="skeleton" /><span className="skeleton" />Đang tải dữ liệu quản trị…</section> : <>
     {section === "overview" && <><div className="admin-stats stagger">
       <article><HeadIcon icon={FolderTree} /><span>Khóa học</span><strong>{courses.length}</strong><small>{published(courses)} đã xuất bản</small></article>
       <article><HeadIcon icon={Layers} tone="sky" /><span>Unit</span><strong>{units.length}</strong><small>{published(units)} đã xuất bản</small></article>
