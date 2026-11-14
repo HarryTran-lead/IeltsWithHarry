@@ -47,10 +47,10 @@ export function SpeakingCoachingPanel({ sessionId, hasPart2Recording, onSavePart
   return <section className="sc-panel" aria-live="polite">
     <h3>Phân tích Speaking Part 2</h3>
     {!state && !error && <p>Đang kiểm tra kết quả…</p>}
-    {state?.status === "not_requested" && <><p>Khi bạn bấm gửi, bản ghi Part 2 riêng tư sẽ được chuyển từ Supabase tới máy Oracle để phân tích. Bản thử nghiệm xem transcript, nhịp nói và góp ý ngôn ngữ; chưa chấm phát âm hoặc band tổng.</p>
+    {state?.status === "not_requested" && <><p>Khi bạn bấm gửi, bản ghi Part 2 riêng tư sẽ được chuyển từ Supabase tới Cloudflare Workers AI để nhận dạng giọng nói và góp ý. Bản thử nghiệm xem transcript, nhịp nói và ngôn ngữ; chưa chấm phát âm hoặc band tổng. Tối đa 2 lượt/người và 10 lượt toàn hệ thống trong 24 giờ.</p>
       {!hasPart2Recording && <><p>Hãy lưu bản ghi Part 2 trước. Bản ghi cần có ít nhất 5 giây tiếng nói.</p>{onSavePart2 && <button type="button" className="bx-ghost" disabled={recordingBusy} onClick={onSavePart2}>{recordingBusy ? "Đang lưu bản ghi…" : "Lưu Part 2 để phân tích"}</button>}</>}
       <button type="button" className="bx-ghost" disabled={!hasPart2Recording || busy} onClick={() => void requestAnalysis()}>{busy ? "Đang gửi…" : "Gửi Part 2 để phân tích"}</button></>}
-    {state?.status === "queued" && <p>Đã vào hàng đợi{typeof state.ahead === "number" ? ` · ${state.ahead} bài gửi trước` : ""}. Có thể rời trang; chuông thông báo sẽ dẫn về kết quả. Thời gian chờ phụ thuộc tải máy.</p>}
+    {state?.status === "queued" && <p>Đã vào hàng đợi{typeof state.ahead === "number" ? ` · ${state.ahead} bài gửi trước` : ""}. {state.error_code === "SPEAKING_FREE_QUOTA" ? "Hạn mức Cloudflare miễn phí hôm nay đã hết; hệ thống sẽ thử lại sau 07:05 giờ Việt Nam." : "Dự kiến vài phút khi hàng đợi thông thoáng."} Có thể rời trang; chuông thông báo sẽ dẫn về kết quả.</p>}
     {state?.status === "analyzing" && <p>Đang chuyển giọng nói thành chữ và phân tích. Bạn có thể rời trang rồi quay lại.</p>}
     {state?.status === "failed" && <p>Chưa phân tích được bản ghi này. Bản ghi và phiên thi thử vẫn được giữ để bạn nghe lại.</p>}
     {error && <p role="alert">{error}</p>}

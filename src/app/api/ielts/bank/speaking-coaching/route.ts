@@ -43,7 +43,7 @@ export async function POST(request: Request) {
     if (existingError) throw new Error("Không kiểm tra được hàng đợi Speaking.");
     if (existing) return Response.json(existing, { status: 200 });
     const answers = answersSchema.parse(session.answers);
-    const answerIndex = answers.findIndex((item) => item.part === 2 && item.seconds > 0 && item.seconds <= 125);
+    const answerIndex = answers.findIndex((item) => item.part === 2 && item.seconds >= 5 && item.seconds <= 125);
     if (answerIndex < 0) return Response.json({ error: "Phiên này chưa có câu trả lời Part 2 hợp lệ." }, { status: 400 });
     const { data: recording, error: recordingError } = await db.from("speaking_mock_recordings")
       .select("storage_path").eq("session_id", sessionId).eq("user_id", user.id).eq("answer_index", answerIndex).maybeSingle();
@@ -59,6 +59,7 @@ export async function POST(request: Request) {
     const { data: job, error: insertError } = await db.from("speaking_coaching_jobs").insert({
       session_id: sessionId, user_id: user.id, answer_index: answerIndex,
       question_snapshot: answers[answerIndex].question.slice(0, 1000), recording_path: recording.storage_path,
+      recording_seconds: Math.max(5, Math.ceil(answers[answerIndex].seconds)),
     }).select("id,status").single();
     if (insertError?.code === "23505") {
       const retry = await db.from("speaking_coaching_jobs").select("id,status").eq("session_id", sessionId).single();

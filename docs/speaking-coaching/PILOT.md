@@ -1,18 +1,19 @@
-# Speaking Part 2 private coaching pilot
+# Speaking Part 2 coaching pilot
 
-The existing Speaking mock records Part 1–3 in the browser. Learners may save recordings in the private `speaking-recordings` Supabase bucket. This pilot analyzes **one saved Part 2 recording** per mock session (5–130 seconds), with an explicit button. It does not move audio to Cloudflare R2 or send audio/transcripts to Workers AI.
+The Speaking mock records Part 1–3 in the browser. A learner can save a Part 2 recording in the private Supabase `speaking-recordings` bucket and explicitly request analysis. Only that recording is processed. The result is practice feedback from an automatically recognized transcript, not a pronunciation assessment or IELTS band.
 
-## Processing
+## Production path: Cloudflare free plan
 
-1. Apply `supabase/migrations/202611140001_speaking_coaching_pilot.sql` to the intended Supabase project. The additive table has owner-only read access. Only the server service role can enqueue jobs, and only a service-role worker can claim or finish them. A lease token fences stale worker results; deleting a mock session also deletes its job.
-2. On the Oracle host, install Python with `faster-whisper` and `av` (the existing audio worker already uses `faster-whisper`), plus Node dependencies with `npm ci`. Download and pin a `base.en` or `tiny.en` CTranslate2 model directory in advance; the worker requires a local path and will not fetch model weights at runtime. Set `NEXT_PUBLIC_SUPABASE_URL`, `SUPABASE_SERVICE_ROLE_KEY`, `SPEAKING_LOCAL_MODEL_ID`, `SPEAKING_LOCAL_MODEL_REVISION`, `SPEAKING_ASR_MODEL_PATH`, `SPEAKING_ASR_MODEL_ID=base.en`, optionally `SPEAKING_LOCAL_MODEL_URL=http://127.0.0.1:11434`, and `SPEAKING_PYTHON=python3` in the private worker environment. Set `SPEAKING_SHARE_ORACLE_WITH_WRITING=true` only if a local Writing worker runs on the same Oracle host. Ollama must stay on loopback. Run `npx tsx scripts/speaking-coaching-worker.ts --once` to smoke the queue, then supervise the continuous command.
-3. Only after the worker succeeds on test recordings, set `SPEAKING_COACHING_ENABLED=true` on the website. The website never runs transcription in a request. It admits up to two analyses per learner and ten globally in a rolling 24-hour window. These application-level quotas are conservative pilot limits; simultaneous submissions can race, so measure actual throughput before expanding access.
+1. Apply `202611140001_speaking_coaching_pilot.sql` and `202611140002_speaking_cloudflare_duration.sql` to the production Supabase project.
+2. Deploy `services/speaking-cloudflare-worker` with Wrangler. Set Worker secrets `SUPABASE_URL`, `SUPABASE_SERVICE_ROLE_KEY`, `WORKER_TRIGGER_SECRET`, and `SPEAKING_WORKER_ENABLED=true`. No key may be added to `wrangler.toml` or a browser bundle. The Worker has a two-minute Cron Trigger and a secret-protected `POST /run` endpoint for manual operation.
+3. Test one synthetic recording through the real queue. Verify that the Worker claims the job with a lease, downloads the private audio from Supabase, runs Cloudflare Whisper and Llama, stores transcript-grounded feedback, and creates an in-app notification. The Worker logs IDs and error codes only.
+4. Set `SPEAKING_COACHING_ENABLED=true` in the production website environment and redeploy. The website admits at most two analyses per learner and ten globally per rolling 24 hours. The Cloudflare Workers AI free allocation is **shared with Writing**. If its daily allocation is depleted, the job remains queued until the next UTC day. Admission limits are pilot safeguards, not a guaranteed daily capacity.
 
-When Writing and Speaking share the same Oracle host, set `SPEAKING_SHARE_ORACLE_WITH_WRITING=true` so the worker checks the Writing queue before claiming a Speaking job. It downloads one private audio object, transcribes locally with `faster-whisper` CPU `int8`, derives word rate and pauses from timestamps, then asks a pinned loopback Ollama model for three transcript-grounded coaching cards. The stored result contains no pronunciation rating or overall IELTS band. An in-app notification links to the saved result. Failed jobs retain the original recording and session.
+The Worker processes one job at a time. It validates the private storage path and size (10 MiB), uses word timestamps for speaking rate and pauses, rejects short or invalid transcripts, and requires every coaching evidence quote to be an exact part of the transcript. A stale worker cannot overwrite another attempt because results use the job lease token. Permanent failures and completed analyses create in-app notifications. The original audio remains in Supabase Storage.
 
-## Measurement and quality gate
+## Quality limits and review
 
-- Record 20–30 consented Part 2 samples of varied length and recording quality. Log only job IDs, durations, CPU/RAM, queue delay and errors; do not log audio or transcript text.
-- Compare ASR text with learner-corrected transcripts. Check whether pause timestamps reflect the original audio. Reject unusable audio rather than inventing feedback.
-- Ask an IELTS teacher to review the coaching cards for unsupported corrections. Pronunciation and a four-criterion band require separate audio-based validation before release.
-- Keep the feature flag off if the Oracle worker is unavailable. Existing Speaking mock, recordings and self-review continue to work.
+- ASR can mistranscribe accented or noisy speech. Learners should compare the transcript with their recording. Word timing is approximate; pauses and speed are practice observations.
+- Feedback covers organization visible in the text, vocabulary, and grammar. Cloudflare does not provide an independently validated pronunciation score or examiner-equivalent band here.
+- Review 20–30 consented recordings with transcript correction and IELTS-teacher review before increasing access. Track queue delay, errors, and Workers AI usage without logging private audio or transcripts.
+- The prior Oracle offline worker remains in `scripts/speaking-coaching-worker.ts` as an optional future path. It is not active in this deployment because Oracle Batam has no Always Free A1 host capacity.
