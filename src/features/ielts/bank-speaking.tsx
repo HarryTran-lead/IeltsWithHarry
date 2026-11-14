@@ -3,7 +3,7 @@ import { useCallback, useEffect, useEffectEvent, useMemo, useRef, useState } fro
 import { BookOpenText, Captions, CaptionsOff, Check, Lightbulb, Mic, RotateCcw, Square, Timer, Volume2, VolumeX } from "lucide-react";
 import type { ExamContent } from "@/lib/ielts-bank/schema";
 import type { BankExam } from "./bank-exam";
-import { Lookup } from "./bank-writing";
+import { SpeakingLookup } from "./speaking-lookup";
 import { HarryExaminer, useHarryVoice } from "./harry-examiner";
 import { SpeakingPicker } from "./speaking-picker";
 import { clock, speakingItems, useMic, type SpeakingItem, type Take } from "./speaking-kit";
@@ -164,7 +164,7 @@ export function SpeakingStudio({ exam, content, answers, setAnswer, notes, setNo
           <button type="button" role="tab" aria-selected={panel === "hints"} onClick={() => setPanel("hints")}><Lightbulb size={15} /> Gợi ý từng bước</button>
           <button type="button" role="tab" aria-selected={panel === "lookup"} onClick={() => setPanel("lookup")}><BookOpenText size={15} /> Tra từ vựng</button>
         </div>
-        {panel === "lookup" ? <Lookup /> : <SpeakingBuilder key={item.id} item={item} topic={topic} saved={notes[`__build_${item.id}`]} onSave={(value) => setNotes({ ...notesRef.current, [`__build_${item.id}`]: value })} onSpeak={(text) => void voice.speak(text)} onCopy={appendNote} />}
+        {panel === "lookup" ? <SpeakingLookup onUse={appendNote} /> : <SpeakingBuilder key={item.id} item={item} topic={topic} saved={notes[`__build_${item.id}`]} onSave={(value) => setNotes({ ...notesRef.current, [`__build_${item.id}`]: value })} onSpeak={(text) => void voice.speak(text)} onCopy={appendNote} />}
       </div>}
       <label className="bs-notes"><span>Ghi chú của bạn</span><textarea rows={4} value={notes[item.id] || ""} onChange={(event) => setNotes({ ...notes, [item.id]: event.target.value })} placeholder="Bấm vào mẫu câu ở gợi ý để thêm vào đây, hoặc tự ghi ý…" /></label>
       <p className="bs-privacy">Bản ghi âm chỉ nằm trong trình duyệt của bạn; phần chữ và ghi chú được lưu cùng bài làm.</p>
