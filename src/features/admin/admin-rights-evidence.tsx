@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useMemo, useState, type FormEvent } from "react";
+import { AdminCardHead, AdminNotice } from "./admin-ui";
 import { createClient } from "@/lib/supabase/browser";
 
 type Kind = "ielts_exam" | "course" | "lesson" | "news_article" | "news_learning";
@@ -89,27 +90,34 @@ export function AdminRightsEvidence() {
     setMessage("Đã lưu bằng chứng quyền. Kiểm tra từng audio/ảnh riêng trước khi xuất bản.");
   }
 
-  return <section className="card admin-news-panel"><h2>Hồ sơ quyền nội dung</h2>
-    <p>Mỗi bài hoặc gói đề cần hồ sơ phần chữ. Thêm một hồ sơ riêng cho từng URL audio và ảnh. Tải văn bản cho phép vào kho riêng; URL giấy phép công khai chỉ dùng khi điều khoản cho phép đúng phạm vi bên dưới. Đường dẫn bài báo không phải bằng chứng cho phép.</p>
-    <form className="admin-news-form" onSubmit={(event) => void save(event)}>
+  return <div className="admin-split is-wide-aside">
+  <section className="card admin-card"><AdminCardHead title="Thêm hồ sơ quyền" description="Mỗi bài hoặc gói đề cần hồ sơ phần chữ, và một hồ sơ riêng cho từng URL audio, ảnh. Đường dẫn bài báo không phải bằng chứng cho phép." />
+    <form className="admin-form" onSubmit={(event) => void save(event)}>
+      <p className="admin-form-section wide">1 · Nội dung cần chứng minh</p>
       <label>Loại nội dung<select value={kind} onChange={(event) => setKind(event.target.value as Kind)}><option value="ielts_exam">Đề IELTS</option><option value="course">Khóa học</option><option value="lesson">Bài học</option><option value="news_article">Tin Daily News</option><option value="news_learning">Bài học Daily News</option></select></label>
       <label>ID nội dung<input required value={id} onChange={(event) => setId(event.target.value.trim())} placeholder="UUID của bản nháp" /></label>
       <label>Loại tài sản<select value={asset} onChange={(event) => setAsset(event.target.value as Asset)}><option value="text">Chữ, đề, đáp án</option><option value="audio">Audio</option><option value="image">Ảnh</option></select></label>
       {asset !== "text" && <label>URL tài sản<input required type="url" value={assetUrl} onChange={(event) => setAssetUrl(event.target.value)} /></label>}
+      <p className="admin-form-section wide">2 · Nguồn và chủ sở hữu</p>
       <label>Tên gói ZIP (nếu có)<input value={packageName} onChange={(event) => setPackageName(event.target.value)} /></label>
       <label>SHA-256 gói ZIP<input value={packageHash} onChange={(event) => setPackageHash(event.target.value)} /></label>
       <label>Tác giả<input required minLength={2} value={author} onChange={(event) => setAuthor(event.target.value)} /></label>
       <label>Chủ sở hữu quyền<input required minLength={2} value={holder} onChange={(event) => setHolder(event.target.value)} /></label>
+      <p className="admin-form-section wide">3 · Văn bản cho phép</p>
       <label className="wide">Tải văn bản cho phép hoặc giấy tờ chứng minh quyền<input type="file" accept=".pdf,.txt,.png,.jpg,.jpeg" disabled={uploading} onChange={(event) => void uploadDocument(event.target.files?.[0])} /></label>
       <label className="wide">Đường dẫn văn bản đã lưu hoặc URL giấy phép công khai<input required minLength={12} value={documentRef} onChange={(event) => setDocumentRef(event.target.value)} placeholder="rights-evidence/... hoặc https://..." /></label>
       <label className="wide">Phạm vi cho phép<textarea required minLength={20} rows={3} value={scope} onChange={(event) => setScope(event.target.value)} /></label>
-      <label className="admin-check"><input type="checkbox" checked={web} onChange={(event) => setWeb(event.target.checked)} /> Cho đăng trên web</label>
-      <label className="admin-check"><input type="checkbox" checked={commercial} onChange={(event) => setCommercial(event.target.checked)} /> Cho dùng thương mại</label>
-      <label className="admin-check"><input type="checkbox" checked={adapt} onChange={(event) => setAdapt(event.target.checked)} /> Cho sửa và dịch</label>
-      <button className="button primary" disabled={busy}>{busy ? "Đang lưu…" : "Lưu hồ sơ quyền"}</button>
+      <fieldset className="wide admin-checks"><legend>Phạm vi được phép (cần đủ cả ba)</legend>
+        <label className="admin-check"><input type="checkbox" checked={web} onChange={(event) => setWeb(event.target.checked)} /> Cho đăng trên web</label>
+        <label className="admin-check"><input type="checkbox" checked={commercial} onChange={(event) => setCommercial(event.target.checked)} /> Cho dùng thương mại</label>
+        <label className="admin-check"><input type="checkbox" checked={adapt} onChange={(event) => setAdapt(event.target.checked)} /> Cho sửa và dịch</label>
+      </fieldset>
+      {message && <div className="wide"><AdminNotice tone={message.startsWith("Đã lưu") ? "success" : "error"}>{message}</AdminNotice></div>}
+      <div className="wide admin-form-actions"><button className="button primary" disabled={busy}>{busy ? "Đang lưu…" : "Lưu hồ sơ quyền"}</button></div>
     </form>
-    {message && <p role="status">{message}</p>}
-    <h3>Hồ sơ đã lưu ({records.length})</h3>
-    {records.map((record) => <p key={record.id}>{record.asset_kind.toUpperCase()} {record.asset_url ?? ""} · {record.author_name} / {record.rights_holder} · {record.permission_document_ref}</p>)}
-  </section>;
+  </section>
+  <section className="card admin-card"><AdminCardHead title="Hồ sơ đã lưu" count={records.length} description={uuid.test(id) ? "Các hồ sơ của nội dung đang chọn, mới nhất ở trên." : "Nhập ID nội dung để xem các hồ sơ đã lưu."} />
+    {records.length ? <ul className="admin-record-list">{records.map((record) => <li key={record.id}><span className="admin-tag">{record.asset_kind === "text" ? "Chữ" : record.asset_kind === "audio" ? "Audio" : "Ảnh"}</span><div><strong>{record.author_name} · {record.rights_holder}</strong><small>{record.permission_document_ref}</small>{record.asset_url && <small className="is-url">{record.asset_url}</small>}</div></li>)}</ul> : <p className="admin-empty-line">Chưa có hồ sơ nào.</p>}
+  </section>
+  </div>;
 }

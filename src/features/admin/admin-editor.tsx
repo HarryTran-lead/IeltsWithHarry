@@ -2,12 +2,13 @@
 import { useCallback, useEffect, useMemo, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { BookOpen, ChevronRight, FileText, FolderTree, GraduationCap, Headphones, Image, Languages, LayoutDashboard, Layers, Mic, PenLine, Newspaper, ListChecks, Rss, ScrollText, Settings2, FilePlus2, Plus, Shapes, LibraryBig, UsersRound, Megaphone, History, MessageSquareText } from "lucide-react";
-import { BankAdmin } from "@/features/ielts/bank-admin";
+import { BookOpen, ChevronRight, FileText, FolderTree, GraduationCap, Headphones, Image, Languages, LayoutDashboard, Layers, Mic, PenLine, Newspaper, ScrollText, Plus, Search, Shapes, LibraryBig, UsersRound, AudioLines, type LucideIcon } from "lucide-react";
+import { BankAdmin, type BankWorkspace } from "@/features/ielts/bank-admin";
 import { AiContentFactory } from "@/features/ai-factory/ai-content-factory";
 import { Sticker } from "@/components/stickers/stickers";
 import { HeadIcon } from "@/components/ui/head-icon";
 import { AdminShell, type AdminNavGroup } from "./admin-shell";
+import { AdminCardHead, AdminNotice, AdminTabs, type AdminTabGroup } from "./admin-ui";
 import { createClient } from "@/lib/supabase/browser";
 import { assertPublishRightsEvidence, type RightsEvidence } from "@/lib/content-rights";
 import { LessonContentEditor } from "./lesson-content-editor";
@@ -26,73 +27,79 @@ type Course = { id: string; stage_id: string; slug: string; title: string; descr
 type Unit = { id: string; course_id: string; slug: string; title: string; published: boolean };
 type Lesson = { id: string; unit_id: string; slug: string; title: string; skill: SkillName; summary: string; published: boolean };
 const skillTabs = ["Vocabulary", "Grammar", "Reading", "Listening", "Writing", "Speaking"] as const;
-const nav = [
-  { slug: "overview", label: "Tổng quan", icon: LayoutDashboard },
-  { slug: "users", label: "Học viên", icon: UsersRound },
-  { slug: "users/broadcast", label: "Thông báo & giao bài", icon: Megaphone },
-  { slug: "users/audit", label: "Nhật ký admin", icon: History },
-  { slug: "curriculum", label: "Lộ trình & bài học", icon: GraduationCap },
-  { slug: "rights", label: "Hồ sơ quyền", icon: ScrollText },
-  { slug: "vocabulary", label: "Vocabulary", icon: Languages },
-  { slug: "vocabulary/library", label: "Kho từ & nhập ZIP", icon: LibraryBig },
-  { slug: "vocabulary/ielts-progress", label: "IELTS · tiến độ chủ đề", icon: ListChecks },
-  { slug: "vocabulary/translation", label: "Luyện dịch câu · duyệt", icon: Languages },
-  { slug: "grammar", label: "Grammar", icon: BookOpen },
-  { slug: "reading", label: "Reading", icon: FileText },
-  { slug: "listening", label: "Listening", icon: Headphones },
-  { slug: "dictation", label: "Dictation", icon: Headphones },
-  { slug: "writing", label: "Writing", icon: PenLine },
-  { slug: "speaking", label: "Speaking", icon: Mic },
-  { slug: "media", label: "Media library", icon: Image },
-  { slug: "ielts-bank", label: "Ngân hàng IELTS", icon: LibraryBig },
-  { slug: "ai-content-factory", label: "AI Content Factory", icon: Shapes },
-  { slug: "news", label: "Daily News", icon: Newspaper },
-  { slug: "news/settings", label: "News settings", icon: Settings2 },
-  { slug: "news/manual", label: "Add news", icon: FilePlus2 },
-  { slug: "news/facts", label: "Bài từ dữ kiện", icon: FilePlus2 },
-  { slug: "news/sources", label: "News sources", icon: Rss },
-  { slug: "news/review", label: "News review", icon: ListChecks },
-  { slug: "news/articles", label: "Learning articles", icon: BookOpen },
-  { slug: "news/meaning-suggestions", label: "Góp ý nghĩa từ", icon: MessageSquareText },
-  { slug: "news/sync-logs", label: "Sync logs", icon: ScrollText },
-] as const;
+const skillIcons: Record<(typeof skillTabs)[number], LucideIcon> = { Vocabulary: Languages, Grammar: BookOpen, Reading: FileText, Listening: Headphones, Writing: PenLine, Speaking: Mic };
+
+/**
+ * Every admin page: `tab` is its label in the page's tab bar, `parent` puts a sub page under one sidebar entry.
+ * Feature names (Reading, Daily News…) stay English, everything else is Vietnamese.
+ */
+type Page = { slug: string; title: string; tab?: string; icon: LucideIcon; parent?: string; description: string };
+const pages: Page[] = [
+  { slug: "overview", title: "Tổng quan", icon: LayoutDashboard, description: "Tình trạng nội dung theo kỹ năng, bài mới cập nhật và lối tắt tới các khu biên soạn." },
+  { slug: "users", title: "Học viên", tab: "Danh sách học viên", icon: UsersRound, description: "Theo dõi hoạt động, streak và quản lý từng tài khoản: khóa, cấm chat, giao nhiệm vụ, đặt mục tiêu." },
+  { slug: "users/broadcast", parent: "users", title: "Học viên", tab: "Thông báo & giao bài", icon: UsersRound, description: "Gửi thông báo, giao nhiệm vụ và đặt mục tiêu ngày cho cả lớp cùng lúc." },
+  { slug: "users/audit", parent: "users", title: "Học viên", tab: "Nhật ký admin", icon: UsersRound, description: "Mọi thao tác của admin trên tài khoản học viên đều được ghi lại tại đây." },
+  { slug: "curriculum", title: "Lộ trình & bài học", icon: GraduationCap, description: "Tạo khóa học, unit và bài học; xuất bản khi nội dung và hồ sơ quyền đã đủ." },
+  { slug: "rights", title: "Hồ sơ quyền", icon: ScrollText, description: "Lưu tác giả, chủ sở hữu và văn bản cho phép trước khi xuất bản bất kỳ nội dung nào." },
+  { slug: "media", title: "Thư viện media", icon: Image, description: "Hình minh họa và âm thanh dùng trong bài học. Tải lên rồi sao chép URL để gắn vào bài." },
+  { slug: "ielts-bank", title: "Ngân hàng IELTS", icon: LibraryBig, description: "Toàn bộ đề luyện thi bốn kỹ năng: kiểm tra đề, đáp án, nguồn và trạng thái xuất bản." },
+  { slug: "ai-content-factory", title: "AI Content Factory", icon: Shapes, description: "Tạo đề bằng AI, nghe thử audio, kiểm tra đáp án và duyệt trước khi xuất bản." },
+  { slug: "vocabulary", title: "Vocabulary", tab: "Bài học từ vựng", icon: Languages, description: "Bài học từ vựng trong lộ trình, kho từ IELTS, tiến độ chủ đề và câu luyện dịch." },
+  { slug: "vocabulary/library", parent: "vocabulary", title: "Vocabulary", tab: "Kho từ & nhập ZIP", icon: Languages, description: "Nhập gói từ vựng đã biên soạn, rà soát từng mục và xuất bản cho học viên." },
+  { slug: "vocabulary/ielts-progress", parent: "vocabulary", title: "Vocabulary", tab: "Tiến độ chủ đề", icon: Languages, description: "Theo dõi 40 chủ đề học, số mục đã xuất bản và tiến độ biên soạn mới." },
+  { slug: "vocabulary/translation", parent: "vocabulary", title: "Vocabulary", tab: "Duyệt câu dịch", icon: Languages, description: "Duyệt câu luyện dịch Việt → Anh trước khi hiện cho học viên." },
+  { slug: "grammar", title: "Grammar", icon: BookOpen, description: "Biên soạn bài ngữ pháp trong lộ trình: lý thuyết, ví dụ và câu hỏi có đáp án." },
+  { slug: "reading", title: "Reading", icon: FileText, description: "Kho đề Reading luyện thi và bài Reading trong lộ trình là hai kho riêng." },
+  { slug: "listening", title: "Listening", icon: Headphones, description: "Kho đề Listening, bài nghe trong lộ trình và bài nghe qua video YouTube." },
+  { slug: "writing", title: "Writing", icon: PenLine, description: "Đề Writing, bài chấm của học viên và bài Writing trong lộ trình." },
+  { slug: "speaking", title: "Speaking", icon: Mic, description: "Đề Speaking luyện thi và bài Speaking trong lộ trình." },
+  { slug: "dictation", title: "Dictation", icon: AudioLines, description: "Kiểm duyệt bài nghe chép chính tả: transcript, mốc thời gian, CEFR và quyền sử dụng." },
+  { slug: "news", title: "Daily News", tab: "Tổng quan", icon: Newspaper, description: "Tin tự đồng bộ, tin thêm tay và bài luyện đọc. Chỉ tin đã duyệt mới hiện cho học viên." },
+  { slug: "news/review", parent: "news", title: "Daily News", tab: "Duyệt tin", icon: Newspaper, description: "Kiểm duyệt tin nhập về: xuất bản, ẩn, lưu trữ hoặc xóa." },
+  { slug: "news/manual", parent: "news", title: "Daily News", tab: "Thêm tin", icon: Newspaper, description: "Thêm tin thủ công kèm toàn văn, ảnh và hồ sơ quyền." },
+  { slug: "news/facts", parent: "news", title: "Daily News", tab: "Bài từ dữ kiện", icon: Newspaper, description: "Viết bài mới từ dữ kiện đã kiểm chứng, có danh sách nguồn đi kèm." },
+  { slug: "news/articles", parent: "news", title: "Daily News", tab: "Bài luyện", icon: Newspaper, description: "Bài đọc biên soạn riêng kèm từ vựng và câu hỏi." },
+  { slug: "news/sources", parent: "news", title: "Daily News", tab: "Nguồn tin", icon: Newspaper, description: "Nguồn RSS/GDELT, căn cứ quyền và lịch đồng bộ của từng nguồn." },
+  { slug: "news/meaning-suggestions", parent: "news", title: "Daily News", tab: "Góp ý nghĩa từ", icon: Newspaper, description: "Góp ý nghĩa từ do học viên gửi khi đọc tin." },
+  { slug: "news/sync-logs", parent: "news", title: "Daily News", tab: "Nhật ký", icon: Newspaper, description: "Nhật ký đồng bộ nguồn tin và lượt tạo ảnh, câu hỏi." },
+  { slug: "news/settings", parent: "news", title: "Daily News", tab: "Cấu hình & prompt", icon: Newspaper, description: "Lịch tự động, giới hạn hằng ngày và hướng dẫn cho AI." },
+];
 const navGroups = [
   { label: "Tổng quan", slugs: ["overview"] },
-  { label: "Học viên", slugs: ["users", "users/broadcast", "users/audit"] },
+  { label: "Học viên", slugs: ["users"] },
   { label: "Nội dung", slugs: ["curriculum", "rights", "media"] },
-  { label: "IELTS Management", slugs: ["ielts-bank", "ai-content-factory"] },
-  { label: "Kỹ năng", slugs: ["vocabulary", "vocabulary/library", "vocabulary/ielts-progress", "vocabulary/translation", "grammar", "reading", "listening", "writing", "speaking"] },
-  { label: "Luyện tập", slugs: ["dictation"] },
-  { label: "Daily News", slugs: ["news", "news/settings", "news/manual", "news/facts", "news/sources", "news/review", "news/articles", "news/meaning-suggestions", "news/sync-logs"] },
+  { label: "Ngân hàng đề", slugs: ["ielts-bank", "ai-content-factory"] },
+  { label: "Kỹ năng", slugs: ["vocabulary", "grammar", "reading", "listening", "writing", "speaking", "dictation"] },
+  { label: "Daily News", slugs: ["news"] },
 ];
-const descriptions: Record<string, string> = {
-  overview: "Quản lý nội dung học tập theo từng kỹ năng và theo dõi trạng thái xuất bản.",
-  curriculum: "Tạo khóa học, unit và bài học trước khi nhập nội dung cho từng kỹ năng.",
-  rights: "Lưu tác giả, chủ sở hữu và văn bản cho phép trước khi xuất bản nội dung.",
-  media: "Quản lý hình minh họa và âm thanh dùng trong bài học.",
-  reading: "Quản lý kho đề Reading, duyệt đáp án và biên soạn bài học trong lộ trình.",
-  listening: "Quản lý kho đề Listening, kiểm tra audio, đáp án và bài học trong lộ trình.",
-  writing: "Quản lý đề Writing, xem bài thi của học viên và biên soạn bài học.",
-  speaking: "Quản lý đề Speaking, xem phòng thi và biên soạn bài học.",
-  users: "Theo dõi hoạt động, streak và kiểm soát tài khoản từng học viên: khóa, cấm chat, giao nhiệm vụ, đặt mục tiêu, gửi thông báo.",
-  "users/broadcast": "Gửi thông báo, giao nhiệm vụ và đặt mục tiêu ngày cho cả lớp cùng lúc.",
-  "users/audit": "Mọi thao tác của admin trên tài khoản học viên đều được ghi lại ở đây.",
-  "vocabulary/ielts-progress": "Theo dõi 40 chủ đề học, mục đã xuất bản và tiến độ biên soạn mới.",
-};
+const bankWorkspaces: { id: BankWorkspace; label: string }[] = [
+  { id: "library", label: "Kho đề" },
+  { id: "import", label: "Nhập đề" },
+  { id: "sources", label: "Nguồn & đồng bộ" },
+  { id: "activity", label: "Lượt làm đề" },
+  { id: "grading", label: "Chấm Writing" },
+];
+const stages = ["foundation", "elementary", "pre-ielts", "ielts-starter", "ielts-builder", "ielts-advanced", "mastery"];
+
 function StatusPill({ published }: { published: boolean }) {
   return <span className={published ? "status-pill live" : "status-pill draft"}><i aria-hidden="true" />{published ? "Đã xuất bản" : "Bản nháp"}</span>;
 }
+
 export function AdminEditor() {
   const supabase = useMemo(() => createClient(), []);
   const pathname = usePathname();
   const segment = pathname.split("/").slice(2).join("/") || "overview";
   // /admin/users/<id> opens one learner inside the Học viên section.
   const learnerId = /^users\/[0-9a-f-]{36}$/.test(segment) ? segment.slice("users/".length) : null;
-  const section = learnerId ? "users" : nav.some((item) => item.slug === segment) ? segment : "overview";
-  const sectionLabel = nav.find((item) => item.slug === section)?.label ?? "Tổng quan";
+  const section = learnerId ? "users" : pages.some((item) => item.slug === segment) ? segment : "overview";
+  const page = pages.find((item) => item.slug === section)!;
+  const root = page.parent ?? page.slug;
   const currentSkill = skillTabs.find((item) => item.toLowerCase() === section);
   const bankSkill = currentSkill && (["Reading", "Listening", "Writing", "Speaking"] as string[]).includes(currentSkill) ? currentSkill as "Reading" | "Listening" | "Writing" | "Speaking" : null;
-  const [skillView, setSkillView] = useState<"lessons" | "bank">("bank");
+  const [skillView, setSkillView] = useState<BankWorkspace | "lessons" | "youtube">("library");
+  // Each section opens on its first tab; reset during render when the route changes.
+  const [viewSection, setViewSection] = useState(section);
+  if (viewSection !== section) { setViewSection(section); setSkillView("library"); }
   const [courses, setCourses] = useState<Course[]>([]);
   const [units, setUnits] = useState<Unit[]>([]);
   const [lessons, setLessons] = useState<Lesson[]>([]);
@@ -106,6 +113,9 @@ export function AdminEditor() {
   const [slug, setSlug] = useState("");
   const [skill, setSkill] = useState("Reading");
   const [kind, setKind] = useState<"course" | "unit" | "lesson">("course");
+  const [listKind, setListKind] = useState<"courses" | "units" | "lessons">("courses");
+  const [query, setQuery] = useState("");
+  const [statusFilter, setStatusFilter] = useState<"all" | "live" | "draft">("all");
 
   const load = useCallback(async () => {
     const [courseResult, unitResult, lessonResult] = await Promise.all([
@@ -166,7 +176,7 @@ export function AdminEditor() {
     if (error) setError(error.message); else await load();
   }
   async function remove(table: "courses" | "units" | "lessons", id: string) {
-    if (!window.confirm("Delete this item and its children? This cannot be undone.")) return;
+    if (!window.confirm("Xóa mục này cùng toàn bộ nội dung con? Không thể hoàn tác.")) return;
     setError("");
     const { error } = await supabase.from(table).delete().eq("id", id);
     if (error) setError(error.message); else await load();
@@ -175,60 +185,94 @@ export function AdminEditor() {
   const groups: AdminNavGroup[] = navGroups.map((group) => ({
     label: group.label,
     items: group.slugs.map((itemSlug) => {
-      const item = nav.find((entry) => entry.slug === itemSlug)!;
-      return { href: itemSlug === "overview" ? "/admin" : `/admin/${itemSlug}`, label: item.label, icon: item.icon, active: section === itemSlug };
+      const item = pages.find((entry) => entry.slug === itemSlug)!;
+      return { href: itemSlug === "overview" ? "/admin" : `/admin/${itemSlug}`, label: item.title, icon: item.icon, active: root === itemSlug };
     }),
   }));
   const published = (rows: { published: boolean }[]) => rows.filter((item) => item.published).length;
 
-  return <AdminShell groups={groups} section={sectionLabel} title={sectionLabel} description={descriptions[section] ?? `Biên soạn dữ liệu ${sectionLabel} và xem trước trải nghiệm học viên.`} mode="live" actions={section === "overview" || section === "curriculum" ? <Link className="button primary" href="/admin/curriculum"><Plus size={16} /> Tạo nội dung</Link> : undefined}>
-    {error && <p role="alert" className="form-error">{error}</p>}
-    {loading ? <section className="card admin-list admin-loading" role="status"><span className="skeleton" /><span className="skeleton" /><span className="skeleton" />Đang tải dữ liệu quản trị…</section> : <>
+  // One tab bar under the heading: sibling pages for grouped sections, workspaces for the question banks.
+  const family = pages.filter((item) => item.slug === root || item.parent === root);
+  let tabGroups: AdminTabGroup[] | null = family.length > 1 ? [{ items: family.map((item) => ({ id: item.slug, label: item.tab ?? item.title, href: `/admin/${item.slug}`, active: section === item.slug })) }] : null;
+  if (section === "ielts-bank") tabGroups = [{ items: bankWorkspaces.map((item) => ({ id: item.id, label: item.label, active: skillView === item.id, onClick: () => setSkillView(item.id) })) }];
+  if (bankSkill) {
+    const lessonsForSkill = lessons.filter((item) => item.skill === bankSkill);
+    tabGroups = [
+      { label: "Đề luyện thi", items: bankWorkspaces.filter((item) => item.id !== "grading" || bankSkill === "Writing").map((item) => ({ id: item.id, label: item.label, active: skillView === item.id, onClick: () => setSkillView(item.id) })) },
+      { label: "Lộ trình", items: [
+        { id: "lessons", label: `Bài học ${bankSkill}`, count: lessonsForSkill.length, active: skillView === "lessons", onClick: () => setSkillView("lessons") },
+        ...(bankSkill === "Listening" ? [{ id: "youtube", label: "Video YouTube", active: skillView === "youtube", onClick: () => setSkillView("youtube") }] : []),
+      ] },
+    ];
+  }
+  const bankView: BankWorkspace = skillView === "lessons" || skillView === "youtube" ? "library" : skillView === "grading" && bankSkill && bankSkill !== "Writing" ? "library" : skillView;
+  const showLessons = currentSkill && (!bankSkill || skillView === "lessons");
+
+  const listRows = listKind === "courses" ? courses : listKind === "units" ? units : lessons;
+  const parentName = (row: Course | Unit | Lesson) => "course_id" in row ? courses.find((item) => item.id === row.course_id)?.title : "unit_id" in row ? units.find((item) => item.id === row.unit_id)?.title : row.stage_id;
+  const filteredRows = (listRows as (Course | Unit | Lesson)[]).filter((row) => (statusFilter === "all" || (statusFilter === "live") === row.published) && (!query.trim() || `${row.title} ${row.slug}`.toLowerCase().includes(query.trim().toLowerCase())));
+
+  return <AdminShell groups={groups} section={page.tab && page.parent ? `${page.title} · ${page.tab}` : page.title} title={page.title} icon={page.icon} description={page.description} mode="live"
+    actions={section === "overview" ? <Link prefetch={false} className="button primary" href="/admin/curriculum"><Plus size={16} /> Tạo nội dung</Link> : section === "curriculum" ? <button type="button" className="button primary" onClick={() => { const form = document.getElementById("tao-noi-dung"); form?.scrollIntoView({ behavior: "smooth", block: "center" }); form?.querySelector("input")?.focus({ preventScroll: true }); }}><Plus size={16} /> Tạo nội dung</button> : undefined}
+    tabs={tabGroups ? <AdminTabs label={`Mục trong ${page.title}`} groups={tabGroups} /> : undefined}>
+    {error && <AdminNotice tone="error">{error}</AdminNotice>}
+    {loading ? <section className="card admin-card admin-loading" role="status"><span className="skeleton" /><span className="skeleton" /><span className="skeleton" />Đang tải dữ liệu quản trị…</section> : <>
     {section === "overview" && <><div className="admin-stats stagger">
       <article><HeadIcon icon={FolderTree} /><span>Khóa học</span><strong>{courses.length}</strong><small>{published(courses)} đã xuất bản</small></article>
-      <article><HeadIcon icon={Layers} tone="sky" /><span>Units</span><strong>{units.length}</strong><small>{published(units)} đã xuất bản</small></article>
+      <article><HeadIcon icon={Layers} tone="sky" /><span>Unit</span><strong>{units.length}</strong><small>{published(units)} đã xuất bản</small></article>
       <article><HeadIcon icon={BookOpen} tone="coral" /><span>Bài học</span><strong>{lessons.length}</strong><small>{published(lessons)} đã xuất bản</small></article>
-      <article><HeadIcon icon={Shapes} tone="lavender" /><span>Kỹ năng</span><strong>6</strong><small>Đầu vào chuyên biệt</small></article>
+      <article><HeadIcon icon={Shapes} tone="lavender" /><span>Bản nháp</span><strong>{lessons.length - published(lessons)}</strong><small>Bài học chưa xuất bản</small></article>
     </div>
     <div className="admin-overview-grid">
-      <section className="card admin-overview-card"><div className="admin-section-head"><div><h2>Bắt đầu biên soạn</h2><p>Chọn một kỹ năng để nhập bài đọc, audio, đề viết, câu hỏi hoặc từ vựng. Nội dung nháp chỉ admin xem được.</p></div></div><div className="admin-quick-links">{nav.slice(2, 8).map(({ slug: itemSlug, label, icon: Icon }) => { const rows = lessons.filter((item) => item.skill.toLowerCase() === itemSlug); return <Link key={itemSlug} href={`/admin/${itemSlug}`} className="lift"><span className="admin-quick-icon"><Icon size={19} /></span><span><strong>{label}</strong><small>{rows.length} bài · {published(rows)} xuất bản</small></span><ChevronRight size={17} /></Link>; })}</div></section>
-      <section className="card admin-overview-card"><div className="admin-section-head"><div><h2>Phân bố theo kỹ năng</h2><p>Bài đã xuất bản trên tổng số bài.</p></div></div><div className="admin-coverage">{skillTabs.map((name) => { const rows = lessons.filter((item) => item.skill === name); const live = published(rows); return <div className="admin-coverage-row" key={name}><span>{name}</span><div className="admin-coverage-track"><i style={{ width: `${rows.length ? live / rows.length * 100 : 0}%` }} /></div><b>{live}/{rows.length}</b></div>; })}</div></section>
+      <section className="card admin-card"><AdminCardHead title="Biên soạn theo kỹ năng" description="Mở một kỹ năng để nhập bài đọc, audio, đề viết, câu hỏi hoặc từ vựng. Bản nháp chỉ admin xem được." /><div className="admin-quick-links">{skillTabs.map((name) => { const Icon = skillIcons[name]; const rows = lessons.filter((item) => item.skill === name); return <Link prefetch={false} key={name} href={`/admin/${name.toLowerCase()}`} className="lift"><span className="admin-quick-icon"><Icon size={19} /></span><span><strong>{name}</strong><small>{rows.length} bài · {published(rows)} đã xuất bản</small></span><ChevronRight size={17} /></Link>; })}</div></section>
+      <section className="card admin-card"><AdminCardHead title="Tỷ lệ xuất bản" description="Bài đã xuất bản trên tổng số bài của từng kỹ năng." /><div className="admin-coverage">{skillTabs.map((name) => { const rows = lessons.filter((item) => item.skill === name); const live = published(rows); return <div className="admin-coverage-row" key={name}><span>{name}</span><div className="admin-coverage-track"><i style={{ width: `${rows.length ? live / rows.length * 100 : 0}%` }} /></div><b>{live}/{rows.length}</b></div>; })}</div></section>
     </div>
-    <section className="card admin-overview-card"><div className="admin-section-head"><h2>Bài học gần đây</h2><Link href="/admin/curriculum">Xem lộ trình <ChevronRight size={15} /></Link></div>{lessons.length ? <div className="admin-table">{lessons.slice(0, 6).map((item) => <div className="admin-row" key={item.id}><div><strong>{item.title}</strong><small>{item.skill} · /{item.slug}</small></div><StatusPill published={item.published} /><div><Link href={`/admin/${item.skill.toLowerCase()}`} className="button subtle">Biên soạn</Link></div></div>)}</div> : <div className="admin-empty-state"><Sticker name="pencil" size={64} tilt={-8} /><div><h3>Chưa có bài học nào</h3><p>Tạo khóa học, unit rồi bài học đầu tiên trong mục Lộ trình & bài học.</p></div><Link className="button primary" href="/admin/curriculum">Tạo bài học</Link></div>}</section></>}
+    <section className="card admin-card"><AdminCardHead title="Bài học gần đây"><Link prefetch={false} className="admin-link" href="/admin/curriculum">Xem lộ trình <ChevronRight size={15} /></Link></AdminCardHead>{lessons.length ? <div className="admin-table">{lessons.slice(0, 6).map((item) => <div className="admin-row" key={item.id}><div><strong>{item.title}</strong><small>{item.skill} · /{item.slug}</small></div><StatusPill published={item.published} /><div><Link prefetch={false} href={`/admin/${item.skill.toLowerCase()}`} className="button subtle">Biên soạn</Link></div></div>)}</div> : <div className="admin-empty-state"><Sticker name="pencil" size={64} tilt={-8} /><div><h3>Chưa có bài học nào</h3><p>Tạo khóa học, unit rồi bài học đầu tiên trong Lộ trình & bài học.</p></div><Link prefetch={false} className="button primary" href="/admin/curriculum">Tạo bài học</Link></div>}</section></>}
     {section === "curriculum" && <>
-    <section className="card admin-create"><h2>Add content</h2>
-      <form onSubmit={create}>
-        <label>Content type<select value={kind} onChange={(e) => setKind(e.target.value as typeof kind)}><option value="course">Course</option><option value="unit">Unit</option><option value="lesson">Lesson</option></select></label>
-        {kind === "course" ? <label>Stage<select value={stage} onChange={(e) => setStage(e.target.value)}>{["foundation","elementary","pre-ielts","ielts-starter","ielts-builder","ielts-advanced","mastery"].map((value) => <option key={value}>{value}</option>)}</select></label> :
-          kind === "unit" ? <label>Course<select required value={courseId} onChange={(e) => setCourseId(e.target.value)}><option value="">Select course</option>{courses.map((item) => <option key={item.id} value={item.id}>{item.title}</option>)}</select></label> :
-          <><label>Unit<select required value={unitId} onChange={(e) => setUnitId(e.target.value)}><option value="">Select unit</option>{units.map((item) => <option key={item.id} value={item.id}>{item.title}</option>)}</select></label><label>Skill<select value={skill} onChange={(e) => setSkill(e.target.value)}>{["Reading","Listening","Writing","Speaking","Vocabulary","Grammar"].map((value) => <option key={value}>{value}</option>)}</select></label></>}
-        <label>Title<input required minLength={3} maxLength={160} value={title} onChange={(e) => setTitle(e.target.value)} /></label>
-        <label>URL slug<input required pattern="[a-z0-9-]+" value={slug} onChange={(e) => setSlug(e.target.value)} /></label>
-        <button className="button primary" disabled={busy}>{busy ? "Saving…" : "Create draft"}</button>
+    <section className="card admin-card" id="tao-noi-dung"><AdminCardHead title="Tạo nội dung mới" description="Nội dung mới luôn là bản nháp. Tạo theo thứ tự khóa học → unit → bài học." />
+      <form onSubmit={create} className="admin-form admin-form-inline">
+        <label>Loại nội dung<select value={kind} onChange={(e) => setKind(e.target.value as typeof kind)}><option value="course">Khóa học</option><option value="unit">Unit</option><option value="lesson">Bài học</option></select></label>
+        {kind === "course" ? <label>Chặng<select value={stage} onChange={(e) => setStage(e.target.value)}>{stages.map((value) => <option key={value}>{value}</option>)}</select></label> :
+          kind === "unit" ? <label>Thuộc khóa học<select required value={courseId} onChange={(e) => setCourseId(e.target.value)}><option value="">Chọn khóa học</option>{courses.map((item) => <option key={item.id} value={item.id}>{item.title}</option>)}</select></label> :
+          <><label>Thuộc unit<select required value={unitId} onChange={(e) => setUnitId(e.target.value)}><option value="">Chọn unit</option>{units.map((item) => <option key={item.id} value={item.id}>{item.title}</option>)}</select></label><label>Kỹ năng<select value={skill} onChange={(e) => setSkill(e.target.value)}>{skillTabs.map((value) => <option key={value}>{value}</option>)}</select></label></>}
+        <label>Tiêu đề<input required minLength={3} maxLength={160} value={title} onChange={(e) => setTitle(e.target.value)} placeholder="Ví dụ: A day in a new city" /></label>
+        <label>Đường dẫn (slug)<input required pattern="[a-z0-9-]+" value={slug} onChange={(e) => setSlug(e.target.value)} placeholder="a-day-in-a-new-city" /></label>
+        <button className="button primary" disabled={busy}>{busy ? "Đang lưu…" : "Tạo bản nháp"}</button>
       </form>
     </section>
-    {([
-      { title: "Courses", table: "courses" as const, rows: courses },
-      { title: "Units", table: "units" as const, rows: units },
-      { title: "Lessons", table: "lessons" as const, rows: lessons },
-    ]).map((group) => <section key={group.table} className="card admin-list"><div className="admin-section-head"><h2>{group.title}</h2><span className="admin-count">{group.rows.length}</span></div>{!group.rows.length && <p className="admin-muted">No items yet.</p>}
-      {group.rows.map((item) => <div className="admin-row" key={item.id}><div><strong>{item.title}</strong><small>/{item.slug}</small></div><StatusPill published={item.published} /><div>
-        <button className="button subtle" onClick={() => { const name = window.prompt("New title", item.title)?.trim(); if (name) void change(group.table, item.id, { title: name }); }}>Rename</button>
-        {group.table !== "units" && <Link className="button subtle" href={`/admin/rights?kind=${group.table === "courses" ? "course" : "lesson"}&id=${item.id}`}>Hồ sơ quyền</Link>}
-        <button className="button subtle" onClick={() => void change(group.table, item.id, { published: !item.published })}>{item.published ? "Unpublish" : "Publish"}</button>
-        <button className="button subtle" onClick={() => void remove(group.table, item.id)}>Delete</button>
-      </div></div>)}
-    </section>)}
+    <section className="card admin-card">
+      <AdminCardHead title="Danh sách nội dung" count={filteredRows.length} />
+      <div className="admin-toolbar">
+        <div className="admin-segment" role="group" aria-label="Loại nội dung">{([["courses", "Khóa học", courses.length], ["units", "Unit", units.length], ["lessons", "Bài học", lessons.length]] as const).map(([value, label, total]) => <button type="button" key={value} aria-pressed={listKind === value} className={listKind === value ? "active" : ""} onClick={() => setListKind(value)}>{label} <b>{total}</b></button>)}</div>
+        <label className="admin-search"><Search size={16} aria-hidden="true" /><input value={query} onChange={(event) => setQuery(event.target.value)} placeholder="Tìm theo tên hoặc slug" aria-label="Tìm nội dung" /></label>
+        <div className="admin-chips" role="group" aria-label="Lọc trạng thái">{([["all", "Tất cả"], ["live", "Đã xuất bản"], ["draft", "Bản nháp"]] as const).map(([value, label]) => <button type="button" key={value} aria-pressed={statusFilter === value} className={statusFilter === value ? "active" : ""} onClick={() => setStatusFilter(value)}>{label}</button>)}</div>
+      </div>
+      {!filteredRows.length ? <p className="admin-empty-line">Không có mục nào khớp bộ lọc.</p> : <div className="admin-table-wrap"><table className="admin-data-table">
+        <thead><tr><th scope="col">Tên</th><th scope="col">{listKind === "courses" ? "Chặng" : listKind === "units" ? "Khóa học" : "Unit · kỹ năng"}</th><th scope="col">Trạng thái</th><th scope="col" className="is-actions">Thao tác</th></tr></thead>
+        <tbody>{filteredRows.map((item) => <tr key={item.id}>
+          <td><strong>{item.title}</strong><small>/{item.slug}</small></td>
+          <td className="is-muted">{parentName(item) ?? "—"}{"skill" in item ? ` · ${item.skill}` : ""}</td>
+          <td><StatusPill published={item.published} /></td>
+          <td className="is-actions"><div className="admin-row-actions">
+            <button type="button" className="button subtle" onClick={() => { const name = window.prompt("Tên mới", item.title)?.trim(); if (name) void change(listKind, item.id, { title: name }); }}>Đổi tên</button>
+            {listKind !== "units" && <Link prefetch={false} className="button subtle" href={`/admin/rights?kind=${listKind === "courses" ? "course" : "lesson"}&id=${item.id}`}>Hồ sơ quyền</Link>}
+            <button type="button" className="button subtle" onClick={() => void change(listKind, item.id, { published: !item.published })}>{item.published ? "Gỡ xuất bản" : "Xuất bản"}</button>
+            <button type="button" className="button subtle is-danger" onClick={() => void remove(listKind, item.id)}>Xóa</button>
+          </div></td>
+        </tr>)}</tbody>
+      </table></div>}
+    </section>
     </>}
-    {currentSkill && <>{bankSkill && <nav className="admin-skill-switch" aria-label={`Quản lý ${bankSkill}`}><button type="button" className={skillView === "lessons" ? "active" : ""} onClick={() => setSkillView("lessons")}>Bài học {bankSkill}</button><button type="button" className={skillView === "bank" ? "active" : ""} onClick={() => setSkillView("bank")}>Kho đề {bankSkill}</button><span>Bài học trong lộ trình và đề luyện thi là hai kho riêng.</span></nav>}{skillView === "bank" && bankSkill ? <BankAdmin skillScope={bankSkill} /> : lessons.some((item) => item.skill === currentSkill) ? <LessonContentEditor key={currentSkill} lessons={lessons.filter((item) => item.skill === currentSkill)} onPublish={(lesson) => void change("lessons", lesson.id, { published: !lesson.published })} /> : <section className="card admin-list admin-empty"><Sticker name="book" size={64} tilt={-8} /><h2>Chưa có bài {currentSkill}</h2><p>Tạo một lesson và chọn kỹ năng {currentSkill} trong Lộ trình & bài học, sau đó quay lại đây để nhập dữ liệu.</p><Link className="button primary" href="/admin/curriculum">Tạo bài học →</Link></section>}</>}
-    {section === "listening" && <YoutubeLessonsAdmin />}
-    {(section === "dictation" || section === "listening/voa") && <VoaDictationAdmin />}
+    {(bankSkill && skillView !== "lessons" && skillView !== "youtube") && <BankAdmin skillScope={bankSkill} workspace={bankView} onWorkspaceChange={setSkillView} />}
+    {showLessons && (lessons.some((item) => item.skill === currentSkill) ? <LessonContentEditor key={currentSkill} lessons={lessons.filter((item) => item.skill === currentSkill)} onPublish={(lesson) => void change("lessons", lesson.id, { published: !lesson.published })} /> : <section className="card admin-card"><div className="admin-empty-state"><Sticker name="book" size={64} tilt={-8} /><div><h3>Chưa có bài {currentSkill}</h3><p>Tạo một bài học với kỹ năng {currentSkill} trong Lộ trình & bài học, rồi quay lại đây để nhập nội dung.</p></div><Link prefetch={false} className="button primary" href="/admin/curriculum">Tạo bài học</Link></div></section>)}
+    {section === "listening" && skillView === "youtube" && <YoutubeLessonsAdmin />}
+    {section === "dictation" && <VoaDictationAdmin />}
     {section === "vocabulary/library" && <VocabularyBank />}
     {section === "vocabulary/ielts-progress" && <VocabularyPhase5 />}
     {section === "vocabulary/translation" && <ViEnTranslationReview />}
     {section === "media" && <MediaLibrary />}
     {section === "rights" && <AdminRightsEvidence />}
-    {section === "ielts-bank" && <BankAdmin />}
+    {section === "ielts-bank" && <BankAdmin workspace={skillView === "lessons" || skillView === "youtube" ? "library" : skillView} onWorkspaceChange={setSkillView} />}
     {section === "ai-content-factory" && <AiContentFactory />}
     {section.startsWith("news") && <AdminNews section={section} />}
     </>}

@@ -5,6 +5,9 @@ import { createClient } from "@/lib/supabase/browser";
 import sourceTopics from "@/lib/vocabulary/ielts-topics.json";
 import learningTopics from "@/lib/vocabulary/ielts-learning-topics.json";
 import "./vi-en-translation-review.css";
+import { AdminCardHead, AdminNotice, AdminStat } from "./admin-ui";
+
+const statusLabels = { draft: "Bản nháp", approved: "Đã duyệt", published: "Đã xuất bản", rejected: "Từ chối" } as const;
 
 type Status = "draft" | "approved" | "published" | "rejected";
 type Item = {
@@ -94,7 +97,8 @@ export function ViEnTranslationReview() {
   }
 
   return <section className="translation-admin">
-    <div className="translation-admin-intro"><h2>Luyện dịch câu Việt → Anh</h2><p>6.650 mục theo 40 chủ đề, mỗi mục có câu Speaking và Writing. Chỉ câu đã duyệt rồi xuất bản mới hiện cho học viên.</p><div>{["draft", "approved", "published", "rejected"].map((key) => <span key={key}><b>{counts[key]?.toLocaleString("vi-VN") ?? "…"}</b> {key}</span>)}</div></div>
+    <div className="admin-stats-row">{(["draft", "approved", "published", "rejected"] as const).map((key) => <AdminStat key={key} tone={key === "published" ? "teal" : key === "approved" ? "sky" : key === "rejected" ? "coral" : "amber"} label={statusLabels[key]} value={counts[key]?.toLocaleString("vi-VN") ?? "…"} />)}</div>
+    <section className="card admin-card"><AdminCardHead title="Câu luyện dịch Việt → Anh" count={total.toLocaleString("vi-VN")} description="6.650 mục theo 40 chủ đề, mỗi mục có câu Speaking và Writing. Chỉ câu đã duyệt rồi xuất bản mới hiện cho học viên." />
     <div className="translation-admin-filters">
       <label>Trạng thái<select value={status} onChange={(event) => { setStatus(event.target.value); setPage(0); }}><option value="all">Tất cả</option><option value="draft">Nháp</option><option value="approved">Đã duyệt</option><option value="published">Đã xuất bản</option><option value="rejected">Từ chối</option></select></label>
       <label>Chủ đề<select value={topic} onChange={(event) => { setTopic(event.target.value); setPage(0); }}><option value="all">Tất cả</option>{topics.map((item) => <option key={item}>{item}</option>)}</select></label>
@@ -105,13 +109,12 @@ export function ViEnTranslationReview() {
       <label>Tìm từ<input value={query} onChange={(event) => { setQuery(event.target.value); setPage(0); }} placeholder="Từ / cụm từ…" /></label>
       <label className="translation-admin-check"><input type="checkbox" checked={missing} onChange={(event) => { setMissing(event.target.checked); setPage(0); }} /> Thiếu nghĩa</label>
     </div>
-    {error && <p role="alert" className="translation-error">{error}</p>}{notice && <p role="status" className="translation-notice">{notice}</p>}
-    <p className="translation-admin-total">{total.toLocaleString("vi-VN")} câu phù hợp · trang {page + 1}/{Math.max(1, Math.ceil(total / pageSize))}</p>
-    <div className="translation-admin-list">{items.map((item) => <button key={item.id} type="button" onClick={() => edit(item)}><strong>{item.term}</strong><span>{item.mode} · {item.topic}</span><small>{item.prompt_vi}</small><em>{item.meaning_vi ? item.status : "Thiếu nghĩa"}</em></button>)}</div>
-    <div className="translation-admin-pages"><button disabled={page === 0} onClick={() => setPage(page - 1)}>← Trước</button><button disabled={(page + 1) * pageSize >= total} onClick={() => setPage(page + 1)}>Sau →</button></div>
+    {error && <AdminNotice tone="error">{error}</AdminNotice>}{notice && <AdminNotice tone="success">{notice}</AdminNotice>}
+    <div className="translation-admin-list">{items.map((item) => <button key={item.id} type="button" onClick={() => edit(item)}><strong>{item.term}</strong><span>{item.mode} · {item.topic}</span><small>{item.prompt_vi}</small><em className={item.meaning_vi ? `is-${item.status}` : "is-missing"}>{item.meaning_vi ? statusLabels[item.status as keyof typeof statusLabels] ?? item.status : "Thiếu nghĩa"}</em></button>)}</div>
+    <div className="admin-pager"><span>{total.toLocaleString("vi-VN")} câu phù hợp · trang {page + 1}/{Math.max(1, Math.ceil(total / pageSize))}</span><div><button type="button" className="button subtle" disabled={page === 0} onClick={() => setPage(page - 1)}>← Trước</button><button type="button" className="button subtle" disabled={(page + 1) * pageSize >= total} onClick={() => setPage(page + 1)}>Sau →</button></div></div></section>
     {selected && <div className="translation-admin-overlay" role="presentation" onMouseDown={(event) => { if (event.target === event.currentTarget) setSelected(null); }}><div className="translation-admin-editor" role="dialog" aria-modal="true" aria-label={`Biên tập câu ${selected.term}`}>
       <div className="translation-admin-editor-head"><div><span>{selected.topic} · {selected.mode} · phiên bản {selected.revision}</span><h3>{selected.term}</h3><small>{selected.source_ref} · {selected.canonical_source_key ? "Đã gắn từ gốc" : "Chưa gắn từ gốc"}</small></div><button type="button" onClick={() => setSelected(null)} aria-label="Đóng">×</button></div>
-      <div className="translation-admin-flags"><span>Trạng thái: {selected.status}</span><span>QA: {selected.metadata.qa_status || "chưa có"}</span><span>Tái sử dụng: {selected.metadata.context_reuse_tier || "?"}%</span><span>Ứng dụng từ: {selected.metadata.target_term_usage || "chưa rõ"}</span><span>Cờ biên tập: {selected.metadata.editorial_flag || "không"}</span></div>
+      <div className="translation-admin-flags"><span>Trạng thái: {statusLabels[selected.status as keyof typeof statusLabels] ?? selected.status}</span><span>QA: {selected.metadata.qa_status || "chưa có"}</span><span>Tái sử dụng: {selected.metadata.context_reuse_tier || "?"}%</span><span>Ứng dụng từ: {selected.metadata.target_term_usage || "chưa rõ"}</span><span>Cờ biên tập: {selected.metadata.editorial_flag || "không"}</span></div>
       <label>Nghĩa tiếng Việt<input value={selected.meaning_vi} onChange={(event) => field("meaning_vi", event.target.value)} /></label>
       <label>Câu gợi ý tiếng Việt<textarea rows={3} value={selected.prompt_vi} onChange={(event) => field("prompt_vi", event.target.value)} /></label>
       <label>Câu mẫu tiếng Anh<textarea rows={3} value={selected.reference_en} onChange={(event) => field("reference_en", event.target.value)} /></label>

@@ -7,9 +7,11 @@ import { BankAdminPreview } from "./bank-admin-preview";
 import { WritingGradingAdmin } from "./bank-writing-admin";
 import "./bank-admin.css";
 import { LoadingBlock } from "@/components/layout/loading-block";
+import { AdminHeaderActions } from "@/features/admin/admin-ui";
 
 type Skill = "Reading" | "Listening" | "Writing" | "Speaking";
-type Workspace = "library" | "import" | "sources" | "activity" | "grading";
+export type BankWorkspace = "library" | "import" | "sources" | "activity" | "grading";
+type Workspace = BankWorkspace;
 type DetailTab = "preview" | "content" | "metadata";
 type Version = { id: string; content: ExamContent; warnings: string[]; revision: number; upstream_version: string; created_at: string } | null;
 type Exam = { id: string; title: string; skill: Skill; status: string; mode: string; format: string; practice_type: string; topic: string | null; difficulty: string | null; duration_minutes: number; source_id: string; attribution: string; license: string; license_url: string; source_url: string; ai_generated: boolean; updated_at: string; current_version_id: string | null; published_version_id: string | null; ielts_exam_versions?: { warnings: string[]; revision: number } | null };
@@ -30,8 +32,8 @@ const statusTabs = [{ value: "", label: "Tất cả đề" }, { value: "public",
 const metaFrom = (exam: Exam): Meta => ({ title: exam.title, topic: exam.topic ?? "", difficulty: exam.difficulty ?? "", format: exam.format, mode: exam.mode, durationMinutes: exam.duration_minutes, attribution: exam.attribution, license: exam.license, licenseUrl: exam.license_url, sourceUrl: exam.source_url });
 const failure = (error: unknown) => error instanceof Error ? error.message : String(error);
 
-export function BankAdmin({ skillScope }: { skillScope?: Skill } = {}) {
-  const [workspace, setWorkspace] = useState<Workspace>("library");
+/** The admin page owns the workspace tabs (shared tab bar); this component renders the chosen workspace. */
+export function BankAdmin({ skillScope, workspace, onWorkspaceChange: setWorkspace }: { skillScope?: Skill; workspace: Workspace; onWorkspaceChange: (workspace: Workspace) => void }) {
   const [skill, setSkill] = useState<Skill | "">(skillScope ?? "");
   const [status, setStatus] = useState("");
   const [source, setSource] = useState("");
@@ -249,10 +251,7 @@ export function BankAdmin({ skillScope }: { skillScope?: Skill } = {}) {
   const allVisibleSelected = visiblePublishedIds.length > 0 && visiblePublishedIds.every((id) => selectedIds.includes(id));
 
   return <div className="ba-root">
-    <div className="ba-topline"><div><span className="ba-eyebrow">QUẢN LÝ KHO ĐỀ</span><p>Kiểm tra đề thực tế, đáp án và trạng thái trước khi học viên nhìn thấy.</p></div><button type="button" className="ba-refresh" onClick={() => void load()}><RefreshCw size={16} /> Làm mới</button></div>
-    <nav className="ba-workspaces" aria-label="Khu quản lý ngân hàng IELTS">
-      {([ ["library", "Kho đề"], ["import", "Nhập đề"], ["sources", "Nguồn & đồng bộ"], ["activity", "Hoạt động"], ["grading", "Chấm Writing"] ] as const).map(([id, label]) => <button type="button" key={id} className={workspace === id ? "active" : ""} aria-current={workspace === id ? "page" : undefined} onClick={() => setWorkspace(id)}>{label}</button>)}
-    </nav>
+    <AdminHeaderActions><button type="button" className="button subtle" onClick={() => void load()}><RefreshCw size={16} /> Làm mới</button>{workspace === "library" && <button type="button" className="button primary" onClick={() => setWorkspace("import")}><Plus size={16} /> Nhập đề</button>}</AdminHeaderActions>
     {error && <p className="ba-message is-error" role="alert">{error}</p>}
     {notice && <p className="ba-message" role="status"><Check size={16} />{notice}</p>}
     {!loading && !schemaReady && <p className="ba-message is-pending" role="status"><AlertTriangle size={17} /> Chức năng xóa đề và đồng bộ theo kỹ năng đang chờ cập nhật database. Xem, sửa và xuất bản đề vẫn hoạt động.</p>}
@@ -260,7 +259,7 @@ export function BankAdmin({ skillScope }: { skillScope?: Skill } = {}) {
     {workspace === "library" && <>
       {!skillScope && <div className="ba-skill-grid"><button type="button" className={`ba-skill-card all ${skill === "" ? "active" : ""}`} onClick={() => { setSkill(""); setPage(0); setSelectedIds([]); }}><span>TẤT CẢ</span><strong>{Object.values(counts).reduce((sum, value) => sum + value, 0)}</strong><small>đề trong kho</small></button>{skills.map(({ id, icon: Icon, color }) => <button type="button" key={id} className={`ba-skill-card ${color} ${skill === id ? "active" : ""}`} onClick={() => { setSkill(id); setPage(0); setSelectedIds([]); }}><Icon size={21} /><span>{id}</span><strong>{counts[id] ?? 0}</strong><small>đề trong kho</small></button>)}</div>}
       <section className="ba-list-card">
-        <div className="ba-list-head"><div><span className="ba-eyebrow">KHO ĐỀ LUYỆN THI</span><h2>{skill ? `Đề ${skill}` : "Tất cả đề IELTS"} <small>{total}</small></h2><p>Chọn “Xem bài thi” để làm thử và xem đáp án. Các nút bên phải dùng để duyệt, xuất bản hoặc sửa đề.</p></div><button type="button" className="ba-add" onClick={() => setWorkspace("import")}><Plus size={16} /> Nhập đề đã duyệt</button></div>
+        <div className="admin-card-head"><div><h2>{skill ? `Đề ${skill}` : "Tất cả đề IELTS"}<span className="admin-count">{total}</span></h2><p>Chọn “Xem bài thi” để làm thử và xem đáp án; các nút bên phải dùng để duyệt, xuất bản hoặc sửa đề.</p></div></div>
         <nav className="ba-status-tabs" aria-label="Lọc đề theo trạng thái">{statusTabs.map((tab) => <button key={tab.value} type="button" className={status === tab.value ? "active" : ""} aria-current={status === tab.value ? "page" : undefined} onClick={() => { setStatus(tab.value); setPage(0); setSelectedIds([]); }}>{tab.label}</button>)}</nav>
         <div className="ba-filters"><label className="ba-search"><Search size={17} /><input value={search} onChange={(event) => { setSearch(event.target.value); setPage(0); setSelectedIds([]); }} placeholder="Tìm theo tên đề" aria-label="Tìm theo tên đề" /></label><label className="ba-filter-field">Nguồn đề<select value={source} onChange={(event) => { setSource(event.target.value); setPage(0); setSelectedIds([]); }}><option value="">Tất cả nguồn</option>{sources.map((item) => <option value={item.id} key={item.id}>{item.name}</option>)}</select></label><label className="ba-filter-field">Trạng thái khác<select aria-label="Trạng thái khác" value={statusTabs.some((tab) => tab.value === status) ? "" : status} onChange={(event) => { setStatus(event.target.value); setPage(0); setSelectedIds([]); }}><option value="">Chọn trạng thái</option><option value="rejected">Từ chối</option><option value="archived">Lưu trữ</option></select></label></div>
         <div className="ba-bulk-bar">

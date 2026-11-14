@@ -17,6 +17,7 @@ import "@/styles/auth.css";
 import "@/styles/public-responsive.css";
 import "@/styles/content-lab.css";
 import "@/styles/admin.css";
+import "@/styles/admin-kit.css";
 import "@/styles/learn.css";
 import "@/styles/course-studio.css";
 import "@/styles/layout-overrides.css";
