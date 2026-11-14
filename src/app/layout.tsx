@@ -31,6 +31,7 @@ import "./companion.css";
 import { Be_Vietnam_Pro, Bricolage_Grotesque, Patrick_Hand } from "next/font/google";
 import { StickerDefs } from "@/components/stickers/stickers";
 import { InteractionLayer } from "@/components/fx/interaction-layer";
+import { SiteTracker } from "@/components/site-tracker";
 import { cn } from "@/lib/utils";
 
 const body = Be_Vietnam_Pro({
@@ -67,6 +68,7 @@ export default function RootLayout({
       <body>
         <StickerDefs />
         <InteractionLayer />
+        <SiteTracker />
         {children}
       </body>
     </html>
