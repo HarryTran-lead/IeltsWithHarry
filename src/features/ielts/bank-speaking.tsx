@@ -1,11 +1,14 @@
 "use client";
 import { useCallback, useEffect, useEffectEvent, useMemo, useRef, useState } from "react";
-import { ArrowLeft, BookOpenText, Captions, CaptionsOff, Check, Lightbulb, Mic, RotateCcw, Square, Timer, Volume2, VolumeX } from "lucide-react";
+import { BookOpenText, Captions, CaptionsOff, Check, Lightbulb, Mic, RotateCcw, Square, Timer, Volume2, VolumeX } from "lucide-react";
 import type { ExamContent } from "@/lib/ielts-bank/schema";
 import type { BankExam } from "./bank-exam";
-import { Lookup } from "./bank-writing";
+import { SpeakingLookup } from "./speaking-lookup";
 import { HarryExaminer, useHarryVoice } from "./harry-examiner";
-import { clock, hintSteps, speakingItems, useMic, type SpeakingItem, type Take } from "./speaking-kit";
+import { SpeakingPicker } from "./speaking-picker";
+import { clock, speakingItems, useMic, type SpeakingItem, type Take } from "./speaking-kit";
+import { SpeakingBuilder } from "./speaking-builder-panel";
+import { speakingFacets } from "./bank-writing-library";
 import "./bank-speaking.css";
 
 const readyLine = "All right? Remember, you have one to two minutes for this. Can you start speaking now, please?";
@@ -26,19 +29,29 @@ export function CueCard({ item }: { item: SpeakingItem }) {
  * side panel walks through an answer step by step or looks up a word. Part 2
  * adds a cue card with a timed minute of preparation or free notes.
  */
-export function SpeakingStudio({ exam, content, answers, setAnswer, notes, setNotes, onFinish }: { exam: BankExam; content: ExamContent; answers: Record<string, string>; setAnswer: (id: string, value: string) => void; notes: Record<string, string>; setNotes: (notes: Record<string, string>) => void; onFinish: () => void }) {
+export function SpeakingStudio({ exam, content, answers, setAnswer, notes, setNotes, onFinish, focusId }: { exam: BankExam; content: ExamContent; answers: Record<string, string>; setAnswer: (id: string, value: string) => void; notes: Record<string, string>; setNotes: (notes: Record<string, string>) => void; onFinish: () => void; focusId?: string | null }) {
   const items = useMemo(() => speakingItems(content, exam.practice_type), [content, exam.practice_type]);
+  const focusIndex = Math.max(0, items.findIndex((entry) => entry.id === focusId));
   const voice = useHarryVoice();
   const mic = useMic();
-  const [index, setIndex] = useState(0);
+  const [index, setIndex] = useState(focusIndex);
   const [takes, setTakes] = useState<Record<string, Take>>({});
   const [subtitles, setSubtitles] = useState(true);
   const [panel, setPanel] = useState<"start" | "hints" | "lookup">("start");
-  const [step, setStep] = useState(0);
   const [prepMode, setPrepMode] = useState<"timed" | "free">("timed");
   const [prepLeft, setPrepLeft] = useState<number | null>(null);
   const item = items[index] ?? items[0];
-  const steps = useMemo(() => item ? hintSteps(item) : [], [item]);
+  const notesRef = useRef(notes);
+  useEffect(() => { notesRef.current = notes; }, [notes]);
+  // Picking another question of this set (from the card or the picker) moves the room there.
+  const lastFocus = useRef(focusIndex);
+  useEffect(() => {
+    if (focusIndex === lastFocus.current) return;
+    lastFocus.current = focusIndex;
+    setIndex(focusIndex); setPanel("start"); setPrepLeft(null);
+  }, [focusIndex]);
+  // The builder's ideas follow the set's theme, read the same way as the shelf's topic chips.
+  const topic = useMemo(() => speakingFacets({ title: exam.title, topic: exam.topic, question_preview: items.slice(0, 3).map((entry) => entry.text) }).topic, [exam.title, exam.topic, items]);
   const limit = item ? limitFor(item) : 60;
 
   const { speak, stop: hush } = voice;
@@ -50,16 +63,19 @@ export function SpeakingStudio({ exam, content, answers, setAnswer, notes, setNo
     if (!take || !item) return;
     setTakes((current) => { if (current[item.id]) releaseTake(current[item.id].url); return { ...current, [item.id]: take }; });
     if (take.transcript) setAnswer(item.id, take.transcript);
-  }, [item, stopMic, setAnswer, releaseTake]);
+    // Without a transcript the answer stays empty, so remember that this question was spoken for the x/N on the shelf.
+    const said = new Set((notesRef.current.__spoken ?? "").split(",").filter(Boolean));
+    if (!said.has(item.id)) setNotes({ ...notesRef.current, __spoken: [...said, item.id].join(",") });
+  }, [item, stopMic, setAnswer, releaseTake, setNotes]);
   const goTo = (next: number) => {
     if (mic.recording) void finishTake();
-    setIndex(next); setPanel("start"); setStep(0); setPrepLeft(null);
+    setIndex(next); setPanel("start"); setPrepLeft(null);
     void voice.speak(askLine(items[next]));
   };
 
   // Harry asks the first question as soon as the studio opens (the start click allows audio).
   const asked = useRef(false);
-  useEffect(() => { if (asked.current || !items[0]) return; asked.current = true; void speak(askLine(items[0])); }, [items, speak]);
+  useEffect(() => { if (asked.current || !items[focusIndex]) return; asked.current = true; void speak(askLine(items[focusIndex])); }, [items, focusIndex, speak]);
   // A recording stops by itself at the time limit.
   const atLimit = useEffectEvent(() => { void finishTake(); });
   useEffect(() => { if (!mic.recording || mic.paused) return; const timer = window.setTimeout(atLimit, Math.max(0, limit - mic.seconds) * 1000); return () => window.clearTimeout(timer); }, [mic.recording, mic.paused, mic.seconds, limit]);
@@ -79,11 +95,12 @@ export function SpeakingStudio({ exam, content, answers, setAnswer, notes, setNo
   const mood = voice.speaking ? "speaking" : mic.recording ? "listening" : prepLeft !== null ? "thinking" : "idle";
   const done = (entry: SpeakingItem) => Boolean(answers[entry.id] || takes[entry.id]);
   const partOf = (entry: SpeakingItem) => entry.kind === "cue" ? "Part 2" : `Part ${entry.part}`;
-  const appendNote = (text: string) => setNotes({ ...notes, [item.id]: `${notes[item.id] ? `${notes[item.id].trimEnd()} ` : ""}${text}` });
+  const appendNote = (text: string) => setNotes({ ...notesRef.current, [item.id]: `${notesRef.current[item.id] ? `${notesRef.current[item.id].trimEnd()} ` : ""}${text}` });
 
   return <div className="bs-studio">
     <section className="bs-main" aria-label="Phòng nói với Harry">
       <div className="bs-top">
+        <SpeakingPicker examId={exam.id} examTitle={exam.title} practiceType={exam.practice_type} currentId={item.id} spokenHere={new Set([...items.filter(done).map((entry) => entry.id), ...(notes.__spoken ?? "").split(",").filter(Boolean)])} />
         {items.length > 1 ? <nav className="bs-pills" aria-label="Chọn câu hỏi">{items.map((entry, i) => <button key={entry.id} type="button" aria-current={i === index ? "step" : undefined} className={done(entry) ? "is-done" : ""} onClick={() => goTo(i)} title={`${partOf(entry)} · ${entry.text}`}>{entry.kind === "cue" ? "Cue" : i + 1}{done(entry) && <Check size={11} />}</button>)}</nav> : <span className="bs-part-chip">{partOf(item)}</span>}
         <div className="bs-switches">
           <button type="button" aria-pressed={subtitles} onClick={() => setSubtitles(!subtitles)} title="Hiện chữ câu hỏi">{subtitles ? <Captions size={16} /> : <CaptionsOff size={16} />}<span>Phụ đề</span></button>
@@ -143,16 +160,11 @@ export function SpeakingStudio({ exam, content, answers, setAnswer, notes, setNo
         <button type="button" onClick={() => setPanel("lookup")}><BookOpenText size={17} /> Tra từ vựng</button>
         <small>Nếu bạn đã có idea nhưng cần từ vựng</small>
       </div> : <div className="bs-panel">
-        <button type="button" className="bs-back" onClick={() => setPanel("start")}><ArrowLeft size={15} /> Quay lại</button>
-        {panel === "lookup" ? <><h3>Tra từ vựng</h3><Lookup /></> : <>
-          <h3>Gợi ý từng bước <small>{Math.min(step + 1, steps.length)}/{steps.length}</small></h3>
-          <ol className="bs-hints">{steps.slice(0, step + 1).map((hint, i) => <li key={hint.title} className={i === step ? "is-current" : ""}>
-            <b>{hint.title}</b>
-            <button type="button" className="bs-probe" onClick={() => void voice.speak(hint.probe)}><Volume2 size={14} /> <span>Harry hỏi: “{hint.probe}”</span></button>
-            <div className="bs-starters">{hint.starters.map((starter) => <button key={starter} type="button" onClick={() => appendNote(starter)} title="Thêm vào ghi chú">{starter}</button>)}</div>
-          </li>)}</ol>
-          <div className="bs-hint-actions">{step < steps.length - 1 ? <><button type="button" className="bx-next" onClick={() => setStep(step + 1)}>Bước tiếp</button><button type="button" className="bx-ghost" onClick={() => setStep(steps.length - 1)}>Xem tất cả</button></> : <span>Giờ thử nói cả câu trả lời nhé!</span>}</div>
-        </>}
+        <div className="bs-tabs" role="tablist" aria-label="Công cụ hỗ trợ">
+          <button type="button" role="tab" aria-selected={panel === "hints"} onClick={() => setPanel("hints")}><Lightbulb size={15} /> Gợi ý từng bước</button>
+          <button type="button" role="tab" aria-selected={panel === "lookup"} onClick={() => setPanel("lookup")}><BookOpenText size={15} /> Tra từ vựng</button>
+        </div>
+        {panel === "lookup" ? <SpeakingLookup onUse={appendNote} /> : <SpeakingBuilder key={item.id} item={item} topic={topic} saved={notes[`__build_${item.id}`]} onSave={(value) => setNotes({ ...notesRef.current, [`__build_${item.id}`]: value })} onSpeak={(text) => void voice.speak(text)} onCopy={appendNote} />}
       </div>}
       <label className="bs-notes"><span>Ghi chú của bạn</span><textarea rows={4} value={notes[item.id] || ""} onChange={(event) => setNotes({ ...notes, [item.id]: event.target.value })} placeholder="Bấm vào mẫu câu ở gợi ý để thêm vào đây, hoặc tự ghi ý…" /></label>
       <p className="bs-privacy">Bản ghi âm chỉ nằm trong trình duyệt của bạn; phần chữ và ghi chú được lưu cùng bài làm.</p>

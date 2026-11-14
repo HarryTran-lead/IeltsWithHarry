@@ -59,8 +59,8 @@ const guide: Record<string, { title: string; points: string[] }[]> = {
 
 const countWords = countEnglishWords;
 
-export function Lookup() {
-  const [word, setWord] = useState(""), [busy, setBusy] = useState(false);
+export function Lookup({ initial = "" }: { initial?: string } = {}) {
+  const [word, setWord] = useState(initial), [busy, setBusy] = useState(false);
   const [result, setResult] = useState<{ word: string; ipa?: string; meanings?: { pos: string; definition: string; meaningVi: string; example: string }[]; error?: string } | null>(null);
   async function lookUp() {
     const query = word.trim().toLowerCase();
@@ -72,6 +72,9 @@ export function Lookup() {
       setResult(response.ok ? { word: query, ...data } : { word: query, error: data.error || "Chưa tra được từ này." });
     } catch { setResult({ word: query, error: "Chưa tra được từ này." }); } finally { setBusy(false); }
   }
+  // A word handed over from elsewhere (e.g. a Việt → Anh result) is looked up straight away.
+  const ran = useRef(false);
+  useEffect(() => { if (initial && !ran.current) { ran.current = true; void lookUp(); } });
   return <div className="bw-lookup">
     <form onSubmit={(event) => { event.preventDefault(); void lookUp(); }}><Search size={16} /><input value={word} onChange={(event) => setWord(event.target.value)} placeholder="Tra từ tiếng Anh…" aria-label="Từ cần tra" /><button type="submit" disabled={busy || !word.trim()}>{busy ? <Loader2 size={15} className="bw-spin" /> : "Tra"}</button></form>
     {result && <div className="bw-lookup-result">{result.error ? <p className="bw-muted">{result.error}</p> : <>

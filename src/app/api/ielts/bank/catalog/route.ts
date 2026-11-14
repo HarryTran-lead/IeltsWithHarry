@@ -53,6 +53,21 @@ export async function GET(request: Request) {
         if (!exam.visual && version.visual && typeof version.visual === "object" && !Array.isArray(version.visual)) exam.visual = version.visual as Record<string, unknown>;
       }
     }
+    if (skill === "Speaking") {
+      // A Speaking card lists every question so the learner can practise any one of them directly.
+      const versions = enriched.map((exam) => exam.published_version_id).filter((id): id is string => Boolean(id));
+      const questions = new Map<string, { id: string; prompt: string }[]>();
+      for (let index = 0; index < versions.length; index += 100) {
+        const { data, error } = await client.from("ielts_exam_versions").select("id,sections:content->sections").in("id", versions.slice(index, index + 100));
+        if (error) throw new Error(error.message);
+        for (const row of (data ?? []) as { id: string; sections: { questions?: { id?: string; prompt?: string }[] }[] | null }[]) {
+          questions.set(row.id, (row.sections ?? []).flatMap((section) => section.questions ?? [])
+            .filter((question): question is { id: string; prompt: string } => Boolean(question.id && question.prompt?.trim()))
+            .map((question) => ({ id: question.id, prompt: question.prompt.trim().slice(0, 300) })));
+        }
+      }
+      for (const exam of enriched) exam.questions = questions.get(exam.published_version_id ?? "");
+    }
     if (skill === "Reading" || skill === "Listening") {
       const versions = exams.filter((exam) => exam.practice_type === "full_test")
         .map((exam) => exam.published_version_id)

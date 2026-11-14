@@ -49,6 +49,8 @@ export type CatalogExam = {
   figure_url?: string | null;
   prompt_preview?: string | null;
   question_preview?: string[];
+  /** Speaking: every question of the set, so a card can open any one of them. */
+  questions?: { id: string; prompt: string }[];
   attempt_count?: number;
   /** Published full test sections, without passage text or answer keys. */
   sections?: { title: string; question_types: string[]; question_count: number }[];

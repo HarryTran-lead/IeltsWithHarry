@@ -8,12 +8,12 @@ import { TopicArt } from "@/components/illustrations/topic-art";
 import { catalogGroups, catalogSkills, balancedCatalog, catalogEntriesForSelection, catalogQuestionTypes, catalogQuestionTypeIds, type CatalogExam, type CatalogSkill } from "@/lib/ielts-bank/catalog";
 import { displayExamTitle } from "@/lib/ielts-bank/display-title";
 import type { MockCatalogEntry } from "@/lib/listening-mocks/mocks";
-import { gradedBand, visualKind, writingCardTitle, writingFacets, writingKind, writingKindOptions, writingKinds, writingSticker, writingTasks, writingTopicOptions } from "./bank-writing-library";
+import { gradedBand, speakingCardTitle, speakingFacets, speakingParts, speakingSticker, speakingTopicOptions, visualKind, writingCardTitle, writingFacets, writingKind, writingKindOptions, writingKinds, writingSticker, writingTasks, writingTopicOptions } from "./bank-writing-library";
 import "./bank-library.css";
 import { Sticker } from "@/components/stickers/stickers";
 import { TaskFigure } from "./writing-figure";
 
-export type Attempt = { id: string; exam_id: string; state: string; score: number | null; total: number | null; notes?: Record<string, string> | null };
+export type Attempt = { id: string; exam_id: string; state: string; score: number | null; total: number | null; notes?: Record<string, string> | null; answered?: string[] };
 
 export const librarySkills: Record<CatalogSkill, { icon: typeof BookOpen; href: string; tone: string }> = {
   Reading: { icon: BookOpen, href: "/app/reading", tone: "reading" },
@@ -76,8 +76,6 @@ export function artTopic(exam: CatalogExam) {
   return `${(exam.topic ?? "").replace(/^topic_/, "").replace(/_/g, " ")} ${exam.title}`;
 }
 
-const sentence = (text: string) => text.charAt(0).toLocaleUpperCase() + text.slice(1);
-
 export function sourceLabel(exam: CatalogExam) {
   return exam.attribution.split(/[·,(]/)[0].trim() || exam.source_id || "Nguồn khác";
 }
@@ -89,7 +87,7 @@ async function loadLibrary(skill: CatalogSkill) {
       if (!response.ok) throw new Error(data.error || "Chưa tải được ngân hàng đề.");
       return (data.exams || []) as CatalogExam[];
     }),
-    fetch("/api/ielts/bank/attempt").then(async (response) => response.ok ? ((await response.json()).attempts || []) as Attempt[] : []).catch(() => [] as Attempt[]),
+    fetch(`/api/ielts/bank/attempt${skill === "Speaking" ? "?skill=Speaking" : ""}`).then(async (response) => response.ok ? ((await response.json()).attempts || []) as Attempt[] : []).catch(() => [] as Attempt[]),
   ]);
   return { catalog, attempts };
 }
@@ -114,6 +112,7 @@ export type LibraryViewProps = { skill: CatalogSkill; exams: CatalogExam[]; atte
 
 export function BankLibraryView(props: LibraryViewProps) {
   if (props.skill === "Writing") return <WritingLibraryView {...props} />;
+  if (props.skill === "Speaking") return <SpeakingLibraryView {...props} />;
   return props.skill === "Reading" || props.skill === "Listening"
     ? <SectionedLibrary {...props} skill={props.skill} />
     : <LegacyBankLibraryView {...props} />;
@@ -208,10 +207,11 @@ const libraryStatuses: { id: LibraryStatus; label: string }[] = [
   { id: "all", label: "Tất cả" }, { id: "todo", label: "Chưa làm" }, { id: "progress", label: "Đang làm" }, { id: "done", label: "Đã làm" },
 ];
 
-/** The skill's own word list, offered beside the shelf it belongs to. */
-const vocabularyLinks: Partial<Record<CatalogSkill, { href: string; label: string; title: string }>> = {
-  Reading: { href: "/app/reading/vocabulary", label: "607 từ vựng", title: "Học 607 từ IELTS Reading" },
-  Listening: { href: "/app/listening/vocabulary", label: "1.200 từ vựng", title: "Học 1.200 từ IELTS Listening" },
+/** The skill's own companion page (its word list, or the Speaking mock test), offered beside the shelf. */
+const headLinks: Partial<Record<CatalogSkill, { href: string; label: string; title: string; icon: typeof BookOpen }>> = {
+  Reading: { href: "/app/reading/vocabulary", label: "607 từ vựng", title: "Học 607 từ IELTS Reading", icon: Languages },
+  Listening: { href: "/app/listening/vocabulary", label: "1.200 từ vựng", title: "Học 1.200 từ IELTS Listening", icon: Languages },
+  Speaking: { href: "/app/speaking/mock", label: "Thi thử với Harry", title: "Thi thử Speaking Part 1 → 2 → 3 với giám khảo Harry", icon: Mic },
 };
 
 /**
@@ -224,7 +224,7 @@ function LibraryHead({ skill, heading, count, busy, status, statusCounts, onStat
   query: string; onQuery: (query: string) => void; placeholder: string; children?: ReactNode;
 }) {
   const Icon = librarySkills[skill].icon;
-  const vocabulary = vocabularyLinks[skill];
+  const extra = headLinks[skill];
   return <div className="bl-head">
     <div className="bl-head-top">
       <div className="bl-head-title">
@@ -233,7 +233,7 @@ function LibraryHead({ skill, heading, count, busy, status, statusCounts, onStat
       </div>
       <div className="bl-status-tabs" role="group" aria-label="Trạng thái bài luyện">{libraryStatuses.map((item) => <button type="button" key={item.id} aria-pressed={status === item.id} onClick={() => onStatus(item.id)}>{item.label}{!busy && <b>{statusCounts[item.id]}</b>}</button>)}</div>
       <label className="bl-search"><Search size={16} /><input type="search" value={query} onChange={(event) => onQuery(event.target.value)} placeholder={placeholder} aria-label={`Tìm đề ${skill}`} /></label>
-      {vocabulary && <Link className="bl-head-vocab" href={vocabulary.href} title={vocabulary.title}><Languages size={15} /> {vocabulary.label} <ArrowRight size={14} /></Link>}
+      {extra && <Link className="bl-head-vocab" href={extra.href} title={extra.title}><extra.icon size={15} /> {extra.label} <ArrowRight size={14} /></Link>}
     </div>
     {children}
   </div>;
@@ -441,6 +441,118 @@ function WritingShelfCard({ exam, facets, attempt }: { exam: CatalogExam; facets
   return done ? <div className="bl-card-slot is-writing">{card}<Link className="bl-retry" href={retryHref} aria-label={`Viết lại ${exam.title}`}><RotateCcw size={13} /> Viết lại</Link></div> : card;
 }
 
+/**
+ * Speaking on the same shelf as Reading and Writing: the sidebar picks the part,
+ * the head holds status tabs and search, one chip row filters by topic, and each
+ * card pairs a topic sticker with the first questions.
+ */
+function SpeakingLibraryView({ exams, attempts, loading, error }: LibraryViewProps) {
+  const params = useSearchParams();
+  const router = useRouter();
+  const pathname = usePathname();
+  const part = speakingParts.find((item) => item.id === params.get("type"));
+  const [query, setQuery] = useState("");
+  const [page, setPage] = useState(0);
+  const [status, setStatus] = useState<LibraryStatus>("all");
+  const latest = new Map<string, Attempt>();
+  for (const attempt of attempts) if (!latest.has(attempt.exam_id)) latest.set(attempt.exam_id, attempt);
+  // Every question answered in any attempt of a set counts towards its x/N, like a workbook ticked off over several sittings.
+  const spoken = new Map<string, Set<string>>();
+  for (const attempt of attempts) {
+    const ids = spoken.get(attempt.exam_id) ?? new Set<string>();
+    for (const id of [...(attempt.answered ?? []), ...(attempt.notes?.__spoken ?? "").split(",")]) if (id) ids.add(id);
+    spoken.set(attempt.exam_id, ids);
+  }
+  const items = exams
+    .filter((exam) => part ? exam.practice_type === part.id : speakingParts.some((item) => item.id === exam.practice_type))
+    .map((exam) => ({ exam, facets: speakingFacets(exam) }));
+  const topicCounts = new Map<string, number>();
+  for (const { facets } of items) topicCounts.set(facets.topic, (topicCounts.get(facets.topic) ?? 0) + 1);
+  const selectedTopic = topicCounts.has(params.get("topic") ?? "") ? params.get("topic")! : "";
+  const statusOf = (attempt?: Attempt): Exclude<LibraryStatus, "all"> => !attempt ? "todo" : attempt.state === "in_progress" ? "progress" : "done";
+  const needle = query.trim().toLocaleLowerCase();
+  const matches = items.filter(({ exam, facets }) => (!selectedTopic || facets.topic === selectedTopic)
+    && (!needle || `${exam.title} ${exam.topic ?? ""} ${exam.prompt_preview ?? ""} ${(exam.question_preview ?? []).join(" ")}`.toLocaleLowerCase().includes(needle)));
+  const statusCounts = { all: matches.length, todo: 0, progress: 0, done: 0 };
+  for (const { exam } of matches) statusCounts[statusOf(latest.get(exam.id))]++;
+  const filtered = matches.filter(({ exam }) => status === "all" || statusOf(latest.get(exam.id)) === status);
+  // With every part on one shelf, interleave them so Part 2 and 3 are not buried under the many Part 1 sets.
+  const facetsOf = new Map(filtered.map((item) => [item.exam, item.facets]));
+  const ordered = part ? filtered : balancedCatalog(filtered.map(({ exam }) => exam), speakingParts.map((item) => item.id)).map((exam) => ({ exam, facets: facetsOf.get(exam)! }));
+  const pageSize = 12;
+  const pageCount = Math.max(1, Math.ceil(ordered.length / pageSize));
+  const currentPage = Math.min(page, pageCount - 1);
+  const visible = ordered.slice(currentPage * pageSize, (currentPage + 1) * pageSize);
+  const topicOptions = speakingTopicOptions.filter((item) => topicCounts.has(item.id));
+  const chooseTopic = (value: string) => {
+    const search = new URLSearchParams(params.toString());
+    if (value && value !== search.get("topic")) search.set("topic", value); else search.delete("topic");
+    setPage(0);
+    router.replace(`${pathname}${search.size ? `?${search}` : ""}`, { scroll: false });
+  };
+  const filtersOn = Boolean(selectedTopic || needle || status !== "all");
+
+  return <section id="ngan-hang-de" className="bl-library bl-sectioned bl-tone-speaking" aria-label="Ngân hàng đề Speaking">
+    <div className="bl-results">
+      <LibraryHead skill="Speaking" heading={part?.label ?? "Bài lẻ"} count={ordered.length} busy={loading} status={status} statusCounts={statusCounts}
+        onStatus={(next) => { setStatus(next); setPage(0); }} query={query} onQuery={(next) => { setQuery(next); setPage(0); }} placeholder="Tìm chủ đề hoặc câu hỏi…">
+        {topicOptions.length > 1 && <div className="bl-kind-row" role="group" aria-label="Lọc theo chủ đề"><span className="bl-kind-label"><Filter size={13} /> Chủ đề</span>
+          <button type="button" aria-pressed={!selectedTopic} onClick={() => chooseTopic("")}>Tất cả</button>
+          {topicOptions.map((item) => <button type="button" key={item.id} aria-pressed={selectedTopic === item.id} onClick={() => chooseTopic(item.id)}>{item.label} <small>{topicCounts.get(item.id)}</small></button>)}
+          {filtersOn && <button type="button" className="bl-kind-clear" onClick={() => { setQuery(""); setStatus("all"); chooseTopic(""); }}><X size={13} /> Xóa lọc</button>}
+        </div>}
+      </LibraryHead>
+      {error && <p className="bl-state" role="alert">{error}</p>}
+      {loading && <div className="bl-grid wl-grid">{Array.from({ length: 6 }, (_, index) => <div key={index} className="bl-card bl-skeleton"><span /><i /><i /></div>)}</div>}
+      {!loading && !error && <div className="bl-grid wl-grid">{visible.map(({ exam, facets }) => <SpeakingShelfCard key={exam.id} exam={exam} facets={facets} attempt={latest.get(exam.id)} spoken={spoken.get(exam.id)} />)}</div>}
+      {!loading && !error && !visible.length && <p className="bl-state">{status === "done" ? "Bạn chưa nộp bài nói nào trong mục này." : status === "progress" ? "Không có bài nào đang làm dở." : "Chưa có đề phù hợp. Hãy thử chủ đề khác, đổi từ khóa hoặc chọn Part khác trong sidebar."}</p>}
+      {!loading && pageCount > 1 && <Pager page={currentPage} count={pageCount} onPage={(next) => { setPage(next); document.getElementById("ngan-hang-de")?.scrollIntoView({ behavior: "smooth", block: "start" }); }} />}
+    </div>
+  </section>;
+}
+
+/**
+ * A Speaking set in the Writing card's shape: a topic sticker on the left, the
+ * title, progress and questions beside it. Part 1 and Part 3 questions each open
+ * the practice room at that question, so a learner can work through a topic one
+ * question at a time and see x/N grow.
+ */
+function SpeakingShelfCard({ exam, facets, attempt, spoken }: { exam: CatalogExam; facets: ReturnType<typeof speakingFacets>; attempt?: Attempt; spoken?: Set<string> }) {
+  const [open, setOpen] = useState(false);
+  const examHref = `/app/question-bank/exam/${exam.id}`;
+  const part = speakingParts.find((item) => item.id === exam.practice_type) ?? speakingParts[0];
+  const sticker = speakingSticker(facets.topic);
+  const cue = part.id === "part2";
+  const questions = exam.questions?.length ? exam.questions : (exam.question_preview?.length ? exam.question_preview : exam.prompt_preview ? [exam.prompt_preview] : []).map((prompt) => ({ id: "", prompt }));
+  const total = cue ? 0 : questions.length;
+  const said = total ? questions.filter((question) => question.id && spoken?.has(question.id)).length : 0;
+  const next = questions.find((question) => question.id && !spoken?.has(question.id));
+  const questionHref = (id: string) => id ? `${examHref}?q=${encodeURIComponent(id)}` : examHref;
+  const href = attempt?.state === "in_progress" && !total ? `/app/question-bank/attempt/${attempt.id}` : !cue && next ? questionHref(next.id) : examHref;
+  const shown = open ? questions : questions.slice(0, 3);
+  return <article className={`bl-card wl-card sl-card ${said && said === total ? "is-complete" : ""}`}>
+    <Link href={href} className="wl-cover is-sticker" style={{ background: sticker.tone }} tabIndex={-1} aria-hidden="true">
+      <Sticker name={sticker.name} size={92} tilt={-6} pop={false} />
+      <b className="wl-kind">{part.badge}</b>
+    </Link>
+    <span className="wl-copy">
+      <span className="wl-meta"><span className="wl-task">{part.label}</span>{total ? <span className={`sl-progress ${said === total ? "is-done" : said ? "is-some" : ""}`} title="Số câu bạn đã nói">{said}/{total}</span> : <AttemptChip attempt={attempt} />}</span>
+      <Link href={href} className="wl-title">{speakingCardTitle(exam)}</Link>
+      <span className="wl-sub">{facets.topicLabel}</span>
+      {cue ? <ul className="sl-questions is-cue">{shown.map((question) => <li key={question.prompt}>{question.prompt}</li>)}</ul>
+        : questions.length > 0 ? <ol className={`sl-questions ${open ? "is-open" : ""}`}>{shown.map((question) => <li key={`${question.id}:${question.prompt}`} className={question.id && spoken?.has(question.id) ? "is-said" : ""}>
+          <Link href={questionHref(question.id)} title={`Luyện câu: ${question.prompt}`}>{question.prompt}</Link>
+        </li>)}</ol>
+        : <span className="wl-prompt">Mở đề để xem câu hỏi.</span>}
+      <span className="wl-foot">
+        <span><Clock3 size={13} /> {exam.duration_minutes} phút</span>
+        {questions.length > 3 && !cue ? <button type="button" className="sl-more" aria-expanded={open} onClick={() => setOpen(!open)}>{open ? "Thu gọn" : `Xem cả ${questions.length} câu`} <ChevronDown size={13} /></button> : <span className="bl-source">{sourceLabel(exam)}</span>}
+        <Link href={href} className="bl-cta is-shown">{said && said === total ? "Luyện lại" : said || attempt?.state === "in_progress" ? "Nói tiếp" : "Luyện nói"} <ArrowRight size={15} /></Link>
+      </span>
+    </span>
+  </article>;
+}
+
 function MockLibraryCard({ test, part, title, questionTypes }: { test: MockCatalogEntry; part: number; title: string; questionTypes: string[] }) {
   const section = test.parts.find((item) => item.number === part);
   const href = `/app/listening/mock/${test.test_id}${part ? `?part=${part}` : ""}`;
@@ -528,17 +640,7 @@ export function ExamCard({ exam, attempt, section }: { exam: CatalogExam; attemp
   // Writing has its own card: the task figure or a theme sticker, never a stock picture.
   if (exam.skill === "Writing") return <WritingShelfCard exam={exam} facets={writingFacets(exam)} attempt={attempt} />;
 
-  if (exam.skill === "Speaking") {
-    const previews = exam.question_preview?.length ? exam.question_preview : exam.prompt_preview ? [exam.prompt_preview] : [];
-    return <Link href={href} className="bl-card bl-card-speaking">
-      <span className="bl-mic"><Sticker name="mic" size={48} tilt={-6} pop={false} /><b>{partBadge(exam)}</b><small>{exam.duration_minutes} phút</small></span>
-      <span className="bl-speaking-copy">
-        <span className="bl-speaking-top"><strong className="bl-title">{sentence(exam.title.replace(/^Speaking Part \d:\s*/i, ""))}</strong><span className="bl-qcount">{exam.question_count ? `${exam.question_count} câu` : partBadge(exam)}</span></span>
-        <ul>{previews.slice(0, 3).map((question) => <li key={question}>{question}</li>)}</ul>
-        <span className="bl-foot"><AttemptChip attempt={attempt} />{cta}</span>
-      </span>
-    </Link>;
-  }
+  if (exam.skill === "Speaking") return <SpeakingShelfCard exam={exam} facets={speakingFacets(exam)} attempt={attempt} />;
 
   const types = section ? catalogQuestionTypeIds(section.questionTypes).map((id) => ({ id, label: catalogQuestionTypes.find((group) => group.id === id)?.label ?? "Other Types" })) : typeGroups(exam);
   const card = <Link href={href} className="bl-card bl-card-shelf">
