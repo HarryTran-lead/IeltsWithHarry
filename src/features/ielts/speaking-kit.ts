@@ -37,63 +37,6 @@ export function speakingItems(content: ExamContent, practiceType?: string): Spea
   return [{ id: first.question.id, part: 2, kind: "cue", text: first.question.prompt.trim(), bullets: rest.map(({ question }) => clean(question.prompt)) }];
 }
 
-export type HintStep = { title: string; probe: string; starters: string[] };
-
-const yesNo = /^(do|does|did|are|is|was|were|have|has|had|can|could|would|will|should|shall)\b/i;
-/** Step-by-step help for one question: what to say first, the follow-up Harry would ask, and sentence starters. */
-export function hintSteps(item: SpeakingItem): HintStep[] {
-  if (item.kind === "cue") {
-    const points = (item.bullets ?? []).map((bullet) => {
-      const text = bullet.replace(/^and\s+/i, "");
-      const word = text.split(/\s+/)[0]?.toLowerCase() ?? "";
-      const starters = word === "who" ? ["The person I'd like to talk about is…", "I've known them since…"]
-        : word === "when" ? ["It was back in…", "If I remember correctly, it happened…"]
-        : word === "where" ? ["It took place in…", "The place is located…"]
-        : word === "how" ? ["The way it happened was…", "I usually… by…"]
-        : word === "why" || word === "explain" ? ["The main reason it means so much to me is…", "Looking back, I think…"]
-        : ["As for what…, I'd say…", "One thing I remember clearly is…"];
-      return { title: `Ý: ${text}`, probe: `Tell me ${text.replace(/^explain\s+/i, "")}.`, starters };
-    });
-    return [
-      { title: "Mở bài: nói ngay bạn chọn gì", probe: item.text, starters: ["I'd like to talk about…", "The … that comes to mind is…"] },
-      ...points,
-      { title: "Kết bài: cảm nghĩ của bạn", probe: "How do you feel about it now?", starters: ["All in all, …", "That's why it will always stay with me."] },
-    ];
-  }
-  const q = item.text.trim();
-  const lower = q.toLowerCase();
-  if (item.part === 3) return [
-    { title: "Nêu quan điểm rõ ràng", probe: q, starters: ["I'd argue that…", "From my point of view, …", "It depends, but generally…"] },
-    { title: "Giải thích vì sao", probe: "Why do you think that is?", starters: ["This is mainly because…", "One reason is that…"] },
-    { title: "Ví dụ từ xã hội / Việt Nam", probe: "Can you give an example?", starters: ["Take Vietnam, for instance: …", "A good example is…"] },
-    { title: "Nhìn mặt còn lại", probe: "Are there any drawbacks?", starters: ["On the other hand, …", "That said, some people believe…"] },
-    { title: "Chốt ý", probe: "So what's your overall view?", starters: ["So overall, I'd say…", "In the long run, …"] },
-  ];
-  if (/^why\b/i.test(q)) return [
-    { title: "Lý do chính", probe: q, starters: ["The main reason is that…", "Mostly because…"] },
-    { title: "Lý do thứ hai", probe: "Is there any other reason?", starters: ["Another thing is…", "Also, …"] },
-    { title: "Ví dụ của bạn", probe: "Can you give me an example?", starters: ["For example, last week I…", "I remember when…"] },
-  ];
-  if (/^(how often|when|where|what time)\b/i.test(q)) return [
-    { title: "Trả lời trực tiếp", probe: q, starters: ["Quite often, actually — about…", "Usually in the…", "Mostly at…"] },
-    { title: "Thêm chi tiết: với ai, ở đâu", probe: "Who do you usually do that with?", starters: ["Normally I go with…", "It's usually just me and…"] },
-    { title: "Vì sao", probe: "Why is that?", starters: ["I guess it's because…", "It fits my schedule because…"] },
-    { title: "So với trước đây", probe: "Has that changed since you were younger?", starters: ["When I was a kid, I used to…", "These days, …"] },
-  ];
-  if (yesNo.test(lower)) return [
-    { title: "Trả lời thẳng: có / không", probe: q, starters: ["Yes, definitely.", "Not really, to be honest.", "It depends."] },
-    { title: "Nói lý do", probe: "Why is that?", starters: ["The main reason is that…", "I'd say it's because…"] },
-    { title: "Thêm ví dụ của bạn", probe: "Can you give me an example?", starters: ["For instance, …", "I remember when…"] },
-    { title: "Mở rộng ý", probe: "Do you think that will change in the future?", starters: ["That said, I might… in the future.", "So overall, …"] },
-  ];
-  return [
-    { title: "Trả lời trực tiếp", probe: q, starters: ["Well, I'd say…", "Actually, it's…", "The first thing that comes to mind is…"] },
-    { title: "Mô tả chi tiết", probe: "Can you tell me a bit more about it?", starters: ["What I like about it is…", "It's quite… and…"] },
-    { title: "Vì sao / cảm nghĩ", probe: "Why is that important to you?", starters: ["I think that's because…", "It makes me feel…"] },
-    { title: "Ví dụ của bạn", probe: "Can you give me an example?", starters: ["For example, …", "Just last month, …"] },
-  ];
-}
-
 type Recognition = { lang: string; continuous: boolean; interimResults: boolean; start: () => void; stop: () => void; onresult: ((event: { resultIndex: number; results: ArrayLike<{ isFinal: boolean; 0: { transcript: string } }> }) => void) | null; onend: (() => void) | null; onerror: (() => void) | null };
 type RecognitionCtor = new () => Recognition;
 const recognitionCtor = () => typeof window === "undefined" ? undefined : ((window as unknown as { SpeechRecognition?: RecognitionCtor; webkitSpeechRecognition?: RecognitionCtor }).SpeechRecognition ?? (window as unknown as { webkitSpeechRecognition?: RecognitionCtor }).webkitSpeechRecognition);

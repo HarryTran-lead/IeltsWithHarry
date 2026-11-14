@@ -1,12 +1,14 @@
 "use client";
 import { useCallback, useEffect, useEffectEvent, useMemo, useRef, useState } from "react";
-import { ArrowLeft, BookOpenText, Captions, CaptionsOff, Check, Lightbulb, Mic, RotateCcw, Square, Timer, Volume2, VolumeX } from "lucide-react";
+import { BookOpenText, Captions, CaptionsOff, Check, Lightbulb, Mic, RotateCcw, Square, Timer, Volume2, VolumeX } from "lucide-react";
 import type { ExamContent } from "@/lib/ielts-bank/schema";
 import type { BankExam } from "./bank-exam";
 import { Lookup } from "./bank-writing";
 import { HarryExaminer, useHarryVoice } from "./harry-examiner";
 import { SpeakingPicker } from "./speaking-picker";
-import { clock, hintSteps, speakingItems, useMic, type SpeakingItem, type Take } from "./speaking-kit";
+import { clock, speakingItems, useMic, type SpeakingItem, type Take } from "./speaking-kit";
+import { SpeakingBuilder } from "./speaking-builder-panel";
+import { speakingFacets } from "./bank-writing-library";
 import "./bank-speaking.css";
 
 const readyLine = "All right? Remember, you have one to two minutes for this. Can you start speaking now, please?";
@@ -36,7 +38,6 @@ export function SpeakingStudio({ exam, content, answers, setAnswer, notes, setNo
   const [takes, setTakes] = useState<Record<string, Take>>({});
   const [subtitles, setSubtitles] = useState(true);
   const [panel, setPanel] = useState<"start" | "hints" | "lookup">("start");
-  const [step, setStep] = useState(0);
   const [prepMode, setPrepMode] = useState<"timed" | "free">("timed");
   const [prepLeft, setPrepLeft] = useState<number | null>(null);
   const item = items[index] ?? items[0];
@@ -47,9 +48,10 @@ export function SpeakingStudio({ exam, content, answers, setAnswer, notes, setNo
   useEffect(() => {
     if (focusIndex === lastFocus.current) return;
     lastFocus.current = focusIndex;
-    setIndex(focusIndex); setPanel("start"); setStep(0); setPrepLeft(null);
+    setIndex(focusIndex); setPanel("start"); setPrepLeft(null);
   }, [focusIndex]);
-  const steps = useMemo(() => item ? hintSteps(item) : [], [item]);
+  // The builder's ideas follow the set's theme, read the same way as the shelf's topic chips.
+  const topic = useMemo(() => speakingFacets({ title: exam.title, topic: exam.topic, question_preview: items.slice(0, 3).map((entry) => entry.text) }).topic, [exam.title, exam.topic, items]);
   const limit = item ? limitFor(item) : 60;
 
   const { speak, stop: hush } = voice;
@@ -67,7 +69,7 @@ export function SpeakingStudio({ exam, content, answers, setAnswer, notes, setNo
   }, [item, stopMic, setAnswer, releaseTake, setNotes]);
   const goTo = (next: number) => {
     if (mic.recording) void finishTake();
-    setIndex(next); setPanel("start"); setStep(0); setPrepLeft(null);
+    setIndex(next); setPanel("start"); setPrepLeft(null);
     void voice.speak(askLine(items[next]));
   };
 
@@ -93,7 +95,7 @@ export function SpeakingStudio({ exam, content, answers, setAnswer, notes, setNo
   const mood = voice.speaking ? "speaking" : mic.recording ? "listening" : prepLeft !== null ? "thinking" : "idle";
   const done = (entry: SpeakingItem) => Boolean(answers[entry.id] || takes[entry.id]);
   const partOf = (entry: SpeakingItem) => entry.kind === "cue" ? "Part 2" : `Part ${entry.part}`;
-  const appendNote = (text: string) => setNotes({ ...notes, [item.id]: `${notes[item.id] ? `${notes[item.id].trimEnd()} ` : ""}${text}` });
+  const appendNote = (text: string) => setNotes({ ...notesRef.current, [item.id]: `${notesRef.current[item.id] ? `${notesRef.current[item.id].trimEnd()} ` : ""}${text}` });
 
   return <div className="bs-studio">
     <section className="bs-main" aria-label="Phòng nói với Harry">
@@ -158,16 +160,11 @@ export function SpeakingStudio({ exam, content, answers, setAnswer, notes, setNo
         <button type="button" onClick={() => setPanel("lookup")}><BookOpenText size={17} /> Tra từ vựng</button>
         <small>Nếu bạn đã có idea nhưng cần từ vựng</small>
       </div> : <div className="bs-panel">
-        <button type="button" className="bs-back" onClick={() => setPanel("start")}><ArrowLeft size={15} /> Quay lại</button>
-        {panel === "lookup" ? <><h3>Tra từ vựng</h3><Lookup /></> : <>
-          <h3>Gợi ý từng bước <small>{Math.min(step + 1, steps.length)}/{steps.length}</small></h3>
-          <ol className="bs-hints">{steps.slice(0, step + 1).map((hint, i) => <li key={hint.title} className={i === step ? "is-current" : ""}>
-            <b>{hint.title}</b>
-            <button type="button" className="bs-probe" onClick={() => void voice.speak(hint.probe)}><Volume2 size={14} /> <span>Harry hỏi: “{hint.probe}”</span></button>
-            <div className="bs-starters">{hint.starters.map((starter) => <button key={starter} type="button" onClick={() => appendNote(starter)} title="Thêm vào ghi chú">{starter}</button>)}</div>
-          </li>)}</ol>
-          <div className="bs-hint-actions">{step < steps.length - 1 ? <><button type="button" className="bx-next" onClick={() => setStep(step + 1)}>Bước tiếp</button><button type="button" className="bx-ghost" onClick={() => setStep(steps.length - 1)}>Xem tất cả</button></> : <span>Giờ thử nói cả câu trả lời nhé!</span>}</div>
-        </>}
+        <div className="bs-tabs" role="tablist" aria-label="Công cụ hỗ trợ">
+          <button type="button" role="tab" aria-selected={panel === "hints"} onClick={() => setPanel("hints")}><Lightbulb size={15} /> Gợi ý từng bước</button>
+          <button type="button" role="tab" aria-selected={panel === "lookup"} onClick={() => setPanel("lookup")}><BookOpenText size={15} /> Tra từ vựng</button>
+        </div>
+        {panel === "lookup" ? <Lookup /> : <SpeakingBuilder key={item.id} item={item} topic={topic} saved={notes[`__build_${item.id}`]} onSave={(value) => setNotes({ ...notesRef.current, [`__build_${item.id}`]: value })} onSpeak={(text) => void voice.speak(text)} onCopy={appendNote} />}
       </div>}
       <label className="bs-notes"><span>Ghi chú của bạn</span><textarea rows={4} value={notes[item.id] || ""} onChange={(event) => setNotes({ ...notes, [item.id]: event.target.value })} placeholder="Bấm vào mẫu câu ở gợi ý để thêm vào đây, hoặc tự ghi ý…" /></label>
       <p className="bs-privacy">Bản ghi âm chỉ nằm trong trình duyệt của bạn; phần chữ và ghi chú được lưu cùng bài làm.</p>
