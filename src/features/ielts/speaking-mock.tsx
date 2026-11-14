@@ -110,6 +110,17 @@ export function SpeakingMock() {
   useEffect(() => { const timer = window.setInterval(() => setNow(Date.now()), 500); return () => window.clearInterval(timer); }, []);
   useEffect(() => {
     const requested = new URLSearchParams(window.location.search).get("coaching");
+    if (requested && /^[0-9a-f-]{36}$/i.test(requested) && !demoMode) {
+      // The result bell links here for every analysis; one sent from the practice room opens back there.
+      let live = true;
+      void createClient().from("speaking_mock_sessions").select("answers").eq("id", requested).maybeSingle().then(({ data }) => {
+        const first = (data?.answers as { source?: string; exam_id?: string; question_id?: string }[] | undefined)?.[0];
+        if (!live) return;
+        if (first?.source === "practice" && first.exam_id) window.location.replace(`/app/question-bank/exam/${encodeURIComponent(first.exam_id)}${first.question_id ? `?q=${encodeURIComponent(first.question_id)}` : ""}`);
+        else setExpandedSession(requested);
+      });
+      return () => { live = false; };
+    }
     if (requested && /^[0-9a-f-]{36}$/i.test(requested)) {
       const timer = window.setTimeout(() => setExpandedSession(requested), 0);
       return () => window.clearTimeout(timer);
@@ -122,7 +133,8 @@ export function SpeakingMock() {
       const saved = await Promise.all(sessions.map(async (session) => (await listLocalRecordingIndexes(session.id)).map((answer_index) => ({ session_id: session.id, answer_index, storage_path: "" }))));
       setRecordingRefs(saved.flat());
     } catch { setHistoryError("Không đọc được lịch sử hoặc bản ghi trên thiết bị."); } return; }
-    const result = await db!.from("speaking_mock_sessions").select("id,completed_at,duration_seconds,speaking_seconds,answers").order("completed_at", { ascending: false }).limit(30);
+    // Practice-room analyses are stored as one-answer sessions; they belong to that room, not the mock history.
+    const result = await db!.from("speaking_mock_sessions").select("id,completed_at,duration_seconds,speaking_seconds,answers").not("answers", "cs", JSON.stringify([{ source: "practice" }])).order("completed_at", { ascending: false }).limit(30);
     if (result.error) setHistoryError(result.error.message); else setHistory(result.data as Session[]);
     const recordings = await db!.from("speaking_mock_recordings").select("session_id,answer_index,storage_path");
     if (recordings.error) setHistoryError(recordings.error.message); else setRecordingRefs(recordings.data as RecordingRef[]);
