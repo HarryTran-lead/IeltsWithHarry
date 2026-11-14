@@ -5,6 +5,7 @@ import type { ExamContent } from "@/lib/ielts-bank/schema";
 import type { BankExam } from "./bank-exam";
 import { Lookup } from "./bank-writing";
 import { HarryExaminer, useHarryVoice } from "./harry-examiner";
+import { SpeakingPicker } from "./speaking-picker";
 import { clock, hintSteps, speakingItems, useMic, type SpeakingItem, type Take } from "./speaking-kit";
 import "./bank-speaking.css";
 
@@ -26,11 +27,12 @@ export function CueCard({ item }: { item: SpeakingItem }) {
  * side panel walks through an answer step by step or looks up a word. Part 2
  * adds a cue card with a timed minute of preparation or free notes.
  */
-export function SpeakingStudio({ exam, content, answers, setAnswer, notes, setNotes, onFinish }: { exam: BankExam; content: ExamContent; answers: Record<string, string>; setAnswer: (id: string, value: string) => void; notes: Record<string, string>; setNotes: (notes: Record<string, string>) => void; onFinish: () => void }) {
+export function SpeakingStudio({ exam, content, answers, setAnswer, notes, setNotes, onFinish, focusId }: { exam: BankExam; content: ExamContent; answers: Record<string, string>; setAnswer: (id: string, value: string) => void; notes: Record<string, string>; setNotes: (notes: Record<string, string>) => void; onFinish: () => void; focusId?: string | null }) {
   const items = useMemo(() => speakingItems(content, exam.practice_type), [content, exam.practice_type]);
+  const focusIndex = Math.max(0, items.findIndex((entry) => entry.id === focusId));
   const voice = useHarryVoice();
   const mic = useMic();
-  const [index, setIndex] = useState(0);
+  const [index, setIndex] = useState(focusIndex);
   const [takes, setTakes] = useState<Record<string, Take>>({});
   const [subtitles, setSubtitles] = useState(true);
   const [panel, setPanel] = useState<"start" | "hints" | "lookup">("start");
@@ -38,6 +40,15 @@ export function SpeakingStudio({ exam, content, answers, setAnswer, notes, setNo
   const [prepMode, setPrepMode] = useState<"timed" | "free">("timed");
   const [prepLeft, setPrepLeft] = useState<number | null>(null);
   const item = items[index] ?? items[0];
+  const notesRef = useRef(notes);
+  useEffect(() => { notesRef.current = notes; }, [notes]);
+  // Picking another question of this set (from the card or the picker) moves the room there.
+  const lastFocus = useRef(focusIndex);
+  useEffect(() => {
+    if (focusIndex === lastFocus.current) return;
+    lastFocus.current = focusIndex;
+    setIndex(focusIndex); setPanel("start"); setStep(0); setPrepLeft(null);
+  }, [focusIndex]);
   const steps = useMemo(() => item ? hintSteps(item) : [], [item]);
   const limit = item ? limitFor(item) : 60;
 
@@ -50,7 +61,10 @@ export function SpeakingStudio({ exam, content, answers, setAnswer, notes, setNo
     if (!take || !item) return;
     setTakes((current) => { if (current[item.id]) releaseTake(current[item.id].url); return { ...current, [item.id]: take }; });
     if (take.transcript) setAnswer(item.id, take.transcript);
-  }, [item, stopMic, setAnswer, releaseTake]);
+    // Without a transcript the answer stays empty, so remember that this question was spoken for the x/N on the shelf.
+    const said = new Set((notesRef.current.__spoken ?? "").split(",").filter(Boolean));
+    if (!said.has(item.id)) setNotes({ ...notesRef.current, __spoken: [...said, item.id].join(",") });
+  }, [item, stopMic, setAnswer, releaseTake, setNotes]);
   const goTo = (next: number) => {
     if (mic.recording) void finishTake();
     setIndex(next); setPanel("start"); setStep(0); setPrepLeft(null);
@@ -59,7 +73,7 @@ export function SpeakingStudio({ exam, content, answers, setAnswer, notes, setNo
 
   // Harry asks the first question as soon as the studio opens (the start click allows audio).
   const asked = useRef(false);
-  useEffect(() => { if (asked.current || !items[0]) return; asked.current = true; void speak(askLine(items[0])); }, [items, speak]);
+  useEffect(() => { if (asked.current || !items[focusIndex]) return; asked.current = true; void speak(askLine(items[focusIndex])); }, [items, focusIndex, speak]);
   // A recording stops by itself at the time limit.
   const atLimit = useEffectEvent(() => { void finishTake(); });
   useEffect(() => { if (!mic.recording || mic.paused) return; const timer = window.setTimeout(atLimit, Math.max(0, limit - mic.seconds) * 1000); return () => window.clearTimeout(timer); }, [mic.recording, mic.paused, mic.seconds, limit]);
@@ -84,6 +98,7 @@ export function SpeakingStudio({ exam, content, answers, setAnswer, notes, setNo
   return <div className="bs-studio">
     <section className="bs-main" aria-label="Phòng nói với Harry">
       <div className="bs-top">
+        <SpeakingPicker examId={exam.id} examTitle={exam.title} practiceType={exam.practice_type} currentId={item.id} spokenHere={new Set([...items.filter(done).map((entry) => entry.id), ...(notes.__spoken ?? "").split(",").filter(Boolean)])} />
         {items.length > 1 ? <nav className="bs-pills" aria-label="Chọn câu hỏi">{items.map((entry, i) => <button key={entry.id} type="button" aria-current={i === index ? "step" : undefined} className={done(entry) ? "is-done" : ""} onClick={() => goTo(i)} title={`${partOf(entry)} · ${entry.text}`}>{entry.kind === "cue" ? "Cue" : i + 1}{done(entry) && <Check size={11} />}</button>)}</nav> : <span className="bs-part-chip">{partOf(item)}</span>}
         <div className="bs-switches">
           <button type="button" aria-pressed={subtitles} onClick={() => setSubtitles(!subtitles)} title="Hiện chữ câu hỏi">{subtitles ? <Captions size={16} /> : <CaptionsOff size={16} />}<span>Phụ đề</span></button>

@@ -13,7 +13,7 @@ import "./bank-library.css";
 import { Sticker } from "@/components/stickers/stickers";
 import { TaskFigure } from "./writing-figure";
 
-export type Attempt = { id: string; exam_id: string; state: string; score: number | null; total: number | null; notes?: Record<string, string> | null };
+export type Attempt = { id: string; exam_id: string; state: string; score: number | null; total: number | null; notes?: Record<string, string> | null; answered?: string[] };
 
 export const librarySkills: Record<CatalogSkill, { icon: typeof BookOpen; href: string; tone: string }> = {
   Reading: { icon: BookOpen, href: "/app/reading", tone: "reading" },
@@ -87,7 +87,7 @@ async function loadLibrary(skill: CatalogSkill) {
       if (!response.ok) throw new Error(data.error || "Chưa tải được ngân hàng đề.");
       return (data.exams || []) as CatalogExam[];
     }),
-    fetch("/api/ielts/bank/attempt").then(async (response) => response.ok ? ((await response.json()).attempts || []) as Attempt[] : []).catch(() => [] as Attempt[]),
+    fetch(`/api/ielts/bank/attempt${skill === "Speaking" ? "?skill=Speaking" : ""}`).then(async (response) => response.ok ? ((await response.json()).attempts || []) as Attempt[] : []).catch(() => [] as Attempt[]),
   ]);
   return { catalog, attempts };
 }
@@ -456,6 +456,13 @@ function SpeakingLibraryView({ exams, attempts, loading, error }: LibraryViewPro
   const [status, setStatus] = useState<LibraryStatus>("all");
   const latest = new Map<string, Attempt>();
   for (const attempt of attempts) if (!latest.has(attempt.exam_id)) latest.set(attempt.exam_id, attempt);
+  // Every question answered in any attempt of a set counts towards its x/N, like a workbook ticked off over several sittings.
+  const spoken = new Map<string, Set<string>>();
+  for (const attempt of attempts) {
+    const ids = spoken.get(attempt.exam_id) ?? new Set<string>();
+    for (const id of [...(attempt.answered ?? []), ...(attempt.notes?.__spoken ?? "").split(",")]) if (id) ids.add(id);
+    spoken.set(attempt.exam_id, ids);
+  }
   const items = exams
     .filter((exam) => part ? exam.practice_type === part.id : speakingParts.some((item) => item.id === exam.practice_type))
     .map((exam) => ({ exam, facets: speakingFacets(exam) }));
@@ -497,35 +504,53 @@ function SpeakingLibraryView({ exams, attempts, loading, error }: LibraryViewPro
       </LibraryHead>
       {error && <p className="bl-state" role="alert">{error}</p>}
       {loading && <div className="bl-grid wl-grid">{Array.from({ length: 6 }, (_, index) => <div key={index} className="bl-card bl-skeleton"><span /><i /><i /></div>)}</div>}
-      {!loading && !error && <div className="bl-grid wl-grid">{visible.map(({ exam, facets }) => <SpeakingShelfCard key={exam.id} exam={exam} facets={facets} attempt={latest.get(exam.id)} />)}</div>}
+      {!loading && !error && <div className="bl-grid wl-grid">{visible.map(({ exam, facets }) => <SpeakingShelfCard key={exam.id} exam={exam} facets={facets} attempt={latest.get(exam.id)} spoken={spoken.get(exam.id)} />)}</div>}
       {!loading && !error && !visible.length && <p className="bl-state">{status === "done" ? "Bạn chưa nộp bài nói nào trong mục này." : status === "progress" ? "Không có bài nào đang làm dở." : "Chưa có đề phù hợp. Hãy thử chủ đề khác, đổi từ khóa hoặc chọn Part khác trong sidebar."}</p>}
       {!loading && pageCount > 1 && <Pager page={currentPage} count={pageCount} onPage={(next) => { setPage(next); document.getElementById("ngan-hang-de")?.scrollIntoView({ behavior: "smooth", block: "start" }); }} />}
     </div>
   </section>;
 }
 
-/** A Speaking set in the Writing card's shape: a topic sticker on the left, the title and first questions beside it. */
-function SpeakingShelfCard({ exam, facets, attempt }: { exam: CatalogExam; facets: ReturnType<typeof speakingFacets>; attempt?: Attempt }) {
-  const done = Boolean(attempt && attempt.state !== "in_progress");
-  const retryHref = `/app/question-bank/exam/${exam.id}`;
-  const href = attempt?.state === "in_progress" ? `/app/question-bank/attempt/${attempt.id}` : done ? `/app/question-bank/result/${attempt!.id}` : retryHref;
+/**
+ * A Speaking set in the Writing card's shape: a topic sticker on the left, the
+ * title, progress and questions beside it. Part 1 and Part 3 questions each open
+ * the practice room at that question, so a learner can work through a topic one
+ * question at a time and see x/N grow.
+ */
+function SpeakingShelfCard({ exam, facets, attempt, spoken }: { exam: CatalogExam; facets: ReturnType<typeof speakingFacets>; attempt?: Attempt; spoken?: Set<string> }) {
+  const [open, setOpen] = useState(false);
+  const examHref = `/app/question-bank/exam/${exam.id}`;
   const part = speakingParts.find((item) => item.id === exam.practice_type) ?? speakingParts[0];
   const sticker = speakingSticker(facets.topic);
-  const questions = exam.question_preview?.length ? exam.question_preview : exam.prompt_preview ? [exam.prompt_preview] : [];
-  const card = <Link href={href} className="bl-card wl-card sl-card">
-    <span className="wl-cover is-sticker" style={{ background: sticker.tone }}>
+  const cue = part.id === "part2";
+  const questions = exam.questions?.length ? exam.questions : (exam.question_preview?.length ? exam.question_preview : exam.prompt_preview ? [exam.prompt_preview] : []).map((prompt) => ({ id: "", prompt }));
+  const total = cue ? 0 : questions.length;
+  const said = total ? questions.filter((question) => question.id && spoken?.has(question.id)).length : 0;
+  const next = questions.find((question) => question.id && !spoken?.has(question.id));
+  const questionHref = (id: string) => id ? `${examHref}?q=${encodeURIComponent(id)}` : examHref;
+  const href = attempt?.state === "in_progress" && !total ? `/app/question-bank/attempt/${attempt.id}` : !cue && next ? questionHref(next.id) : examHref;
+  const shown = open ? questions : questions.slice(0, 3);
+  return <article className={`bl-card wl-card sl-card ${said && said === total ? "is-complete" : ""}`}>
+    <Link href={href} className="wl-cover is-sticker" style={{ background: sticker.tone }} tabIndex={-1} aria-hidden="true">
       <Sticker name={sticker.name} size={92} tilt={-6} pop={false} />
       <b className="wl-kind">{part.badge}</b>
-    </span>
+    </Link>
     <span className="wl-copy">
-      <span className="wl-meta"><span className="wl-task">{part.label}</span><AttemptChip attempt={attempt} /></span>
-      <strong className="wl-title">{speakingCardTitle(exam)}</strong>
+      <span className="wl-meta"><span className="wl-task">{part.label}</span>{total ? <span className={`sl-progress ${said === total ? "is-done" : said ? "is-some" : ""}`} title="Số câu bạn đã nói">{said}/{total}</span> : <AttemptChip attempt={attempt} />}</span>
+      <Link href={href} className="wl-title">{speakingCardTitle(exam)}</Link>
       <span className="wl-sub">{facets.topicLabel}</span>
-      {questions.length > 0 ? <ul className="sl-questions">{questions.slice(0, 3).map((question) => <li key={question}>{question}</li>)}</ul> : <span className="wl-prompt">Mở đề để xem câu hỏi.</span>}
-      <span className="wl-foot"><span><Clock3 size={13} /> {exam.duration_minutes} phút</span>{exam.question_count ? <span>{exam.question_count} câu</span> : null}<span className="bl-source">{sourceLabel(exam)}</span><span className={`bl-cta ${done ? "is-shown" : ""}`}>{attempt?.state === "in_progress" ? "Nói tiếp" : done ? "Xem bài làm" : "Luyện nói"} <ArrowRight size={15} /></span></span>
+      {cue ? <ul className="sl-questions is-cue">{shown.map((question) => <li key={question.prompt}>{question.prompt}</li>)}</ul>
+        : questions.length > 0 ? <ol className={`sl-questions ${open ? "is-open" : ""}`}>{shown.map((question) => <li key={`${question.id}:${question.prompt}`} className={question.id && spoken?.has(question.id) ? "is-said" : ""}>
+          <Link href={questionHref(question.id)} title={`Luyện câu: ${question.prompt}`}>{question.prompt}</Link>
+        </li>)}</ol>
+        : <span className="wl-prompt">Mở đề để xem câu hỏi.</span>}
+      <span className="wl-foot">
+        <span><Clock3 size={13} /> {exam.duration_minutes} phút</span>
+        {questions.length > 3 && !cue ? <button type="button" className="sl-more" aria-expanded={open} onClick={() => setOpen(!open)}>{open ? "Thu gọn" : `Xem cả ${questions.length} câu`} <ChevronDown size={13} /></button> : <span className="bl-source">{sourceLabel(exam)}</span>}
+        <Link href={href} className="bl-cta is-shown">{said && said === total ? "Luyện lại" : said || attempt?.state === "in_progress" ? "Nói tiếp" : "Luyện nói"} <ArrowRight size={15} /></Link>
+      </span>
     </span>
-  </Link>;
-  return done ? <div className="bl-card-slot is-writing">{card}<Link className="bl-retry" href={retryHref} aria-label={`Làm lại ${exam.title}`}><RotateCcw size={13} /> Làm lại</Link></div> : card;
+  </article>;
 }
 
 function MockLibraryCard({ test, part, title, questionTypes }: { test: MockCatalogEntry; part: number; title: string; questionTypes: string[] }) {

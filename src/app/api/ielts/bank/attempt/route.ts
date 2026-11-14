@@ -104,10 +104,15 @@ export async function GET(request: Request) {
       }
       return Response.json({ attempt: { ...data, ielts_exam_versions: undefined, content: visibleContent }, result, serverNow: Date.now() });
     }
-    let query = client.from("ielts_attempts").select("id,exam_id,version_id,state,score,total,started_at,submitted_at,notes,ielts_exams!inner(title,skill)").eq("user_id", user.id).order("started_at", { ascending: false }).limit(30);
-    if (releaseLocks) query = query.in("ielts_exams.skill", ["Reading", "Listening", "Writing"]);
+    // A Speaking shelf asks for its own attempts with the answers, to count the questions already spoken.
+    const speaking = url.searchParams.get("skill") === "Speaking";
+    let query = client.from("ielts_attempts").select(`id,exam_id,version_id,state,score,total,started_at,submitted_at,notes,${speaking ? "answers," : ""}ielts_exams!inner(title,skill)`).eq("user_id", user.id).order("started_at", { ascending: false }).limit(speaking ? 300 : 30);
+    if (speaking) query = query.eq("ielts_exams.skill", "Speaking");
+    else if (releaseLocks) query = query.in("ielts_exams.skill", ["Reading", "Listening", "Writing", "Speaking"]);
     const { data, error } = await query;
     if (error) throw new Error(error.message);
-    return Response.json({ attempts: data });
+    if (!speaking) return Response.json({ attempts: data });
+    const rows = (data ?? []) as unknown as ({ answers?: Record<string, string> | null } & Record<string, unknown>)[];
+    return Response.json({ attempts: rows.map(({ answers, ...attempt }) => ({ ...attempt, answered: Object.entries(answers ?? {}).filter(([key, value]) => !key.startsWith("__") && typeof value === "string" && value.trim()).map(([key]) => key) })) });
   } catch (error) { return requestError(error); }
 }

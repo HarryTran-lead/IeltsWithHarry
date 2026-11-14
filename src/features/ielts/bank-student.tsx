@@ -1,7 +1,7 @@
 "use client";
 import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
-import { useCallback, useEffect, useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { X } from "lucide-react";
 import { attemptContent, attemptMinutes, type ExamContent } from "@/lib/ielts-bank/schema";
 import { catalogHref, catalogSkills } from "@/lib/ielts-bank/catalog";
@@ -23,7 +23,11 @@ async function api(path: string, body?: unknown) { const response = await fetch(
 
 export function BankStudent({ examId, resultId, attemptId }: { examId?: string; resultId?: string; attemptId?: string }) {
   const router = useRouter();
-  const requestedPart = useSearchParams().get("part");
+  const search = useSearchParams();
+  const requestedPart = search.get("part");
+  // A Speaking card links straight to one question: open the practice room there instead of the cover page.
+  const focusQuestion = search.get("q");
+  const autoStarted = useRef("");
   const [exam, setExam] = useState<Exam | null>(null), [attempt, setAttempt] = useState<Attempt | null>(null), [result, setResult] = useState<Result | null>(null);
   const [answers, setAnswers] = useState<Record<string,string>>({}), [flags, setFlags] = useState<string[]>([]), [notes, setNotes] = useState<Record<string,string>>({}), [active, setActive] = useState(0), [error, setError] = useState(""), [busy, setBusy] = useState(false), [clock, setClock] = useState(0), [serverOffset, setServerOffset] = useState(0);
   const [dueDate, setDueDate] = useState(""), [scheduled, setScheduled] = useState(false);
@@ -58,6 +62,17 @@ export function BankStudent({ examId, resultId, attemptId }: { examId?: string; 
   const submit = useCallback(async (expired = false) => { if (!attempt || busy) return; setBusy(true); try { const data = await api("attempt", { action: "submit", attemptId: attempt.id, answers, flags, notes, expired }); setResult(data); setAttempt({ ...attempt, state: expired ? "expired" : "submitted", submitted_at: new Date(Date.now() + serverOffset).toISOString() }); if (exam?.id) sessionStorage.removeItem(`ielts-attempt:${exam.id}:${attempt.notes?.__section ?? "full"}`); if (exam?.skill === "Listening") void loadAttempt(attempt.id).catch(() => { /* The scored result remains available even if transcript reload fails. */ }); } catch (e) { setError(String(e)); } finally { setBusy(false); } }, [attempt, answers, flags, notes, busy, exam, loadAttempt, serverOffset]);
   useEffect(() => { if (clock && attempt?.state === "in_progress" && exam && remaining === 0) { const timer = setTimeout(() => void submit(true), 0); return () => clearTimeout(timer); } }, [clock, attempt?.state, exam, remaining, submit]);
   async function start(scope?: { section: string; ids: string[] }, options?: { view: "practice" | "exam"; minutes?: number }) { if (!exam) return; setBusy(true); try { const data = await api("attempt", { action: "start", examId: exam.id, sectionId: scope?.section, ...options }); sessionStorage.setItem(`ielts-attempt:${exam.id}:${scope?.section ?? "full"}`, data.attempt.id); setAttempt(data.attempt); setNotes(data.attempt.notes || {}); setServerOffset(typeof data.serverNow === "number" ? data.serverNow - Date.now() : 0); setClock(Date.now()); if (exam.skill === "Reading" || exam.skill === "Listening") router.replace(`/app/question-bank/attempt/${data.attempt.id}`); } catch (e) { setError(String(e)); } finally { setBusy(false); } }
+  useEffect(() => {
+    if (!exam || exam.skill !== "Speaking" || !focusQuestion || attempt || result || resultId || attemptId || autoStarted.current === exam.id) return;
+    autoStarted.current = exam.id;
+    void fetch("/api/ielts/bank/attempt?skill=Speaking").then((response) => response.ok ? response.json() : { attempts: [] }).then(async (data: { attempts?: { id: string; exam_id: string; state: string; started_at: string }[] }) => {
+      // Carry on in an unfinished sitting of this set while it still has time; otherwise start a new one.
+      const open = (data.attempts ?? []).find((item) => item.exam_id === exam.id && item.state === "in_progress" && new Date(item.started_at).getTime() + exam.duration_minutes * 60000 - Date.now() > 30000);
+      if (open) await loadAttempt(open.id); else await start();
+    }).catch(() => void start());
+  // start is redefined each render; the guard above keeps this to one run per set.
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [exam, focusQuestion, attempt, result, resultId, attemptId, loadAttempt]);
   const bankSkill = catalogSkills.find((value) => value === exam?.skill);
   // A part-only practice keeps its question ids in the notes; scores and reviews then cover that part.
   const scope = notes.__scope ? notes.__scope.split(",").filter(Boolean) : null;
@@ -95,6 +110,7 @@ export function BankStudent({ examId, resultId, attemptId }: { examId?: string; 
       onRetry={examId && !resultId ? () => { setResult(null); setAttempt(null); setAnswers({}); setFlags([]); setNotes({}); setActive(0); setSaveState("idle"); } : undefined} />;
   }
   if (!exam) return <main className="bx-page"><div className="bx-loading"><span /><span /><span /></div></main>;
+  if (!attempt && exam.skill === "Speaking" && focusQuestion && !error) return <main className="bx-page"><div className="bx-loading"><span /><span /><span /></div></main>;
   if (!attempt) return <ExamIntro exam={exam} backHref={backHref} busy={busy} error={error} resumable={resumable} onStart={(scope, options) => void start(scope, options)} scheduleSlot={<div className="bx-schedule">
     <input type="date" value={dueDate} onChange={(e) => setDueDate(e.target.value)} aria-label="Ngày luyện" />
     <button type="button" className="bx-ghost" disabled={!dueDate || busy} onClick={() => { void api("attempt", { action: "schedule", examId: exam.id, dueDate }).then(() => setScheduled(true)).catch((e) => setError(String(e))); }}>Lưu lịch</button>
@@ -136,7 +152,7 @@ export function BankStudent({ examId, resultId, attemptId }: { examId?: string; 
     return <main className={`bx-page bx-run bl-tone-${toneOf(exam.skill)}`}>
       <ExamBar exam={exam} answered={spoken} total={items.length} remaining={remaining} busy={busy} saveState={saveState} onSubmit={() => setConfirming(true)} />
       {error && <p className="bx-error" role="alert">{error}</p>}
-      <SpeakingStudio exam={exam} content={content} answers={answers} setAnswer={setAnswer} notes={notes} setNotes={setNotes} onFinish={() => setConfirming(true)} />
+      <SpeakingStudio exam={exam} content={content} answers={answers} setAnswer={setAnswer} notes={notes} setNotes={setNotes} onFinish={() => setConfirming(true)} focusId={focusQuestion} />
       {confirming && <SubmitDialog unanswered={items.length - spoken} flagged={0} busy={busy} onCancel={() => setConfirming(false)} onConfirm={() => { setConfirming(false); void submit(); }} />}
     </main>;
   }

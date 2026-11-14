@@ -275,6 +275,21 @@
 .sl-questions { display: grid; gap: 3px; margin: 0; padding: 0; list-style: none; color: #34495e; font-size: var(--fs-sm); line-height: 1.45; }
 .sl-questions li { position: relative; overflow: hidden; padding-left: 12px; text-overflow: ellipsis; white-space: nowrap; }
 .sl-questions li::before { content: ""; position: absolute; top: .62em; left: 1px; width: 5px; height: 5px; border-radius: 50%; background: var(--bl-accent); opacity: .7; }
+.sl-card .wl-title { text-decoration: none; }
+.sl-card .wl-title:hover { text-decoration: underline; }
+.sl-card .wl-cover { text-decoration: none; }
+.sl-card .wl-cover:hover .sticker { transform: rotate(0deg) scale(1.08); }
+.sl-card.is-complete { border: 1.5px solid #8fd1a8; }
+.sl-progress { flex: none; padding: 2px 9px; border-radius: var(--r-pill); background: #f1f4f7; color: #5b6f82; font-size: var(--fs-2xs); font-weight: 800; font-variant-numeric: tabular-nums; }
+.sl-progress.is-some { background: var(--bl-wash); color: #9b3f75; }
+.sl-progress.is-done { background: #e3f6ea; color: #1d7a45; }
+.sl-questions a { color: inherit; text-decoration: none; }
+.sl-questions a:hover { color: var(--bl-accent); text-decoration: underline; }
+.sl-questions li.is-said::before { content: "✓"; top: 0; left: -1px; width: auto; height: auto; border-radius: 0; background: none; color: #1d9a55; font-size: 11px; font-weight: 900; opacity: 1; }
+.sl-questions.is-open { max-height: 220px; overflow-y: auto; padding-right: 4px; }
+.sl-more { display: inline-flex; flex: 1; align-items: center; gap: 3px; padding: 0; border: 0; background: none; color: var(--bl-accent); font: inherit; font-weight: 800; cursor: pointer; }
+.sl-more[aria-expanded="true"] svg { transform: rotate(180deg); }
+.sl-card .bl-cta { text-decoration: none; }
 @media (max-width: 1080px) { .wl-grid { grid-template-columns: 1fr; } }
 @media (max-width: 560px) {
   .wl-card { flex-direction: column; }
