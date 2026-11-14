@@ -8,6 +8,10 @@
 .bw-guide h4 { margin: 0 0 4px; color: #c2410c; font-size: var(--fs-base); }
 .bw-guide ul { margin: 0; padding-left: 18px; color: #34495e; font-size: var(--fs-sm); line-height: 1.6; }
 .bw-editor { display: grid; gap: 10px; padding: 14px 16px 18px; }
+.bw-outline { border: 1px solid #d9e8e9; border-radius: var(--r-md); background: #f5fbfa; }
+.bw-outline summary { display: flex; align-items: center; gap: 7px; padding: 10px 12px; color: #176f76; font-weight: 800; cursor: pointer; }
+.bw-outline summary small { margin-left: auto; color: #71879a; font-size: var(--fs-xs); font-weight: 600; }
+.bw-outline textarea { box-sizing: border-box; width: calc(100% - 20px); margin: 0 10px 10px; padding: 10px 12px; border: 1px solid #d9e8e9; border-radius: var(--r-sm); background: #fff; color: #1d2738; font: var(--fs-sm)/1.5 var(--font-sans), sans-serif; resize: vertical; }
 .bw-editor-head { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 10px; }
 .bw-mode { display: inline-flex; gap: 2px; padding: 3px; border-radius: var(--r-md); background: #f3f6f8; }
 .bw-mode button { display: inline-flex; align-items: center; gap: 6px; height: 32px; padding: 0 12px; border: 0; border-radius: var(--r-sm); background: transparent; color: #56697b; font: inherit; font-size: var(--fs-sm); font-weight: 800; cursor: pointer; }

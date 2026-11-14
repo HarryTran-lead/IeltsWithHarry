@@ -133,6 +133,10 @@ export function WritingStudio({ exam, content, answers, setAnswers, visual }: { 
         <span className={`bw-count ${words >= minimum ? "is-done" : ""}`}>Word count: <b>{words}</b> / {minimum}</span>
       </header>
       <div className="bw-meter" aria-hidden="true"><i style={{ width: `${Math.min(100, (words / minimum) * 100)}%` }} /></div>
+      <details className="bw-outline">
+        <summary><Lightbulb size={16} /> Outline · Dàn ý <small>Được lưu cùng bài, không tính vào word count</small></summary>
+        <textarea aria-label="Dàn ý bài viết" value={answers.__outline || ""} onChange={(event) => setAnswers({ ...answers, __outline: event.target.value })} placeholder={type === "task2" ? "Introduction: quan điểm chính\nBody 1: luận điểm + ví dụ\nBody 2: luận điểm + ví dụ\nConclusion: tóm tắt" : "Overview: xu hướng chính\nBody 1: nhóm số liệu đầu\nBody 2: nhóm số liệu còn lại"} rows={5} maxLength={5000} spellCheck />
+      </details>
       {mode === "parts" ? <div className="bw-parts">{parts.map((part) => {
         const value = answers[`__part_${part.id}`] || "";
         return <label key={part.id} className="bw-part">

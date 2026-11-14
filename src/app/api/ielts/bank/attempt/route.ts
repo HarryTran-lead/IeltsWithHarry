@@ -1,6 +1,6 @@
 import { z } from "zod";
 import { bankClient, requestError, submitAttempt, viewer } from "@/lib/ielts-bank/server";
-import { attemptContent, attemptMinutes, contentSchema, publicContent, listeningFullMinutes, listeningPartMinutes, readingFullMinutes, readingPassageMinutes, scoreAnswers, withLatestFiveStep } from "@/lib/ielts-bank/schema";
+import { attemptContent, attemptMinutes, contentSchema, customAttemptMinutes, publicContent, scoreAnswers, withLatestFiveStep } from "@/lib/ielts-bank/schema";
 import { learnerSkillAvailable, releaseLocks } from "@/lib/runtime";
 import readingEvidence from "@/data/ielts-reading-evidence.json";
 import { evidenceFromExplanation } from "@/lib/ielts-bank/reading-evidence";
@@ -25,8 +25,7 @@ export async function POST(request: Request) {
       const { data: exam, error } = await client.from("ielts_exams").select("id,skill,published_version_id").eq("id", body.examId).not("published_version_id", "is", null).single();
       if (error || !exam) throw new Error("Exam unavailable");
       if (!learnerSkillAvailable(exam.skill)) return unavailable();
-      const allowedMinutes = exam.skill === "Reading" ? body.sectionId ? readingPassageMinutes : readingFullMinutes : exam.skill === "Listening" ? body.sectionId ? listeningPartMinutes : listeningFullMinutes : [];
-      if (body.minutes !== undefined && !allowedMinutes.some((value) => value === body.minutes)) {
+      if (body.minutes !== undefined && (!(exam.skill === "Reading" || exam.skill === "Listening") || !customAttemptMinutes(body.minutes))) {
         return Response.json({ error: "Thời gian làm bài không hợp lệ." }, { status: 400 });
       }
       let notes: Record<string, string> = {};

@@ -151,16 +151,16 @@ export const readingFullMinutes = [50, 55, 60, 65, 70] as const;
 export const readingPassageMinutes = [10, 15, 20, 25, 30] as const;
 export const listeningFullMinutes = [30, 35, 40, 45] as const;
 export const listeningPartMinutes = [10, 15, 20] as const;
+export const customAttemptMinutes = (value: number) => Number.isInteger(value) && value >= 5 && value <= 180;
 
 export function attemptMinutes(skill: string, examMinutes: number, notes: Record<string, string> | null | undefined) {
   const selected = Number(notes?.__minutes);
   if (notes?.__section) {
-    if (skill === "Reading") return readingPassageMinutes.some((value) => value === selected) ? selected : 20;
-    return skill === "Listening" ? listeningPartMinutes.some((value) => value === selected) ? selected : 10 : examMinutes;
+    if (skill === "Reading") return customAttemptMinutes(selected) ? selected : 20;
+    return skill === "Listening" ? customAttemptMinutes(selected) ? selected : 10 : examMinutes;
   }
   // Keep the duration of attempts started before the current time choices changed.
-  if (skill === "Reading" && ([...readingFullMinutes, 30, 45] as number[]).includes(selected)) return selected;
-  if (skill === "Listening" && listeningFullMinutes.some((value) => value === selected)) return selected;
+  if ((skill === "Reading" || skill === "Listening") && customAttemptMinutes(selected)) return selected;
   return examMinutes;
 }
 /** The scored key of an option: "G — text" → G, "iii — text" → iii, " — B. text" → B, "C. text" → C; plain keys pass through. */
