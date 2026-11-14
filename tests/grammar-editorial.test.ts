@@ -32,6 +32,7 @@ describe("Grammar editorial import", () => {
     expect(catalog).toHaveLength(180);
     expect(count).toBe(14455);
     expect(ids.size).toBe(14455);
-    expect(missingTranslations).toBe(330);
+    // M14B filled the 330 missing C2 translations (and one B1 actor fix).
+    expect(missingTranslations).toBe(0);
   }, 30000);
 });
