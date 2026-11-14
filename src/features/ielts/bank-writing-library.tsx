@@ -56,11 +56,11 @@ const letterTones: Option[] = [
 
 /** Broad Task 2 themes, the way learners search for essay topics. */
 const essayTopics: Option[] = [
-  { id: "education", label: "Education", test: /educat|school|universit|student|teacher|\blearn|\bstud(?:y|ies)\b|curricul|homework/i },
+  { id: "education", label: "Education", test: /educat|school|\bexams?\b|universit|student|teacher|\blearn|\bstud(?:y|ies)\b|curricul|homework/i },
   { id: "environment", label: "Environment", test: /environment|climate|pollut|\benergy|recycl|\bwaste|wildlife|plastic|carbon|global warming|natur/i },
   { id: "work", label: "Work and Careers", test: /\bwork|\bjobs?\b|career|employ|office|salar|workplace|retire/i },
   { id: "government", label: "Government & Crime", test: /government|crime|criminal|prison|\blaws?\b|police|\btax|politic|punish/i },
-  { id: "technology", label: "Science and Technology", test: /technolog|internet|computer|scien|robot|phone|online|digital|artificial|social media/i },
+  { id: "technology", label: "Science and Technology", test: /technolog|internet|website|computer|scien|robot|phone|online|digital|artificial|social media/i },
   { id: "health", label: "Health", test: /health|medic|disease|obes|\bdiet|\bfood|exercise|\bsports?\b|hospital|doctor|fitness/i },
   { id: "media", label: "Media & Entertainment", test: /\bmedia|advert|television|\btv\b|\bfilms?\b|\bmusic|\barts?\b|\bnews|entertain|celebrit|\bgames?\b|museum/i },
   { id: "society", label: "Society and Culture", test: /societ|cultur|famil|child|parent|elderly|tradition|communit|\bcit(?:y|ies)\b|urban|housing|language|generation/i },
@@ -128,6 +128,36 @@ const topicStickers: Record<string, { name: StickerName; tone: string }> = {
   education: { name: "cap", tone: "#e8f1ff" }, environment: { name: "tree", tone: "#e6f6ea" }, work: { name: "clipboard", tone: "#fff1dc" },
   government: { name: "scroll", tone: "#f3ecff" }, technology: { name: "rocket", tone: "#e6f4ff" }, health: { name: "heart", tone: "#ffe9ec" },
   media: { name: "newspaper", tone: "#f1f3f6" }, society: { name: "bubble", tone: "#e9f8f6" }, economy: { name: "chart", tone: "#fff6d8" },
-  travel: { name: "plane", tone: "#e7f4ff" }, other: { name: "bulb", tone: "#fff4d6" },
+  travel: { name: "plane", tone: "#e7f4ff" }, daily: { name: "coffee", tone: "#fdf0e4" }, other: { name: "bulb", tone: "#fff4d6" },
 };
 export const writingSticker = (topic: string) => topicStickers[topic] ?? topicStickers.other;
+
+/**
+ * Speaking reuses the Writing themes, plus everyday-life topics that Part 1 and
+ * Part 2 ask about far more than essays do. Like Writing, the bank stores no
+ * theme, so it is read from the title and the first questions.
+ */
+const speakingTopics: Option[] = [
+  ...essayTopics,
+  { id: "daily", label: "Daily Life & Hobbies", test: /hobb|free time|weekend|daily|routine|weather|shopp|cloth|sleep|colou?r|numbers?|birthday|gift|friend|\bpets?\b|animal|holiday|festival|party|home|hometown|neighbou?r|cook|garden|walk|relax/i },
+];
+export const speakingTopicOptions: { id: string; label: string }[] = [...speakingTopics, otherTopic].map(({ id, label }) => ({ id, label }));
+/** A Speaking topic outside every theme keeps the microphone rather than the essay light bulb. */
+export const speakingSticker = (topic: string) => topic in topicStickers && topic !== "other" ? topicStickers[topic] : { name: "mic" as StickerName, tone: "#fbe8f4" };
+
+export const speakingParts = [
+  { id: "part1", label: "Part 1 · Interview", badge: "Part 1" },
+  { id: "part2", label: "Part 2 · Cue card", badge: "Part 2" },
+  { id: "part3", label: "Part 3 · Discussion", badge: "Part 3" },
+] as const;
+
+/** The title without "Speaking Part 2:", the way a card shows it. */
+export function speakingCardTitle(exam: Pick<CatalogExam, "title">) {
+  const title = displayExamTitle(exam.title).replace(/^(?:IELTS\s+)?Speaking\s+Part\s*\d\s*[:–-]\s*/i, "").trim() || displayExamTitle(exam.title);
+  return title.charAt(0).toLocaleUpperCase() + title.slice(1);
+}
+
+export function speakingFacets(exam: Pick<CatalogExam, "title" | "topic" | "prompt_preview" | "question_preview">) {
+  const topic = firstMatch(speakingTopics, (exam.topic ?? "").replace(/^topic_/, "").replace(/_/g, " "), speakingCardTitle(exam), ...(exam.question_preview ?? []).slice(0, 3), exam.prompt_preview);
+  return { topic: topic?.id ?? otherTopic.id, topicLabel: topic?.label ?? otherTopic.label };
+}

@@ -127,7 +127,7 @@ export function IeltsSkillDashboard({ skill }: { skill: IeltsSkill }) {
   const displayedModes = allModes.filter((mode) => modeFilter === "all" || (modeFilter === "live" ? mode.available : mode.planned));
 
   const showLibrary = !demoMode && Boolean(bankSkill);
-  if (showLibrary && bankSkill && (skill === "reading" || skill === "listening" || skill === "writing")) {
+  if (showLibrary && bankSkill && (skill === "reading" || skill === "listening" || skill === "writing" || skill === "speaking")) {
     // The shelf's own head carries the title, filters and word-list link; the page title stays for screen readers.
     return <main className={`ielts-dashboard ielts-dashboard-${config.tone} has-library`}>
       <h1 className="bl-sr-only">{config.title}</h1>

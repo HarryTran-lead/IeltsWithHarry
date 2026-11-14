@@ -105,18 +105,6 @@
 .bl-card-writing .bl-title { color: #1d5fa6; font-size: var(--fs-base); -webkit-line-clamp: 1; }
 .bl-prompt { display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 3; overflow: hidden; color: #34495e; font-size: var(--fs-sm); line-height: 1.5; }
 
-/* Speaking: microphone tile + question previews */
-.bl-card-speaking { min-height: 150px; }
-.bl-mic { flex: none; display: grid; place-items: center; align-content: center; gap: 4px; width: 128px; margin: 10px 0 10px 10px; border-radius: var(--r-md); background: var(--bl-wash); color: var(--bl-accent); text-align: center; }
-.bl-mic b { color: var(--bl-ink); font-size: var(--fs-sm); }
-.bl-mic small { color: #8195a8; font-size: var(--fs-2xs); font-weight: 700; }
-.bl-speaking-copy { display: flex; flex: 1; flex-direction: column; gap: 6px; min-width: 0; padding: 14px 16px 12px; }
-.bl-speaking-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 10px; }
-.bl-card-speaking .bl-title { color: #1d5fa6; font-size: 16px; -webkit-line-clamp: 1; }
-.bl-qcount { flex: none; padding: 3px 8px; border-radius: var(--r-sm); background: #f3f6f8; color: #4d6377; font-size: var(--fs-xs); font-weight: 800; }
-.bl-speaking-copy ul { display: grid; gap: 3px; margin: 0; padding: 0; list-style: none; color: #34495e; font-size: var(--fs-sm); line-height: 1.45; }
-.bl-speaking-copy li { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-
 /* Pager */
 .bl-pager { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-top: 26px; }
 .bl-pager > button { display: inline-flex; align-items: center; gap: 4px; border: 0; background: none; color: #56697b; font: inherit; font-size: var(--fs-base); font-weight: 700; cursor: pointer; }
@@ -154,7 +142,6 @@
   .bl-card-shelf .bl-types li:nth-child(n + 3) { display: none; }
   .bl-card-writing { flex-direction: column; }
   .bl-writing-thumb { width: 100%; max-width: none; height: 150px; border-right: 0; border-bottom: 1px solid #f0e6d4; }
-  .bl-mic { width: 92px; }
   .bl-pager > button { font-size: 0; gap: 0; }
   .bl-pager > button svg { width: 20px; height: 20px; }
 }
@@ -283,6 +270,11 @@
 .wl-foot > span { display: inline-flex; align-items: center; gap: 4px; min-width: 0; }
 .wl-foot .bl-source { flex: 1; }
 .wl-grid .bl-skeleton { min-height: 190px; }
+/* Speaking reuses the Writing card: a topic sticker, then the title and the first questions. */
+.bl-tone-speaking .wl-task { color: #9b3f75; }
+.sl-questions { display: grid; gap: 3px; margin: 0; padding: 0; list-style: none; color: #34495e; font-size: var(--fs-sm); line-height: 1.45; }
+.sl-questions li { position: relative; overflow: hidden; padding-left: 12px; text-overflow: ellipsis; white-space: nowrap; }
+.sl-questions li::before { content: ""; position: absolute; top: .62em; left: 1px; width: 5px; height: 5px; border-radius: 50%; background: var(--bl-accent); opacity: .7; }
 @media (max-width: 1080px) { .wl-grid { grid-template-columns: 1fr; } }
 @media (max-width: 560px) {
   .wl-card { flex-direction: column; }
@@ -298,4 +290,6 @@
 .bl-retry:hover { background: #fff; color: var(--bl-accent); }
 .bl-card-slot:hover .bl-retry { transform: translateY(-3px); }
 .bl-card-slot.is-writing .bl-retry { top: auto; right: auto; left: 8px; bottom: 8px; }
+/* On phones the cover sits on top, so "Làm lại" moves to its corner instead of covering the footer. */
+@media (max-width: 560px) { .bl-card-slot.is-writing .bl-retry { top: 8px; right: 8px; bottom: auto; left: auto; } }
 .bl-cta.is-shown { opacity: 1; transform: none; }
