@@ -44,7 +44,7 @@ async function processOne() {
   }
   const { data: job, error } = await db.rpc("speaking_claim_coaching_job", { p_lease_seconds: 900 });
   if (error) throw new Error(`Speaking queue claim failed: ${error.message}`);
-  if (!job) return false;
+  if (!job || !(job as Job).id) return false;
   const item = job as Job;
   try {
     const transcript = await transcribeAudio(item.recording_path);
