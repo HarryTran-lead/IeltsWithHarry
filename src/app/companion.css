@@ -337,6 +337,20 @@
   animation: harry-3d-wait 1.2s ease-in-out infinite;
 }
 
+/* Short desktop windows (small laptop, zoomed-in browser): a smaller Harry covers less of the side cards. */
+@media (min-width: 768px) and (max-height: 760px) {
+  .study-companion {
+    bottom: 80px;
+  }
+  .study-companion .harry-3d {
+    width: 96px !important;
+    height: 115px !important;
+  }
+  .companion-menu {
+    bottom: 82px;
+  }
+}
+
 @media (max-width: 767px) {
   .study-companion {
     right: 10px;

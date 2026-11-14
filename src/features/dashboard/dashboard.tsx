@@ -68,7 +68,7 @@ function WelcomeBanner() {
             Học tiếp <ArrowRight size={16} />
           </Link>}
           <Link href="/app/planner" className="button ghost">
-            <CalendarDays size={16} /> {doneToday}/{goal} nhiệm vụ hôm nay
+            <CalendarDays size={16} /> {doneToday}/{goal} nhiệm vụ<span className="welcome-plan-extra"> hôm nay</span>
           </Link>
         </div>
         </div>

@@ -221,3 +221,34 @@
 @media (min-width: 1100px) and (max-height: 679px) {
   .dash-board .dash-continue .continue-body p { display: none; }
 }
+
+/*
+ * Narrow main column (small laptop, zoomed-in browser, wide aside): the welcome band and the tab row
+ * must never spill into the study-room column. The band measures itself, tightens first, and only
+ * then lets the actions drop to a second line; the tab row tightens and finally drops its icons.
+ */
+.dashboard-grid .welcome-banner { container: welcome-band / inline-size; }
+.app-frame .dashboard-grid .welcome-banner .welcome-row { flex-wrap: wrap; min-width: 0; }
+.app-frame .dashboard-grid .welcome-banner .welcome-actions { margin-left: auto; }
+@container welcome-band (max-width: 720px) {
+  .app-frame .dashboard-grid .welcome-banner .welcome-row { gap: 8px 10px; }
+  .dashboard-grid .welcome-row .streak-week { gap: 2px; }
+  .dashboard-grid .welcome-row .streak-day i { width: 22px; height: 22px; }
+  .dashboard-grid .welcome-row .streak-week b { margin-left: 2px; font-size: var(--fs-xs); }
+  .app-frame .dashboard-grid .welcome-actions { gap: 6px; }
+  .app-frame .dashboard-grid .welcome-banner .welcome-actions .button { padding: 0 10px; }
+  .dashboard-grid .welcome-plan-extra { display: none; }
+}
+@container (max-width: 700px) {
+  .dash-tablist { gap: 2px; }
+  .dash-board .dash-tablist button, .dash-tablist button { gap: 4px; padding-inline: 8px; }
+}
+@container (max-width: 600px) {
+  .dash-board .dash-tablist button svg, .dash-tablist button svg { display: none; }
+}
+/* Very narrow column: tabs wrap onto two rows instead of hiding the last ones; stat tiles go two by two. */
+@container (max-width: 540px) {
+  .dash-tablist { flex-wrap: wrap; overflow: visible; }
+  .dash-board .dash-tablist button, .dash-tablist button { flex: 1 0 auto; }
+  .sp-overview { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
