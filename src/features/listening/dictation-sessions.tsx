@@ -331,6 +331,7 @@ async function loadMistakes(): Promise<Mistake[]> {
           if (error) throw new Error(error.message);
           const saved = await db.from("voa_dictation_attempts").select("accuracy").eq("id", id).single();
           const accuracy = Number(saved.data?.accuracy ?? 0);
+          if (accuracy >= 80) window.dispatchEvent(new Event("learner-xp-updated"));
           return { passed: percentPassed(segment.reference_text, accuracy), accuracy: accuracy / 100, reference: segment.reference_text };
         },
       } });
