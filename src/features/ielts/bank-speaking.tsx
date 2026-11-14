@@ -4,6 +4,7 @@ import { BookOpenText, Captions, CaptionsOff, Check, Lightbulb, Mic, RotateCcw, 
 import type { ExamContent } from "@/lib/ielts-bank/schema";
 import type { BankExam } from "./bank-exam";
 import { SpeakingLookup } from "./speaking-lookup";
+import { PracticeCoaching } from "./speaking-practice-coaching";
 import { HarryExaminer, useHarryVoice } from "./harry-examiner";
 import { SpeakingPicker } from "./speaking-picker";
 import { clock, speakingItems, useMic, type SpeakingItem, type Take } from "./speaking-kit";
@@ -144,6 +145,8 @@ export function SpeakingStudio({ exam, content, answers, setAnswer, notes, setNo
         <label><span>{mic.canTranscribe ? "Lời bạn nói (tự nhận dạng, có thể sửa)" : "Tóm tắt ý bạn đã nói"}</span>
           <textarea rows={3} value={answers[item.id] || ""} onChange={(event) => setAnswer(item.id, event.target.value)} placeholder="Trình duyệt này chưa nhận dạng được giọng nói — ghi lại ý chính bạn đã nói." /></label>
       </div>}
+
+      {item.kind === "cue" && !mic.recording && <PracticeCoaching examId={exam.id} item={item} take={take} />}
 
       <div className="bs-steps">
         <button type="button" className="bx-ghost" disabled={!index} onClick={() => goTo(index - 1)}>← Câu trước</button>

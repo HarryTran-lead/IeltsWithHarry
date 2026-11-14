@@ -8,6 +8,8 @@ const answersSchema = z.array(z.object({ part: z.number(), question: z.string(),
 export async function GET(request: Request) {
   try {
     const user = await viewer();
+    // The practice room asks first, so it only offers analysis while the pilot is switched on.
+    if (new URL(request.url).searchParams.has("available")) return Response.json({ available: enabled() }, { headers: { "Cache-Control": "private, no-store" } });
     const sessionId = z.uuid().parse(new URL(request.url).searchParams.get("sessionId"));
     const db = bankClient();
     const { data: session, error: sessionError } = await db.from("speaking_mock_sessions").select("id")
