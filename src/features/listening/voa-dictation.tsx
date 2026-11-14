@@ -258,6 +258,7 @@ export function VoaDictation() {
     setAttempts((current) => ({ ...current, [segment.id]: saved.data as Attempt }));
     setChecked(true);
     setFeedback(normalize(submitted) === normalize(segment.reference_text) || percentPassed(segment.reference_text, Number(saved.data.accuracy)) ? "correct" : "wrong");
+    if (Number(saved.data.accuracy) >= 80) window.dispatchEvent(new Event("learner-xp-updated"));
   }
   function skip() {
     if (!segment) return;

@@ -201,6 +201,8 @@ body:has(.bx-reading-launch) { overflow: hidden; }
 .br-launch-choice-head { display: flex; align-items: center; justify-content: space-between; gap: 8px; width: 100%; }
 .br-launch-choice-head strong { font-size: 15px; }
 .br-launch-choice-head select { max-width: 110px; padding: 5px 8px; border: 1px solid #d6e0e2; border-radius: 18px; background: #fff; color: #253f4d; font: inherit; font-size: 13px; font-weight: 700; }
+.br-launch-time { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 6px; }
+.br-launch-time input { width: 72px; padding: 5px 8px; border: 1px solid #d6e0e2; border-radius: 18px; color: #253f4d; font: inherit; font-size: 13px; font-weight: 700; }
 .br-launch-choice > small { margin-bottom: 6px; }
 .br-launch-choice > label:not(.br-launch-view) { display: flex; align-items: center; gap: 8px; width: 100%; min-height: 33px; margin: 0; padding: 5px 0; border-top: 1px solid #dfebe5; cursor: pointer; }
 .br-launch-choice > label:not(.br-launch-view):first-of-type { border-top: 0; }

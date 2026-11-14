@@ -11,24 +11,25 @@ import type { Attempt } from "./bank-library";
 type Option = { id: string; label: string; test: RegExp };
 
 export const writingKinds: Record<string, string> = {
-  line: "Line Graph", bar: "Bar Chart", pie: "Pie Chart", table: "Table", process: "Process", map: "Map", mixed: "Mixed Graph", chart: "Biểu đồ", letter: "Letter", essay: "Essay",
+  line: "Line Graph", bar: "Bar Chart", pie: "Pie Chart", table: "Table", process: "Process", map: "Map", mixed: "Mixed Graph", chart: "Chưa rõ dạng biểu đồ", letter: "Letter", essay: "Essay",
 };
 
-export function writingKind(exam: Pick<CatalogExam, "practice_type" | "visual" | "visual_kind" | "task_type">) {
+export function writingKind(exam: Pick<CatalogExam, "practice_type" | "visual" | "visual_kind" | "task_type"> & Partial<Pick<CatalogExam, "title" | "prompt_preview">>) {
   if (exam.practice_type === "task2") return "essay";
   if (exam.practice_type === "task1_general") return "letter";
-  return visualKind(String(exam.visual?.kind ?? exam.visual_kind ?? exam.task_type ?? ""));
+  const explicit = visualKind(String(exam.visual?.kind ?? exam.visual_kind ?? exam.task_type ?? ""));
+  return explicit === "chart" ? visualKind(`${exam.title ?? ""} ${exam.prompt_preview ?? ""}`) : explicit;
 }
 
 export function visualKind(value: string) {
-  const kind = value.toLowerCase();
-  if (/line/.test(kind)) return "line";
-  if (/bar|column/.test(kind)) return "bar";
-  if (/pie/.test(kind)) return "pie";
-  if (/table/.test(kind)) return "table";
-  if (/process|flow|step|diagram/.test(kind)) return "process";
-  if (/map|plan/.test(kind)) return "map";
-  if (/mixed|panel/.test(kind)) return "mixed";
+  const kind = value.toLowerCase().replace(/[_-]/g, " ");
+  if (/\bmixed\b|\bcombined\b|\bmultiple\s+(?:charts|graphs)\b|\bpanel\b/.test(kind)) return "mixed";
+  if (/\bline\s*(?:graph|chart)|\bline\b/.test(kind)) return "line";
+  if (/\bbar\s*(?:graph|chart)|\bcolumn\s*(?:graph|chart)|\bbar\b/.test(kind)) return "bar";
+  if (/\bpie\s*(?:graph|chart)|\bpie\b/.test(kind)) return "pie";
+  if (/\btable\b/.test(kind)) return "table";
+  if (/\bprocess\b|\bflow\s*chart\b|\bdiagram\b/.test(kind)) return "process";
+  if (/\bmap\b|\bplan\b/.test(kind)) return "map";
   return "chart";
 }
 
