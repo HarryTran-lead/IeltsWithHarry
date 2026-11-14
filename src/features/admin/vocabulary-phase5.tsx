@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { LoadingBlock } from "@/components/layout/loading-block";
+import { AdminCardHead, AdminNotice, AdminStat } from "./admin-ui";
 
 type Summary = {
   sourceTopics: number; learningTopics: number; targetNewUnique: number;
@@ -21,20 +22,22 @@ export function VocabularyPhase5() {
         if (!response.ok) throw new Error(body.error || "Không tải được tiến độ từ vựng.");
         setSummary(body);
       })
-      .catch((reason) => { if (!controller.signal.aborted) setError(String(reason)); });
+      .catch((reason) => { if (!controller.signal.aborted) setError(reason instanceof Error ? reason.message : String(reason)); });
     return () => controller.abort();
   }, []);
-  return <section className="admin-content-form">
-    <h2>Tiến độ bộ IELTS theo chủ đề học</h2>
-    {error && <p role="alert">{error}</p>}
-    {!summary && !error && <p><LoadingBlock label="Đang tải tiến độ…" /></p>}
-    {summary && <>
-      <p>{summary.originalEntries.toLocaleString("vi-VN")} mục CSV nguồn · {summary.publishedNew.toLocaleString("vi-VN")} mục biên soạn đã xuất bản · {summary.topicPlacements.toLocaleString("vi-VN")} lượt gắn chủ đề.</p>
-      <p>{summary.approved} mục duyệt từ các lô đầu · {summary.packReviewed} mục duyệt từ ZIP mới · {summary.proposed} mục chờ rà soát.</p>
-      <p>{summary.sourceTopics} chủ đề từ kho nguồn và {summary.learningTopics} chủ đề học mở rộng được giữ song song. Mục tiêu mới dài hạn: {summary.targetNewUnique.toLocaleString("vi-VN")} mục duy nhất.</p>
-      <div className="admin-row"><strong>Chủ đề học</strong><strong>Gắn chủ đề / mục tiêu dài hạn</strong></div>
-      {summary.topics.map((topic) => <div className="admin-row" key={topic.title}><span>{topic.title}</span><strong>{topic.placements} / {topic.target}</strong></div>)}
-      <p>Band trên kho IELTS là ước lượng để học; trạng thái rà soát hiển thị riêng trên từng mục.</p>
-    </>}
-  </section>;
+  const number = (value: number) => value.toLocaleString("vi-VN");
+  if (error) return <AdminNotice tone="error">{error}</AdminNotice>;
+  if (!summary) return <section className="card admin-card"><LoadingBlock label="Đang tải tiến độ…" /></section>;
+  return <div className="admin-stack">
+    <div className="admin-stats-row">
+      <AdminStat label="Mục CSV nguồn" value={number(summary.originalEntries)} hint={`${summary.sourceTopics} chủ đề nguồn`} />
+      <AdminStat tone="teal" label="Đã xuất bản" value={number(summary.publishedNew)} hint="Mục biên soạn mới" />
+      <AdminStat tone="sky" label="Đã duyệt" value={number(summary.approved + summary.packReviewed)} hint={`${number(summary.approved)} lô đầu · ${number(summary.packReviewed)} từ ZIP`} />
+      <AdminStat tone="amber" label="Chờ rà soát" value={number(summary.proposed)} hint={`Mục tiêu dài hạn ${number(summary.targetNewUnique)} mục`} />
+    </div>
+    <section className="card admin-card">
+      <AdminCardHead title="Tiến độ theo chủ đề học" count={summary.topics.length} description={`${summary.learningTopics} chủ đề học mở rộng, ${number(summary.topicPlacements)} lượt gắn chủ đề. Band trên kho IELTS là ước lượng để học.`} />
+      <div className="admin-coverage is-topics">{summary.topics.map((topic) => <div className="admin-coverage-row" key={topic.title}><span title={topic.title}>{topic.title}</span><div className="admin-coverage-track"><i style={{ width: `${Math.min(100, topic.target ? topic.placements / topic.target * 100 : 0)}%` }} /></div><b>{topic.placements}/{topic.target}</b></div>)}</div>
+    </section>
+  </div>;
 }

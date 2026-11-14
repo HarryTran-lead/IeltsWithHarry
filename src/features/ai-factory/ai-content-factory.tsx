@@ -5,6 +5,7 @@ import Link from "next/link";
 import type { ExamContent } from "@/lib/ielts-bank/schema";
 import { DraftWorkspace } from "./draft-workspace";
 import "./ai-content-factory.css";
+import { AdminHeaderActions, AdminTabs } from "@/features/admin/admin-ui";
 
 type Settings = { generation_enabled: boolean; paid_provider_enabled: boolean; daily_job_limit: number; max_concurrency: number; daily_paid_limit_usd: number; monthly_paid_limit_usd: number };
 type Voice = { id: string; name: string; accent: string; characteristics: string; enabled: boolean; pace: number; sample_url: string | null };
@@ -79,8 +80,12 @@ export function AiContentFactory() {
   const reviewAudioReady = reviewJob?.kind !== "listening_audio" || Boolean(!audioFailed && reviewJob.previewUrl && audioSectionIds.length && audioSectionIds.every((id) => reviewJob.previewUrls?.some((file) => file.sectionId === id) || (audioSectionIds.length === 1 && reviewJob.previewUrls?.length === 1)));
   const counts = (status: string) => jobs.filter((job) => job.status === status).length;
   return <div className="bank-admin factory">
-    <section className="card factory-intro"><div><span className="factory-eyebrow">QUẢN LÝ NỘI DUNG IELTS</span><h2>Không gian biên soạn và kiểm duyệt</h2><p>Tạo đề, xem thử trải nghiệm học viên, kiểm tra đáp án và duyệt trước khi xuất bản.</p></div><button type="button" className="button primary" onClick={() => setTab("QA & duyệt")}>Xem đề chờ duyệt ({counts("awaiting_review")})</button></section>
-    <section className="factory-navigation" aria-label="Chức năng AI Content Factory"><div className="factory-nav-group"><span>Duyệt & xuất bản</span>{["Tổng quan", "QA & duyệt", "Xuất bản"].map((name) => <button type="button" key={name} className={tab === name ? "active" : ""} onClick={() => setTab(name as (typeof tabs)[number])}>{name}</button>)}</div><div className="factory-nav-group"><span>Biên soạn</span>{["Tạo Listening", "Tạo Reading", "Tạo Writing", "Tạo Speaking"].map((name) => <button type="button" key={name} className={tab === name ? "active" : ""} onClick={() => setTab(name as (typeof tabs)[number])}>{name}</button>)}</div><div className="factory-nav-group"><span>Công cụ & vận hành</span>{["Audio Studio", "Voice Library", "Hàng đợi", "Chi phí", "Cài đặt"].map((name) => <button type="button" key={name} className={tab === name ? "active" : ""} onClick={() => setTab(name as (typeof tabs)[number])}>{name}</button>)}</div></section>
+    <AdminHeaderActions><button type="button" className="button primary" onClick={() => setTab("QA & duyệt")}>Xem đề chờ duyệt ({counts("awaiting_review")})</button></AdminHeaderActions>
+    <AdminTabs label="Chức năng AI Content Factory" groups={([
+      ["Duyệt & xuất bản", ["Tổng quan", "QA & duyệt", "Xuất bản"]],
+      ["Biên soạn", ["Tạo Listening", "Tạo Reading", "Tạo Writing", "Tạo Speaking"]],
+      ["Vận hành", ["Audio Studio", "Voice Library", "Hàng đợi", "Chi phí", "Cài đặt"]],
+    ] as const).map(([label, names]) => ({ label, items: names.map((name) => ({ id: name, label: name, active: tab === name, count: name === "QA & duyệt" ? counts("awaiting_review") || undefined : undefined, onClick: () => setTab(name) })) }))} />
     {tab === "Tổng quan" && <>
       <section className="factory-overview-grid" aria-label="Trạng thái sản xuất"><article><span>Đang chờ tạo</span><strong>{counts("queued")}</strong></article><article><span>Đang tạo</span><strong>{counts("running")}</strong></article><article><span>Chờ duyệt</span><strong>{counts("awaiting_review")}</strong></article><article><span>Đã duyệt</span><strong>{counts("approved")}</strong></article></section>
       <section className="card factory-review-entry"><div className="factory-section-head"><div><span className="factory-eyebrow">BẢN NHÁP CẦN XEM</span><h2>Duyệt theo kỹ năng</h2><p>Mở đề và làm thử trước khi quyết định.</p></div></div><div className="factory-skill-cards">{skills.map((skill) => <button type="button" key={skill} onClick={() => { setReviewSkill(skill); setSelected(""); setAudioFailed(false); setTab("QA & duyệt"); }}><span>{skill}</span><strong>{jobs.filter((job) => jobSkill(job) === skill && ["awaiting_review","qa_failed"].includes(job.status)).length}</strong><small>đề cần xem →</small></button>)}</div></section>
