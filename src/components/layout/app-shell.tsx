@@ -25,6 +25,7 @@ import {
   Settings,
   ShieldCheck,
   SpellCheck,
+  FlaskConical,
   X,
   Bell,
   LogOut,
@@ -89,6 +90,7 @@ const groups: SidebarGroup[] = [
     links: [
       { href: "/app/vocabulary", label: "Vocabulary", icon: Languages, tone: "mint" },
       { href: "/app/grammar", label: "Grammar", icon: SpellCheck, tone: "sky" },
+      { href: "/app/grammar/labs", label: "Phòng luyện Grammar", icon: FlaskConical, tone: "lavender" },
       { href: "/app/dictation", label: "Dictation", icon: Headphones, tone: "teal" },
       { href: "/app/practice/translation", label: "Luyện diễn đạt", icon: Languages, tone: "mint" },
     ],
@@ -121,7 +123,6 @@ const skillPracticeLinks: Record<string, SkillPracticeLink[]> = {
     { label: "Sổ từ & tiến độ", href: "/app/vocabulary/notebook" },
   ],
   grammar: [
-    { label: "Phòng luyện chuyên sâu", href: "/app/grammar/labs" },
     { label: "Kiểm tra lên cấp", href: "/app/grammar/placement" },
     { label: "Kiểm tra chặng", href: "/app/grammar/tests" },
     { label: "Ôn tập & Sổ lỗi", href: "/app/grammar/review" },
