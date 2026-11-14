@@ -508,7 +508,8 @@ export function StudyCompanion({ streak, newsUnread = 0, name, hidden = false }:
       )}
       <div className="companion-live" role="status" aria-live="polite">{open && message ? `Harry: ${message.text}` : ""}</div>
       <button type="button" className="companion-body" onClick={() => { setMenuOpen(false); speak(Math.random() < 0.4 ? "chat_menu" : "tap"); }} aria-label="Harry, bạn đồng hành học tập. Bấm để trò chuyện">
-        <Harry3D mood={mood} width={128} pulse={hop} />
+        <span className="companion-name" aria-hidden="true">Harry</span>
+        <Harry3D mood={mood} width={100} pulse={hop} />
       </button>
       <button type="button" className="companion-menu-toggle" onClick={() => { if (!menuOpen) close(); setMenuOpen(!menuOpen); }} aria-expanded={menuOpen} aria-label="Tùy chỉnh Harry"><MoreHorizontal size={15} /></button>
       {menuOpen && (
