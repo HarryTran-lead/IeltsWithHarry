@@ -314,7 +314,7 @@ function ContextPlayer({ item, onGraded }: { item: ContextItem; onGraded: Graded
   const total = item.questions.length + item.open.length;
   return <div className="gg-lab-practice gg-lab-context-grid"><article className="gg-lab-passage"><span className="gg-eyebrow">{item.lessonId} · {item.genre}</span><h2>{item.title}</h2>{item.passageEn.split(/\n+/).map((para, i) => <p key={i} className="gg-lab-en">{para}</p>)}</article>
     <div className="gg-lab-tasks">{item.questions.map((q, i) => <ChoiceCheck key={q.id} lab="context" itemId={item.id} question={q} index={i} total={total} onGraded={onGraded} />)}
-      {item.open.map((task) => <OpenCheck key={task.id} lab="context" itemId={item.id} task={task} label={openLabel[task.kind]} minLength={task.kind === "transfer" ? 10 : 16} total={total} onGraded={onGraded} />)}</div></div>;
+      {item.open.map((task) => <OpenCheck key={task.id} lab="context" itemId={item.id} task={task} label={openLabel[task.kind]} minLength={16} total={total} onGraded={onGraded} />)}</div></div>;
 }
 
 function TransferPlayer({ item, onGraded }: { item: TransferItem; onGraded: Graded }) {
