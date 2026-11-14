@@ -1,0 +1,169 @@
+/* Grammar practice labs (M20–M26). Same palette and radii as grammar-garden.css. */
+.gg-lab-banner{display:flex;align-items:center;gap:14px;margin-top:12px;padding:14px 18px;border:1px solid #cfe4f2;border-radius:16px;background:linear-gradient(95deg,#eef6fd,#f3f9f6);color:#183a5a;box-shadow:0 4px 14px #17384c0d}
+.gg-lab-banner>svg:first-child{flex:none;color:#2a7fb8}
+.gg-lab-banner span{display:flex;flex-direction:column;gap:2px;min-width:0}
+.gg-lab-banner strong{font-size:14px}
+.gg-lab-banner small{color:#5b7488;font-size:11px}
+.gg-lab-banner>svg:last-child{margin-left:auto;flex:none;color:#2a7fb8}
+
+.gg-labs{max-width:1100px}
+.gg-lab-hero{display:flex;align-items:center;justify-content:space-between;gap:20px;margin:6px 0 14px;padding:22px 24px;border:1px solid #d7e8f2;border-radius:20px;background:linear-gradient(100deg,#eaf4fb 0%,#eef8f3 100%)}
+.gg-lab-hero h1{margin:8px 0 4px;color:#173f5f;font-size:clamp(22px,2.6vw,30px)}
+.gg-lab-hero p{margin:0;max-width:560px;color:#40617a;font-size:13px}
+.gg-lab-stats{display:grid;grid-template-columns:repeat(3,minmax(78px,1fr));gap:8px}
+.gg-lab-stats div{display:flex;flex-direction:column;align-items:center;padding:10px;border-radius:13px;background:#ffffffc9}
+.gg-lab-stats strong{color:#1c7f91;font-size:20px}
+.gg-lab-stats span{color:#5a7488;font-size:11px}
+
+.gg-lab-levels{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:12px}
+.gg-lab-levels a{min-width:48px;padding:7px 12px;border:1px solid #d9e6e4;border-radius:999px;background:#fff;color:#35566c;font-size:12px;font-weight:800;text-align:center}
+.gg-lab-levels a.active{border-color:#15998d;background:#15998d;color:#fff}
+.gg-lab-levels a[aria-disabled="true"]{opacity:.5}
+
+.gg-lab-draft{margin:0 0 12px;padding:9px 12px;border:1px dashed #e5cf8f;border-radius:10px;background:#fffbea;color:#7a5d12;font-size:11.5px}
+
+.gg-lab-section{margin-bottom:14px;padding:16px;border:1px solid #e3ebea;border-radius:18px;background:#fff;box-shadow:0 4px 14px #113c470b}
+.gg-lab-section>header{display:flex;align-items:flex-start;gap:12px;margin-bottom:12px}
+.gg-lab-section h3{display:flex;align-items:center;gap:8px;margin:0 0 3px;color:#172d4e;font-size:15px}
+.gg-lab-section h3 small{padding:2px 7px;border-radius:999px;background:#eef3f6;color:#5f7889;font-size:10px}
+.gg-lab-section header p{margin:0;color:#5d7387;font-size:12px}
+.gg-lab-icon{flex:none;display:grid;place-items:center;width:38px;height:38px;border-radius:11px;background:#e8f4fb;color:#2a7fb8}
+.gg-lab-clinic .gg-lab-icon{background:#fdeeee;color:#c4524f}
+.gg-lab-contrast .gg-lab-icon{background:#f1edfb;color:#7158c2}
+.gg-lab-transform .gg-lab-icon{background:#eaf7f2;color:#178567}
+.gg-lab-context .gg-lab-icon{background:#fff4e5;color:#b8731b}
+.gg-lab-diagnostic .gg-lab-icon{background:#e7f3f7;color:#18829a}
+.gg-lab-count{margin-left:auto;padding:4px 10px;border-radius:999px;background:#f1f6f5;color:#3c6a68;font-size:11px;font-weight:800}
+
+.gg-lab-cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:8px}
+.gg-lab-cards button{position:relative;display:flex;flex-direction:column;gap:4px;min-height:92px;padding:11px 30px 11px 12px;border:1px solid #e1eaea;border-radius:13px;background:#fbfdfd;color:#173352;text-align:left;cursor:pointer;transition:border-color .15s,transform .15s}
+.gg-lab-cards button:hover{border-color:#9fd2ca;transform:translateY(-2px)}
+.gg-lab-cards button.done{border-color:#bfe5d6;background:#f3fbf7}
+.gg-lab-card-top{display:flex;align-items:center;justify-content:space-between;gap:6px}
+.gg-lab-card-top small{color:#65809a;font-size:10px;font-weight:800}
+.gg-lab-card-top em{display:inline-flex;align-items:center;gap:3px;color:#168a66;font-size:10px;font-style:normal;font-weight:800}
+.gg-lab-cards strong{display:-webkit-box;overflow:hidden;font-size:13px;line-height:1.3;-webkit-box-orient:vertical;-webkit-line-clamp:2}
+.gg-lab-sub{display:-webkit-box;overflow:hidden;color:#6a8092;font-size:11px;line-height:1.35;-webkit-box-orient:vertical;-webkit-line-clamp:2}
+.gg-lab-chevron{position:absolute;right:9px;top:50%;margin-top:-8px;color:#8fb2ab}
+.gg-lab-more{margin:10px 0 0!important}
+
+.gg-labs-panel{display:grid;gap:4px}
+.gg-lab-concept{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.3fr);gap:16px;margin-bottom:12px;padding:16px;border:1px solid #d8e6f1;border-radius:16px;background:#f5f9fd}
+.gg-lab-concept h3{margin:6px 0 4px;color:#173f5f;font-size:17px}
+.gg-lab-concept p{margin:0;color:#5c7489;font-size:12px}
+.gg-lab-concept ol{display:grid;gap:6px;margin:0;padding-left:20px;color:#21405c;font-size:12.5px}
+.gg-lab-concept code{display:block;margin-top:2px;color:#2d7066;font-size:11.5px;white-space:normal}
+
+.gg-lab-player{display:grid;gap:12px}
+.gg-lab-player-head{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px}
+.gg-lab-player-head .gg-back{border:0;background:none;cursor:pointer}
+.gg-lab-player-head .gg-eyebrow{display:inline-flex;align-items:center;gap:6px}
+.gg-lab-stepper,.gg-lab-practice{padding:20px;border:1px solid #e3ebea;border-radius:18px;background:#fff}
+.gg-lab-practice h2,.gg-lab-step h2{margin:6px 0 10px;color:#172d4e;font-size:20px}
+.gg-lab-progress{display:flex;gap:4px;margin-bottom:14px}
+.gg-lab-progress span{flex:1;height:5px;border-radius:5px;background:#e3eceb}
+.gg-lab-progress span.done{background:#15998d}
+.gg-lab-progress span.now{background:#8bd2c8}
+.gg-lab-step{min-height:180px}
+.gg-lab-step p{color:#2e4a63;font-size:14px;line-height:1.6}
+.gg-lab-instruction{color:#1b3a57!important;font-weight:700}
+.gg-lab-callout{padding:12px 14px;border-left:4px solid #f0b54a;border-radius:8px;background:#fff8e8}
+.gg-lab-rule{padding:12px 14px;border-left:4px solid #15998d;border-radius:8px;background:#ecf8f5}
+
+.gg-lab-compare{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin:10px 0}
+.gg-lab-compare>div{display:flex;flex-direction:column;gap:4px;padding:12px;border:1px solid #e1e9ea;border-radius:12px;background:#fafcfc}
+.gg-lab-compare>div.no{border-color:#f3c9c6;background:#fff6f5}
+.gg-lab-compare>div.ok{border-color:#bfe5d6;background:#f2fbf6}
+.gg-lab-compare small{color:#6b8191;font-size:10px;font-weight:800;text-transform:uppercase}
+.gg-lab-compare p{margin:0;font-size:13px}
+.gg-lab-en{color:#14365a;font-family:Georgia,"Times New Roman",serif;font-size:15px;line-height:1.6}
+.gg-lab-examples{display:grid;gap:6px;padding-left:20px}
+
+.gg-lab-check{margin-top:14px;padding:16px;border:1px solid #e5ecec;border-radius:14px;background:#fbfdfd}
+.gg-lab-prompt{margin:6px 0 0;color:#1d3a56;font-size:14px;font-weight:600;line-height:1.55}
+.gg-lab-check .gg-options button:disabled{cursor:default}
+.gg-lab-check .gg-options button.gg-lab-right{border-color:#2aa57a;background:#e9f8f0}
+.gg-lab-check .gg-options button.gg-lab-wrong{border-color:#e08b86;background:#fff1f0}
+.gg-lab-check .gg-question-actions{align-items:center}
+.gg-lab-open textarea{width:100%;margin-top:10px;padding:11px 12px;border:1px solid #d6e3e1;border-radius:11px;background:#fff;color:#16324f;font:inherit;font-size:14px;line-height:1.55;resize:vertical}
+.gg-lab-hint{margin-right:auto;color:#6c8394;font-size:11px}
+
+.gg-lab-feedback{margin-top:12px;padding:13px 15px;border:1px solid #d7e4e3;border-radius:12px;background:#f6faf9;font-size:13px}
+.gg-lab-feedback strong{display:inline-flex;align-items:center;gap:6px;font-size:13px}
+.gg-lab-feedback.ok{border-color:#b9e2cf;background:#effaf4}
+.gg-lab-feedback.ok strong{color:#14825d}
+.gg-lab-feedback.no{border-color:#f0cdca;background:#fff6f5}
+.gg-lab-feedback.no strong{color:#b4443f}
+.gg-lab-feedback.info strong{color:#2a6f9b}
+.gg-lab-feedback p{margin:7px 0;color:#2f4b62}
+.gg-lab-feedback ul{margin:6px 0;padding-left:20px;color:#2f4b62}
+.gg-lab-feedback small{display:block;margin:6px 0;color:#6a7f8f}
+.gg-lab-feedback .gg-secondary{margin:4px 0 0}
+
+.gg-lab-source{display:flex;flex-direction:column;gap:4px;margin:12px 0;padding:14px;border:1px solid #dfe8f0;border-radius:12px;background:#f6f9fc}
+.gg-lab-source small{color:#6a8092;font-size:10px;font-weight:800;text-transform:uppercase}
+.gg-lab-source em{color:#53708a;font-size:12px}
+.gg-lab-context-grid{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:18px;align-items:start}
+.gg-lab-passage{position:sticky;top:12px;max-height:calc(100vh - 40px);overflow:auto;padding:16px;border:1px solid #e6dfcf;border-radius:14px;background:#fffdf7}
+.gg-lab-passage h2{font-size:17px}
+.gg-lab-tasks .gg-lab-check:first-child{margin-top:0}
+.gg-lab-prep{margin:12px 0;padding:14px;border-radius:12px;background:#f4f8f8;font-size:13px}
+.gg-lab-prep h4{margin:0 0 6px}
+.gg-lab-prep ol{margin:0 0 8px;padding-left:20px;color:#2f4b62}
+.gg-lab-prep p{margin:0;color:#3f5a70}
+
+.gg-lab-diag-result{display:grid;gap:10px}
+.gg-lab-score{color:#167a8f;font-size:20px}
+.gg-lab-concepts{display:grid;gap:6px;margin:0;padding:0;list-style:none}
+.gg-lab-concepts li{display:flex;align-items:center;gap:10px;padding:9px 12px;border:1px solid #e2eaea;border-radius:11px;font-size:13px}
+.gg-lab-concepts li span{flex:none;padding:3px 8px;border-radius:999px;background:#eef3f5;color:#4c6a7c;font-size:10.5px;font-weight:800}
+.gg-lab-concepts li.review_priority span{background:#fdeceb;color:#b4443f}
+.gg-lab-concepts li.mixed span{background:#fff4e2;color:#a8681a}
+.gg-lab-concepts li.provisional_strength span{background:#e8f7ef;color:#178562}
+.gg-lab-concepts li a{color:#1d4f73;font-weight:700}
+.gg-lab-concepts li small{margin-left:auto;color:#6b8191}
+.gg-lab-next{padding:12px;border-radius:12px;background:#f5f9fb}
+.gg-lab-next h4{margin:0 0 8px}
+.gg-lab-next>div{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:8px;padding:6px 0;border-top:1px solid #e5edef}
+.gg-lab-next a{color:#1d4f73;font-weight:700}
+.gg-lab-next .gg-secondary{display:inline-flex;align-items:center;gap:6px;margin:0}
+.gg-lab-diag-result details{font-size:13px}
+.gg-lab-diag-result details li.ok{color:#14825d}
+.gg-lab-diag-result details li.no{color:#a5403b}
+.gg-lab-diag-result details p{margin:2px 0 6px;color:#3f5a70}
+.gg-lab-diag-result .gg-primary,.gg-lab-diagnostic>.gg-primary{width:auto;justify-self:start}
+
+@media(max-width:900px){
+  .gg-lab-concept,.gg-lab-context-grid{grid-template-columns:1fr}
+  .gg-lab-passage{position:static;max-height:none}
+  .gg-lab-hero{flex-direction:column;align-items:flex-start}
+}
+@media(max-width:650px){
+  .gg-lab-compare,.gg-lab-cards{grid-template-columns:1fr}
+  .gg-lab-stats{width:100%}
+  .gg-lab-stepper,.gg-lab-practice{padding:14px}
+  .gg-lab-section{padding:13px}
+  .gg-lab-section>header{flex-wrap:wrap}
+}
+
+/* Question-list and self-review blocks (the roadmap pages do not ship these). */
+.gg-placement-questions{display:grid;gap:13px;margin-top:16px}
+.gg-placement-question{min-width:0;margin:0;padding:18px;border:1px solid #dce9e5;border-radius:14px;background:#fff}
+.gg-placement-question legend{padding:0 6px;color:#17887b;font-size:12px;font-weight:800}
+.gg-placement-question>strong{display:block;margin:4px 0 10px;font-size:16px}
+.gg-placement-options{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}
+.gg-placement-options label{display:flex;align-items:center;gap:9px;padding:11px 13px;border:1px solid #dce7e4;border-radius:10px;cursor:pointer}
+.gg-placement-options label:has(input:checked){border-color:#19978d;background:#eaf8f4}
+.gg-placement-options input{accent-color:#19978d}
+.gg-placement-submit{position:sticky;bottom:12px;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:13px 17px;border:1px solid #d7e8e2;border-radius:13px;background:#ffffffed;box-shadow:0 5px 20px #17384c17}
+.gg-placement-submit span{color:#557386;font-weight:700}
+.gg-placement-submit button:disabled{opacity:.5;cursor:not-allowed}
+.gg-lab-feedback .gg-self-review{margin:12px 0 0;padding:10px 0 0;border-top:1px solid #dfe9e8}
+.gg-lab-feedback .gg-self-review p{margin:0 0 8px}
+.gg-lab-feedback .gg-self-review>div{display:flex;flex-wrap:wrap;gap:8px}
+.gg-lab-feedback .gg-self-review button[aria-pressed="true"]{border-color:#15998d;background:#e8f7f3;color:#157b72}
+@media(max-width:650px){.gg-placement-options{grid-template-columns:1fr}.gg-placement-submit{flex-direction:column;align-items:stretch}}
+
+/* Second sidebar link sits under "Xem tiến độ chi tiết". */
+.gg-side-link + .gg-side-link{display:flex;align-items:center;gap:6px;margin-top:8px}
+.gg-levels + .gg-lab-banner{margin:12px 0}

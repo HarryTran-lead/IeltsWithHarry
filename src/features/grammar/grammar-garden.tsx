@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { usePathname, useSearchParams } from "next/navigation";
 import { Fragment, useCallback, useEffect, useRef, useState, type ReactNode } from "react";
-import { ArrowLeft, ArrowRight, BookOpen, CalendarClock, Check, ClipboardCheck, Compass, Flag, LockKeyhole, Newspaper, PenLine, RotateCcw, Search, Sprout, Volume2, X, ChevronRight } from "lucide-react";
+import { ArrowLeft, ArrowRight, BookOpen, CalendarClock, Check, ClipboardCheck, Compass, Flag, FlaskConical, LockKeyhole, Newspaper, PenLine, RotateCcw, Search, Sprout, Volume2, X, ChevronRight } from "lucide-react";
 import { Sticker, type StickerName } from "@/components/stickers/stickers";
 import { speakText } from "@/lib/vocabulary/pronounce";
 import { editorialId, grammarLevels, grammarWorlds, reviewedCount, type GrammarCatalogLesson, type GrammarExample, type GrammarGuide, type GrammarLessonProgress, type GrammarMistake, type GrammarPracticeItem, type GrammarProgress, type GrammarReview, type GrammarLevel } from "@/lib/grammar/types";
@@ -15,6 +15,7 @@ import { CHAPTER, ChapterTestsPage } from "./grammar-tests";
 import { PracticeSession, resetForSession, SessionSummary, sessionScore, type SessionEntry, type SessionResult } from "./practice-session";
 import { GRAMMAR_PASS_PERCENT, isLevelOpen } from "@/lib/grammar/gate";
 import { GrammarUnlockPage, LockedLevel, useGrammarUnlocks } from "./grammar-unlock";
+import { LabsHub, LessonLabsPanel } from "./grammar-labs";
 import "./grammar-tokens.css";
 import "./grammar-garden.css";
 import "./grammar-garden-layout.css";
@@ -49,7 +50,8 @@ export function GrammarGarden() {
   return <div className="gg" id="che-do-hoc">
     {syncError && <div className="gg-sync" role="status">{syncError}</div>}
     {gate.error && <div className="gg-sync" role="alert">{gate.error}</div>}
-    {route === "lesson" ? (!isLevelOpen(parts[4]?.split("-")[0] as GrammarLevel, gate.unlocked) ? <LockedLevel level={parts[4]?.split("-")[0] as GrammarLevel} unlocked={gate.unlocked} /> : ready ? <LessonWorkspace key={parts[4]} code={parts[4]} progress={progress} update={update} initialTab={searchParams.get("tab") === "practice" ? "practice" : "theory"} initialStage={searchParams.get("stage") ?? "guided"} initialItem={searchParams.get("item") ?? ""} resume={searchParams.has("resume")} /> : <div className="gg-loading"><LoadingBlock label="Đang tải tiến độ…" /></div>)
+    {route === "lesson" ? (!isLevelOpen(parts[4]?.split("-")[0] as GrammarLevel, gate.unlocked) ? <LockedLevel level={parts[4]?.split("-")[0] as GrammarLevel} unlocked={gate.unlocked} /> : ready ? <LessonWorkspace key={parts[4]} code={parts[4]} progress={progress} update={update} initialTab={searchParams.get("tab") === "practice" ? "practice" : searchParams.get("tab") === "labs" ? "labs" : "theory"} initialStage={searchParams.get("stage") ?? "guided"} initialItem={searchParams.get("item") ?? ""} resume={searchParams.has("resume")} /> : <div className="gg-loading"><LoadingBlock label="Đang tải tiến độ…" /></div>)
+      : route === "labs" ? <LabsHub levelParam={searchParams.get("level")} labParam={searchParams.get("lab")} idParam={searchParams.get("id")} unlocked={gate.unlocked} />
       : route === "review" ? <ReviewPage progress={progress} update={update} />
       : route === "progress" ? <ProgressPage progress={progress} ready={ready} unlocked={gate.unlocked} />
       : route === "tests" ? (isLevelOpen(testLevel, gate.unlocked) ? <ChapterTestsPage key={testLevel} progress={progress} update={update} initialLevel={testLevel} unlocked={gate.unlocked} /> : <LockedLevel level={testLevel} unlocked={gate.unlocked} />)
@@ -91,6 +93,7 @@ function Roadmap({ level, progress, ready, chapterQuery, unlocked }: { level: Gr
       <Sticker name={worldSticker(level)} size={84} tilt={-6} float className="gg-hero-sticker" />
     </section>
     <nav className="gg-levels" id="gg-worlds" aria-label="Chọn cấp độ">{grammarLevels.map((item) => { const value = countForLevel(item, progress); const open = isLevelOpen(item, unlocked); return <Link className={`${item === level ? "selected" : ""} ${open ? "" : "is-locked"}`} aria-current={item === level ? "page" : undefined} href={open ? `${ROOT}/level/${item}` : `${ROOT}/placement?target=${item}`} key={item}>{open ? <Sticker name={worldSticker(item)} size={30} pop={false} /> : <LockKeyhole size={24} aria-hidden="true" />}<span><strong>{item}</strong><small>{open ? ready ? `${value.practiced}/${value.total}` : `${value.total} bài` : "Chưa mở"}</small></span></Link>; })}</nav>
+    <Link className="gg-lab-banner" href={`${ROOT}/labs?level=${level}`}><FlaskConical size={22} aria-hidden="true" /><span><strong>Phòng luyện chuyên sâu {level}</strong><small>Chẩn đoán nhanh · Chữa lỗi · Phân biệt cấu trúc · Viết lại câu · Ngữ cảnh · Viết & Nói</small></span><ArrowRight size={18} aria-hidden="true" /></Link>
     <div className="gg-search"><Search size={17} /><input value={query} onChange={(event) => setQuery(event.target.value)} placeholder={`Tìm trong ${level} (${lessons.length} bài)...`} aria-label="Tìm bài Grammar" />{query && <button onClick={() => setQuery("")}>Xóa</button>}</div>
     {query.trim() ? <ol className="gg-path">{found.length ? found.map((lesson) => node(lesson, lessons.indexOf(lesson) + 1)) : <p className="gg-path-empty">Không tìm thấy bài phù hợp.</p>}</ol>
       : <div className="gg-chapters">{chapters.map((chunk, index) => {
@@ -111,7 +114,8 @@ function SidebarProgress({ level, progress }: { level: GrammarLevel; progress: G
   const due = dueLessons(progress, clockNow()).filter((code) => code.startsWith(level)).length;
   return <section className="gg-side-card"><h3>Tiến độ cấp độ {level}</h3><div className="gg-side-progress"><span>{counts.practiced}/{counts.total} bài đã học xong</span><strong>{Math.round(counts.practiced / counts.total * 100)}%</strong></div><div className="gg-meter"><span style={{ width: `${counts.practiced / counts.total * 100}%` }} /></div>
     <div className="gg-side-stats"><div><strong>{counts.started}</strong><small>Bài đã mở</small></div><div><strong>{due}</strong><small>Đến hạn ôn</small></div><div><strong>{needsReview}</strong><small>Câu cần ôn</small></div></div>
-    <Link className="gg-side-link" href={`${ROOT}/progress`}>Xem tiến độ chi tiết <ArrowRight size={14} /></Link></section>;
+    <Link className="gg-side-link" href={`${ROOT}/progress`}>Xem tiến độ chi tiết <ArrowRight size={14} /></Link>
+    <Link className="gg-side-link" href={`${ROOT}/labs?level=${level}`}><FlaskConical size={14} aria-hidden="true" /> Phòng luyện chuyên sâu <ArrowRight size={14} /></Link></section>;
 }
 
 type SessionKind = "stage" | "spaced" | "retry" | "item" | "check";
@@ -120,8 +124,8 @@ type LessonView =
   | { type: "summary"; kind: SessionKind; stage: string; result: SessionResult; review?: GrammarReview; learned: boolean }
   | { type: "locked" };
 
-function LessonWorkspace({ code, progress, update, initialTab, initialStage, initialItem, resume }: { code: string; progress: GrammarProgress; update: GrammarUpdate; initialTab: "theory" | "practice"; initialStage: string; initialItem: string; resume: boolean }) {
-  const [tab, setTab] = useState<"theory" | "practice">(initialItem || resume || initialStage !== "guided" ? "practice" : initialTab);
+function LessonWorkspace({ code, progress, update, initialTab, initialStage, initialItem, resume }: { code: string; progress: GrammarProgress; update: GrammarUpdate; initialTab: "theory" | "practice" | "labs"; initialStage: string; initialItem: string; resume: boolean }) {
+  const [tab, setTab] = useState<"theory" | "practice" | "labs">(initialItem || resume || initialStage !== "guided" ? "practice" : initialTab);
   const [data, setData] = useState<{ guide: GrammarGuide; items: GrammarPracticeItem[] } | null>(null);
   const [error, setError] = useState("");
   const [view, setView] = useState<LessonView | null>(null);
@@ -206,8 +210,8 @@ function LessonWorkspace({ code, progress, update, initialTab, initialStage, ini
 
   return <div className="gg-lesson"><div className="gg-crumb"><Link href={`${ROOT}/level/${lesson?.level ?? "A1"}`}><ArrowLeft size={16} /> {lesson?.level} · Lộ trình</Link><ChevronRight size={15} /><span>{code}</span></div>
     <div className="gg-lesson-head"><div><span className="gg-eyebrow">{code} · BẢN NHÁP BIÊN TẬP</span><h1>{guide.title}</h1><p>{guide.overview || guide.objectives[0]}</p></div><span className="gg-lesson-score">{reviewedCount(lessonProgress)}/{items.length} câu đã làm</span></div>
-    <div className="gg-lesson-tabs"><button className={tab === "theory" ? "active" : ""} onClick={() => setTab("theory")}><BookOpen size={17} /> Lý thuyết</button><button className={tab === "practice" ? "active" : ""} onClick={openPractice}><PenLine size={17} /> Luyện tập · {items.length} câu</button></div>
-    {tab === "theory" ? <Theory code={code} guide={guide} onCheck={quickCheck} onPractice={() => { markRead(); setTab("practice"); startStage(openStage(items, lessonProgress)); }} />
+    <div className="gg-lesson-tabs"><button className={tab === "theory" ? "active" : ""} onClick={() => setTab("theory")}><BookOpen size={17} /> Lý thuyết</button><button className={tab === "practice" ? "active" : ""} onClick={openPractice}><PenLine size={17} /> Luyện tập · {items.length} câu</button><button className={tab === "labs" ? "active" : ""} onClick={() => setTab("labs")}><FlaskConical size={17} /> Phòng luyện</button></div>
+    {tab === "labs" ? <LessonLabsPanel code={code} /> : tab === "theory" ? <Theory code={code} guide={guide} onCheck={quickCheck} onPractice={() => { markRead(); setTab("practice"); startStage(openStage(items, lessonProgress)); }} />
       : <div className="gg-practice">
         <div className="gg-stage-tabs">{stages.map((stage) => { const stageItems = items.filter((question) => question.stage === stage); const done = stageItems.filter((question) => answered(lessonProgress, question.id)).length; const active = view?.type === "summary" ? view.stage === stage : view?.type === "locked" && stage === "spaced_review"; return <button key={stage} className={active ? "active" : ""} onClick={() => stage === "spaced_review" ? beginSpaced(items, progress) : startStage(stage)}>{stageNames[stage]} <small>{stage === "spaced_review" ? spacedLabel : `${done}/${stageItems.length}`}</small></button>; })}</div>
         {view?.type === "locked" && <div className="gg-empty gg-locked"><LockKeyhole size={28} /><h2>Ôn cách quãng {reviewState ? `mở ${formatDue(reviewState.due, clockNow())}` : "chưa mở"}</h2><p>{reviewState ? "Ôn đúng hạn giúp bạn nhớ lâu hơn ôn dồn. Bài này sẽ tự xuất hiện trong mục Hôm nay khi đến hạn." : "Làm hết ba phần Có hướng dẫn, Tự luyện và Vận dụng để mở lịch ôn cho bài này."}</p><button className="gg-primary" onClick={() => startStage(openStage(items, lessonProgress))}>Luyện tiếp bài này <ArrowRight size={16} /></button></div>}
