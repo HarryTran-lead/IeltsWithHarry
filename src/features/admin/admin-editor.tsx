@@ -2,7 +2,7 @@
 import { useCallback, useEffect, useMemo, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { BookOpen, ChevronRight, FileText, FolderTree, GraduationCap, Headphones, Image, Languages, LayoutDashboard, Layers, Mic, PenLine, Newspaper, ScrollText, Plus, Search, Shapes, LibraryBig, UsersRound, AudioLines, type LucideIcon } from "lucide-react";
+import { BookOpen, ChevronRight, FileText, FolderTree, GraduationCap, Headphones, Image, Languages, LayoutDashboard, Layers, Mic, PenLine, Newspaper, ScrollText, Plus, Search, Shapes, LibraryBig, UsersRound, AudioLines, ChartNoAxesCombined, type LucideIcon } from "lucide-react";
 import { BankAdmin, type BankWorkspace } from "@/features/ielts/bank-admin";
 import { AiContentFactory } from "@/features/ai-factory/ai-content-factory";
 import { Sticker } from "@/components/stickers/stickers";
@@ -21,6 +21,7 @@ import { VocabularyPhase5 } from "./vocabulary-phase5";
 import { ViEnTranslationReview } from "./vi-en-translation-review";
 import { YoutubeLessonsAdmin } from "./youtube-lessons";
 import { VoaDictationAdmin } from "./voa-dictation-admin";
+import { AdminAnalytics } from "./admin-analytics";
 import { AdminAudit, AdminBroadcast, AdminLearnerDetail, AdminLearners } from "./admin-learners";
 
 type Course = { id: string; stage_id: string; slug: string; title: string; description: string; published: boolean };
@@ -36,6 +37,7 @@ const skillIcons: Record<(typeof skillTabs)[number], LucideIcon> = { Vocabulary:
 type Page = { slug: string; title: string; tab?: string; icon: LucideIcon; parent?: string; description: string };
 const pages: Page[] = [
   { slug: "overview", title: "Tổng quan", icon: LayoutDashboard, description: "Tình trạng nội dung theo kỹ năng, bài mới cập nhật và lối tắt tới các khu biên soạn." },
+  { slug: "analytics", title: "Lượt truy cập", icon: ChartNoAxesCombined, description: "Lượt xem trang, lượt truy cập, khách và học viên, đăng nhập và học bài theo ngày (giờ Việt Nam)." },
   { slug: "users", title: "Học viên", tab: "Danh sách học viên", icon: UsersRound, description: "Theo dõi hoạt động, streak và quản lý từng tài khoản: khóa, cấm chat, giao nhiệm vụ, đặt mục tiêu." },
   { slug: "users/broadcast", parent: "users", title: "Học viên", tab: "Thông báo & giao bài", icon: UsersRound, description: "Gửi thông báo, giao nhiệm vụ và đặt mục tiêu ngày cho cả lớp cùng lúc." },
   { slug: "users/audit", parent: "users", title: "Học viên", tab: "Nhật ký admin", icon: UsersRound, description: "Mọi thao tác của admin trên tài khoản học viên đều được ghi lại tại đây." },
@@ -65,7 +67,7 @@ const pages: Page[] = [
   { slug: "news/settings", parent: "news", title: "Daily News", tab: "Cấu hình & prompt", icon: Newspaper, description: "Lịch tự động, giới hạn hằng ngày và hướng dẫn cho AI." },
 ];
 const navGroups = [
-  { label: "Tổng quan", slugs: ["overview"] },
+  { label: "Tổng quan", slugs: ["overview", "analytics"] },
   { label: "Học viên", slugs: ["users"] },
   { label: "Nội dung", slugs: ["curriculum", "rights", "media"] },
   { label: "Ngân hàng đề", slugs: ["ielts-bank", "ai-content-factory"] },
@@ -276,6 +278,7 @@ export function AdminEditor() {
     {section === "ai-content-factory" && <AiContentFactory />}
     {section.startsWith("news") && <AdminNews section={section} />}
     </>}
+    {section === "analytics" && <AdminAnalytics />}
     {section === "users" && (learnerId ? <AdminLearnerDetail key={learnerId} id={learnerId} /> : <AdminLearners />)}
     {section === "users/broadcast" && <AdminBroadcast />}
     {section === "users/audit" && <AdminAudit />}
