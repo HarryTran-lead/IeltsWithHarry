@@ -79,9 +79,6 @@
 /* The study card sits centred in its panel instead of leaving an empty strip on the right. */
 .vocabulary-layout .listening-vocab-card, .vocabulary-layout .collocations-card { margin-inline: auto; }
 .vocabulary-layout .collocations-progress { margin: 10px 0 12px; }
-.vocabulary-layout .word-formation-stats { gap: 17px; margin: 5px 0 10px; font-size: var(--fs-sm); }
-.vocabulary-layout .word-formation-stats strong { font-size: var(--fs-lg); }
-.vocabulary-layout .word-formation-layout { gap: 10px; }
 .vocabulary-layout .reading-vocab-back { margin-bottom: 6px; }
 .vocabulary-layout .reading-vocab-hero { padding: 10px 14px; }
 .vocabulary-layout .reading-vocab-stats { margin: 6px 0; }
@@ -120,12 +117,7 @@
 }
 
 /* Vocabulary readability (2026-11 audit): learning content is never under 12px, and Vietnamese meanings in lists are 13px. */
-.vocabulary-layout .word-formation-list > button > span,
-.vocabulary-layout .word-formation-list small,
 .vocabulary-layout .reading-vocab-page small { font-size: var(--fs-sm); }
-.vocabulary-layout .word-formation-note,
-.vocabulary-layout .word-formation-prompt > span,
-.vocabulary-layout .word-formation-toolbar label,
 .vocabulary-layout .reading-vocab-topic,
 .vocabulary-layout .vocab-tag { font-size: var(--fs-xs); }
 /* Library: no repeated topic picture, and the "not reviewed" note no longer outshines the meaning. */
