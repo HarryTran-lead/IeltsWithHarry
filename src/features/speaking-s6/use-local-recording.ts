@@ -61,9 +61,14 @@ export function useLocalRecording(){
      recorder.current=rec;
      rec.ondataavailable=event=>{if(epoch.current.current(token)&&event.data.size>0)parts.push(event.data);};
      rec.onerror=()=>{
-       if(!epoch.current.current(token))return;
-       setError("Ghi âm thất bại. Hãy thử lại.");
-       recorder.current=null;stopTracks();setRecording(false);
+       // A MediaRecorder error can be followed by onstop/ondataavailable.
+       // Invalidate this take FIRST so those callbacks cannot create a
+       // phantom audio Blob or make a failed take look successful.
+       if(!epoch.current.fail(token))return;
+       recorder.current=null;
+       stopTracks();clearUrl();
+       setBlob(null);setSeconds(0);setRecording(false);
+       setError("Ghi âm thất bại. Không lưu bản ghi lỗi; hãy thử lại.");
      };
      rec.onstop=()=>{
        if(!epoch.current.current(token))return;
