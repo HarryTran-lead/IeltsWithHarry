@@ -8,7 +8,7 @@ import {DELETE} from "@/app/api/speaking/s6/session/route";
 
 const OWNER="11111111-1111-4111-8111-111111111111";
 const SESSION="22222222-2222-4222-8222-222222222222";
-const request=()=>new Request("https://staging.invalid/api/speaking/s6/session?attemptId="+SESSION,{method:"DELETE"});
+const request=()=>new Request("https://staging.invalid/api/speaking/s6/session?attemptId="+SESSION,{method:"DELETE",headers:{"Origin":"https://staging.invalid"}});
 const builder=(item:{id:string}|null)=>{
  const q={select:vi.fn(),eq:vi.fn(),delete:vi.fn(),
   maybeSingle:vi.fn().mockResolvedValue({data:item,error:null}),error:null};
