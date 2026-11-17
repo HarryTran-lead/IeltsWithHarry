@@ -30,8 +30,11 @@ levels. A score only controls the learning roadmap, not CEFR certification.
 
 Apply `supabase/migrations/202611040001_grammar_level_unlocks.sql` before
 deploying the code. Production needs its existing server-only
-`SUPABASE_SERVICE_ROLE_KEY`; `GRAMMAR_ASSESSMENT_SECRET` can be set as a
-separate ticket-signing key. The service role is the only writer for unlocks.
+`SUPABASE_SERVICE_ROLE_KEY` and a dedicated `GRAMMAR_ASSESSMENT_SECRET`
+(32+ bytes, server-only) that signs placement-test tickets. The ticket key no
+longer falls back to the database key: without it, starting or submitting a
+placement test fails, so set it in Vercel before deploying. Rotating it only
+invalidates tickets issued in the last 30 minutes. The service role is the only writer for unlocks.
 
 Live learner progress continues in `public.grammar_study_progress` with its
 existing account-scoped RLS. Existing V5 response IDs remain in storage so the
