@@ -28,7 +28,7 @@ export async function enqueueWritingAttempt(attemptId: string, userId: string) {
   const visual = taskType === "academic_task1" ? { visual: content.visual ?? null, imageUrl: content.imageUrl ?? null, figureDescription: content.figureDescription ?? null } : null;
   const versionId = pipelineVersion();
   const { data: existing, error: lookupError } = await client.from("writing_grading_jobs").select("id,status,attempt_no")
-    .eq("attempt_id", attemptId).eq("pipeline_version", versionId).eq("request_kind", "initial").maybeSingle();
+    .eq("attempt_id", attemptId).eq("user_id", userId).eq("pipeline_version", versionId).eq("request_kind", "initial").maybeSingle();
   if (lookupError) throw new Error("Grading queue unavailable");
   if (existing) return existing;
   const { count, error: quotaError } = await client.from("writing_grading_jobs").select("id", { count: "exact", head: true }).eq("user_id", userId).gte("created_at", vietnamMonthStart());
@@ -48,7 +48,7 @@ export async function enqueueWritingAttempt(attemptId: string, userId: string) {
   if (!insertError && job) return job;
   if (insertError?.code === "23505") {
     const retry = await client.from("writing_grading_jobs").select("id,status,attempt_no")
-      .eq("attempt_id", attemptId).eq("pipeline_version", versionId).eq("request_kind", "initial").single();
+      .eq("attempt_id", attemptId).eq("user_id", userId).eq("pipeline_version", versionId).eq("request_kind", "initial").single();
     if (retry.data) return retry.data;
   }
   throw new Error("Grading queue unavailable");

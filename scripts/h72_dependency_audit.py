@@ -31,6 +31,9 @@ EXCLUDE_PARTS={".git","node_modules",".next","dist","build","coverage","vendor"}
 LOCKFILE_NAMES={"package-lock.json","npm-shrinkwrap.json","pnpm-lock.yaml","yarn.lock","bun.lock"}
 
 def classify(path:str)->str:
+    # These are deployed/privileged private worker entrypoints, NOT audit scripts.
+    if path in ("scripts/writing-grading-worker.ts","scripts/speaking-coaching-worker.ts"):
+        return "APPLICATION_RUNTIME"
     if path.startswith(("src/app/","src/lib/","src/pages/","supabase/functions/","services/","workers/","functions/","app/","lib/","api/","pages/")) or path.startswith(("src/middleware.","middleware.")):
         return "APPLICATION_RUNTIME"
     if path.startswith(("supabase/migrations/","supabase/content/")):
