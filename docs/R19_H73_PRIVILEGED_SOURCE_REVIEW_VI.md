@@ -68,4 +68,12 @@
 2. M04: **đã hoàn thành phần mã nguồn** tách Grammar ticket khỏi service-role và 7 Vitest về key/ticket; triển khai secret mới và thử nghiệm trên staging vẫn **chưa thực hiện** (xem `docs/R19_H73_M04_GRAMMAR_SECRET_ISOLATION_VI.md`).
 3. M05: kiểm tra môi trường/Edge Functions/Workers/cron ngoài repository qua staging được phê duyệt, DBA xác nhận quyền SQL/RPC.
 
+
+## H73/M05 — Private workers và kiểm soát cấu hình runtime (chỉ static)
+- `scripts/writing-grading-worker.ts` và `scripts/speaking-coaching-worker.ts` là **private runtime workers** (Supabase service role, RPC claim/finish). H72 trước đây xem chung `scripts/` là operational nên hai file này chưa xuất hiện trong danh sách runtime.
+- M05 phân loại hai entrypoint này là `APPLICATION_RUNTIME`; `tests/test_h72_dependency_audit.py` có test hồi quy. H73 baseline role tăng từ **10 lên 12**, possible client vẫn **22**, hợp tập thành **33 file**. Đây là sửa lỗi bỏ sót, không chứng minh hai worker mới được triển khai.
+- `scripts/h73_m05_runtime_boundary_gate.py` giám sát `wrangler.toml`, Cloudflare Speaking cron mỗi 2 phút, Writing proxy, `vercel.json`, audio Docker Compose, auth markers của scheduled endpoints, source RPC và hai worker nội bộ. Có cấu hình sai/lệch mới: CI fail closed.
+- `tests/test_h73_m05_runtime_boundary_gate.py` thêm 9 bài kiểm tra. Workflow H73 chạy 29 unit tests H73 và 28 unit tests H72, kèm hai static scans, đóng báo cáo JSON SHA-bound.
+- Tài liệu và checklist phụ thuộc runtime nằm tại `docs/R19_H73_M05_EXTERNAL_DEPENDENCIES_VI.md`. Không có kết luận về quyền trên Oracle, Cloudflare, Vercel hoặc Supabase staging; release NO_GO.
+
 **Release gate:** NO_GO. H73 mới chốt static code review; 18/18 Supabase staging checks chưa có bằng chứng.
