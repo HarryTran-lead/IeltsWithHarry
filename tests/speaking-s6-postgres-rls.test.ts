@@ -59,6 +59,7 @@ describe("Speaking S6 L14-L17 actual PostgreSQL migration & ownership smoke (PGl
         "202611170003_speaking_s6_staging_l14.sql",
         "202611170004_speaking_s6_ui_progress_l15.sql",
         "202611170005_speaking_s6_s5_rls_l17.sql",
+        "202611170006_speaking_s6_attempt_limits_l25.sql",
       ]) await db.exec(migration(name));
 
       // Check safe defaults.
@@ -118,6 +119,35 @@ describe("Speaking S6 L14-L17 actual PostgreSQL migration & ownership smoke (PGl
           privacy_qa_verified=true,import_qa_verified=true where stage='S6'
       `);
       await db.exec("update public.speaking_s6_lesson_revisions set status='published'");
+
+      // M10-L25 atomic admission: quotas survive deleting the attempt.
+      const start=(activity:string)=>db.query<{id:string}>(
+        "select public.speaking_s6_start_attempt_l25($1::uuid,$2,$3,$4,$5,$6,$7) as id",
+        [alice,"S6-001","L18_TEST",activity,"guided",false,false]
+      );
+      const first=await start("S6-001-G02");
+      expect(first.rows[0].id).toMatch(/^[0-9a-f-]{36}$/);
+      await expect(start("S6-001-G02")).rejects.toThrow("S6_START_COOLDOWN");
+      await start("S6-001-G03");
+      await expect(start("S6-001-G04")).rejects.toThrow("S6_START_ACTIVE_LIMIT");
+      const beforeDelete=await db.query<{hour_count:number}>(
+        "select hour_count from public.speaking_s6_start_quotas where user_id=$1 and preview=false",
+        [alice]
+      );
+      expect(beforeDelete.rows[0].hour_count).toBe(2);
+      await db.query("delete from public.speaking_s6_attempts where id=$1",[first.rows[0].id]);
+      const afterDelete=await db.query<{hour_count:number}>(
+        "select hour_count from public.speaking_s6_start_quotas where user_id=$1 and preview=false",
+        [alice]
+      );
+      expect(afterDelete.rows[0].hour_count).toBe(2);
+      await db.query(
+        "update public.speaking_s6_start_quotas set hour_count=8 where user_id=$1 and preview=false",
+        [alice]
+      );
+      await expect(start("S6-001-G04")).rejects.toThrow("S6_START_RATE_LIMIT");
+      // The next authenticated direct-table tests use only the seed attempts.
+
 
       // A valid S5 claimant can access ONLY published learner content; never the private bank.
       await db.exec(`set role authenticated; set request.jwt.claim.sub='${alice}';`);
