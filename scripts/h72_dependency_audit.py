@@ -47,6 +47,18 @@ def head_sha(root:Path)->str:
     return subprocess.run(["git","-C",str(root),"rev-parse","HEAD"],text=True,
                           capture_output=True,check=True,timeout=15).stdout.strip()
 
+def assert_clean_tracked_tree(root:Path)->None:
+    """Reject SHA-bound scans if tracked files differ from checked-out HEAD.
+
+    Untracked generated report artifacts are allowed; tracked edits or staged
+    changes are not. This check is a local integrity guard, not staging proof.
+    """
+    run=subprocess.run(["git","-C",str(root),"status","--porcelain=v1",
+                        "--untracked-files=no"],capture_output=True,text=True,
+                       check=True,timeout=60)
+    if run.stdout.strip():
+        raise ValueError("tracked working tree differs from checked-out HEAD")
+
 def analyze(root:Path,paths:list[str],sha:str)->dict:
     if not re.fullmatch(r"[a-f0-9]{40}",sha):
         raise ValueError("Commit must be a full Git SHA")
@@ -150,6 +162,7 @@ def main()->int:
         sha=head_sha(root)
         if sha!=args.expected_sha:
             print("H72 REFUSED: expected commit does not match checkout",file=sys.stderr);return 2
+        assert_clean_tracked_tree(root)
         result=analyze(root,tracked_files(root),sha)
     except (OSError,ValueError,subprocess.SubprocessError) as e:
         print("H72 NOT_TESTED: unable to attest checked-out repository: "+str(e),file=sys.stderr);return 2
