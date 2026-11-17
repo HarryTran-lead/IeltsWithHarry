@@ -39,6 +39,16 @@ Cần chú ý rằng role `authenticated` trên PostgreSQL giả lập không ch
 
 `evidence/H71_STAGING_EVIDENCE_TEMPLATE.json` giữ nguyên: **0/18 PASS staging thực tế**. CI đi qua không làm tăng con số này.
 
+## H74/M02 — Bộ chạy hai tài khoản trên staging (chuẩn bị, chưa thực thi live)
+
+- `scripts/h74_staging_two_user_readonly.mjs` là công cụ **tùy chọn**, bình thường trả `NOT_TESTED` mà không gọi mạng. Chỉ chạy khi `H74_ALLOW_READONLY_STAGING=YES_AUTHORIZED_STAGING_TWO_USER_READONLY` và có **bảy cấu hình staging** riêng: project ref, URL, publishable key, JWT A/B, UUID attempt A/B.
+- Trước kết nối, công cụ kiểm tra `H74_STAGING_URL` đúng `https://<staging-ref>.supabase.co/`, không có path/query/credentials; lấy production ref từ `src/lib/deployment-environment.ts` để **từ chối production**.
+- Chỉ dùng **GET**, không import service-role và không ghi thông tin nhận dạng, token, response body hay bài viết vào logs. Gọi `/auth/v1/user` xác nhận hai JWT của tài khoản staging khác nhau; đòi hỏi cả hai tài khoản phải nhìn thấy bài làm thử **của chính mình**.
+- Tiếp đó thử A đọc bài B, B đọc bài A, anonymous đọc bài B và JWT sai đọc bài A. Chỉ ghi mã check không chứa PII. Nếu bài làm không tồn tại, không thể đọc cả own row hoặc JWT không hợp lệ thì **FAIL**, tránh false-positive “không lộ dữ liệu”.
+- Dù đạt PASS ở staging, công cụ vẫn trả `release_gate=NO_GO` và `h71_live_checks_approved=0` cho đến khi evidence được gắn SHA/DB project, người kiểm chứng độc lập được xác nhận.
+- `tests/test_h74_staging_preflight.py` thêm **7** unit tests không gọi mạng: mặc định từ chối, thiếu credentials, production ref, URL sai, token/training IDs trùng và HTTP chỉ GET. H74 CI chạy tổng **15 unit tests** (8 M01 + 7 M02) và **10 hợp đồng PG16 cô lập**.
+- Để thực thi thật, chỉ dùng tài khoản/bài làm thử được cấp phép trên **staging riêng**; không sử dụng tài khoản học viên thực hoặc token production. **Chưa thực hiện** ở lượt này.
+
 ## M02 — Những kiểm tra staging chưa tiến hành
 
 - Dùng hai tài khoản học viên giả định A và B trên một **Supabase staging được phê duyệt**, xác minh getUser/session/JWT, bài làm của A không thể bị đọc/sửa bởi B.
