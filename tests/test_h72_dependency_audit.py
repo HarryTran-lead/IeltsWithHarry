@@ -293,6 +293,18 @@ class H72StaticAuditTests(unittest.TestCase):
         self.assertIn("NO_ELIGIBLE_SOURCE_FILES",report["coverage"]["errors"])
         self.assertEqual(report["coverage"]["skipped"][0]["reason"],"DEPENDENCY_LOCKFILE_EXCLUDED")
 
+    def test_source_larger_than_old_cap_is_actually_scanned(self):
+        # Regression against H72 skipping valid 2-8 MB grammar/SQL source files.
+        source=("x" * 1_500_100)+"\nconst target='r19_h58.probes';\n"
+        root=self.project({"src/lib/big.ts":source})
+        report=audit.analyze(root,["src/lib/big.ts"],COMMIT)
+        self.assertEqual(report["static_inventory_status"],"STATIC_INVENTORY_PRODUCED")
+        self.assertEqual(report["coverage"]["inspected_files"],1)
+        self.assertTrue(report["coverage"]["complete"])
+        self.assertEqual(report["coverage"]["skipped"],[])
+        self.assertEqual(report["application_direct_h58_reference_paths"],["src/lib/big.ts"])
+        self.assertEqual(report["findings"][0]["line"],2)
+
     def test_markdown_disclaims_no_matches(self):
         root=self.project({"src/lib/clean.ts":"export const clean = true"})
         report=audit.analyze(root,["src/lib/clean.ts"],COMMIT)
