@@ -11,7 +11,7 @@ root="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 db(){ psql "$EXPECTED" -X -qAt -v ON_ERROR_STOP=1 "$@"; }
 fail(){ echo "H74 CI CONTRACT FAILED: $1" >&2; exit 1; }
 equal(){ [[ "$1" == "$2" ]] || fail "$3: observed=$1 expected=$2"; }
-deny(){ if db "$@" >/dev/null 2>&1; then fail "unexpected database permission or RPC success"; fi; }
+deny(){ if "$@" >/dev/null 2>&1; then fail "unexpected database permission or RPC success"; fi; }
 
 # The fixture is a copy of the project's H58/H68 security blueprint, never the
 # real Supabase schema or a replacement migration.
@@ -27,7 +27,7 @@ echo 'PASS 2/10 13 executor-scoped RLS policies exist'
 for role in anon authenticated service_role; do
   equal "$(db -c "SELECT has_table_privilege('$role','r19_h58.probes','SELECT')::text")" 'false' "$role cannot read source"
   equal "$(db -c "SELECT has_table_privilege('$role','r19_h58.reviews','SELECT')::text")" 'false' "$role cannot read review"
-  deny -c "SET ROLE $role;" -c "SELECT answer_en FROM r19_h58.probes LIMIT 1"
+  deny db -c "SET ROLE $role;" -c "SELECT answer_en FROM r19_h58.probes LIMIT 1"
 done
 echo 'PASS 3/10 anon/authenticated/service_role denied private direct reads'
 
