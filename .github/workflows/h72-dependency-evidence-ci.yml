@@ -61,12 +61,14 @@ jobs:
           }
           pathlib.Path("reports/h72_ci_receipt.json").write_text(json.dumps(receipt,indent=2)+"\n")
           PY
+      # Even if audit fails closed, retain any partial report for diagnosis.
+      # A diagnostic artifact is NEVER evidence of an approved cutover.
       - uses: actions/upload-artifact@v4
-        if: success()
+        if: always()
         with:
           name: h72-dependency-report-and-source
           retention-days: 7
-          if-no-files-found: error
+          if-no-files-found: warn
           path: |
             reports/h72_dependency_inventory.json
             reports/h72_dependency_inventory.md
