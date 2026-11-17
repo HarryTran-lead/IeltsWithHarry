@@ -61,7 +61,8 @@ function RetiredNumbersBank() {
 
 function PortalContent({ canManage, children }: { canManage: boolean; children?: ReactNode }) {
   const pathname = usePathname();
-  // R71: render nested Task 1 self-study pages inside the existing AppShell.
+  // F37-R70: standalone server pages render inside the existing AppShell.
+  // This prevents the legacy Writing Task 1 screen from rendering alongside the new lab.
   const isTask1SelfStudyRoute = pathname === "/app/writing/task-1/self-study"
     || pathname.startsWith("/app/writing/task-1/self-study/");
   const { ready } = useDemo();
