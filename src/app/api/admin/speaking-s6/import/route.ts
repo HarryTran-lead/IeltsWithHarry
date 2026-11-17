@@ -1,8 +1,11 @@
 import { z } from "zod";
 import { bankClient, viewer, requestError } from "@/lib/ielts-bank/server";
 import { validateS6Import } from "@/lib/speaking-s6/contract";
+import { s6MutationGuard } from "@/lib/speaking-s6/mutation-guard";
 export const runtime="nodejs";
 export async function POST(request:Request){
+  const guard=s6MutationGuard(request);
+  if(guard)return guard;
   try {
     const admin=await viewer(true);
     if(Number(request.headers.get("content-length")||0)>200000)
