@@ -1,6 +1,6 @@
 import { createHash } from "node:crypto";
 import { describe, expect, it, vi } from "vitest";
-import { fingerprintS6StoredAudio, S6AudioEvidenceError } from "./audio-evidence";
+import { fingerprintS6StoredAudio } from "./audio-evidence";
 
 const USER="11111111-1111-4111-8111-111111111111";
 const ATTEMPT="22222222-2222-4222-8222-222222222222";
