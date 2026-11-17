@@ -2,7 +2,8 @@ import { beforeEach, describe, expect, it, vi } from "vitest";
 const mocks=vi.hoisted(()=>({
   viewer:vi.fn(),
   bankClient:vi.fn(),
-  s6AccessAllowed:vi.fn()
+  s6AccessAllowed:vi.fn(),
+  fingerprintAudio:vi.fn()
 }));
 vi.mock("@/lib/ielts-bank/server",()=>({
   viewer:mocks.viewer,
@@ -10,7 +11,14 @@ vi.mock("@/lib/ielts-bank/server",()=>({
   requestError:(e:unknown)=>Response.json({error:e instanceof Error?e.message:"ERROR"},{status:400}),
 }));
 vi.mock("@/lib/speaking-s6/access",()=>({s6AccessAllowed:mocks.s6AccessAllowed}));
+vi.mock("@/lib/speaking-s6/audio-evidence",()=>({
+  fingerprintS6StoredAudio:mocks.fingerprintAudio,
+  S6AudioEvidenceError:class extends Error {
+    constructor(public readonly code:string){super(code);}
+  }
+}));
 import { POST } from "@/app/api/speaking/s6/session/route";
+import { S6AudioEvidenceError } from "@/lib/speaking-s6/audio-evidence";
 
 const USER_A="11111111-1111-4111-8111-111111111111";
 const USER_B="22222222-2222-4222-8222-222222222222";
@@ -363,5 +371,51 @@ describe("Speaking S6 M10-L25 atomic start quota and origin guard (mock database
     method:"POST",headers:{"Origin":"https://staging.invalid","Content-Type":"text/plain"},body:"hello"
   });
   expect((await POST(plain)).status).toBe(415);
+ });
+});
+
+describe("M10-L27 S6 submit audio provenance boundaries (mocked Storage, not genuine speech)",()=>{
+ beforeEach(()=>{
+  vi.resetAllMocks();
+  mocks.viewer.mockResolvedValue({id:USER_A});
+  mocks.s6AccessAllowed.mockResolvedValue(true);
+ });
+ it("does not inspect Storage when learner opted out of retention",async()=>{
+  makeDb({attempt:{...makeAttempt("mastery","started"),audio_storage_consent:false}});
+  const r=await POST(request({action:"submit",attemptId:ATTEMPT,transcript:"Notes only",durationSeconds:30}));
+  expect(r.status).toBe(200);
+  expect((await r.json()).audioEvidence).toBe("not_stored");
+  expect(mocks.fingerprintAudio).not.toHaveBeenCalled();
+ });
+ it("requires a real uploaded file when consent was recorded",async()=>{
+  const d=makeDb({attempt:{...makeAttempt("mastery","started"),audio_storage_consent:true}});
+  mocks.fingerprintAudio.mockRejectedValue(new S6AudioEvidenceError("AUDIO_UPLOAD_REQUIRED"));
+  const r=await POST(request({action:"submit",attemptId:ATTEMPT,transcript:"Notes",durationSeconds:30}));
+  expect(r.status).toBe(409);
+  expect((await r.json()).error).toBe("AUDIO_UPLOAD_REQUIRED");
+  expect(d.attempts.update).not.toHaveBeenCalled();
+  expect(mocks.fingerprintAudio).toHaveBeenCalledWith(undefined,USER_A,ATTEMPT);
+ });
+ it("records the server-side checksum and byte count in the same submitted update",async()=>{
+  const d=makeDb({attempt:{...makeAttempt("guided","started"),audio_storage_consent:true}});
+  const fingerprint={
+    audio_evidence_state:"stored_hash_recorded",
+    audio_evidence_sha256:"a".repeat(64),audio_evidence_bytes:1052,
+    audio_evidence_mime:"audio/webm",audio_evidence_at:"2026-11-17T10:00:00.000Z"
+  };
+  mocks.fingerprintAudio.mockResolvedValue(fingerprint);
+  const r=await POST(request({action:"submit",attemptId:ATTEMPT,transcript:"My response",durationSeconds:40}));
+  expect(r.status).toBe(200);
+  expect((await r.json()).audioEvidence).toBe("stored_hash_recorded");
+  expect(d.attempts.update).toHaveBeenCalledWith(expect.objectContaining(fingerprint));
+  expect(d.update.eq).toHaveBeenCalledWith("phase","started");
+ });
+ it("does not submit if private Storage is unavailable",async()=>{
+  const d=makeDb({attempt:{...makeAttempt("guided","started"),audio_storage_consent:true}});
+  mocks.fingerprintAudio.mockRejectedValue(new S6AudioEvidenceError("AUDIO_STORAGE_UNAVAILABLE"));
+  const r=await POST(request({action:"submit",attemptId:ATTEMPT,transcript:"My response",durationSeconds:40}));
+  expect(r.status).toBe(503);
+  expect((await r.json()).error).toBe("AUDIO_STORAGE_UNAVAILABLE");
+  expect(d.attempts.update).not.toHaveBeenCalled();
  });
 });
