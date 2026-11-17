@@ -49,6 +49,16 @@ Cần chú ý rằng role `authenticated` trên PostgreSQL giả lập không ch
 - `tests/test_h74_staging_preflight.py` thêm **7** unit tests không gọi mạng: mặc định từ chối, thiếu credentials, production ref, URL sai, token/training IDs trùng và HTTP chỉ GET. H74 CI chạy tổng **15 unit tests** (8 M01 + 7 M02) và **10 hợp đồng PG16 cô lập**.
 - Để thực thi thật, chỉ dùng tài khoản/bài làm thử được cấp phép trên **staging riêng**; không sử dụng tài khoản học viên thực hoặc token production. **Chưa thực hiện** ở lượt này.
 
+## H74/M03 — DBA catalog chỉ đọc cho thực tế Supabase (chuẩn bị)
+
+- `sql/h74_dba_catalog_READ_ONLY.sql` là bộ truy vấn **catalog-only**, không tạo/sửa/xóa record và không đụng vào dữ liệu bài viết. Nó trả về nhãn `NO_GO` dù có thể chạy thành công.
+- Liệt kê RLS/force RLS/owner trên `ielts_attempts`, `writing_grading_jobs`, `writing_grading_results`, `writing_deep_reports`, `speaking_coaching_jobs`, `speaking_mock_sessions`, `profiles` và các bảng H58/H68.
+- Liệt kê quyền schema, SELECT, INSERT, UPDATE, DELETE cho `anon`, `authenticated`, `service_role`, `r19_h70_executor`; nếu bảng không tồn tại, kết quả ghi `MISSING` thay vì lặng lẽ PASS.
+- Liệt kê các RPC `is_admin`, H68, Writing và Speaking (owner, `SECURITY DEFINER`, `search_path`, privilege EXECUTE) và policy tương ứng. **Không** kết luận một RPC là an toàn chỉ nhờ có `security_definer`; reviewer phải đọc điều kiện nội bộ và kiểm tra dữ liệu thật.
+- CI H74 chạy syntax/smoke SQL này trên PG16 disposable **sau khi áp dụng fixture H69/H70**, không chạy trên staging. Kiểm thử Python bổ sung 3 điều kiện tĩnh: không có lệnh SQL mutate, có danh sách bảng/RPC chính, không đọc trực tiếp hàng dữ liệu riêng tư từ H58.
+- Tổng kiểm thử Python H74 đã soạn là **18** (8 M01 + 7 M02 + 3 M03), cộng **10** kiểm tra DB cô lập. Các con số này khác và **không thay thế 18 mục staging acceptance** của H71.
+- Muốn chạy trên staging cần DBA xác nhận bằng chứng project khác production và quyền truy vấn chỉ đọc; đầu ra chỉ lưu trong kho bằng chứng được kiểm soát, không in token hay thông tin học viên.
+
 ## M02 — Những kiểm tra staging chưa tiến hành
 
 - Dùng hai tài khoản học viên giả định A và B trên một **Supabase staging được phê duyệt**, xác minh getUser/session/JWT, bài làm của A không thể bị đọc/sửa bởi B.
