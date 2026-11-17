@@ -13,15 +13,18 @@ function packageFor(number){
  const guided=Array.from({length:4},(_,i)=>({
    activity_id:id+"-G0"+(i+1),
    question_en:"How would you explain guided practice topic "+id+"-"+i+"?",
+   model_ref:"server:guided-"+i,
    hints:Array.from({length:3},(_,j)=>({
      level:j+1,text_vi:"Gợi ý học cách trình bày ý số "+j+" về "+id
    }))
  }));
  const independent=Array.from({length:3},(_,i)=>({
-   activity_id:id+"-I0"+(i+1),mode:"INDEPENDENT",no_answer_key_on_student:true
+   activity_id:id+"-I0"+(i+1),mode:"INDEPENDENT",no_answer_key_on_student:true,
+   prompt_ref:"server:independent-"+i,followup_delivery:"AFTER_INITIAL_SUBMISSION"
  }));
  const mastery=Array.from({length:2},(_,i)=>({
-   activity_id:id+"-M0"+(i+1),mode:"MASTERY",no_answer_key_on_student:true
+   activity_id:id+"-M0"+(i+1),mode:"MASTERY",no_answer_key_on_student:true,
+   prompt_ref:"server:mastery-"+i,followup_delivery:"AFTER_INITIAL_SUBMISSION"
  }));
  const lesson={lesson_id:id,status:"STAGING_REVIEW_REQUIRED",publish_allowed:false,
    steps:Array.from({length:10},(_,i)=>({
@@ -34,6 +37,7 @@ function packageFor(number){
  };
  const privateLesson={
    guided:Object.fromEntries(guided.map((x,i)=>[x.activity_id,{
+     question_en:x.question_en,
      model_answer_en:"A clear example with a reason for guided topic "+id+"-"+i,
      model_translation_vi:"Ví dụ với lí do rõ ràng cho chủ đề "+id+"-"+i,
      teaching_explanation_en:"Develop the answer with a topic sentence and relevant example.",
