@@ -1,0 +1,35 @@
+name: H68 Real PostgreSQL 16 Transactional Review
+on:
+  push:
+    branches:
+      - codex/r19-h68-transactional-review-20261117
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  h68-postgres-16:
+    runs-on: ubuntu-latest
+    timeout-minutes: 18
+    services:
+      postgres:
+        image: postgres:16
+        env:
+          POSTGRES_USER: h68_ci_runner
+          POSTGRES_PASSWORD: h68_ci_password_only
+          POSTGRES_DB: h68_ci
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd=pg_isready
+          --health-interval=5s
+          --health-timeout=3s
+          --health-retries=15
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install PostgreSQL client only if unavailable
+        run: command -v psql || (sudo apt-get update -qq && sudo apt-get install -y postgresql-client)
+      - name: Real PostgreSQL service transaction and concurrency tests
+        run: bash scripts/h68_ci_postgres.sh
+        env:
+          H68_ALLOW_EPHEMERAL_DDL: YES_LOCAL_CI_ONLY
+          H68_PG_DSN: postgresql://h68_ci_runner:h68_ci_password_only@127.0.0.1:5432/h68_ci
