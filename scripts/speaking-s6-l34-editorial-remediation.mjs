@@ -100,6 +100,11 @@ export function auditL34Backlog(manifest,teacher){
   }
   if(!rowSourceValid(row))
    errors.push("SOURCE_REVISION_OR_EVIDENCE_MISSING:"+expected);
+  if(teacherRow?.status!=="NOT_REVIEWED"&&
+     (teacherRow.source_revision!==row.source_revision||
+      teacherRow.student_sha256!==row.student_sha256||
+      teacherRow.private_sha256!==row.private_sha256))
+   errors.push("L33_L34_REVIEW_SOURCE_HASH_DRIFT:"+expected);
   if(row.scan_status==="STRUCTURE_PASSED"){
    if(!Array.isArray(row.finding_codes)||row.finding_codes.length||
       row.change_author!==null||row.proposed_new_revision!==null)
@@ -154,8 +159,10 @@ export function auditL34Backlog(manifest,teacher){
 export function draftL34Remediation(batch){
  const findings=[],ids=new Set(batch?.exact_cross_lesson_duplicate_lesson_ids??[]);
  const inputs=Array.isArray(batch?.lesson_reports)?batch.lesson_reports:[];
+ const validId=/^S6-(?:00[1-9]|0[1-3]\d|04[0-4])$/;
  for(const r of inputs){
-  const codes=new Set(r.failed_check_codes??[]);
+  if(!validId.test(r?.lesson_id??""))continue;
+  const codes=new Set(Array.isArray(r.failed_check_codes)?r.failed_check_codes:[]);
   if(ids.has(r.lesson_id))codes.add("EXACT_CROSS_LESSON_PROMPT_DUPLICATES");
   for(const code of codes){
     if(!Object.hasOwn(CODEBOOK,code))continue;
@@ -166,11 +173,18 @@ export function draftL34Remediation(batch){
  }
  findings.sort((a,b)=>tiers[a.priority]-tiers[b.priority]||
    a.lesson_id.localeCompare(b.lesson_id)||a.code.localeCompare(b.code));
+ const complete=inputs.length===44&&batch?.lessons_checked===44&&
+   batch?.status==="READY_FOR_TEACHER_CONTENT_REVIEW"&&
+   batch?.lessons_with_structure_flags===0&&
+   Array.isArray(batch?.errors)&&batch.errors.length===0&&
+   ids.size===0&&findings.length===0&&
+   new Set(inputs.map(x=>x.lesson_id)).size===44;
  return {
   milestone:"M10-L34",source:"LOCAL_L33_STRUCTURAL_SIGNALS_ONLY",
   lessons_inspected:batch?.lessons_checked??0,
-  exact_duplicate_lesson_ids:[...ids].sort(),remediation_items:findings,
-  ready_for_human_review:batch?.status==="READY_FOR_TEACHER_CONTENT_REVIEW",
+  exact_duplicate_lesson_ids:[...ids].filter(x=>validId.test(x)).sort(),
+  remediation_items:findings,
+  ready_for_human_review:complete,
   independent_teacher_approval:false,
   release_authorized:false,s7_unlock_authorized:false,
   private_content_returned:false
