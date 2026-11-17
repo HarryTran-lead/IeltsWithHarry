@@ -52,7 +52,10 @@ function syntheticPackage(){
  };
  const privateLesson={
   guided:Object.fromEntries(guided.map((g,i)=>[g.activity_id,{
-   model_answer_en:"I usually explain my ideas by giving a reason and an example about topic "+i
+   model_answer_en:"I usually explain my ideas by giving a reason and an example about topic "+i,
+   model_translation_vi:"Tôi thường giải thích ý kiến bằng lí do và ví dụ về chủ đề "+i,
+   teaching_explanation_en:"Give a main idea, clear reason and relevant example.",
+   teacher_reasoning_vi:"Nêu ý chính, giải thích lí do rồi đưa ví dụ phù hợp."
   }])),
   independent:Object.fromEntries(independent.map((g,i)=>[g.activity_id,{
    question_en:"Describe an independent topic number "+i+" in your own words."
@@ -143,6 +146,55 @@ describe("M10-L33 teacher QA metadata and local-only content signals",()=>{
   const result=inspectL33LocalPackage(p);
   expect(result.failed_check_codes).toContain("two_mastery_stubs_and_followups");
   expect(result.failed_check_codes).toContain("no_unseen_mastery_prompt_in_student_payload");
+ });
+
+ it("rejects missing Vietnamese translations and bilingual Guided reasoning",()=>{
+  const p=syntheticPackage();
+  delete p.privateLesson.guided["S6-001-G01"].model_translation_vi;
+  p.privateHash=sha(p.privateLesson);
+  const result=inspectL33LocalPackage(p);
+  expect(result.failed_check_codes).toContain("guided_bilingual_feedback");
+ });
+ it("rejects duplicate hints even when there are exactly three levels",()=>{
+  const p=syntheticPackage();
+  p.lesson.guided[0].hints[2].text_vi=p.lesson.guided[0].hints[1].text_vi;
+  p.hash=sha(p.lesson);
+  const result=inspectL33LocalPackage(p);
+  expect(result.failed_check_codes).toContain("guided_hints_distinct");
+ });
+ it("rejects mismatched or extra private bank activity IDs without showing content",()=>{
+  const p=syntheticPackage();
+  p.privateLesson.independent["S6-001-I99"]={
+    question_en:"Do you prefer to study in the morning or in the evening?"
+  };
+  p.privateHash=sha(p.privateLesson);
+  const result=inspectL33LocalPackage(p);
+  expect(result.failed_check_codes).toContain("private_bank_activity_id_alignment");
+  expect(JSON.stringify(result)).not.toContain("Do you prefer to study");
+ });
+ it("rejects independent prompt and Mastery follow-up leaked into student lesson",()=>{
+  const p=syntheticPackage();
+  p.lesson.extras={
+    hiddenIndependent:p.privateLesson.independent["S6-001-I01"].question_en,
+    hiddenMasteryFollowup:p.privateLesson.mastery["S6-001-M01"].followup_en
+  };
+  p.hash=sha(p.lesson);
+  const result=inspectL33LocalPackage(p);
+  expect(result.failed_check_codes).toContain("no_unseen_independent_prompt_in_student_payload");
+  expect(result.failed_check_codes).toContain("no_unseen_mastery_followup_in_student_payload");
+ });
+ it("rejects private answer and teacher reasoning field names anywhere in student content",()=>{
+  const p=syntheticPackage();
+  p.lesson.steps[0].learning_content.teacher_reasoning_vi="Hidden teacher explanation";
+  p.hash=sha(p.lesson);
+  expect(inspectL33LocalPackage(p).failed_check_codes)
+   .toContain("public_payload_has_no_private_response_fields");
+ });
+ it("cannot approve a pending independent review with weak rubric scores",()=>{
+  const r=clone(review);validHumanRow(r.lessons[0]);
+  r.lessons[0].status="PENDING_INDEPENDENT_QA";
+  r.lessons[0].rubric.privacy_and_accessibility=0;
+  expect(auditL33TeacherReviews(r).valid).toBe(false);
  });
  it("detects student and teacher hash tampering",()=>{
   const p=syntheticPackage();p.lesson.steps[0].instruction_en="Tampered student content";
