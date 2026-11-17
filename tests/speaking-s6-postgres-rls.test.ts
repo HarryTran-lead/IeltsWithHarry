@@ -62,6 +62,7 @@ describe("Speaking S6 L14-L17 actual PostgreSQL migration & ownership smoke (PGl
         "202611170006_speaking_s6_attempt_limits_l25.sql",
         "202611170007_speaking_s6_cooldown_atomic_l26.sql",
         "202611170008_speaking_s6_audio_evidence_l27.sql",
+        "202611170009_speaking_s6_delete_race_l28.sql",
       ]) await db.exec(migration(name));
 
       // Check safe defaults.
@@ -199,6 +200,18 @@ describe("Speaking S6 L14-L17 actual PostgreSQL migration & ownership smoke (PGl
         "select activity_id from public.speaking_s6_activity_cooldowns"
       )).rejects.toThrow();
 
+      // L28: mark an attempt for deletion BEFORE Storage removal.
+      // This prevents a concurrent submit or second upload from proceeding.
+      await db.query("update public.speaking_s6_attempts set deletion_requested_at=now() where id=$1", [attemptAlice]);
+      const raceSubmit = await db.query(
+        "update public.speaking_s6_attempts set phase='submitted' where id=$1 and phase='started' and deletion_requested_at is null returning id",
+        [attemptAlice]
+      );
+      expect(raceSubmit.rows).toHaveLength(0);
+      // Clear only the disposable local fixture marker before the owner
+      // Storage-insert policy positive-path test below.
+      await db.query("update public.speaking_s6_attempts set deletion_requested_at=null where id=$1", [attemptAlice]);
+
       // Alice can upload to her consented attempt only.
       await db.query(
         "insert into storage.objects(bucket_id,name) values ($1,$2)",
@@ -213,6 +226,14 @@ describe("Speaking S6 L14-L17 actual PostgreSQL migration & ownership smoke (PGl
       expect((await db.query(
         "select name from storage.objects where bucket_id='speaking-s6-recordings'"
       )).rows).toHaveLength(1);
+      await db.exec("reset role");
+      await db.query("update public.speaking_s6_attempts set deletion_requested_at=now() where id=$1", [attemptAlice]);
+      await db.exec(`set role authenticated; set request.jwt.claim.sub='${alice}';`);
+      await expect(db.query(
+        "insert into storage.objects(bucket_id,name) values ($1,$2)",
+        ["speaking-s6-recordings",alice+"/"+attemptAlice+".mp4"]
+      )).rejects.toThrow();
+
       await expect(db.query(
         "insert into storage.objects(bucket_id,name) values ($1,$2)",
         ["speaking-s6-recordings",bob+"/"+attemptBob+".webm"]
@@ -274,6 +295,7 @@ describe("M10-L26 PGlite atomic admission interleaving (NOT independent database
         "202611170006_speaking_s6_attempt_limits_l25.sql",
         "202611170007_speaking_s6_cooldown_atomic_l26.sql",
         "202611170008_speaking_s6_audio_evidence_l27.sql",
+        "202611170009_speaking_s6_delete_race_l28.sql",
       ]) await db.exec(migration(file));
       const student = JSON.stringify({lesson_id:"S6-001"});
       const privateBank = JSON.stringify({guided:{},independent:{},mastery:{}});
