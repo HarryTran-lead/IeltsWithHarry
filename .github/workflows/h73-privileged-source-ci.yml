@@ -19,7 +19,7 @@ jobs:
           python-version: '3.11'
       - name: Test fail-closed privileged source inventory
         run: python3 -m unittest discover -s tests -p test_h73_privilege_surface_gate.py -v
-      - name: Verify source SHA and guard against unreviewed service-role paths
+      - name: Verify SHA and reject unreviewed service-role or bankClient paths
         run: |
           python3 scripts/h73_privilege_surface_gate.py \
             --repo . --expected-sha "$GITHUB_SHA" \
@@ -33,6 +33,14 @@ jobs:
           assert data['release_gate']=='NO_GO'
           assert data['supabase_staging_verified'] is False
           assert data['source_coverage_complete'] is True
+          assert len(data['observed_role_paths']) == 11
+          assert len(data['observed_possible_client_paths']) == 22
+          assert len(data['observed_indirect_bank_client_paths']) == 21
+          assert len(set(data['observed_role_paths']) | set(data['observed_possible_client_paths'])) == 32
+          assert data['unreviewed_new_role_paths'] == []
+          assert data['unreviewed_new_client_paths'] == []
+          assert data['stale_baseline_paths'] == []
+          assert data['stale_client_baseline_paths'] == []
           PY
       - name: Preserve diagnostic report even on failure
         if: always()
