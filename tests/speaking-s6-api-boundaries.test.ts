@@ -252,7 +252,7 @@ describe("Speaking S6 M10-L24 private-bank fail-closed boundary tests (mock data
  });
  it("never reflects a database error containing private details to the client",async()=>{
   const d=makeDb();
-  d.attempts.insert.mockResolvedValue({error:{message:"SQL private bank: hidden teacher key"}});
+  d.rpc.mockResolvedValue({data:null,error:{message:"SQL private bank: hidden teacher key"}});
   const r=await POST(request({action:"start",lessonId:"S6-001",activityId:"S6-001-M01"}));
   expect(r.status).toBe(503);
   const body=JSON.stringify(await r.json());
