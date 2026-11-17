@@ -121,6 +121,53 @@ class H74StagingPreflightTests(unittest.TestCase):
         config["H74_STAGING_USER_A_JWT"]="invalid.jwt.parts"
         self.assertEqual(self.run_script(config).returncode,2)
 
+    def mock_probe(self, scenario):
+        env={k:v for k,v in os.environ.items() if not k.startswith("H74_")}
+        return subprocess.run(
+            ["node",str(ROOT/"tests/h74_staging_probe_mock.mjs"),scenario],
+            cwd=ROOT,env=env,text=True,capture_output=True,timeout=12,
+        )
+
+    def test_mock_success_exercises_all_five_read_only_access_checks(self):
+        out=self.mock_probe("success")
+        self.assertEqual(out.returncode,0,out.stderr[-500:])
+        report=json.loads(out.stdout)
+        self.assertEqual(report["status"],"PASS")
+        self.assertEqual(report["release_gate"],"NO_GO")
+        self.assertEqual(report["h71_live_checks_approved"],0)
+        self.assertEqual(report["checks"],[
+            "GETUSER_A_B_DISTINCT",
+            "A_AND_B_OWN_ATTEMPTS_VISIBLE",
+            "CROSS_USER_ATTEMPTS_DENIED",
+            "ANON_B_ATTEMPT_DENIED",
+            "INVALID_JWT_DENIED",
+        ])
+
+    def test_mock_cross_account_exposure_is_rejected(self):
+        out=self.mock_probe("cross-exposed")
+        self.assertEqual(out.returncode,1)
+        report=json.loads(out.stdout)
+        self.assertEqual(report["status"],"FAIL")
+        self.assertEqual(report["reason"],"CROSS_ACCOUNT_ATTEMPT_EXPOSED")
+
+    def test_mock_missing_own_fixture_fails_not_false_pass(self):
+        out=self.mock_probe("own-missing")
+        self.assertEqual(out.returncode,1)
+        report=json.loads(out.stdout)
+        self.assertEqual(report["reason"],"OWN_ATTEMPT_INVISIBLE_OR_WRONG_OWNER")
+
+    def test_mock_anonymous_data_exposure_is_rejected(self):
+        out=self.mock_probe("anonymous-exposed")
+        self.assertEqual(out.returncode,1)
+        report=json.loads(out.stdout)
+        self.assertEqual(report["reason"],"CROSS_ACCOUNT_ATTEMPT_EXPOSED")
+
+    def test_mock_invalid_jwt_accepted_is_rejected(self):
+        out=self.mock_probe("invalid-jwt-accepted")
+        self.assertEqual(out.returncode,1)
+        report=json.loads(out.stdout)
+        self.assertEqual(report["reason"],"INVALID_JWT_NOT_REJECTED")
+
     def test_no_service_role_or_mutating_http_methods_in_probe(self):
         code=SCRIPT.read_text(encoding="utf-8")
         self.assertNotIn("SUPABASE_SERVICE_ROLE_KEY",code)
