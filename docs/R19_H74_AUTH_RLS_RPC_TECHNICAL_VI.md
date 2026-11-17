@@ -76,6 +76,15 @@ Cần chú ý rằng role `authenticated` trên PostgreSQL giả lập không ch
 - `tests/test_h74_staging_preflight.py` thêm **7 kiểm thử** từ chối credentials có nguy cơ; tổng test H74 Python hiện **25** (11 M01/M03 + 14 preflight M02/M05). 12 Vitest API-handler simulation và 10 check PostgreSQL cô lập là các loại kiểm thử khác nhau, không tính chung thành số chứng cứ staging.
 - **Giới hạn:** code không thể xác định chắc một giá trị `sb_publishable_` có đúng môi trường cho đến khi Supabase xác minh. Không đọc secret manager; chưa chạy live probe; 18/18 staging vẫn NOT_TESTED, release NO_GO.
 
+## H74/M05 — Kiểm tra an toàn trước mạng và mô phỏng HTTP end-to-end (đã triển khai mã nguồn)
+
+- Công cụ hai tài khoản `scripts/h74_staging_two_user_readonly.mjs` hiện đọc JWT claims **chỉ để sàng lọc offline trước khi gửi request**: `role=authenticated`, `sub` UUID, `aud=authenticated`, `exp` chưa hết hạn, `iss` đúng dự án staging. Signature JWT chỉ được xác thực sau đó bởi chính Supabase `/auth/v1/user`; không coi claim tự giải mã là chứng minh quyền.
+- Khóa API trước mạng chỉ được nhận nếu là `sb_publishable_...` hoặc legacy anon JWT có `role=anon` và `ref` đúng project. Cấm gửi nhầm `sb_secret_...`, JWT role `service_role`, token của project khác hoặc token người học hết hạn.
+- Bộ Python `tests/test_h74_staging_preflight.py` có 7 test từ chối credential rủi ro. Ngoài ra, `tests/h74_staging_probe_mock.mjs` monkey-patch `globalThis.fetch` rồi import **chính script staging**, bảo đảm không có network thật.
+- Năm luồng mô phỏng HTTP: (1) hai user A/B đọc bài của mình và chặn chéo/anonymous/JWT giả thành công, (2) cố ý lộ bài B cho A → FAIL, (3) bài A không tồn tại → FAIL, (4) public anonymous thấy bài B → FAIL, (5) JWT không hợp lệ bị chấp nhận → FAIL.
+- Tổng đã **soạn** 30 Python H74 tests (11 M01/M03 + 19 staging-preflight/M05), 12 Vitest API handler, 10 kiểm tra PostgreSQL 16 cô lập. Chỉ ghi PASS khi Actions của commit cuối xác nhận.
+- Đây vẫn là **HTTP mock nội bộ**: không chứng minh API Gateway, RLS của Supabase thật, JWT refresh/revocation, staging project identity hay phân quyền ở API thực tế. Không có credential thật nào được đọc/lưu trong repo, không chạy live check, release NO_GO.
+
 ## M02 — Những kiểm tra staging chưa tiến hành
 
 - Dùng hai tài khoản học viên giả định A và B trên một **Supabase staging được phê duyệt**, xác minh getUser/session/JWT, bài làm của A không thể bị đọc/sửa bởi B.
