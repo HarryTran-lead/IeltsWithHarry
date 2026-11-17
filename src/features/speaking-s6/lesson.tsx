@@ -51,7 +51,8 @@ function prettyError(error:unknown){
   "AUDIO_FILE_AMBIGUOUS":"Có nhiều bản ghi cho cùng một lượt nói. Hãy xóa phiên và thực hiện lại.",
   "AUDIO_INVALID_FORMAT":"Định dạng hoặc phần mở đầu file ghi âm không hợp lệ.",
   "AUDIO_TOO_LARGE":"Bản ghi quá ngắn, quá lớn hoặc không đáp ứng giới hạn dung lượng.",
-  "AUDIO_STORAGE_UNAVAILABLE":"Chưa kiểm tra được file ghi âm trên máy chủ. Hãy thử nộp lại."
+  "AUDIO_STORAGE_UNAVAILABLE":"Chưa kiểm tra được file ghi âm trên máy chủ. Hãy thử nộp lại.",
+  "S6_DELETION_IN_PROGRESS":"Phiên này đang được xóa. Không thể nộp hay khôi phục, hãy thử xóa lại nếu cần."
  };
  const key=text.split(" (")[0];return labels[key]??text;
 }
