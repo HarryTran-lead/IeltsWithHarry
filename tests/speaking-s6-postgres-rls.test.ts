@@ -60,6 +60,7 @@ describe("Speaking S6 L14-L17 actual PostgreSQL migration & ownership smoke (PGl
         "202611170004_speaking_s6_ui_progress_l15.sql",
         "202611170005_speaking_s6_s5_rls_l17.sql",
         "202611170006_speaking_s6_attempt_limits_l25.sql",
+        "202611170007_speaking_s6_cooldown_atomic_l26.sql",
       ]) await db.exec(migration(name));
 
       // Check safe defaults.
@@ -142,6 +143,12 @@ describe("Speaking S6 L14-L17 actual PostgreSQL migration & ownership smoke (PGl
         [alice]
       );
       expect(afterDelete.rows[0].hour_count).toBe(2);
+      // L26: even after deletion, the same activity is still on cooldown.
+      await expect(start("S6-001-G02")).rejects.toThrow("S6_START_COOLDOWN");
+      expect((await db.query<{hour_count:number}>(
+        "select hour_count from public.speaking_s6_start_quotas where user_id=$1 and preview=false",
+        [alice]
+      )).rows[0].hour_count).toBe(2);
       await db.query(
         "update public.speaking_s6_start_quotas set hour_count=8 where user_id=$1 and preview=false",
         [alice]
@@ -174,6 +181,9 @@ describe("Speaking S6 L14-L17 actual PostgreSQL migration & ownership smoke (PGl
       )).rows).toHaveLength(1);
       await expect(db.query(
         "select bank from public.speaking_s6_private_revisions"
+      )).rejects.toThrow();
+      await expect(db.query(
+        "select activity_id from public.speaking_s6_activity_cooldowns"
       )).rejects.toThrow();
 
       // Alice can upload to her consented attempt only.
@@ -227,4 +237,64 @@ describe("Speaking S6 L14-L17 actual PostgreSQL migration & ownership smoke (PGl
       await db.close();
     }
   }, 120000);
+});
+
+
+describe("M10-L26 PGlite atomic admission interleaving (NOT independent database connections)", () => {
+  it("admits no more than three fresh preview starts and rolls back quota on denied starts", async () => {
+    const db = new PGlite();
+    try {
+      await db.exec(boot);
+      for (const file of [
+        "202611170003_speaking_s6_staging_l14.sql",
+        "202611170004_speaking_s6_ui_progress_l15.sql",
+        "202611170005_speaking_s6_s5_rls_l17.sql",
+        "202611170006_speaking_s6_attempt_limits_l25.sql",
+        "202611170007_speaking_s6_cooldown_atomic_l26.sql",
+      ]) await db.exec(migration(file));
+      const student = JSON.stringify({lesson_id:"S6-001"});
+      const privateBank = JSON.stringify({guided:{},independent:{},mastery:{}});
+      await db.query(
+        "select public.speaking_s6_import_revision($1,$2,$3,$4::jsonb,$5::jsonb,$6,$7::uuid)",
+        ["S6-001","L26_TEST",HASH,student,privateBank,HASH,admin]
+      );
+      const activities = [
+        ["S6-001-G01","guided"],
+        ["S6-001-G02","guided"],
+        ["S6-001-G03","guided"],
+        ["S6-001-G04","guided"],
+        ["S6-001-I01","independent"],
+        ["S6-001-I02","independent"]
+      ];
+      const results=await Promise.allSettled(activities.map(([id,mode])=>
+        db.query(
+          "select public.speaking_s6_start_attempt_l25($1::uuid,$2,$3,$4,$5,$6,$7)",
+          [alice,"S6-001","L26_TEST",id,mode,true,false]
+        )
+      ));
+      const successful=results.filter(x=>x.status==="fulfilled");
+      const denied=results.filter(x=>x.status==="rejected");
+      expect(successful).toHaveLength(3);
+      expect(denied).toHaveLength(3);
+      for(const x of denied)
+        if(x.status==="rejected")expect(String(x.reason)).toContain("S6_START_ACTIVE_LIMIT");
+      const counts=await db.query<{attempts:number}>(
+        "select count(*)::integer as attempts from public.speaking_s6_attempts where user_id=$1 and preview=true",
+        [alice]
+      );
+      expect(counts.rows[0].attempts).toBe(3);
+      const quota=await db.query<{hour_count:number;day_count:number}>(
+        "select hour_count,day_count from public.speaking_s6_start_quotas where user_id=$1 and preview=true",
+        [alice]
+      );
+      expect(quota.rows[0]).toMatchObject({hour_count:3,day_count:3});
+      const cooldown=await db.query<{count:number}>(
+        "select count(*)::integer as count from public.speaking_s6_activity_cooldowns where user_id=$1 and preview=true",
+        [alice]
+      );
+      expect(cooldown.rows[0].count).toBe(3);
+      // PGlite requests above share one in-memory database connection. This
+      // proves safe interleaving, NOT cross-process Postgres locking on staging.
+    } finally { await db.close(); }
+  },120000);
 });
