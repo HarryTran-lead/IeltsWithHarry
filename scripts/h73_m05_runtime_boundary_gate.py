@@ -76,6 +76,9 @@ def evaluate(root: Path, sha: str) -> dict:
             issues.append({"path": relative, "code": "UNREADABLE_SOURCE"})
             return None
 
+    for rel in EXPECTED_RUNTIME_FILES:
+        if not (root / rel).is_file() or (root / rel).is_symlink():
+            issues.append({"path": rel, "code": "MISSING_EXPECTED_RUNTIME_FILE"})
     names = sorted(p.relative_to(root).as_posix()
                    for p in (root / "services").glob("*/wrangler.toml"))
     unexpected = sorted(set(names) - set(WORKER_CONFIGS))
