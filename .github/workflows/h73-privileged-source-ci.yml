@@ -18,7 +18,7 @@ jobs:
         with:
           python-version: '3.11'
       - name: Test fail-closed privileged source inventory
-        run: python3 -m unittest discover -s tests -p test_h73_privilege_surface_gate.py -v
+        run: python3 -m unittest discover -s tests -p 'test_h73_*.py' -v
       - name: Verify SHA and reject unreviewed service-role or bankClient paths
         run: |
           python3 scripts/h73_privilege_surface_gate.py \
