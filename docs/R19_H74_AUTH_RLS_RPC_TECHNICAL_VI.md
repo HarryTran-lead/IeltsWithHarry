@@ -68,6 +68,14 @@ Cần chú ý rằng role `authenticated` trên PostgreSQL giả lập không ch
 - Đây là **route-handler behavioral simulation**, mạnh hơn việc kiểm tra chuỗi nguồn nhưng vẫn không chứng minh Supabase Auth xác thực JWT, quyền SELECT/RLS thật, PostgREST behavior, revocation, hàng đợi bị thay đổi đồng thời, hoặc triển khai production. Toàn bộ **18/18 điều kiện staging vẫn NOT_TESTED**.
 - Một số endpoint khác như public shares, cron và admin actions sẽ cần bằng chứng riêng trên staging; không tự nhận 12 test là bao phủ tất cả API.
 
+## H74/M05 — Ngăn dùng nhầm khóa quyền cao và JWT sai dự án
+
+- `scripts/h74_staging_two_user_readonly.mjs` hiện **kiểm tra offline trước mọi request**: API key phải thuộc dạng `sb_publishable_...` hoặc legacy anon JWT có `ref` trùng staging; không chấp nhận `sb_secret_...`, service-role JWT hay arbitrary token.
+- Hai JWT người học phải có claim `role=authenticated`, `aud=authenticated`, `iss=https://<staging-ref>.supabase.co/auth/v1`, `sub` UUID hợp lệ, `exp` còn hạn và người dùng A/B khác nhau. **Giải mã claim trước mạng không chứng minh chữ ký**: GET `/auth/v1/user` từ chính dự án staging vẫn là xác minh phía server bắt buộc.
+- Cải tiến bảo vệ này từ chối khóa JWT của dự án khác, token hết hạn, token service-role bị gắn nhầm thành JWT của học viên và key có đặc quyền trước khi gửi request.
+- `tests/test_h74_staging_preflight.py` thêm **7 kiểm thử** từ chối credentials có nguy cơ; tổng test H74 Python hiện **25** (11 M01/M03 + 14 preflight M02/M05). 12 Vitest API-handler simulation và 10 check PostgreSQL cô lập là các loại kiểm thử khác nhau, không tính chung thành số chứng cứ staging.
+- **Giới hạn:** code không thể xác định chắc một giá trị `sb_publishable_` có đúng môi trường cho đến khi Supabase xác minh. Không đọc secret manager; chưa chạy live probe; 18/18 staging vẫn NOT_TESTED, release NO_GO.
+
 ## M02 — Những kiểm tra staging chưa tiến hành
 
 - Dùng hai tài khoản học viên giả định A và B trên một **Supabase staging được phê duyệt**, xác minh getUser/session/JWT, bài làm của A không thể bị đọc/sửa bởi B.
