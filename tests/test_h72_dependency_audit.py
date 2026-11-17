@@ -242,6 +242,41 @@ class H72StaticAuditTests(unittest.TestCase):
         self.assertIn("NO_ELIGIBLE_SOURCE_FILES",output["coverage"]["errors"])
         self.assertEqual(output["release_gate"],"NO_GO")
 
+    def test_unknown_source_layout_is_scanned_and_explicitly_classified(self):
+        root=self.project({
+            "packages/extra/adapter.ts":'const table="r19_h58.reviews";',
+            "modules/frontend/dashboard.vue":'<script>const key="SUPABASE_SERVICE_ROLE_KEY";</script>',
+            "next.config.mjs":'const rpc="h68_submit_review";',
+            "src/lib/ok.ts":"export const ok=true;",
+        })
+        paths=["packages/extra/adapter.ts","modules/frontend/dashboard.vue",
+               "next.config.mjs","src/lib/ok.ts"]
+        report=audit.analyze(root,paths,COMMIT)
+        self.assertEqual(report["unclassified_source_reference_paths"],[
+            "modules/frontend/dashboard.vue","next.config.mjs",
+            "packages/extra/adapter.ts"])
+        self.assertEqual(report["coverage"]["inspected_files"],4)
+        self.assertTrue(report["coverage"]["complete"])
+        self.assertIn("OTHER_SOURCE",set(x["scope"] for x in report["findings"]))
+        self.assertIn("packages/extra/adapter.ts",audit.markdown(report))
+
+    def test_dependency_lockfiles_excluded_explicitly_not_silent(self):
+        root=self.project({
+            "package-lock.json":'{"name":"app","comment":"r19_h58.reviews"}',
+            "pnpm-lock.yaml":"# SUPABASE_SERVICE_ROLE_KEY",
+            "src/lib/review.ts":'const source="r19_h58.probes";',
+        })
+        report=audit.analyze(root,[
+            "package-lock.json","pnpm-lock.yaml","src/lib/review.ts"],COMMIT)
+        self.assertTrue(report["coverage"]["complete"])
+        self.assertEqual(report["coverage"]["inspected_files"],1)
+        self.assertEqual(sorted(x["path"] for x in report["coverage"]["skipped"]),[
+            "package-lock.json","pnpm-lock.yaml"])
+        self.assertEqual(set(x["reason"] for x in report["coverage"]["skipped"]),{
+            "DEPENDENCY_LOCKFILE_EXCLUDED"})
+        self.assertEqual(report["application_direct_h58_reference_paths"],[
+            "src/lib/review.ts"])
+
     def test_markdown_disclaims_no_matches(self):
         root=self.project({"src/lib/clean.ts":"export const clean = true"})
         report=audit.analyze(root,["src/lib/clean.ts"],COMMIT)
