@@ -2,6 +2,7 @@ import { z } from "zod";
 import { bankClient, viewer } from "@/lib/ielts-bank/server";
 import { s6SessionErrorResponse, s6SessionNoStore } from "@/lib/speaking-s6/session-errors";
 import { s6MutationGuard } from "@/lib/speaking-s6/mutation-guard";
+import { fingerprintS6StoredAudio, S6AudioEvidenceError } from "@/lib/speaking-s6/audio-evidence";
 import { activityId, lessonId } from "@/lib/speaking-s6/contract";
 import { s6AccessAllowed } from "@/lib/speaking-s6/access";
 export const runtime="nodejs";
@@ -76,7 +77,7 @@ export async function POST(request:Request){
         {status:201,headers:noStore});
     }
     const r=await db.from("speaking_s6_attempts")
-      .select("id,user_id,lesson_code,revision,activity_id,mode,phase,audio_storage_consent,initial_response,duration_seconds")
+      .select("id,user_id,lesson_code,revision,activity_id,mode,phase,audio_storage_consent,audio_evidence_state,initial_response,duration_seconds")
       .eq("id",body.attemptId).eq("user_id",user.id).eq("preview",body.preview).maybeSingle();
     if(r.error || !r.data)return Response.json({error:"NOT_FOUND"},{status:404});
     const a=r.data;
@@ -100,17 +101,35 @@ export async function POST(request:Request){
       }
       if(!question)return Response.json({error:"NOT_FOUND"},{status:404});
       return Response.json({attemptId:a.id,activityId:a.activity_id,mode:a.mode,question,
-        submitted:a.phase==="submitted",audioStorageConsent:a.audio_storage_consent},{headers:noStore});
+        submitted:a.phase==="submitted",audioStorageConsent:a.audio_storage_consent,
+        audioEvidence:a.audio_evidence_state??"not_stored"},{headers:noStore});
     }
     if(body.action==="submit"){
       if(a.phase==="submitted"){
         if(a.initial_response===body.transcript&&a.duration_seconds===body.durationSeconds)
-          return Response.json({ok:true,scored:false,alreadySubmitted:true},{headers:noStore});
+          return Response.json({ok:true,scored:false,alreadySubmitted:true,
+            audioEvidence:a.audio_evidence_state??"not_stored"},{headers:noStore});
         return Response.json({error:"ALREADY_SUBMITTED"},{status:409});
+      }
+      // Optional audio retention: only consented uploads get server-side
+      // byte fingerprints. No consent => no Storage lookup and no audio proof.
+      // The fingerprint is NOT proof of speech, duration or proficiency.
+      let evidence:Record<string,unknown>={audio_evidence_state:"not_stored"};
+      if(a.audio_storage_consent===true){
+        try{
+          evidence=await fingerprintS6StoredAudio(db.storage,user.id,a.id);
+        }catch(error){
+          if(error instanceof S6AudioEvidenceError){
+            const status=error.code==="AUDIO_STORAGE_UNAVAILABLE"?503:
+              error.code==="AUDIO_UPLOAD_REQUIRED"?409:422;
+            return Response.json({error:error.code},{status,headers:noStore});
+          }
+          throw error;
+        }
       }
       const s=await db.from("speaking_s6_attempts").update({
         phase:"submitted",initial_response:body.transcript,duration_seconds:body.durationSeconds,
-        initial_submitted_at:new Date().toISOString()
+        initial_submitted_at:new Date().toISOString(),...evidence
       }).eq("id",a.id).eq("user_id",user.id).eq("phase","started").select("id").maybeSingle();
       if(s.error)throw new Error(s.error.message);
       if(!s.data){
@@ -120,10 +139,12 @@ export async function POST(request:Request){
         if(!latest.error&&latest.data?.phase==="submitted"
           &&latest.data.initial_response===body.transcript
           &&latest.data.duration_seconds===body.durationSeconds)
-          return Response.json({ok:true,scored:false,alreadySubmitted:true},{headers:noStore});
+          return Response.json({ok:true,scored:false,alreadySubmitted:true,
+            audioEvidence:evidence.audio_evidence_state},{headers:noStore});
         return Response.json({error:"ALREADY_SUBMITTED"},{status:409});
       }
-      return Response.json({ok:true,scored:false},{headers:noStore});
+      return Response.json({ok:true,scored:false,
+        audioEvidence:evidence.audio_evidence_state},{headers:noStore});
     }
     if(a.phase!=="submitted")return Response.json({error:"SUBMISSION_REQUIRED"},{status:409,headers:noStore});
     // Deny wrong-mode requests BEFORE querying the private answer bank.
