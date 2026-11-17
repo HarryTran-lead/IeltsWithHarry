@@ -1,0 +1,119 @@
+{
+  "milestone": "H69",
+  "release_gate": "NO_GO",
+  "staging_status": "NOT_TESTED",
+  "real_teacher_gold": 0,
+  "scope": "SUPABASE_STAGING_VERIFICATION",
+  "receipt_type": "NON_ATTESTED_TEMPLATE",
+  "explanation": "CI tests use isolated Postgres and simulated JWT claims. A real Supabase project, distinct test identities, approved migration and signed reviewer evidence are absent.",
+  "checks": [
+    {
+      "id": "STAGE_PROJECT_IDENTITY",
+      "status": "NOT_TESTED",
+      "evidence_sha256": null,
+      "verified_deploy_sha": null
+    },
+    {
+      "id": "HTTPS_ORIGIN",
+      "status": "NOT_TESTED",
+      "evidence_sha256": null,
+      "verified_deploy_sha": null
+    },
+    {
+      "id": "AUTH_GETUSER_TEACHER_A",
+      "status": "NOT_TESTED",
+      "evidence_sha256": null,
+      "verified_deploy_sha": null
+    },
+    {
+      "id": "AUTH_GETUSER_TEACHER_B",
+      "status": "NOT_TESTED",
+      "evidence_sha256": null,
+      "verified_deploy_sha": null
+    },
+    {
+      "id": "AUTH_GETUSER_TEACHER_C",
+      "status": "NOT_TESTED",
+      "evidence_sha256": null,
+      "verified_deploy_sha": null
+    },
+    {
+      "id": "AUTH_OUTSIDER_DENIED",
+      "status": "NOT_TESTED",
+      "evidence_sha256": null,
+      "verified_deploy_sha": null
+    },
+    {
+      "id": "AUTH_OWNER_DENIED",
+      "status": "NOT_TESTED",
+      "evidence_sha256": null,
+      "verified_deploy_sha": null
+    },
+    {
+      "id": "ANON_RPC_DENIED",
+      "status": "NOT_TESTED",
+      "evidence_sha256": null,
+      "verified_deploy_sha": null
+    },
+    {
+      "id": "PRIVATE_H58_TABLE_READ_DENIED",
+      "status": "NOT_TESTED",
+      "evidence_sha256": null,
+      "verified_deploy_sha": null
+    },
+    {
+      "id": "H58_RLS_FORCE_INVENTORY",
+      "status": "NOT_TESTED",
+      "evidence_sha256": null,
+      "verified_deploy_sha": null
+    },
+    {
+      "id": "H61_SERVICE_ROLE_LEAST_PRIVILEGE",
+      "status": "NOT_TESTED",
+      "evidence_sha256": null,
+      "verified_deploy_sha": null
+    },
+    {
+      "id": "H68_DB_KILL_SWITCH_DEFAULT_DENY",
+      "status": "NOT_TESTED",
+      "evidence_sha256": null,
+      "verified_deploy_sha": null
+    },
+    {
+      "id": "H68_STAGING_TEACHER_A_SUBMIT",
+      "status": "NOT_TESTED",
+      "evidence_sha256": null,
+      "verified_deploy_sha": null
+    },
+    {
+      "id": "H68_STAGING_THREE_REVIEWER_ISOLATION",
+      "status": "NOT_TESTED",
+      "evidence_sha256": null,
+      "verified_deploy_sha": null
+    },
+    {
+      "id": "H68_REPLAY_ATOMICITY",
+      "status": "NOT_TESTED",
+      "evidence_sha256": null,
+      "verified_deploy_sha": null
+    },
+    {
+      "id": "H68_AUDIT_ROLLBACK_REAL_STAGING",
+      "status": "NOT_TESTED",
+      "evidence_sha256": null,
+      "verified_deploy_sha": null
+    },
+    {
+      "id": "H68_RATE_LIMIT_MULTI_CONNECTION",
+      "status": "NOT_TESTED",
+      "evidence_sha256": null,
+      "verified_deploy_sha": null
+    },
+    {
+      "id": "HOLDOUT_NO_EXPORT",
+      "status": "NOT_TESTED",
+      "evidence_sha256": null,
+      "verified_deploy_sha": null
+    }
+  ]
+}
