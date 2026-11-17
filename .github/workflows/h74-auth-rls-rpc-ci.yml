@@ -77,6 +77,7 @@ jobs:
             scripts/h74_ci_pg_auth_rls.sh
             scripts/h74_staging_two_user_readonly.mjs
             tests/test_h74_staging_preflight.py
+            tests/h74_staging_probe_mock.mjs
             tests/h74-api-owner-isolation.test.ts
             sql/h74_dba_catalog_READ_ONLY.sql
             reports/h74_pg16_catalog_smoke.txt
