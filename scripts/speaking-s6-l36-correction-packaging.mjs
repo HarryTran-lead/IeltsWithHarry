@@ -30,8 +30,8 @@ const ENTRIES=new Set([...Object.keys(L34_CODEBOOK),
  "PRONUNCIATION_SUPPORT","MASTERY_DIFFICULTY","SIMILARITY_REVIEW"]);
 const REV_FIELDS=["source_revision","source_student_sha256","source_private_sha256",
  "target_revision","target_student_sha256","target_private_sha256",
- "source_evidence","proposal_evidence","change_author"];
-const TECH_FIELDS=["first_reviewer","first_review_evidence"];
+ "source_evidence","proposal_evidence","change_author","proposal_at_utc"];
+const TECH_FIELDS=["first_reviewer","first_review_evidence","first_review_at_utc"];
 const TEACHER_FIELDS=["independent_teacher","teacher_review_evidence",
  "teacher_review_at_utc","teacher_rubric"];
 const nullFields=(row,fields)=>fields.every(f=>row?.[f]===null);
@@ -40,6 +40,8 @@ const validPerson=x=>typeof x==="string"&&PERSON.test(x);
 const validTime=x=>typeof x==="string"&&TIME.test(x)&&!Number.isNaN(Date.parse(x));
 const uniqueCodes=x=>Array.isArray(x)&&x.length>0&&new Set(x).size===x.length&&
  x.every(k=>ENTRIES.has(k));
+const personKey=x=>typeof x==="string"?x.trim().toLowerCase():"";
+const laterThan=(a,b)=>validTime(a)&&validTime(b)&&Date.parse(a)>=Date.parse(b);
 
 export function auditL36CorrectionManifest(manifest,source,backlog,teacher){
  const errors=[],counts=Object.fromEntries(STATES.map(x=>[x,0]));
@@ -86,7 +88,8 @@ export function auditL36CorrectionManifest(manifest,source,backlog,teacher){
      row.source_evidence!==prior?.local_structural_evidence)
    errors.push("IMMUTABLE_SOURCE_HASH_OR_PROVENANCE_DRIFT:"+id);
   if(!uniqueCodes(row.reason_codes)||
-     !validPerson(row.change_author)||!validRef(row.proposal_evidence))
+     !validPerson(row.change_author)||!validRef(row.proposal_evidence)||
+     !laterThan(row.proposal_at_utc,prior?.intake_at_utc))
    errors.push("NO_TYPED_CORRECTION_REASON_OR_AUTHOR_PROOF:"+id);
   if(row.state==="DRAFT_PREPARED"){
    if(!nullFields(row,[...TECH_FIELDS,...TEACHER_FIELDS]))
@@ -94,7 +97,8 @@ export function auditL36CorrectionManifest(manifest,source,backlog,teacher){
    continue;
   }
   if(!validPerson(row.first_reviewer)||!validRef(row.first_review_evidence)||
-     row.first_reviewer===row.change_author)
+     !laterThan(row.first_review_at_utc,row.proposal_at_utc)||
+     personKey(row.first_reviewer)===personKey(row.change_author))
    errors.push("TECHNICAL_REVIEW_MUST_BE_SEPARATE_FROM_AUTHOR:"+id);
   if(row.state==="TECHNICAL_REVIEWED"){
    if(!nullFields(row,TEACHER_FIELDS))
@@ -103,10 +107,10 @@ export function auditL36CorrectionManifest(manifest,source,backlog,teacher){
   }
   const score=evaluateL33Rubric(row.teacher_rubric);
   if(!validPerson(row.independent_teacher)||
-     row.independent_teacher===row.change_author||
-     row.independent_teacher===row.first_reviewer||
+     personKey(row.independent_teacher)===personKey(row.change_author)||
+     personKey(row.independent_teacher)===personKey(row.first_reviewer)||
      !validRef(row.teacher_review_evidence)||
-     !validTime(row.teacher_review_at_utc)||
+     !laterThan(row.teacher_review_at_utc,row.first_review_at_utc)||
      !score.valid||!score.meets_threshold)
    errors.push("INDEPENDENT_TEACHER_REVIEW_NOT_SUPPORTED:"+id);
  }
