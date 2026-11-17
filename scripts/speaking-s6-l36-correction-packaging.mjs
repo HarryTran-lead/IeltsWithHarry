@@ -91,6 +91,8 @@ export function auditL36CorrectionManifest(manifest,source,backlog,teacher){
      !validPerson(row.change_author)||!validRef(row.proposal_evidence)||
      !laterThan(row.proposal_at_utc,prior?.intake_at_utc))
    errors.push("NO_TYPED_CORRECTION_REASON_OR_AUTHOR_PROOF:"+id);
+  if(row.proposal_evidence===row.source_evidence)
+   errors.push("SOURCE_AND_CORRECTION_NEED_DIFFERENT_EVIDENCE:"+id);
   if(row.state==="DRAFT_PREPARED"){
    if(!nullFields(row,[...TECH_FIELDS,...TEACHER_FIELDS]))
      errors.push("DRAFT_CANNOT_CLAIM_REVIEWERS:"+id);
@@ -98,6 +100,7 @@ export function auditL36CorrectionManifest(manifest,source,backlog,teacher){
   }
   if(!validPerson(row.first_reviewer)||!validRef(row.first_review_evidence)||
      !laterThan(row.first_review_at_utc,row.proposal_at_utc)||
+     row.first_review_evidence===row.proposal_evidence||
      personKey(row.first_reviewer)===personKey(row.change_author))
    errors.push("TECHNICAL_REVIEW_MUST_BE_SEPARATE_FROM_AUTHOR:"+id);
   if(row.state==="TECHNICAL_REVIEWED"){
@@ -110,6 +113,8 @@ export function auditL36CorrectionManifest(manifest,source,backlog,teacher){
      personKey(row.independent_teacher)===personKey(row.change_author)||
      personKey(row.independent_teacher)===personKey(row.first_reviewer)||
      !validRef(row.teacher_review_evidence)||
+     row.teacher_review_evidence===row.first_review_evidence||
+     row.teacher_review_evidence===row.proposal_evidence||
      !laterThan(row.teacher_review_at_utc,row.first_review_at_utc)||
      !score.valid||!score.meets_threshold)
    errors.push("INDEPENDENT_TEACHER_REVIEW_NOT_SUPPORTED:"+id);
