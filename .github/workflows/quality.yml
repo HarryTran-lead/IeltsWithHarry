@@ -21,6 +21,7 @@ jobs:
       - run: node scripts/speaking-s6-l30-staging-preflight.mjs
       - run: node scripts/speaking-s6-l31-device-evidence.mjs
       - run: node scripts/speaking-s6-l32-defect-triage.mjs
+      - run: node scripts/speaking-s6-l33-teacher-review.mjs
       - run: npm run build
   audio-worker-test:
     runs-on: ubuntu-latest
