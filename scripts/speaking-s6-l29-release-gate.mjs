@@ -103,7 +103,7 @@ export function assessL29Readiness(baseline,supplement,review={}){
  return {
    milestone:"M10-L29",status:reviewable?"READY_FOR_INDEPENDENT_HUMAN_REVIEW":"HOLD",
    release_authorized:false,s7_unlock_authorized:false,
-   actual_live_e2e_passes:(original.counts?.PASS??0)+extra.counts.PASS,
+   reported_pass_entries_unverified:(original.counts?.PASS??0)+extra.counts.PASS,
    expected_real_e2e_cases:50,
    baseline_counts:original.counts,addendum_counts:extra.counts,
    blockers,
