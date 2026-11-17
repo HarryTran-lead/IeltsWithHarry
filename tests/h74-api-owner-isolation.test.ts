@@ -19,23 +19,26 @@ const ID = {
 const state = vi.hoisted(() => ({
   actor: null as Actor,
   tables: {} as Record<string, RecordRow[]>,
-  trace: [] as { table: string; filters: [string, unknown][] }[],
+  trace: [] as { table: string; filters: [string, unknown][]; action: "read" | "update" }[],
 }));
 
 function scopedQuery(table: TableName) {
   const filters: [string, unknown][] = [];
+  let stagedUpdate: Record<string, unknown> | null = null;
   function rows() {
-    state.trace.push({ table, filters: [...filters] });
+    state.trace.push({ table, filters: [...filters], action: stagedUpdate ? "update" : "read" });
     return (state.tables[table] || []).filter(row => filters.every(([field, value]) => row[field] === value));
   }
   const builder = {
     select(_projection: string, _opts?: unknown) { return builder; },
+    update(values: Record<string, unknown>) { stagedUpdate = values; return builder; },
     eq(field: string, value: unknown) { filters.push([field, value]); return builder; },
     order(_field: string, _opts?: unknown) { return builder; },
     limit(_size: number) { return builder; },
     async maybeSingle() { return { data: rows()[0] ?? null, error: null }; },
     async single() {
       const data = rows()[0] ?? null;
+      if (data && stagedUpdate) Object.assign(data, stagedUpdate);
       return { data, error: data === null ? { message: "row not found" } : null };
     },
   };
@@ -65,7 +68,7 @@ vi.mock("@/lib/writing-grading/cloudflare-worker", () => ({
 }));
 vi.mock("@/lib/writing-grading/queue-estimate", () => ({ queueEstimate: () => ({ position: 1 }) }));
 
-import { GET as writingGET } from "../src/app/api/ielts/bank/writing-grading/route";
+import { GET as writingGET, POST as writingPOST } from "../src/app/api/ielts/bank/writing-grading/route";
 import { GET as speakingGET } from "../src/app/api/ielts/bank/speaking-coaching/route";
 
 function setFixtures() {
@@ -97,6 +100,12 @@ function setFixtures() {
 
 function writingUrl(id: string) {
   return new Request("https://staging.example.test/api/ielts/bank/writing-grading?attemptId=" + id);
+}
+function retryRequest(id: string) {
+  return new Request("https://staging.example.test/api/ielts/bank/writing-grading", {
+    method: "POST", headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ attemptId: id, action: "retry" }),
+  });
 }
 function speakingUrl(id: string) {
   return new Request("https://staging.example.test/api/ielts/bank/speaking-coaching?sessionId=" + id);
@@ -182,6 +191,37 @@ describe("H74/M04: actual Next API handler access isolation (in-memory mock; no 
     expect(response.status).toBe(200);
     expect((await response.json()).status).toBe("not_requested");
     expect(state.trace.find(x => x.table === "speaking_coaching_jobs")?.filters).toContainEqual(["user_id", ID.A]);
+  });
+
+  it("rejects Writing retry for a job belonging to another user", async () => {
+    state.tables.writing_grading_jobs[1].status = "failed";
+    const response = await writingPOST(retryRequest(ID.attemptB));
+    expect(response.status).toBe(404);
+    expect(state.trace.filter(x => x.action === "update")).toEqual([]);
+    expect(state.tables.writing_grading_jobs[1].status).toBe("failed");
+  });
+
+  it("retries the owner's failed Writing job with a user_id filter on UPDATE", async () => {
+    state.actor = "B";
+    state.tables.writing_grading_jobs[1].status = "failed";
+    const response = await writingPOST(retryRequest(ID.attemptB));
+    expect(response.status).toBe(202);
+    expect((await response.json()).status).toBe("queued");
+    const mutations = state.trace.filter(x => x.action === "update");
+    expect(mutations).toHaveLength(1);
+    expect(mutations[0].filters).toEqual(expect.arrayContaining([
+      ["id", ID.jobB], ["user_id", ID.B], ["status", "failed"],
+    ]));
+    expect(state.tables.writing_grading_jobs[0].status).toBe("completed");
+  });
+
+  it("refuses retry even when a different user's job points at the caller's attempt", async () => {
+    state.tables.writing_grading_jobs = [
+      { id: ID.jobB, attempt_id: ID.attemptA, user_id: ID.B, status: "failed", attempt_no: 1 },
+    ];
+    const response = await writingPOST(retryRequest(ID.attemptA));
+    expect(response.status).toBe(404);
+    expect(state.trace.filter(x => x.action === "update")).toEqual([]);
   });
 
   it("rejects unauthenticated requests without querying with service-role", async () => {
