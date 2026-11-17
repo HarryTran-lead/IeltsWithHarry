@@ -15,10 +15,23 @@ export const reviewSchema = z.object({
 });
 
 export function h68Enabled(env: Record<string, string | undefined>): boolean {
-  return env.H68_DEPLOYMENT_MODE === "STAGING"
-    && env.H68_REVIEW_WRITES_ENABLED === "true"
-    && env.H61_LEARNER_RELEASE !== "true"
-    && env.H61_AUTO_GRADING !== "true";
+  if (env.H68_DEPLOYMENT_MODE !== "STAGING"
+    || env.H68_REVIEW_WRITES_ENABLED !== "true"
+    || env.H61_LEARNER_RELEASE === "true"
+    || env.H61_AUTO_GRADING === "true") return false;
+
+  const ref = env.H70_APPROVED_SUPABASE_PROJECT_REF ?? "";
+  const address = env.NEXT_PUBLIC_SUPABASE_URL ?? "";
+  if (!/^[a-z0-9]{10,32}$/.test(ref)) return false;
+  try {
+    const url = new URL(address);
+    return url.protocol === "https:"
+      && url.hostname === `${ref}.supabase.co`
+      && url.port === ""
+      && url.pathname === "/"
+      && url.search === "" && url.hash === ""
+      && url.username === "" && url.password === "";
+  } catch { return false; }
 }
 
 export function validOrigin(origin: string | null, allowed: string | undefined): boolean {
