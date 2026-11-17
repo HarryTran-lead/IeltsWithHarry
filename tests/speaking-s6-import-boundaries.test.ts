@@ -37,7 +37,7 @@ const makePackage=()=>{
  return {revision:"R11_M10_L19_TEST",hash:sha256Json(lesson),privateHash:sha256Json(privateLesson),lesson,privateLesson};
 };
 const req=(body:unknown)=>new Request("https://staging.invalid/api/admin/speaking-s6/import",{
- method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(body)
+ method:"POST",headers:{"Content-Type":"application/json","Origin":"https://staging.invalid"},body:JSON.stringify(body)
 });
 describe("S6 authenticated ADD-ONLY import boundary (mock database)",()=>{
  beforeEach(()=>{
