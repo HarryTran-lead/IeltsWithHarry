@@ -174,6 +174,54 @@ class H72StaticAuditTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError,"tracked index has unverified"):
             audit.assert_clean_tracked_tree(root)
 
+    def test_sha_bound_scan_rejects_concurrent_source_change(self):
+        root=self.project({"src/lib/a.ts":"export const version=1;"})
+        subprocess.run(["git","-C",str(root),"init","-q"],check=True)
+        subprocess.run(["git","-C",str(root),"add","src/lib/a.ts"],check=True)
+        subprocess.run(["git","-C",str(root),"-c","user.name=H72 Test",
+                        "-c","user.email=h72@example.invalid",
+                        "-c","commit.gpgsign=false","commit","-qm","baseline"],check=True)
+        sha=audit.head_sha(root)
+        out_json=root/"reports/audit.json"
+        out_md=root/"reports/audit.md"
+        args=["h72_dependency_audit.py","--repo",str(root),"--expected-sha",sha,
+              "--json-out",str(out_json),"--md-out",str(out_md)]
+        original=audit.analyze
+        def change_after_scan(*params):
+            result=original(*params)
+            (root/"src/lib/a.ts").write_text("export const version=2;",encoding="utf-8")
+            return result
+        with patch.object(audit,"analyze",side_effect=change_after_scan),patch("sys.argv",args):
+            self.assertEqual(audit.main(),2)
+        self.assertFalse(out_json.exists())
+        self.assertFalse(out_md.exists())
+
+    def test_sha_bound_scan_rejects_head_move_during_scan(self):
+        root=self.project({"src/lib/a.ts":"export const version=1;"})
+        subprocess.run(["git","-C",str(root),"init","-q"],check=True)
+        subprocess.run(["git","-C",str(root),"add","src/lib/a.ts"],check=True)
+        subprocess.run(["git","-C",str(root),"-c","user.name=H72 Test",
+                        "-c","user.email=h72@example.invalid",
+                        "-c","commit.gpgsign=false","commit","-qm","baseline"],check=True)
+        original_sha=audit.head_sha(root)
+        out_json=root/"reports/audit.json"
+        out_md=root/"reports/audit.md"
+        args=["h72_dependency_audit.py","--repo",str(root),"--expected-sha",original_sha,
+              "--json-out",str(out_json),"--md-out",str(out_md)]
+        original=audit.analyze
+        def move_head_after_scan(*params):
+            result=original(*params)
+            subprocess.run(["git","-C",str(root),"-c","user.name=H72 Test",
+                            "-c","user.email=h72@example.invalid",
+                            "-c","commit.gpgsign=false","commit","--allow-empty",
+                            "-qm","head moved"],check=True)
+            return result
+        with patch.object(audit,"analyze",side_effect=move_head_after_scan),patch("sys.argv",args):
+            self.assertEqual(audit.main(),2)
+        self.assertNotEqual(original_sha,audit.head_sha(root))
+        self.assertFalse(out_json.exists())
+        self.assertFalse(out_md.exists())
+
     def test_markdown_disclaims_no_matches(self):
         root=self.project({"src/lib/clean.ts":"export const clean = true"})
         report=audit.analyze(root,["src/lib/clean.ts"],COMMIT)
