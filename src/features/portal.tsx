@@ -1,7 +1,7 @@
 "use client";
 import dynamic from "next/dynamic";
 import { usePathname, useRouter } from "next/navigation";
-import { Suspense, useEffect } from "react";
+import { Suspense, useEffect, type ReactNode } from "react";
 import { DemoProvider, useDemo } from "@/features/demo/demo-store";
 import { AppShell } from "@/components/layout/app-shell";
 import { NotebookProvider } from "@/features/notebook/notebook-store";
@@ -49,8 +49,8 @@ const ReadingVocabularyPage = dynamic(() => import("@/features/reading/reading-v
 const GrammarGarden = dynamic(() => import("@/features/grammar/grammar-garden").then((module) => module.GrammarGarden), { loading: SectionLoading });
 const Community = dynamic(() => import("@/features/community/community").then((module) => module.Community), { loading: SectionLoading });
 
-export function Portal({ canManage = false }: { canManage?: boolean }) {
-  return <DemoProvider><NotebookProvider><PortalContent canManage={canManage} /></NotebookProvider></DemoProvider>;
+export function Portal({ canManage = false, children }: { canManage?: boolean; children?: ReactNode }) {
+  return <DemoProvider><NotebookProvider><PortalContent canManage={canManage}>{children}</PortalContent></NotebookProvider></DemoProvider>;
 }
 
 function RetiredNumbersBank() {
@@ -59,8 +59,11 @@ function RetiredNumbersBank() {
   return <PageSkeleton label="Đang mở kho Dictation…" />;
 }
 
-function PortalContent({ canManage }: { canManage: boolean }) {
+function PortalContent({ canManage, children }: { canManage: boolean; children?: ReactNode }) {
   const pathname = usePathname();
+  // R71: render nested Task 1 self-study pages inside the existing AppShell.
+  const isTask1SelfStudyRoute = pathname === "/app/writing/task-1/self-study"
+    || pathname.startsWith("/app/writing/task-1/self-study/");
   const { ready } = useDemo();
   const section = pathname.split("/")[2] || "dashboard";
   const skill = (["vocabulary", "grammar", "reading", "listening", "writing", "speaking"] as string[]).includes(section) ? section as IeltsSkill : null;
@@ -70,7 +73,7 @@ function PortalContent({ canManage }: { canManage: boolean }) {
     || (section === "news" && skillMode === "learn" && Boolean(pathname.split("/")[4]));
   return (
       <AppShell canManage={canManage}>
-        {lockedLearnerPath(pathname) ? <div className="content-page"><section className="card section-card"><h1>Chức năng đang chuẩn bị</h1><p>Nội dung đang được biên soạn và kiểm tra trước khi mở cho học viên.</p><Link className="button primary" href="/app/dashboard">Về Dashboard</Link></section></div> : !ready && needsStudyData ? <PageSkeleton label="Loading your learning space…" /> : section === "dashboard" ? (
+        {isTask1SelfStudyRoute ? children : lockedLearnerPath(pathname) ? <div className="content-page"><section className="card section-card"><h1>Chức năng đang chuẩn bị</h1><p>Nội dung đang được biên soạn và kiểm tra trước khi mở cho học viên.</p><Link className="button primary" href="/app/dashboard">Về Dashboard</Link></section></div> : !ready && needsStudyData ? <PageSkeleton label="Loading your learning space…" /> : section === "dashboard" ? (
           <Dashboard />
         ) : section === "planner" ? (
           <PlannerPage />
