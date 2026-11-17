@@ -223,10 +223,7 @@ export function SpeakingS6Lesson({lessonId,preview}:{lessonId:string;preview:boo
      <p>{current?.instruction_vi}</p><p className="s6-muted">{current?.instruction_en}</p>
     </div>
     {current?.learning_content && Object.keys(current.learning_content).length>0 &&
-      <section className="s6-card"><h3>Học từng bước</h3>
-       {Object.entries(current.learning_content).map(([k,v])=>
-        <p key={k}><strong>{k}:</strong> {typeof v==="string"?v:JSON.stringify(v)}</p>)}
-      </section>}
+      <LearningContent key={lessonId+"-"+step} content={current.learning_content} />}
     {step===2&&<section className="s6-card"><h3>Ghi âm chẩn đoán</h3>
       <p>Trả lời câu này trước khi xem lời giải:</p><blockquote>{lesson.guided[0]?.question_en}</blockquote>
       <RecorderControls rec={rec} />
@@ -243,7 +240,7 @@ export function SpeakingS6Lesson({lessonId,preview}:{lessonId:string;preview:boo
         onChange={e=>setConsent(e.target.checked)} disabled={busy}/> Đồng ý lưu bản ghi âm riêng tư lên Supabase Storage (không bắt buộc)</label>}
      {active&&<div className="s6-attempt">
       <p className="s6-eyebrow">Câu hỏi từ server · {active.mode}</p><blockquote>{active.question}</blockquote>
-      {group==="guided"&&selectedActivity&&<HintPanel hints={selectedActivity.hints}/>}
+      {group==="guided"&&selectedActivity&&<HintPanel key={selectedActivity.activity_id} hints={selectedActivity.hints}/>}
       <RecorderControls rec={rec}/>
       <label className="s6-note-label">Ghi chú hoặc bản chép tay (không thay thế bằng chứng âm thanh)
        <textarea value={notes} disabled={active.submitted} onChange={e=>setNotes(e.target.value)}
@@ -311,4 +308,62 @@ function HintPanel({hints}:{hints:Hint[]}){
   {sorted.slice(0,shown).map(h=><p key={h.level}><strong>{h.kind}:</strong> {h.text_vi||h.text_en||"Lấy một ví dụ cụ thể."}</p>)}
   {shown<sorted.length&&<button type="button" onClick={()=>setShown(x=>Math.min(sorted.length,x+1))}>Mở gợi ý {shown+1}/3</button>}
  </div>;
+}
+
+
+const lessonFieldLabels:Record<string,string>={
+ heading_vi:"Hướng dẫn",lesson_focus_en:"Kỹ năng mục tiêu (EN)",lesson_focus_vi:"Trọng tâm",
+ observable_goal_vi:"Bằng chứng cần đạt",learner_action_vi:"Việc cần làm",
+ diagnostic_prompt_en:"Câu hỏi chẩn đoán",duration_seconds:"Thời lượng (giây)",
+ instructions_vi:"Cách thực hiện",self_check_vi:"Tự kiểm tra",data_policy_vi:"Quyền riêng tư",
+ thinking_pattern_en:"Cách triển khai ý",step_by_step_vi:"Thực hiện theo thứ tự",
+ rule_en:"Quy tắc (EN)",model_en:"Ví dụ (EN)",model_vi:"Dịch ví dụ (VI)",
+ listener_success_vi:"Khi nào người nghe hiểu?",prompt_vi:"Hãy thử trước",
+ mistake_en:"Câu chưa tốt",reason_vi:"Vì sao chưa tốt?",
+ teacher_repair_en:"Cách sửa tham khảo (sau khi thử)",practice_vi:"Bài luyện",
+ worked_model_en:"Bài mẫu phân tích (EN)",translation_vi:"Dịch nghĩa (VI)",
+ analysis_vi:"Phân tích",transfer_not_memorisation_vi:"Tự diễn đạt",
+ record_again_vi:"Ghi âm lại",four_activity_ids:"Bốn bài Guided",
+ focus_vi:"Trọng tâm luyện",hint_protocol_vi:"Mở gợi ý theo từng mức",
+ check_vi:"Tiêu chí tự kiểm tra",goal_vi:"Mục tiêu",
+ procedure_vi:"Quy trình thực hiện",minimum_self_evidence_vi:"Bằng chứng tối thiểu",
+ rules_vi:"Quy tắc",human_review_vi:"Đánh giá cần người kiểm duyệt",
+ known_risk_en:"Lỗi thường gặp",why_it_matters_vi:"Tác động đến người nghe",
+ targeted_repair_en:"Cách sửa tham khảo (sau khi thử)",
+ repair_protocol_vi:"Các bước sửa",extra_practice_en:"Câu luyện chuyển giao",
+ reviews:"Lịch ôn",self_evaluation_vi:"Tự đánh giá",outcome_vi:"Kết quả mong đợi",
+ task_en:"Nhiệm vụ (EN)",task_vi:"Nhiệm vụ (VI)",day_offset:"Ngày ôn",
+ minimum:"Tối thiểu",recommended:"Khuyến nghị"
+};
+const hiddenSystemFields=new Set(["not_a_band_claim","model_is_practice_not_answer_key",
+ "do_not_show_private_models","no_unseen_prompt_in_payload","cannot_auto_certify"]);
+const practiceRepairFields=new Set(["teacher_repair_en","targeted_repair_en"]);
+function labelField(key:string){return lessonFieldLabels[key]??key.replace(/_/g," ")}
+function ContentValue({value}:{value:unknown}){
+ if(value===null||value===undefined)return null;
+ if(typeof value==="string"||typeof value==="number")return <span>{value}</span>;
+ if(typeof value==="boolean")return <span>{value?"Có":"Không"}</span>;
+ if(Array.isArray(value))return <ol className="s6-content-list">{value.map((item,i)=><li key={i}><ContentValue value={item}/></li>)}</ol>;
+ if(typeof value==="object")return <div className="s6-content-subfields">
+  {Object.entries(value as Record<string,unknown>).filter(([key])=>!hiddenSystemFields.has(key))
+   .map(([key,item])=><div key={key} className="s6-content-subfield">
+    <strong>{labelField(key)}:</strong> <ContentValue value={item}/>
+   </div>)}
+ </div>;
+ return null;
+}
+function LearningContent({content}:{content:Record<string,unknown>}){
+ const [showRepair,setShowRepair]=useState(false);
+ return <section className="s6-card s6-learning">
+  <h3>{typeof content.heading_vi==="string"?content.heading_vi:"Học từng bước"}</h3>
+  {Object.entries(content).filter(([key])=>key!=="heading_vi"&&!hiddenSystemFields.has(key))
+   .map(([key,value])=>practiceRepairFields.has(key)
+    ? <div className="s6-learning-field" key={key}>
+       {showRepair?<><h4>{labelField(key)}</h4><ContentValue value={value}/></>:
+        <button type="button" onClick={()=>setShowRepair(true)}>Đã thử sửa — xem gợi ý của giáo viên</button>}
+      </div>
+    : <div className="s6-learning-field" key={key}>
+      <h4>{labelField(key)}</h4><ContentValue value={value}/>
+     </div>)}
+ </section>;
 }

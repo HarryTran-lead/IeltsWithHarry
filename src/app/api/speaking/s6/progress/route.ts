@@ -49,6 +49,8 @@ export async function POST(request:Request){
   const row=(old.data??empty(user.id,body.lessonId,revision,body.preview)) as Progress;
   const now=new Date();
   if(body.action==="completeStep"){
+   if(body.step>1 && !row.completed_steps.includes(body.step-1))
+     return Response.json({error:"STEP_OUT_OF_SEQUENCE"},{status:409,headers});
    row.completed_steps=[...new Set([...row.completed_steps,body.step])].sort((a,b)=>a-b);
    row.current_step=Math.min(10,Math.max(row.current_step,body.step+1));
    if(body.step===10 && !row.review_anchor)row.review_anchor=now.toISOString();
