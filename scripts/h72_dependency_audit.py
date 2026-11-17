@@ -13,7 +13,7 @@ import re
 import subprocess
 import sys
 
-SOURCE_SUFFIXES={".ts",".tsx",".js",".mjs",".cjs",".py",".sql",".sh",".yml",".yaml",".toml"}
+SOURCE_SUFFIXES={".ts",".tsx",".js",".jsx",".mjs",".cjs",".mts",".cts",".py",".sql",".sh",".yml",".yaml",".toml",".json",".prisma"}
 DIRECT=re.compile(r"\br19_h58(?:\s*\.\s*[a-z_][a-z_0-9]*)?\b",re.I)
 ROLE=re.compile(r"\b(?:SUPABASE_SERVICE_ROLE_KEY|service_role)\b",re.I)
 SUBMIT=re.compile(r"\bh68_submit_review\b",re.I)
@@ -28,7 +28,7 @@ MAX_FINDINGS=1000
 EXCLUDE_PARTS={".git","node_modules",".next","dist","build","coverage","vendor"}
 
 def classify(path:str)->str:
-    if path.startswith(("src/app/","src/lib/","supabase/functions/","services/")):
+    if path.startswith(("src/app/","src/lib/","src/pages/","supabase/functions/","services/","workers/","functions/","app/","lib/","api/","pages/")) or path.startswith(("src/middleware.","middleware.")):
         return "APPLICATION_RUNTIME"
     if path.startswith(("supabase/migrations/","supabase/content/")):
         return "DB_MIGRATION_HISTORY"
@@ -69,7 +69,7 @@ def analyze(root:Path,paths:list[str],sha:str)->dict:
             skipped.append({"path":rel,"reason":"UNSAFE_OR_EXCLUDED"});continue
         if path.suffix.lower() not in SOURCE_SUFFIXES:
             continue
-        if not (rel.startswith(("src/","supabase/","services/","scripts/","sql/","tests/",".github/"))):
+        if not (rel.startswith(("src/","supabase/","services/","workers/","functions/","app/","lib/","api/","pages/","scripts/","sql/","tests/",".github/")) or rel.startswith("middleware.")):
             continue
         target=root/path
         if target.is_symlink() or not target.is_file():
@@ -114,6 +114,7 @@ def analyze(root:Path,paths:list[str],sha:str)->dict:
             "EXTERNAL_EDGE_FUNCTIONS_CRON_AND_SECRETS_NOT_INSPECTED",
             "ROLE_REFERENCES_DO_NOT_PROVE_H58_ACCESS","DBA_REVIEW_REQUIRED"],
         "coverage":{"tracked_candidates":len(paths),"inspected_files":inspected,
+                    "complete":outcome=="STATIC_INVENTORY_PRODUCED",
                     "scanned_lines":line_count,"skipped":skipped,"errors":scan_errors,
                     "findings_truncated":bool(scan_errors)},
         "counts_by_indicator":dict(sorted(count.items())),
@@ -177,6 +178,6 @@ def main()->int:
         "source_files":result["coverage"]["inspected_files"],
         "skipped_count":len(result["coverage"]["skipped"]),
         "release_gate":"NO_GO"}))
-    return 3 if result["static_inventory_status"]=="INVENTORY_INCOMPLETE" else 0
+    return 0 if result["static_inventory_status"]=="STATIC_INVENTORY_PRODUCED" else 3
 
 if __name__=="__main__":sys.exit(main())
