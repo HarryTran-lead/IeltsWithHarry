@@ -46,7 +46,12 @@ function prettyError(error:unknown){
   "S6_START_ACTIVE_LIMIT":"Bạn đang có quá nhiều phiên chưa nộp. Hãy hoàn thành hoặc xóa phiên cũ trước khi mở câu mới.",
   "CROSS_ORIGIN_DENIED":"Yêu cầu không đến từ trang đang học. Vui lòng tải lại trang.",
   "ORIGIN_REQUIRED":"Không xác nhận được nguồn yêu cầu. Hãy tải lại trang và thử lại.",
-  "JSON_REQUIRED":"Yêu cầu không đúng định dạng. Vui lòng tải lại trang."
+  "JSON_REQUIRED":"Yêu cầu không đúng định dạng. Vui lòng tải lại trang.",
+  "AUDIO_UPLOAD_REQUIRED":"Bạn đã đồng ý lưu audio, nhưng máy chủ chưa tìm thấy bản ghi. Hãy tải audio lên rồi nộp lại.",
+  "AUDIO_FILE_AMBIGUOUS":"Có nhiều bản ghi cho cùng một lượt nói. Hãy xóa phiên và thực hiện lại.",
+  "AUDIO_INVALID_FORMAT":"Định dạng hoặc phần mở đầu file ghi âm không hợp lệ.",
+  "AUDIO_TOO_LARGE":"Bản ghi quá ngắn, quá lớn hoặc không đáp ứng giới hạn dung lượng.",
+  "AUDIO_STORAGE_UNAVAILABLE":"Chưa kiểm tra được file ghi âm trên máy chủ. Hãy thử nộp lại."
  };
  const key=text.split(" (")[0];return labels[key]??text;
 }
@@ -150,10 +155,13 @@ export function SpeakingS6Lesson({lessonId,preview}:{lessonId:string;preview:boo
     uploadedFor.current=active.attemptId;
     uploadedBlob.current=rec.blob;
    }
-   await jsonRequest(base+"/session",reqBody({action:"submit",attemptId:active.attemptId,
+   const submitted=await jsonRequest<{audioEvidence?:"not_stored"|"stored_hash_recorded"}>(
+     base+"/session",reqBody({action:"submit",attemptId:active.attemptId,
      transcript:notes.trim(),durationSeconds:Math.max(1,Math.min(180,rec.seconds)),preview}));
    setActive({...active,submitted:true});
-   setMessage("Đã nộp lượt nói. Không có chấm điểm band tự động.");
+   setMessage(submitted.audioEvidence==="stored_hash_recorded"
+     ?"Đã nộp và kiểm tra dấu SHA-256 của file ghi âm đã lưu. Chưa xác thực giọng nói hay chấm band."
+     :"Đã nộp bài tự học, không lưu audio trên máy chủ. Tiến độ tự báo cáo, không chấm band.");
    if(active.mode==="guided"){
     try{
      const reply=await jsonRequest<Feedback>(base+"/session",reqBody({
