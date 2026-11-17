@@ -1,0 +1,35 @@
+name: H69 H58-Accurate Teacher Auth/RLS Contract
+on:
+  push:
+    branches:
+      - codex/r19-h69-supabase-auth-rls-evidence-20261117
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  h69-postgres-16:
+    runs-on: ubuntu-latest
+    timeout-minutes: 18
+    services:
+      postgres:
+        image: postgres:16
+        env:
+          POSTGRES_USER: h69_ci_runner
+          POSTGRES_PASSWORD: h69_ci_password_only
+          POSTGRES_DB: h69_ci
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd=pg_isready
+          --health-interval=5s
+          --health-timeout=3s
+          --health-retries=15
+    steps:
+      - uses: actions/checkout@v4
+      - name: Ensure psql exists
+        run: command -v psql || (sudo apt-get update -qq && sudo apt-get install -y postgresql-client)
+      - name: Verify 3 independent teachers, RLS grants, idempotency and H58 immutable ledger on isolated PostgreSQL 16
+        run: bash scripts/h69_ci_postgres.sh
+        env:
+          H69_ALLOW_EPHEMERAL_DDL: YES_ISOLATED_CI_ONLY
+          H69_PG_DSN: postgresql://h69_ci_runner:h69_ci_password_only@127.0.0.1:5432/h69_ci
