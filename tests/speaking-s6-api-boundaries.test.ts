@@ -198,3 +198,99 @@ describe("S6 L20 session recovery and idempotent submissions",()=>{
   expect(r.status).toBe(404);
  });
 });
+
+describe("Speaking S6 M10-L24 private-bank fail-closed boundary tests (mock database)",()=>{
+ beforeEach(()=>{
+  vi.resetAllMocks();
+  mocks.viewer.mockResolvedValue({id:USER_A});
+  mocks.s6AccessAllowed.mockResolvedValue(true);
+ });
+ it("rejects Guided followup before any private-bank query",async()=>{
+  const d=makeDb({attempt:makeAttempt("guided","submitted")});
+  const r=await POST(request({action:"followup",attemptId:ATTEMPT}));
+  expect(r.status).toBe(403);
+  expect((await r.json()).error).toBe("WRONG_MODE");
+  expect(d.from.mock.calls.map(c=>c[0])).not.toContain("speaking_s6_private_revisions");
+ });
+ it("rejects Mastery guidedFeedback before any private-bank query",async()=>{
+  const d=makeDb({attempt:makeAttempt("mastery","submitted")});
+  const r=await POST(request({action:"guidedFeedback",attemptId:ATTEMPT}));
+  expect(r.status).toBe(403);
+  expect((await r.json()).error).toBe("WRONG_MODE");
+  expect(d.from.mock.calls.map(c=>c[0])).not.toContain("speaking_s6_private_revisions");
+ });
+ it("returns a non-cacheable fail-closed error when required Mastery followup is missing",async()=>{
+  const d=makeDb({attempt:makeAttempt("mastery","submitted")});
+  d.privateBank.maybeSingle.mockResolvedValue({data:{bank:{
+   guided:{},independent:{},mastery:{"S6-001-M01":{question_en:"Unseen prompt"}}
+  }},error:null});
+  const r=await POST(request({action:"followup",attemptId:ATTEMPT}));
+  expect(r.status).toBe(503);
+  expect((await r.json()).error).toBe("BANK_MISSING");
+  expect(r.headers.get("Cache-Control")).toContain("no-store");
+ });
+ it("rejects an empty private Mastery question before inserting an attempt",async()=>{
+  const d=makeDb();
+  d.privateBank.maybeSingle.mockResolvedValue({data:{bank:{
+   guided:{},independent:{},mastery:{"S6-001-M01":{followup_en:"Unseen secret"}}
+  }},error:null});
+  const r=await POST(request({action:"start",lessonId:"S6-001",activityId:"S6-001-M01"}));
+  expect(r.status).toBe(503);
+  expect(d.attempts.insert).not.toHaveBeenCalled();
+  expect(JSON.stringify(await r.json())).not.toContain("Unseen secret");
+ });
+ it("refuses a Guided explanation if the private model answer is blank",async()=>{
+  const d=makeDb({attempt:makeAttempt("guided","submitted")});
+  d.privateBank.maybeSingle.mockResolvedValue({data:{bank:{
+   guided:{"S6-001-G01":{question_en:"Do you prefer mornings?",model_answer_en:" "}},
+   independent:{},mastery:{}
+  }},error:null});
+  const r=await POST(request({action:"guidedFeedback",attemptId:ATTEMPT}));
+  expect(r.status).toBe(503);
+  expect((await r.json()).error).toBe("BANK_MISSING");
+ });
+ it("never reflects a database error containing private details to the client",async()=>{
+  const d=makeDb();
+  d.attempts.insert.mockResolvedValue({error:{message:"SQL private bank: hidden teacher key"}});
+  const r=await POST(request({action:"start",lessonId:"S6-001",activityId:"S6-001-M01"}));
+  expect(r.status).toBe(503);
+  const body=JSON.stringify(await r.json());
+  expect(body).toBe('{"error":"S6_SESSION_UNAVAILABLE"}');
+  expect(body).not.toContain("teacher key");
+  expect(r.headers.get("Cache-Control")).toContain("no-store");
+ });
+ it("returns fixed 401 and 403 errors for learner auth and admin preview denial",async()=>{
+  const d=makeDb();
+  mocks.viewer.mockRejectedValueOnce(Error("Authentication required"));
+  const first=await POST(request({action:"status",attemptId:ATTEMPT}));
+  expect(first.status).toBe(401);
+  expect((await first.json()).error).toBe("AUTHENTICATION_REQUIRED");
+  mocks.viewer.mockRejectedValueOnce(Error("Admin access required"));
+  const second=await POST(request({action:"status",attemptId:ATTEMPT,preview:true}));
+  expect(second.status).toBe(403);
+  expect((await second.json()).error).toBe("ADMIN_REQUIRED");
+  expect(d.from).not.toHaveBeenCalled();
+  expect(mocks.viewer).toHaveBeenCalledWith(true);
+ });
+ it("does not expose raw malformed JSON or schema-validation internals",async()=>{
+  makeDb();
+  const malformed=new Request("https://staging.invalid/api/speaking/s6/session",{
+    method:"POST",headers:{"Content-Type":"application/json"},body:"{"
+  });
+  const first=await POST(malformed);
+  expect(first.status).toBe(400);
+  expect((await first.json()).error).toBe("MALFORMED_JSON");
+  const second=await POST(request({action:"followup",attemptId:"invalid"}));
+  expect(second.status).toBe(422);
+  expect((await second.json()).error).toBe("SCHEMA_INVALID");
+ });
+ it("includes no private answer/model/notes in Mastery followup payload",async()=>{
+  makeDb({attempt:makeAttempt("mastery","submitted")});
+  const r=await POST(request({action:"followup",attemptId:ATTEMPT}));
+  expect(r.status).toBe(200);
+  const payload=await r.json();
+  expect(Object.keys(payload)).toEqual(["followup"]);
+  expect(r.headers.get("Cache-Control")).toContain("no-store");
+  expect(JSON.stringify(payload)).not.toContain("Private guided model");
+ });
+});
