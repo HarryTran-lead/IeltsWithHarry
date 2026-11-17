@@ -305,6 +305,15 @@ class H72StaticAuditTests(unittest.TestCase):
         self.assertEqual(report["application_direct_h58_reference_paths"],["src/lib/big.ts"])
         self.assertEqual(report["findings"][0]["line"],2)
 
+    def test_private_worker_entrypoints_are_runtime_not_operational_scripts(self):
+        paths=["scripts/writing-grading-worker.ts","scripts/speaking-coaching-worker.ts"]
+        root=self.project({name:"const key=process.env.SUPABASE_SERVICE_ROLE_KEY;" for name in paths})
+        report=audit.analyze(root,paths,COMMIT)
+        self.assertEqual(report["application_service_role_or_client_paths"],sorted(paths))
+        self.assertTrue(report["coverage"]["complete"])
+        self.assertEqual(set(x["scope"] for x in report["findings"]),{"APPLICATION_RUNTIME"})
+        self.assertEqual(audit.classify("scripts/h71_ci_cutover.py"),"MILESTONE_OR_OPERATIONAL")
+
     def test_markdown_disclaims_no_matches(self):
         root=self.project({"src/lib/clean.ts":"export const clean = true"})
         report=audit.analyze(root,["src/lib/clean.ts"],COMMIT)
