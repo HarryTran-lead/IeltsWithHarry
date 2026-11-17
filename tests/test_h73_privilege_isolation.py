@@ -68,7 +68,7 @@ class H73CredentialIsolationTests(unittest.TestCase):
         import json
         register = json.loads((ROOT / "evidence/h73_privileged_client_static_triage.json").read_text(encoding="utf-8"))
         base = (ROOT / "docs/R19_H72_STATIC_REVIEW_REGISTER_20261117.md").read_text(encoding="utf-8")
-        h72_paths = set(re.findall(r"^- \\[ \\] \\x60([^\\x60]+)\\x60 — deployment/H58 access", base, flags=re.M))
+        h72_paths = {line.split('`')[1] for line in base.splitlines() if line.startswith('- [ ] `') and ' — deployment/H58 access' in line}
         recorded_paths = [item["path"] for item in register["items"]]
         self.assertEqual(len(recorded_paths), 32)
         self.assertEqual(len(set(recorded_paths)), 32)
