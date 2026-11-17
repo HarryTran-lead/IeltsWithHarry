@@ -121,6 +121,48 @@ describe("M10-L34 editorial backlog triage (synthetic metadata only)",()=>{
   ]);
   expect(JSON.stringify(result)).not.toContain("secret private teacher model");
  });
+
+ it("never calls a four-row synthetic scan a complete 44-lesson review",()=>{
+  const preview=draftL34Remediation({
+    status:"READY_FOR_TEACHER_CONTENT_REVIEW",
+    lessons_checked:44,lessons_with_structure_flags:0,errors:[],
+    exact_cross_lesson_duplicate_lesson_ids:[],
+    lesson_reports:Array.from({length:4},(_,i)=>({
+      lesson_id:"S6-"+String(i+1).padStart(3,"0"),failed_check_codes:[]
+    }))
+  });
+  expect(preview.ready_for_human_review).toBe(false);
+ });
+ it("does not echo malformed lesson identifiers containing private data",()=>{
+  const preview=draftL34Remediation({
+    lessons_checked:1,status:"HOLD_CONTENT_STRUCTURE",
+    exact_cross_lesson_duplicate_lesson_ids:["private-answer-123456"],
+    lesson_reports:[{lesson_id:"private-answer-123456",
+      failed_check_codes:["guided_bilingual_feedback"]}]
+  });
+  expect(preview.remediation_items).toEqual([]);
+  expect(preview.exact_duplicate_lesson_ids).toEqual([]);
+  expect(JSON.stringify(preview)).not.toContain("private-answer");
+ });
+ it("rejects L34 pinned hashes that do not match an already reviewed L33 revision",()=>{
+  const m=copy(manifest),t=copy(teacher);
+  scanned(m.lessons[0],null,"STRUCTURE_PASSED");
+  m.real_source_packages_inspected=1;
+  t.lessons[0].status="REQUIRES_REVISION";
+  t.lessons[0].source_revision="R11_L34_TEST";
+  t.lessons[0].student_sha256="b".repeat(64);
+  t.lessons[0].private_sha256=SHA;
+  t.lessons[0].author="Content author";
+  t.lessons[0].evidence="ev:restricted-store/teacher-qa-12345";
+  t.lessons[0].rubric={
+    learning_sequence:16,scaffold_progression:14,guided_examples:12,
+    independent_transfer:12,mastery_authenticity:12,bilingual_feedback:12,
+    grammar_pronunciation_vocabulary:10,spaced_review:6,
+    privacy_and_accessibility:6
+  };
+  t.lessons[0].revision_notes="Guided examples require a new pedagogical rewrite";
+  expect(validate(m,t).errors).toContain("L33_L34_REVIEW_SOURCE_HASH_DRIFT:S6-001");
+ });
  it("refuses unscanned rows with fake hashes, teacher signature or source text",()=>{
   const m=copy(manifest);
   m.lessons[2].student_sha256=SHA;
