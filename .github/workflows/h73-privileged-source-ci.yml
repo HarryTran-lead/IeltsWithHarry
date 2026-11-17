@@ -33,10 +33,10 @@ jobs:
           assert data['release_gate']=='NO_GO'
           assert data['supabase_staging_verified'] is False
           assert data['source_coverage_complete'] is True
-          assert len(data['observed_role_paths']) == 11
+          assert len(data['observed_role_paths']) == 10
           assert len(data['observed_possible_client_paths']) == 22
           assert len(data['observed_indirect_bank_client_paths']) == 21
-          assert len(set(data['observed_role_paths']) | set(data['observed_possible_client_paths'])) == 32
+          assert len(set(data['observed_role_paths']) | set(data['observed_possible_client_paths'])) == 31
           assert data['unreviewed_new_role_paths'] == []
           assert data['unreviewed_new_client_paths'] == []
           assert data['stale_baseline_paths'] == []
