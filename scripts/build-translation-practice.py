@@ -11,7 +11,9 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 SOURCE = ROOT / "data/translation-practice/starter-51.json"
-DEST = ROOT / "src/data/translation/band-exercises.json"
+BANDS_DEST = ROOT / "src/data/translation/bands"
+INDEX_DEST = ROOT / "src/data/translation/band-index.json"
+ESL_V2 = ROOT / "data/translation-practice/esl-v2-additions.json"
 ADDITIONAL = ROOT / "data/translation-practice/level-authored-34.json"
 EXPANDED = ROOT / "data/translation-practice/level-authored-expanded.json"
 ADVANCED_PARAGRAPHS = ROOT / "data/translation-practice/advanced-starter-paragraphs.json"
@@ -304,8 +306,33 @@ if __name__ == "__main__":
         candidate["suggestedLevel"] = candidate.pop("practiceLevel")
         candidate["editorialStatus"] = "candidate"
         candidates.append(candidate)
-    DEST.parent.mkdir(parents=True, exist_ok=True)
-    DEST.write_text(json.dumps(core, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    original_count = len(core)
+    # ESL v2 additions (scripts/import-esl-v2-translation.py) are appended, never merged
+    # into existing rows, so the IDs and versions behind learner progress stay as they were.
+    core.extend(json.loads(ESL_V2.read_text(encoding="utf-8")))
+    assert len({row["id"] for row in core}) == len(core), "duplicate exercise id"
+    assert len({row["promptVi"].strip().lower() for row in core}) == len(core), "duplicate prompt"
+
+    # One file per band, loaded only when the learner opens that band, plus a small index
+    # with the counts and progress keys the band picker needs.
+    BANDS_DEST.mkdir(parents=True, exist_ok=True)
+    for stale in BANDS_DEST.glob("band-*.json"):
+        stale.unlink()
+    index = []
+    for entry in rubric_rows:
+        level = entry["level"]
+        items = [row for row in core if row["practiceLevel"] == level]
+        sample = next((row for row in items if row["type"] != "word"), items[0])
+        (BANDS_DEST / f"band-{level.replace('.', '-')}.json").write_text(
+            json.dumps(items, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
+        index.append({
+            "level": level,
+            "keys": [row["id"] if row["version"] == 1 else f"{row['id']}:v{row['version']}" for row in items],
+            "topics": len({row["topic"] for row in items}),
+            "sample": {"promptVi": sample["promptVi"], "answer": sample["referenceAnswers"][0]},
+        })
+    INDEX_DEST.write_text(json.dumps(index, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
     RUBRIC_DEST.write_text(json.dumps(rubric_rows, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     CANDIDATES.write_text(json.dumps(candidates, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
-    print(f"Wrote {len(core)} internally aligned exercises and {len(candidates)} uncalibrated pattern candidates")
+    print(f"Wrote {len(core)} exercises ({original_count} original, {len(core) - original_count} ESL v2) "
+          f"in {len(index)} band files and {len(candidates)} uncalibrated pattern candidates")

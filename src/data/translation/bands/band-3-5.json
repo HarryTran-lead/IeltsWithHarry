@@ -1,0 +1,4402 @@
+[
+ {
+  "id": "band-3.5-016",
+  "practiceLevel": "3.5",
+  "type": "sentence",
+  "topic": "Kế hoạch",
+  "targetTerm": "next month",
+  "meaningVi": "tháng tới",
+  "promptVi": "Tháng tới tôi sẽ học bơi.",
+  "referenceAnswers": [
+   "I will learn to swim next month."
+  ],
+  "grammarTags": [
+   "future-will"
+  ],
+  "explanationVi": "Will và động từ nguyên mẫu diễn đạt kế hoạch tương lai trong câu mẫu.",
+  "commonErrors": [],
+  "editorialStatus": "pilot",
+  "source": "original-starter",
+  "version": 1,
+  "calibrationStatus": "internal_review",
+  "rationaleVi": "Nói kế hoạch, mục đích và so sánh đơn giản. Bài này luyện: Will và động từ nguyên mẫu diễn đạt kế hoạch tương lai trong câu mẫu."
+ },
+ {
+  "id": "band-3.5-017",
+  "practiceLevel": "3.5",
+  "type": "sentence",
+  "topic": "Sức khỏe",
+  "targetTerm": "exercise",
+  "meaningVi": "tập thể dục",
+  "promptVi": "Tôi tập thể dục ba lần một tuần để khỏe hơn.",
+  "referenceAnswers": [
+   "I exercise three times a week to stay healthy."
+  ],
+  "grammarTags": [
+   "purpose-infinitive"
+  ],
+  "explanationVi": "To stay healthy diễn đạt mục đích của việc tập thể dục.",
+  "commonErrors": [],
+  "editorialStatus": "pilot",
+  "source": "original-starter",
+  "version": 1,
+  "calibrationStatus": "internal_review",
+  "rationaleVi": "Nói kế hoạch, mục đích và so sánh đơn giản. Bài này luyện: To stay healthy diễn đạt mục đích của việc tập thể dục."
+ },
+ {
+  "id": "band-3.5-018",
+  "practiceLevel": "3.5",
+  "type": "sentence",
+  "topic": "Mua sắm",
+  "targetTerm": "cheaper",
+  "meaningVi": "rẻ hơn",
+  "promptVi": "Chiếc áo màu xanh rẻ hơn chiếc áo màu đỏ.",
+  "referenceAnswers": [
+   "The blue shirt is cheaper than the red one."
+  ],
+  "grammarTags": [
+   "comparative"
+  ],
+  "explanationVi": "Cheaper than là cấu trúc so sánh hơn.",
+  "commonErrors": [],
+  "editorialStatus": "pilot",
+  "source": "original-starter",
+  "version": 1,
+  "calibrationStatus": "internal_review",
+  "rationaleVi": "Nói kế hoạch, mục đích và so sánh đơn giản. Bài này luyện: Cheaper than là cấu trúc so sánh hơn."
+ },
+ {
+  "id": "band-3.5-cal-01",
+  "practiceLevel": "3.5",
+  "type": "sentence",
+  "topic": "Kế hoạch",
+  "targetTerm": "call you",
+  "meaningVi": "gọi cho bạn",
+  "promptVi": "Tôi sẽ gọi cho bạn sau giờ học vì tôi cần giúp đỡ.",
+  "referenceAnswers": [
+   "I will call you after class because I need help."
+  ],
+  "grammarTags": [
+   "future-reason"
+  ],
+  "explanationVi": "Will diễn đạt việc sẽ làm; because nêu lý do.",
+  "rationaleVi": "Hai ý gần nhau nối bằng lý do trực tiếp.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "original-level-authored",
+  "version": 1
+ },
+ {
+  "id": "band-3.5-cal-02",
+  "practiceLevel": "3.5",
+  "type": "sentence",
+  "topic": "Mua sắm",
+  "targetTerm": "lighter than",
+  "meaningVi": "nhẹ hơn",
+  "promptVi": "Chiếc túi này nhẹ hơn chiếc túi của tôi.",
+  "referenceAnswers": [
+   "This bag is lighter than mine."
+  ],
+  "grammarTags": [
+   "comparative"
+  ],
+  "explanationVi": "Lighter than là so sánh hơn; mine thay cho my bag.",
+  "rationaleVi": "So sánh đơn giản trong ngữ cảnh quen thuộc.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "original-level-authored",
+  "version": 1
+ },
+ {
+  "id": "band-3.5-exp-001",
+  "practiceLevel": "3.5",
+  "type": "sentence",
+  "topic": "Gia đình",
+  "targetTerm": "going on holiday",
+  "meaningVi": "đi nghỉ",
+  "promptVi": "Gia đình tôi sẽ đi nghỉ ở Đà Nẵng vào mùa hè này để thư giãn.",
+  "referenceAnswers": [
+   "My family is going on holiday to Da Nang this summer to relax."
+  ],
+  "grammarTags": [
+   "Expressing plans and purpose"
+  ],
+  "explanationVi": "Dùng thì hiện tại tiếp diễn 'is going on holiday' cho kế hoạch và 'to relax' để chỉ mục đích.",
+  "rationaleVi": "Mẫu câu diễn đạt kế hoạch gia đình và mục đích đơn giản phù hợp trình độ 3.5.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "ai-assisted-level-draft",
+  "version": 1
+ },
+ {
+  "id": "band-3.5-exp-002",
+  "practiceLevel": "3.5",
+  "type": "sentence",
+  "topic": "Đồ ăn",
+  "targetTerm": "spicier than",
+  "meaningVi": "cay hơn",
+  "promptVi": "Món ăn này cay hơn món ăn tôi đã ăn tối qua.",
+  "referenceAnswers": [
+   "This dish is spicier than the meal I ate last night."
+  ],
+  "grammarTags": [
+   "Comparative adjective"
+  ],
+  "explanationVi": "Dùng tính từ so sánh hơn 'spicier than' để so sánh hai món ăn.",
+  "rationaleVi": "So sánh tính chất đơn giản của đồ ăn là chủ đề giao tiếp cơ bản ở cấp độ 3.5.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "ai-assisted-level-draft",
+  "version": 1
+ },
+ {
+  "id": "band-3.5-exp-003",
+  "practiceLevel": "3.5",
+  "type": "sentence",
+  "topic": "Sức khỏe",
+  "targetTerm": "lose weight",
+  "meaningVi": "giảm cân",
+  "promptVi": "Anh ấy muốn giảm cân nên anh ấy sẽ đi bộ đến công ty mỗi ngày.",
+  "referenceAnswers": [
+   "He wants to lose weight, so he is going to walk to work every day."
+  ],
+  "grammarTags": [
+   "Expressing cause and planned action"
+  ],
+  "explanationVi": "Nối hai mệnh đề bằng từ 'so' để chỉ kết quả/kế hoạch hành động dựa trên mong muốn.",
+  "rationaleVi": "Sử dụng từ nối 'so' và thì dự định đơn giản đúng với định hướng Level 3.5.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "ai-assisted-level-draft",
+  "version": 1
+ },
+ {
+  "id": "band-3.5-exp-004",
+  "practiceLevel": "3.5",
+  "type": "sentence",
+  "topic": "Nhà ở",
+  "targetTerm": "flat",
+  "meaningVi": "căn hộ",
+  "promptVi": "Căn hộ mới của chúng tôi rộng hơn nhà cũ nhưng xa trung tâm hơn.",
+  "referenceAnswers": [
+   "Our new flat is larger than the old house, but it is further from the city centre."
+  ],
+  "grammarTags": [
+   "Comparative adjective with British vocabulary"
+  ],
+  "explanationVi": "Dùng từ tiếng Anh-Anh 'flat' cho căn hộ và dạng so sánh hơn 'larger than', 'further from'.",
+  "rationaleVi": "So sánh hai không gian sống đơn giản kết hợp từ vựng Anh-Anh cho trình độ 3.5.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "ai-assisted-level-draft",
+  "version": 1
+ },
+ {
+  "id": "band-3.5-exp-005",
+  "practiceLevel": "3.5",
+  "type": "sentence",
+  "topic": "Trường học",
+  "targetTerm": "prepare well for",
+  "meaningVi": "chuẩn bị tốt cho",
+  "promptVi": "Học sinh thức dậy sớm vì họ muốn chuẩn bị tốt cho kỳ thi.",
+  "referenceAnswers": [
+   "The students wake up early because they want to prepare well for the exam."
+  ],
+  "grammarTags": [
+   "Expressing reason with because"
+  ],
+  "explanationVi": "Dùng liên từ 'because' để giải thích lý do cho hành động thức dậy sớm.",
+  "rationaleVi": "Cấu trúc nối hai ý gần nhau bằng 'because' hoàn toàn phù hợp với Level 3.5.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "ai-assisted-level-draft",
+  "version": 1
+ },
+ {
+  "id": "band-3.5-exp-006",
+  "practiceLevel": "3.5",
+  "type": "sentence",
+  "topic": "Công nghệ",
+  "targetTerm": "faster than",
+  "meaningVi": "nhanh hơn",
+  "promptVi": "Tôi sẽ mua một cái máy tính xách tay mới vì nó nhanh hơn cái máy hiện tại của tôi.",
+  "referenceAnswers": [
+   "I am going to buy a new laptop because it is faster than my current one."
+  ],
+  "grammarTags": [
+   "Comparison and reason"
+  ],
+  "explanationVi": "Kết hợp kế hoạch 'am going to buy', liên từ 'because' và so sánh hơn 'faster than'.",
+  "rationaleVi": "Kết hợp nói dự định và so sánh đơn giản qua liên từ 'because' đúng trọng tâm 3.5.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "ai-assisted-level-draft",
+  "version": 1
+ },
+ {
+  "id": "band-3.5-exp-007",
+  "practiceLevel": "3.5",
+  "type": "sentence",
+  "topic": "Thể thao",
+  "targetTerm": "to make new friends",
+  "meaningVi": "để kết bạn mới",
+  "promptVi": "Mẹ tôi tham gia một câu lạc bộ cầu lông để kết bạn mới.",
+  "referenceAnswers": [
+   "My mother joined a badminton club to make new friends."
+  ],
+  "grammarTags": [
+   "Expressing purpose with to-infinitive"
+  ],
+  "explanationVi": "Sử dụng động từ nguyên mẫu có 'to' ('to make') để nêu mục đích của hành động.",
+  "rationaleVi": "Cấu trúc chỉ mục đích bằng 'to V' là ngữ pháp nền tảng cho cấp độ 3.5.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "ai-assisted-level-draft",
+  "version": 1
+ },
+ {
+  "id": "band-3.5-exp-008",
+  "practiceLevel": "3.5",
+  "type": "sentence",
+  "topic": "Đô thị",
+  "targetTerm": "more expensive than",
+  "meaningVi": "đắt hơn",
+  "promptVi": "Xe buýt ở thành phố này đắt hơn xe buýt ở quê tôi.",
+  "referenceAnswers": [
+   "The buses in this city are more expensive than the ones in my hometown."
+  ],
+  "grammarTags": [
+   "Comparative with long adjectives"
+  ],
+  "explanationVi": "Dùng 'more expensive than' để so sánh chi phí phương tiện ở hai nơi.",
+  "rationaleVi": "So sánh giá cả bằng tính từ dài là kĩ năng ngôn ngữ cơ bản thuộc trình độ 3.5.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "ai-assisted-level-draft",
+  "version": 1
+ },
+ {
+  "id": "band-3.5-exp-009",
+  "practiceLevel": "3.5",
+  "type": "sentence",
+  "topic": "Công việc",
+  "targetTerm": "take a day off",
+  "meaningVi": "xin nghỉ làm một ngày",
+  "promptVi": "Cô ấy cảm thấy mệt mỏi nên cô ấy sẽ xin nghỉ làm một ngày vào tuần tới.",
+  "referenceAnswers": [
+   "She feels tired, so she is going to take a day off work next week."
+  ],
+  "grammarTags": [
+   "Reason with so and future plan"
+  ],
+  "explanationVi": "Nối mệnh đề nguyên nhân và kế hoạch tương lai bằng từ nối 'so'.",
+  "rationaleVi": "Sử dụng 'so' kết nối lý do và kế hoạch công việc đơn giản chuẩn cấp độ 3.5.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "ai-assisted-level-draft",
+  "version": 1
+ },
+ {
+  "id": "band-3.5-exp-010",
+  "practiceLevel": "3.5",
+  "type": "sentence",
+  "topic": "Môi trường",
+  "targetTerm": "reduce pollution",
+  "meaningVi": "giảm ô nhiễm",
+  "promptVi": "Chúng tôi sẽ trồng thêm cây xanh xung quanh khu vực này để giảm ô nhiễm.",
+  "referenceAnswers": [
+   "We are going to plant more trees around this area to reduce pollution."
+  ],
+  "grammarTags": [
+   "Action plan for environmental purpose"
+  ],
+  "explanationVi": "Dùng 'are going to plant' chỉ kế hoạch và 'to reduce pollution' chỉ mục đích.",
+  "rationaleVi": "Nói về ý định và mục đích trong chủ đề môi trường quen thuộc ở mức 3.5.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "ai-assisted-level-draft",
+  "version": 1
+ },
+ {
+  "id": "band-3.5-exp-011",
+  "practiceLevel": "3.5",
+  "type": "sentence",
+  "topic": "Thời gian",
+  "targetTerm": "passes faster than",
+  "meaningVi": "trôi qua nhanh hơn",
+  "promptVi": "Cuối tuần trôi qua nhanh hơn ngày thường vì tôi luôn bận rộn với công việc nhà.",
+  "referenceAnswers": [
+   "The weekend passes faster than weekdays because I am always busy with housework."
+  ],
+  "grammarTags": [
+   "Comparison with reason"
+  ],
+  "explanationVi": "Kết hợp so sánh hơn của trạng từ 'faster than' và giải thích lý do bằng 'because'.",
+  "rationaleVi": "Diễn đạt so sánh trải nghiệm thời gian kèm lý do bằng 'because' vừa sức level 3.5.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "ai-assisted-level-draft",
+  "version": 1
+ },
+ {
+  "id": "band-3.5-exp-012",
+  "practiceLevel": "3.5",
+  "type": "sentence",
+  "topic": "Du lịch",
+  "targetTerm": "trip abroad",
+  "meaningVi": "chuyến du lịch nước ngoài",
+  "promptVi": "Tôi muốn học tiếng Anh tốt hơn nên tôi sẽ đi một chuyến du lịch nước ngoài.",
+  "referenceAnswers": [
+   "I want to improve my English, so I am going to go on a trip abroad."
+  ],
+  "grammarTags": [
+   "Expressing goal and resulting plan"
+  ],
+  "explanationVi": "Cấu trúc gồm mục tiêu 'want to improve', từ nối 'so' và kế hoạch 'am going to go on a trip abroad'.",
+  "rationaleVi": "Nói về mục đích học tập liên quan đến kế hoạch đi lại bằng từ nối 'so' đúng mức 3.5.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "ai-assisted-level-draft",
+  "version": 1
+ },
+ {
+  "id": "band-3.5-exp-013",
+  "practiceLevel": "3.5",
+  "type": "sentence",
+  "topic": "Công nghệ",
+  "targetTerm": "mobile phone",
+  "meaningVi": "điện thoại di động",
+  "promptVi": "Tôi dự định mua một chiếc điện thoại di động mới vì camera của nó tốt hơn camera trên chiếc điện thoại hiện tại của tôi.",
+  "referenceAnswers": [
+   "I plan to buy a new mobile phone because its camera is better than the one on my current phone."
+  ],
+  "grammarTags": [
+   "plans and reasons"
+  ],
+  "explanationVi": "Dùng cấu trúc 'plan to + V' để nói về kế hoạch và 'because' để đưa ra lý do kèm so sánh hơn 'better than the one on...'.",
+  "rationaleVi": "Phù hợp với trình độ 3.5 nhờ cấu trúc câu ghép dùng 'because' và từ vựng chủ đề công nghệ quen thuộc.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "ai-assisted-level-draft",
+  "version": 1
+ },
+ {
+  "id": "band-3.5-exp-014",
+  "practiceLevel": "3.5",
+  "type": "sentence",
+  "topic": "thể thao",
+  "targetTerm": "intends to",
+  "meaningVi": "định",
+  "promptVi": "Anh ấy định chơi bóng đá vào cuối tuần này để rèn luyện sức khỏe.",
+  "referenceAnswers": [
+   "He intends to play football this weekend to improve his health."
+  ],
+  "grammarTags": [
+   "intentions and purpose"
+  ],
+  "explanationVi": "Dùng 'intends to + V' để diễn tả ý định/kế hoạch và 'to + V' để nêu mục đích.",
+  "rationaleVi": "Câu diễn đạt kế hoạch và mục đích bằng các cấu trúc ngữ pháp cơ bản ở mức độ IELTS 3.5.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "ai-assisted-level-draft",
+  "version": 1
+ },
+ {
+  "id": "band-3.5-exp-015",
+  "practiceLevel": "3.5",
+  "type": "sentence",
+  "topic": "đô thị",
+  "targetTerm": "quieter than",
+  "meaningVi": "yên tĩnh hơn",
+  "promptVi": "Công viên này yên tĩnh hơn công viên gần nhà tôi nên nhiều người đến đây đọc sách.",
+  "referenceAnswers": [
+   "This park is quieter than the park near my house, so many people come here to read."
+  ],
+  "grammarTags": [
+   "comparisons and result"
+  ],
+  "explanationVi": "Sử dụng tính từ so sánh hơn 'quieter than' kết hợp với liên từ 'so' để chỉ kết quả.",
+  "rationaleVi": "Nối hai vế bằng từ 'so' và so sánh tính từ ngắn là yêu cầu trọng tâm của Level 3.5.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "ai-assisted-level-draft",
+  "version": 1
+ },
+ {
+  "id": "band-3.5-exp-016",
+  "practiceLevel": "3.5",
+  "type": "sentence",
+  "topic": "đi lại",
+  "targetTerm": "slower than",
+  "meaningVi": "chậm hơn",
+  "promptVi": "Đi lại bằng tàu hỏa chậm hơn đi xe khách nhưng nó an toàn hơn cho các hành trình xa.",
+  "referenceAnswers": [
+   "Travelling by train is slower than travelling by coach, but it is safer for long journeys."
+  ],
+  "grammarTags": [
+   "comparisons and contrast"
+  ],
+  "explanationVi": "Dùng tính từ so sánh hơn 'slower than' và 'safer' kết hợp từ nối 'but' để so sánh hai phương tiện đi lại.",
+  "rationaleVi": "Chủ đề giao thông đi lại đời thường với phép so sánh đơn giản phù hợp cho người học ở mức 3.5.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "ai-assisted-level-draft",
+  "version": 1
+ },
+ {
+  "id": "band-3.5-exp-017",
+  "practiceLevel": "3.5",
+  "type": "sentence",
+  "topic": "giáo dục",
+  "targetTerm": "enrol on",
+  "meaningVi": "đăng ký",
+  "promptVi": "Chị tôi sẽ đăng ký một khóa học nấu ăn vào tháng sau để mở một quán ăn nhỏ.",
+  "referenceAnswers": [
+   "My sister will enrol on a cooking course next month to open a small eatery."
+  ],
+  "grammarTags": [
+   "future plans and purpose"
+  ],
+  "explanationVi": "Sử dụng thì tương lai đơn 'will + V' cho kế hoạch và 'to + V' để thể hiện mục đích.",
+  "rationaleVi": "Câu kết hợp thì tương lai và cấu trúc mục đích cơ bản, chuẩn mực tiếng Anh Anh cho level 3.5.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "ai-assisted-level-draft",
+  "version": 1
+ },
+ {
+  "id": "band-3.5-exp-018",
+  "practiceLevel": "3.5",
+  "type": "sentence",
+  "topic": "đồ ăn",
+  "targetTerm": "more bitter than",
+  "meaningVi": "đắng hơn",
+  "promptVi": "Trà xanh đắng hơn trà đen nên anh tôi không thích uống nó.",
+  "referenceAnswers": [
+   "Green tea is more bitter than black tea, so my brother does not like drinking it."
+  ],
+  "grammarTags": [
+   "comparisons and result"
+  ],
+  "explanationVi": "Cấu trúc so sánh hơn với tính từ dài 'more bitter than' và nối vế kết quả bằng 'so'.",
+  "rationaleVi": "Cấu trúc so sánh tính từ đi kèm liên từ 'so' rất phổ biến và phù hợp cho khung năng lực 3.5.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "ai-assisted-level-draft",
+  "version": 1
+ },
+ {
+  "id": "band-3.5-exp-019",
+  "practiceLevel": "3.5",
+  "type": "sentence",
+  "topic": "công việc",
+  "targetTerm": "more modern than",
+  "meaningVi": "hiện đại hơn",
+  "promptVi": "Văn phòng mới hiện đại hơn văn phòng cũ vì công ty vừa đầu tư thêm nhiều thiết bị.",
+  "referenceAnswers": [
+   "The new office is more modern than the old office because the company has just invested in more equipment."
+  ],
+  "grammarTags": [
+   "comparisons and reason"
+  ],
+  "explanationVi": "Sử dụng 'more modern than' cho so sánh hơn và 'because' để giải thích lý do.",
+  "rationaleVi": "Nói về chủ đề nơi làm việc với các liên từ nguyên nhân và phép so sánh dễ hiểu ở Level 3.5.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "ai-assisted-level-draft",
+  "version": 1
+ },
+ {
+  "id": "band-3.5-exp-020",
+  "practiceLevel": "3.5",
+  "type": "sentence",
+  "topic": "môi trường",
+  "targetTerm": "cloth bags",
+  "meaningVi": "túi vải",
+  "promptVi": "Mọi người nên mang theo túi vải khi đi siêu thị để giảm lượng rác thải nhựa.",
+  "referenceAnswers": [
+   "People should take cloth bags when going to the supermarket to reduce plastic waste."
+  ],
+  "grammarTags": [
+   "purpose and advice"
+  ],
+  "explanationVi": "Dùng 'should + V' cho lời khuyên và 'to + V' để nêu mục đích bảo vệ môi trường.",
+  "rationaleVi": "Nêu mục đích hành động cụ thể thuộc chủ đề môi trường đời sống ở mức độ 3.5.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "ai-assisted-level-draft",
+  "version": 1
+ },
+ {
+  "id": "band-3.5-exp-021",
+  "practiceLevel": "3.5",
+  "type": "sentence",
+  "topic": "gia đình",
+  "targetTerm": "more expensive",
+  "meaningVi": "tốn kém hơn",
+  "promptVi": "Tôi sẽ nấu ăn ở nhà tối nay vì đi ăn ở nhà hàng tốn kém hơn.",
+  "referenceAnswers": [
+   "I am going to cook at home tonight because eating at a restaurant is more expensive."
+  ],
+  "grammarTags": [
+   "future plans and reason"
+  ],
+  "explanationVi": "Dùng 'be going to' diễn tả dự định cá nhân và 'because' đi kèm so sánh hơn 'more expensive'.",
+  "rationaleVi": "Cấu trúc 'be going to' chỉ kế hoạch gần gũi với cuộc sống gia đình là ngữ pháp đặc trưng cấp độ 3.5.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "ai-assisted-level-draft",
+  "version": 1
+ },
+ {
+  "id": "band-3.5-exp-022",
+  "practiceLevel": "3.5",
+  "type": "sentence",
+  "topic": "kinh tế",
+  "targetTerm": "fresher fruit than",
+  "meaningVi": "trái cây tươi hơn",
+  "promptVi": "Cửa hàng này bán trái cây tươi hơn siêu thị nên mẹ tôi chọn mua trái cây ở đây.",
+  "referenceAnswers": [
+   "This shop sells fresher fruit than the supermarket, so my mother chooses to buy fruit here."
+  ],
+  "grammarTags": [
+   "comparisons and result"
+  ],
+  "explanationVi": "Sử dụng dạng so sánh hơn của danh từ kèm tính từ 'fresher fruit than' và từ nối 'so'.",
+  "rationaleVi": "Chủ đề mua sắm/kinh tế gia đình với từ nối 'so' và so sánh đơn giản hoàn toàn hợp trình độ 3.5.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "ai-assisted-level-draft",
+  "version": 1
+ },
+ {
+  "id": "band-3.5-exp-023",
+  "practiceLevel": "3.5",
+  "type": "sentence",
+  "topic": "chính sách công",
+  "targetTerm": "in order to",
+  "meaningVi": "nhằm",
+  "promptVi": "Hội đồng thành phố sẽ xây một thư viện mới nhằm phục vụ cư dân địa phương.",
+  "referenceAnswers": [
+   "The city council will build a new library in order to serve local residents."
+  ],
+  "grammarTags": [
+   "future plans and purpose"
+  ],
+  "explanationVi": "Sử dụng cụm từ 'in order to + V' để chỉ mục đích của một kế hoạch công cộng.",
+  "rationaleVi": "Chủ đề chính sách công nhưng diễn đạt bằng ngữ pháp chỉ mục đích căn bản rất phù hợp cho level 3.5.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "ai-assisted-level-draft",
+  "version": 1
+ },
+ {
+  "id": "band-3.5-exp-024",
+  "practiceLevel": "3.5",
+  "type": "sentence",
+  "topic": "nghiên cứu",
+  "targetTerm": "meet on Monday",
+  "meaningVi": "gặp nhau vào thứ Hai",
+  "promptVi": "Nhóm nghiên cứu sẽ gặp nhau vào thứ Hai vì họ cần thảo luận về các kết quả mới.",
+  "referenceAnswers": [
+   "The research team will meet on Monday because they need to discuss the new results."
+  ],
+  "grammarTags": [
+   "plans and reasons"
+  ],
+  "explanationVi": "Dùng thì tương lai 'will meet' kết hợp với 'because' để trình bày lý do của cuộc hẹn.",
+  "rationaleVi": "Câu thể hiện kế hoạch và lý do thực hiện trong môi trường làm việc/nghiên cứu ở mức độ 3.5.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "ai-assisted-level-draft",
+  "version": 1
+ },
+ {
+  "id": "band-3.5-exp-025",
+  "practiceLevel": "3.5",
+  "type": "sentence",
+  "topic": "năng lượng",
+  "targetTerm": "more efficient",
+  "meaningVi": "hiệu quả hơn / tiết kiệm năng lượng hơn",
+  "promptVi": "Nhà trường sẽ lắp đặt các tấm pin mặt trời vì chúng hiệu quả hơn hệ thống cũ.",
+  "referenceAnswers": [
+   "The school is going to install solar panels because they are more efficient than the old system."
+  ],
+  "grammarTags": [
+   "Plan and Comparison with Because"
+  ],
+  "explanationVi": "Cấu trúc 'is going to' thể hiện kế hoạch và 'more efficient than' dùng để so sánh tính hiệu quả giữa hai hệ thống năng lượng.",
+  "rationaleVi": "Phù hợp trình độ 3.5 với câu đơn nối bằng 'because', nói về kế hoạch tương lai và so sánh đơn giản.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "ai-assisted-level-draft",
+  "version": 1
+ },
+ {
+  "id": "band-3.5-exp-026",
+  "practiceLevel": "3.5",
+  "type": "sentence",
+  "topic": "giáo dục",
+  "targetTerm": "so",
+  "meaningVi": "nên / cho nên",
+  "promptVi": "Nam muốn cải thiện kỹ năng nói tiếng Anh so với năm ngoái nên bạn ấy sẽ tham gia một câu lạc bộ ngôn ngữ.",
+  "referenceAnswers": [
+   "Nam wants to improve his English speaking skills compared to last year, so he will join a language club."
+  ],
+  "grammarTags": [
+   "Purpose and Result with So"
+  ],
+  "explanationVi": "Từ 'so' nối mệnh đề nguyên nhân/mục đích với hành động dự định thực hiện trong tương lai ('will join').",
+  "rationaleVi": "Phù hợp trình độ 3.5 nhờ việc sử dụng liên từ 'so' để nối hai ý gần nhau về mục đích và dự định.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "ai-assisted-level-draft",
+  "version": 1
+ },
+ {
+  "id": "band-3.5-exp-027",
+  "practiceLevel": "3.5",
+  "type": "sentence",
+  "topic": "công nghệ",
+  "targetTerm": "lighter than",
+  "meaningVi": "nhẹ hơn",
+  "promptVi": "Tôi dự định mua một chiếc máy tính bảng mới vì nó nhẹ hơn máy tính bảng của anh tôi.",
+  "referenceAnswers": [
+   "I plan to buy a new tablet because it is lighter than my brother's tablet."
+  ],
+  "grammarTags": [
+   "Intent and Comparison with Because"
+  ],
+  "explanationVi": "'lighter than' là dạng so sánh hơn của tính từ ngắn 'light', kết hợp với 'because' để giải thích cho dự định 'plan to buy'.",
+  "rationaleVi": "Sử dụng cấu trúc so sánh tính từ ngắn cơ bản và từ nối 'because' đúng trọng tâm IELTS 3.5.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "ai-assisted-level-draft",
+  "version": 1
+ },
+ {
+  "id": "band-3.5-exp-028",
+  "practiceLevel": "3.5",
+  "type": "sentence",
+  "topic": "du lịch",
+  "targetTerm": "cheaper than",
+  "meaningVi": "rẻ hơn",
+  "promptVi": "Du khách chọn đi du lịch bằng xe khách vì chi phí rẻ hơn đi tàu hỏa.",
+  "referenceAnswers": [
+   "Tourists choose to travel by coach because it is cheaper than taking the train."
+  ],
+  "grammarTags": [
+   "Choice and Comparison with Because"
+  ],
+  "explanationVi": "Dùng 'cheaper than' để so sánh chi phí hai phương tiện và 'because' để giải thích lý do cho sự lựa chọn.",
+  "rationaleVi": "Câu biểu đạt lý do và so sánh đơn giản trong chủ đề du lịch/đi lại, phù hợp với tiêu chí 3.5.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "ai-assisted-level-draft",
+  "version": 1
+ },
+ {
+  "id": "band-3.5-exp-029",
+  "practiceLevel": "3.5",
+  "type": "sentence",
+  "topic": "sức khỏe",
+  "targetTerm": "so",
+  "meaningVi": "nên",
+  "promptVi": "Thức ăn tự nấu lành mạnh hơn đồ ăn nhanh nên chị tôi sẽ mang cơm hộp đi làm.",
+  "referenceAnswers": [
+   "Home-cooked food is healthier than fast food, so my sister will bring a packed lunch to work."
+  ],
+  "grammarTags": [
+   "Comparison and Plan with So"
+  ],
+  "explanationVi": "'healthier than' thực hiện so sánh tính chất, còn 'so' nối sang hành động kế hoạch trong tương lai.",
+  "rationaleVi": "Kết hợp so sánh tính từ hai âm tiết tận cùng 'y' và liên từ 'so' nối hai mệnh đề nguyên nhân - kết quả cấp độ 3.5.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "ai-assisted-level-draft",
+  "version": 1
+ },
+ {
+  "id": "band-3.5-exp-030",
+  "practiceLevel": "3.5",
+  "type": "sentence",
+  "topic": "nhà ở",
+  "targetTerm": "warmer than",
+  "meaningVi": "ấm áp hơn",
+  "promptVi": "Gia đình tôi sẽ chuyển sang căn hộ này vì nó ấm hơn ngôi nhà hiện tại vào mùa đông.",
+  "referenceAnswers": [
+   "My family is going to move to this flat because it is warmer than our current house in winter."
+  ],
+  "grammarTags": [
+   "Plan and Comparison with Because"
+  ],
+  "explanationVi": "Cụm 'is going to move' chỉ dự định nhà ở, còn 'warmer than' so sánh đặc điểm thời tiết/nhiệt độ giữa hai nơi ở.",
+  "rationaleVi": "Cấu trúc thì tương lai gần kết hợp mệnh đề chỉ lý do 'because' và tính từ so sánh hơn thích hợp cho bậc 3.5.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "ai-assisted-level-draft",
+  "version": 1
+ },
+ {
+  "id": "band-3.5-exp-031",
+  "practiceLevel": "3.5",
+  "type": "sentence",
+  "topic": "thời gian",
+  "targetTerm": "earlier than",
+  "meaningVi": "sớm hơn",
+  "promptVi": "Quán cà phê này mở cửa sớm hơn các quán khác trong vùng nên tôi sẽ đến đây làm việc vào sáng mai.",
+  "referenceAnswers": [
+   "This café opens earlier than other shops in the area, so I will come here to work tomorrow morning."
+  ],
+  "grammarTags": [
+   "Comparison and Plan with So"
+  ],
+  "explanationVi": "Trạng từ so sánh 'earlier than' thể hiện sự khác biệt về thời gian, dẫn đến quyết định/kế hoạch thông qua liên từ 'so'.",
+  "rationaleVi": "Ý niệm so sánh mốc thời gian và đưa ra dự định bằng 'so' là dạng bài tập rèn luyện chuẩn cho mức 3.5.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "ai-assisted-level-draft",
+  "version": 1
+ },
+ {
+  "id": "band-3.5-exp-032",
+  "practiceLevel": "3.5",
+  "type": "sentence",
+  "topic": "văn hóa",
+  "targetTerm": "larger than",
+  "meaningVi": "rộng lớn hơn",
+  "promptVi": "Bảo tàng nghệ thuật mới rộng hơn bảo tàng cũ nên nó sẽ thu hút nhiều khách tham quan hơn.",
+  "referenceAnswers": [
+   "The new art museum is larger than the old museum, so it will attract more visitors."
+  ],
+  "grammarTags": [
+   "Comparison and Result with So"
+  ],
+  "explanationVi": "'larger than' dùng để so sánh quy mô không gian, nối với dự đoán/kế hoạch tương lai bằng 'so'.",
+  "rationaleVi": "Cấu trúc câu nguyên nhân - kết quả với liên từ 'so' và so sánh đơn giản hoàn toàn tương thích với trình độ 3.5.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "ai-assisted-level-draft",
+  "version": 1
+ },
+ {
+  "id": "band-3.5-exp-033",
+  "practiceLevel": "3.5",
+  "type": "sentence",
+  "topic": "công việc",
+  "targetTerm": "quieter than",
+  "meaningVi": "yên tĩnh hơn",
+  "promptVi": "Quản lý sẽ làm việc ở phòng họp riêng vì nơi đó yên tĩnh hơn văn phòng chính.",
+  "referenceAnswers": [
+   "The manager is going to work in a private meeting room because it is quieter than the main office."
+  ],
+  "grammarTags": [
+   "Plan and Comparison with Because"
+  ],
+  "explanationVi": "Mục đích/kế hoạch 'is going to work' được giải thích bằng mệnh đề so sánh môi trường làm việc 'quieter than'.",
+  "rationaleVi": "Ứng dụng đúng mục tiêu học tập 3.5: diễn đạt kế hoạch công việc và so sánh điều kiện môi trường bằng 'because'.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "ai-assisted-level-draft",
+  "version": 1
+ },
+ {
+  "id": "band-3.5-exp-034",
+  "practiceLevel": "3.5",
+  "type": "sentence",
+  "topic": "đồ ăn",
+  "targetTerm": "sweeter than",
+  "meaningVi": "ngọt hơn",
+  "promptVi": "Quả cam này ngọt hơn quả dưa hấu nên tôi sẽ dùng nó để làm nước ép.",
+  "referenceAnswers": [
+   "This orange is sweeter than the watermelon, so I am going to use it to make juice."
+  ],
+  "grammarTags": [
+   "Comparison and Plan with So"
+  ],
+  "explanationVi": "'sweeter than' dùng so sánh hương vị đồ ăn, nối tiếp bằng liên từ 'so' để nêu ý định sử dụng ('am going to use').",
+  "rationaleVi": "Đề tài đời sống gần gũi, câu nối hai ý bằng 'so' và so sánh tính từ ngắn đúng tầm mức 3.5.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "ai-assisted-level-draft",
+  "version": 1
+ },
+ {
+  "id": "band-3.5-exp-035",
+  "practiceLevel": "3.5",
+  "type": "sentence",
+  "topic": "đi lại",
+  "targetTerm": "cleaner than",
+  "meaningVi": "sạch hơn / ít ô nhiễm hơn",
+  "promptVi": "Hội đồng thành phố sẽ đầu tư vào xe buýt điện vì chúng sạch hơn xe chạy bằng nhiên liệu truyền thống.",
+  "referenceAnswers": [
+   "The city council will invest in electric buses because they are cleaner than traditional fuel vehicles."
+  ],
+  "grammarTags": [
+   "Plan and Comparison with Because"
+  ],
+  "explanationVi": "Động từ 'will invest' biểu thị quyết định/kế hoạch chính sách, đi kèm 'because' và hình thức so sánh 'cleaner than'.",
+  "rationaleVi": "Từ ngữ mảng giao thông đô thị phổ biến nhưng ngữ pháp được giữ ở mức độ 3.5 với so sánh đơn giản và liên từ 'because'.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "ai-assisted-level-draft",
+  "version": 1
+ },
+ {
+  "id": "band-3.5-exp-036",
+  "practiceLevel": "3.5",
+  "type": "sentence",
+  "topic": "thể thao",
+  "targetTerm": "safer than",
+  "meaningVi": "an toàn hơn",
+  "promptVi": "Môn bơi lội an toàn hơn các môn thể thao mạo hiểm nên bố mẹ sẽ đăng ký cho em trai tôi học lớp này.",
+  "referenceAnswers": [
+   "Swimming is safer than extreme sports, so my parents will enrol my younger brother in this class."
+  ],
+  "grammarTags": [
+   "Comparison and Plan with So"
+  ],
+  "explanationVi": "'safer than' so sánh mức độ an toàn của hai hoạt động thể thao, dẫn đến quyết định của phụ huynh thông qua 'so'.",
+  "rationaleVi": "Thể hiện rõ tiêu chí đầu ra mức 3.5: so sánh đặc điểm thể thao và nối sang kế hoạch bằng 'so'.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "ai-assisted-level-draft",
+  "version": 1
+ },
+ {
+  "id": "band-3.5-exp-037",
+  "practiceLevel": "3.5",
+  "type": "sentence",
+  "topic": "đồ ăn",
+  "targetTerm": "biscuits",
+  "meaningVi": "bánh quy",
+  "promptVi": "Em gái tôi sẽ học làm bánh quy vào cuối tuần này vì chúng ngon hơn bánh mua ở cửa hàng.",
+  "referenceAnswers": [
+   "My younger sister will learn to make biscuits this weekend because they are tastier than store-bought ones."
+  ],
+  "grammarTags": [
+   "plan with because & comparison"
+  ],
+  "explanationVi": "Dùng 'will learn' biểu thị kế hoạch, 'because' chỉ nguyên nhân và tính từ 'tastier than' để so sánh hơn.",
+  "rationaleVi": "Phù hợp với tiêu chuẩn Level 3.5 nhờ việc kết hợp kế hoạch tương lai đơn giản, liên từ 'because' và hình thức so sánh tính từ.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "ai-assisted-level-draft",
+  "version": 1
+ },
+ {
+  "id": "band-3.5-exp-038",
+  "practiceLevel": "3.5",
+  "type": "sentence",
+  "topic": "năng lượng",
+  "targetTerm": "wind turbines",
+  "meaningVi": "tuabin gió",
+  "promptVi": "Chính quyền địa phương sẽ dựng các tuabin gió mới vì chúng sạch hơn lò đốt than.",
+  "referenceAnswers": [
+   "The local council will build new wind turbines because they are cleaner than coal burners."
+  ],
+  "grammarTags": [
+   "intention with because & comparison"
+  ],
+  "explanationVi": "Động từ 'will build' diễn tả dự định của tổ chức, kết hợp 'because' và tính từ so sánh 'cleaner than'.",
+  "rationaleVi": "Câu sử dụng từ vựng chủ đề năng lượng cơ bản, kết nối ý bằng 'because' và có so sánh tính từ đơn giản ở Level 3.5.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "ai-assisted-level-draft",
+  "version": 1
+ },
+ {
+  "id": "band-3.5-exp-039",
+  "practiceLevel": "3.5",
+  "type": "sentence",
+  "topic": "nhà ở",
+  "targetTerm": "flat",
+  "meaningVi": "căn hộ",
+  "promptVi": "Anh trai tôi định thuê một căn hộ nhỏ hơn để tiết kiệm tiền sinh hoạt hàng tháng.",
+  "referenceAnswers": [
+   "My brother intends to rent a smaller flat to save money on monthly living expenses."
+  ],
+  "grammarTags": [
+   "purpose with to-infinitive & comparison"
+  ],
+  "explanationVi": "Cấu trúc 'intends to rent' chỉ dự định, 'smaller flat' thể hiện so sánh hơn và 'to save' thể hiện mục đích.",
+  "rationaleVi": "Đáp ứng đúng mục tiêu Level 3.5 về việc diễn đạt dự định/mục đích bằng động từ nguyên mẫu có 'to' và tính từ so sánh ngắn.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "ai-assisted-level-draft",
+  "version": 1
+ },
+ {
+  "id": "band-3.5-exp-040",
+  "practiceLevel": "3.5",
+  "type": "sentence",
+  "topic": "thời gian",
+  "targetTerm": "autumn",
+  "meaningVi": "mùa thu",
+  "promptVi": "Thời tiết vào mùa thu mát mẻ hơn mùa hè nên chúng tôi sẽ tổ chức một buổi dã ngoại ngoài trời.",
+  "referenceAnswers": [
+   "The weather in autumn is cooler than in summer, so we will organise an outdoor picnic."
+  ],
+  "grammarTags": [
+   "cause and effect with so & comparison"
+  ],
+  "explanationVi": "Tính từ 'cooler than' so sánh hai mùa, từ nối 'so' chỉ kết quả và 'will organise' biểu thị kế hoạch.",
+  "rationaleVi": "Phù hợp yêu cầu Level 3.5 khi sử dụng 'so' để nối hai mệnh đề nguyên nhân - kết quả cùng một so sánh tính từ đơn giản.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "ai-assisted-level-draft",
+  "version": 1
+ },
+ {
+  "id": "band-3.5-exp-041",
+  "practiceLevel": "3.5",
+  "type": "sentence",
+  "topic": "thể thao",
+  "targetTerm": "football pitch",
+  "meaningVi": "sân bóng đá",
+  "promptVi": "Sân bóng đá mới rộng hơn sân cũ nên nhóm chúng tôi sẽ luyện tập ở đó vào thứ Bảy.",
+  "referenceAnswers": [
+   "The new football pitch is larger than the old one, so our team will practise there on Saturday."
+  ],
+  "grammarTags": [
+   "cause and effect with so & comparison"
+  ],
+  "explanationVi": "Dùng 'larger than' để so sánh diện tích hai sân bóng, liên từ 'so' nối với mệnh đề chỉ kế hoạch 'will practise'.",
+  "rationaleVi": "Cấu trúc câu nối hai vế bằng 'so' kết hợp so sánh tính từ đơn giản phù hợp với mục tiêu đào tạo Level 3.5.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "ai-assisted-level-draft",
+  "version": 1
+ },
+ {
+  "id": "band-3.5-exp-042",
+  "practiceLevel": "3.5",
+  "type": "sentence",
+  "topic": "công nghệ",
+  "targetTerm": "mobile phone",
+  "meaningVi": "điện thoại di động",
+  "promptVi": "Tôi định mua một chiếc điện thoại di động mỏng hơn để dễ mang theo khi đi làm.",
+  "referenceAnswers": [
+   "I plan to buy a thinner mobile phone to carry easily when going to work."
+  ],
+  "grammarTags": [
+   "plan and purpose with to-infinitive & comparison"
+  ],
+  "explanationVi": "'plan to buy' thể hiện kế hoạch, tính từ 'thinner' dùng để so sánh và 'to carry' biểu thị mục đích.",
+  "rationaleVi": "Thuộc phạm vi Level 3.5 nhờ sự xuất hiện của cấu trúc chỉ mục đích, kế hoạch cá nhân và so sánh tính từ cơ bản.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "ai-assisted-level-draft",
+  "version": 1
+ },
+ {
+  "id": "band-3.5-exp-043",
+  "practiceLevel": "3.5",
+  "type": "sentence",
+  "topic": "môi trường",
+  "targetTerm": "dustbins",
+  "meaningVi": "thùng rác",
+  "promptVi": "Trường học sẽ đặt thêm thùng rác ở sân trường vì việc này giúp giữ không gian sạch hơn.",
+  "referenceAnswers": [
+   "The school will place more dustbins in the playground because this helps keep the space cleaner."
+  ],
+  "grammarTags": [
+   "plan with because & comparison"
+  ],
+  "explanationVi": "Mệnh đề đầu diễn tả dự định với 'will place', nối với lý do bằng 'because' và dùng tính từ so sánh 'cleaner'.",
+  "rationaleVi": "Mô hình câu thể hiện kế hoạch kèm lý do bằng 'because' kết hợp so sánh đơn giản đạt đúng chuẩn Level 3.5.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "ai-assisted-level-draft",
+  "version": 1
+ },
+ {
+  "id": "band-3.5-exp-044",
+  "practiceLevel": "3.5",
+  "type": "sentence",
+  "topic": "trường học",
+  "targetTerm": "timetable",
+  "meaningVi": "thời khóa biểu",
+  "promptVi": "Thời khóa biểu mới linh hoạt hơn kỳ trước nên sinh viên sẽ có nhiều thời gian tự học hơn.",
+  "referenceAnswers": [
+   "The new timetable is more flexible than last term's, so students will have more self-study time."
+  ],
+  "grammarTags": [
+   "cause and effect with so & comparison"
+  ],
+  "explanationVi": "'more flexible than' so sánh tính từ dài, liên từ 'so' nối sang mệnh đề chỉ kết quả ở tương lai.",
+  "rationaleVi": "Cấu trúc ngữ pháp đơn giản dùng 'so' nối hai vế và hình thức so sánh tính từ dài phù hợp năng lực Level 3.5.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "ai-assisted-level-draft",
+  "version": 1
+ },
+ {
+  "id": "band-3.5-exp-045",
+  "practiceLevel": "3.5",
+  "type": "sentence",
+  "topic": "sức khỏe",
+  "targetTerm": "chemist",
+  "meaningVi": "nhà thuốc",
+  "promptVi": "Cửa hàng nhà thuốc này gần hơn phòng khám nên tôi sẽ ghé qua đây để mua thuốc cảm.",
+  "referenceAnswers": [
+   "This chemist is nearer than the clinic, so I will stop by here to buy cold medicine."
+  ],
+  "grammarTags": [
+   "purpose & comparison with so"
+  ],
+  "explanationVi": "Tính từ 'nearer than' so sánh khoảng cách, 'so' nối đến kế hoạch 'will stop by' và cụm 'to buy' chỉ mục đích.",
+  "rationaleVi": "Nội dung giao tiếp thực tế ở Level 3.5, tích hợp so sánh ngắn, từ nối 'so' và động từ nguyên mẫu chỉ mục đích.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "ai-assisted-level-draft",
+  "version": 1
+ },
+ {
+  "id": "esl-v2-r07-u01-001",
+  "practiceLevel": "3.5",
+  "type": "sentence",
+  "topic": "Kế hoạch tương lai",
+  "promptVi": "Tôi vừa quyết định: tối nay tôi sẽ gọi cho bà.",
+  "referenceAnswers": [
+   "I've just decided: I'll call my grandmother tonight."
+  ],
+  "grammarTags": [
+   "future_plans_and_predictions",
+   "sentence",
+   "R07"
+  ],
+  "explanationVi": "Điểm cần nắm: Quyết định được đưa ra ngay lúc nói dùng will + động từ nguyên mẫu; tonight là tối nay. Kiểm tra chủ ngữ, dấu hiệu thời gian, từ nối và nghĩa đầy đủ. Bản dịch đúng có thể khác đáp án mẫu.",
+  "rationaleVi": "Nói kế hoạch, mục đích và so sánh đơn giản. Bài bổ sung từ bộ ESL v2 (R07-U01), chủ đề Kế hoạch tương lai.",
+  "commonErrors": [
+   {
+    "incorrect": "I've just decide: I'll call my grandmother tonight.",
+    "correction": "I've just decided: I'll call my grandmother tonight.",
+    "reasonVi": "Câu sai dùng “decide:” thay vì “decided:”. Quyết định được đưa ra ngay lúc nói dùng will + động từ nguyên mẫu; tonight là tối nay. Chỉ đánh giá lỗi trong ngữ cảnh câu Việt đang dịch."
+   },
+   {
+    "incorrect": "I've just decided: I'll calling my grandmother tonight.",
+    "correction": "I've just decided: I'll call my grandmother tonight.",
+    "reasonVi": "Câu sai dùng “calling” thay vì “call”. Quyết định được đưa ra ngay lúc nói dùng will + động từ nguyên mẫu; tonight là tối nay. Chỉ đánh giá lỗi trong ngữ cảnh câu Việt đang dịch."
+   }
+  ],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "esl-v2",
+  "version": 1
+ },
+ {
+  "id": "esl-v2-r07-u01-002",
+  "practiceLevel": "3.5",
+  "type": "sentence",
+  "topic": "Kế hoạch tương lai",
+  "promptVi": "Đợi một chút, tôi sẽ mang thêm một chiếc ghế.",
+  "referenceAnswers": [
+   "Wait a moment; I'll bring another chair."
+  ],
+  "grammarTags": [
+   "future_plans_and_predictions",
+   "sentence",
+   "R07"
+  ],
+  "explanationVi": "Điểm cần nắm: Lời đề nghị giúp ngay lúc nói dùng I'll bring, không dùng dạng V-ing sau will. Kiểm tra chủ ngữ, dấu hiệu thời gian, từ nối và nghĩa đầy đủ. Bản dịch đúng có thể khác đáp án mẫu.",
+  "rationaleVi": "Nói kế hoạch, mục đích và so sánh đơn giản. Bài bổ sung từ bộ ESL v2 (R07-U01), chủ đề Kế hoạch tương lai.",
+  "commonErrors": [
+   {
+    "incorrect": "Wait a moment; I'll bringing another chair.",
+    "correction": "Wait a moment; I'll bring another chair.",
+    "reasonVi": "Câu sai dùng “bringing” thay vì “bring”. Lời đề nghị giúp ngay lúc nói dùng I'll bring, không dùng dạng V-ing sau will. Chỉ đánh giá lỗi trong ngữ cảnh câu Việt đang dịch."
+   },
+   {
+    "incorrect": "Wait a moment; I will brings another chair.",
+    "correction": "Wait a moment; I'll bring another chair.",
+    "reasonVi": "Câu sai dùng “I will brings” thay vì “I'll bring”. Lời đề nghị giúp ngay lúc nói dùng I'll bring, không dùng dạng V-ing sau will. Chỉ đánh giá lỗi trong ngữ cảnh câu Việt đang dịch."
+   }
+  ],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "esl-v2",
+  "version": 1
+ },
+ {
+  "id": "esl-v2-r07-u01-003",
+  "practiceLevel": "3.5",
+  "type": "sentence",
+  "topic": "Kế hoạch tương lai",
+  "promptVi": "Tôi nghĩ ngày mai trời sẽ lạnh hơn hôm nay.",
+  "referenceAnswers": [
+   "I think it will be colder tomorrow than today."
+  ],
+  "grammarTags": [
+   "future_plans_and_predictions",
+   "sentence",
+   "R07"
+  ],
+  "explanationVi": "Điểm cần nắm: Dự đoán với I think dùng will + be; so sánh colder than. Kiểm tra chủ ngữ, dấu hiệu thời gian, từ nối và nghĩa đầy đủ. Bản dịch đúng có thể khác đáp án mẫu.",
+  "rationaleVi": "Nói kế hoạch, mục đích và so sánh đơn giản. Bài bổ sung từ bộ ESL v2 (R07-U01), chủ đề Kế hoạch tương lai.",
+  "commonErrors": [
+   {
+    "incorrect": "I think it will colder tomorrow than today.",
+    "correction": "I think it will be colder tomorrow than today.",
+    "reasonVi": "Câu sai dùng “[thiếu thành phần]” thay vì “be”. Dự đoán với I think dùng will + be; so sánh colder than. Chỉ đánh giá lỗi trong ngữ cảnh câu Việt đang dịch."
+   },
+   {
+    "incorrect": "I think it will be more colder tomorrow than today.",
+    "correction": "I think it will be colder tomorrow than today.",
+    "reasonVi": "Câu sai dùng “more” thay vì “[cần lược bỏ]”. Dự đoán với I think dùng will + be; so sánh colder than. Chỉ đánh giá lỗi trong ngữ cảnh câu Việt đang dịch."
+   }
+  ],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "esl-v2",
+  "version": 1
+ },
+ {
+  "id": "esl-v2-r07-u01-004",
+  "practiceLevel": "3.5",
+  "type": "sentence",
+  "topic": "Kế hoạch tương lai",
+  "promptVi": "Đừng lo, tôi sẽ gửi tài liệu trước tám giờ.",
+  "referenceAnswers": [
+   "Don't worry; I'll send the document before eight."
+  ],
+  "grammarTags": [
+   "future_plans_and_predictions",
+   "sentence",
+   "R07"
+  ],
+  "explanationVi": "Điểm cần nắm: Lời hứa dùng will send; before eight nghĩa là trước tám giờ, không phải đúng tám giờ. Kiểm tra chủ ngữ, dấu hiệu thời gian, từ nối và nghĩa đầy đủ. Bản dịch đúng có thể khác đáp án mẫu.",
+  "rationaleVi": "Nói kế hoạch, mục đích và so sánh đơn giản. Bài bổ sung từ bộ ESL v2 (R07-U01), chủ đề Kế hoạch tương lai.",
+  "commonErrors": [
+   {
+    "incorrect": "Don't worry; I'll sending the document before eight.",
+    "correction": "Don't worry; I'll send the document before eight.",
+    "reasonVi": "Câu sai dùng “sending” thay vì “send”. Lời hứa dùng will send; before eight nghĩa là trước tám giờ, không phải đúng tám giờ. Chỉ đánh giá lỗi trong ngữ cảnh câu Việt đang dịch."
+   },
+   {
+    "incorrect": "Don't worry; I'll send the document at eight.",
+    "correction": "Don't worry; I'll send the document before eight.",
+    "reasonVi": "Câu sai dùng “at” thay vì “before”. Lời hứa dùng will send; before eight nghĩa là trước tám giờ, không phải đúng tám giờ. Chỉ đánh giá lỗi trong ngữ cảnh câu Việt đang dịch."
+   }
+  ],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "esl-v2",
+  "version": 1
+ },
+ {
+  "id": "esl-v2-r07-u01-005",
+  "practiceLevel": "3.5",
+  "type": "sentence",
+  "topic": "Kế hoạch tương lai",
+  "promptVi": "Nhìn những đám mây đen kia kìa; sắp mưa rồi.",
+  "referenceAnswers": [
+   "Look at those dark clouds; it's going to rain."
+  ],
+  "grammarTags": [
+   "future_plans_and_predictions",
+   "sentence",
+   "R07"
+  ],
+  "explanationVi": "Điểm cần nắm: Dự đoán dựa trên bằng chứng hiện tại dùng be going to; cần động từ be trước going. Kiểm tra chủ ngữ, dấu hiệu thời gian, từ nối và nghĩa đầy đủ. Bản dịch đúng có thể khác đáp án mẫu.",
+  "rationaleVi": "Nói kế hoạch, mục đích và so sánh đơn giản. Bài bổ sung từ bộ ESL v2 (R07-U01), chủ đề Kế hoạch tương lai.",
+  "commonErrors": [
+   {
+    "incorrect": "Look at those dark clouds; it going to rain.",
+    "correction": "Look at those dark clouds; it's going to rain.",
+    "reasonVi": "Câu sai dùng “it” thay vì “it's”. Dự đoán dựa trên bằng chứng hiện tại dùng be going to; cần động từ be trước going. Chỉ đánh giá lỗi trong ngữ cảnh câu Việt đang dịch."
+   },
+   {
+    "incorrect": "Look at those dark clouds; it's going rain.",
+    "correction": "Look at those dark clouds; it's going to rain.",
+    "reasonVi": "Câu sai dùng “[thiếu thành phần]” thay vì “to”. Dự đoán dựa trên bằng chứng hiện tại dùng be going to; cần động từ be trước going. Chỉ đánh giá lỗi trong ngữ cảnh câu Việt đang dịch."
+   }
+  ],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "esl-v2",
+  "version": 1
+ },
+ {
+  "id": "esl-v2-r07-u01-006",
+  "practiceLevel": "3.5",
+  "type": "sentence",
+  "topic": "Kế hoạch tương lai",
+  "promptVi": "Tôi đã mua sơn; cuối tuần này tôi định sơn lại phòng ngủ.",
+  "referenceAnswers": [
+   "I've bought some paint; I'm going to repaint my bedroom this weekend."
+  ],
+  "grammarTags": [
+   "future_plans_and_predictions",
+   "sentence",
+   "R07"
+  ],
+  "explanationVi": "Điểm cần nắm: Đã chuẩn bị sơn cho ý định trước đó nên dùng be going to + động từ nguyên mẫu. Kiểm tra chủ ngữ, dấu hiệu thời gian, từ nối và nghĩa đầy đủ. Bản dịch đúng có thể khác đáp án mẫu.",
+  "rationaleVi": "Nói kế hoạch, mục đích và so sánh đơn giản. Bài bổ sung từ bộ ESL v2 (R07-U01), chủ đề Kế hoạch tương lai.",
+  "commonErrors": [
+   {
+    "incorrect": "I've bought some paint; I'm going repaint my bedroom this weekend.",
+    "correction": "I've bought some paint; I'm going to repaint my bedroom this weekend.",
+    "reasonVi": "Câu sai dùng “[thiếu thành phần]” thay vì “to”. Đã chuẩn bị sơn cho ý định trước đó nên dùng be going to + động từ nguyên mẫu. Chỉ đánh giá lỗi trong ngữ cảnh câu Việt đang dịch."
+   },
+   {
+    "incorrect": "I've bought some paint; I'm going to repaint my bedroom last weekend.",
+    "correction": "I've bought some paint; I'm going to repaint my bedroom this weekend.",
+    "reasonVi": "Câu sai dùng “last” thay vì “this”. Đã chuẩn bị sơn cho ý định trước đó nên dùng be going to + động từ nguyên mẫu. Chỉ đánh giá lỗi trong ngữ cảnh câu Việt đang dịch."
+   }
+  ],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "esl-v2",
+  "version": 1
+ },
+ {
+  "id": "esl-v2-r07-u01-007",
+  "practiceLevel": "3.5",
+  "type": "sentence",
+  "topic": "Kế hoạch tương lai",
+  "promptVi": "Họ đã tiết kiệm đủ tiền; mùa hè tới họ định mua xe đạp mới.",
+  "referenceAnswers": [
+   "They've saved enough money; they're going to buy new bicycles next summer."
+  ],
+  "grammarTags": [
+   "future_plans_and_predictions",
+   "sentence",
+   "R07"
+  ],
+  "explanationVi": "Điểm cần nắm: Ý định có chuẩn bị dùng they're going to buy; next summer là mùa hè tới. Kiểm tra chủ ngữ, dấu hiệu thời gian, từ nối và nghĩa đầy đủ. Bản dịch đúng có thể khác đáp án mẫu.",
+  "rationaleVi": "Nói kế hoạch, mục đích và so sánh đơn giản. Bài bổ sung từ bộ ESL v2 (R07-U01), chủ đề Kế hoạch tương lai.",
+  "commonErrors": [
+   {
+    "incorrect": "They've saved enough money; they're going buy new bicycles next summer.",
+    "correction": "They've saved enough money; they're going to buy new bicycles next summer.",
+    "reasonVi": "Câu sai dùng “[thiếu thành phần]” thay vì “to”. Ý định có chuẩn bị dùng they're going to buy; next summer là mùa hè tới. Chỉ đánh giá lỗi trong ngữ cảnh câu Việt đang dịch."
+   },
+   {
+    "incorrect": "They've saved enough money; they going to buy new bicycles next summer.",
+    "correction": "They've saved enough money; they're going to buy new bicycles next summer.",
+    "reasonVi": "Câu sai dùng “they” thay vì “they're”. Ý định có chuẩn bị dùng they're going to buy; next summer là mùa hè tới. Chỉ đánh giá lỗi trong ngữ cảnh câu Việt đang dịch."
+   }
+  ],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "esl-v2",
+  "version": 1
+ },
+ {
+  "id": "esl-v2-r07-u01-008",
+  "practiceLevel": "3.5",
+  "type": "sentence",
+  "topic": "Kế hoạch tương lai",
+  "promptVi": "Chúng tôi dự định trồng rau sau khi chuyển đến nhà mới.",
+  "referenceAnswers": [
+   "We're going to grow vegetables after we move into our new home."
+  ],
+  "grammarTags": [
+   "future_plans_and_predictions",
+   "sentence",
+   "R07"
+  ],
+  "explanationVi": "Điểm cần nắm: Dự định dùng be going to; sau after chỉ thời gian tương lai, mệnh đề thời gian dùng hiện tại đơn. Kiểm tra chủ ngữ, dấu hiệu thời gian, từ nối và nghĩa đầy đủ. Bản dịch đúng có thể khác đáp án mẫu.",
+  "rationaleVi": "Nói kế hoạch, mục đích và so sánh đơn giản. Bài bổ sung từ bộ ESL v2 (R07-U01), chủ đề Kế hoạch tương lai.",
+  "commonErrors": [
+   {
+    "incorrect": "We're going grow vegetables after we move into our new home.",
+    "correction": "We're going to grow vegetables after we move into our new home.",
+    "reasonVi": "Câu sai dùng “[thiếu thành phần]” thay vì “to”. Dự định dùng be going to; sau after chỉ thời gian tương lai, mệnh đề thời gian dùng hiện tại đơn. Chỉ đánh giá lỗi trong ngữ cảnh câu Việt đang dịch."
+   },
+   {
+    "incorrect": "We're going to grow vegetables after we will move into our new home.",
+    "correction": "We're going to grow vegetables after we move into our new home.",
+    "reasonVi": "Câu sai dùng “will” thay vì “[cần lược bỏ]”. Dự định dùng be going to; sau after chỉ thời gian tương lai, mệnh đề thời gian dùng hiện tại đơn. Chỉ đánh giá lỗi trong ngữ cảnh câu Việt đang dịch."
+   }
+  ],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "esl-v2",
+  "version": 1
+ },
+ {
+  "id": "esl-v2-r07-u01-009",
+  "practiceLevel": "3.5",
+  "type": "sentence",
+  "topic": "Kế hoạch tương lai",
+  "promptVi": "Tôi đã đặt bàn; tối mai lúc bảy giờ chúng tôi ăn tối ở nhà hàng.",
+  "referenceAnswers": [
+   "I've booked a table; we're having dinner at the restaurant at seven tomorrow evening."
+  ],
+  "grammarTags": [
+   "future_plans_and_predictions",
+   "sentence",
+   "R07"
+  ],
+  "explanationVi": "Điểm cần nắm: Hiện tại tiếp diễn dùng cho lịch đã sắp xếp; at seven chỉ giờ cụ thể. Kiểm tra chủ ngữ, dấu hiệu thời gian, từ nối và nghĩa đầy đủ. Bản dịch đúng có thể khác đáp án mẫu.",
+  "rationaleVi": "Nói kế hoạch, mục đích và so sánh đơn giản. Bài bổ sung từ bộ ESL v2 (R07-U01), chủ đề Kế hoạch tương lai.",
+  "commonErrors": [
+   {
+    "incorrect": "I've booked a table; we're have dinner at the restaurant at seven tomorrow evening.",
+    "correction": "I've booked a table; we're having dinner at the restaurant at seven tomorrow evening.",
+    "reasonVi": "Câu sai dùng “have” thay vì “having”. Hiện tại tiếp diễn dùng cho lịch đã sắp xếp; at seven chỉ giờ cụ thể. Chỉ đánh giá lỗi trong ngữ cảnh câu Việt đang dịch."
+   },
+   {
+    "incorrect": "I've booked a table; we're having dinner at the restaurant at seven yesterday evening.",
+    "correction": "I've booked a table; we're having dinner at the restaurant at seven tomorrow evening.",
+    "reasonVi": "Câu sai dùng “yesterday” thay vì “tomorrow”. Hiện tại tiếp diễn dùng cho lịch đã sắp xếp; at seven chỉ giờ cụ thể. Chỉ đánh giá lỗi trong ngữ cảnh câu Việt đang dịch."
+   }
+  ],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "esl-v2",
+  "version": 1
+ },
+ {
+  "id": "esl-v2-r07-u01-010",
+  "practiceLevel": "3.5",
+  "type": "sentence",
+  "topic": "Kế hoạch tương lai",
+  "promptVi": "Cô ấy có lịch hẹn bác sĩ vào sáng thứ Hai tới.",
+  "referenceAnswers": [
+   "She's seeing the doctor next Monday morning."
+  ],
+  "grammarTags": [
+   "future_plans_and_predictions",
+   "sentence",
+   "R07"
+  ],
+  "explanationVi": "Điểm cần nắm: Lịch hẹn chắc chắn có thể dùng hiện tại tiếp diễn: is seeing; next Monday không dùng on. Kiểm tra chủ ngữ, dấu hiệu thời gian, từ nối và nghĩa đầy đủ. Bản dịch đúng có thể khác đáp án mẫu.",
+  "rationaleVi": "Nói kế hoạch, mục đích và so sánh đơn giản. Bài bổ sung từ bộ ESL v2 (R07-U01), chủ đề Kế hoạch tương lai.",
+  "commonErrors": [
+   {
+    "incorrect": "She's see the doctor next Monday morning.",
+    "correction": "She's seeing the doctor next Monday morning.",
+    "reasonVi": "Câu sai dùng “see” thay vì “seeing”. Lịch hẹn chắc chắn có thể dùng hiện tại tiếp diễn: is seeing; next Monday không dùng on. Chỉ đánh giá lỗi trong ngữ cảnh câu Việt đang dịch."
+   },
+   {
+    "incorrect": "She's seeing the doctor last Monday morning.",
+    "correction": "She's seeing the doctor next Monday morning.",
+    "reasonVi": "Câu sai dùng “last” thay vì “next”. Lịch hẹn chắc chắn có thể dùng hiện tại tiếp diễn: is seeing; next Monday không dùng on. Chỉ đánh giá lỗi trong ngữ cảnh câu Việt đang dịch."
+   }
+  ],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "esl-v2",
+  "version": 1
+ },
+ {
+  "id": "esl-v2-r07-u01-011",
+  "practiceLevel": "3.5",
+  "type": "sentence",
+  "topic": "Kế hoạch tương lai",
+  "promptVi": "Họ đã đặt vé; thứ Sáu này họ sẽ bay đến Đà Nẵng.",
+  "referenceAnswers": [
+   "They've booked their tickets; they're flying to Da Nang this Friday."
+  ],
+  "grammarTags": [
+   "future_plans_and_predictions",
+   "sentence",
+   "R07"
+  ],
+  "explanationVi": "Điểm cần nắm: Vé đã đặt tạo bằng chứng về lịch trình, dùng are flying; this Friday là thứ Sáu này. Kiểm tra chủ ngữ, dấu hiệu thời gian, từ nối và nghĩa đầy đủ. Bản dịch đúng có thể khác đáp án mẫu.",
+  "rationaleVi": "Nói kế hoạch, mục đích và so sánh đơn giản. Bài bổ sung từ bộ ESL v2 (R07-U01), chủ đề Kế hoạch tương lai.",
+  "commonErrors": [
+   {
+    "incorrect": "They've booked their tickets; they're fly to Da Nang this Friday.",
+    "correction": "They've booked their tickets; they're flying to Da Nang this Friday.",
+    "reasonVi": "Câu sai dùng “fly” thay vì “flying”. Vé đã đặt tạo bằng chứng về lịch trình, dùng are flying; this Friday là thứ Sáu này. Chỉ đánh giá lỗi trong ngữ cảnh câu Việt đang dịch."
+   },
+   {
+    "incorrect": "They've booked their tickets; they flying to Da Nang this Friday.",
+    "correction": "They've booked their tickets; they're flying to Da Nang this Friday.",
+    "reasonVi": "Câu sai dùng “they” thay vì “they're”. Vé đã đặt tạo bằng chứng về lịch trình, dùng are flying; this Friday là thứ Sáu này. Chỉ đánh giá lỗi trong ngữ cảnh câu Việt đang dịch."
+   }
+  ],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "esl-v2",
+  "version": 1
+ },
+ {
+  "id": "esl-v2-r07-u01-012",
+  "practiceLevel": "3.5",
+  "type": "sentence",
+  "topic": "Kế hoạch tương lai",
+  "promptVi": "Tôi đã hẹn với Nam; chiều mai chúng tôi sẽ học cùng nhau.",
+  "referenceAnswers": [
+   "I've arranged to meet Nam; we're studying together tomorrow afternoon."
+  ],
+  "grammarTags": [
+   "future_plans_and_predictions",
+   "sentence",
+   "R07"
+  ],
+  "explanationVi": "Điểm cần nắm: Kế hoạch hẹn cụ thể dùng hiện tại tiếp diễn we're studying. Kiểm tra chủ ngữ, dấu hiệu thời gian, từ nối và nghĩa đầy đủ. Bản dịch đúng có thể khác đáp án mẫu.",
+  "rationaleVi": "Nói kế hoạch, mục đích và so sánh đơn giản. Bài bổ sung từ bộ ESL v2 (R07-U01), chủ đề Kế hoạch tương lai.",
+  "commonErrors": [
+   {
+    "incorrect": "I've arranged to meet Nam; we're study together tomorrow afternoon.",
+    "correction": "I've arranged to meet Nam; we're studying together tomorrow afternoon.",
+    "reasonVi": "Câu sai dùng “study” thay vì “studying”. Kế hoạch hẹn cụ thể dùng hiện tại tiếp diễn we're studying. Chỉ đánh giá lỗi trong ngữ cảnh câu Việt đang dịch."
+   },
+   {
+    "incorrect": "I've arranged to meet Nam; we're studying together yesterday afternoon.",
+    "correction": "I've arranged to meet Nam; we're studying together tomorrow afternoon.",
+    "reasonVi": "Câu sai dùng “yesterday” thay vì “tomorrow”. Kế hoạch hẹn cụ thể dùng hiện tại tiếp diễn we're studying. Chỉ đánh giá lỗi trong ngữ cảnh câu Việt đang dịch."
+   }
+  ],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "esl-v2",
+  "version": 1
+ },
+ {
+  "id": "esl-v2-r07-u01-013",
+  "practiceLevel": "3.5",
+  "type": "sentence",
+  "topic": "Kế hoạch tương lai",
+  "promptVi": "Tôi tin đội chúng ta sẽ thắng trận sau.",
+  "referenceAnswers": [
+   "I believe our team will win the next match."
+  ],
+  "grammarTags": [
+   "future_plans_and_predictions",
+   "sentence",
+   "R07"
+  ],
+  "explanationVi": "Điểm cần nắm: Dự đoán dựa trên niềm tin dùng will win; sau will không thêm -s. Kiểm tra chủ ngữ, dấu hiệu thời gian, từ nối và nghĩa đầy đủ. Bản dịch đúng có thể khác đáp án mẫu.",
+  "rationaleVi": "Nói kế hoạch, mục đích và so sánh đơn giản. Bài bổ sung từ bộ ESL v2 (R07-U01), chủ đề Kế hoạch tương lai.",
+  "commonErrors": [
+   {
+    "incorrect": "I believe our team will wins the next match.",
+    "correction": "I believe our team will win the next match.",
+    "reasonVi": "Câu sai dùng “wins” thay vì “win”. Dự đoán dựa trên niềm tin dùng will win; sau will không thêm -s. Chỉ đánh giá lỗi trong ngữ cảnh câu Việt đang dịch."
+   },
+   {
+    "incorrect": "I believe our team will winning the next match.",
+    "correction": "I believe our team will win the next match.",
+    "reasonVi": "Câu sai dùng “winning” thay vì “win”. Dự đoán dựa trên niềm tin dùng will win; sau will không thêm -s. Chỉ đánh giá lỗi trong ngữ cảnh câu Việt đang dịch."
+   }
+  ],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "esl-v2",
+  "version": 1
+ },
+ {
+  "id": "esl-v2-r07-u01-014",
+  "practiceLevel": "3.5",
+  "type": "sentence",
+  "topic": "Kế hoạch tương lai",
+  "promptVi": "Nhìn đường ngập nước thế này, chúng ta có lẽ sẽ đến muộn.",
+  "referenceAnswers": [
+   "With the road flooded like this, we're probably going to arrive late."
+  ],
+  "grammarTags": [
+   "future_plans_and_predictions",
+   "sentence",
+   "R07"
+  ],
+  "explanationVi": "Điểm cần nắm: Bằng chứng đường ngập khiến dự đoán dùng be going to; arrive late là đến muộn. Kiểm tra chủ ngữ, dấu hiệu thời gian, từ nối và nghĩa đầy đủ. Bản dịch đúng có thể khác đáp án mẫu.",
+  "rationaleVi": "Nói kế hoạch, mục đích và so sánh đơn giản. Bài bổ sung từ bộ ESL v2 (R07-U01), chủ đề Kế hoạch tương lai.",
+  "commonErrors": [
+   {
+    "incorrect": "With the road flooded like this, we probably going to arrive late.",
+    "correction": "With the road flooded like this, we're probably going to arrive late.",
+    "reasonVi": "Câu sai dùng “we” thay vì “we're”. Bằng chứng đường ngập khiến dự đoán dùng be going to; arrive late là đến muộn. Chỉ đánh giá lỗi trong ngữ cảnh câu Việt đang dịch."
+   },
+   {
+    "incorrect": "With the road flooded like this, we're probably going arrive late.",
+    "correction": "With the road flooded like this, we're probably going to arrive late.",
+    "reasonVi": "Câu sai dùng “[thiếu thành phần]” thay vì “to”. Bằng chứng đường ngập khiến dự đoán dùng be going to; arrive late là đến muộn. Chỉ đánh giá lỗi trong ngữ cảnh câu Việt đang dịch."
+   }
+  ],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "esl-v2",
+  "version": 1
+ },
+ {
+  "id": "esl-v2-r07-u01-015",
+  "practiceLevel": "3.5",
+  "type": "sentence",
+  "topic": "Kế hoạch tương lai",
+  "promptVi": "Tôi hứa tôi sẽ trả cuốn sách vào thứ Tư.",
+  "referenceAnswers": [
+   "I promise I'll return the book on Wednesday."
+  ],
+  "grammarTags": [
+   "future_plans_and_predictions",
+   "sentence",
+   "R07"
+  ],
+  "explanationVi": "Điểm cần nắm: Lời hứa dùng will return; on đứng trước thứ trong tuần. Kiểm tra chủ ngữ, dấu hiệu thời gian, từ nối và nghĩa đầy đủ. Bản dịch đúng có thể khác đáp án mẫu.",
+  "rationaleVi": "Nói kế hoạch, mục đích và so sánh đơn giản. Bài bổ sung từ bộ ESL v2 (R07-U01), chủ đề Kế hoạch tương lai.",
+  "commonErrors": [
+   {
+    "incorrect": "I promise I'll returned the book on Wednesday.",
+    "correction": "I promise I'll return the book on Wednesday.",
+    "reasonVi": "Câu sai dùng “returned” thay vì “return”. Lời hứa dùng will return; on đứng trước thứ trong tuần. Chỉ đánh giá lỗi trong ngữ cảnh câu Việt đang dịch."
+   },
+   {
+    "incorrect": "I promise I'll return the book at Wednesday.",
+    "correction": "I promise I'll return the book on Wednesday.",
+    "reasonVi": "Câu sai dùng “at” thay vì “on”. Lời hứa dùng will return; on đứng trước thứ trong tuần. Chỉ đánh giá lỗi trong ngữ cảnh câu Việt đang dịch."
+   }
+  ],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "esl-v2",
+  "version": 1
+ },
+ {
+  "id": "esl-v2-r07-u01-016",
+  "practiceLevel": "3.5",
+  "type": "sentence",
+  "topic": "Kế hoạch tương lai",
+  "promptVi": "Tuần sau lớp tôi sẽ tham quan bảo tàng; giáo viên đã đặt vé rồi.",
+  "referenceAnswers": [
+   "Our class is visiting the museum next week; the teacher has already booked the tickets."
+  ],
+  "grammarTags": [
+   "future_plans_and_predictions",
+   "sentence",
+   "R07"
+  ],
+  "explanationVi": "Điểm cần nắm: Sự kiện đã đặt vé dùng is visiting; next week không cần giới từ. Kiểm tra chủ ngữ, dấu hiệu thời gian, từ nối và nghĩa đầy đủ. Bản dịch đúng có thể khác đáp án mẫu.",
+  "rationaleVi": "Nói kế hoạch, mục đích và so sánh đơn giản. Bài bổ sung từ bộ ESL v2 (R07-U01), chủ đề Kế hoạch tương lai.",
+  "commonErrors": [
+   {
+    "incorrect": "Our class is visit the museum next week; the teacher has already booked the tickets.",
+    "correction": "Our class is visiting the museum next week; the teacher has already booked the tickets.",
+    "reasonVi": "Câu sai dùng “visit” thay vì “visiting”. Sự kiện đã đặt vé dùng is visiting; next week không cần giới từ. Chỉ đánh giá lỗi trong ngữ cảnh câu Việt đang dịch."
+   },
+   {
+    "incorrect": "Our class is visiting the museum at next week; the teacher has already booked the tickets.",
+    "correction": "Our class is visiting the museum next week; the teacher has already booked the tickets.",
+    "reasonVi": "Câu sai dùng “at” thay vì “[cần lược bỏ]”. Sự kiện đã đặt vé dùng is visiting; next week không cần giới từ. Chỉ đánh giá lỗi trong ngữ cảnh câu Việt đang dịch."
+   }
+  ],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "esl-v2",
+  "version": 1
+ },
+ {
+  "id": "esl-v2-r07-u01-017",
+  "practiceLevel": "3.5",
+  "type": "sentence",
+  "topic": "Kế hoạch tương lai",
+  "promptVi": "Tối nay tôi chưa có kế hoạch, nên tôi nghĩ mình sẽ ở nhà.",
+  "referenceAnswers": [
+   "I don't have plans tonight, so I think I'll stay home."
+  ],
+  "grammarTags": [
+   "future_plans_and_predictions",
+   "sentence",
+   "R07"
+  ],
+  "explanationVi": "Điểm cần nắm: Quyết định chưa định sẵn diễn đạt tự nhiên bằng I think I'll stay home. Kiểm tra chủ ngữ, dấu hiệu thời gian, từ nối và nghĩa đầy đủ. Bản dịch đúng có thể khác đáp án mẫu.",
+  "rationaleVi": "Nói kế hoạch, mục đích và so sánh đơn giản. Bài bổ sung từ bộ ESL v2 (R07-U01), chủ đề Kế hoạch tương lai.",
+  "commonErrors": [
+   {
+    "incorrect": "I don't have plans tonight, so I think I'll staying home.",
+    "correction": "I don't have plans tonight, so I think I'll stay home.",
+    "reasonVi": "Câu sai dùng “staying” thay vì “stay”. Quyết định chưa định sẵn diễn đạt tự nhiên bằng I think I'll stay home. Chỉ đánh giá lỗi trong ngữ cảnh câu Việt đang dịch."
+   },
+   {
+    "incorrect": "I don't have plans tonight, so I think I will stays home.",
+    "correction": "I don't have plans tonight, so I think I'll stay home.",
+    "reasonVi": "Câu sai dùng “I will stays” thay vì “I'll stay”. Quyết định chưa định sẵn diễn đạt tự nhiên bằng I think I'll stay home. Chỉ đánh giá lỗi trong ngữ cảnh câu Việt đang dịch."
+   }
+  ],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "esl-v2",
+  "version": 1
+ },
+ {
+  "id": "esl-v2-r07-u02-001",
+  "practiceLevel": "3.5",
+  "type": "sentence",
+  "topic": "So sánh",
+  "promptVi": "Con đường này ngắn hơn con đường đi qua chợ.",
+  "referenceAnswers": [
+   "This route is shorter than the one through the market."
+  ],
+  "grammarTags": [
+   "comparatives_and_superlatives",
+   "sentence",
+   "R07"
+  ],
+  "explanationVi": "Điểm cần nắm: Short là tính từ ngắn nên thêm -er và đi với than. Kiểm tra chủ ngữ, dấu hiệu thời gian, từ nối và nghĩa đầy đủ. Bản dịch đúng có thể khác đáp án mẫu.",
+  "rationaleVi": "Nói kế hoạch, mục đích và so sánh đơn giản. Bài bổ sung từ bộ ESL v2 (R07-U02), chủ đề So sánh.",
+  "commonErrors": [
+   {
+    "incorrect": "This route is more shorter than the one through the market.",
+    "correction": "This route is shorter than the one through the market.",
+    "reasonVi": "Câu sai dùng “more” thay vì “[cần lược bỏ]”. Short là tính từ ngắn nên thêm -er và đi với than. Chỉ đánh giá lỗi trong ngữ cảnh câu Việt đang dịch."
+   },
+   {
+    "incorrect": "This route is shorter that the one through the market.",
+    "correction": "This route is shorter than the one through the market.",
+    "reasonVi": "Câu sai dùng “that” thay vì “than”. Short là tính từ ngắn nên thêm -er và đi với than. Chỉ đánh giá lỗi trong ngữ cảnh câu Việt đang dịch."
+   }
+  ],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "esl-v2",
+  "version": 1
+ },
+ {
+  "id": "esl-v2-r07-u02-002",
+  "practiceLevel": "3.5",
+  "type": "sentence",
+  "topic": "So sánh",
+  "promptVi": "Quyển sách này thú vị hơn quyển tôi đọc tuần trước.",
+  "referenceAnswers": [
+   "This book is more interesting than the one I read last week."
+  ],
+  "grammarTags": [
+   "comparatives_and_superlatives",
+   "sentence",
+   "R07"
+  ],
+  "explanationVi": "Điểm cần nắm: Interesting là tính từ dài nên dùng more interesting than. Kiểm tra chủ ngữ, dấu hiệu thời gian, từ nối và nghĩa đầy đủ. Bản dịch đúng có thể khác đáp án mẫu.",
+  "rationaleVi": "Nói kế hoạch, mục đích và so sánh đơn giản. Bài bổ sung từ bộ ESL v2 (R07-U02), chủ đề So sánh.",
+  "commonErrors": [
+   {
+    "incorrect": "This book is interestinger than the one I read last week.",
+    "correction": "This book is more interesting than the one I read last week.",
+    "reasonVi": "Câu sai dùng “interestinger” thay vì “more interesting”. Interesting là tính từ dài nên dùng more interesting than. Chỉ đánh giá lỗi trong ngữ cảnh câu Việt đang dịch."
+   },
+   {
+    "incorrect": "This book is most interesting than the one I read last week.",
+    "correction": "This book is more interesting than the one I read last week.",
+    "reasonVi": "Câu sai dùng “most” thay vì “more”. Interesting là tính từ dài nên dùng more interesting than. Chỉ đánh giá lỗi trong ngữ cảnh câu Việt đang dịch."
+   }
+  ],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "esl-v2",
+  "version": 1
+ },
+ {
+  "id": "esl-v2-r07-u02-003",
+  "practiceLevel": "3.5",
+  "type": "sentence",
+  "topic": "So sánh",
+  "promptVi": "Bài kiểm tra hôm nay dễ hơn bài hôm qua.",
+  "referenceAnswers": [
+   "Today's test is easier than yesterday's."
+  ],
+  "grammarTags": [
+   "comparatives_and_superlatives",
+   "sentence",
+   "R07"
+  ],
+  "explanationVi": "Điểm cần nắm: Easy đổi y thành i rồi thêm -er: easier than. Kiểm tra chủ ngữ, dấu hiệu thời gian, từ nối và nghĩa đầy đủ. Bản dịch đúng có thể khác đáp án mẫu.",
+  "rationaleVi": "Nói kế hoạch, mục đích và so sánh đơn giản. Bài bổ sung từ bộ ESL v2 (R07-U02), chủ đề So sánh.",
+  "commonErrors": [
+   {
+    "incorrect": "Today's test is more easier than yesterday's.",
+    "correction": "Today's test is easier than yesterday's.",
+    "reasonVi": "Câu sai dùng “more” thay vì “[cần lược bỏ]”. Easy đổi y thành i rồi thêm -er: easier than. Chỉ đánh giá lỗi trong ngữ cảnh câu Việt đang dịch."
+   },
+   {
+    "incorrect": "Today's test is easy than yesterday's.",
+    "correction": "Today's test is easier than yesterday's.",
+    "reasonVi": "Câu sai dùng “easy” thay vì “easier”. Easy đổi y thành i rồi thêm -er: easier than. Chỉ đánh giá lỗi trong ngữ cảnh câu Việt đang dịch."
+   }
+  ],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "esl-v2",
+  "version": 1
+ },
+ {
+  "id": "esl-v2-r07-u02-004",
+  "practiceLevel": "3.5",
+  "type": "sentence",
+  "topic": "So sánh",
+  "promptVi": "Trường tôi xa nhà hơn thư viện.",
+  "referenceAnswers": [
+   "My school is farther from home than the library."
+  ],
+  "grammarTags": [
+   "comparatives_and_superlatives",
+   "sentence",
+   "R07"
+  ],
+  "explanationVi": "Điểm cần nắm: Far có dạng so sánh farther; mẫu farther from...than... chỉ khoảng cách. Kiểm tra chủ ngữ, dấu hiệu thời gian, từ nối và nghĩa đầy đủ. Bản dịch đúng có thể khác đáp án mẫu.",
+  "rationaleVi": "Nói kế hoạch, mục đích và so sánh đơn giản. Bài bổ sung từ bộ ESL v2 (R07-U02), chủ đề So sánh.",
+  "commonErrors": [
+   {
+    "incorrect": "My school is farer from home than the library.",
+    "correction": "My school is farther from home than the library.",
+    "reasonVi": "Câu sai dùng “farer” thay vì “farther”. Far có dạng so sánh farther; mẫu farther from...than... chỉ khoảng cách. Chỉ đánh giá lỗi trong ngữ cảnh câu Việt đang dịch."
+   },
+   {
+    "incorrect": "My school is farther from home as the library.",
+    "correction": "My school is farther from home than the library.",
+    "reasonVi": "Câu sai dùng “as” thay vì “than”. Far có dạng so sánh farther; mẫu farther from...than... chỉ khoảng cách. Chỉ đánh giá lỗi trong ngữ cảnh câu Việt đang dịch."
+   }
+  ],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "esl-v2",
+  "version": 1
+ },
+ {
+  "id": "esl-v2-r07-u02-005",
+  "practiceLevel": "3.5",
+  "type": "sentence",
+  "topic": "So sánh",
+  "promptVi": "Chiếc vali xanh nặng hơn chiếc vali đỏ.",
+  "referenceAnswers": [
+   "The blue suitcase is heavier than the red one."
+  ],
+  "grammarTags": [
+   "comparatives_and_superlatives",
+   "sentence",
+   "R07"
+  ],
+  "explanationVi": "Điểm cần nắm: Heavy đổi y thành i: heavier; one thay cho suitcase tránh lặp. Kiểm tra chủ ngữ, dấu hiệu thời gian, từ nối và nghĩa đầy đủ. Bản dịch đúng có thể khác đáp án mẫu.",
+  "rationaleVi": "Nói kế hoạch, mục đích và so sánh đơn giản. Bài bổ sung từ bộ ESL v2 (R07-U02), chủ đề So sánh.",
+  "commonErrors": [
+   {
+    "incorrect": "The blue suitcase is heavyer than the red one.",
+    "correction": "The blue suitcase is heavier than the red one.",
+    "reasonVi": "Câu sai dùng “heavyer” thay vì “heavier”. Heavy đổi y thành i: heavier; one thay cho suitcase tránh lặp. Chỉ đánh giá lỗi trong ngữ cảnh câu Việt đang dịch."
+   },
+   {
+    "incorrect": "The blue suitcase is heavier that the red one.",
+    "correction": "The blue suitcase is heavier than the red one.",
+    "reasonVi": "Câu sai dùng “that” thay vì “than”. Heavy đổi y thành i: heavier; one thay cho suitcase tránh lặp. Chỉ đánh giá lỗi trong ngữ cảnh câu Việt đang dịch."
+   }
+  ],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "esl-v2",
+  "version": 1
+ },
+ {
+  "id": "esl-v2-r07-u02-006",
+  "practiceLevel": "3.5",
+  "type": "sentence",
+  "topic": "So sánh",
+  "promptVi": "Mùa hè ở đây nóng hơn mùa xuân.",
+  "referenceAnswers": [
+   "Summer is hotter than spring here."
+  ],
+  "grammarTags": [
+   "comparatives_and_superlatives",
+   "sentence",
+   "R07"
+  ],
+  "explanationVi": "Điểm cần nắm: Hot gấp đôi phụ âm cuối: hotter; dùng than để so sánh hai mùa. Kiểm tra chủ ngữ, dấu hiệu thời gian, từ nối và nghĩa đầy đủ. Bản dịch đúng có thể khác đáp án mẫu.",
+  "rationaleVi": "Nói kế hoạch, mục đích và so sánh đơn giản. Bài bổ sung từ bộ ESL v2 (R07-U02), chủ đề So sánh.",
+  "commonErrors": [
+   {
+    "incorrect": "Summer is hoter than spring here.",
+    "correction": "Summer is hotter than spring here.",
+    "reasonVi": "Câu sai dùng “hoter” thay vì “hotter”. Hot gấp đôi phụ âm cuối: hotter; dùng than để so sánh hai mùa. Chỉ đánh giá lỗi trong ngữ cảnh câu Việt đang dịch."
+   },
+   {
+    "incorrect": "Summer is hottest than spring here.",
+    "correction": "Summer is hotter than spring here.",
+    "reasonVi": "Câu sai dùng “hottest” thay vì “hotter”. Hot gấp đôi phụ âm cuối: hotter; dùng than để so sánh hai mùa. Chỉ đánh giá lỗi trong ngữ cảnh câu Việt đang dịch."
+   }
+  ],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "esl-v2",
+  "version": 1
+ },
+ {
+  "id": "esl-v2-r07-u02-007",
+  "practiceLevel": "3.5",
+  "type": "sentence",
+  "topic": "So sánh",
+  "promptVi": "Bữa tối này ngon hơn bữa trưa hôm nay.",
+  "referenceAnswers": [
+   "This dinner is better than today's lunch."
+  ],
+  "grammarTags": [
+   "comparatives_and_superlatives",
+   "sentence",
+   "R07"
+  ],
+  "explanationVi": "Điểm cần nắm: Good có dạng bất quy tắc better; không dùng gooder. Kiểm tra chủ ngữ, dấu hiệu thời gian, từ nối và nghĩa đầy đủ. Bản dịch đúng có thể khác đáp án mẫu.",
+  "rationaleVi": "Nói kế hoạch, mục đích và so sánh đơn giản. Bài bổ sung từ bộ ESL v2 (R07-U02), chủ đề So sánh.",
+  "commonErrors": [
+   {
+    "incorrect": "This dinner is gooder than today's lunch.",
+    "correction": "This dinner is better than today's lunch.",
+    "reasonVi": "Câu sai dùng “gooder” thay vì “better”. Good có dạng bất quy tắc better; không dùng gooder. Chỉ đánh giá lỗi trong ngữ cảnh câu Việt đang dịch."
+   },
+   {
+    "incorrect": "This dinner is best than today's lunch.",
+    "correction": "This dinner is better than today's lunch.",
+    "reasonVi": "Câu sai dùng “best” thay vì “better”. Good có dạng bất quy tắc better; không dùng gooder. Chỉ đánh giá lỗi trong ngữ cảnh câu Việt đang dịch."
+   }
+  ],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "esl-v2",
+  "version": 1
+ },
+ {
+  "id": "esl-v2-r07-u02-008",
+  "practiceLevel": "3.5",
+  "type": "sentence",
+  "topic": "So sánh",
+  "promptVi": "Chiếc áo này rẻ hơn nhưng bền hơn chiếc áo kia.",
+  "referenceAnswers": [
+   "This shirt is cheaper but more durable than the other one."
+  ],
+  "grammarTags": [
+   "comparatives_and_superlatives",
+   "sentence",
+   "R07"
+  ],
+  "explanationVi": "Điểm cần nắm: Cheap dùng cheaper; durable dùng more durable; than đặt trước đối tượng so sánh. Kiểm tra chủ ngữ, dấu hiệu thời gian, từ nối và nghĩa đầy đủ. Bản dịch đúng có thể khác đáp án mẫu.",
+  "rationaleVi": "Nói kế hoạch, mục đích và so sánh đơn giản. Bài bổ sung từ bộ ESL v2 (R07-U02), chủ đề So sánh.",
+  "commonErrors": [
+   {
+    "incorrect": "This shirt is more cheaper but more durable than the other one.",
+    "correction": "This shirt is cheaper but more durable than the other one.",
+    "reasonVi": "Câu sai dùng “more” thay vì “[cần lược bỏ]”. Cheap dùng cheaper; durable dùng more durable; than đặt trước đối tượng so sánh. Chỉ đánh giá lỗi trong ngữ cảnh câu Việt đang dịch."
+   },
+   {
+    "incorrect": "This shirt is cheaper but durable more than the other one.",
+    "correction": "This shirt is cheaper but more durable than the other one.",
+    "reasonVi": "Câu sai dùng “[thiếu thành phần]” thay vì “more”. Cheap dùng cheaper; durable dùng more durable; than đặt trước đối tượng so sánh. Chỉ đánh giá lỗi trong ngữ cảnh câu Việt đang dịch."
+   }
+  ],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "esl-v2",
+  "version": 1
+ },
+ {
+  "id": "esl-v2-r07-u02-009",
+  "practiceLevel": "3.5",
+  "type": "sentence",
+  "topic": "So sánh",
+  "promptVi": "Đây là căn phòng yên tĩnh nhất trong nhà.",
+  "referenceAnswers": [
+   "This is the quietest room in the house."
+  ],
+  "grammarTags": [
+   "comparatives_and_superlatives",
+   "sentence",
+   "R07"
+  ],
+  "explanationVi": "Điểm cần nắm: So sánh nhất dùng the + quietest; in the house chỉ tập hợp. Kiểm tra chủ ngữ, dấu hiệu thời gian, từ nối và nghĩa đầy đủ. Bản dịch đúng có thể khác đáp án mẫu.",
+  "rationaleVi": "Nói kế hoạch, mục đích và so sánh đơn giản. Bài bổ sung từ bộ ESL v2 (R07-U02), chủ đề So sánh.",
+  "commonErrors": [
+   {
+    "incorrect": "This is the most quietest room in the house.",
+    "correction": "This is the quietest room in the house.",
+    "reasonVi": "Câu sai dùng “most” thay vì “[cần lược bỏ]”. So sánh nhất dùng the + quietest; in the house chỉ tập hợp. Chỉ đánh giá lỗi trong ngữ cảnh câu Việt đang dịch."
+   },
+   {
+    "incorrect": "This is the quieter room in the house.",
+    "correction": "This is the quietest room in the house.",
+    "reasonVi": "Câu sai dùng “quieter” thay vì “quietest”. So sánh nhất dùng the + quietest; in the house chỉ tập hợp. Chỉ đánh giá lỗi trong ngữ cảnh câu Việt đang dịch."
+   }
+  ],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "esl-v2",
+  "version": 1
+ },
+ {
+  "id": "esl-v2-r07-u02-010",
+  "practiceLevel": "3.5",
+  "type": "sentence",
+  "topic": "So sánh",
+  "promptVi": "Lan đến sớm nhất trong nhóm.",
+  "referenceAnswers": [
+   "Lan arrives the earliest in the group."
+  ],
+  "grammarTags": [
+   "comparatives_and_superlatives",
+   "sentence",
+   "R07"
+  ],
+  "explanationVi": "Điểm cần nắm: Early đổi y thành i: earliest; the đánh dấu mức cao nhất trong nhóm. Kiểm tra chủ ngữ, dấu hiệu thời gian, từ nối và nghĩa đầy đủ. Bản dịch đúng có thể khác đáp án mẫu.",
+  "rationaleVi": "Nói kế hoạch, mục đích và so sánh đơn giản. Bài bổ sung từ bộ ESL v2 (R07-U02), chủ đề So sánh.",
+  "commonErrors": [
+   {
+    "incorrect": "Lan arrives the more early in the group.",
+    "correction": "Lan arrives the earliest in the group.",
+    "reasonVi": "Câu sai dùng “more early” thay vì “earliest”. Early đổi y thành i: earliest; the đánh dấu mức cao nhất trong nhóm. Chỉ đánh giá lỗi trong ngữ cảnh câu Việt đang dịch."
+   },
+   {
+    "incorrect": "Lan arrives the earlier in the group.",
+    "correction": "Lan arrives the earliest in the group.",
+    "reasonVi": "Câu sai dùng “earlier” thay vì “earliest”. Early đổi y thành i: earliest; the đánh dấu mức cao nhất trong nhóm. Chỉ đánh giá lỗi trong ngữ cảnh câu Việt đang dịch."
+   }
+  ],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "esl-v2",
+  "version": 1
+ },
+ {
+  "id": "esl-v2-r07-u02-011",
+  "practiceLevel": "3.5",
+  "type": "sentence",
+  "topic": "So sánh",
+  "promptVi": "Trong ba phương án, xe buýt là rẻ nhất.",
+  "referenceAnswers": [
+   "Of the three options, the bus is the cheapest."
+  ],
+  "grammarTags": [
+   "comparatives_and_superlatives",
+   "sentence",
+   "R07"
+  ],
+  "explanationVi": "Điểm cần nắm: Có ba phương án nên so sánh nhất the cheapest, không phải cheaper. Kiểm tra chủ ngữ, dấu hiệu thời gian, từ nối và nghĩa đầy đủ. Bản dịch đúng có thể khác đáp án mẫu.",
+  "rationaleVi": "Nói kế hoạch, mục đích và so sánh đơn giản. Bài bổ sung từ bộ ESL v2 (R07-U02), chủ đề So sánh.",
+  "commonErrors": [
+   {
+    "incorrect": "Of the three options, the bus is the cheaper.",
+    "correction": "Of the three options, the bus is the cheapest.",
+    "reasonVi": "Câu sai dùng “cheaper.” thay vì “cheapest.”. Có ba phương án nên so sánh nhất the cheapest, không phải cheaper. Chỉ đánh giá lỗi trong ngữ cảnh câu Việt đang dịch."
+   },
+   {
+    "incorrect": "Of the three options, the bus is the most cheapest.",
+    "correction": "Of the three options, the bus is the cheapest.",
+    "reasonVi": "Câu sai dùng “most” thay vì “[cần lược bỏ]”. Có ba phương án nên so sánh nhất the cheapest, không phải cheaper. Chỉ đánh giá lỗi trong ngữ cảnh câu Việt đang dịch."
+   }
+  ],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "esl-v2",
+  "version": 1
+ },
+ {
+  "id": "esl-v2-r07-u02-012",
+  "practiceLevel": "3.5",
+  "type": "sentence",
+  "topic": "So sánh",
+  "promptVi": "Đây là ngày bận nhất của tôi trong tuần.",
+  "referenceAnswers": [
+   "This is my busiest day of the week."
+  ],
+  "grammarTags": [
+   "comparatives_and_superlatives",
+   "sentence",
+   "R07"
+  ],
+  "explanationVi": "Điểm cần nắm: Busy đổi y thành i: busiest; day đếm được số ít. Kiểm tra chủ ngữ, dấu hiệu thời gian, từ nối và nghĩa đầy đủ. Bản dịch đúng có thể khác đáp án mẫu.",
+  "rationaleVi": "Nói kế hoạch, mục đích và so sánh đơn giản. Bài bổ sung từ bộ ESL v2 (R07-U02), chủ đề So sánh.",
+  "commonErrors": [
+   {
+    "incorrect": "This is my busyest day of the week.",
+    "correction": "This is my busiest day of the week.",
+    "reasonVi": "Câu sai dùng “busyest” thay vì “busiest”. Busy đổi y thành i: busiest; day đếm được số ít. Chỉ đánh giá lỗi trong ngữ cảnh câu Việt đang dịch."
+   },
+   {
+    "incorrect": "This is my busier day of the week.",
+    "correction": "This is my busiest day of the week.",
+    "reasonVi": "Câu sai dùng “busier” thay vì “busiest”. Busy đổi y thành i: busiest; day đếm được số ít. Chỉ đánh giá lỗi trong ngữ cảnh câu Việt đang dịch."
+   }
+  ],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "esl-v2",
+  "version": 1
+ },
+ {
+  "id": "esl-v2-r07-u02-013",
+  "practiceLevel": "3.5",
+  "type": "sentence",
+  "topic": "So sánh",
+  "promptVi": "Chiếc bàn này không cao bằng chiếc bàn kia.",
+  "referenceAnswers": [
+   "This table isn't as tall as the other one."
+  ],
+  "grammarTags": [
+   "comparatives_and_superlatives",
+   "sentence",
+   "R07"
+  ],
+  "explanationVi": "Điểm cần nắm: Phủ định mức độ bằng nhau dùng not as + adjective + as. Kiểm tra chủ ngữ, dấu hiệu thời gian, từ nối và nghĩa đầy đủ. Bản dịch đúng có thể khác đáp án mẫu.",
+  "rationaleVi": "Nói kế hoạch, mục đích và so sánh đơn giản. Bài bổ sung từ bộ ESL v2 (R07-U02), chủ đề So sánh.",
+  "commonErrors": [
+   {
+    "incorrect": "This table isn't as taller as the other one.",
+    "correction": "This table isn't as tall as the other one.",
+    "reasonVi": "Câu sai dùng “taller” thay vì “tall”. Phủ định mức độ bằng nhau dùng not as + adjective + as. Chỉ đánh giá lỗi trong ngữ cảnh câu Việt đang dịch."
+   },
+   {
+    "incorrect": "This table isn't as tallest as the other one.",
+    "correction": "This table isn't as tall as the other one.",
+    "reasonVi": "Câu sai dùng “tallest” thay vì “tall”. Phủ định mức độ bằng nhau dùng not as + adjective + as. Chỉ đánh giá lỗi trong ngữ cảnh câu Việt đang dịch."
+   }
+  ],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "esl-v2",
+  "version": 1
+ },
+ {
+  "id": "esl-v2-r07-u02-014",
+  "practiceLevel": "3.5",
+  "type": "sentence",
+  "topic": "So sánh",
+  "promptVi": "Em trai tôi chạy nhanh bằng tôi.",
+  "referenceAnswers": [
+   "My younger brother runs as fast as I do."
+  ],
+  "grammarTags": [
+   "comparatives_and_superlatives",
+   "sentence",
+   "R07"
+  ],
+  "explanationVi": "Điểm cần nắm: So sánh bằng dùng as fast as; brother số ít nên runs. Kiểm tra chủ ngữ, dấu hiệu thời gian, từ nối và nghĩa đầy đủ. Bản dịch đúng có thể khác đáp án mẫu.",
+  "rationaleVi": "Nói kế hoạch, mục đích và so sánh đơn giản. Bài bổ sung từ bộ ESL v2 (R07-U02), chủ đề So sánh.",
+  "commonErrors": [
+   {
+    "incorrect": "My younger brother runs as faster as I do.",
+    "correction": "My younger brother runs as fast as I do.",
+    "reasonVi": "Câu sai dùng “faster” thay vì “fast”. So sánh bằng dùng as fast as; brother số ít nên runs. Chỉ đánh giá lỗi trong ngữ cảnh câu Việt đang dịch."
+   },
+   {
+    "incorrect": "My younger brother run as fast as I do.",
+    "correction": "My younger brother runs as fast as I do.",
+    "reasonVi": "Câu sai dùng “run” thay vì “runs”. So sánh bằng dùng as fast as; brother số ít nên runs. Chỉ đánh giá lỗi trong ngữ cảnh câu Việt đang dịch."
+   }
+  ],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "esl-v2",
+  "version": 1
+ },
+ {
+  "id": "esl-v2-r07-u02-015",
+  "practiceLevel": "3.5",
+  "type": "sentence",
+  "topic": "So sánh",
+  "promptVi": "Bài tập mới ít khó hơn bài tập trước.",
+  "referenceAnswers": [
+   "The new exercise is less difficult than the previous one."
+  ],
+  "grammarTags": [
+   "comparatives_and_superlatives",
+   "sentence",
+   "R07"
+  ],
+  "explanationVi": "Điểm cần nắm: So sánh mức độ ít hơn dùng less difficult than. Kiểm tra chủ ngữ, dấu hiệu thời gian, từ nối và nghĩa đầy đủ. Bản dịch đúng có thể khác đáp án mẫu.",
+  "rationaleVi": "Nói kế hoạch, mục đích và so sánh đơn giản. Bài bổ sung từ bộ ESL v2 (R07-U02), chủ đề So sánh.",
+  "commonErrors": [
+   {
+    "incorrect": "The new exercise is more less difficult than the previous one.",
+    "correction": "The new exercise is less difficult than the previous one.",
+    "reasonVi": "Câu sai dùng “more” thay vì “[cần lược bỏ]”. So sánh mức độ ít hơn dùng less difficult than. Chỉ đánh giá lỗi trong ngữ cảnh câu Việt đang dịch."
+   },
+   {
+    "incorrect": "The new exercise is less difficult that the previous one.",
+    "correction": "The new exercise is less difficult than the previous one.",
+    "reasonVi": "Câu sai dùng “that” thay vì “than”. So sánh mức độ ít hơn dùng less difficult than. Chỉ đánh giá lỗi trong ngữ cảnh câu Việt đang dịch."
+   }
+  ],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "esl-v2",
+  "version": 1
+ },
+ {
+  "id": "esl-v2-r07-u02-016",
+  "practiceLevel": "3.5",
+  "type": "sentence",
+  "topic": "So sánh",
+  "promptVi": "Trong lớp Minh giải bài toán đó nhanh nhất.",
+  "referenceAnswers": [
+   "Minh solves that problem the fastest in the class."
+  ],
+  "grammarTags": [
+   "comparatives_and_superlatives",
+   "sentence",
+   "R07"
+  ],
+  "explanationVi": "Điểm cần nắm: Minh số ít dùng solves; fastest biểu thị nhanh nhất trong lớp. Kiểm tra chủ ngữ, dấu hiệu thời gian, từ nối và nghĩa đầy đủ. Bản dịch đúng có thể khác đáp án mẫu.",
+  "rationaleVi": "Nói kế hoạch, mục đích và so sánh đơn giản. Bài bổ sung từ bộ ESL v2 (R07-U02), chủ đề So sánh.",
+  "commonErrors": [
+   {
+    "incorrect": "Minh solves that problem the faster in the class.",
+    "correction": "Minh solves that problem the fastest in the class.",
+    "reasonVi": "Câu sai dùng “faster” thay vì “fastest”. Minh số ít dùng solves; fastest biểu thị nhanh nhất trong lớp. Chỉ đánh giá lỗi trong ngữ cảnh câu Việt đang dịch."
+   },
+   {
+    "incorrect": "Minh solve that problem the fastest in the class.",
+    "correction": "Minh solves that problem the fastest in the class.",
+    "reasonVi": "Câu sai dùng “solve” thay vì “solves”. Minh số ít dùng solves; fastest biểu thị nhanh nhất trong lớp. Chỉ đánh giá lỗi trong ngữ cảnh câu Việt đang dịch."
+   }
+  ],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "esl-v2",
+  "version": 1
+ },
+ {
+  "id": "esl-v2-r07-u02-017",
+  "practiceLevel": "3.5",
+  "type": "sentence",
+  "topic": "So sánh",
+  "promptVi": "Tôi thấy chiếc ghế này thoải mái hơn, nhưng chiếc kia chắc chắn hơn.",
+  "referenceAnswers": [
+   "I find this chair more comfortable, but the other one is sturdier."
+  ],
+  "grammarTags": [
+   "comparatives_and_superlatives",
+   "sentence",
+   "R07"
+  ],
+  "explanationVi": "Điểm cần nắm: Comfortable cần more, sturdy đổi y thành i: sturdier. Kiểm tra chủ ngữ, dấu hiệu thời gian, từ nối và nghĩa đầy đủ. Bản dịch đúng có thể khác đáp án mẫu.",
+  "rationaleVi": "Nói kế hoạch, mục đích và so sánh đơn giản. Bài bổ sung từ bộ ESL v2 (R07-U02), chủ đề So sánh.",
+  "commonErrors": [
+   {
+    "incorrect": "I find this chair comfortabler, but the other one is sturdier.",
+    "correction": "I find this chair more comfortable, but the other one is sturdier.",
+    "reasonVi": "Câu sai dùng “comfortabler,” thay vì “more comfortable,”. Comfortable cần more, sturdy đổi y thành i: sturdier. Chỉ đánh giá lỗi trong ngữ cảnh câu Việt đang dịch."
+   },
+   {
+    "incorrect": "I find this chair more comfortable, but the other one is more sturdier.",
+    "correction": "I find this chair more comfortable, but the other one is sturdier.",
+    "reasonVi": "Câu sai dùng “more” thay vì “[cần lược bỏ]”. Comfortable cần more, sturdy đổi y thành i: sturdier. Chỉ đánh giá lỗi trong ngữ cảnh câu Việt đang dịch."
+   }
+  ],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "esl-v2",
+  "version": 1
+ },
+ {
+  "id": "esl-v2-r07-u03-001",
+  "practiceLevel": "3.5",
+  "type": "sentence",
+  "topic": "Mục đích",
+  "promptVi": "Sáng qua tôi mang theo ô để khỏi bị ướt.",
+  "referenceAnswers": [
+   "I brought an umbrella yesterday morning to stay dry."
+  ],
+  "grammarTags": [
+   "purpose_clauses",
+   "sentence",
+   "R07"
+  ],
+  "explanationVi": "Điểm cần nắm: Mục đích dùng to + động từ nguyên mẫu; brought là quá khứ của bring. Kiểm tra chủ ngữ, dấu hiệu thời gian, từ nối và nghĩa đầy đủ. Bản dịch đúng có thể khác đáp án mẫu.",
+  "rationaleVi": "Nói kế hoạch, mục đích và so sánh đơn giản. Bài bổ sung từ bộ ESL v2 (R07-U03), chủ đề Mục đích.",
+  "commonErrors": [
+   {
+    "incorrect": "I brought an umbrella yesterday morning to staying dry.",
+    "correction": "I brought an umbrella yesterday morning to stay dry.",
+    "reasonVi": "Câu sai dùng “staying” thay vì “stay”. Mục đích dùng to + động từ nguyên mẫu; brought là quá khứ của bring. Chỉ đánh giá lỗi trong ngữ cảnh câu Việt đang dịch."
+   },
+   {
+    "incorrect": "I bringed an umbrella yesterday morning to stay dry.",
+    "correction": "I brought an umbrella yesterday morning to stay dry.",
+    "reasonVi": "Câu sai dùng “bringed” thay vì “brought”. Mục đích dùng to + động từ nguyên mẫu; brought là quá khứ của bring. Chỉ đánh giá lỗi trong ngữ cảnh câu Việt đang dịch."
+   }
+  ],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "esl-v2",
+  "version": 1
+ },
+ {
+  "id": "esl-v2-r07-u03-002",
+  "practiceLevel": "3.5",
+  "type": "sentence",
+  "topic": "Mục đích",
+  "promptVi": "Chúng tôi tập nói mỗi tối để phát âm rõ hơn.",
+  "referenceAnswers": [
+   "We practise speaking every evening in order to improve our pronunciation."
+  ],
+  "grammarTags": [
+   "purpose_clauses",
+   "sentence",
+   "R07"
+  ],
+  "explanationVi": "Điểm cần nắm: In order to improve nói rõ mục đích của practise speaking; in order to + V nguyên mẫu và pronunciation là danh từ. Kiểm tra chủ ngữ, dấu hiệu thời gian, từ nối và nghĩa đầy đủ. Bản dịch đúng có thể khác đáp án mẫu.",
+  "rationaleVi": "Nói kế hoạch, mục đích và so sánh đơn giản. Bài bổ sung từ bộ ESL v2 (R07-U03), chủ đề Mục đích.",
+  "commonErrors": [
+   {
+    "incorrect": "We practise speaking every evening in order to improving our pronunciation.",
+    "correction": "We practise speaking every evening in order to improve our pronunciation.",
+    "reasonVi": "Câu sai dùng “improving” thay vì “improve”. In order to improve nói rõ mục đích của practise speaking; in order to + V nguyên mẫu và pronunciation là danh từ. Chỉ đánh giá lỗi trong ngữ cảnh câu Việt đang dịch."
+   },
+   {
+    "incorrect": "We practise speaking every evening for improve our pronunciation.",
+    "correction": "We practise speaking every evening in order to improve our pronunciation.",
+    "reasonVi": "Câu sai dùng “for” thay vì “in order to”. In order to improve nói rõ mục đích của practise speaking; in order to + V nguyên mẫu và pronunciation là danh từ. Chỉ đánh giá lỗi trong ngữ cảnh câu Việt đang dịch."
+   }
+  ],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "esl-v2",
+  "version": 1
+ },
+ {
+  "id": "esl-v2-r07-u03-003",
+  "practiceLevel": "3.5",
+  "type": "sentence",
+  "topic": "Mục đích",
+  "promptVi": "Mai đặt báo thức mỗi tối để dậy đúng giờ.",
+  "referenceAnswers": [
+   "Mai sets an alarm every night to wake up on time."
+  ],
+  "grammarTags": [
+   "purpose_clauses",
+   "sentence",
+   "R07"
+  ],
+  "explanationVi": "Điểm cần nắm: Chủ ngữ Mai số ít nên sets; to wake up diễn tả mục đích. Kiểm tra chủ ngữ, dấu hiệu thời gian, từ nối và nghĩa đầy đủ. Bản dịch đúng có thể khác đáp án mẫu.",
+  "rationaleVi": "Nói kế hoạch, mục đích và so sánh đơn giản. Bài bổ sung từ bộ ESL v2 (R07-U03), chủ đề Mục đích.",
+  "commonErrors": [
+   {
+    "incorrect": "Mai sets an alarm every night to waking up on time.",
+    "correction": "Mai sets an alarm every night to wake up on time.",
+    "reasonVi": "Câu sai dùng “waking” thay vì “wake”. Chủ ngữ Mai số ít nên sets; to wake up diễn tả mục đích. Chỉ đánh giá lỗi trong ngữ cảnh câu Việt đang dịch."
+   },
+   {
+    "incorrect": "Mai set an alarm every night to wake up on time.",
+    "correction": "Mai sets an alarm every night to wake up on time.",
+    "reasonVi": "Câu sai dùng “set” thay vì “sets”. Chủ ngữ Mai số ít nên sets; to wake up diễn tả mục đích. Chỉ đánh giá lỗi trong ngữ cảnh câu Việt đang dịch."
+   }
+  ],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "esl-v2",
+  "version": 1
+ },
+ {
+  "id": "esl-v2-r07-u03-004",
+  "practiceLevel": "3.5",
+  "type": "sentence",
+  "topic": "Mục đích",
+  "promptVi": "Hôm qua tôi đến thư viện để tìm tài liệu cho bài thuyết trình.",
+  "referenceAnswers": [
+   "I went to the library yesterday to find materials for my presentation."
+  ],
+  "grammarTags": [
+   "purpose_clauses",
+   "sentence",
+   "R07"
+  ],
+  "explanationVi": "Điểm cần nắm: To find chỉ mục đích đến thư viện, còn went là quá khứ bất quy tắc của go. Kiểm tra chủ ngữ, dấu hiệu thời gian, từ nối và nghĩa đầy đủ. Bản dịch đúng có thể khác đáp án mẫu.",
+  "rationaleVi": "Nói kế hoạch, mục đích và so sánh đơn giản. Bài bổ sung từ bộ ESL v2 (R07-U03), chủ đề Mục đích.",
+  "commonErrors": [
+   {
+    "incorrect": "I went to the library yesterday for find materials for my presentation.",
+    "correction": "I went to the library yesterday to find materials for my presentation.",
+    "reasonVi": "Câu sai dùng “for” thay vì “to”. To find chỉ mục đích đến thư viện, còn went là quá khứ bất quy tắc của go. Chỉ đánh giá lỗi trong ngữ cảnh câu Việt đang dịch."
+   },
+   {
+    "incorrect": "I goed to the library yesterday to find materials for my presentation.",
+    "correction": "I went to the library yesterday to find materials for my presentation.",
+    "reasonVi": "Câu sai dùng “goed” thay vì “went”. To find chỉ mục đích đến thư viện, còn went là quá khứ bất quy tắc của go. Chỉ đánh giá lỗi trong ngữ cảnh câu Việt đang dịch."
+   }
+  ],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "esl-v2",
+  "version": 1
+ },
+ {
+  "id": "esl-v2-r07-u03-005",
+  "practiceLevel": "3.5",
+  "type": "sentence",
+  "topic": "Mục đích",
+  "promptVi": "Sáng nay họ mở cửa sổ để không khí trong lành vào phòng.",
+  "referenceAnswers": [
+   "They opened the window this morning to let fresh air in."
+  ],
+  "grammarTags": [
+   "purpose_clauses",
+   "sentence",
+   "R07"
+  ],
+  "explanationVi": "Điểm cần nắm: To let diễn tả mục đích; let + tân ngữ + động từ nguyên mẫu. Kiểm tra chủ ngữ, dấu hiệu thời gian, từ nối và nghĩa đầy đủ. Bản dịch đúng có thể khác đáp án mẫu.",
+  "rationaleVi": "Nói kế hoạch, mục đích và so sánh đơn giản. Bài bổ sung từ bộ ESL v2 (R07-U03), chủ đề Mục đích.",
+  "commonErrors": [
+   {
+    "incorrect": "They opened the window this morning to letting fresh air in.",
+    "correction": "They opened the window this morning to let fresh air in.",
+    "reasonVi": "Câu sai dùng “letting” thay vì “let”. To let diễn tả mục đích; let + tân ngữ + động từ nguyên mẫu. Chỉ đánh giá lỗi trong ngữ cảnh câu Việt đang dịch."
+   },
+   {
+    "incorrect": "They opened the window this morning to let fresh air to in.",
+    "correction": "They opened the window this morning to let fresh air in.",
+    "reasonVi": "Câu sai dùng “to” thay vì “[cần lược bỏ]”. To let diễn tả mục đích; let + tân ngữ + động từ nguyên mẫu. Chỉ đánh giá lỗi trong ngữ cảnh câu Việt đang dịch."
+   }
+  ],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "esl-v2",
+  "version": 1
+ },
+ {
+  "id": "esl-v2-r07-u03-006",
+  "practiceLevel": "3.5",
+  "type": "sentence",
+  "topic": "Mục đích",
+  "promptVi": "Tôi học từ mới hằng ngày để đọc tin tức dễ hơn.",
+  "referenceAnswers": [
+   "I learn new words every day in order to read the news more easily."
+  ],
+  "grammarTags": [
+   "purpose_clauses",
+   "sentence",
+   "R07"
+  ],
+  "explanationVi": "Điểm cần nắm: In order to read chỉ mục đích học từ; more easily bổ nghĩa cho read, không dùng to reading. Kiểm tra chủ ngữ, dấu hiệu thời gian, từ nối và nghĩa đầy đủ. Bản dịch đúng có thể khác đáp án mẫu.",
+  "rationaleVi": "Nói kế hoạch, mục đích và so sánh đơn giản. Bài bổ sung từ bộ ESL v2 (R07-U03), chủ đề Mục đích.",
+  "commonErrors": [
+   {
+    "incorrect": "I learn new words every day for read the news more easily.",
+    "correction": "I learn new words every day in order to read the news more easily.",
+    "reasonVi": "Câu sai dùng “for” thay vì “in order to”. In order to read chỉ mục đích học từ; more easily bổ nghĩa cho read, không dùng to reading. Chỉ đánh giá lỗi trong ngữ cảnh câu Việt đang dịch."
+   },
+   {
+    "incorrect": "I learn new words every day in order to reading the news more easily.",
+    "correction": "I learn new words every day in order to read the news more easily.",
+    "reasonVi": "Câu sai dùng “reading” thay vì “read”. In order to read chỉ mục đích học từ; more easily bổ nghĩa cho read, không dùng to reading. Chỉ đánh giá lỗi trong ngữ cảnh câu Việt đang dịch."
+   }
+  ],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "esl-v2",
+  "version": 1
+ },
+ {
+  "id": "esl-v2-r07-u03-007",
+  "practiceLevel": "3.5",
+  "type": "sentence",
+  "topic": "Mục đích",
+  "promptVi": "Cô ấy đi bộ đến trường để tiết kiệm tiền đi lại.",
+  "referenceAnswers": [
+   "She walks to school to save money on transport."
+  ],
+  "grammarTags": [
+   "purpose_clauses",
+   "sentence",
+   "R07"
+  ],
+  "explanationVi": "Điểm cần nắm: To save diễn tả mục đích; she số ít dùng walks. Kiểm tra chủ ngữ, dấu hiệu thời gian, từ nối và nghĩa đầy đủ. Bản dịch đúng có thể khác đáp án mẫu.",
+  "rationaleVi": "Nói kế hoạch, mục đích và so sánh đơn giản. Bài bổ sung từ bộ ESL v2 (R07-U03), chủ đề Mục đích.",
+  "commonErrors": [
+   {
+    "incorrect": "She walks to school to saving money on transport.",
+    "correction": "She walks to school to save money on transport.",
+    "reasonVi": "Câu sai dùng “saving” thay vì “save”. To save diễn tả mục đích; she số ít dùng walks. Chỉ đánh giá lỗi trong ngữ cảnh câu Việt đang dịch."
+   },
+   {
+    "incorrect": "She walk to school to save money on transport.",
+    "correction": "She walks to school to save money on transport.",
+    "reasonVi": "Câu sai dùng “walk” thay vì “walks”. To save diễn tả mục đích; she số ít dùng walks. Chỉ đánh giá lỗi trong ngữ cảnh câu Việt đang dịch."
+   }
+  ],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "esl-v2",
+  "version": 1
+ },
+ {
+  "id": "esl-v2-r07-u03-008",
+  "practiceLevel": "3.5",
+  "type": "sentence",
+  "topic": "Mục đích",
+  "promptVi": "Hôm qua chúng tôi đến sớm để chọn chỗ ngồi tốt.",
+  "referenceAnswers": [
+   "We arrived early yesterday to choose good seats."
+  ],
+  "grammarTags": [
+   "purpose_clauses",
+   "sentence",
+   "R07"
+  ],
+  "explanationVi": "Điểm cần nắm: To choose chỉ mục đích của việc đến sớm; arrived biểu thị quá khứ. Kiểm tra chủ ngữ, dấu hiệu thời gian, từ nối và nghĩa đầy đủ. Bản dịch đúng có thể khác đáp án mẫu.",
+  "rationaleVi": "Nói kế hoạch, mục đích và so sánh đơn giản. Bài bổ sung từ bộ ESL v2 (R07-U03), chủ đề Mục đích.",
+  "commonErrors": [
+   {
+    "incorrect": "We arrived early yesterday to choosing good seats.",
+    "correction": "We arrived early yesterday to choose good seats.",
+    "reasonVi": "Câu sai dùng “choosing” thay vì “choose”. To choose chỉ mục đích của việc đến sớm; arrived biểu thị quá khứ. Chỉ đánh giá lỗi trong ngữ cảnh câu Việt đang dịch."
+   },
+   {
+    "incorrect": "We arrive early yesterday to choose good seats.",
+    "correction": "We arrived early yesterday to choose good seats.",
+    "reasonVi": "Câu sai dùng “arrive” thay vì “arrived”. To choose chỉ mục đích của việc đến sớm; arrived biểu thị quá khứ. Chỉ đánh giá lỗi trong ngữ cảnh câu Việt đang dịch."
+   }
+  ],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "esl-v2",
+  "version": 1
+ },
+ {
+  "id": "esl-v2-r07-u03-009",
+  "practiceLevel": "3.5",
+  "type": "sentence",
+  "topic": "Mục đích",
+  "promptVi": "Tối qua tôi tắt điện thoại để tập trung vào bài học.",
+  "referenceAnswers": [
+   "I turned off my phone last night to focus on the lesson."
+  ],
+  "grammarTags": [
+   "purpose_clauses",
+   "sentence",
+   "R07"
+  ],
+  "explanationVi": "Điểm cần nắm: To focus diễn tả mục đích; turned off ở quá khứ do last night. Kiểm tra chủ ngữ, dấu hiệu thời gian, từ nối và nghĩa đầy đủ. Bản dịch đúng có thể khác đáp án mẫu.",
+  "rationaleVi": "Nói kế hoạch, mục đích và so sánh đơn giản. Bài bổ sung từ bộ ESL v2 (R07-U03), chủ đề Mục đích.",
+  "commonErrors": [
+   {
+    "incorrect": "I turned off my phone last night to focusing on the lesson.",
+    "correction": "I turned off my phone last night to focus on the lesson.",
+    "reasonVi": "Câu sai dùng “focusing” thay vì “focus”. To focus diễn tả mục đích; turned off ở quá khứ do last night. Chỉ đánh giá lỗi trong ngữ cảnh câu Việt đang dịch."
+   },
+   {
+    "incorrect": "I turn off my phone last night to focus on the lesson.",
+    "correction": "I turned off my phone last night to focus on the lesson.",
+    "reasonVi": "Câu sai dùng “turn” thay vì “turned”. To focus diễn tả mục đích; turned off ở quá khứ do last night. Chỉ đánh giá lỗi trong ngữ cảnh câu Việt đang dịch."
+   }
+  ],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "esl-v2",
+  "version": 1
+ },
+ {
+  "id": "esl-v2-r07-u03-010",
+  "practiceLevel": "3.5",
+  "type": "sentence",
+  "topic": "Mục đích",
+  "promptVi": "Trong buổi họp hôm qua, họ nói chậm hơn để mọi người có thể hiểu.",
+  "referenceAnswers": [
+   "They spoke more slowly at yesterday’s meeting so that everyone could understand."
+  ],
+  "grammarTags": [
+   "purpose_clauses",
+   "sentence",
+   "R07"
+  ],
+  "explanationVi": "Điểm cần nắm: So that + mệnh đề có chủ ngữ và động từ; could diễn tả khả năng trong ngữ cảnh quá khứ. Kiểm tra chủ ngữ, dấu hiệu thời gian, từ nối và nghĩa đầy đủ. Bản dịch đúng có thể khác đáp án mẫu.",
+  "rationaleVi": "Nói kế hoạch, mục đích và so sánh đơn giản. Bài bổ sung từ bộ ESL v2 (R07-U03), chủ đề Mục đích.",
+  "commonErrors": [
+   {
+    "incorrect": "They spoke more slowly at yesterday’s meeting so that everyone could understanding.",
+    "correction": "They spoke more slowly at yesterday’s meeting so that everyone could understand.",
+    "reasonVi": "Câu sai dùng “understanding.” thay vì “understand.”. So that + mệnh đề có chủ ngữ và động từ; could diễn tả khả năng trong ngữ cảnh quá khứ. Chỉ đánh giá lỗi trong ngữ cảnh câu Việt đang dịch."
+   },
+   {
+    "incorrect": "They spoke more slowly at yesterday’s meeting so that everyone could understands.",
+    "correction": "They spoke more slowly at yesterday’s meeting so that everyone could understand.",
+    "reasonVi": "Câu sai dùng “understands.” thay vì “understand.”. So that + mệnh đề có chủ ngữ và động từ; could diễn tả khả năng trong ngữ cảnh quá khứ. Chỉ đánh giá lỗi trong ngữ cảnh câu Việt đang dịch."
+   }
+  ],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "esl-v2",
+  "version": 1
+ },
+ {
+  "id": "esl-v2-r07-u03-011",
+  "practiceLevel": "3.5",
+  "type": "sentence",
+  "topic": "Mục đích",
+  "promptVi": "Mỗi buổi học cô giáo viết ví dụ lên bảng để học sinh dễ nhớ.",
+  "referenceAnswers": [
+   "The teacher writes examples on the board so that students can remember them more easily."
+  ],
+  "grammarTags": [
+   "purpose_clauses",
+   "sentence",
+   "R07"
+  ],
+  "explanationVi": "Điểm cần nắm: So that + students can remember là mệnh đề chỉ mục đích. Kiểm tra chủ ngữ, dấu hiệu thời gian, từ nối và nghĩa đầy đủ. Bản dịch đúng có thể khác đáp án mẫu.",
+  "rationaleVi": "Nói kế hoạch, mục đích và so sánh đơn giản. Bài bổ sung từ bộ ESL v2 (R07-U03), chủ đề Mục đích.",
+  "commonErrors": [
+   {
+    "incorrect": "The teacher writes examples on the board so that students remembering them more easily.",
+    "correction": "The teacher writes examples on the board so that students can remember them more easily.",
+    "reasonVi": "Câu sai dùng “remembering” thay vì “can remember”. So that + students can remember là mệnh đề chỉ mục đích. Chỉ đánh giá lỗi trong ngữ cảnh câu Việt đang dịch."
+   },
+   {
+    "incorrect": "The teacher write examples on the board so that students can remember them more easily.",
+    "correction": "The teacher writes examples on the board so that students can remember them more easily.",
+    "reasonVi": "Câu sai dùng “write” thay vì “writes”. So that + students can remember là mệnh đề chỉ mục đích. Chỉ đánh giá lỗi trong ngữ cảnh câu Việt đang dịch."
+   }
+  ],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "esl-v2",
+  "version": 1
+ },
+ {
+  "id": "esl-v2-r07-u03-012",
+  "practiceLevel": "3.5",
+  "type": "sentence",
+  "topic": "Mục đích",
+  "promptVi": "Tôi thường để nước trên bàn để khách có thể tự lấy.",
+  "referenceAnswers": [
+   "I usually leave water on the table so that guests can help themselves."
+  ],
+  "grammarTags": [
+   "purpose_clauses",
+   "sentence",
+   "R07"
+  ],
+  "explanationVi": "Điểm cần nắm: So that + guests can + V diễn tả mục đích; help themselves nghĩa tự lấy. Kiểm tra chủ ngữ, dấu hiệu thời gian, từ nối và nghĩa đầy đủ. Bản dịch đúng có thể khác đáp án mẫu.",
+  "rationaleVi": "Nói kế hoạch, mục đích và so sánh đơn giản. Bài bổ sung từ bộ ESL v2 (R07-U03), chủ đề Mục đích.",
+  "commonErrors": [
+   {
+    "incorrect": "I usually leave water on the table so that guests helping themselves.",
+    "correction": "I usually leave water on the table so that guests can help themselves.",
+    "reasonVi": "Câu sai dùng “helping” thay vì “can help”. So that + guests can + V diễn tả mục đích; help themselves nghĩa tự lấy. Chỉ đánh giá lỗi trong ngữ cảnh câu Việt đang dịch."
+   },
+   {
+    "incorrect": "I usually leaves water on the table so that guests can help themselves.",
+    "correction": "I usually leave water on the table so that guests can help themselves.",
+    "reasonVi": "Câu sai dùng “leaves” thay vì “leave”. So that + guests can + V diễn tả mục đích; help themselves nghĩa tự lấy. Chỉ đánh giá lỗi trong ngữ cảnh câu Việt đang dịch."
+   }
+  ],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "esl-v2",
+  "version": 1
+ },
+ {
+  "id": "esl-v2-r07-u03-013",
+  "practiceLevel": "3.5",
+  "type": "sentence",
+  "topic": "Mục đích",
+  "promptVi": "Chúng tôi đã giảm âm lượng để em bé có thể ngủ.",
+  "referenceAnswers": [
+   "We lowered the volume so that the baby could sleep."
+  ],
+  "grammarTags": [
+   "purpose_clauses",
+   "sentence",
+   "R07"
+  ],
+  "explanationVi": "Điểm cần nắm: Could sleep nêu khả năng được tạo điều kiện trong quá khứ. Kiểm tra chủ ngữ, dấu hiệu thời gian, từ nối và nghĩa đầy đủ. Bản dịch đúng có thể khác đáp án mẫu.",
+  "rationaleVi": "Nói kế hoạch, mục đích và so sánh đơn giản. Bài bổ sung từ bộ ESL v2 (R07-U03), chủ đề Mục đích.",
+  "commonErrors": [
+   {
+    "incorrect": "We lowered the volume so that the baby could sleeps.",
+    "correction": "We lowered the volume so that the baby could sleep.",
+    "reasonVi": "Câu sai dùng “sleeps.” thay vì “sleep.”. Could sleep nêu khả năng được tạo điều kiện trong quá khứ. Chỉ đánh giá lỗi trong ngữ cảnh câu Việt đang dịch."
+   },
+   {
+    "incorrect": "We lower the volume so that the baby could sleep.",
+    "correction": "We lowered the volume so that the baby could sleep.",
+    "reasonVi": "Câu sai dùng “lower” thay vì “lowered”. Could sleep nêu khả năng được tạo điều kiện trong quá khứ. Chỉ đánh giá lỗi trong ngữ cảnh câu Việt đang dịch."
+   }
+  ],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "esl-v2",
+  "version": 1
+ },
+ {
+  "id": "esl-v2-r07-u03-014",
+  "practiceLevel": "3.5",
+  "type": "sentence",
+  "topic": "Mục đích",
+  "promptVi": "Sáng nay tôi đi chợ sớm để mua rau tươi.",
+  "referenceAnswers": [
+   "I went to the market early this morning to buy fresh vegetables."
+  ],
+  "grammarTags": [
+   "purpose_clauses",
+   "sentence",
+   "R07"
+  ],
+  "explanationVi": "Điểm cần nắm: To buy nêu mục đích đi chợ sớm để mua rau, còn went là dạng quá khứ bất quy tắc của go. Kiểm tra chủ ngữ, dấu hiệu thời gian, từ nối và nghĩa đầy đủ. Bản dịch đúng có thể khác đáp án mẫu.",
+  "rationaleVi": "Nói kế hoạch, mục đích và so sánh đơn giản. Bài bổ sung từ bộ ESL v2 (R07-U03), chủ đề Mục đích.",
+  "commonErrors": [
+   {
+    "incorrect": "I went to the market early this morning to buying fresh vegetables.",
+    "correction": "I went to the market early this morning to buy fresh vegetables.",
+    "reasonVi": "Câu sai dùng “buying” thay vì “buy”. To buy nêu mục đích đi chợ sớm để mua rau, còn went là dạng quá khứ bất quy tắc của go. Chỉ đánh giá lỗi trong ngữ cảnh câu Việt đang dịch."
+   },
+   {
+    "incorrect": "I goed to the market early this morning to buy fresh vegetables.",
+    "correction": "I went to the market early this morning to buy fresh vegetables.",
+    "reasonVi": "Câu sai dùng “goed” thay vì “went”. To buy nêu mục đích đi chợ sớm để mua rau, còn went là dạng quá khứ bất quy tắc của go. Chỉ đánh giá lỗi trong ngữ cảnh câu Việt đang dịch."
+   }
+  ],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "esl-v2",
+  "version": 1
+ },
+ {
+  "id": "esl-v2-r07-u03-015",
+  "practiceLevel": "3.5",
+  "type": "sentence",
+  "topic": "Mục đích",
+  "promptVi": "Hôm qua cậu ấy mang theo bản đồ để tránh bị lạc.",
+  "referenceAnswers": [
+   "He brought a map yesterday to avoid getting lost."
+  ],
+  "grammarTags": [
+   "purpose_clauses",
+   "sentence",
+   "R07"
+  ],
+  "explanationVi": "Điểm cần nắm: To avoid + V-ing: avoid getting lost; không dùng avoid get. Kiểm tra chủ ngữ, dấu hiệu thời gian, từ nối và nghĩa đầy đủ. Bản dịch đúng có thể khác đáp án mẫu.",
+  "rationaleVi": "Nói kế hoạch, mục đích và so sánh đơn giản. Bài bổ sung từ bộ ESL v2 (R07-U03), chủ đề Mục đích.",
+  "commonErrors": [
+   {
+    "incorrect": "He brought a map yesterday to avoid get lost.",
+    "correction": "He brought a map yesterday to avoid getting lost.",
+    "reasonVi": "Câu sai dùng “get” thay vì “getting”. To avoid + V-ing: avoid getting lost; không dùng avoid get. Chỉ đánh giá lỗi trong ngữ cảnh câu Việt đang dịch."
+   },
+   {
+    "incorrect": "He bringed a map yesterday to avoid getting lost.",
+    "correction": "He brought a map yesterday to avoid getting lost.",
+    "reasonVi": "Câu sai dùng “bringed” thay vì “brought”. To avoid + V-ing: avoid getting lost; không dùng avoid get. Chỉ đánh giá lỗi trong ngữ cảnh câu Việt đang dịch."
+   }
+  ],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "esl-v2",
+  "version": 1
+ },
+ {
+  "id": "esl-v2-r07-u03-016",
+  "practiceLevel": "3.5",
+  "type": "sentence",
+  "topic": "Mục đích",
+  "promptVi": "Hôm qua chúng tôi đánh dấu ngày thi vào lịch để không quên.",
+  "referenceAnswers": [
+   "We marked the exam date on the calendar yesterday so that we wouldn't forget it."
+  ],
+  "grammarTags": [
+   "purpose_clauses",
+   "sentence",
+   "R07"
+  ],
+  "explanationVi": "Điểm cần nắm: So that + chủ ngữ + wouldn't + V diễn tả mục đích tránh quên trong quá khứ. Kiểm tra chủ ngữ, dấu hiệu thời gian, từ nối và nghĩa đầy đủ. Bản dịch đúng có thể khác đáp án mẫu.",
+  "rationaleVi": "Nói kế hoạch, mục đích và so sánh đơn giản. Bài bổ sung từ bộ ESL v2 (R07-U03), chủ đề Mục đích.",
+  "commonErrors": [
+   {
+    "incorrect": "We marked the exam date on the calendar yesterday so that we wouldn't forgot it.",
+    "correction": "We marked the exam date on the calendar yesterday so that we wouldn't forget it.",
+    "reasonVi": "Câu sai dùng “forgot” thay vì “forget”. So that + chủ ngữ + wouldn't + V diễn tả mục đích tránh quên trong quá khứ. Chỉ đánh giá lỗi trong ngữ cảnh câu Việt đang dịch."
+   },
+   {
+    "incorrect": "We mark the exam date on the calendar yesterday so that we wouldn't forget it.",
+    "correction": "We marked the exam date on the calendar yesterday so that we wouldn't forget it.",
+    "reasonVi": "Câu sai dùng “mark” thay vì “marked”. So that + chủ ngữ + wouldn't + V diễn tả mục đích tránh quên trong quá khứ. Chỉ đánh giá lỗi trong ngữ cảnh câu Việt đang dịch."
+   }
+  ],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "esl-v2",
+  "version": 1
+ },
+ {
+  "id": "esl-v2-r07-u03-017",
+  "practiceLevel": "3.5",
+  "type": "sentence",
+  "topic": "Mục đích",
+  "promptVi": "Hôm qua bạn tôi ghi lại câu hỏi để hỏi giáo viên sau giờ học.",
+  "referenceAnswers": [
+   "My friend wrote down the question yesterday to ask the teacher after class."
+  ],
+  "grammarTags": [
+   "purpose_clauses",
+   "sentence",
+   "R07"
+  ],
+  "explanationVi": "Điểm cần nắm: To ask là mục đích; wrote down là quá khứ của write down. Kiểm tra chủ ngữ, dấu hiệu thời gian, từ nối và nghĩa đầy đủ. Bản dịch đúng có thể khác đáp án mẫu.",
+  "rationaleVi": "Nói kế hoạch, mục đích và so sánh đơn giản. Bài bổ sung từ bộ ESL v2 (R07-U03), chủ đề Mục đích.",
+  "commonErrors": [
+   {
+    "incorrect": "My friend wrote down the question yesterday to asking the teacher after class.",
+    "correction": "My friend wrote down the question yesterday to ask the teacher after class.",
+    "reasonVi": "Câu sai dùng “asking” thay vì “ask”. To ask là mục đích; wrote down là quá khứ của write down. Chỉ đánh giá lỗi trong ngữ cảnh câu Việt đang dịch."
+   },
+   {
+    "incorrect": "My friend writed down the question yesterday to ask the teacher after class.",
+    "correction": "My friend wrote down the question yesterday to ask the teacher after class.",
+    "reasonVi": "Câu sai dùng “writed” thay vì “wrote”. To ask là mục đích; wrote down là quá khứ của write down. Chỉ đánh giá lỗi trong ngữ cảnh câu Việt đang dịch."
+   }
+  ],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "esl-v2",
+  "version": 1
+ },
+ {
+  "id": "esl-v2-r07-u04-001",
+  "practiceLevel": "3.5",
+  "type": "sentence",
+  "topic": "Vì sao/vì vậy",
+  "promptVi": "Hôm qua tôi ở nhà vì trời mưa to.",
+  "referenceAnswers": [
+   "I stayed home yesterday because it was raining heavily."
+  ],
+  "grammarTags": [
+   "cause_and_effect",
+   "sentence",
+   "R07"
+  ],
+  "explanationVi": "Điểm cần nắm: Because nối nguyên nhân là mệnh đề trời mưa; stayed là quá khứ. Kiểm tra chủ ngữ, dấu hiệu thời gian, từ nối và nghĩa đầy đủ. Bản dịch đúng có thể khác đáp án mẫu.",
+  "rationaleVi": "Nói kế hoạch, mục đích và so sánh đơn giản. Bài bổ sung từ bộ ESL v2 (R07-U04), chủ đề Vì sao/vì vậy.",
+  "commonErrors": [
+   {
+    "incorrect": "I stayed home yesterday because it raining heavily.",
+    "correction": "I stayed home yesterday because it was raining heavily.",
+    "reasonVi": "Câu sai dùng “[thiếu thành phần]” thay vì “was”. Because nối nguyên nhân là mệnh đề trời mưa; stayed là quá khứ. Chỉ đánh giá lỗi trong ngữ cảnh câu Việt đang dịch."
+   },
+   {
+    "incorrect": "I stay home yesterday because it was raining heavily.",
+    "correction": "I stayed home yesterday because it was raining heavily.",
+    "reasonVi": "Câu sai dùng “stay” thay vì “stayed”. Because nối nguyên nhân là mệnh đề trời mưa; stayed là quá khứ. Chỉ đánh giá lỗi trong ngữ cảnh câu Việt đang dịch."
+   }
+  ],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "esl-v2",
+  "version": 1
+ },
+ {
+  "id": "esl-v2-r07-u04-002",
+  "practiceLevel": "3.5",
+  "type": "sentence",
+  "topic": "Vì sao/vì vậy",
+  "promptVi": "Trời mưa to nên trận đấu đã bị hoãn.",
+  "referenceAnswers": [
+   "It rained heavily, so the match was postponed."
+  ],
+  "grammarTags": [
+   "cause_and_effect",
+   "sentence",
+   "R07"
+  ],
+  "explanationVi": "Điểm cần nắm: So nối nguyên nhân với kết quả; was postponed là bị hoãn trong quá khứ. Kiểm tra chủ ngữ, dấu hiệu thời gian, từ nối và nghĩa đầy đủ. Bản dịch đúng có thể khác đáp án mẫu.",
+  "rationaleVi": "Nói kế hoạch, mục đích và so sánh đơn giản. Bài bổ sung từ bộ ESL v2 (R07-U04), chủ đề Vì sao/vì vậy.",
+  "commonErrors": [
+   {
+    "incorrect": "It rained heavily, so the match were postponed.",
+    "correction": "It rained heavily, so the match was postponed.",
+    "reasonVi": "Câu sai dùng “were” thay vì “was”. So nối nguyên nhân với kết quả; was postponed là bị hoãn trong quá khứ. Chỉ đánh giá lỗi trong ngữ cảnh câu Việt đang dịch."
+   },
+   {
+    "incorrect": "It rained heavily, so the match was postpone.",
+    "correction": "It rained heavily, so the match was postponed.",
+    "reasonVi": "Câu sai dùng “postpone.” thay vì “postponed.”. So nối nguyên nhân với kết quả; was postponed là bị hoãn trong quá khứ. Chỉ đánh giá lỗi trong ngữ cảnh câu Việt đang dịch."
+   }
+  ],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "esl-v2",
+  "version": 1
+ },
+ {
+  "id": "esl-v2-r07-u04-003",
+  "practiceLevel": "3.5",
+  "type": "sentence",
+  "topic": "Vì sao/vì vậy",
+  "promptVi": "Vì tối qua ngủ không đủ, sáng nay Huy rất mệt.",
+  "referenceAnswers": [
+   "Huy was very tired this morning because he didn't get enough sleep last night."
+  ],
+  "grammarTags": [
+   "cause_and_effect",
+   "sentence",
+   "R07"
+  ],
+  "explanationVi": "Điểm cần nắm: Because + mệnh đề đưa nguyên nhân, didn't + V nguyên mẫu. Kiểm tra chủ ngữ, dấu hiệu thời gian, từ nối và nghĩa đầy đủ. Bản dịch đúng có thể khác đáp án mẫu.",
+  "rationaleVi": "Nói kế hoạch, mục đích và so sánh đơn giản. Bài bổ sung từ bộ ESL v2 (R07-U04), chủ đề Vì sao/vì vậy.",
+  "commonErrors": [
+   {
+    "incorrect": "Huy was very tired this morning because he didn't got enough sleep last night.",
+    "correction": "Huy was very tired this morning because he didn't get enough sleep last night.",
+    "reasonVi": "Câu sai dùng “got” thay vì “get”. Because + mệnh đề đưa nguyên nhân, didn't + V nguyên mẫu. Chỉ đánh giá lỗi trong ngữ cảnh câu Việt đang dịch."
+   },
+   {
+    "incorrect": "Huy were very tired this morning because he didn't get enough sleep last night.",
+    "correction": "Huy was very tired this morning because he didn't get enough sleep last night.",
+    "reasonVi": "Câu sai dùng “were” thay vì “was”. Because + mệnh đề đưa nguyên nhân, didn't + V nguyên mẫu. Chỉ đánh giá lỗi trong ngữ cảnh câu Việt đang dịch."
+   }
+  ],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "esl-v2",
+  "version": 1
+ },
+ {
+  "id": "esl-v2-r07-u04-004",
+  "practiceLevel": "3.5",
+  "type": "sentence",
+  "topic": "Vì sao/vì vậy",
+  "promptVi": "Xe buýt đến muộn nên chúng tôi lỡ phần đầu buổi học.",
+  "referenceAnswers": [
+   "The bus arrived late, so we missed the start of class."
+  ],
+  "grammarTags": [
+   "cause_and_effect",
+   "sentence",
+   "R07"
+  ],
+  "explanationVi": "Điểm cần nắm: So nối sự kiện xe đến muộn và kết quả lỡ giờ học. Kiểm tra chủ ngữ, dấu hiệu thời gian, từ nối và nghĩa đầy đủ. Bản dịch đúng có thể khác đáp án mẫu.",
+  "rationaleVi": "Nói kế hoạch, mục đích và so sánh đơn giản. Bài bổ sung từ bộ ESL v2 (R07-U04), chủ đề Vì sao/vì vậy.",
+  "commonErrors": [
+   {
+    "incorrect": "The bus arrived late, so we miss the start of class.",
+    "correction": "The bus arrived late, so we missed the start of class.",
+    "reasonVi": "Câu sai dùng “miss” thay vì “missed”. So nối sự kiện xe đến muộn và kết quả lỡ giờ học. Chỉ đánh giá lỗi trong ngữ cảnh câu Việt đang dịch."
+   },
+   {
+    "incorrect": "The bus arrive late, so we missed the start of class.",
+    "correction": "The bus arrived late, so we missed the start of class.",
+    "reasonVi": "Câu sai dùng “arrive” thay vì “arrived”. So nối sự kiện xe đến muộn và kết quả lỡ giờ học. Chỉ đánh giá lỗi trong ngữ cảnh câu Việt đang dịch."
+   }
+  ],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "esl-v2",
+  "version": 1
+ },
+ {
+  "id": "esl-v2-r07-u04-005",
+  "practiceLevel": "3.5",
+  "type": "sentence",
+  "topic": "Vì sao/vì vậy",
+  "promptVi": "Tôi mang áo khoác vì dự báo nói trời sẽ lạnh.",
+  "referenceAnswers": [
+   "I brought a jacket because the forecast said it would be cold."
+  ],
+  "grammarTags": [
+   "cause_and_effect",
+   "sentence",
+   "R07"
+  ],
+  "explanationVi": "Điểm cần nắm: Because giới thiệu lý do; would be là tương lai nhìn từ quá khứ trong lời dự báo. Kiểm tra chủ ngữ, dấu hiệu thời gian, từ nối và nghĩa đầy đủ. Bản dịch đúng có thể khác đáp án mẫu.",
+  "rationaleVi": "Nói kế hoạch, mục đích và so sánh đơn giản. Bài bổ sung từ bộ ESL v2 (R07-U04), chủ đề Vì sao/vì vậy.",
+  "commonErrors": [
+   {
+    "incorrect": "I brought a jacket because the forecast say it would be cold.",
+    "correction": "I brought a jacket because the forecast said it would be cold.",
+    "reasonVi": "Câu sai dùng “say” thay vì “said”. Because giới thiệu lý do; would be là tương lai nhìn từ quá khứ trong lời dự báo. Chỉ đánh giá lỗi trong ngữ cảnh câu Việt đang dịch."
+   },
+   {
+    "incorrect": "I brought a jacket because the forecast said it would cold.",
+    "correction": "I brought a jacket because the forecast said it would be cold.",
+    "reasonVi": "Câu sai dùng “[thiếu thành phần]” thay vì “be”. Because giới thiệu lý do; would be là tương lai nhìn từ quá khứ trong lời dự báo. Chỉ đánh giá lỗi trong ngữ cảnh câu Việt đang dịch."
+   }
+  ],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "esl-v2",
+  "version": 1
+ },
+ {
+  "id": "esl-v2-r07-u04-006",
+  "practiceLevel": "3.5",
+  "type": "sentence",
+  "topic": "Vì sao/vì vậy",
+  "promptVi": "Vì mất điện, cửa hàng đã đóng sớm.",
+  "referenceAnswers": [
+   "The shop closed early because the power was out."
+  ],
+  "grammarTags": [
+   "cause_and_effect",
+   "sentence",
+   "R07"
+  ],
+  "explanationVi": "Điểm cần nắm: Because the power was out là mệnh đề nguyên nhân; closed là quá khứ. Kiểm tra chủ ngữ, dấu hiệu thời gian, từ nối và nghĩa đầy đủ. Bản dịch đúng có thể khác đáp án mẫu.",
+  "rationaleVi": "Nói kế hoạch, mục đích và so sánh đơn giản. Bài bổ sung từ bộ ESL v2 (R07-U04), chủ đề Vì sao/vì vậy.",
+  "commonErrors": [
+   {
+    "incorrect": "The shop closed early because the power out.",
+    "correction": "The shop closed early because the power was out.",
+    "reasonVi": "Câu sai dùng “[thiếu thành phần]” thay vì “was”. Because the power was out là mệnh đề nguyên nhân; closed là quá khứ. Chỉ đánh giá lỗi trong ngữ cảnh câu Việt đang dịch."
+   },
+   {
+    "incorrect": "The shop close early because the power was out.",
+    "correction": "The shop closed early because the power was out.",
+    "reasonVi": "Câu sai dùng “close” thay vì “closed”. Because the power was out là mệnh đề nguyên nhân; closed là quá khứ. Chỉ đánh giá lỗi trong ngữ cảnh câu Việt đang dịch."
+   }
+  ],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "esl-v2",
+  "version": 1
+ },
+ {
+  "id": "esl-v2-r07-u04-007",
+  "practiceLevel": "3.5",
+  "type": "sentence",
+  "topic": "Vì sao/vì vậy",
+  "promptVi": "Điện thoại tôi hết pin nên tôi không gọi được.",
+  "referenceAnswers": [
+   "My phone ran out of battery, so I couldn't make a call."
+  ],
+  "grammarTags": [
+   "cause_and_effect",
+   "sentence",
+   "R07"
+  ],
+  "explanationVi": "Điểm cần nắm: So nối nguyên nhân hết pin và hệ quả couldn't make a call. Kiểm tra chủ ngữ, dấu hiệu thời gian, từ nối và nghĩa đầy đủ. Bản dịch đúng có thể khác đáp án mẫu.",
+  "rationaleVi": "Nói kế hoạch, mục đích và so sánh đơn giản. Bài bổ sung từ bộ ESL v2 (R07-U04), chủ đề Vì sao/vì vậy.",
+  "commonErrors": [
+   {
+    "incorrect": "My phone ran out of battery, so I couldn't made a call.",
+    "correction": "My phone ran out of battery, so I couldn't make a call.",
+    "reasonVi": "Câu sai dùng “made” thay vì “make”. So nối nguyên nhân hết pin và hệ quả couldn't make a call. Chỉ đánh giá lỗi trong ngữ cảnh câu Việt đang dịch."
+   },
+   {
+    "incorrect": "My phone run out of battery, so I couldn't make a call.",
+    "correction": "My phone ran out of battery, so I couldn't make a call.",
+    "reasonVi": "Câu sai dùng “run” thay vì “ran”. So nối nguyên nhân hết pin và hệ quả couldn't make a call. Chỉ đánh giá lỗi trong ngữ cảnh câu Việt đang dịch."
+   }
+  ],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "esl-v2",
+  "version": 1
+ },
+ {
+  "id": "esl-v2-r07-u04-008",
+  "practiceLevel": "3.5",
+  "type": "sentence",
+  "topic": "Vì sao/vì vậy",
+  "promptVi": "Hôm qua cô ấy nói rất rõ nên mọi người đều hiểu hướng dẫn.",
+  "referenceAnswers": [
+   "She spoke clearly yesterday, so everyone understood the instructions."
+  ],
+  "grammarTags": [
+   "cause_and_effect",
+   "sentence",
+   "R07"
+  ],
+  "explanationVi": "Điểm cần nắm: Spoke và understood cùng quá khứ; so thể hiện kết quả. Kiểm tra chủ ngữ, dấu hiệu thời gian, từ nối và nghĩa đầy đủ. Bản dịch đúng có thể khác đáp án mẫu.",
+  "rationaleVi": "Nói kế hoạch, mục đích và so sánh đơn giản. Bài bổ sung từ bộ ESL v2 (R07-U04), chủ đề Vì sao/vì vậy.",
+  "commonErrors": [
+   {
+    "incorrect": "She spoke clearly yesterday, so everyone understand the instructions.",
+    "correction": "She spoke clearly yesterday, so everyone understood the instructions.",
+    "reasonVi": "Câu sai dùng “understand” thay vì “understood”. Spoke và understood cùng quá khứ; so thể hiện kết quả. Chỉ đánh giá lỗi trong ngữ cảnh câu Việt đang dịch."
+   },
+   {
+    "incorrect": "She speak clearly yesterday, so everyone understood the instructions.",
+    "correction": "She spoke clearly yesterday, so everyone understood the instructions.",
+    "reasonVi": "Câu sai dùng “speak” thay vì “spoke”. Spoke và understood cùng quá khứ; so thể hiện kết quả. Chỉ đánh giá lỗi trong ngữ cảnh câu Việt đang dịch."
+   }
+  ],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "esl-v2",
+  "version": 1
+ },
+ {
+  "id": "esl-v2-r07-u04-009",
+  "practiceLevel": "3.5",
+  "type": "sentence",
+  "topic": "Vì sao/vì vậy",
+  "promptVi": "Tôi đã chọn đi bộ vì nhà ga ở gần.",
+  "referenceAnswers": [
+   "I chose to walk because the station was nearby."
+  ],
+  "grammarTags": [
+   "cause_and_effect",
+   "sentence",
+   "R07"
+  ],
+  "explanationVi": "Điểm cần nắm: Because + mệnh đề nêu lý do; chose là quá khứ của choose. Kiểm tra chủ ngữ, dấu hiệu thời gian, từ nối và nghĩa đầy đủ. Bản dịch đúng có thể khác đáp án mẫu.",
+  "rationaleVi": "Nói kế hoạch, mục đích và so sánh đơn giản. Bài bổ sung từ bộ ESL v2 (R07-U04), chủ đề Vì sao/vì vậy.",
+  "commonErrors": [
+   {
+    "incorrect": "I chose to walk because the station nearby.",
+    "correction": "I chose to walk because the station was nearby.",
+    "reasonVi": "Câu sai dùng “[thiếu thành phần]” thay vì “was”. Because + mệnh đề nêu lý do; chose là quá khứ của choose. Chỉ đánh giá lỗi trong ngữ cảnh câu Việt đang dịch."
+   },
+   {
+    "incorrect": "I choosed to walk because the station was nearby.",
+    "correction": "I chose to walk because the station was nearby.",
+    "reasonVi": "Câu sai dùng “choosed” thay vì “chose”. Because + mệnh đề nêu lý do; chose là quá khứ của choose. Chỉ đánh giá lỗi trong ngữ cảnh câu Việt đang dịch."
+   }
+  ],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "esl-v2",
+  "version": 1
+ },
+ {
+  "id": "esl-v2-r07-u04-010",
+  "practiceLevel": "3.5",
+  "type": "sentence",
+  "topic": "Vì sao/vì vậy",
+  "promptVi": "Đường đang được sửa nên chúng ta phải đi đường vòng.",
+  "referenceAnswers": [
+   "The road is being repaired, so we have to take a detour."
+  ],
+  "grammarTags": [
+   "cause_and_effect",
+   "sentence",
+   "R07"
+  ],
+  "explanationVi": "Điểm cần nắm: Is being repaired là bị động tiếp diễn; so nối kết quả đi đường vòng. Kiểm tra chủ ngữ, dấu hiệu thời gian, từ nối và nghĩa đầy đủ. Bản dịch đúng có thể khác đáp án mẫu.",
+  "rationaleVi": "Nói kế hoạch, mục đích và so sánh đơn giản. Bài bổ sung từ bộ ESL v2 (R07-U04), chủ đề Vì sao/vì vậy.",
+  "commonErrors": [
+   {
+    "incorrect": "The road being repaired, so we have to take a detour.",
+    "correction": "The road is being repaired, so we have to take a detour.",
+    "reasonVi": "Câu sai dùng “[thiếu thành phần]” thay vì “is”. Is being repaired là bị động tiếp diễn; so nối kết quả đi đường vòng. Chỉ đánh giá lỗi trong ngữ cảnh câu Việt đang dịch."
+   },
+   {
+    "incorrect": "The road is being repaired, so we has to take a detour.",
+    "correction": "The road is being repaired, so we have to take a detour.",
+    "reasonVi": "Câu sai dùng “has” thay vì “have”. Is being repaired là bị động tiếp diễn; so nối kết quả đi đường vòng. Chỉ đánh giá lỗi trong ngữ cảnh câu Việt đang dịch."
+   }
+  ],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "esl-v2",
+  "version": 1
+ },
+ {
+  "id": "esl-v2-r07-u04-011",
+  "practiceLevel": "3.5",
+  "type": "sentence",
+  "topic": "Vì sao/vì vậy",
+  "promptVi": "Tôi không mua chiếc áo vì nó quá đắt.",
+  "referenceAnswers": [
+   "I didn't buy the shirt because it was too expensive."
+  ],
+  "grammarTags": [
+   "cause_and_effect",
+   "sentence",
+   "R07"
+  ],
+  "explanationVi": "Điểm cần nắm: Didn't + buy nguyên mẫu; because nối nguyên nhân quá đắt. Kiểm tra chủ ngữ, dấu hiệu thời gian, từ nối và nghĩa đầy đủ. Bản dịch đúng có thể khác đáp án mẫu.",
+  "rationaleVi": "Nói kế hoạch, mục đích và so sánh đơn giản. Bài bổ sung từ bộ ESL v2 (R07-U04), chủ đề Vì sao/vì vậy.",
+  "commonErrors": [
+   {
+    "incorrect": "I didn't bought the shirt because it was too expensive.",
+    "correction": "I didn't buy the shirt because it was too expensive.",
+    "reasonVi": "Câu sai dùng “bought” thay vì “buy”. Didn't + buy nguyên mẫu; because nối nguyên nhân quá đắt. Chỉ đánh giá lỗi trong ngữ cảnh câu Việt đang dịch."
+   },
+   {
+    "incorrect": "I didn't buy the shirt because was too expensive.",
+    "correction": "I didn't buy the shirt because it was too expensive.",
+    "reasonVi": "Câu sai dùng “[thiếu thành phần]” thay vì “it”. Didn't + buy nguyên mẫu; because nối nguyên nhân quá đắt. Chỉ đánh giá lỗi trong ngữ cảnh câu Việt đang dịch."
+   }
+  ],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "esl-v2",
+  "version": 1
+ },
+ {
+  "id": "esl-v2-r07-u04-012",
+  "practiceLevel": "3.5",
+  "type": "sentence",
+  "topic": "Vì sao/vì vậy",
+  "promptVi": "Tháng trước Bình luyện tập đều đặn nên anh ấy tiến bộ nhanh.",
+  "referenceAnswers": [
+   "Binh practised regularly last month, so he improved quickly."
+  ],
+  "grammarTags": [
+   "cause_and_effect",
+   "sentence",
+   "R07"
+  ],
+  "explanationVi": "Điểm cần nắm: So nối thói quen luyện tập trong giai đoạn đã qua với kết quả tiến bộ. Kiểm tra chủ ngữ, dấu hiệu thời gian, từ nối và nghĩa đầy đủ. Bản dịch đúng có thể khác đáp án mẫu.",
+  "rationaleVi": "Nói kế hoạch, mục đích và so sánh đơn giản. Bài bổ sung từ bộ ESL v2 (R07-U04), chủ đề Vì sao/vì vậy.",
+  "commonErrors": [
+   {
+    "incorrect": "Binh practised regularly last month, so he improve quickly.",
+    "correction": "Binh practised regularly last month, so he improved quickly.",
+    "reasonVi": "Câu sai dùng “improve” thay vì “improved”. So nối thói quen luyện tập trong giai đoạn đã qua với kết quả tiến bộ. Chỉ đánh giá lỗi trong ngữ cảnh câu Việt đang dịch."
+   },
+   {
+    "incorrect": "Binh practice regularly last month, so he improved quickly.",
+    "correction": "Binh practised regularly last month, so he improved quickly.",
+    "reasonVi": "Câu sai dùng “practice” thay vì “practised”. So nối thói quen luyện tập trong giai đoạn đã qua với kết quả tiến bộ. Chỉ đánh giá lỗi trong ngữ cảnh câu Việt đang dịch."
+   }
+  ],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "esl-v2",
+  "version": 1
+ },
+ {
+  "id": "esl-v2-r07-u04-013",
+  "practiceLevel": "3.5",
+  "type": "sentence",
+  "topic": "Vì sao/vì vậy",
+  "promptVi": "Vì nhà hàng quá đông, chúng tôi phải đợi bàn.",
+  "referenceAnswers": [
+   "We had to wait for a table because the restaurant was crowded."
+  ],
+  "grammarTags": [
+   "cause_and_effect",
+   "sentence",
+   "R07"
+  ],
+  "explanationVi": "Điểm cần nắm: Because + mệnh đề giải thích phải chờ; had to ở quá khứ. Kiểm tra chủ ngữ, dấu hiệu thời gian, từ nối và nghĩa đầy đủ. Bản dịch đúng có thể khác đáp án mẫu.",
+  "rationaleVi": "Nói kế hoạch, mục đích và so sánh đơn giản. Bài bổ sung từ bộ ESL v2 (R07-U04), chủ đề Vì sao/vì vậy.",
+  "commonErrors": [
+   {
+    "incorrect": "We had to wait for a table because the restaurant crowded.",
+    "correction": "We had to wait for a table because the restaurant was crowded.",
+    "reasonVi": "Câu sai dùng “[thiếu thành phần]” thay vì “was”. Because + mệnh đề giải thích phải chờ; had to ở quá khứ. Chỉ đánh giá lỗi trong ngữ cảnh câu Việt đang dịch."
+   },
+   {
+    "incorrect": "We has to wait for a table because the restaurant was crowded.",
+    "correction": "We had to wait for a table because the restaurant was crowded.",
+    "reasonVi": "Câu sai dùng “has” thay vì “had”. Because + mệnh đề giải thích phải chờ; had to ở quá khứ. Chỉ đánh giá lỗi trong ngữ cảnh câu Việt đang dịch."
+   }
+  ],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "esl-v2",
+  "version": 1
+ },
+ {
+  "id": "esl-v2-r07-u04-014",
+  "practiceLevel": "3.5",
+  "type": "sentence",
+  "topic": "Vì sao/vì vậy",
+  "promptVi": "Hôm qua họ không nghe thấy tiếng chuông nên đến muộn.",
+  "referenceAnswers": [
+   "They didn't hear the bell yesterday, so they arrived late."
+  ],
+  "grammarTags": [
+   "cause_and_effect",
+   "sentence",
+   "R07"
+  ],
+  "explanationVi": "Điểm cần nắm: Didn't hear là phủ định quá khứ; so nối kết quả đến muộn. Kiểm tra chủ ngữ, dấu hiệu thời gian, từ nối và nghĩa đầy đủ. Bản dịch đúng có thể khác đáp án mẫu.",
+  "rationaleVi": "Nói kế hoạch, mục đích và so sánh đơn giản. Bài bổ sung từ bộ ESL v2 (R07-U04), chủ đề Vì sao/vì vậy.",
+  "commonErrors": [
+   {
+    "incorrect": "They didn't heard the bell yesterday, so they arrived late.",
+    "correction": "They didn't hear the bell yesterday, so they arrived late.",
+    "reasonVi": "Câu sai dùng “heard” thay vì “hear”. Didn't hear là phủ định quá khứ; so nối kết quả đến muộn. Chỉ đánh giá lỗi trong ngữ cảnh câu Việt đang dịch."
+   },
+   {
+    "incorrect": "They didn't hear the bell yesterday, so they arrives late.",
+    "correction": "They didn't hear the bell yesterday, so they arrived late.",
+    "reasonVi": "Câu sai dùng “arrives” thay vì “arrived”. Didn't hear là phủ định quá khứ; so nối kết quả đến muộn. Chỉ đánh giá lỗi trong ngữ cảnh câu Việt đang dịch."
+   }
+  ],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "esl-v2",
+  "version": 1
+ },
+ {
+  "id": "esl-v2-r07-u04-015",
+  "practiceLevel": "3.5",
+  "type": "sentence",
+  "topic": "Vì sao/vì vậy",
+  "promptVi": "Hôm nay trời rất nóng nên tôi đang uống thêm nước.",
+  "referenceAnswers": [
+   "It's very hot today, so I'm drinking more water."
+  ],
+  "grammarTags": [
+   "cause_and_effect",
+   "sentence",
+   "R07"
+  ],
+  "explanationVi": "Điểm cần nắm: So nối hiện trạng nóng với hành động uống thêm nước đang diễn ra. Kiểm tra chủ ngữ, dấu hiệu thời gian, từ nối và nghĩa đầy đủ. Bản dịch đúng có thể khác đáp án mẫu.",
+  "rationaleVi": "Nói kế hoạch, mục đích và so sánh đơn giản. Bài bổ sung từ bộ ESL v2 (R07-U04), chủ đề Vì sao/vì vậy.",
+  "commonErrors": [
+   {
+    "incorrect": "It's very hot today, so I drinking more water.",
+    "correction": "It's very hot today, so I'm drinking more water.",
+    "reasonVi": "Câu sai dùng “I” thay vì “I'm”. So nối hiện trạng nóng với hành động uống thêm nước đang diễn ra. Chỉ đánh giá lỗi trong ngữ cảnh câu Việt đang dịch."
+   },
+   {
+    "incorrect": "It's very hot today, so I'm drink more water.",
+    "correction": "It's very hot today, so I'm drinking more water.",
+    "reasonVi": "Câu sai dùng “drink” thay vì “drinking”. So nối hiện trạng nóng với hành động uống thêm nước đang diễn ra. Chỉ đánh giá lỗi trong ngữ cảnh câu Việt đang dịch."
+   }
+  ],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "esl-v2",
+  "version": 1
+ },
+ {
+  "id": "esl-v2-r07-u04-016",
+  "practiceLevel": "3.5",
+  "type": "sentence",
+  "topic": "Vì sao/vì vậy",
+  "promptVi": "Cậu bé nghỉ một lát vì cậu ấy mệt sau khi chạy.",
+  "referenceAnswers": [
+   "The boy took a short break because he was tired after running."
+  ],
+  "grammarTags": [
+   "cause_and_effect",
+   "sentence",
+   "R07"
+  ],
+  "explanationVi": "Điểm cần nắm: Because + he was tired là mệnh đề nguyên nhân; after + V-ing. Kiểm tra chủ ngữ, dấu hiệu thời gian, từ nối và nghĩa đầy đủ. Bản dịch đúng có thể khác đáp án mẫu.",
+  "rationaleVi": "Nói kế hoạch, mục đích và so sánh đơn giản. Bài bổ sung từ bộ ESL v2 (R07-U04), chủ đề Vì sao/vì vậy.",
+  "commonErrors": [
+   {
+    "incorrect": "The boy took a short break because he tired after running.",
+    "correction": "The boy took a short break because he was tired after running.",
+    "reasonVi": "Câu sai dùng “[thiếu thành phần]” thay vì “was”. Because + he was tired là mệnh đề nguyên nhân; after + V-ing. Chỉ đánh giá lỗi trong ngữ cảnh câu Việt đang dịch."
+   },
+   {
+    "incorrect": "The boy took a short break because he was tired after run.",
+    "correction": "The boy took a short break because he was tired after running.",
+    "reasonVi": "Câu sai dùng “run.” thay vì “running.”. Because + he was tired là mệnh đề nguyên nhân; after + V-ing. Chỉ đánh giá lỗi trong ngữ cảnh câu Việt đang dịch."
+   }
+  ],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "esl-v2",
+  "version": 1
+ },
+ {
+  "id": "esl-v2-r07-u04-017",
+  "practiceLevel": "3.5",
+  "type": "sentence",
+  "topic": "Vì sao/vì vậy",
+  "promptVi": "Tối qua mọi người giữ im lặng nên em bé tiếp tục ngủ.",
+  "referenceAnswers": [
+   "Everyone stayed quiet last night, so the baby kept sleeping."
+  ],
+  "grammarTags": [
+   "cause_and_effect",
+   "sentence",
+   "R07"
+  ],
+  "explanationVi": "Điểm cần nắm: So nối nguyên nhân và kết quả; kept + V-ing nêu tiếp tục ngủ. Kiểm tra chủ ngữ, dấu hiệu thời gian, từ nối và nghĩa đầy đủ. Bản dịch đúng có thể khác đáp án mẫu.",
+  "rationaleVi": "Nói kế hoạch, mục đích và so sánh đơn giản. Bài bổ sung từ bộ ESL v2 (R07-U04), chủ đề Vì sao/vì vậy.",
+  "commonErrors": [
+   {
+    "incorrect": "Everyone stay quiet last night, so the baby kept sleeping.",
+    "correction": "Everyone stayed quiet last night, so the baby kept sleeping.",
+    "reasonVi": "Câu sai dùng “stay” thay vì “stayed”. So nối nguyên nhân và kết quả; kept + V-ing nêu tiếp tục ngủ. Chỉ đánh giá lỗi trong ngữ cảnh câu Việt đang dịch."
+   },
+   {
+    "incorrect": "Everyone stayed quiet last night, so the baby keep sleeping.",
+    "correction": "Everyone stayed quiet last night, so the baby kept sleeping.",
+    "reasonVi": "Câu sai dùng “keep” thay vì “kept”. So nối nguyên nhân và kết quả; kept + V-ing nêu tiếp tục ngủ. Chỉ đánh giá lỗi trong ngữ cảnh câu Việt đang dịch."
+   }
+  ],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "esl-v2",
+  "version": 1
+ },
+ {
+  "id": "esl-v2-r07-u05-001",
+  "practiceLevel": "3.5",
+  "type": "sentence",
+  "topic": "Lượng từ",
+  "promptVi": "Tôi có vài quả táo trong túi.",
+  "referenceAnswers": [
+   "I have a few apples in my bag."
+  ],
+  "grammarTags": [
+   "quantifiers_countability",
+   "sentence",
+   "R07"
+  ],
+  "explanationVi": "Điểm cần nắm: Apple là danh từ đếm được số nhiều, nên dùng a few. Kiểm tra chủ ngữ, dấu hiệu thời gian, từ nối và nghĩa đầy đủ. Bản dịch đúng có thể khác đáp án mẫu.",
+  "rationaleVi": "Nói kế hoạch, mục đích và so sánh đơn giản. Bài bổ sung từ bộ ESL v2 (R07-U05), chủ đề Lượng từ.",
+  "commonErrors": [
+   {
+    "incorrect": "I have a little apples in my bag.",
+    "correction": "I have a few apples in my bag.",
+    "reasonVi": "Câu sai dùng “little” thay vì “few”. Apple là danh từ đếm được số nhiều, nên dùng a few. Chỉ đánh giá lỗi trong ngữ cảnh câu Việt đang dịch."
+   },
+   {
+    "incorrect": "I has a few apples in my bag.",
+    "correction": "I have a few apples in my bag.",
+    "reasonVi": "Câu sai dùng “has” thay vì “have”. Apple là danh từ đếm được số nhiều, nên dùng a few. Chỉ đánh giá lỗi trong ngữ cảnh câu Việt đang dịch."
+   }
+  ],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "esl-v2",
+  "version": 1
+ },
+ {
+  "id": "esl-v2-r07-u05-002",
+  "practiceLevel": "3.5",
+  "type": "sentence",
+  "topic": "Lượng từ",
+  "promptVi": "Chúng tôi chỉ còn một ít sữa trong tủ lạnh.",
+  "referenceAnswers": [
+   "We only have a little milk left in the fridge."
+  ],
+  "grammarTags": [
+   "quantifiers_countability",
+   "sentence",
+   "R07"
+  ],
+  "explanationVi": "Điểm cần nắm: Milk không đếm được, nên dùng a little thay vì a few. Kiểm tra chủ ngữ, dấu hiệu thời gian, từ nối và nghĩa đầy đủ. Bản dịch đúng có thể khác đáp án mẫu.",
+  "rationaleVi": "Nói kế hoạch, mục đích và so sánh đơn giản. Bài bổ sung từ bộ ESL v2 (R07-U05), chủ đề Lượng từ.",
+  "commonErrors": [
+   {
+    "incorrect": "We only have a few milk left in the fridge.",
+    "correction": "We only have a little milk left in the fridge.",
+    "reasonVi": "Câu sai dùng “few” thay vì “little”. Milk không đếm được, nên dùng a little thay vì a few. Chỉ đánh giá lỗi trong ngữ cảnh câu Việt đang dịch."
+   },
+   {
+    "incorrect": "We only have a little milks left in the fridge.",
+    "correction": "We only have a little milk left in the fridge.",
+    "reasonVi": "Câu sai dùng “milks” thay vì “milk”. Milk không đếm được, nên dùng a little thay vì a few. Chỉ đánh giá lỗi trong ngữ cảnh câu Việt đang dịch."
+   }
+  ],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "esl-v2",
+  "version": 1
+ },
+ {
+  "id": "esl-v2-r07-u05-003",
+  "practiceLevel": "3.5",
+  "type": "sentence",
+  "topic": "Lượng từ",
+  "promptVi": "Bạn có quả trứng nào ở nhà không?",
+  "referenceAnswers": [
+   "Do you have any eggs at home?"
+  ],
+  "grammarTags": [
+   "quantifiers_countability",
+   "sentence",
+   "R07"
+  ],
+  "explanationVi": "Điểm cần nắm: Câu hỏi thông tin trung tính thường dùng any; eggs là danh từ đếm được số nhiều. Kiểm tra chủ ngữ, dấu hiệu thời gian, từ nối và nghĩa đầy đủ. Bản dịch đúng có thể khác đáp án mẫu.",
+  "rationaleVi": "Nói kế hoạch, mục đích và so sánh đơn giản. Bài bổ sung từ bộ ESL v2 (R07-U05), chủ đề Lượng từ.",
+  "commonErrors": [
+   {
+    "incorrect": "Do you has any eggs at home?",
+    "correction": "Do you have any eggs at home?",
+    "reasonVi": "Câu sai dùng “has” thay vì “have”. Câu hỏi thông tin trung tính thường dùng any; eggs là danh từ đếm được số nhiều. Chỉ đánh giá lỗi trong ngữ cảnh câu Việt đang dịch."
+   },
+   {
+    "incorrect": "Do you have much eggs at home?",
+    "correction": "Do you have any eggs at home?",
+    "reasonVi": "Câu sai dùng “much” thay vì “any”. Câu hỏi thông tin trung tính thường dùng any; eggs là danh từ đếm được số nhiều. Chỉ đánh giá lỗi trong ngữ cảnh câu Việt đang dịch."
+   }
+  ],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "esl-v2",
+  "version": 1
+ },
+ {
+  "id": "esl-v2-r07-u05-004",
+  "practiceLevel": "3.5",
+  "type": "sentence",
+  "topic": "Lượng từ",
+  "promptVi": "Trong bếp có vài củ cà rốt.",
+  "referenceAnswers": [
+   "There are some carrots in the kitchen."
+  ],
+  "grammarTags": [
+   "quantifiers_countability",
+   "sentence",
+   "R07"
+  ],
+  "explanationVi": "Điểm cần nắm: Carrots là số nhiều nên dùng there are, không dùng there is. Kiểm tra chủ ngữ, dấu hiệu thời gian, từ nối và nghĩa đầy đủ. Bản dịch đúng có thể khác đáp án mẫu.",
+  "rationaleVi": "Nói kế hoạch, mục đích và so sánh đơn giản. Bài bổ sung từ bộ ESL v2 (R07-U05), chủ đề Lượng từ.",
+  "commonErrors": [
+   {
+    "incorrect": "There is some carrots in the kitchen.",
+    "correction": "There are some carrots in the kitchen.",
+    "reasonVi": "Câu sai dùng “is” thay vì “are”. Carrots là số nhiều nên dùng there are, không dùng there is. Chỉ đánh giá lỗi trong ngữ cảnh câu Việt đang dịch."
+   },
+   {
+    "incorrect": "There are much carrots in the kitchen.",
+    "correction": "There are some carrots in the kitchen.",
+    "reasonVi": "Câu sai dùng “much” thay vì “some”. Carrots là số nhiều nên dùng there are, không dùng there is. Chỉ đánh giá lỗi trong ngữ cảnh câu Việt đang dịch."
+   }
+  ],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "esl-v2",
+  "version": 1
+ },
+ {
+  "id": "esl-v2-r07-u05-005",
+  "practiceLevel": "3.5",
+  "type": "sentence",
+  "topic": "Lượng từ",
+  "promptVi": "Tôi không có nhiều thời gian sáng nay.",
+  "referenceAnswers": [
+   "I don't have much time this morning."
+  ],
+  "grammarTags": [
+   "quantifiers_countability",
+   "sentence",
+   "R07"
+  ],
+  "explanationVi": "Điểm cần nắm: Time nghĩa thời gian là không đếm được, dùng much; don't đi với have. Kiểm tra chủ ngữ, dấu hiệu thời gian, từ nối và nghĩa đầy đủ. Bản dịch đúng có thể khác đáp án mẫu.",
+  "rationaleVi": "Nói kế hoạch, mục đích và so sánh đơn giản. Bài bổ sung từ bộ ESL v2 (R07-U05), chủ đề Lượng từ.",
+  "commonErrors": [
+   {
+    "incorrect": "I don't have many time this morning.",
+    "correction": "I don't have much time this morning.",
+    "reasonVi": "Câu sai dùng “many” thay vì “much”. Time nghĩa thời gian là không đếm được, dùng much; don't đi với have. Chỉ đánh giá lỗi trong ngữ cảnh câu Việt đang dịch."
+   },
+   {
+    "incorrect": "I don't has much time this morning.",
+    "correction": "I don't have much time this morning.",
+    "reasonVi": "Câu sai dùng “has” thay vì “have”. Time nghĩa thời gian là không đếm được, dùng much; don't đi với have. Chỉ đánh giá lỗi trong ngữ cảnh câu Việt đang dịch."
+   }
+  ],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "esl-v2",
+  "version": 1
+ },
+ {
+  "id": "esl-v2-r07-u05-006",
+  "practiceLevel": "3.5",
+  "type": "sentence",
+  "topic": "Lượng từ",
+  "promptVi": "Không có nhiều ghế trong phòng họp.",
+  "referenceAnswers": [
+   "There aren't many chairs in the meeting room."
+  ],
+  "grammarTags": [
+   "quantifiers_countability",
+   "sentence",
+   "R07"
+  ],
+  "explanationVi": "Điểm cần nắm: Chairs đếm được số nhiều nên dùng many và there aren't. Kiểm tra chủ ngữ, dấu hiệu thời gian, từ nối và nghĩa đầy đủ. Bản dịch đúng có thể khác đáp án mẫu.",
+  "rationaleVi": "Nói kế hoạch, mục đích và so sánh đơn giản. Bài bổ sung từ bộ ESL v2 (R07-U05), chủ đề Lượng từ.",
+  "commonErrors": [
+   {
+    "incorrect": "There aren't much chairs in the meeting room.",
+    "correction": "There aren't many chairs in the meeting room.",
+    "reasonVi": "Câu sai dùng “much” thay vì “many”. Chairs đếm được số nhiều nên dùng many và there aren't. Chỉ đánh giá lỗi trong ngữ cảnh câu Việt đang dịch."
+   },
+   {
+    "incorrect": "There isn't many chairs in the meeting room.",
+    "correction": "There aren't many chairs in the meeting room.",
+    "reasonVi": "Câu sai dùng “isn't” thay vì “aren't”. Chairs đếm được số nhiều nên dùng many và there aren't. Chỉ đánh giá lỗi trong ngữ cảnh câu Việt đang dịch."
+   }
+  ],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "esl-v2",
+  "version": 1
+ },
+ {
+  "id": "esl-v2-r07-u05-007",
+  "practiceLevel": "3.5",
+  "type": "sentence",
+  "topic": "Lượng từ",
+  "promptVi": "Cô ấy chỉ có một ít tiền mặt bên mình.",
+  "referenceAnswers": [
+   "She has a little cash with her."
+  ],
+  "grammarTags": [
+   "quantifiers_countability",
+   "sentence",
+   "R07"
+  ],
+  "explanationVi": "Điểm cần nắm: Cash không đếm được nên dùng a little; she số ít dùng has. Kiểm tra chủ ngữ, dấu hiệu thời gian, từ nối và nghĩa đầy đủ. Bản dịch đúng có thể khác đáp án mẫu.",
+  "rationaleVi": "Nói kế hoạch, mục đích và so sánh đơn giản. Bài bổ sung từ bộ ESL v2 (R07-U05), chủ đề Lượng từ.",
+  "commonErrors": [
+   {
+    "incorrect": "She has a few cash with her.",
+    "correction": "She has a little cash with her.",
+    "reasonVi": "Câu sai dùng “few” thay vì “little”. Cash không đếm được nên dùng a little; she số ít dùng has. Chỉ đánh giá lỗi trong ngữ cảnh câu Việt đang dịch."
+   },
+   {
+    "incorrect": "She have a little cash with her.",
+    "correction": "She has a little cash with her.",
+    "reasonVi": "Câu sai dùng “have” thay vì “has”. Cash không đếm được nên dùng a little; she số ít dùng has. Chỉ đánh giá lỗi trong ngữ cảnh câu Việt đang dịch."
+   }
+  ],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "esl-v2",
+  "version": 1
+ },
+ {
+  "id": "esl-v2-r07-u05-008",
+  "practiceLevel": "3.5",
+  "type": "sentence",
+  "topic": "Lượng từ",
+  "promptVi": "Chúng ta cần thêm một ít gạo cho bữa tối.",
+  "referenceAnswers": [
+   "We need some more rice for dinner."
+  ],
+  "grammarTags": [
+   "quantifiers_countability",
+   "sentence",
+   "R07"
+  ],
+  "explanationVi": "Điểm cần nắm: Rice là không đếm được; không thêm -s khi chỉ gạo nói chung. Kiểm tra chủ ngữ, dấu hiệu thời gian, từ nối và nghĩa đầy đủ. Bản dịch đúng có thể khác đáp án mẫu.",
+  "rationaleVi": "Nói kế hoạch, mục đích và so sánh đơn giản. Bài bổ sung từ bộ ESL v2 (R07-U05), chủ đề Lượng từ.",
+  "commonErrors": [
+   {
+    "incorrect": "We need some more rices for dinner.",
+    "correction": "We need some more rice for dinner.",
+    "reasonVi": "Câu sai dùng “rices” thay vì “rice”. Rice là không đếm được; không thêm -s khi chỉ gạo nói chung. Chỉ đánh giá lỗi trong ngữ cảnh câu Việt đang dịch."
+   },
+   {
+    "incorrect": "We needs some more rice for dinner.",
+    "correction": "We need some more rice for dinner.",
+    "reasonVi": "Câu sai dùng “needs” thay vì “need”. Rice là không đếm được; không thêm -s khi chỉ gạo nói chung. Chỉ đánh giá lỗi trong ngữ cảnh câu Việt đang dịch."
+   }
+  ],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "esl-v2",
+  "version": 1
+ },
+ {
+  "id": "esl-v2-r07-u05-009",
+  "practiceLevel": "3.5",
+  "type": "sentence",
+  "topic": "Lượng từ",
+  "promptVi": "Có bao nhiêu học sinh trong lớp bạn?",
+  "referenceAnswers": [
+   "How many students are there in your class?"
+  ],
+  "grammarTags": [
+   "quantifiers_countability",
+   "sentence",
+   "R07"
+  ],
+  "explanationVi": "Điểm cần nắm: Students đếm được nên hỏi how many; student phải số nhiều. Kiểm tra chủ ngữ, dấu hiệu thời gian, từ nối và nghĩa đầy đủ. Bản dịch đúng có thể khác đáp án mẫu.",
+  "rationaleVi": "Nói kế hoạch, mục đích và so sánh đơn giản. Bài bổ sung từ bộ ESL v2 (R07-U05), chủ đề Lượng từ.",
+  "commonErrors": [
+   {
+    "incorrect": "How much students are there in your class?",
+    "correction": "How many students are there in your class?",
+    "reasonVi": "Câu sai dùng “much” thay vì “many”. Students đếm được nên hỏi how many; student phải số nhiều. Chỉ đánh giá lỗi trong ngữ cảnh câu Việt đang dịch."
+   },
+   {
+    "incorrect": "How many student are there in your class?",
+    "correction": "How many students are there in your class?",
+    "reasonVi": "Câu sai dùng “student” thay vì “students”. Students đếm được nên hỏi how many; student phải số nhiều. Chỉ đánh giá lỗi trong ngữ cảnh câu Việt đang dịch."
+   }
+  ],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "esl-v2",
+  "version": 1
+ },
+ {
+  "id": "esl-v2-r07-u05-010",
+  "practiceLevel": "3.5",
+  "type": "sentence",
+  "topic": "Lượng từ",
+  "promptVi": "Bạn uống bao nhiêu nước mỗi ngày?",
+  "referenceAnswers": [
+   "How much water do you drink each day?"
+  ],
+  "grammarTags": [
+   "quantifiers_countability",
+   "sentence",
+   "R07"
+  ],
+  "explanationVi": "Điểm cần nắm: Water không đếm được nên hỏi how much; trợ động từ do đi với you. Kiểm tra chủ ngữ, dấu hiệu thời gian, từ nối và nghĩa đầy đủ. Bản dịch đúng có thể khác đáp án mẫu.",
+  "rationaleVi": "Nói kế hoạch, mục đích và so sánh đơn giản. Bài bổ sung từ bộ ESL v2 (R07-U05), chủ đề Lượng từ.",
+  "commonErrors": [
+   {
+    "incorrect": "How many water do you drink each day?",
+    "correction": "How much water do you drink each day?",
+    "reasonVi": "Câu sai dùng “many” thay vì “much”. Water không đếm được nên hỏi how much; trợ động từ do đi với you. Chỉ đánh giá lỗi trong ngữ cảnh câu Việt đang dịch."
+   },
+   {
+    "incorrect": "How much waters do you drink each day?",
+    "correction": "How much water do you drink each day?",
+    "reasonVi": "Câu sai dùng “waters” thay vì “water”. Water không đếm được nên hỏi how much; trợ động từ do đi với you. Chỉ đánh giá lỗi trong ngữ cảnh câu Việt đang dịch."
+   }
+  ],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "esl-v2",
+  "version": 1
+ },
+ {
+  "id": "esl-v2-r07-u05-011",
+  "practiceLevel": "3.5",
+  "type": "sentence",
+  "topic": "Lượng từ",
+  "promptVi": "Tôi còn vài phút trước khi xe buýt tới.",
+  "referenceAnswers": [
+   "I have a few minutes before the bus arrives."
+  ],
+  "grammarTags": [
+   "quantifiers_countability",
+   "sentence",
+   "R07"
+  ],
+  "explanationVi": "Điểm cần nắm: Minutes đếm được số nhiều dùng a few; the bus số ít dùng arrives. Kiểm tra chủ ngữ, dấu hiệu thời gian, từ nối và nghĩa đầy đủ. Bản dịch đúng có thể khác đáp án mẫu.",
+  "rationaleVi": "Nói kế hoạch, mục đích và so sánh đơn giản. Bài bổ sung từ bộ ESL v2 (R07-U05), chủ đề Lượng từ.",
+  "commonErrors": [
+   {
+    "incorrect": "I have a little minutes before the bus arrives.",
+    "correction": "I have a few minutes before the bus arrives.",
+    "reasonVi": "Câu sai dùng “little” thay vì “few”. Minutes đếm được số nhiều dùng a few; the bus số ít dùng arrives. Chỉ đánh giá lỗi trong ngữ cảnh câu Việt đang dịch."
+   },
+   {
+    "incorrect": "I have a few minutes before the bus arrive.",
+    "correction": "I have a few minutes before the bus arrives.",
+    "reasonVi": "Câu sai dùng “arrive.” thay vì “arrives.”. Minutes đếm được số nhiều dùng a few; the bus số ít dùng arrives. Chỉ đánh giá lỗi trong ngữ cảnh câu Việt đang dịch."
+   }
+  ],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "esl-v2",
+  "version": 1
+ },
+ {
+  "id": "esl-v2-r07-u05-012",
+  "practiceLevel": "3.5",
+  "type": "sentence",
+  "topic": "Lượng từ",
+  "promptVi": "Tôi cần một chút lời khuyên cho buổi phỏng vấn.",
+  "referenceAnswers": [
+   "I need a little advice for the interview."
+  ],
+  "grammarTags": [
+   "quantifiers_countability",
+   "sentence",
+   "R07"
+  ],
+  "explanationVi": "Điểm cần nắm: Advice không đếm được, không dùng advices; a little thể hiện số lượng nhỏ. Kiểm tra chủ ngữ, dấu hiệu thời gian, từ nối và nghĩa đầy đủ. Bản dịch đúng có thể khác đáp án mẫu.",
+  "rationaleVi": "Nói kế hoạch, mục đích và so sánh đơn giản. Bài bổ sung từ bộ ESL v2 (R07-U05), chủ đề Lượng từ.",
+  "commonErrors": [
+   {
+    "incorrect": "I need a few advices for the interview.",
+    "correction": "I need a little advice for the interview.",
+    "reasonVi": "Câu sai dùng “few advices” thay vì “little advice”. Advice không đếm được, không dùng advices; a little thể hiện số lượng nhỏ. Chỉ đánh giá lỗi trong ngữ cảnh câu Việt đang dịch."
+   },
+   {
+    "incorrect": "I needs a little advice for the interview.",
+    "correction": "I need a little advice for the interview.",
+    "reasonVi": "Câu sai dùng “needs” thay vì “need”. Advice không đếm được, không dùng advices; a little thể hiện số lượng nhỏ. Chỉ đánh giá lỗi trong ngữ cảnh câu Việt đang dịch."
+   }
+  ],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "esl-v2",
+  "version": 1
+ },
+ {
+  "id": "esl-v2-r07-u05-013",
+  "practiceLevel": "3.5",
+  "type": "sentence",
+  "topic": "Lượng từ",
+  "promptVi": "Hôm qua chúng tôi không mua bất kỳ chiếc vé nào.",
+  "referenceAnswers": [
+   "We didn't buy any tickets yesterday."
+  ],
+  "grammarTags": [
+   "quantifiers_countability",
+   "sentence",
+   "R07"
+  ],
+  "explanationVi": "Điểm cần nắm: Phủ định quá khứ dùng didn't + buy và any tickets. Kiểm tra chủ ngữ, dấu hiệu thời gian, từ nối và nghĩa đầy đủ. Bản dịch đúng có thể khác đáp án mẫu.",
+  "rationaleVi": "Nói kế hoạch, mục đích và so sánh đơn giản. Bài bổ sung từ bộ ESL v2 (R07-U05), chủ đề Lượng từ.",
+  "commonErrors": [
+   {
+    "incorrect": "We didn't bought any tickets yesterday.",
+    "correction": "We didn't buy any tickets yesterday.",
+    "reasonVi": "Câu sai dùng “bought” thay vì “buy”. Phủ định quá khứ dùng didn't + buy và any tickets. Chỉ đánh giá lỗi trong ngữ cảnh câu Việt đang dịch."
+   },
+   {
+    "incorrect": "We didn't buy much tickets yesterday.",
+    "correction": "We didn't buy any tickets yesterday.",
+    "reasonVi": "Câu sai dùng “much” thay vì “any”. Phủ định quá khứ dùng didn't + buy và any tickets. Chỉ đánh giá lỗi trong ngữ cảnh câu Việt đang dịch."
+   }
+  ],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "esl-v2",
+  "version": 1
+ },
+ {
+  "id": "esl-v2-r07-u05-014",
+  "practiceLevel": "3.5",
+  "type": "sentence",
+  "topic": "Lượng từ",
+  "promptVi": "Có quá nhiều xe máy trên con đường này.",
+  "referenceAnswers": [
+   "There are too many motorbikes on this road."
+  ],
+  "grammarTags": [
+   "quantifiers_countability",
+   "sentence",
+   "R07"
+  ],
+  "explanationVi": "Điểm cần nắm: Motorbikes đếm được số nhiều, nên dùng too many. Kiểm tra chủ ngữ, dấu hiệu thời gian, từ nối và nghĩa đầy đủ. Bản dịch đúng có thể khác đáp án mẫu.",
+  "rationaleVi": "Nói kế hoạch, mục đích và so sánh đơn giản. Bài bổ sung từ bộ ESL v2 (R07-U05), chủ đề Lượng từ.",
+  "commonErrors": [
+   {
+    "incorrect": "There are too much motorbikes on this road.",
+    "correction": "There are too many motorbikes on this road.",
+    "reasonVi": "Câu sai dùng “much” thay vì “many”. Motorbikes đếm được số nhiều, nên dùng too many. Chỉ đánh giá lỗi trong ngữ cảnh câu Việt đang dịch."
+   },
+   {
+    "incorrect": "There is too many motorbikes on this road.",
+    "correction": "There are too many motorbikes on this road.",
+    "reasonVi": "Câu sai dùng “is” thay vì “are”. Motorbikes đếm được số nhiều, nên dùng too many. Chỉ đánh giá lỗi trong ngữ cảnh câu Việt đang dịch."
+   }
+  ],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "esl-v2",
+  "version": 1
+ },
+ {
+  "id": "esl-v2-r07-u05-015",
+  "practiceLevel": "3.5",
+  "type": "sentence",
+  "topic": "Lượng từ",
+  "promptVi": "Cô ấy thường thêm một ít đường vào trà.",
+  "referenceAnswers": [
+   "She usually adds a little sugar to her tea."
+  ],
+  "grammarTags": [
+   "quantifiers_countability",
+   "sentence",
+   "R07"
+  ],
+  "explanationVi": "Điểm cần nắm: Sugar không đếm được dùng a little; she số ít dùng adds. Kiểm tra chủ ngữ, dấu hiệu thời gian, từ nối và nghĩa đầy đủ. Bản dịch đúng có thể khác đáp án mẫu.",
+  "rationaleVi": "Nói kế hoạch, mục đích và so sánh đơn giản. Bài bổ sung từ bộ ESL v2 (R07-U05), chủ đề Lượng từ.",
+  "commonErrors": [
+   {
+    "incorrect": "She usually adds a few sugar to her tea.",
+    "correction": "She usually adds a little sugar to her tea.",
+    "reasonVi": "Câu sai dùng “few” thay vì “little”. Sugar không đếm được dùng a little; she số ít dùng adds. Chỉ đánh giá lỗi trong ngữ cảnh câu Việt đang dịch."
+   },
+   {
+    "incorrect": "She usually add a little sugar to her tea.",
+    "correction": "She usually adds a little sugar to her tea.",
+    "reasonVi": "Câu sai dùng “add” thay vì “adds”. Sugar không đếm được dùng a little; she số ít dùng adds. Chỉ đánh giá lỗi trong ngữ cảnh câu Việt đang dịch."
+   }
+  ],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "esl-v2",
+  "version": 1
+ },
+ {
+  "id": "esl-v2-r07-u05-016",
+  "practiceLevel": "3.5",
+  "type": "sentence",
+  "topic": "Lượng từ",
+  "promptVi": "Tôi có vài người bạn ở gần trường.",
+  "referenceAnswers": [
+   "I have a few friends near my school."
+  ],
+  "grammarTags": [
+   "quantifiers_countability",
+   "sentence",
+   "R07"
+  ],
+  "explanationVi": "Điểm cần nắm: Friends là số nhiều đếm được dùng a few; I đi với have. Kiểm tra chủ ngữ, dấu hiệu thời gian, từ nối và nghĩa đầy đủ. Bản dịch đúng có thể khác đáp án mẫu.",
+  "rationaleVi": "Nói kế hoạch, mục đích và so sánh đơn giản. Bài bổ sung từ bộ ESL v2 (R07-U05), chủ đề Lượng từ.",
+  "commonErrors": [
+   {
+    "incorrect": "I have a little friends near my school.",
+    "correction": "I have a few friends near my school.",
+    "reasonVi": "Câu sai dùng “little” thay vì “few”. Friends là số nhiều đếm được dùng a few; I đi với have. Chỉ đánh giá lỗi trong ngữ cảnh câu Việt đang dịch."
+   },
+   {
+    "incorrect": "I has a few friends near my school.",
+    "correction": "I have a few friends near my school.",
+    "reasonVi": "Câu sai dùng “has” thay vì “have”. Friends là số nhiều đếm được dùng a few; I đi với have. Chỉ đánh giá lỗi trong ngữ cảnh câu Việt đang dịch."
+   }
+  ],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "esl-v2",
+  "version": 1
+ },
+ {
+  "id": "esl-v2-r07-u06-001",
+  "practiceLevel": "3.5",
+  "type": "sentence",
+  "topic": "Kết nối hai ý",
+  "promptVi": "Tôi pha trà và anh trai tôi chuẩn bị bữa sáng mỗi sáng.",
+  "referenceAnswers": [
+   "I make tea, and my older brother prepares breakfast every morning."
+  ],
+  "grammarTags": [
+   "basic_cohesion",
+   "sentence",
+   "R07"
+  ],
+  "explanationVi": "Điểm cần nắm: And nối hai hành động cùng diễn ra thường xuyên; brother số ít dùng prepares. Kiểm tra chủ ngữ, dấu hiệu thời gian, từ nối và nghĩa đầy đủ. Bản dịch đúng có thể khác đáp án mẫu.",
+  "rationaleVi": "Nói kế hoạch, mục đích và so sánh đơn giản. Bài bổ sung từ bộ ESL v2 (R07-U06), chủ đề Kết nối hai ý.",
+  "commonErrors": [
+   {
+    "incorrect": "I make tea, and my older brother prepare breakfast every morning.",
+    "correction": "I make tea, and my older brother prepares breakfast every morning.",
+    "reasonVi": "Câu sai dùng “prepare” thay vì “prepares”. And nối hai hành động cùng diễn ra thường xuyên; brother số ít dùng prepares. Chỉ đánh giá lỗi trong ngữ cảnh câu Việt đang dịch."
+   },
+   {
+    "incorrect": "I makes tea, and my older brother prepares breakfast every morning.",
+    "correction": "I make tea, and my older brother prepares breakfast every morning.",
+    "reasonVi": "Câu sai dùng “makes” thay vì “make”. And nối hai hành động cùng diễn ra thường xuyên; brother số ít dùng prepares. Chỉ đánh giá lỗi trong ngữ cảnh câu Việt đang dịch."
+   }
+  ],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "esl-v2",
+  "version": 1
+ },
+ {
+  "id": "esl-v2-r07-u06-002",
+  "practiceLevel": "3.5",
+  "type": "sentence",
+  "topic": "Kết nối hai ý",
+  "promptVi": "Tôi muốn đi dạo nhưng trời đang mưa.",
+  "referenceAnswers": [
+   "I want to go for a walk, but it's raining."
+  ],
+  "grammarTags": [
+   "basic_cohesion",
+   "sentence",
+   "R07"
+  ],
+  "explanationVi": "Điểm cần nắm: But nối ý muốn với trở ngại; it's = it is trước raining. Kiểm tra chủ ngữ, dấu hiệu thời gian, từ nối và nghĩa đầy đủ. Bản dịch đúng có thể khác đáp án mẫu.",
+  "rationaleVi": "Nói kế hoạch, mục đích và so sánh đơn giản. Bài bổ sung từ bộ ESL v2 (R07-U06), chủ đề Kết nối hai ý.",
+  "commonErrors": [
+   {
+    "incorrect": "I want to go for a walk, but it raining.",
+    "correction": "I want to go for a walk, but it's raining.",
+    "reasonVi": "Câu sai dùng “it” thay vì “it's”. But nối ý muốn với trở ngại; it's = it is trước raining. Chỉ đánh giá lỗi trong ngữ cảnh câu Việt đang dịch."
+   },
+   {
+    "incorrect": "I wants to go for a walk, but it's raining.",
+    "correction": "I want to go for a walk, but it's raining.",
+    "reasonVi": "Câu sai dùng “wants” thay vì “want”. But nối ý muốn với trở ngại; it's = it is trước raining. Chỉ đánh giá lỗi trong ngữ cảnh câu Việt đang dịch."
+   }
+  ],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "esl-v2",
+  "version": 1
+ },
+ {
+  "id": "esl-v2-r07-u06-003",
+  "practiceLevel": "3.5",
+  "type": "sentence",
+  "topic": "Kết nối hai ý",
+  "promptVi": "Sáng qua xe buýt đến muộn nên chúng tôi bắt đầu cuộc họp muộn.",
+  "referenceAnswers": [
+   "The bus arrived late yesterday morning, so we started the meeting late."
+  ],
+  "grammarTags": [
+   "basic_cohesion",
+   "sentence",
+   "R07"
+  ],
+  "explanationVi": "Điểm cần nắm: So kết nối nguyên nhân và kết quả trong quá khứ; arrived/started đều quá khứ. Kiểm tra chủ ngữ, dấu hiệu thời gian, từ nối và nghĩa đầy đủ. Bản dịch đúng có thể khác đáp án mẫu.",
+  "rationaleVi": "Nói kế hoạch, mục đích và so sánh đơn giản. Bài bổ sung từ bộ ESL v2 (R07-U06), chủ đề Kết nối hai ý.",
+  "commonErrors": [
+   {
+    "incorrect": "The bus arrived late yesterday morning, so we start the meeting late.",
+    "correction": "The bus arrived late yesterday morning, so we started the meeting late.",
+    "reasonVi": "Câu sai dùng “start” thay vì “started”. So kết nối nguyên nhân và kết quả trong quá khứ; arrived/started đều quá khứ. Chỉ đánh giá lỗi trong ngữ cảnh câu Việt đang dịch."
+   },
+   {
+    "incorrect": "The bus arrive late yesterday morning, so we started the meeting late.",
+    "correction": "The bus arrived late yesterday morning, so we started the meeting late.",
+    "reasonVi": "Câu sai dùng “arrive” thay vì “arrived”. So kết nối nguyên nhân và kết quả trong quá khứ; arrived/started đều quá khứ. Chỉ đánh giá lỗi trong ngữ cảnh câu Việt đang dịch."
+   }
+  ],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "esl-v2",
+  "version": 1
+ },
+ {
+  "id": "esl-v2-r07-u06-004",
+  "practiceLevel": "3.5",
+  "type": "sentence",
+  "topic": "Kết nối hai ý",
+  "promptVi": "Hôm qua tôi ở nhà vì tôi phải hoàn thành báo cáo.",
+  "referenceAnswers": [
+   "I stayed home yesterday because I had to finish the report."
+  ],
+  "grammarTags": [
+   "basic_cohesion",
+   "sentence",
+   "R07"
+  ],
+  "explanationVi": "Điểm cần nắm: Because nối lý do; had to + V nguyên mẫu diễn đạt nghĩa vụ quá khứ. Kiểm tra chủ ngữ, dấu hiệu thời gian, từ nối và nghĩa đầy đủ. Bản dịch đúng có thể khác đáp án mẫu.",
+  "rationaleVi": "Nói kế hoạch, mục đích và so sánh đơn giản. Bài bổ sung từ bộ ESL v2 (R07-U06), chủ đề Kết nối hai ý.",
+  "commonErrors": [
+   {
+    "incorrect": "I stayed home yesterday because I had to finished the report.",
+    "correction": "I stayed home yesterday because I had to finish the report.",
+    "reasonVi": "Câu sai dùng “finished” thay vì “finish”. Because nối lý do; had to + V nguyên mẫu diễn đạt nghĩa vụ quá khứ. Chỉ đánh giá lỗi trong ngữ cảnh câu Việt đang dịch."
+   },
+   {
+    "incorrect": "I stay home yesterday because I had to finish the report.",
+    "correction": "I stayed home yesterday because I had to finish the report.",
+    "reasonVi": "Câu sai dùng “stay” thay vì “stayed”. Because nối lý do; had to + V nguyên mẫu diễn đạt nghĩa vụ quá khứ. Chỉ đánh giá lỗi trong ngữ cảnh câu Việt đang dịch."
+   }
+  ],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "esl-v2",
+  "version": 1
+ },
+ {
+  "id": "esl-v2-r07-u06-005",
+  "practiceLevel": "3.5",
+  "type": "sentence",
+  "topic": "Kết nối hai ý",
+  "promptVi": "Tôi thích cà phê nhưng em gái tôi thích trà hơn.",
+  "referenceAnswers": [
+   "I like coffee, but my younger sister prefers tea."
+  ],
+  "grammarTags": [
+   "basic_cohesion",
+   "sentence",
+   "R07"
+  ],
+  "explanationVi": "Điểm cần nắm: But nối hai sở thích đối lập; sister số ít dùng prefers. Kiểm tra chủ ngữ, dấu hiệu thời gian, từ nối và nghĩa đầy đủ. Bản dịch đúng có thể khác đáp án mẫu.",
+  "rationaleVi": "Nói kế hoạch, mục đích và so sánh đơn giản. Bài bổ sung từ bộ ESL v2 (R07-U06), chủ đề Kết nối hai ý.",
+  "commonErrors": [
+   {
+    "incorrect": "I like coffee, but my younger sister prefer tea.",
+    "correction": "I like coffee, but my younger sister prefers tea.",
+    "reasonVi": "Câu sai dùng “prefer” thay vì “prefers”. But nối hai sở thích đối lập; sister số ít dùng prefers. Chỉ đánh giá lỗi trong ngữ cảnh câu Việt đang dịch."
+   },
+   {
+    "incorrect": "I likes coffee, but my younger sister prefers tea.",
+    "correction": "I like coffee, but my younger sister prefers tea.",
+    "reasonVi": "Câu sai dùng “likes” thay vì “like”. But nối hai sở thích đối lập; sister số ít dùng prefers. Chỉ đánh giá lỗi trong ngữ cảnh câu Việt đang dịch."
+   }
+  ],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "esl-v2",
+  "version": 1
+ },
+ {
+  "id": "esl-v2-r07-u06-006",
+  "practiceLevel": "3.5",
+  "type": "sentence",
+  "topic": "Kết nối hai ý",
+  "promptVi": "Hôm qua chúng tôi mua bánh mì và mẹ tôi nấu súp.",
+  "referenceAnswers": [
+   "We bought bread, and my mother made soup yesterday."
+  ],
+  "grammarTags": [
+   "basic_cohesion",
+   "sentence",
+   "R07"
+  ],
+  "explanationVi": "Điểm cần nắm: And kết nối hai hành động quá khứ; bought và made bất quy tắc. Kiểm tra chủ ngữ, dấu hiệu thời gian, từ nối và nghĩa đầy đủ. Bản dịch đúng có thể khác đáp án mẫu.",
+  "rationaleVi": "Nói kế hoạch, mục đích và so sánh đơn giản. Bài bổ sung từ bộ ESL v2 (R07-U06), chủ đề Kết nối hai ý.",
+  "commonErrors": [
+   {
+    "incorrect": "We bought bread, and my mother maked soup yesterday.",
+    "correction": "We bought bread, and my mother made soup yesterday.",
+    "reasonVi": "Câu sai dùng “maked” thay vì “made”. And kết nối hai hành động quá khứ; bought và made bất quy tắc. Chỉ đánh giá lỗi trong ngữ cảnh câu Việt đang dịch."
+   },
+   {
+    "incorrect": "We buy bread, and my mother made soup yesterday.",
+    "correction": "We bought bread, and my mother made soup yesterday.",
+    "reasonVi": "Câu sai dùng “buy” thay vì “bought”. And kết nối hai hành động quá khứ; bought và made bất quy tắc. Chỉ đánh giá lỗi trong ngữ cảnh câu Việt đang dịch."
+   }
+  ],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "esl-v2",
+  "version": 1
+ },
+ {
+  "id": "esl-v2-r07-u06-007",
+  "practiceLevel": "3.5",
+  "type": "sentence",
+  "topic": "Kết nối hai ý",
+  "promptVi": "Hôm nay trời nắng nên chúng tôi đang ăn trưa ngoài sân.",
+  "referenceAnswers": [
+   "It's sunny today, so we're having lunch in the yard."
+  ],
+  "grammarTags": [
+   "basic_cohesion",
+   "sentence",
+   "R07"
+  ],
+  "explanationVi": "Điểm cần nắm: So nối thời tiết với kết quả; hiện tại tiếp diễn we're having diễn tả đang ăn. Kiểm tra chủ ngữ, dấu hiệu thời gian, từ nối và nghĩa đầy đủ. Bản dịch đúng có thể khác đáp án mẫu.",
+  "rationaleVi": "Nói kế hoạch, mục đích và so sánh đơn giản. Bài bổ sung từ bộ ESL v2 (R07-U06), chủ đề Kết nối hai ý.",
+  "commonErrors": [
+   {
+    "incorrect": "It's sunny today, so we having lunch in the yard.",
+    "correction": "It's sunny today, so we're having lunch in the yard.",
+    "reasonVi": "Câu sai dùng “we” thay vì “we're”. So nối thời tiết với kết quả; hiện tại tiếp diễn we're having diễn tả đang ăn. Chỉ đánh giá lỗi trong ngữ cảnh câu Việt đang dịch."
+   },
+   {
+    "incorrect": "It's sunny today, so we're have lunch in the yard.",
+    "correction": "It's sunny today, so we're having lunch in the yard.",
+    "reasonVi": "Câu sai dùng “have” thay vì “having”. So nối thời tiết với kết quả; hiện tại tiếp diễn we're having diễn tả đang ăn. Chỉ đánh giá lỗi trong ngữ cảnh câu Việt đang dịch."
+   }
+  ],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "esl-v2",
+  "version": 1
+ },
+ {
+  "id": "esl-v2-r07-u06-008",
+  "practiceLevel": "3.5",
+  "type": "sentence",
+  "topic": "Kết nối hai ý",
+  "promptVi": "Tôi đọc sách khi rảnh và em trai tôi nghe nhạc.",
+  "referenceAnswers": [
+   "I read when I have free time, and my younger brother listens to music."
+  ],
+  "grammarTags": [
+   "basic_cohesion",
+   "sentence",
+   "R07"
+  ],
+  "explanationVi": "Điểm cần nắm: And nối hai thói quen; brother số ít dùng listens. Kiểm tra chủ ngữ, dấu hiệu thời gian, từ nối và nghĩa đầy đủ. Bản dịch đúng có thể khác đáp án mẫu.",
+  "rationaleVi": "Nói kế hoạch, mục đích và so sánh đơn giản. Bài bổ sung từ bộ ESL v2 (R07-U06), chủ đề Kết nối hai ý.",
+  "commonErrors": [
+   {
+    "incorrect": "I read when I have free time, and my younger brother listen to music.",
+    "correction": "I read when I have free time, and my younger brother listens to music.",
+    "reasonVi": "Câu sai dùng “listen” thay vì “listens”. And nối hai thói quen; brother số ít dùng listens. Chỉ đánh giá lỗi trong ngữ cảnh câu Việt đang dịch."
+   },
+   {
+    "incorrect": "I reads when I have free time, and my younger brother listens to music.",
+    "correction": "I read when I have free time, and my younger brother listens to music.",
+    "reasonVi": "Câu sai dùng “reads” thay vì “read”. And nối hai thói quen; brother số ít dùng listens. Chỉ đánh giá lỗi trong ngữ cảnh câu Việt đang dịch."
+   }
+  ],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "esl-v2",
+  "version": 1
+ },
+ {
+  "id": "esl-v2-r07-u06-009",
+  "practiceLevel": "3.5",
+  "type": "sentence",
+  "topic": "Kết nối hai ý",
+  "promptVi": "Sáng qua chúng tôi đi bộ đến trường vì xe đạp bị hỏng.",
+  "referenceAnswers": [
+   "We walked to school yesterday morning because our bicycle was broken."
+  ],
+  "grammarTags": [
+   "basic_cohesion",
+   "sentence",
+   "R07"
+  ],
+  "explanationVi": "Điểm cần nắm: Because nối lý do; walked và was đều diễn tả quá khứ. Kiểm tra chủ ngữ, dấu hiệu thời gian, từ nối và nghĩa đầy đủ. Bản dịch đúng có thể khác đáp án mẫu.",
+  "rationaleVi": "Nói kế hoạch, mục đích và so sánh đơn giản. Bài bổ sung từ bộ ESL v2 (R07-U06), chủ đề Kết nối hai ý.",
+  "commonErrors": [
+   {
+    "incorrect": "We walked to school yesterday morning because our bicycle broken.",
+    "correction": "We walked to school yesterday morning because our bicycle was broken.",
+    "reasonVi": "Câu sai dùng “[thiếu thành phần]” thay vì “was”. Because nối lý do; walked và was đều diễn tả quá khứ. Chỉ đánh giá lỗi trong ngữ cảnh câu Việt đang dịch."
+   },
+   {
+    "incorrect": "We walk to school yesterday morning because our bicycle was broken.",
+    "correction": "We walked to school yesterday morning because our bicycle was broken.",
+    "reasonVi": "Câu sai dùng “walk” thay vì “walked”. Because nối lý do; walked và was đều diễn tả quá khứ. Chỉ đánh giá lỗi trong ngữ cảnh câu Việt đang dịch."
+   }
+  ],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "esl-v2",
+  "version": 1
+ },
+ {
+  "id": "esl-v2-r07-u06-010",
+  "practiceLevel": "3.5",
+  "type": "sentence",
+  "topic": "Kết nối hai ý",
+  "promptVi": "Trời lạnh nhưng bọn trẻ vẫn đang chơi ngoài sân.",
+  "referenceAnswers": [
+   "It's cold, but the children are still playing outside."
+  ],
+  "grammarTags": [
+   "basic_cohesion",
+   "sentence",
+   "R07"
+  ],
+  "explanationVi": "Điểm cần nắm: But nối ý tương phản; children số nhiều dùng are playing. Kiểm tra chủ ngữ, dấu hiệu thời gian, từ nối và nghĩa đầy đủ. Bản dịch đúng có thể khác đáp án mẫu.",
+  "rationaleVi": "Nói kế hoạch, mục đích và so sánh đơn giản. Bài bổ sung từ bộ ESL v2 (R07-U06), chủ đề Kết nối hai ý.",
+  "commonErrors": [
+   {
+    "incorrect": "It's cold, but the children is still playing outside.",
+    "correction": "It's cold, but the children are still playing outside.",
+    "reasonVi": "Câu sai dùng “is” thay vì “are”. But nối ý tương phản; children số nhiều dùng are playing. Chỉ đánh giá lỗi trong ngữ cảnh câu Việt đang dịch."
+   },
+   {
+    "incorrect": "It cold, but the children are still playing outside.",
+    "correction": "It's cold, but the children are still playing outside.",
+    "reasonVi": "Câu sai dùng “It” thay vì “It's”. But nối ý tương phản; children số nhiều dùng are playing. Chỉ đánh giá lỗi trong ngữ cảnh câu Việt đang dịch."
+   }
+  ],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "esl-v2",
+  "version": 1
+ },
+ {
+  "id": "esl-v2-r07-u06-011",
+  "practiceLevel": "3.5",
+  "type": "sentence",
+  "topic": "Kết nối hai ý",
+  "promptVi": "Tôi không hiểu câu hỏi nên tôi đã nhờ giáo viên giải thích.",
+  "referenceAnswers": [
+   "I didn't understand the question, so I asked the teacher to explain it."
+  ],
+  "grammarTags": [
+   "basic_cohesion",
+   "sentence",
+   "R07"
+  ],
+  "explanationVi": "Điểm cần nắm: So nối nguyên nhân không hiểu với hành động nhờ giải thích; didn't + V nguyên mẫu. Kiểm tra chủ ngữ, dấu hiệu thời gian, từ nối và nghĩa đầy đủ. Bản dịch đúng có thể khác đáp án mẫu.",
+  "rationaleVi": "Nói kế hoạch, mục đích và so sánh đơn giản. Bài bổ sung từ bộ ESL v2 (R07-U06), chủ đề Kết nối hai ý.",
+  "commonErrors": [
+   {
+    "incorrect": "I didn't understand the question, so I ask the teacher to explain it.",
+    "correction": "I didn't understand the question, so I asked the teacher to explain it.",
+    "reasonVi": "Câu sai dùng “ask” thay vì “asked”. So nối nguyên nhân không hiểu với hành động nhờ giải thích; didn't + V nguyên mẫu. Chỉ đánh giá lỗi trong ngữ cảnh câu Việt đang dịch."
+   },
+   {
+    "incorrect": "I didn't understood the question, so I asked the teacher to explain it.",
+    "correction": "I didn't understand the question, so I asked the teacher to explain it.",
+    "reasonVi": "Câu sai dùng “understood” thay vì “understand”. So nối nguyên nhân không hiểu với hành động nhờ giải thích; didn't + V nguyên mẫu. Chỉ đánh giá lỗi trong ngữ cảnh câu Việt đang dịch."
+   }
+  ],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "esl-v2",
+  "version": 1
+ },
+ {
+  "id": "esl-v2-r07-u06-012",
+  "practiceLevel": "3.5",
+  "type": "sentence",
+  "topic": "Kết nối hai ý",
+  "promptVi": "Hôm qua Lan làm bài tập và bố cô ấy nấu bữa tối.",
+  "referenceAnswers": [
+   "Lan did her homework, and her father cooked dinner yesterday."
+  ],
+  "grammarTags": [
+   "basic_cohesion",
+   "sentence",
+   "R07"
+  ],
+  "explanationVi": "Điểm cần nắm: And nối hai hoạt động quá khứ; did là quá khứ của do. Kiểm tra chủ ngữ, dấu hiệu thời gian, từ nối và nghĩa đầy đủ. Bản dịch đúng có thể khác đáp án mẫu.",
+  "rationaleVi": "Nói kế hoạch, mục đích và so sánh đơn giản. Bài bổ sung từ bộ ESL v2 (R07-U06), chủ đề Kết nối hai ý.",
+  "commonErrors": [
+   {
+    "incorrect": "Lan done her homework, and her father cooked dinner yesterday.",
+    "correction": "Lan did her homework, and her father cooked dinner yesterday.",
+    "reasonVi": "Câu sai dùng “done” thay vì “did”. And nối hai hoạt động quá khứ; did là quá khứ của do. Chỉ đánh giá lỗi trong ngữ cảnh câu Việt đang dịch."
+   },
+   {
+    "incorrect": "Lan did her homework, and her father cook dinner yesterday.",
+    "correction": "Lan did her homework, and her father cooked dinner yesterday.",
+    "reasonVi": "Câu sai dùng “cook” thay vì “cooked”. And nối hai hoạt động quá khứ; did là quá khứ của do. Chỉ đánh giá lỗi trong ngữ cảnh câu Việt đang dịch."
+   }
+  ],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "esl-v2",
+  "version": 1
+ },
+ {
+  "id": "esl-v2-r07-u06-013",
+  "practiceLevel": "3.5",
+  "type": "sentence",
+  "topic": "Kết nối hai ý",
+  "promptVi": "Tôi đang mang chai nước vì ngoài trời rất nóng.",
+  "referenceAnswers": [
+   "I'm carrying a bottle of water because it's very hot outside."
+  ],
+  "grammarTags": [
+   "basic_cohesion",
+   "sentence",
+   "R07"
+  ],
+  "explanationVi": "Điểm cần nắm: Because nối lý do nóng và hành động đang mang nước; am + V-ing. Kiểm tra chủ ngữ, dấu hiệu thời gian, từ nối và nghĩa đầy đủ. Bản dịch đúng có thể khác đáp án mẫu.",
+  "rationaleVi": "Nói kế hoạch, mục đích và so sánh đơn giản. Bài bổ sung từ bộ ESL v2 (R07-U06), chủ đề Kết nối hai ý.",
+  "commonErrors": [
+   {
+    "incorrect": "I'm carrying a bottle of water because very hot outside.",
+    "correction": "I'm carrying a bottle of water because it's very hot outside.",
+    "reasonVi": "Câu sai dùng “[thiếu thành phần]” thay vì “it's”. Because nối lý do nóng và hành động đang mang nước; am + V-ing. Chỉ đánh giá lỗi trong ngữ cảnh câu Việt đang dịch."
+   },
+   {
+    "incorrect": "I'm carry a bottle of water because it's very hot outside.",
+    "correction": "I'm carrying a bottle of water because it's very hot outside.",
+    "reasonVi": "Câu sai dùng “carry” thay vì “carrying”. Because nối lý do nóng và hành động đang mang nước; am + V-ing. Chỉ đánh giá lỗi trong ngữ cảnh câu Việt đang dịch."
+   }
+  ],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "esl-v2",
+  "version": 1
+ },
+ {
+  "id": "esl-v2-r07-u06-014",
+  "practiceLevel": "3.5",
+  "type": "sentence",
+  "topic": "Kết nối hai ý",
+  "promptVi": "Minh muốn xem phim nhưng tối nay cậu ấy phải học.",
+  "referenceAnswers": [
+   "Minh wants to watch a film, but he has to study tonight."
+  ],
+  "grammarTags": [
+   "basic_cohesion",
+   "sentence",
+   "R07"
+  ],
+  "explanationVi": "Điểm cần nắm: But nối mong muốn và nghĩa vụ; Minh số ít dùng wants, has. Kiểm tra chủ ngữ, dấu hiệu thời gian, từ nối và nghĩa đầy đủ. Bản dịch đúng có thể khác đáp án mẫu.",
+  "rationaleVi": "Nói kế hoạch, mục đích và so sánh đơn giản. Bài bổ sung từ bộ ESL v2 (R07-U06), chủ đề Kết nối hai ý.",
+  "commonErrors": [
+   {
+    "incorrect": "Minh want to watch a film, but he has to study tonight.",
+    "correction": "Minh wants to watch a film, but he has to study tonight.",
+    "reasonVi": "Câu sai dùng “want” thay vì “wants”. But nối mong muốn và nghĩa vụ; Minh số ít dùng wants, has. Chỉ đánh giá lỗi trong ngữ cảnh câu Việt đang dịch."
+   },
+   {
+    "incorrect": "Minh wants to watch a film, but he have to study tonight.",
+    "correction": "Minh wants to watch a film, but he has to study tonight.",
+    "reasonVi": "Câu sai dùng “have” thay vì “has”. But nối mong muốn và nghĩa vụ; Minh số ít dùng wants, has. Chỉ đánh giá lỗi trong ngữ cảnh câu Việt đang dịch."
+   }
+  ],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "esl-v2",
+  "version": 1
+ },
+ {
+  "id": "esl-v2-r07-u06-015",
+  "practiceLevel": "3.5",
+  "type": "sentence",
+  "topic": "Kết nối hai ý",
+  "promptVi": "Sáng nay tôi uống nước rồi tiếp tục chạy.",
+  "referenceAnswers": [
+   "I drank some water, and then I continued running this morning."
+  ],
+  "grammarTags": [
+   "basic_cohesion",
+   "sentence",
+   "R07"
+  ],
+  "explanationVi": "Điểm cần nắm: And then thể hiện trình tự; continue + V-ing là cách dùng tự nhiên trong câu. Kiểm tra chủ ngữ, dấu hiệu thời gian, từ nối và nghĩa đầy đủ. Bản dịch đúng có thể khác đáp án mẫu.",
+  "rationaleVi": "Nói kế hoạch, mục đích và so sánh đơn giản. Bài bổ sung từ bộ ESL v2 (R07-U06), chủ đề Kết nối hai ý.",
+  "commonErrors": [
+   {
+    "incorrect": "I drink some water, and then I continued running this morning.",
+    "correction": "I drank some water, and then I continued running this morning.",
+    "reasonVi": "Câu sai dùng “drink” thay vì “drank”. And then thể hiện trình tự; continue + V-ing là cách dùng tự nhiên trong câu. Chỉ đánh giá lỗi trong ngữ cảnh câu Việt đang dịch."
+   },
+   {
+    "incorrect": "I drank some water, and then I continued run this morning.",
+    "correction": "I drank some water, and then I continued running this morning.",
+    "reasonVi": "Câu sai dùng “run” thay vì “running”. And then thể hiện trình tự; continue + V-ing là cách dùng tự nhiên trong câu. Chỉ đánh giá lỗi trong ngữ cảnh câu Việt đang dịch."
+   }
+  ],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "esl-v2",
+  "version": 1
+ },
+ {
+  "id": "esl-v2-r07-u06-016",
+  "practiceLevel": "3.5",
+  "type": "sentence",
+  "topic": "Kết nối hai ý",
+  "promptVi": "Họ rất mệt nên đã về nhà sớm.",
+  "referenceAnswers": [
+   "They were very tired, so they went home early."
+  ],
+  "grammarTags": [
+   "basic_cohesion",
+   "sentence",
+   "R07"
+  ],
+  "explanationVi": "Điểm cần nắm: So nối trạng thái mệt và quyết định về sớm; were/went là quá khứ. Kiểm tra chủ ngữ, dấu hiệu thời gian, từ nối và nghĩa đầy đủ. Bản dịch đúng có thể khác đáp án mẫu.",
+  "rationaleVi": "Nói kế hoạch, mục đích và so sánh đơn giản. Bài bổ sung từ bộ ESL v2 (R07-U06), chủ đề Kết nối hai ý.",
+  "commonErrors": [
+   {
+    "incorrect": "They was very tired, so they went home early.",
+    "correction": "They were very tired, so they went home early.",
+    "reasonVi": "Câu sai dùng “was” thay vì “were”. So nối trạng thái mệt và quyết định về sớm; were/went là quá khứ. Chỉ đánh giá lỗi trong ngữ cảnh câu Việt đang dịch."
+   },
+   {
+    "incorrect": "They were very tired, so they goed home early.",
+    "correction": "They were very tired, so they went home early.",
+    "reasonVi": "Câu sai dùng “goed” thay vì “went”. So nối trạng thái mệt và quyết định về sớm; were/went là quá khứ. Chỉ đánh giá lỗi trong ngữ cảnh câu Việt đang dịch."
+   }
+  ],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "esl-v2",
+  "version": 1
+ }
+]

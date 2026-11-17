@@ -717,6 +717,65 @@
   font-size: var(--fs-sm);
   line-height: 1.5;
 }
+/* Accepted alternatives and common errors (ESL v2 lessons) under the comparison. */
+.xp-alternatives,
+.xp-errors {
+  margin: 0 0 14px;
+  padding: 10px 14px;
+  border: 1px solid var(--line);
+  border-radius: var(--r-md);
+  background: var(--surface);
+  font-size: var(--fs-sm);
+  line-height: 1.5;
+}
+.xp-alternatives strong,
+.xp-errors strong {
+  display: block;
+  margin-bottom: 4px;
+  color: var(--navy);
+}
+.xp-alternatives ul,
+.xp-errors ul {
+  display: grid;
+  gap: 6px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.xp-alternatives li {
+  color: var(--ink);
+}
+.xp-errors li + li {
+  padding-top: 6px;
+  border-top: 1px dashed var(--line);
+}
+.xp-error-line {
+  margin: 0;
+  color: var(--ink);
+}
+.xp-error-tag {
+  display: inline-block;
+  min-width: 34px;
+  margin-right: 6px;
+  padding: 0 6px;
+  border-radius: 999px;
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-bold);
+  text-align: center;
+}
+.xp-error-line.is-wrong .xp-error-tag {
+  background: #ffe9e3;
+  color: #a3412a;
+}
+.xp-error-line.is-right .xp-error-tag {
+  background: #d6f3ee;
+  color: var(--teal-strong);
+}
+.xp-errors small {
+  display: block;
+  color: var(--subtle);
+  font-size: var(--fs-xs);
+}
 .xp-session .practice-ratings {
   display: flex;
   flex-wrap: wrap;

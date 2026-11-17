@@ -1,0 +1,882 @@
+[
+ {
+  "id": "band-1.5-004",
+  "practiceLevel": "1.5",
+  "type": "phrase",
+  "topic": "Bản thân",
+  "targetTerm": "happy",
+  "meaningVi": "vui",
+  "promptVi": "rất vui",
+  "referenceAnswers": [
+   "very happy"
+  ],
+  "grammarTags": [
+   "adverb-adjective"
+  ],
+  "explanationVi": "Very đứng trước tính từ happy để tăng mức độ.",
+  "commonErrors": [],
+  "editorialStatus": "pilot",
+  "source": "original-starter",
+  "version": 2,
+  "calibrationStatus": "internal_review",
+  "rationaleVi": "Ghép hai đến bốn từ thành cụm quen thuộc; trật tự tính từ và danh từ. Bài này luyện: Very đứng trước tính từ happy để tăng mức độ."
+ },
+ {
+  "id": "band-1.5-005",
+  "practiceLevel": "1.5",
+  "type": "phrase",
+  "topic": "Ăn uống",
+  "targetTerm": "water",
+  "meaningVi": "nước",
+  "promptVi": "một cốc nước",
+  "referenceAnswers": [
+   "a glass of water"
+  ],
+  "grammarTags": [
+   "quantity-phrase"
+  ],
+  "explanationVi": "A glass of là cụm chỉ lượng dùng với water.",
+  "commonErrors": [],
+  "editorialStatus": "pilot",
+  "source": "original-starter",
+  "version": 2,
+  "calibrationStatus": "internal_review",
+  "rationaleVi": "Ghép hai đến bốn từ thành cụm quen thuộc; trật tự tính từ và danh từ. Bài này luyện: A glass of là cụm chỉ lượng dùng với water."
+ },
+ {
+  "id": "band-1.5-006",
+  "practiceLevel": "1.5",
+  "type": "phrase",
+  "topic": "Nhà cửa",
+  "targetTerm": "room",
+  "meaningVi": "phòng",
+  "promptVi": "căn phòng nhỏ",
+  "referenceAnswers": [
+   "a small room"
+  ],
+  "grammarTags": [
+   "adjective-noun"
+  ],
+  "explanationVi": "Tính từ small đứng trước danh từ room trong tiếng Anh.",
+  "commonErrors": [],
+  "editorialStatus": "pilot",
+  "source": "original-starter",
+  "version": 2,
+  "calibrationStatus": "internal_review",
+  "rationaleVi": "Ghép hai đến bốn từ thành cụm quen thuộc; trật tự tính từ và danh từ. Bài này luyện: Tính từ small đứng trước danh từ room trong tiếng Anh."
+ },
+ {
+  "id": "band-1.5-cal-01",
+  "practiceLevel": "1.5",
+  "type": "phrase",
+  "topic": "Đồ dùng",
+  "targetTerm": "small bag",
+  "meaningVi": "túi nhỏ",
+  "promptVi": "một chiếc túi nhỏ",
+  "referenceAnswers": [
+   "a small bag"
+  ],
+  "grammarTags": [
+   "adjective-noun"
+  ],
+  "explanationVi": "Tính từ small đứng trước danh từ bag.",
+  "rationaleVi": "Cụm ba từ với mạo từ và trật tự tính từ.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "original-level-authored",
+  "version": 1
+ },
+ {
+  "id": "band-1.5-cal-02",
+  "practiceLevel": "1.5",
+  "type": "phrase",
+  "topic": "Trường học",
+  "targetTerm": "blue pens",
+  "meaningVi": "bút màu xanh",
+  "promptVi": "hai cây bút màu xanh",
+  "referenceAnswers": [
+   "two blue pens"
+  ],
+  "grammarTags": [
+   "number-adjective-noun"
+  ],
+  "explanationVi": "Số lượng đứng trước tính từ; pens thêm -s ở số nhiều.",
+  "rationaleVi": "Cụm danh từ ngắn với số lượng và màu sắc.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "original-level-authored",
+  "version": 1
+ },
+ {
+  "id": "band-1.5-exp-001",
+  "practiceLevel": "1.5",
+  "type": "phrase",
+  "topic": "gia đình",
+  "targetTerm": "a young family",
+  "meaningVi": "một gia đình trẻ",
+  "promptVi": "một gia đình trẻ",
+  "referenceAnswers": [
+   "a young family"
+  ],
+  "grammarTags": [
+   "Adjective + Noun"
+  ],
+  "explanationVi": "Cụm danh từ đơn giản gồm mạo từ 'a', tính từ 'young' đứng trước danh từ 'family' để diễn tả một gia đình trẻ.",
+  "rationaleVi": "Phù hợp với Level 1.5 vì sử dụng trật tự tính từ - danh từ cơ bản trong chủ đề gia đình rất quen thuộc.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "ai-assisted-level-draft",
+  "version": 1
+ },
+ {
+  "id": "band-1.5-exp-002",
+  "practiceLevel": "1.5",
+  "type": "phrase",
+  "topic": "trường học",
+  "targetTerm": "an old exercise book",
+  "meaningVi": "một cuốn sách bài tập cũ",
+  "promptVi": "một cuốn sách bài tập cũ",
+  "referenceAnswers": [
+   "an old exercise book"
+  ],
+  "grammarTags": [
+   "Adjective + Noun Phrase"
+  ],
+  "explanationVi": "Dùng mạo từ 'an' trước tính từ bắt đầu bằng nguyên âm 'old', kết hợp với cụm danh từ Anh-Anh 'exercise book' (sách bài tập).",
+  "rationaleVi": "Phù hợp với Level 1.5 nhờ cấu trúc mạo từ + tính từ + danh từ kép đơn giản thuộc ngữ cảnh trường học.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "ai-assisted-level-draft",
+  "version": 1
+ },
+ {
+  "id": "band-1.5-exp-003",
+  "practiceLevel": "1.5",
+  "type": "phrase",
+  "topic": "đồ ăn",
+  "targetTerm": "tasty chocolate biscuits",
+  "meaningVi": "những chiếc bánh quy sô-cô-la ngon",
+  "promptVi": "những chiếc bánh quy sô-cô-la ngon",
+  "referenceAnswers": [
+   "tasty chocolate biscuits"
+  ],
+  "grammarTags": [
+   "Adjective Order + Noun"
+  ],
+  "explanationVi": "Trật tự tính từ chỉ quan điểm ('tasty') đứng trước danh từ đóng vai trò bổ nghĩa ('chocolate') và danh từ chính ('biscuits' - từ Anh-Anh chuẩn).",
+  "rationaleVi": "Thuộc Level 1.5 với trật tự tính từ - danh từ quen thuộc trong chủ đề thực phẩm hàng ngày.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "ai-assisted-level-draft",
+  "version": 1
+ },
+ {
+  "id": "band-1.5-exp-004",
+  "practiceLevel": "1.5",
+  "type": "phrase",
+  "topic": "đi lại",
+  "targetTerm": "a crowded city bus",
+  "meaningVi": "một chiếc xe buýt thành phố đông đúc",
+  "promptVi": "một chiếc xe buýt thành phố đông đúc",
+  "referenceAnswers": [
+   "a crowded city bus"
+  ],
+  "grammarTags": [
+   "Adjective + Noun Compound"
+  ],
+  "explanationVi": "Tính từ 'crowded' (đông đúc) đứng trước cụm danh từ 'city bus' (xe buýt thành phố) để miêu tả phương tiện giao thông.",
+  "rationaleVi": "Cụm 4 từ kết hợp tính từ và danh từ ghép quen thuộc, đúng trọng tâm Level 1.5.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "ai-assisted-level-draft",
+  "version": 1
+ },
+ {
+  "id": "band-1.5-exp-005",
+  "practiceLevel": "1.5",
+  "type": "phrase",
+  "topic": "thời gian",
+  "targetTerm": "a bright sunny morning",
+  "meaningVi": "một buổi sáng nắng đẹp",
+  "promptVi": "một buổi sáng nắng đẹp",
+  "referenceAnswers": [
+   "a bright sunny morning"
+  ],
+  "grammarTags": [
+   "Multiple Adjectives"
+  ],
+  "explanationVi": "Hai tính từ 'bright' và 'sunny' cùng bổ nghĩa cho danh từ 'morning' theo đúng trật tự tự nhiên trong tiếng Anh.",
+  "rationaleVi": "Cấu trúc ghép hai tính từ mô tả thời tiết/thời gian rất phổ biến ở trình độ Level 1.5.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "ai-assisted-level-draft",
+  "version": 1
+ },
+ {
+  "id": "band-1.5-exp-006",
+  "practiceLevel": "1.5",
+  "type": "phrase",
+  "topic": "sức khỏe",
+  "targetTerm": "a healthy lifestyle",
+  "meaningVi": "một lối sống lành mạnh",
+  "promptVi": "một lối sống lành mạnh",
+  "referenceAnswers": [
+   "a healthy lifestyle"
+  ],
+  "grammarTags": [
+   "Fixed Collocation"
+  ],
+  "explanationVi": "Cụm từ cố định (collocation) quen thuộc ghép tính từ 'healthy' với danh từ 'lifestyle'.",
+  "rationaleVi": "Sử dụng kết hợp từ cố định đơn giản trong tình huống đời sống rất quen thuộc ở Level 1.5.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "ai-assisted-level-draft",
+  "version": 1
+ },
+ {
+  "id": "band-1.5-exp-007",
+  "practiceLevel": "1.5",
+  "type": "phrase",
+  "topic": "công việc",
+  "targetTerm": "a part-time job",
+  "meaningVi": "một công việc bán thời gian",
+  "promptVi": "một công việc bán thời gian",
+  "referenceAnswers": [
+   "a part-time job"
+  ],
+  "grammarTags": [
+   "Compound Adjective + Noun"
+  ],
+  "explanationVi": "Tính từ ghép 'part-time' kết hợp với mạo từ 'a' và danh từ 'job' để chỉ hình thức làm việc.",
+  "rationaleVi": "Phù hợp Level 1.5 vì là cụm danh từ ngắn gồm 3 từ chỉ khái niệm công việc cơ bản.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "ai-assisted-level-draft",
+  "version": 1
+ },
+ {
+  "id": "band-1.5-exp-008",
+  "practiceLevel": "1.5",
+  "type": "phrase",
+  "topic": "đô thị",
+  "targetTerm": "narrow city streets",
+  "meaningVi": "những con đường thành phố nhỏ hẹp",
+  "promptVi": "những con đường thành phố nhỏ hẹp",
+  "referenceAnswers": [
+   "narrow city streets"
+  ],
+  "grammarTags": [
+   "Adjective + Noun Modifier"
+  ],
+  "explanationVi": "Tính từ 'narrow' (hẹp) đứng trước danh từ bổ nghĩa 'city' và danh từ số nhiều 'streets'.",
+  "rationaleVi": "Rèn luyện trật tự tính từ và danh từ mô tả không gian đô thị cơ bản cho Level 1.5.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "ai-assisted-level-draft",
+  "version": 1
+ },
+ {
+  "id": "band-1.5-exp-009",
+  "practiceLevel": "1.5",
+  "type": "phrase",
+  "topic": "nhà ở",
+  "targetTerm": "a modern kitchen",
+  "meaningVi": "một căn bếp hiện đại",
+  "promptVi": "một căn bếp hiện đại",
+  "referenceAnswers": [
+   "a modern kitchen"
+  ],
+  "grammarTags": [
+   "Adjective + Noun"
+  ],
+  "explanationVi": "Cụm danh từ đơn giản gồm mạo từ 'a', tính từ 'modern' và danh từ chỉ nơi chốn 'kitchen'.",
+  "rationaleVi": "Cụm 3 từ ngắn gọn về chủ đề nhà ở, đúng tiêu chuẩn từ vựng và ngữ pháp Level 1.5.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "ai-assisted-level-draft",
+  "version": 1
+ },
+ {
+  "id": "band-1.5-exp-010",
+  "practiceLevel": "1.5",
+  "type": "phrase",
+  "topic": "công nghệ",
+  "targetTerm": "a new mobile phone",
+  "meaningVi": "một chiếc điện thoại di động mới",
+  "promptVi": "một chiếc điện thoại di động mới",
+  "referenceAnswers": [
+   "a new mobile phone"
+  ],
+  "grammarTags": [
+   "Adjective + Noun Phrase"
+  ],
+  "explanationVi": "Tính từ 'new' đứng trước cụm danh từ Anh-Anh chuẩn 'mobile phone'.",
+  "rationaleVi": "Đáp ứng yêu cầu Level 1.5 về cụm từ cố định chỉ thiết bị công nghệ quen thuộc.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "ai-assisted-level-draft",
+  "version": 1
+ },
+ {
+  "id": "band-1.5-exp-011",
+  "practiceLevel": "1.5",
+  "type": "phrase",
+  "topic": "du lịch",
+  "targetTerm": "a quiet sandy beach",
+  "meaningVi": "một bãi biển cát yên bình",
+  "promptVi": "một bãi biển cát yên bình",
+  "referenceAnswers": [
+   "a quiet sandy beach"
+  ],
+  "grammarTags": [
+   "Adjective Order"
+  ],
+  "explanationVi": "Các tính từ 'quiet' (chỉ cảm nhận) và 'sandy' (chỉ chất liệu/đặc điểm) đặt trước danh từ 'beach'.",
+  "rationaleVi": "Giúp người học thực hành ghép tính từ chỉ đặc điểm địa điểm du lịch ở mức độ Level 1.5.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "ai-assisted-level-draft",
+  "version": 1
+ },
+ {
+  "id": "band-1.5-exp-012",
+  "practiceLevel": "1.5",
+  "type": "phrase",
+  "topic": "thể thao",
+  "targetTerm": "an exciting football match",
+  "meaningVi": "một trận đấu bóng đá kịch tính",
+  "promptVi": "một trận đấu bóng đá kịch tính",
+  "referenceAnswers": [
+   "an exciting football match"
+  ],
+  "grammarTags": [
+   "Adjective + Noun Compound"
+  ],
+  "explanationVi": "Mạo từ 'an' đi kèm tính từ 'exciting' và cụm danh từ Anh-Anh 'football match'.",
+  "rationaleVi": "Cụm 4 từ phản ánh chính xác ngữ cảnh thể thao với cấu trúc tính từ + danh từ quen thuộc ở Level 1.5.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "ai-assisted-level-draft",
+  "version": 1
+ },
+ {
+  "id": "band-1.5-exp-013",
+  "practiceLevel": "1.5",
+  "type": "phrase",
+  "topic": "thời gian",
+  "targetTerm": "a late afternoon",
+  "meaningVi": "một buổi chiều muộn",
+  "promptVi": "một buổi chiều muộn",
+  "referenceAnswers": [
+   "a late afternoon"
+  ],
+  "grammarTags": [
+   "adjective position"
+  ],
+  "explanationVi": "Tính từ 'late' đứng trước danh từ 'afternoon' để bổ nghĩa, đi kèm mạo từ không xác định 'a'.",
+  "rationaleVi": "Cụm 3 từ đơn giản diễn đạt thời gian quen thuộc, đáp ứng yêu cầu trật tự tính từ và danh từ ở level 1.5.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "ai-assisted-level-draft",
+  "version": 1
+ },
+ {
+  "id": "band-1.5-exp-014",
+  "practiceLevel": "1.5",
+  "type": "phrase",
+  "topic": "sức khỏe",
+  "targetTerm": "a bad headache",
+  "meaningVi": "một cơn đau đầu nặng",
+  "promptVi": "một cơn đau đầu nặng",
+  "referenceAnswers": [
+   "a bad headache"
+  ],
+  "grammarTags": [
+   "fixed collocation"
+  ],
+  "explanationVi": "Cụm từ cố định 'a bad headache' mô tả tình trạng đau đầu nặng, đi kèm mạo từ 'a'.",
+  "rationaleVi": "Cụm 3 từ quen thuộc thuộc chủ đề sức khỏe hàng ngày, phù hợp tiêu chí cấp độ 1.5.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "ai-assisted-level-draft",
+  "version": 1
+ },
+ {
+  "id": "band-1.5-exp-015",
+  "practiceLevel": "1.5",
+  "type": "phrase",
+  "topic": "công việc",
+  "targetTerm": "a high salary",
+  "meaningVi": "một mức lương cao",
+  "promptVi": "một mức lương cao",
+  "referenceAnswers": [
+   "a high salary"
+  ],
+  "grammarTags": [
+   "adjective order"
+  ],
+  "explanationVi": "Tính từ 'high' đặt trước danh từ 'salary' để chỉ mức độ thu nhập, đi kèm mạo từ 'a'.",
+  "rationaleVi": "Cụm danh từ 3 từ thể hiện đúng trật tự từ tính từ - danh từ cơ bản cho mức 1.5.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "ai-assisted-level-draft",
+  "version": 1
+ },
+ {
+  "id": "band-1.5-exp-016",
+  "practiceLevel": "1.5",
+  "type": "phrase",
+  "topic": "đô thị",
+  "targetTerm": "large public park",
+  "meaningVi": "công viên công cộng lớn",
+  "promptVi": "một công viên công cộng lớn",
+  "referenceAnswers": [
+   "a large public park"
+  ],
+  "grammarTags": [
+   "adjective order"
+  ],
+  "explanationVi": "Trật tự tính từ gồm tính từ kích thước 'large' đứng trước tính từ phân loại 'public'.",
+  "rationaleVi": "Cụm 4 từ kết hợp hai tính từ bổ nghĩa cho danh từ miêu tả không gian đô thị ở mức 1.5.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "ai-assisted-level-draft",
+  "version": 1
+ },
+ {
+  "id": "band-1.5-exp-017",
+  "practiceLevel": "1.5",
+  "type": "phrase",
+  "topic": "công nghệ",
+  "targetTerm": "fast laptop",
+  "meaningVi": "máy tính xách tay nhanh",
+  "promptVi": "một máy tính xách tay nhanh",
+  "referenceAnswers": [
+   "a fast laptop"
+  ],
+  "grammarTags": [
+   "adjective position"
+  ],
+  "explanationVi": "Tính từ 'fast' đặt trước danh từ ghép 'laptop' để miêu tả tốc độ thiết bị.",
+  "rationaleVi": "Cụm 3 từ thuộc chủ đề công nghệ gần gũi, thực hành trật tự tính từ bổ nghĩa cho danh từ.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "ai-assisted-level-draft",
+  "version": 1
+ },
+ {
+  "id": "band-1.5-exp-018",
+  "practiceLevel": "1.5",
+  "type": "phrase",
+  "topic": "giáo dục",
+  "targetTerm": "difficult exam",
+  "meaningVi": "bài thi khó",
+  "promptVi": "một bài thi khó",
+  "referenceAnswers": [
+   "a difficult exam"
+  ],
+  "grammarTags": [
+   "determiner and adjective order"
+  ],
+  "explanationVi": "Mạo từ 'a' kết hợp với tính từ 'difficult' đứng trước danh từ 'exam'.",
+  "rationaleVi": "Cụm 3 từ diễn đạt chủ đề trường học quen thuộc phù hợp với trình độ 1.5.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "ai-assisted-level-draft",
+  "version": 1
+ },
+ {
+  "id": "band-1.5-exp-019",
+  "practiceLevel": "1.5",
+  "type": "phrase",
+  "topic": "thể thao",
+  "targetTerm": "outdoor swimming pool",
+  "meaningVi": "bể bơi ngoài trời",
+  "promptVi": "một bể bơi ngoài trời",
+  "referenceAnswers": [
+   "an outdoor swimming pool"
+  ],
+  "grammarTags": [
+   "determiner and modifier"
+  ],
+  "explanationVi": "Mạo từ 'an' đứng trước từ bắt đầu bằng nguyên âm 'outdoor', bổ nghĩa cho danh từ ghép 'swimming pool'.",
+  "rationaleVi": "Cụm 4 từ miêu tả cơ sở vật chất thể thao phổ biến, luyện tập dùng mạo từ 'an' đúng quy tắc.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "ai-assisted-level-draft",
+  "version": 1
+ },
+ {
+  "id": "band-1.5-exp-020",
+  "practiceLevel": "1.5",
+  "type": "phrase",
+  "topic": "đồ ăn",
+  "targetTerm": "fresh orange juice",
+  "meaningVi": "nước cam tươi",
+  "promptVi": "nước cam tươi",
+  "referenceAnswers": [
+   "fresh orange juice"
+  ],
+  "grammarTags": [
+   "adjective order"
+  ],
+  "explanationVi": "Danh từ không đếm được 'orange juice' đứng sau tính từ miêu tả trạng thái 'fresh'.",
+  "rationaleVi": "Cụm 3 từ không sử dụng mạo từ cho danh từ không đếm được ở chủ đề đồ ăn quen thuộc.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "ai-assisted-level-draft",
+  "version": 1
+ },
+ {
+  "id": "band-1.5-exp-021",
+  "practiceLevel": "1.5",
+  "type": "phrase",
+  "topic": "đi lại",
+  "targetTerm": "return train ticket",
+  "meaningVi": "vé tàu khứ hồi",
+  "promptVi": "một chiếc vé tàu khứ hồi",
+  "referenceAnswers": [
+   "a return train ticket"
+  ],
+  "grammarTags": [
+   "noun modifier"
+  ],
+  "explanationVi": "Sử dụng từ chuẩn Anh-Anh 'return ticket' (vé khứ hồi) kết hợp với danh từ chỉ phương tiện 'train'.",
+  "rationaleVi": "Cụm cố định 4 từ ứng dụng trong tình huống đi lại phương tiện công cộng chuẩn Anh-Anh ở mức 1.5.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "ai-assisted-level-draft",
+  "version": 1
+ },
+ {
+  "id": "band-1.5-exp-022",
+  "practiceLevel": "1.5",
+  "type": "phrase",
+  "topic": "môi trường",
+  "targetTerm": "fresh air",
+  "meaningVi": "không khí trong lành",
+  "promptVi": "không khí trong lành",
+  "referenceAnswers": [
+   "fresh air"
+  ],
+  "grammarTags": [
+   "fixed collocation"
+  ],
+  "explanationVi": "Cụm danh từ cố định 'fresh air' mô tả không khí sạch, không có mạo từ theo gợi ý tiếng Việt.",
+  "rationaleVi": "Cụm 2 từ rất ngắn gọn, quen thuộc và phù hợp với tiêu chí cụm từ cố định cấp độ 1.5.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "ai-assisted-level-draft",
+  "version": 1
+ },
+ {
+  "id": "band-1.5-exp-023",
+  "practiceLevel": "1.5",
+  "type": "phrase",
+  "topic": "nhà ở",
+  "targetTerm": "two-storey house",
+  "meaningVi": "ngôi nhà hai tầng",
+  "promptVi": "một ngôi nhà hai tầng",
+  "referenceAnswers": [
+   "a two-storey house"
+  ],
+  "grammarTags": [
+   "compound adjective"
+  ],
+  "explanationVi": "Tính từ ghép 'two-storey' viết theo chính tả Anh-Anh bổ nghĩa cho danh từ 'house'.",
+  "rationaleVi": "Cụm 3 từ miêu tả đặc điểm nhà ở sử dụng tính từ ghép cơ bản ở level 1.5.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "ai-assisted-level-draft",
+  "version": 1
+ },
+ {
+  "id": "band-1.5-exp-024",
+  "practiceLevel": "1.5",
+  "type": "phrase",
+  "topic": "du lịch",
+  "targetTerm": "tourist information centre",
+  "meaningVi": "trung tâm thông tin du lịch",
+  "promptVi": "một trung tâm thông tin du lịch",
+  "referenceAnswers": [
+   "a tourist information centre"
+  ],
+  "grammarTags": [
+   "noun adjunct order"
+  ],
+  "explanationVi": "Chuỗi danh từ bổ nghĩa đặt trước danh từ chính 'centre' (viết theo chuẩn Anh-Anh).",
+  "rationaleVi": "Cụm danh từ cố định 4 từ thuộc ngữ cảnh du lịch rất thông dụng đối với người học 1.5.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "ai-assisted-level-draft",
+  "version": 1
+ },
+ {
+  "id": "band-1.5-exp-025",
+  "practiceLevel": "1.5",
+  "type": "phrase",
+  "topic": "đồ ăn",
+  "targetTerm": "hot green tea",
+  "meaningVi": "trà xanh nóng",
+  "promptVi": "trà xanh nóng",
+  "referenceAnswers": [
+   "hot green tea"
+  ],
+  "grammarTags": [
+   "adjective order"
+  ],
+  "explanationVi": "Tính từ chỉ nhiệt độ 'hot' đứng trước tính từ chỉ màu sắc 'green', sau đó là danh từ 'tea'.",
+  "rationaleVi": "Cụm 3 từ quen thuộc về đồ uống, giúp người học luyện tập trật tự tính từ ở cấp độ 1.5.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "ai-assisted-level-draft",
+  "version": 1
+ },
+ {
+  "id": "band-1.5-exp-026",
+  "practiceLevel": "1.5",
+  "type": "phrase",
+  "topic": "thời gian",
+  "targetTerm": "a summer holiday",
+  "meaningVi": "một kỳ nghỉ hè",
+  "promptVi": "một kỳ nghỉ hè",
+  "referenceAnswers": [
+   "a summer holiday"
+  ],
+  "grammarTags": [
+   "noun adjunct phrase"
+  ],
+  "explanationVi": "Mạo từ 'a' đi cùng cụm danh từ bổ nghĩa 'summer holiday', chuẩn văn phong Anh-Anh.",
+  "rationaleVi": "Cụm 3 từ cố định chỉ thời gian nghỉ ngơi rất quen thuộc trong đời sống.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "ai-assisted-level-draft",
+  "version": 1
+ },
+ {
+  "id": "band-1.5-exp-027",
+  "practiceLevel": "1.5",
+  "type": "phrase",
+  "topic": "đi lại",
+  "targetTerm": "a railway station",
+  "meaningVi": "một ga tàu hỏa",
+  "promptVi": "một ga tàu hỏa",
+  "referenceAnswers": [
+   "a railway station"
+  ],
+  "grammarTags": [
+   "compound noun"
+  ],
+  "explanationVi": "Dùng 'railway station' theo chuẩn Anh-Anh để chỉ ga tàu hỏa.",
+  "rationaleVi": "Cụm danh từ cố định 3 từ phản ánh tình huống di chuyển cơ bản.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "ai-assisted-level-draft",
+  "version": 1
+ },
+ {
+  "id": "band-1.5-exp-028",
+  "practiceLevel": "1.5",
+  "type": "phrase",
+  "topic": "nhà ở",
+  "targetTerm": "a beautiful garden",
+  "meaningVi": "một khu vườn đẹp",
+  "promptVi": "một khu vườn đẹp",
+  "referenceAnswers": [
+   "a beautiful garden"
+  ],
+  "grammarTags": [
+   "adjective modification"
+  ],
+  "explanationVi": "Tính từ miêu tả 'beautiful' đứng trước danh từ 'garden' để bổ nghĩa.",
+  "rationaleVi": "Cấu trúc mạo từ + tính từ + danh từ gồm 3 từ chuẩn cho trình độ 1.5.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "ai-assisted-level-draft",
+  "version": 1
+ },
+ {
+  "id": "band-1.5-exp-029",
+  "practiceLevel": "1.5",
+  "type": "phrase",
+  "topic": "sức khỏe",
+  "targetTerm": "a good doctor",
+  "meaningVi": "một bác sĩ giỏi",
+  "promptVi": "một bác sĩ giỏi",
+  "referenceAnswers": [
+   "a good doctor"
+  ],
+  "grammarTags": [
+   "adjective modification"
+  ],
+  "explanationVi": "Tính từ 'good' mô tả phẩm chất/năng lực, đứng trước danh từ chỉ người 'doctor'.",
+  "rationaleVi": "Cụm 3 từ đơn giản thể hiện mối quan hệ tính từ - danh từ trong chủ đề sức khỏe.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "ai-assisted-level-draft",
+  "version": 1
+ },
+ {
+  "id": "band-1.5-exp-030",
+  "practiceLevel": "1.5",
+  "type": "phrase",
+  "topic": "trường học",
+  "targetTerm": "a small school library",
+  "meaningVi": "một thư viện trường nhỏ",
+  "promptVi": "một thư viện trường nhỏ",
+  "referenceAnswers": [
+   "a small school library"
+  ],
+  "grammarTags": [
+   "adjective order"
+  ],
+  "explanationVi": "Tính từ kích thước 'small' đứng trước danh từ đóng vai trò tính từ 'school' và danh từ chính 'library'.",
+  "rationaleVi": "Cụm 4 từ kết hợp trật tự tính từ và danh từ ghép phù hợp mục tiêu bài học.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "ai-assisted-level-draft",
+  "version": 1
+ },
+ {
+  "id": "band-1.5-exp-031",
+  "practiceLevel": "1.5",
+  "type": "phrase",
+  "topic": "công nghệ",
+  "targetTerm": "a short text message",
+  "meaningVi": "một tin nhắn ngắn",
+  "promptVi": "một tin nhắn ngắn",
+  "referenceAnswers": [
+   "a short text message"
+  ],
+  "grammarTags": [
+   "compound noun phrase"
+  ],
+  "explanationVi": "Danh từ ghép 'text message' được bổ nghĩa bởi tính từ 'short' và mạo từ 'a'.",
+  "rationaleVi": "Cụm 4 từ dùng trong ngữ cảnh giao tiếp công nghệ hàng ngày.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "ai-assisted-level-draft",
+  "version": 1
+ },
+ {
+  "id": "band-1.5-exp-032",
+  "practiceLevel": "1.5",
+  "type": "phrase",
+  "topic": "thể thao",
+  "targetTerm": "a pair of trainers",
+  "meaningVi": "một đôi giày thể thao",
+  "promptVi": "một đôi giày thể thao",
+  "referenceAnswers": [
+   "a pair of trainers"
+  ],
+  "grammarTags": [
+   "fixed quantifier phrase"
+  ],
+  "explanationVi": "Cụm chỉ lượng 'a pair of' đi với danh từ 'trainers' (từ Anh-Anh chỉ giày thể thao).",
+  "rationaleVi": "Cụm 4 từ định lượng cố định mang đặc trưng từ vựng Anh-Anh.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "ai-assisted-level-draft",
+  "version": 1
+ },
+ {
+  "id": "band-1.5-exp-033",
+  "practiceLevel": "1.5",
+  "type": "phrase",
+  "topic": "đô thị",
+  "targetTerm": "a busy shopping street",
+  "meaningVi": "một con phố mua sắm đông đúc",
+  "promptVi": "một con phố mua sắm đông đúc",
+  "referenceAnswers": [
+   "a busy shopping street"
+  ],
+  "grammarTags": [
+   "adjective order"
+  ],
+  "explanationVi": "Tính từ 'busy' đứng trước danh từ ghép 'shopping street'.",
+  "rationaleVi": "Cụm 4 từ miêu tả đặc điểm không gian đô thị quen thuộc.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "ai-assisted-level-draft",
+  "version": 1
+ },
+ {
+  "id": "band-1.5-exp-034",
+  "practiceLevel": "1.5",
+  "type": "phrase",
+  "topic": "môi trường",
+  "targetTerm": "a clean river",
+  "meaningVi": "một dòng sông sạch",
+  "promptVi": "một dòng sông sạch",
+  "referenceAnswers": [
+   "a clean river"
+  ],
+  "grammarTags": [
+   "adjective modification"
+  ],
+  "explanationVi": "Tính từ 'clean' đứng trước danh từ 'river' để miêu tả tình trạng môi trường.",
+  "rationaleVi": "Cụm 3 từ ngắn gọn, chính xác về mặt ý nghĩa và ngữ pháp.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "ai-assisted-level-draft",
+  "version": 1
+ },
+ {
+  "id": "band-1.5-exp-035",
+  "practiceLevel": "1.5",
+  "type": "phrase",
+  "topic": "văn hóa",
+  "targetTerm": "a music festival",
+  "meaningVi": "một lễ hội âm nhạc",
+  "promptVi": "một lễ hội âm nhạc",
+  "referenceAnswers": [
+   "a music festival"
+  ],
+  "grammarTags": [
+   "noun adjunct phrase"
+  ],
+  "explanationVi": "Danh từ 'music' đứng trước danh từ 'festival' để làm chức năng bổ nghĩa.",
+  "rationaleVi": "Cụm 3 từ ghép danh từ quen thuộc trong đời sống văn hóa.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "ai-assisted-level-draft",
+  "version": 1
+ }
+]
