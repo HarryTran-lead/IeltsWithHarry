@@ -148,6 +148,17 @@ describe("M10-L36 offline ADD-ONLY correction and independent-review gate",()=>{
   f.c.lessons[0].first_reviewer="lesson writer";
   expect(scan(f).errors).toContain("TECHNICAL_REVIEW_MUST_BE_SEPARATE_FROM_AUTHOR:S6-001");
  });
+ it("requires independent evidence references at each of three review stages",()=>{
+  const draft=metadata();
+  draft.c.lessons[0].proposal_evidence=draft.c.lessons[0].source_evidence;
+  expect(scan(draft).errors).toContain("SOURCE_AND_CORRECTION_NEED_DIFFERENT_EVIDENCE:S6-001");
+  const technical=metadata("TECHNICAL_REVIEWED");
+  technical.c.lessons[0].first_review_evidence=technical.c.lessons[0].proposal_evidence;
+  expect(scan(technical).errors).toContain("TECHNICAL_REVIEW_MUST_BE_SEPARATE_FROM_AUTHOR:S6-001");
+  const independent=metadata("TEACHER_REVIEWED_PENDING_STAGING");
+  independent.c.lessons[0].teacher_review_evidence=independent.c.lessons[0].first_review_evidence;
+  expect(scan(independent).errors).toContain("INDEPENDENT_TEACHER_REVIEW_NOT_SUPPORTED:S6-001");
+ });
  it("rejects technical signoff dated before author proposal",()=>{
   const f=metadata("TECHNICAL_REVIEWED");
   f.c.lessons[0].first_review_at_utc="2026-11-17T08:00:00.000Z";
