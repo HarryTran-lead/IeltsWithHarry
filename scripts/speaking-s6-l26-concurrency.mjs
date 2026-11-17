@@ -155,7 +155,14 @@ export async function cleanupL26Fixture(config,fetcher=fetch){
       results.push({table,ok:[200,204].includes(r.status)});
     }catch{results.push({table,ok:false});}
   }
-  return {cleaned:results.every(x=>x.ok),results};
+  // HTTP 204 alone does not prove cleanup. Re-read the three
+  // fixture tables AND five release flags before treating cleanup as complete.
+  let verified=false;
+  if(results.every(x=>x.ok)){
+    try { verified=await readL26Preconditions(config,fetcher); }
+    catch { verified=false; }
+  }
+  return {cleaned:results.every(x=>x.ok)&&verified,verified,results};
 }
 export async function executeL26(config,fetcher=fetch){
   await readL26Preconditions(config,fetcher); // Never mutate if prerequisites fail.
