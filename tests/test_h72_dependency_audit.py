@@ -2,6 +2,7 @@ import importlib.util
 import json
 from pathlib import Path
 import tempfile
+import subprocess
 import unittest
 
 SCRIPT=Path(__file__).resolve().parents[1]/"scripts/h72_dependency_audit.py"
@@ -87,6 +88,29 @@ class H72StaticAuditTests(unittest.TestCase):
         self.assertEqual(audit.classify("src/app/api/admin/route.ts"),"APPLICATION_RUNTIME")
         self.assertEqual(audit.classify("supabase/migrations/change.sql"),"DB_MIGRATION_HISTORY")
         self.assertEqual(audit.classify("scripts/h72_dependency_audit.py"),"MILESTONE_OR_OPERATIONAL")
+
+    def test_sha_bound_scan_rejects_modified_tracked_checkout(self):
+        root=self.project({"src/lib/a.ts":"export const version=1;"})
+        subprocess.run(["git","-C",str(root),"init","-q"],check=True)
+        subprocess.run(["git","-C",str(root),"add","src/lib/a.ts"],check=True)
+        subprocess.run(["git","-C",str(root),"-c","user.name=H72 Test",
+                        "-c","user.email=h72@example.invalid",
+                        "-c","commit.gpgsign=false","commit","-qm","baseline"],check=True)
+        audit.assert_clean_tracked_tree(root)
+        (root/"src/lib/a.ts").write_text("export const version=2;",encoding="utf-8")
+        with self.assertRaisesRegex(ValueError,"differs from checked-out HEAD"):
+            audit.assert_clean_tracked_tree(root)
+
+    def test_sha_bound_scan_ignores_untracked_generated_reports(self):
+        root=self.project({"src/lib/a.ts":"export const stable=true;"})
+        subprocess.run(["git","-C",str(root),"init","-q"],check=True)
+        subprocess.run(["git","-C",str(root),"add","src/lib/a.ts"],check=True)
+        subprocess.run(["git","-C",str(root),"-c","user.name=H72 Test",
+                        "-c","user.email=h72@example.invalid",
+                        "-c","commit.gpgsign=false","commit","-qm","baseline"],check=True)
+        (root/"reports").mkdir()
+        (root/"reports/h72_output.json").write_text("{}",encoding="utf-8")
+        audit.assert_clean_tracked_tree(root)
 
     def test_markdown_disclaims_no_matches(self):
         root=self.project({"src/lib/clean.ts":"export const clean = true"})
