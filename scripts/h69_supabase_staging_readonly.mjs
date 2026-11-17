@@ -38,14 +38,14 @@ if (env.H69_ALLOW_READ_ONLY_PROBE !== "YES_AUTHORIZED_STAGING") {
         if (verified.error || !verified.data.user?.id || verified.data.user.id !== login.data.user?.id) {
           throw Error("AUTH_GETUSER_FAILED");
         }
-        return token;
+        return { token, userId: verified.data.user.id };
       }
-      const teacherToken = await user(env.H69_TEACHER_EMAIL, env.H69_TEACHER_PASSWORD);
-      const outsiderToken = await user(env.H69_OUTSIDER_EMAIL, env.H69_OUTSIDER_PASSWORD);
-      if (teacherToken === outsiderToken) throw Error("IDENTITY_NOT_DISTINCT");
+      const teacher = await user(env.H69_TEACHER_EMAIL, env.H69_TEACHER_PASSWORD);
+      const outsider = await user(env.H69_OUTSIDER_EMAIL, env.H69_OUTSIDER_PASSWORD);
+      if (teacher.userId === outsider.userId) throw Error("IDENTITY_NOT_DISTINCT");
       // Use independent authenticated fetches. No direct access to private H58.
       const privateRead = async (jwt) => {
-        const res = await fetch(address + "rest/v1/probes?select=probe_id&limit=1", {
+        const res = await fetch(new URL("/rest/v1/probes?select=probe_id&limit=1", address), {
           headers: {
             apikey: env.H69_SUPABASE_ANON_KEY,
             Authorization: "Bearer " + jwt,
@@ -54,14 +54,14 @@ if (env.H69_ALLOW_READ_ONLY_PROBE !== "YES_AUTHORIZED_STAGING") {
         });
         if (res.ok) throw Error("PRIVATE_H58_EXPOSED");
       };
-      await privateRead(teacherToken);
-      await privateRead(outsiderToken);
+      await privateRead(teacher.token);
+      await privateRead(outsider.token);
       // Invalid and unassigned request is guaranteed non-writing even if DBA accidentally opened the gate.
-      const noWrite = await fetch(address + "rest/v1/rpc/h68_submit_review", {
+      const noWrite = await fetch(new URL("/rest/v1/rpc/h68_submit_review", address), {
         method: "POST",
         headers: {
           apikey: env.H69_SUPABASE_ANON_KEY,
-          Authorization: "Bearer " + teacherToken,
+          Authorization: "Bearer " + teacher.token,
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
