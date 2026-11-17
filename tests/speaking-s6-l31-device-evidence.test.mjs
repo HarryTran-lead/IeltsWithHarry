@@ -89,6 +89,11 @@ describe("M10-L31 device acceptance reports (synthetic fixtures only)",()=>{
    d.cases.find(c=>c.id==="S6-E2E-45").details.sha256_matches=false;
    expect(auditL31DeviceEvidence(d,a,b).valid).toBe(false);
  });
+ it("rejects unreviewed extra detail keys that might contain personal data",()=>{
+   const {d,a,b}=simulatedReports();
+   d.cases[0].details.audio_blob="private-data";
+   expect(auditL31DeviceEvidence(d,a,b).valid).toBe(false);
+ });
  it("requires every invalid-upload negative case, not one success only",()=>{
    const {d,a,b}=simulatedReports();
    d.cases.find(c=>c.id==="S6-E2E-46").details.invalid_variants=["missing"];
