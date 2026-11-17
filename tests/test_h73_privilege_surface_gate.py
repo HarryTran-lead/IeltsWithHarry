@@ -73,13 +73,14 @@ class H73PrivilegeSurfaceTests(unittest.TestCase):
         self.assertIn("STATIC_TOKEN_MATCHES_NOT_RUNTIME_REACHABILITY", payload)
 
 
-    def test_full_baseline_covers_32_static_review_locations(self):
-        self.assertEqual(len(h73.BASELINE_SERVICE_ROLE_PATHS), 11)
+    def test_baseline_shrinks_after_grammar_signing_key_separation(self):
+        self.assertEqual(len(h73.BASELINE_SERVICE_ROLE_PATHS), 10)
+        self.assertNotIn("src/lib/grammar/placement.ts", h73.BASELINE_SERVICE_ROLE_PATHS)
         self.assertEqual(len(h73.BASELINE_INDIRECT_BANK_CLIENT_PATHS), 21)
         self.assertEqual(len(h73.BASELINE_POSSIBLE_CLIENT_PATHS), 22)
         self.assertEqual(len(
             h73.BASELINE_SERVICE_ROLE_PATHS | h73.BASELINE_POSSIBLE_CLIENT_PATHS
-        ), 32)
+        ), 31)
         self.assertEqual(
             h73.BASELINE_INDIRECT_BANK_CLIENT_PATHS & h73.BASELINE_SERVICE_ROLE_PATHS,
             frozenset(),
