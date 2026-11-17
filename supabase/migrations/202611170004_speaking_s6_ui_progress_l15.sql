@@ -12,7 +12,7 @@ create table public.speaking_s6_s5_eligibility (
  verified_at timestamptz,
  verified_by uuid references auth.users(id),
  updated_at timestamptz not null default now(),
- check (s5_verified = false or (verified_at is not null and verified_by is not null and length(trim(evidence_reference))>0))
+ check (s5_verified = false or (verified_at is not null and verified_by is not null and coalesce(length(btrim(evidence_reference)),0)>0))
 );
 alter table public.speaking_s6_s5_eligibility enable row level security;
 revoke all on public.speaking_s6_s5_eligibility from anon,authenticated;
