@@ -10,7 +10,7 @@
 
 1. `tests/speaking-s6/m10-l34-editorial-backlog.json`: 44 prepopulated redacted, `NOT_SCANNED` lesson records, arranged in four 11-lesson rounds. All finding arrays are EMPTY because actual private packages have not been inspected. The zero findings are **unknown**, NOT "defect-free."
 2. `scripts/speaking-s6-l34-editorial-remediation.mjs`: 21 fixed, named structural failure types mapped to a risk tier, pedagogical area, and actionable revision instruction. Reconciles L34 with the existing L33 teacher metadata. Can optionally derive an **in-memory suggested queue** from authorized local original 44 packages using the L33 private batch reader.
-3. `tests/speaking-s6-l34-editorial-remediation.test.mjs`: 12 synthetic regression tests, including unsafe hash/source claims, privacy leakage, untested revisions, priority ordering, four batches and fully unreviewed content.
+3. `tests/speaking-s6-l34-editorial-remediation.test.mjs`: 15 synthetic regression tests, including unsafe hash/source claims, privacy leakage, untested revisions, priority ordering, four batches and fully unreviewed content.
 4. `.github/workflows/quality.yml`: runs the L34 tool with **no** private-package argument and no credentials, keeping ordinary CI safe.
 
 The system does not create or approve a revision, mutate the source lessons, import private banks, score a real learner, run Supabase queries, or automatically sign teacher QA.
@@ -25,6 +25,8 @@ The system does not create or approve a revision, mutate the source lessons, imp
 | `STRUCTURE_PASSED` | Pinned revision passed the *structural* checklist | Independent teacher still evaluates its pedagogical quality and 90/100 internal threshold |
 
 A scanned row must have the exact revision, **real** student/private SHA-256 values, redacted `ev:` proof reference, and valid known finding codes. An unscanned row must have NULL revision/hash/evidence and ZERO findings. A proposed revision must have a distinct new ID, author and independent rescan. Teacher reviews are stored separately in the L33 manifest; L34 may not self-approve lessons.
+
+The L34 checker also compares a previously assessed L33 review record's revision and **both** SHA-256 values with its L34 structural scan. If these differ, it returns a blocking source-drift error: a teacher cannot approve one revision while the backlog quietly refers to another. A suggested 44-package preview is considered structurally complete only when all 44 validated lesson reports are present, no failures/duplicates remain and the L33 inspector explicitly reports clean coverage. Even then it is **only a human-review candidate**.
 
 **Important:** Local structural pass means neither IELTS 6.5 suitability nor lesson originality, copyright, pronunciation quality or human signoff. It is only `READY_FOR_INDEPENDENT_TEACHER_REVIEW`.
 
