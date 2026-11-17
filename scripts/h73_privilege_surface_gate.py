@@ -17,6 +17,8 @@ import h72_dependency_audit as h72
 # Changes to this list require explicit code review. Paths may include test
 # fixtures because the H72 classifier treats services/** as runtime.
 BASELINE_SERVICE_ROLE_PATHS = frozenset({
+    "scripts/writing-grading-worker.ts",
+    "scripts/speaking-coaching-worker.ts",
     "services/audio-worker/test_worker.py",
     "services/audio-worker/worker.py",
     "services/speaking-cloudflare-worker/src/index.js",
