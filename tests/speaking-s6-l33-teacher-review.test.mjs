@@ -29,16 +29,19 @@ function syntheticPackage(){
  const guided=Array.from({length:4},(_,i)=>({
   activity_id:id+"-G0"+(i+1),
   question_en:"Can you explain your experience about topic number "+i+"?",
+  model_ref:"server:guided-"+i,
   hints:Array.from({length:3},(_,j)=>({level:j+1,
     text_vi:"Gợi ý cho câu trả lời số "+(j+1)}))
  }));
  const independent=Array.from({length:3},(_,i)=>({
   activity_id:id+"-I0"+(i+1),mode:"INDEPENDENT",
-  no_answer_key_on_student:true
+  no_answer_key_on_student:true,
+  prompt_ref:"server:independent-"+i,followup_delivery:"AFTER_INITIAL_SUBMISSION"
  }));
  const mastery=Array.from({length:2},(_,i)=>({
   activity_id:id+"-M0"+(i+1),mode:"MASTERY",
-  no_answer_key_on_student:true
+  no_answer_key_on_student:true,
+  prompt_ref:"server:mastery-"+i,followup_delivery:"AFTER_INITIAL_SUBMISSION"
  }));
  const lesson={
   lesson_id:id,status:"STAGING_REVIEW_REQUIRED",publish_allowed:false,
@@ -52,6 +55,7 @@ function syntheticPackage(){
  };
  const privateLesson={
   guided:Object.fromEntries(guided.map((g,i)=>[g.activity_id,{
+   question_en:g.question_en,
    model_answer_en:"I usually explain my ideas by giving a reason and an example about topic "+i,
    model_translation_vi:"Tôi thường giải thích ý kiến bằng lí do và ví dụ về chủ đề "+i,
    teaching_explanation_en:"Give a main idea, clear reason and relevant example.",
