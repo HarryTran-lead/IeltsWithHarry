@@ -68,6 +68,26 @@ describe("band translation practice data", () => {
       for (const error of item.commonErrors) expect(error.incorrect).not.toBe(error.correction);
     }
   });
+
+  it("only shows step hints that quote the prompt and never the answer", async () => {
+    const exercises = [...(await allExercises()).values()].flat();
+    const hinted = exercises.filter((item) => item.hintsVi?.length);
+    expect(hinted.length).toBeGreaterThan(1800);
+    for (const item of hinted) {
+      expect(item.hintsVi!.length).toBeLessThanOrEqual(3);
+      for (const hint of item.hintsVi!) {
+        expect(hint).not.toMatch(/bắt đầu bằng chữ|chữ cái|→ “/);
+        for (const quote of hint.match(/“[^”]*”/g) ?? []) {
+          expect(item.promptVi).toContain(quote.slice(1, -1).replace(/(…|\.\.\.)$/, "").trim());
+        }
+        const text = hint.toLowerCase();
+        for (const answer of item.referenceAnswers) {
+          const words = answer.toLowerCase().match(/[a-z']+/g) ?? [];
+          for (let index = 0; index + 3 <= words.length; index++) expect(text).not.toContain(words.slice(index, index + 3).join(" "));
+        }
+      }
+    }
+  });
 });
 
 describe("closestAnswer", () => {

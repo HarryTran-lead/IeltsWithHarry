@@ -14,6 +14,8 @@ export const practiceExerciseSchema = z.object({
   // ESL v2 lessons have no single key word; they skip the copy step and the key-word hint.
   targetTerm: z.string().min(1).optional(),
   meaningVi: z.string().min(1).optional(),
+  // Level-1 step hints (structure, logic, self-check), opened one at a time.
+  hintsVi: z.array(z.string().min(1)).min(1).optional(),
   promptVi: z.string().min(1),
   // The first answer is the model shown first; the rest are accepted alternatives.
   referenceAnswers: z.array(z.string().min(1)).min(1),
