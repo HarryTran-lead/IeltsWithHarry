@@ -31,8 +31,25 @@ const MIME=new Set(["audio/webm","audio/mp4","audio/ogg"]);
 const STATUS=new Set(["NOT_RUN","PASS","FAIL","BLOCKED"]);
 const hasText=x=>typeof x==="string"&&x.trim().length>0;
 const cleanNote=x=>hasText(x)&&x.length<=400&&!/(https?:\/\/|Bearer\s|eyJ[A-Za-z0-9_-]{15,}|[0-9a-f]{8}-[0-9a-f]{4}-[1-8][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}|\btoken\b\s*[:=])/i.test(x);
+const DETAIL_FIELDS={
+ IOS_RECORD_PLAYBACK:["recording_ok","playback_ok","upload_ok","consent","duration_seconds","media_mime"],
+ ANDROID_RECORD_PLAYBACK:["recording_ok","playback_ok","upload_ok","consent","duration_seconds","media_mime"],
+ MIC_PERMISSION_DENIAL:["permission_denied","phantom_blob","recoverable_ui"],
+ STALE_RECORDER_CALLBACK:["late_callback_ignored","take_replaced"],
+ REFRESH_NO_LOCAL_BLOB:["old_blob_restored","re_record_required"],
+ CONSENTED_OWNER_UPLOAD:["consent","owner_path_verified","server_object_present"],
+ NO_CONSENT_NO_STORAGE:["consent","server_object_present"],
+ NO_CONSENT_EVIDENCE:["consent","server_object_present","audio_evidence"],
+ STORED_AUDIO_HASH:["consent","server_object_present","audio_evidence","sha256_matches","mime_matches","size_matches"],
+ INVALID_UPLOAD_REJECTION:["attempt_not_submitted","private_errors_not_leaked","invalid_variants"],
+ STORAGE_RLS_DENIAL:["direct_delete_denied","direct_update_denied","cross_account_read_denied"]
+};
 function detailsValid(check,d){
  if(!d||typeof d!=="object"||Array.isArray(d))return false;
+ // No raw audio, transcript, UUID, Storage URL or arbitrary opaque data
+ // may be hidden in extra keys inside the public redacted QA manifest.
+ const allowed=DETAIL_FIELDS[check];
+ if(!allowed||Object.keys(d).some(key=>!allowed.includes(key)))return false;
  switch(check){
   case "IOS_RECORD_PLAYBACK":
   case "ANDROID_RECORD_PLAYBACK":
