@@ -28,7 +28,7 @@ create or replace function public.speaking_s6_start_attempt_l25(
 ) returns uuid
 language plpgsql security definer set search_path = '' as $$
 declare
-  v_hour timestamptz := date_trunc('hour', now());
+  v_hour timestamptz := date_trunc('hour', now() at time zone 'UTC') at time zone 'UTC';
   v_day date := (now() at time zone 'UTC')::date;
   v_quota public.speaking_s6_start_quotas%rowtype;
   v_hour_count integer;
