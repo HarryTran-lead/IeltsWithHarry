@@ -160,9 +160,20 @@ const shortErrors=arr=>[...new Set(arr)];
  */
 export function compareL36PrivateRevisions(original,revised){
  const errors=[];
- const l0=original?.lesson,l1=revised?.lesson;
- if(!hasFields(original)||!hasFields(revised))
-   errors.push("INVALID_ROOT_IMPORT_FIELDS");
+ // Reject malformed JSON BEFORE attempting any hashing or private-field
+ // comparison; never throw a raw exception containing source content.
+ if(!hasFields(original)||!hasFields(revised)||
+    !original.lesson||typeof original.lesson!=="object"||
+    !revised.lesson||typeof revised.lesson!=="object"||
+    !original.privateLesson||typeof original.privateLesson!=="object"||
+    !revised.privateLesson||typeof revised.privateLesson!=="object"){
+   return {milestone:"M10-L36",lesson_id:null,
+     status:"HOLD_CORRECTION_PACKAGE",errors:["INVALID_ROOT_IMPORT_FIELDS"],
+     impact:null,source_original_unchanged:true,actual_import_performed:false,
+     real_human_approval_verified:false,private_content_returned:false,
+     release_authorized:false,s7_unlock_authorized:false};
+ }
+ const l0=original.lesson,l1=revised.lesson;
  if(!ID_RE.test(l0?.lesson_id??"")||l0?.lesson_id!==l1?.lesson_id)
    errors.push("LESSON_SCOPE_NOT_IDENTICAL");
  if(!REV.test(original?.revision??"")||!REV.test(revised?.revision??"")||
