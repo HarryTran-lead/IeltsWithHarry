@@ -24,7 +24,6 @@ BASELINE_SERVICE_ROLE_PATHS = frozenset({
     "src/app/(public)/notebook/share/[token]/page.tsx",
     "src/app/api/grammar/placement/route.ts",
     "src/lib/deployment-environment.ts",
-    "src/lib/grammar/placement.ts",
     "src/lib/ielts-bank/server.ts",
     "src/lib/news/sync.ts",
     "src/lib/writing-grading/cloudflare-worker.ts",
