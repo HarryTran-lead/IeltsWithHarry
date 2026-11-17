@@ -128,7 +128,7 @@ describe("Speaking S6 L14-L17 actual PostgreSQL migration & ownership smoke (PGl
       const first=await start("S6-001-G02");
       expect(first.rows[0].id).toMatch(/^[0-9a-f-]{36}$/);
       await expect(start("S6-001-G02")).rejects.toThrow("S6_START_COOLDOWN");
-      await start("S6-001-G03");
+      const second=await start("S6-001-G03");
       await expect(start("S6-001-G04")).rejects.toThrow("S6_START_ACTIVE_LIMIT");
       const beforeDelete=await db.query<{hour_count:number}>(
         "select hour_count from public.speaking_s6_start_quotas where user_id=$1 and preview=false",
@@ -136,6 +136,7 @@ describe("Speaking S6 L14-L17 actual PostgreSQL migration & ownership smoke (PGl
       );
       expect(beforeDelete.rows[0].hour_count).toBe(2);
       await db.query("delete from public.speaking_s6_attempts where id=$1",[first.rows[0].id]);
+      await db.query("delete from public.speaking_s6_attempts where id=$1",[second.rows[0].id]);
       const afterDelete=await db.query<{hour_count:number}>(
         "select hour_count from public.speaking_s6_start_quotas where user_id=$1 and preview=false",
         [alice]
