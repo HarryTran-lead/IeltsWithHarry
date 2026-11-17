@@ -33,3 +33,20 @@ jobs:
         env:
           H69_ALLOW_EPHEMERAL_DDL: YES_ISOLATED_CI_ONLY
           H69_PG_DSN: postgresql://h69_ci_runner:h69_ci_password_only@127.0.0.1:5432/h69_ci
+      - name: Package H69 source patch for independent audit
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: h69-source-patch
+          retention-days: 7
+          if-no-files-found: error
+          path: |
+            .github/workflows/h69-postgres-auth-rls-contract-ci.yml
+            sql/h69_ci_h58_blueprint.sql
+            sql/h69_dba_readonly_inventory.sql
+            scripts/h69_ci_bootstrap.sql
+            scripts/h69_ci_postgres.sh
+            scripts/h69_supabase_staging_readonly.mjs
+            src/app/api/admin/r19/h68/review/route.h69.test.ts
+            docs/R19_H69_CODEX_STAGING_VALIDATION_VI.md
+            evidence/H69_STAGING_EVIDENCE_TEMPLATE.json
