@@ -33,7 +33,7 @@ H72 chạy một công cụ dò tìm toàn bộ **file mã nguồn được Git 
 
 ## Tái kiểm tra từ GitHub Actions
 Workflow \`.github/workflows/h72-dependency-evidence-ci.yml\`:
-- Chạy 17 unit tests scanner (số trường hợp đã soạn trong nhánh, trạng thái PASS phụ thuộc CI).
+- Chạy 19 unit tests scanner (số trường hợp đã soạn trong nhánh, trạng thái PASS phụ thuộc CI).
 - Chạy scan theo \`GITHUB_SHA\` và tạo \`reports/h72_dependency_inventory.json/.md\`.
 - Xác nhận H71 evidence gate không báo GO khi dữ liệu staging còn thiếu.
 - Đóng artifact gồm mã nguồn, báo cáo và \`h72_ci_receipt.json\` có SHA-256 của báo cáo.
@@ -51,5 +51,10 @@ Workflow \`.github/workflows/h72-dependency-evidence-ci.yml\`:
 - Quét thêm file `.jsx`, `.mts`, `.cts`, `.json`, `.prisma` và các vị trí runtime `src/pages/`, `workers/`, `functions/`, `app/`, `lib/`, `api/`, `pages/`, middleware, bên cạnh `src/app/` và `src/lib/`.
 - Các phần mở rộng trên **không** chứng minh có hay không có phụ thuộc khi mã nguồn được sinh tự động, truy vấn SQL ghép chuỗi, hoặc khi services bên ngoài repository đang chạy.
 - Kết quả `PARTIAL_STATIC_INVENTORY` do file quá lớn/bị bỏ qua giờ trả mã thoát **3 (không hoàn tất)** thay vì 0. Kết quả `INVENTORY_INCOMPLETE` tiếp tục trả 3. Chỉ `STATIC_INVENTORY_PRODUCED` trả 0 và ngay cả khi đó vẫn là **STATIC ONLY / NO_GO**.
-- Hai unit tests bổ sung kiểm tra runtime layouts/extensions và exit code khi input quá lớn; tổng bộ kiểm thử là 17 trường hợp.
+- Hai unit tests bổ sung kiểm tra runtime layouts/extensions và exit code khi input quá lớn.
 - Artifact CI chỉ được xem là bằng chứng về mã nguồn theo SHA, **không phải** bằng chứng DBA/RLS/JWT/Supabase staging thật, và không được dùng để mở quyền chấm cho learner.
+
+## Kiểm tra index flags che giấu thay đổi (H72 nâng cấp)
+- `git status --porcelain` có thể bỏ qua một file bị thay đổi nếu index gắn `assume-unchanged` hoặc `skip-worktree`. Do đó việc kiểm tra working tree thông thường chưa đủ để tin rằng source khớp commit SHA.
+- Scanner bây giờ kiểm tra toàn bộ entry được Git theo dõi bằng `git ls-files -v -z --cached` và **từ chối** các cờ `assume-unchanged` / `skip-worktree`, kể cả khi báo cáo `git status` sạch. Hạn chế này có thể dẫn tới fail-closed trong sparse checkout; dùng checkout bình thường để kiểm toán.
+- Có thêm 2 unit tests cô lập cho hai cờ này; tổng bộ test là **19**. Đây chỉ là coverage của chính scanner, không phải bằng chứng rằng hệ thống staging đã được kiểm tra.
