@@ -34,11 +34,11 @@ function decodeClaims(jwt) {
     return obj && typeof obj === "object" && !Array.isArray(obj) ? obj : null;
   } catch { return null; }
 }
-function safePublishableKey(key) {
+function safePublishableKey(key, projectRef) {
   if (typeof key !== "string" || key.length > 12000) return false;
   if (/^sb_publishable_[A-Za-z0-9_-]{10,}$/.test(key)) return true;
   const claims = decodeClaims(key); // Legacy anon JWT project API keys.
-  return claims?.role === "anon" && typeof claims?.ref === "string";
+  return claims?.role === "anon" && claims?.ref === projectRef;
 }
 function stagedUserClaims(token, projectRef) {
   const claims = decodeClaims(token);
@@ -61,7 +61,7 @@ function configuration() {
     if (url.protocol !== "https:" || url.hostname !== `${stageRef}.supabase.co` ||
         url.pathname !== "/" || url.port || url.username || url.password ||
         url.search || url.hash) return null;
-    if (!safePublishableKey(env.H74_STAGING_PUBLISHABLE_KEY)) return null;
+    if (!safePublishableKey(env.H74_STAGING_PUBLISHABLE_KEY, stageRef)) return null;
     const claimsA = stagedUserClaims(env.H74_STAGING_USER_A_JWT, stageRef);
     const claimsB = stagedUserClaims(env.H74_STAGING_USER_B_JWT, stageRef);
     if (!claimsA || !claimsB || claimsA.sub === claimsB.sub ||
