@@ -2,13 +2,14 @@ import { randomUUID } from "node:crypto";
 import { z } from "zod";
 import { bankClient, viewer, requestError } from "@/lib/ielts-bank/server";
 import { activityId, lessonId } from "@/lib/speaking-s6/contract";
+import { s6AccessAllowed } from "@/lib/speaking-s6/access";
 export const runtime="nodejs";
 const commands=z.discriminatedUnion("action",[
-  z.object({action:z.literal("start"),lessonId,activityId,audioStorageConsent:z.boolean().default(false)}),
+  z.object({action:z.literal("start"),lessonId,activityId,audioStorageConsent:z.boolean().default(false),preview:z.boolean().default(false)}),
   z.object({action:z.literal("submit"),attemptId:z.uuid(),transcript:z.string().trim().max(5000).default(""),
-    durationSeconds:z.number().int().min(1).max(180)}),
-  z.object({action:z.literal("followup"),attemptId:z.uuid()}),
-  z.object({action:z.literal("guidedFeedback"),attemptId:z.uuid()})
+    durationSeconds:z.number().int().min(1).max(180),preview:z.boolean().default(false)}),
+  z.object({action:z.literal("followup"),attemptId:z.uuid(),preview:z.boolean().default(false)}),
+  z.object({action:z.literal("guidedFeedback"),attemptId:z.uuid(),preview:z.boolean().default(false)})
 ]);
 type BankEntry={question_en?:string;followup_en?:string;model_answer_en?:string;
   model_translation_vi?:string;teaching_explanation_en?:string;teacher_reasoning_vi?:string};
@@ -16,19 +17,18 @@ type Bank={guided:Record<string,BankEntry>;independent:Record<string,BankEntry>;
 const noStore={"Cache-Control":"private, no-store"};
 export async function POST(request:Request){
   try {
-    const user=await viewer();
     if(Number(request.headers.get("content-length")||0)>30000)
       return Response.json({error:"BODY_TOO_LARGE"},{status:413});
     const raw=await request.text();
     if(Buffer.byteLength(raw,"utf8")>30000)return Response.json({error:"BODY_TOO_LARGE"},{status:413});
     const body=commands.parse(JSON.parse(raw));
-    const db=bankClient();
-    const gate=await db.rpc("speaking_s6_release_ready");
-    if(gate.error || gate.data!==true)return Response.json({error:"S6_LOCKED"},{status:404});
+    const user=await viewer(body.preview),db=bankClient();
+    if(!await s6AccessAllowed(user.id,body.preview,db))
+      return Response.json({error:"S6_LOCKED"},{status:404});
     if(body.action==="start"){
       if(!body.activityId.startsWith(body.lessonId+"-"))return Response.json({error:"ID_MISMATCH"},{status:422});
       const found=await db.from("speaking_s6_lesson_revisions")
-        .select("revision,student_content").eq("lesson_code",body.lessonId).eq("status","published")
+        .select("revision,student_content").eq("lesson_code",body.lessonId).eq("status",body.preview?"staging":"published")
         .order("created_at",{ascending:false}).limit(1).maybeSingle();
       if(found.error || !found.data)return Response.json({error:"S6_NOT_PUBLISHED"},{status:404});
       const rev=found.data.revision;
@@ -46,7 +46,7 @@ export async function POST(request:Request){
       const attemptId=randomUUID();
       const write=await db.from("speaking_s6_attempts").insert({
         id:attemptId,user_id:user.id,lesson_code:body.lessonId,revision:rev,
-        activity_id:body.activityId,mode,audio_storage_consent:body.audioStorageConsent
+        activity_id:body.activityId,mode,preview:body.preview,audio_storage_consent:body.audioStorageConsent
       });
       if(write.error)throw new Error(write.error.message);
       return Response.json({attemptId,mode,audioStorageConsent:body.audioStorageConsent,
@@ -55,12 +55,12 @@ export async function POST(request:Request){
     }
     const r=await db.from("speaking_s6_attempts")
       .select("id,user_id,lesson_code,revision,activity_id,mode,phase")
-      .eq("id",body.attemptId).eq("user_id",user.id).maybeSingle();
+      .eq("id",body.attemptId).eq("user_id",user.id).eq("preview",body.preview).maybeSingle();
     if(r.error || !r.data)return Response.json({error:"NOT_FOUND"},{status:404});
     const a=r.data;
     const release=await db.from("speaking_s6_lesson_revisions").select("status")
       .eq("lesson_code",a.lesson_code).eq("revision",a.revision).maybeSingle();
-    if(release.error || release.data?.status!=="published")
+    if(release.error || release.data?.status!==(body.preview?"staging":"published"))
       return Response.json({error:"S6_NOT_PUBLISHED"},{status:404});
     if(body.action==="submit"){
       const s=await db.from("speaking_s6_attempts").update({

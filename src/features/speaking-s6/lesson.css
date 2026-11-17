@@ -1,0 +1,21 @@
+.s6-page{max-width:1260px;margin:0 auto;padding:28px 18px 80px;color:var(--foreground,#172334)}
+.s6-head{display:flex;justify-content:space-between;align-items:flex-start;gap:20px;flex-wrap:wrap}.s6-head h1{font-size:clamp(1.5rem,3vw,2.2rem);line-height:1.25;margin:4px 0 8px}.s6-eyebrow{font-size:.75rem;font-weight:750;letter-spacing:.09em;text-transform:uppercase;color:#5571a3;margin:0}
+.s6-status{border-radius:999px;border:1px solid #bfd5ed;padding:8px 12px;font-size:.72rem;font-weight:700;background:#eef5ff;color:#164c83}
+.s6-disclaimer{margin:20px 0;color:#556275;font-size:.88rem}.s6-layout{display:grid;grid-template-columns:minmax(220px,290px) minmax(0,1fr);align-items:start;gap:20px}
+.s6-steps,.s6-main,.s6-card{border:1px solid #dce4ed;border-radius:16px;background:#fff;padding:18px}
+.s6-steps{position:sticky;top:15px}.s6-steps>p{font-size:.85rem;color:#345;}.s6-step{display:flex;align-items:center;gap:10px;text-align:left;width:100%;padding:11px 9px;border:0;border-bottom:1px solid #eef1f5;background:transparent;cursor:pointer;color:#24364b;font-size:.85rem}
+.s6-step.active{background:#edf5ff;border-radius:10px;color:#153e77;font-weight:750}.s6-step-number{flex:0 0 28px;width:28px;height:28px;border-radius:50%;background:#e8eff7;display:grid;place-items:center;font-weight:750}
+.s6-step-head{border-bottom:1px solid #e3eaf2;padding-bottom:16px;margin-bottom:20px}.s6-step-head>span{font-size:.73rem;font-weight:750;color:#5571a3;letter-spacing:.08em}.s6-step-head h2{font-size:1.4rem;margin:10px 0}.s6-muted{color:#5f6d7e;font-size:.9rem}.s6-card{border-radius:12px;margin:18px 0;padding:20px}.s6-card h3{font-size:1.08rem;margin:0 0 10px}.s6-card blockquote,.s6-attempt blockquote{border-left:4px solid #96b8e8;background:#f2f7ff;padding:14px;margin:15px 0;white-space:pre-wrap;font-weight:600}
+.s6-activity-list{display:grid;grid-template-columns:1fr;gap:8px}.s6-activity-list button{text-align:left;border-radius:9px;border:1px solid #d8e0eb;background:#fff;padding:11px;color:#1d3d69;cursor:pointer}.s6-activity-list button.active{border-color:#4779c7;background:#eef5ff}
+.s6-check{display:flex;align-items:center;gap:10px;font-size:.86rem;margin:16px 0;color:#334}
+.s6-check input{width:18px;height:18px}.s6-record{border:1px solid #e3ebf3;background:#f9fbfe;border-radius:10px;padding:14px;margin:15px 0}.s6-record-actions{display:flex;gap:9px;align-items:center;flex-wrap:wrap}
+.s6-page button{border-radius:8px;border:1px solid #bfcfe0;background:#fff;color:#213f64;padding:9px 13px;cursor:pointer;font:inherit;font-size:.87rem}
+.s6-page button:disabled{cursor:not-allowed;opacity:.5}.s6-page button.s6-primary{background:#1f5188;color:#fff;border-color:#1f5188;font-weight:700}
+.s6-record audio{width:100%;margin-top:10px}.s6-note-label{display:block;margin:15px 0;font-weight:650;font-size:.88rem}.s6-note-label textarea,.s6-card textarea{width:100%;margin-top:7px;min-height:70px;border-radius:10px;border:1px solid #cbd9e9;padding:12px;background:#fff;font:inherit}
+.s6-hints{background:#f4f7fc;border:1px solid #dde7f3;border-radius:10px;padding:12px;margin:12px 0}.s6-hints p{font-size:.88rem;margin:8px 0}
+.s6-feedback{background:#f1f8f2;border:1px solid #badcc3;border-radius:10px;padding:14px;margin-top:12px}.s6-feedback p{line-height:1.65}
+.s6-success{background:#eef9f0;border-left:3px solid #2b995d;padding:10px 12px;border-radius:7px;color:#176038}.s6-error{background:#fff0ef;border-left:3px solid #db554e;padding:10px 12px;border-radius:7px;color:#9e2927}
+.s6-actions{display:flex;justify-content:space-between;gap:10px;margin-top:24px;flex-wrap:wrap}
+.s6-review-list{display:grid;gap:10px}.s6-review{display:flex;align-items:center;justify-content:space-between;gap:12px;border:1px solid #dde6ee;border-radius:10px;padding:12px}
+.s6-review p{margin:4px 0}.s6-review small{color:#687b90}
+@media(max-width:820px){.s6-layout{grid-template-columns:1fr}.s6-steps{position:static;display:flex;overflow-x:auto;gap:7px;padding:10px}.s6-steps>p{display:none}.s6-step{min-width:150px;border:1px solid #e0e7ef;border-radius:10px;flex-shrink:0}.s6-review{flex-direction:column;align-items:flex-start}.s6-card{padding:15px}}
