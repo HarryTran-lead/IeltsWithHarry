@@ -173,6 +173,8 @@ export function inspectL33LocalPackage(pkg){
  const steps=lesson?.steps,guided=lesson?.guided,
    independent=lesson?.independent,mastery=lesson?.mastery,
    review=lesson?.spaced_review;
+ fail("student_package_release_locked",/^S6-(?:00[1-9]|0[1-3]\d|04[0-4])$/.test(lesson?.lesson_id??"")
+   &&lesson?.status==="STAGING_REVIEW_REQUIRED"&&lesson?.publish_allowed===false);
  fail("signed_student_hash",!!lesson&&HASH.test(pkg?.hash??"")&&sha(lesson)===pkg.hash);
  fail("signed_private_hash",!!privateLesson&&HASH.test(pkg?.privateHash??"")&&sha(privateLesson)===pkg.privateHash);
  fail("ten_ordered_steps",Array.isArray(steps)&&steps.length===10&&
