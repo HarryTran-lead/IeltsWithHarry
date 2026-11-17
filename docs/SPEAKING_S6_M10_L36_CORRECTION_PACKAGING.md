@@ -9,7 +9,7 @@
 
 - `tests/speaking-s6/m10-l36-correction-manifest.json` — exactly 44 records, **all NOT_REQUESTED**, `revisions_proposed:0`. No fake hashes, authors, editorial scores, approvals or corrections.
 - `scripts/speaking-s6-l36-correction-packaging.mjs` — **offline** structural, provenance and review-evidence metadata gate; optional private, read-only comparison of ONE original and ONE proposed ADD-ONLY revision on an authorized local machine.
-- `tests/speaking-s6-l36-correction-packaging.test.mjs` — 16 synthetic regression cases covering immutable original hashes, revision uniqueness, separate reviewers, chronology, real teacher rubric constraints, private prompt protection, no-op revisions and changed activity IDs.
+- `tests/speaking-s6-l36-correction-packaging.test.mjs` — 17 synthetic regression cases covering immutable original hashes, revision uniqueness, separate reviewers, chronology, real teacher rubric constraints, private prompt protection, no-op revisions and changed activity IDs.
 - `.github/workflows/quality.yml` — runs the default offline audit without private files or credentials.
 
 **No releases, imports, database writes, account access, audio processing, original content overwrites or production deployments are performed.**
@@ -34,7 +34,7 @@ Each proposal is linked to a corresponding L35 row marked `RIGHTS_CHECKED_PENDIN
 The local-only `compareL36PrivateRevisions(source,revised)` function:
 
 1. Requires the five source-import fields `revision`, `hash`, `privateHash`, `lesson`, `privateLesson` in each package; validates exact lesson identity and different revision names.
-2. Verifies canonical original+target SHA-256 values; original is only read, never modified.
+2. Rejects malformed five-field packages before hashing; then verifies canonical original+target SHA-256 values. The original is only read, never modified.
 3. Requires `status=STAGING_REVIEW_REQUIRED` and `publish_allowed=false` in **both** payloads.
 4. Rejects a revision that only renames the revision while leaving both student and private bank hashes unchanged.
 5. Requires stable Guided/Independent/Mastery activity IDs, preventing accidental reassignment of existing learner attempts or private references.
