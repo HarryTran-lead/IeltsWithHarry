@@ -121,10 +121,13 @@ export async function readL26Postconditions(config,fetcher=fetch){
   }
   const q=await requestDb(config,fetcher,"speaking_s6_start_quotas",{
     params:{select:"hour_count,day_count",user_id:eq(config.uid),preview:"eq.true"}});
-  if(q.status!==200||!Array.isArray(q.data)||q.data.length!==1)
+  if(q.status!==200||!Array.isArray(q.data)||q.data.length>1)
     throw Error("QUOTA_POSTCHECK_UNAVAILABLE");
-  return {...counts,quota_hour_count:q.data[0].hour_count,
-    quota_day_count:q.data[0].day_count};
+  // A completely failed RPC fanout may leave no quota row. Treat that as
+  // zero, yielding a clear FAIL report instead of falsely treating it as PASS.
+  const quota=q.data[0]??{hour_count:0,day_count:0};
+  return {...counts,quota_hour_count:quota.hour_count,
+    quota_day_count:quota.day_count};
 }
 export function assessL26Concurrency(run,post){
   const safe=run.accepted===3&&run.denied_active_limit===3&&run.unexpected===0
