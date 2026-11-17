@@ -23,7 +23,9 @@ ROLE_API=re.compile(r"\b(?:bankClient|createSupabaseClient)\s*\(")
 PATTERNS={"DIRECT_H58_REF":DIRECT,"SERVICE_ROLE_REF":ROLE,"SUBMIT_RPC_REF":SUBMIT,
           "DEPRECATED_QUOTA_RPC_REF":QUOTA,"SCHEMA_CALL_H58":SCHEMA_CALL,
           "POSSIBLE_SERVICE_CLIENT":ROLE_API}
-MAX_BYTES=1_500_000
+# Bound each tracked text file while covering the observed 8.1 MB grammar bank.
+# Oversized inputs still fail closed as PARTIAL_STATIC_INVENTORY.
+MAX_BYTES=10_000_000
 MAX_FINDINGS=1000
 EXCLUDE_PARTS={".git","node_modules",".next","dist","build","coverage","vendor"}
 LOCKFILE_NAMES={"package-lock.json","npm-shrinkwrap.json","pnpm-lock.yaml","yarn.lock","bun.lock"}
