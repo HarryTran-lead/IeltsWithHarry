@@ -77,10 +77,14 @@ export async function POST(request:Request){
         {status:201,headers:noStore});
     }
     const r=await db.from("speaking_s6_attempts")
-      .select("id,user_id,lesson_code,revision,activity_id,mode,phase,audio_storage_consent,audio_evidence_state,initial_response,duration_seconds")
+      .select("id,user_id,lesson_code,revision,activity_id,mode,phase,deletion_requested_at,audio_storage_consent,audio_evidence_state,initial_response,duration_seconds")
       .eq("id",body.attemptId).eq("user_id",user.id).eq("preview",body.preview).maybeSingle();
     if(r.error || !r.data)return Response.json({error:"NOT_FOUND"},{status:404});
     const a=r.data;
+    // A deletion marker is set *before* removing Storage objects. Once marked,
+    // no status/retry/feedback/submit may race with the ongoing privacy deletion.
+    if(a.deletion_requested_at)
+      return Response.json({error:"S6_DELETION_IN_PROGRESS"},{status:409,headers:noStore});
     const release=await db.from("speaking_s6_lesson_revisions").select("status")
       .eq("lesson_code",a.lesson_code).eq("revision",a.revision).maybeSingle();
     if(release.error || release.data?.status!==(body.preview?"staging":"published"))
@@ -130,12 +134,15 @@ export async function POST(request:Request){
       const s=await db.from("speaking_s6_attempts").update({
         phase:"submitted",initial_response:body.transcript,duration_seconds:body.durationSeconds,
         initial_submitted_at:new Date().toISOString(),...evidence
-      }).eq("id",a.id).eq("user_id",user.id).eq("phase","started").select("id").maybeSingle();
+      }).eq("id",a.id).eq("user_id",user.id).eq("phase","started")
+        .is("deletion_requested_at",null).select("id").maybeSingle();
       if(s.error)throw new Error(s.error.message);
       if(!s.data){
         const latest=await db.from("speaking_s6_attempts")
-          .select("phase,initial_response,duration_seconds")
+          .select("phase,initial_response,duration_seconds,deletion_requested_at")
           .eq("id",a.id).eq("user_id",user.id).maybeSingle();
+        if(latest.data?.deletion_requested_at)
+          return Response.json({error:"S6_DELETION_IN_PROGRESS"},{status:409,headers:noStore});
         if(!latest.error&&latest.data?.phase==="submitted"
           &&latest.data.initial_response===body.transcript
           &&latest.data.duration_seconds===body.durationSeconds)
@@ -180,14 +187,33 @@ export async function DELETE(request:Request){
     const user=await viewer();
     const attemptId=z.uuid().parse(new URL(request.url).searchParams.get("attemptId"));
     const db=bankClient();
-    const r=await db.from("speaking_s6_attempts").select("id")
+    const r=await db.from("speaking_s6_attempts").select("id,deletion_requested_at")
       .eq("id",attemptId).eq("user_id",user.id).maybeSingle();
-    if(r.error || !r.data)return Response.json({error:"NOT_FOUND"},{status:404});
+    if(r.error || !r.data)return Response.json({error:"NOT_FOUND"},{status:404,headers:noStore});
+    if(!r.data.deletion_requested_at){
+      // Mark deletion before interacting with Storage. The submit route
+      // atomically checks this marker in its conditional UPDATE predicate.
+      const marked=await db.from("speaking_s6_attempts")
+        .update({deletion_requested_at:new Date().toISOString()})
+        .eq("id",attemptId).eq("user_id",user.id)
+        .is("deletion_requested_at",null).select("id").maybeSingle();
+      if(marked.error)throw new Error(marked.error.message);
+      if(!marked.data){
+        // Concurrent deletion may have marked or removed the row.
+        const again=await db.from("speaking_s6_attempts").select("deletion_requested_at")
+          .eq("id",attemptId).eq("user_id",user.id).maybeSingle();
+        if(again.error || !again.data || !again.data.deletion_requested_at)
+          return Response.json({error:"NOT_FOUND"},{status:404,headers:noStore});
+      }
+    }
+    // A failed Storage delete leaves the marked row for a safe retry.
+    // These storage paths are owner-derived, never request-controlled.
     const names=["webm","mp4","ogg"].map(ext=>user.id+"/"+attemptId+"."+ext);
     const removed=await db.storage.from("speaking-s6-recordings").remove(names);
     if(removed.error)throw new Error(removed.error.message);
     const deleted=await db.from("speaking_s6_attempts").delete()
-      .eq("id",attemptId).eq("user_id",user.id);
+      .eq("id",attemptId).eq("user_id",user.id)
+      .not("deletion_requested_at","is",null);
     if(deleted.error)throw new Error(deleted.error.message);
     return Response.json({ok:true},{headers:noStore});
   }catch(e){return s6SessionErrorResponse(e);}
