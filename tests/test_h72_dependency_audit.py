@@ -277,6 +277,14 @@ class H72StaticAuditTests(unittest.TestCase):
         self.assertEqual(report["application_direct_h58_reference_paths"],[
             "src/lib/review.ts"])
 
+    def test_ci_retains_diagnostic_artifacts_on_audit_failure(self):
+        workflow=(SCRIPT.parents[1]/".github/workflows/h72-dependency-evidence-ci.yml").read_text(encoding="utf-8")
+        upload=workflow.split("- uses: actions/upload-artifact@v4",1)[1]
+        self.assertIn("if: always()",upload)
+        self.assertIn("if-no-files-found: warn",upload)
+        self.assertIn("reports/h72_dependency_inventory.json",upload)
+        self.assertIn("reports/h72_dependency_inventory.md",upload)
+
     def test_markdown_disclaims_no_matches(self):
         root=self.project({"src/lib/clean.ts":"export const clean = true"})
         report=audit.analyze(root,["src/lib/clean.ts"],COMMIT)
