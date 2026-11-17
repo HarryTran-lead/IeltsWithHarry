@@ -1,11 +1,14 @@
+import { readFileSync } from "node:fs";
+import { join } from "node:path";
 import { describe, expect, it } from "vitest";
-import { bandIndex, levelRubric, loadBand, practiceBands, reviewKey, type BandExercise } from "./band-practice";
+import { bandFile, bandIndex, levelRubric, practiceBands, reviewKey, type BandExercise } from "./band-practice";
 import { closestAnswer } from "./compare-words";
 import { practiceExerciseSchema } from "./schema";
 
+// The page fetches these files from /public; the test reads the same files from disk.
 async function allExercises() {
-  const bands = await Promise.all(practiceBands.map(async (band) => [band, await loadBand(band)] as const));
-  return new Map<string, BandExercise[]>(bands);
+  return new Map<string, BandExercise[]>(practiceBands.map((band) =>
+    [band, JSON.parse(readFileSync(join(process.cwd(), "public", bandFile(band)), "utf8")) as BandExercise[]]));
 }
 
 describe("band translation practice data", () => {

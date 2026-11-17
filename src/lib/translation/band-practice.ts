@@ -17,29 +17,25 @@ export function reviewKey(item: Pick<BandExercise, "id" | "version">) {
   return item.version === 1 ? item.id : `${item.id}:v${item.version}`;
 }
 
-// One chunk per band, so the page only downloads the band the learner opens.
-const loaders: Record<string, () => Promise<{ default: unknown }>> = {
-  "1.0": () => import("../../data/translation/bands/band-1-0.json"),
-  "1.5": () => import("../../data/translation/bands/band-1-5.json"),
-  "2.0": () => import("../../data/translation/bands/band-2-0.json"),
-  "2.5": () => import("../../data/translation/bands/band-2-5.json"),
-  "3.0": () => import("../../data/translation/bands/band-3-0.json"),
-  "3.5": () => import("../../data/translation/bands/band-3-5.json"),
-  "4.0": () => import("../../data/translation/bands/band-4-0.json"),
-  "4.5": () => import("../../data/translation/bands/band-4-5.json"),
-  "5.0": () => import("../../data/translation/bands/band-5-0.json"),
-  "5.5": () => import("../../data/translation/bands/band-5-5.json"),
-  "6.0": () => import("../../data/translation/bands/band-6-0.json"),
-  "6.5": () => import("../../data/translation/bands/band-6-5.json"),
-  "7.0": () => import("../../data/translation/bands/band-7-0.json"),
-  "7.5": () => import("../../data/translation/bands/band-7-5.json"),
-  "8.0": () => import("../../data/translation/bands/band-8-0.json"),
-  "8.5": () => import("../../data/translation/bands/band-8-5.json"),
-  "9.0": () => import("../../data/translation/bands/band-9-0.json"),
-};
+/** Static file of one band's exercises (written by scripts/build-translation-practice.py). */
+export function bandFile(level: string) {
+  return `practice-data/translation/band-${level.replace(".", "-")}.json`;
+}
 
-export async function loadBand(level: string): Promise<BandExercise[]> {
-  const load = loaders[level];
-  if (!load) throw new Error(`Unknown practice band ${level}`);
-  return (await load()).default as BandExercise[];
+// Each band is a static JSON file fetched when the band is opened, so the page never
+// downloads all 2,000+ exercises at once and the bundler does not have to chunk them.
+const cache = new Map<string, Promise<BandExercise[]>>();
+
+export function loadBand(level: string): Promise<BandExercise[]> {
+  if (!practiceBands.includes(level)) return Promise.reject(new Error(`Unknown practice band ${level}`));
+  let pending = cache.get(level);
+  if (!pending) {
+    pending = fetch(`/${bandFile(level)}`).then((response) => {
+      if (!response.ok) throw new Error(`Band ${level} unavailable (${response.status})`);
+      return response.json() as Promise<BandExercise[]>;
+    });
+    pending.catch(() => cache.delete(level)); // let a later attempt retry
+    cache.set(level, pending);
+  }
+  return pending;
 }

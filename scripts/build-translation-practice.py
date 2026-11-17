@@ -11,7 +11,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 SOURCE = ROOT / "data/translation-practice/starter-51.json"
-BANDS_DEST = ROOT / "src/data/translation/bands"
+BANDS_DEST = ROOT / "public/practice-data/translation"
 INDEX_DEST = ROOT / "src/data/translation/band-index.json"
 ESL_V2 = ROOT / "data/translation-practice/esl-v2-additions.json"
 ADDITIONAL = ROOT / "data/translation-practice/level-authored-34.json"
