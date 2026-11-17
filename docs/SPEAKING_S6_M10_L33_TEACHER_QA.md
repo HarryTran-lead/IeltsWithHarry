@@ -30,7 +30,7 @@ audio, student responses or authenticated data should be uploaded to GitHub.
 - `scripts/speaking-s6-l33-teacher-review.mjs`: offline fail-closed metadata
   audit of every lesson and optional **local-only** import package technical
   inspection. No HTTP calls, database writes, file mutations or publication.
-- `tests/speaking-s6-l33-teacher-review.test.mjs`: 13 synthetic regression
+- `tests/speaking-s6-l33-teacher-review.test.mjs`: 19 synthetic regression
   tests for missing score rubric, invalid signatures, low critical-quality
   scores, separate reviewers, copy/duplicate questions, hash tampering,
   incomplete Guided hints, missing Mastery follow-ups and leaks.
@@ -199,7 +199,43 @@ The optional `--require-all-teacher-approved` flag exits nonzero until
 44 review records meet metadata conditions. Do NOT add that strict
 flag to ordinary CI while content and independent signoffs are absent.
 
-## 9. Next milestone
+## 9. M10-L33 expanded 44-package structural audit
+
+Additional safety work on the same staging branch:
+
+- `scripts/speaking-s6-l33-batch-audit.mjs` supports exactly 44 local original
+  files, named `S6-001.json` through `S6-044.json`, max 2 MiB each;
+  refuses symlinks, absent lessons, extra JSON files and mismatched lesson IDs.
+  The **default** invocation reads no private files or network.
+- `tests/speaking-s6-l33-batch-audit.test.mjs` adds five synthetic tests for
+  complete coverage, missing packages, shifted IDs, exact cross-lesson
+  prompt duplicates and incomplete bilingual reasoning.
+- The single-package validator now checks all Guided model translations,
+  English instructional explanations and Vietnamese teacher reasoning;
+  distinct hints; exact activity/private-bank alignment; release-locked
+  student status; no leaked Independent prompt, Mastery follow-up or
+  private response fields in public lesson content. Student/private hashes
+  remain mandatory. No question text is printed in the results.
+- `.github/workflows/quality.yml` calls BOTH L33 tools with no private
+  arguments. This is a safe structural/methodology check only.
+
+Secure, operator-controlled use when the actual original source becomes
+available (never commit source/private answers to GitHub):
+
+```bash
+node scripts/speaking-s6-l33-batch-audit.mjs
+node scripts/speaking-s6-l33-batch-audit.mjs --inspect-private-local-dir /PRIVATE_DIR
+```
+
+A structural report of `READY_FOR_TEACHER_CONTENT_REVIEW` requires
+44/44 uniquely identified import packages, matching student/private hash
+values, no detected structural rule failures, and no **exact** duplicated
+prompts across lessons. It is NOT a teacher approval, nor a demonstration
+that two semantically similar paraphrased prompts are unique. All 44
+human review records remain NOT_REVIEWED until real source assessment and
+independent signed evidence exist.
+
+## 10. Next milestone
 
 **M10-L34 — S6 instructional content coverage and editorial remediation
 backlog**. Compare actual authorized source contents with the rubric, map
