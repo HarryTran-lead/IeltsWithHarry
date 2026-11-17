@@ -12,7 +12,7 @@ const HASH = "a".repeat(64);
 const migration = (filename: string) => readFileSync(
   resolve("supabase/migrations", filename), "utf8"
 );
-const boot = String.raw\`
+const boot = String.raw`
 create role anon;
 create role authenticated;
 create role service_role;
@@ -21,7 +21,7 @@ create schema auth;
 create schema storage;
 create table auth.users(id uuid primary key);
 insert into auth.users(id) values
-  ('\${alice}'), ('\${bob}'), ('\${admin}');
+  ('${alice}'), ('${bob}'), ('${admin}');
 create function auth.uid() returns uuid language sql stable as $$
   select nullif(current_setting('request.jwt.claim.sub', true), '')::uuid
 $$;
@@ -48,7 +48,7 @@ grant usage on schema public,auth,storage to authenticated,anon,service_role;
 grant execute on function auth.uid() to authenticated,anon,service_role;
 grant execute on function storage.foldername(text),storage.filename(text) to authenticated,anon;
 grant select,insert,delete on storage.objects to authenticated;
-\`;
+`;
 
 describe("Speaking S6 L14-L17 actual PostgreSQL migration & ownership smoke (PGlite)", () => {
   it("applies all three migrations and enforces S5, RLS, private banks and owner-only audio", async () => {
@@ -94,33 +94,33 @@ describe("Speaking S6 L14-L17 actual PostgreSQL migration & ownership smoke (PGl
       )).rejects.toThrow("S6_RELEASE_GATES_NOT_CLEARED");
 
       // Seed test-only user progress and attempts as database owner.
-      await db.query(\`
+      await db.query(`
         insert into public.speaking_s6_attempts(
           id,user_id,lesson_code,revision,activity_id,mode,audio_storage_consent
         ) values
-        ('\${attemptAlice}','\${alice}','S6-001','L18_TEST','S6-001-G01','guided',true),
-        ('\${attemptBob}','\${bob}','S6-001','L18_TEST','S6-001-G01','guided',false)
-      \`);
-      await db.query(\`
+        ('${attemptAlice}','${alice}','S6-001','L18_TEST','S6-001-G01','guided',true),
+        ('${attemptBob}','${bob}','S6-001','L18_TEST','S6-001-G01','guided',false)
+      `);
+      await db.query(`
         insert into public.speaking_s6_study_progress(user_id,lesson_code,revision)
-        values ('\${alice}','S6-001','L18_TEST'),('\${bob}','S6-001','L18_TEST')
-      \`);
+        values ('${alice}','S6-001','L18_TEST'),('${bob}','S6-001','L18_TEST')
+      `);
 
       // Supabase-style verified S5 evidence is present ONLY for Alice.
-      await db.query(\`
+      await db.query(`
         insert into public.speaking_s6_s5_eligibility(
           user_id,s5_verified,evidence_reference,verified_at,verified_by
-        ) values ('\${alice}',true,'staging-fixture-evidence',now(),'\${admin}')
-      \`);
-      await db.exec(\`
+        ) values ('${alice}',true,'staging-fixture-evidence',now(),'${admin}')
+      `);
+      await db.exec(`
         update public.speaking_s6_release_gates set
           s5_qa_verified=true,teacher_qa_verified=true,audio_qa_verified=true,
           privacy_qa_verified=true,import_qa_verified=true where stage='S6'
-      \`);
+      `);
       await db.exec("update public.speaking_s6_lesson_revisions set status='published'");
 
       // A valid S5 claimant can access ONLY published learner content; never the private bank.
-      await db.exec(\`set role authenticated; set request.jwt.claim.sub='\${alice}';\`);
+      await db.exec(`set role authenticated; set request.jwt.claim.sub='${alice}';`);
       expect((await db.query(
         "select lesson_code from public.speaking_s6_lesson_revisions"
       )).rows).toHaveLength(1);
@@ -145,7 +145,7 @@ describe("Speaking S6 L14-L17 actual PostgreSQL migration & ownership smoke (PGl
       )).rejects.toThrow();
 
       // Bob has no verified S5 and must not access even published student content.
-      await db.exec(\`set request.jwt.claim.sub='\${bob}';\`);
+      await db.exec(`set request.jwt.claim.sub='${bob}';`);
       expect((await db.query(
         "select lesson_code from public.speaking_s6_lesson_revisions"
       )).rows).toEqual([]);
@@ -169,7 +169,7 @@ describe("Speaking S6 L14-L17 actual PostgreSQL migration & ownership smoke (PGl
         "update public.speaking_s6_s5_eligibility set s5_verified=false where user_id=$1",
         [alice]
       );
-      await db.exec(\`set role authenticated; set request.jwt.claim.sub='\${alice}';\`);
+      await db.exec(`set role authenticated; set request.jwt.claim.sub='${alice}';`);
       expect((await db.query(
         "select lesson_code from public.speaking_s6_lesson_revisions"
       )).rows).toEqual([]);
