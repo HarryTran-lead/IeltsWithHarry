@@ -285,6 +285,14 @@ class H72StaticAuditTests(unittest.TestCase):
         self.assertIn("reports/h72_dependency_inventory.json",upload)
         self.assertIn("reports/h72_dependency_inventory.md",upload)
 
+    def test_only_lockfile_does_not_count_as_scanned_source(self):
+        root=self.project({"package-lock.json":'{"name":"demo"}'})
+        report=audit.analyze(root,["package-lock.json"],COMMIT)
+        self.assertEqual(report["static_inventory_status"],"INVENTORY_INCOMPLETE")
+        self.assertFalse(report["coverage"]["complete"])
+        self.assertIn("NO_ELIGIBLE_SOURCE_FILES",report["coverage"]["errors"])
+        self.assertEqual(report["coverage"]["skipped"][0]["reason"],"DEPENDENCY_LOCKFILE_EXCLUDED")
+
     def test_markdown_disclaims_no_matches(self):
         root=self.project({"src/lib/clean.ts":"export const clean = true"})
         report=audit.analyze(root,["src/lib/clean.ts"],COMMIT)
