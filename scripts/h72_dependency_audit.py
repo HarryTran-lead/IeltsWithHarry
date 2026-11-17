@@ -105,6 +105,10 @@ def analyze(root:Path,paths:list[str],sha:str)->dict:
                                  "classification":"NEEDS_RUNTIME_CONFIRMATION" if scope=="APPLICATION_RUNTIME" else "REVIEW_CONTEXT"})
             if scan_errors:break
         if scan_errors:break
+    # No eligible source files is not evidence that there are no dependencies.
+    # It may indicate the wrong checkout, empty repo or unsupported layout.
+    if inspected==0:
+        scan_errors.append("NO_ELIGIBLE_SOURCE_FILES")
     count=Counter(f["indicator"] for f in findings)
     application_refs=sorted({f["path"] for f in findings
                              if f["scope"]=="APPLICATION_RUNTIME" and
