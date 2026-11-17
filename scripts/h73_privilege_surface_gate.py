@@ -50,7 +50,6 @@ def evaluate(inventory: dict, baseline: frozenset[str] = BASELINE_SERVICE_ROLE_P
         "status": status,
         "release_gate": "NO_GO",
         "supabase_staging_verified": False,
-        "teacher_gold_verified": False,
         "source_coverage_complete": complete,
         "observed_role_paths": observed,
         "baseline_role_paths": sorted(baseline),
