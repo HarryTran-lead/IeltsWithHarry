@@ -48,12 +48,19 @@
 - Danh sách **11 đường dẫn có token `service_role`** (nhóm A+B+C) được cố định như **vị trí đã quan sát**, KHÔNG phải whitelist cấp phép.
 - Nếu xuất hiện đường dẫn mới dùng `service_role`, một đường dẫn biến mất nhưng baseline chưa cập nhật, hoặc coverage của H72 không đầy đủ: trả lỗi, giữ `NO_GO`.
 - Tình trạng matching baseline **không** cấp phép merge, bật chấm tự động, thay đổi secret hoặc tuyên bố có quyền DB phù hợp.
-- **Chưa chặn tự động** việc mở rộng `bankClient` gián tiếp của nhóm D; đây là phạm vi kỹ thuật cần làm tiếp trong H73/M02.
+- **H73/M02 đã bổ sung kiểm soát tĩnh** cho 21 vị trí `bankClient` gián tiếp và 1 vị trí factory `createSupabaseClient`: thay đổi đường dẫn mới hoặc mất đường dẫn đã lập danh sách làm CI thất bại. Đây vẫn chỉ là kiểm tra biểu thức tĩnh, không chứng minh quyền runtime.
+
+## H73/M02 — Hàng rào CI cho client gián tiếp (đã thực hiện trên nhánh Draft)
+- Nguồn snapshot: 32 file từ H72. Có **11 file** chứa dấu hiệu `SERVICE_ROLE_REF`, **22 file** có dấu hiệu `POSSIBLE_SERVICE_CLIENT` (bao gồm factory), hợp của hai tập là **32 file**. Trong 22 vị trí possible-client, **21 vị trí** chỉ đi qua `bankClient` mà không nhắc trực tiếp service-role.
+- `BASELINE_INDIRECT_BANK_CLIENT_PATHS` lưu 21 path; `BASELINE_POSSIBLE_CLIENT_PATHS` là 21 path cộng factory `src/lib/ielts-bank/server.ts`.
+- `scripts/h73_privilege_surface_gate.py` xuất `observed_possible_client_paths`, `observed_indirect_bank_client_paths`, `unreviewed_new_client_paths`, `stale_client_baseline_paths`. Có client mới, đường dẫn cũ biến mất, hoặc H72 báo coverage thiếu → `STATIC_BASELINE_DRIFT`, exit code 3.
+- Workflow `.github/workflows/h73-privileged-source-ci.yml` kiểm tra số lượng 11/22/21/32, từ chối thay đổi chưa rà soát và luôn giữ `NO_GO`. Đã thêm 6 regression tests, tổng cộng **13** bài H73.
+- Run H73 đầu tiên có cả 13 kiểm thử đạt: https://github.com/HarryTran-lead/IeltsWithHarry/actions/runs/44084261046 (SHA `c105dc5d4c0258a399018aa48624967339a115c0`). Các commit tiếp theo cần chạy lại CI tại đúng SHA.
+- **Giới hạn:** rule `POSSIBLE_SERVICE_CLIENT` của H72 hiện phát hiện `bankClient(...)` và `createSupabaseClient(...)`; không chứng minh luồng import gián tiếp, tên alias khác, kết quả truy vấn, ownership filter, quyền SQL thật hoặc runtime access. Một baseline khớp **không** có nghĩa là an toàn.
 
 ## Việc còn lại trong phạm vi kỹ thuật H73
-1. M02: ràng buộc CI đối với 21 đường dẫn `bankClient` gián tiếp, không chỉ 11 tham chiếu service-role.
-2. M03: rà luồng xác thực và ownership filter ở public/share/learner/admin API; ghi bằng chứng cụ thể, không khẳng định an toàn chỉ từ regex.
-3. M04: tách khóa ký grammar ticket ra khỏi khóa service-role với kế hoạch chuyển đổi an toàn; **không đổi secret production** trong PR kiểm toán này.
-4. M05: kiểm tra môi trường/Edge Functions/Workers/cron ngoài repository qua staging được phê duyệt, DBA xác nhận quyền SQL/RPC.
+1. M03: rà luồng xác thực và ownership filter ở public/share/learner/admin API; ghi bằng chứng cụ thể, không khẳng định an toàn chỉ từ regex.
+2. M04: tách khóa ký grammar ticket ra khỏi khóa service-role với kế hoạch chuyển đổi an toàn; **không đổi secret production** trong PR kiểm toán này.
+3. M05: kiểm tra môi trường/Edge Functions/Workers/cron ngoài repository qua staging được phê duyệt, DBA xác nhận quyền SQL/RPC.
 
 **Release gate:** NO_GO. H73 mới chốt static code review; 18/18 Supabase staging checks chưa có bằng chứng.
