@@ -1,5 +1,8 @@
 """H74/M02 preflight refusal tests: never contact a live service in CI."""
 import os
+import base64
+import json
+import time
 from pathlib import Path
 import re
 import subprocess
@@ -22,6 +25,26 @@ FAKE={
     "H74_STAGING_USER_A_ATTEMPT_ID":"11111111-1111-4111-8111-111111111111",
     "H74_STAGING_USER_B_ATTEMPT_ID":"22222222-2222-4222-8222-222222222222",
 }
+def jwt(*, role="authenticated", ref=FAKE_REF, sub="11111111-1111-4111-8111-111111111111",
+        expires=None, issuer=None):
+    payload={
+        "role":role,"sub":sub,
+        "exp": int(time.time())+3600 if expires is None else expires,
+        "iss":f"https://{ref}.supabase.co/auth/v1" if issuer is None else issuer,
+        "aud":"authenticated",
+        "ref":ref,
+    }
+    encoded=base64.urlsafe_b64encode(json.dumps(payload).encode()).decode().rstrip("=")
+    return "eyJhbGciOiJIUzI1NiJ9."+encoded+".signature"
+
+def valid_looking():
+    return {
+        **FAKE,
+        "H74_STAGING_PUBLISHABLE_KEY":"sb_publishable_this_is_just_a_mock_key",
+        "H74_STAGING_USER_A_JWT":jwt(),
+        "H74_STAGING_USER_B_JWT":jwt(sub="22222222-2222-4222-8222-222222222222"),
+    }
+
 class H74StagingPreflightTests(unittest.TestCase):
     def run_script(self, config):
         env={k:v for k,v in os.environ.items() if not k.startswith("H74_")}
@@ -65,6 +88,38 @@ class H74StagingPreflightTests(unittest.TestCase):
         self.assertEqual(output.returncode,2)
         config2={**FAKE,"H74_STAGING_USER_B_ATTEMPT_ID":FAKE["H74_STAGING_USER_A_ATTEMPT_ID"]}
         self.assertEqual(self.run_script(config2).returncode,2)
+
+    def test_rejects_service_role_jwt_as_publishable_key_before_network(self):
+        config={**valid_looking(),"H74_STAGING_PUBLISHABLE_KEY":jwt(role="service_role")}
+        out=self.run_script(config)
+        self.assertEqual(out.returncode,2)
+        self.assertIn("STAGING_PROJECT_IDENTITY_OR_TEST_IDS_UNVERIFIED",out.stdout)
+
+    def test_rejects_secret_supabase_api_key_before_network(self):
+        config={**valid_looking(),"H74_STAGING_PUBLISHABLE_KEY":"sb_secret_restricted_unsafe"}
+        self.assertEqual(self.run_script(config).returncode,2)
+
+    def test_rejects_legacy_anon_api_key_from_another_project(self):
+        config={**valid_looking(),"H74_STAGING_PUBLISHABLE_KEY":jwt(role="anon",ref="wrongstagingref12345")}
+        self.assertEqual(self.run_script(config).returncode,2)
+
+    def test_rejects_service_role_user_jwt_before_network(self):
+        config={**valid_looking(),"H74_STAGING_USER_A_JWT":jwt(role="service_role")}
+        self.assertEqual(self.run_script(config).returncode,2)
+
+    def test_rejects_expired_user_jwt_before_network(self):
+        config={**valid_looking(),"H74_STAGING_USER_A_JWT":jwt(expires=1)}
+        self.assertEqual(self.run_script(config).returncode,2)
+
+    def test_rejects_cross_project_user_jwt_before_network(self):
+        config={**valid_looking(),"H74_STAGING_USER_A_JWT":jwt(ref="wrongstagingref12345")}
+        self.assertEqual(self.run_script(config).returncode,2)
+
+    def test_rejects_missing_or_anonymous_user_claims(self):
+        config={**valid_looking(),"H74_STAGING_USER_A_JWT":jwt(role="anon")}
+        self.assertEqual(self.run_script(config).returncode,2)
+        config["H74_STAGING_USER_A_JWT"]="invalid.jwt.parts"
+        self.assertEqual(self.run_script(config).returncode,2)
 
     def test_no_service_role_or_mutating_http_methods_in_probe(self):
         code=SCRIPT.read_text(encoding="utf-8")
