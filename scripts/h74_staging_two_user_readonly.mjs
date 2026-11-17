@@ -22,6 +22,34 @@ function stop(status, reason, checks = []) {
 function sameIdFormat(value) {
   return typeof value === "string" && /^[0-9a-f]{8}-[0-9a-f]{4}-[1-8][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i.test(value);
 }
+// Offline *preflight only*. Claims are NOT authenticated until Supabase /auth/v1/user
+// verifies each token. Reject obviously privileged/wrong-project credentials
+// before making ANY network request, including a request to staging.
+function decodeClaims(jwt) {
+  if (typeof jwt !== "string" || jwt.length > 16000) return null;
+  const parts = jwt.split(".");
+  if (parts.length !== 3 || !parts.every(x => /^[A-Za-z0-9_-]+$/.test(x))) return null;
+  try {
+    const obj = JSON.parse(Buffer.from(parts[1], "base64url").toString("utf8"));
+    return obj && typeof obj === "object" && !Array.isArray(obj) ? obj : null;
+  } catch { return null; }
+}
+function safePublishableKey(key) {
+  if (typeof key !== "string" || key.length > 12000) return false;
+  if (/^sb_publishable_[A-Za-z0-9_-]{10,}$/.test(key)) return true;
+  const claims = decodeClaims(key); // Legacy anon JWT project API keys.
+  return claims?.role === "anon" && typeof claims?.ref === "string";
+}
+function stagedUserClaims(token, projectRef) {
+  const claims = decodeClaims(token);
+  if (!claims || claims.role !== "authenticated" ||
+      !sameIdFormat(claims.sub) || !Number.isFinite(claims.exp) ||
+      claims.exp <= Date.now() / 1000 ||
+      claims.iss !== `https://${projectRef}.supabase.co/auth/v1` ||
+      !(claims.aud === "authenticated" ||
+        (Array.isArray(claims.aud) && claims.aud.includes("authenticated")))) return null;
+  return claims;
+}
 function configuration() {
   const content = readFileSync(new URL("../src/lib/deployment-environment.ts", import.meta.url), "utf8");
   const match = /const PRODUCTION_SUPABASE_REF = "([a-z0-9]{10,32})";/.exec(content);
@@ -33,12 +61,14 @@ function configuration() {
     if (url.protocol !== "https:" || url.hostname !== `${stageRef}.supabase.co` ||
         url.pathname !== "/" || url.port || url.username || url.password ||
         url.search || url.hash) return null;
-    if (env.H74_STAGING_USER_A_JWT === env.H74_STAGING_USER_B_JWT ||
+    if (!safePublishableKey(env.H74_STAGING_PUBLISHABLE_KEY)) return null;
+    const claimsA = stagedUserClaims(env.H74_STAGING_USER_A_JWT, stageRef);
+    const claimsB = stagedUserClaims(env.H74_STAGING_USER_B_JWT, stageRef);
+    if (!claimsA || !claimsB || claimsA.sub === claimsB.sub ||
+        env.H74_STAGING_USER_A_JWT === env.H74_STAGING_USER_B_JWT ||
         !sameIdFormat(env.H74_STAGING_USER_A_ATTEMPT_ID) ||
         !sameIdFormat(env.H74_STAGING_USER_B_ATTEMPT_ID) ||
         env.H74_STAGING_USER_A_ATTEMPT_ID === env.H74_STAGING_USER_B_ATTEMPT_ID) return null;
-    if (env.H74_STAGING_USER_A_JWT.split(".").length !== 3 ||
-        env.H74_STAGING_USER_B_JWT.split(".").length !== 3) return null;
     return url;
   } catch {
     return null;
