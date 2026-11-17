@@ -40,6 +40,7 @@ describe("M10-L34 editorial backlog triage (synthetic metadata only)",()=>{
  it("uses fixed priorities for private leaks, incomplete Mastery and missing EN/VI help",()=>{
   expect(L34_CODEBOOK.no_unseen_mastery_followup_in_student_payload.tier).toBe("P0");
   expect(L34_CODEBOOK.two_mastery_stubs_and_followups.tier).toBe("P1");
+  expect(L34_CODEBOOK.import_contract_field_alignment.tier).toBe("P1");
   expect(L34_CODEBOOK.guided_bilingual_feedback.tier).toBe("P2");
  });
  it("rejects a fake scanned status without pinned source and evidence",()=>{
@@ -59,6 +60,17 @@ describe("M10-L34 editorial backlog triage (synthetic metadata only)",()=>{
    priorities:{P0:1,P1:0,P2:0},human_lessons_approved_by_this_tool:0});
   expect(r.remediation_items[0]).toMatchObject({lesson_id:"S6-005",priority:"P0"});
   expect(JSON.stringify(r)).not.toContain("Mastery follow-up: secret text");
+ });
+ it("classifies a missing required import field as P1 even with a matching hash",()=>{
+  const m=copy(manifest);
+  scanned(m.lessons[7],"import_contract_field_alignment");
+  m.real_source_packages_inspected=1;
+  const out=validate(m);
+  expect(out.valid).toBe(true);
+  expect(out.priorities.P1).toBe(1);
+  expect(out.remediation_items[0]).toMatchObject({
+    lesson_id:"S6-008",code:"import_contract_field_alignment",priority:"P1"
+  });
  });
  it("rejects a claimed clean scan that still contains findings",()=>{
   const m=copy(manifest);
