@@ -1,0 +1,59 @@
+name: H71 Isolated Cutover And Evidence Acceptance CI
+on:
+  push:
+    branches:
+      - codex/r19-h71-staging-cutover-audit-20261117
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  h71-cutover-rehearsal:
+    runs-on: ubuntu-latest
+    timeout-minutes: 18
+    services:
+      postgres:
+        image: postgres:16
+        env:
+          POSTGRES_USER: h71_ci_runner
+          POSTGRES_PASSWORD: h71_ci_password_only
+          POSTGRES_DB: h71_ci
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd=pg_isready
+          --health-interval=5s
+          --health-timeout=3s
+          --health-retries=15
+    steps:
+      - uses: actions/checkout@v4
+      - name: Ensure PostgreSQL client is installed
+        run: command -v psql || (sudo apt-get update -qq && sudo apt-get install -y postgresql-client)
+      - name: H71 forced-cutover-failure and restore rehearsal against isolated PostgreSQL 16
+        run: python3 scripts/h71_ci_cutover.py
+        env:
+          H71_ALLOW_EPHEMERAL_DDL: YES_ISOLATED_LOCAL_CI_ONLY
+          H71_PG_DSN: postgresql://h71_ci_runner:h71_ci_password_only@127.0.0.1:5432/h71_ci
+      - name: H71 evidence integrity unit tests
+        run: python3 -m unittest discover -s tests -p test_h71_acceptance.py -v
+      - name: Verify H71 staging evidence template remains NO_GO
+        shell: bash
+        run: |
+          set +e
+          python3 scripts/h71_acceptance_gate.py --manifest evidence/H71_STAGING_EVIDENCE_TEMPLATE.json
+          result=$?
+          set -e
+          test "$result" -eq 2
+      - uses: actions/upload-artifact@v4
+        if: success()
+        with:
+          name: h71-source-and-ci-evidence
+          retention-days: 7
+          if-no-files-found: error
+          path: |
+            .github/workflows/h71-cutover-evidence-ci.yml
+            scripts/h71_ci_cutover.py
+            scripts/h71_acceptance_gate.py
+            sql/h71_readonly_dependency_inventory.sql
+            tests/test_h71_acceptance.py
+            docs/R19_H71_STAGING_CUTOVER_VI.md
+            evidence/H71_STAGING_EVIDENCE_TEMPLATE.json
