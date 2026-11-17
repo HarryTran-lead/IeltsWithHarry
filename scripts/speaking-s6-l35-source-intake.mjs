@@ -142,14 +142,20 @@ const similarity=(a,b)=>{
  for(const x of a)if(b.has(x))shared++;
  return a.size+b.size?2*shared/(a.size+b.size):0;
 };
+const features=s=>{
+ const words=tokens(s);
+ return {length:words.length,terms:new Set(words),bigrams:chunks(words,2)};
+};
+const compareFeatures=(a,b)=>{
+ if(a.length<8||b.length<8||Math.min(a.length,b.length)/Math.max(a.length,b.length)<0.72)
+   return 0;
+ const term=similarity(a.terms,b.terms);
+ const ordered=similarity(a.bigrams,b.bigrams);
+ return Math.round((0.52*term+0.48*ordered)*1000)/1000;
+};
 /** Lexical overlap ONLY, not semantic plagiarism or IELTS difficulty. */
 export function l35LexicalOverlap(a,b){
- const aa=tokens(a),bb=tokens(b);
- if(aa.length<8||bb.length<8||Math.min(aa.length,bb.length)/Math.max(aa.length,bb.length)<0.72)
-   return 0;
- const term=similarity(new Set(aa),new Set(bb));
- const ordered=similarity(chunks(aa,2),chunks(bb,2));
- return Math.round((0.52*term+0.48*ordered)*1000)/1000;
+ return compareFeatures(features(a),features(b));
 }
 function questions(record){
  const l=record?.pkg?.lesson,p=record?.pkg?.privateLesson,id=record?.lessonId;
@@ -195,14 +201,18 @@ export function inspectL35LocalPackages(records,{threshold=0.77,maxPairs=80}={})
  if(!base.lesson_reports||base.lesson_reports.length!==44||
     base.errors.length||base.lessons_with_structure_flags)
    failures.push("L33_STRUCTURAL_GATE_NOT_CLEAN");
+ // Precompute features once per prompt, rather than tokenizing private
+ // questions repeatedly during hundreds of cross-lesson comparisons.
+ const candidates=all.map(q=>({lesson_id:q.lesson_id,ref:q.ref,
+   section:q.section,features:features(q.raw)}));
  const overlaps=[],pairCount={value:0};
  const seenPair=new Set();
- for(let i=0;i<all.length;i++){
-  const a=all[i];
-  for(let j=i+1;j<all.length;j++){
-   const b=all[j];
+ for(let i=0;i<candidates.length;i++){
+  const a=candidates[i];
+  for(let j=i+1;j<candidates.length;j++){
+   const b=candidates[j];
    if(a.lesson_id===b.lesson_id)continue;
-   const score=l35LexicalOverlap(a.raw,b.raw);
+   const score=compareFeatures(a.features,b.features);
    if(score<threshold)continue;
    const aRef=a.ref,bRef=b.ref;
    const key=aRef+"|"+bRef;
