@@ -53,10 +53,8 @@ export async function POST(request: Request): Promise<Response> {
     // getUser verifies auth via Supabase Auth; database RPC independently checks auth.uid.
     const { data: actor, error: authError } = await client.auth.getUser();
     if (authError || !actor.user) return response(401, "AUTH_REQUIRED");
-    // Independent atomic quota reservation. Any rate DB error fails closed.
-    const quota = await client.rpc("h68_rate_limit_review");
-    if (quota.error || typeof quota.data !== "boolean") return response(503, "RATE_LIMIT_UNAVAILABLE");
-    if (!quota.data) return response(429, "RATE_LIMITED");
+    // H70 enforces quota INSIDE the atomic database review function.
+    // Do not invoke the old separate quota RPC: direct calls could bypass it.
     const x = parsed.data;
     const submitted = await client.rpc("h68_submit_review", {
       p_probe_id: x.probeId, p_fingerprint: x.fingerprint,
@@ -70,6 +68,7 @@ export async function POST(request: Request): Promise<Response> {
       return response(conflict ? 409 : denied ? 403 : 503, conflict ? "REVIEW_CONFLICT" : denied ? "FORBIDDEN" : "REVIEW_UNAVAILABLE");
     }
     const status = (submitted.data as { status?: unknown } | null)?.status;
+    if (status === "RATE_LIMITED") return response(429, "RATE_LIMITED");
     if (status !== "SUBMITTED" && status !== "REPLAY") return response(503, "INVALID_DATABASE_RESPONSE");
     return Response.json({ status, release_gate: "BLOCKED", learner_release: false }, {
       status: status === "SUBMITTED" ? 201 : 200, headers,

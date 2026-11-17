@@ -22,11 +22,9 @@ const make = (body: unknown = sample, options: { origin?: string; key?: string }
     },
     body: JSON.stringify(body),
   });
-function mockSupabase(args: { quota?: boolean; quotaError?: boolean; writeStatus?: string; writeCode?: string; login?: boolean } = {}) {
+function mockSupabase(args: { writeStatus?: string; writeCode?: string; login?: boolean } = {}) {
   const rpc = vi.fn(async (name: string) => {
-    if (name === "h68_rate_limit_review") {
-      return { data: args.quota ?? true, error: args.quotaError ? { code: "ERR" } : null };
-    }
+    if (name !== "h68_submit_review") throw new Error("Deprecated quota RPC must not be called");
     return { data: args.writeStatus ? { status: args.writeStatus } : { status: "SUBMITTED" },
       error: args.writeCode ? { code: args.writeCode } : null };
   });
@@ -40,6 +38,8 @@ beforeEach(() => {
   vi.stubEnv("H68_DEPLOYMENT_MODE", "STAGING");
   vi.stubEnv("H68_REVIEW_WRITES_ENABLED", "true");
   vi.stubEnv("H68_ALLOWED_ORIGIN", base);
+  vi.stubEnv("H70_APPROVED_SUPABASE_PROJECT_REF", "h70testing12345");
+  vi.stubEnv("NEXT_PUBLIC_SUPABASE_URL", "https://h70testing12345.supabase.co/");
   vi.stubEnv("H61_AUTO_GRADING", "false");
   vi.stubEnv("H61_LEARNER_RELEASE", "false");
 });
@@ -68,11 +68,11 @@ describe("H69 HTTP teacher workflow security", () => {
     expect((await POST(make())).status).toBe(401);
   });
   it("rejects quota exhaustion", async () => {
-    mockSupabase({ quota: false });
+    mockSupabase({ writeStatus: "RATE_LIMITED" });
     expect((await POST(make())).status).toBe(429);
   });
-  it("rejects rate limiter backend failure, without calling submit", async () => {
-    const rpc = mockSupabase({ quotaError: true });
+  it("fails closed when database rejects quota-backed submission", async () => {
+    const rpc = mockSupabase({ writeCode: "P0001" });
     expect((await POST(make())).status).toBe(503);
     expect(rpc).toHaveBeenCalledTimes(1);
   });
@@ -81,7 +81,7 @@ describe("H69 HTTP teacher workflow security", () => {
     const res = await POST(make());
     expect(res.status).toBe(201);
     expect(await res.json()).toEqual({ status: "SUBMITTED", release_gate: "BLOCKED", learner_release: false });
-    expect(rpc).toHaveBeenCalledTimes(2);
+    expect(rpc).toHaveBeenCalledTimes(1);
   });
   it("returns replay without a new review", async () => {
     mockSupabase({ writeStatus: "REPLAY" });

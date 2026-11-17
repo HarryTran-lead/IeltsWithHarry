@@ -1,0 +1,51 @@
+name: H70 Least Privilege and Direct RPC Quota (PostgreSQL 16)
+on:
+  push:
+    branches:
+      - codex/r19-h70-least-privilege-20261117
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  h70-postgres-16:
+    runs-on: ubuntu-latest
+    timeout-minutes: 18
+    services:
+      postgres:
+        image: postgres:16
+        env:
+          POSTGRES_USER: h70_ci_runner
+          POSTGRES_PASSWORD: h70_ci_password_only
+          POSTGRES_DB: h70_ci
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd=pg_isready
+          --health-interval=5s
+          --health-timeout=3s
+          --health-retries=15
+    steps:
+      - uses: actions/checkout@v4
+      - name: Ensure PostgreSQL client
+        run: command -v psql || (sudo apt-get update -qq && sudo apt-get install -y postgresql-client)
+      - name: Isolated PG16 service_role, RLS, and atomic rate limit tests
+        run: bash scripts/h70_ci_pg_least_privilege.sh
+        env:
+          H70_ALLOW_EPHEMERAL_DDL: YES_ISOLATED_CI_ONLY
+          H70_PG_DSN: postgresql://h70_ci_runner:h70_ci_password_only@127.0.0.1:5432/h70_ci
+      - uses: actions/upload-artifact@v4
+        if: success()
+        with:
+          name: h70-source-patch
+          retention-days: 7
+          if-no-files-found: error
+          path: |
+            .github/workflows/h70-postgres-least-privilege-ci.yml
+            sql/001_h70_least_privilege_staging_review.sql
+            scripts/h70_ci_pg_least_privilege.sh
+            src/lib/r19/h68/policy.ts
+            src/lib/r19/h68/policy.test.ts
+            src/app/api/admin/r19/h68/review/route.ts
+            src/app/api/admin/r19/h68/review/route.h69.test.ts
+            docs/R19_H70_LEAST_PRIVILEGE_VI.md
+            evidence/H70_STAGING_EVIDENCE_TEMPLATE.json
