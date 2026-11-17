@@ -58,7 +58,7 @@ export async function GET(request: Request) {
 
 export async function POST(request: Request) {
   const started = Date.now();
-  let lease: { jobId: string; token: string } | null = null;
+  let lease: { jobId: string; userId: string; token: string } | null = null;
   try {
     const user = await viewer();
     const { attemptId } = z.object({ attemptId: z.uuid() }).parse(await request.json());
@@ -90,7 +90,7 @@ export async function POST(request: Request) {
     const { data: token, error: claimError } = await db.rpc("writing_claim_deep_report", { p_job_id: job.id, p_user_id: user.id });
     if (claimError) throw new Error("Deep report claim failed");
     if (!token) return Response.json({ status: existing?.status ?? "analyzing", result: existing?.result ?? null }, { status: 202, headers: noCache });
-    lease = { jobId: job.id, token: String(token) };
+    lease = { jobId: job.id, userId: user.id, token: String(token) };
     const allowedStatus = process.env.WRITING_GRADING_ALLOW_PILOT === "true" ? ["pilot", "approved"] : ["approved"];
     const { data: model, error: registryError } = await db.from("writing_model_registry").select("id")
       .eq("model_id", cloudflareWritingModel).eq("revision", revision).eq("task_type", job.task_type)
@@ -130,7 +130,7 @@ export async function POST(request: Request) {
     if (lease) console.error(JSON.stringify({ event: "writing_deep_failed", code, job_id: lease.jobId, elapsed_ms: Date.now() - started }));
     if (lease) await bankClient().from("writing_deep_reports")
       .update({ status: "failed", error_code: code, lease_token: null, lease_until: null, updated_at: new Date().toISOString() })
-      .eq("job_id", lease.jobId).eq("lease_token", lease.token);
+      .eq("job_id", lease.jobId).eq("user_id", lease.userId).eq("lease_token", lease.token);
     if (code === "CLOUDFLARE_QUOTA_EXCEEDED") return Response.json({ error: "Đã hết hạn mức AI miễn phí hôm nay. Hãy thử lại sau 07:00 giờ Việt Nam." }, { status: 429 });
     if (lease) return Response.json({ error: "Phân tích sâu chưa hoàn tất. Hãy thử lại.", code }, { status: 503 });
     return requestError(error);
