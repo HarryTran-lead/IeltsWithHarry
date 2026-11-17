@@ -109,6 +109,18 @@ describe("Speaking S6 L14-L17 actual PostgreSQL migration & ownership smoke (PGl
         values ('${alice}','S6-001','L18_TEST'),('${bob}','S6-001','L18_TEST')
       `);
 
+      // L27: a started attempt cannot acquire forged "stored" evidence,
+      // and missing SHA-256/size/MIME cannot pass the SQL constraint.
+      await expect(db.query(
+        "update public.speaking_s6_attempts set audio_evidence_state='stored_hash_recorded' where id=$1",
+        [attemptAlice]
+      )).rejects.toThrow();
+      expect((await db.query<{audio_evidence_state:string}>(
+        "select audio_evidence_state from public.speaking_s6_attempts where id=$1",
+        [attemptAlice]
+      )).rows[0].audio_evidence_state).toBe("not_stored");
+
+
       // Supabase-style verified S5 evidence is present ONLY for Alice.
       await db.query(`
         insert into public.speaking_s6_s5_eligibility(
