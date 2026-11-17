@@ -1,0 +1,79 @@
+"""H74/M02 preflight refusal tests: never contact a live service in CI."""
+import os
+from pathlib import Path
+import re
+import subprocess
+import unittest
+
+ROOT=Path(__file__).resolve().parents[1]
+SCRIPT=ROOT/"scripts/h74_staging_two_user_readonly.mjs"
+PRODUCTION=re.search(
+    r'const PRODUCTION_SUPABASE_REF = "([a-z0-9]{10,32})";',
+    (ROOT/"src/lib/deployment-environment.ts").read_text(encoding="utf-8")
+).group(1)
+FAKE_REF="abcdefghijklmnopqrst"
+FAKE={
+    "H74_ALLOW_READONLY_STAGING":"YES_AUTHORIZED_STAGING_TWO_USER_READONLY",
+    "H74_STAGING_PROJECT_REF":FAKE_REF,
+    "H74_STAGING_URL":f"https://{FAKE_REF}.supabase.co/",
+    "H74_STAGING_PUBLISHABLE_KEY":"fake_publishable_key_not_a_secret",
+    "H74_STAGING_USER_A_JWT":"fake.header.signatureA",
+    "H74_STAGING_USER_B_JWT":"fake.header.signatureB",
+    "H74_STAGING_USER_A_ATTEMPT_ID":"11111111-1111-4111-8111-111111111111",
+    "H74_STAGING_USER_B_ATTEMPT_ID":"22222222-2222-4222-8222-222222222222",
+}
+class H74StagingPreflightTests(unittest.TestCase):
+    def run_script(self, config):
+        env={k:v for k,v in os.environ.items() if not k.startswith("H74_")}
+        env.update(config)
+        return subprocess.run(["node",str(SCRIPT)],cwd=ROOT,env=env,
+                              text=True,capture_output=True,timeout=10)
+
+    def test_no_opt_in_never_connects(self):
+        output=self.run_script({})
+        self.assertEqual(output.returncode,2)
+        self.assertIn("EXPLICIT_STAGING_AUTHORIZATION_REQUIRED",output.stdout)
+
+    def test_missing_credentials_never_connects(self):
+        output=self.run_script({"H74_ALLOW_READONLY_STAGING":"YES_AUTHORIZED_STAGING_TWO_USER_READONLY"})
+        self.assertEqual(output.returncode,2)
+        self.assertIn("DEDICATED_STAGING_TEST_CREDENTIALS_MISSING",output.stdout)
+
+    def test_production_project_is_rejected_even_with_complete_fake_credentials(self):
+        config={**FAKE,"H74_STAGING_PROJECT_REF":PRODUCTION,
+                "H74_STAGING_URL":f"https://{PRODUCTION}.supabase.co/"}
+        output=self.run_script(config)
+        self.assertEqual(output.returncode,2)
+        self.assertIn("STAGING_PROJECT_IDENTITY_OR_TEST_IDS_UNVERIFIED",output.stdout)
+        self.assertNotIn(PRODUCTION,output.stdout)
+
+    def test_mismatch_between_stage_ref_and_hostname_rejected(self):
+        config={**FAKE,"H74_STAGING_URL":"https://another-tenant.supabase.co/"}
+        output=self.run_script(config)
+        self.assertEqual(output.returncode,2)
+        self.assertIn("STAGING_PROJECT_IDENTITY_OR_TEST_IDS_UNVERIFIED",output.stdout)
+
+    def test_staging_url_with_path_or_query_rejected(self):
+        config={**FAKE,"H74_STAGING_URL":FAKE["H74_STAGING_URL"]+"rest/v1"}
+        output=self.run_script(config)
+        self.assertEqual(output.returncode,2)
+        self.assertIn("STAGING_PROJECT_IDENTITY_OR_TEST_IDS_UNVERIFIED",output.stdout)
+
+    def test_identical_tokens_and_attempt_ids_rejected(self):
+        config={**FAKE,"H74_STAGING_USER_B_JWT":FAKE["H74_STAGING_USER_A_JWT"]}
+        output=self.run_script(config)
+        self.assertEqual(output.returncode,2)
+        config2={**FAKE,"H74_STAGING_USER_B_ATTEMPT_ID":FAKE["H74_STAGING_USER_A_ATTEMPT_ID"]}
+        self.assertEqual(self.run_script(config2).returncode,2)
+
+    def test_no_service_role_or_mutating_http_methods_in_probe(self):
+        code=SCRIPT.read_text(encoding="utf-8")
+        self.assertNotIn("SUPABASE_SERVICE_ROLE_KEY",code)
+        for method in ("POST","PUT","PATCH","DELETE"):
+            self.assertNotIn(f'method: "{method}"',code)
+        self.assertIn('method: "GET"',code)
+        self.assertIn("h71_live_checks_approved: 0",code)
+        self.assertIn('release_gate: "NO_GO"',code)
+
+if __name__=="__main__":
+    unittest.main()
