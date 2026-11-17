@@ -58,6 +58,18 @@ def assert_clean_tracked_tree(root:Path)->None:
                        check=True,timeout=60)
     if run.stdout.strip():
         raise ValueError("tracked working tree differs from checked-out HEAD")
+    # status/diff may intentionally ignore index entries marked assume-unchanged
+    # or skip-worktree. Refuse SHA-bound evidence rather than trusting those flags.
+    flags=subprocess.run(["git","-C",str(root),"ls-files","-v","-z","--cached"],
+                         capture_output=True,check=True,timeout=60)
+    for record in flags.stdout.split(b"\0"):
+        if not record:
+            continue
+        if len(record)<3 or record[1:2]!=b" ":
+            raise ValueError("unable to verify tracked index flags")
+        flag=record[:1]
+        if flag==b"S" or flag.islower():
+            raise ValueError("tracked index has unverified assume-unchanged or skip-worktree entries")
 
 def analyze(root:Path,paths:list[str],sha:str)->dict:
     if not re.fullmatch(r"[a-f0-9]{40}",sha):
