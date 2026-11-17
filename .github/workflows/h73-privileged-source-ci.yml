@@ -1,0 +1,48 @@
+name: H73 Static Privileged Source Surface Gate
+on:
+  push:
+    branches:
+      - codex/r19-h73-service-role-reachability-20261117
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  h73-privileged-source-gate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Test fail-closed privileged source inventory
+        run: python3 -m unittest discover -s tests -p test_h73_privilege_surface_gate.py -v
+      - name: Verify source SHA and guard against unreviewed service-role paths
+        run: |
+          python3 scripts/h73_privilege_surface_gate.py \
+            --repo . --expected-sha "$GITHUB_SHA" \
+            --json-out reports/h73_privilege_surface.json
+      - name: Assert this is NOT a staging or release attestation
+        run: |
+          python3 - <<'PY'
+          import json
+          data=json.load(open('reports/h73_privilege_surface.json'))
+          assert data['status']=='STATIC_BASELINE_MATCH'
+          assert data['release_gate']=='NO_GO'
+          assert data['supabase_staging_verified'] is False
+          assert data['source_coverage_complete'] is True
+          PY
+      - name: Preserve diagnostic report even on failure
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: h73-privileged-source-static-report
+          retention-days: 7
+          if-no-files-found: warn
+          path: |
+            reports/h73_privilege_surface.json
+            scripts/h73_privilege_surface_gate.py
+            tests/test_h73_privilege_surface_gate.py
+            docs/R19_H73_PRIVILEGED_SOURCE_REVIEW_VI.md
