@@ -13,7 +13,7 @@ import re
 import subprocess
 import sys
 
-SOURCE_SUFFIXES={".ts",".tsx",".js",".jsx",".mjs",".cjs",".mts",".cts",".py",".sql",".sh",".yml",".yaml",".toml",".json",".prisma"}
+SOURCE_SUFFIXES={".ts",".tsx",".js",".jsx",".mjs",".cjs",".mts",".cts",".py",".sql",".sh",".yml",".yaml",".toml",".json",".prisma",".vue",".svelte",".astro"}
 DIRECT=re.compile(r"\br19_h58(?:\s*\.\s*[a-z_][a-z_0-9]*)?\b",re.I)
 ROLE=re.compile(r"\b(?:SUPABASE_SERVICE_ROLE_KEY|service_role)\b",re.I)
 SUBMIT=re.compile(r"\bh68_submit_review\b",re.I)
@@ -26,6 +26,7 @@ PATTERNS={"DIRECT_H58_REF":DIRECT,"SERVICE_ROLE_REF":ROLE,"SUBMIT_RPC_REF":SUBMI
 MAX_BYTES=1_500_000
 MAX_FINDINGS=1000
 EXCLUDE_PARTS={".git","node_modules",".next","dist","build","coverage","vendor"}
+LOCKFILE_NAMES={"package-lock.json","npm-shrinkwrap.json","pnpm-lock.yaml","yarn.lock","bun.lock"}
 
 def classify(path:str)->str:
     if path.startswith(("src/app/","src/lib/","src/pages/","supabase/functions/","services/","workers/","functions/","app/","lib/","api/","pages/")) or path.startswith(("src/middleware.","middleware.")):
@@ -79,10 +80,12 @@ def analyze(root:Path,paths:list[str],sha:str)->dict:
         path=Path(rel)
         if path.is_absolute() or ".." in path.parts or set(path.parts)&EXCLUDE_PARTS:
             skipped.append({"path":rel,"reason":"UNSAFE_OR_EXCLUDED"});continue
+        if path.name in LOCKFILE_NAMES:
+            skipped.append({"path":rel,"reason":"DEPENDENCY_LOCKFILE_EXCLUDED"});continue
         if path.suffix.lower() not in SOURCE_SUFFIXES:
             continue
-        if not (rel.startswith(("src/","supabase/","services/","workers/","functions/","app/","lib/","api/","pages/","scripts/","sql/","tests/",".github/")) or rel.startswith("middleware.")):
-            continue
+        # Inspect eligible tracked source wherever it lives; unfamiliar layouts
+        # remain OTHER_SOURCE and are surfaced for manual risk classification.
         target=root/path
         if target.is_symlink() or not target.is_file():
             skipped.append({"path":rel,"reason":"SYMLINK_OR_MISSING"});continue
@@ -116,6 +119,8 @@ def analyze(root:Path,paths:list[str],sha:str)->dict:
     role_files=sorted({f["path"] for f in findings
                        if f["scope"]=="APPLICATION_RUNTIME" and
                        f["indicator"] in ("SERVICE_ROLE_REF","POSSIBLE_SERVICE_CLIENT")})
+    unclassified_refs=sorted({f["path"] for f in findings
+                              if f["scope"]=="OTHER_SOURCE"})
     has_bad_inputs=bool(scan_errors) or any(x["reason"] in
              ("UNREADABLE_SOURCE","SYMLINK_OR_MISSING","UNSAFE_OR_EXCLUDED") for x in skipped)
     has_large_inputs=any(x["reason"]=="LARGE_SOURCE_FILE" for x in skipped)
@@ -136,6 +141,7 @@ def analyze(root:Path,paths:list[str],sha:str)->dict:
         "counts_by_indicator":dict(sorted(count.items())),
         "application_direct_h58_reference_paths":application_refs,
         "application_service_role_or_client_paths":role_files,
+        "unclassified_source_reference_paths":unclassified_refs,
         "findings":findings,
     }
 
@@ -150,12 +156,14 @@ def markdown(data:dict)->str:
         "- Source lines scanned: "+str(data["coverage"]["scanned_lines"]),
         "- Direct H58 application files: "+str(len(data["application_direct_h58_reference_paths"])),
         "- Service-role-related application files: "+str(len(data["application_service_role_or_client_paths"])),
+        "- Other/unclassified source files with relevant references: "+str(len(data["unclassified_source_reference_paths"])),
         "- Skipped/unknown file coverage entries: "+str(len(data["coverage"]["skipped"])),
         "",
         "## Application paths requiring manual confirmation",
     ]
     paths=sorted(set(data["application_direct_h58_reference_paths"]+
-                     data["application_service_role_or_client_paths"]))
+                     data["application_service_role_or_client_paths"]+
+                     data["unclassified_source_reference_paths"]))
     rows.extend("- "+p for p in paths[:80])
     if len(paths)>80:rows.append("- Additional paths retained in JSON (not truncated silently)")
     if not paths:rows.append("No static application match found; NOT proof of absence.")
@@ -196,6 +204,7 @@ def main()->int:
         "status":result["static_inventory_status"],
         "application_direct_h58_reference_paths":result["application_direct_h58_reference_paths"],
         "application_service_role_or_client_paths":result["application_service_role_or_client_paths"],
+        "unclassified_source_reference_paths":result["unclassified_source_reference_paths"],
         "source_files":result["coverage"]["inspected_files"],
         "skipped_count":len(result["coverage"]["skipped"]),
         "release_gate":"NO_GO"}))
