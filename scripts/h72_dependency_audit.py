@@ -110,7 +110,11 @@ def analyze(root:Path,paths:list[str],sha:str)->dict:
         if scan_errors:break
     # No eligible source files is not evidence that there are no dependencies.
     # It may indicate the wrong checkout, empty repo or unsupported layout.
-    if inspected==0:
+    # Oversized candidates are eligible sources that could not be inspected:
+    # classify them as PARTIAL, not as a checkout with no eligible sources.
+    if inspected==0 and not any(
+        entry["reason"]=="LARGE_SOURCE_FILE" for entry in skipped
+    ):
         scan_errors.append("NO_ELIGIBLE_SOURCE_FILES")
     count=Counter(f["indicator"] for f in findings)
     application_refs=sorted({f["path"] for f in findings
