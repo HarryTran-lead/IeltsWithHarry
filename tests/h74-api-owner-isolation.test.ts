@@ -1,4 +1,4 @@
-import { beforeEach, describe, expect, it, vi } from "vitest";
+import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 
 type RecordRow = Record<string, unknown>;
 type TableName = "ielts_attempts" | "writing_grading_jobs" | "writing_grading_results" |
@@ -102,7 +102,8 @@ function speakingUrl(id: string) {
   return new Request("https://staging.example.test/api/ielts/bank/speaking-coaching?sessionId=" + id);
 }
 
-beforeEach(setFixtures);
+beforeEach(() => { setFixtures(); vi.stubEnv("SPEAKING_COACHING_ENABLED", "true"); });
+afterEach(() => vi.unstubAllEnvs());
 
 describe("H74/M04: actual Next API handler access isolation (in-memory mock; no Supabase network)", () => {
   it("lets account A read only its own Writing job and result", async () => {
