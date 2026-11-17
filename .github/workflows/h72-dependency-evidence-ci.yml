@@ -1,0 +1,80 @@
+name: H72 Repository Dependency Audit and Staging Evidence
+on:
+  push:
+    branches:
+      - codex/r19-h72-dependency-audit-20261117
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  h72-dependency-audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 16
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Verify evidence gate tests
+        run: python3 -m unittest discover -s tests -p test_h72_dependency_audit.py -v
+      - name: Scan tracked source inventory for H58 and service role dependencies
+        run: |
+          python3 scripts/h72_dependency_audit.py \
+            --repo . --expected-sha "$GITHUB_SHA" \
+            --json-out reports/h72_dependency_inventory.json \
+            --md-out reports/h72_dependency_inventory.md
+      - name: Assert live-staging acceptance remains blocked
+        shell: bash
+        run: |
+          set +e
+          python3 scripts/h71_acceptance_gate.py \
+            --manifest evidence/H71_STAGING_EVIDENCE_TEMPLATE.json \
+            > reports/h72_default_stage_gate.json
+          result=$?
+          set -e
+          test "$result" -eq 2
+          python3 - <<'PY'
+          import json
+          data=json.load(open("reports/h72_default_stage_gate.json"))
+          assert data["release_gate"]=="NO_GO"
+          assert data["verdict"] in ("INVALID_EVIDENCE","NO_GO_MISSING_STAGING_EVIDENCE")
+          PY
+      - name: Capture hash-bound, non-attesting CI receipt
+        run: |
+          python3 - <<'PY'
+          import hashlib,json,os,pathlib
+          target=pathlib.Path("reports/h72_dependency_inventory.json")
+          receipt={
+             "milestone":"H72",
+             "status":"CI_SCAN_COMPLETED_NOT_STAGING_VERIFIED",
+             "repository":os.environ["GITHUB_REPOSITORY"],
+             "commit_sha":os.environ["GITHUB_SHA"],
+             "github_run_id":os.environ["GITHUB_RUN_ID"],
+             "scan_sha256":hashlib.sha256(target.read_bytes()).hexdigest(),
+             "supabase_staging_checks_pass":0,
+             "supabase_staging_checks_required":18,
+             "live_supabase_authenticated":False,
+             "release_gate":"NO_GO",
+             "note":"This CI receipt is NOT independent staging attestation."
+          }
+          pathlib.Path("reports/h72_ci_receipt.json").write_text(json.dumps(receipt,indent=2)+"\n")
+          PY
+      - uses: actions/upload-artifact@v4
+        if: success()
+        with:
+          name: h72-dependency-report-and-source
+          retention-days: 7
+          if-no-files-found: error
+          path: |
+            reports/h72_dependency_inventory.json
+            reports/h72_dependency_inventory.md
+            reports/h72_default_stage_gate.json
+            reports/h72_ci_receipt.json
+            scripts/h72_dependency_audit.py
+            tests/test_h72_dependency_audit.py
+            sql/h72_preflight_READ_ONLY.sql
+            docs/R19_H72_STAGING_DEPENDENCY_AUDIT_VI.md
+            evidence/H72_STAGING_EVIDENCE_TEMPLATE.json
+            .github/workflows/h72-dependency-evidence-ci.yml
