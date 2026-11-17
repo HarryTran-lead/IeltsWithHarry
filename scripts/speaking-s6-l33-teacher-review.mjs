@@ -185,6 +185,21 @@ export function inspectL33LocalPackage(pkg){
    steps.every(x=>x?.learning_content&&typeof x.learning_content==="object"&&
      Object.keys(x.learning_content).length>0));
  fail("four_guided_activities",Array.isArray(guided)&&guided.length===4);
+ // Match the actual Zod import contract (src/lib/speaking-s6/contract.ts),
+ // not just visually plausible student/private arrays. An otherwise clean
+ // package missing model_ref/prompt_ref/private Guided question cannot import.
+ const stubValid=(items,mode)=>Array.isArray(items)&&items.every(x=>
+   x?.mode===mode&&typeof x.prompt_ref==="string"&&x.prompt_ref.startsWith("server:")&&
+   x.prompt_ref.length>7&&typeof x.followup_delivery==="string"&&
+   x.followup_delivery.length>0&&x.no_answer_key_on_student===true&&
+   Object.keys(x).length===5);
+ fail("import_contract_field_alignment",
+   Array.isArray(guided)&&guided.length===4&&guided.every(x=>
+     text(x?.question_en)&&typeof x.model_ref==="string"&&x.model_ref.length>0&&
+     text(privateLesson?.guided?.[x.activity_id]?.question_en)&&
+     normalized(privateLesson.guided[x.activity_id].question_en)===normalized(x.question_en))&&
+   stubValid(independent,"INDEPENDENT")&&
+   stubValid(mastery,"MASTERY"));
  fail("three_progressive_hints",Array.isArray(guided)&&guided.length===4&&
    guided.every(x=>Array.isArray(x.hints)&&x.hints.length===3&&
      x.hints.every((hint,i)=>hint?.level===i+1&&guidedText(hint))));
