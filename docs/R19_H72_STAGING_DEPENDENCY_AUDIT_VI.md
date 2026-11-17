@@ -33,7 +33,7 @@ H72 chạy một công cụ dò tìm toàn bộ **file mã nguồn được Git 
 
 ## Tái kiểm tra từ GitHub Actions
 Workflow \`.github/workflows/h72-dependency-evidence-ci.yml\`:
-- Chạy 22 unit tests scanner (số trường hợp đã soạn trong nhánh, trạng thái PASS phụ thuộc CI).
+- Chạy 24 unit tests scanner (số trường hợp đã soạn trong nhánh, trạng thái PASS phụ thuộc CI).
 - Chạy scan theo \`GITHUB_SHA\` và tạo \`reports/h72_dependency_inventory.json/.md\`.
 - Xác nhận H71 evidence gate không báo GO khi dữ liệu staging còn thiếu.
 - Đóng artifact gồm mã nguồn, báo cáo và \`h72_ci_receipt.json\` có SHA-256 của báo cáo.
@@ -63,4 +63,11 @@ Workflow \`.github/workflows/h72-dependency-evidence-ci.yml\`:
 - Sau khi quét xong, scanner **kiểm tra lại HEAD và trạng thái tracked working tree**. Nếu source bị sửa, hoặc HEAD chuyển sang commit khác trong thời gian quét, kết quả bị từ chối **trước khi ghi file báo cáo**.
 - Hai regression tests tạo tình huống source bị thay đổi và HEAD đổi sau khi đã tính xong findings, xác nhận công cụ trả mã 2 và **không** tạo báo cáo JSON/Markdown.
 - Một checkout không có bất kỳ file mã nguồn đủ điều kiện nào **không được coi là kiểm toán thành công**. Scanner trả `INVENTORY_INCOMPLETE`, lỗi `NO_ELIGIBLE_SOURCE_FILES` và mã thoát 3; regression test kiểm chứng trường hợp chỉ có README.
-- Tổng bộ scanner hiện có **22 unit tests được soạn**. CI của HEAD mới nhất và workflow H72 chuyên biệt vẫn cần bằng chứng PASS. Không nâng số lượng này thành bằng chứng staging thật; `NO_GO` và 0/18 kiểm tra staging không đổi.
+- Tổng bộ scanner hiện có **24 unit tests được soạn**. CI của HEAD mới nhất và workflow H72 chuyên biệt vẫn cần bằng chứng PASS. Không nâng số lượng này thành bằng chứng staging thật; `NO_GO` và 0/18 kiểm tra staging không đổi.
+
+## H72 bổ sung: đường dẫn nguồn không theo cấu trúc chuẩn
+- Trước thay đổi này, scanner bỏ qua hoàn toàn các file nguồn được Git theo dõi ngoài các thư mục đã định sẵn như `src/`, `api/`, `workers/`. Vì vậy câu báo cáo `STATIC_INVENTORY_PRODUCED` có thể thiếu file runtime ở monorepo (`packages/`, `modules/`) hoặc root config.
+- Hiện scanner đọc **mọi file nguồn được Git theo dõi có đuôi được nhận diện**, kể cả `.vue`, `.svelte`, `.astro`, không phân biệt vị trí. Nguồn ngoài các nhóm đã biết nhận `scope=OTHER_SOURCE` và khi có dấu hiệu H58/service_role/RPC sẽ được đưa vào `unclassified_source_reference_paths` để rà soát thủ công; **không tự kết luận là không liên quan runtime**.
+- Các dependency lockfile phổ biến (`package-lock.json`, `npm-shrinkwrap.json`, `pnpm-lock.yaml`, `yarn.lock`, `bun.lock`) được loại riêng với `reason=DEPENDENCY_LOCKFILE_EXCLUDED` trong `coverage.skipped`, không âm thầm bỏ qua.
+- Hai unit tests mới kiểm tra đường dẫn ngoài scope/đuôi `.vue` và việc loại lockfile có ghi nhận lý do. Tổng bộ là **24** trường hợp đã viết, kết quả PASS cuối cùng phải đối chiếu CI run đúng commit SHA.
+- `coverage.complete=true` chỉ có nghĩa **đã quét hết các file đủ điều kiện theo quy tắc tĩnh**, không có nghĩa không còn dependency động, service bên ngoài, SQL build lúc chạy hoặc chưa kiểm chứng trên Supabase thật.
