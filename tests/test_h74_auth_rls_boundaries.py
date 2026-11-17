@@ -77,5 +77,34 @@ class H74AuthRlsBoundaries(unittest.TestCase):
         self.assertIn("review_writes_enabled=false WHERE singleton=1",source)
         self.assertIn("JWT SIGNATURES NOT VERIFIED",source)
 
+    def test_h74_dba_inventory_is_catalog_read_only(self):
+        sql=(ROOT/"sql/h74_dba_catalog_READ_ONLY.sql").read_text(encoding="utf-8")
+        import re
+        statements="\n".join(line for line in sql.splitlines()
+                             if not line.lstrip().startswith(("--","\\")))
+        self.assertIsNone(re.search(
+            r"(?im)^\s*(?:CREATE|ALTER|DROP|TRUNCATE|INSERT|UPDATE|DELETE|"
+            r"GRANT|REVOKE|COPY|DO|CALL|EXECUTE)\b", statements))
+        self.assertIn("H74_CATALOG_ONLY_RELEASE_GATE",sql)
+        self.assertIn("'NO_GO' AS release_gate",sql)
+
+    def test_h74_dba_inventory_covers_learner_jobs_and_private_h58(self):
+        sql=(ROOT/"sql/h74_dba_catalog_READ_ONLY.sql").read_text(encoding="utf-8")
+        for table in ("ielts_attempts","writing_grading_jobs","writing_grading_results",
+                      "writing_deep_reports","speaking_coaching_jobs","probes","reviews"):
+            self.assertIn("'"+table+"'",sql)
+        for rpc in ("h68_submit_review","writing_claim_grading_job",
+                    "writing_finish_grading_job","speaking_claim_coaching_job",
+                    "speaking_finish_coaching_job","is_admin"):
+            self.assertIn("'"+rpc+"'",sql)
+
+    def test_h74_dba_inventory_does_not_read_private_content_rows(self):
+        sql=(ROOT/"sql/h74_dba_catalog_READ_ONLY.sql").read_text(encoding="utf-8")
+        import re
+        self.assertIsNone(re.search(r"(?i)\b(?:FROM|JOIN)\s+r19_h58\.",sql))
+        self.assertIn("FROM pg_proc",sql)
+        self.assertIn("FROM pg_policies",sql)
+        self.assertIn("FROM pg_roles",sql)
+
 if __name__=="__main__":
     unittest.main()
