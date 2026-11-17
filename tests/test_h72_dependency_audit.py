@@ -4,6 +4,7 @@ from pathlib import Path
 import tempfile
 import subprocess
 import unittest
+from unittest.mock import patch
 
 SCRIPT=Path(__file__).resolve().parents[1]/"scripts/h72_dependency_audit.py"
 spec=importlib.util.spec_from_file_location("audit_h72",SCRIPT)
@@ -111,6 +112,43 @@ class H72StaticAuditTests(unittest.TestCase):
         (root/"reports").mkdir()
         (root/"reports/h72_output.json").write_text("{}",encoding="utf-8")
         audit.assert_clean_tracked_tree(root)
+
+    def test_additional_runtime_layouts_and_extensions(self):
+        root=self.project({
+            "workers/worker.mts":'const schema="r19_h58.probes";',
+            "src/pages/review.jsx":'const key=process.env.SUPABASE_SERVICE_ROLE_KEY;',
+            "functions/probe.json":'{"rpc": "h68_submit_review"}',
+            "lib/schema.prisma":'// r19_h58.reviews',
+        })
+        report=audit.analyze(root,[
+            "workers/worker.mts","src/pages/review.jsx",
+            "functions/probe.json","lib/schema.prisma",
+        ],COMMIT)
+        self.assertIn("workers/worker.mts",report["application_direct_h58_reference_paths"])
+        self.assertIn("src/pages/review.jsx",report["application_service_role_or_client_paths"])
+        self.assertIn("SUBMIT_RPC_REF",report["counts_by_indicator"])
+        self.assertIn("lib/schema.prisma",report["application_direct_h58_reference_paths"])
+        self.assertTrue(report["coverage"]["complete"])
+
+    def test_large_tracked_source_exits_nonzero(self):
+        root=self.project({"src/lib/large.ts":"r19_h58.probes;"+(" " * 64)})
+        subprocess.run(["git","-C",str(root),"init","-q"],check=True)
+        subprocess.run(["git","-C",str(root),"add","src/lib/large.ts"],check=True)
+        subprocess.run(["git","-C",str(root),"-c","user.name=H72 Test",
+                        "-c","user.email=h72@example.invalid",
+                        "-c","commit.gpgsign=false","commit","-qm","baseline"],check=True)
+        sha=audit.head_sha(root)
+        json_out=root/"reports/inventory.json"
+        md_out=root/"reports/inventory.md"
+        args=["h72_dependency_audit.py","--repo",str(root),"--expected-sha",sha,
+              "--json-out",str(json_out),"--md-out",str(md_out)]
+        with patch.object(audit,"MAX_BYTES",16),patch("sys.argv",args):
+            self.assertEqual(audit.main(),3)
+        inventory=json.loads(json_out.read_text())
+        self.assertEqual(inventory["static_inventory_status"],"PARTIAL_STATIC_INVENTORY")
+        self.assertFalse(inventory["coverage"]["complete"])
+        self.assertEqual(inventory["release_gate"],"NO_GO")
+        self.assertEqual(inventory["coverage"]["skipped"][0]["reason"],"LARGE_SOURCE_FILE")
 
     def test_markdown_disclaims_no_matches(self):
         root=self.project({"src/lib/clean.ts":"export const clean = true"})
