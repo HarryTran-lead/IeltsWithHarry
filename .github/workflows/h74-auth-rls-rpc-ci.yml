@@ -29,6 +29,9 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
       - name: Verify fail-closed preflight and existing auth owner checks
         run: python3 -m unittest discover -s tests -p 'test_h74_*.py' -v
       - name: Ensure psql is installed
@@ -58,5 +61,7 @@ jobs:
           path: |
             .github/workflows/h74-auth-rls-rpc-ci.yml
             scripts/h74_ci_pg_auth_rls.sh
+            scripts/h74_staging_two_user_readonly.mjs
+            tests/test_h74_staging_preflight.py
             tests/test_h74_auth_rls_boundaries.py
             docs/R19_H74_AUTH_RLS_RPC_TECHNICAL_VI.md
