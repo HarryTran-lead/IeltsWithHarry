@@ -57,12 +57,13 @@ const makeDb=(options:{
    if(table==="speaking_s6_attempts")return attempts;
    throw Error("Unexpected Supabase table "+table);
  });
- const db={from};
+ const rpc=vi.fn().mockResolvedValue({data:ATTEMPT,error:null});
+ const db={from,rpc};
  mocks.bankClient.mockReturnValue(db);
- return {db,from,attempts,update,lesson,privateBank};
+ return {db,from,attempts,update,lesson,privateBank,rpc};
 };
 const request=(data:object)=>new Request("https://staging.invalid/api/speaking/s6/session",{
- method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(data)
+ method:"POST",headers:{"Content-Type":"application/json","Origin":"https://staging.invalid"},body:JSON.stringify(data)
 });
 describe("Speaking S6 API behavior (mocked Supabase, no live staging)",()=>{
  beforeEach(()=>{
@@ -86,7 +87,7 @@ describe("Speaking S6 API behavior (mocked Supabase, no live staging)",()=>{
   expect(b.mode).toBe("mastery");
   expect(JSON.stringify(b)).not.toContain("Private guided model");
   expect(JSON.stringify(b)).not.toContain("What could you improve");
-  expect(d.attempts.insert).toHaveBeenCalledOnce();
+  expect(d.rpc).toHaveBeenCalledOnce();
   expect(d.lesson.eq).toHaveBeenCalledWith("status","published");
  });
  it("filters attempts by owner, including foreign IDs",async()=>{
@@ -135,7 +136,7 @@ describe("Speaking S6 API behavior (mocked Supabase, no live staging)",()=>{
   const d=makeDb();
   const r=await POST(request({action:"start",lessonId:"S6-001",activityId:"S6-002-M01"}));
   expect(r.status).toBe(422);
-  expect(d.attempts.insert).not.toHaveBeenCalled();
+  expect(d.rpc).not.toHaveBeenCalled();
  });
  it("admin preview is explicitly authorized via viewer(true)",async()=>{
   makeDb();
@@ -236,7 +237,7 @@ describe("Speaking S6 M10-L24 private-bank fail-closed boundary tests (mock data
   }},error:null});
   const r=await POST(request({action:"start",lessonId:"S6-001",activityId:"S6-001-M01"}));
   expect(r.status).toBe(503);
-  expect(d.attempts.insert).not.toHaveBeenCalled();
+  expect(d.rpc).not.toHaveBeenCalled();
   expect(JSON.stringify(await r.json())).not.toContain("Unseen secret");
  });
  it("refuses a Guided explanation if the private model answer is blank",async()=>{
@@ -275,7 +276,7 @@ describe("Speaking S6 M10-L24 private-bank fail-closed boundary tests (mock data
  it("does not expose raw malformed JSON or schema-validation internals",async()=>{
   makeDb();
   const malformed=new Request("https://staging.invalid/api/speaking/s6/session",{
-    method:"POST",headers:{"Content-Type":"application/json"},body:"{"
+    method:"POST",headers:{"Content-Type":"application/json","Origin":"https://staging.invalid"},body:"{"
   });
   const first=await POST(malformed);
   expect(first.status).toBe(400);
@@ -292,5 +293,75 @@ describe("Speaking S6 M10-L24 private-bank fail-closed boundary tests (mock data
   expect(Object.keys(payload)).toEqual(["followup"]);
   expect(r.headers.get("Cache-Control")).toContain("no-store");
   expect(JSON.stringify(payload)).not.toContain("Private guided model");
+ });
+});
+
+describe("Speaking S6 M10-L25 atomic start quota and origin guard (mock database)",()=>{
+ beforeEach(()=>{
+  vi.resetAllMocks();
+  mocks.viewer.mockResolvedValue({id:USER_A});
+  mocks.s6AccessAllowed.mockResolvedValue(true);
+ });
+ it("admits start only through atomic RPC, never an unmetered attempt insert",async()=>{
+  const d=makeDb();
+  const r=await POST(request({action:"start",lessonId:"S6-001",activityId:"S6-001-M01"}));
+  expect(r.status).toBe(201);
+  expect(d.rpc).toHaveBeenCalledWith("speaking_s6_start_attempt_l25",expect.objectContaining({
+    p_user_id:USER_A,p_lesson_code:"S6-001",p_activity_id:"S6-001-M01",p_mode:"mastery",
+    p_preview:false,p_audio_storage_consent:false
+  }));
+  expect(d.attempts.insert).not.toHaveBeenCalled();
+  expect((await r.json()).question).toBe("An unseen Mastery prompt");
+ });
+ it("returns 429 on an hourly rate limit, without leaking any private bank",async()=>{
+  const d=makeDb();
+  d.rpc.mockResolvedValue({data:null,error:{message:"S6_START_RATE_LIMIT"}});
+  const r=await POST(request({action:"start",lessonId:"S6-001",activityId:"S6-001-M01"}));
+  expect(r.status).toBe(429);
+  expect(r.headers.get("Retry-After")).toBe("3600");
+  const response=JSON.stringify(await r.json());
+  expect(response).toContain("S6_START_RATE_LIMIT");
+  expect(response).not.toContain("An unseen Mastery prompt");
+ });
+ it("returns 429 for cooldown and active-attempt limits",async()=>{
+  const d=makeDb();
+  for(const code of ["S6_START_COOLDOWN","S6_START_ACTIVE_LIMIT"]){
+    d.rpc.mockResolvedValueOnce({data:null,error:{message:code}});
+    const r=await POST(request({action:"start",lessonId:"S6-001",activityId:"S6-001-M01"}));
+    expect(r.status).toBe(429);
+    expect((await r.json()).error).toBe(code);
+  }
+ });
+ it("does not fall back to insert when the new RPC/migration is absent",async()=>{
+  const d=makeDb();
+  d.rpc.mockResolvedValue({data:null,error:{message:"Could not find the function in the schema cache"}});
+  const r=await POST(request({action:"start",lessonId:"S6-001",activityId:"S6-001-M01"}));
+  expect(r.status).toBe(503);
+  expect((await r.json()).error).toBe("S6_SESSION_UNAVAILABLE");
+  expect(d.attempts.insert).not.toHaveBeenCalled();
+ });
+ it("denies cross-site and mismatched-origin requests before auth or DB",async()=>{
+  const d=makeDb();
+  const forbidden=new Request("https://staging.invalid/api/speaking/s6/session",{
+    method:"POST",headers:{"Content-Type":"application/json","Origin":"https://attacker.invalid",
+      "Sec-Fetch-Site":"cross-site"},
+    body:JSON.stringify({action:"start",lessonId:"S6-001",activityId:"S6-001-M01"})
+  });
+  const r=await POST(forbidden);
+  expect(r.status).toBe(403);
+  expect(mocks.viewer).not.toHaveBeenCalled();
+  expect(d.rpc).not.toHaveBeenCalled();
+ });
+ it("requires JSON and a browser-origin or same-origin Fetch Metadata signal",async()=>{
+  makeDb();
+  const noOrigin=new Request("https://staging.invalid/api/speaking/s6/session",{
+    method:"POST",headers:{"Content-Type":"application/json"},
+    body:JSON.stringify({action:"start",lessonId:"S6-001",activityId:"S6-001-M01"})
+  });
+  expect((await POST(noOrigin)).status).toBe(403);
+  const plain=new Request("https://staging.invalid/api/speaking/s6/session",{
+    method:"POST",headers:{"Origin":"https://staging.invalid","Content-Type":"text/plain"},body:"hello"
+  });
+  expect((await POST(plain)).status).toBe(415);
  });
 });
