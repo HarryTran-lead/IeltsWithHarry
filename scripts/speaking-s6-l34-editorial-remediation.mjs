@@ -35,6 +35,7 @@ const CODEBOOK=Object.freeze({
   public_payload_has_no_private_response_fields:{tier:"P0",area:"answer_secrecy",action:"Remove private answer/reasoning fields from learner payload; isolate them server-side."},
   ten_ordered_steps:{tier:"P1",area:"learning_sequence",action:"Restore ten sequential micro-lessons: teach, model, practise, transfer and review."},
   four_guided_activities:{tier:"P1",area:"guided",action:"Provide four varied Guided prompts that progressively reduce help."},
+  import_contract_field_alignment:{tier:"P1",area:"import_contract",action:"Restore required model_ref, prompt_ref, followup_delivery and private Guided question fields to match import schema before any ADD-ONLY import."},
   guided_model_bank:{tier:"P1",area:"guided",action:"Author a model answer explaining why it works, delivered only after learner submission."},
   three_independent_stubs:{tier:"P1",area:"independent",action:"Provide three novel Independent tasks; do not expose private prompts before starting."},
   two_mastery_stubs_and_followups:{tier:"P1",area:"mastery",action:"Provide two unseen Mastery prompts plus distinct reasoning-based follow-ups."},
