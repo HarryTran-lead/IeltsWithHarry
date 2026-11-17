@@ -200,17 +200,29 @@ describe("Speaking S6 L14-L17 actual PostgreSQL migration & ownership smoke (PGl
         "select activity_id from public.speaking_s6_activity_cooldowns"
       )).rejects.toThrow();
 
-      // L28: mark an attempt for deletion BEFORE Storage removal.
-      // This prevents a concurrent submit or second upload from proceeding.
-      await db.query("update public.speaking_s6_attempts set deletion_requested_at=now() where id=$1", [attemptAlice]);
+      // Authenticated learners have SELECT but no direct UPDATE privileges.
+      // Simulate an attacker trying to skip server-side owner/consent checks.
+      await expect(db.query(
+        "update public.speaking_s6_attempts set deletion_requested_at=now() where id=$1",
+        [attemptAlice]
+      )).rejects.toThrow();
+
+      // L28: seed the marker as the DB owner, never as the learner.
+      await db.exec("reset role");
+      await db.query(
+        "update public.speaking_s6_attempts set deletion_requested_at=now() where id=$1",
+        [attemptAlice]
+      );
       const raceSubmit = await db.query(
         "update public.speaking_s6_attempts set phase='submitted' where id=$1 and phase='started' and deletion_requested_at is null returning id",
         [attemptAlice]
       );
       expect(raceSubmit.rows).toHaveLength(0);
-      // Clear only the disposable local fixture marker before the owner
-      // Storage-insert policy positive-path test below.
-      await db.query("update public.speaking_s6_attempts set deletion_requested_at=null where id=$1", [attemptAlice]);
+      await db.query(
+        "update public.speaking_s6_attempts set deletion_requested_at=null where id=$1",
+        [attemptAlice]
+      );
+      await db.exec(`set role authenticated; set request.jwt.claim.sub='${alice}';`);
 
       // Alice can upload to her consented attempt only.
       await db.query(
