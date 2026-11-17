@@ -25,3 +25,8 @@
 .s6-content-list{padding-left:24px;margin:8px 0}.s6-content-list li{padding:3px 0}
 .s6-content-subfields{display:grid;gap:8px;margin-top:5px}.s6-content-subfield strong{color:#31445d}
 .s6-learning-field span{white-space:pre-wrap}
+
+.s6-cue-prep{border:1px solid #bad5ec;background:#f2f8ff;border-radius:12px;padding:14px;margin:14px 0}
+.s6-cue-prep h4{font-size:1rem;margin:0 0 8px}.s6-cue-prep ul{padding-left:22px;line-height:1.65}
+.s6-cue-timer{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;margin-top:10px}
+.s6-cue-timer span{font-weight:750;font-variant-numeric:tabular-nums}

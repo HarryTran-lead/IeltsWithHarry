@@ -88,7 +88,8 @@ function prettyError(error:unknown){
   "S6_LOCKED":"Stage S6 chưa được mở khóa.","NOT_AVAILABLE":"Bài chưa được phát hành.",
   "ADD_ONLY_CONFLICT":"Bài đã tồn tại.","SUBMISSION_REQUIRED":"Cần nộp lượt nói đầu tiên trước.",
   "REVIEW_NOT_DUE":"Chưa đến ngày ôn.","FINISH_STEPS_FIRST":"Cần hoàn tất các bước học trước.",
-  "ALREADY_SUBMITTED":"Lượt trả lời đã được nộp.","S6_NOT_PUBLISHED":"Bài hiện chưa mở cho học viên."
+  "ALREADY_SUBMITTED":"Lượt trả lời đã được nộp.","S6_NOT_PUBLISHED":"Bài hiện chưa mở cho học viên.",
+  "STEP_OUT_OF_SEQUENCE":"Hãy đánh dấu hoàn thành bước trước đó trước khi tiếp tục."
  };
  const key=text.split(" (")[0];return labels[key]??text;
 }
@@ -107,8 +108,9 @@ export function SpeakingS6Lesson({lessonId,preview}:{lessonId:string;preview:boo
  const [consent,setConsent]=useState(false);
  const [notes,setNotes]=useState("");
  const rec=useLocalRecording();
+ const uploadedFor=useRef<string>("");
  const suffix=preview?"&preview=true":"&preview=false";
- const resetExercise=()=>{setActive(null);setFeedback(null);setFollowup(null);setSelected("");setNotes("");setConsent(false);rec.reset();};
+ const resetExercise=()=>{setActive(null);setFeedback(null);setFollowup(null);setSelected("");setNotes("");setConsent(false);uploadedFor.current="";rec.reset();};
  useEffect(()=>{
   let cancelled=false;
   (async()=>{
@@ -154,7 +156,7 @@ export function SpeakingS6Lesson({lessonId,preview}:{lessonId:string;preview:boo
   if(!active||active.submitted||!rec.blob||rec.recording){setError("Cần ghi âm và dừng ghi trước khi nộp.");return;}
   setBusy(true);setError("");setMessage("");
   try{
-   if(active.uploadAudioConsent){
+   if(active.uploadAudioConsent && uploadedFor.current!==active.attemptId){
     const browser=createClient();const auth=await browser.auth.getUser();const uid=auth.data.user?.id;
     if(auth.error||!uid)throw Error("Phiên đăng nhập không hợp lệ.");
     const mime=rec.blob.type.split(";")[0];
@@ -162,6 +164,7 @@ export function SpeakingS6Lesson({lessonId,preview}:{lessonId:string;preview:boo
     const path=uid+"/"+active.attemptId+"."+ext;
     const result=await browser.storage.from("speaking-s6-recordings").upload(path,rec.blob,{contentType:mime,upsert:false});
     if(result.error)throw Error("Tải ghi âm lên storage thất bại: "+result.error.message);
+    uploadedFor.current=active.attemptId;
    }
    await jsonRequest(base+"/session",reqBody({action:"submit",attemptId:active.attemptId,
      transcript:notes.trim(),durationSeconds:Math.max(1,Math.min(180,rec.seconds)),preview}));
@@ -240,6 +243,7 @@ export function SpeakingS6Lesson({lessonId,preview}:{lessonId:string;preview:boo
         onChange={e=>setConsent(e.target.checked)} disabled={busy}/> Đồng ý lưu bản ghi âm riêng tư lên Supabase Storage (không bắt buộc)</label>}
      {active&&<div className="s6-attempt">
       <p className="s6-eyebrow">Câu hỏi từ server · {active.mode}</p><blockquote>{active.question}</blockquote>
+      {group==="guided"&&selectedActivity?.part==="P2"&&<CuePrep key={selectedActivity.activity_id} bullets={selectedActivity.cue_card_bullets_en??[]}/>}
       {group==="guided"&&selectedActivity&&<HintPanel key={selectedActivity.activity_id} hints={selectedActivity.hints}/>}
       <RecorderControls rec={rec}/>
       <label className="s6-note-label">Ghi chú hoặc bản chép tay (không thay thế bằng chứng âm thanh)
@@ -366,4 +370,25 @@ function LearningContent({content}:{content:Record<string,unknown>}){
       <h4>{labelField(key)}</h4><ContentValue value={value}/>
      </div>)}
  </section>;
+}
+
+function CuePrep({bullets}:{bullets:string[]}){
+ const [remaining,setRemaining]=useState(60);
+ const [running,setRunning]=useState(false);
+ useEffect(()=>{
+  if(!running||remaining<=0)return;
+  const t=window.setTimeout(()=>setRemaining(v=>Math.max(0,v-1)),1000);
+  return ()=>window.clearTimeout(t);
+ },[running,remaining]);
+ return <div className="s6-cue-prep">
+  <h4>IELTS Part 2 — Cue card</h4>
+  {bullets.length>0?<><p>You should say:</p><ul>{bullets.map((b,i)=><li key={i}>{b}</li>)}</ul></>:
+  <p className="s6-muted">Câu hỏi này chưa có các gạch đầu dòng. Hãy hỏi giáo viên bổ sung cue card trước khi sử dụng như bài thi Part 2.</p>}
+  <div className="s6-cue-timer"><span role="timer" aria-label="Thời gian chuẩn bị">{remaining} giây chuẩn bị</span>
+   <button type="button" onClick={()=>{setRemaining(60);setRunning(true);}} disabled={running&&remaining>0}>
+    {remaining===0?"Luyện chuẩn bị lại":"Bắt đầu 1 phút"}
+   </button>
+  </div>
+  {remaining===0&&<p className="s6-success">Hết giờ chuẩn bị. Hãy ghi âm 1–2 phút, không đọc bài mẫu.</p>}
+ </div>;
 }
