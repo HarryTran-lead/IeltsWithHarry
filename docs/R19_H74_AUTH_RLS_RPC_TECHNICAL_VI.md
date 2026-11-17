@@ -59,6 +59,15 @@ Cần chú ý rằng role `authenticated` trên PostgreSQL giả lập không ch
 - Tổng kiểm thử Python H74 đã soạn là **18** (8 M01 + 7 M02 + 3 M03), cộng **10** kiểm tra DB cô lập. Các con số này khác và **không thay thế 18 mục staging acceptance** của H71.
 - Muốn chạy trên staging cần DBA xác nhận bằng chứng project khác production và quyền truy vấn chỉ đọc; đầu ra chỉ lưu trong kho bằng chứng được kiểm soát, không in token hay thông tin học viên.
 
+## H74/M04 — Kiểm thử handler hai tài khoản (mô phỏng có kiểm soát)
+
+- `tests/h74-api-owner-isolation.test.ts` dùng Vitest để gọi **handler GET thật** của `/api/ielts/bank/writing-grading` và `/api/ielts/bank/speaking-coaching` trong môi trường Node. Module xác thực và Supabase client được thay bằng database giả có đúng hai học viên A/B; không cần bất kỳ credentials hay network.
+- Kiểm tra chín trường hợp: A đọc Writing chính mình, A/B không đọc bài của nhau, job Writing bị gắn sai owner, kết quả Writing bị gắn sai owner, Speaking chính chủ/khác chủ cả hai chiều, Speaking job sai owner, và yêu cầu chưa đăng nhập. Với các ID thuộc người khác, handler phải từ chối **trước khi** truy cập bảng job chứa kết quả riêng tư.
+- `state.trace` ghi lại bảng và điều kiện `.eq(...)` mà handler thực sự truyền vào mô phỏng; regression test sẽ thất bại nếu mất `user_id` ở các bước nhạy cảm.
+- H74 CI cài `npm ci` theo lockfile và chạy `npx vitest run tests/h74-api-owner-isolation.test.ts`. Chỉ được ghi **PASS** khi log Actions của đúng SHA xác nhận.
+- Đây là **route-handler behavioral simulation**, mạnh hơn việc kiểm tra chuỗi nguồn nhưng vẫn không chứng minh Supabase Auth xác thực JWT, quyền SELECT/RLS thật, PostgREST behavior, revocation, hàng đợi bị thay đổi đồng thời, hoặc triển khai production. Toàn bộ **18/18 điều kiện staging vẫn NOT_TESTED**.
+- Một số endpoint khác như public shares, cron và admin actions sẽ cần bằng chứng riêng trên staging; không tự nhận chín test là bao phủ tất cả API.
+
 ## M02 — Những kiểm tra staging chưa tiến hành
 
 - Dùng hai tài khoản học viên giả định A và B trên một **Supabase staging được phê duyệt**, xác minh getUser/session/JWT, bài làm của A không thể bị đọc/sửa bởi B.
