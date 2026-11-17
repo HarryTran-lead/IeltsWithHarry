@@ -177,6 +177,11 @@ def main()->int:
             print("H72 REFUSED: expected commit does not match checkout",file=sys.stderr);return 2
         assert_clean_tracked_tree(root)
         result=analyze(root,tracked_files(root),sha)
+        # Guard the gap between initial checkout validation and scan completion.
+        # A concurrent edit or a branch move invalidates this SHA-bound receipt.
+        if head_sha(root)!=sha:
+            raise ValueError("checked-out HEAD changed during scan")
+        assert_clean_tracked_tree(root)
     except (OSError,ValueError,subprocess.SubprocessError) as e:
         print("H72 NOT_TESTED: unable to attest checked-out repository: "+str(e),file=sys.stderr);return 2
     args.json_out.parent.mkdir(parents=True,exist_ok=True)
