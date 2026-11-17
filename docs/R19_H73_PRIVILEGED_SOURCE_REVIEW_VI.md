@@ -58,9 +58,14 @@
 - Run H73 đầu tiên có cả 13 kiểm thử đạt: https://github.com/HarryTran-lead/IeltsWithHarry/actions/runs/44084261046 (SHA `c105dc5d4c0258a399018aa48624967339a115c0`). Các commit tiếp theo cần chạy lại CI tại đúng SHA.
 - **Giới hạn:** rule `POSSIBLE_SERVICE_CLIENT` của H72 hiện phát hiện `bankClient(...)` và `createSupabaseClient(...)`; không chứng minh luồng import gián tiếp, tên alias khác, kết quả truy vấn, ownership filter, quyền SQL thật hoặc runtime access. Một baseline khớp **không** có nghĩa là an toàn.
 
+## Ghi nhận thay đổi sau M04 (không sửa snapshot H72)
+- Danh sách **32** của H72 là hồ sơ lịch sử đúng SHA cũ. M04 xóa tham chiếu service-role khỏi `src/lib/grammar/placement.ts`, do đó snapshot sau M04 còn **10** đường dẫn role, **22** đường dẫn possible-client, hợp **31** đường dẫn. Không có thay đổi nào đến khóa/migration thực tế của production.
+- Tên `GRAMMAR_ASSESSMENT_SECRET` được cấu hình trên từng môi trường trước khi triển khai thì khóa ký mới mới hoạt động ở live; nếu thiếu hoặc yếu, Grammar GET/POST lỗi đóng (503/không phát ticket).
+- CI cần đối chiếu commit cuối của H73/M04; đây là một bước kỹ thuật khác với kiểm thử tài khoản staging.
+
 ## Việc còn lại trong phạm vi kỹ thuật H73
 1. M03: rà luồng xác thực và ownership filter ở public/share/learner/admin API; ghi bằng chứng cụ thể, không khẳng định an toàn chỉ từ regex.
-2. M04: tách khóa ký grammar ticket ra khỏi khóa service-role với kế hoạch chuyển đổi an toàn; **không đổi secret production** trong PR kiểm toán này.
+2. M04: **đã hoàn thành phần mã nguồn** tách Grammar ticket khỏi service-role và 7 Vitest về key/ticket; triển khai secret mới và thử nghiệm trên staging vẫn **chưa thực hiện** (xem `docs/R19_H73_M04_GRAMMAR_SECRET_ISOLATION_VI.md`).
 3. M05: kiểm tra môi trường/Edge Functions/Workers/cron ngoài repository qua staging được phê duyệt, DBA xác nhận quyền SQL/RPC.
 
 **Release gate:** NO_GO. H73 mới chốt static code review; 18/18 Supabase staging checks chưa có bằng chứng.
