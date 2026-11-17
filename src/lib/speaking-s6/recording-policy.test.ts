@@ -30,6 +30,19 @@ describe("S6 local recording privacy policy",()=>{
   expect(sameUploadedTake(attempt,attempt,first,second)).toBe(false);
   expect(sameUploadedTake(attempt,"33333333-3333-4333-8333-333333333333",first,first)).toBe(false);
  });
+ it("L31: a failed MediaRecorder epoch rejects late dataavailable/onstop callbacks",()=>{
+  const epoch=new RecordingEpoch();
+  const failedTake=epoch.next();
+  expect(epoch.current(failedTake)).toBe(true);
+  expect(epoch.fail(failedTake)).toBe(true);
+  // A late onstop from the failed recorder MUST NOT publish a new Blob.
+  expect(epoch.current(failedTake)).toBe(false);
+  expect(epoch.fail(failedTake)).toBe(false);
+  const newTake=epoch.next();
+  expect(epoch.current(newTake)).toBe(true);
+  expect(epoch.fail(failedTake)).toBe(false);
+  expect(epoch.current(newTake)).toBe(true);
+ });
  it("invalidates stale onstop callbacks when user cancels or starts a new take",()=>{
   const e=new RecordingEpoch();
   const first=e.next();expect(e.current(first)).toBe(true);
