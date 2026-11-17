@@ -1,0 +1,64 @@
+name: Export H72-H75 Technical Patch ZIP
+on:
+  push:
+    branches:
+      - codex/r19-h75-forward-only-cutover-rollback-20261117
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  export:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Pack exact reviewed H72-H75 project change set with manifest
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          import hashlib, json, os, zipfile, pathlib, datetime
+          root=pathlib.Path(".").resolve()
+          dest=pathlib.Path("artifacts/IeltsWithHarry_H72-H75_Technical_Patch_20261117.zip")
+          dest.parent.mkdir(exist_ok=True)
+          paths=json.loads("[\".env.example\",\".github/workflows/h72-dependency-evidence-ci.yml\",\".github/workflows/h73-privileged-source-ci.yml\",\".github/workflows/h74-auth-rls-rpc-ci.yml\",\".github/workflows/h75-forward-only-rollback-ci.yml\",\"docs/R19_H72_STAGING_DEPENDENCY_AUDIT_VI.md\",\"docs/R19_H72_STATIC_REVIEW_REGISTER_20261117.md\",\"docs/R19_H73_M03_OWNER_SCOPE_REVIEW_VI.md\",\"docs/R19_H73_M04_GRAMMAR_SECRET_ISOLATION_VI.md\",\"docs/R19_H73_M05_EXTERNAL_DEPENDENCIES_VI.md\",\"docs/R19_H73_PRIVILEGED_SOURCE_REVIEW_VI.md\",\"docs/R19_H74_AUTH_RLS_RPC_TECHNICAL_VI.md\",\"docs/R19_H75_FORWARD_ONLY_ROLLBACK_VI.md\",\"evidence/H72_STAGING_EVIDENCE_TEMPLATE.json\",\"scripts/h72_dependency_audit.py\",\"scripts/h73_m05_runtime_boundary_gate.py\",\"scripts/h73_privilege_surface_gate.py\",\"scripts/h74_ci_pg_auth_rls.sh\",\"scripts/h74_staging_two_user_readonly.mjs\",\"scripts/h75_ci_forward_only_rollback.sh\",\"sql/h72_preflight_READ_ONLY.sql\",\"sql/h74_dba_catalog_READ_ONLY.sql\",\"src/app/api/ielts/bank/speaking-coaching/route.ts\",\"src/app/api/ielts/bank/writing-grading/route.ts\",\"src/app/api/ielts/bank/writing-insights/route.ts\",\"src/lib/grammar/assessment-ticket.ts\",\"src/lib/grammar/placement.ts\",\"src/lib/ielts-bank/server.ts\",\"src/lib/writing-grading/server.ts\",\"tests/grammar-assessment-ticket.test.ts\",\"tests/h74-api-owner-isolation.test.ts\",\"tests/h74_staging_probe_mock.mjs\",\"tests/test_h72_dependency_audit.py\",\"tests/test_h73_m05_runtime_boundary_gate.py\",\"tests/test_h73_owner_scope.py\",\"tests/test_h73_privilege_surface_gate.py\",\"tests/test_h74_auth_rls_boundaries.py\",\"tests/test_h74_staging_preflight.py\",\"tests/test_h75_forward_only_rollback.py\"]")
+          manifest={"repository":"HarryTran-lead/IeltsWithHarry","branch":"codex/r19-h75-forward-only-cutover-rollback-20261117","commit_sha":os.environ["GITHUB_SHA"],"base_branch":"codex/r19-h71-staging-cutover-audit-20261117","bundle_type":"source-patch-not-full-repository","staging_checks_verified":0,"release_gate":"NO_GO","files":[]}
+          readme="""# IeltsWithHarry — H72 to H75 technical patch
+          
+          This ZIP contains source-code and docs changed from the H71 staging-cutover branch through H75.
+          It is a PATCH overlay (39 project files), NOT a complete repository or the entire Vietnamese-to-English exercise dataset.
+          
+          Base: codex/r19-h71-staging-cutover-audit-20261117
+          Target branch: codex/r19-h75-forward-only-cutover-rollback-20261117
+          HEAD: {sha}
+          
+          To use: check out the base branch/project first, then copy the 39 files in project/ into matching paths, review diffs, install dependencies, run tests and check migration compatibility. Never copy values from production secrets. No automatic deployment or merge has occurred.
+          
+          Security: 18 Supabase staging acceptance checks remain unverified; CI fixtures and mock HTTP checks are not live access proofs. Release gate NO_GO.
+          """.format(sha=os.environ["GITHUB_SHA"])
+          with zipfile.ZipFile(dest,"w",compression=zipfile.ZIP_DEFLATED,compresslevel=8) as z:
+            for relative in paths:
+              p=root/relative
+              if not p.is_file() or p.is_symlink():
+                raise RuntimeError("Missing or symlink tracked project file: "+relative)
+              data=p.read_bytes()
+              z.writestr("project/"+relative,data)
+              manifest["files"].append({"path":relative,"bytes":len(data),"sha256":hashlib.sha256(data).hexdigest()})
+            z.writestr("README_FIRST.md",readme)
+            z.writestr("manifest.json",json.dumps(manifest,indent=2,ensure_ascii=False)+"\\n")
+          with zipfile.ZipFile(dest) as z:
+            assert z.testzip() is None
+            assert len(z.namelist()) == len(paths) + 2
+            assert len(manifest["files"])==39
+          print("ZIP_CREATED",dest, dest.stat().st_size, "project_files",len(paths), "commit",os.environ["GITHUB_SHA"])
+          
+          PY
+      - name: Upload downloadable technical update ZIP
+        uses: actions/upload-artifact@v4
+        with:
+          name: IeltsWithHarry-H72-H75-Technical-Patch
+          if-no-files-found: error
+          retention-days: 7
+          path: artifacts/IeltsWithHarry_H72-H75_Technical_Patch_20261117.zip
