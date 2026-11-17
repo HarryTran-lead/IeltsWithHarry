@@ -211,6 +211,14 @@ describe("M10-L36 offline ADD-ONLY correction and independent-review gate",()=>{
   expect(r.errors).toContain("REVISED_PACKAGE_STRUCTURAL_CHECKS_FAILED");
   expect(JSON.stringify(r)).not.toContain("a private unseen");
  });
+ it("safely rejects malformed local packages without exposing or hashing undefined content",()=>{
+  const a=original(),b=revised();
+  delete b.privateLesson;
+  const r=compareL36PrivateRevisions(a,b);
+  expect(r.status).toBe("HOLD_CORRECTION_PACKAGE");
+  expect(r.errors).toEqual(["INVALID_ROOT_IMPORT_FIELDS"]);
+  expect(r.private_content_returned).toBe(false);
+ });
  it("rejects changed private teacher content without a re-signed hash",()=>{
   const a=original(),b=revised();
   b.privateLesson.mastery["S6-001-M01"].followup_en=
