@@ -56,8 +56,9 @@ export async function fingerprintS6StoredAudio(
   const kind = normalizedAudioMime("audio/" + file.name.split(".").at(-1));
   if (!kind) throw new S6AudioEvidenceError("AUDIO_INVALID_FORMAT");
   const meta = file.metadata as {size?: unknown; mimetype?: unknown} | null;
-  if (meta?.size !== undefined && (!Number.isSafeInteger(meta.size) ||
-      (meta.size as number) < MIN_BYTES || (meta.size as number) > S6_MAX_AUDIO_BYTES)) {
+  if (meta?.size !== undefined && (typeof meta.size !== "number" ||
+      !Number.isSafeInteger(meta.size) ||
+      meta.size < MIN_BYTES || meta.size > S6_MAX_AUDIO_BYTES)) {
     throw new S6AudioEvidenceError("AUDIO_TOO_LARGE");
   }
   if (typeof meta?.mimetype === "string" &&
