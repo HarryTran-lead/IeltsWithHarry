@@ -41,6 +41,16 @@ jobs:
         env:
           H74_ALLOW_EPHEMERAL_DDL: YES_ISOLATED_PG16_CI_ONLY
           H74_PG_DSN: postgresql://h74_ci_runner:h74_ci_password_only@127.0.0.1:5432/h74_ci
+      - name: Run DBA read-only catalog SQL against disposable PostgreSQL 16
+        run: |
+          mkdir -p reports
+          psql 'postgresql://h74_ci_runner:h74_ci_password_only@127.0.0.1:5432/h74_ci' \
+            -X -qAt -v ON_ERROR_STOP=1 -f sql/h74_dba_catalog_READ_ONLY.sql \
+            > reports/h74_pg16_catalog_smoke.txt
+          grep -q 'H74_TABLE_RLS_AND_OWNER' reports/h74_pg16_catalog_smoke.txt
+          grep -q 'H74_ACTUAL_TABLE_GRANTS' reports/h74_pg16_catalog_smoke.txt
+          grep -q 'H74_RPC_OWNERSHIP_AND_GRANTS' reports/h74_pg16_catalog_smoke.txt
+          grep -q 'H74_CATALOG_ONLY_RELEASE_GATE|NO_GO' reports/h74_pg16_catalog_smoke.txt
       - name: Assert live staging remains untested and NO_GO
         run: |
           python3 - <<'PY'
@@ -63,5 +73,7 @@ jobs:
             scripts/h74_ci_pg_auth_rls.sh
             scripts/h74_staging_two_user_readonly.mjs
             tests/test_h74_staging_preflight.py
+            sql/h74_dba_catalog_READ_ONLY.sql
+            reports/h74_pg16_catalog_smoke.txt
             tests/test_h74_auth_rls_boundaries.py
             docs/R19_H74_AUTH_RLS_RPC_TECHNICAL_VI.md
