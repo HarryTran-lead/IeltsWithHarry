@@ -50,7 +50,7 @@ export async function GET(request: Request) {
     if (!job) return Response.json({ status: "not_ready", result: null }, { headers: noCache });
     const history = await recentHistory(user.id, job.task_type);
     const { data, error } = await bankClient().from("writing_deep_reports")
-      .select("status,result,error_code,attempt_no,updated_at").eq("job_id", job.id).maybeSingle();
+      .select("status,result,error_code,attempt_no,updated_at").eq("job_id", job.id).eq("user_id", user.id).maybeSingle();
     if (error) throw new Error("Deep report lookup failed");
     return Response.json({ ...(data ?? { status: "not_requested", result: null }), history }, { headers: noCache });
   } catch (error) { return requestError(error); }
@@ -58,7 +58,7 @@ export async function GET(request: Request) {
 
 export async function POST(request: Request) {
   const started = Date.now();
-  let lease: { jobId: string; token: string } | null = null;
+  let lease: { jobId: string; userId: string; token: string } | null = null;
   try {
     const user = await viewer();
     const { attemptId } = z.object({ attemptId: z.uuid() }).parse(await request.json());
@@ -72,7 +72,7 @@ export async function POST(request: Request) {
     const job = await completedJob(attemptId, user.id);
     if (!job) return Response.json({ error: "Bài này chưa có kết quả chấm." }, { status: 409 });
     const { data: existing, error: existingError } = await db.from("writing_deep_reports")
-      .select("status,result,error_code,attempt_no").eq("job_id", job.id).maybeSingle();
+      .select("status,result,error_code,attempt_no").eq("job_id", job.id).eq("user_id", user.id).maybeSingle();
     if (existingError) throw new Error("Deep report lookup failed");
     if (existing?.status === "completed") return Response.json({ ...existing, history: await recentHistory(user.id, job.task_type) }, { headers: noCache });
     if (existing?.status === "failed" && existing.attempt_no >= 3) return Response.json({ error: "Bài này đã dùng hết 3 lượt phân tích sâu." }, { status: 429 });
@@ -90,14 +90,14 @@ export async function POST(request: Request) {
     const { data: token, error: claimError } = await db.rpc("writing_claim_deep_report", { p_job_id: job.id, p_user_id: user.id });
     if (claimError) throw new Error("Deep report claim failed");
     if (!token) return Response.json({ status: existing?.status ?? "analyzing", result: existing?.result ?? null }, { status: 202, headers: noCache });
-    lease = { jobId: job.id, token: String(token) };
+    lease = { jobId: job.id, userId: user.id, token: String(token) };
     const allowedStatus = process.env.WRITING_GRADING_ALLOW_PILOT === "true" ? ["pilot", "approved"] : ["approved"];
     const { data: model, error: registryError } = await db.from("writing_model_registry").select("id")
       .eq("model_id", cloudflareWritingModel).eq("revision", revision).eq("task_type", job.task_type)
       .eq("provider", "cloudflare").in("status", allowedStatus).maybeSingle();
     if (registryError || !model) throw new Error("MODEL_NOT_APPROVED");
     const { data: gradeRow, error: gradeError } = await db.from("writing_grading_results")
-      .select("result").eq("job_id", job.id).single();
+      .select("result").eq("job_id", job.id).eq("user_id", user.id).single();
     if (gradeError || !gradeRow) throw new Error("GRADE_RESULT_MISSING");
     const grade = gradeShape.parse(gradeRow.result);
     const errors = filterUnsupportedWritingErrors(grade.errors.map((item) => ({ ...item, suggestion: item.suggestion ?? null }))).slice(0, 6);
@@ -116,7 +116,7 @@ export async function POST(request: Request) {
     const { data: saved, error: saveError } = await db.from("writing_deep_reports")
       .update({ status: "completed", result: report, model_version: `${cloudflareWritingModel}@${revision}`,
         lease_token: null, lease_until: null, error_code: null, updated_at: new Date().toISOString() })
-      .eq("job_id", job.id).eq("lease_token", lease.token).eq("status", "analyzing")
+      .eq("job_id", job.id).eq("user_id", user.id).eq("lease_token", lease.token).eq("status", "analyzing")
       .select("status,result").single();
     if (saveError || !saved) throw new Error("DEEP_REPORT_SAVE_FAILED");
     return Response.json({ ...saved, history: await recentHistory(user.id, job.task_type) }, { headers: noCache });
@@ -130,7 +130,7 @@ export async function POST(request: Request) {
     if (lease) console.error(JSON.stringify({ event: "writing_deep_failed", code, job_id: lease.jobId, elapsed_ms: Date.now() - started }));
     if (lease) await bankClient().from("writing_deep_reports")
       .update({ status: "failed", error_code: code, lease_token: null, lease_until: null, updated_at: new Date().toISOString() })
-      .eq("job_id", lease.jobId).eq("lease_token", lease.token);
+      .eq("job_id", lease.jobId).eq("user_id", lease.userId).eq("lease_token", lease.token);
     if (code === "CLOUDFLARE_QUOTA_EXCEEDED") return Response.json({ error: "Đã hết hạn mức AI miễn phí hôm nay. Hãy thử lại sau 07:00 giờ Việt Nam." }, { status: 429 });
     if (lease) return Response.json({ error: "Phân tích sâu chưa hoàn tất. Hãy thử lại.", code }, { status: 503 });
     return requestError(error);

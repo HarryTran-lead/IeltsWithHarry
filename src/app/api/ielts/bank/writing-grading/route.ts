@@ -17,7 +17,7 @@ export async function GET(request: Request) {
     const { data: attempt } = await client.from("ielts_attempts").select("id").eq("id", attemptId).eq("user_id", user.id).single();
     if (!attempt) return Response.json({ error: "Attempt unavailable" }, { status: 404 });
     const { data: job, error } = await client.from("writing_grading_jobs").select("id,status,attempt_no,error_code,created_at,updated_at")
-      .eq("attempt_id", attemptId).order("created_at", { ascending: false }).limit(1).maybeSingle();
+      .eq("attempt_id", attemptId).eq("user_id", user.id).order("created_at", { ascending: false }).limit(1).maybeSingle();
     if (error && !gradingEnabled()) return Response.json({ status: "unavailable", result: null, provider });
     if (error) throw new Error("Grading status unavailable");
     if (!job) return Response.json({ status: gradingEnabled() ? "not_requested" : "unavailable", result: null, provider });
@@ -30,7 +30,7 @@ export async function GET(request: Request) {
       if (!countError) queue = queueEstimate(count ?? 0);
     }
     const { data: result, error: resultError } = await client.from("writing_grading_results").select("id,result,model_version,rubric_version,created_at")
-      .eq("job_id", job.id).maybeSingle();
+      .eq("job_id", job.id).eq("user_id", user.id).maybeSingle();
     if (resultError) throw new Error("Grading result unavailable");
     return Response.json({ ...job, queue, result: result?.result ?? null, model_version: result?.model_version ?? null, rubric_version: result?.rubric_version ?? null, provider }, { headers: { "Cache-Control": "private, no-store" } });
   } catch (error) { return requestError(error); }
