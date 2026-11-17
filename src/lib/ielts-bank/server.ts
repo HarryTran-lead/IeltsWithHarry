@@ -292,7 +292,7 @@ export async function submitAttempt(attemptId: string, userId: string, answers: 
   if (exam.skill === "Writing" && state === "submitted" && !String(answers.__response ?? "").trim()) throw new Error("Hãy viết bài trước khi nộp.");
   const expired = Date.now() > new Date(attempt.started_at).getTime() + attemptMinutes(exam.skill, exam.duration_minutes, notes) * 60000;
   const finalNotes = input?.difficulty && exam.skill === "Reading" ? { ...notes, reading_difficulty: input.difficulty } : notes;
-  const { data: updated, error: updateError } = await client.from("ielts_attempts").update({ answers, flags: input?.flags ?? attempt.flags, notes: finalNotes, state: expired ? "expired" : state, score: result.total ? result.score : null, total: result.total || null, submitted_at: new Date().toISOString() }).eq("id", attemptId).eq("state", "in_progress").select("id").single();
+  const { data: updated, error: updateError } = await client.from("ielts_attempts").update({ answers, flags: input?.flags ?? attempt.flags, notes: finalNotes, state: expired ? "expired" : state, score: result.total ? result.score : null, total: result.total || null, submitted_at: new Date().toISOString() }).eq("id", attemptId).eq("user_id", userId).eq("state", "in_progress").select("id").single();
   if (updateError || !updated) throw new Error("Attempt already submitted");
   await client.from("study_tasks").update({ completed: true }).eq("user_id", userId).eq("lesson_slug", `ielts:${attempt.exam_id}`).eq("completed", false);
   return result;
