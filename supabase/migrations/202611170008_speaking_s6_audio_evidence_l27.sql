@@ -16,7 +16,7 @@ check (
     audio_evidence_mime is null and audio_evidence_at is null
   ) or (
     audio_evidence_state = 'stored_hash_recorded' and
-    audio_storage_consent = true and
+    phase = 'submitted' and audio_storage_consent = true and
     audio_evidence_sha256 is not null and
     audio_evidence_sha256 ~ '^[a-f0-9]{64}
   )
