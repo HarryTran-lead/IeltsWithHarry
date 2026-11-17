@@ -11,7 +11,7 @@ Hai entrypoint thực thi riêng ở `scripts/writing-grading-worker.ts` và `sc
 Do đó, bề mặt đã rà soát sau M04:
 - `SERVICE_ROLE_REF`: **12** đường dẫn (trước M05 là 10)
 - `POSSIBLE_SERVICE_CLIENT`: **22** đường dẫn, bao gồm 21 `bankClient` gián tiếp
-- Hợp hai tập: **34?** Không: 12 + 22 - 1 file trùng `src/lib/ielts-bank/server.ts` = **33 đường dẫn**.
+- Hợp hai tập: **33 đường dẫn** (12 + 22 - 1 đường dẫn trùng `src/lib/ielts-bank/server.ts`).
 - H72 lịch sử ở SHA cũ có 32 đường dẫn; M04 bỏ fallback Grammar (31); M05 sửa 2 worker bị bỏ sót (33). Không sửa báo cáo lịch sử theo SHA cũ.
 
 ## 2. Các đường triển khai được nhận diện từ source
