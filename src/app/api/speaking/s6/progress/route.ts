@@ -2,6 +2,7 @@ import { z } from "zod";
 import { bankClient,viewer,requestError } from "@/lib/ielts-bank/server";
 import { lessonId } from "@/lib/speaking-s6/contract";
 import { s6AccessAllowed } from "@/lib/speaking-s6/access";
+import { s6MutationGuard } from "@/lib/speaking-s6/mutation-guard";
 export const runtime="nodejs";
 const action=z.discriminatedUnion("action",[
   z.object({action:z.literal("completeStep"),lessonId,preview:z.boolean().default(false),step:z.number().int().min(1).max(10)}),
@@ -36,6 +37,8 @@ export async function GET(request:Request){
  }catch(e){if(e instanceof z.ZodError)return Response.json({error:"SCHEMA_INVALID"},{status:422,headers});return requestError(e);}
 }
 export async function POST(request:Request){
+ const guard=s6MutationGuard(request);
+ if(guard)return guard;
  try {
   const content=await request.text();
   if(Buffer.byteLength(content,"utf8")>20000)return Response.json({error:"BODY_TOO_LARGE"},{status:413,headers});
