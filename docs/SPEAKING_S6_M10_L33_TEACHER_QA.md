@@ -30,7 +30,7 @@ audio, student responses or authenticated data should be uploaded to GitHub.
 - `scripts/speaking-s6-l33-teacher-review.mjs`: offline fail-closed metadata
   audit of every lesson and optional **local-only** import package technical
   inspection. No HTTP calls, database writes, file mutations or publication.
-- `tests/speaking-s6-l33-teacher-review.test.mjs`: 19 synthetic regression
+- `tests/speaking-s6-l33-teacher-review.test.mjs`: 21 synthetic regression
   tests for missing score rubric, invalid signatures, low critical-quality
   scores, separate reviewers, copy/duplicate questions, hash tampering,
   incomplete Guided hints, missing Mastery follow-ups and leaks.
@@ -134,7 +134,7 @@ node scripts/speaking-s6-l33-teacher-review.mjs \
   --require-local-structural-pass
 ```
 
-The local inspection checks only **structural signals**:
+The local inspection checks only **structural signals** and now detects import-required `model_ref`, `prompt_ref`, `followup_delivery` and private Guided `question_en` field omissions against the actual import contract (M10-L34 hardening):
 - canonical student/private-bank hashes match the supplied snapshots;
 - ten ordered steps with EN/VI instruction and substantive learning content;
 - four Guided prompts with exactly three progressive, nonempty hints;
