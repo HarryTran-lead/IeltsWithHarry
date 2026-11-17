@@ -1,7 +1,7 @@
 "use client";
 import { useEffect,useRef,useState } from "react";
 import { useLocalRecording } from "./use-local-recording";
-import { speakingS6UploadDescriptor } from "@/lib/speaking-s6/recording-policy";
+import { speakingS6UploadDescriptor,sameUploadedTake } from "@/lib/speaking-s6/recording-policy";
 import { createClient } from "@/lib/supabase/browser";
 import { reviewDueAt,reviewIsDue } from "@/lib/speaking-s6/review";
 import "./lesson.css";
@@ -39,7 +39,8 @@ function prettyError(error:unknown){
   "STEP_OUT_OF_SEQUENCE":"Hãy đánh dấu hoàn thành bước trước đó trước khi tiếp tục.",
   "S6_AUDIO_SIZE_INVALID":"Bản ghi trống hoặc vượt quá 10 MB.",
   "S6_UNSUPPORTED_AUDIO_FORMAT":"Định dạng audio chưa được hỗ trợ.",
-  "S6_AUDIO_PATH_INVALID":"Phiên ghi âm không hợp lệ."
+  "S6_AUDIO_PATH_INVALID":"Phiên ghi âm không hợp lệ.",
+  "S6_AUDIO_CHANGED_AFTER_UPLOAD":"Bạn đã ghi lại sau khi tải audio lên. Hãy xóa phiên và bắt đầu phiên mới để bản ghi không bị lệch."
  };
  const key=text.split(" (")[0];return labels[key]??text;
 }
@@ -59,9 +60,10 @@ export function SpeakingS6Lesson({lessonId,preview}:{lessonId:string;preview:boo
  const [notes,setNotes]=useState("");
  const rec=useLocalRecording();
  const uploadedFor=useRef<string>("");
+ const uploadedBlob=useRef<Blob|null>(null);
  const resumeKey="speaking-s6-attempt:"+lessonId+":"+(preview?"preview":"learner");
  const suffix=preview?"&preview=true":"&preview=false";
- const resetExercise=()=>{setActive(null);setFeedback(null);setFollowup(null);setSelected("");setNotes("");setConsent(false);uploadedFor.current="";rec.reset();
+ const resetExercise=()=>{setActive(null);setFeedback(null);setFollowup(null);setSelected("");setNotes("");setConsent(false);uploadedFor.current="";uploadedBlob.current=null;rec.reset();
   try{window.sessionStorage.removeItem(resumeKey);}catch{/* disabled */}
  };
  useEffect(()=>{
@@ -130,6 +132,9 @@ export function SpeakingS6Lesson({lessonId,preview}:{lessonId:string;preview:boo
   if(!active||active.submitted||!rec.blob||rec.recording){setError("Cần ghi âm và dừng ghi trước khi nộp.");return;}
   setBusy(true);setError("");setMessage("");
   try{
+   if(active.uploadAudioConsent && uploadedFor.current===active.attemptId
+     && !sameUploadedTake(uploadedFor.current,active.attemptId,uploadedBlob.current,rec.blob))
+     throw Error("S6_AUDIO_CHANGED_AFTER_UPLOAD");
    if(active.uploadAudioConsent && uploadedFor.current!==active.attemptId){
     const browser=createClient();const auth=await browser.auth.getUser();const uid=auth.data.user?.id;
     if(auth.error||!uid)throw Error("Phiên đăng nhập không hợp lệ.");
@@ -137,6 +142,7 @@ export function SpeakingS6Lesson({lessonId,preview}:{lessonId:string;preview:boo
     const result=await browser.storage.from("speaking-s6-recordings").upload(upload.path,rec.blob,{contentType:upload.contentType,upsert:false});
     if(result.error)throw Error("Tải ghi âm lên storage thất bại: "+result.error.message);
     uploadedFor.current=active.attemptId;
+    uploadedBlob.current=rec.blob;
    }
    await jsonRequest(base+"/session",reqBody({action:"submit",attemptId:active.attemptId,
      transcript:notes.trim(),durationSeconds:Math.max(1,Math.min(180,rec.seconds)),preview}));

@@ -22,3 +22,8 @@ export class RecordingEpoch {
  next(){return ++this.number;}
  current(token:number){return token===this.number;}
 }
+
+/** A successful optional upload may be re-used only for the exact same in-memory take. */
+export function sameUploadedTake(savedAttemptId:string,currentAttemptId:string,savedBlob:Blob|null,currentBlob:Blob|null):boolean {
+ return savedAttemptId===currentAttemptId && !!savedBlob && savedBlob===currentBlob;
+}

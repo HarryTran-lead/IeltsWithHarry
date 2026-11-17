@@ -1,5 +1,5 @@
 import {describe,it,expect} from "vitest";
-import {RecordingEpoch,normalizedAudioMime,speakingS6UploadDescriptor,S6_MAX_AUDIO_BYTES} from "./recording-policy";
+import {RecordingEpoch,normalizedAudioMime,speakingS6UploadDescriptor,S6_MAX_AUDIO_BYTES,sameUploadedTake} from "./recording-policy";
 const user="11111111-1111-4111-8111-111111111111";
 const attempt="22222222-2222-4222-8222-222222222222";
 describe("S6 local recording privacy policy",()=>{
@@ -23,6 +23,12 @@ describe("S6 local recording privacy policy",()=>{
  it("rejects spoofed or unsafe path fragments",()=>{
   expect(()=>speakingS6UploadDescriptor("../another",attempt,"audio/mp4",100)).toThrow("S6_AUDIO_PATH_INVALID");
   expect(()=>speakingS6UploadDescriptor(user,"not-a-uuid","audio/mp4",100)).toThrow("S6_AUDIO_PATH_INVALID");
+ });
+ it("does not silently submit a new take against audio that was previously uploaded",()=>{
+  const first=new Blob(["one"],{type:"audio/webm"}),second=new Blob(["two"],{type:"audio/webm"});
+  expect(sameUploadedTake(attempt,attempt,first,first)).toBe(true);
+  expect(sameUploadedTake(attempt,attempt,first,second)).toBe(false);
+  expect(sameUploadedTake(attempt,"33333333-3333-4333-8333-333333333333",first,first)).toBe(false);
  });
  it("invalidates stale onstop callbacks when user cancels or starts a new take",()=>{
   const e=new RecordingEpoch();
