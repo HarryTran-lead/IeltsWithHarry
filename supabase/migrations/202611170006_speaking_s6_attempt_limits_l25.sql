@@ -39,9 +39,9 @@ declare
 begin
   if p_user_id is null or p_lesson_code is null or p_revision is null
     or p_activity_id is null or p_preview is null or p_audio_storage_consent is null
-    or p_mode not in ('guided','independent','mastery')
+    or p_mode is null or p_mode not in ('guided','independent','mastery')
     or p_activity_id !~ '^S6-[0-9]{3}-[GIM][0-9]{2}$'
-    or left(p_activity_id,7) <> p_lesson_code
+    or left(p_activity_id,length(p_lesson_code)+1) <> p_lesson_code || '-'
     or right(p_activity_id,3) not like
       (case p_mode when 'guided' then 'G%' when 'independent' then 'I%' else 'M%' end)
   then
