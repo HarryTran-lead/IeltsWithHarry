@@ -15,7 +15,8 @@ export const reviewSchema = z.object({
 });
 
 export function h68Enabled(env: Record<string, string | undefined>): boolean {
-  return env.H68_REVIEW_WRITES_ENABLED === "true"
+  return env.H68_DEPLOYMENT_MODE === "STAGING"
+    && env.H68_REVIEW_WRITES_ENABLED === "true"
     && env.H61_LEARNER_RELEASE !== "true"
     && env.H61_AUTO_GRADING !== "true";
 }

@@ -1,5 +1,7 @@
 # H68 — Transactional teacher review (draft / staging only)
 
+Both the API flag and the private SQL table r19_h68.release_controls (default review_writes_enabled=false) must be enabled on approved staging. Neither enables learner grading.
+
 This is **a code-review patch**, not an authorized database deployment or learner scoring release.
 
 - Requires H58 schema (r19_h58) and three independent real teachers, reviewed rights/provenance, and separate security sign-off.
