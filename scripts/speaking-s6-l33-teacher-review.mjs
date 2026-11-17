@@ -10,7 +10,7 @@
  * from a local file; never print/commit its content or file path.
  */
 import {createHash} from "node:crypto";
-import {readFileSync,statSync} from "node:fs";
+import {readFileSync,lstatSync} from "node:fs";
 import {resolve,dirname} from "node:path";
 import {fileURLToPath} from "node:url";
 const ROOT=resolve(dirname(fileURLToPath(import.meta.url)),"..");
@@ -103,7 +103,7 @@ export function auditL33TeacherReviews(manifest){
    if(!safeText(row.revision_notes))errors.push("Revision reason required: "+expected);
   }
   if(row.status==="APPROVED"||row.status==="PENDING_INDEPENDENT_QA"){
-   if(!scores.meets_threshold)weak.push(expected);
+   if(!scores.meets_threshold){weak.push(expected);errors.push("Insufficient score for independent QA: "+expected);}
    if(!exactKeys(row.editorial_checks,L33_CHECKS)||L33_CHECKS.some(k=>row.editorial_checks[k]!==true))
      errors.push("Editorial content checks must all pass: "+expected);
   }
@@ -137,7 +137,29 @@ const text=x=>typeof x==="string"&&x.trim().length>=5;
 const normalized=x=>String(x??"").trim().toLocaleLowerCase("en");
 const guidedText=h=>!!h&&typeof h==="object"&&
   (text(h.text_en)||text(h.text_vi));
-const missing=(obj,key)=>!obj||typeof obj!=="object"||!Object.hasOwn(obj,key);
+const SENSITIVE_PUBLIC_FIELDS=new Set([
+  "model_answer_en","model_translation_vi","teacher_reasoning_vi",
+  "teaching_explanation_en","followup_en","followups_en",
+  "privateLesson","privateBank","private_answer_bank","answer_key",
+  "answer_keys","correct_answer_en","mastery_answer"
+]);
+function publicFieldsSafe(value){
+  if(Array.isArray(value))return value.every(publicFieldsSafe);
+  if(!value||typeof value!=="object")return true;
+  return Object.entries(value).every(([key,entry])=>
+    !SENSITIVE_PUBLIC_FIELDS.has(key)&&
+    (key!=="teacher_private_bank"||entry==="SERVER_ONLY")&&
+    publicFieldsSafe(entry));
+}
+const modelHasBilingualExplanation=x=>text(x?.model_translation_vi)&&
+  text(x?.teaching_explanation_en)&&text(x?.teacher_reasoning_vi);
+const objectMatchesActivities=(rows,bank,prefix,lessonId)=>
+  Array.isArray(rows)&&!!bank&&typeof bank==="object"&&
+  !Array.isArray(bank)&&Object.keys(bank).length===rows.length&&
+  rows.every((row,i)=>row?.activity_id===
+     lessonId+"-"+prefix+String(i+1).padStart(2,"0")&&
+     Object.hasOwn(bank,row.activity_id));
+
 
 /**
  * Technical *signals* from one operator-owned local S6 import payload.
@@ -166,6 +188,15 @@ export function inspectL33LocalPackage(pkg){
      x.hints.every((hint,i)=>hint?.level===i+1&&guidedText(hint))));
  fail("guided_model_bank",Array.isArray(guided)&&guided.length===4&&
    guided.every(x=>text(privateLesson?.guided?.[x.activity_id]?.model_answer_en)));
+ fail("guided_bilingual_feedback",Array.isArray(guided)&&guided.length===4&&
+   guided.every(x=>modelHasBilingualExplanation(privateLesson?.guided?.[x.activity_id])));
+ fail("guided_hints_distinct",Array.isArray(guided)&&guided.length===4&&
+   guided.every(x=>Array.isArray(x.hints)&&x.hints.length===3&&
+     new Set(x.hints.map(h=>normalized(h?.text_en||h?.text_vi))).size===3));
+ fail("private_bank_activity_id_alignment",!!lesson?.lesson_id&&
+   objectMatchesActivities(guided,privateLesson?.guided,"G",lesson.lesson_id)&&
+   objectMatchesActivities(independent,privateLesson?.independent,"I",lesson.lesson_id)&&
+   objectMatchesActivities(mastery,privateLesson?.mastery,"M",lesson.lesson_id));
  fail("three_independent_stubs",Array.isArray(independent)&&independent.length===3&&
    independent.every(x=>x?.mode==="INDEPENDENT"&&
      x.no_answer_key_on_student===true&&text(privateLesson?.independent?.[x.activity_id]?.question_en)));
@@ -179,7 +210,6 @@ export function inspectL33LocalPackage(pkg){
    }));
  fail("spaced_review_day_2_7_21",Array.isArray(review)&&review.length===3&&
    review.every((x,i)=>x?.day_offset===[2,7,21][i]));
- const groups=[guided,independent,mastery];
  const allQuestions=[
   ...(Array.isArray(guided)?guided.map(x=>x?.question_en):[]),
   ...(Array.isArray(independent)?independent.map(x=>privateLesson?.independent?.[x.activity_id]?.question_en):[]),
@@ -193,6 +223,23 @@ export function inspectL33LocalPackage(pkg){
      const q=privateLesson?.mastery?.[x.activity_id]?.question_en;
      return text(q)&&!publicJson.includes(normalized(q));
    }));
+ fail("no_unseen_independent_prompt_in_student_payload",
+   Array.isArray(independent)&&independent.length===3&&
+     independent.every(x=>{
+       const q=privateLesson?.independent?.[x.activity_id]?.question_en;
+       return text(q)&&!publicJson.includes(normalized(q));
+     }));
+ fail("no_unseen_mastery_followup_in_student_payload",
+   Array.isArray(mastery)&&mastery.length===2&&mastery.every(x=>{
+     const entry=privateLesson?.mastery?.[x.activity_id];
+     const followups=[
+       ...(typeof entry?.followup_en==="string"?[entry.followup_en]:[]),
+       ...(Array.isArray(entry?.followups_en)?entry.followups_en:[])
+     ];
+     return followups.length>0&&followups.every(q=>
+       text(q)&&!publicJson.includes(normalized(q)));
+   }));
+ fail("public_payload_has_no_private_response_fields",publicFieldsSafe(lesson));
  // Empty fields are warnings to the educator, not automatic labels of band.
  return {
   inspection:"ONE_LOCAL_IMPORT_PAYLOAD_STRUCTURAL_SIGNALS_ONLY",
@@ -212,8 +259,8 @@ async function main(){
  if(index>=0){
    if(process.argv.length<=index+1)throw Error("Private local JSON path required");
    const path=resolve(process.argv[index+1]);
-   const stat=statSync(path);
-   if(!stat.isFile()||stat.isSymbolicLink?.()||stat.size>2*1024*1024)
+   const stat=lstatSync(path);
+   if(!stat.isFile()||stat.isSymbolicLink()||stat.size>2*1024*1024)
      throw Error("Local package is not a regular file within size limit");
    localInspection=inspectL33LocalPackage(JSON.parse(readFileSync(path,"utf8")));
  }
