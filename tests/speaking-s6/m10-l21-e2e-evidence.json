@@ -1,0 +1,392 @@
+{
+  "milestone": "M10-L21",
+  "feature": "Speaking S6",
+  "branch": "codex/speaking-s6-m10-l14-staging",
+  "baseline_commit": "34d6edd",
+  "status": "NOT_RUN",
+  "requires_disposable_staging": true,
+  "release_status": "STAGING_REVIEW_REQUIRED",
+  "s7_locked": true,
+  "cases": [
+    {
+      "id": "S6-E2E-01",
+      "area": "Release & access",
+      "scenario": "Five S6 release gates default to false after clean migrations",
+      "status": "NOT_RUN",
+      "evidence": null,
+      "actual": null,
+      "reviewer": null,
+      "run_at_utc": null
+    },
+    {
+      "id": "S6-E2E-02",
+      "area": "Release & access",
+      "scenario": "Anon cannot retrieve learner S6 lesson while gates false",
+      "status": "NOT_RUN",
+      "evidence": null,
+      "actual": null,
+      "reviewer": null,
+      "run_at_utc": null
+    },
+    {
+      "id": "S6-E2E-03",
+      "area": "Release & access",
+      "scenario": "Learner A cannot retrieve learner S6 lesson while gates false",
+      "status": "NOT_RUN",
+      "evidence": null,
+      "actual": null,
+      "reviewer": null,
+      "run_at_utc": null
+    },
+    {
+      "id": "S6-E2E-04",
+      "area": "Release & access",
+      "scenario": "Learner B cannot retrieve learner S6 lesson while gates false",
+      "status": "NOT_RUN",
+      "evidence": null,
+      "actual": null,
+      "reviewer": null,
+      "run_at_utc": null
+    },
+    {
+      "id": "S6-E2E-05",
+      "area": "Release & access",
+      "scenario": "Admin can preview isolated staging lesson without publishing",
+      "status": "NOT_RUN",
+      "evidence": null,
+      "actual": null,
+      "reviewer": null,
+      "run_at_utc": null
+    },
+    {
+      "id": "S6-E2E-06",
+      "area": "Release & access",
+      "scenario": "With staging gates true and verified S5, learner A reads published student content",
+      "status": "NOT_RUN",
+      "evidence": null,
+      "actual": null,
+      "reviewer": null,
+      "run_at_utc": null
+    },
+    {
+      "id": "S6-E2E-07",
+      "area": "Release & access",
+      "scenario": "Learner B without S5 evidence cannot read published student content",
+      "status": "NOT_RUN",
+      "evidence": null,
+      "actual": null,
+      "reviewer": null,
+      "run_at_utc": null
+    },
+    {
+      "id": "S6-E2E-08",
+      "area": "Release & access",
+      "scenario": "Withhold S5 proof from learner A; published content becomes inaccessible",
+      "status": "NOT_RUN",
+      "evidence": null,
+      "actual": null,
+      "reviewer": null,
+      "run_at_utc": null
+    },
+    {
+      "id": "S6-E2E-09",
+      "area": "Release & access",
+      "scenario": "Learner A direct PostgREST cannot read private revision bank",
+      "status": "NOT_RUN",
+      "evidence": null,
+      "actual": null,
+      "reviewer": null,
+      "run_at_utc": null
+    },
+    {
+      "id": "S6-E2E-10",
+      "area": "Release & access",
+      "scenario": "Learner B direct PostgREST cannot read private revision bank",
+      "status": "NOT_RUN",
+      "evidence": null,
+      "actual": null,
+      "reviewer": null,
+      "run_at_utc": null
+    },
+    {
+      "id": "S6-E2E-11",
+      "area": "Release & access",
+      "scenario": "Anon direct PostgREST cannot read private revision bank",
+      "status": "NOT_RUN",
+      "evidence": null,
+      "actual": null,
+      "reviewer": null,
+      "run_at_utc": null
+    },
+    {
+      "id": "S6-E2E-12",
+      "area": "Release & access",
+      "scenario": "Non-admin cannot invoke administrative preview pathway",
+      "status": "NOT_RUN",
+      "evidence": null,
+      "actual": null,
+      "reviewer": null,
+      "run_at_utc": null
+    },
+    {
+      "id": "S6-E2E-13",
+      "area": "ADD-ONLY import",
+      "scenario": "Admin imports private S6-001 R11 once: HTTP 201",
+      "status": "NOT_RUN",
+      "evidence": null,
+      "actual": null,
+      "reviewer": null,
+      "run_at_utc": null
+    },
+    {
+      "id": "S6-E2E-14",
+      "area": "ADD-ONLY import",
+      "scenario": "Admin reimports byte-identical revision: HTTP 409",
+      "status": "NOT_RUN",
+      "evidence": null,
+      "actual": null,
+      "reviewer": null,
+      "run_at_utc": null
+    },
+    {
+      "id": "S6-E2E-15",
+      "area": "ADD-ONLY import",
+      "scenario": "Admin submits altered or invalid canonical hash: HTTP 422",
+      "status": "NOT_RUN",
+      "evidence": null,
+      "actual": null,
+      "reviewer": null,
+      "run_at_utc": null
+    },
+    {
+      "id": "S6-E2E-16",
+      "area": "ADD-ONLY import",
+      "scenario": "Non-admin cannot import: authorization denied",
+      "status": "NOT_RUN",
+      "evidence": null,
+      "actual": null,
+      "reviewer": null,
+      "run_at_utc": null
+    },
+    {
+      "id": "S6-E2E-17",
+      "area": "ADD-ONLY import",
+      "scenario": "Revision or lesson identifier mismatch cannot overwrite an existing revision",
+      "status": "NOT_RUN",
+      "evidence": null,
+      "actual": null,
+      "reviewer": null,
+      "run_at_utc": null
+    },
+    {
+      "id": "S6-E2E-18",
+      "area": "Lesson/session",
+      "scenario": "Guided ten-step navigation persists only the owner’s progress",
+      "status": "NOT_RUN",
+      "evidence": null,
+      "actual": null,
+      "reviewer": null,
+      "run_at_utc": null
+    },
+    {
+      "id": "S6-E2E-19",
+      "area": "Lesson/session",
+      "scenario": "Guided hint sequence is progressive; model answer is withheld before submission",
+      "status": "NOT_RUN",
+      "evidence": null,
+      "actual": null,
+      "reviewer": null,
+      "run_at_utc": null
+    },
+    {
+      "id": "S6-E2E-20",
+      "area": "Lesson/session",
+      "scenario": "Independent starts with only its unseen initial prompt",
+      "status": "NOT_RUN",
+      "evidence": null,
+      "actual": null,
+      "reviewer": null,
+      "run_at_utc": null
+    },
+    {
+      "id": "S6-E2E-21",
+      "area": "Lesson/session",
+      "scenario": "Mastery follow-up is blocked before submit and shown only after submit",
+      "status": "NOT_RUN",
+      "evidence": null,
+      "actual": null,
+      "reviewer": null,
+      "run_at_utc": null
+    },
+    {
+      "id": "S6-E2E-22",
+      "area": "Lesson/session",
+      "scenario": "Cross-lesson activity ID is rejected without new attempt",
+      "status": "NOT_RUN",
+      "evidence": null,
+      "actual": null,
+      "reviewer": null,
+      "run_at_utc": null
+    },
+    {
+      "id": "S6-E2E-23",
+      "area": "Lesson/session",
+      "scenario": "Owner status recovery returns initial question only; no private follow-up",
+      "status": "NOT_RUN",
+      "evidence": null,
+      "actual": null,
+      "reviewer": null,
+      "run_at_utc": null
+    },
+    {
+      "id": "S6-E2E-24",
+      "area": "Lesson/session",
+      "scenario": "Learner B cannot recover learner A attempt by ID",
+      "status": "NOT_RUN",
+      "evidence": null,
+      "actual": null,
+      "reviewer": null,
+      "run_at_utc": null
+    },
+    {
+      "id": "S6-E2E-25",
+      "area": "Lesson/session",
+      "scenario": "Identical submit retry returns alreadySubmitted and does not add another answer",
+      "status": "NOT_RUN",
+      "evidence": null,
+      "actual": null,
+      "reviewer": null,
+      "run_at_utc": null
+    },
+    {
+      "id": "S6-E2E-26",
+      "area": "Lesson/session",
+      "scenario": "Conflicting changed retry receives 409 and preserves original answer",
+      "status": "NOT_RUN",
+      "evidence": null,
+      "actual": null,
+      "reviewer": null,
+      "run_at_utc": null
+    },
+    {
+      "id": "S6-E2E-27",
+      "area": "Lesson/session",
+      "scenario": "Two concurrent identical submits yield one stored response and safe idempotent outcome",
+      "status": "NOT_RUN",
+      "evidence": null,
+      "actual": null,
+      "reviewer": null,
+      "run_at_utc": null
+    },
+    {
+      "id": "S6-E2E-28",
+      "area": "Real recording & consent",
+      "scenario": "iOS Safari start-stop playback/upload works for device-supported MIME",
+      "status": "NOT_RUN",
+      "evidence": null,
+      "actual": null,
+      "reviewer": null,
+      "run_at_utc": null
+    },
+    {
+      "id": "S6-E2E-29",
+      "area": "Real recording & consent",
+      "scenario": "Android Chrome start-stop playback/upload works for device-supported MIME",
+      "status": "NOT_RUN",
+      "evidence": null,
+      "actual": null,
+      "reviewer": null,
+      "run_at_utc": null
+    },
+    {
+      "id": "S6-E2E-30",
+      "area": "Real recording & consent",
+      "scenario": "Denied microphone permission shows recoverable error and no phantom recording",
+      "status": "NOT_RUN",
+      "evidence": null,
+      "actual": null,
+      "reviewer": null,
+      "run_at_utc": null
+    },
+    {
+      "id": "S6-E2E-31",
+      "area": "Real recording & consent",
+      "scenario": "Cancel/reset/navigation prevents stale MediaRecorder callback from replacing current take",
+      "status": "NOT_RUN",
+      "evidence": null,
+      "actual": null,
+      "reviewer": null,
+      "run_at_utc": null
+    },
+    {
+      "id": "S6-E2E-32",
+      "area": "Real recording & consent",
+      "scenario": "Refresh recovery never pretends previous local Blob still exists",
+      "status": "NOT_RUN",
+      "evidence": null,
+      "actual": null,
+      "reviewer": null,
+      "run_at_utc": null
+    },
+    {
+      "id": "S6-E2E-33",
+      "area": "Real recording & consent",
+      "scenario": "Consent-enabled optional upload stores file only at owner/attempt UUID path",
+      "status": "NOT_RUN",
+      "evidence": null,
+      "actual": null,
+      "reviewer": null,
+      "run_at_utc": null
+    },
+    {
+      "id": "S6-E2E-34",
+      "area": "Real recording & consent",
+      "scenario": "Consent-disabled session does not upload audio to Storage",
+      "status": "NOT_RUN",
+      "evidence": null,
+      "actual": null,
+      "reviewer": null,
+      "run_at_utc": null
+    },
+    {
+      "id": "S6-E2E-35",
+      "area": "Deletion, privacy, cleanup",
+      "scenario": "Owner DELETE removes owned attempt and its audio variants",
+      "status": "NOT_RUN",
+      "evidence": null,
+      "actual": null,
+      "reviewer": null,
+      "run_at_utc": null
+    },
+    {
+      "id": "S6-E2E-36",
+      "area": "Deletion, privacy, cleanup",
+      "scenario": "Learner B DELETE of learner A attempt returns 404 without Storage removal",
+      "status": "NOT_RUN",
+      "evidence": null,
+      "actual": null,
+      "reviewer": null,
+      "run_at_utc": null
+    },
+    {
+      "id": "S6-E2E-37",
+      "area": "Deletion, privacy, cleanup",
+      "scenario": "Storage deletion error leaves attempt recoverable for owner retry",
+      "status": "NOT_RUN",
+      "evidence": null,
+      "actual": null,
+      "reviewer": null,
+      "run_at_utc": null
+    },
+    {
+      "id": "S6-E2E-38",
+      "area": "Deletion, privacy, cleanup",
+      "scenario": "Restore five gates to false and verify seeded attempts/audio/test users cleaned",
+      "status": "NOT_RUN",
+      "evidence": null,
+      "actual": null,
+      "reviewer": null,
+      "run_at_utc": null
+    }
+  ]
+}
