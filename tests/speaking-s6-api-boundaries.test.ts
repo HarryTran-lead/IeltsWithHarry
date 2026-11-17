@@ -26,6 +26,7 @@ const ATTEMPT="33333333-3333-4333-8333-333333333333";
 
 type Attempt={id:string;user_id:string;lesson_code:string;revision:string;
   activity_id:string;mode:"guided"|"independent"|"mastery";phase:"started"|"submitted";
+  deletion_requested_at?:string|null;
   audio_storage_consent?:boolean;initial_response?:string;duration_seconds?:number};
 const makeAttempt=(mode:Attempt["mode"]="mastery",phase:Attempt["phase"]="started"):Attempt=>({
   id:ATTEMPT,user_id:USER_A,lesson_code:"S6-001",revision:"R11",
@@ -33,12 +34,12 @@ const makeAttempt=(mode:Attempt["mode"]="mastery",phase:Attempt["phase"]="starte
   mode,phase
 });
 const query=(result:unknown)=>{
-  const q={select:vi.fn(),eq:vi.fn(),order:vi.fn(),limit:vi.fn(),
+  const q={select:vi.fn(),eq:vi.fn(),order:vi.fn(),limit:vi.fn(),is:vi.fn(),not:vi.fn(),
     maybeSingle:vi.fn().mockResolvedValue({data:result,error:null}),
     insert:vi.fn().mockResolvedValue({error:null}),
     update:vi.fn(),delete:vi.fn().mockResolvedValue({error:null})
   };
-  for(const k of ["select","eq","order","limit","update"] as const)q[k].mockReturnValue(q);
+  for(const k of ["select","eq","order","limit","is","not","update"] as const)q[k].mockReturnValue(q);
   return q;
 };
 const makeDb=(options:{
@@ -417,5 +418,43 @@ describe("M10-L27 S6 submit audio provenance boundaries (mocked Storage, not gen
   expect(r.status).toBe(503);
   expect((await r.json()).error).toBe("AUDIO_STORAGE_UNAVAILABLE");
   expect(d.attempts.update).not.toHaveBeenCalled();
+ });
+});
+
+
+describe("M10-L28 submit vs privacy deletion race boundary (mocked DB)",()=>{
+ beforeEach(()=>{
+  vi.resetAllMocks();
+  mocks.viewer.mockResolvedValue({id:USER_A});
+  mocks.s6AccessAllowed.mockResolvedValue(true);
+ });
+ it("rejects a deletion-marked attempt before inspecting audio, status or private bank",async()=>{
+  const d=makeDb({attempt:{...makeAttempt("mastery","started"),
+    deletion_requested_at:"2026-11-17T10:00:00.000Z",audio_storage_consent:true}});
+  for(const action of ["submit","status","followup"] as const){
+    const r=await POST(request({action,attemptId:ATTEMPT,
+      ...(action==="submit"?{transcript:"some notes",durationSeconds:30}:{})}));
+    expect(r.status).toBe(409);
+    expect((await r.json()).error).toBe("S6_DELETION_IN_PROGRESS");
+  }
+  expect(mocks.fingerprintAudio).not.toHaveBeenCalled();
+  expect(d.update.eq).not.toHaveBeenCalled();
+  expect(d.from.mock.calls.map(c=>c[0])).not.toContain("speaking_s6_private_revisions");
+ });
+ it("requires deletion_requested_at IS NULL in the atomic submission update",async()=>{
+  const d=makeDb({attempt:makeAttempt("guided","started")});
+  const r=await POST(request({action:"submit",attemptId:ATTEMPT,
+    transcript:"Notes",durationSeconds:24}));
+  expect(r.status).toBe(200);
+  expect(d.update.is).toHaveBeenCalledWith("deletion_requested_at",null);
+ });
+ it("recognizes a deletion marker set by another request after the initial SELECT",async()=>{
+  const d=makeDb({attempt:makeAttempt("guided","started"),updateResult:null});
+  d.attempts.maybeSingle.mockResolvedValueOnce({data:makeAttempt("guided","started"),error:null})
+    .mockResolvedValueOnce({data:{phase:"started",deletion_requested_at:"2026-11-17T10:02:00.000Z"},error:null});
+  const r=await POST(request({action:"submit",attemptId:ATTEMPT,
+    transcript:"Recorded",durationSeconds:20}));
+  expect(r.status).toBe(409);
+  expect((await r.json()).error).toBe("S6_DELETION_IN_PROGRESS");
  });
 });
