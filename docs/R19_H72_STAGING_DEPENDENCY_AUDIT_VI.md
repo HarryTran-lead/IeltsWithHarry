@@ -33,7 +33,7 @@ H72 chạy một công cụ dò tìm toàn bộ **file mã nguồn được Git 
 
 ## Tái kiểm tra từ GitHub Actions
 Workflow \`.github/workflows/h72-dependency-evidence-ci.yml\`:
-- Chạy 13 unit tests scanner.
+- Chạy 17 unit tests scanner (số trường hợp đã soạn trong nhánh, trạng thái PASS phụ thuộc CI).
 - Chạy scan theo \`GITHUB_SHA\` và tạo \`reports/h72_dependency_inventory.json/.md\`.
 - Xác nhận H71 evidence gate không báo GO khi dữ liệu staging còn thiếu.
 - Đóng artifact gồm mã nguồn, báo cáo và \`h72_ci_receipt.json\` có SHA-256 của báo cáo.
@@ -46,3 +46,10 @@ Workflow \`.github/workflows/h72-dependency-evidence-ci.yml\`:
 - File báo cáo **chưa được Git theo dõi** có thể tồn tại mà không làm kiểm toán thất bại; test độc lập bao phủ trường hợp này.
 - Đây vẫn chỉ là kiểm tra mã nguồn được checkout, không chứng minh không có runtime dependencies, job bên ngoài, dịch vụ triển khai ngoài Git, hay xác nhận bảo mật trên Supabase staging.
 - Khi gặp `tracked working tree differs from checked-out HEAD`: không dùng báo cáo đó làm evidence; tạo checkout sạch đúng commit và chạy lại CI. **Không** tự bật migration hoặc thay khóa.
+
+## H72 mở rộng coverage và fail-closed (tiếp tục)
+- Quét thêm file `.jsx`, `.mts`, `.cts`, `.json`, `.prisma` và các vị trí runtime `src/pages/`, `workers/`, `functions/`, `app/`, `lib/`, `api/`, `pages/`, middleware, bên cạnh `src/app/` và `src/lib/`.
+- Các phần mở rộng trên **không** chứng minh có hay không có phụ thuộc khi mã nguồn được sinh tự động, truy vấn SQL ghép chuỗi, hoặc khi services bên ngoài repository đang chạy.
+- Kết quả `PARTIAL_STATIC_INVENTORY` do file quá lớn/bị bỏ qua giờ trả mã thoát **3 (không hoàn tất)** thay vì 0. Kết quả `INVENTORY_INCOMPLETE` tiếp tục trả 3. Chỉ `STATIC_INVENTORY_PRODUCED` trả 0 và ngay cả khi đó vẫn là **STATIC ONLY / NO_GO**.
+- Hai unit tests bổ sung kiểm tra runtime layouts/extensions và exit code khi input quá lớn; tổng bộ kiểm thử là 17 trường hợp.
+- Artifact CI chỉ được xem là bằng chứng về mã nguồn theo SHA, **không phải** bằng chứng DBA/RLS/JWT/Supabase staging thật, và không được dùng để mở quyền chấm cho learner.
