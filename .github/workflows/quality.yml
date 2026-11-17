@@ -17,6 +17,7 @@ jobs:
       - run: npm run typecheck
       - run: npm run lint
       - run: npm run test
+      - run: node scripts/speaking-s6-l29-release-gate.mjs
       - run: npm run build
   audio-worker-test:
     runs-on: ubuntu-latest
