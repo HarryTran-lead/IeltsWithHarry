@@ -4,6 +4,7 @@ import {describe,it,expect} from "vitest";
 import {L33_DIMENSIONS,L33_CHECKS,evaluateL33Rubric,
  auditL33TeacherReviews,inspectL33LocalPackage}
  from "../scripts/speaking-s6-l33-teacher-review.mjs";
+import {validateS6Import} from "../src/lib/speaking-s6/contract";
 
 const review=JSON.parse(readFileSync("tests/speaking-s6/m10-l33-teacher-review.json","utf8"));
 const clone=x=>structuredClone(x);
@@ -79,6 +80,16 @@ describe("M10-L33 teacher QA metadata and local-only content signals",()=>{
    teacher_review_certified_by_tool:0,release_authorized:false,
    s7_unlock_authorized:false
   });
+ });
+ it("uses an actual schema-importable L33 fixture, rather than a superficial structural mock",()=>{
+  const p=syntheticPackage();
+  const full={...p,revision:"R11_L34_TEST"};
+  expect(validateS6Import(full).lesson.lesson_id).toBe("S6-001");
+  delete p.lesson.guided[0].model_ref;
+  p.hash=sha(p.lesson);
+  expect(()=>validateS6Import({...p,revision:"R11_L34_TEST"})).toThrow();
+  expect(inspectL33LocalPackage(p).failed_check_codes)
+    .toContain("import_contract_field_alignment");
  });
  it("rejects duplicated, missing or reordered S6 lesson numbers",()=>{
   const r=clone(review);r.lessons[1].lesson_id=r.lessons[0].lesson_id;
