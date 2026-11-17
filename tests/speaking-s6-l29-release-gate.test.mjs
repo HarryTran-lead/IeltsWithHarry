@@ -40,7 +40,7 @@ describe("M10-L29 evidence gate (synthetic fixtures, no actual E2E)",()=>{
    const got=assessL29Readiness(base,extra,{});
    expect(got).toMatchObject({
      status:"HOLD",release_authorized:false,
-     s7_unlock_authorized:false,actual_live_e2e_passes:0,expected_real_e2e_cases:50
+     s7_unlock_authorized:false,reported_pass_entries_unverified:0,expected_real_e2e_cases:50
    });
  });
  it("rejects wrong supplementary sequence, group totals and duplicates",()=>{
@@ -64,7 +64,7 @@ describe("M10-L29 evidence gate (synthetic fixtures, no actual E2E)",()=>{
    expect(out.status).toBe("READY_FOR_INDEPENDENT_HUMAN_REVIEW");
    expect(out.release_authorized).toBe(false);
    expect(out.s7_unlock_authorized).toBe(false);
-   expect(out.actual_live_e2e_passes).toBe(50);
+   expect(out.reported_pass_entries_unverified).toBe(50);
  });
  it("blocks candidates whose CI SHA differs from release candidate",()=>{
    const {a,b,review}=approvedFixture();review.ci.commit_sha="f".repeat(40);
