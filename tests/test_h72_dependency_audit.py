@@ -222,6 +222,26 @@ class H72StaticAuditTests(unittest.TestCase):
         self.assertFalse(out_json.exists())
         self.assertFalse(out_md.exists())
 
+    def test_empty_eligible_source_inventory_refuses_success(self):
+        root=self.project({"README.md":"# No source files here"})
+        subprocess.run(["git","-C",str(root),"init","-q"],check=True)
+        subprocess.run(["git","-C",str(root),"add","README.md"],check=True)
+        subprocess.run(["git","-C",str(root),"-c","user.name=H72 Test",
+                        "-c","user.email=h72@example.invalid",
+                        "-c","commit.gpgsign=false","commit","-qm","baseline"],check=True)
+        sha=audit.head_sha(root)
+        out_json=root/"reports/audit.json"
+        out_md=root/"reports/audit.md"
+        args=["h72_dependency_audit.py","--repo",str(root),"--expected-sha",sha,
+              "--json-out",str(out_json),"--md-out",str(out_md)]
+        with patch("sys.argv",args):
+            self.assertEqual(audit.main(),3)
+        output=json.loads(out_json.read_text())
+        self.assertEqual(output["static_inventory_status"],"INVENTORY_INCOMPLETE")
+        self.assertFalse(output["coverage"]["complete"])
+        self.assertIn("NO_ELIGIBLE_SOURCE_FILES",output["coverage"]["errors"])
+        self.assertEqual(output["release_gate"],"NO_GO")
+
     def test_markdown_disclaims_no_matches(self):
         root=self.project({"src/lib/clean.ts":"export const clean = true"})
         report=audit.analyze(root,["src/lib/clean.ts"],COMMIT)
