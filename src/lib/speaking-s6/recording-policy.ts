@@ -21,6 +21,8 @@ export class RecordingEpoch {
  private number=0;
  next(){return ++this.number;}
  current(token:number){return token===this.number;}
+ /** Abandon a failed take: late dataavailable/stop callbacks cannot revive it. */
+ fail(token:number){if(!this.current(token))return false;this.next();return true;}
 }
 
 /** A successful optional upload may be re-used only for the exact same in-memory take. */
