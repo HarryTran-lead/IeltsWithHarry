@@ -26,6 +26,22 @@ jobs:
           python3 scripts/h73_privilege_surface_gate.py \
             --repo . --expected-sha "$GITHUB_SHA" \
             --json-out reports/h73_privilege_surface.json
+      - name: Verify Cloudflare, Vercel, Docker, RPC and cron source boundaries (H73/M05)
+        run: |
+          python3 scripts/h73_m05_runtime_boundary_gate.py \
+            --repo . --expected-sha "$GITHUB_SHA" \
+            --json-out reports/h73_m05_runtime_boundaries.json
+      - name: Assert runtime boundary evidence remains STATIC ONLY
+        run: |
+          python3 - <<'PY'
+          import json
+          report=json.load(open("reports/h73_m05_runtime_boundaries.json"))
+          assert report["status"]=="STATIC_BOUNDARY_MATCH"
+          assert report["issues"]==[]
+          assert report["release_gate"]=="NO_GO"
+          assert report["deployment_verified"] is False
+          assert report["supabase_staging_verified"] is False
+          PY
       - name: Assert this is NOT a staging or release attestation
         run: |
           python3 - <<'PY'
@@ -53,6 +69,9 @@ jobs:
           if-no-files-found: warn
           path: |
             reports/h73_privilege_surface.json
+            reports/h73_m05_runtime_boundaries.json
+            scripts/h73_m05_runtime_boundary_gate.py
+            tests/test_h73_m05_runtime_boundary_gate.py
             scripts/h73_privilege_surface_gate.py
             tests/test_h73_privilege_surface_gate.py
             docs/R19_H73_PRIVILEGED_SOURCE_REVIEW_VI.md
