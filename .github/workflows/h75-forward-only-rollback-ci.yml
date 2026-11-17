@@ -1,0 +1,68 @@
+name: H75 Forward Only Cutover Rollback (Isolated PG16)
+on:
+  push:
+    branches:
+      - codex/r19-h75-forward-only-cutover-rollback-20261117
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  isolated-forward-only-rehearsal:
+    runs-on: ubuntu-latest
+    timeout-minutes: 18
+    services:
+      postgres:
+        image: postgres:16
+        env:
+          POSTGRES_USER: h75_ci_runner
+          POSTGRES_PASSWORD: h75_ci_password_only
+          POSTGRES_DB: h75_ci
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd=pg_isready
+          --health-interval=5s
+          --health-timeout=3s
+          --health-retries=15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Verify refusal of external DB and unsafe rollback source
+        run: python3 -m unittest discover -s tests -p 'test_h75_*.py' -v
+      - name: Ensure psql is available
+        run: command -v psql || (sudo apt-get update -qq && sudo apt-get install -y postgresql-client)
+      - name: Rehearse migration failures, cutover and forward-safe rollback on isolated PG16
+        run: |
+          set -o pipefail
+          mkdir -p reports
+          bash scripts/h75_ci_forward_only_rollback.sh | tee reports/h75_forward_only_rehearsal.txt
+          test "$(grep -c '^PASS [0-9]*/10' reports/h75_forward_only_rehearsal.txt)" -eq 10
+          grep -q 'FORWARD_ONLY_SECURITY_ROLLBACK; SUPABASE_STAGING_0_OF_18; RELEASE_NO_GO' reports/h75_forward_only_rehearsal.txt
+        env:
+          H75_ALLOW_EPHEMERAL_DDL: YES_DISPOSABLE_LOCAL_PG16_ONLY
+          H75_PG_DSN: postgresql://h75_ci_runner:h75_ci_password_only@127.0.0.1:5432/h75_ci
+      - name: Assert staging acceptance is still entirely NOT_TESTED
+        run: |
+          python3 - <<'PY'
+          import json
+          d=json.load(open("evidence/H71_STAGING_EVIDENCE_TEMPLATE.json"))
+          assert d["classification"] == "NON_ATTESTED_TEMPLATE"
+          assert d["release_gate"] == "NO_GO"
+          assert len(d["checks"]) == 18
+          assert all(x["status"] == "NOT_TESTED" for x in d["checks"])
+          PY
+      - name: Preserve SHA-bound CI-only rehearsal evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: h75-pg16-forward-only-rehearsal
+          retention-days: 7
+          if-no-files-found: warn
+          path: |
+            .github/workflows/h75-forward-only-rollback-ci.yml
+            scripts/h75_ci_forward_only_rollback.sh
+            tests/test_h75_forward_only_rollback.py
+            docs/R19_H75_FORWARD_ONLY_ROLLBACK_VI.md
+            reports/h75_forward_only_rehearsal.txt
