@@ -41,7 +41,7 @@ function syntheticPackage(){
   no_answer_key_on_student:true
  }));
  const lesson={
-  lesson_id:id,
+  lesson_id:id,status:"STAGING_REVIEW_REQUIRED",publish_allowed:false,
   steps:Array.from({length:10},(_,i)=>({
    step:i+1,instruction_en:"Follow the practice steps carefully.",
    instruction_vi:"Hãy học theo các bước hướng dẫn cụ thể.",
