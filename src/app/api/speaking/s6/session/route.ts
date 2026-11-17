@@ -9,7 +9,8 @@ const commands=z.discriminatedUnion("action",[
   z.object({action:z.literal("submit"),attemptId:z.uuid(),transcript:z.string().trim().max(5000).default(""),
     durationSeconds:z.number().int().min(1).max(180),preview:z.boolean().default(false)}),
   z.object({action:z.literal("followup"),attemptId:z.uuid(),preview:z.boolean().default(false)}),
-  z.object({action:z.literal("guidedFeedback"),attemptId:z.uuid(),preview:z.boolean().default(false)})
+  z.object({action:z.literal("guidedFeedback"),attemptId:z.uuid(),preview:z.boolean().default(false)}),
+  z.object({action:z.literal("status"),attemptId:z.uuid(),preview:z.boolean().default(false)})
 ]);
 type BankEntry={question_en?:string;followup_en?:string;model_answer_en?:string;
   model_translation_vi?:string;teaching_explanation_en?:string;teacher_reasoning_vi?:string};
@@ -54,7 +55,7 @@ export async function POST(request:Request){
         {status:201,headers:noStore});
     }
     const r=await db.from("speaking_s6_attempts")
-      .select("id,user_id,lesson_code,revision,activity_id,mode,phase")
+      .select("id,user_id,lesson_code,revision,activity_id,mode,phase,audio_storage_consent,initial_response,duration_seconds")
       .eq("id",body.attemptId).eq("user_id",user.id).eq("preview",body.preview).maybeSingle();
     if(r.error || !r.data)return Response.json({error:"NOT_FOUND"},{status:404});
     const a=r.data;
@@ -62,13 +63,45 @@ export async function POST(request:Request){
       .eq("lesson_code",a.lesson_code).eq("revision",a.revision).maybeSingle();
     if(release.error || release.data?.status!==(body.preview?"staging":"published"))
       return Response.json({error:"S6_NOT_PUBLISHED"},{status:404});
+    if(body.action==="status"){
+      let question:string|undefined;
+      if(a.mode==="guided"){
+        const lesson=await db.from("speaking_s6_lesson_revisions").select("student_content")
+          .eq("lesson_code",a.lesson_code).eq("revision",a.revision).maybeSingle();
+        if(lesson.error||!lesson.data)return Response.json({error:"NOT_FOUND"},{status:404});
+        question=(lesson.data.student_content as {guided?:{activity_id:string;question_en:string}[]})
+          .guided?.find(item=>item.activity_id===a.activity_id)?.question_en;
+      }else{
+        const secret=await db.from("speaking_s6_private_revisions").select("bank")
+          .eq("lesson_code",a.lesson_code).eq("revision",a.revision).maybeSingle();
+        if(secret.error||!secret.data)return Response.json({error:"NOT_FOUND"},{status:404});
+        question=(secret.data.bank as Bank)[a.mode as "independent"|"mastery"]?.[a.activity_id]?.question_en;
+      }
+      if(!question)return Response.json({error:"NOT_FOUND"},{status:404});
+      return Response.json({attemptId:a.id,activityId:a.activity_id,mode:a.mode,question,
+        submitted:a.phase==="submitted",audioStorageConsent:a.audio_storage_consent},{headers:noStore});
+    }
     if(body.action==="submit"){
+      if(a.phase==="submitted"){
+        if(a.initial_response===body.transcript&&a.duration_seconds===body.durationSeconds)
+          return Response.json({ok:true,scored:false,alreadySubmitted:true},{headers:noStore});
+        return Response.json({error:"ALREADY_SUBMITTED"},{status:409});
+      }
       const s=await db.from("speaking_s6_attempts").update({
         phase:"submitted",initial_response:body.transcript,duration_seconds:body.durationSeconds,
         initial_submitted_at:new Date().toISOString()
       }).eq("id",a.id).eq("user_id",user.id).eq("phase","started").select("id").maybeSingle();
       if(s.error)throw new Error(s.error.message);
-      if(!s.data)return Response.json({error:"ALREADY_SUBMITTED"},{status:409});
+      if(!s.data){
+        const latest=await db.from("speaking_s6_attempts")
+          .select("phase,initial_response,duration_seconds")
+          .eq("id",a.id).eq("user_id",user.id).maybeSingle();
+        if(!latest.error&&latest.data?.phase==="submitted"
+          &&latest.data.initial_response===body.transcript
+          &&latest.data.duration_seconds===body.durationSeconds)
+          return Response.json({ok:true,scored:false,alreadySubmitted:true},{headers:noStore});
+        return Response.json({error:"ALREADY_SUBMITTED"},{status:409});
+      }
       return Response.json({ok:true,scored:false},{headers:noStore});
     }
     if(a.phase!=="submitted")return Response.json({error:"SUBMISSION_REQUIRED"},{status:409});

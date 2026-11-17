@@ -17,7 +17,8 @@ const USER_B="22222222-2222-4222-8222-222222222222";
 const ATTEMPT="33333333-3333-4333-8333-333333333333";
 
 type Attempt={id:string;user_id:string;lesson_code:string;revision:string;
-  activity_id:string;mode:"guided"|"independent"|"mastery";phase:"started"|"submitted"};
+  activity_id:string;mode:"guided"|"independent"|"mastery";phase:"started"|"submitted";
+  audio_storage_consent?:boolean;initial_response?:string;duration_seconds?:number};
 const makeAttempt=(mode:Attempt["mode"]="mastery",phase:Attempt["phase"]="started"):Attempt=>({
   id:ATTEMPT,user_id:USER_A,lesson_code:"S6-001",revision:"R11",
   activity_id:mode==="mastery"?"S6-001-M01":mode==="guided"?"S6-001-G01":"S6-001-I01",
@@ -142,5 +143,58 @@ describe("Speaking S6 API behavior (mocked Supabase, no live staging)",()=>{
   // The mocked revision is available as staging when preview=true.
   expect(r.status).toBe(201);
   expect(mocks.viewer).toHaveBeenCalledWith(true);
+ });
+});
+
+
+describe("S6 L20 session recovery and idempotent submissions",()=>{
+ beforeEach(()=>{
+  vi.resetAllMocks();
+  mocks.viewer.mockResolvedValue({id:USER_A});
+  mocks.s6AccessAllowed.mockResolvedValue(true);
+ });
+ it("restores only the owner's original unseen question, without a Mastery follow-up",async()=>{
+  const d=makeDb({attempt:{...makeAttempt("mastery","started"),audio_storage_consent:true}});
+  const r=await POST(request({action:"status",attemptId:ATTEMPT}));
+  expect(r.status).toBe(200);
+  const payload=await r.json();
+  expect(payload).toMatchObject({
+   attemptId:ATTEMPT,mode:"mastery",submitted:false,audioStorageConsent:true,
+   question:"An unseen Mastery prompt"
+  });
+  expect(JSON.stringify(payload)).not.toContain("What could you improve");
+  expect(d.attempts.eq).toHaveBeenCalledWith("user_id",USER_A);
+ });
+ it("does not restore a foreign user's attempt",async()=>{
+  const d=makeDb({attempt:null});
+  mocks.viewer.mockResolvedValue({id:USER_B});
+  const r=await POST(request({action:"status",attemptId:ATTEMPT}));
+  expect(r.status).toBe(404);
+  expect(d.attempts.eq).toHaveBeenCalledWith("user_id",USER_B);
+ });
+ it("accepts exactly repeated content after a previously completed submit",async()=>{
+  makeDb({attempt:{...makeAttempt("mastery","submitted"),initial_response:"I answered.",duration_seconds:35}});
+  const r=await POST(request({action:"submit",attemptId:ATTEMPT,transcript:"I answered.",durationSeconds:35}));
+  expect(r.status).toBe(200);
+  expect(await r.json()).toMatchObject({ok:true,scored:false,alreadySubmitted:true});
+ });
+ it("rejects a second submit with a different answer instead of overwriting evidence",async()=>{
+  const d=makeDb({attempt:{...makeAttempt("mastery","submitted"),initial_response:"First answer.",duration_seconds:35}});
+  const r=await POST(request({action:"submit",attemptId:ATTEMPT,transcript:"Changed answer.",durationSeconds:35}));
+  expect(r.status).toBe(409);
+  expect(d.attempts.update).not.toHaveBeenCalled();
+ });
+ it("recovers a concurrent submission only when content is exactly identical",async()=>{
+  const d=makeDb({attempt:makeAttempt("mastery","started"),updateResult:null});
+  d.attempts.maybeSingle.mockResolvedValueOnce({data:makeAttempt("mastery","started"),error:null})
+   .mockResolvedValueOnce({data:{phase:"submitted",initial_response:"I answered.",duration_seconds:35},error:null});
+  const r=await POST(request({action:"submit",attemptId:ATTEMPT,transcript:"I answered.",durationSeconds:35}));
+  expect(r.status).toBe(200);
+  expect((await r.json()).alreadySubmitted).toBe(true);
+ });
+ it("refuses recovery after the lesson revision becomes unpublished",async()=>{
+  makeDb({attempt:makeAttempt("mastery","started"),release:"archived"});
+  const r=await POST(request({action:"status",attemptId:ATTEMPT}));
+  expect(r.status).toBe(404);
  });
 });

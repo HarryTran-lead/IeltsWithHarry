@@ -1,5 +1,7 @@
 "use client";
-import { useCallback,useEffect,useRef,useState } from "react";
+import { useEffect,useRef,useState } from "react";
+import { useLocalRecording } from "./use-local-recording";
+import { speakingS6UploadDescriptor } from "@/lib/speaking-s6/recording-policy";
 import { createClient } from "@/lib/supabase/browser";
 import { reviewDueAt,reviewIsDue } from "@/lib/speaking-s6/review";
 import "./lesson.css";
@@ -27,61 +29,6 @@ async function jsonRequest<T>(url:string,options?:RequestInit):Promise<T>{
 }
 const reqBody=(value:unknown):RequestInit=>({method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(value)});
 
-function useLocalRecording(){
- const [recording,setRecording]=useState(false);
- const [blob,setBlob]=useState<Blob|null>(null);
- const [url,setUrl]=useState("");
- const [seconds,setSeconds]=useState(0);
- const [error,setError]=useState("");
- const recorder=useRef<MediaRecorder|null>(null);
- const stream=useRef<MediaStream|null>(null);
- const urlRef=useRef("");
- const timer=useRef<ReturnType<typeof setInterval>|null>(null);
- const started=useRef(0);
- const clearUrl=useCallback(()=>{
-   if(urlRef.current){URL.revokeObjectURL(urlRef.current);urlRef.current="";}
-   setUrl("");
- },[]);
- const cleanup=useCallback(()=>{
-   if(timer.current){clearInterval(timer.current);timer.current=null;}
-   stream.current?.getTracks().forEach(t=>t.stop());stream.current=null;
- },[]);
- const stop=useCallback(()=>{if(recorder.current?.state==="recording")recorder.current.stop();},[]);
- const reset=useCallback(()=>{
-   stop();cleanup();clearUrl();setBlob(null);setSeconds(0);setError("");setRecording(false);
- },[stop,cleanup,clearUrl]);
- useEffect(()=>()=>{stop();cleanup();if(urlRef.current)URL.revokeObjectURL(urlRef.current);},[stop,cleanup]);
- const start=useCallback(async()=>{
-   if(typeof navigator==="undefined"||!navigator.mediaDevices?.getUserMedia||typeof MediaRecorder==="undefined"){
-     setError("Trình duyệt không hỗ trợ ghi âm. Hãy thử HTTPS và cho phép dùng micro.");return;
-   }
-   try{
-     stop();cleanup();clearUrl();setBlob(null);setSeconds(0);setError("");
-     const media=await navigator.mediaDevices.getUserMedia({audio:{echoCancellation:true,noiseSuppression:true}});
-     stream.current=media;
-     const types=["audio/webm;codecs=opus","audio/mp4","audio/ogg;codecs=opus","audio/webm"];
-     const chosen=types.find(type=>MediaRecorder.isTypeSupported(type));
-     const rec=new MediaRecorder(media,chosen?{mimeType:chosen}:undefined);
-     const parts:BlobPart[]=[];
-     rec.ondataavailable=e=>{if(e.data.size>0)parts.push(e.data);};
-     rec.onerror=()=>{setError("Ghi âm lỗi. Vui lòng thử lại.");cleanup();setRecording(false);};
-     rec.onstop=()=>{
-       const made=new Blob(parts,{type:rec.mimeType||"audio/webm"});
-       if(made.size>0){const u=URL.createObjectURL(made);urlRef.current=u;setBlob(made);setUrl(u);}
-       else setError("Bản ghi trống. Hãy kiểm tra micro.");
-       setSeconds(Math.max(1,Math.ceil((Date.now()-started.current)/1000)));
-       setRecording(false);cleanup();
-     };
-     recorder.current=rec;started.current=Date.now();rec.start(250);setRecording(true);
-     timer.current=setInterval(()=>{
-       const elapsed=Math.ceil((Date.now()-started.current)/1000);
-       setSeconds(elapsed);
-       if(elapsed>=120 && rec.state==="recording")rec.stop();
-     },250);
-   }catch{cleanup();setRecording(false);setError("Không mở được micro. Kiểm tra quyền truy cập micro và thử lại.");}
- },[stop,cleanup,clearUrl]);
- return {recording,blob,url,seconds,error,start,stop,reset};
-}
 function prettyError(error:unknown){
  const text=error instanceof Error?error.message:String(error);
  const labels:Record<string,string>={
@@ -89,7 +36,10 @@ function prettyError(error:unknown){
   "ADD_ONLY_CONFLICT":"Bài đã tồn tại.","SUBMISSION_REQUIRED":"Cần nộp lượt nói đầu tiên trước.",
   "REVIEW_NOT_DUE":"Chưa đến ngày ôn.","FINISH_STEPS_FIRST":"Cần hoàn tất các bước học trước.",
   "ALREADY_SUBMITTED":"Lượt trả lời đã được nộp.","S6_NOT_PUBLISHED":"Bài hiện chưa mở cho học viên.",
-  "STEP_OUT_OF_SEQUENCE":"Hãy đánh dấu hoàn thành bước trước đó trước khi tiếp tục."
+  "STEP_OUT_OF_SEQUENCE":"Hãy đánh dấu hoàn thành bước trước đó trước khi tiếp tục.",
+  "S6_AUDIO_SIZE_INVALID":"Bản ghi trống hoặc vượt quá 10 MB.",
+  "S6_UNSUPPORTED_AUDIO_FORMAT":"Định dạng audio chưa được hỗ trợ.",
+  "S6_AUDIO_PATH_INVALID":"Phiên ghi âm không hợp lệ."
  };
  const key=text.split(" (")[0];return labels[key]??text;
 }
@@ -109,8 +59,11 @@ export function SpeakingS6Lesson({lessonId,preview}:{lessonId:string;preview:boo
  const [notes,setNotes]=useState("");
  const rec=useLocalRecording();
  const uploadedFor=useRef<string>("");
+ const resumeKey="speaking-s6-attempt:"+lessonId+":"+(preview?"preview":"learner");
  const suffix=preview?"&preview=true":"&preview=false";
- const resetExercise=()=>{setActive(null);setFeedback(null);setFollowup(null);setSelected("");setNotes("");setConsent(false);uploadedFor.current="";rec.reset();};
+ const resetExercise=()=>{setActive(null);setFeedback(null);setFollowup(null);setSelected("");setNotes("");setConsent(false);uploadedFor.current="";rec.reset();
+  try{window.sessionStorage.removeItem(resumeKey);}catch{/* disabled */}
+ };
  useEffect(()=>{
   let cancelled=false;
   (async()=>{
@@ -122,11 +75,28 @@ export function SpeakingS6Lesson({lessonId,preview}:{lessonId:string;preview:boo
     ]);
     if(cancelled)return;
     setLesson(a.lesson);setProgress(b.progress);setStep(b.progress.current_step);
+    try{
+     const stored=window.sessionStorage.getItem(resumeKey);
+     const saved=stored?JSON.parse(stored) as {attemptId?:string}:null;
+     if(saved?.attemptId){
+      const previous=await jsonRequest<{attemptId:string;mode:Attempt["mode"];activityId:string;question:string;submitted:boolean;audioStorageConsent:boolean}>(
+        base+"/session",reqBody({action:"status",attemptId:saved.attemptId,preview})
+      );
+      if(!cancelled){
+       setActive({...previous,uploadAudioConsent:previous.audioStorageConsent});
+       setSelected(previous.activityId);
+       setStep(previous.mode==="guided"?6:previous.mode==="independent"?7:8);
+       setMessage(previous.submitted?"Đã khôi phục phiên đã nộp. Có thể xem phản hồi.":"Đã khôi phục câu hỏi. Bạn cần ghi âm lại nếu bản ghi chưa nộp.");
+      }
+     }
+    }catch{
+     try{window.sessionStorage.removeItem(resumeKey);}catch{/* disabled */}
+    }
    }catch(e){if(!cancelled)setError(prettyError(e));}
    finally{if(!cancelled)setLoading(false);}
   })();
   return()=>{cancelled=true;};
- },[lessonId,suffix]);
+ },[lessonId,suffix,resumeKey]);
  const markStep=async()=>{
   setBusy(true);setError("");setMessage("");
   try{
@@ -137,6 +107,7 @@ export function SpeakingS6Lesson({lessonId,preview}:{lessonId:string;preview:boo
  };
  const changeStep=(n:number)=>{
   if(rec.recording){setError("Hãy dừng ghi âm trước khi chuyển bước.");return;}
+  if(active&&!active.submitted){setError("Hãy nộp hoặc xóa phiên đang làm trước khi chuyển bước.");return;}
   setStep(n);resetExercise();setMessage("");setError("");
  };
  const group=step===6?"guided":step===7?"independent":step===8?"mastery":null;
@@ -144,12 +115,15 @@ export function SpeakingS6Lesson({lessonId,preview}:{lessonId:string;preview:boo
  const selectedActivity=group==="guided"?lesson?.guided.find(x=>x.activity_id===selected):null;
  const begin=async(id:string)=>{
   if(rec.recording)return;
+  const shouldStoreAudio=consent;
   setBusy(true);setError("");setMessage("");resetExercise();setSelected(id);
   try{
    const r=await jsonRequest<SessionReply>(base+"/session",reqBody({
-     action:"start",lessonId,activityId:id,audioStorageConsent:consent,preview
+     action:"start",lessonId,activityId:id,audioStorageConsent:shouldStoreAudio,preview
    }));
-   setActive({...r,submitted:false,uploadAudioConsent:consent});setMessage("Đề đã mở từ server. Hãy ghi âm rồi nộp.");
+   setActive({...r,submitted:false,uploadAudioConsent:shouldStoreAudio});
+   try{window.sessionStorage.setItem(resumeKey,JSON.stringify({attemptId:r.attemptId}));}catch{/* disabled */}
+   setMessage("Đề đã mở từ server. Hãy ghi âm rồi nộp.");
   }catch(e){setError(prettyError(e));}finally{setBusy(false);}
  };
  const submit=async()=>{
@@ -159,10 +133,8 @@ export function SpeakingS6Lesson({lessonId,preview}:{lessonId:string;preview:boo
    if(active.uploadAudioConsent && uploadedFor.current!==active.attemptId){
     const browser=createClient();const auth=await browser.auth.getUser();const uid=auth.data.user?.id;
     if(auth.error||!uid)throw Error("Phiên đăng nhập không hợp lệ.");
-    const mime=rec.blob.type.split(";")[0];
-    const ext=mime==="audio/mp4"?"mp4":mime==="audio/ogg"?"ogg":"webm";
-    const path=uid+"/"+active.attemptId+"."+ext;
-    const result=await browser.storage.from("speaking-s6-recordings").upload(path,rec.blob,{contentType:mime,upsert:false});
+    const upload=speakingS6UploadDescriptor(uid,active.attemptId,rec.blob.type,rec.blob.size);
+    const result=await browser.storage.from("speaking-s6-recordings").upload(upload.path,rec.blob,{contentType:upload.contentType,upsert:false});
     if(result.error)throw Error("Tải ghi âm lên storage thất bại: "+result.error.message);
     uploadedFor.current=active.attemptId;
    }
@@ -171,11 +143,32 @@ export function SpeakingS6Lesson({lessonId,preview}:{lessonId:string;preview:boo
    setActive({...active,submitted:true});
    setMessage("Đã nộp lượt nói. Không có chấm điểm band tự động.");
    if(active.mode==="guided"){
-    const reply=await jsonRequest<Feedback>(base+"/session",reqBody({
-      action:"guidedFeedback",attemptId:active.attemptId,preview
-    }));
-    setFeedback(reply);
+    try{
+     const reply=await jsonRequest<Feedback>(base+"/session",reqBody({
+       action:"guidedFeedback",attemptId:active.attemptId,preview
+     }));
+     setFeedback(reply);
+    }catch{setMessage("Đã nộp. Bạn có thể bấm Xem phản hồi để thử lại.");}
    }
+  }catch(e){setError(prettyError(e));}finally{setBusy(false);}
+ };
+ const openGuidedFeedback=async()=>{
+  if(!active?.submitted||active.mode!=="guided")return;
+  setBusy(true);setError("");
+  try{
+   const reply=await jsonRequest<Feedback>(base+"/session",reqBody({
+    action:"guidedFeedback",attemptId:active.attemptId,preview
+   }));
+   setFeedback(reply);
+  }catch(e){setError(prettyError(e));}finally{setBusy(false);}
+ };
+ const deleteAttempt=async()=>{
+  if(!active||rec.recording)return;
+  setBusy(true);setError("");
+  try{
+   const response=await fetch(base+"/session?attemptId="+encodeURIComponent(active.attemptId),{method:"DELETE",cache:"no-store"});
+   if(!response.ok)throw Error("Không xóa được phiên. Hãy thử lại.");
+   resetExercise();setMessage("Đã xóa phiên và yêu cầu xóa audio đã lưu.");
   }catch(e){setError(prettyError(e));}finally{setBusy(false);}
  };
  const getFollowup=async()=>{
@@ -246,12 +239,15 @@ export function SpeakingS6Lesson({lessonId,preview}:{lessonId:string;preview:boo
       {group==="guided"&&selectedActivity?.part==="P2"&&<CuePrep key={selectedActivity.activity_id} bullets={selectedActivity.cue_card_bullets_en??[]}/>}
       {group==="guided"&&selectedActivity&&<HintPanel key={selectedActivity.activity_id} hints={selectedActivity.hints}/>}
       <RecorderControls rec={rec}/>
+      {!active.submitted&&<p className="s6-muted">Nếu tải lại trang trước khi nộp, bạn phải ghi âm lại. Bản ghi chỉ tải lên máy chủ khi bạn đồng ý.</p>}
       <label className="s6-note-label">Ghi chú hoặc bản chép tay (không thay thế bằng chứng âm thanh)
        <textarea value={notes} disabled={active.submitted} onChange={e=>setNotes(e.target.value)}
         rows={3} placeholder="Tự ghi lại ý hoặc lỗi cần sửa…"/></label>
       <button type="button" className="s6-primary" disabled={busy||active.submitted||!rec.blob||rec.recording}
        onClick={submit}>{busy?"Đang xử lý…":"Nộp lượt nói"}</button>
       {active.submitted&&<p className="s6-success">Đã nộp. Kết quả được lưu là bài thực hành, không có band score.</p>}
+      {active.submitted&&active.mode==="guided"&&!feedback&&
+       <button type="button" disabled={busy} onClick={openGuidedFeedback}>Xem phản hồi sau khi nộp</button>}
       {feedback&&<div className="s6-feedback"><h4>Lời giải sau khi nộp</h4>
        <p><strong>Model (EN):</strong> {feedback.model}</p>
        <p><strong>Dịch nghĩa (VI):</strong> {feedback.translation_vi}</p>
@@ -260,6 +256,7 @@ export function SpeakingS6Lesson({lessonId,preview}:{lessonId:string;preview:boo
       {active.submitted&&group==="mastery"&&<button type="button" onClick={getFollowup} disabled={busy||Boolean(followup)}>
         Mở câu hỏi phụ sau lượt nói đầu tiên</button>}
       {followup&&<blockquote>{followup}</blockquote>}
+      <button type="button" disabled={busy||rec.recording} onClick={deleteAttempt}>Xóa phiên và bản ghi đã lưu</button>
      </div>}
     </section>}
     {step===9&&<section className="s6-card"><h3>Nhật ký sửa lỗi</h3>
