@@ -9,8 +9,8 @@ import { getViewerRole } from "@/lib/viewer-role";
  */
 export default async function PortalLayout({ children }: { children: React.ReactNode }) {
   const role = await getViewerRole();
-  // R71: keep nested route content within the existing portal shell.
-  // Legacy catch-all pages return null, so their rendering behavior is unchanged.
+  // F37-R70: move authenticated server route children into AppShell.
+  // The legacy catch-all page returns null, so all existing routes keep their portal UI.
   if (role === "guest") return <><GuestPortal />{children}</>;
   return <Portal canManage={role === "admin"}>{children}</Portal>;
 }
