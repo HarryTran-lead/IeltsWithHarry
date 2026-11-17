@@ -40,3 +40,9 @@ Workflow \`.github/workflows/h72-dependency-evidence-ci.yml\`:
 - Báo cáo \`release_gate=NO_GO\` không đổi cho đến khi có quy trình duyệt độc lập.
 
 **Điểm cần DBA kiểm tra thủ công:** \`src/lib/ielts-bank/server.ts\` sử dụng \`SUPABASE_SERVICE_ROLE_KEY\` cho question bank. Đây là quyền cao đang tồn tại trong code, nhưng **chưa có chứng cứ nó truy cập bảng H58**. Phải phân biệt việc sử dụng \`service_role\` ở module khác với phụ thuộc trực tiếp vào H58 trước khi thay quyền trong staging.
+
+## Kiểm tra tính toàn vẹn checkout trước khi quét (H72 bổ sung)
+- Scanner từ chối tạo báo cáo khi bất kỳ file được Git theo dõi nào bị sửa hoặc đã stage nhưng chưa commit. Commit SHA khớp **không đủ** nếu nội dung working tree đã thay đổi.
+- File báo cáo **chưa được Git theo dõi** có thể tồn tại mà không làm kiểm toán thất bại; test độc lập bao phủ trường hợp này.
+- Đây vẫn chỉ là kiểm tra mã nguồn được checkout, không chứng minh không có runtime dependencies, job bên ngoài, dịch vụ triển khai ngoài Git, hay xác nhận bảo mật trên Supabase staging.
+- Khi gặp `tracked working tree differs from checked-out HEAD`: không dùng báo cáo đó làm evidence; tạo checkout sạch đúng commit và chạy lại CI. **Không** tự bật migration hoặc thay khóa.
