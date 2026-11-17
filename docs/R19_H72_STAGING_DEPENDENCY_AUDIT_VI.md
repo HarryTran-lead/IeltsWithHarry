@@ -33,7 +33,7 @@ H72 chạy một công cụ dò tìm toàn bộ **file mã nguồn được Git 
 
 ## Tái kiểm tra từ GitHub Actions
 Workflow \`.github/workflows/h72-dependency-evidence-ci.yml\`:
-- Chạy 19 unit tests scanner (số trường hợp đã soạn trong nhánh, trạng thái PASS phụ thuộc CI).
+- Chạy 22 unit tests scanner (số trường hợp đã soạn trong nhánh, trạng thái PASS phụ thuộc CI).
 - Chạy scan theo \`GITHUB_SHA\` và tạo \`reports/h72_dependency_inventory.json/.md\`.
 - Xác nhận H71 evidence gate không báo GO khi dữ liệu staging còn thiếu.
 - Đóng artifact gồm mã nguồn, báo cáo và \`h72_ci_receipt.json\` có SHA-256 của báo cáo.
@@ -57,4 +57,10 @@ Workflow \`.github/workflows/h72-dependency-evidence-ci.yml\`:
 ## Kiểm tra index flags che giấu thay đổi (H72 nâng cấp)
 - `git status --porcelain` có thể bỏ qua một file bị thay đổi nếu index gắn `assume-unchanged` hoặc `skip-worktree`. Do đó việc kiểm tra working tree thông thường chưa đủ để tin rằng source khớp commit SHA.
 - Scanner bây giờ kiểm tra toàn bộ entry được Git theo dõi bằng `git ls-files -v -z --cached` và **từ chối** các cờ `assume-unchanged` / `skip-worktree`, kể cả khi báo cáo `git status` sạch. Hạn chế này có thể dẫn tới fail-closed trong sparse checkout; dùng checkout bình thường để kiểm toán.
-- Có thêm 2 unit tests cô lập cho hai cờ này; tổng bộ test là **19**. Đây chỉ là coverage của chính scanner, không phải bằng chứng rằng hệ thống staging đã được kiểm tra.
+- Có thêm 2 unit tests cô lập cho hai cờ này; bộ test được mở rộng tiếp ở mục dưới. Đây chỉ là coverage của chính scanner, không phải bằng chứng rằng hệ thống staging đã được kiểm tra.
+
+## H72 chống báo cáo sai khi quét rỗng và thay đổi đồng thời
+- Sau khi quét xong, scanner **kiểm tra lại HEAD và trạng thái tracked working tree**. Nếu source bị sửa, hoặc HEAD chuyển sang commit khác trong thời gian quét, kết quả bị từ chối **trước khi ghi file báo cáo**.
+- Hai regression tests tạo tình huống source bị thay đổi và HEAD đổi sau khi đã tính xong findings, xác nhận công cụ trả mã 2 và **không** tạo báo cáo JSON/Markdown.
+- Một checkout không có bất kỳ file mã nguồn đủ điều kiện nào **không được coi là kiểm toán thành công**. Scanner trả `INVENTORY_INCOMPLETE`, lỗi `NO_ELIGIBLE_SOURCE_FILES` và mã thoát 3; regression test kiểm chứng trường hợp chỉ có README.
+- Tổng bộ scanner hiện có **22 unit tests được soạn**. CI của HEAD mới nhất và workflow H72 chuyên biệt vẫn cần bằng chứng PASS. Không nâng số lượng này thành bằng chứng staging thật; `NO_GO` và 0/18 kiểm tra staging không đổi.
