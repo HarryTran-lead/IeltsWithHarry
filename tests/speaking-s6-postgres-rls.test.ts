@@ -147,6 +147,17 @@ describe("Speaking S6 L14-L17 actual PostgreSQL migration & ownership smoke (PGl
         [alice]
       );
       await expect(start("S6-001-G04")).rejects.toThrow("S6_START_RATE_LIMIT");
+
+      await db.query(
+        "update public.speaking_s6_start_quotas set hour_count=0,day_count=30 where user_id=$1 and preview=false",
+        [alice]
+      );
+      await expect(start("S6-001-G04")).rejects.toThrow("S6_START_RATE_LIMIT");
+      await expect(start("S6-002-G04")).rejects.toThrow("S6_START_INVALID");
+      await expect(db.query(
+        "select public.speaking_s6_start_attempt_l25($1::uuid,$2,$3,$4,$5,$6,$7)",
+        [bob,"S6-001","L18_TEST","S6-001-G02","guided",false,false]
+      )).rejects.toThrow("S6_LOCKED");
       // The next authenticated direct-table tests use only the seed attempts.
 
 
