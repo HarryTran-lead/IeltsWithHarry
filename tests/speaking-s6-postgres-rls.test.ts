@@ -61,6 +61,7 @@ describe("Speaking S6 L14-L17 actual PostgreSQL migration & ownership smoke (PGl
         "202611170005_speaking_s6_s5_rls_l17.sql",
         "202611170006_speaking_s6_attempt_limits_l25.sql",
         "202611170007_speaking_s6_cooldown_atomic_l26.sql",
+        "202611170008_speaking_s6_audio_evidence_l27.sql",
       ]) await db.exec(migration(name));
 
       // Check safe defaults.
@@ -191,6 +192,15 @@ describe("Speaking S6 L14-L17 actual PostgreSQL migration & ownership smoke (PGl
         "insert into storage.objects(bucket_id,name) values ($1,$2)",
         ["speaking-s6-recordings",alice+"/"+attemptAlice+".webm"]
       );
+      // L27: users may read their own file, but direct client DELETE is forbidden
+      // even before submission. Only the owner-scoped session API service role deletes.
+      const forbiddenDelete = await db.query(
+        "delete from storage.objects where bucket_id='speaking-s6-recordings' returning name"
+      );
+      expect(forbiddenDelete.rows).toEqual([]);
+      expect((await db.query(
+        "select name from storage.objects where bucket_id='speaking-s6-recordings'"
+      )).rows).toHaveLength(1);
       await expect(db.query(
         "insert into storage.objects(bucket_id,name) values ($1,$2)",
         ["speaking-s6-recordings",bob+"/"+attemptBob+".webm"]
@@ -251,6 +261,7 @@ describe("M10-L26 PGlite atomic admission interleaving (NOT independent database
         "202611170005_speaking_s6_s5_rls_l17.sql",
         "202611170006_speaking_s6_attempt_limits_l25.sql",
         "202611170007_speaking_s6_cooldown_atomic_l26.sql",
+        "202611170008_speaking_s6_audio_evidence_l27.sql",
       ]) await db.exec(migration(file));
       const student = JSON.stringify({lesson_id:"S6-001"});
       const privateBank = JSON.stringify({guided:{},independent:{},mastery:{}});
