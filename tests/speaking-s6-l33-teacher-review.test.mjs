@@ -200,6 +200,16 @@ describe("M10-L33 teacher QA metadata and local-only content signals",()=>{
   r.lessons[0].rubric.privacy_and_accessibility=0;
   expect(auditL33TeacherReviews(r).valid).toBe(false);
  });
+ it("blocks an import-invalid package even when the L33 study structure appears complete",()=>{
+  const p=syntheticPackage();
+  delete p.lesson.guided[0].model_ref;
+  delete p.lesson.independent[0].prompt_ref;
+  delete p.privateLesson.guided["S6-001-G01"].question_en;
+  p.hash=sha(p.lesson);p.privateHash=sha(p.privateLesson);
+  const result=inspectL33LocalPackage(p);
+  expect(result.failed_check_codes).toContain("import_contract_field_alignment");
+  expect(result.teacher_quality_approved).toBe(false);
+ });
  it("detects student and teacher hash tampering",()=>{
   const p=syntheticPackage();p.lesson.steps[0].instruction_en="Tampered student content";
   p.privateLesson.guided["S6-001-G01"].model_answer_en="Tampered teacher answer";
