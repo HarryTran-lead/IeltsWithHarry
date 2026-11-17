@@ -64,5 +64,22 @@ class H73CredentialIsolationTests(unittest.TestCase):
         self.assertIn("Do NOT reuse Supabase service-role keys", ENV_TEMPLATE)
 
 
+    def test_h73_manifest_covers_exactly_the_h72_32_paths_and_never_claims_staging(self):
+        import json
+        register = json.loads((ROOT / "evidence/h73_privileged_client_static_triage.json").read_text(encoding="utf-8"))
+        base = (ROOT / "docs/R19_H72_STATIC_REVIEW_REGISTER_20261117.md").read_text(encoding="utf-8")
+        h72_paths = set(re.findall(r"^- \\[ \\] \\x60([^\\x60]+)\\x60 — deployment/H58 access", base, flags=re.M))
+        recorded_paths = [item["path"] for item in register["items"]]
+        self.assertEqual(len(recorded_paths), 32)
+        self.assertEqual(len(set(recorded_paths)), 32)
+        self.assertEqual(set(recorded_paths), h72_paths)
+        self.assertEqual(sum(register["counts"].values()), 32)
+        self.assertEqual(register["counts"]["DIRECT_PRIVILEGED_CLIENT"], 7)
+        self.assertEqual(register["counts"]["TRANSITIVE_BANK_CLIENT"], 21)
+        self.assertEqual(register["release_gate"], "NO_GO")
+        self.assertEqual(register["staging_checks_passed"], 0)
+        self.assertTrue(all(item["reviewer"] == "PENDING" for item in register["items"]))
+
+
 if __name__ == "__main__":
     unittest.main()
