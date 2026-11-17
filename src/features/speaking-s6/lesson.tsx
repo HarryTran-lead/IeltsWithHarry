@@ -40,7 +40,13 @@ function prettyError(error:unknown){
   "S6_AUDIO_SIZE_INVALID":"Bản ghi trống hoặc vượt quá 10 MB.",
   "S6_UNSUPPORTED_AUDIO_FORMAT":"Định dạng audio chưa được hỗ trợ.",
   "S6_AUDIO_PATH_INVALID":"Phiên ghi âm không hợp lệ.",
-  "S6_AUDIO_CHANGED_AFTER_UPLOAD":"Bạn đã ghi lại sau khi tải audio lên. Hãy xóa phiên và bắt đầu phiên mới để bản ghi không bị lệch."
+  "S6_AUDIO_CHANGED_AFTER_UPLOAD":"Bạn đã ghi lại sau khi tải audio lên. Hãy xóa phiên và bắt đầu phiên mới để bản ghi không bị lệch.",
+  "S6_START_RATE_LIMIT":"Bạn đã đạt giới hạn mở bài Speaking S6 trong giờ hoặc ngày. Hãy quay lại sau.",
+  "S6_START_COOLDOWN":"Bạn vừa mở câu hỏi này. Hãy sử dụng phiên đang có hoặc thử lại sau 10 phút.",
+  "S6_START_ACTIVE_LIMIT":"Bạn đang có quá nhiều phiên chưa nộp. Hãy hoàn thành hoặc xóa phiên cũ trước khi mở câu mới.",
+  "CROSS_ORIGIN_DENIED":"Yêu cầu không đến từ trang đang học. Vui lòng tải lại trang.",
+  "ORIGIN_REQUIRED":"Không xác nhận được nguồn yêu cầu. Hãy tải lại trang và thử lại.",
+  "JSON_REQUIRED":"Yêu cầu không đúng định dạng. Vui lòng tải lại trang."
  };
  const key=text.split(" (")[0];return labels[key]??text;
 }
