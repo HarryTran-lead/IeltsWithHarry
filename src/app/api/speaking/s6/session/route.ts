@@ -1,7 +1,7 @@
-import { randomUUID } from "node:crypto";
 import { z } from "zod";
 import { bankClient, viewer } from "@/lib/ielts-bank/server";
 import { s6SessionErrorResponse, s6SessionNoStore } from "@/lib/speaking-s6/session-errors";
+import { s6MutationGuard } from "@/lib/speaking-s6/mutation-guard";
 import { activityId, lessonId } from "@/lib/speaking-s6/contract";
 import { s6AccessAllowed } from "@/lib/speaking-s6/access";
 export const runtime="nodejs";
@@ -18,6 +18,8 @@ type BankEntry={question_en?:string;followup_en?:string;model_answer_en?:string;
 type Bank={guided:Record<string,BankEntry>;independent:Record<string,BankEntry>;mastery:Record<string,BankEntry>};
 const noStore=s6SessionNoStore;
 export async function POST(request:Request){
+  const guard=s6MutationGuard(request);
+  if(guard)return guard;
   try {
     if(Number(request.headers.get("content-length")||0)>30000)
       return Response.json({error:"BODY_TOO_LARGE"},{status:413});
@@ -48,12 +50,27 @@ export async function POST(request:Request){
       const question=mode==="guided"?publicGuided?.question_en:entry.question_en;
       if(typeof question!=="string"||!question.trim())
         return Response.json({error:"BANK_MISSING"},{status:503,headers:noStore});
-      const attemptId=randomUUID();
-      const write=await db.from("speaking_s6_attempts").insert({
-        id:attemptId,user_id:user.id,lesson_code:body.lessonId,revision:rev,
-        activity_id:body.activityId,mode,preview:body.preview,audio_storage_consent:body.audioStorageConsent
+      // An atomic PostgreSQL RPC admits and records this start under a user-row lock.
+      // Missing L25 migration => fail closed; no fallback to an unmetered INSERT.
+      const admitted=await db.rpc("speaking_s6_start_attempt_l25",{
+        p_user_id:user.id,p_lesson_code:body.lessonId,p_revision:rev,
+        p_activity_id:body.activityId,p_mode:mode,p_preview:body.preview,
+        p_audio_storage_consent:body.audioStorageConsent
       });
-      if(write.error)throw new Error(write.error.message);
+      if(admitted.error){
+        const code=admitted.error.message;
+        if(code==="S6_START_RATE_LIMIT"||code==="S6_START_COOLDOWN"||
+            code==="S6_START_ACTIVE_LIMIT")
+          return Response.json({error:code},{status:429,
+            headers:{...noStore,"Retry-After":code==="S6_START_RATE_LIMIT"?"3600":"600"}});
+        if(code==="S6_LOCKED"||code==="S6_REVISION_UNAVAILABLE")
+          return Response.json({error:"S6_LOCKED"},{status:404,headers:noStore});
+        // Never reflect operational SQL messages.
+        return Response.json({error:"S6_SESSION_UNAVAILABLE"},{status:503,headers:noStore});
+      }
+      const parsedId=z.uuid().safeParse(admitted.data);
+      if(!parsedId.success) return Response.json({error:"S6_SESSION_UNAVAILABLE"},{status:503,headers:noStore});
+      const attemptId=parsedId.data;
       return Response.json({attemptId,mode,audioStorageConsent:body.audioStorageConsent,
         question},
         {status:201,headers:noStore});
@@ -136,6 +153,8 @@ export async function POST(request:Request){
   }
 }
 export async function DELETE(request:Request){
+  const guard=s6MutationGuard(request,false);
+  if(guard)return guard;
   try{
     const user=await viewer();
     const attemptId=z.uuid().parse(new URL(request.url).searchParams.get("attemptId"));
