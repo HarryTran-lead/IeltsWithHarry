@@ -150,6 +150,30 @@ class H72StaticAuditTests(unittest.TestCase):
         self.assertEqual(inventory["release_gate"],"NO_GO")
         self.assertEqual(inventory["coverage"]["skipped"][0]["reason"],"LARGE_SOURCE_FILE")
 
+    def test_sha_bound_scan_rejects_assume_unchanged_index_flag(self):
+        root=self.project({"src/lib/a.ts":"export const version=1;"})
+        subprocess.run(["git","-C",str(root),"init","-q"],check=True)
+        subprocess.run(["git","-C",str(root),"add","src/lib/a.ts"],check=True)
+        subprocess.run(["git","-C",str(root),"-c","user.name=H72 Test",
+                        "-c","user.email=h72@example.invalid",
+                        "-c","commit.gpgsign=false","commit","-qm","baseline"],check=True)
+        subprocess.run(["git","-C",str(root),"update-index","--assume-unchanged","src/lib/a.ts"],check=True)
+        (root/"src/lib/a.ts").write_text("export const version=2;",encoding="utf-8")
+        # Git status intentionally hides the modified tracked file.
+        with self.assertRaisesRegex(ValueError,"tracked index has unverified"):
+            audit.assert_clean_tracked_tree(root)
+
+    def test_sha_bound_scan_rejects_skip_worktree_flag(self):
+        root=self.project({"src/lib/a.ts":"export const version=1;"})
+        subprocess.run(["git","-C",str(root),"init","-q"],check=True)
+        subprocess.run(["git","-C",str(root),"add","src/lib/a.ts"],check=True)
+        subprocess.run(["git","-C",str(root),"-c","user.name=H72 Test",
+                        "-c","user.email=h72@example.invalid",
+                        "-c","commit.gpgsign=false","commit","-qm","baseline"],check=True)
+        subprocess.run(["git","-C",str(root),"update-index","--skip-worktree","src/lib/a.ts"],check=True)
+        with self.assertRaisesRegex(ValueError,"tracked index has unverified"):
+            audit.assert_clean_tracked_tree(root)
+
     def test_markdown_disclaims_no_matches(self):
         root=self.project({"src/lib/clean.ts":"export const clean = true"})
         report=audit.analyze(root,["src/lib/clean.ts"],COMMIT)
