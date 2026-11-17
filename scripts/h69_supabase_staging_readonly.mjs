@@ -1,6 +1,4 @@
 // H69 opt-in LIVE Supabase STAGING smoke test. Never imports service_role or writes teacher reviews.
-import { createClient } from "@supabase/supabase-js";
-
 function stop(status, reason) {
   console.log(JSON.stringify({ milestone: "H69", scope: "LIVE_STAGING", status, reason, releaseGate: "NO_GO" }));
   process.exitCode = status === "PASS" ? 0 : status === "NOT_TESTED" ? 2 : 1;
@@ -27,6 +25,7 @@ if (env.H69_ALLOW_READ_ONLY_PROBE !== "YES_AUTHORIZED_STAGING") {
     stop("NOT_TESTED", "Missing dedicated staging credentials or invalid project guard");
   } else {
     try {
+      const { createClient } = await import("@supabase/supabase-js");
       const client = createClient(address, env.H69_SUPABASE_ANON_KEY, {
         auth: { persistSession: false, autoRefreshToken: false, detectSessionInUrl: false },
       });
