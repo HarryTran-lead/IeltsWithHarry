@@ -79,4 +79,4 @@ if psql "$H68_PG_DSN" -X -q -v ON_ERROR_STOP=1 -c 'SET ROLE authenticated' -c 'S
 fi
 expect_eq "$(psql "$H68_PG_DSN" -X -qAt -c "SELECT count(*) FROM pg_proc WHERE proname='h68_export_gold'")" 0 'no export RPC'
 echo 'PASS 8/9 holdout non-exposure'
-echo 'H68 REAL POSTGRESQL 16 CI: 8/9 PASSED; STAGING SECURITY STILL NOT_TESTED'
+echo 'H68 REAL POSTGRESQL 16 CI: 9/9 PASSED; STAGING SECURITY STILL NOT_TESTED'
