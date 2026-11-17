@@ -43,3 +43,8 @@ grant select on public.speaking_s6_study_progress to authenticated;
 
 comment on table public.speaking_s6_study_progress
  is 'Self-study completion only, never official IELTS scoring or S7 progression authorization.';
+
+-- Server-side service-role access is required for the guarded learner APIs.
+grant execute on function public.speaking_s6_release_ready() to service_role;
+grant select on public.speaking_s6_s5_eligibility to service_role;
+grant select,insert,update,delete on public.speaking_s6_study_progress to service_role;
