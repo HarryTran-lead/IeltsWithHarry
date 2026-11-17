@@ -1,6 +1,7 @@
 import { randomUUID } from "node:crypto";
 import { z } from "zod";
-import { bankClient, viewer, requestError } from "@/lib/ielts-bank/server";
+import { bankClient, viewer } from "@/lib/ielts-bank/server";
+import { s6SessionErrorResponse, s6SessionNoStore } from "@/lib/speaking-s6/session-errors";
 import { activityId, lessonId } from "@/lib/speaking-s6/contract";
 import { s6AccessAllowed } from "@/lib/speaking-s6/access";
 export const runtime="nodejs";
@@ -15,7 +16,7 @@ const commands=z.discriminatedUnion("action",[
 type BankEntry={question_en?:string;followup_en?:string;model_answer_en?:string;
   model_translation_vi?:string;teaching_explanation_en?:string;teacher_reasoning_vi?:string};
 type Bank={guided:Record<string,BankEntry>;independent:Record<string,BankEntry>;mastery:Record<string,BankEntry>};
-const noStore={"Cache-Control":"private, no-store"};
+const noStore=s6SessionNoStore;
 export async function POST(request:Request){
   try {
     if(Number(request.headers.get("content-length")||0)>30000)
@@ -44,6 +45,9 @@ export async function POST(request:Request){
       const publicGuided=(found.data.student_content as {guided?:{activity_id:string;question_en:string}[]})
         .guided?.find(x=>x.activity_id===body.activityId);
       if(mode==="guided" && !publicGuided)return Response.json({error:"ACTIVITY_NOT_FOUND"},{status:404});
+      const question=mode==="guided"?publicGuided?.question_en:entry.question_en;
+      if(typeof question!=="string"||!question.trim())
+        return Response.json({error:"BANK_MISSING"},{status:503,headers:noStore});
       const attemptId=randomUUID();
       const write=await db.from("speaking_s6_attempts").insert({
         id:attemptId,user_id:user.id,lesson_code:body.lessonId,revision:rev,
@@ -51,7 +55,7 @@ export async function POST(request:Request){
       });
       if(write.error)throw new Error(write.error.message);
       return Response.json({attemptId,mode,audioStorageConsent:body.audioStorageConsent,
-        question:mode==="guided"?publicGuided!.question_en:entry.question_en},
+        question},
         {status:201,headers:noStore});
     }
     const r=await db.from("speaking_s6_attempts")
@@ -104,24 +108,31 @@ export async function POST(request:Request){
       }
       return Response.json({ok:true,scored:false},{headers:noStore});
     }
-    if(a.phase!=="submitted")return Response.json({error:"SUBMISSION_REQUIRED"},{status:409});
+    if(a.phase!=="submitted")return Response.json({error:"SUBMISSION_REQUIRED"},{status:409,headers:noStore});
+    // Deny wrong-mode requests BEFORE querying the private answer bank.
+    if(body.action==="followup"&&a.mode!=="mastery")
+      return Response.json({error:"WRONG_MODE"},{status:403,headers:noStore});
+    if(body.action==="guidedFeedback"&&a.mode!=="guided")
+      return Response.json({error:"WRONG_MODE"},{status:403,headers:noStore});
     const q=await db.from("speaking_s6_private_revisions").select("bank")
       .eq("lesson_code",a.lesson_code).eq("revision",a.revision).maybeSingle();
     if(q.error || !q.data)return Response.json({error:"BANK_MISSING"},{status:503});
     const bank=q.data.bank as Bank;
     if(body.action==="followup"){
-      if(a.mode!=="mastery")return Response.json({error:"WRONG_MODE"},{status:403});
-      return Response.json({followup:bank.mastery?.[a.activity_id]?.followup_en??null},{headers:noStore});
+      const followup=bank.mastery?.[a.activity_id]?.followup_en;
+      if(typeof followup!=="string"||!followup.trim())
+        return Response.json({error:"BANK_MISSING"},{status:503,headers:noStore});
+      return Response.json({followup},{headers:noStore});
     }
-    if(a.mode!=="guided")return Response.json({error:"WRONG_MODE"},{status:403});
     const entry=bank.guided?.[a.activity_id];
-    if(!entry)return Response.json({error:"ACTIVITY_NOT_FOUND"},{status:404});
+    if(!entry)return Response.json({error:"ACTIVITY_NOT_FOUND"},{status:404,headers:noStore});
+    if(typeof entry.model_answer_en!=="string"||!entry.model_answer_en.trim())
+      return Response.json({error:"BANK_MISSING"},{status:503,headers:noStore});
     return Response.json({model:entry.model_answer_en,translation_vi:entry.model_translation_vi,
       explanation_en:entry.teaching_explanation_en,explanation_vi:entry.teacher_reasoning_vi},
       {headers:noStore});
   } catch(e){
-    if(e instanceof z.ZodError)return Response.json({error:"SCHEMA_INVALID",details:e.issues},{status:422});
-    return requestError(e);
+    return s6SessionErrorResponse(e);
   }
 }
 export async function DELETE(request:Request){
@@ -139,5 +150,5 @@ export async function DELETE(request:Request){
       .eq("id",attemptId).eq("user_id",user.id);
     if(deleted.error)throw new Error(deleted.error.message);
     return Response.json({ok:true},{headers:noStore});
-  }catch(e){return requestError(e);}
+  }catch(e){return s6SessionErrorResponse(e);}
 }
