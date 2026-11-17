@@ -1,0 +1,52 @@
+name: H73 Privileged Client Triage (static only)
+
+on:
+  push:
+    branches:
+      - codex/r19-h73-privileged-client-triage-20261117
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  credential-isolation:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: H73 synthetic credential isolation tests
+        run: python3 -m unittest discover -s tests -p test_h73_privilege_isolation.py -v
+      - name: H72 scanner regression tests (retained by stacked H73 branch)
+        run: python3 -m unittest discover -s tests -p test_h72_dependency_audit.py -v
+      - name: Assert static test is not live staging release approval
+        run: |
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+          path=Path("reports/h73_ci_receipt.json")
+          path.parent.mkdir(parents=True, exist_ok=True)
+          path.write_text(json.dumps({"evidence_scope":"STATIC_TEST_ONLY","staging_checks_passed":0,"staging_checks_total":18,"release_gate":"NO_GO"},indent=2),encoding="utf-8")
+          PY
+      - name: Retain non-attesting H73 diagnostics
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: h73-privilege-triage-non-attesting
+          if-no-files-found: warn
+          retention-days: 7
+          path: |
+            src/lib/grammar/placement.ts
+            .env.example
+            tests/test_h73_privilege_isolation.py
+            evidence/h73_privileged_client_static_triage.json
+            docs/R19_H73_PRIVILEGED_CLIENT_TRIAGE_VI.md
+            reports/h73_ci_receipt.json

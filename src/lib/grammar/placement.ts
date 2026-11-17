@@ -10,9 +10,12 @@ type AnswerKey = Choice & { correct: string; accepted: string[] };
 type Ticket = { userId: string; target: GrammarLevel; ids: string[]; expires: number };
 
 function secret() {
-  const value = process.env.GRAMMAR_ASSESSMENT_SECRET || process.env.SUPABASE_SERVICE_ROLE_KEY;
-  if (!value && process.env.NEXT_PUBLIC_DEMO_MODE !== "true") throw new Error("Grammar assessment signing key is not configured");
-  return value || "local-demo-grammar-assessment-only";
+  // H73: use a dedicated signing secret. Supabase service-role credentials
+  // must never double as application token-signing material.
+  const value = process.env.GRAMMAR_ASSESSMENT_SECRET?.trim();
+  if (value) return value;
+  if (process.env.NEXT_PUBLIC_DEMO_MODE === "true") return "local-demo-grammar-assessment-only";
+  throw new Error("Grammar assessment signing key is not configured");
 }
 
 function sign(payload: string) {
