@@ -1,0 +1,140 @@
+{
+  "milestone": "H72",
+  "evidence_class": "NON_ATTESTED_TEMPLATE",
+  "release_gate": "NO_GO",
+  "repository": "HarryTran-lead/IeltsWithHarry",
+  "staging_project_ref": null,
+  "deploy_commit_sha": null,
+  "independent_dba_approval": null,
+  "independent_security_approval": null,
+  "verified_teacher_gold": 0,
+  "live_staging_checks": [
+    {
+      "id": "STAGE_PROJECT_IDENTITY",
+      "status": "NOT_TESTED",
+      "artifact_path": null,
+      "sha256": null,
+      "independent_verifier": null
+    },
+    {
+      "id": "HTTPS_ORIGIN",
+      "status": "NOT_TESTED",
+      "artifact_path": null,
+      "sha256": null,
+      "independent_verifier": null
+    },
+    {
+      "id": "AUTH_GETUSER_TEACHER_A",
+      "status": "NOT_TESTED",
+      "artifact_path": null,
+      "sha256": null,
+      "independent_verifier": null
+    },
+    {
+      "id": "AUTH_GETUSER_TEACHER_B",
+      "status": "NOT_TESTED",
+      "artifact_path": null,
+      "sha256": null,
+      "independent_verifier": null
+    },
+    {
+      "id": "AUTH_GETUSER_TEACHER_C",
+      "status": "NOT_TESTED",
+      "artifact_path": null,
+      "sha256": null,
+      "independent_verifier": null
+    },
+    {
+      "id": "AUTH_OUTSIDER_DENIED",
+      "status": "NOT_TESTED",
+      "artifact_path": null,
+      "sha256": null,
+      "independent_verifier": null
+    },
+    {
+      "id": "AUTH_OWNER_DENIED",
+      "status": "NOT_TESTED",
+      "artifact_path": null,
+      "sha256": null,
+      "independent_verifier": null
+    },
+    {
+      "id": "ANON_RPC_DENIED",
+      "status": "NOT_TESTED",
+      "artifact_path": null,
+      "sha256": null,
+      "independent_verifier": null
+    },
+    {
+      "id": "PRIVATE_H58_TABLE_READ_DENIED",
+      "status": "NOT_TESTED",
+      "artifact_path": null,
+      "sha256": null,
+      "independent_verifier": null
+    },
+    {
+      "id": "H58_RLS_FORCE_INVENTORY",
+      "status": "NOT_TESTED",
+      "artifact_path": null,
+      "sha256": null,
+      "independent_verifier": null
+    },
+    {
+      "id": "H61_SERVICE_ROLE_LEAST_PRIVILEGE",
+      "status": "NOT_TESTED",
+      "artifact_path": null,
+      "sha256": null,
+      "independent_verifier": null
+    },
+    {
+      "id": "H68_DB_KILL_SWITCH_DEFAULT_DENY",
+      "status": "NOT_TESTED",
+      "artifact_path": null,
+      "sha256": null,
+      "independent_verifier": null
+    },
+    {
+      "id": "H68_STAGING_TEACHER_A_SUBMIT",
+      "status": "NOT_TESTED",
+      "artifact_path": null,
+      "sha256": null,
+      "independent_verifier": null
+    },
+    {
+      "id": "H68_STAGING_THREE_REVIEWER_ISOLATION",
+      "status": "NOT_TESTED",
+      "artifact_path": null,
+      "sha256": null,
+      "independent_verifier": null
+    },
+    {
+      "id": "H68_REPLAY_ATOMICITY",
+      "status": "NOT_TESTED",
+      "artifact_path": null,
+      "sha256": null,
+      "independent_verifier": null
+    },
+    {
+      "id": "H68_AUDIT_ROLLBACK_REAL_STAGING",
+      "status": "NOT_TESTED",
+      "artifact_path": null,
+      "sha256": null,
+      "independent_verifier": null
+    },
+    {
+      "id": "H68_RATE_LIMIT_MULTI_CONNECTION",
+      "status": "NOT_TESTED",
+      "artifact_path": null,
+      "sha256": null,
+      "independent_verifier": null
+    },
+    {
+      "id": "HOLDOUT_NO_EXPORT",
+      "status": "NOT_TESTED",
+      "artifact_path": null,
+      "sha256": null,
+      "independent_verifier": null
+    }
+  ],
+  "documentation": "Static code and PostgreSQL CI evidence must not be used as live Supabase staging evidence."
+}
