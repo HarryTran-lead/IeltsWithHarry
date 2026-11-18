@@ -152,7 +152,7 @@ it("seeks a second official page when the first page cannot support a full passa
   const fetcher = (async (url: RequestInfo | URL, init?: RequestInit) => {
     if ([first, second].includes(String(url))) return new Response(`<main>${"Official detail about one event. ".repeat(30)}</main>`, { headers: { "Content-Type": "text/html" } });
     const body = String(init?.body);
-    if (body.includes("googleSearch")) {
+    if (body.includes("Official RSS pages:")) {
       searches++;
       return Response.json({ candidates: [{ finishReason: "STOP", content: { parts: [{ text: JSON.stringify({ source_urls: [first, second] }) }] } }] });
     }
@@ -161,7 +161,8 @@ it("seeks a second official page when the first page cannot support a full passa
     return Response.json({ candidates: [{ finishReason: "STOP", content: { parts: [{ text: JSON.stringify({ topic: "A public development in Vietnam", facts }) }] } }] });
   }) as typeof fetch;
   try {
-    const result = await findIndependentDossier({ title: "Official event in Vietnam", canonical_url: first, category: "Education" } as NewsItem, fetcher);
+    const result = await findIndependentDossier({ title: "Official event in Vietnam", canonical_url: first, category: "Education" } as NewsItem, fetcher,
+      [{ title: "Further official details of the event", canonical_url: second }]);
     expect(result.success).toBe(true);
     expect(searches).toBe(1);
     if (result.success) expect(result.data.facts).toHaveLength(13);
@@ -185,24 +186,23 @@ it("classifies varied ministry leads before fact research without copying feed c
   expect(result).not.toHaveProperty("bodies");
 });
 
-it("filters newspaper citations from grounded facts before validating the dossier", async () => {
+it("accepts only supplied official URLs when selecting factual sources", async () => {
   const previous = process.env.NEWS_ARTICLE_GEMINI_API_KEY;
   process.env.NEWS_ARTICLE_GEMINI_API_KEY = "test-key";
-  const official = "https://vertexaisearch.cloud.google.com/grounding-api-redirect/official";
-  const newspaper = "https://vertexaisearch.cloud.google.com/grounding-api-redirect/newspaper";
+  const official = "https://chinhphu.vn/announcement";
+  const newspaper = "https://e.vnexpress.net/story";
   const fetcher = (async (url: RequestInfo | URL, init?: RequestInit) => {
-    if (String(url) === official) return new Response(null, { status: 302, headers: { location: "https://chinhphu.vn/announcement" } });
-    if (String(url) === newspaper) return new Response(null, { status: 302, headers: { location: "https://e.vnexpress.net/story" } });
-    if (String(url) === "https://chinhphu.vn/announcement") return new Response(`<main>${"Independent official detail. ".repeat(30)}</main>`, { headers: { "Content-Type": "text/html" } });
-    if (String(init?.body).includes("googleSearch")) return Response.json({ candidates: [{ finishReason: "STOP", content: { parts: [{ text: JSON.stringify({ source_urls: [official, newspaper] }) }] } }] });
-    const facts = Array.from({ length: 12 }, (_, index) => ({ claim: `An official announcement provides independent factual detail number ${index + 1}.`, source_url: "https://chinhphu.vn/announcement" }));
+    if (String(url) === official) return new Response(`<main>${"Independent official detail. ".repeat(30)}</main>`, { headers: { "Content-Type": "text/html" } });
+    if (String(init?.body).includes("Official RSS pages:")) return Response.json({ candidates: [{ finishReason: "STOP", content: { parts: [{ text: JSON.stringify({ source_urls: [official, newspaper] }) }] } }] });
+    const facts = Array.from({ length: 12 }, (_, index) => ({ claim: `An official announcement provides independent factual detail number ${index + 1}.`, source_url: official }));
     facts.push({ claim: "A newspaper gives an extra detail that must be discarded.", source_url: newspaper });
     return Response.json({ candidates: [{ finishReason: "STOP", content: { parts: [{ text: JSON.stringify({ topic: "A verified account of a public announcement", facts }) }] } }] });
   }) as typeof fetch;
   try {
-    const result = await findIndependentDossier({ title: "Public announcement prompts new discussion", category: "World News" } as NewsItem, fetcher);
+    const result = await findIndependentDossier({ title: "Public announcement prompts new discussion", category: "World News" } as NewsItem, fetcher,
+      [{ title: "Official public announcement", canonical_url: official }, { title: "Press account", canonical_url: newspaper }]);
     expect(result.success).toBe(true);
-    if (result.success) expect(result.data.facts.every((fact) => fact.source_url === "https://chinhphu.vn/announcement")).toBe(true);
+    if (result.success) expect(result.data.facts.every((fact) => fact.source_url === official)).toBe(true);
   } finally { if (previous === undefined) delete process.env.NEWS_ARTICLE_GEMINI_API_KEY; else process.env.NEWS_ARTICLE_GEMINI_API_KEY = previous; }
 });
 
@@ -225,13 +225,14 @@ it("uses a limited report excerpt for at most three cited facts after finding an
   const fetcher = (async (url: RequestInfo | URL, init?: RequestInit) => {
     if (String(url) === original) return new Response(`<main>${"Official information about the student event. ".repeat(25)}</main>`, { headers: { "Content-Type": "text/html" } });
     if (String(url) === report) return new Response(`<article>${Array.from({ length: 9 }, (_, index) => `<p>Newspaper factual paragraph ${index + 1} about students taking part in the event on a published date.</p>`).join("")}</article>`, { headers: { "Content-Type": "text/html" } });
-    if (String(init?.body).includes("googleSearch")) return Response.json({ candidates: [{ finishReason: "STOP", content: { parts: [{ text: JSON.stringify({ source_urls: [original] }) }] } }] });
+    if (String(init?.body).includes("Official RSS pages:")) return Response.json({ candidates: [{ finishReason: "STOP", content: { parts: [{ text: JSON.stringify({ source_urls: [original] }) }] } }] });
     const facts = Array.from({ length: 8 }, (_, index) => ({ claim: `Original announcement establishes distinct fact number ${index + 1} about the student event.`, source_url: original }));
     facts.push(...Array.from({ length: 5 }, (_, index) => ({ claim: `The press report supplies objective detail number ${index + 1} about the same student event.`, source_url: report })));
     return Response.json({ candidates: [{ finishReason: "STOP", content: { parts: [{ text: JSON.stringify({ topic: "A student event in Vietnam", facts }) }] } }] });
   }) as typeof fetch;
   try {
-    const result = await findIndependentDossier({ title: "Students gather for a new event", canonical_url: report, category: "Education" } as NewsItem, fetcher);
+    const result = await findIndependentDossier({ title: "Students gather for a new event", canonical_url: report, category: "Education" } as NewsItem, fetcher,
+      [{ title: "Official student event", canonical_url: original }]);
     expect(result.success).toBe(true);
     if (result.success) expect(result.data.facts.filter((fact) => fact.source_url === report)).toHaveLength(3);
   } finally { if (previous === undefined) delete process.env.NEWS_ARTICLE_GEMINI_API_KEY; else process.env.NEWS_ARTICLE_GEMINI_API_KEY = previous; }
@@ -263,7 +264,7 @@ it("keeps Government News feeds as discovery leads in distinct learning categori
   }
 });
 
-it("searches independent sources from the event title without sending press prose or URL", async () => {
+it("selects recent official feed pages from the event title without grounding or press prose", async () => {
   const previous = process.env.NEWS_ARTICLE_GEMINI_API_KEY;
   process.env.NEWS_ARTICLE_GEMINI_API_KEY = "test-key";
   const item = { title: "Science mission brings new findings to Vietnam", canonical_url: "https://news.tuoitre.vn/science-mission-123456.html", category: "Science" } as NewsItem;
@@ -271,7 +272,7 @@ it("searches independent sources from the event title without sending press pros
   const fetcher = (async (url: RequestInfo | URL, init?: RequestInit) => {
     if (String(url) === "https://www.nasa.gov/news-release/mission/") return new Response(`<main>${"NASA mission details on its official site. ".repeat(30)}</main>`, { headers: { "Content-Type": "text/html" } });
     const payload = JSON.parse(String(init?.body));
-    if (payload.tools) {
+    if (String(init?.body).includes("Official RSS pages:")) {
       searchPayload = payload;
       return Response.json({ candidates: [{ finishReason: "STOP", content: { parts: [{ text: JSON.stringify({ source_urls: ["https://www.nasa.gov/news-release/mission/"] }) }] } }] });
     }
@@ -279,9 +280,10 @@ it("searches independent sources from the event title without sending press pros
     return Response.json({ candidates: [{ finishReason: "STOP", content: { parts: [{ text: JSON.stringify({ topic: "An independent look at a scientific mission", facts }) }] } }] });
   }) as typeof fetch;
   try {
-    expect((await findIndependentDossier(item, fetcher)).success).toBe(true);
+    expect((await findIndependentDossier(item, fetcher,
+      [{ title: "Official details of the science mission", canonical_url: "https://www.nasa.gov/news-release/mission/" }])).success).toBe(true);
     const request = JSON.stringify(searchPayload);
-    expect(request).toContain("googleSearch");
+    expect(request).not.toContain("googleSearch");
     expect(request).toContain(item.title);
     expect(request).not.toContain(item.canonical_url);
     expect(request).not.toContain("Publisher's full prose");
