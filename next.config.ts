@@ -9,6 +9,7 @@ const avatarPattern = avatarOrigin ? new URL("/storage/v1/object/public/user-ava
 const mockFiles = ["./content/listening-mocks/tests/*.json", "./content/dictation-skill-lab/audio-manifest.json"];
 const skillLabFiles = ["./content/dictation-skill-lab/lessons/*.json", "./content/dictation-skill-lab/audio-manifest.json"];
 const writingTask2Files = ["./content/writing-task2/lessons.json", "./content/writing-task2/answers.json"];
+const writingTask1Files = ["./content/writing-task1/lessons.json", "./content/writing-task1/answers.json", "./content/writing-task1/private/*.json"];
 
 const nextConfig: NextConfig = {
   turbopack: { root: process.cwd() },
@@ -22,6 +23,8 @@ const nextConfig: NextConfig = {
     "/api/listening/mocks/**": mockFiles,
     "/api/self-study/writing-task-2": writingTask2Files,
     "/api/self-study/writing-task-2/**": writingTask2Files,
+    "/api/self-study/writing-task-1": writingTask1Files,
+    "/api/self-study/writing-task-1/**": writingTask1Files,
   },
   images: { remotePatterns: [
     { protocol: "https", hostname: "www.noaa.gov", pathname: "/sites/default/files/**" },

@@ -19,3 +19,6 @@ content/listening-tests/dist/
 
 # Raw TTS batches for the Skill Lab dictation audio (re-creatable, large)
 .cache/
+
+# Writing Task 1 Lab: owner-only Process answer keys (F37 package), never committed
+content/writing-task1/private/

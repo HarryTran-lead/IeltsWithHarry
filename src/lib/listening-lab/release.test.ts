@@ -9,7 +9,7 @@ describe("Listening Lab release gate", () => {
     expect(lockedLearnerPath("/app/self-study/listening")).toBe(false);
     expect(lockedLearnerPath("/app/self-study/listening/module/01")).toBe(false);
     expect(lockedLearnerPath("/app/self-study/reading")).toBe(true);
-    expect(lockedLearnerPath("/app/self-study/writing-task-1")).toBe(true);
+    expect(lockedLearnerPath("/app/self-study/speaking")).toBe(true);
   });
 
   it("can close the Listening Lab route with the emergency flag", () => {
