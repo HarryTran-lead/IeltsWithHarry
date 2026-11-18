@@ -1,0 +1,391 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "DICT-S2-051",
+  "status": "draft",
+  "level": "L6",
+  "section": 2,
+  "topic": "Sports Facilities",
+  "title": "Training Zones at the Regional Sports Centre",
+  "learning_objectives_vi": [
+    "Nghe và hiểu bài độc thoại Sports Facilities ở mức L6, phân biệt chi tiết chính/phụ.",
+    "Nhận ra thông tin cập nhật, điều kiện và phương án thay thế thay vì chọn chi tiết đầu tiên nghe được.",
+    "Chép chính xác các đoạn mục tiêu và giải thích bằng chứng theo thứ tự lời nói."
+  ],
+  "content_format": "section_practice",
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Guide / public information presenter (single narrator)",
+      "tts_voice_id": null,
+      "accent_requested": "british"
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "The regional sports centre is introducing a new system of training zones, designed to prevent overcrowding while major competitions take place. I will explain how the booking rules affect regular members.",
+      "translation_vi": "Trung tâm thể thao khu vực đang áp dụng hệ thống khu luyện tập mới để tránh quá tải khi diễn ra giải lớn. Tôi sẽ giải thích quy tắc đặt chỗ ảnh hưởng đến hội viên thường xuyên ra sao.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_2",
+        "monologue",
+        "l6",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "A",
+      "text_en": "The indoor running track will remain available in the mornings, but afternoon access is limited to registered athletics clubs. Members who normally train after work should use the outdoor circuit instead.",
+      "translation_vi": "Đường chạy trong nhà vẫn dùng được buổi sáng, nhưng chiều chỉ dành cho câu lạc bộ điền kinh đã đăng ký. Hội viên thường tập sau giờ làm nên dùng vòng chạy ngoài trời.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_2",
+        "monologue",
+        "l6",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "A",
+      "text_en": "Our strength-training room has increased its capacity from eighteen to twenty-four people, although each session must still be reserved through the mobile app. Walk-ins are no longer permitted.",
+      "translation_vi": "Phòng tập sức mạnh tăng sức chứa từ mười tám lên hai mươi bốn người, nhưng mỗi suất vẫn phải đặt qua ứng dụng điện thoại. Không nhận người đến không đặt trước.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_2",
+        "monologue",
+        "l6",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "A",
+      "text_en": "The rehabilitation studio is on the ground floor, directly behind the reception desk. It is not a general fitness area; entry requires referral from a qualified practitioner.",
+      "translation_vi": "Phòng tập phục hồi ở tầng trệt, ngay sau quầy lễ tân. Đây không phải khu thể lực thông thường; muốn vào cần giấy giới thiệu từ chuyên viên đủ trình độ.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_2",
+        "monologue",
+        "l6",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "A",
+      "text_en": "Beginners may join the orientation session at seven fifteen on Tuesday evening. Although the session is free, you need to select a place online to help us manage numbers.",
+      "translation_vi": "Người mới có thể dự buổi hướng dẫn lúc bảy giờ mười lăm tối thứ Ba. Dù miễn phí, bạn vẫn cần chọn chỗ trực tuyến để chúng tôi quản lý số người.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_2",
+        "monologue",
+        "l6",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "A",
+      "text_en": "Members attending competitions should enter through the northern doors, while spectators must use the main entrance and follow signs to the viewing gallery upstairs.",
+      "translation_vi": "Hội viên tham gia thi đấu nên vào cửa bắc, còn khán giả phải dùng cửa chính và theo biển lên khu khán đài tầng trên.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_2",
+        "monologue",
+        "l6",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "We'll review the arrangement after four weeks, using attendance data rather than complaints alone. Updates will appear in the app before any new access restrictions take effect.",
+      "translation_vi": "Chúng tôi sẽ đánh giá cách sắp xếp sau bốn tuần dựa trên dữ liệu đi tập chứ không chỉ lời phàn nàn. Cập nhật sẽ xuất hiện trong ứng dụng trước khi hạn chế mới có hiệu lực.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_2",
+        "monologue",
+        "l6",
+        "signposting"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "type": "note_completion",
+      "prompt": "Notes — Afternoon running track access for: ____",
+      "correct_answers": [
+        "registered athletics clubs"
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Đường chạy trong nhà vẫn dùng được buổi sáng, nhưng chiều chỉ dành cho câu lạc bộ điền kinh đã đăng ký. Hội viên thường tập sau giờ làm nên dùng vòng chạy ngoài trời. Đáp án được nhắc trong đoạn T02: “registered athletics clubs”.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_2",
+        "ielts_practice",
+        "detail_recognition"
+      ],
+      "word_limit": 3,
+      "instructions_en": "NO MORE THAN THREE WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q02",
+      "type": "table_completion",
+      "prompt": "Table — Strength room capacity now: ____",
+      "correct_answers": [
+        "twenty-four"
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Phòng tập sức mạnh tăng sức chứa từ mười tám lên hai mươi bốn người, nhưng mỗi suất vẫn phải đặt qua ứng dụng điện thoại. Không nhận người đến không đặt trước. Đáp án được nhắc trong đoạn T03: “twenty-four”.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_2",
+        "ielts_practice",
+        "detail_recognition"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q03",
+      "type": "sentence_completion",
+      "prompt": "Complete the sentence — Rehabilitation studio behind: ____",
+      "correct_answers": [
+        "reception desk"
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Phòng tập phục hồi ở tầng trệt, ngay sau quầy lễ tân. Đây không phải khu thể lực thông thường; muốn vào cần giấy giới thiệu từ chuyên viên đủ trình độ. Đáp án được nhắc trong đoạn T04: “reception desk”.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_2",
+        "ielts_practice",
+        "detail_recognition"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q04",
+      "type": "note_completion",
+      "prompt": "Notes — Beginner orientation at: ____",
+      "correct_answers": [
+        "seven fifteen"
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Người mới có thể dự buổi hướng dẫn lúc bảy giờ mười lăm tối thứ Ba. Dù miễn phí, bạn vẫn cần chọn chỗ trực tuyến để chúng tôi quản lý số người. Đáp án được nhắc trong đoạn T05: “seven fifteen”.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_2",
+        "ielts_practice",
+        "detail_recognition"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q05",
+      "type": "short_answer",
+      "prompt": "Answer briefly: Competition participants use?",
+      "correct_answers": [
+        "northern doors"
+      ],
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "explanation_vi": "Hội viên tham gia thi đấu nên vào cửa bắc, còn khán giả phải dùng cửa chính và theo biển lên khu khán đài tầng trên. Đáp án được nhắc trong đoạn T06: “northern doors”.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_2",
+        "ielts_practice",
+        "detail_recognition"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q06",
+      "type": "note_completion",
+      "prompt": "Notes — Arrangement reviewed after: ____",
+      "correct_answers": [
+        "four weeks"
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "Chúng tôi sẽ đánh giá cách sắp xếp sau bốn tuần dựa trên dữ liệu đi tập chứ không chỉ lời phàn nàn. Cập nhật sẽ xuất hiện trong ứng dụng trước khi hạn chế mới có hiệu lực. Đáp án được nhắc trong đoạn T07: “four weeks”.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_2",
+        "ielts_practice",
+        "detail_recognition"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "X01",
+      "type": "mcq",
+      "prompt": "What has changed in the strength-training room?",
+      "options": [
+        "capacity has risen to twenty-four",
+        "it is free for visitors",
+        "walk-ins are now accepted"
+      ],
+      "correct_answers": [
+        "capacity has risen to twenty-four"
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Phòng tập sức mạnh tăng sức chứa từ mười tám lên hai mươi bốn người, nhưng mỗi suất vẫn phải đặt qua ứng dụng điện thoại. Không nhận người đến không đặt trước. Trong ba lựa chọn, đáp án chính xác là “capacity has risen to twenty-four”.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "section_2",
+        "supplementary_mcq",
+        "distractor_detection",
+        "paraphrase"
+      ]
+    },
+    {
+      "question_id": "D01",
+      "type": "dictation",
+      "prompt": "Nghe và chép nguyên văn lời người dẫn tại đoạn T03.",
+      "correct_answers": [
+        "Our strength-training room has increased its capacity from eighteen to twenty-four people, although each session must still be reserved through the mobile app. Walk-ins are no longer permitted."
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Câu gốc: Our strength-training room has increased its capacity from eighteen to twenty-four people, although each session must still be reserved through the mobile app. Walk-ins are no longer permitted. Nghĩa: Phòng tập sức mạnh tăng sức chứa từ mười tám lên hai mươi bốn người, nhưng mỗi suất vẫn phải đặt qua ứng dụng điện thoại. Không nhận người đến không đặt trước. Chú ý từ chức năng, âm cuối và nhịp nói.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "exact_transcript",
+        "section_2"
+      ]
+    },
+    {
+      "question_id": "D02",
+      "type": "dictation",
+      "prompt": "Nghe và chép nguyên văn lời người dẫn tại đoạn T05.",
+      "correct_answers": [
+        "Beginners may join the orientation session at seven fifteen on Tuesday evening. Although the session is free, you need to select a place online to help us manage numbers."
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Câu gốc: Beginners may join the orientation session at seven fifteen on Tuesday evening. Although the session is free, you need to select a place online to help us manage numbers. Nghĩa: Người mới có thể dự buổi hướng dẫn lúc bảy giờ mười lăm tối thứ Ba. Dù miễn phí, bạn vẫn cần chọn chỗ trực tuyến để chúng tôi quản lý số người. Chú ý từ chức năng, âm cuối và nhịp nói.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "exact_transcript",
+        "section_2"
+      ]
+    },
+    {
+      "question_id": "G01",
+      "type": "gap_fill",
+      "prompt": "Nghe và điền từ/cụm từ còn thiếu: The indoor running track will remain available in the mornings, but afternoon access is limited to ____. Members who normally train after work should use the outdoor circuit instead.",
+      "correct_answers": [
+        "registered athletics clubs"
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Cụm “registered athletics clubs” xuất hiện trong câu gốc: The indoor running track will remain available in the mornings, but afternoon access is limited to registered athletics clubs. Members who normally train after work should use the outdoor circuit instead. Nghĩa: Đường chạy trong nhà vẫn dùng được buổi sáng, nhưng chiều chỉ dành cho câu lạc bộ điền kinh đã đăng ký. Hội viên thường tập sau giờ làm nên dùng vòng chạy ngoài trời.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "gap_fill",
+        "vocab_in_context",
+        "section_2"
+      ]
+    }
+  ],
+  "vocabulary": [
+    {
+      "term": "rehabilitation studio",
+      "pos": "n. phr.",
+      "meaning_vi": "phòng tập phục hồi",
+      "example_en": "The rehabilitation studio is on the ground floor, directly behind the reception desk. It is not a general fitness area; entry requires referral from a qualified practitioner.",
+      "example_vi": "Phòng tập phục hồi ở tầng trệt, ngay sau quầy lễ tân. Đây không phải khu thể lực thông thường; muốn vào cần giấy giới thiệu từ chuyên viên đủ trình độ.",
+      "source_turn_id": "T04"
+    },
+    {
+      "term": "registered athletics clubs",
+      "pos": "n. phr.",
+      "meaning_vi": "câu lạc bộ điền kinh đã đăng ký",
+      "example_en": "The indoor running track will remain available in the mornings, but afternoon access is limited to registered athletics clubs. Members who normally train after work should use the outdoor circuit instead.",
+      "example_vi": "Đường chạy trong nhà vẫn dùng được buổi sáng, nhưng chiều chỉ dành cho câu lạc bộ điền kinh đã đăng ký. Hội viên thường tập sau giờ làm nên dùng vòng chạy ngoài trời.",
+      "source_turn_id": "T02"
+    },
+    {
+      "term": "attendance data",
+      "pos": "n. phr.",
+      "meaning_vi": "dữ liệu tham gia",
+      "example_en": "We'll review the arrangement after four weeks, using attendance data rather than complaints alone. Updates will appear in the app before any new access restrictions take effect.",
+      "example_vi": "Chúng tôi sẽ đánh giá cách sắp xếp sau bốn tuần dựa trên dữ liệu đi tập chứ không chỉ lời phàn nàn. Cập nhật sẽ xuất hiện trong ứng dụng trước khi hạn chế mới có hiệu lực.",
+      "source_turn_id": "T07"
+    },
+    {
+      "term": "strength-training",
+      "pos": "adj.",
+      "meaning_vi": "liên quan tập sức mạnh",
+      "example_en": "Our strength-training room has increased its capacity from eighteen to twenty-four people, although each session must still be reserved through the mobile app. Walk-ins are no longer permitted.",
+      "example_vi": "Phòng tập sức mạnh tăng sức chứa từ mười tám lên hai mươi bốn người, nhưng mỗi suất vẫn phải đặt qua ứng dụng điện thoại. Không nhận người đến không đặt trước.",
+      "source_turn_id": "T03"
+    }
+  ],
+  "audio": {
+    "status": "not_generated",
+    "url": null,
+    "duration_ms": null,
+    "model": null,
+    "provider": null,
+    "voice_config": null,
+    "source_transcript_hash": "1d5daf4c80048c622abe29f8de98c0ade98e48869ceb79e7fd880b2a4418eaad",
+    "audio_sha256": null,
+    "format": null
+  },
+  "qa": {
+    "content_reviewed": false,
+    "answers_verified": false,
+    "audio_verified": false,
+    "rights_cleared": false,
+    "duplicate_reviewed": false,
+    "notes": [
+      "Original AI-assisted educational monologue; subject specialist review pending.",
+      "TTS, timestamps, audio verification and rights clearance are pending. Keep draft locked.",
+      "IELTS Section 2 practice, not an official IELTS Listening part or calibrated band test.",
+      "M16.2: automated edits are provisional; IELTS teacher final signoff, audio and rights clearance pending."
+    ]
+  },
+  "provenance": {
+    "content_origin": "original_ai_assisted",
+    "source_urls": [],
+    "source_rights_note": "Original learning text; obtain separate TTS service and distribution clearance, especially for under-18 users.",
+    "reviewer": null
+  },
+  "release_metadata": {
+    "published_at": null,
+    "version": 1
+  }
+}

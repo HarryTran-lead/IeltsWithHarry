@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useRef, useState, type FormEvent } from 'react';
+import { Settings2 } from 'lucide-react';
 import { useHeaderWeather } from './HeaderWeatherProvider';
 import { searchCities, weatherLabel, weatherSymbol } from './weatherApi';
 import { formatLocalClock, PHASE_LABELS } from './time';
@@ -16,7 +17,7 @@ const MODES: { value: HeaderDisplayMode; title: string; detail: string }[] = [
 /** Place inside existing right header actions, BEFORE streak/tasks/bell/avatar. */
 export function HeaderWeatherWidget() {
   const state = useHeaderWeather();
-  const { hydrated, mode, setMode, location, chooseCity, clearCity, requestCurrentLocation,
+  const { hydrated, mode, setMode, strength, setStrength, location, chooseCity, clearCity, requestCurrentLocation,
     locating, locationError, weather, weatherLoading, weatherError, now, timezone, phase } = state;
   const [open, setOpen] = useState(false);
   const [query, setQuery] = useState('');
@@ -74,11 +75,11 @@ export function HeaderWeatherWidget() {
   return (
     <div className={styles.widgetRoot} ref={root}>
       {active && (
-        <div className={styles.weatherChip} aria-live="polite">
+        <div className={styles.weatherChip} aria-live="polite" title={!location ? 'Chọn thành phố trong cài đặt thời tiết' : undefined}>
           <span className={styles.weatherEmoji} aria-hidden="true">{weather ? weatherSymbol(weather.weatherCode, weather.isDay) : '🧭'}</span>
           <div className={styles.weatherText}>
             <strong>
-              <span className={styles.weatherFullValue}>{weather ? `${Math.round(weather.temperatureC)}°C` : location ? '--°C' : 'Chọn thành phố'}</span>
+              <span className={styles.weatherFullValue}>{weather ? `${Math.round(weather.temperatureC)}°C` : location ? '--°C' : 'Chọn TP'}</span>
               <span className={styles.weatherCompactValue}>{weather ? `${Math.round(weather.temperatureC)}°C` : '--°C'}</span>
             </strong>
             <span className={styles.cityLabel} title={location?.name || 'Chưa chọn vị trí'}>{location?.name || 'Thời tiết theo vị trí'}</span>
@@ -94,7 +95,7 @@ export function HeaderWeatherWidget() {
         aria-expanded={open}
         title="Cài đặt hiệu ứng và thời tiết"
         onClick={() => setOpen((value) => !value)}
-      >⚙</button>
+      ><Settings2 size={16} aria-hidden="true" /></button>
       {open && (
         <section className={styles.popover} role="dialog" aria-label="Tùy chỉnh header thời tiết">
           <div className={styles.popoverHeading}>
@@ -109,6 +110,24 @@ export function HeaderWeatherWidget() {
               </label>
             ))}
           </div>
+          <fieldset className={styles.strengthOptions}>
+            <legend>Độ mạnh hiệu ứng</legend>
+            <p>Áp dụng cho nắng, mây, sương và mưa trên các trang học.</p>
+            <div>
+              <label className={styles.strengthOption}>
+                <input type="radio" name="header-weather-strength" checked={strength === 'light'} onChange={() => setStrength('light')} />
+                <span>Nhẹ</span>
+              </label>
+              <label className={styles.strengthOption}>
+                <input type="radio" name="header-weather-strength" checked={strength === 'medium'} onChange={() => setStrength('medium')} />
+                <span>Vừa</span>
+              </label>
+              <label className={styles.strengthOption}>
+                <input type="radio" name="header-weather-strength" checked={strength === 'strong'} onChange={() => setStrength('strong')} />
+                <span>Mạnh</span>
+              </label>
+            </div>
+          </fieldset>
           <div className={styles.locationSection}>
             <strong>Thành phố hiển thị</strong>
             <p>Chỉ hỏi quyền khi bạn bấm nút. Tọa độ GPS được làm tròn, gửi trực tiếp đến Open-Meteo để lấy thời tiết và không được lưu trên thiết bị hay máy chủ của chúng tôi.</p>

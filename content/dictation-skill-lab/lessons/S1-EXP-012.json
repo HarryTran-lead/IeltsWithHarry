@@ -1,0 +1,827 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "S1-EXP-012",
+  "status": "draft",
+  "level": "L4",
+  "section": 1,
+  "topic": "Outdoor activity booking",
+  "title": "Organising a Beginner Kayaking Trip",
+  "learning_objectives_vi": [
+    "Theo dõi một cuộc hội thoại đời sống hai người nói có thay đổi và đối chiếu thông tin.",
+    "Lấy thông tin cuối cùng đúng theo thứ tự audio, không chọn đáp án chỉ vì xuất hiện sớm.",
+    "Luyện 8 câu IELTS-style và sau đó sửa lỗi bằng Dictation có bằng chứng rõ ràng."
+  ],
+  "content_format": "section_practice",
+  "target_skills": [
+    "safety",
+    "times",
+    "equipment",
+    "weather"
+  ],
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Reception/service representative",
+      "accent_requested": "new_zealand",
+      "tts_voice_id": null
+    },
+    {
+      "speaker_id": "B",
+      "role": "Customer/visitor",
+      "accent_requested": "new_zealand",
+      "tts_voice_id": null
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "B",
+      "text_en": "Hello, I'd like to ask about your guided kayaking trips. My partner and I haven't done it before.",
+      "translation_vi": "Xin chào, tôi muốn hỏi tour chèo kayak có hướng dẫn. Tôi và bạn đời chưa từng chèo.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_1",
+        "two_speaker_dialogue",
+        "m21",
+        "safety",
+        "times",
+        "equipment",
+        "weather"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "A",
+      "text_en": "Then our sheltered-bay route is probably best. The coastal route is for people who already know how to handle waves.",
+      "translation_vi": "Vậy tuyến vịnh kín gió sẽ hợp hơn. Tuyến ven biển dành cho người đã biết xử lý sóng.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_1",
+        "two_speaker_dialogue",
+        "m21",
+        "safety",
+        "times",
+        "equipment",
+        "weather"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "B",
+      "text_en": "That sounds safer. We can do Saturday, although our train isn't due in until about nine.",
+      "translation_vi": "Nghe an toàn hơn. Chúng tôi đi thứ Bảy, nhưng tàu hỏa đến khoảng chín giờ.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_1",
+        "two_speaker_dialogue",
+        "m21",
+        "safety",
+        "times",
+        "equipment",
+        "weather"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "A",
+      "text_en": "The morning group meets at nine fifteen, which may be tight. Our afternoon group meets at one twenty.",
+      "translation_vi": "Nhóm sáng tập trung lúc 9:15, khá gấp. Nhóm chiều gặp lúc 1:20.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_1",
+        "two_speaker_dialogue",
+        "m21",
+        "safety",
+        "times",
+        "equipment",
+        "weather"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "B",
+      "text_en": "Let's go for the afternoon. Where exactly do people meet? The website shows a beach café.",
+      "translation_vi": "Chọn buổi chiều. Mọi người tập trung ở đâu? Website hiện quán café gần biển.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_1",
+        "two_speaker_dialogue",
+        "m21",
+        "safety",
+        "times",
+        "equipment",
+        "weather"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "A",
+      "text_en": "We used to meet there, but the café is being rebuilt. Please go to the lifeboat station by the eastern car park.",
+      "translation_vi": "Trước đây gặp ở đó, nhưng quán đang xây lại. Hãy tới trạm cứu hộ cạnh bãi xe phía đông.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_1",
+        "two_speaker_dialogue",
+        "m21",
+        "safety",
+        "times",
+        "equipment",
+        "weather"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "B",
+      "text_en": "Right. Do we need to bring wetsuits? I only have ordinary swimming clothes.",
+      "translation_vi": "Vâng. Có cần mang đồ lặn giữ nhiệt không? Tôi chỉ có đồ bơi thường.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_1",
+        "two_speaker_dialogue",
+        "m21",
+        "safety",
+        "times",
+        "equipment",
+        "weather"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "A",
+      "text_en": "Wetsuits and buoyancy aids are included. You should bring a towel and dry clothes for afterwards.",
+      "translation_vi": "Đồ giữ nhiệt và áo nổi đã gồm. Anh nên mang khăn và quần áo khô để thay.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_1",
+        "two_speaker_dialogue",
+        "m21",
+        "safety",
+        "times",
+        "equipment",
+        "weather"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T09",
+      "speaker_id": "B",
+      "text_en": "No problem. How long will we be on the water? I'm a confident swimmer, but my partner gets tired quickly.",
+      "translation_vi": "Không sao. Chúng tôi sẽ ở trên nước bao lâu? Tôi bơi tốt nhưng bạn đời nhanh mệt.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_1",
+        "two_speaker_dialogue",
+        "m21",
+        "safety",
+        "times",
+        "equipment",
+        "weather"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T10",
+      "speaker_id": "A",
+      "text_en": "The whole activity takes two hours, including a safety briefing. Actual paddling time is about seventy minutes.",
+      "translation_vi": "Toàn bộ hoạt động hai giờ gồm hướng dẫn an toàn. Thời gian chèo thực tế khoảng bảy mươi phút.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_1",
+        "two_speaker_dialogue",
+        "m21",
+        "safety",
+        "times",
+        "equipment",
+        "weather"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T11",
+      "speaker_id": "B",
+      "text_en": "Thanks. I saw a rate of forty pounds per person. Is there a weekend supplement?",
+      "translation_vi": "Cảm ơn. Tôi thấy giá bốn mươi bảng một người. Cuối tuần có phụ phí không?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_1",
+        "two_speaker_dialogue",
+        "m21",
+        "safety",
+        "times",
+        "equipment",
+        "weather"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T12",
+      "speaker_id": "A",
+      "text_en": "No weekend supplement. It's forty pounds each, and the price includes a hot drink when you get back.",
+      "translation_vi": "Không có phụ phí cuối tuần. Bốn mươi bảng mỗi người và gồm đồ uống nóng khi về.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_1",
+        "two_speaker_dialogue",
+        "m21",
+        "safety",
+        "times",
+        "equipment",
+        "weather"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T13",
+      "speaker_id": "B",
+      "text_en": "Great. What if the weather is poor? I'd rather not lose the money if conditions are unsafe.",
+      "translation_vi": "Tốt. Nếu thời tiết xấu thì sao? Tôi không muốn mất tiền khi điều kiện không an toàn.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_1",
+        "two_speaker_dialogue",
+        "m21",
+        "safety",
+        "times",
+        "equipment",
+        "weather"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T14",
+      "speaker_id": "A",
+      "text_en": "If the instructor cancels for safety reasons, you can change the date or receive a full refund.",
+      "translation_vi": "Nếu hướng dẫn viên hủy vì an toàn, anh có thể đổi ngày hoặc nhận hoàn tiền đầy đủ.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_1",
+        "two_speaker_dialogue",
+        "m21",
+        "safety",
+        "times",
+        "equipment",
+        "weather"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T15",
+      "speaker_id": "B",
+      "text_en": "That's reassuring. Can I book under the name Fraser, and add my partner's details later?",
+      "translation_vi": "Yên tâm rồi. Tôi đặt dưới họ Fraser và bổ sung thông tin bạn đời sau được không?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_1",
+        "two_speaker_dialogue",
+        "m21",
+        "safety",
+        "times",
+        "equipment",
+        "weather"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T16",
+      "speaker_id": "A",
+      "text_en": "Certainly. You'll receive a link for both participants' medical and emergency contact forms. Please complete them before arrival.",
+      "translation_vi": "Được. Anh sẽ nhận liên kết điền mẫu sức khỏe và liên hệ khẩn cấp cho cả hai, hãy làm trước khi tới.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_1",
+        "two_speaker_dialogue",
+        "m21",
+        "safety",
+        "times",
+        "equipment",
+        "weather"
+      ],
+      "bank_role": "training"
+    }
+  ],
+  "questions": [
+    {
+      "type": "note_completion",
+      "prompt": "Recommended route: sheltered ____",
+      "correct_answers": [
+        "bay"
+      ],
+      "spoken_answer": "bay",
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER",
+      "scoring_policy": "controlled_variants",
+      "explanation_vi": "Tuyến vịnh kín gió dành cho người mới.",
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "evidence_excerpt_en": "sheltered-bay route",
+      "question_tags": [
+        "m21",
+        "ielts_part_1_practice",
+        "safety",
+        "times",
+        "equipment",
+        "weather"
+      ],
+      "question_id": "Q01",
+      "group_id": "IELTS_S1_PRACTICE"
+    },
+    {
+      "type": "note_completion",
+      "prompt": "Afternoon meeting time: ____",
+      "correct_answers": [
+        "one twenty",
+        "1:20"
+      ],
+      "spoken_answer": "one twenty",
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER",
+      "scoring_policy": "controlled_variants",
+      "explanation_vi": "Nhóm chiều tập trung lúc 1:20.",
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "evidence_excerpt_en": "one twenty",
+      "question_tags": [
+        "m21",
+        "ielts_part_1_practice",
+        "safety",
+        "times",
+        "equipment",
+        "weather"
+      ],
+      "question_id": "Q02",
+      "group_id": "IELTS_S1_PRACTICE"
+    },
+    {
+      "type": "form_completion",
+      "prompt": "Meeting place: lifeboat ____",
+      "correct_answers": [
+        "station"
+      ],
+      "spoken_answer": "station",
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER",
+      "scoring_policy": "controlled_variants",
+      "explanation_vi": "Điểm tập trung mới là trạm cứu hộ.",
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "evidence_excerpt_en": "lifeboat station",
+      "question_tags": [
+        "m21",
+        "ielts_part_1_practice",
+        "safety",
+        "times",
+        "equipment",
+        "weather"
+      ],
+      "question_id": "Q03",
+      "group_id": "IELTS_S1_PRACTICE"
+    },
+    {
+      "type": "mcq",
+      "prompt": "Which items are already included?",
+      "correct_answers": [
+        "wetsuits and buoyancy aids"
+      ],
+      "options": [
+        "towels and dry clothes",
+        "sunglasses and shoes",
+        "wetsuits and buoyancy aids"
+      ],
+      "correct_option": "C",
+      "scoring_policy": "strict",
+      "explanation_vi": "Bộ giữ nhiệt và áo nổi được cung cấp.",
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "evidence_excerpt_en": "Wetsuits and buoyancy aids are included",
+      "question_tags": [
+        "m21",
+        "ielts_part_1_practice",
+        "safety",
+        "times",
+        "equipment",
+        "weather"
+      ],
+      "question_id": "Q04",
+      "group_id": "IELTS_S1_PRACTICE"
+    },
+    {
+      "type": "note_completion",
+      "prompt": "Actual paddling time: ____ minutes",
+      "correct_answers": [
+        "seventy",
+        "70"
+      ],
+      "spoken_answer": "seventy",
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER",
+      "scoring_policy": "controlled_variants",
+      "explanation_vi": "Bảy mươi phút là thời gian chèo, không phải toàn bộ hai giờ.",
+      "evidence_turn_ids": [
+        "T10"
+      ],
+      "evidence_excerpt_en": "about seventy minutes",
+      "question_tags": [
+        "m21",
+        "ielts_part_1_practice",
+        "safety",
+        "times",
+        "equipment",
+        "weather"
+      ],
+      "question_id": "Q05",
+      "group_id": "IELTS_S1_PRACTICE"
+    },
+    {
+      "type": "note_completion",
+      "prompt": "Cost per person: £____",
+      "correct_answers": [
+        "forty",
+        "40"
+      ],
+      "spoken_answer": "forty",
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER",
+      "scoring_policy": "controlled_variants",
+      "explanation_vi": "Không có phí phụ thu cuối tuần.",
+      "evidence_turn_ids": [
+        "T12"
+      ],
+      "evidence_excerpt_en": "forty pounds each",
+      "question_tags": [
+        "m21",
+        "ielts_part_1_practice",
+        "safety",
+        "times",
+        "equipment",
+        "weather"
+      ],
+      "question_id": "Q06",
+      "group_id": "IELTS_S1_PRACTICE"
+    },
+    {
+      "type": "mcq",
+      "prompt": "What happens if an instructor cancels because of unsafe weather?",
+      "correct_answers": [
+        "full refund possible"
+      ],
+      "options": [
+        "full refund possible",
+        "no refund",
+        "credit only for equipment"
+      ],
+      "correct_option": "A",
+      "scoring_policy": "strict",
+      "explanation_vi": "Khách có thể đổi ngày hoặc được hoàn tiền đầy đủ.",
+      "evidence_turn_ids": [
+        "T14"
+      ],
+      "evidence_excerpt_en": "receive a full refund",
+      "question_tags": [
+        "m21",
+        "ielts_part_1_practice",
+        "safety",
+        "times",
+        "equipment",
+        "weather"
+      ],
+      "question_id": "Q07",
+      "group_id": "IELTS_S1_PRACTICE"
+    },
+    {
+      "type": "form_completion",
+      "prompt": "Booking surname: ____",
+      "correct_answers": [
+        "Fraser"
+      ],
+      "spoken_answer": "Fraser",
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER",
+      "scoring_policy": "controlled_variants",
+      "explanation_vi": "Khách đặt dưới họ Fraser.",
+      "evidence_turn_ids": [
+        "T15"
+      ],
+      "evidence_excerpt_en": "name Fraser",
+      "question_tags": [
+        "m21",
+        "ielts_part_1_practice",
+        "safety",
+        "times",
+        "equipment",
+        "weather"
+      ],
+      "question_id": "Q08",
+      "group_id": "IELTS_S1_PRACTICE"
+    },
+    {
+      "question_id": "D01",
+      "group_id": "DICTATION",
+      "type": "dictation",
+      "prompt": "Nghe và chép nguyên văn lượt thoại T04.",
+      "correct_answers": [
+        "The morning group meets at nine fifteen, which may be tight. Our afternoon group meets at one twenty."
+      ],
+      "scoring_policy": "case_punctuation_insensitive",
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Nhóm sáng tập trung lúc 9:15, khá gấp. Nhóm chiều gặp lúc 1:20.",
+      "question_tags": [
+        "m21",
+        "dictation",
+        "exact_words",
+        "safety",
+        "times",
+        "equipment",
+        "weather"
+      ]
+    },
+    {
+      "question_id": "D02",
+      "group_id": "DICTATION",
+      "type": "dictation",
+      "prompt": "Nghe và chép nguyên văn lượt thoại T07.",
+      "correct_answers": [
+        "Right. Do we need to bring wetsuits? I only have ordinary swimming clothes."
+      ],
+      "scoring_policy": "case_punctuation_insensitive",
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "Vâng. Có cần mang đồ lặn giữ nhiệt không? Tôi chỉ có đồ bơi thường.",
+      "question_tags": [
+        "m21",
+        "dictation",
+        "exact_words",
+        "safety",
+        "times",
+        "equipment",
+        "weather"
+      ]
+    },
+    {
+      "question_id": "D03",
+      "group_id": "DICTATION",
+      "type": "dictation",
+      "prompt": "Nghe và chép nguyên văn lượt thoại T10.",
+      "correct_answers": [
+        "The whole activity takes two hours, including a safety briefing. Actual paddling time is about seventy minutes."
+      ],
+      "scoring_policy": "case_punctuation_insensitive",
+      "evidence_turn_ids": [
+        "T10"
+      ],
+      "explanation_vi": "Toàn bộ hoạt động hai giờ gồm hướng dẫn an toàn. Thời gian chèo thực tế khoảng bảy mươi phút.",
+      "question_tags": [
+        "m21",
+        "dictation",
+        "exact_words",
+        "safety",
+        "times",
+        "equipment",
+        "weather"
+      ]
+    },
+    {
+      "question_id": "D04",
+      "group_id": "DICTATION",
+      "type": "dictation",
+      "prompt": "Nghe và chép nguyên văn lượt thoại T14.",
+      "correct_answers": [
+        "If the instructor cancels for safety reasons, you can change the date or receive a full refund."
+      ],
+      "scoring_policy": "case_punctuation_insensitive",
+      "evidence_turn_ids": [
+        "T14"
+      ],
+      "explanation_vi": "Nếu hướng dẫn viên hủy vì an toàn, anh có thể đổi ngày hoặc nhận hoàn tiền đầy đủ.",
+      "question_tags": [
+        "m21",
+        "dictation",
+        "exact_words",
+        "safety",
+        "times",
+        "equipment",
+        "weather"
+      ]
+    },
+    {
+      "question_id": "G01",
+      "group_id": "GAP_FILL",
+      "type": "gap_fill",
+      "prompt": "Nghe và điền đúng cụm từ bị thiếu: Then our sheltered-____ route is probably best. The coastal route is for people who already know how to handle waves.",
+      "correct_answers": [
+        "bay"
+      ],
+      "word_limit": 2,
+      "scoring_policy": "controlled_variants",
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Tuyến vịnh kín gió dành cho người mới.",
+      "question_tags": [
+        "m21",
+        "gap_fill",
+        "listen_for_detail",
+        "safety",
+        "times",
+        "equipment",
+        "weather"
+      ]
+    },
+    {
+      "question_id": "G02",
+      "group_id": "GAP_FILL",
+      "type": "gap_fill",
+      "prompt": "Nghe và điền đúng cụm từ bị thiếu: The morning group meets at nine fifteen, which may be tight. Our afternoon group meets at ____.",
+      "correct_answers": [
+        "one twenty"
+      ],
+      "word_limit": 2,
+      "scoring_policy": "controlled_variants",
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Nhóm chiều tập trung lúc 1:20.",
+      "question_tags": [
+        "m21",
+        "gap_fill",
+        "listen_for_detail",
+        "safety",
+        "times",
+        "equipment",
+        "weather"
+      ]
+    }
+  ],
+  "vocabulary": [
+    {
+      "vocab_id": "S1-EXP-012-V01",
+      "expression_en": "guided kayaking trips",
+      "meaning_vi": "chuyến chèo kayak có hướng dẫn",
+      "part_of_speech": "noun phrase",
+      "example_en": "Hello, I'd like to ask about your guided kayaking trips. My partner and I haven't done it before.",
+      "example_vi": "Xin chào, tôi muốn hỏi tour chèo kayak có hướng dẫn. Tôi và bạn đời chưa từng chèo.",
+      "evidence_turn_id": "T01",
+      "can_save_to_notebook": true
+    },
+    {
+      "vocab_id": "S1-EXP-012-V02",
+      "expression_en": "sheltered-bay route",
+      "meaning_vi": "tuyến qua vịnh kín gió",
+      "part_of_speech": "noun phrase",
+      "example_en": "Then our sheltered-bay route is probably best. The coastal route is for people who already know how to handle waves.",
+      "example_vi": "Vậy tuyến vịnh kín gió sẽ hợp hơn. Tuyến ven biển dành cho người đã biết xử lý sóng.",
+      "evidence_turn_id": "T02",
+      "can_save_to_notebook": true
+    },
+    {
+      "vocab_id": "S1-EXP-012-V03",
+      "expression_en": "lifeboat station",
+      "meaning_vi": "trạm cứu hộ trên biển",
+      "part_of_speech": "noun phrase",
+      "example_en": "We used to meet there, but the café is being rebuilt. Please go to the lifeboat station by the eastern car park.",
+      "example_vi": "Trước đây gặp ở đó, nhưng quán đang xây lại. Hãy tới trạm cứu hộ cạnh bãi xe phía đông.",
+      "evidence_turn_id": "T06",
+      "can_save_to_notebook": true
+    },
+    {
+      "vocab_id": "S1-EXP-012-V04",
+      "expression_en": "buoyancy aids",
+      "meaning_vi": "thiết bị trợ nổi",
+      "part_of_speech": "noun phrase",
+      "example_en": "Wetsuits and buoyancy aids are included. You should bring a towel and dry clothes for afterwards.",
+      "example_vi": "Đồ giữ nhiệt và áo nổi đã gồm. Anh nên mang khăn và quần áo khô để thay.",
+      "evidence_turn_id": "T08",
+      "can_save_to_notebook": true
+    },
+    {
+      "vocab_id": "S1-EXP-012-V05",
+      "expression_en": "safety briefing",
+      "meaning_vi": "hướng dẫn an toàn",
+      "part_of_speech": "noun phrase",
+      "example_en": "The whole activity takes two hours, including a safety briefing. Actual paddling time is about seventy minutes.",
+      "example_vi": "Toàn bộ hoạt động hai giờ gồm hướng dẫn an toàn. Thời gian chèo thực tế khoảng bảy mươi phút.",
+      "evidence_turn_id": "T10",
+      "can_save_to_notebook": true
+    },
+    {
+      "vocab_id": "S1-EXP-012-V06",
+      "expression_en": "full refund",
+      "meaning_vi": "hoàn trả toàn bộ tiền",
+      "part_of_speech": "noun phrase",
+      "example_en": "If the instructor cancels for safety reasons, you can change the date or receive a full refund.",
+      "example_vi": "Nếu hướng dẫn viên hủy vì an toàn, anh có thể đổi ngày hoặc nhận hoàn tiền đầy đủ.",
+      "evidence_turn_id": "T14",
+      "can_save_to_notebook": true
+    }
+  ],
+  "audio": {
+    "status": "not_generated",
+    "audio_url": null,
+    "duration_ms": null,
+    "source_text_sha256": "bbd2fabeaf1cc6cd6702a98ec99918258a5782d06b55db9ed2648f91e0f08dc7",
+    "generation_strategy": "full_dialogue_multi_speaker",
+    "audio_asset_id": null
+  },
+  "learning_flow": {
+    "intro": {
+      "theory_vi": "IELTS Part 1 thường có hội thoại hai người về dịch vụ hoặc hoạt động đời sống. Hãy xem trước từ loại và đơn vị của từng chỗ trống; đừng đoán đáp án trước khi nghe.",
+      "tip_vi": "Nghe đến cuối lượt trao đổi: người nói có thể sửa ngày, giá, địa điểm hoặc đổi lựa chọn. Thông tin đầu tiên nhiều khi là phương án bị loại.",
+      "common_mistakes_vi": [
+        "Ghi phương án ban đầu dù người nói đã đổi ý.",
+        "Nhầm giờ mở cửa với giờ buổi học bắt đầu.",
+        "Điền dư từ so với giới hạn của nhóm câu hỏi.",
+        "Chọn MCQ vì trùng từ với audio mà bỏ qua ý định cuối cùng."
+      ],
+      "worked_examples": [
+        {
+          "audio_example_en": "I first asked for Tuesday, but Friday is the day I can attend.",
+          "question": "Final day: ____",
+          "answer": "Friday",
+          "explanation_vi": "Tuesday là phương án cũ; Friday mới là quyết định cuối."
+        },
+        {
+          "audio_example_en": "The ordinary ticket is twenty pounds, although students pay fifteen.",
+          "question": "Student ticket: £____",
+          "answer": "15",
+          "explanation_vi": "Chọn mức giá đúng đối tượng được hỏi; 20 là giá thường."
+        }
+      ]
+    },
+    "steps": [
+      "pre_listening",
+      "first_listen_ielts_questions",
+      "review_with_evidence",
+      "selective_dictation",
+      "gap_fill",
+      "summary"
+    ],
+    "ielts_question_ids": [
+      "Q01",
+      "Q02",
+      "Q03",
+      "Q04",
+      "Q05",
+      "Q06",
+      "Q07",
+      "Q08"
+    ],
+    "recommended_first_listen_play_limit": 1,
+    "practice_replay_allowed_after_first_attempt": true,
+    "word_count": 276,
+    "estimated_audio_minutes_at_135_wpm": 2.04,
+    "exposure_bank": "training",
+    "exam_simulation": false,
+    "mock_test": false
+  },
+  "qa": {
+    "status": "awaiting_human_audio_review",
+    "automated_validation": "pending",
+    "human_transcript_approved": false,
+    "human_audio_approved": false,
+    "ielts_exam_equivalent": false,
+    "release_eligible": false
+  },
+  "provenance": {
+    "source_type": "original_authored",
+    "reference_copying": false,
+    "authoring_milestone": "M21",
+    "do_not_reuse_in_unseen_assessment_before_exposure_check": true
+  },
+  "release_metadata": {
+    "version": "m21.0.1",
+    "published": false,
+    "needs_audio": true,
+    "requires_human_approval": true,
+    "import_policy": "insert_only",
+    "target_bank": "training"
+  }
+}

@@ -1,0 +1,1005 @@
+{
+  "schema_version": "1.2.0",
+  "lesson_id": "S3-SIM-017",
+  "status": "draft",
+  "level": "L6",
+  "section": 3,
+  "topic": "Behavioural research and evaluation",
+  "title": "Reviewing a Campus Mental-Wellbeing Campaign",
+  "content_format": "section_exam_simulation",
+  "exam_part": "IELTS_LISTENING_PART_3_STYLE",
+  "official_ielts_material": false,
+  "learning_objectives_vi": [
+    "Theo dõi thảo luận có nhiều quan điểm và lý do thay đổi quyết định.",
+    "Phân biệt bằng chứng chắc chắn với các hạn chế phương pháp nghiên cứu.",
+    "Làm 10 câu Multiple Choice và Matching trong một lần nghe mà không xem transcript."
+  ],
+  "target_skills": [
+    "academic_discussion",
+    "tracking_opinions",
+    "paraphrase",
+    "evidence_quality",
+    "matching_features"
+  ],
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "University tutor / academic adviser",
+      "accent_requested": "british",
+      "tts_voice_id": null
+    },
+    {
+      "speaker_id": "B",
+      "role": "Student researcher one",
+      "accent_requested": "australian",
+      "tts_voice_id": null
+    },
+    {
+      "speaker_id": "C",
+      "role": "Student researcher two",
+      "accent_requested": "north_american",
+      "tts_voice_id": null
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "We are evaluating communication for a campus wellbeing campaign, not diagnosing individual students.",
+      "meaning_vi": "A: Đánh giá cách truyền thông chiến dịch sức khỏe tinh thần, không chẩn đoán cá nhân.",
+      "translation_vi": null,
+      "translation_status": "pending_full_sentence_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "part3_opinion_tracking",
+        "paraphrase",
+        "evidence_evaluation"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "scene_setup"
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "C",
+      "text_en": "The organisers reported high website traffic, but B found that most visitors stayed only briefly.",
+      "meaning_vi": "A: Đánh giá cách truyền thông chiến dịch sức khỏe tinh thần, không chẩn đoán cá nhân.",
+      "translation_vi": null,
+      "translation_status": "pending_full_sentence_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "part3_opinion_tracking",
+        "paraphrase",
+        "evidence_evaluation"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "scene_setup"
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "B",
+      "text_en": "The campaign celebrated ten thousand page visits, but that does not tell us if students located the right support contact or understood what to do next.",
+      "meaning_vi": "B: Lượt truy cập không chứng minh người xem tìm được thông tin hỗ trợ.",
+      "translation_vi": null,
+      "translation_status": "pending_full_sentence_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "part3_opinion_tracking",
+        "paraphrase",
+        "evidence_evaluation"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "evidence"
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "A",
+      "text_en": "Ask participants to find an appropriate support service for a fictional scenario. That tests the clarity of the information without asking them to reveal personal experiences.",
+      "meaning_vi": "A: Cho tình huống giả định và kiểm tra người dùng tìm đúng dịch vụ hỗ trợ.",
+      "translation_vi": null,
+      "translation_status": "pending_full_sentence_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "part3_opinion_tracking",
+        "paraphrase",
+        "evidence_evaluation"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "evidence"
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "C",
+      "text_en": "Some participants took several attempts to find the correct service, even though they eventually got there. We should record the navigation path as well as the final answer.",
+      "meaning_vi": "C: Nên ghi đường đi tìm hỗ trợ và số lần thử, không chỉ kết quả cuối.",
+      "translation_vi": null,
+      "translation_status": "pending_full_sentence_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "part3_opinion_tracking",
+        "paraphrase",
+        "evidence_evaluation"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "critical_discussion"
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "C",
+      "text_en": "I will use neutral scenarios so no one feels obliged to share something personal.",
+      "meaning_vi": "C: Tôi sẽ dùng kịch bản trung tính để không ai phải kể chuyện riêng.",
+      "translation_vi": null,
+      "translation_status": "pending_full_sentence_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "part3_opinion_tracking",
+        "paraphrase",
+        "evidence_evaluation"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "peer_response"
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "C",
+      "text_en": "Our draft asked students to describe their worst experiences on campus. That is unnecessary and intrusive for a navigation study. We should ask about using the information, not about personal histories.",
+      "meaning_vi": "C: Câu hỏi cũ xâm phạm đời tư; nên hỏi cách tìm thông tin.",
+      "translation_vi": null,
+      "translation_status": "pending_full_sentence_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "part3_opinion_tracking",
+        "paraphrase",
+        "evidence_evaluation"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "evidence"
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "B",
+      "text_en": "Several students thought the routine appointment email was the emergency contact. That is more serious than a layout preference, and the labels must be revised first.",
+      "meaning_vi": "B: Sinh viên nhầm liên hệ thông thường với liên hệ khẩn cấp.",
+      "translation_vi": null,
+      "translation_status": "pending_full_sentence_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "part3_opinion_tracking",
+        "paraphrase",
+        "evidence_evaluation"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "evidence"
+    },
+    {
+      "turn_id": "T09",
+      "speaker_id": "B",
+      "text_en": "We also need to distinguish a wrong answer from a situation in which the website itself offered two conflicting links.",
+      "meaning_vi": "B: Cần phân biệt trả lời sai với trường hợp website đưa hai liên kết mâu thuẫn.",
+      "translation_vi": null,
+      "translation_status": "pending_full_sentence_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "part3_opinion_tracking",
+        "paraphrase",
+        "evidence_evaluation"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "peer_response"
+    },
+    {
+      "turn_id": "T10",
+      "speaker_id": "A",
+      "text_en": "We should create a clearly marked route for urgent help, separate from routine enquiries. Buying more advertisements before fixing that confusion would only spread the problem.",
+      "meaning_vi": "A: Ưu tiên phân biệt rõ hỗ trợ khẩn cấp và không khẩn cấp.",
+      "translation_vi": null,
+      "translation_status": "pending_full_sentence_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "part3_opinion_tracking",
+        "paraphrase",
+        "evidence_evaluation"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "evidence"
+    },
+    {
+      "turn_id": "T11",
+      "speaker_id": "C",
+      "text_en": "The click totals can provide background about reach, but they are not an outcome measure of successful navigation.",
+      "meaning_vi": "C: Số lượt nhấp chỉ phản ánh mức tiếp cận, không đo khả năng tìm đúng hỗ trợ.",
+      "translation_vi": null,
+      "translation_status": "pending_full_sentence_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "part3_opinion_tracking",
+        "paraphrase",
+        "evidence_evaluation"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "evidence"
+    },
+    {
+      "turn_id": "T12",
+      "speaker_id": "A",
+      "text_en": "The research team cannot provide clinical advice. If a genuine concern arises, the approved referral route should be available immediately, and research questions should stop.",
+      "meaning_vi": "A: Nhóm nghiên cứu không tư vấn lâm sàng; khi có lo ngại thật phải chuyển tới nơi hỗ trợ theo quy trình.",
+      "translation_vi": null,
+      "translation_status": "pending_full_sentence_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "part3_opinion_tracking",
+        "paraphrase",
+        "evidence_evaluation"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "critical_discussion"
+    },
+    {
+      "turn_id": "T13",
+      "speaker_id": "A",
+      "text_en": "The scenario responses give us a direct, privacy-preserving measure of whether people can identify the right service.",
+      "meaning_vi": "A: Đáp án tình huống giả định là chỉ số chính về tìm đúng dịch vụ.",
+      "translation_vi": null,
+      "translation_status": "pending_full_sentence_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "part3_opinion_tracking",
+        "paraphrase",
+        "evidence_evaluation"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "evidence"
+    },
+    {
+      "turn_id": "T14",
+      "speaker_id": "A",
+      "text_en": "If a participant needs genuine help, the researcher should have a safe referral procedure ready.",
+      "meaning_vi": "A: Người nghiên cứu cần quy trình giới thiệu nơi hỗ trợ nếu ai đó thực sự cần.",
+      "translation_vi": null,
+      "translation_status": "pending_full_sentence_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "part3_opinion_tracking",
+        "paraphrase",
+        "evidence_evaluation"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "peer_response"
+    },
+    {
+      "turn_id": "T15",
+      "speaker_id": "B",
+      "text_en": "Remove the questions asking for personal distressing experiences. They are not necessary for evaluating the campaign.",
+      "meaning_vi": "B: Loại câu hỏi yêu cầu trải nghiệm riêng tư gây khó chịu.",
+      "translation_vi": null,
+      "translation_status": "pending_full_sentence_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "part3_opinion_tracking",
+        "paraphrase",
+        "evidence_evaluation"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "evidence"
+    },
+    {
+      "turn_id": "T16",
+      "speaker_id": "C",
+      "text_en": "We can retain the pilot navigation logs, but mark that the menu changed after the first three participants.",
+      "meaning_vi": "C: Giữ nhật ký điều hướng và ghi chú menu đã thay đổi.",
+      "translation_vi": null,
+      "translation_status": "pending_full_sentence_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "part3_opinion_tracking",
+        "paraphrase",
+        "evidence_evaluation"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "evidence"
+    },
+    {
+      "turn_id": "T17",
+      "speaker_id": "B",
+      "text_en": "A clearer emergency link would help students with limited language proficiency too. In the next pilot, we should test the wording with people who have different first languages.",
+      "meaning_vi": "B: Liên kết khẩn cấp rõ ràng cũng hỗ trợ người có ngôn ngữ mẹ đẻ khác; cần thử với họ.",
+      "translation_vi": null,
+      "translation_status": "pending_full_sentence_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "part3_opinion_tracking",
+        "paraphrase",
+        "evidence_evaluation"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "critical_discussion"
+    },
+    {
+      "turn_id": "T18",
+      "speaker_id": "C",
+      "text_en": "That protects participants while keeping our research question focused.",
+      "meaning_vi": "C: Cách này bảo vệ người tham gia và giữ trọng tâm nghiên cứu.",
+      "translation_vi": null,
+      "translation_status": "pending_full_sentence_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "part3_opinion_tracking",
+        "paraphrase",
+        "evidence_evaluation"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "peer_response"
+    },
+    {
+      "turn_id": "T19",
+      "speaker_id": "A",
+      "text_en": "The enquiries contain names and personal details. Keep them restricted and do not export them into the research spreadsheet.",
+      "meaning_vi": "A: Dữ liệu yêu cầu hỗ trợ có định danh phải hạn chế truy cập.",
+      "translation_vi": null,
+      "translation_status": "pending_full_sentence_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "part3_opinion_tracking",
+        "paraphrase",
+        "evidence_evaluation"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "evidence"
+    },
+    {
+      "turn_id": "T20",
+      "speaker_id": "B",
+      "text_en": "We should test both versions of the message with someone who has not visited the campaign site before. A regular user may know the right support contact from memory and hide a navigation problem. The first-time test will make unclear labels much more obvious.",
+      "meaning_vi": "B: Cần thử với người chưa từng vào trang chiến dịch; người dùng quen có thể nhớ liên hệ và che giấu lỗi điều hướng.",
+      "translation_vi": null,
+      "translation_status": "pending_full_sentence_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "part3_opinion_tracking",
+        "paraphrase",
+        "evidence_evaluation"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "final_critical_discussion"
+    },
+    {
+      "turn_id": "T21",
+      "speaker_id": "B",
+      "text_en": "Our recommendation should focus on whether students found clear routes to support, without collecting private medical details.",
+      "meaning_vi": "B: Đề xuất cần xem sinh viên có tìm được nguồn hỗ trợ rõ ràng không, không lấy thông tin y tế riêng.",
+      "translation_vi": null,
+      "translation_status": "pending_full_sentence_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "part3_opinion_tracking",
+        "paraphrase",
+        "evidence_evaluation"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "conclusion"
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "group_id": "PART3_MCQ_Q01_TO_05",
+      "type": "mcq",
+      "prompt": "What is the major weakness of using page visits as success?",
+      "options": [
+        {
+          "key": "A",
+          "text": "The site was available only on phones"
+        },
+        {
+          "key": "B",
+          "text": "Visits do not show whether students found useful information"
+        },
+        {
+          "key": "C",
+          "text": "Students did not have internet access"
+        }
+      ],
+      "correct_option": "B",
+      "correct_answers": [
+        "Visits do not show whether students found useful information"
+      ],
+      "scoring_policy": "one_correct_option",
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "evidence_excerpt_en": "The campaign celebrated ten thousand page visits, but that does not tell us if students located the right support contact or understood what to do next.",
+      "explanation_vi": "B: Lượt truy cập không chứng minh người xem tìm được thông tin hỗ trợ.",
+      "answer_source": "paraphrased_or_explicit_recording",
+      "question_tags": [
+        "M27",
+        "part3",
+        "academic_discussion",
+        "mcq",
+        "opinion_tracking"
+      ],
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true
+    },
+    {
+      "question_id": "Q02",
+      "group_id": "PART3_MCQ_Q01_TO_05",
+      "type": "mcq",
+      "prompt": "Which outcome will the group measure?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Whether students can name the campaign designer"
+        },
+        {
+          "key": "B",
+          "text": "How many posters were printed"
+        },
+        {
+          "key": "C",
+          "text": "Whether users can identify an appropriate support service"
+        }
+      ],
+      "correct_option": "C",
+      "correct_answers": [
+        "Whether users can identify an appropriate support service"
+      ],
+      "scoring_policy": "one_correct_option",
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "evidence_excerpt_en": "Ask participants to find an appropriate support service for a fictional scenario. That tests the clarity of the information without asking them to reveal personal experiences.",
+      "explanation_vi": "A: Cho tình huống giả định và kiểm tra người dùng tìm đúng dịch vụ hỗ trợ.",
+      "answer_source": "paraphrased_or_explicit_recording",
+      "question_tags": [
+        "M27",
+        "part3",
+        "academic_discussion",
+        "mcq",
+        "opinion_tracking"
+      ],
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true
+    },
+    {
+      "question_id": "Q03",
+      "group_id": "PART3_MCQ_Q01_TO_05",
+      "type": "mcq",
+      "prompt": "Why must the team revise its interview questions?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Some questions invite disclosure of private experiences"
+        },
+        {
+          "key": "B",
+          "text": "The interviews were scheduled too early"
+        },
+        {
+          "key": "C",
+          "text": "Participants prefer written tests"
+        }
+      ],
+      "correct_option": "A",
+      "correct_answers": [
+        "Some questions invite disclosure of private experiences"
+      ],
+      "scoring_policy": "one_correct_option",
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "evidence_excerpt_en": "Our draft asked students to describe their worst experiences on campus. That is unnecessary and intrusive for a navigation study. We should ask about using the information, not about personal histories.",
+      "explanation_vi": "C: Câu hỏi cũ xâm phạm đời tư; nên hỏi cách tìm thông tin.",
+      "answer_source": "paraphrased_or_explicit_recording",
+      "question_tags": [
+        "M27",
+        "part3",
+        "academic_discussion",
+        "mcq",
+        "opinion_tracking"
+      ],
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true
+    },
+    {
+      "question_id": "Q04",
+      "group_id": "PART3_MCQ_Q01_TO_05",
+      "type": "mcq",
+      "prompt": "What surprised the researchers in the pilot?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Students disliked the website colours"
+        },
+        {
+          "key": "B",
+          "text": "Students confused urgent and routine support contacts"
+        },
+        {
+          "key": "C",
+          "text": "Students could not read the campaign logo"
+        }
+      ],
+      "correct_option": "B",
+      "correct_answers": [
+        "Students confused urgent and routine support contacts"
+      ],
+      "scoring_policy": "one_correct_option",
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "evidence_excerpt_en": "Several students thought the routine appointment email was the emergency contact. That is more serious than a layout preference, and the labels must be revised first.",
+      "explanation_vi": "B: Sinh viên nhầm liên hệ thông thường với liên hệ khẩn cấp.",
+      "answer_source": "paraphrased_or_explicit_recording",
+      "question_tags": [
+        "M27",
+        "part3",
+        "academic_discussion",
+        "mcq",
+        "opinion_tracking"
+      ],
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true
+    },
+    {
+      "question_id": "Q05",
+      "group_id": "PART3_MCQ_Q01_TO_05",
+      "type": "mcq",
+      "prompt": "What revision will be prioritised?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Increase social-media advertisements"
+        },
+        {
+          "key": "B",
+          "text": "Add more campaign photographs"
+        },
+        {
+          "key": "C",
+          "text": "Separate urgent and non-urgent help clearly"
+        }
+      ],
+      "correct_option": "C",
+      "correct_answers": [
+        "Separate urgent and non-urgent help clearly"
+      ],
+      "scoring_policy": "one_correct_option",
+      "evidence_turn_ids": [
+        "T10"
+      ],
+      "evidence_excerpt_en": "We should create a clearly marked route for urgent help, separate from routine enquiries. Buying more advertisements before fixing that confusion would only spread the problem.",
+      "explanation_vi": "A: Ưu tiên phân biệt rõ hỗ trợ khẩn cấp và không khẩn cấp.",
+      "answer_source": "paraphrased_or_explicit_recording",
+      "question_tags": [
+        "M27",
+        "part3",
+        "academic_discussion",
+        "mcq",
+        "opinion_tracking"
+      ],
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true
+    },
+    {
+      "question_id": "Q06",
+      "group_id": "PART3_MATCHING_Q06_TO_10",
+      "type": "matching",
+      "prompt": "Website click totals",
+      "options": [
+        {
+          "key": "A",
+          "text": "Use as background reach data"
+        },
+        {
+          "key": "B",
+          "text": "Keep restricted; exclude identifiers"
+        },
+        {
+          "key": "C",
+          "text": "Remove for ethical reasons"
+        },
+        {
+          "key": "D",
+          "text": "Retain with an interface-version note"
+        },
+        {
+          "key": "E",
+          "text": "Use as the direct navigation outcome"
+        },
+        {
+          "key": "F",
+          "text": "Request counselling advice before use"
+        },
+        {
+          "key": "G",
+          "text": "Repeat with a second-year sample"
+        }
+      ],
+      "correct_option": "A",
+      "correct_answers": [
+        "A"
+      ],
+      "scoring_policy": "matching_letter",
+      "evidence_turn_ids": [
+        "T11"
+      ],
+      "evidence_excerpt_en": "The click totals can provide background about reach, but they are not an outcome measure of successful navigation.",
+      "explanation_vi": "C: Số lượt nhấp chỉ phản ánh mức tiếp cận, không đo khả năng tìm đúng hỗ trợ.",
+      "answer_source": "paraphrased_or_explicit_recording",
+      "question_tags": [
+        "M27",
+        "part3",
+        "academic_discussion",
+        "matching",
+        "evaluation_of_evidence"
+      ],
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true
+    },
+    {
+      "question_id": "Q07",
+      "group_id": "PART3_MATCHING_Q06_TO_10",
+      "type": "matching",
+      "prompt": "Fictional-scenario responses",
+      "options": [
+        {
+          "key": "A",
+          "text": "Use as background reach data"
+        },
+        {
+          "key": "B",
+          "text": "Keep restricted; exclude identifiers"
+        },
+        {
+          "key": "C",
+          "text": "Remove for ethical reasons"
+        },
+        {
+          "key": "D",
+          "text": "Retain with an interface-version note"
+        },
+        {
+          "key": "E",
+          "text": "Use as the direct navigation outcome"
+        },
+        {
+          "key": "F",
+          "text": "Request counselling advice before use"
+        },
+        {
+          "key": "G",
+          "text": "Repeat with a second-year sample"
+        }
+      ],
+      "correct_option": "E",
+      "correct_answers": [
+        "E"
+      ],
+      "scoring_policy": "matching_letter",
+      "evidence_turn_ids": [
+        "T13"
+      ],
+      "evidence_excerpt_en": "The scenario responses give us a direct, privacy-preserving measure of whether people can identify the right service.",
+      "explanation_vi": "A: Đáp án tình huống giả định là chỉ số chính về tìm đúng dịch vụ.",
+      "answer_source": "paraphrased_or_explicit_recording",
+      "question_tags": [
+        "M27",
+        "part3",
+        "academic_discussion",
+        "matching",
+        "evaluation_of_evidence"
+      ],
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true
+    },
+    {
+      "question_id": "Q08",
+      "group_id": "PART3_MATCHING_Q06_TO_10",
+      "type": "matching",
+      "prompt": "Original intrusive questions",
+      "options": [
+        {
+          "key": "A",
+          "text": "Use as background reach data"
+        },
+        {
+          "key": "B",
+          "text": "Keep restricted; exclude identifiers"
+        },
+        {
+          "key": "C",
+          "text": "Remove for ethical reasons"
+        },
+        {
+          "key": "D",
+          "text": "Retain with an interface-version note"
+        },
+        {
+          "key": "E",
+          "text": "Use as the direct navigation outcome"
+        },
+        {
+          "key": "F",
+          "text": "Request counselling advice before use"
+        },
+        {
+          "key": "G",
+          "text": "Repeat with a second-year sample"
+        }
+      ],
+      "correct_option": "C",
+      "correct_answers": [
+        "C"
+      ],
+      "scoring_policy": "matching_letter",
+      "evidence_turn_ids": [
+        "T15"
+      ],
+      "evidence_excerpt_en": "Remove the questions asking for personal distressing experiences. They are not necessary for evaluating the campaign.",
+      "explanation_vi": "B: Loại câu hỏi yêu cầu trải nghiệm riêng tư gây khó chịu.",
+      "answer_source": "paraphrased_or_explicit_recording",
+      "question_tags": [
+        "M27",
+        "part3",
+        "academic_discussion",
+        "matching",
+        "evaluation_of_evidence"
+      ],
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true
+    },
+    {
+      "question_id": "Q09",
+      "group_id": "PART3_MATCHING_Q06_TO_10",
+      "type": "matching",
+      "prompt": "Early page-navigation logs",
+      "options": [
+        {
+          "key": "A",
+          "text": "Use as background reach data"
+        },
+        {
+          "key": "B",
+          "text": "Keep restricted; exclude identifiers"
+        },
+        {
+          "key": "C",
+          "text": "Remove for ethical reasons"
+        },
+        {
+          "key": "D",
+          "text": "Retain with an interface-version note"
+        },
+        {
+          "key": "E",
+          "text": "Use as the direct navigation outcome"
+        },
+        {
+          "key": "F",
+          "text": "Request counselling advice before use"
+        },
+        {
+          "key": "G",
+          "text": "Repeat with a second-year sample"
+        }
+      ],
+      "correct_option": "D",
+      "correct_answers": [
+        "D"
+      ],
+      "scoring_policy": "matching_letter",
+      "evidence_turn_ids": [
+        "T16"
+      ],
+      "evidence_excerpt_en": "We can retain the pilot navigation logs, but mark that the menu changed after the first three participants.",
+      "explanation_vi": "C: Giữ nhật ký điều hướng và ghi chú menu đã thay đổi.",
+      "answer_source": "paraphrased_or_explicit_recording",
+      "question_tags": [
+        "M27",
+        "part3",
+        "academic_discussion",
+        "matching",
+        "evaluation_of_evidence"
+      ],
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true
+    },
+    {
+      "question_id": "Q10",
+      "group_id": "PART3_MATCHING_Q06_TO_10",
+      "type": "matching",
+      "prompt": "Named support enquiries",
+      "options": [
+        {
+          "key": "A",
+          "text": "Use as background reach data"
+        },
+        {
+          "key": "B",
+          "text": "Keep restricted; exclude identifiers"
+        },
+        {
+          "key": "C",
+          "text": "Remove for ethical reasons"
+        },
+        {
+          "key": "D",
+          "text": "Retain with an interface-version note"
+        },
+        {
+          "key": "E",
+          "text": "Use as the direct navigation outcome"
+        },
+        {
+          "key": "F",
+          "text": "Request counselling advice before use"
+        },
+        {
+          "key": "G",
+          "text": "Repeat with a second-year sample"
+        }
+      ],
+      "correct_option": "B",
+      "correct_answers": [
+        "B"
+      ],
+      "scoring_policy": "matching_letter",
+      "evidence_turn_ids": [
+        "T19"
+      ],
+      "evidence_excerpt_en": "The enquiries contain names and personal details. Keep them restricted and do not export them into the research spreadsheet.",
+      "explanation_vi": "A: Dữ liệu yêu cầu hỗ trợ có định danh phải hạn chế truy cập.",
+      "answer_source": "paraphrased_or_explicit_recording",
+      "question_tags": [
+        "M27",
+        "part3",
+        "academic_discussion",
+        "matching",
+        "evaluation_of_evidence"
+      ],
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true
+    }
+  ],
+  "question_groups": [
+    {
+      "group_id": "PART3_MCQ_Q01_TO_05",
+      "question_ids": [
+        "Q01",
+        "Q02",
+        "Q03",
+        "Q04",
+        "Q05"
+      ],
+      "question_type": "mcq",
+      "instructions_en": "Choose the correct letter A, B or C for each question.",
+      "question_display_start": "before_audio",
+      "requires_one_listen": true,
+      "pause_between_groups_seconds": 0
+    },
+    {
+      "group_id": "PART3_MATCHING_Q06_TO_10",
+      "question_ids": [
+        "Q06",
+        "Q07",
+        "Q08",
+        "Q09",
+        "Q10"
+      ],
+      "question_type": "matching",
+      "instructions_en": "Match each item with the correct description. Choose A–G. You may use a letter more than once.",
+      "question_display_start": "before_audio",
+      "requires_one_listen": true,
+      "pause_between_groups_seconds": 0,
+      "options": [
+        {
+          "key": "A",
+          "text": "Use as background reach data"
+        },
+        {
+          "key": "B",
+          "text": "Keep restricted; exclude identifiers"
+        },
+        {
+          "key": "C",
+          "text": "Remove for ethical reasons"
+        },
+        {
+          "key": "D",
+          "text": "Retain with an interface-version note"
+        },
+        {
+          "key": "E",
+          "text": "Use as the direct navigation outcome"
+        },
+        {
+          "key": "F",
+          "text": "Request counselling advice before use"
+        },
+        {
+          "key": "G",
+          "text": "Repeat with a second-year sample"
+        }
+      ]
+    }
+  ],
+  "pedagogy_vi": {
+    "topic_summary_vi": "A: Đánh giá cách truyền thông chiến dịch sức khỏe tinh thần, không chẩn đoán cá nhân.",
+    "question_explanations_status": "draft_semantic_review_required",
+    "turn_meanings_are_not_full_translations": true,
+    "full_line_translation_required_before_release": true
+  },
+  "audio": {
+    "status": "not_generated",
+    "audio_url": null,
+    "audio_asset_id": null,
+    "duration_ms": null,
+    "source_text_sha256": "3465f677c13c8c46caa3eb65d62f21f53a083e182cfbe05a904a8b59a1e8359b",
+    "generation_strategy": "three_speakers_turnwise_then_seamless_mix",
+    "aligned_turns": false,
+    "voice_consistency_verified": false,
+    "human_listening_review": false
+  },
+  "exam_mode": {
+    "bank_role": "protected_assessment",
+    "use_as_training_before_first_attempt": false,
+    "listening_attempts_allowed_for_scored_first_attempt": 1,
+    "replay_before_submit": false,
+    "speed_control_before_submit": false,
+    "transcript_visible_before_submit": false,
+    "answer_key_visible_before_submit": false,
+    "post_attempt_review_allowed": true,
+    "question_count": 10,
+    "points_per_correct_answer": 1,
+    "question_order_monotonic": true,
+    "estimated_speech_minutes_at_140_wpm": 3.22,
+    "exam_band_score_enabled": false,
+    "repeated_attempt_marked_as_seen": true,
+    "all_questions_visible_before_audio": true
+  },
+  "qa": {
+    "automatic_data_validation": "pending",
+    "content_human_review": "pending",
+    "translation_human_review": "pending",
+    "audio_human_review": "pending",
+    "exam_simulation_rubric_score": null,
+    "rubric_90_verified": false,
+    "published": false,
+    "release_eligible": false
+  },
+  "provenance": {
+    "source_type": "original_authored_english_academic_dialogue",
+    "milestone": "M27",
+    "no_official_ielts_question_copied": true,
+    "training_exposure_guard": true,
+    "fictional_scenarios": true
+  },
+  "release_metadata": {
+    "target_bank": "protected_assessment",
+    "import_policy": "insert_only",
+    "version": "m27.0.1",
+    "preserve_existing_ids": true,
+    "allow_client_answer_payload": false
+  }
+}

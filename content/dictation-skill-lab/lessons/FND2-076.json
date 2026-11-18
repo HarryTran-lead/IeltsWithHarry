@@ -1,0 +1,623 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "FND2-076",
+  "status": "draft",
+  "level": "L2",
+  "section": 0,
+  "topic": "Foundation M19 – Vocabulary",
+  "title": "Workplace coordination",
+  "learning_objectives_vi": [
+    "Nghe yêu cầu công việc, phiên bản tài liệu và lịch thực hiện.",
+    "Nghe lại theo lỗi trọng tâm, không chỉ hoàn thành số bài.",
+    "Đánh giá bằng nội dung chưa gặp và một lần nghe."
+  ],
+  "content_format": "sentence_drill",
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Foundation narrator",
+      "tts_voice_id": null,
+      "accent_requested": "north_american"
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "The manager asked us to update the schedule before the meeting.",
+      "translation_vi": "Quản lý yêu cầu chúng tôi cập nhật lịch trước cuộc họp.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m19",
+        "workplace_communication",
+        "vocabulary"
+      ],
+      "target_value": "schedule",
+      "target_kind": "lexical_phrase",
+      "target_meaning_vi": "lịch",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "A",
+      "text_en": "Could you send me the revised draft rather than the original file?",
+      "translation_vi": "Bạn gửi cho tôi bản nháp đã sửa thay vì tệp gốc được không?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m19",
+        "workplace_communication",
+        "vocabulary"
+      ],
+      "target_value": "revised draft",
+      "target_kind": "lexical_phrase",
+      "target_meaning_vi": "bản nháp đã sửa",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "A",
+      "text_en": "The team is waiting for approval before launching the campaign.",
+      "translation_vi": "Nhóm đang chờ phê duyệt trước khi triển khai chiến dịch.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m19",
+        "workplace_communication",
+        "vocabulary"
+      ],
+      "target_value": "approval",
+      "target_kind": "lexical_phrase",
+      "target_meaning_vi": "phê duyệt",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "A",
+      "text_en": "I put the presentation in the shared folder for everyone to review.",
+      "translation_vi": "Tôi đặt bản thuyết trình vào thư mục chung để mọi người xem.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m19",
+        "workplace_communication",
+        "vocabulary"
+      ],
+      "target_value": "shared folder",
+      "target_kind": "lexical_phrase",
+      "target_meaning_vi": "thư mục chung",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "A",
+      "text_en": "We need to confirm the budget before ordering any equipment.",
+      "translation_vi": "Chúng ta phải xác nhận ngân sách trước khi đặt thiết bị.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m19",
+        "workplace_communication",
+        "vocabulary"
+      ],
+      "target_value": "budget",
+      "target_kind": "lexical_phrase",
+      "target_meaning_vi": "ngân sách",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "A",
+      "text_en": "The client requested a shorter proposal with clearer milestones.",
+      "translation_vi": "Khách yêu cầu đề xuất ngắn hơn với các mốc rõ ràng hơn.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m19",
+        "workplace_communication",
+        "vocabulary"
+      ],
+      "target_value": "proposal",
+      "target_kind": "lexical_phrase",
+      "target_meaning_vi": "đề xuất",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "Please add your comments to the document by the end of today.",
+      "translation_vi": "Vui lòng thêm nhận xét vào tài liệu trước cuối hôm nay.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m19",
+        "workplace_communication",
+        "vocabulary"
+      ],
+      "target_value": "comments",
+      "target_kind": "lexical_phrase",
+      "target_meaning_vi": "nhận xét",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "A",
+      "text_en": "We postponed the training because the instructor was unavailable.",
+      "translation_vi": "Chúng tôi hoãn buổi đào tạo vì người hướng dẫn không rảnh.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m19",
+        "workplace_communication",
+        "vocabulary"
+      ],
+      "target_value": "training",
+      "target_kind": "lexical_phrase",
+      "target_meaning_vi": "đào tạo",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T09",
+      "speaker_id": "A",
+      "text_en": "The delivery estimate has changed, so inform the sales team.",
+      "translation_vi": "Dự kiến giao hàng đã thay đổi nên hãy báo nhóm bán hàng.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m19",
+        "workplace_communication",
+        "vocabulary"
+      ],
+      "target_value": "estimate",
+      "target_kind": "lexical_phrase",
+      "target_meaning_vi": "dự kiến",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T10",
+      "speaker_id": "A",
+      "text_en": "I'll prepare the agenda while you check the meeting room.",
+      "translation_vi": "Tôi sẽ chuẩn bị chương trình họp trong khi bạn kiểm tra phòng họp.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m19",
+        "workplace_communication",
+        "vocabulary"
+      ],
+      "target_value": "agenda",
+      "target_kind": "lexical_phrase",
+      "target_meaning_vi": "chương trình nghị sự",
+      "bank_role": "training"
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "type": "dictation",
+      "prompt": "Nghe lượt T01 rồi chép đầy đủ câu tiếng Anh được nói.",
+      "correct_answers": [
+        "The manager asked us to update the schedule before the meeting."
+      ],
+      "evidence_turn_ids": [
+        "T01"
+      ],
+      "explanation_vi": "Nghe lại theo nhóm từ; câu gốc là: The manager asked us to update the schedule before the meeting. Nghĩa: Quản lý yêu cầu chúng tôi cập nhật lịch trước cuộc họp.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "workplace_communication"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q02",
+      "type": "dictation",
+      "prompt": "Nghe lượt T02 rồi chép đầy đủ câu tiếng Anh được nói.",
+      "correct_answers": [
+        "Could you send me the revised draft rather than the original file?"
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Nghe lại theo nhóm từ; câu gốc là: Could you send me the revised draft rather than the original file? Nghĩa: Bạn gửi cho tôi bản nháp đã sửa thay vì tệp gốc được không?",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "workplace_communication"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q03",
+      "type": "dictation",
+      "prompt": "Nghe lượt T03 rồi chép đầy đủ câu tiếng Anh được nói.",
+      "correct_answers": [
+        "The team is waiting for approval before launching the campaign."
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Nghe lại theo nhóm từ; câu gốc là: The team is waiting for approval before launching the campaign. Nghĩa: Nhóm đang chờ phê duyệt trước khi triển khai chiến dịch.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "workplace_communication"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q04",
+      "type": "dictation",
+      "prompt": "Nghe lượt T04 rồi chép đầy đủ câu tiếng Anh được nói.",
+      "correct_answers": [
+        "I put the presentation in the shared folder for everyone to review."
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Nghe lại theo nhóm từ; câu gốc là: I put the presentation in the shared folder for everyone to review. Nghĩa: Tôi đặt bản thuyết trình vào thư mục chung để mọi người xem.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "workplace_communication"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q05",
+      "type": "dictation",
+      "prompt": "Nghe lượt T05 rồi chép đầy đủ câu tiếng Anh được nói.",
+      "correct_answers": [
+        "We need to confirm the budget before ordering any equipment."
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Nghe lại theo nhóm từ; câu gốc là: We need to confirm the budget before ordering any equipment. Nghĩa: Chúng ta phải xác nhận ngân sách trước khi đặt thiết bị.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "workplace_communication"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q06",
+      "type": "dictation",
+      "prompt": "Nghe lượt T06 rồi chép đầy đủ câu tiếng Anh được nói.",
+      "correct_answers": [
+        "The client requested a shorter proposal with clearer milestones."
+      ],
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "explanation_vi": "Nghe lại theo nhóm từ; câu gốc là: The client requested a shorter proposal with clearer milestones. Nghĩa: Khách yêu cầu đề xuất ngắn hơn với các mốc rõ ràng hơn.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "workplace_communication"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q07",
+      "type": "dictation",
+      "prompt": "Nghe lượt T07 rồi chép đầy đủ câu tiếng Anh được nói.",
+      "correct_answers": [
+        "Please add your comments to the document by the end of today."
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "Nghe lại theo nhóm từ; câu gốc là: Please add your comments to the document by the end of today. Nghĩa: Vui lòng thêm nhận xét vào tài liệu trước cuối hôm nay.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "workplace_communication"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q08",
+      "type": "dictation",
+      "prompt": "Nghe lượt T08 rồi chép đầy đủ câu tiếng Anh được nói.",
+      "correct_answers": [
+        "We postponed the training because the instructor was unavailable."
+      ],
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "explanation_vi": "Nghe lại theo nhóm từ; câu gốc là: We postponed the training because the instructor was unavailable. Nghĩa: Chúng tôi hoãn buổi đào tạo vì người hướng dẫn không rảnh.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "workplace_communication"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q09",
+      "type": "dictation",
+      "prompt": "Nghe lượt T09 rồi chép đầy đủ câu tiếng Anh được nói.",
+      "correct_answers": [
+        "The delivery estimate has changed, so inform the sales team."
+      ],
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "explanation_vi": "Nghe lại theo nhóm từ; câu gốc là: The delivery estimate has changed, so inform the sales team. Nghĩa: Dự kiến giao hàng đã thay đổi nên hãy báo nhóm bán hàng.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "workplace_communication"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q10",
+      "type": "dictation",
+      "prompt": "Nghe lượt T10 rồi chép đầy đủ câu tiếng Anh được nói.",
+      "correct_answers": [
+        "I'll prepare the agenda while you check the meeting room."
+      ],
+      "evidence_turn_ids": [
+        "T10"
+      ],
+      "explanation_vi": "Nghe lại theo nhóm từ; câu gốc là: I'll prepare the agenda while you check the meeting room. Nghĩa: Tôi sẽ chuẩn bị chương trình họp trong khi bạn kiểm tra phòng họp.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "workplace_communication"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q11",
+      "type": "short_answer",
+      "prompt": "Nghe lượt T06. Khách muốn chỉnh tài liệu nào? Trả lời bằng từ/cụm tiếng Anh đúng như lời nghe.",
+      "correct_answers": [
+        "proposal"
+      ],
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "explanation_vi": "Thông tin đúng: proposal (đề xuất). Dẫn chứng: The client requested a shorter proposal with clearer milestones. Nghĩa: Khách yêu cầu đề xuất ngắn hơn với các mốc rõ ràng hơn.",
+      "scoring_policy": "lexical_case_punctuation_insensitive_server",
+      "target_kind": "lexical_phrase",
+      "question_tags": [
+        "short_answer",
+        "workplace_communication",
+        "training_comprehension"
+      ],
+      "max_replays_practice": 5,
+      "first_listen_only_for_mastery": false
+    },
+    {
+      "question_id": "Q12",
+      "type": "short_answer",
+      "prompt": "Nghe lượt T07. Người nghe cần thêm gì vào tài liệu? Trả lời bằng từ/cụm tiếng Anh đúng như lời nghe.",
+      "correct_answers": [
+        "comments"
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "Thông tin đúng: comments (nhận xét). Dẫn chứng: Please add your comments to the document by the end of today. Nghĩa: Vui lòng thêm nhận xét vào tài liệu trước cuối hôm nay.",
+      "scoring_policy": "lexical_case_punctuation_insensitive_server",
+      "target_kind": "lexical_phrase",
+      "question_tags": [
+        "short_answer",
+        "workplace_communication",
+        "training_comprehension"
+      ],
+      "max_replays_practice": 5,
+      "first_listen_only_for_mastery": false
+    },
+    {
+      "question_id": "Q13",
+      "type": "short_answer",
+      "prompt": "Nghe lượt T08. Hoạt động nào bị hoãn? Trả lời bằng từ/cụm tiếng Anh đúng như lời nghe.",
+      "correct_answers": [
+        "training"
+      ],
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "explanation_vi": "Thông tin đúng: training (đào tạo). Dẫn chứng: We postponed the training because the instructor was unavailable. Nghĩa: Chúng tôi hoãn buổi đào tạo vì người hướng dẫn không rảnh.",
+      "scoring_policy": "lexical_case_punctuation_insensitive_server",
+      "target_kind": "lexical_phrase",
+      "question_tags": [
+        "short_answer",
+        "workplace_communication",
+        "training_comprehension"
+      ],
+      "max_replays_practice": 5,
+      "first_listen_only_for_mastery": false
+    },
+    {
+      "question_id": "Q14",
+      "type": "short_answer",
+      "prompt": "Nghe lượt T09. Thông tin nào về giao hàng đã thay đổi? Trả lời bằng từ/cụm tiếng Anh đúng như lời nghe.",
+      "correct_answers": [
+        "estimate"
+      ],
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "explanation_vi": "Thông tin đúng: estimate (dự kiến). Dẫn chứng: The delivery estimate has changed, so inform the sales team. Nghĩa: Dự kiến giao hàng đã thay đổi nên hãy báo nhóm bán hàng.",
+      "scoring_policy": "lexical_case_punctuation_insensitive_server",
+      "target_kind": "lexical_phrase",
+      "question_tags": [
+        "short_answer",
+        "workplace_communication",
+        "training_comprehension"
+      ],
+      "max_replays_practice": 5,
+      "first_listen_only_for_mastery": false
+    },
+    {
+      "question_id": "Q15",
+      "type": "short_answer",
+      "prompt": "Nghe lượt T10. Người nói chuẩn bị tài liệu nào? Trả lời bằng từ/cụm tiếng Anh đúng như lời nghe.",
+      "correct_answers": [
+        "agenda"
+      ],
+      "evidence_turn_ids": [
+        "T10"
+      ],
+      "explanation_vi": "Thông tin đúng: agenda (chương trình nghị sự). Dẫn chứng: I'll prepare the agenda while you check the meeting room. Nghĩa: Tôi sẽ chuẩn bị chương trình họp trong khi bạn kiểm tra phòng họp.",
+      "scoring_policy": "lexical_case_punctuation_insensitive_server",
+      "target_kind": "lexical_phrase",
+      "question_tags": [
+        "short_answer",
+        "workplace_communication",
+        "training_comprehension"
+      ],
+      "max_replays_practice": 5,
+      "first_listen_only_for_mastery": false
+    }
+  ],
+  "vocabulary": [
+    {
+      "term": "schedule",
+      "pos": "noun (contextual)",
+      "meaning_vi": "lịch",
+      "example_en": "The manager asked us to update the schedule before the meeting.",
+      "example_vi": "Quản lý yêu cầu chúng tôi cập nhật lịch trước cuộc họp.",
+      "is_illustrative_context": false
+    },
+    {
+      "term": "revised draft",
+      "pos": "noun phrase",
+      "meaning_vi": "bản nháp đã sửa",
+      "example_en": "Could you send me the revised draft rather than the original file?",
+      "example_vi": "Bạn gửi cho tôi bản nháp đã sửa thay vì tệp gốc được không?",
+      "is_illustrative_context": false
+    },
+    {
+      "term": "approval",
+      "pos": "noun (contextual)",
+      "meaning_vi": "phê duyệt",
+      "example_en": "The team is waiting for approval before launching the campaign.",
+      "example_vi": "Nhóm đang chờ phê duyệt trước khi triển khai chiến dịch.",
+      "is_illustrative_context": false
+    },
+    {
+      "term": "shared folder",
+      "pos": "noun phrase",
+      "meaning_vi": "thư mục chung",
+      "example_en": "I put the presentation in the shared folder for everyone to review.",
+      "example_vi": "Tôi đặt bản thuyết trình vào thư mục chung để mọi người xem.",
+      "is_illustrative_context": false
+    },
+    {
+      "term": "budget",
+      "pos": "noun (contextual)",
+      "meaning_vi": "ngân sách",
+      "example_en": "We need to confirm the budget before ordering any equipment.",
+      "example_vi": "Chúng ta phải xác nhận ngân sách trước khi đặt thiết bị.",
+      "is_illustrative_context": false
+    },
+    {
+      "term": "proposal",
+      "pos": "noun (contextual)",
+      "meaning_vi": "đề xuất",
+      "example_en": "The client requested a shorter proposal with clearer milestones.",
+      "example_vi": "Khách yêu cầu đề xuất ngắn hơn với các mốc rõ ràng hơn.",
+      "is_illustrative_context": false
+    }
+  ],
+  "micro_skill_id": "workplace_communication",
+  "bank_role": "training",
+  "content_design": {
+    "sequence": "10_varied_contexts",
+    "first_listen": "1x",
+    "guided_replay_max": 5,
+    "mastery_requires_unseen": true,
+    "learning_note_vi": "Nghe yêu cầu công việc, phiên bản tài liệu và lịch thực hiện.",
+    "category": "vocabulary",
+    "post_submit_review_only": true,
+    "unseen_assessment_id": "FND2-076-HOLDOUT",
+    "spoken_text_must_match_target": true,
+    "holdout_must_be_server_side": true,
+    "no_band_claim": true
+  },
+  "audio": {
+    "status": "not_generated",
+    "url": null,
+    "duration_ms": null,
+    "provider": null,
+    "model": null,
+    "voice_config": null,
+    "format": null,
+    "audio_sha256": null,
+    "source_transcript_hash": "4186d14ac6d51ecd46197409a3a08be0cb1a695ed6f7d83156b3228aa97fc0ff",
+    "generation_notes": "Synthesize actual spoken utterance only; never read learning metadata. Human verify dates, names and connected-speech target."
+  },
+  "qa": {
+    "content_reviewed": false,
+    "answers_verified": false,
+    "audio_verified": false,
+    "human_signed_off": false,
+    "duplicate_reviewed": false,
+    "notes": [
+      "M19 originally authored DRAFT, machine-verified only.",
+      "Connected-speech phonetic features NOT established until actual audio is reviewed."
+    ]
+  },
+  "provenance": {
+    "content_origin": "original_ai_assisted",
+    "rights_status": "pending_tts_audio_terms_review",
+    "source_urls": [],
+    "reviewer": null
+  },
+  "release_metadata": {
+    "published_at": null,
+    "version": 1
+  },
+  "lesson_theory_vi": {
+    "core_rule": "Nghe yêu cầu công việc, phiên bản tài liệu và lịch thực hiện.",
+    "worked_contrasts": [
+      {
+        "spoken_example": "The shop was out of tea, so I bought coffee instead.",
+        "written_value": "coffee",
+        "teacher_note_vi": "So/instead báo lựa chọn thay thế; tea chỉ là thông tin cũ."
+      },
+      {
+        "spoken_example": "The receipt is in the bag, beside the charger.",
+        "written_value": "receipt",
+        "teacher_note_vi": "Dựa câu hỏi để chọn đúng đồ vật, không chọn mọi từ vựng nghe thấy."
+      }
+    ],
+    "learning_steps": [
+      "Đọc nghĩa và ví dụ mới, chú ý từ loại, ngữ cảnh dùng từ.",
+      "Nghe mỗi câu một lần để dự đoán từ đích, sau đó chép cả câu.",
+      "Làm năm câu kiểm tra thông tin có ngữ cảnh mà không xem đáp án.",
+      "Cuối bài thử hai câu chưa gặp; nếu sai, quay về kỹ năng nhỏ tương ứng."
+    ],
+    "common_mistakes": [
+      "Nhầm bản gốc với bản đã sửa.",
+      "Chỉ nhìn từ khóa quen mà không nghe phần phủ định hoặc cách người nói sửa lại."
+    ],
+    "before_audio_question": "Từ/cụm nào phù hợp với câu hỏi, và từ bị phủ định có phải đáp án không?",
+    "difficulty_steps": [
+      "T01–T03: ngữ cảnh ngắn, thông tin chính rõ ràng.",
+      "T04–T07: thêm thông tin phụ, dạng phủ định hoặc tương phản.",
+      "T08–T10: nội dung dài hơn, nhiều chi tiết hoặc đổi ý."
+    ],
+    "examples_are_not_mastery_items": true,
+    "audio_review_warning_vi": null
+  }
+}

@@ -1,0 +1,351 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "DICT-S4-006",
+  "status": "draft",
+  "level": "L5",
+  "section": 4,
+  "topic": "Memory & Learning",
+  "title": "Encoding, Recognition and Lasting Understanding",
+  "learning_objectives_vi": [
+    "Nghe bài giảng học thuật một người nói, theo dõi quan hệ giữa luận điểm và bằng chứng.",
+    "Luyện các câu hỏi Section 4 theo thứ tự lời giảng; phân tích giới hạn của khái niệm và cách diễn đạt lại.",
+    "Chép chính xác hai đoạn, luyện từ học thuật theo ngữ cảnh và ôn điểm yếu qua Mistake Bank."
+  ],
+  "content_format": "section_practice",
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Academic lecturer",
+      "tts_voice_id": null,
+      "accent_requested": "british"
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "Imagine revising a chapter at midnight and recognising every sentence the next morning. That feeling of familiarity is encouraging, but it does not prove that you can explain the ideas without the book. Psychologists distinguish recognition from retrieval. Recognition occurs when a cue makes information seem familiar; retrieval requires bringing it back with fewer hints. The distinction matters when choosing revision strategies.",
+      "translation_vi": "Hãy tưởng tượng bạn ôn một chương lúc nửa đêm và sáng hôm sau nhận ra mọi câu trong đó. Cảm giác quen thuộc ấy đáng khích lệ, nhưng không chứng minh rằng bạn có thể giải thích ý tưởng mà không nhìn sách. Các nhà tâm lý phân biệt nhận diện với truy xuất trí nhớ. Nhận diện xảy ra khi gợi ý khiến thông tin trông quen; truy xuất đòi hỏi tự nhớ lại với ít gợi ý hơn. Sự khác biệt này rất quan trọng khi chọn cách ôn tập.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_4",
+        "academic_lecture",
+        "concept",
+        "l5"
+      ]
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "A",
+      "text_en": "Learning begins with encoding, the process of transforming an experience into a usable memory representation. Attention helps determine which features are encoded. A student who copies a diagram while thinking about another task may reproduce its lines but miss the relationship between the parts. Meaningful questions and explanations can make that relationship more memorable than mechanical copying.",
+      "translation_vi": "Học tập bắt đầu từ mã hóa, tức quá trình biến trải nghiệm thành biểu diễn trí nhớ có thể sử dụng. Sự chú ý giúp quyết định đặc điểm nào được mã hóa. Một học sinh vừa chép sơ đồ vừa nghĩ chuyện khác có thể vẽ lại các đường nét nhưng bỏ lỡ mối quan hệ giữa những thành phần. Câu hỏi và lời giải thích có ý nghĩa có thể khiến mối quan hệ ấy dễ nhớ hơn việc chép máy móc.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_4",
+        "academic_lecture",
+        "concept",
+        "l5"
+      ]
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "A",
+      "text_en": "Memory is not a single storage container. Working memory briefly holds and manipulates information, such as the numbers in a mental calculation. Long-term memory supports knowledge that may remain available for days or years. However, putting more items into working memory is not always helpful. When too many instructions arrive together, some details may be lost before they are integrated.",
+      "translation_vi": "Trí nhớ không phải một chiếc kho chứa duy nhất. Trí nhớ làm việc giữ và xử lý thông tin trong thời gian ngắn, chẳng hạn các con số khi tính nhẩm. Trí nhớ dài hạn hỗ trợ kiến thức có thể tồn tại nhiều ngày hoặc nhiều năm. Tuy nhiên, đưa thêm nhiều mục vào trí nhớ làm việc không phải lúc nào cũng tốt. Khi có quá nhiều hướng dẫn cùng lúc, một số chi tiết có thể mất trước khi được liên kết.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_4",
+        "academic_lecture",
+        "concept",
+        "l5"
+      ]
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "A",
+      "text_en": "A useful technique is elaboration: connecting new material to what the learner already understands. Rather than simply repeating the word erosion, someone might explain how moving water gradually changes a riverbank. Such an explanation gives the idea several connections. The quality of those connections is more important than inventing a long but irrelevant story.",
+      "translation_vi": "Một kỹ thuật hữu ích là đào sâu liên hệ: kết nối tài liệu mới với điều người học đã hiểu. Thay vì chỉ lặp từ xói mòn, người học có thể giải thích nước chảy làm bờ sông thay đổi dần ra sao. Cách giải thích ấy tạo nhiều mối liên kết cho khái niệm. Chất lượng liên kết quan trọng hơn việc bịa một câu chuyện dài nhưng không liên quan.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_4",
+        "academic_lecture",
+        "concept",
+        "l5"
+      ]
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "A",
+      "text_en": "Finally, evidence of learning should come from performance, not confidence alone. A brief attempt to explain a concept after closing the notes can reveal gaps that rereading hides. Feedback then helps correct those gaps before they become habits. This does not mean every test should be high pressure. Low-stakes opportunities to retrieve information can be part of ordinary practice.",
+      "translation_vi": "Cuối cùng, bằng chứng học được cần đến từ khả năng thực hiện chứ không chỉ sự tự tin. Thử giải thích một khái niệm sau khi đóng ghi chú có thể bộc lộ lỗ hổng mà việc đọc lại che giấu. Phản hồi sau đó giúp sửa những lỗ hổng trước khi chúng thành thói quen. Điều này không có nghĩa bài kiểm tra nào cũng phải căng thẳng. Những lần truy xuất kiến thức ít áp lực có thể nằm trong việc luyện tập thường ngày.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_4",
+        "academic_lecture",
+        "concept",
+        "l5"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "type": "note_completion",
+      "prompt": "A sense of familiarity indicates ____, not necessarily independent recall.",
+      "correct_answers": [
+        "recognition"
+      ],
+      "evidence_turn_ids": [
+        "T01"
+      ],
+      "explanation_vi": "Đáp án “recognition” nằm tại đoạn T01. Nội dung bằng chứng: Hãy tưởng tượng bạn ôn một chương lúc nửa đêm và sáng hôm sau nhận ra mọi câu trong đó. Cảm giác quen thuộc ấy đáng khích lệ, nhưng không chứng minh rằng bạn có thể giải thích ý tưởng mà không nhìn sách. Các nhà tâm lý phân biệt nhận diện với truy xuất trí nhớ. Nhận diện xảy ra khi gợi ý khiến thông tin trông quen; truy xuất đòi hỏi tự nhớ lại với ít gợi ý hơn. Sự khác biệt này rất quan trọng khi chọn cách ôn tập.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_4",
+        "ielts_practice",
+        "concept",
+        "note_completion"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q02",
+      "type": "sentence_completion",
+      "prompt": "The process of turning an experience into a memory is known as ____.",
+      "correct_answers": [
+        "encoding"
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Đáp án “encoding” nằm tại đoạn T02. Nội dung bằng chứng: Học tập bắt đầu từ mã hóa, tức quá trình biến trải nghiệm thành biểu diễn trí nhớ có thể sử dụng. Sự chú ý giúp quyết định đặc điểm nào được mã hóa. Một học sinh vừa chép sơ đồ vừa nghĩ chuyện khác có thể vẽ lại các đường nét nhưng bỏ lỡ mối quan hệ giữa những thành phần. Câu hỏi và lời giải thích có ý nghĩa có thể khiến mối quan hệ ấy dễ nhớ hơn việc chép máy móc.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_4",
+        "ielts_practice",
+        "concept",
+        "sentence_completion"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q03",
+      "type": "note_completion",
+      "prompt": "Mental calculations rely partly on ____.",
+      "correct_answers": [
+        "working memory"
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Đáp án “working memory” nằm tại đoạn T03. Nội dung bằng chứng: Trí nhớ không phải một chiếc kho chứa duy nhất. Trí nhớ làm việc giữ và xử lý thông tin trong thời gian ngắn, chẳng hạn các con số khi tính nhẩm. Trí nhớ dài hạn hỗ trợ kiến thức có thể tồn tại nhiều ngày hoặc nhiều năm. Tuy nhiên, đưa thêm nhiều mục vào trí nhớ làm việc không phải lúc nào cũng tốt. Khi có quá nhiều hướng dẫn cùng lúc, một số chi tiết có thể mất trước khi được liên kết.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_4",
+        "ielts_practice",
+        "concept",
+        "note_completion"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q04",
+      "type": "note_completion",
+      "prompt": "Connecting new ideas to prior understanding is called ____.",
+      "correct_answers": [
+        "elaboration"
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Đáp án “elaboration” nằm tại đoạn T04. Nội dung bằng chứng: Một kỹ thuật hữu ích là đào sâu liên hệ: kết nối tài liệu mới với điều người học đã hiểu. Thay vì chỉ lặp từ xói mòn, người học có thể giải thích nước chảy làm bờ sông thay đổi dần ra sao. Cách giải thích ấy tạo nhiều mối liên kết cho khái niệm. Chất lượng liên kết quan trọng hơn việc bịa một câu chuyện dài nhưng không liên quan.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_4",
+        "ielts_practice",
+        "concept",
+        "note_completion"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q05",
+      "type": "sentence_completion",
+      "prompt": "Ordinary practice can include ____ opportunities to retrieve knowledge.",
+      "correct_answers": [
+        "Low-stakes"
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Đáp án “Low-stakes” nằm tại đoạn T05. Nội dung bằng chứng: Cuối cùng, bằng chứng học được cần đến từ khả năng thực hiện chứ không chỉ sự tự tin. Thử giải thích một khái niệm sau khi đóng ghi chú có thể bộc lộ lỗ hổng mà việc đọc lại che giấu. Phản hồi sau đó giúp sửa những lỗ hổng trước khi chúng thành thói quen. Điều này không có nghĩa bài kiểm tra nào cũng phải căng thẳng. Những lần truy xuất kiến thức ít áp lực có thể nằm trong việc luyện tập thường ngày.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_4",
+        "ielts_practice",
+        "concept",
+        "sentence_completion"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q06",
+      "type": "mcq",
+      "prompt": "Which approach does the lecture recommend for checking learning?",
+      "correct_answers": [
+        "Attempt an explanation without the notes"
+      ],
+      "options": [
+        "Attempt an explanation without the notes",
+        "Judge progress mainly from confidence",
+        "Read the same notes until they look familiar"
+      ],
+      "evidence_turn_ids": [
+        "T01",
+        "T03",
+        "T05"
+      ],
+      "explanation_vi": "Hãy kết hợp luận điểm đầu, ví dụ ở giữa và kết luận cuối bài. Cuối cùng, bằng chứng học được cần đến từ khả năng thực hiện chứ không chỉ sự tự tin. Thử giải thích một khái niệm sau khi đóng ghi chú có thể bộc lộ lỗ hổng mà việc đọc lại che giấu. Phản hồi sau đó giúp sửa những lỗ hổng trước khi chúng thành thói quen. Điều này không có nghĩa bài kiểm tra nào cũng phải căng thẳng. Những lần truy xuất kiến thức ít áp lực có thể nằm trong việc luyện tập thường ngày. Phương án chính xác: “Attempt an explanation without the notes”; hai phương án khác khái quát quá mức hoặc không phù hợp bằng chứng.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "section_4",
+        "ielts_practice",
+        "concept",
+        "main_idea"
+      ]
+    },
+    {
+      "question_id": "D01",
+      "type": "dictation",
+      "prompt": "Nghe đoạn T02 và chép lại chính xác lời giảng.",
+      "correct_answers": [
+        "Learning begins with encoding, the process of transforming an experience into a usable memory representation. Attention helps determine which features are encoded. A student who copies a diagram while thinking about another task may reproduce its lines but miss the relationship between the parts. Meaningful questions and explanations can make that relationship more memorable than mechanical copying."
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Phân tích từ nối, âm yếu và cụm thuật ngữ học thuật. Nghĩa của đoạn: Học tập bắt đầu từ mã hóa, tức quá trình biến trải nghiệm thành biểu diễn trí nhớ có thể sử dụng. Sự chú ý giúp quyết định đặc điểm nào được mã hóa. Một học sinh vừa chép sơ đồ vừa nghĩ chuyện khác có thể vẽ lại các đường nét nhưng bỏ lỡ mối quan hệ giữa những thành phần. Câu hỏi và lời giải thích có ý nghĩa có thể khiến mối quan hệ ấy dễ nhớ hơn việc chép máy móc.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_4",
+        "dictation",
+        "exact_transcript"
+      ]
+    },
+    {
+      "question_id": "D02",
+      "type": "dictation",
+      "prompt": "Nghe đoạn T04 và chép lại chính xác lời giảng.",
+      "correct_answers": [
+        "A useful technique is elaboration: connecting new material to what the learner already understands. Rather than simply repeating the word erosion, someone might explain how moving water gradually changes a riverbank. Such an explanation gives the idea several connections. The quality of those connections is more important than inventing a long but irrelevant story."
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Phân tích từ nối, âm yếu và cụm thuật ngữ học thuật. Nghĩa của đoạn: Một kỹ thuật hữu ích là đào sâu liên hệ: kết nối tài liệu mới với điều người học đã hiểu. Thay vì chỉ lặp từ xói mòn, người học có thể giải thích nước chảy làm bờ sông thay đổi dần ra sao. Cách giải thích ấy tạo nhiều mối liên kết cho khái niệm. Chất lượng liên kết quan trọng hơn việc bịa một câu chuyện dài nhưng không liên quan.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_4",
+        "dictation",
+        "exact_transcript"
+      ]
+    },
+    {
+      "question_id": "G01",
+      "type": "gap_fill",
+      "prompt": "Nghe T01 rồi điền phần thiếu: Imagine revising a chapter at midnight and recognising every sentence the next morning. That feeling of familiarity is encouraging, but it does not prove that you can explain the ideas without the book. Psychologists distinguish ____ from retrieval.",
+      "correct_answers": [
+        "recognition"
+      ],
+      "evidence_turn_ids": [
+        "T01"
+      ],
+      "explanation_vi": "Điền “recognition”, nghĩa: sự nhận diện. Cụm từ này xuất hiện trong T01.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_4",
+        "gap_fill",
+        "academic_vocabulary"
+      ]
+    }
+  ],
+  "vocabulary": [
+    {
+      "term": "recognition",
+      "pos": "n.",
+      "meaning_vi": "sự nhận diện",
+      "example_en": "Imagine revising a chapter at midnight and recognising every sentence the next morning. That feeling of familiarity is encouraging, but it does not prove that you can explain the ideas without the book. Psychologists distinguish recognition from retrieval. Recognition occurs when a cue makes information seem familiar; retrieval requires bringing it back with fewer hints. The distinction matters when choosing revision strategies.",
+      "example_vi": "Hãy tưởng tượng bạn ôn một chương lúc nửa đêm và sáng hôm sau nhận ra mọi câu trong đó. Cảm giác quen thuộc ấy đáng khích lệ, nhưng không chứng minh rằng bạn có thể giải thích ý tưởng mà không nhìn sách. Các nhà tâm lý phân biệt nhận diện với truy xuất trí nhớ. Nhận diện xảy ra khi gợi ý khiến thông tin trông quen; truy xuất đòi hỏi tự nhớ lại với ít gợi ý hơn. Sự khác biệt này rất quan trọng khi chọn cách ôn tập.",
+      "source_turn_id": "T01"
+    },
+    {
+      "term": "encoding",
+      "pos": "n.",
+      "meaning_vi": "sự mã hóa trí nhớ",
+      "example_en": "Learning begins with encoding, the process of transforming an experience into a usable memory representation. Attention helps determine which features are encoded. A student who copies a diagram while thinking about another task may reproduce its lines but miss the relationship between the parts. Meaningful questions and explanations can make that relationship more memorable than mechanical copying.",
+      "example_vi": "Học tập bắt đầu từ mã hóa, tức quá trình biến trải nghiệm thành biểu diễn trí nhớ có thể sử dụng. Sự chú ý giúp quyết định đặc điểm nào được mã hóa. Một học sinh vừa chép sơ đồ vừa nghĩ chuyện khác có thể vẽ lại các đường nét nhưng bỏ lỡ mối quan hệ giữa những thành phần. Câu hỏi và lời giải thích có ý nghĩa có thể khiến mối quan hệ ấy dễ nhớ hơn việc chép máy móc.",
+      "source_turn_id": "T02"
+    },
+    {
+      "term": "working memory",
+      "pos": "n. phr.",
+      "meaning_vi": "trí nhớ làm việc",
+      "example_en": "Memory is not a single storage container. Working memory briefly holds and manipulates information, such as the numbers in a mental calculation. Long-term memory supports knowledge that may remain available for days or years. However, putting more items into working memory is not always helpful. When too many instructions arrive together, some details may be lost before they are integrated.",
+      "example_vi": "Trí nhớ không phải một chiếc kho chứa duy nhất. Trí nhớ làm việc giữ và xử lý thông tin trong thời gian ngắn, chẳng hạn các con số khi tính nhẩm. Trí nhớ dài hạn hỗ trợ kiến thức có thể tồn tại nhiều ngày hoặc nhiều năm. Tuy nhiên, đưa thêm nhiều mục vào trí nhớ làm việc không phải lúc nào cũng tốt. Khi có quá nhiều hướng dẫn cùng lúc, một số chi tiết có thể mất trước khi được liên kết.",
+      "source_turn_id": "T03"
+    },
+    {
+      "term": "elaboration",
+      "pos": "n.",
+      "meaning_vi": "sự liên hệ đào sâu",
+      "example_en": "A useful technique is elaboration: connecting new material to what the learner already understands. Rather than simply repeating the word erosion, someone might explain how moving water gradually changes a riverbank. Such an explanation gives the idea several connections. The quality of those connections is more important than inventing a long but irrelevant story.",
+      "example_vi": "Một kỹ thuật hữu ích là đào sâu liên hệ: kết nối tài liệu mới với điều người học đã hiểu. Thay vì chỉ lặp từ xói mòn, người học có thể giải thích nước chảy làm bờ sông thay đổi dần ra sao. Cách giải thích ấy tạo nhiều mối liên kết cho khái niệm. Chất lượng liên kết quan trọng hơn việc bịa một câu chuyện dài nhưng không liên quan.",
+      "source_turn_id": "T04"
+    }
+  ],
+  "audio": {
+    "status": "not_generated",
+    "url": null,
+    "duration_ms": null,
+    "model": null,
+    "provider": null,
+    "voice_config": null,
+    "source_transcript_hash": "5337aa1d4a78278b83cfa1d991492aaecd65b61cde6965c873d5a9d3f862a1aa",
+    "audio_sha256": null,
+    "format": null
+  },
+  "qa": {
+    "content_reviewed": false,
+    "answers_verified": false,
+    "audio_verified": false,
+    "rights_cleared": false,
+    "duplicate_reviewed": false,
+    "notes": [
+      "Original AI-assisted educational script, not an official IELTS transcript.",
+      "Editorial, academic and linguistic review pending.",
+      "Audio/TTS not generated; text-to-speech distribution rights must be confirmed before use, especially for minors.",
+      "Six IELTS-style practice questions per lesson; this is not a full official Part 4 test or a calibrated IELTS Band test.",
+      "M16.2: automated edits are provisional; IELTS teacher final signoff, audio and rights clearance pending."
+    ]
+  },
+  "provenance": {
+    "content_origin": "original_ai_assisted",
+    "source_urls": [],
+    "source_rights_note": "Original transcript and translation drafts; verify academic claims and terms, and TTS provider redistribution conditions before release.",
+    "reviewer": null
+  },
+  "release_metadata": {
+    "published_at": null,
+    "version": 1
+  }
+}

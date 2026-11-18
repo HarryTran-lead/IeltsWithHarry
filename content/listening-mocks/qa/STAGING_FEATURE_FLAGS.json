@@ -1,0 +1,16 @@
+{
+  "status": "STAGING_DRAFT_ONLY",
+  "release_enabled": false,
+  "new_dictation_catalog_visible_to_students": false,
+  "new_listening_mocks_visible_to_students": false,
+  "new_dictation_activities_visible_to_students": false,
+  "audio_verified": false,
+  "teacher_approved": false,
+  "live_db_id_verified": false,
+  "production_e2e_verified": false,
+  "on_id_collision": "ABORT_TRANSACTION_NO_UPDATE",
+  "import_semantics": "INSERT_ONLY_NO_UPSERT_NO_DELETE",
+  "legacy_300_no_touch": true,
+  "production_legacy_export_required": true,
+  "current_generated_audio_count": 0
+}

@@ -1,3 +1,4 @@
+import "../../news.css";
 import Link from "next/link";
 import { redirect } from "next/navigation";
 import { Card } from "@/components/ui/card";

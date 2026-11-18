@@ -1,0 +1,425 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "DICT-F1-001",
+  "status": "draft",
+  "level": "L1",
+  "section": 0,
+  "topic": "Foundation",
+  "title": "Short vs Long Vowels",
+  "learning_objectives_vi": [
+    "Phân biệt ship/sheep, live/leave",
+    "Nghe và chép chính xác các lượt nghe ngắn mà không dựa vào transcript."
+  ],
+  "content_format": "micro_drill",
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Foundation narrator",
+      "tts_voice_id": null,
+      "accent_requested": "british"
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "The sheep is near the gate.",
+      "translation_vi": "Con cừu ở gần cổng.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "sounds_pronunciation",
+        "micro_listening"
+      ]
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "A",
+      "text_en": "The ship is leaving now.",
+      "translation_vi": "Con tàu đang rời đi.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "sounds_pronunciation",
+        "micro_listening"
+      ]
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "A",
+      "text_en": "Please sit on this chair.",
+      "translation_vi": "Hãy ngồi lên chiếc ghế này.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "sounds_pronunciation",
+        "micro_listening"
+      ]
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "A",
+      "text_en": "Take a seat by the window.",
+      "translation_vi": "Hãy ngồi cạnh cửa sổ.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "sounds_pronunciation",
+        "micro_listening"
+      ]
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "A",
+      "text_en": "The fish is in the dish.",
+      "translation_vi": "Con cá ở trong chiếc đĩa.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "sounds_pronunciation",
+        "micro_listening"
+      ]
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "A",
+      "text_en": "I feel fine this morning.",
+      "translation_vi": "Tôi thấy ổn sáng nay.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "sounds_pronunciation",
+        "micro_listening"
+      ]
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "We live beside the park.",
+      "translation_vi": "Chúng tôi sống bên cạnh công viên.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "sounds_pronunciation",
+        "micro_listening"
+      ]
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "A",
+      "text_en": "Please leave before six.",
+      "translation_vi": "Vui lòng rời đi trước sáu giờ.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "sounds_pronunciation",
+        "micro_listening"
+      ]
+    },
+    {
+      "turn_id": "T09",
+      "speaker_id": "A",
+      "text_en": "The bag is on the desk.",
+      "translation_vi": "Cái túi ở trên bàn.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "sounds_pronunciation",
+        "micro_listening"
+      ]
+    },
+    {
+      "turn_id": "T10",
+      "speaker_id": "A",
+      "text_en": "The big bag is heavy.",
+      "translation_vi": "Cái túi lớn này khá nặng.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "sounds_pronunciation",
+        "micro_listening"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "type": "dictation",
+      "prompt": "Nghe lượt T01 và chép chính xác những từ được nói.",
+      "correct_answers": [
+        "The sheep is near the gate."
+      ],
+      "evidence_turn_ids": [
+        "T01"
+      ],
+      "explanation_vi": "sheep có nguyên âm dài /iː/, không phải ship. Nghĩa: Con cừu ở gần cổng.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text"
+      ]
+    },
+    {
+      "question_id": "Q02",
+      "type": "dictation",
+      "prompt": "Nghe lượt T02 và chép chính xác những từ được nói.",
+      "correct_answers": [
+        "The ship is leaving now."
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "ship dùng âm ngắn /ɪ/. Nghĩa: Con tàu đang rời đi.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text"
+      ]
+    },
+    {
+      "question_id": "Q03",
+      "type": "dictation",
+      "prompt": "Nghe lượt T03 và chép chính xác những từ được nói.",
+      "correct_answers": [
+        "Please sit on this chair."
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "sit có /ɪ/ ngắn. Nghĩa: Hãy ngồi lên chiếc ghế này.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text"
+      ]
+    },
+    {
+      "question_id": "Q04",
+      "type": "dictation",
+      "prompt": "Nghe lượt T04 và chép chính xác những từ được nói.",
+      "correct_answers": [
+        "Take a seat by the window."
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "seat có /iː/ dài. Nghĩa: Hãy ngồi cạnh cửa sổ.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text"
+      ]
+    },
+    {
+      "question_id": "Q05",
+      "type": "dictation",
+      "prompt": "Nghe lượt T05 và chép chính xác những từ được nói.",
+      "correct_answers": [
+        "The fish is in the dish."
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "fish và dish cùng âm /ɪ/. Nghĩa: Con cá ở trong chiếc đĩa.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text"
+      ]
+    },
+    {
+      "question_id": "Q06",
+      "type": "dictation",
+      "prompt": "Nghe lượt T06 và chép chính xác những từ được nói.",
+      "correct_answers": [
+        "I feel fine this morning."
+      ],
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "explanation_vi": "feel có nguyên âm /iː/. Nghĩa: Tôi thấy ổn sáng nay.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text"
+      ]
+    },
+    {
+      "question_id": "Q07",
+      "type": "dictation",
+      "prompt": "Nghe lượt T07 và chép chính xác những từ được nói.",
+      "correct_answers": [
+        "We live beside the park."
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "live /lɪv/ khác leave /liːv/. Nghĩa: Chúng tôi sống bên cạnh công viên.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text"
+      ]
+    },
+    {
+      "question_id": "Q08",
+      "type": "dictation",
+      "prompt": "Nghe lượt T08 và chép chính xác những từ được nói.",
+      "correct_answers": [
+        "Please leave before six."
+      ],
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "explanation_vi": "leave dùng nguyên âm dài /iː/. Nghĩa: Vui lòng rời đi trước sáu giờ.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text"
+      ]
+    },
+    {
+      "question_id": "Q09",
+      "type": "dictation",
+      "prompt": "Nghe lượt T09 và chép chính xác những từ được nói.",
+      "correct_answers": [
+        "The bag is on the desk."
+      ],
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "explanation_vi": "bag có nguyên âm /æ/. Nghĩa: Cái túi ở trên bàn.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text"
+      ]
+    },
+    {
+      "question_id": "Q10",
+      "type": "dictation",
+      "prompt": "Nghe lượt T10 và chép chính xác những từ được nói.",
+      "correct_answers": [
+        "The big bag is heavy."
+      ],
+      "evidence_turn_ids": [
+        "T10"
+      ],
+      "explanation_vi": "big có /ɪ/, bag có /æ/; nghe đúng cả hai. Nghĩa: Cái túi lớn này khá nặng.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text"
+      ]
+    },
+    {
+      "question_id": "Q11",
+      "type": "word_choice",
+      "prompt": "T01: Từ chỉ con vật nghe được là gì?",
+      "correct_answers": [
+        "sheep"
+      ],
+      "options": [
+        "sheep",
+        "ship"
+      ],
+      "evidence_turn_ids": [
+        "T01"
+      ],
+      "explanation_vi": "Nghe /ʃiːp/ có nguyên âm dài /iː/. Hãy nghe lại lượt T01, đối chiếu với lựa chọn còn lại và xác định từ/ý được nói thật.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "comprehension",
+        "foundation_discrimination"
+      ]
+    },
+    {
+      "question_id": "Q12",
+      "type": "word_choice",
+      "prompt": "T02: Phương tiện nghe được là gì?",
+      "correct_answers": [
+        "ship"
+      ],
+      "options": [
+        "sheep",
+        "ship"
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Ship /ʃɪp/ có nguyên âm ngắn /ɪ/. Hãy nghe lại lượt T02, đối chiếu với lựa chọn còn lại và xác định từ/ý được nói thật.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "comprehension",
+        "foundation_discrimination"
+      ]
+    }
+  ],
+  "vocabulary": [
+    {
+      "term": "sheep",
+      "pos": "noun",
+      "meaning_vi": "con cừu",
+      "example_en": "The sheep is near the gate.",
+      "example_vi": "Con cừu ở gần cổng.",
+      "source_turn_id": "T01"
+    },
+    {
+      "term": "ship",
+      "pos": "noun",
+      "meaning_vi": "con tàu",
+      "example_en": "The ship is leaving now.",
+      "example_vi": "Con tàu đang rời đi.",
+      "source_turn_id": "T02"
+    },
+    {
+      "term": "seat",
+      "pos": "noun",
+      "meaning_vi": "chỗ ngồi",
+      "example_en": "Take a seat by the window.",
+      "example_vi": "Hãy ngồi cạnh cửa sổ.",
+      "source_turn_id": "T04"
+    },
+    {
+      "term": "leave",
+      "pos": "verb",
+      "meaning_vi": "rời đi",
+      "example_en": "Please leave before six.",
+      "example_vi": "Vui lòng rời đi trước sáu giờ.",
+      "source_turn_id": "T08"
+    }
+  ],
+  "audio": {
+    "status": "not_generated",
+    "url": null,
+    "duration_ms": null,
+    "model": null,
+    "provider": null,
+    "voice_config": null,
+    "source_transcript_hash": "9ba012e618a23ee1d2f932895dec49fc22c697cb5a8e6d6680adc1629486e52f",
+    "audio_sha256": null,
+    "format": null
+  },
+  "qa": {
+    "content_reviewed": false,
+    "answers_verified": false,
+    "audio_verified": false,
+    "rights_cleared": false,
+    "duplicate_reviewed": false,
+    "notes": [
+      "Author draft. Editorial, native-like audio, rights and device QA pending.",
+      "TTS: generate each turn separately, then combine and generate timestamps.",
+      "M16.2: automated edits are provisional; IELTS teacher final signoff, audio and rights clearance pending."
+    ]
+  },
+  "provenance": {
+    "content_origin": "original_ai_assisted",
+    "source_urls": [],
+    "source_rights_note": "New original learning material written for English Skill Lab; verify TTS and distribution conditions prior to release.",
+    "reviewer": null
+  },
+  "release_metadata": {
+    "published_at": null,
+    "version": 1
+  }
+}

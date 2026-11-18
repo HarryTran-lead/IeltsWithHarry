@@ -1,6 +1,7 @@
 "use client";
 import { useEffect, useMemo, useState } from "react";
 import { createClient } from "@/lib/supabase/browser";
+import { fetchAllRows } from "@/lib/supabase/fetch-all";
 import { useNotebook } from "@/features/notebook/notebook-store";
 import { demoMode } from "@/lib/runtime";
 import { nextWordReview, type ReviewGrade, type WordReview } from "@/lib/news/review";
@@ -16,7 +17,7 @@ export function SavedWordReview() {
   const [now, setNow] = useState(() => Date.now());
   useEffect(() => { void (async () => {
     if (demoMode) { try { setReviews(JSON.parse(localStorage.getItem(storageKey) ?? "[]") as WordReview[]); } catch { setReviews([]); } return; }
-    const result = await db!.from("user_word_reviews").select("notebook_entry_id,due_at,interval_days,repetitions,last_reviewed_at,fsrs_state").limit(1000);
+    const result = await fetchAllRows<WordReview>((from, to) => db!.from("user_word_reviews").select("notebook_entry_id,due_at,interval_days,repetitions,last_reviewed_at,fsrs_state").order("notebook_entry_id").range(from, to));
     if (result.error) setError(result.error.message); else setReviews((result.data ?? []) as WordReview[]);
   })(); }, [db]);
   const words = entries.filter((entry) => entry.kind === "word");

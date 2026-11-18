@@ -1,0 +1,2822 @@
+{
+  "A2-01": {
+    "lesson_id": "A2-01",
+    "overview_vi": "Was/were là dạng quá khứ của be để nói về tình trạng, địa điểm hoặc sự tồn tại tại một thời điểm đã kết thúc. Đừng thêm did trước was/were.",
+    "decision_steps_vi": [
+      "Tìm mốc thời gian trong quá khứ",
+      "Xác định chủ ngữ số ít hay số nhiều",
+      "Chọn was/were rồi thêm not hoặc đảo lên đầu nếu cần"
+    ],
+    "patterns": [
+      {
+        "pattern": "I / he / she / it + was; you / we / they + were",
+        "use_vi": "Was dùng cho I và số ít, were dùng cho you và số nhiều.",
+        "example_en": "The café was quiet yesterday.",
+        "example_vi": "Hôm qua quán cà phê yên tĩnh."
+      },
+      {
+        "pattern": "Was / Were + subject...?",
+        "use_vi": "Câu hỏi với be đảo was/were lên trước chủ ngữ, không dùng did.",
+        "example_en": "Were the tickets expensive?",
+        "example_vi": "Vé có đắt không?"
+      }
+    ],
+    "worked_examples": [
+      {
+        "situation_vi": "Hỏi một người bạn có ở thư viện hôm qua không.",
+        "answer_en": "Were you at the library yesterday?",
+        "translation_vi": "Hôm qua bạn có ở thư viện không?",
+        "reason_vi": "Chủ ngữ you đi với were và câu hỏi đảo were lên đầu."
+      },
+      {
+        "situation_vi": "Nói rằng trong lớp hôm qua không có học sinh nào.",
+        "answer_en": "There weren't any students in the classroom yesterday.",
+        "translation_vi": "Hôm qua không có học sinh nào trong lớp.",
+        "reason_vi": "There were dùng với danh từ số nhiều; phủ định thêm not sau were."
+      }
+    ],
+    "contrasts": [
+      {
+        "first_en": "The shop was open last night.",
+        "second_en": "The shop opened last night.",
+        "difference_vi": "Was open nói về trạng thái mở cửa; opened nói về hành động mở cửa."
+      }
+    ],
+    "common_mistakes": [
+      {
+        "wrong": "Did you were tired?",
+        "correct": "Were you tired?",
+        "why_vi": "Câu hỏi với be không đi kèm did."
+      },
+      {
+        "wrong": "There was three chairs.",
+        "correct": "There were three chairs.",
+        "why_vi": "Chairs là số nhiều nên dùng there were."
+      }
+    ],
+    "supplemental_practice": [
+      {
+        "stage": "guided",
+        "prompt_en": "Complete: My grandparents ___ at home yesterday.",
+        "answer": "were",
+        "explanation_vi": "Grandparents là số nhiều và yesterday là quá khứ.",
+        "translation_vi": "Hôm qua ông bà tôi ở nhà.",
+        "draft_id": "M09-A2-01-DRAFT-01"
+      },
+      {
+        "stage": "independent",
+        "prompt_en": "Make negative: The park was crowded.",
+        "answer": "The park wasn't crowded.",
+        "explanation_vi": "Phủ định của was là was not hoặc wasn't.",
+        "translation_vi": "Công viên không đông người.",
+        "draft_id": "M09-A2-01-DRAFT-02"
+      },
+      {
+        "stage": "mastery",
+        "prompt_en": "Ask about the price: The tickets were cheap.",
+        "answer": "Were the tickets cheap?",
+        "explanation_vi": "Đưa were ra trước chủ ngữ the tickets.",
+        "translation_vi": "Vé có rẻ không?",
+        "draft_id": "M09-A2-01-DRAFT-03"
+      },
+      {
+        "stage": "spaced_review",
+        "prompt_en": "Correct: There was many people at the concert.",
+        "answer": "There were many people at the concert.",
+        "explanation_vi": "Many people là số nhiều.",
+        "translation_vi": "Có nhiều người tại buổi hòa nhạc.",
+        "draft_id": "M09-A2-01-DRAFT-04"
+      }
+    ],
+    "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED",
+    "question_import_policy": "SEPARATE_BANK_NO_OVERWRITE",
+    "title": "Past Simple – To be",
+    "qa_teacher_review": "NOT_REVIEWED"
+  },
+  "A2-02": {
+    "lesson_id": "A2-02",
+    "overview_vi": "Past Simple của động từ có quy tắc diễn tả sự kiện đã kết thúc. Dạng -ed chỉ dùng trong câu khẳng định; sau did/didn’t dùng động từ nguyên mẫu.",
+    "decision_steps_vi": [
+      "Xác nhận sự kiện đã kết thúc trong quá khứ",
+      "Nếu khẳng định, chọn cách viết -ed/-d/-ied phù hợp",
+      "Nếu có did, trả động từ về nguyên mẫu"
+    ],
+    "patterns": [
+      {
+        "pattern": "Subject + regular V-ed",
+        "use_vi": "Sự việc xảy ra rồi kết thúc trong quá khứ.",
+        "example_en": "We visited the science museum on Saturday.",
+        "example_vi": "Chúng tôi thăm bảo tàng khoa học vào thứ Bảy."
+      },
+      {
+        "pattern": "consonant + y → ied; final e → d",
+        "use_vi": "Chú ý cách viết của study/studied và live/lived.",
+        "example_en": "She studied French last year.",
+        "example_vi": "Cô ấy học tiếng Pháp năm ngoái."
+      }
+    ],
+    "worked_examples": [
+      {
+        "situation_vi": "Nói rằng bạn đóng cửa sổ trước khi rời nhà.",
+        "answer_en": "I closed the window before I left.",
+        "translation_vi": "Tôi đóng cửa sổ trước khi rời nhà.",
+        "reason_vi": "Close kết thúc bằng e, chỉ thêm d."
+      },
+      {
+        "situation_vi": "Nói về một buổi học đã dừng lúc 4 giờ.",
+        "answer_en": "The lesson finished at four o'clock.",
+        "translation_vi": "Buổi học kết thúc lúc bốn giờ.",
+        "reason_vi": "Finish là động từ có quy tắc, thêm -ed."
+      }
+    ],
+    "contrasts": [
+      {
+        "first_en": "He watched a film last night.",
+        "second_en": "He didn't watch a film last night.",
+        "difference_vi": "Khẳng định watched; sau didn't dùng watch, không dùng watched."
+      }
+    ],
+    "common_mistakes": [
+      {
+        "wrong": "She didn't visited us.",
+        "correct": "She didn't visit us.",
+        "why_vi": "Didn't đã mang nghĩa quá khứ; động từ sau nó ở dạng nguyên mẫu."
+      },
+      {
+        "wrong": "We studyed yesterday.",
+        "correct": "We studied yesterday.",
+        "why_vi": "Phụ âm + y đổi y thành i rồi thêm -ed."
+      }
+    ],
+    "supplemental_practice": [
+      {
+        "stage": "guided",
+        "prompt_en": "Complete: They ___ (clean) the classroom yesterday.",
+        "answer": "cleaned",
+        "explanation_vi": "Clean là động từ có quy tắc, thêm -ed.",
+        "translation_vi": "Họ dọn lớp hôm qua.",
+        "draft_id": "M09-A2-02-DRAFT-01"
+      },
+      {
+        "stage": "independent",
+        "prompt_en": "Put in the past: He studies English after dinner.",
+        "answer": "He studied English after dinner yesterday.",
+        "explanation_vi": "Study đổi thành studied; yesterday cho biết thời quá khứ.",
+        "translation_vi": "Hôm qua anh ấy học tiếng Anh sau bữa tối.",
+        "draft_id": "M09-A2-02-DRAFT-02"
+      },
+      {
+        "stage": "mastery",
+        "prompt_en": "Correct: She didn't answered the email.",
+        "answer": "She didn't answer the email.",
+        "explanation_vi": "Sau didn't dùng answer.",
+        "translation_vi": "Cô ấy không trả lời email.",
+        "draft_id": "M09-A2-02-DRAFT-03"
+      },
+      {
+        "stage": "spaced_review",
+        "prompt_en": "Complete: We ___ (move) here in 2022.",
+        "answer": "moved",
+        "explanation_vi": "Move kết thúc bằng e nên chỉ thêm d.",
+        "translation_vi": "Chúng tôi chuyển đến đây năm 2022.",
+        "draft_id": "M09-A2-02-DRAFT-04"
+      }
+    ],
+    "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED",
+    "question_import_policy": "SEPARATE_BANK_NO_OVERWRITE",
+    "title": "Past Simple – Regular Verbs",
+    "qa_teacher_review": "NOT_REVIEWED"
+  },
+  "A2-03": {
+    "lesson_id": "A2-03",
+    "overview_vi": "Động từ bất quy tắc không thêm -ed theo một mẫu duy nhất. Học V2 cùng tình huống sử dụng; đừng nhầm V2 với V3 của hiện tại hoàn thành.",
+    "decision_steps_vi": [
+      "Xem mốc thời gian có kết thúc chưa",
+      "Nếu khẳng định quá khứ, chọn dạng V2 trong bảng động từ",
+      "Nếu dùng did, quay về V1"
+    ],
+    "patterns": [
+      {
+        "pattern": "Subject + irregular V2",
+        "use_vi": "Dạng quá khứ của go là went, của buy là bought.",
+        "example_en": "I bought a notebook after class.",
+        "example_vi": "Tôi mua một cuốn sổ sau giờ học."
+      },
+      {
+        "pattern": "Did / didn't + base verb",
+        "use_vi": "Dù động từ bất quy tắc, sau did vẫn dùng V1.",
+        "example_en": "Did you see the message?",
+        "example_vi": "Bạn đã thấy tin nhắn chưa?"
+      }
+    ],
+    "worked_examples": [
+      {
+        "situation_vi": "Kể bạn đã đi bằng xe buýt đến trường hôm qua.",
+        "answer_en": "I went to school by bus yesterday.",
+        "translation_vi": "Hôm qua tôi đi học bằng xe buýt.",
+        "reason_vi": "Go có V2 là went, không phải goed."
+      },
+      {
+        "situation_vi": "Hỏi người bạn đã ăn sáng chưa vào sáng hôm qua.",
+        "answer_en": "Did you have breakfast yesterday morning?",
+        "translation_vi": "Sáng hôm qua bạn có ăn sáng không?",
+        "reason_vi": "Sau did dùng have, không dùng had."
+      }
+    ],
+    "contrasts": [
+      {
+        "first_en": "She wrote a note.",
+        "second_en": "She has written a note.",
+        "difference_vi": "Wrote là V2 với Past Simple; written là V3 sau has trong Present Perfect."
+      }
+    ],
+    "common_mistakes": [
+      {
+        "wrong": "He goed home early.",
+        "correct": "He went home early.",
+        "why_vi": "Go có dạng quá khứ bất quy tắc went."
+      },
+      {
+        "wrong": "Did you saw Anna?",
+        "correct": "Did you see Anna?",
+        "why_vi": "Sau did dùng V1 see."
+      }
+    ],
+    "supplemental_practice": [
+      {
+        "stage": "guided",
+        "prompt_en": "Complete: I ___ (take) the train yesterday.",
+        "answer": "took",
+        "explanation_vi": "V2 của take là took.",
+        "translation_vi": "Hôm qua tôi đi tàu.",
+        "draft_id": "M09-A2-03-DRAFT-01"
+      },
+      {
+        "stage": "independent",
+        "prompt_en": "Complete: They ___ (find) a lost key.",
+        "answer": "found",
+        "explanation_vi": "V2 của find là found.",
+        "translation_vi": "Họ tìm thấy một chiếc chìa khóa thất lạc.",
+        "draft_id": "M09-A2-03-DRAFT-02"
+      },
+      {
+        "stage": "mastery",
+        "prompt_en": "Correct: Did your brother went with you?",
+        "answer": "Did your brother go with you?",
+        "explanation_vi": "Sau did dùng go.",
+        "translation_vi": "Anh trai bạn có đi cùng không?",
+        "draft_id": "M09-A2-03-DRAFT-03"
+      },
+      {
+        "stage": "spaced_review",
+        "prompt_en": "Rewrite in Past Simple: She buys fruit.",
+        "answer": "She bought fruit yesterday.",
+        "explanation_vi": "V2 của buy là bought.",
+        "translation_vi": "Hôm qua cô ấy mua trái cây.",
+        "draft_id": "M09-A2-03-DRAFT-04"
+      }
+    ],
+    "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED",
+    "question_import_policy": "SEPARATE_BANK_NO_OVERWRITE",
+    "title": "Past Simple – Irregular Verbs",
+    "qa_teacher_review": "NOT_REVIEWED"
+  },
+  "A2-04": {
+    "lesson_id": "A2-04",
+    "overview_vi": "Ở Past Simple với động từ thường, did/didn’t hỗ trợ hỏi và phủ định. Không dùng did với was/were là động từ chính.",
+    "decision_steps_vi": [
+      "Xác định động từ chính là be hay động từ thường",
+      "Với động từ thường, đưa did lên trước hoặc thêm didn’t",
+      "Giữ động từ thường ở dạng nguyên mẫu"
+    ],
+    "patterns": [
+      {
+        "pattern": "Did + subject + base verb...?",
+        "use_vi": "Dùng did để hỏi hành động quá khứ.",
+        "example_en": "Did Mia call you last night?",
+        "example_vi": "Mia đã gọi cho bạn tối qua à?"
+      },
+      {
+        "pattern": "Subject + didn't + base verb",
+        "use_vi": "Phủ định với did not (didn't), không dùng V2.",
+        "example_en": "I didn't hear the alarm.",
+        "example_vi": "Tôi đã không nghe thấy chuông báo."
+      }
+    ],
+    "worked_examples": [
+      {
+        "situation_vi": "Hỏi bạn gặp ai ở ga hôm qua.",
+        "answer_en": "Who did you meet at the station yesterday?",
+        "translation_vi": "Hôm qua bạn gặp ai ở nhà ga?",
+        "reason_vi": "Who là từ để hỏi tân ngữ, sau đó dùng did + you + meet."
+      },
+      {
+        "situation_vi": "Nói rằng họ không đến đúng giờ.",
+        "answer_en": "They didn't arrive on time.",
+        "translation_vi": "Họ đã không đến đúng giờ.",
+        "reason_vi": "Didn't đi với arrive nguyên mẫu."
+      }
+    ],
+    "contrasts": [
+      {
+        "first_en": "Did she leave early?",
+        "second_en": "Was she tired?",
+        "difference_vi": "Leave là động từ thường nên dùng did; tired là tính từ sau be nên đảo was."
+      }
+    ],
+    "common_mistakes": [
+      {
+        "wrong": "Why did he left?",
+        "correct": "Why did he leave?",
+        "why_vi": "Sau did động từ ở nguyên mẫu leave."
+      },
+      {
+        "wrong": "I didn't was at home.",
+        "correct": "I wasn't at home.",
+        "why_vi": "Phủ định be quá khứ bằng wasn't, không dùng didn't."
+      }
+    ],
+    "supplemental_practice": [
+      {
+        "stage": "guided",
+        "prompt_en": "Complete: ___ you watch the match yesterday?",
+        "answer": "Did",
+        "explanation_vi": "Câu hỏi với động từ watch ở quá khứ dùng Did.",
+        "translation_vi": "Hôm qua bạn có xem trận đấu không?",
+        "draft_id": "M09-A2-04-DRAFT-01"
+      },
+      {
+        "stage": "independent",
+        "prompt_en": "Make negative: We found the address.",
+        "answer": "We didn't find the address.",
+        "explanation_vi": "Sau didn't dùng find, không dùng found.",
+        "translation_vi": "Chúng tôi không tìm thấy địa chỉ.",
+        "draft_id": "M09-A2-04-DRAFT-02"
+      },
+      {
+        "stage": "mastery",
+        "prompt_en": "Ask about place: She stayed at a hotel.",
+        "answer": "Where did she stay?",
+        "explanation_vi": "Hỏi địa điểm bằng Where did + chủ ngữ + V1.",
+        "translation_vi": "Cô ấy ở đâu?",
+        "draft_id": "M09-A2-04-DRAFT-03"
+      },
+      {
+        "stage": "spaced_review",
+        "prompt_en": "Correct: Didn't they played outside?",
+        "answer": "Didn't they play outside?",
+        "explanation_vi": "Sau didn't dùng play.",
+        "translation_vi": "Họ đã không chơi ngoài trời à?",
+        "draft_id": "M09-A2-04-DRAFT-04"
+      }
+    ],
+    "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED",
+    "question_import_policy": "SEPARATE_BANK_NO_OVERWRITE",
+    "title": "Past Simple – Questions & Negatives",
+    "qa_teacher_review": "NOT_REVIEWED"
+  },
+  "A2-05": {
+    "lesson_id": "A2-05",
+    "overview_vi": "Yesterday, last, ago và mốc thời gian cụ thể giúp xác định quá khứ đã kết thúc. “Ago” đo lùi từ hiện tại, còn “last” thường không có the.",
+    "decision_steps_vi": [
+      "Tìm mốc kể chuyện",
+      "Chọn yesterday/last/ago/in + năm theo nghĩa",
+      "Dùng Past Simple khi sự kiện thuộc thời gian đã kết thúc"
+    ],
+    "patterns": [
+      {
+        "pattern": "yesterday / last + time unit",
+        "use_vi": "Last week, last month, last year không thêm giới từ in/on.",
+        "example_en": "We moved here last summer.",
+        "example_vi": "Chúng tôi chuyển đến đây mùa hè năm ngoái."
+      },
+      {
+        "pattern": "number + time unit + ago",
+        "use_vi": "Ago đứng sau khoảng thời gian, tính từ thời điểm hiện tại trở về trước.",
+        "example_en": "He called ten minutes ago.",
+        "example_vi": "Anh ấy gọi cách đây mười phút."
+      }
+    ],
+    "worked_examples": [
+      {
+        "situation_vi": "Viết “Tôi bắt đầu công việc này ba tháng trước”.",
+        "answer_en": "I started this job three months ago.",
+        "translation_vi": "Tôi bắt đầu công việc này cách đây ba tháng.",
+        "reason_vi": "Three months là khoảng thời gian và ago đặt sau nó."
+      },
+      {
+        "situation_vi": "Nói về một chuyến đi diễn ra năm 2021.",
+        "answer_en": "We travelled to Da Nang in 2021.",
+        "translation_vi": "Chúng tôi đi Đà Nẵng năm 2021.",
+        "reason_vi": "Năm cụ thể thường dùng giới từ in."
+      }
+    ],
+    "contrasts": [
+      {
+        "first_en": "I met her two days ago.",
+        "second_en": "I have known her for two days.",
+        "difference_vi": "Ago định vị một sự kiện kết thúc; for diễn đạt độ dài tới hiện tại với cấu trúc phù hợp."
+      }
+    ],
+    "common_mistakes": [
+      {
+        "wrong": "I saw him ago two days.",
+        "correct": "I saw him two days ago.",
+        "why_vi": "Ago đứng sau khoảng thời gian."
+      },
+      {
+        "wrong": "We met in last Monday.",
+        "correct": "We met last Monday.",
+        "why_vi": "Không dùng in trước last Monday."
+      }
+    ],
+    "supplemental_practice": [
+      {
+        "stage": "guided",
+        "prompt_en": "Complete: I visited Hue ___ year.",
+        "answer": "last",
+        "explanation_vi": "Last year không cần giới từ.",
+        "translation_vi": "Tôi đến Huế năm ngoái.",
+        "draft_id": "M09-A2-05-DRAFT-01"
+      },
+      {
+        "stage": "independent",
+        "prompt_en": "Complete: They arrived twenty minutes ___.",
+        "answer": "ago",
+        "explanation_vi": "Ago đứng sau lượng thời gian.",
+        "translation_vi": "Họ đến cách đây hai mươi phút.",
+        "draft_id": "M09-A2-05-DRAFT-02"
+      },
+      {
+        "stage": "mastery",
+        "prompt_en": "Correct: We moved to this city in last summer.",
+        "answer": "We moved to this city last summer.",
+        "explanation_vi": "Last summer không đi với in.",
+        "translation_vi": "Chúng tôi chuyển đến thành phố này mùa hè năm ngoái.",
+        "draft_id": "M09-A2-05-DRAFT-03"
+      },
+      {
+        "stage": "spaced_review",
+        "prompt_en": "Complete: She graduated ___ 2020.",
+        "answer": "in",
+        "explanation_vi": "Dùng in trước năm cụ thể.",
+        "translation_vi": "Cô ấy tốt nghiệp năm 2020.",
+        "draft_id": "M09-A2-05-DRAFT-04"
+      }
+    ],
+    "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED",
+    "question_import_policy": "SEPARATE_BANK_NO_OVERWRITE",
+    "title": "Past Time Expressions",
+    "qa_teacher_review": "NOT_REVIEWED"
+  },
+  "A2-06": {
+    "lesson_id": "A2-06",
+    "overview_vi": "Past Continuous cho biết một hành động đang diễn ra tại một thời điểm trong quá khứ, thường là bối cảnh của một sự kiện khác.",
+    "decision_steps_vi": [
+      "Xác định thời điểm đã qua",
+      "Hỏi liệu hành động đang diễn ra ngay lúc đó không",
+      "Dùng was/were + V-ing theo chủ ngữ"
+    ],
+    "patterns": [
+      {
+        "pattern": "Subject + was/were + V-ing",
+        "use_vi": "Mô tả một hoạt động đang diễn ra trong quá khứ.",
+        "example_en": "At nine, I was studying in my room.",
+        "example_vi": "Lúc chín giờ, tôi đang học trong phòng."
+      },
+      {
+        "pattern": "Was/Were + subject + V-ing...?",
+        "use_vi": "Đảo was/were để hỏi hành động đang diễn ra.",
+        "example_en": "Were they waiting outside?",
+        "example_vi": "Lúc đó họ có đang đợi bên ngoài không?"
+      }
+    ],
+    "worked_examples": [
+      {
+        "situation_vi": "Kể bạn đang nấu ăn lúc 6 giờ tối hôm qua.",
+        "answer_en": "I was cooking at six yesterday evening.",
+        "translation_vi": "Tôi đang nấu ăn lúc sáu giờ tối hôm qua.",
+        "reason_vi": "Mốc sáu giờ xác định một thời điểm, hành động đang diễn ra dùng was cooking."
+      },
+      {
+        "situation_vi": "Nói hai người đang đọc sách trong lúc trời mưa.",
+        "answer_en": "They were reading while it was raining.",
+        "translation_vi": "Họ đang đọc sách khi trời đang mưa.",
+        "reason_vi": "Hai quá trình diễn ra đồng thời có thể dùng Past Continuous."
+      }
+    ],
+    "contrasts": [
+      {
+        "first_en": "I cooked dinner at six.",
+        "second_en": "I was cooking dinner at six.",
+        "difference_vi": "Cooked có thể xem như sự kiện hoàn chỉnh; was cooking nhấn mạnh quá trình đang diễn ra lúc sáu giờ."
+      }
+    ],
+    "common_mistakes": [
+      {
+        "wrong": "She were sleeping.",
+        "correct": "She was sleeping.",
+        "why_vi": "She đi với was."
+      },
+      {
+        "wrong": "They were study at eight.",
+        "correct": "They were studying at eight.",
+        "why_vi": "Sau were dùng V-ing."
+      }
+    ],
+    "supplemental_practice": [
+      {
+        "stage": "guided",
+        "prompt_en": "Complete: At 7 p.m., he ___ (watch) TV.",
+        "answer": "was watching",
+        "explanation_vi": "He đi với was + watching.",
+        "translation_vi": "Lúc bảy giờ tối anh ấy đang xem TV.",
+        "draft_id": "M09-A2-06-DRAFT-01"
+      },
+      {
+        "stage": "independent",
+        "prompt_en": "Complete: We ___ (walk) home when it began to rain.",
+        "answer": "were walking",
+        "explanation_vi": "We đi với were; walk đổi thành walking.",
+        "translation_vi": "Chúng tôi đang đi bộ về nhà thì trời bắt đầu mưa.",
+        "draft_id": "M09-A2-06-DRAFT-02"
+      },
+      {
+        "stage": "mastery",
+        "prompt_en": "Correct: What was they doing at noon?",
+        "answer": "What were they doing at noon?",
+        "explanation_vi": "They dùng were.",
+        "translation_vi": "Lúc trưa họ đang làm gì?",
+        "draft_id": "M09-A2-06-DRAFT-03"
+      },
+      {
+        "stage": "spaced_review",
+        "prompt_en": "Make negative: I was listening.",
+        "answer": "I wasn't listening.",
+        "explanation_vi": "Thêm not sau was.",
+        "translation_vi": "Lúc đó tôi không nghe.",
+        "draft_id": "M09-A2-06-DRAFT-04"
+      }
+    ],
+    "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED",
+    "question_import_policy": "SEPARATE_BANK_NO_OVERWRITE",
+    "title": "Past Continuous",
+    "qa_teacher_review": "NOT_REVIEWED"
+  },
+  "A2-07": {
+    "lesson_id": "A2-07",
+    "overview_vi": "Past Simple và Past Continuous thường phối hợp khi một sự kiện ngắn xảy ra giữa một hoạt động đang diễn ra. Không phải cứ thấy when là dùng một thì cố định.",
+    "decision_steps_vi": [
+      "Xác định hành động nào là bối cảnh đang diễn ra",
+      "Tìm sự kiện xảy ra tại một thời điểm",
+      "Chọn was/were + V-ing cho bối cảnh và V2 cho sự kiện"
+    ],
+    "patterns": [
+      {
+        "pattern": "was/were + V-ing when + Past Simple",
+        "use_vi": "Hành động dài bị một sự kiện ngắn chen vào.",
+        "example_en": "I was reading when the lights went out.",
+        "example_vi": "Tôi đang đọc sách thì đèn tắt."
+      },
+      {
+        "pattern": "while + Past Continuous, Past Simple",
+        "use_vi": "While có thể giới thiệu hành động nền; mệnh đề còn lại nêu sự kiện.",
+        "example_en": "While we were walking, it started to rain.",
+        "example_vi": "Trong lúc chúng tôi đi bộ thì trời bắt đầu mưa."
+      }
+    ],
+    "worked_examples": [
+      {
+        "situation_vi": "Kể điện thoại reo khi bạn đang tắm.",
+        "answer_en": "The phone rang while I was taking a shower.",
+        "translation_vi": "Điện thoại reo khi tôi đang tắm.",
+        "reason_vi": "Was taking là hoạt động nền, rang là sự kiện xảy ra."
+      },
+      {
+        "situation_vi": "Kể bạn làm rơi chìa khóa khi đang chạy đến xe buýt.",
+        "answer_en": "I dropped my keys while I was running to the bus.",
+        "translation_vi": "Tôi làm rơi chìa khóa khi đang chạy ra xe buýt.",
+        "reason_vi": "Dropped là sự kiện; was running diễn tả quá trình."
+      }
+    ],
+    "contrasts": [
+      {
+        "first_en": "When I arrived, they were eating.",
+        "second_en": "When I arrived, they ate.",
+        "difference_vi": "Câu đầu nói họ đã ăn trước lúc tôi tới; câu sau có thể ngụ ý họ bắt đầu/ăn sau khi tôi đến."
+      }
+    ],
+    "common_mistakes": [
+      {
+        "wrong": "I was saw him while I walked.",
+        "correct": "I saw him while I was walking.",
+        "why_vi": "See diễn đạt sự kiện nhìn thấy; walking là hoạt động nền."
+      },
+      {
+        "wrong": "She cooking when I called.",
+        "correct": "She was cooking when I called.",
+        "why_vi": "Past Continuous cần was + V-ing."
+      }
+    ],
+    "supplemental_practice": [
+      {
+        "stage": "guided",
+        "prompt_en": "I ___ (sleep) when the alarm rang.",
+        "answer": "was sleeping",
+        "explanation_vi": "Sleep đang diễn ra khi alarm rang.",
+        "translation_vi": "Tôi đang ngủ thì chuông reo.",
+        "draft_id": "M09-A2-07-DRAFT-01"
+      },
+      {
+        "stage": "independent",
+        "prompt_en": "Complete: While they ___ (play), it started raining.",
+        "answer": "were playing",
+        "explanation_vi": "They cần were playing.",
+        "translation_vi": "Họ đang chơi thì trời bắt đầu mưa.",
+        "draft_id": "M09-A2-07-DRAFT-02"
+      },
+      {
+        "stage": "mastery",
+        "prompt_en": "Choose the background event: I broke a glass while I was washing dishes.",
+        "answer": "I was washing dishes.",
+        "explanation_vi": "Was washing là hành động nền đang diễn ra.",
+        "translation_vi": "Tôi làm vỡ cốc trong lúc đang rửa bát.",
+        "draft_id": "M09-A2-07-DRAFT-03"
+      },
+      {
+        "stage": "spaced_review",
+        "prompt_en": "Correct: I was walking when I was slipped.",
+        "answer": "I was walking when I slipped.",
+        "explanation_vi": "Sự kiện slipped dùng Past Simple.",
+        "translation_vi": "Tôi đang đi bộ thì trượt chân.",
+        "draft_id": "M09-A2-07-DRAFT-04"
+      }
+    ],
+    "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED",
+    "question_import_policy": "SEPARATE_BANK_NO_OVERWRITE",
+    "title": "Past Simple vs Past Continuous",
+    "qa_teacher_review": "NOT_REVIEWED"
+  },
+  "A2-08": {
+    "lesson_id": "A2-08",
+    "overview_vi": "Used to + V1 diễn tả thói quen hoặc trạng thái từng đúng trong quá khứ nhưng hiện không còn như trước. Không nhầm với be used to + V-ing (đã quen với).",
+    "decision_steps_vi": [
+      "Xác định sự việc đã từng lặp lại hoặc tồn tại",
+      "Xác minh hiện tại đã khác",
+      "Dùng used to + nguyên mẫu, nhưng sau did dùng use to"
+    ],
+    "patterns": [
+      {
+        "pattern": "used to + base verb",
+        "use_vi": "Thói quen cũ hoặc trạng thái cũ đã thay đổi.",
+        "example_en": "I used to walk to school.",
+        "example_vi": "Trước đây tôi thường đi bộ đến trường."
+      },
+      {
+        "pattern": "didn't use to / Did ... use to...?",
+        "use_vi": "Trong phủ định và câu hỏi, did mang quá khứ; dùng use.",
+        "example_en": "Did you use to live here?",
+        "example_vi": "Bạn đã từng sống ở đây à?"
+      }
+    ],
+    "worked_examples": [
+      {
+        "situation_vi": "Kể trước đây thường chơi cờ nhưng giờ không còn.",
+        "answer_en": "I used to play chess, but I don't anymore.",
+        "translation_vi": "Tôi từng thường chơi cờ, nhưng giờ thì không nữa.",
+        "reason_vi": "Dùng used to và thêm thông tin đối lập hiện tại."
+      },
+      {
+        "situation_vi": "Hỏi bạn ngày trước có hay thức khuya không.",
+        "answer_en": "Did you use to stay up late?",
+        "translation_vi": "Trước đây bạn có hay thức khuya không?",
+        "reason_vi": "Sau Did dùng use to, không dùng used to."
+      }
+    ],
+    "contrasts": [
+      {
+        "first_en": "I used to wake up early.",
+        "second_en": "I'm used to waking up early.",
+        "difference_vi": "Used to + V1 nói về thói quen quá khứ; be used to + V-ing nghĩa là đã quen với việc đó."
+      }
+    ],
+    "common_mistakes": [
+      {
+        "wrong": "I used to played football.",
+        "correct": "I used to play football.",
+        "why_vi": "Sau used to dùng nguyên mẫu play."
+      },
+      {
+        "wrong": "Did you used to swim?",
+        "correct": "Did you use to swim?",
+        "why_vi": "Sau did dùng use to theo cách viết chuẩn trong bài học."
+      }
+    ],
+    "supplemental_practice": [
+      {
+        "stage": "guided",
+        "prompt_en": "Complete: She ___ to live near the river.",
+        "answer": "used",
+        "explanation_vi": "Thói quen/trạng thái trong quá khứ dùng used to.",
+        "translation_vi": "Trước đây cô ấy sống gần sông.",
+        "draft_id": "M09-A2-08-DRAFT-01"
+      },
+      {
+        "stage": "independent",
+        "prompt_en": "Make negative: I used to drink coffee.",
+        "answer": "I didn't use to drink coffee.",
+        "explanation_vi": "Sau didn't dùng use to.",
+        "translation_vi": "Trước đây tôi không có thói quen uống cà phê.",
+        "draft_id": "M09-A2-08-DRAFT-02"
+      },
+      {
+        "stage": "mastery",
+        "prompt_en": "Distinguish the meaning: I'm used to cycling to work.",
+        "answer": "I'm comfortable with cycling to work.",
+        "explanation_vi": "Be used to + V-ing nói về sự quen thuộc hiện tại.",
+        "translation_vi": "Tôi đã quen đạp xe đi làm.",
+        "draft_id": "M09-A2-08-DRAFT-03"
+      },
+      {
+        "stage": "spaced_review",
+        "prompt_en": "Correct: He used to went there.",
+        "answer": "He used to go there.",
+        "explanation_vi": "Sau used to phải là go.",
+        "translation_vi": "Trước đây anh ấy thường đến đó.",
+        "draft_id": "M09-A2-08-DRAFT-04"
+      }
+    ],
+    "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED",
+    "question_import_policy": "SEPARATE_BANK_NO_OVERWRITE",
+    "title": "Used to – Introduction",
+    "qa_teacher_review": "NOT_REVIEWED"
+  },
+  "A2-09": {
+    "lesson_id": "A2-09",
+    "overview_vi": "So sánh hơn của tính từ ngắn thường dùng -er + than. Cần chú ý nhân đôi phụ âm cuối và đổi y thành i ở một số từ.",
+    "decision_steps_vi": [
+      "Xác định đang so sánh hai đối tượng",
+      "Đếm âm tiết và kiểm tra kết thúc từ",
+      "Dùng dạng -er và than, tránh thêm more trước -er"
+    ],
+    "patterns": [
+      {
+        "pattern": "short adjective + -er + than",
+        "use_vi": "Thường dùng với small, tall, cheap.",
+        "example_en": "This bag is lighter than mine.",
+        "example_vi": "Chiếc túi này nhẹ hơn túi của tôi."
+      },
+      {
+        "pattern": "big → bigger; happy → happier",
+        "use_vi": "Nhân đôi phụ âm CVC; đổi phụ âm + y thành -ier.",
+        "example_en": "The new room is bigger.",
+        "example_vi": "Căn phòng mới lớn hơn."
+      }
+    ],
+    "worked_examples": [
+      {
+        "situation_vi": "So sánh tuyến đường A ngắn hơn tuyến B.",
+        "answer_en": "Route A is shorter than Route B.",
+        "translation_vi": "Tuyến A ngắn hơn tuyến B.",
+        "reason_vi": "Short dùng shorter; than giới thiệu đối tượng so sánh."
+      },
+      {
+        "situation_vi": "So sánh ngày hôm nay nóng hơn hôm qua.",
+        "answer_en": "Today is hotter than yesterday.",
+        "translation_vi": "Hôm nay nóng hơn hôm qua.",
+        "reason_vi": "Hot theo CVC thành hotter."
+      }
+    ],
+    "contrasts": [
+      {
+        "first_en": "This box is heavier than that one.",
+        "second_en": "This box is more heavy than that one.",
+        "difference_vi": "Heavy thường đổi y thành -ier; more heavy không phải lựa chọn chuẩn trong bài này."
+      }
+    ],
+    "common_mistakes": [
+      {
+        "wrong": "My bike is more cheaper.",
+        "correct": "My bike is cheaper.",
+        "why_vi": "Không dùng more cùng -er."
+      },
+      {
+        "wrong": "This street is biger than that one.",
+        "correct": "This street is bigger than that one.",
+        "why_vi": "Big nhân đôi g trước -er."
+      }
+    ],
+    "supplemental_practice": [
+      {
+        "stage": "guided",
+        "prompt_en": "Complete: This chair is ___ (small) than that one.",
+        "answer": "smaller",
+        "explanation_vi": "Small thêm er.",
+        "translation_vi": "Cái ghế này nhỏ hơn cái kia.",
+        "draft_id": "M09-A2-09-DRAFT-01"
+      },
+      {
+        "stage": "independent",
+        "prompt_en": "Complete: Her suitcase is ___ (heavy) than mine.",
+        "answer": "heavier",
+        "explanation_vi": "Heavy đổi y thành ier.",
+        "translation_vi": "Va-li của cô ấy nặng hơn của tôi.",
+        "draft_id": "M09-A2-09-DRAFT-02"
+      },
+      {
+        "stage": "mastery",
+        "prompt_en": "Correct: The bus is more slower than the train.",
+        "answer": "The bus is slower than the train.",
+        "explanation_vi": "Bỏ more trước slower.",
+        "translation_vi": "Xe buýt chậm hơn tàu.",
+        "draft_id": "M09-A2-09-DRAFT-03"
+      },
+      {
+        "stage": "spaced_review",
+        "prompt_en": "Complete: It is ___ (hot) today than yesterday.",
+        "answer": "hotter",
+        "explanation_vi": "Hot nhân đôi t trước er.",
+        "translation_vi": "Hôm nay nóng hơn hôm qua.",
+        "draft_id": "M09-A2-09-DRAFT-04"
+      }
+    ],
+    "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED",
+    "question_import_policy": "SEPARATE_BANK_NO_OVERWRITE",
+    "title": "Comparative – Short Adjectives",
+    "qa_teacher_review": "NOT_REVIEWED"
+  },
+  "A2-10": {
+    "lesson_id": "A2-10",
+    "overview_vi": "Tính từ dài thường dùng more/less để so sánh hơn; good và bad có dạng bất quy tắc better/worse. Mức độ quan trọng là nghĩa, không chỉ đếm chữ.",
+    "decision_steps_vi": [
+      "Xác định chiều so sánh nhiều hơn hay ít hơn",
+      "Kiểm tra tính từ dài hay bất quy tắc",
+      "Chọn more/less + adjective hoặc better/worse rồi thêm than"
+    ],
+    "patterns": [
+      {
+        "pattern": "more / less + long adjective + than",
+        "use_vi": "Dùng để so sánh mức độ của tính từ như comfortable, expensive.",
+        "example_en": "This seat is more comfortable than that one.",
+        "example_vi": "Chỗ ngồi này thoải mái hơn chỗ kia."
+      },
+      {
+        "pattern": "good → better; bad → worse",
+        "use_vi": "Các từ bất quy tắc không dùng gooder/badder.",
+        "example_en": "The second plan is better.",
+        "example_vi": "Phương án thứ hai tốt hơn."
+      }
+    ],
+    "worked_examples": [
+      {
+        "situation_vi": "Nói vé tàu rẻ hơn vé máy bay (dùng expensive).",
+        "answer_en": "Train tickets are less expensive than plane tickets.",
+        "translation_vi": "Vé tàu ít đắt hơn vé máy bay.",
+        "reason_vi": "Less expensive diễn tả mức độ đắt thấp hơn."
+      },
+      {
+        "situation_vi": "Nói thời tiết hôm nay tệ hơn hôm qua.",
+        "answer_en": "The weather is worse today than yesterday.",
+        "translation_vi": "Thời tiết hôm nay tệ hơn hôm qua.",
+        "reason_vi": "Bad dùng worse, không dùng badder."
+      }
+    ],
+    "contrasts": [
+      {
+        "first_en": "This exercise is more difficult.",
+        "second_en": "This exercise is less difficult.",
+        "difference_vi": "More tăng mức độ khó; less giảm mức độ khó."
+      }
+    ],
+    "common_mistakes": [
+      {
+        "wrong": "This problem is difficulter.",
+        "correct": "This problem is more difficult.",
+        "why_vi": "Difficult thường đi với more."
+      },
+      {
+        "wrong": "My score is more better.",
+        "correct": "My score is better.",
+        "why_vi": "Better đã mang nghĩa so sánh hơn."
+      }
+    ],
+    "supplemental_practice": [
+      {
+        "stage": "guided",
+        "prompt_en": "Complete: That sofa is ___ comfortable than this chair.",
+        "answer": "more",
+        "explanation_vi": "Comfortable dùng more + adjective.",
+        "translation_vi": "Ghế sofa đó thoải mái hơn chiếc ghế này.",
+        "draft_id": "M09-A2-10-DRAFT-01"
+      },
+      {
+        "stage": "independent",
+        "prompt_en": "Complete: My English is ___ (good) now.",
+        "answer": "better",
+        "explanation_vi": "Good so sánh hơn là better.",
+        "translation_vi": "Tiếng Anh của tôi tốt hơn bây giờ.",
+        "draft_id": "M09-A2-10-DRAFT-02"
+      },
+      {
+        "stage": "mastery",
+        "prompt_en": "Correct: This option is more worse.",
+        "answer": "This option is worse.",
+        "explanation_vi": "Không dùng more với worse.",
+        "translation_vi": "Phương án này tệ hơn.",
+        "draft_id": "M09-A2-10-DRAFT-03"
+      },
+      {
+        "stage": "spaced_review",
+        "prompt_en": "Complete: The cheaper hotel is ___ expensive.",
+        "answer": "less",
+        "explanation_vi": "Less expensive mang nghĩa ít đắt hơn.",
+        "translation_vi": "Khách sạn rẻ hơn thì ít tốn kém hơn.",
+        "draft_id": "M09-A2-10-DRAFT-04"
+      }
+    ],
+    "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED",
+    "question_import_policy": "SEPARATE_BANK_NO_OVERWRITE",
+    "title": "Comparative – Long & Irregular Adjectives",
+    "qa_teacher_review": "NOT_REVIEWED"
+  },
+  "A2-11": {
+    "lesson_id": "A2-11",
+    "overview_vi": "So sánh nhất chọn một thành viên nổi bật trong một nhóm. Thường có the trước superlative và một phạm vi so sánh rõ ràng.",
+    "decision_steps_vi": [
+      "Xác định nhóm có ít nhất ba lựa chọn",
+      "Chọn -est hoặc most theo tính từ",
+      "Nêu phạm vi bằng in/of khi cần"
+    ],
+    "patterns": [
+      {
+        "pattern": "the + adjective-est",
+        "use_vi": "Tính từ ngắn dùng dạng -est.",
+        "example_en": "This is the tallest building on our street.",
+        "example_vi": "Đây là tòa nhà cao nhất trên đường của chúng tôi."
+      },
+      {
+        "pattern": "the most + long adjective; best/worst",
+        "use_vi": "Tính từ dài dùng most; good/bad bất quy tắc.",
+        "example_en": "It was the most exciting day of the trip.",
+        "example_vi": "Đó là ngày thú vị nhất chuyến đi."
+      }
+    ],
+    "worked_examples": [
+      {
+        "situation_vi": "Nói Lan là người cao nhất lớp.",
+        "answer_en": "Lan is the tallest student in her class.",
+        "translation_vi": "Lan là học sinh cao nhất lớp.",
+        "reason_vi": "Tall thêm -est, dùng the và in her class."
+      },
+      {
+        "situation_vi": "Nói đây là món ăn ngon nhất bạn đã thử.",
+        "answer_en": "This is the best dish I've tried.",
+        "translation_vi": "Đây là món ngon nhất tôi từng thử.",
+        "reason_vi": "Good chuyển thành best trong so sánh nhất."
+      }
+    ],
+    "contrasts": [
+      {
+        "first_en": "Tom is taller than Ben.",
+        "second_en": "Tom is the tallest in the group.",
+        "difference_vi": "Taller so sánh hai đối tượng; tallest xác định vị trí cao nhất trong nhóm."
+      }
+    ],
+    "common_mistakes": [
+      {
+        "wrong": "She is the most smartest student.",
+        "correct": "She is the smartest student.",
+        "why_vi": "Không thêm most trước smartest."
+      },
+      {
+        "wrong": "This is best restaurant in town.",
+        "correct": "This is the best restaurant in town.",
+        "why_vi": "So sánh nhất thông thường cần the."
+      }
+    ],
+    "supplemental_practice": [
+      {
+        "stage": "guided",
+        "prompt_en": "Complete: This is the ___ (small) room.",
+        "answer": "smallest",
+        "explanation_vi": "Small thêm est.",
+        "translation_vi": "Đây là căn phòng nhỏ nhất.",
+        "draft_id": "M09-A2-11-DRAFT-01"
+      },
+      {
+        "stage": "independent",
+        "prompt_en": "Complete: She is the ___ (good) player on the team.",
+        "answer": "best",
+        "explanation_vi": "Good có dạng so sánh nhất best.",
+        "translation_vi": "Cô ấy là cầu thủ giỏi nhất đội.",
+        "draft_id": "M09-A2-11-DRAFT-02"
+      },
+      {
+        "stage": "mastery",
+        "prompt_en": "Correct: This is the most cheap ticket.",
+        "answer": "This is the cheapest ticket.",
+        "explanation_vi": "Cheap dùng cheapest.",
+        "translation_vi": "Đây là vé rẻ nhất.",
+        "draft_id": "M09-A2-11-DRAFT-03"
+      },
+      {
+        "stage": "spaced_review",
+        "prompt_en": "Choose: Who is the tallest ___ your family?",
+        "answer": "in",
+        "explanation_vi": "Dùng in để nói phạm vi là gia đình.",
+        "translation_vi": "Ai cao nhất gia đình bạn?",
+        "draft_id": "M09-A2-11-DRAFT-04"
+      }
+    ],
+    "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED",
+    "question_import_policy": "SEPARATE_BANK_NO_OVERWRITE",
+    "title": "Superlatives",
+    "qa_teacher_review": "NOT_REVIEWED"
+  },
+  "A2-12": {
+    "lesson_id": "A2-12",
+    "overview_vi": "So sánh bằng nói hai đối tượng ngang nhau hoặc không ngang nhau. Phân biệt as + adjective/adverb + as với as many/much + noun + as.",
+    "decision_steps_vi": [
+      "Xem đang so sánh phẩm chất, cách làm hay số lượng",
+      "Chọn adjective/adverb hoặc many/much + noun",
+      "Đặt as ở hai phía và thêm not nếu không bằng"
+    ],
+    "patterns": [
+      {
+        "pattern": "as + adjective / adverb + as",
+        "use_vi": "Nói mức độ hoặc tốc độ tương đương.",
+        "example_en": "The blue bag is as heavy as the black one.",
+        "example_vi": "Túi xanh nặng bằng túi đen."
+      },
+      {
+        "pattern": "as many + countable plural / as much + uncountable",
+        "use_vi": "So sánh số lượng đồ đếm được hoặc lượng không đếm được.",
+        "example_en": "We have as many chairs as they do.",
+        "example_vi": "Chúng tôi có nhiều ghế bằng họ."
+      }
+    ],
+    "worked_examples": [
+      {
+        "situation_vi": "Nói Mai chạy nhanh bằng anh trai.",
+        "answer_en": "Mai runs as fast as her brother.",
+        "translation_vi": "Mai chạy nhanh bằng anh trai.",
+        "reason_vi": "So sánh cách chạy dùng trạng từ fast trong as ... as."
+      },
+      {
+        "situation_vi": "Nói tôi không có nhiều thời gian bằng bạn.",
+        "answer_en": "I don't have as much time as you.",
+        "translation_vi": "Tôi không có nhiều thời gian bằng bạn.",
+        "reason_vi": "Time ở đây là danh từ không đếm được nên dùng much."
+      }
+    ],
+    "contrasts": [
+      {
+        "first_en": "I have as many books as you.",
+        "second_en": "I have as much water as you.",
+        "difference_vi": "Books đếm được nên many; water không đếm được nên much."
+      }
+    ],
+    "common_mistakes": [
+      {
+        "wrong": "My room is as bigger as yours.",
+        "correct": "My room is as big as yours.",
+        "why_vi": "Giữa as và as dùng tính từ nguyên dạng."
+      },
+      {
+        "wrong": "He has as much friends as I do.",
+        "correct": "He has as many friends as I do.",
+        "why_vi": "Friends đếm được số nhiều nên dùng many."
+      }
+    ],
+    "supplemental_practice": [
+      {
+        "stage": "guided",
+        "prompt_en": "Complete: This answer is as ___ (clear) as yours.",
+        "answer": "clear",
+        "explanation_vi": "As ... as dùng tính từ nguyên dạng.",
+        "translation_vi": "Câu trả lời này rõ ràng như của bạn.",
+        "draft_id": "M09-A2-12-DRAFT-01"
+      },
+      {
+        "stage": "independent",
+        "prompt_en": "Complete: We don't have as ___ money as they do.",
+        "answer": "much",
+        "explanation_vi": "Money không đếm được.",
+        "translation_vi": "Chúng tôi không có nhiều tiền bằng họ.",
+        "draft_id": "M09-A2-12-DRAFT-02"
+      },
+      {
+        "stage": "mastery",
+        "prompt_en": "Correct: She speaks as more clearly as her teacher.",
+        "answer": "She speaks as clearly as her teacher.",
+        "explanation_vi": "Bỏ more trong as ... as.",
+        "translation_vi": "Cô ấy nói rõ như giáo viên của mình.",
+        "draft_id": "M09-A2-12-DRAFT-03"
+      },
+      {
+        "stage": "spaced_review",
+        "prompt_en": "Complete: I have as ___ books as my sister.",
+        "answer": "many",
+        "explanation_vi": "Books là danh từ đếm được số nhiều.",
+        "translation_vi": "Tôi có nhiều sách bằng chị/em gái.",
+        "draft_id": "M09-A2-12-DRAFT-04"
+      }
+    ],
+    "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED",
+    "question_import_policy": "SEPARATE_BANK_NO_OVERWRITE",
+    "title": "Equality Comparisons",
+    "qa_teacher_review": "NOT_REVIEWED"
+  },
+  "A2-13": {
+    "lesson_id": "A2-13",
+    "overview_vi": "Trạng từ chỉ cách thức bổ nghĩa cho hành động: nói nhanh, lái xe cẩn thận. Không phải cứ thêm -ly là đúng; fast và hard là ngoại lệ quen thuộc.",
+    "decision_steps_vi": [
+      "Xác định từ đang bổ nghĩa cho động từ hay danh từ",
+      "Chọn trạng từ thích hợp thay vì tính từ",
+      "Kiểm tra dạng bất quy tắc và vị trí trong câu"
+    ],
+    "patterns": [
+      {
+        "pattern": "verb + manner adverb",
+        "use_vi": "Trạng từ thường chỉ cách một người làm việc.",
+        "example_en": "He answered the question politely.",
+        "example_vi": "Anh ấy trả lời câu hỏi một cách lịch sự."
+      },
+      {
+        "pattern": "fast / hard; good → well",
+        "use_vi": "Fast và hard có thể là trạng từ; well là trạng từ của good.",
+        "example_en": "She speaks English well.",
+        "example_vi": "Cô ấy nói tiếng Anh tốt."
+      }
+    ],
+    "worked_examples": [
+      {
+        "situation_vi": "Nói người lái xe đang lái cẩn thận.",
+        "answer_en": "The driver is driving carefully.",
+        "translation_vi": "Người lái xe đang lái rất cẩn thận.",
+        "reason_vi": "Careful là tính từ, carefully bổ nghĩa cho driving."
+      },
+      {
+        "situation_vi": "Nói bạn đã làm việc chăm chỉ.",
+        "answer_en": "You worked hard.",
+        "translation_vi": "Bạn đã làm việc chăm chỉ.",
+        "reason_vi": "Hard là trạng từ, hardly mang nghĩa gần như không."
+      }
+    ],
+    "contrasts": [
+      {
+        "first_en": "She is a careful driver.",
+        "second_en": "She drives carefully.",
+        "difference_vi": "Careful mô tả danh từ driver; carefully mô tả động từ drives."
+      }
+    ],
+    "common_mistakes": [
+      {
+        "wrong": "He runs very quick.",
+        "correct": "He runs very quickly.",
+        "why_vi": "Bổ nghĩa cho runs dùng quickly."
+      },
+      {
+        "wrong": "She sings good.",
+        "correct": "She sings well.",
+        "why_vi": "Well là trạng từ phổ biến của good."
+      }
+    ],
+    "supplemental_practice": [
+      {
+        "stage": "guided",
+        "prompt_en": "Complete: Please speak ___ (slow).",
+        "answer": "slowly",
+        "explanation_vi": "Slow thêm ly thành slowly.",
+        "translation_vi": "Làm ơn nói chậm.",
+        "draft_id": "M09-A2-13-DRAFT-01"
+      },
+      {
+        "stage": "independent",
+        "prompt_en": "Complete: She did the job ___ (good).",
+        "answer": "well",
+        "explanation_vi": "Good có trạng từ well.",
+        "translation_vi": "Cô ấy làm công việc tốt.",
+        "draft_id": "M09-A2-13-DRAFT-02"
+      },
+      {
+        "stage": "mastery",
+        "prompt_en": "Correct: They worked hardly all day.",
+        "answer": "They worked hard all day.",
+        "explanation_vi": "Hardly không có nghĩa là chăm chỉ.",
+        "translation_vi": "Họ làm việc chăm chỉ cả ngày.",
+        "draft_id": "M09-A2-13-DRAFT-03"
+      },
+      {
+        "stage": "spaced_review",
+        "prompt_en": "Complete: He drove ___ (careful).",
+        "answer": "carefully",
+        "explanation_vi": "Careful thành carefully.",
+        "translation_vi": "Anh ấy lái xe cẩn thận.",
+        "draft_id": "M09-A2-13-DRAFT-04"
+      }
+    ],
+    "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED",
+    "question_import_policy": "SEPARATE_BANK_NO_OVERWRITE",
+    "title": "Adverbs of Manner",
+    "qa_teacher_review": "NOT_REVIEWED"
+  },
+  "A2-14": {
+    "lesson_id": "A2-14",
+    "overview_vi": "Will thường dùng cho quyết định ngay lúc nói, lời hứa, đề nghị giúp đỡ hoặc dự đoán dựa trên quan điểm cá nhân. Không phải mọi câu tương lai đều dùng will.",
+    "decision_steps_vi": [
+      "Xác định người nói quyết định khi nào",
+      "Xem có lời hứa/dự đoán cá nhân không",
+      "Dùng will + V1, won't + V1, Will + subject + V1"
+    ],
+    "patterns": [
+      {
+        "pattern": "will + base verb",
+        "use_vi": "Quyết định nảy ra ngay khi nói.",
+        "example_en": "The phone is ringing. I'll answer it.",
+        "example_vi": "Điện thoại đang reo. Để tôi nghe máy."
+      },
+      {
+        "pattern": "I think / probably + will",
+        "use_vi": "Dự đoán hoặc nhận định chưa dựa trên dấu hiệu chắc chắn.",
+        "example_en": "I think it will be sunny tomorrow.",
+        "example_vi": "Tôi nghĩ ngày mai trời sẽ nắng."
+      }
+    ],
+    "worked_examples": [
+      {
+        "situation_vi": "Bạn thấy bạn mình mang túi nặng và đề nghị giúp.",
+        "answer_en": "I'll carry that bag for you.",
+        "translation_vi": "Để tôi mang túi đó giúp bạn.",
+        "reason_vi": "Đề nghị giúp ngay lúc nói phù hợp với will."
+      },
+      {
+        "situation_vi": "Hứa gửi email tối nay.",
+        "answer_en": "I'll send you the email tonight.",
+        "translation_vi": "Tôi sẽ gửi email cho bạn tối nay.",
+        "reason_vi": "Lời hứa dùng will + send nguyên mẫu."
+      }
+    ],
+    "contrasts": [
+      {
+        "first_en": "I'll make some tea.",
+        "second_en": "I'm going to make some tea.",
+        "difference_vi": "Will thường là quyết định ngay; going to cho ý định đã có trước."
+      }
+    ],
+    "common_mistakes": [
+      {
+        "wrong": "She will goes later.",
+        "correct": "She will go later.",
+        "why_vi": "Sau will luôn dùng V1 go."
+      },
+      {
+        "wrong": "I won't to forget.",
+        "correct": "I won't forget.",
+        "why_vi": "Won't + V1, không thêm to."
+      }
+    ],
+    "supplemental_practice": [
+      {
+        "stage": "guided",
+        "prompt_en": "Complete: I ___ help you with the bags.",
+        "answer": "will",
+        "explanation_vi": "Lời đề nghị giúp đỡ dùng will.",
+        "translation_vi": "Tôi sẽ giúp bạn mang túi.",
+        "draft_id": "M09-A2-14-DRAFT-01"
+      },
+      {
+        "stage": "independent",
+        "prompt_en": "Make negative: He will be late.",
+        "answer": "He won't be late.",
+        "explanation_vi": "Won't là will not.",
+        "translation_vi": "Anh ấy sẽ không đến muộn.",
+        "draft_id": "M09-A2-14-DRAFT-02"
+      },
+      {
+        "stage": "mastery",
+        "prompt_en": "Write an immediate offer when a friend drops books.",
+        "answer": "I'll pick them up for you.",
+        "explanation_vi": "Đề nghị ngay lúc tình huống xảy ra dùng will.",
+        "translation_vi": "Để tôi nhặt chúng giúp bạn.",
+        "draft_id": "M09-A2-14-DRAFT-03"
+      },
+      {
+        "stage": "spaced_review",
+        "prompt_en": "Correct: Will she comes tomorrow?",
+        "answer": "Will she come tomorrow?",
+        "explanation_vi": "Sau will dùng come.",
+        "translation_vi": "Ngày mai cô ấy sẽ đến chứ?",
+        "draft_id": "M09-A2-14-DRAFT-04"
+      }
+    ],
+    "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED",
+    "question_import_policy": "SEPARATE_BANK_NO_OVERWRITE",
+    "title": "Future Simple – Will",
+    "qa_teacher_review": "NOT_REVIEWED"
+  },
+  "A2-15": {
+    "lesson_id": "A2-15",
+    "overview_vi": "Be going to dùng cho dự định đã hình thành trước khi nói hoặc dự đoán có dấu hiệu nhìn thấy được. Cấu trúc vẫn cần am/is/are.",
+    "decision_steps_vi": [
+      "Tìm kế hoạch đã quyết định hay bằng chứng hiện tại",
+      "Chọn chủ ngữ và be cho đúng",
+      "Dùng be + going to + V1"
+    ],
+    "patterns": [
+      {
+        "pattern": "am/is/are + going to + V1",
+        "use_vi": "Dự định đã được quyết định từ trước.",
+        "example_en": "We're going to visit my aunt this weekend.",
+        "example_vi": "Cuối tuần này chúng tôi dự định thăm dì."
+      },
+      {
+        "pattern": "look at the evidence → going to",
+        "use_vi": "Dự đoán có dấu hiệu hiện tại.",
+        "example_en": "Look at those clouds. It's going to rain.",
+        "example_vi": "Nhìn những đám mây kia. Trời sắp mưa."
+      }
+    ],
+    "worked_examples": [
+      {
+        "situation_vi": "Hai bạn đã mua vé để xem phim tối nay.",
+        "answer_en": "We're going to watch a film tonight.",
+        "translation_vi": "Tối nay chúng tôi định xem phim.",
+        "reason_vi": "Vé đã mua cho thấy kế hoạch có trước khi nói."
+      },
+      {
+        "situation_vi": "Bạn thấy ly nước trên mép bàn sắp rơi.",
+        "answer_en": "That glass is going to fall!",
+        "translation_vi": "Cái ly đó sắp rơi kìa!",
+        "reason_vi": "Dấu hiệu vật lý trước mắt hỗ trợ going to."
+      }
+    ],
+    "contrasts": [
+      {
+        "first_en": "I'm going to study tonight.",
+        "second_en": "I'll study tonight.",
+        "difference_vi": "Câu đầu nhấn mạnh dự định có sẵn; câu sau có thể là quyết định ngay."
+      }
+    ],
+    "common_mistakes": [
+      {
+        "wrong": "She going to travel tomorrow.",
+        "correct": "She's going to travel tomorrow.",
+        "why_vi": "Thiếu be: is."
+      },
+      {
+        "wrong": "We are going visit them.",
+        "correct": "We are going to visit them.",
+        "why_vi": "Sau going cần to + V1."
+      }
+    ],
+    "supplemental_practice": [
+      {
+        "stage": "guided",
+        "prompt_en": "Complete: She ___ going to cook dinner.",
+        "answer": "is",
+        "explanation_vi": "She dùng is trong be going to.",
+        "translation_vi": "Cô ấy dự định nấu tối.",
+        "draft_id": "M09-A2-15-DRAFT-01"
+      },
+      {
+        "stage": "independent",
+        "prompt_en": "Write the plan: We / visit / our cousins / Sunday.",
+        "answer": "We're going to visit our cousins on Sunday.",
+        "explanation_vi": "Dự định dùng are going to visit; Sunday đi với on.",
+        "translation_vi": "Chủ nhật chúng tôi định thăm anh chị em họ.",
+        "draft_id": "M09-A2-15-DRAFT-02"
+      },
+      {
+        "stage": "mastery",
+        "prompt_en": "Correct: Look! The child will falling.",
+        "answer": "Look! The child is going to fall.",
+        "explanation_vi": "Dấu hiệu đang thấy dùng is going to + fall.",
+        "translation_vi": "Nhìn kìa! Đứa trẻ sắp ngã.",
+        "draft_id": "M09-A2-15-DRAFT-03"
+      },
+      {
+        "stage": "spaced_review",
+        "prompt_en": "Make negative: I'm going to drive.",
+        "answer": "I'm not going to drive.",
+        "explanation_vi": "Not đặt sau am.",
+        "translation_vi": "Tôi không định lái xe.",
+        "draft_id": "M09-A2-15-DRAFT-04"
+      }
+    ],
+    "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED",
+    "question_import_policy": "SEPARATE_BANK_NO_OVERWRITE",
+    "title": "Be Going To",
+    "qa_teacher_review": "NOT_REVIEWED"
+  },
+  "A2-16": {
+    "lesson_id": "A2-16",
+    "overview_vi": "Present Continuous có thể diễn tả một cuộc hẹn hoặc sự sắp xếp tương lai tương đối cụ thể. Cần có mốc tương lai hay ngữ cảnh để tránh nhầm hành động đang diễn ra lúc nói.",
+    "decision_steps_vi": [
+      "Tìm thời gian tương lai và sự sắp xếp cụ thể",
+      "Xác định có cuộc hẹn hoặc kế hoạch với người khác chưa",
+      "Dùng am/is/are + V-ing kèm mốc thời gian"
+    ],
+    "patterns": [
+      {
+        "pattern": "be + V-ing + future time",
+        "use_vi": "Nói về lịch đã sắp xếp, ví dụ cuộc hẹn.",
+        "example_en": "I'm meeting my dentist on Friday.",
+        "example_vi": "Thứ Sáu tôi có lịch gặp nha sĩ."
+      },
+      {
+        "pattern": "Are ... V-ing + future time?",
+        "use_vi": "Hỏi về việc đã lên lịch.",
+        "example_en": "Are you working tomorrow morning?",
+        "example_vi": "Sáng mai bạn có lịch làm việc không?"
+      }
+    ],
+    "worked_examples": [
+      {
+        "situation_vi": "Đã đặt bàn nhà hàng cho tối thứ Bảy.",
+        "answer_en": "We're having dinner at that restaurant on Saturday evening.",
+        "translation_vi": "Tối thứ Bảy chúng tôi sẽ ăn tại nhà hàng đó.",
+        "reason_vi": "Kế hoạch cụ thể có đặt bàn: dùng Present Continuous cho tương lai."
+      },
+      {
+        "situation_vi": "Hỏi bạn có gặp giáo viên chiều mai không.",
+        "answer_en": "Are you meeting your teacher tomorrow afternoon?",
+        "translation_vi": "Chiều mai bạn có lịch gặp giáo viên không?",
+        "reason_vi": "Mốc tomorrow afternoon cho thấy nghĩa tương lai."
+      }
+    ],
+    "contrasts": [
+      {
+        "first_en": "I'm meeting Anna now.",
+        "second_en": "I'm meeting Anna at six tomorrow.",
+        "difference_vi": "Cùng cấu trúc, now diễn tả hiện tại; tomorrow diễn tả kế hoạch đã sắp xếp."
+      }
+    ],
+    "common_mistakes": [
+      {
+        "wrong": "I meeting my tutor tomorrow.",
+        "correct": "I'm meeting my tutor tomorrow.",
+        "why_vi": "Present Continuous cần am."
+      },
+      {
+        "wrong": "We're meet the guide on Friday.",
+        "correct": "We're meeting the guide on Friday.",
+        "why_vi": "Sau are cần dạng V-ing."
+      }
+    ],
+    "supplemental_practice": [
+      {
+        "stage": "guided",
+        "prompt_en": "Complete: They ___ (fly) to Seoul next Wednesday.",
+        "answer": "are flying",
+        "explanation_vi": "They + are + flying, có mốc tương lai.",
+        "translation_vi": "Thứ Tư tới họ bay đi Seoul.",
+        "draft_id": "M09-A2-16-DRAFT-01"
+      },
+      {
+        "stage": "independent",
+        "prompt_en": "Make a question: You are meeting the manager at three.",
+        "answer": "Are you meeting the manager at three?",
+        "explanation_vi": "Đảo are ra trước you.",
+        "translation_vi": "Ba giờ bạn có lịch gặp quản lý không?",
+        "draft_id": "M09-A2-16-DRAFT-02"
+      },
+      {
+        "stage": "mastery",
+        "prompt_en": "Explain the time reference: I'm seeing my doctor next week.",
+        "answer": "a future arrangement",
+        "explanation_vi": "Next week cho thấy cuộc hẹn tương lai.",
+        "translation_vi": "Tuần sau tôi có hẹn bác sĩ.",
+        "draft_id": "M09-A2-16-DRAFT-03"
+      },
+      {
+        "stage": "spaced_review",
+        "prompt_en": "Correct: She is meet us tomorrow.",
+        "answer": "She is meeting us tomorrow.",
+        "explanation_vi": "Be + V-ing: meeting.",
+        "translation_vi": "Ngày mai cô ấy có lịch gặp chúng tôi.",
+        "draft_id": "M09-A2-16-DRAFT-04"
+      }
+    ],
+    "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED",
+    "question_import_policy": "SEPARATE_BANK_NO_OVERWRITE",
+    "title": "Present Continuous for Future",
+    "qa_teacher_review": "NOT_REVIEWED"
+  },
+  "A2-17": {
+    "lesson_id": "A2-17",
+    "overview_vi": "Will và going to đều nói về tương lai nhưng khác điểm nhấn: quyết định ngay lúc nói so với ý định có từ trước; dự đoán ý kiến so với dự đoán có dấu hiệu.",
+    "decision_steps_vi": [
+      "Đọc bối cảnh trước câu nói",
+      "Hỏi quyết định vừa hình thành hay đã lên kế hoạch",
+      "Nếu là dự đoán, xác định có bằng chứng trực tiếp không"
+    ],
+    "patterns": [
+      {
+        "pattern": "instant decision → will",
+        "use_vi": "Quyết định đưa ra ngay trong cuộc trò chuyện.",
+        "example_en": "I forgot my pen. I'll borrow one.",
+        "example_vi": "Tôi quên bút rồi. Tôi sẽ mượn một cây."
+      },
+      {
+        "pattern": "prior plan / present evidence → going to",
+        "use_vi": "Dự định có sẵn hoặc dự đoán nhìn thấy dấu hiệu.",
+        "example_en": "I've bought flour. I'm going to bake bread.",
+        "example_vi": "Tôi đã mua bột. Tôi định làm bánh mì."
+      }
+    ],
+    "worked_examples": [
+      {
+        "situation_vi": "Bạn vừa nghe chuông cửa và đứng dậy mở.",
+        "answer_en": "I'll get the door.",
+        "translation_vi": "Để tôi ra mở cửa.",
+        "reason_vi": "Hành động tự quyết ngay khi nghe chuông phù hợp với will."
+      },
+      {
+        "situation_vi": "Bạn nhìn thấy người đi xe đạp mất thăng bằng.",
+        "answer_en": "He's going to fall off his bike!",
+        "translation_vi": "Anh ấy sắp ngã khỏi xe đạp!",
+        "reason_vi": "Dự đoán có dấu hiệu trước mắt phù hợp với going to."
+      }
+    ],
+    "contrasts": [
+      {
+        "first_en": "I think they'll win.",
+        "second_en": "Look at their big lead. They're going to win.",
+        "difference_vi": "Câu đầu là dự đoán quan điểm; câu sau nhấn mạnh bằng chứng hiện tại."
+      }
+    ],
+    "common_mistakes": [
+      {
+        "wrong": "I'm going to visiting my uncle tomorrow.",
+        "correct": "I'm going to visit my uncle tomorrow.",
+        "why_vi": "Sau going to phải dùng V1 visit."
+      },
+      {
+        "wrong": "Look! He going to fall off his bike!",
+        "correct": "Look! He's going to fall off his bike!",
+        "why_vi": "Going to cần be chia theo chủ ngữ he."
+      }
+    ],
+    "supplemental_practice": [
+      {
+        "stage": "guided",
+        "prompt_en": "A: I'm thirsty. B: I ___ get you some water.",
+        "answer": "will",
+        "explanation_vi": "Đề nghị tự phát dùng will.",
+        "translation_vi": "Để tôi lấy nước cho bạn.",
+        "draft_id": "M09-A2-17-DRAFT-01"
+      },
+      {
+        "stage": "independent",
+        "prompt_en": "Look at the dark sky. It ___ rain.",
+        "answer": "is going to",
+        "explanation_vi": "Có bằng chứng mây đen: is going to.",
+        "translation_vi": "Trời sắp mưa.",
+        "draft_id": "M09-A2-17-DRAFT-02"
+      },
+      {
+        "stage": "mastery",
+        "prompt_en": "Give a natural response: I can't lift this box.",
+        "answer": "I'll help you.",
+        "explanation_vi": "Phản hồi đề nghị giúp ngay lúc nói dùng will.",
+        "translation_vi": "Tôi sẽ giúp bạn.",
+        "draft_id": "M09-A2-17-DRAFT-03"
+      },
+      {
+        "stage": "spaced_review",
+        "prompt_en": "Complete: We bought the tickets yesterday. We ___ see a play tonight.",
+        "answer": "are going to",
+        "explanation_vi": "Vé đã mua cho thấy kế hoạch từ trước.",
+        "translation_vi": "Tối nay chúng tôi định đi xem kịch.",
+        "draft_id": "M09-A2-17-DRAFT-04"
+      }
+    ],
+    "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED",
+    "question_import_policy": "SEPARATE_BANK_NO_OVERWRITE",
+    "title": "Will vs Going To",
+    "qa_teacher_review": "NOT_REVIEWED"
+  },
+  "A2-18": {
+    "lesson_id": "A2-18",
+    "overview_vi": "Present Perfect cho trải nghiệm đời sống khi không nói rõ thời điểm đã kết thúc. Dùng have/has + V3, thường đi với ever hoặc never.",
+    "decision_steps_vi": [
+      "Kiểm tra người nói quan tâm trải nghiệm hay thời điểm",
+      "Nếu không nêu mốc kết thúc, chọn have/has + V3",
+      "Dùng ever/never đúng vị trí và không dùng hai phủ định"
+    ],
+    "patterns": [
+      {
+        "pattern": "have/has + past participle (V3)",
+        "use_vi": "Nói đã có trải nghiệm vào một lúc nào đó đến hiện tại.",
+        "example_en": "I have visited a tea farm.",
+        "example_vi": "Tôi đã từng thăm một trang trại chè."
+      },
+      {
+        "pattern": "Have you ever...? / I have never...",
+        "use_vi": "Hỏi và nói trải nghiệm chưa từng có.",
+        "example_en": "Have you ever tried kayaking?",
+        "example_vi": "Bạn đã từng thử chèo kayak chưa?"
+      }
+    ],
+    "worked_examples": [
+      {
+        "situation_vi": "Hỏi bạn từng đến Hội An chưa (không hỏi năm nào).",
+        "answer_en": "Have you ever been to Hoi An?",
+        "translation_vi": "Bạn đã từng đến Hội An chưa?",
+        "reason_vi": "Ever + been to hỏi về trải nghiệm trong đời."
+      },
+      {
+        "situation_vi": "Nói bạn chưa bao giờ đi máy bay.",
+        "answer_en": "I've never flown on a plane.",
+        "translation_vi": "Tôi chưa bao giờ đi máy bay.",
+        "reason_vi": "Never đứng giữa have và V3 flown; không thêm not."
+      }
+    ],
+    "contrasts": [
+      {
+        "first_en": "I've been to Japan.",
+        "second_en": "I went to Japan in 2023.",
+        "difference_vi": "Present Perfect nói trải nghiệm chưa xác định thời điểm; Past Simple nói mốc 2023 đã kết thúc."
+      }
+    ],
+    "common_mistakes": [
+      {
+        "wrong": "Have you ever went abroad?",
+        "correct": "Have you ever been abroad?",
+        "why_vi": "Sau have dùng V3; been là lựa chọn tự nhiên khi hỏi từng ra nước ngoài."
+      },
+      {
+        "wrong": "I haven't never tried sushi.",
+        "correct": "I've never tried sushi.",
+        "why_vi": "Never đã mang phủ định; tránh haven't never."
+      }
+    ],
+    "supplemental_practice": [
+      {
+        "stage": "guided",
+        "prompt_en": "Complete: She has ___ (see) that film before.",
+        "answer": "seen",
+        "explanation_vi": "V3 của see là seen.",
+        "translation_vi": "Cô ấy từng xem phim đó.",
+        "draft_id": "M09-A2-18-DRAFT-01"
+      },
+      {
+        "stage": "independent",
+        "prompt_en": "Ask about experience: you / ever / ride a horse?",
+        "answer": "Have you ever ridden a horse?",
+        "explanation_vi": "Have + subject + ever + V3 ridden.",
+        "translation_vi": "Bạn đã từng cưỡi ngựa chưa?",
+        "draft_id": "M09-A2-18-DRAFT-02"
+      },
+      {
+        "stage": "mastery",
+        "prompt_en": "Correct: I have never ate seafood.",
+        "answer": "I have never eaten seafood.",
+        "explanation_vi": "V3 của eat là eaten.",
+        "translation_vi": "Tôi chưa từng ăn hải sản.",
+        "draft_id": "M09-A2-18-DRAFT-03"
+      },
+      {
+        "stage": "spaced_review",
+        "prompt_en": "Complete: We ___ visited that museum before.",
+        "answer": "have",
+        "explanation_vi": "We đi với have.",
+        "translation_vi": "Chúng tôi từng đến bảo tàng đó.",
+        "draft_id": "M09-A2-18-DRAFT-04"
+      }
+    ],
+    "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED",
+    "question_import_policy": "SEPARATE_BANK_NO_OVERWRITE",
+    "title": "Present Perfect – Experiences",
+    "qa_teacher_review": "NOT_REVIEWED"
+  },
+  "A2-19": {
+    "lesson_id": "A2-19",
+    "overview_vi": "Just, already, yet thường dùng trong Present Perfect để báo việc vừa xảy ra, đã xảy ra sớm hơn dự kiến hoặc chưa xảy ra tính đến hiện tại.",
+    "decision_steps_vi": [
+      "Xác định thông tin đã xong hay chưa",
+      "Chọn just/already/yet theo sắc thái",
+      "Đặt just/already sau have/has, yet thường cuối câu hỏi/phủ định"
+    ],
+    "patterns": [
+      {
+        "pattern": "have/has just/already + V3",
+        "use_vi": "Just: vừa mới; already: đã rồi.",
+        "example_en": "She's just finished her homework.",
+        "example_vi": "Cô ấy vừa làm xong bài tập."
+      },
+      {
+        "pattern": "haven't/hasn't + V3 + yet",
+        "use_vi": "Yet thường ở cuối câu hỏi hoặc phủ định.",
+        "example_en": "I haven't sent the file yet.",
+        "example_vi": "Tôi vẫn chưa gửi tệp."
+      }
+    ],
+    "worked_examples": [
+      {
+        "situation_vi": "Nói xe buýt vừa mới rời bến.",
+        "answer_en": "The bus has just left.",
+        "translation_vi": "Xe buýt vừa rời bến.",
+        "reason_vi": "Just đặt giữa has và left."
+      },
+      {
+        "situation_vi": "Hỏi bạn đã ăn trưa chưa.",
+        "answer_en": "Have you had lunch yet?",
+        "translation_vi": "Bạn đã ăn trưa chưa?",
+        "reason_vi": "Yet đặt cuối câu hỏi; have had là trợ động từ và V3."
+      }
+    ],
+    "contrasts": [
+      {
+        "first_en": "I've already paid.",
+        "second_en": "I haven't paid yet.",
+        "difference_vi": "Already nhấn mạnh đã làm; not ... yet nhấn mạnh chưa làm tính tới bây giờ."
+      }
+    ],
+    "common_mistakes": [
+      {
+        "wrong": "I have yet finished.",
+        "correct": "I have already finished.",
+        "why_vi": "Trong nghĩa đã xong, already đứng giữa have và V3; yet ở đây không phù hợp."
+      },
+      {
+        "wrong": "She hasn't just arrived yet.",
+        "correct": "She hasn't arrived yet.",
+        "why_vi": "Just không cần thiết trong câu nói chưa đến; giữ haven't ... yet."
+      }
+    ],
+    "supplemental_practice": [
+      {
+        "stage": "guided",
+        "prompt_en": "Complete: We have ___ arrived. (a moment ago)",
+        "answer": "just",
+        "explanation_vi": "Just diễn tả vừa mới.",
+        "translation_vi": "Chúng tôi vừa mới đến.",
+        "draft_id": "M09-A2-19-DRAFT-01"
+      },
+      {
+        "stage": "independent",
+        "prompt_en": "Complete: Has he finished the report ___?",
+        "answer": "yet",
+        "explanation_vi": "Yet thường cuối câu hỏi.",
+        "translation_vi": "Anh ấy đã hoàn thành báo cáo chưa?",
+        "draft_id": "M09-A2-19-DRAFT-02"
+      },
+      {
+        "stage": "mastery",
+        "prompt_en": "Correct: I haven't eaten dinner already.",
+        "answer": "I haven't eaten dinner yet.",
+        "explanation_vi": "Yet thường dùng khi việc chưa xảy ra tính tới hiện tại.",
+        "translation_vi": "Tôi chưa ăn tối.",
+        "draft_id": "M09-A2-19-DRAFT-03"
+      },
+      {
+        "stage": "spaced_review",
+        "prompt_en": "Complete: I've ___ read that email, so you don't need to send it again.",
+        "answer": "already",
+        "explanation_vi": "Already nhấn mạnh đã đọc.",
+        "translation_vi": "Tôi đã đọc email rồi.",
+        "draft_id": "M09-A2-19-DRAFT-04"
+      }
+    ],
+    "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED",
+    "question_import_policy": "SEPARATE_BANK_NO_OVERWRITE",
+    "title": "Present Perfect – Recent Events",
+    "qa_teacher_review": "NOT_REVIEWED"
+  },
+  "A2-20": {
+    "lesson_id": "A2-20",
+    "overview_vi": "Present Perfect với for và since diễn tả tình trạng/hành động bắt đầu trong quá khứ và vẫn liên quan đến hiện tại. Phân biệt khoảng thời gian và mốc bắt đầu.",
+    "decision_steps_vi": [
+      "Xác định tình trạng còn tiếp diễn không",
+      "Chọn for nếu là độ dài, since nếu là mốc bắt đầu",
+      "Dùng have/has + V3 của động từ phù hợp với nghĩa kéo dài"
+    ],
+    "patterns": [
+      {
+        "pattern": "have/has + V3 + for + duration",
+        "use_vi": "For + hai tuần, ba năm, một giờ.",
+        "example_en": "We've lived here for five years.",
+        "example_vi": "Chúng tôi đã sống ở đây năm năm rồi."
+      },
+      {
+        "pattern": "have/has + V3 + since + starting point",
+        "use_vi": "Since + năm, thứ Hai, thời điểm bắt đầu.",
+        "example_en": "She has worked here since 2021.",
+        "example_vi": "Cô ấy làm việc ở đây từ năm 2021."
+      }
+    ],
+    "worked_examples": [
+      {
+        "situation_vi": "Nói bạn có chiếc xe đạp này được hai năm.",
+        "answer_en": "I've had this bicycle for two years.",
+        "translation_vi": "Tôi có chiếc xe đạp này được hai năm.",
+        "reason_vi": "Have trong nghĩa sở hữu dùng have had; for + độ dài."
+      },
+      {
+        "situation_vi": "Nói bạn biết Nam từ khi học tiểu học.",
+        "answer_en": "I've known Nam since primary school.",
+        "translation_vi": "Tôi biết Nam từ hồi tiểu học.",
+        "reason_vi": "Know là trạng thái; dùng have known để nối quá khứ với hiện tại."
+      }
+    ],
+    "contrasts": [
+      {
+        "first_en": "I've lived here for three years.",
+        "second_en": "I lived here for three years.",
+        "difference_vi": "Câu đầu thường ngụ ý vẫn sống đây; câu sau có thể ngụ ý đã kết thúc."
+      }
+    ],
+    "common_mistakes": [
+      {
+        "wrong": "I've known her since five years.",
+        "correct": "I've known her for five years.",
+        "why_vi": "Five years là khoảng thời gian nên dùng for."
+      },
+      {
+        "wrong": "He has been here for Monday.",
+        "correct": "He has been here since Monday.",
+        "why_vi": "Monday là mốc bắt đầu nên dùng since."
+      }
+    ],
+    "supplemental_practice": [
+      {
+        "stage": "guided",
+        "prompt_en": "Complete: I've worked here ___ six months.",
+        "answer": "for",
+        "explanation_vi": "Six months là độ dài.",
+        "translation_vi": "Tôi làm ở đây được sáu tháng.",
+        "draft_id": "M09-A2-20-DRAFT-01"
+      },
+      {
+        "stage": "independent",
+        "prompt_en": "Complete: She has lived in Hue ___ 2020.",
+        "answer": "since",
+        "explanation_vi": "2020 là mốc bắt đầu.",
+        "translation_vi": "Cô ấy sống ở Huế từ năm 2020.",
+        "draft_id": "M09-A2-20-DRAFT-02"
+      },
+      {
+        "stage": "mastery",
+        "prompt_en": "Correct: I have this phone since last year.",
+        "answer": "I've had this phone since last year.",
+        "explanation_vi": "Have trong nghĩa sở hữu dùng have had với since.",
+        "translation_vi": "Tôi có chiếc điện thoại này từ năm ngoái.",
+        "draft_id": "M09-A2-20-DRAFT-03"
+      },
+      {
+        "stage": "spaced_review",
+        "prompt_en": "Complete: We have been friends ___ childhood.",
+        "answer": "since",
+        "explanation_vi": "Childhood là mốc bắt đầu quan hệ.",
+        "translation_vi": "Chúng tôi là bạn từ thời thơ ấu.",
+        "draft_id": "M09-A2-20-DRAFT-04"
+      }
+    ],
+    "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED",
+    "question_import_policy": "SEPARATE_BANK_NO_OVERWRITE",
+    "title": "Present Perfect – Duration",
+    "qa_teacher_review": "NOT_REVIEWED"
+  },
+  "A2-21": {
+    "lesson_id": "A2-21",
+    "overview_vi": "Past Simple định vị sự kiện trong thời gian đã kết thúc; Present Perfect liên kết trải nghiệm hoặc kết quả với hiện tại khi không xác định thời gian quá khứ.",
+    "decision_steps_vi": [
+      "Tìm yesterday/last/in + năm hoặc câu hỏi When",
+      "Nếu có mốc đã kết thúc, dùng Past Simple",
+      "Nếu hỏi trải nghiệm hoặc kết quả hiện tại, dùng Present Perfect"
+    ],
+    "patterns": [
+      {
+        "pattern": "Past Simple + finished time",
+        "use_vi": "Sự kiện được định vị vào thời điểm quá khứ.",
+        "example_en": "I lost my keys yesterday.",
+        "example_vi": "Tôi làm mất chìa khóa hôm qua."
+      },
+      {
+        "pattern": "Present Perfect + current relevance",
+        "use_vi": "Kết quả hiện tại hoặc trải nghiệm không nêu lúc nào.",
+        "example_en": "I've lost my keys, so I can't open the door.",
+        "example_vi": "Tôi làm mất chìa khóa nên không mở được cửa."
+      }
+    ],
+    "worked_examples": [
+      {
+        "situation_vi": "Hỏi năm nào bạn mua điện thoại.",
+        "answer_en": "When did you buy your phone?",
+        "translation_vi": "Bạn mua điện thoại khi nào?",
+        "reason_vi": "When hỏi thời điểm đã qua, dùng did + buy."
+      },
+      {
+        "situation_vi": "Nói bạn từng gặp nhà văn đó nhưng không nêu lúc nào.",
+        "answer_en": "I've met that writer before.",
+        "translation_vi": "Tôi từng gặp nhà văn ấy.",
+        "reason_vi": "Before ở đây không ấn định thời điểm kết thúc cụ thể."
+      }
+    ],
+    "contrasts": [
+      {
+        "first_en": "I visited Da Lat in 2022.",
+        "second_en": "I've visited Da Lat.",
+        "difference_vi": "Có in 2022 dùng Past Simple; trải nghiệm chung dùng Present Perfect."
+      }
+    ],
+    "common_mistakes": [
+      {
+        "wrong": "I have seen her yesterday.",
+        "correct": "I saw her yesterday.",
+        "why_vi": "Yesterday là mốc quá khứ đã kết thúc."
+      },
+      {
+        "wrong": "When have you bought it?",
+        "correct": "When did you buy it?",
+        "why_vi": "Hỏi thời điểm mua dùng Past Simple."
+      }
+    ],
+    "supplemental_practice": [
+      {
+        "stage": "guided",
+        "prompt_en": "I ___ (see) that film last Sunday.",
+        "answer": "saw",
+        "explanation_vi": "Last Sunday là thời gian đã kết thúc.",
+        "translation_vi": "Chủ nhật trước tôi xem phim đó.",
+        "draft_id": "M09-A2-21-DRAFT-01"
+      },
+      {
+        "stage": "independent",
+        "prompt_en": "I ___ (never/try) skiing.",
+        "answer": "have never tried",
+        "explanation_vi": "Không nêu mốc quá khứ; trải nghiệm dùng Present Perfect.",
+        "translation_vi": "Tôi chưa bao giờ thử trượt tuyết.",
+        "draft_id": "M09-A2-21-DRAFT-02"
+      },
+      {
+        "stage": "mastery",
+        "prompt_en": "Correct: She has arrived two hours ago.",
+        "answer": "She arrived two hours ago.",
+        "explanation_vi": "Ago định vị sự kiện trong quá khứ.",
+        "translation_vi": "Cô ấy đến cách đây hai giờ.",
+        "draft_id": "M09-A2-21-DRAFT-03"
+      },
+      {
+        "stage": "spaced_review",
+        "prompt_en": "Write the question about a finished-time event: you / visit / Hue / in 2022?",
+        "answer": "Did you visit Hue in 2022?",
+        "explanation_vi": "Did + V1 khi hỏi sự kiện vào năm cụ thể.",
+        "translation_vi": "Bạn có đến Huế năm 2022 không?",
+        "draft_id": "M09-A2-21-DRAFT-04"
+      }
+    ],
+    "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED",
+    "question_import_policy": "SEPARATE_BANK_NO_OVERWRITE",
+    "title": "Past Simple vs Present Perfect – Introduction",
+    "qa_teacher_review": "NOT_REVIEWED"
+  },
+  "A2-22": {
+    "lesson_id": "A2-22",
+    "overview_vi": "Should/shouldn’t đưa ra lời khuyên hoặc ý kiến về việc nên/không nên làm. Mức bắt buộc của should thường nhẹ hơn must.",
+    "decision_steps_vi": [
+      "Xem người nói đang khuyên hay bắt buộc",
+      "Chọn should/shouldn’t theo hướng khuyên",
+      "Dùng động từ nguyên mẫu sau modal"
+    ],
+    "patterns": [
+      {
+        "pattern": "should + base verb",
+        "use_vi": "Khuyên điều có lợi hoặc hợp lý.",
+        "example_en": "You should drink more water.",
+        "example_vi": "Bạn nên uống nhiều nước hơn."
+      },
+      {
+        "pattern": "shouldn't + base verb",
+        "use_vi": "Khuyên tránh hành động không tốt.",
+        "example_en": "You shouldn't skip breakfast.",
+        "example_vi": "Bạn không nên bỏ bữa sáng."
+      }
+    ],
+    "worked_examples": [
+      {
+        "situation_vi": "Khuyên bạn đi ngủ sớm vì hôm sau có thi.",
+        "answer_en": "You should go to bed early tonight.",
+        "translation_vi": "Tối nay bạn nên đi ngủ sớm.",
+        "reason_vi": "Lời khuyên hữu ích, không phải quy định bắt buộc."
+      },
+      {
+        "situation_vi": "Khuyên người bạn đau họng tránh uống nước quá lạnh.",
+        "answer_en": "You shouldn't drink very cold water if it makes your throat worse.",
+        "translation_vi": "Bạn không nên uống nước quá lạnh nếu điều đó làm họng khó chịu hơn.",
+        "reason_vi": "Lời khuyên có điều kiện, tránh biến thành một khẳng định y khoa tuyệt đối."
+      }
+    ],
+    "contrasts": [
+      {
+        "first_en": "You should ask for help.",
+        "second_en": "You must wear a helmet here.",
+        "difference_vi": "Should là lời khuyên; must diễn đạt nghĩa vụ/điều bắt buộc theo bối cảnh."
+      }
+    ],
+    "common_mistakes": [
+      {
+        "wrong": "You should to see a dentist.",
+        "correct": "You should see a dentist.",
+        "why_vi": "Sau should dùng V1, không có to."
+      },
+      {
+        "wrong": "He shouldn't eats late.",
+        "correct": "He shouldn't eat late.",
+        "why_vi": "Sau shouldn't là eat nguyên mẫu."
+      }
+    ],
+    "supplemental_practice": [
+      {
+        "stage": "guided",
+        "prompt_en": "Complete: You ___ check the instructions first. (advice)",
+        "answer": "should",
+        "explanation_vi": "Should diễn tả lời khuyên.",
+        "translation_vi": "Bạn nên xem hướng dẫn trước.",
+        "draft_id": "M09-A2-22-DRAFT-01"
+      },
+      {
+        "stage": "independent",
+        "prompt_en": "Write advice: Your friend is often late.",
+        "answer": "You should leave home earlier.",
+        "explanation_vi": "Đề xuất một hành động cụ thể với should.",
+        "translation_vi": "Bạn nên rời nhà sớm hơn.",
+        "draft_id": "M09-A2-22-DRAFT-02"
+      },
+      {
+        "stage": "mastery",
+        "prompt_en": "Correct: She should to practise every day.",
+        "answer": "She should practise every day.",
+        "explanation_vi": "Không thêm to sau should.",
+        "translation_vi": "Cô ấy nên luyện mỗi ngày.",
+        "draft_id": "M09-A2-22-DRAFT-03"
+      },
+      {
+        "stage": "spaced_review",
+        "prompt_en": "Complete: You ___ share your password with strangers.",
+        "answer": "shouldn't",
+        "explanation_vi": "Đây là lời khuyên tránh rủi ro.",
+        "translation_vi": "Bạn không nên chia sẻ mật khẩu với người lạ.",
+        "draft_id": "M09-A2-22-DRAFT-04"
+      }
+    ],
+    "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED",
+    "question_import_policy": "SEPARATE_BANK_NO_OVERWRITE",
+    "title": "Should / Shouldn't",
+    "qa_teacher_review": "NOT_REVIEWED"
+  },
+  "A2-23": {
+    "lesson_id": "A2-23",
+    "overview_vi": "Must và have to nói về sự bắt buộc. Mustn’t nghĩa là bị cấm; don’t have to nghĩa là không bắt buộc. Hai phủ định này không thể thay thế nhau.",
+    "decision_steps_vi": [
+      "Xác định câu nói về nghĩa vụ, cấm đoán hay không cần thiết",
+      "Chọn must/have to, mustn’t hoặc don’t have to",
+      "Giữ nguyên mẫu sau must và dùng to + V1 sau have"
+    ],
+    "patterns": [
+      {
+        "pattern": "must / have to + base verb",
+        "use_vi": "Nói về yêu cầu, nội quy hoặc việc cần làm.",
+        "example_en": "Visitors must show their tickets.",
+        "example_vi": "Khách tham quan phải xuất trình vé."
+      },
+      {
+        "pattern": "mustn't vs don't have to",
+        "use_vi": "Mustn't là cấm; don't have to là tùy chọn.",
+        "example_en": "You don't have to bring lunch; food is provided.",
+        "example_vi": "Bạn không phải mang cơm trưa vì đã có thức ăn."
+      }
+    ],
+    "worked_examples": [
+      {
+        "situation_vi": "Biển báo yêu cầu không được chụp ảnh.",
+        "answer_en": "You mustn't take photos here.",
+        "translation_vi": "Bạn không được chụp ảnh ở đây.",
+        "reason_vi": "Nội quy cấm dùng mustn't."
+      },
+      {
+        "situation_vi": "Nói khách không cần đăng ký trước vì vé bán tại cửa.",
+        "answer_en": "You don't have to book in advance.",
+        "translation_vi": "Bạn không bắt buộc đặt trước.",
+        "reason_vi": "Không cần thiết khác với cấm đặt trước."
+      }
+    ],
+    "contrasts": [
+      {
+        "first_en": "You mustn't park here.",
+        "second_en": "You don't have to park here.",
+        "difference_vi": "Câu đầu cấm đỗ; câu sau nói không bắt buộc phải đỗ ở đây."
+      }
+    ],
+    "common_mistakes": [
+      {
+        "wrong": "You don't have to smoke here. (sign means prohibition)",
+        "correct": "You mustn't smoke here.",
+        "why_vi": "Biển cấm cần mustn't, không phải don't have to."
+      },
+      {
+        "wrong": "She musts leave now.",
+        "correct": "She must leave now.",
+        "why_vi": "Must không thêm -s theo chủ ngữ."
+      }
+    ],
+    "supplemental_practice": [
+      {
+        "stage": "guided",
+        "prompt_en": "Complete: You ___ wear a seat belt in the car. (rule)",
+        "answer": "must",
+        "explanation_vi": "Quy tắc bắt buộc dùng must.",
+        "translation_vi": "Bạn phải thắt dây an toàn trên xe.",
+        "draft_id": "M09-A2-23-DRAFT-01"
+      },
+      {
+        "stage": "independent",
+        "prompt_en": "Complete: It's a free event. You ___ pay.",
+        "answer": "don't have to",
+        "explanation_vi": "Sự kiện miễn phí nên không bắt buộc trả tiền.",
+        "translation_vi": "Bạn không cần trả tiền.",
+        "draft_id": "M09-A2-23-DRAFT-02"
+      },
+      {
+        "stage": "mastery",
+        "prompt_en": "Correct: Visitors don't have to enter this restricted area. (prohibition)",
+        "answer": "Visitors mustn't enter this restricted area.",
+        "explanation_vi": "Ý cấm vào dùng mustn't.",
+        "translation_vi": "Khách không được vào khu vực hạn chế.",
+        "draft_id": "M09-A2-23-DRAFT-03"
+      },
+      {
+        "stage": "spaced_review",
+        "prompt_en": "Complete: My sister ___ to get up at six for work.",
+        "answer": "has",
+        "explanation_vi": "She tương đương ngôi thứ ba số ít: has to.",
+        "translation_vi": "Chị/em gái tôi phải dậy lúc sáu giờ để đi làm.",
+        "draft_id": "M09-A2-23-DRAFT-04"
+      }
+    ],
+    "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED",
+    "question_import_policy": "SEPARATE_BANK_NO_OVERWRITE",
+    "title": "Must / Mustn't / Have to",
+    "qa_teacher_review": "NOT_REVIEWED"
+  },
+  "A2-24": {
+    "lesson_id": "A2-24",
+    "overview_vi": "May, might, could biểu thị điều có thể xảy ra nhưng chưa chắc chắn. Không gán phần trăm chắc chắn cố định cho từng từ trong mọi ngữ cảnh.",
+    "decision_steps_vi": [
+      "Tìm dấu hiệu đây là suy đoán chứ không phải sự thật",
+      "Chọn may/might/could theo ngữ cảnh câu",
+      "Dùng V1 sau modal và phân biệt could not/couldn’t khi nghĩa thay đổi"
+    ],
+    "patterns": [
+      {
+        "pattern": "may / might / could + base verb",
+        "use_vi": "Ba modal có thể nói về khả năng trong tương lai.",
+        "example_en": "The meeting might finish early.",
+        "example_vi": "Cuộc họp có thể kết thúc sớm."
+      },
+      {
+        "pattern": "may not / might not + base verb",
+        "use_vi": "Nói một việc có thể không xảy ra.",
+        "example_en": "The parcel may not arrive today.",
+        "example_vi": "Bưu kiện có thể không đến hôm nay."
+      }
+    ],
+    "worked_examples": [
+      {
+        "situation_vi": "Nói có khả năng buổi dã ngoại bị hoãn vì mưa.",
+        "answer_en": "The picnic might be postponed because of rain.",
+        "translation_vi": "Buổi dã ngoại có thể bị hoãn vì mưa.",
+        "reason_vi": "Might diễn đạt một khả năng không chắc chắn."
+      },
+      {
+        "situation_vi": "Đề xuất rằng chìa khóa có thể ở ngăn kéo.",
+        "answer_en": "The keys could be in the drawer.",
+        "translation_vi": "Chìa khóa có thể ở trong ngăn kéo.",
+        "reason_vi": "Could ở đây là suy đoán vị trí, không phải khả năng trong quá khứ."
+      }
+    ],
+    "contrasts": [
+      {
+        "first_en": "She may be at home.",
+        "second_en": "She is at home.",
+        "difference_vi": "May giữ tính không chắc chắn; is khẳng định một sự thật theo người nói."
+      }
+    ],
+    "common_mistakes": [
+      {
+        "wrong": "It might rains later.",
+        "correct": "It might rain later.",
+        "why_vi": "Sau might dùng V1 rain."
+      },
+      {
+        "wrong": "She may to join us.",
+        "correct": "She may join us.",
+        "why_vi": "Sau may không có to."
+      }
+    ],
+    "supplemental_practice": [
+      {
+        "stage": "guided",
+        "prompt_en": "Complete: It ___ rain later, so take an umbrella.",
+        "answer": "might",
+        "explanation_vi": "Might diễn tả khả năng chưa chắc.",
+        "translation_vi": "Trời có thể mưa nên hãy mang ô.",
+        "draft_id": "M09-A2-24-DRAFT-01"
+      },
+      {
+        "stage": "independent",
+        "prompt_en": "Complete: The train ___ not arrive on time.",
+        "answer": "may",
+        "explanation_vi": "May not diễn đạt có thể không đến đúng giờ.",
+        "translation_vi": "Tàu có thể không đến đúng giờ.",
+        "draft_id": "M09-A2-24-DRAFT-02"
+      },
+      {
+        "stage": "mastery",
+        "prompt_en": "Correct: He could to be busy.",
+        "answer": "He could be busy.",
+        "explanation_vi": "Could + V1 be.",
+        "translation_vi": "Anh ấy có thể đang bận.",
+        "draft_id": "M09-A2-24-DRAFT-03"
+      },
+      {
+        "stage": "spaced_review",
+        "prompt_en": "Rewrite with uncertainty: She is at the library.",
+        "answer": "She might be at the library.",
+        "explanation_vi": "Thêm might để giảm mức chắc chắn.",
+        "translation_vi": "Cô ấy có thể ở thư viện.",
+        "draft_id": "M09-A2-24-DRAFT-04"
+      }
+    ],
+    "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED",
+    "question_import_policy": "SEPARATE_BANK_NO_OVERWRITE",
+    "title": "May / Might / Could",
+    "qa_teacher_review": "NOT_REVIEWED"
+  },
+  "A2-25": {
+    "lesson_id": "A2-25",
+    "overview_vi": "Gerund là dạng V-ing đóng vai trò như danh từ sau một số động từ và sau giới từ. Không nhầm gerund với Present Continuous chỉ vì cùng có -ing.",
+    "decision_steps_vi": [
+      "Xác định động từ/giới từ đứng trước chỗ trống",
+      "Xem cấu trúc đó yêu cầu V-ing không",
+      "Dùng V-ing như danh từ, không tự thêm be"
+    ],
+    "patterns": [
+      {
+        "pattern": "enjoy / avoid / finish + V-ing",
+        "use_vi": "Các động từ này thường nhận V-ing làm bổ ngữ.",
+        "example_en": "I enjoy reading travel blogs.",
+        "example_vi": "Tôi thích đọc blog du lịch."
+      },
+      {
+        "pattern": "preposition + V-ing",
+        "use_vi": "Sau giới từ như after, before, without dùng V-ing.",
+        "example_en": "Wash your hands before cooking.",
+        "example_vi": "Rửa tay trước khi nấu ăn."
+      }
+    ],
+    "worked_examples": [
+      {
+        "situation_vi": "Nói bạn thích học từ vựng bằng trò chơi.",
+        "answer_en": "I enjoy learning vocabulary through games.",
+        "translation_vi": "Tôi thích học từ vựng qua trò chơi.",
+        "reason_vi": "Enjoy cần gerund learning."
+      },
+      {
+        "situation_vi": "Nói bạn tắt đèn trước khi ra ngoài.",
+        "answer_en": "I turn off the lights before leaving.",
+        "translation_vi": "Tôi tắt đèn trước khi ra ngoài.",
+        "reason_vi": "Before ở đây là giới từ nên động từ sau nó ở dạng V-ing."
+      }
+    ],
+    "contrasts": [
+      {
+        "first_en": "She is swimming now.",
+        "second_en": "She enjoys swimming.",
+        "difference_vi": "Is swimming là thì tiếp diễn; enjoys swimming dùng swimming như một danh động từ."
+      }
+    ],
+    "common_mistakes": [
+      {
+        "wrong": "I enjoy to read novels.",
+        "correct": "I enjoy reading novels.",
+        "why_vi": "Enjoy thường đi với V-ing."
+      },
+      {
+        "wrong": "He left without say goodbye.",
+        "correct": "He left without saying goodbye.",
+        "why_vi": "Sau without dùng V-ing."
+      }
+    ],
+    "supplemental_practice": [
+      {
+        "stage": "guided",
+        "prompt_en": "Complete: She enjoys ___ (cook).",
+        "answer": "cooking",
+        "explanation_vi": "Enjoy đi với V-ing.",
+        "translation_vi": "Cô ấy thích nấu ăn.",
+        "draft_id": "M09-A2-25-DRAFT-01"
+      },
+      {
+        "stage": "independent",
+        "prompt_en": "Complete: Thank you for ___ (help) me.",
+        "answer": "helping",
+        "explanation_vi": "Sau giới từ for dùng V-ing.",
+        "translation_vi": "Cảm ơn vì đã giúp tôi.",
+        "draft_id": "M09-A2-25-DRAFT-02"
+      },
+      {
+        "stage": "mastery",
+        "prompt_en": "Correct: They finished to clean the kitchen.",
+        "answer": "They finished cleaning the kitchen.",
+        "explanation_vi": "Finish đi với V-ing.",
+        "translation_vi": "Họ đã dọn xong nhà bếp.",
+        "draft_id": "M09-A2-25-DRAFT-03"
+      },
+      {
+        "stage": "spaced_review",
+        "prompt_en": "Complete: He left without ___ (wait).",
+        "answer": "waiting",
+        "explanation_vi": "Sau without dùng waiting.",
+        "translation_vi": "Anh ấy rời đi mà không đợi.",
+        "draft_id": "M09-A2-25-DRAFT-04"
+      }
+    ],
+    "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED",
+    "question_import_policy": "SEPARATE_BANK_NO_OVERWRITE",
+    "title": "Gerunds – Basic",
+    "qa_teacher_review": "NOT_REVIEWED"
+  },
+  "A2-26": {
+    "lesson_id": "A2-26",
+    "overview_vi": "To-infinitive là to + động từ nguyên mẫu. Nhiều động từ diễn đạt ý định, kế hoạch hoặc quyết định thường theo sau bằng to-infinitive.",
+    "decision_steps_vi": [
+      "Xác định động từ chính như want, plan, decide",
+      "Chọn to + V1 sau động từ yêu cầu cấu trúc này",
+      "Muốn phủ định hành động sau, đặt not trước to"
+    ],
+    "patterns": [
+      {
+        "pattern": "want / hope / plan + to + V1",
+        "use_vi": "Nói mong muốn, hy vọng và dự định.",
+        "example_en": "We plan to visit the museum.",
+        "example_vi": "Chúng tôi dự định thăm bảo tàng."
+      },
+      {
+        "pattern": "decide + to + V1; decide not to + V1",
+        "use_vi": "Diễn đạt quyết định làm hoặc không làm.",
+        "example_en": "She decided not to drive.",
+        "example_vi": "Cô ấy quyết định không lái xe."
+      }
+    ],
+    "worked_examples": [
+      {
+        "situation_vi": "Nói bạn hy vọng cải thiện khả năng nghe.",
+        "answer_en": "I hope to improve my listening.",
+        "translation_vi": "Tôi hy vọng cải thiện kỹ năng nghe.",
+        "reason_vi": "Hope yêu cầu to improve."
+      },
+      {
+        "situation_vi": "Nói Minh quyết định không mua điện thoại mới.",
+        "answer_en": "Minh decided not to buy a new phone.",
+        "translation_vi": "Minh quyết định không mua điện thoại mới.",
+        "reason_vi": "Not đứng trước to buy để phủ định quyết định thực hiện việc mua."
+      }
+    ],
+    "contrasts": [
+      {
+        "first_en": "I enjoy reading.",
+        "second_en": "I want to read.",
+        "difference_vi": "Enjoy nhận V-ing; want nhận to-infinitive; không áp cùng một khuôn cho mọi động từ."
+      }
+    ],
+    "common_mistakes": [
+      {
+        "wrong": "She wants learning Spanish.",
+        "correct": "She wants to learn Spanish.",
+        "why_vi": "Want đi với to + V1."
+      },
+      {
+        "wrong": "We decided to not go.",
+        "correct": "We decided not to go.",
+        "why_vi": "Not to go là cách diễn đạt chuẩn và tự nhiên cho cấu trúc này; to not go đôi khi có thể xuất hiện."
+      }
+    ],
+    "supplemental_practice": [
+      {
+        "stage": "guided",
+        "prompt_en": "Complete: I want ___ (learn) Japanese.",
+        "answer": "to learn",
+        "explanation_vi": "Want đi với to + V1.",
+        "translation_vi": "Tôi muốn học tiếng Nhật.",
+        "draft_id": "M09-A2-26-DRAFT-01"
+      },
+      {
+        "stage": "independent",
+        "prompt_en": "Complete: They decided ___ (leave) early.",
+        "answer": "to leave",
+        "explanation_vi": "Decide đi với to-infinitive.",
+        "translation_vi": "Họ quyết định về sớm.",
+        "draft_id": "M09-A2-26-DRAFT-02"
+      },
+      {
+        "stage": "mastery",
+        "prompt_en": "Correct: She hopes passing the test.",
+        "answer": "She hopes to pass the test.",
+        "explanation_vi": "Hope đi với to + V1.",
+        "translation_vi": "Cô ấy hy vọng vượt qua bài thi.",
+        "draft_id": "M09-A2-26-DRAFT-03"
+      },
+      {
+        "stage": "spaced_review",
+        "prompt_en": "Make negative intention: We decided to travel by car.",
+        "answer": "We decided not to travel by car.",
+        "explanation_vi": "Not đặt trước to travel.",
+        "translation_vi": "Chúng tôi quyết định không đi bằng ô tô.",
+        "draft_id": "M09-A2-26-DRAFT-04"
+      }
+    ],
+    "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED",
+    "question_import_policy": "SEPARATE_BANK_NO_OVERWRITE",
+    "title": "Infinitives – Basic",
+    "qa_teacher_review": "NOT_REVIEWED"
+  },
+  "A2-27": {
+    "lesson_id": "A2-27",
+    "overview_vi": "Zero Conditional mô tả sự thật chung, quy luật hoặc kết quả thường xuyên xảy ra khi một điều kiện xuất hiện. Hai mệnh đề thường dùng Present Simple.",
+    "decision_steps_vi": [
+      "Kiểm tra câu nêu quy luật hay lời hứa tương lai",
+      "Nếu kết quả thường đúng, chọn Zero Conditional",
+      "Dùng hiện tại đơn hai mệnh đề và dấu phẩy khi if đứng đầu"
+    ],
+    "patterns": [
+      {
+        "pattern": "If + Present Simple, Present Simple",
+        "use_vi": "Quy luật tự nhiên hoặc thói quen chung.",
+        "example_en": "If you heat ice, it melts.",
+        "example_vi": "Nếu làm nóng đá, nó tan."
+      },
+      {
+        "pattern": "Present Simple + if + Present Simple",
+        "use_vi": "Có thể đổi thứ tự mệnh đề mà không thay đổi ý điều kiện.",
+        "example_en": "The screen turns off if you press this button.",
+        "example_vi": "Màn hình tắt nếu bạn nhấn nút này."
+      }
+    ],
+    "worked_examples": [
+      {
+        "situation_vi": "Nói cây cần nước thì phát triển tốt hơn.",
+        "answer_en": "If plants get enough water, they grow better.",
+        "translation_vi": "Nếu cây đủ nước, chúng phát triển tốt hơn.",
+        "reason_vi": "Hai mệnh đề là quy luật chung, không phải một kế hoạch tương lai."
+      },
+      {
+        "situation_vi": "Nêu quy tắc máy báo âm khi pin yếu.",
+        "answer_en": "The device beeps if the battery is low.",
+        "translation_vi": "Thiết bị kêu bíp nếu pin yếu.",
+        "reason_vi": "Mối quan hệ điều kiện-kết quả lặp lại dùng Present Simple."
+      }
+    ],
+    "contrasts": [
+      {
+        "first_en": "If water freezes, it becomes ice.",
+        "second_en": "If it rains tomorrow, we'll stay home.",
+        "difference_vi": "Câu đầu nêu quy luật; câu sau nêu điều có thể xảy ra trong tương lai."
+      }
+    ],
+    "common_mistakes": [
+      {
+        "wrong": "If I get hungry, I eats.",
+        "correct": "If I get hungry, I eat.",
+        "why_vi": "I đi với eat trong thói quen chung."
+      },
+      {
+        "wrong": "If you mix red and blue, you got purple.",
+        "correct": "If you mix red and blue, you get purple.",
+        "why_vi": "Quy luật chung dùng get, không dùng got."
+      }
+    ],
+    "supplemental_practice": [
+      {
+        "stage": "guided",
+        "prompt_en": "If the sun ___ (set), it gets dark.",
+        "answer": "sets",
+        "explanation_vi": "Sun là số ít nên sets.",
+        "translation_vi": "Nếu mặt trời lặn, trời tối.",
+        "draft_id": "M09-A2-27-DRAFT-01"
+      },
+      {
+        "stage": "independent",
+        "prompt_en": "Complete: If you touch the screen, it ___ (light) up.",
+        "answer": "lights",
+        "explanation_vi": "Thiết bị phản ứng theo quy luật; it lights up.",
+        "translation_vi": "Nếu chạm màn hình, nó sáng lên.",
+        "draft_id": "M09-A2-27-DRAFT-02"
+      },
+      {
+        "stage": "mastery",
+        "prompt_en": "Correct: If people don't sleep enough, they feels tired.",
+        "answer": "If people don't sleep enough, they feel tired.",
+        "explanation_vi": "People số nhiều đi với feel.",
+        "translation_vi": "Nếu thiếu ngủ, người ta mệt.",
+        "draft_id": "M09-A2-27-DRAFT-03"
+      },
+      {
+        "stage": "spaced_review",
+        "prompt_en": "Choose: If you add sugar, the tea ___ sweeter.",
+        "answer": "tastes",
+        "explanation_vi": "Tea số ít nên tastes trong quy luật chung.",
+        "translation_vi": "Nếu thêm đường, trà có vị ngọt hơn.",
+        "draft_id": "M09-A2-27-DRAFT-04"
+      }
+    ],
+    "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED",
+    "question_import_policy": "SEPARATE_BANK_NO_OVERWRITE",
+    "title": "Zero Conditional",
+    "qa_teacher_review": "NOT_REVIEWED"
+  },
+  "A2-28": {
+    "lesson_id": "A2-28",
+    "overview_vi": "First Conditional nêu tình huống tương lai có khả năng xảy ra và kết quả có thể xảy ra nếu điều kiện được đáp ứng. Mệnh đề if thường dùng Present Simple, không dùng will.",
+    "decision_steps_vi": [
+      "Xác định đây là khả năng tương lai hay quy luật chung",
+      "Dùng if + Present Simple để nêu điều kiện",
+      "Dùng will + V1 cho kết quả tương lai"
+    ],
+    "patterns": [
+      {
+        "pattern": "If + Present Simple, will + V1",
+        "use_vi": "Điều kiện tương lai có thể xảy ra.",
+        "example_en": "If it rains, we'll stay indoors.",
+        "example_vi": "Nếu trời mưa, chúng tôi sẽ ở trong nhà."
+      },
+      {
+        "pattern": "will + V1 + if + Present Simple",
+        "use_vi": "Có thể đặt kết quả trước điều kiện; thường không cần dấu phẩy.",
+        "example_en": "I'll call you if I finish early.",
+        "example_vi": "Tôi sẽ gọi nếu xong sớm."
+      }
+    ],
+    "worked_examples": [
+      {
+        "situation_vi": "Nói nếu học xong bạn sẽ đi dạo.",
+        "answer_en": "If I finish my homework, I'll go for a walk.",
+        "translation_vi": "Nếu làm xong bài tập, tôi sẽ đi dạo.",
+        "reason_vi": "If + finish hiện tại; kết quả dùng will go."
+      },
+      {
+        "situation_vi": "Nói nếu tàu trễ thì bạn sẽ nhắn tin.",
+        "answer_en": "I'll message you if the train is late.",
+        "translation_vi": "Tôi sẽ nhắn nếu tàu đến muộn.",
+        "reason_vi": "Mệnh đề if dùng is, không dùng will be."
+      }
+    ],
+    "contrasts": [
+      {
+        "first_en": "If you heat ice, it melts.",
+        "second_en": "If you leave the ice outside, it'll melt.",
+        "difference_vi": "Zero cho quy luật; First cho tình huống tương lai cụ thể."
+      }
+    ],
+    "common_mistakes": [
+      {
+        "wrong": "If she will call, I'll answer.",
+        "correct": "If she calls, I'll answer.",
+        "why_vi": "Mệnh đề if thông thường không dùng will cho điều kiện tương lai."
+      },
+      {
+        "wrong": "If it rains, we will staying home tomorrow.",
+        "correct": "If it rains, we'll stay home tomorrow.",
+        "why_vi": "Sau will dùng động từ nguyên mẫu stay."
+      }
+    ],
+    "supplemental_practice": [
+      {
+        "stage": "guided",
+        "prompt_en": "If I ___ (have) time, I'll help.",
+        "answer": "have",
+        "explanation_vi": "Sau if dùng hiện tại đơn.",
+        "translation_vi": "Nếu có thời gian, tôi sẽ giúp.",
+        "draft_id": "M09-A2-28-DRAFT-01"
+      },
+      {
+        "stage": "independent",
+        "prompt_en": "Complete: If the shop is closed, we ___ (come) back later.",
+        "answer": "will come",
+        "explanation_vi": "Mệnh đề kết quả tương lai dùng will come.",
+        "translation_vi": "Nếu cửa hàng đóng, chúng tôi sẽ quay lại.",
+        "draft_id": "M09-A2-28-DRAFT-02"
+      },
+      {
+        "stage": "mastery",
+        "prompt_en": "Correct: If it will snow, I'll wear boots.",
+        "answer": "If it snows, I'll wear boots.",
+        "explanation_vi": "Trong mệnh đề if dùng snows.",
+        "translation_vi": "Nếu tuyết rơi, tôi sẽ mang ủng.",
+        "draft_id": "M09-A2-28-DRAFT-03"
+      },
+      {
+        "stage": "spaced_review",
+        "prompt_en": "Write a future result: If I miss the bus, ...",
+        "answer": "If I miss the bus, I'll take a taxi.",
+        "explanation_vi": "If + hiện tại; mệnh đề chính will + V1.",
+        "translation_vi": "Nếu lỡ xe buýt, tôi sẽ đi taxi.",
+        "draft_id": "M09-A2-28-DRAFT-04"
+      }
+    ],
+    "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED",
+    "question_import_policy": "SEPARATE_BANK_NO_OVERWRITE",
+    "title": "First Conditional",
+    "qa_teacher_review": "NOT_REVIEWED"
+  },
+  "A2-29": {
+    "lesson_id": "A2-29",
+    "overview_vi": "Mệnh đề thời gian với when, before, after, until, as soon as thường dùng Present Simple khi nói về tương lai, dù mệnh đề chính có will.",
+    "decision_steps_vi": [
+      "Tìm từ nối thời gian",
+      "Xem sự kiện được đặt trong tương lai",
+      "Giữ hiện tại đơn sau từ nối và dùng will trong mệnh đề chính khi phù hợp"
+    ],
+    "patterns": [
+      {
+        "pattern": "when / as soon as + Present Simple",
+        "use_vi": "Mệnh đề thời gian tương lai thường không dùng will.",
+        "example_en": "I'll text you when I arrive.",
+        "example_vi": "Tôi sẽ nhắn cho bạn khi đến nơi."
+      },
+      {
+        "pattern": "before / after / until + Present Simple",
+        "use_vi": "Nói thứ tự hay giới hạn thời gian cho hành động tương lai.",
+        "example_en": "We'll wait until the rain stops.",
+        "example_vi": "Chúng tôi sẽ đợi cho đến khi mưa tạnh."
+      }
+    ],
+    "worked_examples": [
+      {
+        "situation_vi": "Hứa gọi mẹ ngay khi về đến nhà.",
+        "answer_en": "I'll call Mum as soon as I get home.",
+        "translation_vi": "Tôi sẽ gọi mẹ ngay khi về nhà.",
+        "reason_vi": "Sau as soon as dùng get hiện tại đơn, không dùng will get."
+      },
+      {
+        "situation_vi": "Nói bạn sẽ ăn sau khi làm xong bài.",
+        "answer_en": "I'll eat after I finish my homework.",
+        "translation_vi": "Tôi sẽ ăn sau khi hoàn thành bài tập.",
+        "reason_vi": "After giới thiệu mệnh đề thời gian dùng finish."
+      }
+    ],
+    "contrasts": [
+      {
+        "first_en": "I'll call you when I arrive.",
+        "second_en": "I'll call you if I arrive.",
+        "difference_vi": "When thường giả định sự kiện đến sẽ xảy ra; if đặt điều kiện còn chưa chắc xảy ra."
+      }
+    ],
+    "common_mistakes": [
+      {
+        "wrong": "I'll leave when she will arrive.",
+        "correct": "I'll leave when she arrives.",
+        "why_vi": "Mệnh đề thời gian dùng arrives, không dùng will arrive."
+      },
+      {
+        "wrong": "Wait until the bus will come.",
+        "correct": "Wait until the bus comes.",
+        "why_vi": "Sau until dùng Present Simple."
+      }
+    ],
+    "supplemental_practice": [
+      {
+        "stage": "guided",
+        "prompt_en": "I'll send the file when I ___ (finish) it.",
+        "answer": "finish",
+        "explanation_vi": "Sau when trong mệnh đề thời gian tương lai dùng hiện tại đơn.",
+        "translation_vi": "Tôi sẽ gửi tệp khi làm xong.",
+        "draft_id": "M09-A2-29-DRAFT-01"
+      },
+      {
+        "stage": "independent",
+        "prompt_en": "Complete: We won't leave until everyone ___ (be) ready.",
+        "answer": "is",
+        "explanation_vi": "Everyone là số ít, dùng is.",
+        "translation_vi": "Chúng tôi sẽ không đi cho đến khi mọi người sẵn sàng.",
+        "draft_id": "M09-A2-29-DRAFT-02"
+      },
+      {
+        "stage": "mastery",
+        "prompt_en": "Correct: I'll start as soon as the meeting will end.",
+        "answer": "I'll start as soon as the meeting ends.",
+        "explanation_vi": "Sau as soon as dùng ends.",
+        "translation_vi": "Tôi sẽ bắt đầu ngay khi cuộc họp kết thúc.",
+        "draft_id": "M09-A2-29-DRAFT-03"
+      },
+      {
+        "stage": "spaced_review",
+        "prompt_en": "Complete: Please check the door before you ___ (go) out.",
+        "answer": "go",
+        "explanation_vi": "Sau before dùng go hiện tại đơn.",
+        "translation_vi": "Hãy kiểm tra cửa trước khi ra ngoài.",
+        "draft_id": "M09-A2-29-DRAFT-04"
+      }
+    ],
+    "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED",
+    "question_import_policy": "SEPARATE_BANK_NO_OVERWRITE",
+    "title": "Time Clauses",
+    "qa_teacher_review": "NOT_REVIEWED"
+  },
+  "A2-30": {
+    "lesson_id": "A2-30",
+    "overview_vi": "Defining Relative Clauses bổ sung thông tin cần thiết để xác định người, vật hoặc nơi chốn. Với mệnh đề quan hệ xác định, thường không đặt dấu phẩy.",
+    "decision_steps_vi": [
+      "Tìm danh từ cần xác định thêm",
+      "Chọn who cho người, which cho vật, where cho nơi chốn, whose cho sở hữu",
+      "Gắn mệnh đề sát danh từ và kiểm tra có đủ chủ ngữ/động từ không"
+    ],
+    "patterns": [
+      {
+        "pattern": "person + who / that + verb",
+        "use_vi": "Mệnh đề quan hệ xác định người được nhắc tới.",
+        "example_en": "The woman who works here is friendly.",
+        "example_vi": "Người phụ nữ làm ở đây rất thân thiện."
+      },
+      {
+        "pattern": "thing + which / that; place + where",
+        "use_vi": "Which/that xác định vật, where xác định nơi chốn.",
+        "example_en": "This is the café where we met.",
+        "example_vi": "Đây là quán cà phê nơi chúng tôi gặp nhau."
+      }
+    ],
+    "worked_examples": [
+      {
+        "situation_vi": "Gộp: I know a boy. He speaks three languages.",
+        "answer_en": "I know a boy who speaks three languages.",
+        "translation_vi": "Tôi biết một cậu bé nói ba thứ tiếng.",
+        "reason_vi": "Who thay cho he, là chủ ngữ trong mệnh đề quan hệ."
+      },
+      {
+        "situation_vi": "Gộp: This is the shop. I bought the lamp there.",
+        "answer_en": "This is the shop where I bought the lamp.",
+        "translation_vi": "Đây là cửa hàng nơi tôi mua chiếc đèn.",
+        "reason_vi": "Where thay cho at the shop, chỉ địa điểm."
+      }
+    ],
+    "contrasts": [
+      {
+        "first_en": "The book that I borrowed is new.",
+        "second_en": "The library where I borrowed it is new.",
+        "difference_vi": "That xác định vật book; where giới thiệu nơi chốn library."
+      }
+    ],
+    "common_mistakes": [
+      {
+        "wrong": "The teacher which helped us was kind.",
+        "correct": "The teacher who helped us was kind.",
+        "why_vi": "Who là lựa chọn chuẩn khi nói về người; that cũng có thể dùng trong mệnh đề xác định."
+      },
+      {
+        "wrong": "The phone who I bought is expensive.",
+        "correct": "The phone that I bought is expensive.",
+        "why_vi": "Với vật dùng that hoặc which, không dùng who."
+      }
+    ],
+    "supplemental_practice": [
+      {
+        "stage": "guided",
+        "prompt_en": "The man ___ lives next door is a doctor.",
+        "answer": "who",
+        "explanation_vi": "Who nối danh từ chỉ người làm chủ ngữ.",
+        "translation_vi": "Người đàn ông sống bên cạnh là bác sĩ.",
+        "draft_id": "M09-A2-30-DRAFT-01"
+      },
+      {
+        "stage": "independent",
+        "prompt_en": "The laptop ___ I bought last week is fast.",
+        "answer": "that",
+        "explanation_vi": "That xác định vật laptop; which cũng có thể đúng.",
+        "translation_vi": "Chiếc laptop tôi mua tuần trước chạy nhanh.",
+        "draft_id": "M09-A2-30-DRAFT-02"
+      },
+      {
+        "stage": "mastery",
+        "prompt_en": "Combine: That's the restaurant. We had lunch there.",
+        "answer": "That's the restaurant where we had lunch.",
+        "explanation_vi": "Where nối mệnh đề xác định nơi chốn.",
+        "translation_vi": "Đó là nhà hàng nơi chúng tôi ăn trưa.",
+        "draft_id": "M09-A2-30-DRAFT-03"
+      },
+      {
+        "stage": "spaced_review",
+        "prompt_en": "Correct: The student which won the prize is my cousin.",
+        "answer": "The student who won the prize is my cousin.",
+        "explanation_vi": "Who dùng cho người làm chủ ngữ.",
+        "translation_vi": "Học sinh đoạt giải là anh chị em họ của tôi.",
+        "draft_id": "M09-A2-30-DRAFT-04"
+      }
+    ],
+    "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED",
+    "question_import_policy": "SEPARATE_BANK_NO_OVERWRITE",
+    "title": "Basic Relative Clauses",
+    "qa_teacher_review": "NOT_REVIEWED"
+  }
+}

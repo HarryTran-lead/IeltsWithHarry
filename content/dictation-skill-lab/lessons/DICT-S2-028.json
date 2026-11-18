@@ -1,0 +1,381 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "DICT-S2-028",
+  "status": "draft",
+  "level": "L4",
+  "section": 2,
+  "topic": "Workplace Orientation",
+  "title": "Orientation at the New Production Building",
+  "learning_objectives_vi": [
+    "Nghe độc thoại chủ đề Workplace Orientation và xác định mục đích thông báo.",
+    "Nhận diện cấu trúc ý và các chi tiết quan trọng theo thứ tự phát biểu.",
+    "Luyện chỉ đường theo sơ đồ A–F, phân biệt điểm trước/sau và hướng trái/phải."
+  ],
+  "content_format": "section_practice",
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Visitor guide / programme coordinator (one narrator)",
+      "tts_voice_id": null,
+      "accent_requested": "british"
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "Welcome to the production building. As part of your induction, I will explain the working areas, the safety rules and the arrangements for your first two training days.",
+      "translation_vi": "Chào mừng tới xưởng sản xuất. Trong buổi làm quen, tôi giải thích khu làm việc, an toàn và lịch hai ngày đào tạo đầu.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_2",
+        "monologue",
+        "l4",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "A",
+      "text_en": "From the main entrance on the south side, the staff break room is immediately to your left. The protective equipment store is on the right, and you must collect your safety glasses there.",
+      "translation_vi": "Từ cửa nam, phòng nghỉ ở ngay trái. Kho bảo hộ bên phải, bạn phải lấy kính an toàn tại đó.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_2",
+        "monologue",
+        "l4",
+        "signposting",
+        "spatial_directions"
+      ]
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "A",
+      "text_en": "The quality control laboratory is in the back-left area. Only trained staff can enter it, because some testing equipment needs specialist supervision.",
+      "translation_vi": "Phòng kiểm soát chất lượng ở phía sau bên trái. Chỉ nhân viên đã học được vào vì vài thiết bị cần giám sát chuyên môn.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_2",
+        "monologue",
+        "l4",
+        "signposting",
+        "spatial_directions"
+      ]
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "A",
+      "text_en": "In the back-right corner is the packing room. It is separate from the loading area so that delivery vehicles do not disturb staff preparing customer orders.",
+      "translation_vi": "Góc sau bên phải là phòng đóng gói, tách khỏi khu bốc hàng để xe giao nhận không làm phiền người chuẩn bị đơn.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_2",
+        "monologue",
+        "l4",
+        "signposting",
+        "spatial_directions"
+      ]
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "A",
+      "text_en": "The central room at the far end houses the training workshop. Your first practical session will take place there at ten forty, rather than at ten fifteen as listed in the old handbook.",
+      "translation_vi": "Phòng giữa cuối nhà là xưởng đào tạo. Buổi thực hành đầu lúc 10:40, không phải 10:15 ghi trong sổ tay cũ.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_2",
+        "monologue",
+        "l4",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "A",
+      "text_en": "For the first week, everyone signs in at the main desk before beginning work. Digital entry passes will be issued next Monday, after identity checks are complete.",
+      "translation_vi": "Tuần đầu ai cũng ký tên ở bàn chính trước khi làm. Thẻ vào cửa điện tử được phát thứ Hai tới sau khi xác minh danh tính.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_2",
+        "monologue",
+        "l4",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "Please report damaged equipment directly to your supervisor. Do not attempt repairs unless you have written authorisation, even if you have worked with similar machinery before.",
+      "translation_vi": "Hãy báo thiết bị hỏng cho giám sát. Không tự sửa nếu chưa được cho phép bằng văn bản, dù từng dùng máy tương tự.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_2",
+        "monologue",
+        "l4",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "A",
+      "text_en": "The lunch break lasts forty-five minutes. You may use the courtyard, but food must never be carried into the laboratory or packing room.",
+      "translation_vi": "Giờ nghỉ trưa kéo dài bốn mươi lăm phút. Có thể dùng sân trong nhưng không mang đồ ăn vào phòng thí nghiệm hay đóng gói.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_2",
+        "monologue",
+        "l4",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T09",
+      "speaker_id": "A",
+      "text_en": "On Friday afternoon you will complete a short safety assessment. Successful trainees receive a green badge, which permits supervised work on the production floor.",
+      "translation_vi": "Chiều thứ Sáu có bài đánh giá an toàn ngắn. Người đạt nhận thẻ xanh, cho phép làm việc có giám sát tại sàn sản xuất.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_2",
+        "monologue",
+        "l4",
+        "signposting"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "type": "map_labelling",
+      "prompt": "Use the location plan (A–F): Protective equipment store on plan: ____",
+      "correct_answers": [
+        "F"
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Kho bảo hộ ở đầu bên phải.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "section_2",
+        "ielts_practice",
+        "map_orientation"
+      ],
+      "map_asset": "maps/DICT-S2-028.svg"
+    },
+    {
+      "question_id": "Q02",
+      "type": "map_labelling",
+      "prompt": "Use the location plan (A–F): Packing room on plan: ____",
+      "correct_answers": [
+        "C"
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Phòng đóng gói ở góc sau bên phải.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "section_2",
+        "ielts_practice",
+        "map_orientation"
+      ],
+      "map_asset": "maps/DICT-S2-028.svg"
+    },
+    {
+      "question_id": "Q03",
+      "type": "mcq",
+      "prompt": "What time does the practical training session now start?",
+      "correct_answers": [
+        "ten forty"
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Giờ mới 10:40 thay vì 10:15.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "section_2",
+        "ielts_practice",
+        "distractor"
+      ],
+      "options": [
+        "ten fifteen",
+        "ten forty",
+        "nine"
+      ]
+    },
+    {
+      "question_id": "Q04",
+      "type": "note_completion",
+      "prompt": "Notes — Digital entry passes issued on: ____",
+      "correct_answers": [
+        "Monday"
+      ],
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "explanation_vi": "Thẻ vào được cấp thứ Hai.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_2",
+        "ielts_practice",
+        "detail_recognition"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q05",
+      "type": "note_completion",
+      "prompt": "Notes — Lunch break duration in minutes: ____",
+      "correct_answers": [
+        "forty-five"
+      ],
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "explanation_vi": "Nghỉ trưa bốn mươi lăm phút.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_2",
+        "ielts_practice",
+        "detail_recognition"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q06",
+      "type": "note_completion",
+      "prompt": "Notes — Successful trainees receive a green: ____",
+      "correct_answers": [
+        "badge"
+      ],
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "explanation_vi": "Nhận thẻ xanh sau khi đạt bài đánh giá.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_2",
+        "ielts_practice",
+        "detail_recognition"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "D01",
+      "type": "dictation",
+      "prompt": "Nghe lại và chép nguyên văn đoạn T05 (toàn bộ lời người dẫn).",
+      "correct_answers": [
+        "The central room at the far end houses the training workshop. Your first practical session will take place there at ten forty, rather than at ten fifteen as listed in the old handbook."
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Câu gốc: The central room at the far end houses the training workshop. Your first practical session will take place there at ten forty, rather than at ten fifteen as listed in the old handbook. Nghĩa: Phòng giữa cuối nhà là xưởng đào tạo. Buổi thực hành đầu lúc 10:40, không phải 10:15 ghi trong sổ tay cũ. Lưu ý từ chức năng, âm cuối và cụm từ nối.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "exact_transcript",
+        "section_2"
+      ]
+    },
+    {
+      "question_id": "G01",
+      "type": "gap_fill",
+      "prompt": "Điền cụm từ bị ẩn sau khi nghe: Welcome to the production building. As part of your ____, I will explain the working areas, the safety rules and the arrangements for your first two training days.",
+      "correct_answers": [
+        "induction"
+      ],
+      "evidence_turn_ids": [
+        "T01"
+      ],
+      "explanation_vi": "induction: buổi làm quen công việc. Ngữ cảnh: Chào mừng tới xưởng sản xuất. Trong buổi làm quen, tôi giải thích khu làm việc, an toàn và lịch hai ngày đào tạo đầu.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "gap_fill",
+        "vocab_in_context",
+        "section_2"
+      ]
+    }
+  ],
+  "vocabulary": [
+    {
+      "term": "induction",
+      "pos": "n.",
+      "meaning_vi": "buổi làm quen công việc",
+      "example_en": "Welcome to the production building. As part of your induction, I will explain the working areas, the safety rules and the arrangements for your first two training days.",
+      "example_vi": "Chào mừng tới xưởng sản xuất. Trong buổi làm quen, tôi giải thích khu làm việc, an toàn và lịch hai ngày đào tạo đầu.",
+      "source_turn_id": "T01"
+    },
+    {
+      "term": "supervisor",
+      "pos": "n.",
+      "meaning_vi": "người giám sát",
+      "example_en": "Please report damaged equipment directly to your supervisor. Do not attempt repairs unless you have written authorisation, even if you have worked with similar machinery before.",
+      "example_vi": "Hãy báo thiết bị hỏng cho giám sát. Không tự sửa nếu chưa được cho phép bằng văn bản, dù từng dùng máy tương tự.",
+      "source_turn_id": "T07"
+    },
+    {
+      "term": "protective equipment",
+      "pos": "n. phr.",
+      "meaning_vi": "đồ bảo hộ",
+      "example_en": "From the main entrance on the south side, the staff break room is immediately to your left. The protective equipment store is on the right, and you must collect your safety glasses there.",
+      "example_vi": "Từ cửa nam, phòng nghỉ ở ngay trái. Kho bảo hộ bên phải, bạn phải lấy kính an toàn tại đó.",
+      "source_turn_id": "T02"
+    },
+    {
+      "term": "break room",
+      "pos": "n. phr.",
+      "meaning_vi": "phòng nghỉ",
+      "example_en": "From the main entrance on the south side, the staff break room is immediately to your left. The protective equipment store is on the right, and you must collect your safety glasses there.",
+      "example_vi": "Từ cửa nam, phòng nghỉ ở ngay trái. Kho bảo hộ bên phải, bạn phải lấy kính an toàn tại đó.",
+      "source_turn_id": "T02"
+    }
+  ],
+  "audio": {
+    "status": "not_generated",
+    "url": null,
+    "duration_ms": null,
+    "model": null,
+    "provider": null,
+    "voice_config": null,
+    "source_transcript_hash": "d4082322c9054b589d59049577eb23019da7a9ac5a583fb0c5ddc777d802bfc7",
+    "audio_sha256": null,
+    "format": null
+  },
+  "qa": {
+    "content_reviewed": false,
+    "answers_verified": false,
+    "audio_verified": false,
+    "rights_cleared": false,
+    "duplicate_reviewed": false,
+    "notes": [
+      "AI-assisted original writing; pedagogical and pronunciation review still required.",
+      "No TTS or sentence-level timestamps supplied; do not publish.",
+      "This is Section 2 skill practice, not an official IELTS test.",
+      "M16.2: automated edits are provisional; IELTS teacher final signoff, audio and rights clearance pending."
+    ]
+  },
+  "provenance": {
+    "content_origin": "original_ai_assisted",
+    "source_urls": [],
+    "source_rights_note": "Newly authored educational monologue. Confirm audio model distribution, age suitability and TOS separately before publishing.",
+    "reviewer": null
+  },
+  "release_metadata": {
+    "published_at": null,
+    "version": 1
+  }
+}

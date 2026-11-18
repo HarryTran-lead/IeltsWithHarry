@@ -1,0 +1,391 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "DICT-S2-050",
+  "status": "draft",
+  "level": "L5",
+  "section": 2,
+  "topic": "Library Facilities",
+  "title": "Library Archives: A New Booking Procedure",
+  "learning_objectives_vi": [
+    "Nghe và hiểu bài độc thoại Library Facilities ở mức L5, phân biệt chi tiết chính/phụ.",
+    "Nhận ra thông tin cập nhật, điều kiện và phương án thay thế thay vì chọn chi tiết đầu tiên nghe được.",
+    "Chép chính xác các đoạn mục tiêu và giải thích bằng chứng theo thứ tự lời nói."
+  ],
+  "content_format": "section_practice",
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Guide / public information presenter (single narrator)",
+      "tts_voice_id": null,
+      "accent_requested": "british"
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "Researchers visiting our local history archives will notice a new booking procedure this month. The aim is to protect fragile documents while keeping the service accessible to students and members of the public.",
+      "translation_vi": "Người nghiên cứu đến kho lưu trữ lịch sử địa phương sẽ thấy quy trình đặt chỗ mới trong tháng này. Mục tiêu là bảo vệ tài liệu dễ hỏng mà vẫn giúp sinh viên và công chúng tiếp cận dịch vụ.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_2",
+        "monologue",
+        "l5",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "A",
+      "text_en": "Previously, visitors could request documents at the front counter. Now you must choose material from the online catalogue and submit your request by five on the previous working day.",
+      "translation_vi": "Trước đây khách có thể yêu cầu tài liệu tại quầy trước. Nay phải chọn từ mục lục trực tuyến và gửi yêu cầu trước năm giờ của ngày làm việc trước đó.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_2",
+        "monologue",
+        "l5",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "A",
+      "text_en": "The reading room has moved from the basement to the third floor because the old area does not have appropriate humidity controls. Please leave coats and large bags in the lockers downstairs.",
+      "translation_vi": "Phòng đọc chuyển từ tầng hầm lên tầng ba vì khu cũ không kiểm soát độ ẩm thích hợp. Hãy để áo khoác và túi lớn trong tủ ở tầng dưới.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_2",
+        "monologue",
+        "l5",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "A",
+      "text_en": "Staff will bring requested boxes to your desk, but you may inspect only one folder at a time. This prevents pages from different collections being mixed together.",
+      "translation_vi": "Nhân viên mang hộp tài liệu đã yêu cầu đến bàn, nhưng bạn chỉ được xem một thư mục mỗi lần. Điều đó tránh trang từ nhiều bộ tài liệu bị lẫn.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_2",
+        "monologue",
+        "l5",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "A",
+      "text_en": "Most documents can be photographed with a phone, provided the flash is switched off. Maps larger than the desk surface must instead be handled by a specialist assistant.",
+      "translation_vi": "Hầu hết tài liệu có thể chụp bằng điện thoại nếu tắt đèn flash. Bản đồ lớn hơn mặt bàn phải do trợ lý chuyên môn thao tác.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_2",
+        "monologue",
+        "l5",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "A",
+      "text_en": "A short training session on reading historical handwriting takes place every second Friday. It lasts forty-five minutes and is suitable for beginners with no previous research experience.",
+      "translation_vi": "Một buổi hướng dẫn đọc chữ viết tay lịch sử diễn ra mỗi thứ Sáu cách tuần. Kéo dài bốn mươi lăm phút và phù hợp người mới chưa từng nghiên cứu.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_2",
+        "monologue",
+        "l5",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "Please remember that some materials are temporarily unavailable while conservation work continues. The catalogue will show an alternative digital copy where one exists.",
+      "translation_vi": "Xin nhớ một số tài liệu tạm không thể dùng do còn bảo quản. Mục lục sẽ hiển thị bản số thay thế nếu có.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_2",
+        "monologue",
+        "l5",
+        "signposting"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "type": "note_completion",
+      "prompt": "Notes — Requests due by: ____",
+      "correct_answers": [
+        "five"
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Trước đây khách có thể yêu cầu tài liệu tại quầy trước. Nay phải chọn từ mục lục trực tuyến và gửi yêu cầu trước năm giờ của ngày làm việc trước đó. Đáp án được nhắc trong đoạn T02: “five”.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_2",
+        "ielts_practice",
+        "detail_recognition"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q02",
+      "type": "table_completion",
+      "prompt": "Table — New reading room is on the: ____",
+      "correct_answers": [
+        "third floor"
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Phòng đọc chuyển từ tầng hầm lên tầng ba vì khu cũ không kiểm soát độ ẩm thích hợp. Hãy để áo khoác và túi lớn trong tủ ở tầng dưới. Đáp án được nhắc trong đoạn T03: “third floor”.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_2",
+        "ielts_practice",
+        "detail_recognition"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q03",
+      "type": "sentence_completion",
+      "prompt": "Complete the sentence — Inspect one: ____",
+      "correct_answers": [
+        "folder"
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Nhân viên mang hộp tài liệu đã yêu cầu đến bàn, nhưng bạn chỉ được xem một thư mục mỗi lần. Điều đó tránh trang từ nhiều bộ tài liệu bị lẫn. Đáp án được nhắc trong đoạn T04: “folder”.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_2",
+        "ielts_practice",
+        "detail_recognition"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q04",
+      "type": "note_completion",
+      "prompt": "Notes — Photography requires turning off: ____",
+      "correct_answers": [
+        "flash"
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Hầu hết tài liệu có thể chụp bằng điện thoại nếu tắt đèn flash. Bản đồ lớn hơn mặt bàn phải do trợ lý chuyên môn thao tác. Đáp án được nhắc trong đoạn T05: “flash”.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_2",
+        "ielts_practice",
+        "detail_recognition"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q05",
+      "type": "short_answer",
+      "prompt": "Answer briefly: Handwriting class lasts?",
+      "correct_answers": [
+        "forty-five minutes"
+      ],
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "explanation_vi": "Một buổi hướng dẫn đọc chữ viết tay lịch sử diễn ra mỗi thứ Sáu cách tuần. Kéo dài bốn mươi lăm phút và phù hợp người mới chưa từng nghiên cứu. Đáp án được nhắc trong đoạn T06: “forty-five minutes”.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_2",
+        "ielts_practice",
+        "detail_recognition"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q06",
+      "type": "note_completion",
+      "prompt": "Notes — Unavailable originals may have a: ____",
+      "correct_answers": [
+        "digital copy"
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "Xin nhớ một số tài liệu tạm không thể dùng do còn bảo quản. Mục lục sẽ hiển thị bản số thay thế nếu có. Đáp án được nhắc trong đoạn T07: “digital copy”.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_2",
+        "ielts_practice",
+        "detail_recognition"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "X01",
+      "type": "mcq",
+      "prompt": "Why was the reading room relocated?",
+      "options": [
+        "to gain better humidity control",
+        "to extend opening hours",
+        "to make space for a café"
+      ],
+      "correct_answers": [
+        "to gain better humidity control"
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Phòng đọc chuyển từ tầng hầm lên tầng ba vì khu cũ không kiểm soát độ ẩm thích hợp. Hãy để áo khoác và túi lớn trong tủ ở tầng dưới. Trong ba lựa chọn, đáp án chính xác là “to gain better humidity control”.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "section_2",
+        "supplementary_mcq",
+        "distractor_detection",
+        "paraphrase"
+      ]
+    },
+    {
+      "question_id": "D01",
+      "type": "dictation",
+      "prompt": "Nghe và chép nguyên văn lời người dẫn tại đoạn T03.",
+      "correct_answers": [
+        "The reading room has moved from the basement to the third floor because the old area does not have appropriate humidity controls. Please leave coats and large bags in the lockers downstairs."
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Câu gốc: The reading room has moved from the basement to the third floor because the old area does not have appropriate humidity controls. Please leave coats and large bags in the lockers downstairs. Nghĩa: Phòng đọc chuyển từ tầng hầm lên tầng ba vì khu cũ không kiểm soát độ ẩm thích hợp. Hãy để áo khoác và túi lớn trong tủ ở tầng dưới. Chú ý từ chức năng, âm cuối và nhịp nói.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "exact_transcript",
+        "section_2"
+      ]
+    },
+    {
+      "question_id": "D02",
+      "type": "dictation",
+      "prompt": "Nghe và chép nguyên văn lời người dẫn tại đoạn T05.",
+      "correct_answers": [
+        "Most documents can be photographed with a phone, provided the flash is switched off. Maps larger than the desk surface must instead be handled by a specialist assistant."
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Câu gốc: Most documents can be photographed with a phone, provided the flash is switched off. Maps larger than the desk surface must instead be handled by a specialist assistant. Nghĩa: Hầu hết tài liệu có thể chụp bằng điện thoại nếu tắt đèn flash. Bản đồ lớn hơn mặt bàn phải do trợ lý chuyên môn thao tác. Chú ý từ chức năng, âm cuối và nhịp nói.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "exact_transcript",
+        "section_2"
+      ]
+    },
+    {
+      "question_id": "G01",
+      "type": "gap_fill",
+      "prompt": "Nghe và điền từ/cụm từ còn thiếu: Previously, visitors could request documents at the front counter. Now you must choose material from the ____ and submit your request by five on the previous working day.",
+      "correct_answers": [
+        "online catalogue"
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Cụm “online catalogue” xuất hiện trong câu gốc: Previously, visitors could request documents at the front counter. Now you must choose material from the online catalogue and submit your request by five on the previous working day. Nghĩa: Trước đây khách có thể yêu cầu tài liệu tại quầy trước. Nay phải chọn từ mục lục trực tuyến và gửi yêu cầu trước năm giờ của ngày làm việc trước đó.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "gap_fill",
+        "vocab_in_context",
+        "section_2"
+      ]
+    }
+  ],
+  "vocabulary": [
+    {
+      "term": "online catalogue",
+      "pos": "n. phr.",
+      "meaning_vi": "mục lục trực tuyến",
+      "example_en": "Previously, visitors could request documents at the front counter. Now you must choose material from the online catalogue and submit your request by five on the previous working day.",
+      "example_vi": "Trước đây khách có thể yêu cầu tài liệu tại quầy trước. Nay phải chọn từ mục lục trực tuyến và gửi yêu cầu trước năm giờ của ngày làm việc trước đó.",
+      "source_turn_id": "T02"
+    },
+    {
+      "term": "humidity controls",
+      "pos": "n. phr.",
+      "meaning_vi": "hệ thống kiểm soát độ ẩm",
+      "example_en": "The reading room has moved from the basement to the third floor because the old area does not have appropriate humidity controls. Please leave coats and large bags in the lockers downstairs.",
+      "example_vi": "Phòng đọc chuyển từ tầng hầm lên tầng ba vì khu cũ không kiểm soát độ ẩm thích hợp. Hãy để áo khoác và túi lớn trong tủ ở tầng dưới.",
+      "source_turn_id": "T03"
+    },
+    {
+      "term": "flash",
+      "pos": "n.",
+      "meaning_vi": "đèn flash",
+      "example_en": "Most documents can be photographed with a phone, provided the flash is switched off. Maps larger than the desk surface must instead be handled by a specialist assistant.",
+      "example_vi": "Hầu hết tài liệu có thể chụp bằng điện thoại nếu tắt đèn flash. Bản đồ lớn hơn mặt bàn phải do trợ lý chuyên môn thao tác.",
+      "source_turn_id": "T05"
+    },
+    {
+      "term": "archives",
+      "pos": "n.",
+      "meaning_vi": "kho lưu trữ",
+      "example_en": "Researchers visiting our local history archives will notice a new booking procedure this month. The aim is to protect fragile documents while keeping the service accessible to students and members of the public.",
+      "example_vi": "Người nghiên cứu đến kho lưu trữ lịch sử địa phương sẽ thấy quy trình đặt chỗ mới trong tháng này. Mục tiêu là bảo vệ tài liệu dễ hỏng mà vẫn giúp sinh viên và công chúng tiếp cận dịch vụ.",
+      "source_turn_id": "T01"
+    }
+  ],
+  "audio": {
+    "status": "not_generated",
+    "url": null,
+    "duration_ms": null,
+    "model": null,
+    "provider": null,
+    "voice_config": null,
+    "source_transcript_hash": "5c68f7ba5cfa00c01ee003cfc835368a7bde9902d5fd8e3cbd1fe33fb223a551",
+    "audio_sha256": null,
+    "format": null
+  },
+  "qa": {
+    "content_reviewed": false,
+    "answers_verified": false,
+    "audio_verified": false,
+    "rights_cleared": false,
+    "duplicate_reviewed": false,
+    "notes": [
+      "Original AI-assisted educational monologue; subject specialist review pending.",
+      "TTS, timestamps, audio verification and rights clearance are pending. Keep draft locked.",
+      "IELTS Section 2 practice, not an official IELTS Listening part or calibrated band test.",
+      "M16.2: automated edits are provisional; IELTS teacher final signoff, audio and rights clearance pending."
+    ]
+  },
+  "provenance": {
+    "content_origin": "original_ai_assisted",
+    "source_urls": [],
+    "source_rights_note": "Original learning text; obtain separate TTS service and distribution clearance, especially for under-18 users.",
+    "reviewer": null
+  },
+  "release_metadata": {
+    "published_at": null,
+    "version": 1
+  }
+}

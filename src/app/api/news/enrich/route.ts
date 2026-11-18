@@ -4,7 +4,7 @@ import { createClient } from "@/lib/supabase/server";
 import { enrichNews } from "@/lib/news/enrichment";
 
 export const runtime = "nodejs";
-export const maxDuration = 60;
+export const maxDuration = 180;
 
 function validSecret(candidate: string, secret: string) {
   const a = Buffer.from(candidate); const b = Buffer.from(secret);

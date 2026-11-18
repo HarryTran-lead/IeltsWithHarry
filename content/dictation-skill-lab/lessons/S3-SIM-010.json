@@ -1,0 +1,988 @@
+{
+  "schema_version": "1.2.0",
+  "lesson_id": "S3-SIM-010",
+  "status": "draft",
+  "level": "L6",
+  "section": 3,
+  "topic": "Cultural heritage research ethics",
+  "title": "Documenting Community Recipes",
+  "content_format": "section_exam_simulation",
+  "exam_part": "IELTS_LISTENING_PART_3_STYLE",
+  "official_ielts_material": false,
+  "learning_objectives_vi": [
+    "Theo dõi thảo luận có nhiều quan điểm và lý do thay đổi quyết định.",
+    "Phân biệt bằng chứng chắc chắn với các hạn chế phương pháp nghiên cứu.",
+    "Làm 10 câu Multiple Choice và Matching trong một lần nghe mà không xem transcript."
+  ],
+  "target_skills": [
+    "academic_discussion",
+    "tracking_opinions",
+    "paraphrase",
+    "evidence_quality",
+    "matching_features"
+  ],
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "University tutor / academic adviser",
+      "accent_requested": "australian",
+      "tts_voice_id": null
+    },
+    {
+      "speaker_id": "B",
+      "role": "Student researcher one",
+      "accent_requested": "british",
+      "tts_voice_id": null
+    },
+    {
+      "speaker_id": "C",
+      "role": "Student researcher two",
+      "accent_requested": "new_zealand",
+      "tts_voice_id": null
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "The project collects memories attached to family recipes, not just ingredient lists.",
+      "meaning_vi": "A: Dự án ghi lại ký ức gắn với món ăn, nhiều người không muốn công khai tên thật.",
+      "translation_vi": null,
+      "translation_status": "pending_full_sentence_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "part3_opinion_tracking",
+        "paraphrase",
+        "evidence_evaluation"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "scene_setup"
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "B",
+      "text_en": "Several contributors want their stories included, but not all want their real names published.",
+      "meaning_vi": "A: Dự án ghi lại ký ức gắn với món ăn, nhiều người không muốn công khai tên thật.",
+      "translation_vi": null,
+      "translation_status": "pending_full_sentence_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "part3_opinion_tracking",
+        "paraphrase",
+        "evidence_evaluation"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "scene_setup"
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "A",
+      "text_en": "Hold back the unapproved interview audio. It must not enter the public installation until the speaker chooses whether it may be played.",
+      "meaning_vi": "A: Giữ bản ghi chưa được duyệt, không phát công khai.",
+      "translation_vi": null,
+      "translation_status": "pending_full_sentence_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "part3_opinion_tracking",
+        "paraphrase",
+        "evidence_evaluation"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "evidence"
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "C",
+      "text_en": "A bilingual food historian should check the glossary; a few literal translations would give the wrong impression about technique.",
+      "meaning_vi": "C: Cần chuyên gia song ngữ kiểm tra thuật ngữ nấu ăn.",
+      "translation_vi": null,
+      "translation_status": "pending_full_sentence_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "part3_opinion_tracking",
+        "paraphrase",
+        "evidence_evaluation"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "evidence"
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "A",
+      "text_en": "A contributor may agree to have a recipe described but object to having their family history quoted. Those permissions need separate choices in a form that everyone can understand.",
+      "meaning_vi": "A: Đồng ý đăng công thức không đồng nghĩa cho phép trích chuyện gia đình; cần lựa chọn riêng.",
+      "translation_vi": null,
+      "translation_status": "pending_full_sentence_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "part3_opinion_tracking",
+        "paraphrase",
+        "evidence_evaluation"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "critical_discussion"
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "C",
+      "text_en": "There is a real difference between recording someone’s story and obtaining a licence to display it.",
+      "meaning_vi": "C: Ghi câu chuyện khác với được phép phát công khai câu chuyện đó.",
+      "translation_vi": null,
+      "translation_status": "pending_full_sentence_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "part3_opinion_tracking",
+        "paraphrase",
+        "evidence_evaluation"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "peer_response"
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "B",
+      "text_en": "The preparation photos will illustrate techniques, but they do not prove which family version came first.",
+      "meaning_vi": "B: Ảnh thao tác nấu chỉ để minh họa, không chứng minh niên đại.",
+      "translation_vi": null,
+      "translation_status": "pending_full_sentence_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "part3_opinion_tracking",
+        "paraphrase",
+        "evidence_evaluation"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "evidence"
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "A",
+      "text_en": "The consent forms must govern what material we publish. Without that record, we cannot decide which extracts belong in the exhibition.",
+      "meaning_vi": "A: Phiếu đồng ý quyết định tư liệu nào được phép công bố.",
+      "translation_vi": null,
+      "translation_status": "pending_full_sentence_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "part3_opinion_tracking",
+        "paraphrase",
+        "evidence_evaluation"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "evidence"
+    },
+    {
+      "turn_id": "T09",
+      "speaker_id": "B",
+      "text_en": "I can arrange a contributor review session before the design files are finalised.",
+      "meaning_vi": "B: Tôi có thể tổ chức buổi để người kể duyệt lại.",
+      "translation_vi": null,
+      "translation_status": "pending_full_sentence_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "part3_opinion_tracking",
+        "paraphrase",
+        "evidence_evaluation"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "peer_response"
+    },
+    {
+      "turn_id": "T10",
+      "speaker_id": "C",
+      "text_en": "We can include the family notebook as a personal source, with a clear note that we cannot establish when its entries were written.",
+      "meaning_vi": "C: Có thể dùng sổ tay gia đình nhưng ghi rõ chưa xác định ngày ghi.",
+      "translation_vi": null,
+      "translation_status": "pending_full_sentence_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "part3_opinion_tracking",
+        "paraphrase",
+        "evidence_evaluation"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "evidence"
+    },
+    {
+      "turn_id": "T11",
+      "speaker_id": "B",
+      "text_en": "Our first plan was to place full interviews online. Then two contributors asked to approve the extracts because parts of their family histories were sensitive. We need a consent process with meaningful choices.",
+      "meaning_vi": "B: Nhóm đổi kế hoạch vì người kể muốn duyệt trích dẫn liên quan chuyện gia đình nhạy cảm.",
+      "translation_vi": null,
+      "translation_status": "pending_full_sentence_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "part3_opinion_tracking",
+        "paraphrase",
+        "evidence_evaluation"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "evidence"
+    },
+    {
+      "turn_id": "T12",
+      "speaker_id": "B",
+      "text_en": "The written recipe gives quantities, but the interview reveals how cooks judge texture by sight and smell. Those practical details will be valuable if we explain that the terms vary between households.",
+      "meaning_vi": "B: Phỏng vấn bổ sung kinh nghiệm nhận biết độ chín bằng mắt và mùi bên cạnh lượng nguyên liệu.",
+      "translation_vi": null,
+      "translation_status": "pending_full_sentence_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "part3_opinion_tracking",
+        "paraphrase",
+        "evidence_evaluation"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "critical_discussion"
+    },
+    {
+      "turn_id": "T13",
+      "speaker_id": "C",
+      "text_en": "In one language, a word means a particular stage of slow cooking rather than a single technique. A literal English equivalent would mislead readers, even though every ingredient is familiar.",
+      "meaning_vi": "C: Thuật ngữ nấu ăn không luôn có từ tương đương trực tiếp.",
+      "translation_vi": null,
+      "translation_status": "pending_full_sentence_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "part3_opinion_tracking",
+        "paraphrase",
+        "evidence_evaluation"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "evidence"
+    },
+    {
+      "turn_id": "T14",
+      "speaker_id": "A",
+      "text_en": "The translation should preserve uncertainty where a storyteller used words like perhaps or I think.",
+      "meaning_vi": "A: Bản dịch phải giữ sự không chắc chắn của những từ như có lẽ.",
+      "translation_vi": null,
+      "translation_status": "pending_full_sentence_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "part3_opinion_tracking",
+        "paraphrase",
+        "evidence_evaluation"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "peer_response"
+    },
+    {
+      "turn_id": "T15",
+      "speaker_id": "A",
+      "text_en": "Two relatives disagree about when the dish first appeared at celebrations. We should let both accounts stand, explaining that family memory is evidence of perspective rather than a verified date.",
+      "meaning_vi": "A: Nên trình bày song song các ký ức khác nhau thay vì chọn một bản.",
+      "translation_vi": null,
+      "translation_status": "pending_full_sentence_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "part3_opinion_tracking",
+        "paraphrase",
+        "evidence_evaluation"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "evidence"
+    },
+    {
+      "turn_id": "T16",
+      "speaker_id": "B",
+      "text_en": "Permission to be interviewed is not permission to broadcast a voice in a public gallery. We need a separate choice for audio playback, and a text-only option for anyone who declines.",
+      "meaning_vi": "B: Phát giọng trong triển lãm cần giấy đồng ý riêng.",
+      "translation_vi": null,
+      "translation_status": "pending_full_sentence_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "part3_opinion_tracking",
+        "paraphrase",
+        "evidence_evaluation"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "evidence"
+    },
+    {
+      "turn_id": "T17",
+      "speaker_id": "C",
+      "text_en": "If an interviewee wants a name changed, we must update captions and searchable records as well as the exhibition text. A hidden identifier can still identify someone.",
+      "meaning_vi": "C: Khi đổi tên người kể phải cập nhật cả chú thích và dữ liệu tìm kiếm để tránh lộ danh tính.",
+      "translation_vi": null,
+      "translation_status": "pending_full_sentence_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "part3_opinion_tracking",
+        "paraphrase",
+        "evidence_evaluation"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "critical_discussion"
+    },
+    {
+      "turn_id": "T18",
+      "speaker_id": "C",
+      "text_en": "We also need a process for removing a clip later if consent is withdrawn.",
+      "meaning_vi": "C: Cần quy trình gỡ clip nếu người kể rút lại đồng ý.",
+      "translation_vi": null,
+      "translation_status": "pending_full_sentence_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "part3_opinion_tracking",
+        "paraphrase",
+        "evidence_evaluation"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "peer_response"
+    },
+    {
+      "turn_id": "T19",
+      "speaker_id": "C",
+      "text_en": "Rather than declare one authentic version, we could place two recipe variations beside short accounts of when families serve them. Visitors can explore how traditions change.",
+      "meaning_vi": "C: Khách sẽ so sánh các biến thể món ăn và câu chuyện gia đình đi kèm.",
+      "translation_vi": null,
+      "translation_status": "pending_full_sentence_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "part3_opinion_tracking",
+        "paraphrase",
+        "evidence_evaluation"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "evidence"
+    },
+    {
+      "turn_id": "T20",
+      "speaker_id": "C",
+      "text_en": "We can make the exhibition interesting without treating personal memories as material that belongs automatically to the university.",
+      "meaning_vi": "C: Triển lãm vẫn hấp dẫn mà vẫn tôn trọng quyền riêng tư của người kể.",
+      "translation_vi": null,
+      "translation_status": "pending_full_sentence_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "part3_opinion_tracking",
+        "paraphrase",
+        "evidence_evaluation"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "conclusion"
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "group_id": "PART3_MATCHING_Q01_TO_05",
+      "type": "matching",
+      "prompt": "Unapproved interview audio",
+      "options": [
+        {
+          "key": "A",
+          "text": "Withhold until publication permission"
+        },
+        {
+          "key": "B",
+          "text": "Use as the publication authority"
+        },
+        {
+          "key": "C",
+          "text": "Remove place names before analysis"
+        },
+        {
+          "key": "D",
+          "text": "Use to illustrate preparation methods"
+        },
+        {
+          "key": "E",
+          "text": "Retain with an uncertain-date note"
+        },
+        {
+          "key": "F",
+          "text": "Repeat the interviews with other families"
+        },
+        {
+          "key": "G",
+          "text": "Send for specialist language review"
+        }
+      ],
+      "correct_option": "A",
+      "correct_answers": [
+        "A"
+      ],
+      "scoring_policy": "matching_letter",
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "evidence_excerpt_en": "Hold back the unapproved interview audio. It must not enter the public installation until the speaker chooses whether it may be played.",
+      "explanation_vi": "A: Giữ bản ghi chưa được duyệt, không phát công khai.",
+      "answer_source": "paraphrased_or_explicit_recording",
+      "question_tags": [
+        "M27",
+        "part3",
+        "academic_discussion",
+        "matching",
+        "evaluation_of_evidence"
+      ],
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true
+    },
+    {
+      "question_id": "Q02",
+      "group_id": "PART3_MATCHING_Q01_TO_05",
+      "type": "matching",
+      "prompt": "Glossary of cooking terms",
+      "options": [
+        {
+          "key": "A",
+          "text": "Withhold until publication permission"
+        },
+        {
+          "key": "B",
+          "text": "Use as the publication authority"
+        },
+        {
+          "key": "C",
+          "text": "Remove place names before analysis"
+        },
+        {
+          "key": "D",
+          "text": "Use to illustrate preparation methods"
+        },
+        {
+          "key": "E",
+          "text": "Retain with an uncertain-date note"
+        },
+        {
+          "key": "F",
+          "text": "Repeat the interviews with other families"
+        },
+        {
+          "key": "G",
+          "text": "Send for specialist language review"
+        }
+      ],
+      "correct_option": "G",
+      "correct_answers": [
+        "G"
+      ],
+      "scoring_policy": "matching_letter",
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "evidence_excerpt_en": "A bilingual food historian should check the glossary; a few literal translations would give the wrong impression about technique.",
+      "explanation_vi": "C: Cần chuyên gia song ngữ kiểm tra thuật ngữ nấu ăn.",
+      "answer_source": "paraphrased_or_explicit_recording",
+      "question_tags": [
+        "M27",
+        "part3",
+        "academic_discussion",
+        "matching",
+        "evaluation_of_evidence"
+      ],
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true
+    },
+    {
+      "question_id": "Q03",
+      "group_id": "PART3_MATCHING_Q01_TO_05",
+      "type": "matching",
+      "prompt": "Photographs of preparation steps",
+      "options": [
+        {
+          "key": "A",
+          "text": "Withhold until publication permission"
+        },
+        {
+          "key": "B",
+          "text": "Use as the publication authority"
+        },
+        {
+          "key": "C",
+          "text": "Remove place names before analysis"
+        },
+        {
+          "key": "D",
+          "text": "Use to illustrate preparation methods"
+        },
+        {
+          "key": "E",
+          "text": "Retain with an uncertain-date note"
+        },
+        {
+          "key": "F",
+          "text": "Repeat the interviews with other families"
+        },
+        {
+          "key": "G",
+          "text": "Send for specialist language review"
+        }
+      ],
+      "correct_option": "D",
+      "correct_answers": [
+        "D"
+      ],
+      "scoring_policy": "matching_letter",
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "evidence_excerpt_en": "The preparation photos will illustrate techniques, but they do not prove which family version came first.",
+      "explanation_vi": "B: Ảnh thao tác nấu chỉ để minh họa, không chứng minh niên đại.",
+      "answer_source": "paraphrased_or_explicit_recording",
+      "question_tags": [
+        "M27",
+        "part3",
+        "academic_discussion",
+        "matching",
+        "evaluation_of_evidence"
+      ],
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true
+    },
+    {
+      "question_id": "Q04",
+      "group_id": "PART3_MATCHING_Q01_TO_05",
+      "type": "matching",
+      "prompt": "Contributor consent forms",
+      "options": [
+        {
+          "key": "A",
+          "text": "Withhold until publication permission"
+        },
+        {
+          "key": "B",
+          "text": "Use as the publication authority"
+        },
+        {
+          "key": "C",
+          "text": "Remove place names before analysis"
+        },
+        {
+          "key": "D",
+          "text": "Use to illustrate preparation methods"
+        },
+        {
+          "key": "E",
+          "text": "Retain with an uncertain-date note"
+        },
+        {
+          "key": "F",
+          "text": "Repeat the interviews with other families"
+        },
+        {
+          "key": "G",
+          "text": "Send for specialist language review"
+        }
+      ],
+      "correct_option": "B",
+      "correct_answers": [
+        "B"
+      ],
+      "scoring_policy": "matching_letter",
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "evidence_excerpt_en": "The consent forms must govern what material we publish. Without that record, we cannot decide which extracts belong in the exhibition.",
+      "explanation_vi": "A: Phiếu đồng ý quyết định tư liệu nào được phép công bố.",
+      "answer_source": "paraphrased_or_explicit_recording",
+      "question_tags": [
+        "M27",
+        "part3",
+        "academic_discussion",
+        "matching",
+        "evaluation_of_evidence"
+      ],
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true
+    },
+    {
+      "question_id": "Q05",
+      "group_id": "PART3_MATCHING_Q01_TO_05",
+      "type": "matching",
+      "prompt": "Undated family notebook",
+      "options": [
+        {
+          "key": "A",
+          "text": "Withhold until publication permission"
+        },
+        {
+          "key": "B",
+          "text": "Use as the publication authority"
+        },
+        {
+          "key": "C",
+          "text": "Remove place names before analysis"
+        },
+        {
+          "key": "D",
+          "text": "Use to illustrate preparation methods"
+        },
+        {
+          "key": "E",
+          "text": "Retain with an uncertain-date note"
+        },
+        {
+          "key": "F",
+          "text": "Repeat the interviews with other families"
+        },
+        {
+          "key": "G",
+          "text": "Send for specialist language review"
+        }
+      ],
+      "correct_option": "E",
+      "correct_answers": [
+        "E"
+      ],
+      "scoring_policy": "matching_letter",
+      "evidence_turn_ids": [
+        "T10"
+      ],
+      "evidence_excerpt_en": "We can include the family notebook as a personal source, with a clear note that we cannot establish when its entries were written.",
+      "explanation_vi": "C: Có thể dùng sổ tay gia đình nhưng ghi rõ chưa xác định ngày ghi.",
+      "answer_source": "paraphrased_or_explicit_recording",
+      "question_tags": [
+        "M27",
+        "part3",
+        "academic_discussion",
+        "matching",
+        "evaluation_of_evidence"
+      ],
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true
+    },
+    {
+      "question_id": "Q06",
+      "group_id": "PART3_MCQ_Q06_TO_10",
+      "type": "mcq",
+      "prompt": "What changed the group’s original plan?",
+      "options": [
+        {
+          "key": "A",
+          "text": "The recipes required specialist ovens"
+        },
+        {
+          "key": "B",
+          "text": "The exhibition room became smaller"
+        },
+        {
+          "key": "C",
+          "text": "Some contributors wanted control over how stories were quoted"
+        }
+      ],
+      "correct_option": "C",
+      "correct_answers": [
+        "Some contributors wanted control over how stories were quoted"
+      ],
+      "scoring_policy": "one_correct_option",
+      "evidence_turn_ids": [
+        "T11"
+      ],
+      "evidence_excerpt_en": "Our first plan was to place full interviews online. Then two contributors asked to approve the extracts because parts of their family histories were sensitive. We need a consent process with meaningful choices.",
+      "explanation_vi": "B: Nhóm đổi kế hoạch vì người kể muốn duyệt trích dẫn liên quan chuyện gia đình nhạy cảm.",
+      "answer_source": "paraphrased_or_explicit_recording",
+      "question_tags": [
+        "M27",
+        "part3",
+        "academic_discussion",
+        "mcq",
+        "opinion_tracking"
+      ],
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true
+    },
+    {
+      "question_id": "Q07",
+      "group_id": "PART3_MCQ_Q06_TO_10",
+      "type": "mcq",
+      "prompt": "Why is translating the recipes difficult?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Cooking terms do not always have direct equivalents"
+        },
+        {
+          "key": "B",
+          "text": "The handwriting is entirely illegible"
+        },
+        {
+          "key": "C",
+          "text": "Every contributor uses different measuring equipment"
+        }
+      ],
+      "correct_option": "A",
+      "correct_answers": [
+        "Cooking terms do not always have direct equivalents"
+      ],
+      "scoring_policy": "one_correct_option",
+      "evidence_turn_ids": [
+        "T13"
+      ],
+      "evidence_excerpt_en": "In one language, a word means a particular stage of slow cooking rather than a single technique. A literal English equivalent would mislead readers, even though every ingredient is familiar.",
+      "explanation_vi": "C: Thuật ngữ nấu ăn không luôn có từ tương đương trực tiếp.",
+      "answer_source": "paraphrased_or_explicit_recording",
+      "question_tags": [
+        "M27",
+        "part3",
+        "academic_discussion",
+        "mcq",
+        "opinion_tracking"
+      ],
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true
+    },
+    {
+      "question_id": "Q08",
+      "group_id": "PART3_MCQ_Q06_TO_10",
+      "type": "mcq",
+      "prompt": "What does the tutor recommend for disputed details?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Remove the recipe from the collection"
+        },
+        {
+          "key": "B",
+          "text": "Present contributors’ different versions side by side"
+        },
+        {
+          "key": "C",
+          "text": "Choose the most detailed story"
+        }
+      ],
+      "correct_option": "B",
+      "correct_answers": [
+        "Present contributors’ different versions side by side"
+      ],
+      "scoring_policy": "one_correct_option",
+      "evidence_turn_ids": [
+        "T15"
+      ],
+      "evidence_excerpt_en": "Two relatives disagree about when the dish first appeared at celebrations. We should let both accounts stand, explaining that family memory is evidence of perspective rather than a verified date.",
+      "explanation_vi": "A: Nên trình bày song song các ký ức khác nhau thay vì chọn một bản.",
+      "answer_source": "paraphrased_or_explicit_recording",
+      "question_tags": [
+        "M27",
+        "part3",
+        "academic_discussion",
+        "mcq",
+        "opinion_tracking"
+      ],
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true
+    },
+    {
+      "question_id": "Q09",
+      "group_id": "PART3_MCQ_Q06_TO_10",
+      "type": "mcq",
+      "prompt": "How will the team handle audio excerpts?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Publish all recordings without editing"
+        },
+        {
+          "key": "B",
+          "text": "Replace every voice with synthetic speech"
+        },
+        {
+          "key": "C",
+          "text": "Obtain separate permission for public playback"
+        }
+      ],
+      "correct_option": "C",
+      "correct_answers": [
+        "Obtain separate permission for public playback"
+      ],
+      "scoring_policy": "one_correct_option",
+      "evidence_turn_ids": [
+        "T16"
+      ],
+      "evidence_excerpt_en": "Permission to be interviewed is not permission to broadcast a voice in a public gallery. We need a separate choice for audio playback, and a text-only option for anyone who declines.",
+      "explanation_vi": "B: Phát giọng trong triển lãm cần giấy đồng ý riêng.",
+      "answer_source": "paraphrased_or_explicit_recording",
+      "question_tags": [
+        "M27",
+        "part3",
+        "academic_discussion",
+        "mcq",
+        "opinion_tracking"
+      ],
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true
+    },
+    {
+      "question_id": "Q10",
+      "group_id": "PART3_MCQ_Q06_TO_10",
+      "type": "mcq",
+      "prompt": "What is the planned exhibition activity?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Let visitors compare recipe variations and their stories"
+        },
+        {
+          "key": "B",
+          "text": "Ask visitors to guess ingredients blindfolded"
+        },
+        {
+          "key": "C",
+          "text": "Rank the recipes by nutritional value"
+        }
+      ],
+      "correct_option": "A",
+      "correct_answers": [
+        "Let visitors compare recipe variations and their stories"
+      ],
+      "scoring_policy": "one_correct_option",
+      "evidence_turn_ids": [
+        "T19"
+      ],
+      "evidence_excerpt_en": "Rather than declare one authentic version, we could place two recipe variations beside short accounts of when families serve them. Visitors can explore how traditions change.",
+      "explanation_vi": "C: Khách sẽ so sánh các biến thể món ăn và câu chuyện gia đình đi kèm.",
+      "answer_source": "paraphrased_or_explicit_recording",
+      "question_tags": [
+        "M27",
+        "part3",
+        "academic_discussion",
+        "mcq",
+        "opinion_tracking"
+      ],
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true
+    }
+  ],
+  "question_groups": [
+    {
+      "group_id": "PART3_MATCHING_Q01_TO_05",
+      "question_ids": [
+        "Q01",
+        "Q02",
+        "Q03",
+        "Q04",
+        "Q05"
+      ],
+      "question_type": "matching",
+      "instructions_en": "Match each item with the correct description. Choose A–G. You may use a letter more than once.",
+      "question_display_start": "before_audio",
+      "requires_one_listen": true,
+      "pause_between_groups_seconds": 0,
+      "options": [
+        {
+          "key": "A",
+          "text": "Withhold until publication permission"
+        },
+        {
+          "key": "B",
+          "text": "Use as the publication authority"
+        },
+        {
+          "key": "C",
+          "text": "Remove place names before analysis"
+        },
+        {
+          "key": "D",
+          "text": "Use to illustrate preparation methods"
+        },
+        {
+          "key": "E",
+          "text": "Retain with an uncertain-date note"
+        },
+        {
+          "key": "F",
+          "text": "Repeat the interviews with other families"
+        },
+        {
+          "key": "G",
+          "text": "Send for specialist language review"
+        }
+      ]
+    },
+    {
+      "group_id": "PART3_MCQ_Q06_TO_10",
+      "question_ids": [
+        "Q06",
+        "Q07",
+        "Q08",
+        "Q09",
+        "Q10"
+      ],
+      "question_type": "mcq",
+      "instructions_en": "Choose the correct letter A, B or C for each question.",
+      "question_display_start": "before_audio",
+      "requires_one_listen": true,
+      "pause_between_groups_seconds": 0
+    }
+  ],
+  "pedagogy_vi": {
+    "topic_summary_vi": "A: Dự án ghi lại ký ức gắn với món ăn, nhiều người không muốn công khai tên thật.",
+    "question_explanations_status": "draft_semantic_review_required",
+    "turn_meanings_are_not_full_translations": true,
+    "full_line_translation_required_before_release": true
+  },
+  "audio": {
+    "status": "not_generated",
+    "audio_url": null,
+    "audio_asset_id": null,
+    "duration_ms": null,
+    "source_text_sha256": "389b07185e201b1880f1346fb40f8492090ce83a03e49bd2eba2e77c1b5c9441",
+    "generation_strategy": "three_speakers_turnwise_then_seamless_mix",
+    "aligned_turns": false,
+    "voice_consistency_verified": false,
+    "human_listening_review": false
+  },
+  "exam_mode": {
+    "bank_role": "protected_assessment",
+    "use_as_training_before_first_attempt": false,
+    "listening_attempts_allowed_for_scored_first_attempt": 1,
+    "replay_before_submit": false,
+    "speed_control_before_submit": false,
+    "transcript_visible_before_submit": false,
+    "answer_key_visible_before_submit": false,
+    "post_attempt_review_allowed": true,
+    "question_count": 10,
+    "points_per_correct_answer": 1,
+    "question_order_monotonic": true,
+    "estimated_speech_minutes_at_140_wpm": 3.15,
+    "exam_band_score_enabled": false,
+    "repeated_attempt_marked_as_seen": true,
+    "all_questions_visible_before_audio": true
+  },
+  "qa": {
+    "automatic_data_validation": "pending",
+    "content_human_review": "pending",
+    "translation_human_review": "pending",
+    "audio_human_review": "pending",
+    "exam_simulation_rubric_score": null,
+    "rubric_90_verified": false,
+    "published": false,
+    "release_eligible": false
+  },
+  "provenance": {
+    "source_type": "original_authored_english_academic_dialogue",
+    "milestone": "M27",
+    "no_official_ielts_question_copied": true,
+    "training_exposure_guard": true,
+    "fictional_scenarios": true
+  },
+  "release_metadata": {
+    "target_bank": "protected_assessment",
+    "import_policy": "insert_only",
+    "version": "m27.0.1",
+    "preserve_existing_ids": true,
+    "allow_client_answer_payload": false
+  }
+}

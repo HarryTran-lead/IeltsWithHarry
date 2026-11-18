@@ -1,0 +1,351 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "DICT-S4-002",
+  "status": "draft",
+  "level": "L5",
+  "section": 4,
+  "topic": "Marine Biology",
+  "title": "Food Webs, Nursery Habitats and Ocean Depth",
+  "learning_objectives_vi": [
+    "Nghe bài giảng học thuật một người nói và xác định cấu trúc luận điểm, ví dụ và kết luận.",
+    "Hoàn thành Note/Summary Completion, Multiple Choice, Short Answer và chép đúng đoạn nghe đã học.",
+    "Phân tích bằng chứng theo từng đoạn và ghi nhớ từ học thuật trong bối cảnh."
+  ],
+  "content_format": "section_practice",
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Academic lecturer",
+      "tts_voice_id": null,
+      "accent_requested": "new_zealand"
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "Marine biology investigates organisms that live in salty water, from microscopic plankton to large mammals. A helpful starting point is the marine food web. Tiny photosynthetic organisms capture energy from sunlight, and that energy passes through many feeding relationships. Unlike a simple food chain, a web shows that a single species may interact with several predators and sources of food.",
+      "translation_vi": "Sinh học biển nghiên cứu sinh vật sống trong nước mặn, từ sinh vật phù du hiển vi đến động vật có vú lớn. Điểm bắt đầu hữu ích là lưới thức ăn biển. Sinh vật quang hợp nhỏ bé thu năng lượng mặt trời rồi năng lượng truyền qua nhiều quan hệ dinh dưỡng. Khác chuỗi thức ăn đơn giản, lưới thức ăn cho thấy một loài có thể liên quan tới nhiều kẻ săn mồi và nguồn thức ăn.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_4",
+        "academic_lecture",
+        "concept",
+        "l5"
+      ]
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "A",
+      "text_en": "Where an animal lives matters just as much as what it eats. Many young fish spend part of their lives among seagrass beds or mangrove roots, where shelter reduces their exposure to predators. Biologists describe these spaces as nursery habitats. A nursery does not necessarily contain more adult fish; its value lies in supporting an especially vulnerable life stage.",
+      "translation_vi": "Nơi sinh sống quan trọng không kém thức ăn. Nhiều cá non trải qua một giai đoạn trong thảm cỏ biển hoặc giữa rễ đước, nơi trú ẩn giúp giảm bị săn bắt. Nhà sinh học gọi các nơi ấy là môi trường ươm dưỡng. Nơi ươm dưỡng không nhất thiết có nhiều cá trưởng thành; giá trị của nó là hỗ trợ giai đoạn sống đặc biệt dễ tổn thương.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_4",
+        "academic_lecture",
+        "concept",
+        "l5"
+      ]
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "A",
+      "text_en": "The sea is also divided into environments by light and depth. In shallow clear water, sunlight may reach plants on the seabed. Deeper down, photosynthesis becomes difficult and animals depend on other energy sources, including material sinking from above. Therefore, comparing organisms from two depths without considering light levels can lead to misleading conclusions about their behaviour.",
+      "translation_vi": "Biển còn được chia thành các môi trường theo ánh sáng và độ sâu. Ở nước nông trong, nắng có thể đến thực vật đáy biển. Xuống sâu hơn, quang hợp trở nên khó khăn và động vật phụ thuộc nguồn năng lượng khác, kể cả vật chất chìm từ trên xuống. Vì thế, so sánh sinh vật ở hai độ sâu mà bỏ qua ánh sáng có thể dẫn đến kết luận sai về hành vi.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_4",
+        "academic_lecture",
+        "concept",
+        "l5"
+      ]
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "A",
+      "text_en": "Studying the ocean is not simply a matter of counting animals. Researchers must consider tides, seasons and the movement of water. A sample collected after a storm may contain different plankton from one collected during a calm week. Repeated observations are important because a temporary change does not automatically indicate a decline in the whole population.",
+      "translation_vi": "Nghiên cứu đại dương không đơn thuần là đếm động vật. Nhà nghiên cứu cần xét thủy triều, mùa và sự chuyển động của nước. Mẫu lấy sau bão có thể có sinh vật phù du khác mẫu lấy trong tuần yên biển. Quan sát lặp lại rất quan trọng vì thay đổi tạm thời không tự động cho thấy toàn quần thể đang suy giảm.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_4",
+        "academic_lecture",
+        "concept",
+        "l5"
+      ]
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "A",
+      "text_en": "Finally, marine conservation involves interactions between people and habitats. Protecting a seagrass meadow may improve shelter for fish while also changing where boats are allowed to anchor. Effective plans examine ecological benefits and practical use together. This systems perspective helps explain why biology is central to decisions about coastal development rather than an optional extra.",
+      "translation_vi": "Cuối cùng, bảo tồn biển liên quan đến tương tác giữa con người và sinh cảnh. Bảo vệ bãi cỏ biển có thể cải thiện chỗ trú cho cá nhưng cũng thay đổi nơi tàu được thả neo. Kế hoạch hiệu quả xem xét cả lợi ích sinh thái và nhu cầu sử dụng thực tế. Góc nhìn hệ thống giúp giải thích vì sao sinh học là cốt lõi của quyết định phát triển ven biển, không phải phần phụ.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_4",
+        "academic_lecture",
+        "concept",
+        "l5"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "type": "note_completion",
+      "prompt": "A marine ____ shows several interacting feeding relationships.",
+      "correct_answers": [
+        "food web"
+      ],
+      "evidence_turn_ids": [
+        "T01"
+      ],
+      "explanation_vi": "Bằng chứng tại T01: Sinh học biển nghiên cứu sinh vật sống trong nước mặn, từ sinh vật phù du hiển vi đến động vật có vú lớn. Điểm bắt đầu hữu ích là lưới thức ăn biển. Sinh vật quang hợp nhỏ bé thu năng lượng mặt trời rồi năng lượng truyền qua nhiều quan hệ dinh dưỡng. Khác chuỗi thức ăn đơn giản, lưới thức ăn cho thấy một loài có thể liên quan tới nhiều kẻ săn mồi và nguồn thức ăn. Đáp án cần chọn/điền: “food web”.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_4",
+        "ielts_practice",
+        "concept",
+        "note_completion"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q02",
+      "type": "summary_completion",
+      "prompt": "Seagrass beds and mangrove roots can provide ____ for young fish.",
+      "correct_answers": [
+        "shelter"
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Bằng chứng tại T02: Nơi sinh sống quan trọng không kém thức ăn. Nhiều cá non trải qua một giai đoạn trong thảm cỏ biển hoặc giữa rễ đước, nơi trú ẩn giúp giảm bị săn bắt. Nhà sinh học gọi các nơi ấy là môi trường ươm dưỡng. Nơi ươm dưỡng không nhất thiết có nhiều cá trưởng thành; giá trị của nó là hỗ trợ giai đoạn sống đặc biệt dễ tổn thương. Đáp án cần chọn/điền: “shelter”.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_4",
+        "ielts_practice",
+        "concept",
+        "summary_completion"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q03",
+      "type": "sentence_completion",
+      "prompt": "At greater depth, ____ becomes difficult.",
+      "correct_answers": [
+        "photosynthesis"
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Bằng chứng tại T03: Biển còn được chia thành các môi trường theo ánh sáng và độ sâu. Ở nước nông trong, nắng có thể đến thực vật đáy biển. Xuống sâu hơn, quang hợp trở nên khó khăn và động vật phụ thuộc nguồn năng lượng khác, kể cả vật chất chìm từ trên xuống. Vì thế, so sánh sinh vật ở hai độ sâu mà bỏ qua ánh sáng có thể dẫn đến kết luận sai về hành vi. Đáp án cần chọn/điền: “photosynthesis”.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_4",
+        "ielts_practice",
+        "concept",
+        "sentence_completion"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q04",
+      "type": "mcq",
+      "prompt": "Why do marine biologists repeat observations over time?",
+      "correct_answers": [
+        "A temporary change may not represent the whole population"
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Bằng chứng tại T04: Nghiên cứu đại dương không đơn thuần là đếm động vật. Nhà nghiên cứu cần xét thủy triều, mùa và sự chuyển động của nước. Mẫu lấy sau bão có thể có sinh vật phù du khác mẫu lấy trong tuần yên biển. Quan sát lặp lại rất quan trọng vì thay đổi tạm thời không tự động cho thấy toàn quần thể đang suy giảm. Đáp án cần chọn/điền: “A temporary change may not represent the whole population”.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "section_4",
+        "ielts_practice",
+        "concept",
+        "mcq"
+      ],
+      "options": [
+        "A temporary change may not represent the whole population",
+        "Because storms always destroy plankton",
+        "To eliminate all influence of tides"
+      ]
+    },
+    {
+      "question_id": "Q05",
+      "type": "short_answer",
+      "prompt": "What activity might be restricted to protect seagrass?",
+      "correct_answers": [
+        "anchor"
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Bằng chứng tại T05: Cuối cùng, bảo tồn biển liên quan đến tương tác giữa con người và sinh cảnh. Bảo vệ bãi cỏ biển có thể cải thiện chỗ trú cho cá nhưng cũng thay đổi nơi tàu được thả neo. Kế hoạch hiệu quả xem xét cả lợi ích sinh thái và nhu cầu sử dụng thực tế. Góc nhìn hệ thống giúp giải thích vì sao sinh học là cốt lõi của quyết định phát triển ven biển, không phải phần phụ. Đáp án cần chọn/điền: “anchor”.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_4",
+        "ielts_practice",
+        "concept",
+        "short_answer"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q06",
+      "type": "mcq",
+      "prompt": "What does the lecture emphasise?",
+      "correct_answers": [
+        "Marine ecosystems must be studied as connected environments"
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Bằng chứng tại T05: Cuối cùng, bảo tồn biển liên quan đến tương tác giữa con người và sinh cảnh. Bảo vệ bãi cỏ biển có thể cải thiện chỗ trú cho cá nhưng cũng thay đổi nơi tàu được thả neo. Kế hoạch hiệu quả xem xét cả lợi ích sinh thái và nhu cầu sử dụng thực tế. Góc nhìn hệ thống giúp giải thích vì sao sinh học là cốt lõi của quyết định phát triển ven biển, không phải phần phụ. Đây là câu hỏi ý chính; cần hiểu toàn bài và phân biệt các lựa chọn nhiễu.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "section_4",
+        "ielts_practice",
+        "concept",
+        "main_idea"
+      ],
+      "options": [
+        "Marine ecosystems must be studied as connected environments",
+        "All fish use the same nursery habitat",
+        "Marine life depends on one simple food chain"
+      ]
+    },
+    {
+      "question_id": "D01",
+      "type": "dictation",
+      "prompt": "Nghe đoạn T02 rồi chép lại toàn bộ phần lời nói tiếng Anh.",
+      "correct_answers": [
+        "Where an animal lives matters just as much as what it eats. Many young fish spend part of their lives among seagrass beds or mangrove roots, where shelter reduces their exposure to predators. Biologists describe these spaces as nursery habitats. A nursery does not necessarily contain more adult fish; its value lies in supporting an especially vulnerable life stage."
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Nghe lại để sửa âm cuối, từ chức năng và từ học thuật. Nội dung: Nơi sinh sống quan trọng không kém thức ăn. Nhiều cá non trải qua một giai đoạn trong thảm cỏ biển hoặc giữa rễ đước, nơi trú ẩn giúp giảm bị săn bắt. Nhà sinh học gọi các nơi ấy là môi trường ươm dưỡng. Nơi ươm dưỡng không nhất thiết có nhiều cá trưởng thành; giá trị của nó là hỗ trợ giai đoạn sống đặc biệt dễ tổn thương.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_4",
+        "dictation",
+        "exact_transcript"
+      ]
+    },
+    {
+      "question_id": "D02",
+      "type": "dictation",
+      "prompt": "Nghe đoạn T04 rồi chép lại toàn bộ phần lời nói tiếng Anh.",
+      "correct_answers": [
+        "Studying the ocean is not simply a matter of counting animals. Researchers must consider tides, seasons and the movement of water. A sample collected after a storm may contain different plankton from one collected during a calm week. Repeated observations are important because a temporary change does not automatically indicate a decline in the whole population."
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Nghe lại để sửa âm cuối, từ chức năng và từ học thuật. Nội dung: Nghiên cứu đại dương không đơn thuần là đếm động vật. Nhà nghiên cứu cần xét thủy triều, mùa và sự chuyển động của nước. Mẫu lấy sau bão có thể có sinh vật phù du khác mẫu lấy trong tuần yên biển. Quan sát lặp lại rất quan trọng vì thay đổi tạm thời không tự động cho thấy toàn quần thể đang suy giảm.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_4",
+        "dictation",
+        "exact_transcript"
+      ]
+    },
+    {
+      "question_id": "G01",
+      "type": "gap_fill",
+      "prompt": "Nghe đoạn T01 rồi điền phần thiếu: Marine biology investigates organisms that live in salty water, from microscopic plankton to large mammals. A helpful starting point is the marine ____. Tiny photosynthetic organisms capture energy from sunlight, and that energy passes through many feeding relationships. Unlike a simple food chain, a web shows that a single species may interact with several predators and sources of food.",
+      "correct_answers": [
+        "food web"
+      ],
+      "evidence_turn_ids": [
+        "T01"
+      ],
+      "explanation_vi": "Đáp án là “food web”, nghĩa: lưới thức ăn. Từ xuất hiện nguyên văn ở T01.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_4",
+        "gap_fill",
+        "academic_vocabulary"
+      ]
+    }
+  ],
+  "vocabulary": [
+    {
+      "term": "food web",
+      "pos": "n. phr.",
+      "meaning_vi": "lưới thức ăn",
+      "example_en": "Marine biology investigates organisms that live in salty water, from microscopic plankton to large mammals. A helpful starting point is the marine food web. Tiny photosynthetic organisms capture energy from sunlight, and that energy passes through many feeding relationships. Unlike a simple food chain, a web shows that a single species may interact with several predators and sources of food.",
+      "example_vi": "Sinh học biển nghiên cứu sinh vật sống trong nước mặn, từ sinh vật phù du hiển vi đến động vật có vú lớn. Điểm bắt đầu hữu ích là lưới thức ăn biển. Sinh vật quang hợp nhỏ bé thu năng lượng mặt trời rồi năng lượng truyền qua nhiều quan hệ dinh dưỡng. Khác chuỗi thức ăn đơn giản, lưới thức ăn cho thấy một loài có thể liên quan tới nhiều kẻ săn mồi và nguồn thức ăn.",
+      "source_turn_id": "T01"
+    },
+    {
+      "term": "nursery habitats",
+      "pos": "n. phr.",
+      "meaning_vi": "môi trường ươm dưỡng",
+      "example_en": "Where an animal lives matters just as much as what it eats. Many young fish spend part of their lives among seagrass beds or mangrove roots, where shelter reduces their exposure to predators. Biologists describe these spaces as nursery habitats. A nursery does not necessarily contain more adult fish; its value lies in supporting an especially vulnerable life stage.",
+      "example_vi": "Nơi sinh sống quan trọng không kém thức ăn. Nhiều cá non trải qua một giai đoạn trong thảm cỏ biển hoặc giữa rễ đước, nơi trú ẩn giúp giảm bị săn bắt. Nhà sinh học gọi các nơi ấy là môi trường ươm dưỡng. Nơi ươm dưỡng không nhất thiết có nhiều cá trưởng thành; giá trị của nó là hỗ trợ giai đoạn sống đặc biệt dễ tổn thương.",
+      "source_turn_id": "T02"
+    },
+    {
+      "term": "photosynthesis",
+      "pos": "n.",
+      "meaning_vi": "quang hợp",
+      "example_en": "The sea is also divided into environments by light and depth. In shallow clear water, sunlight may reach plants on the seabed. Deeper down, photosynthesis becomes difficult and animals depend on other energy sources, including material sinking from above. Therefore, comparing organisms from two depths without considering light levels can lead to misleading conclusions about their behaviour.",
+      "example_vi": "Biển còn được chia thành các môi trường theo ánh sáng và độ sâu. Ở nước nông trong, nắng có thể đến thực vật đáy biển. Xuống sâu hơn, quang hợp trở nên khó khăn và động vật phụ thuộc nguồn năng lượng khác, kể cả vật chất chìm từ trên xuống. Vì thế, so sánh sinh vật ở hai độ sâu mà bỏ qua ánh sáng có thể dẫn đến kết luận sai về hành vi.",
+      "source_turn_id": "T03"
+    },
+    {
+      "term": "conservation",
+      "pos": "n.",
+      "meaning_vi": "bảo tồn",
+      "example_en": "Finally, marine conservation involves interactions between people and habitats. Protecting a seagrass meadow may improve shelter for fish while also changing where boats are allowed to anchor. Effective plans examine ecological benefits and practical use together. This systems perspective helps explain why biology is central to decisions about coastal development rather than an optional extra.",
+      "example_vi": "Cuối cùng, bảo tồn biển liên quan đến tương tác giữa con người và sinh cảnh. Bảo vệ bãi cỏ biển có thể cải thiện chỗ trú cho cá nhưng cũng thay đổi nơi tàu được thả neo. Kế hoạch hiệu quả xem xét cả lợi ích sinh thái và nhu cầu sử dụng thực tế. Góc nhìn hệ thống giúp giải thích vì sao sinh học là cốt lõi của quyết định phát triển ven biển, không phải phần phụ.",
+      "source_turn_id": "T05"
+    }
+  ],
+  "audio": {
+    "status": "not_generated",
+    "url": null,
+    "duration_ms": null,
+    "model": null,
+    "provider": null,
+    "voice_config": null,
+    "source_transcript_hash": "6a1e37640ffd304d9d9dda62cad24a425f4b43fd4edcdc85f07ca4a86b5f981a",
+    "audio_sha256": null,
+    "format": null
+  },
+  "qa": {
+    "content_reviewed": false,
+    "answers_verified": false,
+    "audio_verified": false,
+    "rights_cleared": false,
+    "duplicate_reviewed": false,
+    "notes": [
+      "AI-assisted original first draft; expert scientific and pedagogical review pending.",
+      "Audio not generated, segment timestamps null; TTS provider terms and rights must be approved.",
+      "Short Section 4 skill practice; not a 10-question official IELTS simulation or calibrated band test.",
+      "M16.2: automated edits are provisional; IELTS teacher final signoff, audio and rights clearance pending."
+    ]
+  },
+  "provenance": {
+    "content_origin": "original_ai_assisted",
+    "source_urls": [],
+    "source_rights_note": "Original scripts. Confirm rights of TTS voices and distribution to learners, particularly minors, before release.",
+    "reviewer": null
+  },
+  "release_metadata": {
+    "published_at": null,
+    "version": 1
+  }
+}

@@ -1,0 +1,381 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "DICT-S2-017",
+  "status": "draft",
+  "level": "L4",
+  "section": 2,
+  "topic": "City Tours",
+  "title": "A Different Route Around the Historic Quarter",
+  "learning_objectives_vi": [
+    "Nghe độc thoại chủ đề City Tours và xác định mục đích thông báo.",
+    "Nhận diện cấu trúc ý và các chi tiết quan trọng theo thứ tự phát biểu.",
+    "Luyện chỉ đường theo sơ đồ A–F, phân biệt điểm trước/sau và hướng trái/phải."
+  ],
+  "content_format": "section_practice",
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Visitor guide / programme coordinator (one narrator)",
+      "tts_voice_id": null,
+      "accent_requested": "australian"
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "Before we set off, I should explain a change to our historic quarter tour. Roadworks have blocked the normal riverside route, so the order of several stops is different today.",
+      "translation_vi": "Trước khi đi, tôi cần thông báo thay đổi lộ trình phố cổ. Đường ven sông đang sửa nên thứ tự vài điểm dừng hôm nay khác.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_2",
+        "monologue",
+        "l4",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "A",
+      "text_en": "The group is at the visitor centre near the southern entrance. The first stop is the craft market in the front-left block, not the old market hall shown in last month’s brochure.",
+      "translation_vi": "Nhóm đang ở trung tâm du khách gần cổng nam. Điểm đầu là chợ thủ công ở ô phía trước bên trái, không phải nhà chợ cũ trên tờ giới thiệu.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_2",
+        "monologue",
+        "l4",
+        "signposting",
+        "spatial_directions"
+      ]
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "A",
+      "text_en": "After that, cross the small square to the archive building in the back-left block. A local historian will show us maps of the city as it looked a century ago.",
+      "translation_vi": "Sau đó, qua quảng trường nhỏ tới kho lưu trữ ở ô phía sau bên trái. Nhà sử học sẽ cho xem bản đồ thành phố một thế kỷ trước.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_2",
+        "monologue",
+        "l4",
+        "signposting",
+        "spatial_directions"
+      ]
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "A",
+      "text_en": "The river viewpoint is in the back-right block. Please do not take the narrow steps next to the bridge; the safest approach is along the wide eastern path.",
+      "translation_vi": "Điểm ngắm sông nằm ở ô phía sau bên phải. Đừng đi cầu thang hẹp cạnh cầu; nên đi đường rộng phía đông.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_2",
+        "monologue",
+        "l4",
+        "signposting",
+        "spatial_directions"
+      ]
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "A",
+      "text_en": "We had planned a stop at the cathedral, but the building is hosting a private event. Instead, there will be a short talk at the open-air stage, directly ahead at the far end.",
+      "translation_vi": "Theo kế hoạch sẽ dừng ở nhà thờ lớn, nhưng nơi đó có sự kiện riêng. Thay vào đó sẽ có bài giới thiệu tại sân khấu ngoài trời ở giữa phía cuối.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_2",
+        "monologue",
+        "l4",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "A",
+      "text_en": "The first talk begins at eleven twenty. The food market opens at eleven, yet we will not visit it until after the talk so everyone can stay together.",
+      "translation_vi": "Bài giới thiệu đầu bắt đầu lúc 11:20. Chợ ẩm thực mở lúc 11:00 nhưng nhóm sẽ tới sau bài giới thiệu để đi cùng nhau.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_2",
+        "monologue",
+        "l4",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "There is no charge for the walking tour. However, if you want to join the optional tower climb later, tickets cost seven pounds and must be purchased in advance.",
+      "translation_vi": "Tour đi bộ miễn phí. Nhưng vé leo tháp tùy chọn sau đó giá bảy bảng và phải mua trước.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_2",
+        "monologue",
+        "l4",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "A",
+      "text_en": "The route includes one steep slope. Anyone who needs step-free access can follow my colleague along the longer path behind the visitor centre.",
+      "translation_vi": "Tuyến có một đoạn dốc. Ai cần đường không có bậc có thể đi cùng đồng nghiệp của tôi theo đường dài hơn sau trung tâm du khách.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_2",
+        "monologue",
+        "l4",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T09",
+      "speaker_id": "A",
+      "text_en": "We will finish at the riverside café at twelve forty. Please keep your ticket for the museum discount that is available only this afternoon.",
+      "translation_vi": "Chúng ta kết thúc ở quán cà phê ven sông lúc 12:40. Hãy giữ vé để được giảm giá bảo tàng chỉ trong chiều nay.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_2",
+        "monologue",
+        "l4",
+        "signposting"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "type": "map_labelling",
+      "prompt": "Use the location plan (A–F): Position of the craft market: ____",
+      "correct_answers": [
+        "D"
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Chợ thủ công ở khu phía trước bên trái.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "section_2",
+        "ielts_practice",
+        "map_orientation"
+      ],
+      "map_asset": "maps/DICT-S2-017.svg"
+    },
+    {
+      "question_id": "Q02",
+      "type": "map_labelling",
+      "prompt": "Use the location plan (A–F): Position of the river viewpoint: ____",
+      "correct_answers": [
+        "C"
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Điểm ngắm sông nằm ở góc sau bên phải.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "section_2",
+        "ielts_practice",
+        "map_orientation"
+      ],
+      "map_asset": "maps/DICT-S2-017.svg"
+    },
+    {
+      "question_id": "Q03",
+      "type": "mcq",
+      "prompt": "At what time does the first talk start?",
+      "correct_answers": [
+        "eleven twenty"
+      ],
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "explanation_vi": "Bài nói đầu tiên lúc 11:20.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "section_2",
+        "ielts_practice",
+        "detail_recognition"
+      ],
+      "options": [
+        "eleven twenty",
+        "eleven",
+        "twelve forty"
+      ]
+    },
+    {
+      "question_id": "Q04",
+      "type": "note_completion",
+      "prompt": "Notes — Optional tower climb costs £: ____",
+      "correct_answers": [
+        "seven"
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "Vé leo tháp giá bảy bảng; tour đi bộ miễn phí.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_2",
+        "ielts_practice",
+        "detail_recognition"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q05",
+      "type": "note_completion",
+      "prompt": "Notes — Alternative accessible route is: ____",
+      "correct_answers": [
+        "longer"
+      ],
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "explanation_vi": "Đường không bậc thang dài hơn.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_2",
+        "ielts_practice",
+        "detail_recognition"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q06",
+      "type": "note_completion",
+      "prompt": "Notes — Tour finishing location: ____",
+      "correct_answers": [
+        "riverside café"
+      ],
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "explanation_vi": "Kết thúc tại quán cà phê ven sông.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_2",
+        "ielts_practice",
+        "detail_recognition"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "D01",
+      "type": "dictation",
+      "prompt": "Nghe lại và chép nguyên văn đoạn T05 (toàn bộ lời người dẫn).",
+      "correct_answers": [
+        "We had planned a stop at the cathedral, but the building is hosting a private event. Instead, there will be a short talk at the open-air stage, directly ahead at the far end."
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Câu gốc: We had planned a stop at the cathedral, but the building is hosting a private event. Instead, there will be a short talk at the open-air stage, directly ahead at the far end. Nghĩa: Theo kế hoạch sẽ dừng ở nhà thờ lớn, nhưng nơi đó có sự kiện riêng. Thay vào đó sẽ có bài giới thiệu tại sân khấu ngoài trời ở giữa phía cuối. Lưu ý từ chức năng, âm cuối và cụm từ nối.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "exact_transcript",
+        "section_2"
+      ]
+    },
+    {
+      "question_id": "G01",
+      "type": "gap_fill",
+      "prompt": "Điền cụm từ bị ẩn sau khi nghe: There is no charge for the ____. However, if you want to join the optional tower climb later, tickets cost seven pounds and must be purchased in advance.",
+      "correct_answers": [
+        "walking tour"
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "walking tour: chuyến tham quan đi bộ. Ngữ cảnh: Tour đi bộ miễn phí. Nhưng vé leo tháp tùy chọn sau đó giá bảy bảng và phải mua trước.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "gap_fill",
+        "vocab_in_context",
+        "section_2"
+      ]
+    }
+  ],
+  "vocabulary": [
+    {
+      "term": "walking tour",
+      "pos": "n. phr.",
+      "meaning_vi": "chuyến tham quan đi bộ",
+      "example_en": "There is no charge for the walking tour. However, if you want to join the optional tower climb later, tickets cost seven pounds and must be purchased in advance.",
+      "example_vi": "Tour đi bộ miễn phí. Nhưng vé leo tháp tùy chọn sau đó giá bảy bảng và phải mua trước.",
+      "source_turn_id": "T07"
+    },
+    {
+      "term": "market",
+      "pos": "n.",
+      "meaning_vi": "khu chợ",
+      "example_en": "The group is at the visitor centre near the southern entrance. The first stop is the craft market in the front-left block, not the old market hall shown in last month’s brochure.",
+      "example_vi": "Nhóm đang ở trung tâm du khách gần cổng nam. Điểm đầu là chợ thủ công ở ô phía trước bên trái, không phải nhà chợ cũ trên tờ giới thiệu.",
+      "source_turn_id": "T02"
+    },
+    {
+      "term": "entrance",
+      "pos": "n.",
+      "meaning_vi": "lối vào",
+      "example_en": "The group is at the visitor centre near the southern entrance. The first stop is the craft market in the front-left block, not the old market hall shown in last month’s brochure.",
+      "example_vi": "Nhóm đang ở trung tâm du khách gần cổng nam. Điểm đầu là chợ thủ công ở ô phía trước bên trái, không phải nhà chợ cũ trên tờ giới thiệu.",
+      "source_turn_id": "T02"
+    },
+    {
+      "term": "route",
+      "pos": "n.",
+      "meaning_vi": "tuyến đường",
+      "example_en": "Before we set off, I should explain a change to our historic quarter tour. Roadworks have blocked the normal riverside route, so the order of several stops is different today.",
+      "example_vi": "Trước khi đi, tôi cần thông báo thay đổi lộ trình phố cổ. Đường ven sông đang sửa nên thứ tự vài điểm dừng hôm nay khác.",
+      "source_turn_id": "T01"
+    }
+  ],
+  "audio": {
+    "status": "not_generated",
+    "url": null,
+    "duration_ms": null,
+    "model": null,
+    "provider": null,
+    "voice_config": null,
+    "source_transcript_hash": "2f8842e6a224c7c9fe19c4bbb2e2777eda9ec52ecc2d835c078c83ed8a981bf8",
+    "audio_sha256": null,
+    "format": null
+  },
+  "qa": {
+    "content_reviewed": false,
+    "answers_verified": false,
+    "audio_verified": false,
+    "rights_cleared": false,
+    "duplicate_reviewed": false,
+    "notes": [
+      "AI-assisted original writing; pedagogical and pronunciation review still required.",
+      "No TTS or sentence-level timestamps supplied; do not publish.",
+      "This is Section 2 skill practice, not an official IELTS test.",
+      "M16.2: automated edits are provisional; IELTS teacher final signoff, audio and rights clearance pending."
+    ]
+  },
+  "provenance": {
+    "content_origin": "original_ai_assisted",
+    "source_urls": [],
+    "source_rights_note": "Newly authored educational monologue. Confirm audio model distribution, age suitability and TOS separately before publishing.",
+    "reviewer": null
+  },
+  "release_metadata": {
+    "published_at": null,
+    "version": 1
+  }
+}

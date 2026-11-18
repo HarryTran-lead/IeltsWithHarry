@@ -1,0 +1,810 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "S3-EXP-012",
+  "status": "draft",
+  "level": "L6",
+  "section": 3,
+  "topic": "Digital humanities archive project",
+  "title": "Digitising a Local History Archive",
+  "learning_objectives_vi": [
+    "Phân biệt quan điểm ban đầu, lời phản biện và quyết định cuối trong thảo luận học thuật.",
+    "Nghe các phương án gây nhiễu và từ đồng nghĩa để chọn đáp án theo ý nghĩa.",
+    "Ghép nhiều mục với người nói mà không suy đoán chỉ dựa vào từ khóa."
+  ],
+  "content_format": "section_practice",
+  "target_skills": [
+    "source_evaluation",
+    "opinion_tracking",
+    "academic_discussion",
+    "matching",
+    "multiple_choice"
+  ],
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "University tutor / seminar adviser",
+      "accent_requested": "new_zealand",
+      "tts_voice_id": null
+    },
+    {
+      "speaker_id": "B",
+      "role": "University student 1",
+      "accent_requested": "british",
+      "tts_voice_id": null
+    },
+    {
+      "speaker_id": "C",
+      "role": "University student 2",
+      "accent_requested": "north_american",
+      "tts_voice_id": null
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "Your archive team has scanned hundreds of photographs. The historical society is pleased, but the catalogue currently contains little more than dates written on old envelopes. How will a researcher judge whether those dates are reliable?",
+      "translation_vi": "Nhóm đã quét hàng trăm ảnh; hội lịch sử vui nhưng danh mục chỉ có ngày trên phong bì cũ. Nhà nghiên cứu làm sao biết ngày đáng tin?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "source_evaluation",
+        "academic_discussion",
+        "opinion_tracking",
+        "paraphrase",
+        "distractor_analysis"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "B",
+      "text_en": "I assumed the handwritten date referred to the photograph, but one envelope held pictures from three different visits. That makes the label a clue rather than proof about every image inside.",
+      "translation_vi": "Em tưởng ngày viết tay là ngày chụp, nhưng một phong bì có ảnh của ba chuyến đi khác nhau. Nhãn chỉ là manh mối, không phải bằng chứng cho mọi ảnh.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "source_evaluation",
+        "academic_discussion",
+        "opinion_tracking",
+        "paraphrase",
+        "distractor_analysis"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "C",
+      "text_en": "The town newspaper might help establish when a building opened, though that still would not prove when an individual picture was taken. We should record which facts come from a source and which are estimates.",
+      "translation_vi": "Báo địa phương có thể giúp biết lúc tòa nhà mở cửa, nhưng không chứng minh ngày chụp từng ảnh. Nên ghi dữ kiện từ nguồn nào, cái nào ước đoán.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "source_evaluation",
+        "academic_discussion",
+        "opinion_tracking",
+        "paraphrase",
+        "distractor_analysis"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "A",
+      "text_en": "Exactly. Keep the original envelope date in one field and your estimated photo date in another. A digital catalogue should preserve uncertainty instead of presenting guesses as established facts.",
+      "translation_vi": "Đúng. Giữ ngày trên phong bì ở một trường, ngày ảnh ước tính ở trường khác. Danh mục số phải giữ mức bất định thay vì biến đoán thành sự thật.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "source_evaluation",
+        "academic_discussion",
+        "opinion_tracking",
+        "paraphrase",
+        "distractor_analysis"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "B",
+      "text_en": "We were also going to put every photographer's name online. However, several collections came from families, and it is unclear whether they agreed to publish personal notes written on the backs.",
+      "translation_vi": "Chúng em định đăng tên mọi người chụp, nhưng nhiều bộ ảnh từ gia đình và chưa rõ họ đồng ý công khai ghi chú riêng mặt sau không.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "source_evaluation",
+        "academic_discussion",
+        "opinion_tracking",
+        "paraphrase",
+        "distractor_analysis"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "C",
+      "text_en": "Maybe we can display the photograph while hiding private annotations until the society checks permission. The public may still learn about the street without seeing family phone numbers or addresses.",
+      "translation_vi": "Có thể đăng ảnh nhưng ẩn ghi chú riêng cho tới khi hội xác minh quyền. Công chúng vẫn hiểu lịch sử đường phố mà không thấy số điện thoại hay địa chỉ gia đình.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "source_evaluation",
+        "academic_discussion",
+        "opinion_tracking",
+        "paraphrase",
+        "distractor_analysis"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "That is sensible. Also create consistent search terms; if one student writes 'railway station' and another writes 'train depot', visitors may miss related photographs unless the terms are linked.",
+      "translation_vi": "Hợp lý. Cũng phải thống nhất từ khóa; nếu một người ghi 'ga đường sắt', người khác ghi 'kho tàu', khách có thể bỏ sót ảnh liên quan.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "source_evaluation",
+        "academic_discussion",
+        "opinion_tracking",
+        "paraphrase",
+        "distractor_analysis"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "B",
+      "text_en": "I suggest testing the search function with five local volunteers who have not seen our system. Ask them to find a landmark, then observe where the catalogue terminology confuses them.",
+      "translation_vi": "Em đề xuất thử công cụ tìm với năm tình nguyện viên địa phương chưa dùng hệ thống; yêu cầu tìm mốc địa danh và quan sát thuật ngữ gây khó chỗ nào.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "source_evaluation",
+        "academic_discussion",
+        "opinion_tracking",
+        "paraphrase",
+        "distractor_analysis"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T09",
+      "speaker_id": "A",
+      "text_en": "I will contact the historical society about permissions for public display and for the handwritten captions. These may have different restrictions, even when the photograph itself can be shared.",
+      "translation_vi": "Thầy sẽ liên hệ hội lịch sử về quyền đăng ảnh và chú thích viết tay; hai phần có thể có hạn chế khác nhau.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "source_evaluation",
+        "academic_discussion",
+        "opinion_tracking",
+        "paraphrase",
+        "distractor_analysis"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T10",
+      "speaker_id": "B",
+      "text_en": "I'll set up a field for provenance, including the donor and any uncertainty about where the image came from. Otherwise future users may assume that a file without notes has been fully verified.",
+      "translation_vi": "Em sẽ thêm trường ghi nguồn gốc, gồm người hiến tặng và chỗ chưa chắc; nếu không người dùng sau tưởng file thiếu ghi chú là đã xác minh.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "source_evaluation",
+        "academic_discussion",
+        "opinion_tracking",
+        "paraphrase",
+        "distractor_analysis"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T11",
+      "speaker_id": "C",
+      "text_en": "I'll check a sample of scanned files for orientation and legibility, especially on faded labels. It would be unfortunate if we destroyed the evidence while trying to tidy the image.",
+      "translation_vi": "Em sẽ kiểm tra một mẫu file quét về hướng ảnh và độ đọc được, nhất là nhãn mờ; tránh mất bằng chứng khi cố làm ảnh đẹp hơn.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "source_evaluation",
+        "academic_discussion",
+        "opinion_tracking",
+        "paraphrase",
+        "distractor_analysis"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T12",
+      "speaker_id": "B",
+      "text_en": "I'll build a controlled list of place names and alternative terms. We should not erase local expressions, but we need a way for searches using different names to reach the same photographs.",
+      "translation_vi": "Em sẽ tạo danh sách chuẩn tên địa danh cùng từ thay thế. Không xóa cách gọi địa phương nhưng tìm nhiều tên vẫn ra cùng ảnh.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "source_evaluation",
+        "academic_discussion",
+        "opinion_tracking",
+        "paraphrase",
+        "distractor_analysis"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T13",
+      "speaker_id": "A",
+      "text_en": "Our goal is a trustworthy archive, not the largest possible number of online images. Record uncertainty carefully and let the public see only the material we are authorised to publish.",
+      "translation_vi": "Mục tiêu là kho lưu trữ đáng tin, không phải đăng thật nhiều ảnh. Ghi rõ điều chưa chắc và chỉ công khai nội dung có quyền.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "source_evaluation",
+        "academic_discussion",
+        "opinion_tracking",
+        "paraphrase",
+        "distractor_analysis"
+      ],
+      "bank_role": "training"
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "group_id": "IELTS_S3_MC_GROUP",
+      "type": "mcq",
+      "prompt": "Why is the date written on an envelope uncertain?",
+      "correct_answers": [
+        "One envelope contained pictures from different visits"
+      ],
+      "options": [
+        "The date referred to the newspaper publication",
+        "The envelope was printed by a modern computer",
+        "One envelope contained pictures from different visits"
+      ],
+      "correct_option": "C",
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "evidence_excerpt_en": "I assumed the handwritten date referred to the photograph, but one envelope held pictures from three different visits. That makes the label a clue rather than proof about every image inside.",
+      "explanation_vi": "Một phong bì chứa ảnh chụp nhiều lần khác nhau.",
+      "question_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "infer_decision",
+        "paraphrase",
+        "source_evaluation"
+      ],
+      "scoring_policy": "strict",
+      "bank_role": "training",
+      "answer_provenance": "original_draft_authored_against_transcript",
+      "review_status": "awaiting_teacher_and_audio_review"
+    },
+    {
+      "question_id": "Q02",
+      "group_id": "IELTS_S3_MC_GROUP",
+      "type": "mcq",
+      "prompt": "How should the catalogue handle estimated dates?",
+      "correct_answers": [
+        "Keep them separate from source dates"
+      ],
+      "options": [
+        "Present them as confirmed dates",
+        "Remove all date information",
+        "Keep them separate from source dates"
+      ],
+      "correct_option": "C",
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "evidence_excerpt_en": "Exactly. Keep the original envelope date in one field and your estimated photo date in another. A digital catalogue should preserve uncertainty instead of presenting guesses as established facts.",
+      "explanation_vi": "Tách ngày nguồn gốc và ngày ước tính.",
+      "question_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "infer_decision",
+        "paraphrase",
+        "source_evaluation"
+      ],
+      "scoring_policy": "strict",
+      "bank_role": "training",
+      "answer_provenance": "original_draft_authored_against_transcript",
+      "review_status": "awaiting_teacher_and_audio_review"
+    },
+    {
+      "question_id": "Q03",
+      "group_id": "IELTS_S3_MC_GROUP",
+      "type": "mcq",
+      "prompt": "What is proposed for private notes on photographs?",
+      "correct_answers": [
+        "Hide them until publication permission is checked"
+      ],
+      "options": [
+        "Replace notes with invented descriptions",
+        "Publish every handwritten annotation immediately",
+        "Hide them until publication permission is checked"
+      ],
+      "correct_option": "C",
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "evidence_excerpt_en": "Maybe we can display the photograph while hiding private annotations until the society checks permission. The public may still learn about the street without seeing family phone numbers or addresses.",
+      "explanation_vi": "Ẩn chú thích riêng cho tới khi kiểm tra quyền.",
+      "question_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "infer_decision",
+        "paraphrase",
+        "source_evaluation"
+      ],
+      "scoring_policy": "strict",
+      "bank_role": "training",
+      "answer_provenance": "original_draft_authored_against_transcript",
+      "review_status": "awaiting_teacher_and_audio_review"
+    },
+    {
+      "question_id": "Q04",
+      "group_id": "IELTS_S3_MC_GROUP",
+      "type": "mcq",
+      "prompt": "Who will test the archive search function?",
+      "correct_answers": [
+        "Five new local volunteers"
+      ],
+      "options": [
+        "A group of professional photographers only",
+        "All current catalogue editors",
+        "Five new local volunteers"
+      ],
+      "correct_option": "C",
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "evidence_excerpt_en": "I suggest testing the search function with five local volunteers who have not seen our system. Ask them to find a landmark, then observe where the catalogue terminology confuses them.",
+      "explanation_vi": "Năm người địa phương chưa dùng hệ thống.",
+      "question_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "infer_decision",
+        "paraphrase",
+        "source_evaluation"
+      ],
+      "scoring_policy": "strict",
+      "bank_role": "training",
+      "answer_provenance": "original_draft_authored_against_transcript",
+      "review_status": "awaiting_teacher_and_audio_review"
+    },
+    {
+      "question_id": "Q05",
+      "group_id": "IELTS_S3_SPEAKER_MATCHING_GROUP",
+      "type": "matching",
+      "prompt": "Which speaker is associated with this proposal or responsibility: check rights to display images and captions?",
+      "options": [
+        "A — course tutor",
+        "B — first student",
+        "C — second student"
+      ],
+      "correct_answers": [
+        "A"
+      ],
+      "correct_option": "A",
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "evidence_excerpt_en": "I will contact the historical society about permissions for public display and for the handwritten captions. These may have different restrictions, even when the photograph itself can be shared.",
+      "explanation_vi": "Đề cập trong lượt T09 của người nói A. Cần nghe đúng ai đưa ra đề xuất, không chỉ xác định ý tưởng xuất hiện ở đoạn nào.",
+      "question_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "speaker_opinion_matching",
+        "source_evaluation"
+      ],
+      "scoring_policy": "strict",
+      "bank_role": "training",
+      "answer_provenance": "original_draft_authored_against_transcript",
+      "review_status": "awaiting_teacher_and_audio_review",
+      "matching_group_instructions_en": "Match each proposal or responsibility to the speaker who introduced it or volunteered for it. Choose A, B or C. You may use each letter more than once."
+    },
+    {
+      "question_id": "Q06",
+      "group_id": "IELTS_S3_SPEAKER_MATCHING_GROUP",
+      "type": "matching",
+      "prompt": "Which speaker is associated with this proposal or responsibility: record provenance and uncertainty for each image?",
+      "options": [
+        "A — course tutor",
+        "B — first student",
+        "C — second student"
+      ],
+      "correct_answers": [
+        "B"
+      ],
+      "correct_option": "B",
+      "evidence_turn_ids": [
+        "T10"
+      ],
+      "evidence_excerpt_en": "I'll set up a field for provenance, including the donor and any uncertainty about where the image came from. Otherwise future users may assume that a file without notes has been fully verified.",
+      "explanation_vi": "Đề cập trong lượt T10 của người nói B. Cần nghe đúng ai đưa ra đề xuất, không chỉ xác định ý tưởng xuất hiện ở đoạn nào.",
+      "question_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "speaker_opinion_matching",
+        "source_evaluation"
+      ],
+      "scoring_policy": "strict",
+      "bank_role": "training",
+      "answer_provenance": "original_draft_authored_against_transcript",
+      "review_status": "awaiting_teacher_and_audio_review",
+      "matching_group_instructions_en": "Match each proposal or responsibility to the speaker who introduced it or volunteered for it. Choose A, B or C. You may use each letter more than once."
+    },
+    {
+      "question_id": "Q07",
+      "group_id": "IELTS_S3_SPEAKER_MATCHING_GROUP",
+      "type": "matching",
+      "prompt": "Which speaker is associated with this proposal or responsibility: audit scans for legibility and lost detail?",
+      "options": [
+        "A — course tutor",
+        "B — first student",
+        "C — second student"
+      ],
+      "correct_answers": [
+        "C"
+      ],
+      "correct_option": "C",
+      "evidence_turn_ids": [
+        "T11"
+      ],
+      "evidence_excerpt_en": "I'll check a sample of scanned files for orientation and legibility, especially on faded labels. It would be unfortunate if we destroyed the evidence while trying to tidy the image.",
+      "explanation_vi": "Đề cập trong lượt T11 của người nói C. Cần nghe đúng ai đưa ra đề xuất, không chỉ xác định ý tưởng xuất hiện ở đoạn nào.",
+      "question_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "speaker_opinion_matching",
+        "source_evaluation"
+      ],
+      "scoring_policy": "strict",
+      "bank_role": "training",
+      "answer_provenance": "original_draft_authored_against_transcript",
+      "review_status": "awaiting_teacher_and_audio_review",
+      "matching_group_instructions_en": "Match each proposal or responsibility to the speaker who introduced it or volunteered for it. Choose A, B or C. You may use each letter more than once."
+    },
+    {
+      "question_id": "Q08",
+      "group_id": "IELTS_S3_SPEAKER_MATCHING_GROUP",
+      "type": "matching",
+      "prompt": "Which speaker is associated with this proposal or responsibility: create consistent place names and synonyms?",
+      "options": [
+        "A — course tutor",
+        "B — first student",
+        "C — second student"
+      ],
+      "correct_answers": [
+        "B"
+      ],
+      "correct_option": "B",
+      "evidence_turn_ids": [
+        "T12"
+      ],
+      "evidence_excerpt_en": "I'll build a controlled list of place names and alternative terms. We should not erase local expressions, but we need a way for searches using different names to reach the same photographs.",
+      "explanation_vi": "Đề cập trong lượt T12 của người nói B. Cần nghe đúng ai đưa ra đề xuất, không chỉ xác định ý tưởng xuất hiện ở đoạn nào.",
+      "question_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "speaker_opinion_matching",
+        "source_evaluation"
+      ],
+      "scoring_policy": "strict",
+      "bank_role": "training",
+      "answer_provenance": "original_draft_authored_against_transcript",
+      "review_status": "awaiting_teacher_and_audio_review",
+      "matching_group_instructions_en": "Match each proposal or responsibility to the speaker who introduced it or volunteered for it. Choose A, B or C. You may use each letter more than once."
+    },
+    {
+      "question_id": "D01",
+      "group_id": "SELECTIVE_DICTATION",
+      "type": "dictation",
+      "prompt": "Nghe và chép nguyên văn lượt thoại T03 của người nói C.",
+      "correct_answers": [
+        "The town newspaper might help establish when a building opened, though that still would not prove when an individual picture was taken. We should record which facts come from a source and which are estimates."
+      ],
+      "scoring_policy": "dictation_normalised",
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "evidence_excerpt_en": "The town newspaper might help establish when a building opened, though that still would not prove when an individual picture was taken. We should record which facts come from a source and which are estimates.",
+      "explanation_vi": "Đối chiếu từng từ, mạo từ và từ nối; đánh giá cả khả năng nhận diện cụm từ ở tốc độ nói tự nhiên.",
+      "bank_role": "training",
+      "question_tags": [
+        "m23",
+        "selective_dictation",
+        "source_evaluation"
+      ]
+    },
+    {
+      "question_id": "D02",
+      "group_id": "SELECTIVE_DICTATION",
+      "type": "dictation",
+      "prompt": "Nghe và chép nguyên văn lượt thoại T05 của người nói B.",
+      "correct_answers": [
+        "We were also going to put every photographer's name online. However, several collections came from families, and it is unclear whether they agreed to publish personal notes written on the backs."
+      ],
+      "scoring_policy": "dictation_normalised",
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "evidence_excerpt_en": "We were also going to put every photographer's name online. However, several collections came from families, and it is unclear whether they agreed to publish personal notes written on the backs.",
+      "explanation_vi": "Đối chiếu từng từ, mạo từ và từ nối; đánh giá cả khả năng nhận diện cụm từ ở tốc độ nói tự nhiên.",
+      "bank_role": "training",
+      "question_tags": [
+        "m23",
+        "selective_dictation",
+        "source_evaluation"
+      ]
+    },
+    {
+      "question_id": "D03",
+      "group_id": "SELECTIVE_DICTATION",
+      "type": "dictation",
+      "prompt": "Nghe và chép nguyên văn lượt thoại T07 của người nói A.",
+      "correct_answers": [
+        "That is sensible. Also create consistent search terms; if one student writes 'railway station' and another writes 'train depot', visitors may miss related photographs unless the terms are linked."
+      ],
+      "scoring_policy": "dictation_normalised",
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "evidence_excerpt_en": "That is sensible. Also create consistent search terms; if one student writes 'railway station' and another writes 'train depot', visitors may miss related photographs unless the terms are linked.",
+      "explanation_vi": "Đối chiếu từng từ, mạo từ và từ nối; đánh giá cả khả năng nhận diện cụm từ ở tốc độ nói tự nhiên.",
+      "bank_role": "training",
+      "question_tags": [
+        "m23",
+        "selective_dictation",
+        "source_evaluation"
+      ]
+    },
+    {
+      "question_id": "D04",
+      "group_id": "SELECTIVE_DICTATION",
+      "type": "dictation",
+      "prompt": "Nghe và chép nguyên văn lượt thoại T11 của người nói C.",
+      "correct_answers": [
+        "I'll check a sample of scanned files for orientation and legibility, especially on faded labels. It would be unfortunate if we destroyed the evidence while trying to tidy the image."
+      ],
+      "scoring_policy": "dictation_normalised",
+      "evidence_turn_ids": [
+        "T11"
+      ],
+      "evidence_excerpt_en": "I'll check a sample of scanned files for orientation and legibility, especially on faded labels. It would be unfortunate if we destroyed the evidence while trying to tidy the image.",
+      "explanation_vi": "Đối chiếu từng từ, mạo từ và từ nối; đánh giá cả khả năng nhận diện cụm từ ở tốc độ nói tự nhiên.",
+      "bank_role": "training",
+      "question_tags": [
+        "m23",
+        "selective_dictation",
+        "source_evaluation"
+      ]
+    },
+    {
+      "question_id": "G01",
+      "group_id": "GAP_FILL_PRACTICE",
+      "type": "gap_fill",
+      "prompt": "Nghe lượt thoại T01 và điền cụm bị thiếu: Your ____ team has scanned hundreds of photographs. The historical society is pleased, but the catalogue currently contains little more than dates written on old envelopes. How will a researcher judge whether those dates are reliable?",
+      "correct_answers": [
+        "archive"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN 2 WORDS",
+      "scoring_policy": "controlled_variants",
+      "evidence_turn_ids": [
+        "T01"
+      ],
+      "evidence_excerpt_en": "Your archive team has scanned hundreds of photographs. The historical society is pleased, but the catalogue currently contains little more than dates written on old envelopes. How will a researcher judge whether those dates are reliable?",
+      "explanation_vi": "Cụm nghe được là “archive” (kho lưu trữ); cần dựa vào ngữ cảnh chứ không chỉ đoán từ loại.",
+      "question_tags": [
+        "m23",
+        "gap_fill",
+        "source_evaluation"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "question_id": "G02",
+      "group_id": "GAP_FILL_PRACTICE",
+      "type": "gap_fill",
+      "prompt": "Nghe lượt thoại T01 và điền cụm bị thiếu: Your archive team has scanned hundreds of photographs. The historical society is pleased, but the ____ currently contains little more than dates written on old envelopes. How will a researcher judge whether those dates are reliable?",
+      "correct_answers": [
+        "catalogue"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN 2 WORDS",
+      "scoring_policy": "controlled_variants",
+      "evidence_turn_ids": [
+        "T01"
+      ],
+      "evidence_excerpt_en": "Your archive team has scanned hundreds of photographs. The historical society is pleased, but the catalogue currently contains little more than dates written on old envelopes. How will a researcher judge whether those dates are reliable?",
+      "explanation_vi": "Cụm nghe được là “catalogue” (danh mục tư liệu); cần dựa vào ngữ cảnh chứ không chỉ đoán từ loại.",
+      "question_tags": [
+        "m23",
+        "gap_fill",
+        "source_evaluation"
+      ],
+      "bank_role": "training"
+    }
+  ],
+  "vocabulary": [
+    {
+      "vocab_id": "S3-EXP-012-V01",
+      "expression_en": "archive",
+      "meaning_vi": "kho lưu trữ",
+      "part_of_speech": "noun phrase",
+      "example_en": "Your archive team has scanned hundreds of photographs. The historical society is pleased, but the catalogue currently contains little more than dates written on old envelopes. How will a researcher judge whether those dates are reliable?",
+      "example_vi": "Nhóm đã quét hàng trăm ảnh; hội lịch sử vui nhưng danh mục chỉ có ngày trên phong bì cũ. Nhà nghiên cứu làm sao biết ngày đáng tin?",
+      "evidence_turn_id": "T01",
+      "can_save_to_notebook": true,
+      "requires_human_pos_verification": true
+    },
+    {
+      "vocab_id": "S3-EXP-012-V02",
+      "expression_en": "catalogue",
+      "meaning_vi": "danh mục tư liệu",
+      "part_of_speech": "noun phrase",
+      "example_en": "Your archive team has scanned hundreds of photographs. The historical society is pleased, but the catalogue currently contains little more than dates written on old envelopes. How will a researcher judge whether those dates are reliable?",
+      "example_vi": "Nhóm đã quét hàng trăm ảnh; hội lịch sử vui nhưng danh mục chỉ có ngày trên phong bì cũ. Nhà nghiên cứu làm sao biết ngày đáng tin?",
+      "evidence_turn_id": "T01",
+      "can_save_to_notebook": true,
+      "requires_human_pos_verification": true
+    },
+    {
+      "vocab_id": "S3-EXP-012-V03",
+      "expression_en": "provenance",
+      "meaning_vi": "nguồn gốc tư liệu",
+      "part_of_speech": "noun phrase",
+      "example_en": "I'll set up a field for provenance, including the donor and any uncertainty about where the image came from. Otherwise future users may assume that a file without notes has been fully verified.",
+      "example_vi": "Em sẽ thêm trường ghi nguồn gốc, gồm người hiến tặng và chỗ chưa chắc; nếu không người dùng sau tưởng file thiếu ghi chú là đã xác minh.",
+      "evidence_turn_id": "T10",
+      "can_save_to_notebook": true,
+      "requires_human_pos_verification": true
+    },
+    {
+      "vocab_id": "S3-EXP-012-V04",
+      "expression_en": "private annotations",
+      "meaning_vi": "chú thích riêng tư",
+      "part_of_speech": "noun phrase",
+      "example_en": "Maybe we can display the photograph while hiding private annotations until the society checks permission. The public may still learn about the street without seeing family phone numbers or addresses.",
+      "example_vi": "Có thể đăng ảnh nhưng ẩn ghi chú riêng cho tới khi hội xác minh quyền. Công chúng vẫn hiểu lịch sử đường phố mà không thấy số điện thoại hay địa chỉ gia đình.",
+      "evidence_turn_id": "T06",
+      "can_save_to_notebook": true,
+      "requires_human_pos_verification": true
+    },
+    {
+      "vocab_id": "S3-EXP-012-V05",
+      "expression_en": "search terms",
+      "meaning_vi": "từ khóa tìm kiếm",
+      "part_of_speech": "noun phrase",
+      "example_en": "That is sensible. Also create consistent search terms; if one student writes 'railway station' and another writes 'train depot', visitors may miss related photographs unless the terms are linked.",
+      "example_vi": "Hợp lý. Cũng phải thống nhất từ khóa; nếu một người ghi 'ga đường sắt', người khác ghi 'kho tàu', khách có thể bỏ sót ảnh liên quan.",
+      "evidence_turn_id": "T07",
+      "can_save_to_notebook": true,
+      "requires_human_pos_verification": true
+    },
+    {
+      "vocab_id": "S3-EXP-012-V06",
+      "expression_en": "legibility",
+      "meaning_vi": "độ dễ đọc",
+      "part_of_speech": "noun phrase",
+      "example_en": "I'll check a sample of scanned files for orientation and legibility, especially on faded labels. It would be unfortunate if we destroyed the evidence while trying to tidy the image.",
+      "example_vi": "Em sẽ kiểm tra một mẫu file quét về hướng ảnh và độ đọc được, nhất là nhãn mờ; tránh mất bằng chứng khi cố làm ảnh đẹp hơn.",
+      "evidence_turn_id": "T11",
+      "can_save_to_notebook": true,
+      "requires_human_pos_verification": true
+    }
+  ],
+  "audio": {
+    "status": "not_generated",
+    "audio_url": null,
+    "duration_ms": null,
+    "source_text_sha256": "a60c26e0b7e0e79f6aad1a30644aaefedcdf553e021b1e671c0f83683295aea6",
+    "generation_strategy": "per_turn_tts_three_speakers_then_stitch",
+    "audio_asset_id": null,
+    "requires_dialogue_prosody_review": true
+  },
+  "learning_flow": {
+    "intro": {
+      "theory_vi": "IELTS Listening Part 3 thường có thảo luận học thuật. Hãy dự đoán người nói và mục đích câu hỏi trước khi nghe. Đừng chọn một phương án chỉ vì nó xuất hiện sớm; theo dõi phản biện, cách diễn đạt lại và đề xuất cuối cùng.",
+      "tip_vi": "Với Matching, các chữ A/B/C là người nói và có thể lặp lại. Nghe người thực sự đề xuất hành động; một người khác có thể chỉ đồng tình hoặc nhắc lại đề xuất đó.",
+      "common_mistakes_vi": [
+        "Chọn lập luận đầu tiên dù người khác đã bác bỏ.",
+        "Không phân biệt người phát biểu đề xuất với người tán thành.",
+        "Chọn đáp án chứa từ giống audio nhưng sai ý.",
+        "Làm lộ transcript khi chưa nộp bài nghe đầu."
+      ],
+      "worked_examples": [
+        {
+          "audio_example_en": "Maya: We could interview everyone. Leo: That would be too expensive. Tutor: Let us start with a small pilot instead.",
+          "question": "What approach is finally recommended?",
+          "answer": "A small pilot",
+          "explanation_vi": "Phỏng vấn toàn bộ là đề xuất ban đầu, pilot mới là hướng được chọn."
+        },
+        {
+          "audio_example_en": "Student A: I can prepare the participant forms. Student B: I will check the recording equipment.",
+          "question": "Who will check the recording equipment?",
+          "answer": "Student B",
+          "explanation_vi": "Cần ghép đúng nhiệm vụ với người nhận trách nhiệm."
+        }
+      ]
+    },
+    "steps": [
+      "pre_listening",
+      "first_listen_ielts_questions",
+      "review_with_evidence",
+      "selective_dictation",
+      "gap_fill",
+      "summary"
+    ],
+    "ielts_question_ids": [
+      "Q01",
+      "Q02",
+      "Q03",
+      "Q04",
+      "Q05",
+      "Q06",
+      "Q07",
+      "Q08"
+    ],
+    "recommended_first_listen_play_limit": 1,
+    "practice_replay_allowed_after_first_attempt": true,
+    "word_count": 405,
+    "estimated_audio_minutes_at_135_wpm": 3.0,
+    "exposure_bank": "training",
+    "exam_simulation": false,
+    "mock_test": false,
+    "audio_alignment_required": true,
+    "matching_options_are_reusable": true
+  },
+  "qa": {
+    "status": "awaiting_human_content_and_audio_review",
+    "automated_validation": "passed",
+    "human_transcript_approved": false,
+    "human_audio_approved": false,
+    "ielts_exam_equivalent": false,
+    "release_eligible": false
+  },
+  "provenance": {
+    "source_type": "original_authored",
+    "reference_copying": false,
+    "authoring_milestone": "M23",
+    "do_not_reuse_in_unseen_assessment_before_exposure_check": true
+  },
+  "release_metadata": {
+    "version": "m23.0.1",
+    "published": false,
+    "needs_audio": true,
+    "requires_human_approval": true,
+    "import_policy": "insert_only",
+    "target_bank": "training"
+  }
+}

@@ -1,0 +1,351 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "DICT-S4-043",
+  "status": "draft",
+  "level": "L7",
+  "section": 4,
+  "topic": "Scientific Innovation",
+  "title": "Comparing Water-Testing Technologies",
+  "learning_objectives_vi": [
+    "Nghe bài giảng học thuật một người nói, theo dõi quan hệ giữa luận điểm và bằng chứng.",
+    "Luyện các câu hỏi Section 4 theo thứ tự lời giảng; phân tích giới hạn của khái niệm và cách diễn đạt lại.",
+    "Chép chính xác hai đoạn, luyện từ học thuật theo ngữ cảnh và ôn điểm yếu qua Mistake Bank."
+  ],
+  "content_format": "section_practice",
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Academic lecturer",
+      "tts_voice_id": null,
+      "accent_requested": "new_zealand"
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "Suppose two laboratories develop different methods for identifying contamination in drinking water. Method A produces a result within minutes, while Method B takes longer but detects smaller concentrations. It would be tempting to declare the faster method superior. Yet the appropriate choice depends on the purpose of testing: rapid screening and precise confirmation solve related but different problems.",
+      "translation_vi": "Giả sử hai phòng thí nghiệm phát triển phương pháp khác nhau để phát hiện ô nhiễm trong nước uống. Phương pháp A cho kết quả sau vài phút, còn B lâu hơn nhưng phát hiện nồng độ nhỏ hơn. Có thể dễ dàng tuyên bố phương pháp nhanh vượt trội. Tuy nhiên lựa chọn phù hợp phụ thuộc mục đích kiểm tra: sàng lọc nhanh và xác nhận chính xác giải quyết những vấn đề liên quan nhưng khác nhau.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_4",
+        "academic_lecture",
+        "compare",
+        "l7"
+      ]
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "A",
+      "text_en": "A useful comparison begins with sensitivity, the ability to identify cases that genuinely contain the target substance. High sensitivity reduces missed detections, but it is not the only criterion. Specificity measures how reliably a test excludes samples without that substance. A system that flags nearly everything may appear cautious but generate large numbers of false alarms, using staff time and resources.",
+      "translation_vi": "So sánh hữu ích bắt đầu với độ nhạy, khả năng nhận ra trường hợp thực sự có chất cần tìm. Độ nhạy cao giảm trường hợp bỏ sót, nhưng không phải tiêu chí duy nhất. Độ đặc hiệu đo khả năng xét nghiệm loại đúng mẫu không có chất đó. Hệ thống báo động gần như mọi mẫu có thể trông thận trọng nhưng tạo nhiều cảnh báo giả, tiêu tốn thời gian và nguồn lực.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_4",
+        "academic_lecture",
+        "compare",
+        "l7"
+      ]
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "A",
+      "text_en": "Scientists must also examine the reference standard used to judge performance. If the supposedly correct comparison method has errors, the evaluation itself may be misleading. Tests should use samples representing realistic conditions, including substances that could interfere with the measurement. Performance reported on clean laboratory water may not transfer to rivers or complex household supplies.",
+      "translation_vi": "Nhà khoa học cũng phải xem xét chuẩn tham chiếu dùng để đánh giá hiệu năng. Nếu phương pháp đối chiếu tưởng đúng lại có lỗi, chính phép đánh giá có thể gây hiểu lầm. Phải thử mẫu đại diện điều kiện thực, gồm cả chất có thể gây nhiễu phép đo. Hiệu năng báo cáo trên nước sạch trong lab có thể không áp dụng cho sông hoặc nguồn nước gia đình phức tạp.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_4",
+        "academic_lecture",
+        "compare",
+        "l7"
+      ]
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "A",
+      "text_en": "Operational factors then enter the decision. A highly accurate instrument might need specialist maintenance and a stable power supply, while a portable device may tolerate rough handling. Choosing between them involves more than technical rankings. Field teams should record calibration needs, supply costs and the time required to train operators. These practical conditions shape whether reliable results are possible outside a laboratory.",
+      "translation_vi": "Yếu tố vận hành tiếp tục tham gia quyết định. Thiết bị rất chính xác có thể cần bảo trì chuyên môn và nguồn điện ổn định, trong khi thiết bị di động chịu thao tác mạnh hơn. Chọn giữa chúng không chỉ là xếp hạng kỹ thuật. Nhóm thực địa cần ghi nhu cầu hiệu chuẩn, chi phí vật tư và thời gian đào tạo. Điều kiện thực tế ấy quyết định có thể tạo kết quả tin cậy ngoài lab hay không.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_4",
+        "academic_lecture",
+        "compare",
+        "l7"
+      ]
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "A",
+      "text_en": "The conclusion is not that every community should purchase the most sophisticated technology. Some situations favour rapid screening followed by laboratory confirmation for selected samples. Others require precise monitoring from the start. A fair evaluation states the question, tests both strengths and limitations, and considers who will maintain the system. Responsible comparison turns competing inventions into complementary tools when appropriate.",
+      "translation_vi": "Kết luận không phải cộng đồng nào cũng nên mua công nghệ tinh vi nhất. Một số trường hợp phù hợp sàng lọc nhanh rồi xác nhận trong phòng thí nghiệm với mẫu được chọn. Trường hợp khác cần giám sát chính xác từ đầu. Đánh giá công bằng nêu câu hỏi, kiểm tra thế mạnh lẫn hạn chế và xét ai bảo trì hệ thống. So sánh có trách nhiệm có thể biến những phát minh cạnh tranh thành công cụ bổ trợ nhau khi phù hợp.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_4",
+        "academic_lecture",
+        "compare",
+        "l7"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "type": "note_completion",
+      "prompt": "Fast preliminary testing is called rapid ____.",
+      "correct_answers": [
+        "screening"
+      ],
+      "evidence_turn_ids": [
+        "T01"
+      ],
+      "explanation_vi": "Đáp án “screening” nằm tại đoạn T01. Nội dung bằng chứng: Giả sử hai phòng thí nghiệm phát triển phương pháp khác nhau để phát hiện ô nhiễm trong nước uống. Phương pháp A cho kết quả sau vài phút, còn B lâu hơn nhưng phát hiện nồng độ nhỏ hơn. Có thể dễ dàng tuyên bố phương pháp nhanh vượt trội. Tuy nhiên lựa chọn phù hợp phụ thuộc mục đích kiểm tra: sàng lọc nhanh và xác nhận chính xác giải quyết những vấn đề liên quan nhưng khác nhau.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_4",
+        "ielts_practice",
+        "compare",
+        "note_completion"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q02",
+      "type": "note_completion",
+      "prompt": "The proportion of correctly identified positive cases relates to ____.",
+      "correct_answers": [
+        "sensitivity"
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Đáp án “sensitivity” nằm tại đoạn T02. Nội dung bằng chứng: So sánh hữu ích bắt đầu với độ nhạy, khả năng nhận ra trường hợp thực sự có chất cần tìm. Độ nhạy cao giảm trường hợp bỏ sót, nhưng không phải tiêu chí duy nhất. Độ đặc hiệu đo khả năng xét nghiệm loại đúng mẫu không có chất đó. Hệ thống báo động gần như mọi mẫu có thể trông thận trọng nhưng tạo nhiều cảnh báo giả, tiêu tốn thời gian và nguồn lực.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_4",
+        "ielts_practice",
+        "compare",
+        "note_completion"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q03",
+      "type": "note_completion",
+      "prompt": "Tests are judged against a reference ____.",
+      "correct_answers": [
+        "standard"
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Đáp án “standard” nằm tại đoạn T03. Nội dung bằng chứng: Nhà khoa học cũng phải xem xét chuẩn tham chiếu dùng để đánh giá hiệu năng. Nếu phương pháp đối chiếu tưởng đúng lại có lỗi, chính phép đánh giá có thể gây hiểu lầm. Phải thử mẫu đại diện điều kiện thực, gồm cả chất có thể gây nhiễu phép đo. Hiệu năng báo cáo trên nước sạch trong lab có thể không áp dụng cho sông hoặc nguồn nước gia đình phức tạp.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_4",
+        "ielts_practice",
+        "compare",
+        "note_completion"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q04",
+      "type": "note_completion",
+      "prompt": "A field instrument may require periodic ____.",
+      "correct_answers": [
+        "calibration"
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Đáp án “calibration” nằm tại đoạn T04. Nội dung bằng chứng: Yếu tố vận hành tiếp tục tham gia quyết định. Thiết bị rất chính xác có thể cần bảo trì chuyên môn và nguồn điện ổn định, trong khi thiết bị di động chịu thao tác mạnh hơn. Chọn giữa chúng không chỉ là xếp hạng kỹ thuật. Nhóm thực địa cần ghi nhu cầu hiệu chuẩn, chi phí vật tư và thời gian đào tạo. Điều kiện thực tế ấy quyết định có thể tạo kết quả tin cậy ngoài lab hay không.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_4",
+        "ielts_practice",
+        "compare",
+        "note_completion"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q05",
+      "type": "note_completion",
+      "prompt": "Selected samples might undergo laboratory ____.",
+      "correct_answers": [
+        "confirmation"
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Đáp án “confirmation” nằm tại đoạn T05. Nội dung bằng chứng: Kết luận không phải cộng đồng nào cũng nên mua công nghệ tinh vi nhất. Một số trường hợp phù hợp sàng lọc nhanh rồi xác nhận trong phòng thí nghiệm với mẫu được chọn. Trường hợp khác cần giám sát chính xác từ đầu. Đánh giá công bằng nêu câu hỏi, kiểm tra thế mạnh lẫn hạn chế và xét ai bảo trì hệ thống. So sánh có trách nhiệm có thể biến những phát minh cạnh tranh thành công cụ bổ trợ nhau khi phù hợp.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_4",
+        "ielts_practice",
+        "compare",
+        "note_completion"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q06",
+      "type": "mcq",
+      "prompt": "What is the most defensible conclusion about two water-testing methods?",
+      "correct_answers": [
+        "The best method depends on the task, sample conditions and operating resources"
+      ],
+      "options": [
+        "The fastest instrument is automatically the most accurate",
+        "The best method depends on the task, sample conditions and operating resources",
+        "A method proven on clean water always performs equally well in rivers"
+      ],
+      "evidence_turn_ids": [
+        "T01",
+        "T03",
+        "T05"
+      ],
+      "explanation_vi": "Hãy kết hợp luận điểm đầu, ví dụ ở giữa và kết luận cuối bài. Kết luận không phải cộng đồng nào cũng nên mua công nghệ tinh vi nhất. Một số trường hợp phù hợp sàng lọc nhanh rồi xác nhận trong phòng thí nghiệm với mẫu được chọn. Trường hợp khác cần giám sát chính xác từ đầu. Đánh giá công bằng nêu câu hỏi, kiểm tra thế mạnh lẫn hạn chế và xét ai bảo trì hệ thống. So sánh có trách nhiệm có thể biến những phát minh cạnh tranh thành công cụ bổ trợ nhau khi phù hợp. Phương án chính xác: “The best method depends on the task, sample conditions and operating resources”; hai phương án khác khái quát quá mức hoặc không phù hợp bằng chứng.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "section_4",
+        "ielts_practice",
+        "compare",
+        "main_idea"
+      ]
+    },
+    {
+      "question_id": "D01",
+      "type": "dictation",
+      "prompt": "Nghe đoạn T02 và chép lại chính xác lời giảng.",
+      "correct_answers": [
+        "A useful comparison begins with sensitivity, the ability to identify cases that genuinely contain the target substance. High sensitivity reduces missed detections, but it is not the only criterion. Specificity measures how reliably a test excludes samples without that substance. A system that flags nearly everything may appear cautious but generate large numbers of false alarms, using staff time and resources."
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Phân tích từ nối, âm yếu và cụm thuật ngữ học thuật. Nghĩa của đoạn: So sánh hữu ích bắt đầu với độ nhạy, khả năng nhận ra trường hợp thực sự có chất cần tìm. Độ nhạy cao giảm trường hợp bỏ sót, nhưng không phải tiêu chí duy nhất. Độ đặc hiệu đo khả năng xét nghiệm loại đúng mẫu không có chất đó. Hệ thống báo động gần như mọi mẫu có thể trông thận trọng nhưng tạo nhiều cảnh báo giả, tiêu tốn thời gian và nguồn lực.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_4",
+        "dictation",
+        "exact_transcript"
+      ]
+    },
+    {
+      "question_id": "D02",
+      "type": "dictation",
+      "prompt": "Nghe đoạn T04 và chép lại chính xác lời giảng.",
+      "correct_answers": [
+        "Operational factors then enter the decision. A highly accurate instrument might need specialist maintenance and a stable power supply, while a portable device may tolerate rough handling. Choosing between them involves more than technical rankings. Field teams should record calibration needs, supply costs and the time required to train operators. These practical conditions shape whether reliable results are possible outside a laboratory."
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Phân tích từ nối, âm yếu và cụm thuật ngữ học thuật. Nghĩa của đoạn: Yếu tố vận hành tiếp tục tham gia quyết định. Thiết bị rất chính xác có thể cần bảo trì chuyên môn và nguồn điện ổn định, trong khi thiết bị di động chịu thao tác mạnh hơn. Chọn giữa chúng không chỉ là xếp hạng kỹ thuật. Nhóm thực địa cần ghi nhu cầu hiệu chuẩn, chi phí vật tư và thời gian đào tạo. Điều kiện thực tế ấy quyết định có thể tạo kết quả tin cậy ngoài lab hay không.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_4",
+        "dictation",
+        "exact_transcript"
+      ]
+    },
+    {
+      "question_id": "G01",
+      "type": "gap_fill",
+      "prompt": "Nghe T01 rồi điền phần thiếu: Suppose two laboratories develop different methods for identifying contamination in drinking water. Method A produces a result within minutes, while Method B takes longer but detects smaller concentrations. It would be tempting to declare the faster method superior. Yet the appropriate choice depends on the purpose of testing: ____ and precise confirmation solve related but different problems.",
+      "correct_answers": [
+        "rapid screening"
+      ],
+      "evidence_turn_ids": [
+        "T01"
+      ],
+      "explanation_vi": "Điền “rapid screening”, nghĩa: sàng lọc nhanh. Cụm từ này xuất hiện trong T01.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_4",
+        "gap_fill",
+        "academic_vocabulary"
+      ]
+    }
+  ],
+  "vocabulary": [
+    {
+      "term": "rapid screening",
+      "pos": "n. phr.",
+      "meaning_vi": "sàng lọc nhanh",
+      "example_en": "Suppose two laboratories develop different methods for identifying contamination in drinking water. Method A produces a result within minutes, while Method B takes longer but detects smaller concentrations. It would be tempting to declare the faster method superior. Yet the appropriate choice depends on the purpose of testing: rapid screening and precise confirmation solve related but different problems.",
+      "example_vi": "Giả sử hai phòng thí nghiệm phát triển phương pháp khác nhau để phát hiện ô nhiễm trong nước uống. Phương pháp A cho kết quả sau vài phút, còn B lâu hơn nhưng phát hiện nồng độ nhỏ hơn. Có thể dễ dàng tuyên bố phương pháp nhanh vượt trội. Tuy nhiên lựa chọn phù hợp phụ thuộc mục đích kiểm tra: sàng lọc nhanh và xác nhận chính xác giải quyết những vấn đề liên quan nhưng khác nhau.",
+      "source_turn_id": "T01"
+    },
+    {
+      "term": "sensitivity",
+      "pos": "n.",
+      "meaning_vi": "độ nhạy",
+      "example_en": "A useful comparison begins with sensitivity, the ability to identify cases that genuinely contain the target substance. High sensitivity reduces missed detections, but it is not the only criterion. Specificity measures how reliably a test excludes samples without that substance. A system that flags nearly everything may appear cautious but generate large numbers of false alarms, using staff time and resources.",
+      "example_vi": "So sánh hữu ích bắt đầu với độ nhạy, khả năng nhận ra trường hợp thực sự có chất cần tìm. Độ nhạy cao giảm trường hợp bỏ sót, nhưng không phải tiêu chí duy nhất. Độ đặc hiệu đo khả năng xét nghiệm loại đúng mẫu không có chất đó. Hệ thống báo động gần như mọi mẫu có thể trông thận trọng nhưng tạo nhiều cảnh báo giả, tiêu tốn thời gian và nguồn lực.",
+      "source_turn_id": "T02"
+    },
+    {
+      "term": "Specificity",
+      "pos": "n.",
+      "meaning_vi": "độ đặc hiệu",
+      "example_en": "A useful comparison begins with sensitivity, the ability to identify cases that genuinely contain the target substance. High sensitivity reduces missed detections, but it is not the only criterion. Specificity measures how reliably a test excludes samples without that substance. A system that flags nearly everything may appear cautious but generate large numbers of false alarms, using staff time and resources.",
+      "example_vi": "So sánh hữu ích bắt đầu với độ nhạy, khả năng nhận ra trường hợp thực sự có chất cần tìm. Độ nhạy cao giảm trường hợp bỏ sót, nhưng không phải tiêu chí duy nhất. Độ đặc hiệu đo khả năng xét nghiệm loại đúng mẫu không có chất đó. Hệ thống báo động gần như mọi mẫu có thể trông thận trọng nhưng tạo nhiều cảnh báo giả, tiêu tốn thời gian và nguồn lực.",
+      "source_turn_id": "T02"
+    },
+    {
+      "term": "calibration",
+      "pos": "n.",
+      "meaning_vi": "hiệu chuẩn",
+      "example_en": "Operational factors then enter the decision. A highly accurate instrument might need specialist maintenance and a stable power supply, while a portable device may tolerate rough handling. Choosing between them involves more than technical rankings. Field teams should record calibration needs, supply costs and the time required to train operators. These practical conditions shape whether reliable results are possible outside a laboratory.",
+      "example_vi": "Yếu tố vận hành tiếp tục tham gia quyết định. Thiết bị rất chính xác có thể cần bảo trì chuyên môn và nguồn điện ổn định, trong khi thiết bị di động chịu thao tác mạnh hơn. Chọn giữa chúng không chỉ là xếp hạng kỹ thuật. Nhóm thực địa cần ghi nhu cầu hiệu chuẩn, chi phí vật tư và thời gian đào tạo. Điều kiện thực tế ấy quyết định có thể tạo kết quả tin cậy ngoài lab hay không.",
+      "source_turn_id": "T04"
+    }
+  ],
+  "audio": {
+    "status": "not_generated",
+    "url": null,
+    "duration_ms": null,
+    "model": null,
+    "provider": null,
+    "voice_config": null,
+    "source_transcript_hash": "99ca0a0cebefa9cf7846f73a3669458a28a3893180a8fd7f7a425b8a631b6a68",
+    "audio_sha256": null,
+    "format": null
+  },
+  "qa": {
+    "content_reviewed": false,
+    "answers_verified": false,
+    "audio_verified": false,
+    "rights_cleared": false,
+    "duplicate_reviewed": false,
+    "notes": [
+      "Original AI-assisted educational script, not an official IELTS transcript.",
+      "Editorial, academic and linguistic review pending.",
+      "Audio/TTS not generated; text-to-speech distribution rights must be confirmed before use, especially for minors.",
+      "Six IELTS-style practice questions per lesson; this is not a full official Part 4 test or a calibrated IELTS Band test.",
+      "M16.2: automated edits are provisional; IELTS teacher final signoff, audio and rights clearance pending."
+    ]
+  },
+  "provenance": {
+    "content_origin": "original_ai_assisted",
+    "source_urls": [],
+    "source_rights_note": "Original transcript and translation drafts; verify academic claims and terms, and TTS provider redistribution conditions before release.",
+    "reviewer": null
+  },
+  "release_metadata": {
+    "published_at": null,
+    "version": 1
+  }
+}

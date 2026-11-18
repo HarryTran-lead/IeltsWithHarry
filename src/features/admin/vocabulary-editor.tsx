@@ -50,29 +50,29 @@ export function VocabularyEditor({ lessonId }: { lessonId: string }) {
     else { reset(); await load(); }
   }
   async function remove(id: string) {
-    if (!window.confirm("Delete this vocabulary entry?")) return;
+    if (!window.confirm("Xóa mục từ vựng này?")) return;
     const result = await supabase.from("vocabulary_entries").delete().eq("id", id);
     if (result.error) setError(result.error.message);
     else await load();
   }
   return <div className="admin-vocabulary">
-    <h3>Vocabulary</h3>
+    <h3>Từ vựng</h3>
     {entries.map((entry) => <div className="admin-row" key={entry.id}>
       <div><strong>{entry.word} · {entry.meaning_vi}</strong><small>{entry.example}</small></div>
-      <div><button className="button subtle" onClick={() => { setEditingId(entry.id); setForm({ word: entry.word, phonetic: entry.phonetic, meaning_vi: entry.meaning_vi, definition: entry.definition, example: entry.example, sentence_prompt_vi: entry.sentence_prompt_vi, accepted_sentences: entry.accepted_sentences.join('\n') }); }}>Edit</button>
-        <button className="button subtle" onClick={() => void remove(entry.id)}>Delete</button></div>
+      <div><button className="button subtle" onClick={() => { setEditingId(entry.id); setForm({ word: entry.word, phonetic: entry.phonetic, meaning_vi: entry.meaning_vi, definition: entry.definition, example: entry.example, sentence_prompt_vi: entry.sentence_prompt_vi, accepted_sentences: entry.accepted_sentences.join('\n') }); }}>Sửa</button>
+        <button className="button subtle" onClick={() => void remove(entry.id)}>Xóa</button></div>
     </div>)}
     <form className="admin-content-form" onSubmit={save}>
-      <h4>{editingId ? "Edit vocabulary" : "Add vocabulary"}</h4>
-      <label>Word or phrase<input required maxLength={100} value={form.word} onChange={(event) => setForm({ ...form, word: event.target.value })} /></label>
-      <label>Pronunciation<input maxLength={100} value={form.phonetic} onChange={(event) => setForm({ ...form, phonetic: event.target.value })} /></label>
-      <label>Vietnamese meaning<input required maxLength={200} value={form.meaning_vi} onChange={(event) => setForm({ ...form, meaning_vi: event.target.value })} /></label>
-      <label>Definition<textarea value={form.definition} onChange={(event) => setForm({ ...form, definition: event.target.value })} /></label>
-      <label>Example<textarea value={form.example} onChange={(event) => setForm({ ...form, example: event.target.value })} /></label>
+      <h4>{editingId ? "Sửa từ vựng" : "Thêm từ vựng"}</h4>
+      <label>Từ hoặc cụm từ<input required maxLength={100} value={form.word} onChange={(event) => setForm({ ...form, word: event.target.value })} /></label>
+      <label>Phiên âm<input maxLength={100} value={form.phonetic} onChange={(event) => setForm({ ...form, phonetic: event.target.value })} /></label>
+      <label>Nghĩa tiếng Việt<input required maxLength={200} value={form.meaning_vi} onChange={(event) => setForm({ ...form, meaning_vi: event.target.value })} /></label>
+      <label>Định nghĩa<textarea value={form.definition} onChange={(event) => setForm({ ...form, definition: event.target.value })} /></label>
+      <label>Ví dụ<textarea value={form.example} onChange={(event) => setForm({ ...form, example: event.target.value })} /></label>
       <label>Yêu cầu đặt câu (tiếng Việt)<textarea value={form.sentence_prompt_vi} onChange={(event) => setForm({ ...form, sentence_prompt_vi: event.target.value })} /></label>
       <label>Các câu được chấp nhận · mỗi dòng một câu<textarea value={form.accepted_sentences} onChange={(event) => setForm({ ...form, accepted_sentences: event.target.value })} /></label>
-      <div><button className="button primary" disabled={busy}>{busy ? "Saving…" : editingId ? "Save word" : "Add word"}</button>
-        {editingId && <button type="button" className="button subtle" onClick={reset}>Cancel edit</button>}</div>
+      <div><button className="button primary" disabled={busy}>{busy ? "Saving…" : editingId ? "Lưu từ" : "Thêm từ"}</button>
+        {editingId && <button type="button" className="button subtle" onClick={reset}>Hủy sửa</button>}</div>
     </form>
     {error && <p role="alert" className="form-error">{error}</p>}
   </div>;

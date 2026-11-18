@@ -1,0 +1,627 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "S2-EXP-002",
+  "status": "draft_pending_audio",
+  "level": "L5",
+  "section": 2,
+  "topic": "Library renovation",
+  "title": "Alderbrook Community Library",
+  "learning_objectives_vi": [
+    "Lần theo những lối đi đa dạng trên bản đồ, không dựa vào bố cục ô lưới.",
+    "Nhận diện mốc cố định rồi kết hợp hướng la bàn để chọn đúng vị trí.",
+    "Phân biệt những thông tin cũ và thông tin cuối cùng trong câu hỏi điền từ."
+  ],
+  "content_format": "section_practice",
+  "target_skills": [
+    "map_navigation",
+    "compass_orientation",
+    "detail_accuracy",
+    "distractor_rejection"
+  ],
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Venue guide",
+      "accent_requested": "australian",
+      "tts_voice_id": null
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "Welcome to Alderbrook Community Library. I'll give the practical information after explaining the site layout. The library spine is the route open to visitors today. Locate east entrance on the plan before following my directions; the compass arrow points north.",
+      "translation_vi": "Chào mừng đến Alderbrook Community Library. Hãy tìm east entrance trên sơ đồ, sau đó đi theo library spine. Mũi tên chỉ hướng Bắc.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "orientation",
+        "map_reading"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "A",
+      "text_en": "People working on longer assignments should choose the northern rooms because the entrance area is much busier in the afternoon. The fixed landmarks are labelled by name, while the places you need to identify are marked only A to H. Listen for a landmark and a direction; do not guess from the order of letters.",
+      "translation_vi": "Các mốc cố định có tên sẵn, còn những vị trí cần xác định được đánh dấu A đến H. Hãy nghe mốc và hướng di chuyển.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "orientation",
+        "compass"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "A",
+      "text_en": "There's a useful sign for the Return Slot on the plan. Immediately south of it is a lettered location: that's where you'll find Digital Lab. People sometimes choose the more distant area, but that isn't the right one.",
+      "translation_vi": "Hãy xác định mốc Return Slot trên sơ đồ. Digital Lab nằm ngay phía nam của mốc đó. Không chọn các khu xa hơn.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "map_navigation",
+        "location_C"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "A",
+      "text_en": "Now find the Reading Nook. From that landmark, look north to the nearest lettered point. That's where you'll find Reception Counter. Don't confuse it with the other lettered buildings further away.",
+      "translation_vi": "Hãy xác định mốc Reading Nook trên sơ đồ. Reception Counter nằm ngay phía bắc của mốc đó. Không chọn các khu xa hơn.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "map_navigation",
+        "location_A"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "A",
+      "text_en": "First locate the Stairwell on the visitor plan. You'll find Print Station at the lettered location immediately north-west of it. Check the position against the nearest other buildings before moving on.",
+      "translation_vi": "Hãy xác định mốc Stairwell trên sơ đồ. Print Station nằm ngay phía tây bắc của mốc đó. Không chọn các khu xa hơn.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "map_navigation",
+        "location_G"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "A",
+      "text_en": "If you're looking for Study Booths, use the Help Point as your reference point. Choose the nearest lettered location directly west of that landmark. Other marked areas are for different activities.",
+      "translation_vi": "Hãy xác định mốc Help Point trên sơ đồ. Study Booths nằm ngay phía tây của mốc đó. Không chọn các khu xa hơn.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "map_navigation",
+        "location_H"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "As for booking details, Replacing a lost library card now costs three pounds, although renewing an existing card is still free.",
+      "translation_vi": null,
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "practical_information",
+        "distractor_detection"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "A",
+      "text_en": "There is also a useful change to note: Computer sessions are limited to 45 minutes during the exam period; the old one-hour rule no longer applies.",
+      "translation_vi": null,
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "practical_information",
+        "distractor_detection"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T09",
+      "speaker_id": "A",
+      "text_en": "Before you arrive, remember this: The picture-book event is held on Saturday, not on Sunday as the first newsletter announced.",
+      "translation_vi": null,
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "practical_information",
+        "distractor_detection"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T10",
+      "speaker_id": "A",
+      "text_en": "Turning to the practical information, For photocopying and printing, buy tokens at reception rather than putting cash directly into the machines.",
+      "translation_vi": null,
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "practical_information",
+        "distractor_detection"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T11",
+      "speaker_id": "A",
+      "text_en": "Please ask a librarian before moving any of the mobile display boards; the route needs to stay clear for wheelchair access. The visitor team at Alderbrook Community Library will answer any remaining questions after the tour.",
+      "translation_vi": null,
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "closing"
+      ],
+      "bank_role": "training"
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "group_id": "MAP_Q01_TO_04",
+      "type": "map_labelling",
+      "prompt": "Digital Lab",
+      "correct_answers": [
+        "C"
+      ],
+      "correct_option": "C",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G",
+        "H"
+      ],
+      "word_limit": null,
+      "scoring_policy": "map_letter",
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "evidence_excerpt_en": "There's a useful sign for the Return Slot on the plan. Immediately south of it is a lettered location: that's where you'll find Digital Lab. People sometimes choose the more distant area, but that isn't the right one.",
+      "explanation_vi": "Trên sơ đồ mới, tìm mốc Return Slot, rồi nhìn ngay phía nam. Khu được đánh dấu C là Digital Lab.",
+      "question_tags": [
+        "m22",
+        "map_navigation",
+        "section_2_practice"
+      ],
+      "answer_source": "spoken_spatial_directions",
+      "map_asset_id": "M22-MAP-002"
+    },
+    {
+      "question_id": "Q02",
+      "group_id": "MAP_Q01_TO_04",
+      "type": "map_labelling",
+      "prompt": "Reception Counter",
+      "correct_answers": [
+        "A"
+      ],
+      "correct_option": "A",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G",
+        "H"
+      ],
+      "word_limit": null,
+      "scoring_policy": "map_letter",
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "evidence_excerpt_en": "Now find the Reading Nook. From that landmark, look north to the nearest lettered point. That's where you'll find Reception Counter. Don't confuse it with the other lettered buildings further away.",
+      "explanation_vi": "Trên sơ đồ mới, tìm mốc Reading Nook, rồi nhìn ngay phía bắc. Khu được đánh dấu A là Reception Counter.",
+      "question_tags": [
+        "m22",
+        "map_navigation",
+        "section_2_practice"
+      ],
+      "answer_source": "spoken_spatial_directions",
+      "map_asset_id": "M22-MAP-002"
+    },
+    {
+      "question_id": "Q03",
+      "group_id": "MAP_Q01_TO_04",
+      "type": "map_labelling",
+      "prompt": "Print Station",
+      "correct_answers": [
+        "G"
+      ],
+      "correct_option": "G",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G",
+        "H"
+      ],
+      "word_limit": null,
+      "scoring_policy": "map_letter",
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "evidence_excerpt_en": "First locate the Stairwell on the visitor plan. You'll find Print Station at the lettered location immediately north-west of it. Check the position against the nearest other buildings before moving on.",
+      "explanation_vi": "Trên sơ đồ mới, tìm mốc Stairwell, rồi nhìn ngay phía tây bắc. Khu được đánh dấu G là Print Station.",
+      "question_tags": [
+        "m22",
+        "map_navigation",
+        "section_2_practice"
+      ],
+      "answer_source": "spoken_spatial_directions",
+      "map_asset_id": "M22-MAP-002"
+    },
+    {
+      "question_id": "Q04",
+      "group_id": "MAP_Q01_TO_04",
+      "type": "map_labelling",
+      "prompt": "Study Booths",
+      "correct_answers": [
+        "H"
+      ],
+      "correct_option": "H",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G",
+        "H"
+      ],
+      "word_limit": null,
+      "scoring_policy": "map_letter",
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "evidence_excerpt_en": "If you're looking for Study Booths, use the Help Point as your reference point. Choose the nearest lettered location directly west of that landmark. Other marked areas are for different activities.",
+      "explanation_vi": "Trên sơ đồ mới, tìm mốc Help Point, rồi nhìn ngay phía tây. Khu được đánh dấu H là Study Booths.",
+      "question_tags": [
+        "m22",
+        "map_navigation",
+        "section_2_practice"
+      ],
+      "answer_source": "spoken_spatial_directions",
+      "map_asset_id": "M22-MAP-002"
+    },
+    {
+      "question_id": "Q05",
+      "group_id": "NOTES_Q05_TO_08",
+      "type": "note_completion",
+      "prompt": "Library card replacement: ____",
+      "correct_answers": [
+        "three pounds"
+      ],
+      "spoken_answer": "three pounds",
+      "word_limit": 3,
+      "scoring_policy": "controlled_variants",
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "evidence_excerpt_en": "Replacing a lost library card now costs three pounds, although renewing an existing card is still free.",
+      "explanation_vi": "Nghe thông tin cuối cùng về library card replacement; đáp án là “three pounds”, không chọn thông tin cũ hoặc phương án bị loại.",
+      "question_tags": [
+        "m22",
+        "note_completion",
+        "section_2_practice"
+      ],
+      "answer_source": "literal_spoken_wording"
+    },
+    {
+      "question_id": "Q06",
+      "group_id": "NOTES_Q05_TO_08",
+      "type": "note_completion",
+      "prompt": "Computer booking limit: ____",
+      "correct_answers": [
+        "45 minutes"
+      ],
+      "spoken_answer": "45 minutes",
+      "word_limit": 3,
+      "scoring_policy": "controlled_variants",
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "evidence_excerpt_en": "Computer sessions are limited to 45 minutes during the exam period; the old one-hour rule no longer applies.",
+      "explanation_vi": "Nghe thông tin cuối cùng về computer booking limit; đáp án là “45 minutes”, không chọn thông tin cũ hoặc phương án bị loại.",
+      "question_tags": [
+        "m22",
+        "note_completion",
+        "section_2_practice"
+      ],
+      "answer_source": "literal_spoken_wording"
+    },
+    {
+      "question_id": "Q07",
+      "group_id": "NOTES_Q05_TO_08",
+      "type": "note_completion",
+      "prompt": "Children’s reading day: ____",
+      "correct_answers": [
+        "Saturday"
+      ],
+      "spoken_answer": "Saturday",
+      "word_limit": 3,
+      "scoring_policy": "controlled_variants",
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "evidence_excerpt_en": "The picture-book event is held on Saturday, not on Sunday as the first newsletter announced.",
+      "explanation_vi": "Nghe thông tin cuối cùng về children’s reading day; đáp án là “Saturday”, không chọn thông tin cũ hoặc phương án bị loại.",
+      "question_tags": [
+        "m22",
+        "note_completion",
+        "section_2_practice"
+      ],
+      "answer_source": "literal_spoken_wording"
+    },
+    {
+      "question_id": "Q08",
+      "group_id": "NOTES_Q05_TO_08",
+      "type": "note_completion",
+      "prompt": "Printing payment: ____",
+      "correct_answers": [
+        "tokens"
+      ],
+      "spoken_answer": "tokens",
+      "word_limit": 3,
+      "scoring_policy": "controlled_variants",
+      "evidence_turn_ids": [
+        "T10"
+      ],
+      "evidence_excerpt_en": "For photocopying and printing, buy tokens at reception rather than putting cash directly into the machines.",
+      "explanation_vi": "Nghe thông tin cuối cùng về printing payment; đáp án là “tokens”, không chọn thông tin cũ hoặc phương án bị loại.",
+      "question_tags": [
+        "m22",
+        "note_completion",
+        "section_2_practice"
+      ],
+      "answer_source": "literal_spoken_wording"
+    }
+  ],
+  "question_groups": [
+    {
+      "group_id": "MAP_Q01_TO_04",
+      "question_ids": [
+        "Q01",
+        "Q02",
+        "Q03",
+        "Q04"
+      ],
+      "question_type": "map_labelling",
+      "instructions_en": "Label the plan. Choose the correct letter A–H for each place. Follow the named landmarks and directions in the audio.",
+      "map_asset_id": "M22-MAP-002",
+      "map_asset_path": "04_MAP_ASSETS_CLIENT_SAFE/M22_MAP_002.svg",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G",
+        "H"
+      ]
+    },
+    {
+      "group_id": "NOTES_Q05_TO_08",
+      "question_ids": [
+        "Q05",
+        "Q06",
+        "Q07",
+        "Q08"
+      ],
+      "question_type": "note_completion",
+      "instructions_en": "Complete the notes. Write NO MORE THAN THREE WORDS AND/OR A NUMBER for each answer."
+    }
+  ],
+  "vocabulary": [
+    {
+      "expression_en": "Digital Lab",
+      "meaning_vi": "Vị trí Digital Lab trên sơ đồ; luyện nghe định hướng tương đối so với Return Slot.",
+      "part_of_speech": "noun phrase",
+      "example_en": "There's a useful sign for the Return Slot on the plan. Immediately south of it is a lettered location: that's where you'll find Digital Lab. People sometimes choose the more distant area, but that isn't the right one.",
+      "can_save_to_notebook": true
+    },
+    {
+      "expression_en": "Reception Counter",
+      "meaning_vi": "Vị trí Reception Counter trên sơ đồ; luyện nghe định hướng tương đối so với Reading Nook.",
+      "part_of_speech": "noun phrase",
+      "example_en": "Now find the Reading Nook. From that landmark, look north to the nearest lettered point. That's where you'll find Reception Counter. Don't confuse it with the other lettered buildings further away.",
+      "can_save_to_notebook": true
+    },
+    {
+      "expression_en": "Print Station",
+      "meaning_vi": "Vị trí Print Station trên sơ đồ; luyện nghe định hướng tương đối so với Stairwell.",
+      "part_of_speech": "noun phrase",
+      "example_en": "First locate the Stairwell on the visitor plan. You'll find Print Station at the lettered location immediately north-west of it. Check the position against the nearest other buildings before moving on.",
+      "can_save_to_notebook": true
+    },
+    {
+      "expression_en": "Study Booths",
+      "meaning_vi": "Vị trí Study Booths trên sơ đồ; luyện nghe định hướng tương đối so với Help Point.",
+      "part_of_speech": "noun phrase",
+      "example_en": "If you're looking for Study Booths, use the Help Point as your reference point. Choose the nearest lettered location directly west of that landmark. Other marked areas are for different activities.",
+      "can_save_to_notebook": true
+    }
+  ],
+  "audio": {
+    "status": "not_generated",
+    "audio_url": null,
+    "audio_asset_id": null,
+    "duration_ms": null,
+    "source_text_sha256": "f686c8c0bb393f8fe730db409821d72f09e60038f8f09d5d84975d98a04a9cd4",
+    "generation_strategy": "one_continuous_monologue",
+    "aligned_turns": false
+  },
+  "learning_flow": {
+    "intro": {
+      "theory_vi": "IELTS Map Labelling yêu cầu tìm lối vào, mũi tên Bắc, các mốc cố định và con đường nối chúng. Không mặc định mọi lối vào ở phía Nam, không suy vị trí chỉ từ thứ tự A–H.",
+      "worked_examples": [
+        {
+          "prompt": "The activity area is immediately east of the old clock.",
+          "reason_vi": "Tìm Old Clock có ghi tên trên sơ đồ; từ đó nhìn sang phía Đông (bên phải nếu Bắc ở trên) để xác định ô chữ cái."
+        }
+      ],
+      "common_mistakes_vi": [
+        "Giả định mọi bản đồ đều có lối vào phía Nam.",
+        "Chọn chữ cái trước khi nghe mốc cố định.",
+        "Bỏ qua các từ immediately, across, rather than và north-east."
+      ]
+    },
+    "after_submit": {
+      "unlock_transcript": true,
+      "unlock_answers": true,
+      "dictation_turns": [
+        "T03",
+        "T07"
+      ]
+    }
+  },
+  "map_asset": {
+    "map_asset_id": "M22-MAP-002",
+    "asset_path": "04_MAP_ASSETS_CLIENT_SAFE/M22_MAP_002.svg",
+    "orientation": "NORTH UP / ENTRANCE VARIES BY PLAN",
+    "location_key_server_only": {
+      "Digital Lab": "C",
+      "Reception Counter": "A",
+      "Print Station": "G",
+      "Study Booths": "H"
+    },
+    "human_spatial_review_required": true,
+    "answer_key_is_server_only": true,
+    "layout_type": "interior",
+    "source_map_version": "m22-map-v2-distinct",
+    "entry_point": "EAST ENTRANCE",
+    "route_name": "library spine",
+    "letter_coordinates_server_only": {
+      "C": {
+        "x": 565,
+        "y": 420
+      },
+      "A": {
+        "x": 155,
+        "y": 380
+      },
+      "G": {
+        "x": 170,
+        "y": 190
+      },
+      "H": {
+        "x": 710,
+        "y": 180
+      },
+      "F": {
+        "x": 355,
+        "y": 180
+      },
+      "B": {
+        "x": 520,
+        "y": 190
+      },
+      "E": {
+        "x": 720,
+        "y": 325
+      },
+      "D": {
+        "x": 365,
+        "y": 410
+      }
+    },
+    "reference_landmarks_server_only": [
+      {
+        "name": "Return Slot",
+        "x": 565,
+        "y": 353,
+        "letter": "C"
+      },
+      {
+        "name": "Reading Nook",
+        "x": 155,
+        "y": 447,
+        "letter": "A"
+      },
+      {
+        "name": "Stairwell",
+        "x": 222,
+        "y": 242,
+        "letter": "G"
+      },
+      {
+        "name": "Help Point",
+        "x": 775,
+        "y": 180,
+        "letter": "H"
+      }
+    ],
+    "direction_evidence_server_only": {
+      "Q01": {
+        "landmark": "Return Slot",
+        "compass_direction": "south",
+        "answer_letter": "C"
+      },
+      "Q02": {
+        "landmark": "Reading Nook",
+        "compass_direction": "north",
+        "answer_letter": "A"
+      },
+      "Q03": {
+        "landmark": "Stairwell",
+        "compass_direction": "north-west",
+        "answer_letter": "G"
+      },
+      "Q04": {
+        "landmark": "Help Point",
+        "compass_direction": "west",
+        "answer_letter": "H"
+      }
+    }
+  },
+  "qa": {
+    "automated_data_validation": "passed_scope_spatial_reference_and_text_containment",
+    "human_transcript_approved": false,
+    "human_audio_approved": false,
+    "human_map_approved": false,
+    "human_translation_approved": false,
+    "release_eligible": false,
+    "estimated_word_count": 350,
+    "visual_diversity_review": "pending_human_check",
+    "previous_map_replaced_reason": "identical_2x4_grid_template"
+  },
+  "provenance": {
+    "source_type": "original_authored",
+    "authoring_milestone": "M22",
+    "reference_copying": false,
+    "target_bank": "training"
+  },
+  "release_metadata": {
+    "version": "m22.1.0-distinct-maps",
+    "published": false,
+    "needs_audio": true,
+    "requires_human_approval": true,
+    "import_policy": "replace_draft_only_or_explicit_version_migration",
+    "target_bank": "training",
+    "no_bands": true
+  }
+}

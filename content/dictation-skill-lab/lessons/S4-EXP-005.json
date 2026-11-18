@@ -1,0 +1,742 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "S4-EXP-005",
+  "status": "draft",
+  "level": "L7",
+  "section": 4,
+  "topic": "Landscape ecology and urban biodiversity",
+  "title": "Making Cities Safer for Pollinators",
+  "learning_objectives_vi": [
+    "Theo dõi lập luận học thuật: định nghĩa → chứng cứ → hạn chế → kết luận.",
+    "Nghe từ khóa, từ đồng nghĩa và cấu trúc nguyên nhân–kết quả trong bài độc thoại.",
+    "Hoàn thành Note/Table/Summary/Sentence hoặc Flow-chart theo thứ tự audio với giới hạn từ."
+  ],
+  "content_format": "section_practice",
+  "target_skills": [
+    "pollinator_corridors",
+    "academic_lecture",
+    "note_completion",
+    "summary_completion",
+    "signposting",
+    "paraphrase"
+  ],
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Academic lecturer",
+      "accent_requested": "british",
+      "tts_voice_id": null
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "When people hear the word pollinator, they often picture a honeybee. But many wild bees, butterflies, flies and other animals move pollen between flowers. Urban planners are interested in protecting this diversity, not simply increasing the number of managed hives. Our focus today is on habitat connectivity, the extent to which insects can move between suitable feeding and nesting areas.",
+      "translation_vi": "Khi nghe từ sinh vật thụ phấn, ta thường nghĩ đến ong mật, nhưng còn ong hoang dã, bướm, ruồi và nhiều loài khác. Quy hoạch đô thị quan tâm bảo vệ đa dạng này, không chỉ tăng số tổ ong nuôi. Hôm nay tập trung vào tính kết nối sinh cảnh: côn trùng có thể di chuyển giữa nơi ăn và làm tổ ở mức nào.",
+      "start_ms": null,
+      "end_ms": null,
+      "paragraph_index": 1,
+      "bank_role": "training",
+      "skill_tags": [
+        "m24",
+        "ielts_part_4_practice",
+        "pollinator_corridors",
+        "academic_lecture",
+        "paraphrase",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "A",
+      "text_en": "A garden rich in flowers may still be isolated from other green spaces by roads and walls. Some insects can cross these gaps easily; others have shorter flight ranges. Therefore the distance between gardens should be judged against species-specific movement ranges. A design that works for a strong-flying butterfly may not help a tiny solitary bee.",
+      "translation_vi": "Vườn nhiều hoa vẫn có thể bị đường và tường ngăn cách với mảng xanh khác. Một số loài bay qua dễ, loài khác chỉ di chuyển ngắn. Vì vậy phải xét khoảng cách theo tầm di chuyển từng loài. Phương án phù hợp bướm bay khỏe chưa chắc giúp ong đơn độc nhỏ bé.",
+      "start_ms": null,
+      "end_ms": null,
+      "paragraph_index": 2,
+      "bank_role": "training",
+      "skill_tags": [
+        "m24",
+        "ielts_part_4_practice",
+        "pollinator_corridors",
+        "academic_lecture",
+        "paraphrase",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "A",
+      "text_en": "Another common mistake is to plant flowers that bloom at one spectacular moment and then disappear. Different pollinators need food during different months. Ecologists refer to the distribution of flowering dates as seasonal continuity. A modest site that supplies nectar from spring until autumn may support more species over time than a site with a brief, impressive display.",
+      "translation_vi": "Sai lầm khác là trồng hoa nở rộ cùng lúc rồi hết. Các loài cần thức ăn ở nhiều tháng khác nhau. Giới sinh thái học gọi sự phân bố mùa nở là tính liên tục theo mùa. Khu nhỏ có mật từ xuân đến thu có thể hỗ trợ nhiều loài hơn nơi hoa rực rỡ chỉ vài tuần.",
+      "start_ms": null,
+      "end_ms": null,
+      "paragraph_index": 3,
+      "bank_role": "training",
+      "skill_tags": [
+        "m24",
+        "ielts_part_4_practice",
+        "pollinator_corridors",
+        "academic_lecture",
+        "paraphrase",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "A",
+      "text_en": "The value of plants also depends on their shape. Some flowers are accessible to many insects, while others require particular mouthparts or behaviour. In a teaching survey, students counted visits to several flower types but did not assume each visit transferred pollen. They separated flower visits from confirmed pollination, because feeding behaviour and successful reproduction are not identical.",
+      "translation_vi": "Giá trị của cây còn tùy hình dạng hoa. Một số dễ tiếp cận, số khác đòi hỏi cấu tạo miệng đặc biệt. Trong khảo sát minh họa, sinh viên đếm lượt côn trùng thăm các loại hoa nhưng không mặc định mỗi lượt đều thụ phấn. Họ tách lượt thăm hoa khỏi việc thụ phấn thành công.",
+      "start_ms": null,
+      "end_ms": null,
+      "paragraph_index": 4,
+      "bank_role": "training",
+      "skill_tags": [
+        "m24",
+        "ielts_part_4_practice",
+        "pollinator_corridors",
+        "academic_lecture",
+        "paraphrase",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "A",
+      "text_en": "Nesting sites are easy to overlook. Bare soil, hollow stems and small cavities may be used by different species. When maintenance teams remove every dead stem and cover all soil with decorative material, they can eliminate valuable nesting habitat. A garden can therefore be attractive to visitors yet offer little opportunity for insects to reproduce.",
+      "translation_vi": "Nơi làm tổ dễ bị bỏ quên: đất trống, thân rỗng và hốc nhỏ được các loài khác nhau sử dụng. Khi dọn sạch mọi thân cây chết và phủ hết đất, nhân viên có thể xóa nơi làm tổ quan trọng. Khu vườn đẹp với người xem nhưng không đủ chỗ cho côn trùng sinh sản.",
+      "start_ms": null,
+      "end_ms": null,
+      "paragraph_index": 5,
+      "bank_role": "training",
+      "skill_tags": [
+        "m24",
+        "ielts_part_4_practice",
+        "pollinator_corridors",
+        "academic_lecture",
+        "paraphrase",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "A",
+      "text_en": "Street lighting adds a less obvious complication. Bright light at night can change the movement of nocturnal insects and alter interactions with flowers. The effects vary by species and light design. Researchers compare sites with different light intensity rather than assuming that every lamp has the same influence. The relevant question is what changes under actual conditions.",
+      "translation_vi": "Đèn đường là yếu tố ít hiển nhiên. Ánh sáng đêm có thể đổi đường bay của côn trùng đêm và tương tác với hoa, nhưng tác động tùy loài và thiết kế. Nhà nghiên cứu so sánh nơi có cường độ sáng khác nhau, không mặc định mọi bóng đèn ảnh hưởng như nhau.",
+      "start_ms": null,
+      "end_ms": null,
+      "paragraph_index": 6,
+      "bank_role": "training",
+      "skill_tags": [
+        "m24",
+        "ielts_part_4_practice",
+        "pollinator_corridors",
+        "academic_lecture",
+        "paraphrase",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "Community involvement matters because private gardens cover large areas that government departments do not directly manage. A single householder cannot build an ecological network, but several households can plant complementary species and reduce chemical spraying. Such joint action is sometimes called collective stewardship. It works best when residents receive clear guidance rather than a list of expensive products to buy.",
+      "translation_vi": "Hợp tác cộng đồng quan trọng vì vườn tư chiếm diện tích lớn ngoài quản lý trực tiếp của chính quyền. Một nhà không thể tạo mạng sinh thái, nhưng nhiều nhà cùng trồng loài bổ trợ và giảm phun hóa chất có thể giúp. Đó là quản lý gìn giữ tập thể, hiệu quả khi cư dân được hướng dẫn rõ ràng.",
+      "start_ms": null,
+      "end_ms": null,
+      "paragraph_index": 7,
+      "bank_role": "training",
+      "skill_tags": [
+        "m24",
+        "ielts_part_4_practice",
+        "pollinator_corridors",
+        "academic_lecture",
+        "paraphrase",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "A",
+      "text_en": "Finally, a pollinator corridor is not necessarily a straight strip of flowers. It may be a connected sequence of gardens, street trees and small unmanaged corners. Success should be assessed by changes in species and movement, not merely how many seedlings were planted. This requires repeated surveys across seasons, because a single warm afternoon can give a misleading impression of abundance.",
+      "translation_vi": "Cuối cùng hành lang sinh thái không nhất thiết là dải hoa thẳng; có thể là chuỗi vườn, cây đường phố và góc đất ít chăm sóc kết nối nhau. Thành công phải đo thay đổi về loài và di chuyển, không chỉ đếm cây mới trồng. Cần khảo sát lặp lại qua các mùa vì một chiều nắng ấm có thể làm số lượng quan sát tăng giả.",
+      "start_ms": null,
+      "end_ms": null,
+      "paragraph_index": 8,
+      "bank_role": "training",
+      "skill_tags": [
+        "m24",
+        "ielts_part_4_practice",
+        "pollinator_corridors",
+        "academic_lecture",
+        "paraphrase",
+        "signposting"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "group_id": "IELTS_NOTE_01_04",
+      "type": "note_completion",
+      "prompt": "Urban planners assess ____ between feeding and nesting areas.",
+      "correct_answers": [
+        "habitat connectivity"
+      ],
+      "evidence_turn_ids": [
+        "T01"
+      ],
+      "evidence_excerpt_en": "Our focus today is on habitat connectivity, the extent to which insects can move between suitable feeding and nesting areas.",
+      "explanation_vi": "Habitat connectivity là tính liên kết giữa các mảng môi trường sống.",
+      "question_tags": [
+        "m24",
+        "ielts_part_4_practice",
+        "pollinator_corridors",
+        "note_completion"
+      ],
+      "scoring_policy": "strict_spoken_words",
+      "bank_role": "training",
+      "answer_provenance": "original_draft_authored_against_transcript",
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS",
+      "review_status": "awaiting_teacher_and_audio_review"
+    },
+    {
+      "question_id": "Q02",
+      "group_id": "IELTS_NOTE_01_04",
+      "type": "note_completion",
+      "prompt": "Gaps between gardens must be assessed using insects' ____.",
+      "correct_answers": [
+        "movement ranges"
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "evidence_excerpt_en": "Therefore the distance between gardens should be judged against species-specific movement ranges.",
+      "explanation_vi": "Movement ranges chỉ khoảng cách loài có thể di chuyển phù hợp.",
+      "question_tags": [
+        "m24",
+        "ielts_part_4_practice",
+        "pollinator_corridors",
+        "note_completion"
+      ],
+      "scoring_policy": "strict_spoken_words",
+      "bank_role": "training",
+      "answer_provenance": "original_draft_authored_against_transcript",
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS",
+      "review_status": "awaiting_teacher_and_audio_review"
+    },
+    {
+      "question_id": "Q03",
+      "group_id": "IELTS_NOTE_01_04",
+      "type": "note_completion",
+      "prompt": "Flowering at different times provides ____.",
+      "correct_answers": [
+        "seasonal continuity"
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "evidence_excerpt_en": "Ecologists refer to the distribution of flowering dates as seasonal continuity.",
+      "explanation_vi": "Seasonal continuity đảm bảo nguồn hoa nối tiếp giữa các mùa.",
+      "question_tags": [
+        "m24",
+        "ielts_part_4_practice",
+        "pollinator_corridors",
+        "note_completion"
+      ],
+      "scoring_policy": "strict_spoken_words",
+      "bank_role": "training",
+      "answer_provenance": "original_draft_authored_against_transcript",
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS",
+      "review_status": "awaiting_teacher_and_audio_review"
+    },
+    {
+      "question_id": "Q04",
+      "group_id": "IELTS_NOTE_01_04",
+      "type": "note_completion",
+      "prompt": "A survey first counted insect ____ rather than confirmed pollination.",
+      "correct_answers": [
+        "flower visits"
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "evidence_excerpt_en": "They separated flower visits from confirmed pollination, because feeding behaviour and successful reproduction are not identical.",
+      "explanation_vi": "Lượt côn trùng ghé hoa là chỉ số quan sát, chưa chắc có thụ phấn.",
+      "question_tags": [
+        "m24",
+        "ielts_part_4_practice",
+        "pollinator_corridors",
+        "note_completion"
+      ],
+      "scoring_policy": "strict_spoken_words",
+      "bank_role": "training",
+      "answer_provenance": "original_draft_authored_against_transcript",
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS",
+      "review_status": "awaiting_teacher_and_audio_review"
+    },
+    {
+      "question_id": "Q05",
+      "group_id": "IELTS_TABLE_05_06",
+      "type": "table_completion",
+      "prompt": "Excessive tidying can remove essential ____.",
+      "correct_answers": [
+        "nesting habitat"
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "evidence_excerpt_en": "When maintenance teams remove every dead stem and cover all soil with decorative material, they can eliminate valuable nesting habitat.",
+      "explanation_vi": "Nesting habitat là nơi sinh vật làm tổ, khác nơi kiếm ăn.",
+      "question_tags": [
+        "m24",
+        "ielts_part_4_practice",
+        "pollinator_corridors",
+        "table_completion"
+      ],
+      "scoring_policy": "strict_spoken_words",
+      "bank_role": "training",
+      "answer_provenance": "original_draft_authored_against_transcript",
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS",
+      "review_status": "awaiting_teacher_and_audio_review"
+    },
+    {
+      "question_id": "Q06",
+      "group_id": "IELTS_TABLE_05_06",
+      "type": "table_completion",
+      "prompt": "Night-time studies compare sites with different ____.",
+      "correct_answers": [
+        "light intensity"
+      ],
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "evidence_excerpt_en": "Researchers compare sites with different light intensity rather than assuming that every lamp has the same influence.",
+      "explanation_vi": "Light intensity là mức mạnh yếu của nguồn sáng ban đêm.",
+      "question_tags": [
+        "m24",
+        "ielts_part_4_practice",
+        "pollinator_corridors",
+        "table_completion"
+      ],
+      "scoring_policy": "strict_spoken_words",
+      "bank_role": "training",
+      "answer_provenance": "original_draft_authored_against_transcript",
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS",
+      "review_status": "awaiting_teacher_and_audio_review"
+    },
+    {
+      "question_id": "Q07",
+      "group_id": "IELTS_SUMMARY_07_08",
+      "type": "summary_completion",
+      "prompt": "Coordinated action by residents is a form of ____.",
+      "correct_answers": [
+        "collective stewardship"
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "evidence_excerpt_en": "Such joint action is sometimes called collective stewardship.",
+      "explanation_vi": "Collective stewardship là cùng nhau chăm sóc, bảo vệ không gian chung.",
+      "question_tags": [
+        "m24",
+        "ielts_part_4_practice",
+        "pollinator_corridors",
+        "summary_completion"
+      ],
+      "scoring_policy": "strict_spoken_words",
+      "bank_role": "training",
+      "answer_provenance": "original_draft_authored_against_transcript",
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS",
+      "review_status": "awaiting_teacher_and_audio_review"
+    },
+    {
+      "question_id": "Q08",
+      "group_id": "IELTS_SUMMARY_07_08",
+      "type": "summary_completion",
+      "prompt": "Monitoring success requires ____ across the seasons.",
+      "correct_answers": [
+        "repeated surveys"
+      ],
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "evidence_excerpt_en": "This requires repeated surveys across seasons, because a single warm afternoon can give a misleading impression of abundance.",
+      "explanation_vi": "Repeated surveys cho phép so sánh nhiều thời điểm thay vì một lần đếm.",
+      "question_tags": [
+        "m24",
+        "ielts_part_4_practice",
+        "pollinator_corridors",
+        "summary_completion"
+      ],
+      "scoring_policy": "strict_spoken_words",
+      "bank_role": "training",
+      "answer_provenance": "original_draft_authored_against_transcript",
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS",
+      "review_status": "awaiting_teacher_and_audio_review"
+    },
+    {
+      "question_id": "D01",
+      "group_id": "SELECTIVE_DICTATION",
+      "type": "dictation",
+      "prompt": "Nghe đoạn trích từ phần 2 và chép lại chính xác câu được phát.",
+      "correct_answers": [
+        "Therefore the distance between gardens should be judged against species-specific movement ranges."
+      ],
+      "source_turn_id": "T02",
+      "source_char_start": 168,
+      "source_char_end": 265,
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "evidence_excerpt_en": "Therefore the distance between gardens should be judged against species-specific movement ranges.",
+      "explanation_vi": "Luyện nghe chính xác cả cụm từ học thuật và từ chức năng trong một câu hoàn chỉnh.",
+      "scoring_policy": "dictation_token_alignment",
+      "bank_role": "training",
+      "word_limit": null,
+      "review_status": "awaiting_teacher_and_audio_review"
+    },
+    {
+      "question_id": "D02",
+      "group_id": "SELECTIVE_DICTATION",
+      "type": "dictation",
+      "prompt": "Nghe đoạn trích từ phần 4 và chép lại chính xác câu được phát.",
+      "correct_answers": [
+        "They separated flower visits from confirmed pollination, because feeding behaviour and successful reproduction are not identical."
+      ],
+      "source_turn_id": "T04",
+      "source_char_start": 271,
+      "source_char_end": 400,
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "evidence_excerpt_en": "They separated flower visits from confirmed pollination, because feeding behaviour and successful reproduction are not identical.",
+      "explanation_vi": "Luyện nghe chính xác cả cụm từ học thuật và từ chức năng trong một câu hoàn chỉnh.",
+      "scoring_policy": "dictation_token_alignment",
+      "bank_role": "training",
+      "word_limit": null,
+      "review_status": "awaiting_teacher_and_audio_review"
+    },
+    {
+      "question_id": "D03",
+      "group_id": "SELECTIVE_DICTATION",
+      "type": "dictation",
+      "prompt": "Nghe đoạn trích từ phần 6 và chép lại chính xác câu được phát.",
+      "correct_answers": [
+        "Researchers compare sites with different light intensity rather than assuming that every lamp has the same influence."
+      ],
+      "source_turn_id": "T06",
+      "source_char_start": 200,
+      "source_char_end": 317,
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "evidence_excerpt_en": "Researchers compare sites with different light intensity rather than assuming that every lamp has the same influence.",
+      "explanation_vi": "Luyện nghe chính xác cả cụm từ học thuật và từ chức năng trong một câu hoàn chỉnh.",
+      "scoring_policy": "dictation_token_alignment",
+      "bank_role": "training",
+      "word_limit": null,
+      "review_status": "awaiting_teacher_and_audio_review"
+    },
+    {
+      "question_id": "D04",
+      "group_id": "SELECTIVE_DICTATION",
+      "type": "dictation",
+      "prompt": "Nghe đoạn trích từ phần 8 và chép lại chính xác câu được phát.",
+      "correct_answers": [
+        "This requires repeated surveys across seasons, because a single warm afternoon can give a misleading impression of abundance."
+      ],
+      "source_turn_id": "T08",
+      "source_char_start": 271,
+      "source_char_end": 396,
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "evidence_excerpt_en": "This requires repeated surveys across seasons, because a single warm afternoon can give a misleading impression of abundance.",
+      "explanation_vi": "Luyện nghe chính xác cả cụm từ học thuật và từ chức năng trong một câu hoàn chỉnh.",
+      "scoring_policy": "dictation_token_alignment",
+      "bank_role": "training",
+      "word_limit": null,
+      "review_status": "awaiting_teacher_and_audio_review"
+    },
+    {
+      "question_id": "G01",
+      "group_id": "POST_LISTEN_GAP_FILL",
+      "type": "gap_fill",
+      "prompt": "Nghe và điền phần thiếu: Ecologists refer to the distribution of flowering dates as ____.",
+      "correct_answers": [
+        "seasonal continuity"
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "evidence_excerpt_en": "Ecologists refer to the distribution of flowering dates as seasonal continuity.",
+      "explanation_vi": "Luyện ghi lại thuật ngữ chính xác sau khi đã hoàn thành lượt làm IELTS.",
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS",
+      "scoring_policy": "strict_spoken_words",
+      "bank_role": "training",
+      "unlock_after_ielts_submission": true,
+      "review_status": "awaiting_teacher_and_audio_review"
+    },
+    {
+      "question_id": "G02",
+      "group_id": "POST_LISTEN_GAP_FILL",
+      "type": "gap_fill",
+      "prompt": "Nghe và điền phần thiếu: Such joint action is sometimes called ____.",
+      "correct_answers": [
+        "collective stewardship"
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "evidence_excerpt_en": "Such joint action is sometimes called collective stewardship.",
+      "explanation_vi": "Luyện ghi lại thuật ngữ chính xác sau khi đã hoàn thành lượt làm IELTS.",
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS",
+      "scoring_policy": "strict_spoken_words",
+      "bank_role": "training",
+      "unlock_after_ielts_submission": true,
+      "review_status": "awaiting_teacher_and_audio_review"
+    }
+  ],
+  "vocabulary": [
+    {
+      "vocab_id": "S4-EXP-005-V01",
+      "expression_en": "habitat connectivity",
+      "meaning_vi": "sự kết nối sinh cảnh",
+      "part_of_speech": "noun phrase",
+      "example_en": "Our focus today is on habitat connectivity, the extent to which insects can move between suitable feeding and nesting areas.",
+      "example_vi": "Khi nghe từ sinh vật thụ phấn, ta thường nghĩ đến ong mật, nhưng còn ong hoang dã, bướm, ruồi và nhiều loài khác. Quy hoạch đô thị quan tâm bảo vệ đa dạng này, không chỉ tăng số tổ ong nuôi. Hôm nay tập trung vào tính kết nối sinh cảnh: côn trùng có thể di chuyển giữa nơi ăn và làm tổ ở mức nào.",
+      "evidence_turn_id": "T01",
+      "can_save_to_notebook": true,
+      "requires_human_pos_verification": true
+    },
+    {
+      "vocab_id": "S4-EXP-005-V02",
+      "expression_en": "movement ranges",
+      "meaning_vi": "tầm di chuyển của các loài",
+      "part_of_speech": "noun phrase",
+      "example_en": "Therefore the distance between gardens should be judged against species-specific movement ranges.",
+      "example_vi": "Vườn nhiều hoa vẫn có thể bị đường và tường ngăn cách với mảng xanh khác. Một số loài bay qua dễ, loài khác chỉ di chuyển ngắn. Vì vậy phải xét khoảng cách theo tầm di chuyển từng loài. Phương án phù hợp bướm bay khỏe chưa chắc giúp ong đơn độc nhỏ bé.",
+      "evidence_turn_id": "T02",
+      "can_save_to_notebook": true,
+      "requires_human_pos_verification": true
+    },
+    {
+      "vocab_id": "S4-EXP-005-V03",
+      "expression_en": "seasonal continuity",
+      "meaning_vi": "sự liên tục theo mùa",
+      "part_of_speech": "noun phrase",
+      "example_en": "Ecologists refer to the distribution of flowering dates as seasonal continuity.",
+      "example_vi": "Sai lầm khác là trồng hoa nở rộ cùng lúc rồi hết. Các loài cần thức ăn ở nhiều tháng khác nhau. Giới sinh thái học gọi sự phân bố mùa nở là tính liên tục theo mùa. Khu nhỏ có mật từ xuân đến thu có thể hỗ trợ nhiều loài hơn nơi hoa rực rỡ chỉ vài tuần.",
+      "evidence_turn_id": "T03",
+      "can_save_to_notebook": true,
+      "requires_human_pos_verification": true
+    },
+    {
+      "vocab_id": "S4-EXP-005-V04",
+      "expression_en": "flower visits",
+      "meaning_vi": "lượt ghé thăm hoa",
+      "part_of_speech": "noun phrase",
+      "example_en": "They separated flower visits from confirmed pollination, because feeding behaviour and successful reproduction are not identical.",
+      "example_vi": "Giá trị của cây còn tùy hình dạng hoa. Một số dễ tiếp cận, số khác đòi hỏi cấu tạo miệng đặc biệt. Trong khảo sát minh họa, sinh viên đếm lượt côn trùng thăm các loại hoa nhưng không mặc định mỗi lượt đều thụ phấn. Họ tách lượt thăm hoa khỏi việc thụ phấn thành công.",
+      "evidence_turn_id": "T04",
+      "can_save_to_notebook": true,
+      "requires_human_pos_verification": true
+    },
+    {
+      "vocab_id": "S4-EXP-005-V05",
+      "expression_en": "nesting habitat",
+      "meaning_vi": "môi trường làm tổ",
+      "part_of_speech": "noun phrase",
+      "example_en": "When maintenance teams remove every dead stem and cover all soil with decorative material, they can eliminate valuable nesting habitat.",
+      "example_vi": "Nơi làm tổ dễ bị bỏ quên: đất trống, thân rỗng và hốc nhỏ được các loài khác nhau sử dụng. Khi dọn sạch mọi thân cây chết và phủ hết đất, nhân viên có thể xóa nơi làm tổ quan trọng. Khu vườn đẹp với người xem nhưng không đủ chỗ cho côn trùng sinh sản.",
+      "evidence_turn_id": "T05",
+      "can_save_to_notebook": true,
+      "requires_human_pos_verification": true
+    },
+    {
+      "vocab_id": "S4-EXP-005-V06",
+      "expression_en": "light intensity",
+      "meaning_vi": "cường độ ánh sáng",
+      "part_of_speech": "noun phrase",
+      "example_en": "Researchers compare sites with different light intensity rather than assuming that every lamp has the same influence.",
+      "example_vi": "Đèn đường là yếu tố ít hiển nhiên. Ánh sáng đêm có thể đổi đường bay của côn trùng đêm và tương tác với hoa, nhưng tác động tùy loài và thiết kế. Nhà nghiên cứu so sánh nơi có cường độ sáng khác nhau, không mặc định mọi bóng đèn ảnh hưởng như nhau.",
+      "evidence_turn_id": "T06",
+      "can_save_to_notebook": true,
+      "requires_human_pos_verification": true
+    }
+  ],
+  "audio": {
+    "status": "not_generated",
+    "audio_url": null,
+    "duration_ms": null,
+    "source_text_sha256": "4c74d05d4d4d930956f439ec2aa06a209127ea93613a278979c5bf4393265ac2",
+    "generation_strategy": "single_speaker_paragraph_tts_then_seamless_stitch",
+    "audio_asset_id": null,
+    "requires_human_naturalness_review": true,
+    "requires_timing_alignment": true
+  },
+  "learning_flow": {
+    "intro": {
+      "theory_vi": "Part 4 là bài giảng học thuật một người nói. Bài luyện này rèn khả năng theo dõi các ý từ khái niệm đến ví dụ, phương pháp và giới hạn của kết luận. Trước khi nghe, hãy đọc tiêu đề nhóm câu hỏi, dự đoán loại từ và không cố chép mọi chữ.",
+      "tip_vi": "Câu hỏi nghe xuất hiện theo thứ tự bài giảng. Chú ý từ nối như however, therefore, for example, finally; đáp án Completion phải lấy đúng từ đã nghe và không vượt quá giới hạn.",
+      "common_mistakes_vi": [
+        "Ghi từ có nghĩa gần đúng nhưng không xuất hiện trong lời nghe.",
+        "Không chú ý số nhiều hoặc dạng ghép của thuật ngữ.",
+        "Dừng quá lâu ở một câu và bỏ lỡ câu tiếp theo.",
+        "Chọn thông tin trong ví dụ rồi bỏ qua kết luận có điều kiện."
+      ],
+      "worked_examples": [
+        {
+          "audio_example_en": "The first trial used a plastic container, but a glass bottle was chosen for the final experiment.",
+          "question": "Final container: ____",
+          "answer": "glass bottle",
+          "explanation_vi": "Đáp án là phương án cuối; plastic container chỉ là lựa chọn ban đầu."
+        },
+        {
+          "audio_example_en": "The instrument measures pressure. It does not directly measure temperature.",
+          "question": "The instrument records ____.",
+          "answer": "pressure",
+          "explanation_vi": "Hãy lấy chính từ được nói và phân biệt điều được đo với điều không đo."
+        }
+      ]
+    },
+    "steps": [
+      "pre_listening",
+      "first_listen_ielts_questions",
+      "submit_ielts_first_pass",
+      "review_with_evidence",
+      "selective_dictation",
+      "gap_fill",
+      "summary"
+    ],
+    "ielts_question_ids": [
+      "Q01",
+      "Q02",
+      "Q03",
+      "Q04",
+      "Q05",
+      "Q06",
+      "Q07",
+      "Q08"
+    ],
+    "ielts_groups": [
+      {
+        "group_id": "IELTS_NOTE_01_04",
+        "type": "note_completion",
+        "instruction_en": "NO MORE THAN TWO WORDS",
+        "display_mode": "bullet_notes",
+        "group_heading": "Key concepts and evidence",
+        "items": [
+          {
+            "question_id": "Q01",
+            "prompt": "Urban planners assess ____ between feeding and nesting areas."
+          },
+          {
+            "question_id": "Q02",
+            "prompt": "Gaps between gardens must be assessed using insects' ____."
+          },
+          {
+            "question_id": "Q03",
+            "prompt": "Flowering at different times provides ____."
+          },
+          {
+            "question_id": "Q04",
+            "prompt": "A survey first counted insect ____ rather than confirmed pollination."
+          }
+        ],
+        "question_ids": [
+          "Q01",
+          "Q02",
+          "Q03",
+          "Q04"
+        ]
+      },
+      {
+        "group_id": "IELTS_TABLE_05_06",
+        "type": "table_completion",
+        "instruction_en": "NO MORE THAN TWO WORDS",
+        "display_mode": "two_column_table",
+        "group_heading": "Methods and comparisons",
+        "items": [
+          {
+            "question_id": "Q05",
+            "prompt": "Excessive tidying can remove essential ____."
+          },
+          {
+            "question_id": "Q06",
+            "prompt": "Night-time studies compare sites with different ____."
+          }
+        ],
+        "question_ids": [
+          "Q05",
+          "Q06"
+        ]
+      },
+      {
+        "group_id": "IELTS_SUMMARY_07_08",
+        "type": "summary_completion",
+        "instruction_en": "NO MORE THAN TWO WORDS",
+        "display_mode": "connected_summary",
+        "group_heading": "Interpretation and conclusions",
+        "items": [
+          {
+            "question_id": "Q07",
+            "prompt": "Coordinated action by residents is a form of ____."
+          },
+          {
+            "question_id": "Q08",
+            "prompt": "Monitoring success requires ____ across the seasons."
+          }
+        ],
+        "question_ids": [
+          "Q07",
+          "Q08"
+        ]
+      }
+    ],
+    "recommended_first_listen_play_limit": 1,
+    "practice_replay_allowed_after_first_attempt": true,
+    "word_count": 465,
+    "estimated_audio_minutes_at_135_wpm": 3.44,
+    "exposure_bank": "training",
+    "exam_simulation": false,
+    "mock_test": false,
+    "audio_alignment_required": true,
+    "answer_release_after_submission": true
+  },
+  "qa": {
+    "status": "awaiting_human_content_and_audio_review",
+    "automated_validation": "passed",
+    "human_transcript_approved": false,
+    "human_audio_approved": false,
+    "ielts_exam_equivalent": false,
+    "release_eligible": false
+  },
+  "provenance": {
+    "source_type": "original_authored",
+    "reference_copying": false,
+    "authoring_milestone": "M24",
+    "educational_examples": "Some case studies are illustrative rather than published research",
+    "scientific_fact_check_required": true,
+    "do_not_reuse_in_unseen_assessment_before_exposure_check": true
+  },
+  "release_metadata": {
+    "version": "m24.0.1",
+    "published": false,
+    "needs_audio": true,
+    "requires_human_approval": true,
+    "import_policy": "insert_only",
+    "target_bank": "training"
+  }
+}

@@ -1,0 +1,440 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "DICT-F2-003",
+  "status": "draft",
+  "level": "L2",
+  "section": 0,
+  "topic": "Foundation",
+  "title": "School and Classes",
+  "learning_objectives_vi": [
+    "Nghe câu trong lớp học",
+    "Nhận ra cụm ý nghĩa trước khi chép: ai làm gì, ở đâu, khi nào."
+  ],
+  "content_format": "sentence_drill",
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Foundation narrator",
+      "tts_voice_id": null,
+      "accent_requested": "australian"
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "Our English lesson begins at eight forty.",
+      "translation_vi": "Tiết tiếng Anh của chúng tôi bắt đầu lúc tám giờ bốn mươi.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "context",
+        "sentence_dictation",
+        "foundation_f2"
+      ]
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "A",
+      "text_en": "The teacher writes new words on the board.",
+      "translation_vi": "Giáo viên viết từ mới lên bảng.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "context",
+        "sentence_dictation",
+        "foundation_f2"
+      ]
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "A",
+      "text_en": "Please put your homework on my desk.",
+      "translation_vi": "Hãy đặt bài tập về nhà của em lên bàn cô.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "context",
+        "sentence_dictation",
+        "foundation_f2"
+      ]
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "A",
+      "text_en": "We have a short break after the second class.",
+      "translation_vi": "Chúng tôi nghỉ giải lao ngắn sau tiết thứ hai.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "context",
+        "sentence_dictation",
+        "foundation_f2"
+      ]
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "A",
+      "text_en": "I forgot my notebook but brought a pen.",
+      "translation_vi": "Tôi quên vở nhưng đã mang theo một cây bút.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "context",
+        "sentence_dictation",
+        "foundation_f2"
+      ]
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "A",
+      "text_en": "The library is open until five this afternoon.",
+      "translation_vi": "Thư viện mở cửa đến năm giờ chiều nay.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "context",
+        "sentence_dictation",
+        "foundation_f2"
+      ]
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "Could you repeat the last sentence, please?",
+      "translation_vi": "Bạn có thể nhắc lại câu cuối không?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "context",
+        "sentence_dictation",
+        "foundation_f2"
+      ]
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "A",
+      "text_en": "Our science project needs three more pictures.",
+      "translation_vi": "Dự án khoa học của nhóm cần thêm ba bức ảnh.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "context",
+        "sentence_dictation",
+        "foundation_f2"
+      ]
+    },
+    {
+      "turn_id": "T09",
+      "speaker_id": "A",
+      "text_en": "I sit beside the window during maths lessons.",
+      "translation_vi": "Tôi ngồi cạnh cửa sổ trong các tiết Toán.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "context",
+        "sentence_dictation",
+        "foundation_f2"
+      ]
+    },
+    {
+      "turn_id": "T10",
+      "speaker_id": "A",
+      "text_en": "The students are practising for Friday's presentation.",
+      "translation_vi": "Học sinh đang luyện tập cho bài thuyết trình thứ Sáu.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "context",
+        "sentence_dictation",
+        "foundation_f2"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "type": "dictation",
+      "prompt": "Nghe câu T01 rồi chép lại đúng những từ được nói.",
+      "correct_answers": [
+        "Our English lesson begins at eight forty."
+      ],
+      "evidence_turn_ids": [
+        "T01"
+      ],
+      "explanation_vi": "Begins có âm /z/ cuối; nghe rõ eight forty. Nghĩa: Tiết tiếng Anh của chúng tôi bắt đầu lúc tám giờ bốn mươi.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "context"
+      ]
+    },
+    {
+      "question_id": "Q02",
+      "type": "dictation",
+      "prompt": "Nghe câu T02 rồi chép lại đúng những từ được nói.",
+      "correct_answers": [
+        "The teacher writes new words on the board."
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Writes có /ts/ cuối; on the board là vị trí. Nghĩa: Giáo viên viết từ mới lên bảng.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "context"
+      ]
+    },
+    {
+      "question_id": "Q03",
+      "type": "dictation",
+      "prompt": "Nghe câu T03 rồi chép lại đúng những từ được nói.",
+      "correct_answers": [
+        "Please put your homework on my desk."
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Homework không đếm được; desk kết thúc bằng /sk/. Nghĩa: Hãy đặt bài tập về nhà của em lên bàn cô.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "context"
+      ]
+    },
+    {
+      "question_id": "Q04",
+      "type": "dictation",
+      "prompt": "Nghe câu T04 rồi chép lại đúng những từ được nói.",
+      "correct_answers": [
+        "We have a short break after the second class."
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Second phát âm âm đầu /s/ và kết thúc /nd/. Nghĩa: Chúng tôi nghỉ giải lao ngắn sau tiết thứ hai.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "context"
+      ]
+    },
+    {
+      "question_id": "Q05",
+      "type": "dictation",
+      "prompt": "Nghe câu T05 rồi chép lại đúng những từ được nói.",
+      "correct_answers": [
+        "I forgot my notebook but brought a pen."
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Forgot và brought đều ở quá khứ, đừng nghe thành forget/bring. Nghĩa: Tôi quên vở nhưng đã mang theo một cây bút.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "context"
+      ]
+    },
+    {
+      "question_id": "Q06",
+      "type": "dictation",
+      "prompt": "Nghe câu T06 rồi chép lại đúng những từ được nói.",
+      "correct_answers": [
+        "The library is open until five this afternoon."
+      ],
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "explanation_vi": "Until nối sát five; five có âm cuối /v/. Nghĩa: Thư viện mở cửa đến năm giờ chiều nay.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "context"
+      ]
+    },
+    {
+      "question_id": "Q07",
+      "type": "dictation",
+      "prompt": "Nghe câu T07 rồi chép lại đúng những từ được nói.",
+      "correct_answers": [
+        "Could you repeat the last sentence, please?"
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "Could you thường nối và yếu; nhận diện last sentence. Nghĩa: Bạn có thể nhắc lại câu cuối không?",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "context"
+      ]
+    },
+    {
+      "question_id": "Q08",
+      "type": "dictation",
+      "prompt": "Nghe câu T08 rồi chép lại đúng những từ được nói.",
+      "correct_answers": [
+        "Our science project needs three more pictures."
+      ],
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "explanation_vi": "Needs có /dz/ cuối và pictures là số nhiều. Nghĩa: Dự án khoa học của nhóm cần thêm ba bức ảnh.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "context"
+      ]
+    },
+    {
+      "question_id": "Q09",
+      "type": "dictation",
+      "prompt": "Nghe câu T09 rồi chép lại đúng những từ được nói.",
+      "correct_answers": [
+        "I sit beside the window during maths lessons."
+      ],
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "explanation_vi": "Beside khác besides; during chỉ thời gian. Nghĩa: Tôi ngồi cạnh cửa sổ trong các tiết Toán.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "context"
+      ]
+    },
+    {
+      "question_id": "Q10",
+      "type": "dictation",
+      "prompt": "Nghe câu T10 rồi chép lại đúng những từ được nói.",
+      "correct_answers": [
+        "The students are practising for Friday's presentation."
+      ],
+      "evidence_turn_ids": [
+        "T10"
+      ],
+      "explanation_vi": "Are practising có -ing; Friday's thể hiện sở hữu. Nghĩa: Học sinh đang luyện tập cho bài thuyết trình thứ Sáu.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "context"
+      ]
+    },
+    {
+      "question_id": "Q11",
+      "type": "word_choice",
+      "prompt": "Tiết tiếng Anh bắt đầu vào lúc nào?",
+      "options": [
+        "eight fourteen",
+        "eight thirty",
+        "eight forty"
+      ],
+      "correct_answers": [
+        "eight forty"
+      ],
+      "evidence_turn_ids": [
+        "T01"
+      ],
+      "explanation_vi": "T01 nói begins at eight forty.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "comprehension",
+        "meaning_check",
+        "context"
+      ]
+    },
+    {
+      "question_id": "Q12",
+      "type": "word_choice",
+      "prompt": "Thư viện mở cửa tới mấy giờ?",
+      "options": [
+        "nine",
+        "five",
+        "four"
+      ],
+      "correct_answers": [
+        "five"
+      ],
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "explanation_vi": "T06 có open until five.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "comprehension",
+        "meaning_check",
+        "context"
+      ]
+    }
+  ],
+  "vocabulary": [
+    {
+      "term": "homework",
+      "pos": "noun",
+      "meaning_vi": "bài tập về nhà",
+      "example_en": "Please put your homework on my desk.",
+      "example_vi": "Hãy đặt bài tập về nhà của em lên bàn cô.",
+      "source_turn_id": "T03"
+    },
+    {
+      "term": "short break",
+      "pos": "noun phrase",
+      "meaning_vi": "giờ nghỉ ngắn",
+      "example_en": "We have a short break after the second class.",
+      "example_vi": "Chúng tôi nghỉ giải lao ngắn sau tiết thứ hai.",
+      "source_turn_id": "T04"
+    },
+    {
+      "term": "repeat",
+      "pos": "verb",
+      "meaning_vi": "nhắc lại",
+      "example_en": "Could you repeat the last sentence, please?",
+      "example_vi": "Bạn có thể nhắc lại câu cuối không?",
+      "source_turn_id": "T07"
+    },
+    {
+      "term": "presentation",
+      "pos": "noun",
+      "meaning_vi": "bài thuyết trình",
+      "example_en": "The students are practising for Friday's presentation.",
+      "example_vi": "Học sinh đang luyện tập cho bài thuyết trình thứ Sáu.",
+      "source_turn_id": "T10"
+    }
+  ],
+  "audio": {
+    "status": "not_generated",
+    "url": null,
+    "duration_ms": null,
+    "model": null,
+    "provider": null,
+    "voice_config": null,
+    "source_transcript_hash": "059b3d274be43ece34f67e4f4597d268079ffa507a92e1fc3169b18853b189d7",
+    "audio_sha256": null,
+    "format": null
+  },
+  "qa": {
+    "content_reviewed": false,
+    "answers_verified": false,
+    "audio_verified": false,
+    "rights_cleared": false,
+    "duplicate_reviewed": false,
+    "notes": [
+      "Original AI-assisted authored draft. Human editorial review needed before publishing.",
+      "TTS audio and timestamps not produced. Keep lesson locked until audio verified.",
+      "If TTS output differs from canonical text, regenerate or update transcript and recheck evidence.",
+      "M16.2: automated edits are provisional; IELTS teacher final signoff, audio and rights clearance pending."
+    ]
+  },
+  "provenance": {
+    "content_origin": "original_ai_assisted",
+    "source_urls": [],
+    "source_rights_note": "Original material; inspect TTS provider terms, distribution rights and access restrictions before production.",
+    "reviewer": null
+  },
+  "release_metadata": {
+    "published_at": null,
+    "version": 1
+  }
+}

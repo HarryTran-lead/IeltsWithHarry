@@ -7,6 +7,8 @@ import { TopicArt } from "@/components/illustrations/topic-art";
 import { useOptionalNotebook } from "@/features/notebook/notebook-store";
 import { createClient } from "@/lib/supabase/browser";
 import { StarterVisual, type StarterVisualData } from "./starter-visual";
+import { BookOpen, Check, Compass, Highlighter, Languages, Lightbulb, MapPin, NotebookPen, Save, ScrollText, Star, Volume2 } from "lucide-react";
+import { Sticker } from "@/components/stickers/stickers";
 
 export type PackageActivity = {
   id: string;
@@ -360,14 +362,14 @@ export function OpenResponsePractice({
             className={`guided-tool-btn ${showHint[safeIndex] ? "is-active" : ""}`}
             onClick={() => setShowHint((prev) => ({ ...prev, [safeIndex]: !prev[safeIndex] }))}
           >
-            💡 {showHint[safeIndex] ? "Ẩn gợi ý" : "Gợi ý (Hint)"}
+            <Lightbulb size={16} aria-hidden="true" /> {showHint[safeIndex] ? "Ẩn gợi ý" : "Gợi ý (Hint)"}
           </button>
           <button
             type="button"
             className={`guided-tool-btn ${showTranslation[safeIndex] ? "is-active" : ""}`}
             onClick={() => setShowTranslation((prev) => ({ ...prev, [safeIndex]: !prev[safeIndex] }))}
           >
-            🌐 {showTranslation[safeIndex] ? "Ẩn bản dịch" : "Dịch câu hỏi"}
+            <Languages size={16} aria-hidden="true" /> {showTranslation[safeIndex] ? "Ẩn bản dịch" : "Dịch câu hỏi"}
           </button>
           <button
             type="button"
@@ -375,7 +377,7 @@ export function OpenResponsePractice({
             onClick={() => speakEnglishText(item.audio_text || item.prompt)}
             title="Nghe phát âm câu hỏi / câu mẫu"
           >
-            🔊 Nghe câu
+            <Volume2 size={16} aria-hidden="true" /> Nghe câu
           </button>
           {notebook && (
             <button
@@ -384,21 +386,21 @@ export function OpenResponsePractice({
               onClick={() => void handleSaveQuestionToNotebook()}
               disabled={Boolean(savedNotice[safeIndex])}
             >
-              {savedNotice[safeIndex] ? "✓ Đã lưu vào Sổ tay" : "🗒️ Lưu vào Sổ tay"}
+              {savedNotice[safeIndex] ? <><Check size={16} aria-hidden="true" /> Đã lưu vào Sổ tay</> : <><NotebookPen size={16} aria-hidden="true" /> Lưu vào Sổ tay</>}
             </button>
           )}
         </div>
 
         {showHint[safeIndex] && (
           <div className="guided-hint-box" role="note">
-            <strong>💡 Gợi ý làm bài:</strong>
+            <strong><Sticker name="bulb" size={24} pop={false} className="sticker-inline" />Gợi ý làm bài:</strong>
             <p>{hintText}</p>
           </div>
         )}
 
         {showTranslation[safeIndex] && (
           <div className="guided-translation-box" role="note">
-            <strong>🌐 Dịch & Hướng dẫn tiếng Việt:</strong>
+            <strong><Sticker name="globe" size={24} pop={false} className="sticker-inline" />Dịch & Hướng dẫn tiếng Việt:</strong>
             <p>{translationText}</p>
             {item.options_vi?.length ? (
               <ul className="guided-options-vi">
@@ -483,12 +485,12 @@ export function OpenResponsePractice({
                 className="guided-audio-inline"
                 onClick={() => speakEnglishText(item.audio_text || item.answer)}
               >
-                🔊 Nghe phát âm chuẩn
+                <Volume2 size={16} aria-hidden="true" /> Nghe phát âm chuẩn
               </button>
             </div>
             <p className="guided-feedback-answer">
               {item.open ? "Câu trả lời tham khảo" : "Đáp án biên soạn"}: <strong className="answer-highlight">{item.answer}</strong>
-              {item.location && <span className="guided-location-badge">📍 Dẫn chứng: {item.location}</span>}
+              {item.location && <span className="guided-location-badge"><MapPin size={13} aria-hidden="true" /> Dẫn chứng: {item.location}</span>}
             </p>
             {(item.explanation_vi || item.explanation) && (
               <div className="guided-feedback-explanation">
@@ -618,7 +620,7 @@ function VocabMasteryGrid({
                       onClick={() => speakEnglishText(word.en)}
                       title={`Nghe phát âm: ${word.en}`}
                     >
-                      🔊 Nghe
+                      <Volume2 size={16} aria-hidden="true" /> Nghe
                     </button>
                   </div>
                   <span className="v3-vocab-meaning">{word.vi}</span>
@@ -629,7 +631,7 @@ function VocabMasteryGrid({
                       disabled={alreadySaved}
                       onClick={() => void saveWord(word)}
                     >
-                      {alreadySaved ? "✓ Đã lưu sổ tay" : "☆ Lưu vào sổ tay"}
+                      {alreadySaved ? <><Check size={16} aria-hidden="true" /> Đã lưu sổ tay</> : <><Star size={16} aria-hidden="true" /> Lưu vào sổ tay</>}
                     </button>
                   )}
                 </div>
@@ -645,10 +647,10 @@ function VocabMasteryGrid({
                       title="Nghe câu ví dụ"
                       aria-label="Nghe câu ví dụ"
                     >
-                      🔊
+                      <Volume2 size={16} aria-hidden="true" />
                     </button>
                   </div>
-                  {word.example_vi && <p className="v3-vocab-example-vi">🌐 {word.example_vi}</p>}
+                  {word.example_vi && <p className="v3-vocab-example-vi"><Languages size={14} aria-hidden="true" /> {word.example_vi}</p>}
                 </div>
               )}
             </article>
@@ -776,7 +778,7 @@ export function ReadingStudioPractice({
             </button>
           </div>
           <button type="button" className="guided-tool-btn" onClick={highlightSelection} title="Bôi đen cụm từ trong bài đọc rồi bấm để tô sáng">
-            🖍️ Tô sáng từ khóa
+            <Highlighter size={16} aria-hidden="true" /> Tô sáng từ khóa
           </button>
           {currentHighlights.length > 0 && (
             <button
@@ -793,7 +795,7 @@ export function ReadingStudioPractice({
               className={`guided-tool-btn ${showStrategy ? "is-active" : ""}`}
               onClick={() => setShowStrategy((v) => !v)}
             >
-              🧭 Chiến lược đọc TV
+              <Compass size={16} aria-hidden="true" /> Chiến lược đọc TV
             </button>
           )}
         </div>
@@ -801,7 +803,7 @@ export function ReadingStudioPractice({
 
       {showStrategy && (
         <div className="v3-reading-strategy-banner">
-          <strong>🧭 Chiến lược xử lý bài đọc & phân bổ thời gian:</strong>
+          <strong><Sticker name="compass" size={24} pop={false} className="sticker-inline" />Chiến lược xử lý bài đọc & phân bổ thời gian:</strong>
           <ul>
             {current.strategy && <li>{current.strategy}</li>}
             {strategyLines.map((line, i) => (
@@ -935,7 +937,7 @@ export function ListeningStudioPractice({
       <div className="v3-listening-player-card">
         <div className="v3-listening-player-main">
           <div className="v3-listening-player-info">
-            <span className="eyebrow">🎧 TRÌNH PHÁT BÀI NGHE TRỰC TIẾP TRONG PHẦN THỰC HÀNH</span>
+            <span className="eyebrow"><Sticker name="headphones" size={22} pop={false} className="sticker-inline" />TRÌNH PHÁT BÀI NGHE TRỰC TIẾP TRONG PHẦN THỰC HÀNH</span>
             <h3>{current.title}</h3>
             <p>Bấm phát bài nghe ngay tại đây và trả lời từng câu hỏi bên dưới mà không cần chuyển tab.</p>
           </div>
@@ -974,7 +976,7 @@ export function ListeningStudioPractice({
                   className="button subtle"
                   onClick={() => setShowTranscript((v) => !v)}
                 >
-                  {showTranscript ? "Ẩn Transcript" : "📜 Mở Transcript đối chiếu"}
+                  {showTranscript ? "Ẩn Transcript" : <><ScrollText size={16} aria-hidden="true" /> Mở Transcript đối chiếu</>}
                 </button>
               )}
             </div>
@@ -990,9 +992,9 @@ export function ListeningStudioPractice({
         {showTranscript && current.script && (
           <div className="v3-listening-transcript">
             <div className="v3-listening-transcript-head">
-              <strong>📜 Transcript bài nghe (Đối chiếu từ khóa & bẫy tự sửa thông tin)</strong>
+              <strong><Sticker name="scroll" size={24} pop={false} className="sticker-inline" />Transcript bài nghe (Đối chiếu từ khóa & bẫy tự sửa thông tin)</strong>
               <button type="button" className="v3-audio-pill" onClick={startSpeech}>
-                🔊 Nghe lại theo Transcript
+                <Volume2 size={16} aria-hidden="true" /> Nghe lại theo Transcript
               </button>
             </div>
             <p className="foundation-transcript">{current.script}</p>
@@ -1253,7 +1255,7 @@ export function WritingStudioPractice({
       {active.template?.length ? (
         <div className="v3-template-box">
           <div className="v3-template-head">
-            <strong>📋 Khung dàn ý gợi ý ({isTask1 ? "Task 1" : "Task 2"} · {active.template.length} đoạn):</strong>
+            <strong><Sticker name="clipboard" size={24} pop={false} className="sticker-inline" />Khung dàn ý gợi ý ({isTask1 ? "Task 1" : "Task 2"} · {active.template.length} đoạn):</strong>
             <div>
               <button type="button" className="guided-tool-btn" onClick={() => setShowTemplate((v) => !v)}>
                 {showTemplate ? "Ẩn khung dàn ý" : "Hiện khung dàn ý"}
@@ -1310,11 +1312,11 @@ export function WritingStudioPractice({
 
       <div className="v3-writing-actions">
         <button type="button" className="button primary" disabled={busy || !draft.trim()} onClick={() => void saveToCloud()}>
-          {busy ? "Đang lưu…" : "💾 Lưu bài viết"}
+          {busy ? "Đang lưu…" : <><Save size={16} aria-hidden="true" /> Lưu bài viết</>}
         </button>
         {active.model.length ? (
           <button type="button" className="button subtle" onClick={() => setShowModel((v) => !v)}>
-            {showModel ? "Ẩn bài mẫu" : "📖 Xem bài mẫu & đối chiếu"}
+            {showModel ? "Ẩn bài mẫu" : <><BookOpen size={16} aria-hidden="true" /> Xem bài mẫu & đối chiếu</>}
           </button>
         ) : null}
         <span className="advanced-essay-save">{saveMessage || "Bản nháp tự động lưu trên trình duyệt khi bạn gõ."}</span>
@@ -1440,7 +1442,7 @@ export function SpeakingStudioPractice({
     <section className="v3-speaking-studio" aria-label="Phòng luyện nói IELTS Speaking Studio">
       <div className="v3-speaking-header">
         <div>
-          <span className="eyebrow">🎙️ PHÒNG LUYỆN NÓI & GHI ÂM TỰ ĐÁNH GIÁ · SPEAKING STUDIO</span>
+          <span className="eyebrow"><Sticker name="mic" size={22} pop={false} className="sticker-inline" />PHÒNG LUYỆN NÓI & GHI ÂM TỰ ĐÁNH GIÁ · SPEAKING STUDIO</span>
           <h3>Thực hành trả lời Part 1 · Part 2 (Cue Card) · Part 3 Discussion</h3>
         </div>
         <div className="v3-speaking-recorder-bar">
@@ -1473,7 +1475,7 @@ export function SpeakingStudioPractice({
 
       {audioUrl && (
         <div className="v3-speaking-playback">
-          <strong>🎧 Bản ghi âm vừa thực hiện của bạn (Nghe lại & đối chiếu tiêu chí):</strong>
+          <strong><Sticker name="headphones" size={24} pop={false} className="sticker-inline" />Bản ghi âm vừa thực hiện của bạn (Nghe lại & đối chiếu tiêu chí):</strong>
           <audio controls src={audioUrl} aria-label="Bản ghi âm bài nói của bạn" />
         </div>
       )}
@@ -1485,7 +1487,7 @@ export function SpeakingStudioPractice({
               <div className="v3-speaking-prompt-top">
                 <span className="v3-part-badge">SPEAKING PART {q.part}</span>
                 <button type="button" className="v3-audio-pill" onClick={() => speakEnglishText(q.prompt)}>
-                  🔊 Nghe giám khảo hỏi
+                  <Volume2 size={16} aria-hidden="true" /> Nghe giám khảo hỏi
                 </button>
               </div>
               <p>{q.prompt}</p>
@@ -1496,7 +1498,7 @@ export function SpeakingStudioPractice({
 
       {part3Template.length > 0 && (
         <div className="v3-template-box">
-          <strong>🗣️ Khung trả lời Speaking Part 3 chuẩn Band 6.5–7.0+ (4 bước lập luận):</strong>
+          <strong><Sticker name="bubble" size={24} pop={false} className="sticker-inline" />Khung trả lời Speaking Part 3 chuẩn Band 6.5–7.0+ (4 bước lập luận):</strong>
           <ol className="v3-template-list">
             {part3Template.map((step, i) => (
               <li key={i}>{step}</li>
@@ -1520,7 +1522,7 @@ export function SpeakingStudioPractice({
                     speakEnglishText(item.question);
                   }}
                 >
-                  🔊 Nghe câu hỏi
+                  <Volume2 size={16} aria-hidden="true" /> Nghe câu hỏi
                 </button>
               </summary>
               <div className="v3-speaking-framework">
@@ -1528,7 +1530,7 @@ export function SpeakingStudioPractice({
                   <b>Khung gợi ý trả lời (Response Framework):</b> {item.response_framework}
                 </p>
                 <button type="button" className="guided-tool-btn" onClick={() => speakEnglishText(item.response_framework)}>
-                  🔊 Nghe câu mẫu gợi ý
+                  <Volume2 size={16} aria-hidden="true" /> Nghe câu mẫu gợi ý
                 </button>
               </div>
             </details>
@@ -1550,7 +1552,7 @@ export function SpeakingStudioPractice({
 
       <div className="v3-speaking-notes">
         <label htmlFor={`speaking-notes-${keyName}`}>
-          📝 Ghi chú dàn ý 1 phút (Keywords, Collocations & tự nhận xét sau khi nghe lại):
+          <Sticker name="pencil" size={24} pop={false} className="sticker-inline" />Ghi chú dàn ý 1 phút (Keywords, Collocations & tự nhận xét sau khi nghe lại):
         </label>
         <textarea
           id={`speaking-notes-${keyName}`}
@@ -1647,7 +1649,7 @@ export function PackageLessonPractice({
             <span className="eyebrow">TRỌNG TÂM BÀI HỌC · {(content.type || "IELTS").toUpperCase()}</span>
             <h3>{content.title || lessonTitle}</h3>
             <p>{heroSummary}</p>
-            {content.core_outcome && <small className="v3-core-outcome">🎯 Mục tiêu đầu ra: {content.core_outcome}</small>}
+            {content.core_outcome && <small className="v3-core-outcome"><Sticker name="target" size={22} pop={false} className="sticker-inline" />Mục tiêu đầu ra: {content.core_outcome}</small>}
           </div>
         </div>
 
@@ -1673,7 +1675,7 @@ export function PackageLessonPractice({
             )}
             {coaching?.trap && (
               <div className="v3-coaching-box is-trap" style={{ marginTop: 12 }}>
-                <strong>⚠️ Bẫy thường gặp cần tránh trong phòng thi</strong>
+                <strong><Sticker name="warning" size={24} pop={false} className="sticker-inline" />Bẫy thường gặp cần tránh trong phòng thi</strong>
                 <p>{coaching.trap}</p>
               </div>
             )}
@@ -1688,7 +1690,7 @@ export function PackageLessonPractice({
                     onClick={() => speakEnglishText(term)}
                     title="Bấm để nghe phát âm"
                   >
-                    🔊 {term}
+                    <Volume2 size={16} aria-hidden="true" /> {term}
                   </button>
                 ))}
               </div>
@@ -1705,7 +1707,7 @@ export function PackageLessonPractice({
             </div>
             {content.audio_url && (
               <div className="package-audio">
-                <span>🎧 Nghe mẫu và đọc theo</span>
+                <span><Sticker name="headphones" size={22} pop={false} className="sticker-inline" />Nghe mẫu và đọc theo</span>
                 <audio controls src={content.audio_url} aria-label="Audio bài học" />
               </div>
             )}
@@ -1724,7 +1726,7 @@ export function PackageLessonPractice({
 
         {content.grammar_form && (
           <div className="package-grammar-form">
-            <strong>📐 Công thức & Cấu trúc cần nhớ</strong>
+            <strong><Sticker name="puzzle" size={24} pop={false} className="sticker-inline" />Công thức & Cấu trúc cần nhớ</strong>
             <p>{content.grammar_form}</p>
           </div>
         )}
@@ -1740,11 +1742,11 @@ export function PackageLessonPractice({
                     <span className="v3-example-num">Ví dụ {idx + 1}</span>
                     <p>{example}</p>
                     <button type="button" className="v3-audio-pill" onClick={() => speakEnglishText(example)}>
-                      🔊 Nghe câu
+                      <Volume2 size={16} aria-hidden="true" /> Nghe câu
                     </button>
                   </div>
                   {content.examples_vi?.[idx] && (
-                    <p className="v3-grammar-example-vi">🌐 Nghĩa tiếng Việt: {content.examples_vi[idx]}</p>
+                    <p className="v3-grammar-example-vi"><Languages size={14} aria-hidden="true" /> Nghĩa tiếng Việt: {content.examples_vi[idx]}</p>
                   )}
                 </div>
               ))}
@@ -1755,7 +1757,7 @@ export function PackageLessonPractice({
         {/* Reading Overview in Step 1: Preview the Unit's 3 Reading Passages */}
         {content.type === "reading" && unitPassages.length > 0 && (
           <div className="v3-grammar-examples">
-            <h3>📚 Tổng quan {unitPassages.length} Bài đọc của Unit (Sẵn sàng ở Bước 2 · Thực hành)</h3>
+            <h3><Sticker name="book" size={28} pop={false} className="sticker-inline" />Tổng quan {unitPassages.length} Bài đọc của Unit (Sẵn sàng ở Bước 2 · Thực hành)</h3>
             <div className="v3-grammar-example-list">
               {unitPassages.map((p, idx) => {
                 const firstPara = p.sections?.[0]?.[1] || p.text.split(/\n+/)[0] || "";
@@ -1778,7 +1780,7 @@ export function PackageLessonPractice({
         {/* Listening Overview in Step 1: Preview the Unit's 3 Listening Tracks */}
         {content.type === "listening" && content.audios?.length ? (
           <div className="v3-grammar-examples">
-            <h3>🎧 Tổng quan {content.audios.length} Bài nghe của Unit (Nghe & trả lời trực tiếp ở Bước 2)</h3>
+            <h3><Sticker name="headphones" size={28} pop={false} className="sticker-inline" />Tổng quan {content.audios.length} Bài nghe của Unit (Nghe & trả lời trực tiếp ở Bước 2)</h3>
             <div className="v3-grammar-example-list">
               {content.audios.map((a, idx) => (
                 <div key={a.id || idx} className="v3-grammar-example-card">
@@ -1787,7 +1789,7 @@ export function PackageLessonPractice({
                     <p>{a.title.replace(/^Listening:\s*/i, "")}</p>
                     {a.script && (
                       <button type="button" className="v3-audio-pill" onClick={() => speakEnglishText(a.script.slice(0, 260))}>
-                        🔊 Nghe thử đoạn đầu
+                        <Volume2 size={16} aria-hidden="true" /> Nghe thử đoạn đầu
                       </button>
                     )}
                   </div>
@@ -1806,7 +1808,7 @@ export function PackageLessonPractice({
         {visualUrl && content.type === "writing" && (content.data_visual?.rows?.length || /task\s*1/i.test(content.task ?? "")) ? (
           <div className="v3-visual-context-card">
             <div className="v3-visual-context-copy">
-              <span className="eyebrow">📊 BIỂU ĐỒ DỮ LIỆU WRITING TASK 1 CỦA UNIT</span>
+              <span className="eyebrow"><Sticker name="chart" size={22} pop={false} className="sticker-inline" />BIỂU ĐỒ DỮ LIỆU WRITING TASK 1 CỦA UNIT</span>
               <h3>{content.task || "Quan sát xu hướng tổng quan (Overview) và các mốc so sánh số liệu"}</h3>
               <p>
                 Xác định xu hướng nổi bật nhất (Overview) và nhóm các số liệu có sự tương phản hoặc tương đồng rõ rệt vào 2 đoạn thân bài (Body 1 & Body 2).
@@ -1860,7 +1862,7 @@ export function PackageLessonPractice({
 
         {distinctStrategy.length > 0 && (
           <div className="package-strategy">
-            <strong>🧭 Chiến lược thực hành từng bước</strong>
+            <strong><Sticker name="compass" size={24} pop={false} className="sticker-inline" />Chiến lược thực hành từng bước</strong>
             <ol>
               {distinctStrategy.map((item, index) => (
                 <li key={`${index}-${item}`}>{item}</li>
@@ -1912,7 +1914,7 @@ export function PackageLessonPractice({
                   className="v3-term-chip"
                   onClick={() => speakEnglishText(phrase)}
                 >
-                  🔊 {phrase}
+                  <Volume2 size={16} aria-hidden="true" /> {phrase}
                 </button>
               ))}
             </div>

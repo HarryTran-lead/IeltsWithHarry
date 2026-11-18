@@ -3,7 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useRef, useState, type CSSProperties, type ReactNode } from "react";
-import { ArrowRight, BookOpenText, Check, Clock3, Headphones, Languages, Lightbulb, Lock, Mic, Pause, PenLine, Play, SpellCheck, Ticket, type LucideIcon } from "lucide-react";
+import { ArrowRight, BookOpenText, Check, Clock3, Headphones, Languages, Lightbulb, Mic, Pause, PenLine, Play, SpellCheck, Ticket, type LucideIcon } from "lucide-react";
 import { TopicArt } from "@/components/illustrations/topic-art";
 import { Sticker, Tape } from "@/components/stickers/stickers";
 import type { StageCourse } from "./stage-courses";
@@ -790,7 +790,7 @@ export function BookPageView({ page, index, side, ctx }: { page: BookPage; index
         <strong>{course.title}</strong>
         <span className="bk-cert-line" />
         {complete ? <><Sticker name="stamp" label="XONG" size={92} tilt={-12} /><p>Bạn đã đi hết {ctx.total} bài. Hãy tự hào về từng bước nhỏ!</p></>
-          : <><Lock size={26} /><p>Còn {ctx.total - ctx.finished} bài nữa để nhận chứng nhận.</p></>}
+          : <><Sticker name="lock" size={46} tilt={-6} pop={false} /><p>Còn {ctx.total - ctx.finished} bài nữa để nhận chứng nhận.</p></>}
       </div>
     </div>
     <Folio number={index} label="CERTIFICATE" side={side} color="#c99400" />

@@ -1,0 +1,421 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "DICT-S3-059",
+  "status": "draft",
+  "level": "L7",
+  "section": 3,
+  "topic": "Dissertation Planning",
+  "title": "Dissertation Planning – Machine Translation Risk Messages",
+  "learning_objectives_vi": [
+    "Theo dõi ba nhân vật thảo luận và phân biệt quan điểm ban đầu với quyết định sau cùng.",
+    "Nhận biết lập luận, điều kiện, hạn chế nghiên cứu và diễn đạt lại (paraphrase) trong Section 3.",
+    "Nghe chép đúng phát ngôn then chốt và truy xuất bằng chứng theo lượt thoại."
+  ],
+  "content_format": "section_practice",
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Mina – academic project discussion participant",
+      "tts_voice_id": null,
+      "accent_requested": "american"
+    },
+    {
+      "speaker_id": "B",
+      "role": "David – academic project discussion participant",
+      "tts_voice_id": null,
+      "accent_requested": "american"
+    },
+    {
+      "speaker_id": "C",
+      "role": "Yasmin – academic project discussion participant",
+      "tts_voice_id": null,
+      "accent_requested": "american"
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "My dissertation investigates whether machine-translated public-health leaflets convey risk information accurately. The draft compares the English original with two automated translations, but I'm unsure how to assess meaning.",
+      "translation_vi": "Luận văn mình tìm hiểu bản dịch máy tờ rơi y tế công cộng có truyền đạt thông tin rủi ro chính xác không. Bản nháp so tiếng Anh gốc với hai bản tự động nhưng mình chưa chắc đánh giá nghĩa ra sao.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "multi_speaker",
+        "l7"
+      ]
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "B",
+      "text_en": "Counting word-level differences isn't enough. A translation may use different vocabulary yet preserve the warning, while a very similar sentence could accidentally weaken a critical instruction.",
+      "translation_vi": "Đếm khác biệt từng từ chưa đủ. Bản dịch có thể dùng từ khác mà giữ cảnh báo, còn câu gần giống lại vô tình làm nhẹ hướng dẫn quan trọng.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "multi_speaker",
+        "l7"
+      ]
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "C",
+      "text_en": "We could build an evaluation rubric focused on actions, timing, uncertainty and level of urgency. For example, 'seek help immediately' shouldn't become a vague suggestion to consider help later.",
+      "translation_vi": "Ta có thể lập tiêu chí đánh giá về hành động, thời gian, mức bất định và độ khẩn. Chẳng hạn 'hãy tìm trợ giúp ngay' không được thành lời khuyên mơ hồ rằng có thể cân nhắc sau.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "multi_speaker",
+        "l7"
+      ]
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "A",
+      "text_en": "I had proposed asking bilingual volunteers whether each leaflet sounds natural. But a smooth sentence may still be factually wrong, so fluency alone won't reveal dangerous meaning changes.",
+      "translation_vi": "Mình từng đề xuất hỏi người song ngữ bản nào tự nhiên. Nhưng câu trôi chảy vẫn có thể sai thực tế nên độ lưu loát không chỉ ra thay đổi nghĩa nguy hiểm.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "multi_speaker",
+        "l7"
+      ]
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "B",
+      "text_en": "Let's ask trained reviewers to score accuracy separately from readability. We should also include a process for disagreements, rather than averaging scores that reflect different interpretations of the warning.",
+      "translation_vi": "Hãy nhờ người được đào tạo chấm độ đúng riêng với dễ đọc. Cũng cần quy trình xử lý bất đồng thay vì lấy trung bình các điểm dựa trên cách hiểu cảnh báo khác nhau.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "multi_speaker",
+        "l7"
+      ]
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "C",
+      "text_en": "The supervisor reminded us not to test potentially misleading leaflets on patients as if they were official guidance. Our materials should be clearly marked as research examples and used only with consenting adult reviewers.",
+      "translation_vi": "Người hướng dẫn nhắc không thử tờ rơi có thể gây hiểu sai trên bệnh nhân như hướng dẫn chính thức. Tài liệu phải ghi rõ là ví dụ nghiên cứu và chỉ dùng với người đánh giá trưởng thành đã đồng ý.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "multi_speaker",
+        "l7"
+      ]
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "For a manageable scope, I suggest twenty short risk statements across three topics rather than entire leaflets. Each statement can be rated for whether it preserves the required action and timeframe.",
+      "translation_vi": "Để phạm vi vừa sức, mình đề xuất hai mươi câu rủi ro ngắn từ ba chủ đề thay vì cả tờ rơi. Mỗi câu được chấm xem có giữ hành động và mốc thời gian bắt buộc không.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "multi_speaker",
+        "l7"
+      ]
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "B",
+      "text_en": "We should report examples of serious meaning shifts without reproducing personal data or making unsupported claims about all machine translation systems. The sample is too limited for that.",
+      "translation_vi": "Ta nên báo ví dụ thay đổi nghĩa nghiêm trọng nhưng không đưa dữ liệu cá nhân hay khẳng định thiếu căn cứ về mọi hệ thống dịch máy. Mẫu quá hạn chế cho điều đó.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "multi_speaker",
+        "l7"
+      ]
+    },
+    {
+      "turn_id": "T09",
+      "speaker_id": "C",
+      "text_en": "Agreed. The revised dissertation evaluates twenty risk statements with dual accuracy and readability scores, adjudicated disagreements and explicit research-only labelling. It won't make clinical recommendations.",
+      "translation_vi": "Đồng ý. Luận văn sửa đánh giá hai mươi câu rủi ro với hai điểm độ đúng và dễ đọc, giải quyết bất đồng và nhãn chỉ dùng nghiên cứu. Nó không đưa khuyến nghị lâm sàng.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "multi_speaker",
+        "l7"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "type": "mcq",
+      "prompt": "Why is counting word-level differences an inadequate quality measure?",
+      "correct_answers": [
+        "Different wording can preserve meaning while similar wording may distort it"
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Tại T02, David nói: “Đếm khác biệt từng từ chưa đủ. Bản dịch có thể dùng từ khác mà giữ cảnh báo, còn câu gần giống lại vô tình làm nhẹ hướng dẫn quan trọng.” Đáp án “Different wording can preserve meaning while similar wording may distort it” diễn đạt đúng ý được nêu. Các phương án còn lại không phù hợp với bằng chứng; chú ý ý kiến bị sửa và tính điều kiện.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "section_3",
+        "ielts_practice",
+        "inference",
+        "paraphrase"
+      ],
+      "options": [
+        "Different wording can preserve meaning while similar wording may distort it",
+        "Naturalness can differ across languages",
+        "The two automated outputs use different vocabulary"
+      ]
+    },
+    {
+      "question_id": "Q02",
+      "type": "note_completion",
+      "prompt": "The rubric will evaluate actions, timing, uncertainty and level of ____ .",
+      "correct_answers": [
+        "urgency"
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Bằng chứng T03: “Ta có thể lập tiêu chí đánh giá về hành động, thời gian, mức bất định và độ khẩn. Chẳng hạn 'hãy tìm trợ giúp ngay' không được thành lời khuyên mơ hồ rằng có thể cân nhắc sau.” Cụm cần điền nghe đúng nguyên văn là “urgency”.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_3",
+        "ielts_practice",
+        "detail",
+        "note_completion"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q03",
+      "type": "matching",
+      "prompt": "Which speaker notes that research materials must not be treated as official leaflets?",
+      "correct_answers": [
+        "Speaker C"
+      ],
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "explanation_vi": "Người nói Yasmin (Speaker C) đưa ra ý này tại T06: “Người hướng dẫn nhắc không thử tờ rơi có thể gây hiểu sai trên bệnh nhân như hướng dẫn chính thức. Tài liệu phải ghi rõ là ví dụ nghiên cứu và chỉ dùng với người đánh giá trưởng thành đã đồng ý.”",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "section_3",
+        "ielts_practice",
+        "speaker_attribution"
+      ],
+      "options": [
+        "Speaker A",
+        "Speaker B",
+        "Speaker C"
+      ]
+    },
+    {
+      "question_id": "Q04",
+      "type": "mcq",
+      "prompt": "Why focus on twenty risk statements rather than entire leaflets?",
+      "correct_answers": [
+        "To keep the project manageable while assessing essential actions and timings"
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "Tại T07, Mina nói: “Để phạm vi vừa sức, mình đề xuất hai mươi câu rủi ro ngắn từ ba chủ đề thay vì cả tờ rơi. Mỗi câu được chấm xem có giữ hành động và mốc thời gian bắt buộc không.” Đáp án “To keep the project manageable while assessing essential actions and timings” diễn đạt đúng ý được nêu. Các phương án còn lại không phù hợp với bằng chứng; chú ý ý kiến bị sửa và tính điều kiện.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "section_3",
+        "ielts_practice",
+        "inference",
+        "paraphrase"
+      ],
+      "options": [
+        "To keep the project manageable while assessing essential actions and timings",
+        "To make the leaflets suitable for immediate public distribution",
+        "To avoid asking reviewers to assess meaning"
+      ]
+    },
+    {
+      "question_id": "Q05",
+      "type": "note_completion",
+      "prompt": "The team must avoid ____ about every machine translation system.",
+      "correct_answers": [
+        "unsupported claims"
+      ],
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "explanation_vi": "Bằng chứng T08: “Ta nên báo ví dụ thay đổi nghĩa nghiêm trọng nhưng không đưa dữ liệu cá nhân hay khẳng định thiếu căn cứ về mọi hệ thống dịch máy. Mẫu quá hạn chế cho điều đó.” Cụm cần điền nghe đúng nguyên văn là “unsupported claims”.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_3",
+        "ielts_practice",
+        "detail",
+        "note_completion"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q06",
+      "type": "short_answer",
+      "prompt": "How many statements will the revised dissertation examine?",
+      "correct_answers": [
+        "twenty"
+      ],
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "explanation_vi": "Bằng chứng T09: “Đồng ý. Luận văn sửa đánh giá hai mươi câu rủi ro với hai điểm độ đúng và dễ đọc, giải quyết bất đồng và nhãn chỉ dùng nghiên cứu. Nó không đưa khuyến nghị lâm sàng.” Trả lời ngắn theo chi tiết “twenty”.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_3",
+        "ielts_practice",
+        "detail",
+        "short_answer"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "D01",
+      "type": "dictation",
+      "prompt": "Nghe T04 (Speaker A) rồi chép chính xác câu nói tiếng Anh.",
+      "correct_answers": [
+        "I had proposed asking bilingual volunteers whether each leaflet sounds natural. But a smooth sentence may still be factually wrong, so fluency alone won't reveal dangerous meaning changes."
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Câu gốc: “I had proposed asking bilingual volunteers whether each leaflet sounds natural. But a smooth sentence may still be factually wrong, so fluency alone won't reveal dangerous meaning changes.”\nBản dịch: Mình từng đề xuất hỏi người song ngữ bản nào tự nhiên. Nhưng câu trôi chảy vẫn có thể sai thực tế nên độ lưu loát không chỉ ra thay đổi nghĩa nguy hiểm.\nChú ý âm yếu, nối âm và ý được sửa trong đoạn.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_3",
+        "dictation",
+        "exact_transcript"
+      ]
+    },
+    {
+      "question_id": "D02",
+      "type": "dictation",
+      "prompt": "Nghe T07 (Speaker A) rồi chép chính xác câu nói tiếng Anh.",
+      "correct_answers": [
+        "For a manageable scope, I suggest twenty short risk statements across three topics rather than entire leaflets. Each statement can be rated for whether it preserves the required action and timeframe."
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "Câu gốc: “For a manageable scope, I suggest twenty short risk statements across three topics rather than entire leaflets. Each statement can be rated for whether it preserves the required action and timeframe.”\nBản dịch: Để phạm vi vừa sức, mình đề xuất hai mươi câu rủi ro ngắn từ ba chủ đề thay vì cả tờ rơi. Mỗi câu được chấm xem có giữ hành động và mốc thời gian bắt buộc không.\nChú ý âm yếu, nối âm và ý được sửa trong đoạn.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_3",
+        "dictation",
+        "exact_transcript"
+      ]
+    },
+    {
+      "question_id": "G01",
+      "type": "gap_fill",
+      "prompt": "Nghe T01 rồi điền đúng phần thiếu: My dissertation investigates whether machine-translated public-health leaflets convey ____ accurately. The draft compares the English original with two automated translations, but I'm unsure how to assess meaning.",
+      "correct_answers": [
+        "risk information"
+      ],
+      "evidence_turn_ids": [
+        "T01"
+      ],
+      "explanation_vi": "Đáp án “risk information” nghĩa là thông tin rủi ro. Đối chiếu: “My dissertation investigates whether machine-translated public-health leaflets convey risk information accurately. The draft compares the English original with two automated translations, but I'm unsure how to assess meaning.”",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_3",
+        "gap_fill",
+        "vocabulary_in_context"
+      ]
+    }
+  ],
+  "vocabulary": [
+    {
+      "term": "risk information",
+      "pos": "n. phr.",
+      "meaning_vi": "thông tin rủi ro",
+      "example_en": "My dissertation investigates whether machine-translated public-health leaflets convey risk information accurately. The draft compares the English original with two automated translations, but I'm unsure how to assess meaning.",
+      "example_vi": "Luận văn mình tìm hiểu bản dịch máy tờ rơi y tế công cộng có truyền đạt thông tin rủi ro chính xác không. Bản nháp so tiếng Anh gốc với hai bản tự động nhưng mình chưa chắc đánh giá nghĩa ra sao.",
+      "source_turn_id": "T01"
+    },
+    {
+      "term": "readability",
+      "pos": "n.",
+      "meaning_vi": "độ dễ đọc",
+      "example_en": "Let's ask trained reviewers to score accuracy separately from readability. We should also include a process for disagreements, rather than averaging scores that reflect different interpretations of the warning.",
+      "example_vi": "Hãy nhờ người được đào tạo chấm độ đúng riêng với dễ đọc. Cũng cần quy trình xử lý bất đồng thay vì lấy trung bình các điểm dựa trên cách hiểu cảnh báo khác nhau.",
+      "source_turn_id": "T05"
+    },
+    {
+      "term": "adjudicated disagreements",
+      "pos": "n. phr.",
+      "meaning_vi": "bất đồng đã được phân xử",
+      "example_en": "Agreed. The revised dissertation evaluates twenty risk statements with dual accuracy and readability scores, adjudicated disagreements and explicit research-only labelling. It won't make clinical recommendations.",
+      "example_vi": "Đồng ý. Luận văn sửa đánh giá hai mươi câu rủi ro với hai điểm độ đúng và dễ đọc, giải quyết bất đồng và nhãn chỉ dùng nghiên cứu. Nó không đưa khuyến nghị lâm sàng.",
+      "source_turn_id": "T09"
+    },
+    {
+      "term": "unsupported claims",
+      "pos": "n. phr.",
+      "meaning_vi": "khẳng định thiếu bằng chứng",
+      "example_en": "We should report examples of serious meaning shifts without reproducing personal data or making unsupported claims about all machine translation systems. The sample is too limited for that.",
+      "example_vi": "Ta nên báo ví dụ thay đổi nghĩa nghiêm trọng nhưng không đưa dữ liệu cá nhân hay khẳng định thiếu căn cứ về mọi hệ thống dịch máy. Mẫu quá hạn chế cho điều đó.",
+      "source_turn_id": "T08"
+    }
+  ],
+  "audio": {
+    "status": "not_generated",
+    "url": null,
+    "duration_ms": null,
+    "model": null,
+    "provider": null,
+    "voice_config": null,
+    "source_transcript_hash": "b8c1ce78e1efd5c1d84c215cc29ede81e304c3f8845b5f2a5dabb5bcd509182c",
+    "audio_sha256": null,
+    "format": null
+  },
+  "qa": {
+    "content_reviewed": false,
+    "answers_verified": false,
+    "audio_verified": false,
+    "rights_cleared": false,
+    "duplicate_reviewed": false,
+    "notes": [
+      "Original AI-assisted draft, awaiting expert pedagogical review and option-disambiguation review.",
+      "Audio not produced: all segment times are null. TTS terms and distribution rights must be checked.",
+      "Practice lesson only; not an official/full IELTS Listening Part 3 exam or a calibrated band test.",
+      "M16.2: automated edits are provisional; IELTS teacher final signoff, audio and rights clearance pending."
+    ]
+  },
+  "provenance": {
+    "content_origin": "original_ai_assisted",
+    "source_urls": [],
+    "source_rights_note": "Original scripts; verify TTS service/voice production and distribution rights before publishing to students, including minors.",
+    "reviewer": null
+  },
+  "release_metadata": {
+    "published_at": null,
+    "version": 1
+  }
+}

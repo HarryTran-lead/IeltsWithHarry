@@ -1,5 +1,7 @@
+import { readdirSync, readFileSync } from "node:fs";
+import { join } from "node:path";
 import { describe, expect, it } from "vitest";
-import { evaluateBook2Progress, requiredBook2WritingWords, type Book2ScoredItem } from "./book2-progress";
+import { book2AnswerCorrect, book2OptionOrder, evaluateBook2Progress, requiredBook2WritingWords, type Book2ScoredItem } from "./book2-progress";
 
 const questions: Book2ScoredItem[] = [
   { question_id: "objective", answer: { kind: "objective", accepted: ["science"] } },
@@ -41,5 +43,55 @@ describe("Book 2 progress", () => {
     expect(requiredBook2WritingWords("open_writing", "Discuss the advantages and disadvantages.", "b2-u05-w-l04")).toBe(250);
     expect(requiredBook2WritingWords("open_writing", "The table shows the data. Summarise the main features.", "b2-u02-w-l04")).toBe(150);
     expect(requiredBook2WritingWords("open_writing", "Write an introduction and overview.", "b2-u02-w-l02")).toBe(0);
+  });
+
+  it("accepts answers that differ only in accents, quotes, currency, per cent or a leading article", () => {
+    const key = (accepted: string[]) => ({ question_id: "q", answer: { kind: "objective", accepted } });
+    expect(book2AnswerCorrect(key(["hotel and café"]), "Hotel & cafe")).toBe(true);
+    expect(book2AnswerCorrect(key(["I’d"]), "I'd")).toBe(true);
+    expect(book2AnswerCorrect(key(["22"]), "£22")).toBe(true);
+    expect(book2AnswerCorrect(key(["40%"]), "40 per cent")).toBe(true);
+    expect(book2AnswerCorrect(key(["old harbour"]), "the old harbour")).toBe(true);
+    expect(book2AnswerCorrect(key(["old harbour"]), "harbour")).toBe(false);
+    expect(book2AnswerCorrect(key(["a"]), "")).toBe(false);
+  });
+
+  it("reads numbers written as words, Vietnamese separators, contractions and split blanks", () => {
+    const key = (accepted: string[]) => ({ question_id: "q", answer: { kind: "objective", accepted } });
+    expect(book2AnswerCorrect(key(["10:15"]), "ten fifteen")).toBe(true);
+    expect(book2AnswerCorrect(key(["5"]), "five")).toBe(true);
+    expect(book2AnswerCorrect(key(["5 pm"]), "5 p.m.")).toBe(true);
+    expect(book2AnswerCorrect(key(["43"]), "forty-three")).toBe(true);
+    expect(book2AnswerCorrect(key(["120"]), "one hundred and twenty")).toBe(true);
+    expect(book2AnswerCorrect(key(["345000"]), "345.000")).toBe(true);
+    expect(book2AnswerCorrect(key(["345000"]), "three hundred and forty-five thousand")).toBe(true);
+    expect(book2AnswerCorrect(key(["2.4"]), "2,4")).toBe(true);
+    expect(book2AnswerCorrect(key(["2.4"]), "24")).toBe(false);
+    expect(book2AnswerCorrect(key(["do not use"]), "don't use")).toBe(true);
+    expect(book2AnswerCorrect(key(["I’ll"]), "I will")).toBe(false);
+    expect(book2AnswerCorrect(key(["from;to"]), "from, to")).toBe(true);
+  });
+
+  it("keeps ordered option sets and spreads correct answers across positions", () => {
+    expect(book2OptionOrder("q1", "true_false_not_given", ["TRUE", "FALSE", "NOT GIVEN"])).toEqual(["TRUE", "FALSE", "NOT GIVEN"]);
+    expect(book2OptionOrder("q1", "multiple_choice", ["A", "B", "C", "D"])).toEqual(["A", "B", "C", "D"]);
+    expect(book2OptionOrder("q2", "multiple_choice", ["Wednesday", "Monday", "Either"]).at(-1)).toBe("Either");
+    expect(book2OptionOrder("q3", "multiple_choice", ["x", "y", "z"])).toEqual(book2OptionOrder("q3", "multiple_choice", ["x", "y", "z"]));
+    const folder = join(process.cwd(), "content/book2/lessons");
+    const positions = [0, 0, 0, 0, 0, 0];
+    for (const file of readdirSync(folder)) {
+      const lesson = JSON.parse(readFileSync(join(folder, file), "utf8")) as { exercises: { questions: { question_id: string; item_type: string; options: string[]; answer: { kind: string; accepted: string[] } }[] }[] };
+      for (const item of lesson.exercises.flatMap((exercise) => exercise.questions)) {
+        if (item.answer.kind !== "objective" || item.options.length < 3) continue;
+        const shown = book2OptionOrder(item.question_id, item.item_type, item.options);
+        expect([...shown].sort()).toEqual([...item.options].sort());
+        // Lenient matching must never turn a wrong option into a right one.
+        for (const option of item.options) expect(book2AnswerCorrect(item, option), `${item.question_id}: ${option}`).toBe(item.answer.accepted.includes(option));
+        if (shown !== item.options) positions[shown.findIndex((option) => item.answer.accepted.includes(option))]++;
+      }
+    }
+    const shuffled = positions.reduce((sum, count) => sum + count, 0);
+    expect(shuffled).toBeGreaterThan(200);
+    expect((positions[0] + positions[1]) / shuffled).toBeLessThan(0.65);
   });
 });

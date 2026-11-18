@@ -1,0 +1,421 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "DICT-S3-050",
+  "status": "draft",
+  "level": "L6",
+  "section": 3,
+  "topic": "Academic Feedback",
+  "title": "Academic Feedback – Notification Causality Essay",
+  "learning_objectives_vi": [
+    "Theo dõi ba nhân vật thảo luận và phân biệt quan điểm ban đầu với quyết định sau cùng.",
+    "Nhận biết lập luận, điều kiện, hạn chế nghiên cứu và diễn đạt lại (paraphrase) trong Section 3.",
+    "Nghe chép đúng phát ngôn then chốt và truy xuất bằng chứng theo lượt thoại."
+  ],
+  "content_format": "section_practice",
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Linh – academic project discussion participant",
+      "tts_voice_id": null,
+      "accent_requested": "british"
+    },
+    {
+      "speaker_id": "B",
+      "role": "Jack – academic project discussion participant",
+      "tts_voice_id": null,
+      "accent_requested": "british"
+    },
+    {
+      "speaker_id": "C",
+      "role": "Priya – academic project discussion participant",
+      "tts_voice_id": null,
+      "accent_requested": "british"
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "My tutor says the draft essay overstates the impact of a vocabulary app. I wrote that daily notifications caused the improvement in test scores, but we never assigned students to groups randomly.",
+      "translation_vi": "Giảng viên nói bài luận phóng đại tác động của ứng dụng từ vựng. Mình viết thông báo hằng ngày gây tăng điểm, nhưng thực tế chưa từng chia nhóm sinh viên ngẫu nhiên.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "multi_speaker",
+        "l6"
+      ]
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "B",
+      "text_en": "Then the students who enabled notifications may already have been more motivated. Their higher scores could reflect motivation rather than the reminders themselves. That's a selection effect.",
+      "translation_vi": "Vậy sinh viên bật thông báo có thể vốn có động lực cao hơn. Điểm cao có thể do động lực chứ không phải nhắc nhở. Đó là hiệu ứng tự chọn.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "multi_speaker",
+        "l6"
+      ]
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "C",
+      "text_en": "You could revise the claim to say notification use was associated with higher scores. It's less dramatic, but it matches what observational data can actually establish.",
+      "translation_vi": "Bạn có thể sửa thành việc dùng thông báo có liên quan đến điểm cao hơn. Ít kịch tính nhưng đúng những gì dữ liệu quan sát chứng minh được.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "multi_speaker",
+        "l6"
+      ]
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "A",
+      "text_en": "I thought including more quotations from enthusiastic users would strengthen the causal argument. But now I can see that positive feedback alone doesn't rule out other explanations.",
+      "translation_vi": "Mình nghĩ thêm trích dẫn người dùng thích ứng dụng sẽ củng cố quan hệ nhân quả. Nhưng giờ mình thấy phản hồi tích cực không loại trừ những lời giải thích khác.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "multi_speaker",
+        "l6"
+      ]
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "B",
+      "text_en": "Exactly. Quotes can explain user experiences, while comparative scores describe patterns. Neither substitutes for a controlled experiment if your question is whether the feature itself produces the change.",
+      "translation_vi": "Đúng. Trích dẫn giải thích trải nghiệm, còn điểm so sánh mô tả xu hướng. Không cái nào thay thí nghiệm có kiểm soát nếu hỏi chính tính năng có gây thay đổi không.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "multi_speaker",
+        "l6"
+      ]
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "C",
+      "text_en": "The marker also noted that some students used several study tools simultaneously. The survey didn't measure that consistently, which is another limitation you should mention instead of ignoring.",
+      "translation_vi": "Người chấm còn ghi vài sinh viên dùng nhiều công cụ học cùng lúc. Khảo sát không đo nhất quán điều đó, nên phải nêu thêm giới hạn thay vì bỏ qua.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "multi_speaker",
+        "l6"
+      ]
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "I'll restructure the discussion: first the association, then possible alternative explanations, then a cautious suggestion for further testing. That gives the reader a clearer distinction between evidence and interpretation.",
+      "translation_vi": "Mình sẽ sắp lại thảo luận: đầu tiên mối liên hệ, sau đó giải thích thay thế, rồi đề nghị kiểm tra thêm có thận trọng. Như vậy độc giả phân biệt bằng chứng và diễn giải rõ hơn.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "multi_speaker",
+        "l6"
+      ]
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "B",
+      "text_en": "A future study might randomly assign participants to receive reminders or not, while keeping the learning material constant. That would address motivation more effectively than asking people what they prefer.",
+      "translation_vi": "Nghiên cứu sau có thể chia ngẫu nhiên người nhận hoặc không nhận nhắc nhở, giữ nội dung học giống nhau. Như vậy giải quyết động lực tốt hơn chỉ hỏi sở thích.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "multi_speaker",
+        "l6"
+      ]
+    },
+    {
+      "turn_id": "T09",
+      "speaker_id": "C",
+      "text_en": "Good. The final conclusion should recommend an experiment, not announce that notifications have been proven effective. A measured claim will probably earn more credit than an unsupported confident one.",
+      "translation_vi": "Tốt. Kết luận cuối nên đề nghị thí nghiệm, không tuyên bố đã chứng minh thông báo hiệu quả. Nhận định thận trọng có lẽ được đánh giá cao hơn khẳng định chắc chắn thiếu cơ sở.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "multi_speaker",
+        "l6"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "type": "mcq",
+      "prompt": "What alternative explains why notification users may have scored higher?",
+      "correct_answers": [
+        "They may already have been more motivated"
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Tại T02, Jack nói: “Vậy sinh viên bật thông báo có thể vốn có động lực cao hơn. Điểm cao có thể do động lực chứ không phải nhắc nhở. Đó là hiệu ứng tự chọn.” Đáp án “They may already have been more motivated” diễn đạt đúng ý được nêu. Các phương án còn lại không phù hợp với bằng chứng; chú ý ý kiến bị sửa và tính điều kiện.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "section_3",
+        "ielts_practice",
+        "inference",
+        "paraphrase"
+      ],
+      "options": [
+        "They may already have been more motivated",
+        "Users may also use several other study tools",
+        "Comments from enthusiastic students can be biased"
+      ]
+    },
+    {
+      "question_id": "Q02",
+      "type": "note_completion",
+      "prompt": "Notification use is described as ____ with higher scores.",
+      "correct_answers": [
+        "associated"
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Bằng chứng T03: “Bạn có thể sửa thành việc dùng thông báo có liên quan đến điểm cao hơn. Ít kịch tính nhưng đúng những gì dữ liệu quan sát chứng minh được.” Cụm cần điền nghe đúng nguyên văn là “associated”.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_3",
+        "ielts_practice",
+        "detail",
+        "note_completion"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q03",
+      "type": "matching",
+      "prompt": "Which speaker suggests reporting an association rather than claiming causation?",
+      "correct_answers": [
+        "Speaker C"
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Người nói Priya (Speaker C) đưa ra ý này tại T03: “Bạn có thể sửa thành việc dùng thông báo có liên quan đến điểm cao hơn. Ít kịch tính nhưng đúng những gì dữ liệu quan sát chứng minh được.”",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "section_3",
+        "ielts_practice",
+        "speaker_attribution"
+      ],
+      "options": [
+        "Speaker A",
+        "Speaker B",
+        "Speaker C"
+      ]
+    },
+    {
+      "question_id": "Q04",
+      "type": "mcq",
+      "prompt": "Why does Linh reorganise the discussion?",
+      "correct_answers": [
+        "To separate associations, alternative explanations and future testing"
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "Tại T07, Linh nói: “Mình sẽ sắp lại thảo luận: đầu tiên mối liên hệ, sau đó giải thích thay thế, rồi đề nghị kiểm tra thêm có thận trọng. Như vậy độc giả phân biệt bằng chứng và diễn giải rõ hơn.” Đáp án “To separate associations, alternative explanations and future testing” diễn đạt đúng ý được nêu. Các phương án còn lại không phù hợp với bằng chứng; chú ý ý kiến bị sửa và tính điều kiện.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "section_3",
+        "ielts_practice",
+        "inference",
+        "paraphrase"
+      ],
+      "options": [
+        "To separate associations, alternative explanations and future testing",
+        "To show that the app caused every improvement",
+        "To replace alternative explanations with more quotations"
+      ]
+    },
+    {
+      "question_id": "Q05",
+      "type": "note_completion",
+      "prompt": "A future study could ____ assign participants to conditions.",
+      "correct_answers": [
+        "randomly"
+      ],
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "explanation_vi": "Bằng chứng T08: “Nghiên cứu sau có thể chia ngẫu nhiên người nhận hoặc không nhận nhắc nhở, giữ nội dung học giống nhau. Như vậy giải quyết động lực tốt hơn chỉ hỏi sở thích.” Cụm cần điền nghe đúng nguyên văn là “randomly”.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_3",
+        "ielts_practice",
+        "detail",
+        "note_completion"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q06",
+      "type": "short_answer",
+      "prompt": "What type of study should the conclusion recommend?",
+      "correct_answers": [
+        "experiment"
+      ],
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "explanation_vi": "Bằng chứng T09: “Tốt. Kết luận cuối nên đề nghị thí nghiệm, không tuyên bố đã chứng minh thông báo hiệu quả. Nhận định thận trọng có lẽ được đánh giá cao hơn khẳng định chắc chắn thiếu cơ sở.” Trả lời ngắn theo chi tiết “experiment”.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_3",
+        "ielts_practice",
+        "detail",
+        "short_answer"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "D01",
+      "type": "dictation",
+      "prompt": "Nghe T04 (Speaker A) rồi chép chính xác câu nói tiếng Anh.",
+      "correct_answers": [
+        "I thought including more quotations from enthusiastic users would strengthen the causal argument. But now I can see that positive feedback alone doesn't rule out other explanations."
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Câu gốc: “I thought including more quotations from enthusiastic users would strengthen the causal argument. But now I can see that positive feedback alone doesn't rule out other explanations.”\nBản dịch: Mình nghĩ thêm trích dẫn người dùng thích ứng dụng sẽ củng cố quan hệ nhân quả. Nhưng giờ mình thấy phản hồi tích cực không loại trừ những lời giải thích khác.\nChú ý âm yếu, nối âm và ý được sửa trong đoạn.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_3",
+        "dictation",
+        "exact_transcript"
+      ]
+    },
+    {
+      "question_id": "D02",
+      "type": "dictation",
+      "prompt": "Nghe T07 (Speaker A) rồi chép chính xác câu nói tiếng Anh.",
+      "correct_answers": [
+        "I'll restructure the discussion: first the association, then possible alternative explanations, then a cautious suggestion for further testing. That gives the reader a clearer distinction between evidence and interpretation."
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "Câu gốc: “I'll restructure the discussion: first the association, then possible alternative explanations, then a cautious suggestion for further testing. That gives the reader a clearer distinction between evidence and interpretation.”\nBản dịch: Mình sẽ sắp lại thảo luận: đầu tiên mối liên hệ, sau đó giải thích thay thế, rồi đề nghị kiểm tra thêm có thận trọng. Như vậy độc giả phân biệt bằng chứng và diễn giải rõ hơn.\nChú ý âm yếu, nối âm và ý được sửa trong đoạn.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_3",
+        "dictation",
+        "exact_transcript"
+      ]
+    },
+    {
+      "question_id": "G01",
+      "type": "gap_fill",
+      "prompt": "Nghe T02 rồi điền đúng phần thiếu: Then the students who enabled notifications may already have been more motivated. Their higher scores could reflect motivation rather than the reminders themselves. That's a ____.",
+      "correct_answers": [
+        "selection effect"
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Đáp án “selection effect” nghĩa là hiệu ứng tự chọn. Đối chiếu: “Then the students who enabled notifications may already have been more motivated. Their higher scores could reflect motivation rather than the reminders themselves. That's a selection effect.”",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_3",
+        "gap_fill",
+        "vocabulary_in_context"
+      ]
+    }
+  ],
+  "vocabulary": [
+    {
+      "term": "selection effect",
+      "pos": "n. phr.",
+      "meaning_vi": "hiệu ứng tự chọn",
+      "example_en": "Then the students who enabled notifications may already have been more motivated. Their higher scores could reflect motivation rather than the reminders themselves. That's a selection effect.",
+      "example_vi": "Vậy sinh viên bật thông báo có thể vốn có động lực cao hơn. Điểm cao có thể do động lực chứ không phải nhắc nhở. Đó là hiệu ứng tự chọn.",
+      "source_turn_id": "T02"
+    },
+    {
+      "term": "observational data",
+      "pos": "n. phr.",
+      "meaning_vi": "dữ liệu quan sát",
+      "example_en": "You could revise the claim to say notification use was associated with higher scores. It's less dramatic, but it matches what observational data can actually establish.",
+      "example_vi": "Bạn có thể sửa thành việc dùng thông báo có liên quan đến điểm cao hơn. Ít kịch tính nhưng đúng những gì dữ liệu quan sát chứng minh được.",
+      "source_turn_id": "T03"
+    },
+    {
+      "term": "controlled experiment",
+      "pos": "n. phr.",
+      "meaning_vi": "thí nghiệm có kiểm soát",
+      "example_en": "Exactly. Quotes can explain user experiences, while comparative scores describe patterns. Neither substitutes for a controlled experiment if your question is whether the feature itself produces the change.",
+      "example_vi": "Đúng. Trích dẫn giải thích trải nghiệm, còn điểm so sánh mô tả xu hướng. Không cái nào thay thí nghiệm có kiểm soát nếu hỏi chính tính năng có gây thay đổi không.",
+      "source_turn_id": "T05"
+    },
+    {
+      "term": "alternative explanations",
+      "pos": "n. phr.",
+      "meaning_vi": "những cách giải thích thay thế",
+      "example_en": "I'll restructure the discussion: first the association, then possible alternative explanations, then a cautious suggestion for further testing. That gives the reader a clearer distinction between evidence and interpretation.",
+      "example_vi": "Mình sẽ sắp lại thảo luận: đầu tiên mối liên hệ, sau đó giải thích thay thế, rồi đề nghị kiểm tra thêm có thận trọng. Như vậy độc giả phân biệt bằng chứng và diễn giải rõ hơn.",
+      "source_turn_id": "T07"
+    }
+  ],
+  "audio": {
+    "status": "not_generated",
+    "url": null,
+    "duration_ms": null,
+    "model": null,
+    "provider": null,
+    "voice_config": null,
+    "source_transcript_hash": "3d94f21e08449920057a9a50619edfc90079e9c7f047accb7029a61ae519d440",
+    "audio_sha256": null,
+    "format": null
+  },
+  "qa": {
+    "content_reviewed": false,
+    "answers_verified": false,
+    "audio_verified": false,
+    "rights_cleared": false,
+    "duplicate_reviewed": false,
+    "notes": [
+      "Original AI-assisted draft, awaiting expert pedagogical review and option-disambiguation review.",
+      "Audio not produced: all segment times are null. TTS terms and distribution rights must be checked.",
+      "Practice lesson only; not an official/full IELTS Listening Part 3 exam or a calibrated band test.",
+      "M16.2: automated edits are provisional; IELTS teacher final signoff, audio and rights clearance pending."
+    ]
+  },
+  "provenance": {
+    "content_origin": "original_ai_assisted",
+    "source_urls": [],
+    "source_rights_note": "Original scripts; verify TTS service/voice production and distribution rights before publishing to students, including minors.",
+    "reviewer": null
+  },
+  "release_metadata": {
+    "published_at": null,
+    "version": 1
+  }
+}

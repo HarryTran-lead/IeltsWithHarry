@@ -1,0 +1,462 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "DICT-S1-075",
+  "status": "draft",
+  "level": "L7",
+  "section": 1,
+  "topic": "Delivery Services",
+  "title": "A Diverted Medical Equipment Parcel",
+  "learning_objectives_vi": [
+    "Luyện nghe tình huống: A buyer resolves shipping insurance, delivery timing and identification.",
+    "Nhận diện integrated information challenge và thông tin cuối cùng của cuộc hội thoại.",
+    "Nghe chép lời nói tự nhiên, hiểu bằng chứng trước khi xem transcript."
+  ],
+  "content_format": "section_practice",
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Service staff / representative",
+      "tts_voice_id": null,
+      "accent_requested": "american"
+    },
+    {
+      "speaker_id": "B",
+      "role": "Customer / attendee",
+      "tts_voice_id": null,
+      "accent_requested": "american"
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "CityLink Couriers, special deliveries team.",
+      "translation_vi": "Đội giao hàng đặc biệt CityLink Couriers xin nghe.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "integrated_information",
+        "logistics",
+        "security",
+        "section_1",
+        "two_speaker_dialogue",
+        "l7"
+      ]
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "B",
+      "text_en": "I'm checking a parcel containing a home blood-pressure monitor. The tracking page says delivery has been diverted.",
+      "translation_vi": "Tôi đang kiểm tra kiện hàng có máy đo huyết áp tại nhà. Trang theo dõi ghi đã đổi hướng giao.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "integrated_information",
+        "logistics",
+        "security",
+        "section_1",
+        "two_speaker_dialogue",
+        "l7"
+      ]
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "A",
+      "text_en": "Yes. The driver couldn't use the loading entrance at your building, so the parcel is now at our West Depot.",
+      "translation_vi": "Đúng. Tài xế không dùng được lối bốc dỡ của tòa nhà, nên hàng đang ở kho West.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "integrated_information",
+        "logistics",
+        "security",
+        "section_1",
+        "two_speaker_dialogue",
+        "l7"
+      ]
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "B",
+      "text_en": "Could you deliver it to my home tomorrow instead of making me travel to the depot?",
+      "translation_vi": "Anh có thể giao tới nhà ngày mai thay vì bắt tôi đến kho không?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "integrated_information",
+        "logistics",
+        "security",
+        "section_1",
+        "two_speaker_dialogue",
+        "l7"
+      ]
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "A",
+      "text_en": "Tomorrow is fully booked. We can redeliver on Thursday between nine and midday, or you can collect it today before six.",
+      "translation_vi": "Ngày mai kín lịch. Chúng tôi có thể giao lại thứ Năm từ 9 đến 12, hoặc bạn lấy hôm nay trước 6 giờ.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "integrated_information",
+        "logistics",
+        "security",
+        "section_1",
+        "two_speaker_dialogue",
+        "l7"
+      ]
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "B",
+      "text_en": "I have appointments on Thursday morning, so I'll collect it. What identification do you need?",
+      "translation_vi": "Sáng thứ Năm tôi có hẹn, nên tôi sẽ tự lấy. Cần giấy tờ gì?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "integrated_information",
+        "logistics",
+        "security",
+        "section_1",
+        "two_speaker_dialogue",
+        "l7"
+      ]
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "A passport or driving licence, plus your eight-digit collection code. A photograph of an ID isn't accepted.",
+      "translation_vi": "Hộ chiếu hoặc bằng lái, kèm mã nhận hàng tám chữ số. Ảnh chụp giấy tờ không được chấp nhận.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "integrated_information",
+        "logistics",
+        "security",
+        "section_1",
+        "two_speaker_dialogue",
+        "l7"
+      ]
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "B",
+      "text_en": "My code begins four-eight-one. Can you confirm the last five digits?",
+      "translation_vi": "Mã của tôi bắt đầu bốn-tám-một. Anh xác nhận năm số cuối được không?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "integrated_information",
+        "logistics",
+        "security",
+        "section_1",
+        "two_speaker_dialogue",
+        "l7"
+      ]
+    },
+    {
+      "turn_id": "T09",
+      "speaker_id": "A",
+      "text_en": "For security I can't read the code aloud, but I can resend the full code to your registered phone.",
+      "translation_vi": "Vì bảo mật tôi không được đọc mã, nhưng có thể gửi lại toàn bộ mã tới điện thoại đã đăng ký.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "integrated_information",
+        "logistics",
+        "security",
+        "section_1",
+        "two_speaker_dialogue",
+        "l7"
+      ]
+    },
+    {
+      "turn_id": "T10",
+      "speaker_id": "B",
+      "text_en": "That's fine. Is there any extra collection fee?",
+      "translation_vi": "Được. Việc tự nhận hàng có thêm phí không?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "integrated_information",
+        "logistics",
+        "security",
+        "section_1",
+        "two_speaker_dialogue",
+        "l7"
+      ]
+    },
+    {
+      "turn_id": "T11",
+      "speaker_id": "A",
+      "text_en": "No. The insured shipping charge you paid remains unchanged, and collection itself is free.",
+      "translation_vi": "Không. Phí vận chuyển có bảo hiểm bạn đã trả vẫn giữ nguyên, và tự đến nhận miễn phí.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "integrated_information",
+        "logistics",
+        "security",
+        "section_1",
+        "two_speaker_dialogue",
+        "l7"
+      ]
+    },
+    {
+      "turn_id": "T12",
+      "speaker_id": "B",
+      "text_en": "Please resend the code. I'll bring my driving licence and pick up the parcel before six.",
+      "translation_vi": "Vui lòng gửi lại mã. Tôi sẽ mang bằng lái và đến lấy trước sáu giờ.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "integrated_information",
+        "logistics",
+        "security",
+        "section_1",
+        "two_speaker_dialogue",
+        "l7"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "type": "form_completion",
+      "prompt": "Parcel item: blood-pressure ____",
+      "correct_answers": [
+        "monitor"
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Kiện hàng chứa máy đo huyết áp.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "integrated_information",
+        "logistics",
+        "security",
+        "ielts_section1_practice"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q02",
+      "type": "form_completion",
+      "prompt": "Current parcel location: ____ Depot",
+      "correct_answers": [
+        "West"
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Hàng đang được giữ tại kho West.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "integrated_information",
+        "logistics",
+        "security",
+        "ielts_section1_practice"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q03",
+      "type": "mcq",
+      "prompt": "Which day is offered for home redelivery?",
+      "correct_answers": [
+        "Thursday"
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Ngày mai kín lịch, giao lại vào thứ Năm.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "integrated_information",
+        "logistics",
+        "security",
+        "ielts_section1_practice"
+      ],
+      "options": [
+        "Thursday",
+        "tomorrow",
+        "Friday"
+      ]
+    },
+    {
+      "question_id": "Q04",
+      "type": "form_completion",
+      "prompt": "Collection deadline today: before ____",
+      "correct_answers": [
+        "six"
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Có thể đến lấy tại kho trước 6 giờ hôm nay.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "integrated_information",
+        "logistics",
+        "security",
+        "ielts_section1_practice"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q05",
+      "type": "form_completion",
+      "prompt": "Collection code length: ____ digits",
+      "correct_answers": [
+        "eight"
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "Mã nhận có tám chữ số; nhân viên không đọc mã vì bảo mật.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "integrated_information",
+        "logistics",
+        "security",
+        "ielts_section1_practice"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q06",
+      "type": "form_completion",
+      "prompt": "Extra fee for collecting in person: ____",
+      "correct_answers": [
+        "free"
+      ],
+      "evidence_turn_ids": [
+        "T11"
+      ],
+      "explanation_vi": "Đến nhận hàng trực tiếp không thu thêm phí.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "integrated_information",
+        "logistics",
+        "security",
+        "ielts_section1_practice"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "D01",
+      "type": "dictation",
+      "prompt": "Nghe và chép nguyên văn lượt thoại T05 của nhân vật A.",
+      "correct_answers": [
+        "Tomorrow is fully booked. We can redeliver on Thursday between nine and midday, or you can collect it today before six."
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Câu gốc: Tomorrow is fully booked. We can redeliver on Thursday between nine and midday, or you can collect it today before six. Nghĩa: Ngày mai kín lịch. Chúng tôi có thể giao lại thứ Năm từ 9 đến 12, hoặc bạn lấy hôm nay trước 6 giờ. Hãy kiểm tra âm cuối, từ chức năng và chi tiết được sửa nếu có.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "integrated_information",
+        "logistics",
+        "security",
+        "dictation",
+        "exact_words"
+      ]
+    },
+    {
+      "question_id": "G01",
+      "type": "gap_fill",
+      "prompt": "Điền từ/cụm từ bị lược bỏ sau khi nghe: I'm checking a parcel containing a home blood-pressure monitor. The tracking page says delivery has been ____.",
+      "correct_answers": [
+        "diverted"
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "diverted: được chuyển hướng. Câu gốc: I'm checking a parcel containing a home blood-pressure monitor. The tracking page says delivery has been diverted.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "integrated_information",
+        "logistics",
+        "security",
+        "gap_fill",
+        "vocabulary_in_context"
+      ]
+    }
+  ],
+  "vocabulary": [
+    {
+      "term": "diverted",
+      "pos": "word",
+      "meaning_vi": "được chuyển hướng",
+      "example_en": "I'm checking a parcel containing a home blood-pressure monitor. The tracking page says delivery has been diverted.",
+      "example_vi": "Tôi đang kiểm tra kiện hàng có máy đo huyết áp tại nhà. Trang theo dõi ghi đã đổi hướng giao.",
+      "source_turn_id": "T02"
+    },
+    {
+      "term": "redeliver",
+      "pos": "word",
+      "meaning_vi": "giao lại",
+      "example_en": "Tomorrow is fully booked. We can redeliver on Thursday between nine and midday, or you can collect it today before six.",
+      "example_vi": "Ngày mai kín lịch. Chúng tôi có thể giao lại thứ Năm từ 9 đến 12, hoặc bạn lấy hôm nay trước 6 giờ.",
+      "source_turn_id": "T05"
+    },
+    {
+      "term": "collection code",
+      "pos": "phrase",
+      "meaning_vi": "mã nhận hàng",
+      "example_en": "A passport or driving licence, plus your eight-digit collection code. A photograph of an ID isn't accepted.",
+      "example_vi": "Hộ chiếu hoặc bằng lái, kèm mã nhận hàng tám chữ số. Ảnh chụp giấy tờ không được chấp nhận.",
+      "source_turn_id": "T07"
+    },
+    {
+      "term": "registered phone",
+      "pos": "phrase",
+      "meaning_vi": "điện thoại đã đăng ký",
+      "example_en": "For security I can't read the code aloud, but I can resend the full code to your registered phone.",
+      "example_vi": "Vì bảo mật tôi không được đọc mã, nhưng có thể gửi lại toàn bộ mã tới điện thoại đã đăng ký.",
+      "source_turn_id": "T09"
+    }
+  ],
+  "audio": {
+    "status": "not_generated",
+    "url": null,
+    "duration_ms": null,
+    "model": null,
+    "provider": null,
+    "voice_config": null,
+    "source_transcript_hash": "d1797020e8e8bb99f4f256448751f12590a98fb2ac06130ffcbf00064b152dad",
+    "audio_sha256": null,
+    "format": null
+  },
+  "qa": {
+    "content_reviewed": false,
+    "answers_verified": false,
+    "audio_verified": false,
+    "rights_cleared": false,
+    "duplicate_reviewed": false,
+    "notes": [
+      "Original AI-assisted draft; expert listening pedagogical review required.",
+      "Audio and word-level timestamps do not exist yet.",
+      "This is a practice lesson, not an official IELTS Listening test.",
+      "M16.2: automated edits are provisional; IELTS teacher final signoff, audio and rights clearance pending."
+    ]
+  },
+  "provenance": {
+    "content_origin": "original_ai_assisted",
+    "source_urls": [],
+    "source_rights_note": "Author-created educational dialogue. Verify audio provider distribution rights, service terms and suitability for user age before synthesis and publishing.",
+    "reviewer": null
+  },
+  "release_metadata": {
+    "published_at": null,
+    "version": 1
+  }
+}

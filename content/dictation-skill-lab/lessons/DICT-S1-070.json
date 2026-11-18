@@ -1,0 +1,494 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "DICT-S1-070",
+  "status": "draft",
+  "level": "L6",
+  "section": 1,
+  "topic": "Transport Tickets",
+  "title": "An Overnight Train and an Accessibility Request",
+  "learning_objectives_vi": [
+    "Luyện integrated information challenge trong tình huống: A passenger finalises an overnight trip with a connection and assistance service.",
+    "Nhận diện thông tin cuối cùng thay vì lặp lại dữ kiện đã bị sửa hoặc phủ định.",
+    "Chép đúng lời thoại, hiểu bằng chứng và học từ vựng trong ngữ cảnh."
+  ],
+  "content_format": "section_practice",
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Customer / applicant",
+      "tts_voice_id": null,
+      "accent_requested": "australian"
+    },
+    {
+      "speaker_id": "B",
+      "role": "Service representative / employee",
+      "tts_voice_id": null,
+      "accent_requested": "australian"
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "Hello, I'd like to check my overnight train booking to Glasgow. I travel with my father, who uses a wheelchair.",
+      "translation_vi": "Chào chị, tôi muốn kiểm tra đặt tàu đêm đi Glasgow. Tôi đi với bố, người dùng xe lăn.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "integrated_trip",
+        "fare_difference",
+        "accessibility",
+        "section_1",
+        "two_speaker_dialogue",
+        "l6"
+      ]
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "B",
+      "text_en": "Of course. Is this the booking leaving on Friday the fourteenth?",
+      "translation_vi": "Vâng. Có phải chuyến khởi hành thứ Sáu ngày 14 không?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "integrated_trip",
+        "fare_difference",
+        "accessibility",
+        "section_1",
+        "two_speaker_dialogue",
+        "l6"
+      ]
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "A",
+      "text_en": "That's the original date, but we need to travel on Saturday the fifteenth instead. Can the reservation be moved?",
+      "translation_vi": "Đó là ngày ban đầu, nhưng chúng tôi cần đi thứ Bảy ngày 15. Có chuyển vé được không?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "integrated_trip",
+        "fare_difference",
+        "accessibility",
+        "section_1",
+        "two_speaker_dialogue",
+        "l6"
+      ]
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "B",
+      "text_en": "Yes, though Saturday's train leaves at nine fifty rather than ten twenty, and there is a small fare difference.",
+      "translation_vi": "Được, nhưng tàu thứ Bảy rời ga lúc 9:50 thay vì 10:20, và có chênh lệch giá vé nhỏ.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "integrated_trip",
+        "fare_difference",
+        "accessibility",
+        "section_1",
+        "two_speaker_dialogue",
+        "l6"
+      ]
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "A",
+      "text_en": "How much more would we pay? We already paid one hundred and eighty pounds for the two places.",
+      "translation_vi": "Chúng tôi cần trả thêm bao nhiêu? Chúng tôi đã trả 180 bảng cho hai chỗ.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "integrated_trip",
+        "fare_difference",
+        "accessibility",
+        "section_1",
+        "two_speaker_dialogue",
+        "l6"
+      ]
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "B",
+      "text_en": "The revised booking costs two hundred and four pounds in total, so the difference is twenty-four pounds.",
+      "translation_vi": "Đơn mới tổng 204 bảng, vậy chênh lệch 24 bảng.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "integrated_trip",
+        "fare_difference",
+        "accessibility",
+        "section_1",
+        "two_speaker_dialogue",
+        "l6"
+      ]
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "That's fine. Is our accessible sleeping compartment still available?",
+      "translation_vi": "Được. Khoang ngủ dành cho người cần hỗ trợ vẫn còn chứ?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "integrated_trip",
+        "fare_difference",
+        "accessibility",
+        "section_1",
+        "two_speaker_dialogue",
+        "l6"
+      ]
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "B",
+      "text_en": "Yes, compartment A2 is available, but it has one lower berth and a fold-down seat, rather than two beds.",
+      "translation_vi": "Có, khoang A2 còn trống, nhưng có một giường tầng dưới và ghế gập thay vì hai giường.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "integrated_trip",
+        "fare_difference",
+        "accessibility",
+        "section_1",
+        "two_speaker_dialogue",
+        "l6"
+      ]
+    },
+    {
+      "turn_id": "T09",
+      "speaker_id": "A",
+      "text_en": "My father needs the lower berth. I'll take the seat if necessary. Could we also request boarding assistance?",
+      "translation_vi": "Bố tôi cần giường dưới. Tôi ngồi ghế cũng được. Có thể yêu cầu hỗ trợ lên tàu không?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "integrated_trip",
+        "fare_difference",
+        "accessibility",
+        "section_1",
+        "two_speaker_dialogue",
+        "l6"
+      ]
+    },
+    {
+      "turn_id": "T10",
+      "speaker_id": "B",
+      "text_en": "Certainly. Assistance must be booked at least twenty-four hours beforehand. The team meets passengers beside the station information desk.",
+      "translation_vi": "Được. Cần đặt hỗ trợ trước ít nhất 24 giờ. Đội hỗ trợ đón bên cạnh quầy thông tin ga.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "integrated_trip",
+        "fare_difference",
+        "accessibility",
+        "section_1",
+        "two_speaker_dialogue",
+        "l6"
+      ]
+    },
+    {
+      "turn_id": "T11",
+      "speaker_id": "A",
+      "text_en": "I was told to wait by Platform Two. Has that changed?",
+      "translation_vi": "Tôi được bảo đợi sân ga Hai. Có thay đổi không?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "integrated_trip",
+        "fare_difference",
+        "accessibility",
+        "section_1",
+        "two_speaker_dialogue",
+        "l6"
+      ]
+    },
+    {
+      "turn_id": "T12",
+      "speaker_id": "B",
+      "text_en": "Platform details aren't confirmed yet. Please meet at the information desk, even if your train eventually leaves from Platform Two.",
+      "translation_vi": "Sân ga chưa xác nhận. Hãy đến quầy thông tin dù tàu cuối cùng xuất phát từ sân ga Hai.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "integrated_trip",
+        "fare_difference",
+        "accessibility",
+        "section_1",
+        "two_speaker_dialogue",
+        "l6"
+      ]
+    },
+    {
+      "turn_id": "T13",
+      "speaker_id": "A",
+      "text_en": "All right. Please update the booking for Saturday and send the new ticket to my email address.",
+      "translation_vi": "Vâng. Xin cập nhật vé cho thứ Bảy và gửi vé mới qua email.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "integrated_trip",
+        "fare_difference",
+        "accessibility",
+        "section_1",
+        "two_speaker_dialogue",
+        "l6"
+      ]
+    },
+    {
+      "turn_id": "T14",
+      "speaker_id": "B",
+      "text_en": "I'll do that now. The assistance request will appear on the confirmation as a separate item.",
+      "translation_vi": "Tôi sẽ làm ngay. Yêu cầu hỗ trợ sẽ có mục riêng trong xác nhận.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "integrated_trip",
+        "fare_difference",
+        "accessibility",
+        "section_1",
+        "two_speaker_dialogue",
+        "l6"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "type": "form_completion",
+      "prompt": "New travel date: Saturday the ____",
+      "correct_answers": [
+        "fifteenth"
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Ngày 14 là vé cũ, đổi sang 15.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "integrated_trip",
+        "fare_difference",
+        "accessibility",
+        "ielts_section1_practice"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q02",
+      "type": "form_completion",
+      "prompt": "Saturday departure: ____",
+      "correct_answers": [
+        "9:50"
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Thứ Bảy đi 9:50 thay vì 10:20.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "integrated_trip",
+        "fare_difference",
+        "accessibility",
+        "ielts_section1_practice"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q03",
+      "type": "form_completion",
+      "prompt": "Additional fare to pay: £____",
+      "correct_answers": [
+        "24"
+      ],
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "explanation_vi": "204 trừ 180 là 24 bảng.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "integrated_trip",
+        "fare_difference",
+        "accessibility",
+        "ielts_section1_practice"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q04",
+      "type": "mcq",
+      "prompt": "Which accessible compartment is available?",
+      "correct_answers": [
+        "A2"
+      ],
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "explanation_vi": "Khoang tiếp cận xe lăn là A2.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "integrated_trip",
+        "fare_difference",
+        "accessibility",
+        "ielts_section1_practice"
+      ],
+      "options": [
+        "A2",
+        "B4",
+        "C6"
+      ]
+    },
+    {
+      "question_id": "Q05",
+      "type": "form_completion",
+      "prompt": "Assistance notice: at least ____ hours",
+      "correct_answers": [
+        "24"
+      ],
+      "evidence_turn_ids": [
+        "T10"
+      ],
+      "explanation_vi": "Cần đặt trước ít nhất 24 giờ.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "integrated_trip",
+        "fare_difference",
+        "accessibility",
+        "ielts_section1_practice"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q06",
+      "type": "form_completion",
+      "prompt": "Meeting point: station information ____",
+      "correct_answers": [
+        "desk"
+      ],
+      "evidence_turn_ids": [
+        "T12"
+      ],
+      "explanation_vi": "Điểm gặp là quầy thông tin, không phải sân ga 2.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "integrated_trip",
+        "fare_difference",
+        "accessibility",
+        "ielts_section1_practice"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "D01",
+      "type": "dictation",
+      "prompt": "Nghe và chép nguyên văn lời nhân vật A (lượt T05).",
+      "correct_answers": [
+        "How much more would we pay? We already paid one hundred and eighty pounds for the two places."
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Câu chuẩn: How much more would we pay? We already paid one hundred and eighty pounds for the two places. Nghĩa: Chúng tôi cần trả thêm bao nhiêu? Chúng tôi đã trả 180 bảng cho hai chỗ. Cần nghe rõ từ chức năng, âm cuối và thông tin cụ thể.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "integrated_trip",
+        "fare_difference",
+        "accessibility",
+        "dictation",
+        "transcription_accuracy"
+      ]
+    },
+    {
+      "question_id": "G01",
+      "type": "gap_fill",
+      "prompt": "Nghe và điền từ/cụm từ thiếu: That's fine. Is our ____ still available?",
+      "correct_answers": [
+        "accessible sleeping compartment"
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "Cụm cần điền: accessible sleeping compartment (khoang ngủ dành cho người khuyết tật). Câu gốc: That's fine. Is our accessible sleeping compartment still available?",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "integrated_trip",
+        "fare_difference",
+        "accessibility",
+        "gap_fill",
+        "vocabulary_in_context"
+      ]
+    }
+  ],
+  "vocabulary": [
+    {
+      "term": "accessible sleeping compartment",
+      "pos": "phrase",
+      "meaning_vi": "khoang ngủ dành cho người khuyết tật",
+      "example_en": "That's fine. Is our accessible sleeping compartment still available?",
+      "example_vi": "Được. Khoang ngủ dành cho người cần hỗ trợ vẫn còn chứ?",
+      "source_turn_id": "T07"
+    },
+    {
+      "term": "lower berth",
+      "pos": "phrase",
+      "meaning_vi": "giường tầng dưới",
+      "example_en": "Yes, compartment A2 is available, but it has one lower berth and a fold-down seat, rather than two beds.",
+      "example_vi": "Có, khoang A2 còn trống, nhưng có một giường tầng dưới và ghế gập thay vì hai giường.",
+      "source_turn_id": "T08"
+    },
+    {
+      "term": "boarding assistance",
+      "pos": "phrase",
+      "meaning_vi": "hỗ trợ lên tàu",
+      "example_en": "My father needs the lower berth. I'll take the seat if necessary. Could we also request boarding assistance?",
+      "example_vi": "Bố tôi cần giường dưới. Tôi ngồi ghế cũng được. Có thể yêu cầu hỗ trợ lên tàu không?",
+      "source_turn_id": "T09"
+    },
+    {
+      "term": "information desk",
+      "pos": "phrase",
+      "meaning_vi": "quầy thông tin",
+      "example_en": "Certainly. Assistance must be booked at least twenty-four hours beforehand. The team meets passengers beside the station information desk.",
+      "example_vi": "Được. Cần đặt hỗ trợ trước ít nhất 24 giờ. Đội hỗ trợ đón bên cạnh quầy thông tin ga.",
+      "source_turn_id": "T10"
+    }
+  ],
+  "audio": {
+    "status": "not_generated",
+    "url": null,
+    "duration_ms": null,
+    "model": null,
+    "provider": null,
+    "voice_config": null,
+    "source_transcript_hash": "c847130c51aef2c13739c0a266ec2f889c6ce23376db9770a4c8e64b854a45bf",
+    "audio_sha256": null,
+    "format": null
+  },
+  "qa": {
+    "content_reviewed": false,
+    "answers_verified": false,
+    "audio_verified": false,
+    "rights_cleared": false,
+    "duplicate_reviewed": false,
+    "notes": [
+      "AI-assisted original draft; requires IELTS-teacher review of all items and ambiguity.",
+      "Audio and time-alignment are pending.",
+      "Do not release automatically after structural validation.",
+      "M16.2: automated edits are provisional; IELTS teacher final signoff, audio and rights clearance pending."
+    ]
+  },
+  "provenance": {
+    "content_origin": "original_ai_assisted",
+    "source_urls": [],
+    "source_rights_note": "Original educational dialogue. Verify TTS provider usage conditions, rights and accessibility before production. Not an official IELTS item.",
+    "reviewer": null
+  },
+  "release_metadata": {
+    "published_at": null,
+    "version": 1
+  }
+}

@@ -1,0 +1,463 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "DICT-S1-051",
+  "status": "draft",
+  "level": "L4",
+  "section": 1,
+  "topic": "Course Registration",
+  "title": "Switching to a Weekend Language Class",
+  "learning_objectives_vi": [
+    "Luyện natural speed & paraphrase trong tình huống: A learner asks to transfer to a weekend course after a shift change.",
+    "Nhận diện thông tin cuối cùng thay vì lặp lại dữ kiện đã bị sửa hoặc phủ định.",
+    "Chép đúng lời thoại, hiểu bằng chứng và học từ vựng trong ngữ cảnh."
+  ],
+  "content_format": "section_practice",
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Customer / applicant",
+      "tts_voice_id": null,
+      "accent_requested": "australian"
+    },
+    {
+      "speaker_id": "B",
+      "role": "Service representative / employee",
+      "tts_voice_id": null,
+      "accent_requested": "australian"
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "Hi, I'm calling about the Italian language course I signed up for last month.",
+      "translation_vi": "Chào chị, tôi gọi về khóa tiếng Ý đã đăng ký tháng trước.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "paraphrase",
+        "schedule",
+        "payment",
+        "section_1",
+        "two_speaker_dialogue",
+        "l4"
+      ]
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "B",
+      "text_en": "Certainly. Are you asking about the Wednesday evening group?",
+      "translation_vi": "Vâng. Bạn hỏi lớp tối thứ Tư phải không?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "paraphrase",
+        "schedule",
+        "payment",
+        "section_1",
+        "two_speaker_dialogue",
+        "l4"
+      ]
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "A",
+      "text_en": "That's the one. My work shifts have changed, so I can't make it on weekdays anymore.",
+      "translation_vi": "Đúng. Ca làm của tôi thay đổi nên không thể đi học ngày thường nữa.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "paraphrase",
+        "schedule",
+        "payment",
+        "section_1",
+        "two_speaker_dialogue",
+        "l4"
+      ]
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "B",
+      "text_en": "We have a Saturday group, but it's already covered the first two lessons. Would you feel comfortable joining?",
+      "translation_vi": "Chúng tôi có lớp thứ Bảy, nhưng đã học hai buổi đầu. Bạn có thấy theo kịp không?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "paraphrase",
+        "schedule",
+        "payment",
+        "section_1",
+        "two_speaker_dialogue",
+        "l4"
+      ]
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "A",
+      "text_en": "I studied a little Italian before, so I think I'll manage. What time does the weekend class finish?",
+      "translation_vi": "Tôi từng học chút tiếng Ý nên chắc theo được. Lớp cuối tuần kết thúc lúc mấy giờ?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "paraphrase",
+        "schedule",
+        "payment",
+        "section_1",
+        "two_speaker_dialogue",
+        "l4"
+      ]
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "B",
+      "text_en": "It runs from ten until twelve thirty. You'd receive the notes from the sessions you missed.",
+      "translation_vi": "Lớp từ mười giờ đến mười hai rưỡi. Bạn sẽ nhận ghi chú của các buổi đã lỡ.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "paraphrase",
+        "schedule",
+        "payment",
+        "section_1",
+        "two_speaker_dialogue",
+        "l4"
+      ]
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "That'd help. Would moving groups mean paying the registration fee again?",
+      "translation_vi": "Thế thì tốt. Chuyển nhóm có phải đóng lại phí đăng ký không?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "paraphrase",
+        "schedule",
+        "payment",
+        "section_1",
+        "two_speaker_dialogue",
+        "l4"
+      ]
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "B",
+      "text_en": "No, there's no extra registration charge. However, the Saturday group uses a different workbook.",
+      "translation_vi": "Không cần đóng lại phí đăng ký. Tuy nhiên lớp thứ Bảy dùng sách bài tập khác.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "paraphrase",
+        "schedule",
+        "payment",
+        "section_1",
+        "two_speaker_dialogue",
+        "l4"
+      ]
+    },
+    {
+      "turn_id": "T09",
+      "speaker_id": "A",
+      "text_en": "How much is that workbook?",
+      "translation_vi": "Cuốn sách đó giá bao nhiêu?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "paraphrase",
+        "schedule",
+        "payment",
+        "section_1",
+        "two_speaker_dialogue",
+        "l4"
+      ]
+    },
+    {
+      "turn_id": "T10",
+      "speaker_id": "B",
+      "text_en": "Eighteen pounds, and we can have a copy ready at reception.",
+      "translation_vi": "Mười tám bảng. Chúng tôi có thể chuẩn bị sẵn một cuốn ở lễ tân.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "paraphrase",
+        "schedule",
+        "payment",
+        "section_1",
+        "two_speaker_dialogue",
+        "l4"
+      ]
+    },
+    {
+      "turn_id": "T11",
+      "speaker_id": "A",
+      "text_en": "Great. Please move me to Saturday. Can you email the missed notes rather than print them?",
+      "translation_vi": "Tuyệt. Xin chuyển tôi qua thứ Bảy. Có thể gửi ghi chú qua email thay vì in không?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "paraphrase",
+        "schedule",
+        "payment",
+        "section_1",
+        "two_speaker_dialogue",
+        "l4"
+      ]
+    },
+    {
+      "turn_id": "T12",
+      "speaker_id": "B",
+      "text_en": "Of course. I'll send them this afternoon and confirm the room number in the same message.",
+      "translation_vi": "Được. Tôi sẽ gửi chiều nay và xác nhận số phòng trong cùng email.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "paraphrase",
+        "schedule",
+        "payment",
+        "section_1",
+        "two_speaker_dialogue",
+        "l4"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "type": "form_completion",
+      "prompt": "Reason for moving: change to work ____",
+      "correct_answers": [
+        "shifts"
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Người học đổi lịch vì ca làm việc thay đổi.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "paraphrase",
+        "schedule",
+        "payment",
+        "ielts_section1_practice"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q02",
+      "type": "mcq",
+      "prompt": "Which day will the learner now attend?",
+      "correct_answers": [
+        "Saturday"
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Lớp mới học thứ Bảy.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "paraphrase",
+        "schedule",
+        "payment",
+        "ielts_section1_practice"
+      ],
+      "options": [
+        "Saturday",
+        "Sunday",
+        "Wednesday"
+      ]
+    },
+    {
+      "question_id": "Q03",
+      "type": "form_completion",
+      "prompt": "Class finishes at ____",
+      "correct_answers": [
+        "12:30"
+      ],
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "explanation_vi": "Buổi học từ 10 đến 12:30.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "paraphrase",
+        "schedule",
+        "payment",
+        "ielts_section1_practice"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q04",
+      "type": "form_completion",
+      "prompt": "There is ____ extra registration charge.",
+      "correct_answers": [
+        "no"
+      ],
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "explanation_vi": "Nhân viên nói “there’s no extra registration charge”, nên từ điền nguyên văn là “no”.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "paraphrase",
+        "schedule",
+        "payment",
+        "ielts_section1_practice"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q05",
+      "type": "form_completion",
+      "prompt": "New workbook costs £____",
+      "correct_answers": [
+        "18"
+      ],
+      "evidence_turn_ids": [
+        "T10"
+      ],
+      "explanation_vi": "Sách cho lớp mới giá 18 bảng.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "paraphrase",
+        "schedule",
+        "payment",
+        "ielts_section1_practice"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q06",
+      "type": "form_completion",
+      "prompt": "Missed notes sent by ____",
+      "correct_answers": [
+        "email"
+      ],
+      "evidence_turn_ids": [
+        "T11",
+        "T12"
+      ],
+      "explanation_vi": "Người học yêu cầu gửi qua email.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "paraphrase",
+        "schedule",
+        "payment",
+        "ielts_section1_practice"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "D01",
+      "type": "dictation",
+      "prompt": "Nghe và chép nguyên văn lời nhân vật A (lượt T05).",
+      "correct_answers": [
+        "I studied a little Italian before, so I think I'll manage. What time does the weekend class finish?"
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Câu chuẩn: I studied a little Italian before, so I think I'll manage. What time does the weekend class finish? Nghĩa: Tôi từng học chút tiếng Ý nên chắc theo được. Lớp cuối tuần kết thúc lúc mấy giờ? Cần nghe rõ từ chức năng, âm cuối và thông tin cụ thể.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "paraphrase",
+        "schedule",
+        "payment",
+        "dictation",
+        "transcription_accuracy"
+      ]
+    },
+    {
+      "question_id": "G01",
+      "type": "gap_fill",
+      "prompt": "Nghe và điền từ/cụm từ thiếu: That's the one. My ____ have changed, so I can't make it on weekdays anymore.",
+      "correct_answers": [
+        "work shifts"
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Cụm cần điền: work shifts (ca làm việc). Câu gốc: That's the one. My work shifts have changed, so I can't make it on weekdays anymore.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "paraphrase",
+        "schedule",
+        "payment",
+        "gap_fill",
+        "vocabulary_in_context"
+      ]
+    }
+  ],
+  "vocabulary": [
+    {
+      "term": "work shifts",
+      "pos": "phrase",
+      "meaning_vi": "ca làm việc",
+      "example_en": "That's the one. My work shifts have changed, so I can't make it on weekdays anymore.",
+      "example_vi": "Đúng. Ca làm của tôi thay đổi nên không thể đi học ngày thường nữa.",
+      "source_turn_id": "T03"
+    },
+    {
+      "term": "missed notes",
+      "pos": "phrase",
+      "meaning_vi": "ghi chú buổi vắng",
+      "example_en": "Great. Please move me to Saturday. Can you email the missed notes rather than print them?",
+      "example_vi": "Tuyệt. Xin chuyển tôi qua thứ Bảy. Có thể gửi ghi chú qua email thay vì in không?",
+      "source_turn_id": "T11"
+    },
+    {
+      "term": "registration charge",
+      "pos": "phrase",
+      "meaning_vi": "phí đăng ký",
+      "example_en": "No, there's no extra registration charge. However, the Saturday group uses a different workbook.",
+      "example_vi": "Không cần đóng lại phí đăng ký. Tuy nhiên lớp thứ Bảy dùng sách bài tập khác.",
+      "source_turn_id": "T08"
+    },
+    {
+      "term": "workbook",
+      "pos": "word",
+      "meaning_vi": "sách bài tập",
+      "example_en": "No, there's no extra registration charge. However, the Saturday group uses a different workbook.",
+      "example_vi": "Không cần đóng lại phí đăng ký. Tuy nhiên lớp thứ Bảy dùng sách bài tập khác.",
+      "source_turn_id": "T08"
+    }
+  ],
+  "audio": {
+    "status": "not_generated",
+    "url": null,
+    "duration_ms": null,
+    "model": null,
+    "provider": null,
+    "voice_config": null,
+    "source_transcript_hash": "c8dad4110121a9ac4326d2cc9344be4fbfeeae5ebc6b2c451c5910be062d1930",
+    "audio_sha256": null,
+    "format": null
+  },
+  "qa": {
+    "content_reviewed": false,
+    "answers_verified": false,
+    "audio_verified": false,
+    "rights_cleared": false,
+    "duplicate_reviewed": false,
+    "notes": [
+      "AI-assisted original draft; requires IELTS-teacher review of all items and ambiguity.",
+      "Audio and time-alignment are pending.",
+      "Do not release automatically after structural validation.",
+      "M16.2: automated edits are provisional; IELTS teacher final signoff, audio and rights clearance pending."
+    ]
+  },
+  "provenance": {
+    "content_origin": "original_ai_assisted",
+    "source_urls": [],
+    "source_rights_note": "Original educational dialogue. Verify TTS provider usage conditions, rights and accessibility before production. Not an official IELTS item.",
+    "reviewer": null
+  },
+  "release_metadata": {
+    "published_at": null,
+    "version": 1
+  }
+}

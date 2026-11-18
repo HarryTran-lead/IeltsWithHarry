@@ -1,0 +1,440 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "DICT-F2-009",
+  "status": "draft",
+  "level": "L2",
+  "section": 0,
+  "topic": "Foundation",
+  "title": "Future Plans",
+  "learning_objectives_vi": [
+    "Nghe going to / will",
+    "Nghe trợ động từ và hình thái động từ, đối chiếu với chủ ngữ hoặc mốc thời gian."
+  ],
+  "content_format": "sentence_drill",
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Foundation narrator",
+      "tts_voice_id": null,
+      "accent_requested": "american"
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "I'm going to visit my aunt this weekend.",
+      "translation_vi": "Cuối tuần này tôi định thăm dì.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "grammar",
+        "sentence_dictation",
+        "foundation_f2"
+      ]
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "A",
+      "text_en": "She'll send the photos after the party.",
+      "translation_vi": "Cô ấy sẽ gửi ảnh sau bữa tiệc.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "grammar",
+        "sentence_dictation",
+        "foundation_f2"
+      ]
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "A",
+      "text_en": "We're meeting the new teacher on Monday.",
+      "translation_vi": "Chúng tôi sẽ gặp giáo viên mới vào thứ Hai.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "grammar",
+        "sentence_dictation",
+        "foundation_f2"
+      ]
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "A",
+      "text_en": "I think it will rain later this evening.",
+      "translation_vi": "Tôi nghĩ trời sẽ mưa vào tối muộn.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "grammar",
+        "sentence_dictation",
+        "foundation_f2"
+      ]
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "A",
+      "text_en": "Are they going to move to another flat?",
+      "translation_vi": "Họ có định chuyển sang căn hộ khác không?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "grammar",
+        "sentence_dictation",
+        "foundation_f2"
+      ]
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "A",
+      "text_en": "My parents are flying to Singapore next month.",
+      "translation_vi": "Tháng sau bố mẹ tôi sẽ bay đến Singapore.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "grammar",
+        "sentence_dictation",
+        "foundation_f2"
+      ]
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "I'll help you carry those heavy bags.",
+      "translation_vi": "Tôi sẽ giúp bạn mang những túi nặng đó.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "grammar",
+        "sentence_dictation",
+        "foundation_f2"
+      ]
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "A",
+      "text_en": "The library is going to close early tomorrow.",
+      "translation_vi": "Ngày mai thư viện dự kiến đóng cửa sớm.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "grammar",
+        "sentence_dictation",
+        "foundation_f2"
+      ]
+    },
+    {
+      "turn_id": "T09",
+      "speaker_id": "A",
+      "text_en": "We're not having a meeting this Friday.",
+      "translation_vi": "Thứ Sáu này chúng tôi không họp.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "grammar",
+        "sentence_dictation",
+        "foundation_f2"
+      ]
+    },
+    {
+      "turn_id": "T10",
+      "speaker_id": "A",
+      "text_en": "What time does the train leave tomorrow?",
+      "translation_vi": "Ngày mai tàu khởi hành lúc mấy giờ?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "grammar",
+        "sentence_dictation",
+        "foundation_f2"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "type": "dictation",
+      "prompt": "Nghe câu T01 rồi chép lại đúng những từ được nói.",
+      "correct_answers": [
+        "I'm going to visit my aunt this weekend."
+      ],
+      "evidence_turn_ids": [
+        "T01"
+      ],
+      "explanation_vi": "Going to là kế hoạch; khi nói tự nhiên có thể giảm âm. Nghĩa: Cuối tuần này tôi định thăm dì.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "grammar"
+      ]
+    },
+    {
+      "question_id": "Q02",
+      "type": "dictation",
+      "prompt": "Nghe câu T02 rồi chép lại đúng những từ được nói.",
+      "correct_answers": [
+        "She'll send the photos after the party."
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "She'll = she will, nghe /ʃiːl/. Nghĩa: Cô ấy sẽ gửi ảnh sau bữa tiệc.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "grammar"
+      ]
+    },
+    {
+      "question_id": "Q03",
+      "type": "dictation",
+      "prompt": "Nghe câu T03 rồi chép lại đúng những từ được nói.",
+      "correct_answers": [
+        "We're meeting the new teacher on Monday."
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Hiện tại tiếp diễn dùng cho lịch hẹn đã sắp xếp. Nghĩa: Chúng tôi sẽ gặp giáo viên mới vào thứ Hai.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "grammar"
+      ]
+    },
+    {
+      "question_id": "Q04",
+      "type": "dictation",
+      "prompt": "Nghe câu T04 rồi chép lại đúng những từ được nói.",
+      "correct_answers": [
+        "I think it will rain later this evening."
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Will thường diễn đạt dự đoán. Nghĩa: Tôi nghĩ trời sẽ mưa vào tối muộn.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "grammar"
+      ]
+    },
+    {
+      "question_id": "Q05",
+      "type": "dictation",
+      "prompt": "Nghe câu T05 rồi chép lại đúng những từ được nói.",
+      "correct_answers": [
+        "Are they going to move to another flat?"
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Are they going to là cấu trúc hỏi dự định. Nghĩa: Họ có định chuyển sang căn hộ khác không?",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "grammar"
+      ]
+    },
+    {
+      "question_id": "Q06",
+      "type": "dictation",
+      "prompt": "Nghe câu T06 rồi chép lại đúng những từ được nói.",
+      "correct_answers": [
+        "My parents are flying to Singapore next month."
+      ],
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "explanation_vi": "Are flying là kế hoạch đã sắp xếp. Nghĩa: Tháng sau bố mẹ tôi sẽ bay đến Singapore.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "grammar"
+      ]
+    },
+    {
+      "question_id": "Q07",
+      "type": "dictation",
+      "prompt": "Nghe câu T07 rồi chép lại đúng những từ được nói.",
+      "correct_answers": [
+        "I'll help you carry those heavy bags."
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "I'll = I will, lời đề nghị ngay lúc nói. Nghĩa: Tôi sẽ giúp bạn mang những túi nặng đó.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "grammar"
+      ]
+    },
+    {
+      "question_id": "Q08",
+      "type": "dictation",
+      "prompt": "Nghe câu T08 rồi chép lại đúng những từ được nói.",
+      "correct_answers": [
+        "The library is going to close early tomorrow."
+      ],
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "explanation_vi": "Is going to + close, không phải closing. Nghĩa: Ngày mai thư viện dự kiến đóng cửa sớm.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "grammar"
+      ]
+    },
+    {
+      "question_id": "Q09",
+      "type": "dictation",
+      "prompt": "Nghe câu T09 rồi chép lại đúng những từ được nói.",
+      "correct_answers": [
+        "We're not having a meeting this Friday."
+      ],
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "explanation_vi": "We're not having diễn đạt kế hoạch phủ định. Nghĩa: Thứ Sáu này chúng tôi không họp.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "grammar"
+      ]
+    },
+    {
+      "question_id": "Q10",
+      "type": "dictation",
+      "prompt": "Nghe câu T10 rồi chép lại đúng những từ được nói.",
+      "correct_answers": [
+        "What time does the train leave tomorrow?"
+      ],
+      "evidence_turn_ids": [
+        "T10"
+      ],
+      "explanation_vi": "Hiện tại đơn có thể dùng cho lịch trình cố định. Nghĩa: Ngày mai tàu khởi hành lúc mấy giờ?",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "grammar"
+      ]
+    },
+    {
+      "question_id": "Q11",
+      "type": "word_choice",
+      "prompt": "Cô ấy sẽ gửi gì sau tiệc?",
+      "options": [
+        "the tickets",
+        "the keys",
+        "the photos"
+      ],
+      "correct_answers": [
+        "the photos"
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "She'll send the photos.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "comprehension",
+        "meaning_check",
+        "grammar"
+      ]
+    },
+    {
+      "question_id": "Q12",
+      "type": "word_choice",
+      "prompt": "Người nói dự đoán thời tiết tối nay ra sao?",
+      "options": [
+        "it will be sunny",
+        "it will rain",
+        "it will snow"
+      ],
+      "correct_answers": [
+        "it will rain"
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "T04: I think it will rain.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "comprehension",
+        "meaning_check",
+        "grammar"
+      ]
+    }
+  ],
+  "vocabulary": [
+    {
+      "term": "going to visit",
+      "pos": "verb phrase",
+      "meaning_vi": "định đi thăm",
+      "example_en": "I'm going to visit my aunt this weekend.",
+      "example_vi": "Cuối tuần này tôi định thăm dì.",
+      "source_turn_id": "T01"
+    },
+    {
+      "term": "send",
+      "pos": "verb",
+      "meaning_vi": "gửi",
+      "example_en": "She'll send the photos after the party.",
+      "example_vi": "Cô ấy sẽ gửi ảnh sau bữa tiệc.",
+      "source_turn_id": "T02"
+    },
+    {
+      "term": "will rain",
+      "pos": "verb phrase",
+      "meaning_vi": "sẽ mưa",
+      "example_en": "I think it will rain later this evening.",
+      "example_vi": "Tôi nghĩ trời sẽ mưa vào tối muộn.",
+      "source_turn_id": "T04"
+    },
+    {
+      "term": "next month",
+      "pos": "adverbial phrase",
+      "meaning_vi": "tháng sau",
+      "example_en": "My parents are flying to Singapore next month.",
+      "example_vi": "Tháng sau bố mẹ tôi sẽ bay đến Singapore.",
+      "source_turn_id": "T06"
+    }
+  ],
+  "audio": {
+    "status": "not_generated",
+    "url": null,
+    "duration_ms": null,
+    "model": null,
+    "provider": null,
+    "voice_config": null,
+    "source_transcript_hash": "ceca5e6456e066f9438b99a100df0548fa5d82a0a693aac582874bfbfa20f031",
+    "audio_sha256": null,
+    "format": null
+  },
+  "qa": {
+    "content_reviewed": false,
+    "answers_verified": false,
+    "audio_verified": false,
+    "rights_cleared": false,
+    "duplicate_reviewed": false,
+    "notes": [
+      "Original AI-assisted authored draft. Human editorial review needed before publishing.",
+      "TTS audio and timestamps not produced. Keep lesson locked until audio verified.",
+      "If TTS output differs from canonical text, regenerate or update transcript and recheck evidence.",
+      "M16.2: automated edits are provisional; IELTS teacher final signoff, audio and rights clearance pending."
+    ]
+  },
+  "provenance": {
+    "content_origin": "original_ai_assisted",
+    "source_urls": [],
+    "source_rights_note": "Original material; inspect TTS provider terms, distribution rights and access restrictions before production.",
+    "reviewer": null
+  },
+  "release_metadata": {
+    "published_at": null,
+    "version": 1
+  }
+}

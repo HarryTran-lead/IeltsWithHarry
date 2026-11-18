@@ -1,0 +1,381 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "DICT-S2-018",
+  "status": "draft",
+  "level": "L4",
+  "section": 2,
+  "topic": "Public Parks",
+  "title": "Exploring the New Wetland Trail",
+  "learning_objectives_vi": [
+    "Nghe độc thoại chủ đề Public Parks và xác định mục đích thông báo.",
+    "Nhận diện cấu trúc ý và các chi tiết quan trọng theo thứ tự phát biểu.",
+    "Luyện chỉ đường theo sơ đồ A–F, phân biệt điểm trước/sau và hướng trái/phải."
+  ],
+  "content_format": "section_practice",
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Visitor guide / programme coordinator (one narrator)",
+      "tts_voice_id": null,
+      "accent_requested": "american"
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "Thank you for coming to the opening of our wetland trail. The reserve looks peaceful, but it supports a remarkable range of birds, insects and plants.",
+      "translation_vi": "Cảm ơn các bạn đến lễ mở đường mòn đất ngập nước. Khu bảo tồn trông yên bình nhưng có nhiều loài chim, côn trùng và thực vật.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_2",
+        "monologue",
+        "l4",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "A",
+      "text_en": "You are at the entrance in the south. The equipment hut is the first building to your right, while the education garden is in the front-left area.",
+      "translation_vi": "Các bạn đang ở cổng phía nam. Kho dụng cụ là tòa nhà đầu tiên bên phải, còn vườn giáo dục ở khu phía trước bên trái.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_2",
+        "monologue",
+        "l4",
+        "signposting",
+        "spatial_directions"
+      ]
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "A",
+      "text_en": "The bird hide is located at the back-left edge. It has narrow viewing windows, which allow visitors to watch wildlife without disturbing the nesting areas.",
+      "translation_vi": "Chòi quan sát chim nằm ở rìa sau bên trái. Cửa sổ quan sát hẹp giúp khách nhìn động vật mà không làm phiền vùng làm tổ.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_2",
+        "monologue",
+        "l4",
+        "signposting",
+        "spatial_directions"
+      ]
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "A",
+      "text_en": "For the best view of the wetland pools, continue to the far-right corner. The platform there is raised above the water and has space for wheelchairs.",
+      "translation_vi": "Muốn ngắm các ao ngập nước đẹp nhất, hãy tới góc xa bên phải. Sàn ngắm nâng trên mặt nước và có chỗ cho xe lăn.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_2",
+        "monologue",
+        "l4",
+        "signposting",
+        "spatial_directions"
+      ]
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "A",
+      "text_en": "The new path is just under two kilometres long. It was originally designed to be shorter, but the route was extended to keep walkers away from a protected reed bed.",
+      "translation_vi": "Lối mới dài gần hai ki-lô-mét. Ban đầu thiết kế ngắn hơn nhưng được kéo dài để người đi bộ tránh bãi sậy được bảo vệ.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_2",
+        "monologue",
+        "l4",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "A",
+      "text_en": "Volunteer-led tours leave at ten forty-five and two fifteen. The later tour is particularly suitable for families, because the guide includes a simple insect-identification activity.",
+      "translation_vi": "Tour tình nguyện viên khởi hành lúc 10:45 và 2:15. Buổi chiều phù hợp gia đình vì có hoạt động nhận dạng côn trùng đơn giản.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_2",
+        "monologue",
+        "l4",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "Please do not feed the ducks. Bread can damage their health and encourage too many birds to gather around the wooden walkway.",
+      "translation_vi": "Không cho vịt ăn. Bánh mì có thể hại sức khỏe và khiến quá nhiều chim tụ tập quanh lối đi gỗ.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_2",
+        "monologue",
+        "l4",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "A",
+      "text_en": "If the weather becomes too windy, we may close the raised platform. In that case the guide will take visitors to the covered observation room at the centre of the reserve.",
+      "translation_vi": "Nếu gió quá mạnh, sàn ngắm có thể đóng. Khi đó hướng dẫn viên sẽ dẫn khách tới phòng quan sát có mái ở trung tâm khu bảo tồn.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_2",
+        "monologue",
+        "l4",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T09",
+      "speaker_id": "A",
+      "text_en": "Finally, photographs are welcome, but please switch off camera flash. The trail closes at five thirty, leaving enough time for staff to check the nesting areas.",
+      "translation_vi": "Cuối cùng, có thể chụp ảnh nhưng tắt đèn flash. Đường mòn đóng lúc 5:30 để nhân viên kiểm tra khu chim làm tổ.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_2",
+        "monologue",
+        "l4",
+        "signposting"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "type": "map_labelling",
+      "prompt": "Use the location plan (A–F): Education garden on map: ____",
+      "correct_answers": [
+        "D"
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Vườn giáo dục ở phía trước bên trái.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "section_2",
+        "ielts_practice",
+        "map_orientation"
+      ],
+      "map_asset": "maps/DICT-S2-018.svg"
+    },
+    {
+      "question_id": "Q02",
+      "type": "map_labelling",
+      "prompt": "Use the location plan (A–F): Bird hide on map: ____",
+      "correct_answers": [
+        "A"
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Chòi quan sát chim ở phía sau bên trái.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "section_2",
+        "ielts_practice",
+        "map_orientation"
+      ],
+      "map_asset": "maps/DICT-S2-018.svg"
+    },
+    {
+      "question_id": "Q03",
+      "type": "note_completion",
+      "prompt": "Notes — New trail length: nearly two: ____",
+      "correct_answers": [
+        "kilometres"
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Lối đi dài gần hai ki-lô-mét.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_2",
+        "ielts_practice",
+        "detail_recognition"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q04",
+      "type": "mcq",
+      "prompt": "Which guided tour is recommended for families?",
+      "correct_answers": [
+        "two fifteen"
+      ],
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "explanation_vi": "Chuyến chiều lúc 2:15 có hoạt động cho gia đình.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "section_2",
+        "ielts_practice",
+        "detail_recognition"
+      ],
+      "options": [
+        "ten forty-five",
+        "five thirty",
+        "two fifteen"
+      ]
+    },
+    {
+      "question_id": "Q05",
+      "type": "note_completion",
+      "prompt": "Notes — Food visitors must not give ducks: ____",
+      "correct_answers": [
+        "bread"
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "Không cho vịt ăn bánh mì.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_2",
+        "ielts_practice",
+        "detail_recognition"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q06",
+      "type": "note_completion",
+      "prompt": "Notes — Trail closing time: ____",
+      "correct_answers": [
+        "five thirty"
+      ],
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "explanation_vi": "Đường mòn đóng lúc 5:30.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_2",
+        "ielts_practice",
+        "detail_recognition"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "D01",
+      "type": "dictation",
+      "prompt": "Nghe lại và chép nguyên văn đoạn T05 (toàn bộ lời người dẫn).",
+      "correct_answers": [
+        "The new path is just under two kilometres long. It was originally designed to be shorter, but the route was extended to keep walkers away from a protected reed bed."
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Câu gốc: The new path is just under two kilometres long. It was originally designed to be shorter, but the route was extended to keep walkers away from a protected reed bed. Nghĩa: Lối mới dài gần hai ki-lô-mét. Ban đầu thiết kế ngắn hơn nhưng được kéo dài để người đi bộ tránh bãi sậy được bảo vệ. Lưu ý từ chức năng, âm cuối và cụm từ nối.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "exact_transcript",
+        "section_2"
+      ]
+    },
+    {
+      "question_id": "G01",
+      "type": "gap_fill",
+      "prompt": "Điền cụm từ bị ẩn sau khi nghe: Thank you for coming to the opening of our ____ trail. The reserve looks peaceful, but it supports a remarkable range of birds, insects and plants.",
+      "correct_answers": [
+        "wetland"
+      ],
+      "evidence_turn_ids": [
+        "T01"
+      ],
+      "explanation_vi": "wetland: vùng đất ngập nước. Ngữ cảnh: Cảm ơn các bạn đến lễ mở đường mòn đất ngập nước. Khu bảo tồn trông yên bình nhưng có nhiều loài chim, côn trùng và thực vật.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "gap_fill",
+        "vocab_in_context",
+        "section_2"
+      ]
+    }
+  ],
+  "vocabulary": [
+    {
+      "term": "wetland",
+      "pos": "n.",
+      "meaning_vi": "vùng đất ngập nước",
+      "example_en": "Thank you for coming to the opening of our wetland trail. The reserve looks peaceful, but it supports a remarkable range of birds, insects and plants.",
+      "example_vi": "Cảm ơn các bạn đến lễ mở đường mòn đất ngập nước. Khu bảo tồn trông yên bình nhưng có nhiều loài chim, côn trùng và thực vật.",
+      "source_turn_id": "T01"
+    },
+    {
+      "term": "bird hide",
+      "pos": "n. phr.",
+      "meaning_vi": "chòi quan sát chim",
+      "example_en": "The bird hide is located at the back-left edge. It has narrow viewing windows, which allow visitors to watch wildlife without disturbing the nesting areas.",
+      "example_vi": "Chòi quan sát chim nằm ở rìa sau bên trái. Cửa sổ quan sát hẹp giúp khách nhìn động vật mà không làm phiền vùng làm tổ.",
+      "source_turn_id": "T03"
+    },
+    {
+      "term": "entrance",
+      "pos": "n.",
+      "meaning_vi": "lối vào",
+      "example_en": "You are at the entrance in the south. The equipment hut is the first building to your right, while the education garden is in the front-left area.",
+      "example_vi": "Các bạn đang ở cổng phía nam. Kho dụng cụ là tòa nhà đầu tiên bên phải, còn vườn giáo dục ở khu phía trước bên trái.",
+      "source_turn_id": "T02"
+    },
+    {
+      "term": "guide",
+      "pos": "n.",
+      "meaning_vi": "hướng dẫn viên",
+      "example_en": "Volunteer-led tours leave at ten forty-five and two fifteen. The later tour is particularly suitable for families, because the guide includes a simple insect-identification activity.",
+      "example_vi": "Tour tình nguyện viên khởi hành lúc 10:45 và 2:15. Buổi chiều phù hợp gia đình vì có hoạt động nhận dạng côn trùng đơn giản.",
+      "source_turn_id": "T06"
+    }
+  ],
+  "audio": {
+    "status": "not_generated",
+    "url": null,
+    "duration_ms": null,
+    "model": null,
+    "provider": null,
+    "voice_config": null,
+    "source_transcript_hash": "989988047fa6529ae0acf366b78b0c65562c69ccea926e20baae2f9342d38380",
+    "audio_sha256": null,
+    "format": null
+  },
+  "qa": {
+    "content_reviewed": false,
+    "answers_verified": false,
+    "audio_verified": false,
+    "rights_cleared": false,
+    "duplicate_reviewed": false,
+    "notes": [
+      "AI-assisted original writing; pedagogical and pronunciation review still required.",
+      "No TTS or sentence-level timestamps supplied; do not publish.",
+      "This is Section 2 skill practice, not an official IELTS test.",
+      "M16.2: automated edits are provisional; IELTS teacher final signoff, audio and rights clearance pending."
+    ]
+  },
+  "provenance": {
+    "content_origin": "original_ai_assisted",
+    "source_urls": [],
+    "source_rights_note": "Newly authored educational monologue. Confirm audio model distribution, age suitability and TOS separately before publishing.",
+    "reviewer": null
+  },
+  "release_metadata": {
+    "published_at": null,
+    "version": 1
+  }
+}

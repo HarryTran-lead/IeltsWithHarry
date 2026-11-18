@@ -1,0 +1,623 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "FND2-071",
+  "status": "draft",
+  "level": "L1",
+  "section": 0,
+  "topic": "Foundation M19 – Vocabulary",
+  "title": "Grocery shopping in context",
+  "learning_objectives_vi": [
+    "Nhận diện danh từ thực phẩm cùng lượng mua và lựa chọn thay thế.",
+    "Nghe lại theo lỗi trọng tâm, không chỉ hoàn thành số bài.",
+    "Đánh giá bằng nội dung chưa gặp và một lần nghe."
+  ],
+  "content_format": "sentence_drill",
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Foundation narrator",
+      "tts_voice_id": null,
+      "accent_requested": "new_zealand"
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "Could you pick up some spinach and a bag of rice on your way home?",
+      "translation_vi": "Bạn có thể mua ít rau bina và một túi gạo trên đường về không?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m19",
+        "grocery_items",
+        "vocabulary"
+      ],
+      "target_value": "spinach",
+      "target_kind": "lexical_phrase",
+      "target_meaning_vi": "rau bina",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "A",
+      "text_en": "The tomatoes are cheaper at the market than at the supermarket.",
+      "translation_vi": "Cà chua ở chợ rẻ hơn ở siêu thị.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m19",
+        "grocery_items",
+        "vocabulary"
+      ],
+      "target_value": "tomatoes",
+      "target_kind": "lexical_phrase",
+      "target_meaning_vi": "cà chua",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "A",
+      "text_en": "We need a loaf of bread and two cartons of milk.",
+      "translation_vi": "Chúng ta cần một ổ bánh mì và hai hộp sữa.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m19",
+        "grocery_items",
+        "vocabulary"
+      ],
+      "target_value": "bread",
+      "target_kind": "lexical_phrase",
+      "target_meaning_vi": "bánh mì",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "A",
+      "text_en": "I asked for fresh coriander, not dried parsley.",
+      "translation_vi": "Tôi hỏi mua rau mùi tươi, không phải mùi tây khô.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m19",
+        "grocery_items",
+        "vocabulary"
+      ],
+      "target_value": "coriander",
+      "target_kind": "lexical_phrase",
+      "target_meaning_vi": "rau mùi",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "A",
+      "text_en": "The shop has run out of mushrooms, so I'll buy peppers instead.",
+      "translation_vi": "Cửa hàng hết nấm nên tôi sẽ mua ớt chuông thay thế.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m19",
+        "grocery_items",
+        "vocabulary"
+      ],
+      "target_value": "peppers",
+      "target_kind": "lexical_phrase",
+      "target_meaning_vi": "ớt chuông",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "A",
+      "text_en": "Please put the frozen peas in the freezer as soon as you get back.",
+      "translation_vi": "Hãy đặt đậu Hà Lan đông lạnh vào ngăn đá ngay khi về.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m19",
+        "grocery_items",
+        "vocabulary"
+      ],
+      "target_value": "peas",
+      "target_kind": "lexical_phrase",
+      "target_meaning_vi": "đậu Hà Lan",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "We only need a small jar of honey for the recipe.",
+      "translation_vi": "Chúng ta chỉ cần một lọ mật ong nhỏ cho công thức món ăn.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m19",
+        "grocery_items",
+        "vocabulary"
+      ],
+      "target_value": "honey",
+      "target_kind": "lexical_phrase",
+      "target_meaning_vi": "mật ong",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "A",
+      "text_en": "I chose the unsalted butter because the soup is already salty.",
+      "translation_vi": "Tôi chọn bơ không muối vì súp đã mặn rồi.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m19",
+        "grocery_items",
+        "vocabulary"
+      ],
+      "target_value": "butter",
+      "target_kind": "lexical_phrase",
+      "target_meaning_vi": "bơ",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T09",
+      "speaker_id": "A",
+      "text_en": "The label says this yoghurt should be kept in the fridge.",
+      "translation_vi": "Nhãn ghi sữa chua này phải được bảo quản trong tủ lạnh.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m19",
+        "grocery_items",
+        "vocabulary"
+      ],
+      "target_value": "yoghurt",
+      "target_kind": "lexical_phrase",
+      "target_meaning_vi": "sữa chua",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T10",
+      "speaker_id": "A",
+      "text_en": "There are no lemons left, but we have plenty of limes.",
+      "translation_vi": "Không còn chanh vàng nhưng chúng ta có nhiều chanh xanh.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m19",
+        "grocery_items",
+        "vocabulary"
+      ],
+      "target_value": "limes",
+      "target_kind": "lexical_phrase",
+      "target_meaning_vi": "chanh xanh",
+      "bank_role": "training"
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "type": "dictation",
+      "prompt": "Nghe lượt T01 rồi chép đầy đủ câu tiếng Anh được nói.",
+      "correct_answers": [
+        "Could you pick up some spinach and a bag of rice on your way home?"
+      ],
+      "evidence_turn_ids": [
+        "T01"
+      ],
+      "explanation_vi": "Nghe lại theo nhóm từ; câu gốc là: Could you pick up some spinach and a bag of rice on your way home? Nghĩa: Bạn có thể mua ít rau bina và một túi gạo trên đường về không?",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "grocery_items"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q02",
+      "type": "dictation",
+      "prompt": "Nghe lượt T02 rồi chép đầy đủ câu tiếng Anh được nói.",
+      "correct_answers": [
+        "The tomatoes are cheaper at the market than at the supermarket."
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Nghe lại theo nhóm từ; câu gốc là: The tomatoes are cheaper at the market than at the supermarket. Nghĩa: Cà chua ở chợ rẻ hơn ở siêu thị.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "grocery_items"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q03",
+      "type": "dictation",
+      "prompt": "Nghe lượt T03 rồi chép đầy đủ câu tiếng Anh được nói.",
+      "correct_answers": [
+        "We need a loaf of bread and two cartons of milk."
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Nghe lại theo nhóm từ; câu gốc là: We need a loaf of bread and two cartons of milk. Nghĩa: Chúng ta cần một ổ bánh mì và hai hộp sữa.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "grocery_items"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q04",
+      "type": "dictation",
+      "prompt": "Nghe lượt T04 rồi chép đầy đủ câu tiếng Anh được nói.",
+      "correct_answers": [
+        "I asked for fresh coriander, not dried parsley."
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Nghe lại theo nhóm từ; câu gốc là: I asked for fresh coriander, not dried parsley. Nghĩa: Tôi hỏi mua rau mùi tươi, không phải mùi tây khô.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "grocery_items"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q05",
+      "type": "dictation",
+      "prompt": "Nghe lượt T05 rồi chép đầy đủ câu tiếng Anh được nói.",
+      "correct_answers": [
+        "The shop has run out of mushrooms, so I'll buy peppers instead."
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Nghe lại theo nhóm từ; câu gốc là: The shop has run out of mushrooms, so I'll buy peppers instead. Nghĩa: Cửa hàng hết nấm nên tôi sẽ mua ớt chuông thay thế.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "grocery_items"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q06",
+      "type": "dictation",
+      "prompt": "Nghe lượt T06 rồi chép đầy đủ câu tiếng Anh được nói.",
+      "correct_answers": [
+        "Please put the frozen peas in the freezer as soon as you get back."
+      ],
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "explanation_vi": "Nghe lại theo nhóm từ; câu gốc là: Please put the frozen peas in the freezer as soon as you get back. Nghĩa: Hãy đặt đậu Hà Lan đông lạnh vào ngăn đá ngay khi về.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "grocery_items"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q07",
+      "type": "dictation",
+      "prompt": "Nghe lượt T07 rồi chép đầy đủ câu tiếng Anh được nói.",
+      "correct_answers": [
+        "We only need a small jar of honey for the recipe."
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "Nghe lại theo nhóm từ; câu gốc là: We only need a small jar of honey for the recipe. Nghĩa: Chúng ta chỉ cần một lọ mật ong nhỏ cho công thức món ăn.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "grocery_items"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q08",
+      "type": "dictation",
+      "prompt": "Nghe lượt T08 rồi chép đầy đủ câu tiếng Anh được nói.",
+      "correct_answers": [
+        "I chose the unsalted butter because the soup is already salty."
+      ],
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "explanation_vi": "Nghe lại theo nhóm từ; câu gốc là: I chose the unsalted butter because the soup is already salty. Nghĩa: Tôi chọn bơ không muối vì súp đã mặn rồi.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "grocery_items"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q09",
+      "type": "dictation",
+      "prompt": "Nghe lượt T09 rồi chép đầy đủ câu tiếng Anh được nói.",
+      "correct_answers": [
+        "The label says this yoghurt should be kept in the fridge."
+      ],
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "explanation_vi": "Nghe lại theo nhóm từ; câu gốc là: The label says this yoghurt should be kept in the fridge. Nghĩa: Nhãn ghi sữa chua này phải được bảo quản trong tủ lạnh.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "grocery_items"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q10",
+      "type": "dictation",
+      "prompt": "Nghe lượt T10 rồi chép đầy đủ câu tiếng Anh được nói.",
+      "correct_answers": [
+        "There are no lemons left, but we have plenty of limes."
+      ],
+      "evidence_turn_ids": [
+        "T10"
+      ],
+      "explanation_vi": "Nghe lại theo nhóm từ; câu gốc là: There are no lemons left, but we have plenty of limes. Nghĩa: Không còn chanh vàng nhưng chúng ta có nhiều chanh xanh.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "grocery_items"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q11",
+      "type": "short_answer",
+      "prompt": "Nghe lượt T06. Thực phẩm đông lạnh nào được nhắc đến? Trả lời bằng từ/cụm tiếng Anh đúng như lời nghe.",
+      "correct_answers": [
+        "peas"
+      ],
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "explanation_vi": "Thông tin đúng: peas (đậu Hà Lan). Dẫn chứng: Please put the frozen peas in the freezer as soon as you get back. Nghĩa: Hãy đặt đậu Hà Lan đông lạnh vào ngăn đá ngay khi về.",
+      "scoring_policy": "lexical_case_punctuation_insensitive_server",
+      "target_kind": "lexical_phrase",
+      "question_tags": [
+        "short_answer",
+        "grocery_items",
+        "training_comprehension"
+      ],
+      "max_replays_practice": 5,
+      "first_listen_only_for_mastery": false
+    },
+    {
+      "question_id": "Q12",
+      "type": "short_answer",
+      "prompt": "Nghe lượt T07. Nguyên liệu ngọt cần mua là gì? Trả lời bằng từ/cụm tiếng Anh đúng như lời nghe.",
+      "correct_answers": [
+        "honey"
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "Thông tin đúng: honey (mật ong). Dẫn chứng: We only need a small jar of honey for the recipe. Nghĩa: Chúng ta chỉ cần một lọ mật ong nhỏ cho công thức món ăn.",
+      "scoring_policy": "lexical_case_punctuation_insensitive_server",
+      "target_kind": "lexical_phrase",
+      "question_tags": [
+        "short_answer",
+        "grocery_items",
+        "training_comprehension"
+      ],
+      "max_replays_practice": 5,
+      "first_listen_only_for_mastery": false
+    },
+    {
+      "question_id": "Q13",
+      "type": "short_answer",
+      "prompt": "Nghe lượt T08. Người nói chọn loại nguyên liệu nào? Trả lời bằng từ/cụm tiếng Anh đúng như lời nghe.",
+      "correct_answers": [
+        "butter"
+      ],
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "explanation_vi": "Thông tin đúng: butter (bơ). Dẫn chứng: I chose the unsalted butter because the soup is already salty. Nghĩa: Tôi chọn bơ không muối vì súp đã mặn rồi.",
+      "scoring_policy": "lexical_case_punctuation_insensitive_server",
+      "target_kind": "lexical_phrase",
+      "question_tags": [
+        "short_answer",
+        "grocery_items",
+        "training_comprehension"
+      ],
+      "max_replays_practice": 5,
+      "first_listen_only_for_mastery": false
+    },
+    {
+      "question_id": "Q14",
+      "type": "short_answer",
+      "prompt": "Nghe lượt T09. Thực phẩm nào phải để trong tủ lạnh? Trả lời bằng từ/cụm tiếng Anh đúng như lời nghe.",
+      "correct_answers": [
+        "yoghurt"
+      ],
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "explanation_vi": "Thông tin đúng: yoghurt (sữa chua). Dẫn chứng: The label says this yoghurt should be kept in the fridge. Nghĩa: Nhãn ghi sữa chua này phải được bảo quản trong tủ lạnh.",
+      "scoring_policy": "lexical_case_punctuation_insensitive_server",
+      "target_kind": "lexical_phrase",
+      "question_tags": [
+        "short_answer",
+        "grocery_items",
+        "training_comprehension"
+      ],
+      "max_replays_practice": 5,
+      "first_listen_only_for_mastery": false
+    },
+    {
+      "question_id": "Q15",
+      "type": "short_answer",
+      "prompt": "Nghe lượt T10. Loại quả nào vẫn còn nhiều? Trả lời bằng từ/cụm tiếng Anh đúng như lời nghe.",
+      "correct_answers": [
+        "limes"
+      ],
+      "evidence_turn_ids": [
+        "T10"
+      ],
+      "explanation_vi": "Thông tin đúng: limes (chanh xanh). Dẫn chứng: There are no lemons left, but we have plenty of limes. Nghĩa: Không còn chanh vàng nhưng chúng ta có nhiều chanh xanh.",
+      "scoring_policy": "lexical_case_punctuation_insensitive_server",
+      "target_kind": "lexical_phrase",
+      "question_tags": [
+        "short_answer",
+        "grocery_items",
+        "training_comprehension"
+      ],
+      "max_replays_practice": 5,
+      "first_listen_only_for_mastery": false
+    }
+  ],
+  "vocabulary": [
+    {
+      "term": "spinach",
+      "pos": "noun (contextual)",
+      "meaning_vi": "rau bina",
+      "example_en": "Could you pick up some spinach and a bag of rice on your way home?",
+      "example_vi": "Bạn có thể mua ít rau bina và một túi gạo trên đường về không?",
+      "is_illustrative_context": false
+    },
+    {
+      "term": "tomatoes",
+      "pos": "noun (contextual)",
+      "meaning_vi": "cà chua",
+      "example_en": "The tomatoes are cheaper at the market than at the supermarket.",
+      "example_vi": "Cà chua ở chợ rẻ hơn ở siêu thị.",
+      "is_illustrative_context": false
+    },
+    {
+      "term": "bread",
+      "pos": "noun (contextual)",
+      "meaning_vi": "bánh mì",
+      "example_en": "We need a loaf of bread and two cartons of milk.",
+      "example_vi": "Chúng ta cần một ổ bánh mì và hai hộp sữa.",
+      "is_illustrative_context": false
+    },
+    {
+      "term": "coriander",
+      "pos": "noun (contextual)",
+      "meaning_vi": "rau mùi",
+      "example_en": "I asked for fresh coriander, not dried parsley.",
+      "example_vi": "Tôi hỏi mua rau mùi tươi, không phải mùi tây khô.",
+      "is_illustrative_context": false
+    },
+    {
+      "term": "peppers",
+      "pos": "noun (contextual)",
+      "meaning_vi": "ớt chuông",
+      "example_en": "The shop has run out of mushrooms, so I'll buy peppers instead.",
+      "example_vi": "Cửa hàng hết nấm nên tôi sẽ mua ớt chuông thay thế.",
+      "is_illustrative_context": false
+    },
+    {
+      "term": "peas",
+      "pos": "noun (contextual)",
+      "meaning_vi": "đậu Hà Lan",
+      "example_en": "Please put the frozen peas in the freezer as soon as you get back.",
+      "example_vi": "Hãy đặt đậu Hà Lan đông lạnh vào ngăn đá ngay khi về.",
+      "is_illustrative_context": false
+    }
+  ],
+  "micro_skill_id": "grocery_items",
+  "bank_role": "training",
+  "content_design": {
+    "sequence": "10_varied_contexts",
+    "first_listen": "1x",
+    "guided_replay_max": 5,
+    "mastery_requires_unseen": true,
+    "learning_note_vi": "Nhận diện danh từ thực phẩm cùng lượng mua và lựa chọn thay thế.",
+    "category": "vocabulary",
+    "post_submit_review_only": true,
+    "unseen_assessment_id": "FND2-071-HOLDOUT",
+    "spoken_text_must_match_target": true,
+    "holdout_must_be_server_side": true,
+    "no_band_claim": true
+  },
+  "audio": {
+    "status": "not_generated",
+    "url": null,
+    "duration_ms": null,
+    "provider": null,
+    "model": null,
+    "voice_config": null,
+    "format": null,
+    "audio_sha256": null,
+    "source_transcript_hash": "98693922a99833715702003e90ee6a6e6a5851ddf44b5df7aef731644bd39469",
+    "generation_notes": "Synthesize actual spoken utterance only; never read learning metadata. Human verify dates, names and connected-speech target."
+  },
+  "qa": {
+    "content_reviewed": false,
+    "answers_verified": false,
+    "audio_verified": false,
+    "human_signed_off": false,
+    "duplicate_reviewed": false,
+    "notes": [
+      "M19 originally authored DRAFT, machine-verified only.",
+      "Connected-speech phonetic features NOT established until actual audio is reviewed."
+    ]
+  },
+  "provenance": {
+    "content_origin": "original_ai_assisted",
+    "rights_status": "pending_tts_audio_terms_review",
+    "source_urls": [],
+    "reviewer": null
+  },
+  "release_metadata": {
+    "published_at": null,
+    "version": 1
+  },
+  "lesson_theory_vi": {
+    "core_rule": "Nhận diện danh từ thực phẩm cùng lượng mua và lựa chọn thay thế.",
+    "worked_contrasts": [
+      {
+        "spoken_example": "The shop was out of tea, so I bought coffee instead.",
+        "written_value": "coffee",
+        "teacher_note_vi": "So/instead báo lựa chọn thay thế; tea chỉ là thông tin cũ."
+      },
+      {
+        "spoken_example": "The receipt is in the bag, beside the charger.",
+        "written_value": "receipt",
+        "teacher_note_vi": "Dựa câu hỏi để chọn đúng đồ vật, không chọn mọi từ vựng nghe thấy."
+      }
+    ],
+    "learning_steps": [
+      "Đọc nghĩa và ví dụ mới, chú ý từ loại, ngữ cảnh dùng từ.",
+      "Nghe mỗi câu một lần để dự đoán từ đích, sau đó chép cả câu.",
+      "Làm năm câu kiểm tra thông tin có ngữ cảnh mà không xem đáp án.",
+      "Cuối bài thử hai câu chưa gặp; nếu sai, quay về kỹ năng nhỏ tương ứng."
+    ],
+    "common_mistakes": [
+      "Chọn mặt hàng đã hết thay cho mặt hàng được mua.",
+      "Chỉ nhìn từ khóa quen mà không nghe phần phủ định hoặc cách người nói sửa lại."
+    ],
+    "before_audio_question": "Từ/cụm nào phù hợp với câu hỏi, và từ bị phủ định có phải đáp án không?",
+    "difficulty_steps": [
+      "T01–T03: ngữ cảnh ngắn, thông tin chính rõ ràng.",
+      "T04–T07: thêm thông tin phụ, dạng phủ định hoặc tương phản.",
+      "T08–T10: nội dung dài hơn, nhiều chi tiết hoặc đổi ý."
+    ],
+    "examples_are_not_mastery_items": true,
+    "audio_review_warning_vi": null
+  }
+}

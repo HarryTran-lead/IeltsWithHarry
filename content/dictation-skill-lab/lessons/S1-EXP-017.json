@@ -1,0 +1,829 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "S1-EXP-017",
+  "status": "draft",
+  "level": "L4",
+  "section": 1,
+  "topic": "Car-sharing membership",
+  "title": "Joining a Local Car-share Scheme",
+  "learning_objectives_vi": [
+    "Theo dõi một cuộc hội thoại đời sống hai người nói có thay đổi và đối chiếu thông tin.",
+    "Lấy thông tin cuối cùng đúng theo thứ tự audio, không chọn đáp án chỉ vì xuất hiện sớm.",
+    "Luyện 8 câu IELTS-style và sau đó sửa lỗi bằng Dictation có bằng chứng rõ ràng."
+  ],
+  "content_format": "section_practice",
+  "target_skills": [
+    "licence",
+    "deposit",
+    "vehicle_types",
+    "collection"
+  ],
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Reception/service representative",
+      "accent_requested": "british",
+      "tts_voice_id": null
+    },
+    {
+      "speaker_id": "B",
+      "role": "Customer/visitor",
+      "accent_requested": "british",
+      "tts_voice_id": null
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "Hello, CityLoop Car Share. Would you like information about joining, or do you already have an account?",
+      "translation_vi": "Xin chào, CityLoop Car Share. Chị muốn hỏi đăng ký hay đã có tài khoản?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_1",
+        "two_speaker_dialogue",
+        "m21",
+        "licence",
+        "deposit",
+        "vehicle_types",
+        "collection"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "B",
+      "text_en": "I'm thinking of joining. I sold my old car last month and only need a vehicle for occasional supermarket trips.",
+      "translation_vi": "Tôi đang tính tham gia. Tôi đã bán xe cũ tháng trước và chỉ cần xe thi thoảng đi siêu thị.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_1",
+        "two_speaker_dialogue",
+        "m21",
+        "licence",
+        "deposit",
+        "vehicle_types",
+        "collection"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "A",
+      "text_en": "That's exactly what the service is designed for. Members can reserve a car by the hour through the app.",
+      "translation_vi": "Đó đúng là mục đích dịch vụ. Hội viên đặt xe theo giờ qua ứng dụng.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_1",
+        "two_speaker_dialogue",
+        "m21",
+        "licence",
+        "deposit",
+        "vehicle_types",
+        "collection"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "B",
+      "text_en": "I live near Station Square. Is there a pick-up location close to the railway entrance?",
+      "translation_vi": "Tôi sống gần quảng trường Station Square. Có điểm lấy xe gần cửa ga không?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_1",
+        "two_speaker_dialogue",
+        "m21",
+        "licence",
+        "deposit",
+        "vehicle_types",
+        "collection"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "A",
+      "text_en": "We had a car outside the station, but that bay was removed. The nearest vehicle is now in Mercer Street car park.",
+      "translation_vi": "Trước đây có xe ngoài ga nhưng chỗ đó đã bỏ. Xe gần nhất hiện ở bãi xe đường Mercer.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_1",
+        "two_speaker_dialogue",
+        "m21",
+        "licence",
+        "deposit",
+        "vehicle_types",
+        "collection"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "B",
+      "text_en": "That's only a short walk. Do I need a driving licence that's been valid for several years?",
+      "translation_vi": "Đi bộ gần thôi. Tôi có cần bằng lái đã có hiệu lực nhiều năm không?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_1",
+        "two_speaker_dialogue",
+        "m21",
+        "licence",
+        "deposit",
+        "vehicle_types",
+        "collection"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "You need to have held a full licence for at least twelve months. A provisional licence isn't enough.",
+      "translation_vi": "Chị cần có bằng đầy đủ ít nhất 12 tháng. Bằng tạm không đủ.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_1",
+        "two_speaker_dialogue",
+        "m21",
+        "licence",
+        "deposit",
+        "vehicle_types",
+        "collection"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "B",
+      "text_en": "I've had mine for six years, so that should be fine. Is there an annual subscription?",
+      "translation_vi": "Tôi có bằng sáu năm rồi, chắc được. Có phí đăng ký hàng năm không?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_1",
+        "two_speaker_dialogue",
+        "m21",
+        "licence",
+        "deposit",
+        "vehicle_types",
+        "collection"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T09",
+      "speaker_id": "A",
+      "text_en": "The basic plan costs twenty pounds a year, while the frequent-driver plan is sixty. Most occasional users choose basic.",
+      "translation_vi": "Gói cơ bản 20 bảng/năm, gói đi thường xuyên 60. Người đi ít thường chọn cơ bản.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_1",
+        "two_speaker_dialogue",
+        "m21",
+        "licence",
+        "deposit",
+        "vehicle_types",
+        "collection"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T10",
+      "speaker_id": "B",
+      "text_en": "I'll take the basic one. What about the price of the actual car hire? I saw several hourly rates.",
+      "translation_vi": "Tôi chọn cơ bản. Còn giá thuê xe thực tế? Tôi thấy nhiều giá theo giờ.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_1",
+        "two_speaker_dialogue",
+        "m21",
+        "licence",
+        "deposit",
+        "vehicle_types",
+        "collection"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T11",
+      "speaker_id": "A",
+      "text_en": "A small hatchback costs five pounds per hour, and a larger estate car costs eight. Fuel is included in both rates.",
+      "translation_vi": "Xe nhỏ 5 bảng/giờ, xe wagon lớn 8 bảng. Cả hai đã gồm nhiên liệu.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_1",
+        "two_speaker_dialogue",
+        "m21",
+        "licence",
+        "deposit",
+        "vehicle_types",
+        "collection"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T12",
+      "speaker_id": "B",
+      "text_en": "A small hatchback is enough. Can I leave it in any CityLoop parking bay when I'm finished?",
+      "translation_vi": "Xe nhỏ là đủ. Khi dùng xong tôi có thể trả ở bất kỳ bãi CityLoop nào không?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_1",
+        "two_speaker_dialogue",
+        "m21",
+        "licence",
+        "deposit",
+        "vehicle_types",
+        "collection"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T13",
+      "speaker_id": "A",
+      "text_en": "No, you must return the vehicle to the same bay where you collected it. Otherwise another booking may be delayed.",
+      "translation_vi": "Không, phải trả đúng chỗ đã nhận, nếu không có thể ảnh hưởng khách kế tiếp.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_1",
+        "two_speaker_dialogue",
+        "m21",
+        "licence",
+        "deposit",
+        "vehicle_types",
+        "collection"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T14",
+      "speaker_id": "B",
+      "text_en": "That makes sense. Do I need to pay a deposit when I register?",
+      "translation_vi": "Hợp lý. Tôi phải cọc khi đăng ký không?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_1",
+        "two_speaker_dialogue",
+        "m21",
+        "licence",
+        "deposit",
+        "vehicle_types",
+        "collection"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T15",
+      "speaker_id": "A",
+      "text_en": "There's a refundable deposit of thirty pounds. We hold it while your account is active and return it when you close the account.",
+      "translation_vi": "Có tiền cọc hoàn lại 30 bảng, giữ khi tài khoản hoạt động và trả khi đóng tài khoản.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_1",
+        "two_speaker_dialogue",
+        "m21",
+        "licence",
+        "deposit",
+        "vehicle_types",
+        "collection"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T16",
+      "speaker_id": "B",
+      "text_en": "Thanks. I'll upload my licence tonight and choose Mercer Street as my usual collection point.",
+      "translation_vi": "Cảm ơn. Tối nay tôi sẽ tải ảnh bằng lái lên và chọn đường Mercer làm điểm nhận thường xuyên.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_1",
+        "two_speaker_dialogue",
+        "m21",
+        "licence",
+        "deposit",
+        "vehicle_types",
+        "collection"
+      ],
+      "bank_role": "training"
+    }
+  ],
+  "questions": [
+    {
+      "type": "note_completion",
+      "prompt": "Nearest collection street: ____",
+      "correct_answers": [
+        "Mercer"
+      ],
+      "spoken_answer": "Mercer",
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER",
+      "scoring_policy": "controlled_variants",
+      "explanation_vi": "Chỗ cũ ngoài ga đã bỏ, điểm mới trên Mercer Street.",
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "evidence_excerpt_en": "Mercer Street car park",
+      "question_tags": [
+        "m21",
+        "ielts_part_1_practice",
+        "licence",
+        "deposit",
+        "vehicle_types",
+        "collection"
+      ],
+      "question_id": "Q01",
+      "group_id": "IELTS_S1_PRACTICE"
+    },
+    {
+      "type": "note_completion",
+      "prompt": "Full licence held for at least ____ months",
+      "correct_answers": [
+        "twelve",
+        "12"
+      ],
+      "spoken_answer": "twelve",
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER",
+      "scoring_policy": "controlled_variants",
+      "explanation_vi": "Cần bằng lái đầy đủ tối thiểu 12 tháng.",
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "evidence_excerpt_en": "at least twelve months",
+      "question_tags": [
+        "m21",
+        "ielts_part_1_practice",
+        "licence",
+        "deposit",
+        "vehicle_types",
+        "collection"
+      ],
+      "question_id": "Q02",
+      "group_id": "IELTS_S1_PRACTICE"
+    },
+    {
+      "type": "form_completion",
+      "prompt": "Basic annual membership: £____",
+      "correct_answers": [
+        "twenty",
+        "20"
+      ],
+      "spoken_answer": "twenty",
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER",
+      "scoring_policy": "controlled_variants",
+      "explanation_vi": "Gói cơ bản 20 bảng/năm.",
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "evidence_excerpt_en": "twenty pounds a year",
+      "question_tags": [
+        "m21",
+        "ielts_part_1_practice",
+        "licence",
+        "deposit",
+        "vehicle_types",
+        "collection"
+      ],
+      "question_id": "Q03",
+      "group_id": "IELTS_S1_PRACTICE"
+    },
+    {
+      "type": "mcq",
+      "prompt": "Which plan is recommended for occasional users?",
+      "correct_answers": [
+        "basic"
+      ],
+      "options": [
+        "frequent-driver",
+        "basic",
+        "business"
+      ],
+      "correct_option": "B",
+      "scoring_policy": "strict",
+      "explanation_vi": "Người dùng không thường xuyên thường chọn gói cơ bản.",
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "evidence_excerpt_en": "occasional users choose basic",
+      "question_tags": [
+        "m21",
+        "ielts_part_1_practice",
+        "licence",
+        "deposit",
+        "vehicle_types",
+        "collection"
+      ],
+      "question_id": "Q04",
+      "group_id": "IELTS_S1_PRACTICE"
+    },
+    {
+      "type": "note_completion",
+      "prompt": "Small car hourly price: £____",
+      "correct_answers": [
+        "five",
+        "5"
+      ],
+      "spoken_answer": "five",
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER",
+      "scoring_policy": "controlled_variants",
+      "explanation_vi": "Xe nhỏ 5 bảng/giờ.",
+      "evidence_turn_ids": [
+        "T11"
+      ],
+      "evidence_excerpt_en": "five pounds per hour",
+      "question_tags": [
+        "m21",
+        "ielts_part_1_practice",
+        "licence",
+        "deposit",
+        "vehicle_types",
+        "collection"
+      ],
+      "question_id": "Q05",
+      "group_id": "IELTS_S1_PRACTICE"
+    },
+    {
+      "type": "note_completion",
+      "prompt": "Larger car hourly price: £____",
+      "correct_answers": [
+        "eight",
+        "8"
+      ],
+      "spoken_answer": "eight",
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER",
+      "scoring_policy": "controlled_variants",
+      "explanation_vi": "Xe lớn 8 bảng/giờ.",
+      "evidence_turn_ids": [
+        "T11"
+      ],
+      "evidence_excerpt_en": "eight",
+      "question_tags": [
+        "m21",
+        "ielts_part_1_practice",
+        "licence",
+        "deposit",
+        "vehicle_types",
+        "collection"
+      ],
+      "question_id": "Q06",
+      "group_id": "IELTS_S1_PRACTICE"
+    },
+    {
+      "type": "mcq",
+      "prompt": "Where must a car be returned?",
+      "correct_answers": [
+        "same bay"
+      ],
+      "options": [
+        "any CityLoop bay",
+        "railway station entrance",
+        "same bay"
+      ],
+      "correct_option": "C",
+      "scoring_policy": "strict",
+      "explanation_vi": "Phải trả đúng chỗ nhận xe.",
+      "evidence_turn_ids": [
+        "T13"
+      ],
+      "evidence_excerpt_en": "same bay where you collected it",
+      "question_tags": [
+        "m21",
+        "ielts_part_1_practice",
+        "licence",
+        "deposit",
+        "vehicle_types",
+        "collection"
+      ],
+      "question_id": "Q07",
+      "group_id": "IELTS_S1_PRACTICE"
+    },
+    {
+      "type": "form_completion",
+      "prompt": "Refundable deposit: £____",
+      "correct_answers": [
+        "thirty",
+        "30"
+      ],
+      "spoken_answer": "thirty",
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER",
+      "scoring_policy": "controlled_variants",
+      "explanation_vi": "Tiền cọc hoàn lại 30 bảng.",
+      "evidence_turn_ids": [
+        "T15"
+      ],
+      "evidence_excerpt_en": "thirty pounds",
+      "question_tags": [
+        "m21",
+        "ielts_part_1_practice",
+        "licence",
+        "deposit",
+        "vehicle_types",
+        "collection"
+      ],
+      "question_id": "Q08",
+      "group_id": "IELTS_S1_PRACTICE"
+    },
+    {
+      "question_id": "D01",
+      "group_id": "DICTATION",
+      "type": "dictation",
+      "prompt": "Nghe và chép nguyên văn lượt thoại T04.",
+      "correct_answers": [
+        "I live near Station Square. Is there a pick-up location close to the railway entrance?"
+      ],
+      "scoring_policy": "case_punctuation_insensitive",
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Tôi sống gần quảng trường Station Square. Có điểm lấy xe gần cửa ga không?",
+      "question_tags": [
+        "m21",
+        "dictation",
+        "exact_words",
+        "licence",
+        "deposit",
+        "vehicle_types",
+        "collection"
+      ]
+    },
+    {
+      "question_id": "D02",
+      "group_id": "DICTATION",
+      "type": "dictation",
+      "prompt": "Nghe và chép nguyên văn lượt thoại T07.",
+      "correct_answers": [
+        "You need to have held a full licence for at least twelve months. A provisional licence isn't enough."
+      ],
+      "scoring_policy": "case_punctuation_insensitive",
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "Chị cần có bằng đầy đủ ít nhất 12 tháng. Bằng tạm không đủ.",
+      "question_tags": [
+        "m21",
+        "dictation",
+        "exact_words",
+        "licence",
+        "deposit",
+        "vehicle_types",
+        "collection"
+      ]
+    },
+    {
+      "question_id": "D03",
+      "group_id": "DICTATION",
+      "type": "dictation",
+      "prompt": "Nghe và chép nguyên văn lượt thoại T10.",
+      "correct_answers": [
+        "I'll take the basic one. What about the price of the actual car hire? I saw several hourly rates."
+      ],
+      "scoring_policy": "case_punctuation_insensitive",
+      "evidence_turn_ids": [
+        "T10"
+      ],
+      "explanation_vi": "Tôi chọn cơ bản. Còn giá thuê xe thực tế? Tôi thấy nhiều giá theo giờ.",
+      "question_tags": [
+        "m21",
+        "dictation",
+        "exact_words",
+        "licence",
+        "deposit",
+        "vehicle_types",
+        "collection"
+      ]
+    },
+    {
+      "question_id": "D04",
+      "group_id": "DICTATION",
+      "type": "dictation",
+      "prompt": "Nghe và chép nguyên văn lượt thoại T14.",
+      "correct_answers": [
+        "That makes sense. Do I need to pay a deposit when I register?"
+      ],
+      "scoring_policy": "case_punctuation_insensitive",
+      "evidence_turn_ids": [
+        "T14"
+      ],
+      "explanation_vi": "Hợp lý. Tôi phải cọc khi đăng ký không?",
+      "question_tags": [
+        "m21",
+        "dictation",
+        "exact_words",
+        "licence",
+        "deposit",
+        "vehicle_types",
+        "collection"
+      ]
+    },
+    {
+      "question_id": "G01",
+      "group_id": "GAP_FILL",
+      "type": "gap_fill",
+      "prompt": "Nghe và điền đúng cụm từ bị thiếu: We had a car outside the station, but that bay was removed. The nearest vehicle is now in ____ Street car park.",
+      "correct_answers": [
+        "Mercer"
+      ],
+      "word_limit": 2,
+      "scoring_policy": "controlled_variants",
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Chỗ cũ ngoài ga đã bỏ, điểm mới trên Mercer Street.",
+      "question_tags": [
+        "m21",
+        "gap_fill",
+        "listen_for_detail",
+        "licence",
+        "deposit",
+        "vehicle_types",
+        "collection"
+      ]
+    },
+    {
+      "question_id": "G02",
+      "group_id": "GAP_FILL",
+      "type": "gap_fill",
+      "prompt": "Nghe và điền đúng cụm từ bị thiếu: You need to have held a full licence for at least ____ months. A provisional licence isn't enough.",
+      "correct_answers": [
+        "twelve"
+      ],
+      "word_limit": 2,
+      "scoring_policy": "controlled_variants",
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "Cần bằng lái đầy đủ tối thiểu 12 tháng.",
+      "question_tags": [
+        "m21",
+        "gap_fill",
+        "listen_for_detail",
+        "licence",
+        "deposit",
+        "vehicle_types",
+        "collection"
+      ]
+    }
+  ],
+  "vocabulary": [
+    {
+      "vocab_id": "S1-EXP-017-V01",
+      "expression_en": "car share",
+      "meaning_vi": "dịch vụ dùng chung ô tô",
+      "part_of_speech": "noun phrase",
+      "example_en": "Hello, CityLoop Car Share. Would you like information about joining, or do you already have an account?",
+      "example_vi": "Xin chào, CityLoop Car Share. Chị muốn hỏi đăng ký hay đã có tài khoản?",
+      "evidence_turn_id": "T01",
+      "can_save_to_notebook": true
+    },
+    {
+      "vocab_id": "S1-EXP-017-V02",
+      "expression_en": "pick-up location",
+      "meaning_vi": "điểm lấy xe",
+      "part_of_speech": "noun phrase",
+      "example_en": "I live near Station Square. Is there a pick-up location close to the railway entrance?",
+      "example_vi": "Tôi sống gần quảng trường Station Square. Có điểm lấy xe gần cửa ga không?",
+      "evidence_turn_id": "T04",
+      "can_save_to_notebook": true
+    },
+    {
+      "vocab_id": "S1-EXP-017-V03",
+      "expression_en": "provisional licence",
+      "meaning_vi": "bằng lái tạm",
+      "part_of_speech": "noun phrase",
+      "example_en": "You need to have held a full licence for at least twelve months. A provisional licence isn't enough.",
+      "example_vi": "Chị cần có bằng đầy đủ ít nhất 12 tháng. Bằng tạm không đủ.",
+      "evidence_turn_id": "T07",
+      "can_save_to_notebook": true
+    },
+    {
+      "vocab_id": "S1-EXP-017-V04",
+      "expression_en": "annual subscription",
+      "meaning_vi": "phí hội viên hàng năm",
+      "part_of_speech": "noun phrase",
+      "example_en": "I've had mine for six years, so that should be fine. Is there an annual subscription?",
+      "example_vi": "Tôi có bằng sáu năm rồi, chắc được. Có phí đăng ký hàng năm không?",
+      "evidence_turn_id": "T08",
+      "can_save_to_notebook": true
+    },
+    {
+      "vocab_id": "S1-EXP-017-V05",
+      "expression_en": "hourly rates",
+      "meaning_vi": "giá thuê theo giờ",
+      "part_of_speech": "noun phrase",
+      "example_en": "I'll take the basic one. What about the price of the actual car hire? I saw several hourly rates.",
+      "example_vi": "Tôi chọn cơ bản. Còn giá thuê xe thực tế? Tôi thấy nhiều giá theo giờ.",
+      "evidence_turn_id": "T10",
+      "can_save_to_notebook": true
+    },
+    {
+      "vocab_id": "S1-EXP-017-V06",
+      "expression_en": "refundable deposit",
+      "meaning_vi": "tiền cọc được hoàn lại",
+      "part_of_speech": "noun phrase",
+      "example_en": "There's a refundable deposit of thirty pounds. We hold it while your account is active and return it when you close the account.",
+      "example_vi": "Có tiền cọc hoàn lại 30 bảng, giữ khi tài khoản hoạt động và trả khi đóng tài khoản.",
+      "evidence_turn_id": "T15",
+      "can_save_to_notebook": true
+    }
+  ],
+  "audio": {
+    "status": "not_generated",
+    "audio_url": null,
+    "duration_ms": null,
+    "source_text_sha256": "c0b47ce7650db9eda54e1ef4c1fee8885cac00bf056a415f4e973d05f23f15c9",
+    "generation_strategy": "full_dialogue_multi_speaker",
+    "audio_asset_id": null
+  },
+  "learning_flow": {
+    "intro": {
+      "theory_vi": "IELTS Part 1 thường có hội thoại hai người về dịch vụ hoặc hoạt động đời sống. Hãy xem trước từ loại và đơn vị của từng chỗ trống; đừng đoán đáp án trước khi nghe.",
+      "tip_vi": "Nghe đến cuối lượt trao đổi: người nói có thể sửa ngày, giá, địa điểm hoặc đổi lựa chọn. Thông tin đầu tiên nhiều khi là phương án bị loại.",
+      "common_mistakes_vi": [
+        "Ghi phương án ban đầu dù người nói đã đổi ý.",
+        "Nhầm giờ mở cửa với giờ buổi học bắt đầu.",
+        "Điền dư từ so với giới hạn của nhóm câu hỏi.",
+        "Chọn MCQ vì trùng từ với audio mà bỏ qua ý định cuối cùng."
+      ],
+      "worked_examples": [
+        {
+          "audio_example_en": "I first asked for Tuesday, but Friday is the day I can attend.",
+          "question": "Final day: ____",
+          "answer": "Friday",
+          "explanation_vi": "Tuesday là phương án cũ; Friday mới là quyết định cuối."
+        },
+        {
+          "audio_example_en": "The ordinary ticket is twenty pounds, although students pay fifteen.",
+          "question": "Student ticket: £____",
+          "answer": "15",
+          "explanation_vi": "Chọn mức giá đúng đối tượng được hỏi; 20 là giá thường."
+        }
+      ]
+    },
+    "steps": [
+      "pre_listening",
+      "first_listen_ielts_questions",
+      "review_with_evidence",
+      "selective_dictation",
+      "gap_fill",
+      "summary"
+    ],
+    "ielts_question_ids": [
+      "Q01",
+      "Q02",
+      "Q03",
+      "Q04",
+      "Q05",
+      "Q06",
+      "Q07",
+      "Q08"
+    ],
+    "recommended_first_listen_play_limit": 1,
+    "practice_replay_allowed_after_first_attempt": true,
+    "word_count": 291,
+    "estimated_audio_minutes_at_135_wpm": 2.16,
+    "exposure_bank": "training",
+    "exam_simulation": false,
+    "mock_test": false
+  },
+  "qa": {
+    "status": "awaiting_human_audio_review",
+    "automated_validation": "pending",
+    "human_transcript_approved": false,
+    "human_audio_approved": false,
+    "ielts_exam_equivalent": false,
+    "release_eligible": false
+  },
+  "provenance": {
+    "source_type": "original_authored",
+    "reference_copying": false,
+    "authoring_milestone": "M21",
+    "do_not_reuse_in_unseen_assessment_before_exposure_check": true
+  },
+  "release_metadata": {
+    "version": "m21.0.1",
+    "published": false,
+    "needs_audio": true,
+    "requires_human_approval": true,
+    "import_policy": "insert_only",
+    "target_bank": "training"
+  }
+}

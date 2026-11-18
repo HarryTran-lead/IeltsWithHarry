@@ -1,0 +1,462 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "DICT-S1-073",
+  "status": "draft",
+  "level": "L7",
+  "section": 1,
+  "topic": "Event Registration",
+  "title": "A Conference Registration with an Accessibility Request",
+  "learning_objectives_vi": [
+    "Luyện nghe tình huống: An attendee finalises a multi-session conference booking.",
+    "Nhận diện integrated information challenge và thông tin cuối cùng của cuộc hội thoại.",
+    "Nghe chép lời nói tự nhiên, hiểu bằng chứng trước khi xem transcript."
+  ],
+  "content_format": "section_practice",
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Service staff / representative",
+      "tts_voice_id": null,
+      "accent_requested": "american"
+    },
+    {
+      "speaker_id": "B",
+      "role": "Customer / attendee",
+      "tts_voice_id": null,
+      "accent_requested": "american"
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "Hello, North Harbour Education Forum registration.",
+      "translation_vi": "Xin chào, bộ phận đăng ký Diễn đàn Giáo dục North Harbour.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "integrated_information",
+        "event_registration",
+        "accessibility",
+        "section_1",
+        "two_speaker_dialogue",
+        "l7"
+      ]
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "B",
+      "text_en": "I registered for the two-day forum under Priya Nair, but my confirmation only lists Friday.",
+      "translation_vi": "Tôi đăng ký diễn đàn hai ngày tên Priya Nair, nhưng xác nhận chỉ có thứ Sáu.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "integrated_information",
+        "event_registration",
+        "accessibility",
+        "section_1",
+        "two_speaker_dialogue",
+        "l7"
+      ]
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "A",
+      "text_en": "Let me check. You purchased the standard one-day pass for eighty pounds, not the full conference ticket.",
+      "translation_vi": "Để tôi kiểm tra. Bạn đã mua vé thường một ngày giá tám mươi bảng, không phải vé toàn hội nghị.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "integrated_information",
+        "event_registration",
+        "accessibility",
+        "section_1",
+        "two_speaker_dialogue",
+        "l7"
+      ]
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "B",
+      "text_en": "I must have selected the wrong option. Can I extend it to Saturday as well?",
+      "translation_vi": "Chắc tôi chọn nhầm. Tôi có thể thêm thứ Bảy không?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "integrated_information",
+        "event_registration",
+        "accessibility",
+        "section_1",
+        "two_speaker_dialogue",
+        "l7"
+      ]
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "A",
+      "text_en": "Yes. The two-day pass is one hundred and thirty pounds, so the upgrade requires an extra fifty.",
+      "translation_vi": "Có. Vé hai ngày giá một trăm ba mươi bảng, nên nâng cấp trả thêm năm mươi.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "integrated_information",
+        "event_registration",
+        "accessibility",
+        "section_1",
+        "two_speaker_dialogue",
+        "l7"
+      ]
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "B",
+      "text_en": "That's fine. I'd also like to attend the digital assessment workshop on Saturday afternoon.",
+      "translation_vi": "Được. Tôi còn muốn dự hội thảo đánh giá kỹ thuật số chiều thứ Bảy.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "integrated_information",
+        "event_registration",
+        "accessibility",
+        "section_1",
+        "two_speaker_dialogue",
+        "l7"
+      ]
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "That workshop is included, but the morning research seminar has a separate twenty-pound materials fee.",
+      "translation_vi": "Hội thảo đó đã nằm trong vé, nhưng hội thảo nghiên cứu buổi sáng thu thêm phí tài liệu 20 bảng.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "integrated_information",
+        "event_registration",
+        "accessibility",
+        "section_1",
+        "two_speaker_dialogue",
+        "l7"
+      ]
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "B",
+      "text_en": "I only need the afternoon one. Also, I use a wheelchair. Is the workshop room accessible?",
+      "translation_vi": "Tôi chỉ cần buổi chiều. Ngoài ra tôi dùng xe lăn. Phòng hội thảo có tiếp cận được không?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "integrated_information",
+        "event_registration",
+        "accessibility",
+        "section_1",
+        "two_speaker_dialogue",
+        "l7"
+      ]
+    },
+    {
+      "turn_id": "T09",
+      "speaker_id": "A",
+      "text_en": "Yes, Room Twelve has step-free access. The original programme listed Room Six, but that has been changed.",
+      "translation_vi": "Có, phòng mười hai có lối đi không bậc. Chương trình cũ ghi phòng sáu, nhưng đã đổi.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "integrated_information",
+        "event_registration",
+        "accessibility",
+        "section_1",
+        "two_speaker_dialogue",
+        "l7"
+      ]
+    },
+    {
+      "turn_id": "T10",
+      "speaker_id": "B",
+      "text_en": "Could you reserve a position near the front for me?",
+      "translation_vi": "Bạn có thể giữ chỗ gần phía trước cho tôi không?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "integrated_information",
+        "event_registration",
+        "accessibility",
+        "section_1",
+        "two_speaker_dialogue",
+        "l7"
+      ]
+    },
+    {
+      "turn_id": "T11",
+      "speaker_id": "A",
+      "text_en": "Certainly. Please email your access request by Tuesday, and we'll confirm it separately.",
+      "translation_vi": "Được chứ. Hãy gửi email yêu cầu hỗ trợ tiếp cận trước thứ Ba, chúng tôi sẽ xác nhận riêng.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "integrated_information",
+        "event_registration",
+        "accessibility",
+        "section_1",
+        "two_speaker_dialogue",
+        "l7"
+      ]
+    },
+    {
+      "turn_id": "T12",
+      "speaker_id": "B",
+      "text_en": "Please make the ticket upgrade now. I'll send the email this evening.",
+      "translation_vi": "Hãy nâng cấp vé ngay. Tối nay tôi sẽ gửi email.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "integrated_information",
+        "event_registration",
+        "accessibility",
+        "section_1",
+        "two_speaker_dialogue",
+        "l7"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "type": "form_completion",
+      "prompt": "Original ticket: ____-day pass",
+      "correct_answers": [
+        "one"
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Vé ban đầu chỉ có một ngày.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "integrated_information",
+        "event_registration",
+        "accessibility",
+        "ielts_section1_practice"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q02",
+      "type": "form_completion",
+      "prompt": "Upgrade payment due: £____",
+      "correct_answers": [
+        "fifty"
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Giá hai ngày là 130, đã trả 80 nên phụ thu 50 bảng.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "integrated_information",
+        "event_registration",
+        "accessibility",
+        "ielts_section1_practice"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q03",
+      "type": "form_completion",
+      "prompt": "Saturday afternoon workshop: digital ____",
+      "correct_answers": [
+        "assessment"
+      ],
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "explanation_vi": "Khách chỉ muốn hội thảo digital assessment chiều thứ Bảy.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "integrated_information",
+        "event_registration",
+        "accessibility",
+        "ielts_section1_practice"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q04",
+      "type": "form_completion",
+      "prompt": "Optional morning materials fee: £____",
+      "correct_answers": [
+        "twenty"
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "Hội thảo nghiên cứu sáng thu 20 bảng phí tài liệu.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "integrated_information",
+        "event_registration",
+        "accessibility",
+        "ielts_section1_practice"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q05",
+      "type": "mcq",
+      "prompt": "Which room is now accessible for the workshop?",
+      "correct_answers": [
+        "Twelve"
+      ],
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "explanation_vi": "Phòng 6 là thông tin cũ; phòng 12 mới đúng.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "integrated_information",
+        "event_registration",
+        "accessibility",
+        "ielts_section1_practice"
+      ],
+      "options": [
+        "Eight",
+        "Six",
+        "Twelve"
+      ]
+    },
+    {
+      "question_id": "Q06",
+      "type": "form_completion",
+      "prompt": "Accessibility request deadline: ____",
+      "correct_answers": [
+        "Tuesday"
+      ],
+      "evidence_turn_ids": [
+        "T11"
+      ],
+      "explanation_vi": "Yêu cầu tiếp cận phải gửi trước thứ Ba.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "integrated_information",
+        "event_registration",
+        "accessibility",
+        "ielts_section1_practice"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "D01",
+      "type": "dictation",
+      "prompt": "Nghe và chép nguyên văn lượt thoại T05 của nhân vật A.",
+      "correct_answers": [
+        "Yes. The two-day pass is one hundred and thirty pounds, so the upgrade requires an extra fifty."
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Câu gốc: Yes. The two-day pass is one hundred and thirty pounds, so the upgrade requires an extra fifty. Nghĩa: Có. Vé hai ngày giá một trăm ba mươi bảng, nên nâng cấp trả thêm năm mươi. Hãy kiểm tra âm cuối, từ chức năng và chi tiết được sửa nếu có.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "integrated_information",
+        "event_registration",
+        "accessibility",
+        "dictation",
+        "exact_words"
+      ]
+    },
+    {
+      "question_id": "G01",
+      "type": "gap_fill",
+      "prompt": "Điền từ/cụm từ bị lược bỏ sau khi nghe: Let me check. You purchased the standard ____ for eighty pounds, not the full conference ticket.",
+      "correct_answers": [
+        "one-day pass"
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "one-day pass: vé một ngày. Câu gốc: Let me check. You purchased the standard one-day pass for eighty pounds, not the full conference ticket.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "integrated_information",
+        "event_registration",
+        "accessibility",
+        "gap_fill",
+        "vocabulary_in_context"
+      ]
+    }
+  ],
+  "vocabulary": [
+    {
+      "term": "one-day pass",
+      "pos": "phrase",
+      "meaning_vi": "vé một ngày",
+      "example_en": "Let me check. You purchased the standard one-day pass for eighty pounds, not the full conference ticket.",
+      "example_vi": "Để tôi kiểm tra. Bạn đã mua vé thường một ngày giá tám mươi bảng, không phải vé toàn hội nghị.",
+      "source_turn_id": "T03"
+    },
+    {
+      "term": "materials fee",
+      "pos": "phrase",
+      "meaning_vi": "phí tài liệu",
+      "example_en": "That workshop is included, but the morning research seminar has a separate twenty-pound materials fee.",
+      "example_vi": "Hội thảo đó đã nằm trong vé, nhưng hội thảo nghiên cứu buổi sáng thu thêm phí tài liệu 20 bảng.",
+      "source_turn_id": "T07"
+    },
+    {
+      "term": "step-free access",
+      "pos": "phrase",
+      "meaning_vi": "lối đi không bậc",
+      "example_en": "Yes, Room Twelve has step-free access. The original programme listed Room Six, but that has been changed.",
+      "example_vi": "Có, phòng mười hai có lối đi không bậc. Chương trình cũ ghi phòng sáu, nhưng đã đổi.",
+      "source_turn_id": "T09"
+    },
+    {
+      "term": "access request",
+      "pos": "phrase",
+      "meaning_vi": "yêu cầu hỗ trợ tiếp cận",
+      "example_en": "Certainly. Please email your access request by Tuesday, and we'll confirm it separately.",
+      "example_vi": "Được chứ. Hãy gửi email yêu cầu hỗ trợ tiếp cận trước thứ Ba, chúng tôi sẽ xác nhận riêng.",
+      "source_turn_id": "T11"
+    }
+  ],
+  "audio": {
+    "status": "not_generated",
+    "url": null,
+    "duration_ms": null,
+    "model": null,
+    "provider": null,
+    "voice_config": null,
+    "source_transcript_hash": "395a796ce9597e1eb57d839330bc8cd6c79de8df6ecf79682e046cb3d3e3aeed",
+    "audio_sha256": null,
+    "format": null
+  },
+  "qa": {
+    "content_reviewed": false,
+    "answers_verified": false,
+    "audio_verified": false,
+    "rights_cleared": false,
+    "duplicate_reviewed": false,
+    "notes": [
+      "Original AI-assisted draft; expert listening pedagogical review required.",
+      "Audio and word-level timestamps do not exist yet.",
+      "This is a practice lesson, not an official IELTS Listening test.",
+      "M16.2: automated edits are provisional; IELTS teacher final signoff, audio and rights clearance pending."
+    ]
+  },
+  "provenance": {
+    "content_origin": "original_ai_assisted",
+    "source_urls": [],
+    "source_rights_note": "Author-created educational dialogue. Verify audio provider distribution rights, service terms and suitability for user age before synthesis and publishing.",
+    "reviewer": null
+  },
+  "release_metadata": {
+    "published_at": null,
+    "version": 1
+  }
+}

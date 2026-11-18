@@ -1,0 +1,2262 @@
+[
+ {
+  "id": "band-8.5-046",
+  "practiceLevel": "8.5",
+  "type": "paragraph",
+  "topic": "Y tế",
+  "targetTerm": "unintended consequence",
+  "meaningVi": "hệ quả ngoài dự kiến",
+  "promptVi": "Chính sách trợ cấp thuốc có thể tạo ra hệ quả ngoài dự kiến nếu nó khuyến khích kê đơn quá mức mà không cải thiện kết quả điều trị. Số đơn thuốc tăng có thể trông giống như khả năng tiếp cận được cải thiện, nhưng tự nó không chứng minh bệnh nhân khỏe hơn. Cần đối chiếu dữ liệu kê đơn với kết quả điều trị và theo dõi liệu tác động có khác nhau giữa các nhóm bệnh nhân hay không.",
+  "referenceAnswers": [
+   "A medicine subsidy may have unintended consequences if it encourages overprescribing without improving patient outcomes. More prescriptions may appear to indicate better access, but they do not by themselves show that patients are healthier. Prescription data should be compared with treatment outcomes, including whether effects differ across patient groups."
+  ],
+  "grammarTags": [
+   "unintended-consequences"
+  ],
+  "explanationVi": "Phân biệt chỉ số hoạt động với kết quả sức khỏe và yêu cầu kiểm tra tác động theo nhóm.",
+  "commonErrors": [],
+  "editorialStatus": "pilot",
+  "source": "original-starter",
+  "version": 2,
+  "calibrationStatus": "internal_review",
+  "rationaleVi": "Nêu điều kiện của kết luận, giả định và giới hạn của bằng chứng. Bài này luyện: Phân biệt chỉ số hoạt động với kết quả sức khỏe và yêu cầu kiểm tra tác động theo nhóm."
+ },
+ {
+  "id": "band-8.5-047",
+  "practiceLevel": "8.5",
+  "type": "paragraph",
+  "topic": "Giáo dục",
+  "targetTerm": "evidence-based education reform",
+  "meaningVi": "cải cách giáo dục dựa trên bằng chứng",
+  "promptVi": "Cải cách giáo dục dựa trên bằng chứng đòi hỏi phải xem xét bối cảnh địa phương, thay vì giả định rằng một mô hình sẽ phù hợp ở mọi nơi. Một phương pháp hiệu quả ở trường có ít học sinh có thể không đạt kết quả tương tự tại lớp đông và thiếu giáo viên. Trước khi mở rộng, người làm chính sách cần nêu giả định về nguồn lực và thử nghiệm ở những bối cảnh khác nhau.",
+  "referenceAnswers": [
+   "Evidence-based education reform requires attention to local context rather than the assumption that one model will work everywhere. An approach that works in a small school may not achieve the same results in crowded, understaffed classrooms. Before scaling it up, policymakers should state their assumptions about resources and test it in different settings."
+  ],
+  "grammarTags": [
+   "rather-than-assumption"
+  ],
+  "explanationVi": "Nêu giới hạn của khả năng áp dụng bằng chứng và cách kiểm tra trước khi nhân rộng.",
+  "commonErrors": [],
+  "editorialStatus": "pilot",
+  "source": "original-starter",
+  "version": 3,
+  "calibrationStatus": "internal_review",
+  "rationaleVi": "Nêu điều kiện của kết luận, giả định và giới hạn của bằng chứng. Bài này luyện: Nêu giới hạn của khả năng áp dụng bằng chứng và cách kiểm tra trước khi nhân rộng."
+ },
+ {
+  "id": "band-8.5-048",
+  "practiceLevel": "8.5",
+  "type": "paragraph",
+  "topic": "Môi trường",
+  "targetTerm": "distributional effect",
+  "meaningVi": "tác động phân bổ",
+  "promptVi": "Trước khi triển khai chương trình giao dịch phát thải, chính phủ nên đánh giá tác động phân bổ của nó đối với các hộ dễ bị tổn thương. Giá phát thải tăng có thể khuyến khích giảm ô nhiễm, nhưng hộ dùng phương tiện cũ khó thay đổi nhanh. Dữ liệu về mức tiêu dùng và thu nhập sẽ giúp thiết kế hỗ trợ đúng đối tượng mà vẫn giữ động lực cắt giảm phát thải.",
+  "referenceAnswers": [
+   "Before introducing an emissions trading scheme, governments should assess its distributional effects on vulnerable households. Higher emissions prices may encourage cuts in pollution, but households using older vehicles cannot adapt quickly. Data on consumption and income can inform targeted support without removing the incentive to reduce emissions."
+  ],
+  "grammarTags": [
+   "distributional-effects"
+  ],
+  "explanationVi": "Xem xét tác động phân bổ cùng mục tiêu chính sách và nêu dữ liệu cần có để điều chỉnh.",
+  "commonErrors": [],
+  "editorialStatus": "pilot",
+  "source": "original-starter",
+  "version": 2,
+  "calibrationStatus": "internal_review",
+  "rationaleVi": "Nêu điều kiện của kết luận, giả định và giới hạn của bằng chứng. Bài này luyện: Xem xét tác động phân bổ cùng mục tiêu chính sách và nêu dữ liệu cần có để điều chỉnh."
+ },
+ {
+  "id": "band-8.5-cal-01",
+  "practiceLevel": "8.5",
+  "type": "paragraph",
+  "topic": "Y tế",
+  "targetTerm": "unintended consequences",
+  "meaningVi": "hệ quả ngoài dự kiến",
+  "promptVi": "Trợ giá thuốc có thể giúp bệnh nhân nghèo tiếp cận điều trị. Tuy nhiên, mức dùng thuốc tăng chưa chứng minh sức khỏe được cải thiện; nó cũng có thể phản ánh việc kê đơn quá mức. Cần đánh giá kết quả điều trị trước khi mở rộng chương trình để tránh hệ quả ngoài dự kiến.",
+  "referenceAnswers": [
+   "Medicine subsidies may improve access for poorer patients. Yet higher drug use does not, by itself, show better health outcomes; it may also reflect overprescribing. Treatment results should be evaluated before the programme is expanded to avoid unintended consequences."
+  ],
+  "grammarTags": [
+   "evidence-limits"
+  ],
+  "explanationVi": "Phân biệt chỉ số sử dụng thuốc với kết quả điều trị; tránh suy luận nhân quả vội.",
+  "rationaleVi": "Đoạn có giả thuyết thay thế và điều kiện đánh giá bằng chứng.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "original-level-authored",
+  "version": 1
+ },
+ {
+  "id": "band-8.5-cal-02",
+  "practiceLevel": "8.5",
+  "type": "paragraph",
+  "topic": "Giáo dục",
+  "targetTerm": "evidence-based reform",
+  "meaningVi": "cải cách dựa trên bằng chứng",
+  "promptVi": "Một phương pháp giảng dạy thành công ở một thành phố chưa chắc hiệu quả ở vùng nông thôn. Nguồn lực, trình độ giáo viên và nhu cầu học sinh đều có thể khác. Cải cách dựa trên bằng chứng vì thế phải kiểm tra tính phù hợp với bối cảnh trước khi nhân rộng.",
+  "referenceAnswers": [
+   "A teaching method that succeeds in one city may not work equally well in rural areas. Resources, teacher preparation and student needs may differ. Evidence-based reform therefore requires testing how well an approach fits a new context before it is scaled up."
+  ],
+  "grammarTags": [
+   "contextual-validity"
+  ],
+  "explanationVi": "May not work equally well và requires testing tránh suy rộng quá mức từ một trường hợp.",
+  "rationaleVi": "Lập luận về giới hạn khả năng áp dụng của bằng chứng.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "original-level-authored",
+  "version": 1
+ },
+ {
+  "id": "band-8.5-exp-001",
+  "practiceLevel": "8.5",
+  "type": "paragraph",
+  "topic": "nghiên cứu",
+  "targetTerm": "causal inference",
+  "meaningVi": "sự suy luận nhân quả",
+  "promptVi": "Các nghiên cứu quan sát tại một số quốc gia cho thấy tỉ lệ người uống trà xanh thường xuyên có tần suất mắc bệnh tim thấp hơn. Dù vậy, mối tương quan này không đồng nghĩa với việc trà xanh trực tiếp bảo vệ tim mạch, bởi nhóm này thường có chế độ ăn lành mạnh và vận động nhiều hơn. Sự suy luận nhân quả chỉ hợp lệ khi các biến số nhiễu về lối sống được kiểm soát triệt để qua các thử nghiệm lâm sàng ngẫu nhiên. Các khuyến nghị y tế công cộng phải duy trì sự cẩn trọng cho đến khi các thử nghiệm thực nghiệm xác nhận cơ chế sinh học.",
+  "referenceAnswers": [
+   "Observational studies in certain countries reveal that regular green tea drinkers exhibit lower rates of cardiovascular disease. Nevertheless, this correlation does not automatically prove a protective effect, as these individuals frequently maintain healthier diets and more active lifestyles. Valid causal inference is conditional upon rigorously controlling for confounding lifestyle variables through randomised controlled trials. Public health guidance must remain circumspect until experimental trials confirm the biological mechanism."
+  ],
+  "grammarTags": [
+   "Causal Reasoning & Hedging"
+  ],
+  "explanationVi": "Đoạn văn phân định rõ giữa mối tương quan quan sát được và mối quan hệ nguyên nhân - kết quả. Việc đưa ra kết luận nhân quả đòi hỏi điều kiện kiểm soát biến số nhiễu qua thử nghiệm ngẫu nhiên.",
+  "rationaleVi": "Phù hợp với Level 8.5 nhờ khả năng lập luận phản biện sắc bén về phương pháp luận nghiên cứu, sử dụng ngôn ngữ hedged chuyên sâu và phân biệt chặt chẽ tương quan với nhân quả.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "ai-assisted-level-draft",
+  "version": 1
+ },
+ {
+  "id": "band-8.5-exp-002",
+  "practiceLevel": "8.5",
+  "type": "paragraph",
+  "topic": "đô thị",
+  "targetTerm": "methodological limitation",
+  "meaningVi": "giới hạn phương pháp luận",
+  "promptVi": "Việc gia tăng lượng người sử dụng làn đường dành cho xe đạp tại một số thành phố châu Âu trùng khớp với thời điểm ùn tắc giao thông giảm. Tuy nhiên, xu hướng này diễn ra đồng thời với đợt tăng giá nhiên liệu đột biến, vốn cũng làm giảm lượng ô tô lưu thông. Kết luận rằng hạ tầng xe đạp là nguyên nhân chính gây ra sự sụt giảm lưu lượng xe chứa đựng giới hạn phương pháp luận nếu bỏ qua yếu tố chi phí đi lại. Việc hoạch định đô thị đòi hỏi dữ liệu mô hình hóa tách biệt các động lực kinh tế với thay đổi hành vi.",
+  "referenceAnswers": [
+   "Increased cycling lane usage in several European cities coincided with a noticeable drop in traffic congestion. However, this trend occurred alongside a sharp spike in fuel prices, which independently curtailed car driving. Attributing reduced vehicular traffic primarily to cycling infrastructure reveals a methodological limitation if transport costs are ignored. Effective urban planning requires disaggregated data that isolates economic pressures from behavioural shifts."
+  ],
+  "grammarTags": [
+   "Methodological Limitation & Urban Policy"
+  ],
+  "explanationVi": "Đoạn văn nêu rõ yếu tố đồng thời (giá nhiên liệu) có thể là tác nhân thực sự, chỉ ra rằng việc kết luận nguyên nhân đơn lẻ chứa đựng giới hạn phương pháp luận.",
+  "rationaleVi": "Đạt Level 8.5 nhờ việc chỉ ra rủi ro quy kết nhân quả vội vàng trong quy hoạch đô thị và đề xuất điều kiện dữ liệu cần thiết để đưa ra kết luận có căn cứ.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "ai-assisted-level-draft",
+  "version": 1
+ },
+ {
+  "id": "band-8.5-exp-003",
+  "practiceLevel": "8.5",
+  "type": "paragraph",
+  "topic": "công nghệ",
+  "targetTerm": "confounding factor",
+  "meaningVi": "yếu tố nhiễu",
+  "promptVi": "Khảo sát tại các công ty công nghệ cho thấy nhân viên làm việc từ xa hoàn thành nhiều dự án hơn so với đồng nghiệp tại văn phòng. Mặc dù kết quả này gợi ý hiệu suất cao hơn, nghiên cứu đã chọn lọc nhóm nhân sự có tính tự giác cao ngay từ đầu. Yếu tố nhiễu này khiến việc quy kết năng suất tăng thuần túy cho hình thức làm việc tại nhà trở nên thiếu căn cứ. Khả năng nhân rộng mô hình này sang các ngành nghề khác chỉ khả thi nếu duy trì được điều kiện tuyển chọn tương tự.",
+  "referenceAnswers": [
+   "Surveys across technology firms indicate that remote employees completed more projects than their office-based peers. While this outcome suggests superior productivity, the study initially recruited highly self-motivated staff. This confounding factor makes it ungrounded to attribute performance gains purely to the home-working environment. Scalability to broader industries remains valid only under identical candidate selection criteria."
+  ],
+  "grammarTags": [
+   "Confounding Variables & Validity"
+  ],
+  "explanationVi": "Đoạn văn nhận diện thiên vị chọn mẫu là một yếu tố nhiễu, từ đó giới hạn kết luận về năng suất làm việc từ xa.",
+  "rationaleVi": "Yêu cầu kỹ năng phân tích phản biện Level 8.5 để đánh giá độ tin cậy của bằng chứng doanh nghiệp và đặt điều kiện cho khả năng nhân rộng.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "ai-assisted-level-draft",
+  "version": 1
+ },
+ {
+  "id": "band-8.5-exp-004",
+  "practiceLevel": "8.5",
+  "type": "paragraph",
+  "topic": "năng lượng",
+  "targetTerm": "underlying assumption",
+  "meaningVi": "giả định nền tảng",
+  "promptVi": "Mức trợ giá điện mặt trời hộ gia đình đã dẫn đến tỉ lệ lắp đặt tăng vọt tại các khu dân cư có thu nhập cao. Dù vậy, kỳ vọng rằng chính sách này sẽ tạo ra sóng bùng nổ tương tự ở các hộ thu nhập thấp chứa đựng một giả định nền tảng khi cho rằng mọi tầng lớp đều có sẵn vốn ban đầu. Nếu không giải quyết rào cản tài chính ban đầu, bằng chứng về sự tăng trưởng lắp đặt không thể bảo đảm tính công bằng của chuyển dịch năng lượng. Các chương trình hỗ trợ tương lai phải điều chỉnh điều kiện thụ hưởng theo khả năng tiếp cận tín dụng của từng nhóm.",
+  "referenceAnswers": [
+   "Subsidies for residential solar panels triggered a surge in adoption across high-income neighbourhoods. However, expecting this policy to yield identical results among low-income households relies on an underlying assumption regarding universal capital availability. Without addressing initial financial barriers, evidence of installation growth cannot guarantee an equitable energy transition. Future support schemes must condition eligibility on credit accessibility across demographic groups."
+  ],
+  "grammarTags": [
+   "Assumptions & Policy Evaluation"
+  ],
+  "explanationVi": "Đoạn văn vạch ra giả định ngầm không hợp lý trong việc suy rộng chính sách và đặt ra điều kiện tài chính cho kết luận về tính hiệu quả.",
+  "rationaleVi": "Thể hiện tư duy chính sách cấp độ 8.5 bằng cách giải phẫu các giả định kinh tế-xã hội ẩn sau dữ liệu bề nổi.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "ai-assisted-level-draft",
+  "version": 1
+ },
+ {
+  "id": "band-8.5-exp-005",
+  "practiceLevel": "8.5",
+  "type": "paragraph",
+  "topic": "giáo dục",
+  "targetTerm": "empirical validity",
+  "meaningVi": "tính hiệu lực thực nghiệm",
+  "promptVi": "Những trường phổ thông áp dụng mô hình học tập qua trò chơi ghi nhận điểm thi của học sinh tăng đáng kể sau một học kỳ. Dù kết quả ban đầu khả quan, sự cải thiện này có thể chỉ xuất phát từ hiệu ứng hiếu kỳ tạm thời đối với công nghệ mới. Tính hiệu lực thực nghiệm của phương pháp này chưa thể khẳng định nếu không có các theo dõi dọc kéo dài nhiều năm để kiểm tra khả năng duy trì kiến thức. Mọi thay đổi chương trình giảng dạy quy mô lớn dựa trên các chỉ số ngắn hạn đòi hỏi sự thận trọng đáng kể.",
+  "referenceAnswers": [
+   "Secondary schools adopting gamified learning platforms recorded notable gains in student test scores over a single term. Although initial results appear promising, this improvement might merely stem from a temporary novelty effect associated with new technology. The empirical validity of this instructional method cannot be established without multi-year longitudinal tracking to evaluate long-term knowledge retention. Broad curriculum overhauls grounded solely in short-term metrics demand considerable caution."
+  ],
+  "grammarTags": [
+   "Empirical Validity & Educational Research"
+  ],
+  "explanationVi": "Đoạn văn chỉ ra rủi ro của hiệu ứng hiếu kỳ ngắn hạn và yêu cầu dữ liệu theo dõi dọc để xác minh tính hiệu lực thực nghiệm.",
+  "rationaleVi": "Phản ánh chính xác mức độ 8.5 qua việc đánh giá giới hạn thời gian của dữ liệu nghiên cứu giáo dục và đưa ra cảnh báo chính sách có điều kiện.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "ai-assisted-level-draft",
+  "version": 1
+ },
+ {
+  "id": "band-8.5-exp-006",
+  "practiceLevel": "8.5",
+  "type": "paragraph",
+  "topic": "công việc",
+  "targetTerm": "tentative conclusion",
+  "meaningVi": "kết luận sơ bộ",
+  "promptVi": "Đợt thử nghiệm tuần làm việc bốn ngày tại các doanh nghiệp tự nguyện cho thấy chỉ số kiệt sức của người lao động giảm rõ rệt. Giới hạn của bằng chứng nằm ở chỗ các công ty tham gia vốn đã sở hữu văn hóa quản trị cởi mở và chế độ đãi ngộ tốt. Bất kỳ kết luận sơ bộ nào về lợi ích toàn diện của mô hình này đều phụ thuộc vào điều kiện môi trường doanh nghiệp có tính tương đồng. Việc áp dụng bắt buộc trên toàn bộ nền kinh tế có nguy cơ phản tác dụng nếu thiếu sự chuẩn bị về hạ tầng vận hành.",
+  "referenceAnswers": [
+   "Trials of a four-day working week across participating firms demonstrated a marked decline in employee burnout scores. A key limitation of this evidence is that volunteer companies possessed open management cultures and good compensation packages. Any tentative conclusion regarding the universal benefits of this model remains conditional upon comparable organizational environments. Enforcing such schedules economy-wide risks backfiring unless operational infrastructure is adequately adapted."
+  ],
+  "grammarTags": [
+   "Conditional Inference & Labour Economics"
+  ],
+  "explanationVi": "Đoạn văn làm rõ giới hạn của mẫu tự nguyện và nhấn mạnh tính chất tạm thời, có điều kiện của kết luận sơ bộ.",
+  "rationaleVi": "Level 8.5 thể hiện ở cách lập luận tinh tế về tính tổng quát hóa của thử nghiệm chính sách và việc sử dụng thuật ngữ chuyên môn chính xác.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "ai-assisted-level-draft",
+  "version": 1
+ },
+ {
+  "id": "band-8.5-exp-007",
+  "practiceLevel": "8.5",
+  "type": "paragraph",
+  "topic": "sức khỏe",
+  "targetTerm": "observational evidence",
+  "meaningVi": "bằng chứng quan sát",
+  "promptVi": "Dữ liệu khảo sát đô thị ghi nhận sự gia tăng lượng tiêu thụ thực phẩm chế biến sẵn đồng thời với tỉ lệ béo phì tăng cao. Tuy nhiên, bằng chứng quan sát này chưa thể loại trừ tác động của lối sống ít vận động và mức độ căng thẳng tâm lý thường nhật. Việc suy ra mối quan hệ nguyên nhân - kết quả trực tiếp mà bỏ qua các yếu tố môi trường sống sẽ dẫn đến các chiến dịch can thiệp sai lệch. Đánh giá hiệu quả của chính sách thuế đánh vào thực phẩm xấu đòi hỏi phải phân tích đa biến chính xác hơn.",
+  "referenceAnswers": [
+   "Urban survey data registered rising consumption of ultra-processed foods alongside escalating obesity rates. Nevertheless, this observational evidence cannot isolate dietary intake from sedentary work habits and elevated daily stress levels. Inferring a direct causal link while ignoring environmental determinants runs the risk of misdirecting public intervention campaigns. Evaluating the effectiveness of taxes on unhealthy foods requires more precise multivariate analysis."
+  ],
+  "grammarTags": [
+   "Observational Evidence & Public Health"
+  ],
+  "explanationVi": "Đoạn văn phân tích giới hạn của bằng chứng quan sát khi không tách biệt được các yếu tố lối sống đa chiều, tránh lỗi kết luận nhân quả sai.",
+  "rationaleVi": "Sử dụng từ vựng và cấu trúc phân tích dữ liệu cộng đồng cao cấp (Level 8.5) trong việc đánh giá bằng chứng y tế công cộng.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "ai-assisted-level-draft",
+  "version": 1
+ },
+ {
+  "id": "band-8.5-exp-008",
+  "practiceLevel": "8.5",
+  "type": "paragraph",
+  "topic": "văn hóa",
+  "targetTerm": "explanatory scope",
+  "meaningVi": "phạm vi giải thích",
+  "promptVi": "Việc trùng tu các di sản văn hóa tại một số thị trấn cổ trùng hợp với sự tăng trưởng mạnh mẽ của doanh thu du lịch địa phương. Dù vậy, sự gia tăng này xảy ra đồng thời với các chiến dịch quảng bá du lịch cấp quốc gia được triển khai trên quy mô lớn. Phạm vi giải thích của dữ liệu hiện tại bị giới hạn, bởi lẽ nó không thể phân tách sức hút tự thân của di sản với lượng khách đến do tiếp thị. Sự bền vững của mô hình đầu tư di sản vì thế phụ thuộc vào khả năng duy trì lượng du khách khi chiến dịch quảng cáo kết thúc.",
+  "referenceAnswers": [
+   "The restoration of cultural heritage sites across several historic towns coincided with a substantial surge in local tourism revenue. However, this upturn occurred simultaneously with nationwide promotional campaigns launched on a large scale. The explanatory scope of current data is restricted, as it fails to separate organic heritage appeal from marketing-driven visits. The viability of heritage investment models therefore depends on sustaining tourist numbers once advertising campaigns conclude."
+  ],
+  "grammarTags": [
+   "Explanatory Scope & Tourism Economics"
+  ],
+  "explanationVi": "Đoạn văn chỉ ra phạm vi giải thích hẹp của dữ liệu hiện tại do sự xuất hiện của biến số truyền thông đồng thời.",
+  "rationaleVi": "Đạt Level 8.5 với tư duy đánh giá dự án văn hóa - kinh tế đa biến, tránh ngụy biện tương quan thành nguyên nhân và đưa ra điều kiện bền vững lâu dài.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "ai-assisted-level-draft",
+  "version": 1
+ },
+ {
+  "id": "band-8.5-exp-009",
+  "practiceLevel": "8.5",
+  "type": "paragraph",
+  "topic": "thể thao",
+  "targetTerm": "confounding variable",
+  "meaningVi": "biến số nhiễu",
+  "promptVi": "Các dữ liệu theo dõi ở các câu lạc bộ thể thao thiếu niên ghi nhận tỉ lệ tham gia môn bơi lội thường xuyên gia tăng song song với sự giảm sút của chỉ số căng thẳng học đường. Dù vậy, phần lớn học sinh tham gia bơi lội thuộc nhóm có điều kiện kinh tế gia đình vững vàng và nhiều thời gian rảnh hơn. Nếu không loại trừ biến số nhiễu này, giới nghiên cứu không thể quy kết việc giảm căng thẳng hoàn toàn cho tác động sinh lý của môn bơi. Việc đưa hoạt động thể chất vào chương trình bắt buộc cần dựa trên thử nghiệm kiểm soát có đối chứng thay vì chỉ nhìn vào dữ liệu quan sát.",
+  "referenceAnswers": [
+   "Observational data from youth sports clubs show that regular participation in swimming coincided with a decline in academic stress metrics. However, most pupils enrolled in swimming classes belonged to households with higher socio-economic status and greater leisure time. Unless researchers isolate this confounding variable, attributing the stress reduction entirely to the physiological impact of swimming remains unverified. Incorporating mandatory physical activities into curricula should therefore rely on controlled trials rather than mere observational data."
+  ],
+  "grammarTags": [
+   "Condition of conclusion & confounding variables"
+  ],
+  "explanationVi": "Đoạn văn xem xét kết quả quan sát trong thể thao, chỉ ra biến số nhiễu về điều kiện kinh tế-xã hội và đặt ra điều kiện thử nghiệm kiểm soát trước khi đưa ra kết luận nhân quả.",
+  "rationaleVi": "Item đạt mức 8.5 nhờ phân tích lập luận chặt chẽ, phân biệt giữa tương quan quan sát và tác động nhân quả sinh lý, sử dụng đúng thuật ngữ 'confounding variable'.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "ai-assisted-level-draft",
+  "version": 1
+ },
+ {
+  "id": "band-8.5-exp-010",
+  "practiceLevel": "8.5",
+  "type": "paragraph",
+  "topic": "đồ ăn",
+  "targetTerm": "spurious correlation",
+  "meaningVi": "mối tương quan ngụy tạo",
+  "promptVi": "Một khảo sát dinh dưỡng gần đây phát hiện những người tiêu thụ thực phẩm hữu cơ thường có chỉ số vi sinh đường ruột đa dạng hơn hẳn nhóm còn lại. Giới hạn của phát hiện này nằm ở chỗ người mua thực phẩm hữu cơ thường tuân thủ chế độ ăn giàu chất xơ và tập luyện thể thao định kỳ. Việc vội vã tuyên bố thực phẩm hữu cơ trực tiếp cải thiện hệ vi sinh là một mối tương quan ngụy tạo nếu bỏ qua toàn bộ thói quen sống lành mạnh đi kèm. Các khuyến nghị dinh dưỡng cộng đồng chỉ có giá trị thực tiễn khi hiệu ứng của bản thân loại thực phẩm đó được tách biệt khỏi phong cách sống tổng thể.",
+  "referenceAnswers": [
+   "A recent nutritional survey revealed that individuals consuming organic food exhibited significantly more diverse gut microbiomes than their counterparts. The limitation of this finding stems from the fact that organic food buyers generally adhere to high-fibre diets and regular exercise regimes. Declaring organic produce to be the direct driver of microbiome health constitutes a spurious correlation if these concurrent healthy lifestyle habits are ignored. Public dietary recommendations retain practical value only when the specific effect of the food itself is isolated from overall lifestyle choices."
+  ],
+  "grammarTags": [
+   "Spurious correlation & evidence limitation"
+  ],
+  "explanationVi": "Phân tích số liệu dinh dưỡng, chỉ ra nguy cơ nhầm lẫn mối tương quan ngụy tạo do không tách biệt lối sống tổng thể với tác động của thực phẩm hữu cơ.",
+  "rationaleVi": "Thể hiện tư duy phản biện 8.5 qua việc bóc tách yếu tố lối sống đi kèm và sử dụng chính xác thuật ngữ 'spurious correlation' trong bối cảnh phân tích bằng chứng.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "ai-assisted-level-draft",
+  "version": 1
+ },
+ {
+  "id": "band-8.5-exp-011",
+  "practiceLevel": "8.5",
+  "type": "paragraph",
+  "topic": "nhà ở",
+  "targetTerm": "methodological limitation",
+  "meaningVi": "giới hạn phương pháp luận",
+  "promptVi": "Tại một số quận trung tâm, việc áp dụng trần giá thuê nhà trùng hợp với sự sụt giảm số vụ trục xuất người thuê trong hai năm đầu. Tuy nhiên, phân tích sâu hơn cho thấy các khu vực này đồng thời nhận được các gói hỗ trợ việc làm địa phương mạnh mẽ. Việc bỏ qua tác động của dòng vốn đầu tư kinh tế song song thể hiện một giới hạn phương pháp luận rõ rệt trong thiết kế nghiên cứu ban đầu. Muốn đánh giá chính xác tính hiệu quả của chính sách kiểm soát giá nhà, các mô hình kinh tế lượng cần phân tách ảnh hưởng của thị trường lao động.",
+  "referenceAnswers": [
+   "In several central boroughs, the introduction of rent caps coincided with a drop in tenant eviction rates over the first two years. Nevertheless, deeper analysis reveals that these specific districts simultaneously received substantial local employment support packages. Ignoring the impact of concurrent economic investments represents a clear methodological limitation in the initial study design. To evaluate rent control policies accurately, econometric models must isolate the confounding influence of labour market dynamics."
+  ],
+  "grammarTags": [
+   "Methodological limitation & policy evaluation"
+  ],
+  "explanationVi": "Đánh giá chính sách nhà ở bằng cách vạch ra giới hạn phương pháp luận khi không kiểm soát tác động của các chương trình kinh tế diễn ra song song.",
+  "rationaleVi": "Mức 8.5 thể hiện qua việc soi chiếu phương pháp luận nghiên cứu chính sách đô thị và yêu cầu mô hình hóa kinh tế lượng phức tạp để phân tách biến số.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "ai-assisted-level-draft",
+  "version": 1
+ },
+ {
+  "id": "band-8.5-exp-012",
+  "practiceLevel": "8.5",
+  "type": "paragraph",
+  "topic": "công nghệ",
+  "targetTerm": "selection bias",
+  "meaningVi": "thiên vị chọn lọc",
+  "promptVi": "Dự án thử nghiệm tổng đài tự động tích hợp trí tuệ nhân tạo ghi nhận thời gian giải quyết khiếu nại của khách hàng giảm một nửa. Dù kết quả đo lường rất khả quan, hệ thống này thực chất chỉ xử lý các yêu cầu đơn giản, trong khi các sự cố phức tạp vẫn được chuyển trực tiếp cho con người. Yếu tố thiên vị chọn lọc này làm sai lệch đánh giá về năng lực thực sự của công nghệ trong điều kiện vận hành thực tế. Việc thay thế hoàn toàn nhân sự tư vấn dựa trên các chỉ số hiệu suất ban đầu là quyết định mang nhiều rủi ro vận hành.",
+  "referenceAnswers": [
+   "A pilot project deploying artificial intelligence in call centres recorded a fifty per cent reduction in customer complaint resolution times. Although these metrics appear promising, the system actually handled only simple requests, while complex issues were routed directly to human agents. This element of selection bias skews the assessment of the technology's genuine operational capability under realistic conditions. Consequently, replacing human support staff entirely based on these preliminary metrics represents a decision carrying high operational risk."
+  ],
+  "grammarTags": [
+   "Selection bias & technological evaluation"
+  ],
+  "explanationVi": "Chỉ ra thiên vị chọn lọc trong thử nghiệm AI khi các ca khó bị lọc ra, khiến kết quả đo lường hiệu suất thiếu chính xác.",
+  "rationaleVi": "Phù hợp tiêu chí 8.5 nhờ việc lột tả chính xác cơ chế 'selection bias' trong đánh giá ứng dụng công nghệ, vạch rõ giả định sai lầm của dữ liệu ban đầu.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "ai-assisted-level-draft",
+  "version": 1
+ },
+ {
+  "id": "band-8.5-exp-013",
+  "practiceLevel": "8.5",
+  "type": "paragraph",
+  "topic": "xã hội",
+  "targetTerm": "causal inference",
+  "meaningVi": "suy luận nhân quả",
+  "promptVi": "Giả định rằng ánh sáng là yếu tố duy nhất ngăn ngừa tội phạm thiếu tính vững chắc, bởi chính quyền thành phố cũng đã tăng cường lực lượng tuần tra trong cùng thời điểm. Số liệu thống kê tại các đô thị du lịch cho thấy việc gia tăng hệ thống đèn chiếu sáng công cộng diễn ra cùng lúc với sự sụt giảm của vi phạm trật tự ban đêm. Một suy luận nhân quả thoả đáng đòi hỏi phải so sánh đối chứng với các khu vực lắp đèn nhưng không thay đổi mật độ cảnh sát. Hoạch định an ninh cộng đồng do đó phải cẩn trọng trước các kết luận vội vàng dựa trên dữ liệu chuỗi thời gian đơn thuần.",
+  "referenceAnswers": [
+   "Assuming that illumination alone deters crime lacks robustness, given that municipal authorities also intensified police patrols over the exact same period. Statistical trends in tourist cities showed enhanced public street lighting coinciding with a reduction in night-time order violations. A valid causal inference requires a controlled comparison with districts where lighting was upgraded without altering police deployment levels. Community safety planning must therefore exercise caution against hasty conclusions drawn from simple time-series data."
+  ],
+  "grammarTags": [
+   "Causal inference & social policy"
+  ],
+  "explanationVi": "Đảo vị trí giả định lên đầu đoạn văn để tạo sự đa dạng cấu trúc, phân tích suy luận nhân quả trong an ninh đô thị khi có hai yếu tố diễn ra đồng thời.",
+  "rationaleVi": "Trình độ 8.5 thể hiện qua việc lật lại giả định độc tôn của một biến số (đèn đường vs tuần tra) và nâng cao tính chặt chẽ của 'causal inference'.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "ai-assisted-level-draft",
+  "version": 1
+ },
+ {
+  "id": "band-8.5-exp-014",
+  "practiceLevel": "8.5",
+  "type": "paragraph",
+  "topic": "năng lượng",
+  "targetTerm": "underlying assumption",
+  "meaningVi": "giả định nền tảng",
+  "promptVi": "Chương trình lắp đặt đồng hồ điện thông minh tại hộ gia đình đã ghi nhận mức tiêu thụ năng lượng giờ cao điểm giảm nhẹ trong vài tháng đầu. Tuy nhiên, sự cải thiện này chứa đựng một giả định nền tảng rằng người dân sẽ duy trì việc chủ động theo dõi ứng dụng sau khi cảm giác hiếu kỳ ban đầu qua đi. Nếu thói quen sinh hoạt không thực sự thay đổi dài hạn, bằng chứng tiết kiệm ngắn hạn không thể bảo đảm cho mục tiêu cắt giảm phát thải bền vững. Các chính sách chuyển đổi năng lượng cần bổ sung cơ chế khuyến khích tài chính lâu dài thay vì trông chờ vào sự tự giác đơn thuần.",
+  "referenceAnswers": [
+   "Household installations of smart electricity meters led to a modest reduction in peak-hour energy consumption during the initial months. Nevertheless, this improvement relies on an underlying assumption that residents will continue actively monitoring the app once the initial novelty fades. Without permanent alterations in daily domestic habits, short-term savings data cannot guarantee sustainable carbon reduction targets. Energy transition policies must incorporate long-term financial incentives rather than relying solely on voluntary mindfulness."
+  ],
+  "grammarTags": [
+   "Underlying assumption & energy policy"
+  ],
+  "explanationVi": "Bóc tách giả định nền tảng đằng sau sự thay đổi hành vi ngắn hạn khi triển khai công nghệ tiết kiệm năng lượng.",
+  "rationaleVi": "Tiêu chí 8.5 đạt được nhờ phân tích giới hạn kéo dài của hiệu ứng tâm lý tạm thời và chỉ ra 'underlying assumption' của chính sách.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "ai-assisted-level-draft",
+  "version": 1
+ },
+ {
+  "id": "band-8.5-exp-015",
+  "practiceLevel": "8.5",
+  "type": "paragraph",
+  "topic": "kinh tế",
+  "targetTerm": "generalisability",
+  "meaningVi": "khả năng tổng quát hóa",
+  "promptVi": "Các khoản tín dụng nhỏ cho hộ kinh doanh cá thể tại nông thôn đã ghi nhận tỉ lệ hoàn trả vốn cao và sự tăng trưởng doanh thu khả quan. Mặc dù vậy, tổ chức cấp vốn chỉ phê duyệt hồ sơ của những người đăng ký đã qua đào tạo quản lý tài chính cơ bản. Khả năng tổng quát hóa của mô hình này sang các cộng đồng thiếu kỹ năng kinh doanh vì thế bị hạn chế đáng kể. Mở rộng quy mô tín dụng công đòi hỏi phải đánh giá mức độ sẵn sàng của lực lượng lao động tại từng địa bàn thay vì áp dụng một công thức chung.",
+  "referenceAnswers": [
+   "Micro-credit schemes for rural sole traders recorded high repayment rates and encouraging revenue growth. Even so, the lending institution selectively approved applicants who had already completed basic financial management training. The generalisability of this success to communities lacking foundational business skills is therefore severely constrained. Scaling up public credit initiatives requires evaluating local workforce readiness rather than enforcing a uniform framework."
+  ],
+  "grammarTags": [
+   "Generalisability & economic intervention"
+  ],
+  "explanationVi": "Xem xét tính hiệu quả của chương trình tài chính vi mô và chỉ ra hạn chế về khả năng tổng quát hóa do tiêu chí sàng lọc đầu vào.",
+  "rationaleVi": "Thuộc cấp độ 8.5 với tư duy đánh giá tính nhân rộng của phát hiện thực nghiệm và dùng đúng thuật ngữ chuẩn Anh-Anh 'generalisability'.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "ai-assisted-level-draft",
+  "version": 1
+ },
+ {
+  "id": "band-8.5-exp-016",
+  "practiceLevel": "8.5",
+  "type": "paragraph",
+  "topic": "giáo dục",
+  "targetTerm": "reverse causality",
+  "meaningVi": "nhân quả ngược",
+  "promptVi": "Nghiên cứu tại các trường đại học cho thấy sinh viên lựa chọn hình thức học kết hợp trực tuyến đạt điểm thi học phần cao hơn nhóm học truyền thống. Mặc dù mô hình này được kỳ vọng sẽ nâng cao chất lượng giảng dạy, dữ liệu chưa thể loại trừ khả năng nhân quả ngược khi những sinh viên vốn có tính tự giác và năng lực cao thường chủ động chọn các lộ trình học linh hoạt. Việc gán hiệu suất học tập xuất sắc thuần túy cho công nghệ giảng dạy thể hiện sự vội vàng trong phân tích giáo dục. Muốn xác định giá trị thực sự của học kết hợp, các cơ sở đào tạo cần tiến hành phân bổ ngẫu nhiên sinh viên vào các phương thức học khác nhau.",
+  "referenceAnswers": [
+   "University research indicates that students opting for hybrid online learning modules achieved higher exam marks than those in traditional settings. Although this format is expected to enhance instructional quality, the data cannot rule out reverse causality, as inherently self-motivated and capable students naturally select flexible learning pathways. Attributing superior academic performance purely to instructional technology reflects premature educational analysis. Establishing the true value of hybrid models requires institutions to randomly assign students across different learning formats."
+  ],
+  "grammarTags": [
+   "Reverse causality & educational methodology"
+  ],
+  "explanationVi": "Chỉ ra hiện tượng nhân quả ngược trong nghiên cứu phương pháp giảng dạy kết hợp, khi đặc điểm sinh viên quyết định lựa chọn chứ không chỉ do mô hình học.",
+  "rationaleVi": "Phân tích sắc bén ở trình độ 8.5 về khả năng chiều tác động bị đảo ngược (reverse causality) trong các nghiên cứu xã hội/giáo dục.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "ai-assisted-level-draft",
+  "version": 1
+ },
+ {
+  "id": "band-8.5-exp-017",
+  "practiceLevel": "8.5",
+  "type": "paragraph",
+  "topic": "công việc",
+  "targetTerm": "selection bias",
+  "meaningVi": "thiên vị chọn lọc",
+  "promptVi": "Khảo sát tại các doanh nghiệp sáng tạo cho thấy nhóm nhân viên chọn làm việc từ xa báo cáo mức độ hài lòng với công việc cao hơn đáng kể. Dù vậy, nghiên cứu này chỉ thu hút những người vốn thích làm việc độc lập và sở hữu kỹ năng quản lý thời gian tốt. Sự hiện diện của thiên vị chọn lọc này làm yếu đi luận điểm cho rằng hình thức làm việc từ xa tự nó nâng cao sự gắn kết. Doanh nghiệp cần đánh giá tính cách nhân sự thay vì vội vã áp dụng chính sách làm việc linh hoạt cho toàn bộ tập thể.",
+  "referenceAnswers": [
+   "A survey across creative firms indicated that employees opting for remote work reported significantly higher job satisfaction. However, the study exclusively attracted individuals who naturally favoured working independently and possessed robust time-management skills. The presence of this selection bias weakens the claim that remote working inherently boosts engagement. Organisations ought to assess staff personality traits rather than hastily imposing flexible working policies across the entire workforce."
+  ],
+  "grammarTags": [
+   "Logical Fallacy / Selection Bias"
+  ],
+  "explanationVi": "Cụm từ 'selection bias' chỉ lỗi phương pháp luận khi mẫu nghiên cứu không đại diện cho tổng thể do tự chọn lọc. Trong đoạn văn, yếu tố này được dùng để phản biện luận điểm về hiệu quả làm việc từ xa.",
+  "rationaleVi": "Đoạn văn thuộc Cấp độ 8.5 vì xây dựng lập luận phản biện chặt chẽ về phương pháp nghiên cứu nhân sự, đòi hỏi khả năng phân tích giới hạn của bằng chứng và sử dụng cấu trúc điều kiện phức hợp.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "ai-assisted-level-draft",
+  "version": 1
+ },
+ {
+  "id": "band-8.5-exp-018",
+  "practiceLevel": "8.5",
+  "type": "paragraph",
+  "topic": "thể thao",
+  "targetTerm": "reverse causality",
+  "meaningVi": "nhân quả ngược",
+  "promptVi": "Số liệu từ các sáng kiến thể thao cộng đồng ghi nhận người lớn tuổi chơi các môn vợt thường xuyên có tỉ lệ suy giảm nhận thức thấp hơn. Dù vậy, mối tương quan này có thể xuất phát từ hiện tượng nhân quả ngược, khi những cá nhân duy trì sự minh mẫn vốn có xu hướng tiếp tục tham gia các hoạt động vận động phức tạp. Việc suy luận một cơ chế sinh học bảo vệ trực tiếp vẫn còn quá sớm nếu thiếu theo dõi nền dài hạn. Xây dựng hướng dẫn vận động thể chất cho người cao tuổi do đó đòi hỏi các thử nghiệm lâm sàng tiến cứu.",
+  "referenceAnswers": [
+   "Data from community sports initiatives indicates that older adults regularly playing racquet sports exhibit lower rates of cognitive decline. Yet, this correlation may stem from reverse causality, as individuals maintaining inherent mental sharpness naturally tend to continue participating in complex motor activities. Inferring a direct protective biological mechanism remains premature without long-term baseline tracking. Formulating physical activity guidelines for aging populations therefore demands prospective clinical trials."
+  ],
+  "grammarTags": [
+   "Causal Reasoning / Reverse Causality"
+  ],
+  "explanationVi": "Thuật ngữ 'reverse causality' giải thích trường hợp mối quan hệ nguyên nhân - kết quả bị đảo ngược so với giả định ban đầu. Từ này thể hiện chính xác lập luận phân tích nguy cơ nhầm lẫn hướng tác động.",
+  "rationaleVi": "Đoạn văn ở Cấp độ 8.5 do phân tích sâu sắc bản chất tương quan song song trong dữ liệu y tế cộng đồng và sử dụng ngữ liệu học thuật có độ chính xác cao về mặt tư duy logic.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "ai-assisted-level-draft",
+  "version": 1
+ },
+ {
+  "id": "band-8.5-exp-019",
+  "practiceLevel": "8.5",
+  "type": "paragraph",
+  "topic": "văn hóa",
+  "targetTerm": "confounding variable",
+  "meaningVi": "biến số nhiễu",
+  "promptVi": "Các bảo tàng nghệ thuật áp dụng công nghệ thực tế ảo ghi nhận lượng khách tham quan trẻ tuổi tăng vọt trong nửa năm đầu. Mặc dù vậy, xu hướng này diễn ra đồng thời với một chiến dịch truyền thông văn hóa quy mô lớn trên mạng xã hội do nhà nước tài trợ. Việc không tách biệt tác động của quảng bá khỏi sự hấp dẫn của công nghệ tạo ra một biến số nhiễu quan trọng trong phân tích. Phê duyệt ngân sách bảo tồn di sản lâu dài không nên quy kết sự gia tăng công chúng thuần túy cho các màn hình tương tác kỹ thuật số.",
+  "referenceAnswers": [
+   "Art museums adopting virtual reality technology recorded a surge in young visitors during the first six months. Nevertheless, this trend coincided with a massive state-funded social media campaign promoting cultural heritage. Failing to isolate marketing impact from technological engagement introduces a crucial confounding variable into the analysis. Long-term heritage budget approvals should refrain from attributing audience expansion purely to digital interactive displays."
+  ],
+  "grammarTags": [
+   "Data Interpretation / Confounding Variable"
+  ],
+  "explanationVi": "Cụm 'confounding variable' chỉ một yếu tố không được kiểm soát làm sai lệch mối quan hệ giữa biến độc lập và biến phụ thuộc, được dùng đúng văn cảnh để đánh giá chính xác tác động của công nghệ số.",
+  "rationaleVi": "Đoạn văn đạt Cấp độ 8.5 nhờ khả năng chỉ ra giới hạn nghiên cứu trong việc tách biệt tác động của chiến dịch truyền thông và đổi mới công nghệ văn hóa.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "ai-assisted-level-draft",
+  "version": 1
+ },
+ {
+  "id": "band-8.5-exp-020",
+  "practiceLevel": "8.5",
+  "type": "paragraph",
+  "topic": "đô thị",
+  "targetTerm": "confounding factors",
+  "meaningVi": "các yếu tố nhiễu",
+  "promptVi": "Tại các quận thương mại, việc áp dụng phí ô tô vào trung tâm trùng hợp với sự gia tăng doanh thu bán lẻ địa phương. Dù những người ủng hộ cho rằng khu vực thu phí kích thích thương mại đi bộ, chính sách này lại được triển khai cùng lúc với dự án chỉnh trang phố xá và giảm thuế doanh nghiệp nhỏ. Sự thiếu sót trong việc kiểm soát các yếu tố nhiễu này khiến kết luận phí giao thông trực tiếp thúc đẩy kinh tế trở nên thiếu vững chắc. Các chiến lược phát triển đô thị cần phân tách rõ hiệu ứng can thiệp hạ tầng trước khi nhân rộng mô hình tính phí sang các khu vực khác.",
+  "referenceAnswers": [
+   "The introduction of central vehicle congestion charges across commercial districts coincided with a rise in local retail revenue. Although advocates claim toll zones stimulate pedestrian commerce, the policy was implemented alongside street beautification projects and small-business tax rebates. Failing to control for these confounding factors undermines the claim that transport pricing directly drives economic growth. Urban development strategies must isolate infrastructure interventions before replicating charge schemes elsewhere."
+  ],
+  "grammarTags": [
+   "Policy Evaluation / Confounding Factors"
+  ],
+  "explanationVi": "Cụm 'confounding factors' dùng để chỉ tập hợp nhiều biến số bên ngoài cùng lúc tác động đến kết quả, tránh việc đơn giản hóa nguyên nhân trong đánh giá chính sách đô thị.",
+  "rationaleVi": "Đoạn văn đáp ứng yêu cầu Cấp độ 8.5 với tư duy phản biện cao cấp trong kinh tế đô thị, làm rõ sự cần thiết phải kiểm soát biến số hỗn hợp trước khi ban hành quy hoạch.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "ai-assisted-level-draft",
+  "version": 1
+ },
+ {
+  "id": "band-8.5-exp-021",
+  "practiceLevel": "8.5",
+  "type": "paragraph",
+  "topic": "nhà ở",
+  "targetTerm": "underlying assumption",
+  "meaningVi": "giả định nền tảng",
+  "promptVi": "Chương trình trợ giá cách nhiệt nhà ở đã giúp giảm đáng kể chi phí sưởi ấm của hộ gia đình trong mùa đông đầu tiên. Tuy nhiên, hiệu quả lâu dài chứa đựng một giả định nền tảng rằng người dân sẽ không nâng nhiệt độ cài đặt khi chi phí năng lượng trở nên rẻ hơn. Nếu hiện tượng dội ngược mức tiêu thụ này xảy ra, lượng phát thải cắt giảm trên thực tế sẽ thấp hơn nhiều so với tính toán lý thuyết. Các đánh giá chính sách năng lượng phải theo dõi thói quen sinh hoạt thực tế thay vì chỉ dựa vào mô hình nhiệt động lực học thuần túy.",
+  "referenceAnswers": [
+   "Subsidising residential home insulation significantly reduced household heating energy bills during the first winter. However, long-term efficacy relies on an underlying assumption that residents will not simply turn up their thermostats once heating becomes cheaper. If this consumption rebound occurs, actual emission reductions will fall far short of theoretical calculations. Energy policy evaluations must monitor post-intervention domestic habits rather than relying purely on thermodynamic modeling."
+  ],
+  "grammarTags": [
+   "Assumption Analysis / Energy Policy"
+  ],
+  "explanationVi": "Thuật ngữ 'underlying assumption' chỉ tiền đề ẩn đằng sau một lập luận hoặc dự báo, giúp vạch rõ ranh giới giữa mô hình lý thuyết và hành vi thực tế của con người.",
+  "rationaleVi": "Đoạn văn thể hiện Cấp độ 8.5 qua việc bóc tách giả định chưa được kiểm chứng của chính sách công, đi từ số liệu bề nổi đến phân tích hiệu ứng dội ngược về mặt hành vi.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "ai-assisted-level-draft",
+  "version": 1
+ },
+ {
+  "id": "band-8.5-exp-022",
+  "practiceLevel": "8.5",
+  "type": "paragraph",
+  "topic": "đi lại",
+  "targetTerm": "methodological flaw",
+  "meaningVi": "khuyết điểm phương pháp luận",
+  "promptVi": "Việc đưa xe buýt điện vào vận hành tại một số đô thị trùng khớp với sự sụt giảm nồng độ bụi mịn đo được dọc các trục đường chính. Dù vậy, giới chức thành phố đồng thời hạ hạn mức tốc độ của xe tải nặng và tăng tần suất quét dọn đường phố. Việc vội vã quy kết sự cải thiện không khí thuần túy cho động cơ điện thể hiện một khuyết điểm phương pháp luận do bỏ qua các biện pháp giảm bụi đường song song. Hoạch định giao thông đòi hỏi mô hình hóa đa biến nghiêm ngặt để chứng minh tính hiệu quả của khoản chi phí thay thế đoàn xe.",
+  "referenceAnswers": [
+   "Deploying electric buses across several municipalities coincided with a reduction in fine particulate concentration measured along major arterial roads. Nevertheless, city authorities concurrently lowered heavy vehicle speed limits and increased street sweeping frequency. Prematurely attributing air quality improvements solely to electric powertrains represents a methodological flaw that overlooks co-occurring road dust mitigations. Transport planning requires rigorous multi-variate modeling to justify fleet replacement expenditures."
+  ],
+  "grammarTags": [
+   "Research Critique / Methodological Flaw"
+  ],
+  "explanationVi": "Cụm 'methodological flaw' quy định sai sót trong thiết kế hoặc phân tích dữ liệu thực nghiệm, dùng để chỉ trích việc suy diễn nhân quả thiếu kiểm soát biến số.",
+  "rationaleVi": "Đoạn văn mang tính chất tranh luận khoa học Cấp độ 8.5, chỉ rõ điểm yếu trong quy trình thực nghiệm và yêu cầu năng lực mô hình hóa đa biến trong giao thông.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "ai-assisted-level-draft",
+  "version": 1
+ },
+ {
+  "id": "band-8.5-exp-023",
+  "practiceLevel": "8.5",
+  "type": "paragraph",
+  "topic": "đồ ăn",
+  "targetTerm": "spurious correlation",
+  "meaningVi": "mối tương quan ngụy tạo",
+  "promptVi": "Báo cáo y tế khu vực tiết lộ mức tiêu thụ thực phẩm lên men bình quân đầu người tỷ lệ thuận với việc giảm tần suất mắc bệnh đường hô hấp theo mùa. Mặc dầu vậy, các cộng đồng ăn nhiều thực phẩm lên men cũng sở hữu thu nhập trung bình cao hơn và khả năng tiếp cận dịch vụ y tế vượt trội. Quy kết mô hình ăn uống này như một lá chắn miễn dịch trực tiếp là dựa vào một mối tương quan ngụy tạo xuất phát từ ưu thế kinh tế - xã hội. Việc xác minh khuyến nghị dinh dưỡng đòi hỏi các thử nghiệm lâm sàng mù đôi thay vì chỉ so sánh dữ liệu tiêu dùng theo địa lý.",
+  "referenceAnswers": [
+   "Regional health reports revealed that per capita consumption of fermented foods correlated positively with a reduced incidence of seasonal respiratory infections. Even so, communities with high fermented food intake also exhibited higher average incomes and superior access to healthcare services. Treating this dietary habit as a direct immune shield relies on a spurious correlation driven by socio-economic advantages. Validating nutritional guidelines mandates double-blind clinical trials rather than relying on spatial consumption data."
+  ],
+  "grammarTags": [
+   "Epistemology / Spurious Correlation"
+  ],
+  "explanationVi": "Cụm 'spurious correlation' mô tả hai hiện tượng biến đổi tương đồng do ảnh hưởng của biến thứ ba chứ không hề có quan hệ nguyên nhân - kết quả trực tiếp.",
+  "rationaleVi": "Đoạn văn thể hiện Cấp độ 8.5 bằng cách phân tích sắc bén sự nhầm lẫn giữa điều kiện kinh tế - xã hội và tác động sinh học của dinh dưỡng thông qua ngôn từ chuẩn xác.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "ai-assisted-level-draft",
+  "version": 1
+ },
+ {
+  "id": "band-8.5-exp-024",
+  "practiceLevel": "8.5",
+  "type": "paragraph",
+  "topic": "thời gian",
+  "targetTerm": "generalisability",
+  "meaningVi": "khả năng tổng quát hóa",
+  "promptVi": "Các buổi thực hành tỉnh thức bắt buộc tại các trường tư thục hàng đầu đã mang lại sự cải thiện rõ rệt về chỉ số tập trung của học sinh. Tuy nhiên, những cơ sở này vận hành với tỉ lệ học sinh trên giáo viên rất thấp và sở hữu đội ngũ tư vấn tâm lý chuyên trách. Tính khả thi và khả năng tổng quát hóa của phương pháp này sang các trường công lập thiếu nguồn lực vẫn là một câu hỏi lớn do sự chênh lệch sâu sắc về năng lực vận hành. Cải cách giáo dục phải xem xét các điều kiện tiên quyết về nguồn lực trước khi quy định bắt buộc trên phạm vi toàn quốc.",
+  "referenceAnswers": [
+   "Mandatory mindfulness sessions introduced at elite private schools yielded marked improvements in student concentration metrics. However, these institutions operate with exceptionally low student-to-teacher ratios and maintain dedicated psychological support staff. The feasibility and generalisability of this practice to under-resourced state schools remain highly questionable given the stark contrast in operational capacity. Educational reforms must account for resource preconditions before enforcing national mandates."
+  ],
+  "grammarTags": [
+   "Educational Reform / Generalisability"
+  ],
+  "explanationVi": "Danh từ 'generalisability' (viết theo Anh-Anh) đề cập đến mức độ có thể áp dụng kết quả từ một bối cảnh cụ thể sang các môi trường rộng lớn hoặc khác biệt hơn.",
+  "rationaleVi": "Đoạn văn đạt Cấp độ 8.5 nhờ việc đánh giá phạm vi áp dụng thực tiễn của một can thiệp giáo dục dựa trên các điều kiện biên về nguồn lực vận hành.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "ai-assisted-level-draft",
+  "version": 1
+ },
+ {
+  "id": "band-8.5-exp-025",
+  "practiceLevel": "8.5",
+  "type": "paragraph",
+  "topic": "du lịch",
+  "targetTerm": "spurious correlation",
+  "meaningVi": "tương quan ngụy tạo",
+  "promptVi": "Sự gia tăng số lượng đặt tour du lịch sinh thái gần đây trùng khớp với sự sụt giảm tỷ lệ thất nghiệp tại các tỉnh ven biển. Mặc dù vậy, xu hướng này diễn ra đồng thời với các khoản trợ cấp hạ tầng quy mô lớn của chính phủ và sự phục hồi nhu cầu nội địa trên mọi ngành hàng. Việc quy kết sự tăng trưởng việc làm thuần túy cho du lịch bền vững dựa trên một tương quan ngụy tạo vốn bỏ qua các động lực kinh tế vĩ mô rộng lớn hơn. Chính sách phát triển vùng do đó cần tách biệt tác động ngành khỏi sự phục hồi hệ thống trước khi mở rộng các khoản trợ cấp du lịch sinh thái.",
+  "referenceAnswers": [
+   "A recent surge in eco-tourism bookings coincided with a decline in local unemployment across coastal provinces. However, this trend unfolded alongside large-scale government infrastructure subsidies and a rebound in domestic demand across all sectors. Attributing job growth solely to sustainable tourism relies on a spurious correlation that overlooks broader macroeconomic drivers. Regional economic policies must isolate sectoral impacts from systemic recovery before expanding eco-tourism grants."
+  ],
+  "grammarTags": [
+   "reasoning - spurious correlation"
+  ],
+  "explanationVi": "Thuật ngữ 'spurious correlation' dùng để chỉ mối liên hệ thống kê giữa hai biến số nhưng không hề có quan hệ nhân quả thực sự mà do tác động của các yếu tố bên ngoài. Đoạn văn phân tích giới hạn của việc vội vã suy ra tác động kinh tế của du lịch.",
+  "rationaleVi": "Đoạn văn thể hiện tư duy lập luận cấp độ 8.5 thông qua việc phân tích lỗi ngụy biện trong nghiên cứu kinh tế, sử dụng cấu trúc điều kiện phức hợp và thuật ngữ chuyên sâu để đánh giá bằng chứng.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "ai-assisted-level-draft",
+  "version": 1
+ },
+ {
+  "id": "band-8.5-exp-026",
+  "practiceLevel": "8.5",
+  "type": "paragraph",
+  "topic": "thể thao",
+  "targetTerm": "reverse causality",
+  "meaningVi": "nhân quả ngược",
+  "promptVi": "Nhóm người cao tuổi tham gia các môn thể thao đồng đội đạt điểm số cao hơn về khả năng vận động chức năng. Mặc dù vậy, phát hiện quan sát này chưa thể loại trừ nguy cơ nhân quả ngược, bởi những cá nhân sở hữu sức khỏe cơ xương khớp tốt ngay từ đầu vốn có xu hướng duy trì các hoạt động thể chất tập thể. Giả định rằng thể thao đồng đội trực tiếp mang lại khả năng vận động tốt hơn vẫn chưa có căn cứ nếu thiếu đánh giá thể trạng ban đầu. Các hướng dẫn y tế cộng đồng chỉ nên đưa ra khuyến nghị khi các thử nghiệm tiến cứu có đối chứng xác nhận được hướng tác động thực sự.",
+  "referenceAnswers": [
+   "Elderly individuals participating in team sports record higher functional mobility scores. Nonetheless, this observational finding fails to address the risk of reverse causality, as individuals with superior baseline musculoskeletal health are naturally more inclined to sustain group athletic activities. Assuming that team sports directly cause improved mobility remains unproven without baseline physical assessments. Public health guidelines should withhold definitive recommendations until prospective controlled trials confirm the true directional effect."
+  ],
+  "grammarTags": [
+   "reasoning - reverse causality"
+  ],
+  "explanationVi": "'Reverse causality' là hiện tượng đảo ngược chiều nhân quả, khi nguyên nhân bị nhầm thành kết quả. Đoạn văn phản biện giả định về lợi ích y tế của thể thao khi thiếu dữ liệu nền.",
+  "rationaleVi": "Đạt chuẩn 8.5 nhờ khả năng chỉ ra thiếu sót phương pháp luận trong y học thể thao, sử dụng ngôn ngữ lập luận tinh tế để đưa ra khuyến nghị chính sách dựa trên bằng chứng.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "ai-assisted-level-draft",
+  "version": 1
+ },
+ {
+  "id": "band-8.5-exp-027",
+  "practiceLevel": "8.5",
+  "type": "paragraph",
+  "topic": "công nghệ",
+  "targetTerm": "confounding variable",
+  "meaningVi": "biến số nhiễu",
+  "promptVi": "Việc triển khai các công cụ trí tuệ nhân tạo tạo sinh tại các doanh nghiệp được theo sau bởi sự gia tăng rõ rệt về tốc độ bàn giao phần mềm theo quý. Dù vậy, giai đoạn áp dụng công nghệ này diễn ra cùng lúc với đợt tái cấu trúc nhân sự quy mô lớn nhằm thay thế nhân viên cấp thấp bằng các nhà thầu giàu kinh nghiệm. Việc bỏ qua biến số nhiễu quan trọng này làm mất giá trị của suy luận nhân quả trực tiếp giữa trí tuệ nhân tạo và đầu ra công việc. Các quyết định phân bổ ngân sách cho bản quyền phần mềm cần mô hình hóa đa biến để tách biệt hiệu quả công nghệ khỏi việc thay đổi cơ cấu lao động.",
+  "referenceAnswers": [
+   "Enterprise adoption of generative AI tools was followed by a marked increase in quarterly software delivery speeds. Yet, this implementation coincided with a large-scale workforce restructuring that replaced junior staff with experienced contractors. Overlooking this major confounding variable invalidates any straightforward causal link between artificial intelligence and work output. Budget allocation decisions regarding software licenses require multi-variable modeling to isolate technological efficacy from workforce restructuring."
+  ],
+  "grammarTags": [
+   "reasoning - confounding variable"
+  ],
+  "explanationVi": "'Confounding variable' là biến số ngoài dự tính gây ảnh hưởng đến cả nguyên nhân lẫn kết quả, dẫn đến kết luận sai lệch. Đoạn văn kiểm tra giới hạn của dữ liệu hiệu suất công nghệ.",
+  "rationaleVi": "Thể hiện độ sâu phân tích 8.5 khi bóc tách tác động của công nghệ khỏi các yếu tố quản trị doanh nghiệp song hành bằng văn phong học thuật mạch lạc.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "ai-assisted-level-draft",
+  "version": 1
+ },
+ {
+  "id": "band-8.5-exp-028",
+  "practiceLevel": "8.5",
+  "type": "paragraph",
+  "topic": "môi trường",
+  "targetTerm": "baseline assumption",
+  "meaningVi": "giả định nền tảng",
+  "promptVi": "Các đô thị mở rộng mạng lưới cây xanh ghi nhận nhiệt độ vi khí hậu giảm tại các khu dân cư trong hai mùa hè liên tiếp. Tuy nhiên, hiệu ứng làm mát này dựa trên một giả định nền tảng rằng chính quyền địa phương duy trì việc tưới nước đều đặn trong các đợt hạn hán nghiêm trọng. Nếu nắng nóng cực đoan làm cạn kiệt nguồn nước dự trữ, thảm thực vật không được tưới sẽ mất khả năng thoát hơi nước và không thể giảm áp lực nhiệt. Chiến lược thích ứng với biến đổi khí hậu do đó phải đảm bảo nguồn nước dự phòng thay vì coi cây xanh là giải pháp chống nóng vô điều kiện.",
+  "referenceAnswers": [
+   "Cities expanding urban forestry networks recorded lower microclimate temperatures in residential districts over two consecutive summers. Nevertheless, this cooling effect relies on the baseline assumption that local authorities maintain constant irrigation during periods of severe drought. Should extreme heat deplete water reserves, unwatered canopies lose their evapotranspirative capacity and fail to mitigate thermal stress. Climate adaptation strategies must establish contingency water sourcing rather than treating greenery as an unconditional heat shield."
+  ],
+  "grammarTags": [
+   "reasoning - baseline assumption"
+  ],
+  "explanationVi": "'Baseline assumption' phản ánh giả định cốt lõi cần phải có để một lý thuyết hoặc dự báo duy trì tính đúng đắn. Đoạn văn đánh giá tính khả thi của giải pháp môi trường dưới các điều kiện biến đổi.",
+  "rationaleVi": "Cấu trúc lập luận phản biện điều kiện ở trình độ 8.5, kết hợp từ vựng chính xác về sinh thái và quy hoạch đô thị mà không rơi vào các khuôn mẫu kết bài thông thường.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "ai-assisted-level-draft",
+  "version": 1
+ },
+ {
+  "id": "band-8.5-exp-029",
+  "practiceLevel": "8.5",
+  "type": "paragraph",
+  "topic": "giáo dục",
+  "targetTerm": "selection bias",
+  "meaningVi": "thiên vị chọn lọc",
+  "promptVi": "Học sinh trung học tham gia các học viện tranh biện ngoại khóa đạt điểm số vượt trội trong các bài kiểm tra tư duy phản biện khi tốt nghiệp. Thay vì chứng minh rằng việc giảng dạy tranh biện giúp nâng cao năng lực trí tuệ, nghiên cứu này mắc phải thiên vị chọn lọc do người tham gia chủ yếu đến từ các gia đình có trình độ học vấn của cha mẹ cao. Quy kết thành tích học tập xuất sắc thuần túy cho chương trình tranh biện là sự đánh đồng giữa nền tảng học sinh và giá trị giảng dạy. Ban giám hiệu các trường cần tiến hành các thử nghiệm kiểm soát ngẫu nhiên trước khi tài trợ cho việc bắt buộc đưa tranh biện vào giảng dạy trên toàn quốc.",
+  "referenceAnswers": [
+   "High school students enrolled in extracurricular debate academies demonstrated superior critical thinking test scores at graduation. Far from proving that debate instruction enhances cognitive skills, the study suffered from selection bias because participants predominantly belonged to households with high parental educational attainment. Attributing academic excellence purely to the debate curriculum conflates student background with instructional merit. School boards should conduct randomised controlled trials before funding nationwide debate mandates."
+  ],
+  "grammarTags": [
+   "reasoning - selection bias"
+  ],
+  "explanationVi": "'Selection bias' xảy ra khi mẫu nghiên cứu không đại diện khách quan cho tổng thể do cách thức lựa chọn đầu vào. Đoạn văn bác bỏ kết luận vội vã về mô hình giáo dục.",
+  "rationaleVi": "Đạt độ chính xác 8.5 nhờ việc chỉ ra sai lầm trong phân tích giáo dục và đề xuất giải pháp phương pháp luận nghiêm ngặt để kiểm chứng.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "ai-assisted-level-draft",
+  "version": 1
+ },
+ {
+  "id": "band-8.5-exp-030",
+  "practiceLevel": "8.5",
+  "type": "paragraph",
+  "topic": "chính sách công",
+  "targetTerm": "observational evidence",
+  "meaningVi": "bằng chứng quan sát",
+  "promptVi": "Các chính quyền địa phương áp thuế nhà đất bỏ trống ghi nhận sự gia tăng đáng kể trong lượng bất động sản cho thuê dài hạn. Mặc dù có những con số khả quan này, bằng chứng quan sát hiện tại không thể tách biệt tác động của chính sách thuế khỏi đợt tăng lãi suất song song vốn ép các nhà đầu tư cơ hội phải giải thể tài sản. Việc vội vã vạch ra mối quan hệ nhân quả trực tiếp từ việc thu thuế đến nguồn cung nhà ở là sự hiểu sai các áp lực tài chính rộng lớn hơn. Đánh giá chính sách phải tích hợp mô hình hóa kinh tế vĩ mô để xác định liệu sự thay đổi nguồn cung xuất phát từ phạt quản lý hay biến động thị trường vốn.",
+  "referenceAnswers": [
+   "Municipalities introducing vacant property taxes reported a noticeable increase in long-term residential rental listings. Despite these encouraging figures, this observational evidence cannot isolate the impact of taxation from parallel interest rate hikes that forced speculative investors to liquidate assets. Drawing a direct causal line from tax enforcement to housing availability misinterprets broader financial pressures. Policy evaluation must integrate macroeconomic modelling to determine whether supply changes stem from regulatory penalties or capital market fluctuations."
+  ],
+  "grammarTags": [
+   "reasoning - observational evidence"
+  ],
+  "explanationVi": "'Observational evidence' ám chỉ dữ liệu thu thập qua quan sát thực tế mà thiếu sự can thiệp hoặc kiểm soát thực nghiệm các biến số. Đoạn văn chỉ ra tính hạn chế của dữ liệu này trong hoạch định chính sách.",
+  "rationaleVi": "Thể hiện năng lực 8.5 qua cách phân tích chính sách công đa chiều, sử dụng ngữ pháp điều kiện và từ vựng tài chính - đô thị chuẩn xác.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "ai-assisted-level-draft",
+  "version": 1
+ },
+ {
+  "id": "band-8.5-exp-031",
+  "practiceLevel": "8.5",
+  "type": "paragraph",
+  "topic": "đồ ăn",
+  "targetTerm": "methodological limitation",
+  "meaningVi": "giới hạn phương pháp luận",
+  "promptVi": "Các khảo sát quan sát liên kết việc tiêu thụ thực phẩm chế biến sẵn với tỷ lệ gia tăng rối loạn chuyển hóa ở người làm việc văn phòng tại đô thị. Điều cốt yếu là một giới hạn phương pháp luận lớn xuất hiện từ việc phụ thuộc vào nhật ký ăn uống tự kê khai, vốn nổi tiếng dễ bỏ sót các bữa ăn vặt không lành mạnh. Việc khẳng định mối quan hệ liều lượng - đáp ứng chính xác mà thiếu sự xác minh của các chỉ dấu sinh học khách quan có nguy cơ tính toán sai rủi ro dinh dưỡng thực tế. Các hướng dẫn chế độ ăn do đó cần tiết chế các tuyên bố cho đến khi phương pháp theo dõi chuyển hóa xác nhận tính chính xác của dữ liệu tự báo cáo.",
+  "referenceAnswers": [
+   "Observational surveys link high consumption of ultra-processed foods with elevated incidence of metabolic disorders among urban professionals. Crucially, a major methodological limitation arises from the reliance on self-reported dietary recalls, which are notoriously prone to underreporting unhealthy snacking. Asserting a precise dose-response relationship without objective biomarker verification risks miscalculating the actual nutritional risk. Dietary guidelines must temper their claims until metabolomic tracking validates self-reported consumption data."
+  ],
+  "grammarTags": [
+   "reasoning - methodological limitation"
+  ],
+  "explanationVi": "'Methodological limitation' đề cập đến khuyết điểm trong thiết kế hoặc công cụ nghiên cứu làm giảm tính cậy của kết quả. Đoạn văn đánh giá tính chính xác của dữ liệu dinh dưỡng.",
+  "rationaleVi": "Lập luận học thuật 8.5 sắc bén, phân tích rủi ro của việc dựa vào dữ liệu tự kê khai trong nghiên cứu sức khỏe cộng đồng.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "ai-assisted-level-draft",
+  "version": 1
+ },
+ {
+  "id": "band-8.5-exp-032",
+  "practiceLevel": "8.5",
+  "type": "paragraph",
+  "topic": "đi lại",
+  "targetTerm": "causal inference",
+  "meaningVi": "suy luận nhân quả",
+  "promptVi": "Ùn tắc giao thông trên các trục đường chính giảm đáng kể sau khi đưa vào vận hành các khu vực thu phí kẹt xe. Tuy nhiên, một suy luận nhân quả vững chắc vẫn gặp khó khăn vì việc triển khai chính sách diễn ra cùng lúc với sự kiện khánh thành tuyến đường sắt đô thị sức chứa lớn dọc theo cùng hành lang. Quy kết việc giảm ùn tắc thuần túy cho thu phí đường đã bỏ qua sự chuyển dịch phương thức vận tải nhờ giao thông công cộng mở rộng. Các nhà hoạch định giao thông đô thị phải sử dụng phân tích không gian phản thực tế để tách biệt tác động răn đe của giá cả khỏi sự thay thế của hạ tầng.",
+  "referenceAnswers": [
+   "Traffic congestion along major arterial routes dropped significantly following the introduction of congestion pricing zones. However, robust causal inference remains problematic because the policy launch coincided with the opening of a high-capacity urban railway line along the same corridor. Attributing reduced gridlock exclusively to road pricing ignores the substantial modal shift enabled by expanded mass transit. Urban transport planners must utilise counterfactual spatial analysis to separate pricing deterrence from infrastructure substitution."
+  ],
+  "grammarTags": [
+   "reasoning - causal inference"
+  ],
+  "explanationVi": "'Causal inference' là quá trình kết luận rằng một sự tống/tác động thực sự gây ra một kết quả cụ thể. Đoạn văn phê bình việc vội vã đưa ra kết luận nhân quả trong quy hoạch giao thông.",
+  "rationaleVi": "Sử dụng từ vựng quy hoạch đô thị cao cấp và các phép suy luận điều kiện phức hợp, đáp ứng hoàn hảo tiêu chí IELTS 8.5.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "ai-assisted-level-draft",
+  "version": 1
+ },
+ {
+  "id": "band-8.5-exp-033",
+  "practiceLevel": "8.5",
+  "type": "paragraph",
+  "topic": "công nghệ",
+  "targetTerm": "confounding variable",
+  "meaningVi": "biến số nhiễu",
+  "promptVi": "Việc gia tăng thời lượng sử dụng các ứng dụng mạng xã hội ở thanh thiếu niên trùng khớp với sự gia tăng tỷ lệ chẩn đoán lo âu trong cùng thời kỳ. Mặc dù các nhà hoạt động cảnh báo về tác hại của màn hình kỹ thuật số, phân tích hiện tại chưa kiểm soát được biến số nhiễu là sự thiếu hụt giấc ngủ và áp lực học tập ngày càng tăng. Việc coi mạng xã hội là nguyên nhân duy nhất gây nên suy giảm sức khỏe tâm thần phản ánh một đánh giá thiếu thận trọng về các dữ liệu hành vi. Các chính sách bảo vệ giới trẻ cần tính đến môi trường sống tổng thể trước khi ban hành quy định cấm đoán đơn thuần.",
+  "referenceAnswers": [
+   "An increase in social media usage among teenagers coincides with a rise in diagnosed anxiety rates over the same period. Although activists warn against digital screens, current analyses fail to account for the confounding variable of sleep deprivation and heightened academic pressure. Framing social media as the sole driver of deteriorating mental health reflects an overhasty assessment of behavioural data. Youth protection policies must consider the holistic living environment before enacting outright prohibitions."
+  ],
+  "grammarTags": [
+   "Conditionality & Confounding Variables"
+  ],
+  "explanationVi": "Câu thứ hai xác định 'confounding variable' (biến số nhiễu) để chỉ ra rằng mối tương quan giữa mạng xã hội và lo âu có thể bị ảnh hưởng bởi thiếu ngủ và áp lực học tập.",
+  "rationaleVi": "Đoạn văn phân tích lập luận ở trình độ 8.5 bằng cách bác bỏ kết luận nhân quả đơn giản và nêu bật tầm quan trọng của việc kiểm soát các biến số nhiễu.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "ai-assisted-level-draft",
+  "version": 1
+ },
+ {
+  "id": "band-8.5-exp-034",
+  "practiceLevel": "8.5",
+  "type": "paragraph",
+  "topic": "đô thị",
+  "targetTerm": "reverse causality",
+  "meaningVi": "nhân quả ngược",
+  "promptVi": "Dữ liệu quy hoạch đô thị ghi nhận cư dân sống gần các công viên cây xanh quy mô lớn có mức độ căng thẳng thấp hơn hẳn. Mặc dù mối liên hệ này rất triển vọng, các nhà nghiên cứu phải tính đến khả năng nhân quả ngược, khi những cá nhân có thu nhập cao và lối sống lành mạnh sẵn có vốn có xu hướng chủ động chuyển đến sống tại các khu vực đắt đỏ này. Giả định rằng bản thân không gian xanh tự nó trực tiếp cải thiện tâm lý sẽ thiếu tính vững chắc nếu chưa đánh giá thể trạng ban đầu của cư dân. Đô thị hóa bền vững đòi hỏi các khảo sát dọc để theo dõi sự thay đổi sức khỏe theo thời gian.",
+  "referenceAnswers": [
+   "Urban planning data reveals that residents living near large green parks report significantly lower stress levels. While this association appears promising, researchers must account for potential reverse causality, as wealthier individuals with pre-existing healthy lifestyles tend to self-select into these premium neighbourhoods. Assuming that green space alone directly enhances psychological well-being remains unproven without assessing residents' baseline health conditions. Sustainable urbanisation requires longitudinal tracking to monitor health changes over time."
+  ],
+  "grammarTags": [
+   "Logical Fallacies & Reverse Causality"
+  ],
+  "explanationVi": "'Reverse causality' (nhân quả ngược) miêu tả trường hợp người giàu/khỏe tự chọn sống ở nơi có công viên, thay vì công viên tạo ra sức khỏe cho họ.",
+  "rationaleVi": "Mục này thể hiện tư duy phản biện 8.5 qua việc bóc tách giả định nền và chỉ ra giới hạn của dữ liệu cắt ngang.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "ai-assisted-level-draft",
+  "version": 1
+ },
+ {
+  "id": "band-8.5-exp-035",
+  "practiceLevel": "8.5",
+  "type": "paragraph",
+  "topic": "đồ ăn",
+  "targetTerm": "spurious correlation",
+  "meaningVi": "tương quan ngụy tạo",
+  "promptVi": "Các báo cáo dịch tễ học chỉ ra rằng việc tiêu thụ nhiều dầu ô liu liên quan chặt chẽ đến sự sụt giảm tỷ lệ mắc bệnh tim mãn tính ở người trung niên. Tuy nhiên, việc khẳng định mối quan hệ nhân quả trực tiếp này có nguy cơ rơi vào một tương quan ngụy tạo, bởi nhóm tiêu thụ dầu ô liu cũng đồng thời sở hữu mức thu nhập cao hơn và thói quen khám sức khỏe định kỳ. Nếu không loại trừ các yếu tố kinh tế - xã hội đi kèm, các khuyến nghị dinh dưỡng có thể vô tình bóp méo nguyên nhân thực sự của sự thọ lâu. Hoạch định chính sách y tế công cộng do đó phải căn cứ vào các thử nghiệm can thiệp có kiểm soát.",
+  "referenceAnswers": [
+   "Epidemiological reports indicate that higher olive oil consumption correlates strongly with reduced chronic heart disease among middle-aged adults. However, asserting a direct causal link risks identifying a spurious correlation, given that olive oil consumers typically enjoy higher incomes and maintain regular medical checkups. Failing to isolate these co-occurring socioeconomic factors could lead nutritional advice to misrepresent the true drivers of longevity. Public health guidance must therefore rely on controlled interventional trials rather than observational patterns."
+  ],
+  "grammarTags": [
+   "Methodological Limitations & Spurious Correlation"
+  ],
+  "explanationVi": "'Spurious correlation' (tương quan ngụy tạo) mô tả một mối quan hệ thống kê vô tình hoặc do biến thứ ba chi phối chứ không phải quan hệ nguyên nhân - kết quả.",
+  "rationaleVi": "Phân tích sắc bén về phương pháp nghiên cứu quan sát và đề xuất điều kiện can thiệp chuẩn mực cho IELTS 8.5.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "ai-assisted-level-draft",
+  "version": 1
+ },
+ {
+  "id": "band-8.5-exp-036",
+  "practiceLevel": "8.5",
+  "type": "paragraph",
+  "topic": "kinh tế",
+  "targetTerm": "underlying assumption",
+  "meaningVi": "giả định nền tảng",
+  "promptVi": "Chương trình hoàn thuế cho các hộ gia đình nâng cấp thiết bị tiết kiệm điện đã giúp tăng tỷ lệ cải tạo nhà ở tại các khu vực thành thị. Mặc dù chính sách này tỏ ra hiệu quả, thành công của nó chứa đựng một giả định nền tảng rằng các chủ nhà đều sẵn có nguồn vốn tài chính ban đầu để chi trả trước chi phí thi công. Đối với các hộ gia đình có thu nhập thấp thiếu khả năng tiếp cận tín dụng, khoản hoàn thuế sau đó không đủ để tạo ra động lực thực sự. Quyết định mở rộng chính sách xanh cần bổ sung cơ chế cho vay ưu đãi thay vì phụ thuộc hoàn toàn vào chính sách hoàn tiền.",
+  "referenceAnswers": [
+   "Tax rebate programmes for households upgrading to energy-efficient appliances have boosted renovation rates in urban areas. While seemingly effective, the success of this policy rests on an underlying assumption that homeowners possess sufficient upfront capital to absorb initial construction costs. For low-income households lacking access to credit, post-purchase rebates fail to offer a meaningful financial incentive. Decisions to scale up green initiatives must incorporate low-interest financing mechanisms rather than relying solely on retroactive reimbursement."
+  ],
+  "grammarTags": [
+   "Policy Analysis & Underlying Assumptions"
+  ],
+  "explanationVi": "'Underlying assumption' (giả định nền tảng) là giả định ẩn đằng sau sự thành công của chính sách hoàn thuế: người dân phải có tiền mặt trước.",
+  "rationaleVi": "Lập luận đánh giá chính sách công đòi hỏi phân tích giới hạn thực thi và điều kiện tài chính ở mức độ 8.5.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "ai-assisted-level-draft",
+  "version": 1
+ },
+ {
+  "id": "band-8.5-exp-037",
+  "practiceLevel": "8.5",
+  "type": "paragraph",
+  "topic": "trường học",
+  "targetTerm": "selection bias",
+  "meaningVi": "thiên vị chọn lọc",
+  "promptVi": "Báo cáo theo dõi các học viện chuyên toán tin công bố rằng sinh viên tốt nghiệp từ các cơ sở này nhận được mức lương khởi điểm cao hơn trung bình ngành. Sự chênh lệch thu nhập này không hẳn chứng minh hiệu quả vượt trội của giáo trình giảng dạy, mà chủ yếu đến từ thiên vị chọn lọc ngay ở khâu tuyển sinh đầu vào khắt khe. Việc gán toàn bộ sự thành công về mặt tài chính cho mô hình đào tạo bỏ qua lợi thế sẵn có về tố chất và hậu thuẫn gia đình của học viên. Ban quản lý giáo dục cần thẩm định giá trị tăng thêm của chương trình học trước khi quyết định cấp thêm ngân sách.",
+  "referenceAnswers": [
+   "Tracking reports from specialised mathematics and computing academies announce that their graduates command higher starting salaries than the industry average. Rather than proving the superior quality of the curriculum, this earnings gap largely stems from selection bias inherent in the highly competitive admission process. Attributing financial success entirely to the educational model ignores the students' baseline aptitude and socioeconomic background. Educational authorities should measure the actual value added by the programme before approving budgetary expansions."
+  ],
+  "grammarTags": [
+   "Educational Research & Selection Bias"
+  ],
+  "explanationVi": "'Selection bias' (thiên vị chọn lọc) giải thích việc học sinh giỏi sẵn ngay từ khâu tuyển sinh làm sai lệch đánh giá chất lượng thực sự của nhà trường.",
+  "rationaleVi": "Đoạn văn bác bỏ luận điểm bằng cách chỉ ra thiên vị mẫu tuyển chọn, đáp ứng tiêu chuẩn phản biện chuyên sâu Level 8.5.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "ai-assisted-level-draft",
+  "version": 1
+ },
+ {
+  "id": "band-8.5-exp-038",
+  "practiceLevel": "8.5",
+  "type": "paragraph",
+  "topic": "năng lượng",
+  "targetTerm": "boundary condition",
+  "meaningVi": "điều kiện biên",
+  "promptVi": "Việc lắp đặt hệ thống pin năng lượng mặt trời mái nhà đã giảm đáng kể lượng điện tiêu thụ từ lưới quốc gia của các khu công nghiệp trong những tháng mùa hè. Tuy nhiên, hiệu quả kinh tế của giải pháp này chịu sự chi phối của điều kiện biên liên quan đến khả năng lưu trữ của pin tích điện và độ ổn định bức xạ theo mùa. Khi thời tiết chuyển sang mùa mưa kéo dài, việc thiếu hụt nguồn điện mặt trời buộc các nhà máy phải quay lại phụ thuộc hoàn toàn vào nguồn năng lượng hóa thạch. Hoạch định an ninh năng lượng cho các khu sản xuất vì thế không thể dựa vào các chỉ số sản lượng đỉnh điểm ngắn hạn.",
+  "referenceAnswers": [
+   "Installing rooftop solar panel systems substantially reduced grid electricity consumption for industrial parks during summer months. However, the financial viability of this deployment is constrained by a boundary condition related to battery storage capacity and seasonal irradiance levels. During prolonged rainy seasons, solar power deficits force factories to revert entirely to traditional fossil fuels. Long-term energy security planning for industrial sectors cannot rely solely on short-term peak production metrics."
+  ],
+  "grammarTags": [
+   "Feasibility & Boundary Conditions"
+  ],
+  "explanationVi": "'Boundary condition' (điều kiện biên / giới hạn áp dụng) xác định ranh giới hiệu quả của năng lượng mặt trời (phụ thuộc thời tiết và pin lưu trữ).",
+  "rationaleVi": "Mục này thể hiện sự tinh tế trong việc nêu điều kiện giới hạn của bằng chứng kỹ thuật/kinh tế phù hợp với IELTS 8.5.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "ai-assisted-level-draft",
+  "version": 1
+ },
+ {
+  "id": "band-8.5-exp-039",
+  "practiceLevel": "8.5",
+  "type": "paragraph",
+  "topic": "du lịch",
+  "targetTerm": "methodological limitation",
+  "meaningVi": "giới hạn phương pháp luận",
+  "promptVi": "Khảo sát khách tham quan tại các lễ hội văn hóa truyền thống ghi nhận mức chi tiêu bình quân của du khách quốc tế tăng trưởng mạnh so với năm ngoái. Một giới hạn phương pháp luận cốt lõi nằm ở việc dữ liệu thu thập hoàn toàn dựa vào phỏng vấn tự kê khai tại lối ra, nơi những du khách chi tiêu ít thường từ chối tham gia. Việc vội vã dự báo doanh thu du lịch toàn tỉnh dựa trên các con số thiếu đại diện này có thể dẫn đến sự bóp méo trong phân bổ ngân sách hạ tầng. Ban quản lý du lịch cần kết hợp dữ liệu giao dịch ngân hàng ẩn danh để kiểm chứng tính chính xác của khảo sát.",
+  "referenceAnswers": [
+   "Surveys conducted at traditional cultural festivals indicate a sharp year-on-year increase in average spending by international tourists. A fundamental methodological limitation stems from the reliance on self-reported exit interviews, where low-spending visitors frequently opt out of participation. Extrapolating provincial tourism revenue based on such unrepresentative figures risks distorting future infrastructure budget allocations. Tourism boards must incorporate anonymised banking transaction data to cross-validate survey findings."
+  ],
+  "grammarTags": [
+   "Data Evaluation & Methodological Limitations"
+  ],
+  "explanationVi": "'Methodological limitation' (giới hạn phương pháp luận) ám chỉ lỗi trong thiết kế khảo sát tự kê khai dẫn đến sai lệch mẫu.",
+  "rationaleVi": "Sử dụng từ vựng chính xác và cấu trúc lập luận phức hợp đánh giá độ tin cậy của dữ liệu du lịch ở cấp độ 8.5.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "ai-assisted-level-draft",
+  "version": 1
+ },
+ {
+  "id": "band-8.5-exp-040",
+  "practiceLevel": "8.5",
+  "type": "paragraph",
+  "topic": "công việc",
+  "targetTerm": "observational evidence",
+  "meaningVi": "bằng chứng quan sát",
+  "promptVi": "Thống kê tại các công ty khởi nghiệp sáng tạo cho thấy việc cho phép nhân viên tự chọn giờ làm việc đi kèm với sự giảm sút tỷ lệ nghỉ ốm ngắn hạn. Dù vậy, bằng chứng quan sát này chưa đủ để kết luận rằng chính sách thời gian linh hoạt trực tiếp nâng cao sức khỏe người lao động. Nhiều khả năng những nhân viên gặp vấn đề sức khỏe nghiêm trọng đã chủ động xin nghỉ việc hoặc chuyển sang các vị trí ít áp lực hơn trước đó. Giới quản trị nhân sự nên tiến hành các nghiên cứu thực nghiệm dài hạn trước khi áp dụng chính sách này trên toàn bộ tập đoàn.",
+  "referenceAnswers": [
+   "Statistics from creative startups show that allowing employees to choose their working hours coincides with a decrease in short-term sick leave. Nevertheless, this observational evidence is insufficient to conclude that flexible scheduling directly improves worker health. It is highly plausible that staff with severe health issues had already resigned or transferred to less demanding roles prior to the study. Human resource executives should conduct long-term experimental trials before rolling out flexible time policies across the entire corporation."
+  ],
+  "grammarTags": [
+   "Argument Strength & Observational Evidence"
+  ],
+  "explanationVi": "'Observational evidence' (bằng chứng quan sát) chỉ nguồn dữ liệu ghi nhận thực tế chưa qua thực nghiệm kiểm soát, không đủ chứng minh quan hệ nguyên nhân - kết quả.",
+  "rationaleVi": "Phân biệt giữa bằng chứng quan sát và thực nghiệm can thiệp là điểm then chốt của tư duy phản biện Level 8.5.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "ai-assisted-level-draft",
+  "version": 1
+ },
+ {
+  "id": "band-8.5-exp-041",
+  "practiceLevel": "8.5",
+  "type": "paragraph",
+  "topic": "công nghệ",
+  "targetTerm": "spurious correlation",
+  "meaningVi": "tương quan ngụy tạo",
+  "promptVi": "Việc triển khai hệ thống khóa thông minh tại các khu dân cư ngoại ô trùng hợp với sự sụt giảm số vụ trộm nhà. Tuy nhiên, lực lượng cảnh sát địa phương đã tăng gấp đôi số lượng tuần tra trong cùng thời điểm. Quy kết tỷ lệ tội phạm thấp hơn thuần túy cho công nghệ thông minh có nguy cơ tạo ra một tương quan ngụy tạo nếu không kiểm soát yếu tố tuần tra. Các quy hoạch an ninh đô thị cần phân tách mật độ tuần tra trước khi quyết định cấp ngân sách cho việc nâng cấp kỹ thuật số.",
+  "referenceAnswers": [
+   "The implementation of smart lock systems in suburban neighbourhoods coincided with a drop in residential burglaries. However, local police patrols were doubled during the exact same period. Attributing the lower crime rate solely to smart tech risks drawing a spurious correlation without controlling for patrol frequency. Urban security masterplans must isolate policing density before allocating funds for digital retrofits."
+  ],
+  "grammarTags": [
+   "Correlation vs causation & evidence limitation"
+  ],
+  "explanationVi": "Từ 'spurious correlation' được dùng để chỉ mối liên hệ bề ngoài giữa khóa thông minh và giảm tội phạm, vốn thực chất bị can thiệp bởi biến số tuần tra cảnh sát.",
+  "rationaleVi": "Đoạn văn phân tích logic phản biện cấp độ 8.5 bằng cách chỉ ra sự nhầm lẫn giữa tương quan đồng thời và quan hệ nhân quả thực sự trong bối cảnh công nghệ an ninh.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "ai-assisted-level-draft",
+  "version": 1
+ },
+ {
+  "id": "band-8.5-exp-042",
+  "practiceLevel": "8.5",
+  "type": "paragraph",
+  "topic": "sức khỏe",
+  "targetTerm": "confounding variable",
+  "meaningVi": "biến số nhiễu",
+  "promptVi": "Các khảo sát dịch tễ học liên kết việc tiêu thụ hạt dinh dưỡng thường xuyên với sự gia tăng khả năng duy trì trí nhớ ở người cao tuổi. Dù vậy, những người có thói quen mua các loại hạt đắt tiền thường sở hữu điều kiện kinh tế xã hội cao hơn và thường xuyên tham gia các hoạt động kích thích trí tuệ. Việc bỏ qua biến số nhiễu quan trọng này làm suy giảm tính vững chắc của kết luận về cơ chế bảo vệ thần kinh trực tiếp. Hướng dẫn dinh dưỡng cộng đồng do đó nên duy trì sự thận trọng cho đến khi các thử nghiệm lâm sàng ngẫu nhiên xác nhận đường truyền sinh học.",
+  "referenceAnswers": [
+   "Epidemiological surveys link regular nut consumption to improved memory retention among older adults. Nevertheless, respondents who habitually purchase premium nuts typically enjoy higher socio-economic status and engage more in intellectually stimulating activities. Failing to account for this key confounding variable undermines claims of a direct neuroprotective mechanism. Public dietary guidelines should remain tentative until randomised controlled trials confirm the biological pathway."
+  ],
+  "grammarTags": [
+   "Confounding variable & underlying assumption"
+  ],
+  "explanationVi": "Cụm từ 'confounding variable' thể hiện yếu tố kinh tế - xã hội và lối sống bị bỏ sót, làm sai lệch kết luận nhân quả giữa chế độ ăn và sức khỏe não bộ.",
+  "rationaleVi": "Đoạn văn đánh giá giới hạn của nghiên cứu quan sát và thiết lập điều kiện kiểm chứng (thử nghiệm lâm sàng ngẫu nhiên), phù hợp với tiêu chuẩn lập luận IELTS 8.5.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "ai-assisted-level-draft",
+  "version": 1
+ },
+ {
+  "id": "band-8.5-exp-043",
+  "practiceLevel": "8.5",
+  "type": "paragraph",
+  "topic": "môi trường",
+  "targetTerm": "underlying assumption",
+  "meaningVi": "giả định nền tảng",
+  "promptVi": "Điện hóa các đoàn xe buýt đô thị đã giảm đáng kể lượng khí thải từ ống xả dọc theo các trục đường giao thông chính. Mặc dù vậy, khẳng định rằng sự chuyển dịch này mang lại lợi ích môi trường ròng dựa trên một giả định nền tảng rằng lưới điện khu vực phụ thuộc chủ yếu vào năng lượng tái tạo. Nếu nhiên liệu hóa thạch tiếp tục chiếm ưu thế trong sản xuất điện, lượng phát thải carbon chỉ đơn thuần bị dịch chuyển về mặt địa lý chứ không bị loại bỏ. Các chiến lược phát triển bền vững của thành phố phải đánh giá toàn bộ vòng đời phát thải trước khi mở rộng trợ giá xe điện.",
+  "referenceAnswers": [
+   "Electrifying municipal bus fleets has significantly lowered tailpipe emissions along major transit corridors. Nevertheless, asserting that this shift delivers net environmental gains rests on an underlying assumption that the regional power grid relies heavily on renewable energy. Should fossil fuels continue to dominate electricity generation, the carbon footprint is merely displaced geographically rather than eliminated. City sustainability strategies must evaluate full life-cycle emissions prior to expanding electric vehicle subsidies."
+  ],
+  "grammarTags": [
+   "Underlying assumption & policy condition"
+  ],
+  "explanationVi": "'Underlying assumption' biểu thị tiền đề chưa được chứng minh về nguồn cung năng lượng sạch, vốn quyết định tính đúng đắn của kết luận về môi trường.",
+  "rationaleVi": "Mục này phản ánh tư duy phản biện trình độ cao khi bóc tách giả định ẩn đằng sau một chính sách công tưởng như tối ưu, đáp ứng yêu cầu của Level 8.5.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "ai-assisted-level-draft",
+  "version": 1
+ },
+ {
+  "id": "band-8.5-exp-044",
+  "practiceLevel": "8.5",
+  "type": "paragraph",
+  "topic": "kinh tế",
+  "targetTerm": "reverse causality",
+  "meaningVi": "nhân quả ngược",
+  "promptVi": "Doanh nghiệp đưa phòng tập thể thao vào văn phòng ghi nhận tỉ lệ nhân viên nghỉ ốm ngắn hạn giảm trong hai năm theo dõi. Một khuyết điểm phương pháp luận cốt lõi xuất phát từ khả năng xảy ra nhân quả ngược, khi những nhân sự vốn có sức khỏe tốt có xu hướng tích cực sử dụng tiện ích thể thao và tự nhiên ít nghỉ làm hơn. Việc suy luận rằng các phòng tập thể thao trực tiếp làm giảm tỷ lệ vắng mặt vẫn còn quá sớm nếu thiếu các đánh giá thể trạng nền ban đầu. Bộ phận quản trị nhân sự nên theo dõi diễn biến sức khỏe người lao động trước khi bắt buộc triển khai mô hình này trên toàn hệ thống.",
+  "referenceAnswers": [
+   "Companies introducing workplace fitness facilities recorded a drop in short-term employee sick leave over a two-year monitoring period. A fundamental methodological flaw arises from the possibility of reverse causality, as inherently healthier staff tend to utilise fitness amenities actively and miss work less often anyway. Inferring that fitness facilities directly cause reduced absenteeism remains premature without longitudinal baseline health testing. Corporate human resources departments ought to track employee health trajectories prior to mandating fitness interventions across all branches."
+  ],
+  "grammarTags": [
+   "Reverse causality & sample limitation"
+  ],
+  "explanationVi": "Thuật ngữ 'reverse causality' giải thích chiều tác động ngược lại: sức khỏe tốt có trước thúc đẩy việc tập luyện, thay vì phòng tập làm tăng sức khỏe.",
+  "rationaleVi": "Item này rèn luyện khả năng nhận diện suy luận sai lầm về chiều nhân quả trong dữ liệu nhân sự doanh nghiệp ở cấp độ nâng cao.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "ai-assisted-level-draft",
+  "version": 1
+ },
+ {
+  "id": "band-8.5-exp-045",
+  "practiceLevel": "8.5",
+  "type": "paragraph",
+  "topic": "giáo dục",
+  "targetTerm": "selection bias",
+  "meaningVi": "thiên vị chọn lọc",
+  "promptVi": "Các trường đại học áp dụng mô hình lớp học đảo ngược báo cáo điểm thi kết thúc học phần của sinh viên tham gia cao hơn mặt bằng chung. Thay vì chứng minh sự vượt trội về phương pháp giảng dạy, các chỉ số thu thập được lại mắc phải thiên vị chọn lọc do thử nghiệm thu hút những cá nhân có tinh thần tự học cao chủ động đăng ký. Việc tổng quát hóa kết quả tích cực này sang nhóm sinh viên có học lực kém hơn là dựa trên những giả định chưa được kiểm chứng về tính tự chủ của người học. Hội đồng giáo dục cần tiến hành phân bổ ngẫu nhiên trước khi cải cách chương trình cốt lõi trên phạm vi toàn quốc.",
+  "referenceAnswers": [
+   "Universities adopting flipped classroom models reported higher end-of-term assessment scores among participating students. Rather than confirming pedagogical superiority, the gathered metrics suffer from selection bias because the trial attracted highly self-motivated individuals who proactively registered for the module. Generalising these positive outcomes to lower-performing student cohorts rests on unverified assumptions regarding learner autonomy. Educational boards ought to conduct randomised allocations before reforming core curricula nationwide."
+  ],
+  "grammarTags": [
+   "Selection bias & generalisability condition"
+  ],
+  "explanationVi": "Cụm từ 'selection bias' chỉ ra sai lệch mẫu do đối tượng tự chọn tham gia, làm mất tính đại diện của dữ liệu nghiên cứu giáo dục.",
+  "rationaleVi": "Cấu trúc lập luận phản bác tính tổng quát hóa của bằng chứng thực nghiệm do lỗi chọn mẫu, thể hiện năng lực phân tích học thuật level 8.5.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "ai-assisted-level-draft",
+  "version": 1
+ },
+ {
+  "id": "band-8.5-exp-046",
+  "practiceLevel": "8.5",
+  "type": "paragraph",
+  "topic": "đô thị",
+  "targetTerm": "methodological limitation",
+  "meaningVi": "giới hạn phương pháp luận",
+  "promptVi": "Việc chuyển đổi các trung tâm đô thị lịch sử thành phố đi bộ đã mang lại sự gia tăng rõ rệt về lượng khách đi bộ và doanh thu cửa hàng trong vòng mười hai tháng. Tuy nhiên, xu hướng quan sát được này lại diễn ra cùng lúc với một chiến dịch quảng bá du lịch quốc tế quy mô lớn giúp tăng lượng du khách trên toàn vùng. Một giới hạn phương pháp luận nghiêm trọng xuất phát từ việc nghiên cứu không thể tách biệt sự thay đổi thiết kế không gian khỏi các nỗ lực xúc tiến kinh tế vĩ mô. Cơ quan quy hoạch đô thị phải áp dụng phân tích không gian phản thực tế trước khi quy kết sức sống thương mại thuần túy cho việc cấm xe cơ giới.",
+  "referenceAnswers": [
+   "Pedestrianising historic city centres yielded a marked increase in footfall and store revenue over twelve months. This observed trend, however, coincided with a major international tourism campaign that boosted visitor numbers across the entire region. A severe methodological limitation stems from the study's inability to isolate spatial design changes from macroeconomic promotional efforts. Urban planning authorities must apply counterfactual spatial analysis before attributing commercial vitality strictly to car-free zones."
+  ],
+  "grammarTags": [
+   "Methodological limitation & external validity"
+  ],
+  "explanationVi": "Cụm 'methodological limitation' nhấn mạnh điểm yếu trong thiết kế nghiên cứu khi không kiểm soát được các yếu tố nhiễu từ môi trường vĩ mô.",
+  "rationaleVi": "Đoạn văn thể hiện góc nhìn phản biện sắc bén về chính sách quy hoạch đô thị, đặt ra điều kiện kiểm chứng khắt khe trước khi nhân rộng mô hình.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "ai-assisted-level-draft",
+  "version": 1
+ },
+ {
+  "id": "band-8.5-exp-047",
+  "practiceLevel": "8.5",
+  "type": "paragraph",
+  "topic": "năng lượng",
+  "targetTerm": "boundary condition",
+  "meaningVi": "điều kiện biên",
+  "promptVi": "Biểu giá điện linh hoạt theo thời gian thực đã tạo ra sự sụt giảm tức thì trong mức tiêu thụ năng lượng của hộ gia đình vào các giờ cao điểm buổi tối. Mặc dù vậy, sự bền vững của nỗ lực tiết kiệm này chịu sự chi phối của một điều kiện biên nghiêm ngặt liên quan đến mức độ nhạy cảm về giá và sự duy trì tương tác với ứng dụng quản lý theo thời gian. Nếu các hộ gia đình dần quay lại thói quen cũ khi cảm giác hào hứng ban đầu qua đi, mức giảm tải dự báo cho lưới điện sẽ không đạt được như các mô hình lý thuyết. Các cơ quan quản lý năng lượng phải đưa vào hệ thống theo dõi hành vi dài hạn thay vì chỉ dựa vào các số liệu phản ứng ban đầu.",
+  "referenceAnswers": [
+   "Dynamic electricity pricing tariffs triggered an immediate reduction in household energy consumption during peak evening hours. Even so, the durability of this conservation effort faces a strict boundary condition linked to consumer price sensitivity and sustained app engagement over time. If households gradually revert to established routines once the initial novelty wanes, projected grid relief will fall short of theoretical models. Energy regulators must incorporate long-term behavioural tracking rather than relying on initial response figures."
+  ],
+  "grammarTags": [
+   "Boundary condition & behavioral assumption"
+  ],
+  "explanationVi": "Thuật ngữ 'boundary condition' xác định ranh giới giới hạn mà tại đó kết luận về hiệu quả tiết kiệm năng lượng không còn đúng.",
+  "rationaleVi": "Yêu cầu người học xem xét tính hiệu lực của kết luận dựa trên các giới hạn biên hành vi, phù hợp với tiêu chí đánh giá Task 2 Band 8.5.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "ai-assisted-level-draft",
+  "version": 1
+ },
+ {
+  "id": "band-8.5-exp-048",
+  "practiceLevel": "8.5",
+  "type": "paragraph",
+  "topic": "du lịch",
+  "targetTerm": "generalisability",
+  "meaningVi": "khả năng tổng quát hóa",
+  "promptVi": "Việc áp dụng giá vé tham quan phân cấp tại các bảo tàng quốc gia đã mang lại nguồn kinh phí lớn hơn cho các dự án bảo tồn di sản mà không làm giảm lượng khách. Một hạn chế lớn nằm ở chỗ dữ liệu thu thập chỉ giới hạn ở các địa điểm trọng điểm tại thủ đô, nơi tập trung đối tượng khách quốc tế có khả năng chi trả cao. Khả năng tổng quát hóa của chiến lược giá này sang các di tích văn hóa địa phương vẫn rất đáng nghi ngờ do thu nhập khả dụng của người dân bản địa thấp hơn đáng kể. Ban quản lý du lịch cần đánh giá độ co giãn của cầu theo giá tại từng khu vực trước khi ban hành mức phí tham quan đồng nhất trên toàn quốc.",
+  "referenceAnswers": [
+   "Introducing tiered entry fees at national museums resulted in higher overall funding for conservation projects without lowering visitor counts. A major caveat lies in the fact that data collection was restricted to flagship capital venues with affluent international clientele. The generalisability of this pricing strategy to regional cultural sites remains highly questionable given the lower disposable income of local patrons. Tourism boards must assess regional demand elasticity prior to enforcing standardised admission fees across all public heritage landmarks."
+  ],
+  "grammarTags": [
+   "Generalisability & sample constraint"
+  ],
+  "explanationVi": "Từ 'generalisability' nói về khả năng mở rộng kết quả nghiên cứu từ một bối cảnh cụ thể (bảo tàng thủ đô) sang các đối tượng rộng lớn hơn (di tích địa phương).",
+  "rationaleVi": "Đoạn văn xây dựng lập luận điều kiện hóa kết luận dựa trên đặc điểm mẫu thu thập, sử dụng từ vựng và cú pháp chuyên sâu chuẩn IELTS 8.5.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "ai-assisted-level-draft",
+  "version": 1
+ },
+ {
+  "id": "band-8.5-exp-049",
+  "practiceLevel": "8.5",
+  "type": "paragraph",
+  "topic": "công nghệ",
+  "targetTerm": "confounding variable",
+  "meaningVi": "biến số nhiễu",
+  "promptVi": "Việc triển khai một phần mềm quản lý dự án mới tại các công ty khởi nghiệp trùng hợp với sự tăng trưởng năng suất của nhân viên trong hai quý liên tiếp. Mặc dù vậy, đợt áp dụng này diễn ra cùng thời điểm với việc cắt giảm hạn ngạch cuộc họp hàng tuần và áp dụng chính sách làm việc linh hoạt. Việc bỏ qua biến số nhiễu quan trọng này khiến khẳng định công nghệ mới trực tiếp thúc đẩy hiệu suất trở nên thiếu căn cứ. Việc đánh giá công cụ kỹ thuật đòi hỏi các thử nghiệm đối chứng để tách biệt can thiệp công nghệ khỏi quá trình tái cấu trúc môi trường làm việc.",
+  "referenceAnswers": [
+   "The implementation of a new project management software in tech start-ups coincided with a measurable surge in staff productivity over two consecutive quarters. Nevertheless, this roll-out occurred alongside a company-wide reduction in weekly meetings and the introduction of flexible working hours. Failing to account for this critical confounding variable renders any claim that the software directly boosted efficiency premature. A rigorous evaluation of the digital tool requires controlled trials isolating technological intervention from workplace restructuring."
+  ],
+  "grammarTags": [
+   "Conditionality & Confounding Variables"
+  ],
+  "explanationVi": "Mục 'confounding variable' được dùng để chỉ ra một yếu tố ngoại lai có thể giải thích sự thay đổi của kết quả thay vì bản thân công nghệ được áp dụng, làm sáng tỏ giới hạn của bằng chứng tương quan.",
+  "rationaleVi": "Đoạn văn thể hiện lập luận phản biện cấp độ 8.5 bằng cách bác bỏ kết luận nhân quả vội vã, chỉ ra yếu tố nhiễu cụ thể và đưa ra điều kiện thử nghiệm cần thiết để xác minh tính đúng đắn.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "ai-assisted-level-draft",
+  "version": 1
+ },
+ {
+  "id": "band-8.5-exp-050",
+  "practiceLevel": "8.5",
+  "type": "paragraph",
+  "topic": "giáo dục",
+  "targetTerm": "selection bias",
+  "meaningVi": "thiên vị chọn lọc",
+  "promptVi": "Học sinh tại các trường trung học áp dụng mô hình học tập theo dự án thực địa đạt tỷ lệ đỗ đại học cao hơn đáng kể so với trung bình toàn quốc. Mặc dù các con số này phản ánh một xu hướng tích cực, dữ liệu thu thập lại tập trung vào các trường chuyên ở đô thị nơi học sinh đầu vào đã qua sàng lọc kỹ lưỡng. Sự hiện diện của thiên vị chọn lọc này làm suy giảm đáng kể giá trị của giả định rằng học tập qua dự án tự nó vượt trội hơn giảng dạy truyền thống. Mọi thay đổi chính sách giáo dục quy mô lớn do đó phải dựa trên các nghiên cứu tiến cứu trải rộng trên nhiều môi trường học tập đa dạng.",
+  "referenceAnswers": [
+   "Students attending secondary schools that adopted field-based project learning achieved significantly higher university entry rates than the national average. Whilst these figures reflect a positive trend, the collected data focused on selective urban schools whose intake had already undergone rigorous screening. The presence of selection bias severely weakens the assumption that project-based learning is inherently superior to conventional instruction. Any large-scale educational policy shift must therefore depend on prospective studies across diverse learning environments."
+  ],
+  "grammarTags": [
+   "Assumptions & Selection Bias"
+  ],
+  "explanationVi": "Thuật ngữ 'selection bias' minh họa lỗi phương pháp luận khi mẫu nghiên cứu không mang tính đại diện, dẫn đến giả định sai lầm về hiệu quả của một phương pháp giảng dạy.",
+  "rationaleVi": "Sử dụng lối diễn đạt học thuật chính xác ở mức 8.5 để phân tích giới hạn của dữ liệu đầu vào và nêu rõ điều kiện tổng quát hóa bằng chứng.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "ai-assisted-level-draft",
+  "version": 1
+ },
+ {
+  "id": "band-8.5-exp-051",
+  "practiceLevel": "8.5",
+  "type": "paragraph",
+  "topic": "sức khỏe",
+  "targetTerm": "spurious correlation",
+  "meaningVi": "tương quan ngụy tạo",
+  "promptVi": "Số liệu từ các nghiên cứu y tế chỉ ra rằng việc gia tăng tiêu thụ thực phẩm lên men thủ công gắn liền với các chỉ số viêm nhiễm thấp hơn ở người trưởng thành tại đô thị. Mặc dù vậy, những cá nhân thường xuyên sử dụng các sản phẩm này cũng đồng thời sở hữu mức thu nhập khả dụng cao hơn và tuân thủ chế độ tập luyện thể thao đều đặn. Quy kết sự cải thiện sức khỏe thuần túy cho thực phẩm lên men có nguy cơ tạo ra một tương quan ngụy tạo nếu bỏ qua các ưu thế kinh tế - xã hội rộng lớn hơn. Hướng dẫn y tế cộng đồng cần duy trì sự thận trọng cho đến khi các thử nghiệm can thiệp ngẫu nhiên xác nhận một đường truyền sinh học trực tiếp.",
+  "referenceAnswers": [
+   "Medical research data indicate that increased consumption of artisan fermented foods correlates with lower inflammation markers among urban adults. However, individuals regularly using these products also possess higher disposable income and adhere to structured exercise routines. Attributing health improvements solely to fermented foods risks drawing a spurious correlation that overlooks broader socio-economic advantages. Public health guidance should maintain caution until randomised intervention trials confirm a direct biological pathway."
+  ],
+  "grammarTags": [
+   "Causation vs Correlation"
+  ],
+  "explanationVi": "'Spurious correlation' miêu tả mối liên hệ xuất hiện ngẫu nhiên hoặc do ảnh hưởng của yếu tố thứ ba, nhắc nhở không quy kết mối quan hệ nguyên nhân - kết quả.",
+  "rationaleVi": "Phù hợp với tiêu chuẩn IELTS 8.5 nhờ việc nhận diện chính xác sai lầm khi biến mối tương quan thành kết luận nhân quả trong nghiên cứu dinh dưỡng.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "ai-assisted-level-draft",
+  "version": 1
+ },
+ {
+  "id": "band-8.5-exp-052",
+  "practiceLevel": "8.5",
+  "type": "paragraph",
+  "topic": "đô thị",
+  "targetTerm": "reverse causality",
+  "meaningVi": "nhân quả ngược",
+  "promptVi": "Các báo cáo quy hoạch đô thị chỉ ra rằng những khu dân cư được gia tăng đáng kể mật độ cây xanh ghi nhận sự gia tăng rõ rệt về chỉ số hài lòng của cư dân trong vòng ba năm. Dù vậy, xu hướng này không thể loại trừ khả năng xảy ra nhân quả ngược, khi những cá nhân giàu có sở hữu mức độ hài lòng cuộc sống cao từ trước có thể tự lựa chọn di chuyển đến các khu vực mới được phủ xanh. Giả định rằng hạ tầng sinh thái trực tiếp tạo ra sự hài lòng của cư dân vẫn thiếu vững chắc nếu không có số liệu nền đo lường sức khỏe tâm lý trước đó. Đánh giá các sáng kiến phủ xanh đô thị do đó đòi hỏi phải theo dõi dọc để tách biệt tác động môi trường khỏi sự di dân.",
+  "referenceAnswers": [
+   "Urban planning reports show that neighbourhoods receiving substantial green canopy enhancements recorded a marked increase in resident satisfaction scores over three years. Nonetheless, this trend fails to eliminate the possibility of reverse causality, as affluent individuals with pre-existing high life satisfaction may self-select into newly landscaped areas. Assuming that ecological infrastructure directly generates resident satisfaction remains tenuous without baseline data measuring prior psychological well-being. Evaluating urban greening initiatives thus requires longitudinal tracking to isolate environmental impacts from population migration."
+  ],
+  "grammarTags": [
+   "Logical Fallacies & Reverse Causality"
+  ],
+  "explanationVi": "'Reverse causality' nhấn mạnh nguy cơ đảo ngược chiều tác động trong một mối quan hệ quan sát được, đòi hỏi dữ liệu theo dõi dọc để kiểm chứng.",
+  "rationaleVi": "Thể hiện tư duy biện luận chuyên sâu cấp độ 8.5 bằng cách đặt câu hỏi về chiều tác động của bằng chứng quan sát và đưa ra giả định nền tảng cần kiểm tra.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "ai-assisted-level-draft",
+  "version": 1
+ },
+ {
+  "id": "band-8.5-exp-053",
+  "practiceLevel": "8.5",
+  "type": "paragraph",
+  "topic": "chính sách công",
+  "targetTerm": "underlying assumption",
+  "meaningVi": "giả định nền tảng",
+  "promptVi": "Chính sách giảm thuế dành cho các doanh nghiệp nhỏ tại các vùng kinh tế chậm phát triển đã dẫn đến sự gia tăng đáng kể các hộ kinh doanh đăng ký mới. Tuy nhiên, kỳ vọng rằng biện pháp tài chính này sẽ tạo ra sự bùng nổ việc làm lâu dài dựa trên giả định nền tảng rằng các công ty địa phương tiếp cận được thị trường tiêu dùng ổn định. Nếu nguồn cầu khu vực tiếp tục trì trệ, khoản tiền thuế tiết kiệm được chỉ kéo dài sự tồn tại hoạt động chứ không thúc đẩy mở rộng quy mô. Việc tiếp tục các ưu đãi thuế như vậy phải phụ thuộc vào các đánh giá nghiêm ngặt về sức mua của địa phương.",
+  "referenceAnswers": [
+   "Tax relief granted to small enterprises in economically depressed regions led to a notable rise in new business registrations. However, the expectation that this fiscal measure will generate sustained employment growth relies on the underlying assumption that local firms enjoy access to stable consumer markets. Should regional demand remain stagnant, tax savings merely prolong operational survival rather than stimulate structural expansion. Continuing such tax incentives must be conditional on rigorous assessments of local purchasing power."
+  ],
+  "grammarTags": [
+   "Underlying Assumptions & Scope"
+  ],
+  "explanationVi": "Cụm từ 'underlying assumption' giúp bóc tách giả định ngầm ẩn đằng sau một chính sách kinh tế, từ đó chỉ ra giới hạn của hiệu quả chính sách.",
+  "rationaleVi": "Đạt chuẩn 8.5 nhờ khả năng phân tích điều kiện cần để một chính sách công phát huy tác dụng dài hạn thay vì chấp nhận kết quả ngắn hạn.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "ai-assisted-level-draft",
+  "version": 1
+ },
+ {
+  "id": "band-8.5-exp-054",
+  "practiceLevel": "8.5",
+  "type": "paragraph",
+  "topic": "văn hóa",
+  "targetTerm": "boundary condition",
+  "meaningVi": "điều kiện biên",
+  "promptVi": "Việc số hóa các bộ sưu tập di sản tại các trung tâm văn hóa lớn đã làm tăng gấp đôi lượng tương tác và đăng ký vé trước trực tuyến. Mặc dù vậy, hiệu quả của chiến lược này bị chi phối bởi một điều kiện biên liên quan đến sự có sẵn của băng thông rộng tốc độ cao và mức độ thông thạo công nghệ của công chúng mục tiêu. Tại các khu vực hẻo lánh nơi kết nối còn hạn chế, các cuộc triển lãm ảo không tạo ra bất kỳ sự gia tăng đo lường được nào về sự tham gia văn hóa. Việc nhân rộng các sáng kiến nghệ thuật số đòi hỏi phải đầu tư đáng kể vào hạ tầng thay vì cắt giảm sớm kinh phí cho các hoạt động trực tiếp.",
+  "referenceAnswers": [
+   "Digitising heritage collections at major cultural hubs doubled online engagement and advance ticket bookings. Nevertheless, the efficacy of this strategy is subject to a boundary condition regarding high-speed broadband availability and digital literacy among target audiences. In remote areas where connectivity remains inadequate, virtual exhibitions fail to yield any measurable increase in cultural participation. Scaling digital arts initiatives presupposes substantial infrastructure investment rather than premature reductions in physical funding."
+  ],
+  "grammarTags": [
+   "Qualifications & Boundary Conditions"
+  ],
+  "explanationVi": "'Boundary condition' được dùng để nêu rõ ngưỡng hoặc hoàn cảnh mà tại đó một kết luận hoặc giải pháp không còn giữ nguyên giá trị.",
+  "rationaleVi": "Đáp ứng tiêu chí 8.5 khi sử dụng ngôn ngữ điều kiện xác đáng để giới hạn phạm vi áp dụng của một xu hướng công nghệ trong bảo tồn văn hóa.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "ai-assisted-level-draft",
+  "version": 1
+ },
+ {
+  "id": "band-8.5-exp-055",
+  "practiceLevel": "8.5",
+  "type": "paragraph",
+  "topic": "môi trường",
+  "targetTerm": "lifecycle emissions",
+  "meaningVi": "phát thải vòng đời",
+  "promptVi": "Việc thay thế đèn đường đô thị truyền thống bằng công nghệ LED đã đem lại sự sụt giảm lượng điện tiêu thụ hàng đêm trên các lưới điện thành phố. Mặc dù thành công vận hành này rất rõ ràng, kết luận rằng chuyển đổi này đem lại lợi ích môi trường ròng chỉ giữ nguyên giá trị nếu phát thải vòng đời từ khâu chế tạo và xử lý rác thải điện tử được hạch toán đầy đủ. Nếu việc khai thác nguyên liệu thô và xử lý linh kiện tạo ra ô nhiễm nghiêm trọng ở nơi khác, lượng tiết kiệm năng lượng tại chỗ coi như bị triệt tiêu về mặt sinh thái. Một chính sách môi trường đúng đắn đòi hỏi hạch toán cacbon toàn diện từ khâu tổng hợp vật liệu đến khi loại bỏ.",
+  "referenceAnswers": [
+   "Replacing conventional urban streetlights with LED technology secured reductions in nocturnal electricity consumption across municipal grids. Clear as this operational success is, concluding that the transition delivers net environmental gains remains valid only if lifecycle emissions from manufacturing and electronic waste disposal are fully accounted for. Should raw material extraction and component processing generate severe pollution elsewhere, local energy savings are ecologically neutralised. Sound environmental policy demands full carbon accounting from material synthesis to end-of-life disposal."
+  ],
+  "grammarTags": [
+   "Evidence Limitation & Lifecycle Evaluation"
+  ],
+  "explanationVi": "Cụm 'lifecycle emissions' nhấn mạnh bức tranh tổng thể về tác động môi trường, đóng vai trò là điều kiện bắt buộc để xác nhận tính bền vững của kết luận.",
+  "rationaleVi": "Lập luận phức hợp cấp 8.5 thể hiện qua việc đưa ra điều kiện tiên quyết (full carbon accounting) trước khi công nhận lợi ích của một giải pháp xanh.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "ai-assisted-level-draft",
+  "version": 1
+ },
+ {
+  "id": "band-8.5-exp-056",
+  "practiceLevel": "8.5",
+  "type": "paragraph",
+  "topic": "đi lại",
+  "targetTerm": "methodological limitation",
+  "meaningVi": "giới hạn phương pháp luận",
+  "promptVi": "Khảo sát giao thông chỉ ra rằng những người đi làm chuyển sang xe đạp điện tiết kiệm bình quân mười lăm phút cho các chuyến đi hằng ngày. Một giới hạn phương pháp luận cốt lõi xuất phát từ việc phụ thuộc vào nhật ký tự kê khai được thu thập duy nhất trong những tháng hè thời tiết ôn hòa. Sự thiếu hụt dữ liệu theo dõi thực nghiệm trong điều kiện mùa đông khắc nghiệt khiến các tuyên bố về sự thay đổi phương thức di chuyển lâu dài trở nên thiếu căn cứ. Các cơ quan quản lý giao thông đô thị nên thu thập dữ liệu cảm biến quanh năm trước khi phân bổ ngân sách đầu tư cho hạ tầng xe đạp riêng.",
+  "referenceAnswers": [
+   "Transport surveys indicate that commuters switching to e-bikes saved an average of fifteen minutes on daily journeys. A core methodological limitation stems from reliance on self-reported logs collected exclusively during mild summer months. The absence of empirical tracking during severe winter conditions leaves claims regarding long-term modal shift unsubstantiated. Urban transit authorities ought to collect year-round sensor data before allocating capital budgets to dedicated cycling infrastructure."
+  ],
+  "grammarTags": [
+   "Methodological Limitations & Data Integrity"
+  ],
+  "explanationVi": "'Methodological limitation' trực tiếp chỉ ra điểm yếu trong thu thập dữ liệu (nhật ký tự khai, tính mùa vụ), làm suy yếu tính tổng quát của kết luận.",
+  "rationaleVi": "Đoạn văn phản ánh trình độ 8.5 với sự sắc bén trong việc vạch ra các khuyết điểm về mẫu và thời gian thu thập dữ liệu trước khi đưa ra đề xuất đầu tư hạ tầng.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "ai-assisted-level-draft",
+  "version": 1
+ },
+ {
+  "id": "band-8.5-exp-057",
+  "practiceLevel": "8.5",
+  "type": "paragraph",
+  "topic": "năng lượng",
+  "targetTerm": "spurious correlation",
+  "meaningVi": "tương quan ngụy tạo",
+  "promptVi": "Việc mở rộng công suất trang trại điện gió ngoài khơi trùng hợp với sự sụt giảm đáng kể cường độ carbon của lưới điện khu vực. Dù vậy, quan sát này bỏ qua việc đóng cửa đồng thời các nhà máy chế tạo công nghiệp nặng tại cùng các dải ven biển. Việc quy kết lưới điện sạch hơn thuần túy cho hạ tầng tái tạo có nguy cơ tạo ra một tương quan ngụy tạo do bỏ qua các chuyển dịch công nghiệp vĩ mô. Các đánh giá giải carbon do đó phải sử dụng các phân tích vòng đời đa ngành thay vì dựa vào dữ liệu thời gian thô sơ.",
+  "referenceAnswers": [
+   "Expanding offshore wind farm capacity coincided with a notable decline in regional grid carbon intensity. Nevertheless, this observation ignores the concurrent decommissioning of heavy industrial manufacturing plants within the same coastal zones. Attributing the cleaner grid exclusively to renewable infrastructure risks establishing a spurious correlation by overlooking macro-industrial shifts. Decarbonisation assessments must therefore employ multi-sectoral lifecycle analyses rather than relying on crude temporal data."
+  ],
+  "grammarTags": [
+   "argumentation & methodology"
+  ],
+  "explanationVi": "Cụm từ 'spurious correlation' diễn tả mối tương quan giữa hai yếu tố dường như có quan hệ nhân quả nhưng thực chất lại bị chi phối bởi một biến số thứ ba độc lập (việc đóng cửa các nhà máy công nghiệp). Thuật ngữ này hoàn toàn phù hợp với ngữ cảnh phân tích phản biện dữ liệu môi trường ở mức độ IELTS 8.5.",
+  "rationaleVi": "Đoạn văn đáp ứng tiêu chuẩn Level 8.5 nhờ việc nhận diện được giới hạn của dữ liệu theo chuỗi thời gian và chỉ ra lỗi ngụy辯 logic khi quy kết nguyên nhân, sử dụng từ vựng học thuật chính xác và cấu trúc lập luận đa tầng.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "ai-assisted-level-draft",
+  "version": 1
+ },
+ {
+  "id": "band-8.5-exp-058",
+  "practiceLevel": "8.5",
+  "type": "paragraph",
+  "topic": "sức khỏe",
+  "targetTerm": "selection bias",
+  "meaningVi": "thiên vị chọn lọc",
+  "promptVi": "Một sáng kiến y tế nông thôn áp dụng các ứng dụng khám chữa bệnh từ xa đã báo cáo sự sụt giảm đáng kể tỷ lệ bệnh nhân tái nhập viện. Dù vậy, chương trình chủ yếu thu hút những bệnh nhân vốn đã sở hữu kết nối internet tốc độ cao và có kỹ năng số tốt. Sự hiện diện của thiên vị chọn lọc này làm suy yếu kết luận rằng các cuộc tư vấn ảo tự bản chất cải thiện kết quả phục hồi trên mọi nhóm nhân khẩu học. Giới chức y tế cộng đồng nên tiến hành các thử nghiệm ngẫu nhiên đối chứng trước khi quy định bắt buộc các lộ trình chăm sóc ưu tiên kỹ thuật số.",
+  "referenceAnswers": [
+   "A rural healthcare initiative implementing telemedicine applications reported a significant reduction in patient readmission rates. However, the programme primarily attracted patients who already possessed high-speed internet connections and strong digital literacy. The presence of this selection bias weakens the conclusion that virtual consultations inherently improve recovery outcomes across all demographic groups. Public health authorities ought to conduct randomized controlled trials before mandating digital-first care pathways."
+  ],
+  "grammarTags": [
+   "research methodology & bias"
+  ],
+  "explanationVi": "'Selection bias' đề cập đến hiện tượng mẫu nghiên cứu không mang tính đại diện do quá trình tham gia bị lệch về một nhóm đối tượng cụ thể (người có sẵn kết nối internet và kỹ năng số). Việc sử dụng thuật ngữ này thể hiện tư duy phân tích phương pháp luận chuyên sâu.",
+  "rationaleVi": "Đoạn văn đạt chuẩn 8.5 bằng cách thách thức tính tổng quát hóa của một kết quả nghiên cứu y tế thông qua việc vạch ra lỗi chọn mẫu thiên lệch và đề xuất giải pháp kiểm chứng có kiểm soát.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "ai-assisted-level-draft",
+  "version": 1
+ },
+ {
+  "id": "band-8.5-exp-059",
+  "practiceLevel": "8.5",
+  "type": "paragraph",
+  "topic": "công việc",
+  "targetTerm": "confounding variable",
+  "meaningVi": "biến số nhiễu",
+  "promptVi": "Các cuộc thử nghiệm tuần làm việc bốn ngày tại các công ty công nghệ đã cho thấy sự gia tăng rõ rệt về doanh thu hàng giờ tạo ra trên mỗi nhân viên. Điều cốt yếu là các doanh nghiệp tham gia đồng thời tự động hóa các quy trình làm việc hành chính thường quy và loại bỏ các cuộc họp nội bộ không cần thiết. Việc không kiểm soát biến số nhiễu này khiến khẳng định rằng việc rút ngắn giờ làm trực tiếp nâng cao năng suất trở nên thiếu căn cứ phần lớn. Lãnh đạo doanh nghiệp nên tách biệt các can thiệp tái cấu trúc vận hành trước khi chuẩn hóa lịch làm việc rút ngắn.",
+  "referenceAnswers": [
+   "Trials of a four-day workweek across technology firms demonstrated a marked increase in hourly revenue generated per employee. Crucially, participating businesses simultaneously automated routine administrative workflows and eliminated non-essential internal meetings. Failing to control for this confounding variable renders the assertion that reduced working hours directly boost productivity largely ungrounded. Corporate leaders should isolate operational restructuring interventions prior to standardising shortened work schedules."
+  ],
+  "grammarTags": [
+   "causal reasoning & variables"
+  ],
+  "explanationVi": "'Confounding variable' chỉ một yếu tố bên ngoài (việc tự động hóa và bớt cuộc họp) xuất hiện đồng thời, có thể ảnh hưởng đến cả nguyên nhân lẫn kết quả, khiến việc quy kết nhân quả trở nên sai lệch.",
+  "rationaleVi": "Mục này thuộc Level 8.5 vì nó phân tích chính xác mối quan hệ tác động đa biến trong môi trường quản trị và yêu cầu khả năng cô lập biến số trước khi đưa ra quyết định chính sách.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "ai-assisted-level-draft",
+  "version": 1
+ },
+ {
+  "id": "band-8.5-exp-060",
+  "practiceLevel": "8.5",
+  "type": "paragraph",
+  "topic": "giáo dục",
+  "targetTerm": "boundary condition",
+  "meaningVi": "điều kiện biên",
+  "promptVi": "Trẻ nhỏ theo học các trường mầm non song ngữ toàn thời gian đạt điểm số cao hơn về chức năng điều hành so với bạn bè học đơn ngữ. Mặc dù vậy, tương quan tích cực này vẫn chịu sự chi phối của một điều kiện biên nghiêm ngặt liên quan đến việc liệu cha mẹ có duy trì một môi trường đọc viết phong phú tại nhà hay không. Nếu thiếu sự tương tác trí tuệ thường xuyên từ gia đình, các lợi thế phát triển của việc giảng dạy song ngữ sớm sẽ suy giảm đáng kể. Hoạch định chính sách giáo dục phải đánh giá các yếu tố gia đình đi kèm thay vì xem việc học song ngữ sớm là một giải pháp nâng cao trí tuệ vô điều kiện.",
+  "referenceAnswers": [
+   "Young children enrolled in immersive dual-language preschools achieved higher executive function scores than their monolingual peers. Nevertheless, this positive correlation remains subject to a strict boundary condition regarding whether parents maintain a rich literacy environment at home. In the absence of regular cognitive engagement from families, the developmental advantages of early bilingual instruction diminish substantially. Educational policy planning must evaluate accompanying domestic factors rather than viewing early immersion as an unconditional cognitive panacea."
+  ],
+  "grammarTags": [
+   "logic & qualifications"
+  ],
+  "explanationVi": "'Boundary condition' được dùng để chỉ phạm vi ranh giới hoặc điều kiện bắt buộc mà trong đó một kết luận/quy luật mới giữ được giá trị đúng (ở đây là sự hỗ trợ từ gia đình).",
+  "rationaleVi": "Sản phẩm đáp ứng yêu cầu Level 8.5 nhờ việc đặt ra các giới hạn áp dụng thực tế cho một luận điểm giáo dục, tránh thái độ khẳng định tuyệt đối hóa một phương pháp đào tạo.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "ai-assisted-level-draft",
+  "version": 1
+ },
+ {
+  "id": "band-8.5-exp-061",
+  "practiceLevel": "8.5",
+  "type": "paragraph",
+  "topic": "đô thị",
+  "targetTerm": "reverse causality",
+  "meaningVi": "nhân quả ngược",
+  "promptVi": "Tại các trung tâm đô thị lớn, việc thành lập các khu vực phát thải thấp trùng hợp với sự sụt giảm các ca nhập viện do hen suyễn ở trẻ em. Tuy nhiên, xu hướng sức khỏe này có thể xuất phát từ hiện tượng nhân quả ngược, khi các gia đình có trẻ em dễ bị tổn thương về hô hấp chủ động chuyển nhà xa khỏi các trục giao thông chính. Giả định rằng bản thân các khu vực không khí sạch trực tiếp khởi phát sự cải thiện dịch tễ học vẫn thiếu vững chắc nếu không theo dõi các mô hình di chuyển cư trú. Giới quy hoạch môi trường phải phân tích dữ liệu di dân cá thể thay vì chỉ dựa vào số liệu thống kê y tế không gian tổng hợp.",
+  "referenceAnswers": [
+   "In major metropolitan centres, the establishment of low-emission zones coincided with a decline in paediatric asthma hospitalisations. However, this health trend may stem from reverse causality, as families with respiratory-vulnerable children actively relocated away from major traffic corridors. The assumption that clean-air zones directly initiated the epidemiological improvement remains fragile without tracking residential mobility patterns. Environmental planners must analyse individual migration data rather than relying solely on aggregate spatial health statistics."
+  ],
+  "grammarTags": [
+   "logical flaws & inference"
+  ],
+  "explanationVi": "'Reverse causality' là hiện tượng xác định sai chiều tác động: thay vì A gây ra B (vùng phát thải thấp làm giảm bệnh), thực tế có thể là B tự điều chỉnh dẫn tới biểu hiện của A (người bệnh chủ động bỏ đi nơi khác).",
+  "rationaleVi": "Sử dụng phản biện logic mức độ cao ở Level 8.5 bằng cách làm rõ khả năng đảo ngược chiều hướng nhân quả trong nghiên cứu quy hoạch đô thị và sức khỏe cộng đồng.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "ai-assisted-level-draft",
+  "version": 1
+ },
+ {
+  "id": "band-8.5-exp-062",
+  "practiceLevel": "8.5",
+  "type": "paragraph",
+  "topic": "đồ ăn",
+  "targetTerm": "methodological limitation",
+  "meaningVi": "giới hạn phương pháp luận",
+  "promptVi": "Các nghiên cứu quan sát đã liên kết việc tiêu thụ các sản phẩm thay thế thịt gốc thực vật với sự sụt giảm nhẹ các chỉ số mỡ máu ở người tiêu dùng đô thị. Một giới hạn phương pháp luận lớn xuất phát từ việc phụ thuộc vào nhật ký ăn uống tự kê khai, vốn thường xuyên ghi nhận thiếu lượng thức ăn vặt và ước tính sai khẩu phần. Việc suy ra một cơ chế trị liệu trực tiếp mà không có sự xác minh bằng chỉ dấu sinh học khách quan có nguy cơ phóng đại hiệu ích lâm sàng của các sản phẩm thay thế chế biến sâu. Hướng dẫn dinh dưỡng cộng đồng nên duy trì thái độ dè dặt thực nghiệm cho đến khi các thử nghiệm lâm sàng được kiểm soát chặt chẽ xác nhận những kết quả tự báo cáo này.",
+  "referenceAnswers": [
+   "Observational studies linked the consumption of plant-based meat substitutes with modest reductions in blood lipid markers among urban consumers. A major methodological limitation stems from reliance on self-reported dietary logs, which frequently underreport snack intake and misestimate portion sizes. Inferring a direct therapeutic mechanism without objective biomarker validation risks overstating the clinical utility of ultra-processed alternatives. Public nutritional guidelines should maintain empirical reserve until tightly controlled clinical trials confirm these self-reported findings."
+  ],
+  "grammarTags": [
+   "critique & methodology"
+  ],
+  "explanationVi": "'Methodological limitation' dùng để chỉ những thiếu sót hoặc rào cản mang tính hệ thống trong thiết kế nghiên cứu (như sai số tự báo cáo) làm giảm độ tin cậy của dữ liệu.",
+  "rationaleVi": "Thể hiện năng lực lập luận Level 8.5 qua việc đánh giá tính khách quan của công cụ thu thập dữ liệu dinh dưỡng và chỉ ra khoảng cách giữa dữ liệu quan sát với bằng chứng lâm sàng.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "ai-assisted-level-draft",
+  "version": 1
+ },
+ {
+  "id": "band-8.5-exp-063",
+  "practiceLevel": "8.5",
+  "type": "paragraph",
+  "topic": "văn hóa",
+  "targetTerm": "underlying assumption",
+  "meaningVi": "giả định nền tảng",
+  "promptVi": "Các khoản tài trợ được cấp cho nghệ nhân tại các làng nghề lịch sử đã trùng hợp với sự tăng trưởng mạnh mẽ của doanh thu xuất khẩu đồ thủ công khu vực. Mặc dù vậy, sự tăng trưởng thương mại này dựa trên một giả định nền tảng rằng các chuỗi cung ứng quốc tế duy trì sự ổn định và không có rào cản thương mại. Nếu chi phí vận tải toàn cầu tăng vọt, chỉ riêng nguồn hỗ trợ tài chính nội địa không thể bảo đảm việc duy trì sản lượng bán ra nước ngoài. Các chiến lược kinh tế khu vực do đó phải đánh giá biến động thị trường quốc tế trước khi quy kết khả năng phục hồi xuất khẩu thuần túy cho các chính sách trợ cấp.",
+  "referenceAnswers": [
+   "Grants provided to artisans in historic craft villages coincided with a substantial surge in regional handicraft export revenues. Nevertheless, this commercial growth relies on an underlying assumption that international supply chains remain stable and free from trade barriers. Should global transport costs skyrocket, domestic financial aid alone cannot guarantee the preservation of overseas sales volumes. Regional economic strategies must therefore evaluate international market volatility before attributing export resilience purely to subsidy policies."
+  ],
+  "grammarTags": [
+   "assumptions & argumentation"
+  ],
+  "explanationVi": "'Underlying assumption' biểu thị giả thiết ngầm ẩn chưa được kiểm chứng nhưng lại là nền tảng để một luận điểm hay chính sách được coi là có hiệu lực.",
+  "rationaleVi": "Đạt độ nhạy bén logic Level 8.5 bằng cách bóc tách các điều kiện kinh tế vĩ mô ẩn đằng sau sự thành công ngắn hạn của một chính sách hỗ trợ văn hóa làng nghề.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "ai-assisted-level-draft",
+  "version": 1
+ },
+ {
+  "id": "band-8.5-exp-064",
+  "practiceLevel": "8.5",
+  "type": "paragraph",
+  "topic": "đi lại",
+  "targetTerm": "causal claim",
+  "meaningVi": "khẳng định nhân quả",
+  "promptVi": "Thống kê thương mại ghi nhận việc khánh thành tuyến đường sắt tốc độ cao nối các tỉnh lân cận được theo sau bởi sự gia tăng số lượng doanh nghiệp đăng ký mới. Mặc dù giới phân tích quy kết sự phát triển này cho khả năng kết nối hạ tầng, dự án diễn ra cùng lúc với chính sách miễn thuế và trợ giá thuê đất. Việc bỏ qua các ưu đãi tài chính song song dẫn tới một khẳng định nhân quả chưa đủ căn cứ về tác động thuần túy của giao thông. Cơ quan hoạch định chính sách cần áp dụng mô hình kinh tế lượng không gian để phân tách hiệu ứng kết nối khỏi các gói kích thích tài khóa.",
+  "referenceAnswers": [
+   "Commercial statistics indicate that the inauguration of a high-speed rail line connecting neighbouring provinces was followed by an increase in new business registrations. Although analysts attribute this expansion to enhanced transport connectivity, the project coincided with tax exemptions and land lease subsidies. Overlooking these parallel financial incentives yields an unverified causal claim regarding the pure economic impact of transport infrastructure. Policy authorities ought to apply spatial econometric modelling to decouple connectivity effects from fiscal stimulus packages."
+  ],
+  "grammarTags": [
+   "causality & policy analysis"
+  ],
+  "explanationVi": "'Causal claim' ám chỉ một phát biểu hay kết luận rằng sự kiện này trực tiếp gây ra sự kiện kia, vốn thường cần bị phản biện nếu chưa loại trừ hết các tác động phụ trợ.",
+  "rationaleVi": "Thể hiện tư duy IELTS 8.5 thông qua phân tích mô hình phát triển hạ tầng, phân biệt rõ giữa tương quan thời gian với mối quan hệ nguyên nhân - kết quả thực sự.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "ai-assisted-level-draft",
+  "version": 1
+ },
+ {
+  "id": "band-8.5-exp-065",
+  "practiceLevel": "8.5",
+  "type": "paragraph",
+  "topic": "thể thao",
+  "targetTerm": "reverse causality",
+  "meaningVi": "nhân quả ngược",
+  "promptVi": "Tỷ lệ tham gia các nhóm luyện tập marathon ở người đi làm lâu năm gia tăng đi kèm với việc chỉ số căng thẳng mãn tính sụt giảm. Tuy nhiên, mối liên hệ quan sát được này có thể xuất phát từ hiện tượng nhân quả ngược, khi những cá nhân ít bị căng thẳng nền và có sức bền tâm lý tốt hơn vốn tự nhiên dễ tham gia vào các chế độ tập luyện cường độ cao. Giả định rằng chạy bộ sức bền trực tiếp làm giảm hội chứng kiệt sức chốn công sở vẫn còn quá sớm nếu thiếu việc theo dõi sức khỏe tâm thần nền trong thời gian dài. Các chương trình chăm sóc sức khỏe doanh nghiệp nên tiến hành nghiên cứu đoàn hệ tiến cứu trước khi bắt buộc áp dụng các chương trình thể thao cường độ cao cho nhân viên chịu áp lực.",
+  "referenceAnswers": [
+   "An increase in participation in organised marathon training among mid-career professionals was accompanied by a recorded drop in chronic stress indicators. However, this observed relationship might stem from reverse causality, as individuals with lower baseline stress and higher resilience are inherently more inclined to commit to demanding athletic routines. Assuming that endurance running directly mitigates workplace burnout remains premature without long-term baseline tracking of mental health. Corporate wellness initiatives should conduct prospective cohort studies before mandating intensive fitness programmes for stressed employees."
+  ],
+  "grammarTags": [
+   "causal inference & limitation"
+  ],
+  "explanationVi": "Câu đầu nêu bằng chứng tương quan giữa việc gia tăng chạy marathon và giảm căng thẳng. Câu 2 chỉ ra khả năng 'reverse causality' (nhân quả ngược) khi người vốn ít căng thẳng mới chọn chạy bộ. Câu 3 phản biện giả định thiếu căn cứ khi chưa đo thể trạng nền. Câu 4 kết luận đề xuất giải pháp phương pháp luận (nghiên cứu đoàn hệ tiến cứu).",
+  "rationaleVi": "Đoạn văn đạt chuẩn 8.5 nhờ lập luận chặt chẽ về lý thuyết nghiên cứu, sử dụng chính xác thuật ngữ 'reverse causality' trong ngữ cảnh phân tích phản thực tế, cấu trúc ngữ pháp phức hợp idiomatic chuẩn Anh-Anh.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "ai-assisted-level-draft",
+  "version": 1
+ },
+ {
+  "id": "esl-v2-r17-u01-003",
+  "practiceLevel": "8.5",
+  "type": "paragraph",
+  "topic": "Đánh giá độ tin cậy của bằng chứng",
+  "promptVi": "Một báo cáo nội bộ ghi nhận số lượt khám giảm sau khi bệnh viện mở dịch vụ tư vấn từ xa. Tuy nhiên, báo cáo không kiểm soát thay đổi về nhu cầu theo mùa. Vì vậy, chưa thể quy toàn bộ mức giảm cho dịch vụ mới.",
+  "referenceAnswers": [
+   "An internal report recorded fewer in-person visits after the hospital introduced remote consultations. However, it did not control for seasonal changes in demand. The entire reduction therefore cannot yet be attributed to the new service."
+  ],
+  "grammarTags": [
+   "evidence_quality",
+   "sampling_bias",
+   "proxy_vs_outcome",
+   "causal_inference",
+   "guided"
+  ],
+  "explanationVi": "Không đảo quan hệ thời gian. Không bỏ luận điểm ban đầu khi diễn đạt ý phản biện.",
+  "rationaleVi": "Nêu điều kiện của kết luận, giả định và giới hạn của bằng chứng. Bài bổ sung từ bộ ESL v2 (R17-U01), chủ đề Đánh giá độ tin cậy của bằng chứng.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "esl-v2",
+  "version": 1
+ },
+ {
+  "id": "esl-v2-r17-u01-004",
+  "practiceLevel": "8.5",
+  "type": "paragraph",
+  "topic": "Đánh giá độ tin cậy của bằng chứng",
+  "promptVi": "Một nghiên cứu giả định hỏi người tham gia liệu họ có thường xuyên đọc sách hay không. Câu trả lời dựa trên trí nhớ, chứ không được ghi nhận bằng nhật ký đọc. Điều này không khiến kết quả vô giá trị, nhưng làm giảm mức độ chắc chắn của ước tính.",
+  "referenceAnswers": [
+   "A hypothetical study asked participants whether they read regularly. Their responses relied on memory rather than reading logs. This does not make the findings worthless, but it reduces confidence in the estimates."
+  ],
+  "grammarTags": [
+   "evidence_quality",
+   "sampling_bias",
+   "proxy_vs_outcome",
+   "causal_inference",
+   "independent"
+  ],
+  "explanationVi": "Không nâng thường thành luôn luôn.",
+  "rationaleVi": "Nêu điều kiện của kết luận, giả định và giới hạn của bằng chứng. Bài bổ sung từ bộ ESL v2 (R17-U01), chủ đề Đánh giá độ tin cậy của bằng chứng.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "esl-v2",
+  "version": 1
+ },
+ {
+  "id": "esl-v2-r17-u01-005",
+  "practiceLevel": "8.5",
+  "type": "paragraph",
+  "topic": "Đánh giá độ tin cậy của bằng chứng",
+  "promptVi": "Nhóm thử nghiệm có kết quả tốt hơn nhóm đối chứng, nhưng một số người ở nhóm thử nghiệm đã có kinh nghiệm từ trước. Nếu khác biệt ban đầu này không được tính đến, hiệu quả của chương trình có thể bị đánh giá cao hơn thực tế. Vì vậy, so sánh trực tiếp giữa hai nhóm vẫn còn hạn chế.",
+  "referenceAnswers": [
+   "The intervention group performed better than the comparison group, but some participants in the former had prior experience. Unless that initial difference is accounted for, the programme’s effect may be overstated. A direct comparison between the groups therefore remains limited."
+  ],
+  "grammarTags": [
+   "evidence_quality",
+   "sampling_bias",
+   "proxy_vs_outcome",
+   "causal_inference",
+   "independent"
+  ],
+  "explanationVi": "Giữ giới hạn “một số”, không nâng thành tất cả. May/might/can tùy ngữ cảnh; không nâng thành will/must. Kiểm tra giả định hay điều kiện thực và thứ tự hai vế. Phân biệt dữ liệu thử nghiệm với việc xác nhận cơ chế hoặc tác dụng lâu dài. Giữ đúng nhóm được so sánh, không tự suy ra kết quả thử nghiệm. Không xem khác biệt điểm số sau can thiệp là tác động thuần của can thiệp.",
+  "rationaleVi": "Nêu điều kiện của kết luận, giả định và giới hạn của bằng chứng. Bài bổ sung từ bộ ESL v2 (R17-U01), chủ đề Đánh giá độ tin cậy của bằng chứng.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "esl-v2",
+  "version": 1
+ },
+ {
+  "id": "esl-v2-r17-u01-006",
+  "practiceLevel": "8.5",
+  "type": "paragraph",
+  "topic": "Đánh giá độ tin cậy của bằng chứng",
+  "promptVi": "Một trang tin trích dẫn phần trăm tăng trưởng mà không nêu mức ban đầu. Nếu số người dùng ban đầu rất nhỏ, mức tăng phần trăm cao vẫn có thể tương ứng với một thay đổi tuyệt đối hạn chế. Người đọc cần cả hai đại lượng trước khi đánh giá tác động.",
+  "referenceAnswers": [
+   "A news site cited a percentage increase without stating the starting level. If the initial user base was very small, a large percentage rise could still represent a modest absolute change. Readers need both figures to assess the impact."
+  ],
+  "grammarTags": [
+   "evidence_quality",
+   "sampling_bias",
+   "proxy_vs_outcome",
+   "causal_inference",
+   "independent"
+  ],
+  "explanationVi": "May/might/can tùy ngữ cảnh; không nâng thành will/must. Kiểm tra giả định hay điều kiện thực và thứ tự hai vế. Không đảo thời điểm, hành động và chủ thể.",
+  "rationaleVi": "Nêu điều kiện của kết luận, giả định và giới hạn của bằng chứng. Bài bổ sung từ bộ ESL v2 (R17-U01), chủ đề Đánh giá độ tin cậy của bằng chứng.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "esl-v2",
+  "version": 1
+ },
+ {
+  "id": "esl-v2-r17-u01-007",
+  "practiceLevel": "8.5",
+  "type": "paragraph",
+  "topic": "Đánh giá độ tin cậy của bằng chứng",
+  "promptVi": "Một nhóm học viên hoàn thành khóa học đạt điểm cao hơn trước. Tuy nhiên, bài kiểm tra sau khóa học không giống bài kiểm tra đầu vào, và độ khó của hai bài chưa được đối chiếu. Do đó, mức tăng điểm chỉ có thể được diễn giải thận trọng.",
+  "referenceAnswers": [
+   "A group of learners scored higher after completing a course. However, the final test differed from the entry test, and their difficulty had not been calibrated. Any apparent improvement must therefore be interpreted cautiously."
+  ],
+  "grammarTags": [
+   "evidence_quality",
+   "sampling_bias",
+   "proxy_vs_outcome",
+   "causal_inference",
+   "challenge"
+  ],
+  "explanationVi": "May/might/can tùy ngữ cảnh; không nâng thành will/must. Không bỏ luận điểm ban đầu khi diễn đạt ý phản biện.",
+  "rationaleVi": "Nêu điều kiện của kết luận, giả định và giới hạn của bằng chứng. Bài bổ sung từ bộ ESL v2 (R17-U01), chủ đề Đánh giá độ tin cậy của bằng chứng.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "esl-v2",
+  "version": 1
+ },
+ {
+  "id": "esl-v2-r17-u01-008",
+  "practiceLevel": "8.5",
+  "type": "paragraph",
+  "topic": "Đánh giá độ tin cậy của bằng chứng",
+  "promptVi": "Trong một thử nghiệm giả định, người tham gia biết mình thuộc nhóm được hỗ trợ và có thể đã thay đổi hành vi vì điều đó. Báo cáo mô tả sự cải thiện, nhưng chưa tách được tác động của biện pháp hỗ trợ khỏi tác động do kỳ vọng. Kết luận hợp lý nhất là có dấu hiệu tích cực cần được kiểm tra thêm.",
+  "referenceAnswers": [
+   "In a hypothetical trial, participants knew they were receiving support and may have altered their behaviour as a result. The report described an improvement but did not separate the intervention effect from the effect of expectations. The most defensible conclusion is that there is a promising signal requiring further investigation."
+  ],
+  "grammarTags": [
+   "evidence_quality",
+   "sampling_bias",
+   "proxy_vs_outcome",
+   "causal_inference",
+   "mastery"
+  ],
+  "explanationVi": "May/might/can tùy ngữ cảnh; không nâng thành will/must. Phân biệt dữ liệu thử nghiệm với việc xác nhận cơ chế hoặc tác dụng lâu dài.",
+  "rationaleVi": "Nêu điều kiện của kết luận, giả định và giới hạn của bằng chứng. Bài bổ sung từ bộ ESL v2 (R17-U01), chủ đề Đánh giá độ tin cậy của bằng chứng.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "esl-v2",
+  "version": 1
+ },
+ {
+  "id": "esl-v2-r17-u02-003",
+  "practiceLevel": "8.5",
+  "type": "paragraph",
+  "topic": "Tác động không đồng đều giữa các nhóm",
+  "promptVi": "Một chính sách giảm giá điện đem lại mức tiết kiệm lớn hơn cho những hộ dùng nhiều điện. Tuy nhiên, các hộ thu nhập thấp có thể tiêu thụ ít điện vì đã phải hạn chế nhu cầu. Vì vậy, tổng số tiền được giảm chưa chắc phản ánh mức độ hỗ trợ hợp lý.",
+  "referenceAnswers": [
+   "An electricity discount yields larger savings for households that use more power. Yet lower-income households may consume less because they already restrict their usage. The amount saved therefore does not necessarily indicate how fairly the support is distributed."
+  ],
+  "grammarTags": [
+   "heterogeneous_impacts",
+   "distributional_equity",
+   "access_vs_outcomes",
+   "subgroup_comparison",
+   "guided"
+  ],
+  "explanationVi": "May/might/can tùy ngữ cảnh; không nâng thành will/must. Không bỏ luận điểm ban đầu khi diễn đạt ý phản biện.",
+  "rationaleVi": "Nêu điều kiện của kết luận, giả định và giới hạn của bằng chứng. Bài bổ sung từ bộ ESL v2 (R17-U02), chủ đề Tác động không đồng đều giữa các nhóm.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "esl-v2",
+  "version": 1
+ },
+ {
+  "id": "esl-v2-r17-u02-004",
+  "practiceLevel": "8.5",
+  "type": "paragraph",
+  "topic": "Tác động không đồng đều giữa các nhóm",
+  "promptVi": "Khi một thành phố mở thêm tuyến xe buýt, cư dân gần trung tâm có thể tiếp cận dịch vụ ngay. Những người ở vùng ven vẫn phải đi xa để đến điểm dừng. Đánh giá chỉ dựa trên số chuyến xe mới sẽ bỏ qua sự khác biệt về khả năng tiếp cận này.",
+  "referenceAnswers": [
+   "When a city introduces additional bus routes, central residents may gain access immediately. People on the outskirts may still have to travel far to reach a stop. An assessment based solely on the number of new services would overlook this difference in accessibility."
+  ],
+  "grammarTags": [
+   "heterogeneous_impacts",
+   "distributional_equity",
+   "access_vs_outcomes",
+   "subgroup_comparison",
+   "independent"
+  ],
+  "explanationVi": "May/might/can tùy ngữ cảnh; không nâng thành will/must.",
+  "rationaleVi": "Nêu điều kiện của kết luận, giả định và giới hạn của bằng chứng. Bài bổ sung từ bộ ESL v2 (R17-U02), chủ đề Tác động không đồng đều giữa các nhóm.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "esl-v2",
+  "version": 1
+ },
+ {
+  "id": "esl-v2-r17-u02-005",
+  "practiceLevel": "8.5",
+  "type": "paragraph",
+  "topic": "Tác động không đồng đều giữa các nhóm",
+  "promptVi": "Một chương trình đào tạo trực tuyến giảm chi phí tổ chức so với học trực tiếp. Tuy nhiên, người học cần thiết bị phù hợp và một nơi yên tĩnh để tham gia. Nếu những điều kiện này không được hỗ trợ, lợi ích tài chính của chương trình có thể đi kèm sự chênh lệch lớn hơn về kết quả học tập.",
+  "referenceAnswers": [
+   "An online training programme costs less to deliver than face-to-face teaching. However, learners need suitable devices and a quiet place to participate. Without support for those conditions, the financial savings may be accompanied by wider gaps in learning outcomes."
+  ],
+  "grammarTags": [
+   "heterogeneous_impacts",
+   "distributional_equity",
+   "access_vs_outcomes",
+   "subgroup_comparison",
+   "independent"
+  ],
+  "explanationVi": "May/might/can tùy ngữ cảnh; không nâng thành will/must. Kiểm tra giả định hay điều kiện thực và thứ tự hai vế. Không bỏ luận điểm ban đầu khi diễn đạt ý phản biện.",
+  "rationaleVi": "Nêu điều kiện của kết luận, giả định và giới hạn của bằng chứng. Bài bổ sung từ bộ ESL v2 (R17-U02), chủ đề Tác động không đồng đều giữa các nhóm.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "esl-v2",
+  "version": 1
+ },
+ {
+  "id": "esl-v2-r17-u02-006",
+  "practiceLevel": "8.5",
+  "type": "paragraph",
+  "topic": "Tác động không đồng đều giữa các nhóm",
+  "promptVi": "Một khoản phí giao hàng cố định có vẻ áp dụng như nhau cho mọi đơn. Nhưng với đơn hàng giá trị thấp, khoản phí ấy chiếm tỷ lệ cao hơn trong tổng chi tiêu. Vì thế, một quy định đồng nhất vẫn có thể tạo gánh nặng không tương xứng.",
+  "referenceAnswers": [
+   "A flat delivery fee appears to apply equally to every order. On low-value purchases, however, it accounts for a larger share of total spending. A uniform charge can therefore impose a disproportionate burden."
+  ],
+  "grammarTags": [
+   "heterogeneous_impacts",
+   "distributional_equity",
+   "access_vs_outcomes",
+   "subgroup_comparison",
+   "independent"
+  ],
+  "explanationVi": "May/might/can tùy ngữ cảnh; không nâng thành will/must.",
+  "rationaleVi": "Nêu điều kiện của kết luận, giả định và giới hạn của bằng chứng. Bài bổ sung từ bộ ESL v2 (R17-U02), chủ đề Tác động không đồng đều giữa các nhóm.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "esl-v2",
+  "version": 1
+ },
+ {
+  "id": "esl-v2-r17-u02-007",
+  "practiceLevel": "8.5",
+  "type": "paragraph",
+  "topic": "Tác động không đồng đều giữa các nhóm",
+  "promptVi": "Một công ty ghi nhận năng suất trung bình tăng sau khi cho phép làm việc linh hoạt. Nhân viên làm công việc độc lập báo cáo nhiều lợi ích hơn, còn những nhóm cần phối hợp liên tục gặp khó khăn ban đầu. Báo cáo sẽ thiếu cân bằng nếu chỉ nêu chỉ số năng suất chung mà không phân tích khác biệt giữa nhóm.",
+  "referenceAnswers": [
+   "A company recorded higher average productivity after introducing flexible working. Staff in independent roles reported greater benefits, while teams requiring constant coordination faced initial difficulties. The report would be unbalanced if it cited only the overall productivity figure without examining subgroup differences."
+  ],
+  "grammarTags": [
+   "heterogeneous_impacts",
+   "distributional_equity",
+   "access_vs_outcomes",
+   "subgroup_comparison",
+   "challenge"
+  ],
+  "explanationVi": "Kiểm tra giả định hay điều kiện thực và thứ tự hai vế. Không đảo quan hệ thời gian.",
+  "rationaleVi": "Nêu điều kiện của kết luận, giả định và giới hạn của bằng chứng. Bài bổ sung từ bộ ESL v2 (R17-U02), chủ đề Tác động không đồng đều giữa các nhóm.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "esl-v2",
+  "version": 1
+ },
+ {
+  "id": "esl-v2-r17-u02-008",
+  "practiceLevel": "8.5",
+  "type": "paragraph",
+  "topic": "Tác động không đồng đều giữa các nhóm",
+  "promptVi": "Một dự án cải tạo công viên giúp tăng diện tích không gian xanh công cộng. Tuy nhiên, người lớn tuổi cần lối đi an toàn, trẻ em cần khu vui chơi và người dùng xe lăn cần đường tiếp cận phù hợp. Chỉ tiêu diện tích không đủ để kết luận rằng mọi nhóm đều sử dụng được công viên như nhau.",
+  "referenceAnswers": [
+   "A park renovation increases the amount of public green space. Older visitors, however, need safe paths, children need play areas, and wheelchair users require accessible routes. Area alone is insufficient to establish that all groups can use the park equally."
+  ],
+  "grammarTags": [
+   "heterogeneous_impacts",
+   "distributional_equity",
+   "access_vs_outcomes",
+   "subgroup_comparison",
+   "mastery"
+  ],
+  "explanationVi": "Không bỏ luận điểm ban đầu khi diễn đạt ý phản biện.",
+  "rationaleVi": "Nêu điều kiện của kết luận, giả định và giới hạn của bằng chứng. Bài bổ sung từ bộ ESL v2 (R17-U02), chủ đề Tác động không đồng đều giữa các nhóm.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "esl-v2",
+  "version": 1
+ },
+ {
+  "id": "esl-v2-r17-u03-003",
+  "practiceLevel": "8.5",
+  "type": "paragraph",
+  "topic": "Thiết kế chính sách theo điều kiện",
+  "promptVi": "Một quận có mạng ổn định có thể thử dịch vụ trực tuyến trước. Với những quận thường xuyên mất kết nối, duy trì lựa chọn trực tiếp là cần thiết. Vì vậy, kế hoạch triển khai chung nên có nhiều lộ trình thay vì áp đặt cùng một tiến độ cho tất cả.",
+  "referenceAnswers": [
+   "A district with reliable connectivity could pilot the online service first. In districts with frequent outages, retaining an in-person option is essential. A common rollout plan should therefore allow several pathways rather than impose a single timetable on everyone."
+  ],
+  "grammarTags": [
+   "conditional_policy_design",
+   "implementation_sequence",
+   "pilot_and_scale",
+   "necessary_vs_sufficient",
+   "guided"
+  ],
+  "explanationVi": "May/might/can tùy ngữ cảnh; không nâng thành will/must. Giữ rõ điều được ưu tiên và điều được thay thế. Không nâng thường thành luôn luôn.",
+  "rationaleVi": "Nêu điều kiện của kết luận, giả định và giới hạn của bằng chứng. Bài bổ sung từ bộ ESL v2 (R17-U03), chủ đề Thiết kế chính sách theo điều kiện.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "esl-v2",
+  "version": 1
+ },
+ {
+  "id": "esl-v2-r17-u03-004",
+  "practiceLevel": "8.5",
+  "type": "paragraph",
+  "topic": "Thiết kế chính sách theo điều kiện",
+  "promptVi": "Một trường muốn áp dụng chấm bài tự động để giáo viên có thêm thời gian hướng dẫn. Trước khi mở rộng, trường cần kiểm tra hệ thống có chấm công bằng đối với các cách diễn đạt khác nhau hay không. Nếu kết quả thiếu ổn định, cách hợp lý hơn là giữ giáo viên trong vòng phản biện.",
+  "referenceAnswers": [
+   "A school wants to use automated marking to give teachers more time for guidance. Before scaling it up, the school needs to check whether different valid expressions are assessed fairly. If results are inconsistent, retaining teacher review is the more reasonable approach."
+  ],
+  "grammarTags": [
+   "conditional_policy_design",
+   "implementation_sequence",
+   "pilot_and_scale",
+   "necessary_vs_sufficient",
+   "independent"
+  ],
+  "explanationVi": "Kiểm tra giả định hay điều kiện thực và thứ tự hai vế. Không đảo thời điểm, hành động và chủ thể.",
+  "rationaleVi": "Nêu điều kiện của kết luận, giả định và giới hạn của bằng chứng. Bài bổ sung từ bộ ESL v2 (R17-U03), chủ đề Thiết kế chính sách theo điều kiện.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "esl-v2",
+  "version": 1
+ },
+ {
+  "id": "esl-v2-r17-u03-005",
+  "practiceLevel": "8.5",
+  "type": "paragraph",
+  "topic": "Thiết kế chính sách theo điều kiện",
+  "promptVi": "Một mô hình thu gom rác hoạt động tốt ở khu phố có đường rộng. Nhưng khu vực hẻm nhỏ cần phương tiện và giờ thu gom khác. Điều đáng nhân rộng là nguyên tắc phân loại, không nhất thiết là cùng một loại xe và lịch trình.",
+  "referenceAnswers": [
+   "A waste-collection model works well in streets with ample road space. Narrow alleyways, however, require different vehicles and collection times. What should be replicated is the sorting principle, not necessarily the same trucks and timetable."
+  ],
+  "grammarTags": [
+   "conditional_policy_design",
+   "implementation_sequence",
+   "pilot_and_scale",
+   "necessary_vs_sufficient",
+   "independent"
+  ],
+  "explanationVi": "Không nhất thiết không đồng nghĩa không bao giờ.",
+  "rationaleVi": "Nêu điều kiện của kết luận, giả định và giới hạn của bằng chứng. Bài bổ sung từ bộ ESL v2 (R17-U03), chủ đề Thiết kế chính sách theo điều kiện.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "esl-v2",
+  "version": 1
+ },
+ {
+  "id": "esl-v2-r17-u03-006",
+  "practiceLevel": "8.5",
+  "type": "paragraph",
+  "topic": "Thiết kế chính sách theo điều kiện",
+  "promptVi": "Trong giai đoạn thử nghiệm, nhà quản lý có thể đo số người sử dụng dịch vụ và mức độ hài lòng. Nếu lượt sử dụng tăng nhưng khiếu nại cũng tăng, việc mở rộng cần được xem xét lại. Một chỉ số tích cực không đủ để bỏ qua những dấu hiệu rủi ro khác.",
+  "referenceAnswers": [
+   "During the pilot, managers can measure service use and satisfaction. If usage rises alongside complaints, expansion should be reconsidered. One positive indicator is not sufficient grounds for overlooking other warning signs."
+  ],
+  "grammarTags": [
+   "conditional_policy_design",
+   "implementation_sequence",
+   "pilot_and_scale",
+   "necessary_vs_sufficient",
+   "independent"
+  ],
+  "explanationVi": "May/might/can tùy ngữ cảnh; không nâng thành will/must. Kiểm tra giả định hay điều kiện thực và thứ tự hai vế. Phân biệt dữ liệu thử nghiệm với việc xác nhận cơ chế hoặc tác dụng lâu dài.",
+  "rationaleVi": "Nêu điều kiện của kết luận, giả định và giới hạn của bằng chứng. Bài bổ sung từ bộ ESL v2 (R17-U03), chủ đề Thiết kế chính sách theo điều kiện.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "esl-v2",
+  "version": 1
+ },
+ {
+  "id": "esl-v2-r17-u03-007",
+  "practiceLevel": "8.5",
+  "type": "paragraph",
+  "topic": "Thiết kế chính sách theo điều kiện",
+  "promptVi": "Hỗ trợ tài chính ngắn hạn có thể giúp một thư viện duy trì hoạt động trong năm đầu. Tuy nhiên, nếu chi phí bảo trì sau đó không có nguồn chi trả, thư viện vẫn có nguy cơ phải đóng cửa. Kế hoạch khả thi cần tính cả ngân sách vận hành dài hạn.",
+  "referenceAnswers": [
+   "Short-term funding may help a library remain open in its first year. Yet if maintenance costs are not covered afterwards, the library could still face closure. A viable plan needs to account for its long-term operating budget."
+  ],
+  "grammarTags": [
+   "conditional_policy_design",
+   "implementation_sequence",
+   "pilot_and_scale",
+   "necessary_vs_sufficient",
+   "challenge"
+  ],
+  "explanationVi": "May/might/can tùy ngữ cảnh; không nâng thành will/must. Kiểm tra giả định hay điều kiện thực và thứ tự hai vế. Không bỏ luận điểm ban đầu khi diễn đạt ý phản biện. Không tự thêm khoản tiền/nguồn ngân sách không có trong đề.",
+  "rationaleVi": "Nêu điều kiện của kết luận, giả định và giới hạn của bằng chứng. Bài bổ sung từ bộ ESL v2 (R17-U03), chủ đề Thiết kế chính sách theo điều kiện.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "esl-v2",
+  "version": 1
+ },
+ {
+  "id": "esl-v2-r17-u03-008",
+  "practiceLevel": "8.5",
+  "type": "paragraph",
+  "topic": "Thiết kế chính sách theo điều kiện",
+  "promptVi": "Một hệ thống cảnh báo mới có thể được mở rộng sau khi kiểm tra tại những nơi có đặc điểm khác nhau. Trước tiên, nhà quản lý cần xác định các trường hợp cảnh báo sai và hướng xử lý khi mất điện. Chỉ khi những rủi ro này được giải quyết ở mức chấp nhận được, việc triển khai diện rộng mới có cơ sở.",
+  "referenceAnswers": [
+   "A new warning system could be expanded after tests in settings with different characteristics. Managers first need to identify false alarms and establish what to do during power failures. Only once those risks are addressed to an acceptable degree would a wider rollout be justified."
+  ],
+  "grammarTags": [
+   "conditional_policy_design",
+   "implementation_sequence",
+   "pilot_and_scale",
+   "necessary_vs_sufficient",
+   "mastery"
+  ],
+  "explanationVi": "Chỉ khi = điều kiện cần, không được đổi thành điều kiện đủ chỉ bằng if. May/might/can tùy ngữ cảnh; không nâng thành will/must. Không đảo quan hệ thời gian.",
+  "rationaleVi": "Nêu điều kiện của kết luận, giả định và giới hạn của bằng chứng. Bài bổ sung từ bộ ESL v2 (R17-U03), chủ đề Thiết kế chính sách theo điều kiện.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "esl-v2",
+  "version": 1
+ },
+ {
+  "id": "esl-v2-r17-u04-003",
+  "practiceLevel": "8.5",
+  "type": "paragraph",
+  "topic": "Đánh đổi giữa công bằng và hiệu quả",
+  "promptVi": "Một trung tâm có thể cung cấp nhiều suất tư vấn ngắn, nhờ đó tăng số người được phục vụ. Tuy nhiên, người có vấn đề phức tạp có thể cần các buổi dài hơn để đạt kết quả. Đếm số lượt tư vấn mà không xét mức độ cải thiện có thể tạo ra một bức tranh sai lệch về hiệu quả.",
+  "referenceAnswers": [
+   "A centre could offer more short consultations and thereby serve more people. However, clients with complex needs may require longer sessions to benefit. Counting consultations without considering improvements can give a misleading picture of effectiveness."
+  ],
+  "grammarTags": [
+   "equity_vs_equality",
+   "cost_effectiveness",
+   "resource_allocation",
+   "marginal_benefit",
+   "guided"
+  ],
+  "explanationVi": "May/might/can tùy ngữ cảnh; không nâng thành will/must. Không bỏ luận điểm ban đầu khi diễn đạt ý phản biện.",
+  "rationaleVi": "Nêu điều kiện của kết luận, giả định và giới hạn của bằng chứng. Bài bổ sung từ bộ ESL v2 (R17-U04), chủ đề Đánh đổi giữa công bằng và hiệu quả.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "esl-v2",
+  "version": 1
+ },
+ {
+  "id": "esl-v2-r17-u04-004",
+  "practiceLevel": "8.5",
+  "type": "paragraph",
+  "topic": "Đánh đổi giữa công bằng và hiệu quả",
+  "promptVi": "Một khoản trợ cấp đồng đều có ưu điểm là đơn giản trong quản lý. Hỗ trợ theo nhu cầu lại có thể hướng nguồn lực tới những người gặp khó khăn nhất nhưng cần thêm dữ liệu và chi phí xét duyệt. Quyết định hợp lý phụ thuộc vào mức độ chấp nhận được của chi phí quản lý và mục tiêu công bằng.",
+  "referenceAnswers": [
+   "A universal subsidy is relatively simple to administer. Needs-based support may direct resources to those facing the greatest hardship, but requires additional data and assessment costs. A defensible choice depends on acceptable administrative costs and the equity objective."
+  ],
+  "grammarTags": [
+   "equity_vs_equality",
+   "cost_effectiveness",
+   "resource_allocation",
+   "marginal_benefit",
+   "independent"
+  ],
+  "explanationVi": "May/might/can tùy ngữ cảnh; không nâng thành will/must.",
+  "rationaleVi": "Nêu điều kiện của kết luận, giả định và giới hạn của bằng chứng. Bài bổ sung từ bộ ESL v2 (R17-U04), chủ đề Đánh đổi giữa công bằng và hiệu quả.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "esl-v2",
+  "version": 1
+ },
+ {
+  "id": "esl-v2-r17-u04-005",
+  "practiceLevel": "8.5",
+  "type": "paragraph",
+  "topic": "Đánh đổi giữa công bằng và hiệu quả",
+  "promptVi": "Khi ngân sách khan hiếm, nâng cấp thiết bị cho mọi cơ sở có thể không mang lại lợi ích như nhau. Một số cơ sở đã có đủ thiết bị nhưng thiếu nhân lực vận hành. Phân bổ nguồn lực theo nút thắt thực tế có thể hiệu quả hơn chia đều theo danh mục.",
+  "referenceAnswers": [
+   "When funding is scarce, upgrading equipment at every facility may not generate equal benefits. Some facilities already have adequate equipment but lack staff to operate it. Allocating resources according to actual bottlenecks could be more effective than dividing them evenly by category."
+  ],
+  "grammarTags": [
+   "equity_vs_equality",
+   "cost_effectiveness",
+   "resource_allocation",
+   "marginal_benefit",
+   "independent"
+  ],
+  "explanationVi": "Giữ giới hạn “một số”, không nâng thành tất cả. May/might/can tùy ngữ cảnh; không nâng thành will/must. Không tự thêm khoản tiền/nguồn ngân sách không có trong đề.",
+  "rationaleVi": "Nêu điều kiện của kết luận, giả định và giới hạn của bằng chứng. Bài bổ sung từ bộ ESL v2 (R17-U04), chủ đề Đánh đổi giữa công bằng và hiệu quả.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "esl-v2",
+  "version": 1
+ },
+ {
+  "id": "esl-v2-r17-u04-006",
+  "practiceLevel": "8.5",
+  "type": "paragraph",
+  "topic": "Đánh đổi giữa công bằng và hiệu quả",
+  "promptVi": "Một thành phố có thể chọn xây một dự án lớn để tiết kiệm chi phí trên mỗi lượt phục vụ. Nhưng nếu người ở xa trung tâm không tiếp cận được, khoản tiết kiệm ấy đi kèm một chi phí xã hội khó nhìn thấy. So sánh các phương án cần bao gồm cả người không được hưởng lợi.",
+  "referenceAnswers": [
+   "A city may choose one large project to reduce the cost per user. If people living far from the centre cannot access it, however, those savings come with a less visible social cost. Comparing options requires attention to those left out as well as those served."
+  ],
+  "grammarTags": [
+   "equity_vs_equality",
+   "cost_effectiveness",
+   "resource_allocation",
+   "marginal_benefit",
+   "independent"
+  ],
+  "explanationVi": "May/might/can tùy ngữ cảnh; không nâng thành will/must. Kiểm tra giả định hay điều kiện thực và thứ tự hai vế.",
+  "rationaleVi": "Nêu điều kiện của kết luận, giả định và giới hạn của bằng chứng. Bài bổ sung từ bộ ESL v2 (R17-U04), chủ đề Đánh đổi giữa công bằng và hiệu quả.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "esl-v2",
+  "version": 1
+ },
+ {
+  "id": "esl-v2-r17-u04-007",
+  "practiceLevel": "8.5",
+  "type": "paragraph",
+  "topic": "Đánh đổi giữa công bằng và hiệu quả",
+  "promptVi": "Một chương trình hỗ trợ có thể đạt tác động lớn nhất về mặt thống kê khi tập trung vào người dễ cải thiện. Dù vậy, nếu bỏ qua những người có nhu cầu cao nhưng tiến bộ chậm, chương trình có thể đi ngược mục tiêu phục vụ công bằng. Vì thế, chỉ tiêu đánh giá cần phản ánh cả kết quả và trách nhiệm với nhóm khó tiếp cận.",
+  "referenceAnswers": [
+   "A support programme may achieve the largest measured gains by focusing on people who improve most readily. Yet excluding those with greater needs but slower progress could undermine its equity objective. Assessment criteria should therefore reflect both outcomes and responsibility towards harder-to-reach groups."
+  ],
+  "grammarTags": [
+   "equity_vs_equality",
+   "cost_effectiveness",
+   "resource_allocation",
+   "marginal_benefit",
+   "challenge"
+  ],
+  "explanationVi": "May/might/can tùy ngữ cảnh; không nâng thành will/must. Kiểm tra giả định hay điều kiện thực và thứ tự hai vế.",
+  "rationaleVi": "Nêu điều kiện của kết luận, giả định và giới hạn của bằng chứng. Bài bổ sung từ bộ ESL v2 (R17-U04), chủ đề Đánh đổi giữa công bằng và hiệu quả.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "esl-v2",
+  "version": 1
+ },
+ {
+  "id": "esl-v2-r17-u04-008",
+  "practiceLevel": "8.5",
+  "type": "paragraph",
+  "topic": "Đánh đổi giữa công bằng và hiệu quả",
+  "promptVi": "Nếu hai phương án có chi phí tương đương, lựa chọn tạo lợi ích bền vững hơn có thể đáng ưu tiên. Tuy nhiên, độ bền của lợi ích phải được đánh giá bằng bằng chứng, không chỉ bằng lời hứa của nhà cung cấp. Trong trường hợp chưa có dữ liệu dài hạn, thử nghiệm nhỏ và theo dõi kết quả là phương án thận trọng.",
+  "referenceAnswers": [
+   "If two options cost roughly the same, the one offering more durable benefits may deserve priority. However, durability must be assessed using evidence rather than suppliers’ promises alone. Where long-term data are lacking, a small pilot with outcome monitoring is the cautious approach."
+  ],
+  "grammarTags": [
+   "equity_vs_equality",
+   "cost_effectiveness",
+   "resource_allocation",
+   "marginal_benefit",
+   "mastery"
+  ],
+  "explanationVi": "May/might/can tùy ngữ cảnh; không nâng thành will/must. Kiểm tra giả định hay điều kiện thực và thứ tự hai vế. Không bỏ luận điểm ban đầu khi diễn đạt ý phản biện. Không biến bằng chứng hạn chế thành kết luận đã chứng minh. Phân biệt dữ liệu thử nghiệm với việc xác nhận cơ chế hoặc tác dụng lâu dài.",
+  "rationaleVi": "Nêu điều kiện của kết luận, giả định và giới hạn của bằng chứng. Bài bổ sung từ bộ ESL v2 (R17-U04), chủ đề Đánh đổi giữa công bằng và hiệu quả.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "esl-v2",
+  "version": 1
+ },
+ {
+  "id": "esl-v2-r17-u05-003",
+  "practiceLevel": "8.5",
+  "type": "paragraph",
+  "topic": "Tổng hợp luận điểm có thứ bậc",
+  "promptVi": "Một dự án giao thông có thể giảm thời gian đi lại cho đa số người dùng. Tuy nhiên, một số tuyến đường mới có thể khiến người đi bộ gặp khó khăn hơn. Nếu dự án tiếp tục, giải pháp an toàn cho người đi bộ nên là điều kiện đi kèm chứ không phải cải tiến tùy chọn.",
+  "referenceAnswers": [
+   "A transport project may shorten journeys for most users. However, some new road layouts could make travel more difficult for pedestrians. If the project proceeds, pedestrian safety measures should be a condition of implementation rather than an optional improvement."
+  ],
+  "grammarTags": [
+   "qualified_synthesis",
+   "weighed_conclusion",
+   "evidence_hierarchy",
+   "conditional_priority",
+   "guided"
+  ],
+  "explanationVi": "Giữ giới hạn “một số”, không nâng thành tất cả. May/might/can tùy ngữ cảnh; không nâng thành will/must. Kiểm tra giả định hay điều kiện thực và thứ tự hai vế. Không bỏ luận điểm ban đầu khi diễn đạt ý phản biện.",
+  "rationaleVi": "Nêu điều kiện của kết luận, giả định và giới hạn của bằng chứng. Bài bổ sung từ bộ ESL v2 (R17-U05), chủ đề Tổng hợp luận điểm có thứ bậc.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "esl-v2",
+  "version": 1
+ },
+ {
+  "id": "esl-v2-r17-u05-004",
+  "practiceLevel": "8.5",
+  "type": "paragraph",
+  "topic": "Tổng hợp luận điểm có thứ bậc",
+  "promptVi": "Một hệ thống phản hồi tự động có thể giúp giáo viên xử lý số lượng bài lớn. Nhưng nếu hệ thống thường xuyên hiểu sai câu đúng theo cách diễn đạt khác, lợi ích về tốc độ sẽ bị giới hạn. Vì vậy, hướng hợp lý là dùng công cụ cho phản hồi ban đầu và giữ cơ chế phản biện trước khi quyết định điểm cuối cùng.",
+  "referenceAnswers": [
+   "An automated feedback system could help teachers handle large numbers of submissions. But if it repeatedly misjudges valid alternative phrasing, its speed advantage is limited. A reasonable approach is therefore to use it for initial feedback while retaining a review process before final marks are decided."
+  ],
+  "grammarTags": [
+   "qualified_synthesis",
+   "weighed_conclusion",
+   "evidence_hierarchy",
+   "conditional_priority",
+   "independent"
+  ],
+  "explanationVi": "May/might/can tùy ngữ cảnh; không nâng thành will/must. Kiểm tra giả định hay điều kiện thực và thứ tự hai vế. Không đảo thời điểm, hành động và chủ thể. Giữ giới hạn của phát biểu và điều kiện áp dụng. Không nâng thường thành luôn luôn.",
+  "rationaleVi": "Nêu điều kiện của kết luận, giả định và giới hạn của bằng chứng. Bài bổ sung từ bộ ESL v2 (R17-U05), chủ đề Tổng hợp luận điểm có thứ bậc.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "esl-v2",
+  "version": 1
+ },
+ {
+  "id": "esl-v2-r17-u05-005",
+  "practiceLevel": "8.5",
+  "type": "paragraph",
+  "topic": "Tổng hợp luận điểm có thứ bậc",
+  "promptVi": "Một chương trình hỗ trợ kinh doanh tạo ra thêm đơn đăng ký trong những tháng đầu. Dữ liệu này gợi ý có nhu cầu, nhưng chưa cho biết các doanh nghiệp có tồn tại lâu hơn hay không. Vì thế, tiếp tục theo dõi khả năng duy trì hoạt động là ưu tiên hợp lý hơn tuyên bố thành công dài hạn.",
+  "referenceAnswers": [
+   "A business-support programme attracted more applications in its early months. This suggests demand but does not show whether firms survive longer. Tracking business survival is therefore a more reasonable priority than declaring long-term success."
+  ],
+  "grammarTags": [
+   "qualified_synthesis",
+   "weighed_conclusion",
+   "evidence_hierarchy",
+   "conditional_priority",
+   "independent"
+  ],
+  "explanationVi": "Giữ đúng tác nhân, mức chắc chắn, phạm vi và quan hệ giữa các câu.",
+  "rationaleVi": "Nêu điều kiện của kết luận, giả định và giới hạn của bằng chứng. Bài bổ sung từ bộ ESL v2 (R17-U05), chủ đề Tổng hợp luận điểm có thứ bậc.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "esl-v2",
+  "version": 1
+ },
+ {
+  "id": "esl-v2-r17-u05-006",
+  "practiceLevel": "8.5",
+  "type": "paragraph",
+  "topic": "Tổng hợp luận điểm có thứ bậc",
+  "promptVi": "Một địa phương cần quyết định giữa tăng số phòng khám và cải thiện chất lượng tại các cơ sở hiện có. Nếu vấn đề chính là khoảng cách đi lại, mở điểm mới có thể phù hợp hơn. Nếu vấn đề là thiếu nhân lực chuyên môn, đầu tư vào đào tạo có thể mang lại lợi ích lớn hơn. Không có lựa chọn ưu tiên duy nhất nếu chưa xác định đúng điểm nghẽn.",
+  "referenceAnswers": [
+   "A locality must choose between adding clinics and improving existing facilities. If travel distance is the main problem, new sites may be more appropriate. If the constraint is a shortage of skilled staff, training could deliver greater benefits. There is no single priority before the actual bottleneck is identified."
+  ],
+  "grammarTags": [
+   "qualified_synthesis",
+   "weighed_conclusion",
+   "evidence_hierarchy",
+   "conditional_priority",
+   "independent"
+  ],
+  "explanationVi": "May/might/can tùy ngữ cảnh; không nâng thành will/must. Kiểm tra giả định hay điều kiện thực và thứ tự hai vế.",
+  "rationaleVi": "Nêu điều kiện của kết luận, giả định và giới hạn của bằng chứng. Bài bổ sung từ bộ ESL v2 (R17-U05), chủ đề Tổng hợp luận điểm có thứ bậc.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "esl-v2",
+  "version": 1
+ },
+ {
+  "id": "esl-v2-r17-u05-007",
+  "practiceLevel": "8.5",
+  "type": "paragraph",
+  "topic": "Tổng hợp luận điểm có thứ bậc",
+  "promptVi": "Dữ liệu ban đầu cho thấy người dùng đánh giá cao sự thuận tiện của dịch vụ. Tuy nhiên, thời gian xử lý khiếu nại vẫn chưa ổn định, và nhóm người lớn tuổi ít tham gia khảo sát. Kết luận có cơ sở là giữ dịch vụ trong giai đoạn mở rộng có kiểm soát, đồng thời cải thiện hỗ trợ và đo lường lại trải nghiệm của các nhóm chưa được đại diện đầy đủ.",
+  "referenceAnswers": [
+   "Early data indicate that users value the service’s convenience. However, complaint-resolution times remain inconsistent, and older people are underrepresented in the survey. A defensible conclusion is to continue with controlled expansion while improving support and reassessing the experiences of groups not adequately represented."
+  ],
+  "grammarTags": [
+   "qualified_synthesis",
+   "weighed_conclusion",
+   "evidence_hierarchy",
+   "conditional_priority",
+   "challenge"
+  ],
+  "explanationVi": "Không bỏ luận điểm ban đầu khi diễn đạt ý phản biện. Không hoán đổi dữ liệu quan sát với hiệu quả thực tế.",
+  "rationaleVi": "Nêu điều kiện của kết luận, giả định và giới hạn của bằng chứng. Bài bổ sung từ bộ ESL v2 (R17-U05), chủ đề Tổng hợp luận điểm có thứ bậc.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "esl-v2",
+  "version": 1
+ },
+ {
+  "id": "esl-v2-r17-u05-008",
+  "practiceLevel": "8.5",
+  "type": "paragraph",
+  "topic": "Tổng hợp luận điểm có thứ bậc",
+  "promptVi": "Xét tổng thể, lợi ích của một chương trình có thể đủ lớn để tiếp tục triển khai ở phạm vi hạn chế. Tuy nhiên, việc mở rộng rộng rãi chỉ nên diễn ra khi chi phí dài hạn, tác động giữa các nhóm và chất lượng dữ liệu đều được đánh giá lại. Nếu các kết quả đó không đạt tiêu chí đặt trước, điều chỉnh chương trình sẽ hợp lý hơn là bảo vệ quyết định ban đầu bằng mọi giá.",
+  "referenceAnswers": [
+   "On balance, a programme’s benefits may be substantial enough to justify continued limited implementation. Wider expansion, however, should occur only after long-term costs, distributional effects and data quality have been reassessed. If those findings fail to meet predefined criteria, revising the programme is more reasonable than defending the original decision at any cost."
+  ],
+  "grammarTags": [
+   "qualified_synthesis",
+   "weighed_conclusion",
+   "evidence_hierarchy",
+   "conditional_priority",
+   "mastery"
+  ],
+  "explanationVi": "Giữ điều kiện cần: chỉ ... khi, không thay thành if thông thường. May/might/can tùy ngữ cảnh; không nâng thành will/must. Kiểm tra giả định hay điều kiện thực và thứ tự hai vế. Không bỏ luận điểm ban đầu khi diễn đạt ý phản biện.",
+  "rationaleVi": "Nêu điều kiện của kết luận, giả định và giới hạn của bằng chứng. Bài bổ sung từ bộ ESL v2 (R17-U05), chủ đề Tổng hợp luận điểm có thứ bậc.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "esl-v2",
+  "version": 1
+ }
+]

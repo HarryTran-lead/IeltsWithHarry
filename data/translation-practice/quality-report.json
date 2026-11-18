@@ -1,0 +1,2313 @@
+{
+  "status": "pilot_internal_review",
+  "totalPublished": 950,
+  "existingItems": 85,
+  "newAiAssistedItems": 865,
+  "targetPerLevel": {
+    "1.0": 40,
+    "1.5": 40,
+    "2.0": 40,
+    "2.5": 40,
+    "3.0": 50,
+    "3.5": 50,
+    "4.0": 50,
+    "4.5": 50,
+    "5.0": 60,
+    "5.5": 60,
+    "6.0": 60,
+    "6.5": 60,
+    "7.0": 70,
+    "7.5": 70,
+    "8.0": 70,
+    "8.5": 70,
+    "9.0": 70
+  },
+  "actualPerLevel": {
+    "1.0": 40,
+    "1.5": 40,
+    "2.0": 40,
+    "2.5": 40,
+    "3.0": 50,
+    "3.5": 50,
+    "4.0": 50,
+    "4.5": 50,
+    "5.0": 60,
+    "5.5": 60,
+    "6.0": 60,
+    "6.5": 60,
+    "7.0": 70,
+    "7.5": 70,
+    "8.0": 70,
+    "8.5": 70,
+    "9.0": 70
+  },
+  "automatedChecks": [
+    "required fields",
+    "exercise unit",
+    "sentence counts",
+    "target term in reference answer",
+    "unique Vietnamese prompts"
+  ],
+  "aiReview": {
+    "1.0": {
+      "reviewed": 35,
+      "revisionsApplied": 0,
+      "revisionsUnresolved": 0,
+      "revisions": [],
+      "secondPassRevisionsApplied": 0,
+      "secondPassRevisionsUnresolved": 0,
+      "secondPassRevisions": [],
+      "reviewMethod": "ai_review_with_manual_spot_checks"
+    },
+    "1.5": {
+      "reviewed": 35,
+      "revisionsApplied": 3,
+      "revisionsUnresolved": 0,
+      "revisions": [
+        {
+          "batch": 0,
+          "index": 12,
+          "reason": "Cập nhật từ mục tiêu thành 'a late afternoon' và nghĩa thành 'một buổi chiều muộn' để khớp chính xác với prompt và answer.",
+          "applied": true
+        },
+        {
+          "batch": 0,
+          "index": 13,
+          "reason": "Cập nhật từ mục tiêu thành 'a bad headache' và nghĩa thành 'một cơn đau đầu nặng' để đồng bộ hoàn toàn với prompt và answer.",
+          "applied": true
+        },
+        {
+          "batch": 0,
+          "index": 14,
+          "reason": "Cập nhật từ mục tiêu thành 'a high salary' và nghĩa thành 'một mức lương cao' để đảm bảo tính nhất quán giữa term, meaning, prompt và answer.",
+          "applied": true
+        }
+      ],
+      "secondPassRevisionsApplied": 0,
+      "secondPassRevisionsUnresolved": 0,
+      "secondPassRevisions": [],
+      "reviewMethod": "ai_review_with_manual_spot_checks"
+    },
+    "2.0": {
+      "reviewed": 35,
+      "revisionsApplied": 8,
+      "revisionsUnresolved": 0,
+      "revisions": [
+        {
+          "batch": 1,
+          "index": 10,
+          "reason": "Gán sai thẻ loại từ thành cụm giới từ (prepositional phrase); cấu trúc này có danh từ trung tâm 'café' nên phải là cụm danh từ (noun phrase).",
+          "applied": true
+        },
+        {
+          "batch": 0,
+          "index": 1,
+          "reason": "Thêm từ 'một' vào 'meaning' để đồng bộ chính xác tuyệt đối với 'prompt' và tương đương nghĩa với lượng từ 'a' trong câu trả lời.",
+          "applied": true
+        },
+        {
+          "batch": 0,
+          "index": 2,
+          "reason": "Thêm từ 'buổi' vào 'meaning' để khớp hoàn toàn với 'prompt' tiếng Việt.",
+          "applied": true
+        },
+        {
+          "batch": 0,
+          "index": 5,
+          "reason": "Điều chỉnh 'prompt' thành 'thư viện mới của trường' để khớp tự nhiên với 'meaning' và tránh gây hiểu lầm là 'trường học mới'.",
+          "applied": true
+        },
+        {
+          "batch": 0,
+          "index": 6,
+          "reason": "Thêm từ chỉ số nhiều 'những' vào 'meaning' để khớp hoàn toàn với 'prompt' và dạng danh từ số nhiều 'colleagues'.",
+          "applied": true
+        },
+        {
+          "batch": 0,
+          "index": 8,
+          "reason": "Điều chỉnh 'prompt' thành 'một khách sạn giá rẻ ở trung tâm' để khớp tự nhiên và chính xác với 'meaning'.",
+          "applied": true
+        },
+        {
+          "batch": 0,
+          "index": 9,
+          "reason": "Thêm loại từ 'chiếc' vào 'meaning' để đồng nhất hoàn toàn với 'prompt'.",
+          "applied": true
+        },
+        {
+          "batch": 0,
+          "index": 11,
+          "reason": "Thêm từ 'lá' vào 'meaning' thành 'màu xanh lá' để dịch chính xác từ 'green' và khớp chính xác với 'prompt'.",
+          "applied": true
+        }
+      ],
+      "secondPassRevisionsApplied": 0,
+      "secondPassRevisionsUnresolved": 0,
+      "secondPassRevisions": [],
+      "reviewMethod": "ai_review_with_manual_spot_checks"
+    },
+    "2.5": {
+      "reviewed": 35,
+      "revisionsApplied": 6,
+      "revisionsUnresolved": 0,
+      "revisions": [
+        {
+          "batch": 0,
+          "index": 1,
+          "reason": "Dịch 'on foot' thành 'bằng đường bộ' là gượng ép và sai nghĩa trong tiếng Việt. Đổi prompt 'đi học bằng đường bộ' thành 'đi bộ đến trường' cho tự nhiên và chuẩn xác.",
+          "applied": true
+        },
+        {
+          "batch": 0,
+          "index": 8,
+          "reason": "Từ 'nguồn' trong 'nguồn nước sạch' dư thừa nghĩa so với tiếng Anh 'clean water for everyone'. Bỏ từ 'nguồn' để câu tiếng Việt chính xác với đáp án.",
+          "applied": true
+        },
+        {
+          "batch": 1,
+          "index": 1,
+          "reason": "Câu tiếng Việt thiếu tính từ sở hữu 'của mình' để tương ứng hoàn toàn với 'her teacher' trong tiếng Anh.",
+          "applied": true
+        },
+        {
+          "batch": 1,
+          "index": 7,
+          "reason": "Chủ ngữ tiếng Việt 'Những người thợ làm vườn' xác định danh từ số nhiều, tiếng Anh cần mạo từ xác định 'The gardeners'.",
+          "applied": true
+        },
+        {
+          "batch": 1,
+          "index": 13,
+          "reason": "Đề bài tiếng Việt chứa 'những' tạo cảm giác xác định trong khi đáp án 'green trees' ở dạng chung không mạo từ; cần điều chỉnh câu gợi ý tiếng Việt cho tương đương hoàn toàn.",
+          "applied": true
+        },
+        {
+          "batch": 2,
+          "index": 3,
+          "reason": "Dùng từ 'tàu hỏa ngầm' không tự nhiên trong tiếng Việt; nên sửa thành 'tàu điện ngầm' để diễn đạt chính xác cụm 'take the underground'.",
+          "applied": true
+        }
+      ],
+      "secondPassRevisionsApplied": 0,
+      "secondPassRevisionsUnresolved": 0,
+      "secondPassRevisions": [],
+      "reviewMethod": "ai_review_with_manual_spot_checks"
+    },
+    "3.0": {
+      "reviewed": 45,
+      "revisionsApplied": 5,
+      "revisionsUnresolved": 0,
+      "revisions": [
+        {
+          "batch": 1,
+          "index": 0,
+          "reason": "Câu gợi ý tiếng Việt chứa từ 'rất ngon' nhưng câu tiếng Anh chỉ dùng 'delicious' (không có 'very'). Cần điều chỉnh câu tiếng Việt thành 'ngon' để đảm bảo tính tương đương chính xác về nghĩa.",
+          "applied": true
+        },
+        {
+          "batch": 1,
+          "index": 6,
+          "reason": "Cụm 'hệ thống đèn' tương đương với 'lighting system', không trùng khớp chính xác với 'the lights' (những chiếc đèn/đèn) trong câu tiếng Anh. Cần chỉnh câu tiếng Việt thành 'sửa đèn' để khớp nghĩa sát hơn.",
+          "applied": true
+        },
+        {
+          "batch": 0,
+          "index": 11,
+          "reason": "Điều chỉnh 'rau sạch' thành 'rau tươi' trong prompt để tương đương chính xác với tính từ 'fresh' trong câu tiếng Anh.",
+          "applied": true
+        },
+        {
+          "batch": 0,
+          "index": 14,
+          "reason": "Bổ sung 'a pair of' trong câu tiếng Anh để thể hiện đầy đủ lượng từ 'một chiếc' trong tiếng Việt đối với danh từ luôn ở dạng số nhiều như 'headphones'.",
+          "applied": true
+        },
+        {
+          "batch": 2,
+          "index": 1,
+          "reason": "Cụm tiếng Việt 'làm việc như một nhân viên lễ tân' là lỗi dịch gượng ép (calque) từ cấu trúc 'works as a receptionist'. Trong tiếng Việt tự nhiên, ta nói 'làm nhân viên lễ tân'.",
+          "applied": true
+        }
+      ],
+      "secondPassRevisionsApplied": 0,
+      "secondPassRevisionsUnresolved": 0,
+      "secondPassRevisions": [],
+      "reviewMethod": "ai_review_with_manual_spot_checks"
+    },
+    "3.5": {
+      "reviewed": 45,
+      "revisionsApplied": 8,
+      "revisionsUnresolved": 0,
+      "revisions": [
+        {
+          "batch": 0,
+          "index": 0,
+          "reason": "Phần giải thích không chính xác: câu trả lời sử dụng thì hiện tại tiếp diễn 'is going on holiday' để nói về kế hoạch tương lai chứ không sử dụng cấu trúc 'be going to'.",
+          "applied": true
+        },
+        {
+          "batch": 0,
+          "index": 11,
+          "reason": "Cụm 'join a trip abroad' là cách dịch thô từ tiếng Việt (calque); trong tiếng Anh Anh tự nhiên nên dùng 'go on a trip abroad'.",
+          "applied": true
+        },
+        {
+          "batch": 0,
+          "index": 12,
+          "reason": "Lỗi so sánh không tương xứng (illogical comparison) khi so sánh 'its camera' với 'my current one' (điện thoại); cần sửa thành 'better than the one on my current phone'.",
+          "applied": true
+        },
+        {
+          "batch": 1,
+          "index": 0,
+          "reason": "Cụm 'slower than by coach' bị thiếu vế động từ dạng V-ing để song song với 'Travelling by train', khiến câu thiếu tự nhiên.",
+          "applied": true
+        },
+        {
+          "batch": 1,
+          "index": 6,
+          "reason": "Cụm 'chooses to buy here' chưa chuẩn ngữ pháp tự nhiên trong tiếng Anh vì 'buy' cần tân ngữ. Cần bổ sung tân ngữ 'fruit' ở cả hai ngôn ngữ.",
+          "applied": true
+        },
+        {
+          "batch": 1,
+          "index": 9,
+          "reason": "Từ 'tiết kiệm điện hơn' trong câu gợi ý chưa khớp chính xác với nghĩa của thuật ngữ 'more efficient' (hiệu quả hơn).",
+          "applied": true
+        },
+        {
+          "batch": 1,
+          "index": 12,
+          "reason": "Câu tiếng Việt có cụm 'đường dài' nhưng câu tiếng Anh chỉ dùng 'coach' mà không có tính từ 'long-distance' tương ứng.",
+          "applied": true
+        },
+        {
+          "batch": 2,
+          "index": 4,
+          "reason": "Câu tiếng Anh thiếu thành tố dịch tương đương cho từ 'nhiên liệu' trong cụm 'xe chạy bằng nhiên liệu truyền thống' (traditional fuel vehicles).",
+          "applied": true
+        }
+      ],
+      "secondPassRevisionsApplied": 0,
+      "secondPassRevisionsUnresolved": 0,
+      "secondPassRevisions": [],
+      "reviewMethod": "ai_review_with_manual_spot_checks"
+    },
+    "4.0": {
+      "reviewed": 45,
+      "revisionsApplied": 10,
+      "revisionsUnresolved": 0,
+      "revisions": [
+        {
+          "batch": 1,
+          "index": 0,
+          "reason": "Từ 'kẻ gian' trong tiếng Việt nên được điều chỉnh thành 'hacker' hoặc 'kẻ tấn công mạng' để chuẩn xác và tương đương hoàn toàn với từ 'hackers' trong tiếng Anh.",
+          "applied": true
+        },
+        {
+          "batch": 1,
+          "index": 9,
+          "reason": "Cụm 'they easily suffer injuries' chưa tự nhiên trong tiếng Anh; bổ sung trợ động từ 'can' ('they can easily suffer injuries') để diễn đạt khả năng xảy ra hệ quả một cách tự nhiên hơn.",
+          "applied": true
+        },
+        {
+          "batch": 1,
+          "index": 13,
+          "reason": "Cụm 'instead of train' vi phạm ngữ pháp tiếng Anh (thiếu danh từ/động từ dạng V-ing chuẩn xác). Đổi thành 'instead of taking the train' và cập nhật prompt tiếng Việt tương ứng.",
+          "applied": true
+        },
+        {
+          "batch": 0,
+          "index": 10,
+          "reason": "Bổ sung từ 'địa phương' vào câu tiếng Việt để khớp chính xác với bổ ngữ 'local' trong cụm 'local residents' ở bản tiếng Anh.",
+          "applied": true
+        },
+        {
+          "batch": 0,
+          "index": 12,
+          "reason": "Viết hoa chữ cái đầu của tên chủ đề 'Đồ ăn' để đảm bảo chuẩn hóa dữ liệu đồng nhất trong toàn bộ tập bài tập.",
+          "applied": true
+        },
+        {
+          "batch": 0,
+          "index": 13,
+          "reason": "Sửa cấu trúc lặp liên từ chỉ nguyên nhân ('As... so...'), chuẩn hóa trạng từ 'more easily' chuẩn Anh-Anh thay cho dạng nói tự do 'easier', và viết hoa tên chủ đề 'Thể thao'.",
+          "applied": true
+        },
+        {
+          "batch": 0,
+          "index": 14,
+          "reason": "Viết hoa chữ cái đầu của tên chủ đề 'Môi trường' để đảm bảo chuẩn hóa dữ liệu đồng nhất trong toàn bộ tập bài tập.",
+          "applied": true
+        },
+        {
+          "batch": 2,
+          "index": 1,
+          "reason": "Mẫu câu tiếng Anh dùng 'research materials' (tài liệu nghiên cứu) nhưng câu tiếng Việt nguyên bản chỉ ghi 'tài liệu', gây lệch nghĩa chi tiết.",
+          "applied": true
+        },
+        {
+          "batch": 2,
+          "index": 6,
+          "reason": "Mẫu câu tiếng Anh dùng 'Skipping lunch' (Việc bỏ bữa trưa) nhưng tiếng Việt ghi 'Thói quen bỏ bữa trưa' (The habit of skipping lunch), bị dư thừa nét nghĩa.",
+          "applied": true
+        },
+        {
+          "batch": 2,
+          "index": 11,
+          "reason": "Dịch 'due to' thành 'nhờ vào' gây lẫn lộn sắc thái với 'thanks to'. Cần chỉnh 'nhờ vào' thành 'do / vì' để đảm bảo tính chính xác ngữ nghĩa.",
+          "applied": true
+        }
+      ],
+      "secondPassRevisionsApplied": 0,
+      "secondPassRevisionsUnresolved": 0,
+      "secondPassRevisions": [],
+      "reviewMethod": "ai_review_with_manual_spot_checks"
+    },
+    "4.5": {
+      "reviewed": 45,
+      "revisionsApplied": 5,
+      "revisionsUnresolved": 0,
+      "revisions": [
+        {
+          "batch": 1,
+          "index": 2,
+          "reason": "Câu tiếng Việt thiếu thành tố 'công việc' để tương đương hoàn toàn với cụm từ tiếng Anh 'work-life balance'.",
+          "applied": true
+        },
+        {
+          "batch": 1,
+          "index": 4,
+          "reason": "Cụm 'awareness campaigns' tương đương nghĩa chính xác hơn với 'các chiến dịch nâng cao nhận thức' thay vì 'những nỗ lực tuyên truyền'.",
+          "applied": true
+        },
+        {
+          "batch": 1,
+          "index": 6,
+          "reason": "Điều chỉnh 'người dân' thành 'người dân địa phương' cho khớp với 'local people' và sửa lỗi chèn từ tiếng Anh 'so with' trong phần giải thích.",
+          "applied": true
+        },
+        {
+          "batch": 0,
+          "index": 6,
+          "reason": "Sửa 'The city' thành 'This city' để phản ánh đúng nghĩa 'Thành phố này' trong câu tiếng Việt.",
+          "applied": true
+        },
+        {
+          "batch": 0,
+          "index": 14,
+          "reason": "Dịch thừa cụm 'to work' không có trong bản gốc 'Việc đi lại bằng xe đạp'. Bỏ 'to work' để đảm bảo tính tương đương chính xác.",
+          "applied": true
+        }
+      ],
+      "secondPassRevisionsApplied": 0,
+      "secondPassRevisionsUnresolved": 0,
+      "secondPassRevisions": [],
+      "reviewMethod": "ai_review_with_manual_spot_checks"
+    },
+    "5.0": {
+      "reviewed": 55,
+      "revisionsApplied": 7,
+      "revisionsUnresolved": 0,
+      "revisions": [
+        {
+          "batch": 0,
+          "index": 5,
+          "reason": "Diễn đạt 'save a significant amount of travel costs' chưa tự nhiên về mặt ngữ pháp do 'amount of' thường đi với danh từ không đếm được. Cần sửa thành 'save a significant amount of money on travel costs'.",
+          "applied": true
+        },
+        {
+          "batch": 1,
+          "index": 2,
+          "reason": "Cụm 'nhiều các' trong câu tiếng Việt diễn đạt không tự nhiên và mắc lỗi thừa từ, cần chỉnh thành 'nhiều thí nghiệm'.",
+          "applied": true
+        },
+        {
+          "batch": 1,
+          "index": 5,
+          "reason": "Lỗi kết hợp từ (collocation) trong tiếng Anh: danh từ 'cost' đi với tính từ 'high' thay vì 'expensive'.",
+          "applied": true
+        },
+        {
+          "batch": 3,
+          "index": 5,
+          "reason": "Cụm 'take photos without flash photography' bị lặp từ gượng gạo (calque). Đã sửa lại câu để diễn đạt tự nhiên hơn và thể hiện rõ cấu trúc nêu quan điểm kèm lý do cụ thể.",
+          "applied": true
+        },
+        {
+          "batch": 2,
+          "index": 6,
+          "reason": "Cụm 'save waiting time' là diễn đạt dịch thô (calque). Diễn đạt chuẩn tự nhiên trong tiếng Anh Anh là 'save time waiting'.",
+          "applied": true
+        },
+        {
+          "batch": 2,
+          "index": 9,
+          "reason": "Thuật ngữ 'trash' thuộc tiếng Anh - Mỹ. Theo quy định tiêu chuẩn tiếng Anh Anh (British English), cần sử dụng 'public litter bins' hoặc 'public rubbish bins'.",
+          "applied": true
+        },
+        {
+          "batch": 2,
+          "index": 13,
+          "reason": "Câu tiếng Việt bị lỗi lặp từ gượng ép ('nhiều các dự án nhóm hơn'). Cần sửa thành 'nhiều dự án nhóm hơn' cho tự nhiên và đúng chuẩn ngữ pháp.",
+          "applied": true
+        }
+      ],
+      "secondPassRevisionsApplied": 0,
+      "secondPassRevisionsUnresolved": 0,
+      "secondPassRevisions": [],
+      "reviewMethod": "ai_review_with_manual_spot_checks"
+    },
+    "5.5": {
+      "reviewed": 55,
+      "revisionsApplied": 12,
+      "revisionsUnresolved": 0,
+      "revisions": [
+        {
+          "batch": 1,
+          "index": 5,
+          "reason": "Dùng 'Subways' để chỉ tàu điện ngầm là biến thể Anh - Mỹ (trong Anh - Anh 'subway' chỉ đường hầm cho người đi bộ). Đổi thành 'Underground railways' để bảo đảm chuẩn tiếng Anh - Anh.",
+          "applied": true
+        },
+        {
+          "batch": 0,
+          "index": 3,
+          "reason": "Bổ sung 'địa phương' vào câu tiếng Việt để đảm bảo tính tương đương hoàn toàn với từ 'local authorities' trong câu tiếng Anh.",
+          "applied": true
+        },
+        {
+          "batch": 0,
+          "index": 10,
+          "reason": "Sửa lỗi ngữ pháp tiếng Việt ('các thể thao' -> 'các môn thể thao') và điều chỉnh kết hợp từ tiếng Anh chưa tự nhiên ('strict protective equipment' -> 'proper protective equipment').",
+          "applied": true
+        },
+        {
+          "batch": 2,
+          "index": 2,
+          "reason": "Cụm 'easily causes' là lỗi dịch thô (calque) từ 'dễ gây ra'; cần dùng 'can easily cause' để diễn tả khả năng/nguy cơ một cách tự nhiên trong tiếng Anh.",
+          "applied": true
+        },
+        {
+          "batch": 2,
+          "index": 3,
+          "reason": "Dùng 'dịch vụ này / this service' không chính xác về mặt danh từ chiếu lại cho 'khu nghỉ dưỡng sinh thái' (eco-resorts); sửa thành 'mô hình này / this model'.",
+          "applied": true
+        },
+        {
+          "batch": 2,
+          "index": 6,
+          "reason": "Sửa cụm dịch thô 'easily creates' thành 'can easily create' để diễn đạt tự nhiên khả năng xảy ra gánh nặng tài chính.",
+          "applied": true
+        },
+        {
+          "batch": 2,
+          "index": 7,
+          "reason": "Sửa lỗi dịch thô 'easily leads to' thành 'can easily lead to' để tự nhiên hơn trong văn phong chuẩn.",
+          "applied": true
+        },
+        {
+          "batch": 3,
+          "index": 2,
+          "reason": "Câu tiếng Anh thiếu từ 'skills' tương ứng với từ 'kỹ năng' trong câu tiếng Việt.",
+          "applied": true
+        },
+        {
+          "batch": 3,
+          "index": 4,
+          "reason": "Câu tiếng Anh tự ý thêm tính từ 'daily' làm thừa thông tin so với bản gốc tiếng Việt.",
+          "applied": true
+        },
+        {
+          "batch": 3,
+          "index": 5,
+          "reason": "Dịch không tương đương: 'giải pháp này' bị dịch thành 'this transition' (sự chuyển đổi này) thay vì 'this solution'.",
+          "applied": true
+        },
+        {
+          "batch": 3,
+          "index": 6,
+          "reason": "Dùng từ Anh-Mỹ 'caloric intake'; chuẩn Anh-Anh (British English) nên sử dụng 'calorie intake'.",
+          "applied": true
+        },
+        {
+          "batch": 3,
+          "index": 8,
+          "reason": "Dịch không chính xác ('du lịch địa phương' thành 'regional tourism') và cách diễn đạt chưa tự nhiên ('easily disrupts' nên thành 'can easily disrupt').",
+          "applied": true
+        }
+      ],
+      "secondPassRevisionsApplied": 0,
+      "secondPassRevisionsUnresolved": 0,
+      "secondPassRevisions": [],
+      "reviewMethod": "ai_review_with_manual_spot_checks"
+    },
+    "6.0": {
+      "reviewed": 55,
+      "revisionsApplied": 12,
+      "revisionsUnresolved": 0,
+      "revisions": [
+        {
+          "batch": 1,
+          "index": 3,
+          "reason": "Cụm 'artificial sugar' là cách dịch từ sang từ không tự nhiên trong tiếng Anh; thuật ngữ chuẩn xác cho 'chất/đường nhân tạo' là 'artificial sweeteners'.",
+          "applied": true
+        },
+        {
+          "batch": 1,
+          "index": 8,
+          "reason": "Cấu trúc 'Thanks to + V-ing' (Thanks to implementing...) thiếu tự nhiên trong văn viết học thuật; nên dùng danh từ hóa 'Thanks to the provision/rollout of...' để đảm bảo tính trang trọng.",
+          "applied": true
+        },
+        {
+          "batch": 0,
+          "index": 0,
+          "reason": "Từ nối 'Provided' mang nghĩa 'miễn là' (thường dùng cho điều kiện tích cực/mong muốn), không phù hợp về ngữ nghĩa và logic với mệnh đề nguyên nhân - hệ quả tiêu cực trong câu tiếng Việt 'Khi...'. Thay bằng 'When'.",
+          "applied": true
+        },
+        {
+          "batch": 0,
+          "index": 2,
+          "reason": "Tiếng Anh thừa trạng từ 'significantly' so với câu tiếng Việt gốc (không có từ 'đáng kể').",
+          "applied": true
+        },
+        {
+          "batch": 0,
+          "index": 3,
+          "reason": "Tiếng Anh tự ý thêm thông tin so sánh không có trong câu gốc ('far more effectively than building wider roads').",
+          "applied": true
+        },
+        {
+          "batch": 0,
+          "index": 5,
+          "reason": "Tiếng Anh bỏ sót tính từ 'mới' ('new') trong 'phương pháp giảng dạy mới' và dịch sai 'nghiên cứu' thành 'evidence' (bằng chứng) thay vì 'studies'.",
+          "applied": true
+        },
+        {
+          "batch": 0,
+          "index": 14,
+          "reason": "Động từ 'deteriorate' trong tiếng Anh chuẩn là nội động từ (intransitive verb), việc dùng ngoại động từ ('deteriorate air quality') là sai ngữ pháp. Đổi thuật ngữ target thành 'degrade air quality'.",
+          "applied": true
+        },
+        {
+          "batch": 2,
+          "index": 0,
+          "reason": "Câu tiếng Anh thiếu đối tượng 'authorities' (chính quyền) được nêu rõ trong câu tiếng Việt ('buộc chính quyền phải...').",
+          "applied": true
+        },
+        {
+          "batch": 2,
+          "index": 4,
+          "reason": "Động từ 'deteriorate' chủ yếu là nội động từ nên cách dùng ngoại động từ 'deteriorating family relationships' thiếu tự nhiên; dùng 'straining family relationships' sẽ sát nghĩa 'làm rạn nứt' và chuẩn ngữ pháp Anh-Anh hơn.",
+          "applied": true
+        },
+        {
+          "batch": 2,
+          "index": 13,
+          "reason": "Câu tiếng Anh tự ý thêm tính từ 'serious' (nghiêm trọng) trong khi câu tiếng Việt chỉ nêu 'trở ngại'.",
+          "applied": true
+        },
+        {
+          "batch": 3,
+          "index": 0,
+          "reason": "Bản dịch tiếng Anh tự ý thêm tính từ 'small' không có trong câu gốc tiếng Việt và bỏ sót từ 'khảo sát' (survey).",
+          "applied": true
+        },
+        {
+          "batch": 3,
+          "index": 8,
+          "reason": "Bản dịch tiếng Anh tự ý thêm thông tin 'small' (nhỏ) không xuất hiện trong câu tiếng Việt.",
+          "applied": true
+        }
+      ],
+      "secondPassRevisionsApplied": 0,
+      "secondPassRevisionsUnresolved": 0,
+      "secondPassRevisions": [],
+      "reviewMethod": "ai_review_with_manual_spot_checks"
+    },
+    "6.5": {
+      "reviewed": 55,
+      "revisionsApplied": 13,
+      "revisionsUnresolved": 0,
+      "revisions": [
+        {
+          "batch": 1,
+          "index": 2,
+          "reason": "Sửa 'underground railways' thành 'urban railways' để dịch chính xác 'đường sắt đô thị', tránh tự ý thêm nghĩa 'ngầm' (underground).",
+          "applied": true
+        },
+        {
+          "batch": 1,
+          "index": 4,
+          "reason": "Chuyển chính tả 'artifacts' (Mỹ) thành 'artefacts' để tuân thủ chuẩn tiếng Anh Anh (British English).",
+          "applied": true
+        },
+        {
+          "batch": 0,
+          "index": 1,
+          "reason": "Điều chỉnh prompt tiếng Việt từ 'người lao động thu nhập thấp' thành 'người đi làm thu nhập thấp' để khớp chính xác nghĩa với cụm từ 'lower-income commuters' trong câu tiếng Anh.",
+          "applied": true
+        },
+        {
+          "batch": 3,
+          "index": 1,
+          "reason": "Sửa 'immediate cash flow' thành 'short-term cash flow' để dịch chính xác cụm 'dòng tiền ngắn hạn' trong câu tiếng Việt, tránh lệch nghĩa về mặt thời gian.",
+          "applied": true
+        },
+        {
+          "batch": 3,
+          "index": 2,
+          "reason": "Sửa 'limit wider uptake' thành 'pose a barrier to widespread adoption' để tương đương hoàn toàn với hình ảnh 'làm rào cản cho việc áp dụng rộng rãi' ở bản tiếng Việt.",
+          "applied": true
+        },
+        {
+          "batch": 2,
+          "index": 0,
+          "reason": "Từ 'local' (địa phương) bị thêm vào bản dịch tiếng Anh khiến câu không tương đương hoàn toàn với nguyên bản tiếng Việt.",
+          "applied": true
+        },
+        {
+          "batch": 2,
+          "index": 1,
+          "reason": "Dùng 'staff' không chính xác bằng 'workers' để dịch 'người lao động' trong ngữ cảnh diện rộng, đồng thời gây lặp từ bất nhiên với 'worker reskilling'.",
+          "applied": true
+        },
+        {
+          "batch": 2,
+          "index": 2,
+          "reason": "Từ 'certain' bị tự ý thêm vào bản tiếng Anh làm hẹp phạm vi nghĩa so với câu tiếng Việt gốc.",
+          "applied": true
+        },
+        {
+          "batch": 2,
+          "index": 3,
+          "reason": "Dùng 'effectively' không sát nghĩa với 'đáng kể' (significantly), và 'shifting traffic congestion' làm sai lệch ý 'làm gia tăng áp lực giao thông'.",
+          "applied": true
+        },
+        {
+          "batch": 2,
+          "index": 4,
+          "reason": "Dùng 'public fitness' (thể lực công cộng) không đúng nghĩa với 'sức khỏe cộng đồng' (public health).",
+          "applied": true
+        },
+        {
+          "batch": 2,
+          "index": 5,
+          "reason": "Cụm 'statutory paternity leave is legally mandated' mắc lỗi lặp từ dư thừa nghĩa (statutory = theo luật định, legally mandated = được luật hóa bắt buộc).",
+          "applied": true
+        },
+        {
+          "batch": 2,
+          "index": 12,
+          "reason": "Lặp từ gượng gạo ('commuter railways... commuter delays'). Dùng 'passenger delays' sẽ tự nhiên và phản ánh chính xác 'chậm chuyến của hành khách'.",
+          "applied": true
+        },
+        {
+          "batch": 2,
+          "index": 14,
+          "reason": "Cụm 'off-grid solar energy grids' mâu thuẫn logic ('off-grid' nghĩa là không nối lưới điện nhưng lại đi với 'grids'). Nên sửa thành 'off-grid solar systems'.",
+          "applied": true
+        }
+      ],
+      "secondPassRevisionsApplied": 0,
+      "secondPassRevisionsUnresolved": 0,
+      "secondPassRevisions": [],
+      "reviewMethod": "ai_review_with_manual_spot_checks"
+    },
+    "7.0": {
+      "reviewed": 65,
+      "revisionsApplied": 61,
+      "revisionsUnresolved": 0,
+      "revisions": [
+        {
+          "batch": 1,
+          "index": 0,
+          "reason": "Thay thế địa danh cụ thể (Leeds) bằng cụm từ khái quát để tránh khẳng định sự thật chưa có nguồn dẫn chứng.",
+          "applied": true
+        },
+        {
+          "batch": 1,
+          "index": 1,
+          "reason": "Thay thế địa danh cụ thể (Bristol) bằng từ ngữ khái quát và chuẩn hóa chính tả Anh-Anh (maximise).",
+          "applied": true
+        },
+        {
+          "batch": 1,
+          "index": 2,
+          "reason": "Thay địa danh cụ thể (York) bằng cụm từ khái quát để tuân thủ quy tắc tránh đưa ra sự kiện chưa kiểm chứng.",
+          "applied": true
+        },
+        {
+          "batch": 1,
+          "index": 3,
+          "reason": "Bỏ địa danh cụ thể (Sheffield) và số liệu tự tạo (một phần ba / by a third), đổi thành ví dụ khái quát và bổ sung định lượng mô tả phù hợp.",
+          "applied": true
+        },
+        {
+          "batch": 1,
+          "index": 4,
+          "reason": "Bỏ tên địa danh/ngôn ngữ cụ thể (Scotland, Gaelic) và khắc phục sự bất tương đương giữa 'ngôn ngữ' (language) và 'dialect'.",
+          "applied": true
+        },
+        {
+          "batch": 1,
+          "index": 5,
+          "reason": "Thay địa danh cụ thể (Cambridge) thành ví dụ khái quát (Một số thành phố / Several cities).",
+          "applied": true
+        },
+        {
+          "batch": 1,
+          "index": 6,
+          "reason": "Thay địa danh cụ thể (Wales) thành ví dụ khái quát (Tại một số cộng đồng có thu nhập thấp / In certain low-income communities).",
+          "applied": true
+        },
+        {
+          "batch": 0,
+          "index": 0,
+          "reason": "Sửa lỗi thiếu chi tiết về thuế ('taxes or') trong câu tiếng Anh, chuyển ví dụ cụ thể về Scotland thành ví dụ giả định/tổng quát để tránh khẳng định thực tế không dẫn nguồn, và chỉnh câu kết tiếng Anh tương xứng chính xác với tiếng Việt ('avoid straining public finances').",
+          "applied": true
+        },
+        {
+          "batch": 0,
+          "index": 1,
+          "reason": "Sửa calque gượng gạo 'khách truy cập' thành 'lượt khách tham quan', chuyển tên riêng 'phố cổ Hội An' thành ví dụ tổng quát, loại bỏ các từ thêm thắt không có trong bản tiếng Việt ('often', 'inevitably', 'Sustainable').",
+          "applied": true
+        },
+        {
+          "batch": 0,
+          "index": 2,
+          "reason": "Chuyển ví dụ chính sách tại Vương quốc Anh thành ví dụ tổng quát theo quy tắc kiểm chứng thông tin, loại bỏ từ 'Long-term' trong bản tiếng Anh để khớp đúng ngữ nghĩa với câu tiếng Việt.",
+          "applied": true
+        },
+        {
+          "batch": 0,
+          "index": 3,
+          "reason": "Chuyển ví dụ thực tế về khu vực ULEZ tại London thành ví dụ tổng quát, chỉnh sửa từ dịch tiếng Anh ('helps reduce') để khớp chính xác với độ giảm nhẹ của tiếng Việt ('giúp giảm thiểu').",
+          "applied": true
+        },
+        {
+          "batch": 0,
+          "index": 4,
+          "reason": "Loại bỏ thông tin cuộc khảo sát tại Manchester chưa qua kiểm chứng, điều chỉnh từ ngữ tiếng Anh để khớp chính xác ngữ khí và từ vựng của tiếng Việt (bỏ 'mandatory', 'junior', 'often report').",
+          "applied": true
+        },
+        {
+          "batch": 0,
+          "index": 5,
+          "reason": "Chuyển ví dụ mô hình tại Đức thành ví dụ tổng quát, loại bỏ tính từ 'deep-seated' bị thêm vào và sửa 'competitive' thành 'commensurate' để tương ứng chuẩn xác với 'khung đãi ngộ tương xứng'.",
+          "applied": true
+        },
+        {
+          "batch": 0,
+          "index": 6,
+          "reason": "Chuyển địa danh Birmingham thành ví dụ tổng quát, loại bỏ trạng từ 'strictly' bị tự ý thêm vào bản tiếng Anh để đảm bảo hai ngôn ngữ dịch đối ứng 1:1.",
+          "applied": true
+        },
+        {
+          "batch": 2,
+          "index": 0,
+          "reason": "Thay thế địa danh cụ thể Newcastle và thông tin tự thêm 'Victorian', 'carbon' bằng ví dụ tổng quát/giả định theo quy tắc biên tập, đồng thời giữ nguyên thuật ngữ mục tiêu.",
+          "applied": true
+        },
+        {
+          "batch": 2,
+          "index": 1,
+          "reason": "Chuyển tên địa danh Cornwall/Cornish coast thành cụm chỉ vị trí chung để tránh đưa ra thông tin sự kiện chưa xác minh tại địa điểm cụ thể.",
+          "applied": true
+        },
+        {
+          "batch": 2,
+          "index": 2,
+          "reason": "Chuyển địa danh Birmingham thành địa danh tổng quát và chuẩn hóa viết hoa tên chủ đề 'Sức khỏe'.",
+          "applied": true
+        },
+        {
+          "batch": 2,
+          "index": 3,
+          "reason": "Chuyển tên địa danh Norwich thành mô tả tổng quát và chuẩn hóa viết hoa tên chủ đề 'Kinh tế'.",
+          "applied": true
+        },
+        {
+          "batch": 2,
+          "index": 4,
+          "reason": "Chuyển tên địa danh Cornwall/Cornish coast thành cụm địa danh chung và viết hoa tên chủ đề 'Du lịch'.",
+          "applied": true
+        },
+        {
+          "batch": 2,
+          "index": 5,
+          "reason": "Chuyển địa danh Manchester thành mô tả chung 'đô thị đông dân' và chuẩn hóa chữ cái đầu của tên chủ đề 'Thời gian'.",
+          "applied": true
+        },
+        {
+          "batch": 2,
+          "index": 6,
+          "reason": "Chuyển địa danh Glasgow thành mô tả đô thị chung và viết hoa chữ cái đầu tên chủ đề 'Văn hóa'.",
+          "applied": true
+        },
+        {
+          "batch": 3,
+          "index": 0,
+          "reason": "Thay thế địa điểm cụ thể 'Oxford' bằng hình thức tổng quát để tránh đưa ra tuyên bố thực tế không có nguồn trích dẫn.",
+          "applied": true
+        },
+        {
+          "batch": 3,
+          "index": 1,
+          "reason": "Loại bỏ địa danh cụ thể 'Edinburgh' và số liệu giả định 'tám mươi phần trăm' để bảo đảm tính tổng quát và chính xác.",
+          "applied": true
+        },
+        {
+          "batch": 3,
+          "index": 2,
+          "reason": "Thay thế địa danh cụ thể 'Wales' thành dạng tổng quát để tuân thủ quy định về dẫn chứng thực tế.",
+          "applied": true
+        },
+        {
+          "batch": 3,
+          "index": 3,
+          "reason": "Thay thế địa danh cụ thể 'Nottingham' bằng cụm từ tổng quát.",
+          "applied": true
+        },
+        {
+          "batch": 3,
+          "index": 4,
+          "reason": "Loại bỏ tên địa danh cụ thể 'Liverpool' để tránh lập luận thực tế không có nguồn trích dẫn.",
+          "applied": true
+        },
+        {
+          "batch": 3,
+          "index": 5,
+          "reason": "Loại bỏ địa danh 'Leeds' và số liệu ước tính 'một nửa / halved' để tránh đưa ra khẳng định thực tế giả định.",
+          "applied": true
+        },
+        {
+          "batch": 3,
+          "index": 6,
+          "reason": "Loại bỏ địa danh cụ thể 'Devon' để làm cho ví dụ mang tính tổng quát.",
+          "applied": true
+        },
+        {
+          "batch": 4,
+          "index": 0,
+          "reason": "Loại bỏ địa danh cụ thể (Bristol) chưa có nguồn trích dẫn thành ví dụ chung theo quy định.",
+          "applied": true
+        },
+        {
+          "batch": 4,
+          "index": 1,
+          "reason": "Loại bỏ địa danh cụ thể (Bath) chưa có nguồn trích dẫn thành ví dụ chung theo quy định.",
+          "applied": true
+        },
+        {
+          "batch": 4,
+          "index": 2,
+          "reason": "Loại bỏ địa danh cụ thể (Sheffield) chưa có nguồn trích dẫn thành ví dụ chung theo quy định.",
+          "applied": true
+        },
+        {
+          "batch": 4,
+          "index": 3,
+          "reason": "Loại bỏ địa danh cụ thể (Newcastle) chưa có nguồn trích dẫn thành ví dụ chung theo quy định.",
+          "applied": true
+        },
+        {
+          "batch": 4,
+          "index": 4,
+          "reason": "Loại bỏ địa danh cụ thể (London) chưa có nguồn trích dẫn thành ví dụ chung theo quy định.",
+          "applied": true
+        },
+        {
+          "batch": 4,
+          "index": 5,
+          "reason": "Loại bỏ địa danh cụ thể (Surrey) chưa có nguồn trích dẫn thành ví dụ chung theo quy định.",
+          "applied": true
+        },
+        {
+          "batch": 4,
+          "index": 6,
+          "reason": "Loại bỏ địa danh cụ thể (Leicester) chưa có nguồn trích dẫn thành ví dụ chung theo quy định.",
+          "applied": true
+        },
+        {
+          "batch": 5,
+          "index": 2,
+          "reason": "Bản tiếng Anh bỏ sót cụm 'lợi nhuận đột biến' (windfall profits) từ bản tiếng Việt, tự ý thêm từ 'Targeted', đồng thời dịch sai 'nhà đầu tư doanh nghiệp quốc tế' thành 'corporate investment' (khoản đầu tư) và 'mức thuế' thành 'tax brackets'.",
+          "applied": true
+        },
+        {
+          "batch": 5,
+          "index": 3,
+          "reason": "Bản tiếng Anh tự ý thêm tính từ 'ingrained' không có trong bản tiếng Việt, dịch 'vợ và chồng' thành 'partners' (bạn đời) chưa sát nghĩa, và dịch sai 'cam kết' thành 'endorsements' (sự ủng hộ).",
+          "applied": true
+        },
+        {
+          "batch": 5,
+          "index": 5,
+          "reason": "Bản tiếng Anh tự ý thêm từ 'marked' (rõ rệt) và từ 'regional' (cấp khu vực) mà bản gốc tiếng Việt không có.",
+          "applied": true
+        },
+        {
+          "batch": 6,
+          "index": 0,
+          "reason": "Chuyển địa danh cụ thể (Manchester) không kèm nguồn dẫn thành ví dụ tổng quát/giả định theo đúng quy định biên tập.",
+          "applied": true
+        },
+        {
+          "batch": 6,
+          "index": 1,
+          "reason": "Chuyển địa danh cụ thể (York) không kèm nguồn dẫn thành ví dụ tổng quát/giả định theo đúng quy định biên tập.",
+          "applied": true
+        },
+        {
+          "batch": 6,
+          "index": 2,
+          "reason": "Chuyển địa danh cụ thể (Leeds) không kèm nguồn dẫn thành ví dụ giả định/tổng quát theo đúng quy định biên tập.",
+          "applied": true
+        },
+        {
+          "batch": 6,
+          "index": 3,
+          "reason": "Chuyển địa danh cụ thể (Bradford) không kèm nguồn dẫn thành ví dụ giả định/tổng quát theo đúng quy định biên tập.",
+          "applied": true
+        },
+        {
+          "batch": 6,
+          "index": 4,
+          "reason": "Chuyển địa danh cụ thể (Bristol) không kèm nguồn dẫn thành ví dụ giả định/tổng quát theo đúng quy định biên tập.",
+          "applied": true
+        },
+        {
+          "batch": 6,
+          "index": 5,
+          "reason": "Chuyển địa danh cụ thể (Leicester) không kèm nguồn dẫn thành ví dụ giả định/tổng quát theo đúng quy định biên tập.",
+          "applied": true
+        },
+        {
+          "batch": 6,
+          "index": 6,
+          "reason": "Chuyển địa danh cụ thể (Newcastle) không kèm nguồn dẫn thành ví dụ giả định/tổng quát và chuẩn hóa tag nhất quán.",
+          "applied": true
+        },
+        {
+          "batch": 7,
+          "index": 0,
+          "reason": "Sửa sự lệch nghĩa giữa 'Các dự án tái thiết' với 'Rebuilding', và bổ sung từ 'đáng kể' trong câu tiếng Việt để đáp ứng chính xác phó từ 'significantly' ở câu tiếng Anh.",
+          "applied": true
+        },
+        {
+          "batch": 7,
+          "index": 1,
+          "reason": "Điều chỉnh 'higher engagement' thành 'greater initiative' để dịch chính xác cụm 'mức độ chủ động cao hơn' trong bản tiếng Việt.",
+          "applied": true
+        },
+        {
+          "batch": 7,
+          "index": 2,
+          "reason": "Sửa cụm từ 'Mô hình nền kinh tế tuần hoàn' thành 'Chuyển đổi sang nền kinh tế tuần hoàn' để duy trì sự tương đương chính xác với 'Transitioning towards a circular economy'.",
+          "applied": true
+        },
+        {
+          "batch": 7,
+          "index": 3,
+          "reason": "Thêm phó từ 'completely' ở câu tiếng Anh để phản ánh chính xác mức độ từ 'hoàn toàn' trong câu tiếng Việt.",
+          "applied": true
+        },
+        {
+          "batch": 7,
+          "index": 4,
+          "reason": "Thay dịch diễn đạt 'Những buổi xưởng' bằng từ tự nhiên hơn 'Các hội thảo' trong tiếng Việt để tránh lối diễn đạt dịch thô.",
+          "applied": true
+        },
+        {
+          "batch": 7,
+          "index": 5,
+          "reason": "Bổ sung cụm từ 'theo lộ trình' ở câu tiếng Việt nhằm giữ nghĩa cân bằng tuyệt đối với tính từ 'gradual' trong tiếng Anh.",
+          "applied": true
+        },
+        {
+          "batch": 7,
+          "index": 6,
+          "reason": "Bổ sung tính từ 'bản địa' vào bản tiếng Việt để tương đương chính xác với 'native wildlife' ở bản tiếng Anh.",
+          "applied": true
+        },
+        {
+          "batch": 9,
+          "index": 0,
+          "reason": "Thay thế địa danh cụ thể 'Newcastle' bằng hình thức tổng quát để tránh đưa ra khẳng định thực tế chưa có nguồn trích dẫn theo đúng yêu cầu biên tập.",
+          "applied": true
+        },
+        {
+          "batch": 9,
+          "index": 1,
+          "reason": "Thay thế địa danh cụ thể 'Sunderland' bằng ví dụ tổng quát để tránh đưa ra thông tin sự kiện chưa được xác minh.",
+          "applied": true
+        },
+        {
+          "batch": 8,
+          "index": 0,
+          "reason": "Sửa ví dụ thực tế tại Leeds/Wales thành ví dụ tổng quát để tránh khẳng định thực tế không nguồn; loại bỏ từ 'talented' bị thêm thừa ở câu đầu bản tiếng Anh.",
+          "applied": true
+        },
+        {
+          "batch": 8,
+          "index": 1,
+          "reason": "Chuyển địa danh Yorkshire thành ví dụ tổng quát; bỏ các từ dịch thừa không có trong tiếng Việt ('recent', 'low-income') trong bản tiếng Anh.",
+          "applied": true
+        },
+        {
+          "batch": 8,
+          "index": 2,
+          "reason": "Chuyển địa danh Manchester thành ví dụ tổng quát; loại bỏ vế phát biểu tự thêm 'who must prioritise sheer affordability' trong tiếng Anh.",
+          "applied": true
+        },
+        {
+          "batch": 8,
+          "index": 3,
+          "reason": "Chuyển địa danh Sheffield thành ví dụ tổng quát; bỏ từ phóng đại 'vast' và cụm từ thêm thừa 'at technical colleges' trong tiếng Anh.",
+          "applied": true
+        },
+        {
+          "batch": 8,
+          "index": 4,
+          "reason": "Thay thế địa danh Edinburgh bằng ví dụ giả định/tổng quát để tránh đưa ra khẳng định thực tế không có nguồn.",
+          "applied": true
+        },
+        {
+          "batch": 8,
+          "index": 5,
+          "reason": "Chuyển địa danh khảo sát Bristol thành ví dụ tổng quát để tránh đưa ra khẳng định thực tế không nguồn.",
+          "applied": true
+        },
+        {
+          "batch": 8,
+          "index": 6,
+          "reason": "Chuyển địa danh Birmingham thành ví dụ tổng quát; loại bỏ các từ tự thêm trong tiếng Anh ('directly', 'across income brackets').",
+          "applied": true
+        }
+      ],
+      "secondPassRevisionsApplied": 63,
+      "secondPassRevisionsUnresolved": 0,
+      "secondPassRevisions": [
+        {
+          "batch": 0,
+          "index": 0,
+          "reason": "Sửa ví dụ thực tế mơ hồ về các trang trại điện gió thành trường hợp giả định ở cả hai ngôn ngữ theo quy định.",
+          "applied": true
+        },
+        {
+          "batch": 0,
+          "index": 1,
+          "reason": "Chuyển ví dụ về việc thu phí ở các đô thị di sản từ khẳng định thực tế mơ hồ sang tình huống giả định.",
+          "applied": true
+        },
+        {
+          "batch": 0,
+          "index": 2,
+          "reason": "Sửa lỗi chính tả tiếng Việt ('đối me' -> 'đối với') và chuyển ví dụ về chính sách thuế nước giải khát ở các quốc gia sang dạng giả định.",
+          "applied": true
+        },
+        {
+          "batch": 0,
+          "index": 3,
+          "reason": "Chuyển ví dụ về việc triển khai khu vực phát thải thấp tại một số đô thị thành tình huống giả định.",
+          "applied": true
+        },
+        {
+          "batch": 0,
+          "index": 4,
+          "reason": "Thay thế thông tin khảo sát mơ hồ tại các công ty công nghệ bằng ví dụ giả định cụ thể.",
+          "applied": true
+        },
+        {
+          "batch": 1,
+          "index": 1,
+          "reason": "Chuyển ví dụ thực tế chưa kiểm chứng ('tại một số đô thị đã giúp hàng nghìn gia đình...') thành câu giả định dùng 'Ví dụ, nếu...' và 'For example, if...' để tránh đưa thông tin thiếu xác minh.",
+          "applied": true
+        },
+        {
+          "batch": 1,
+          "index": 2,
+          "reason": "Chuyển ví dụ thực tế chưa kiểm chứng ('tại một số đô thị đã thu hút...') thành câu giả định dùng 'Ví dụ, nếu...' và 'For example, if...' theo quy định.",
+          "applied": true
+        },
+        {
+          "batch": 1,
+          "index": 3,
+          "reason": "Chuyển thông tin chưa kiểm chứng về siêu thị ở 'một số thành phố' đã làm giảm tiêu thụ thành trường hợp giả định với 'Ví dụ, nếu...' và 'For example, if...'.",
+          "applied": true
+        },
+        {
+          "batch": 3,
+          "index": 0,
+          "reason": "Sửa lỗi chính tả tiếng Việt ('so me' -> 'so với') và diễn đạt lại ví dụ thực tế chưa kiểm chứng thành tình huống giả định ('Ví dụ, nếu...' / 'For example, if...').",
+          "applied": true
+        },
+        {
+          "batch": 3,
+          "index": 1,
+          "reason": "Diễn đạt lại ví dụ thực tế chưa kiểm chứng về dạng giả định ('Ví dụ, nếu...' / 'For example, if...').",
+          "applied": true
+        },
+        {
+          "batch": 3,
+          "index": 2,
+          "reason": "Chuyển ví dụ thực tế chưa qua kiểm chứng thành câu điều kiện giả định ('Ví dụ, nếu...' / 'For example, if...').",
+          "applied": true
+        },
+        {
+          "batch": 3,
+          "index": 3,
+          "reason": "Diễn đạt lại ví dụ thực tế chưa kiểm chứng thành câu giả định ('Ví dụ, nếu...' / 'For example, if...').",
+          "applied": true
+        },
+        {
+          "batch": 3,
+          "index": 4,
+          "reason": "Chuyển kết quả thử nghiệm chưa qua kiểm chứng về dạng tình huống giả định ('Ví dụ, nếu...' / 'For example, if...').",
+          "applied": true
+        },
+        {
+          "batch": 2,
+          "index": 0,
+          "reason": "Chuyển ví dụ kết quả thực tế chưa qua kiểm chứng ('Tại một số đô thị...') sang câu giả định ('Ví dụ, nếu...') ở cả hai ngôn ngữ.",
+          "applied": true
+        },
+        {
+          "batch": 2,
+          "index": 1,
+          "reason": "Chuyển ví dụ thực tế chưa qua kiểm chứng ('Việc số hóa... tại một số vùng đã giúp...') sang trường hợp giả định ('Ví dụ, nếu...') ở cả hai ngôn ngữ.",
+          "applied": true
+        },
+        {
+          "batch": 2,
+          "index": 2,
+          "reason": "Chuyển ví dụ thực tế chưa kiểm chứng ('Một số thành phố đã nhận thấy...') thành ví dụ giả định ('Ví dụ, nếu...') ở cả hai ngôn ngữ.",
+          "applied": true
+        },
+        {
+          "batch": 2,
+          "index": 3,
+          "reason": "Sửa lỗi dịch thuật ngữ Tiếng Việt ('tín dụng tiểu mô' -> 'tín dụng vi mô') và chuyển ví dụ thực tế chưa kiểm chứng ('Tại một số cộng đồng...') thành ví dụ giả định ('Ví dụ, nếu...').",
+          "applied": true
+        },
+        {
+          "batch": 2,
+          "index": 4,
+          "reason": "Chuyển ví dụ thử nghiệm thực tế mơ hồ ('Một chương trình thử nghiệm tại một thành phố lớn đã giúp...') thành ví dụ giả định ('Ví dụ, nếu...') ở cả hai ngôn ngữ.",
+          "applied": true
+        },
+        {
+          "batch": 5,
+          "index": 0,
+          "reason": "Câu 2 chứa thông tin thực tế chưa kiểm chứng về mức giảm tiêu thụ nhiên liệu tại các thành phố công nghiệp. Cần chuyển thành ví dụ giả định (Ví dụ, nếu... / For example, if...).",
+          "applied": true
+        },
+        {
+          "batch": 5,
+          "index": 1,
+          "reason": "Câu 2 đưa ra khẳng định kết quả thực tế chưa được xác minh của một công ty bán lẻ. Cần chuyển thành ví dụ giả định (Ví dụ, nếu... / For example, if...).",
+          "applied": true
+        },
+        {
+          "batch": 5,
+          "index": 2,
+          "reason": "Câu 2 đưa ra dữ liệu thực tế chưa kiểm chứng về tỷ lệ thất nghiệp tại các thị trấn du lịch ven biển. Cần recast thành tình huống giả định (Ví dụ, nếu... / For example, if...).",
+          "applied": true
+        },
+        {
+          "batch": 5,
+          "index": 3,
+          "reason": "Câu 2 đưa ra kết quả thử nghiệm thực tế chưa kiểm chứng tại các văn phòng. Cần chuyển thành trường hợp giả định (Ví dụ, nếu... / For example, if...).",
+          "applied": true
+        },
+        {
+          "batch": 5,
+          "index": 4,
+          "reason": "Câu 2 chứa khẳng định thực tế chưa kiểm chứng về hành vi người đi làm; từ 'utilizing' trong bản dịch tiếng Anh cần dùng chuẩn Anh-Anh ('utilising'). Cần sửa câu 2 thành ví dụ giả định (Ví dụ, nếu... / For example, if...).",
+          "applied": true
+        },
+        {
+          "batch": 4,
+          "index": 0,
+          "reason": "Chuyển ví dụ thực tế chưa kiểm chứng tại thành phố lớn thành tình huống giả định và chỉnh sửa chính tả Anh-Anh (community centres, theatres).",
+          "applied": true
+        },
+        {
+          "batch": 4,
+          "index": 1,
+          "reason": "Chuyển minh chứng về dự án nghiên cứu cụ thể thành trường hợp giả định để tránh đưa thông tin thực tế chưa qua kiểm chứng.",
+          "applied": true
+        },
+        {
+          "batch": 4,
+          "index": 2,
+          "reason": "Tái lập luận ví dụ thành phố thí điểm thành tình huống giả định để chuẩn hóa lập luận học thuật.",
+          "applied": true
+        },
+        {
+          "batch": 4,
+          "index": 3,
+          "reason": "Chuyển nhận định số liệu thực tế chưa xác minh thành câu giả định bilingual.",
+          "applied": true
+        },
+        {
+          "batch": 4,
+          "index": 4,
+          "reason": "Chuyển dẫn chứng khu vực ngoại ô thực tế thành giả định và sửa lỗi chính tả Anh-Anh (maximise).",
+          "applied": true
+        },
+        {
+          "batch": 7,
+          "index": 0,
+          "reason": "Ví dụ về Stonehenge đưa ra thông tin thực tế/kết quả chưa qua kiểm chứng như một sự thật khách quan; cần chuyển thành giả định theo quy định.",
+          "applied": true
+        },
+        {
+          "batch": 7,
+          "index": 1,
+          "reason": "Dẫn chứng về công trình nghiên cứu 10 năm tại bờ biển Solent mang tính khẳng định thực tế chưa xác minh; cần recast thành ví dụ giả định.",
+          "applied": true
+        },
+        {
+          "batch": 7,
+          "index": 2,
+          "reason": "Dẫn chứng về việc thu thuế từ các tập đoàn năng lượng tại Tây Bắc nước Anh đưa ra thông tin thực tế chưa kiểm chứng; cần chuyển thành câu giả định.",
+          "applied": true
+        },
+        {
+          "batch": 7,
+          "index": 3,
+          "reason": "Phát biểu chung về các doanh nghiệp tại Leeds ghi nhận sự gia tăng gắn kết của người bố là ví dụ thực tế chưa kiểm chứng; cần viết lại dưới dạng giả định.",
+          "applied": true
+        },
+        {
+          "batch": 7,
+          "index": 4,
+          "reason": "Thông tin về một số trường tại Bristol triển khai và ghi nhận kết quả là tuyên bố thực tế mơ hồ; cần recast thành câu giả định.",
+          "applied": true
+        },
+        {
+          "batch": 6,
+          "index": 0,
+          "reason": "Ví dụ ở câu 2 mang tính khẳng định sự kiện thực tế chưa được xác minh; cần chuyển thành ví dụ giả định theo yêu cầu.",
+          "applied": true
+        },
+        {
+          "batch": 6,
+          "index": 1,
+          "reason": "Ví dụ ở câu 2 đưa ra kết quả thực tế chưa được kiểm chứng của một số trường học; cần chuyển thành ví dụ giả định.",
+          "applied": true
+        },
+        {
+          "batch": 6,
+          "index": 2,
+          "reason": "Ví dụ ở câu 2 khẳng định kết quả thực tế của chuỗi nhà hàng chưa được kiểm chứng; cần chuyển thành ví dụ giả định.",
+          "applied": true
+        },
+        {
+          "batch": 6,
+          "index": 3,
+          "reason": "Ví dụ ở câu 2 khẳng định kết quả thực tế tại ngoại ô chưa xác minh; cần chuyển thành câu giả định.",
+          "applied": true
+        },
+        {
+          "batch": 6,
+          "index": 4,
+          "reason": "Ví dụ ở câu 2 dẫn chứng kết quả thử nghiệm thực tế chưa được kiểm chứng; cần chuyển thành ví dụ giả định.",
+          "applied": true
+        },
+        {
+          "batch": 8,
+          "index": 0,
+          "reason": "Dẫn chứng thực tế tại Liverpool chứa thông tin kết quả chưa kiểm chứng; cần diễn đạt thành ví dụ giả định ở cả hai ngôn ngữ.",
+          "applied": true
+        },
+        {
+          "batch": 8,
+          "index": 1,
+          "reason": "Dẫn chứng tại Birmingham đưa ra sự kiện và kết quả thực tế chưa kiểm chứng; cần chuyển thành ví dụ giả định.",
+          "applied": true
+        },
+        {
+          "batch": 8,
+          "index": 2,
+          "reason": "Ví dụ về chính quyền địa phương đưa ra kết quả thực tế mơ hồ chưa kiểm chứng; cần diễn đạt theo dạng giả định.",
+          "applied": true
+        },
+        {
+          "batch": 8,
+          "index": 3,
+          "reason": "Ví dụ về đô thị lịch sử khẳng định một sự kiện và kết quả chưa kiểm chứng; cần đổi thành câu giả định.",
+          "applied": true
+        },
+        {
+          "batch": 8,
+          "index": 4,
+          "reason": "Dẫn chứng về cuộc thử nghiệm thực tế chưa được kiểm chứng dữ liệu; cần đưa về dạng giả định.",
+          "applied": true
+        },
+        {
+          "batch": 9,
+          "index": 0,
+          "reason": "Chuyển ví dụ thực tế chưa kiểm chứng tại một thị trấn công nghiệp cũ thành tình huống giả định theo quy tắc; sửa lối diễn đạt 'gặp bấp bênh'.",
+          "applied": true
+        },
+        {
+          "batch": 9,
+          "index": 1,
+          "reason": "Chuyển ví dụ chưa kiểm chứng tại một đô thị lớn thành tình huống giả định theo quy tắc.",
+          "applied": true
+        },
+        {
+          "batch": 9,
+          "index": 2,
+          "reason": "Chuyển ví dụ mơ hồ, chưa kiểm chứng về các giải bóng đá ở đô thị thành tình huống giả định theo quy tắc.",
+          "applied": true
+        },
+        {
+          "batch": 9,
+          "index": 3,
+          "reason": "Chuyển ví dụ chưa kiểm chứng tại một trung tâm y tế vùng thành tình huống giả định theo quy tắc.",
+          "applied": true
+        },
+        {
+          "batch": 9,
+          "index": 4,
+          "reason": "Chuyển ví dụ chưa kiểm chứng tại Sheffield thành tình huống giả định theo quy tắc.",
+          "applied": true
+        },
+        {
+          "batch": 10,
+          "index": 0,
+          "reason": "Dẫn chứng thực tế về các trường học ở Bristol chưa được kiểm chứng; cần chuyển sang câu ví dụ giả định ở cả hai ngôn ngữ.",
+          "applied": true
+        },
+        {
+          "batch": 10,
+          "index": 1,
+          "reason": "Dẫn chứng thực tế về các trung tâm sản xuất gần Glasgow chưa được kiểm chứng; cần chuyển thành ví dụ giả định ở cả hai ngôn ngữ.",
+          "applied": true
+        },
+        {
+          "batch": 10,
+          "index": 2,
+          "reason": "Dẫn chứng đợt thử nghiệm tại công ty công nghệ ở London chưa được kiểm chứng; cần chuyển sang tình huống giả định ở cả hai ngôn ngữ.",
+          "applied": true
+        },
+        {
+          "batch": 10,
+          "index": 3,
+          "reason": "Dẫn chứng về hội thảo âm nhạc tại Belfast chưa được kiểm chứng; cần chuyển thành ví dụ giả định ở cả hai ngôn ngữ.",
+          "applied": true
+        },
+        {
+          "batch": 10,
+          "index": 4,
+          "reason": "Dẫn chứng chương trình thí điểm tại Xứ Wales chưa được kiểm chứng; cần recasting thành ví dụ giả định ở cả hai ngôn ngữ.",
+          "applied": true
+        },
+        {
+          "batch": 11,
+          "index": 0,
+          "reason": "Điều chỉnh ví dụ thực tế chưa kiểm chứng ở Pembrokeshire thành trường hợp giả định và sửa phần giải thích tương ứng.",
+          "applied": true
+        },
+        {
+          "batch": 11,
+          "index": 1,
+          "reason": "Điều chỉnh ví dụ về quy trình tuyển dụng thành câu giả định chuẩn 'Ví dụ, nếu...' / 'For example, if...' và sửa lỗi thông tin 'Leeds' trong phần giải thích.",
+          "applied": true
+        },
+        {
+          "batch": 11,
+          "index": 2,
+          "reason": "Chuyển ví dụ thành câu giả định chuẩn 'Ví dụ, nếu...' / 'For example, if...' và sửa lỗi thông tin 'Yorkshire' trong phần giải thích.",
+          "applied": true
+        },
+        {
+          "batch": 11,
+          "index": 3,
+          "reason": "Sửa luận điểm mơ hồ về kết quả thực tế 'tại một số đô thị' thành ví dụ giả định và đính chính lỗi thông tin 'Manchester' trong phần giải thích.",
+          "applied": true
+        },
+        {
+          "batch": 11,
+          "index": 4,
+          "reason": "Chuyển khẳng định thực tế chưa kiểm chứng về hiệu quả đào tạo thành câu giả định và sửa lỗi thông tin 'Sheffield' trong phần giải thích.",
+          "applied": true
+        },
+        {
+          "batch": 12,
+          "index": 0,
+          "reason": "Điều chỉnh câu ví dụ sang dạng giả định chuẩn ('Ví dụ, nếu...') theo yêu cầu chỉ dẫn và sửa thông tin nhắc tới 'Edinburgh' bị sai lệch trong phần giải thích.",
+          "applied": true
+        },
+        {
+          "batch": 12,
+          "index": 1,
+          "reason": "Chuyển dẫn chứng khảo sát thực tế/mơ hồ sang dạng giả định ('Giả sử, nếu...' / 'Suppose...') ở cả hai ngôn ngữ và sửa chi tiết bịa đặt 'Bristol' trong phần giải thích.",
+          "applied": true
+        },
+        {
+          "batch": 12,
+          "index": 2,
+          "reason": "Tái lập luận dẫn chứng thực tế chưa qua kiểm chứng thành câu giả định ('Ví dụ, nếu...' / 'For example, if...') và sửa chi tiết 'Birmingham' sai thực tế trong phần giải thích.",
+          "applied": true
+        },
+        {
+          "batch": 12,
+          "index": 3,
+          "reason": "Chuyển ví dụ thực tế về nhà ở thời Victoria sang dạng tình huống giả định ('Ví dụ, nếu...' / 'For example, if...') nhằm tránh khẳng định thông số thực nghiệm chưa xác minh.",
+          "applied": true
+        },
+        {
+          "batch": 12,
+          "index": 4,
+          "reason": "Sửa ví dụ thử nghiệm tại thành phố công nghiệp thành mô hình giả định ('Giả sử, nếu...' / 'Suppose...') để tuân thủ quy tắc không khẳng định dữ liệu thực nghiệm chưa được xác minh.",
+          "applied": true
+        }
+      ],
+      "reviewMethod": "ai_review_with_manual_spot_checks"
+    },
+    "7.5": {
+      "reviewed": 65,
+      "revisionsApplied": 36,
+      "revisionsUnresolved": 0,
+      "revisions": [
+        {
+          "batch": 1,
+          "index": 0,
+          "reason": "Bản dịch tiếng Anh lệch ý so với tiếng Việt ở cả 3 câu: S1 bỏ qua việc 'nhanh chóng có việc làm ngay sau khi tốt nghiệp' và thêm 'equips with practical skills tailored to current market demands'; S2 đổi 'giảm tình trạng thất nghiệp ở thanh niên' thành 'offers clearer job security'; S3 đổi 'sự tham gia cam kết của các tập đoàn lớn' thành 'direct endorsement from major employers'.",
+          "applied": true
+        },
+        {
+          "batch": 1,
+          "index": 2,
+          "reason": "Ở câu 3, tiếng Anh dùng 'high-profile stadium developments' (phát triển các sân vận động quy mô lớn) không tương đương với câu tiếng Việt 'phát triển vận động viên thành tích cao' (elite athlete development).",
+          "applied": true
+        },
+        {
+          "batch": 1,
+          "index": 5,
+          "reason": "Ở câu 3, cụm 'prevent small-business displacement' (ngăn ngừa việc di dời/mất chỗ của doanh nghiệp nhỏ) không khớp nghĩa với 'tránh làm kiệt quệ các doanh nghiệp nhỏ' (prevent small-business financial exhaustion).",
+          "applied": true
+        },
+        {
+          "batch": 0,
+          "index": 0,
+          "reason": "Bản tiếng Anh tự thêm từ 'undoubtedly' không có trong bản tiếng Việt, dùng sai ngữ pháp đầu câu 3 ('Effort' thiếu mạo từ/số nhiều) và dịch chưa chính xác nét nghĩa 'dễ mất cơ hội' thành 'often miss out'.",
+          "applied": true
+        },
+        {
+          "batch": 0,
+          "index": 1,
+          "reason": "Bản tiếng Anh bỏ sót thông tin 'ô tô cá nhân' (dịch thành 'vehicle emissions'), tự ý đổi nghĩa 'bắt buộc phải di chuyển bằng phương tiện riêng' thành 'lack viable public transport alternatives', và phóng đại 'gánh nặng tài chính không nhỏ' thành 'disproportionate financial strain'.",
+          "applied": true
+        },
+        {
+          "batch": 0,
+          "index": 2,
+          "reason": "Bản tiếng Anh tự thêm từ 'immediate', đổi cụm 'tăng quá nhanh' thành 'unmanaged' làm sai lệch nghĩa nguyên tác tiếng Việt.",
+          "applied": true
+        },
+        {
+          "batch": 0,
+          "index": 3,
+          "reason": "Bản tiếng Anh dịch sai 'người tiêu dùng có học vấn cao' thành 'middle-class consumers' và tự thêm cụm 'across all social classes' không có trong nguyên tác tiếng Việt.",
+          "applied": true
+        },
+        {
+          "batch": 0,
+          "index": 4,
+          "reason": "Bản tiếng Anh dịch sai 'nhà tuyển dụng' thành 'recruitment agencies', bỏ sót ý 'vô tình' (inadvertently), và giảm mức độ nghĩa từ 'bắt buộc phải' (must) xuống 'ought to'.",
+          "applied": true
+        },
+        {
+          "batch": 0,
+          "index": 5,
+          "reason": "Bản tiếng Anh tự thêm tính từ 'Generous' và biến đổi 'chi phí nâng cấp lưới điện' thành 'the burden of maintaining grid stability' không đồng nhất với nguyên tác tiếng Việt.",
+          "applied": true
+        },
+        {
+          "batch": 0,
+          "index": 6,
+          "reason": "Bản tiếng Anh dịch sai 'khu vui chơi giải trí' thành 'generic tourist attractions' và tự ý bổ sung 'for short-term profit' ở cuối câu.",
+          "applied": true
+        },
+        {
+          "batch": 3,
+          "index": 3,
+          "reason": "Phần prompt đang bị nhập nhầm bằng văn bản tiếng Anh thay vì tiếng Việt. Cần khôi phục câu tiếng Việt dịch chính xác và tương đương hoàn toàn với đoạn tiếng Anh.",
+          "applied": true
+        },
+        {
+          "batch": 2,
+          "index": 2,
+          "reason": "Điều chỉnh bản dịch tiếng Việt ở phần prompt để phản ánh chính xác nghĩa của các từ trong đáp án tiếng Anh: 'local agricultural productivity' (năng suất nông nghiệp địa phương), 'local operators' (người vận hành tại chỗ) và 'rural households' (các hộ gia đình nông thôn).",
+          "applied": true
+        },
+        {
+          "batch": 2,
+          "index": 3,
+          "reason": "Khắc phục sự thiếu đối ứng từ vựng: 'endangered' dịch thành 'yếu thế' (sửa thành 'có nguy cơ mai một') và 'native storytellers' dịch thành 'nghệ nhân dân gian' (sửa thành 'người kể chuyện bản địa').",
+          "applied": true
+        },
+        {
+          "batch": 2,
+          "index": 4,
+          "reason": "Khắc phục lệch nghĩa giữa hai ngôn ngữ: 'adolescents' bị dịch thành 'học sinh sinh viên' (sửa thành 'thanh thiếu niên'), 'alienate' dịch thành 'gây áp lực' (sửa thành 'làm xa lánh') và 'counter a sedentary lifestyle' dịch thành 'giảm nguy cơ mắc lối sống ít vận động' (sửa thành 'chống lại lối sống ít vận động').",
+          "applied": true
+        },
+        {
+          "batch": 4,
+          "index": 0,
+          "reason": "Từ 'incinerated' quy định sai phương pháp xử lý so với từ trung tính 'bị tiêu hủy' (disposed of), 'smaller retailers' thêm so sánh hơn so với 'nhà bán lẻ nhỏ', và 'small enterprise' chưa phản ánh chính xác 'kinh doanh tư nhân' (private enterprise).",
+          "applied": true
+        },
+        {
+          "batch": 5,
+          "index": 0,
+          "reason": "Sử dụng từ vựng Anh-Mỹ 'labor' thay vì chuẩn Anh-Anh 'labour'.",
+          "applied": true
+        },
+        {
+          "batch": 5,
+          "index": 1,
+          "reason": "Bản dịch tiếng Anh tự ý thêm định ngữ 'essential' và 'socio-economic' chưa có trong đoạn tiếng Việt tương ứng.",
+          "applied": true
+        },
+        {
+          "batch": 5,
+          "index": 4,
+          "reason": "Bản dịch tiếng Anh dùng cụm từ thiếu tự nhiên 'dropping turnover' thay vì 'falling turnover' và dịch thiếu chi tiết 'xe máy và ô tô' (motorcyclists and car drivers).",
+          "applied": true
+        },
+        {
+          "batch": 5,
+          "index": 6,
+          "reason": "Bản dịch tiếng Anh bỏ sót trạng từ chỉ mức độ 'trực tiếp' (directly) và từ bổ nghĩa 'môi trường' (environmental) so với đoạn tiếng Việt.",
+          "applied": true
+        },
+        {
+          "batch": 6,
+          "index": 0,
+          "reason": "Điều chỉnh thuật ngữ 'meaning' thành 'môi trường học tập nhập vai' cho khớp với thuật ngữ tiếng Anh, và sửa 'spontaneous' thành 'direct' trong bản tiếng Anh để khớp chính xác với 'trực tiếp' ở câu tiếng Việt.",
+          "applied": true
+        },
+        {
+          "batch": 6,
+          "index": 1,
+          "reason": "Bổ sung tính từ 'nghiêm ngặt' vào câu tiếng Việt để tương xứng hoàn toàn với tính từ 'strict' trong bản tiếng Anh.",
+          "applied": true
+        },
+        {
+          "batch": 6,
+          "index": 3,
+          "reason": "Sửa 'quy định liên lạc' trong tiếng Việt thành 'lệnh cấm liên lạc' để dịch chính xác cụm từ 'contact bans' trong bản tiếng Anh.",
+          "applied": true
+        },
+        {
+          "batch": 6,
+          "index": 6,
+          "reason": "Sửa 'quy định cấm' thành 'quy định hạn chế' (restriction) và 'quy định' thành 'quy định phân khu' (zoning rules) trong tiếng Việt để khớp nghĩa chính xác với tiếng Anh.",
+          "applied": true
+        },
+        {
+          "batch": 7,
+          "index": 1,
+          "reason": "Bản dịch tiếng Anh bổ sung tính từ 'heavy' không có trong câu tiếng Việt gốc ('gánh nặng hạ tầng' -> 'heavy infrastructure strain'), làm tăng mức độ khẳng định so với nguyên tác.",
+          "applied": true
+        },
+        {
+          "batch": 7,
+          "index": 2,
+          "reason": "Bản dịch tiếng Anh dùng 'corporate employers' làm hẹp nghĩa hơn so với 'các nhà tuyển dụng' trong tiếng Việt, đồng thời cụm 'Short online micro-credentials' bị lặp nghĩa (short + micro).",
+          "applied": true
+        },
+        {
+          "batch": 7,
+          "index": 3,
+          "reason": "Bản dịch tiếng Anh bỏ sót trạng từ 'dễ dàng' ('easily') và dịch chưa chính xác 'chỉ tiêu môi trường' ('regulatory targets' thay vì 'environmental targets').",
+          "applied": true
+        },
+        {
+          "batch": 7,
+          "index": 4,
+          "reason": "Cụm từ 'pricing disparities' (chênh lệch mức giá) chưa phản ánh đúng nghĩa của 'sự phân hóa về khả năng chi trả' ('affordability disparities').",
+          "applied": true
+        },
+        {
+          "batch": 7,
+          "index": 5,
+          "reason": "Bản dịch tiếng Anh làm suy yếu ý thái tính ở câu điều kiện ('sẽ được' -> 'can be' thay vì 'will be') và dịch 'mất dữ liệu' thành 'surrendering proprietary data' (từ bỏ/giao nộp dữ liệu).",
+          "applied": true
+        },
+        {
+          "batch": 7,
+          "index": 6,
+          "reason": "Bản dịch tiếng Anh dùng 'heavy' chưa truyền tải hết mức độ 'quá lớn' ('excessive') và dịch 'nguồn hỗ trợ' thành 'grants' (khoản tài trợ tiền mặt) làm thu hẹp phạm vi chính sách.",
+          "applied": true
+        },
+        {
+          "batch": 8,
+          "index": 0,
+          "reason": "Cụm 'neurodivergent learners' không tương đương nghĩa với 'học sinh có phong cách học tập khác biệt' (phải dùng 'students with different learning styles'). Ngoài ra, 'across regions' dịch thiếu ý 'mặt bằng chung trên cả nước' ('overall educational quality nationwide').",
+          "applied": true
+        },
+        {
+          "batch": 8,
+          "index": 1,
+          "reason": "Bản tiếng Anh dùng 'peak production hours' (giờ cao điểm sản xuất điện) làm sai lệch ngữ nghĩa của 'những giờ cao điểm' (giờ cao điểm tiêu thụ điện - peak hours).",
+          "applied": true
+        },
+        {
+          "batch": 8,
+          "index": 3,
+          "reason": "Bản tiếng Anh thay đổi hoàn toàn cấu trúc câu, tự thêm một câu không có trong văn bản tiếng Việt ('This commercial adaptation causes community elders to feel alienated...'), và tự ý dịch 'du khách' thành 'eco-tourists'.",
+          "applied": true
+        },
+        {
+          "batch": 8,
+          "index": 5,
+          "reason": "Bản tiếng Anh bỏ sót nội dung 'ngành chăn nuôi công nghiệp' ('industrial livestock farming') và dịch sai 'phát thải nhà kính' thành 'agricultural emissions', đồng thời dịch 'nông dân địa phương' thành 'traditional farmers'.",
+          "applied": true
+        },
+        {
+          "batch": 8,
+          "index": 6,
+          "reason": "Bản tiếng Anh tự thêm mệnh đề 'that lack immediate financial returns' không có trong tiếng Việt và chuyển đổi sai ngữ nghĩa của 'đẩy... vào tình trạng thiếu hụt ngân sách nghiêm trọng'.",
+          "applied": true
+        },
+        {
+          "batch": 9,
+          "index": 0,
+          "reason": "Sửa lỗi dịch thuật không tương đương: bổ sung 'upgrading', chỉnh 'supervisory staff' thành 'dedicated instructional staff', 'remain underutilized' thành 'sit empty', 'ongoing maintenance budgets' thành 'annual maintenance costs', và chuẩn hóa thống nhất giữa 'chính quyền đô thị' (municipal authorities) và 'hội đồng thành phố' (city councils).",
+          "applied": true
+        },
+        {
+          "batch": 9,
+          "index": 1,
+          "reason": "Sửa lỗi sai nghĩa và lệch sắc thái: dịch sai 'nước phi sinh hoạt' thành 'unmetered consumption', tự ý thêm định lượng/tính từ 'substantial' và 'unfair', chỉnh 'remains essential' thành 'is an imperative solution' cho khớp với 'là giải pháp bắt buộc', và viết hoa tên chủ đề 'Nhà ở'.",
+          "applied": true
+        }
+      ],
+      "secondPassRevisionsApplied": 9,
+      "secondPassRevisionsUnresolved": 0,
+      "secondPassRevisions": [
+        {
+          "batch": 1,
+          "index": 0,
+          "reason": "Phát biểu chứa kết quả/số liệu thực tế chưa kiểm chứng ('từng thúc đẩy hàng triệu hộ gia đình'), cần chuyển thành trường hợp giả định ('Ví dụ, nếu...'); đồng thời bản dịch tiếng Anh trước đó bỏ sót đối tượng 'gia đình thu nhập thấp' (chỉ dịch 'low-income tenants').",
+          "applied": true
+        },
+        {
+          "batch": 5,
+          "index": 3,
+          "reason": "Khẳng định chính sách đánh thuế thực phẩm dư thừa 'đã chuyển hướng thành công' (has successfully redirected) trình bày một kết quả thực tế chưa qua kiểm chứng như một thực tế lịch sử. Cần diễn đạt lại thành trường hợp giả định ở cả hai ngôn ngữ theo yêu cầu ('Ví dụ, nếu...' / 'For example, if...').",
+          "applied": true
+        },
+        {
+          "batch": 8,
+          "index": 3,
+          "reason": "Sửa lỗi diễn đạt lặp từ trong tiếng Việt ('thất thu doanh thu' thành 'bị sụt giảm doanh thu') và điều chỉnh cụm từ 'thợ thủ công vùng' thành 'thợ thủ công trong vùng' cho tự nhiên hơn.",
+          "applied": true
+        },
+        {
+          "batch": 9,
+          "index": 3,
+          "reason": "Kết quả chính sách giảm tỷ lệ béo phì được khẳng định như một thực tế đã xảy ra thay vì giả định; cần chuyển sang câu giả định (Ví dụ, nếu... / For example, if...) ở cả hai ngôn ngữ theo đúng quy tắc kiểm chứng thông tin.",
+          "applied": true
+        },
+        {
+          "batch": 10,
+          "index": 0,
+          "reason": "Sửa văn phong Tiếng Anh ('On the downside' quá suồng sã sang 'Conversely'), danh từ đếm được ('shared parking space' thành 'shared parking spaces') và loại bỏ từ lặp 'lại' trong câu tiếng Việt.",
+          "applied": true
+        },
+        {
+          "batch": 10,
+          "index": 1,
+          "reason": "Giải nghĩa và dịch cụm từ 'perceived credibility' chưa chính xác ('được ghi nhận' -> 'được nhìn nhận/nhận thức').",
+          "applied": true
+        },
+        {
+          "batch": 10,
+          "index": 2,
+          "reason": "Thuật ngữ 'monoculture plantations' trong ngữ cảnh lâm nghiệp/trồng rừng bù đắp carbon nên được dịch là 'đồn điền đơn loài' thay vì 'trang trại'. Sửa 'heavy-polluting' thành trạng từ 'heavily polluting'.",
+          "applied": true
+        },
+        {
+          "batch": 10,
+          "index": 4,
+          "reason": "Sửa lỗi logic giữa câu 1 (mệnh đề giả định 'Nếu...') và câu 2 (đang dùng thì hiện tại khẳng định như thực tế đã xảy ra). Đồng thời điều chỉnh tiếng Anh tương ứng ('can be', 'this could enhance').",
+          "applied": true
+        },
+        {
+          "batch": 12,
+          "index": 4,
+          "reason": "Chuyển dữ liệu thí điểm chưa kiểm chứng ('Dữ liệu từ dự án thí điểm ở các quận nội thành cho thấy...') thành tình huống giả định ('Ví dụ, nếu... / For example, if...') theo quy định, đồng thời chuẩn hóa định dạng thẻ 'tag'.",
+          "applied": true
+        }
+      ],
+      "reviewMethod": "ai_review_with_manual_spot_checks"
+    },
+    "8.0": {
+      "reviewed": 65,
+      "revisionsApplied": 42,
+      "revisionsUnresolved": 0,
+      "revisions": [
+        {
+          "batch": 1,
+          "index": 0,
+          "reason": "Lệch ngữ nghĩa giữa hai ngôn ngữ: bản Anh chứa 'persistent' (dai dẳng) và 'over time' (theo thời gian) nhưng bản Việt thiếu; bản Việt chứa 'trong xã hội' nhưng bản Anh không có.",
+          "applied": true
+        },
+        {
+          "batch": 1,
+          "index": 1,
+          "reason": "Bản Việt dùng từ 'bền chặt' dịch sai nghĩa của 'unsustainable' (không bền vững) trong bản Anh; đồng thời ví dụ chỉ định mốc thời gian cụ thể ('năm 2022') không nguồn trích dẫn cần được đưa về dạng tổng quát.",
+          "applied": true
+        },
+        {
+          "batch": 1,
+          "index": 3,
+          "reason": "Đưa tên địa danh thực tế ('London' / 'trung tâm London') vào ví dụ dẫn chứng mà không có nguồn trích dẫn; cần điều chỉnh thành tên gọi đô thị tổng quát.",
+          "applied": true
+        },
+        {
+          "batch": 0,
+          "index": 1,
+          "reason": "Sửa 'eliminating' thành 'reducing' để dịch chính xác từ 'giảm' trong câu gốc và đổi chính tả Anh-Anh 'organisational'.",
+          "applied": true
+        },
+        {
+          "batch": 0,
+          "index": 3,
+          "reason": "Sửa 'as evidenced by' thành 'when students achieve' để khớp mệnh đề 'khi học sinh đạt', bỏ từ 'long-term' bị thừa ở cuối câu, và dùng chuẩn chính tả Anh-Anh 'specialisation', 'specialised'.",
+          "applied": true
+        },
+        {
+          "batch": 0,
+          "index": 4,
+          "reason": "Sửa 'Achieving genuine energy sustainability requires' thành 'A sustainable energy strategy requires' để sát nghĩa với cụm 'Một chiến lược năng lượng bền vững đòi hỏi' trong tiếng Việt.",
+          "applied": true
+        },
+        {
+          "batch": 0,
+          "index": 6,
+          "reason": "Lược bỏ thông tin thêm ngoài vế gốc ('Albeit lucrative initially', 'permanently'), sửa 'chemical inputs' thành 'chemical fertilisers' (phân bón hóa học) và đổi chính tả Anh-Anh 'maximise'.",
+          "applied": true
+        },
+        {
+          "batch": 3,
+          "index": 0,
+          "reason": "Thay thế địa danh cụ thể (Venice) bằng ví dụ tổng quát để tránh đưa ra thông tin thực chứng không dẫn nguồn; chỉnh sửa 'regional hospitality operators' thành 'local hospitality businesses' cho khớp chính xác với bản tiếng Việt.",
+          "applied": true
+        },
+        {
+          "batch": 3,
+          "index": 2,
+          "reason": "Khắc phục sự lệch ngữ nghĩa giữa hai ngôn ngữ: bản tiếng Anh tự ý thêm modifier 'statutory' và 'senior', đồng thời dịch thiếu thành tố 'vừa' trong cụm 'doanh nghiệp vừa và nhỏ' (small and medium-sized enterprise employers).",
+          "applied": true
+        },
+        {
+          "batch": 3,
+          "index": 4,
+          "reason": "Sửa lỗi chèn trực tiếp cụm tiếng Anh 'intermittent power supply' vào giữa đoạn văn tiếng Việt thay vì dùng ngữ liệu tiếng Việt tương đương.",
+          "applied": true
+        },
+        {
+          "batch": 3,
+          "index": 5,
+          "reason": "Sửa tên địa danh cụ thể (Bristol) thành ví dụ tổng quát nhằm tuân thủ quy định về thông tin thực chứng không nguồn xác thực.",
+          "applied": true
+        },
+        {
+          "batch": 2,
+          "index": 0,
+          "reason": "Sửa cụm từ 'hạ tầng đô thị' thành 'hạ tầng địa phương' (local infrastructure) vì 'làng nghề xa xôi' là khu vực nông thôn, không thuộc đô thị; đồng thời dịch 'sự tập trung thái quá' thành 'excessive focus' để chính xác và tự nhiên hơn.",
+          "applied": true
+        },
+        {
+          "batch": 2,
+          "index": 1,
+          "reason": "Sửa cụm từ tiếng Việt gượng ép 'đô thị hóa quý tộc hóa' thành 'quá trình quý tộc hóa đô thị' để chuyển ngữ chuẩn xác thuật ngữ 'gentrification'.",
+          "applied": true
+        },
+        {
+          "batch": 2,
+          "index": 4,
+          "reason": "Thay thế địa danh cụ thể ('London' / 'trung tâm London') khi chưa có nguồn trích dẫn xác minh bằng ví dụ tổng quát ('các đô thị lớn' / 'major metropolitan areas') theo đúng quy định kiểm chứng thực tế.",
+          "applied": true
+        },
+        {
+          "batch": 2,
+          "index": 6,
+          "reason": "Chuyển tên địa danh cụ thể ('Berlin') chưa trích dẫn nguồn thành dạng khái quát ('tại một số thành phố lớn' / 'in major cities') để đảm bảo tính chuẩn xác và trung lập.",
+          "applied": true
+        },
+        {
+          "batch": 4,
+          "index": 0,
+          "reason": "Tên địa danh cụ thể (Manchester) được nêu trong ví dụ thực tế nhưng không có nguồn dẫn chứng; cần chuyển sang dạng tổng quát ở cả hai ngôn ngữ.",
+          "applied": true
+        },
+        {
+          "batch": 4,
+          "index": 3,
+          "reason": "Cụm liên từ 'Be that as it may' mang sắc thái khẩu ngữ, không phù hợp với văn phong lập luận học thuật Band 8.0; chuyển thành 'However'.",
+          "applied": true
+        },
+        {
+          "batch": 4,
+          "index": 4,
+          "reason": "Từ 'Thực thi' trong câu tiếng Việt không khớp nghĩa với động từ 'Expanding' (Mở rộng) trong câu tiếng Anh; chỉnh sửa lại tiếng Việt thành 'Việc mở rộng' để đảm bảo tính đồng nhất.",
+          "applied": true
+        },
+        {
+          "batch": 4,
+          "index": 6,
+          "reason": "Nêu tên địa danh cụ thể (Scotland / Scottish schools) trong ví dụ minh họa mà không đưa ra nguồn trích dẫn; cần chuyển thành ví dụ tổng quát ở cả hai ngôn ngữ.",
+          "applied": true
+        },
+        {
+          "batch": 5,
+          "index": 0,
+          "reason": "Bản tiếng Anh bổ sung các định tố 'heavy' và 'urban' không có trong bản tiếng Việt; cần chỉnh sửa tiếng Việt để đảm bảo tương đương chính xác từng sửa đổi/định tố.",
+          "applied": true
+        },
+        {
+          "batch": 5,
+          "index": 2,
+          "reason": "Ví dụ nêu tên địa danh cụ thể (Tây Nam nước Anh / South West England) kèm khẳng định thực tế chưa dẫn nguồn; cần chuyển thành ví dụ định hướng tổng quát/giả định.",
+          "applied": true
+        },
+        {
+          "batch": 5,
+          "index": 4,
+          "reason": "Tiếng Anh chứa tính từ 'strict' (nghiêm ngặt) và cấu trúc 'Introducing' nhưng tiếng Việt chưa phản ánh đầy đủ các định tố này.",
+          "applied": true
+        },
+        {
+          "batch": 5,
+          "index": 5,
+          "reason": "Ví dụ nêu tên địa danh cụ thể (Leeds) đi kèm phát biểu thực tế chưa được dẫn nguồn; cần chuyển thành ví dụ định hướng tổng quát.",
+          "applied": true
+        },
+        {
+          "batch": 6,
+          "index": 0,
+          "reason": "Thay thế địa danh cụ thể 'Scottish Highlands' chưa có trích dẫn bằng ngữ cảnh khái quát 'remote highland regions' và điều chỉnh dịch thuật để đảm bảo tính tương đồng chính xác.",
+          "applied": true
+        },
+        {
+          "batch": 6,
+          "index": 1,
+          "reason": "Chuyển địa danh cụ thể 'southern England' thành địa danh khái quát 'several southern regions' để tuân thủ quy định về thông tin sự kiện không trích dẫn nguồn.",
+          "applied": true
+        },
+        {
+          "batch": 6,
+          "index": 2,
+          "reason": "Điều chỉnh thuật ngữ trong câu tiếng Việt từ 'bài kiểm tra trắc nghiệm' thành 'bài kiểm tra áp lực cao' để tương thích chính xác với thuật ngữ 'high-stakes testing' trong bản tiếng Anh.",
+          "applied": true
+        },
+        {
+          "batch": 6,
+          "index": 3,
+          "reason": "Chuyển địa danh cụ thể 'Orkney Islands' thành danh từ chung 'remote island ports' để loại bỏ khẳng định thực tế chưa kiểm chứng.",
+          "applied": true
+        },
+        {
+          "batch": 6,
+          "index": 4,
+          "reason": "Thay thế tên quốc gia/thực thể cụ thể ('British institutions' và 'West African nations') bằng cụm từ giả định/khái quát để tuân thủ nguyên tắc biên soạn bài tập.",
+          "applied": true
+        },
+        {
+          "batch": 6,
+          "index": 5,
+          "reason": "Loại bỏ tên thành phố cụ thể 'Manchester' để chuyển sang hình thức khái quát 'several major cities'.",
+          "applied": true
+        },
+        {
+          "batch": 7,
+          "index": 0,
+          "reason": "Sửa lỗi diễn đạt vụng về ('Deciding to levy' thành 'The decision to levy') và chỉnh sửa vế kết giữa bản tiếng Việt và tiếng Anh cho đồng nhất nghĩa ('Việc hạ giá nhà bền vững' thành 'Khả năng chi trả nhà ở bền vững' tương ứng với 'Sustainable housing affordability').",
+          "applied": true
+        },
+        {
+          "batch": 7,
+          "index": 1,
+          "reason": "Thay thế các từ vựng tiếng Anh - Mỹ ('public transit', 'subway') bằng từ vựng tiếng Anh - Anh chuẩn xác ('public transport', 'underground') theo đúng yêu cầu.",
+          "applied": true
+        },
+        {
+          "batch": 7,
+          "index": 3,
+          "reason": "Chuyển ví dụ có vị trí địa lý chưa xác thực nguồn ('khu vực miền Tây' / 'western regions') thành câu định danh tổng quát để tránh đưa ra thông tin sự kiện/thử nghiệm không có căn cứ.",
+          "applied": true
+        },
+        {
+          "batch": 7,
+          "index": 4,
+          "reason": "Sửa lỗi không thống nhất thì ở câu thứ hai của đoạn văn tiếng Anh ('stocked' ở quá khứ đơn đổi thành 'stock' ở hiện tại đơn) để đồng bộ với ngữ cảnh chung và đoạn văn tiếng Việt.",
+          "applied": true
+        },
+        {
+          "batch": 8,
+          "index": 0,
+          "reason": "Thay thế địa danh cụ thể (Yorkshire) bằng cụm từ tổng quát để tránh đưa ra khẳng định thực tế chưa qua kiểm chứng, đồng thời tinh chỉnh bản dịch tiếng Anh và tiếng Việt cho tương đương hoàn toàn.",
+          "applied": true
+        },
+        {
+          "batch": 8,
+          "index": 1,
+          "reason": "Loại bỏ địa danh cụ thể (East Midlands) thành ví dụ giả định/tổng quát, dùng chuẩn chính tả Anh-Anh (prioritising) và thống nhất thuật ngữ giữa hai ngôn ngữ.",
+          "applied": true
+        },
+        {
+          "batch": 8,
+          "index": 2,
+          "reason": "Chuyển địa danh cụ thể (Birmingham) thành trung tâm thương mại chung để đảm bảo nguyên tắc giả định, đồng thời chuẩn hóa tương đương ngữ nghĩa Anh-Việt.",
+          "applied": true
+        },
+        {
+          "batch": 8,
+          "index": 3,
+          "reason": "Chuyển địa danh Bristol thành bối cảnh đô thị tổng quát, chuẩn hóa chính tả Anh-Anh (localised, ageing, Modernising) và chỉnh sửa bản dịch tiếng Việt khớp chính xác với bản tiếng Anh.",
+          "applied": true
+        },
+        {
+          "batch": 8,
+          "index": 4,
+          "reason": "Chuyển ví dụ địa danh (Welsh libraries) thành địa điểm tổng quát (national libraries), và bổ sung vế 'without geographic constraints' bị thiếu trong bản dịch tiếng Việt.",
+          "applied": true
+        },
+        {
+          "batch": 8,
+          "index": 5,
+          "reason": "Loại bỏ địa danh Scotland để đảm bảo tính tổng quát, sửa lỗi chính tả trong tiếng Việt ('chính pháp' -> 'biện pháp/chính sách') và đồng bộ thời thể câu giữa tiếng Anh và tiếng Việt.",
+          "applied": true
+        },
+        {
+          "batch": 8,
+          "index": 6,
+          "reason": "Thay địa danh Manchester bằng cụm từ chỉ trung tâm đô thị chung, đồng thời tinh chỉnh các chi tiết dịch thuật tiếng Anh - tiếng Việt để đạt sự tương đương chính xác tuyệt đối.",
+          "applied": true
+        },
+        {
+          "batch": 9,
+          "index": 0,
+          "reason": "Thay thế địa danh cụ thể (London) bằng danh từ chung để tránh tạo khẳng định thực tế chưa có nguồn trích dẫn; đồng thời bổ sung 'về lâu dài' vào bản dịch tiếng Việt để tương đương chính xác với cụm 'long term' trong tiếng Anh.",
+          "applied": true
+        },
+        {
+          "batch": 9,
+          "index": 1,
+          "reason": "Thay thế địa danh cụ thể (Edinburgh) bằng danh từ chung để tránh việc đưa ra ví dụ thực tế chưa có nguồn trích dẫn xác thực.",
+          "applied": true
+        }
+      ],
+      "secondPassRevisionsApplied": 0,
+      "secondPassRevisionsUnresolved": 0,
+      "secondPassRevisions": [],
+      "reviewMethod": "ai_review_with_manual_spot_checks"
+    },
+    "8.5": {
+      "reviewed": 65,
+      "revisionsApplied": 45,
+      "revisionsUnresolved": 0,
+      "revisions": [
+        {
+          "batch": 1,
+          "index": 0,
+          "reason": "Tiếng Anh tự thêm chi tiết không có trong tiếng Việt ('launched on major platforms' thay vì 'được triển khai trên quy mô lớn') và dịch chưa sát 'dữ liệu hiện tại' ('current performance metrics').",
+          "applied": true
+        },
+        {
+          "batch": 1,
+          "index": 4,
+          "reason": "Tiếng Anh bỏ sót ý 'chỉ xử lý các yêu cầu đơn giản' trong câu thứ hai và dùng từ 'gamble' làm lệch sắc thái của 'quyết định mang nhiều rủi ro vận hành'.",
+          "applied": true
+        },
+        {
+          "batch": 1,
+          "index": 5,
+          "reason": "Tiếng Anh tự ý thêm số lượng 'doubled' và chi tiết 'foot' không có trong bản tiếng Việt ('tăng cường lực lượng tuần tra'), đồng thời dịch 'vi phạm trật tự ban đêm' thành 'petty offences'.",
+          "applied": true
+        },
+        {
+          "batch": 0,
+          "index": 0,
+          "reason": "Loại bỏ địa danh Nhật Bản không ghi nguồn theo quy định; điều chỉnh các từ thêm bớt giữa Việt và Anh (như 'precise').",
+          "applied": true
+        },
+        {
+          "batch": 0,
+          "index": 1,
+          "reason": "Sửa lệch nghĩa giữa 'sụt giảm lưu lượng xe' và 'reduced congestion', cũng như loại bỏ các tính từ tự thêm trong câu tiếng Anh ('fluctuating', 'structural').",
+          "applied": true
+        },
+        {
+          "batch": 0,
+          "index": 2,
+          "reason": "Bỏ cụm 'for flexible arrangements' thêm vô căn cứ ở bản tiếng Anh để đảm bảo dịch sát hoàn toàn với bản tiếng Việt.",
+          "applied": true
+        },
+        {
+          "batch": 0,
+          "index": 3,
+          "reason": "Sửa lỗi thêm từ 'flawed' không có trong tiếng Việt và sửa 'regional growth' thành 'installation growth' để khớp đúng với 'tăng trưởng lắp đặt'.",
+          "applied": true
+        },
+        {
+          "batch": 0,
+          "index": 4,
+          "reason": "Sửa 'new software' thành 'new technology' cho khớp với 'công nghệ mới' và bỏ từ 'institutional' không có trong bản tiếng Việt.",
+          "applied": true
+        },
+        {
+          "batch": 0,
+          "index": 5,
+          "reason": "Bổ sung ý 'và chế độ đãi ngộ tốt' ('and good compensation packages') bị thiếu trong câu tiếng Anh và loại bỏ 'prior to the study' bị thêm vào.",
+          "applied": true
+        },
+        {
+          "batch": 0,
+          "index": 6,
+          "reason": "Khắc phục lỗi lệch nghĩa dịch thuật: 'thực phẩm xấu' thành 'unhealthy foods' thay vì 'targeted nutritional taxation' và bỏ vế 'to establish clear accountability' bị tự thêm ở bản tiếng Anh.",
+          "applied": true
+        },
+        {
+          "batch": 2,
+          "index": 1,
+          "reason": "Mâu thuẫn về mặt tình thái (modality): 'được kỳ vọng sẽ nâng cao' trong tiếng Việt bị dịch lệch thành 'is credited with enhancing' (đã được công nhận nâng cao) trong tiếng Anh.",
+          "applied": true
+        },
+        {
+          "batch": 2,
+          "index": 3,
+          "reason": "Lỗi không tương đồng nghĩa ngữ liệu: 'suy giảm trí nhớ' trong bản tiếng Việt chưa khớp chính xác với 'cognitive decline' (suy giảm nhận thức), và động từ 'tiếp tục tham gia' bị chuyển thành 'retain' thay vì 'continue participating in'.",
+          "applied": true
+        },
+        {
+          "batch": 3,
+          "index": 2,
+          "reason": "Bản tiếng Anh bỏ sót khái niệm 'tính khả thi' (feasibility) so với bản tiếng Việt và cần điều chỉnh động từ số nhiều tương ứng.",
+          "applied": true
+        },
+        {
+          "batch": 3,
+          "index": 3,
+          "reason": "Bản tiếng Anh tự ý thêm chi tiết chưa có trong bản tiếng Việt ('post-pandemic') và dịch chênh lệch từ 'nhu cầu nội địa' thành 'domestic travel'.",
+          "applied": true
+        },
+        {
+          "batch": 3,
+          "index": 4,
+          "reason": "Bản tiếng Anh tự ý bổ sung các thông tin so sánh và thời điểm không có trong tiếng Việt ('than non-participants', 'prior to enrollment').",
+          "applied": true
+        },
+        {
+          "batch": 3,
+          "index": 5,
+          "reason": "Bản tiếng Anh dịch chưa tương đương các từ ngữ: 'quy mô lớn' (thành 'aggressive'), 'đầu ra công việc' (thành 'team output') và 'phân bổ ngân sách' (thành 'Capital allocation').",
+          "applied": true
+        },
+        {
+          "batch": 5,
+          "index": 0,
+          "reason": "Sửa chính tả tiếng Anh-Anh ('programmes' thay vì 'programs') và loại bỏ phó từ 'successfully' không có trong bản tiếng Việt để bảo đảm tính tương đương chính xác về sắc thái biểu đạt.",
+          "applied": true
+        },
+        {
+          "batch": 5,
+          "index": 1,
+          "reason": "Sửa chuẩn tả Anh-Anh ('specialised', 'programme'), chỉnh thuật ngữ 'học viện chuyên toán tin' thành 'specialised mathematics and computing academies' thay vì 'STEM academies', và bỏ từ 'significantly' để khớp chính xác mức độ của bản gốc.",
+          "applied": true
+        },
+        {
+          "batch": 5,
+          "index": 2,
+          "reason": "Bỏ tính từ 'peak' ở câu đầu bản tiếng Anh để khớp chính xác nghĩa với 'trong những tháng mùa hè' của bản tiếng Việt.",
+          "applied": true
+        },
+        {
+          "batch": 5,
+          "index": 3,
+          "reason": "Chỉnh sửa chính tả tiếng Anh-Anh ('anonymised' thay cho 'anonymized').",
+          "applied": true
+        },
+        {
+          "batch": 4,
+          "index": 0,
+          "reason": "Sửa chính tả tiếng Anh-Anh ('randomized' -> 'randomised controlled').",
+          "applied": true
+        },
+        {
+          "batch": 4,
+          "index": 1,
+          "reason": "Chuyển đổi chính tả sang tiếng Anh-Anh ('modeling' thành 'modelling').",
+          "applied": true
+        },
+        {
+          "batch": 4,
+          "index": 3,
+          "reason": "Sửa lỗi diễn đạt tiếng Việt ('bãi bỏ qua' thành 'đã bỏ qua'), xóa từ thêm tự ý trong tiếng Anh ('underground') và chuẩn hóa chính tả Anh-Anh ('utilize' thành 'utilise').",
+          "applied": true
+        },
+        {
+          "batch": 4,
+          "index": 4,
+          "reason": "Chuyển đổi chính tả sang tiếng Anh-Anh ('behavioral' thành 'behavioural').",
+          "applied": true
+        },
+        {
+          "batch": 4,
+          "index": 5,
+          "reason": "Sửa chính tả Anh-Anh ('neighborhoods' -> 'neighbourhoods', 'urbanization' -> 'urbanisation').",
+          "applied": true
+        },
+        {
+          "batch": 6,
+          "index": 0,
+          "reason": "Tiếng Việt dịch nhầm 'tailpipe emissions' thành 'phát thải tại vòi xịt' (phải là 'khí thải từ ống xả'), và thiếu cụm từ tương ứng với 'mạng lưới giao thông đô thị' trong câu tiếng Anh.",
+          "applied": true
+        },
+        {
+          "batch": 6,
+          "index": 1,
+          "reason": "Dùng thuật ngữ tiếng Anh không đồng bộ ('exercise pods' thay vì 'fitness facilities' như ở câu 1 và bản tiếng Việt).",
+          "applied": true
+        },
+        {
+          "batch": 6,
+          "index": 2,
+          "reason": "Câu 3 trong bản tiếng Việt bị thiếu vị ngữ ('Việc tổng quát hóa... dựa trên...' là ngữ vựng chưa hoàn chỉnh câu).",
+          "applied": true
+        },
+        {
+          "batch": 6,
+          "index": 3,
+          "reason": "Bản tiếng Việt dùng 'Dải phố đi bộ' không tương đương hoàn toàn với danh động từ hành động 'Pedestrianising' trong tiếng Anh, và thiếu từ 'không gian' tương ứng với 'spatial analysis'.",
+          "applied": true
+        },
+        {
+          "batch": 7,
+          "index": 0,
+          "reason": "Sửa lỗi không tương đương giữa bản tiếng Anh và tiếng Việt (exclusively vs tập trung vào; national policy shift vs thay đổi chính sách giáo dục quy mô lớn; appear encouraging vs phản ánh xu hướng tích cực).",
+          "applied": true
+        },
+        {
+          "batch": 7,
+          "index": 1,
+          "reason": "Sửa lệch nghĩa từ vựng và thông tin thêm bớt giữa hai ngôn ngữ (purchasing vs sử dụng; từ thừa 'premium'; 'tend to possess' vs 'cũng đồng thời sở hữu'; 'refrain from endorsement' vs 'duy trì sự thận trọng').",
+          "applied": true
+        },
+        {
+          "batch": 7,
+          "index": 2,
+          "reason": "Sửa lỗi chính tả tiếng Anh (thust -> thus) và khắc phục sự lệch nghĩa ở câu 3, 4 (civic contentment vs sự gắn kết cộng đồng; câu 4 tiếng Anh bị đổi khác nghĩa so với tiếng Việt).",
+          "applied": true
+        },
+        {
+          "batch": 7,
+          "index": 3,
+          "reason": "Sửa thông tin thừa trong câu tiếng Anh không xuất hiện trong đề tiếng Việt (and supply-chain viability).",
+          "applied": true
+        },
+        {
+          "batch": 7,
+          "index": 4,
+          "reason": "Sửa các chi tiết tự thêm vào trong văn bản tiếng Anh không có ở bản tiếng Việt (within months; strict; nationally).",
+          "applied": true
+        },
+        {
+          "batch": 7,
+          "index": 5,
+          "reason": "Sửa các từ ngữ thêm bớt và không đồng nhất nghĩa ở câu 1 và câu 3 (immediate; component processing vs tái chế bóng đèn cũ).",
+          "applied": true
+        },
+        {
+          "batch": 7,
+          "index": 6,
+          "reason": "Sửa lệch nghĩa từ vựng giữa hai văn bản (mùa đông mưa rét vs severe winter conditions; làn đường riêng vs dedicated cycling infrastructure).",
+          "applied": true
+        },
+        {
+          "batch": 9,
+          "index": 0,
+          "reason": "Bản tiếng Anh chứa cụm từ 'local corporate' không có trong bản tiếng Việt ('chính sách miễn thuế'), tạo sự bất cân xứng về thông tin bổ nghĩa.",
+          "applied": true
+        },
+        {
+          "batch": 9,
+          "index": 1,
+          "reason": "Bản tiếng Anh bỏ sót thông tin 'gia tăng' (increase) ở câu đầu và dịch sai quan hệ đồng thời ('đi kèm với' bị chuyển thành 'was followed by' thể hiện quan hệ nối tiếp).",
+          "applied": true
+        },
+        {
+          "batch": 8,
+          "index": 0,
+          "reason": "Sửa tiếng Việt để khớp chính xác các từ bổ nghĩa và mức độ khẳng định với bản tiếng Anh (thêm 'đáng kể' cho 'notable decline', 'chế tạo công nghiệp nặng' cho 'heavy industrial manufacturing plants', 'phải sử dụng' cho 'must employ').",
+          "applied": true
+        },
+        {
+          "batch": 8,
+          "index": 1,
+          "reason": "Sửa bản tiếng Việt để khớp hoàn toàn các trạng từ, tính từ và sắc thái ngữ khí với bản tiếng Anh ('chủ yếu' thay cho 'chỉ', 'kỹ năng số tốt', 'tự bản chất', 'nhóm nhân khẩu học', 'lộ trình chăm sóc ưu tiên kỹ thuật số').",
+          "applied": true
+        },
+        {
+          "batch": 8,
+          "index": 2,
+          "reason": "Chỉnh sửa câu chữ tiếng Việt cho tương đương chính xác từng thành tố ý nghĩa của tiếng Anh ('doanh thu hàng giờ tạo ra trên mỗi nhân viên', 'quy trình làm việc hành chính thường quy', 'thiếu căn cứ phần lớn', 'lịch làm việc rút ngắn').",
+          "applied": true
+        },
+        {
+          "batch": 8,
+          "index": 3,
+          "reason": "Cập nhật tiếng Việt cho khớp tuyệt đối với bản tiếng Anh ('chức năng điều hành' tương ứng với 'executive function', 'điều kiện biên nghiêm ngặt' cho 'strict boundary condition', 'giải pháp nâng cao trí tuệ' cho 'cognitive panacea').",
+          "applied": true
+        },
+        {
+          "batch": 8,
+          "index": 4,
+          "reason": "Điều chỉnh bản tiếng Việt để truyền tải đúng các hạn định từ và thuật ngữ từ bản tiếng Anh ('dễ bị tổn thương về hô hấp', 'trục giao thông chính', 'khu vực không khí sạch', 'phải phân tích', 'thống kê y tế không gian tổng hợp').",
+          "applied": true
+        },
+        {
+          "batch": 8,
+          "index": 5,
+          "reason": "Khắc phục lệch nghĩa giữa tiếng Anh và tiếng Việt ('vốn thường xuyên ghi nhận thiếu' cho 'which frequently underreport', 'hiệu ích lâm sàng của các sản phẩm thay thế chế biến sâu' cho 'clinical utility of ultra-processed alternatives', 'thái độ dè dặt thực nghiệm' cho 'empirical reserve').",
+          "applied": true
+        },
+        {
+          "batch": 8,
+          "index": 6,
+          "reason": "Đồng bộ hóa đầy đủ các thành tố ý nghĩa giữa tiếng Việt và tiếng Anh ('doanh thu xuất khẩu đồ thủ công khu vực' cho 'regional handicraft export revenues', 'chỉ riêng nguồn hỗ trợ tài chính nội địa' cho 'domestic financial aid alone', 'khả năng phục hồi xuất khẩu thuần túy' cho 'export resilience purely').",
+          "applied": true
+        }
+      ],
+      "secondPassRevisionsApplied": 0,
+      "secondPassRevisionsUnresolved": 0,
+      "secondPassRevisions": [],
+      "reviewMethod": "ai_review_with_manual_spot_checks"
+    },
+    "9.0": {
+      "reviewed": 65,
+      "revisionsApplied": 0,
+      "revisionsUnresolved": 0,
+      "revisions": [],
+      "secondPassRevisionsApplied": 0,
+      "secondPassRevisionsUnresolved": 0,
+      "secondPassRevisions": [],
+      "reviewMethod": "manual_bilingual_edit"
+    }
+  },
+  "errors": [],
+  "warnings": [],
+  "limitation": "AI review and automated checks do not establish an official IELTS band or replace independent bilingual and learner-based calibration."
+}

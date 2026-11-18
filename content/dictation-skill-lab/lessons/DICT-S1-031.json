@@ -1,0 +1,432 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "DICT-S1-031",
+  "status": "draft",
+  "level": "L3",
+  "section": 1,
+  "topic": "Hotel Booking",
+  "title": "A Hotel with Step-Free Access",
+  "learning_objectives_vi": [
+    "Rèn constraints and options qua tình huống: A guest compares two room options and asks about accessible facilities.",
+    "Xác định thông tin cuối cùng và phân biệt dữ liệu gây nhiễu (nếu có).",
+    "Nghe chép chính xác, lý giải đáp án từ transcript và học từ trong ngữ cảnh."
+  ],
+  "content_format": "section_bridge",
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Service representative / employee",
+      "tts_voice_id": null,
+      "accent_requested": "australian"
+    },
+    {
+      "speaker_id": "B",
+      "role": "Customer / applicant",
+      "tts_voice_id": null,
+      "accent_requested": "australian"
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "Hello, Maple Court Hotel. Would you like to make a reservation?",
+      "translation_vi": "Xin chào, khách sạn Maple Court. Anh muốn đặt phòng phải không?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "accessibility",
+        "room_type",
+        "facilities",
+        "parking",
+        "section_1",
+        "two_speaker_dialogue",
+        "l3"
+      ]
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "B",
+      "text_en": "Yes, for two nights in June. I need a room without steps because my mother uses a walking frame.",
+      "translation_vi": "Đúng, hai đêm trong tháng Sáu. Tôi cần phòng không có bậc thang vì mẹ tôi dùng khung tập đi.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "accessibility",
+        "room_type",
+        "facilities",
+        "parking",
+        "section_1",
+        "two_speaker_dialogue",
+        "l3"
+      ]
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "A",
+      "text_en": "We have a twin room on the ground floor. The double rooms are upstairs.",
+      "translation_vi": "Chúng tôi có phòng hai giường ở tầng trệt. Phòng giường đôi ở tầng trên.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "accessibility",
+        "room_type",
+        "facilities",
+        "parking",
+        "section_1",
+        "two_speaker_dialogue",
+        "l3"
+      ]
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "B",
+      "text_en": "The twin room sounds better. Does it have a walk-in shower?",
+      "translation_vi": "Phòng hai giường hợp hơn. Có phòng tắm vòi sen không cần bước lên bậc không?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "accessibility",
+        "room_type",
+        "facilities",
+        "parking",
+        "section_1",
+        "two_speaker_dialogue",
+        "l3"
+      ]
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "A",
+      "text_en": "Yes, and there is a handrail beside it.",
+      "translation_vi": "Có, và có tay vịn bên cạnh.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "accessibility",
+        "room_type",
+        "facilities",
+        "parking",
+        "section_1",
+        "two_speaker_dialogue",
+        "l3"
+      ]
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "B",
+      "text_en": "Could we arrive at about nine in the evening?",
+      "translation_vi": "Chúng tôi có thể đến khoảng chín giờ tối không?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "accessibility",
+        "room_type",
+        "facilities",
+        "parking",
+        "section_1",
+        "two_speaker_dialogue",
+        "l3"
+      ]
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "Certainly. Reception is open until midnight. Parking is free behind the hotel.",
+      "translation_vi": "Được. Quầy lễ tân mở đến nửa đêm. Đỗ xe miễn phí phía sau khách sạn.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "accessibility",
+        "room_type",
+        "facilities",
+        "parking",
+        "section_1",
+        "two_speaker_dialogue",
+        "l3"
+      ]
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "B",
+      "text_en": "Wonderful. Please reserve that room for the tenth and eleventh.",
+      "translation_vi": "Tuyệt. Vui lòng đặt phòng cho hai đêm 10 và 11.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "accessibility",
+        "room_type",
+        "facilities",
+        "parking",
+        "section_1",
+        "two_speaker_dialogue",
+        "l3"
+      ]
+    },
+    {
+      "turn_id": "T09",
+      "speaker_id": "A",
+      "text_en": "Of course. I'll email the details now.",
+      "translation_vi": "Vâng. Tôi sẽ gửi thông tin qua email ngay.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "accessibility",
+        "room_type",
+        "facilities",
+        "parking",
+        "section_1",
+        "two_speaker_dialogue",
+        "l3"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "type": "mcq",
+      "prompt": "Which room type is more suitable for the guests?",
+      "correct_answers": [
+        "A twin room on the ground floor"
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Phòng twin ở tầng trệt phù hợp hơn phòng double trên lầu.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "accessibility",
+        "room_type",
+        "facilities",
+        "parking",
+        "ielts_section1_practice"
+      ],
+      "options": [
+        "A twin room on the ground floor",
+        "A double room upstairs",
+        "Two separate rooms"
+      ]
+    },
+    {
+      "question_id": "Q02",
+      "type": "form_completion",
+      "prompt": "Room location: ____ floor",
+      "correct_answers": [
+        "ground"
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Loại phòng được chọn nằm ở tầng trệt.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "accessibility",
+        "room_type",
+        "facilities",
+        "parking",
+        "ielts_section1_practice"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q03",
+      "type": "form_completion",
+      "prompt": "Bathroom feature: walk-in ____",
+      "correct_answers": [
+        "shower"
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Khách xác nhận cần walk-in shower.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "accessibility",
+        "room_type",
+        "facilities",
+        "parking",
+        "ielts_section1_practice"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q04",
+      "type": "form_completion",
+      "prompt": "Reception closes at ____",
+      "correct_answers": [
+        "midnight"
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "Nhân viên nói quầy lễ tân mở đến nửa đêm.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "accessibility",
+        "room_type",
+        "facilities",
+        "parking",
+        "ielts_section1_practice"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q05",
+      "type": "form_completion",
+      "prompt": "Parking charge: ____",
+      "correct_answers": [
+        "free",
+        "zero",
+        "0"
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "Đỗ xe miễn phí ở phía sau khách sạn.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "accessibility",
+        "room_type",
+        "facilities",
+        "parking",
+        "ielts_section1_practice"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "D01",
+      "type": "dictation",
+      "prompt": "Nghe và chép nguyên văn câu của nhân vật A (lượt T03).",
+      "correct_answers": [
+        "We have a twin room on the ground floor. The double rooms are upstairs."
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Nội dung cần chép: We have a twin room on the ground floor. The double rooms are upstairs. Nghĩa: Chúng tôi có phòng hai giường ở tầng trệt. Phòng giường đôi ở tầng trên. Chú ý đầy đủ từ chức năng, số ít/số nhiều và âm cuối.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "transcription_accuracy",
+        "accessibility",
+        "room_type",
+        "facilities",
+        "parking"
+      ]
+    },
+    {
+      "question_id": "D02",
+      "type": "dictation",
+      "prompt": "Nghe và chép nguyên văn câu của nhân vật B (lượt T06).",
+      "correct_answers": [
+        "Could we arrive at about nine in the evening?"
+      ],
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "explanation_vi": "Nội dung cần chép: Could we arrive at about nine in the evening? Nghĩa: Chúng tôi có thể đến khoảng chín giờ tối không? Chú ý đầy đủ từ chức năng, số ít/số nhiều và âm cuối.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "transcription_accuracy",
+        "accessibility",
+        "room_type",
+        "facilities",
+        "parking"
+      ]
+    },
+    {
+      "question_id": "G01",
+      "type": "gap_fill",
+      "prompt": "Nghe và điền phần còn thiếu: The twin room sounds better. Does it have a ____?",
+      "correct_answers": [
+        "walk-in shower"
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Từ/cụm nghe được là “walk-in shower”. Câu đầy đủ: The twin room sounds better. Does it have a walk-in shower?. Nghĩa: Phòng hai giường hợp hơn. Có phòng tắm vòi sen không cần bước lên bậc không?",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "gap_fill",
+        "vocabulary_in_context",
+        "accessibility",
+        "room_type",
+        "facilities",
+        "parking"
+      ]
+    }
+  ],
+  "vocabulary": [
+    {
+      "term": "walking frame",
+      "pos": "noun phrase",
+      "meaning_vi": "khung tập đi",
+      "example_en": "Yes, for two nights in June. I need a room without steps because my mother uses a walking frame.",
+      "example_vi": "Đúng, hai đêm trong tháng Sáu. Tôi cần phòng không có bậc thang vì mẹ tôi dùng khung tập đi.",
+      "source_turn_id": "T02"
+    },
+    {
+      "term": "twin room",
+      "pos": "noun phrase",
+      "meaning_vi": "phòng hai giường đơn",
+      "example_en": "We have a twin room on the ground floor. The double rooms are upstairs.",
+      "example_vi": "Chúng tôi có phòng hai giường ở tầng trệt. Phòng giường đôi ở tầng trên.",
+      "source_turn_id": "T03"
+    },
+    {
+      "term": "walk-in shower",
+      "pos": "noun phrase",
+      "meaning_vi": "khu tắm không bậc",
+      "example_en": "The twin room sounds better. Does it have a walk-in shower?",
+      "example_vi": "Phòng hai giường hợp hơn. Có phòng tắm vòi sen không cần bước lên bậc không?",
+      "source_turn_id": "T04"
+    },
+    {
+      "term": "handrail",
+      "pos": "noun",
+      "meaning_vi": "tay vịn",
+      "example_en": "Yes, and there is a handrail beside it.",
+      "example_vi": "Có, và có tay vịn bên cạnh.",
+      "source_turn_id": "T05"
+    }
+  ],
+  "audio": {
+    "status": "not_generated",
+    "url": null,
+    "duration_ms": null,
+    "model": null,
+    "provider": null,
+    "voice_config": null,
+    "source_transcript_hash": "b1fccff124704c951c9268b8b442cdac716124654246dd8acbc3c8c1a4ca61de",
+    "audio_sha256": null,
+    "format": null
+  },
+  "qa": {
+    "content_reviewed": false,
+    "answers_verified": false,
+    "audio_verified": false,
+    "rights_cleared": false,
+    "duplicate_reviewed": false,
+    "notes": [
+      "Draft authoring, not expert reviewed.",
+      "TTS output pending; timestamps must be aligned after synthesis.",
+      "Keep unpublished until audio and question evidence are checked by a reviewer.",
+      "M16.2: automated edits are provisional; IELTS teacher final signoff, audio and rights clearance pending."
+    ]
+  },
+  "provenance": {
+    "content_origin": "original_ai_assisted",
+    "source_urls": [],
+    "source_rights_note": "Original pedagogical dialogues, not IELTS/Cambridge exam content. Review all TTS provider terms and permissions before audio generation/distribution.",
+    "reviewer": null
+  },
+  "release_metadata": {
+    "published_at": null,
+    "version": 1
+  }
+}

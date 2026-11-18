@@ -4,7 +4,7 @@ export const notebookInputSchema = z.discriminatedUnion("kind", [
   z.object({
     kind: z.literal("note"),
     title: z.string().trim().min(1).max(100),
-    body: z.string().trim().min(1).max(5000),
+    body: z.string().trim().min(1).max(100000),
     meaningVi: z.literal(""),
     example: z.literal(""),
   }),

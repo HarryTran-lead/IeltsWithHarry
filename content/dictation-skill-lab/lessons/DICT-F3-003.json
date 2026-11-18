@@ -1,0 +1,491 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "DICT-F3-003",
+  "status": "draft",
+  "level": "L3",
+  "section": 0,
+  "topic": "Foundation",
+  "title": "Ordering Food",
+  "learning_objectives_vi": [
+    "Hiểu yêu cầu thay đổi món, cách thanh toán và thời gian chờ."
+  ],
+  "content_format": "mini_conversation",
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Waiter",
+      "tts_voice_id": null,
+      "accent_requested": "australian"
+    },
+    {
+      "speaker_id": "B",
+      "role": "Customer",
+      "tts_voice_id": null,
+      "accent_requested": "australian"
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "Welcome to Olive Café. Are you ready to order?",
+      "translation_vi": "Chào mừng đến quán Olive. Chị đã sẵn sàng gọi món chưa?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "restaurant",
+        "food",
+        "requests",
+        "prices",
+        "mini_conversation",
+        "foundation_f3"
+      ]
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "B",
+      "text_en": "Yes, I'd like the chicken sandwich with a small salad.",
+      "translation_vi": "Vâng, tôi muốn bánh mì kẹp gà và một phần salad nhỏ.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "restaurant",
+        "food",
+        "requests",
+        "prices",
+        "mini_conversation",
+        "foundation_f3"
+      ]
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "A",
+      "text_en": "Would you like chips with that instead of salad?",
+      "translation_vi": "Chị có muốn khoai tây chiên thay salad không?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "restaurant",
+        "food",
+        "requests",
+        "prices",
+        "mini_conversation",
+        "foundation_f3"
+      ]
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "B",
+      "text_en": "No, thanks. I want the salad, but without onions.",
+      "translation_vi": "Không, cảm ơn. Tôi muốn salad, nhưng không có hành.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "restaurant",
+        "food",
+        "requests",
+        "prices",
+        "mini_conversation",
+        "foundation_f3"
+      ]
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "A",
+      "text_en": "Of course. The sandwich usually comes with spicy sauce.",
+      "translation_vi": "Vâng. Bánh mì thường được phục vụ cùng sốt cay.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "restaurant",
+        "food",
+        "requests",
+        "prices",
+        "mini_conversation",
+        "foundation_f3"
+      ]
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "B",
+      "text_en": "Could you put the sauce on the side, please?",
+      "translation_vi": "Anh có thể để sốt riêng ra một bên không?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "restaurant",
+        "food",
+        "requests",
+        "prices",
+        "mini_conversation",
+        "foundation_f3"
+      ]
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "Certainly. Would you like a cold drink?",
+      "translation_vi": "Được chứ. Chị có muốn uống nước lạnh không?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "restaurant",
+        "food",
+        "requests",
+        "prices",
+        "mini_conversation",
+        "foundation_f3"
+      ]
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "B",
+      "text_en": "A glass of orange juice, please. Is it freshly made?",
+      "translation_vi": "Cho tôi một ly nước cam. Nước cam có được ép tươi không?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "restaurant",
+        "food",
+        "requests",
+        "prices",
+        "mini_conversation",
+        "foundation_f3"
+      ]
+    },
+    {
+      "turn_id": "T09",
+      "speaker_id": "A",
+      "text_en": "Yes, we make it here. The total is eleven pounds twenty.",
+      "translation_vi": "Có, chúng tôi làm tại đây. Tổng cộng là 11 bảng 20.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "restaurant",
+        "food",
+        "requests",
+        "prices",
+        "mini_conversation",
+        "foundation_f3"
+      ]
+    },
+    {
+      "turn_id": "T10",
+      "speaker_id": "B",
+      "text_en": "Can I pay by card? I have no cash today.",
+      "translation_vi": "Tôi thanh toán bằng thẻ được không? Hôm nay tôi không có tiền mặt.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "restaurant",
+        "food",
+        "requests",
+        "prices",
+        "mini_conversation",
+        "foundation_f3"
+      ]
+    },
+    {
+      "turn_id": "T11",
+      "speaker_id": "A",
+      "text_en": "Absolutely. Your food will be ready in about ten minutes.",
+      "translation_vi": "Được ạ. Đồ ăn sẽ sẵn sàng trong khoảng mười phút.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "restaurant",
+        "food",
+        "requests",
+        "prices",
+        "mini_conversation",
+        "foundation_f3"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "type": "short_answer",
+      "prompt": "Which sandwich does the customer choose?",
+      "correct_answers": [
+        "chicken"
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Khách gọi chicken sandwich, không phải loại khác.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "listening_comprehension",
+        "restaurant",
+        "food",
+        "requests",
+        "prices"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q02",
+      "type": "short_answer",
+      "prompt": "What ingredient does the customer want to leave out?",
+      "correct_answers": [
+        "onions"
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Khách nói without onions: không cho hành.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "listening_comprehension",
+        "restaurant",
+        "food",
+        "requests",
+        "prices"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q03",
+      "type": "short_answer",
+      "prompt": "Where should the spicy sauce be served?",
+      "correct_answers": [
+        "on the side"
+      ],
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "explanation_vi": "On the side là để sốt riêng, không trộn vào bánh.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "listening_comprehension",
+        "restaurant",
+        "food",
+        "requests",
+        "prices"
+      ],
+      "word_limit": 3,
+      "instructions_en": "NO MORE THAN THREE WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q04",
+      "type": "form_completion",
+      "prompt": "Total price: £____.",
+      "correct_answers": [
+        "11.20",
+        "11.2"
+      ],
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "explanation_vi": "Eleven pounds twenty là 11,20 bảng.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "listening_comprehension",
+        "restaurant",
+        "food",
+        "requests",
+        "prices"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q05",
+      "type": "short_answer",
+      "prompt": "How does the customer want to pay?",
+      "correct_answers": [
+        "by card"
+      ],
+      "evidence_turn_ids": [
+        "T10"
+      ],
+      "explanation_vi": "Khách hỏi có thể trả bằng thẻ vì không có tiền mặt.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "listening_comprehension",
+        "restaurant",
+        "food",
+        "requests",
+        "prices"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "D01",
+      "type": "dictation",
+      "prompt": "Nghe lượt thoại T02 và chép lại toàn bộ câu tiếng Anh.",
+      "correct_answers": [
+        "Yes, I'd like the chicken sandwich with a small salad."
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Nhận diện món chính và kích cỡ món phụ. Nghĩa: Vâng, tôi muốn bánh mì kẹp gà và một phần salad nhỏ.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sentence_recognition",
+        "restaurant",
+        "food",
+        "requests",
+        "prices"
+      ]
+    },
+    {
+      "question_id": "D02",
+      "type": "dictation",
+      "prompt": "Nghe lượt thoại T04 và chép lại toàn bộ câu tiếng Anh.",
+      "correct_answers": [
+        "No, thanks. I want the salad, but without onions."
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Phát hiện yêu cầu không cho hành. Nghĩa: Không, cảm ơn. Tôi muốn salad, nhưng không có hành.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sentence_recognition",
+        "restaurant",
+        "food",
+        "requests",
+        "prices"
+      ]
+    },
+    {
+      "question_id": "D03",
+      "type": "dictation",
+      "prompt": "Nghe lượt thoại T09 và chép lại toàn bộ câu tiếng Anh.",
+      "correct_answers": [
+        "Yes, we make it here. The total is eleven pounds twenty."
+      ],
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "explanation_vi": "Nghe chính xác giá tiền. Nghĩa: Có, chúng tôi làm tại đây. Tổng cộng là 11 bảng 20.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sentence_recognition",
+        "restaurant",
+        "food",
+        "requests",
+        "prices"
+      ]
+    },
+    {
+      "question_id": "G01",
+      "type": "gap_fill",
+      "prompt": "Nghe lượt T06 và điền từ/cụm từ bị thiếu: Could you put the sauce ____, please?",
+      "correct_answers": [
+        "on the side"
+      ],
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "explanation_vi": "Cụm chỉ yêu cầu để sốt riêng.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "gap_fill",
+        "guided_dictation",
+        "restaurant",
+        "food",
+        "requests",
+        "prices"
+      ]
+    },
+    {
+      "question_id": "G02",
+      "type": "gap_fill",
+      "prompt": "Nghe lượt T09 và điền từ/cụm từ bị thiếu: Yes, we make it here. The total is ____.",
+      "correct_answers": [
+        "eleven pounds twenty"
+      ],
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "explanation_vi": "Chú ý đơn vị bảng và phần pence.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "gap_fill",
+        "guided_dictation",
+        "restaurant",
+        "food",
+        "requests",
+        "prices"
+      ]
+    }
+  ],
+  "vocabulary": [
+    {
+      "term": "instead of",
+      "pos": "preposition",
+      "meaning_vi": "thay vì",
+      "example_en": "Would you like chips with that instead of salad?",
+      "example_vi": "Chị có muốn khoai tây chiên thay salad không?",
+      "source_turn_id": "T03"
+    },
+    {
+      "term": "without onions",
+      "pos": "prepositional phrase",
+      "meaning_vi": "không có hành",
+      "example_en": "No, thanks. I want the salad, but without onions.",
+      "example_vi": "Không, cảm ơn. Tôi muốn salad, nhưng không có hành.",
+      "source_turn_id": "T04"
+    },
+    {
+      "term": "on the side",
+      "pos": "adverbial phrase",
+      "meaning_vi": "để riêng ra một bên",
+      "example_en": "Could you put the sauce on the side, please?",
+      "example_vi": "Anh có thể để sốt riêng ra một bên không?",
+      "source_turn_id": "T06"
+    },
+    {
+      "term": "freshly made",
+      "pos": "adjective phrase",
+      "meaning_vi": "được làm tươi",
+      "example_en": "A glass of orange juice, please. Is it freshly made?",
+      "example_vi": "Cho tôi một ly nước cam. Nước cam có được ép tươi không?",
+      "source_turn_id": "T08"
+    }
+  ],
+  "audio": {
+    "status": "not_generated",
+    "url": null,
+    "duration_ms": null,
+    "model": null,
+    "provider": null,
+    "voice_config": null,
+    "source_transcript_hash": "84e9a56aa1fba19fd367a942b09e4b5a4ab68c79b6063357af727af61246280b",
+    "audio_sha256": null,
+    "format": null
+  },
+  "qa": {
+    "content_reviewed": false,
+    "answers_verified": false,
+    "audio_verified": false,
+    "rights_cleared": false,
+    "duplicate_reviewed": false,
+    "notes": [
+      "Original AI-assisted authored draft: human editorial and pedagogical review required.",
+      "Audio and timestamps not created; do not publish until audio is verified.",
+      "All answer variants and distractors must be rechecked after voice synthesis.",
+      "M16.2: automated edits are provisional; IELTS teacher final signoff, audio and rights clearance pending."
+    ]
+  },
+  "provenance": {
+    "content_origin": "original_ai_assisted",
+    "source_urls": [],
+    "source_rights_note": "Original learning scenarios; TTS provider usage and distribution rights must be checked before production release.",
+    "reviewer": null
+  },
+  "release_metadata": {
+    "published_at": null,
+    "version": 1
+  }
+}

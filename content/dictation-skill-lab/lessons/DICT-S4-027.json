@@ -1,0 +1,351 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "DICT-S4-027",
+  "status": "draft",
+  "level": "L6",
+  "section": 4,
+  "topic": "Animal Behaviour",
+  "title": "How Artificial Light Changes Nocturnal Activity",
+  "learning_objectives_vi": [
+    "Nghe bài giảng học thuật một người nói, theo dõi quan hệ giữa luận điểm và bằng chứng.",
+    "Luyện các câu hỏi Section 4 theo thứ tự lời giảng; phân tích giới hạn của khái niệm và cách diễn đạt lại.",
+    "Chép chính xác hai đoạn, luyện từ học thuật theo ngữ cảnh và ôn điểm yếu qua Mistake Bank."
+  ],
+  "content_format": "section_practice",
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Academic lecturer",
+      "tts_voice_id": null,
+      "accent_requested": "british"
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "Artificial light is spreading into habitats that once became dark soon after sunset. For nocturnal animals, this creates a new environmental cue. Some insects gather around lamps, while certain birds adjust the timing of their songs. These responses are not identical, but they show how human activity can change the conditions under which animals move, feed and communicate.",
+      "translation_vi": "Ánh sáng nhân tạo đang lan vào những nơi từng tối ngay sau hoàng hôn. Với động vật hoạt động ban đêm, đây là tín hiệu môi trường mới. Một số côn trùng tụ quanh đèn, còn một số chim điều chỉnh thời điểm hót. Phản ứng không giống nhau, nhưng cho thấy hoạt động con người thay đổi điều kiện di chuyển, kiếm ăn và giao tiếp của động vật.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_4",
+        "academic_lecture",
+        "cause",
+        "l6"
+      ]
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "A",
+      "text_en": "Light can affect behaviour by changing visibility. An animal hunting under brighter conditions may locate prey more easily, but it may also become easier for predators to see. The result depends on which species benefits most from the added light. A change that seems favourable for one animal can disrupt the balance of interactions across a whole feeding community.",
+      "translation_vi": "Ánh sáng có thể ảnh hưởng hành vi bằng cách thay đổi tầm nhìn. Động vật đi săn trong điều kiện sáng hơn có thể dễ tìm mồi, nhưng cũng dễ bị kẻ săn mồi phát hiện hơn. Kết quả tùy loài nào hưởng lợi nhiều nhất từ ánh sáng thêm vào. Thay đổi tưởng tốt cho một loài có thể làm xáo trộn cân bằng tương tác trong cả cộng đồng kiếm ăn.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_4",
+        "academic_lecture",
+        "cause",
+        "l6"
+      ]
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "A",
+      "text_en": "Another mechanism involves biological clocks. Many species use repeated changes in light to help coordinate activity and rest. When nights remain bright, normal timing cues may become weaker or inconsistent. An animal might start moving earlier, remain active longer or shift away from illuminated places. Researchers describe changes in these daily patterns as shifts in circadian rhythms.",
+      "translation_vi": "Cơ chế khác liên quan đồng hồ sinh học. Nhiều loài dùng chu kỳ sáng tối để điều phối hoạt động và nghỉ ngơi. Khi ban đêm vẫn sáng, tín hiệu thời gian bình thường có thể yếu hoặc thiếu nhất quán. Động vật có thể di chuyển sớm hơn, hoạt động lâu hơn hoặc tránh nơi có đèn. Nhà nghiên cứu gọi thay đổi trong mô hình hằng ngày đó là dịch chuyển nhịp sinh học ngày đêm.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_4",
+        "academic_lecture",
+        "cause",
+        "l6"
+      ]
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "A",
+      "text_en": "Yet a correlation between bright streets and changed behaviour does not prove that light alone caused the difference. Urban areas also contain traffic noise, buildings and different food sources. Scientists may compare similar sites with different lighting or study changes after lamps are modified. These designs help separate the influence of light from other conditions, though complete control is rarely possible outdoors.",
+      "translation_vi": "Tuy nhiên, mối tương quan giữa đường sáng và hành vi thay đổi không chứng minh chỉ ánh sáng gây ra khác biệt. Đô thị còn có tiếng xe, tòa nhà và nguồn thức ăn khác. Nhà khoa học có thể so sánh địa điểm tương tự nhưng mức chiếu sáng khác nhau hoặc nghiên cứu sau khi thay đổi đèn. Thiết kế này giúp tách ảnh hưởng ánh sáng khỏi điều kiện khác, dù ngoài trời hiếm khi kiểm soát hoàn toàn.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_4",
+        "academic_lecture",
+        "cause",
+        "l6"
+      ]
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "A",
+      "text_en": "Reducing unnecessary lighting is one possible response, but conservation decisions need local evidence. Shielding lamps, adjusting colour and switching off lights during sensitive periods may reduce exposure. The effect should be measured, not merely assumed. Because species respond differently, a useful plan identifies the most vulnerable animals and monitors whether their behaviour improves after changes are introduced.",
+      "translation_vi": "Giảm chiếu sáng không cần thiết là một phản ứng có thể, nhưng quyết định bảo tồn cần bằng chứng địa phương. Che hướng đèn, điều chỉnh màu và tắt đèn trong thời kỳ nhạy cảm có thể giảm phơi nhiễm. Hiệu quả phải được đo, không chỉ giả định. Vì các loài phản ứng khác nhau, kế hoạch hữu ích sẽ xác định động vật dễ bị ảnh hưởng nhất và theo dõi hành vi có cải thiện sau thay đổi không.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_4",
+        "academic_lecture",
+        "cause",
+        "l6"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "type": "note_completion",
+      "prompt": "Artificial lighting creates a new environmental ____ for nocturnal animals.",
+      "correct_answers": [
+        "cue"
+      ],
+      "evidence_turn_ids": [
+        "T01"
+      ],
+      "explanation_vi": "Đáp án “cue” nằm tại đoạn T01. Nội dung bằng chứng: Ánh sáng nhân tạo đang lan vào những nơi từng tối ngay sau hoàng hôn. Với động vật hoạt động ban đêm, đây là tín hiệu môi trường mới. Một số côn trùng tụ quanh đèn, còn một số chim điều chỉnh thời điểm hót. Phản ứng không giống nhau, nhưng cho thấy hoạt động con người thay đổi điều kiện di chuyển, kiếm ăn và giao tiếp của động vật.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_4",
+        "ielts_practice",
+        "cause",
+        "note_completion"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q02",
+      "type": "sentence_completion",
+      "prompt": "Lighting can alter behaviour by changing ____.",
+      "correct_answers": [
+        "visibility"
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Đáp án “visibility” nằm tại đoạn T02. Nội dung bằng chứng: Ánh sáng có thể ảnh hưởng hành vi bằng cách thay đổi tầm nhìn. Động vật đi săn trong điều kiện sáng hơn có thể dễ tìm mồi, nhưng cũng dễ bị kẻ săn mồi phát hiện hơn. Kết quả tùy loài nào hưởng lợi nhiều nhất từ ánh sáng thêm vào. Thay đổi tưởng tốt cho một loài có thể làm xáo trộn cân bằng tương tác trong cả cộng đồng kiếm ăn.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_4",
+        "ielts_practice",
+        "cause",
+        "sentence_completion"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q03",
+      "type": "note_completion",
+      "prompt": "Changes in daily timing patterns may be shifts in ____ rhythms.",
+      "correct_answers": [
+        "circadian"
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Đáp án “circadian” nằm tại đoạn T03. Nội dung bằng chứng: Cơ chế khác liên quan đồng hồ sinh học. Nhiều loài dùng chu kỳ sáng tối để điều phối hoạt động và nghỉ ngơi. Khi ban đêm vẫn sáng, tín hiệu thời gian bình thường có thể yếu hoặc thiếu nhất quán. Động vật có thể di chuyển sớm hơn, hoạt động lâu hơn hoặc tránh nơi có đèn. Nhà nghiên cứu gọi thay đổi trong mô hình hằng ngày đó là dịch chuyển nhịp sinh học ngày đêm.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_4",
+        "ielts_practice",
+        "cause",
+        "note_completion"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q04",
+      "type": "short_answer",
+      "prompt": "Name one additional urban factor that may influence animals besides light.",
+      "correct_answers": [
+        "traffic noise"
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Đáp án “traffic noise” nằm tại đoạn T04. Nội dung bằng chứng: Tuy nhiên, mối tương quan giữa đường sáng và hành vi thay đổi không chứng minh chỉ ánh sáng gây ra khác biệt. Đô thị còn có tiếng xe, tòa nhà và nguồn thức ăn khác. Nhà khoa học có thể so sánh địa điểm tương tự nhưng mức chiếu sáng khác nhau hoặc nghiên cứu sau khi thay đổi đèn. Thiết kế này giúp tách ảnh hưởng ánh sáng khỏi điều kiện khác, dù ngoài trời hiếm khi kiểm soát hoàn toàn.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_4",
+        "ielts_practice",
+        "cause",
+        "short_answer"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q05",
+      "type": "note_completion",
+      "prompt": "A practical conservation intervention is to ____ lamps.",
+      "correct_answers": [
+        "Shielding"
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Đáp án “Shielding” nằm tại đoạn T05. Nội dung bằng chứng: Giảm chiếu sáng không cần thiết là một phản ứng có thể, nhưng quyết định bảo tồn cần bằng chứng địa phương. Che hướng đèn, điều chỉnh màu và tắt đèn trong thời kỳ nhạy cảm có thể giảm phơi nhiễm. Hiệu quả phải được đo, không chỉ giả định. Vì các loài phản ứng khác nhau, kế hoạch hữu ích sẽ xác định động vật dễ bị ảnh hưởng nhất và theo dõi hành vi có cải thiện sau thay đổi không.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_4",
+        "ielts_practice",
+        "cause",
+        "note_completion"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q06",
+      "type": "mcq",
+      "prompt": "Why does a link between bright streets and changed behaviour not establish a cause?",
+      "correct_answers": [
+        "Noise, buildings and food sources may differ as well"
+      ],
+      "options": [
+        "Bright streets contain no nocturnal animals",
+        "Noise, buildings and food sources may differ as well",
+        "Animal behaviour remains unchanged in all cities"
+      ],
+      "evidence_turn_ids": [
+        "T01",
+        "T03",
+        "T05"
+      ],
+      "explanation_vi": "Hãy kết hợp luận điểm đầu, ví dụ ở giữa và kết luận cuối bài. Giảm chiếu sáng không cần thiết là một phản ứng có thể, nhưng quyết định bảo tồn cần bằng chứng địa phương. Che hướng đèn, điều chỉnh màu và tắt đèn trong thời kỳ nhạy cảm có thể giảm phơi nhiễm. Hiệu quả phải được đo, không chỉ giả định. Vì các loài phản ứng khác nhau, kế hoạch hữu ích sẽ xác định động vật dễ bị ảnh hưởng nhất và theo dõi hành vi có cải thiện sau thay đổi không. Phương án chính xác: “Noise, buildings and food sources may differ as well”; hai phương án khác khái quát quá mức hoặc không phù hợp bằng chứng.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "section_4",
+        "ielts_practice",
+        "cause",
+        "main_idea"
+      ]
+    },
+    {
+      "question_id": "D01",
+      "type": "dictation",
+      "prompt": "Nghe đoạn T02 và chép lại chính xác lời giảng.",
+      "correct_answers": [
+        "Light can affect behaviour by changing visibility. An animal hunting under brighter conditions may locate prey more easily, but it may also become easier for predators to see. The result depends on which species benefits most from the added light. A change that seems favourable for one animal can disrupt the balance of interactions across a whole feeding community."
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Phân tích từ nối, âm yếu và cụm thuật ngữ học thuật. Nghĩa của đoạn: Ánh sáng có thể ảnh hưởng hành vi bằng cách thay đổi tầm nhìn. Động vật đi săn trong điều kiện sáng hơn có thể dễ tìm mồi, nhưng cũng dễ bị kẻ săn mồi phát hiện hơn. Kết quả tùy loài nào hưởng lợi nhiều nhất từ ánh sáng thêm vào. Thay đổi tưởng tốt cho một loài có thể làm xáo trộn cân bằng tương tác trong cả cộng đồng kiếm ăn.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_4",
+        "dictation",
+        "exact_transcript"
+      ]
+    },
+    {
+      "question_id": "D02",
+      "type": "dictation",
+      "prompt": "Nghe đoạn T04 và chép lại chính xác lời giảng.",
+      "correct_answers": [
+        "Yet a correlation between bright streets and changed behaviour does not prove that light alone caused the difference. Urban areas also contain traffic noise, buildings and different food sources. Scientists may compare similar sites with different lighting or study changes after lamps are modified. These designs help separate the influence of light from other conditions, though complete control is rarely possible outdoors."
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Phân tích từ nối, âm yếu và cụm thuật ngữ học thuật. Nghĩa của đoạn: Tuy nhiên, mối tương quan giữa đường sáng và hành vi thay đổi không chứng minh chỉ ánh sáng gây ra khác biệt. Đô thị còn có tiếng xe, tòa nhà và nguồn thức ăn khác. Nhà khoa học có thể so sánh địa điểm tương tự nhưng mức chiếu sáng khác nhau hoặc nghiên cứu sau khi thay đổi đèn. Thiết kế này giúp tách ảnh hưởng ánh sáng khỏi điều kiện khác, dù ngoài trời hiếm khi kiểm soát hoàn toàn.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_4",
+        "dictation",
+        "exact_transcript"
+      ]
+    },
+    {
+      "question_id": "G01",
+      "type": "gap_fill",
+      "prompt": "Nghe T01 rồi điền phần thiếu: Artificial light is spreading into habitats that once became dark soon after sunset. For ____ animals, this creates a new environmental cue. Some insects gather around lamps, while certain birds adjust the timing of their songs. These responses are not identical, but they show how human activity can change the conditions under which animals move, feed and communicate.",
+      "correct_answers": [
+        "nocturnal"
+      ],
+      "evidence_turn_ids": [
+        "T01"
+      ],
+      "explanation_vi": "Điền “nocturnal”, nghĩa: hoạt động về đêm. Cụm từ này xuất hiện trong T01.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_4",
+        "gap_fill",
+        "academic_vocabulary"
+      ]
+    }
+  ],
+  "vocabulary": [
+    {
+      "term": "nocturnal",
+      "pos": "adj.",
+      "meaning_vi": "hoạt động về đêm",
+      "example_en": "Artificial light is spreading into habitats that once became dark soon after sunset. For nocturnal animals, this creates a new environmental cue. Some insects gather around lamps, while certain birds adjust the timing of their songs. These responses are not identical, but they show how human activity can change the conditions under which animals move, feed and communicate.",
+      "example_vi": "Ánh sáng nhân tạo đang lan vào những nơi từng tối ngay sau hoàng hôn. Với động vật hoạt động ban đêm, đây là tín hiệu môi trường mới. Một số côn trùng tụ quanh đèn, còn một số chim điều chỉnh thời điểm hót. Phản ứng không giống nhau, nhưng cho thấy hoạt động con người thay đổi điều kiện di chuyển, kiếm ăn và giao tiếp của động vật.",
+      "source_turn_id": "T01"
+    },
+    {
+      "term": "visibility",
+      "pos": "n.",
+      "meaning_vi": "tầm nhìn",
+      "example_en": "Light can affect behaviour by changing visibility. An animal hunting under brighter conditions may locate prey more easily, but it may also become easier for predators to see. The result depends on which species benefits most from the added light. A change that seems favourable for one animal can disrupt the balance of interactions across a whole feeding community.",
+      "example_vi": "Ánh sáng có thể ảnh hưởng hành vi bằng cách thay đổi tầm nhìn. Động vật đi săn trong điều kiện sáng hơn có thể dễ tìm mồi, nhưng cũng dễ bị kẻ săn mồi phát hiện hơn. Kết quả tùy loài nào hưởng lợi nhiều nhất từ ánh sáng thêm vào. Thay đổi tưởng tốt cho một loài có thể làm xáo trộn cân bằng tương tác trong cả cộng đồng kiếm ăn.",
+      "source_turn_id": "T02"
+    },
+    {
+      "term": "circadian rhythms",
+      "pos": "n. phr.",
+      "meaning_vi": "nhịp sinh học ngày đêm",
+      "example_en": "Another mechanism involves biological clocks. Many species use repeated changes in light to help coordinate activity and rest. When nights remain bright, normal timing cues may become weaker or inconsistent. An animal might start moving earlier, remain active longer or shift away from illuminated places. Researchers describe changes in these daily patterns as shifts in circadian rhythms.",
+      "example_vi": "Cơ chế khác liên quan đồng hồ sinh học. Nhiều loài dùng chu kỳ sáng tối để điều phối hoạt động và nghỉ ngơi. Khi ban đêm vẫn sáng, tín hiệu thời gian bình thường có thể yếu hoặc thiếu nhất quán. Động vật có thể di chuyển sớm hơn, hoạt động lâu hơn hoặc tránh nơi có đèn. Nhà nghiên cứu gọi thay đổi trong mô hình hằng ngày đó là dịch chuyển nhịp sinh học ngày đêm.",
+      "source_turn_id": "T03"
+    },
+    {
+      "term": "Shielding lamps",
+      "pos": "n. phr.",
+      "meaning_vi": "che chắn hướng đèn",
+      "example_en": "Reducing unnecessary lighting is one possible response, but conservation decisions need local evidence. Shielding lamps, adjusting colour and switching off lights during sensitive periods may reduce exposure. The effect should be measured, not merely assumed. Because species respond differently, a useful plan identifies the most vulnerable animals and monitors whether their behaviour improves after changes are introduced.",
+      "example_vi": "Giảm chiếu sáng không cần thiết là một phản ứng có thể, nhưng quyết định bảo tồn cần bằng chứng địa phương. Che hướng đèn, điều chỉnh màu và tắt đèn trong thời kỳ nhạy cảm có thể giảm phơi nhiễm. Hiệu quả phải được đo, không chỉ giả định. Vì các loài phản ứng khác nhau, kế hoạch hữu ích sẽ xác định động vật dễ bị ảnh hưởng nhất và theo dõi hành vi có cải thiện sau thay đổi không.",
+      "source_turn_id": "T05"
+    }
+  ],
+  "audio": {
+    "status": "not_generated",
+    "url": null,
+    "duration_ms": null,
+    "model": null,
+    "provider": null,
+    "voice_config": null,
+    "source_transcript_hash": "cc64668d5ea6da194543523ba0c370fa7c3d95998b7933c5c1b72b0b1b894b5e",
+    "audio_sha256": null,
+    "format": null
+  },
+  "qa": {
+    "content_reviewed": false,
+    "answers_verified": false,
+    "audio_verified": false,
+    "rights_cleared": false,
+    "duplicate_reviewed": false,
+    "notes": [
+      "Original AI-assisted educational script, not an official IELTS transcript.",
+      "Editorial, academic and linguistic review pending.",
+      "Audio/TTS not generated; text-to-speech distribution rights must be confirmed before use, especially for minors.",
+      "Six IELTS-style practice questions per lesson; this is not a full official Part 4 test or a calibrated IELTS Band test.",
+      "M16.2: automated edits are provisional; IELTS teacher final signoff, audio and rights clearance pending."
+    ]
+  },
+  "provenance": {
+    "content_origin": "original_ai_assisted",
+    "source_urls": [],
+    "source_rights_note": "Original transcript and translation drafts; verify academic claims and terms, and TTS provider redistribution conditions before release.",
+    "reviewer": null
+  },
+  "release_metadata": {
+    "published_at": null,
+    "version": 1
+  }
+}

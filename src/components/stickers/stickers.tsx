@@ -31,7 +31,15 @@ export type StickerName =
   | "mountain"
   | "rocket"
   | "newspaper"
-  | "notebook";
+  | "notebook"
+  | "cap"
+  | "puzzle"
+  | "tree"
+  | "target"
+  | "warning"
+  | "compass"
+  | "clipboard"
+  | "scroll";
 
 const ink = "#10233f";
 
@@ -194,6 +202,63 @@ function art(name: StickerName, label?: string): ReactNode {
         <rect x="40" y="26" width="32" height="16" rx="4" fill="#fffaf0" />
         <path d="M14 26h12M14 42h12M14 58h12M14 74h12" stroke="#4a5d78" strokeWidth="5" strokeLinecap="round" />
         <path d="M60 90V70l6 5 6-5v20" fill="#ffc94a" />
+      </>;
+    case "cap":
+      return <>
+        <path d="M26 46v17c0 7 11 13 24 13s24-6 24-13V46L50 57Z" fill="#3e6fe6" stroke="#1d3f9e" strokeWidth="3" strokeLinejoin="round" />
+        <path d="M50 18 8 37l42 19 42-19Z" fill="#2f5bd3" stroke="#1d3f9e" strokeWidth="3" strokeLinejoin="round" />
+        <path d="M37 31l11-4" stroke="#9db8ff" strokeWidth="3.5" strokeLinecap="round" />
+        <path d="M84 40v22" stroke="#e8a21c" strokeWidth="3" strokeLinecap="round" />
+        <circle cx="84" cy="66" r="5.5" fill="#ffc94a" stroke="#e8a21c" strokeWidth="2.5" />
+      </>;
+    case "puzzle":
+      return <>
+        <path d="M14 30h17c-2.6-9 2-16 9.5-16S53 21 50.5 30H68v17c9-2.6 16 2 16 9.5S77 69 68 66.5V86H50.5c2.5-8.5-2-14-9.5-14s-12 5.5-9.5 14H14V67c8.5 2.5 14-2 14-9.5S22.5 45 14 47.5Z" fill="#ff9d4d" stroke="#e0772a" strokeWidth="3" strokeLinejoin="round" />
+        <path d="M22 40v8M40 22h-4" stroke="#ffd2a8" strokeWidth="4" strokeLinecap="round" />
+      </>;
+    case "tree":
+      return <>
+        <path d="M50 88V44M50 66 34 52M50 60l16-14" stroke="#9a6534" strokeWidth="6" strokeLinecap="round" fill="none" />
+        <circle cx="29" cy="44" r="14" fill="#6cc96b" stroke="#3f9a45" strokeWidth="3" />
+        <circle cx="71" cy="38" r="14" fill="#6cc96b" stroke="#3f9a45" strokeWidth="3" />
+        <circle cx="50" cy="25" r="16" fill="#7fd67c" stroke="#3f9a45" strokeWidth="3" />
+        <path d="M43 19q4-4 9-3" stroke="#c9f2c6" strokeWidth="3.5" strokeLinecap="round" fill="none" />
+        <circle cx="29" cy="44" r="4" fill="#ffc94a" /><circle cx="71" cy="38" r="4" fill="#ff7a6b" /><circle cx="50" cy="25" r="4" fill="#8f72ea" />
+      </>;
+    case "target":
+      return <>
+        <circle cx="45" cy="55" r="33" fill="#ff6b6b" stroke="#d94848" strokeWidth="3" />
+        <circle cx="45" cy="55" r="22" fill="#fff" />
+        <circle cx="45" cy="55" r="12" fill="#ff6b6b" />
+        <path d="M45 55 82 18" stroke={ink} strokeWidth="4" strokeLinecap="round" />
+        <path d="M74 14l12-2-2 12-9 1Z" fill="#ffc94a" stroke="#e8a21c" strokeWidth="2.5" strokeLinejoin="round" />
+      </>;
+    case "warning":
+      return <>
+        <path d="M50 12c3 0 5 1.6 6.6 4.4l32 56c3 5.4-.4 11.6-6.6 11.6H18c-6.2 0-9.6-6.2-6.6-11.6l32-56C45 13.6 47 12 50 12Z" fill="#ffc94a" stroke="#e8a21c" strokeWidth="3" strokeLinejoin="round" />
+        <path d="M50 36v19" stroke={ink} strokeWidth="7" strokeLinecap="round" />
+        <circle cx="50" cy="68" r="4.6" fill={ink} />
+      </>;
+    case "compass":
+      return <>
+        <circle cx="50" cy="50" r="38" fill="#e9f7f6" stroke="#2c98a8" strokeWidth="3" />
+        <circle cx="50" cy="50" r="29" fill="#fff" stroke="#bfe6e8" strokeWidth="2" />
+        <path d="M50 21 59 50H41Z" fill="#ff6b6b" stroke="#d94848" strokeWidth="2.5" strokeLinejoin="round" />
+        <path d="M50 79 41 50h18Z" fill="#9db4c8" stroke="#6d869c" strokeWidth="2.5" strokeLinejoin="round" />
+        <circle cx="50" cy="50" r="4.5" fill={ink} />
+      </>;
+    case "clipboard":
+      return <>
+        <rect x="18" y="16" width="64" height="74" rx="9" fill="#c98a4b" stroke="#9c6630" strokeWidth="3" />
+        <rect x="26" y="26" width="48" height="56" rx="5" fill="#fffdf8" />
+        <rect x="36" y="9" width="28" height="15" rx="5" fill="#9db4c8" stroke="#6d869c" strokeWidth="3" />
+        <path d="M34 42h32M34 54h32M34 66h20" stroke="#2c98a8" strokeWidth="4" strokeLinecap="round" />
+      </>;
+    case "scroll":
+      return <>
+        <path d="M26 16h46c6 0 10 4 10 10v48c0 7-5 12-12 12H30" fill="#fff4d6" stroke="#d9a441" strokeWidth="3" strokeLinejoin="round" />
+        <path d="M18 72c0-6 5-10 11-10s11 4 11 10-5 14-11 14-11-6-11-14V24c0-4 3-8 8-8" fill="#ffe7a8" stroke="#d9a441" strokeWidth="3" strokeLinejoin="round" />
+        <path d="M38 32h32M38 44h32M48 56h22" stroke="#c98a2b" strokeWidth="4" strokeLinecap="round" />
       </>;
   }
 }

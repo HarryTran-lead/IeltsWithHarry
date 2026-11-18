@@ -1,29 +1,55 @@
 "use client";
 import Link from "next/link";
-import { useSearchParams } from "next/navigation";
-import { useCallback, useEffect, useMemo, useState } from "react";
+import { useRouter, useSearchParams } from "next/navigation";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { X } from "lucide-react";
 import { attemptContent, attemptMinutes, type ExamContent } from "@/lib/ielts-bank/schema";
 import { catalogHref, catalogSkills } from "@/lib/ielts-bank/catalog";
 import { BankCatalog } from "./bank-catalog";
-import { AnswerInput, ExamBar, ExamIntro, ExamResult, QuestionNav, RichText, SpeakingAnswer, SubmitDialog, toneOf, typeLabel } from "./bank-exam";
+import { type ResumableAttempt, AnswerInput, ExamBar, ExamIntro, ExamResult, QuestionNav, RichText, SpeakingAnswer, SubmitDialog, toneOf, typeLabel } from "./bank-exam";
 import { TestRunner } from "./bank-test";
+import { ExamSheet } from "./bank-exam-sheet";
+import { ReadingReview } from "./bank-reading-review";
 import { WritingFeedbackPanel, WritingStudio } from "./bank-writing";
+import { WritingAutoGradingPanel } from "./bank-writing-grading";
 import { SpeakingStudio } from "./bank-speaking";
 import { speakingItems } from "./speaking-kit";
 import "./bank.css";
 
 type Exam = { id: string; title: string; skill: string; practice_type?: string; format: string; mode: string; duration_minutes: number; attribution: string; license: string; license_url: string; source_url: string; ai_generated: boolean; content?: ExamContent };
-type Attempt = { id: string; state: string; started_at: string; answers: Record<string,string>; flags: string[]; notes: Record<string,string>; content?: ExamContent; ielts_exams?: Exam };
+type Attempt = { id: string; state: string; started_at: string; submitted_at?: string; answers: Record<string,string>; flags: string[]; notes: Record<string,string>; content?: ExamContent; ielts_exams?: Exam };
 type Result = { score: number; total: number; review: { id: string; given: string; correct: boolean; answers: string[]; explanation: string; type?: string }[] };
-async function api(path: string, body?: unknown) { const response = await fetch(`/api/ielts/bank/${path}`, body ? { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(body) } : undefined); const data = await response.json(); if (!response.ok) throw new Error(data.error || "Request failed"); return data; }
+async function api(path: string, body?: unknown) { const response = await fetch(`/api/ielts/bank/${path}`, body ? { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(body) } : undefined); const data = await response.json(); if (!response.ok) throw new Error(data.error || "Request failed"); if (body && path.startsWith("attempt")) window.dispatchEvent(new Event("learner-activity")); return data; }
 
 export function BankStudent({ examId, resultId, attemptId }: { examId?: string; resultId?: string; attemptId?: string }) {
-  const requestedPart = useSearchParams().get("part");
+  const router = useRouter();
+  const search = useSearchParams();
+  const requestedPart = search.get("part");
+  // A Speaking card links straight to one question: open the practice room there instead of the cover page.
+  const focusQuestion = search.get("q");
+  const autoStarted = useRef("");
   const [exam, setExam] = useState<Exam | null>(null), [attempt, setAttempt] = useState<Attempt | null>(null), [result, setResult] = useState<Result | null>(null);
-  const [answers, setAnswers] = useState<Record<string,string>>({}), [flags, setFlags] = useState<string[]>([]), [notes, setNotes] = useState<Record<string,string>>({}), [active, setActive] = useState(0), [error, setError] = useState(""), [busy, setBusy] = useState(false), [clock, setClock] = useState(0);
+  const [answers, setAnswers] = useState<Record<string,string>>({}), [flags, setFlags] = useState<string[]>([]), [notes, setNotes] = useState<Record<string,string>>({}), [active, setActive] = useState(0), [error, setError] = useState(""), [busy, setBusy] = useState(false), [clock, setClock] = useState(0), [serverOffset, setServerOffset] = useState(0);
   const [dueDate, setDueDate] = useState(""), [scheduled, setScheduled] = useState(false);
+  const [jump, setJump] = useState<{ id: string; at: number } | null>(null);
+  const [resumable, setResumable] = useState<ResumableAttempt[]>([]);
+  // On the cover page, offer this learner's unfinished attempts of the exam (from any device).
+  useEffect(() => {
+    if (!exam || attempt || resultId || attemptId) return;
+    let live = true;
+    void fetch("/api/ielts/bank/attempt").then((response) => response.ok ? response.json() : { attempts: [] }).then((data: { attempts?: { id: string; exam_id: string; state: string; started_at: string; notes?: Record<string, string> | null }[] }) => {
+      if (!live) return;
+      setResumable((data.attempts ?? []).filter((item) => item.exam_id === exam.id && item.state === "in_progress").map((item) => ({
+        id: item.id,
+        part: Number(item.notes?.__part) || 0,
+        minutesLeft: Math.max(0, Math.ceil((new Date(item.started_at).getTime() + attemptMinutes(exam.skill, exam.duration_minutes, item.notes) * 60000 - Date.now()) / 60000)),
+      })));
+    }).catch(() => { /* The cover page works without the list. */ });
+    return () => { live = false; };
+  }, [exam, attempt, resultId, attemptId]);
   const [saveState, setSaveState] = useState<"idle" | "saving" | "saved" | "error">("idle"), [confirming, setConfirming] = useState(false);
-  const loadAttempt = useCallback(async (id: string) => { const data = await api(`attempt?id=${encodeURIComponent(id)}`); setAttempt(data.attempt); setExam(data.attempt.ielts_exams || null); setAnswers(data.attempt.answers || {}); setFlags(data.attempt.flags || []); setNotes(data.attempt.notes || {}); setResult(data.result); setClock(Date.now()); }, []);
+  const [leaving, setLeaving] = useState(false);
+  const loadAttempt = useCallback(async (id: string) => { const data = await api(`attempt?id=${encodeURIComponent(id)}`); setAttempt(data.attempt); setExam(data.attempt.ielts_exams || null); setAnswers(data.attempt.answers || {}); setFlags(data.attempt.flags || []); setNotes(data.attempt.notes || {}); setResult(data.result); setServerOffset(typeof data.serverNow === "number" ? data.serverNow - Date.now() : 0); setClock(Date.now()); }, []);
   useEffect(() => { let live = true; const run = async () => { try { if (resultId || attemptId) { await loadAttempt(resultId || attemptId!); return; } if (examId) { setAttempt(null); setResult(null); setAnswers({}); setFlags([]); setActive(0); const data = await api(`library?id=${encodeURIComponent(examId)}`); if (!live) return; setExam(data.exam); const part = Number(requestedPart); const section = data.exam.content?.sections?.filter((item: { questions: unknown[] }) => item.questions.length)?.[part - 1]; const saved = sessionStorage.getItem(`ielts-attempt:${examId}:${section?.id ?? "full"}`); if (saved) await loadAttempt(saved); } } catch (e) { if (live) setError(String(e)); } }; void run(); return () => { live = false; }; }, [examId, resultId, attemptId, requestedPart, loadAttempt]);
   useEffect(() => { const interval = setInterval(() => setClock(Date.now()), 1000); return () => clearInterval(interval); }, []);
   const sourceContent = attempt?.content || exam?.content;
@@ -31,11 +57,22 @@ export function BankStudent({ examId, resultId, attemptId }: { examId?: string; 
   const questions = useMemo(() => content?.sections.flatMap((s) => s.questions) || [], [content]);
   useEffect(() => { if (!attempt || attempt.state !== "in_progress" || !questions.length) return; const keydown = (event: KeyboardEvent) => { if ((event.target as HTMLElement)?.closest("input,textarea,select,button")) return; if (event.key === "ArrowRight") setActive((index) => Math.min(questions.length-1, index+1)); if (event.key === "ArrowLeft") setActive((index) => Math.max(0, index-1)); }; window.addEventListener("keydown", keydown); return () => window.removeEventListener("keydown", keydown); }, [attempt, questions.length]);
   const partMinutes = exam && attempt ? attemptMinutes(exam.skill, exam.duration_minutes, attempt.notes) : 0;
-  const remaining = attempt && partMinutes ? Math.max(0, partMinutes * 60 - Math.floor((clock - new Date(attempt.started_at).getTime()) / 1000)) : 0;
-  useEffect(() => { if (!attempt || attempt.state !== "in_progress") return; const timer = setTimeout(() => { setSaveState("saving"); void api("attempt", { action: "save", attemptId: attempt.id, answers, flags, notes }).then((data) => { setSaveState("saved"); if (typeof data.score === "number") { setResult(data); setAttempt({ ...attempt, state: "expired" }); } }).catch((e) => { setSaveState("error"); setError(String(e)); }); }, 1200); return () => clearTimeout(timer); }, [answers, flags, notes, attempt]);
-  const submit = useCallback(async (expired = false) => { if (!attempt || busy) return; setBusy(true); try { const data = await api("attempt", { action: "submit", attemptId: attempt.id, answers, expired }); setResult(data); setAttempt({ ...attempt, state: expired ? "expired" : "submitted" }); if (exam?.id) sessionStorage.removeItem(`ielts-attempt:${exam.id}:${attempt.notes?.__section ?? "full"}`); } catch (e) { setError(String(e)); } finally { setBusy(false); } }, [attempt, answers, busy, exam]);
+  const remaining = attempt && partMinutes ? Math.max(0, partMinutes * 60 - Math.floor((clock + serverOffset - new Date(attempt.started_at).getTime()) / 1000)) : 0;
+  useEffect(() => { if (!attempt || attempt.state !== "in_progress") return; const timer = setTimeout(() => { setSaveState("saving"); void api("attempt", { action: "save", attemptId: attempt.id, answers, flags, notes }).then((data) => { setSaveState("saved"); if (typeof data.score === "number") { setResult(data); setAttempt({ ...attempt, state: "expired" }); if (exam?.skill === "Listening") void loadAttempt(attempt.id).catch(() => {}); } }).catch((e) => { setSaveState("error"); setError(String(e)); }); }, 1200); return () => clearTimeout(timer); }, [answers, flags, notes, attempt, exam?.skill, loadAttempt]);
+  const submit = useCallback(async (expired = false) => { if (!attempt || busy) return; setBusy(true); try { const data = await api("attempt", { action: "submit", attemptId: attempt.id, answers, flags, notes, expired }); setResult(data); setAttempt({ ...attempt, state: expired ? "expired" : "submitted", submitted_at: new Date(Date.now() + serverOffset).toISOString() }); if (exam?.id) sessionStorage.removeItem(`ielts-attempt:${exam.id}:${attempt.notes?.__section ?? "full"}`); if (exam?.skill === "Listening") void loadAttempt(attempt.id).catch(() => { /* The scored result remains available even if transcript reload fails. */ }); } catch (e) { setError(String(e)); } finally { setBusy(false); } }, [attempt, answers, flags, notes, busy, exam, loadAttempt, serverOffset]);
   useEffect(() => { if (clock && attempt?.state === "in_progress" && exam && remaining === 0) { const timer = setTimeout(() => void submit(true), 0); return () => clearTimeout(timer); } }, [clock, attempt?.state, exam, remaining, submit]);
-  async function start(scope?: { section: string; ids: string[] }) { if (!exam) return; setBusy(true); try { const data = await api("attempt", { action: "start", examId: exam.id, sectionId: scope?.section }); sessionStorage.setItem(`ielts-attempt:${exam.id}:${scope?.section ?? "full"}`, data.attempt.id); setAttempt(data.attempt); setNotes(data.attempt.notes || {}); setClock(Date.now()); } catch (e) { setError(String(e)); } finally { setBusy(false); } }
+  async function start(scope?: { section: string; ids: string[] }, options?: { view: "practice" | "exam"; minutes?: number }) { if (!exam) return; setBusy(true); try { const data = await api("attempt", { action: "start", examId: exam.id, sectionId: scope?.section, ...options }); sessionStorage.setItem(`ielts-attempt:${exam.id}:${scope?.section ?? "full"}`, data.attempt.id); setAttempt(data.attempt); setNotes(data.attempt.notes || {}); setServerOffset(typeof data.serverNow === "number" ? data.serverNow - Date.now() : 0); setClock(Date.now()); if (exam.skill === "Reading" || exam.skill === "Listening") router.replace(`/app/question-bank/attempt/${data.attempt.id}`); } catch (e) { setError(String(e)); } finally { setBusy(false); } }
+  useEffect(() => {
+    if (!exam || exam.skill !== "Speaking" || !focusQuestion || attempt || result || resultId || attemptId || autoStarted.current === exam.id) return;
+    autoStarted.current = exam.id;
+    void fetch("/api/ielts/bank/attempt?skill=Speaking").then((response) => response.ok ? response.json() : { attempts: [] }).then(async (data: { attempts?: { id: string; exam_id: string; state: string; started_at: string }[] }) => {
+      // Carry on in an unfinished sitting of this set while it still has time; otherwise start a new one.
+      const open = (data.attempts ?? []).find((item) => item.exam_id === exam.id && item.state === "in_progress" && new Date(item.started_at).getTime() + exam.duration_minutes * 60000 - Date.now() > 30000);
+      if (open) await loadAttempt(open.id); else await start();
+    }).catch(() => void start());
+  // start is redefined each render; the guard above keeps this to one run per set.
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [exam, focusQuestion, attempt, result, resultId, attemptId, loadAttempt]);
   const bankSkill = catalogSkills.find((value) => value === exam?.skill);
   // A part-only practice keeps its question ids in the notes; scores and reviews then cover that part.
   const scope = notes.__scope ? notes.__scope.split(",").filter(Boolean) : null;
@@ -44,6 +81,14 @@ export function BankStudent({ examId, resultId, attemptId }: { examId?: string; 
   const backHref = bankSkill && (bankSkill === "Reading" || bankSkill === "Listening") && Number.isInteger(part) && part > 0
     ? `${catalogHref(bankSkill, bankSkill === "Reading" ? "passage" : "part")}&part=${part}`
     : bankSkill ? catalogHref(bankSkill, exam?.practice_type) : "/app/question-bank";
+  const exitAttempt = async () => {
+    if (!attempt) return;
+    setBusy(true);
+    try {
+      await api("attempt", { action: "save", attemptId: attempt.id, answers, flags, notes });
+      router.push(backHref);
+    } catch (e) { setError(String(e)); setBusy(false); }
+  };
   if (!examId && !resultId && !attemptId) return <BankCatalog />;
   if (error && !exam && !attempt) return <main className="bx-page"><p className="bx-error" role="alert">{error}</p><Link className="bx-ghost" href="/app/dashboard">Về trang chủ</Link></main>;
   if (resultId || result) {
@@ -57,14 +102,16 @@ export function BankStudent({ examId, resultId, attemptId }: { examId?: string; 
     const score = scope && result.total ? review.filter((item) => item.correct).length : result.score;
     const skill = exam?.skill || attempt?.ielts_exams?.skill || "Reading";
     const attemptRef = attempt?.id || resultId;
+    if ((skill === "Reading" || skill === "Listening") && content && review.length) return <ReadingReview skill={skill} title={exam?.title || attempt?.ielts_exams?.title || `Bài ${skill}`} content={content} review={review} format={exam?.format || "Academic"} attribution={exam?.attribution} savedHighlights={skill === "Reading" ? notes.reading_highlights : undefined} attemptId={attempt?.id} examId={exam?.id} partNumber={part} startedAt={attempt?.started_at} submittedAt={attempt?.submitted_at} backHref={backHref} retryHref={exam?.id ? `/app/question-bank/exam/${exam.id}${part > 0 ? `?part=${part}` : ""}` : undefined} onRetry={examId && !resultId ? () => { setResult(null); setAttempt(null); setAnswers({}); setFlags([]); setNotes({}); setActive(0); setSaveState("idle"); } : undefined} />;
     return <ExamResult title={attempt?.ielts_exams?.title || exam?.title || "Bài luyện"} skill={skill} format={exam?.format} score={total ? score : null} total={total} review={review} response={response} backHref={backHref} retryHref={exam?.id ? `/app/question-bank/exam/${exam.id}${part > 0 ? `?part=${part}` : ""}` : undefined}
       numberOf={questions.length ? numberOf : undefined}
-      extra={skill === "Writing" && attemptRef && response ? <WritingFeedbackPanel attemptId={attemptRef} type={exam?.practice_type} essay={response} /> : undefined}
+      extra={skill === "Writing" && attemptRef && response ? <><WritingAutoGradingPanel attemptId={attemptRef} essay={response} /><WritingFeedbackPanel attemptId={attemptRef} type={exam?.practice_type} essay={response} prompt={content?.prompt} /></> : undefined}
       // On the exam's own page a link to itself would not reset, so start over in place.
       onRetry={examId && !resultId ? () => { setResult(null); setAttempt(null); setAnswers({}); setFlags([]); setNotes({}); setActive(0); setSaveState("idle"); } : undefined} />;
   }
   if (!exam) return <main className="bx-page"><div className="bx-loading"><span /><span /><span /></div></main>;
-  if (!attempt) return <ExamIntro exam={exam} backHref={backHref} busy={busy} error={error} onStart={(scope) => void start(scope)} scheduleSlot={<div className="bx-schedule">
+  if (!attempt && exam.skill === "Speaking" && focusQuestion && !error) return <main className="bx-page"><div className="bx-loading"><span /><span /><span /></div></main>;
+  if (!attempt) return <ExamIntro exam={exam} backHref={backHref} busy={busy} error={error} resumable={resumable} onStart={(scope, options) => void start(scope, options)} scheduleSlot={<div className="bx-schedule">
     <input type="date" value={dueDate} onChange={(e) => setDueDate(e.target.value)} aria-label="Ngày luyện" />
     <button type="button" className="bx-ghost" disabled={!dueDate || busy} onClick={() => { void api("attempt", { action: "schedule", examId: exam.id, dueDate }).then(() => setScheduled(true)).catch((e) => setError(String(e))); }}>Lưu lịch</button>
     {scheduled && <span role="status">Đã thêm vào Study Planner.</span>}
@@ -72,14 +119,26 @@ export function BankStudent({ examId, resultId, attemptId }: { examId?: string; 
   const q = questions[active]; const section = content?.sections.find((s) => s.questions.some((item) => item.id === q?.id)) || content?.sections[0];
   const inScope = scope ? questions.filter((item) => scope.includes(item.id)) : questions;
   const answered = inScope.filter((item) => answers[item.id]).length;
-  const setAnswer = (id: string, value: string) => setAnswers({ ...answers, [id]: value });
-  const dialog = confirming && <SubmitDialog unanswered={inScope.length - answered} flagged={flags.length} busy={busy} onCancel={() => setConfirming(false)} onConfirm={() => { setConfirming(false); void submit(); }} />;
+  const setAnswer = (id: string, value: string) => setAnswers((current) => ({ ...current, [id]: value }));
+    const dialog = confirming && <SubmitDialog unanswered={inScope.length - answered} flagged={flags.length} busy={busy} onCancel={() => setConfirming(false)} onConfirm={() => { setConfirming(false); void submit(); }}
+      answered={answered}
+      unansweredList={inScope.filter((item) => !answers[item.id]).map((item) => ({ id: item.id, number: item.number }))}
+      flaggedList={inScope.filter((item) => flags.includes(item.id)).map((item) => ({ id: item.id, number: item.number }))}
+      onJump={(id) => { setConfirming(false); setJump({ id, at: Date.now() }); }} />;
+  // Reading and Listening in the real-test view are the computer-delivered screen; its tick leads to "Click next", which submits.
+  if (content && (exam.skill === "Reading" || exam.skill === "Listening") && notes.__view === "exam") return <>
+    <ExamSheet exam={exam} content={content} scope={scope} answers={answers} setAnswer={setAnswer} flags={flags} setFlags={setFlags} notes={notes} setNotes={setNotes} remaining={remaining} busy={busy} onSubmit={() => void submit()} onExit={() => setLeaving(true)} />
+    {error && <p className="bx-error cd-error" role="alert">{error}</p>}
+    {leaving && <div className="bx-dialog-layer cd-dialog"><button type="button" className="bx-dialog-backdrop" aria-label="Tiếp tục làm bài" tabIndex={-1} onClick={() => setLeaving(false)} /><section className="bx-dialog" role="dialog" aria-modal="true" aria-labelledby="bx-leave-title"><button type="button" className="bx-dialog-close" aria-label="Đóng" onClick={() => setLeaving(false)}><X size={18} /></button><h2 id="bx-leave-title">Rời bài làm?</h2><p>Bài làm hiện tại sẽ được lưu. Bạn có thể quay lại từ ngân hàng đề để tiếp tục.</p><div className="bx-dialog-actions"><button type="button" className="bx-ghost" onClick={() => setLeaving(false)}>Tiếp tục làm</button><button type="button" className="bx-submit" disabled={busy} onClick={() => { void exitAttempt(); }}>{busy ? "Đang lưu…" : "Lưu và rời bài"}</button></div></section></div>}
+  </>;
   // Reading and Listening run as a full test sheet; Writing and Speaking as studios.
-  if (content && (exam.skill === "Reading" || exam.skill === "Listening")) return <main className={`bx-page bx-run bl-tone-${toneOf(exam.skill)}`}>
-    <ExamBar exam={exam} answered={answered} total={inScope.length} remaining={remaining} busy={busy} saveState={saveState} onSubmit={() => setConfirming(true)} />
+  if (content && (exam.skill === "Reading" || exam.skill === "Listening")) return <main className={`bx-page bx-run bx-exam-mode ${exam.skill === "Listening" ? "bx-listening-mode" : "bx-reading-mode"} ${notes.__view !== "exam" ? "bx-practice-mode" : "bx-real-mode"} bl-tone-${toneOf(exam.skill)}`}>
+    {notes.__view !== "exam" && <div className="br-practice-ribbon"><strong>Ielts<span>WithHarry</span></strong><nav aria-label="Điều hướng kỹ năng"><span>{exam.skill}</span><span>{scope ? `${exam.skill === "Listening" ? "Part" : "Passage"} ${part || 1}` : "Full test"}</span></nav><small>Giao diện luyện tập</small></div>}
+    <ExamBar exam={exam} answered={answered} total={inScope.length} remaining={remaining} busy={busy} saveState={saveState} onExit={() => setLeaving(true)} onSubmit={() => setConfirming(true)} />
     {error && <p className="bx-error" role="alert">{error}</p>}
-    <TestRunner exam={exam} content={content} scope={scope} answers={answers} setAnswer={setAnswer} flags={flags} setFlags={setFlags} notes={notes} setNotes={setNotes} onFinish={() => setConfirming(true)} />
+    <TestRunner exam={exam} content={content} scope={scope} answers={answers} setAnswer={setAnswer} flags={flags} setFlags={setFlags} notes={notes} setNotes={setNotes} onFinish={() => setConfirming(true)} jumpTo={jump} />
     {dialog}
+    {leaving && <div className="bx-dialog-layer"><button type="button" className="bx-dialog-backdrop" aria-label="Tiếp tục làm bài" tabIndex={-1} onClick={() => setLeaving(false)} /><section className="bx-dialog" role="dialog" aria-modal="true" aria-labelledby="bx-leave-title"><button type="button" className="bx-dialog-close" aria-label="Đóng" onClick={() => setLeaving(false)}><X size={18} /></button><h2 id="bx-leave-title">Rời bài làm?</h2><p>Bài làm hiện tại sẽ được lưu. Bạn có thể quay lại từ ngân hàng đề để tiếp tục.</p><div className="bx-dialog-actions"><button type="button" className="bx-ghost" onClick={() => setLeaving(false)}>Tiếp tục làm</button><button type="button" className="bx-submit" disabled={busy} onClick={() => { void exitAttempt(); }}>{busy ? "Đang lưu…" : "Lưu và rời bài"}</button></div></section></div>}
   </main>;
   if (content && exam.skill === "Writing") return <main className={`bx-page bx-run bl-tone-${toneOf(exam.skill)}`}>
     <ExamBar exam={exam} answered={0} total={0} remaining={remaining} busy={busy} saveState={saveState} onSubmit={() => setConfirming(true)} />
@@ -93,7 +152,7 @@ export function BankStudent({ examId, resultId, attemptId }: { examId?: string; 
     return <main className={`bx-page bx-run bl-tone-${toneOf(exam.skill)}`}>
       <ExamBar exam={exam} answered={spoken} total={items.length} remaining={remaining} busy={busy} saveState={saveState} onSubmit={() => setConfirming(true)} />
       {error && <p className="bx-error" role="alert">{error}</p>}
-      <SpeakingStudio exam={exam} content={content} answers={answers} setAnswer={setAnswer} notes={notes} setNotes={setNotes} onFinish={() => setConfirming(true)} />
+      <SpeakingStudio exam={exam} content={content} answers={answers} setAnswer={setAnswer} notes={notes} setNotes={setNotes} onFinish={() => setConfirming(true)} focusId={focusQuestion} />
       {confirming && <SubmitDialog unanswered={items.length - spoken} flagged={0} busy={busy} onCancel={() => setConfirming(false)} onConfirm={() => { setConfirming(false); void submit(); }} />}
     </main>;
   }
@@ -136,7 +195,7 @@ export function BankStudent({ examId, resultId, attemptId }: { examId?: string; 
   </main>;
 }
 
-function BankVisual({ visual }: { visual: unknown }) {
+export function BankVisual({ visual }: { visual: unknown }) {
   if (!visual || typeof visual !== "object" || Array.isArray(visual)) return null;
   const spec = visual as Record<string, unknown>;
   const panels = Array.isArray(spec.panels) ? spec.panels : [];

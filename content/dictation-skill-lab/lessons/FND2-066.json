@@ -1,0 +1,623 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "FND2-066",
+  "status": "draft",
+  "level": "L2",
+  "section": 0,
+  "topic": "Foundation M19 – Dates",
+  "title": "Day and month ambiguity",
+  "learning_objectives_vi": [
+    "Nghe ngày và tháng được đọc thành chữ, không đoán ngày từ số.",
+    "Nghe lại theo lỗi trọng tâm, không chỉ hoàn thành số bài.",
+    "Đánh giá bằng nội dung chưa gặp và một lần nghe."
+  ],
+  "content_format": "sentence_drill",
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Foundation narrator",
+      "tts_voice_id": null,
+      "accent_requested": "australian"
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "The invitation says the third of June, not the sixth of March.",
+      "translation_vi": "Thiệp mời ghi ngày 3 tháng Sáu, không phải ngày 6 tháng Ba.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m19",
+        "day_month_order",
+        "dates"
+      ],
+      "target_value": "June",
+      "target_kind": "lexical_phrase",
+      "target_meaning_vi": "tháng Sáu",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "A",
+      "text_en": "The form uses day, month, year, so enter the date in that order.",
+      "translation_vi": "Mẫu đơn dùng thứ tự ngày, tháng, năm nên hãy nhập theo thứ tự đó.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m19",
+        "day_month_order",
+        "dates"
+      ],
+      "target_value": "month",
+      "target_kind": "lexical_phrase",
+      "target_meaning_vi": "tháng",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "A",
+      "text_en": "My ticket reads the fourth of August, which is August the fourth.",
+      "translation_vi": "Vé của tôi ghi ngày 4 tháng Tám, tức August the fourth.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m19",
+        "day_month_order",
+        "dates"
+      ],
+      "target_value": "August",
+      "target_kind": "lexical_phrase",
+      "target_meaning_vi": "tháng Tám",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "A",
+      "text_en": "Please read out the month as a word to avoid confusing the numbers.",
+      "translation_vi": "Vui lòng đọc tên tháng thành chữ để tránh nhầm các chữ số.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m19",
+        "day_month_order",
+        "dates"
+      ],
+      "target_value": "month",
+      "target_kind": "lexical_phrase",
+      "target_meaning_vi": "tháng",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "A",
+      "text_en": "The deadline is May the ninth, not September the fifth.",
+      "translation_vi": "Hạn là ngày 9 tháng Năm, không phải ngày 5 tháng Chín.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m19",
+        "day_month_order",
+        "dates"
+      ],
+      "target_value": "May",
+      "target_kind": "lexical_phrase",
+      "target_meaning_vi": "tháng Năm",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "A",
+      "text_en": "The clerk repeated the date as the second of July.",
+      "translation_vi": "Nhân viên đọc lại ngày là mùng 2 tháng Bảy.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m19",
+        "day_month_order",
+        "dates"
+      ],
+      "target_value": "July",
+      "target_kind": "lexical_phrase",
+      "target_meaning_vi": "tháng Bảy",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "Our booking confirmation says the eleventh of October.",
+      "translation_vi": "Xác nhận đặt chỗ của chúng tôi ghi ngày 11 tháng Mười.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m19",
+        "day_month_order",
+        "dates"
+      ],
+      "target_value": "October",
+      "target_kind": "lexical_phrase",
+      "target_meaning_vi": "tháng Mười",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "A",
+      "text_en": "The conference takes place on April the thirteenth, not on the thirtieth.",
+      "translation_vi": "Hội nghị vào ngày 13 tháng Tư, không phải ngày 30.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m19",
+        "day_month_order",
+        "dates"
+      ],
+      "target_value": "thirteenth",
+      "target_kind": "lexical_phrase",
+      "target_meaning_vi": "ngày mười ba",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T09",
+      "speaker_id": "A",
+      "text_en": "The package should arrive on the sixteenth of November.",
+      "translation_vi": "Bưu kiện dự kiến đến ngày 16 tháng Mười Một.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m19",
+        "day_month_order",
+        "dates"
+      ],
+      "target_value": "November",
+      "target_kind": "lexical_phrase",
+      "target_meaning_vi": "tháng Mười Một",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T10",
+      "speaker_id": "A",
+      "text_en": "We need the first of December, not December the tenth.",
+      "translation_vi": "Chúng ta cần ngày 1 tháng Mười Hai, không phải ngày 10.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m19",
+        "day_month_order",
+        "dates"
+      ],
+      "target_value": "first",
+      "target_kind": "lexical_phrase",
+      "target_meaning_vi": "ngày một",
+      "bank_role": "training"
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "type": "dictation",
+      "prompt": "Nghe lượt T01 rồi chép đầy đủ câu tiếng Anh được nói.",
+      "correct_answers": [
+        "The invitation says the third of June, not the sixth of March."
+      ],
+      "evidence_turn_ids": [
+        "T01"
+      ],
+      "explanation_vi": "Nghe lại theo nhóm từ; câu gốc là: The invitation says the third of June, not the sixth of March. Nghĩa: Thiệp mời ghi ngày 3 tháng Sáu, không phải ngày 6 tháng Ba.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "day_month_order"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q02",
+      "type": "dictation",
+      "prompt": "Nghe lượt T02 rồi chép đầy đủ câu tiếng Anh được nói.",
+      "correct_answers": [
+        "The form uses day, month, year, so enter the date in that order."
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Nghe lại theo nhóm từ; câu gốc là: The form uses day, month, year, so enter the date in that order. Nghĩa: Mẫu đơn dùng thứ tự ngày, tháng, năm nên hãy nhập theo thứ tự đó.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "day_month_order"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q03",
+      "type": "dictation",
+      "prompt": "Nghe lượt T03 rồi chép đầy đủ câu tiếng Anh được nói.",
+      "correct_answers": [
+        "My ticket reads the fourth of August, which is August the fourth."
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Nghe lại theo nhóm từ; câu gốc là: My ticket reads the fourth of August, which is August the fourth. Nghĩa: Vé của tôi ghi ngày 4 tháng Tám, tức August the fourth.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "day_month_order"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q04",
+      "type": "dictation",
+      "prompt": "Nghe lượt T04 rồi chép đầy đủ câu tiếng Anh được nói.",
+      "correct_answers": [
+        "Please read out the month as a word to avoid confusing the numbers."
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Nghe lại theo nhóm từ; câu gốc là: Please read out the month as a word to avoid confusing the numbers. Nghĩa: Vui lòng đọc tên tháng thành chữ để tránh nhầm các chữ số.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "day_month_order"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q05",
+      "type": "dictation",
+      "prompt": "Nghe lượt T05 rồi chép đầy đủ câu tiếng Anh được nói.",
+      "correct_answers": [
+        "The deadline is May the ninth, not September the fifth."
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Nghe lại theo nhóm từ; câu gốc là: The deadline is May the ninth, not September the fifth. Nghĩa: Hạn là ngày 9 tháng Năm, không phải ngày 5 tháng Chín.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "day_month_order"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q06",
+      "type": "dictation",
+      "prompt": "Nghe lượt T06 rồi chép đầy đủ câu tiếng Anh được nói.",
+      "correct_answers": [
+        "The clerk repeated the date as the second of July."
+      ],
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "explanation_vi": "Nghe lại theo nhóm từ; câu gốc là: The clerk repeated the date as the second of July. Nghĩa: Nhân viên đọc lại ngày là mùng 2 tháng Bảy.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "day_month_order"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q07",
+      "type": "dictation",
+      "prompt": "Nghe lượt T07 rồi chép đầy đủ câu tiếng Anh được nói.",
+      "correct_answers": [
+        "Our booking confirmation says the eleventh of October."
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "Nghe lại theo nhóm từ; câu gốc là: Our booking confirmation says the eleventh of October. Nghĩa: Xác nhận đặt chỗ của chúng tôi ghi ngày 11 tháng Mười.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "day_month_order"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q08",
+      "type": "dictation",
+      "prompt": "Nghe lượt T08 rồi chép đầy đủ câu tiếng Anh được nói.",
+      "correct_answers": [
+        "The conference takes place on April the thirteenth, not on the thirtieth."
+      ],
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "explanation_vi": "Nghe lại theo nhóm từ; câu gốc là: The conference takes place on April the thirteenth, not on the thirtieth. Nghĩa: Hội nghị vào ngày 13 tháng Tư, không phải ngày 30.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "day_month_order"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q09",
+      "type": "dictation",
+      "prompt": "Nghe lượt T09 rồi chép đầy đủ câu tiếng Anh được nói.",
+      "correct_answers": [
+        "The package should arrive on the sixteenth of November."
+      ],
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "explanation_vi": "Nghe lại theo nhóm từ; câu gốc là: The package should arrive on the sixteenth of November. Nghĩa: Bưu kiện dự kiến đến ngày 16 tháng Mười Một.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "day_month_order"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q10",
+      "type": "dictation",
+      "prompt": "Nghe lượt T10 rồi chép đầy đủ câu tiếng Anh được nói.",
+      "correct_answers": [
+        "We need the first of December, not December the tenth."
+      ],
+      "evidence_turn_ids": [
+        "T10"
+      ],
+      "explanation_vi": "Nghe lại theo nhóm từ; câu gốc là: We need the first of December, not December the tenth. Nghĩa: Chúng ta cần ngày 1 tháng Mười Hai, không phải ngày 10.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "day_month_order"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q11",
+      "type": "short_answer",
+      "prompt": "Nghe lượt T06. Ngày được đọc lại thuộc tháng nào? Trả lời bằng từ/cụm tiếng Anh đúng như lời nghe.",
+      "correct_answers": [
+        "July"
+      ],
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "explanation_vi": "Thông tin đúng: July (tháng Bảy). Dẫn chứng: The clerk repeated the date as the second of July. Nghĩa: Nhân viên đọc lại ngày là mùng 2 tháng Bảy.",
+      "scoring_policy": "lexical_case_punctuation_insensitive_server",
+      "target_kind": "lexical_phrase",
+      "question_tags": [
+        "short_answer",
+        "day_month_order",
+        "training_comprehension"
+      ],
+      "max_replays_practice": 5,
+      "first_listen_only_for_mastery": false
+    },
+    {
+      "question_id": "Q12",
+      "type": "short_answer",
+      "prompt": "Nghe lượt T07. Đặt chỗ vào tháng nào? Trả lời bằng từ/cụm tiếng Anh đúng như lời nghe.",
+      "correct_answers": [
+        "October"
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "Thông tin đúng: October (tháng Mười). Dẫn chứng: Our booking confirmation says the eleventh of October. Nghĩa: Xác nhận đặt chỗ của chúng tôi ghi ngày 11 tháng Mười.",
+      "scoring_policy": "lexical_case_punctuation_insensitive_server",
+      "target_kind": "lexical_phrase",
+      "question_tags": [
+        "short_answer",
+        "day_month_order",
+        "training_comprehension"
+      ],
+      "max_replays_practice": 5,
+      "first_listen_only_for_mastery": false
+    },
+    {
+      "question_id": "Q13",
+      "type": "short_answer",
+      "prompt": "Nghe lượt T08. Hội nghị diễn ra ngày thứ bao nhiêu? (viết chữ) Trả lời bằng từ/cụm tiếng Anh đúng như lời nghe.",
+      "correct_answers": [
+        "thirteenth"
+      ],
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "explanation_vi": "Thông tin đúng: thirteenth (ngày mười ba). Dẫn chứng: The conference takes place on April the thirteenth, not on the thirtieth. Nghĩa: Hội nghị vào ngày 13 tháng Tư, không phải ngày 30.",
+      "scoring_policy": "lexical_case_punctuation_insensitive_server",
+      "target_kind": "lexical_phrase",
+      "question_tags": [
+        "short_answer",
+        "day_month_order",
+        "training_comprehension"
+      ],
+      "max_replays_practice": 5,
+      "first_listen_only_for_mastery": false
+    },
+    {
+      "question_id": "Q14",
+      "type": "short_answer",
+      "prompt": "Nghe lượt T09. Bưu kiện dự kiến đến vào tháng nào? Trả lời bằng từ/cụm tiếng Anh đúng như lời nghe.",
+      "correct_answers": [
+        "November"
+      ],
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "explanation_vi": "Thông tin đúng: November (tháng Mười Một). Dẫn chứng: The package should arrive on the sixteenth of November. Nghĩa: Bưu kiện dự kiến đến ngày 16 tháng Mười Một.",
+      "scoring_policy": "lexical_case_punctuation_insensitive_server",
+      "target_kind": "lexical_phrase",
+      "question_tags": [
+        "short_answer",
+        "day_month_order",
+        "training_comprehension"
+      ],
+      "max_replays_practice": 5,
+      "first_listen_only_for_mastery": false
+    },
+    {
+      "question_id": "Q15",
+      "type": "short_answer",
+      "prompt": "Nghe lượt T10. Ngày chính xác trong tháng là ngày mấy? (viết chữ) Trả lời bằng từ/cụm tiếng Anh đúng như lời nghe.",
+      "correct_answers": [
+        "first"
+      ],
+      "evidence_turn_ids": [
+        "T10"
+      ],
+      "explanation_vi": "Thông tin đúng: first (ngày một). Dẫn chứng: We need the first of December, not December the tenth. Nghĩa: Chúng ta cần ngày 1 tháng Mười Hai, không phải ngày 10.",
+      "scoring_policy": "lexical_case_punctuation_insensitive_server",
+      "target_kind": "lexical_phrase",
+      "question_tags": [
+        "short_answer",
+        "day_month_order",
+        "training_comprehension"
+      ],
+      "max_replays_practice": 5,
+      "first_listen_only_for_mastery": false
+    }
+  ],
+  "vocabulary": [
+    {
+      "term": "June",
+      "pos": "time expression",
+      "meaning_vi": "tháng Sáu",
+      "example_en": "The invitation says the third of June, not the sixth of March.",
+      "example_vi": "Thiệp mời ghi ngày 3 tháng Sáu, không phải ngày 6 tháng Ba.",
+      "is_illustrative_context": false
+    },
+    {
+      "term": "month",
+      "pos": "noun",
+      "meaning_vi": "tháng",
+      "example_en": "The form uses day, month, year, so enter the date in that order.",
+      "example_vi": "Mẫu đơn dùng thứ tự ngày, tháng, năm nên hãy nhập theo thứ tự đó.",
+      "is_illustrative_context": false
+    },
+    {
+      "term": "August",
+      "pos": "time expression",
+      "meaning_vi": "tháng Tám",
+      "example_en": "My ticket reads the fourth of August, which is August the fourth.",
+      "example_vi": "Vé của tôi ghi ngày 4 tháng Tám, tức August the fourth.",
+      "is_illustrative_context": false
+    },
+    {
+      "term": "month",
+      "pos": "noun",
+      "meaning_vi": "tháng",
+      "example_en": "Please read out the month as a word to avoid confusing the numbers.",
+      "example_vi": "Vui lòng đọc tên tháng thành chữ để tránh nhầm các chữ số.",
+      "is_illustrative_context": false
+    },
+    {
+      "term": "May",
+      "pos": "time expression",
+      "meaning_vi": "tháng Năm",
+      "example_en": "The deadline is May the ninth, not September the fifth.",
+      "example_vi": "Hạn là ngày 9 tháng Năm, không phải ngày 5 tháng Chín.",
+      "is_illustrative_context": false
+    },
+    {
+      "term": "July",
+      "pos": "time expression",
+      "meaning_vi": "tháng Bảy",
+      "example_en": "The clerk repeated the date as the second of July.",
+      "example_vi": "Nhân viên đọc lại ngày là mùng 2 tháng Bảy.",
+      "is_illustrative_context": false
+    }
+  ],
+  "micro_skill_id": "day_month_order",
+  "bank_role": "training",
+  "content_design": {
+    "sequence": "10_varied_contexts",
+    "first_listen": "1x",
+    "guided_replay_max": 5,
+    "mastery_requires_unseen": true,
+    "learning_note_vi": "Nghe ngày và tháng được đọc thành chữ, không đoán ngày từ số.",
+    "category": "dates",
+    "post_submit_review_only": true,
+    "unseen_assessment_id": "FND2-066-HOLDOUT",
+    "spoken_text_must_match_target": true,
+    "holdout_must_be_server_side": true,
+    "no_band_claim": true
+  },
+  "audio": {
+    "status": "not_generated",
+    "url": null,
+    "duration_ms": null,
+    "provider": null,
+    "model": null,
+    "voice_config": null,
+    "format": null,
+    "audio_sha256": null,
+    "source_transcript_hash": "d1932306d11c858e7065ce9036073c1c9edac5594f38d09de2cbafda953e5119",
+    "generation_notes": "Synthesize actual spoken utterance only; never read learning metadata. Human verify dates, names and connected-speech target."
+  },
+  "qa": {
+    "content_reviewed": false,
+    "answers_verified": false,
+    "audio_verified": false,
+    "human_signed_off": false,
+    "duplicate_reviewed": false,
+    "notes": [
+      "M19 originally authored DRAFT, machine-verified only.",
+      "Connected-speech phonetic features NOT established until actual audio is reviewed."
+    ]
+  },
+  "provenance": {
+    "content_origin": "original_ai_assisted",
+    "rights_status": "pending_tts_audio_terms_review",
+    "source_urls": [],
+    "reviewer": null
+  },
+  "release_metadata": {
+    "published_at": null,
+    "version": 1
+  },
+  "lesson_theory_vi": {
+    "core_rule": "Nghe ngày và tháng được đọc thành chữ, không đoán ngày từ số.",
+    "worked_contrasts": [
+      {
+        "spoken_example": "The booking was for Tuesday, but it is now on Sunday.",
+        "written_value": "Sunday",
+        "teacher_note_vi": "Từ but/now báo hiệu ngày cuối cùng đã thay đổi."
+      },
+      {
+        "spoken_example": "The early appointment is at nine; the class begins at ten.",
+        "written_value": "ten",
+        "teacher_note_vi": "Xác định đang được hỏi giờ hẹn hay giờ lớp học, không lấy số xuất hiện đầu."
+      }
+    ],
+    "learning_steps": [
+      "Đọc ví dụ hướng dẫn phân biệt lịch cũ và lịch chốt.",
+      "Nghe một lần, khoanh cụm chỉ lịch cuối cùng hoặc đối tượng được hỏi.",
+      "Làm Dictation và câu hỏi rút thông tin; chỉ mở transcript sau khi nộp.",
+      "Kiểm tra chuyển giao bằng hai câu audio chưa gặp, lần nghe đầu."
+    ],
+    "common_mistakes": [
+      "Đổi chỗ ngày và tháng hoặc chọn ngày đã bị phủ định.",
+      "Chỉ nhìn từ khóa quen mà không nghe phần phủ định hoặc cách người nói sửa lại."
+    ],
+    "before_audio_question": "Đâu là thông tin cuối cùng, và nó thuộc mốc thời gian nào?",
+    "difficulty_steps": [
+      "T01–T03: ngữ cảnh ngắn, thông tin chính rõ ràng.",
+      "T04–T07: thêm thông tin phụ, dạng phủ định hoặc tương phản.",
+      "T08–T10: nội dung dài hơn, nhiều chi tiết hoặc đổi ý."
+    ],
+    "examples_are_not_mastery_items": true,
+    "audio_review_warning_vi": null
+  }
+}

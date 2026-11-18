@@ -1,0 +1,259 @@
+{
+  "schema_version": "m34.2.0",
+  "activity_id": "ACT-SEC-117",
+  "status": "draft_pending_audio",
+  "module": "dictation",
+  "activity_kind": "section_skill_drill",
+  "title": "North Quay Transport Heritage Hall — Dẫn đường trên bản đồ và sửa lỗi",
+  "section": 2,
+  "source_lesson_id": "S2-EXP-007",
+  "source_milestone": "M22",
+  "source_zip": "English_Skill_Lab_Dictation_M22_Section_2_Expanded_Practice_20.zip",
+  "reuse_parent_id": "S2-EXP-007",
+  "source_bank": "section_practice_training",
+  "source_audio_id": "section-training/S2-EXP-007/T04",
+  "source_audio_id_type": "logical_source_turn_key_not_physical_audio",
+  "source_segments": [
+    {
+      "source_audio_id": "section-training/S2-EXP-007/T04",
+      "source_audio_id_type": "logical_turn_key_not_verified_physical_audio",
+      "source_lesson_id": "S2-EXP-007",
+      "source_turn_id": "T04",
+      "source_speaker_id": "A",
+      "source_audio_asset_id": null,
+      "source_audio_url": null,
+      "start_ms": null,
+      "end_ms": null,
+      "source_transcript_sha256": "6cf9abec0499dc6636bbffd2898761b2e3cdca67b6b4f1e71ce1f28a5ad7230f",
+      "source_bank": "training",
+      "source_is_protected": false,
+      "audio_status": "not_generated",
+      "alignment_status": "pending_verified_turn_offsets"
+    },
+    {
+      "source_audio_id": "section-training/S2-EXP-007/T09",
+      "source_audio_id_type": "logical_turn_key_not_verified_physical_audio",
+      "source_lesson_id": "S2-EXP-007",
+      "source_turn_id": "T09",
+      "source_speaker_id": "A",
+      "source_audio_asset_id": null,
+      "source_audio_url": null,
+      "start_ms": null,
+      "end_ms": null,
+      "source_transcript_sha256": "c9849ba0dd8a85ee186c148306eced1f6bf3519fe9d67b051e82a58f8de2a108",
+      "source_bank": "training",
+      "source_is_protected": false,
+      "audio_status": "not_generated",
+      "alignment_status": "pending_verified_turn_offsets"
+    }
+  ],
+  "start_ms": null,
+  "end_ms": null,
+  "alignment_policy": "verified_turn_level_audio_or_measured_offsets_only",
+  "clip_audio_status": "not_generated",
+  "topic": "Heritage exhibition",
+  "drill_skill": "map_distractor_transfer",
+  "skill_tags": [
+    "section_practice",
+    "listening",
+    "reuse",
+    "section_2",
+    "map_navigation",
+    "compass_orientation",
+    "note_completion",
+    "focused_dictation"
+  ],
+  "teacher_notes": {
+    "goal": "Phân biệt vị trí theo hướng Bắc/Nam/Đông/Tây, sau đó xác minh thông tin thực tế được nói.",
+    "theory": "Map Labelling: trước tiên tìm đúng cổng vào (có thể ở các hướng khác nhau), sau đó theo lối đi và mốc cố định trên sơ đồ để suy ra chữ cái.",
+    "tip": "Không mặc định cổng nằm phía Nam; đối chiếu mốc cố định và hướng la bàn trước khi chọn.",
+    "mistakes": [
+      "Tưởng mọi bản đồ có cấu trúc hai hàng.",
+      "Không xác định đúng tên mốc cố định.",
+      "Nhầm hướng tương đối khi bản đồ khác nhau."
+    ],
+    "worked_example": "Ví dụ khác: “The rehearsal area is at the far north-east corner.” → ô góc trên bên phải của sơ đồ."
+  },
+  "playback": {
+    "first_listen_max_replays": 1,
+    "guided_replay_max_replays": 3,
+    "source_turn_order": [
+      "T04",
+      "T09"
+    ],
+    "transcript_hidden_until_submit": true,
+    "answers_hidden_until_submit": true,
+    "playback_speed_default": 1.0,
+    "prelisten_question_reading": true,
+    "asset_concatenation": "respect_source_turns_verified_only"
+  },
+  "questions": [
+    {
+      "question_id": "ACT-SEC-117-Q1",
+      "phase": "first_listen",
+      "origin_question_id": "Q02",
+      "origin_question_type": "map_labelling",
+      "type": "map_labelling",
+      "prompt_en": "Which letter marks Storage Lockers?",
+      "prompt_vi": "Nghe mốc cố định, xác định hướng tương đối rồi chọn chữ cái trên bản đồ.",
+      "options": [
+        {
+          "value": "A",
+          "label": "A"
+        },
+        {
+          "value": "B",
+          "label": "B"
+        },
+        {
+          "value": "C",
+          "label": "C"
+        },
+        {
+          "value": "D",
+          "label": "D"
+        },
+        {
+          "value": "E",
+          "label": "E"
+        },
+        {
+          "value": "F",
+          "label": "F"
+        },
+        {
+          "value": "G",
+          "label": "G"
+        },
+        {
+          "value": "H",
+          "label": "H"
+        }
+      ],
+      "correct_answers": [
+        "B"
+      ],
+      "correct_option": "B",
+      "word_limit": null,
+      "scoring_policy": "map_letter",
+      "map_asset_path": "04_MAP_ASSETS_CLIENT_SAFE/M22_MAP_007.svg",
+      "map_asset_id": "M22-MAP-007",
+      "play_turn_ids": [
+        "T04"
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "evidence_excerpt_en": "First locate the Platform Bell on the visitor plan. You'll find Storage Lockers at the lettered location immediately north-west of it. Check the position against the nearest other buildings before moving on.",
+      "evidence_excerpt_exact_in_turn": true,
+      "evidence_source_kind": "original_m22_training",
+      "explanation_vi": "Trên sơ đồ mới, tìm mốc Platform Bell, rồi nhìn ngay phía tây bắc. Khu được đánh dấu B là Storage Lockers.",
+      "grading_is_ielts_band": false
+    },
+    {
+      "question_id": "ACT-SEC-117-Q2",
+      "phase": "targeted_replay",
+      "origin_question_id": "Q07",
+      "origin_question_type": "note_completion",
+      "type": "spoken_word_completion",
+      "prompt_en": "Bag storage cost: ____",
+      "prompt_vi": "Lắng nghe chi tiết đã được xác nhận, bỏ qua thông tin cũ.",
+      "options": null,
+      "correct_answers": [
+        "two pounds"
+      ],
+      "correct_option": null,
+      "word_limit": 3,
+      "scoring_policy": "controlled_variants",
+      "play_turn_ids": [
+        "T09"
+      ],
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "evidence_excerpt_en": "The secure lockers take a refundable deposit of two pounds; they are not free to open.",
+      "evidence_excerpt_exact_in_turn": true,
+      "evidence_source_kind": "original_m22_training",
+      "explanation_vi": "Nghe thông tin cuối cùng về bag storage cost; đáp án là “two pounds”, không chọn thông tin cũ hoặc phương án bị loại.",
+      "grading_is_ielts_band": false
+    },
+    {
+      "question_id": "ACT-SEC-117-Q3",
+      "phase": "focused_dictation_repair",
+      "origin_question_id": null,
+      "type": "focused_dictation",
+      "prompt_vi": "Nghe lại và chép chính xác cụm chỉ vị trí bị ẩn (không viết cả câu).",
+      "prompt_en": "First locate ____ on the visitor plan. You'll find Storage Lockers at the lettered location immediately north-west of it. Check the position against the nearest other buildings before moving on.",
+      "word_limit": 3,
+      "correct_answers": [
+        "the Platform Bell"
+      ],
+      "correct_option": null,
+      "options": null,
+      "normalization_policy": "casefold_unicode_nfkc_trim_whitespace_and_terminal_punctuation",
+      "play_turn_ids": [
+        "T04"
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "evidence_excerpt_en": "the Platform Bell",
+      "evidence_char_start": 13,
+      "evidence_char_end": 30,
+      "evidence_source_kind": "exact_spoken_transcript_source",
+      "evidence_excerpt_exact_in_turn": true,
+      "explanation_vi": "Nghe mốc định hướng trong câu thoại mới, đối chiếu cách viết chính xác sau khi nộp.",
+      "grading_is_ielts_band": false,
+      "novel_question_authored_for_m34": true
+    }
+  ],
+  "evidence": {
+    "source_lesson_id": "S2-EXP-007",
+    "source_question_ids": [
+      "Q02",
+      "Q07"
+    ],
+    "source_turn_ids": [
+      "T04",
+      "T09"
+    ],
+    "source_transcript_sha256_map": {
+      "T04": "b2d1926754c0e83b515c1890738ce0f238c256afa3b57ab8ef88a52eac712105",
+      "T09": "c9849ba0dd8a85ee186c148306eced1f6bf3519fe9d67b051e82a58f8de2a108"
+    },
+    "provenance": "original_training_2026_m22",
+    "source_confidence": "authored_draft_requires_human_signoff"
+  },
+  "exposure_rules": {
+    "allowed_source_banks": [
+      "section_practice_training"
+    ],
+    "train_only": true,
+    "never_use_protected_source": true,
+    "never_use_unseen_section_simulation": true,
+    "never_use_mock_before_first_attempt": true,
+    "track_source_audio_id": true,
+    "track_first_exposure": true,
+    "track_replay_count": true,
+    "not_band_estimate": true
+  },
+  "rights_status": "pending_review",
+  "review": {
+    "automated_content_check": "passed_structural",
+    "human_language_review": "pending",
+    "human_audio_listening": "pending",
+    "teacher_signoff": "pending",
+    "timing_verification": "pending",
+    "rights_clearance": "pending",
+    "publish_ready": false
+  },
+  "import_policy": "conditional_replace_draft_only_must_not_override_exposed_record",
+  "version": "m34.2.0",
+  "signpost_annotation_server_only": {
+    "signpost": "however",
+    "function": "contrast",
+    "source_turn_preview_server_only": "Insulation slows the movement of heat through materials. However, installing a thick layer in one wall may accomplish little if heat still escapes through an uninsulated roof. These weaker routes are sometimes called thermal bridges. They occur where building components create easier paths for heat flow, so designers must examine details, not merely the amount of insulation purchased."
+  },
+  "content_source_version": "m22.1.0-distinct-maps",
+  "release_eligible": false
+}

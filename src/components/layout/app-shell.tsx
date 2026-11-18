@@ -6,8 +6,6 @@ import {
   BookOpenText,
   CalendarDays,
   ChartNoAxesCombined,
-  FlaskConical,
-  Filter,
   ChevronLeft,
   ChevronRight,
   ChevronDown,
@@ -17,6 +15,7 @@ import {
   LayoutDashboard,
   Languages,
   Library,
+  LockKeyhole,
   Menu,
   MessageCircle,
   Mic,
@@ -26,14 +25,13 @@ import {
   Settings,
   ShieldCheck,
   SpellCheck,
-  Star,
-  Trophy,
   X,
   Bell,
   LogOut,
   Newspaper,
   UserRound,
   UsersRound,
+  type LucideIcon,
 } from "lucide-react";
 import { HarryMascot } from "@/components/illustrations/harry";
 import { Tape } from "@/components/stickers/stickers";
@@ -41,62 +39,69 @@ import { HarryBuddy } from "@/components/fx/harry-buddy";
 import { useDemo } from "@/features/demo/demo-store";
 import { communityEnabled, demoMode, liveMode, lockedLearnerPath } from "@/lib/runtime";
 import { useLearnerStreak } from "@/features/account/use-learner-streak";
+import { StreakCelebration } from "@/features/account/streak-celebration";
+import { StudyCompanion } from "@/features/companion/study-companion";
+import { tierFor } from "@/lib/streak-milestones";
 import { createClient } from "@/lib/supabase/browser";
 import { NotebookWidget } from "@/features/notebook/notebook-ui";
 import { useStudyPresence } from "@/features/study-room/study-presence";
 import { NotificationBell } from "@/components/account/notification-bell";
-import { AccountAvatar } from "@/components/account/account-avatar";
+import { AvatarFrame } from "@/components/account/avatar-frame";
+import { levelProgress, rankForLevel } from "@/lib/gamification";
 import { useNewsUnread } from "@/features/news/news-unread";
-import { subscribePracticeResults } from "@/features/learning/practice-results";
-import { catalogQuestionTypeIds, catalogQuestionTypes, catalogEntriesForSelection, type CatalogExam } from "@/lib/ielts-bank/catalog";
 import { HeaderSkyBackdrop, HeaderWeatherProvider, HeaderWeatherWidget, useHeaderWeather } from "@/components/header-weather";
 import weatherStyles from "@/components/header-weather/headerWeather.module.css";
 
-const groups = [
-  {
-    label: "HOT",
-    links: [
-      { href: "/app/news", label: "Daily News", icon: Newspaper, tone: "sky" },
-      { href: "/app/study-together", label: "Cùng học", icon: UsersRound, tone: "lavender" },
-      ...(communityEnabled ? [{ href: "/app/community", label: "Cộng đồng", icon: MessageCircle, tone: "teal" }] : []),
-      { href: "/app/learn", label: "Learn", icon: GraduationCap, tone: "sky" },
-    ],
-  },
-  {
-    label: "Luyện tập",
-    links: [{ href: "/app/dictation", label: "Dictation", icon: Headphones, tone: "teal" }],
-  },
+type SidebarLink = { href: string; label: string; icon: LucideIcon; tone: string; locked?: boolean };
+type SidebarGroup = { label: string; links: SidebarLink[] };
+
+const groups: SidebarGroup[] = [
   {
     label: "Tổng quan",
     links: [
       { href: "/app/dashboard", label: "Dashboard", icon: LayoutDashboard, tone: "teal" },
-      { href: "/app/planner", label: "Planner", icon: CalendarDays, tone: "coral" },
-      { href: "/app/progress", label: "Progress", icon: ChartNoAxesCombined, tone: "lavender" },
+      { href: "/app/planner", label: "Kế hoạch học", icon: CalendarDays, tone: "coral" },
+      { href: "/app/progress", label: "Tiến độ", icon: ChartNoAxesCombined, tone: "lavender" },
     ],
   },
   {
-    label: "Kỹ năng IELTS",
+    label: "Học & kết nối",
+    links: [
+      { href: "/app/news", label: "Daily News", icon: Newspaper, tone: "sky" },
+      { href: "/app/study-together", label: "Cùng học", icon: UsersRound, tone: "lavender" },
+      ...(communityEnabled ? [{ href: "/app/community", label: "Cộng đồng", icon: MessageCircle, tone: "teal" }] : []),
+      { href: "/app/notebook", label: "Ghi chú", icon: NotebookPen, tone: "sun" },
+    ],
+  },
+  {
+    label: "Tự học IELTS",
+    links: [
+      { href: "/app/self-study", label: "Tổng quan lộ trình", icon: GraduationCap, tone: "sky", locked: true },
+      { href: "/app/self-study/writing-task-1", label: "Writing Task 1 Lab", icon: PenLine, tone: "sun" },
+      { href: "/app/self-study/writing-task-2", label: "Writing Task 2 Lab", icon: PenLine, tone: "coral" },
+      { href: "/app/self-study/speaking", label: "Speaking Lab", icon: Mic, tone: "lavender", locked: true },
+      { href: "/app/self-study/reading", label: "Reading Lab", icon: BookOpenText, tone: "coral", locked: true },
+      { href: "/app/self-study/listening", label: "Listening Lab", icon: Headphones, tone: "teal" },
+    ],
+  },
+  {
+    label: "Luyện tập bổ trợ",
     links: [
       { href: "/app/vocabulary", label: "Vocabulary", icon: Languages, tone: "mint" },
       { href: "/app/grammar", label: "Grammar", icon: SpellCheck, tone: "sky" },
+      { href: "/app/dictation", label: "Dictation", icon: Headphones, tone: "teal" },
+      { href: "/app/practice/translation", label: "Luyện diễn đạt", icon: Languages, tone: "mint" },
+    ],
+  },
+  {
+    label: "Luyện đề",
+    links: [
       { href: "/app/reading", label: "Reading", icon: BookOpenText, tone: "coral" },
       { href: "/app/listening", label: "Listening", icon: Headphones, tone: "teal" },
       { href: "/app/writing", label: "Writing", icon: PenLine, tone: "sun" },
       { href: "/app/speaking", label: "Speaking", icon: Mic, tone: "lavender" },
       ...(!demoMode ? [{ href: "/app/question-bank", label: "Ngân hàng đề", icon: Library, tone: "teal" }] : []),
-    ],
-  },
-  {
-    label: "Học với tin tức",
-    links: [
-      { href: "/app/news/learn", label: "Learn with News", icon: Library, tone: "mint" },
-    ],
-  },
-  {
-    label: "Không gian học",
-    links: [
-      { href: "/app/notebook", label: "Notebook", icon: NotebookPen, tone: "sun" },
-      { href: "/app/content-lab", label: "Content Lab", icon: FlaskConical, tone: "coral" },
+      ...(!demoMode ? [{ href: "/app/speaking/mock", label: "Thi thử Speaking", icon: Mic, tone: "lavender" }] : []),
     ],
   },
 ];
@@ -112,13 +117,15 @@ const skillPracticeLinks: Record<string, SkillPracticeLink[]> = {
     { label: "Từ IELTS Reading", href: "/app/reading/vocabulary" },
     { label: "Collocations", href: "/app/vocabulary/collocations" },
     { label: "Word Formation", href: "/app/vocabulary/word-formation" },
-    { label: "Dịch câu Việt → Anh", href: "/app/vocabulary/translation" },
+    { label: "Dịch câu theo chủ đề", href: "/app/vocabulary/translation" },
     { label: "Sổ từ & tiến độ", href: "/app/vocabulary/notebook" },
   ],
   grammar: [
-    { label: "Bài kiểm tra", href: "/app/grammar/tests" },
+    { label: "Kiểm tra lên cấp", href: "/app/grammar/placement" },
+    { label: "Kiểm tra chặng", href: "/app/grammar/tests" },
     { label: "Ôn tập & Sổ lỗi", href: "/app/grammar/review" },
     { label: "Tiến độ Grammar", href: "/app/grammar/progress" },
+    { label: "Chẩn đoán nhanh", href: "/app/grammar/diagnostic" },
     { label: "Từ nối trong ngữ cảnh", href: "/app/grammar/live" },
   ],
   ...(!demoMode ? {
@@ -135,16 +142,26 @@ const skillPracticeLinks: Record<string, SkillPracticeLink[]> = {
     ],
   } : {}),
   writing: [
-    ...(!demoMode ? [{ label: "Ngân hàng đề", href: "/app/writing#ngan-hang-de" }] : []),
-    { label: "Academic Task 1", href: "/app/writing/task-1" },
-    { label: "Academic Task 2", href: "/app/writing/task-2" },
+    ...(!demoMode ? [
+      { label: "Bài lẻ", href: "/app/writing?type=all", kind: "parent" as const },
+      { label: "Task 1 · Academic", href: "/app/writing?type=task1_academic", kind: "child" as const },
+      { label: "Task 2 · Essay", href: "/app/writing?type=task2", kind: "child" as const },
+    ] : []),
+    { label: "Task 1 · Số liệu World Bank", href: "/app/writing/task-1", ...(!demoMode ? { kind: "full" as const } : {}) },
+    { label: "Task 2 · Chủ đề thời sự", href: "/app/writing/task-2" },
   ],
-  speaking: [
-    ...(!demoMode ? [{ label: "Ngân hàng đề", href: "/app/speaking#ngan-hang-de" }] : []),
+  speaking: !demoMode ? [
+    { label: "Bài lẻ", href: "/app/speaking?type=all", kind: "parent" as const },
+    { label: "Part 1 · Interview", href: "/app/speaking?type=part1", kind: "child" as const },
+    { label: "Part 2 · Cue card", href: "/app/speaking?type=part2", kind: "child" as const },
+    { label: "Part 3 · Discussion", href: "/app/speaking?type=part3", kind: "child" as const },
+    { label: "Thi thử Speaking", href: "/app/speaking/mock", kind: "full" as const },
+    { label: "Part 2 · Chủ đề thời sự", href: "/app/speaking/live" },
+    { label: "Part 3 · Chủ đề thời sự", href: "/app/speaking/part-3" },
+  ] : [
     { label: "Part 1 interview", href: "/app/speaking?type=part1" },
     { label: "Part 2 cue card", href: "/app/speaking/live" },
     { label: "Part 3 follow-up", href: "/app/speaking/part-3" },
-    ...(!demoMode ? [{ label: "Thi thử Speaking", href: "/app/speaking/mock" }] : []),
   ],
 };
 
@@ -187,68 +204,31 @@ function AppShellContent({ children, canManage }: { children: React.ReactNode; c
   const learningRoute = /^\/app\/(?:vocabulary\/(?:study|review|practice|listening|collocations|word-formation|translation)(?:\/|$)|reading\/vocabulary(?:\/|$)|listening\/vocabulary(?:\/|$))/.test(pathname);
   const { online: studyOnline } = useStudyPresence();
   const learnerStreak = useLearnerStreak();
+  const streakCount = demoMode ? 12 : learnerStreak?.current;
+  const streakTier = tierFor(streakCount ?? 0);
+  const streakAtRisk = Boolean(learnerStreak && !learnerStreak.activeToday && learnerStreak.current > 0);
   const newsUnread = useNewsUnread(pathname, liveMode);
   const [profileOpen, setProfileOpen] = useState(false);
   const [avatar, setAvatar] = useState("harry");
+  const [learnerName, setLearnerName] = useState("");
+  const [avatarFrame, setAvatarFrame] = useState("classic");
+  const [xpTotal, setXpTotal] = useState<number | null>(null);
+  const [loginBonus, setLoginBonus] = useState(0);
+  const liveProgress = levelProgress(xpTotal ?? 0);
   const [notificationsOpen, setNotificationsOpen] = useState(false);
   const [query, setQuery] = useState("");
   const [searchOpen, setSearchOpen] = useState(false);
-  const [book2Practiced, setBook2Practiced] = useState(0);
   const searchInput = useRef<HTMLInputElement>(null);
   const completed = tasks.filter((t) => t.completed).length;
   const xp = 320 + Math.max(0, completed - 3) * 15 + attempts.length * 20;
-  useEffect(() => {
-    if (demoMode) return;
-    const db = createClient();
-    let active = true;
-    const loadCount = async () => {
-      const { count } = await db.from("package_practice_results").select("lesson_slug", { count: "exact", head: true }).like("lesson_slug", "b2-%").gt("checked", 0);
-      if (active && count !== null) setBook2Practiced(count);
-    };
-    void loadCount();
-    const unsubscribe = subscribePracticeResults((slug) => { if (slug.startsWith("b2-")) void loadCount(); });
-    return () => { active = false; unsubscribe(); };
-  }, []);
   const filtered = searchItems
     .filter((item) => !lockedLearnerPath(item.href) && item.label.toLowerCase().includes(query.toLowerCase()))
     .slice(0, 5);
   const section = pathname.split("/")[2] || "dashboard";
-  const catalogSkill = section === "reading" ? "Reading" : section === "listening" ? "Listening" : null;
-  const [sidebarCatalog, setSidebarCatalog] = useState<{ skill: "Reading" | "Listening"; exams: CatalogExam[]; error?: string } | null>(null);
-  const catalogExams = sidebarCatalog?.skill === catalogSkill ? sidebarCatalog.exams : null;
-  const catalogFull = searchParams.get("type") === "full_test";
-  const catalogPartValue = Number(searchParams.get("part"));
-  const catalogLimit = catalogSkill === "Reading" ? 3 : 4;
-  const catalogPart = !catalogFull && Number.isInteger(catalogPartValue) && catalogPartValue >= 1 && catalogPartValue <= catalogLimit ? catalogPartValue : 0;
-  const catalogEntries = catalogSkill && catalogExams ? catalogEntriesForSelection(catalogExams, catalogSkill, catalogFull, catalogPart) : [];
-  const catalogTypeCounts = new Map<string, number>();
-  for (const entry of catalogEntries) for (const id of catalogQuestionTypeIds(entry.questionTypes)) catalogTypeCounts.set(id, (catalogTypeCounts.get(id) ?? 0) + 1);
-  const catalogKind = searchParams.get("kind") ?? "";
-  const catalogTypeOptions = [...catalogQuestionTypes, { id: "other", label: "Other Types", test: /./ }].filter((group) => catalogTypeCounts.has(group.id));
-  function typeHref(skill: string, kind: string) {
-    const next = new URLSearchParams(searchParams.toString());
-    if (kind) next.set("kind", kind);
-    else next.delete("kind");
-    const query = next.toString();
-    return `/app/${skill}${query ? `?${query}` : ""}`;
-  }
   const [skillMenuOverride, setSkillMenuOverride] = useState<{ pathname: string; skill: string | null } | null>(null);
   const expandedSkill = skillMenuOverride?.pathname === pathname
     ? skillMenuOverride.skill
     : skillPracticeLinks[section] ? section : null;
-
-  useEffect(() => {
-    if (!catalogSkill || demoMode) return;
-    let active = true;
-    fetch(`/api/ielts/bank/catalog?skill=${catalogSkill}`)
-      .then(async (response) => {
-        if (!response.ok) throw new Error("Không tải được dạng câu hỏi.");
-        return response.json() as Promise<{ exams: CatalogExam[] }>;
-      })
-      .then(({ exams }) => { if (active) setSidebarCatalog({ skill: catalogSkill, exams }); })
-      .catch(() => { if (active) setSidebarCatalog({ skill: catalogSkill, exams: [], error: "Không tải được dạng câu hỏi." }); });
-    return () => { active = false; };
-  }, [catalogSkill]);
 
   useEffect(() => {
     const frame = window.requestAnimationFrame(() => {
@@ -282,15 +262,48 @@ function AppShellContent({ children, canManage }: { children: React.ReactNode; c
     const db = createClient();
     let active = true;
     async function loadAvatar() {
-      const { data: user } = await db.auth.getUser();
-      if (!user.user) return;
-      const { data } = await db.from("profiles").select("avatar").eq("id", user.user.id).maybeSingle();
+      // The local session is enough to address our own profile row (RLS still checks it on the server);
+      // getUser() would add a round trip to the auth server before anything else could start.
+      const { data: session } = await db.auth.getSession();
+      const userId = session.session?.user.id;
+      if (!userId) return;
+      // Claim first: the summary must include today's login bonus.
+      const [{ data }, claim] = await Promise.all([
+        db.from("profiles").select("avatar,avatar_frame,display_name").eq("id", userId).maybeSingle(),
+        db.rpc("claim_daily_login_xp"),
+      ]);
       if (active && data?.avatar) setAvatar(data.avatar);
+      if (active && data?.avatar_frame) setAvatarFrame(data.avatar_frame);
+      if (active && data?.display_name) setLearnerName(data.display_name);
+      if (active && !claim.error && Number(claim.data) === 5) setLoginBonus(5);
+      const summary = await db.rpc("learner_xp_summary");
+      if (active && !summary.error) setXpTotal(Number((summary.data as { xp?: number } | null)?.xp ?? 0));
     }
+    // Once per visit (the shell now stays mounted across pages); avatar changes and some XP awards announce themselves.
     void loadAvatar();
     window.addEventListener("account-avatar-updated", loadAvatar);
-    return () => { active = false; window.removeEventListener("account-avatar-updated", loadAvatar); };
+    window.addEventListener("learner-xp-updated", loadAvatar);
+    return () => { active = false; window.removeEventListener("account-avatar-updated", loadAvatar); window.removeEventListener("learner-xp-updated", loadAvatar); };
   }, []);
+
+  // XP is summed from many activities, most of which don't announce it, so re-read just the
+  // total in the background after each page change (skipping the first page, loaded above).
+  const xpPathname = useRef(pathname);
+  useEffect(() => {
+    if (demoMode || xpPathname.current === pathname) return;
+    xpPathname.current = pathname;
+    let active = true;
+    void createClient().rpc("learner_xp_summary").then((summary) => {
+      if (active && !summary.error) setXpTotal(Number((summary.data as { xp?: number } | null)?.xp ?? 0));
+    });
+    return () => { active = false; };
+  }, [pathname]);
+
+  useEffect(() => {
+    if (!loginBonus) return;
+    const timer = window.setTimeout(() => setLoginBonus(0), 5000);
+    return () => window.clearTimeout(timer);
+  }, [loginBonus]);
 
   function toggleSidebar() {
     setSidebarCollapsed((current) => {
@@ -370,24 +383,14 @@ function AppShellContent({ children, canManage }: { children: React.ReactNode; c
           )}
         </div>
         <div className="header-actions">
+          {loginBonus > 0 && <span className="login-xp-toast" role="status">+5 XP · Đăng nhập hôm nay</span>}
           <HeaderWeatherWidget />
-          <Link href="/app/progress" className="stat-pill streak" title="Chuỗi ngày học">
-            <Flame size={18} fill="#ff9b3d" color="#ef6a24" />
-            <strong>{demoMode ? 12 : learnerStreak?.current ?? "…"}</strong>
-            <small>ngày liên tiếp</small>
+          <Link href="/app/progress" className={`stat-pill streak ${streakAtRisk ? "at-risk" : ""}`}
+            title={streakAtRisk ? `Học một bài hôm nay để giữ chuỗi ${streakCount} ngày!` : "Chuỗi ngày học"}>
+            <Flame size={18} fill={streakTier.colors[1]} color={streakTier.colors[0]} />
+            <strong>{streakCount ?? "…"}</strong>
+            <small>{streakAtRisk ? "giữ chuỗi nhé!" : "ngày liên tiếp"}</small>
           </Link>
-          {demoMode && <div className="stat-pill xp" title="XP points">
-            <Star size={18} fill="#ffd15a" color="#e0a020" />
-            <strong>{xp}</strong>
-            <small>XP</small>
-          </div>}
-          <div className="stat-pill level">
-            <Trophy size={18} fill="#ffd15a" color="#d99a17" />
-            <strong>{demoMode ? "Level 3" : `${completed} tasks`}</strong>
-            <small>{demoMode ? "Demo learner" : `${attempts.length + book2Practiced} bài đã luyện`}</small>
-            {demoMode && <span className="level-bar" title={`${xp % 500}/500 XP tới level tiếp theo`}><i style={{ width: `${(xp % 500) / 5}%` }} /></span>}
-          </div>
-          <span className="header-divider" aria-hidden="true" />
           <div className="popover-wrap">
             {!demoMode ? <NotificationBell open={notificationsOpen} onToggle={() => { setNotificationsOpen(!notificationsOpen); setProfileOpen(false); }} /> : <><button
               className="icon-button notification-button"
@@ -412,16 +415,23 @@ function AppShellContent({ children, canManage }: { children: React.ReactNode; c
           </div>
           <div className="popover-wrap">
             <button
-              className="avatar-button"
-              aria-label="Open profile menu"
+              className="avatar-button profile-trigger"
+              aria-label={`Mở menu hồ sơ, cấp ${demoMode ? 3 : xpTotal === null ? "đang tải" : liveProgress.level}, ${demoMode ? xp : xpTotal?.toLocaleString("vi-VN") ?? "đang tải"} XP`}
               aria-expanded={profileOpen}
+              title={demoMode ? `${xp % 500}/500 XP tới cấp tiếp theo` : xpTotal === null ? "Đang tải XP" : `${rankForLevel(liveProgress.level)} · ${liveProgress.earned}/${liveProgress.required} XP tới cấp ${liveProgress.level + 1}`}
               onClick={() => {
                 setProfileOpen(!profileOpen);
                 setNotificationsOpen(false);
               }}
             >
-              {demoMode ? <span><UserRound size={18} strokeWidth={2.2} /></span> : canManage ? <HarryMascot size={34} /> : <AccountAvatar value={avatar} size={34} />}
-              <ChevronDown size={15} />
+              <span className="profile-trigger-avatar">
+                {demoMode ? <span className="profile-demo-avatar"><UserRound size={18} strokeWidth={2.2} /></span> : canManage ? <HarryMascot size={34} /> : <AvatarFrame avatar={avatar} frame={avatarFrame} size={34} />}
+                <ChevronDown size={13} />
+              </span>
+              <span className="profile-trigger-progress">
+                <span><b>{demoMode ? "Cấp 3" : xpTotal === null ? "Cấp …" : `Cấp ${liveProgress.level}`}</b><small>{demoMode ? xp : xpTotal?.toLocaleString("vi-VN") ?? "…"} XP</small></span>
+                <span className="level-bar"><i style={{ width: demoMode ? `${(xp % 500) / 5}%` : `${liveProgress.percent}%` }} /></span>
+              </span>
             </button>
             {profileOpen && (
               <div className="small-popover profile-menu">
@@ -478,15 +488,16 @@ function AppShellContent({ children, canManage }: { children: React.ReactNode; c
         <nav aria-label="Main navigation">
           {groups.map((group) => (
             <div className="nav-group" key={group.label}>
-              <span className={`nav-group-label ${group.label === "HOT" ? "nav-group-hot" : ""}`}>{group.label === "HOT" && <Flame size={13} aria-hidden="true" />}{group.label}</span>
-              {group.links.map(({ href, label, icon: Icon, tone }) => {
+              <span className="nav-group-label">{group.label}</span>
+              {group.links.map(({ href, label, icon: Icon, tone, locked }) => {
                 const skill = href.split("/")[2];
-                const practiceLinks = skillPracticeLinks[skill];
-                const examSkill = skill === "reading" || skill === "listening";
+                const practiceLinks = href === `/app/${skill}` ? skillPracticeLinks[skill] : undefined;
+                const examSkill = Boolean(practiceLinks) && (skill === "reading" || skill === "listening" || ((skill === "writing" || skill === "speaking") && !demoMode));
+                const currentType = searchParams.get("type") ?? (skill === "reading" ? "passage" : skill === "listening" ? "part" : "all");
                 const expanded = expandedSkill === skill && Boolean(practiceLinks);
                 const active = isActive(pathname, href);
-                if (lockedLearnerPath(href)) return <div key={href} className="nav-link nav-link-locked" aria-label={`${label} đang chuẩn bị`} title={`${label} đang chuẩn bị`}>
-                  <b className={`nav-icon tone-${tone}`}><Icon size={17} strokeWidth={2.2} /></b><span>{label}</span><small>Sắp mở</small>
+                if (locked || lockedLearnerPath(href)) return <div key={href} className="nav-link nav-link-locked" aria-disabled="true" aria-label={`${label} đang chuẩn bị`} title={`${label} đang chuẩn bị`}>
+                  <b className={`nav-icon tone-${tone}`}><Icon size={17} strokeWidth={2.2} /></b><span>{label}</span><LockKeyhole size={12} aria-hidden="true" /><small>Sắp mở</small>
                 </div>;
                 return <div className={`nav-item ${examSkill ? `nav-exam-item nav-exam-${skill}` : ""}`} key={href}>
                   <Link
@@ -512,9 +523,10 @@ function AppShellContent({ children, canManage }: { children: React.ReactNode; c
                     {practiceLinks.filter((practice) => !lockedLearnerPath(practice.href)).map((practice) => {
                       const target = new URL(practice.href, "https://ieltswithharry.local");
                       const selected = examSkill
-                        ? target.pathname !== href ? pathname === target.pathname : pathname === target.pathname && (searchParams.get("type") ?? (skill === "reading" ? "passage" : "part")) === target.searchParams.get("type") && (searchParams.get("part") ?? "") === (target.searchParams.get("part") ?? "")
+                        ? target.pathname !== href ? pathname === target.pathname : pathname === target.pathname && currentType === target.searchParams.get("type") && (searchParams.get("part") ?? "") === (target.searchParams.get("part") ?? "")
                         : pathname === target.pathname && (!target.search || searchParams.get("collection") === target.searchParams.get("collection"));
-                      const parentSelected = examSkill && practice.kind === "parent" && pathname === target.pathname && (searchParams.get("type") ?? (skill === "reading" ? "passage" : "part")) === target.searchParams.get("type");
+                      // Writing tasks and Speaking parts sit under "Bài lẻ" with their own type, so any of them lights the parent.
+                      const parentSelected = examSkill && practice.kind === "parent" && pathname === target.pathname && (skill === "writing" || skill === "speaking" || currentType === target.searchParams.get("type"));
                       return <Link
                         key={practice.href}
                         href={practice.href}
@@ -523,17 +535,6 @@ function AppShellContent({ children, canManage }: { children: React.ReactNode; c
                         onClick={() => setMenuOpen(false)}
                       >{practice.label}</Link>;
                     })}
-                  </div>}
-                  {examSkill && expanded && pathname === href && <div className="nav-exam-types" role="group" aria-label={`Loại câu hỏi ${label}`}>
-                    <span className="nav-exam-types-title"><Filter size={14} aria-hidden="true" /> Loại câu hỏi</span>
-                    {sidebarCatalog?.skill === catalogSkill && sidebarCatalog.error
-                      ? <span className="nav-exam-types-state" role="status">{sidebarCatalog.error}</span>
-                      : catalogExams === null
-                        ? <span className="nav-exam-types-state" role="status">Đang tải dạng câu hỏi…</span>
-                        : <>
-                          <Link href={typeHref(skill, "")} className={`nav-exam-type ${!catalogKind || !catalogTypeCounts.has(catalogKind) ? "active" : ""}`} aria-current={!catalogKind || !catalogTypeCounts.has(catalogKind) ? "page" : undefined} onClick={() => setMenuOpen(false)}><span>Tất cả dạng câu hỏi</span><small>{catalogEntries.length}</small></Link>
-                          {catalogTypeOptions.map((group) => <Link key={group.id} href={typeHref(skill, group.id)} className={`nav-exam-type ${catalogKind === group.id ? "active" : ""}`} aria-current={catalogKind === group.id ? "page" : undefined} onClick={() => setMenuOpen(false)}><span>{group.label}</span><small>{catalogTypeCounts.get(group.id)}</small></Link>)}
-                        </>}
                   </div>}
                 </div>;
               })}
@@ -572,6 +573,8 @@ function AppShellContent({ children, canManage }: { children: React.ReactNode; c
         )}
       </nav>
       {!learningRoute && <NotebookWidget />}
+      <StreakCelebration streak={learnerStreak} />
+      <StudyCompanion streak={learnerStreak} newsUnread={newsUnread} name={learnerName} hidden={learningRoute} />
     </div>
   );
 }

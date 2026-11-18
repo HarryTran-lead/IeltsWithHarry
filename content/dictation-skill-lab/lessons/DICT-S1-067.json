@@ -1,0 +1,478 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "DICT-S1-067",
+  "status": "draft",
+  "level": "L6",
+  "section": 1,
+  "topic": "Shopping & Returns",
+  "title": "A Warranty Claim and a Replacement Option",
+  "learning_objectives_vi": [
+    "Luyện integrated information challenge trong tình huống: A customer resolves a complicated appliance fault and shipping choices.",
+    "Nhận diện thông tin cuối cùng thay vì lặp lại dữ kiện đã bị sửa hoặc phủ định.",
+    "Chép đúng lời thoại, hiểu bằng chứng và học từ vựng trong ngữ cảnh."
+  ],
+  "content_format": "section_practice",
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Customer / applicant",
+      "tts_voice_id": null,
+      "accent_requested": "british"
+    },
+    {
+      "speaker_id": "B",
+      "role": "Service representative / employee",
+      "tts_voice_id": null,
+      "accent_requested": "british"
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "Good afternoon. I bought a compact dishwasher from your online store eight months ago, and it's stopped draining properly.",
+      "translation_vi": "Chào anh. Tôi mua máy rửa bát nhỏ trên cửa hàng trực tuyến tám tháng trước, giờ máy thoát nước kém.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "conditions",
+        "warranty",
+        "time_window",
+        "section_1",
+        "two_speaker_dialogue",
+        "l6"
+      ]
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "B",
+      "text_en": "I'm sorry. Has the engineer already looked at it, or is this the first time you've reported the problem?",
+      "translation_vi": "Rất tiếc. Kỹ thuật viên đã kiểm tra chưa hay đây là lần đầu bạn báo lỗi?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "conditions",
+        "warranty",
+        "time_window",
+        "section_1",
+        "two_speaker_dialogue",
+        "l6"
+      ]
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "A",
+      "text_en": "An engineer visited on Tuesday. He replaced a hose, but the problem returned the next morning.",
+      "translation_vi": "Kỹ thuật viên đến thứ Ba. Anh ấy thay ống dẫn, nhưng sáng hôm sau lỗi lại xuất hiện.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "conditions",
+        "warranty",
+        "time_window",
+        "section_1",
+        "two_speaker_dialogue",
+        "l6"
+      ]
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "B",
+      "text_en": "Because the first repair failed, you're eligible for a replacement under the warranty.",
+      "translation_vi": "Vì lần sửa đầu không thành, bạn đủ điều kiện đổi máy theo bảo hành.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "conditions",
+        "warranty",
+        "time_window",
+        "section_1",
+        "two_speaker_dialogue",
+        "l6"
+      ]
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "A",
+      "text_en": "I'd prefer that. Is the original silver model still available?",
+      "translation_vi": "Tôi muốn đổi. Mẫu bạc ban đầu còn không?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "conditions",
+        "warranty",
+        "time_window",
+        "section_1",
+        "two_speaker_dialogue",
+        "l6"
+      ]
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "B",
+      "text_en": "Not currently. We could send the white version this week, or wait two weeks for the silver model. Both are the same price.",
+      "translation_vi": "Hiện không. Chúng tôi có thể gửi màu trắng tuần này, hoặc chờ hai tuần cho màu bạc. Giá giống nhau.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "conditions",
+        "warranty",
+        "time_window",
+        "section_1",
+        "two_speaker_dialogue",
+        "l6"
+      ]
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "The colour isn't a problem. I'd like the white one as soon as possible, provided installation is included.",
+      "translation_vi": "Màu không quan trọng. Tôi muốn máy trắng sớm nhất, miễn là có lắp đặt.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "conditions",
+        "warranty",
+        "time_window",
+        "section_1",
+        "two_speaker_dialogue",
+        "l6"
+      ]
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "B",
+      "text_en": "Installation is covered, but removal of your old machine is normally fifteen pounds. We can waive that charge because this is a warranty replacement.",
+      "translation_vi": "Lắp đặt đã được bao gồm, nhưng tháo máy cũ thường tốn 15 bảng. Chúng tôi miễn phí vì đổi bảo hành.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "conditions",
+        "warranty",
+        "time_window",
+        "section_1",
+        "two_speaker_dialogue",
+        "l6"
+      ]
+    },
+    {
+      "turn_id": "T09",
+      "speaker_id": "A",
+      "text_en": "That's helpful. Could the team deliver it on Thursday? I'm away on Wednesday.",
+      "translation_vi": "Tốt quá. Đội giao có thể tới thứ Năm không? Tôi vắng thứ Tư.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "conditions",
+        "warranty",
+        "time_window",
+        "section_1",
+        "two_speaker_dialogue",
+        "l6"
+      ]
+    },
+    {
+      "turn_id": "T10",
+      "speaker_id": "B",
+      "text_en": "The earliest Thursday slot is between one and three in the afternoon. We can text a narrower window that morning.",
+      "translation_vi": "Ca thứ Năm sớm nhất là từ một đến ba giờ chiều. Sáng đó chúng tôi sẽ nhắn khung giờ hẹp hơn.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "conditions",
+        "warranty",
+        "time_window",
+        "section_1",
+        "two_speaker_dialogue",
+        "l6"
+      ]
+    },
+    {
+      "turn_id": "T11",
+      "speaker_id": "A",
+      "text_en": "Fine. My order number finishes in four eight six two, if you need to identify it.",
+      "translation_vi": "Được. Mã đơn hàng của tôi kết thúc bằng 4862, nếu cần tra cứu.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "conditions",
+        "warranty",
+        "time_window",
+        "section_1",
+        "two_speaker_dialogue",
+        "l6"
+      ]
+    },
+    {
+      "turn_id": "T12",
+      "speaker_id": "B",
+      "text_en": "I've found it. Please disconnect the water supply before the installers arrive, but leave the machine in place.",
+      "translation_vi": "Tôi đã tìm thấy. Vui lòng ngắt nguồn nước trước khi đội lắp đến nhưng để máy tại chỗ.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "conditions",
+        "warranty",
+        "time_window",
+        "section_1",
+        "two_speaker_dialogue",
+        "l6"
+      ]
+    },
+    {
+      "turn_id": "T13",
+      "speaker_id": "A",
+      "text_en": "Understood. I'll be home on Thursday afternoon.",
+      "translation_vi": "Tôi hiểu. Tôi sẽ ở nhà chiều thứ Năm.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "conditions",
+        "warranty",
+        "time_window",
+        "section_1",
+        "two_speaker_dialogue",
+        "l6"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "type": "form_completion",
+      "prompt": "Reason for replacement: first ____ failed",
+      "correct_answers": [
+        "repair"
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Lần sửa đầu thất bại nên được đổi.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "conditions",
+        "warranty",
+        "time_window",
+        "ielts_section1_practice"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q02",
+      "type": "mcq",
+      "prompt": "Which replacement colour is selected?",
+      "correct_answers": [
+        "white"
+      ],
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "explanation_vi": "Khách chọn màu trắng để nhận sớm.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "conditions",
+        "warranty",
+        "time_window",
+        "ielts_section1_practice"
+      ],
+      "options": [
+        "silver",
+        "white",
+        "black"
+      ]
+    },
+    {
+      "question_id": "Q03",
+      "type": "form_completion",
+      "prompt": "Old machine removal fee charged: £____",
+      "correct_answers": [
+        "0"
+      ],
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "explanation_vi": "Phí 15 bảng được miễn.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "conditions",
+        "warranty",
+        "time_window",
+        "ielts_section1_practice"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q04",
+      "type": "form_completion",
+      "prompt": "Delivery window: ____ to three",
+      "correct_answers": [
+        "one"
+      ],
+      "evidence_turn_ids": [
+        "T10"
+      ],
+      "explanation_vi": "Khung giao hàng 1–3 chiều.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "conditions",
+        "warranty",
+        "time_window",
+        "ielts_section1_practice"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q05",
+      "type": "form_completion",
+      "prompt": "Order number ends in ____",
+      "correct_answers": [
+        "4862"
+      ],
+      "evidence_turn_ids": [
+        "T11"
+      ],
+      "explanation_vi": "Bốn chữ số cuối là 4862.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "conditions",
+        "warranty",
+        "time_window",
+        "ielts_section1_practice"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q06",
+      "type": "form_completion",
+      "prompt": "Before delivery, disconnect the ____ supply",
+      "correct_answers": [
+        "water"
+      ],
+      "evidence_turn_ids": [
+        "T12"
+      ],
+      "explanation_vi": "Cần ngắt nguồn nước, giữ máy tại chỗ.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "conditions",
+        "warranty",
+        "time_window",
+        "ielts_section1_practice"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "D01",
+      "type": "dictation",
+      "prompt": "Nghe và chép nguyên văn lời nhân vật A (lượt T05).",
+      "correct_answers": [
+        "I'd prefer that. Is the original silver model still available?"
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Câu chuẩn: I'd prefer that. Is the original silver model still available? Nghĩa: Tôi muốn đổi. Mẫu bạc ban đầu còn không? Cần nghe rõ từ chức năng, âm cuối và thông tin cụ thể.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "conditions",
+        "warranty",
+        "time_window",
+        "dictation",
+        "transcription_accuracy"
+      ]
+    },
+    {
+      "question_id": "G01",
+      "type": "gap_fill",
+      "prompt": "Nghe và điền từ/cụm từ thiếu: Good afternoon. I bought a compact dishwasher from your online store eight months ago, and it's stopped ____ properly.",
+      "correct_answers": [
+        "draining"
+      ],
+      "evidence_turn_ids": [
+        "T01"
+      ],
+      "explanation_vi": "Cụm cần điền: draining (thoát nước). Câu gốc: Good afternoon. I bought a compact dishwasher from your online store eight months ago, and it's stopped draining properly.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "conditions",
+        "warranty",
+        "time_window",
+        "gap_fill",
+        "vocabulary_in_context"
+      ]
+    }
+  ],
+  "vocabulary": [
+    {
+      "term": "draining",
+      "pos": "word",
+      "meaning_vi": "thoát nước",
+      "example_en": "Good afternoon. I bought a compact dishwasher from your online store eight months ago, and it's stopped draining properly.",
+      "example_vi": "Chào anh. Tôi mua máy rửa bát nhỏ trên cửa hàng trực tuyến tám tháng trước, giờ máy thoát nước kém.",
+      "source_turn_id": "T01"
+    },
+    {
+      "term": "warranty",
+      "pos": "word",
+      "meaning_vi": "bảo hành",
+      "example_en": "Because the first repair failed, you're eligible for a replacement under the warranty.",
+      "example_vi": "Vì lần sửa đầu không thành, bạn đủ điều kiện đổi máy theo bảo hành.",
+      "source_turn_id": "T04"
+    },
+    {
+      "term": "waive that charge",
+      "pos": "phrase",
+      "meaning_vi": "miễn khoản phí đó",
+      "example_en": "Installation is covered, but removal of your old machine is normally fifteen pounds. We can waive that charge because this is a warranty replacement.",
+      "example_vi": "Lắp đặt đã được bao gồm, nhưng tháo máy cũ thường tốn 15 bảng. Chúng tôi miễn phí vì đổi bảo hành.",
+      "source_turn_id": "T08"
+    },
+    {
+      "term": "disconnect",
+      "pos": "word",
+      "meaning_vi": "ngắt kết nối",
+      "example_en": "I've found it. Please disconnect the water supply before the installers arrive, but leave the machine in place.",
+      "example_vi": "Tôi đã tìm thấy. Vui lòng ngắt nguồn nước trước khi đội lắp đến nhưng để máy tại chỗ.",
+      "source_turn_id": "T12"
+    }
+  ],
+  "audio": {
+    "status": "not_generated",
+    "url": null,
+    "duration_ms": null,
+    "model": null,
+    "provider": null,
+    "voice_config": null,
+    "source_transcript_hash": "e79717403f4553389a7ecddbae688667190e873c529bf6c051447754872b42da",
+    "audio_sha256": null,
+    "format": null
+  },
+  "qa": {
+    "content_reviewed": false,
+    "answers_verified": false,
+    "audio_verified": false,
+    "rights_cleared": false,
+    "duplicate_reviewed": false,
+    "notes": [
+      "AI-assisted original draft; requires IELTS-teacher review of all items and ambiguity.",
+      "Audio and time-alignment are pending.",
+      "Do not release automatically after structural validation.",
+      "M16.2: automated edits are provisional; IELTS teacher final signoff, audio and rights clearance pending."
+    ]
+  },
+  "provenance": {
+    "content_origin": "original_ai_assisted",
+    "source_urls": [],
+    "source_rights_note": "Original educational dialogue. Verify TTS provider usage conditions, rights and accessibility before production. Not an official IELTS item.",
+    "reviewer": null
+  },
+  "release_metadata": {
+    "published_at": null,
+    "version": 1
+  }
+}

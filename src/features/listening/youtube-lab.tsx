@@ -9,6 +9,7 @@ import { wordDifferences, youtubeId, type VideoLesson } from "@/lib/listening/yo
 import { catalogVideos, findCatalogVideos, videoTopics, type CatalogVideo, type VideoTopic } from "@/lib/listening/video-catalog";
 import { YoutubePlayer } from "./youtube-player";
 import "./youtube-lab.css";
+import { LoadingBlock } from "@/components/layout/loading-block";
 
 export const demoLessonsKey = "english-skill-lab-youtube-lessons-v1";
 type Mode = "shadow" | "repeat" | "dictation" | "questions" | "words";
@@ -33,6 +34,7 @@ export function YoutubeLab() {
   const [take, setTake] = useState<Take | null>(null);
   const [answer, setAnswer] = useState("");
   const [checked, setChecked] = useState(false);
+  const [dictationXp, setDictationXp] = useState(0);
   const [quizAnswers, setQuizAnswers] = useState<Record<number, number>>({});
   const [quizChecked, setQuizChecked] = useState(false);
   const [word, setWord] = useState("");
@@ -54,9 +56,17 @@ export function YoutubeLab() {
   const youtubeSearch = search.trim() || (topic === "all" ? "IELTS listening practice" : videoTopics.find((item) => item.id === topic)?.search ?? "IELTS listening practice");
   const authorized = Boolean(selected && selected.transcript.length && selected.rights_source && selected.rights_license);
   const active = selected?.transcript.findIndex((item) => time >= item.start && time < item.end) ?? -1;
-  function pickLesson(lesson: VideoLesson) { if (take) mic.release(take.url); setTake(null); setSelected(lesson); setCatalogSelection(null); setCustomUrl(""); setCueIndex(0); setRequest(0); setChecked(false); setAnswer(""); setQuizChecked(false); setQuizAnswers({}); setError(""); }
+  function pickLesson(lesson: VideoLesson) { if (take) mic.release(take.url); setTake(null); setSelected(lesson); setCatalogSelection(null); setCustomUrl(""); setCueIndex(0); setRequest(0); setChecked(false); setDictationXp(0); setAnswer(""); setQuizChecked(false); setQuizAnswers({}); setError(""); }
   function pickCatalog(video: CatalogVideo) { if (take) mic.release(take.url); setTake(null); setSelected(null); setCatalogSelection(video); setCustomUrl(""); setError(""); window.requestAnimationFrame(() => document.getElementById("yt-watch")?.scrollIntoView({ behavior: "smooth", block: "start" })); }
-  function playCue(index: number) { if (!selected?.transcript[index]) return; setCueIndex(index); setRequest((value) => value + 1); setChecked(false); setAnswer(""); }
+  function playCue(index: number) { if (!selected?.transcript[index]) return; setCueIndex(index); setRequest((value) => value + 1); setChecked(false); setDictationXp(0); setAnswer(""); }
+  async function checkDictation() {
+    if (!answer.trim() || !selected) return;
+    setChecked(true); setDictationXp(0);
+    if (demoMode || !db) return;
+    const result = await db.rpc("save_youtube_dictation_attempt", { p_lesson: selected.id, p_cue: cueIndex, p_answer: answer });
+    if (result.error) setError(`Đã kiểm tra câu, nhưng chưa lưu XP: ${result.error.message}`);
+    else { setDictationXp(Number(result.data ?? 0)); if (Number(result.data ?? 0) > 0) window.dispatchEvent(new Event("learner-xp-updated")); }
+  }
   async function stopRecording() { const recorded = await mic.stop(); if (recorded) { if (take) mic.release(take.url); setTake(recorded); } }
   async function saveWord() {
     const candidate = word.trim();
@@ -78,7 +88,7 @@ export function YoutubeLab() {
         return videos.length ? <div className="yt-topic-section" key={item.id}><div className="yt-topic-heading"><h3>{item.label}</h3><a href={`https://www.youtube.com/results?search_query=${encodeURIComponent(item.search)}`} target="_blank" rel="noopener noreferrer">Xem thêm ↗</a></div><div className="yt-video-grid">{videos.map((video) => <button type="button" key={video.id} className={`yt-video-card ${catalogSelection?.id === video.id ? "active" : ""}`} onClick={() => pickCatalog(video)}><span className="yt-video-thumb" style={{ backgroundImage: `url(https://i.ytimg.com/vi/${video.id}/hqdefault.jpg)` }}><span>▶ Phát video</span></span><span className="yt-video-card-copy"><strong>{video.title}</strong><small>{video.channel} · {video.duration}</small></span></button>)}</div></div> : null;
       }) : <div className="yt-search-empty"><strong>Chưa có video trong thư viện khớp từ khóa này.</strong><p>Thử một chủ đề khác hoặc tìm toàn bộ YouTube bằng nút phía trên.</p></div>}
     </section>
-    <section className="yt-panel"><h2>Bài luyện có phụ đề & câu hỏi</h2>{loading ? <p>Đang tải bài luyện…</p> : filteredLessons.length ? <div className="yt-lesson-list">{filteredLessons.map((lesson) => <button type="button" key={lesson.id} className={selected?.id === lesson.id ? "active" : ""} onClick={() => pickLesson(lesson)}><strong>{lesson.title}</strong><small>{lesson.cefr} · {lesson.topic}</small></button>)}</div> : <p>{lessons.length ? "Không có bài luyện khớp từ khóa." : "Chưa có bài do giáo viên xuất bản. Bạn vẫn có thể xem và luyện nghe với thư viện video ở trên."}</p>}
+    <section className="yt-panel"><h2>Bài luyện có phụ đề & câu hỏi</h2>{loading ? <p><LoadingBlock label="Đang tải bài luyện…" /></p> : filteredLessons.length ? <div className="yt-lesson-list">{filteredLessons.map((lesson) => <button type="button" key={lesson.id} className={selected?.id === lesson.id ? "active" : ""} onClick={() => pickLesson(lesson)}><strong>{lesson.title}</strong><small>{lesson.cefr} · {lesson.topic}</small></button>)}</div> : <p>{lessons.length ? "Không có bài luyện khớp từ khóa." : "Chưa có bài do giáo viên xuất bản. Bạn vẫn có thể xem và luyện nghe với thư viện video ở trên."}</p>}
       <label>Xem video từ liên kết YouTube<input value={customUrl} onChange={(event) => { setSelected(null); setCatalogSelection(null); setCustomUrl(event.target.value); }} placeholder="https://www.youtube.com/watch?v=..." /></label>{customUrl && !videoId && <small role="alert">Hãy nhập URL HTTPS của một video YouTube hợp lệ.</small>}
     </section>
     {videoId && <section id="yt-watch" className="yt-panel yt-watch"><h2>{selected?.title ?? catalogSelection?.title ?? "Video YouTube"}</h2><YoutubePlayer key={videoId} id={videoId} segment={request ? cue : null} request={request} loop={loop} onTime={setTime} />{selected && <small>Nguồn phụ đề: {selected.rights_license} · {selected.rights_source}</small>}</section>}
@@ -88,7 +98,7 @@ export function YoutubeLab() {
       <div className="yt-activity"><h3>{mode === "shadow" ? "Shadow this sentence" : mode === "repeat" ? "Repeat after me" : mode === "dictation" ? "Type what you hear" : mode === "questions" ? "Teacher questions" : "Save a word"}</h3>
         {mode !== "questions" && <><p className="yt-sentence">{mode === "dictation" && !checked ? "Listen first, then type the sentence." : cue.text}</p><div className="yt-controls"><button type="button" onClick={() => playCue(cueIndex)}>Play sentence</button><label><input type="checkbox" checked={loop} onChange={(event) => setLoop(event.target.checked)} /> Loop</label></div></>}
         {(mode === "shadow" || mode === "repeat") && <div className="yt-record">{mic.recording ? <><span>{mic.paused ? "Paused" : `Recording ${mic.seconds}s`}</span><button type="button" onClick={mic.paused ? mic.resume : mic.pause}>{mic.paused ? "Resume" : "Pause"}</button><button type="button" onClick={() => void stopRecording()}>Stop</button></> : <button type="button" onClick={() => void mic.start()}>Record your voice</button>}{take && <><audio controls src={take.url} aria-label="Your recorded answer" /><button type="button" onClick={() => { mic.release(take.url); setTake(null); }}>Delete recording</button></>}{mic.error && <p role="alert">{mic.error}</p>}<small>Recordings stay in this tab and disappear when you leave.</small></div>}
-        {mode === "dictation" && <div className="yt-dictation"><textarea value={answer} onChange={(event) => setAnswer(event.target.value)} aria-label="Type the sentence you heard" rows={3} /><button type="button" disabled={!answer.trim()} onClick={() => setChecked(true)}>Check</button>{checked && <><div className="yt-diff">{wordDifferences(cue.text, answer).map((item, index) => <span key={index} className={item.kind} title={item.kind}>{item.word}</span>)}</div><p>Green: correct · amber: missing · red: extra or incorrect.</p><button type="button" onClick={() => { setAnswer(""); setChecked(false); playCue(cueIndex); }}>Try again</button></>}</div>}
+        {mode === "dictation" && <div className="yt-dictation"><textarea value={answer} onChange={(event) => setAnswer(event.target.value)} aria-label="Type the sentence you heard" rows={3} /><button type="button" disabled={!answer.trim() || checked} onClick={() => void checkDictation()}>Check</button><small>3 XP khi kiểm tra lần đầu mỗi câu trong 10 câu đầu của bài.</small>{checked && <><div className="yt-diff">{wordDifferences(cue.text, answer).map((item, index) => <span key={index} className={item.kind} title={item.kind}>{item.word}</span>)}</div><p>Green: correct · amber: missing · red: extra or incorrect.{dictationXp > 0 ? ` +${dictationXp} XP` : ""}</p><button type="button" onClick={() => { setAnswer(""); setChecked(false); setDictationXp(0); playCue(cueIndex); }}>Try again</button></>}</div>}
         {mode === "questions" && (selected.questions.length ? <div className="yt-questions">{selected.questions.map((question, index) => <fieldset key={index}><legend>{question.prompt}</legend>{question.options.map((option, optionIndex) => <label key={optionIndex}><input type="radio" name={`yt-q-${index}`} checked={quizAnswers[index] === optionIndex} onChange={() => setQuizAnswers((current) => ({ ...current, [index]: optionIndex }))} /> {option}</label>)}{quizChecked && <p>{quizAnswers[index] === question.answer ? "Correct" : `Answer: ${question.options[question.answer]}`}</p>}</fieldset>)}<button type="button" disabled={Object.keys(quizAnswers).length !== selected.questions.length} onClick={() => setQuizChecked(true)}>Check answers</button><button type="button" onClick={() => { setQuizChecked(false); setQuizAnswers({}); }}>Retry</button></div> : <p>No teacher questions for this lesson yet.</p>)}
         {mode === "words" && <div className="yt-word"><label>Word in this sentence<input value={word} onChange={(event) => setWord(event.target.value)} /></label><label>Meaning<input value={meaning} onChange={(event) => setMeaning(event.target.value)} /></label><button type="button" onClick={() => void saveWord()}>Save to Vocabulary</button><Link href="/app/vocabulary/notebook">Open saved words</Link></div>}
       </div></div></section>}

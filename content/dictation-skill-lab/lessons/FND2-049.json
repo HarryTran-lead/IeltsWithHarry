@@ -1,0 +1,610 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "FND2-049",
+  "status": "draft",
+  "level": "L2",
+  "section": 0,
+  "topic": "Foundation M18 – Spelling",
+  "title": "Hyphens and apostrophes in names",
+  "learning_objectives_vi": [
+    "Nghe được hyphens and apostrophes in names trong tình huống mới.",
+    "Chép chính xác thông tin mục tiêu (name_punctuation).",
+    "Phân biệt bài luyện quen và bài kiểm tra chưa từng nghe."
+  ],
+  "content_format": "sentence_drill",
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Foundation narrator",
+      "tts_voice_id": null,
+      "accent_requested": "new_zealand"
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "Her full first name is Anne hyphen Marie, spelled A, N, N, E, hyphen, M, A, R, I, E.",
+      "translation_vi": "Tên đầy đủ của cô ấy là Anne-Marie, đánh vần có dấu gạch nối.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m18",
+        "name_punctuation",
+        "punctuated_name"
+      ],
+      "target_value": "Anne-Marie",
+      "target_kind": "punctuated_name",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "A",
+      "text_en": "The surname is O apostrophe Neil: O, apostrophe, N, E, I, L.",
+      "translation_vi": "Họ là O'Neil, có dấu nháy sau O.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m18",
+        "name_punctuation",
+        "punctuated_name"
+      ],
+      "target_value": "O'Neil",
+      "target_kind": "punctuated_name",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "A",
+      "text_en": "Please write Jean hyphen Paul, J, E, A, N, hyphen, P, A, U, L.",
+      "translation_vi": "Vui lòng viết Jean-Paul, có dấu gạch nối.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m18",
+        "name_punctuation",
+        "punctuated_name"
+      ],
+      "target_value": "Jean-Paul",
+      "target_kind": "punctuated_name",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "A",
+      "text_en": "The registration is under D apostrophe Arcy: D, apostrophe, A, R, C, Y.",
+      "translation_vi": "Đăng ký dưới tên D'Arcy, có dấu nháy.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m18",
+        "name_punctuation",
+        "punctuated_name"
+      ],
+      "target_value": "D'Arcy",
+      "target_kind": "punctuated_name",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "A",
+      "text_en": "My colleague is called Mary hyphen Kate, M, A, R, Y, hyphen, K, A, T, E.",
+      "translation_vi": "Đồng nghiệp tên Mary-Kate, có dấu gạch nối.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m18",
+        "name_punctuation",
+        "punctuated_name"
+      ],
+      "target_value": "Mary-Kate",
+      "target_kind": "punctuated_name",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "A",
+      "text_en": "The contact surname is O apostrophe Shea, O, apostrophe, S, H, E, A.",
+      "translation_vi": "Họ người liên hệ là O'Shea, có dấu nháy.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m18",
+        "name_punctuation",
+        "punctuated_name"
+      ],
+      "target_value": "O'Shea",
+      "target_kind": "punctuated_name",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "Write Sara hyphen Jane with a hyphen: S, A, R, A, hyphen, J, A, N, E.",
+      "translation_vi": "Hãy viết Sara-Jane với dấu gạch nối.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m18",
+        "name_punctuation",
+        "punctuated_name"
+      ],
+      "target_value": "Sara-Jane",
+      "target_kind": "punctuated_name",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "A",
+      "text_en": "The family name is D apostrophe Souza: D, apostrophe, S, O, U, Z, A.",
+      "translation_vi": "Họ gia đình là D'Souza, có dấu nháy.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m18",
+        "name_punctuation",
+        "punctuated_name"
+      ],
+      "target_value": "D'Souza",
+      "target_kind": "punctuated_name",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T09",
+      "speaker_id": "A",
+      "text_en": "Use the name Ella hyphen Rose, E, L, L, A, hyphen, R, O, S, E.",
+      "translation_vi": "Hãy dùng tên Ella-Rose, có dấu gạch nối.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m18",
+        "name_punctuation",
+        "punctuated_name"
+      ],
+      "target_value": "Ella-Rose",
+      "target_kind": "punctuated_name",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T10",
+      "speaker_id": "A",
+      "text_en": "The author signs as O apostrophe Hara: O, apostrophe, H, A, R, A.",
+      "translation_vi": "Tác giả ký tên O'Hara, có dấu nháy.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m18",
+        "name_punctuation",
+        "punctuated_name"
+      ],
+      "target_value": "O'Hara",
+      "target_kind": "punctuated_name",
+      "bank_role": "training"
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "type": "dictation",
+      "prompt": "Nghe lượt T01 rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "Her full first name is Anne hyphen Marie, spelled A, N, N, E, hyphen, M, A, R, I, E."
+      ],
+      "evidence_turn_ids": [
+        "T01"
+      ],
+      "explanation_vi": "Câu gốc: Her full first name is Anne hyphen Marie, spelled A, N, N, E, hyphen, M, A, R, I, E. Nghĩa: Tên đầy đủ của cô ấy là Anne-Marie, đánh vần có dấu gạch nối. Lưu ý: Ký tự gạch nối và dấu nháy là một phần của đáp án, không tự ý bỏ.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "name_punctuation"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q02",
+      "type": "dictation",
+      "prompt": "Nghe lượt T02 rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "The surname is O apostrophe Neil: O, apostrophe, N, E, I, L."
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Câu gốc: The surname is O apostrophe Neil: O, apostrophe, N, E, I, L. Nghĩa: Họ là O'Neil, có dấu nháy sau O. Lưu ý: Ký tự gạch nối và dấu nháy là một phần của đáp án, không tự ý bỏ.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "name_punctuation"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q03",
+      "type": "dictation",
+      "prompt": "Nghe lượt T03 rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "Please write Jean hyphen Paul, J, E, A, N, hyphen, P, A, U, L."
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Câu gốc: Please write Jean hyphen Paul, J, E, A, N, hyphen, P, A, U, L. Nghĩa: Vui lòng viết Jean-Paul, có dấu gạch nối. Lưu ý: Ký tự gạch nối và dấu nháy là một phần của đáp án, không tự ý bỏ.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "name_punctuation"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q04",
+      "type": "dictation",
+      "prompt": "Nghe lượt T04 rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "The registration is under D apostrophe Arcy: D, apostrophe, A, R, C, Y."
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Câu gốc: The registration is under D apostrophe Arcy: D, apostrophe, A, R, C, Y. Nghĩa: Đăng ký dưới tên D'Arcy, có dấu nháy. Lưu ý: Ký tự gạch nối và dấu nháy là một phần của đáp án, không tự ý bỏ.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "name_punctuation"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q05",
+      "type": "dictation",
+      "prompt": "Nghe lượt T05 rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "My colleague is called Mary hyphen Kate, M, A, R, Y, hyphen, K, A, T, E."
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Câu gốc: My colleague is called Mary hyphen Kate, M, A, R, Y, hyphen, K, A, T, E. Nghĩa: Đồng nghiệp tên Mary-Kate, có dấu gạch nối. Lưu ý: Ký tự gạch nối và dấu nháy là một phần của đáp án, không tự ý bỏ.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "name_punctuation"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q06",
+      "type": "dictation",
+      "prompt": "Nghe lượt T06 rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "The contact surname is O apostrophe Shea, O, apostrophe, S, H, E, A."
+      ],
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "explanation_vi": "Câu gốc: The contact surname is O apostrophe Shea, O, apostrophe, S, H, E, A. Nghĩa: Họ người liên hệ là O'Shea, có dấu nháy. Lưu ý: Ký tự gạch nối và dấu nháy là một phần của đáp án, không tự ý bỏ.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "name_punctuation"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q07",
+      "type": "dictation",
+      "prompt": "Nghe lượt T07 rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "Write Sara hyphen Jane with a hyphen: S, A, R, A, hyphen, J, A, N, E."
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "Câu gốc: Write Sara hyphen Jane with a hyphen: S, A, R, A, hyphen, J, A, N, E. Nghĩa: Hãy viết Sara-Jane với dấu gạch nối. Lưu ý: Ký tự gạch nối và dấu nháy là một phần của đáp án, không tự ý bỏ.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "name_punctuation"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q08",
+      "type": "dictation",
+      "prompt": "Nghe lượt T08 rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "The family name is D apostrophe Souza: D, apostrophe, S, O, U, Z, A."
+      ],
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "explanation_vi": "Câu gốc: The family name is D apostrophe Souza: D, apostrophe, S, O, U, Z, A. Nghĩa: Họ gia đình là D'Souza, có dấu nháy. Lưu ý: Ký tự gạch nối và dấu nháy là một phần của đáp án, không tự ý bỏ.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "name_punctuation"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q09",
+      "type": "dictation",
+      "prompt": "Nghe lượt T09 rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "Use the name Ella hyphen Rose, E, L, L, A, hyphen, R, O, S, E."
+      ],
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "explanation_vi": "Câu gốc: Use the name Ella hyphen Rose, E, L, L, A, hyphen, R, O, S, E. Nghĩa: Hãy dùng tên Ella-Rose, có dấu gạch nối. Lưu ý: Ký tự gạch nối và dấu nháy là một phần của đáp án, không tự ý bỏ.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "name_punctuation"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q10",
+      "type": "dictation",
+      "prompt": "Nghe lượt T10 rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "The author signs as O apostrophe Hara: O, apostrophe, H, A, R, A."
+      ],
+      "evidence_turn_ids": [
+        "T10"
+      ],
+      "explanation_vi": "Câu gốc: The author signs as O apostrophe Hara: O, apostrophe, H, A, R, A. Nghĩa: Tác giả ký tên O'Hara, có dấu nháy. Lưu ý: Ký tự gạch nối và dấu nháy là một phần của đáp án, không tự ý bỏ.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "name_punctuation"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q11",
+      "type": "short_answer",
+      "prompt": "Nghe lượt T06 rồi nhập tên có dấu câu được xác nhận trong câu.",
+      "correct_answers": [
+        "O'Shea"
+      ],
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "explanation_vi": "Gạch nối hoặc dấu nháy là một phần của đáp án. Đáp án: O'Shea. Nội dung: Họ người liên hệ là O'Shea, có dấu nháy.",
+      "scoring_policy": "case_insensitive_preserve_letters_and_internal_punctuation",
+      "target_kind": "punctuated_name",
+      "question_tags": [
+        "short_answer",
+        "name_punctuation",
+        "punctuated_name"
+      ],
+      "max_replays_practice": 5,
+      "first_listen_only_for_mastery": false
+    },
+    {
+      "question_id": "Q12",
+      "type": "short_answer",
+      "prompt": "Nghe lượt T07 rồi nhập tên có dấu câu được xác nhận trong câu.",
+      "correct_answers": [
+        "Sara-Jane"
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "Gạch nối hoặc dấu nháy là một phần của đáp án. Đáp án: Sara-Jane. Nội dung: Hãy viết Sara-Jane với dấu gạch nối.",
+      "scoring_policy": "case_insensitive_preserve_letters_and_internal_punctuation",
+      "target_kind": "punctuated_name",
+      "question_tags": [
+        "short_answer",
+        "name_punctuation",
+        "punctuated_name"
+      ],
+      "max_replays_practice": 5,
+      "first_listen_only_for_mastery": false
+    },
+    {
+      "question_id": "Q13",
+      "type": "short_answer",
+      "prompt": "Nghe lượt T08 rồi nhập tên có dấu câu được xác nhận trong câu.",
+      "correct_answers": [
+        "D'Souza"
+      ],
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "explanation_vi": "Gạch nối hoặc dấu nháy là một phần của đáp án. Đáp án: D'Souza. Nội dung: Họ gia đình là D'Souza, có dấu nháy.",
+      "scoring_policy": "case_insensitive_preserve_letters_and_internal_punctuation",
+      "target_kind": "punctuated_name",
+      "question_tags": [
+        "short_answer",
+        "name_punctuation",
+        "punctuated_name"
+      ],
+      "max_replays_practice": 5,
+      "first_listen_only_for_mastery": false
+    },
+    {
+      "question_id": "Q14",
+      "type": "short_answer",
+      "prompt": "Nghe lượt T09 rồi nhập tên có dấu câu được xác nhận trong câu.",
+      "correct_answers": [
+        "Ella-Rose"
+      ],
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "explanation_vi": "Gạch nối hoặc dấu nháy là một phần của đáp án. Đáp án: Ella-Rose. Nội dung: Hãy dùng tên Ella-Rose, có dấu gạch nối.",
+      "scoring_policy": "case_insensitive_preserve_letters_and_internal_punctuation",
+      "target_kind": "punctuated_name",
+      "question_tags": [
+        "short_answer",
+        "name_punctuation",
+        "punctuated_name"
+      ],
+      "max_replays_practice": 5,
+      "first_listen_only_for_mastery": false
+    },
+    {
+      "question_id": "Q15",
+      "type": "short_answer",
+      "prompt": "Nghe lượt T10 rồi nhập tên có dấu câu được xác nhận trong câu.",
+      "correct_answers": [
+        "O'Hara"
+      ],
+      "evidence_turn_ids": [
+        "T10"
+      ],
+      "explanation_vi": "Gạch nối hoặc dấu nháy là một phần của đáp án. Đáp án: O'Hara. Nội dung: Tác giả ký tên O'Hara, có dấu nháy.",
+      "scoring_policy": "case_insensitive_preserve_letters_and_internal_punctuation",
+      "target_kind": "punctuated_name",
+      "question_tags": [
+        "short_answer",
+        "name_punctuation",
+        "punctuated_name"
+      ],
+      "max_replays_practice": 5,
+      "first_listen_only_for_mastery": false
+    }
+  ],
+  "vocabulary": [
+    {
+      "term": "hyphen",
+      "pos": "n",
+      "meaning_vi": "dấu gạch nối",
+      "example_en": "Her full first name is Anne hyphen Marie, spelled A, N, N, E, hyphen, M, A, R, I, E.",
+      "example_vi": "Tên đầy đủ của cô ấy là Anne-Marie, đánh vần có dấu gạch nối.",
+      "is_illustrative_context": true
+    },
+    {
+      "term": "apostrophe",
+      "pos": "n",
+      "meaning_vi": "dấu nháy đơn",
+      "example_en": "The surname is O apostrophe Neil: O, apostrophe, N, E, I, L.",
+      "example_vi": "Họ là O'Neil, có dấu nháy sau O.",
+      "is_illustrative_context": true
+    },
+    {
+      "term": "double letter",
+      "pos": "n",
+      "meaning_vi": "hai chữ cái giống nhau",
+      "example_en": "A double letter means two identical letters together.",
+      "example_vi": "Một cặp chữ lặp nghĩa là hai chữ giống nhau đứng liền nhau.",
+      "is_illustrative_context": true
+    },
+    {
+      "term": "surname",
+      "pos": "n",
+      "meaning_vi": "họ",
+      "example_en": "The surname is O apostrophe Neil: O, apostrophe, N, E, I, L.",
+      "example_vi": "Họ là O'Neil, có dấu nháy sau O.",
+      "is_illustrative_context": true
+    },
+    {
+      "term": "punctuation",
+      "pos": "n",
+      "meaning_vi": "dấu câu",
+      "example_en": "The punctuation in the email address must be exact.",
+      "example_vi": "Dấu câu trong địa chỉ email phải chính xác.",
+      "is_illustrative_context": true
+    },
+    {
+      "term": "exact spelling",
+      "pos": "n",
+      "meaning_vi": "cách viết chính xác",
+      "example_en": "Ask for the exact spelling of the surname.",
+      "example_vi": "Hãy hỏi cách viết chính xác của họ.",
+      "is_illustrative_context": true
+    }
+  ],
+  "micro_skill_id": "name_punctuation",
+  "bank_role": "training",
+  "content_design": {
+    "sequence": "10_varied_contexts",
+    "first_listen": "1x",
+    "guided_replay_max": 5,
+    "mastery_requires_unseen": true,
+    "learning_note_vi": "Ký tự gạch nối và dấu nháy là một phần của đáp án, không tự ý bỏ.",
+    "category": "spelling",
+    "post_submit_review_only": true,
+    "unseen_assessment_id": "FND2-049-HOLDOUT",
+    "spoken_text_must_match_target": true
+  },
+  "audio": {
+    "status": "not_generated",
+    "url": null,
+    "duration_ms": null,
+    "provider": null,
+    "model": null,
+    "voice_config": null,
+    "format": null,
+    "audio_sha256": null,
+    "source_transcript_hash": "a7858b1570951da2fff43e7cebd0d3f5e9eac0452c7645acdb4e3b3ada3888d7",
+    "generation_notes": "Synthesize spoken utterance only, speak spelled letters and punctuation explicitly. Never read teaching metadata. QA each target by a person."
+  },
+  "qa": {
+    "content_reviewed": false,
+    "answers_verified": false,
+    "audio_verified": false,
+    "human_signed_off": false,
+    "duplicate_reviewed": false,
+    "notes": [
+      "M18 originally authored drafts; automated checks only, teacher/accent review pending.",
+      "No TTS audio and no measured timestamps. Domain/email examples use reserved example.* names."
+    ]
+  },
+  "provenance": {
+    "content_origin": "original_ai_assisted",
+    "rights_status": "pending_audio_terms_review",
+    "source_urls": [],
+    "reviewer": null
+  },
+  "release_metadata": {
+    "published_at": null,
+    "version": 1
+  },
+  "lesson_theory_vi": {
+    "core_rule": "Ký tự gạch nối và dấu nháy là một phần của đáp án, không tự ý bỏ.",
+    "worked_contrasts": [
+      {
+        "spoken_example": "A, N, N, hyphen, M, A",
+        "written_value": "ANN-MA",
+        "teacher_note_vi": "Hyphen được giữ trong cách viết."
+      },
+      {
+        "spoken_example": "O, apostrophe, B, R",
+        "written_value": "O'BR",
+        "teacher_note_vi": "Apostrophe cũng là một ký tự cần chép."
+      }
+    ],
+    "learning_steps": [
+      "Nhìn quy tắc nhận diện chữ cái và dấu câu, đọc hai ví dụ.",
+      "Nghe chuỗi được đánh vần, ghi lại từng ký tự ngay khi nghe.",
+      "Chỉ xem transcript/đáp án sau khi nộp, rà từng chữ/dấu nối.",
+      "Dùng hai câu chưa gặp để kiểm tra trong một lần nghe với giọng khác."
+    ],
+    "common_mistakes": [
+      "Suy đoán cách viết tên theo phát âm thay vì ký tự đánh vần.",
+      "Bỏ chữ lặp, dấu gạch nối, dấu nháy hoặc số 0 trong mã."
+    ],
+    "before_audio_question": "Người nói đang đọc tên, mã chữ-số, email, tên miền hay postcode? Có từ double, hyphen, underscore không?",
+    "difficulty_steps": [
+      "T01–T03: nghe thông tin chính trong ngữ cảnh rõ.",
+      "T04–T07: nghe chuỗi dài hơn, chọn chữ/số đúng.",
+      "T08–T10: chú ý thông tin sửa lại, định dạng và ngữ cảnh pha trộn."
+    ],
+    "examples_are_not_mastery_items": true
+  }
+}

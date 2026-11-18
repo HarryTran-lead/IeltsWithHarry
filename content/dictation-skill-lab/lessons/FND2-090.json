@@ -1,0 +1,623 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "FND2-090",
+  "status": "draft",
+  "level": "L3",
+  "section": 0,
+  "topic": "Foundation M19 – Connected Speech",
+  "title": "Connected speech in everyday exchanges",
+  "learning_objectives_vi": [
+    "Nghe câu tự nhiên gồm nhiều cụm nối âm và ý nghĩa trong dịch vụ thường ngày.",
+    "Nghe lại theo lỗi trọng tâm, không chỉ hoàn thành số bài.",
+    "Đánh giá bằng nội dung chưa gặp và một lần nghe."
+  ],
+  "content_format": "sentence_drill",
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Foundation narrator",
+      "tts_voice_id": null,
+      "accent_requested": "australian"
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "Could you let me know when the parcel arrives?",
+      "translation_vi": "Bạn có thể báo tôi khi bưu kiện đến không?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m19",
+        "connected_speech_in_context",
+        "connected_speech"
+      ],
+      "target_value": "let me know",
+      "target_kind": "lexical_phrase",
+      "target_meaning_vi": "báo tôi biết",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "A",
+      "text_en": "I didn't catch the last part of the announcement.",
+      "translation_vi": "Tôi không nghe rõ phần cuối của thông báo.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m19",
+        "connected_speech_in_context",
+        "connected_speech"
+      ],
+      "target_value": "didn't catch",
+      "target_kind": "lexical_phrase",
+      "target_meaning_vi": "không nghe rõ",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "A",
+      "text_en": "Would you mind checking the spelling one more time?",
+      "translation_vi": "Bạn có phiền kiểm tra lại cách đánh vần một lần nữa không?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m19",
+        "connected_speech_in_context",
+        "connected_speech"
+      ],
+      "target_value": "Would you mind",
+      "target_kind": "lexical_phrase",
+      "target_meaning_vi": "bạn có phiền",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "A",
+      "text_en": "We're meant to meet outside, but everyone's gone inside.",
+      "translation_vi": "Chúng tôi đáng lẽ gặp ngoài trời, nhưng mọi người đã vào trong.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m19",
+        "connected_speech_in_context",
+        "connected_speech"
+      ],
+      "target_value": "meant to",
+      "target_kind": "lexical_phrase",
+      "target_meaning_vi": "dự định",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "A",
+      "text_en": "I thought you said fifteen, not fifty, on the phone.",
+      "translation_vi": "Tôi tưởng bạn nói mười lăm, không phải năm mươi, qua điện thoại.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m19",
+        "connected_speech_in_context",
+        "connected_speech"
+      ],
+      "target_value": "fifteen",
+      "target_kind": "lexical_phrase",
+      "target_meaning_vi": "mười lăm",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "A",
+      "text_en": "If you're free later, we could go over the notes together.",
+      "translation_vi": "Nếu bạn rảnh sau đó, chúng ta có thể xem lại ghi chú cùng nhau.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m19",
+        "connected_speech_in_context",
+        "connected_speech"
+      ],
+      "target_value": "go over",
+      "target_kind": "lexical_phrase",
+      "target_meaning_vi": "xem lại",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "You'll need to speak up because it's noisy at the back.",
+      "translation_vi": "Bạn cần nói to lên vì phía sau ồn.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m19",
+        "connected_speech_in_context",
+        "connected_speech"
+      ],
+      "target_value": "speak up",
+      "target_kind": "lexical_phrase",
+      "target_meaning_vi": "nói to lên",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "A",
+      "text_en": "I couldn't work out whether she said thirteen or thirty.",
+      "translation_vi": "Tôi không phân biệt được cô ấy nói mười ba hay ba mươi.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m19",
+        "connected_speech_in_context",
+        "connected_speech"
+      ],
+      "target_value": "work out",
+      "target_kind": "lexical_phrase",
+      "target_meaning_vi": "hiểu ra",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T09",
+      "speaker_id": "A",
+      "text_en": "We've run into a delay, so the session will start later.",
+      "translation_vi": "Chúng tôi gặp trì hoãn nên buổi học sẽ bắt đầu muộn hơn.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m19",
+        "connected_speech_in_context",
+        "connected_speech"
+      ],
+      "target_value": "run into",
+      "target_kind": "lexical_phrase",
+      "target_meaning_vi": "gặp phải",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T10",
+      "speaker_id": "A",
+      "text_en": "Let's check in with the organiser before making a decision.",
+      "translation_vi": "Hãy trao đổi với ban tổ chức trước khi quyết định.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m19",
+        "connected_speech_in_context",
+        "connected_speech"
+      ],
+      "target_value": "check in",
+      "target_kind": "lexical_phrase",
+      "target_meaning_vi": "trao đổi xác nhận",
+      "bank_role": "training"
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "type": "dictation",
+      "prompt": "Nghe lượt T01 rồi chép đầy đủ câu tiếng Anh được nói.",
+      "correct_answers": [
+        "Could you let me know when the parcel arrives?"
+      ],
+      "evidence_turn_ids": [
+        "T01"
+      ],
+      "explanation_vi": "Nghe lại theo nhóm từ; câu gốc là: Could you let me know when the parcel arrives? Nghĩa: Bạn có thể báo tôi khi bưu kiện đến không?",
+      "scoring_policy": "case_whitespace_insensitive_preserve_contraction_apostrophes",
+      "question_tags": [
+        "dictation",
+        "connected_speech_in_context"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q02",
+      "type": "dictation",
+      "prompt": "Nghe lượt T02 rồi chép đầy đủ câu tiếng Anh được nói.",
+      "correct_answers": [
+        "I didn't catch the last part of the announcement."
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Nghe lại theo nhóm từ; câu gốc là: I didn't catch the last part of the announcement. Nghĩa: Tôi không nghe rõ phần cuối của thông báo.",
+      "scoring_policy": "case_whitespace_insensitive_preserve_contraction_apostrophes",
+      "question_tags": [
+        "dictation",
+        "connected_speech_in_context"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q03",
+      "type": "dictation",
+      "prompt": "Nghe lượt T03 rồi chép đầy đủ câu tiếng Anh được nói.",
+      "correct_answers": [
+        "Would you mind checking the spelling one more time?"
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Nghe lại theo nhóm từ; câu gốc là: Would you mind checking the spelling one more time? Nghĩa: Bạn có phiền kiểm tra lại cách đánh vần một lần nữa không?",
+      "scoring_policy": "case_whitespace_insensitive_preserve_contraction_apostrophes",
+      "question_tags": [
+        "dictation",
+        "connected_speech_in_context"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q04",
+      "type": "dictation",
+      "prompt": "Nghe lượt T04 rồi chép đầy đủ câu tiếng Anh được nói.",
+      "correct_answers": [
+        "We're meant to meet outside, but everyone's gone inside."
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Nghe lại theo nhóm từ; câu gốc là: We're meant to meet outside, but everyone's gone inside. Nghĩa: Chúng tôi đáng lẽ gặp ngoài trời, nhưng mọi người đã vào trong.",
+      "scoring_policy": "case_whitespace_insensitive_preserve_contraction_apostrophes",
+      "question_tags": [
+        "dictation",
+        "connected_speech_in_context"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q05",
+      "type": "dictation",
+      "prompt": "Nghe lượt T05 rồi chép đầy đủ câu tiếng Anh được nói.",
+      "correct_answers": [
+        "I thought you said fifteen, not fifty, on the phone."
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Nghe lại theo nhóm từ; câu gốc là: I thought you said fifteen, not fifty, on the phone. Nghĩa: Tôi tưởng bạn nói mười lăm, không phải năm mươi, qua điện thoại.",
+      "scoring_policy": "case_whitespace_insensitive_preserve_contraction_apostrophes",
+      "question_tags": [
+        "dictation",
+        "connected_speech_in_context"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q06",
+      "type": "dictation",
+      "prompt": "Nghe lượt T06 rồi chép đầy đủ câu tiếng Anh được nói.",
+      "correct_answers": [
+        "If you're free later, we could go over the notes together."
+      ],
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "explanation_vi": "Nghe lại theo nhóm từ; câu gốc là: If you're free later, we could go over the notes together. Nghĩa: Nếu bạn rảnh sau đó, chúng ta có thể xem lại ghi chú cùng nhau.",
+      "scoring_policy": "case_whitespace_insensitive_preserve_contraction_apostrophes",
+      "question_tags": [
+        "dictation",
+        "connected_speech_in_context"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q07",
+      "type": "dictation",
+      "prompt": "Nghe lượt T07 rồi chép đầy đủ câu tiếng Anh được nói.",
+      "correct_answers": [
+        "You'll need to speak up because it's noisy at the back."
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "Nghe lại theo nhóm từ; câu gốc là: You'll need to speak up because it's noisy at the back. Nghĩa: Bạn cần nói to lên vì phía sau ồn.",
+      "scoring_policy": "case_whitespace_insensitive_preserve_contraction_apostrophes",
+      "question_tags": [
+        "dictation",
+        "connected_speech_in_context"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q08",
+      "type": "dictation",
+      "prompt": "Nghe lượt T08 rồi chép đầy đủ câu tiếng Anh được nói.",
+      "correct_answers": [
+        "I couldn't work out whether she said thirteen or thirty."
+      ],
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "explanation_vi": "Nghe lại theo nhóm từ; câu gốc là: I couldn't work out whether she said thirteen or thirty. Nghĩa: Tôi không phân biệt được cô ấy nói mười ba hay ba mươi.",
+      "scoring_policy": "case_whitespace_insensitive_preserve_contraction_apostrophes",
+      "question_tags": [
+        "dictation",
+        "connected_speech_in_context"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q09",
+      "type": "dictation",
+      "prompt": "Nghe lượt T09 rồi chép đầy đủ câu tiếng Anh được nói.",
+      "correct_answers": [
+        "We've run into a delay, so the session will start later."
+      ],
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "explanation_vi": "Nghe lại theo nhóm từ; câu gốc là: We've run into a delay, so the session will start later. Nghĩa: Chúng tôi gặp trì hoãn nên buổi học sẽ bắt đầu muộn hơn.",
+      "scoring_policy": "case_whitespace_insensitive_preserve_contraction_apostrophes",
+      "question_tags": [
+        "dictation",
+        "connected_speech_in_context"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q10",
+      "type": "dictation",
+      "prompt": "Nghe lượt T10 rồi chép đầy đủ câu tiếng Anh được nói.",
+      "correct_answers": [
+        "Let's check in with the organiser before making a decision."
+      ],
+      "evidence_turn_ids": [
+        "T10"
+      ],
+      "explanation_vi": "Nghe lại theo nhóm từ; câu gốc là: Let's check in with the organiser before making a decision. Nghĩa: Hãy trao đổi với ban tổ chức trước khi quyết định.",
+      "scoring_policy": "case_whitespace_insensitive_preserve_contraction_apostrophes",
+      "question_tags": [
+        "dictation",
+        "connected_speech_in_context"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q11",
+      "type": "short_answer",
+      "prompt": "Nghe lượt T06. Cụm động từ chỉ xem lại là gì? Trả lời bằng từ/cụm tiếng Anh đúng như lời nghe.",
+      "correct_answers": [
+        "go over"
+      ],
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "explanation_vi": "Thông tin đúng: go over (xem lại). Dẫn chứng: If you're free later, we could go over the notes together. Nghĩa: Nếu bạn rảnh sau đó, chúng ta có thể xem lại ghi chú cùng nhau.",
+      "scoring_policy": "lexical_case_whitespace_insensitive_preserve_contraction_apostrophes_server",
+      "target_kind": "lexical_phrase",
+      "question_tags": [
+        "short_answer",
+        "connected_speech_in_context",
+        "training_comprehension"
+      ],
+      "max_replays_practice": 5,
+      "first_listen_only_for_mastery": false
+    },
+    {
+      "question_id": "Q12",
+      "type": "short_answer",
+      "prompt": "Nghe lượt T07. Cụm động từ chỉ nói to hơn là gì? Trả lời bằng từ/cụm tiếng Anh đúng như lời nghe.",
+      "correct_answers": [
+        "speak up"
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "Thông tin đúng: speak up (nói to lên). Dẫn chứng: You'll need to speak up because it's noisy at the back. Nghĩa: Bạn cần nói to lên vì phía sau ồn.",
+      "scoring_policy": "lexical_case_whitespace_insensitive_preserve_contraction_apostrophes_server",
+      "target_kind": "lexical_phrase",
+      "question_tags": [
+        "short_answer",
+        "connected_speech_in_context",
+        "training_comprehension"
+      ],
+      "max_replays_practice": 5,
+      "first_listen_only_for_mastery": false
+    },
+    {
+      "question_id": "Q13",
+      "type": "short_answer",
+      "prompt": "Nghe lượt T08. Cụm động từ nào chỉ hiểu ra/phân biệt được? Trả lời bằng từ/cụm tiếng Anh đúng như lời nghe.",
+      "correct_answers": [
+        "work out"
+      ],
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "explanation_vi": "Thông tin đúng: work out (hiểu ra). Dẫn chứng: I couldn't work out whether she said thirteen or thirty. Nghĩa: Tôi không phân biệt được cô ấy nói mười ba hay ba mươi.",
+      "scoring_policy": "lexical_case_whitespace_insensitive_preserve_contraction_apostrophes_server",
+      "target_kind": "lexical_phrase",
+      "question_tags": [
+        "short_answer",
+        "connected_speech_in_context",
+        "training_comprehension"
+      ],
+      "max_replays_practice": 5,
+      "first_listen_only_for_mastery": false
+    },
+    {
+      "question_id": "Q14",
+      "type": "short_answer",
+      "prompt": "Nghe lượt T09. Cụm động từ nào chỉ gặp phải vấn đề? Trả lời bằng từ/cụm tiếng Anh đúng như lời nghe.",
+      "correct_answers": [
+        "run into"
+      ],
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "explanation_vi": "Thông tin đúng: run into (gặp phải). Dẫn chứng: We've run into a delay, so the session will start later. Nghĩa: Chúng tôi gặp trì hoãn nên buổi học sẽ bắt đầu muộn hơn.",
+      "scoring_policy": "lexical_case_whitespace_insensitive_preserve_contraction_apostrophes_server",
+      "target_kind": "lexical_phrase",
+      "question_tags": [
+        "short_answer",
+        "connected_speech_in_context",
+        "training_comprehension"
+      ],
+      "max_replays_practice": 5,
+      "first_listen_only_for_mastery": false
+    },
+    {
+      "question_id": "Q15",
+      "type": "short_answer",
+      "prompt": "Nghe lượt T10. Cụm động từ nào chỉ liên hệ xác nhận? Trả lời bằng từ/cụm tiếng Anh đúng như lời nghe.",
+      "correct_answers": [
+        "check in"
+      ],
+      "evidence_turn_ids": [
+        "T10"
+      ],
+      "explanation_vi": "Thông tin đúng: check in (trao đổi xác nhận). Dẫn chứng: Let's check in with the organiser before making a decision. Nghĩa: Hãy trao đổi với ban tổ chức trước khi quyết định.",
+      "scoring_policy": "lexical_case_whitespace_insensitive_preserve_contraction_apostrophes_server",
+      "target_kind": "lexical_phrase",
+      "question_tags": [
+        "short_answer",
+        "connected_speech_in_context",
+        "training_comprehension"
+      ],
+      "max_replays_practice": 5,
+      "first_listen_only_for_mastery": false
+    }
+  ],
+  "vocabulary": [
+    {
+      "term": "let me know",
+      "pos": "verb phrase",
+      "meaning_vi": "báo tôi biết",
+      "example_en": "Could you let me know when the parcel arrives?",
+      "example_vi": "Bạn có thể báo tôi khi bưu kiện đến không?",
+      "is_illustrative_context": false
+    },
+    {
+      "term": "didn't catch",
+      "pos": "verb phrase",
+      "meaning_vi": "không nghe rõ",
+      "example_en": "I didn't catch the last part of the announcement.",
+      "example_vi": "Tôi không nghe rõ phần cuối của thông báo.",
+      "is_illustrative_context": false
+    },
+    {
+      "term": "Would you mind",
+      "pos": "verb phrase",
+      "meaning_vi": "bạn có phiền",
+      "example_en": "Would you mind checking the spelling one more time?",
+      "example_vi": "Bạn có phiền kiểm tra lại cách đánh vần một lần nữa không?",
+      "is_illustrative_context": false
+    },
+    {
+      "term": "meant to",
+      "pos": "verb phrase",
+      "meaning_vi": "dự định",
+      "example_en": "We're meant to meet outside, but everyone's gone inside.",
+      "example_vi": "Chúng tôi đáng lẽ gặp ngoài trời, nhưng mọi người đã vào trong.",
+      "is_illustrative_context": false
+    },
+    {
+      "term": "fifteen",
+      "pos": "verb phrase",
+      "meaning_vi": "mười lăm",
+      "example_en": "I thought you said fifteen, not fifty, on the phone.",
+      "example_vi": "Tôi tưởng bạn nói mười lăm, không phải năm mươi, qua điện thoại.",
+      "is_illustrative_context": false
+    },
+    {
+      "term": "go over",
+      "pos": "verb phrase",
+      "meaning_vi": "xem lại",
+      "example_en": "If you're free later, we could go over the notes together.",
+      "example_vi": "Nếu bạn rảnh sau đó, chúng ta có thể xem lại ghi chú cùng nhau.",
+      "is_illustrative_context": false
+    }
+  ],
+  "micro_skill_id": "connected_speech_in_context",
+  "bank_role": "training",
+  "content_design": {
+    "sequence": "10_varied_contexts",
+    "first_listen": "1x",
+    "guided_replay_max": 5,
+    "mastery_requires_unseen": true,
+    "learning_note_vi": "Nghe câu tự nhiên gồm nhiều cụm nối âm và ý nghĩa trong dịch vụ thường ngày.",
+    "category": "connected_speech",
+    "post_submit_review_only": true,
+    "unseen_assessment_id": "FND2-090-HOLDOUT",
+    "spoken_text_must_match_target": true,
+    "holdout_must_be_server_side": true,
+    "no_band_claim": true
+  },
+  "audio": {
+    "status": "not_generated",
+    "url": null,
+    "duration_ms": null,
+    "provider": null,
+    "model": null,
+    "voice_config": null,
+    "format": null,
+    "audio_sha256": null,
+    "source_transcript_hash": "c0a35904af89ad1bfda27cbbe6dbefcb62b6ba98ea263891cbe26a2ceae53dd2",
+    "generation_notes": "Synthesize actual spoken utterance only; never read learning metadata. Human verify dates, names and connected-speech target."
+  },
+  "qa": {
+    "content_reviewed": false,
+    "answers_verified": false,
+    "audio_verified": false,
+    "human_signed_off": false,
+    "duplicate_reviewed": false,
+    "notes": [
+      "M19 originally authored DRAFT, machine-verified only.",
+      "Connected-speech phonetic features NOT established until actual audio is reviewed."
+    ]
+  },
+  "provenance": {
+    "content_origin": "original_ai_assisted",
+    "rights_status": "pending_tts_audio_terms_review",
+    "source_urls": [],
+    "reviewer": null
+  },
+  "release_metadata": {
+    "published_at": null,
+    "version": 1
+  },
+  "lesson_theory_vi": {
+    "core_rule": "Nghe câu tự nhiên gồm nhiều cụm nối âm và ý nghĩa trong dịch vụ thường ngày.",
+    "worked_contrasts": [
+      {
+        "spoken_example": "I've sent it to the office.",
+        "written_value": "I've / to the",
+        "teacher_note_vi": "Dạng chữ viết không thay đổi dù khi nói có thể nối âm hoặc nhược âm."
+      },
+      {
+        "spoken_example": "Could you pick it up after lunch?",
+        "written_value": "pick it up",
+        "teacher_note_vi": "Nhóm ba từ có thể nối âm; cần nghe và chép đúng thứ tự."
+      }
+    ],
+    "learning_steps": [
+      "Đọc lý thuyết, so sánh phần chữ viết với khả năng nối âm của giọng tự nhiên.",
+      "Nghe một lần, chép đúng chữ viết chuẩn, không tự thêm dạng phát âm khẩu ngữ.",
+      "Nghe lại đoạn khó sau khi nộp và đối chiếu transcript.",
+      "TTS phải được nghe duyệt: không chấm đạt nếu âm thực tế không có đặc điểm nhắm đến."
+    ],
+    "common_mistakes": [
+      "Đoán theo âm đầu, bỏ qua phủ định hoặc lựa chọn thay thế.",
+      "Chỉ nhìn từ khóa quen mà không nghe phần phủ định hoặc cách người nói sửa lại."
+    ],
+    "before_audio_question": "Đâu là ranh giới các từ và hình thức viết chuẩn của cụm nghe được?",
+    "difficulty_steps": [
+      "T01–T03: ngữ cảnh ngắn, thông tin chính rõ ràng.",
+      "T04–T07: thêm thông tin phụ, dạng phủ định hoặc tương phản.",
+      "T08–T10: nội dung dài hơn, nhiều chi tiết hoặc đổi ý."
+    ],
+    "examples_are_not_mastery_items": true,
+    "audio_review_warning_vi": "Các dạng nối âm/nhược âm chỉ là mục tiêu; phải nghe kiểm TTS thật trước khi gắn nhãn học thành thạo."
+  }
+}

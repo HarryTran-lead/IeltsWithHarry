@@ -1,0 +1,613 @@
+{
+  "schema_version": "1.2.0",
+  "lesson_id": "S4-SIM-005",
+  "status": "draft",
+  "level": "L7",
+  "section": 4,
+  "topic": "Materials chemistry",
+  "title": "The Science of Historical Colours",
+  "content_format": "section_exam_simulation",
+  "exam_part": "IELTS_LISTENING_PART_4_STYLE",
+  "official_ielts_material": false,
+  "learning_objectives_vi": [
+    "Theo dõi bài giảng học thuật có lập luận và ví dụ.",
+    "Hoàn thành ghi chú, tóm tắt hoặc bảng bằng đúng từ được nghe.",
+    "Nhận diện signposting và mối quan hệ giữa các ý."
+  ],
+  "target_skills": [
+    "academic_lecture",
+    "signposting",
+    "note_taking",
+    "technical_vocabulary",
+    "information_tracking"
+  ],
+  "speakers": [
+    {
+      "speaker_id": "LECTURER",
+      "role": "Academic lecturer",
+      "accent_requested": "british",
+      "tts_voice_id": null
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "LECTURER",
+      "text_en": "Colour in an old object is often treated as decoration, but it also carries information about raw materials, manufacture and later damage. A blue patch on a wall can reveal how a pigment was prepared, while a faded red area may show what happened after the painting was finished. This lecture follows the clues from surface inspection to laboratory analysis.",
+      "meaning_vi": "Hóa học vật liệu giúp xác định sắc tố, lớp sơn và hiện tượng phai màu.",
+      "translation_vi": null,
+      "translation_status": "pending_exact_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "academic_lecture",
+        "signposting",
+        "note_taking"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "opening"
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "LECTURER",
+      "text_en": "Imagine two apparently identical red panels in a historic room. One may have been painted recently to cover damage, while the other could belong to the original decoration. If both are cleaned in the same way, treatment might remove useful evidence. This is why conservation science begins with questions about an object's history and only then selects the most suitable measurements.",
+      "meaning_vi": "Mở rộng bối cảnh, giới thiệu vấn đề nghiên cứu.",
+      "translation_vi": null,
+      "translation_status": "pending_exact_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "academic_lecture",
+        "signposting",
+        "note_taking"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "opening"
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "LECTURER",
+      "text_en": "Under a microscope, a conservator may see separate pigment grains rather than a perfectly uniform coloured layer. The substance that holds those grains to a surface is the binder, which can be oil, glue or another medium. Identifying these parts matters because two paintings that appear the same colour may react very differently to moisture and cleaning. One cannot select a treatment simply by reading a colour name on a historical record.",
+      "meaning_vi": "Hạt sắc tố và chất kết dính có thể khác nhau dù màu nhìn giống nhau.",
+      "translation_vi": null,
+      "translation_status": "pending_exact_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "academic_lecture",
+        "signposting",
+        "note_taking"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "core_exposition"
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "LECTURER",
+      "text_en": "To obtain an initial view of composition, specialists sometimes use X-ray fluorescence, a technique that detects characteristic signals from elements in the sample. For detailed identification of a molecule, Raman spectroscopy can provide a different kind of information. Neither instrument should be regarded as a magic answer machine. Results can be affected by mixtures, the thickness of the coating and materials underneath it, so the analyst must relate measurements to the object's physical structure.",
+      "meaning_vi": "Hai phương pháp đo cung cấp bằng chứng hóa học bổ sung cho nhau.",
+      "translation_vi": null,
+      "translation_status": "pending_exact_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "academic_lecture",
+        "signposting",
+        "note_taking"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "core_exposition"
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "LECTURER",
+      "text_en": "Some pigments change through a process of oxidation when they react with the surrounding environment. Others are particularly sensitive to ultraviolet light, which can trigger changes even when a gallery seems fairly dim to visitors. The damage is not always reversible. That is why conservators measure exposure over time instead of assuming that a colour remains safe whenever it looks unchanged in a quick visual inspection.",
+      "meaning_vi": "Oxy hóa và tia tử ngoại có thể làm sắc tố biến đổi.",
+      "translation_vi": null,
+      "translation_status": "pending_exact_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "academic_lecture",
+        "signposting",
+        "note_taking"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "core_exposition"
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "LECTURER",
+      "text_en": "Investigators may take a microscopic cross section of paint to identify separate layers and reveal repainting. A carefully recorded sampling location is essential because tiny fragments from two parts of the same object can tell different stories. Destructive sampling, even at microscopic scale, needs justification and permission. The team may first use a non-invasive technique, then take a sample only if it answers a question that cannot otherwise be resolved.",
+      "meaning_vi": "Mặt cắt sơn cho thấy các lớp, nhưng việc lấy mẫu phải được ghi lại và hạn chế.",
+      "translation_vi": null,
+      "translation_status": "pending_exact_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "academic_lecture",
+        "signposting",
+        "note_taking"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "core_exposition"
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "LECTURER",
+      "text_en": "A final interpretation separates original paint from later restoration work, which may contain modern substances. The conservator also documents colour change using controlled photography, rather than relying on a person's memory of how bright the painting looked. Such records allow future researchers to test whether a treatment succeeded. They also prevent an attractive modern repair from being mistaken for an authentic part of the object's history.",
+      "meaning_vi": "Cần phân biệt chất liệu nguyên gốc với lớp phục chế và theo dõi thay đổi màu.",
+      "translation_vi": null,
+      "translation_status": "pending_exact_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "academic_lecture",
+        "signposting",
+        "note_taking"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "core_exposition"
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "LECTURER",
+      "text_en": "A laboratory report should also make its uncertainties clear. Some results narrow the possible materials without identifying a unique substance. Others apply only to the tiny area examined. The conservator must weigh this evidence against the appearance and history of the whole object. Technical instruments support careful judgement, but they do not replace it.",
+      "meaning_vi": "Nêu giới hạn, ví dụ ứng dụng và ý nghĩa thực tế.",
+      "translation_vi": null,
+      "translation_status": "pending_exact_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "academic_lecture",
+        "signposting",
+        "note_taking"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "closing"
+    },
+    {
+      "turn_id": "T09",
+      "speaker_id": "LECTURER",
+      "text_en": "By combining observations from the object with carefully chosen tests, researchers can explain how a colour was made and why it appears differently today. The strongest conclusion is usually built from several modest pieces of evidence.",
+      "meaning_vi": "Tổng kết và lưu ý cách diễn giải bằng chứng.",
+      "translation_vi": null,
+      "translation_status": "pending_exact_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "academic_lecture",
+        "signposting",
+        "note_taking"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "closing"
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "group_id": "PART4_NOTE_COMPLETION_01_05",
+      "type": "note_completion",
+      "prompt": "The coloured particles themselves are ____.",
+      "correct_answers": [
+        "pigment grains"
+      ],
+      "scoring_policy": "strict_spoken_words",
+      "word_limit": 2,
+      "instructions_en": "Complete the notes below. Write NO MORE THAN TWO WORDS for each answer.",
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "evidence_excerpt_en": "Under a microscope, a conservator may see separate pigment grains rather than a perfectly uniform coloured layer.",
+      "evidence_span": {
+        "turn_id": "T03",
+        "start_char": 51,
+        "end_char": 65
+      },
+      "explanation_vi": "Đáp án “pigment grains” được nói trực tiếp trong phần bài giảng này. Hạt sắc tố và chất kết dính có thể khác nhau dù màu nhìn giống nhau.",
+      "answer_source": "exact_words_spoken",
+      "question_tags": [
+        "M28",
+        "part4",
+        "note_completion",
+        "academic_note_taking"
+      ],
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true,
+      "answer_review_status": "draft_teacher_verification_required"
+    },
+    {
+      "question_id": "Q02",
+      "group_id": "PART4_NOTE_COMPLETION_01_05",
+      "type": "note_completion",
+      "prompt": "The material holding those particles in place is the ____.",
+      "correct_answers": [
+        "binder"
+      ],
+      "scoring_policy": "strict_spoken_words",
+      "word_limit": 2,
+      "instructions_en": "Complete the notes below. Write NO MORE THAN TWO WORDS for each answer.",
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "evidence_excerpt_en": "The substance that holds those grains to a surface is the binder, which can be oil, glue or another medium.",
+      "evidence_span": {
+        "turn_id": "T03",
+        "start_char": 172,
+        "end_char": 178
+      },
+      "explanation_vi": "Đáp án “binder” được nói trực tiếp trong phần bài giảng này. Hạt sắc tố và chất kết dính có thể khác nhau dù màu nhìn giống nhau.",
+      "answer_source": "exact_words_spoken",
+      "question_tags": [
+        "M28",
+        "part4",
+        "note_completion",
+        "academic_note_taking"
+      ],
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true,
+      "answer_review_status": "draft_teacher_verification_required"
+    },
+    {
+      "question_id": "Q03",
+      "group_id": "PART4_NOTE_COMPLETION_01_05",
+      "type": "note_completion",
+      "prompt": "Elemental screening may use ____.",
+      "correct_answers": [
+        "X-ray fluorescence"
+      ],
+      "scoring_policy": "strict_spoken_words",
+      "word_limit": 2,
+      "instructions_en": "Complete the notes below. Write NO MORE THAN TWO WORDS for each answer.",
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "evidence_excerpt_en": "To obtain an initial view of composition, specialists sometimes use X-ray fluorescence, a technique that detects characteristic signals from elements in the sample.",
+      "evidence_span": {
+        "turn_id": "T04",
+        "start_char": 68,
+        "end_char": 86
+      },
+      "explanation_vi": "Đáp án “X-ray fluorescence” được nói trực tiếp trong phần bài giảng này. Hai phương pháp đo cung cấp bằng chứng hóa học bổ sung cho nhau.",
+      "answer_source": "exact_words_spoken",
+      "question_tags": [
+        "M28",
+        "part4",
+        "note_completion",
+        "academic_note_taking"
+      ],
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true,
+      "answer_review_status": "draft_teacher_verification_required"
+    },
+    {
+      "question_id": "Q04",
+      "group_id": "PART4_NOTE_COMPLETION_01_05",
+      "type": "note_completion",
+      "prompt": "Molecular identification may involve ____.",
+      "correct_answers": [
+        "Raman spectroscopy"
+      ],
+      "scoring_policy": "strict_spoken_words",
+      "word_limit": 2,
+      "instructions_en": "Complete the notes below. Write NO MORE THAN TWO WORDS for each answer.",
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "evidence_excerpt_en": "For detailed identification of a molecule, Raman spectroscopy can provide a different kind of information.",
+      "evidence_span": {
+        "turn_id": "T04",
+        "start_char": 208,
+        "end_char": 226
+      },
+      "explanation_vi": "Đáp án “Raman spectroscopy” được nói trực tiếp trong phần bài giảng này. Hai phương pháp đo cung cấp bằng chứng hóa học bổ sung cho nhau.",
+      "answer_source": "exact_words_spoken",
+      "question_tags": [
+        "M28",
+        "part4",
+        "note_completion",
+        "academic_note_taking"
+      ],
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true,
+      "answer_review_status": "draft_teacher_verification_required"
+    },
+    {
+      "question_id": "Q05",
+      "group_id": "PART4_NOTE_COMPLETION_01_05",
+      "type": "note_completion",
+      "prompt": "Reaction with oxygen-related chemicals may cause ____.",
+      "correct_answers": [
+        "oxidation"
+      ],
+      "scoring_policy": "strict_spoken_words",
+      "word_limit": 2,
+      "instructions_en": "Complete the notes below. Write NO MORE THAN TWO WORDS for each answer.",
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "evidence_excerpt_en": "Some pigments change through a process of oxidation when they react with the surrounding environment.",
+      "evidence_span": {
+        "turn_id": "T05",
+        "start_char": 42,
+        "end_char": 51
+      },
+      "explanation_vi": "Đáp án “oxidation” được nói trực tiếp trong phần bài giảng này. Oxy hóa và tia tử ngoại có thể làm sắc tố biến đổi.",
+      "answer_source": "exact_words_spoken",
+      "question_tags": [
+        "M28",
+        "part4",
+        "note_completion",
+        "academic_note_taking"
+      ],
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true,
+      "answer_review_status": "draft_teacher_verification_required"
+    },
+    {
+      "question_id": "Q06",
+      "group_id": "PART4_SUMMARY_COMPLETION_06_10",
+      "type": "summary_completion",
+      "prompt": "A damaging part of light exposure is ____.",
+      "correct_answers": [
+        "ultraviolet light"
+      ],
+      "scoring_policy": "strict_spoken_words",
+      "word_limit": 2,
+      "instructions_en": "Complete the summary below. Write NO MORE THAN TWO WORDS for each answer.",
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "evidence_excerpt_en": "Others are particularly sensitive to ultraviolet light, which can trigger changes even when a gallery seems fairly dim to visitors.",
+      "evidence_span": {
+        "turn_id": "T05",
+        "start_char": 139,
+        "end_char": 156
+      },
+      "explanation_vi": "Đáp án “ultraviolet light” được nói trực tiếp trong phần bài giảng này. Oxy hóa và tia tử ngoại có thể làm sắc tố biến đổi.",
+      "answer_source": "exact_words_spoken",
+      "question_tags": [
+        "M28",
+        "part4",
+        "summary_completion",
+        "academic_note_taking"
+      ],
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true,
+      "answer_review_status": "draft_teacher_verification_required"
+    },
+    {
+      "question_id": "Q07",
+      "group_id": "PART4_SUMMARY_COMPLETION_06_10",
+      "type": "summary_completion",
+      "prompt": "Different paint layers can be seen in a microscopic ____.",
+      "correct_answers": [
+        "cross section"
+      ],
+      "scoring_policy": "strict_spoken_words",
+      "word_limit": 2,
+      "instructions_en": "Complete the summary below. Write NO MORE THAN TWO WORDS for each answer.",
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "evidence_excerpt_en": "Investigators may take a microscopic cross section of paint to identify separate layers and reveal repainting.",
+      "evidence_span": {
+        "turn_id": "T06",
+        "start_char": 37,
+        "end_char": 50
+      },
+      "explanation_vi": "Đáp án “cross section” được nói trực tiếp trong phần bài giảng này. Mặt cắt sơn cho thấy các lớp, nhưng việc lấy mẫu phải được ghi lại và hạn chế.",
+      "answer_source": "exact_words_spoken",
+      "question_tags": [
+        "M28",
+        "part4",
+        "summary_completion",
+        "academic_note_taking"
+      ],
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true,
+      "answer_review_status": "draft_teacher_verification_required"
+    },
+    {
+      "question_id": "Q08",
+      "group_id": "PART4_SUMMARY_COMPLETION_06_10",
+      "type": "summary_completion",
+      "prompt": "Records must identify the exact ____.",
+      "correct_answers": [
+        "sampling location"
+      ],
+      "scoring_policy": "strict_spoken_words",
+      "word_limit": 2,
+      "instructions_en": "Complete the summary below. Write NO MORE THAN TWO WORDS for each answer.",
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "evidence_excerpt_en": "A carefully recorded sampling location is essential because tiny fragments from two parts of the same object can tell different stories.",
+      "evidence_span": {
+        "turn_id": "T06",
+        "start_char": 132,
+        "end_char": 149
+      },
+      "explanation_vi": "Đáp án “sampling location” được nói trực tiếp trong phần bài giảng này. Mặt cắt sơn cho thấy các lớp, nhưng việc lấy mẫu phải được ghi lại và hạn chế.",
+      "answer_source": "exact_words_spoken",
+      "question_tags": [
+        "M28",
+        "part4",
+        "summary_completion",
+        "academic_note_taking"
+      ],
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true,
+      "answer_review_status": "draft_teacher_verification_required"
+    },
+    {
+      "question_id": "Q09",
+      "group_id": "PART4_SUMMARY_COMPLETION_06_10",
+      "type": "summary_completion",
+      "prompt": "Modern added material may be evidence of ____.",
+      "correct_answers": [
+        "restoration work"
+      ],
+      "scoring_policy": "strict_spoken_words",
+      "word_limit": 2,
+      "instructions_en": "Complete the summary below. Write NO MORE THAN TWO WORDS for each answer.",
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "evidence_excerpt_en": "A final interpretation separates original paint from later restoration work, which may contain modern substances.",
+      "evidence_span": {
+        "turn_id": "T07",
+        "start_char": 59,
+        "end_char": 75
+      },
+      "explanation_vi": "Đáp án “restoration work” được nói trực tiếp trong phần bài giảng này. Cần phân biệt chất liệu nguyên gốc với lớp phục chế và theo dõi thay đổi màu.",
+      "answer_source": "exact_words_spoken",
+      "question_tags": [
+        "M28",
+        "part4",
+        "summary_completion",
+        "academic_note_taking"
+      ],
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true,
+      "answer_review_status": "draft_teacher_verification_required"
+    },
+    {
+      "question_id": "Q10",
+      "group_id": "PART4_SUMMARY_COMPLETION_06_10",
+      "type": "summary_completion",
+      "prompt": "Repeated imaging can document gradual ____.",
+      "correct_answers": [
+        "colour change"
+      ],
+      "scoring_policy": "strict_spoken_words",
+      "word_limit": 2,
+      "instructions_en": "Complete the summary below. Write NO MORE THAN TWO WORDS for each answer.",
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "evidence_excerpt_en": "The conservator also documents colour change using controlled photography, rather than relying on a person's memory of how bright the painting looked.",
+      "evidence_span": {
+        "turn_id": "T07",
+        "start_char": 145,
+        "end_char": 158
+      },
+      "explanation_vi": "Đáp án “colour change” được nói trực tiếp trong phần bài giảng này. Cần phân biệt chất liệu nguyên gốc với lớp phục chế và theo dõi thay đổi màu.",
+      "answer_source": "exact_words_spoken",
+      "question_tags": [
+        "M28",
+        "part4",
+        "summary_completion",
+        "academic_note_taking"
+      ],
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true,
+      "answer_review_status": "draft_teacher_verification_required"
+    }
+  ],
+  "question_groups": [
+    {
+      "group_id": "PART4_NOTE_COMPLETION_01_05",
+      "title_en": "The Science of Historical Colours — Notes",
+      "question_ids": [
+        "Q01",
+        "Q02",
+        "Q03",
+        "Q04",
+        "Q05"
+      ],
+      "question_type": "note_completion",
+      "instructions_en": "Complete the notes below. Write NO MORE THAN TWO WORDS for each answer.",
+      "word_limit": 2,
+      "requires_one_listen": true,
+      "question_display_start": "before_audio",
+      "pause_between_groups_seconds": 0,
+      "layout_metadata": {
+        "presentation": "grouped_blanks",
+        "flow_order": null,
+        "table_columns": null
+      }
+    },
+    {
+      "group_id": "PART4_SUMMARY_COMPLETION_06_10",
+      "title_en": "The Science of Historical Colours — Summary",
+      "question_ids": [
+        "Q06",
+        "Q07",
+        "Q08",
+        "Q09",
+        "Q10"
+      ],
+      "question_type": "summary_completion",
+      "instructions_en": "Complete the summary below. Write NO MORE THAN TWO WORDS for each answer.",
+      "word_limit": 2,
+      "requires_one_listen": true,
+      "question_display_start": "before_audio",
+      "pause_between_groups_seconds": 0,
+      "layout_metadata": {
+        "presentation": "grouped_blanks",
+        "flow_order": null,
+        "table_columns": null
+      }
+    }
+  ],
+  "pedagogy_vi": {
+    "topic_summary_vi": "Hóa học vật liệu giúp xác định sắc tố, lớp sơn và hiện tượng phai màu.",
+    "question_explanations_status": "draft_review_required",
+    "turn_meanings_are_not_full_translations": true,
+    "full_line_translation_required_before_release": true
+  },
+  "audio": {
+    "status": "not_generated",
+    "audio_url": null,
+    "audio_asset_id": null,
+    "duration_ms": null,
+    "source_text_sha256": "64d909274c8e4753df70ef2c8eb1ea8db611018ed4994f362c1991c3afdc4131",
+    "generation_strategy": "single_speaker_continuous_full_lecture",
+    "aligned_turns": false,
+    "voice_consistency_verified": false,
+    "human_listening_review": false
+  },
+  "exam_mode": {
+    "bank_role": "protected_assessment",
+    "use_as_training_before_first_attempt": false,
+    "listening_attempts_allowed_for_scored_first_attempt": 1,
+    "replay_before_submit": false,
+    "speed_control_before_submit": false,
+    "transcript_visible_before_submit": false,
+    "answer_key_visible_before_submit": false,
+    "post_attempt_review_allowed": true,
+    "question_count": 10,
+    "points_per_correct_answer": 1,
+    "question_order_monotonic": true,
+    "estimated_speech_minutes_at_140_wpm": 3.99,
+    "exam_band_score_enabled": false,
+    "repeated_attempt_marked_as_seen": true,
+    "all_questions_visible_before_audio": true
+  },
+  "qa": {
+    "automatic_data_validation": "pending",
+    "content_human_review": "pending",
+    "translation_human_review": "pending",
+    "audio_human_review": "pending",
+    "exam_simulation_rubric_score": null,
+    "rubric_90_verified": false,
+    "published": false,
+    "release_eligible": false
+  },
+  "provenance": {
+    "source_type": "original_authoring_english_academic_lecture",
+    "milestone": "M28",
+    "no_official_ielts_question_copied": true,
+    "training_exposure_guard": true,
+    "fictional_illustrations_only_when_specified": true
+  },
+  "release_metadata": {
+    "target_bank": "protected_assessment",
+    "import_policy": "insert_only",
+    "version": "m28.0.1",
+    "preserve_existing_ids": true,
+    "allow_client_answer_payload": false
+  }
+}

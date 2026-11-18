@@ -1,0 +1,90 @@
+{
+  "status": "SHADOW_PATCHES_NOT_APPLIED",
+  "teacher_signatures": 0,
+  "patches": [
+    {
+      "question_id": "A1-09-Q32",
+      "source_path": "src/data/grammar-editorial/A1.json",
+      "source_sha256": "64e4c8ed4989502d9ddfd3a0986a2690e54078b2c32742f7ada241dc5e94a5bb",
+      "modified_keys": [
+        "correct_answer",
+        "accepted_answers"
+      ],
+      "updates": {
+        "correct_answer": "Fruit is healthy.",
+        "accepted_answers": [
+          "Fruit is healthy."
+        ]
+      },
+      "new_candidate_sha256": "8e232e1b3a08cbfa17b68286a3ec76edcb8cfc4771af07f8ba2cecb02537a8db",
+      "source_defect_reason_vi": "Danh từ fruit không đếm được dùng khái quát: không cần article; bỏ khoảng trắng đầu, viết hoa chữ đầu.",
+      "teacher_A": "PENDING",
+      "teacher_B": "PENDING",
+      "release": "HOLD",
+      "overwrite_original": false
+    },
+    {
+      "question_id": "A1-09-Q34",
+      "source_path": "src/data/grammar-editorial/A1.json",
+      "source_sha256": "42fea288ace6b4833b1bb586357fb39aeb5ecfe56a3684a475929158fa112766",
+      "modified_keys": [
+        "correct_answer",
+        "accepted_answers"
+      ],
+      "updates": {
+        "correct_answer": "Flowers are beautiful.",
+        "accepted_answers": [
+          "Flowers are beautiful."
+        ]
+      },
+      "new_candidate_sha256": "17b96bbc5120c4dd7d4cfddcf0a88e2647e6f04771caa02bb4e04019f56d740f",
+      "source_defect_reason_vi": "Flowers số nhiều ở nghĩa khái quát: không cần article; bỏ khoảng trắng đầu, viết hoa chữ đầu.",
+      "teacher_A": "PENDING",
+      "teacher_B": "PENDING",
+      "release": "HOLD",
+      "overwrite_original": false
+    },
+    {
+      "question_id": "A2-20-Q040",
+      "source_path": "src/data/grammar-editorial/A2.json",
+      "source_sha256": "8313a6edcb4e7eb7ffd8d5760af2bbdfabc6a55f49d36c503a0458614d364cfb",
+      "modified_keys": [
+        "correct_answer",
+        "accepted_answers",
+        "expected_sentence",
+        "full_sentence_en_teacher_only",
+        "tokens",
+        "prompt_en"
+      ],
+      "updates": {
+        "correct_answer": "They have kept a travel diary since the beginning of the year.",
+        "accepted_answers": [
+          "They have kept a travel diary since the beginning of the year."
+        ],
+        "expected_sentence": "They have kept a travel diary since the beginning of the year.",
+        "full_sentence_en_teacher_only": "They have kept a travel diary since the beginning of the year.",
+        "tokens": [
+          "They",
+          "of",
+          "travel",
+          "have",
+          "year.",
+          "the",
+          "diary",
+          "beginning",
+          "a",
+          "the",
+          "kept",
+          "since"
+        ],
+        "prompt_en": "Arrange: They / of / travel / have / year. / the / diary / beginning / a / the / kept / since"
+      },
+      "new_candidate_sha256": "88ff8f5c0dc41352c9a35a23135120d0c28320f36e77aaaa492933f931b32fc7",
+      "source_defect_reason_vi": "Động từ keep bất quy tắc: keep–kept–kept. Bắt buộc thay cả prompt/tokens/answer; không sửa bằng alias keeped→kept.",
+      "teacher_A": "PENDING",
+      "teacher_B": "PENDING",
+      "release": "HOLD",
+      "overwrite_original": false
+    }
+  ]
+}

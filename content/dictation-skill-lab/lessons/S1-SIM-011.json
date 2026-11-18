@@ -1,0 +1,833 @@
+{
+  "schema_version": "1.2.0",
+  "lesson_id": "S1-SIM-011",
+  "status": "draft",
+  "level": "L4",
+  "section": 1,
+  "topic": "Arranging a visit to a town archive",
+  "title": "Research Visit to a Local History Archive",
+  "content_format": "section_exam_simulation",
+  "exam_part": "IELTS_LISTENING_PART_1_STYLE",
+  "official_ielts_material": false,
+  "learning_objectives_vi": [
+    "Theo dõi hội thoại giao dịch đời sống hai người nói trong một lần nghe.",
+    "Điền chính xác thông tin, kể cả khi có phương án cũ và thông tin đính chính.",
+    "Phân tích MCQ dựa trên ý nghĩa cuối cùng và bằng chứng sau khi nộp bài."
+  ],
+  "target_skills": [
+    "appointments",
+    "document_requests",
+    "identification",
+    "rules",
+    "research_services"
+  ],
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Local archive assistant",
+      "accent_requested": "north_american",
+      "tts_voice_id": null
+    },
+    {
+      "speaker_id": "B",
+      "role": "Visitor",
+      "accent_requested": "north_american",
+      "tts_voice_id": null
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "Hello, Eastmere Local Archive. It's Tessa speaking. Are you planning a family-history search or looking for documents about a building?",
+      "translation_vi": "Xin chào, Lưu trữ Địa phương Eastmere, Tessa nghe. Anh muốn tìm gia phả hay hồ sơ tòa nhà?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "appointments",
+        "document_requests",
+        "identification",
+        "rules",
+        "research_services"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "B",
+      "text_en": "I'm researching a building. My grandparents once ran a small bakery, and I'd like to find out when the shop first opened.",
+      "translation_vi": "Tôi nghiên cứu một tòa nhà. Ông bà từng có tiệm bánh nhỏ, tôi muốn biết cửa hàng khai trương khi nào.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "appointments",
+        "document_requests",
+        "identification",
+        "rules",
+        "research_services"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "A",
+      "text_en": "You may find that in our trade registers. They're arranged by street, rather than by the names of individual shop owners.",
+      "translation_vi": "Có thể trong sổ đăng ký thương mại. Chúng được xếp theo tên phố, không theo tên chủ cửa hàng.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "appointments",
+        "document_requests",
+        "identification",
+        "rules",
+        "research_services"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "B",
+      "text_en": "Trade registers, then. I thought the census records might help, but a list of businesses sounds more relevant.",
+      "translation_vi": "Vậy là sổ đăng ký thương mại. Tôi tưởng điều tra dân số hữu ích, nhưng danh sách kinh doanh có vẻ đúng hơn.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "appointments",
+        "document_requests",
+        "identification",
+        "rules",
+        "research_services"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "A",
+      "text_en": "Our archive reading room is open to researchers on Tuesdays and Thursdays. Mondays are reserved for school groups this term.",
+      "translation_vi": "Phòng đọc mở cho người nghiên cứu vào thứ Ba và thứ Năm. Thứ Hai kỳ này dành cho trường học.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "appointments",
+        "document_requests",
+        "identification",
+        "rules",
+        "research_services"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "B",
+      "text_en": "Thursday is easier for me. I'm travelling by bus and would prefer a morning appointment if that's available.",
+      "translation_vi": "Thứ Năm tiện hơn. Tôi đi xe buýt và muốn hẹn buổi sáng nếu còn.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "appointments",
+        "document_requests",
+        "identification",
+        "rules",
+        "research_services"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "We have an appointment at ten twenty. The nine o'clock session is taken, and the next free slot would be after lunch.",
+      "translation_vi": "Chúng tôi có giờ mười giờ hai mươi. Khung chín giờ đã kín, giờ trống tiếp theo sau trưa.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "appointments",
+        "document_requests",
+        "identification",
+        "rules",
+        "research_services"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "B",
+      "text_en": "Ten twenty works. I'd like enough time to read several records without feeling hurried. How long is a normal visit?",
+      "translation_vi": "Mười giờ hai mươi được. Tôi muốn đủ thời gian đọc vài hồ sơ. Mỗi buổi thường dài bao lâu?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "appointments",
+        "document_requests",
+        "identification",
+        "rules",
+        "research_services"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T09",
+      "speaker_id": "A",
+      "text_en": "Appointments last two hours. If you need longer, staff can extend the visit on the day if no other researcher needs the table.",
+      "translation_vi": "Buổi hẹn dài hai giờ. Nếu cần hơn, nhân viên có thể gia hạn nếu không ai khác cần bàn.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "appointments",
+        "document_requests",
+        "identification",
+        "rules",
+        "research_services"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T10",
+      "speaker_id": "B",
+      "text_en": "Good. Will I need a library card? I'm not a local resident, although I studied here as a child.",
+      "translation_vi": "Tốt. Tôi có cần thẻ thư viện không? Tôi không sống ở đây, dù từng học tại đây hồi bé.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "appointments",
+        "document_requests",
+        "identification",
+        "rules",
+        "research_services"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T11",
+      "speaker_id": "A",
+      "text_en": "Bring photo identification, such as a passport or driving licence. A public library card isn't accepted as proof of identity.",
+      "translation_vi": "Hãy mang giấy tờ có ảnh như hộ chiếu hoặc bằng lái. Thẻ thư viện không dùng xác minh danh tính.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "appointments",
+        "document_requests",
+        "identification",
+        "rules",
+        "research_services"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T12",
+      "speaker_id": "B",
+      "text_en": "I can bring my passport. My grandparents' bakery was on Orchard Street, although the street number was changed decades ago.",
+      "translation_vi": "Tôi mang hộ chiếu được. Tiệm bánh ở Orchard Street, dù số nhà đổi từ nhiều thập kỷ trước.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "appointments",
+        "document_requests",
+        "identification",
+        "rules",
+        "research_services"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T13",
+      "speaker_id": "A",
+      "text_en": "Orchard Street is well covered. To prepare the register, I need the approximate year you want to start with.",
+      "translation_vi": "Orchard Street được lưu khá đầy đủ. Để chuẩn bị sổ, tôi cần năm bắt đầu tìm kiếm gần đúng.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "appointments",
+        "document_requests",
+        "identification",
+        "rules",
+        "research_services"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T14",
+      "speaker_id": "B",
+      "text_en": "Start with nineteen forty-eight, if possible. I know my grandfather returned to town that year, but the bakery may have opened later.",
+      "translation_vi": "Bắt đầu từ năm một nghìn chín trăm bốn mươi tám. Ông tôi về thị trấn năm đó, dù tiệm có thể mở sau.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "appointments",
+        "document_requests",
+        "identification",
+        "rules",
+        "research_services"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T15",
+      "speaker_id": "A",
+      "text_en": "I'll note that. For document handling we supply pencils, but pens aren't permitted near the original records.",
+      "translation_vi": "Tôi ghi lại. Chúng tôi cung cấp bút chì, không cho dùng bút mực gần hồ sơ gốc.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "appointments",
+        "document_requests",
+        "identification",
+        "rules",
+        "research_services"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T16",
+      "speaker_id": "B",
+      "text_en": "I usually make notes on a tablet. Is that allowed, or will I have to copy everything by hand?",
+      "translation_vi": "Tôi thường ghi chú bằng máy tính bảng. Có được dùng không hay phải chép tay?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "appointments",
+        "document_requests",
+        "identification",
+        "rules",
+        "research_services"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T17",
+      "speaker_id": "A",
+      "text_en": "A tablet is fine if it's silent. Photography, however, requires staff permission, even when you don't use a flash.",
+      "translation_vi": "Máy tính bảng được nếu để im lặng. Chụp ảnh phải xin phép nhân viên kể cả khi không có đèn flash.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "appointments",
+        "document_requests",
+        "identification",
+        "rules",
+        "research_services"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T18",
+      "speaker_id": "B",
+      "text_en": "That's reasonable. I may want an image of a shop advertisement for a family booklet I'm putting together.",
+      "translation_vi": "Hợp lý. Tôi muốn ảnh quảng cáo tiệm bánh để làm quyển sổ gia đình.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "appointments",
+        "document_requests",
+        "identification",
+        "rules",
+        "research_services"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T19",
+      "speaker_id": "A",
+      "text_en": "We can arrange a high-resolution scan through our imaging team. It normally takes five working days rather than being ready immediately.",
+      "translation_vi": "Chúng tôi có thể đặt bản quét chất lượng cao qua đội số hóa. Thường mất năm ngày làm việc, không có ngay.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "appointments",
+        "document_requests",
+        "identification",
+        "rules",
+        "research_services"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T20",
+      "speaker_id": "B",
+      "text_en": "I don't need it immediately. Is the scanning service included in the visit, or would I have to pay extra?",
+      "translation_vi": "Tôi không cần ngay. Quét ảnh gồm trong buổi đến hay tính thêm phí?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "appointments",
+        "document_requests",
+        "identification",
+        "rules",
+        "research_services"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T21",
+      "speaker_id": "A",
+      "text_en": "Archive visits are free, but a digital scan costs four pounds per image. We'll ask you to approve the order before charging.",
+      "translation_vi": "Vào lưu trữ miễn phí, nhưng quét kỹ thuật số bốn bảng mỗi ảnh. Chúng tôi hỏi duyệt trước khi tính phí.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "appointments",
+        "document_requests",
+        "identification",
+        "rules",
+        "research_services"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T22",
+      "speaker_id": "B",
+      "text_en": "Understood. I'll bring my passport on Thursday and start by checking the 1948 trade registers for Orchard Street.",
+      "translation_vi": "Tôi hiểu. Thứ Năm tôi mang hộ chiếu, bắt đầu xem sổ thương mại năm 1948 của Orchard Street.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "appointments",
+        "document_requests",
+        "identification",
+        "rules",
+        "research_services"
+      ],
+      "bank_role": "protected_assessment"
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "group_id": "PART1_FORM_1_TO_6",
+      "type": "form_completion",
+      "prompt": "Type of records to consult: trade ____",
+      "correct_answers": [
+        "registers"
+      ],
+      "spoken_answer": "registers",
+      "word_limit": 3,
+      "instructions_en": "NO MORE THAN THREE WORDS AND/OR A NUMBER",
+      "scoring_policy": "controlled_variants",
+      "explanation_vi": "Sổ thương mại phù hợp hơn điều tra dân số.",
+      "answer_source": "explicit_recording",
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "evidence_excerpt_en": "trade registers",
+      "question_tags": [
+        "M25",
+        "part1",
+        "completion",
+        "appointments",
+        "document_requests",
+        "identification",
+        "rules",
+        "research_services"
+      ]
+    },
+    {
+      "question_id": "Q02",
+      "group_id": "PART1_FORM_1_TO_6",
+      "type": "form_completion",
+      "prompt": "Available research day chosen: ____",
+      "correct_answers": [
+        "Thursday"
+      ],
+      "spoken_answer": "Thursday",
+      "word_limit": 3,
+      "instructions_en": "NO MORE THAN THREE WORDS AND/OR A NUMBER",
+      "scoring_policy": "controlled_variants",
+      "explanation_vi": "Người nghiên cứu chọn thứ Năm.",
+      "answer_source": "explicit_recording",
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "evidence_excerpt_en": "Thursdays",
+      "question_tags": [
+        "M25",
+        "part1",
+        "completion",
+        "appointments",
+        "document_requests",
+        "identification",
+        "rules",
+        "research_services"
+      ]
+    },
+    {
+      "question_id": "Q03",
+      "group_id": "PART1_FORM_1_TO_6",
+      "type": "form_completion",
+      "prompt": "Appointment time: ____",
+      "correct_answers": [
+        "ten twenty",
+        "10:20"
+      ],
+      "spoken_answer": "ten twenty",
+      "word_limit": 3,
+      "instructions_en": "NO MORE THAN THREE WORDS AND/OR A NUMBER",
+      "scoring_policy": "controlled_variants",
+      "explanation_vi": "Giờ hẹn chốt 10:20.",
+      "answer_source": "explicit_recording",
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "evidence_excerpt_en": "at ten twenty",
+      "question_tags": [
+        "M25",
+        "part1",
+        "completion",
+        "appointments",
+        "document_requests",
+        "identification",
+        "rules",
+        "research_services"
+      ]
+    },
+    {
+      "question_id": "Q04",
+      "group_id": "PART1_FORM_1_TO_6",
+      "type": "note_completion",
+      "prompt": "Standard appointment length: ____ hours",
+      "correct_answers": [
+        "two",
+        "2"
+      ],
+      "spoken_answer": "two",
+      "word_limit": 3,
+      "instructions_en": "NO MORE THAN THREE WORDS AND/OR A NUMBER",
+      "scoring_policy": "controlled_variants",
+      "explanation_vi": "Mỗi buổi hai giờ.",
+      "answer_source": "explicit_recording",
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "evidence_excerpt_en": "two hours",
+      "question_tags": [
+        "M25",
+        "part1",
+        "completion",
+        "appointments",
+        "document_requests",
+        "identification",
+        "rules",
+        "research_services"
+      ]
+    },
+    {
+      "question_id": "Q05",
+      "group_id": "PART1_FORM_1_TO_6",
+      "type": "form_completion",
+      "prompt": "Identification to bring: ____",
+      "correct_answers": [
+        "passport"
+      ],
+      "spoken_answer": "passport",
+      "word_limit": 3,
+      "instructions_en": "NO MORE THAN THREE WORDS AND/OR A NUMBER",
+      "scoring_policy": "controlled_variants",
+      "explanation_vi": "Khách xác nhận mang hộ chiếu.",
+      "answer_source": "explicit_recording",
+      "evidence_turn_ids": [
+        "T12"
+      ],
+      "evidence_excerpt_en": "bring my passport",
+      "question_tags": [
+        "M25",
+        "part1",
+        "completion",
+        "appointments",
+        "document_requests",
+        "identification",
+        "rules",
+        "research_services"
+      ]
+    },
+    {
+      "question_id": "Q06",
+      "group_id": "PART1_FORM_1_TO_6",
+      "type": "form_completion",
+      "prompt": "Starting research year: ____",
+      "correct_answers": [
+        "nineteen forty-eight",
+        "1948"
+      ],
+      "spoken_answer": "nineteen forty-eight",
+      "word_limit": 3,
+      "instructions_en": "NO MORE THAN THREE WORDS AND/OR A NUMBER",
+      "scoring_policy": "controlled_variants",
+      "explanation_vi": "Khách muốn tìm từ năm 1948.",
+      "answer_source": "explicit_recording",
+      "evidence_turn_ids": [
+        "T14"
+      ],
+      "evidence_excerpt_en": "nineteen forty-eight",
+      "question_tags": [
+        "M25",
+        "part1",
+        "completion",
+        "appointments",
+        "document_requests",
+        "identification",
+        "rules",
+        "research_services"
+      ]
+    },
+    {
+      "question_id": "Q07",
+      "group_id": "PART1_MCQ_7_TO_10",
+      "type": "mcq",
+      "prompt": "Which writing equipment is permitted near original documents?",
+      "correct_answers": [
+        "Pencils"
+      ],
+      "options": [
+        {
+          "key": "A",
+          "text": "Ink pens"
+        },
+        {
+          "key": "B",
+          "text": "Pencils"
+        },
+        {
+          "key": "C",
+          "text": "Permanent markers"
+        }
+      ],
+      "correct_option": "B",
+      "scoring_policy": "one_correct_option",
+      "explanation_vi": "Chỉ bút chì được dùng gần hồ sơ gốc.",
+      "answer_source": "explicit_or_contextual_recording",
+      "evidence_turn_ids": [
+        "T15"
+      ],
+      "evidence_excerpt_en": "supply pencils, but pens aren't permitted",
+      "question_tags": [
+        "M25",
+        "part1",
+        "mcq",
+        "appointments",
+        "document_requests",
+        "identification",
+        "rules",
+        "research_services"
+      ]
+    },
+    {
+      "question_id": "Q08",
+      "group_id": "PART1_MCQ_7_TO_10",
+      "type": "mcq",
+      "prompt": "What must visitors do before taking photographs?",
+      "correct_answers": [
+        "Ask staff for permission"
+      ],
+      "options": [
+        {
+          "key": "A",
+          "text": "Switch on the flash"
+        },
+        {
+          "key": "B",
+          "text": "Pay a photography fee in advance"
+        },
+        {
+          "key": "C",
+          "text": "Ask staff for permission"
+        }
+      ],
+      "correct_option": "C",
+      "scoring_policy": "one_correct_option",
+      "explanation_vi": "Chụp ảnh phải xin phép nhân viên.",
+      "answer_source": "explicit_or_contextual_recording",
+      "evidence_turn_ids": [
+        "T17"
+      ],
+      "evidence_excerpt_en": "requires staff permission",
+      "question_tags": [
+        "M25",
+        "part1",
+        "mcq",
+        "appointments",
+        "document_requests",
+        "identification",
+        "rules",
+        "research_services"
+      ]
+    },
+    {
+      "question_id": "Q09",
+      "group_id": "PART1_MCQ_7_TO_10",
+      "type": "mcq",
+      "prompt": "When should the high-resolution scan be ready?",
+      "correct_answers": [
+        "After five working days"
+      ],
+      "options": [
+        {
+          "key": "A",
+          "text": "After five working days"
+        },
+        {
+          "key": "B",
+          "text": "Immediately at the desk"
+        },
+        {
+          "key": "C",
+          "text": "After two months"
+        }
+      ],
+      "correct_option": "A",
+      "scoring_policy": "one_correct_option",
+      "explanation_vi": "Bản quét thường mất năm ngày làm việc.",
+      "answer_source": "explicit_or_contextual_recording",
+      "evidence_turn_ids": [
+        "T19"
+      ],
+      "evidence_excerpt_en": "takes five working days",
+      "question_tags": [
+        "M25",
+        "part1",
+        "mcq",
+        "appointments",
+        "document_requests",
+        "identification",
+        "rules",
+        "research_services"
+      ]
+    },
+    {
+      "question_id": "Q10",
+      "group_id": "PART1_MCQ_7_TO_10",
+      "type": "mcq",
+      "prompt": "What will the visitor pay for?",
+      "correct_answers": [
+        "A digital scan"
+      ],
+      "options": [
+        {
+          "key": "A",
+          "text": "Entry to the archive"
+        },
+        {
+          "key": "B",
+          "text": "A digital scan"
+        },
+        {
+          "key": "C",
+          "text": "Use of a reading table"
+        }
+      ],
+      "correct_option": "B",
+      "scoring_policy": "one_correct_option",
+      "explanation_vi": "Khách trả phí bản quét, không trả phí vào cửa.",
+      "answer_source": "explicit_or_contextual_recording",
+      "evidence_turn_ids": [
+        "T21"
+      ],
+      "evidence_excerpt_en": "digital scan costs four pounds",
+      "question_tags": [
+        "M25",
+        "part1",
+        "mcq",
+        "appointments",
+        "document_requests",
+        "identification",
+        "rules",
+        "research_services"
+      ]
+    }
+  ],
+  "question_groups": [
+    {
+      "group_id": "PART1_FORM_1_TO_6",
+      "question_ids": [
+        "Q01",
+        "Q02",
+        "Q03",
+        "Q04",
+        "Q05",
+        "Q06"
+      ],
+      "instructions_en": "Complete the form. Write NO MORE THAN THREE WORDS AND/OR A NUMBER for each answer.",
+      "pre_read_seconds": 30,
+      "break_after_turn_id": "T14",
+      "requires_one_listen": true
+    },
+    {
+      "group_id": "PART1_MCQ_7_TO_10",
+      "question_ids": [
+        "Q07",
+        "Q08",
+        "Q09",
+        "Q10"
+      ],
+      "instructions_en": "Choose the correct letter A, B or C.",
+      "pre_read_seconds": 25,
+      "requires_one_listen": true
+    }
+  ],
+  "audio": {
+    "status": "not_generated",
+    "audio_url": null,
+    "audio_asset_id": null,
+    "duration_ms": null,
+    "source_text_sha256": "5a318cac14713832efe902b94fd2b4d0a2c15291ad71e4b1c750f59b27b78c11",
+    "generation_strategy": "single_continuous_two_person_dialogue",
+    "aligned_turns": false
+  },
+  "exam_mode": {
+    "bank_role": "protected_assessment",
+    "use_as_training_before_first_attempt": false,
+    "listening_attempts_allowed_for_scored_first_attempt": 1,
+    "replay_before_submit": false,
+    "speed_control_before_submit": false,
+    "transcript_visible_before_submit": false,
+    "answer_key_visible_before_submit": false,
+    "post_attempt_review_allowed": true,
+    "question_count": 10,
+    "points_per_correct_answer": 1,
+    "question_order_monotonic": true,
+    "estimated_speech_minutes_at_135_wpm": 3.24,
+    "exam_band_score_enabled": false,
+    "repeated_attempt_marked_as_seen": true
+  },
+  "qa": {
+    "automatic_data_validation": "pending",
+    "content_human_review": "pending",
+    "audio_human_review": "pending",
+    "exam_simulation_rubric_score": null,
+    "rubric_90_verified": false,
+    "published": false,
+    "release_eligible": false
+  },
+  "provenance": {
+    "source_type": "original_authored_english_dialogue",
+    "milestone": "M25",
+    "no_official_ielts_question_copied": true,
+    "training_exposure_guard": true
+  },
+  "release_metadata": {
+    "target_bank": "protected_assessment",
+    "import_policy": "insert_only",
+    "version": "m25.0.1",
+    "preserve_existing_ids": true,
+    "allow_client_answer_payload": false
+  }
+}

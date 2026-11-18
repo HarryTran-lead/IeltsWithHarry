@@ -1,0 +1,1322 @@
+{
+  "A1-01": {
+    "code": "A1-01",
+    "context_vi": "Bạn đang giới thiệu Anna với bạn mới. Thay tên riêng sao cho không lặp.",
+    "checkpoints": [
+      {
+        "id": "A1-01-M19-C1",
+        "prompt_vi": "Anna is friendly. Chọn câu thay tên Anna đúng.",
+        "options_en": [
+          "She is friendly.",
+          "Her is friendly.",
+          "Him is friendly."
+        ],
+        "correct_index": 0,
+        "explanation_vi": "Anna là chủ ngữ của is; dùng she, không dùng her/him ở vị trí chủ ngữ.",
+        "option_feedback_vi": [
+          "Anna là chủ ngữ của is; dùng she, không dùng her/him ở vị trí chủ ngữ.",
+          "Her là tân ngữ/tính từ sở hữu, không đứng làm chủ ngữ trước is trong câu này.",
+          "Him là tân ngữ chỉ nam, không thay cho Anna và không đứng ở vị trí chủ ngữ."
+        ]
+      },
+      {
+        "id": "A1-01-M19-C2",
+        "prompt_vi": "Tom and I are students. Chọn đại từ thay Tom and I.",
+        "options_en": [
+          "They",
+          "We",
+          "Us"
+        ],
+        "correct_index": 1,
+        "explanation_vi": "Có người nói (I) trong nhóm, nên dùng we.",
+        "option_feedback_vi": [
+          "They chỉ nhóm người không bao gồm người nói, còn Tom and I gồm cả người nói.",
+          "Có người nói (I) trong nhóm, nên dùng we.",
+          "Us là đại từ tân ngữ; ở vị trí chủ ngữ cần We."
+        ]
+      }
+    ],
+    "transfer": {
+      "prompt_vi": "Viết hai câu giới thiệu một người và một nhóm có bạn tham gia; dùng đại từ chủ ngữ phù hợp.",
+      "sample_en": "My sister is a student. She studies English. We study together.",
+      "rubric_vi": "Đại từ làm chủ ngữ; we bao gồm người nói; be/động từ phù hợp."
+    },
+    "review_status": "DRAFT_TEACHER_REVIEW_REQUIRED"
+  },
+  "A1-02": {
+    "code": "A1-02",
+    "context_vi": "Bạn giới thiệu nghề nghiệp và cảm xúc của người thân bằng động từ be.",
+    "checkpoints": [
+      {
+        "id": "A1-02-M19-C1",
+        "prompt_vi": "My mother ___ a nurse.",
+        "options_en": [
+          "am",
+          "is",
+          "are"
+        ],
+        "correct_index": 1,
+        "explanation_vi": "My mother = she, nên chọn is.",
+        "option_feedback_vi": [
+          "Am dùng với I, không dùng với my mother.",
+          "My mother = she, nên chọn is.",
+          "Are dùng với you hoặc chủ ngữ số nhiều; my mother số ít."
+        ]
+      },
+      {
+        "id": "A1-02-M19-C2",
+        "prompt_vi": "My friends ___ happy today.",
+        "options_en": [
+          "is",
+          "are",
+          "am"
+        ],
+        "correct_index": 1,
+        "explanation_vi": "My friends là số nhiều nên dùng are.",
+        "option_feedback_vi": [
+          "Is dùng với một người/vật, trong khi my friends số nhiều.",
+          "My friends là số nhiều nên dùng are.",
+          "Am chỉ đi với I, không đi với my friends."
+        ]
+      }
+    ],
+    "transfer": {
+      "prompt_vi": "Viết 2 câu: một câu giới thiệu nghề của một người, một câu nói cảm xúc của nhóm.",
+      "sample_en": "My uncle is a teacher. My cousins are excited.",
+      "rubric_vi": "am với I; is với he/she/it và danh từ số ít; are với you/we/they và số nhiều."
+    },
+    "review_status": "DRAFT_TEACHER_REVIEW_REQUIRED"
+  },
+  "A1-03": {
+    "code": "A1-03",
+    "context_vi": "Bạn muốn hỏi liệu bạn mình có ở nhà và nói mình không mệt.",
+    "checkpoints": [
+      {
+        "id": "A1-03-M19-C1",
+        "prompt_vi": "Chuyển She is at home thành câu hỏi Yes/No theo mẫu chuẩn.",
+        "options_en": [
+          "Does she is at home?",
+          "Is she at home?",
+          "She is at home?"
+        ],
+        "correct_index": 1,
+        "explanation_vi": "Đảo is ra trước she khi hỏi với be; không dùng does.",
+        "option_feedback_vi": [
+          "Does dùng với động từ thường; câu này có be nên đảo is lên đầu.",
+          "Đảo is ra trước she khi hỏi với be; không dùng does.",
+          "She is at home? có thể dùng như câu hỏi ngữ điệu trong hội thoại, nhưng không phải mẫu đảo ngữ Yes/No chuẩn mà bài đang luyện."
+        ]
+      },
+      {
+        "id": "A1-03-M19-C2",
+        "prompt_vi": "Chọn phủ định đúng.",
+        "options_en": [
+          "I not am tired.",
+          "I am not tired.",
+          "I do not am tired."
+        ],
+        "correct_index": 1,
+        "explanation_vi": "Not đứng sau am; không dùng do khi chính động từ là be.",
+        "option_feedback_vi": [
+          "Not phải đứng sau am trong cấu trúc I am not..., không đứng trước am.",
+          "Not đứng sau am; không dùng do khi chính động từ là be.",
+          "Không thêm do not trước am: am là động từ be và tự mang phủ định."
+        ]
+      }
+    ],
+    "transfer": {
+      "prompt_vi": "Viết câu hỏi bạn có bận không và câu phủ định nói bạn không bận.",
+      "sample_en": "Are you busy? I am not busy.",
+      "rubric_vi": "Câu hỏi be + chủ ngữ; câu phủ định be + not."
+    },
+    "review_status": "DRAFT_TEACHER_REVIEW_REQUIRED"
+  },
+  "A1-04": {
+    "code": "A1-04",
+    "context_vi": "Bạn muốn tránh nhắc lại Lisa sau động từ know.",
+    "checkpoints": [
+      {
+        "id": "A1-04-M19-C1",
+        "prompt_vi": "I know Lisa. Chọn cách thay Lisa.",
+        "options_en": [
+          "I know she.",
+          "I know her.",
+          "I know hers."
+        ],
+        "correct_index": 1,
+        "explanation_vi": "Sau know cần tân ngữ; her là tân ngữ thay Lisa.",
+        "option_feedback_vi": [
+          "She là đại từ chủ ngữ; sau know cần tân ngữ her.",
+          "Sau know cần tân ngữ; her là tân ngữ thay Lisa.",
+          "Hers là đại từ sở hữu (của cô ấy), không thay Lisa làm tân ngữ của know."
+        ]
+      },
+      {
+        "id": "A1-04-M19-C2",
+        "prompt_vi": "Can you help ___? (tôi)",
+        "options_en": [
+          "me",
+          "I",
+          "my"
+        ],
+        "correct_index": 0,
+        "explanation_vi": "Sau help là vị trí tân ngữ nên dùng me.",
+        "option_feedback_vi": [
+          "Sau help là vị trí tân ngữ nên dùng me.",
+          "I là đại từ chủ ngữ, không dùng ngay sau help làm tân ngữ.",
+          "My là tính từ sở hữu và phải đi với danh từ, chẳng hạn my friend."
+        ]
+      }
+    ],
+    "transfer": {
+      "prompt_vi": "Viết 2 câu: một câu bạn gặp người bạn nam, một câu người bạn ấy gọi bạn.",
+      "sample_en": "I see him at school. He calls me.",
+      "rubric_vi": "He/she/I là chủ ngữ; him/her/me là tân ngữ."
+    },
+    "review_status": "DRAFT_TEACHER_REVIEW_REQUIRED"
+  },
+  "A1-05": {
+    "code": "A1-05",
+    "context_vi": "Bạn kiểm kê đồ dùng lớp học: một hộp và ba chiếc hộp.",
+    "checkpoints": [
+      {
+        "id": "A1-05-M19-C1",
+        "prompt_vi": "Three ___. (box)",
+        "options_en": [
+          "boxs",
+          "boxes",
+          "box"
+        ],
+        "correct_index": 1,
+        "explanation_vi": "Box có âm cuối /s/ và đuôi x; dạng số nhiều thông thường là boxes.",
+        "option_feedback_vi": [
+          "Box kết thúc bằng x nên thêm -es, không chỉ -s.",
+          "Box có âm cuối /s/ và đuôi x; dạng số nhiều thông thường là boxes.",
+          "Three yêu cầu danh từ số nhiều, trong khi box là số ít."
+        ]
+      },
+      {
+        "id": "A1-05-M19-C2",
+        "prompt_vi": "Two ___. (book)",
+        "options_en": [
+          "book",
+          "books",
+          "bookes"
+        ],
+        "correct_index": 1,
+        "explanation_vi": "Book thêm -s thành books.",
+        "option_feedback_vi": [
+          "Two yêu cầu số nhiều; book chưa có -s.",
+          "Book thêm -s thành books.",
+          "Book thường thêm -s thành books; bookes thừa e."
+        ]
+      }
+    ],
+    "transfer": {
+      "prompt_vi": "Viết hai cụm danh từ có số lượng 2 trở lên, trong đó có một từ kết thúc bằng ch/x/sh.",
+      "sample_en": "two books and three watches",
+      "rubric_vi": "Sau số lớn hơn một, dùng danh từ số nhiều; kiểm tra đuôi -s/-es."
+    },
+    "review_status": "DRAFT_TEACHER_REVIEW_REQUIRED"
+  },
+  "A1-06": {
+    "code": "A1-06",
+    "context_vi": "Bạn đếm số trẻ em và số người trong một bức ảnh.",
+    "checkpoints": [
+      {
+        "id": "A1-06-M19-C1",
+        "prompt_vi": "Two ___. (child)",
+        "options_en": [
+          "childs",
+          "childrens",
+          "children"
+        ],
+        "correct_index": 2,
+        "explanation_vi": "Child là danh từ bất quy tắc; children đã là số nhiều, không thêm -s.",
+        "option_feedback_vi": [
+          "Child là danh từ số nhiều bất quy tắc children, không phải childs.",
+          "Children đã là số nhiều; thêm -s nữa thành childrens không chuẩn.",
+          "Child là danh từ bất quy tắc; children đã là số nhiều, không thêm -s."
+        ]
+      },
+      {
+        "id": "A1-06-M19-C2",
+        "prompt_vi": "Three ___. (person)",
+        "options_en": [
+          "people",
+          "peoples",
+          "person"
+        ],
+        "correct_index": 0,
+        "explanation_vi": "Trong nghĩa ba người thông thường, dùng people.",
+        "option_feedback_vi": [
+          "Trong nghĩa ba người thông thường, dùng people.",
+          "Peoples có thể có nghĩa các dân tộc khác nhau, không phải ba người riêng lẻ trong ảnh.",
+          "Three yêu cầu số nhiều, còn person chỉ một người."
+        ]
+      }
+    ],
+    "transfer": {
+      "prompt_vi": "Viết một câu có hai trẻ em và một câu có ba người.",
+      "sample_en": "Two children are playing. Three people are waiting.",
+      "rubric_vi": "Dùng số nhiều bất quy tắc; động từ be phù hợp với chủ ngữ số nhiều."
+    },
+    "review_status": "DRAFT_TEACHER_REVIEW_REQUIRED"
+  },
+  "A1-07": {
+    "code": "A1-07",
+    "context_vi": "Bạn gọi món và muốn nói hai miếng bánh mì, không phải hai cái bánh mì riêng biệt.",
+    "checkpoints": [
+      {
+        "id": "A1-07-M19-C1",
+        "prompt_vi": "Chọn cụm tự nhiên cho hai miếng bánh mì.",
+        "options_en": [
+          "two breads",
+          "two pieces of bread",
+          "two bread"
+        ],
+        "correct_index": 1,
+        "explanation_vi": "Bread thường không đếm được; dùng đơn vị piece để đếm.",
+        "option_feedback_vi": [
+          "Two breads thường nói hai loại/ổ bánh trong ngữ cảnh đặc biệt; ở đây cần đếm hai miếng bánh mì.",
+          "Bread thường không đếm được; dùng đơn vị piece để đếm.",
+          "Bread là danh từ khối lượng; two bread thiếu đơn vị đếm như pieces."
+        ]
+      },
+      {
+        "id": "A1-07-M19-C2",
+        "prompt_vi": "Chọn cụm đúng trong ngữ cảnh gọi một chai nước.",
+        "options_en": [
+          "a water",
+          "a bottle of water",
+          "many water"
+        ],
+        "correct_index": 1,
+        "explanation_vi": "Dùng bottle of water để nêu một đơn vị đếm được.",
+        "option_feedback_vi": [
+          "A water có thể dùng trong gọi món thân mật với nghĩa một phần nước, nhưng bài yêu cầu nói rõ một chai.",
+          "Dùng bottle of water để nêu một đơn vị đếm được.",
+          "Many đi với danh từ đếm được số nhiều; water thường không đếm trực tiếp."
+        ]
+      }
+    ],
+    "transfer": {
+      "prompt_vi": "Viết một câu xin một chai nước và một câu xin hai quả táo.",
+      "sample_en": "I would like a bottle of water and two apples.",
+      "rubric_vi": "Water không đếm trực tiếp; apple đếm được và dùng số nhiều khi là hai quả."
+    },
+    "review_status": "DRAFT_TEACHER_REVIEW_REQUIRED"
+  },
+  "A1-08": {
+    "code": "A1-08",
+    "context_vi": "Bạn đang mô tả một quả táo và một chiếc đồng phục.",
+    "checkpoints": [
+      {
+        "id": "A1-08-M19-C1",
+        "prompt_vi": "___ apple",
+        "options_en": [
+          "a",
+          "an",
+          "(no article)"
+        ],
+        "correct_index": 1,
+        "explanation_vi": "Apple bắt đầu bằng âm nguyên âm nên dùng an.",
+        "option_feedback_vi": [
+          "Apple bắt đầu bằng nguyên âm /æ/ nên dùng an, không phải a.",
+          "Apple bắt đầu bằng âm nguyên âm nên dùng an.",
+          "Apple là danh từ đếm được số ít; trong cụm này cần mạo từ."
+        ]
+      },
+      {
+        "id": "A1-08-M19-C2",
+        "prompt_vi": "___ university",
+        "options_en": [
+          "a",
+          "an",
+          "(no article)"
+        ],
+        "correct_index": 0,
+        "explanation_vi": "University bắt đầu bằng âm /j/ (y), là âm phụ âm nên dùng a.",
+        "option_feedback_vi": [
+          "University bắt đầu bằng âm /j/ (y), là âm phụ âm nên dùng a.",
+          "University phát âm bắt đầu bằng âm /j/ (giống y), nên dùng a, không phải an.",
+          "University là danh từ số ít đếm được; ở đây không thể bỏ mạo từ."
+        ]
+      }
+    ],
+    "transfer": {
+      "prompt_vi": "Viết một câu nói bạn có một quả cam và một cuốn sách.",
+      "sample_en": "I have an orange and a book.",
+      "rubric_vi": "Chọn a/an theo âm đầu của từ sau mạo từ, không chỉ theo chữ viết."
+    },
+    "review_status": "DRAFT_TEACHER_REVIEW_REQUIRED"
+  },
+  "A1-09": {
+    "code": "A1-09",
+    "context_vi": "Bạn cùng bạn nhìn thấy một chiếc cốc cụ thể trên bàn; sau đó nói chung về táo.",
+    "checkpoints": [
+      {
+        "id": "A1-09-M19-C1",
+        "prompt_vi": "Chọn cụm chỉ chiếc cốc cụ thể mà cả hai cùng nhìn thấy.",
+        "options_en": [
+          "a cup on the table",
+          "the cup on the table",
+          "cup on the table"
+        ],
+        "correct_index": 1,
+        "explanation_vi": "Đối tượng được nhận diện cụ thể trong ngữ cảnh nên dùng the.",
+        "option_feedback_vi": [
+          "A cup có thể đúng nếu giới thiệu một chiếc cốc bất kỳ, nhưng chưa thể hiện chiếc cốc cụ thể cả hai đã xác định.",
+          "Đối tượng được nhận diện cụ thể trong ngữ cảnh nên dùng the.",
+          "Cup số ít đếm được cần từ hạn định (the/a/this...), không đứng trần trong cụm này."
+        ]
+      },
+      {
+        "id": "A1-09-M19-C2",
+        "prompt_vi": "Chọn câu nói chung về táo (không chỉ những quả đang thấy).",
+        "options_en": [
+          "I like apples.",
+          "I like the apples.",
+          "I like an apples."
+        ],
+        "correct_index": 0,
+        "explanation_vi": "Danh từ đếm được số nhiều nói chung có thể dùng zero article.",
+        "option_feedback_vi": [
+          "Danh từ đếm được số nhiều nói chung có thể dùng zero article.",
+          "The apples chỉ nhóm táo đã xác định; câu hỏi yêu cầu nói về táo nói chung.",
+          "An không đi với danh từ số nhiều apples."
+        ]
+      }
+    ],
+    "transfer": {
+      "prompt_vi": "Viết hai câu: một câu về một vật cụ thể gần bạn, một câu về một loại đồ ăn nói chung.",
+      "sample_en": "The phone on my desk is new. I like bananas.",
+      "rubric_vi": "Vật cụ thể: the; danh từ số nhiều nói chung: không dùng the."
+    },
+    "review_status": "DRAFT_TEACHER_REVIEW_REQUIRED"
+  },
+  "A1-10": {
+    "code": "A1-10",
+    "context_vi": "Bạn chỉ một chiếc bút gần mình và nhiều cuốn sách ở xa.",
+    "checkpoints": [
+      {
+        "id": "A1-10-M19-C1",
+        "prompt_vi": "Một chiếc bút bạn đang cầm: ___ pen.",
+        "options_en": [
+          "this",
+          "these",
+          "those"
+        ],
+        "correct_index": 0,
+        "explanation_vi": "Gần + số ít dùng this.",
+        "option_feedback_vi": [
+          "Gần + số ít dùng this.",
+          "These dùng cho nhiều vật ở gần; pen số ít.",
+          "Those dùng cho nhiều vật ở xa; pen số ít và đang ở gần."
+        ]
+      },
+      {
+        "id": "A1-10-M19-C2",
+        "prompt_vi": "Nhiều cuốn sách ở xa: ___ books.",
+        "options_en": [
+          "that",
+          "this",
+          "those"
+        ],
+        "correct_index": 2,
+        "explanation_vi": "Xa + số nhiều dùng those.",
+        "option_feedback_vi": [
+          "That chỉ một vật ở xa; books là số nhiều.",
+          "This chỉ một vật ở gần; books là số nhiều và ở xa.",
+          "Xa + số nhiều dùng those."
+        ]
+      }
+    ],
+    "transfer": {
+      "prompt_vi": "Viết câu về một món đồ gần và hai món đồ ở xa.",
+      "sample_en": "This bag is mine. Those shoes are yours.",
+      "rubric_vi": "Nhìn cả khoảng cách lẫn số ít/số nhiều."
+    },
+    "review_status": "DRAFT_TEACHER_REVIEW_REQUIRED"
+  },
+  "A1-11": {
+    "code": "A1-11",
+    "context_vi": "Anna có một con mèo; bạn muốn nói đó là con mèo của Anna.",
+    "checkpoints": [
+      {
+        "id": "A1-11-M19-C1",
+        "prompt_vi": "Anna has a cat. ___ cat is black.",
+        "options_en": [
+          "She",
+          "Her",
+          "Hers"
+        ],
+        "correct_index": 1,
+        "explanation_vi": "Tính từ sở hữu đứng trước cat: her cat.",
+        "option_feedback_vi": [
+          "She là chủ ngữ; ngay trước cat cần tính từ sở hữu her.",
+          "Tính từ sở hữu đứng trước cat: her cat.",
+          "Hers là đại từ sở hữu độc lập, không đứng trước cat."
+        ]
+      },
+      {
+        "id": "A1-11-M19-C2",
+        "prompt_vi": "We love ___ school.",
+        "options_en": [
+          "our",
+          "ours",
+          "us"
+        ],
+        "correct_index": 0,
+        "explanation_vi": "Trước danh từ school dùng our.",
+        "option_feedback_vi": [
+          "Trước danh từ school dùng our.",
+          "Ours là đại từ sở hữu độc lập; trước school phải dùng our.",
+          "Us là tân ngữ, không biểu thị sở hữu trước school."
+        ]
+      }
+    ],
+    "transfer": {
+      "prompt_vi": "Viết hai câu về đồ vật thuộc về một người và thuộc về nhóm có bạn.",
+      "sample_en": "His bike is blue. Our classroom is clean.",
+      "rubric_vi": "Dùng tính từ sở hữu trước danh từ."
+    },
+    "review_status": "DRAFT_TEACHER_REVIEW_REQUIRED"
+  },
+  "A1-12": {
+    "code": "A1-12",
+    "context_vi": "Bạn thấy một chiếc ghế thuộc về người khác và muốn nói ghế đó của bạn ấy.",
+    "checkpoints": [
+      {
+        "id": "A1-12-M19-C1",
+        "prompt_vi": "That seat is ___. (you)",
+        "options_en": [
+          "your",
+          "yours",
+          "you"
+        ],
+        "correct_index": 1,
+        "explanation_vi": "Không có danh từ sau chỗ trống nên dùng yours.",
+        "option_feedback_vi": [
+          "Your phải có danh từ theo sau, chẳng hạn your seat; chỗ trống ở cuối câu cần yours.",
+          "Không có danh từ sau chỗ trống nên dùng yours.",
+          "You là đại từ nhân xưng, không biểu thị sở hữu trong vị trí này."
+        ]
+      },
+      {
+        "id": "A1-12-M19-C2",
+        "prompt_vi": "This is ___ bag. (Anna)",
+        "options_en": [
+          "Annas",
+          "Anna’s",
+          "Annas’"
+        ],
+        "correct_index": 1,
+        "explanation_vi": "Một người tên Anna sở hữu túi: Anna’s bag.",
+        "option_feedback_vi": [
+          "Annas thiếu dấu sở hữu; viết Anna’s bag.",
+          "Một người tên Anna sở hữu túi: Anna’s bag.",
+          "Annas’ là dạng sở hữu của một nhóm người tên Annas, không phù hợp một người tên Anna."
+        ]
+      }
+    ],
+    "transfer": {
+      "prompt_vi": "Viết một câu dùng mine và một câu sở hữu cách ’s.",
+      "sample_en": "This notebook is mine. That is Minh’s jacket.",
+      "rubric_vi": "Mine đứng độc lập; tên người + ’s + danh từ."
+    },
+    "review_status": "DRAFT_TEACHER_REVIEW_REQUIRED"
+  },
+  "A1-13": {
+    "code": "A1-13",
+    "context_vi": "Bạn nói về chiếc laptop của chị và xe đạp của anh trai.",
+    "checkpoints": [
+      {
+        "id": "A1-13-M19-C1",
+        "prompt_vi": "My sister ___ a laptop.",
+        "options_en": [
+          "have",
+          "has",
+          "having"
+        ],
+        "correct_index": 1,
+        "explanation_vi": "My sister = she nên dùng has.",
+        "option_feedback_vi": [
+          "My sister là ngôi ba số ít, hiện tại đơn dùng has, không phải have.",
+          "My sister = she nên dùng has.",
+          "Having cần cấu trúc khác; không thay được động từ hữu hạn has ở đây."
+        ]
+      },
+      {
+        "id": "A1-13-M19-C2",
+        "prompt_vi": "Chọn câu hỏi với have got trong tiếng Anh Anh.",
+        "options_en": [
+          "Has she got a laptop?",
+          "Does she got a laptop?",
+          "Have she a laptop got?"
+        ],
+        "correct_index": 0,
+        "explanation_vi": "Mẫu have got đảo has/have lên trước chủ ngữ, không thêm does.",
+        "option_feedback_vi": [
+          "Mẫu have got đảo has/have lên trước chủ ngữ, không thêm does.",
+          "Does she got kết hợp sai: nếu dùng does thì phải nói Does she have..., không phải got.",
+          "Have she a laptop got? đảo trợ động từ và vị trí got sai; dạng have got là Has she got...?"
+        ]
+      }
+    ],
+    "transfer": {
+      "prompt_vi": "Viết hai câu nói về vật sở hữu, một câu dùng have và một câu dùng has got.",
+      "sample_en": "I have a pen. My friend has got a bike.",
+      "rubric_vi": "Không trộn cấu trúc have got với mẫu do/does have."
+    },
+    "review_status": "DRAFT_TEACHER_REVIEW_REQUIRED"
+  },
+  "A1-14": {
+    "code": "A1-14",
+    "context_vi": "Bạn mô tả đồ đạc trong căn phòng mới.",
+    "checkpoints": [
+      {
+        "id": "A1-14-M19-C1",
+        "prompt_vi": "Có một cái giường: ___ a bed in the room.",
+        "options_en": [
+          "There are",
+          "There is",
+          "They are"
+        ],
+        "correct_index": 1,
+        "explanation_vi": "A bed là danh từ số ít nên dùng There is.",
+        "option_feedback_vi": [
+          "There are dùng cho danh từ số nhiều; a bed số ít.",
+          "A bed là danh từ số ít nên dùng There is.",
+          "They are dùng để nói các đối tượng đã xác định, không giới thiệu sự tồn tại của a bed như There is."
+        ]
+      },
+      {
+        "id": "A1-14-M19-C2",
+        "prompt_vi": "Có ba cái ghế: ___ three chairs in the room.",
+        "options_en": [
+          "There is",
+          "There are",
+          "It is"
+        ],
+        "correct_index": 1,
+        "explanation_vi": "Three chairs là số nhiều nên dùng There are.",
+        "option_feedback_vi": [
+          "There is không phù hợp three chairs số nhiều trong câu chuẩn.",
+          "Three chairs là số nhiều nên dùng There are.",
+          "It is không thay được mẫu giới thiệu sự tồn tại There are three chairs."
+        ]
+      }
+    ],
+    "transfer": {
+      "prompt_vi": "Viết hai câu tả một đồ vật và nhiều đồ vật trong phòng.",
+      "sample_en": "There is a lamp. There are two chairs.",
+      "rubric_vi": "There is + số ít/không đếm được; There are + danh từ số nhiều."
+    },
+    "review_status": "DRAFT_TEACHER_REVIEW_REQUIRED"
+  },
+  "A1-15": {
+    "code": "A1-15",
+    "context_vi": "Bạn hỏi bạn có trứng trong tủ lạnh không và mời người khác uống trà.",
+    "checkpoints": [
+      {
+        "id": "A1-15-M19-C1",
+        "prompt_vi": "We do not have ___ eggs.",
+        "options_en": [
+          "some",
+          "any",
+          "a"
+        ],
+        "correct_index": 1,
+        "explanation_vi": "Câu phủ định thông thường dùng any với eggs.",
+        "option_feedback_vi": [
+          "Some có thể dùng trong phủ định đặc biệt để đối lập (not some, but all), nhưng câu phủ định thông thường dùng any.",
+          "Câu phủ định thông thường dùng any với eggs.",
+          "A không đi với eggs số nhiều."
+        ]
+      },
+      {
+        "id": "A1-15-M19-C2",
+        "prompt_vi": "Would you like ___ tea?",
+        "options_en": [
+          "some",
+          "any",
+          "a"
+        ],
+        "correct_index": 0,
+        "explanation_vi": "Lời mời thường dùng some vì người nói đang đề nghị một thứ.",
+        "option_feedback_vi": [
+          "Lời mời thường dùng some vì người nói đang đề nghị một thứ.",
+          "Any có thể xuất hiện trong một số lời mời đặc biệt, nhưng lời mời đơn giản Would you like... thường dùng some.",
+          "A không đi trực tiếp với tea là danh từ không đếm được trong ngữ cảnh này."
+        ]
+      }
+    ],
+    "transfer": {
+      "prompt_vi": "Viết một câu phủ định với any và một lời mời với some.",
+      "sample_en": "I do not have any milk. Would you like some tea?",
+      "rubric_vi": "Không suy luận some/any chỉ theo dấu hỏi; xét chức năng lời mời."
+    },
+    "review_status": "DRAFT_TEACHER_REVIEW_REQUIRED"
+  },
+  "A1-16": {
+    "code": "A1-16",
+    "context_vi": "Bạn muốn hỏi số ghế và lượng nước trong phòng họp.",
+    "checkpoints": [
+      {
+        "id": "A1-16-M19-C1",
+        "prompt_vi": "How ___ chairs are there?",
+        "options_en": [
+          "much",
+          "many",
+          "little"
+        ],
+        "correct_index": 1,
+        "explanation_vi": "Chairs đếm được số nhiều nên dùng many.",
+        "option_feedback_vi": [
+          "Much dùng cho lượng danh từ không đếm được; chairs đếm được số nhiều.",
+          "Chairs đếm được số nhiều nên dùng many.",
+          "Little chỉ lượng nhỏ của danh từ không đếm được, không dùng hỏi số ghế."
+        ]
+      },
+      {
+        "id": "A1-16-M19-C2",
+        "prompt_vi": "How ___ water do we need?",
+        "options_en": [
+          "many",
+          "much",
+          "few"
+        ],
+        "correct_index": 1,
+        "explanation_vi": "Water không đếm trực tiếp nên dùng much.",
+        "option_feedback_vi": [
+          "Many dùng với số lượng danh từ đếm được, không hỏi trực tiếp lượng water.",
+          "Water không đếm trực tiếp nên dùng much.",
+          "Few đi với danh từ đếm được số nhiều, không phù hợp water."
+        ]
+      }
+    ],
+    "transfer": {
+      "prompt_vi": "Viết câu hỏi về số lượng sách và về lượng gạo.",
+      "sample_en": "How many books do you have? How much rice do we need?",
+      "rubric_vi": "Many với số nhiều đếm được; much với danh từ không đếm được."
+    },
+    "review_status": "DRAFT_TEACHER_REVIEW_REQUIRED"
+  },
+  "A1-17": {
+    "code": "A1-17",
+    "context_vi": "Bạn mô tả một chiếc túi mới màu đỏ.",
+    "checkpoints": [
+      {
+        "id": "A1-17-M19-C1",
+        "prompt_vi": "Chọn cụm danh từ chuẩn.",
+        "options_en": [
+          "a bag red",
+          "a red bag",
+          "red a bag"
+        ],
+        "correct_index": 1,
+        "explanation_vi": "Tính từ đơn giản đứng trước danh từ: a red bag.",
+        "option_feedback_vi": [
+          "Trật tự thường gặp trong cụm danh từ là a + red + bag, không phải bag red.",
+          "Tính từ đơn giản đứng trước danh từ: a red bag.",
+          "A đứng trước tính từ red rồi đến danh từ bag, không đặt red trước a."
+        ]
+      },
+      {
+        "id": "A1-17-M19-C2",
+        "prompt_vi": "Chọn câu đúng.",
+        "options_en": [
+          "The bag is heavy.",
+          "The bag heavy is.",
+          "The is bag heavy."
+        ],
+        "correct_index": 0,
+        "explanation_vi": "Sau be, tính từ làm bổ ngữ: is heavy.",
+        "option_feedback_vi": [
+          "Sau be, tính từ làm bổ ngữ: is heavy.",
+          "Trong câu khẳng định, thứ tự là chủ ngữ + be + tính từ: The bag is heavy.",
+          "The is bag heavy đặt is trước bag làm đảo sai trật tự câu khẳng định."
+        ]
+      }
+    ],
+    "transfer": {
+      "prompt_vi": "Viết hai câu tả một đồ vật: dùng tính từ trước danh từ và sau be.",
+      "sample_en": "I have a small laptop. It is light.",
+      "rubric_vi": "Tính từ trước danh từ hoặc sau be; không đảo trật tự theo tiếng Việt."
+    },
+    "review_status": "DRAFT_TEACHER_REVIEW_REQUIRED"
+  },
+  "A1-18": {
+    "code": "A1-18",
+    "context_vi": "Bạn mô tả vị trí một quyển sách trên bề mặt bàn.",
+    "checkpoints": [
+      {
+        "id": "A1-18-M19-C1",
+        "prompt_vi": "The book is ___ the desk. (trên mặt bàn)",
+        "options_en": [
+          "in",
+          "on",
+          "under"
+        ],
+        "correct_index": 1,
+        "explanation_vi": "Sách tiếp xúc bề mặt bàn nên dùng on.",
+        "option_feedback_vi": [
+          "In nghĩa là trong không gian bao quanh, không phải trên bề mặt bàn.",
+          "Sách tiếp xúc bề mặt bàn nên dùng on.",
+          "Under nghĩa là bên dưới bàn, khác với trên mặt bàn."
+        ]
+      },
+      {
+        "id": "A1-18-M19-C2",
+        "prompt_vi": "The cat is ___ the box. (bên trong hộp)",
+        "options_en": [
+          "in",
+          "on",
+          "between"
+        ],
+        "correct_index": 0,
+        "explanation_vi": "Bên trong không gian hộp dùng in.",
+        "option_feedback_vi": [
+          "Bên trong không gian hộp dùng in.",
+          "On nghĩa là ở trên và tiếp xúc bề mặt; tình huống là bên trong hộp.",
+          "Between dùng khi ở giữa hai hay nhiều đối tượng, không có đối tượng thứ hai trong câu."
+        ]
+      }
+    ],
+    "transfer": {
+      "prompt_vi": "Viết hai câu miêu tả hai đồ vật bằng hai giới từ vị trí khác nhau.",
+      "sample_en": "The keys are on the table. The ball is under the chair.",
+      "rubric_vi": "Chọn giới từ theo quan hệ không gian thực tế."
+    },
+    "review_status": "DRAFT_TEACHER_REVIEW_REQUIRED"
+  },
+  "A1-19": {
+    "code": "A1-19",
+    "context_vi": "Bạn mô tả lịch học: giờ cụ thể và ngày trong tuần.",
+    "checkpoints": [
+      {
+        "id": "A1-19-M19-C1",
+        "prompt_vi": "I wake up ___ 6:30.",
+        "options_en": [
+          "in",
+          "on",
+          "at"
+        ],
+        "correct_index": 2,
+        "explanation_vi": "Giờ cụ thể dùng at.",
+        "option_feedback_vi": [
+          "In dùng cho tháng/năm/buổi, không dùng với giờ cụ thể 6:30.",
+          "On dùng cho ngày/thứ, không dùng cho mốc giờ cụ thể.",
+          "Giờ cụ thể dùng at."
+        ]
+      },
+      {
+        "id": "A1-19-M19-C2",
+        "prompt_vi": "We study English ___ Monday.",
+        "options_en": [
+          "at",
+          "on",
+          "in"
+        ],
+        "correct_index": 1,
+        "explanation_vi": "Ngày/thứ trong tuần dùng on.",
+        "option_feedback_vi": [
+          "At dùng cho giờ cụ thể; Monday là thứ trong tuần nên dùng on.",
+          "Ngày/thứ trong tuần dùng on.",
+          "In thường dùng với tháng/năm/buổi; Monday là một ngày cụ thể."
+        ]
+      }
+    ],
+    "transfer": {
+      "prompt_vi": "Viết một câu có at + giờ và một câu có in + tháng.",
+      "sample_en": "I start work at seven. My birthday is in June.",
+      "rubric_vi": "At + giờ; on + thứ/ngày; in + tháng/năm/khoảng thời gian."
+    },
+    "review_status": "DRAFT_TEACHER_REVIEW_REQUIRED"
+  },
+  "A1-20": {
+    "code": "A1-20",
+    "context_vi": "Bạn kể về thói quen uống trà mỗi sáng.",
+    "checkpoints": [
+      {
+        "id": "A1-20-M19-C1",
+        "prompt_vi": "I ___ tea every morning.",
+        "options_en": [
+          "am drink",
+          "drink",
+          "drinking"
+        ],
+        "correct_index": 1,
+        "explanation_vi": "Thói quen với I dùng động từ nguyên thể không to: drink.",
+        "option_feedback_vi": [
+          "Am drink trộn be với động từ nguyên mẫu; thói quen chỉ cần I drink.",
+          "Thói quen với I dùng động từ nguyên thể không to: drink.",
+          "Drinking là V-ing, thiếu trợ động từ và không phù hợp cách kể thói quen này."
+        ]
+      },
+      {
+        "id": "A1-20-M19-C2",
+        "prompt_vi": "They ___ at 8 a.m. every day.",
+        "options_en": [
+          "starts",
+          "start",
+          "are start"
+        ],
+        "correct_index": 1,
+        "explanation_vi": "They ở hiện tại đơn đi với start không -s.",
+        "option_feedback_vi": [
+          "Starts dùng với he/she/it, không đi với they.",
+          "They ở hiện tại đơn đi với start không -s.",
+          "Are start trộn be với động từ nguyên thể; ở hiện tại đơn với they dùng start."
+        ]
+      }
+    ],
+    "transfer": {
+      "prompt_vi": "Viết hai câu về hai thói quen thật sự của bạn.",
+      "sample_en": "I read every night. We study on weekdays.",
+      "rubric_vi": "Thói quen/sự thật: hiện tại đơn; tránh thêm am trước động từ thường."
+    },
+    "review_status": "DRAFT_TEACHER_REVIEW_REQUIRED"
+  },
+  "A1-21": {
+    "code": "A1-21",
+    "context_vi": "Bạn nói về thói quen đi làm của bố.",
+    "checkpoints": [
+      {
+        "id": "A1-21-M19-C1",
+        "prompt_vi": "My dad ___ to work early.",
+        "options_en": [
+          "go",
+          "goes",
+          "going"
+        ],
+        "correct_index": 1,
+        "explanation_vi": "Go với chủ ngữ ngôi ba số ít thành goes.",
+        "option_feedback_vi": [
+          "My dad là ngôi ba số ít, go cần đổi thành goes.",
+          "Go với chủ ngữ ngôi ba số ít thành goes.",
+          "Going thiếu trợ động từ để thành câu tiếp diễn, và không biểu thị thói quen như đề yêu cầu."
+        ]
+      },
+      {
+        "id": "A1-21-M19-C2",
+        "prompt_vi": "She ___ English every day.",
+        "options_en": [
+          "study",
+          "studys",
+          "studies"
+        ],
+        "correct_index": 2,
+        "explanation_vi": "Study đổi phụ âm + y thành -ies với she.",
+        "option_feedback_vi": [
+          "She ngôi ba số ít; study cần chuyển y thành ies.",
+          "Studys sai chính tả; phụ âm + y đổi thành -ies, không thêm -s trực tiếp.",
+          "Study đổi phụ âm + y thành -ies với she."
+        ]
+      }
+    ],
+    "transfer": {
+      "prompt_vi": "Viết hai câu về thói quen của một người khác, dùng hai động từ khác nhau.",
+      "sample_en": "My brother watches videos. He studies English.",
+      "rubric_vi": "He/she/it + V-s/-es/-ies; lưu ý quy tắc đuôi."
+    },
+    "review_status": "DRAFT_TEACHER_REVIEW_REQUIRED"
+  },
+  "A1-22": {
+    "code": "A1-22",
+    "context_vi": "Bạn nói điều anh ấy không làm vào cuối tuần.",
+    "checkpoints": [
+      {
+        "id": "A1-22-M19-C1",
+        "prompt_vi": "He ___ play tennis.",
+        "options_en": [
+          "don't",
+          "doesn't",
+          "isn't"
+        ],
+        "correct_index": 1,
+        "explanation_vi": "He + động từ thường trong phủ định: doesn’t + play.",
+        "option_feedback_vi": [
+          "Don't dùng với I/you/we/they; he dùng doesn't.",
+          "He + động từ thường trong phủ định: doesn’t + play.",
+          "Isn't phủ định be; câu này có động từ thường play nên dùng doesn't."
+        ]
+      },
+      {
+        "id": "A1-22-M19-C2",
+        "prompt_vi": "She does not ___ tea.",
+        "options_en": [
+          "likes",
+          "like",
+          "liking"
+        ],
+        "correct_index": 1,
+        "explanation_vi": "Does đã thể hiện ngôi ba, động từ chính dùng dạng gốc like.",
+        "option_feedback_vi": [
+          "Likes không đứng sau does not; trợ động từ đã mang ngôi và thì.",
+          "Does đã thể hiện ngôi ba, động từ chính dùng dạng gốc like.",
+          "Liking cần cấu trúc tiếp diễn; sau does not dùng động từ nguyên thể like."
+        ]
+      }
+    ],
+    "transfer": {
+      "prompt_vi": "Viết hai câu phủ định về thói quen của người thân.",
+      "sample_en": "My sister doesn't drink coffee. My dad doesn't drive on Sundays.",
+      "rubric_vi": "Sau do not/does not luôn dùng động từ nguyên thể."
+    },
+    "review_status": "DRAFT_TEACHER_REVIEW_REQUIRED"
+  },
+  "A1-23": {
+    "code": "A1-23",
+    "context_vi": "Bạn muốn hỏi bạn mình có học ở đây không.",
+    "checkpoints": [
+      {
+        "id": "A1-23-M19-C1",
+        "prompt_vi": "___ she work here?",
+        "options_en": [
+          "Do",
+          "Does",
+          "Is"
+        ],
+        "correct_index": 1,
+        "explanation_vi": "Với động từ thường và she, câu hỏi dùng Does.",
+        "option_feedback_vi": [
+          "Do dùng với I/you/we/they; she số ít ngôi ba dùng Does.",
+          "Với động từ thường và she, câu hỏi dùng Does.",
+          "Is chỉ đảo với be/tiếp diễn, không dùng để hỏi động từ thường work trong câu này."
+        ]
+      },
+      {
+        "id": "A1-23-M19-C2",
+        "prompt_vi": "Does he ___ football?",
+        "options_en": [
+          "plays",
+          "playing",
+          "play"
+        ],
+        "correct_index": 2,
+        "explanation_vi": "Sau Does dùng động từ nguyên thể play.",
+        "option_feedback_vi": [
+          "Sau Does, động từ chính phải về dạng nguyên thể play, không thêm -s.",
+          "Playing là V-ing, không thể đứng sau Does trong mẫu hiện tại đơn.",
+          "Sau Does dùng động từ nguyên thể play."
+        ]
+      }
+    ],
+    "transfer": {
+      "prompt_vi": "Viết hai câu hỏi thói quen: một với you, một với she.",
+      "sample_en": "Do you exercise? Does she read at night?",
+      "rubric_vi": "Do/Does + chủ ngữ + V gốc; không dùng do/does với be."
+    },
+    "review_status": "DRAFT_TEACHER_REVIEW_REQUIRED"
+  },
+  "A1-24": {
+    "code": "A1-24",
+    "context_vi": "Bạn mô tả mức độ thường xuyên làm bài tập về nhà.",
+    "checkpoints": [
+      {
+        "id": "A1-24-M19-C1",
+        "prompt_vi": "I ___ do my homework after dinner.",
+        "options_en": [
+          "always",
+          "am always",
+          "do always"
+        ],
+        "correct_index": 0,
+        "explanation_vi": "Always đứng trước động từ thường do.",
+        "option_feedback_vi": [
+          "Always đứng trước động từ thường do.",
+          "Am always do kết hợp be với do ở dạng sai; thường nói I always do.",
+          "Do always do không đúng trật tự trạng từ trong câu này; đặt always trước động từ chính."
+        ]
+      },
+      {
+        "id": "A1-24-M19-C2",
+        "prompt_vi": "She is ___ late.",
+        "options_en": [
+          "often",
+          "often is",
+          "is often"
+        ],
+        "correct_index": 0,
+        "explanation_vi": "Với be, trạng từ tần suất đứng sau is.",
+        "option_feedback_vi": [
+          "Với be, trạng từ tần suất đứng sau is.",
+          "Often is không đặt sau is một lần nữa trong vị trí trống: She is often late.",
+          "Is often lặp lại is đã có sẵn, làm thành She is is often late."
+        ]
+      }
+    ],
+    "transfer": {
+      "prompt_vi": "Viết hai câu với often/usually: một câu có động từ thường, một câu có be.",
+      "sample_en": "I usually walk to class. My teacher is often early.",
+      "rubric_vi": "Trước động từ thường; sau am/is/are."
+    },
+    "review_status": "DRAFT_TEACHER_REVIEW_REQUIRED"
+  },
+  "A1-25": {
+    "code": "A1-25",
+    "context_vi": "Bạn nhìn thấy em bé đang ngủ ngay lúc này.",
+    "checkpoints": [
+      {
+        "id": "A1-25-M19-C1",
+        "prompt_vi": "Look! The baby ___ .",
+        "options_en": [
+          "sleeps",
+          "is sleeping",
+          "sleeping"
+        ],
+        "correct_index": 1,
+        "explanation_vi": "Hành động đang xảy ra: is + V-ing.",
+        "option_feedback_vi": [
+          "Sleeps nói thói quen; Look! chỉ sự việc đang diễn ra lúc nói.",
+          "Hành động đang xảy ra: is + V-ing.",
+          "Sleeping một mình thiếu is trước V-ing."
+        ]
+      },
+      {
+        "id": "A1-25-M19-C2",
+        "prompt_vi": "They ___ football right now.",
+        "options_en": [
+          "are playing",
+          "is playing",
+          "play normally"
+        ],
+        "correct_index": 0,
+        "explanation_vi": "They + are playing dùng hiện tại tiếp diễn.",
+        "option_feedback_vi": [
+          "They + are playing dùng hiện tại tiếp diễn.",
+          "They đi với are, không đi với is.",
+          "Play normally thể hiện thói quen và không khớp right now đang diễn ra."
+        ]
+      }
+    ],
+    "transfer": {
+      "prompt_vi": "Viết hai câu về hoạt động đang diễn ra xung quanh bạn.",
+      "sample_en": "I am studying now. My friend is reading.",
+      "rubric_vi": "Hiện tại tiếp diễn luôn có am/is/are + V-ing."
+    },
+    "review_status": "DRAFT_TEACHER_REVIEW_REQUIRED"
+  },
+  "A1-26": {
+    "code": "A1-26",
+    "context_vi": "Bạn muốn hỏi một người có đang làm việc không và phủ định câu kia.",
+    "checkpoints": [
+      {
+        "id": "A1-26-M19-C1",
+        "prompt_vi": "___ she working?",
+        "options_en": [
+          "Does",
+          "Is",
+          "Do"
+        ],
+        "correct_index": 1,
+        "explanation_vi": "Câu hỏi hiện tại tiếp diễn đảo is ra đầu.",
+        "option_feedback_vi": [
+          "Does không kết hợp trực tiếp với V-ing working; cần Is she working?",
+          "Câu hỏi hiện tại tiếp diễn đảo is ra đầu.",
+          "Do không đi với she số ít và không dùng để hỏi hiện tại tiếp diễn."
+        ]
+      },
+      {
+        "id": "A1-26-M19-C2",
+        "prompt_vi": "He ___ playing now.",
+        "options_en": [
+          "is not",
+          "does not",
+          "are not"
+        ],
+        "correct_index": 0,
+        "explanation_vi": "Với he: is not + playing.",
+        "option_feedback_vi": [
+          "Với he: is not + playing.",
+          "Does not không trực tiếp tạo cấu trúc he does not playing; phải dùng is not playing.",
+          "Are not không đi với chủ ngữ he số ít."
+        ]
+      }
+    ],
+    "transfer": {
+      "prompt_vi": "Viết một câu hỏi và một câu phủ định ở hiện tại tiếp diễn.",
+      "sample_en": "Are they waiting? She is not sleeping.",
+      "rubric_vi": "Câu hỏi đảo be; phủ định thêm not sau be; giữ V-ing."
+    },
+    "review_status": "DRAFT_TEACHER_REVIEW_REQUIRED"
+  },
+  "A1-27": {
+    "code": "A1-27",
+    "context_vi": "Một người thường lái xe đi làm, nhưng hôm nay đi xe buýt.",
+    "checkpoints": [
+      {
+        "id": "A1-27-M19-C1",
+        "prompt_vi": "He ___ to work every day.",
+        "options_en": [
+          "is driving",
+          "drives",
+          "drive"
+        ],
+        "correct_index": 1,
+        "explanation_vi": "Every day trong ngữ cảnh thói quen: drives.",
+        "option_feedback_vi": [
+          "Is driving là hiện tại tiếp diễn; câu nhấn every day là thói quen.",
+          "Every day trong ngữ cảnh thói quen: drives.",
+          "Drive thiếu -s với he ở hiện tại đơn."
+        ]
+      },
+      {
+        "id": "A1-27-M19-C2",
+        "prompt_vi": "Look! He ___ at the bus stop right now. (đang chờ ngay lúc này)",
+        "options_en": [
+          "waits",
+          "is waiting",
+          "wait"
+        ],
+        "correct_index": 1,
+        "explanation_vi": "Right now và Look! nhấn mạnh hành động đang diễn ra; dùng is waiting, khác với thói quen waits.",
+        "option_feedback_vi": [
+          "Waits nói thói quen; Look! và right now yêu cầu hành động đang diễn ra.",
+          "Right now và Look! nhấn mạnh hành động đang diễn ra; dùng is waiting, khác với thói quen waits.",
+          "Wait thiếu chia thì ngôi ba và không nói hành động đang diễn ra như yêu cầu."
+        ]
+      }
+    ],
+    "transfer": {
+      "prompt_vi": "Viết hai câu về một thói quen của bạn và điều bạn đang làm hôm nay.",
+      "sample_en": "I usually study at home, but today I am studying at the library.",
+      "rubric_vi": "Phân biệt thói quen và hoạt động/tình huống tạm thời."
+    },
+    "review_status": "DRAFT_TEACHER_REVIEW_REQUIRED"
+  },
+  "A1-28": {
+    "code": "A1-28",
+    "context_vi": "Bạn kể khả năng chơi nhạc cụ của người thân.",
+    "checkpoints": [
+      {
+        "id": "A1-28-M19-C1",
+        "prompt_vi": "She ___ sing.",
+        "options_en": [
+          "cans",
+          "can",
+          "can to"
+        ],
+        "correct_index": 1,
+        "explanation_vi": "Can không chia theo ngôi và theo sau là động từ nguyên thể.",
+        "option_feedback_vi": [
+          "Cans sai: động từ khuyết thiếu can không thêm -s với she.",
+          "Can không chia theo ngôi và theo sau là động từ nguyên thể.",
+          "Can to sai: sau can dùng động từ nguyên thể không to."
+        ]
+      },
+      {
+        "id": "A1-28-M19-C2",
+        "prompt_vi": "Chọn câu hỏi xin phép đúng.",
+        "options_en": [
+          "Can I come in?",
+          "Do I can come in?",
+          "Can I to come in?"
+        ],
+        "correct_index": 0,
+        "explanation_vi": "Can đứng đầu câu hỏi; không thêm do hay to.",
+        "option_feedback_vi": [
+          "Can đứng đầu câu hỏi; không thêm do hay to.",
+          "Do I can dùng trợ động từ do trước can sai; đảo Can ra đầu câu.",
+          "Can I to come sai vì sau can không có to."
+        ]
+      }
+    ],
+    "transfer": {
+      "prompt_vi": "Viết một câu nói khả năng và một câu xin phép.",
+      "sample_en": "I can swim. Can I open the window?",
+      "rubric_vi": "Can + V nguyên thể; không dùng to, không thêm -s."
+    },
+    "review_status": "DRAFT_TEACHER_REVIEW_REQUIRED"
+  },
+  "A1-29": {
+    "code": "A1-29",
+    "context_vi": "Bạn muốn nhắc ai đó đóng cửa và rủ bạn cùng học.",
+    "checkpoints": [
+      {
+        "id": "A1-29-M19-C1",
+        "prompt_vi": "Chọn lời yêu cầu lịch sự.",
+        "options_en": [
+          "To close the door, please.",
+          "Close the door, please.",
+          "You closing the door, please."
+        ],
+        "correct_index": 1,
+        "explanation_vi": "Mệnh lệnh bắt đầu bằng động từ nguyên thể Close.",
+        "option_feedback_vi": [
+          "To close... là cụm nguyên mẫu, không phải câu yêu cầu trực tiếp theo mẫu bài học.",
+          "Mệnh lệnh bắt đầu bằng động từ nguyên thể Close.",
+          "You closing... thiếu động từ hữu hạn, không phải câu mệnh lệnh chuẩn."
+        ]
+      },
+      {
+        "id": "A1-29-M19-C2",
+        "prompt_vi": "Chọn lời rủ đúng.",
+        "options_en": [
+          "Let's studying.",
+          "Let's study.",
+          "Let's to study."
+        ],
+        "correct_index": 1,
+        "explanation_vi": "Sau Let's dùng V nguyên thể không to.",
+        "option_feedback_vi": [
+          "Let's studying sai: sau Let's dùng động từ nguyên thể study.",
+          "Sau Let's dùng V nguyên thể không to.",
+          "Let's to study sai: không đặt to sau Let's."
+        ]
+      }
+    ],
+    "transfer": {
+      "prompt_vi": "Viết một câu nhắc ai đó đừng chạm vào đồ vật và một lời rủ cùng học.",
+      "sample_en": "Don't touch that. Let's study together.",
+      "rubric_vi": "Don't + V gốc; Let's + V gốc."
+    },
+    "review_status": "DRAFT_TEACHER_REVIEW_REQUIRED"
+  },
+  "A1-30": {
+    "code": "A1-30",
+    "context_vi": "Bạn muốn diễn đạt vì sao mình đi ngủ sớm.",
+    "checkpoints": [
+      {
+        "id": "A1-30-M19-C1",
+        "prompt_vi": "I was tired, ___ I went to bed early.",
+        "options_en": [
+          "because",
+          "so",
+          "but"
+        ],
+        "correct_index": 1,
+        "explanation_vi": "Mệt là nguyên nhân, ngủ sớm là kết quả; so dẫn kết quả.",
+        "option_feedback_vi": [
+          "Because đưa nguyên nhân, không nối sang kết quả I went to bed early trong cấu trúc đang dùng.",
+          "Mệt là nguyên nhân, ngủ sớm là kết quả; so dẫn kết quả.",
+          "But chỉ sự tương phản; hai vế ở đây là quan hệ nguyên nhân–kết quả."
+        ]
+      },
+      {
+        "id": "A1-30-M19-C2",
+        "prompt_vi": "I stayed home ___ it was raining.",
+        "options_en": [
+          "because",
+          "so",
+          "and"
+        ],
+        "correct_index": 0,
+        "explanation_vi": "Vế it was raining là lý do; because giới thiệu nguyên nhân.",
+        "option_feedback_vi": [
+          "Vế it was raining là lý do; because giới thiệu nguyên nhân.",
+          "So giới thiệu kết quả; vế sau it was raining là nguyên nhân.",
+          "And chỉ nối hai ý, không diễn đạt rõ quan hệ lý do mà đề đang yêu cầu."
+        ]
+      }
+    ],
+    "transfer": {
+      "prompt_vi": "Viết ba câu ngắn, trong đó có because và but hoặc so.",
+      "sample_en": "I was tired, so I stayed home. I wanted to go out, but it was raining.",
+      "rubric_vi": "Because + lý do; so + kết quả; but + tương phản; and + bổ sung."
+    },
+    "review_status": "DRAFT_TEACHER_REVIEW_REQUIRED"
+  }
+}

@@ -1,0 +1,536 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "DICT-S1-063",
+  "status": "draft",
+  "level": "L5",
+  "section": 1,
+  "topic": "Travel Arrangements",
+  "title": "A Coach Booking after Roadworks",
+  "learning_objectives_vi": [
+    "Rèn integrated information challenge qua tình huống: A traveller adjusts a coach itinerary because a stop is temporarily closed.",
+    "Xác định thông tin cuối cùng và phân biệt dữ liệu gây nhiễu (nếu có).",
+    "Nghe chép chính xác, lý giải đáp án từ transcript và học từ trong ngữ cảnh."
+  ],
+  "content_format": "section_practice",
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Service representative / employee",
+      "tts_voice_id": null,
+      "accent_requested": "british"
+    },
+    {
+      "speaker_id": "B",
+      "role": "Customer / applicant",
+      "tts_voice_id": null,
+      "accent_requested": "british"
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "Good morning, North Counties Coaches. Is this about an existing booking?",
+      "translation_vi": "Chào buổi sáng, North Counties Coaches. Anh muốn hỏi vé đã đặt ạ?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "changed_stop",
+        "time_shift",
+        "seating",
+        "connection",
+        "section_1",
+        "two_speaker_dialogue",
+        "l5"
+      ]
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "B",
+      "text_en": "Yes. I'm travelling with my aunt to Whitford next Thursday. We booked the nine fifteen service from Mill Square.",
+      "translation_vi": "Vâng. Tôi đi với dì đến Whitford thứ Năm tuần sau. Chúng tôi đặt xe 9:15 tại Mill Square.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "changed_stop",
+        "time_shift",
+        "seating",
+        "connection",
+        "section_1",
+        "two_speaker_dialogue",
+        "l5"
+      ]
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "A",
+      "text_en": "There's a temporary stop change because of roadworks. The coach will no longer pick up at Mill Square.",
+      "translation_vi": "Có thay đổi trạm đón tạm thời do sửa đường. Xe sẽ không đón ở Mill Square nữa.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "changed_stop",
+        "time_shift",
+        "seating",
+        "connection",
+        "section_1",
+        "two_speaker_dialogue",
+        "l5"
+      ]
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "B",
+      "text_en": "Where should we wait instead? My aunt can't walk very far.",
+      "translation_vi": "Vậy chúng tôi nên chờ ở đâu? Dì tôi không đi bộ xa được.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "changed_stop",
+        "time_shift",
+        "seating",
+        "connection",
+        "section_1",
+        "two_speaker_dialogue",
+        "l5"
+      ]
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "A",
+      "text_en": "At the library entrance on Queen Road. It's about eighty metres from the original stop.",
+      "translation_vi": "Ở cửa thư viện trên đường Queen, cách trạm cũ khoảng 80 mét.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "changed_stop",
+        "time_shift",
+        "seating",
+        "connection",
+        "section_1",
+        "two_speaker_dialogue",
+        "l5"
+      ]
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "B",
+      "text_en": "That should be manageable. Has the departure time changed as well?",
+      "translation_vi": "Khoảng đó có thể đi được. Giờ khởi hành có thay đổi không?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "changed_stop",
+        "time_shift",
+        "seating",
+        "connection",
+        "section_1",
+        "two_speaker_dialogue",
+        "l5"
+      ]
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "It's ten minutes later, at nine twenty-five, though arrival in Whitford should still be before midday.",
+      "translation_vi": "Muộn hơn 10 phút, lúc 9:25, nhưng dự kiến vẫn đến Whitford trước trưa.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "changed_stop",
+        "time_shift",
+        "seating",
+        "connection",
+        "section_1",
+        "two_speaker_dialogue",
+        "l5"
+      ]
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "B",
+      "text_en": "We paid for two standard seats. Could my aunt have an aisle seat?",
+      "translation_vi": "Chúng tôi đã mua hai ghế thường. Dì tôi có thể ngồi ghế cạnh lối đi không?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "changed_stop",
+        "time_shift",
+        "seating",
+        "connection",
+        "section_1",
+        "two_speaker_dialogue",
+        "l5"
+      ]
+    },
+    {
+      "turn_id": "T09",
+      "speaker_id": "A",
+      "text_en": "Yes, I'll reserve an aisle seat at no extra cost. The front row is unavailable because the driver uses it for equipment.",
+      "translation_vi": "Được, tôi giữ ghế lối đi miễn phí. Hàng đầu không còn vì tài xế dùng để đặt thiết bị.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "changed_stop",
+        "time_shift",
+        "seating",
+        "connection",
+        "section_1",
+        "two_speaker_dialogue",
+        "l5"
+      ]
+    },
+    {
+      "turn_id": "T10",
+      "speaker_id": "B",
+      "text_en": "Thank you. We also need to get to the Rose Hotel after arriving.",
+      "translation_vi": "Cảm ơn. Chúng tôi còn cần đến khách sạn Rose sau khi tới nơi.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "changed_stop",
+        "time_shift",
+        "seating",
+        "connection",
+        "section_1",
+        "two_speaker_dialogue",
+        "l5"
+      ]
+    },
+    {
+      "turn_id": "T11",
+      "speaker_id": "A",
+      "text_en": "The coach stops by the market. From there, a local bus goes directly to the hotel every half hour.",
+      "translation_vi": "Xe dừng cạnh chợ. Từ đó, xe buýt địa phương đi thẳng đến khách sạn mỗi nửa giờ.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "changed_stop",
+        "time_shift",
+        "seating",
+        "connection",
+        "section_1",
+        "two_speaker_dialogue",
+        "l5"
+      ]
+    },
+    {
+      "turn_id": "T12",
+      "speaker_id": "B",
+      "text_en": "I thought we would be dropped at the hotel itself.",
+      "translation_vi": "Tôi tưởng xe sẽ trả khách ngay tại khách sạn.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "changed_stop",
+        "time_shift",
+        "seating",
+        "connection",
+        "section_1",
+        "two_speaker_dialogue",
+        "l5"
+      ]
+    },
+    {
+      "turn_id": "T13",
+      "speaker_id": "A",
+      "text_en": "I'm afraid the hotel drop-off is only available on our premium tour, not on standard tickets.",
+      "translation_vi": "Rất tiếc, trả khách tận khách sạn chỉ có với gói du lịch cao cấp, không áp dụng vé thường.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "changed_stop",
+        "time_shift",
+        "seating",
+        "connection",
+        "section_1",
+        "two_speaker_dialogue",
+        "l5"
+      ]
+    },
+    {
+      "turn_id": "T14",
+      "speaker_id": "B",
+      "text_en": "That's fine. Please update our boarding details by text message.",
+      "translation_vi": "Được. Vui lòng cập nhật thông tin lên xe bằng tin nhắn.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "changed_stop",
+        "time_shift",
+        "seating",
+        "connection",
+        "section_1",
+        "two_speaker_dialogue",
+        "l5"
+      ]
+    },
+    {
+      "turn_id": "T15",
+      "speaker_id": "A",
+      "text_en": "Certainly. You'll receive a message shortly.",
+      "translation_vi": "Vâng. Anh sẽ nhận được tin nhắn sớm.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "changed_stop",
+        "time_shift",
+        "seating",
+        "connection",
+        "section_1",
+        "two_speaker_dialogue",
+        "l5"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "type": "form_completion",
+      "prompt": "New boarding point: ____ entrance",
+      "correct_answers": [
+        "library"
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Trạm Mill Square đóng; điểm mới ở cửa thư viện.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "changed_stop",
+        "time_shift",
+        "seating",
+        "connection",
+        "ielts_section1_practice"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q02",
+      "type": "form_completion",
+      "prompt": "New street: ____ Road",
+      "correct_answers": [
+        "Queen"
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Điểm đón mới nằm trên Queen Road.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "changed_stop",
+        "time_shift",
+        "seating",
+        "connection",
+        "ielts_section1_practice"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q03",
+      "type": "form_completion",
+      "prompt": "Revised departure time: ____",
+      "correct_answers": [
+        "9:25",
+        "nine twenty-five"
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "9:15 là giờ cũ; giờ mới 9:25.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "changed_stop",
+        "time_shift",
+        "seating",
+        "connection",
+        "ielts_section1_practice"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q04",
+      "type": "mcq",
+      "prompt": "What seating does the traveller request?",
+      "correct_answers": [
+        "An aisle seat"
+      ],
+      "evidence_turn_ids": [
+        "T08",
+        "T09"
+      ],
+      "explanation_vi": "Dì của khách muốn ghế lối đi, không phải hàng ghế đầu.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "changed_stop",
+        "time_shift",
+        "seating",
+        "connection",
+        "ielts_section1_practice"
+      ],
+      "options": [
+        "A front-row seat",
+        "An aisle seat",
+        "A window seat"
+      ]
+    },
+    {
+      "question_id": "Q05",
+      "type": "form_completion",
+      "prompt": "Local bus frequency: every ____ minutes",
+      "correct_answers": [
+        "30",
+        "thirty"
+      ],
+      "evidence_turn_ids": [
+        "T11"
+      ],
+      "explanation_vi": "Xe địa phương đi khách sạn mỗi 30 phút.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "changed_stop",
+        "time_shift",
+        "seating",
+        "connection",
+        "ielts_section1_practice"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q06",
+      "type": "form_completion",
+      "prompt": "Update sent by: ____ message",
+      "correct_answers": [
+        "text"
+      ],
+      "evidence_turn_ids": [
+        "T14"
+      ],
+      "explanation_vi": "Khách muốn nhận thông tin bằng tin nhắn.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "changed_stop",
+        "time_shift",
+        "seating",
+        "connection",
+        "ielts_section1_practice"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "D01",
+      "type": "dictation",
+      "prompt": "Nghe và chép nguyên văn câu của nhân vật A (lượt T09).",
+      "correct_answers": [
+        "Yes, I'll reserve an aisle seat at no extra cost. The front row is unavailable because the driver uses it for equipment."
+      ],
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "explanation_vi": "Nội dung cần chép: Yes, I'll reserve an aisle seat at no extra cost. The front row is unavailable because the driver uses it for equipment. Nghĩa: Được, tôi giữ ghế lối đi miễn phí. Hàng đầu không còn vì tài xế dùng để đặt thiết bị. Chú ý đầy đủ từ chức năng, số ít/số nhiều và âm cuối.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "transcription_accuracy",
+        "changed_stop",
+        "time_shift",
+        "seating",
+        "connection"
+      ]
+    },
+    {
+      "question_id": "G01",
+      "type": "gap_fill",
+      "prompt": "Nghe và điền phần còn thiếu: I'm afraid the hotel drop-off is only available on our ____, not on standard tickets.",
+      "correct_answers": [
+        "premium tour"
+      ],
+      "evidence_turn_ids": [
+        "T13"
+      ],
+      "explanation_vi": "Từ/cụm nghe được là “premium tour”. Câu đầy đủ: I'm afraid the hotel drop-off is only available on our premium tour, not on standard tickets.. Nghĩa: Rất tiếc, trả khách tận khách sạn chỉ có với gói du lịch cao cấp, không áp dụng vé thường.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "gap_fill",
+        "vocabulary_in_context",
+        "changed_stop",
+        "time_shift",
+        "seating",
+        "connection"
+      ]
+    }
+  ],
+  "vocabulary": [
+    {
+      "term": "roadworks",
+      "pos": "noun",
+      "meaning_vi": "công trình sửa đường",
+      "example_en": "There's a temporary stop change because of roadworks. The coach will no longer pick up at Mill Square.",
+      "example_vi": "Có thay đổi trạm đón tạm thời do sửa đường. Xe sẽ không đón ở Mill Square nữa.",
+      "source_turn_id": "T03"
+    },
+    {
+      "term": "pick up",
+      "pos": "verb phrase",
+      "meaning_vi": "đón khách",
+      "example_en": "There's a temporary stop change because of roadworks. The coach will no longer pick up at Mill Square.",
+      "example_vi": "Có thay đổi trạm đón tạm thời do sửa đường. Xe sẽ không đón ở Mill Square nữa.",
+      "source_turn_id": "T03"
+    },
+    {
+      "term": "aisle seat",
+      "pos": "noun phrase",
+      "meaning_vi": "ghế cạnh lối đi",
+      "example_en": "We paid for two standard seats. Could my aunt have an aisle seat?",
+      "example_vi": "Chúng tôi đã mua hai ghế thường. Dì tôi có thể ngồi ghế cạnh lối đi không?",
+      "source_turn_id": "T08"
+    },
+    {
+      "term": "premium tour",
+      "pos": "noun phrase",
+      "meaning_vi": "gói tham quan cao cấp",
+      "example_en": "I'm afraid the hotel drop-off is only available on our premium tour, not on standard tickets.",
+      "example_vi": "Rất tiếc, trả khách tận khách sạn chỉ có với gói du lịch cao cấp, không áp dụng vé thường.",
+      "source_turn_id": "T13"
+    }
+  ],
+  "audio": {
+    "status": "not_generated",
+    "url": null,
+    "duration_ms": null,
+    "model": null,
+    "provider": null,
+    "voice_config": null,
+    "source_transcript_hash": "1668fa3efb04fdf1a69cf06c8db7fc4abef00ce6cf726aec2862f670b8f8cc3c",
+    "audio_sha256": null,
+    "format": null
+  },
+  "qa": {
+    "content_reviewed": false,
+    "answers_verified": false,
+    "audio_verified": false,
+    "rights_cleared": false,
+    "duplicate_reviewed": false,
+    "notes": [
+      "Draft authoring, not expert reviewed.",
+      "TTS output pending; timestamps must be aligned after synthesis.",
+      "Keep unpublished until audio and question evidence are checked by a reviewer.",
+      "M16.2: automated edits are provisional; IELTS teacher final signoff, audio and rights clearance pending."
+    ]
+  },
+  "provenance": {
+    "content_origin": "original_ai_assisted",
+    "source_urls": [],
+    "source_rights_note": "Original pedagogical dialogues, not IELTS/Cambridge exam content. Review all TTS provider terms and permissions before audio generation/distribution.",
+    "reviewer": null
+  },
+  "release_metadata": {
+    "published_at": null,
+    "version": 1
+  }
+}

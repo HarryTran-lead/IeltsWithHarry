@@ -1,0 +1,351 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "DICT-S4-031",
+  "status": "draft",
+  "level": "L6",
+  "section": 4,
+  "topic": "Climate Change",
+  "title": "Reconstructing Past Climate from Different Records",
+  "learning_objectives_vi": [
+    "Nghe bài giảng học thuật một người nói và xác định cấu trúc luận điểm, ví dụ và kết luận.",
+    "Hoàn thành Note/Summary Completion, Multiple Choice, Short Answer và chép đúng đoạn nghe đã học.",
+    "Phân tích bằng chứng theo từng đoạn và ghi nhớ từ học thuật trong bối cảnh."
+  ],
+  "content_format": "section_practice",
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Academic lecturer",
+      "tts_voice_id": null,
+      "accent_requested": "british"
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "How can we reconstruct a climate that no one measured with a thermometer? Researchers use indirect indicators known as proxies. Tree rings, ice layers and sediments can preserve information about past conditions. Yet each archive records a different aspect of the environment. A tree ring, for example, may reflect both temperature and rainfall, so interpretation requires local knowledge.",
+      "translation_vi": "Làm sao tái dựng khí hậu khi chưa có ai dùng nhiệt kế đo? Nhà nghiên cứu dùng chỉ dấu gián tiếp gọi là dữ liệu đại diện. Vòng cây, lớp băng và trầm tích có thể lưu thông tin về môi trường quá khứ. Tuy nhiên, mỗi nguồn ghi lại một khía cạnh khác nhau. Ví dụ, vòng cây có thể phản ánh cả nhiệt độ lẫn lượng mưa, nên cần hiểu điều kiện địa phương.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_4",
+        "academic_lecture",
+        "compare",
+        "l6"
+      ]
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "A",
+      "text_en": "Ice cores offer another window into the past. Bubbles trapped in old ice preserve samples of ancient air, while chemical features of the ice provide clues about temperature. These records can extend much further back than modern instruments. Nevertheless, they come from particular locations and must be dated carefully before comparisons are made across different regions.",
+      "translation_vi": "Lõi băng cung cấp một cửa sổ khác nhìn về quá khứ. Bong bóng bị giữ trong băng cũ lưu các mẫu không khí cổ, còn thành phần hóa học của băng gợi ý nhiệt độ. Hồ sơ này có thể kéo dài xa hơn nhiều so với thiết bị hiện đại. Tuy nhiên, chúng chỉ đến từ một số địa điểm và cần xác định niên đại cẩn thận trước khi so sánh các vùng.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_4",
+        "academic_lecture",
+        "compare",
+        "l6"
+      ]
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "A",
+      "text_en": "Instrumental records work differently. Weather stations and ocean measurements give more direct observations, but the equipment and its surroundings may change over time. A station once standing in an open field might later be surrounded by buildings. Scientists check for such changes and use several nearby records to avoid mistaking a local disturbance for a broad climate signal.",
+      "translation_vi": "Hồ sơ thiết bị hoạt động khác. Trạm thời tiết và đo đạc đại dương cho quan sát trực tiếp hơn, nhưng thiết bị và môi trường quanh chúng có thể thay đổi theo thời gian. Trạm từng ở cánh đồng trống có thể bị nhà cửa bao quanh. Nhà khoa học kiểm tra các biến đổi đó và đối chiếu nhiều hồ sơ gần nhau để tránh nhầm xáo trộn cục bộ với tín hiệu khí hậu diện rộng.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_4",
+        "academic_lecture",
+        "compare",
+        "l6"
+      ]
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "A",
+      "text_en": "The strongest conclusions come from agreement among independent approaches. Surface measurements, satellite observations and physical models do not rely on identical assumptions. When they reveal similar long-term patterns, confidence grows. Where they differ, researchers investigate the reasons, perhaps a sampling gap or a limitation in a model, rather than selecting whichever result is most dramatic.",
+      "translation_vi": "Kết luận vững nhất xuất phát từ sự thống nhất giữa các cách tiếp cận độc lập. Đo bề mặt, quan sát vệ tinh và mô hình vật lý không dùng cùng toàn bộ giả định. Khi chúng cho xu hướng dài hạn tương tự, độ tin cậy tăng lên. Khi khác nhau, nhà nghiên cứu tìm nguyên nhân, có thể là thiếu mẫu hoặc giới hạn mô hình, chứ không chọn kết quả giật gân nhất.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_4",
+        "academic_lecture",
+        "compare",
+        "l6"
+      ]
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "A",
+      "text_en": "Consider a class comparing a hundred-year temperature chart with a photograph of a glacier. The chart may reveal the overall trend, while the photograph makes one local change visible. Neither by itself explains every cause. By combining evidence and distinguishing measurement from interpretation, students can build a more defensible account of what has changed and why.",
+      "translation_vi": "Hãy hình dung lớp học so biểu đồ nhiệt độ một trăm năm với ảnh chụp sông băng. Biểu đồ cho xu hướng chung, còn ảnh làm rõ một thay đổi tại chỗ. Không nguồn nào tự giải thích hết mọi nguyên nhân. Khi kết hợp bằng chứng và phân biệt phép đo với suy luận, sinh viên có thể trình bày sự thay đổi và nguyên nhân một cách vững chắc hơn.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_4",
+        "academic_lecture",
+        "compare",
+        "l6"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "type": "note_completion",
+      "prompt": "Tree rings, ice layers and sediments are indirect indicators called ____.",
+      "correct_answers": [
+        "proxies"
+      ],
+      "evidence_turn_ids": [
+        "T01"
+      ],
+      "explanation_vi": "Bằng chứng tại T01: Làm sao tái dựng khí hậu khi chưa có ai dùng nhiệt kế đo? Nhà nghiên cứu dùng chỉ dấu gián tiếp gọi là dữ liệu đại diện. Vòng cây, lớp băng và trầm tích có thể lưu thông tin về môi trường quá khứ. Tuy nhiên, mỗi nguồn ghi lại một khía cạnh khác nhau. Ví dụ, vòng cây có thể phản ánh cả nhiệt độ lẫn lượng mưa, nên cần hiểu điều kiện địa phương. Đáp án cần chọn/điền: “proxies”.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_4",
+        "ielts_practice",
+        "compare",
+        "note_completion"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q02",
+      "type": "summary_completion",
+      "prompt": "Bubbles trapped in old ice preserve samples of ancient ____.",
+      "correct_answers": [
+        "air"
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Ice cores lưu giữ “ancient air”; câu hỏi mới không vô tình tiết lộ từ air ở phần đầu.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_4",
+        "ielts_practice",
+        "compare",
+        "summary_completion"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q03",
+      "type": "sentence_completion",
+      "prompt": "A weather station may be affected when nearby ____ are built.",
+      "correct_answers": [
+        "buildings"
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Bằng chứng tại T03: Hồ sơ thiết bị hoạt động khác. Trạm thời tiết và đo đạc đại dương cho quan sát trực tiếp hơn, nhưng thiết bị và môi trường quanh chúng có thể thay đổi theo thời gian. Trạm từng ở cánh đồng trống có thể bị nhà cửa bao quanh. Nhà khoa học kiểm tra các biến đổi đó và đối chiếu nhiều hồ sơ gần nhau để tránh nhầm xáo trộn cục bộ với tín hiệu khí hậu diện rộng. Đáp án cần chọn/điền: “buildings”.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_4",
+        "ielts_practice",
+        "compare",
+        "sentence_completion"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q04",
+      "type": "mcq",
+      "prompt": "What increases confidence in a climate conclusion?",
+      "correct_answers": [
+        "agreement among independent approaches"
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Bằng chứng tại T04: Kết luận vững nhất xuất phát từ sự thống nhất giữa các cách tiếp cận độc lập. Đo bề mặt, quan sát vệ tinh và mô hình vật lý không dùng cùng toàn bộ giả định. Khi chúng cho xu hướng dài hạn tương tự, độ tin cậy tăng lên. Khi khác nhau, nhà nghiên cứu tìm nguyên nhân, có thể là thiếu mẫu hoặc giới hạn mô hình, chứ không chọn kết quả giật gân nhất. Đáp án cần chọn/điền: “agreement among independent approaches”.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "section_4",
+        "ielts_practice",
+        "compare",
+        "mcq"
+      ],
+      "options": [
+        "selecting the most dramatic result",
+        "using only a single photograph",
+        "agreement among independent approaches"
+      ]
+    },
+    {
+      "question_id": "Q05",
+      "type": "short_answer",
+      "prompt": "What time span is represented by the example temperature chart?",
+      "correct_answers": [
+        "a hundred-year"
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Bằng chứng tại T05: Hãy hình dung lớp học so biểu đồ nhiệt độ một trăm năm với ảnh chụp sông băng. Biểu đồ cho xu hướng chung, còn ảnh làm rõ một thay đổi tại chỗ. Không nguồn nào tự giải thích hết mọi nguyên nhân. Khi kết hợp bằng chứng và phân biệt phép đo với suy luận, sinh viên có thể trình bày sự thay đổi và nguyên nhân một cách vững chắc hơn. Đáp án cần chọn/điền: “a hundred-year”.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_4",
+        "ielts_practice",
+        "compare",
+        "short_answer"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q06",
+      "type": "mcq",
+      "prompt": "What is the main message about climate evidence?",
+      "correct_answers": [
+        "Different methods should be combined and their limitations examined"
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Bằng chứng tại T05: Hãy hình dung lớp học so biểu đồ nhiệt độ một trăm năm với ảnh chụp sông băng. Biểu đồ cho xu hướng chung, còn ảnh làm rõ một thay đổi tại chỗ. Không nguồn nào tự giải thích hết mọi nguyên nhân. Khi kết hợp bằng chứng và phân biệt phép đo với suy luận, sinh viên có thể trình bày sự thay đổi và nguyên nhân một cách vững chắc hơn. Đây là câu hỏi ý chính; cần hiểu toàn bài và phân biệt các lựa chọn nhiễu.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "section_4",
+        "ielts_practice",
+        "compare",
+        "main_idea"
+      ],
+      "options": [
+        "Photographs are always more accurate than measurements",
+        "Different methods should be combined and their limitations examined",
+        "All indirect indicators measure only temperature"
+      ]
+    },
+    {
+      "question_id": "D01",
+      "type": "dictation",
+      "prompt": "Nghe đoạn T02 rồi chép lại toàn bộ phần lời nói tiếng Anh.",
+      "correct_answers": [
+        "Ice cores offer another window into the past. Bubbles trapped in old ice preserve samples of ancient air, while chemical features of the ice provide clues about temperature. These records can extend much further back than modern instruments. Nevertheless, they come from particular locations and must be dated carefully before comparisons are made across different regions."
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Nghe lại để sửa âm cuối, từ chức năng và từ học thuật. Nội dung: Lõi băng cung cấp một cửa sổ khác nhìn về quá khứ. Bong bóng bị giữ trong băng cũ lưu các mẫu không khí cổ, còn thành phần hóa học của băng gợi ý nhiệt độ. Hồ sơ này có thể kéo dài xa hơn nhiều so với thiết bị hiện đại. Tuy nhiên, chúng chỉ đến từ một số địa điểm và cần xác định niên đại cẩn thận trước khi so sánh các vùng.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_4",
+        "dictation",
+        "exact_transcript"
+      ]
+    },
+    {
+      "question_id": "D02",
+      "type": "dictation",
+      "prompt": "Nghe đoạn T04 rồi chép lại toàn bộ phần lời nói tiếng Anh.",
+      "correct_answers": [
+        "The strongest conclusions come from agreement among independent approaches. Surface measurements, satellite observations and physical models do not rely on identical assumptions. When they reveal similar long-term patterns, confidence grows. Where they differ, researchers investigate the reasons, perhaps a sampling gap or a limitation in a model, rather than selecting whichever result is most dramatic."
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Nghe lại để sửa âm cuối, từ chức năng và từ học thuật. Nội dung: Kết luận vững nhất xuất phát từ sự thống nhất giữa các cách tiếp cận độc lập. Đo bề mặt, quan sát vệ tinh và mô hình vật lý không dùng cùng toàn bộ giả định. Khi chúng cho xu hướng dài hạn tương tự, độ tin cậy tăng lên. Khi khác nhau, nhà nghiên cứu tìm nguyên nhân, có thể là thiếu mẫu hoặc giới hạn mô hình, chứ không chọn kết quả giật gân nhất.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_4",
+        "dictation",
+        "exact_transcript"
+      ]
+    },
+    {
+      "question_id": "G01",
+      "type": "gap_fill",
+      "prompt": "Nghe đoạn T01 rồi điền phần thiếu: How can we reconstruct a climate that no one measured with a thermometer? Researchers use indirect indicators known as ____. Tree rings, ice layers and sediments can preserve information about past conditions. Yet each archive records a different aspect of the environment. A tree ring, for example, may reflect both temperature and rainfall, so interpretation requires local knowledge.",
+      "correct_answers": [
+        "proxies"
+      ],
+      "evidence_turn_ids": [
+        "T01"
+      ],
+      "explanation_vi": "Đáp án là “proxies”, nghĩa: chỉ dấu đại diện. Từ xuất hiện nguyên văn ở T01.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_4",
+        "gap_fill",
+        "academic_vocabulary"
+      ]
+    }
+  ],
+  "vocabulary": [
+    {
+      "term": "proxies",
+      "pos": "n. pl.",
+      "meaning_vi": "chỉ dấu đại diện",
+      "example_en": "How can we reconstruct a climate that no one measured with a thermometer? Researchers use indirect indicators known as proxies. Tree rings, ice layers and sediments can preserve information about past conditions. Yet each archive records a different aspect of the environment. A tree ring, for example, may reflect both temperature and rainfall, so interpretation requires local knowledge.",
+      "example_vi": "Làm sao tái dựng khí hậu khi chưa có ai dùng nhiệt kế đo? Nhà nghiên cứu dùng chỉ dấu gián tiếp gọi là dữ liệu đại diện. Vòng cây, lớp băng và trầm tích có thể lưu thông tin về môi trường quá khứ. Tuy nhiên, mỗi nguồn ghi lại một khía cạnh khác nhau. Ví dụ, vòng cây có thể phản ánh cả nhiệt độ lẫn lượng mưa, nên cần hiểu điều kiện địa phương.",
+      "source_turn_id": "T01"
+    },
+    {
+      "term": "ice cores",
+      "pos": "n. pl.",
+      "meaning_vi": "lõi băng",
+      "example_en": "Ice cores offer another window into the past. Bubbles trapped in old ice preserve samples of ancient air, while chemical features of the ice provide clues about temperature. These records can extend much further back than modern instruments. Nevertheless, they come from particular locations and must be dated carefully before comparisons are made across different regions.",
+      "example_vi": "Lõi băng cung cấp một cửa sổ khác nhìn về quá khứ. Bong bóng bị giữ trong băng cũ lưu các mẫu không khí cổ, còn thành phần hóa học của băng gợi ý nhiệt độ. Hồ sơ này có thể kéo dài xa hơn nhiều so với thiết bị hiện đại. Tuy nhiên, chúng chỉ đến từ một số địa điểm và cần xác định niên đại cẩn thận trước khi so sánh các vùng.",
+      "source_turn_id": "T02"
+    },
+    {
+      "term": "instrumental records",
+      "pos": "n. phr.",
+      "meaning_vi": "hồ sơ đo bằng thiết bị",
+      "example_en": "Instrumental records work differently. Weather stations and ocean measurements give more direct observations, but the equipment and its surroundings may change over time. A station once standing in an open field might later be surrounded by buildings. Scientists check for such changes and use several nearby records to avoid mistaking a local disturbance for a broad climate signal.",
+      "example_vi": "Hồ sơ thiết bị hoạt động khác. Trạm thời tiết và đo đạc đại dương cho quan sát trực tiếp hơn, nhưng thiết bị và môi trường quanh chúng có thể thay đổi theo thời gian. Trạm từng ở cánh đồng trống có thể bị nhà cửa bao quanh. Nhà khoa học kiểm tra các biến đổi đó và đối chiếu nhiều hồ sơ gần nhau để tránh nhầm xáo trộn cục bộ với tín hiệu khí hậu diện rộng.",
+      "source_turn_id": "T03"
+    },
+    {
+      "term": "independent approaches",
+      "pos": "n. phr.",
+      "meaning_vi": "các phương pháp độc lập",
+      "example_en": "The strongest conclusions come from agreement among independent approaches. Surface measurements, satellite observations and physical models do not rely on identical assumptions. When they reveal similar long-term patterns, confidence grows. Where they differ, researchers investigate the reasons, perhaps a sampling gap or a limitation in a model, rather than selecting whichever result is most dramatic.",
+      "example_vi": "Kết luận vững nhất xuất phát từ sự thống nhất giữa các cách tiếp cận độc lập. Đo bề mặt, quan sát vệ tinh và mô hình vật lý không dùng cùng toàn bộ giả định. Khi chúng cho xu hướng dài hạn tương tự, độ tin cậy tăng lên. Khi khác nhau, nhà nghiên cứu tìm nguyên nhân, có thể là thiếu mẫu hoặc giới hạn mô hình, chứ không chọn kết quả giật gân nhất.",
+      "source_turn_id": "T04"
+    }
+  ],
+  "audio": {
+    "status": "not_generated",
+    "url": null,
+    "duration_ms": null,
+    "model": null,
+    "provider": null,
+    "voice_config": null,
+    "source_transcript_hash": "c767d99436b0865dd0903ace52f995d33737fcb84657d9c5198baf201fa47ebc",
+    "audio_sha256": null,
+    "format": null
+  },
+  "qa": {
+    "content_reviewed": false,
+    "answers_verified": false,
+    "audio_verified": false,
+    "rights_cleared": false,
+    "duplicate_reviewed": false,
+    "notes": [
+      "AI-assisted original first draft; expert scientific and pedagogical review pending.",
+      "Audio not generated, segment timestamps null; TTS provider terms and rights must be approved.",
+      "Short Section 4 skill practice; not a 10-question official IELTS simulation or calibrated band test.",
+      "M16.2: automated edits are provisional; IELTS teacher final signoff, audio and rights clearance pending."
+    ]
+  },
+  "provenance": {
+    "content_origin": "original_ai_assisted",
+    "source_urls": [],
+    "source_rights_note": "Original scripts. Confirm rights of TTS voices and distribution to learners, particularly minors, before release.",
+    "reviewer": null
+  },
+  "release_metadata": {
+    "published_at": null,
+    "version": 1
+  }
+}

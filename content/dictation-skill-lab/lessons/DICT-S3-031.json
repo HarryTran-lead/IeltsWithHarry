@@ -1,0 +1,421 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "DICT-S3-031",
+  "status": "draft",
+  "level": "L5",
+  "section": 3,
+  "topic": "Group Projects",
+  "title": "Group Projects – Accessible Transport Exhibition",
+  "learning_objectives_vi": [
+    "Theo dõi ba nhân vật thảo luận và phân biệt quan điểm ban đầu với quyết định sau cùng.",
+    "Nhận biết lập luận, điều kiện, hạn chế nghiên cứu và diễn đạt lại (paraphrase) trong Section 3.",
+    "Nghe chép đúng phát ngôn then chốt và truy xuất bằng chứng theo lượt thoại."
+  ],
+  "content_format": "section_practice",
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Maya – academic project discussion participant",
+      "tts_voice_id": null,
+      "accent_requested": "british"
+    },
+    {
+      "speaker_id": "B",
+      "role": "Oliver – academic project discussion participant",
+      "tts_voice_id": null,
+      "accent_requested": "british"
+    },
+    {
+      "speaker_id": "C",
+      "role": "Nina – academic project discussion participant",
+      "tts_voice_id": null,
+      "accent_requested": "british"
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "For our accessible-transport exhibition, I thought we could play commuters' recorded stories beside the route diagrams. It would make the statistics less abstract, especially for visitors unfamiliar with the city.",
+      "translation_vi": "Với triển lãm về giao thông dễ tiếp cận, mình định phát các câu chuyện ghi âm của hành khách cạnh sơ đồ tuyến đường. Như vậy số liệu sẽ bớt trừu tượng đối với khách chưa quen thành phố.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "multi_speaker",
+        "l5"
+      ]
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "B",
+      "text_en": "That sounds engaging, but the recordings were collected for a class assignment, not a public exhibition. I don't think the participants agreed to have their voices broadcast to strangers.",
+      "translation_vi": "Ý đó hấp dẫn, nhưng các bản ghi được thu cho bài tập trên lớp, chứ không phải triển lãm công khai. Mình không nghĩ người tham gia đã đồng ý phát giọng nói của họ cho người lạ nghe.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "multi_speaker",
+        "l5"
+      ]
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "C",
+      "text_en": "The ethics office said a new consent form could be used, although contacting everyone again would take two weeks. Our exhibition opens next Friday, so that timetable is impossible.",
+      "translation_vi": "Văn phòng đạo đức nói có thể dùng mẫu đồng ý mới, nhưng phải mất hai tuần để liên lạc lại với tất cả mọi người. Triển lãm mở cửa thứ Sáu tới nên lịch đó không khả thi.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "multi_speaker",
+        "l5"
+      ]
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "A",
+      "text_en": "Then perhaps we should replace the audio with short anonymous quotations. We already have permission to use de-identified written extracts, provided we avoid naming particular bus stops or workplaces.",
+      "translation_vi": "Vậy có lẽ mình thay audio bằng các trích dẫn ẩn danh ngắn. Ta đã được phép dùng đoạn chữ không định danh, miễn không nêu tên bến xe hay nơi làm việc cụ thể.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "multi_speaker",
+        "l5"
+      ]
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "B",
+      "text_en": "Yes, and the route diagrams need revision too. They currently show straight-line distances, whereas the interviews reveal that steep ramps and missing lifts determine which routes people can actually use.",
+      "translation_vi": "Đúng, sơ đồ cũng cần chỉnh. Hiện chúng chỉ hiện khoảng cách đường thẳng, trong khi phỏng vấn cho thấy dốc cao và thang máy bị thiếu quyết định tuyến đường nào thực sự đi được.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "multi_speaker",
+        "l5"
+      ]
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "C",
+      "text_en": "I can add an accessibility layer using the council's public lift information. However, we must label the update date because one station's lift has been out of service since Monday.",
+      "translation_vi": "Mình có thể thêm lớp thông tin tiếp cận từ dữ liệu thang máy công khai của hội đồng. Tuy nhiên phải ghi ngày cập nhật vì thang máy của một ga đã ngừng hoạt động từ thứ Hai.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "multi_speaker",
+        "l5"
+      ]
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "Let's give visitors two routes between the same locations and ask which would be usable with a wheelchair. After their choice, a panel can explain why the shortest route isn't always suitable.",
+      "translation_vi": "Ta cho khách hai tuyến giữa cùng hai địa điểm rồi hỏi tuyến nào dùng được với xe lăn. Sau khi họ chọn, bảng thông tin sẽ giải thích vì sao đường ngắn nhất chưa chắc phù hợp.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "multi_speaker",
+        "l5"
+      ]
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "B",
+      "text_en": "We should test that activity with students who use mobility aids rather than guessing whether our instructions are clear. I'll contact the access group, but we'll need to pay them for their time.",
+      "translation_vi": "Nên thử hoạt động với sinh viên dùng thiết bị hỗ trợ di chuyển thay vì tự đoán hướng dẫn có rõ không. Mình sẽ liên hệ nhóm hỗ trợ tiếp cận và cần trả công cho họ.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "multi_speaker",
+        "l5"
+      ]
+    },
+    {
+      "turn_id": "T09",
+      "speaker_id": "C",
+      "text_en": "So the final plan is anonymous quotations, dated accessibility maps and a paid user test on Wednesday. I'll remove the audio player from our design files before we send them to print.",
+      "translation_vi": "Vậy kế hoạch cuối là trích dẫn ẩn danh, bản đồ tiếp cận có ngày cập nhật và thử nghiệm có trả công vào thứ Tư. Mình sẽ bỏ trình phát audio khỏi file thiết kế trước khi gửi in.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "multi_speaker",
+        "l5"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "type": "mcq",
+      "prompt": "Why does Oliver object to playing the original recordings publicly?",
+      "correct_answers": [
+        "The speakers may not have consented to public broadcasting"
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Tại T02, Oliver nói: “Ý đó hấp dẫn, nhưng các bản ghi được thu cho bài tập trên lớp, chứ không phải triển lãm công khai. Mình không nghĩ người tham gia đã đồng ý phát giọng nói của họ cho người lạ nghe.” Đáp án “The speakers may not have consented to public broadcasting” diễn đạt đúng ý được nêu. Các phương án còn lại không phù hợp với bằng chứng; chú ý ý kiến bị sửa và tính điều kiện.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "section_3",
+        "ielts_practice",
+        "inference",
+        "paraphrase"
+      ],
+      "options": [
+        "Participants objected to the route diagrams",
+        "The speakers may not have consented to public broadcasting",
+        "The recordings require better sound editing"
+      ]
+    },
+    {
+      "question_id": "Q02",
+      "type": "note_completion",
+      "prompt": "The ethics office would need ____ to contact participants again.",
+      "correct_answers": [
+        "two weeks"
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Bằng chứng T03: “Văn phòng đạo đức nói có thể dùng mẫu đồng ý mới, nhưng phải mất hai tuần để liên lạc lại với tất cả mọi người. Triển lãm mở cửa thứ Sáu tới nên lịch đó không khả thi.” Cụm cần điền nghe đúng nguyên văn là “two weeks”.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_3",
+        "ielts_practice",
+        "detail",
+        "note_completion"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q03",
+      "type": "matching",
+      "prompt": "Which speaker says accessibility updates must include the update date?",
+      "correct_answers": [
+        "Speaker C"
+      ],
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "explanation_vi": "Người nói Nina (Speaker C) đưa ra ý này tại T06: “Mình có thể thêm lớp thông tin tiếp cận từ dữ liệu thang máy công khai của hội đồng. Tuy nhiên phải ghi ngày cập nhật vì thang máy của một ga đã ngừng hoạt động từ thứ Hai.”",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "section_3",
+        "ielts_practice",
+        "speaker_attribution"
+      ],
+      "options": [
+        "Speaker A",
+        "Speaker B",
+        "Speaker C"
+      ]
+    },
+    {
+      "question_id": "Q04",
+      "type": "mcq",
+      "prompt": "Why will visitors choose between two routes?",
+      "correct_answers": [
+        "To understand why the shortest route may not be accessible"
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "Tại T07, Maya nói: “Ta cho khách hai tuyến giữa cùng hai địa điểm rồi hỏi tuyến nào dùng được với xe lăn. Sau khi họ chọn, bảng thông tin sẽ giải thích vì sao đường ngắn nhất chưa chắc phù hợp.” Đáp án “To understand why the shortest route may not be accessible” diễn đạt đúng ý được nêu. Các phương án còn lại không phù hợp với bằng chứng; chú ý ý kiến bị sửa và tính điều kiện.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "section_3",
+        "ielts_practice",
+        "inference",
+        "paraphrase"
+      ],
+      "options": [
+        "To compare ticket prices on the two routes",
+        "To understand why the shortest route may not be accessible",
+        "To measure average commuting speed"
+      ]
+    },
+    {
+      "question_id": "Q05",
+      "type": "note_completion",
+      "prompt": "The group plans a user test with students who use ____ .",
+      "correct_answers": [
+        "mobility aids"
+      ],
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "explanation_vi": "Bằng chứng T08: “Nên thử hoạt động với sinh viên dùng thiết bị hỗ trợ di chuyển thay vì tự đoán hướng dẫn có rõ không. Mình sẽ liên hệ nhóm hỗ trợ tiếp cận và cần trả công cho họ.” Cụm cần điền nghe đúng nguyên văn là “mobility aids”.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_3",
+        "ielts_practice",
+        "detail",
+        "note_completion"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q06",
+      "type": "short_answer",
+      "prompt": "On which day is the paid user test planned?",
+      "correct_answers": [
+        "Wednesday"
+      ],
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "explanation_vi": "Bằng chứng T09: “Vậy kế hoạch cuối là trích dẫn ẩn danh, bản đồ tiếp cận có ngày cập nhật và thử nghiệm có trả công vào thứ Tư. Mình sẽ bỏ trình phát audio khỏi file thiết kế trước khi gửi in.” Trả lời ngắn theo chi tiết “Wednesday”.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_3",
+        "ielts_practice",
+        "detail",
+        "short_answer"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "D01",
+      "type": "dictation",
+      "prompt": "Nghe T04 (Speaker A) rồi chép chính xác câu nói tiếng Anh.",
+      "correct_answers": [
+        "Then perhaps we should replace the audio with short anonymous quotations. We already have permission to use de-identified written extracts, provided we avoid naming particular bus stops or workplaces."
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Câu gốc: “Then perhaps we should replace the audio with short anonymous quotations. We already have permission to use de-identified written extracts, provided we avoid naming particular bus stops or workplaces.”\nBản dịch: Vậy có lẽ mình thay audio bằng các trích dẫn ẩn danh ngắn. Ta đã được phép dùng đoạn chữ không định danh, miễn không nêu tên bến xe hay nơi làm việc cụ thể.\nChú ý âm yếu, nối âm và ý được sửa trong đoạn.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_3",
+        "dictation",
+        "exact_transcript"
+      ]
+    },
+    {
+      "question_id": "D02",
+      "type": "dictation",
+      "prompt": "Nghe T07 (Speaker A) rồi chép chính xác câu nói tiếng Anh.",
+      "correct_answers": [
+        "Let's give visitors two routes between the same locations and ask which would be usable with a wheelchair. After their choice, a panel can explain why the shortest route isn't always suitable."
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "Câu gốc: “Let's give visitors two routes between the same locations and ask which would be usable with a wheelchair. After their choice, a panel can explain why the shortest route isn't always suitable.”\nBản dịch: Ta cho khách hai tuyến giữa cùng hai địa điểm rồi hỏi tuyến nào dùng được với xe lăn. Sau khi họ chọn, bảng thông tin sẽ giải thích vì sao đường ngắn nhất chưa chắc phù hợp.\nChú ý âm yếu, nối âm và ý được sửa trong đoạn.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_3",
+        "dictation",
+        "exact_transcript"
+      ]
+    },
+    {
+      "question_id": "G01",
+      "type": "gap_fill",
+      "prompt": "Nghe T03 rồi điền đúng phần thiếu: The ethics office said a new ____ could be used, although contacting everyone again would take two weeks. Our exhibition opens next Friday, so that timetable is impossible.",
+      "correct_answers": [
+        "consent form"
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Đáp án “consent form” nghĩa là mẫu đồng ý. Đối chiếu: “The ethics office said a new consent form could be used, although contacting everyone again would take two weeks. Our exhibition opens next Friday, so that timetable is impossible.”",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_3",
+        "gap_fill",
+        "vocabulary_in_context"
+      ]
+    }
+  ],
+  "vocabulary": [
+    {
+      "term": "consent form",
+      "pos": "n. phr.",
+      "meaning_vi": "mẫu đồng ý",
+      "example_en": "The ethics office said a new consent form could be used, although contacting everyone again would take two weeks. Our exhibition opens next Friday, so that timetable is impossible.",
+      "example_vi": "Văn phòng đạo đức nói có thể dùng mẫu đồng ý mới, nhưng phải mất hai tuần để liên lạc lại với tất cả mọi người. Triển lãm mở cửa thứ Sáu tới nên lịch đó không khả thi.",
+      "source_turn_id": "T03"
+    },
+    {
+      "term": "anonymous quotations",
+      "pos": "n. phr.",
+      "meaning_vi": "trích dẫn ẩn danh",
+      "example_en": "Then perhaps we should replace the audio with short anonymous quotations. We already have permission to use de-identified written extracts, provided we avoid naming particular bus stops or workplaces.",
+      "example_vi": "Vậy có lẽ mình thay audio bằng các trích dẫn ẩn danh ngắn. Ta đã được phép dùng đoạn chữ không định danh, miễn không nêu tên bến xe hay nơi làm việc cụ thể.",
+      "source_turn_id": "T04"
+    },
+    {
+      "term": "accessibility layer",
+      "pos": "n. phr.",
+      "meaning_vi": "lớp thông tin khả năng tiếp cận",
+      "example_en": "I can add an accessibility layer using the council's public lift information. However, we must label the update date because one station's lift has been out of service since Monday.",
+      "example_vi": "Mình có thể thêm lớp thông tin tiếp cận từ dữ liệu thang máy công khai của hội đồng. Tuy nhiên phải ghi ngày cập nhật vì thang máy của một ga đã ngừng hoạt động từ thứ Hai.",
+      "source_turn_id": "T06"
+    },
+    {
+      "term": "mobility aids",
+      "pos": "n. phr.",
+      "meaning_vi": "thiết bị hỗ trợ di chuyển",
+      "example_en": "We should test that activity with students who use mobility aids rather than guessing whether our instructions are clear. I'll contact the access group, but we'll need to pay them for their time.",
+      "example_vi": "Nên thử hoạt động với sinh viên dùng thiết bị hỗ trợ di chuyển thay vì tự đoán hướng dẫn có rõ không. Mình sẽ liên hệ nhóm hỗ trợ tiếp cận và cần trả công cho họ.",
+      "source_turn_id": "T08"
+    }
+  ],
+  "audio": {
+    "status": "not_generated",
+    "url": null,
+    "duration_ms": null,
+    "model": null,
+    "provider": null,
+    "voice_config": null,
+    "source_transcript_hash": "463330c4706d7f0d29c8673d3564ab9312b63656a33a3600348359036693a598",
+    "audio_sha256": null,
+    "format": null
+  },
+  "qa": {
+    "content_reviewed": false,
+    "answers_verified": false,
+    "audio_verified": false,
+    "rights_cleared": false,
+    "duplicate_reviewed": false,
+    "notes": [
+      "Original AI-assisted draft, awaiting expert pedagogical review and option-disambiguation review.",
+      "Audio not produced: all segment times are null. TTS terms and distribution rights must be checked.",
+      "Practice lesson only; not an official/full IELTS Listening Part 3 exam or a calibrated band test.",
+      "M16.2: automated edits are provisional; IELTS teacher final signoff, audio and rights clearance pending."
+    ]
+  },
+  "provenance": {
+    "content_origin": "original_ai_assisted",
+    "source_urls": [],
+    "source_rights_note": "Original scripts; verify TTS service/voice production and distribution rights before publishing to students, including minors.",
+    "reviewer": null
+  },
+  "release_metadata": {
+    "published_at": null,
+    "version": 1
+  }
+}

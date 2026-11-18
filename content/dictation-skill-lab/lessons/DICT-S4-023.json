@@ -1,0 +1,351 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "DICT-S4-023",
+  "status": "draft",
+  "level": "L6",
+  "section": 4,
+  "topic": "Ancient Civilisations",
+  "title": "Water Management and Urban Resilience in Ancient Times",
+  "learning_objectives_vi": [
+    "Nghe bài giảng học thuật một người nói, theo dõi quan hệ giữa luận điểm và bằng chứng.",
+    "Luyện các câu hỏi Section 4 theo thứ tự lời giảng; phân tích giới hạn của khái niệm và cách diễn đạt lại.",
+    "Chép chính xác hai đoạn, luyện từ học thuật theo ngữ cảnh và ôn điểm yếu qua Mistake Bank."
+  ],
+  "content_format": "section_practice",
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Academic lecturer",
+      "tts_voice_id": null,
+      "accent_requested": "new_zealand"
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "People often imagine that a reliable water supply automatically produces a powerful ancient city. In reality, access to water creates possibilities and difficulties at the same time. Rivers can support agriculture and transport, but floods may damage fields and buildings. Communities developed different ways of storing, distributing and protecting water, depending on climate and local geography.",
+      "translation_vi": "Người ta thường tưởng nguồn nước ổn định tự động tạo ra thành phố cổ hùng mạnh. Thực tế, tiếp cận nguồn nước vừa mở ra cơ hội vừa gây khó khăn. Sông có thể hỗ trợ nông nghiệp và vận tải, nhưng lũ có thể phá ruộng và nhà. Các cộng đồng phát triển cách tích trữ, phân phối và bảo vệ nguồn nước khác nhau tùy khí hậu và địa hình địa phương.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_4",
+        "academic_lecture",
+        "cause",
+        "l6"
+      ]
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "A",
+      "text_en": "Irrigation canals could extend farming into places with limited rainfall. However, constructing a canal was only the beginning. Channels needed maintenance, and households sometimes disagreed over who should receive water first. Such disagreements could encourage coordination but also produce conflict. The social rules surrounding irrigation were therefore as significant as the physical structures.",
+      "translation_vi": "Kênh tưới có thể mở rộng canh tác đến nơi ít mưa. Tuy nhiên, xây kênh chỉ là khởi đầu. Kênh cần bảo trì và các hộ đôi khi bất đồng về ai được nhận nước trước. Những bất đồng ấy có thể thúc đẩy phối hợp nhưng cũng tạo xung đột. Vì vậy quy tắc xã hội quanh tưới tiêu quan trọng không kém công trình vật chất.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_4",
+        "academic_lecture",
+        "cause",
+        "l6"
+      ]
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "A",
+      "text_en": "Long periods of drought could reduce harvests and place pressure on food stores. Yet a dry interval did not necessarily cause the collapse of a settlement. Some communities changed crops, altered trading relationships or moved parts of their population. The outcome depended on political decisions, access to resources and the ability to respond before shortages became severe.",
+      "translation_vi": "Hạn hán kéo dài có thể giảm vụ mùa và gây áp lực lên kho lương thực. Tuy nhiên, thời kỳ khô hạn không nhất thiết khiến khu định cư sụp đổ. Một số cộng đồng đổi cây trồng, thay quan hệ thương mại hoặc di chuyển một phần dân số. Kết quả phụ thuộc quyết định chính trị, khả năng tiếp cận tài nguyên và phản ứng trước khi thiếu hụt trở nên nghiêm trọng.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_4",
+        "academic_lecture",
+        "cause",
+        "l6"
+      ]
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "A",
+      "text_en": "Water management could also leave unintended environmental effects. When irrigation repeatedly raises groundwater in poorly drained soils, dissolved salts may accumulate near the surface. Over time, this salinisation can lower crop yields. Nevertheless, its scale varies from place to place, and archaeologists should not claim it explains every abandoned field without supporting soil evidence.",
+      "translation_vi": "Quản lý nước cũng có thể tạo hệ quả môi trường ngoài ý muốn. Khi tưới tiêu liên tục làm mực nước ngầm tăng trong đất thoát nước kém, muối hòa tan có thể tích tụ gần bề mặt. Theo thời gian, quá trình nhiễm mặn ấy làm giảm năng suất. Dù vậy mức độ thay đổi theo nơi và nhà khảo cổ không nên cho rằng nó giải thích mọi cánh đồng bị bỏ hoang khi chưa có bằng chứng đất phù hợp.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_4",
+        "academic_lecture",
+        "cause",
+        "l6"
+      ]
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "A",
+      "text_en": "To evaluate a historical water crisis, researchers combine rainfall indicators, canal remains, settlement patterns and food-storage evidence. None tells the whole story alone. A ruined canal may indicate a damaged system, but it might also have been deliberately replaced. The most convincing account follows the sequence of changes and avoids reducing complex societies to one environmental cause.",
+      "translation_vi": "Để đánh giá khủng hoảng nước trong lịch sử, nhà nghiên cứu kết hợp chỉ dấu lượng mưa, dấu tích kênh, mô hình định cư và bằng chứng lưu trữ thực phẩm. Không nguồn nào kể toàn bộ câu chuyện. Kênh hỏng có thể báo hiệu hệ thống bị thiệt hại, nhưng cũng có thể đã được chủ động thay thế. Cách giải thích thuyết phục nhất theo dõi chuỗi thay đổi và tránh quy xã hội phức tạp về một nguyên nhân môi trường.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_4",
+        "academic_lecture",
+        "cause",
+        "l6"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "type": "note_completion",
+      "prompt": "Communities developed different ways of protecting and ____ water.",
+      "correct_answers": [
+        "distributing"
+      ],
+      "evidence_turn_ids": [
+        "T01"
+      ],
+      "explanation_vi": "Đáp án “distributing” nằm tại đoạn T01. Nội dung bằng chứng: Người ta thường tưởng nguồn nước ổn định tự động tạo ra thành phố cổ hùng mạnh. Thực tế, tiếp cận nguồn nước vừa mở ra cơ hội vừa gây khó khăn. Sông có thể hỗ trợ nông nghiệp và vận tải, nhưng lũ có thể phá ruộng và nhà. Các cộng đồng phát triển cách tích trữ, phân phối và bảo vệ nguồn nước khác nhau tùy khí hậu và địa hình địa phương.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_4",
+        "ielts_practice",
+        "cause",
+        "note_completion"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q02",
+      "type": "note_completion",
+      "prompt": "Irrigation canals required continued ____.",
+      "correct_answers": [
+        "maintenance"
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Đáp án “maintenance” nằm tại đoạn T02. Nội dung bằng chứng: Kênh tưới có thể mở rộng canh tác đến nơi ít mưa. Tuy nhiên, xây kênh chỉ là khởi đầu. Kênh cần bảo trì và các hộ đôi khi bất đồng về ai được nhận nước trước. Những bất đồng ấy có thể thúc đẩy phối hợp nhưng cũng tạo xung đột. Vì vậy quy tắc xã hội quanh tưới tiêu quan trọng không kém công trình vật chất.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_4",
+        "ielts_practice",
+        "cause",
+        "note_completion"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q03",
+      "type": "note_completion",
+      "prompt": "Drought could put pressure on ____.",
+      "correct_answers": [
+        "food stores"
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Đáp án “food stores” nằm tại đoạn T03. Nội dung bằng chứng: Hạn hán kéo dài có thể giảm vụ mùa và gây áp lực lên kho lương thực. Tuy nhiên, thời kỳ khô hạn không nhất thiết khiến khu định cư sụp đổ. Một số cộng đồng đổi cây trồng, thay quan hệ thương mại hoặc di chuyển một phần dân số. Kết quả phụ thuộc quyết định chính trị, khả năng tiếp cận tài nguyên và phản ứng trước khi thiếu hụt trở nên nghiêm trọng.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_4",
+        "ielts_practice",
+        "cause",
+        "note_completion"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q04",
+      "type": "note_completion",
+      "prompt": "Salt build-up near the surface is called ____.",
+      "correct_answers": [
+        "salinisation"
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Đáp án “salinisation” nằm tại đoạn T04. Nội dung bằng chứng: Quản lý nước cũng có thể tạo hệ quả môi trường ngoài ý muốn. Khi tưới tiêu liên tục làm mực nước ngầm tăng trong đất thoát nước kém, muối hòa tan có thể tích tụ gần bề mặt. Theo thời gian, quá trình nhiễm mặn ấy làm giảm năng suất. Dù vậy mức độ thay đổi theo nơi và nhà khảo cổ không nên cho rằng nó giải thích mọi cánh đồng bị bỏ hoang khi chưa có bằng chứng đất phù hợp.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_4",
+        "ielts_practice",
+        "cause",
+        "note_completion"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q05",
+      "type": "note_completion",
+      "prompt": "Researchers also use ____ to reconstruct historic water crises.",
+      "correct_answers": [
+        "settlement patterns"
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Đáp án “settlement patterns” nằm tại đoạn T05. Nội dung bằng chứng: Để đánh giá khủng hoảng nước trong lịch sử, nhà nghiên cứu kết hợp chỉ dấu lượng mưa, dấu tích kênh, mô hình định cư và bằng chứng lưu trữ thực phẩm. Không nguồn nào kể toàn bộ câu chuyện. Kênh hỏng có thể báo hiệu hệ thống bị thiệt hại, nhưng cũng có thể đã được chủ động thay thế. Cách giải thích thuyết phục nhất theo dõi chuỗi thay đổi và tránh quy xã hội phức tạp về một nguyên nhân môi trường.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_4",
+        "ielts_practice",
+        "cause",
+        "note_completion"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q06",
+      "type": "mcq",
+      "prompt": "Why does the lecturer reject a simple drought-collapse explanation?",
+      "correct_answers": [
+        "Political responses and other resources shaped the outcome"
+      ],
+      "options": [
+        "Canals removed all risks from water shortages",
+        "Every drought was too short to affect agriculture",
+        "Political responses and other resources shaped the outcome"
+      ],
+      "evidence_turn_ids": [
+        "T01",
+        "T03",
+        "T05"
+      ],
+      "explanation_vi": "Hãy kết hợp luận điểm đầu, ví dụ ở giữa và kết luận cuối bài. Để đánh giá khủng hoảng nước trong lịch sử, nhà nghiên cứu kết hợp chỉ dấu lượng mưa, dấu tích kênh, mô hình định cư và bằng chứng lưu trữ thực phẩm. Không nguồn nào kể toàn bộ câu chuyện. Kênh hỏng có thể báo hiệu hệ thống bị thiệt hại, nhưng cũng có thể đã được chủ động thay thế. Cách giải thích thuyết phục nhất theo dõi chuỗi thay đổi và tránh quy xã hội phức tạp về một nguyên nhân môi trường. Phương án chính xác: “Political responses and other resources shaped the outcome”; hai phương án khác khái quát quá mức hoặc không phù hợp bằng chứng.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "section_4",
+        "ielts_practice",
+        "cause",
+        "main_idea"
+      ]
+    },
+    {
+      "question_id": "D01",
+      "type": "dictation",
+      "prompt": "Nghe đoạn T02 và chép lại chính xác lời giảng.",
+      "correct_answers": [
+        "Irrigation canals could extend farming into places with limited rainfall. However, constructing a canal was only the beginning. Channels needed maintenance, and households sometimes disagreed over who should receive water first. Such disagreements could encourage coordination but also produce conflict. The social rules surrounding irrigation were therefore as significant as the physical structures."
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Phân tích từ nối, âm yếu và cụm thuật ngữ học thuật. Nghĩa của đoạn: Kênh tưới có thể mở rộng canh tác đến nơi ít mưa. Tuy nhiên, xây kênh chỉ là khởi đầu. Kênh cần bảo trì và các hộ đôi khi bất đồng về ai được nhận nước trước. Những bất đồng ấy có thể thúc đẩy phối hợp nhưng cũng tạo xung đột. Vì vậy quy tắc xã hội quanh tưới tiêu quan trọng không kém công trình vật chất.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_4",
+        "dictation",
+        "exact_transcript"
+      ]
+    },
+    {
+      "question_id": "D02",
+      "type": "dictation",
+      "prompt": "Nghe đoạn T04 và chép lại chính xác lời giảng.",
+      "correct_answers": [
+        "Water management could also leave unintended environmental effects. When irrigation repeatedly raises groundwater in poorly drained soils, dissolved salts may accumulate near the surface. Over time, this salinisation can lower crop yields. Nevertheless, its scale varies from place to place, and archaeologists should not claim it explains every abandoned field without supporting soil evidence."
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Phân tích từ nối, âm yếu và cụm thuật ngữ học thuật. Nghĩa của đoạn: Quản lý nước cũng có thể tạo hệ quả môi trường ngoài ý muốn. Khi tưới tiêu liên tục làm mực nước ngầm tăng trong đất thoát nước kém, muối hòa tan có thể tích tụ gần bề mặt. Theo thời gian, quá trình nhiễm mặn ấy làm giảm năng suất. Dù vậy mức độ thay đổi theo nơi và nhà khảo cổ không nên cho rằng nó giải thích mọi cánh đồng bị bỏ hoang khi chưa có bằng chứng đất phù hợp.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_4",
+        "dictation",
+        "exact_transcript"
+      ]
+    },
+    {
+      "question_id": "G01",
+      "type": "gap_fill",
+      "prompt": "Nghe T02 rồi điền phần thiếu: ____ could extend farming into places with limited rainfall. However, constructing a canal was only the beginning. Channels needed maintenance, and households sometimes disagreed over who should receive water first. Such disagreements could encourage coordination but also produce conflict. The social rules surrounding irrigation were therefore as significant as the physical structures.",
+      "correct_answers": [
+        "irrigation canals"
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Điền “irrigation canals”, nghĩa: kênh tưới tiêu. Cụm từ này xuất hiện trong T02.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_4",
+        "gap_fill",
+        "academic_vocabulary"
+      ]
+    }
+  ],
+  "vocabulary": [
+    {
+      "term": "irrigation canals",
+      "pos": "n. phr.",
+      "meaning_vi": "kênh tưới tiêu",
+      "example_en": "Irrigation canals could extend farming into places with limited rainfall. However, constructing a canal was only the beginning. Channels needed maintenance, and households sometimes disagreed over who should receive water first. Such disagreements could encourage coordination but also produce conflict. The social rules surrounding irrigation were therefore as significant as the physical structures.",
+      "example_vi": "Kênh tưới có thể mở rộng canh tác đến nơi ít mưa. Tuy nhiên, xây kênh chỉ là khởi đầu. Kênh cần bảo trì và các hộ đôi khi bất đồng về ai được nhận nước trước. Những bất đồng ấy có thể thúc đẩy phối hợp nhưng cũng tạo xung đột. Vì vậy quy tắc xã hội quanh tưới tiêu quan trọng không kém công trình vật chất.",
+      "source_turn_id": "T02"
+    },
+    {
+      "term": "maintenance",
+      "pos": "n.",
+      "meaning_vi": "bảo trì",
+      "example_en": "Irrigation canals could extend farming into places with limited rainfall. However, constructing a canal was only the beginning. Channels needed maintenance, and households sometimes disagreed over who should receive water first. Such disagreements could encourage coordination but also produce conflict. The social rules surrounding irrigation were therefore as significant as the physical structures.",
+      "example_vi": "Kênh tưới có thể mở rộng canh tác đến nơi ít mưa. Tuy nhiên, xây kênh chỉ là khởi đầu. Kênh cần bảo trì và các hộ đôi khi bất đồng về ai được nhận nước trước. Những bất đồng ấy có thể thúc đẩy phối hợp nhưng cũng tạo xung đột. Vì vậy quy tắc xã hội quanh tưới tiêu quan trọng không kém công trình vật chất.",
+      "source_turn_id": "T02"
+    },
+    {
+      "term": "salinisation",
+      "pos": "n.",
+      "meaning_vi": "sự nhiễm mặn",
+      "example_en": "Water management could also leave unintended environmental effects. When irrigation repeatedly raises groundwater in poorly drained soils, dissolved salts may accumulate near the surface. Over time, this salinisation can lower crop yields. Nevertheless, its scale varies from place to place, and archaeologists should not claim it explains every abandoned field without supporting soil evidence.",
+      "example_vi": "Quản lý nước cũng có thể tạo hệ quả môi trường ngoài ý muốn. Khi tưới tiêu liên tục làm mực nước ngầm tăng trong đất thoát nước kém, muối hòa tan có thể tích tụ gần bề mặt. Theo thời gian, quá trình nhiễm mặn ấy làm giảm năng suất. Dù vậy mức độ thay đổi theo nơi và nhà khảo cổ không nên cho rằng nó giải thích mọi cánh đồng bị bỏ hoang khi chưa có bằng chứng đất phù hợp.",
+      "source_turn_id": "T04"
+    },
+    {
+      "term": "settlement patterns",
+      "pos": "n. phr.",
+      "meaning_vi": "mô hình định cư",
+      "example_en": "To evaluate a historical water crisis, researchers combine rainfall indicators, canal remains, settlement patterns and food-storage evidence. None tells the whole story alone. A ruined canal may indicate a damaged system, but it might also have been deliberately replaced. The most convincing account follows the sequence of changes and avoids reducing complex societies to one environmental cause.",
+      "example_vi": "Để đánh giá khủng hoảng nước trong lịch sử, nhà nghiên cứu kết hợp chỉ dấu lượng mưa, dấu tích kênh, mô hình định cư và bằng chứng lưu trữ thực phẩm. Không nguồn nào kể toàn bộ câu chuyện. Kênh hỏng có thể báo hiệu hệ thống bị thiệt hại, nhưng cũng có thể đã được chủ động thay thế. Cách giải thích thuyết phục nhất theo dõi chuỗi thay đổi và tránh quy xã hội phức tạp về một nguyên nhân môi trường.",
+      "source_turn_id": "T05"
+    }
+  ],
+  "audio": {
+    "status": "not_generated",
+    "url": null,
+    "duration_ms": null,
+    "model": null,
+    "provider": null,
+    "voice_config": null,
+    "source_transcript_hash": "7a1a14520257cf7b9fd0adf504297a86143ce47b38dcac90c4f651d8e2b133fb",
+    "audio_sha256": null,
+    "format": null
+  },
+  "qa": {
+    "content_reviewed": false,
+    "answers_verified": false,
+    "audio_verified": false,
+    "rights_cleared": false,
+    "duplicate_reviewed": false,
+    "notes": [
+      "Original AI-assisted educational script, not an official IELTS transcript.",
+      "Editorial, academic and linguistic review pending.",
+      "Audio/TTS not generated; text-to-speech distribution rights must be confirmed before use, especially for minors.",
+      "Six IELTS-style practice questions per lesson; this is not a full official Part 4 test or a calibrated IELTS Band test.",
+      "M16.2: automated edits are provisional; IELTS teacher final signoff, audio and rights clearance pending."
+    ]
+  },
+  "provenance": {
+    "content_origin": "original_ai_assisted",
+    "source_urls": [],
+    "source_rights_note": "Original transcript and translation drafts; verify academic claims and terms, and TTS provider redistribution conditions before release.",
+    "reviewer": null
+  },
+  "release_metadata": {
+    "published_at": null,
+    "version": 1
+  }
+}

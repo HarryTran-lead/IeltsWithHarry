@@ -1,0 +1,827 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "S1-EXP-011",
+  "status": "draft",
+  "level": "L4",
+  "section": 1,
+  "topic": "Tailoring service consultation",
+  "title": "Arranging Clothing Alterations",
+  "learning_objectives_vi": [
+    "Theo dõi một cuộc hội thoại đời sống hai người nói có thay đổi và đối chiếu thông tin.",
+    "Lấy thông tin cuối cùng đúng theo thứ tự audio, không chọn đáp án chỉ vì xuất hiện sớm.",
+    "Luyện 8 câu IELTS-style và sau đó sửa lỗi bằng Dictation có bằng chứng rõ ràng."
+  ],
+  "content_format": "section_practice",
+  "target_skills": [
+    "measurements",
+    "deadline",
+    "costs",
+    "collection"
+  ],
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Reception/service representative",
+      "accent_requested": "north_american",
+      "tts_voice_id": null
+    },
+    {
+      "speaker_id": "B",
+      "role": "Customer/visitor",
+      "accent_requested": "north_american",
+      "tts_voice_id": null
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "Good afternoon, Willow Alterations. Is it a repair you need, or would you like something taken in?",
+      "translation_vi": "Chào buổi chiều, tiệm sửa quần áo Willow. Chị cần vá hay bóp lại đồ?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_1",
+        "two_speaker_dialogue",
+        "m21",
+        "measurements",
+        "deadline",
+        "costs",
+        "collection"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "B",
+      "text_en": "I have a jacket that fits across the shoulders but is too loose around the waist. It's for my sister's wedding.",
+      "translation_vi": "Tôi có áo khoác vừa vai nhưng rộng phần eo. Tôi định mặc trong đám cưới chị gái.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_1",
+        "two_speaker_dialogue",
+        "m21",
+        "measurements",
+        "deadline",
+        "costs",
+        "collection"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "A",
+      "text_en": "We can take in the side seams. Does it have a lining? That usually makes the work a little more complicated.",
+      "translation_vi": "Chúng tôi có thể bóp đường may hai bên. Áo có lớp lót không? Có lót thì việc sửa phức tạp hơn.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_1",
+        "two_speaker_dialogue",
+        "m21",
+        "measurements",
+        "deadline",
+        "costs",
+        "collection"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "B",
+      "text_en": "Yes, it has a thin lining. I thought it would take just a day, but perhaps that's too optimistic.",
+      "translation_vi": "Có lớp lót mỏng. Tôi nghĩ chỉ mất một ngày, chắc lạc quan quá.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_1",
+        "two_speaker_dialogue",
+        "m21",
+        "measurements",
+        "deadline",
+        "costs",
+        "collection"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "A",
+      "text_en": "Normally we'd need five days for a lined jacket. If we see it today, it should be ready next Thursday.",
+      "translation_vi": "Thông thường cần năm ngày cho áo có lót. Nếu mang tới hôm nay, có thể xong thứ Năm tuần sau.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_1",
+        "two_speaker_dialogue",
+        "m21",
+        "measurements",
+        "deadline",
+        "costs",
+        "collection"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "B",
+      "text_en": "I really need it by Wednesday because we're travelling early on Thursday. Could you offer a faster service?",
+      "translation_vi": "Tôi thực sự cần vào thứ Tư vì chúng tôi đi sớm thứ Năm. Có dịch vụ làm nhanh không?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_1",
+        "two_speaker_dialogue",
+        "m21",
+        "measurements",
+        "deadline",
+        "costs",
+        "collection"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "Yes, we can have it ready on Tuesday evening, although there's a small express supplement.",
+      "translation_vi": "Có, chúng tôi có thể làm xong tối thứ Ba, nhưng có phụ phí làm nhanh.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_1",
+        "two_speaker_dialogue",
+        "m21",
+        "measurements",
+        "deadline",
+        "costs",
+        "collection"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "B",
+      "text_en": "Tuesday would be ideal. How much will it cost altogether? Your website says twelve pounds for taking in a jacket.",
+      "translation_vi": "Thứ Ba rất tốt. Tổng phí bao nhiêu? Website ghi mười hai bảng để bóp áo.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_1",
+        "two_speaker_dialogue",
+        "m21",
+        "measurements",
+        "deadline",
+        "costs",
+        "collection"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T09",
+      "speaker_id": "A",
+      "text_en": "Twelve is for unlined jackets. With a lining it is eighteen pounds, plus four pounds for express work.",
+      "translation_vi": "Mười hai cho áo không lót. Áo có lót là 18 bảng, thêm 4 bảng phí nhanh.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_1",
+        "two_speaker_dialogue",
+        "m21",
+        "measurements",
+        "deadline",
+        "costs",
+        "collection"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T10",
+      "speaker_id": "B",
+      "text_en": "That's fine. Should I bring the shoes I'm planning to wear, or is that only important for trouser alterations?",
+      "translation_vi": "Được. Tôi có cần mang giày định đi hay chỉ quan trọng khi sửa quần?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_1",
+        "two_speaker_dialogue",
+        "m21",
+        "measurements",
+        "deadline",
+        "costs",
+        "collection"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T11",
+      "speaker_id": "A",
+      "text_en": "It's mainly important for trousers. For the jacket, wear the top you expect to have underneath so we can check the fit.",
+      "translation_vi": "Chủ yếu quan trọng với quần. Với áo khoác, hãy mặc áo bên trong dự định phối để kiểm tra độ vừa.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_1",
+        "two_speaker_dialogue",
+        "m21",
+        "measurements",
+        "deadline",
+        "costs",
+        "collection"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T12",
+      "speaker_id": "B",
+      "text_en": "I can come just after work, around six fifteen. Do you stay open that late on weekdays?",
+      "translation_vi": "Tôi có thể đến sau giờ làm, khoảng 6:15. Ngày thường tiệm mở tới giờ đó không?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_1",
+        "two_speaker_dialogue",
+        "m21",
+        "measurements",
+        "deadline",
+        "costs",
+        "collection"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T13",
+      "speaker_id": "A",
+      "text_en": "We close at seven on weekdays, except Friday when we close at five. Today six fifteen is absolutely fine.",
+      "translation_vi": "Chúng tôi đóng lúc bảy giờ các ngày thường, riêng thứ Sáu lúc năm giờ. Hôm nay 6:15 được.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_1",
+        "two_speaker_dialogue",
+        "m21",
+        "measurements",
+        "deadline",
+        "costs",
+        "collection"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T14",
+      "speaker_id": "B",
+      "text_en": "And where should I park? I remember there being spaces right outside the shop, but the road was being resurfaced.",
+      "translation_vi": "Tôi đỗ xe ở đâu? Tôi nhớ có chỗ ngay ngoài cửa nhưng đường đang sửa.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_1",
+        "two_speaker_dialogue",
+        "m21",
+        "measurements",
+        "deadline",
+        "costs",
+        "collection"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T15",
+      "speaker_id": "A",
+      "text_en": "The roadside spaces are closed. Use the public car park behind the pharmacy; the first thirty minutes are free.",
+      "translation_vi": "Chỗ đỗ ven đường đã đóng. Hãy dùng bãi xe công cộng sau hiệu thuốc, nửa giờ đầu miễn phí.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_1",
+        "two_speaker_dialogue",
+        "m21",
+        "measurements",
+        "deadline",
+        "costs",
+        "collection"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T16",
+      "speaker_id": "B",
+      "text_en": "Thank you. I'll bring the jacket this evening and collect it on Tuesday after work.",
+      "translation_vi": "Cảm ơn. Tôi sẽ mang áo tối nay và nhận vào thứ Ba sau giờ làm.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_1",
+        "two_speaker_dialogue",
+        "m21",
+        "measurements",
+        "deadline",
+        "costs",
+        "collection"
+      ],
+      "bank_role": "training"
+    }
+  ],
+  "questions": [
+    {
+      "type": "note_completion",
+      "prompt": "Item needing alteration: ____",
+      "correct_answers": [
+        "jacket"
+      ],
+      "spoken_answer": "jacket",
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER",
+      "scoring_policy": "controlled_variants",
+      "explanation_vi": "Món đồ cần sửa là áo khoác.",
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "evidence_excerpt_en": "I have a jacket",
+      "question_tags": [
+        "m21",
+        "ielts_part_1_practice",
+        "measurements",
+        "deadline",
+        "costs",
+        "collection"
+      ],
+      "question_id": "Q01",
+      "group_id": "IELTS_S1_PRACTICE"
+    },
+    {
+      "type": "note_completion",
+      "prompt": "Original completion estimate: ____ days",
+      "correct_answers": [
+        "five",
+        "5"
+      ],
+      "spoken_answer": "five",
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER",
+      "scoring_policy": "controlled_variants",
+      "explanation_vi": "Áo có lớp lót cần năm ngày nếu không làm nhanh.",
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "evidence_excerpt_en": "five days for a lined jacket",
+      "question_tags": [
+        "m21",
+        "ielts_part_1_practice",
+        "measurements",
+        "deadline",
+        "costs",
+        "collection"
+      ],
+      "question_id": "Q02",
+      "group_id": "IELTS_S1_PRACTICE"
+    },
+    {
+      "type": "form_completion",
+      "prompt": "Express collection day: ____",
+      "correct_answers": [
+        "Tuesday"
+      ],
+      "spoken_answer": "Tuesday",
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER",
+      "scoring_policy": "controlled_variants",
+      "explanation_vi": "Khách chọn làm nhanh để nhận thứ Ba.",
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "evidence_excerpt_en": "Tuesday evening",
+      "question_tags": [
+        "m21",
+        "ielts_part_1_practice",
+        "measurements",
+        "deadline",
+        "costs",
+        "collection"
+      ],
+      "question_id": "Q03",
+      "group_id": "IELTS_S1_PRACTICE"
+    },
+    {
+      "type": "mcq",
+      "prompt": "Why is the advertised cheaper price unsuitable?",
+      "correct_answers": [
+        "jacket has a lining"
+      ],
+      "options": [
+        "wedding is on a weekday",
+        "jacket has a lining",
+        "shop is closed"
+      ],
+      "correct_option": "B",
+      "scoring_policy": "strict",
+      "explanation_vi": "Áo có lớp lót nên không áp dụng giá rẻ.",
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "evidence_excerpt_en": "With a lining it is eighteen",
+      "question_tags": [
+        "m21",
+        "ielts_part_1_practice",
+        "measurements",
+        "deadline",
+        "costs",
+        "collection"
+      ],
+      "question_id": "Q04",
+      "group_id": "IELTS_S1_PRACTICE"
+    },
+    {
+      "type": "note_completion",
+      "prompt": "Lined jacket alteration fee: £____",
+      "correct_answers": [
+        "eighteen",
+        "18"
+      ],
+      "spoken_answer": "eighteen",
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER",
+      "scoring_policy": "controlled_variants",
+      "explanation_vi": "Phí sửa áo có lót là 18 bảng.",
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "evidence_excerpt_en": "eighteen pounds",
+      "question_tags": [
+        "m21",
+        "ielts_part_1_practice",
+        "measurements",
+        "deadline",
+        "costs",
+        "collection"
+      ],
+      "question_id": "Q05",
+      "group_id": "IELTS_S1_PRACTICE"
+    },
+    {
+      "type": "note_completion",
+      "prompt": "Express supplement: £____",
+      "correct_answers": [
+        "four",
+        "4"
+      ],
+      "spoken_answer": "four",
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER",
+      "scoring_policy": "controlled_variants",
+      "explanation_vi": "Làm nhanh thêm bốn bảng.",
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "evidence_excerpt_en": "four pounds for express work",
+      "question_tags": [
+        "m21",
+        "ielts_part_1_practice",
+        "measurements",
+        "deadline",
+        "costs",
+        "collection"
+      ],
+      "question_id": "Q06",
+      "group_id": "IELTS_S1_PRACTICE"
+    },
+    {
+      "type": "form_completion",
+      "prompt": "Weekday closing time: ____",
+      "correct_answers": [
+        "seven"
+      ],
+      "spoken_answer": "seven",
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER",
+      "scoring_policy": "controlled_variants",
+      "explanation_vi": "Tiệm đóng bảy giờ ngày thường, riêng thứ Sáu sớm hơn.",
+      "evidence_turn_ids": [
+        "T13"
+      ],
+      "evidence_excerpt_en": "close at seven on weekdays",
+      "question_tags": [
+        "m21",
+        "ielts_part_1_practice",
+        "measurements",
+        "deadline",
+        "costs",
+        "collection"
+      ],
+      "question_id": "Q07",
+      "group_id": "IELTS_S1_PRACTICE"
+    },
+    {
+      "type": "mcq",
+      "prompt": "Where is the recommended parking area?",
+      "correct_answers": [
+        "behind pharmacy"
+      ],
+      "options": [
+        "outside the shop",
+        "at railway station",
+        "behind pharmacy"
+      ],
+      "correct_option": "C",
+      "scoring_policy": "strict",
+      "explanation_vi": "Bãi xe công cộng ở sau hiệu thuốc.",
+      "evidence_turn_ids": [
+        "T15"
+      ],
+      "evidence_excerpt_en": "car park behind the pharmacy",
+      "question_tags": [
+        "m21",
+        "ielts_part_1_practice",
+        "measurements",
+        "deadline",
+        "costs",
+        "collection"
+      ],
+      "question_id": "Q08",
+      "group_id": "IELTS_S1_PRACTICE"
+    },
+    {
+      "question_id": "D01",
+      "group_id": "DICTATION",
+      "type": "dictation",
+      "prompt": "Nghe và chép nguyên văn lượt thoại T04.",
+      "correct_answers": [
+        "Yes, it has a thin lining. I thought it would take just a day, but perhaps that's too optimistic."
+      ],
+      "scoring_policy": "case_punctuation_insensitive",
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Có lớp lót mỏng. Tôi nghĩ chỉ mất một ngày, chắc lạc quan quá.",
+      "question_tags": [
+        "m21",
+        "dictation",
+        "exact_words",
+        "measurements",
+        "deadline",
+        "costs",
+        "collection"
+      ]
+    },
+    {
+      "question_id": "D02",
+      "group_id": "DICTATION",
+      "type": "dictation",
+      "prompt": "Nghe và chép nguyên văn lượt thoại T07.",
+      "correct_answers": [
+        "Yes, we can have it ready on Tuesday evening, although there's a small express supplement."
+      ],
+      "scoring_policy": "case_punctuation_insensitive",
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "Có, chúng tôi có thể làm xong tối thứ Ba, nhưng có phụ phí làm nhanh.",
+      "question_tags": [
+        "m21",
+        "dictation",
+        "exact_words",
+        "measurements",
+        "deadline",
+        "costs",
+        "collection"
+      ]
+    },
+    {
+      "question_id": "D03",
+      "group_id": "DICTATION",
+      "type": "dictation",
+      "prompt": "Nghe và chép nguyên văn lượt thoại T10.",
+      "correct_answers": [
+        "That's fine. Should I bring the shoes I'm planning to wear, or is that only important for trouser alterations?"
+      ],
+      "scoring_policy": "case_punctuation_insensitive",
+      "evidence_turn_ids": [
+        "T10"
+      ],
+      "explanation_vi": "Được. Tôi có cần mang giày định đi hay chỉ quan trọng khi sửa quần?",
+      "question_tags": [
+        "m21",
+        "dictation",
+        "exact_words",
+        "measurements",
+        "deadline",
+        "costs",
+        "collection"
+      ]
+    },
+    {
+      "question_id": "D04",
+      "group_id": "DICTATION",
+      "type": "dictation",
+      "prompt": "Nghe và chép nguyên văn lượt thoại T14.",
+      "correct_answers": [
+        "And where should I park? I remember there being spaces right outside the shop, but the road was being resurfaced."
+      ],
+      "scoring_policy": "case_punctuation_insensitive",
+      "evidence_turn_ids": [
+        "T14"
+      ],
+      "explanation_vi": "Tôi đỗ xe ở đâu? Tôi nhớ có chỗ ngay ngoài cửa nhưng đường đang sửa.",
+      "question_tags": [
+        "m21",
+        "dictation",
+        "exact_words",
+        "measurements",
+        "deadline",
+        "costs",
+        "collection"
+      ]
+    },
+    {
+      "question_id": "G01",
+      "group_id": "GAP_FILL",
+      "type": "gap_fill",
+      "prompt": "Nghe và điền đúng cụm từ bị thiếu: I have a ____ that fits across the shoulders but is too loose around the waist. It's for my sister's wedding.",
+      "correct_answers": [
+        "jacket"
+      ],
+      "word_limit": 2,
+      "scoring_policy": "controlled_variants",
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Món đồ cần sửa là áo khoác.",
+      "question_tags": [
+        "m21",
+        "gap_fill",
+        "listen_for_detail",
+        "measurements",
+        "deadline",
+        "costs",
+        "collection"
+      ]
+    },
+    {
+      "question_id": "G02",
+      "group_id": "GAP_FILL",
+      "type": "gap_fill",
+      "prompt": "Nghe và điền đúng cụm từ bị thiếu: Normally we'd need ____ days for a lined jacket. If we see it today, it should be ready next Thursday.",
+      "correct_answers": [
+        "five"
+      ],
+      "word_limit": 2,
+      "scoring_policy": "controlled_variants",
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Áo có lớp lót cần năm ngày nếu không làm nhanh.",
+      "question_tags": [
+        "m21",
+        "gap_fill",
+        "listen_for_detail",
+        "measurements",
+        "deadline",
+        "costs",
+        "collection"
+      ]
+    }
+  ],
+  "vocabulary": [
+    {
+      "vocab_id": "S1-EXP-011-V01",
+      "expression_en": "side seams",
+      "meaning_vi": "đường may hai bên",
+      "part_of_speech": "noun phrase",
+      "example_en": "We can take in the side seams. Does it have a lining? That usually makes the work a little more complicated.",
+      "example_vi": "Chúng tôi có thể bóp đường may hai bên. Áo có lớp lót không? Có lót thì việc sửa phức tạp hơn.",
+      "evidence_turn_id": "T03",
+      "can_save_to_notebook": true
+    },
+    {
+      "vocab_id": "S1-EXP-011-V02",
+      "expression_en": "lining",
+      "meaning_vi": "lớp vải lót",
+      "part_of_speech": "noun",
+      "example_en": "We can take in the side seams. Does it have a lining? That usually makes the work a little more complicated.",
+      "example_vi": "Chúng tôi có thể bóp đường may hai bên. Áo có lớp lót không? Có lót thì việc sửa phức tạp hơn.",
+      "evidence_turn_id": "T03",
+      "can_save_to_notebook": true
+    },
+    {
+      "vocab_id": "S1-EXP-011-V03",
+      "expression_en": "express supplement",
+      "meaning_vi": "phụ phí làm nhanh",
+      "part_of_speech": "noun phrase",
+      "example_en": "Yes, we can have it ready on Tuesday evening, although there's a small express supplement.",
+      "example_vi": "Có, chúng tôi có thể làm xong tối thứ Ba, nhưng có phụ phí làm nhanh.",
+      "evidence_turn_id": "T07",
+      "can_save_to_notebook": true
+    },
+    {
+      "vocab_id": "S1-EXP-011-V04",
+      "expression_en": "trouser alterations",
+      "meaning_vi": "việc sửa quần",
+      "part_of_speech": "noun phrase",
+      "example_en": "That's fine. Should I bring the shoes I'm planning to wear, or is that only important for trouser alterations?",
+      "example_vi": "Được. Tôi có cần mang giày định đi hay chỉ quan trọng khi sửa quần?",
+      "evidence_turn_id": "T10",
+      "can_save_to_notebook": true
+    },
+    {
+      "vocab_id": "S1-EXP-011-V05",
+      "expression_en": "resurfaced",
+      "meaning_vi": "được làm lại mặt đường",
+      "part_of_speech": "verb",
+      "example_en": "And where should I park? I remember there being spaces right outside the shop, but the road was being resurfaced.",
+      "example_vi": "Tôi đỗ xe ở đâu? Tôi nhớ có chỗ ngay ngoài cửa nhưng đường đang sửa.",
+      "evidence_turn_id": "T14",
+      "can_save_to_notebook": true
+    },
+    {
+      "vocab_id": "S1-EXP-011-V06",
+      "expression_en": "public car park",
+      "meaning_vi": "bãi đỗ xe công cộng",
+      "part_of_speech": "noun phrase",
+      "example_en": "The roadside spaces are closed. Use the public car park behind the pharmacy; the first thirty minutes are free.",
+      "example_vi": "Chỗ đỗ ven đường đã đóng. Hãy dùng bãi xe công cộng sau hiệu thuốc, nửa giờ đầu miễn phí.",
+      "evidence_turn_id": "T15",
+      "can_save_to_notebook": true
+    }
+  ],
+  "audio": {
+    "status": "not_generated",
+    "audio_url": null,
+    "duration_ms": null,
+    "source_text_sha256": "b3004d8134f31b0bc602b4c4f89d82b98926f0bd2cce566b017228bf0bb412c7",
+    "generation_strategy": "full_dialogue_multi_speaker",
+    "audio_asset_id": null
+  },
+  "learning_flow": {
+    "intro": {
+      "theory_vi": "IELTS Part 1 thường có hội thoại hai người về dịch vụ hoặc hoạt động đời sống. Hãy xem trước từ loại và đơn vị của từng chỗ trống; đừng đoán đáp án trước khi nghe.",
+      "tip_vi": "Nghe đến cuối lượt trao đổi: người nói có thể sửa ngày, giá, địa điểm hoặc đổi lựa chọn. Thông tin đầu tiên nhiều khi là phương án bị loại.",
+      "common_mistakes_vi": [
+        "Ghi phương án ban đầu dù người nói đã đổi ý.",
+        "Nhầm giờ mở cửa với giờ buổi học bắt đầu.",
+        "Điền dư từ so với giới hạn của nhóm câu hỏi.",
+        "Chọn MCQ vì trùng từ với audio mà bỏ qua ý định cuối cùng."
+      ],
+      "worked_examples": [
+        {
+          "audio_example_en": "I first asked for Tuesday, but Friday is the day I can attend.",
+          "question": "Final day: ____",
+          "answer": "Friday",
+          "explanation_vi": "Tuesday là phương án cũ; Friday mới là quyết định cuối."
+        },
+        {
+          "audio_example_en": "The ordinary ticket is twenty pounds, although students pay fifteen.",
+          "question": "Student ticket: £____",
+          "answer": "15",
+          "explanation_vi": "Chọn mức giá đúng đối tượng được hỏi; 20 là giá thường."
+        }
+      ]
+    },
+    "steps": [
+      "pre_listening",
+      "first_listen_ielts_questions",
+      "review_with_evidence",
+      "selective_dictation",
+      "gap_fill",
+      "summary"
+    ],
+    "ielts_question_ids": [
+      "Q01",
+      "Q02",
+      "Q03",
+      "Q04",
+      "Q05",
+      "Q06",
+      "Q07",
+      "Q08"
+    ],
+    "recommended_first_listen_play_limit": 1,
+    "practice_replay_allowed_after_first_attempt": true,
+    "word_count": 300,
+    "estimated_audio_minutes_at_135_wpm": 2.22,
+    "exposure_bank": "training",
+    "exam_simulation": false,
+    "mock_test": false
+  },
+  "qa": {
+    "status": "awaiting_human_audio_review",
+    "automated_validation": "pending",
+    "human_transcript_approved": false,
+    "human_audio_approved": false,
+    "ielts_exam_equivalent": false,
+    "release_eligible": false
+  },
+  "provenance": {
+    "source_type": "original_authored",
+    "reference_copying": false,
+    "authoring_milestone": "M21",
+    "do_not_reuse_in_unseen_assessment_before_exposure_check": true
+  },
+  "release_metadata": {
+    "version": "m21.0.1",
+    "published": false,
+    "needs_audio": true,
+    "requires_human_approval": true,
+    "import_policy": "insert_only",
+    "target_bank": "training"
+  }
+}

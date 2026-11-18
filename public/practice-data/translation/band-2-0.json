@@ -1,0 +1,882 @@
+[
+ {
+  "id": "band-2.0-007",
+  "practiceLevel": "2.0",
+  "type": "phrase",
+  "topic": "Thói quen",
+  "targetTerm": "every day",
+  "meaningVi": "mỗi ngày",
+  "promptVi": "mỗi ngày",
+  "referenceAnswers": [
+   "every day"
+  ],
+  "grammarTags": [
+   "time-phrase"
+  ],
+  "explanationVi": "Every day là cụm chỉ tần suất; khác everyday là tính từ.",
+  "commonErrors": [],
+  "editorialStatus": "pilot",
+  "source": "original-starter",
+  "version": 2,
+  "calibrationStatus": "internal_review",
+  "rationaleVi": "Dùng cụm chỉ người, thời gian, nơi chốn và nhu cầu hằng ngày. Bài này luyện: Every day là cụm chỉ tần suất; khác everyday là tính từ."
+ },
+ {
+  "id": "band-2.0-008",
+  "practiceLevel": "2.0",
+  "type": "phrase",
+  "topic": "Gia đình",
+  "targetTerm": "brother",
+  "meaningVi": "anh hoặc em trai",
+  "promptVi": "em trai tôi",
+  "referenceAnswers": [
+   "my younger brother"
+  ],
+  "grammarTags": [
+   "possessive-phrase"
+  ],
+  "explanationVi": "My younger brother nêu rõ người em trai trong gia đình.",
+  "commonErrors": [],
+  "editorialStatus": "pilot",
+  "source": "original-starter",
+  "version": 2,
+  "calibrationStatus": "internal_review",
+  "rationaleVi": "Dùng cụm chỉ người, thời gian, nơi chốn và nhu cầu hằng ngày. Bài này luyện: My younger brother nêu rõ người em trai trong gia đình."
+ },
+ {
+  "id": "band-2.0-009",
+  "practiceLevel": "2.0",
+  "type": "phrase",
+  "topic": "Ăn uống",
+  "targetTerm": "breakfast",
+  "meaningVi": "bữa sáng",
+  "promptVi": "bữa sáng lúc bảy giờ",
+  "referenceAnswers": [
+   "breakfast at seven o'clock"
+  ],
+  "grammarTags": [
+   "time-phrase"
+  ],
+  "explanationVi": "At seven o'clock nêu thời điểm cụ thể.",
+  "commonErrors": [],
+  "editorialStatus": "pilot",
+  "source": "original-starter",
+  "version": 2,
+  "calibrationStatus": "internal_review",
+  "rationaleVi": "Dùng cụm chỉ người, thời gian, nơi chốn và nhu cầu hằng ngày. Bài này luyện: At seven o'clock nêu thời điểm cụ thể."
+ },
+ {
+  "id": "band-2.0-cal-01",
+  "practiceLevel": "2.0",
+  "type": "phrase",
+  "topic": "Gia đình",
+  "targetTerm": "my sister",
+  "meaningVi": "chị hoặc em gái của tôi",
+  "promptVi": "chị gái tôi ở nhà",
+  "referenceAnswers": [
+   "my sister at home"
+  ],
+  "grammarTags": [
+   "possessive-place-phrase"
+  ],
+  "explanationVi": "At home là cụm chỉ vị trí, không dùng mạo từ trước home.",
+  "rationaleVi": "Cụm chỉ người và nơi chốn rất quen thuộc.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "original-level-authored",
+  "version": 1
+ },
+ {
+  "id": "band-2.0-cal-02",
+  "practiceLevel": "2.0",
+  "type": "phrase",
+  "topic": "Thời gian",
+  "targetTerm": "after school",
+  "meaningVi": "sau giờ học",
+  "promptVi": "sau giờ học",
+  "referenceAnswers": [
+   "after school"
+  ],
+  "grammarTags": [
+   "time-phrase"
+  ],
+  "explanationVi": "After school là cụm thời gian quen thuộc.",
+  "rationaleVi": "Cụm giới từ ngắn, chưa yêu cầu mệnh đề.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "original-level-authored",
+  "version": 1
+ },
+ {
+  "id": "band-2.0-exp-001",
+  "practiceLevel": "2.0",
+  "type": "phrase",
+  "topic": "đồ ăn",
+  "targetTerm": "a glass of fresh orange juice",
+  "meaningVi": "một ly nước cam tươi",
+  "promptVi": "một ly nước cam tươi",
+  "referenceAnswers": [
+   "a glass of fresh orange juice"
+  ],
+  "grammarTags": [
+   "noun phrase - daily needs"
+  ],
+  "explanationVi": "Cụm danh từ chỉ nhu cầu ăn uống hằng ngày, sử dụng cấu trúc 'a glass of' kết hợp với danh từ không đếm được.",
+  "rationaleVi": "Trình độ 2.0 tập trung vào cụm danh từ ngắn từ 4-6 từ mô tả nhu cầu sinh hoạt cơ bản, chưa yêu cầu viết thành câu hoàn chỉnh.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "ai-assisted-level-draft",
+  "version": 1
+ },
+ {
+  "id": "band-2.0-exp-002",
+  "practiceLevel": "2.0",
+  "type": "phrase",
+  "topic": "nhà ở",
+  "targetTerm": "a small flat near the park",
+  "meaningVi": "một căn hộ nhỏ gần công viên",
+  "promptVi": "một căn hộ nhỏ gần công viên",
+  "referenceAnswers": [
+   "a small flat near the park"
+  ],
+  "grammarTags": [
+   "noun phrase - place"
+  ],
+  "explanationVi": "Sử dụng từ chuẩn Anh-Anh 'flat' cho căn hộ và giới từ 'near' để chỉ vị trí địa lý.",
+  "rationaleVi": "Cụm danh từ mô tả nơi chốn quen thuộc gồm 6 từ, hoàn toàn phù hợp với phạm vi kiến thức từ vựng cơ bản của cấp độ 2.0.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "ai-assisted-level-draft",
+  "version": 1
+ },
+ {
+  "id": "band-2.0-exp-003",
+  "practiceLevel": "2.0",
+  "type": "phrase",
+  "topic": "thời gian",
+  "targetTerm": "on Saturday evening",
+  "meaningVi": "vào buổi tối thứ Bảy",
+  "promptVi": "vào buổi tối thứ Bảy",
+  "referenceAnswers": [
+   "on Saturday evening"
+  ],
+  "grammarTags": [
+   "prepositional phrase - time"
+  ],
+  "explanationVi": "Dùng giới từ 'on' cho thứ trong tuần kết hợp với buổi trong ngày (Saturday evening).",
+  "rationaleVi": "Cụm giới từ chỉ thời gian gồm 3 từ đơn giản, giúp người học luyện tập diễn đạt thời gian cụ thể ở mức độ nhập môn.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "ai-assisted-level-draft",
+  "version": 1
+ },
+ {
+  "id": "band-2.0-exp-004",
+  "practiceLevel": "2.0",
+  "type": "phrase",
+  "topic": "đi lại",
+  "targetTerm": "the bus stop opposite the station",
+  "meaningVi": "trạm xe buýt đối diện nhà ga",
+  "promptVi": "trạm xe buýt đối diện nhà ga",
+  "referenceAnswers": [
+   "the bus stop opposite the station"
+  ],
+  "grammarTags": [
+   "prepositional phrase - place"
+  ],
+  "explanationVi": "Sử dụng giới từ chỉ vị trí 'opposite' để nêu vị trí tương quan giữa trạm xe buýt và nhà ga.",
+  "rationaleVi": "Cụm từ kết hợp danh từ phương tiện giao thông và vị trí nơi chốn thiết yếu trong cuộc sống hằng ngày cho trình độ 2.0.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "ai-assisted-level-draft",
+  "version": 1
+ },
+ {
+  "id": "band-2.0-exp-005",
+  "practiceLevel": "2.0",
+  "type": "phrase",
+  "topic": "sức khỏe",
+  "targetTerm": "our family doctor",
+  "meaningVi": "bác sĩ gia đình của chúng tôi",
+  "promptVi": "bác sĩ gia đình của chúng tôi",
+  "referenceAnswers": [
+   "our family doctor"
+  ],
+  "grammarTags": [
+   "noun phrase - people"
+  ],
+  "explanationVi": "Cụm danh từ chỉ người kết hợp tính từ sở hữu 'our' và danh từ ghép 'family doctor'.",
+  "rationaleVi": "Diễn đạt đối tượng người thân thuộc liên quan đến chăm sóc sức khỏe qua cụm 3 từ ngắn gọn, vừa sức với cấp độ 2.0.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "ai-assisted-level-draft",
+  "version": 1
+ },
+ {
+  "id": "band-2.0-exp-006",
+  "practiceLevel": "2.0",
+  "type": "phrase",
+  "topic": "trường học",
+  "targetTerm": "the new school library",
+  "meaningVi": "thư viện mới của trường",
+  "promptVi": "thư viện mới của trường",
+  "referenceAnswers": [
+   "the new school library"
+  ],
+  "grammarTags": [
+   "noun phrase - place"
+  ],
+  "explanationVi": "Đặt tính từ 'new' lên trước cụm danh từ 'school library' để miêu tả cơ sở vật chất.",
+  "rationaleVi": "Mô tả địa điểm học tập bằng cụm danh từ 4 từ, đáp ứng yêu cầu nhận biết và gọi tên nơi chốn căn bản.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "ai-assisted-level-draft",
+  "version": 1
+ },
+ {
+  "id": "band-2.0-exp-007",
+  "practiceLevel": "2.0",
+  "type": "phrase",
+  "topic": "công việc",
+  "targetTerm": "good colleagues at the office",
+  "meaningVi": "những đồng nghiệp tốt ở văn phòng",
+  "promptVi": "những đồng nghiệp tốt ở văn phòng",
+  "referenceAnswers": [
+   "good colleagues at the office"
+  ],
+  "grammarTags": [
+   "noun phrase - people & place"
+  ],
+  "explanationVi": "Ghép cụm chỉ người 'good colleagues' với cụm giới từ chỉ nơi chốn 'at the office'.",
+  "rationaleVi": "Kết hợp hai yếu tố người và nơi làm việc trong một cụm từ 5 từ đơn giản, phù hợp định hướng Level 2.0.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "ai-assisted-level-draft",
+  "version": 1
+ },
+ {
+  "id": "band-2.0-exp-008",
+  "practiceLevel": "2.0",
+  "type": "phrase",
+  "topic": "thể thao",
+  "targetTerm": "the football pitch near the school",
+  "meaningVi": "sân bóng đá gần trường học",
+  "promptVi": "sân bóng đá gần trường học",
+  "referenceAnswers": [
+   "the football pitch near the school"
+  ],
+  "grammarTags": [
+   "prepositional phrase - place"
+  ],
+  "explanationVi": "Dùng 'football pitch' chỉ sân bóng đá và 'near the school' để chỉ vị trí.",
+  "rationaleVi": "Cụm chỉ địa điểm quen thuộc, luyện giới từ 'near' và mạo từ trong một tình huống cụ thể.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "ai-assisted-level-draft",
+  "version": 1
+ },
+ {
+  "id": "band-2.0-exp-009",
+  "practiceLevel": "2.0",
+  "type": "phrase",
+  "topic": "du lịch",
+  "targetTerm": "a cheap hotel in the centre",
+  "meaningVi": "một khách sạn giá rẻ ở trung tâm",
+  "promptVi": "một khách sạn giá rẻ ở trung tâm",
+  "referenceAnswers": [
+   "a cheap hotel in the centre"
+  ],
+  "grammarTags": [
+   "noun phrase - place"
+  ],
+  "explanationVi": "Dùng từ viết theo chuẩn Anh-Anh 'centre' và tính từ 'cheap' để miêu tả nơi lưu trú.",
+  "rationaleVi": "Đáp ứng nhu cầu diễn đạt thông tin du lịch thực tế ở mức cơ bản thông qua cụm danh từ kết hợp cụm giới từ.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "ai-assisted-level-draft",
+  "version": 1
+ },
+ {
+  "id": "band-2.0-exp-010",
+  "practiceLevel": "2.0",
+  "type": "phrase",
+  "topic": "công nghệ",
+  "targetTerm": "my new smartphone",
+  "meaningVi": "chiếc điện thoại thông minh mới của tôi",
+  "promptVi": "chiếc điện thoại thông minh mới của tôi",
+  "referenceAnswers": [
+   "my new smartphone"
+  ],
+  "grammarTags": [
+   "noun phrase - daily needs"
+  ],
+  "explanationVi": "Sử dụng tính từ sở hữu 'my' và tính từ 'new' đứng trước danh từ 'smartphone'.",
+  "rationaleVi": "Mô tả thiết bị công nghệ cá nhân dùng hằng ngày bằng một cụm danh từ ngắn 3 từ vô cùng quen thuộc ở mức 2.0.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "ai-assisted-level-draft",
+  "version": 1
+ },
+ {
+  "id": "band-2.0-exp-011",
+  "practiceLevel": "2.0",
+  "type": "phrase",
+  "topic": "văn hóa",
+  "targetTerm": "the local history museum",
+  "meaningVi": "bảo tàng lịch sử địa phương",
+  "promptVi": "bảo tàng lịch sử địa phương",
+  "referenceAnswers": [
+   "the local history museum"
+  ],
+  "grammarTags": [
+   "noun phrase - place"
+  ],
+  "explanationVi": "Thứ tự từ gồm tính từ 'local' kết hợp danh từ ghép 'history museum' để chỉ địa điểm văn hóa.",
+  "rationaleVi": "Chỉ một địa điểm tham quan văn hóa bằng cụm danh từ 4 từ rõ nghĩa, khớp với mục tiêu củng cố cụm từ chỉ nơi chốn.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "ai-assisted-level-draft",
+  "version": 1
+ },
+ {
+  "id": "band-2.0-exp-012",
+  "practiceLevel": "2.0",
+  "type": "phrase",
+  "topic": "môi trường",
+  "targetTerm": "the green recycling bin",
+  "meaningVi": "thùng rác tái chế màu xanh lá",
+  "promptVi": "thùng rác tái chế màu xanh lá",
+  "referenceAnswers": [
+   "the green recycling bin"
+  ],
+  "grammarTags": [
+   "noun phrase - daily needs"
+  ],
+  "explanationVi": "Đặt tính từ màu sắc 'green' trước danh từ ghép 'recycling bin' chỉ vật dụng phân loại rác.",
+  "rationaleVi": "Mô tả đồ vật phục vụ đời sống hằng ngày và bảo vệ môi trường bằng cụm danh từ 4 từ đơn giản.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "ai-assisted-level-draft",
+  "version": 1
+ },
+ {
+  "id": "band-2.0-exp-013",
+  "practiceLevel": "2.0",
+  "type": "phrase",
+  "topic": "đồ ăn",
+  "targetTerm": "a cup of hot tea",
+  "meaningVi": "một tách trà nóng",
+  "promptVi": "một tách trà nóng",
+  "referenceAnswers": [
+   "a cup of hot tea"
+  ],
+  "grammarTags": [
+   "noun phrase"
+  ],
+  "explanationVi": "Cụm danh từ chỉ đồ uống hằng ngày, gồm mạo từ 'a', danh từ đếm được 'cup', giới từ 'of' và cụm tính từ + danh từ 'hot tea'.",
+  "rationaleVi": "Phù hợp Level 2.0 vì là cụm danh từ ngắn 5 từ chỉ nhu cầu ăn uống cơ bản, chưa có cấu trúc câu phức tạp.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "ai-assisted-level-draft",
+  "version": 1
+ },
+ {
+  "id": "band-2.0-exp-014",
+  "practiceLevel": "2.0",
+  "type": "phrase",
+  "topic": "nhà ở",
+  "targetTerm": "a clean kitchen",
+  "meaningVi": "một căn bếp sạch sẽ",
+  "promptVi": "một căn bếp sạch sẽ",
+  "referenceAnswers": [
+   "a clean kitchen"
+  ],
+  "grammarTags": [
+   "noun phrase"
+  ],
+  "explanationVi": "Cụm danh từ chỉ nơi chốn trong nhà, gồm mạo từ bất định 'a', tính từ 'clean' đứng trước danh từ 'kitchen'.",
+  "rationaleVi": "Thuộc Level 2.0 vì diễn đạt không gian sống hằng ngày bằng cụm từ đơn giản gồm 3 từ.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "ai-assisted-level-draft",
+  "version": 1
+ },
+ {
+  "id": "band-2.0-exp-015",
+  "practiceLevel": "2.0",
+  "type": "phrase",
+  "topic": "gia đình",
+  "targetTerm": "your grandfather",
+  "meaningVi": "ông nội của bạn",
+  "promptVi": "ông nội của bạn",
+  "referenceAnswers": [
+   "your grandfather"
+  ],
+  "grammarTags": [
+   "possessive phrase"
+  ],
+  "explanationVi": "Cụm từ chỉ người thân trong gia đình, kết hợp tính từ sở hữu 'your' và danh từ chỉ quan hệ 'grandfather'.",
+  "rationaleVi": "Đáp ứng yêu cầu Level 2.0 với cụm từ chỉ người ngắn gọn 2 từ, sử dụng từ vựng giao tiếp cơ bản.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "ai-assisted-level-draft",
+  "version": 1
+ },
+ {
+  "id": "band-2.0-exp-016",
+  "practiceLevel": "2.0",
+  "type": "phrase",
+  "topic": "thời gian",
+  "targetTerm": "at midday",
+  "meaningVi": "vào giữa trưa",
+  "promptVi": "vào giữa trưa",
+  "referenceAnswers": [
+   "at midday"
+  ],
+  "grammarTags": [
+   "prepositional phrase"
+  ],
+  "explanationVi": "Cụm giới từ chỉ thời điểm trong ngày, dùng giới từ 'at' đi cùng danh từ thời gian 'midday'.",
+  "rationaleVi": "Phù hợp Level 2.0 vì là cụm từ chỉ thời gian 2 từ rất phổ biến trong sinh hoạt hằng ngày.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "ai-assisted-level-draft",
+  "version": 1
+ },
+ {
+  "id": "band-2.0-exp-017",
+  "practiceLevel": "2.0",
+  "type": "phrase",
+  "topic": "đi lại",
+  "targetTerm": "the late tram",
+  "meaningVi": "chuyến xe điện muộn",
+  "promptVi": "chuyến xe điện muộn",
+  "referenceAnswers": [
+   "the late tram"
+  ],
+  "grammarTags": [
+   "noun phrase"
+  ],
+  "explanationVi": "Cụm danh từ chỉ phương tiện đi lại, gồm mạo từ 'the', tính từ 'late' bổ nghĩa cho danh từ 'tram' chuẩn Anh-Anh.",
+  "rationaleVi": "Đạt chuẩn Level 2.0 với 3 từ diễn đạt phương tiện giao thông và thời gian di chuyển cơ bản.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "ai-assisted-level-draft",
+  "version": 1
+ },
+ {
+  "id": "band-2.0-exp-018",
+  "practiceLevel": "2.0",
+  "type": "phrase",
+  "topic": "sức khỏe",
+  "targetTerm": "a painkiller tablet",
+  "meaningVi": "một viên thuốc giảm đau",
+  "promptVi": "một viên thuốc giảm đau",
+  "referenceAnswers": [
+   "a painkiller tablet"
+  ],
+  "grammarTags": [
+   "noun phrase"
+  ],
+  "explanationVi": "Cụm danh từ chỉ đồ dùng y tế hằng ngày, ghép từ mạo từ 'a', danh từ 'painkiller' làm bổ ngữ và danh từ chính 'tablet'.",
+  "rationaleVi": "Phù hợp Level 2.0 vì diễn đạt nhu cầu chăm sóc sức khỏe thiết yếu dưới dạng cụm 3 từ.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "ai-assisted-level-draft",
+  "version": 1
+ },
+ {
+  "id": "band-2.0-exp-019",
+  "practiceLevel": "2.0",
+  "type": "phrase",
+  "topic": "công việc",
+  "targetTerm": "the new manager",
+  "meaningVi": "người quản lý mới",
+  "promptVi": "người quản lý mới",
+  "referenceAnswers": [
+   "the new manager"
+  ],
+  "grammarTags": [
+   "noun phrase"
+  ],
+  "explanationVi": "Cụm danh từ chỉ người trong môi trường làm việc, gồm mạo từ xác định 'the', tính từ 'new' và danh từ 'manager'.",
+  "rationaleVi": "Nằm ở Level 2.0 do chỉ người trong công việc bằng cụm danh từ ngắn gồm 3 từ.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "ai-assisted-level-draft",
+  "version": 1
+ },
+ {
+  "id": "band-2.0-exp-020",
+  "practiceLevel": "2.0",
+  "type": "phrase",
+  "topic": "trường học",
+  "targetTerm": "a modern computer lab",
+  "meaningVi": "một phòng máy tính hiện đại",
+  "promptVi": "một phòng máy tính hiện đại",
+  "referenceAnswers": [
+   "a modern computer lab"
+  ],
+  "grammarTags": [
+   "noun phrase"
+  ],
+  "explanationVi": "'Computer lab' là cách nói tự nhiên cho phòng học có máy tính; 'modern' đứng trước cụm danh từ.",
+  "rationaleVi": "Cụm danh từ ngắn mô tả một địa điểm quen thuộc ở trường và thứ tự tính từ cơ bản.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "ai-assisted-level-draft",
+  "version": 1
+ },
+ {
+  "id": "band-2.0-exp-021",
+  "practiceLevel": "2.0",
+  "type": "phrase",
+  "topic": "đô thị",
+  "targetTerm": "a crowded night market",
+  "meaningVi": "một khu chợ đêm đông đúc",
+  "promptVi": "một khu chợ đêm đông đúc",
+  "referenceAnswers": [
+   "a crowded night market"
+  ],
+  "grammarTags": [
+   "noun phrase"
+  ],
+  "explanationVi": "Cụm danh từ chỉ địa điểm đô thị, kết hợp tính từ 'crowded' và cụm danh từ ghép 'night market'.",
+  "rationaleVi": "Phù hợp Level 2.0 vì diễn đạt địa điểm đời sống thành thị bằng cụm từ 4 từ đơn giản.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "ai-assisted-level-draft",
+  "version": 1
+ },
+ {
+  "id": "band-2.0-exp-022",
+  "practiceLevel": "2.0",
+  "type": "phrase",
+  "topic": "thể thao",
+  "targetTerm": "a large public swimming pool",
+  "meaningVi": "một bể bơi công cộng lớn",
+  "promptVi": "một bể bơi công cộng lớn",
+  "referenceAnswers": [
+   "a large public swimming pool"
+  ],
+  "grammarTags": [
+   "noun phrase"
+  ],
+  "explanationVi": "Cụm danh từ mô tả cơ sở thể thao, dùng hai tính từ 'large' và 'public' trước danh từ ghép 'swimming pool'.",
+  "rationaleVi": "Phù hợp Level 2.0 với cụm 5 từ mô tả nơi chốn sinh hoạt thể thao hằng ngày.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "ai-assisted-level-draft",
+  "version": 1
+ },
+ {
+  "id": "band-2.0-exp-023",
+  "practiceLevel": "2.0",
+  "type": "phrase",
+  "topic": "công nghệ",
+  "targetTerm": "black wireless headphones",
+  "meaningVi": "tai nghe không dây màu đen",
+  "promptVi": "tai nghe không dây màu đen",
+  "referenceAnswers": [
+   "black wireless headphones"
+  ],
+  "grammarTags": [
+   "noun phrase"
+  ],
+  "explanationVi": "Cụm danh từ mô tả thiết bị công nghệ cá nhân, gồm tính từ màu sắc 'black' và tính năng 'wireless' trước danh từ 'headphones'.",
+  "rationaleVi": "Nằm ở Level 2.0 vì chỉ món đồ công nghệ hằng ngày dưới dạng cụm 3 từ đơn giản.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "ai-assisted-level-draft",
+  "version": 1
+ },
+ {
+  "id": "band-2.0-exp-024",
+  "practiceLevel": "2.0",
+  "type": "phrase",
+  "topic": "môi trường",
+  "targetTerm": "a green vegetable garden",
+  "meaningVi": "một khu vườn rau xanh",
+  "promptVi": "một khu vườn rau xanh",
+  "referenceAnswers": [
+   "a green vegetable garden"
+  ],
+  "grammarTags": [
+   "noun phrase"
+  ],
+  "explanationVi": "Cụm danh từ chỉ không gian thiên nhiên, sử dụng tính từ 'green' và danh từ bổ nghĩa 'vegetable' cho 'garden'.",
+  "rationaleVi": "Đáp ứng chuẩn Level 2.0 với cụm danh từ 4 từ nói về môi trường sống hằng ngày.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "ai-assisted-level-draft",
+  "version": 1
+ },
+ {
+  "id": "band-2.0-exp-025",
+  "practiceLevel": "2.0",
+  "type": "phrase",
+  "topic": "đồ ăn",
+  "targetTerm": "toast and butter",
+  "meaningVi": "bánh mì nướng và bơ",
+  "promptVi": "bánh mì nướng và bơ",
+  "referenceAnswers": [
+   "toast and butter"
+  ],
+  "grammarTags": [
+   "noun phrase"
+  ],
+  "explanationVi": "Cụm danh từ chỉ món ăn hằng ngày đơn giản, sử dụng từ 'toast' cho bánh mì nướng và 'butter' cho bơ.",
+  "rationaleVi": "Dùng cụm danh từ đơn giản chỉ nhu cầu ăn uống hằng ngày, hoàn toàn phù hợp với mức độ 2.0.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "ai-assisted-level-draft",
+  "version": 1
+ },
+ {
+  "id": "band-2.0-exp-026",
+  "practiceLevel": "2.0",
+  "type": "phrase",
+  "topic": "đô thị",
+  "targetTerm": "a small café near the station",
+  "meaningVi": "một quán cà phê nhỏ gần nhà ga",
+  "promptVi": "một quán cà phê nhỏ gần nhà ga",
+  "referenceAnswers": [
+   "a small café near the station"
+  ],
+  "grammarTags": [
+   "noun phrase"
+  ],
+  "explanationVi": "Cụm danh từ chỉ địa điểm đô thị, gồm danh từ chính 'café' đi kèm tính từ bổ nghĩa 'small' và cụm giới từ chỉ vị trí 'near the station'.",
+  "rationaleVi": "Cụm từ miêu tả nơi chốn quen thuộc trong đời sống đô thị, đáp ứng đúng khung năng lực 2.0.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "ai-assisted-level-draft",
+  "version": 1
+ },
+ {
+  "id": "band-2.0-exp-027",
+  "practiceLevel": "2.0",
+  "type": "phrase",
+  "topic": "thời gian",
+  "targetTerm": "in the early morning",
+  "meaningVi": "vào đầu buổi sáng",
+  "promptVi": "vào đầu buổi sáng",
+  "referenceAnswers": [
+   "in the early morning"
+  ],
+  "grammarTags": [
+   "time phrase"
+  ],
+  "explanationVi": "Cụm giới từ chỉ thời gian cụ thể trong ngày, dùng tính từ 'early' kết hợp với danh từ 'morning'.",
+  "rationaleVi": "Cụm chỉ thời gian thông dụng và ngắn gọn, phục vụ việc diễn đạt mốc thời gian hằng ngày.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "ai-assisted-level-draft",
+  "version": 1
+ },
+ {
+  "id": "band-2.0-exp-028",
+  "practiceLevel": "2.0",
+  "type": "phrase",
+  "topic": "công việc",
+  "targetTerm": "a friendly electrician",
+  "meaningVi": "một người thợ điện thân thiện",
+  "promptVi": "một người thợ điện thân thiện",
+  "referenceAnswers": [
+   "a friendly electrician"
+  ],
+  "grammarTags": [
+   "noun phrase"
+  ],
+  "explanationVi": "Cụm danh từ chỉ nghề nghiệp kết hợp tính từ miêu tả tính cách 'friendly' đứng trước danh từ 'electrician'.",
+  "rationaleVi": "Sử dụng cụm danh từ chỉ người và công việc cơ bản, phù hợp với mục tiêu đào tạo trình độ 2.0.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "ai-assisted-level-draft",
+  "version": 1
+ },
+ {
+  "id": "band-2.0-exp-029",
+  "practiceLevel": "2.0",
+  "type": "phrase",
+  "topic": "sức khỏe",
+  "targetTerm": "a bottle of cool mineral water",
+  "meaningVi": "một chai nước khoáng mát",
+  "promptVi": "một chai nước khoáng mát",
+  "referenceAnswers": [
+   "a bottle of cool mineral water"
+  ],
+  "grammarTags": [
+   "noun phrase"
+  ],
+  "explanationVi": "Cụm danh từ chỉ đồ uống và vật chứa hằng ngày, dùng cấu trúc định lượng 'a bottle of...'.",
+  "rationaleVi": "Diễn đạt nhu cầu sức khỏe và sinh hoạt hằng ngày bằng cụm từ 6 từ ngắn gọn.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "ai-assisted-level-draft",
+  "version": 1
+ },
+ {
+  "id": "band-2.0-exp-030",
+  "practiceLevel": "2.0",
+  "type": "phrase",
+  "topic": "trường học",
+  "targetTerm": "a spacious school playground",
+  "meaningVi": "một sân trường rộng rãi",
+  "promptVi": "một sân trường rộng rãi",
+  "referenceAnswers": [
+   "a spacious school playground"
+  ],
+  "grammarTags": [
+   "noun phrase"
+  ],
+  "explanationVi": "Cụm danh từ miêu tả nơi chốn trong trường học với tính từ bổ nghĩa 'spacious'.",
+  "rationaleVi": "Mô tả địa điểm trường học bằng cụm từ cố định ngắn, chưa dùng đến mệnh đề hay ý phức tạp.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "ai-assisted-level-draft",
+  "version": 1
+ },
+ {
+  "id": "band-2.0-exp-031",
+  "practiceLevel": "2.0",
+  "type": "phrase",
+  "topic": "xã hội",
+  "targetTerm": "kind neighbours",
+  "meaningVi": "những người hàng xóm tốt bụng",
+  "promptVi": "những người hàng xóm tốt bụng",
+  "referenceAnswers": [
+   "kind neighbours"
+  ],
+  "grammarTags": [
+   "noun phrase"
+  ],
+  "explanationVi": "Cụm danh từ số nhiều chỉ người trong đời sống cộng đồng, sử dụng chính tả Anh-Anh 'neighbours'.",
+  "rationaleVi": "Diễn đạt đối tượng chỉ người trong xã hội ở dạng cụm từ 2 từ cực kỳ căn bản.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "ai-assisted-level-draft",
+  "version": 1
+ },
+ {
+  "id": "band-2.0-exp-032",
+  "practiceLevel": "2.0",
+  "type": "phrase",
+  "topic": "đi lại",
+  "targetTerm": "an early flight tomorrow",
+  "meaningVi": "chuyến bay sớm vào ngày mai",
+  "promptVi": "chuyến bay sớm vào ngày mai",
+  "referenceAnswers": [
+   "an early flight tomorrow"
+  ],
+  "grammarTags": [
+   "noun phrase"
+  ],
+  "explanationVi": "Cụm danh từ kết hợp mốc thời gian chỉ phương tiện và kế hoạch di chuyển.",
+  "rationaleVi": "Cụm từ kết hợp chủ đề đi lại và thời gian đơn giản, vừa đủ cho mức độ 2.0.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "ai-assisted-level-draft",
+  "version": 1
+ },
+ {
+  "id": "band-2.0-exp-033",
+  "practiceLevel": "2.0",
+  "type": "phrase",
+  "topic": "nhà ở",
+  "targetTerm": "a cosy living room",
+  "meaningVi": "một phòng khách ấm cúng",
+  "promptVi": "một phòng khách ấm cúng",
+  "referenceAnswers": [
+   "a cosy living room"
+  ],
+  "grammarTags": [
+   "noun phrase"
+  ],
+  "explanationVi": "Cụm danh từ miêu tả một căn phòng trong nhà, dùng tính từ chuẩn Anh-Anh 'cosy'.",
+  "rationaleVi": "Từ vựng thuộc chủ đề nhà ở dạng cụm miêu tả không gian sống hằng ngày.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "ai-assisted-level-draft",
+  "version": 1
+ },
+ {
+  "id": "band-2.0-exp-034",
+  "practiceLevel": "2.0",
+  "type": "phrase",
+  "topic": "du lịch",
+  "targetTerm": "a free city map",
+  "meaningVi": "một bản đồ thành phố miễn phí",
+  "promptVi": "một bản đồ thành phố miễn phí",
+  "referenceAnswers": [
+   "a free city map"
+  ],
+  "grammarTags": [
+   "noun phrase"
+  ],
+  "explanationVi": "Cụm danh từ chỉ đồ dùng hỗ trợ khi đi du lịch, gồm tính từ 'free' và danh từ ghép 'city map'.",
+  "rationaleVi": "Mô tả nhu cầu thiết yếu khi đi du lịch bằng cụm danh từ đơn đơn giản.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "ai-assisted-level-draft",
+  "version": 1
+ },
+ {
+  "id": "band-2.0-exp-035",
+  "practiceLevel": "2.0",
+  "type": "phrase",
+  "topic": "văn hóa",
+  "targetTerm": "an old local cinema",
+  "meaningVi": "một rạp chiếu phim địa phương cũ",
+  "promptVi": "một rạp chiếu phim địa phương cũ",
+  "referenceAnswers": [
+   "an old local cinema"
+  ],
+  "grammarTags": [
+   "noun phrase"
+  ],
+  "explanationVi": "Cụm danh từ chỉ nơi chốn sinh hoạt văn hóa giải trí, sử dụng từ 'cinema' theo chuẩn Anh-Anh.",
+  "rationaleVi": "Cụm từ miêu tả nơi chốn văn hóa quen thuộc, cấu trúc dễ tiếp thu cho người mới bắt đầu.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "ai-assisted-level-draft",
+  "version": 1
+ }
+]

@@ -1,0 +1,24 @@
+/* Shared Grammar tokens. Imported by the roadmap, lesson and Today card; older rules are mapped onto these. */
+.gg, .gt {
+  --gg-ink: #142846;
+  --gg-ink-2: #3e596d;
+  --gg-muted: #6c8394;
+  --gg-line: #e1ebe8;
+  --gg-line-strong: #cfe1dd;
+  --gg-surface: #fff;
+  --gg-soft: #f4f9f7;
+  --gg-brand: #19978d;
+  --gg-brand-strong: #127c75;
+  --gg-brand-ink: #1b6f67;
+  --gg-brand-soft: #e8f6f1;
+  --gg-good: #147a52;
+  --gg-good-line: #2fa36f;
+  --gg-good-soft: #effaf3;
+  --gg-bad: #b4372d;
+  --gg-bad-line: #e0675a;
+  --gg-bad-soft: #fff4f2;
+  --gg-warn: #9a6a0c;
+  --gg-warn-line: #f1d18b;
+  --gg-warn-soft: #fff9ea;
+  --gg-radius: 14px;
+}

@@ -1,0 +1,610 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "FND2-037",
+  "status": "draft",
+  "level": "L2",
+  "section": 0,
+  "topic": "Foundation M18 – Numbers",
+  "title": "Corrections to amounts and quantities",
+  "learning_objectives_vi": [
+    "Nghe được corrections to amounts and quantities trong tình huống mới.",
+    "Chép chính xác thông tin mục tiêu (correction).",
+    "Phân biệt bài luyện quen và bài kiểm tra chưa từng nghe."
+  ],
+  "content_format": "sentence_drill",
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Foundation narrator",
+      "tts_voice_id": null,
+      "accent_requested": "new_zealand"
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "The order was for twenty cups; actually, make that twenty-four.",
+      "translation_vi": "Đơn đặt hàng trước là 20 cốc; thực ra hãy đổi thành 24 cốc.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m18",
+        "correction",
+        "integer"
+      ],
+      "target_value": "24",
+      "target_kind": "integer",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "A",
+      "text_en": "We first requested fifteen chairs, but we now need fifty.",
+      "translation_vi": "Lúc đầu chúng tôi yêu cầu 15 ghế, giờ cần 50 ghế.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m18",
+        "correction",
+        "integer"
+      ],
+      "target_value": "50",
+      "target_kind": "integer",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "A",
+      "text_en": "The deposit is not forty pounds; it is fourteen pounds.",
+      "translation_vi": "Tiền đặt cọc không phải 40 bảng mà là 14 bảng.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m18",
+        "correction",
+        "currency"
+      ],
+      "target_value": "£14",
+      "target_kind": "currency",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "A",
+      "text_en": "I said six boxes earlier; please change that to sixteen.",
+      "translation_vi": "Lúc nãy tôi nói 6 thùng; vui lòng sửa thành 16.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m18",
+        "correction",
+        "integer"
+      ],
+      "target_value": "16",
+      "target_kind": "integer",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "A",
+      "text_en": "The updated attendance figure is one hundred and eighty-two.",
+      "translation_vi": "Số người tham dự cập nhật là 182.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m18",
+        "correction",
+        "integer"
+      ],
+      "target_value": "182",
+      "target_kind": "integer",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "A",
+      "text_en": "We ordered seven metres of fabric, but only five are needed.",
+      "translation_vi": "Chúng tôi đặt 7 mét vải, nhưng chỉ cần 5 mét.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m18",
+        "correction",
+        "measurement"
+      ],
+      "target_value": "5 m",
+      "target_kind": "measurement",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "The revised fee is thirty-one pounds fifty, not thirty-five.",
+      "translation_vi": "Phí đã điều chỉnh là 31 bảng 50 xu, không phải 35 bảng.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m18",
+        "correction",
+        "currency"
+      ],
+      "target_value": "£31.50",
+      "target_kind": "currency",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "A",
+      "text_en": "Please change the table number from eighteen to eighty.",
+      "translation_vi": "Vui lòng sửa số bàn từ 18 thành 80.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m18",
+        "correction",
+        "integer"
+      ],
+      "target_value": "80",
+      "target_kind": "integer",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T09",
+      "speaker_id": "A",
+      "text_en": "The instructor needs twelve copies instead of twenty.",
+      "translation_vi": "Giảng viên cần 12 bản thay vì 20 bản.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m18",
+        "correction",
+        "integer"
+      ],
+      "target_value": "12",
+      "target_kind": "integer",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T10",
+      "speaker_id": "A",
+      "text_en": "The final head count is sixty-six, after two cancellations.",
+      "translation_vi": "Tổng số người cuối cùng là 66, sau hai lượt hủy.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m18",
+        "correction",
+        "integer"
+      ],
+      "target_value": "66",
+      "target_kind": "integer",
+      "bank_role": "training"
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "type": "dictation",
+      "prompt": "Nghe lượt T01 rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "The order was for twenty cups; actually, make that twenty-four."
+      ],
+      "evidence_turn_ids": [
+        "T01"
+      ],
+      "explanation_vi": "Câu gốc: The order was for twenty cups; actually, make that twenty-four. Nghĩa: Đơn đặt hàng trước là 20 cốc; thực ra hãy đổi thành 24 cốc. Lưu ý: Ưu tiên thông tin cuối cùng sau những cụm 'actually', 'rather than' hoặc 'make that'.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "correction"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q02",
+      "type": "dictation",
+      "prompt": "Nghe lượt T02 rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "We first requested fifteen chairs, but we now need fifty."
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Câu gốc: We first requested fifteen chairs, but we now need fifty. Nghĩa: Lúc đầu chúng tôi yêu cầu 15 ghế, giờ cần 50 ghế. Lưu ý: Ưu tiên thông tin cuối cùng sau những cụm 'actually', 'rather than' hoặc 'make that'.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "correction"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q03",
+      "type": "dictation",
+      "prompt": "Nghe lượt T03 rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "The deposit is not forty pounds; it is fourteen pounds."
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Câu gốc: The deposit is not forty pounds; it is fourteen pounds. Nghĩa: Tiền đặt cọc không phải 40 bảng mà là 14 bảng. Lưu ý: Ưu tiên thông tin cuối cùng sau những cụm 'actually', 'rather than' hoặc 'make that'.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "correction"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q04",
+      "type": "dictation",
+      "prompt": "Nghe lượt T04 rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "I said six boxes earlier; please change that to sixteen."
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Câu gốc: I said six boxes earlier; please change that to sixteen. Nghĩa: Lúc nãy tôi nói 6 thùng; vui lòng sửa thành 16. Lưu ý: Ưu tiên thông tin cuối cùng sau những cụm 'actually', 'rather than' hoặc 'make that'.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "correction"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q05",
+      "type": "dictation",
+      "prompt": "Nghe lượt T05 rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "The updated attendance figure is one hundred and eighty-two."
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Câu gốc: The updated attendance figure is one hundred and eighty-two. Nghĩa: Số người tham dự cập nhật là 182. Lưu ý: Ưu tiên thông tin cuối cùng sau những cụm 'actually', 'rather than' hoặc 'make that'.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "correction"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q06",
+      "type": "dictation",
+      "prompt": "Nghe lượt T06 rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "We ordered seven metres of fabric, but only five are needed."
+      ],
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "explanation_vi": "Câu gốc: We ordered seven metres of fabric, but only five are needed. Nghĩa: Chúng tôi đặt 7 mét vải, nhưng chỉ cần 5 mét. Lưu ý: Ưu tiên thông tin cuối cùng sau những cụm 'actually', 'rather than' hoặc 'make that'.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "correction"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q07",
+      "type": "dictation",
+      "prompt": "Nghe lượt T07 rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "The revised fee is thirty-one pounds fifty, not thirty-five."
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "Câu gốc: The revised fee is thirty-one pounds fifty, not thirty-five. Nghĩa: Phí đã điều chỉnh là 31 bảng 50 xu, không phải 35 bảng. Lưu ý: Ưu tiên thông tin cuối cùng sau những cụm 'actually', 'rather than' hoặc 'make that'.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "correction"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q08",
+      "type": "dictation",
+      "prompt": "Nghe lượt T08 rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "Please change the table number from eighteen to eighty."
+      ],
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "explanation_vi": "Câu gốc: Please change the table number from eighteen to eighty. Nghĩa: Vui lòng sửa số bàn từ 18 thành 80. Lưu ý: Ưu tiên thông tin cuối cùng sau những cụm 'actually', 'rather than' hoặc 'make that'.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "correction"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q09",
+      "type": "dictation",
+      "prompt": "Nghe lượt T09 rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "The instructor needs twelve copies instead of twenty."
+      ],
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "explanation_vi": "Câu gốc: The instructor needs twelve copies instead of twenty. Nghĩa: Giảng viên cần 12 bản thay vì 20 bản. Lưu ý: Ưu tiên thông tin cuối cùng sau những cụm 'actually', 'rather than' hoặc 'make that'.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "correction"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q10",
+      "type": "dictation",
+      "prompt": "Nghe lượt T10 rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "The final head count is sixty-six, after two cancellations."
+      ],
+      "evidence_turn_ids": [
+        "T10"
+      ],
+      "explanation_vi": "Câu gốc: The final head count is sixty-six, after two cancellations. Nghĩa: Tổng số người cuối cùng là 66, sau hai lượt hủy. Lưu ý: Ưu tiên thông tin cuối cùng sau những cụm 'actually', 'rather than' hoặc 'make that'.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "correction"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q11",
+      "type": "short_answer",
+      "prompt": "Nghe lượt T06 rồi nhập giá trị và đơn vị đo được xác nhận trong câu.",
+      "correct_answers": [
+        "5 m"
+      ],
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "explanation_vi": "Nghe đúng thông tin đích; nếu có sửa thì dùng thông tin sau cùng. Đáp án: 5 m. Nội dung: Chúng tôi đặt 7 mét vải, nhưng chỉ cần 5 mét.",
+      "scoring_policy": "canonical_measurement_server",
+      "target_kind": "measurement",
+      "question_tags": [
+        "short_answer",
+        "correction",
+        "measurement"
+      ],
+      "max_replays_practice": 5,
+      "first_listen_only_for_mastery": false
+    },
+    {
+      "question_id": "Q12",
+      "type": "short_answer",
+      "prompt": "Nghe lượt T07 rồi nhập số tiền được xác nhận trong câu.",
+      "correct_answers": [
+        "£31.50"
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "Nghe đúng thông tin đích; nếu có sửa thì dùng thông tin sau cùng. Đáp án: £31.50. Nội dung: Phí đã điều chỉnh là 31 bảng 50 xu, không phải 35 bảng.",
+      "scoring_policy": "canonical_currency_server",
+      "target_kind": "currency",
+      "question_tags": [
+        "short_answer",
+        "correction",
+        "currency"
+      ],
+      "max_replays_practice": 5,
+      "first_listen_only_for_mastery": false
+    },
+    {
+      "question_id": "Q13",
+      "type": "short_answer",
+      "prompt": "Nghe lượt T08 rồi nhập số lượng / số hiệu được xác nhận trong câu.",
+      "correct_answers": [
+        "80"
+      ],
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "explanation_vi": "Nghe đúng thông tin đích; nếu có sửa thì dùng thông tin sau cùng. Đáp án: 80. Nội dung: Vui lòng sửa số bàn từ 18 thành 80.",
+      "scoring_policy": "canonical_integer_server",
+      "target_kind": "integer",
+      "question_tags": [
+        "short_answer",
+        "correction",
+        "integer"
+      ],
+      "max_replays_practice": 5,
+      "first_listen_only_for_mastery": false
+    },
+    {
+      "question_id": "Q14",
+      "type": "short_answer",
+      "prompt": "Nghe lượt T09 rồi nhập số lượng / số hiệu được xác nhận trong câu.",
+      "correct_answers": [
+        "12"
+      ],
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "explanation_vi": "Nghe đúng thông tin đích; nếu có sửa thì dùng thông tin sau cùng. Đáp án: 12. Nội dung: Giảng viên cần 12 bản thay vì 20 bản.",
+      "scoring_policy": "canonical_integer_server",
+      "target_kind": "integer",
+      "question_tags": [
+        "short_answer",
+        "correction",
+        "integer"
+      ],
+      "max_replays_practice": 5,
+      "first_listen_only_for_mastery": false
+    },
+    {
+      "question_id": "Q15",
+      "type": "short_answer",
+      "prompt": "Nghe lượt T10 rồi nhập số lượng / số hiệu được xác nhận trong câu.",
+      "correct_answers": [
+        "66"
+      ],
+      "evidence_turn_ids": [
+        "T10"
+      ],
+      "explanation_vi": "Nghe đúng thông tin đích; nếu có sửa thì dùng thông tin sau cùng. Đáp án: 66. Nội dung: Tổng số người cuối cùng là 66, sau hai lượt hủy.",
+      "scoring_policy": "canonical_integer_server",
+      "target_kind": "integer",
+      "question_tags": [
+        "short_answer",
+        "correction",
+        "integer"
+      ],
+      "max_replays_practice": 5,
+      "first_listen_only_for_mastery": false
+    }
+  ],
+  "vocabulary": [
+    {
+      "term": "actually",
+      "pos": "adv",
+      "meaning_vi": "thực ra",
+      "example_en": "The order was for twenty cups; actually, make that twenty-four.",
+      "example_vi": "Đơn đặt hàng trước là 20 cốc; thực ra hãy đổi thành 24 cốc.",
+      "is_illustrative_context": true
+    },
+    {
+      "term": "revised",
+      "pos": "adj",
+      "meaning_vi": "được điều chỉnh",
+      "example_en": "The revised fee is thirty-one pounds fifty, not thirty-five.",
+      "example_vi": "Phí đã điều chỉnh là 31 bảng 50 xu, không phải 35 bảng.",
+      "is_illustrative_context": true
+    },
+    {
+      "term": "instead of",
+      "pos": "prep",
+      "meaning_vi": "thay vì",
+      "example_en": "The instructor needs twelve copies instead of twenty.",
+      "example_vi": "Giảng viên cần 12 bản thay vì 20 bản.",
+      "is_illustrative_context": true
+    },
+    {
+      "term": "update",
+      "pos": "v",
+      "meaning_vi": "cập nhật",
+      "example_en": "We need to update the booking date.",
+      "example_vi": "Chúng ta cần cập nhật ngày đặt chỗ.",
+      "is_illustrative_context": true
+    },
+    {
+      "term": "replacement",
+      "pos": "n",
+      "meaning_vi": "phương án thay thế",
+      "example_en": "The replacement ticket will be ready tomorrow.",
+      "example_vi": "Vé thay thế sẽ sẵn sàng vào ngày mai.",
+      "is_illustrative_context": true
+    },
+    {
+      "term": "correct",
+      "pos": "v",
+      "meaning_vi": "sửa cho đúng",
+      "example_en": "Please correct the last digit on the form.",
+      "example_vi": "Vui lòng sửa chữ số cuối trên mẫu đơn.",
+      "is_illustrative_context": true
+    }
+  ],
+  "micro_skill_id": "correction",
+  "bank_role": "training",
+  "content_design": {
+    "sequence": "10_varied_contexts",
+    "first_listen": "1x",
+    "guided_replay_max": 5,
+    "mastery_requires_unseen": true,
+    "learning_note_vi": "Ưu tiên thông tin cuối cùng sau những cụm 'actually', 'rather than' hoặc 'make that'.",
+    "category": "numbers",
+    "post_submit_review_only": true,
+    "unseen_assessment_id": "FND2-037-HOLDOUT",
+    "spoken_text_must_match_target": true
+  },
+  "audio": {
+    "status": "not_generated",
+    "url": null,
+    "duration_ms": null,
+    "provider": null,
+    "model": null,
+    "voice_config": null,
+    "format": null,
+    "audio_sha256": null,
+    "source_transcript_hash": "aa7ef2da95eed78e7fc7138cb2a6a9b90513b4fb429f9f55009444c9c95a3410",
+    "generation_notes": "Synthesize spoken utterance only, speak spelled letters and punctuation explicitly. Never read teaching metadata. QA each target by a person."
+  },
+  "qa": {
+    "content_reviewed": false,
+    "answers_verified": false,
+    "audio_verified": false,
+    "human_signed_off": false,
+    "duplicate_reviewed": false,
+    "notes": [
+      "M18 originally authored drafts; automated checks only, teacher/accent review pending.",
+      "No TTS audio and no measured timestamps. Domain/email examples use reserved example.* names."
+    ]
+  },
+  "provenance": {
+    "content_origin": "original_ai_assisted",
+    "rights_status": "pending_audio_terms_review",
+    "source_urls": [],
+    "reviewer": null
+  },
+  "release_metadata": {
+    "published_at": null,
+    "version": 1
+  },
+  "lesson_theory_vi": {
+    "core_rule": "Ưu tiên thông tin cuối cùng sau những cụm 'actually', 'rather than' hoặc 'make that'.",
+    "worked_contrasts": [
+      {
+        "spoken_example": "ten, actually twelve",
+        "written_value": "12",
+        "teacher_note_vi": "Actually báo hiệu thông tin cập nhật."
+      },
+      {
+        "spoken_example": "not forty but fourteen",
+        "written_value": "14",
+        "teacher_note_vi": "Không lấy số bị phủ định."
+      }
+    ],
+    "learning_steps": [
+      "Nhìn tiêu đề kỹ năng và đọc hai ví dụ có giải thích trước khi nghe.",
+      "Nghe một lần và thử ghi số/chữ; không xem transcript trước khi nộp.",
+      "Sau khi nộp, so sánh từ khóa mục tiêu, số 0 và thông tin đã được sửa.",
+      "Làm hai câu đánh giá chưa gặp ở lần nghe đầu và ghi số lần phát lại."
+    ],
+    "common_mistakes": [
+      "Chọn số đầu tiên được nhắc tới thay vì số được xác nhận cuối cùng.",
+      "Bỏ số 0 đầu trong mã hoặc làm tròn số thập phân."
+    ],
+    "before_audio_question": "Đây là số lượng, số tiền, mã, phần trăm hay đơn vị đo? Dữ kiện cuối cùng có được sửa không?",
+    "difficulty_steps": [
+      "T01–T03: nghe thông tin chính trong ngữ cảnh rõ.",
+      "T04–T07: nghe chuỗi dài hơn, chọn chữ/số đúng.",
+      "T08–T10: chú ý thông tin sửa lại, định dạng và ngữ cảnh pha trộn."
+    ],
+    "examples_are_not_mastery_items": true
+  }
+}

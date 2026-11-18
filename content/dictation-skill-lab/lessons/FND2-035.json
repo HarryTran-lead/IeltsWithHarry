@@ -1,0 +1,610 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "FND2-035",
+  "status": "draft",
+  "level": "L2",
+  "section": 0,
+  "topic": "Foundation M18 – Numbers",
+  "title": "Percentages and survey data",
+  "learning_objectives_vi": [
+    "Nghe được percentages and survey data trong tình huống mới.",
+    "Chép chính xác thông tin mục tiêu (percentage).",
+    "Phân biệt bài luyện quen và bài kiểm tra chưa từng nghe."
+  ],
+  "content_format": "sentence_drill",
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Foundation narrator",
+      "tts_voice_id": null,
+      "accent_requested": "british"
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "Forty-two per cent of the respondents preferred cycling.",
+      "translation_vi": "42% người trả lời khảo sát thích đi xe đạp hơn.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m18",
+        "percentage",
+        "percent"
+      ],
+      "target_value": "42%",
+      "target_kind": "percent",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "A",
+      "text_en": "The attendance rate reached ninety-three per cent in June.",
+      "translation_vi": "Tỷ lệ tham dự đạt 93% vào tháng Sáu.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m18",
+        "percentage",
+        "percent"
+      ],
+      "target_value": "93%",
+      "target_kind": "percent",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "A",
+      "text_en": "Only seven per cent selected the evening session.",
+      "translation_vi": "Chỉ 7% chọn buổi học tối.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m18",
+        "percentage",
+        "percent"
+      ],
+      "target_value": "7%",
+      "target_kind": "percent",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "A",
+      "text_en": "The report estimates that thirty-five per cent work from home.",
+      "translation_vi": "Báo cáo ước tính 35% làm việc tại nhà.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m18",
+        "percentage",
+        "percent"
+      ],
+      "target_value": "35%",
+      "target_kind": "percent",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "A",
+      "text_en": "The discount is fifteen per cent for new members.",
+      "translation_vi": "Mức giảm giá là 15% cho hội viên mới.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m18",
+        "percentage",
+        "percent"
+      ],
+      "target_value": "15%",
+      "target_kind": "percent",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "A",
+      "text_en": "The survey recorded sixty-eight per cent support for the project.",
+      "translation_vi": "Khảo sát ghi nhận 68% ủng hộ dự án.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m18",
+        "percentage",
+        "percent"
+      ],
+      "target_value": "68%",
+      "target_kind": "percent",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "The success rate rose to eighty-one per cent after training.",
+      "translation_vi": "Tỷ lệ thành công tăng lên 81% sau đào tạo.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m18",
+        "percentage",
+        "percent"
+      ],
+      "target_value": "81%",
+      "target_kind": "percent",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "A",
+      "text_en": "The figure for public transport was twenty-nine per cent.",
+      "translation_vi": "Con số dành cho phương tiện công cộng là 29%.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m18",
+        "percentage",
+        "percent"
+      ],
+      "target_value": "29%",
+      "target_kind": "percent",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T09",
+      "speaker_id": "A",
+      "text_en": "The current interest rate is three point five per cent.",
+      "translation_vi": "Lãi suất hiện tại là 3,5%.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m18",
+        "percentage",
+        "percent"
+      ],
+      "target_value": "3.5%",
+      "target_kind": "percent",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T10",
+      "speaker_id": "A",
+      "text_en": "The last group accounted for just one point two per cent.",
+      "translation_vi": "Nhóm cuối cùng chỉ chiếm 1,2%.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m18",
+        "percentage",
+        "percent"
+      ],
+      "target_value": "1.2%",
+      "target_kind": "percent",
+      "bank_role": "training"
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "type": "dictation",
+      "prompt": "Nghe lượt T01 rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "Forty-two per cent of the respondents preferred cycling."
+      ],
+      "evidence_turn_ids": [
+        "T01"
+      ],
+      "explanation_vi": "Câu gốc: Forty-two per cent of the respondents preferred cycling. Nghĩa: 42% người trả lời khảo sát thích đi xe đạp hơn. Lưu ý: Nhận diện số phần trăm không cần tự tính toán; chú ý 'per cent' và 'point'.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "percentage"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q02",
+      "type": "dictation",
+      "prompt": "Nghe lượt T02 rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "The attendance rate reached ninety-three per cent in June."
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Câu gốc: The attendance rate reached ninety-three per cent in June. Nghĩa: Tỷ lệ tham dự đạt 93% vào tháng Sáu. Lưu ý: Nhận diện số phần trăm không cần tự tính toán; chú ý 'per cent' và 'point'.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "percentage"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q03",
+      "type": "dictation",
+      "prompt": "Nghe lượt T03 rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "Only seven per cent selected the evening session."
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Câu gốc: Only seven per cent selected the evening session. Nghĩa: Chỉ 7% chọn buổi học tối. Lưu ý: Nhận diện số phần trăm không cần tự tính toán; chú ý 'per cent' và 'point'.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "percentage"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q04",
+      "type": "dictation",
+      "prompt": "Nghe lượt T04 rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "The report estimates that thirty-five per cent work from home."
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Câu gốc: The report estimates that thirty-five per cent work from home. Nghĩa: Báo cáo ước tính 35% làm việc tại nhà. Lưu ý: Nhận diện số phần trăm không cần tự tính toán; chú ý 'per cent' và 'point'.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "percentage"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q05",
+      "type": "dictation",
+      "prompt": "Nghe lượt T05 rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "The discount is fifteen per cent for new members."
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Câu gốc: The discount is fifteen per cent for new members. Nghĩa: Mức giảm giá là 15% cho hội viên mới. Lưu ý: Nhận diện số phần trăm không cần tự tính toán; chú ý 'per cent' và 'point'.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "percentage"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q06",
+      "type": "dictation",
+      "prompt": "Nghe lượt T06 rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "The survey recorded sixty-eight per cent support for the project."
+      ],
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "explanation_vi": "Câu gốc: The survey recorded sixty-eight per cent support for the project. Nghĩa: Khảo sát ghi nhận 68% ủng hộ dự án. Lưu ý: Nhận diện số phần trăm không cần tự tính toán; chú ý 'per cent' và 'point'.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "percentage"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q07",
+      "type": "dictation",
+      "prompt": "Nghe lượt T07 rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "The success rate rose to eighty-one per cent after training."
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "Câu gốc: The success rate rose to eighty-one per cent after training. Nghĩa: Tỷ lệ thành công tăng lên 81% sau đào tạo. Lưu ý: Nhận diện số phần trăm không cần tự tính toán; chú ý 'per cent' và 'point'.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "percentage"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q08",
+      "type": "dictation",
+      "prompt": "Nghe lượt T08 rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "The figure for public transport was twenty-nine per cent."
+      ],
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "explanation_vi": "Câu gốc: The figure for public transport was twenty-nine per cent. Nghĩa: Con số dành cho phương tiện công cộng là 29%. Lưu ý: Nhận diện số phần trăm không cần tự tính toán; chú ý 'per cent' và 'point'.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "percentage"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q09",
+      "type": "dictation",
+      "prompt": "Nghe lượt T09 rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "The current interest rate is three point five per cent."
+      ],
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "explanation_vi": "Câu gốc: The current interest rate is three point five per cent. Nghĩa: Lãi suất hiện tại là 3,5%. Lưu ý: Nhận diện số phần trăm không cần tự tính toán; chú ý 'per cent' và 'point'.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "percentage"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q10",
+      "type": "dictation",
+      "prompt": "Nghe lượt T10 rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "The last group accounted for just one point two per cent."
+      ],
+      "evidence_turn_ids": [
+        "T10"
+      ],
+      "explanation_vi": "Câu gốc: The last group accounted for just one point two per cent. Nghĩa: Nhóm cuối cùng chỉ chiếm 1,2%. Lưu ý: Nhận diện số phần trăm không cần tự tính toán; chú ý 'per cent' và 'point'.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "percentage"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q11",
+      "type": "short_answer",
+      "prompt": "Nghe lượt T06 rồi nhập tỷ lệ phần trăm được xác nhận trong câu.",
+      "correct_answers": [
+        "68%"
+      ],
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "explanation_vi": "Nghe đúng thông tin đích; nếu có sửa thì dùng thông tin sau cùng. Đáp án: 68%. Nội dung: Khảo sát ghi nhận 68% ủng hộ dự án.",
+      "scoring_policy": "canonical_percent_server",
+      "target_kind": "percent",
+      "question_tags": [
+        "short_answer",
+        "percentage",
+        "percent"
+      ],
+      "max_replays_practice": 5,
+      "first_listen_only_for_mastery": false
+    },
+    {
+      "question_id": "Q12",
+      "type": "short_answer",
+      "prompt": "Nghe lượt T07 rồi nhập tỷ lệ phần trăm được xác nhận trong câu.",
+      "correct_answers": [
+        "81%"
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "Nghe đúng thông tin đích; nếu có sửa thì dùng thông tin sau cùng. Đáp án: 81%. Nội dung: Tỷ lệ thành công tăng lên 81% sau đào tạo.",
+      "scoring_policy": "canonical_percent_server",
+      "target_kind": "percent",
+      "question_tags": [
+        "short_answer",
+        "percentage",
+        "percent"
+      ],
+      "max_replays_practice": 5,
+      "first_listen_only_for_mastery": false
+    },
+    {
+      "question_id": "Q13",
+      "type": "short_answer",
+      "prompt": "Nghe lượt T08 rồi nhập tỷ lệ phần trăm được xác nhận trong câu.",
+      "correct_answers": [
+        "29%"
+      ],
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "explanation_vi": "Nghe đúng thông tin đích; nếu có sửa thì dùng thông tin sau cùng. Đáp án: 29%. Nội dung: Con số dành cho phương tiện công cộng là 29%.",
+      "scoring_policy": "canonical_percent_server",
+      "target_kind": "percent",
+      "question_tags": [
+        "short_answer",
+        "percentage",
+        "percent"
+      ],
+      "max_replays_practice": 5,
+      "first_listen_only_for_mastery": false
+    },
+    {
+      "question_id": "Q14",
+      "type": "short_answer",
+      "prompt": "Nghe lượt T09 rồi nhập tỷ lệ phần trăm được xác nhận trong câu.",
+      "correct_answers": [
+        "3.5%"
+      ],
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "explanation_vi": "Nghe đúng thông tin đích; nếu có sửa thì dùng thông tin sau cùng. Đáp án: 3.5%. Nội dung: Lãi suất hiện tại là 3,5%.",
+      "scoring_policy": "canonical_percent_server",
+      "target_kind": "percent",
+      "question_tags": [
+        "short_answer",
+        "percentage",
+        "percent"
+      ],
+      "max_replays_practice": 5,
+      "first_listen_only_for_mastery": false
+    },
+    {
+      "question_id": "Q15",
+      "type": "short_answer",
+      "prompt": "Nghe lượt T10 rồi nhập tỷ lệ phần trăm được xác nhận trong câu.",
+      "correct_answers": [
+        "1.2%"
+      ],
+      "evidence_turn_ids": [
+        "T10"
+      ],
+      "explanation_vi": "Nghe đúng thông tin đích; nếu có sửa thì dùng thông tin sau cùng. Đáp án: 1.2%. Nội dung: Nhóm cuối cùng chỉ chiếm 1,2%.",
+      "scoring_policy": "canonical_percent_server",
+      "target_kind": "percent",
+      "question_tags": [
+        "short_answer",
+        "percentage",
+        "percent"
+      ],
+      "max_replays_practice": 5,
+      "first_listen_only_for_mastery": false
+    }
+  ],
+  "vocabulary": [
+    {
+      "term": "respondent",
+      "pos": "n",
+      "meaning_vi": "người trả lời khảo sát",
+      "example_en": "Each respondent answered five questions.",
+      "example_vi": "Mỗi người tham gia khảo sát trả lời năm câu hỏi.",
+      "is_illustrative_context": true
+    },
+    {
+      "term": "percentage",
+      "pos": "n",
+      "meaning_vi": "tỷ lệ phần trăm",
+      "example_en": "Write the percentage with a percent sign.",
+      "example_vi": "Hãy ghi tỷ lệ phần trăm kèm dấu phần trăm.",
+      "is_illustrative_context": true
+    },
+    {
+      "term": "attendance rate",
+      "pos": "n",
+      "meaning_vi": "tỷ lệ tham dự",
+      "example_en": "The attendance rate reached ninety-three per cent in June.",
+      "example_vi": "Tỷ lệ tham dự đạt 93% vào tháng Sáu.",
+      "is_illustrative_context": true
+    },
+    {
+      "term": "support",
+      "pos": "n",
+      "meaning_vi": "sự ủng hộ",
+      "example_en": "The survey recorded sixty-eight per cent support for the project.",
+      "example_vi": "Khảo sát ghi nhận 68% ủng hộ dự án.",
+      "is_illustrative_context": true
+    },
+    {
+      "term": "increase",
+      "pos": "v",
+      "meaning_vi": "tăng",
+      "example_en": "Prices increase during the summer season.",
+      "example_vi": "Giá tăng vào mùa hè.",
+      "is_illustrative_context": true
+    },
+    {
+      "term": "estimate",
+      "pos": "v",
+      "meaning_vi": "ước tính",
+      "example_en": "We estimate the journey will take an hour.",
+      "example_vi": "Chúng tôi ước tính hành trình mất một giờ.",
+      "is_illustrative_context": true
+    }
+  ],
+  "micro_skill_id": "percentage",
+  "bank_role": "training",
+  "content_design": {
+    "sequence": "10_varied_contexts",
+    "first_listen": "1x",
+    "guided_replay_max": 5,
+    "mastery_requires_unseen": true,
+    "learning_note_vi": "Nhận diện số phần trăm không cần tự tính toán; chú ý 'per cent' và 'point'.",
+    "category": "numbers",
+    "post_submit_review_only": true,
+    "unseen_assessment_id": "FND2-035-HOLDOUT",
+    "spoken_text_must_match_target": true
+  },
+  "audio": {
+    "status": "not_generated",
+    "url": null,
+    "duration_ms": null,
+    "provider": null,
+    "model": null,
+    "voice_config": null,
+    "format": null,
+    "audio_sha256": null,
+    "source_transcript_hash": "896dedf887cb83bd42363c58ce89fafb3ee46c5c76d9732d6b2ae9407771ec87",
+    "generation_notes": "Synthesize spoken utterance only, speak spelled letters and punctuation explicitly. Never read teaching metadata. QA each target by a person."
+  },
+  "qa": {
+    "content_reviewed": false,
+    "answers_verified": false,
+    "audio_verified": false,
+    "human_signed_off": false,
+    "duplicate_reviewed": false,
+    "notes": [
+      "M18 originally authored drafts; automated checks only, teacher/accent review pending.",
+      "No TTS audio and no measured timestamps. Domain/email examples use reserved example.* names."
+    ]
+  },
+  "provenance": {
+    "content_origin": "original_ai_assisted",
+    "rights_status": "pending_audio_terms_review",
+    "source_urls": [],
+    "reviewer": null
+  },
+  "release_metadata": {
+    "published_at": null,
+    "version": 1
+  },
+  "lesson_theory_vi": {
+    "core_rule": "Nhận diện số phần trăm không cần tự tính toán; chú ý 'per cent' và 'point'.",
+    "worked_contrasts": [
+      {
+        "spoken_example": "twenty per cent",
+        "written_value": "20%",
+        "teacher_note_vi": "Per cent là phần trăm."
+      },
+      {
+        "spoken_example": "two point five per cent",
+        "written_value": "2.5%",
+        "teacher_note_vi": "Point được ghi dưới dạng dấu thập phân."
+      }
+    ],
+    "learning_steps": [
+      "Nhìn tiêu đề kỹ năng và đọc hai ví dụ có giải thích trước khi nghe.",
+      "Nghe một lần và thử ghi số/chữ; không xem transcript trước khi nộp.",
+      "Sau khi nộp, so sánh từ khóa mục tiêu, số 0 và thông tin đã được sửa.",
+      "Làm hai câu đánh giá chưa gặp ở lần nghe đầu và ghi số lần phát lại."
+    ],
+    "common_mistakes": [
+      "Chọn số đầu tiên được nhắc tới thay vì số được xác nhận cuối cùng.",
+      "Bỏ số 0 đầu trong mã hoặc làm tròn số thập phân."
+    ],
+    "before_audio_question": "Đây là số lượng, số tiền, mã, phần trăm hay đơn vị đo? Dữ kiện cuối cùng có được sửa không?",
+    "difficulty_steps": [
+      "T01–T03: nghe thông tin chính trong ngữ cảnh rõ.",
+      "T04–T07: nghe chuỗi dài hơn, chọn chữ/số đúng.",
+      "T08–T10: chú ý thông tin sửa lại, định dạng và ngữ cảnh pha trộn."
+    ],
+    "examples_are_not_mastery_items": true
+  }
+}

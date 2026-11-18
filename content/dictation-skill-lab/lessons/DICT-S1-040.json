@@ -1,0 +1,446 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "DICT-S1-040",
+  "status": "draft",
+  "level": "L4",
+  "section": 1,
+  "topic": "Transport Tickets",
+  "title": "A Railcard and a Flexible Return",
+  "learning_objectives_vi": [
+    "Luyện constraints and options trong tình huống: A traveller compares a cheap train ticket with a flexible fare.",
+    "Nhận diện thông tin cuối cùng thay vì lặp lại dữ kiện đã bị sửa hoặc phủ định.",
+    "Chép đúng lời thoại, hiểu bằng chứng và học từ vựng trong ngữ cảnh."
+  ],
+  "content_format": "section_practice",
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Customer / applicant",
+      "tts_voice_id": null,
+      "accent_requested": "new_zealand"
+    },
+    {
+      "speaker_id": "B",
+      "role": "Service representative / employee",
+      "tts_voice_id": null,
+      "accent_requested": "new_zealand"
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "Hello. I'm planning a trip to Bristol on Saturday, and I'm not sure which ticket to buy.",
+      "translation_vi": "Chào anh. Tôi dự định đến Bristol thứ Bảy và chưa biết mua vé nào.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "fare_comparison",
+        "constraints",
+        "time",
+        "section_1",
+        "two_speaker_dialogue",
+        "l4"
+      ]
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "B",
+      "text_en": "Will you return the same day, or stay overnight?",
+      "translation_vi": "Bạn quay về trong ngày hay ở qua đêm?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "fare_comparison",
+        "constraints",
+        "time",
+        "section_1",
+        "two_speaker_dialogue",
+        "l4"
+      ]
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "A",
+      "text_en": "I'll stay overnight. I might return on Sunday afternoon, but my plans could change.",
+      "translation_vi": "Tôi ở qua đêm. Có thể chiều Chủ nhật về nhưng kế hoạch có thể đổi.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "fare_comparison",
+        "constraints",
+        "time",
+        "section_1",
+        "two_speaker_dialogue",
+        "l4"
+      ]
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "B",
+      "text_en": "An advance return is thirty-two pounds, but you must use the booked train. A flexible return is forty-eight.",
+      "translation_vi": "Vé khứ hồi mua sớm là ba mươi hai bảng, nhưng phải đi đúng chuyến. Vé linh hoạt là bốn mươi tám.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "fare_comparison",
+        "constraints",
+        "time",
+        "section_1",
+        "two_speaker_dialogue",
+        "l4"
+      ]
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "A",
+      "text_en": "I have a student railcard. Does the discount apply to both?",
+      "translation_vi": "Tôi có thẻ giảm giá tàu cho sinh viên. Cả hai loại đều được giảm chứ?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "fare_comparison",
+        "constraints",
+        "time",
+        "section_1",
+        "two_speaker_dialogue",
+        "l4"
+      ]
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "B",
+      "text_en": "It applies to the flexible fare, which comes down to thirty-six pounds. It doesn't reduce this special advance offer.",
+      "translation_vi": "Chỉ vé linh hoạt được giảm còn ba mươi sáu bảng. Ưu đãi mua sớm đặc biệt này không giảm thêm.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "fare_comparison",
+        "constraints",
+        "time",
+        "section_1",
+        "two_speaker_dialogue",
+        "l4"
+      ]
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "Then the flexible ticket makes sense. When's the last outward train I can catch?",
+      "translation_vi": "Vậy vé linh hoạt hợp lý hơn. Chuyến đi cuối cùng tôi có thể đi lúc nào?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "fare_comparison",
+        "constraints",
+        "time",
+        "section_1",
+        "two_speaker_dialogue",
+        "l4"
+      ]
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "B",
+      "text_en": "For the route you're taking, the last direct service on Saturday leaves at six ten in the evening.",
+      "translation_vi": "Với tuyến đó, chuyến thẳng cuối thứ Bảy rời ga lúc sáu giờ mười tối.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "fare_comparison",
+        "constraints",
+        "time",
+        "section_1",
+        "two_speaker_dialogue",
+        "l4"
+      ]
+    },
+    {
+      "turn_id": "T09",
+      "speaker_id": "A",
+      "text_en": "And can I board at Westgate instead of Central Station?",
+      "translation_vi": "Tôi lên tàu ở Westgate thay vì Central Station được không?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "fare_comparison",
+        "constraints",
+        "time",
+        "section_1",
+        "two_speaker_dialogue",
+        "l4"
+      ]
+    },
+    {
+      "turn_id": "T10",
+      "speaker_id": "B",
+      "text_en": "Not with this ticket; the journey must begin at Central Station.",
+      "translation_vi": "Không được với vé này; hành trình phải bắt đầu tại Central Station.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "fare_comparison",
+        "constraints",
+        "time",
+        "section_1",
+        "two_speaker_dialogue",
+        "l4"
+      ]
+    },
+    {
+      "turn_id": "T11",
+      "speaker_id": "A",
+      "text_en": "Understood. I'll take the flexible return with the railcard discount.",
+      "translation_vi": "Tôi hiểu. Tôi lấy vé khứ hồi linh hoạt có giảm bằng railcard.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "fare_comparison",
+        "constraints",
+        "time",
+        "section_1",
+        "two_speaker_dialogue",
+        "l4"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "type": "form_completion",
+      "prompt": "Advance return costs £____",
+      "correct_answers": [
+        "32"
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Giá vé advance là 32 bảng.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "fare_comparison",
+        "constraints",
+        "time",
+        "ielts_section1_practice"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q02",
+      "type": "form_completion",
+      "prompt": "Discounted flexible fare: £____",
+      "correct_answers": [
+        "36"
+      ],
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "explanation_vi": "Vé linh hoạt giảm còn 36 bảng.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "fare_comparison",
+        "constraints",
+        "time",
+        "ielts_section1_practice"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q03",
+      "type": "mcq",
+      "prompt": "Which return ticket does the passenger choose?",
+      "correct_answers": [
+        "A flexible return"
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "Khách chọn vé linh hoạt vì có thể đổi lịch.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "fare_comparison",
+        "constraints",
+        "time",
+        "ielts_section1_practice"
+      ],
+      "options": [
+        "An advance return",
+        "A flexible return",
+        "A day single"
+      ]
+    },
+    {
+      "question_id": "Q04",
+      "type": "form_completion",
+      "prompt": "Last direct outward service: ____",
+      "correct_answers": [
+        "6:10"
+      ],
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "explanation_vi": "Chuyến thẳng cuối đi lúc 6:10 tối.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "fare_comparison",
+        "constraints",
+        "time",
+        "ielts_section1_practice"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q05",
+      "type": "form_completion",
+      "prompt": "Journey must start at ____ Station",
+      "correct_answers": [
+        "Central"
+      ],
+      "evidence_turn_ids": [
+        "T10"
+      ],
+      "explanation_vi": "Không thể bắt đầu ở Westgate.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "fare_comparison",
+        "constraints",
+        "time",
+        "ielts_section1_practice"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q06",
+      "type": "form_completion",
+      "prompt": "Discount card type: student ____",
+      "correct_answers": [
+        "railcard"
+      ],
+      "evidence_turn_ids": [
+        "T11"
+      ],
+      "explanation_vi": "Khách dùng thẻ ưu đãi dành cho sinh viên.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "fare_comparison",
+        "constraints",
+        "time",
+        "ielts_section1_practice"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "D01",
+      "type": "dictation",
+      "prompt": "Nghe và chép nguyên văn lời nhân vật A (lượt T05).",
+      "correct_answers": [
+        "I have a student railcard. Does the discount apply to both?"
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Câu chuẩn: I have a student railcard. Does the discount apply to both? Nghĩa: Tôi có thẻ giảm giá tàu cho sinh viên. Cả hai loại đều được giảm chứ? Cần nghe rõ từ chức năng, âm cuối và thông tin cụ thể.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "fare_comparison",
+        "constraints",
+        "time",
+        "dictation",
+        "transcription_accuracy"
+      ]
+    },
+    {
+      "question_id": "G01",
+      "type": "gap_fill",
+      "prompt": "Nghe và điền từ/cụm từ thiếu: An ____ is thirty-two pounds, but you must use the booked train. A flexible return is forty-eight.",
+      "correct_answers": [
+        "advance return"
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Cụm cần điền: advance return (vé khứ hồi mua sớm). Câu gốc: An advance return is thirty-two pounds, but you must use the booked train. A flexible return is forty-eight.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "fare_comparison",
+        "constraints",
+        "time",
+        "gap_fill",
+        "vocabulary_in_context"
+      ]
+    }
+  ],
+  "vocabulary": [
+    {
+      "term": "advance return",
+      "pos": "phrase",
+      "meaning_vi": "vé khứ hồi mua sớm",
+      "example_en": "An advance return is thirty-two pounds, but you must use the booked train. A flexible return is forty-eight.",
+      "example_vi": "Vé khứ hồi mua sớm là ba mươi hai bảng, nhưng phải đi đúng chuyến. Vé linh hoạt là bốn mươi tám.",
+      "source_turn_id": "T04"
+    },
+    {
+      "term": "flexible fare",
+      "pos": "phrase",
+      "meaning_vi": "giá vé linh hoạt",
+      "example_en": "It applies to the flexible fare, which comes down to thirty-six pounds. It doesn't reduce this special advance offer.",
+      "example_vi": "Chỉ vé linh hoạt được giảm còn ba mươi sáu bảng. Ưu đãi mua sớm đặc biệt này không giảm thêm.",
+      "source_turn_id": "T06"
+    },
+    {
+      "term": "direct service",
+      "pos": "phrase",
+      "meaning_vi": "chuyến thẳng",
+      "example_en": "For the route you're taking, the last direct service on Saturday leaves at six ten in the evening.",
+      "example_vi": "Với tuyến đó, chuyến thẳng cuối thứ Bảy rời ga lúc sáu giờ mười tối.",
+      "source_turn_id": "T08"
+    },
+    {
+      "term": "journey",
+      "pos": "word",
+      "meaning_vi": "hành trình",
+      "example_en": "Not with this ticket; the journey must begin at Central Station.",
+      "example_vi": "Không được với vé này; hành trình phải bắt đầu tại Central Station.",
+      "source_turn_id": "T10"
+    }
+  ],
+  "audio": {
+    "status": "not_generated",
+    "url": null,
+    "duration_ms": null,
+    "model": null,
+    "provider": null,
+    "voice_config": null,
+    "source_transcript_hash": "ead447a48fdd06d4b20c04f0abeffa6a56508cf6399e3eab51988f910bb27598",
+    "audio_sha256": null,
+    "format": null
+  },
+  "qa": {
+    "content_reviewed": false,
+    "answers_verified": false,
+    "audio_verified": false,
+    "rights_cleared": false,
+    "duplicate_reviewed": false,
+    "notes": [
+      "AI-assisted original draft; requires IELTS-teacher review of all items and ambiguity.",
+      "Audio and time-alignment are pending.",
+      "Do not release automatically after structural validation.",
+      "M16.2: automated edits are provisional; IELTS teacher final signoff, audio and rights clearance pending."
+    ]
+  },
+  "provenance": {
+    "content_origin": "original_ai_assisted",
+    "source_urls": [],
+    "source_rights_note": "Original educational dialogue. Verify TTS provider usage conditions, rights and accessibility before production. Not an official IELTS item.",
+    "reviewer": null
+  },
+  "release_metadata": {
+    "published_at": null,
+    "version": 1
+  }
+}

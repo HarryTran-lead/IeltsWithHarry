@@ -1,13 +1,13 @@
 /* Dashboard first screen: a slim welcome, the newest news and the study room all fit above the fold. */
 .dashboard-grid .welcome-banner { min-height: 0; }
 .dashboard-grid .welcome-copy { flex: 1; width: auto; min-width: 0; padding: 14px 128px 14px 24px; }
-.dashboard-grid .welcome-greeting { margin-bottom: 2px; font-size: 17px; }
+.dashboard-grid .welcome-greeting { margin-bottom: 2px; font-size: var(--fs-lg); }
 .dashboard-grid .welcome-copy h1 { margin: 0; font-size: clamp(20px, 1.9vw, 25px); }
 .welcome-row { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 18px; margin-top: 10px; }
 .welcome-row .streak-week { flex-wrap: nowrap; gap: 5px; margin: 0; }
 .welcome-row .streak-week b { order: 0; flex: none; margin: 0 0 14px 4px; }
 .welcome-row .streak-day i { width: 24px; height: 24px; }
-.welcome-row .streak-day small { font-size: 10px; }
+.welcome-row .streak-day small { font-size: var(--fs-2xs); }
 .dashboard-grid .welcome-actions { gap: 8px; margin: 0 0 14px; }
 .dashboard-grid .welcome-art { right: 6px; width: 128px; }
 .dashboard-grid .welcome-art .harry-buddy { right: 4px; bottom: 4px; }
@@ -20,68 +20,70 @@
 .dash-news { padding: 16px 18px; }
 .dash-news .card-head { margin-bottom: 12px; }
 .dash-news-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
-.dash-news-card { display: grid; grid-template-rows: auto auto 1fr; gap: 6px; min-width: 0; padding: 6px 6px 10px; border: 1px solid var(--line); border-radius: 14px; background: #fff; transition: translate 0.35s var(--ease-spring), box-shadow 0.3s var(--ease-out), border-color 0.3s; }
+.dash-news-card { display: grid; grid-template-rows: auto auto 1fr; gap: 6px; min-width: 0; padding: 6px 6px 10px; border: 1px solid var(--line); border-radius: var(--r-md); background: #fff; transition: translate 0.35s var(--ease-spring), box-shadow 0.3s var(--ease-out), border-color 0.3s; }
 .dash-news-card:hover { translate: 0 -3px; border-color: #bfe3e5; box-shadow: var(--shadow-lg); }
 .dash-news-card.skeleton { height: 178px; }
-.dash-news-img { position: relative; display: block; aspect-ratio: 2 / 1; overflow: hidden; border-radius: 10px; background: var(--surface-2); }
+.dash-news-img { position: relative; display: block; aspect-ratio: 2 / 1; overflow: hidden; border-radius: var(--r-md); background: var(--surface-2); }
 .dash-news-img img { object-fit: cover; transition: scale 0.5s var(--ease-out); }
 .dash-news-card:hover .dash-news-img img { scale: 1.06; }
-.dash-news-img small { position: absolute; top: 7px; left: 7px; z-index: 1; padding: 2px 8px; border-radius: 99px; background: rgba(255, 255, 255, 0.92); color: var(--navy); font-size: 11px; font-weight: 700; }
-.dash-news-card strong { display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; overflow: hidden; padding: 0 4px; color: var(--navy); font-size: 13.5px; line-height: 1.35; }
-.dash-news-meta { align-self: end; overflow: hidden; padding: 0 4px; color: var(--muted); font-size: 11.5px; text-overflow: ellipsis; white-space: nowrap; }
+.dash-news-img small { position: absolute; top: 7px; left: 7px; z-index: 1; padding: 2px 8px; border-radius: var(--r-pill); background: rgba(255, 255, 255, 0.92); color: var(--navy); font-size: var(--fs-2xs); font-weight: 700; }
+.dash-news-card strong { display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; overflow: hidden; padding: 0 4px; color: var(--navy); font-size: var(--fs-sm); line-height: 1.35; }
+.dash-news-meta { align-self: end; overflow: hidden; padding: 0 4px; color: var(--muted); font-size: var(--fs-2xs); text-overflow: ellipsis; white-space: nowrap; }
 
 .dash-room { display: grid; gap: 12px; padding: 16px; background: linear-gradient(160deg, #fff6ea, #fff 62%); }
 .dash-room-head { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
-.dash-room-live { display: inline-flex; align-items: center; gap: 7px; color: #c2410c; font-size: 12px; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase; }
+.dash-room-live { display: inline-flex; align-items: center; gap: 7px; color: #c2410c; font-size: var(--fs-xs); font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase; }
 .dash-room-live i { width: 8px; height: 8px; border-radius: 50%; background: #c3c7bd; }
 .dash-room-live.is-live i { background: #ef4444; animation: room-pulse 1.6s ease-out infinite; }
 @keyframes room-pulse { 0% { box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.5); } 100% { box-shadow: 0 0 0 8px rgba(239, 68, 68, 0); } }
-.dash-room-online { display: inline-flex; align-items: center; gap: 5px; padding: 3px 10px; border: 1px solid var(--line); border-radius: 99px; background: #fff; color: var(--muted); font-size: 12.5px; }
+.dash-room-online { display: inline-flex; align-items: center; gap: 5px; padding: 3px 10px; border: 1px solid var(--line); border-radius: var(--r-pill); background: #fff; color: var(--muted); font-size: var(--fs-xs); }
 .dash-room-online b { color: var(--navy); }
 .dash-room-body { display: flex; align-items: center; gap: 12px; }
 .dash-room-body strong { color: var(--navy); font-size: 16px; }
-.dash-room-body p { margin: 2px 0 0; color: var(--muted); font-size: 12.5px; line-height: 1.4; }
-.dash-room-stream { position: relative; display: block; aspect-ratio: 16 / 9; overflow: hidden; border-radius: 14px; background: #1b2433; color: #fff; isolation: isolate; }
+.dash-room-body p { margin: 2px 0 0; color: var(--muted); font-size: var(--fs-xs); line-height: 1.4; }
+.dash-room-stream { position: relative; display: block; aspect-ratio: 16 / 9; overflow: hidden; border-radius: var(--r-md); background: #1b2433; color: #fff; isolation: isolate; }
 .dash-room-stream img { object-fit: cover; transition: scale 0.5s var(--ease-out); }
 .dash-room-stream:hover img { scale: 1.04; }
 .dash-room-stream::after { content: ""; position: absolute; inset: 0; z-index: 0; background: linear-gradient(180deg, rgba(10, 18, 30, 0.1) 40%, rgba(10, 18, 30, 0.82)); }
-.dash-room-onair { position: absolute; top: 10px; left: 10px; z-index: 1; display: inline-flex; align-items: center; gap: 5px; padding: 3px 9px; border-radius: 6px; background: #e11d2e; font-size: 11px; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase; }
+.dash-room-onair { position: absolute; top: 10px; left: 10px; z-index: 1; display: inline-flex; align-items: center; gap: 5px; padding: 3px 9px; border-radius: var(--r-sm); background: #e11d2e; font-size: var(--fs-2xs); font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase; }
 .dash-room-onair i { width: 6px; height: 6px; border-radius: 50%; background: #fff; animation: room-pulse 1.6s ease-out infinite; }
 .dash-room-play { position: absolute; top: 50%; left: 50%; z-index: 1; display: grid; place-items: center; width: 46px; height: 46px; border-radius: 50%; background: rgba(255, 255, 255, 0.92); color: #e11d2e; translate: -50% -60%; transition: scale 0.3s var(--ease-spring); }
 .dash-room-stream:hover .dash-room-play { scale: 1.1; }
 .dash-room-stream-meta { position: absolute; right: 12px; bottom: 10px; left: 12px; z-index: 1; display: grid; gap: 1px; }
-.dash-room-stream-meta strong { overflow: hidden; font-size: 14.5px; text-overflow: ellipsis; white-space: nowrap; }
-.dash-room-stream-meta small { overflow: hidden; color: rgba(255, 255, 255, 0.8); font-size: 12px; text-overflow: ellipsis; white-space: nowrap; }
+.dash-room-stream-meta strong { overflow: hidden; font-size: var(--fs-base); text-overflow: ellipsis; white-space: nowrap; }
+.dash-room-stream-meta small { overflow: hidden; color: rgba(255, 255, 255, 0.8); font-size: var(--fs-xs); text-overflow: ellipsis; white-space: nowrap; }
 .dash-room-streams { display: flex; gap: 6px; overflow-x: auto; scrollbar-width: none; }
-.dash-room-streams button { display: inline-flex; flex: none; align-items: center; gap: 5px; padding: 4px 10px; border: 1px solid var(--line); border-radius: 99px; background: #fff; color: var(--muted); font-size: 12px; font-weight: 700; white-space: nowrap; transition: border-color 0.2s, color 0.2s; }
+.dash-room-streams button { display: inline-flex; flex: none; align-items: center; gap: 5px; padding: 4px 10px; border: 1px solid var(--line); border-radius: var(--r-pill); background: #fff; color: var(--muted); font-size: var(--fs-xs); font-weight: 700; white-space: nowrap; transition: border-color 0.2s, color 0.2s; }
 .dash-room-streams button:hover { border-color: #f0c79a; color: var(--navy); }
 .dash-room-streams button[aria-pressed="true"] { border-color: #f5a35c; background: #fff1e2; color: #9a4a0c; }
-.dash-room-chat { display: grid; gap: 6px; margin: 0; padding: 8px 10px; border: 1px dashed #f0d6b2; border-radius: 12px; background: rgba(255, 255, 255, 0.85); list-style: none; }
+.dash-room-chat { display: grid; gap: 6px; margin: 0; padding: 8px 10px; border: 1px dashed #f0d6b2; border-radius: var(--r-md); background: rgba(255, 255, 255, 0.85); list-style: none; }
 .dash-room-chat li { display: flex; align-items: center; gap: 8px; min-width: 0; }
-.dash-room-chat span { flex: none; display: grid; place-items: center; width: 22px; height: 22px; border-radius: 50%; background: var(--teal-soft); color: var(--teal-strong); font-size: 11px; font-weight: 800; }
-.dash-room-chat p { min-width: 0; margin: 0; overflow: hidden; color: var(--navy); font-size: 12.5px; text-overflow: ellipsis; white-space: nowrap; }
+.dash-room-chat span { flex: none; display: grid; place-items: center; width: 22px; height: 22px; border-radius: 50%; background: var(--teal-soft); color: var(--teal-strong); font-size: var(--fs-2xs); font-weight: 800; }
+.dash-room-chat p { min-width: 0; margin: 0; overflow: hidden; color: var(--navy); font-size: var(--fs-xs); text-overflow: ellipsis; white-space: nowrap; }
 .dash-room-chat b { font-weight: 700; }
 .dash-room-foot { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
-.dash-room-foot > span { display: inline-flex; align-items: center; gap: 5px; color: var(--muted); font-size: 12.5px; }
+.dash-room-foot > span { display: inline-flex; align-items: center; gap: 5px; color: var(--muted); font-size: var(--fs-xs); }
 .dash-room-foot b { color: var(--navy); }
 .dash-room-foot .button { min-height: 38px; }
 
 .dash-leaderboard { padding: 18px; }
 .dash-leaderboard .card-head { margin-bottom: 2px; }
-.dash-leaderboard-caption { margin: 0 0 12px 48px; color: var(--muted); font-size: 12px; }
+.dash-leaderboard-caption { margin: 0 0 12px 48px; color: var(--muted); font-size: var(--fs-xs); }
 .dash-leaderboard-list { display: grid; gap: 2px; margin: 0; padding: 0; list-style: none; }
 .dash-leaderboard-list li { display: flex; align-items: center; gap: 9px; min-width: 0; padding: 8px 2px; border-bottom: 1px solid var(--line); }
 .dash-leaderboard-list li:last-child { border-bottom: 0; }
-.dash-leaderboard-rank { flex: none; width: 20px; color: var(--muted); font-size: 13px; font-weight: 800; text-align: center; }
+.dash-leaderboard-rank { flex: none; width: 20px; color: var(--muted); font-size: var(--fs-sm); font-weight: 800; text-align: center; }
 .dash-leaderboard-rank.rank-1 { color: #cf8b19; }
 .dash-leaderboard-rank.rank-2 { color: #718297; }
 .dash-leaderboard-rank.rank-3 { color: #b97958; }
-.dash-leaderboard-avatar { flex: none; display: grid; place-items: center; width: 32px; height: 32px; border-radius: 50%; background: var(--teal-soft); color: var(--teal-strong); font-size: 14px; font-weight: 800; }
-.dash-leaderboard-name { flex: 1; min-width: 0; overflow: hidden; color: var(--navy); font-size: 13px; font-weight: 700; text-overflow: ellipsis; white-space: nowrap; }
-.dash-leaderboard-name small { color: var(--teal-strong); font-size: 11px; }
-.dash-leaderboard-days { display: flex; flex: none; align-items: center; gap: 3px; color: #c25a21; font-size: 14px; }
-.dash-leaderboard-days small { font-size: 11px; font-weight: 600; }
-.dash-leaderboard-empty { margin: 14px 0 2px; color: var(--muted); font-size: 13px; }
+.dash-leaderboard-avatar { flex: none; display: grid; place-items: center; width: 32px; height: 32px; border-radius: 50%; background: var(--teal-soft); color: var(--teal-strong); font-size: var(--fs-base); font-weight: 800; }
+.dash-leaderboard-frame { display: inline-grid; flex: none; place-items: center; width: 44px; height: 44px; }
+.dash-leaderboard-list li:has(.dash-leaderboard-frame) { padding-block: 7px; }
+.dash-leaderboard-name { flex: 1; min-width: 0; overflow: hidden; color: var(--navy); font-size: var(--fs-sm); font-weight: 700; text-overflow: ellipsis; white-space: nowrap; }
+.dash-leaderboard-name small { color: var(--teal-strong); font-size: var(--fs-2xs); }
+.dash-leaderboard-days { display: flex; flex: none; align-items: center; gap: 3px; color: #c25a21; font-size: var(--fs-base); }
+.dash-leaderboard-days small { font-size: var(--fs-2xs); font-weight: 600; }
+.dash-leaderboard-empty { margin: 14px 0 2px; color: var(--muted); font-size: var(--fs-sm); }
 
 /* Reserve room for the draggable quick notebook bubble beside this action. */
 @media (min-width: 901px) {
@@ -95,3 +97,158 @@
   .dash-news-card { scroll-snap-align: start; }
 }
 @media (prefers-reduced-motion: reduce) { .dash-room-live.is-live i, .dash-room-onair i { animation: none; } }
+
+/* Tabs: one panel at a time under the welcome band, so the dashboard is a single screen. */
+.dash-tabs { display: flex; flex-direction: column; gap: 12px; min-width: 0; container-type: inline-size; }
+.dash-tablist { display: flex; gap: 4px; padding: 4px; overflow-x: auto; border: 1px solid var(--line); border-radius: var(--r-lg); background: #fff; box-shadow: var(--shadow); scrollbar-width: none; }
+.dash-tablist button { display: inline-flex; flex: 1 0 auto; align-items: center; justify-content: center; gap: 6px; padding: 7px 12px; border: 0; border-radius: var(--r-md); background: none; color: var(--muted); font-size: var(--fs-sm); font-weight: 700; white-space: nowrap; transition: background-color 0.2s, color 0.2s; }
+.dash-tablist button:hover { background: var(--surface-2); color: var(--navy); }
+.dash-tablist button[aria-selected="true"] { background: var(--teal-soft); color: var(--teal-strong); }
+.dash-tablist button:focus-visible, .dash-panel:focus-visible { outline: 2px solid var(--teal); outline-offset: 2px; }
+.dash-panel { min-width: 0; border-radius: var(--r-lg); }
+.dash-panel[hidden] { display: none !important; }
+.dash-panel > .card { margin: 0; }
+
+/* Tổng quan: the full dashboard as before the tabs, main column and a narrow side column. */
+.dash-overview { display: grid; grid-template-columns: minmax(0, 1fr) minmax(260px, 0.42fr); gap: 16px; align-items: start; }
+.dash-overview-main, .dash-overview-side { display: flex; flex-direction: column; gap: 16px; min-width: 0; }
+.dash-overview .learning-path .continue-card { margin-top: 14px; }
+.dash-today, .dash-ranks { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; align-content: start; }
+.dash-today .goal-card { min-height: 0; }
+.dash-today .recommended { grid-column: 1 / -1; }
+.dash-today .gt-card { display: flex; flex-direction: column; }
+.dash-today .gt-more { margin-top: auto; padding-top: 8px; }
+/* Continue card: one column in a half-width tile; the sticker art and skill checklist sit in a row. */
+.dash-continue { display: flex; padding: 0; overflow: hidden; }
+.dash-continue .continue-card { display: flex; flex: 1; flex-direction: column; gap: 10px; min-height: 0; margin: 0; padding: 14px 16px; border: 0; border-radius: inherit; }
+.dash-continue .continue-art { display: none; }
+.dash-continue .continue-body { display: flex; flex: 1 0 auto; flex-direction: column; align-items: flex-start; padding: 0; }
+.dash-continue .continue-body h3 { margin: 6px 0 4px; font-size: var(--fs-lg); }
+.dash-continue .continue-body p { display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; overflow: hidden; margin: 0 0 10px; }
+.dash-continue .continue-body .button { margin-top: auto; }
+.dash-continue .continue-skills { flex-direction: row; flex-wrap: wrap; justify-content: flex-start; gap: 6px 12px; padding: 10px 0 0; border-left: 0; border-top: 1px dashed #f0c9bf; }
+.dash-ranks { align-items: start; }
+.dash-ranks .achievements .card-head .text-link { margin-right: 0; }
+
+/* Two tiles side by side need about 560px; a narrower main column stacks them. */
+@container (max-width: 760px) {
+  .dash-overview { grid-template-columns: minmax(0, 1fr); }
+}
+@container (max-width: 560px) {
+  .dash-today, .dash-ranks { grid-template-columns: minmax(0, 1fr); }
+  .dash-tablist button { flex: none; }
+}
+
+/*
+ * Desktop: the board is exactly one screen tall at any size. The tab panel and the planner take
+ * whatever height is left and scroll inside when their content is longer; the "Hôm nay" tiles,
+ * news cards and achievement cards stretch to fill a tall screen. Spacing scales with vh.
+ */
+@media (min-width: 1100px) {
+  .main-area:has(.dash-board) { padding-top: 8px; padding-bottom: 8px; }
+  .dash-board { box-sizing: border-box; height: calc(100dvh - var(--app-header-height, 64px) - 16px); min-height: 460px; grid-template-columns: minmax(0, 1fr) clamp(300px, 22vw, 380px); gap: clamp(12px, 1.2vw, 18px); }
+  .dash-board > .dashboard-main, .dash-board > .dashboard-aside { min-height: 0; gap: clamp(10px, 1.4vh, 16px); }
+  .dash-board .dash-tabs { flex: 1 1 0; min-height: 0; gap: clamp(8px, 1.2vh, 12px); }
+  .dash-board .dash-tablist { flex: none; }
+  .dash-board .dash-tablist button { gap: 5px; padding: clamp(5px, 0.8vh, 9px) clamp(8px, 0.7vw, 14px); }
+  .dash-board .dash-panel { flex: 1 1 0; min-height: 0; overflow: auto; overscroll-behavior: contain; scrollbar-width: thin; }
+  .dash-board .dash-today { grid-auto-rows: minmax(min-content, 1fr); gap: clamp(10px, 1.4vh, 16px); }
+  .dash-board .dash-ranks { grid-auto-rows: minmax(min-content, 1fr); align-items: stretch; gap: clamp(10px, 1.4vh, 16px); }
+
+  /* Tiến độ: the desktop two-column arrangement even in the narrower main column, with tighter cards. */
+  .dash-board .dash-progress .sp-overview { gap: 10px; margin-bottom: 12px; }
+  .dash-board .dash-progress .sp-overview > div { gap: 2px; padding: 10px 14px; }
+  .dash-board .dash-progress .sp-overview strong { font-size: 22px; }
+  .dash-board .dash-progress .sp-grid { grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 12px; }
+  .dash-board .dash-progress :is(.sp-goals, .sp-stats) { grid-column: span 7; }
+  .dash-board .dash-progress :is(.sp-exam, .sp-calendar) { grid-column: span 5; }
+  .dash-board .dash-progress .sp-card { padding: 12px 14px; }
+  .dash-board .dash-progress .sp-card .card-head { margin-bottom: 10px; }
+  .dash-board .dash-progress .sp-goal-overall select { font-size: 36px; }
+
+  .dash-board .goal-card, .dash-board .gt-card, .dash-board .slp-dashboard-card { padding: clamp(12px, 1.8vh, 20px) clamp(14px, 1.2vw, 20px); }
+  .dash-board .goal-card { display: flex; flex-direction: column; }
+  .dash-board .goal-card .card-head { margin-bottom: clamp(6px, 1.2vh, 14px); }
+  .dash-board .goal-content { flex: 1; }
+  .dash-board .progress-ring { width: clamp(84px, 13vh, 132px); height: clamp(84px, 13vh, 132px); padding: clamp(7px, 1vh, 10px); }
+  .dash-board .slp-dashboard-card { align-content: space-between; }
+  .dash-board .slp-dashboard-card .slp-actions { display: flex; flex-wrap: nowrap; align-items: center; gap: 14px; margin-top: 0; }
+  .dash-board .slp-dashboard-card .slp-actions > * { white-space: nowrap; }
+
+  .dash-board .dash-path > .learning-path { box-sizing: border-box; min-height: 100%; }
+  .dash-board .dash-news-panel > .dash-news { box-sizing: border-box; display: flex; flex-direction: column; min-height: 100%; }
+  .dash-board .dash-news-grid { flex: 1; }
+  .dash-board .dash-news-card { grid-template-rows: minmax(0, 1fr) auto auto; }
+  .dash-board .dash-news-img { aspect-ratio: auto; min-height: 120px; }
+
+  /* Welcome band on one row: streak on the left, both actions on the right. */
+  .app-frame .dash-board .welcome-copy { padding: clamp(8px, 1.2vh, 14px) 14px; }
+  .app-frame .dash-board .welcome-row { gap: 12px; }
+  .dash-board .welcome-row .streak-week { gap: 3px; }
+  .app-frame .dash-board .welcome-actions { flex-wrap: nowrap; gap: 8px; }
+  .app-frame .dash-board .welcome-actions .button { padding: 0 12px; white-space: nowrap; }
+
+  /* Grammar card: the roadmap link moves into the card corner; tiles stay one line each and share the height. */
+  .dash-board .gt-card { position: relative; }
+  .dash-board .gt-card .gt { display: flex; flex: 1; flex-direction: column; }
+  .dash-board .gt-card .gt-head { margin-bottom: clamp(6px, 1vh, 10px); }
+  .dash-board .gt-card .gt-tiles { flex: 1; grid-auto-rows: minmax(0, 1fr); gap: clamp(5px, 0.8vh, 10px); }
+  .dash-board .gt-card .gt-tile { min-height: 0; padding: clamp(5px, 0.9vh, 12px) 12px; gap: 10px; }
+  .dash-board .gt-card .gt-tile strong, .dash-board .gt-card .gt-tile em { white-space: nowrap; }
+  .dash-board .gt-card .gt-tile strong { font-size: var(--fs-sm); }
+  .dash-board .gt-card .gt-more { position: absolute; top: clamp(12px, 1.8vh, 20px); right: clamp(14px, 1.2vw, 20px); margin: 0; padding: 0; font-size: var(--fs-xs); }
+  .dash-board .dash-room-foot > span { white-space: nowrap; }
+
+  .dash-board .dash-room { flex: none; gap: clamp(8px, 1.2vh, 12px); padding: clamp(12px, 1.6vh, 16px); }
+  .dash-board .planner-mini { display: flex; flex: 1 1 0; flex-direction: column; min-height: 0; padding: clamp(12px, 1.6vh, 18px) 16px; }
+  .dash-board .planner-mini .card-head { margin-bottom: clamp(8px, 1.2vh, 14px); }
+  .dash-board .planner-mini .task-list { flex: 1 1 0; min-height: 0; overflow: auto; overscroll-behavior: contain; scrollbar-width: thin; }
+  .dash-board .planner-mini { overflow: hidden; }
+  .dash-board .planner-mini .empty-state { display: grid; flex: 1 1 0; place-items: center; min-height: 0; margin: 0; padding: 10px 14px; overflow: auto; }
+  .dash-board .planner-mini .add-task { flex: none; height: clamp(36px, 5vh, 42px); margin-top: 10px; }
+}
+/* Short laptop screens: the room card drops the stream picker and chat lines (both live on the room page). */
+@media (min-width: 1100px) and (max-height: 819px) {
+  .dash-board .dash-room-streams, .dash-board .dash-room-chat { display: none; }
+  .dash-board .dash-room-foot .button { min-height: 34px; }
+  .dash-board .gt-card .gt-tile em, .dash-board .dash-continue .continue-skills { display: none; }
+}
+/* Tall screens: the continue card gets its sticker scene back above the lesson. */
+@media (min-width: 1100px) and (min-height: 820px) {
+  .dash-board .dash-continue .continue-art { display: block; flex: 1 1 0; min-height: 90px; }
+  .dash-board .dash-continue .continue-body { flex: none; }
+}
+@media (min-width: 1100px) and (max-height: 679px) {
+  .dash-board .dash-continue .continue-body p { display: none; }
+}
+
+/*
+ * Narrow main column (small laptop, zoomed-in browser, wide aside): the welcome band and the tab row
+ * must never spill into the study-room column. The band measures itself, tightens first, and only
+ * then lets the actions drop to a second line; the tab row tightens and finally drops its icons.
+ */
+.dashboard-grid .welcome-banner { container: welcome-band / inline-size; }
+.app-frame .dashboard-grid .welcome-banner .welcome-row { flex-wrap: wrap; min-width: 0; }
+.app-frame .dashboard-grid .welcome-banner .welcome-actions { margin-left: auto; }
+@container welcome-band (max-width: 720px) {
+  .app-frame .dashboard-grid .welcome-banner .welcome-row { gap: 8px 10px; }
+  .dashboard-grid .welcome-row .streak-week { gap: 2px; }
+  .dashboard-grid .welcome-row .streak-day i { width: 22px; height: 22px; }
+  .dashboard-grid .welcome-row .streak-week b { margin-left: 2px; font-size: var(--fs-xs); }
+  .app-frame .dashboard-grid .welcome-actions { gap: 6px; }
+  .app-frame .dashboard-grid .welcome-banner .welcome-actions .button { padding: 0 10px; }
+  .dashboard-grid .welcome-plan-extra { display: none; }
+}
+@container (max-width: 700px) {
+  .dash-tablist { gap: 2px; }
+  .dash-board .dash-tablist button, .dash-tablist button { gap: 4px; padding-inline: 8px; }
+}
+@container (max-width: 600px) {
+  .dash-board .dash-tablist button svg, .dash-tablist button svg { display: none; }
+}
+/* Very narrow column: tabs wrap onto two rows instead of hiding the last ones; stat tiles go two by two. */
+@container (max-width: 540px) {
+  .dash-tablist { flex-wrap: wrap; overflow: visible; }
+  .dash-board .dash-tablist button, .dash-tablist button { flex: 1 0 auto; }
+  .sp-overview { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}

@@ -1,0 +1,426 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "DICT-S1-012",
+  "status": "draft",
+  "level": "L2",
+  "section": 1,
+  "topic": "Customer Complaints",
+  "title": "A Broken Electric Kettle",
+  "learning_objectives_vi": [
+    "Luyện nghe tình huống: A customer contacts a shop about a faulty appliance.",
+    "Nhận diện core information exchange và thông tin cuối cùng của cuộc hội thoại.",
+    "Nghe chép lời nói tự nhiên, hiểu bằng chứng trước khi xem transcript."
+  ],
+  "content_format": "section_bridge",
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Service staff / representative",
+      "tts_voice_id": null,
+      "accent_requested": "australian"
+    },
+    {
+      "speaker_id": "B",
+      "role": "Customer / attendee",
+      "tts_voice_id": null,
+      "accent_requested": "australian"
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "Hello, Green Lane Home Store.",
+      "translation_vi": "Xin chào, cửa hàng đồ gia dụng Green Lane.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "complaints",
+        "returns",
+        "places",
+        "section_1",
+        "two_speaker_dialogue",
+        "l2"
+      ]
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "B",
+      "text_en": "Hi. My electric kettle stopped working yesterday.",
+      "translation_vi": "Chào anh. Ấm đun nước điện của tôi ngừng hoạt động hôm qua.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "complaints",
+        "returns",
+        "places",
+        "section_1",
+        "two_speaker_dialogue",
+        "l2"
+      ]
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "A",
+      "text_en": "I'm sorry. Did you buy it this week?",
+      "translation_vi": "Tôi rất tiếc. Bạn mua nó trong tuần này à?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "complaints",
+        "returns",
+        "places",
+        "section_1",
+        "two_speaker_dialogue",
+        "l2"
+      ]
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "B",
+      "text_en": "Yes, I bought it on Monday.",
+      "translation_vi": "Vâng, tôi mua hôm thứ Hai.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "complaints",
+        "returns",
+        "places",
+        "section_1",
+        "two_speaker_dialogue",
+        "l2"
+      ]
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "A",
+      "text_en": "Do you still have the receipt?",
+      "translation_vi": "Bạn vẫn còn hóa đơn chứ?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "complaints",
+        "returns",
+        "places",
+        "section_1",
+        "two_speaker_dialogue",
+        "l2"
+      ]
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "B",
+      "text_en": "Yes, but I left the box at home.",
+      "translation_vi": "Có, nhưng tôi để hộp ở nhà rồi.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "complaints",
+        "returns",
+        "places",
+        "section_1",
+        "two_speaker_dialogue",
+        "l2"
+      ]
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "That's fine. Please visit our Market Street branch.",
+      "translation_vi": "Không sao. Hãy đến chi nhánh ở phố Market.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "complaints",
+        "returns",
+        "places",
+        "section_1",
+        "two_speaker_dialogue",
+        "l2"
+      ]
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "B",
+      "text_en": "What time does it open?",
+      "translation_vi": "Cửa hàng mở cửa lúc mấy giờ?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "complaints",
+        "returns",
+        "places",
+        "section_1",
+        "two_speaker_dialogue",
+        "l2"
+      ]
+    },
+    {
+      "turn_id": "T09",
+      "speaker_id": "A",
+      "text_en": "At nine. We can offer a replacement there.",
+      "translation_vi": "Lúc chín giờ. Chúng tôi có thể đổi sản phẩm khác tại đó.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "complaints",
+        "returns",
+        "places",
+        "section_1",
+        "two_speaker_dialogue",
+        "l2"
+      ]
+    },
+    {
+      "turn_id": "T10",
+      "speaker_id": "B",
+      "text_en": "Thanks. I'll bring the kettle and the receipt.",
+      "translation_vi": "Cảm ơn. Tôi sẽ mang ấm đun và hóa đơn.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "complaints",
+        "returns",
+        "places",
+        "section_1",
+        "two_speaker_dialogue",
+        "l2"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "type": "form_completion",
+      "prompt": "Faulty item: electric ____",
+      "correct_answers": [
+        "kettle"
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Khách báo ấm đun nước điện bị hỏng.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "complaints",
+        "returns",
+        "places",
+        "ielts_section1_practice"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q02",
+      "type": "form_completion",
+      "prompt": "Purchase day: ____",
+      "correct_answers": [
+        "Monday"
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Khách nói mua vào thứ Hai.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "complaints",
+        "returns",
+        "places",
+        "ielts_section1_practice"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q03",
+      "type": "form_completion",
+      "prompt": "Customer must keep the ____",
+      "correct_answers": [
+        "receipt"
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Nhân viên hỏi về hóa đơn.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "complaints",
+        "returns",
+        "places",
+        "ielts_section1_practice"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q04",
+      "type": "form_completion",
+      "prompt": "Return branch: ____ Street",
+      "correct_answers": [
+        "Market"
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "Chi nhánh tiếp nhận nằm trên phố Market.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "complaints",
+        "returns",
+        "places",
+        "ielts_section1_practice"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q05",
+      "type": "form_completion",
+      "prompt": "Solution offered: a ____",
+      "correct_answers": [
+        "replacement"
+      ],
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "explanation_vi": "Cửa hàng đề nghị đổi sản phẩm.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "complaints",
+        "returns",
+        "places",
+        "ielts_section1_practice"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "D01",
+      "type": "dictation",
+      "prompt": "Nghe và chép nguyên văn lượt thoại T04 của nhân vật B.",
+      "correct_answers": [
+        "Yes, I bought it on Monday."
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Câu gốc: Yes, I bought it on Monday. Nghĩa: Vâng, tôi mua hôm thứ Hai. Hãy kiểm tra âm cuối, từ chức năng và chi tiết được sửa nếu có.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "complaints",
+        "returns",
+        "places",
+        "dictation",
+        "exact_words"
+      ]
+    },
+    {
+      "question_id": "D02",
+      "type": "dictation",
+      "prompt": "Nghe và chép nguyên văn lượt thoại T09 của nhân vật A.",
+      "correct_answers": [
+        "At nine. We can offer a replacement there."
+      ],
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "explanation_vi": "Câu gốc: At nine. We can offer a replacement there. Nghĩa: Lúc chín giờ. Chúng tôi có thể đổi sản phẩm khác tại đó. Hãy kiểm tra âm cuối, từ chức năng và chi tiết được sửa nếu có.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "complaints",
+        "returns",
+        "places",
+        "dictation",
+        "exact_words"
+      ]
+    },
+    {
+      "question_id": "G01",
+      "type": "gap_fill",
+      "prompt": "Điền từ/cụm từ bị lược bỏ sau khi nghe: Hi. My ____ stopped working yesterday.",
+      "correct_answers": [
+        "electric kettle"
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "electric kettle: ấm đun nước điện. Câu gốc: Hi. My electric kettle stopped working yesterday.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "complaints",
+        "returns",
+        "places",
+        "gap_fill",
+        "vocabulary_in_context"
+      ]
+    }
+  ],
+  "vocabulary": [
+    {
+      "term": "electric kettle",
+      "pos": "phrase",
+      "meaning_vi": "ấm đun nước điện",
+      "example_en": "Hi. My electric kettle stopped working yesterday.",
+      "example_vi": "Chào anh. Ấm đun nước điện của tôi ngừng hoạt động hôm qua.",
+      "source_turn_id": "T02"
+    },
+    {
+      "term": "receipt",
+      "pos": "word",
+      "meaning_vi": "hóa đơn",
+      "example_en": "Do you still have the receipt?",
+      "example_vi": "Bạn vẫn còn hóa đơn chứ?",
+      "source_turn_id": "T05"
+    },
+    {
+      "term": "branch",
+      "pos": "word",
+      "meaning_vi": "chi nhánh",
+      "example_en": "That's fine. Please visit our Market Street branch.",
+      "example_vi": "Không sao. Hãy đến chi nhánh ở phố Market.",
+      "source_turn_id": "T07"
+    },
+    {
+      "term": "replacement",
+      "pos": "word",
+      "meaning_vi": "sản phẩm thay thế",
+      "example_en": "At nine. We can offer a replacement there.",
+      "example_vi": "Lúc chín giờ. Chúng tôi có thể đổi sản phẩm khác tại đó.",
+      "source_turn_id": "T09"
+    }
+  ],
+  "audio": {
+    "status": "not_generated",
+    "url": null,
+    "duration_ms": null,
+    "model": null,
+    "provider": null,
+    "voice_config": null,
+    "source_transcript_hash": "26bab6be37b2231d08fdd5cf0f96344ae363470ee9498ebdee84e568fee0d380",
+    "audio_sha256": null,
+    "format": null
+  },
+  "qa": {
+    "content_reviewed": false,
+    "answers_verified": false,
+    "audio_verified": false,
+    "rights_cleared": false,
+    "duplicate_reviewed": false,
+    "notes": [
+      "Original AI-assisted draft; expert listening pedagogical review required.",
+      "Audio and word-level timestamps do not exist yet.",
+      "This is a practice lesson, not an official IELTS Listening test.",
+      "M16.2: automated edits are provisional; IELTS teacher final signoff, audio and rights clearance pending."
+    ]
+  },
+  "provenance": {
+    "content_origin": "original_ai_assisted",
+    "source_urls": [],
+    "source_rights_note": "Author-created educational dialogue. Verify audio provider distribution rights, service terms and suitability for user age before synthesis and publishing.",
+    "reviewer": null
+  },
+  "release_metadata": {
+    "published_at": null,
+    "version": 1
+  }
+}

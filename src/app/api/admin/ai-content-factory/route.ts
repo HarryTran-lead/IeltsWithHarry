@@ -4,6 +4,7 @@ import { contentHash, contentSchema, validateExam } from "@/lib/ielts-bank/schem
 import { pilotContent, pilotPayload } from "@/lib/ai-factory/pilot";
 import { createTextPracticeJob } from "@/lib/ai-factory/produce";
 import { defaultKind, factoryKinds, type FactoryKind } from "@/lib/ai-factory/kinds";
+import { dailyPieceKinds } from "@/lib/ai-factory/daily-set";
 
 export const runtime = "nodejs";
 export const maxDuration = 60;
@@ -20,6 +21,16 @@ export async function GET() {
       client.from("ai_factory_jobs").select("status,error,payload").contains("payload", { dailySet: true }).order("created_at", { ascending: false }).limit(1),
     ]);
     for (const result of [settings, voices, jobs, usage, dailySet]) if (result.error) throw new Error(result.error.message);
+    const versionIds = [...new Set((jobs.data || []).map((job) => job.exam_version_id).filter((id): id is string => Boolean(id)))];
+    const examIds = [...new Set((jobs.data || []).map((job) => job.exam_id).filter((id): id is string => Boolean(id)))];
+    const [versions, exams] = await Promise.all([
+      versionIds.length ? client.from("ielts_exam_versions").select("id,content").in("id", versionIds) : Promise.resolve({ data: [], error: null }),
+      examIds.length ? client.from("ielts_exams").select("id,title,skill").in("id", examIds) : Promise.resolve({ data: [], error: null }),
+    ]);
+    if (versions.error) throw new Error(versions.error.message);
+    if (exams.error) throw new Error(exams.error.message);
+    const versionById = new Map((versions.data || []).map((version) => [version.id, version.content]));
+    const examById = new Map((exams.data || []).map((exam) => [exam.id, exam]));
     const rows = await Promise.all((jobs.data || []).filter((job) => !job.payload?.dailySet).map(async (job) => {
       let previewUrl: string | null = null;
       const previewUrls: { sectionId: string; url: string }[] = [];
@@ -32,12 +43,15 @@ export async function GET() {
         }
         previewUrl = previewUrls[0]?.url ?? null;
       }
-      return { ...job, previewUrl, previewUrls };
+      return { ...job, previewUrl, previewUrls, examContent: versionById.get(job.exam_version_id) ?? job.payload?.exam?.content ?? null, examTitle: examById.get(job.exam_id)?.title ?? job.payload?.exam?.title ?? null, skill: examById.get(job.exam_id)?.skill ?? job.payload?.exam?.skill ?? (job.kind === "listening_audio" ? "Listening" : job.kind) };
     }));
     const set = dailySet.data?.[0];
     return Response.json({ settings: settings.data, voices: voices.data, jobs: rows, usage: usage.data,
       dailySet: set ? { setId: set.payload?.setId, completedPieces: Object.keys(set.payload?.pieces ?? {}).length,
-        totalPieces: 11, longRequestsUsed: set.payload?.longRequestsUsed ?? 0, completedAt: set.payload?.completedAt ?? null, error: set.error } : null,
+        totalPieces: dailyPieceKinds.length, missingPieces: dailyPieceKinds.filter((kind) => !set.payload?.pieces?.[kind]),
+        activeKind: set.payload?.activeKind ?? null, quotaDay: set.payload?.quotaDay ?? null,
+        longRequestsUsed: set.payload?.longRequestsUsed ?? 0, lastModelFailure: set.payload?.lastModelFailure ?? null,
+        completedAt: set.payload?.completedAt ?? null, error: set.error } : null,
       textProviderReady: Boolean(process.env.AI_FACTORY_GEMINI_API_KEY && process.env.AI_FACTORY_FREE_TIER_ONLY === "true" && process.env.AI_FACTORY_FREE_TIER_CONFIRMED === "true") });
   } catch (error) { return requestError(error); }
 }

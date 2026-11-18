@@ -1,0 +1,493 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "DICT-F3-004",
+  "status": "draft",
+  "level": "L3",
+  "section": 0,
+  "topic": "Foundation",
+  "title": "Making Appointments",
+  "learning_objectives_vi": [
+    "Đặt lịch và phát hiện ngày giờ đã được sửa."
+  ],
+  "content_format": "mini_conversation",
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Clinic receptionist",
+      "tts_voice_id": null,
+      "accent_requested": "australian"
+    },
+    {
+      "speaker_id": "B",
+      "role": "Patient",
+      "tts_voice_id": null,
+      "accent_requested": "australian"
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "Good morning, Lakeside Dental Clinic.",
+      "translation_vi": "Chào buổi sáng, phòng khám nha khoa Lakeside đây.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "appointments",
+        "schedule_change",
+        "times",
+        "healthcare_services",
+        "mini_conversation",
+        "foundation_f3"
+      ]
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "B",
+      "text_en": "Hello. I need to book a check-up with Dr Evans.",
+      "translation_vi": "Xin chào. Tôi cần đặt lịch khám kiểm tra với bác sĩ Evans.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "appointments",
+        "schedule_change",
+        "times",
+        "healthcare_services",
+        "mini_conversation",
+        "foundation_f3"
+      ]
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "A",
+      "text_en": "We have a free appointment on Tuesday at ten thirty.",
+      "translation_vi": "Chúng tôi còn lịch trống vào thứ Ba lúc 10 giờ 30.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "appointments",
+        "schedule_change",
+        "times",
+        "healthcare_services",
+        "mini_conversation",
+        "foundation_f3"
+      ]
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "B",
+      "text_en": "I'm working on Tuesday morning. Is Thursday possible?",
+      "translation_vi": "Sáng thứ Ba tôi phải đi làm. Thứ Năm có được không?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "appointments",
+        "schedule_change",
+        "times",
+        "healthcare_services",
+        "mini_conversation",
+        "foundation_f3"
+      ]
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "A",
+      "text_en": "Thursday afternoon is full, but there is a space at nine fifteen.",
+      "translation_vi": "Chiều thứ Năm đã kín, nhưng còn một chỗ lúc 9 giờ 15.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "appointments",
+        "schedule_change",
+        "times",
+        "healthcare_services",
+        "mini_conversation",
+        "foundation_f3"
+      ]
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "B",
+      "text_en": "Nine fifteen on Thursday is fine. How long will it take?",
+      "translation_vi": "Thứ Năm lúc 9 giờ 15 thì được. Buổi khám mất bao lâu?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "appointments",
+        "schedule_change",
+        "times",
+        "healthcare_services",
+        "mini_conversation",
+        "foundation_f3"
+      ]
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "About thirty minutes. Please arrive ten minutes early.",
+      "translation_vi": "Khoảng 30 phút. Vui lòng đến sớm mười phút.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "appointments",
+        "schedule_change",
+        "times",
+        "healthcare_services",
+        "mini_conversation",
+        "foundation_f3"
+      ]
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "B",
+      "text_en": "Should I bring my old dental records?",
+      "translation_vi": "Tôi có cần mang hồ sơ nha khoa cũ không?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "appointments",
+        "schedule_change",
+        "times",
+        "healthcare_services",
+        "mini_conversation",
+        "foundation_f3"
+      ]
+    },
+    {
+      "turn_id": "T09",
+      "speaker_id": "A",
+      "text_en": "Yes, if you have them. Your appointment is now confirmed.",
+      "translation_vi": "Có, nếu anh có. Lịch hẹn của anh đã được xác nhận.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "appointments",
+        "schedule_change",
+        "times",
+        "healthcare_services",
+        "mini_conversation",
+        "foundation_f3"
+      ]
+    },
+    {
+      "turn_id": "T10",
+      "speaker_id": "B",
+      "text_en": "Thank you. I will be there just after nine.",
+      "translation_vi": "Cảm ơn. Tôi sẽ có mặt ngay sau 9 giờ.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "appointments",
+        "schedule_change",
+        "times",
+        "healthcare_services",
+        "mini_conversation",
+        "foundation_f3"
+      ]
+    },
+    {
+      "turn_id": "T11",
+      "speaker_id": "A",
+      "text_en": "We look forward to seeing you on Thursday.",
+      "translation_vi": "Chúng tôi mong được đón anh vào thứ Năm.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "appointments",
+        "schedule_change",
+        "times",
+        "healthcare_services",
+        "mini_conversation",
+        "foundation_f3"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "type": "short_answer",
+      "prompt": "What kind of visit does the patient need?",
+      "correct_answers": [
+        "check-up"
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Patient nói cần book a check-up.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "listening_comprehension",
+        "appointments",
+        "schedule_change",
+        "times",
+        "healthcare_services"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q02",
+      "type": "short_answer",
+      "prompt": "Which day does the patient reject?",
+      "correct_answers": [
+        "Tuesday"
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Không nhận lịch thứ Ba vì phải làm vào buổi sáng.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "listening_comprehension",
+        "appointments",
+        "schedule_change",
+        "times",
+        "healthcare_services"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q03",
+      "type": "form_completion",
+      "prompt": "Final appointment time: ____.",
+      "correct_answers": [
+        "9:15",
+        "09:15",
+        "nine fifteen"
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Lịch chính thức là Thursday at nine fifteen.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "listening_comprehension",
+        "appointments",
+        "schedule_change",
+        "times",
+        "healthcare_services"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q04",
+      "type": "form_completion",
+      "prompt": "Estimated visit length: ____ minutes.",
+      "correct_answers": [
+        "30",
+        "thirty"
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "Thời lượng được thông báo là about thirty minutes.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "listening_comprehension",
+        "appointments",
+        "schedule_change",
+        "times",
+        "healthcare_services"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q05",
+      "type": "short_answer",
+      "prompt": "What records should the patient bring?",
+      "correct_answers": [
+        "dental records"
+      ],
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "explanation_vi": "Patient được hướng dẫn mang old dental records nếu có.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "listening_comprehension",
+        "appointments",
+        "schedule_change",
+        "times",
+        "healthcare_services"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "D01",
+      "type": "dictation",
+      "prompt": "Nghe lượt thoại T02 và chép lại toàn bộ câu tiếng Anh.",
+      "correct_answers": [
+        "Hello. I need to book a check-up with Dr Evans."
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Nhận diện check-up và tên bác sĩ. Nghĩa: Xin chào. Tôi cần đặt lịch khám kiểm tra với bác sĩ Evans.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sentence_recognition",
+        "appointments",
+        "schedule_change",
+        "times",
+        "healthcare_services"
+      ]
+    },
+    {
+      "question_id": "D02",
+      "type": "dictation",
+      "prompt": "Nghe lượt thoại T05 và chép lại toàn bộ câu tiếng Anh.",
+      "correct_answers": [
+        "Thursday afternoon is full, but there is a space at nine fifteen."
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Phân biệt lịch cũ và lịch cuối cùng. Nghĩa: Chiều thứ Năm đã kín, nhưng còn một chỗ lúc 9 giờ 15.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sentence_recognition",
+        "appointments",
+        "schedule_change",
+        "times",
+        "healthcare_services"
+      ]
+    },
+    {
+      "question_id": "D03",
+      "type": "dictation",
+      "prompt": "Nghe lượt thoại T07 và chép lại toàn bộ câu tiếng Anh.",
+      "correct_answers": [
+        "About thirty minutes. Please arrive ten minutes early."
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "Nghe yêu cầu đến sớm và thời lượng khám. Nghĩa: Khoảng 30 phút. Vui lòng đến sớm mười phút.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sentence_recognition",
+        "appointments",
+        "schedule_change",
+        "times",
+        "healthcare_services"
+      ]
+    },
+    {
+      "question_id": "G01",
+      "type": "gap_fill",
+      "prompt": "Nghe lượt T05 và điền từ/cụm từ bị thiếu: Thursday afternoon is full, but there is a space at ____.",
+      "correct_answers": [
+        "nine fifteen"
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Nine fifteen = 9:15.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "gap_fill",
+        "guided_dictation",
+        "appointments",
+        "schedule_change",
+        "times",
+        "healthcare_services"
+      ]
+    },
+    {
+      "question_id": "G02",
+      "type": "gap_fill",
+      "prompt": "Nghe lượt T07 và điền từ/cụm từ bị thiếu: About thirty minutes. Please arrive ____.",
+      "correct_answers": [
+        "ten minutes early"
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "Đến sớm mười phút, không phải khám mười phút.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "gap_fill",
+        "guided_dictation",
+        "appointments",
+        "schedule_change",
+        "times",
+        "healthcare_services"
+      ]
+    }
+  ],
+  "vocabulary": [
+    {
+      "term": "check-up",
+      "pos": "noun",
+      "meaning_vi": "buổi khám kiểm tra",
+      "example_en": "Hello. I need to book a check-up with Dr Evans.",
+      "example_vi": "Xin chào. Tôi cần đặt lịch khám kiểm tra với bác sĩ Evans.",
+      "source_turn_id": "T02"
+    },
+    {
+      "term": "appointment",
+      "pos": "noun",
+      "meaning_vi": "lịch hẹn",
+      "example_en": "We have a free appointment on Tuesday at ten thirty.",
+      "example_vi": "Chúng tôi còn lịch trống vào thứ Ba lúc 10 giờ 30.",
+      "source_turn_id": "T03"
+    },
+    {
+      "term": "space",
+      "pos": "noun",
+      "meaning_vi": "suất trống",
+      "example_en": "Thursday afternoon is full, but there is a space at nine fifteen.",
+      "example_vi": "Chiều thứ Năm đã kín, nhưng còn một chỗ lúc 9 giờ 15.",
+      "source_turn_id": "T05"
+    },
+    {
+      "term": "confirmed",
+      "pos": "adjective",
+      "meaning_vi": "đã được xác nhận",
+      "example_en": "Yes, if you have them. Your appointment is now confirmed.",
+      "example_vi": "Có, nếu anh có. Lịch hẹn của anh đã được xác nhận.",
+      "source_turn_id": "T09"
+    }
+  ],
+  "audio": {
+    "status": "not_generated",
+    "url": null,
+    "duration_ms": null,
+    "model": null,
+    "provider": null,
+    "voice_config": null,
+    "source_transcript_hash": "bb7e1683308ebf0ef6375ca6a9b04c35e950f391dffec3659d1724fa05e998d6",
+    "audio_sha256": null,
+    "format": null
+  },
+  "qa": {
+    "content_reviewed": false,
+    "answers_verified": false,
+    "audio_verified": false,
+    "rights_cleared": false,
+    "duplicate_reviewed": false,
+    "notes": [
+      "Original AI-assisted authored draft: human editorial and pedagogical review required.",
+      "Audio and timestamps not created; do not publish until audio is verified.",
+      "All answer variants and distractors must be rechecked after voice synthesis.",
+      "M16.2: automated edits are provisional; IELTS teacher final signoff, audio and rights clearance pending."
+    ]
+  },
+  "provenance": {
+    "content_origin": "original_ai_assisted",
+    "source_urls": [],
+    "source_rights_note": "Original learning scenarios; TTS provider usage and distribution rights must be checked before production release.",
+    "reviewer": null
+  },
+  "release_metadata": {
+    "published_at": null,
+    "version": 1
+  }
+}

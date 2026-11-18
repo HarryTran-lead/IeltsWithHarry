@@ -1,0 +1,351 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "DICT-S4-042",
+  "status": "draft",
+  "level": "L7",
+  "section": 4,
+  "topic": "Animal Behaviour",
+  "title": "Testing Social Learning in Animals",
+  "learning_objectives_vi": [
+    "Nghe bài giảng học thuật một người nói, theo dõi quan hệ giữa luận điểm và bằng chứng.",
+    "Luyện các câu hỏi Section 4 theo thứ tự lời giảng; phân tích giới hạn của khái niệm và cách diễn đạt lại.",
+    "Chép chính xác hai đoạn, luyện từ học thuật theo ngữ cảnh và ôn điểm yếu qua Mistake Bank."
+  ],
+  "content_format": "section_practice",
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Academic lecturer",
+      "tts_voice_id": null,
+      "accent_requested": "new_zealand"
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "How can researchers determine whether an animal learns by watching another? Observing two individuals perform the same action is not enough. They might have encountered the same food, the same obstacle or similar opportunities for trial and error. Social learning is a plausible explanation only when the study can distinguish information obtained from others from information gained independently.",
+      "translation_vi": "Làm sao nhà nghiên cứu biết động vật học bằng quan sát cá thể khác? Thấy hai cá thể thực hiện cùng hành động chưa đủ. Chúng có thể gặp cùng thức ăn, cùng trở ngại hoặc cơ hội thử sai tương tự. Học tập xã hội chỉ là lời giải thích hợp lý khi nghiên cứu phân biệt được thông tin nhận từ cá thể khác với thông tin tự tích lũy.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_4",
+        "academic_lecture",
+        "compare",
+        "l7"
+      ]
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "A",
+      "text_en": "One method uses demonstrators. A trained animal performs a task while another individual observes. Researchers later compare the observer with a control animal that did not see the demonstration. If the observer solves the task faster, social information may have helped. But speed alone does not reveal exactly what was copied: the action, the location or simply attention to the object.",
+      "translation_vi": "Một phương pháp dùng cá thể làm mẫu. Động vật được huấn luyện thực hiện nhiệm vụ khi cá thể khác quan sát. Sau đó nhà nghiên cứu so với cá thể đối chứng không nhìn thấy phần làm mẫu. Nếu cá thể quan sát giải quyết nhanh hơn, thông tin xã hội có thể đã giúp ích. Nhưng tốc độ riêng nó không cho biết chính xác thứ được bắt chước: hành động, vị trí hay chỉ là sự chú ý tới đồ vật.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_4",
+        "academic_lecture",
+        "compare",
+        "l7"
+      ]
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "A",
+      "text_en": "A second approach introduces two different solutions to a problem. Separate groups watch demonstrators using different techniques. If those techniques spread through the groups, researchers gain stronger evidence of socially transmitted behaviour. However, preferences might also arise because one method is easier in a particular setting. Experiments must check whether the available materials and rewards are comparable.",
+      "translation_vi": "Cách thứ hai đưa ra hai lời giải khác nhau cho một vấn đề. Các nhóm riêng biệt quan sát cá thể làm mẫu dùng kỹ thuật khác nhau. Nếu kỹ thuật lan truyền trong nhóm, nhà nghiên cứu có bằng chứng mạnh hơn về hành vi truyền qua xã hội. Tuy nhiên sở thích cũng có thể xuất hiện vì một phương pháp dễ hơn trong bối cảnh nào đó. Thí nghiệm phải kiểm tra vật liệu và phần thưởng có tương đương không.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_4",
+        "academic_lecture",
+        "compare",
+        "l7"
+      ]
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "A",
+      "text_en": "Field observations provide a complementary perspective. They show whether a behaviour persists in a natural community across years or generations. The disadvantage is weaker control over who watches whom and what each animal already knows. Laboratory experiments offer more control but may simplify the social environment. Combining both approaches helps researchers balance realism with the ability to test causes.",
+      "translation_vi": "Quan sát thực địa cho góc nhìn bổ sung. Chúng cho thấy hành vi có duy trì trong cộng đồng tự nhiên qua nhiều năm hoặc thế hệ không. Nhược điểm là khó kiểm soát ai quan sát ai và mỗi cá thể đã biết gì. Thí nghiệm phòng lab kiểm soát tốt hơn nhưng có thể đơn giản hóa môi trường xã hội. Kết hợp cả hai giúp cân bằng tính thực tế với khả năng kiểm tra nguyên nhân.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_4",
+        "academic_lecture",
+        "compare",
+        "l7"
+      ]
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "A",
+      "text_en": "The strongest conclusion is usually narrower than claiming that animals possess human-like culture. Evidence may demonstrate that a behaviour spreads through observation without proving that individuals understand its purpose in human terms. Scientists should report the specific learning mechanism supported by the data and acknowledge alternative explanations. That precision makes comparisons across species more informative.",
+      "translation_vi": "Kết luận mạnh nhất thường hẹp hơn tuyên bố động vật có văn hóa như con người. Bằng chứng có thể cho thấy hành vi lan truyền qua quan sát mà không chứng minh cá thể hiểu mục đích của nó theo cách con người. Nhà khoa học nên báo cáo cơ chế học cụ thể được dữ liệu hỗ trợ và thừa nhận lời giải thích khác. Sự chính xác ấy khiến so sánh giữa các loài có ích hơn.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_4",
+        "academic_lecture",
+        "compare",
+        "l7"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "type": "note_completion",
+      "prompt": "Evidence is needed to distinguish social learning from independent ____.",
+      "correct_answers": [
+        "trial and error"
+      ],
+      "evidence_turn_ids": [
+        "T01"
+      ],
+      "explanation_vi": "Đáp án “trial and error” nằm tại đoạn T01. Nội dung bằng chứng: Làm sao nhà nghiên cứu biết động vật học bằng quan sát cá thể khác? Thấy hai cá thể thực hiện cùng hành động chưa đủ. Chúng có thể gặp cùng thức ăn, cùng trở ngại hoặc cơ hội thử sai tương tự. Học tập xã hội chỉ là lời giải thích hợp lý khi nghiên cứu phân biệt được thông tin nhận từ cá thể khác với thông tin tự tích lũy.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_4",
+        "ielts_practice",
+        "compare",
+        "note_completion"
+      ],
+      "word_limit": 3,
+      "instructions_en": "NO MORE THAN THREE WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q02",
+      "type": "note_completion",
+      "prompt": "Animals trained to show an action to others are called ____.",
+      "correct_answers": [
+        "demonstrators"
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Đáp án “demonstrators” nằm tại đoạn T02. Nội dung bằng chứng: Một phương pháp dùng cá thể làm mẫu. Động vật được huấn luyện thực hiện nhiệm vụ khi cá thể khác quan sát. Sau đó nhà nghiên cứu so với cá thể đối chứng không nhìn thấy phần làm mẫu. Nếu cá thể quan sát giải quyết nhanh hơn, thông tin xã hội có thể đã giúp ích. Nhưng tốc độ riêng nó không cho biết chính xác thứ được bắt chước: hành động, vị trí hay chỉ là sự chú ý tới đồ vật.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_4",
+        "ielts_practice",
+        "compare",
+        "note_completion"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q03",
+      "type": "note_completion",
+      "prompt": "Two groups might watch different ____.",
+      "correct_answers": [
+        "techniques"
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Đáp án “techniques” nằm tại đoạn T03. Nội dung bằng chứng: Cách thứ hai đưa ra hai lời giải khác nhau cho một vấn đề. Các nhóm riêng biệt quan sát cá thể làm mẫu dùng kỹ thuật khác nhau. Nếu kỹ thuật lan truyền trong nhóm, nhà nghiên cứu có bằng chứng mạnh hơn về hành vi truyền qua xã hội. Tuy nhiên sở thích cũng có thể xuất hiện vì một phương pháp dễ hơn trong bối cảnh nào đó. Thí nghiệm phải kiểm tra vật liệu và phần thưởng có tương đương không.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_4",
+        "ielts_practice",
+        "compare",
+        "note_completion"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q04",
+      "type": "note_completion",
+      "prompt": "Field observations can show whether behaviour persists across ____.",
+      "correct_answers": [
+        "generations"
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Đáp án “generations” nằm tại đoạn T04. Nội dung bằng chứng: Quan sát thực địa cho góc nhìn bổ sung. Chúng cho thấy hành vi có duy trì trong cộng đồng tự nhiên qua nhiều năm hoặc thế hệ không. Nhược điểm là khó kiểm soát ai quan sát ai và mỗi cá thể đã biết gì. Thí nghiệm phòng lab kiểm soát tốt hơn nhưng có thể đơn giản hóa môi trường xã hội. Kết hợp cả hai giúp cân bằng tính thực tế với khả năng kiểm tra nguyên nhân.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_4",
+        "ielts_practice",
+        "compare",
+        "note_completion"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q05",
+      "type": "note_completion",
+      "prompt": "A scientific report should acknowledge alternative ____.",
+      "correct_answers": [
+        "explanations"
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Đáp án “explanations” nằm tại đoạn T05. Nội dung bằng chứng: Kết luận mạnh nhất thường hẹp hơn tuyên bố động vật có văn hóa như con người. Bằng chứng có thể cho thấy hành vi lan truyền qua quan sát mà không chứng minh cá thể hiểu mục đích của nó theo cách con người. Nhà khoa học nên báo cáo cơ chế học cụ thể được dữ liệu hỗ trợ và thừa nhận lời giải thích khác. Sự chính xác ấy khiến so sánh giữa các loài có ích hơn.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_4",
+        "ielts_practice",
+        "compare",
+        "note_completion"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q06",
+      "type": "mcq",
+      "prompt": "What finding most strongly favours social transmission of a behaviour?",
+      "correct_answers": [
+        "Different demonstrated methods spread through separate groups under comparable conditions"
+      ],
+      "options": [
+        "All animals eventually discover the easiest food source independently",
+        "Different demonstrated methods spread through separate groups under comparable conditions",
+        "An observer and demonstrator happen to make the same movement once"
+      ],
+      "evidence_turn_ids": [
+        "T01",
+        "T03",
+        "T05"
+      ],
+      "explanation_vi": "Hãy kết hợp luận điểm đầu, ví dụ ở giữa và kết luận cuối bài. Kết luận mạnh nhất thường hẹp hơn tuyên bố động vật có văn hóa như con người. Bằng chứng có thể cho thấy hành vi lan truyền qua quan sát mà không chứng minh cá thể hiểu mục đích của nó theo cách con người. Nhà khoa học nên báo cáo cơ chế học cụ thể được dữ liệu hỗ trợ và thừa nhận lời giải thích khác. Sự chính xác ấy khiến so sánh giữa các loài có ích hơn. Phương án chính xác: “Different demonstrated methods spread through separate groups under comparable conditions”; hai phương án khác khái quát quá mức hoặc không phù hợp bằng chứng.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "section_4",
+        "ielts_practice",
+        "compare",
+        "main_idea"
+      ]
+    },
+    {
+      "question_id": "D01",
+      "type": "dictation",
+      "prompt": "Nghe đoạn T02 và chép lại chính xác lời giảng.",
+      "correct_answers": [
+        "One method uses demonstrators. A trained animal performs a task while another individual observes. Researchers later compare the observer with a control animal that did not see the demonstration. If the observer solves the task faster, social information may have helped. But speed alone does not reveal exactly what was copied: the action, the location or simply attention to the object."
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Phân tích từ nối, âm yếu và cụm thuật ngữ học thuật. Nghĩa của đoạn: Một phương pháp dùng cá thể làm mẫu. Động vật được huấn luyện thực hiện nhiệm vụ khi cá thể khác quan sát. Sau đó nhà nghiên cứu so với cá thể đối chứng không nhìn thấy phần làm mẫu. Nếu cá thể quan sát giải quyết nhanh hơn, thông tin xã hội có thể đã giúp ích. Nhưng tốc độ riêng nó không cho biết chính xác thứ được bắt chước: hành động, vị trí hay chỉ là sự chú ý tới đồ vật.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_4",
+        "dictation",
+        "exact_transcript"
+      ]
+    },
+    {
+      "question_id": "D02",
+      "type": "dictation",
+      "prompt": "Nghe đoạn T04 và chép lại chính xác lời giảng.",
+      "correct_answers": [
+        "Field observations provide a complementary perspective. They show whether a behaviour persists in a natural community across years or generations. The disadvantage is weaker control over who watches whom and what each animal already knows. Laboratory experiments offer more control but may simplify the social environment. Combining both approaches helps researchers balance realism with the ability to test causes."
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Phân tích từ nối, âm yếu và cụm thuật ngữ học thuật. Nghĩa của đoạn: Quan sát thực địa cho góc nhìn bổ sung. Chúng cho thấy hành vi có duy trì trong cộng đồng tự nhiên qua nhiều năm hoặc thế hệ không. Nhược điểm là khó kiểm soát ai quan sát ai và mỗi cá thể đã biết gì. Thí nghiệm phòng lab kiểm soát tốt hơn nhưng có thể đơn giản hóa môi trường xã hội. Kết hợp cả hai giúp cân bằng tính thực tế với khả năng kiểm tra nguyên nhân.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_4",
+        "dictation",
+        "exact_transcript"
+      ]
+    },
+    {
+      "question_id": "G01",
+      "type": "gap_fill",
+      "prompt": "Nghe T01 rồi điền phần thiếu: How can researchers determine whether an animal learns by watching another? Observing two individuals perform the same action is not enough. They might have encountered the same food, the same obstacle or similar opportunities for trial and error. ____ is a plausible explanation only when the study can distinguish information obtained from others from information gained independently.",
+      "correct_answers": [
+        "Social learning"
+      ],
+      "evidence_turn_ids": [
+        "T01"
+      ],
+      "explanation_vi": "Điền “Social learning”, nghĩa: học tập xã hội. Cụm từ này xuất hiện trong T01.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_4",
+        "gap_fill",
+        "academic_vocabulary"
+      ]
+    }
+  ],
+  "vocabulary": [
+    {
+      "term": "Social learning",
+      "pos": "n. phr.",
+      "meaning_vi": "học tập xã hội",
+      "example_en": "How can researchers determine whether an animal learns by watching another? Observing two individuals perform the same action is not enough. They might have encountered the same food, the same obstacle or similar opportunities for trial and error. Social learning is a plausible explanation only when the study can distinguish information obtained from others from information gained independently.",
+      "example_vi": "Làm sao nhà nghiên cứu biết động vật học bằng quan sát cá thể khác? Thấy hai cá thể thực hiện cùng hành động chưa đủ. Chúng có thể gặp cùng thức ăn, cùng trở ngại hoặc cơ hội thử sai tương tự. Học tập xã hội chỉ là lời giải thích hợp lý khi nghiên cứu phân biệt được thông tin nhận từ cá thể khác với thông tin tự tích lũy.",
+      "source_turn_id": "T01"
+    },
+    {
+      "term": "demonstrators",
+      "pos": "n. pl.",
+      "meaning_vi": "cá thể làm mẫu",
+      "example_en": "One method uses demonstrators. A trained animal performs a task while another individual observes. Researchers later compare the observer with a control animal that did not see the demonstration. If the observer solves the task faster, social information may have helped. But speed alone does not reveal exactly what was copied: the action, the location or simply attention to the object.",
+      "example_vi": "Một phương pháp dùng cá thể làm mẫu. Động vật được huấn luyện thực hiện nhiệm vụ khi cá thể khác quan sát. Sau đó nhà nghiên cứu so với cá thể đối chứng không nhìn thấy phần làm mẫu. Nếu cá thể quan sát giải quyết nhanh hơn, thông tin xã hội có thể đã giúp ích. Nhưng tốc độ riêng nó không cho biết chính xác thứ được bắt chước: hành động, vị trí hay chỉ là sự chú ý tới đồ vật.",
+      "source_turn_id": "T02"
+    },
+    {
+      "term": "socially transmitted behaviour",
+      "pos": "n. phr.",
+      "meaning_vi": "hành vi truyền qua xã hội",
+      "example_en": "A second approach introduces two different solutions to a problem. Separate groups watch demonstrators using different techniques. If those techniques spread through the groups, researchers gain stronger evidence of socially transmitted behaviour. However, preferences might also arise because one method is easier in a particular setting. Experiments must check whether the available materials and rewards are comparable.",
+      "example_vi": "Cách thứ hai đưa ra hai lời giải khác nhau cho một vấn đề. Các nhóm riêng biệt quan sát cá thể làm mẫu dùng kỹ thuật khác nhau. Nếu kỹ thuật lan truyền trong nhóm, nhà nghiên cứu có bằng chứng mạnh hơn về hành vi truyền qua xã hội. Tuy nhiên sở thích cũng có thể xuất hiện vì một phương pháp dễ hơn trong bối cảnh nào đó. Thí nghiệm phải kiểm tra vật liệu và phần thưởng có tương đương không.",
+      "source_turn_id": "T03"
+    },
+    {
+      "term": "Field observations",
+      "pos": "n. phr.",
+      "meaning_vi": "quan sát thực địa",
+      "example_en": "Field observations provide a complementary perspective. They show whether a behaviour persists in a natural community across years or generations. The disadvantage is weaker control over who watches whom and what each animal already knows. Laboratory experiments offer more control but may simplify the social environment. Combining both approaches helps researchers balance realism with the ability to test causes.",
+      "example_vi": "Quan sát thực địa cho góc nhìn bổ sung. Chúng cho thấy hành vi có duy trì trong cộng đồng tự nhiên qua nhiều năm hoặc thế hệ không. Nhược điểm là khó kiểm soát ai quan sát ai và mỗi cá thể đã biết gì. Thí nghiệm phòng lab kiểm soát tốt hơn nhưng có thể đơn giản hóa môi trường xã hội. Kết hợp cả hai giúp cân bằng tính thực tế với khả năng kiểm tra nguyên nhân.",
+      "source_turn_id": "T04"
+    }
+  ],
+  "audio": {
+    "status": "not_generated",
+    "url": null,
+    "duration_ms": null,
+    "model": null,
+    "provider": null,
+    "voice_config": null,
+    "source_transcript_hash": "c027d2d0475dc807df7de44ce49096271b759d929ac27a5231fe3d47c5bbba3f",
+    "audio_sha256": null,
+    "format": null
+  },
+  "qa": {
+    "content_reviewed": false,
+    "answers_verified": false,
+    "audio_verified": false,
+    "rights_cleared": false,
+    "duplicate_reviewed": false,
+    "notes": [
+      "Original AI-assisted educational script, not an official IELTS transcript.",
+      "Editorial, academic and linguistic review pending.",
+      "Audio/TTS not generated; text-to-speech distribution rights must be confirmed before use, especially for minors.",
+      "Six IELTS-style practice questions per lesson; this is not a full official Part 4 test or a calibrated IELTS Band test.",
+      "M16.2: automated edits are provisional; IELTS teacher final signoff, audio and rights clearance pending."
+    ]
+  },
+  "provenance": {
+    "content_origin": "original_ai_assisted",
+    "source_urls": [],
+    "source_rights_note": "Original transcript and translation drafts; verify academic claims and terms, and TTS provider redistribution conditions before release.",
+    "reviewer": null
+  },
+  "release_metadata": {
+    "published_at": null,
+    "version": 1
+  }
+}

@@ -1,0 +1,610 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "FND2-031",
+  "status": "draft",
+  "level": "L2",
+  "section": 0,
+  "topic": "Foundation M18 – Numbers",
+  "title": "Large numbers in real situations",
+  "learning_objectives_vi": [
+    "Nghe được large numbers in real situations trong tình huống mới.",
+    "Chép chính xác thông tin mục tiêu (counts).",
+    "Phân biệt bài luyện quen và bài kiểm tra chưa từng nghe."
+  ],
+  "content_format": "sentence_drill",
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Foundation narrator",
+      "tts_voice_id": null,
+      "accent_requested": "british"
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "The library recorded one thousand two hundred and forty visitors on Saturday.",
+      "translation_vi": "Thư viện ghi nhận 1.240 lượt khách vào thứ Bảy.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m18",
+        "counts",
+        "integer"
+      ],
+      "target_value": "1240",
+      "target_kind": "integer",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "A",
+      "text_en": "Our club has just over three thousand members, exactly three thousand and twelve.",
+      "translation_vi": "Câu lạc bộ của chúng tôi có hơn 3.000 hội viên, chính xác là 3.012.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m18",
+        "counts",
+        "integer"
+      ],
+      "target_value": "3012",
+      "target_kind": "integer",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "A",
+      "text_en": "The new sports hall can seat one thousand eight hundred people.",
+      "translation_vi": "Nhà thi đấu mới có sức chứa 1.800 người.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m18",
+        "counts",
+        "integer"
+      ],
+      "target_value": "1800",
+      "target_kind": "integer",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "A",
+      "text_en": "The charity received four thousand and sixty pounds this month.",
+      "translation_vi": "Tổ chức từ thiện nhận được 4.060 bảng trong tháng này.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m18",
+        "counts",
+        "integer"
+      ],
+      "target_value": "4060",
+      "target_kind": "integer",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "A",
+      "text_en": "We printed two thousand five hundred copies of the leaflet.",
+      "translation_vi": "Chúng tôi in 2.500 bản tờ rơi.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m18",
+        "counts",
+        "integer"
+      ],
+      "target_value": "2500",
+      "target_kind": "integer",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "A",
+      "text_en": "The cycling event attracted six thousand and ninety participants.",
+      "translation_vi": "Sự kiện đạp xe thu hút 6.090 người tham gia.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m18",
+        "counts",
+        "integer"
+      ],
+      "target_value": "6090",
+      "target_kind": "integer",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "The research team interviewed one thousand and fifteen households.",
+      "translation_vi": "Nhóm nghiên cứu phỏng vấn 1.015 hộ gia đình.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m18",
+        "counts",
+        "integer"
+      ],
+      "target_value": "1015",
+      "target_kind": "integer",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "A",
+      "text_en": "Our yearly electricity use was seven thousand four hundred units.",
+      "translation_vi": "Lượng điện sử dụng hằng năm của chúng tôi là 7.400 đơn vị.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m18",
+        "counts",
+        "integer"
+      ],
+      "target_value": "7400",
+      "target_kind": "integer",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T09",
+      "speaker_id": "A",
+      "text_en": "The museum has eight thousand and eight items in its collection.",
+      "translation_vi": "Bảo tàng có 8.008 hiện vật trong bộ sưu tập.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m18",
+        "counts",
+        "integer"
+      ],
+      "target_value": "8008",
+      "target_kind": "integer",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T10",
+      "speaker_id": "A",
+      "text_en": "The festival sold nine thousand three hundred and twenty tickets.",
+      "translation_vi": "Lễ hội đã bán 9.320 vé.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m18",
+        "counts",
+        "integer"
+      ],
+      "target_value": "9320",
+      "target_kind": "integer",
+      "bank_role": "training"
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "type": "dictation",
+      "prompt": "Nghe lượt T01 rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "The library recorded one thousand two hundred and forty visitors on Saturday."
+      ],
+      "evidence_turn_ids": [
+        "T01"
+      ],
+      "explanation_vi": "Câu gốc: The library recorded one thousand two hundred and forty visitors on Saturday. Nghĩa: Thư viện ghi nhận 1.240 lượt khách vào thứ Bảy. Lưu ý: Nghe theo nhóm nghìn, trăm, chục; chú ý 'and' trong giọng Anh.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "counts"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q02",
+      "type": "dictation",
+      "prompt": "Nghe lượt T02 rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "Our club has just over three thousand members, exactly three thousand and twelve."
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Câu gốc: Our club has just over three thousand members, exactly three thousand and twelve. Nghĩa: Câu lạc bộ của chúng tôi có hơn 3.000 hội viên, chính xác là 3.012. Lưu ý: Nghe theo nhóm nghìn, trăm, chục; chú ý 'and' trong giọng Anh.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "counts"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q03",
+      "type": "dictation",
+      "prompt": "Nghe lượt T03 rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "The new sports hall can seat one thousand eight hundred people."
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Câu gốc: The new sports hall can seat one thousand eight hundred people. Nghĩa: Nhà thi đấu mới có sức chứa 1.800 người. Lưu ý: Nghe theo nhóm nghìn, trăm, chục; chú ý 'and' trong giọng Anh.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "counts"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q04",
+      "type": "dictation",
+      "prompt": "Nghe lượt T04 rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "The charity received four thousand and sixty pounds this month."
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Câu gốc: The charity received four thousand and sixty pounds this month. Nghĩa: Tổ chức từ thiện nhận được 4.060 bảng trong tháng này. Lưu ý: Nghe theo nhóm nghìn, trăm, chục; chú ý 'and' trong giọng Anh.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "counts"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q05",
+      "type": "dictation",
+      "prompt": "Nghe lượt T05 rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "We printed two thousand five hundred copies of the leaflet."
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Câu gốc: We printed two thousand five hundred copies of the leaflet. Nghĩa: Chúng tôi in 2.500 bản tờ rơi. Lưu ý: Nghe theo nhóm nghìn, trăm, chục; chú ý 'and' trong giọng Anh.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "counts"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q06",
+      "type": "dictation",
+      "prompt": "Nghe lượt T06 rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "The cycling event attracted six thousand and ninety participants."
+      ],
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "explanation_vi": "Câu gốc: The cycling event attracted six thousand and ninety participants. Nghĩa: Sự kiện đạp xe thu hút 6.090 người tham gia. Lưu ý: Nghe theo nhóm nghìn, trăm, chục; chú ý 'and' trong giọng Anh.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "counts"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q07",
+      "type": "dictation",
+      "prompt": "Nghe lượt T07 rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "The research team interviewed one thousand and fifteen households."
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "Câu gốc: The research team interviewed one thousand and fifteen households. Nghĩa: Nhóm nghiên cứu phỏng vấn 1.015 hộ gia đình. Lưu ý: Nghe theo nhóm nghìn, trăm, chục; chú ý 'and' trong giọng Anh.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "counts"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q08",
+      "type": "dictation",
+      "prompt": "Nghe lượt T08 rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "Our yearly electricity use was seven thousand four hundred units."
+      ],
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "explanation_vi": "Câu gốc: Our yearly electricity use was seven thousand four hundred units. Nghĩa: Lượng điện sử dụng hằng năm của chúng tôi là 7.400 đơn vị. Lưu ý: Nghe theo nhóm nghìn, trăm, chục; chú ý 'and' trong giọng Anh.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "counts"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q09",
+      "type": "dictation",
+      "prompt": "Nghe lượt T09 rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "The museum has eight thousand and eight items in its collection."
+      ],
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "explanation_vi": "Câu gốc: The museum has eight thousand and eight items in its collection. Nghĩa: Bảo tàng có 8.008 hiện vật trong bộ sưu tập. Lưu ý: Nghe theo nhóm nghìn, trăm, chục; chú ý 'and' trong giọng Anh.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "counts"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q10",
+      "type": "dictation",
+      "prompt": "Nghe lượt T10 rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "The festival sold nine thousand three hundred and twenty tickets."
+      ],
+      "evidence_turn_ids": [
+        "T10"
+      ],
+      "explanation_vi": "Câu gốc: The festival sold nine thousand three hundred and twenty tickets. Nghĩa: Lễ hội đã bán 9.320 vé. Lưu ý: Nghe theo nhóm nghìn, trăm, chục; chú ý 'and' trong giọng Anh.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "counts"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q11",
+      "type": "short_answer",
+      "prompt": "Nghe lượt T06 rồi nhập số lượng / số hiệu được xác nhận trong câu.",
+      "correct_answers": [
+        "6090"
+      ],
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "explanation_vi": "Nghe đúng thông tin đích; nếu có sửa thì dùng thông tin sau cùng. Đáp án: 6090. Nội dung: Sự kiện đạp xe thu hút 6.090 người tham gia.",
+      "scoring_policy": "canonical_integer_server",
+      "target_kind": "integer",
+      "question_tags": [
+        "short_answer",
+        "counts",
+        "integer"
+      ],
+      "max_replays_practice": 5,
+      "first_listen_only_for_mastery": false
+    },
+    {
+      "question_id": "Q12",
+      "type": "short_answer",
+      "prompt": "Nghe lượt T07 rồi nhập số lượng / số hiệu được xác nhận trong câu.",
+      "correct_answers": [
+        "1015"
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "Nghe đúng thông tin đích; nếu có sửa thì dùng thông tin sau cùng. Đáp án: 1015. Nội dung: Nhóm nghiên cứu phỏng vấn 1.015 hộ gia đình.",
+      "scoring_policy": "canonical_integer_server",
+      "target_kind": "integer",
+      "question_tags": [
+        "short_answer",
+        "counts",
+        "integer"
+      ],
+      "max_replays_practice": 5,
+      "first_listen_only_for_mastery": false
+    },
+    {
+      "question_id": "Q13",
+      "type": "short_answer",
+      "prompt": "Nghe lượt T08 rồi nhập số lượng / số hiệu được xác nhận trong câu.",
+      "correct_answers": [
+        "7400"
+      ],
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "explanation_vi": "Nghe đúng thông tin đích; nếu có sửa thì dùng thông tin sau cùng. Đáp án: 7400. Nội dung: Lượng điện sử dụng hằng năm của chúng tôi là 7.400 đơn vị.",
+      "scoring_policy": "canonical_integer_server",
+      "target_kind": "integer",
+      "question_tags": [
+        "short_answer",
+        "counts",
+        "integer"
+      ],
+      "max_replays_practice": 5,
+      "first_listen_only_for_mastery": false
+    },
+    {
+      "question_id": "Q14",
+      "type": "short_answer",
+      "prompt": "Nghe lượt T09 rồi nhập số lượng / số hiệu được xác nhận trong câu.",
+      "correct_answers": [
+        "8008"
+      ],
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "explanation_vi": "Nghe đúng thông tin đích; nếu có sửa thì dùng thông tin sau cùng. Đáp án: 8008. Nội dung: Bảo tàng có 8.008 hiện vật trong bộ sưu tập.",
+      "scoring_policy": "canonical_integer_server",
+      "target_kind": "integer",
+      "question_tags": [
+        "short_answer",
+        "counts",
+        "integer"
+      ],
+      "max_replays_practice": 5,
+      "first_listen_only_for_mastery": false
+    },
+    {
+      "question_id": "Q15",
+      "type": "short_answer",
+      "prompt": "Nghe lượt T10 rồi nhập số lượng / số hiệu được xác nhận trong câu.",
+      "correct_answers": [
+        "9320"
+      ],
+      "evidence_turn_ids": [
+        "T10"
+      ],
+      "explanation_vi": "Nghe đúng thông tin đích; nếu có sửa thì dùng thông tin sau cùng. Đáp án: 9320. Nội dung: Lễ hội đã bán 9.320 vé.",
+      "scoring_policy": "canonical_integer_server",
+      "target_kind": "integer",
+      "question_tags": [
+        "short_answer",
+        "counts",
+        "integer"
+      ],
+      "max_replays_practice": 5,
+      "first_listen_only_for_mastery": false
+    }
+  ],
+  "vocabulary": [
+    {
+      "term": "attendance",
+      "pos": "n",
+      "meaning_vi": "số người tham dự",
+      "example_en": "Attendance was higher than expected this week.",
+      "example_vi": "Số người tham dự tuần này cao hơn dự kiến.",
+      "is_illustrative_context": true
+    },
+    {
+      "term": "visitor",
+      "pos": "n",
+      "meaning_vi": "khách tham quan",
+      "example_en": "Every visitor receives a printed map.",
+      "example_vi": "Mỗi khách tham quan nhận một bản đồ in.",
+      "is_illustrative_context": true
+    },
+    {
+      "term": "quantity",
+      "pos": "n",
+      "meaning_vi": "số lượng",
+      "example_en": "Confirm the quantity before placing an order.",
+      "example_vi": "Xác nhận số lượng trước khi đặt hàng.",
+      "is_illustrative_context": true
+    },
+    {
+      "term": "exactly",
+      "pos": "adv",
+      "meaning_vi": "chính xác là",
+      "example_en": "Our club has just over three thousand members, exactly three thousand and twelve.",
+      "example_vi": "Câu lạc bộ của chúng tôi có hơn 3.000 hội viên, chính xác là 3.012.",
+      "is_illustrative_context": true
+    },
+    {
+      "term": "record",
+      "pos": "v",
+      "meaning_vi": "ghi nhận",
+      "example_en": "Please record the updated attendance figure.",
+      "example_vi": "Vui lòng ghi lại số người tham dự đã cập nhật.",
+      "is_illustrative_context": true
+    },
+    {
+      "term": "figure",
+      "pos": "n",
+      "meaning_vi": "con số",
+      "example_en": "The latest figure is seventy-five.",
+      "example_vi": "Con số mới nhất là bảy mươi lăm.",
+      "is_illustrative_context": true
+    }
+  ],
+  "micro_skill_id": "counts",
+  "bank_role": "training",
+  "content_design": {
+    "sequence": "10_varied_contexts",
+    "first_listen": "1x",
+    "guided_replay_max": 5,
+    "mastery_requires_unseen": true,
+    "learning_note_vi": "Nghe theo nhóm nghìn, trăm, chục; chú ý 'and' trong giọng Anh.",
+    "category": "numbers",
+    "post_submit_review_only": true,
+    "unseen_assessment_id": "FND2-031-HOLDOUT",
+    "spoken_text_must_match_target": true
+  },
+  "audio": {
+    "status": "not_generated",
+    "url": null,
+    "duration_ms": null,
+    "provider": null,
+    "model": null,
+    "voice_config": null,
+    "format": null,
+    "audio_sha256": null,
+    "source_transcript_hash": "769bc41496b4b2af5f15879ea0e58e9a8635060d6c9171a6af04ba547ccbaa4a",
+    "generation_notes": "Synthesize spoken utterance only, speak spelled letters and punctuation explicitly. Never read teaching metadata. QA each target by a person."
+  },
+  "qa": {
+    "content_reviewed": false,
+    "answers_verified": false,
+    "audio_verified": false,
+    "human_signed_off": false,
+    "duplicate_reviewed": false,
+    "notes": [
+      "M18 originally authored drafts; automated checks only, teacher/accent review pending.",
+      "No TTS audio and no measured timestamps. Domain/email examples use reserved example.* names."
+    ]
+  },
+  "provenance": {
+    "content_origin": "original_ai_assisted",
+    "rights_status": "pending_audio_terms_review",
+    "source_urls": [],
+    "reviewer": null
+  },
+  "release_metadata": {
+    "published_at": null,
+    "version": 1
+  },
+  "lesson_theory_vi": {
+    "core_rule": "Nghe theo nhóm nghìn, trăm, chục; chú ý 'and' trong giọng Anh.",
+    "worked_contrasts": [
+      {
+        "spoken_example": "one thousand and forty",
+        "written_value": "1040",
+        "teacher_note_vi": "Có nghìn, không có trăm: 1.040."
+      },
+      {
+        "spoken_example": "three thousand two hundred",
+        "written_value": "3200",
+        "teacher_note_vi": "Nhóm nghìn và nhóm trăm cần ghi đúng."
+      }
+    ],
+    "learning_steps": [
+      "Nhìn tiêu đề kỹ năng và đọc hai ví dụ có giải thích trước khi nghe.",
+      "Nghe một lần và thử ghi số/chữ; không xem transcript trước khi nộp.",
+      "Sau khi nộp, so sánh từ khóa mục tiêu, số 0 và thông tin đã được sửa.",
+      "Làm hai câu đánh giá chưa gặp ở lần nghe đầu và ghi số lần phát lại."
+    ],
+    "common_mistakes": [
+      "Chọn số đầu tiên được nhắc tới thay vì số được xác nhận cuối cùng.",
+      "Bỏ số 0 đầu trong mã hoặc làm tròn số thập phân."
+    ],
+    "before_audio_question": "Đây là số lượng, số tiền, mã, phần trăm hay đơn vị đo? Dữ kiện cuối cùng có được sửa không?",
+    "difficulty_steps": [
+      "T01–T03: nghe thông tin chính trong ngữ cảnh rõ.",
+      "T04–T07: nghe chuỗi dài hơn, chọn chữ/số đúng.",
+      "T08–T10: chú ý thông tin sửa lại, định dạng và ngữ cảnh pha trộn."
+    ],
+    "examples_are_not_mastery_items": true
+  }
+}

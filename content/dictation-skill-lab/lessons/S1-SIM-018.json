@@ -1,0 +1,866 @@
+{
+  "schema_version": "1.2.0",
+  "lesson_id": "S1-SIM-018",
+  "status": "draft",
+  "level": "L4",
+  "section": 1,
+  "topic": "Registering for festival volunteer shifts",
+  "title": "Volunteering at an Arts Festival",
+  "content_format": "section_exam_simulation",
+  "exam_part": "IELTS_LISTENING_PART_1_STYLE",
+  "official_ielts_material": false,
+  "learning_objectives_vi": [
+    "Theo dõi hội thoại giao dịch đời sống hai người nói trong một lần nghe.",
+    "Điền chính xác thông tin, kể cả khi có phương án cũ và thông tin đính chính.",
+    "Phân tích MCQ dựa trên ý nghĩa cuối cùng và bằng chứng sau khi nộp bài."
+  ],
+  "target_skills": [
+    "volunteering",
+    "registration",
+    "training",
+    "shifts",
+    "uniform"
+  ],
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Festival volunteer coordinator",
+      "accent_requested": "australian",
+      "tts_voice_id": null
+    },
+    {
+      "speaker_id": "B",
+      "role": "Applicant",
+      "accent_requested": "australian",
+      "tts_voice_id": null
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "Hello, Harbour Arts Festival volunteers' office. This is Chloe. Are you interested in helping during the event itself?",
+      "translation_vi": "Xin chào văn phòng tình nguyện Lễ hội Nghệ thuật Harbour, Chloe đây. Anh muốn giúp trong lễ hội phải không?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "volunteering",
+        "registration",
+        "training",
+        "shifts",
+        "uniform"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "B",
+      "text_en": "Yes. I came as a visitor last year and enjoyed the performances, so I'd like to contribute a few hours this time.",
+      "translation_vi": "Vâng. Năm ngoái tôi đến xem và thích các buổi biểu diễn, năm nay muốn hỗ trợ vài giờ.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "volunteering",
+        "registration",
+        "training",
+        "shifts",
+        "uniform"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "A",
+      "text_en": "We currently need volunteers for our Welcome Team. The backstage crew is full, and ticket sales are handled by paid staff.",
+      "translation_vi": "Chúng tôi cần tình nguyện viên đội Welcome Team. Hậu trường đã đủ, bán vé do nhân viên trả lương lo.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "volunteering",
+        "registration",
+        "training",
+        "shifts",
+        "uniform"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "B",
+      "text_en": "Welcome Team would suit me. I work with customers every day, and I enjoy helping people find their way around.",
+      "translation_vi": "Welcome Team hợp với tôi. Tôi làm việc với khách mỗi ngày, thích giúp mọi người tìm đường.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "volunteering",
+        "registration",
+        "training",
+        "shifts",
+        "uniform"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "A",
+      "text_en": "Visitors often arrive with questions about accessible entrances, so a calm manner is useful when several events begin close together.",
+      "translation_vi": "Khách thường hỏi lối vào thuận tiện, nên thái độ bình tĩnh hữu ích khi nhiều sự kiện gần giờ bắt đầu.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "volunteering",
+        "registration",
+        "training",
+        "shifts",
+        "uniform"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "B",
+      "text_en": "I deal with queues at work, so I shouldn't be too worried by crowds. I'd rather be near the public entrances anyway.",
+      "translation_vi": "Ở chỗ làm tôi quen xử lý hàng chờ nên không sợ đông. Tôi cũng thích làm gần lối vào chung.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "volunteering",
+        "registration",
+        "training",
+        "shifts",
+        "uniform"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "Excellent. The main festival is in July, but all volunteers attend an orientation session during the previous week.",
+      "translation_vi": "Tốt. Lễ hội chính vào tháng Bảy, nhưng tình nguyện viên cần dự hướng dẫn tuần trước đó.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "volunteering",
+        "registration",
+        "training",
+        "shifts",
+        "uniform"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "B",
+      "text_en": "I was hoping to join the Thursday briefing. Is that available, or does everyone have to attend on the same day?",
+      "translation_vi": "Tôi muốn dự buổi hướng dẫn thứ Năm. Còn không hay mọi người phải cùng ngày?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "volunteering",
+        "registration",
+        "training",
+        "shifts",
+        "uniform"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T09",
+      "speaker_id": "A",
+      "text_en": "The Thursday briefing is for performers. Volunteers are booked for Wednesday evening, with a shorter repeat session on Friday morning.",
+      "translation_vi": "Thứ Năm dành cho nghệ sĩ. Tình nguyện viên học tối thứ Tư, có buổi ngắn lặp lại sáng thứ Sáu.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "volunteering",
+        "registration",
+        "training",
+        "shifts",
+        "uniform"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T10",
+      "speaker_id": "B",
+      "text_en": "Wednesday evening is fine. Is it at the main theatre, where the opening concert takes place?",
+      "translation_vi": "Tối thứ Tư được. Có học ở nhà hát chính, nơi có hòa nhạc mở màn không?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "volunteering",
+        "registration",
+        "training",
+        "shifts",
+        "uniform"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T11",
+      "speaker_id": "A",
+      "text_en": "No, the orientation is in the gallery studio on the first floor of the arts centre. It's a quieter room for demonstrations.",
+      "translation_vi": "Không, hướng dẫn tại phòng studio triển lãm tầng một của trung tâm nghệ thuật, yên tĩnh để trình diễn.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "volunteering",
+        "registration",
+        "training",
+        "shifts",
+        "uniform"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T12",
+      "speaker_id": "B",
+      "text_en": "I can find that. How long will orientation take? I have another commitment later that evening.",
+      "translation_vi": "Tôi đến được. Buổi hướng dẫn dài bao lâu? Tối đó tôi còn việc.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "volunteering",
+        "registration",
+        "training",
+        "shifts",
+        "uniform"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T13",
+      "speaker_id": "A",
+      "text_en": "It lasts ninety minutes. We finish with a short walk through the public entrances so everyone knows the emergency exits.",
+      "translation_vi": "Buổi hướng dẫn chín mươi phút. Cuối buổi đi quanh lối vào công chúng để biết cửa thoát hiểm.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "volunteering",
+        "registration",
+        "training",
+        "shifts",
+        "uniform"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T14",
+      "speaker_id": "B",
+      "text_en": "That sounds useful. I can work on the Saturday, but not Sunday. What shifts are still available?",
+      "translation_vi": "Hữu ích đấy. Tôi làm được thứ Bảy nhưng không Chủ nhật. Còn ca nào?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "volunteering",
+        "registration",
+        "training",
+        "shifts",
+        "uniform"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T15",
+      "speaker_id": "A",
+      "text_en": "We have an afternoon shift from one to five. The morning shift starts at eight, but it's already fully staffed.",
+      "translation_vi": "Còn ca chiều từ một đến năm giờ. Ca sáng bắt đầu lúc tám nhưng đã đủ người.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "volunteering",
+        "registration",
+        "training",
+        "shifts",
+        "uniform"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T16",
+      "speaker_id": "B",
+      "text_en": "I'll take the afternoon shift. Does everyone receive the same festival shirt, or do volunteers bring their own clothes?",
+      "translation_vi": "Tôi chọn ca chiều. Mọi người có áo lễ hội hay tự mang quần áo?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "volunteering",
+        "registration",
+        "training",
+        "shifts",
+        "uniform"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T17",
+      "speaker_id": "A",
+      "text_en": "We'll provide a yellow vest that says Volunteer. Please wear comfortable dark trousers and closed shoes of your own.",
+      "translation_vi": "Chúng tôi cấp áo ghi-lê vàng có chữ Volunteer. Anh tự mặc quần tối màu và giày kín mũi thoải mái.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "volunteering",
+        "registration",
+        "training",
+        "shifts",
+        "uniform"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T18",
+      "speaker_id": "B",
+      "text_en": "I already have suitable shoes. Should I bring food? Working four hours around a busy event can make me hungry.",
+      "translation_vi": "Tôi có giày phù hợp. Có nên mang đồ ăn không? Làm bốn giờ ở nơi đông dễ đói.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "volunteering",
+        "registration",
+        "training",
+        "shifts",
+        "uniform"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T19",
+      "speaker_id": "A",
+      "text_en": "A water bottle is essential, but light snacks are provided at the volunteer desk. We can't guarantee a full meal on shift.",
+      "translation_vi": "Cần mang chai nước, còn đồ ăn nhẹ được cung cấp ở bàn tình nguyện. Không bảo đảm suất ăn đầy đủ.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "volunteering",
+        "registration",
+        "training",
+        "shifts",
+        "uniform"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T20",
+      "speaker_id": "B",
+      "text_en": "I'll bring my bottle. Will I be dealing with cash or ticket scanners during the event?",
+      "translation_vi": "Tôi mang chai. Tôi có phải nhận tiền hay quét vé không?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "volunteering",
+        "registration",
+        "training",
+        "shifts",
+        "uniform"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T21",
+      "speaker_id": "A",
+      "text_en": "Welcome Team members direct visitors and answer accessibility questions. Only trained box-office staff handle payments and scanners.",
+      "translation_vi": "Đội Welcome Team chỉ đường và trả lời về tiếp cận. Chỉ nhân viên quầy vé đã đào tạo xử lý thanh toán và máy quét.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "volunteering",
+        "registration",
+        "training",
+        "shifts",
+        "uniform"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T22",
+      "speaker_id": "B",
+      "text_en": "That's fine. I'm particularly comfortable explaining access routes because I have helped at community events before.",
+      "translation_vi": "Được. Tôi khá quen giải thích đường đi dễ tiếp cận vì từng giúp các sự kiện cộng đồng.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "volunteering",
+        "registration",
+        "training",
+        "shifts",
+        "uniform"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T23",
+      "speaker_id": "A",
+      "text_en": "Please complete the online registration by Monday at noon. We'll email your final shift allocation after checking your details.",
+      "translation_vi": "Hãy hoàn thành đăng ký trực tuyến trước trưa thứ Hai. Chúng tôi email phân ca cuối sau khi kiểm tra thông tin.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "volunteering",
+        "registration",
+        "training",
+        "shifts",
+        "uniform"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T24",
+      "speaker_id": "B",
+      "text_en": "I'll do it tonight. See you on Wednesday for orientation, and then Saturday afternoon for the festival.",
+      "translation_vi": "Tôi đăng ký tối nay. Hẹn thứ Tư hướng dẫn và chiều thứ Bảy trong lễ hội.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "volunteering",
+        "registration",
+        "training",
+        "shifts",
+        "uniform"
+      ],
+      "bank_role": "protected_assessment"
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "group_id": "PART1_FORM_1_TO_6",
+      "type": "form_completion",
+      "prompt": "Volunteer group: ____ Team",
+      "correct_answers": [
+        "Welcome"
+      ],
+      "spoken_answer": "Welcome",
+      "word_limit": 3,
+      "instructions_en": "NO MORE THAN THREE WORDS AND/OR A NUMBER",
+      "scoring_policy": "controlled_variants",
+      "explanation_vi": "Nhóm cần người là Welcome Team.",
+      "answer_source": "explicit_recording",
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "evidence_excerpt_en": "Welcome Team",
+      "question_tags": [
+        "M25",
+        "part1",
+        "completion",
+        "volunteering",
+        "registration",
+        "training",
+        "shifts",
+        "uniform"
+      ]
+    },
+    {
+      "question_id": "Q02",
+      "group_id": "PART1_FORM_1_TO_6",
+      "type": "form_completion",
+      "prompt": "Festival month: ____",
+      "correct_answers": [
+        "July"
+      ],
+      "spoken_answer": "July",
+      "word_limit": 3,
+      "instructions_en": "NO MORE THAN THREE WORDS AND/OR A NUMBER",
+      "scoring_policy": "controlled_variants",
+      "explanation_vi": "Lễ hội vào tháng Bảy.",
+      "answer_source": "explicit_recording",
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "evidence_excerpt_en": "in July",
+      "question_tags": [
+        "M25",
+        "part1",
+        "completion",
+        "volunteering",
+        "registration",
+        "training",
+        "shifts",
+        "uniform"
+      ]
+    },
+    {
+      "question_id": "Q03",
+      "group_id": "PART1_FORM_1_TO_6",
+      "type": "form_completion",
+      "prompt": "Orientation day: ____",
+      "correct_answers": [
+        "Wednesday"
+      ],
+      "spoken_answer": "Wednesday",
+      "word_limit": 3,
+      "instructions_en": "NO MORE THAN THREE WORDS AND/OR A NUMBER",
+      "scoring_policy": "controlled_variants",
+      "explanation_vi": "Hướng dẫn tình nguyện tối thứ Tư.",
+      "answer_source": "explicit_recording",
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "evidence_excerpt_en": "Wednesday evening",
+      "question_tags": [
+        "M25",
+        "part1",
+        "completion",
+        "volunteering",
+        "registration",
+        "training",
+        "shifts",
+        "uniform"
+      ]
+    },
+    {
+      "question_id": "Q04",
+      "group_id": "PART1_FORM_1_TO_6",
+      "type": "note_completion",
+      "prompt": "Orientation venue: gallery ____",
+      "correct_answers": [
+        "studio"
+      ],
+      "spoken_answer": "studio",
+      "word_limit": 3,
+      "instructions_en": "NO MORE THAN THREE WORDS AND/OR A NUMBER",
+      "scoring_policy": "controlled_variants",
+      "explanation_vi": "Buổi hướng dẫn ở phòng studio triển lãm.",
+      "answer_source": "explicit_recording",
+      "evidence_turn_ids": [
+        "T11"
+      ],
+      "evidence_excerpt_en": "gallery studio",
+      "question_tags": [
+        "M25",
+        "part1",
+        "completion",
+        "volunteering",
+        "registration",
+        "training",
+        "shifts",
+        "uniform"
+      ]
+    },
+    {
+      "question_id": "Q05",
+      "group_id": "PART1_FORM_1_TO_6",
+      "type": "form_completion",
+      "prompt": "Orientation duration: ____ minutes",
+      "correct_answers": [
+        "ninety",
+        "90"
+      ],
+      "spoken_answer": "ninety",
+      "word_limit": 3,
+      "instructions_en": "NO MORE THAN THREE WORDS AND/OR A NUMBER",
+      "scoring_policy": "controlled_variants",
+      "explanation_vi": "Buổi hướng dẫn 90 phút.",
+      "answer_source": "explicit_recording",
+      "evidence_turn_ids": [
+        "T13"
+      ],
+      "evidence_excerpt_en": "ninety minutes",
+      "question_tags": [
+        "M25",
+        "part1",
+        "completion",
+        "volunteering",
+        "registration",
+        "training",
+        "shifts",
+        "uniform"
+      ]
+    },
+    {
+      "question_id": "Q06",
+      "group_id": "PART1_FORM_1_TO_6",
+      "type": "form_completion",
+      "prompt": "Saturday shift begins at ____",
+      "correct_answers": [
+        "one",
+        "1"
+      ],
+      "spoken_answer": "one",
+      "word_limit": 3,
+      "instructions_en": "NO MORE THAN THREE WORDS AND/OR A NUMBER",
+      "scoring_policy": "controlled_variants",
+      "explanation_vi": "Ca chiều bắt đầu 1 giờ.",
+      "answer_source": "explicit_recording",
+      "evidence_turn_ids": [
+        "T15"
+      ],
+      "evidence_excerpt_en": "from one to five",
+      "question_tags": [
+        "M25",
+        "part1",
+        "completion",
+        "volunteering",
+        "registration",
+        "training",
+        "shifts",
+        "uniform"
+      ]
+    },
+    {
+      "question_id": "Q07",
+      "group_id": "PART1_MCQ_7_TO_10",
+      "type": "mcq",
+      "prompt": "What uniform item will the organiser provide?",
+      "correct_answers": [
+        "A yellow volunteer vest"
+      ],
+      "options": [
+        {
+          "key": "A",
+          "text": "Black trousers"
+        },
+        {
+          "key": "B",
+          "text": "A new pair of shoes"
+        },
+        {
+          "key": "C",
+          "text": "A yellow volunteer vest"
+        }
+      ],
+      "correct_option": "C",
+      "scoring_policy": "one_correct_option",
+      "explanation_vi": "Ban tổ chức cấp áo ghi-lê vàng.",
+      "answer_source": "explicit_or_contextual_recording",
+      "evidence_turn_ids": [
+        "T17"
+      ],
+      "evidence_excerpt_en": "provide a yellow vest",
+      "question_tags": [
+        "M25",
+        "part1",
+        "mcq",
+        "volunteering",
+        "registration",
+        "training",
+        "shifts",
+        "uniform"
+      ]
+    },
+    {
+      "question_id": "Q08",
+      "group_id": "PART1_MCQ_7_TO_10",
+      "type": "mcq",
+      "prompt": "What should the applicant bring?",
+      "correct_answers": [
+        "A water bottle"
+      ],
+      "options": [
+        {
+          "key": "A",
+          "text": "A water bottle"
+        },
+        {
+          "key": "B",
+          "text": "A full meal for the whole team"
+        },
+        {
+          "key": "C",
+          "text": "A ticket scanner"
+        }
+      ],
+      "correct_option": "A",
+      "scoring_policy": "one_correct_option",
+      "explanation_vi": "Cần tự mang chai nước.",
+      "answer_source": "explicit_or_contextual_recording",
+      "evidence_turn_ids": [
+        "T19"
+      ],
+      "evidence_excerpt_en": "water bottle is essential",
+      "question_tags": [
+        "M25",
+        "part1",
+        "mcq",
+        "volunteering",
+        "registration",
+        "training",
+        "shifts",
+        "uniform"
+      ]
+    },
+    {
+      "question_id": "Q09",
+      "group_id": "PART1_MCQ_7_TO_10",
+      "type": "mcq",
+      "prompt": "What will the Welcome Team mainly do?",
+      "correct_answers": [
+        "Guide visitors and explain access"
+      ],
+      "options": [
+        {
+          "key": "A",
+          "text": "Handle cash payments"
+        },
+        {
+          "key": "B",
+          "text": "Guide visitors and explain access"
+        },
+        {
+          "key": "C",
+          "text": "Control backstage lighting"
+        }
+      ],
+      "correct_option": "B",
+      "scoring_policy": "one_correct_option",
+      "explanation_vi": "Nhiệm vụ chỉ đường và thông tin tiếp cận.",
+      "answer_source": "explicit_or_contextual_recording",
+      "evidence_turn_ids": [
+        "T21"
+      ],
+      "evidence_excerpt_en": "direct visitors and answer accessibility questions",
+      "question_tags": [
+        "M25",
+        "part1",
+        "mcq",
+        "volunteering",
+        "registration",
+        "training",
+        "shifts",
+        "uniform"
+      ]
+    },
+    {
+      "question_id": "Q10",
+      "group_id": "PART1_MCQ_7_TO_10",
+      "type": "mcq",
+      "prompt": "By when must online registration be finished?",
+      "correct_answers": [
+        "Monday at noon"
+      ],
+      "options": [
+        {
+          "key": "A",
+          "text": "Wednesday evening"
+        },
+        {
+          "key": "B",
+          "text": "Saturday morning"
+        },
+        {
+          "key": "C",
+          "text": "Monday at noon"
+        }
+      ],
+      "correct_option": "C",
+      "scoring_policy": "one_correct_option",
+      "explanation_vi": "Hạn đăng ký trước trưa thứ Hai.",
+      "answer_source": "explicit_or_contextual_recording",
+      "evidence_turn_ids": [
+        "T23"
+      ],
+      "evidence_excerpt_en": "by Monday at noon",
+      "question_tags": [
+        "M25",
+        "part1",
+        "mcq",
+        "volunteering",
+        "registration",
+        "training",
+        "shifts",
+        "uniform"
+      ]
+    }
+  ],
+  "question_groups": [
+    {
+      "group_id": "PART1_FORM_1_TO_6",
+      "question_ids": [
+        "Q01",
+        "Q02",
+        "Q03",
+        "Q04",
+        "Q05",
+        "Q06"
+      ],
+      "instructions_en": "Complete the form. Write NO MORE THAN THREE WORDS AND/OR A NUMBER for each answer.",
+      "pre_read_seconds": 30,
+      "break_after_turn_id": "T15",
+      "requires_one_listen": true
+    },
+    {
+      "group_id": "PART1_MCQ_7_TO_10",
+      "question_ids": [
+        "Q07",
+        "Q08",
+        "Q09",
+        "Q10"
+      ],
+      "instructions_en": "Choose the correct letter A, B or C.",
+      "pre_read_seconds": 25,
+      "requires_one_listen": true
+    }
+  ],
+  "audio": {
+    "status": "not_generated",
+    "audio_url": null,
+    "audio_asset_id": null,
+    "duration_ms": null,
+    "source_text_sha256": "91a482014c73601c5a6c2100ce44b05463391799e8e645eb6bc9e3f9ec516dd7",
+    "generation_strategy": "single_continuous_two_person_dialogue",
+    "aligned_turns": false
+  },
+  "exam_mode": {
+    "bank_role": "protected_assessment",
+    "use_as_training_before_first_attempt": false,
+    "listening_attempts_allowed_for_scored_first_attempt": 1,
+    "replay_before_submit": false,
+    "speed_control_before_submit": false,
+    "transcript_visible_before_submit": false,
+    "answer_key_visible_before_submit": false,
+    "post_attempt_review_allowed": true,
+    "question_count": 10,
+    "points_per_correct_answer": 1,
+    "question_order_monotonic": true,
+    "estimated_speech_minutes_at_135_wpm": 3.39,
+    "exam_band_score_enabled": false,
+    "repeated_attempt_marked_as_seen": true
+  },
+  "qa": {
+    "automatic_data_validation": "pending",
+    "content_human_review": "pending",
+    "audio_human_review": "pending",
+    "exam_simulation_rubric_score": null,
+    "rubric_90_verified": false,
+    "published": false,
+    "release_eligible": false
+  },
+  "provenance": {
+    "source_type": "original_authored_english_dialogue",
+    "milestone": "M25",
+    "no_official_ielts_question_copied": true,
+    "training_exposure_guard": true
+  },
+  "release_metadata": {
+    "target_bank": "protected_assessment",
+    "import_policy": "insert_only",
+    "version": "m25.0.1",
+    "preserve_existing_ids": true,
+    "allow_client_answer_payload": false
+  }
+}

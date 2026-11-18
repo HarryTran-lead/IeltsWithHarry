@@ -1,0 +1,425 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "DICT-F1-005",
+  "status": "draft",
+  "level": "L1",
+  "section": 0,
+  "topic": "Foundation",
+  "title": "Stress in Two-Syllable Words",
+  "learning_objectives_vi": [
+    "Nghe trọng âm từ quen thuộc",
+    "Nghe và chép chính xác các lượt nghe ngắn mà không dựa vào transcript."
+  ],
+  "content_format": "micro_drill",
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Foundation narrator",
+      "tts_voice_id": null,
+      "accent_requested": "british"
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "The hotel is full.",
+      "translation_vi": "Khách sạn đã kín chỗ.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "sounds_pronunciation",
+        "micro_listening"
+      ]
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "A",
+      "text_en": "The table is ready.",
+      "translation_vi": "Bàn đã được chuẩn bị xong.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "sounds_pronunciation",
+        "micro_listening"
+      ]
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "A",
+      "text_en": "We arrive on Monday.",
+      "translation_vi": "Chúng tôi đến vào thứ Hai.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "sounds_pronunciation",
+        "micro_listening"
+      ]
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "A",
+      "text_en": "Please return tomorrow.",
+      "translation_vi": "Vui lòng quay lại vào ngày mai.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "sounds_pronunciation",
+        "micro_listening"
+      ]
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "A",
+      "text_en": "The doctor is busy.",
+      "translation_vi": "Bác sĩ đang bận.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "sounds_pronunciation",
+        "micro_listening"
+      ]
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "A",
+      "text_en": "The police are here.",
+      "translation_vi": "Cảnh sát đã có mặt ở đây.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "sounds_pronunciation",
+        "micro_listening"
+      ]
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "The river is deep.",
+      "translation_vi": "Con sông sâu.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "sounds_pronunciation",
+        "micro_listening"
+      ]
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "A",
+      "text_en": "The guitar is new.",
+      "translation_vi": "Cây đàn guitar còn mới.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "sounds_pronunciation",
+        "micro_listening"
+      ]
+    },
+    {
+      "turn_id": "T09",
+      "speaker_id": "A",
+      "text_en": "The window is open.",
+      "translation_vi": "Cửa sổ đang mở.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "sounds_pronunciation",
+        "micro_listening"
+      ]
+    },
+    {
+      "turn_id": "T10",
+      "speaker_id": "A",
+      "text_en": "We will begin again.",
+      "translation_vi": "Chúng tôi sẽ bắt đầu lại.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "sounds_pronunciation",
+        "micro_listening"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "type": "dictation",
+      "prompt": "Nghe lượt T01 và chép chính xác những từ được nói.",
+      "correct_answers": [
+        "The hotel is full."
+      ],
+      "evidence_turn_ids": [
+        "T01"
+      ],
+      "explanation_vi": "hotel thường nhấn âm tiết thứ hai: ho-TEL. Nghĩa: Khách sạn đã kín chỗ.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text"
+      ]
+    },
+    {
+      "question_id": "Q02",
+      "type": "dictation",
+      "prompt": "Nghe lượt T02 và chép chính xác những từ được nói.",
+      "correct_answers": [
+        "The table is ready."
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "table nhấn âm tiết thứ nhất: TA-ble. Nghĩa: Bàn đã được chuẩn bị xong.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text"
+      ]
+    },
+    {
+      "question_id": "Q03",
+      "type": "dictation",
+      "prompt": "Nghe lượt T03 và chép chính xác những từ được nói.",
+      "correct_answers": [
+        "We arrive on Monday."
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Monday nhấn âm tiết đầu. Nghĩa: Chúng tôi đến vào thứ Hai.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text"
+      ]
+    },
+    {
+      "question_id": "Q04",
+      "type": "dictation",
+      "prompt": "Nghe lượt T04 và chép chính xác những từ được nói.",
+      "correct_answers": [
+        "Please return tomorrow."
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "return nhấn âm tiết thứ hai. Nghĩa: Vui lòng quay lại vào ngày mai.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text"
+      ]
+    },
+    {
+      "question_id": "Q05",
+      "type": "dictation",
+      "prompt": "Nghe lượt T05 và chép chính xác những từ được nói.",
+      "correct_answers": [
+        "The doctor is busy."
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "doctor nhấn âm tiết đầu. Nghĩa: Bác sĩ đang bận.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text"
+      ]
+    },
+    {
+      "question_id": "Q06",
+      "type": "dictation",
+      "prompt": "Nghe lượt T06 và chép chính xác những từ được nói.",
+      "correct_answers": [
+        "The police are here."
+      ],
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "explanation_vi": "police nhấn âm tiết hai. Nghĩa: Cảnh sát đã có mặt ở đây.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text"
+      ]
+    },
+    {
+      "question_id": "Q07",
+      "type": "dictation",
+      "prompt": "Nghe lượt T07 và chép chính xác những từ được nói.",
+      "correct_answers": [
+        "The river is deep."
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "river nhấn âm tiết đầu. Nghĩa: Con sông sâu.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text"
+      ]
+    },
+    {
+      "question_id": "Q08",
+      "type": "dictation",
+      "prompt": "Nghe lượt T08 và chép chính xác những từ được nói.",
+      "correct_answers": [
+        "The guitar is new."
+      ],
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "explanation_vi": "guitar nhấn âm tiết hai. Nghĩa: Cây đàn guitar còn mới.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text"
+      ]
+    },
+    {
+      "question_id": "Q09",
+      "type": "dictation",
+      "prompt": "Nghe lượt T09 và chép chính xác những từ được nói.",
+      "correct_answers": [
+        "The window is open."
+      ],
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "explanation_vi": "window nhấn âm tiết đầu. Nghĩa: Cửa sổ đang mở.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text"
+      ]
+    },
+    {
+      "question_id": "Q10",
+      "type": "dictation",
+      "prompt": "Nghe lượt T10 và chép chính xác những từ được nói.",
+      "correct_answers": [
+        "We will begin again."
+      ],
+      "evidence_turn_ids": [
+        "T10"
+      ],
+      "explanation_vi": "begin và again đều nhấn âm tiết cuối. Nghĩa: Chúng tôi sẽ bắt đầu lại.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text"
+      ]
+    },
+    {
+      "question_id": "Q11",
+      "type": "word_choice",
+      "prompt": "T01: Từ nào được nhấn âm tiết thứ hai?",
+      "correct_answers": [
+        "hotel"
+      ],
+      "options": [
+        "hotel",
+        "table"
+      ],
+      "evidence_turn_ids": [
+        "T01"
+      ],
+      "explanation_vi": "Hotel có trọng âm ở âm tiết thứ hai. Hãy nghe lại lượt T01, đối chiếu với lựa chọn còn lại và xác định từ/ý được nói thật.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "comprehension",
+        "foundation_discrimination"
+      ]
+    },
+    {
+      "question_id": "Q12",
+      "type": "word_choice",
+      "prompt": "T05: Nghề nào có trọng âm ở âm tiết đầu?",
+      "correct_answers": [
+        "doctor"
+      ],
+      "options": [
+        "doctor",
+        "police"
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Doctor nhấn âm đầu, police nhấn âm sau. Hãy nghe lại lượt T05, đối chiếu với lựa chọn còn lại và xác định từ/ý được nói thật.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "comprehension",
+        "foundation_discrimination"
+      ]
+    }
+  ],
+  "vocabulary": [
+    {
+      "term": "hotel",
+      "pos": "noun",
+      "meaning_vi": "khách sạn",
+      "example_en": "The hotel is full.",
+      "example_vi": "Khách sạn đã kín chỗ.",
+      "source_turn_id": "T01"
+    },
+    {
+      "term": "table",
+      "pos": "noun",
+      "meaning_vi": "bàn",
+      "example_en": "The table is ready.",
+      "example_vi": "Bàn đã được chuẩn bị xong.",
+      "source_turn_id": "T02"
+    },
+    {
+      "term": "doctor",
+      "pos": "noun",
+      "meaning_vi": "bác sĩ",
+      "example_en": "The doctor is busy.",
+      "example_vi": "Bác sĩ đang bận.",
+      "source_turn_id": "T05"
+    },
+    {
+      "term": "guitar",
+      "pos": "noun",
+      "meaning_vi": "đàn guitar",
+      "example_en": "The guitar is new.",
+      "example_vi": "Cây đàn guitar còn mới.",
+      "source_turn_id": "T08"
+    }
+  ],
+  "audio": {
+    "status": "not_generated",
+    "url": null,
+    "duration_ms": null,
+    "model": null,
+    "provider": null,
+    "voice_config": null,
+    "source_transcript_hash": "fb26da72ec02aba19f4e091d1724f51810092274fbc000978f3ce8c846d3b18b",
+    "audio_sha256": null,
+    "format": null
+  },
+  "qa": {
+    "content_reviewed": false,
+    "answers_verified": false,
+    "audio_verified": false,
+    "rights_cleared": false,
+    "duplicate_reviewed": false,
+    "notes": [
+      "Author draft. Editorial, native-like audio, rights and device QA pending.",
+      "TTS: generate each turn separately, then combine and generate timestamps.",
+      "M16.2: automated edits are provisional; IELTS teacher final signoff, audio and rights clearance pending."
+    ]
+  },
+  "provenance": {
+    "content_origin": "original_ai_assisted",
+    "source_urls": [],
+    "source_rights_note": "New original learning material written for English Skill Lab; verify TTS and distribution conditions prior to release.",
+    "reviewer": null
+  },
+  "release_metadata": {
+    "published_at": null,
+    "version": 1
+  }
+}

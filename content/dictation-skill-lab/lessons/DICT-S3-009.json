@@ -1,0 +1,413 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "DICT-S3-009",
+  "status": "draft",
+  "level": "L4",
+  "section": 3,
+  "topic": "Study Skills",
+  "title": "Study Skills: Planning & Roles",
+  "learning_objectives_vi": [
+    "Theo dõi ý kiến và lập luận của nhiều người trong một thảo luận học thuật.",
+    "Xác định thông tin cuối cùng sau khi người nói đề xuất, phản biện hoặc sửa ý.",
+    "Chép chính xác những đoạn trọng tâm và đối chiếu bằng chứng trong transcript."
+  ],
+  "content_format": "section_practice",
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Grace – university student / tutor discussion participant",
+      "tts_voice_id": null,
+      "accent_requested": "british"
+    },
+    {
+      "speaker_id": "B",
+      "role": "Sam – university student / tutor discussion participant",
+      "tts_voice_id": null,
+      "accent_requested": "british"
+    },
+    {
+      "speaker_id": "C",
+      "role": "Jules – university student / tutor discussion participant",
+      "tts_voice_id": null,
+      "accent_requested": "british"
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "I keep reading articles from the first page to the last, and then I run out of time to make notes.",
+      "translation_vi": "Mình cứ đọc bài báo từ đầu đến cuối rồi hết thời gian ghi chú.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "l4",
+        "planning"
+      ]
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "B",
+      "text_en": "Our study tutor suggested scanning the abstract and headings before deciding which sections matter.",
+      "translation_vi": "Gia sư kỹ năng học đề xuất đọc lướt tóm tắt và tiêu đề trước khi quyết định phần nào quan trọng.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "l4",
+        "planning"
+      ]
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "C",
+      "text_en": "That helps, but I sometimes skip the methods and later misunderstand what the results actually show.",
+      "translation_vi": "Việc đó hữu ích, nhưng đôi khi mình bỏ qua phương pháp rồi hiểu sai điều kết quả thực sự thể hiện.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "l4",
+        "planning"
+      ]
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "A",
+      "text_en": "So we shouldn't simply ignore the methods. Perhaps read them carefully when the research design is relevant.",
+      "translation_vi": "Vậy không nên bỏ qua phương pháp hoàn toàn. Có lẽ cần đọc kỹ khi thiết kế nghiên cứu có liên quan.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "l4",
+        "planning"
+      ]
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "B",
+      "text_en": "Exactly. Also, the tutor warned us not to copy whole sentences into our notes.",
+      "translation_vi": "Đúng. Gia sư còn nhắc đừng chép nguyên cả câu vào ghi chú.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "l4",
+        "planning"
+      ]
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "C",
+      "text_en": "Instead, write a short summary in our own words and mark the page number for later referencing.",
+      "translation_vi": "Thay vào đó, hãy tóm tắt ngắn bằng lời mình và ghi số trang để trích dẫn sau.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "l4",
+        "planning"
+      ]
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "Let's test this on tomorrow's sociology reading. We can compare our notes after the seminar.",
+      "translation_vi": "Mai ta thử với bài đọc xã hội học. Sau buổi học nhóm có thể so sánh ghi chú.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "l4",
+        "planning"
+      ]
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "B",
+      "text_en": "Fine, but I'll make a shared template tonight so we use the same headings.",
+      "translation_vi": "Được, tối nay mình sẽ làm mẫu chung để dùng cùng các tiêu đề.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "l4",
+        "planning"
+      ]
+    },
+    {
+      "turn_id": "T09",
+      "speaker_id": "C",
+      "text_en": "Include a space for limitations, because the lecturer always asks about those.",
+      "translation_vi": "Nhớ thêm mục giới hạn nghiên cứu vì giảng viên luôn hỏi phần đó.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "l4",
+        "planning"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "type": "note_completion",
+      "prompt": "Students should scan the abstract and ____ first.",
+      "correct_answers": [
+        "headings"
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Bằng chứng ở T02 (Sam): “Gia sư kỹ năng học đề xuất đọc lướt tóm tắt và tiêu đề trước khi quyết định phần nào quan trọng.” Đáp án: “headings”. Từ/cụm từ nằm trong lời nói; không chọn thông tin đã bị sửa hoặc người khác chỉ đề xuất.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_3",
+        "ielts_practice",
+        "detail_recognition"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q02",
+      "type": "mcq",
+      "prompt": "Why is skipping the methods section sometimes a mistake?",
+      "correct_answers": [
+        "It can lead to misunderstanding the results"
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Bằng chứng ở T03 (Jules): “Việc đó hữu ích, nhưng đôi khi mình bỏ qua phương pháp rồi hiểu sai điều kết quả thực sự thể hiện.” Đáp án: “It can lead to misunderstanding the results”. Đây là ý cuối cùng hoặc lập luận cần xác định; các lựa chọn khác không được đoạn này xác nhận.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "section_3",
+        "ielts_practice",
+        "opinion_inference"
+      ],
+      "options": [
+        "It loses the author's name",
+        "It can lead to misunderstanding the results",
+        "It makes articles shorter"
+      ]
+    },
+    {
+      "question_id": "Q03",
+      "type": "short_answer",
+      "prompt": "What should students avoid copying into notes?",
+      "correct_answers": [
+        "whole sentences"
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Bằng chứng ở T05 (Sam): “Đúng. Gia sư còn nhắc đừng chép nguyên cả câu vào ghi chú.” Đáp án: “whole sentences”. Từ/cụm từ nằm trong lời nói; không chọn thông tin đã bị sửa hoặc người khác chỉ đề xuất.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_3",
+        "ielts_practice",
+        "detail_recognition"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q04",
+      "type": "note_completion",
+      "prompt": "Students should mark the page ____ for references.",
+      "correct_answers": [
+        "number"
+      ],
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "explanation_vi": "Bằng chứng ở T06 (Jules): “Thay vào đó, hãy tóm tắt ngắn bằng lời mình và ghi số trang để trích dẫn sau.” Đáp án: “number”. Từ/cụm từ nằm trong lời nói; không chọn thông tin đã bị sửa hoặc người khác chỉ đề xuất.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_3",
+        "ielts_practice",
+        "detail_recognition"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q05",
+      "type": "matching",
+      "prompt": "Who is making a shared notes template?",
+      "correct_answers": [
+        "Speaker B"
+      ],
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "explanation_vi": "Bằng chứng ở T08 (Sam): “Được, tối nay mình sẽ làm mẫu chung để dùng cùng các tiêu đề.” Đáp án: “Speaker B”. Đối chiếu đúng thông tin được người nói nêu, chú ý các ý kiến hoặc phương án trước đó.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "section_3",
+        "ielts_practice",
+        "speaker_attribution"
+      ],
+      "options": [
+        "Speaker C",
+        "Speaker B",
+        "Speaker A"
+      ]
+    },
+    {
+      "question_id": "Q06",
+      "type": "note_completion",
+      "prompt": "The template should include a space for research ____.",
+      "correct_answers": [
+        "limitations"
+      ],
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "explanation_vi": "Bằng chứng ở T09 (Jules): “Nhớ thêm mục giới hạn nghiên cứu vì giảng viên luôn hỏi phần đó.” Đáp án: “limitations”. Từ/cụm từ nằm trong lời nói; không chọn thông tin đã bị sửa hoặc người khác chỉ đề xuất.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_3",
+        "ielts_practice",
+        "detail_recognition"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "D01",
+      "type": "dictation",
+      "prompt": "Nghe đoạn T03 và chép nguyên văn tiếng Anh (Speaker C).",
+      "correct_answers": [
+        "That helps, but I sometimes skip the methods and later misunderstand what the results actually show."
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Câu gốc: “That helps, but I sometimes skip the methods and later misunderstand what the results actually show.”\nNghĩa: Việc đó hữu ích, nhưng đôi khi mình bỏ qua phương pháp rồi hiểu sai điều kết quả thực sự thể hiện.\nChú ý từ chức năng, âm yếu, cụm từ nối và ý người nói.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_3",
+        "dictation",
+        "exact_transcript"
+      ]
+    },
+    {
+      "question_id": "D02",
+      "type": "dictation",
+      "prompt": "Nghe đoạn T06 và chép nguyên văn tiếng Anh (Speaker C).",
+      "correct_answers": [
+        "Instead, write a short summary in our own words and mark the page number for later referencing."
+      ],
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "explanation_vi": "Câu gốc: “Instead, write a short summary in our own words and mark the page number for later referencing.”\nNghĩa: Thay vào đó, hãy tóm tắt ngắn bằng lời mình và ghi số trang để trích dẫn sau.\nChú ý từ chức năng, âm yếu, cụm từ nối và ý người nói.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_3",
+        "dictation",
+        "exact_transcript"
+      ]
+    },
+    {
+      "question_id": "G01",
+      "type": "gap_fill",
+      "prompt": "Nghe T02, điền từ/cụm từ bị thiếu: Our study tutor suggested scanning the ____ and headings before deciding which sections matter.",
+      "correct_answers": [
+        "abstract"
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Cụm cần nghe: “abstract” (phần tóm tắt). Lời gốc: “Our study tutor suggested scanning the abstract and headings before deciding which sections matter.”.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_3",
+        "gap_fill",
+        "vocabulary_in_context"
+      ]
+    }
+  ],
+  "vocabulary": [
+    {
+      "term": "abstract",
+      "pos": "n.",
+      "meaning_vi": "phần tóm tắt",
+      "example_en": "Our study tutor suggested scanning the abstract and headings before deciding which sections matter.",
+      "example_vi": "Gia sư kỹ năng học đề xuất đọc lướt tóm tắt và tiêu đề trước khi quyết định phần nào quan trọng.",
+      "source_turn_id": "T02"
+    },
+    {
+      "term": "study tutor",
+      "pos": "n. phr.",
+      "meaning_vi": "gia sư kỹ năng học",
+      "example_en": "Our study tutor suggested scanning the abstract and headings before deciding which sections matter.",
+      "example_vi": "Gia sư kỹ năng học đề xuất đọc lướt tóm tắt và tiêu đề trước khi quyết định phần nào quan trọng.",
+      "source_turn_id": "T02"
+    },
+    {
+      "term": "methods",
+      "pos": "n.",
+      "meaning_vi": "phương pháp",
+      "example_en": "That helps, but I sometimes skip the methods and later misunderstand what the results actually show.",
+      "example_vi": "Việc đó hữu ích, nhưng đôi khi mình bỏ qua phương pháp rồi hiểu sai điều kết quả thực sự thể hiện.",
+      "source_turn_id": "T03"
+    },
+    {
+      "term": "limitations",
+      "pos": "n.",
+      "meaning_vi": "giới hạn nghiên cứu",
+      "example_en": "Include a space for limitations, because the lecturer always asks about those.",
+      "example_vi": "Nhớ thêm mục giới hạn nghiên cứu vì giảng viên luôn hỏi phần đó.",
+      "source_turn_id": "T09"
+    }
+  ],
+  "audio": {
+    "status": "not_generated",
+    "url": null,
+    "duration_ms": null,
+    "model": null,
+    "provider": null,
+    "voice_config": null,
+    "source_transcript_hash": "3b27d4387fad6f1310207216ea5e0b61cf95bfee21dcc36dcd559e807f94b63f",
+    "audio_sha256": null,
+    "format": null
+  },
+  "qa": {
+    "content_reviewed": false,
+    "answers_verified": false,
+    "audio_verified": false,
+    "rights_cleared": false,
+    "duplicate_reviewed": false,
+    "notes": [
+      "Original synthetic dialogues: human educational review required.",
+      "Audio, timestamps, voice suitability and service/distribution rights not yet verified.",
+      "Training lessons, NOT official IELTS Part 3 tests or calibrated band tests.",
+      "M16.2: automated edits are provisional; IELTS teacher final signoff, audio and rights clearance pending."
+    ]
+  },
+  "provenance": {
+    "content_origin": "original_ai_assisted",
+    "source_urls": [],
+    "source_rights_note": "Original text; verify TTS provider terms and distribution rights before publishing to a youth-accessible website.",
+    "reviewer": null
+  },
+  "release_metadata": {
+    "published_at": null,
+    "version": 1
+  }
+}

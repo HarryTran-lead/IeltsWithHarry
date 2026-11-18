@@ -1,0 +1,610 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "FND2-039",
+  "status": "draft",
+  "level": "L2",
+  "section": 0,
+  "topic": "Foundation M18 – Numbers",
+  "title": "Numbers in public announcements",
+  "learning_objectives_vi": [
+    "Nghe được numbers in public announcements trong tình huống mới.",
+    "Chép chính xác thông tin mục tiêu (announcements).",
+    "Phân biệt bài luyện quen và bài kiểm tra chưa từng nghe."
+  ],
+  "content_format": "sentence_drill",
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Foundation narrator",
+      "tts_voice_id": null,
+      "accent_requested": "british"
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "Passengers for platform six should wait behind the yellow line.",
+      "translation_vi": "Hành khách đi sân ga số 6 nên đứng sau vạch vàng.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m18",
+        "announcements",
+        "integer"
+      ],
+      "target_value": "6",
+      "target_kind": "integer",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "A",
+      "text_en": "The shuttle will leave from gate twenty-three.",
+      "translation_vi": "Xe trung chuyển sẽ khởi hành từ cổng số 23.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m18",
+        "announcements",
+        "integer"
+      ],
+      "target_value": "23",
+      "target_kind": "integer",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "A",
+      "text_en": "Our customer-service desk is now at counter number seventeen.",
+      "translation_vi": "Quầy chăm sóc khách hàng nay ở quầy số 17.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m18",
+        "announcements",
+        "integer"
+      ],
+      "target_value": "17",
+      "target_kind": "integer",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "A",
+      "text_en": "The next talk will be held in hall four, not hall five.",
+      "translation_vi": "Buổi nói chuyện tiếp theo sẽ diễn ra ở sảnh 4, không phải sảnh 5.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m18",
+        "announcements",
+        "integer"
+      ],
+      "target_value": "4",
+      "target_kind": "integer",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "A",
+      "text_en": "Please board coach number twelve for the museum tour.",
+      "translation_vi": "Vui lòng lên xe số 12 cho chuyến tham quan bảo tàng.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m18",
+        "announcements",
+        "integer"
+      ],
+      "target_value": "12",
+      "target_kind": "integer",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "A",
+      "text_en": "The lost-property office closes at six forty-five in the evening.",
+      "translation_vi": "Văn phòng đồ thất lạc đóng cửa lúc 6 giờ 45.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m18",
+        "announcements",
+        "time_24h"
+      ],
+      "target_value": "18:45",
+      "target_kind": "time_24h",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "Visitors with ticket number eighty-two may enter now.",
+      "translation_vi": "Khách có vé số 82 có thể vào ngay.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m18",
+        "announcements",
+        "integer"
+      ],
+      "target_value": "82",
+      "target_kind": "integer",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "A",
+      "text_en": "A replacement service will depart at ten twenty.",
+      "translation_vi": "Chuyến thay thế sẽ khởi hành lúc 10 giờ 20.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m18",
+        "announcements",
+        "time"
+      ],
+      "target_value": "10:20",
+      "target_kind": "time",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T09",
+      "speaker_id": "A",
+      "text_en": "The exhibition runs for forty-five minutes.",
+      "translation_vi": "Triển lãm kéo dài 45 phút.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m18",
+        "announcements",
+        "integer"
+      ],
+      "target_value": "45",
+      "target_kind": "integer",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T10",
+      "speaker_id": "A",
+      "text_en": "Please collect your bags from carousel number nine.",
+      "translation_vi": "Vui lòng lấy hành lý ở băng chuyền số 9.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m18",
+        "announcements",
+        "integer"
+      ],
+      "target_value": "9",
+      "target_kind": "integer",
+      "bank_role": "training"
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "type": "dictation",
+      "prompt": "Nghe lượt T01 rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "Passengers for platform six should wait behind the yellow line."
+      ],
+      "evidence_turn_ids": [
+        "T01"
+      ],
+      "explanation_vi": "Câu gốc: Passengers for platform six should wait behind the yellow line. Nghĩa: Hành khách đi sân ga số 6 nên đứng sau vạch vàng. Lưu ý: Nghe con số sau chỉ dẫn quan trọng, không ghi số xuất hiện trong phần giải thích gây nhiễu.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "announcements"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q02",
+      "type": "dictation",
+      "prompt": "Nghe lượt T02 rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "The shuttle will leave from gate twenty-three."
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Câu gốc: The shuttle will leave from gate twenty-three. Nghĩa: Xe trung chuyển sẽ khởi hành từ cổng số 23. Lưu ý: Nghe con số sau chỉ dẫn quan trọng, không ghi số xuất hiện trong phần giải thích gây nhiễu.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "announcements"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q03",
+      "type": "dictation",
+      "prompt": "Nghe lượt T03 rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "Our customer-service desk is now at counter number seventeen."
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Câu gốc: Our customer-service desk is now at counter number seventeen. Nghĩa: Quầy chăm sóc khách hàng nay ở quầy số 17. Lưu ý: Nghe con số sau chỉ dẫn quan trọng, không ghi số xuất hiện trong phần giải thích gây nhiễu.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "announcements"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q04",
+      "type": "dictation",
+      "prompt": "Nghe lượt T04 rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "The next talk will be held in hall four, not hall five."
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Câu gốc: The next talk will be held in hall four, not hall five. Nghĩa: Buổi nói chuyện tiếp theo sẽ diễn ra ở sảnh 4, không phải sảnh 5. Lưu ý: Nghe con số sau chỉ dẫn quan trọng, không ghi số xuất hiện trong phần giải thích gây nhiễu.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "announcements"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q05",
+      "type": "dictation",
+      "prompt": "Nghe lượt T05 rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "Please board coach number twelve for the museum tour."
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Câu gốc: Please board coach number twelve for the museum tour. Nghĩa: Vui lòng lên xe số 12 cho chuyến tham quan bảo tàng. Lưu ý: Nghe con số sau chỉ dẫn quan trọng, không ghi số xuất hiện trong phần giải thích gây nhiễu.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "announcements"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q06",
+      "type": "dictation",
+      "prompt": "Nghe lượt T06 rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "The lost-property office closes at six forty-five in the evening."
+      ],
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "explanation_vi": "Câu gốc: The lost-property office closes at six forty-five in the evening. Nghĩa: Văn phòng đồ thất lạc đóng cửa lúc 6 giờ 45. Lưu ý: Nghe con số sau chỉ dẫn quan trọng, không ghi số xuất hiện trong phần giải thích gây nhiễu.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "announcements"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q07",
+      "type": "dictation",
+      "prompt": "Nghe lượt T07 rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "Visitors with ticket number eighty-two may enter now."
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "Câu gốc: Visitors with ticket number eighty-two may enter now. Nghĩa: Khách có vé số 82 có thể vào ngay. Lưu ý: Nghe con số sau chỉ dẫn quan trọng, không ghi số xuất hiện trong phần giải thích gây nhiễu.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "announcements"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q08",
+      "type": "dictation",
+      "prompt": "Nghe lượt T08 rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "A replacement service will depart at ten twenty."
+      ],
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "explanation_vi": "Câu gốc: A replacement service will depart at ten twenty. Nghĩa: Chuyến thay thế sẽ khởi hành lúc 10 giờ 20. Lưu ý: Nghe con số sau chỉ dẫn quan trọng, không ghi số xuất hiện trong phần giải thích gây nhiễu.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "announcements"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q09",
+      "type": "dictation",
+      "prompt": "Nghe lượt T09 rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "The exhibition runs for forty-five minutes."
+      ],
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "explanation_vi": "Câu gốc: The exhibition runs for forty-five minutes. Nghĩa: Triển lãm kéo dài 45 phút. Lưu ý: Nghe con số sau chỉ dẫn quan trọng, không ghi số xuất hiện trong phần giải thích gây nhiễu.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "announcements"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q10",
+      "type": "dictation",
+      "prompt": "Nghe lượt T10 rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "Please collect your bags from carousel number nine."
+      ],
+      "evidence_turn_ids": [
+        "T10"
+      ],
+      "explanation_vi": "Câu gốc: Please collect your bags from carousel number nine. Nghĩa: Vui lòng lấy hành lý ở băng chuyền số 9. Lưu ý: Nghe con số sau chỉ dẫn quan trọng, không ghi số xuất hiện trong phần giải thích gây nhiễu.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "announcements"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q11",
+      "type": "short_answer",
+      "prompt": "Nghe lượt T06 rồi nhập giờ theo định dạng 24h được xác nhận trong câu.",
+      "correct_answers": [
+        "18:45"
+      ],
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "explanation_vi": "Giờ đã được xác định sáng/chiều; ghi theo định dạng 24h. Đáp án: 18:45. Nội dung: Văn phòng đồ thất lạc đóng cửa lúc 6 giờ 45.",
+      "scoring_policy": "canonical_time_24h_server",
+      "target_kind": "time_24h",
+      "question_tags": [
+        "short_answer",
+        "announcements",
+        "time_24h"
+      ],
+      "max_replays_practice": 5,
+      "first_listen_only_for_mastery": false
+    },
+    {
+      "question_id": "Q12",
+      "type": "short_answer",
+      "prompt": "Nghe lượt T07 rồi nhập số lượng / số hiệu được xác nhận trong câu.",
+      "correct_answers": [
+        "82"
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "Nghe đúng thông tin đích; nếu có sửa thì dùng thông tin sau cùng. Đáp án: 82. Nội dung: Khách có vé số 82 có thể vào ngay.",
+      "scoring_policy": "canonical_integer_server",
+      "target_kind": "integer",
+      "question_tags": [
+        "short_answer",
+        "announcements",
+        "integer"
+      ],
+      "max_replays_practice": 5,
+      "first_listen_only_for_mastery": false
+    },
+    {
+      "question_id": "Q13",
+      "type": "short_answer",
+      "prompt": "Nghe lượt T08 rồi nhập giờ được xác nhận trong câu.",
+      "correct_answers": [
+        "10:20"
+      ],
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "explanation_vi": "Nhập giờ theo giờ:phút, không được đoán buổi khi audio không nói rõ. Đáp án: 10:20. Nội dung: Chuyến thay thế sẽ khởi hành lúc 10 giờ 20.",
+      "scoring_policy": "canonical_time_server",
+      "target_kind": "time",
+      "question_tags": [
+        "short_answer",
+        "announcements",
+        "time"
+      ],
+      "max_replays_practice": 5,
+      "first_listen_only_for_mastery": false
+    },
+    {
+      "question_id": "Q14",
+      "type": "short_answer",
+      "prompt": "Nghe lượt T09 rồi nhập số lượng / số hiệu được xác nhận trong câu.",
+      "correct_answers": [
+        "45"
+      ],
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "explanation_vi": "Nghe đúng thông tin đích; nếu có sửa thì dùng thông tin sau cùng. Đáp án: 45. Nội dung: Triển lãm kéo dài 45 phút.",
+      "scoring_policy": "canonical_integer_server",
+      "target_kind": "integer",
+      "question_tags": [
+        "short_answer",
+        "announcements",
+        "integer"
+      ],
+      "max_replays_practice": 5,
+      "first_listen_only_for_mastery": false
+    },
+    {
+      "question_id": "Q15",
+      "type": "short_answer",
+      "prompt": "Nghe lượt T10 rồi nhập số lượng / số hiệu được xác nhận trong câu.",
+      "correct_answers": [
+        "9"
+      ],
+      "evidence_turn_ids": [
+        "T10"
+      ],
+      "explanation_vi": "Nghe đúng thông tin đích; nếu có sửa thì dùng thông tin sau cùng. Đáp án: 9. Nội dung: Vui lòng lấy hành lý ở băng chuyền số 9.",
+      "scoring_policy": "canonical_integer_server",
+      "target_kind": "integer",
+      "question_tags": [
+        "short_answer",
+        "announcements",
+        "integer"
+      ],
+      "max_replays_practice": 5,
+      "first_listen_only_for_mastery": false
+    }
+  ],
+  "vocabulary": [
+    {
+      "term": "platform",
+      "pos": "n",
+      "meaning_vi": "sân ga",
+      "example_en": "Passengers for platform six should wait behind the yellow line.",
+      "example_vi": "Hành khách đi sân ga số 6 nên đứng sau vạch vàng.",
+      "is_illustrative_context": true
+    },
+    {
+      "term": "departure",
+      "pos": "n",
+      "meaning_vi": "giờ khởi hành",
+      "example_en": "The departure time has been changed.",
+      "example_vi": "Giờ khởi hành đã được thay đổi.",
+      "is_illustrative_context": true
+    },
+    {
+      "term": "counter",
+      "pos": "n",
+      "meaning_vi": "quầy",
+      "example_en": "Our customer-service desk is now at counter number seventeen.",
+      "example_vi": "Quầy chăm sóc khách hàng nay ở quầy số 17.",
+      "is_illustrative_context": true
+    },
+    {
+      "term": "coach",
+      "pos": "n",
+      "meaning_vi": "xe khách",
+      "example_en": "Please board coach number twelve for the museum tour.",
+      "example_vi": "Vui lòng lên xe số 12 cho chuyến tham quan bảo tàng.",
+      "is_illustrative_context": true
+    },
+    {
+      "term": "boarding",
+      "pos": "n",
+      "meaning_vi": "việc lên xe",
+      "example_en": "Boarding begins ten minutes before departure.",
+      "example_vi": "Việc lên xe bắt đầu trước giờ khởi hành mười phút.",
+      "is_illustrative_context": true
+    },
+    {
+      "term": "carousel",
+      "pos": "n",
+      "meaning_vi": "băng chuyền hành lý",
+      "example_en": "Please collect your bags from carousel number nine.",
+      "example_vi": "Vui lòng lấy hành lý ở băng chuyền số 9.",
+      "is_illustrative_context": true
+    }
+  ],
+  "micro_skill_id": "announcements",
+  "bank_role": "training",
+  "content_design": {
+    "sequence": "10_varied_contexts",
+    "first_listen": "1x",
+    "guided_replay_max": 5,
+    "mastery_requires_unseen": true,
+    "learning_note_vi": "Nghe con số sau chỉ dẫn quan trọng, không ghi số xuất hiện trong phần giải thích gây nhiễu.",
+    "category": "numbers",
+    "post_submit_review_only": true,
+    "unseen_assessment_id": "FND2-039-HOLDOUT",
+    "spoken_text_must_match_target": true
+  },
+  "audio": {
+    "status": "not_generated",
+    "url": null,
+    "duration_ms": null,
+    "provider": null,
+    "model": null,
+    "voice_config": null,
+    "format": null,
+    "audio_sha256": null,
+    "source_transcript_hash": "bb8c7d189595c2a8006668b4d87a99f119fa277ecf746ac5125259b734ed4bf8",
+    "generation_notes": "Synthesize spoken utterance only, speak spelled letters and punctuation explicitly. Never read teaching metadata. QA each target by a person."
+  },
+  "qa": {
+    "content_reviewed": false,
+    "answers_verified": false,
+    "audio_verified": false,
+    "human_signed_off": false,
+    "duplicate_reviewed": false,
+    "notes": [
+      "M18 originally authored drafts; automated checks only, teacher/accent review pending.",
+      "No TTS audio and no measured timestamps. Domain/email examples use reserved example.* names."
+    ]
+  },
+  "provenance": {
+    "content_origin": "original_ai_assisted",
+    "rights_status": "pending_audio_terms_review",
+    "source_urls": [],
+    "reviewer": null
+  },
+  "release_metadata": {
+    "published_at": null,
+    "version": 1
+  },
+  "lesson_theory_vi": {
+    "core_rule": "Nghe con số sau chỉ dẫn quan trọng, không ghi số xuất hiện trong phần giải thích gây nhiễu.",
+    "worked_contrasts": [
+      {
+        "spoken_example": "gate twelve",
+        "written_value": "12",
+        "teacher_note_vi": "Ghi số cổng được gọi."
+      },
+      {
+        "spoken_example": "six thirty in the evening",
+        "written_value": "18:30",
+        "teacher_note_vi": "Chỉ chuyển sang 24 giờ khi đã nghe chỉ dẫn buổi tối."
+      }
+    ],
+    "learning_steps": [
+      "Nhìn tiêu đề kỹ năng và đọc hai ví dụ có giải thích trước khi nghe.",
+      "Nghe một lần và thử ghi số/chữ; không xem transcript trước khi nộp.",
+      "Sau khi nộp, so sánh từ khóa mục tiêu, số 0 và thông tin đã được sửa.",
+      "Làm hai câu đánh giá chưa gặp ở lần nghe đầu và ghi số lần phát lại."
+    ],
+    "common_mistakes": [
+      "Chọn số đầu tiên được nhắc tới thay vì số được xác nhận cuối cùng.",
+      "Bỏ số 0 đầu trong mã hoặc làm tròn số thập phân."
+    ],
+    "before_audio_question": "Đây là số lượng, số tiền, mã, phần trăm hay đơn vị đo? Dữ kiện cuối cùng có được sửa không?",
+    "difficulty_steps": [
+      "T01–T03: nghe thông tin chính trong ngữ cảnh rõ.",
+      "T04–T07: nghe chuỗi dài hơn, chọn chữ/số đúng.",
+      "T08–T10: chú ý thông tin sửa lại, định dạng và ngữ cảnh pha trộn."
+    ],
+    "examples_are_not_mastery_items": true
+  }
+}

@@ -1,0 +1,832 @@
+{
+  "schema_version": "1.2.0",
+  "lesson_id": "S1-SIM-016",
+  "status": "draft",
+  "level": "L4",
+  "section": 1,
+  "topic": "Arranging a short-term food stall at a street market",
+  "title": "Booking a Pop-up Market Food Stall",
+  "content_format": "section_exam_simulation",
+  "exam_part": "IELTS_LISTENING_PART_1_STYLE",
+  "official_ielts_material": false,
+  "learning_objectives_vi": [
+    "Theo dõi hội thoại giao dịch đời sống hai người nói trong một lần nghe.",
+    "Điền chính xác thông tin, kể cả khi có phương án cũ và thông tin đính chính.",
+    "Phân tích MCQ dựa trên ý nghĩa cuối cùng và bằng chứng sau khi nộp bài."
+  ],
+  "target_skills": [
+    "market_booking",
+    "fees",
+    "food_safety",
+    "equipment",
+    "access"
+  ],
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Market events administrator",
+      "accent_requested": "new_zealand",
+      "tts_voice_id": null
+    },
+    {
+      "speaker_id": "B",
+      "role": "Food vendor",
+      "accent_requested": "new_zealand",
+      "tts_voice_id": null
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "Good afternoon, Westgate Market Office. This is Erin. Are you enquiring about a permanent stall or one of our pop-up weekends?",
+      "translation_vi": "Chào chiều, Văn phòng Chợ Westgate, Erin nghe. Anh hỏi gian hàng thường trực hay cuối tuần bán tạm?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "market_booking",
+        "fees",
+        "food_safety",
+        "equipment",
+        "access"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "B",
+      "text_en": "A pop-up weekend. I've started making savoury pastries at home and I'd like to test whether people would buy them locally.",
+      "translation_vi": "Cuối tuần bán tạm. Tôi mới làm bánh mặn ở nhà và muốn thử xem người địa phương có mua không.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "market_booking",
+        "fees",
+        "food_safety",
+        "equipment",
+        "access"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "A",
+      "text_en": "Our monthly trial market is called First Table. It gives new businesses one day to sell without signing a long contract.",
+      "translation_vi": "Chợ thử nghiệm hằng tháng tên First Table, giúp doanh nghiệp mới bán một ngày mà không cần hợp đồng dài.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "market_booking",
+        "fees",
+        "food_safety",
+        "equipment",
+        "access"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "B",
+      "text_en": "First Table is exactly what I need. The other market you run seems to be mainly clothing and second-hand furniture.",
+      "translation_vi": "First Table đúng nhu cầu. Chợ khác có vẻ chủ yếu bán quần áo và đồ cũ.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "market_booking",
+        "fees",
+        "food_safety",
+        "equipment",
+        "access"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "A",
+      "text_en": "That's the Sunday flea market. First Table runs on the first Saturday of each month, weather permitting.",
+      "translation_vi": "Đó là chợ đồ cũ Chủ nhật. First Table vào thứ Bảy đầu tháng, nếu thời tiết cho phép.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "market_booking",
+        "fees",
+        "food_safety",
+        "equipment",
+        "access"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "B",
+      "text_en": "Saturday works for me. What time do sellers have to arrive? I know the public don't come in until later.",
+      "translation_vi": "Thứ Bảy được. Người bán phải đến lúc nào? Tôi biết khách công chúng vào muộn hơn.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "market_booking",
+        "fees",
+        "food_safety",
+        "equipment",
+        "access"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "Stallholders check in at seven thirty. The gates open to shoppers at nine, so you've got time to arrange your display.",
+      "translation_vi": "Người bán đăng ký lúc bảy rưỡi. Cổng mở cho khách lúc chín giờ nên có thời gian bày hàng.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "market_booking",
+        "fees",
+        "food_safety",
+        "equipment",
+        "access"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "B",
+      "text_en": "Seven thirty is fine. Is there a particular entrance for deliveries? My van is too tall for the underground car park.",
+      "translation_vi": "Bảy rưỡi được. Có cổng riêng giao hàng không? Xe tải nhỏ của tôi quá cao cho hầm xe.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "market_booking",
+        "fees",
+        "food_safety",
+        "equipment",
+        "access"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T09",
+      "speaker_id": "A",
+      "text_en": "Use the loading gate on Willow Road. It's at street level, and vehicles must be moved away by eight thirty.",
+      "translation_vi": "Hãy dùng cổng nhập hàng trên Willow Road, ngang mặt đường; xe phải chuyển đi trước tám rưỡi.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "market_booking",
+        "fees",
+        "food_safety",
+        "equipment",
+        "access"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T10",
+      "speaker_id": "B",
+      "text_en": "I'll find Willow Road. I only need a small stall, perhaps with one table for the pastries and another for packaging.",
+      "translation_vi": "Tôi sẽ tìm Willow Road. Tôi chỉ cần gian nhỏ, có lẽ một bàn bánh và một bàn đóng gói.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "market_booking",
+        "fees",
+        "food_safety",
+        "equipment",
+        "access"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T11",
+      "speaker_id": "A",
+      "text_en": "The standard pitch is three metres wide. We provide one table; additional furniture can be hired separately from the caretaker.",
+      "translation_vi": "Gian tiêu chuẩn rộng ba mét. Chúng tôi cấp một bàn; đồ nội thất thêm có thể thuê người quản lý.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "market_booking",
+        "fees",
+        "food_safety",
+        "equipment",
+        "access"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T12",
+      "speaker_id": "B",
+      "text_en": "Three metres should be plenty. Is electricity included? I have a heated display case, although the pastries can be served cold.",
+      "translation_vi": "Ba mét là đủ. Có điện không? Tôi có tủ trưng bày giữ ấm, nhưng bánh cũng có thể ăn nguội.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "market_booking",
+        "fees",
+        "food_safety",
+        "equipment",
+        "access"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T13",
+      "speaker_id": "A",
+      "text_en": "Electricity isn't included with the basic pitch. If you need it, there's an eight-pound power supplement and only six sockets available.",
+      "translation_vi": "Gian cơ bản không gồm điện. Nếu cần phải trả thêm tám bảng và chỉ có sáu ổ cắm.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "market_booking",
+        "fees",
+        "food_safety",
+        "equipment",
+        "access"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T14",
+      "speaker_id": "B",
+      "text_en": "I'll manage without power. What's the actual pitch fee for a first-time seller? I saw different prices on your website.",
+      "translation_vi": "Tôi sẽ không dùng điện. Phí gian cho người mới là bao nhiêu? Web ghi nhiều mức khác nhau.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "market_booking",
+        "fees",
+        "food_safety",
+        "equipment",
+        "access"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T15",
+      "speaker_id": "A",
+      "text_en": "The first-time pitch is twenty pounds. Returning traders pay twenty-six, which is why you may have noticed two prices.",
+      "translation_vi": "Phí cho người mới hai mươi bảng. Người đã bán trước trả hai mươi sáu, nên anh thấy hai giá.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "market_booking",
+        "fees",
+        "food_safety",
+        "equipment",
+        "access"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T16",
+      "speaker_id": "B",
+      "text_en": "That sounds reasonable. Do I have to send my full menu before you confirm a food stall?",
+      "translation_vi": "Giá hợp lý. Tôi có phải gửi thực đơn đầy đủ trước khi xác nhận gian thực phẩm không?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "market_booking",
+        "fees",
+        "food_safety",
+        "equipment",
+        "access"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T17",
+      "speaker_id": "A",
+      "text_en": "Please submit an ingredients list, including allergens. We don't need your recipes, but customers must be able to see what's in the food.",
+      "translation_vi": "Hãy nộp danh sách nguyên liệu gồm chất gây dị ứng. Không cần công thức, nhưng khách phải biết thành phần.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "market_booking",
+        "fees",
+        "food_safety",
+        "equipment",
+        "access"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T18",
+      "speaker_id": "B",
+      "text_en": "I'll prepare the list. I use sesame in one pastry, so I'll make sure that's clearly labelled on the display.",
+      "translation_vi": "Tôi sẽ chuẩn bị. Tôi có dùng vừng trong một loại bánh, nên sẽ ghi nhãn rõ trên kệ.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "market_booking",
+        "fees",
+        "food_safety",
+        "equipment",
+        "access"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T19",
+      "speaker_id": "A",
+      "text_en": "You also need a current food-hygiene certificate. A scanned copy is fine, but we must receive it before we allocate a pitch.",
+      "translation_vi": "Anh cũng cần chứng chỉ vệ sinh thực phẩm còn hiệu lực. Bản quét được, nhưng phải nhận trước khi xếp gian.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "market_booking",
+        "fees",
+        "food_safety",
+        "equipment",
+        "access"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T20",
+      "speaker_id": "B",
+      "text_en": "I have one from my training course. Is there a refund if heavy rain causes the whole market to be cancelled?",
+      "translation_vi": "Tôi có chứng chỉ từ khóa học. Nếu mưa lớn khiến toàn chợ hủy thì có hoàn phí không?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "market_booking",
+        "fees",
+        "food_safety",
+        "equipment",
+        "access"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T21",
+      "speaker_id": "A",
+      "text_en": "If the organisers cancel, we offer either a full refund or a place at the next market. If you cancel personally, the deposit is lost.",
+      "translation_vi": "Nếu ban tổ chức hủy, chúng tôi hoàn đủ hoặc chuyển sang kỳ sau. Nếu anh tự hủy sẽ mất tiền cọc.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "market_booking",
+        "fees",
+        "food_safety",
+        "equipment",
+        "access"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T22",
+      "speaker_id": "B",
+      "text_en": "Thanks. I'll send the ingredients and certificate, and arrive at Willow Road before seven thirty with my pastries.",
+      "translation_vi": "Cảm ơn. Tôi sẽ gửi nguyên liệu và chứng chỉ, đến Willow Road trước bảy rưỡi cùng bánh.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "market_booking",
+        "fees",
+        "food_safety",
+        "equipment",
+        "access"
+      ],
+      "bank_role": "protected_assessment"
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "group_id": "PART1_FORM_1_TO_6",
+      "type": "form_completion",
+      "prompt": "Name of trial market: ____",
+      "correct_answers": [
+        "First Table"
+      ],
+      "spoken_answer": "First Table",
+      "word_limit": 3,
+      "instructions_en": "NO MORE THAN THREE WORDS AND/OR A NUMBER",
+      "scoring_policy": "controlled_variants",
+      "explanation_vi": "Tên chợ thử nghiệm là First Table.",
+      "answer_source": "explicit_recording",
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "evidence_excerpt_en": "called First Table",
+      "question_tags": [
+        "M25",
+        "part1",
+        "completion",
+        "market_booking",
+        "fees",
+        "food_safety",
+        "equipment",
+        "access"
+      ]
+    },
+    {
+      "question_id": "Q02",
+      "group_id": "PART1_FORM_1_TO_6",
+      "type": "form_completion",
+      "prompt": "Day of the market: ____",
+      "correct_answers": [
+        "Saturday"
+      ],
+      "spoken_answer": "Saturday",
+      "word_limit": 3,
+      "instructions_en": "NO MORE THAN THREE WORDS AND/OR A NUMBER",
+      "scoring_policy": "controlled_variants",
+      "explanation_vi": "Chợ vào thứ Bảy đầu tháng.",
+      "answer_source": "explicit_recording",
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "evidence_excerpt_en": "first Saturday of each month",
+      "question_tags": [
+        "M25",
+        "part1",
+        "completion",
+        "market_booking",
+        "fees",
+        "food_safety",
+        "equipment",
+        "access"
+      ]
+    },
+    {
+      "question_id": "Q03",
+      "group_id": "PART1_FORM_1_TO_6",
+      "type": "form_completion",
+      "prompt": "Seller check-in time: ____",
+      "correct_answers": [
+        "seven thirty"
+      ],
+      "spoken_answer": "seven thirty",
+      "word_limit": 3,
+      "instructions_en": "NO MORE THAN THREE WORDS AND/OR A NUMBER",
+      "scoring_policy": "controlled_variants",
+      "explanation_vi": "Người bán đến lúc 7:30.",
+      "answer_source": "explicit_recording",
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "evidence_excerpt_en": "at seven thirty",
+      "question_tags": [
+        "M25",
+        "part1",
+        "completion",
+        "market_booking",
+        "fees",
+        "food_safety",
+        "equipment",
+        "access"
+      ]
+    },
+    {
+      "question_id": "Q04",
+      "group_id": "PART1_FORM_1_TO_6",
+      "type": "note_completion",
+      "prompt": "Delivery entrance: ____ Road",
+      "correct_answers": [
+        "Willow"
+      ],
+      "spoken_answer": "Willow",
+      "word_limit": 3,
+      "instructions_en": "NO MORE THAN THREE WORDS AND/OR A NUMBER",
+      "scoring_policy": "controlled_variants",
+      "explanation_vi": "Cổng hàng trên Willow Road.",
+      "answer_source": "explicit_recording",
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "evidence_excerpt_en": "Willow Road",
+      "question_tags": [
+        "M25",
+        "part1",
+        "completion",
+        "market_booking",
+        "fees",
+        "food_safety",
+        "equipment",
+        "access"
+      ]
+    },
+    {
+      "question_id": "Q05",
+      "group_id": "PART1_FORM_1_TO_6",
+      "type": "form_completion",
+      "prompt": "Width of standard pitch: ____ metres",
+      "correct_answers": [
+        "three",
+        "3"
+      ],
+      "spoken_answer": "three",
+      "word_limit": 3,
+      "instructions_en": "NO MORE THAN THREE WORDS AND/OR A NUMBER",
+      "scoring_policy": "controlled_variants",
+      "explanation_vi": "Gian tiêu chuẩn rộng ba mét.",
+      "answer_source": "explicit_recording",
+      "evidence_turn_ids": [
+        "T11"
+      ],
+      "evidence_excerpt_en": "three metres wide",
+      "question_tags": [
+        "M25",
+        "part1",
+        "completion",
+        "market_booking",
+        "fees",
+        "food_safety",
+        "equipment",
+        "access"
+      ]
+    },
+    {
+      "question_id": "Q06",
+      "group_id": "PART1_FORM_1_TO_6",
+      "type": "form_completion",
+      "prompt": "Electricity supplement: £____",
+      "correct_answers": [
+        "eight",
+        "8"
+      ],
+      "spoken_answer": "eight",
+      "word_limit": 3,
+      "instructions_en": "NO MORE THAN THREE WORDS AND/OR A NUMBER",
+      "scoring_policy": "controlled_variants",
+      "explanation_vi": "Phụ thu điện 8 bảng.",
+      "answer_source": "explicit_recording",
+      "evidence_turn_ids": [
+        "T13"
+      ],
+      "evidence_excerpt_en": "eight-pound power supplement",
+      "question_tags": [
+        "M25",
+        "part1",
+        "completion",
+        "market_booking",
+        "fees",
+        "food_safety",
+        "equipment",
+        "access"
+      ]
+    },
+    {
+      "question_id": "Q07",
+      "group_id": "PART1_MCQ_7_TO_10",
+      "type": "mcq",
+      "prompt": "Why are two pitch fees listed?",
+      "correct_answers": [
+        "Prices differ for first-time and returning traders"
+      ],
+      "options": [
+        {
+          "key": "A",
+          "text": "Prices differ for first-time and returning traders"
+        },
+        {
+          "key": "B",
+          "text": "Prices depend on a stall's colour"
+        },
+        {
+          "key": "C",
+          "text": "Prices change each hour"
+        }
+      ],
+      "correct_option": "A",
+      "scoring_policy": "one_correct_option",
+      "explanation_vi": "Người mới và người bán lại có mức giá khác nhau.",
+      "answer_source": "explicit_or_contextual_recording",
+      "evidence_turn_ids": [
+        "T15"
+      ],
+      "evidence_excerpt_en": "first-time pitch is twenty pounds. Returning traders pay twenty-six",
+      "question_tags": [
+        "M25",
+        "part1",
+        "mcq",
+        "market_booking",
+        "fees",
+        "food_safety",
+        "equipment",
+        "access"
+      ]
+    },
+    {
+      "question_id": "Q08",
+      "group_id": "PART1_MCQ_7_TO_10",
+      "type": "mcq",
+      "prompt": "Which food information must be provided?",
+      "correct_answers": [
+        "Ingredients including allergens"
+      ],
+      "options": [
+        {
+          "key": "A",
+          "text": "Full recipes with cooking steps"
+        },
+        {
+          "key": "B",
+          "text": "Ingredients including allergens"
+        },
+        {
+          "key": "C",
+          "text": "Names of all suppliers"
+        }
+      ],
+      "correct_option": "B",
+      "scoring_policy": "one_correct_option",
+      "explanation_vi": "Cần danh sách thành phần và chất gây dị ứng.",
+      "answer_source": "explicit_or_contextual_recording",
+      "evidence_turn_ids": [
+        "T17"
+      ],
+      "evidence_excerpt_en": "ingredients list, including allergens",
+      "question_tags": [
+        "M25",
+        "part1",
+        "mcq",
+        "market_booking",
+        "fees",
+        "food_safety",
+        "equipment",
+        "access"
+      ]
+    },
+    {
+      "question_id": "Q09",
+      "group_id": "PART1_MCQ_7_TO_10",
+      "type": "mcq",
+      "prompt": "Which document is required before a pitch is allocated?",
+      "correct_answers": [
+        "A food-hygiene certificate"
+      ],
+      "options": [
+        {
+          "key": "A",
+          "text": "A driving test report"
+        },
+        {
+          "key": "B",
+          "text": "A market membership card from last year"
+        },
+        {
+          "key": "C",
+          "text": "A food-hygiene certificate"
+        }
+      ],
+      "correct_option": "C",
+      "scoring_policy": "one_correct_option",
+      "explanation_vi": "Cần chứng chỉ an toàn vệ sinh thực phẩm.",
+      "answer_source": "explicit_or_contextual_recording",
+      "evidence_turn_ids": [
+        "T19"
+      ],
+      "evidence_excerpt_en": "food-hygiene certificate",
+      "question_tags": [
+        "M25",
+        "part1",
+        "mcq",
+        "market_booking",
+        "fees",
+        "food_safety",
+        "equipment",
+        "access"
+      ]
+    },
+    {
+      "question_id": "Q10",
+      "group_id": "PART1_MCQ_7_TO_10",
+      "type": "mcq",
+      "prompt": "What happens if the organisers cancel the whole market?",
+      "correct_answers": [
+        "Refund or a place at the next market"
+      ],
+      "options": [
+        {
+          "key": "A",
+          "text": "Refund or a place at the next market"
+        },
+        {
+          "key": "B",
+          "text": "Loss of the full fee"
+        },
+        {
+          "key": "C",
+          "text": "A free electricity connection only"
+        }
+      ],
+      "correct_option": "A",
+      "scoring_policy": "one_correct_option",
+      "explanation_vi": "Ban tổ chức hủy sẽ hoàn tiền hoặc chuyển kỳ sau.",
+      "answer_source": "explicit_or_contextual_recording",
+      "evidence_turn_ids": [
+        "T21"
+      ],
+      "evidence_excerpt_en": "either a full refund or a place at the next market",
+      "question_tags": [
+        "M25",
+        "part1",
+        "mcq",
+        "market_booking",
+        "fees",
+        "food_safety",
+        "equipment",
+        "access"
+      ]
+    }
+  ],
+  "question_groups": [
+    {
+      "group_id": "PART1_FORM_1_TO_6",
+      "question_ids": [
+        "Q01",
+        "Q02",
+        "Q03",
+        "Q04",
+        "Q05",
+        "Q06"
+      ],
+      "instructions_en": "Complete the form. Write NO MORE THAN THREE WORDS AND/OR A NUMBER for each answer.",
+      "pre_read_seconds": 30,
+      "break_after_turn_id": "T13",
+      "requires_one_listen": true
+    },
+    {
+      "group_id": "PART1_MCQ_7_TO_10",
+      "question_ids": [
+        "Q07",
+        "Q08",
+        "Q09",
+        "Q10"
+      ],
+      "instructions_en": "Choose the correct letter A, B or C.",
+      "pre_read_seconds": 25,
+      "requires_one_listen": true
+    }
+  ],
+  "audio": {
+    "status": "not_generated",
+    "audio_url": null,
+    "audio_asset_id": null,
+    "duration_ms": null,
+    "source_text_sha256": "56fb300a49ebf6131893c0ddd5af34f09981cbec5155e2246271fde79387d25b",
+    "generation_strategy": "single_continuous_two_person_dialogue",
+    "aligned_turns": false
+  },
+  "exam_mode": {
+    "bank_role": "protected_assessment",
+    "use_as_training_before_first_attempt": false,
+    "listening_attempts_allowed_for_scored_first_attempt": 1,
+    "replay_before_submit": false,
+    "speed_control_before_submit": false,
+    "transcript_visible_before_submit": false,
+    "answer_key_visible_before_submit": false,
+    "post_attempt_review_allowed": true,
+    "question_count": 10,
+    "points_per_correct_answer": 1,
+    "question_order_monotonic": true,
+    "estimated_speech_minutes_at_135_wpm": 3.33,
+    "exam_band_score_enabled": false,
+    "repeated_attempt_marked_as_seen": true
+  },
+  "qa": {
+    "automatic_data_validation": "pending",
+    "content_human_review": "pending",
+    "audio_human_review": "pending",
+    "exam_simulation_rubric_score": null,
+    "rubric_90_verified": false,
+    "published": false,
+    "release_eligible": false
+  },
+  "provenance": {
+    "source_type": "original_authored_english_dialogue",
+    "milestone": "M25",
+    "no_official_ielts_question_copied": true,
+    "training_exposure_guard": true
+  },
+  "release_metadata": {
+    "target_bank": "protected_assessment",
+    "import_policy": "insert_only",
+    "version": "m25.0.1",
+    "preserve_existing_ids": true,
+    "allow_client_answer_payload": false
+  }
+}

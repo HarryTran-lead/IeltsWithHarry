@@ -1,0 +1,810 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "S3-EXP-001",
+  "status": "draft",
+  "level": "L6",
+  "section": 3,
+  "topic": "Food-waste research methods",
+  "title": "Redesigning a Campus Food-Waste Study",
+  "learning_objectives_vi": [
+    "Phân biệt quan điểm ban đầu, lời phản biện và quyết định cuối trong thảo luận học thuật.",
+    "Nghe các phương án gây nhiễu và từ đồng nghĩa để chọn đáp án theo ý nghĩa.",
+    "Ghép nhiều mục với người nói mà không suy đoán chỉ dựa vào từ khóa."
+  ],
+  "content_format": "section_practice",
+  "target_skills": [
+    "research_design",
+    "opinion_tracking",
+    "academic_discussion",
+    "matching",
+    "multiple_choice"
+  ],
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "University tutor / seminar adviser",
+      "accent_requested": "british",
+      "tts_voice_id": null
+    },
+    {
+      "speaker_id": "B",
+      "role": "University student 1",
+      "accent_requested": "australian",
+      "tts_voice_id": null
+    },
+    {
+      "speaker_id": "C",
+      "role": "University student 2",
+      "accent_requested": "new_zealand",
+      "tts_voice_id": null
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "Before we approve your fieldwork, tell me what your research question really is. Are you measuring how much food is wasted or investigating why students leave food behind? Those would require rather different methods.",
+      "translation_vi": "Trước khi duyệt khảo sát, thầy muốn biết câu hỏi nghiên cứu là đo lượng thức ăn bị bỏ hay tìm nguyên nhân sinh viên bỏ lại đồ ăn; hai hướng cần phương pháp khác nhau.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "research_design",
+        "academic_discussion",
+        "opinion_tracking",
+        "paraphrase",
+        "distractor_analysis"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "B",
+      "text_en": "We initially planned to weigh every leftover plate for a week, but the dining manager says the scales would obstruct the queue. I think our real interest is the reasons behind the waste.",
+      "translation_vi": "Bọn em định cân tất cả đĩa thức ăn thừa trong một tuần, nhưng quản lý nói cân sẽ cản hàng chờ. Em nghĩ mục tiêu chính là lý do gây lãng phí.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "research_design",
+        "academic_discussion",
+        "opinion_tracking",
+        "paraphrase",
+        "distractor_analysis"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "C",
+      "text_en": "Then perhaps we could simply email a questionnaire. It would reach far more students than interviews, though I worry that people might claim to waste less than they actually do.",
+      "translation_vi": "Có lẽ mình có thể gửi bảng hỏi qua email, tiếp cận nhiều người hơn phỏng vấn, nhưng em lo mọi người khai ít lãng phí hơn thực tế.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "research_design",
+        "academic_discussion",
+        "opinion_tracking",
+        "paraphrase",
+        "distractor_analysis"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "A",
+      "text_en": "That concern is valid. Use short interviews immediately after lunch, rather than relying on a questionnaire alone. People can explain a specific meal while it is still fresh in their minds.",
+      "translation_vi": "Lo ngại đó hợp lý. Hãy phỏng vấn ngắn ngay sau bữa trưa thay vì chỉ dùng bảng hỏi; người tham gia sẽ nhớ rõ bữa ăn vừa dùng.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "research_design",
+        "academic_discussion",
+        "opinion_tracking",
+        "paraphrase",
+        "distractor_analysis"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "B",
+      "text_en": "We also noticed the vegetarian counter runs out of its popular option early. Students who arrive late sometimes buy a second-choice dish and then leave half of it. That could distort a general conclusion about portion sizes.",
+      "translation_vi": "Chúng em thấy quầy chay thường hết món được ưa chuộng từ sớm. Sinh viên đến muộn mua món thay thế rồi bỏ lại một nửa, có thể làm sai lệch kết luận về khẩu phần.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "research_design",
+        "academic_discussion",
+        "opinion_tracking",
+        "paraphrase",
+        "distractor_analysis"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "C",
+      "text_en": "I was going to compare Monday with Friday, but those days have different menus and attendance. A comparison across the same weekday in consecutive weeks would control those differences more effectively.",
+      "translation_vi": "Em từng định so sánh thứ Hai với thứ Sáu, nhưng thực đơn và lượng người khác nhau. So cùng một thứ trong hai tuần liên tiếp sẽ kiểm soát sự khác biệt tốt hơn.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "research_design",
+        "academic_discussion",
+        "opinion_tracking",
+        "paraphrase",
+        "distractor_analysis"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "Exactly, and record the menu beside each observation. If you ignore what was actually served, a change in waste could look like a behavioural improvement when it is merely a popular dish.",
+      "translation_vi": "Đúng vậy, phải ghi cả thực đơn bên cạnh quan sát. Nếu bỏ qua món ăn, giảm lãng phí có thể chỉ vì món ngon chứ không phải hành vi thay đổi.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "research_design",
+        "academic_discussion",
+        "opinion_tracking",
+        "paraphrase",
+        "distractor_analysis"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "B",
+      "text_en": "So our pilot could cover two lunches next Wednesday, one in the main hall and another in the smaller café. I suggest a trial with twelve volunteers before we invite a larger group.",
+      "translation_vi": "Vậy mình có thể thử ở hai điểm ăn trưa thứ Tư tới, nhà ăn lớn và quán nhỏ; em đề xuất chạy thử với 12 tình nguyện viên trước khi mở rộng.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "research_design",
+        "academic_discussion",
+        "opinion_tracking",
+        "paraphrase",
+        "distractor_analysis"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T09",
+      "speaker_id": "A",
+      "text_en": "I can arrange permission to observe the serving area, provided the team never photographs identifiable customers. We must separate anonymous notes from names collected for arranging interviews.",
+      "translation_vi": "Thầy có thể xin phép quan sát khu phục vụ, miễn không chụp khách có thể nhận diện; phải tách ghi chú ẩn danh khỏi tên dùng đặt lịch phỏng vấn.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "research_design",
+        "academic_discussion",
+        "opinion_tracking",
+        "paraphrase",
+        "distractor_analysis"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T10",
+      "speaker_id": "C",
+      "text_en": "For the consent form, I will rewrite the questions so no participant is asked to justify a personal choice. Asking why someone 'wasted food' sounds accusatory, whereas asking what affected the meal is neutral.",
+      "translation_vi": "Về phiếu đồng ý, em sẽ viết lại câu hỏi để không buộc ai biện minh lựa chọn; hỏi vì sao 'lãng phí' nghe trách móc, còn hỏi yếu tố ảnh hưởng bữa ăn thì trung lập.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "research_design",
+        "academic_discussion",
+        "opinion_tracking",
+        "paraphrase",
+        "distractor_analysis"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T11",
+      "speaker_id": "B",
+      "text_en": "I'll prepare the interview schedule and recruit volunteers across both lunch periods. If we interview only early arrivals, we will miss the students who face limited menu choices.",
+      "translation_vi": "Em sẽ làm lịch phỏng vấn và tuyển người ở cả hai khung giờ. Chỉ phỏng vấn người đến sớm sẽ bỏ sót nhóm có ít lựa chọn món.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "research_design",
+        "academic_discussion",
+        "opinion_tracking",
+        "paraphrase",
+        "distractor_analysis"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T12",
+      "speaker_id": "C",
+      "text_en": "And I'll test whether our observation sheet records the meal, time and any reported reason consistently. If two researchers interpret a category differently, we should revise the definitions before collecting real data.",
+      "translation_vi": "Còn em sẽ thử phiếu quan sát có ghi nhất quán món, giờ và lý do không. Nếu hai người hiểu cùng một nhãn khác nhau, phải sửa định nghĩa trước khi thu dữ liệu.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "research_design",
+        "academic_discussion",
+        "opinion_tracking",
+        "paraphrase",
+        "distractor_analysis"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T13",
+      "speaker_id": "A",
+      "text_en": "Good. Bring the revised pilot plan next week. We are not trying to prove that students are careless; we are testing which features of the dining service influence what gets eaten.",
+      "translation_vi": "Tốt. Tuần tới mang kế hoạch thử nghiệm đã sửa. Ta không cố chứng minh sinh viên bất cẩn mà kiểm tra yếu tố dịch vụ ảnh hưởng lượng thức ăn được ăn.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "research_design",
+        "academic_discussion",
+        "opinion_tracking",
+        "paraphrase",
+        "distractor_analysis"
+      ],
+      "bank_role": "training"
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "group_id": "IELTS_S3_MC_GROUP",
+      "type": "mcq",
+      "prompt": "What did the students decide to investigate?",
+      "correct_answers": [
+        "The reasons students leave food"
+      ],
+      "options": [
+        "The reasons students leave food",
+        "The cost of ingredients",
+        "The total weight of all meals served"
+      ],
+      "correct_option": "A",
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "evidence_excerpt_en": "We initially planned to weigh every leftover plate for a week, but the dining manager says the scales would obstruct the queue. I think our real interest is the reasons behind the waste.",
+      "explanation_vi": "Vì mục tiêu là nguyên nhân, không phải chỉ đo khối lượng.",
+      "question_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "infer_decision",
+        "paraphrase",
+        "research_design"
+      ],
+      "scoring_policy": "strict",
+      "bank_role": "training",
+      "answer_provenance": "original_draft_authored_against_transcript",
+      "review_status": "awaiting_teacher_and_audio_review"
+    },
+    {
+      "question_id": "Q02",
+      "group_id": "IELTS_S3_MC_GROUP",
+      "type": "mcq",
+      "prompt": "Which method does the tutor recommend?",
+      "correct_answers": [
+        "Short interviews after lunch"
+      ],
+      "options": [
+        "Photographs of all food trays",
+        "Short interviews after lunch",
+        "An anonymous email survey only"
+      ],
+      "correct_option": "B",
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "evidence_excerpt_en": "That concern is valid. Use short interviews immediately after lunch, rather than relying on a questionnaire alone. People can explain a specific meal while it is still fresh in their minds.",
+      "explanation_vi": "Phỏng vấn ngay sau bữa trưa cho phép nhớ bữa ăn cụ thể.",
+      "question_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "infer_decision",
+        "paraphrase",
+        "research_design"
+      ],
+      "scoring_policy": "strict",
+      "bank_role": "training",
+      "answer_provenance": "original_draft_authored_against_transcript",
+      "review_status": "awaiting_teacher_and_audio_review"
+    },
+    {
+      "question_id": "Q03",
+      "group_id": "IELTS_S3_MC_GROUP",
+      "type": "mcq",
+      "prompt": "Why compare the same weekday across weeks?",
+      "correct_answers": [
+        "To reduce differences in menu and attendance"
+      ],
+      "options": [
+        "To increase the lunch break",
+        "To reduce differences in menu and attendance",
+        "To recruit more café staff"
+      ],
+      "correct_option": "B",
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "evidence_excerpt_en": "I was going to compare Monday with Friday, but those days have different menus and attendance. A comparison across the same weekday in consecutive weeks would control those differences more effectively.",
+      "explanation_vi": "Cần kiểm soát thực đơn và lượng người đi ăn.",
+      "question_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "infer_decision",
+        "paraphrase",
+        "research_design"
+      ],
+      "scoring_policy": "strict",
+      "bank_role": "training",
+      "answer_provenance": "original_draft_authored_against_transcript",
+      "review_status": "awaiting_teacher_and_audio_review"
+    },
+    {
+      "question_id": "Q04",
+      "group_id": "IELTS_S3_SPEAKER_MATCHING_GROUP",
+      "type": "matching",
+      "prompt": "Which speaker is associated with this proposal or responsibility: a trial with twelve volunteers?",
+      "options": [
+        "A — course tutor",
+        "B — first student",
+        "C — second student"
+      ],
+      "correct_answers": [
+        "B"
+      ],
+      "correct_option": "B",
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "evidence_excerpt_en": "So our pilot could cover two lunches next Wednesday, one in the main hall and another in the smaller café. I suggest a trial with twelve volunteers before we invite a larger group.",
+      "explanation_vi": "Đề cập trong lượt T08 của người nói B. Cần nghe đúng ai đưa ra đề xuất, không chỉ xác định ý tưởng xuất hiện ở đoạn nào.",
+      "question_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "speaker_opinion_matching",
+        "research_design"
+      ],
+      "scoring_policy": "strict",
+      "bank_role": "training",
+      "answer_provenance": "original_draft_authored_against_transcript",
+      "review_status": "awaiting_teacher_and_audio_review",
+      "matching_group_instructions_en": "Match each proposal or responsibility to the speaker who introduced it or volunteered for it. Choose A, B or C. You may use each letter more than once."
+    },
+    {
+      "question_id": "Q05",
+      "group_id": "IELTS_S3_SPEAKER_MATCHING_GROUP",
+      "type": "matching",
+      "prompt": "Which speaker is associated with this proposal or responsibility: arrange observation permission?",
+      "options": [
+        "A — course tutor",
+        "B — first student",
+        "C — second student"
+      ],
+      "correct_answers": [
+        "A"
+      ],
+      "correct_option": "A",
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "evidence_excerpt_en": "I can arrange permission to observe the serving area, provided the team never photographs identifiable customers. We must separate anonymous notes from names collected for arranging interviews.",
+      "explanation_vi": "Đề cập trong lượt T09 của người nói A. Cần nghe đúng ai đưa ra đề xuất, không chỉ xác định ý tưởng xuất hiện ở đoạn nào.",
+      "question_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "speaker_opinion_matching",
+        "research_design"
+      ],
+      "scoring_policy": "strict",
+      "bank_role": "training",
+      "answer_provenance": "original_draft_authored_against_transcript",
+      "review_status": "awaiting_teacher_and_audio_review",
+      "matching_group_instructions_en": "Match each proposal or responsibility to the speaker who introduced it or volunteered for it. Choose A, B or C. You may use each letter more than once."
+    },
+    {
+      "question_id": "Q06",
+      "group_id": "IELTS_S3_SPEAKER_MATCHING_GROUP",
+      "type": "matching",
+      "prompt": "Which speaker is associated with this proposal or responsibility: reword the consent questions?",
+      "options": [
+        "A — course tutor",
+        "B — first student",
+        "C — second student"
+      ],
+      "correct_answers": [
+        "C"
+      ],
+      "correct_option": "C",
+      "evidence_turn_ids": [
+        "T10"
+      ],
+      "evidence_excerpt_en": "For the consent form, I will rewrite the questions so no participant is asked to justify a personal choice. Asking why someone 'wasted food' sounds accusatory, whereas asking what affected the meal is neutral.",
+      "explanation_vi": "Đề cập trong lượt T10 của người nói C. Cần nghe đúng ai đưa ra đề xuất, không chỉ xác định ý tưởng xuất hiện ở đoạn nào.",
+      "question_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "speaker_opinion_matching",
+        "research_design"
+      ],
+      "scoring_policy": "strict",
+      "bank_role": "training",
+      "answer_provenance": "original_draft_authored_against_transcript",
+      "review_status": "awaiting_teacher_and_audio_review",
+      "matching_group_instructions_en": "Match each proposal or responsibility to the speaker who introduced it or volunteered for it. Choose A, B or C. You may use each letter more than once."
+    },
+    {
+      "question_id": "Q07",
+      "group_id": "IELTS_S3_SPEAKER_MATCHING_GROUP",
+      "type": "matching",
+      "prompt": "Which speaker is associated with this proposal or responsibility: recruit volunteers from two lunch periods?",
+      "options": [
+        "A — course tutor",
+        "B — first student",
+        "C — second student"
+      ],
+      "correct_answers": [
+        "B"
+      ],
+      "correct_option": "B",
+      "evidence_turn_ids": [
+        "T11"
+      ],
+      "evidence_excerpt_en": "I'll prepare the interview schedule and recruit volunteers across both lunch periods. If we interview only early arrivals, we will miss the students who face limited menu choices.",
+      "explanation_vi": "Đề cập trong lượt T11 của người nói B. Cần nghe đúng ai đưa ra đề xuất, không chỉ xác định ý tưởng xuất hiện ở đoạn nào.",
+      "question_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "speaker_opinion_matching",
+        "research_design"
+      ],
+      "scoring_policy": "strict",
+      "bank_role": "training",
+      "answer_provenance": "original_draft_authored_against_transcript",
+      "review_status": "awaiting_teacher_and_audio_review",
+      "matching_group_instructions_en": "Match each proposal or responsibility to the speaker who introduced it or volunteered for it. Choose A, B or C. You may use each letter more than once."
+    },
+    {
+      "question_id": "Q08",
+      "group_id": "IELTS_S3_SPEAKER_MATCHING_GROUP",
+      "type": "matching",
+      "prompt": "Which speaker is associated with this proposal or responsibility: test consistency of observation categories?",
+      "options": [
+        "A — course tutor",
+        "B — first student",
+        "C — second student"
+      ],
+      "correct_answers": [
+        "C"
+      ],
+      "correct_option": "C",
+      "evidence_turn_ids": [
+        "T12"
+      ],
+      "evidence_excerpt_en": "And I'll test whether our observation sheet records the meal, time and any reported reason consistently. If two researchers interpret a category differently, we should revise the definitions before collecting real data.",
+      "explanation_vi": "Đề cập trong lượt T12 của người nói C. Cần nghe đúng ai đưa ra đề xuất, không chỉ xác định ý tưởng xuất hiện ở đoạn nào.",
+      "question_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "speaker_opinion_matching",
+        "research_design"
+      ],
+      "scoring_policy": "strict",
+      "bank_role": "training",
+      "answer_provenance": "original_draft_authored_against_transcript",
+      "review_status": "awaiting_teacher_and_audio_review",
+      "matching_group_instructions_en": "Match each proposal or responsibility to the speaker who introduced it or volunteered for it. Choose A, B or C. You may use each letter more than once."
+    },
+    {
+      "question_id": "D01",
+      "group_id": "SELECTIVE_DICTATION",
+      "type": "dictation",
+      "prompt": "Nghe và chép nguyên văn lượt thoại T03 của người nói C.",
+      "correct_answers": [
+        "Then perhaps we could simply email a questionnaire. It would reach far more students than interviews, though I worry that people might claim to waste less than they actually do."
+      ],
+      "scoring_policy": "dictation_normalised",
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "evidence_excerpt_en": "Then perhaps we could simply email a questionnaire. It would reach far more students than interviews, though I worry that people might claim to waste less than they actually do.",
+      "explanation_vi": "Đối chiếu từng từ, mạo từ và từ nối; đánh giá cả khả năng nhận diện cụm từ ở tốc độ nói tự nhiên.",
+      "bank_role": "training",
+      "question_tags": [
+        "m23",
+        "selective_dictation",
+        "research_design"
+      ]
+    },
+    {
+      "question_id": "D02",
+      "group_id": "SELECTIVE_DICTATION",
+      "type": "dictation",
+      "prompt": "Nghe và chép nguyên văn lượt thoại T05 của người nói B.",
+      "correct_answers": [
+        "We also noticed the vegetarian counter runs out of its popular option early. Students who arrive late sometimes buy a second-choice dish and then leave half of it. That could distort a general conclusion about portion sizes."
+      ],
+      "scoring_policy": "dictation_normalised",
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "evidence_excerpt_en": "We also noticed the vegetarian counter runs out of its popular option early. Students who arrive late sometimes buy a second-choice dish and then leave half of it. That could distort a general conclusion about portion sizes.",
+      "explanation_vi": "Đối chiếu từng từ, mạo từ và từ nối; đánh giá cả khả năng nhận diện cụm từ ở tốc độ nói tự nhiên.",
+      "bank_role": "training",
+      "question_tags": [
+        "m23",
+        "selective_dictation",
+        "research_design"
+      ]
+    },
+    {
+      "question_id": "D03",
+      "group_id": "SELECTIVE_DICTATION",
+      "type": "dictation",
+      "prompt": "Nghe và chép nguyên văn lượt thoại T07 của người nói A.",
+      "correct_answers": [
+        "Exactly, and record the menu beside each observation. If you ignore what was actually served, a change in waste could look like a behavioural improvement when it is merely a popular dish."
+      ],
+      "scoring_policy": "dictation_normalised",
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "evidence_excerpt_en": "Exactly, and record the menu beside each observation. If you ignore what was actually served, a change in waste could look like a behavioural improvement when it is merely a popular dish.",
+      "explanation_vi": "Đối chiếu từng từ, mạo từ và từ nối; đánh giá cả khả năng nhận diện cụm từ ở tốc độ nói tự nhiên.",
+      "bank_role": "training",
+      "question_tags": [
+        "m23",
+        "selective_dictation",
+        "research_design"
+      ]
+    },
+    {
+      "question_id": "D04",
+      "group_id": "SELECTIVE_DICTATION",
+      "type": "dictation",
+      "prompt": "Nghe và chép nguyên văn lượt thoại T11 của người nói B.",
+      "correct_answers": [
+        "I'll prepare the interview schedule and recruit volunteers across both lunch periods. If we interview only early arrivals, we will miss the students who face limited menu choices."
+      ],
+      "scoring_policy": "dictation_normalised",
+      "evidence_turn_ids": [
+        "T11"
+      ],
+      "evidence_excerpt_en": "I'll prepare the interview schedule and recruit volunteers across both lunch periods. If we interview only early arrivals, we will miss the students who face limited menu choices.",
+      "explanation_vi": "Đối chiếu từng từ, mạo từ và từ nối; đánh giá cả khả năng nhận diện cụm từ ở tốc độ nói tự nhiên.",
+      "bank_role": "training",
+      "question_tags": [
+        "m23",
+        "selective_dictation",
+        "research_design"
+      ]
+    },
+    {
+      "question_id": "G01",
+      "group_id": "GAP_FILL_PRACTICE",
+      "type": "gap_fill",
+      "prompt": "Nghe lượt thoại T01 và điền cụm bị thiếu: Before we approve your ____, tell me what your research question really is. Are you measuring how much food is wasted or investigating why students leave food behind? Those would require rather different methods.",
+      "correct_answers": [
+        "fieldwork"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN 2 WORDS",
+      "scoring_policy": "controlled_variants",
+      "evidence_turn_ids": [
+        "T01"
+      ],
+      "evidence_excerpt_en": "Before we approve your fieldwork, tell me what your research question really is. Are you measuring how much food is wasted or investigating why students leave food behind? Those would require rather different methods.",
+      "explanation_vi": "Cụm nghe được là “fieldwork” (khảo sát thực địa); cần dựa vào ngữ cảnh chứ không chỉ đoán từ loại.",
+      "question_tags": [
+        "m23",
+        "gap_fill",
+        "research_design"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "question_id": "G02",
+      "group_id": "GAP_FILL_PRACTICE",
+      "type": "gap_fill",
+      "prompt": "Nghe lượt thoại T02 và điền cụm bị thiếu: We initially planned to weigh every leftover plate for a week, but the dining manager says the scales would ____. I think our real interest is the reasons behind the waste.",
+      "correct_answers": [
+        "obstruct the queue"
+      ],
+      "word_limit": 3,
+      "instructions_en": "NO MORE THAN 3 WORDS",
+      "scoring_policy": "controlled_variants",
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "evidence_excerpt_en": "We initially planned to weigh every leftover plate for a week, but the dining manager says the scales would obstruct the queue. I think our real interest is the reasons behind the waste.",
+      "explanation_vi": "Cụm nghe được là “obstruct the queue” (cản trở hàng chờ); cần dựa vào ngữ cảnh chứ không chỉ đoán từ loại.",
+      "question_tags": [
+        "m23",
+        "gap_fill",
+        "research_design"
+      ],
+      "bank_role": "training"
+    }
+  ],
+  "vocabulary": [
+    {
+      "vocab_id": "S3-EXP-001-V01",
+      "expression_en": "fieldwork",
+      "meaning_vi": "khảo sát thực địa",
+      "part_of_speech": "noun phrase",
+      "example_en": "Before we approve your fieldwork, tell me what your research question really is. Are you measuring how much food is wasted or investigating why students leave food behind? Those would require rather different methods.",
+      "example_vi": "Trước khi duyệt khảo sát, thầy muốn biết câu hỏi nghiên cứu là đo lượng thức ăn bị bỏ hay tìm nguyên nhân sinh viên bỏ lại đồ ăn; hai hướng cần phương pháp khác nhau.",
+      "evidence_turn_id": "T01",
+      "can_save_to_notebook": true,
+      "requires_human_pos_verification": true
+    },
+    {
+      "vocab_id": "S3-EXP-001-V02",
+      "expression_en": "obstruct the queue",
+      "meaning_vi": "cản trở hàng chờ",
+      "part_of_speech": "noun phrase",
+      "example_en": "We initially planned to weigh every leftover plate for a week, but the dining manager says the scales would obstruct the queue. I think our real interest is the reasons behind the waste.",
+      "example_vi": "Bọn em định cân tất cả đĩa thức ăn thừa trong một tuần, nhưng quản lý nói cân sẽ cản hàng chờ. Em nghĩ mục tiêu chính là lý do gây lãng phí.",
+      "evidence_turn_id": "T02",
+      "can_save_to_notebook": true,
+      "requires_human_pos_verification": true
+    },
+    {
+      "vocab_id": "S3-EXP-001-V03",
+      "expression_en": "questionnaire",
+      "meaning_vi": "bảng câu hỏi",
+      "part_of_speech": "noun phrase",
+      "example_en": "Then perhaps we could simply email a questionnaire. It would reach far more students than interviews, though I worry that people might claim to waste less than they actually do.",
+      "example_vi": "Có lẽ mình có thể gửi bảng hỏi qua email, tiếp cận nhiều người hơn phỏng vấn, nhưng em lo mọi người khai ít lãng phí hơn thực tế.",
+      "evidence_turn_id": "T03",
+      "can_save_to_notebook": true,
+      "requires_human_pos_verification": true
+    },
+    {
+      "vocab_id": "S3-EXP-001-V04",
+      "expression_en": "distort a general conclusion",
+      "meaning_vi": "làm sai lệch kết luận",
+      "part_of_speech": "verb phrase",
+      "example_en": "We also noticed the vegetarian counter runs out of its popular option early. Students who arrive late sometimes buy a second-choice dish and then leave half of it. That could distort a general conclusion about portion sizes.",
+      "example_vi": "Chúng em thấy quầy chay thường hết món được ưa chuộng từ sớm. Sinh viên đến muộn mua món thay thế rồi bỏ lại một nửa, có thể làm sai lệch kết luận về khẩu phần.",
+      "evidence_turn_id": "T05",
+      "can_save_to_notebook": true,
+      "requires_human_pos_verification": true
+    },
+    {
+      "vocab_id": "S3-EXP-001-V05",
+      "expression_en": "pilot",
+      "meaning_vi": "nghiên cứu thử",
+      "part_of_speech": "noun phrase",
+      "example_en": "So our pilot could cover two lunches next Wednesday, one in the main hall and another in the smaller café. I suggest a trial with twelve volunteers before we invite a larger group.",
+      "example_vi": "Vậy mình có thể thử ở hai điểm ăn trưa thứ Tư tới, nhà ăn lớn và quán nhỏ; em đề xuất chạy thử với 12 tình nguyện viên trước khi mở rộng.",
+      "evidence_turn_id": "T08",
+      "can_save_to_notebook": true,
+      "requires_human_pos_verification": true
+    },
+    {
+      "vocab_id": "S3-EXP-001-V06",
+      "expression_en": "consent form",
+      "meaning_vi": "phiếu đồng ý tham gia",
+      "part_of_speech": "noun phrase",
+      "example_en": "For the consent form, I will rewrite the questions so no participant is asked to justify a personal choice. Asking why someone 'wasted food' sounds accusatory, whereas asking what affected the meal is neutral.",
+      "example_vi": "Về phiếu đồng ý, em sẽ viết lại câu hỏi để không buộc ai biện minh lựa chọn; hỏi vì sao 'lãng phí' nghe trách móc, còn hỏi yếu tố ảnh hưởng bữa ăn thì trung lập.",
+      "evidence_turn_id": "T10",
+      "can_save_to_notebook": true,
+      "requires_human_pos_verification": true
+    }
+  ],
+  "audio": {
+    "status": "not_generated",
+    "audio_url": null,
+    "duration_ms": null,
+    "source_text_sha256": "2685617a28c0283fcda5d94f278fcd8bbcb7e64287dd434945f731afb3a7726c",
+    "generation_strategy": "per_turn_tts_three_speakers_then_stitch",
+    "audio_asset_id": null,
+    "requires_dialogue_prosody_review": true
+  },
+  "learning_flow": {
+    "intro": {
+      "theory_vi": "IELTS Listening Part 3 thường có thảo luận học thuật. Hãy dự đoán người nói và mục đích câu hỏi trước khi nghe. Đừng chọn một phương án chỉ vì nó xuất hiện sớm; theo dõi phản biện, cách diễn đạt lại và đề xuất cuối cùng.",
+      "tip_vi": "Với Matching, các chữ A/B/C là người nói và có thể lặp lại. Nghe người thực sự đề xuất hành động; một người khác có thể chỉ đồng tình hoặc nhắc lại đề xuất đó.",
+      "common_mistakes_vi": [
+        "Chọn lập luận đầu tiên dù người khác đã bác bỏ.",
+        "Không phân biệt người phát biểu đề xuất với người tán thành.",
+        "Chọn đáp án chứa từ giống audio nhưng sai ý.",
+        "Làm lộ transcript khi chưa nộp bài nghe đầu."
+      ],
+      "worked_examples": [
+        {
+          "audio_example_en": "Maya: We could interview everyone. Leo: That would be too expensive. Tutor: Let us start with a small pilot instead.",
+          "question": "What approach is finally recommended?",
+          "answer": "A small pilot",
+          "explanation_vi": "Phỏng vấn toàn bộ là đề xuất ban đầu, pilot mới là hướng được chọn."
+        },
+        {
+          "audio_example_en": "Student A: I can prepare the participant forms. Student B: I will check the recording equipment.",
+          "question": "Who will check the recording equipment?",
+          "answer": "Student B",
+          "explanation_vi": "Cần ghép đúng nhiệm vụ với người nhận trách nhiệm."
+        }
+      ]
+    },
+    "steps": [
+      "pre_listening",
+      "first_listen_ielts_questions",
+      "review_with_evidence",
+      "selective_dictation",
+      "gap_fill",
+      "summary"
+    ],
+    "ielts_question_ids": [
+      "Q01",
+      "Q02",
+      "Q03",
+      "Q04",
+      "Q05",
+      "Q06",
+      "Q07",
+      "Q08"
+    ],
+    "recommended_first_listen_play_limit": 1,
+    "practice_replay_allowed_after_first_attempt": true,
+    "word_count": 413,
+    "estimated_audio_minutes_at_135_wpm": 3.06,
+    "exposure_bank": "training",
+    "exam_simulation": false,
+    "mock_test": false,
+    "audio_alignment_required": true,
+    "matching_options_are_reusable": true
+  },
+  "qa": {
+    "status": "awaiting_human_content_and_audio_review",
+    "automated_validation": "passed",
+    "human_transcript_approved": false,
+    "human_audio_approved": false,
+    "ielts_exam_equivalent": false,
+    "release_eligible": false
+  },
+  "provenance": {
+    "source_type": "original_authored",
+    "reference_copying": false,
+    "authoring_milestone": "M23",
+    "do_not_reuse_in_unseen_assessment_before_exposure_check": true
+  },
+  "release_metadata": {
+    "version": "m23.0.1",
+    "published": false,
+    "needs_audio": true,
+    "requires_human_approval": true,
+    "import_policy": "insert_only",
+    "target_bank": "training"
+  }
+}

@@ -1,0 +1,532 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "DICT-F3-015",
+  "status": "draft",
+  "level": "L3",
+  "section": 0,
+  "topic": "Foundation",
+  "title": "Mixed Pre-IELTS Review",
+  "learning_objectives_vi": [
+    "Tổng hợp kỹ năng Pre-IELTS: ngày, giờ, giá, yêu cầu mang theo."
+  ],
+  "content_format": "mini_conversation",
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Community centre receptionist",
+      "tts_voice_id": null,
+      "accent_requested": "new_zealand"
+    },
+    {
+      "speaker_id": "B",
+      "role": "Visitor",
+      "tts_voice_id": null,
+      "accent_requested": "new_zealand"
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "Good morning, Eastfield Community Centre.",
+      "translation_vi": "Chào buổi sáng, trung tâm cộng đồng Eastfield đây.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "mixed_review",
+        "dates",
+        "times",
+        "prices",
+        "eligibility",
+        "mini_conversation",
+        "foundation_f3"
+      ]
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "B",
+      "text_en": "Hello. I'm calling about the weekend cooking workshop.",
+      "translation_vi": "Xin chào. Tôi gọi hỏi về buổi học nấu ăn cuối tuần.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "mixed_review",
+        "dates",
+        "times",
+        "prices",
+        "eligibility",
+        "mini_conversation",
+        "foundation_f3"
+      ]
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "A",
+      "text_en": "The workshop was planned for Sunday, but it moved to Saturday.",
+      "translation_vi": "Ban đầu lớp dự kiến vào Chủ nhật, nhưng đã chuyển sang thứ Bảy.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "mixed_review",
+        "dates",
+        "times",
+        "prices",
+        "eligibility",
+        "mini_conversation",
+        "foundation_f3"
+      ]
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "B",
+      "text_en": "Oh, that is better for me. What time does it start?",
+      "translation_vi": "Ồ, vậy tiện hơn cho tôi. Lớp bắt đầu lúc mấy giờ?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "mixed_review",
+        "dates",
+        "times",
+        "prices",
+        "eligibility",
+        "mini_conversation",
+        "foundation_f3"
+      ]
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "A",
+      "text_en": "Please arrive at nine fifteen. Cooking starts at nine forty-five.",
+      "translation_vi": "Vui lòng đến lúc 9 giờ 15. Việc nấu ăn bắt đầu lúc 9 giờ 45.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "mixed_review",
+        "dates",
+        "times",
+        "prices",
+        "eligibility",
+        "mini_conversation",
+        "foundation_f3"
+      ]
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "B",
+      "text_en": "Does the twenty-pound fee include all the ingredients?",
+      "translation_vi": "Phí 20 bảng có bao gồm toàn bộ nguyên liệu không?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "mixed_review",
+        "dates",
+        "times",
+        "prices",
+        "eligibility",
+        "mini_conversation",
+        "foundation_f3"
+      ]
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "Yes, but please bring a clean apron of your own.",
+      "translation_vi": "Có, nhưng vui lòng tự mang một chiếc tạp dề sạch.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "mixed_review",
+        "dates",
+        "times",
+        "prices",
+        "eligibility",
+        "mini_conversation",
+        "foundation_f3"
+      ]
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "B",
+      "text_en": "Can I come with my sister? She is seventeen.",
+      "translation_vi": "Tôi có thể đi cùng em gái không? Em ấy 17 tuổi.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "mixed_review",
+        "dates",
+        "times",
+        "prices",
+        "eligibility",
+        "mini_conversation",
+        "foundation_f3"
+      ]
+    },
+    {
+      "turn_id": "T09",
+      "speaker_id": "A",
+      "text_en": "Of course. The minimum age is sixteen. There are two places left.",
+      "translation_vi": "Được. Tuổi tối thiểu là 16. Hiện còn hai chỗ.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "mixed_review",
+        "dates",
+        "times",
+        "prices",
+        "eligibility",
+        "mini_conversation",
+        "foundation_f3"
+      ]
+    },
+    {
+      "turn_id": "T10",
+      "speaker_id": "B",
+      "text_en": "Great. My name is Maya Chen, and my sister is Lily.",
+      "translation_vi": "Tuyệt. Tôi là Maya Chen, còn em gái tôi là Lily.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "mixed_review",
+        "dates",
+        "times",
+        "prices",
+        "eligibility",
+        "mini_conversation",
+        "foundation_f3"
+      ]
+    },
+    {
+      "turn_id": "T11",
+      "speaker_id": "A",
+      "text_en": "Thanks. We will email the location and a list of equipment.",
+      "translation_vi": "Cảm ơn. Chúng tôi sẽ email địa điểm và danh sách thiết bị.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "mixed_review",
+        "dates",
+        "times",
+        "prices",
+        "eligibility",
+        "mini_conversation",
+        "foundation_f3"
+      ]
+    },
+    {
+      "turn_id": "T12",
+      "speaker_id": "B",
+      "text_en": "Perfect. See you both on Saturday morning.",
+      "translation_vi": "Tuyệt. Hẹn gặp sáng thứ Bảy.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "mixed_review",
+        "dates",
+        "times",
+        "prices",
+        "eligibility",
+        "mini_conversation",
+        "foundation_f3"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "type": "short_answer",
+      "prompt": "Which day will the workshop now take place?",
+      "correct_answers": [
+        "Saturday"
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Ngày học đã chuyển từ Sunday sang Saturday.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "listening_comprehension",
+        "mixed_review",
+        "dates",
+        "times",
+        "prices",
+        "eligibility"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q02",
+      "type": "form_completion",
+      "prompt": "Cooking starts at ____.",
+      "correct_answers": [
+        "9:45",
+        "09:45",
+        "nine forty-five"
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "9:15 là giờ đến; cooking starts at nine forty-five.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "listening_comprehension",
+        "mixed_review",
+        "dates",
+        "times",
+        "prices",
+        "eligibility"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q03",
+      "type": "form_completion",
+      "prompt": "Workshop fee: £____.",
+      "correct_answers": [
+        "20",
+        "twenty"
+      ],
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "explanation_vi": "Phí được khách xác nhận là twenty-pound fee.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "listening_comprehension",
+        "mixed_review",
+        "dates",
+        "times",
+        "prices",
+        "eligibility"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q04",
+      "type": "short_answer",
+      "prompt": "What item must participants bring?",
+      "correct_answers": [
+        "apron"
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "Nguyên liệu được cung cấp, nhưng học viên phải tự mang apron.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "listening_comprehension",
+        "mixed_review",
+        "dates",
+        "times",
+        "prices",
+        "eligibility"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q05",
+      "type": "form_completion",
+      "prompt": "Minimum participant age: ____.",
+      "correct_answers": [
+        "16",
+        "sixteen"
+      ],
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "explanation_vi": "Tuổi tối thiểu là sixteen; Lily 17 tuổi nên đủ điều kiện.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "listening_comprehension",
+        "mixed_review",
+        "dates",
+        "times",
+        "prices",
+        "eligibility"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "D01",
+      "type": "dictation",
+      "prompt": "Nghe lượt thoại T03 và chép lại toàn bộ câu tiếng Anh.",
+      "correct_answers": [
+        "The workshop was planned for Sunday, but it moved to Saturday."
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Nhận biết ngày ban đầu và ngày sau khi đổi. Nghĩa: Ban đầu lớp dự kiến vào Chủ nhật, nhưng đã chuyển sang thứ Bảy.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sentence_recognition",
+        "mixed_review",
+        "dates",
+        "times",
+        "prices",
+        "eligibility"
+      ]
+    },
+    {
+      "question_id": "D02",
+      "type": "dictation",
+      "prompt": "Nghe lượt thoại T05 và chép lại toàn bộ câu tiếng Anh.",
+      "correct_answers": [
+        "Please arrive at nine fifteen. Cooking starts at nine forty-five."
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Phân biệt giờ có mặt và giờ bắt đầu. Nghĩa: Vui lòng đến lúc 9 giờ 15. Việc nấu ăn bắt đầu lúc 9 giờ 45.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sentence_recognition",
+        "mixed_review",
+        "dates",
+        "times",
+        "prices",
+        "eligibility"
+      ]
+    },
+    {
+      "question_id": "D03",
+      "type": "dictation",
+      "prompt": "Nghe lượt thoại T09 và chép lại toàn bộ câu tiếng Anh.",
+      "correct_answers": [
+        "Of course. The minimum age is sixteen. There are two places left."
+      ],
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "explanation_vi": "Nghe tuổi tối thiểu và số chỗ còn lại. Nghĩa: Được. Tuổi tối thiểu là 16. Hiện còn hai chỗ.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sentence_recognition",
+        "mixed_review",
+        "dates",
+        "times",
+        "prices",
+        "eligibility"
+      ]
+    },
+    {
+      "question_id": "G01",
+      "type": "gap_fill",
+      "prompt": "Nghe lượt T03 và điền từ/cụm từ bị thiếu: The workshop was planned for Sunday, but it ____.",
+      "correct_answers": [
+        "moved to Saturday"
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Ngày cuối là thứ Bảy, không phải Chủ nhật.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "gap_fill",
+        "guided_dictation",
+        "mixed_review",
+        "dates",
+        "times",
+        "prices",
+        "eligibility"
+      ]
+    },
+    {
+      "question_id": "G02",
+      "type": "gap_fill",
+      "prompt": "Nghe lượt T07 và điền từ/cụm từ bị thiếu: Yes, but please ____ of your own.",
+      "correct_answers": [
+        "bring a clean apron"
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "Cần mang tạp dề dù nguyên liệu đã gồm trong học phí.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "gap_fill",
+        "guided_dictation",
+        "mixed_review",
+        "dates",
+        "times",
+        "prices",
+        "eligibility"
+      ]
+    }
+  ],
+  "vocabulary": [
+    {
+      "term": "workshop",
+      "pos": "noun",
+      "meaning_vi": "buổi học thực hành",
+      "example_en": "Hello. I'm calling about the weekend cooking workshop.",
+      "example_vi": "Xin chào. Tôi gọi hỏi về buổi học nấu ăn cuối tuần.",
+      "source_turn_id": "T02"
+    },
+    {
+      "term": "ingredients",
+      "pos": "noun",
+      "meaning_vi": "nguyên liệu",
+      "example_en": "Does the twenty-pound fee include all the ingredients?",
+      "example_vi": "Phí 20 bảng có bao gồm toàn bộ nguyên liệu không?",
+      "source_turn_id": "T06"
+    },
+    {
+      "term": "apron",
+      "pos": "noun",
+      "meaning_vi": "tạp dề",
+      "example_en": "Yes, but please bring a clean apron of your own.",
+      "example_vi": "Có, nhưng vui lòng tự mang một chiếc tạp dề sạch.",
+      "source_turn_id": "T07"
+    },
+    {
+      "term": "minimum age",
+      "pos": "noun phrase",
+      "meaning_vi": "tuổi tối thiểu",
+      "example_en": "Of course. The minimum age is sixteen. There are two places left.",
+      "example_vi": "Được. Tuổi tối thiểu là 16. Hiện còn hai chỗ.",
+      "source_turn_id": "T09"
+    }
+  ],
+  "audio": {
+    "status": "not_generated",
+    "url": null,
+    "duration_ms": null,
+    "model": null,
+    "provider": null,
+    "voice_config": null,
+    "source_transcript_hash": "12e61ecffb4bcf38f7cf400bf7f51b4e714d5c6cf11c853d93165477c764cab8",
+    "audio_sha256": null,
+    "format": null
+  },
+  "qa": {
+    "content_reviewed": false,
+    "answers_verified": false,
+    "audio_verified": false,
+    "rights_cleared": false,
+    "duplicate_reviewed": false,
+    "notes": [
+      "Original AI-assisted authored draft: human editorial and pedagogical review required.",
+      "Audio and timestamps not created; do not publish until audio is verified.",
+      "All answer variants and distractors must be rechecked after voice synthesis.",
+      "M16.2: automated edits are provisional; IELTS teacher final signoff, audio and rights clearance pending."
+    ]
+  },
+  "provenance": {
+    "content_origin": "original_ai_assisted",
+    "source_urls": [],
+    "source_rights_note": "Original learning scenarios; TTS provider usage and distribution rights must be checked before production release.",
+    "reviewer": null
+  },
+  "release_metadata": {
+    "published_at": null,
+    "version": 1
+  }
+}

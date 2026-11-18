@@ -1,0 +1,865 @@
+{
+  "schema_version": "1.2.0",
+  "lesson_id": "S1-SIM-007",
+  "status": "draft",
+  "level": "L4",
+  "section": 1,
+  "topic": "Changing a child's swimming class",
+  "title": "Rescheduling Swimming Lessons",
+  "content_format": "section_exam_simulation",
+  "exam_part": "IELTS_LISTENING_PART_1_STYLE",
+  "official_ielts_material": false,
+  "learning_objectives_vi": [
+    "Theo dõi hội thoại giao dịch đời sống hai người nói trong một lần nghe.",
+    "Điền chính xác thông tin, kể cả khi có phương án cũ và thông tin đính chính.",
+    "Phân tích MCQ dựa trên ý nghĩa cuối cùng và bằng chứng sau khi nộp bài."
+  ],
+  "target_skills": [
+    "rescheduling",
+    "age_groups",
+    "fees",
+    "equipment",
+    "contact_details"
+  ],
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Leisure centre receptionist",
+      "accent_requested": "north_american",
+      "tts_voice_id": null
+    },
+    {
+      "speaker_id": "B",
+      "role": "Parent",
+      "accent_requested": "north_american",
+      "tts_voice_id": null
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "Good morning, Meadowbrook Leisure Centre. It's Jo speaking. How can I help with the swimming programme?",
+      "translation_vi": "Chào sáng, Trung tâm Thể thao Meadowbrook, Jo nghe. Tôi có thể giúp gì về chương trình bơi?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "rescheduling",
+        "age_groups",
+        "fees",
+        "equipment",
+        "contact_details"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "B",
+      "text_en": "My daughter is registered for a lesson next week, but school has changed her timetable and I need a different class.",
+      "translation_vi": "Con gái tôi đăng ký học tuần sau, nhưng trường đổi lịch nên cần lớp khác.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "rescheduling",
+        "age_groups",
+        "fees",
+        "equipment",
+        "contact_details"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "A",
+      "text_en": "I can look at alternatives. First, do you know the class name? We've got beginners, improvers and a water-confidence group.",
+      "translation_vi": "Tôi sẽ xem lớp thay thế. Anh có biết tên lớp không? Có lớp mới, nâng cao và làm quen nước.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "rescheduling",
+        "age_groups",
+        "fees",
+        "equipment",
+        "contact_details"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "B",
+      "text_en": "She's in the Improvers class. She can swim twenty-five metres, but she's still learning to breathe properly during front crawl.",
+      "translation_vi": "Cháu học lớp Improvers. Cháu bơi được hai mươi lăm mét nhưng còn luyện thở khi bơi sải.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "rescheduling",
+        "age_groups",
+        "fees",
+        "equipment",
+        "contact_details"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "A",
+      "text_en": "Improvers, thank you. I can see your original booking was on Tuesday, which clashes with the new after-school club.",
+      "translation_vi": "Lớp Improvers, cảm ơn. Lịch gốc là thứ Ba, trùng hoạt động ngoại khóa mới.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "rescheduling",
+        "age_groups",
+        "fees",
+        "equipment",
+        "contact_details"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "B",
+      "text_en": "Exactly. We hoped to move to Wednesday, but her music teacher has added a rehearsal on that day.",
+      "translation_vi": "Đúng. Chúng tôi muốn chuyển thứ Tư nhưng giáo viên nhạc thêm buổi tập hôm đó.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "rescheduling",
+        "age_groups",
+        "fees",
+        "equipment",
+        "contact_details"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "There's space on Thursday. We also offer Saturday, but that class is full and doesn't have a waiting list at present.",
+      "translation_vi": "Còn chỗ thứ Năm. Có lớp thứ Bảy nhưng đã đầy và hiện không có danh sách chờ.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "rescheduling",
+        "age_groups",
+        "fees",
+        "equipment",
+        "contact_details"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "B",
+      "text_en": "Thursday is better. The original lesson started at five. Would the Thursday session be at the same time?",
+      "translation_vi": "Thứ Năm phù hợp hơn. Lớp cũ bắt đầu lúc năm giờ. Lớp thứ Năm cùng giờ không?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "rescheduling",
+        "age_groups",
+        "fees",
+        "equipment",
+        "contact_details"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T09",
+      "speaker_id": "A",
+      "text_en": "Different groups sometimes share an instructor, so the times aren't necessarily identical even when the course level stays the same.",
+      "translation_vi": "Các nhóm khác nhau đôi khi chung giáo viên, nên giờ không nhất thiết giống dù cùng trình độ.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "rescheduling",
+        "age_groups",
+        "fees",
+        "equipment",
+        "contact_details"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T10",
+      "speaker_id": "B",
+      "text_en": "I see. The level matters more than the exact time, provided she can get there after her school activities.",
+      "translation_vi": "Tôi hiểu. Trình độ quan trọng hơn giờ cụ thể, miễn cháu đến được sau hoạt động ở trường.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "rescheduling",
+        "age_groups",
+        "fees",
+        "equipment",
+        "contact_details"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T11",
+      "speaker_id": "A",
+      "text_en": "Not quite. The Thursday Improvers class begins at five forty-five. Parents may enter the viewing area fifteen minutes earlier.",
+      "translation_vi": "Không hẳn. Lớp Improvers thứ Năm bắt đầu năm giờ bốn mươi lăm. Phụ huynh được vào khu xem trước mười lăm phút.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "rescheduling",
+        "age_groups",
+        "fees",
+        "equipment",
+        "contact_details"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T12",
+      "speaker_id": "B",
+      "text_en": "That should work after school. Will she still be in the smaller pool? She gets nervous when the water is deep.",
+      "translation_vi": "Sau giờ học thì được. Cháu vẫn học hồ nhỏ chứ? Cháu lo khi nước sâu.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "rescheduling",
+        "age_groups",
+        "fees",
+        "equipment",
+        "contact_details"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T13",
+      "speaker_id": "A",
+      "text_en": "For Improvers we use Pool Two, the training pool. Pool One is reserved for adult fitness sessions at that time.",
+      "translation_vi": "Lớp Improvers dùng Pool Two, hồ tập. Pool One dành cho thể dục người lớn vào giờ đó.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "rescheduling",
+        "age_groups",
+        "fees",
+        "equipment",
+        "contact_details"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T14",
+      "speaker_id": "B",
+      "text_en": "Great. She usually wears goggles, but hers have developed a crack. Can we borrow a pair for a week?",
+      "translation_vi": "Tốt. Cháu thường đeo kính bơi nhưng kính bị nứt. Có thể mượn một tuần không?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "rescheduling",
+        "age_groups",
+        "fees",
+        "equipment",
+        "contact_details"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T15",
+      "speaker_id": "A",
+      "text_en": "We lend kickboards, not goggles, for hygiene reasons. A replacement pair is available in the small shop near reception.",
+      "translation_vi": "Chúng tôi cho mượn ván tập, không cho mượn kính vì vệ sinh. Có kính mới ở cửa hàng nhỏ gần quầy.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "rescheduling",
+        "age_groups",
+        "fees",
+        "equipment",
+        "contact_details"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T16",
+      "speaker_id": "B",
+      "text_en": "I'll buy a pair. Do I need to pay a new course fee, or can the existing payment move with her?",
+      "translation_vi": "Tôi sẽ mua kính. Có cần đóng lại phí khóa học hay chuyển khoản đã thanh toán sang lớp mới?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "rescheduling",
+        "age_groups",
+        "fees",
+        "equipment",
+        "contact_details"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T17",
+      "speaker_id": "A",
+      "text_en": "The lesson fee transfers automatically. There is a three-pound administration charge only if you change the booking after the term begins.",
+      "translation_vi": "Học phí chuyển tự động. Chỉ thu phí quản lý ba bảng nếu đổi lịch sau khi kỳ học bắt đầu.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "rescheduling",
+        "age_groups",
+        "fees",
+        "equipment",
+        "contact_details"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T18",
+      "speaker_id": "B",
+      "text_en": "The term begins next Monday, so if we change it now there shouldn't be a charge, correct?",
+      "translation_vi": "Kỳ học bắt đầu thứ Hai tới, nên nếu đổi bây giờ sẽ không mất phí, đúng chứ?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "rescheduling",
+        "age_groups",
+        "fees",
+        "equipment",
+        "contact_details"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T19",
+      "speaker_id": "A",
+      "text_en": "That's right. I'll make the change today. We do need an emergency contact who can answer the phone during the lesson.",
+      "translation_vi": "Đúng vậy. Tôi sẽ đổi hôm nay. Chúng tôi cần số liên hệ khẩn cấp có thể nghe máy lúc cháu học.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "rescheduling",
+        "age_groups",
+        "fees",
+        "equipment",
+        "contact_details"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T20",
+      "speaker_id": "B",
+      "text_en": "Use my mobile. Please remove the office number: our reception team transfers calls too slowly if something urgent happens.",
+      "translation_vi": "Dùng số di động tôi. Hãy bỏ số văn phòng, nhân viên chuyển cuộc gọi quá chậm nếu khẩn cấp.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "rescheduling",
+        "age_groups",
+        "fees",
+        "equipment",
+        "contact_details"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T21",
+      "speaker_id": "A",
+      "text_en": "All changed. Finally, a parent must remain in the building, though they don't need to sit next to the pool.",
+      "translation_vi": "Đã đổi. Cuối cùng, phụ huynh phải ở trong tòa nhà, không nhất thiết ngồi cạnh hồ.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "rescheduling",
+        "age_groups",
+        "fees",
+        "equipment",
+        "contact_details"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T22",
+      "speaker_id": "B",
+      "text_en": "That's fine. I'll work in the upstairs café while she's swimming, then come down when the instructor finishes.",
+      "translation_vi": "Được. Tôi sẽ làm việc ở quán cà phê tầng trên rồi xuống khi giáo viên kết thúc.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "rescheduling",
+        "age_groups",
+        "fees",
+        "equipment",
+        "contact_details"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T23",
+      "speaker_id": "A",
+      "text_en": "Please check in at the desk on arrival. The electronic gate sometimes rejects older membership cards after a timetable change.",
+      "translation_vi": "Hãy làm thủ tục ở quầy khi tới. Cổng điện tử đôi khi từ chối thẻ hội viên cũ sau đổi lịch.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "rescheduling",
+        "age_groups",
+        "fees",
+        "equipment",
+        "contact_details"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T24",
+      "speaker_id": "B",
+      "text_en": "Thanks, Jo. I'll bring her on Thursday at five forty-five, with new goggles and my phone switched on.",
+      "translation_vi": "Cảm ơn Jo. Tôi sẽ đưa cháu tới thứ Năm lúc năm giờ bốn mươi lăm, có kính mới và điện thoại bật.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "rescheduling",
+        "age_groups",
+        "fees",
+        "equipment",
+        "contact_details"
+      ],
+      "bank_role": "protected_assessment"
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "group_id": "PART1_FORM_1_TO_6",
+      "type": "form_completion",
+      "prompt": "Current level: ____",
+      "correct_answers": [
+        "Improvers"
+      ],
+      "spoken_answer": "Improvers",
+      "word_limit": 3,
+      "instructions_en": "NO MORE THAN THREE WORDS AND/OR A NUMBER",
+      "scoring_policy": "controlled_variants",
+      "explanation_vi": "Lớp hiện tại là Improvers.",
+      "answer_source": "explicit_recording",
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "evidence_excerpt_en": "in the Improvers class",
+      "question_tags": [
+        "M25",
+        "part1",
+        "completion",
+        "rescheduling",
+        "age_groups",
+        "fees",
+        "equipment",
+        "contact_details"
+      ]
+    },
+    {
+      "question_id": "Q02",
+      "group_id": "PART1_FORM_1_TO_6",
+      "type": "form_completion",
+      "prompt": "Original lesson day: ____",
+      "correct_answers": [
+        "Tuesday"
+      ],
+      "spoken_answer": "Tuesday",
+      "word_limit": 3,
+      "instructions_en": "NO MORE THAN THREE WORDS AND/OR A NUMBER",
+      "scoring_policy": "controlled_variants",
+      "explanation_vi": "Lịch cũ vào thứ Ba.",
+      "answer_source": "explicit_recording",
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "evidence_excerpt_en": "original booking was on Tuesday",
+      "question_tags": [
+        "M25",
+        "part1",
+        "completion",
+        "rescheduling",
+        "age_groups",
+        "fees",
+        "equipment",
+        "contact_details"
+      ]
+    },
+    {
+      "question_id": "Q03",
+      "group_id": "PART1_FORM_1_TO_6",
+      "type": "form_completion",
+      "prompt": "New lesson day: ____",
+      "correct_answers": [
+        "Thursday"
+      ],
+      "spoken_answer": "Thursday",
+      "word_limit": 3,
+      "instructions_en": "NO MORE THAN THREE WORDS AND/OR A NUMBER",
+      "scoring_policy": "controlled_variants",
+      "explanation_vi": "Đổi sang thứ Năm, không phải thứ Tư.",
+      "answer_source": "explicit_recording",
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "evidence_excerpt_en": "space on Thursday",
+      "question_tags": [
+        "M25",
+        "part1",
+        "completion",
+        "rescheduling",
+        "age_groups",
+        "fees",
+        "equipment",
+        "contact_details"
+      ]
+    },
+    {
+      "question_id": "Q04",
+      "group_id": "PART1_FORM_1_TO_6",
+      "type": "note_completion",
+      "prompt": "New start time: ____",
+      "correct_answers": [
+        "five forty-five",
+        "5:45"
+      ],
+      "spoken_answer": "five forty-five",
+      "word_limit": 3,
+      "instructions_en": "NO MORE THAN THREE WORDS AND/OR A NUMBER",
+      "scoring_policy": "controlled_variants",
+      "explanation_vi": "Lớp mới bắt đầu 5:45.",
+      "answer_source": "explicit_recording",
+      "evidence_turn_ids": [
+        "T11"
+      ],
+      "evidence_excerpt_en": "begins at five forty-five",
+      "question_tags": [
+        "M25",
+        "part1",
+        "completion",
+        "rescheduling",
+        "age_groups",
+        "fees",
+        "equipment",
+        "contact_details"
+      ]
+    },
+    {
+      "question_id": "Q05",
+      "group_id": "PART1_FORM_1_TO_6",
+      "type": "form_completion",
+      "prompt": "Pool to use: Pool ____",
+      "correct_answers": [
+        "Two"
+      ],
+      "spoken_answer": "Two",
+      "word_limit": 3,
+      "instructions_en": "NO MORE THAN THREE WORDS AND/OR A NUMBER",
+      "scoring_policy": "controlled_variants",
+      "explanation_vi": "Lớp học ở Pool Two.",
+      "answer_source": "explicit_recording",
+      "evidence_turn_ids": [
+        "T13"
+      ],
+      "evidence_excerpt_en": "Pool Two",
+      "question_tags": [
+        "M25",
+        "part1",
+        "completion",
+        "rescheduling",
+        "age_groups",
+        "fees",
+        "equipment",
+        "contact_details"
+      ]
+    },
+    {
+      "question_id": "Q06",
+      "group_id": "PART1_FORM_1_TO_6",
+      "type": "form_completion",
+      "prompt": "Equipment pupils cannot borrow: ____",
+      "correct_answers": [
+        "goggles"
+      ],
+      "spoken_answer": "goggles",
+      "word_limit": 3,
+      "instructions_en": "NO MORE THAN THREE WORDS AND/OR A NUMBER",
+      "scoring_policy": "controlled_variants",
+      "explanation_vi": "Không cho mượn kính bơi.",
+      "answer_source": "explicit_recording",
+      "evidence_turn_ids": [
+        "T15"
+      ],
+      "evidence_excerpt_en": "not goggles",
+      "question_tags": [
+        "M25",
+        "part1",
+        "completion",
+        "rescheduling",
+        "age_groups",
+        "fees",
+        "equipment",
+        "contact_details"
+      ]
+    },
+    {
+      "question_id": "Q07",
+      "group_id": "PART1_MCQ_7_TO_10",
+      "type": "mcq",
+      "prompt": "When is a three-pound charge applied?",
+      "correct_answers": [
+        "For changes after term starts"
+      ],
+      "options": [
+        {
+          "key": "A",
+          "text": "For changes after term starts"
+        },
+        {
+          "key": "B",
+          "text": "For using the training pool"
+        },
+        {
+          "key": "C",
+          "text": "For buying a new membership card"
+        }
+      ],
+      "correct_option": "A",
+      "scoring_policy": "one_correct_option",
+      "explanation_vi": "Phí chỉ áp dụng sau ngày bắt đầu kỳ học.",
+      "answer_source": "explicit_or_contextual_recording",
+      "evidence_turn_ids": [
+        "T17"
+      ],
+      "evidence_excerpt_en": "only if you change the booking after the term begins",
+      "question_tags": [
+        "M25",
+        "part1",
+        "mcq",
+        "rescheduling",
+        "age_groups",
+        "fees",
+        "equipment",
+        "contact_details"
+      ]
+    },
+    {
+      "question_id": "Q08",
+      "group_id": "PART1_MCQ_7_TO_10",
+      "type": "mcq",
+      "prompt": "Which phone number should staff use in an emergency?",
+      "correct_answers": [
+        "The parent's mobile"
+      ],
+      "options": [
+        {
+          "key": "A",
+          "text": "The office reception"
+        },
+        {
+          "key": "B",
+          "text": "The parent's mobile"
+        },
+        {
+          "key": "C",
+          "text": "The child's teacher's number"
+        }
+      ],
+      "correct_option": "B",
+      "scoring_policy": "one_correct_option",
+      "explanation_vi": "Dùng số di động phụ huynh.",
+      "answer_source": "explicit_or_contextual_recording",
+      "evidence_turn_ids": [
+        "T20"
+      ],
+      "evidence_excerpt_en": "Use my mobile",
+      "question_tags": [
+        "M25",
+        "part1",
+        "mcq",
+        "rescheduling",
+        "age_groups",
+        "fees",
+        "equipment",
+        "contact_details"
+      ]
+    },
+    {
+      "question_id": "Q09",
+      "group_id": "PART1_MCQ_7_TO_10",
+      "type": "mcq",
+      "prompt": "Where will the parent wait during the lesson?",
+      "correct_answers": [
+        "In the upstairs café"
+      ],
+      "options": [
+        {
+          "key": "A",
+          "text": "Outside the leisure centre"
+        },
+        {
+          "key": "B",
+          "text": "On the pool deck beside the instructor"
+        },
+        {
+          "key": "C",
+          "text": "In the upstairs café"
+        }
+      ],
+      "correct_option": "C",
+      "scoring_policy": "one_correct_option",
+      "explanation_vi": "Phụ huynh ở quán cà phê trên tầng.",
+      "answer_source": "explicit_or_contextual_recording",
+      "evidence_turn_ids": [
+        "T22"
+      ],
+      "evidence_excerpt_en": "work in the upstairs café",
+      "question_tags": [
+        "M25",
+        "part1",
+        "mcq",
+        "rescheduling",
+        "age_groups",
+        "fees",
+        "equipment",
+        "contact_details"
+      ]
+    },
+    {
+      "question_id": "Q10",
+      "group_id": "PART1_MCQ_7_TO_10",
+      "type": "mcq",
+      "prompt": "Why should they check in at the desk?",
+      "correct_answers": [
+        "Older cards may not open the electronic gate"
+      ],
+      "options": [
+        {
+          "key": "A",
+          "text": "Older cards may not open the electronic gate"
+        },
+        {
+          "key": "B",
+          "text": "The swimming lesson has been cancelled"
+        },
+        {
+          "key": "C",
+          "text": "The café is closed for repairs"
+        }
+      ],
+      "correct_option": "A",
+      "scoring_policy": "one_correct_option",
+      "explanation_vi": "Cổng có thể không nhận thẻ cũ sau khi đổi lịch.",
+      "answer_source": "explicit_or_contextual_recording",
+      "evidence_turn_ids": [
+        "T23"
+      ],
+      "evidence_excerpt_en": "gate sometimes rejects older membership cards",
+      "question_tags": [
+        "M25",
+        "part1",
+        "mcq",
+        "rescheduling",
+        "age_groups",
+        "fees",
+        "equipment",
+        "contact_details"
+      ]
+    }
+  ],
+  "question_groups": [
+    {
+      "group_id": "PART1_FORM_1_TO_6",
+      "question_ids": [
+        "Q01",
+        "Q02",
+        "Q03",
+        "Q04",
+        "Q05",
+        "Q06"
+      ],
+      "instructions_en": "Complete the form. Write NO MORE THAN THREE WORDS AND/OR A NUMBER for each answer.",
+      "pre_read_seconds": 30,
+      "break_after_turn_id": "T15",
+      "requires_one_listen": true
+    },
+    {
+      "group_id": "PART1_MCQ_7_TO_10",
+      "question_ids": [
+        "Q07",
+        "Q08",
+        "Q09",
+        "Q10"
+      ],
+      "instructions_en": "Choose the correct letter A, B or C.",
+      "pre_read_seconds": 25,
+      "requires_one_listen": true
+    }
+  ],
+  "audio": {
+    "status": "not_generated",
+    "audio_url": null,
+    "audio_asset_id": null,
+    "duration_ms": null,
+    "source_text_sha256": "c616cc6ddc80f6b78d59492bedf865412610bddcf2a6b67543159bdf9dbb28fe",
+    "generation_strategy": "single_continuous_two_person_dialogue",
+    "aligned_turns": false
+  },
+  "exam_mode": {
+    "bank_role": "protected_assessment",
+    "use_as_training_before_first_attempt": false,
+    "listening_attempts_allowed_for_scored_first_attempt": 1,
+    "replay_before_submit": false,
+    "speed_control_before_submit": false,
+    "transcript_visible_before_submit": false,
+    "answer_key_visible_before_submit": false,
+    "post_attempt_review_allowed": true,
+    "question_count": 10,
+    "points_per_correct_answer": 1,
+    "question_order_monotonic": true,
+    "estimated_speech_minutes_at_135_wpm": 3.44,
+    "exam_band_score_enabled": false,
+    "repeated_attempt_marked_as_seen": true
+  },
+  "qa": {
+    "automatic_data_validation": "pending",
+    "content_human_review": "pending",
+    "audio_human_review": "pending",
+    "exam_simulation_rubric_score": null,
+    "rubric_90_verified": false,
+    "published": false,
+    "release_eligible": false
+  },
+  "provenance": {
+    "source_type": "original_authored_english_dialogue",
+    "milestone": "M25",
+    "no_official_ielts_question_copied": true,
+    "training_exposure_guard": true
+  },
+  "release_metadata": {
+    "target_bank": "protected_assessment",
+    "import_policy": "insert_only",
+    "version": "m25.0.1",
+    "preserve_existing_ids": true,
+    "allow_client_answer_payload": false
+  }
+}

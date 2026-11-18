@@ -1,11 +1,12 @@
 import { notFound, redirect } from "next/navigation";
 import { CourseAssessment } from "@/features/learning/course-assessment";
 import { createClient } from "@/lib/supabase/server";
-import { releaseLocks } from "@/lib/runtime";
+import { learnStageAvailable } from "@/lib/runtime";
+import { getViewerRole } from "@/lib/viewer-role";
 
 export default async function CheckPage({ params }: { params: Promise<{ slug: string }> }) {
-  if (releaseLocks) notFound();
   const { slug } = await params;
+  if ((await getViewerRole()) === "guest") redirect(`/login?next=${encodeURIComponent(`/app/check/${slug}`)}`);
   const supabase = await createClient();
   const { data: claims } = await supabase.auth.getClaims();
   if (!claims?.claims) redirect("/login");
@@ -13,5 +14,6 @@ export default async function CheckPage({ params }: { params: Promise<{ slug: st
   if (!assessment) notFound();
   const { data: course } = await supabase.from("courses").select("stage_id").eq("id", assessment.course_id).single();
   if (!course) notFound();
+  if (!learnStageAvailable(course.stage_id)) notFound();
   return <CourseAssessment content={{ ...assessment.content as Record<string, unknown>, title: assessment.title }} stageId={course.stage_id} />;
 }

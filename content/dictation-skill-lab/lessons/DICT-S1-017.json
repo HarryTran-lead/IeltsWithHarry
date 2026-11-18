@@ -1,0 +1,448 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "DICT-S1-017",
+  "status": "draft",
+  "level": "L2",
+  "section": 1,
+  "topic": "Restaurant Reservations",
+  "title": "Changing a Terrace Reservation",
+  "learning_objectives_vi": [
+    "Rèn corrected detail / distractors qua tình huống: A restaurant explains its revised outdoor seating arrangements.",
+    "Xác định thông tin cuối cùng và phân biệt dữ liệu gây nhiễu (nếu có).",
+    "Nghe chép chính xác, lý giải đáp án từ transcript và học từ trong ngữ cảnh."
+  ],
+  "content_format": "section_bridge",
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Service representative / employee",
+      "tts_voice_id": null,
+      "accent_requested": "new_zealand"
+    },
+    {
+      "speaker_id": "B",
+      "role": "Customer / applicant",
+      "tts_voice_id": null,
+      "accent_requested": "new_zealand"
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "Good evening, Lantern Bistro. How can I help?",
+      "translation_vi": "Chào buổi tối, nhà hàng Lantern. Tôi có thể giúp gì?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "corrected_party_size",
+        "changed_day",
+        "time",
+        "deposit",
+        "section_1",
+        "two_speaker_dialogue",
+        "l2"
+      ]
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "B",
+      "text_en": "My name's Noor Ahmed. I reserved a table for six on Friday at seven.",
+      "translation_vi": "Tôi là Noor Ahmed. Tôi đã đặt bàn cho sáu người vào thứ Sáu lúc bảy giờ.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "corrected_party_size",
+        "changed_day",
+        "time",
+        "deposit",
+        "section_1",
+        "two_speaker_dialogue",
+        "l2"
+      ]
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "A",
+      "text_en": "I can see your booking. Are you calling to change the number of guests?",
+      "translation_vi": "Tôi thấy đơn đặt rồi. Anh muốn thay đổi số khách đúng không?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "corrected_party_size",
+        "changed_day",
+        "time",
+        "deposit",
+        "section_1",
+        "two_speaker_dialogue",
+        "l2"
+      ]
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "B",
+      "text_en": "Yes, only five can come. And we would prefer the terrace.",
+      "translation_vi": "Đúng, chỉ năm người đến được. Và chúng tôi muốn ngồi ngoài sân.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "corrected_party_size",
+        "changed_day",
+        "time",
+        "deposit",
+        "section_1",
+        "two_speaker_dialogue",
+        "l2"
+      ]
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "A",
+      "text_en": "The terrace is closed on Fridays, but it opens on Saturday.",
+      "translation_vi": "Sân ngoài trời đóng vào thứ Sáu, nhưng mở vào thứ Bảy.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "corrected_party_size",
+        "changed_day",
+        "time",
+        "deposit",
+        "section_1",
+        "two_speaker_dialogue",
+        "l2"
+      ]
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "B",
+      "text_en": "Then let's move the booking to Saturday at half past seven.",
+      "translation_vi": "Vậy chuyển sang thứ Bảy lúc bảy giờ ba mươi nhé.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "corrected_party_size",
+        "changed_day",
+        "time",
+        "deposit",
+        "section_1",
+        "two_speaker_dialogue",
+        "l2"
+      ]
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "That's available. We also ask for a ten-pound deposit per person.",
+      "translation_vi": "Còn chỗ. Chúng tôi yêu cầu đặt cọc 10 bảng mỗi người.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "corrected_party_size",
+        "changed_day",
+        "time",
+        "deposit",
+        "section_1",
+        "two_speaker_dialogue",
+        "l2"
+      ]
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "B",
+      "text_en": "So fifty pounds for five guests?",
+      "translation_vi": "Vậy tổng cọc 50 bảng cho năm người?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "corrected_party_size",
+        "changed_day",
+        "time",
+        "deposit",
+        "section_1",
+        "two_speaker_dialogue",
+        "l2"
+      ]
+    },
+    {
+      "turn_id": "T09",
+      "speaker_id": "A",
+      "text_en": "Correct, and the deposit comes off your final bill.",
+      "translation_vi": "Đúng, tiền cọc sẽ được trừ vào hóa đơn cuối.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "corrected_party_size",
+        "changed_day",
+        "time",
+        "deposit",
+        "section_1",
+        "two_speaker_dialogue",
+        "l2"
+      ]
+    },
+    {
+      "turn_id": "T10",
+      "speaker_id": "B",
+      "text_en": "Perfect. Please update the reservation.",
+      "translation_vi": "Tuyệt. Vui lòng cập nhật đơn đặt bàn.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "corrected_party_size",
+        "changed_day",
+        "time",
+        "deposit",
+        "section_1",
+        "two_speaker_dialogue",
+        "l2"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "type": "form_completion",
+      "prompt": "Final number of guests: ____",
+      "correct_answers": [
+        "5",
+        "five"
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Sáu người là số cũ; cuối cùng có năm người.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "corrected_party_size",
+        "changed_day",
+        "time",
+        "deposit",
+        "ielts_section1_practice"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q02",
+      "type": "form_completion",
+      "prompt": "New booking day: ____",
+      "correct_answers": [
+        "Saturday"
+      ],
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "explanation_vi": "Sân mở thứ Bảy nên khách chuyển sang ngày này.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "corrected_party_size",
+        "changed_day",
+        "time",
+        "deposit",
+        "ielts_section1_practice"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q03",
+      "type": "form_completion",
+      "prompt": "New booking time: ____",
+      "correct_answers": [
+        "7:30",
+        "half past seven"
+      ],
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "explanation_vi": "Giờ mới là bảy giờ ba mươi, không phải bảy giờ.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "corrected_party_size",
+        "changed_day",
+        "time",
+        "deposit",
+        "ielts_section1_practice"
+      ],
+      "word_limit": 3,
+      "instructions_en": "NO MORE THAN THREE WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q04",
+      "type": "form_completion",
+      "prompt": "Deposit per guest: £____",
+      "correct_answers": [
+        "10",
+        "ten"
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "Mỗi người đặt cọc 10 bảng.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "corrected_party_size",
+        "changed_day",
+        "time",
+        "deposit",
+        "ielts_section1_practice"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q05",
+      "type": "form_completion",
+      "prompt": "Total deposit: £____",
+      "correct_answers": [
+        "50",
+        "fifty"
+      ],
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "explanation_vi": "Khách xác nhận tổng cọc là 50 bảng.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "corrected_party_size",
+        "changed_day",
+        "time",
+        "deposit",
+        "ielts_section1_practice"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "D01",
+      "type": "dictation",
+      "prompt": "Nghe và chép nguyên văn câu của nhân vật A (lượt T03).",
+      "correct_answers": [
+        "I can see your booking. Are you calling to change the number of guests?"
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Nội dung cần chép: I can see your booking. Are you calling to change the number of guests? Nghĩa: Tôi thấy đơn đặt rồi. Anh muốn thay đổi số khách đúng không? Chú ý đầy đủ từ chức năng, số ít/số nhiều và âm cuối.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "transcription_accuracy",
+        "corrected_party_size",
+        "changed_day",
+        "time",
+        "deposit"
+      ]
+    },
+    {
+      "question_id": "D02",
+      "type": "dictation",
+      "prompt": "Nghe và chép nguyên văn câu của nhân vật A (lượt T07).",
+      "correct_answers": [
+        "That's available. We also ask for a ten-pound deposit per person."
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "Nội dung cần chép: That's available. We also ask for a ten-pound deposit per person. Nghĩa: Còn chỗ. Chúng tôi yêu cầu đặt cọc 10 bảng mỗi người. Chú ý đầy đủ từ chức năng, số ít/số nhiều và âm cuối.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "transcription_accuracy",
+        "corrected_party_size",
+        "changed_day",
+        "time",
+        "deposit"
+      ]
+    },
+    {
+      "question_id": "G01",
+      "type": "gap_fill",
+      "prompt": "Nghe và điền phần còn thiếu: Correct, and the deposit comes off your ____.",
+      "correct_answers": [
+        "final bill"
+      ],
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "explanation_vi": "Từ/cụm nghe được là “final bill”. Câu đầy đủ: Correct, and the deposit comes off your final bill.. Nghĩa: Đúng, tiền cọc sẽ được trừ vào hóa đơn cuối.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "gap_fill",
+        "vocabulary_in_context",
+        "corrected_party_size",
+        "changed_day",
+        "time",
+        "deposit"
+      ]
+    }
+  ],
+  "vocabulary": [
+    {
+      "term": "terrace",
+      "pos": "noun",
+      "meaning_vi": "khu bàn ngoài trời",
+      "example_en": "Yes, only five can come. And we would prefer the terrace.",
+      "example_vi": "Đúng, chỉ năm người đến được. Và chúng tôi muốn ngồi ngoài sân.",
+      "source_turn_id": "T04"
+    },
+    {
+      "term": "available",
+      "pos": "adjective",
+      "meaning_vi": "còn chỗ",
+      "example_en": "That's available. We also ask for a ten-pound deposit per person.",
+      "example_vi": "Còn chỗ. Chúng tôi yêu cầu đặt cọc 10 bảng mỗi người.",
+      "source_turn_id": "T07"
+    },
+    {
+      "term": "deposit",
+      "pos": "noun",
+      "meaning_vi": "tiền đặt cọc",
+      "example_en": "That's available. We also ask for a ten-pound deposit per person.",
+      "example_vi": "Còn chỗ. Chúng tôi yêu cầu đặt cọc 10 bảng mỗi người.",
+      "source_turn_id": "T07"
+    },
+    {
+      "term": "final bill",
+      "pos": "noun phrase",
+      "meaning_vi": "hóa đơn cuối",
+      "example_en": "Correct, and the deposit comes off your final bill.",
+      "example_vi": "Đúng, tiền cọc sẽ được trừ vào hóa đơn cuối.",
+      "source_turn_id": "T09"
+    }
+  ],
+  "audio": {
+    "status": "not_generated",
+    "url": null,
+    "duration_ms": null,
+    "model": null,
+    "provider": null,
+    "voice_config": null,
+    "source_transcript_hash": "5375136f5d768e1793c6ce6df800318ebe287267bf7f123fec57ef73dd5887d2",
+    "audio_sha256": null,
+    "format": null
+  },
+  "qa": {
+    "content_reviewed": false,
+    "answers_verified": false,
+    "audio_verified": false,
+    "rights_cleared": false,
+    "duplicate_reviewed": false,
+    "notes": [
+      "Draft authoring, not expert reviewed.",
+      "TTS output pending; timestamps must be aligned after synthesis.",
+      "Keep unpublished until audio and question evidence are checked by a reviewer.",
+      "M16.2: automated edits are provisional; IELTS teacher final signoff, audio and rights clearance pending."
+    ]
+  },
+  "provenance": {
+    "content_origin": "original_ai_assisted",
+    "source_urls": [],
+    "source_rights_note": "Original pedagogical dialogues, not IELTS/Cambridge exam content. Review all TTS provider terms and permissions before audio generation/distribution.",
+    "reviewer": null
+  },
+  "release_metadata": {
+    "published_at": null,
+    "version": 1
+  }
+}

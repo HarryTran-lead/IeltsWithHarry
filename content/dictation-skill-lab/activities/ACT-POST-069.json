@@ -1,0 +1,217 @@
+{
+  "schema_version": "m35.1.0",
+  "id": "ACT-POST-069",
+  "activity_id": "ACT-POST-069",
+  "status": "draft_pending_audio_and_teacher_signoff",
+  "module": "dictation",
+  "kind": "post_test_error_repair",
+  "section": 4,
+  "title": "Measuring the Health of a Lake — Sửa lỗi sau bài thi",
+  "source_bank": "section_simulation",
+  "origin_bank": "protected_assessment",
+  "source_milestone": "M28",
+  "source_package": "English_Skill_Lab_Dictation_M28_Section_4_Exam_Simulation_20_Full_Content.zip",
+  "source_entry_path": "ESL_Dictation_M28_Section4_Exam_Simulation/01_LESSONS_SERVER_ONLY/S4-SIM-009.json",
+  "source_test_id": null,
+  "source_lesson_id": "S4-SIM-009",
+  "source_part_id": null,
+  "reuse_parent_id": "S4-SIM-009",
+  "source_question_id": "Q08",
+  "source_audio_id": "assessment/section_simulation/S4-SIM-009",
+  "source_audio_id_kind": "logical_source_part_identifier_not_file",
+  "source_audio_asset_id": null,
+  "source_declared_unverified_audio_id": null,
+  "source_audio_url": null,
+  "audio_file_provided": false,
+  "source_turn_ids": [
+    "T03",
+    "T04",
+    "T06"
+  ],
+  "segment_timing": {
+    "T03": {
+      "start_ms": null,
+      "end_ms": null,
+      "sha256": "bd9e0e581b356f7b9937c536c938d8e745a69397f0443cee6e6712bb6e9a4305"
+    },
+    "T04": {
+      "start_ms": null,
+      "end_ms": null,
+      "sha256": "471378bc9830d3561ad881770654b1a773aa66f834b67637bda6cc33d886e3a8"
+    },
+    "T06": {
+      "start_ms": null,
+      "end_ms": null,
+      "sha256": "0d9badc34d4f10d5314276a8f99ee02d720cfe782f0ceb871e57ac822e951cdb"
+    }
+  },
+  "clip_start_ms": null,
+  "clip_end_ms": null,
+  "audio_alignment_status": "pending_real_audio_and_verified_offsets",
+  "evidence_transcript_sha256": "aebf041b4c7087de544be4ffd4757816228eef186618c9729a17a4f4292c877d",
+  "anchor_turn_id": "T06",
+  "teacher_only_evidence_text_en": "Near the bottom, decomposing material creates an environment where the sediment layer can release stored nutrients under some chemical conditions. Seasonal lake turnover may later mix deep water with surface water, redistributing both nutrients and oxygen. The effects depend on the lake's climate, depth and wind exposure. A single early-summer survey cannot reveal what will happen during autumn mixing, so repeated measurements across the year are essential.",
+  "questions": [
+    {
+      "exercise_id": "ACT-POST-069-01",
+      "phase": "guided_relisten",
+      "mode": "short_answer",
+      "title_vi": "Nghe lại điểm đã bỏ lỡ",
+      "prompt_en": "Seasonal vertical mixing is called ____.",
+      "prompt_vi": "Nghe lại đoạn bằng chứng và trả lời lại câu hỏi gốc sau khi đã nộp bài thi.",
+      "options": null,
+      "correct_option": null,
+      "correct_answers": [
+        "lake turnover"
+      ],
+      "spoken_answer": "lake turnover",
+      "word_limit": 2,
+      "normalization_policy": "trim_unicode_nfkc_casefold_collapse_spaces_keep_meaningful_digits_and_letters",
+      "scoring_policy": "post_test_training_only",
+      "source_question_id": "Q08",
+      "source_question_type": "note_completion",
+      "play_turn_ids": [
+        "T06"
+      ],
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "teacher_explanation_vi": "Đáp án “lake turnover” được nói trực tiếp trong phần bài giảng này. Bùn đáy và quá trình đảo trộn nước theo mùa ảnh hưởng chất dinh dưỡng.",
+      "feedback_vi": "Đáp án gốc: lake turnover. Đối chiếu với các lượt thoại T06; chú ý thông tin cuối cùng và từ khóa được diễn đạt lại.",
+      "is_exam_score": false
+    },
+    {
+      "exercise_id": "ACT-POST-069-02",
+      "phase": "evidence_recognition",
+      "mode": "evidence_choice",
+      "title_vi": "Tìm câu thoại chứng minh đáp án",
+      "prompt_vi": "Trong ba trích đoạn thực sự có trong cùng bài nghe, trích đoạn nào liên quan trực tiếp nhất đến câu hỏi vừa làm?",
+      "source_question_id": "Q08",
+      "source_question_prompt_en": "Seasonal vertical mixing is called ____.",
+      "choices": [
+        {
+          "key": "T06",
+          "excerpt_en": "…cal conditions. Seasonal lake turnover may later mix deep water with surface water, redistributing both nutrients and oxygen. The effects depend on the lake's climate, depth and wind exposure. A single early-summer survey cannot r…",
+          "source_turn_id": "T06"
+        },
+        {
+          "key": "T04",
+          "excerpt_en": "…water clarity, often measured by lowering a patterned disc until it disappears from view. Clarity is useful but cannot explain all changes: colour may come from harmless natural substances or from suspended particles. For that rea…",
+          "source_turn_id": "T04"
+        },
+        {
+          "key": "T03",
+          "excerpt_en": "…erature changes rapidly is the thermocline. These layers restrict mixing and affect where oxygen and nutrients accumulate. A visitor swimming near the surface might have no idea that the deepest water has very different conditions…",
+          "source_turn_id": "T03"
+        }
+      ],
+      "correct_answers": [
+        "T06"
+      ],
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "evidence_text_sha256": "0d9badc34d4f10d5314276a8f99ee02d720cfe782f0ceb871e57ac822e951cdb",
+      "play_turn_ids": [
+        "T06",
+        "T04",
+        "T03"
+      ],
+      "feedback_vi": "Câu hỏi này được chứng minh tại lượt T06. Hai lựa chọn còn lại là lời nói có thật nhưng nằm ở các ý khác trong cùng đoạn nghe.",
+      "grading_policy": "exact_source_turn_id",
+      "is_exam_score": false
+    },
+    {
+      "exercise_id": "ACT-POST-069-03",
+      "phase": "focus_dictation",
+      "mode": "source_phrase_dictation",
+      "title_vi": "Chép lại cụm âm thanh trọng tâm",
+      "prompt_en": "… [____]  mix deep water with surface water, redistrib…",
+      "prompt_vi": "Nghe lượt thoại và điền chính xác cụm từ còn thiếu vào dấu trống. Không chép cả câu.",
+      "word_limit": 5,
+      "correct_answers": [
+        "Seasonal lake turnover may later"
+      ],
+      "play_turn_ids": [
+        "T06"
+      ],
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "source_excerpt_exact": "Seasonal lake turnover may later",
+      "evidence_char_start": 147,
+      "evidence_char_end": 179,
+      "source_turn_sha256": "0d9badc34d4f10d5314276a8f99ee02d720cfe782f0ceb871e57ac822e951cdb",
+      "feedback_vi": "Cụm nghe-chép chính xác là “Seasonal lake turnover may later”. Hãy đối chiếu từ chức năng, âm cuối và cách nối âm trước khi thử lại.",
+      "normalization_policy": "trim_unicode_nfkc_casefold_collapse_spaces_keep_meaningful_digits_and_letters",
+      "is_exam_score": false,
+      "newly_authored_for_m35": true
+    }
+  ],
+  "teacher_source_answer_key": {
+    "original_correct_answers": [
+      "lake turnover"
+    ],
+    "original_correct_option": null,
+    "evidence_turn_ids": [
+      "T06"
+    ],
+    "raw_question_evidence_excerpt_en": "Seasonal lake turnover may later mix deep water with surface water, redistributing both nutrients and oxygen.",
+    "original_explanation_vi": "Đáp án “lake turnover” được nói trực tiếp trong phần bài giảng này. Bùn đáy và quá trình đảo trộn nước theo mùa ảnh hưởng chất dinh dưỡng."
+  },
+  "skill_tags": [
+    "post_test_repair",
+    "section_4",
+    "note_completion",
+    "evidence_matching",
+    "focused_dictation",
+    "first_attempt_exposure_protection"
+  ],
+  "learner_variants": {
+    "if_original_answer_incorrect": "required_repair",
+    "if_original_answer_correct": "optional_reinforcement",
+    "if_no_question_response": "optional_first_attempt_submitted_only"
+  },
+  "repair_rule": {
+    "compare_response_to_original_question_id": "Q08",
+    "source_user_attempt_answer_from_db": true,
+    "error_record_type": "original_question_review",
+    "recommend_retention_days": [
+      1,
+      3,
+      7
+    ],
+    "new_first_attempt_scoring": false,
+    "band_calibration": false
+  },
+  "access_policy": {
+    "access": "post_submission_only",
+    "gate_parent_id": "S4-SIM-009",
+    "gate_kind": "section_simulation_submitted",
+    "user_bound": true,
+    "server_side_enforced": true,
+    "has_prior_attempt_required": true,
+    "cross_user_unlock": false,
+    "exposure_records_required": true,
+    "do_not_return_in_public_catalog": true,
+    "transcript_hidden_in_exam_session": true,
+    "pre_first_attempt_reuse": false,
+    "after_submit_irreversible_seen": true,
+    "retest_is_exposed": true,
+    "allow_any_public_index": false
+  },
+  "rights_status": "pending_review",
+  "review": {
+    "source_quality_review": "pending",
+    "semantic_answer_review": "pending",
+    "human_audio_listening": "pending",
+    "alignment_verified": false,
+    "teacher_signoff": "pending",
+    "publication_approved": false
+  },
+  "map_asset_id": null,
+  "map_asset_private_path": null,
+  "source_speaker_roles": [],
+  "version": "m35.1.0",
+  "import_policy": "insert_only_idempotent_do_not_overwrite_source"
+}

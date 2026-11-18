@@ -1,0 +1,866 @@
+{
+  "schema_version": "1.2.0",
+  "lesson_id": "S1-SIM-002",
+  "status": "draft",
+  "level": "L4",
+  "section": 1,
+  "topic": "Arranging a second-hand furniture delivery",
+  "title": "Second-hand Furniture Delivery Arrangements",
+  "content_format": "section_exam_simulation",
+  "exam_part": "IELTS_LISTENING_PART_1_STYLE",
+  "official_ielts_material": false,
+  "learning_objectives_vi": [
+    "Theo dõi hội thoại giao dịch đời sống hai người nói trong một lần nghe.",
+    "Điền chính xác thông tin, kể cả khi có phương án cũ và thông tin đính chính.",
+    "Phân tích MCQ dựa trên ý nghĩa cuối cùng và bằng chứng sau khi nộp bài."
+  ],
+  "target_skills": [
+    "delivery",
+    "measurements",
+    "costs",
+    "spelling",
+    "service_conditions"
+  ],
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Furniture charity coordinator",
+      "accent_requested": "australian",
+      "tts_voice_id": null
+    },
+    {
+      "speaker_id": "B",
+      "role": "Customer",
+      "accent_requested": "australian",
+      "tts_voice_id": null
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "Oak House Reuse Centre, good morning. This is Daniel. Are you calling about an item on our website or a collection?",
+      "translation_vi": "Chào buổi sáng, Trung tâm Tái sử dụng Oak House, tôi là Daniel. Anh gọi về món hàng trên web hay lịch đến lấy?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "delivery",
+        "measurements",
+        "costs",
+        "spelling",
+        "service_conditions"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "B",
+      "text_en": "An item on the website, actually. I saw a wooden desk listed yesterday, but the picture doesn't show its size clearly.",
+      "translation_vi": "Tôi hỏi món trên web. Tôi thấy bàn gỗ đăng hôm qua nhưng ảnh không cho biết rõ kích thước.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "delivery",
+        "measurements",
+        "costs",
+        "spelling",
+        "service_conditions"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "A",
+      "text_en": "We have two desks left. The narrow one is ninety centimetres wide; the larger model measures one hundred and twenty centimetres.",
+      "translation_vi": "Còn hai bàn. Mẫu hẹp rộng chín mươi cm; mẫu lớn rộng một trăm hai mươi cm.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "delivery",
+        "measurements",
+        "costs",
+        "spelling",
+        "service_conditions"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "B",
+      "text_en": "It's for a small study. I originally wanted the larger one, but the doorway is only a metre across, so I'll take the narrow desk.",
+      "translation_vi": "Để trong phòng học nhỏ. Ban đầu tôi muốn mẫu lớn, nhưng cửa rộng chỉ một mét nên tôi chọn bàn hẹp.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "delivery",
+        "measurements",
+        "costs",
+        "spelling",
+        "service_conditions"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "A",
+      "text_en": "Would you normally collect furniture yourself? We can help arrange transport if you don't have access to a large vehicle.",
+      "translation_vi": "Anh thường tự lấy đồ không? Chúng tôi có thể giúp sắp xếp vận chuyển nếu anh không có xe lớn.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "delivery",
+        "measurements",
+        "costs",
+        "spelling",
+        "service_conditions"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "B",
+      "text_en": "I could borrow a car, but there wouldn't be space for the desk. Delivery would save us quite a lot of trouble.",
+      "translation_vi": "Tôi mượn xe hơi được, nhưng không đủ chỗ cho bàn. Giao tận nơi sẽ đỡ phiền hơn.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "delivery",
+        "measurements",
+        "costs",
+        "spelling",
+        "service_conditions"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "Good choice. The narrow desk is oak, not pine as the online description suggests. We corrected that information this morning.",
+      "translation_vi": "Lựa chọn tốt. Bàn hẹp làm bằng gỗ sồi, không phải gỗ thông như mô tả trực tuyến; sáng nay chúng tôi đã sửa.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "delivery",
+        "measurements",
+        "costs",
+        "spelling",
+        "service_conditions"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "B",
+      "text_en": "Oak should be more durable. Does it come apart? Our flat is on the third floor and the staircase turns sharply.",
+      "translation_vi": "Gỗ sồi có vẻ bền. Có tháo rời được không? Căn hộ ở tầng ba và cầu thang ngoặt gấp.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "delivery",
+        "measurements",
+        "costs",
+        "spelling",
+        "service_conditions"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T09",
+      "speaker_id": "A",
+      "text_en": "The legs can be removed with a standard screwdriver. We include the screws in a labelled envelope taped under the desk.",
+      "translation_vi": "Có thể tháo chân bằng tua vít thường. Ốc được để trong phong bì có nhãn dán dưới bàn.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "delivery",
+        "measurements",
+        "costs",
+        "spelling",
+        "service_conditions"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T10",
+      "speaker_id": "B",
+      "text_en": "That's reassuring. The website mentioned delivery on Mondays, but I won't be home until the middle of next week.",
+      "translation_vi": "Yên tâm rồi. Trang web ghi giao thứ Hai, nhưng giữa tuần sau tôi mới có nhà.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "delivery",
+        "measurements",
+        "costs",
+        "spelling",
+        "service_conditions"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T11",
+      "speaker_id": "A",
+      "text_en": "Our vehicle is booked on Monday. The earliest available delivery is Wednesday, and we'd need access between one and three.",
+      "translation_vi": "Xe thứ Hai đã kín. Ngày giao sớm nhất là thứ Tư, cần vào nhà từ một đến ba giờ.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "delivery",
+        "measurements",
+        "costs",
+        "spelling",
+        "service_conditions"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T12",
+      "speaker_id": "B",
+      "text_en": "Wednesday is perfect. Could they call before arriving? The building has an intercom that doesn't work reliably.",
+      "translation_vi": "Thứ Tư rất hợp. Họ gọi trước khi đến được không? Chuông liên lạc tòa nhà hay hỏng.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "delivery",
+        "measurements",
+        "costs",
+        "spelling",
+        "service_conditions"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T13",
+      "speaker_id": "A",
+      "text_en": "Certainly. I'll mark your preferred contact as mobile. Could you confirm the last four digits of your phone number?",
+      "translation_vi": "Được. Tôi đánh dấu liên lạc qua di động. Anh xác nhận bốn số cuối điện thoại được không?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "delivery",
+        "measurements",
+        "costs",
+        "spelling",
+        "service_conditions"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T14",
+      "speaker_id": "B",
+      "text_en": "They're six two eight four. I had six two four eight on an old form, but that number belongs to my previous flatmate.",
+      "translation_vi": "Là sáu hai tám bốn. Mẫu cũ tôi ghi sáu hai bốn tám nhưng đó là số bạn cùng phòng trước đây.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "delivery",
+        "measurements",
+        "costs",
+        "spelling",
+        "service_conditions"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T15",
+      "speaker_id": "A",
+      "text_en": "I've updated it. The desk costs forty-five pounds. Delivery to your postcode adds nine pounds, rather than the fifteen for addresses outside town.",
+      "translation_vi": "Tôi đã cập nhật. Bàn giá bốn mươi lăm bảng. Giao tới khu bưu chính của anh thêm chín bảng, thay vì mười lăm bảng ngoài thị trấn.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "delivery",
+        "measurements",
+        "costs",
+        "spelling",
+        "service_conditions"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T16",
+      "speaker_id": "B",
+      "text_en": "Fine. My street is Millbank Lane. It gets confused with Millbrook Road, so I'll spell the important part: M I L L B A N K.",
+      "translation_vi": "Được. Phố tôi là Millbank Lane. Dễ nhầm với Millbrook Road nên tôi đánh vần phần chính M I L L B A N K.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "delivery",
+        "measurements",
+        "costs",
+        "spelling",
+        "service_conditions"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T17",
+      "speaker_id": "A",
+      "text_en": "Millbank Lane, thank you. Our driver will carry the desk into the building, but assembling it upstairs isn't included in the delivery service.",
+      "translation_vi": "Millbank Lane, cảm ơn. Tài xế sẽ đưa bàn vào tòa nhà nhưng không lắp ráp trên lầu trong dịch vụ giao hàng.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "delivery",
+        "measurements",
+        "costs",
+        "spelling",
+        "service_conditions"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T18",
+      "speaker_id": "B",
+      "text_en": "I'll put the legs on myself. I also noticed a blue office chair. Is it available, or has someone else reserved it?",
+      "translation_vi": "Tôi tự lắp chân bàn. Tôi còn thấy ghế văn phòng xanh. Còn hàng không hay có người đặt rồi?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "delivery",
+        "measurements",
+        "costs",
+        "spelling",
+        "service_conditions"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T19",
+      "speaker_id": "A",
+      "text_en": "That chair has been sold. There's a grey one in similar condition, although its wheels need cleaning before it leaves us.",
+      "translation_vi": "Ghế đó đã bán. Có ghế xám tình trạng tương tự, nhưng bánh xe cần được vệ sinh trước khi giao.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "delivery",
+        "measurements",
+        "costs",
+        "spelling",
+        "service_conditions"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T20",
+      "speaker_id": "B",
+      "text_en": "I'll leave the chair for now. It's more important to know whether your team can carry the desk up three flights of stairs.",
+      "translation_vi": "Tôi chưa mua ghế. Quan trọng hơn là đội giao hàng có khiêng bàn lên ba tầng cầu thang được không.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "delivery",
+        "measurements",
+        "costs",
+        "spelling",
+        "service_conditions"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T21",
+      "speaker_id": "A",
+      "text_en": "They can, provided the stairwell is clear. Please remove any bicycles from the landing before the delivery window begins.",
+      "translation_vi": "Được nếu cầu thang thông thoáng. Hãy dọn xe đạp khỏi chiếu nghỉ trước giờ giao.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "delivery",
+        "measurements",
+        "costs",
+        "spelling",
+        "service_conditions"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T22",
+      "speaker_id": "B",
+      "text_en": "That's easy enough. I can move the bikes into our storage cupboard, so the driver won't have to work around them.",
+      "translation_vi": "Việc đó dễ. Tôi sẽ chuyển xe đạp vào kho để tài xế không phải tránh chúng.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "delivery",
+        "measurements",
+        "costs",
+        "spelling",
+        "service_conditions"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T23",
+      "speaker_id": "A",
+      "text_en": "Finally, we accept card payment by a secure link, not cash to the driver. I'll send that link with your confirmation.",
+      "translation_vi": "Cuối cùng, chúng tôi nhận thanh toán bằng thẻ qua liên kết bảo mật, không nhận tiền mặt cho tài xế. Tôi sẽ gửi liên kết cùng xác nhận.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "delivery",
+        "measurements",
+        "costs",
+        "spelling",
+        "service_conditions"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T24",
+      "speaker_id": "B",
+      "text_en": "Great, please do. I'll be there Wednesday afternoon and make sure the stairs are clear before the van arrives.",
+      "translation_vi": "Tốt, hãy gửi. Chiều thứ Tư tôi sẽ ở nhà và dọn cầu thang trước khi xe đến.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "delivery",
+        "measurements",
+        "costs",
+        "spelling",
+        "service_conditions"
+      ],
+      "bank_role": "protected_assessment"
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "group_id": "PART1_FORM_1_TO_6",
+      "type": "form_completion",
+      "prompt": "Selected desk width: ____ centimetres",
+      "correct_answers": [
+        "ninety",
+        "90"
+      ],
+      "spoken_answer": "ninety",
+      "word_limit": 3,
+      "instructions_en": "NO MORE THAN THREE WORDS AND/OR A NUMBER",
+      "scoring_policy": "controlled_variants",
+      "explanation_vi": "Bàn được chọn là mẫu hẹp 90 cm.",
+      "answer_source": "explicit_recording",
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "evidence_excerpt_en": "narrow one is ninety centimetres",
+      "question_tags": [
+        "M25",
+        "part1",
+        "completion",
+        "delivery",
+        "measurements",
+        "costs",
+        "spelling",
+        "service_conditions"
+      ]
+    },
+    {
+      "question_id": "Q02",
+      "group_id": "PART1_FORM_1_TO_6",
+      "type": "form_completion",
+      "prompt": "Material of the desk: ____",
+      "correct_answers": [
+        "oak"
+      ],
+      "spoken_answer": "oak",
+      "word_limit": 3,
+      "instructions_en": "NO MORE THAN THREE WORDS AND/OR A NUMBER",
+      "scoring_policy": "controlled_variants",
+      "explanation_vi": "Mô tả ban đầu sai, vật liệu đúng là gỗ sồi.",
+      "answer_source": "explicit_recording",
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "evidence_excerpt_en": "narrow desk is oak",
+      "question_tags": [
+        "M25",
+        "part1",
+        "completion",
+        "delivery",
+        "measurements",
+        "costs",
+        "spelling",
+        "service_conditions"
+      ]
+    },
+    {
+      "question_id": "Q03",
+      "group_id": "PART1_FORM_1_TO_6",
+      "type": "form_completion",
+      "prompt": "Tool needed to remove the legs: ____",
+      "correct_answers": [
+        "screwdriver"
+      ],
+      "spoken_answer": "screwdriver",
+      "word_limit": 3,
+      "instructions_en": "NO MORE THAN THREE WORDS AND/OR A NUMBER",
+      "scoring_policy": "controlled_variants",
+      "explanation_vi": "Tháo chân bằng tua vít thường.",
+      "answer_source": "explicit_recording",
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "evidence_excerpt_en": "standard screwdriver",
+      "question_tags": [
+        "M25",
+        "part1",
+        "completion",
+        "delivery",
+        "measurements",
+        "costs",
+        "spelling",
+        "service_conditions"
+      ]
+    },
+    {
+      "question_id": "Q04",
+      "group_id": "PART1_FORM_1_TO_6",
+      "type": "note_completion",
+      "prompt": "Delivery day: ____",
+      "correct_answers": [
+        "Wednesday"
+      ],
+      "spoken_answer": "Wednesday",
+      "word_limit": 3,
+      "instructions_en": "NO MORE THAN THREE WORDS AND/OR A NUMBER",
+      "scoring_policy": "controlled_variants",
+      "explanation_vi": "Ngày giao sớm nhất và được chốt là thứ Tư.",
+      "answer_source": "explicit_recording",
+      "evidence_turn_ids": [
+        "T11"
+      ],
+      "evidence_excerpt_en": "delivery is Wednesday",
+      "question_tags": [
+        "M25",
+        "part1",
+        "completion",
+        "delivery",
+        "measurements",
+        "costs",
+        "spelling",
+        "service_conditions"
+      ]
+    },
+    {
+      "question_id": "Q05",
+      "group_id": "PART1_FORM_1_TO_6",
+      "type": "form_completion",
+      "prompt": "Last four mobile digits: ____",
+      "correct_answers": [
+        "6284"
+      ],
+      "spoken_answer": "six two eight four",
+      "word_limit": 3,
+      "instructions_en": "NO MORE THAN THREE WORDS AND/OR A NUMBER",
+      "scoring_policy": "controlled_variants",
+      "explanation_vi": "Số đúng 6284; 6248 là số cũ.",
+      "answer_source": "explicit_recording",
+      "evidence_turn_ids": [
+        "T14"
+      ],
+      "evidence_excerpt_en": "They're six two eight four",
+      "question_tags": [
+        "M25",
+        "part1",
+        "completion",
+        "delivery",
+        "measurements",
+        "costs",
+        "spelling",
+        "service_conditions"
+      ]
+    },
+    {
+      "question_id": "Q06",
+      "group_id": "PART1_FORM_1_TO_6",
+      "type": "form_completion",
+      "prompt": "Delivery fee: £____",
+      "correct_answers": [
+        "nine",
+        "9"
+      ],
+      "spoken_answer": "nine",
+      "word_limit": 3,
+      "instructions_en": "NO MORE THAN THREE WORDS AND/OR A NUMBER",
+      "scoring_policy": "controlled_variants",
+      "explanation_vi": "Phí nội thị là chín bảng.",
+      "answer_source": "explicit_recording",
+      "evidence_turn_ids": [
+        "T15"
+      ],
+      "evidence_excerpt_en": "adds nine pounds",
+      "question_tags": [
+        "M25",
+        "part1",
+        "completion",
+        "delivery",
+        "measurements",
+        "costs",
+        "spelling",
+        "service_conditions"
+      ]
+    },
+    {
+      "question_id": "Q07",
+      "group_id": "PART1_MCQ_7_TO_10",
+      "type": "mcq",
+      "prompt": "What is NOT part of the delivery service?",
+      "correct_answers": [
+        "Reassembling the desk upstairs"
+      ],
+      "options": [
+        {
+          "key": "A",
+          "text": "Carrying the desk inside"
+        },
+        {
+          "key": "B",
+          "text": "Reassembling the desk upstairs"
+        },
+        {
+          "key": "C",
+          "text": "Taking the desk up clear stairs"
+        }
+      ],
+      "correct_option": "B",
+      "scoring_policy": "one_correct_option",
+      "explanation_vi": "Dịch vụ không gồm lắp bàn trên tầng.",
+      "answer_source": "explicit_or_contextual_recording",
+      "evidence_turn_ids": [
+        "T17"
+      ],
+      "evidence_excerpt_en": "assembling it upstairs isn't included",
+      "question_tags": [
+        "M25",
+        "part1",
+        "mcq",
+        "delivery",
+        "measurements",
+        "costs",
+        "spelling",
+        "service_conditions"
+      ]
+    },
+    {
+      "question_id": "Q08",
+      "group_id": "PART1_MCQ_7_TO_10",
+      "type": "mcq",
+      "prompt": "What happened to the blue chair?",
+      "correct_answers": [
+        "Someone bought it"
+      ],
+      "options": [
+        {
+          "key": "A",
+          "text": "It needs new wheels"
+        },
+        {
+          "key": "B",
+          "text": "It was moved to another shop"
+        },
+        {
+          "key": "C",
+          "text": "Someone bought it"
+        }
+      ],
+      "correct_option": "C",
+      "scoring_policy": "one_correct_option",
+      "explanation_vi": "Ghế xanh đã được bán.",
+      "answer_source": "explicit_or_contextual_recording",
+      "evidence_turn_ids": [
+        "T19"
+      ],
+      "evidence_excerpt_en": "That chair has been sold",
+      "question_tags": [
+        "M25",
+        "part1",
+        "mcq",
+        "delivery",
+        "measurements",
+        "costs",
+        "spelling",
+        "service_conditions"
+      ]
+    },
+    {
+      "question_id": "Q09",
+      "group_id": "PART1_MCQ_7_TO_10",
+      "type": "mcq",
+      "prompt": "What should the customer do before the van arrives?",
+      "correct_answers": [
+        "Move bicycles away from the landing"
+      ],
+      "options": [
+        {
+          "key": "A",
+          "text": "Move bicycles away from the landing"
+        },
+        {
+          "key": "B",
+          "text": "Reserve the building lift"
+        },
+        {
+          "key": "C",
+          "text": "Ask the driver to bring tools"
+        }
+      ],
+      "correct_option": "A",
+      "scoring_policy": "one_correct_option",
+      "explanation_vi": "Cần dọn xe đạp để đội giao có lối đi.",
+      "answer_source": "explicit_or_contextual_recording",
+      "evidence_turn_ids": [
+        "T21"
+      ],
+      "evidence_excerpt_en": "remove any bicycles from the landing",
+      "question_tags": [
+        "M25",
+        "part1",
+        "mcq",
+        "delivery",
+        "measurements",
+        "costs",
+        "spelling",
+        "service_conditions"
+      ]
+    },
+    {
+      "question_id": "Q10",
+      "group_id": "PART1_MCQ_7_TO_10",
+      "type": "mcq",
+      "prompt": "How will the customer pay?",
+      "correct_answers": [
+        "Through a secure card link"
+      ],
+      "options": [
+        {
+          "key": "A",
+          "text": "With cash on delivery"
+        },
+        {
+          "key": "B",
+          "text": "Through a secure card link"
+        },
+        {
+          "key": "C",
+          "text": "By postal cheque"
+        }
+      ],
+      "correct_option": "B",
+      "scoring_policy": "one_correct_option",
+      "explanation_vi": "Thanh toán bằng thẻ qua liên kết bảo mật.",
+      "answer_source": "explicit_or_contextual_recording",
+      "evidence_turn_ids": [
+        "T23"
+      ],
+      "evidence_excerpt_en": "card payment by a secure link",
+      "question_tags": [
+        "M25",
+        "part1",
+        "mcq",
+        "delivery",
+        "measurements",
+        "costs",
+        "spelling",
+        "service_conditions"
+      ]
+    }
+  ],
+  "question_groups": [
+    {
+      "group_id": "PART1_FORM_1_TO_6",
+      "question_ids": [
+        "Q01",
+        "Q02",
+        "Q03",
+        "Q04",
+        "Q05",
+        "Q06"
+      ],
+      "instructions_en": "Complete the form. Write NO MORE THAN THREE WORDS AND/OR A NUMBER for each answer.",
+      "pre_read_seconds": 30,
+      "break_after_turn_id": "T15",
+      "requires_one_listen": true
+    },
+    {
+      "group_id": "PART1_MCQ_7_TO_10",
+      "question_ids": [
+        "Q07",
+        "Q08",
+        "Q09",
+        "Q10"
+      ],
+      "instructions_en": "Choose the correct letter A, B or C.",
+      "pre_read_seconds": 25,
+      "requires_one_listen": true
+    }
+  ],
+  "audio": {
+    "status": "not_generated",
+    "audio_url": null,
+    "audio_asset_id": null,
+    "duration_ms": null,
+    "source_text_sha256": "989072da26e062ae5ab6a44d29461d96bde4270b5d2bff8e4b3822a47bb045ba",
+    "generation_strategy": "single_continuous_two_person_dialogue",
+    "aligned_turns": false
+  },
+  "exam_mode": {
+    "bank_role": "protected_assessment",
+    "use_as_training_before_first_attempt": false,
+    "listening_attempts_allowed_for_scored_first_attempt": 1,
+    "replay_before_submit": false,
+    "speed_control_before_submit": false,
+    "transcript_visible_before_submit": false,
+    "answer_key_visible_before_submit": false,
+    "post_attempt_review_allowed": true,
+    "question_count": 10,
+    "points_per_correct_answer": 1,
+    "question_order_monotonic": true,
+    "estimated_speech_minutes_at_135_wpm": 3.76,
+    "exam_band_score_enabled": false,
+    "repeated_attempt_marked_as_seen": true
+  },
+  "qa": {
+    "automatic_data_validation": "pending",
+    "content_human_review": "pending",
+    "audio_human_review": "pending",
+    "exam_simulation_rubric_score": null,
+    "rubric_90_verified": false,
+    "published": false,
+    "release_eligible": false
+  },
+  "provenance": {
+    "source_type": "original_authored_english_dialogue",
+    "milestone": "M25",
+    "no_official_ielts_question_copied": true,
+    "training_exposure_guard": true
+  },
+  "release_metadata": {
+    "target_bank": "protected_assessment",
+    "import_policy": "insert_only",
+    "version": "m25.0.1",
+    "preserve_existing_ids": true,
+    "allow_client_answer_payload": false
+  }
+}

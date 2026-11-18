@@ -1,0 +1,1022 @@
+{
+  "schema_version": "1.2.0",
+  "lesson_id": "S3-SIM-011",
+  "status": "draft",
+  "level": "L6",
+  "section": 3,
+  "topic": "Engineering design and user testing",
+  "title": "Evaluating Solar-Powered Study Benches",
+  "content_format": "section_exam_simulation",
+  "exam_part": "IELTS_LISTENING_PART_3_STYLE",
+  "official_ielts_material": false,
+  "learning_objectives_vi": [
+    "Theo dõi thảo luận có nhiều quan điểm và lý do thay đổi quyết định.",
+    "Phân biệt bằng chứng chắc chắn với các hạn chế phương pháp nghiên cứu.",
+    "Làm 10 câu Multiple Choice và Matching trong một lần nghe mà không xem transcript."
+  ],
+  "target_skills": [
+    "academic_discussion",
+    "tracking_opinions",
+    "paraphrase",
+    "evidence_quality",
+    "matching_features"
+  ],
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "University tutor / academic adviser",
+      "accent_requested": "north_american",
+      "tts_voice_id": null
+    },
+    {
+      "speaker_id": "B",
+      "role": "Student researcher one",
+      "accent_requested": "british",
+      "tts_voice_id": null
+    },
+    {
+      "speaker_id": "C",
+      "role": "Student researcher two",
+      "accent_requested": "australian",
+      "tts_voice_id": null
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "B",
+      "text_en": "Our prototype bench charges phones and lights the reading area.",
+      "meaning_vi": "B: Ghế thử nghiệm có sạc và đèn; màn trình diễn chưa chứng minh độ tin cậy thực tế.",
+      "translation_vi": null,
+      "translation_status": "pending_full_sentence_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "part3_opinion_tracking",
+        "paraphrase",
+        "evidence_evaluation"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "scene_setup"
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "C",
+      "text_en": "That looked impressive at the open day.",
+      "meaning_vi": "B: Ghế thử nghiệm có sạc và đèn; màn trình diễn chưa chứng minh độ tin cậy thực tế.",
+      "translation_vi": null,
+      "translation_status": "pending_full_sentence_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "part3_opinion_tracking",
+        "paraphrase",
+        "evidence_evaluation"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "scene_setup"
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "A",
+      "text_en": "A demonstration is not the same as evidence that students can use it reliably.",
+      "meaning_vi": "B: Ghế thử nghiệm có sạc và đèn; màn trình diễn chưa chứng minh độ tin cậy thực tế.",
+      "translation_vi": null,
+      "translation_status": "pending_full_sentence_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "part3_opinion_tracking",
+        "paraphrase",
+        "evidence_evaluation"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "scene_setup"
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "C",
+      "text_en": "We reported that the batteries stayed full, but the open day had unusually clear skies. A week of grey weather might give a very different picture of reliability.",
+      "meaning_vi": "C: Thử nghiệm đầu trong thời tiết nắng bất thường nên chưa phản ánh độ ổn định.",
+      "translation_vi": null,
+      "translation_status": "pending_full_sentence_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "part3_opinion_tracking",
+        "paraphrase",
+        "evidence_evaluation"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "evidence"
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "A",
+      "text_en": "Students mostly need to see their books and the path after dusk. High-speed tablet charging would drain the stored power, so reliable low-level lighting should come first.",
+      "meaning_vi": "A: Ưu tiên đèn mức thấp ổn định sau hoàng hôn, không phải sạc nhanh.",
+      "translation_vi": null,
+      "translation_status": "pending_full_sentence_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "part3_opinion_tracking",
+        "paraphrase",
+        "evidence_evaluation"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "evidence"
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "C",
+      "text_en": "The lights looked bright during the demonstration because they had started with a fully charged battery. That tells us almost nothing about the final hour of a dull winter day.",
+      "meaning_vi": "C: Đèn sáng khi thử vì pin đầy; chưa biết hiệu quả cuối ngày mùa đông ít nắng.",
+      "translation_vi": null,
+      "translation_status": "pending_full_sentence_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "part3_opinion_tracking",
+        "paraphrase",
+        "evidence_evaluation"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "critical_discussion"
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "B",
+      "text_en": "We should report battery charge and actual hours of lighting as different variables.",
+      "meaning_vi": "B: Phải phân biệt mức pin còn lại với số giờ đèn hoạt động.",
+      "translation_vi": null,
+      "translation_status": "pending_full_sentence_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "part3_opinion_tracking",
+        "paraphrase",
+        "evidence_evaluation"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "peer_response"
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "B",
+      "text_en": "We thought the sockets had failed, but the test logs show people unplugged because the instructions were hidden under the armrest. The charging system itself was operating.",
+      "meaning_vi": "B: Người dùng dừng sạc vì hướng dẫn khó thấy, không phải cổng hỏng.",
+      "translation_vi": null,
+      "translation_status": "pending_full_sentence_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "part3_opinion_tracking",
+        "paraphrase",
+        "evidence_evaluation"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "evidence"
+    },
+    {
+      "turn_id": "T09",
+      "speaker_id": "C",
+      "text_en": "We tested the bench with our own classmates, but none used mobility aids. The next session should involve people with different mobility needs and look at reach and clear space.",
+      "meaning_vi": "C: Cần mời người có nhu cầu di chuyển khác nhau để kiểm tra khả năng tiếp cận.",
+      "translation_vi": null,
+      "translation_status": "pending_full_sentence_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "part3_opinion_tracking",
+        "paraphrase",
+        "evidence_evaluation"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "evidence"
+    },
+    {
+      "turn_id": "T10",
+      "speaker_id": "C",
+      "text_en": "The safety review also needs to consider cables and water pooling around the base.",
+      "meaning_vi": "C: Đánh giá an toàn cần xét dây dẫn và nước đọng quanh ghế.",
+      "translation_vi": null,
+      "translation_status": "pending_full_sentence_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "part3_opinion_tracking",
+        "paraphrase",
+        "evidence_evaluation"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "peer_response"
+    },
+    {
+      "turn_id": "T11",
+      "speaker_id": "A",
+      "text_en": "The campus can expand after a full week of normal use demonstrates acceptable lighting and charging availability. Social-media interest cannot replace an operational test.",
+      "meaning_vi": "A: Mở rộng khi vận hành trong tuần thực tế đạt yêu cầu, không dựa số lượt thích.",
+      "translation_vi": null,
+      "translation_status": "pending_full_sentence_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "part3_opinion_tracking",
+        "paraphrase",
+        "evidence_evaluation"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "evidence"
+    },
+    {
+      "turn_id": "T12",
+      "speaker_id": "B",
+      "text_en": "Keep the sunny-day chart with a clear weather qualification; it remains accurate for that particular day.",
+      "meaning_vi": "B: Giữ biểu đồ pin kèm ghi chú thời tiết nắng.",
+      "translation_vi": null,
+      "translation_status": "pending_full_sentence_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "part3_opinion_tracking",
+        "paraphrase",
+        "evidence_evaluation"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "evidence"
+    },
+    {
+      "turn_id": "T13",
+      "speaker_id": "B",
+      "text_en": "Maintenance staff pointed out that students sometimes leave bicycles leaning against the sockets. The next layout should protect the connectors without reducing wheelchair access.",
+      "meaning_vi": "B: Cần bảo vệ cổng sạc khỏi xe đạp nhưng vẫn giữ lối tiếp cận xe lăn.",
+      "translation_vi": null,
+      "translation_status": "pending_full_sentence_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "part3_opinion_tracking",
+        "paraphrase",
+        "evidence_evaluation"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "critical_discussion"
+    },
+    {
+      "turn_id": "T14",
+      "speaker_id": "C",
+      "text_en": "The first access sheet lacks measurements for wheelchair turning space. We need a redesigned sheet and a fresh trial.",
+      "meaning_vi": "C: Cần thiết kế lại bảng kiểm tiếp cận và thử mới.",
+      "translation_vi": null,
+      "translation_status": "pending_full_sentence_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "part3_opinion_tracking",
+        "paraphrase",
+        "evidence_evaluation"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "evidence"
+    },
+    {
+      "turn_id": "T15",
+      "speaker_id": "A",
+      "text_en": "The design should remain understandable without a staff member explaining it.",
+      "meaning_vi": "A: Thiết kế phải dễ hiểu mà không cần nhân viên giải thích.",
+      "translation_vi": null,
+      "translation_status": "pending_full_sentence_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "part3_opinion_tracking",
+        "paraphrase",
+        "evidence_evaluation"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "peer_response"
+    },
+    {
+      "turn_id": "T16",
+      "speaker_id": "A",
+      "text_en": "Use the manufacturer’s solar-panel sheet to describe the hardware, not as evidence of how the bench performed on campus.",
+      "meaning_vi": "A: Thông số tấm pin chỉ mô tả thiết bị.",
+      "translation_vi": null,
+      "translation_status": "pending_full_sentence_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "part3_opinion_tracking",
+        "paraphrase",
+        "evidence_evaluation"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "evidence"
+    },
+    {
+      "turn_id": "T17",
+      "speaker_id": "B",
+      "text_en": "The week-long readings will become the main measure of dependable lighting after sunset.",
+      "meaning_vi": "B: Số đo đèn suốt tuần là chỉ số chính.",
+      "translation_vi": null,
+      "translation_status": "pending_full_sentence_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "part3_opinion_tracking",
+        "paraphrase",
+        "evidence_evaluation"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "evidence"
+    },
+    {
+      "turn_id": "T18",
+      "speaker_id": "A",
+      "text_en": "A technically successful prototype may still fail if students cannot tell when power is unavailable. Include a clear status indicator in the next usability test.",
+      "meaning_vi": "A: Thiết bị cần báo rõ khi không còn điện để người dùng hiểu trạng thái.",
+      "translation_vi": null,
+      "translation_status": "pending_full_sentence_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "part3_opinion_tracking",
+        "paraphrase",
+        "evidence_evaluation"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "critical_discussion"
+    },
+    {
+      "turn_id": "T19",
+      "speaker_id": "B",
+      "text_en": "I can repeat the test with the new instruction label attached.",
+      "meaning_vi": "B: Tôi có thể thử lại sau khi gắn nhãn hướng dẫn mới.",
+      "translation_vi": null,
+      "translation_status": "pending_full_sentence_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "part3_opinion_tracking",
+        "paraphrase",
+        "evidence_evaluation"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "peer_response"
+    },
+    {
+      "turn_id": "T20",
+      "speaker_id": "A",
+      "text_en": "Strip names and contact information from the feedback before it goes to the engineering partner.",
+      "meaning_vi": "A: Xóa tên và liên hệ cá nhân khỏi phản hồi trước khi chia sẻ.",
+      "translation_vi": null,
+      "translation_status": "pending_full_sentence_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "part3_opinion_tracking",
+        "paraphrase",
+        "evidence_evaluation"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "evidence"
+    },
+    {
+      "turn_id": "T21",
+      "speaker_id": "C",
+      "text_en": "Before the next public demonstration, I will separate the results from sunny days and cloudy days, and include the amount of battery charge available at the start of each trial. That way, a visitor can see how our conclusions relate to ordinary conditions, not just a carefully prepared showcase.",
+      "meaning_vi": "C: Trước khi trình diễn lại, sẽ tách kết quả ngày nắng và ngày mây, kèm mức pin ban đầu để không chỉ khoe màn thử được chuẩn bị kỹ.",
+      "translation_vi": null,
+      "translation_status": "pending_full_sentence_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "part3_opinion_tracking",
+        "paraphrase",
+        "evidence_evaluation"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "final_critical_discussion"
+    },
+    {
+      "turn_id": "T22",
+      "speaker_id": "A",
+      "text_en": "A good report will tell the facilities team whether it is worth testing the design further, rather than promising a complete solution.",
+      "meaning_vi": "A: Báo cáo cần giúp quyết định có nên thử tiếp, không hứa hẹn giải pháp hoàn hảo.",
+      "translation_vi": null,
+      "translation_status": "pending_full_sentence_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "part3_opinion_tracking",
+        "paraphrase",
+        "evidence_evaluation"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "conclusion"
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "group_id": "PART3_MCQ_Q01_TO_05",
+      "type": "mcq",
+      "prompt": "What is the major limitation of the first test?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Nobody tried the charging ports"
+        },
+        {
+          "key": "B",
+          "text": "It took place in unusually sunny weather"
+        },
+        {
+          "key": "C",
+          "text": "The lamps were not installed"
+        }
+      ],
+      "correct_option": "B",
+      "correct_answers": [
+        "It took place in unusually sunny weather"
+      ],
+      "scoring_policy": "one_correct_option",
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "evidence_excerpt_en": "We reported that the batteries stayed full, but the open day had unusually clear skies. A week of grey weather might give a very different picture of reliability.",
+      "explanation_vi": "C: Thử nghiệm đầu trong thời tiết nắng bất thường nên chưa phản ánh độ ổn định.",
+      "answer_source": "paraphrased_or_explicit_recording",
+      "question_tags": [
+        "M27",
+        "part3",
+        "academic_discussion",
+        "mcq",
+        "opinion_tracking"
+      ],
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true
+    },
+    {
+      "question_id": "Q02",
+      "group_id": "PART3_MCQ_Q01_TO_05",
+      "type": "mcq",
+      "prompt": "Which feature will be prioritised in the next design?",
+      "options": [
+        {
+          "key": "A",
+          "text": "An extra decorative display"
+        },
+        {
+          "key": "B",
+          "text": "Faster charging for tablets"
+        },
+        {
+          "key": "C",
+          "text": "Reliable low-level lighting after sunset"
+        }
+      ],
+      "correct_option": "C",
+      "correct_answers": [
+        "Reliable low-level lighting after sunset"
+      ],
+      "scoring_policy": "one_correct_option",
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "evidence_excerpt_en": "Students mostly need to see their books and the path after dusk. High-speed tablet charging would drain the stored power, so reliable low-level lighting should come first.",
+      "explanation_vi": "A: Ưu tiên đèn mức thấp ổn định sau hoàng hôn, không phải sạc nhanh.",
+      "answer_source": "paraphrased_or_explicit_recording",
+      "question_tags": [
+        "M27",
+        "part3",
+        "academic_discussion",
+        "mcq",
+        "opinion_tracking"
+      ],
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true
+    },
+    {
+      "question_id": "Q03",
+      "group_id": "PART3_MCQ_Q01_TO_05",
+      "type": "mcq",
+      "prompt": "Why did some users stop charging their phones?",
+      "options": [
+        {
+          "key": "A",
+          "text": "The instructions were difficult to find"
+        },
+        {
+          "key": "B",
+          "text": "The charging socket was damaged"
+        },
+        {
+          "key": "C",
+          "text": "The phones became too hot"
+        }
+      ],
+      "correct_option": "A",
+      "correct_answers": [
+        "The instructions were difficult to find"
+      ],
+      "scoring_policy": "one_correct_option",
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "evidence_excerpt_en": "We thought the sockets had failed, but the test logs show people unplugged because the instructions were hidden under the armrest. The charging system itself was operating.",
+      "explanation_vi": "B: Người dùng dừng sạc vì hướng dẫn khó thấy, không phải cổng hỏng.",
+      "answer_source": "paraphrased_or_explicit_recording",
+      "question_tags": [
+        "M27",
+        "part3",
+        "academic_discussion",
+        "mcq",
+        "opinion_tracking"
+      ],
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true
+    },
+    {
+      "question_id": "Q04",
+      "group_id": "PART3_MCQ_Q01_TO_05",
+      "type": "mcq",
+      "prompt": "How will the students assess access?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Ask only engineering students"
+        },
+        {
+          "key": "B",
+          "text": "Observe use by people with different mobility needs"
+        },
+        {
+          "key": "C",
+          "text": "Measure the bench colour in daylight"
+        }
+      ],
+      "correct_option": "B",
+      "correct_answers": [
+        "Observe use by people with different mobility needs"
+      ],
+      "scoring_policy": "one_correct_option",
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "evidence_excerpt_en": "We tested the bench with our own classmates, but none used mobility aids. The next session should involve people with different mobility needs and look at reach and clear space.",
+      "explanation_vi": "C: Cần mời người có nhu cầu di chuyển khác nhau để kiểm tra khả năng tiếp cận.",
+      "answer_source": "paraphrased_or_explicit_recording",
+      "question_tags": [
+        "M27",
+        "part3",
+        "academic_discussion",
+        "mcq",
+        "opinion_tracking"
+      ],
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true
+    },
+    {
+      "question_id": "Q05",
+      "group_id": "PART3_MCQ_Q01_TO_05",
+      "type": "mcq",
+      "prompt": "What will decide whether the trial expands?",
+      "options": [
+        {
+          "key": "A",
+          "text": "A vote on the most attractive colour"
+        },
+        {
+          "key": "B",
+          "text": "The number of photographs on social media"
+        },
+        {
+          "key": "C",
+          "text": "Performance during a full week of normal use"
+        }
+      ],
+      "correct_option": "C",
+      "correct_answers": [
+        "Performance during a full week of normal use"
+      ],
+      "scoring_policy": "one_correct_option",
+      "evidence_turn_ids": [
+        "T11"
+      ],
+      "evidence_excerpt_en": "The campus can expand after a full week of normal use demonstrates acceptable lighting and charging availability. Social-media interest cannot replace an operational test.",
+      "explanation_vi": "A: Mở rộng khi vận hành trong tuần thực tế đạt yêu cầu, không dựa số lượt thích.",
+      "answer_source": "paraphrased_or_explicit_recording",
+      "question_tags": [
+        "M27",
+        "part3",
+        "academic_discussion",
+        "mcq",
+        "opinion_tracking"
+      ],
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true
+    },
+    {
+      "question_id": "Q06",
+      "group_id": "PART3_MATCHING_Q06_TO_10",
+      "type": "matching",
+      "prompt": "Sunny-day battery chart",
+      "options": [
+        {
+          "key": "A",
+          "text": "Discard due to missing power readings"
+        },
+        {
+          "key": "B",
+          "text": "Obtain permission from maintenance staff"
+        },
+        {
+          "key": "C",
+          "text": "Redesign the tool and test again"
+        },
+        {
+          "key": "D",
+          "text": "Use only as hardware background"
+        },
+        {
+          "key": "E",
+          "text": "Keep with a weather limitation"
+        },
+        {
+          "key": "F",
+          "text": "Remove identifiers before sharing"
+        },
+        {
+          "key": "G",
+          "text": "Use as the primary performance measure"
+        }
+      ],
+      "correct_option": "E",
+      "correct_answers": [
+        "E"
+      ],
+      "scoring_policy": "matching_letter",
+      "evidence_turn_ids": [
+        "T12"
+      ],
+      "evidence_excerpt_en": "Keep the sunny-day chart with a clear weather qualification; it remains accurate for that particular day.",
+      "explanation_vi": "B: Giữ biểu đồ pin kèm ghi chú thời tiết nắng.",
+      "answer_source": "paraphrased_or_explicit_recording",
+      "question_tags": [
+        "M27",
+        "part3",
+        "academic_discussion",
+        "matching",
+        "evaluation_of_evidence"
+      ],
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true
+    },
+    {
+      "question_id": "Q07",
+      "group_id": "PART3_MATCHING_Q06_TO_10",
+      "type": "matching",
+      "prompt": "Accessibility observation sheet",
+      "options": [
+        {
+          "key": "A",
+          "text": "Discard due to missing power readings"
+        },
+        {
+          "key": "B",
+          "text": "Obtain permission from maintenance staff"
+        },
+        {
+          "key": "C",
+          "text": "Redesign the tool and test again"
+        },
+        {
+          "key": "D",
+          "text": "Use only as hardware background"
+        },
+        {
+          "key": "E",
+          "text": "Keep with a weather limitation"
+        },
+        {
+          "key": "F",
+          "text": "Remove identifiers before sharing"
+        },
+        {
+          "key": "G",
+          "text": "Use as the primary performance measure"
+        }
+      ],
+      "correct_option": "C",
+      "correct_answers": [
+        "C"
+      ],
+      "scoring_policy": "matching_letter",
+      "evidence_turn_ids": [
+        "T14"
+      ],
+      "evidence_excerpt_en": "The first access sheet lacks measurements for wheelchair turning space. We need a redesigned sheet and a fresh trial.",
+      "explanation_vi": "C: Cần thiết kế lại bảng kiểm tiếp cận và thử mới.",
+      "answer_source": "paraphrased_or_explicit_recording",
+      "question_tags": [
+        "M27",
+        "part3",
+        "academic_discussion",
+        "matching",
+        "evaluation_of_evidence"
+      ],
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true
+    },
+    {
+      "question_id": "Q08",
+      "group_id": "PART3_MATCHING_Q06_TO_10",
+      "type": "matching",
+      "prompt": "Solar-panel specification",
+      "options": [
+        {
+          "key": "A",
+          "text": "Discard due to missing power readings"
+        },
+        {
+          "key": "B",
+          "text": "Obtain permission from maintenance staff"
+        },
+        {
+          "key": "C",
+          "text": "Redesign the tool and test again"
+        },
+        {
+          "key": "D",
+          "text": "Use only as hardware background"
+        },
+        {
+          "key": "E",
+          "text": "Keep with a weather limitation"
+        },
+        {
+          "key": "F",
+          "text": "Remove identifiers before sharing"
+        },
+        {
+          "key": "G",
+          "text": "Use as the primary performance measure"
+        }
+      ],
+      "correct_option": "D",
+      "correct_answers": [
+        "D"
+      ],
+      "scoring_policy": "matching_letter",
+      "evidence_turn_ids": [
+        "T16"
+      ],
+      "evidence_excerpt_en": "Use the manufacturer’s solar-panel sheet to describe the hardware, not as evidence of how the bench performed on campus.",
+      "explanation_vi": "A: Thông số tấm pin chỉ mô tả thiết bị.",
+      "answer_source": "paraphrased_or_explicit_recording",
+      "question_tags": [
+        "M27",
+        "part3",
+        "academic_discussion",
+        "matching",
+        "evaluation_of_evidence"
+      ],
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true
+    },
+    {
+      "question_id": "Q09",
+      "group_id": "PART3_MATCHING_Q06_TO_10",
+      "type": "matching",
+      "prompt": "Week-long light readings",
+      "options": [
+        {
+          "key": "A",
+          "text": "Discard due to missing power readings"
+        },
+        {
+          "key": "B",
+          "text": "Obtain permission from maintenance staff"
+        },
+        {
+          "key": "C",
+          "text": "Redesign the tool and test again"
+        },
+        {
+          "key": "D",
+          "text": "Use only as hardware background"
+        },
+        {
+          "key": "E",
+          "text": "Keep with a weather limitation"
+        },
+        {
+          "key": "F",
+          "text": "Remove identifiers before sharing"
+        },
+        {
+          "key": "G",
+          "text": "Use as the primary performance measure"
+        }
+      ],
+      "correct_option": "G",
+      "correct_answers": [
+        "G"
+      ],
+      "scoring_policy": "matching_letter",
+      "evidence_turn_ids": [
+        "T17"
+      ],
+      "evidence_excerpt_en": "The week-long readings will become the main measure of dependable lighting after sunset.",
+      "explanation_vi": "B: Số đo đèn suốt tuần là chỉ số chính.",
+      "answer_source": "paraphrased_or_explicit_recording",
+      "question_tags": [
+        "M27",
+        "part3",
+        "academic_discussion",
+        "matching",
+        "evaluation_of_evidence"
+      ],
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true
+    },
+    {
+      "question_id": "Q10",
+      "group_id": "PART3_MATCHING_Q06_TO_10",
+      "type": "matching",
+      "prompt": "User feedback with names",
+      "options": [
+        {
+          "key": "A",
+          "text": "Discard due to missing power readings"
+        },
+        {
+          "key": "B",
+          "text": "Obtain permission from maintenance staff"
+        },
+        {
+          "key": "C",
+          "text": "Redesign the tool and test again"
+        },
+        {
+          "key": "D",
+          "text": "Use only as hardware background"
+        },
+        {
+          "key": "E",
+          "text": "Keep with a weather limitation"
+        },
+        {
+          "key": "F",
+          "text": "Remove identifiers before sharing"
+        },
+        {
+          "key": "G",
+          "text": "Use as the primary performance measure"
+        }
+      ],
+      "correct_option": "F",
+      "correct_answers": [
+        "F"
+      ],
+      "scoring_policy": "matching_letter",
+      "evidence_turn_ids": [
+        "T20"
+      ],
+      "evidence_excerpt_en": "Strip names and contact information from the feedback before it goes to the engineering partner.",
+      "explanation_vi": "A: Xóa tên và liên hệ cá nhân khỏi phản hồi trước khi chia sẻ.",
+      "answer_source": "paraphrased_or_explicit_recording",
+      "question_tags": [
+        "M27",
+        "part3",
+        "academic_discussion",
+        "matching",
+        "evaluation_of_evidence"
+      ],
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true
+    }
+  ],
+  "question_groups": [
+    {
+      "group_id": "PART3_MCQ_Q01_TO_05",
+      "question_ids": [
+        "Q01",
+        "Q02",
+        "Q03",
+        "Q04",
+        "Q05"
+      ],
+      "question_type": "mcq",
+      "instructions_en": "Choose the correct letter A, B or C for each question.",
+      "question_display_start": "before_audio",
+      "requires_one_listen": true,
+      "pause_between_groups_seconds": 0
+    },
+    {
+      "group_id": "PART3_MATCHING_Q06_TO_10",
+      "question_ids": [
+        "Q06",
+        "Q07",
+        "Q08",
+        "Q09",
+        "Q10"
+      ],
+      "question_type": "matching",
+      "instructions_en": "Match each item with the correct description. Choose A–G. You may use a letter more than once.",
+      "question_display_start": "before_audio",
+      "requires_one_listen": true,
+      "pause_between_groups_seconds": 0,
+      "options": [
+        {
+          "key": "A",
+          "text": "Discard due to missing power readings"
+        },
+        {
+          "key": "B",
+          "text": "Obtain permission from maintenance staff"
+        },
+        {
+          "key": "C",
+          "text": "Redesign the tool and test again"
+        },
+        {
+          "key": "D",
+          "text": "Use only as hardware background"
+        },
+        {
+          "key": "E",
+          "text": "Keep with a weather limitation"
+        },
+        {
+          "key": "F",
+          "text": "Remove identifiers before sharing"
+        },
+        {
+          "key": "G",
+          "text": "Use as the primary performance measure"
+        }
+      ]
+    }
+  ],
+  "pedagogy_vi": {
+    "topic_summary_vi": "B: Ghế thử nghiệm có sạc và đèn; màn trình diễn chưa chứng minh độ tin cậy thực tế.",
+    "question_explanations_status": "draft_semantic_review_required",
+    "turn_meanings_are_not_full_translations": true,
+    "full_line_translation_required_before_release": true
+  },
+  "audio": {
+    "status": "not_generated",
+    "audio_url": null,
+    "audio_asset_id": null,
+    "duration_ms": null,
+    "source_text_sha256": "f704ee86cec3fbe5ac9246fbc70591043e55a5ef3be4ad079033ff5e211b79ac",
+    "generation_strategy": "three_speakers_turnwise_then_seamless_mix",
+    "aligned_turns": false,
+    "voice_consistency_verified": false,
+    "human_listening_review": false
+  },
+  "exam_mode": {
+    "bank_role": "protected_assessment",
+    "use_as_training_before_first_attempt": false,
+    "listening_attempts_allowed_for_scored_first_attempt": 1,
+    "replay_before_submit": false,
+    "speed_control_before_submit": false,
+    "transcript_visible_before_submit": false,
+    "answer_key_visible_before_submit": false,
+    "post_attempt_review_allowed": true,
+    "question_count": 10,
+    "points_per_correct_answer": 1,
+    "question_order_monotonic": true,
+    "estimated_speech_minutes_at_140_wpm": 3.2,
+    "exam_band_score_enabled": false,
+    "repeated_attempt_marked_as_seen": true,
+    "all_questions_visible_before_audio": true
+  },
+  "qa": {
+    "automatic_data_validation": "pending",
+    "content_human_review": "pending",
+    "translation_human_review": "pending",
+    "audio_human_review": "pending",
+    "exam_simulation_rubric_score": null,
+    "rubric_90_verified": false,
+    "published": false,
+    "release_eligible": false
+  },
+  "provenance": {
+    "source_type": "original_authored_english_academic_dialogue",
+    "milestone": "M27",
+    "no_official_ielts_question_copied": true,
+    "training_exposure_guard": true,
+    "fictional_scenarios": true
+  },
+  "release_metadata": {
+    "target_bank": "protected_assessment",
+    "import_policy": "insert_only",
+    "version": "m27.0.1",
+    "preserve_existing_ids": true,
+    "allow_client_answer_payload": false
+  }
+}

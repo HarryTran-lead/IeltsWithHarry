@@ -36,6 +36,7 @@ export type CatalogExam = {
   topic?: string | null;
   difficulty?: string | null;
   source_id?: string;
+  external_id?: string;
   published_version_id?: string;
   /** Card details from ielts_catalog_summary; absent when the summary is unavailable. */
   question_types?: string[];
@@ -44,14 +45,28 @@ export type CatalogExam = {
   visual_kind?: string | null;
   visual?: Record<string, unknown> | null;
   image_url?: string | null;
+  /** Writing Task 1: the figure the question is about (its own image), when it has one. */
+  figure_url?: string | null;
   prompt_preview?: string | null;
   question_preview?: string[];
+  /** Speaking: every question of the set, so a card can open any one of them. */
+  questions?: { id: string; prompt: string }[];
   attempt_count?: number;
   /** Published full test sections, without passage text or answer keys. */
   sections?: { title: string; question_types: string[]; question_count: number }[];
 };
 
 type CatalogSummary = Pick<CatalogExam, "question_types" | "question_count" | "task_type" | "visual_kind" | "visual" | "image_url" | "prompt_preview" | "question_preview" | "attempt_count"> & { exam_id: string };
+
+/** The question as a card shows it: one paragraph, without the closing word-count line. */
+export function writingPromptPreview(prompt?: string | null) {
+  const text = (prompt ?? "")
+    .replace(/^\s*Write about the following topic:\s*/i, "")
+    .replace(/\s*Write at least \d+ words\.?\s*$/i, "")
+    .replace(/\s+/g, " ")
+    .trim();
+  return text ? text.slice(0, 420) : "";
+}
 
 /** Adds the card details to each exam that has a summary row. */
 export function withSummaries(exams: CatalogExam[], summaries: CatalogSummary[]) {
@@ -65,10 +80,10 @@ export const catalogQuestionTypes = [
   { id: "headings", label: "Matching Headings", test: /matching[_-]headings/ },
   { id: "tfng", label: "True - False - Not Given", test: /true[_-]false/ },
   { id: "ynng", label: "Yes - No - Not Given", test: /yes[_-]no/ },
-  { id: "mc_one", label: "Multiple Choice (One Answer)", test: /^multiple[_-]choice(?:[_-]single[_-]answer)?$/ },
+  { id: "mc_one", label: "Multiple Choice (One Answer)", test: /^mcq$|^multiple[_-]choice(?:[_-]single[_-]answer)?$/ },
   { id: "information", label: "Matching Information", test: /matching[_-]information/ },
   { id: "features", label: "Matching Features", test: /matching[_-]features/ },
-  { id: "mc_many", label: "Multiple Choice (Many Answers)", test: /multiple.*answers/ },
+  { id: "mc_many", label: "Multiple Choice (Many Answers)", test: /^mcq_choose_two$|multiple.*answers/ },
   { id: "labels", label: "Map, Diagram Label", test: /(map|plan|diagram)[_-]labelling/ },
   { id: "gaps", label: "Gap Filling", test: /(sentence|summary|note|table|flow[_-]?chart|flowchart|form)[_-]completion|short[_-]answer/ },
   { id: "matching", label: "Matching", test: /^matching$|matching[_-]sentence[_-]endings/ },

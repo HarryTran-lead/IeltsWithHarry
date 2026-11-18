@@ -1,0 +1,413 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "DICT-S3-007",
+  "status": "draft",
+  "level": "L4",
+  "section": 3,
+  "topic": "Field Trips",
+  "title": "Field Trips: Planning & Roles",
+  "learning_objectives_vi": [
+    "Theo dõi ý kiến và lập luận của nhiều người trong một thảo luận học thuật.",
+    "Xác định thông tin cuối cùng sau khi người nói đề xuất, phản biện hoặc sửa ý.",
+    "Chép chính xác những đoạn trọng tâm và đối chiếu bằng chứng trong transcript."
+  ],
+  "content_format": "section_practice",
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Eva – university student / tutor discussion participant",
+      "tts_voice_id": null,
+      "accent_requested": "british"
+    },
+    {
+      "speaker_id": "B",
+      "role": "Tom – university student / tutor discussion participant",
+      "tts_voice_id": null,
+      "accent_requested": "british"
+    },
+    {
+      "speaker_id": "C",
+      "role": "Luca – university student / tutor discussion participant",
+      "tts_voice_id": null,
+      "accent_requested": "british"
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "The geography field trip was supposed to include the eastern marsh, but that path is flooded after last week's rain.",
+      "translation_vi": "Chuyến khảo sát địa lý dự kiến gồm đầm lầy phía đông, nhưng đường đó bị ngập sau mưa tuần trước.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "l4",
+        "planning"
+      ]
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "B",
+      "text_en": "Then the western boardwalk is our only safe route. Does it still pass the sampling area?",
+      "translation_vi": "Vậy lối đi gỗ phía tây là tuyến an toàn duy nhất. Nó vẫn đi qua khu lấy mẫu chứ?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "l4",
+        "planning"
+      ]
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "C",
+      "text_en": "Yes, although we'll have to carry the equipment another six hundred metres from the bus stop.",
+      "translation_vi": "Có, tuy vậy ta phải mang thiết bị thêm sáu trăm mét từ trạm xe buýt.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "l4",
+        "planning"
+      ]
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "A",
+      "text_en": "We should reduce the number of heavy soil kits. The lecturer says one kit for every three students is sufficient.",
+      "translation_vi": "Ta nên giảm số bộ dụng cụ đất nặng. Giảng viên nói một bộ cho ba sinh viên là đủ.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "l4",
+        "planning"
+      ]
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "B",
+      "text_en": "What should we wear? The instructions mention boots, but some students only have trainers.",
+      "translation_vi": "Chúng ta nên mặc gì? Hướng dẫn nhắc đến ủng, nhưng vài bạn chỉ có giày thể thao.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "l4",
+        "planning"
+      ]
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "C",
+      "text_en": "Waterproof boots are required at the sampling stations. The department can lend pairs if students request them in advance.",
+      "translation_vi": "Ở trạm lấy mẫu bắt buộc phải có ủng chống nước. Khoa có thể cho mượn nếu sinh viên đăng ký trước.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "l4",
+        "planning"
+      ]
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "I'll put that in tonight's email, along with the revised meeting point at the north entrance.",
+      "translation_vi": "Mình sẽ ghi vào email tối nay cùng địa điểm tập trung mới ở cổng bắc.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "l4",
+        "planning"
+      ]
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "B",
+      "text_en": "And let's leave at eight fifteen, not eight, because the replacement bus arrives a little later.",
+      "translation_vi": "Và hãy đi lúc tám giờ mười lăm, không phải tám giờ, vì xe thay thế đến muộn hơn chút.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "l4",
+        "planning"
+      ]
+    },
+    {
+      "turn_id": "T09",
+      "speaker_id": "C",
+      "text_en": "Good. We can still finish observations before lunch if everyone arrives on time.",
+      "translation_vi": "Tốt. Ta vẫn có thể hoàn thành quan sát trước bữa trưa nếu mọi người đến đúng giờ.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "l4",
+        "planning"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "type": "mcq",
+      "prompt": "Why must the eastern marsh be removed from the route?",
+      "correct_answers": [
+        "The path is flooded"
+      ],
+      "evidence_turn_ids": [
+        "T01"
+      ],
+      "explanation_vi": "Bằng chứng ở T01 (Eva): “Chuyến khảo sát địa lý dự kiến gồm đầm lầy phía đông, nhưng đường đó bị ngập sau mưa tuần trước.” Đáp án: “The path is flooded”. Đây là ý cuối cùng hoặc lập luận cần xác định; các lựa chọn khác không được đoạn này xác nhận.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "section_3",
+        "ielts_practice",
+        "opinion_inference"
+      ],
+      "options": [
+        "The area has no samples",
+        "The path is flooded",
+        "The guide is ill"
+      ]
+    },
+    {
+      "question_id": "Q02",
+      "type": "note_completion",
+      "prompt": "Equipment must be carried another ____ metres.",
+      "correct_answers": [
+        "six hundred"
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Bằng chứng ở T03 (Luca): “Có, tuy vậy ta phải mang thiết bị thêm sáu trăm mét từ trạm xe buýt.” Đáp án: “six hundred”. Từ/cụm từ nằm trong lời nói; không chọn thông tin đã bị sửa hoặc người khác chỉ đề xuất.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_3",
+        "ielts_practice",
+        "detail_recognition"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q03",
+      "type": "note_completion",
+      "prompt": "One soil kit is enough for every ____ students.",
+      "correct_answers": [
+        "three"
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Bằng chứng ở T04 (Eva): “Ta nên giảm số bộ dụng cụ đất nặng. Giảng viên nói một bộ cho ba sinh viên là đủ.” Đáp án: “three”. Từ/cụm từ nằm trong lời nói; không chọn thông tin đã bị sửa hoặc người khác chỉ đề xuất.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_3",
+        "ielts_practice",
+        "detail_recognition"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q04",
+      "type": "matching",
+      "prompt": "Who can lend students waterproof boots?",
+      "correct_answers": [
+        "The department"
+      ],
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "explanation_vi": "Bằng chứng ở T06 (Luca): “Ở trạm lấy mẫu bắt buộc phải có ủng chống nước. Khoa có thể cho mượn nếu sinh viên đăng ký trước.” Đáp án: “The department”. Đối chiếu đúng thông tin được người nói nêu, chú ý các ý kiến hoặc phương án trước đó.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "section_3",
+        "ielts_practice",
+        "speaker_attribution"
+      ],
+      "options": [
+        "The site manager",
+        "The department",
+        "The bus driver"
+      ]
+    },
+    {
+      "question_id": "Q05",
+      "type": "short_answer",
+      "prompt": "Where is the revised meeting point?",
+      "correct_answers": [
+        "north entrance"
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "Bằng chứng ở T07 (Eva): “Mình sẽ ghi vào email tối nay cùng địa điểm tập trung mới ở cổng bắc.” Đáp án: “north entrance”. Từ/cụm từ nằm trong lời nói; không chọn thông tin đã bị sửa hoặc người khác chỉ đề xuất.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_3",
+        "ielts_practice",
+        "detail_recognition"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q06",
+      "type": "note_completion",
+      "prompt": "The replacement bus leaves at ____.",
+      "correct_answers": [
+        "eight fifteen"
+      ],
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "explanation_vi": "Bằng chứng ở T08 (Tom): “Và hãy đi lúc tám giờ mười lăm, không phải tám giờ, vì xe thay thế đến muộn hơn chút.” Đáp án: “eight fifteen”. Từ/cụm từ nằm trong lời nói; không chọn thông tin đã bị sửa hoặc người khác chỉ đề xuất.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_3",
+        "ielts_practice",
+        "detail_recognition"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "D01",
+      "type": "dictation",
+      "prompt": "Nghe đoạn T03 và chép nguyên văn tiếng Anh (Speaker C).",
+      "correct_answers": [
+        "Yes, although we'll have to carry the equipment another six hundred metres from the bus stop."
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Câu gốc: “Yes, although we'll have to carry the equipment another six hundred metres from the bus stop.”\nNghĩa: Có, tuy vậy ta phải mang thiết bị thêm sáu trăm mét từ trạm xe buýt.\nChú ý từ chức năng, âm yếu, cụm từ nối và ý người nói.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_3",
+        "dictation",
+        "exact_transcript"
+      ]
+    },
+    {
+      "question_id": "D02",
+      "type": "dictation",
+      "prompt": "Nghe đoạn T06 và chép nguyên văn tiếng Anh (Speaker C).",
+      "correct_answers": [
+        "Waterproof boots are required at the sampling stations. The department can lend pairs if students request them in advance."
+      ],
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "explanation_vi": "Câu gốc: “Waterproof boots are required at the sampling stations. The department can lend pairs if students request them in advance.”\nNghĩa: Ở trạm lấy mẫu bắt buộc phải có ủng chống nước. Khoa có thể cho mượn nếu sinh viên đăng ký trước.\nChú ý từ chức năng, âm yếu, cụm từ nối và ý người nói.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_3",
+        "dictation",
+        "exact_transcript"
+      ]
+    },
+    {
+      "question_id": "G01",
+      "type": "gap_fill",
+      "prompt": "Nghe T01, điền từ/cụm từ bị thiếu: The geography ____ was supposed to include the eastern marsh, but that path is flooded after last week's rain.",
+      "correct_answers": [
+        "field trip"
+      ],
+      "evidence_turn_ids": [
+        "T01"
+      ],
+      "explanation_vi": "Cụm cần nghe: “field trip” (chuyến khảo sát thực địa). Lời gốc: “The geography field trip was supposed to include the eastern marsh, but that path is flooded after last week's rain.”.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_3",
+        "gap_fill",
+        "vocabulary_in_context"
+      ]
+    }
+  ],
+  "vocabulary": [
+    {
+      "term": "field trip",
+      "pos": "n. phr.",
+      "meaning_vi": "chuyến khảo sát thực địa",
+      "example_en": "The geography field trip was supposed to include the eastern marsh, but that path is flooded after last week's rain.",
+      "example_vi": "Chuyến khảo sát địa lý dự kiến gồm đầm lầy phía đông, nhưng đường đó bị ngập sau mưa tuần trước.",
+      "source_turn_id": "T01"
+    },
+    {
+      "term": "sampling area",
+      "pos": "n. phr.",
+      "meaning_vi": "khu lấy mẫu",
+      "example_en": "Then the western boardwalk is our only safe route. Does it still pass the sampling area?",
+      "example_vi": "Vậy lối đi gỗ phía tây là tuyến an toàn duy nhất. Nó vẫn đi qua khu lấy mẫu chứ?",
+      "source_turn_id": "T02"
+    },
+    {
+      "term": "soil kits",
+      "pos": "n. phr.",
+      "meaning_vi": "bộ dụng cụ đất",
+      "example_en": "We should reduce the number of heavy soil kits. The lecturer says one kit for every three students is sufficient.",
+      "example_vi": "Ta nên giảm số bộ dụng cụ đất nặng. Giảng viên nói một bộ cho ba sinh viên là đủ.",
+      "source_turn_id": "T04"
+    },
+    {
+      "term": "waterproof boots",
+      "pos": "n. phr.",
+      "meaning_vi": "ủng chống nước",
+      "example_en": "Waterproof boots are required at the sampling stations. The department can lend pairs if students request them in advance.",
+      "example_vi": "Ở trạm lấy mẫu bắt buộc phải có ủng chống nước. Khoa có thể cho mượn nếu sinh viên đăng ký trước.",
+      "source_turn_id": "T06"
+    }
+  ],
+  "audio": {
+    "status": "not_generated",
+    "url": null,
+    "duration_ms": null,
+    "model": null,
+    "provider": null,
+    "voice_config": null,
+    "source_transcript_hash": "84c70f4db4c69467b879a3fdb01065355f5e8f4360a90e8d233deebe16f68944",
+    "audio_sha256": null,
+    "format": null
+  },
+  "qa": {
+    "content_reviewed": false,
+    "answers_verified": false,
+    "audio_verified": false,
+    "rights_cleared": false,
+    "duplicate_reviewed": false,
+    "notes": [
+      "Original synthetic dialogues: human educational review required.",
+      "Audio, timestamps, voice suitability and service/distribution rights not yet verified.",
+      "Training lessons, NOT official IELTS Part 3 tests or calibrated band tests.",
+      "M16.2: automated edits are provisional; IELTS teacher final signoff, audio and rights clearance pending."
+    ]
+  },
+  "provenance": {
+    "content_origin": "original_ai_assisted",
+    "source_urls": [],
+    "source_rights_note": "Original text; verify TTS provider terms and distribution rights before publishing to a youth-accessible website.",
+    "reviewer": null
+  },
+  "release_metadata": {
+    "published_at": null,
+    "version": 1
+  }
+}

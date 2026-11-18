@@ -8,6 +8,7 @@ import { SentencePractice, SkillLesson } from "@/features/learning/skill-lesson"
 import { ReadingWorkspace } from "@/features/reading/reading-workspace";
 import { TopicArt } from "@/components/illustrations/topic-art";
 import type { SkillMaterial } from "@/lib/skill-material";
+import { PageSkeleton } from "@/components/layout/page-skeleton";
 
 type Block = { id: string; kind: string; body: string };
 type Question = { id: string; slug: string; prompt: string; options: string[] };
@@ -21,7 +22,7 @@ export function LessonShell(props: LessonShellProps) {
 }
 function LessonShellContent({ canManage = false, ...props }: LessonShellProps) {
   const { ready } = useDemo();
-  return <AppShell canManage={canManage}>{ready ? <LessonDetail {...props} /> : <div className="content-page">Loading your lesson…</div>}</AppShell>;
+  return <AppShell canManage={canManage}>{ready ? <LessonDetail {...props} /> : <PageSkeleton label="Loading your lesson…" />}</AppShell>;
 }
 
 export function LessonDetail({ lesson, blocks, questions, words, material, display = "full" }: {

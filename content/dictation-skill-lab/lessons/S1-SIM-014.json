@@ -1,0 +1,865 @@
+{
+  "schema_version": "1.2.0",
+  "lesson_id": "S1-SIM-014",
+  "status": "draft",
+  "level": "L4",
+  "section": 1,
+  "topic": "Joining an outdoor photography class",
+  "title": "Weekend Wildlife Photography Walk",
+  "content_format": "section_exam_simulation",
+  "exam_part": "IELTS_LISTENING_PART_1_STYLE",
+  "official_ielts_material": false,
+  "learning_objectives_vi": [
+    "Theo dõi hội thoại giao dịch đời sống hai người nói trong một lần nghe.",
+    "Điền chính xác thông tin, kể cả khi có phương án cũ và thông tin đính chính.",
+    "Phân tích MCQ dựa trên ý nghĩa cuối cùng và bằng chứng sau khi nộp bài."
+  ],
+  "target_skills": [
+    "activity_bookings",
+    "meeting_points",
+    "equipment",
+    "weather",
+    "fees"
+  ],
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Nature photography guide",
+      "accent_requested": "australian",
+      "tts_voice_id": null
+    },
+    {
+      "speaker_id": "B",
+      "role": "New participant",
+      "accent_requested": "australian",
+      "tts_voice_id": null
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "Hello, Fieldglass Photography Walks, this is Owen. Are you joining our birds session or looking at the woodland landscape course?",
+      "translation_vi": "Xin chào Fieldglass Photography Walks, tôi là Owen. Chị muốn lớp chụp chim hay khóa phong cảnh rừng?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "activity_bookings",
+        "meeting_points",
+        "equipment",
+        "weather",
+        "fees"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "B",
+      "text_en": "I'm interested in birds. I've recently bought a camera and want to get better at photographing wildlife without disturbing it.",
+      "translation_vi": "Tôi quan tâm chụp chim. Tôi mới mua máy ảnh và muốn chụp động vật hoang dã tốt hơn mà không làm phiền chúng.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "activity_bookings",
+        "meeting_points",
+        "equipment",
+        "weather",
+        "fees"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "A",
+      "text_en": "That's exactly why we keep the groups quiet. A careful observer often gets a better image than someone moving quickly to get closer.",
+      "translation_vi": "Đó là lý do chúng tôi giữ nhóm yên lặng. Người quan sát cẩn thận thường chụp tốt hơn người vội đến gần.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "activity_bookings",
+        "meeting_points",
+        "equipment",
+        "weather",
+        "fees"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "B",
+      "text_en": "I'll have to practise being patient. I tend to press the shutter as soon as I see something moving among the reeds.",
+      "translation_vi": "Tôi phải tập kiên nhẫn. Tôi thường bấm máy ngay khi thấy gì đó chuyển động trong đám sậy.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "activity_bookings",
+        "meeting_points",
+        "equipment",
+        "weather",
+        "fees"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "A",
+      "text_en": "The beginners' session is called Quiet Wings. We cover field observation as well as camera settings, so you don't need much experience.",
+      "translation_vi": "Buổi cho người mới tên Quiet Wings. Có cả quan sát thực địa và cài đặt máy, không cần kinh nghiệm nhiều.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "activity_bookings",
+        "meeting_points",
+        "equipment",
+        "weather",
+        "fees"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "B",
+      "text_en": "Quiet Wings is just what I need. Is the course at the lakeside? I saw images of a marsh on the booking page.",
+      "translation_vi": "Quiet Wings đúng nhu cầu. Khóa ở ven hồ phải không? Tôi thấy ảnh đầm lầy trên trang đặt chỗ.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "activity_bookings",
+        "meeting_points",
+        "equipment",
+        "weather",
+        "fees"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "Yes, it follows the north marsh trail. The southern path has nesting birds at this time of year, so visitors are asked to avoid it.",
+      "translation_vi": "Đúng, đi tuyến đầm lầy phía bắc. Tuyến nam có chim làm tổ nên khách được yêu cầu tránh.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "activity_bookings",
+        "meeting_points",
+        "equipment",
+        "weather",
+        "fees"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "B",
+      "text_en": "I can do that. I read the session starts before sunrise, but I didn't see an exact meeting time.",
+      "translation_vi": "Tôi làm được. Tôi đọc buổi học bắt đầu trước bình minh nhưng không thấy giờ tập trung chính xác.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "activity_bookings",
+        "meeting_points",
+        "equipment",
+        "weather",
+        "fees"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T09",
+      "speaker_id": "A",
+      "text_en": "Please arrive at six twenty in the morning. The sun rises around seven, and we want everyone ready before the first birds appear.",
+      "translation_vi": "Hãy đến lúc sáu giờ hai mươi sáng. Mặt trời mọc khoảng bảy giờ, chúng ta cần chuẩn bị trước khi chim xuất hiện.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "activity_bookings",
+        "meeting_points",
+        "equipment",
+        "weather",
+        "fees"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T10",
+      "speaker_id": "B",
+      "text_en": "That's early but manageable. Is there parking near the water, or do we meet by the visitor centre farther away?",
+      "translation_vi": "Sớm nhưng được. Có đỗ xe gần nước hay gặp ở trung tâm khách xa hơn?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "activity_bookings",
+        "meeting_points",
+        "equipment",
+        "weather",
+        "fees"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T11",
+      "speaker_id": "A",
+      "text_en": "Meet at the wooden footbridge beside the north car park. The visitor centre won't open until after our session has begun.",
+      "translation_vi": "Gặp ở cầu đi bộ gỗ cạnh bãi xe phía bắc. Trung tâm khách mở sau khi buổi học bắt đầu.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "activity_bookings",
+        "meeting_points",
+        "equipment",
+        "weather",
+        "fees"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T12",
+      "speaker_id": "B",
+      "text_en": "I know the bridge. How long does the walk last? I need to be back in town before lunch.",
+      "translation_vi": "Tôi biết cầu đó. Buổi đi dài bao lâu? Tôi cần về thị trấn trước trưa.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "activity_bookings",
+        "meeting_points",
+        "equipment",
+        "weather",
+        "fees"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T13",
+      "speaker_id": "A",
+      "text_en": "Allow two and a half hours. That includes a short stop to review photographs; it isn't continuous walking for the entire time.",
+      "translation_vi": "Hãy dành hai tiếng rưỡi. Gồm nghỉ ngắn xem ảnh, không đi bộ suốt thời gian.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "activity_bookings",
+        "meeting_points",
+        "equipment",
+        "weather",
+        "fees"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T14",
+      "speaker_id": "B",
+      "text_en": "Fine. I have a camera and a small lens, but no tripod. Would that put me at a disadvantage?",
+      "translation_vi": "Được. Tôi có máy và ống kính nhỏ nhưng không có chân máy. Có bất lợi không?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "activity_bookings",
+        "meeting_points",
+        "equipment",
+        "weather",
+        "fees"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T15",
+      "speaker_id": "A",
+      "text_en": "A tripod isn't necessary. A camera strap is more important because the boardwalk can be slippery when it's damp.",
+      "translation_vi": "Không cần chân máy. Dây đeo máy quan trọng hơn vì cầu gỗ có thể trơn khi ẩm.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "activity_bookings",
+        "meeting_points",
+        "equipment",
+        "weather",
+        "fees"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T16",
+      "speaker_id": "B",
+      "text_en": "I'll make sure the strap is secure. Do you offer a discounted ticket for students? I'm studying part-time at college.",
+      "translation_vi": "Tôi sẽ kiểm tra dây. Có vé giảm cho sinh viên không? Tôi học bán thời gian ở trường cao đẳng.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "activity_bookings",
+        "meeting_points",
+        "equipment",
+        "weather",
+        "fees"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T17",
+      "speaker_id": "A",
+      "text_en": "The regular fee is twenty-eight pounds, but students pay twenty-two if they show a current student card when they arrive.",
+      "translation_vi": "Phí thường hai mươi tám bảng, sinh viên trả hai mươi hai nếu trình thẻ còn hạn lúc đến.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "activity_bookings",
+        "meeting_points",
+        "equipment",
+        "weather",
+        "fees"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T18",
+      "speaker_id": "B",
+      "text_en": "I'll bring my card. What happens if it's windy? Birdwatching seems difficult in strong wind, even if it isn't raining.",
+      "translation_vi": "Tôi mang thẻ. Nếu gió lớn thì sao? Quan sát chim khó khi gió mạnh dù không mưa.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "activity_bookings",
+        "meeting_points",
+        "equipment",
+        "weather",
+        "fees"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T19",
+      "speaker_id": "A",
+      "text_en": "Light rain won't stop us, but in high winds we'll switch to a sheltered observation hide instead of walking along the exposed trail.",
+      "translation_vi": "Mưa nhẹ không cản trở, nhưng gió lớn sẽ chuyển sang chòi quan sát có mái che thay vì tuyến trống trải.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "activity_bookings",
+        "meeting_points",
+        "equipment",
+        "weather",
+        "fees"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T20",
+      "speaker_id": "B",
+      "text_en": "That sounds safer. Do you send a message if the route changes, or should everyone just turn up at the bridge?",
+      "translation_vi": "An toàn hơn. Anh nhắn khi đổi tuyến hay mọi người cứ đến cầu?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "activity_bookings",
+        "meeting_points",
+        "equipment",
+        "weather",
+        "fees"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T21",
+      "speaker_id": "A",
+      "text_en": "We'll send a text message by five thirty that morning if we make changes. Keep your phone switched on until you leave home.",
+      "translation_vi": "Chúng tôi nhắn trước năm giờ ba mươi sáng nếu thay đổi. Hãy bật điện thoại tới khi rời nhà.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "activity_bookings",
+        "meeting_points",
+        "equipment",
+        "weather",
+        "fees"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T22",
+      "speaker_id": "B",
+      "text_en": "I will. My surname is Ives, I V E S. Could you put me on the list for the next available Saturday?",
+      "translation_vi": "Tôi sẽ làm vậy. Họ tôi là Ives, I V E S. Anh đăng ký giúp thứ Bảy trống gần nhất nhé?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "activity_bookings",
+        "meeting_points",
+        "equipment",
+        "weather",
+        "fees"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T23",
+      "speaker_id": "A",
+      "text_en": "Certainly, Ms Ives. Our group has a maximum of six people, so there'll be time for individual help with your camera.",
+      "translation_vi": "Được, cô Ives. Nhóm tối đa sáu người nên có thời gian hỗ trợ từng người với máy ảnh.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "activity_bookings",
+        "meeting_points",
+        "equipment",
+        "weather",
+        "fees"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T24",
+      "speaker_id": "B",
+      "text_en": "Excellent. I'll bring my student card and camera strap, and look out for a weather message before setting off.",
+      "translation_vi": "Tuyệt. Tôi sẽ mang thẻ sinh viên và dây máy, chờ tin thời tiết trước khi đi.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "activity_bookings",
+        "meeting_points",
+        "equipment",
+        "weather",
+        "fees"
+      ],
+      "bank_role": "protected_assessment"
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "group_id": "PART1_FORM_1_TO_6",
+      "type": "form_completion",
+      "prompt": "Beginners' session title: ____",
+      "correct_answers": [
+        "Quiet Wings"
+      ],
+      "spoken_answer": "Quiet Wings",
+      "word_limit": 3,
+      "instructions_en": "NO MORE THAN THREE WORDS AND/OR A NUMBER",
+      "scoring_policy": "controlled_variants",
+      "explanation_vi": "Tên lớp Quiet Wings.",
+      "answer_source": "explicit_recording",
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "evidence_excerpt_en": "called Quiet Wings",
+      "question_tags": [
+        "M25",
+        "part1",
+        "completion",
+        "activity_bookings",
+        "meeting_points",
+        "equipment",
+        "weather",
+        "fees"
+      ]
+    },
+    {
+      "question_id": "Q02",
+      "group_id": "PART1_FORM_1_TO_6",
+      "type": "form_completion",
+      "prompt": "Trail used: ____ marsh trail",
+      "correct_answers": [
+        "north"
+      ],
+      "spoken_answer": "north",
+      "word_limit": 3,
+      "instructions_en": "NO MORE THAN THREE WORDS AND/OR A NUMBER",
+      "scoring_policy": "controlled_variants",
+      "explanation_vi": "Tuyến đi đầm lầy phía bắc.",
+      "answer_source": "explicit_recording",
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "evidence_excerpt_en": "north marsh trail",
+      "question_tags": [
+        "M25",
+        "part1",
+        "completion",
+        "activity_bookings",
+        "meeting_points",
+        "equipment",
+        "weather",
+        "fees"
+      ]
+    },
+    {
+      "question_id": "Q03",
+      "group_id": "PART1_FORM_1_TO_6",
+      "type": "form_completion",
+      "prompt": "Meeting time: ____",
+      "correct_answers": [
+        "six twenty",
+        "6:20"
+      ],
+      "spoken_answer": "six twenty",
+      "word_limit": 3,
+      "instructions_en": "NO MORE THAN THREE WORDS AND/OR A NUMBER",
+      "scoring_policy": "controlled_variants",
+      "explanation_vi": "Giờ tập trung là 6:20 sáng, sớm hơn giờ mặt trời mọc khoảng bảy giờ.",
+      "answer_source": "explicit_recording",
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "evidence_excerpt_en": "at six twenty",
+      "question_tags": [
+        "M25",
+        "part1",
+        "completion",
+        "activity_bookings",
+        "meeting_points",
+        "equipment",
+        "weather",
+        "fees"
+      ]
+    },
+    {
+      "question_id": "Q04",
+      "group_id": "PART1_FORM_1_TO_6",
+      "type": "note_completion",
+      "prompt": "Meeting landmark: wooden ____",
+      "correct_answers": [
+        "footbridge"
+      ],
+      "spoken_answer": "footbridge",
+      "word_limit": 3,
+      "instructions_en": "NO MORE THAN THREE WORDS AND/OR A NUMBER",
+      "scoring_policy": "controlled_variants",
+      "explanation_vi": "Tập trung cạnh cầu đi bộ gỗ.",
+      "answer_source": "explicit_recording",
+      "evidence_turn_ids": [
+        "T11"
+      ],
+      "evidence_excerpt_en": "wooden footbridge",
+      "question_tags": [
+        "M25",
+        "part1",
+        "completion",
+        "activity_bookings",
+        "meeting_points",
+        "equipment",
+        "weather",
+        "fees"
+      ]
+    },
+    {
+      "question_id": "Q05",
+      "group_id": "PART1_FORM_1_TO_6",
+      "type": "form_completion",
+      "prompt": "Duration described as two and a ____ hours",
+      "correct_answers": [
+        "half"
+      ],
+      "spoken_answer": "half",
+      "word_limit": 3,
+      "instructions_en": "NO MORE THAN THREE WORDS AND/OR A NUMBER",
+      "scoring_policy": "controlled_variants",
+      "explanation_vi": "Buổi đi kéo dài hai tiếng rưỡi.",
+      "answer_source": "explicit_recording",
+      "evidence_turn_ids": [
+        "T13"
+      ],
+      "evidence_excerpt_en": "two and a half hours",
+      "question_tags": [
+        "M25",
+        "part1",
+        "completion",
+        "activity_bookings",
+        "meeting_points",
+        "equipment",
+        "weather",
+        "fees"
+      ]
+    },
+    {
+      "question_id": "Q06",
+      "group_id": "PART1_FORM_1_TO_6",
+      "type": "form_completion",
+      "prompt": "Essential camera accessory: ____",
+      "correct_answers": [
+        "strap"
+      ],
+      "spoken_answer": "strap",
+      "word_limit": 3,
+      "instructions_en": "NO MORE THAN THREE WORDS AND/OR A NUMBER",
+      "scoring_policy": "controlled_variants",
+      "explanation_vi": "Dây đeo quan trọng hơn chân máy.",
+      "answer_source": "explicit_recording",
+      "evidence_turn_ids": [
+        "T15"
+      ],
+      "evidence_excerpt_en": "camera strap",
+      "question_tags": [
+        "M25",
+        "part1",
+        "completion",
+        "activity_bookings",
+        "meeting_points",
+        "equipment",
+        "weather",
+        "fees"
+      ]
+    },
+    {
+      "question_id": "Q07",
+      "group_id": "PART1_MCQ_7_TO_10",
+      "type": "mcq",
+      "prompt": "What fee will the student pay if eligible?",
+      "correct_answers": [
+        "Twenty-two pounds"
+      ],
+      "options": [
+        {
+          "key": "A",
+          "text": "Twenty-eight pounds"
+        },
+        {
+          "key": "B",
+          "text": "Twenty-two pounds"
+        },
+        {
+          "key": "C",
+          "text": "Thirty-six pounds"
+        }
+      ],
+      "correct_option": "B",
+      "scoring_policy": "one_correct_option",
+      "explanation_vi": "Sinh viên đủ điều kiện trả 22 bảng.",
+      "answer_source": "explicit_or_contextual_recording",
+      "evidence_turn_ids": [
+        "T17"
+      ],
+      "evidence_excerpt_en": "students pay twenty-two",
+      "question_tags": [
+        "M25",
+        "part1",
+        "mcq",
+        "activity_bookings",
+        "meeting_points",
+        "equipment",
+        "weather",
+        "fees"
+      ]
+    },
+    {
+      "question_id": "Q08",
+      "group_id": "PART1_MCQ_7_TO_10",
+      "type": "mcq",
+      "prompt": "What might replace the normal walk in high winds?",
+      "correct_answers": [
+        "Observing from a sheltered hide"
+      ],
+      "options": [
+        {
+          "key": "A",
+          "text": "A longer marsh walk"
+        },
+        {
+          "key": "B",
+          "text": "An indoor lecture in town"
+        },
+        {
+          "key": "C",
+          "text": "Observing from a sheltered hide"
+        }
+      ],
+      "correct_option": "C",
+      "scoring_policy": "one_correct_option",
+      "explanation_vi": "Gió mạnh sẽ quan sát trong chòi kín.",
+      "answer_source": "explicit_or_contextual_recording",
+      "evidence_turn_ids": [
+        "T19"
+      ],
+      "evidence_excerpt_en": "switch to a sheltered observation hide",
+      "question_tags": [
+        "M25",
+        "part1",
+        "mcq",
+        "activity_bookings",
+        "meeting_points",
+        "equipment",
+        "weather",
+        "fees"
+      ]
+    },
+    {
+      "question_id": "Q09",
+      "group_id": "PART1_MCQ_7_TO_10",
+      "type": "mcq",
+      "prompt": "How will route changes be announced?",
+      "correct_answers": [
+        "By text message"
+      ],
+      "options": [
+        {
+          "key": "A",
+          "text": "By text message"
+        },
+        {
+          "key": "B",
+          "text": "On a printed poster"
+        },
+        {
+          "key": "C",
+          "text": "Through a radio broadcast"
+        }
+      ],
+      "correct_option": "A",
+      "scoring_policy": "one_correct_option",
+      "explanation_vi": "Thay đổi được báo bằng tin nhắn.",
+      "answer_source": "explicit_or_contextual_recording",
+      "evidence_turn_ids": [
+        "T21"
+      ],
+      "evidence_excerpt_en": "send a text message",
+      "question_tags": [
+        "M25",
+        "part1",
+        "mcq",
+        "activity_bookings",
+        "meeting_points",
+        "equipment",
+        "weather",
+        "fees"
+      ]
+    },
+    {
+      "question_id": "Q10",
+      "group_id": "PART1_MCQ_7_TO_10",
+      "type": "mcq",
+      "prompt": "Why is the group small?",
+      "correct_answers": [
+        "To allow individual camera guidance"
+      ],
+      "options": [
+        {
+          "key": "A",
+          "text": "To protect private land"
+        },
+        {
+          "key": "B",
+          "text": "To allow individual camera guidance"
+        },
+        {
+          "key": "C",
+          "text": "To reduce parking fees"
+        }
+      ],
+      "correct_option": "B",
+      "scoring_policy": "one_correct_option",
+      "explanation_vi": "Nhóm ít người để hướng dẫn cá nhân.",
+      "answer_source": "explicit_or_contextual_recording",
+      "evidence_turn_ids": [
+        "T23"
+      ],
+      "evidence_excerpt_en": "time for individual help",
+      "question_tags": [
+        "M25",
+        "part1",
+        "mcq",
+        "activity_bookings",
+        "meeting_points",
+        "equipment",
+        "weather",
+        "fees"
+      ]
+    }
+  ],
+  "question_groups": [
+    {
+      "group_id": "PART1_FORM_1_TO_6",
+      "question_ids": [
+        "Q01",
+        "Q02",
+        "Q03",
+        "Q04",
+        "Q05",
+        "Q06"
+      ],
+      "instructions_en": "Complete the form. Write NO MORE THAN THREE WORDS AND/OR A NUMBER for each answer.",
+      "pre_read_seconds": 30,
+      "break_after_turn_id": "T15",
+      "requires_one_listen": true
+    },
+    {
+      "group_id": "PART1_MCQ_7_TO_10",
+      "question_ids": [
+        "Q07",
+        "Q08",
+        "Q09",
+        "Q10"
+      ],
+      "instructions_en": "Choose the correct letter A, B or C.",
+      "pre_read_seconds": 25,
+      "requires_one_listen": true
+    }
+  ],
+  "audio": {
+    "status": "not_generated",
+    "audio_url": null,
+    "audio_asset_id": null,
+    "duration_ms": null,
+    "source_text_sha256": "6c466f28b2018402638ec824de6101789c84baa4def593ad0013fe7e2a1bfe18",
+    "generation_strategy": "single_continuous_two_person_dialogue",
+    "aligned_turns": false
+  },
+  "exam_mode": {
+    "bank_role": "protected_assessment",
+    "use_as_training_before_first_attempt": false,
+    "listening_attempts_allowed_for_scored_first_attempt": 1,
+    "replay_before_submit": false,
+    "speed_control_before_submit": false,
+    "transcript_visible_before_submit": false,
+    "answer_key_visible_before_submit": false,
+    "post_attempt_review_allowed": true,
+    "question_count": 10,
+    "points_per_correct_answer": 1,
+    "question_order_monotonic": true,
+    "estimated_speech_minutes_at_135_wpm": 3.75,
+    "exam_band_score_enabled": false,
+    "repeated_attempt_marked_as_seen": true
+  },
+  "qa": {
+    "automatic_data_validation": "pending",
+    "content_human_review": "pending",
+    "audio_human_review": "pending",
+    "exam_simulation_rubric_score": null,
+    "rubric_90_verified": false,
+    "published": false,
+    "release_eligible": false
+  },
+  "provenance": {
+    "source_type": "original_authored_english_dialogue",
+    "milestone": "M25",
+    "no_official_ielts_question_copied": true,
+    "training_exposure_guard": true
+  },
+  "release_metadata": {
+    "target_bank": "protected_assessment",
+    "import_policy": "insert_only",
+    "version": "m25.0.1",
+    "preserve_existing_ids": true,
+    "allow_client_answer_payload": false
+  }
+}

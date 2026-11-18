@@ -1,0 +1,810 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "S3-EXP-017",
+  "status": "draft",
+  "level": "L6",
+  "section": 3,
+  "topic": "Language pedagogy classroom study",
+  "title": "Comparing Two Vocabulary Teaching Approaches",
+  "learning_objectives_vi": [
+    "Phân biệt quan điểm ban đầu, lời phản biện và quyết định cuối trong thảo luận học thuật.",
+    "Nghe các phương án gây nhiễu và từ đồng nghĩa để chọn đáp án theo ý nghĩa.",
+    "Ghép nhiều mục với người nói mà không suy đoán chỉ dựa vào từ khóa."
+  ],
+  "content_format": "section_practice",
+  "target_skills": [
+    "instructional_evaluation",
+    "opinion_tracking",
+    "academic_discussion",
+    "matching",
+    "multiple_choice"
+  ],
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "University tutor / seminar adviser",
+      "accent_requested": "british",
+      "tts_voice_id": null
+    },
+    {
+      "speaker_id": "B",
+      "role": "University student 1",
+      "accent_requested": "australian",
+      "tts_voice_id": null
+    },
+    {
+      "speaker_id": "C",
+      "role": "University student 2",
+      "accent_requested": "new_zealand",
+      "tts_voice_id": null
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "Your language teaching project compares flashcards with learning words through stories. But both groups are using different vocabulary sets. How can you tell whether the method or the words caused the difference in scores?",
+      "translation_vi": "Đề tài so flashcard với học từ qua truyện, nhưng hai nhóm dùng bộ từ khác nhau. Làm sao biết điểm khác do phương pháp hay do từ?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "instructional_evaluation",
+        "academic_discussion",
+        "opinion_tracking",
+        "paraphrase",
+        "distractor_analysis"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "B",
+      "text_en": "The flashcard class learned simple food words, while the story class studied abstract emotions. Their test scores differed dramatically, but the difficulty was not comparable.",
+      "translation_vi": "Lớp flashcard học từ món ăn dễ, còn lớp truyện học cảm xúc trừu tượng. Điểm chênh lớn nhưng độ khó không tương đương.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "instructional_evaluation",
+        "academic_discussion",
+        "opinion_tracking",
+        "paraphrase",
+        "distractor_analysis"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "C",
+      "text_en": "We could teach the same target vocabulary to both classes and vary only the learning activity. We should also consider whether the classes had similar starting knowledge.",
+      "translation_vi": "Có thể dạy cùng bộ từ mục tiêu và chỉ thay hoạt động. Cũng cần xét hai lớp có kiến thức ban đầu gần nhau không.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "instructional_evaluation",
+        "academic_discussion",
+        "opinion_tracking",
+        "paraphrase",
+        "distractor_analysis"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "A",
+      "text_en": "Yes. Give both groups an equivalent initial test, then use a delayed test with new sentences. A test that simply repeats the flashcards would advantage one method unfairly.",
+      "translation_vi": "Đúng. Cho hai nhóm kiểm tra đầu tương đương, rồi kiểm tra trễ bằng câu mới. Đề lặp lại flashcard sẽ thiên vị một phương pháp.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "instructional_evaluation",
+        "academic_discussion",
+        "opinion_tracking",
+        "paraphrase",
+        "distractor_analysis"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "B",
+      "text_en": "I had planned to mark every spelling error as total failure, but the course objective is understanding vocabulary in context. That scoring system could confuse spelling accuracy with comprehension.",
+      "translation_vi": "Em định coi mọi lỗi chính tả là trượt, nhưng mục tiêu môn là hiểu từ trong ngữ cảnh. Chấm vậy lẫn chính tả với hiểu nghĩa.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "instructional_evaluation",
+        "academic_discussion",
+        "opinion_tracking",
+        "paraphrase",
+        "distractor_analysis"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "C",
+      "text_en": "Score recognition of meaning separately from spelling and record both. If a student understands 'scarce' in a new sentence but misses a letter, the two skills should not receive the same judgement.",
+      "translation_vi": "Hãy chấm nhận biết nghĩa riêng với chính tả. Học viên hiểu 'scarce' trong câu mới mà sai một chữ không nên bị xem như không hiểu.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "instructional_evaluation",
+        "academic_discussion",
+        "opinion_tracking",
+        "paraphrase",
+        "distractor_analysis"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "That distinction is essential. Also keep teaching time equal, including feedback and homework. If one group receives an extra hour, differences cannot be attributed only to the learning method.",
+      "translation_vi": "Phân biệt đó quan trọng. Thời lượng dạy, phản hồi và bài về nhà phải như nhau. Nhóm được thêm một giờ sẽ làm lệch kết luận về phương pháp.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "instructional_evaluation",
+        "academic_discussion",
+        "opinion_tracking",
+        "paraphrase",
+        "distractor_analysis"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "B",
+      "text_en": "I propose an immediate check and another one seven days later. If both groups score well immediately but one forgets more after a week, the comparison becomes more meaningful.",
+      "translation_vi": "Em đề xuất kiểm tra ngay và sau bảy ngày. Nếu cả hai tốt lúc đầu nhưng một nhóm quên nhiều hơn, so sánh có ý nghĩa hơn.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "instructional_evaluation",
+        "academic_discussion",
+        "opinion_tracking",
+        "paraphrase",
+        "distractor_analysis"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T09",
+      "speaker_id": "A",
+      "text_en": "I can arrange an independent review of the test items to check that they assess meaning rather than just familiarity with the training materials.",
+      "translation_vi": "Thầy sẽ nhờ người độc lập rà câu test để kiểm tra chúng đo hiểu nghĩa thay vì độ quen với tài liệu học.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "instructional_evaluation",
+        "academic_discussion",
+        "opinion_tracking",
+        "paraphrase",
+        "distractor_analysis"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T10",
+      "speaker_id": "C",
+      "text_en": "I'll write the short stories using the same target words as the flashcards, and ask another teacher whether the contexts are natural. The stories must not accidentally teach extra meanings only one group can see.",
+      "translation_vi": "Em sẽ viết truyện ngắn dùng đúng từ flashcard, nhờ giáo viên khác xem ngữ cảnh tự nhiên không; truyện không được vô tình dạy nghĩa khác chỉ một nhóm thấy.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "instructional_evaluation",
+        "academic_discussion",
+        "opinion_tracking",
+        "paraphrase",
+        "distractor_analysis"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T11",
+      "speaker_id": "B",
+      "text_en": "I'll prepare the scoring sheet with separate columns for meaning and spelling. It should also record whether a response was correct on the first attempt or after a hint.",
+      "translation_vi": "Em sẽ chuẩn bị bảng chấm có cột hiểu nghĩa và chính tả, cùng cột đúng lần đầu hay sau gợi ý.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "instructional_evaluation",
+        "academic_discussion",
+        "opinion_tracking",
+        "paraphrase",
+        "distractor_analysis"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T12",
+      "speaker_id": "C",
+      "text_en": "I'll monitor teaching time for both groups and note any unplanned assistance. We need to know if one class received more explanations while the other worked alone.",
+      "translation_vi": "Em sẽ theo dõi thời gian dạy và hỗ trợ phát sinh ở hai nhóm, xem có lớp được giải thích nhiều hơn trong khi nhóm kia tự làm không.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "instructional_evaluation",
+        "academic_discussion",
+        "opinion_tracking",
+        "paraphrase",
+        "distractor_analysis"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T13",
+      "speaker_id": "A",
+      "text_en": "Report both immediate learning and delayed retention, and be clear that a classroom pilot does not prove one method works best for everyone.",
+      "translation_vi": "Hãy báo cả học ngay và ghi nhớ sau trì hoãn; nghiên cứu thử trong lớp không chứng minh một phương pháp tốt nhất cho mọi người.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "instructional_evaluation",
+        "academic_discussion",
+        "opinion_tracking",
+        "paraphrase",
+        "distractor_analysis"
+      ],
+      "bank_role": "training"
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "group_id": "IELTS_S3_MC_GROUP",
+      "type": "mcq",
+      "prompt": "Why were the original class scores not comparable?",
+      "correct_answers": [
+        "The target words had different difficulty levels"
+      ],
+      "options": [
+        "The target words had different difficulty levels",
+        "The flashcards had no written words",
+        "One class studied for two academic years"
+      ],
+      "correct_option": "A",
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "evidence_excerpt_en": "The flashcard class learned simple food words, while the story class studied abstract emotions. Their test scores differed dramatically, but the difficulty was not comparable.",
+      "explanation_vi": "Từ món ăn và cảm xúc trừu tượng có độ khó khác.",
+      "question_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "infer_decision",
+        "paraphrase",
+        "instructional_evaluation"
+      ],
+      "scoring_policy": "strict",
+      "bank_role": "training",
+      "answer_provenance": "original_draft_authored_against_transcript",
+      "review_status": "awaiting_teacher_and_audio_review"
+    },
+    {
+      "question_id": "Q02",
+      "group_id": "IELTS_S3_MC_GROUP",
+      "type": "mcq",
+      "prompt": "What kind of delayed assessment is recommended?",
+      "correct_answers": [
+        "A test using new sentences"
+      ],
+      "options": [
+        "A repetition of the exact flashcards",
+        "A test using new sentences",
+        "A test of unrelated grammar rules"
+      ],
+      "correct_option": "B",
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "evidence_excerpt_en": "Yes. Give both groups an equivalent initial test, then use a delayed test with new sentences. A test that simply repeats the flashcards would advantage one method unfairly.",
+      "explanation_vi": "Kiểm tra trễ dùng câu mới tránh lợi thế nhớ bài.",
+      "question_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "infer_decision",
+        "paraphrase",
+        "instructional_evaluation"
+      ],
+      "scoring_policy": "strict",
+      "bank_role": "training",
+      "answer_provenance": "original_draft_authored_against_transcript",
+      "review_status": "awaiting_teacher_and_audio_review"
+    },
+    {
+      "question_id": "Q03",
+      "group_id": "IELTS_S3_MC_GROUP",
+      "type": "mcq",
+      "prompt": "How should spelling and comprehension be marked?",
+      "correct_answers": [
+        "As two distinct skills"
+      ],
+      "options": [
+        "Only by total typing speed",
+        "Together as a single all-or-nothing score",
+        "As two distinct skills"
+      ],
+      "correct_option": "C",
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "evidence_excerpt_en": "Score recognition of meaning separately from spelling and record both. If a student understands 'scarce' in a new sentence but misses a letter, the two skills should not receive the same judgement.",
+      "explanation_vi": "Tách nhận biết nghĩa khỏi chính tả.",
+      "question_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "infer_decision",
+        "paraphrase",
+        "instructional_evaluation"
+      ],
+      "scoring_policy": "strict",
+      "bank_role": "training",
+      "answer_provenance": "original_draft_authored_against_transcript",
+      "review_status": "awaiting_teacher_and_audio_review"
+    },
+    {
+      "question_id": "Q04",
+      "group_id": "IELTS_S3_MC_GROUP",
+      "type": "mcq",
+      "prompt": "Why test the students again after seven days?",
+      "correct_answers": [
+        "To compare how well vocabulary is retained"
+      ],
+      "options": [
+        "To increase the number of target words",
+        "To give students extra course credit",
+        "To compare how well vocabulary is retained"
+      ],
+      "correct_option": "C",
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "evidence_excerpt_en": "I propose an immediate check and another one seven days later. If both groups score well immediately but one forgets more after a week, the comparison becomes more meaningful.",
+      "explanation_vi": "Đo khả năng ghi nhớ sau thời gian trì hoãn.",
+      "question_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "infer_decision",
+        "paraphrase",
+        "instructional_evaluation"
+      ],
+      "scoring_policy": "strict",
+      "bank_role": "training",
+      "answer_provenance": "original_draft_authored_against_transcript",
+      "review_status": "awaiting_teacher_and_audio_review"
+    },
+    {
+      "question_id": "Q05",
+      "group_id": "IELTS_S3_SPEAKER_MATCHING_GROUP",
+      "type": "matching",
+      "prompt": "Which speaker is associated with this proposal or responsibility: organise independent review of assessment items?",
+      "options": [
+        "A — course tutor",
+        "B — first student",
+        "C — second student"
+      ],
+      "correct_answers": [
+        "A"
+      ],
+      "correct_option": "A",
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "evidence_excerpt_en": "I can arrange an independent review of the test items to check that they assess meaning rather than just familiarity with the training materials.",
+      "explanation_vi": "Đề cập trong lượt T09 của người nói A. Cần nghe đúng ai đưa ra đề xuất, không chỉ xác định ý tưởng xuất hiện ở đoạn nào.",
+      "question_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "speaker_opinion_matching",
+        "instructional_evaluation"
+      ],
+      "scoring_policy": "strict",
+      "bank_role": "training",
+      "answer_provenance": "original_draft_authored_against_transcript",
+      "review_status": "awaiting_teacher_and_audio_review",
+      "matching_group_instructions_en": "Match each proposal or responsibility to the speaker who introduced it or volunteered for it. Choose A, B or C. You may use each letter more than once."
+    },
+    {
+      "question_id": "Q06",
+      "group_id": "IELTS_S3_SPEAKER_MATCHING_GROUP",
+      "type": "matching",
+      "prompt": "Which speaker is associated with this proposal or responsibility: write natural stories using matched target vocabulary?",
+      "options": [
+        "A — course tutor",
+        "B — first student",
+        "C — second student"
+      ],
+      "correct_answers": [
+        "C"
+      ],
+      "correct_option": "C",
+      "evidence_turn_ids": [
+        "T10"
+      ],
+      "evidence_excerpt_en": "I'll write the short stories using the same target words as the flashcards, and ask another teacher whether the contexts are natural. The stories must not accidentally teach extra meanings only one group can see.",
+      "explanation_vi": "Đề cập trong lượt T10 của người nói C. Cần nghe đúng ai đưa ra đề xuất, không chỉ xác định ý tưởng xuất hiện ở đoạn nào.",
+      "question_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "speaker_opinion_matching",
+        "instructional_evaluation"
+      ],
+      "scoring_policy": "strict",
+      "bank_role": "training",
+      "answer_provenance": "original_draft_authored_against_transcript",
+      "review_status": "awaiting_teacher_and_audio_review",
+      "matching_group_instructions_en": "Match each proposal or responsibility to the speaker who introduced it or volunteered for it. Choose A, B or C. You may use each letter more than once."
+    },
+    {
+      "question_id": "Q07",
+      "group_id": "IELTS_S3_SPEAKER_MATCHING_GROUP",
+      "type": "matching",
+      "prompt": "Which speaker is associated with this proposal or responsibility: separate scoring columns for meaning and spelling?",
+      "options": [
+        "A — course tutor",
+        "B — first student",
+        "C — second student"
+      ],
+      "correct_answers": [
+        "B"
+      ],
+      "correct_option": "B",
+      "evidence_turn_ids": [
+        "T11"
+      ],
+      "evidence_excerpt_en": "I'll prepare the scoring sheet with separate columns for meaning and spelling. It should also record whether a response was correct on the first attempt or after a hint.",
+      "explanation_vi": "Đề cập trong lượt T11 của người nói B. Cần nghe đúng ai đưa ra đề xuất, không chỉ xác định ý tưởng xuất hiện ở đoạn nào.",
+      "question_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "speaker_opinion_matching",
+        "instructional_evaluation"
+      ],
+      "scoring_policy": "strict",
+      "bank_role": "training",
+      "answer_provenance": "original_draft_authored_against_transcript",
+      "review_status": "awaiting_teacher_and_audio_review",
+      "matching_group_instructions_en": "Match each proposal or responsibility to the speaker who introduced it or volunteered for it. Choose A, B or C. You may use each letter more than once."
+    },
+    {
+      "question_id": "Q08",
+      "group_id": "IELTS_S3_SPEAKER_MATCHING_GROUP",
+      "type": "matching",
+      "prompt": "Which speaker is associated with this proposal or responsibility: track equal teaching time and extra assistance?",
+      "options": [
+        "A — course tutor",
+        "B — first student",
+        "C — second student"
+      ],
+      "correct_answers": [
+        "C"
+      ],
+      "correct_option": "C",
+      "evidence_turn_ids": [
+        "T12"
+      ],
+      "evidence_excerpt_en": "I'll monitor teaching time for both groups and note any unplanned assistance. We need to know if one class received more explanations while the other worked alone.",
+      "explanation_vi": "Đề cập trong lượt T12 của người nói C. Cần nghe đúng ai đưa ra đề xuất, không chỉ xác định ý tưởng xuất hiện ở đoạn nào.",
+      "question_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "speaker_opinion_matching",
+        "instructional_evaluation"
+      ],
+      "scoring_policy": "strict",
+      "bank_role": "training",
+      "answer_provenance": "original_draft_authored_against_transcript",
+      "review_status": "awaiting_teacher_and_audio_review",
+      "matching_group_instructions_en": "Match each proposal or responsibility to the speaker who introduced it or volunteered for it. Choose A, B or C. You may use each letter more than once."
+    },
+    {
+      "question_id": "D01",
+      "group_id": "SELECTIVE_DICTATION",
+      "type": "dictation",
+      "prompt": "Nghe và chép nguyên văn lượt thoại T03 của người nói C.",
+      "correct_answers": [
+        "We could teach the same target vocabulary to both classes and vary only the learning activity. We should also consider whether the classes had similar starting knowledge."
+      ],
+      "scoring_policy": "dictation_normalised",
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "evidence_excerpt_en": "We could teach the same target vocabulary to both classes and vary only the learning activity. We should also consider whether the classes had similar starting knowledge.",
+      "explanation_vi": "Đối chiếu từng từ, mạo từ và từ nối; đánh giá cả khả năng nhận diện cụm từ ở tốc độ nói tự nhiên.",
+      "bank_role": "training",
+      "question_tags": [
+        "m23",
+        "selective_dictation",
+        "instructional_evaluation"
+      ]
+    },
+    {
+      "question_id": "D02",
+      "group_id": "SELECTIVE_DICTATION",
+      "type": "dictation",
+      "prompt": "Nghe và chép nguyên văn lượt thoại T05 của người nói B.",
+      "correct_answers": [
+        "I had planned to mark every spelling error as total failure, but the course objective is understanding vocabulary in context. That scoring system could confuse spelling accuracy with comprehension."
+      ],
+      "scoring_policy": "dictation_normalised",
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "evidence_excerpt_en": "I had planned to mark every spelling error as total failure, but the course objective is understanding vocabulary in context. That scoring system could confuse spelling accuracy with comprehension.",
+      "explanation_vi": "Đối chiếu từng từ, mạo từ và từ nối; đánh giá cả khả năng nhận diện cụm từ ở tốc độ nói tự nhiên.",
+      "bank_role": "training",
+      "question_tags": [
+        "m23",
+        "selective_dictation",
+        "instructional_evaluation"
+      ]
+    },
+    {
+      "question_id": "D03",
+      "group_id": "SELECTIVE_DICTATION",
+      "type": "dictation",
+      "prompt": "Nghe và chép nguyên văn lượt thoại T07 của người nói A.",
+      "correct_answers": [
+        "That distinction is essential. Also keep teaching time equal, including feedback and homework. If one group receives an extra hour, differences cannot be attributed only to the learning method."
+      ],
+      "scoring_policy": "dictation_normalised",
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "evidence_excerpt_en": "That distinction is essential. Also keep teaching time equal, including feedback and homework. If one group receives an extra hour, differences cannot be attributed only to the learning method.",
+      "explanation_vi": "Đối chiếu từng từ, mạo từ và từ nối; đánh giá cả khả năng nhận diện cụm từ ở tốc độ nói tự nhiên.",
+      "bank_role": "training",
+      "question_tags": [
+        "m23",
+        "selective_dictation",
+        "instructional_evaluation"
+      ]
+    },
+    {
+      "question_id": "D04",
+      "group_id": "SELECTIVE_DICTATION",
+      "type": "dictation",
+      "prompt": "Nghe và chép nguyên văn lượt thoại T11 của người nói B.",
+      "correct_answers": [
+        "I'll prepare the scoring sheet with separate columns for meaning and spelling. It should also record whether a response was correct on the first attempt or after a hint."
+      ],
+      "scoring_policy": "dictation_normalised",
+      "evidence_turn_ids": [
+        "T11"
+      ],
+      "evidence_excerpt_en": "I'll prepare the scoring sheet with separate columns for meaning and spelling. It should also record whether a response was correct on the first attempt or after a hint.",
+      "explanation_vi": "Đối chiếu từng từ, mạo từ và từ nối; đánh giá cả khả năng nhận diện cụm từ ở tốc độ nói tự nhiên.",
+      "bank_role": "training",
+      "question_tags": [
+        "m23",
+        "selective_dictation",
+        "instructional_evaluation"
+      ]
+    },
+    {
+      "question_id": "G01",
+      "group_id": "GAP_FILL_PRACTICE",
+      "type": "gap_fill",
+      "prompt": "Nghe lượt thoại T03 và điền cụm bị thiếu: We could teach the same ____ to both classes and vary only the learning activity. We should also consider whether the classes had similar starting knowledge.",
+      "correct_answers": [
+        "target vocabulary"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN 2 WORDS",
+      "scoring_policy": "controlled_variants",
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "evidence_excerpt_en": "We could teach the same target vocabulary to both classes and vary only the learning activity. We should also consider whether the classes had similar starting knowledge.",
+      "explanation_vi": "Cụm nghe được là “target vocabulary” (từ vựng mục tiêu); cần dựa vào ngữ cảnh chứ không chỉ đoán từ loại.",
+      "question_tags": [
+        "m23",
+        "gap_fill",
+        "instructional_evaluation"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "question_id": "G02",
+      "group_id": "GAP_FILL_PRACTICE",
+      "type": "gap_fill",
+      "prompt": "Nghe lượt thoại T04 và điền cụm bị thiếu: Yes. Give both groups an equivalent ____, then use a delayed test with new sentences. A test that simply repeats the flashcards would advantage one method unfairly.",
+      "correct_answers": [
+        "initial test"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN 2 WORDS",
+      "scoring_policy": "controlled_variants",
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "evidence_excerpt_en": "Yes. Give both groups an equivalent initial test, then use a delayed test with new sentences. A test that simply repeats the flashcards would advantage one method unfairly.",
+      "explanation_vi": "Cụm nghe được là “initial test” (bài kiểm tra đầu); cần dựa vào ngữ cảnh chứ không chỉ đoán từ loại.",
+      "question_tags": [
+        "m23",
+        "gap_fill",
+        "instructional_evaluation"
+      ],
+      "bank_role": "training"
+    }
+  ],
+  "vocabulary": [
+    {
+      "vocab_id": "S3-EXP-017-V01",
+      "expression_en": "target vocabulary",
+      "meaning_vi": "từ vựng mục tiêu",
+      "part_of_speech": "noun phrase",
+      "example_en": "We could teach the same target vocabulary to both classes and vary only the learning activity. We should also consider whether the classes had similar starting knowledge.",
+      "example_vi": "Có thể dạy cùng bộ từ mục tiêu và chỉ thay hoạt động. Cũng cần xét hai lớp có kiến thức ban đầu gần nhau không.",
+      "evidence_turn_id": "T03",
+      "can_save_to_notebook": true,
+      "requires_human_pos_verification": true
+    },
+    {
+      "vocab_id": "S3-EXP-017-V02",
+      "expression_en": "initial test",
+      "meaning_vi": "bài kiểm tra đầu",
+      "part_of_speech": "noun phrase",
+      "example_en": "Yes. Give both groups an equivalent initial test, then use a delayed test with new sentences. A test that simply repeats the flashcards would advantage one method unfairly.",
+      "example_vi": "Đúng. Cho hai nhóm kiểm tra đầu tương đương, rồi kiểm tra trễ bằng câu mới. Đề lặp lại flashcard sẽ thiên vị một phương pháp.",
+      "evidence_turn_id": "T04",
+      "can_save_to_notebook": true,
+      "requires_human_pos_verification": true
+    },
+    {
+      "vocab_id": "S3-EXP-017-V03",
+      "expression_en": "delayed test",
+      "meaning_vi": "bài kiểm tra trễ",
+      "part_of_speech": "noun phrase",
+      "example_en": "Yes. Give both groups an equivalent initial test, then use a delayed test with new sentences. A test that simply repeats the flashcards would advantage one method unfairly.",
+      "example_vi": "Đúng. Cho hai nhóm kiểm tra đầu tương đương, rồi kiểm tra trễ bằng câu mới. Đề lặp lại flashcard sẽ thiên vị một phương pháp.",
+      "evidence_turn_id": "T04",
+      "can_save_to_notebook": true,
+      "requires_human_pos_verification": true
+    },
+    {
+      "vocab_id": "S3-EXP-017-V04",
+      "expression_en": "comprehension",
+      "meaning_vi": "năng lực hiểu",
+      "part_of_speech": "noun phrase",
+      "example_en": "I had planned to mark every spelling error as total failure, but the course objective is understanding vocabulary in context. That scoring system could confuse spelling accuracy with comprehension.",
+      "example_vi": "Em định coi mọi lỗi chính tả là trượt, nhưng mục tiêu môn là hiểu từ trong ngữ cảnh. Chấm vậy lẫn chính tả với hiểu nghĩa.",
+      "evidence_turn_id": "T05",
+      "can_save_to_notebook": true,
+      "requires_human_pos_verification": true
+    },
+    {
+      "vocab_id": "S3-EXP-017-V05",
+      "expression_en": "delayed retention",
+      "meaning_vi": "ghi nhớ sau một thời gian",
+      "part_of_speech": "noun phrase",
+      "example_en": "Report both immediate learning and delayed retention, and be clear that a classroom pilot does not prove one method works best for everyone.",
+      "example_vi": "Hãy báo cả học ngay và ghi nhớ sau trì hoãn; nghiên cứu thử trong lớp không chứng minh một phương pháp tốt nhất cho mọi người.",
+      "evidence_turn_id": "T13",
+      "can_save_to_notebook": true,
+      "requires_human_pos_verification": true
+    },
+    {
+      "vocab_id": "S3-EXP-017-V06",
+      "expression_en": "scoring sheet",
+      "meaning_vi": "bảng chấm điểm",
+      "part_of_speech": "noun phrase",
+      "example_en": "I'll prepare the scoring sheet with separate columns for meaning and spelling. It should also record whether a response was correct on the first attempt or after a hint.",
+      "example_vi": "Em sẽ chuẩn bị bảng chấm có cột hiểu nghĩa và chính tả, cùng cột đúng lần đầu hay sau gợi ý.",
+      "evidence_turn_id": "T11",
+      "can_save_to_notebook": true,
+      "requires_human_pos_verification": true
+    }
+  ],
+  "audio": {
+    "status": "not_generated",
+    "audio_url": null,
+    "duration_ms": null,
+    "source_text_sha256": "fd8bc72634b674d3ad1eee64c466cd421f5c93a19a8e8fc2c9bb0917e0197290",
+    "generation_strategy": "per_turn_tts_three_speakers_then_stitch",
+    "audio_asset_id": null,
+    "requires_dialogue_prosody_review": true
+  },
+  "learning_flow": {
+    "intro": {
+      "theory_vi": "IELTS Listening Part 3 thường có thảo luận học thuật. Hãy dự đoán người nói và mục đích câu hỏi trước khi nghe. Đừng chọn một phương án chỉ vì nó xuất hiện sớm; theo dõi phản biện, cách diễn đạt lại và đề xuất cuối cùng.",
+      "tip_vi": "Với Matching, các chữ A/B/C là người nói và có thể lặp lại. Nghe người thực sự đề xuất hành động; một người khác có thể chỉ đồng tình hoặc nhắc lại đề xuất đó.",
+      "common_mistakes_vi": [
+        "Chọn lập luận đầu tiên dù người khác đã bác bỏ.",
+        "Không phân biệt người phát biểu đề xuất với người tán thành.",
+        "Chọn đáp án chứa từ giống audio nhưng sai ý.",
+        "Làm lộ transcript khi chưa nộp bài nghe đầu."
+      ],
+      "worked_examples": [
+        {
+          "audio_example_en": "Maya: We could interview everyone. Leo: That would be too expensive. Tutor: Let us start with a small pilot instead.",
+          "question": "What approach is finally recommended?",
+          "answer": "A small pilot",
+          "explanation_vi": "Phỏng vấn toàn bộ là đề xuất ban đầu, pilot mới là hướng được chọn."
+        },
+        {
+          "audio_example_en": "Student A: I can prepare the participant forms. Student B: I will check the recording equipment.",
+          "question": "Who will check the recording equipment?",
+          "answer": "Student B",
+          "explanation_vi": "Cần ghép đúng nhiệm vụ với người nhận trách nhiệm."
+        }
+      ]
+    },
+    "steps": [
+      "pre_listening",
+      "first_listen_ielts_questions",
+      "review_with_evidence",
+      "selective_dictation",
+      "gap_fill",
+      "summary"
+    ],
+    "ielts_question_ids": [
+      "Q01",
+      "Q02",
+      "Q03",
+      "Q04",
+      "Q05",
+      "Q06",
+      "Q07",
+      "Q08"
+    ],
+    "recommended_first_listen_play_limit": 1,
+    "practice_replay_allowed_after_first_attempt": true,
+    "word_count": 371,
+    "estimated_audio_minutes_at_135_wpm": 2.75,
+    "exposure_bank": "training",
+    "exam_simulation": false,
+    "mock_test": false,
+    "audio_alignment_required": true,
+    "matching_options_are_reusable": true
+  },
+  "qa": {
+    "status": "awaiting_human_content_and_audio_review",
+    "automated_validation": "passed",
+    "human_transcript_approved": false,
+    "human_audio_approved": false,
+    "ielts_exam_equivalent": false,
+    "release_eligible": false
+  },
+  "provenance": {
+    "source_type": "original_authored",
+    "reference_copying": false,
+    "authoring_milestone": "M23",
+    "do_not_reuse_in_unseen_assessment_before_exposure_check": true
+  },
+  "release_metadata": {
+    "version": "m23.0.1",
+    "published": false,
+    "needs_audio": true,
+    "requires_human_approval": true,
+    "import_policy": "insert_only",
+    "target_bank": "training"
+  }
+}

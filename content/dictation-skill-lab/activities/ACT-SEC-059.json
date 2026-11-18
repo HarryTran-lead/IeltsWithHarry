@@ -1,0 +1,282 @@
+{
+  "schema_version": "m34.1.0",
+  "activity_id": "ACT-SEC-059",
+  "status": "draft_pending_audio",
+  "module": "dictation",
+  "activity_kind": "section_skill_drill",
+  "title": "Assessing a Citizen Science Bird Survey — Phân tích quan điểm và đáp án gây nhiễu",
+  "section": 3,
+  "source_lesson_id": "S3-EXP-010",
+  "source_milestone": "M23",
+  "source_zip": "English_Skill_Lab_Dictation_M23_Section_3_Expanded_Practice_20_Full_Content.zip",
+  "reuse_parent_id": "S3-EXP-010",
+  "source_bank": "section_practice_training",
+  "source_audio_id": "section-training/S3-EXP-010/T01",
+  "source_audio_id_type": "logical_source_turn_key_not_physical_audio",
+  "source_segments": [
+    {
+      "source_audio_id": "section-training/S3-EXP-010/T01",
+      "source_audio_id_type": "logical_turn_key_not_verified_physical_audio",
+      "source_lesson_id": "S3-EXP-010",
+      "source_turn_id": "T01",
+      "source_speaker_id": "A",
+      "source_audio_asset_id": null,
+      "source_audio_url": null,
+      "start_ms": null,
+      "end_ms": null,
+      "source_transcript_sha256": "1be01bf6f759aea70aa16cfccf1e8b6b2788423c9c6c12396697540df32239ab",
+      "source_bank": "training",
+      "source_is_protected": false,
+      "audio_status": "not_generated",
+      "alignment_status": "pending_verified_turn_offsets"
+    },
+    {
+      "source_audio_id": "section-training/S3-EXP-010/T02",
+      "source_audio_id_type": "logical_turn_key_not_verified_physical_audio",
+      "source_lesson_id": "S3-EXP-010",
+      "source_turn_id": "T02",
+      "source_speaker_id": "B",
+      "source_audio_asset_id": null,
+      "source_audio_url": null,
+      "start_ms": null,
+      "end_ms": null,
+      "source_transcript_sha256": "0d18debe3bd8da5cd4b614f58357ba20303f2177f3bf256dc0b9a88346edd80d",
+      "source_bank": "training",
+      "source_is_protected": false,
+      "audio_status": "not_generated",
+      "alignment_status": "pending_verified_turn_offsets"
+    },
+    {
+      "source_audio_id": "section-training/S3-EXP-010/T05",
+      "source_audio_id_type": "logical_turn_key_not_verified_physical_audio",
+      "source_lesson_id": "S3-EXP-010",
+      "source_turn_id": "T05",
+      "source_speaker_id": "B",
+      "source_audio_asset_id": null,
+      "source_audio_url": null,
+      "start_ms": null,
+      "end_ms": null,
+      "source_transcript_sha256": "3d9f52c98877ed21aafb3bf625e63a94d16438b4e880cdb8257d1cb22cc8f26f",
+      "source_bank": "training",
+      "source_is_protected": false,
+      "audio_status": "not_generated",
+      "alignment_status": "pending_verified_turn_offsets"
+    },
+    {
+      "source_audio_id": "section-training/S3-EXP-010/T06",
+      "source_audio_id_type": "logical_turn_key_not_verified_physical_audio",
+      "source_lesson_id": "S3-EXP-010",
+      "source_turn_id": "T06",
+      "source_speaker_id": "C",
+      "source_audio_asset_id": null,
+      "source_audio_url": null,
+      "start_ms": null,
+      "end_ms": null,
+      "source_transcript_sha256": "33a317d495f94923be438412069d3f19aece50e959ee084fcbea96844f9cfe9d",
+      "source_bank": "training",
+      "source_is_protected": false,
+      "audio_status": "not_generated",
+      "alignment_status": "pending_verified_turn_offsets"
+    }
+  ],
+  "start_ms": null,
+  "end_ms": null,
+  "alignment_policy": "verified_turn_level_audio_or_measured_offsets_only",
+  "clip_audio_status": "not_generated",
+  "topic": "Ecology and citizen science",
+  "drill_skill": "opinion_distractor",
+  "skill_tags": [
+    "section_practice",
+    "listening",
+    "reuse",
+    "section_3",
+    "opinion_tracking",
+    "contradiction",
+    "mcq_distractor"
+  ],
+  "teacher_notes": {
+    "goal": "Theo dõi phương án ban đầu, phản biện và kết luận trong thảo luận học thuật.",
+    "theory": "Section 3 có thể nhắc cả ba đáp án ở các thời điểm khác nhau. Chỉ chọn đáp án phù hợp với câu hỏi và quan điểm cuối cùng.",
+    "tip": "Nghe các dấu hiệu bác bỏ như impractical, however, instead, the better option, decided.",
+    "mistakes": [
+      "Chọn giải pháp được nhắc tới nhưng bị giáo viên phản đối.",
+      "Nhầm dự đoán của sinh viên với quyết định cuối cùng của nhóm."
+    ],
+    "worked_example": "Ví dụ ngoài đề: “An online survey is quick; however, interviews would explain the reasons.” → Chọn interviews nếu hỏi phương pháp được khuyến nghị."
+  },
+  "playback": {
+    "first_listen_max_replays": 1,
+    "guided_replay_max_replays": 3,
+    "source_turn_order": [
+      "T01",
+      "T02",
+      "T05",
+      "T06"
+    ],
+    "transcript_hidden_until_submit": true,
+    "answers_hidden_until_submit": true,
+    "playback_speed_default": 1.0,
+    "prelisten_question_reading": true,
+    "asset_concatenation": "respect_speaker_turns; never use timestamps until aligned"
+  },
+  "questions": [
+    {
+      "question_id": "ACT-SEC-059-Q1",
+      "phase": "first_listen",
+      "origin_question_id": "Q01",
+      "origin_question_type": "mcq",
+      "type": "single_choice",
+      "prompt_en": "Why does the woodland have fewer sighting records?",
+      "prompt_vi": "Nghe phần được chỉ định và trả lời câu hỏi theo thông tin thực sự được phát. Đừng chọn phương án được nhắc trước khi người nói sửa ý.",
+      "options": [
+        {
+          "value": "It may receive less observation effort",
+          "label": "It may receive less observation effort"
+        },
+        {
+          "value": "It contains no suitable trees",
+          "label": "It contains no suitable trees"
+        },
+        {
+          "value": "All of its birds migrate in winter",
+          "label": "All of its birds migrate in winter"
+        }
+      ],
+      "correct_answers": [
+        "It may receive less observation effort"
+      ],
+      "correct_option": "A",
+      "word_limit": null,
+      "scoring_policy": "strict",
+      "play_turn_ids": [
+        "T01",
+        "T02"
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "evidence_excerpt_en": "Most reports come from the lake trail because it is easy to reach. The woodland has fewer records, but that does not necessarily mean fewer birds live there.",
+      "evidence_excerpt_exact_in_turn": true,
+      "evidence_source_kind": "authored_source_annotated",
+      "explanation_vi": "Ít bản ghi có thể vì ít người đến quan sát.",
+      "grading_is_ielts_band": false
+    },
+    {
+      "question_id": "ACT-SEC-059-Q2",
+      "phase": "targeted_replay",
+      "origin_question_id": "Q03",
+      "origin_question_type": "mcq",
+      "type": "single_choice",
+      "prompt_en": "What measure could improve the comparison between sites?",
+      "prompt_vi": "Nghe phần được chỉ định và trả lời câu hỏi theo thông tin thực sự được phát. Đừng chọn phương án được nhắc trước khi người nói sửa ý.",
+      "options": [
+        {
+          "value": "Number of volunteers registered",
+          "label": "Number of volunteers registered"
+        },
+        {
+          "value": "Sightings per observation hour",
+          "label": "Sightings per observation hour"
+        },
+        {
+          "value": "Total photographs uploaded",
+          "label": "Total photographs uploaded"
+        }
+      ],
+      "correct_answers": [
+        "Sightings per observation hour"
+      ],
+      "correct_option": "B",
+      "word_limit": null,
+      "scoring_policy": "strict",
+      "play_turn_ids": [
+        "T05",
+        "T06"
+      ],
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "evidence_excerpt_en": "If we use sightings per hour rather than raw counts, that may improve the comparison. We'd still need to acknowledge that birds are easier to spot in open water than in dense trees.",
+      "evidence_excerpt_exact_in_turn": true,
+      "evidence_source_kind": "authored_source_annotated",
+      "explanation_vi": "Chuẩn hóa theo công sức quan sát theo giờ.",
+      "grading_is_ielts_band": false
+    },
+    {
+      "question_id": "ACT-SEC-059-Q3",
+      "phase": "focused_dictation_repair",
+      "type": "focused_dictation",
+      "prompt_vi": "Nghe lại lượt thoại rồi chép đúng ba từ còn thiếu trong đoạn trích (không viết cả câu).",
+      "prompt_en": "…improve the comparison. We'd still need to ____ are easier to spot in open water…",
+      "word_limit": 3,
+      "correct_answers": [
+        "acknowledge that birds"
+      ],
+      "correct_option": null,
+      "options": null,
+      "normalization_policy": "casefold_unicode_nfkc_trim_whitespace_and_terminal_punctuation",
+      "play_turn_ids": [
+        "T06"
+      ],
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "evidence_excerpt_en": "acknowledge that birds",
+      "evidence_char_start": 105,
+      "evidence_char_end": 127,
+      "evidence_source_kind": "exact_spoken_transcript_source",
+      "evidence_excerpt_exact_in_turn": true,
+      "explanation_vi": "Cụm cần ghi chính xác là “acknowledge that birds”. Nghe lại vị trí này và đối chiếu các âm cuối, từ chức năng và trọng âm.",
+      "origin_question_id": null,
+      "grading_is_ielts_band": false,
+      "novel_question_authored_for_m34": true
+    }
+  ],
+  "evidence": {
+    "source_lesson_id": "S3-EXP-010",
+    "source_question_ids": [
+      "Q01",
+      "Q03"
+    ],
+    "source_turn_ids": [
+      "T01",
+      "T02",
+      "T05",
+      "T06"
+    ],
+    "source_transcript_sha256_map": {
+      "T01": "1be01bf6f759aea70aa16cfccf1e8b6b2788423c9c6c12396697540df32239ab",
+      "T02": "0d18debe3bd8da5cd4b614f58357ba20303f2177f3bf256dc0b9a88346edd80d",
+      "T05": "3d9f52c98877ed21aafb3bf625e63a94d16438b4e880cdb8257d1cb22cc8f26f",
+      "T06": "33a317d495f94923be438412069d3f19aece50e959ee084fcbea96844f9cfe9d"
+    },
+    "provenance": "original_training_2026_m21_m23_m24",
+    "copied_source_has_human_signoff": false,
+    "source_confidence": "authored_draft_not_independently_validated"
+  },
+  "exposure_rules": {
+    "allowed_source_banks": [
+      "section_practice_training"
+    ],
+    "train_only": true,
+    "never_use_protected_source": true,
+    "never_use_unseen_section_simulation": true,
+    "never_use_mock_before_first_attempt": true,
+    "track_source_audio_id": true,
+    "track_first_exposure": true,
+    "track_replay_count": true,
+    "not_band_estimate": true
+  },
+  "rights_status": "pending_review",
+  "review": {
+    "automated_content_check": "pending",
+    "human_language_review": "pending",
+    "human_audio_listening": "pending",
+    "teacher_signoff": "pending",
+    "timing_verification": "pending",
+    "rights_clearance": "pending",
+    "publish_ready": false
+  },
+  "import_policy": "insert_only_idempotent",
+  "version": "m34.1.0"
+}

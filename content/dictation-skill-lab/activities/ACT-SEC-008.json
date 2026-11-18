@@ -1,0 +1,216 @@
+{
+  "schema_version": "m34.1.0",
+  "activity_id": "ACT-SEC-008",
+  "status": "draft_pending_audio",
+  "module": "dictation",
+  "activity_kind": "section_skill_drill",
+  "title": "Joining a Community Garden — Nghe chính xác chi tiết dịch vụ",
+  "section": 1,
+  "source_lesson_id": "S1-EXP-004",
+  "source_milestone": "M21",
+  "source_zip": "English_Skill_Lab_Dictation_M21_Section_1_Expanded_Practice_20_Full_Content.zip",
+  "reuse_parent_id": "S1-EXP-004",
+  "source_bank": "section_practice_training",
+  "source_audio_id": "section-training/S1-EXP-004/T04",
+  "source_audio_id_type": "logical_source_turn_key_not_physical_audio",
+  "source_segments": [
+    {
+      "source_audio_id": "section-training/S1-EXP-004/T04",
+      "source_audio_id_type": "logical_turn_key_not_verified_physical_audio",
+      "source_lesson_id": "S1-EXP-004",
+      "source_turn_id": "T04",
+      "source_speaker_id": "A",
+      "source_audio_asset_id": null,
+      "source_audio_url": null,
+      "start_ms": null,
+      "end_ms": null,
+      "source_transcript_sha256": "47b48b963feb8d8c1d91a283d12e00647b6632d375cc89456b521a8c4e5c8454",
+      "source_bank": "training",
+      "source_is_protected": false,
+      "audio_status": "not_generated",
+      "alignment_status": "pending_verified_turn_offsets"
+    },
+    {
+      "source_audio_id": "section-training/S1-EXP-004/T16",
+      "source_audio_id_type": "logical_turn_key_not_verified_physical_audio",
+      "source_lesson_id": "S1-EXP-004",
+      "source_turn_id": "T16",
+      "source_speaker_id": "A",
+      "source_audio_asset_id": null,
+      "source_audio_url": null,
+      "start_ms": null,
+      "end_ms": null,
+      "source_transcript_sha256": "0b16406d17ffe3dec26522181c4cf68bfc8854f61242ece1cc398434d65a3f85",
+      "source_bank": "training",
+      "source_is_protected": false,
+      "audio_status": "not_generated",
+      "alignment_status": "pending_verified_turn_offsets"
+    }
+  ],
+  "start_ms": null,
+  "end_ms": null,
+  "alignment_policy": "verified_turn_level_audio_or_measured_offsets_only",
+  "clip_audio_status": "not_generated",
+  "topic": "Community gardening membership",
+  "drill_skill": "detail_accuracy",
+  "skill_tags": [
+    "section_practice",
+    "listening",
+    "reuse",
+    "section_1",
+    "form_filling",
+    "numeric_precision",
+    "word_limit"
+  ],
+  "teacher_notes": {
+    "goal": "Ghi chính xác số, tên, khoản phí hoặc điều kiện được xác nhận trong hội thoại.",
+    "theory": "Trong Section 1, số và danh từ thường nằm sát các mệnh đề sửa thông tin. Đọc ô trống để đoán từ loại, sau đó nghe cụm từ trọn vẹn.",
+    "tip": "Không tự suy diễn đơn vị; kiểm tra word limit và giữ số 0 ở đầu nếu là mã.",
+    "mistakes": [
+      "Ghi thiếu phần thập phân hoặc số 0.",
+      "Lấy thông tin ước lượng thay cho thông tin đã xác nhận."
+    ],
+    "worked_example": "Ví dụ ngoài đề: “The fee is forty pounds, but students pay thirty.” → Cần xác định đang hỏi giá tiêu chuẩn hay giá sinh viên."
+  },
+  "playback": {
+    "first_listen_max_replays": 1,
+    "guided_replay_max_replays": 3,
+    "source_turn_order": [
+      "T04",
+      "T16"
+    ],
+    "transcript_hidden_until_submit": true,
+    "answers_hidden_until_submit": true,
+    "playback_speed_default": 1.0,
+    "prelisten_question_reading": true,
+    "asset_concatenation": "respect_speaker_turns; never use timestamps until aligned"
+  },
+  "questions": [
+    {
+      "question_id": "ACT-SEC-008-Q1",
+      "phase": "first_listen",
+      "origin_question_id": "Q01",
+      "origin_question_type": "note_completion",
+      "type": "spoken_word_completion",
+      "prompt_en": "Available plot is near the ____",
+      "prompt_vi": "Nghe phần được chỉ định và trả lời câu hỏi theo thông tin thực sự được phát. Chú ý từ/cụm từ được đọc và giới hạn từ.",
+      "options": null,
+      "correct_answers": [
+        "greenhouse"
+      ],
+      "correct_option": null,
+      "word_limit": 2,
+      "scoring_policy": "controlled_variants",
+      "play_turn_ids": [
+        "T04"
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "evidence_excerpt_en": "near the greenhouse",
+      "evidence_excerpt_exact_in_turn": true,
+      "evidence_source_kind": "authored_source_annotated",
+      "explanation_vi": "Có một luống gần nhà kính đang trống.",
+      "grading_is_ielts_band": false
+    },
+    {
+      "question_id": "ACT-SEC-008-Q2",
+      "phase": "targeted_replay",
+      "origin_question_id": "Q08",
+      "origin_question_type": "form_completion",
+      "type": "spoken_word_completion",
+      "prompt_en": "Gate key collected from the garden ____",
+      "prompt_vi": "Nghe phần được chỉ định và trả lời câu hỏi theo thông tin thực sự được phát. Chú ý từ/cụm từ được đọc và giới hạn từ.",
+      "options": null,
+      "correct_answers": [
+        "office"
+      ],
+      "correct_option": null,
+      "word_limit": 2,
+      "scoring_policy": "controlled_variants",
+      "play_turn_ids": [
+        "T16"
+      ],
+      "evidence_turn_ids": [
+        "T16"
+      ],
+      "evidence_excerpt_en": "garden office",
+      "evidence_excerpt_exact_in_turn": true,
+      "evidence_source_kind": "authored_source_annotated",
+      "explanation_vi": "Lấy chìa tại văn phòng vườn, không phải thư viện.",
+      "grading_is_ielts_band": false
+    },
+    {
+      "question_id": "ACT-SEC-008-Q3",
+      "phase": "focused_dictation_repair",
+      "type": "focused_dictation",
+      "prompt_vi": "Nghe lại lượt thoại rồi chép đúng ba từ còn thiếu trong đoạn trích (không viết cả câu).",
+      "prompt_en": "…it from the garden office, which opens ____. We'll email the office address with your…",
+      "word_limit": 3,
+      "correct_answers": [
+        "on Monday mornings"
+      ],
+      "correct_option": null,
+      "options": null,
+      "normalization_policy": "casefold_unicode_nfkc_trim_whitespace_and_terminal_punctuation",
+      "play_turn_ids": [
+        "T16"
+      ],
+      "evidence_turn_ids": [
+        "T16"
+      ],
+      "evidence_excerpt_en": "on Monday mornings",
+      "evidence_char_start": 47,
+      "evidence_char_end": 65,
+      "evidence_source_kind": "exact_spoken_transcript_source",
+      "evidence_excerpt_exact_in_turn": true,
+      "explanation_vi": "Cụm cần ghi chính xác là “on Monday mornings”. Nghe lại vị trí này và đối chiếu các âm cuối, từ chức năng và trọng âm.",
+      "origin_question_id": null,
+      "grading_is_ielts_band": false,
+      "novel_question_authored_for_m34": true
+    }
+  ],
+  "evidence": {
+    "source_lesson_id": "S1-EXP-004",
+    "source_question_ids": [
+      "Q01",
+      "Q08"
+    ],
+    "source_turn_ids": [
+      "T04",
+      "T16"
+    ],
+    "source_transcript_sha256_map": {
+      "T04": "47b48b963feb8d8c1d91a283d12e00647b6632d375cc89456b521a8c4e5c8454",
+      "T16": "0b16406d17ffe3dec26522181c4cf68bfc8854f61242ece1cc398434d65a3f85"
+    },
+    "provenance": "original_training_2026_m21_m23_m24",
+    "copied_source_has_human_signoff": false,
+    "source_confidence": "authored_draft_not_independently_validated"
+  },
+  "exposure_rules": {
+    "allowed_source_banks": [
+      "section_practice_training"
+    ],
+    "train_only": true,
+    "never_use_protected_source": true,
+    "never_use_unseen_section_simulation": true,
+    "never_use_mock_before_first_attempt": true,
+    "track_source_audio_id": true,
+    "track_first_exposure": true,
+    "track_replay_count": true,
+    "not_band_estimate": true
+  },
+  "rights_status": "pending_review",
+  "review": {
+    "automated_content_check": "pending",
+    "human_language_review": "pending",
+    "human_audio_listening": "pending",
+    "teacher_signoff": "pending",
+    "timing_verification": "pending",
+    "rights_clearance": "pending",
+    "publish_ready": false
+  },
+  "import_policy": "insert_only_idempotent",
+  "version": "m34.1.0"
+}

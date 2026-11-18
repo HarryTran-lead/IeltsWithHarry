@@ -1,0 +1,742 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "S4-EXP-015",
+  "status": "draft",
+  "level": "L7",
+  "section": 4,
+  "topic": "Bioacoustics and soundscape monitoring",
+  "title": "Listening to the Health of an Ecosystem",
+  "learning_objectives_vi": [
+    "Theo dõi lập luận học thuật: định nghĩa → chứng cứ → hạn chế → kết luận.",
+    "Nghe từ khóa, từ đồng nghĩa và cấu trúc nguyên nhân–kết quả trong bài độc thoại.",
+    "Hoàn thành Note/Table/Summary/Sentence hoặc Flow-chart theo thứ tự audio với giới hạn từ."
+  ],
+  "content_format": "section_practice",
+  "target_skills": [
+    "soundscape_ecology",
+    "academic_lecture",
+    "note_completion",
+    "summary_completion",
+    "signposting",
+    "paraphrase"
+  ],
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Academic lecturer",
+      "accent_requested": "new_zealand",
+      "tts_voice_id": null
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "Ecologists often monitor animals by watching them, but many species are difficult to see in thick forest or at night. Sound offers another source of information. The complete collection of sounds at a location is called a soundscape. It includes animal calls, weather and human activity, so interpreting it requires more than identifying one loud bird.",
+      "translation_vi": "Nhà sinh thái học thường quan sát động vật bằng mắt, nhưng nhiều loài khó thấy trong rừng rậm hay ban đêm. Âm thanh là nguồn thông tin khác. Toàn bộ âm tại một nơi gọi là cảnh quan âm thanh, bao gồm tiếng thú, thời tiết và hoạt động con người. Muốn hiểu cần nhiều hơn việc nhận ra một con chim kêu lớn.",
+      "start_ms": null,
+      "end_ms": null,
+      "paragraph_index": 1,
+      "bank_role": "training",
+      "skill_tags": [
+        "m24",
+        "ielts_part_4_practice",
+        "soundscape_ecology",
+        "academic_lecture",
+        "paraphrase",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "A",
+      "text_en": "Small recording devices can remain in a habitat for weeks and collect audio at intervals. This approach is known as passive monitoring, because researchers do not need to stand beside the recorder for every observation. However, microphones can fail, batteries can run out and heavy rain may mask some species, so equipment checks remain necessary.",
+      "translation_vi": "Máy ghi nhỏ có thể đặt trong sinh cảnh nhiều tuần và thu âm theo chu kỳ. Đó là giám sát thụ động, vì nhà nghiên cứu không cần đứng cạnh từng lần ghi. Tuy nhiên micro hỏng, pin hết và mưa lớn che tiếng loài khác, nên vẫn phải kiểm tra thiết bị.",
+      "start_ms": null,
+      "end_ms": null,
+      "paragraph_index": 2,
+      "bank_role": "training",
+      "skill_tags": [
+        "m24",
+        "ielts_part_4_practice",
+        "soundscape_ecology",
+        "academic_lecture",
+        "paraphrase",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "A",
+      "text_en": "A single animal can produce many calls, and different species may call at similar frequencies. Therefore the number of sounds detected does not directly equal the number of individual animals. Researchers distinguish call frequency from population abundance. An animal that sings repeatedly can dominate a recording without being the most numerous species in the forest.",
+      "translation_vi": "Một con vật có thể kêu nhiều lần, nhiều loài có tần số gần nhau. Vì vậy số tiếng thu được không bằng số cá thể. Nhà nghiên cứu phân biệt tần suất tiếng kêu với mức độ phong phú quần thể. Con hót liên tục có thể chiếm âm thanh mà không phải loài đông nhất.",
+      "start_ms": null,
+      "end_ms": null,
+      "paragraph_index": 3,
+      "bank_role": "training",
+      "skill_tags": [
+        "m24",
+        "ielts_part_4_practice",
+        "soundscape_ecology",
+        "academic_lecture",
+        "paraphrase",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "A",
+      "text_en": "Analysing long recordings manually takes considerable time. Computer programs may transform sound into a visual chart showing how energy changes across frequencies and time. This chart is a spectrogram. It can help researchers locate repeated patterns, but visual similarity does not by itself prove that two calls belong to the same species.",
+      "translation_vi": "Phân tích nhiều giờ audio bằng tay rất mất thời gian. Chương trình chuyển âm thành biểu đồ cho thấy năng lượng theo tần số và thời gian, gọi là ảnh phổ. Nó giúp phát hiện mẫu lặp nhưng hình dạng giống nhau không đủ chứng minh hai tiếng thuộc cùng một loài.",
+      "start_ms": null,
+      "end_ms": null,
+      "paragraph_index": 4,
+      "bank_role": "training",
+      "skill_tags": [
+        "m24",
+        "ielts_part_4_practice",
+        "soundscape_ecology",
+        "academic_lecture",
+        "paraphrase",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "A",
+      "text_en": "Automated classifiers can suggest the species associated with a call. Yet these systems may perform less well when moved to forests with unfamiliar background noise. Scientists therefore measure classification errors by comparing model outputs with expert-reviewed examples. A high score from one recording location should not be assumed to apply everywhere.",
+      "translation_vi": "Mô hình phân loại tự động có thể gợi ý loài tạo tiếng, nhưng hoạt động kém hơn ở rừng có tiếng nền lạ. Nhà khoa học đo lỗi phân loại bằng so kết quả máy với mẫu do chuyên gia duyệt. Điểm cao ở một khu thu không đồng nghĩa đúng mọi nơi.",
+      "start_ms": null,
+      "end_ms": null,
+      "paragraph_index": 5,
+      "bank_role": "training",
+      "skill_tags": [
+        "m24",
+        "ielts_part_4_practice",
+        "soundscape_ecology",
+        "academic_lecture",
+        "paraphrase",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "A",
+      "text_en": "Environmental noise complicates recording. Traffic can mask low-frequency calls, while insects may dominate particular times of day. Researchers document background noise and sometimes repeat recordings at different hours to distinguish an actual change in animal activity from a change in what microphones can detect.",
+      "translation_vi": "Tiếng nền làm ghi âm khó: xe cộ che tiếng trầm, côn trùng lấn ở những giờ nhất định. Nhà nghiên cứu ghi mức ồn nền và đôi khi thu nhiều giờ để tách thay đổi hành vi động vật khỏi thay đổi khả năng micro phát hiện.",
+      "start_ms": null,
+      "end_ms": null,
+      "paragraph_index": 6,
+      "bank_role": "training",
+      "skill_tags": [
+        "m24",
+        "ielts_part_4_practice",
+        "soundscape_ecology",
+        "academic_lecture",
+        "paraphrase",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "Sound data can reveal seasonal patterns, including when certain birds begin breeding calls or when frogs respond to rainfall. To detect these changes, teams maintain a consistent schedule for recording. Otherwise, one survey may appear richer simply because it was conducted at dawn, when more species were vocal.",
+      "translation_vi": "Dữ liệu âm bộc lộ quy luật mùa, như lúc chim gọi giao phối hay ếch phản ứng với mưa. Để thấy thay đổi, nhóm duy trì lịch thu nhất quán; nếu không khảo sát này có vẻ phong phú chỉ vì được thực hiện lúc bình minh khi nhiều loài kêu.",
+      "start_ms": null,
+      "end_ms": null,
+      "paragraph_index": 7,
+      "bank_role": "training",
+      "skill_tags": [
+        "m24",
+        "ielts_part_4_practice",
+        "soundscape_ecology",
+        "academic_lecture",
+        "paraphrase",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "A",
+      "text_en": "The promise of acoustic monitoring is not that microphones can replace every field survey. Sounds help locate areas worth investigating, while physical observations confirm species, habitat condition and other evidence. The strongest conclusions rely on complementary methods. A silent recording may mean an animal is absent, or simply that it was not calling during that period.",
+      "translation_vi": "Giám sát âm không có nghĩa micro thay mọi khảo sát thực địa. Âm giúp xác định nơi nên nghiên cứu, còn quan sát vật lý xác nhận loài, sinh cảnh và chứng cứ khác. Kết luận tốt dựa trên phương pháp bổ trợ. File im lặng có thể do không có con vật hoặc nó chỉ không kêu lúc thu.",
+      "start_ms": null,
+      "end_ms": null,
+      "paragraph_index": 8,
+      "bank_role": "training",
+      "skill_tags": [
+        "m24",
+        "ielts_part_4_practice",
+        "soundscape_ecology",
+        "academic_lecture",
+        "paraphrase",
+        "signposting"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "group_id": "IELTS_NOTE_01_04",
+      "type": "note_completion",
+      "prompt": "All sounds recorded at one location form a ____.",
+      "correct_answers": [
+        "soundscape"
+      ],
+      "evidence_turn_ids": [
+        "T01"
+      ],
+      "evidence_excerpt_en": "The complete collection of sounds at a location is called a soundscape.",
+      "explanation_vi": "Soundscape là toàn bộ môi trường âm, không chỉ tiếng động vật.",
+      "question_tags": [
+        "m24",
+        "ielts_part_4_practice",
+        "soundscape_ecology",
+        "note_completion"
+      ],
+      "scoring_policy": "strict_spoken_words",
+      "bank_role": "training",
+      "answer_provenance": "original_draft_authored_against_transcript",
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS",
+      "review_status": "awaiting_teacher_and_audio_review"
+    },
+    {
+      "question_id": "Q02",
+      "group_id": "IELTS_NOTE_01_04",
+      "type": "note_completion",
+      "prompt": "Recording without an observer present is ____.",
+      "correct_answers": [
+        "passive monitoring"
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "evidence_excerpt_en": "This approach is known as passive monitoring, because researchers do not need to stand beside the recorder for every observation.",
+      "explanation_vi": "Passive monitoring là phương pháp đặt máy tự ghi thay vì quan sát trực tiếp liên tục.",
+      "question_tags": [
+        "m24",
+        "ielts_part_4_practice",
+        "soundscape_ecology",
+        "note_completion"
+      ],
+      "scoring_policy": "strict_spoken_words",
+      "bank_role": "training",
+      "answer_provenance": "original_draft_authored_against_transcript",
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS",
+      "review_status": "awaiting_teacher_and_audio_review"
+    },
+    {
+      "question_id": "Q03",
+      "group_id": "IELTS_NOTE_01_04",
+      "type": "note_completion",
+      "prompt": "Sound counts should not be mistaken for animal numbers because ____ varies.",
+      "correct_answers": [
+        "call frequency"
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "evidence_excerpt_en": "Researchers distinguish call frequency from population abundance.",
+      "explanation_vi": "Call frequency là mức độ thường xuyên cá thể phát tiếng.",
+      "question_tags": [
+        "m24",
+        "ielts_part_4_practice",
+        "soundscape_ecology",
+        "note_completion"
+      ],
+      "scoring_policy": "strict_spoken_words",
+      "bank_role": "training",
+      "answer_provenance": "original_draft_authored_against_transcript",
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS",
+      "review_status": "awaiting_teacher_and_audio_review"
+    },
+    {
+      "question_id": "Q04",
+      "group_id": "IELTS_NOTE_01_04",
+      "type": "note_completion",
+      "prompt": "A time-frequency image of sound is a ____.",
+      "correct_answers": [
+        "spectrogram"
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "evidence_excerpt_en": "This chart is a spectrogram.",
+      "explanation_vi": "Spectrogram là ảnh thể hiện tần số theo thời gian của tín hiệu âm.",
+      "question_tags": [
+        "m24",
+        "ielts_part_4_practice",
+        "soundscape_ecology",
+        "note_completion"
+      ],
+      "scoring_policy": "strict_spoken_words",
+      "bank_role": "training",
+      "answer_provenance": "original_draft_authored_against_transcript",
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS",
+      "review_status": "awaiting_teacher_and_audio_review"
+    },
+    {
+      "question_id": "Q05",
+      "group_id": "IELTS_FLOW_05_06",
+      "type": "flow_chart_completion",
+      "prompt": "Researchers compare automated labels to experts to assess ____.",
+      "correct_answers": [
+        "classification errors"
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "evidence_excerpt_en": "Scientists therefore measure classification errors by comparing model outputs with expert-reviewed examples.",
+      "explanation_vi": "Classification errors là lỗi nhận diện của hệ thống phân loại.",
+      "question_tags": [
+        "m24",
+        "ielts_part_4_practice",
+        "soundscape_ecology",
+        "flow_chart_completion"
+      ],
+      "scoring_policy": "strict_spoken_words",
+      "bank_role": "training",
+      "answer_provenance": "original_draft_authored_against_transcript",
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS",
+      "review_status": "awaiting_teacher_and_audio_review"
+    },
+    {
+      "question_id": "Q06",
+      "group_id": "IELTS_FLOW_05_06",
+      "type": "flow_chart_completion",
+      "prompt": "Acoustic surveys must account for ____.",
+      "correct_answers": [
+        "background noise"
+      ],
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "evidence_excerpt_en": "Researchers document background noise and sometimes repeat recordings at different hours to distinguish an actual change in animal activity from a change in what microphones can detect.",
+      "explanation_vi": "Background noise là tiếng nền làm che khuất tín hiệu quan trọng.",
+      "question_tags": [
+        "m24",
+        "ielts_part_4_practice",
+        "soundscape_ecology",
+        "flow_chart_completion"
+      ],
+      "scoring_policy": "strict_spoken_words",
+      "bank_role": "training",
+      "answer_provenance": "original_draft_authored_against_transcript",
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS",
+      "review_status": "awaiting_teacher_and_audio_review"
+    },
+    {
+      "question_id": "Q07",
+      "group_id": "IELTS_SENTENCE_07_08",
+      "type": "sentence_completion",
+      "prompt": "Comparing seasons requires a ____.",
+      "correct_answers": [
+        "consistent schedule"
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "evidence_excerpt_en": "To detect these changes, teams maintain a consistent schedule for recording.",
+      "explanation_vi": "Consistent schedule giữ thời điểm thu âm tương đương để so công bằng.",
+      "question_tags": [
+        "m24",
+        "ielts_part_4_practice",
+        "soundscape_ecology",
+        "sentence_completion"
+      ],
+      "scoring_policy": "strict_spoken_words",
+      "bank_role": "training",
+      "answer_provenance": "original_draft_authored_against_transcript",
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS",
+      "review_status": "awaiting_teacher_and_audio_review"
+    },
+    {
+      "question_id": "Q08",
+      "group_id": "IELTS_SENTENCE_07_08",
+      "type": "sentence_completion",
+      "prompt": "Reliable ecological conclusions use ____.",
+      "correct_answers": [
+        "complementary methods"
+      ],
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "evidence_excerpt_en": "The strongest conclusions rely on complementary methods.",
+      "explanation_vi": "Complementary methods là kết hợp các cách đo bổ sung nhau.",
+      "question_tags": [
+        "m24",
+        "ielts_part_4_practice",
+        "soundscape_ecology",
+        "sentence_completion"
+      ],
+      "scoring_policy": "strict_spoken_words",
+      "bank_role": "training",
+      "answer_provenance": "original_draft_authored_against_transcript",
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS",
+      "review_status": "awaiting_teacher_and_audio_review"
+    },
+    {
+      "question_id": "D01",
+      "group_id": "SELECTIVE_DICTATION",
+      "type": "dictation",
+      "prompt": "Nghe đoạn trích từ phần 2 và chép lại chính xác câu được phát.",
+      "correct_answers": [
+        "This approach is known as passive monitoring, because researchers do not need to stand beside the recorder for every observation."
+      ],
+      "source_turn_id": "T02",
+      "source_char_start": 90,
+      "source_char_end": 219,
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "evidence_excerpt_en": "This approach is known as passive monitoring, because researchers do not need to stand beside the recorder for every observation.",
+      "explanation_vi": "Luyện nghe chính xác cả cụm từ học thuật và từ chức năng trong một câu hoàn chỉnh.",
+      "scoring_policy": "dictation_token_alignment",
+      "bank_role": "training",
+      "word_limit": null,
+      "review_status": "awaiting_teacher_and_audio_review"
+    },
+    {
+      "question_id": "D02",
+      "group_id": "SELECTIVE_DICTATION",
+      "type": "dictation",
+      "prompt": "Nghe đoạn trích từ phần 4 và chép lại chính xác câu được phát.",
+      "correct_answers": [
+        "Computer programs may transform sound into a visual chart showing how energy changes across frequencies and time. This chart is a spectrogram."
+      ],
+      "source_turn_id": "T04",
+      "source_char_start": 60,
+      "source_char_end": 202,
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "evidence_excerpt_en": "Computer programs may transform sound into a visual chart showing how energy changes across frequencies and time. This chart is a spectrogram.",
+      "explanation_vi": "Luyện nghe chính xác cả cụm từ học thuật và từ chức năng trong một câu hoàn chỉnh.",
+      "scoring_policy": "dictation_token_alignment",
+      "bank_role": "training",
+      "word_limit": null,
+      "review_status": "awaiting_teacher_and_audio_review"
+    },
+    {
+      "question_id": "D03",
+      "group_id": "SELECTIVE_DICTATION",
+      "type": "dictation",
+      "prompt": "Nghe đoạn trích từ phần 6 và chép lại chính xác câu được phát.",
+      "correct_answers": [
+        "Researchers document background noise and sometimes repeat recordings at different hours to distinguish an actual change in animal activity from a change in what microphones can detect."
+      ],
+      "source_turn_id": "T06",
+      "source_char_start": 133,
+      "source_char_end": 318,
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "evidence_excerpt_en": "Researchers document background noise and sometimes repeat recordings at different hours to distinguish an actual change in animal activity from a change in what microphones can detect.",
+      "explanation_vi": "Luyện nghe chính xác cả cụm từ học thuật và từ chức năng trong một câu hoàn chỉnh.",
+      "scoring_policy": "dictation_token_alignment",
+      "bank_role": "training",
+      "word_limit": null,
+      "review_status": "awaiting_teacher_and_audio_review"
+    },
+    {
+      "question_id": "D04",
+      "group_id": "SELECTIVE_DICTATION",
+      "type": "dictation",
+      "prompt": "Nghe đoạn trích từ phần 8 và chép lại chính xác câu được phát.",
+      "correct_answers": [
+        "Sounds help locate areas worth investigating, while physical observations confirm species, habitat condition and other evidence. The strongest conclusions rely on complementary methods."
+      ],
+      "source_turn_id": "T08",
+      "source_char_start": 91,
+      "source_char_end": 276,
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "evidence_excerpt_en": "Sounds help locate areas worth investigating, while physical observations confirm species, habitat condition and other evidence. The strongest conclusions rely on complementary methods.",
+      "explanation_vi": "Luyện nghe chính xác cả cụm từ học thuật và từ chức năng trong một câu hoàn chỉnh.",
+      "scoring_policy": "dictation_token_alignment",
+      "bank_role": "training",
+      "word_limit": null,
+      "review_status": "awaiting_teacher_and_audio_review"
+    },
+    {
+      "question_id": "G01",
+      "group_id": "POST_LISTEN_GAP_FILL",
+      "type": "gap_fill",
+      "prompt": "Nghe và điền phần thiếu: Researchers distinguish ____ from population abundance.",
+      "correct_answers": [
+        "call frequency"
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "evidence_excerpt_en": "Researchers distinguish call frequency from population abundance.",
+      "explanation_vi": "Luyện ghi lại thuật ngữ chính xác sau khi đã hoàn thành lượt làm IELTS.",
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS",
+      "scoring_policy": "strict_spoken_words",
+      "bank_role": "training",
+      "unlock_after_ielts_submission": true,
+      "review_status": "awaiting_teacher_and_audio_review"
+    },
+    {
+      "question_id": "G02",
+      "group_id": "POST_LISTEN_GAP_FILL",
+      "type": "gap_fill",
+      "prompt": "Nghe và điền phần thiếu: To detect these changes, teams maintain a ____ for recording.",
+      "correct_answers": [
+        "consistent schedule"
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "evidence_excerpt_en": "To detect these changes, teams maintain a consistent schedule for recording.",
+      "explanation_vi": "Luyện ghi lại thuật ngữ chính xác sau khi đã hoàn thành lượt làm IELTS.",
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS",
+      "scoring_policy": "strict_spoken_words",
+      "bank_role": "training",
+      "unlock_after_ielts_submission": true,
+      "review_status": "awaiting_teacher_and_audio_review"
+    }
+  ],
+  "vocabulary": [
+    {
+      "vocab_id": "S4-EXP-015-V01",
+      "expression_en": "soundscape",
+      "meaning_vi": "cảnh quan âm thanh",
+      "part_of_speech": "noun",
+      "example_en": "The complete collection of sounds at a location is called a soundscape.",
+      "example_vi": "Nhà sinh thái học thường quan sát động vật bằng mắt, nhưng nhiều loài khó thấy trong rừng rậm hay ban đêm. Âm thanh là nguồn thông tin khác. Toàn bộ âm tại một nơi gọi là cảnh quan âm thanh, bao gồm tiếng thú, thời tiết và hoạt động con người. Muốn hiểu cần nhiều hơn việc nhận ra một con chim kêu lớn.",
+      "evidence_turn_id": "T01",
+      "can_save_to_notebook": true,
+      "requires_human_pos_verification": true
+    },
+    {
+      "vocab_id": "S4-EXP-015-V02",
+      "expression_en": "passive monitoring",
+      "meaning_vi": "giám sát thụ động",
+      "part_of_speech": "noun phrase",
+      "example_en": "This approach is known as passive monitoring, because researchers do not need to stand beside the recorder for every observation.",
+      "example_vi": "Máy ghi nhỏ có thể đặt trong sinh cảnh nhiều tuần và thu âm theo chu kỳ. Đó là giám sát thụ động, vì nhà nghiên cứu không cần đứng cạnh từng lần ghi. Tuy nhiên micro hỏng, pin hết và mưa lớn che tiếng loài khác, nên vẫn phải kiểm tra thiết bị.",
+      "evidence_turn_id": "T02",
+      "can_save_to_notebook": true,
+      "requires_human_pos_verification": true
+    },
+    {
+      "vocab_id": "S4-EXP-015-V03",
+      "expression_en": "call frequency",
+      "meaning_vi": "tần suất tiếng kêu",
+      "part_of_speech": "noun phrase",
+      "example_en": "Researchers distinguish call frequency from population abundance.",
+      "example_vi": "Một con vật có thể kêu nhiều lần, nhiều loài có tần số gần nhau. Vì vậy số tiếng thu được không bằng số cá thể. Nhà nghiên cứu phân biệt tần suất tiếng kêu với mức độ phong phú quần thể. Con hót liên tục có thể chiếm âm thanh mà không phải loài đông nhất.",
+      "evidence_turn_id": "T03",
+      "can_save_to_notebook": true,
+      "requires_human_pos_verification": true
+    },
+    {
+      "vocab_id": "S4-EXP-015-V04",
+      "expression_en": "spectrogram",
+      "meaning_vi": "ảnh phổ âm thanh",
+      "part_of_speech": "noun",
+      "example_en": "This chart is a spectrogram.",
+      "example_vi": "Phân tích nhiều giờ audio bằng tay rất mất thời gian. Chương trình chuyển âm thành biểu đồ cho thấy năng lượng theo tần số và thời gian, gọi là ảnh phổ. Nó giúp phát hiện mẫu lặp nhưng hình dạng giống nhau không đủ chứng minh hai tiếng thuộc cùng một loài.",
+      "evidence_turn_id": "T04",
+      "can_save_to_notebook": true,
+      "requires_human_pos_verification": true
+    },
+    {
+      "vocab_id": "S4-EXP-015-V05",
+      "expression_en": "classification errors",
+      "meaning_vi": "lỗi phân loại",
+      "part_of_speech": "noun phrase",
+      "example_en": "Scientists therefore measure classification errors by comparing model outputs with expert-reviewed examples.",
+      "example_vi": "Mô hình phân loại tự động có thể gợi ý loài tạo tiếng, nhưng hoạt động kém hơn ở rừng có tiếng nền lạ. Nhà khoa học đo lỗi phân loại bằng so kết quả máy với mẫu do chuyên gia duyệt. Điểm cao ở một khu thu không đồng nghĩa đúng mọi nơi.",
+      "evidence_turn_id": "T05",
+      "can_save_to_notebook": true,
+      "requires_human_pos_verification": true
+    },
+    {
+      "vocab_id": "S4-EXP-015-V06",
+      "expression_en": "background noise",
+      "meaning_vi": "tiếng ồn nền",
+      "part_of_speech": "noun phrase",
+      "example_en": "Researchers document background noise and sometimes repeat recordings at different hours to distinguish an actual change in animal activity from a change in what microphones can detect.",
+      "example_vi": "Tiếng nền làm ghi âm khó: xe cộ che tiếng trầm, côn trùng lấn ở những giờ nhất định. Nhà nghiên cứu ghi mức ồn nền và đôi khi thu nhiều giờ để tách thay đổi hành vi động vật khỏi thay đổi khả năng micro phát hiện.",
+      "evidence_turn_id": "T06",
+      "can_save_to_notebook": true,
+      "requires_human_pos_verification": true
+    }
+  ],
+  "audio": {
+    "status": "not_generated",
+    "audio_url": null,
+    "duration_ms": null,
+    "source_text_sha256": "c762ccede322eb3321823ddba18187ecec91221ec403d6f696fcdff1d461b0b4",
+    "generation_strategy": "single_speaker_paragraph_tts_then_seamless_stitch",
+    "audio_asset_id": null,
+    "requires_human_naturalness_review": true,
+    "requires_timing_alignment": true
+  },
+  "learning_flow": {
+    "intro": {
+      "theory_vi": "Part 4 là bài giảng học thuật một người nói. Bài luyện này rèn khả năng theo dõi các ý từ khái niệm đến ví dụ, phương pháp và giới hạn của kết luận. Trước khi nghe, hãy đọc tiêu đề nhóm câu hỏi, dự đoán loại từ và không cố chép mọi chữ.",
+      "tip_vi": "Câu hỏi nghe xuất hiện theo thứ tự bài giảng. Chú ý từ nối như however, therefore, for example, finally; đáp án Completion phải lấy đúng từ đã nghe và không vượt quá giới hạn.",
+      "common_mistakes_vi": [
+        "Ghi từ có nghĩa gần đúng nhưng không xuất hiện trong lời nghe.",
+        "Không chú ý số nhiều hoặc dạng ghép của thuật ngữ.",
+        "Dừng quá lâu ở một câu và bỏ lỡ câu tiếp theo.",
+        "Chọn thông tin trong ví dụ rồi bỏ qua kết luận có điều kiện."
+      ],
+      "worked_examples": [
+        {
+          "audio_example_en": "The first trial used a plastic container, but a glass bottle was chosen for the final experiment.",
+          "question": "Final container: ____",
+          "answer": "glass bottle",
+          "explanation_vi": "Đáp án là phương án cuối; plastic container chỉ là lựa chọn ban đầu."
+        },
+        {
+          "audio_example_en": "The instrument measures pressure. It does not directly measure temperature.",
+          "question": "The instrument records ____.",
+          "answer": "pressure",
+          "explanation_vi": "Hãy lấy chính từ được nói và phân biệt điều được đo với điều không đo."
+        }
+      ]
+    },
+    "steps": [
+      "pre_listening",
+      "first_listen_ielts_questions",
+      "submit_ielts_first_pass",
+      "review_with_evidence",
+      "selective_dictation",
+      "gap_fill",
+      "summary"
+    ],
+    "ielts_question_ids": [
+      "Q01",
+      "Q02",
+      "Q03",
+      "Q04",
+      "Q05",
+      "Q06",
+      "Q07",
+      "Q08"
+    ],
+    "ielts_groups": [
+      {
+        "group_id": "IELTS_NOTE_01_04",
+        "type": "note_completion",
+        "instruction_en": "NO MORE THAN TWO WORDS",
+        "display_mode": "bullet_notes",
+        "group_heading": "Key concepts and evidence",
+        "items": [
+          {
+            "question_id": "Q01",
+            "prompt": "All sounds recorded at one location form a ____."
+          },
+          {
+            "question_id": "Q02",
+            "prompt": "Recording without an observer present is ____."
+          },
+          {
+            "question_id": "Q03",
+            "prompt": "Sound counts should not be mistaken for animal numbers because ____ varies."
+          },
+          {
+            "question_id": "Q04",
+            "prompt": "A time-frequency image of sound is a ____."
+          }
+        ],
+        "question_ids": [
+          "Q01",
+          "Q02",
+          "Q03",
+          "Q04"
+        ]
+      },
+      {
+        "group_id": "IELTS_FLOW_05_06",
+        "type": "flow_chart_completion",
+        "instruction_en": "NO MORE THAN TWO WORDS",
+        "display_mode": "ordered_flow_steps",
+        "group_heading": "Process and assessment steps",
+        "items": [
+          {
+            "question_id": "Q05",
+            "prompt": "Researchers compare automated labels to experts to assess ____."
+          },
+          {
+            "question_id": "Q06",
+            "prompt": "Acoustic surveys must account for ____."
+          }
+        ],
+        "question_ids": [
+          "Q05",
+          "Q06"
+        ]
+      },
+      {
+        "group_id": "IELTS_SENTENCE_07_08",
+        "type": "sentence_completion",
+        "instruction_en": "NO MORE THAN TWO WORDS",
+        "display_mode": "numbered_sentences",
+        "group_heading": "Conclusions from the lecture",
+        "items": [
+          {
+            "question_id": "Q07",
+            "prompt": "Comparing seasons requires a ____."
+          },
+          {
+            "question_id": "Q08",
+            "prompt": "Reliable ecological conclusions use ____."
+          }
+        ],
+        "question_ids": [
+          "Q07",
+          "Q08"
+        ]
+      }
+    ],
+    "recommended_first_listen_play_limit": 1,
+    "practice_replay_allowed_after_first_attempt": true,
+    "word_count": 417,
+    "estimated_audio_minutes_at_135_wpm": 3.09,
+    "exposure_bank": "training",
+    "exam_simulation": false,
+    "mock_test": false,
+    "audio_alignment_required": true,
+    "answer_release_after_submission": true
+  },
+  "qa": {
+    "status": "awaiting_human_content_and_audio_review",
+    "automated_validation": "passed",
+    "human_transcript_approved": false,
+    "human_audio_approved": false,
+    "ielts_exam_equivalent": false,
+    "release_eligible": false
+  },
+  "provenance": {
+    "source_type": "original_authored",
+    "reference_copying": false,
+    "authoring_milestone": "M24",
+    "educational_examples": "Some case studies are illustrative rather than published research",
+    "scientific_fact_check_required": true,
+    "do_not_reuse_in_unseen_assessment_before_exposure_check": true
+  },
+  "release_metadata": {
+    "version": "m24.0.1",
+    "published": false,
+    "needs_audio": true,
+    "requires_human_approval": true,
+    "import_policy": "insert_only",
+    "target_bank": "training"
+  }
+}

@@ -1,0 +1,282 @@
+{
+  "schema_version": "m34.1.0",
+  "activity_id": "ACT-SEC-055",
+  "status": "draft_pending_audio",
+  "module": "dictation",
+  "activity_kind": "section_skill_drill",
+  "title": "Evaluating a Language Learning App — Phân tích quan điểm và đáp án gây nhiễu",
+  "section": 3,
+  "source_lesson_id": "S3-EXP-008",
+  "source_milestone": "M23",
+  "source_zip": "English_Skill_Lab_Dictation_M23_Section_3_Expanded_Practice_20_Full_Content.zip",
+  "reuse_parent_id": "S3-EXP-008",
+  "source_bank": "section_practice_training",
+  "source_audio_id": "section-training/S3-EXP-008/T01",
+  "source_audio_id_type": "logical_source_turn_key_not_physical_audio",
+  "source_segments": [
+    {
+      "source_audio_id": "section-training/S3-EXP-008/T01",
+      "source_audio_id_type": "logical_turn_key_not_verified_physical_audio",
+      "source_lesson_id": "S3-EXP-008",
+      "source_turn_id": "T01",
+      "source_speaker_id": "A",
+      "source_audio_asset_id": null,
+      "source_audio_url": null,
+      "start_ms": null,
+      "end_ms": null,
+      "source_transcript_sha256": "90bc9bab796cfce1c908e5c368f9bdc0a77bcb6ca6f1c4bd59e4a8896da8bda5",
+      "source_bank": "training",
+      "source_is_protected": false,
+      "audio_status": "not_generated",
+      "alignment_status": "pending_verified_turn_offsets"
+    },
+    {
+      "source_audio_id": "section-training/S3-EXP-008/T02",
+      "source_audio_id_type": "logical_turn_key_not_verified_physical_audio",
+      "source_lesson_id": "S3-EXP-008",
+      "source_turn_id": "T02",
+      "source_speaker_id": "B",
+      "source_audio_asset_id": null,
+      "source_audio_url": null,
+      "start_ms": null,
+      "end_ms": null,
+      "source_transcript_sha256": "8d5b5803d117a8a39f30c2bbece766f6055f283998e85bfe21f40b42f4f8fb68",
+      "source_bank": "training",
+      "source_is_protected": false,
+      "audio_status": "not_generated",
+      "alignment_status": "pending_verified_turn_offsets"
+    },
+    {
+      "source_audio_id": "section-training/S3-EXP-008/T07",
+      "source_audio_id_type": "logical_turn_key_not_verified_physical_audio",
+      "source_lesson_id": "S3-EXP-008",
+      "source_turn_id": "T07",
+      "source_speaker_id": "A",
+      "source_audio_asset_id": null,
+      "source_audio_url": null,
+      "start_ms": null,
+      "end_ms": null,
+      "source_transcript_sha256": "c42f3ef852a446e3f304efce958d4ea8e691271a903fe1e4947a3825c388e6ab",
+      "source_bank": "training",
+      "source_is_protected": false,
+      "audio_status": "not_generated",
+      "alignment_status": "pending_verified_turn_offsets"
+    },
+    {
+      "source_audio_id": "section-training/S3-EXP-008/T08",
+      "source_audio_id_type": "logical_turn_key_not_verified_physical_audio",
+      "source_lesson_id": "S3-EXP-008",
+      "source_turn_id": "T08",
+      "source_speaker_id": "B",
+      "source_audio_asset_id": null,
+      "source_audio_url": null,
+      "start_ms": null,
+      "end_ms": null,
+      "source_transcript_sha256": "ea3d5f277ea515d19b45c35ddfe0983919a35ebdd5602dad3cac173b27506b63",
+      "source_bank": "training",
+      "source_is_protected": false,
+      "audio_status": "not_generated",
+      "alignment_status": "pending_verified_turn_offsets"
+    }
+  ],
+  "start_ms": null,
+  "end_ms": null,
+  "alignment_policy": "verified_turn_level_audio_or_measured_offsets_only",
+  "clip_audio_status": "not_generated",
+  "topic": "Educational technology evaluation",
+  "drill_skill": "opinion_distractor",
+  "skill_tags": [
+    "section_practice",
+    "listening",
+    "reuse",
+    "section_3",
+    "opinion_tracking",
+    "contradiction",
+    "mcq_distractor"
+  ],
+  "teacher_notes": {
+    "goal": "Theo dõi phương án ban đầu, phản biện và kết luận trong thảo luận học thuật.",
+    "theory": "Section 3 có thể nhắc cả ba đáp án ở các thời điểm khác nhau. Chỉ chọn đáp án phù hợp với câu hỏi và quan điểm cuối cùng.",
+    "tip": "Nghe các dấu hiệu bác bỏ như impractical, however, instead, the better option, decided.",
+    "mistakes": [
+      "Chọn giải pháp được nhắc tới nhưng bị giáo viên phản đối.",
+      "Nhầm dự đoán của sinh viên với quyết định cuối cùng của nhóm."
+    ],
+    "worked_example": "Ví dụ ngoài đề: “An online survey is quick; however, interviews would explain the reasons.” → Chọn interviews nếu hỏi phương pháp được khuyến nghị."
+  },
+  "playback": {
+    "first_listen_max_replays": 1,
+    "guided_replay_max_replays": 3,
+    "source_turn_order": [
+      "T01",
+      "T02",
+      "T07",
+      "T08"
+    ],
+    "transcript_hidden_until_submit": true,
+    "answers_hidden_until_submit": true,
+    "playback_speed_default": 1.0,
+    "prelisten_question_reading": true,
+    "asset_concatenation": "respect_speaker_turns; never use timestamps until aligned"
+  },
+  "questions": [
+    {
+      "question_id": "ACT-SEC-055-Q1",
+      "phase": "first_listen",
+      "origin_question_id": "Q01",
+      "origin_question_type": "mcq",
+      "type": "single_choice",
+      "prompt_en": "Why are the app’s badge statistics insufficient?",
+      "prompt_vi": "Nghe phần được chỉ định và trả lời câu hỏi theo thông tin thực sự được phát. Đừng chọn phương án được nhắc trước khi người nói sửa ý.",
+      "options": [
+        {
+          "value": "They contain too many spelling errors",
+          "label": "They contain too many spelling errors"
+        },
+        {
+          "value": "They do not demonstrate learning outside the app",
+          "label": "They do not demonstrate learning outside the app"
+        },
+        {
+          "value": "They do not identify the app’s developer",
+          "label": "They do not identify the app’s developer"
+        }
+      ],
+      "correct_answers": [
+        "They do not demonstrate learning outside the app"
+      ],
+      "correct_option": "B",
+      "word_limit": null,
+      "scoring_policy": "strict",
+      "play_turn_ids": [
+        "T01",
+        "T02"
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "evidence_excerpt_en": "The company sent us statistics about daily logins and badges. I thought those figures proved the app was effective, but they tell us little about what users can do outside the application.",
+      "evidence_excerpt_exact_in_turn": true,
+      "evidence_source_kind": "authored_source_annotated",
+      "explanation_vi": "Lượt đăng nhập và huy hiệu không chứng minh năng lực thực.",
+      "grading_is_ielts_band": false
+    },
+    {
+      "question_id": "ACT-SEC-055-Q2",
+      "phase": "targeted_replay",
+      "origin_question_id": "Q04",
+      "origin_question_type": "mcq",
+      "type": "single_choice",
+      "prompt_en": "How should students be recruited for the trial?",
+      "prompt_vi": "Nghe phần được chỉ định và trả lời câu hỏi theo thông tin thực sự được phát. Đừng chọn phương án được nhắc trước khi người nói sửa ý.",
+      "options": [
+        {
+          "value": "Invite only students with badges",
+          "label": "Invite only students with badges"
+        },
+        {
+          "value": "Invite a whole seminar and record refusals",
+          "label": "Invite a whole seminar and record refusals"
+        },
+        {
+          "value": "Select only the top app users",
+          "label": "Select only the top app users"
+        }
+      ],
+      "correct_answers": [
+        "Invite a whole seminar and record refusals"
+      ],
+      "correct_option": "B",
+      "word_limit": null,
+      "scoring_policy": "strict",
+      "play_turn_ids": [
+        "T07",
+        "T08"
+      ],
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "evidence_excerpt_en": "I suggest a two-week trial with first-year students, but we should avoid selecting only the most enthusiastic volunteers. We could invite the entire seminar group and then report who declined.",
+      "evidence_excerpt_exact_in_turn": true,
+      "evidence_source_kind": "authored_source_annotated",
+      "explanation_vi": "Mời cả lớp và báo số từ chối để giảm thiên lệch tự chọn.",
+      "grading_is_ielts_band": false
+    },
+    {
+      "question_id": "ACT-SEC-055-Q3",
+      "phase": "focused_dictation_repair",
+      "type": "focused_dictation",
+      "prompt_vi": "Nghe lại lượt thoại rồi chép đúng ba từ còn thiếu trong đoạn trích (không viết cả câu).",
+      "prompt_en": "…most enthusiastic volunteers. We could invite the ____ and then report who declined…",
+      "word_limit": 3,
+      "correct_answers": [
+        "entire seminar group"
+      ],
+      "correct_option": null,
+      "options": null,
+      "normalization_policy": "casefold_unicode_nfkc_trim_whitespace_and_terminal_punctuation",
+      "play_turn_ids": [
+        "T08"
+      ],
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "evidence_excerpt_en": "entire seminar group",
+      "evidence_char_start": 142,
+      "evidence_char_end": 162,
+      "evidence_source_kind": "exact_spoken_transcript_source",
+      "evidence_excerpt_exact_in_turn": true,
+      "explanation_vi": "Cụm cần ghi chính xác là “entire seminar group”. Nghe lại vị trí này và đối chiếu các âm cuối, từ chức năng và trọng âm.",
+      "origin_question_id": null,
+      "grading_is_ielts_band": false,
+      "novel_question_authored_for_m34": true
+    }
+  ],
+  "evidence": {
+    "source_lesson_id": "S3-EXP-008",
+    "source_question_ids": [
+      "Q01",
+      "Q04"
+    ],
+    "source_turn_ids": [
+      "T01",
+      "T02",
+      "T07",
+      "T08"
+    ],
+    "source_transcript_sha256_map": {
+      "T01": "90bc9bab796cfce1c908e5c368f9bdc0a77bcb6ca6f1c4bd59e4a8896da8bda5",
+      "T02": "8d5b5803d117a8a39f30c2bbece766f6055f283998e85bfe21f40b42f4f8fb68",
+      "T07": "c42f3ef852a446e3f304efce958d4ea8e691271a903fe1e4947a3825c388e6ab",
+      "T08": "ea3d5f277ea515d19b45c35ddfe0983919a35ebdd5602dad3cac173b27506b63"
+    },
+    "provenance": "original_training_2026_m21_m23_m24",
+    "copied_source_has_human_signoff": false,
+    "source_confidence": "authored_draft_not_independently_validated"
+  },
+  "exposure_rules": {
+    "allowed_source_banks": [
+      "section_practice_training"
+    ],
+    "train_only": true,
+    "never_use_protected_source": true,
+    "never_use_unseen_section_simulation": true,
+    "never_use_mock_before_first_attempt": true,
+    "track_source_audio_id": true,
+    "track_first_exposure": true,
+    "track_replay_count": true,
+    "not_band_estimate": true
+  },
+  "rights_status": "pending_review",
+  "review": {
+    "automated_content_check": "pending",
+    "human_language_review": "pending",
+    "human_audio_listening": "pending",
+    "teacher_signoff": "pending",
+    "timing_verification": "pending",
+    "rights_clearance": "pending",
+    "publish_ready": false
+  },
+  "import_policy": "insert_only_idempotent",
+  "version": "m34.1.0"
+}

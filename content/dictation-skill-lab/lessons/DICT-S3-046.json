@@ -1,0 +1,421 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "DICT-S3-046",
+  "status": "draft",
+  "level": "L6",
+  "section": 3,
+  "topic": "Group Projects",
+  "title": "Group Projects – Ethical Oral-History Map",
+  "learning_objectives_vi": [
+    "Theo dõi ba nhân vật thảo luận và phân biệt quan điểm ban đầu với quyết định sau cùng.",
+    "Nhận biết lập luận, điều kiện, hạn chế nghiên cứu và diễn đạt lại (paraphrase) trong Section 3.",
+    "Nghe chép đúng phát ngôn then chốt và truy xuất bằng chứng theo lượt thoại."
+  ],
+  "content_format": "section_practice",
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Maya – academic project discussion participant",
+      "tts_voice_id": null,
+      "accent_requested": "british"
+    },
+    {
+      "speaker_id": "B",
+      "role": "Oliver – academic project discussion participant",
+      "tts_voice_id": null,
+      "accent_requested": "british"
+    },
+    {
+      "speaker_id": "C",
+      "role": "Nina – academic project discussion participant",
+      "tts_voice_id": null,
+      "accent_requested": "british"
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "Our oral-history group wants to build an interactive map showing where former factory workers lived. The interviews are moving, but some people mention streets that still contain their families' homes.",
+      "translation_vi": "Nhóm lịch sử truyền miệng muốn làm bản đồ tương tác về nơi công nhân nhà máy cũ từng sống. Phỏng vấn rất xúc động, nhưng vài người nêu những con đường hiện vẫn có nhà của gia đình họ.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "multi_speaker",
+        "l6"
+      ]
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "B",
+      "text_en": "Even if the interviews were recorded with permission, we shouldn't assume permission includes plotting precise home addresses. Location data can identify someone without displaying their name.",
+      "translation_vi": "Ngay cả khi phỏng vấn được ghi với sự đồng ý, ta không thể mặc định được phép đặt địa chỉ nhà chính xác lên bản đồ. Dữ liệu vị trí có thể nhận diện người dù không hiện tên.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "multi_speaker",
+        "l6"
+      ]
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "C",
+      "text_en": "Perhaps we can show neighbourhood-level patterns rather than individual houses. That would still reveal how employment changed the area without exposing specific households to unexpected attention.",
+      "translation_vi": "Có lẽ ta nên thể hiện xu hướng theo khu phố thay vì từng căn nhà. Như thế vẫn cho thấy việc làm thay đổi khu vực ra sao mà không khiến hộ gia đình bị chú ý ngoài ý muốn.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "multi_speaker",
+        "l6"
+      ]
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "A",
+      "text_en": "The historian also asked whether our audio clips will have captions. One interviewee speaks quietly and another switches languages halfway through, so automatic captions alone could misrepresent their words.",
+      "translation_vi": "Nhà sử học còn hỏi clip âm thanh có phụ đề không. Một người nói rất nhỏ, người khác đổi ngôn ngữ giữa chừng, nên phụ đề tự động có thể ghi sai lời họ.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "multi_speaker",
+        "l6"
+      ]
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "B",
+      "text_en": "We'll need bilingual transcripts checked by someone who understands both languages. However, that doesn't mean we should translate every expression into a neat equivalent and remove the speaker's hesitation.",
+      "translation_vi": "Ta cần transcript song ngữ được người hiểu cả hai ngôn ngữ kiểm tra. Nhưng không vì thế mà dịch mọi cách nói thành câu gọn gàng rồi xóa sự ngập ngừng của người nói.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "multi_speaker",
+        "l6"
+      ]
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "C",
+      "text_en": "I suggest using two layers: a public map with broad districts and a separate archive containing full interviews accessible only under the consent agreements. The public layer can link to approved extracts.",
+      "translation_vi": "Mình đề nghị hai lớp: bản đồ công khai chỉ có khu vực rộng và kho lưu trữ riêng chứa phỏng vấn đầy đủ, truy cập theo thỏa thuận đồng ý. Lớp công khai liên kết tới trích đoạn được phép.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "multi_speaker",
+        "l6"
+      ]
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "That approach would also solve the design problem. Visitors can explore changes over decades, while researchers who have legitimate access can examine the detailed sources without our interface displaying private information.",
+      "translation_vi": "Cách đó còn giải quyết vấn đề thiết kế. Khách có thể tìm hiểu thay đổi qua nhiều thập kỷ, còn nhà nghiên cứu có quyền truy cập phù hợp xem nguồn chi tiết mà giao diện không lộ dữ liệu riêng.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "multi_speaker",
+        "l6"
+      ]
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "B",
+      "text_en": "Before launch, let's ask two former workers and one accessibility adviser to review the map. We should pay them, and any objections must be recorded rather than dismissed as minor design preferences.",
+      "translation_vi": "Trước khi ra mắt, hãy mời hai cựu công nhân và một cố vấn tiếp cận kiểm bản đồ. Ta nên trả công và ghi nhận mọi phản đối thay vì coi đó chỉ là sở thích thiết kế nhỏ.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "multi_speaker",
+        "l6"
+      ]
+    },
+    {
+      "turn_id": "T09",
+      "speaker_id": "C",
+      "text_en": "Agreed. No exact addresses, manually checked captions and a consent-controlled archive. We will present the map as an interpretation of selected interviews, not a comprehensive record of every worker's experience.",
+      "translation_vi": "Đồng ý. Không có địa chỉ chính xác, phụ đề kiểm thủ công và kho theo quyền đồng ý. Ta giới thiệu bản đồ là cách diễn giải các phỏng vấn được chọn, không phải hồ sơ toàn diện của mọi công nhân.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "multi_speaker",
+        "l6"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "type": "mcq",
+      "prompt": "Why is plotting individual home addresses potentially inappropriate?",
+      "correct_answers": [
+        "Location details may reveal people's identities"
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Tại T02, Oliver nói: “Ngay cả khi phỏng vấn được ghi với sự đồng ý, ta không thể mặc định được phép đặt địa chỉ nhà chính xác lên bản đồ. Dữ liệu vị trí có thể nhận diện người dù không hiện tên.” Đáp án “Location details may reveal people's identities” diễn đạt đúng ý được nêu. Các phương án còn lại không phù hợp với bằng chứng; chú ý ý kiến bị sửa và tính điều kiện.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "section_3",
+        "ielts_practice",
+        "inference",
+        "paraphrase"
+      ],
+      "options": [
+        "The historical periods might be difficult to compare",
+        "Location details may reveal people's identities",
+        "Automatic captions sometimes mistranscribe speech"
+      ]
+    },
+    {
+      "question_id": "Q02",
+      "type": "note_completion",
+      "prompt": "The public map should show ____ patterns instead of individual houses.",
+      "correct_answers": [
+        "neighbourhood-level"
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Bằng chứng T03: “Có lẽ ta nên thể hiện xu hướng theo khu phố thay vì từng căn nhà. Như thế vẫn cho thấy việc làm thay đổi khu vực ra sao mà không khiến hộ gia đình bị chú ý ngoài ý muốn.” Cụm cần điền nghe đúng nguyên văn là “neighbourhood-level”.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_3",
+        "ielts_practice",
+        "detail",
+        "note_completion"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q03",
+      "type": "matching",
+      "prompt": "Which speaker argues against polishing away a speaker’s hesitation in translation?",
+      "correct_answers": [
+        "Speaker B"
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Người nói Oliver (Speaker B) đưa ra ý này tại T05: “Ta cần transcript song ngữ được người hiểu cả hai ngôn ngữ kiểm tra. Nhưng không vì thế mà dịch mọi cách nói thành câu gọn gàng rồi xóa sự ngập ngừng của người nói.”",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "section_3",
+        "ielts_practice",
+        "speaker_attribution"
+      ],
+      "options": [
+        "Speaker A",
+        "Speaker B",
+        "Speaker C"
+      ]
+    },
+    {
+      "question_id": "Q04",
+      "type": "mcq",
+      "prompt": "Why do the students favour separate public and restricted layers?",
+      "correct_answers": [
+        "To protect detailed interview data while showing approved extracts"
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "Tại T07, Maya nói: “Cách đó còn giải quyết vấn đề thiết kế. Khách có thể tìm hiểu thay đổi qua nhiều thập kỷ, còn nhà nghiên cứu có quyền truy cập phù hợp xem nguồn chi tiết mà giao diện không lộ dữ liệu riêng.” Đáp án “To protect detailed interview data while showing approved extracts” diễn đạt đúng ý được nêu. Các phương án còn lại không phù hợp với bằng chứng; chú ý ý kiến bị sửa và tính điều kiện.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "section_3",
+        "ielts_practice",
+        "inference",
+        "paraphrase"
+      ],
+      "options": [
+        "To avoid checking the translation of any clips",
+        "To protect detailed interview data while showing approved extracts",
+        "To allow all interview recordings to be freely downloaded"
+      ]
+    },
+    {
+      "question_id": "Q05",
+      "type": "note_completion",
+      "prompt": "The team plans to invite one ____ adviser to review the map.",
+      "correct_answers": [
+        "accessibility"
+      ],
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "explanation_vi": "Bằng chứng T08: “Trước khi ra mắt, hãy mời hai cựu công nhân và một cố vấn tiếp cận kiểm bản đồ. Ta nên trả công và ghi nhận mọi phản đối thay vì coi đó chỉ là sở thích thiết kế nhỏ.” Cụm cần điền nghe đúng nguyên văn là “accessibility”.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_3",
+        "ielts_practice",
+        "detail",
+        "note_completion"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q06",
+      "type": "short_answer",
+      "prompt": "What kind of addresses will not be displayed?",
+      "correct_answers": [
+        "exact addresses"
+      ],
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "explanation_vi": "Bằng chứng T09: “Đồng ý. Không có địa chỉ chính xác, phụ đề kiểm thủ công và kho theo quyền đồng ý. Ta giới thiệu bản đồ là cách diễn giải các phỏng vấn được chọn, không phải hồ sơ toàn diện của mọi công nhân.” Trả lời ngắn theo chi tiết “exact addresses”.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_3",
+        "ielts_practice",
+        "detail",
+        "short_answer"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "D01",
+      "type": "dictation",
+      "prompt": "Nghe T04 (Speaker A) rồi chép chính xác câu nói tiếng Anh.",
+      "correct_answers": [
+        "The historian also asked whether our audio clips will have captions. One interviewee speaks quietly and another switches languages halfway through, so automatic captions alone could misrepresent their words."
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Câu gốc: “The historian also asked whether our audio clips will have captions. One interviewee speaks quietly and another switches languages halfway through, so automatic captions alone could misrepresent their words.”\nBản dịch: Nhà sử học còn hỏi clip âm thanh có phụ đề không. Một người nói rất nhỏ, người khác đổi ngôn ngữ giữa chừng, nên phụ đề tự động có thể ghi sai lời họ.\nChú ý âm yếu, nối âm và ý được sửa trong đoạn.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_3",
+        "dictation",
+        "exact_transcript"
+      ]
+    },
+    {
+      "question_id": "D02",
+      "type": "dictation",
+      "prompt": "Nghe T07 (Speaker A) rồi chép chính xác câu nói tiếng Anh.",
+      "correct_answers": [
+        "That approach would also solve the design problem. Visitors can explore changes over decades, while researchers who have legitimate access can examine the detailed sources without our interface displaying private information."
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "Câu gốc: “That approach would also solve the design problem. Visitors can explore changes over decades, while researchers who have legitimate access can examine the detailed sources without our interface displaying private information.”\nBản dịch: Cách đó còn giải quyết vấn đề thiết kế. Khách có thể tìm hiểu thay đổi qua nhiều thập kỷ, còn nhà nghiên cứu có quyền truy cập phù hợp xem nguồn chi tiết mà giao diện không lộ dữ liệu riêng.\nChú ý âm yếu, nối âm và ý được sửa trong đoạn.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_3",
+        "dictation",
+        "exact_transcript"
+      ]
+    },
+    {
+      "question_id": "G01",
+      "type": "gap_fill",
+      "prompt": "Nghe T01 rồi điền đúng phần thiếu: Our oral-history group wants to build an ____ showing where former factory workers lived. The interviews are moving, but some people mention streets that still contain their families' homes.",
+      "correct_answers": [
+        "interactive map"
+      ],
+      "evidence_turn_ids": [
+        "T01"
+      ],
+      "explanation_vi": "Đáp án “interactive map” nghĩa là bản đồ tương tác. Đối chiếu: “Our oral-history group wants to build an interactive map showing where former factory workers lived. The interviews are moving, but some people mention streets that still contain their families' homes.”",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_3",
+        "gap_fill",
+        "vocabulary_in_context"
+      ]
+    }
+  ],
+  "vocabulary": [
+    {
+      "term": "interactive map",
+      "pos": "n. phr.",
+      "meaning_vi": "bản đồ tương tác",
+      "example_en": "Our oral-history group wants to build an interactive map showing where former factory workers lived. The interviews are moving, but some people mention streets that still contain their families' homes.",
+      "example_vi": "Nhóm lịch sử truyền miệng muốn làm bản đồ tương tác về nơi công nhân nhà máy cũ từng sống. Phỏng vấn rất xúc động, nhưng vài người nêu những con đường hiện vẫn có nhà của gia đình họ.",
+      "source_turn_id": "T01"
+    },
+    {
+      "term": "precise home addresses",
+      "pos": "n. phr.",
+      "meaning_vi": "địa chỉ nhà chính xác",
+      "example_en": "Even if the interviews were recorded with permission, we shouldn't assume permission includes plotting precise home addresses. Location data can identify someone without displaying their name.",
+      "example_vi": "Ngay cả khi phỏng vấn được ghi với sự đồng ý, ta không thể mặc định được phép đặt địa chỉ nhà chính xác lên bản đồ. Dữ liệu vị trí có thể nhận diện người dù không hiện tên.",
+      "source_turn_id": "T02"
+    },
+    {
+      "term": "bilingual transcripts",
+      "pos": "n. phr.",
+      "meaning_vi": "bản ghi lời nói song ngữ",
+      "example_en": "We'll need bilingual transcripts checked by someone who understands both languages. However, that doesn't mean we should translate every expression into a neat equivalent and remove the speaker's hesitation.",
+      "example_vi": "Ta cần transcript song ngữ được người hiểu cả hai ngôn ngữ kiểm tra. Nhưng không vì thế mà dịch mọi cách nói thành câu gọn gàng rồi xóa sự ngập ngừng của người nói.",
+      "source_turn_id": "T05"
+    },
+    {
+      "term": "consent agreements",
+      "pos": "n. phr.",
+      "meaning_vi": "thỏa thuận đồng ý",
+      "example_en": "I suggest using two layers: a public map with broad districts and a separate archive containing full interviews accessible only under the consent agreements. The public layer can link to approved extracts.",
+      "example_vi": "Mình đề nghị hai lớp: bản đồ công khai chỉ có khu vực rộng và kho lưu trữ riêng chứa phỏng vấn đầy đủ, truy cập theo thỏa thuận đồng ý. Lớp công khai liên kết tới trích đoạn được phép.",
+      "source_turn_id": "T06"
+    }
+  ],
+  "audio": {
+    "status": "not_generated",
+    "url": null,
+    "duration_ms": null,
+    "model": null,
+    "provider": null,
+    "voice_config": null,
+    "source_transcript_hash": "c0becbc74442f1030185e80d34fd55f3980b63791a480bbf96d1733d5dcf6b92",
+    "audio_sha256": null,
+    "format": null
+  },
+  "qa": {
+    "content_reviewed": false,
+    "answers_verified": false,
+    "audio_verified": false,
+    "rights_cleared": false,
+    "duplicate_reviewed": false,
+    "notes": [
+      "Original AI-assisted draft, awaiting expert pedagogical review and option-disambiguation review.",
+      "Audio not produced: all segment times are null. TTS terms and distribution rights must be checked.",
+      "Practice lesson only; not an official/full IELTS Listening Part 3 exam or a calibrated band test.",
+      "M16.2: automated edits are provisional; IELTS teacher final signoff, audio and rights clearance pending."
+    ]
+  },
+  "provenance": {
+    "content_origin": "original_ai_assisted",
+    "source_urls": [],
+    "source_rights_note": "Original scripts; verify TTS service/voice production and distribution rights before publishing to students, including minors.",
+    "reviewer": null
+  },
+  "release_metadata": {
+    "published_at": null,
+    "version": 1
+  }
+}

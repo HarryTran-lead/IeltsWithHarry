@@ -1,0 +1,421 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "DICT-S3-041",
+  "status": "draft",
+  "level": "L6",
+  "section": 3,
+  "topic": "Data Collection",
+  "title": "Data Collection – Bat Activity Sensor Study",
+  "learning_objectives_vi": [
+    "Theo dõi ba nhân vật thảo luận và phân biệt quan điểm ban đầu với quyết định sau cùng.",
+    "Nhận biết lập luận, điều kiện, hạn chế nghiên cứu và diễn đạt lại (paraphrase) trong Section 3.",
+    "Nghe chép đúng phát ngôn then chốt và truy xuất bằng chứng theo lượt thoại."
+  ],
+  "content_format": "section_practice",
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Olivia – academic project discussion participant",
+      "tts_voice_id": null,
+      "accent_requested": "american"
+    },
+    {
+      "speaker_id": "B",
+      "role": "Finn – academic project discussion participant",
+      "tts_voice_id": null,
+      "accent_requested": "american"
+    },
+    {
+      "speaker_id": "C",
+      "role": "Mira – academic project discussion participant",
+      "tts_voice_id": null,
+      "accent_requested": "american"
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "For our urban ecology project, we planned to compare bat activity in three parks using ultrasonic recorders. The devices were borrowed from different departments, so their sensitivity settings aren't identical.",
+      "translation_vi": "Đề tài sinh thái đô thị định so hoạt động dơi ở ba công viên bằng máy ghi siêu âm. Thiết bị mượn từ các khoa khác nhau nên độ nhạy cài đặt không giống nhau.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "multi_speaker",
+        "l6"
+      ]
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "B",
+      "text_en": "That could make one park appear to have more bats simply because its recorder detects fainter calls. We need a calibration check before comparing the number of recordings.",
+      "translation_vi": "Điều đó có thể khiến một công viên có vẻ nhiều dơi hơn chỉ vì máy bắt tiếng yếu tốt hơn. Ta cần kiểm tra hiệu chuẩn trước khi so số bản ghi.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "multi_speaker",
+        "l6"
+      ]
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "C",
+      "text_en": "The ecology lab has a reference speaker that emits standard ultrasonic signals. We can test each recorder at the same distance, although background noise at the sites will still vary.",
+      "translation_vi": "Phòng thí nghiệm sinh thái có loa chuẩn phát tín hiệu siêu âm. Ta thử mỗi máy ở cùng khoảng cách, dù tiếng ồn nền tại các điểm vẫn khác nhau.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "multi_speaker",
+        "l6"
+      ]
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "A",
+      "text_en": "I also noticed that one memory card filled up after midnight last Tuesday. If we count only completed recordings, that park would have an artificially low activity score.",
+      "translation_vi": "Mình còn thấy thẻ nhớ của một máy đầy sau nửa đêm thứ Ba trước. Nếu chỉ đếm bản ghi hoàn chỉnh, công viên đó sẽ có điểm hoạt động thấp giả tạo.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "multi_speaker",
+        "l6"
+      ]
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "B",
+      "text_en": "Then our dataset must include recording hours as well as call counts. We should report calls per valid recording hour, not raw totals, and note periods when equipment failed.",
+      "translation_vi": "Vậy bộ dữ liệu phải có số giờ ghi cùng số tiếng kêu. Ta báo số tiếng mỗi giờ ghi hợp lệ, không phải tổng thô, và ghi rõ lúc thiết bị hỏng.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "multi_speaker",
+        "l6"
+      ]
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "C",
+      "text_en": "Weather matters too. Wind and rain can obscure the signals. Let's attach weather-station records to each session so that unusual nights aren't mistaken for ecological changes.",
+      "translation_vi": "Thời tiết cũng quan trọng. Gió và mưa có thể che tín hiệu. Hãy gắn dữ liệu trạm thời tiết vào mỗi phiên để không nhầm đêm bất thường thành thay đổi sinh thái.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "multi_speaker",
+        "l6"
+      ]
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "Should we identify species from the audio automatically? The software produces labels, but I read that closely related bat species may have overlapping call frequencies.",
+      "translation_vi": "Có nên tự động nhận diện loài từ audio không? Phần mềm cho nhãn, nhưng mình đọc rằng các loài dơi gần nhau có tần số tiếng kêu chồng lấn.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "multi_speaker",
+        "l6"
+      ]
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "B",
+      "text_en": "Use the labels as provisional categories and have a specialist review uncertain samples. Our principal outcome can be overall activity, which is more defensible than a precise species list.",
+      "translation_vi": "Hãy coi nhãn là nhóm tạm và nhờ chuyên gia kiểm những mẫu không chắc. Kết quả chính có thể là tổng hoạt động, dễ bảo vệ hơn danh sách loài rất chi tiết.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "multi_speaker",
+        "l6"
+      ]
+    },
+    {
+      "turn_id": "T09",
+      "speaker_id": "C",
+      "text_en": "So we'll calibrate all recorders, normalize counts per valid hour and flag uncertain species identifications. That makes the comparison fairer, even if it gives us fewer impressive numbers.",
+      "translation_vi": "Vậy ta hiệu chuẩn mọi máy, chuẩn hóa số đếm theo giờ hợp lệ và đánh dấu nhận diện loài không chắc. So sánh sẽ công bằng hơn dù số liệu bớt ấn tượng.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "multi_speaker",
+        "l6"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "type": "mcq",
+      "prompt": "Why might the bat counts from the three parks be misleading?",
+      "correct_answers": [
+        "The recorders have unequal detection sensitivity"
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Tại T02, Finn nói: “Điều đó có thể khiến một công viên có vẻ nhiều dơi hơn chỉ vì máy bắt tiếng yếu tốt hơn. Ta cần kiểm tra hiệu chuẩn trước khi so số bản ghi.” Đáp án “The recorders have unequal detection sensitivity” diễn đạt đúng ý được nêu. Các phương án còn lại không phù hợp với bằng chứng; chú ý ý kiến bị sửa và tính điều kiện.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "section_3",
+        "ielts_practice",
+        "inference",
+        "paraphrase"
+      ],
+      "options": [
+        "The recorders have unequal detection sensitivity",
+        "Weather differs between the parks",
+        "One memory card stopped collecting overnight"
+      ]
+    },
+    {
+      "question_id": "Q02",
+      "type": "note_completion",
+      "prompt": "The laboratory has a reference speaker emitting ____ signals.",
+      "correct_answers": [
+        "standard ultrasonic"
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Bằng chứng T03: “Phòng thí nghiệm sinh thái có loa chuẩn phát tín hiệu siêu âm. Ta thử mỗi máy ở cùng khoảng cách, dù tiếng ồn nền tại các điểm vẫn khác nhau.” Cụm cần điền nghe đúng nguyên văn là “standard ultrasonic”.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_3",
+        "ielts_practice",
+        "detail",
+        "note_completion"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q03",
+      "type": "matching",
+      "prompt": "Which speaker proposes calls per valid recording hour?",
+      "correct_answers": [
+        "Speaker B"
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Người nói Finn (Speaker B) đưa ra ý này tại T05: “Vậy bộ dữ liệu phải có số giờ ghi cùng số tiếng kêu. Ta báo số tiếng mỗi giờ ghi hợp lệ, không phải tổng thô, và ghi rõ lúc thiết bị hỏng.”",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "section_3",
+        "ielts_practice",
+        "speaker_attribution"
+      ],
+      "options": [
+        "Speaker A",
+        "Speaker B",
+        "Speaker C"
+      ]
+    },
+    {
+      "question_id": "Q04",
+      "type": "mcq",
+      "prompt": "Why are the automated bat-species labels uncertain?",
+      "correct_answers": [
+        "Related species can have overlapping call frequencies"
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "Tại T07, Olivia nói: “Có nên tự động nhận diện loài từ audio không? Phần mềm cho nhãn, nhưng mình đọc rằng các loài dơi gần nhau có tần số tiếng kêu chồng lấn.” Đáp án “Related species can have overlapping call frequencies” diễn đạt đúng ý được nêu. Các phương án còn lại không phù hợp với bằng chứng; chú ý ý kiến bị sửa và tính điều kiện.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "section_3",
+        "ielts_practice",
+        "inference",
+        "paraphrase"
+      ],
+      "options": [
+        "Related species can have overlapping call frequencies",
+        "Accept the software output after basic filtering",
+        "Treat every uncertain recording as a different species"
+      ]
+    },
+    {
+      "question_id": "Q05",
+      "type": "note_completion",
+      "prompt": "A specialist will review ____ samples.",
+      "correct_answers": [
+        "uncertain"
+      ],
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "explanation_vi": "Bằng chứng T08: “Hãy coi nhãn là nhóm tạm và nhờ chuyên gia kiểm những mẫu không chắc. Kết quả chính có thể là tổng hoạt động, dễ bảo vệ hơn danh sách loài rất chi tiết.” Cụm cần điền nghe đúng nguyên văn là “uncertain”.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_3",
+        "ielts_practice",
+        "detail",
+        "note_completion"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q06",
+      "type": "short_answer",
+      "prompt": "What will counts be normalised per?",
+      "correct_answers": [
+        "valid hour"
+      ],
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "explanation_vi": "Bằng chứng T09: “Vậy ta hiệu chuẩn mọi máy, chuẩn hóa số đếm theo giờ hợp lệ và đánh dấu nhận diện loài không chắc. So sánh sẽ công bằng hơn dù số liệu bớt ấn tượng.” Trả lời ngắn theo chi tiết “valid hour”.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_3",
+        "ielts_practice",
+        "detail",
+        "short_answer"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "D01",
+      "type": "dictation",
+      "prompt": "Nghe T04 (Speaker A) rồi chép chính xác câu nói tiếng Anh.",
+      "correct_answers": [
+        "I also noticed that one memory card filled up after midnight last Tuesday. If we count only completed recordings, that park would have an artificially low activity score."
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Câu gốc: “I also noticed that one memory card filled up after midnight last Tuesday. If we count only completed recordings, that park would have an artificially low activity score.”\nBản dịch: Mình còn thấy thẻ nhớ của một máy đầy sau nửa đêm thứ Ba trước. Nếu chỉ đếm bản ghi hoàn chỉnh, công viên đó sẽ có điểm hoạt động thấp giả tạo.\nChú ý âm yếu, nối âm và ý được sửa trong đoạn.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_3",
+        "dictation",
+        "exact_transcript"
+      ]
+    },
+    {
+      "question_id": "D02",
+      "type": "dictation",
+      "prompt": "Nghe T07 (Speaker A) rồi chép chính xác câu nói tiếng Anh.",
+      "correct_answers": [
+        "Should we identify species from the audio automatically? The software produces labels, but I read that closely related bat species may have overlapping call frequencies."
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "Câu gốc: “Should we identify species from the audio automatically? The software produces labels, but I read that closely related bat species may have overlapping call frequencies.”\nBản dịch: Có nên tự động nhận diện loài từ audio không? Phần mềm cho nhãn, nhưng mình đọc rằng các loài dơi gần nhau có tần số tiếng kêu chồng lấn.\nChú ý âm yếu, nối âm và ý được sửa trong đoạn.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_3",
+        "dictation",
+        "exact_transcript"
+      ]
+    },
+    {
+      "question_id": "G01",
+      "type": "gap_fill",
+      "prompt": "Nghe T01 rồi điền đúng phần thiếu: For our urban ecology project, we planned to compare bat activity in three parks using ____. The devices were borrowed from different departments, so their sensitivity settings aren't identical.",
+      "correct_answers": [
+        "ultrasonic recorders"
+      ],
+      "evidence_turn_ids": [
+        "T01"
+      ],
+      "explanation_vi": "Đáp án “ultrasonic recorders” nghĩa là máy ghi âm siêu âm. Đối chiếu: “For our urban ecology project, we planned to compare bat activity in three parks using ultrasonic recorders. The devices were borrowed from different departments, so their sensitivity settings aren't identical.”",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_3",
+        "gap_fill",
+        "vocabulary_in_context"
+      ]
+    }
+  ],
+  "vocabulary": [
+    {
+      "term": "ultrasonic recorders",
+      "pos": "n. phr.",
+      "meaning_vi": "máy ghi âm siêu âm",
+      "example_en": "For our urban ecology project, we planned to compare bat activity in three parks using ultrasonic recorders. The devices were borrowed from different departments, so their sensitivity settings aren't identical.",
+      "example_vi": "Đề tài sinh thái đô thị định so hoạt động dơi ở ba công viên bằng máy ghi siêu âm. Thiết bị mượn từ các khoa khác nhau nên độ nhạy cài đặt không giống nhau.",
+      "source_turn_id": "T01"
+    },
+    {
+      "term": "sensitivity",
+      "pos": "n.",
+      "meaning_vi": "độ nhạy",
+      "example_en": "For our urban ecology project, we planned to compare bat activity in three parks using ultrasonic recorders. The devices were borrowed from different departments, so their sensitivity settings aren't identical.",
+      "example_vi": "Đề tài sinh thái đô thị định so hoạt động dơi ở ba công viên bằng máy ghi siêu âm. Thiết bị mượn từ các khoa khác nhau nên độ nhạy cài đặt không giống nhau.",
+      "source_turn_id": "T01"
+    },
+    {
+      "term": "calibration check",
+      "pos": "n. phr.",
+      "meaning_vi": "kiểm tra hiệu chuẩn",
+      "example_en": "That could make one park appear to have more bats simply because its recorder detects fainter calls. We need a calibration check before comparing the number of recordings.",
+      "example_vi": "Điều đó có thể khiến một công viên có vẻ nhiều dơi hơn chỉ vì máy bắt tiếng yếu tốt hơn. Ta cần kiểm tra hiệu chuẩn trước khi so số bản ghi.",
+      "source_turn_id": "T02"
+    },
+    {
+      "term": "valid recording hour",
+      "pos": "n. phr.",
+      "meaning_vi": "giờ ghi âm hợp lệ",
+      "example_en": "Then our dataset must include recording hours as well as call counts. We should report calls per valid recording hour, not raw totals, and note periods when equipment failed.",
+      "example_vi": "Vậy bộ dữ liệu phải có số giờ ghi cùng số tiếng kêu. Ta báo số tiếng mỗi giờ ghi hợp lệ, không phải tổng thô, và ghi rõ lúc thiết bị hỏng.",
+      "source_turn_id": "T05"
+    }
+  ],
+  "audio": {
+    "status": "not_generated",
+    "url": null,
+    "duration_ms": null,
+    "model": null,
+    "provider": null,
+    "voice_config": null,
+    "source_transcript_hash": "48eefc77869058aba8484da5dd6978e12de080e59767051963a0ddf6a3fc2068",
+    "audio_sha256": null,
+    "format": null
+  },
+  "qa": {
+    "content_reviewed": false,
+    "answers_verified": false,
+    "audio_verified": false,
+    "rights_cleared": false,
+    "duplicate_reviewed": false,
+    "notes": [
+      "Original AI-assisted draft, awaiting expert pedagogical review and option-disambiguation review.",
+      "Audio not produced: all segment times are null. TTS terms and distribution rights must be checked.",
+      "Practice lesson only; not an official/full IELTS Listening Part 3 exam or a calibrated band test.",
+      "M16.2: automated edits are provisional; IELTS teacher final signoff, audio and rights clearance pending."
+    ]
+  },
+  "provenance": {
+    "content_origin": "original_ai_assisted",
+    "source_urls": [],
+    "source_rights_note": "Original scripts; verify TTS service/voice production and distribution rights before publishing to students, including minors.",
+    "reviewer": null
+  },
+  "release_metadata": {
+    "published_at": null,
+    "version": 1
+  }
+}

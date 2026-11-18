@@ -174,4 +174,60 @@ describe("learner accounts", { timeout: 60_000 }, () => {
       expect(overview.timeline[0].kind).toBe("news_quiz");
     } finally { await db.close(); }
   });
+
+  it("restores one to three missed days only after distinct completed article quizzes", async () => {
+    const db = await setup();
+    try {
+      await db.exec("alter table public.news_auto_attempts add column partial boolean not null default false");
+      await db.exec(read("supabase/migrations/202611060003_streak_recovery.sql"));
+      const ids = [article, "66666666-6666-4666-8666-666666666666", "77777777-7777-4777-8777-777777777777"];
+      for (const [index, id] of ids.entries()) await db.query("insert into public.news_articles(id, title) values ($1, $2)", [id, `Article ${index + 1}`]);
+      for (const missed of [1, 2, 3]) {
+        await asOwner(db);
+        await db.query("delete from public.streak_recovery_challenges");
+        await db.query("delete from public.news_auto_attempts");
+        await db.query("delete from public.user_news_article_reads");
+        await db.query("delete from public.learner_activity_days where user_id = $1", [bob]);
+        await db.query("insert into public.learner_activity_days(user_id, day, kinds, events) values ($1, public.learner_local_day($1, now()) - $2::integer - 1, '{lesson}', 1)", [bob, missed]);
+        await as(db, bob);
+        expect((await db.query<{ s: { missed: number; eligible: boolean } }>("select public.streak_recovery_status() as s")).rows[0].s)
+          .toMatchObject({ missed, eligible: true });
+        await db.query("select public.streak_recovery_start()");
+        await asOwner(db);
+        // A perfect quiz without a completed reading, a partial quiz, and a
+        // wrong answer must never advance the recovery challenge.
+        await db.query("insert into public.news_auto_attempts(user_id, article_id, answers, score, total) values ($1, $2, '{}', 1, 1)", [bob, ids[0]]);
+        await db.query("insert into public.user_news_article_reads(user_id, article_id) values ($1, $2)", [bob, ids[0]]);
+        await db.query("insert into public.news_auto_attempts(user_id, article_id, answers, score, total, partial) values ($1, $2, '{}', 1, 1, true)", [bob, ids[0]]);
+        await db.query("insert into public.news_auto_attempts(user_id, article_id, answers, score, total) values ($1, $2, '{}', 0, 1)", [bob, ids[0]]);
+        expect((await db.query<{ completed: number }>("select completed from public.streak_recovery_challenges where status = 'active'")).rows[0].completed).toBe(0);
+        for (let index = 0; index < missed; index++) {
+          if (index > 0) await db.query("insert into public.user_news_article_reads(user_id, article_id) values ($1, $2)", [bob, ids[index]]);
+          await db.query("insert into public.news_auto_attempts(user_id, article_id, answers, score, total) values ($1, $2, '{}', 1, 1)", [bob, ids[index]]);
+          if (index === 0) {
+            await db.query("insert into public.news_auto_attempts(user_id, article_id, answers, score, total) values ($1, $2, '{}', 1, 1)", [bob, ids[index]]);
+          }
+          const state = (await db.query<{ completed: number; status: string }>("select completed, status from public.streak_recovery_challenges order by started_at desc limit 1")).rows[0];
+          expect(state.completed).toBe(index + 1);
+        }
+        await as(db, bob);
+        const streak = (await db.query<{ s: { current: number; totalDays: number } }>("select public.learner_streak() as s")).rows[0].s;
+        expect(streak.current).toBe(missed + 2);
+        expect(streak.totalDays).toBe(2);
+        expect((await db.query<{ s: { eligible: boolean; restoredToday: boolean } }>("select public.streak_recovery_status() as s")).rows[0].s)
+          .toMatchObject({ eligible: false, restoredToday: true });
+      }
+      await asOwner(db);
+      await db.query("delete from public.learner_activity_days where user_id = $1", [alice]);
+      await db.query("insert into public.learner_activity_days(user_id, day, kinds, events) values ($1, public.learner_local_day($1, now()) - 2, '{lesson}', 1)", [alice]);
+      await as(db, bob);
+      await expect(db.query("select public.admin_restore_streak($1)", [alice])).rejects.toThrow(/Admin access required/);
+      await as(db, alice);
+      const adminStreak = (await db.query<{ s: { current: number; totalDays: number } }>("select public.admin_restore_streak($1) as s", [alice])).rows[0].s;
+      expect(adminStreak).toMatchObject({ current: 2, totalDays: 1 });
+      expect((await db.query<{ active_days_30: number; last_active: string }>("select active_days_30, last_active from public.admin_list_learners('alice')")).rows[0])
+        .toMatchObject({ active_days_30: 1 });
+      expect((await db.query<{ action: string }>("select action from public.admin_audit_log where target_user = $1 order by created_at desc limit 1", [alice])).rows[0].action).toBe("restore_streak");
+    } finally { await db.close(); }
+  });
 });

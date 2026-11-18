@@ -64,19 +64,20 @@ export function DemoProvider({ children }: { children: React.ReactNode }) {
           }
         } catch { /* Ignore damaged local demo data. */ }
       } else if (supabase) {
-        const [authResult, taskResult, attemptResult, draftResult] = await Promise.all([
-          supabase.auth.getUser(),
-          supabase.from("study_tasks").select("*").order("sort_order").order("due_date"),
-          supabase.from("exercise_attempts").select("id,lesson_slug,score,total,submitted_at").order("submitted_at", { ascending: false }).limit(100),
-          supabase.from("writing_drafts").select("body").eq("lesson_slug", "writing-technology").maybeSingle(),
-        ]);
-        const { data: authData, error: authError } = authResult;
-        if (authError || !authData.user) {
+        // The local session (no network) names the learner; RLS on every table still verifies it server-side.
+        const { data: sessionData, error: authError } = await supabase.auth.getSession();
+        const userId = sessionData.session?.user.id;
+        if (authError || !userId) {
           setError(authError?.message ?? "Vui lòng đăng nhập để tải dữ liệu học.");
           setReady(true);
           return;
         }
-        const profileResult = await supabase.from("profiles").select("daily_goal").eq("id", authData.user.id).maybeSingle();
+        const [taskResult, attemptResult, draftResult, profileResult] = await Promise.all([
+          supabase.from("study_tasks").select("*").order("sort_order").order("due_date"),
+          supabase.from("exercise_attempts").select("id,lesson_slug,score,total,submitted_at").order("submitted_at", { ascending: false }).limit(100),
+          supabase.from("writing_drafts").select("body").eq("lesson_slug", "writing-technology").maybeSingle(),
+          supabase.from("profiles").select("daily_goal").eq("id", userId).maybeSingle(),
+        ]);
         const failure = taskResult.error || attemptResult.error || profileResult.error || draftResult.error;
         if (failure) setError(failure.message);
         else {
@@ -145,6 +146,7 @@ export function DemoProvider({ children }: { children: React.ReactNode }) {
           const result = await supabase!.rpc("submit_exercise", { p_lesson_slug: lesson, p_answers: exerciseAnswersSchema.parse(answers) });
           if (result.error) throw result.error;
           grade = result.data as Grade;
+          window.dispatchEvent(new Event("learner-activity"));
         }
         setAttempts((current) => [{ id: crypto.randomUUID(), lesson, score: grade.score, total: grade.total, date: todayISO(), submittedAt: new Date().toISOString() }, ...current]);
         setTasks((current) => completeNextLinkedTask(current, lesson));

@@ -1,0 +1,347 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "DICT-S2-015",
+  "status": "draft",
+  "level": "L3",
+  "section": 2,
+  "topic": "Public Events",
+  "title": "Preparing for the Science Open Day",
+  "learning_objectives_vi": [
+    "Nghe độc thoại chủ đề Public Events và xác định mục đích thông báo.",
+    "Nhận diện cấu trúc ý và các chi tiết quan trọng theo thứ tự phát biểu.",
+    "Luyện nhận diện thời gian, chi phí, điều kiện và chi tiết được thay đổi."
+  ],
+  "content_format": "section_bridge",
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Visitor guide / programme coordinator (one narrator)",
+      "tts_voice_id": null,
+      "accent_requested": "australian"
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "Good morning. The Science Open Day will take place at the civic hall this Saturday.",
+      "translation_vi": "Chào buổi sáng. Ngày hội khoa học sẽ diễn ra tại hội trường thành phố thứ Bảy này.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_2",
+        "monologue",
+        "l3",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "A",
+      "text_en": "Doors open at nine thirty, and the first demonstration starts at ten.",
+      "translation_vi": "Cửa mở 9:30 và buổi trình diễn đầu lúc mười giờ.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_2",
+        "monologue",
+        "l3",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "A",
+      "text_en": "Visitors should register at the information desk by the entrance.",
+      "translation_vi": "Khách nên đăng ký tại bàn thông tin cạnh lối vào.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_2",
+        "monologue",
+        "l3",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "A",
+      "text_en": "Children can join a free robotics workshop in room five.",
+      "translation_vi": "Trẻ có thể dự lớp robot miễn phí ở phòng năm.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_2",
+        "monologue",
+        "l3",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "A",
+      "text_en": "Please bring your ticket, either printed or on your phone.",
+      "translation_vi": "Hãy mang vé bản in hoặc trên điện thoại.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_2",
+        "monologue",
+        "l3",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "A",
+      "text_en": "The event ends at four in the afternoon.",
+      "translation_vi": "Sự kiện kết thúc lúc bốn giờ chiều.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_2",
+        "monologue",
+        "l3",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "Families can pick up a printed programme that shows the order of all demonstrations.",
+      "translation_vi": "Gia đình có thể nhận chương trình in ghi thứ tự tất cả tiết mục trình diễn.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_2",
+        "monologue",
+        "l3",
+        "signposting"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "type": "note_completion",
+      "prompt": "Notes — Event takes place on: ____",
+      "correct_answers": [
+        "Saturday"
+      ],
+      "evidence_turn_ids": [
+        "T01"
+      ],
+      "explanation_vi": "Tổ chức vào thứ Bảy.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_2",
+        "ielts_practice",
+        "detail_recognition"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q02",
+      "type": "table_completion",
+      "prompt": "Table — Doors open at: ____",
+      "correct_answers": [
+        "nine thirty"
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Mở cửa 9:30.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_2",
+        "ielts_practice",
+        "detail_recognition"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q03",
+      "type": "note_completion",
+      "prompt": "Notes — Register at the information: ____",
+      "correct_answers": [
+        "desk"
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Đăng ký tại bàn thông tin.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_2",
+        "ielts_practice",
+        "detail_recognition"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q04",
+      "type": "note_completion",
+      "prompt": "Notes — Robotics workshop room: ____",
+      "correct_answers": [
+        "five"
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Workshop robot ở phòng năm.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_2",
+        "ielts_practice",
+        "detail_recognition"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q05",
+      "type": "note_completion",
+      "prompt": "Notes — Event finishes at: ____",
+      "correct_answers": [
+        "four"
+      ],
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "explanation_vi": "Kết thúc lúc bốn giờ.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_2",
+        "ielts_practice",
+        "detail_recognition"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "D01",
+      "type": "dictation",
+      "prompt": "Nghe lại và chép nguyên văn đoạn T03 (toàn bộ lời người dẫn).",
+      "correct_answers": [
+        "Visitors should register at the information desk by the entrance."
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Câu gốc: Visitors should register at the information desk by the entrance. Nghĩa: Khách nên đăng ký tại bàn thông tin cạnh lối vào. Lưu ý từ chức năng, âm cuối và cụm từ nối.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "exact_transcript",
+        "section_2"
+      ]
+    },
+    {
+      "question_id": "D02",
+      "type": "dictation",
+      "prompt": "Nghe lại và chép nguyên văn đoạn T05 (toàn bộ lời người dẫn).",
+      "correct_answers": [
+        "Please bring your ticket, either printed or on your phone."
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Câu gốc: Please bring your ticket, either printed or on your phone. Nghĩa: Hãy mang vé bản in hoặc trên điện thoại. Lưu ý từ chức năng, âm cuối và cụm từ nối.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "exact_transcript",
+        "section_2"
+      ]
+    },
+    {
+      "question_id": "G01",
+      "type": "gap_fill",
+      "prompt": "Điền cụm từ bị ẩn sau khi nghe: Families can pick up a printed ____ that shows the order of all demonstrations.",
+      "correct_answers": [
+        "programme"
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "programme: chương trình. Ngữ cảnh: Gia đình có thể nhận chương trình in ghi thứ tự tất cả tiết mục trình diễn.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "gap_fill",
+        "vocab_in_context",
+        "section_2"
+      ]
+    }
+  ],
+  "vocabulary": [
+    {
+      "term": "programme",
+      "pos": "n.",
+      "meaning_vi": "chương trình",
+      "example_en": "Families can pick up a printed programme that shows the order of all demonstrations.",
+      "example_vi": "Gia đình có thể nhận chương trình in ghi thứ tự tất cả tiết mục trình diễn.",
+      "source_turn_id": "T07"
+    },
+    {
+      "term": "information desk",
+      "pos": "n. phr.",
+      "meaning_vi": "bàn thông tin",
+      "example_en": "Visitors should register at the information desk by the entrance.",
+      "example_vi": "Khách nên đăng ký tại bàn thông tin cạnh lối vào.",
+      "source_turn_id": "T03"
+    },
+    {
+      "term": "entrance",
+      "pos": "n.",
+      "meaning_vi": "lối vào",
+      "example_en": "Visitors should register at the information desk by the entrance.",
+      "example_vi": "Khách nên đăng ký tại bàn thông tin cạnh lối vào.",
+      "source_turn_id": "T03"
+    },
+    {
+      "term": "workshop",
+      "pos": "n.",
+      "meaning_vi": "buổi thực hành",
+      "example_en": "Children can join a free robotics workshop in room five.",
+      "example_vi": "Trẻ có thể dự lớp robot miễn phí ở phòng năm.",
+      "source_turn_id": "T04"
+    }
+  ],
+  "audio": {
+    "status": "not_generated",
+    "url": null,
+    "duration_ms": null,
+    "model": null,
+    "provider": null,
+    "voice_config": null,
+    "source_transcript_hash": "2ae558f7336a2eb2e450c97d39b7f4404ac7ffc9031b3fc0835291266fb66497",
+    "audio_sha256": null,
+    "format": null
+  },
+  "qa": {
+    "content_reviewed": false,
+    "answers_verified": false,
+    "audio_verified": false,
+    "rights_cleared": false,
+    "duplicate_reviewed": false,
+    "notes": [
+      "AI-assisted original writing; pedagogical and pronunciation review still required.",
+      "No TTS or sentence-level timestamps supplied; do not publish.",
+      "This is Section 2 skill practice, not an official IELTS test.",
+      "M16.2: automated edits are provisional; IELTS teacher final signoff, audio and rights clearance pending."
+    ]
+  },
+  "provenance": {
+    "content_origin": "original_ai_assisted",
+    "source_urls": [],
+    "source_rights_note": "Newly authored educational monologue. Confirm audio model distribution, age suitability and TOS separately before publishing.",
+    "reviewer": null
+  },
+  "release_metadata": {
+    "published_at": null,
+    "version": 1
+  }
+}

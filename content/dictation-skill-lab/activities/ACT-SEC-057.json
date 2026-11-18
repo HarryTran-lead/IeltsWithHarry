@@ -1,0 +1,282 @@
+{
+  "schema_version": "m34.1.0",
+  "activity_id": "ACT-SEC-057",
+  "status": "draft_pending_audio",
+  "module": "dictation",
+  "activity_kind": "section_skill_drill",
+  "title": "Studying Public Transport Accessibility — Phân tích quan điểm và đáp án gây nhiễu",
+  "section": 3,
+  "source_lesson_id": "S3-EXP-009",
+  "source_milestone": "M23",
+  "source_zip": "English_Skill_Lab_Dictation_M23_Section_3_Expanded_Practice_20_Full_Content.zip",
+  "reuse_parent_id": "S3-EXP-009",
+  "source_bank": "section_practice_training",
+  "source_audio_id": "section-training/S3-EXP-009/T01",
+  "source_audio_id_type": "logical_source_turn_key_not_physical_audio",
+  "source_segments": [
+    {
+      "source_audio_id": "section-training/S3-EXP-009/T01",
+      "source_audio_id_type": "logical_turn_key_not_verified_physical_audio",
+      "source_lesson_id": "S3-EXP-009",
+      "source_turn_id": "T01",
+      "source_speaker_id": "A",
+      "source_audio_asset_id": null,
+      "source_audio_url": null,
+      "start_ms": null,
+      "end_ms": null,
+      "source_transcript_sha256": "2d4df99057f0ffcefb695f76a0edb00c0339c1a970635a2798fa9c1bc0f5d4e1",
+      "source_bank": "training",
+      "source_is_protected": false,
+      "audio_status": "not_generated",
+      "alignment_status": "pending_verified_turn_offsets"
+    },
+    {
+      "source_audio_id": "section-training/S3-EXP-009/T02",
+      "source_audio_id_type": "logical_turn_key_not_verified_physical_audio",
+      "source_lesson_id": "S3-EXP-009",
+      "source_turn_id": "T02",
+      "source_speaker_id": "B",
+      "source_audio_asset_id": null,
+      "source_audio_url": null,
+      "start_ms": null,
+      "end_ms": null,
+      "source_transcript_sha256": "4a464c7e35c866569c58e84423bc36bdf3fc54adefb81b7cb438e2d9f421a9ee",
+      "source_bank": "training",
+      "source_is_protected": false,
+      "audio_status": "not_generated",
+      "alignment_status": "pending_verified_turn_offsets"
+    },
+    {
+      "source_audio_id": "section-training/S3-EXP-009/T07",
+      "source_audio_id_type": "logical_turn_key_not_verified_physical_audio",
+      "source_lesson_id": "S3-EXP-009",
+      "source_turn_id": "T07",
+      "source_speaker_id": "A",
+      "source_audio_asset_id": null,
+      "source_audio_url": null,
+      "start_ms": null,
+      "end_ms": null,
+      "source_transcript_sha256": "d136a27c8a12253fb88cb3cf5b0ea13abb5d93d7e0a8bbba7aade8504f80f019",
+      "source_bank": "training",
+      "source_is_protected": false,
+      "audio_status": "not_generated",
+      "alignment_status": "pending_verified_turn_offsets"
+    },
+    {
+      "source_audio_id": "section-training/S3-EXP-009/T08",
+      "source_audio_id_type": "logical_turn_key_not_verified_physical_audio",
+      "source_lesson_id": "S3-EXP-009",
+      "source_turn_id": "T08",
+      "source_speaker_id": "B",
+      "source_audio_asset_id": null,
+      "source_audio_url": null,
+      "start_ms": null,
+      "end_ms": null,
+      "source_transcript_sha256": "1c7b43d8066327a3d76278938948d80f9d883f17646c7395dd243720f28f7176",
+      "source_bank": "training",
+      "source_is_protected": false,
+      "audio_status": "not_generated",
+      "alignment_status": "pending_verified_turn_offsets"
+    }
+  ],
+  "start_ms": null,
+  "end_ms": null,
+  "alignment_policy": "verified_turn_level_audio_or_measured_offsets_only",
+  "clip_audio_status": "not_generated",
+  "topic": "Transport design and inclusive fieldwork",
+  "drill_skill": "opinion_distractor",
+  "skill_tags": [
+    "section_practice",
+    "listening",
+    "reuse",
+    "section_3",
+    "opinion_tracking",
+    "contradiction",
+    "mcq_distractor"
+  ],
+  "teacher_notes": {
+    "goal": "Theo dõi phương án ban đầu, phản biện và kết luận trong thảo luận học thuật.",
+    "theory": "Section 3 có thể nhắc cả ba đáp án ở các thời điểm khác nhau. Chỉ chọn đáp án phù hợp với câu hỏi và quan điểm cuối cùng.",
+    "tip": "Nghe các dấu hiệu bác bỏ như impractical, however, instead, the better option, decided.",
+    "mistakes": [
+      "Chọn giải pháp được nhắc tới nhưng bị giáo viên phản đối.",
+      "Nhầm dự đoán của sinh viên với quyết định cuối cùng của nhóm."
+    ],
+    "worked_example": "Ví dụ ngoài đề: “An online survey is quick; however, interviews would explain the reasons.” → Chọn interviews nếu hỏi phương pháp được khuyến nghị."
+  },
+  "playback": {
+    "first_listen_max_replays": 1,
+    "guided_replay_max_replays": 3,
+    "source_turn_order": [
+      "T01",
+      "T02",
+      "T07",
+      "T08"
+    ],
+    "transcript_hidden_until_submit": true,
+    "answers_hidden_until_submit": true,
+    "playback_speed_default": 1.0,
+    "prelisten_question_reading": true,
+    "asset_concatenation": "respect_speaker_turns; never use timestamps until aligned"
+  },
+  "questions": [
+    {
+      "question_id": "ACT-SEC-057-Q1",
+      "phase": "first_listen",
+      "origin_question_id": "Q01",
+      "origin_question_type": "mcq",
+      "type": "single_choice",
+      "prompt_en": "What weakness is identified in the initial checklist?",
+      "prompt_vi": "Nghe phần được chỉ định và trả lời câu hỏi theo thông tin thực sự được phát. Đừng chọn phương án được nhắc trước khi người nói sửa ý.",
+      "options": [
+        {
+          "value": "It ignores ticket prices",
+          "label": "It ignores ticket prices"
+        },
+        {
+          "value": "It asks travellers too many personal questions",
+          "label": "It asks travellers too many personal questions"
+        },
+        {
+          "value": "It may count equipment that is not working",
+          "label": "It may count equipment that is not working"
+        }
+      ],
+      "correct_answers": [
+        "It may count equipment that is not working"
+      ],
+      "correct_option": "C",
+      "word_limit": null,
+      "scoring_policy": "strict",
+      "play_turn_ids": [
+        "T01",
+        "T02"
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "evidence_excerpt_en": "Our checklist records lifts, ramps and tactile paving. It is simple to complete, but a lift can exist on the station map and still be out of service when someone arrives.",
+      "evidence_excerpt_exact_in_turn": true,
+      "evidence_source_kind": "authored_source_annotated",
+      "explanation_vi": "Có thiết bị nhưng có thể đang hỏng.",
+      "grading_is_ielts_band": false
+    },
+    {
+      "question_id": "ACT-SEC-057-Q2",
+      "phase": "targeted_replay",
+      "origin_question_id": "Q04",
+      "origin_question_type": "mcq",
+      "type": "single_choice",
+      "prompt_en": "What factor motivates checking routes twice a day?",
+      "prompt_vi": "Nghe phần được chỉ định và trả lời câu hỏi theo thông tin thực sự được phát. Đừng chọn phương án được nhắc trước khi người nói sửa ý.",
+      "options": [
+        {
+          "value": "The station cleaning schedule",
+          "label": "The station cleaning schedule"
+        },
+        {
+          "value": "Different train ticket colours",
+          "label": "Different train ticket colours"
+        },
+        {
+          "value": "Changes in crowding",
+          "label": "Changes in crowding"
+        }
+      ],
+      "correct_answers": [
+        "Changes in crowding"
+      ],
+      "correct_option": "C",
+      "word_limit": null,
+      "scoring_policy": "strict",
+      "play_turn_ids": [
+        "T07",
+        "T08"
+      ],
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "evidence_excerpt_en": "For the pilot, I suggest tracing one full route at each station at two different times of day. That would reveal whether crowding changes how usable the route feels.",
+      "evidence_excerpt_exact_in_turn": true,
+      "evidence_source_kind": "authored_source_annotated",
+      "explanation_vi": "Đông đúc theo giờ có thể ảnh hưởng tuyến di chuyển.",
+      "grading_is_ielts_band": false
+    },
+    {
+      "question_id": "ACT-SEC-057-Q3",
+      "phase": "focused_dictation_repair",
+      "type": "focused_dictation",
+      "prompt_vi": "Nghe lại lượt thoại rồi chép đúng ba từ còn thiếu trong đoạn trích (không viết cả câu).",
+      "prompt_en": "…two different times of day. That would ____ changes how usable the route feels…",
+      "word_limit": 3,
+      "correct_answers": [
+        "reveal whether crowding"
+      ],
+      "correct_option": null,
+      "options": null,
+      "normalization_policy": "casefold_unicode_nfkc_trim_whitespace_and_terminal_punctuation",
+      "play_turn_ids": [
+        "T08"
+      ],
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "evidence_excerpt_en": "reveal whether crowding",
+      "evidence_char_start": 106,
+      "evidence_char_end": 129,
+      "evidence_source_kind": "exact_spoken_transcript_source",
+      "evidence_excerpt_exact_in_turn": true,
+      "explanation_vi": "Cụm cần ghi chính xác là “reveal whether crowding”. Nghe lại vị trí này và đối chiếu các âm cuối, từ chức năng và trọng âm.",
+      "origin_question_id": null,
+      "grading_is_ielts_band": false,
+      "novel_question_authored_for_m34": true
+    }
+  ],
+  "evidence": {
+    "source_lesson_id": "S3-EXP-009",
+    "source_question_ids": [
+      "Q01",
+      "Q04"
+    ],
+    "source_turn_ids": [
+      "T01",
+      "T02",
+      "T07",
+      "T08"
+    ],
+    "source_transcript_sha256_map": {
+      "T01": "2d4df99057f0ffcefb695f76a0edb00c0339c1a970635a2798fa9c1bc0f5d4e1",
+      "T02": "4a464c7e35c866569c58e84423bc36bdf3fc54adefb81b7cb438e2d9f421a9ee",
+      "T07": "d136a27c8a12253fb88cb3cf5b0ea13abb5d93d7e0a8bbba7aade8504f80f019",
+      "T08": "1c7b43d8066327a3d76278938948d80f9d883f17646c7395dd243720f28f7176"
+    },
+    "provenance": "original_training_2026_m21_m23_m24",
+    "copied_source_has_human_signoff": false,
+    "source_confidence": "authored_draft_not_independently_validated"
+  },
+  "exposure_rules": {
+    "allowed_source_banks": [
+      "section_practice_training"
+    ],
+    "train_only": true,
+    "never_use_protected_source": true,
+    "never_use_unseen_section_simulation": true,
+    "never_use_mock_before_first_attempt": true,
+    "track_source_audio_id": true,
+    "track_first_exposure": true,
+    "track_replay_count": true,
+    "not_band_estimate": true
+  },
+  "rights_status": "pending_review",
+  "review": {
+    "automated_content_check": "pending",
+    "human_language_review": "pending",
+    "human_audio_listening": "pending",
+    "teacher_signoff": "pending",
+    "timing_verification": "pending",
+    "rights_clearance": "pending",
+    "publish_ready": false
+  },
+  "import_policy": "insert_only_idempotent",
+  "version": "m34.1.0"
+}

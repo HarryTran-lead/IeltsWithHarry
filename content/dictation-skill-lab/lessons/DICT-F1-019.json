@@ -1,0 +1,425 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "DICT-F1-019",
+  "status": "draft",
+  "level": "L1",
+  "section": 0,
+  "topic": "Foundation",
+  "title": "Telling the Time",
+  "learning_objectives_vi": [
+    "Nghe giờ theo nhiều cách nói",
+    "Nghe và chép chính xác các lượt nghe ngắn mà không dựa vào transcript."
+  ],
+  "content_format": "micro_drill",
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Foundation narrator",
+      "tts_voice_id": null,
+      "accent_requested": "new_zealand"
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "The train leaves at six.",
+      "translation_vi": "Tàu rời đi lúc sáu giờ.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "time_dates",
+        "micro_listening"
+      ]
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "A",
+      "text_en": "The lesson starts at half past eight.",
+      "translation_vi": "Buổi học bắt đầu lúc 8:30.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "time_dates",
+        "micro_listening"
+      ]
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "A",
+      "text_en": "Meet me at quarter past nine.",
+      "translation_vi": "Gặp tôi lúc 9:15.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "time_dates",
+        "micro_listening"
+      ]
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "A",
+      "text_en": "The film begins at quarter to seven.",
+      "translation_vi": "Phim bắt đầu lúc 6:45.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "time_dates",
+        "micro_listening"
+      ]
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "A",
+      "text_en": "The bus arrives at ten thirty.",
+      "translation_vi": "Xe buýt đến lúc 10:30.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "time_dates",
+        "micro_listening"
+      ]
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "A",
+      "text_en": "Lunch is at twelve noon.",
+      "translation_vi": "Bữa trưa lúc 12 giờ trưa.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "time_dates",
+        "micro_listening"
+      ]
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "The shop opens at seven fifteen.",
+      "translation_vi": "Cửa hàng mở cửa lúc 7:15.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "time_dates",
+        "micro_listening"
+      ]
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "A",
+      "text_en": "The appointment is at two forty-five.",
+      "translation_vi": "Lịch hẹn lúc 2:45.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "time_dates",
+        "micro_listening"
+      ]
+    },
+    {
+      "turn_id": "T09",
+      "speaker_id": "A",
+      "text_en": "The call is at eleven sharp.",
+      "translation_vi": "Cuộc gọi lúc đúng 11 giờ.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "time_dates",
+        "micro_listening"
+      ]
+    },
+    {
+      "turn_id": "T10",
+      "speaker_id": "A",
+      "text_en": "We finish at five twenty.",
+      "translation_vi": "Chúng tôi kết thúc lúc 5:20.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "time_dates",
+        "micro_listening"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "type": "dictation",
+      "prompt": "Nghe lượt T01 và chép chính xác những từ được nói.",
+      "correct_answers": [
+        "The train leaves at six."
+      ],
+      "evidence_turn_ids": [
+        "T01"
+      ],
+      "explanation_vi": "at six = 6:00. Nghĩa: Tàu rời đi lúc sáu giờ.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text"
+      ]
+    },
+    {
+      "question_id": "Q02",
+      "type": "dictation",
+      "prompt": "Nghe lượt T02 và chép chính xác những từ được nói.",
+      "correct_answers": [
+        "The lesson starts at half past eight."
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "half past eight = 8:30. Nghĩa: Buổi học bắt đầu lúc 8:30.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text"
+      ]
+    },
+    {
+      "question_id": "Q03",
+      "type": "dictation",
+      "prompt": "Nghe lượt T03 và chép chính xác những từ được nói.",
+      "correct_answers": [
+        "Meet me at quarter past nine."
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "quarter past nine = 9:15. Nghĩa: Gặp tôi lúc 9:15.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text"
+      ]
+    },
+    {
+      "question_id": "Q04",
+      "type": "dictation",
+      "prompt": "Nghe lượt T04 và chép chính xác những từ được nói.",
+      "correct_answers": [
+        "The film begins at quarter to seven."
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "quarter to seven = 6:45. Nghĩa: Phim bắt đầu lúc 6:45.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text"
+      ]
+    },
+    {
+      "question_id": "Q05",
+      "type": "dictation",
+      "prompt": "Nghe lượt T05 và chép chính xác những từ được nói.",
+      "correct_answers": [
+        "The bus arrives at ten thirty."
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "ten thirty = 10:30. Nghĩa: Xe buýt đến lúc 10:30.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text"
+      ]
+    },
+    {
+      "question_id": "Q06",
+      "type": "dictation",
+      "prompt": "Nghe lượt T06 và chép chính xác những từ được nói.",
+      "correct_answers": [
+        "Lunch is at twelve noon."
+      ],
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "explanation_vi": "noon là 12:00 trưa. Nghĩa: Bữa trưa lúc 12 giờ trưa.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text"
+      ]
+    },
+    {
+      "question_id": "Q07",
+      "type": "dictation",
+      "prompt": "Nghe lượt T07 và chép chính xác những từ được nói.",
+      "correct_answers": [
+        "The shop opens at seven fifteen."
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "seven fifteen = 7:15. Nghĩa: Cửa hàng mở cửa lúc 7:15.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text"
+      ]
+    },
+    {
+      "question_id": "Q08",
+      "type": "dictation",
+      "prompt": "Nghe lượt T08 và chép chính xác những từ được nói.",
+      "correct_answers": [
+        "The appointment is at two forty-five."
+      ],
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "explanation_vi": "two forty-five = 2:45. Nghĩa: Lịch hẹn lúc 2:45.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text"
+      ]
+    },
+    {
+      "question_id": "Q09",
+      "type": "dictation",
+      "prompt": "Nghe lượt T09 và chép chính xác những từ được nói.",
+      "correct_answers": [
+        "The call is at eleven sharp."
+      ],
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "explanation_vi": "sharp nhấn mạnh đúng giờ. Nghĩa: Cuộc gọi lúc đúng 11 giờ.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text"
+      ]
+    },
+    {
+      "question_id": "Q10",
+      "type": "dictation",
+      "prompt": "Nghe lượt T10 và chép chính xác những từ được nói.",
+      "correct_answers": [
+        "We finish at five twenty."
+      ],
+      "evidence_turn_ids": [
+        "T10"
+      ],
+      "explanation_vi": "five twenty = 5:20. Nghĩa: Chúng tôi kết thúc lúc 5:20.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text"
+      ]
+    },
+    {
+      "question_id": "Q11",
+      "type": "word_choice",
+      "prompt": "T03: Giờ gặp là mấy giờ?",
+      "correct_answers": [
+        "9:15"
+      ],
+      "options": [
+        "9:15",
+        "9:45"
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Quarter past nine = 9:15. Hãy nghe lại lượt T03, đối chiếu với lựa chọn còn lại và xác định từ/ý được nói thật.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "comprehension",
+        "foundation_discrimination"
+      ]
+    },
+    {
+      "question_id": "Q12",
+      "type": "word_choice",
+      "prompt": "T04: Phim bắt đầu lúc nào?",
+      "correct_answers": [
+        "6:45"
+      ],
+      "options": [
+        "6:45",
+        "7:15"
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Quarter to seven là trước 7 giờ 15 phút. Hãy nghe lại lượt T04, đối chiếu với lựa chọn còn lại và xác định từ/ý được nói thật.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "comprehension",
+        "foundation_discrimination"
+      ]
+    }
+  ],
+  "vocabulary": [
+    {
+      "term": "half past eight",
+      "pos": "time phrase",
+      "meaning_vi": "8 giờ 30",
+      "example_en": "The lesson starts at half past eight.",
+      "example_vi": "Buổi học bắt đầu lúc 8:30.",
+      "source_turn_id": "T02"
+    },
+    {
+      "term": "quarter past nine",
+      "pos": "time phrase",
+      "meaning_vi": "9 giờ 15",
+      "example_en": "Meet me at quarter past nine.",
+      "example_vi": "Gặp tôi lúc 9:15.",
+      "source_turn_id": "T03"
+    },
+    {
+      "term": "quarter to seven",
+      "pos": "time phrase",
+      "meaning_vi": "6 giờ 45",
+      "example_en": "The film begins at quarter to seven.",
+      "example_vi": "Phim bắt đầu lúc 6:45.",
+      "source_turn_id": "T04"
+    },
+    {
+      "term": "noon",
+      "pos": "noun",
+      "meaning_vi": "12 giờ trưa",
+      "example_en": "Lunch is at twelve noon.",
+      "example_vi": "Bữa trưa lúc 12 giờ trưa.",
+      "source_turn_id": "T06"
+    }
+  ],
+  "audio": {
+    "status": "not_generated",
+    "url": null,
+    "duration_ms": null,
+    "model": null,
+    "provider": null,
+    "voice_config": null,
+    "source_transcript_hash": "4510986c0cfd60adb43ea63cc60acb8f831a4c91c5eafa4a437be8f2caffb1db",
+    "audio_sha256": null,
+    "format": null
+  },
+  "qa": {
+    "content_reviewed": false,
+    "answers_verified": false,
+    "audio_verified": false,
+    "rights_cleared": false,
+    "duplicate_reviewed": false,
+    "notes": [
+      "Author draft. Editorial, native-like audio, rights and device QA pending.",
+      "TTS: generate each turn separately, then combine and generate timestamps.",
+      "M16.2: automated edits are provisional; IELTS teacher final signoff, audio and rights clearance pending."
+    ]
+  },
+  "provenance": {
+    "content_origin": "original_ai_assisted",
+    "source_urls": [],
+    "source_rights_note": "New original learning material written for English Skill Lab; verify TTS and distribution conditions prior to release.",
+    "reviewer": null
+  },
+  "release_metadata": {
+    "published_at": null,
+    "version": 1
+  }
+}

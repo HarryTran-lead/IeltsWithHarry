@@ -1,0 +1,351 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "DICT-S4-012",
+  "status": "draft",
+  "level": "L6",
+  "section": 4,
+  "topic": "Animal Behaviour",
+  "title": "Behaviour, Learning and Animal Communication",
+  "learning_objectives_vi": [
+    "Nghe bài giảng học thuật một người nói, theo dõi quan hệ giữa luận điểm và bằng chứng.",
+    "Luyện các câu hỏi Section 4 theo thứ tự lời giảng; phân tích giới hạn của khái niệm và cách diễn đạt lại.",
+    "Chép chính xác hai đoạn, luyện từ học thuật theo ngữ cảnh và ôn điểm yếu qua Mistake Bank."
+  ],
+  "content_format": "section_practice",
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Academic lecturer",
+      "tts_voice_id": null,
+      "accent_requested": "british"
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "Animal behaviour refers to the actions animals perform in response to their surroundings and internal needs. An observation such as a bird singing is easy to record, but its function may be less obvious. The same song might help maintain territory or attract a partner, depending on the species and situation. Scientists therefore separate a description of behaviour from an explanation of why it occurs.",
+      "translation_vi": "Hành vi động vật là những hành động chúng thực hiện để phản ứng với môi trường và nhu cầu bên trong. Quan sát chim hót thì dễ ghi nhận, nhưng chức năng của nó có thể khó xác định hơn. Cùng một tiếng hót có thể giúp giữ lãnh thổ hoặc thu hút bạn tình, tùy loài và tình huống. Vì vậy nhà khoa học phân biệt mô tả hành vi với giải thích vì sao nó xảy ra.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_4",
+        "academic_lecture",
+        "concept",
+        "l6"
+      ]
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "A",
+      "text_en": "Some behaviours develop with little experience, while others change through learning. Habituation happens when an animal gradually reduces its response to a repeated, harmless stimulus. Imagine a city bird that no longer flies away when a distant bus passes. The decline in response does not necessarily indicate that its hearing has weakened; it may have learned that the event carries little danger.",
+      "translation_vi": "Một số hành vi phát triển với ít trải nghiệm, còn số khác thay đổi nhờ học. Sự quen kích thích xảy ra khi động vật dần giảm phản ứng trước một tác nhân lặp lại nhưng vô hại. Hãy tưởng tượng chim thành phố không còn bay đi khi xe buýt ở xa chạy qua. Phản ứng giảm không nhất thiết là thính giác yếu đi; có thể nó đã học rằng sự kiện ít nguy hiểm.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_4",
+        "academic_lecture",
+        "concept",
+        "l6"
+      ]
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "A",
+      "text_en": "Researchers also study communication. Signals may involve sound, movement, scent or colour, and they work only if another animal can detect and interpret them. A warning call can benefit group members, but it may also expose the caller to risk. The value of a signal depends on who receives it and what actions follow. Signals should not be treated as direct translations of human sentences.",
+      "translation_vi": "Nhà nghiên cứu cũng tìm hiểu giao tiếp. Tín hiệu có thể là âm thanh, chuyển động, mùi hoặc màu sắc và chỉ có tác dụng nếu cá thể khác nhận ra, diễn giải được. Tiếng cảnh báo có thể có lợi cho cả nhóm nhưng cũng khiến cá thể phát tín hiệu gặp rủi ro. Giá trị tín hiệu tùy vào ai nhận và hành động tiếp theo. Không nên xem tín hiệu là bản dịch trực tiếp của câu nói con người.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_4",
+        "academic_lecture",
+        "concept",
+        "l6"
+      ]
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "A",
+      "text_en": "Foraging provides another useful example. An animal must balance the energy gained from food against the effort and danger of obtaining it. A food patch with abundant insects may still be avoided if predators are nearby. Observers sometimes describe the result as a trade-off between reward and risk. This does not require the animal to perform a conscious mathematical calculation.",
+      "translation_vi": "Kiếm ăn là ví dụ khác. Động vật phải cân bằng năng lượng nhận từ thức ăn với công sức và nguy hiểm để lấy được. Nơi nhiều côn trùng vẫn có thể bị tránh nếu có thú săn mồi ở gần. Người quan sát đôi khi gọi đây là sự đánh đổi giữa phần thưởng và rủi ro. Điều đó không đòi hỏi động vật phải tính toán toán học có ý thức.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_4",
+        "academic_lecture",
+        "concept",
+        "l6"
+      ]
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "A",
+      "text_en": "A good behavioural study therefore combines careful observation with tests of competing explanations. Researchers may change one feature of the environment while keeping others as similar as possible. They then compare what animals do, rather than assuming a human motive. Understanding behaviour requires attention to immediate triggers, development, evolutionary function and environmental context.",
+      "translation_vi": "Một nghiên cứu hành vi tốt kết hợp quan sát cẩn thận với kiểm tra những lời giải thích cạnh tranh. Nhà nghiên cứu có thể thay một đặc điểm môi trường và giữ các yếu tố khác tương đồng nhất có thể. Sau đó họ so sánh hành động của động vật thay vì gán động cơ của con người. Hiểu hành vi cần chú ý tác nhân tức thời, quá trình phát triển, chức năng tiến hóa và bối cảnh môi trường.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_4",
+        "academic_lecture",
+        "concept",
+        "l6"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "type": "note_completion",
+      "prompt": "A bird song may serve to maintain a ____.",
+      "correct_answers": [
+        "territory"
+      ],
+      "evidence_turn_ids": [
+        "T01"
+      ],
+      "explanation_vi": "Đáp án “territory” nằm tại đoạn T01. Nội dung bằng chứng: Hành vi động vật là những hành động chúng thực hiện để phản ứng với môi trường và nhu cầu bên trong. Quan sát chim hót thì dễ ghi nhận, nhưng chức năng của nó có thể khó xác định hơn. Cùng một tiếng hót có thể giúp giữ lãnh thổ hoặc thu hút bạn tình, tùy loài và tình huống. Vì vậy nhà khoa học phân biệt mô tả hành vi với giải thích vì sao nó xảy ra.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_4",
+        "ielts_practice",
+        "concept",
+        "note_completion"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q02",
+      "type": "note_completion",
+      "prompt": "Reduced response to harmless repeated events is called ____.",
+      "correct_answers": [
+        "Habituation"
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Đáp án “Habituation” nằm tại đoạn T02. Nội dung bằng chứng: Một số hành vi phát triển với ít trải nghiệm, còn số khác thay đổi nhờ học. Sự quen kích thích xảy ra khi động vật dần giảm phản ứng trước một tác nhân lặp lại nhưng vô hại. Hãy tưởng tượng chim thành phố không còn bay đi khi xe buýt ở xa chạy qua. Phản ứng giảm không nhất thiết là thính giác yếu đi; có thể nó đã học rằng sự kiện ít nguy hiểm.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_4",
+        "ielts_practice",
+        "concept",
+        "note_completion"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q03",
+      "type": "note_completion",
+      "prompt": "Animal communication can use movement, sound, colour or ____.",
+      "correct_answers": [
+        "scent"
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Đáp án “scent” nằm tại đoạn T03. Nội dung bằng chứng: Nhà nghiên cứu cũng tìm hiểu giao tiếp. Tín hiệu có thể là âm thanh, chuyển động, mùi hoặc màu sắc và chỉ có tác dụng nếu cá thể khác nhận ra, diễn giải được. Tiếng cảnh báo có thể có lợi cho cả nhóm nhưng cũng khiến cá thể phát tín hiệu gặp rủi ro. Giá trị tín hiệu tùy vào ai nhận và hành động tiếp theo. Không nên xem tín hiệu là bản dịch trực tiếp của câu nói con người.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_4",
+        "ielts_practice",
+        "concept",
+        "note_completion"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q04",
+      "type": "note_completion",
+      "prompt": "An animal searching for food must balance reward with ____.",
+      "correct_answers": [
+        "risk"
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Đáp án “risk” nằm tại đoạn T04. Nội dung bằng chứng: Kiếm ăn là ví dụ khác. Động vật phải cân bằng năng lượng nhận từ thức ăn với công sức và nguy hiểm để lấy được. Nơi nhiều côn trùng vẫn có thể bị tránh nếu có thú săn mồi ở gần. Người quan sát đôi khi gọi đây là sự đánh đổi giữa phần thưởng và rủi ro. Điều đó không đòi hỏi động vật phải tính toán toán học có ý thức.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_4",
+        "ielts_practice",
+        "concept",
+        "note_completion"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q05",
+      "type": "sentence_completion",
+      "prompt": "Good studies examine competing ____ instead of assuming human motives.",
+      "correct_answers": [
+        "explanations"
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Đáp án “explanations” nằm tại đoạn T05. Nội dung bằng chứng: Một nghiên cứu hành vi tốt kết hợp quan sát cẩn thận với kiểm tra những lời giải thích cạnh tranh. Nhà nghiên cứu có thể thay một đặc điểm môi trường và giữ các yếu tố khác tương đồng nhất có thể. Sau đó họ so sánh hành động của động vật thay vì gán động cơ của con người. Hiểu hành vi cần chú ý tác nhân tức thời, quá trình phát triển, chức năng tiến hóa và bối cảnh môi trường.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_4",
+        "ielts_practice",
+        "concept",
+        "sentence_completion"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q06",
+      "type": "mcq",
+      "prompt": "Why should scientists avoid assigning human motives to animal actions?",
+      "correct_answers": [
+        "The same observed action can have different functions and triggers"
+      ],
+      "options": [
+        "Signals are always direct equivalents of human words",
+        "Animal behaviour can only be recorded inside laboratories",
+        "The same observed action can have different functions and triggers"
+      ],
+      "evidence_turn_ids": [
+        "T01",
+        "T03",
+        "T05"
+      ],
+      "explanation_vi": "Hãy kết hợp luận điểm đầu, ví dụ ở giữa và kết luận cuối bài. Một nghiên cứu hành vi tốt kết hợp quan sát cẩn thận với kiểm tra những lời giải thích cạnh tranh. Nhà nghiên cứu có thể thay một đặc điểm môi trường và giữ các yếu tố khác tương đồng nhất có thể. Sau đó họ so sánh hành động của động vật thay vì gán động cơ của con người. Hiểu hành vi cần chú ý tác nhân tức thời, quá trình phát triển, chức năng tiến hóa và bối cảnh môi trường. Phương án chính xác: “The same observed action can have different functions and triggers”; hai phương án khác khái quát quá mức hoặc không phù hợp bằng chứng.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "section_4",
+        "ielts_practice",
+        "concept",
+        "main_idea"
+      ]
+    },
+    {
+      "question_id": "D01",
+      "type": "dictation",
+      "prompt": "Nghe đoạn T02 và chép lại chính xác lời giảng.",
+      "correct_answers": [
+        "Some behaviours develop with little experience, while others change through learning. Habituation happens when an animal gradually reduces its response to a repeated, harmless stimulus. Imagine a city bird that no longer flies away when a distant bus passes. The decline in response does not necessarily indicate that its hearing has weakened; it may have learned that the event carries little danger."
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Phân tích từ nối, âm yếu và cụm thuật ngữ học thuật. Nghĩa của đoạn: Một số hành vi phát triển với ít trải nghiệm, còn số khác thay đổi nhờ học. Sự quen kích thích xảy ra khi động vật dần giảm phản ứng trước một tác nhân lặp lại nhưng vô hại. Hãy tưởng tượng chim thành phố không còn bay đi khi xe buýt ở xa chạy qua. Phản ứng giảm không nhất thiết là thính giác yếu đi; có thể nó đã học rằng sự kiện ít nguy hiểm.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_4",
+        "dictation",
+        "exact_transcript"
+      ]
+    },
+    {
+      "question_id": "D02",
+      "type": "dictation",
+      "prompt": "Nghe đoạn T04 và chép lại chính xác lời giảng.",
+      "correct_answers": [
+        "Foraging provides another useful example. An animal must balance the energy gained from food against the effort and danger of obtaining it. A food patch with abundant insects may still be avoided if predators are nearby. Observers sometimes describe the result as a trade-off between reward and risk. This does not require the animal to perform a conscious mathematical calculation."
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Phân tích từ nối, âm yếu và cụm thuật ngữ học thuật. Nghĩa của đoạn: Kiếm ăn là ví dụ khác. Động vật phải cân bằng năng lượng nhận từ thức ăn với công sức và nguy hiểm để lấy được. Nơi nhiều côn trùng vẫn có thể bị tránh nếu có thú săn mồi ở gần. Người quan sát đôi khi gọi đây là sự đánh đổi giữa phần thưởng và rủi ro. Điều đó không đòi hỏi động vật phải tính toán toán học có ý thức.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_4",
+        "dictation",
+        "exact_transcript"
+      ]
+    },
+    {
+      "question_id": "G01",
+      "type": "gap_fill",
+      "prompt": "Nghe T01 rồi điền phần thiếu: Animal behaviour refers to the actions animals perform in response to their surroundings and internal needs. An observation such as a bird singing is easy to record, but its function may be less obvious. The same song might help maintain ____ or attract a partner, depending on the species and situation. Scientists therefore separate a description of behaviour from an explanation of why it occurs.",
+      "correct_answers": [
+        "territory"
+      ],
+      "evidence_turn_ids": [
+        "T01"
+      ],
+      "explanation_vi": "Điền “territory”, nghĩa: lãnh thổ. Cụm từ này xuất hiện trong T01.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_4",
+        "gap_fill",
+        "academic_vocabulary"
+      ]
+    }
+  ],
+  "vocabulary": [
+    {
+      "term": "territory",
+      "pos": "n.",
+      "meaning_vi": "lãnh thổ",
+      "example_en": "Animal behaviour refers to the actions animals perform in response to their surroundings and internal needs. An observation such as a bird singing is easy to record, but its function may be less obvious. The same song might help maintain territory or attract a partner, depending on the species and situation. Scientists therefore separate a description of behaviour from an explanation of why it occurs.",
+      "example_vi": "Hành vi động vật là những hành động chúng thực hiện để phản ứng với môi trường và nhu cầu bên trong. Quan sát chim hót thì dễ ghi nhận, nhưng chức năng của nó có thể khó xác định hơn. Cùng một tiếng hót có thể giúp giữ lãnh thổ hoặc thu hút bạn tình, tùy loài và tình huống. Vì vậy nhà khoa học phân biệt mô tả hành vi với giải thích vì sao nó xảy ra.",
+      "source_turn_id": "T01"
+    },
+    {
+      "term": "Habituation",
+      "pos": "n.",
+      "meaning_vi": "sự quen kích thích",
+      "example_en": "Some behaviours develop with little experience, while others change through learning. Habituation happens when an animal gradually reduces its response to a repeated, harmless stimulus. Imagine a city bird that no longer flies away when a distant bus passes. The decline in response does not necessarily indicate that its hearing has weakened; it may have learned that the event carries little danger.",
+      "example_vi": "Một số hành vi phát triển với ít trải nghiệm, còn số khác thay đổi nhờ học. Sự quen kích thích xảy ra khi động vật dần giảm phản ứng trước một tác nhân lặp lại nhưng vô hại. Hãy tưởng tượng chim thành phố không còn bay đi khi xe buýt ở xa chạy qua. Phản ứng giảm không nhất thiết là thính giác yếu đi; có thể nó đã học rằng sự kiện ít nguy hiểm.",
+      "source_turn_id": "T02"
+    },
+    {
+      "term": "warning call",
+      "pos": "n. phr.",
+      "meaning_vi": "tiếng cảnh báo",
+      "example_en": "Researchers also study communication. Signals may involve sound, movement, scent or colour, and they work only if another animal can detect and interpret them. A warning call can benefit group members, but it may also expose the caller to risk. The value of a signal depends on who receives it and what actions follow. Signals should not be treated as direct translations of human sentences.",
+      "example_vi": "Nhà nghiên cứu cũng tìm hiểu giao tiếp. Tín hiệu có thể là âm thanh, chuyển động, mùi hoặc màu sắc và chỉ có tác dụng nếu cá thể khác nhận ra, diễn giải được. Tiếng cảnh báo có thể có lợi cho cả nhóm nhưng cũng khiến cá thể phát tín hiệu gặp rủi ro. Giá trị tín hiệu tùy vào ai nhận và hành động tiếp theo. Không nên xem tín hiệu là bản dịch trực tiếp của câu nói con người.",
+      "source_turn_id": "T03"
+    },
+    {
+      "term": "Foraging",
+      "pos": "n.",
+      "meaning_vi": "hành vi kiếm ăn",
+      "example_en": "Foraging provides another useful example. An animal must balance the energy gained from food against the effort and danger of obtaining it. A food patch with abundant insects may still be avoided if predators are nearby. Observers sometimes describe the result as a trade-off between reward and risk. This does not require the animal to perform a conscious mathematical calculation.",
+      "example_vi": "Kiếm ăn là ví dụ khác. Động vật phải cân bằng năng lượng nhận từ thức ăn với công sức và nguy hiểm để lấy được. Nơi nhiều côn trùng vẫn có thể bị tránh nếu có thú săn mồi ở gần. Người quan sát đôi khi gọi đây là sự đánh đổi giữa phần thưởng và rủi ro. Điều đó không đòi hỏi động vật phải tính toán toán học có ý thức.",
+      "source_turn_id": "T04"
+    }
+  ],
+  "audio": {
+    "status": "not_generated",
+    "url": null,
+    "duration_ms": null,
+    "model": null,
+    "provider": null,
+    "voice_config": null,
+    "source_transcript_hash": "d49e9870e34d4d4ecad391cbca9e1d4b25eaa64a1090e3b6b1adb60e78787585",
+    "audio_sha256": null,
+    "format": null
+  },
+  "qa": {
+    "content_reviewed": false,
+    "answers_verified": false,
+    "audio_verified": false,
+    "rights_cleared": false,
+    "duplicate_reviewed": false,
+    "notes": [
+      "Original AI-assisted educational script, not an official IELTS transcript.",
+      "Editorial, academic and linguistic review pending.",
+      "Audio/TTS not generated; text-to-speech distribution rights must be confirmed before use, especially for minors.",
+      "Six IELTS-style practice questions per lesson; this is not a full official Part 4 test or a calibrated IELTS Band test.",
+      "M16.2: automated edits are provisional; IELTS teacher final signoff, audio and rights clearance pending."
+    ]
+  },
+  "provenance": {
+    "content_origin": "original_ai_assisted",
+    "source_urls": [],
+    "source_rights_note": "Original transcript and translation drafts; verify academic claims and terms, and TTS provider redistribution conditions before release.",
+    "reviewer": null
+  },
+  "release_metadata": {
+    "published_at": null,
+    "version": 1
+  }
+}

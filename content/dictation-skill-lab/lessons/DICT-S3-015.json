@@ -1,0 +1,413 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "DICT-S3-015",
+  "status": "draft",
+  "level": "L4",
+  "section": 3,
+  "topic": "Team Problem Solving",
+  "title": "Team Problem Solving: Planning & Roles",
+  "learning_objectives_vi": [
+    "Theo dõi ý kiến và lập luận của nhiều người trong một thảo luận học thuật.",
+    "Xác định thông tin cuối cùng sau khi người nói đề xuất, phản biện hoặc sửa ý.",
+    "Chép chính xác những đoạn trọng tâm và đối chiếu bằng chứng trong transcript."
+  ],
+  "content_format": "section_practice",
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Ivy – university student / tutor discussion participant",
+      "tts_voice_id": null,
+      "accent_requested": "australian"
+    },
+    {
+      "speaker_id": "B",
+      "role": "Max – university student / tutor discussion participant",
+      "tts_voice_id": null,
+      "accent_requested": "australian"
+    },
+    {
+      "speaker_id": "C",
+      "role": "Elena – university student / tutor discussion participant",
+      "tts_voice_id": null,
+      "accent_requested": "australian"
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "Our group app works on laptops, but students say the text is difficult to read on smaller phones.",
+      "translation_vi": "Ứng dụng nhóm chạy tốt trên laptop, nhưng sinh viên nói chữ khó đọc trên điện thoại nhỏ.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "l4",
+        "planning"
+      ]
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "B",
+      "text_en": "I suggested adding more menu buttons, although that might make the screen feel even more crowded.",
+      "translation_vi": "Mình đề xuất thêm nút menu, dù có thể khiến màn hình chật hơn.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "l4",
+        "planning"
+      ]
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "C",
+      "text_en": "Could we simplify the navigation instead? Most testers only use three functions regularly.",
+      "translation_vi": "Hay đơn giản hóa điều hướng? Hầu hết người thử chỉ dùng ba chức năng thường xuyên.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "l4",
+        "planning"
+      ]
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "A",
+      "text_en": "Yes. Put those functions on the first screen and move the extra settings into a separate menu.",
+      "translation_vi": "Ừ. Đặt các chức năng đó ở màn đầu và chuyển cài đặt phụ sang menu riêng.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "l4",
+        "planning"
+      ]
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "B",
+      "text_en": "We should also test the contrast. One participant couldn't distinguish the pale buttons from the background.",
+      "translation_vi": "Ta cũng cần kiểm tra độ tương phản. Một người tham gia không phân biệt được nút nhạt với nền.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "l4",
+        "planning"
+      ]
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "C",
+      "text_en": "I'll update the colours, but I'd like to observe people using the interface before we redesign everything.",
+      "translation_vi": "Mình sẽ sửa màu, nhưng muốn quan sát người dùng trước khi thiết kế lại toàn bộ.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "l4",
+        "planning"
+      ]
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "Let's run five short tests in the computer lab on Thursday, then choose the most useful changes.",
+      "translation_vi": "Hãy làm năm buổi thử ngắn tại phòng máy thứ Năm, rồi chọn thay đổi hữu ích nhất.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "l4",
+        "planning"
+      ]
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "B",
+      "text_en": "I'll write the task instructions and make sure we don't tell participants where to click.",
+      "translation_vi": "Mình sẽ viết hướng dẫn nhiệm vụ và đảm bảo không chỉ cho người tham gia phải bấm đâu.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "l4",
+        "planning"
+      ]
+    },
+    {
+      "turn_id": "T09",
+      "speaker_id": "C",
+      "text_en": "Good. That way we can see which parts of the interface are genuinely confusing.",
+      "translation_vi": "Tốt. Nhờ vậy ta thấy phần nào của giao diện thực sự gây khó hiểu.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "l4",
+        "planning"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "type": "note_completion",
+      "prompt": "Users find the app text difficult to read on smaller ____.",
+      "correct_answers": [
+        "phones"
+      ],
+      "evidence_turn_ids": [
+        "T01"
+      ],
+      "explanation_vi": "Bằng chứng ở T01 (Ivy): “Ứng dụng nhóm chạy tốt trên laptop, nhưng sinh viên nói chữ khó đọc trên điện thoại nhỏ.” Đáp án: “phones”. Từ/cụm từ nằm trong lời nói; không chọn thông tin đã bị sửa hoặc người khác chỉ đề xuất.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_3",
+        "ielts_practice",
+        "detail_recognition"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q02",
+      "type": "mcq",
+      "prompt": "What change does Elena propose?",
+      "correct_answers": [
+        "Simplify the navigation"
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Bằng chứng ở T03 (Elena): “Hay đơn giản hóa điều hướng? Hầu hết người thử chỉ dùng ba chức năng thường xuyên.” Đáp án: “Simplify the navigation”. Đây là ý cuối cùng hoặc lập luận cần xác định; các lựa chọn khác không được đoạn này xác nhận.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "section_3",
+        "ielts_practice",
+        "opinion_inference"
+      ],
+      "options": [
+        "Remove the main functions",
+        "Simplify the navigation",
+        "Add more menus"
+      ]
+    },
+    {
+      "question_id": "Q03",
+      "type": "note_completion",
+      "prompt": "The most-used functions should be on the ____ screen.",
+      "correct_answers": [
+        "first"
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Bằng chứng ở T04 (Ivy): “Ừ. Đặt các chức năng đó ở màn đầu và chuyển cài đặt phụ sang menu riêng.” Đáp án: “first”. Từ/cụm từ nằm trong lời nói; không chọn thông tin đã bị sửa hoặc người khác chỉ đề xuất.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_3",
+        "ielts_practice",
+        "detail_recognition"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q04",
+      "type": "short_answer",
+      "prompt": "Which visual feature needs checking?",
+      "correct_answers": [
+        "contrast"
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Bằng chứng ở T05 (Max): “Ta cũng cần kiểm tra độ tương phản. Một người tham gia không phân biệt được nút nhạt với nền.” Đáp án: “contrast”. Từ/cụm từ nằm trong lời nói; không chọn thông tin đã bị sửa hoặc người khác chỉ đề xuất.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_3",
+        "ielts_practice",
+        "detail_recognition"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q05",
+      "type": "matching",
+      "prompt": "Where will the team conduct five user tests?",
+      "correct_answers": [
+        "computer lab"
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "Bằng chứng ở T07 (Ivy): “Hãy làm năm buổi thử ngắn tại phòng máy thứ Năm, rồi chọn thay đổi hữu ích nhất.” Đáp án: “computer lab”. Đối chiếu đúng thông tin được người nói nêu, chú ý các ý kiến hoặc phương án trước đó.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "section_3",
+        "ielts_practice",
+        "speaker_attribution"
+      ],
+      "options": [
+        "lecture theatre",
+        "computer lab",
+        "student cafe"
+      ]
+    },
+    {
+      "question_id": "Q06",
+      "type": "note_completion",
+      "prompt": "Test instructions should avoid telling users where to ____.",
+      "correct_answers": [
+        "click"
+      ],
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "explanation_vi": "Bằng chứng ở T08 (Max): “Mình sẽ viết hướng dẫn nhiệm vụ và đảm bảo không chỉ cho người tham gia phải bấm đâu.” Đáp án: “click”. Từ/cụm từ nằm trong lời nói; không chọn thông tin đã bị sửa hoặc người khác chỉ đề xuất.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_3",
+        "ielts_practice",
+        "detail_recognition"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "D01",
+      "type": "dictation",
+      "prompt": "Nghe đoạn T03 và chép nguyên văn tiếng Anh (Speaker C).",
+      "correct_answers": [
+        "Could we simplify the navigation instead? Most testers only use three functions regularly."
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Câu gốc: “Could we simplify the navigation instead? Most testers only use three functions regularly.”\nNghĩa: Hay đơn giản hóa điều hướng? Hầu hết người thử chỉ dùng ba chức năng thường xuyên.\nChú ý từ chức năng, âm yếu, cụm từ nối và ý người nói.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_3",
+        "dictation",
+        "exact_transcript"
+      ]
+    },
+    {
+      "question_id": "D02",
+      "type": "dictation",
+      "prompt": "Nghe đoạn T06 và chép nguyên văn tiếng Anh (Speaker C).",
+      "correct_answers": [
+        "I'll update the colours, but I'd like to observe people using the interface before we redesign everything."
+      ],
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "explanation_vi": "Câu gốc: “I'll update the colours, but I'd like to observe people using the interface before we redesign everything.”\nNghĩa: Mình sẽ sửa màu, nhưng muốn quan sát người dùng trước khi thiết kế lại toàn bộ.\nChú ý từ chức năng, âm yếu, cụm từ nối và ý người nói.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_3",
+        "dictation",
+        "exact_transcript"
+      ]
+    },
+    {
+      "question_id": "G01",
+      "type": "gap_fill",
+      "prompt": "Nghe T03, điền từ/cụm từ bị thiếu: Could we simplify the ____ instead? Most testers only use three functions regularly.",
+      "correct_answers": [
+        "navigation"
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Cụm cần nghe: “navigation” (điều hướng). Lời gốc: “Could we simplify the navigation instead? Most testers only use three functions regularly.”.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_3",
+        "gap_fill",
+        "vocabulary_in_context"
+      ]
+    }
+  ],
+  "vocabulary": [
+    {
+      "term": "navigation",
+      "pos": "n.",
+      "meaning_vi": "điều hướng",
+      "example_en": "Could we simplify the navigation instead? Most testers only use three functions regularly.",
+      "example_vi": "Hay đơn giản hóa điều hướng? Hầu hết người thử chỉ dùng ba chức năng thường xuyên.",
+      "source_turn_id": "T03"
+    },
+    {
+      "term": "contrast",
+      "pos": "n.",
+      "meaning_vi": "độ tương phản",
+      "example_en": "We should also test the contrast. One participant couldn't distinguish the pale buttons from the background.",
+      "example_vi": "Ta cũng cần kiểm tra độ tương phản. Một người tham gia không phân biệt được nút nhạt với nền.",
+      "source_turn_id": "T05"
+    },
+    {
+      "term": "interface",
+      "pos": "n.",
+      "meaning_vi": "giao diện",
+      "example_en": "I'll update the colours, but I'd like to observe people using the interface before we redesign everything.",
+      "example_vi": "Mình sẽ sửa màu, nhưng muốn quan sát người dùng trước khi thiết kế lại toàn bộ.",
+      "source_turn_id": "T06"
+    },
+    {
+      "term": "task instructions",
+      "pos": "n. phr.",
+      "meaning_vi": "hướng dẫn nhiệm vụ",
+      "example_en": "I'll write the task instructions and make sure we don't tell participants where to click.",
+      "example_vi": "Mình sẽ viết hướng dẫn nhiệm vụ và đảm bảo không chỉ cho người tham gia phải bấm đâu.",
+      "source_turn_id": "T08"
+    }
+  ],
+  "audio": {
+    "status": "not_generated",
+    "url": null,
+    "duration_ms": null,
+    "model": null,
+    "provider": null,
+    "voice_config": null,
+    "source_transcript_hash": "7be426a94325894a3818b57add821547d4aa01871315ba3ed8b30f9ff8bbec16",
+    "audio_sha256": null,
+    "format": null
+  },
+  "qa": {
+    "content_reviewed": false,
+    "answers_verified": false,
+    "audio_verified": false,
+    "rights_cleared": false,
+    "duplicate_reviewed": false,
+    "notes": [
+      "Original synthetic dialogues: human educational review required.",
+      "Audio, timestamps, voice suitability and service/distribution rights not yet verified.",
+      "Training lessons, NOT official IELTS Part 3 tests or calibrated band tests.",
+      "M16.2: automated edits are provisional; IELTS teacher final signoff, audio and rights clearance pending."
+    ]
+  },
+  "provenance": {
+    "content_origin": "original_ai_assisted",
+    "source_urls": [],
+    "source_rights_note": "Original text; verify TTS provider terms and distribution rights before publishing to a youth-accessible website.",
+    "reviewer": null
+  },
+  "release_metadata": {
+    "published_at": null,
+    "version": 1
+  }
+}

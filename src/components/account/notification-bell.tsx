@@ -5,6 +5,7 @@ import Link from "next/link";
 import { Bell, CalendarCheck, Megaphone, ShieldAlert } from "lucide-react";
 import { createClient } from "@/lib/supabase/browser";
 import "./account.css";
+import { LoadingBlock } from "@/components/layout/loading-block";
 
 type Note = { id: string; kind: "announcement" | "task" | "account"; title: string; body: string; link: string | null; created_at: string };
 const kindIcon = { announcement: Megaphone, task: CalendarCheck, account: ShieldAlert };
@@ -14,7 +15,7 @@ function ago(value: string) {
   return minutes < 60 ? `${minutes || 1} phút trước` : minutes < 1440 ? `${Math.floor(minutes / 60)} giờ trước` : `${Math.floor(minutes / 1440)} ngày trước`;
 }
 
-/** Announcements, assigned tasks and account notices from admins. Opening the list marks them read. */
+/** Persistent learner notices. Opening the list marks them read. */
 export function NotificationBell({ open, onToggle }: { open: boolean; onToggle: () => void }) {
   const db = useMemo(() => createClient(), []);
   const [items, setItems] = useState<Note[]>([]);
@@ -31,8 +32,11 @@ export function NotificationBell({ open, onToggle }: { open: boolean; onToggle: 
   }, [db]);
   useEffect(() => {
     const first = window.setTimeout(() => void load(), 0);
-    const timer = window.setInterval(() => { if (document.visibilityState === "visible") void load(); }, 120000);
-    return () => { window.clearTimeout(first); window.clearInterval(timer); };
+    const refresh = () => { if (document.visibilityState === "visible") void load(); };
+    const timer = window.setInterval(refresh, 30000);
+    document.addEventListener("visibilitychange", refresh);
+    window.addEventListener("learner-notifications-refresh", refresh);
+    return () => { window.clearTimeout(first); window.clearInterval(timer); document.removeEventListener("visibilitychange", refresh); window.removeEventListener("learner-notifications-refresh", refresh); };
   }, [load]);
   const unread = items.filter((item) => !read.has(item.id));
 
@@ -51,7 +55,7 @@ export function NotificationBell({ open, onToggle }: { open: boolean; onToggle: 
     </button>
     {open && <div className="small-popover notification-popover">
       <b>Thông báo</b>
-      {!loaded ? <p>Đang tải…</p> : items.length === 0 ? <p>Chưa có thông báo nào. Harry sẽ báo bạn khi có nhiệm vụ hoặc tin mới.</p> :
+      {!loaded ? <p><LoadingBlock label="Đang tải…" /></p> : items.length === 0 ? <p>Chưa có thông báo nào. Harry sẽ báo bạn khi có nhiệm vụ hoặc tin mới.</p> :
         <ul>{items.map((item) => {
           const Icon = kindIcon[item.kind] ?? Megaphone;
           const content = <><span className={`notification-icon ${item.kind}`}><Icon size={15} /></span><span><strong>{item.title}</strong>{item.body && <small>{item.body}</small>}<time dateTime={item.created_at}>{ago(item.created_at)}</time></span></>;

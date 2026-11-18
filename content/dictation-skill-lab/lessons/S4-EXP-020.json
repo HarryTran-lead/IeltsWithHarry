@@ -1,0 +1,742 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "S4-EXP-020",
+  "status": "draft",
+  "level": "L7",
+  "section": 4,
+  "topic": "Educational psychology and study design",
+  "title": "Why Spacing Out Learning Works",
+  "learning_objectives_vi": [
+    "Theo dõi lập luận học thuật: định nghĩa → chứng cứ → hạn chế → kết luận.",
+    "Nghe từ khóa, từ đồng nghĩa và cấu trúc nguyên nhân–kết quả trong bài độc thoại.",
+    "Hoàn thành Note/Table/Summary/Sentence hoặc Flow-chart theo thứ tự audio với giới hạn từ."
+  ],
+  "content_format": "section_practice",
+  "target_skills": [
+    "spaced_learning",
+    "academic_lecture",
+    "note_completion",
+    "summary_completion",
+    "signposting",
+    "paraphrase"
+  ],
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Academic lecturer",
+      "accent_requested": "north_american",
+      "tts_voice_id": null
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "Many learners finish a topic by rereading the same notes several times in one evening. The material feels increasingly familiar, but familiarity is not the same as durable knowledge. Educational researchers investigate what happens when study sessions are separated by time, a method known as spaced practice. The relevant question is how much remains available days or weeks later.",
+      "translation_vi": "Nhiều người ôn một chủ đề bằng cách đọc đi đọc lại ghi chú trong một tối. Bài học càng quen nhưng cảm giác quen không bằng nhớ lâu. Nhà nghiên cứu giáo dục xem kết quả khi tách các buổi học theo thời gian, gọi là luyện tập cách quãng. Cần kiểm tra kiến thức còn lại sau ngày hoặc tuần.",
+      "start_ms": null,
+      "end_ms": null,
+      "paragraph_index": 1,
+      "bank_role": "training",
+      "skill_tags": [
+        "m24",
+        "ielts_part_4_practice",
+        "spaced_learning",
+        "academic_lecture",
+        "paraphrase",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "A",
+      "text_en": "A contrasting strategy is to study all repetitions together. This is commonly called massed practice. It can produce impressive performance immediately after a session, especially for simple tasks. But when learners return later, much of the material may be harder to retrieve. Comparing the two approaches requires the same total study time and a suitable delayed assessment.",
+      "translation_vi": "Chiến lược đối lập là gom mọi lượt ôn vào một buổi, gọi là luyện tập dồn. Nó tạo kết quả tốt ngay sau buổi học, nhất là bài đơn giản, nhưng sau đó nhiều kiến thức khó gọi lại. So sánh hai cách phải giữ tổng thời gian học tương đương và có kiểm tra sau thời gian chờ.",
+      "start_ms": null,
+      "end_ms": null,
+      "paragraph_index": 2,
+      "bank_role": "training",
+      "skill_tags": [
+        "m24",
+        "ielts_part_4_practice",
+        "spaced_learning",
+        "academic_lecture",
+        "paraphrase",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "A",
+      "text_en": "Why can spreading practice help? One explanation is that some forgetting makes later retrieval more demanding. Recovering an idea from memory may strengthen its availability for future use. Researchers discuss retrieval effort as part of this process. However, if the material is forgotten so completely that recall always fails, additional support may be needed.",
+      "translation_vi": "Vì sao giãn cách giúp? Một giải thích là quên một phần khiến lần nhớ lại sau khó hơn. Việc chủ động khôi phục ý từ trí nhớ có thể giúp nhớ về sau. Nhà nghiên cứu bàn về nỗ lực truy xuất. Nhưng nếu quên hoàn toàn và lần nào cũng sai thì cần thêm hỗ trợ.",
+      "start_ms": null,
+      "end_ms": null,
+      "paragraph_index": 3,
+      "bank_role": "training",
+      "skill_tags": [
+        "m24",
+        "ielts_part_4_practice",
+        "spaced_learning",
+        "academic_lecture",
+        "paraphrase",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "A",
+      "text_en": "The length of the interval matters. Reviewing an hour later is not identical to returning after a week, and the ideal spacing depends partly on when the information will be needed. Researchers call this the spacing interval. For an exam tomorrow, the pattern may differ from a course whose knowledge should be retained for several months.",
+      "translation_vi": "Khoảng cách giữa lần học quan trọng. Ôn lại sau một giờ khác sau một tuần; khoảng tối ưu còn tùy khi nào cần kiến thức. Người ta gọi là khoảng giãn cách. Thi ngày mai đòi cách phân bố khác chương trình cần nhớ nhiều tháng.",
+      "start_ms": null,
+      "end_ms": null,
+      "paragraph_index": 4,
+      "bank_role": "training",
+      "skill_tags": [
+        "m24",
+        "ielts_part_4_practice",
+        "spaced_learning",
+        "academic_lecture",
+        "paraphrase",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "A",
+      "text_en": "Another useful strategy is to mix related problem types rather than solve one kind repeatedly before switching. This is called interleaved practice. It can make a session feel harder because learners must choose which method applies. That decision is useful in real exams, where questions rarely announce which familiar example they resemble.",
+      "translation_vi": "Chiến lược khác là trộn dạng bài gần nhau thay vì làm hết một loại rồi mới chuyển. Đó là luyện xen kẽ. Buổi học khó hơn vì người học phải tự chọn phương pháp. Việc đó hữu ích trong bài thi thật vì câu hỏi không thông báo nó giống ví dụ đã học nào.",
+      "start_ms": null,
+      "end_ms": null,
+      "paragraph_index": 5,
+      "bank_role": "training",
+      "skill_tags": [
+        "m24",
+        "ielts_part_4_practice",
+        "spaced_learning",
+        "academic_lecture",
+        "paraphrase",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "A",
+      "text_en": "Spacing and interleaving do not replace the need for feedback. If a learner repeatedly practises an incorrect answer, the mistake can become familiar too. Teachers therefore provide corrective feedback after attempts, especially when errors reflect misunderstood rules rather than simple slips. Feedback should explain why an answer works, not merely announce a letter.",
+      "translation_vi": "Giãn cách và xen kẽ không thay nhu cầu phản hồi. Nếu người học lặp đáp án sai, lỗi cũng thành quen. Giáo viên cần phản hồi sửa lỗi sau lượt làm, đặc biệt khi sai do hiểu nhầm quy tắc. Phản hồi nên giải thích vì sao đáp án đúng, không chỉ báo chữ cái.",
+      "start_ms": null,
+      "end_ms": null,
+      "paragraph_index": 6,
+      "bank_role": "training",
+      "skill_tags": [
+        "m24",
+        "ielts_part_4_practice",
+        "spaced_learning",
+        "academic_lecture",
+        "paraphrase",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "How do we know a method works? A high score immediately after a lesson might reflect short-term familiarity. Stronger evidence comes from a delayed assessment using questions the learner has not memorised. It is also useful to examine performance on unfamiliar examples, because success on repeated items can hide a lack of genuine understanding.",
+      "translation_vi": "Biết phương pháp có hiệu quả bằng cách nào? Điểm cao ngay sau học có thể là quen ngắn hạn. Bằng chứng mạnh hơn đến từ kiểm tra trì hoãn với câu chưa học thuộc. Cũng nên xem kết quả ở ví dụ mới vì làm tốt câu lặp có thể che việc chưa thực hiểu.",
+      "start_ms": null,
+      "end_ms": null,
+      "paragraph_index": 7,
+      "bank_role": "training",
+      "skill_tags": [
+        "m24",
+        "ielts_part_4_practice",
+        "spaced_learning",
+        "academic_lecture",
+        "paraphrase",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "A",
+      "text_en": "The conclusion is not that every person should follow one fixed timetable. Students differ in background, available time and goals, so an adaptive programme can adjust future reviews based on evidence of mastery. But it must protect unseen questions for assessment, or memorising yesterday's audio may look like better listening. Effective revision combines spacing, retrieval and fair testing.",
+      "translation_vi": "Kết luận không phải mọi người dùng một thời khóa biểu cố định. Người học khác nền tảng, thời gian và mục tiêu nên hệ cá nhân hóa điều chỉnh lịch ôn theo mức vững. Nhưng phải bảo vệ câu chưa gặp cho đánh giá, nếu không việc thuộc audio hôm qua sẽ trông như nghe tốt hơn. Ôn hiệu quả kết hợp giãn cách, nhớ lại và kiểm tra công bằng.",
+      "start_ms": null,
+      "end_ms": null,
+      "paragraph_index": 8,
+      "bank_role": "training",
+      "skill_tags": [
+        "m24",
+        "ielts_part_4_practice",
+        "spaced_learning",
+        "academic_lecture",
+        "paraphrase",
+        "signposting"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "group_id": "IELTS_NOTE_01_03",
+      "type": "note_completion",
+      "prompt": "Learning spread over several sessions is ____.",
+      "correct_answers": [
+        "spaced practice"
+      ],
+      "evidence_turn_ids": [
+        "T01"
+      ],
+      "evidence_excerpt_en": "Educational researchers investigate what happens when study sessions are separated by time, a method known as spaced practice.",
+      "explanation_vi": "Spaced practice là chia việc học thành nhiều lần cách nhau.",
+      "question_tags": [
+        "m24",
+        "ielts_part_4_practice",
+        "spaced_learning",
+        "note_completion"
+      ],
+      "scoring_policy": "strict_spoken_words",
+      "bank_role": "training",
+      "answer_provenance": "original_draft_authored_against_transcript",
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS",
+      "review_status": "awaiting_teacher_and_audio_review"
+    },
+    {
+      "question_id": "Q02",
+      "group_id": "IELTS_NOTE_01_03",
+      "type": "note_completion",
+      "prompt": "Repeating material in one concentrated block is ____.",
+      "correct_answers": [
+        "massed practice"
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "evidence_excerpt_en": "This is commonly called massed practice.",
+      "explanation_vi": "Massed practice là ôn tập dồn vào một khoảng thời gian ngắn.",
+      "question_tags": [
+        "m24",
+        "ielts_part_4_practice",
+        "spaced_learning",
+        "note_completion"
+      ],
+      "scoring_policy": "strict_spoken_words",
+      "bank_role": "training",
+      "answer_provenance": "original_draft_authored_against_transcript",
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS",
+      "review_status": "awaiting_teacher_and_audio_review"
+    },
+    {
+      "question_id": "Q03",
+      "group_id": "IELTS_NOTE_01_03",
+      "type": "note_completion",
+      "prompt": "A potentially useful difficulty is greater ____.",
+      "correct_answers": [
+        "retrieval effort"
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "evidence_excerpt_en": "Researchers discuss retrieval effort as part of this process.",
+      "explanation_vi": "Retrieval effort là nỗ lực chủ động nhớ lại thay vì chỉ xem đáp án.",
+      "question_tags": [
+        "m24",
+        "ielts_part_4_practice",
+        "spaced_learning",
+        "note_completion"
+      ],
+      "scoring_policy": "strict_spoken_words",
+      "bank_role": "training",
+      "answer_provenance": "original_draft_authored_against_transcript",
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS",
+      "review_status": "awaiting_teacher_and_audio_review"
+    },
+    {
+      "question_id": "Q04",
+      "group_id": "IELTS_TABLE_04_06",
+      "type": "table_completion",
+      "prompt": "Time between study sessions is the ____.",
+      "correct_answers": [
+        "spacing interval"
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "evidence_excerpt_en": "Researchers call this the spacing interval.",
+      "explanation_vi": "Spacing interval là khoảng thời gian giữa các lần luyện.",
+      "question_tags": [
+        "m24",
+        "ielts_part_4_practice",
+        "spaced_learning",
+        "table_completion"
+      ],
+      "scoring_policy": "strict_spoken_words",
+      "bank_role": "training",
+      "answer_provenance": "original_draft_authored_against_transcript",
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS",
+      "review_status": "awaiting_teacher_and_audio_review"
+    },
+    {
+      "question_id": "Q05",
+      "group_id": "IELTS_TABLE_04_06",
+      "type": "table_completion",
+      "prompt": "Mixing different problem types within a session is ____.",
+      "correct_answers": [
+        "interleaved practice"
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "evidence_excerpt_en": "This is called interleaved practice.",
+      "explanation_vi": "Interleaved practice là luân phiên các dạng bài để tập phân biệt.",
+      "question_tags": [
+        "m24",
+        "ielts_part_4_practice",
+        "spaced_learning",
+        "table_completion"
+      ],
+      "scoring_policy": "strict_spoken_words",
+      "bank_role": "training",
+      "answer_provenance": "original_draft_authored_against_transcript",
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS",
+      "review_status": "awaiting_teacher_and_audio_review"
+    },
+    {
+      "question_id": "Q06",
+      "group_id": "IELTS_TABLE_04_06",
+      "type": "table_completion",
+      "prompt": "Repeated errors should be addressed through ____.",
+      "correct_answers": [
+        "corrective feedback"
+      ],
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "evidence_excerpt_en": "Teachers therefore provide corrective feedback after attempts, especially when errors reflect misunderstood rules rather than simple slips.",
+      "explanation_vi": "Corrective feedback là phản hồi giúp sửa cách hiểu và đáp án sai.",
+      "question_tags": [
+        "m24",
+        "ielts_part_4_practice",
+        "spaced_learning",
+        "table_completion"
+      ],
+      "scoring_policy": "strict_spoken_words",
+      "bank_role": "training",
+      "answer_provenance": "original_draft_authored_against_transcript",
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS",
+      "review_status": "awaiting_teacher_and_audio_review"
+    },
+    {
+      "question_id": "Q07",
+      "group_id": "IELTS_SUMMARY_07_08",
+      "type": "summary_completion",
+      "prompt": "Longer-term retention should be tested through a ____.",
+      "correct_answers": [
+        "delayed assessment"
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "evidence_excerpt_en": "Stronger evidence comes from a delayed assessment using questions the learner has not memorised.",
+      "explanation_vi": "Delayed assessment là kiểm tra sau khoảng thời gian, thay vì ngay lúc học.",
+      "question_tags": [
+        "m24",
+        "ielts_part_4_practice",
+        "spaced_learning",
+        "summary_completion"
+      ],
+      "scoring_policy": "strict_spoken_words",
+      "bank_role": "training",
+      "answer_provenance": "original_draft_authored_against_transcript",
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS",
+      "review_status": "awaiting_teacher_and_audio_review"
+    },
+    {
+      "question_id": "Q08",
+      "group_id": "IELTS_SUMMARY_07_08",
+      "type": "summary_completion",
+      "prompt": "Fair mastery checks should include ____ that learners have not studied.",
+      "correct_answers": [
+        "unseen questions"
+      ],
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "evidence_excerpt_en": "But it must protect unseen questions for assessment, or memorising yesterday's audio may look like better listening.",
+      "explanation_vi": "Unseen questions là câu hỏi chưa từng tiếp xúc trong thời gian luyện.",
+      "question_tags": [
+        "m24",
+        "ielts_part_4_practice",
+        "spaced_learning",
+        "summary_completion"
+      ],
+      "scoring_policy": "strict_spoken_words",
+      "bank_role": "training",
+      "answer_provenance": "original_draft_authored_against_transcript",
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS",
+      "review_status": "awaiting_teacher_and_audio_review"
+    },
+    {
+      "question_id": "D01",
+      "group_id": "SELECTIVE_DICTATION",
+      "type": "dictation",
+      "prompt": "Nghe đoạn trích từ phần 2 và chép lại chính xác câu được phát.",
+      "correct_answers": [
+        "A contrasting strategy is to study all repetitions together. This is commonly called massed practice."
+      ],
+      "source_turn_id": "T02",
+      "source_char_start": 0,
+      "source_char_end": 101,
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "evidence_excerpt_en": "A contrasting strategy is to study all repetitions together. This is commonly called massed practice.",
+      "explanation_vi": "Luyện nghe chính xác cả cụm từ học thuật và từ chức năng trong một câu hoàn chỉnh.",
+      "scoring_policy": "dictation_token_alignment",
+      "bank_role": "training",
+      "word_limit": null,
+      "review_status": "awaiting_teacher_and_audio_review"
+    },
+    {
+      "question_id": "D02",
+      "group_id": "SELECTIVE_DICTATION",
+      "type": "dictation",
+      "prompt": "Nghe đoạn trích từ phần 4 và chép lại chính xác câu được phát.",
+      "correct_answers": [
+        "Researchers call this the spacing interval. For an exam tomorrow, the pattern may differ from a course whose knowledge should be retained for several months."
+      ],
+      "source_turn_id": "T04",
+      "source_char_start": 181,
+      "source_char_end": 338,
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "evidence_excerpt_en": "Researchers call this the spacing interval. For an exam tomorrow, the pattern may differ from a course whose knowledge should be retained for several months.",
+      "explanation_vi": "Luyện nghe chính xác cả cụm từ học thuật và từ chức năng trong một câu hoàn chỉnh.",
+      "scoring_policy": "dictation_token_alignment",
+      "bank_role": "training",
+      "word_limit": null,
+      "review_status": "awaiting_teacher_and_audio_review"
+    },
+    {
+      "question_id": "D03",
+      "group_id": "SELECTIVE_DICTATION",
+      "type": "dictation",
+      "prompt": "Nghe đoạn trích từ phần 6 và chép lại chính xác câu được phát.",
+      "correct_answers": [
+        "Teachers therefore provide corrective feedback after attempts, especially when errors reflect misunderstood rules rather than simple slips."
+      ],
+      "source_turn_id": "T06",
+      "source_char_start": 155,
+      "source_char_end": 294,
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "evidence_excerpt_en": "Teachers therefore provide corrective feedback after attempts, especially when errors reflect misunderstood rules rather than simple slips.",
+      "explanation_vi": "Luyện nghe chính xác cả cụm từ học thuật và từ chức năng trong một câu hoàn chỉnh.",
+      "scoring_policy": "dictation_token_alignment",
+      "bank_role": "training",
+      "word_limit": null,
+      "review_status": "awaiting_teacher_and_audio_review"
+    },
+    {
+      "question_id": "D04",
+      "group_id": "SELECTIVE_DICTATION",
+      "type": "dictation",
+      "prompt": "Nghe đoạn trích từ phần 8 và chép lại chính xác câu được phát.",
+      "correct_answers": [
+        "But it must protect unseen questions for assessment, or memorising yesterday's audio may look like better listening."
+      ],
+      "source_turn_id": "T08",
+      "source_char_start": 213,
+      "source_char_end": 329,
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "evidence_excerpt_en": "But it must protect unseen questions for assessment, or memorising yesterday's audio may look like better listening.",
+      "explanation_vi": "Luyện nghe chính xác cả cụm từ học thuật và từ chức năng trong một câu hoàn chỉnh.",
+      "scoring_policy": "dictation_token_alignment",
+      "bank_role": "training",
+      "word_limit": null,
+      "review_status": "awaiting_teacher_and_audio_review"
+    },
+    {
+      "question_id": "G01",
+      "group_id": "POST_LISTEN_GAP_FILL",
+      "type": "gap_fill",
+      "prompt": "Nghe và điền phần thiếu: Researchers discuss ____ as part of this process.",
+      "correct_answers": [
+        "retrieval effort"
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "evidence_excerpt_en": "Researchers discuss retrieval effort as part of this process.",
+      "explanation_vi": "Luyện ghi lại thuật ngữ chính xác sau khi đã hoàn thành lượt làm IELTS.",
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS",
+      "scoring_policy": "strict_spoken_words",
+      "bank_role": "training",
+      "unlock_after_ielts_submission": true,
+      "review_status": "awaiting_teacher_and_audio_review"
+    },
+    {
+      "question_id": "G02",
+      "group_id": "POST_LISTEN_GAP_FILL",
+      "type": "gap_fill",
+      "prompt": "Nghe và điền phần thiếu: Stronger evidence comes from a ____ using questions the learner has not memorised.",
+      "correct_answers": [
+        "delayed assessment"
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "evidence_excerpt_en": "Stronger evidence comes from a delayed assessment using questions the learner has not memorised.",
+      "explanation_vi": "Luyện ghi lại thuật ngữ chính xác sau khi đã hoàn thành lượt làm IELTS.",
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS",
+      "scoring_policy": "strict_spoken_words",
+      "bank_role": "training",
+      "unlock_after_ielts_submission": true,
+      "review_status": "awaiting_teacher_and_audio_review"
+    }
+  ],
+  "vocabulary": [
+    {
+      "vocab_id": "S4-EXP-020-V01",
+      "expression_en": "spaced practice",
+      "meaning_vi": "luyện tập cách quãng",
+      "part_of_speech": "noun phrase",
+      "example_en": "Educational researchers investigate what happens when study sessions are separated by time, a method known as spaced practice.",
+      "example_vi": "Nhiều người ôn một chủ đề bằng cách đọc đi đọc lại ghi chú trong một tối. Bài học càng quen nhưng cảm giác quen không bằng nhớ lâu. Nhà nghiên cứu giáo dục xem kết quả khi tách các buổi học theo thời gian, gọi là luyện tập cách quãng. Cần kiểm tra kiến thức còn lại sau ngày hoặc tuần.",
+      "evidence_turn_id": "T01",
+      "can_save_to_notebook": true,
+      "requires_human_pos_verification": true
+    },
+    {
+      "vocab_id": "S4-EXP-020-V02",
+      "expression_en": "massed practice",
+      "meaning_vi": "luyện tập dồn",
+      "part_of_speech": "noun phrase",
+      "example_en": "This is commonly called massed practice.",
+      "example_vi": "Chiến lược đối lập là gom mọi lượt ôn vào một buổi, gọi là luyện tập dồn. Nó tạo kết quả tốt ngay sau buổi học, nhất là bài đơn giản, nhưng sau đó nhiều kiến thức khó gọi lại. So sánh hai cách phải giữ tổng thời gian học tương đương và có kiểm tra sau thời gian chờ.",
+      "evidence_turn_id": "T02",
+      "can_save_to_notebook": true,
+      "requires_human_pos_verification": true
+    },
+    {
+      "vocab_id": "S4-EXP-020-V03",
+      "expression_en": "retrieval effort",
+      "meaning_vi": "nỗ lực nhớ lại",
+      "part_of_speech": "noun phrase",
+      "example_en": "Researchers discuss retrieval effort as part of this process.",
+      "example_vi": "Vì sao giãn cách giúp? Một giải thích là quên một phần khiến lần nhớ lại sau khó hơn. Việc chủ động khôi phục ý từ trí nhớ có thể giúp nhớ về sau. Nhà nghiên cứu bàn về nỗ lực truy xuất. Nhưng nếu quên hoàn toàn và lần nào cũng sai thì cần thêm hỗ trợ.",
+      "evidence_turn_id": "T03",
+      "can_save_to_notebook": true,
+      "requires_human_pos_verification": true
+    },
+    {
+      "vocab_id": "S4-EXP-020-V04",
+      "expression_en": "spacing interval",
+      "meaning_vi": "khoảng thời gian giãn cách",
+      "part_of_speech": "noun phrase",
+      "example_en": "Researchers call this the spacing interval.",
+      "example_vi": "Khoảng cách giữa lần học quan trọng. Ôn lại sau một giờ khác sau một tuần; khoảng tối ưu còn tùy khi nào cần kiến thức. Người ta gọi là khoảng giãn cách. Thi ngày mai đòi cách phân bố khác chương trình cần nhớ nhiều tháng.",
+      "evidence_turn_id": "T04",
+      "can_save_to_notebook": true,
+      "requires_human_pos_verification": true
+    },
+    {
+      "vocab_id": "S4-EXP-020-V05",
+      "expression_en": "interleaved practice",
+      "meaning_vi": "luyện tập xen kẽ",
+      "part_of_speech": "noun phrase",
+      "example_en": "This is called interleaved practice.",
+      "example_vi": "Chiến lược khác là trộn dạng bài gần nhau thay vì làm hết một loại rồi mới chuyển. Đó là luyện xen kẽ. Buổi học khó hơn vì người học phải tự chọn phương pháp. Việc đó hữu ích trong bài thi thật vì câu hỏi không thông báo nó giống ví dụ đã học nào.",
+      "evidence_turn_id": "T05",
+      "can_save_to_notebook": true,
+      "requires_human_pos_verification": true
+    },
+    {
+      "vocab_id": "S4-EXP-020-V06",
+      "expression_en": "corrective feedback",
+      "meaning_vi": "phản hồi sửa lỗi",
+      "part_of_speech": "noun phrase",
+      "example_en": "Teachers therefore provide corrective feedback after attempts, especially when errors reflect misunderstood rules rather than simple slips.",
+      "example_vi": "Giãn cách và xen kẽ không thay nhu cầu phản hồi. Nếu người học lặp đáp án sai, lỗi cũng thành quen. Giáo viên cần phản hồi sửa lỗi sau lượt làm, đặc biệt khi sai do hiểu nhầm quy tắc. Phản hồi nên giải thích vì sao đáp án đúng, không chỉ báo chữ cái.",
+      "evidence_turn_id": "T06",
+      "can_save_to_notebook": true,
+      "requires_human_pos_verification": true
+    }
+  ],
+  "audio": {
+    "status": "not_generated",
+    "audio_url": null,
+    "duration_ms": null,
+    "source_text_sha256": "a42e8f96a585eab4c32179b78a9cfd3dbd7dc229ceeb01a2720c216ff3fd2d37",
+    "generation_strategy": "single_speaker_paragraph_tts_then_seamless_stitch",
+    "audio_asset_id": null,
+    "requires_human_naturalness_review": true,
+    "requires_timing_alignment": true
+  },
+  "learning_flow": {
+    "intro": {
+      "theory_vi": "Part 4 là bài giảng học thuật một người nói. Bài luyện này rèn khả năng theo dõi các ý từ khái niệm đến ví dụ, phương pháp và giới hạn của kết luận. Trước khi nghe, hãy đọc tiêu đề nhóm câu hỏi, dự đoán loại từ và không cố chép mọi chữ.",
+      "tip_vi": "Câu hỏi nghe xuất hiện theo thứ tự bài giảng. Chú ý từ nối như however, therefore, for example, finally; đáp án Completion phải lấy đúng từ đã nghe và không vượt quá giới hạn.",
+      "common_mistakes_vi": [
+        "Ghi từ có nghĩa gần đúng nhưng không xuất hiện trong lời nghe.",
+        "Không chú ý số nhiều hoặc dạng ghép của thuật ngữ.",
+        "Dừng quá lâu ở một câu và bỏ lỡ câu tiếp theo.",
+        "Chọn thông tin trong ví dụ rồi bỏ qua kết luận có điều kiện."
+      ],
+      "worked_examples": [
+        {
+          "audio_example_en": "The first trial used a plastic container, but a glass bottle was chosen for the final experiment.",
+          "question": "Final container: ____",
+          "answer": "glass bottle",
+          "explanation_vi": "Đáp án là phương án cuối; plastic container chỉ là lựa chọn ban đầu."
+        },
+        {
+          "audio_example_en": "The instrument measures pressure. It does not directly measure temperature.",
+          "question": "The instrument records ____.",
+          "answer": "pressure",
+          "explanation_vi": "Hãy lấy chính từ được nói và phân biệt điều được đo với điều không đo."
+        }
+      ]
+    },
+    "steps": [
+      "pre_listening",
+      "first_listen_ielts_questions",
+      "submit_ielts_first_pass",
+      "review_with_evidence",
+      "selective_dictation",
+      "gap_fill",
+      "summary"
+    ],
+    "ielts_question_ids": [
+      "Q01",
+      "Q02",
+      "Q03",
+      "Q04",
+      "Q05",
+      "Q06",
+      "Q07",
+      "Q08"
+    ],
+    "ielts_groups": [
+      {
+        "group_id": "IELTS_NOTE_01_03",
+        "type": "note_completion",
+        "instruction_en": "NO MORE THAN TWO WORDS",
+        "display_mode": "bullet_notes",
+        "group_heading": "Key concepts and evidence",
+        "items": [
+          {
+            "question_id": "Q01",
+            "prompt": "Learning spread over several sessions is ____."
+          },
+          {
+            "question_id": "Q02",
+            "prompt": "Repeating material in one concentrated block is ____."
+          },
+          {
+            "question_id": "Q03",
+            "prompt": "A potentially useful difficulty is greater ____."
+          }
+        ],
+        "question_ids": [
+          "Q01",
+          "Q02",
+          "Q03"
+        ]
+      },
+      {
+        "group_id": "IELTS_TABLE_04_06",
+        "type": "table_completion",
+        "instruction_en": "NO MORE THAN TWO WORDS",
+        "display_mode": "two_column_table",
+        "group_heading": "Methods and comparisons",
+        "items": [
+          {
+            "question_id": "Q04",
+            "prompt": "Time between study sessions is the ____."
+          },
+          {
+            "question_id": "Q05",
+            "prompt": "Mixing different problem types within a session is ____."
+          },
+          {
+            "question_id": "Q06",
+            "prompt": "Repeated errors should be addressed through ____."
+          }
+        ],
+        "question_ids": [
+          "Q04",
+          "Q05",
+          "Q06"
+        ]
+      },
+      {
+        "group_id": "IELTS_SUMMARY_07_08",
+        "type": "summary_completion",
+        "instruction_en": "NO MORE THAN TWO WORDS",
+        "display_mode": "connected_summary",
+        "group_heading": "Interpretation and conclusions",
+        "items": [
+          {
+            "question_id": "Q07",
+            "prompt": "Longer-term retention should be tested through a ____."
+          },
+          {
+            "question_id": "Q08",
+            "prompt": "Fair mastery checks should include ____ that learners have not studied."
+          }
+        ],
+        "question_ids": [
+          "Q07",
+          "Q08"
+        ]
+      }
+    ],
+    "recommended_first_listen_play_limit": 1,
+    "practice_replay_allowed_after_first_attempt": true,
+    "word_count": 443,
+    "estimated_audio_minutes_at_135_wpm": 3.28,
+    "exposure_bank": "training",
+    "exam_simulation": false,
+    "mock_test": false,
+    "audio_alignment_required": true,
+    "answer_release_after_submission": true
+  },
+  "qa": {
+    "status": "awaiting_human_content_and_audio_review",
+    "automated_validation": "passed",
+    "human_transcript_approved": false,
+    "human_audio_approved": false,
+    "ielts_exam_equivalent": false,
+    "release_eligible": false
+  },
+  "provenance": {
+    "source_type": "original_authored",
+    "reference_copying": false,
+    "authoring_milestone": "M24",
+    "educational_examples": "Some case studies are illustrative rather than published research",
+    "scientific_fact_check_required": true,
+    "do_not_reuse_in_unseen_assessment_before_exposure_check": true
+  },
+  "release_metadata": {
+    "version": "m24.0.1",
+    "published": false,
+    "needs_audio": true,
+    "requires_human_approval": true,
+    "import_policy": "insert_only",
+    "target_bank": "training"
+  }
+}

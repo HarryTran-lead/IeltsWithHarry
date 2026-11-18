@@ -1,0 +1,613 @@
+{
+  "schema_version": "1.2.0",
+  "lesson_id": "S4-SIM-018",
+  "status": "draft",
+  "level": "L7",
+  "section": 4,
+  "topic": "Manuscript studies",
+  "title": "The Evidence in Old Paper",
+  "content_format": "section_exam_simulation",
+  "exam_part": "IELTS_LISTENING_PART_4_STYLE",
+  "official_ielts_material": false,
+  "learning_objectives_vi": [
+    "Theo dõi bài giảng học thuật có lập luận và ví dụ.",
+    "Hoàn thành ghi chú, tóm tắt hoặc bảng bằng đúng từ được nghe.",
+    "Nhận diện signposting và mối quan hệ giữa các ý."
+  ],
+  "target_skills": [
+    "academic_lecture",
+    "signposting",
+    "note_taking",
+    "technical_vocabulary",
+    "information_tracking"
+  ],
+  "speakers": [
+    {
+      "speaker_id": "LECTURER",
+      "role": "Academic lecturer",
+      "accent_requested": "australian",
+      "tts_voice_id": null
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "LECTURER",
+      "text_en": "A handwritten document is more than the words on its page. The paper, the ink and the pattern of writing can all offer clues about how it was produced and used. Historians approach those clues cautiously because a sheet may have been repaired or written on at several different times. We will examine the evidence before discussing how scholars combine it.",
+      "meaning_vi": "Tài liệu cổ chứa bằng chứng từ giấy, mực, nét chữ và lịch sử lưu truyền.",
+      "translation_vi": null,
+      "translation_status": "pending_exact_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "academic_lecture",
+        "signposting",
+        "note_taking"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "opening"
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "LECTURER",
+      "text_en": "Suppose a collection holds two handwritten documents with similar wording but different-looking pages. It is tempting to assume one is a later copy. Yet paper stocks and writing materials varied, and a document may have been moved between books. Historians must compare several kinds of evidence before proposing a date or identifying a writer.",
+      "meaning_vi": "Mở rộng bối cảnh, giới thiệu vấn đề nghiên cứu.",
+      "translation_vi": null,
+      "translation_status": "pending_exact_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "academic_lecture",
+        "signposting",
+        "note_taking"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "opening"
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "LECTURER",
+      "text_en": "Under magnification, paper made by hand may reveal a fibre pattern that reflects the source material and manufacturing method. Some sheets also contain a watermark, a design formed during production that can help connect paper to a workshop or period. Neither clue provides an automatic date. Paper could remain unused for years, travel between regions and later be placed in an older book. Researchers must distinguish the age of the material from the date of the writing.",
+      "meaning_vi": "Sợi giấy và hình chìm là manh mối nhưng không trực tiếp cho biết năm viết.",
+      "translation_vi": null,
+      "translation_status": "pending_exact_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "academic_lecture",
+        "signposting",
+        "note_taking"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "core_exposition"
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "LECTURER",
+      "text_en": "When examining writing, specialists may look at stroke order where lines cross, as this can suggest which mark was made first. They also compare the shapes of individual letters through palaeography, the study of historical handwriting. These methods require experience: variation within one person's writing can be substantial, and a copied style may resemble an older one. A single unusual letter is not enough to attribute a manuscript confidently to a named individual.",
+      "meaning_vi": "Nét viết giao nhau và cổ tự học hỗ trợ nghiên cứu quá trình chép văn bản.",
+      "translation_vi": null,
+      "translation_status": "pending_exact_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "academic_lecture",
+        "signposting",
+        "note_taking"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "core_exposition"
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "LECTURER",
+      "text_en": "Different inks can respond in distinct ways to infrared imaging, sometimes revealing text obscured by stains or later writing. Conservators also examine iron gall ink, which was widely used in historical documents and may contribute to degradation under some conditions. An imaging technique can improve readability without touching the surface, but the interpretation remains complex. A dark patch may indicate original text, a later correction or an area where the material has deteriorated.",
+      "meaning_vi": "Ảnh hồng ngoại hỗ trợ đọc mực mờ; mực sắt-gall có thể ảnh hưởng bảo quản.",
+      "translation_vi": null,
+      "translation_status": "pending_exact_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "academic_lecture",
+        "signposting",
+        "note_taking"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "core_exposition"
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "LECTURER",
+      "text_en": "Scholars record a document's provenance chain, the sequence of known owners and locations, but gaps are common. A later binding repair may also introduce paper that looks different from the original pages. Such changes can be mistaken for evidence of multiple authors unless they are identified. Examining the physical object before interpreting its content prevents a neat story from being imposed on a complicated history.",
+      "meaning_vi": "Lịch sử sở hữu và các lần sửa đóng sách ảnh hưởng cách hiểu vật chứng.",
+      "translation_vi": null,
+      "translation_status": "pending_exact_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "academic_lecture",
+        "signposting",
+        "note_taking"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "core_exposition"
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "LECTURER",
+      "text_en": "For fragile material, a museum may create a digital facsimile so people can study the page without repeated handling. The team should also retain colour calibration information, because screen displays and lighting can alter the appearance of ink. A digital image increases access, but it is not a full substitute for examining thickness, texture and other three-dimensional details of the original. Preservation therefore depends on both careful physical storage and transparent digital records.",
+      "meaning_vi": "Bản số hóa giúp tiếp cận tài liệu nhưng vẫn cần hiệu chuẩn màu và bảo quản gốc.",
+      "translation_vi": null,
+      "translation_status": "pending_exact_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "academic_lecture",
+        "signposting",
+        "note_taking"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "core_exposition"
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "LECTURER",
+      "text_en": "Public access creates another challenge. Researchers want readable scans, while conservators need to minimise handling and exposure to light. A digital record can help satisfy both aims, but only when its production method is documented. Without that documentation, later viewers may confuse technical artefacts of the image with features of the original page.",
+      "meaning_vi": "Nêu giới hạn, ví dụ ứng dụng và ý nghĩa thực tế.",
+      "translation_vi": null,
+      "translation_status": "pending_exact_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "academic_lecture",
+        "signposting",
+        "note_taking"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "closing"
+    },
+    {
+      "turn_id": "T09",
+      "speaker_id": "LECTURER",
+      "text_en": "The strongest manuscript studies combine clues from materials, handwriting and the history of the object. Each clue narrows the possibilities without pretending to answer every question alone.",
+      "meaning_vi": "Tổng kết và lưu ý cách diễn giải bằng chứng.",
+      "translation_vi": null,
+      "translation_status": "pending_exact_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "academic_lecture",
+        "signposting",
+        "note_taking"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "closing"
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "group_id": "PART4_FLOW_CHART_COMPLETION_01_05",
+      "type": "flow_chart_completion",
+      "prompt": "Microscopic material structure reveals a ____.",
+      "correct_answers": [
+        "fibre pattern"
+      ],
+      "scoring_policy": "strict_spoken_words",
+      "word_limit": 2,
+      "instructions_en": "Complete the flow chart below. Write NO MORE THAN TWO WORDS for each answer.",
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "evidence_excerpt_en": "Under magnification, paper made by hand may reveal a fibre pattern that reflects the source material and manufacturing method.",
+      "evidence_span": {
+        "turn_id": "T03",
+        "start_char": 53,
+        "end_char": 66
+      },
+      "explanation_vi": "Đáp án “fibre pattern” được nói trực tiếp trong phần bài giảng này. Sợi giấy và hình chìm là manh mối nhưng không trực tiếp cho biết năm viết.",
+      "answer_source": "exact_words_spoken",
+      "question_tags": [
+        "M28",
+        "part4",
+        "flow_chart_completion",
+        "academic_note_taking"
+      ],
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true,
+      "answer_review_status": "draft_teacher_verification_required"
+    },
+    {
+      "question_id": "Q02",
+      "group_id": "PART4_FLOW_CHART_COMPLETION_01_05",
+      "type": "flow_chart_completion",
+      "prompt": "A design formed during papermaking is a ____.",
+      "correct_answers": [
+        "watermark"
+      ],
+      "scoring_policy": "strict_spoken_words",
+      "word_limit": 2,
+      "instructions_en": "Complete the flow chart below. Write NO MORE THAN TWO WORDS for each answer.",
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "evidence_excerpt_en": "Some sheets also contain a watermark, a design formed during production that can help connect paper to a workshop or period.",
+      "evidence_span": {
+        "turn_id": "T03",
+        "start_char": 154,
+        "end_char": 163
+      },
+      "explanation_vi": "Đáp án “watermark” được nói trực tiếp trong phần bài giảng này. Sợi giấy và hình chìm là manh mối nhưng không trực tiếp cho biết năm viết.",
+      "answer_source": "exact_words_spoken",
+      "question_tags": [
+        "M28",
+        "part4",
+        "flow_chart_completion",
+        "academic_note_taking"
+      ],
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true,
+      "answer_review_status": "draft_teacher_verification_required"
+    },
+    {
+      "question_id": "Q03",
+      "group_id": "PART4_FLOW_CHART_COMPLETION_01_05",
+      "type": "flow_chart_completion",
+      "prompt": "Intersecting lines may provide clues about ____.",
+      "correct_answers": [
+        "stroke order"
+      ],
+      "scoring_policy": "strict_spoken_words",
+      "word_limit": 2,
+      "instructions_en": "Complete the flow chart below. Write NO MORE THAN TWO WORDS for each answer.",
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "evidence_excerpt_en": "When examining writing, specialists may look at stroke order where lines cross, as this can suggest which mark was made first.",
+      "evidence_span": {
+        "turn_id": "T04",
+        "start_char": 48,
+        "end_char": 60
+      },
+      "explanation_vi": "Đáp án “stroke order” được nói trực tiếp trong phần bài giảng này. Nét viết giao nhau và cổ tự học hỗ trợ nghiên cứu quá trình chép văn bản.",
+      "answer_source": "exact_words_spoken",
+      "question_tags": [
+        "M28",
+        "part4",
+        "flow_chart_completion",
+        "academic_note_taking"
+      ],
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true,
+      "answer_review_status": "draft_teacher_verification_required"
+    },
+    {
+      "question_id": "Q04",
+      "group_id": "PART4_FLOW_CHART_COMPLETION_01_05",
+      "type": "flow_chart_completion",
+      "prompt": "Historical handwriting is studied through ____.",
+      "correct_answers": [
+        "palaeography"
+      ],
+      "scoring_policy": "strict_spoken_words",
+      "word_limit": 2,
+      "instructions_en": "Complete the flow chart below. Write NO MORE THAN TWO WORDS for each answer.",
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "evidence_excerpt_en": "They also compare the shapes of individual letters through palaeography, the study of historical handwriting.",
+      "evidence_span": {
+        "turn_id": "T04",
+        "start_char": 186,
+        "end_char": 198
+      },
+      "explanation_vi": "Đáp án “palaeography” được nói trực tiếp trong phần bài giảng này. Nét viết giao nhau và cổ tự học hỗ trợ nghiên cứu quá trình chép văn bản.",
+      "answer_source": "exact_words_spoken",
+      "question_tags": [
+        "M28",
+        "part4",
+        "flow_chart_completion",
+        "academic_note_taking"
+      ],
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true,
+      "answer_review_status": "draft_teacher_verification_required"
+    },
+    {
+      "question_id": "Q05",
+      "group_id": "PART4_FLOW_CHART_COMPLETION_01_05",
+      "type": "flow_chart_completion",
+      "prompt": "Faded writing can sometimes be examined through ____.",
+      "correct_answers": [
+        "infrared imaging"
+      ],
+      "scoring_policy": "strict_spoken_words",
+      "word_limit": 2,
+      "instructions_en": "Complete the flow chart below. Write NO MORE THAN TWO WORDS for each answer.",
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "evidence_excerpt_en": "Different inks can respond in distinct ways to infrared imaging, sometimes revealing text obscured by stains or later writing.",
+      "evidence_span": {
+        "turn_id": "T05",
+        "start_char": 47,
+        "end_char": 63
+      },
+      "explanation_vi": "Đáp án “infrared imaging” được nói trực tiếp trong phần bài giảng này. Ảnh hồng ngoại hỗ trợ đọc mực mờ; mực sắt-gall có thể ảnh hưởng bảo quản.",
+      "answer_source": "exact_words_spoken",
+      "question_tags": [
+        "M28",
+        "part4",
+        "flow_chart_completion",
+        "academic_note_taking"
+      ],
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true,
+      "answer_review_status": "draft_teacher_verification_required"
+    },
+    {
+      "question_id": "Q06",
+      "group_id": "PART4_NOTE_COMPLETION_06_10",
+      "type": "note_completion",
+      "prompt": "A historically common ink type is ____ ink.",
+      "correct_answers": [
+        "iron gall"
+      ],
+      "scoring_policy": "strict_spoken_words",
+      "word_limit": 2,
+      "instructions_en": "Complete the notes below. Write NO MORE THAN TWO WORDS for each answer.",
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "evidence_excerpt_en": "Conservators also examine iron gall ink, which was widely used in historical documents and may contribute to degradation under some conditions.",
+      "evidence_span": {
+        "turn_id": "T05",
+        "start_char": 153,
+        "end_char": 162
+      },
+      "explanation_vi": "Đáp án “iron gall” được nói trực tiếp trong phần bài giảng này. Ảnh hồng ngoại hỗ trợ đọc mực mờ; mực sắt-gall có thể ảnh hưởng bảo quản.",
+      "answer_source": "exact_words_spoken",
+      "question_tags": [
+        "M28",
+        "part4",
+        "note_completion",
+        "academic_note_taking"
+      ],
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true,
+      "answer_review_status": "draft_teacher_verification_required"
+    },
+    {
+      "question_id": "Q07",
+      "group_id": "PART4_NOTE_COMPLETION_06_10",
+      "type": "note_completion",
+      "prompt": "Known ownership history forms a ____.",
+      "correct_answers": [
+        "provenance chain"
+      ],
+      "scoring_policy": "strict_spoken_words",
+      "word_limit": 2,
+      "instructions_en": "Complete the notes below. Write NO MORE THAN TWO WORDS for each answer.",
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "evidence_excerpt_en": "Scholars record a document's provenance chain, the sequence of known owners and locations, but gaps are common.",
+      "evidence_span": {
+        "turn_id": "T06",
+        "start_char": 29,
+        "end_char": 45
+      },
+      "explanation_vi": "Đáp án “provenance chain” được nói trực tiếp trong phần bài giảng này. Lịch sử sở hữu và các lần sửa đóng sách ảnh hưởng cách hiểu vật chứng.",
+      "answer_source": "exact_words_spoken",
+      "question_tags": [
+        "M28",
+        "part4",
+        "note_completion",
+        "academic_note_taking"
+      ],
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true,
+      "answer_review_status": "draft_teacher_verification_required"
+    },
+    {
+      "question_id": "Q08",
+      "group_id": "PART4_NOTE_COMPLETION_06_10",
+      "type": "note_completion",
+      "prompt": "Later additions may result from a ____.",
+      "correct_answers": [
+        "binding repair"
+      ],
+      "scoring_policy": "strict_spoken_words",
+      "word_limit": 2,
+      "instructions_en": "Complete the notes below. Write NO MORE THAN TWO WORDS for each answer.",
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "evidence_excerpt_en": "A later binding repair may also introduce paper that looks different from the original pages.",
+      "evidence_span": {
+        "turn_id": "T06",
+        "start_char": 120,
+        "end_char": 134
+      },
+      "explanation_vi": "Đáp án “binding repair” được nói trực tiếp trong phần bài giảng này. Lịch sử sở hữu và các lần sửa đóng sách ảnh hưởng cách hiểu vật chứng.",
+      "answer_source": "exact_words_spoken",
+      "question_tags": [
+        "M28",
+        "part4",
+        "note_completion",
+        "academic_note_taking"
+      ],
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true,
+      "answer_review_status": "draft_teacher_verification_required"
+    },
+    {
+      "question_id": "Q09",
+      "group_id": "PART4_NOTE_COMPLETION_06_10",
+      "type": "note_completion",
+      "prompt": "A high-quality electronic copy is a ____.",
+      "correct_answers": [
+        "digital facsimile"
+      ],
+      "scoring_policy": "strict_spoken_words",
+      "word_limit": 2,
+      "instructions_en": "Complete the notes below. Write NO MORE THAN TWO WORDS for each answer.",
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "evidence_excerpt_en": "For fragile material, a museum may create a digital facsimile so people can study the page without repeated handling.",
+      "evidence_span": {
+        "turn_id": "T07",
+        "start_char": 44,
+        "end_char": 61
+      },
+      "explanation_vi": "Đáp án “digital facsimile” được nói trực tiếp trong phần bài giảng này. Bản số hóa giúp tiếp cận tài liệu nhưng vẫn cần hiệu chuẩn màu và bảo quản gốc.",
+      "answer_source": "exact_words_spoken",
+      "question_tags": [
+        "M28",
+        "part4",
+        "note_completion",
+        "academic_note_taking"
+      ],
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true,
+      "answer_review_status": "draft_teacher_verification_required"
+    },
+    {
+      "question_id": "Q10",
+      "group_id": "PART4_NOTE_COMPLETION_06_10",
+      "type": "note_completion",
+      "prompt": "Accurate imaging requires ____.",
+      "correct_answers": [
+        "colour calibration"
+      ],
+      "scoring_policy": "strict_spoken_words",
+      "word_limit": 2,
+      "instructions_en": "Complete the notes below. Write NO MORE THAN TWO WORDS for each answer.",
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "evidence_excerpt_en": "The team should also retain colour calibration information, because screen displays and lighting can alter the appearance of ink.",
+      "evidence_span": {
+        "turn_id": "T07",
+        "start_char": 146,
+        "end_char": 164
+      },
+      "explanation_vi": "Đáp án “colour calibration” được nói trực tiếp trong phần bài giảng này. Bản số hóa giúp tiếp cận tài liệu nhưng vẫn cần hiệu chuẩn màu và bảo quản gốc.",
+      "answer_source": "exact_words_spoken",
+      "question_tags": [
+        "M28",
+        "part4",
+        "note_completion",
+        "academic_note_taking"
+      ],
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true,
+      "answer_review_status": "draft_teacher_verification_required"
+    }
+  ],
+  "question_groups": [
+    {
+      "group_id": "PART4_FLOW_CHART_COMPLETION_01_05",
+      "title_en": "The Evidence in Old Paper — Flow chart",
+      "question_ids": [
+        "Q01",
+        "Q02",
+        "Q03",
+        "Q04",
+        "Q05"
+      ],
+      "question_type": "flow_chart_completion",
+      "instructions_en": "Complete the flow chart below. Write NO MORE THAN TWO WORDS for each answer.",
+      "word_limit": 2,
+      "requires_one_listen": true,
+      "question_display_start": "before_audio",
+      "pause_between_groups_seconds": 0,
+      "layout_metadata": {
+        "presentation": "grouped_blanks",
+        "flow_order": "top_to_bottom",
+        "table_columns": null
+      }
+    },
+    {
+      "group_id": "PART4_NOTE_COMPLETION_06_10",
+      "title_en": "The Evidence in Old Paper — Notes",
+      "question_ids": [
+        "Q06",
+        "Q07",
+        "Q08",
+        "Q09",
+        "Q10"
+      ],
+      "question_type": "note_completion",
+      "instructions_en": "Complete the notes below. Write NO MORE THAN TWO WORDS for each answer.",
+      "word_limit": 2,
+      "requires_one_listen": true,
+      "question_display_start": "before_audio",
+      "pause_between_groups_seconds": 0,
+      "layout_metadata": {
+        "presentation": "grouped_blanks",
+        "flow_order": null,
+        "table_columns": null
+      }
+    }
+  ],
+  "pedagogy_vi": {
+    "topic_summary_vi": "Tài liệu cổ chứa bằng chứng từ giấy, mực, nét chữ và lịch sử lưu truyền.",
+    "question_explanations_status": "draft_review_required",
+    "turn_meanings_are_not_full_translations": true,
+    "full_line_translation_required_before_release": true
+  },
+  "audio": {
+    "status": "not_generated",
+    "audio_url": null,
+    "audio_asset_id": null,
+    "duration_ms": null,
+    "source_text_sha256": "94187f2e3cb940368e45b279a644544f08547f73eb5e2b2c33d99e7ab6f4fdef",
+    "generation_strategy": "single_speaker_continuous_full_lecture",
+    "aligned_turns": false,
+    "voice_consistency_verified": false,
+    "human_listening_review": false
+  },
+  "exam_mode": {
+    "bank_role": "protected_assessment",
+    "use_as_training_before_first_attempt": false,
+    "listening_attempts_allowed_for_scored_first_attempt": 1,
+    "replay_before_submit": false,
+    "speed_control_before_submit": false,
+    "transcript_visible_before_submit": false,
+    "answer_key_visible_before_submit": false,
+    "post_attempt_review_allowed": true,
+    "question_count": 10,
+    "points_per_correct_answer": 1,
+    "question_order_monotonic": true,
+    "estimated_speech_minutes_at_140_wpm": 3.97,
+    "exam_band_score_enabled": false,
+    "repeated_attempt_marked_as_seen": true,
+    "all_questions_visible_before_audio": true
+  },
+  "qa": {
+    "automatic_data_validation": "pending",
+    "content_human_review": "pending",
+    "translation_human_review": "pending",
+    "audio_human_review": "pending",
+    "exam_simulation_rubric_score": null,
+    "rubric_90_verified": false,
+    "published": false,
+    "release_eligible": false
+  },
+  "provenance": {
+    "source_type": "original_authoring_english_academic_lecture",
+    "milestone": "M28",
+    "no_official_ielts_question_copied": true,
+    "training_exposure_guard": true,
+    "fictional_illustrations_only_when_specified": true
+  },
+  "release_metadata": {
+    "target_bank": "protected_assessment",
+    "import_policy": "insert_only",
+    "version": "m28.0.1",
+    "preserve_existing_ids": true,
+    "allow_client_answer_payload": false
+  }
+}

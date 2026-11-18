@@ -1,0 +1,351 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "DICT-S4-028",
+  "status": "draft",
+  "level": "L6",
+  "section": 4,
+  "topic": "Scientific Innovation",
+  "title": "Why Useful Medical Technologies Fail to Spread",
+  "learning_objectives_vi": [
+    "Nghe bài giảng học thuật một người nói, theo dõi quan hệ giữa luận điểm và bằng chứng.",
+    "Luyện các câu hỏi Section 4 theo thứ tự lời giảng; phân tích giới hạn của khái niệm và cách diễn đạt lại.",
+    "Chép chính xác hai đoạn, luyện từ học thuật theo ngữ cảnh và ôn điểm yếu qua Mistake Bank."
+  ],
+  "content_format": "section_practice",
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Academic lecturer",
+      "tts_voice_id": null,
+      "accent_requested": "british"
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "Why do some promising medical technologies spread quickly while others remain prototypes? The answer begins with a gap between controlled experiments and everyday practice. A device may perform well in a university laboratory, where trained staff operate it under stable conditions. In a busy clinic, users face interruptions, limited space and patients whose circumstances are less predictable.",
+      "translation_vi": "Vì sao một số công nghệ y tế hứa hẹn được phổ biến nhanh còn số khác chỉ là nguyên mẫu? Câu trả lời bắt đầu từ khoảng cách giữa thí nghiệm kiểm soát và thực hành thường ngày. Thiết bị có thể hoạt động tốt ở phòng thí nghiệm đại học nơi nhân viên được đào tạo vận hành trong điều kiện ổn định. Ở phòng khám bận rộn, người dùng gặp gián đoạn, thiếu chỗ và bệnh nhân có hoàn cảnh khó đoán hơn.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_4",
+        "academic_lecture",
+        "cause",
+        "l6"
+      ]
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "A",
+      "text_en": "One cause of failure is insufficient validation. Developers may test a tool on a narrow sample and assume that accuracy will remain unchanged in another population. Differences in age, background or illness can influence performance. External validation tests whether results hold on independent data. When performance falls, the finding is not merely embarrassing: it identifies where further design work is needed.",
+      "translation_vi": "Một nguyên nhân thất bại là xác nhận độ tin cậy chưa đủ. Nhóm phát triển có thể thử công cụ trên mẫu hẹp và cho rằng độ chính xác giữ nguyên ở quần thể khác. Khác biệt về tuổi, bối cảnh hoặc bệnh có thể ảnh hưởng kết quả. Xác thực bên ngoài kiểm tra kết quả có giữ được trên dữ liệu độc lập không. Khi hiệu quả giảm, phát hiện không chỉ gây khó xử mà còn chỉ ra nơi cần cải tiến thiết kế.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_4",
+        "academic_lecture",
+        "cause",
+        "l6"
+      ]
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "A",
+      "text_en": "A second barrier is compatibility. New software may require hospitals to change records, equipment or working routines. Even a technically superior tool can increase workload if it duplicates existing steps. Designers sometimes address this through interoperability, allowing separate systems to exchange information consistently. That reduces unnecessary manual entry, but it also creates responsibilities for privacy and security.",
+      "translation_vi": "Rào cản thứ hai là khả năng tương thích. Phần mềm mới có thể buộc bệnh viện thay hồ sơ, thiết bị hoặc quy trình. Công cụ vượt trội về kỹ thuật vẫn có thể tăng khối lượng việc nếu lặp lại các bước cũ. Nhà thiết kế đôi khi giải quyết bằng khả năng liên thông, cho các hệ thống riêng trao đổi thông tin nhất quán. Điều đó giảm nhập liệu thủ công không cần thiết nhưng cũng đặt ra trách nhiệm về riêng tư và bảo mật.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_4",
+        "academic_lecture",
+        "cause",
+        "l6"
+      ]
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "A",
+      "text_en": "Funding decisions create another chain of effects. Organisations must consider purchase price, maintenance, training and replacement parts. A low initial cost can conceal expensive long-term support. Conversely, an apparently costly system might save time if it reliably prevents repeated work. Cost-effectiveness studies compare outcomes with resources consumed, while recognising that benefits may be distributed unevenly among users.",
+      "translation_vi": "Quyết định tài chính tạo thêm chuỗi ảnh hưởng. Tổ chức phải cân nhắc giá mua, bảo trì, đào tạo và linh kiện thay thế. Chi phí đầu thấp có thể che giấu hỗ trợ dài hạn đắt đỏ. Ngược lại hệ thống tưởng đắt có thể tiết kiệm thời gian nếu ngăn việc làm lặp đáng tin cậy. Nghiên cứu hiệu quả chi phí so sánh kết quả với nguồn lực dùng đến, đồng thời nhận ra lợi ích có thể phân bố không đều giữa người dùng.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_4",
+        "academic_lecture",
+        "cause",
+        "l6"
+      ]
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "A",
+      "text_en": "The process of adoption is therefore best understood as a feedback loop rather than a single launch event. Experience from real use should inform redesign, further testing and staff training. Regulators and health professionals need clear evidence of safety, not promotional promises. Innovation succeeds when the technology, the institution and the people using it can adapt together.",
+      "translation_vi": "Vì vậy quá trình áp dụng nên được hiểu là vòng phản hồi chứ không phải sự kiện ra mắt đơn lẻ. Trải nghiệm thực tế phải dẫn đến thiết kế lại, thử nghiệm thêm và đào tạo nhân viên. Cơ quan quản lý và chuyên gia y tế cần bằng chứng an toàn rõ, không phải lời quảng cáo. Đổi mới thành công khi công nghệ, tổ chức và người sử dụng có thể cùng thích ứng.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_4",
+        "academic_lecture",
+        "cause",
+        "l6"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "type": "note_completion",
+      "prompt": "Some medical technologies remain ____ rather than reaching everyday practice.",
+      "correct_answers": [
+        "prototypes"
+      ],
+      "evidence_turn_ids": [
+        "T01"
+      ],
+      "explanation_vi": "Bài giảng dùng “remain prototypes”. Đáp án phải là số nhiều như trong lời nghe.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_4",
+        "ielts_practice",
+        "cause",
+        "note_completion"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q02",
+      "type": "note_completion",
+      "prompt": "Testing with independent data is external ____.",
+      "correct_answers": [
+        "validation"
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Đáp án “validation” nằm tại đoạn T02. Nội dung bằng chứng: Một nguyên nhân thất bại là xác nhận độ tin cậy chưa đủ. Nhóm phát triển có thể thử công cụ trên mẫu hẹp và cho rằng độ chính xác giữ nguyên ở quần thể khác. Khác biệt về tuổi, bối cảnh hoặc bệnh có thể ảnh hưởng kết quả. Xác thực bên ngoài kiểm tra kết quả có giữ được trên dữ liệu độc lập không. Khi hiệu quả giảm, phát hiện không chỉ gây khó xử mà còn chỉ ra nơi cần cải tiến thiết kế.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_4",
+        "ielts_practice",
+        "cause",
+        "note_completion"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q03",
+      "type": "note_completion",
+      "prompt": "Reliable exchange between separate systems requires ____.",
+      "correct_answers": [
+        "interoperability"
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Đáp án “interoperability” nằm tại đoạn T03. Nội dung bằng chứng: Rào cản thứ hai là khả năng tương thích. Phần mềm mới có thể buộc bệnh viện thay hồ sơ, thiết bị hoặc quy trình. Công cụ vượt trội về kỹ thuật vẫn có thể tăng khối lượng việc nếu lặp lại các bước cũ. Nhà thiết kế đôi khi giải quyết bằng khả năng liên thông, cho các hệ thống riêng trao đổi thông tin nhất quán. Điều đó giảm nhập liệu thủ công không cần thiết nhưng cũng đặt ra trách nhiệm về riêng tư và bảo mật.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_4",
+        "ielts_practice",
+        "cause",
+        "note_completion"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q04",
+      "type": "note_completion",
+      "prompt": "A low initial price may hide costly long-term ____.",
+      "correct_answers": [
+        "support"
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Đáp án “support” nằm tại đoạn T04. Nội dung bằng chứng: Quyết định tài chính tạo thêm chuỗi ảnh hưởng. Tổ chức phải cân nhắc giá mua, bảo trì, đào tạo và linh kiện thay thế. Chi phí đầu thấp có thể che giấu hỗ trợ dài hạn đắt đỏ. Ngược lại hệ thống tưởng đắt có thể tiết kiệm thời gian nếu ngăn việc làm lặp đáng tin cậy. Nghiên cứu hiệu quả chi phí so sánh kết quả với nguồn lực dùng đến, đồng thời nhận ra lợi ích có thể phân bố không đều giữa người dùng.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_4",
+        "ielts_practice",
+        "cause",
+        "note_completion"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q05",
+      "type": "note_completion",
+      "prompt": "Successful adoption is best viewed as a feedback ____.",
+      "correct_answers": [
+        "loop"
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Đáp án “loop” nằm tại đoạn T05. Nội dung bằng chứng: Vì vậy quá trình áp dụng nên được hiểu là vòng phản hồi chứ không phải sự kiện ra mắt đơn lẻ. Trải nghiệm thực tế phải dẫn đến thiết kế lại, thử nghiệm thêm và đào tạo nhân viên. Cơ quan quản lý và chuyên gia y tế cần bằng chứng an toàn rõ, không phải lời quảng cáo. Đổi mới thành công khi công nghệ, tổ chức và người sử dụng có thể cùng thích ứng.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_4",
+        "ielts_practice",
+        "cause",
+        "note_completion"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q06",
+      "type": "mcq",
+      "prompt": "Why might a technically superior hospital tool see limited adoption?",
+      "correct_answers": [
+        "Training, compatibility and maintenance demands can outweigh practical benefits"
+      ],
+      "options": [
+        "Real clinics always provide conditions identical to laboratories",
+        "Training, compatibility and maintenance demands can outweigh practical benefits",
+        "Accuracy measured in one small sample guarantees broad performance"
+      ],
+      "evidence_turn_ids": [
+        "T01",
+        "T03",
+        "T05"
+      ],
+      "explanation_vi": "Hãy kết hợp luận điểm đầu, ví dụ ở giữa và kết luận cuối bài. Vì vậy quá trình áp dụng nên được hiểu là vòng phản hồi chứ không phải sự kiện ra mắt đơn lẻ. Trải nghiệm thực tế phải dẫn đến thiết kế lại, thử nghiệm thêm và đào tạo nhân viên. Cơ quan quản lý và chuyên gia y tế cần bằng chứng an toàn rõ, không phải lời quảng cáo. Đổi mới thành công khi công nghệ, tổ chức và người sử dụng có thể cùng thích ứng. Phương án chính xác: “Training, compatibility and maintenance demands can outweigh practical benefits”; hai phương án khác khái quát quá mức hoặc không phù hợp bằng chứng.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "section_4",
+        "ielts_practice",
+        "cause",
+        "main_idea"
+      ]
+    },
+    {
+      "question_id": "D01",
+      "type": "dictation",
+      "prompt": "Nghe đoạn T02 và chép lại chính xác lời giảng.",
+      "correct_answers": [
+        "One cause of failure is insufficient validation. Developers may test a tool on a narrow sample and assume that accuracy will remain unchanged in another population. Differences in age, background or illness can influence performance. External validation tests whether results hold on independent data. When performance falls, the finding is not merely embarrassing: it identifies where further design work is needed."
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Phân tích từ nối, âm yếu và cụm thuật ngữ học thuật. Nghĩa của đoạn: Một nguyên nhân thất bại là xác nhận độ tin cậy chưa đủ. Nhóm phát triển có thể thử công cụ trên mẫu hẹp và cho rằng độ chính xác giữ nguyên ở quần thể khác. Khác biệt về tuổi, bối cảnh hoặc bệnh có thể ảnh hưởng kết quả. Xác thực bên ngoài kiểm tra kết quả có giữ được trên dữ liệu độc lập không. Khi hiệu quả giảm, phát hiện không chỉ gây khó xử mà còn chỉ ra nơi cần cải tiến thiết kế.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_4",
+        "dictation",
+        "exact_transcript"
+      ]
+    },
+    {
+      "question_id": "D02",
+      "type": "dictation",
+      "prompt": "Nghe đoạn T04 và chép lại chính xác lời giảng.",
+      "correct_answers": [
+        "Funding decisions create another chain of effects. Organisations must consider purchase price, maintenance, training and replacement parts. A low initial cost can conceal expensive long-term support. Conversely, an apparently costly system might save time if it reliably prevents repeated work. Cost-effectiveness studies compare outcomes with resources consumed, while recognising that benefits may be distributed unevenly among users."
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Phân tích từ nối, âm yếu và cụm thuật ngữ học thuật. Nghĩa của đoạn: Quyết định tài chính tạo thêm chuỗi ảnh hưởng. Tổ chức phải cân nhắc giá mua, bảo trì, đào tạo và linh kiện thay thế. Chi phí đầu thấp có thể che giấu hỗ trợ dài hạn đắt đỏ. Ngược lại hệ thống tưởng đắt có thể tiết kiệm thời gian nếu ngăn việc làm lặp đáng tin cậy. Nghiên cứu hiệu quả chi phí so sánh kết quả với nguồn lực dùng đến, đồng thời nhận ra lợi ích có thể phân bố không đều giữa người dùng.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_4",
+        "dictation",
+        "exact_transcript"
+      ]
+    },
+    {
+      "question_id": "G01",
+      "type": "gap_fill",
+      "prompt": "Why do some promising medical technologies spread quickly while others remain ____?",
+      "correct_answers": [
+        "prototypes"
+      ],
+      "evidence_turn_ids": [
+        "T01"
+      ],
+      "explanation_vi": "Lời giảng nói “remain prototypes”, phải điền nguyên từ số nhiều.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_4",
+        "gap_fill",
+        "academic_vocabulary"
+      ]
+    }
+  ],
+  "vocabulary": [
+    {
+      "term": "prototype",
+      "pos": "n.",
+      "meaning_vi": "nguyên mẫu",
+      "example_en": "Why do some promising medical technologies spread quickly while others remain prototypes? The answer begins with a gap between controlled experiments and everyday practice. A device may perform well in a university laboratory, where trained staff operate it under stable conditions. In a busy clinic, users face interruptions, limited space and patients whose circumstances are less predictable.",
+      "example_vi": "Vì sao một số công nghệ y tế hứa hẹn được phổ biến nhanh còn số khác chỉ là nguyên mẫu? Câu trả lời bắt đầu từ khoảng cách giữa thí nghiệm kiểm soát và thực hành thường ngày. Thiết bị có thể hoạt động tốt ở phòng thí nghiệm đại học nơi nhân viên được đào tạo vận hành trong điều kiện ổn định. Ở phòng khám bận rộn, người dùng gặp gián đoạn, thiếu chỗ và bệnh nhân có hoàn cảnh khó đoán hơn.",
+      "source_turn_id": "T01"
+    },
+    {
+      "term": "External validation",
+      "pos": "n. phr.",
+      "meaning_vi": "xác thực bên ngoài",
+      "example_en": "One cause of failure is insufficient validation. Developers may test a tool on a narrow sample and assume that accuracy will remain unchanged in another population. Differences in age, background or illness can influence performance. External validation tests whether results hold on independent data. When performance falls, the finding is not merely embarrassing: it identifies where further design work is needed.",
+      "example_vi": "Một nguyên nhân thất bại là xác nhận độ tin cậy chưa đủ. Nhóm phát triển có thể thử công cụ trên mẫu hẹp và cho rằng độ chính xác giữ nguyên ở quần thể khác. Khác biệt về tuổi, bối cảnh hoặc bệnh có thể ảnh hưởng kết quả. Xác thực bên ngoài kiểm tra kết quả có giữ được trên dữ liệu độc lập không. Khi hiệu quả giảm, phát hiện không chỉ gây khó xử mà còn chỉ ra nơi cần cải tiến thiết kế.",
+      "source_turn_id": "T02"
+    },
+    {
+      "term": "interoperability",
+      "pos": "n.",
+      "meaning_vi": "khả năng liên thông",
+      "example_en": "A second barrier is compatibility. New software may require hospitals to change records, equipment or working routines. Even a technically superior tool can increase workload if it duplicates existing steps. Designers sometimes address this through interoperability, allowing separate systems to exchange information consistently. That reduces unnecessary manual entry, but it also creates responsibilities for privacy and security.",
+      "example_vi": "Rào cản thứ hai là khả năng tương thích. Phần mềm mới có thể buộc bệnh viện thay hồ sơ, thiết bị hoặc quy trình. Công cụ vượt trội về kỹ thuật vẫn có thể tăng khối lượng việc nếu lặp lại các bước cũ. Nhà thiết kế đôi khi giải quyết bằng khả năng liên thông, cho các hệ thống riêng trao đổi thông tin nhất quán. Điều đó giảm nhập liệu thủ công không cần thiết nhưng cũng đặt ra trách nhiệm về riêng tư và bảo mật.",
+      "source_turn_id": "T03"
+    },
+    {
+      "term": "Cost-effectiveness studies",
+      "pos": "n. phr.",
+      "meaning_vi": "nghiên cứu hiệu quả chi phí",
+      "example_en": "Funding decisions create another chain of effects. Organisations must consider purchase price, maintenance, training and replacement parts. A low initial cost can conceal expensive long-term support. Conversely, an apparently costly system might save time if it reliably prevents repeated work. Cost-effectiveness studies compare outcomes with resources consumed, while recognising that benefits may be distributed unevenly among users.",
+      "example_vi": "Quyết định tài chính tạo thêm chuỗi ảnh hưởng. Tổ chức phải cân nhắc giá mua, bảo trì, đào tạo và linh kiện thay thế. Chi phí đầu thấp có thể che giấu hỗ trợ dài hạn đắt đỏ. Ngược lại hệ thống tưởng đắt có thể tiết kiệm thời gian nếu ngăn việc làm lặp đáng tin cậy. Nghiên cứu hiệu quả chi phí so sánh kết quả với nguồn lực dùng đến, đồng thời nhận ra lợi ích có thể phân bố không đều giữa người dùng.",
+      "source_turn_id": "T04"
+    }
+  ],
+  "audio": {
+    "status": "not_generated",
+    "url": null,
+    "duration_ms": null,
+    "model": null,
+    "provider": null,
+    "voice_config": null,
+    "source_transcript_hash": "e79f0ced6cb2a8ea5ebf9b81192dac107de9d9e646d1393627b89c0a5cf1fb26",
+    "audio_sha256": null,
+    "format": null
+  },
+  "qa": {
+    "content_reviewed": false,
+    "answers_verified": false,
+    "audio_verified": false,
+    "rights_cleared": false,
+    "duplicate_reviewed": false,
+    "notes": [
+      "Original AI-assisted educational script, not an official IELTS transcript.",
+      "Editorial, academic and linguistic review pending.",
+      "Audio/TTS not generated; text-to-speech distribution rights must be confirmed before use, especially for minors.",
+      "Six IELTS-style practice questions per lesson; this is not a full official Part 4 test or a calibrated IELTS Band test.",
+      "M16.2: automated edits are provisional; IELTS teacher final signoff, audio and rights clearance pending."
+    ]
+  },
+  "provenance": {
+    "content_origin": "original_ai_assisted",
+    "source_urls": [],
+    "source_rights_note": "Original transcript and translation drafts; verify academic claims and terms, and TTS provider redistribution conditions before release.",
+    "reviewer": null
+  },
+  "release_metadata": {
+    "published_at": null,
+    "version": 1
+  }
+}

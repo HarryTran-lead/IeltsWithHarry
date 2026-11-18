@@ -1,0 +1,826 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "S1-EXP-019",
+  "status": "draft",
+  "level": "L4",
+  "section": 1,
+  "topic": "Small-business market booking",
+  "title": "Applying for a Weekend Market Stall",
+  "learning_objectives_vi": [
+    "Theo dõi một cuộc hội thoại đời sống hai người nói có thay đổi và đối chiếu thông tin.",
+    "Lấy thông tin cuối cùng đúng theo thứ tự audio, không chọn đáp án chỉ vì xuất hiện sớm.",
+    "Luyện 8 câu IELTS-style và sau đó sửa lỗi bằng Dictation có bằng chứng rõ ràng."
+  ],
+  "content_format": "section_practice",
+  "target_skills": [
+    "stall_types",
+    "requirements",
+    "fees",
+    "locations"
+  ],
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Reception/service representative",
+      "accent_requested": "north_american",
+      "tts_voice_id": null
+    },
+    {
+      "speaker_id": "B",
+      "role": "Customer/visitor",
+      "accent_requested": "north_american",
+      "tts_voice_id": null
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "Morning, Harbour Makers Market. Are you calling as a visitor, or would you like to apply for a stall?",
+      "translation_vi": "Chào buổi sáng, chợ thủ công Harbour Makers. Anh gọi hỏi tham quan hay đăng ký gian hàng?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_1",
+        "two_speaker_dialogue",
+        "m21",
+        "stall_types",
+        "requirements",
+        "fees",
+        "locations"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "B",
+      "text_en": "I'd like a stall for my handmade notebooks. I've sold online for a while, but this would be my first market.",
+      "translation_vi": "Tôi muốn gian bán sổ tay thủ công. Tôi bán online đã lâu nhưng đây là chợ đầu tiên.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_1",
+        "two_speaker_dialogue",
+        "m21",
+        "stall_types",
+        "requirements",
+        "fees",
+        "locations"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "A",
+      "text_en": "We have covered and outdoor spaces. For paper products, I'd recommend a covered stall in case it rains.",
+      "translation_vi": "Chúng tôi có gian có mái và ngoài trời. Với sản phẩm giấy, tôi khuyên dùng gian có mái phòng mưa.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_1",
+        "two_speaker_dialogue",
+        "m21",
+        "stall_types",
+        "requirements",
+        "fees",
+        "locations"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "B",
+      "text_en": "Agreed. The website lists twenty outdoor stalls and ten covered ones. Are any covered spaces still available?",
+      "translation_vi": "Đồng ý. Website ghi 20 gian ngoài trời và 10 gian có mái. Còn gian có mái không?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_1",
+        "two_speaker_dialogue",
+        "m21",
+        "stall_types",
+        "requirements",
+        "fees",
+        "locations"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "A",
+      "text_en": "Two are free. We had one cancellation yesterday, so it isn't too late to apply for next month's event.",
+      "translation_vi": "Còn hai gian. Hôm qua có người hủy nên vẫn kịp đăng ký chợ tháng tới.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_1",
+        "two_speaker_dialogue",
+        "m21",
+        "stall_types",
+        "requirements",
+        "fees",
+        "locations"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "B",
+      "text_en": "Great. Is the event on Sunday the seventeenth? I have another booking the weekend before.",
+      "translation_vi": "Tốt. Chợ vào Chủ Nhật ngày 17 phải không? Cuối tuần trước tôi có việc.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_1",
+        "two_speaker_dialogue",
+        "m21",
+        "stall_types",
+        "requirements",
+        "fees",
+        "locations"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "It was originally set for the seventeenth, but the harbour festival clashes with it. We've moved it to Sunday the twenty-fourth.",
+      "translation_vi": "Ban đầu dự kiến ngày 17, nhưng trùng lễ hội cảng. Chúng tôi dời sang Chủ Nhật ngày 24.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_1",
+        "two_speaker_dialogue",
+        "m21",
+        "stall_types",
+        "requirements",
+        "fees",
+        "locations"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "B",
+      "text_en": "That actually helps. What is the price for a covered stall? I saw fifteen pounds on the outdoor application form.",
+      "translation_vi": "Thế lại tốt. Gian có mái giá bao nhiêu? Mẫu gian ngoài trời ghi 15 bảng.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_1",
+        "two_speaker_dialogue",
+        "m21",
+        "stall_types",
+        "requirements",
+        "fees",
+        "locations"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T09",
+      "speaker_id": "A",
+      "text_en": "Outdoor spaces cost fifteen pounds. Covered stalls are twenty-two, which includes a table and one chair.",
+      "translation_vi": "Gian ngoài trời 15 bảng. Gian có mái 22 bảng, gồm một bàn và một ghế.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_1",
+        "two_speaker_dialogue",
+        "m21",
+        "stall_types",
+        "requirements",
+        "fees",
+        "locations"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T10",
+      "speaker_id": "B",
+      "text_en": "Fine. Do I need proof of insurance? My products are just paper goods, nothing electrical or edible.",
+      "translation_vi": "Được. Tôi có phải có chứng nhận bảo hiểm không? Hàng chỉ là giấy, không điện hay thực phẩm.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_1",
+        "two_speaker_dialogue",
+        "m21",
+        "stall_types",
+        "requirements",
+        "fees",
+        "locations"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T11",
+      "speaker_id": "A",
+      "text_en": "All traders need public liability insurance. You can upload the certificate with the application form.",
+      "translation_vi": "Tất cả người bán cần bảo hiểm trách nhiệm công cộng. Có thể tải chứng nhận cùng đơn.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_1",
+        "two_speaker_dialogue",
+        "m21",
+        "stall_types",
+        "requirements",
+        "fees",
+        "locations"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T12",
+      "speaker_id": "B",
+      "text_en": "I'll arrange that. What time can stallholders start setting up? I'd like enough time to put out the samples.",
+      "translation_vi": "Tôi sẽ lo. Người bán được dựng gian từ mấy giờ? Tôi muốn đủ thời gian trưng mẫu.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_1",
+        "two_speaker_dialogue",
+        "m21",
+        "stall_types",
+        "requirements",
+        "fees",
+        "locations"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T13",
+      "speaker_id": "A",
+      "text_en": "Set-up begins at seven fifteen, and the market opens to customers at nine. Vehicles must leave the site before eight forty-five.",
+      "translation_vi": "Dựng gian từ 7:15, chợ mở cho khách lúc 9. Xe phải rời khu trước 8:45.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_1",
+        "two_speaker_dialogue",
+        "m21",
+        "stall_types",
+        "requirements",
+        "fees",
+        "locations"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T14",
+      "speaker_id": "B",
+      "text_en": "Is the covered section beside the public entrance? I'd like customers to find the stationery stalls easily.",
+      "translation_vi": "Khu có mái cạnh lối công cộng không? Tôi muốn khách dễ tìm gian văn phòng phẩm.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_1",
+        "two_speaker_dialogue",
+        "m21",
+        "stall_types",
+        "requirements",
+        "fees",
+        "locations"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T15",
+      "speaker_id": "A",
+      "text_en": "It's in the old fish hall, opposite the café. All covered stalls are inside that building, not along the quay.",
+      "translation_vi": "Nó ở sảnh bán cá cũ, đối diện quán café. Tất cả gian có mái ở trong tòa nhà đó, không dọc cầu cảng.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_1",
+        "two_speaker_dialogue",
+        "m21",
+        "stall_types",
+        "requirements",
+        "fees",
+        "locations"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T16",
+      "speaker_id": "B",
+      "text_en": "Excellent. I'll submit the application tonight and choose a covered stall in the old fish hall.",
+      "translation_vi": "Tuyệt. Tối nay tôi nộp đơn và chọn gian có mái trong sảnh bán cá cũ.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_1",
+        "two_speaker_dialogue",
+        "m21",
+        "stall_types",
+        "requirements",
+        "fees",
+        "locations"
+      ],
+      "bank_role": "training"
+    }
+  ],
+  "questions": [
+    {
+      "type": "note_completion",
+      "prompt": "Requested stall type: ____",
+      "correct_answers": [
+        "covered"
+      ],
+      "spoken_answer": "covered",
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER",
+      "scoring_policy": "controlled_variants",
+      "explanation_vi": "Sản phẩm giấy cần gian có mái để tránh mưa.",
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "evidence_excerpt_en": "recommend a covered stall",
+      "question_tags": [
+        "m21",
+        "ielts_part_1_practice",
+        "stall_types",
+        "requirements",
+        "fees",
+        "locations"
+      ],
+      "question_id": "Q01",
+      "group_id": "IELTS_S1_PRACTICE"
+    },
+    {
+      "type": "note_completion",
+      "prompt": "Covered spaces still available: ____",
+      "correct_answers": [
+        "two"
+      ],
+      "spoken_answer": "two",
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER",
+      "scoring_policy": "controlled_variants",
+      "explanation_vi": "Còn hai gian có mái.",
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "evidence_excerpt_en": "Two are free",
+      "question_tags": [
+        "m21",
+        "ielts_part_1_practice",
+        "stall_types",
+        "requirements",
+        "fees",
+        "locations"
+      ],
+      "question_id": "Q02",
+      "group_id": "IELTS_S1_PRACTICE"
+    },
+    {
+      "type": "form_completion",
+      "prompt": "Revised market date: Sunday the ____",
+      "correct_answers": [
+        "twenty-fourth"
+      ],
+      "spoken_answer": "twenty-fourth",
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER",
+      "scoring_policy": "controlled_variants",
+      "explanation_vi": "Ngày 17 trùng lễ hội, đã chuyển sang 24.",
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "evidence_excerpt_en": "Sunday the twenty-fourth",
+      "question_tags": [
+        "m21",
+        "ielts_part_1_practice",
+        "stall_types",
+        "requirements",
+        "fees",
+        "locations"
+      ],
+      "question_id": "Q03",
+      "group_id": "IELTS_S1_PRACTICE"
+    },
+    {
+      "type": "mcq",
+      "prompt": "What is included with a covered stall?",
+      "correct_answers": [
+        "table and chair"
+      ],
+      "options": [
+        "table and chair",
+        "electric heater",
+        "parking permit"
+      ],
+      "correct_option": "A",
+      "scoring_policy": "strict",
+      "explanation_vi": "Gian có mái gồm bàn và một ghế.",
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "evidence_excerpt_en": "includes a table and one chair",
+      "question_tags": [
+        "m21",
+        "ielts_part_1_practice",
+        "stall_types",
+        "requirements",
+        "fees",
+        "locations"
+      ],
+      "question_id": "Q04",
+      "group_id": "IELTS_S1_PRACTICE"
+    },
+    {
+      "type": "note_completion",
+      "prompt": "Covered stall fee: £____",
+      "correct_answers": [
+        "twenty-two",
+        "22"
+      ],
+      "spoken_answer": "twenty-two",
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER",
+      "scoring_policy": "controlled_variants",
+      "explanation_vi": "Giá gian có mái 22 bảng, khác gian ngoài trời 15.",
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "evidence_excerpt_en": "twenty-two",
+      "question_tags": [
+        "m21",
+        "ielts_part_1_practice",
+        "stall_types",
+        "requirements",
+        "fees",
+        "locations"
+      ],
+      "question_id": "Q05",
+      "group_id": "IELTS_S1_PRACTICE"
+    },
+    {
+      "type": "note_completion",
+      "prompt": "Required insurance: public ____ insurance",
+      "correct_answers": [
+        "liability"
+      ],
+      "spoken_answer": "liability",
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER",
+      "scoring_policy": "controlled_variants",
+      "explanation_vi": "Tất cả người bán cần bảo hiểm trách nhiệm công cộng.",
+      "evidence_turn_ids": [
+        "T11"
+      ],
+      "evidence_excerpt_en": "public liability insurance",
+      "question_tags": [
+        "m21",
+        "ielts_part_1_practice",
+        "stall_types",
+        "requirements",
+        "fees",
+        "locations"
+      ],
+      "question_id": "Q06",
+      "group_id": "IELTS_S1_PRACTICE"
+    },
+    {
+      "type": "form_completion",
+      "prompt": "Stall set-up begins at ____",
+      "correct_answers": [
+        "seven fifteen",
+        "7:15"
+      ],
+      "spoken_answer": "seven fifteen",
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER",
+      "scoring_policy": "controlled_variants",
+      "explanation_vi": "Bắt đầu dựng gian lúc 7:15, mở chợ lúc 9.",
+      "evidence_turn_ids": [
+        "T13"
+      ],
+      "evidence_excerpt_en": "seven fifteen",
+      "question_tags": [
+        "m21",
+        "ielts_part_1_practice",
+        "stall_types",
+        "requirements",
+        "fees",
+        "locations"
+      ],
+      "question_id": "Q07",
+      "group_id": "IELTS_S1_PRACTICE"
+    },
+    {
+      "type": "mcq",
+      "prompt": "Where are covered stalls located?",
+      "correct_answers": [
+        "old fish hall"
+      ],
+      "options": [
+        "along the quay",
+        "old fish hall",
+        "near railway bridge"
+      ],
+      "correct_option": "B",
+      "scoring_policy": "strict",
+      "explanation_vi": "Gian có mái trong sảnh cá cũ đối diện quán café.",
+      "evidence_turn_ids": [
+        "T16"
+      ],
+      "evidence_excerpt_en": "old fish hall",
+      "question_tags": [
+        "m21",
+        "ielts_part_1_practice",
+        "stall_types",
+        "requirements",
+        "fees",
+        "locations"
+      ],
+      "question_id": "Q08",
+      "group_id": "IELTS_S1_PRACTICE"
+    },
+    {
+      "question_id": "D01",
+      "group_id": "DICTATION",
+      "type": "dictation",
+      "prompt": "Nghe và chép nguyên văn lượt thoại T04.",
+      "correct_answers": [
+        "Agreed. The website lists twenty outdoor stalls and ten covered ones. Are any covered spaces still available?"
+      ],
+      "scoring_policy": "case_punctuation_insensitive",
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Đồng ý. Website ghi 20 gian ngoài trời và 10 gian có mái. Còn gian có mái không?",
+      "question_tags": [
+        "m21",
+        "dictation",
+        "exact_words",
+        "stall_types",
+        "requirements",
+        "fees",
+        "locations"
+      ]
+    },
+    {
+      "question_id": "D02",
+      "group_id": "DICTATION",
+      "type": "dictation",
+      "prompt": "Nghe và chép nguyên văn lượt thoại T07.",
+      "correct_answers": [
+        "It was originally set for the seventeenth, but the harbour festival clashes with it. We've moved it to Sunday the twenty-fourth."
+      ],
+      "scoring_policy": "case_punctuation_insensitive",
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "Ban đầu dự kiến ngày 17, nhưng trùng lễ hội cảng. Chúng tôi dời sang Chủ Nhật ngày 24.",
+      "question_tags": [
+        "m21",
+        "dictation",
+        "exact_words",
+        "stall_types",
+        "requirements",
+        "fees",
+        "locations"
+      ]
+    },
+    {
+      "question_id": "D03",
+      "group_id": "DICTATION",
+      "type": "dictation",
+      "prompt": "Nghe và chép nguyên văn lượt thoại T10.",
+      "correct_answers": [
+        "Fine. Do I need proof of insurance? My products are just paper goods, nothing electrical or edible."
+      ],
+      "scoring_policy": "case_punctuation_insensitive",
+      "evidence_turn_ids": [
+        "T10"
+      ],
+      "explanation_vi": "Được. Tôi có phải có chứng nhận bảo hiểm không? Hàng chỉ là giấy, không điện hay thực phẩm.",
+      "question_tags": [
+        "m21",
+        "dictation",
+        "exact_words",
+        "stall_types",
+        "requirements",
+        "fees",
+        "locations"
+      ]
+    },
+    {
+      "question_id": "D04",
+      "group_id": "DICTATION",
+      "type": "dictation",
+      "prompt": "Nghe và chép nguyên văn lượt thoại T14.",
+      "correct_answers": [
+        "Is the covered section beside the public entrance? I'd like customers to find the stationery stalls easily."
+      ],
+      "scoring_policy": "case_punctuation_insensitive",
+      "evidence_turn_ids": [
+        "T14"
+      ],
+      "explanation_vi": "Khu có mái cạnh lối công cộng không? Tôi muốn khách dễ tìm gian văn phòng phẩm.",
+      "question_tags": [
+        "m21",
+        "dictation",
+        "exact_words",
+        "stall_types",
+        "requirements",
+        "fees",
+        "locations"
+      ]
+    },
+    {
+      "question_id": "G01",
+      "group_id": "GAP_FILL",
+      "type": "gap_fill",
+      "prompt": "Nghe và điền đúng cụm từ bị thiếu: ____ are free. We had one cancellation yesterday, so it isn't too late to apply for next month's event.",
+      "correct_answers": [
+        "two"
+      ],
+      "word_limit": 2,
+      "scoring_policy": "controlled_variants",
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Còn hai gian có mái.",
+      "question_tags": [
+        "m21",
+        "gap_fill",
+        "listen_for_detail",
+        "stall_types",
+        "requirements",
+        "fees",
+        "locations"
+      ]
+    },
+    {
+      "question_id": "G02",
+      "group_id": "GAP_FILL",
+      "type": "gap_fill",
+      "prompt": "Nghe và điền đúng cụm từ bị thiếu: It was originally set for the seventeenth, but the harbour festival clashes with it. We've moved it to Sunday the ____.",
+      "correct_answers": [
+        "twenty-fourth"
+      ],
+      "word_limit": 2,
+      "scoring_policy": "controlled_variants",
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "Ngày 17 trùng lễ hội, đã chuyển sang 24.",
+      "question_tags": [
+        "m21",
+        "gap_fill",
+        "listen_for_detail",
+        "stall_types",
+        "requirements",
+        "fees",
+        "locations"
+      ]
+    }
+  ],
+  "vocabulary": [
+    {
+      "vocab_id": "S1-EXP-019-V01",
+      "expression_en": "covered stall",
+      "meaning_vi": "gian hàng có mái che",
+      "part_of_speech": "noun phrase",
+      "example_en": "We have covered and outdoor spaces. For paper products, I'd recommend a covered stall in case it rains.",
+      "example_vi": "Chúng tôi có gian có mái và ngoài trời. Với sản phẩm giấy, tôi khuyên dùng gian có mái phòng mưa.",
+      "evidence_turn_id": "T03",
+      "can_save_to_notebook": true
+    },
+    {
+      "vocab_id": "S1-EXP-019-V02",
+      "expression_en": "outdoor spaces",
+      "meaning_vi": "khu gian hàng ngoài trời",
+      "part_of_speech": "noun phrase",
+      "example_en": "We have covered and outdoor spaces. For paper products, I'd recommend a covered stall in case it rains.",
+      "example_vi": "Chúng tôi có gian có mái và ngoài trời. Với sản phẩm giấy, tôi khuyên dùng gian có mái phòng mưa.",
+      "evidence_turn_id": "T03",
+      "can_save_to_notebook": true
+    },
+    {
+      "vocab_id": "S1-EXP-019-V03",
+      "expression_en": "public liability insurance",
+      "meaning_vi": "bảo hiểm trách nhiệm công cộng",
+      "part_of_speech": "noun phrase",
+      "example_en": "All traders need public liability insurance. You can upload the certificate with the application form.",
+      "example_vi": "Tất cả người bán cần bảo hiểm trách nhiệm công cộng. Có thể tải chứng nhận cùng đơn.",
+      "evidence_turn_id": "T11",
+      "can_save_to_notebook": true
+    },
+    {
+      "vocab_id": "S1-EXP-019-V04",
+      "expression_en": "stallholders",
+      "meaning_vi": "người thuê gian bán hàng",
+      "part_of_speech": "noun",
+      "example_en": "I'll arrange that. What time can stallholders start setting up? I'd like enough time to put out the samples.",
+      "example_vi": "Tôi sẽ lo. Người bán được dựng gian từ mấy giờ? Tôi muốn đủ thời gian trưng mẫu.",
+      "evidence_turn_id": "T12",
+      "can_save_to_notebook": true
+    },
+    {
+      "vocab_id": "S1-EXP-019-V05",
+      "expression_en": "set-up begins",
+      "meaning_vi": "bắt đầu dựng gian",
+      "part_of_speech": "verb phrase",
+      "example_en": "Set-up begins at seven fifteen, and the market opens to customers at nine. Vehicles must leave the site before eight forty-five.",
+      "example_vi": "Dựng gian từ 7:15, chợ mở cho khách lúc 9. Xe phải rời khu trước 8:45.",
+      "evidence_turn_id": "T13",
+      "can_save_to_notebook": true
+    },
+    {
+      "vocab_id": "S1-EXP-019-V06",
+      "expression_en": "old fish hall",
+      "meaning_vi": "khu sảnh bán cá cũ",
+      "part_of_speech": "noun phrase",
+      "example_en": "It's in the old fish hall, opposite the café. All covered stalls are inside that building, not along the quay.",
+      "example_vi": "Nó ở sảnh bán cá cũ, đối diện quán café. Tất cả gian có mái ở trong tòa nhà đó, không dọc cầu cảng.",
+      "evidence_turn_id": "T15",
+      "can_save_to_notebook": true
+    }
+  ],
+  "audio": {
+    "status": "not_generated",
+    "audio_url": null,
+    "duration_ms": null,
+    "source_text_sha256": "81305bbe31f8e87c3c82bcb10dc113779604310b6be001dca9a253a79b981df1",
+    "generation_strategy": "full_dialogue_multi_speaker",
+    "audio_asset_id": null
+  },
+  "learning_flow": {
+    "intro": {
+      "theory_vi": "IELTS Part 1 thường có hội thoại hai người về dịch vụ hoặc hoạt động đời sống. Hãy xem trước từ loại và đơn vị của từng chỗ trống; đừng đoán đáp án trước khi nghe.",
+      "tip_vi": "Nghe đến cuối lượt trao đổi: người nói có thể sửa ngày, giá, địa điểm hoặc đổi lựa chọn. Thông tin đầu tiên nhiều khi là phương án bị loại.",
+      "common_mistakes_vi": [
+        "Ghi phương án ban đầu dù người nói đã đổi ý.",
+        "Nhầm giờ mở cửa với giờ buổi học bắt đầu.",
+        "Điền dư từ so với giới hạn của nhóm câu hỏi.",
+        "Chọn MCQ vì trùng từ với audio mà bỏ qua ý định cuối cùng."
+      ],
+      "worked_examples": [
+        {
+          "audio_example_en": "I first asked for Tuesday, but Friday is the day I can attend.",
+          "question": "Final day: ____",
+          "answer": "Friday",
+          "explanation_vi": "Tuesday là phương án cũ; Friday mới là quyết định cuối."
+        },
+        {
+          "audio_example_en": "The ordinary ticket is twenty pounds, although students pay fifteen.",
+          "question": "Student ticket: £____",
+          "answer": "15",
+          "explanation_vi": "Chọn mức giá đúng đối tượng được hỏi; 20 là giá thường."
+        }
+      ]
+    },
+    "steps": [
+      "pre_listening",
+      "first_listen_ielts_questions",
+      "review_with_evidence",
+      "selective_dictation",
+      "gap_fill",
+      "summary"
+    ],
+    "ielts_question_ids": [
+      "Q01",
+      "Q02",
+      "Q03",
+      "Q04",
+      "Q05",
+      "Q06",
+      "Q07",
+      "Q08"
+    ],
+    "recommended_first_listen_play_limit": 1,
+    "practice_replay_allowed_after_first_attempt": true,
+    "word_count": 291,
+    "estimated_audio_minutes_at_135_wpm": 2.16,
+    "exposure_bank": "training",
+    "exam_simulation": false,
+    "mock_test": false
+  },
+  "qa": {
+    "status": "awaiting_human_audio_review",
+    "automated_validation": "pending",
+    "human_transcript_approved": false,
+    "human_audio_approved": false,
+    "ielts_exam_equivalent": false,
+    "release_eligible": false
+  },
+  "provenance": {
+    "source_type": "original_authored",
+    "reference_copying": false,
+    "authoring_milestone": "M21",
+    "do_not_reuse_in_unseen_assessment_before_exposure_check": true
+  },
+  "release_metadata": {
+    "version": "m21.0.1",
+    "published": false,
+    "needs_audio": true,
+    "requires_human_approval": true,
+    "import_policy": "insert_only",
+    "target_bank": "training"
+  }
+}

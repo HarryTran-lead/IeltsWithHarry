@@ -31,6 +31,7 @@ See [docs/STRUCTURE.md](docs/STRUCTURE.md) for data flows and security boundarie
 See [docs/AUTHORED_CONTENT.md](docs/AUTHORED_CONTENT.md) for the no-AI, content-driven skill plan and the interactive `/app/content-lab` JSON demo.
 See [docs/DAILY_NEWS.md](docs/DAILY_NEWS.md) for news sources, rights rules, scheduled sync, and operations.
 See [docs/ENVIRONMENTS.md](docs/ENVIRONMENTS.md) for the `develop` Preview, production isolation, and release workflow.
+See [docs/writing-grading/EXISTING_SYSTEM_AUDIT.md](docs/writing-grading/EXISTING_SYSTEM_AUDIT.md) for the disabled, self-hosted Writing grading foundation and its rollout gates.
 
 ## Run locally in demo mode
 

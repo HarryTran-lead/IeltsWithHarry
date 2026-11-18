@@ -1,0 +1,381 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "DICT-S2-022",
+  "status": "draft",
+  "level": "L4",
+  "section": 2,
+  "topic": "Campus Orientation",
+  "title": "Navigating the North Campus on Welcome Day",
+  "learning_objectives_vi": [
+    "Nghe độc thoại chủ đề Campus Orientation và xác định mục đích thông báo.",
+    "Nhận diện cấu trúc ý và các chi tiết quan trọng theo thứ tự phát biểu.",
+    "Luyện chỉ đường theo sơ đồ A–F, phân biệt điểm trước/sau và hướng trái/phải."
+  ],
+  "content_format": "section_practice",
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Visitor guide / programme coordinator (one narrator)",
+      "tts_voice_id": null,
+      "accent_requested": "new_zealand"
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "As you can see, our north campus is larger than the main site. The purpose of this orientation is to help you find services without wasting your first week searching for rooms.",
+      "translation_vi": "Khu bắc rộng hơn khu chính. Buổi định hướng này giúp sinh viên tìm dịch vụ mà không mất cả tuần đầu tìm phòng.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_2",
+        "monologue",
+        "l4",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "A",
+      "text_en": "We are entering from the southern gate. The student welfare office is the first building on your left, and the cycle storage area is immediately on your right.",
+      "translation_vi": "Ta vào từ cổng nam. Văn phòng phúc lợi sinh viên ở tòa đầu bên trái, chỗ để xe đạp ngay bên phải.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_2",
+        "monologue",
+        "l4",
+        "signposting",
+        "spatial_directions"
+      ]
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "A",
+      "text_en": "The language centre is situated in the back-left block. It has moved from the lower floor of the library, where noise from group lessons disturbed readers.",
+      "translation_vi": "Trung tâm ngôn ngữ ở khu sau bên trái. Trước ở tầng dưới thư viện, nơi tiếng ồn lớp nhóm làm phiền người đọc.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_2",
+        "monologue",
+        "l4",
+        "signposting",
+        "spatial_directions"
+      ]
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "A",
+      "text_en": "For academic advice, walk to the back-right block. That is the tutorial centre, where appointments are offered both face-to-face and online.",
+      "translation_vi": "Muốn tư vấn học tập, tới khu sau bên phải. Đó là trung tâm hướng dẫn cá nhân, nhận lịch trực tiếp hoặc trực tuyến.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_2",
+        "monologue",
+        "l4",
+        "signposting",
+        "spatial_directions"
+      ]
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "A",
+      "text_en": "The careers office is the middle building at the far end. Its staff can review application letters, but they do not arrange internships for students.",
+      "translation_vi": "Văn phòng nghề nghiệp là tòa giữa ở cuối. Nhân viên có thể xem thư ứng tuyển nhưng không sắp xếp thực tập.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_2",
+        "monologue",
+        "l4",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "A",
+      "text_en": "The compulsory safety briefing has changed rooms. Instead of meeting in Hall Two at nine, you should attend Hall Four at nine thirty.",
+      "translation_vi": "Buổi phổ biến an toàn bắt buộc đã đổi phòng: thay vì sảnh hai lúc chín giờ, hãy tới sảnh bốn lúc chín rưỡi.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_2",
+        "monologue",
+        "l4",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "You will receive a temporary library pass today. The permanent student card should be ready within five working days, provided your photograph has been approved.",
+      "translation_vi": "Hôm nay bạn được cấp thẻ thư viện tạm. Thẻ sinh viên chính thức dự kiến xong trong năm ngày làm việc nếu ảnh được duyệt.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_2",
+        "monologue",
+        "l4",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "A",
+      "text_en": "Students with mobility needs should contact the accessibility team before booking field trips, since certain older buildings require an alternative entrance.",
+      "translation_vi": "Sinh viên có nhu cầu di chuyển nên liên hệ nhóm hỗ trợ tiếp cận trước khi đặt chuyến thực địa vì vài tòa cũ cần lối vào khác.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_2",
+        "monologue",
+        "l4",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T09",
+      "speaker_id": "A",
+      "text_en": "Our final campus tour starts at three twenty, leaving enough time for you to explore the student union and meet course representatives beforehand.",
+      "translation_vi": "Tour cuối của khu học bắt đầu lúc 3:20, đủ thời gian trước đó để ghé hội sinh viên và gặp đại diện khóa học.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_2",
+        "monologue",
+        "l4",
+        "signposting"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "type": "map_labelling",
+      "prompt": "Use the location plan (A–F): Welfare office on the map: ____",
+      "correct_answers": [
+        "D"
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Văn phòng phúc lợi nằm ở tòa trước bên trái.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "section_2",
+        "ielts_practice",
+        "map_orientation"
+      ],
+      "map_asset": "maps/DICT-S2-022.svg"
+    },
+    {
+      "question_id": "Q02",
+      "type": "map_labelling",
+      "prompt": "Use the location plan (A–F): Tutorial centre on the map: ____",
+      "correct_answers": [
+        "C"
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Trung tâm hướng dẫn nằm khu sau bên phải.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "section_2",
+        "ielts_practice",
+        "map_orientation"
+      ],
+      "map_asset": "maps/DICT-S2-022.svg"
+    },
+    {
+      "question_id": "Q03",
+      "type": "mcq",
+      "prompt": "Where is the compulsory safety briefing now held?",
+      "correct_answers": [
+        "Hall Four"
+      ],
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "explanation_vi": "Đã đổi sang Hall Four.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "section_2",
+        "ielts_practice",
+        "detail_recognition"
+      ],
+      "options": [
+        "Hall Two",
+        "Hall Four",
+        "blue hall"
+      ]
+    },
+    {
+      "question_id": "Q04",
+      "type": "note_completion",
+      "prompt": "Notes — Revised safety briefing time: ____",
+      "correct_answers": [
+        "nine thirty"
+      ],
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "explanation_vi": "Giờ mới 9:30.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_2",
+        "ielts_practice",
+        "detail_recognition"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q05",
+      "type": "note_completion",
+      "prompt": "Notes — Permanent student card within five working: ____",
+      "correct_answers": [
+        "days"
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "Thẻ chính thức trong năm ngày làm việc.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_2",
+        "ielts_practice",
+        "detail_recognition"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q06",
+      "type": "note_completion",
+      "prompt": "Notes — Final campus tour starts at: ____",
+      "correct_answers": [
+        "three twenty"
+      ],
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "explanation_vi": "Tour cuối lúc 3:20.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_2",
+        "ielts_practice",
+        "detail_recognition"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "D01",
+      "type": "dictation",
+      "prompt": "Nghe lại và chép nguyên văn đoạn T05 (toàn bộ lời người dẫn).",
+      "correct_answers": [
+        "The careers office is the middle building at the far end. Its staff can review application letters, but they do not arrange internships for students."
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Câu gốc: The careers office is the middle building at the far end. Its staff can review application letters, but they do not arrange internships for students. Nghĩa: Văn phòng nghề nghiệp là tòa giữa ở cuối. Nhân viên có thể xem thư ứng tuyển nhưng không sắp xếp thực tập. Lưu ý từ chức năng, âm cuối và cụm từ nối.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "exact_transcript",
+        "section_2"
+      ]
+    },
+    {
+      "question_id": "G01",
+      "type": "gap_fill",
+      "prompt": "Điền cụm từ bị ẩn sau khi nghe: As you can see, our north campus is larger than the main site. The purpose of this ____ is to help you find services without wasting your first week searching for rooms.",
+      "correct_answers": [
+        "orientation"
+      ],
+      "evidence_turn_ids": [
+        "T01"
+      ],
+      "explanation_vi": "orientation: buổi định hướng. Ngữ cảnh: Khu bắc rộng hơn khu chính. Buổi định hướng này giúp sinh viên tìm dịch vụ mà không mất cả tuần đầu tìm phòng.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "gap_fill",
+        "vocab_in_context",
+        "section_2"
+      ]
+    }
+  ],
+  "vocabulary": [
+    {
+      "term": "orientation",
+      "pos": "n.",
+      "meaning_vi": "buổi định hướng",
+      "example_en": "As you can see, our north campus is larger than the main site. The purpose of this orientation is to help you find services without wasting your first week searching for rooms.",
+      "example_vi": "Khu bắc rộng hơn khu chính. Buổi định hướng này giúp sinh viên tìm dịch vụ mà không mất cả tuần đầu tìm phòng.",
+      "source_turn_id": "T01"
+    },
+    {
+      "term": "student union",
+      "pos": "n. phr.",
+      "meaning_vi": "hội sinh viên",
+      "example_en": "Our final campus tour starts at three twenty, leaving enough time for you to explore the student union and meet course representatives beforehand.",
+      "example_vi": "Tour cuối của khu học bắt đầu lúc 3:20, đủ thời gian trước đó để ghé hội sinh viên và gặp đại diện khóa học.",
+      "source_turn_id": "T09"
+    },
+    {
+      "term": "storage area",
+      "pos": "n. phr.",
+      "meaning_vi": "khu cất giữ",
+      "example_en": "We are entering from the southern gate. The student welfare office is the first building on your left, and the cycle storage area is immediately on your right.",
+      "example_vi": "Ta vào từ cổng nam. Văn phòng phúc lợi sinh viên ở tòa đầu bên trái, chỗ để xe đạp ngay bên phải.",
+      "source_turn_id": "T02"
+    },
+    {
+      "term": "entrance",
+      "pos": "n.",
+      "meaning_vi": "lối vào",
+      "example_en": "Students with mobility needs should contact the accessibility team before booking field trips, since certain older buildings require an alternative entrance.",
+      "example_vi": "Sinh viên có nhu cầu di chuyển nên liên hệ nhóm hỗ trợ tiếp cận trước khi đặt chuyến thực địa vì vài tòa cũ cần lối vào khác.",
+      "source_turn_id": "T08"
+    }
+  ],
+  "audio": {
+    "status": "not_generated",
+    "url": null,
+    "duration_ms": null,
+    "model": null,
+    "provider": null,
+    "voice_config": null,
+    "source_transcript_hash": "67865196a4e1e2f9a36fcfc42f57079c7a33af5176d9de6ee07ee6adb072c04e",
+    "audio_sha256": null,
+    "format": null
+  },
+  "qa": {
+    "content_reviewed": false,
+    "answers_verified": false,
+    "audio_verified": false,
+    "rights_cleared": false,
+    "duplicate_reviewed": false,
+    "notes": [
+      "AI-assisted original writing; pedagogical and pronunciation review still required.",
+      "No TTS or sentence-level timestamps supplied; do not publish.",
+      "This is Section 2 skill practice, not an official IELTS test.",
+      "M16.2: automated edits are provisional; IELTS teacher final signoff, audio and rights clearance pending."
+    ]
+  },
+  "provenance": {
+    "content_origin": "original_ai_assisted",
+    "source_urls": [],
+    "source_rights_note": "Newly authored educational monologue. Confirm audio model distribution, age suitability and TOS separately before publishing.",
+    "reviewer": null
+  },
+  "release_metadata": {
+    "published_at": null,
+    "version": 1
+  }
+}

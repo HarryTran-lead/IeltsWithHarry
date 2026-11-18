@@ -1,0 +1,367 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "DICT-S2-034",
+  "status": "draft",
+  "level": "L4",
+  "section": 2,
+  "topic": "Community Centres",
+  "title": "Community Kitchen: Programme Update",
+  "learning_objectives_vi": [
+    "Nghe và hiểu bài độc thoại Community Centres ở mức L4, phân biệt chi tiết chính/phụ.",
+    "Nhận ra thông tin cập nhật, điều kiện và phương án thay thế thay vì chọn chi tiết đầu tiên nghe được.",
+    "Chép chính xác các đoạn mục tiêu và giải thích bằng chứng theo thứ tự lời nói."
+  ],
+  "content_format": "section_practice",
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Guide / public information presenter (single narrator)",
+      "tts_voice_id": null,
+      "accent_requested": "australian"
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "Thank you for coming to the neighbourhood centre's open evening. We have introduced a community kitchen programme, but there are a few differences between the poster we sent last month and the final schedule.",
+      "translation_vi": "Cảm ơn mọi người đến buổi giới thiệu của trung tâm khu phố. Chúng tôi vừa triển khai chương trình bếp cộng đồng, nhưng lịch cuối cùng có vài điểm khác tờ áp phích gửi tháng trước.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_2",
+        "monologue",
+        "l4",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "A",
+      "text_en": "The introductory class will now run on Wednesday evenings. We considered Mondays, but the main hall is already used by the children's music group on that day.",
+      "translation_vi": "Lớp nhập môn nay diễn ra vào tối thứ Tư. Chúng tôi từng cân nhắc thứ Hai nhưng hội trường chính đã được nhóm nhạc thiếu nhi sử dụng hôm đó.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_2",
+        "monologue",
+        "l4",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "A",
+      "text_en": "For your first class, please report to reception at five forty-five, where volunteers will check dietary information. The actual cooking demonstration begins at six fifteen.",
+      "translation_vi": "Trong buổi đầu, hãy đến quầy lễ tân lúc năm giờ bốn mươi lăm để tình nguyện viên kiểm tra thông tin ăn uống. Phần trình diễn nấu ăn bắt đầu lúc sáu giờ mười lăm.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_2",
+        "monologue",
+        "l4",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "A",
+      "text_en": "Participants work in groups of four, and all the basic ingredients are supplied. You will need to bring a reusable container to take leftovers home, but you shouldn't bring kitchen knives.",
+      "translation_vi": "Học viên làm việc theo nhóm bốn người, mọi nguyên liệu cơ bản đều được cung cấp. Bạn cần mang hộp dùng lại để đem đồ ăn thừa về, nhưng không được mang dao bếp.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_2",
+        "monologue",
+        "l4",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "A",
+      "text_en": "The first two weeks focus on economical family meals. Later sessions cover reducing food waste, reading food labels and preparing dishes for people with different dietary needs.",
+      "translation_vi": "Hai tuần đầu tập trung vào bữa ăn gia đình tiết kiệm. Các buổi sau nói về giảm lãng phí thực phẩm, đọc nhãn và làm món phù hợp nhiều chế độ ăn.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_2",
+        "monologue",
+        "l4",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "A",
+      "text_en": "The course is free for local residents, although we ask for a refundable deposit of ten pounds to reserve a place. Anyone on the waiting list will be contacted by Friday afternoon.",
+      "translation_vi": "Khóa học miễn phí cho cư dân địa phương, nhưng chúng tôi yêu cầu khoản đặt cọc mười bảng có hoàn lại để giữ chỗ. Người trong danh sách chờ sẽ được liên hệ trước chiều thứ Sáu.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_2",
+        "monologue",
+        "l4",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "Finally, a short recipe booklet will be emailed after each class. Please tell the registration team if you would prefer to receive a printed copy instead.",
+      "translation_vi": "Cuối cùng, một tập công thức ngắn sẽ được gửi email sau mỗi buổi. Hãy báo nhóm đăng ký nếu bạn muốn nhận bản in.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_2",
+        "monologue",
+        "l4",
+        "signposting"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "type": "note_completion",
+      "prompt": "Notes — Introductory class takes place on: ____",
+      "correct_answers": [
+        "Wednesday"
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Lớp nhập môn nay diễn ra vào tối thứ Tư. Chúng tôi từng cân nhắc thứ Hai nhưng hội trường chính đã được nhóm nhạc thiếu nhi sử dụng hôm đó. Đáp án được nhắc trong đoạn T02: “Wednesday”.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_2",
+        "ielts_practice",
+        "detail_recognition"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q02",
+      "type": "table_completion",
+      "prompt": "Table — Report to reception at: ____",
+      "correct_answers": [
+        "five forty-five"
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Trong buổi đầu, hãy đến quầy lễ tân lúc năm giờ bốn mươi lăm để tình nguyện viên kiểm tra thông tin ăn uống. Phần trình diễn nấu ăn bắt đầu lúc sáu giờ mười lăm. Đáp án được nhắc trong đoạn T03: “five forty-five”.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_2",
+        "ielts_practice",
+        "detail_recognition"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q03",
+      "type": "sentence_completion",
+      "prompt": "Complete the sentence — Cooking demonstration starts at: ____",
+      "correct_answers": [
+        "six fifteen"
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Trong buổi đầu, hãy đến quầy lễ tân lúc năm giờ bốn mươi lăm để tình nguyện viên kiểm tra thông tin ăn uống. Phần trình diễn nấu ăn bắt đầu lúc sáu giờ mười lăm. Đáp án được nhắc trong đoạn T03: “six fifteen”.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_2",
+        "ielts_practice",
+        "detail_recognition"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q04",
+      "type": "note_completion",
+      "prompt": "Notes — Each cooking group has: ____",
+      "correct_answers": [
+        "four"
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Học viên làm việc theo nhóm bốn người, mọi nguyên liệu cơ bản đều được cung cấp. Bạn cần mang hộp dùng lại để đem đồ ăn thừa về, nhưng không được mang dao bếp. Đáp án được nhắc trong đoạn T04: “four”.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_2",
+        "ielts_practice",
+        "detail_recognition"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q05",
+      "type": "short_answer",
+      "prompt": "Answer briefly: Bring a reusable?",
+      "correct_answers": [
+        "container"
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Học viên làm việc theo nhóm bốn người, mọi nguyên liệu cơ bản đều được cung cấp. Bạn cần mang hộp dùng lại để đem đồ ăn thừa về, nhưng không được mang dao bếp. Đáp án được nhắc trong đoạn T04: “container”.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_2",
+        "ielts_practice",
+        "detail_recognition"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q06",
+      "type": "note_completion",
+      "prompt": "Notes — Refundable deposit of: ____",
+      "correct_answers": [
+        "ten pounds"
+      ],
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "explanation_vi": "Khóa học miễn phí cho cư dân địa phương, nhưng chúng tôi yêu cầu khoản đặt cọc mười bảng có hoàn lại để giữ chỗ. Người trong danh sách chờ sẽ được liên hệ trước chiều thứ Sáu. Đáp án được nhắc trong đoạn T06: “ten pounds”.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_2",
+        "ielts_practice",
+        "detail_recognition"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "D01",
+      "type": "dictation",
+      "prompt": "Nghe và chép nguyên văn lời người dẫn tại đoạn T03.",
+      "correct_answers": [
+        "For your first class, please report to reception at five forty-five, where volunteers will check dietary information. The actual cooking demonstration begins at six fifteen."
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Câu gốc: For your first class, please report to reception at five forty-five, where volunteers will check dietary information. The actual cooking demonstration begins at six fifteen. Nghĩa: Trong buổi đầu, hãy đến quầy lễ tân lúc năm giờ bốn mươi lăm để tình nguyện viên kiểm tra thông tin ăn uống. Phần trình diễn nấu ăn bắt đầu lúc sáu giờ mười lăm. Chú ý từ chức năng, âm cuối và nhịp nói.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "exact_transcript",
+        "section_2"
+      ]
+    },
+    {
+      "question_id": "D02",
+      "type": "dictation",
+      "prompt": "Nghe và chép nguyên văn lời người dẫn tại đoạn T05.",
+      "correct_answers": [
+        "The first two weeks focus on economical family meals. Later sessions cover reducing food waste, reading food labels and preparing dishes for people with different dietary needs."
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Câu gốc: The first two weeks focus on economical family meals. Later sessions cover reducing food waste, reading food labels and preparing dishes for people with different dietary needs. Nghĩa: Hai tuần đầu tập trung vào bữa ăn gia đình tiết kiệm. Các buổi sau nói về giảm lãng phí thực phẩm, đọc nhãn và làm món phù hợp nhiều chế độ ăn. Chú ý từ chức năng, âm cuối và nhịp nói.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "exact_transcript",
+        "section_2"
+      ]
+    },
+    {
+      "question_id": "G01",
+      "type": "gap_fill",
+      "prompt": "Nghe và điền từ/cụm từ còn thiếu: The introductory class will now run on ____ evenings. We considered Mondays, but the main hall is already used by the children's music group on that day.",
+      "correct_answers": [
+        "Wednesday"
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Cụm “Wednesday” xuất hiện trong câu gốc: The introductory class will now run on Wednesday evenings. We considered Mondays, but the main hall is already used by the children's music group on that day. Nghĩa: Lớp nhập môn nay diễn ra vào tối thứ Tư. Chúng tôi từng cân nhắc thứ Hai nhưng hội trường chính đã được nhóm nhạc thiếu nhi sử dụng hôm đó.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "gap_fill",
+        "vocab_in_context",
+        "section_2"
+      ]
+    }
+  ],
+  "vocabulary": [
+    {
+      "term": "refundable deposit",
+      "pos": "n. phr.",
+      "meaning_vi": "khoản tiền đặt cọc được hoàn lại",
+      "example_en": "The course is free for local residents, although we ask for a refundable deposit of ten pounds to reserve a place. Anyone on the waiting list will be contacted by Friday afternoon.",
+      "example_vi": "Khóa học miễn phí cho cư dân địa phương, nhưng chúng tôi yêu cầu khoản đặt cọc mười bảng có hoàn lại để giữ chỗ. Người trong danh sách chờ sẽ được liên hệ trước chiều thứ Sáu.",
+      "source_turn_id": "T06"
+    },
+    {
+      "term": "ingredients",
+      "pos": "n.",
+      "meaning_vi": "nguyên liệu",
+      "example_en": "Participants work in groups of four, and all the basic ingredients are supplied. You will need to bring a reusable container to take leftovers home, but you shouldn't bring kitchen knives.",
+      "example_vi": "Học viên làm việc theo nhóm bốn người, mọi nguyên liệu cơ bản đều được cung cấp. Bạn cần mang hộp dùng lại để đem đồ ăn thừa về, nhưng không được mang dao bếp.",
+      "source_turn_id": "T04"
+    },
+    {
+      "term": "dietary",
+      "pos": "adj.",
+      "meaning_vi": "thuộc chế độ ăn",
+      "example_en": "For your first class, please report to reception at five forty-five, where volunteers will check dietary information. The actual cooking demonstration begins at six fifteen.",
+      "example_vi": "Trong buổi đầu, hãy đến quầy lễ tân lúc năm giờ bốn mươi lăm để tình nguyện viên kiểm tra thông tin ăn uống. Phần trình diễn nấu ăn bắt đầu lúc sáu giờ mười lăm.",
+      "source_turn_id": "T03"
+    },
+    {
+      "term": "recipe",
+      "pos": "n.",
+      "meaning_vi": "công thức nấu ăn",
+      "example_en": "Finally, a short recipe booklet will be emailed after each class. Please tell the registration team if you would prefer to receive a printed copy instead.",
+      "example_vi": "Cuối cùng, một tập công thức ngắn sẽ được gửi email sau mỗi buổi. Hãy báo nhóm đăng ký nếu bạn muốn nhận bản in.",
+      "source_turn_id": "T07"
+    }
+  ],
+  "audio": {
+    "status": "not_generated",
+    "url": null,
+    "duration_ms": null,
+    "model": null,
+    "provider": null,
+    "voice_config": null,
+    "source_transcript_hash": "897a84896a1128b6b40722fc8eda09ccd1588edfb5d001addf776fdf8abfed5b",
+    "audio_sha256": null,
+    "format": null
+  },
+  "qa": {
+    "content_reviewed": false,
+    "answers_verified": false,
+    "audio_verified": false,
+    "rights_cleared": false,
+    "duplicate_reviewed": false,
+    "notes": [
+      "Original AI-assisted educational monologue; subject specialist review pending.",
+      "TTS, timestamps, audio verification and rights clearance are pending. Keep draft locked.",
+      "IELTS Section 2 practice, not an official IELTS Listening part or calibrated band test.",
+      "M16.2: automated edits are provisional; IELTS teacher final signoff, audio and rights clearance pending."
+    ]
+  },
+  "provenance": {
+    "content_origin": "original_ai_assisted",
+    "source_urls": [],
+    "source_rights_note": "Original learning text; obtain separate TTS service and distribution clearance, especially for under-18 users.",
+    "reviewer": null
+  },
+  "release_metadata": {
+    "published_at": null,
+    "version": 1
+  }
+}

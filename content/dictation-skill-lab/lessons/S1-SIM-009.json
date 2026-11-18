@@ -1,0 +1,832 @@
+{
+  "schema_version": "1.2.0",
+  "lesson_id": "S1-SIM-009",
+  "status": "draft",
+  "level": "L4",
+  "section": 1,
+  "topic": "Joining a neighbourhood car-share scheme",
+  "title": "Starting a Car Share Membership",
+  "content_format": "section_exam_simulation",
+  "exam_part": "IELTS_LISTENING_PART_1_STYLE",
+  "official_ielts_material": false,
+  "learning_objectives_vi": [
+    "Theo dõi hội thoại giao dịch đời sống hai người nói trong một lần nghe.",
+    "Điền chính xác thông tin, kể cả khi có phương án cũ và thông tin đính chính.",
+    "Phân tích MCQ dựa trên ý nghĩa cuối cùng và bằng chứng sau khi nộp bài."
+  ],
+  "target_skills": [
+    "transport",
+    "registration",
+    "insurance",
+    "booking_rules",
+    "membership_fees"
+  ],
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Car-share membership adviser",
+      "accent_requested": "british",
+      "tts_voice_id": null
+    },
+    {
+      "speaker_id": "B",
+      "role": "Potential member",
+      "accent_requested": "british",
+      "tts_voice_id": null
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "Good afternoon, Greenwheel Car Share. Alex speaking. Have you already registered, or would you like to find out how membership works?",
+      "translation_vi": "Chào chiều, Dịch vụ xe chung Greenwheel, Alex đây. Chị đã đăng ký hay muốn tìm hiểu hội viên?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "transport",
+        "registration",
+        "insurance",
+        "booking_rules",
+        "membership_fees"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "B",
+      "text_en": "I'd like to join. My own car is rarely used, but I occasionally need one to visit my aunt outside the city.",
+      "translation_vi": "Tôi muốn tham gia. Xe riêng ít dùng, nhưng thỉnh thoảng cần xe thăm dì ở ngoại ô.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "transport",
+        "registration",
+        "insurance",
+        "booking_rules",
+        "membership_fees"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "A",
+      "text_en": "Our entry plan is called Neighbour. It's meant for occasional trips, while the Commuter plan suits people who drive every day.",
+      "translation_vi": "Gói cơ bản tên Neighbour, dành cho đi không thường xuyên; gói Commuter dành cho người lái mỗi ngày.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "transport",
+        "registration",
+        "insurance",
+        "booking_rules",
+        "membership_fees"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "B",
+      "text_en": "Neighbour sounds right. I probably need a vehicle only twice a month, and my journeys usually take half a day.",
+      "translation_vi": "Neighbour có vẻ đúng. Có lẽ tôi cần xe hai lần mỗi tháng, mỗi lần nửa ngày.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "transport",
+        "registration",
+        "insurance",
+        "booking_rules",
+        "membership_fees"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "A",
+      "text_en": "The annual membership is twenty-four pounds. That's separate from hourly hire; the daily-driver plan has a higher joining fee.",
+      "translation_vi": "Hội viên năm là hai mươi bốn bảng, tách biệt tiền thuê theo giờ; gói lái hằng ngày có phí tham gia cao hơn.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "transport",
+        "registration",
+        "insurance",
+        "booking_rules",
+        "membership_fees"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "B",
+      "text_en": "Fair enough. I saw a car parked near the library. Is that the closest pick-up point for the Riverside neighbourhood?",
+      "translation_vi": "Được. Tôi thấy xe gần thư viện. Đó là điểm lấy gần nhất khu Riverside phải không?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "transport",
+        "registration",
+        "insurance",
+        "booking_rules",
+        "membership_fees"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "It used to be, but we've moved that car to Oak Square. The old library bay is now reserved for delivery vehicles.",
+      "translation_vi": "Trước đây đúng, nhưng xe đã chuyển sang Oak Square. Ô gần thư viện giờ dành cho xe giao hàng.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "transport",
+        "registration",
+        "insurance",
+        "booking_rules",
+        "membership_fees"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "B",
+      "text_en": "Oak Square is still walkable for me. Do members collect keys from an office, or is everything operated by phone?",
+      "translation_vi": "Oak Square vẫn đi bộ đến được. Hội viên lấy chìa ở văn phòng hay điều khiển qua điện thoại?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "transport",
+        "registration",
+        "insurance",
+        "booking_rules",
+        "membership_fees"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T09",
+      "speaker_id": "A",
+      "text_en": "You unlock the car using our app. The physical key stays inside a small holder, and you return it there after driving.",
+      "translation_vi": "Mở xe qua ứng dụng. Chìa khóa nằm trong giá giữ nhỏ và trả lại sau khi lái.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "transport",
+        "registration",
+        "insurance",
+        "booking_rules",
+        "membership_fees"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T10",
+      "speaker_id": "B",
+      "text_en": "I can use an app. I recently renewed my licence, though the card itself hasn't arrived in the post yet.",
+      "translation_vi": "Tôi dùng ứng dụng được. Tôi mới gia hạn giấy phép lái xe nhưng thẻ chưa gửi tới.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "transport",
+        "registration",
+        "insurance",
+        "booking_rules",
+        "membership_fees"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T11",
+      "speaker_id": "A",
+      "text_en": "For approval we need a photograph of a valid driving licence. A renewal confirmation letter isn't enough on its own.",
+      "translation_vi": "Để duyệt cần ảnh giấy phép lái xe còn hiệu lực. Thư xác nhận gia hạn thôi chưa đủ.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "transport",
+        "registration",
+        "insurance",
+        "booking_rules",
+        "membership_fees"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T12",
+      "speaker_id": "B",
+      "text_en": "I'll wait for the card. What's the youngest driver you allow? My brother might want to share my account later.",
+      "translation_vi": "Tôi đợi thẻ. Tuổi lái thấp nhất là bao nhiêu? Em trai có thể muốn dùng chung tài khoản sau này.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "transport",
+        "registration",
+        "insurance",
+        "booking_rules",
+        "membership_fees"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T13",
+      "speaker_id": "A",
+      "text_en": "Drivers must be at least twenty-three. Each driver needs their own membership, so your brother couldn't simply use your login.",
+      "translation_vi": "Người lái phải ít nhất hai mươi ba tuổi. Mỗi người cần tài khoản riêng, em không thể dùng đăng nhập của chị.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "transport",
+        "registration",
+        "insurance",
+        "booking_rules",
+        "membership_fees"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T14",
+      "speaker_id": "B",
+      "text_en": "He's twenty-one, so he won't be eligible yet. Could I still book for a Saturday trip once my application is approved?",
+      "translation_vi": "Em mới hai mươi mốt nên chưa đủ điều kiện. Tôi có thể đặt chuyến thứ Bảy sau khi được duyệt chứ?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "transport",
+        "registration",
+        "insurance",
+        "booking_rules",
+        "membership_fees"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T15",
+      "speaker_id": "A",
+      "text_en": "Yes, and the minimum booking is one hour. There's no separate charge for the first thirty miles of any booking.",
+      "translation_vi": "Có, thời lượng thuê tối thiểu một giờ. Ba mươi dặm đầu tiên không có phụ phí riêng.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "transport",
+        "registration",
+        "insurance",
+        "booking_rules",
+        "membership_fees"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T16",
+      "speaker_id": "B",
+      "text_en": "That's enough for local trips. I worry about bringing the vehicle back late if traffic is particularly bad.",
+      "translation_vi": "Đủ cho chuyến gần. Tôi lo trả xe muộn nếu giao thông tắc.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "transport",
+        "registration",
+        "insurance",
+        "booking_rules",
+        "membership_fees"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T17",
+      "speaker_id": "A",
+      "text_en": "You can extend the reservation in the app, provided no one else has booked the car. Otherwise you must contact our support line.",
+      "translation_vi": "Chị có thể gia hạn trong ứng dụng nếu không ai đặt tiếp. Nếu có thì phải gọi hỗ trợ.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "transport",
+        "registration",
+        "insurance",
+        "booking_rules",
+        "membership_fees"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T18",
+      "speaker_id": "B",
+      "text_en": "Good to know. Are members expected to refuel before every return? My aunt lives near a petrol station.",
+      "translation_vi": "Tốt. Hội viên cần đổ xăng trước mỗi lần trả không? Nhà dì tôi gần trạm xăng.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "transport",
+        "registration",
+        "insurance",
+        "booking_rules",
+        "membership_fees"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T19",
+      "speaker_id": "A",
+      "text_en": "Please return the car with at least a quarter tank. A fuel card is in the glove compartment, so you shouldn't pay personally.",
+      "translation_vi": "Hãy trả xe với ít nhất một phần tư bình. Thẻ nhiên liệu trong hộc trước, không phải tự trả.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "transport",
+        "registration",
+        "insurance",
+        "booking_rules",
+        "membership_fees"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T20",
+      "speaker_id": "B",
+      "text_en": "That seems reasonable. I'm also worried about scratches from other drivers. How do I report damage already on the car?",
+      "translation_vi": "Hợp lý. Tôi lo vết xước của người trước. Làm sao báo hư hỏng sẵn có?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "transport",
+        "registration",
+        "insurance",
+        "booking_rules",
+        "membership_fees"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T21",
+      "speaker_id": "A",
+      "text_en": "Before leaving the bay, take photographs in the app. That creates a record, so you aren't held responsible for damage you didn't cause.",
+      "translation_vi": "Trước khi rời bãi, chụp ảnh trong ứng dụng. Việc đó tạo hồ sơ để chị không chịu trách nhiệm vết xước có sẵn.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "transport",
+        "registration",
+        "insurance",
+        "booking_rules",
+        "membership_fees"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T22",
+      "speaker_id": "B",
+      "text_en": "I'll remember that. Please email the application link; I'll submit it as soon as my new licence card arrives.",
+      "translation_vi": "Tôi sẽ nhớ. Hãy gửi liên kết đăng ký; tôi nộp ngay khi thẻ giấy phép mới tới.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "transport",
+        "registration",
+        "insurance",
+        "booking_rules",
+        "membership_fees"
+      ],
+      "bank_role": "protected_assessment"
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "group_id": "PART1_FORM_1_TO_6",
+      "type": "form_completion",
+      "prompt": "Membership plan chosen: ____",
+      "correct_answers": [
+        "Neighbour"
+      ],
+      "spoken_answer": "Neighbour",
+      "word_limit": 3,
+      "instructions_en": "NO MORE THAN THREE WORDS AND/OR A NUMBER",
+      "scoring_policy": "controlled_variants",
+      "explanation_vi": "Gói phù hợp là Neighbour.",
+      "answer_source": "explicit_recording",
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "evidence_excerpt_en": "plan is called Neighbour",
+      "question_tags": [
+        "M25",
+        "part1",
+        "completion",
+        "transport",
+        "registration",
+        "insurance",
+        "booking_rules",
+        "membership_fees"
+      ]
+    },
+    {
+      "question_id": "Q02",
+      "group_id": "PART1_FORM_1_TO_6",
+      "type": "form_completion",
+      "prompt": "Annual membership fee: £____",
+      "correct_answers": [
+        "twenty-four",
+        "24"
+      ],
+      "spoken_answer": "twenty-four",
+      "word_limit": 3,
+      "instructions_en": "NO MORE THAN THREE WORDS AND/OR A NUMBER",
+      "scoring_policy": "controlled_variants",
+      "explanation_vi": "Phí hội viên năm 24 bảng.",
+      "answer_source": "explicit_recording",
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "evidence_excerpt_en": "twenty-four pounds",
+      "question_tags": [
+        "M25",
+        "part1",
+        "completion",
+        "transport",
+        "registration",
+        "insurance",
+        "booking_rules",
+        "membership_fees"
+      ]
+    },
+    {
+      "question_id": "Q03",
+      "group_id": "PART1_FORM_1_TO_6",
+      "type": "form_completion",
+      "prompt": "New collection location: ____ Square",
+      "correct_answers": [
+        "Oak"
+      ],
+      "spoken_answer": "Oak",
+      "word_limit": 3,
+      "instructions_en": "NO MORE THAN THREE WORDS AND/OR A NUMBER",
+      "scoring_policy": "controlled_variants",
+      "explanation_vi": "Điểm lấy xe đã chuyển tới Oak Square.",
+      "answer_source": "explicit_recording",
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "evidence_excerpt_en": "Oak Square",
+      "question_tags": [
+        "M25",
+        "part1",
+        "completion",
+        "transport",
+        "registration",
+        "insurance",
+        "booking_rules",
+        "membership_fees"
+      ]
+    },
+    {
+      "question_id": "Q04",
+      "group_id": "PART1_FORM_1_TO_6",
+      "type": "note_completion",
+      "prompt": "Method used to unlock the car: an ____",
+      "correct_answers": [
+        "app"
+      ],
+      "spoken_answer": "app",
+      "word_limit": 3,
+      "instructions_en": "NO MORE THAN THREE WORDS AND/OR A NUMBER",
+      "scoring_policy": "controlled_variants",
+      "explanation_vi": "Mở xe bằng ứng dụng.",
+      "answer_source": "explicit_recording",
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "evidence_excerpt_en": "using our app",
+      "question_tags": [
+        "M25",
+        "part1",
+        "completion",
+        "transport",
+        "registration",
+        "insurance",
+        "booking_rules",
+        "membership_fees"
+      ]
+    },
+    {
+      "question_id": "Q05",
+      "group_id": "PART1_FORM_1_TO_6",
+      "type": "form_completion",
+      "prompt": "Required identification: valid driving ____",
+      "correct_answers": [
+        "licence"
+      ],
+      "spoken_answer": "licence",
+      "word_limit": 3,
+      "instructions_en": "NO MORE THAN THREE WORDS AND/OR A NUMBER",
+      "scoring_policy": "controlled_variants",
+      "explanation_vi": "Cần bằng lái còn hiệu lực.",
+      "answer_source": "explicit_recording",
+      "evidence_turn_ids": [
+        "T11"
+      ],
+      "evidence_excerpt_en": "valid driving licence",
+      "question_tags": [
+        "M25",
+        "part1",
+        "completion",
+        "transport",
+        "registration",
+        "insurance",
+        "booking_rules",
+        "membership_fees"
+      ]
+    },
+    {
+      "question_id": "Q06",
+      "group_id": "PART1_FORM_1_TO_6",
+      "type": "form_completion",
+      "prompt": "Minimum driver age: ____",
+      "correct_answers": [
+        "twenty-three",
+        "23"
+      ],
+      "spoken_answer": "twenty-three",
+      "word_limit": 3,
+      "instructions_en": "NO MORE THAN THREE WORDS AND/OR A NUMBER",
+      "scoring_policy": "controlled_variants",
+      "explanation_vi": "Tuổi tối thiểu 23.",
+      "answer_source": "explicit_recording",
+      "evidence_turn_ids": [
+        "T13"
+      ],
+      "evidence_excerpt_en": "at least twenty-three",
+      "question_tags": [
+        "M25",
+        "part1",
+        "completion",
+        "transport",
+        "registration",
+        "insurance",
+        "booking_rules",
+        "membership_fees"
+      ]
+    },
+    {
+      "question_id": "Q07",
+      "group_id": "PART1_MCQ_7_TO_10",
+      "type": "mcq",
+      "prompt": "What is the shortest permitted reservation?",
+      "correct_answers": [
+        "One hour"
+      ],
+      "options": [
+        {
+          "key": "A",
+          "text": "Thirty minutes"
+        },
+        {
+          "key": "B",
+          "text": "Half a day"
+        },
+        {
+          "key": "C",
+          "text": "One hour"
+        }
+      ],
+      "correct_option": "C",
+      "scoring_policy": "one_correct_option",
+      "explanation_vi": "Thuê ít nhất một giờ.",
+      "answer_source": "explicit_or_contextual_recording",
+      "evidence_turn_ids": [
+        "T15"
+      ],
+      "evidence_excerpt_en": "minimum booking is one hour",
+      "question_tags": [
+        "M25",
+        "part1",
+        "mcq",
+        "transport",
+        "registration",
+        "insurance",
+        "booking_rules",
+        "membership_fees"
+      ]
+    },
+    {
+      "question_id": "Q08",
+      "group_id": "PART1_MCQ_7_TO_10",
+      "type": "mcq",
+      "prompt": "When can a member extend a booking through the app?",
+      "correct_answers": [
+        "When no later booking conflicts"
+      ],
+      "options": [
+        {
+          "key": "A",
+          "text": "When no later booking conflicts"
+        },
+        {
+          "key": "B",
+          "text": "Whenever traffic is bad"
+        },
+        {
+          "key": "C",
+          "text": "Only after the car is returned"
+        }
+      ],
+      "correct_option": "A",
+      "scoring_policy": "one_correct_option",
+      "explanation_vi": "Chỉ gia hạn qua app khi không có lịch khác.",
+      "answer_source": "explicit_or_contextual_recording",
+      "evidence_turn_ids": [
+        "T17"
+      ],
+      "evidence_excerpt_en": "provided no one else has booked the car",
+      "question_tags": [
+        "M25",
+        "part1",
+        "mcq",
+        "transport",
+        "registration",
+        "insurance",
+        "booking_rules",
+        "membership_fees"
+      ]
+    },
+    {
+      "question_id": "Q09",
+      "group_id": "PART1_MCQ_7_TO_10",
+      "type": "mcq",
+      "prompt": "What fuel level must be left in the vehicle?",
+      "correct_answers": [
+        "At least a quarter tank"
+      ],
+      "options": [
+        {
+          "key": "A",
+          "text": "A completely full tank"
+        },
+        {
+          "key": "B",
+          "text": "At least a quarter tank"
+        },
+        {
+          "key": "C",
+          "text": "An empty tank"
+        }
+      ],
+      "correct_option": "B",
+      "scoring_policy": "one_correct_option",
+      "explanation_vi": "Phải còn ít nhất một phần tư bình.",
+      "answer_source": "explicit_or_contextual_recording",
+      "evidence_turn_ids": [
+        "T19"
+      ],
+      "evidence_excerpt_en": "at least a quarter tank",
+      "question_tags": [
+        "M25",
+        "part1",
+        "mcq",
+        "transport",
+        "registration",
+        "insurance",
+        "booking_rules",
+        "membership_fees"
+      ]
+    },
+    {
+      "question_id": "Q10",
+      "group_id": "PART1_MCQ_7_TO_10",
+      "type": "mcq",
+      "prompt": "Why should a driver take photos before leaving?",
+      "correct_answers": [
+        "To document existing damage"
+      ],
+      "options": [
+        {
+          "key": "A",
+          "text": "To show relatives the car"
+        },
+        {
+          "key": "B",
+          "text": "To prove the journey distance"
+        },
+        {
+          "key": "C",
+          "text": "To document existing damage"
+        }
+      ],
+      "correct_option": "C",
+      "scoring_policy": "one_correct_option",
+      "explanation_vi": "Ảnh bảo vệ người thuê khỏi chịu lỗi vết xước cũ.",
+      "answer_source": "explicit_or_contextual_recording",
+      "evidence_turn_ids": [
+        "T21"
+      ],
+      "evidence_excerpt_en": "creates a record",
+      "question_tags": [
+        "M25",
+        "part1",
+        "mcq",
+        "transport",
+        "registration",
+        "insurance",
+        "booking_rules",
+        "membership_fees"
+      ]
+    }
+  ],
+  "question_groups": [
+    {
+      "group_id": "PART1_FORM_1_TO_6",
+      "question_ids": [
+        "Q01",
+        "Q02",
+        "Q03",
+        "Q04",
+        "Q05",
+        "Q06"
+      ],
+      "instructions_en": "Complete the form. Write NO MORE THAN THREE WORDS AND/OR A NUMBER for each answer.",
+      "pre_read_seconds": 30,
+      "break_after_turn_id": "T13",
+      "requires_one_listen": true
+    },
+    {
+      "group_id": "PART1_MCQ_7_TO_10",
+      "question_ids": [
+        "Q07",
+        "Q08",
+        "Q09",
+        "Q10"
+      ],
+      "instructions_en": "Choose the correct letter A, B or C.",
+      "pre_read_seconds": 25,
+      "requires_one_listen": true
+    }
+  ],
+  "audio": {
+    "status": "not_generated",
+    "audio_url": null,
+    "audio_asset_id": null,
+    "duration_ms": null,
+    "source_text_sha256": "ebdd2bb49633e484e124f4284bea5b189816f20da5040fe0d92f8eb1778cfccf",
+    "generation_strategy": "single_continuous_two_person_dialogue",
+    "aligned_turns": false
+  },
+  "exam_mode": {
+    "bank_role": "protected_assessment",
+    "use_as_training_before_first_attempt": false,
+    "listening_attempts_allowed_for_scored_first_attempt": 1,
+    "replay_before_submit": false,
+    "speed_control_before_submit": false,
+    "transcript_visible_before_submit": false,
+    "answer_key_visible_before_submit": false,
+    "post_attempt_review_allowed": true,
+    "question_count": 10,
+    "points_per_correct_answer": 1,
+    "question_order_monotonic": true,
+    "estimated_speech_minutes_at_135_wpm": 3.35,
+    "exam_band_score_enabled": false,
+    "repeated_attempt_marked_as_seen": true
+  },
+  "qa": {
+    "automatic_data_validation": "pending",
+    "content_human_review": "pending",
+    "audio_human_review": "pending",
+    "exam_simulation_rubric_score": null,
+    "rubric_90_verified": false,
+    "published": false,
+    "release_eligible": false
+  },
+  "provenance": {
+    "source_type": "original_authored_english_dialogue",
+    "milestone": "M25",
+    "no_official_ielts_question_copied": true,
+    "training_exposure_guard": true
+  },
+  "release_metadata": {
+    "target_bank": "protected_assessment",
+    "import_policy": "insert_only",
+    "version": "m25.0.1",
+    "preserve_existing_ids": true,
+    "allow_client_answer_payload": false
+  }
+}

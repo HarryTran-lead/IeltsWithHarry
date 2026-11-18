@@ -2,14 +2,17 @@
 
 import { createContext, useCallback, useContext, useEffect, useMemo, useState, type ReactNode } from 'react';
 import { fetchCurrentWeather } from './weatherApi';
+import { previewWeather, weatherPreviewAllowed } from './weatherEffects';
 import { deviceTimeZone, phaseAt } from './time';
-import { CITY_KEY, MODE_KEY, readManualCity, readMode, saveManualCity, saveMode } from './storage';
-import type { DayPhase, HeaderDisplayMode, SelectedLocation, WeatherSnapshot } from './types';
+import { CITY_KEY, MODE_KEY, STRENGTH_KEY, readManualCity, readMode, readStrength, saveManualCity, saveMode, saveStrength } from './storage';
+import type { DayPhase, HeaderDisplayMode, HeaderEffectStrength, SelectedLocation, WeatherSnapshot } from './types';
 
 type WeatherContextState = {
   hydrated: boolean;
   mode: HeaderDisplayMode;
   setMode: (mode: HeaderDisplayMode) => void;
+  strength: HeaderEffectStrength;
+  setStrength: (strength: HeaderEffectStrength) => void;
   location: SelectedLocation | null;
   chooseCity: (location: SelectedLocation) => void;
   clearCity: () => void;
@@ -34,6 +37,7 @@ export function HeaderWeatherProvider({ children, previewPhase = null }: {
   // Initial state is safe for SSR and hydration: only use browser APIs in effects/handlers.
   const [hydrated, setHydrated] = useState(false);
   const [mode, changeMode] = useState<HeaderDisplayMode>('off');
+  const [strength, changeStrength] = useState<HeaderEffectStrength>('light');
   const [location, setLocation] = useState<SelectedLocation | null>(null);
   const [weather, setWeather] = useState<WeatherSnapshot | null>(null);
   const [weatherError, setWeatherError] = useState('');
@@ -41,10 +45,14 @@ export function HeaderWeatherProvider({ children, previewPhase = null }: {
   const [locating, setLocating] = useState(false);
   const [locationError, setLocationError] = useState('');
   const [now, setNow] = useState<Date | null>(null);
+  // Dev and Vercel preview only: `?weather=storm` (see PREVIEW_WEATHER) forces a scene to review the effects.
+  const [previewSnapshot, setPreviewSnapshot] = useState<WeatherSnapshot | null>(null);
 
   useEffect(() => {
     const initialTimer = window.setTimeout(() => {
+      if (weatherPreviewAllowed()) setPreviewSnapshot(previewWeather(window.location.search));
       changeMode(readMode());
+      changeStrength(readStrength());
       setLocation(readManualCity());
       setNow(new Date());
       setHydrated(true);
@@ -53,6 +61,7 @@ export function HeaderWeatherProvider({ children, previewPhase = null }: {
     const refresh = () => { if (document.visibilityState === 'visible') setNow(new Date()); };
     const onStorage = (event: StorageEvent) => {
       if (event.key === MODE_KEY || event.key === null) changeMode(readMode());
+      if (event.key === STRENGTH_KEY || event.key === null) changeStrength(readStrength());
       if (event.key === CITY_KEY || event.key === null) {
         setLocation(readManualCity());
         setWeather(null);
@@ -74,6 +83,11 @@ export function HeaderWeatherProvider({ children, previewPhase = null }: {
     changeMode(next);
     if (next !== 'full') setWeather(null);
     saveMode(next);
+  }, []);
+
+  const setStrength = useCallback((next: HeaderEffectStrength) => {
+    changeStrength(next);
+    saveStrength(next);
   }, []);
 
   const chooseCity = useCallback((selected: SelectedLocation) => {
@@ -134,7 +148,7 @@ export function HeaderWeatherProvider({ children, previewPhase = null }: {
     let lastFetch = 0;
     const controller = new AbortController();
     const refreshWeather = async () => {
-      if (!active || document.visibilityState !== 'visible' || fetching || Date.now() - lastFetch < 20 * 60_000) return;
+      if (!active || document.visibilityState !== 'visible' || fetching || Date.now() - lastFetch < 10 * 60_000) return;
       fetching = true;
       lastFetch = Date.now();
       setWeatherLoading(true);
@@ -153,7 +167,7 @@ export function HeaderWeatherProvider({ children, previewPhase = null }: {
       }
     };
     void refreshWeather();
-    // Check once a minute; fetch only after 20 minutes of visible time.
+    // Check once a minute; Open-Meteo refreshes current conditions every 15 minutes, so fetch at most every 10.
     const timer = window.setInterval(() => void refreshWeather(), 60_000);
     const onVisible = () => { if (document.visibilityState === 'visible') void refreshWeather(); };
     document.addEventListener('visibilitychange', onVisible);
@@ -170,10 +184,10 @@ export function HeaderWeatherProvider({ children, previewPhase = null }: {
   const phase = previewPhase || phaseAt(now || new Date('2026-01-01T12:00:00Z'), timezone);
 
   const state = useMemo<WeatherContextState>(() => ({
-    hydrated, mode, setMode, location, chooseCity, clearCity, requestCurrentLocation,
-    locating, locationError, weather, weatherError, weatherLoading, now, timezone, phase,
-  }), [hydrated, mode, setMode, location, chooseCity, clearCity, requestCurrentLocation,
-    locating, locationError, weather, weatherError, weatherLoading, now, timezone, phase]);
+    hydrated, mode, setMode, strength, setStrength, location, chooseCity, clearCity, requestCurrentLocation,
+    locating, locationError, weather: previewSnapshot ?? weather, weatherError, weatherLoading, now, timezone, phase,
+  }), [hydrated, mode, setMode, strength, setStrength, location, chooseCity, clearCity, requestCurrentLocation,
+    locating, locationError, previewSnapshot, weather, weatherError, weatherLoading, now, timezone, phase]);
 
   return <Context.Provider value={state}>{children}</Context.Provider>;
 }

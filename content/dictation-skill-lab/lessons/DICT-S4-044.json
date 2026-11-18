@@ -1,0 +1,351 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "DICT-S4-044",
+  "status": "draft",
+  "level": "L7",
+  "section": 4,
+  "topic": "Economics & Society",
+  "title": "Three Ways to Evaluate Public Programmes",
+  "learning_objectives_vi": [
+    "Nghe bài giảng học thuật một người nói, theo dõi quan hệ giữa luận điểm và bằng chứng.",
+    "Luyện các câu hỏi Section 4 theo thứ tự lời giảng; phân tích giới hạn của khái niệm và cách diễn đạt lại.",
+    "Chép chính xác hai đoạn, luyện từ học thuật theo ngữ cảnh và ôn điểm yếu qua Mistake Bank."
+  ],
+  "content_format": "section_practice",
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Academic lecturer",
+      "tts_voice_id": null,
+      "accent_requested": "new_zealand"
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "Governments often judge programmes through cost-benefit analysis, which attempts to express diverse consequences in a common monetary framework. This can make alternatives easier to compare, but not every social outcome has an obvious market price. Changes in air quality, free time or community relationships may matter greatly even when their value is uncertain or difficult to express in money.",
+      "translation_vi": "Chính phủ thường đánh giá chương trình bằng phân tích chi phí–lợi ích, cố biểu thị nhiều hậu quả bằng một khung tiền tệ chung. Điều này giúp so sánh lựa chọn dễ hơn, nhưng không phải kết quả xã hội nào cũng có giá thị trường rõ. Thay đổi chất lượng không khí, thời gian rảnh hay quan hệ cộng đồng có thể rất quan trọng dù giá trị khó chắc chắn hoặc khó quy thành tiền.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_4",
+        "academic_lecture",
+        "compare",
+        "l7"
+      ]
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "A",
+      "text_en": "One alternative is cost-effectiveness analysis. Instead of converting every outcome into currency, it asks how much resource is required to achieve a specified result. A council might compare the cost per additional household served by two transport programmes. This approach is useful when the goal is clear, but it does not by itself decide whether that goal is more valuable than other public priorities.",
+      "translation_vi": "Một cách thay thế là phân tích hiệu quả chi phí. Thay vì đổi mọi kết quả ra tiền, nó hỏi cần bao nhiêu nguồn lực để đạt kết quả xác định. Hội đồng có thể so sánh chi phí để phục vụ thêm một hộ gia đình giữa hai chương trình giao thông. Cách này hữu ích khi mục tiêu rõ, nhưng tự nó không quyết định mục tiêu ấy có đáng giá hơn ưu tiên công khác không.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_4",
+        "academic_lecture",
+        "compare",
+        "l7"
+      ]
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "A",
+      "text_en": "A third approach uses distributional analysis to examine how gains and losses are shared. A project with a positive overall return may still increase burdens on low-income households. Researchers can break results down by income group, location or access to services. Such analysis does not remove the need for judgement; it makes visible who benefits and who pays.",
+      "translation_vi": "Cách thứ ba dùng phân tích phân phối để xem lợi ích và thiệt hại chia như thế nào. Dự án có lợi ích tổng thể dương vẫn có thể tăng gánh nặng cho hộ thu nhập thấp. Nhà nghiên cứu có thể phân tách kết quả theo nhóm thu nhập, địa điểm hoặc tiếp cận dịch vụ. Phân tích này không xóa nhu cầu phán đoán; nó làm rõ ai hưởng lợi và ai trả giá.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_4",
+        "academic_lecture",
+        "compare",
+        "l7"
+      ]
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "A",
+      "text_en": "Good evaluations must also address the counterfactual: what would probably have happened without the programme. If employment grows after a new policy, a general economic recovery may have contributed. Comparison groups and before-and-after evidence can help, but only when their limitations are discussed. Attributing every improvement to one intervention risks exaggerating its true impact.",
+      "translation_vi": "Đánh giá tốt còn phải xử lý tình huống phản thực: điều gì có lẽ đã xảy ra nếu không có chương trình. Nếu việc làm tăng sau chính sách mới, phục hồi kinh tế chung cũng có thể góp phần. Nhóm đối chứng và bằng chứng trước–sau có thể giúp ích, nhưng chỉ khi bàn rõ hạn chế. Quy mọi cải thiện cho một can thiệp dễ phóng đại tác động thật.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_4",
+        "academic_lecture",
+        "compare",
+        "l7"
+      ]
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "A",
+      "text_en": "No single method settles every public decision. Cost-benefit analysis compares broad values, cost-effectiveness focuses on a defined outcome, and distributional analysis reveals unequal consequences. Together with a credible counterfactual, they support more transparent choices. The central requirement is not numerical sophistication alone, but clarity about assumptions, uncertainty and the communities affected.",
+      "translation_vi": "Không phương pháp nào giải quyết mọi quyết định công. Phân tích chi phí–lợi ích so sánh giá trị rộng, hiệu quả chi phí tập trung kết quả cụ thể, còn phân phối làm rõ hệ quả không đều. Kết hợp với phản thực đáng tin, chúng hỗ trợ lựa chọn minh bạch hơn. Yêu cầu cốt lõi không chỉ là con số tinh vi mà còn là rõ ràng về giả định, bất định và cộng đồng chịu ảnh hưởng.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_4",
+        "academic_lecture",
+        "compare",
+        "l7"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "type": "note_completion",
+      "prompt": "Comparing several outcomes in a shared monetary framework is cost-benefit ____.",
+      "correct_answers": [
+        "analysis"
+      ],
+      "evidence_turn_ids": [
+        "T01"
+      ],
+      "explanation_vi": "Đáp án “analysis” nằm tại đoạn T01. Nội dung bằng chứng: Chính phủ thường đánh giá chương trình bằng phân tích chi phí–lợi ích, cố biểu thị nhiều hậu quả bằng một khung tiền tệ chung. Điều này giúp so sánh lựa chọn dễ hơn, nhưng không phải kết quả xã hội nào cũng có giá thị trường rõ. Thay đổi chất lượng không khí, thời gian rảnh hay quan hệ cộng đồng có thể rất quan trọng dù giá trị khó chắc chắn hoặc khó quy thành tiền.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_4",
+        "ielts_practice",
+        "compare",
+        "note_completion"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q02",
+      "type": "note_completion",
+      "prompt": "The cost per specified result is examined by cost-____ analysis.",
+      "correct_answers": [
+        "effectiveness"
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Đáp án “effectiveness” nằm tại đoạn T02. Nội dung bằng chứng: Một cách thay thế là phân tích hiệu quả chi phí. Thay vì đổi mọi kết quả ra tiền, nó hỏi cần bao nhiêu nguồn lực để đạt kết quả xác định. Hội đồng có thể so sánh chi phí để phục vụ thêm một hộ gia đình giữa hai chương trình giao thông. Cách này hữu ích khi mục tiêu rõ, nhưng tự nó không quyết định mục tiêu ấy có đáng giá hơn ưu tiên công khác không.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_4",
+        "ielts_practice",
+        "compare",
+        "note_completion"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q03",
+      "type": "note_completion",
+      "prompt": "How gains and losses are shared is the focus of ____ analysis.",
+      "correct_answers": [
+        "distributional"
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Đáp án “distributional” nằm tại đoạn T03. Nội dung bằng chứng: Cách thứ ba dùng phân tích phân phối để xem lợi ích và thiệt hại chia như thế nào. Dự án có lợi ích tổng thể dương vẫn có thể tăng gánh nặng cho hộ thu nhập thấp. Nhà nghiên cứu có thể phân tách kết quả theo nhóm thu nhập, địa điểm hoặc tiếp cận dịch vụ. Phân tích này không xóa nhu cầu phán đoán; nó làm rõ ai hưởng lợi và ai trả giá.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_4",
+        "ielts_practice",
+        "compare",
+        "note_completion"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q04",
+      "type": "note_completion",
+      "prompt": "A credible evaluation asks about the ____, or what would have happened otherwise.",
+      "correct_answers": [
+        "counterfactual"
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Đáp án “counterfactual” nằm tại đoạn T04. Nội dung bằng chứng: Đánh giá tốt còn phải xử lý tình huống phản thực: điều gì có lẽ đã xảy ra nếu không có chương trình. Nếu việc làm tăng sau chính sách mới, phục hồi kinh tế chung cũng có thể góp phần. Nhóm đối chứng và bằng chứng trước–sau có thể giúp ích, nhưng chỉ khi bàn rõ hạn chế. Quy mọi cải thiện cho một can thiệp dễ phóng đại tác động thật.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_4",
+        "ielts_practice",
+        "compare",
+        "note_completion"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q05",
+      "type": "note_completion",
+      "prompt": "Transparent decisions should clarify assumptions and ____.",
+      "correct_answers": [
+        "uncertainty"
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Đáp án “uncertainty” nằm tại đoạn T05. Nội dung bằng chứng: Không phương pháp nào giải quyết mọi quyết định công. Phân tích chi phí–lợi ích so sánh giá trị rộng, hiệu quả chi phí tập trung kết quả cụ thể, còn phân phối làm rõ hệ quả không đều. Kết hợp với phản thực đáng tin, chúng hỗ trợ lựa chọn minh bạch hơn. Yêu cầu cốt lõi không chỉ là con số tinh vi mà còn là rõ ràng về giả định, bất định và cộng đồng chịu ảnh hưởng.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_4",
+        "ielts_practice",
+        "compare",
+        "note_completion"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q06",
+      "type": "mcq",
+      "prompt": "Which assessment combination is strongest for a public policy?",
+      "correct_answers": [
+        "Economic value, cost per outcome, distributional effects and a credible counterfactual"
+      ],
+      "options": [
+        "Only the project’s total monetary benefit",
+        "Economic value, cost per outcome, distributional effects and a credible counterfactual",
+        "Any rise in employment after the programme, without comparison"
+      ],
+      "evidence_turn_ids": [
+        "T01",
+        "T03",
+        "T05"
+      ],
+      "explanation_vi": "Hãy kết hợp luận điểm đầu, ví dụ ở giữa và kết luận cuối bài. Không phương pháp nào giải quyết mọi quyết định công. Phân tích chi phí–lợi ích so sánh giá trị rộng, hiệu quả chi phí tập trung kết quả cụ thể, còn phân phối làm rõ hệ quả không đều. Kết hợp với phản thực đáng tin, chúng hỗ trợ lựa chọn minh bạch hơn. Yêu cầu cốt lõi không chỉ là con số tinh vi mà còn là rõ ràng về giả định, bất định và cộng đồng chịu ảnh hưởng. Phương án chính xác: “Economic value, cost per outcome, distributional effects and a credible counterfactual”; hai phương án khác khái quát quá mức hoặc không phù hợp bằng chứng.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "section_4",
+        "ielts_practice",
+        "compare",
+        "main_idea"
+      ]
+    },
+    {
+      "question_id": "D01",
+      "type": "dictation",
+      "prompt": "Nghe đoạn T02 và chép lại chính xác lời giảng.",
+      "correct_answers": [
+        "One alternative is cost-effectiveness analysis. Instead of converting every outcome into currency, it asks how much resource is required to achieve a specified result. A council might compare the cost per additional household served by two transport programmes. This approach is useful when the goal is clear, but it does not by itself decide whether that goal is more valuable than other public priorities."
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Phân tích từ nối, âm yếu và cụm thuật ngữ học thuật. Nghĩa của đoạn: Một cách thay thế là phân tích hiệu quả chi phí. Thay vì đổi mọi kết quả ra tiền, nó hỏi cần bao nhiêu nguồn lực để đạt kết quả xác định. Hội đồng có thể so sánh chi phí để phục vụ thêm một hộ gia đình giữa hai chương trình giao thông. Cách này hữu ích khi mục tiêu rõ, nhưng tự nó không quyết định mục tiêu ấy có đáng giá hơn ưu tiên công khác không.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_4",
+        "dictation",
+        "exact_transcript"
+      ]
+    },
+    {
+      "question_id": "D02",
+      "type": "dictation",
+      "prompt": "Nghe đoạn T04 và chép lại chính xác lời giảng.",
+      "correct_answers": [
+        "Good evaluations must also address the counterfactual: what would probably have happened without the programme. If employment grows after a new policy, a general economic recovery may have contributed. Comparison groups and before-and-after evidence can help, but only when their limitations are discussed. Attributing every improvement to one intervention risks exaggerating its true impact."
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Phân tích từ nối, âm yếu và cụm thuật ngữ học thuật. Nghĩa của đoạn: Đánh giá tốt còn phải xử lý tình huống phản thực: điều gì có lẽ đã xảy ra nếu không có chương trình. Nếu việc làm tăng sau chính sách mới, phục hồi kinh tế chung cũng có thể góp phần. Nhóm đối chứng và bằng chứng trước–sau có thể giúp ích, nhưng chỉ khi bàn rõ hạn chế. Quy mọi cải thiện cho một can thiệp dễ phóng đại tác động thật.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_4",
+        "dictation",
+        "exact_transcript"
+      ]
+    },
+    {
+      "question_id": "G01",
+      "type": "gap_fill",
+      "prompt": "Nghe T01 rồi điền phần thiếu: Governments often judge programmes through ____, which attempts to express diverse consequences in a common monetary framework. This can make alternatives easier to compare, but not every social outcome has an obvious market price. Changes in air quality, free time or community relationships may matter greatly even when their value is uncertain or difficult to express in money.",
+      "correct_answers": [
+        "cost-benefit analysis"
+      ],
+      "evidence_turn_ids": [
+        "T01"
+      ],
+      "explanation_vi": "Điền “cost-benefit analysis”, nghĩa: phân tích chi phí–lợi ích. Cụm từ này xuất hiện trong T01.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_4",
+        "gap_fill",
+        "academic_vocabulary"
+      ]
+    }
+  ],
+  "vocabulary": [
+    {
+      "term": "cost-benefit analysis",
+      "pos": "n. phr.",
+      "meaning_vi": "phân tích chi phí–lợi ích",
+      "example_en": "Governments often judge programmes through cost-benefit analysis, which attempts to express diverse consequences in a common monetary framework. This can make alternatives easier to compare, but not every social outcome has an obvious market price. Changes in air quality, free time or community relationships may matter greatly even when their value is uncertain or difficult to express in money.",
+      "example_vi": "Chính phủ thường đánh giá chương trình bằng phân tích chi phí–lợi ích, cố biểu thị nhiều hậu quả bằng một khung tiền tệ chung. Điều này giúp so sánh lựa chọn dễ hơn, nhưng không phải kết quả xã hội nào cũng có giá thị trường rõ. Thay đổi chất lượng không khí, thời gian rảnh hay quan hệ cộng đồng có thể rất quan trọng dù giá trị khó chắc chắn hoặc khó quy thành tiền.",
+      "source_turn_id": "T01"
+    },
+    {
+      "term": "cost-effectiveness analysis",
+      "pos": "n. phr.",
+      "meaning_vi": "phân tích hiệu quả chi phí",
+      "example_en": "One alternative is cost-effectiveness analysis. Instead of converting every outcome into currency, it asks how much resource is required to achieve a specified result. A council might compare the cost per additional household served by two transport programmes. This approach is useful when the goal is clear, but it does not by itself decide whether that goal is more valuable than other public priorities.",
+      "example_vi": "Một cách thay thế là phân tích hiệu quả chi phí. Thay vì đổi mọi kết quả ra tiền, nó hỏi cần bao nhiêu nguồn lực để đạt kết quả xác định. Hội đồng có thể so sánh chi phí để phục vụ thêm một hộ gia đình giữa hai chương trình giao thông. Cách này hữu ích khi mục tiêu rõ, nhưng tự nó không quyết định mục tiêu ấy có đáng giá hơn ưu tiên công khác không.",
+      "source_turn_id": "T02"
+    },
+    {
+      "term": "distributional analysis",
+      "pos": "n. phr.",
+      "meaning_vi": "phân tích phân phối",
+      "example_en": "A third approach uses distributional analysis to examine how gains and losses are shared. A project with a positive overall return may still increase burdens on low-income households. Researchers can break results down by income group, location or access to services. Such analysis does not remove the need for judgement; it makes visible who benefits and who pays.",
+      "example_vi": "Cách thứ ba dùng phân tích phân phối để xem lợi ích và thiệt hại chia như thế nào. Dự án có lợi ích tổng thể dương vẫn có thể tăng gánh nặng cho hộ thu nhập thấp. Nhà nghiên cứu có thể phân tách kết quả theo nhóm thu nhập, địa điểm hoặc tiếp cận dịch vụ. Phân tích này không xóa nhu cầu phán đoán; nó làm rõ ai hưởng lợi và ai trả giá.",
+      "source_turn_id": "T03"
+    },
+    {
+      "term": "counterfactual",
+      "pos": "n.",
+      "meaning_vi": "tình huống phản thực",
+      "example_en": "Good evaluations must also address the counterfactual: what would probably have happened without the programme. If employment grows after a new policy, a general economic recovery may have contributed. Comparison groups and before-and-after evidence can help, but only when their limitations are discussed. Attributing every improvement to one intervention risks exaggerating its true impact.",
+      "example_vi": "Đánh giá tốt còn phải xử lý tình huống phản thực: điều gì có lẽ đã xảy ra nếu không có chương trình. Nếu việc làm tăng sau chính sách mới, phục hồi kinh tế chung cũng có thể góp phần. Nhóm đối chứng và bằng chứng trước–sau có thể giúp ích, nhưng chỉ khi bàn rõ hạn chế. Quy mọi cải thiện cho một can thiệp dễ phóng đại tác động thật.",
+      "source_turn_id": "T04"
+    }
+  ],
+  "audio": {
+    "status": "not_generated",
+    "url": null,
+    "duration_ms": null,
+    "model": null,
+    "provider": null,
+    "voice_config": null,
+    "source_transcript_hash": "92bf4973ce27e0e894d1835f4f04653304139cd21d240910933ec28da2008bee",
+    "audio_sha256": null,
+    "format": null
+  },
+  "qa": {
+    "content_reviewed": false,
+    "answers_verified": false,
+    "audio_verified": false,
+    "rights_cleared": false,
+    "duplicate_reviewed": false,
+    "notes": [
+      "Original AI-assisted educational script, not an official IELTS transcript.",
+      "Editorial, academic and linguistic review pending.",
+      "Audio/TTS not generated; text-to-speech distribution rights must be confirmed before use, especially for minors.",
+      "Six IELTS-style practice questions per lesson; this is not a full official Part 4 test or a calibrated IELTS Band test.",
+      "M16.2: automated edits are provisional; IELTS teacher final signoff, audio and rights clearance pending."
+    ]
+  },
+  "provenance": {
+    "content_origin": "original_ai_assisted",
+    "source_urls": [],
+    "source_rights_note": "Original transcript and translation drafts; verify academic claims and terms, and TTS provider redistribution conditions before release.",
+    "reviewer": null
+  },
+  "release_metadata": {
+    "published_at": null,
+    "version": 1
+  }
+}

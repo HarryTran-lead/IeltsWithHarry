@@ -1,0 +1,623 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "FND2-082",
+  "status": "draft",
+  "level": "L2",
+  "section": 0,
+  "topic": "Foundation M19 – Vocabulary",
+  "title": "Shopping choices and returns",
+  "learning_objectives_vi": [
+    "Phân biệt kích cỡ, màu sắc, đổi hàng, hoàn tiền, bảo hành.",
+    "Nghe lại theo lỗi trọng tâm, không chỉ hoàn thành số bài.",
+    "Đánh giá bằng nội dung chưa gặp và một lần nghe."
+  ],
+  "content_format": "sentence_drill",
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Foundation narrator",
+      "tts_voice_id": null,
+      "accent_requested": "australian"
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "The sweater was too small, so I asked for a larger size.",
+      "translation_vi": "Áo len quá nhỏ nên tôi yêu cầu cỡ lớn hơn.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m19",
+        "shopping_returns",
+        "vocabulary"
+      ],
+      "target_value": "larger",
+      "target_kind": "lexical_phrase",
+      "target_meaning_vi": "lớn hơn",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "A",
+      "text_en": "I kept the receipt because I might need to return the headphones.",
+      "translation_vi": "Tôi giữ hóa đơn vì có thể cần trả lại tai nghe.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m19",
+        "shopping_returns",
+        "vocabulary"
+      ],
+      "target_value": "receipt",
+      "target_kind": "lexical_phrase",
+      "target_meaning_vi": "hóa đơn",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "A",
+      "text_en": "The shop offered store credit rather than a cash refund.",
+      "translation_vi": "Cửa hàng đề nghị tín dụng mua sắm thay vì hoàn tiền mặt.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m19",
+        "shopping_returns",
+        "vocabulary"
+      ],
+      "target_value": "store credit",
+      "target_kind": "lexical_phrase",
+      "target_meaning_vi": "tín dụng tại cửa hàng",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "A",
+      "text_en": "Please check the warranty before you buy the coffee machine.",
+      "translation_vi": "Hãy kiểm tra bảo hành trước khi mua máy pha cà phê.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m19",
+        "shopping_returns",
+        "vocabulary"
+      ],
+      "target_value": "warranty",
+      "target_kind": "lexical_phrase",
+      "target_meaning_vi": "bảo hành",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "A",
+      "text_en": "This jacket is available in navy, but the black one has sold out.",
+      "translation_vi": "Áo khoác có màu xanh hải quân, còn màu đen đã bán hết.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m19",
+        "shopping_returns",
+        "vocabulary"
+      ],
+      "target_value": "navy",
+      "target_kind": "lexical_phrase",
+      "target_meaning_vi": "xanh hải quân",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "A",
+      "text_en": "The assistant ordered another pair because my size wasn't in stock.",
+      "translation_vi": "Nhân viên đặt thêm đôi khác vì cỡ của tôi đã hết hàng.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m19",
+        "shopping_returns",
+        "vocabulary"
+      ],
+      "target_value": "size",
+      "target_kind": "lexical_phrase",
+      "target_meaning_vi": "cỡ",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "The label says the headphones are reduced by twenty percent.",
+      "translation_vi": "Nhãn ghi tai nghe được giảm hai mươi phần trăm.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m19",
+        "shopping_returns",
+        "vocabulary"
+      ],
+      "target_value": "reduced",
+      "target_kind": "lexical_phrase",
+      "target_meaning_vi": "giảm giá",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "A",
+      "text_en": "I chose delivery because the item was too heavy to carry.",
+      "translation_vi": "Tôi chọn giao hàng vì món đồ quá nặng để mang.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m19",
+        "shopping_returns",
+        "vocabulary"
+      ],
+      "target_value": "delivery",
+      "target_kind": "lexical_phrase",
+      "target_meaning_vi": "giao hàng",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T09",
+      "speaker_id": "A",
+      "text_en": "They replaced the broken charger but couldn't replace the cable.",
+      "translation_vi": "Họ thay bộ sạc hỏng nhưng không thể thay dây cáp.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m19",
+        "shopping_returns",
+        "vocabulary"
+      ],
+      "target_value": "charger",
+      "target_kind": "lexical_phrase",
+      "target_meaning_vi": "bộ sạc",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T10",
+      "speaker_id": "A",
+      "text_en": "The exchange period ends next Friday, according to the receipt.",
+      "translation_vi": "Theo hóa đơn, thời hạn đổi hàng kết thúc thứ Sáu tới.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m19",
+        "shopping_returns",
+        "vocabulary"
+      ],
+      "target_value": "exchange",
+      "target_kind": "lexical_phrase",
+      "target_meaning_vi": "đổi hàng",
+      "bank_role": "training"
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "type": "dictation",
+      "prompt": "Nghe lượt T01 rồi chép đầy đủ câu tiếng Anh được nói.",
+      "correct_answers": [
+        "The sweater was too small, so I asked for a larger size."
+      ],
+      "evidence_turn_ids": [
+        "T01"
+      ],
+      "explanation_vi": "Nghe lại theo nhóm từ; câu gốc là: The sweater was too small, so I asked for a larger size. Nghĩa: Áo len quá nhỏ nên tôi yêu cầu cỡ lớn hơn.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "shopping_returns"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q02",
+      "type": "dictation",
+      "prompt": "Nghe lượt T02 rồi chép đầy đủ câu tiếng Anh được nói.",
+      "correct_answers": [
+        "I kept the receipt because I might need to return the headphones."
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Nghe lại theo nhóm từ; câu gốc là: I kept the receipt because I might need to return the headphones. Nghĩa: Tôi giữ hóa đơn vì có thể cần trả lại tai nghe.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "shopping_returns"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q03",
+      "type": "dictation",
+      "prompt": "Nghe lượt T03 rồi chép đầy đủ câu tiếng Anh được nói.",
+      "correct_answers": [
+        "The shop offered store credit rather than a cash refund."
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Nghe lại theo nhóm từ; câu gốc là: The shop offered store credit rather than a cash refund. Nghĩa: Cửa hàng đề nghị tín dụng mua sắm thay vì hoàn tiền mặt.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "shopping_returns"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q04",
+      "type": "dictation",
+      "prompt": "Nghe lượt T04 rồi chép đầy đủ câu tiếng Anh được nói.",
+      "correct_answers": [
+        "Please check the warranty before you buy the coffee machine."
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Nghe lại theo nhóm từ; câu gốc là: Please check the warranty before you buy the coffee machine. Nghĩa: Hãy kiểm tra bảo hành trước khi mua máy pha cà phê.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "shopping_returns"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q05",
+      "type": "dictation",
+      "prompt": "Nghe lượt T05 rồi chép đầy đủ câu tiếng Anh được nói.",
+      "correct_answers": [
+        "This jacket is available in navy, but the black one has sold out."
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Nghe lại theo nhóm từ; câu gốc là: This jacket is available in navy, but the black one has sold out. Nghĩa: Áo khoác có màu xanh hải quân, còn màu đen đã bán hết.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "shopping_returns"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q06",
+      "type": "dictation",
+      "prompt": "Nghe lượt T06 rồi chép đầy đủ câu tiếng Anh được nói.",
+      "correct_answers": [
+        "The assistant ordered another pair because my size wasn't in stock."
+      ],
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "explanation_vi": "Nghe lại theo nhóm từ; câu gốc là: The assistant ordered another pair because my size wasn't in stock. Nghĩa: Nhân viên đặt thêm đôi khác vì cỡ của tôi đã hết hàng.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "shopping_returns"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q07",
+      "type": "dictation",
+      "prompt": "Nghe lượt T07 rồi chép đầy đủ câu tiếng Anh được nói.",
+      "correct_answers": [
+        "The label says the headphones are reduced by twenty percent."
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "Nghe lại theo nhóm từ; câu gốc là: The label says the headphones are reduced by twenty percent. Nghĩa: Nhãn ghi tai nghe được giảm hai mươi phần trăm.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "shopping_returns"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q08",
+      "type": "dictation",
+      "prompt": "Nghe lượt T08 rồi chép đầy đủ câu tiếng Anh được nói.",
+      "correct_answers": [
+        "I chose delivery because the item was too heavy to carry."
+      ],
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "explanation_vi": "Nghe lại theo nhóm từ; câu gốc là: I chose delivery because the item was too heavy to carry. Nghĩa: Tôi chọn giao hàng vì món đồ quá nặng để mang.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "shopping_returns"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q09",
+      "type": "dictation",
+      "prompt": "Nghe lượt T09 rồi chép đầy đủ câu tiếng Anh được nói.",
+      "correct_answers": [
+        "They replaced the broken charger but couldn't replace the cable."
+      ],
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "explanation_vi": "Nghe lại theo nhóm từ; câu gốc là: They replaced the broken charger but couldn't replace the cable. Nghĩa: Họ thay bộ sạc hỏng nhưng không thể thay dây cáp.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "shopping_returns"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q10",
+      "type": "dictation",
+      "prompt": "Nghe lượt T10 rồi chép đầy đủ câu tiếng Anh được nói.",
+      "correct_answers": [
+        "The exchange period ends next Friday, according to the receipt."
+      ],
+      "evidence_turn_ids": [
+        "T10"
+      ],
+      "explanation_vi": "Nghe lại theo nhóm từ; câu gốc là: The exchange period ends next Friday, according to the receipt. Nghĩa: Theo hóa đơn, thời hạn đổi hàng kết thúc thứ Sáu tới.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "shopping_returns"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q11",
+      "type": "short_answer",
+      "prompt": "Nghe lượt T06. Thông tin nào về đôi giày bị hết hàng? Trả lời bằng từ/cụm tiếng Anh đúng như lời nghe.",
+      "correct_answers": [
+        "size"
+      ],
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "explanation_vi": "Thông tin đúng: size (cỡ). Dẫn chứng: The assistant ordered another pair because my size wasn't in stock. Nghĩa: Nhân viên đặt thêm đôi khác vì cỡ của tôi đã hết hàng.",
+      "scoring_policy": "lexical_case_punctuation_insensitive_server",
+      "target_kind": "lexical_phrase",
+      "question_tags": [
+        "short_answer",
+        "shopping_returns",
+        "training_comprehension"
+      ],
+      "max_replays_practice": 5,
+      "first_listen_only_for_mastery": false
+    },
+    {
+      "question_id": "Q12",
+      "type": "short_answer",
+      "prompt": "Nghe lượt T07. Từ nào cho biết hàng đang được giảm giá? Trả lời bằng từ/cụm tiếng Anh đúng như lời nghe.",
+      "correct_answers": [
+        "reduced"
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "Thông tin đúng: reduced (giảm giá). Dẫn chứng: The label says the headphones are reduced by twenty percent. Nghĩa: Nhãn ghi tai nghe được giảm hai mươi phần trăm.",
+      "scoring_policy": "lexical_case_punctuation_insensitive_server",
+      "target_kind": "lexical_phrase",
+      "question_tags": [
+        "short_answer",
+        "shopping_returns",
+        "training_comprehension"
+      ],
+      "max_replays_practice": 5,
+      "first_listen_only_for_mastery": false
+    },
+    {
+      "question_id": "Q13",
+      "type": "short_answer",
+      "prompt": "Nghe lượt T08. Khách chọn hình thức nhận hàng nào? Trả lời bằng từ/cụm tiếng Anh đúng như lời nghe.",
+      "correct_answers": [
+        "delivery"
+      ],
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "explanation_vi": "Thông tin đúng: delivery (giao hàng). Dẫn chứng: I chose delivery because the item was too heavy to carry. Nghĩa: Tôi chọn giao hàng vì món đồ quá nặng để mang.",
+      "scoring_policy": "lexical_case_punctuation_insensitive_server",
+      "target_kind": "lexical_phrase",
+      "question_tags": [
+        "short_answer",
+        "shopping_returns",
+        "training_comprehension"
+      ],
+      "max_replays_practice": 5,
+      "first_listen_only_for_mastery": false
+    },
+    {
+      "question_id": "Q14",
+      "type": "short_answer",
+      "prompt": "Nghe lượt T09. Bộ phận nào được thay thế? Trả lời bằng từ/cụm tiếng Anh đúng như lời nghe.",
+      "correct_answers": [
+        "charger"
+      ],
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "explanation_vi": "Thông tin đúng: charger (bộ sạc). Dẫn chứng: They replaced the broken charger but couldn't replace the cable. Nghĩa: Họ thay bộ sạc hỏng nhưng không thể thay dây cáp.",
+      "scoring_policy": "lexical_case_punctuation_insensitive_server",
+      "target_kind": "lexical_phrase",
+      "question_tags": [
+        "short_answer",
+        "shopping_returns",
+        "training_comprehension"
+      ],
+      "max_replays_practice": 5,
+      "first_listen_only_for_mastery": false
+    },
+    {
+      "question_id": "Q15",
+      "type": "short_answer",
+      "prompt": "Nghe lượt T10. Thời hạn cho hoạt động nào sắp kết thúc? Trả lời bằng từ/cụm tiếng Anh đúng như lời nghe.",
+      "correct_answers": [
+        "exchange"
+      ],
+      "evidence_turn_ids": [
+        "T10"
+      ],
+      "explanation_vi": "Thông tin đúng: exchange (đổi hàng). Dẫn chứng: The exchange period ends next Friday, according to the receipt. Nghĩa: Theo hóa đơn, thời hạn đổi hàng kết thúc thứ Sáu tới.",
+      "scoring_policy": "lexical_case_punctuation_insensitive_server",
+      "target_kind": "lexical_phrase",
+      "question_tags": [
+        "short_answer",
+        "shopping_returns",
+        "training_comprehension"
+      ],
+      "max_replays_practice": 5,
+      "first_listen_only_for_mastery": false
+    }
+  ],
+  "vocabulary": [
+    {
+      "term": "larger",
+      "pos": "verb / adjective / adverb (contextual)",
+      "meaning_vi": "lớn hơn",
+      "example_en": "The sweater was too small, so I asked for a larger size.",
+      "example_vi": "Áo len quá nhỏ nên tôi yêu cầu cỡ lớn hơn.",
+      "is_illustrative_context": false
+    },
+    {
+      "term": "receipt",
+      "pos": "noun (contextual)",
+      "meaning_vi": "hóa đơn",
+      "example_en": "I kept the receipt because I might need to return the headphones.",
+      "example_vi": "Tôi giữ hóa đơn vì có thể cần trả lại tai nghe.",
+      "is_illustrative_context": false
+    },
+    {
+      "term": "store credit",
+      "pos": "noun phrase",
+      "meaning_vi": "tín dụng tại cửa hàng",
+      "example_en": "The shop offered store credit rather than a cash refund.",
+      "example_vi": "Cửa hàng đề nghị tín dụng mua sắm thay vì hoàn tiền mặt.",
+      "is_illustrative_context": false
+    },
+    {
+      "term": "warranty",
+      "pos": "noun (contextual)",
+      "meaning_vi": "bảo hành",
+      "example_en": "Please check the warranty before you buy the coffee machine.",
+      "example_vi": "Hãy kiểm tra bảo hành trước khi mua máy pha cà phê.",
+      "is_illustrative_context": false
+    },
+    {
+      "term": "navy",
+      "pos": "noun (contextual)",
+      "meaning_vi": "xanh hải quân",
+      "example_en": "This jacket is available in navy, but the black one has sold out.",
+      "example_vi": "Áo khoác có màu xanh hải quân, còn màu đen đã bán hết.",
+      "is_illustrative_context": false
+    },
+    {
+      "term": "size",
+      "pos": "noun (contextual)",
+      "meaning_vi": "cỡ",
+      "example_en": "The assistant ordered another pair because my size wasn't in stock.",
+      "example_vi": "Nhân viên đặt thêm đôi khác vì cỡ của tôi đã hết hàng.",
+      "is_illustrative_context": false
+    }
+  ],
+  "micro_skill_id": "shopping_returns",
+  "bank_role": "training",
+  "content_design": {
+    "sequence": "10_varied_contexts",
+    "first_listen": "1x",
+    "guided_replay_max": 5,
+    "mastery_requires_unseen": true,
+    "learning_note_vi": "Phân biệt kích cỡ, màu sắc, đổi hàng, hoàn tiền, bảo hành.",
+    "category": "vocabulary",
+    "post_submit_review_only": true,
+    "unseen_assessment_id": "FND2-082-HOLDOUT",
+    "spoken_text_must_match_target": true,
+    "holdout_must_be_server_side": true,
+    "no_band_claim": true
+  },
+  "audio": {
+    "status": "not_generated",
+    "url": null,
+    "duration_ms": null,
+    "provider": null,
+    "model": null,
+    "voice_config": null,
+    "format": null,
+    "audio_sha256": null,
+    "source_transcript_hash": "bee5571ec4a2b2b787ea56c519f731e693a00a674214dc0f0a406e7657418874",
+    "generation_notes": "Synthesize actual spoken utterance only; never read learning metadata. Human verify dates, names and connected-speech target."
+  },
+  "qa": {
+    "content_reviewed": false,
+    "answers_verified": false,
+    "audio_verified": false,
+    "human_signed_off": false,
+    "duplicate_reviewed": false,
+    "notes": [
+      "M19 originally authored DRAFT, machine-verified only.",
+      "Connected-speech phonetic features NOT established until actual audio is reviewed."
+    ]
+  },
+  "provenance": {
+    "content_origin": "original_ai_assisted",
+    "rights_status": "pending_tts_audio_terms_review",
+    "source_urls": [],
+    "reviewer": null
+  },
+  "release_metadata": {
+    "published_at": null,
+    "version": 1
+  },
+  "lesson_theory_vi": {
+    "core_rule": "Phân biệt kích cỡ, màu sắc, đổi hàng, hoàn tiền, bảo hành.",
+    "worked_contrasts": [
+      {
+        "spoken_example": "The shop was out of tea, so I bought coffee instead.",
+        "written_value": "coffee",
+        "teacher_note_vi": "So/instead báo lựa chọn thay thế; tea chỉ là thông tin cũ."
+      },
+      {
+        "spoken_example": "The receipt is in the bag, beside the charger.",
+        "written_value": "receipt",
+        "teacher_note_vi": "Dựa câu hỏi để chọn đúng đồ vật, không chọn mọi từ vựng nghe thấy."
+      }
+    ],
+    "learning_steps": [
+      "Đọc nghĩa và ví dụ mới, chú ý từ loại, ngữ cảnh dùng từ.",
+      "Nghe mỗi câu một lần để dự đoán từ đích, sau đó chép cả câu.",
+      "Làm năm câu kiểm tra thông tin có ngữ cảnh mà không xem đáp án.",
+      "Cuối bài thử hai câu chưa gặp; nếu sai, quay về kỹ năng nhỏ tương ứng."
+    ],
+    "common_mistakes": [
+      "Chọn món đã hết hàng hoặc lựa chọn bị từ chối.",
+      "Chỉ nhìn từ khóa quen mà không nghe phần phủ định hoặc cách người nói sửa lại."
+    ],
+    "before_audio_question": "Từ/cụm nào phù hợp với câu hỏi, và từ bị phủ định có phải đáp án không?",
+    "difficulty_steps": [
+      "T01–T03: ngữ cảnh ngắn, thông tin chính rõ ràng.",
+      "T04–T07: thêm thông tin phụ, dạng phủ định hoặc tương phản.",
+      "T08–T10: nội dung dài hơn, nhiều chi tiết hoặc đổi ý."
+    ],
+    "examples_are_not_mastery_items": true,
+    "audio_review_warning_vi": null
+  }
+}

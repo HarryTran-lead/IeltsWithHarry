@@ -1,0 +1,425 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "DICT-F1-002",
+  "status": "draft",
+  "level": "L1",
+  "section": 0,
+  "topic": "Foundation",
+  "title": "Final Consonants",
+  "learning_objectives_vi": [
+    "Nghe âm /t/, /d/, /k/, /s/ ở cuối từ",
+    "Nghe và chép chính xác các lượt nghe ngắn mà không dựa vào transcript."
+  ],
+  "content_format": "micro_drill",
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Foundation narrator",
+      "tts_voice_id": null,
+      "accent_requested": "british"
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "Please check the back door.",
+      "translation_vi": "Hãy kiểm tra cửa sau.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "sounds_pronunciation",
+        "micro_listening"
+      ]
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "A",
+      "text_en": "Put the bag on the desk.",
+      "translation_vi": "Đặt túi lên bàn.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "sounds_pronunciation",
+        "micro_listening"
+      ]
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "A",
+      "text_en": "The cat is asleep.",
+      "translation_vi": "Con mèo đang ngủ.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "sounds_pronunciation",
+        "micro_listening"
+      ]
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "A",
+      "text_en": "My dad arrived early.",
+      "translation_vi": "Bố tôi đến sớm.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "sounds_pronunciation",
+        "micro_listening"
+      ]
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "A",
+      "text_en": "There are six books.",
+      "translation_vi": "Có sáu quyển sách.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "sounds_pronunciation",
+        "micro_listening"
+      ]
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "A",
+      "text_en": "I need a ticket.",
+      "translation_vi": "Tôi cần một tấm vé.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "sounds_pronunciation",
+        "micro_listening"
+      ]
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "I heard a loud sound.",
+      "translation_vi": "Tôi nghe một âm thanh lớn.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "sounds_pronunciation",
+        "micro_listening"
+      ]
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "A",
+      "text_en": "Take the red coat.",
+      "translation_vi": "Lấy chiếc áo khoác đỏ.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "sounds_pronunciation",
+        "micro_listening"
+      ]
+    },
+    {
+      "turn_id": "T09",
+      "speaker_id": "A",
+      "text_en": "She has four pens.",
+      "translation_vi": "Cô ấy có bốn cây bút.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "sounds_pronunciation",
+        "micro_listening"
+      ]
+    },
+    {
+      "turn_id": "T10",
+      "speaker_id": "A",
+      "text_en": "The train stops here.",
+      "translation_vi": "Tàu dừng ở đây.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "sounds_pronunciation",
+        "micro_listening"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "type": "dictation",
+      "prompt": "Nghe lượt T01 và chép chính xác những từ được nói.",
+      "correct_answers": [
+        "Please check the back door."
+      ],
+      "evidence_turn_ids": [
+        "T01"
+      ],
+      "explanation_vi": "back kết thúc bằng /k/. Nghĩa: Hãy kiểm tra cửa sau.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text"
+      ]
+    },
+    {
+      "question_id": "Q02",
+      "type": "dictation",
+      "prompt": "Nghe lượt T02 và chép chính xác những từ được nói.",
+      "correct_answers": [
+        "Put the bag on the desk."
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "bag kết thúc bằng /ɡ/. Nghĩa: Đặt túi lên bàn.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text"
+      ]
+    },
+    {
+      "question_id": "Q03",
+      "type": "dictation",
+      "prompt": "Nghe lượt T03 và chép chính xác những từ được nói.",
+      "correct_answers": [
+        "The cat is asleep."
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "cat có âm cuối /t/. Nghĩa: Con mèo đang ngủ.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text"
+      ]
+    },
+    {
+      "question_id": "Q04",
+      "type": "dictation",
+      "prompt": "Nghe lượt T04 và chép chính xác những từ được nói.",
+      "correct_answers": [
+        "My dad arrived early."
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "dad có âm cuối /d/. Nghĩa: Bố tôi đến sớm.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text"
+      ]
+    },
+    {
+      "question_id": "Q05",
+      "type": "dictation",
+      "prompt": "Nghe lượt T05 và chép chính xác những từ được nói.",
+      "correct_answers": [
+        "There are six books."
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "books kết thúc bằng /s/. Nghĩa: Có sáu quyển sách.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text"
+      ]
+    },
+    {
+      "question_id": "Q06",
+      "type": "dictation",
+      "prompt": "Nghe lượt T06 và chép chính xác những từ được nói.",
+      "correct_answers": [
+        "I need a ticket."
+      ],
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "explanation_vi": "ticket có âm cuối /t/. Nghĩa: Tôi cần một tấm vé.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text"
+      ]
+    },
+    {
+      "question_id": "Q07",
+      "type": "dictation",
+      "prompt": "Nghe lượt T07 và chép chính xác những từ được nói.",
+      "correct_answers": [
+        "I heard a loud sound."
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "loud và sound đều có âm cuối /d/. Nghĩa: Tôi nghe một âm thanh lớn.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text"
+      ]
+    },
+    {
+      "question_id": "Q08",
+      "type": "dictation",
+      "prompt": "Nghe lượt T08 và chép chính xác những từ được nói.",
+      "correct_answers": [
+        "Take the red coat."
+      ],
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "explanation_vi": "coat kết thúc bằng /t/. Nghĩa: Lấy chiếc áo khoác đỏ.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text"
+      ]
+    },
+    {
+      "question_id": "Q09",
+      "type": "dictation",
+      "prompt": "Nghe lượt T09 và chép chính xác những từ được nói.",
+      "correct_answers": [
+        "She has four pens."
+      ],
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "explanation_vi": "pens có âm cuối /z/. Nghĩa: Cô ấy có bốn cây bút.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text"
+      ]
+    },
+    {
+      "question_id": "Q10",
+      "type": "dictation",
+      "prompt": "Nghe lượt T10 và chép chính xác những từ được nói.",
+      "correct_answers": [
+        "The train stops here."
+      ],
+      "evidence_turn_ids": [
+        "T10"
+      ],
+      "explanation_vi": "stops có cụm âm cuối /ps/. Nghĩa: Tàu dừng ở đây.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text"
+      ]
+    },
+    {
+      "question_id": "Q11",
+      "type": "word_choice",
+      "prompt": "T03: Từ nào có âm cuối /t/?",
+      "correct_answers": [
+        "cat"
+      ],
+      "options": [
+        "cat",
+        "cab"
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Cat kết thúc bằng /t/. Hãy nghe lại lượt T03, đối chiếu với lựa chọn còn lại và xác định từ/ý được nói thật.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "comprehension",
+        "foundation_discrimination"
+      ]
+    },
+    {
+      "question_id": "Q12",
+      "type": "word_choice",
+      "prompt": "T05: Bạn nghe được danh từ số nhiều nào?",
+      "correct_answers": [
+        "books"
+      ],
+      "options": [
+        "books",
+        "book"
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Books có -s với âm cuối /s/. Hãy nghe lại lượt T05, đối chiếu với lựa chọn còn lại và xác định từ/ý được nói thật.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "comprehension",
+        "foundation_discrimination"
+      ]
+    }
+  ],
+  "vocabulary": [
+    {
+      "term": "back",
+      "pos": "adjective",
+      "meaning_vi": "ở phía sau",
+      "example_en": "Please check the back door.",
+      "example_vi": "Hãy kiểm tra cửa sau.",
+      "source_turn_id": "T01"
+    },
+    {
+      "term": "desk",
+      "pos": "noun",
+      "meaning_vi": "bàn học/làm việc",
+      "example_en": "Put the bag on the desk.",
+      "example_vi": "Đặt túi lên bàn.",
+      "source_turn_id": "T02"
+    },
+    {
+      "term": "ticket",
+      "pos": "noun",
+      "meaning_vi": "vé",
+      "example_en": "I need a ticket.",
+      "example_vi": "Tôi cần một tấm vé.",
+      "source_turn_id": "T06"
+    },
+    {
+      "term": "stops",
+      "pos": "verb",
+      "meaning_vi": "dừng lại (ngôi ba số ít)",
+      "example_en": "The train stops here.",
+      "example_vi": "Tàu dừng ở đây.",
+      "source_turn_id": "T10"
+    }
+  ],
+  "audio": {
+    "status": "not_generated",
+    "url": null,
+    "duration_ms": null,
+    "model": null,
+    "provider": null,
+    "voice_config": null,
+    "source_transcript_hash": "c68f69b0a989ec7067abb151de9544325636f584ff1fa182101552e4631190c7",
+    "audio_sha256": null,
+    "format": null
+  },
+  "qa": {
+    "content_reviewed": false,
+    "answers_verified": false,
+    "audio_verified": false,
+    "rights_cleared": false,
+    "duplicate_reviewed": false,
+    "notes": [
+      "Author draft. Editorial, native-like audio, rights and device QA pending.",
+      "TTS: generate each turn separately, then combine and generate timestamps.",
+      "M16.2: automated edits are provisional; IELTS teacher final signoff, audio and rights clearance pending."
+    ]
+  },
+  "provenance": {
+    "content_origin": "original_ai_assisted",
+    "source_urls": [],
+    "source_rights_note": "New original learning material written for English Skill Lab; verify TTS and distribution conditions prior to release.",
+    "reviewer": null
+  },
+  "release_metadata": {
+    "published_at": null,
+    "version": 1
+  }
+}

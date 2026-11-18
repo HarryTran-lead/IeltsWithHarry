@@ -1,0 +1,390 @@
+{
+  "meta": {
+    "status": "NO_GO_PRODUCTION",
+    "count": 13,
+    "applied": 0
+  },
+  "patch_candidates": [
+    {
+      "case_id": "M25D-GIC-C1-004",
+      "linked_task_id": "M26-GTS-C1-04-SG",
+      "old_source_sha256": "c7287b21370b897e05f81851a06366001b0bf910b32f200b2ec4dd41239cd451",
+      "candidate_source_sha256": "83411550811f426fc8f94f60aa18a10114783f15ece7524c1ba47b5eedbca8c6",
+      "old_fragment_en": "In this case, the unresolved concern about subgroup sizes are imbalanced requires further checks before a general conclusion can be drawn.",
+      "proposed_fragment_en": "In this case, the unresolved concern is that subgroup sizes are imbalanced; further checks are needed before a general conclusion can be drawn.",
+      "matches_in_current_source": 1,
+      "editorial_rationale_vi": "Sửa mệnh đề sai sau about thành that-clause; giữ nguyên nội dung và mức độ thận trọng.",
+      "source_candidate_en": "A cross-departmental assessment of a fairness evaluation distinguishes established observations from claims requiring confirmation. The governance researcher is responsible for checking the supporting records before a new decision about a fairness evaluation is announced. The purpose of this note is to help readers distinguish the event itself from the decisions that may follow. The organisers have drawn attention to the fact that subgroup sizes are imbalanced. Several people offered suggestions, but no one has checked whether those suggestions would work in every situation. On Wednesday, the governance researcher counted 15 model evaluations at the ethics laboratory. What matters most is the basis of the claim. The team has written a short explanation of the count so that the next reviewer can check how the information was collected. The proposed change is still being reviewed; no final approval has been issued. The final review is scheduled for Tuesday. The internal team, not an external regulator, prepared this preliminary assessment. A rapid response was proposed, but the committee declined to equate urgency with certainty. Its revised account identifies the conditions under which a change could be justified and notes which measurements have yet to be corroborated. The project team received a second request after the count, but that request is not included in the current total. In this case, the unresolved concern is that subgroup sizes are imbalanced; further checks are needed before a general conclusion can be drawn. A statement that presents this concern as an established cause would exceed the available evidence.",
+      "upstream_question_ids": [
+        "M25D-GIC-C1-004-Q1",
+        "M25D-GIC-C1-004-Q2",
+        "M25D-GIC-C1-004-Q3"
+      ],
+      "upstream_editing_task_id": "M25D-GIC-C1-004-Q4",
+      "downstream_task_ids": [
+        "M26-GTS-C1-04-SG"
+      ],
+      "downstream_model_ids": [
+        "M26-GTS-C1-04-SG"
+      ],
+      "downstream_candidate_ids": [],
+      "needs_rewrite_question_and_answer_keys": true,
+      "requires_full_dependency_rehash": true,
+      "teacher_approved": false,
+      "applied_to_m25d": false,
+      "release_status": "NO_GO_PRODUCTION"
+    },
+    {
+      "case_id": "M25D-GIC-C1-007",
+      "linked_task_id": "M26-GTS-C1-07-SG",
+      "old_source_sha256": "8ade4011ec05a20a357e4b16cef25c64482141801b0605a3b26ac71d4d45d071",
+      "candidate_source_sha256": "a1be5b0ba0319566bd50fd07c6b271c6c5f461ccbe450fe53464feae073f018c",
+      "old_fragment_en": "In this case, the unresolved concern about volunteers were not blinded requires further checks before a general conclusion can be drawn.",
+      "proposed_fragment_en": "In this case, the unresolved concern is that volunteers were not blinded; further checks are needed before a general conclusion can be drawn.",
+      "matches_in_current_source": 1,
+      "editorial_rationale_vi": "Sửa mệnh đề sai sau about thành that-clause; giữ nguyên nội dung và mức độ thận trọng.",
+      "source_candidate_en": "The review group has been asked to clarify whether the provisional findings about a public-information experiment warrant any policy change. The communications evaluator has asked the team to record both confirmed arrangements and unresolved questions about a public-information experiment. The purpose of this note is to help readers distinguish the event itself from the decisions that may follow. According to the internal update, volunteers were not blinded. Several people offered suggestions, but no one has checked whether those suggestions would work in every situation. On Saturday, the communications evaluator counted 36 message variants at the policy unit. Never has the group described the findings as final. The team has written a short explanation of the count so that the next reviewer can check how the information was collected. The proposed change is still being reviewed; no final approval has been issued. The final review is scheduled for Thursday. The internal team, not an external regulator, prepared this preliminary assessment. The evidence trail includes an internal log and an unverified participant statement. These are not interchangeable forms of support: the former documents recorded activity, whereas the latter offers an interpretation that may be useful but remains contestable. The draft spreadsheet contains an older figure, which explains why the revised number must be quoted carefully. In this case, the unresolved concern is that volunteers were not blinded; further checks are needed before a general conclusion can be drawn. A statement that presents this concern as an established cause would exceed the available evidence.",
+      "upstream_question_ids": [
+        "M25D-GIC-C1-007-Q1",
+        "M25D-GIC-C1-007-Q2",
+        "M25D-GIC-C1-007-Q3"
+      ],
+      "upstream_editing_task_id": "M25D-GIC-C1-007-Q4",
+      "downstream_task_ids": [
+        "M26-GTS-C1-07-SG"
+      ],
+      "downstream_model_ids": [
+        "M26-GTS-C1-07-SG"
+      ],
+      "downstream_candidate_ids": [],
+      "needs_rewrite_question_and_answer_keys": true,
+      "requires_full_dependency_rehash": true,
+      "teacher_approved": false,
+      "applied_to_m25d": false,
+      "release_status": "NO_GO_PRODUCTION"
+    },
+    {
+      "case_id": "M25D-GIC-C1-019",
+      "linked_task_id": "M26-GTS-C1-19-SG",
+      "old_source_sha256": "cf924109c437add6a043dce12817aa3d57205d86944d1a622081f338828aa00e",
+      "candidate_source_sha256": "5626daaf3b5c53fa27f6b26f18de7b5bdcafeaee5e520e3a13f9753d5ee666ca",
+      "old_fragment_en": "In this case, the unresolved concern about sites were sampled at unequal intervals requires further checks before a general conclusion can be drawn.",
+      "proposed_fragment_en": "In this case, the unresolved concern is that sites were sampled at unequal intervals; further checks are needed before a general conclusion can be drawn.",
+      "matches_in_current_source": 1,
+      "editorial_rationale_vi": "Sửa mệnh đề sai sau about thành that-clause; giữ nguyên nội dung và mức độ thận trọng.",
+      "source_candidate_en": "A cross-departmental assessment of a conservation genetics study distinguishes established observations from claims requiring confirmation. The field geneticist is drafting the next update about a conservation genetics study without assuming that earlier suggestions were formally accepted. The purpose of this note is to help readers distinguish the event itself from the decisions that may follow. The available record includes one qualification: sites were sampled at unequal intervals. Several people offered suggestions, but no one has checked whether those suggestions would work in every situation. On Saturday, the field geneticist counted 46 sequence samples at the biodiversity centre. What matters most is the basis of the claim. The team has written a short explanation of the count so that the next reviewer can check how the information was collected. The proposed change is still being reviewed; no final approval has been issued. The final review is scheduled for Thursday. The internal team, not an external regulator, prepared this preliminary assessment. A rapid response was proposed, but the committee declined to equate urgency with certainty. Its revised account identifies the conditions under which a change could be justified and notes which measurements have yet to be corroborated. The project team received a second request after the count, but that request is not included in the current total. In this case, the unresolved concern is that sites were sampled at unequal intervals; further checks are needed before a general conclusion can be drawn. A statement that presents this concern as an established cause would exceed the available evidence.",
+      "upstream_question_ids": [
+        "M25D-GIC-C1-019-Q1",
+        "M25D-GIC-C1-019-Q2",
+        "M25D-GIC-C1-019-Q3"
+      ],
+      "upstream_editing_task_id": "M25D-GIC-C1-019-Q4",
+      "downstream_task_ids": [
+        "M26-GTS-C1-19-SG"
+      ],
+      "downstream_model_ids": [
+        "M26-GTS-C1-19-SG"
+      ],
+      "downstream_candidate_ids": [],
+      "needs_rewrite_question_and_answer_keys": true,
+      "requires_full_dependency_rehash": true,
+      "teacher_approved": false,
+      "applied_to_m25d": false,
+      "release_status": "NO_GO_PRODUCTION"
+    },
+    {
+      "case_id": "M25D-GIC-C1-022",
+      "linked_task_id": "M26-GTS-C1-22-SG",
+      "old_source_sha256": "b0e6e3112cfb4dc0636fb52debf3a8b55e61a2c5ef96c55831b7b50fd3a09d8e",
+      "candidate_source_sha256": "90e2552da766f167e7a083413484c95ced0c25d1b660f39ac6141ddcd7cd582d",
+      "old_fragment_en": "In this case, the unresolved concern about the baseline is disputed requires further checks before a general conclusion can be drawn.",
+      "proposed_fragment_en": "In this case, the unresolved concern is that the baseline is disputed; further checks are needed before a general conclusion can be drawn.",
+      "matches_in_current_source": 1,
+      "editorial_rationale_vi": "Sửa mệnh đề sai sau about thành that-clause; giữ nguyên nội dung và mức độ thận trọng.",
+      "source_candidate_en": "The review group has been asked to clarify whether the provisional findings about an impact consultation warrant any policy change. The planning inspector has been assigned to prepare a clear update on an impact consultation for the next discussion. The purpose of this note is to help readers distinguish the event itself from the decisions that may follow. A note from the previous meeting records that the baseline is disputed. Several people offered suggestions, but no one has checked whether those suggestions would work in every situation. On Wednesday, the planning inspector counted 30 impact statements at the inquiry room. Never has the group described the findings as final. The team has written a short explanation of the count so that the next reviewer can check how the information was collected. The proposed change is still being reviewed; no final approval has been issued. The final review is scheduled for Tuesday. The internal team, not an external regulator, prepared this preliminary assessment. The evidence trail includes an internal log and an unverified participant statement. These are not interchangeable forms of support: the former documents recorded activity, whereas the latter offers an interpretation that may be useful but remains contestable. The draft spreadsheet contains an older figure, which explains why the revised number must be quoted carefully. In this case, the unresolved concern is that the baseline is disputed; further checks are needed before a general conclusion can be drawn. A statement that presents this concern as an established cause would exceed the available evidence.",
+      "upstream_question_ids": [
+        "M25D-GIC-C1-022-Q1",
+        "M25D-GIC-C1-022-Q2",
+        "M25D-GIC-C1-022-Q3"
+      ],
+      "upstream_editing_task_id": "M25D-GIC-C1-022-Q4",
+      "downstream_task_ids": [
+        "M26-GTS-C1-22-SG"
+      ],
+      "downstream_model_ids": [
+        "M26-GTS-C1-22-SG"
+      ],
+      "downstream_candidate_ids": [],
+      "needs_rewrite_question_and_answer_keys": true,
+      "requires_full_dependency_rehash": true,
+      "teacher_approved": false,
+      "applied_to_m25d": false,
+      "release_status": "NO_GO_PRODUCTION"
+    },
+    {
+      "case_id": "M25D-GIC-C1-023",
+      "linked_task_id": "M26-GTS-C1-23-SG",
+      "old_source_sha256": "b3d33870e0ad1df819e6242de527743469f1c41472753ab39f985a25688a4d93",
+      "candidate_source_sha256": "0d47b35b13bdba9dc16d41d0214bdb34e404f88ec8172d36e84b1c07612c275a",
+      "old_fragment_en": "In this case, the unresolved concern about legacy classifications are inconsistent requires further checks before a general conclusion can be drawn.",
+      "proposed_fragment_en": "In this case, the unresolved concern is that legacy classifications are inconsistent; further checks are needed before a general conclusion can be drawn.",
+      "matches_in_current_source": 1,
+      "editorial_rationale_vi": "Sửa mệnh đề sai sau about thành that-clause; giữ nguyên nội dung và mức độ thận trọng.",
+      "source_candidate_en": "An editorial committee is revising a briefing on a metadata harmonisation project so that certainty and attribution are not overstated. To avoid repeating an earlier mistake, the digital curator is preparing an evidence-based note about a metadata harmonisation project. One unresolved practical issue is that legacy classifications are inconsistent. Several people offered suggestions, but no one has checked whether those suggestions would work in every situation. On Thursday, the digital curator counted 37 catalogue entries at the records service. The panel recommended that the report be revised. The team has written a short explanation of the count so that the next reviewer can check how the information was collected. The proposed change is still being reviewed; no final approval has been issued. The final review is scheduled for Thursday. The internal team, not an external regulator, prepared this preliminary assessment. One draft sentence appeared to attribute a decision to an external authority that had never examined the case. The editorial review treats that as a substantive error of attribution, not merely an awkward choice of words. Responsibility must remain with the body actually named in the record. One participant recalled a different sequence of events, yet the written log is the only record agreed by the team. In this case, the unresolved concern is that legacy classifications are inconsistent; further checks are needed before a general conclusion can be drawn. A statement that presents this concern as an established cause would exceed the available evidence.",
+      "upstream_question_ids": [
+        "M25D-GIC-C1-023-Q1",
+        "M25D-GIC-C1-023-Q2",
+        "M25D-GIC-C1-023-Q3"
+      ],
+      "upstream_editing_task_id": "M25D-GIC-C1-023-Q4",
+      "downstream_task_ids": [
+        "M26-GTS-C1-23-SG"
+      ],
+      "downstream_model_ids": [
+        "M26-GTS-C1-23-SG"
+      ],
+      "downstream_candidate_ids": [
+        "M26-GTS-C1-23-SG"
+      ],
+      "needs_rewrite_question_and_answer_keys": true,
+      "requires_full_dependency_rehash": true,
+      "teacher_approved": false,
+      "applied_to_m25d": false,
+      "release_status": "NO_GO_PRODUCTION"
+    },
+    {
+      "case_id": "M25D-GIC-C1-024",
+      "linked_task_id": "M26-GTS-C1-24-SG",
+      "old_source_sha256": "532dd54d65e6ecab120acaa2209db78cd7da8a4ae62083c4d29b90068575443c",
+      "candidate_source_sha256": "8d29eb0ca97272ab8863ce893103d06ad935fbd521ba371bce782db9a42b528a",
+      "old_fragment_en": "In this case, the unresolved concern about seasonal peaks are irregular requires further checks before a general conclusion can be drawn.",
+      "proposed_fragment_en": "In this case, the unresolved concern is that seasonal peaks are irregular; further checks are needed before a general conclusion can be drawn.",
+      "matches_in_current_source": 1,
+      "editorial_rationale_vi": "Sửa mệnh đề sai sau about thành that-clause; giữ nguyên nội dung và mức độ thận trọng.",
+      "source_candidate_en": "A cross-departmental assessment of a capacity forecast distinguishes established observations from claims requiring confirmation. The operations economist is responsible for checking the supporting records before a new decision about a capacity forecast is announced. The organisers have drawn attention to the fact that seasonal peaks are irregular. Several people offered suggestions, but no one has checked whether those suggestions would work in every situation. People involved in the work have been asked not to circulate an unverified final timetable. On Friday, the operations economist counted 44 demand forecasts at the public health office. What matters most is the basis of the claim. The team has written a short explanation of the count so that the next reviewer can check how the information was collected. The proposed change is still being reviewed; no final approval has been issued. The final review is scheduled for Tuesday. The internal team, not an external regulator, prepared this preliminary assessment. A rapid response was proposed, but the committee declined to equate urgency with certainty. Its revised account identifies the conditions under which a change could be justified and notes which measurements have yet to be corroborated. The project team received a second request after the count, but that request is not included in the current total. In this case, the unresolved concern is that seasonal peaks are irregular; further checks are needed before a general conclusion can be drawn. A statement that presents this concern as an established cause would exceed the available evidence.",
+      "upstream_question_ids": [
+        "M25D-GIC-C1-024-Q1",
+        "M25D-GIC-C1-024-Q2",
+        "M25D-GIC-C1-024-Q3"
+      ],
+      "upstream_editing_task_id": "M25D-GIC-C1-024-Q4",
+      "downstream_task_ids": [
+        "M26-GTS-C1-24-SG"
+      ],
+      "downstream_model_ids": [
+        "M26-GTS-C1-24-SG"
+      ],
+      "downstream_candidate_ids": [
+        "M26-GTS-C1-24-SG"
+      ],
+      "needs_rewrite_question_and_answer_keys": true,
+      "requires_full_dependency_rehash": true,
+      "teacher_approved": false,
+      "applied_to_m25d": false,
+      "release_status": "NO_GO_PRODUCTION"
+    },
+    {
+      "case_id": "M25D-GIC-C2-001",
+      "linked_task_id": "M26-GTS-C2-01-SG",
+      "old_source_sha256": "a5038752808648f282877f23a05e37d61d1edec5007d9664cbec911d62a382cd",
+      "candidate_source_sha256": "f5e186504d0d3900517ff80e5fc82a5e4108dca7e1704f4a89694f5b2de5d644",
+      "old_fragment_en": "In this case, the unresolved concern about the jurisdictional boundaries are unsettled requires further checks before a general conclusion can be drawn.",
+      "proposed_fragment_en": "In this case, the unresolved concern is that the jurisdictional boundaries are unsettled; further checks are needed before a general conclusion can be drawn.",
+      "matches_in_current_source": 1,
+      "editorial_rationale_vi": "Sửa mệnh đề sai sau about thành that-clause; giữ nguyên nội dung và mức độ thận trọng.",
+      "source_candidate_en": "A specialist panel is drafting a qualified assessment of a governance framework review in response to conflicting interpretations of the record. The legal rapporteur is coordinating a governance framework review and has asked readers to distinguish confirmed details from requests still being considered. The purpose of this note is to help readers distinguish the event itself from the decisions that may follow. The written record mentions a practical concern: the jurisdictional boundaries are unsettled. Several people offered suggestions, but no one has checked whether those suggestions would work in every situation. On Monday, the legal rapporteur counted 34 compliance submissions at the oversight commission. Had the panel examined the missing records earlier, it might have identified the discrepancy sooner. The team has written a short explanation of the count so that the next reviewer can check how the information was collected. The proposed change is still being reviewed; no final approval has been issued. The final review is scheduled for Wednesday. The internal team, not an external regulator, prepared this preliminary assessment. The strongest admissible reading is narrower than the first draft implied. A chronological association does not establish that the earlier event caused the later one, and an internal observation does not carry the authority of an external adjudication. Both distinctions affect the institutional implications of the statement. A separate note contains a visitor suggestion, but it has not been independently checked. In this case, the unresolved concern is that the jurisdictional boundaries are unsettled; further checks are needed before a general conclusion can be drawn. A statement that presents this concern as an established cause would exceed the available evidence.",
+      "upstream_question_ids": [
+        "M25D-GIC-C2-001-Q1",
+        "M25D-GIC-C2-001-Q2",
+        "M25D-GIC-C2-001-Q3"
+      ],
+      "upstream_editing_task_id": "M25D-GIC-C2-001-Q4",
+      "downstream_task_ids": [
+        "M26-GTS-C2-01-SG"
+      ],
+      "downstream_model_ids": [
+        "M26-GTS-C2-01-SG"
+      ],
+      "downstream_candidate_ids": [],
+      "needs_rewrite_question_and_answer_keys": true,
+      "requires_full_dependency_rehash": true,
+      "teacher_approved": false,
+      "applied_to_m25d": false,
+      "release_status": "NO_GO_PRODUCTION"
+    },
+    {
+      "case_id": "M25D-GIC-C2-005",
+      "linked_task_id": "M26-GTS-C2-05-SG",
+      "old_source_sha256": "994906a9fd48f14d589a593f8ec094fd9332bb9a16be0249238d2e10ea69757d",
+      "candidate_source_sha256": "66b763c82b36f5d40659583b7bafef98cd9268ed8ba7832d43fbc2ae676404ed",
+      "old_fragment_en": "In this case, the unresolved concern about some obligations are deliberately conditional requires further checks before a general conclusion can be drawn.",
+      "proposed_fragment_en": "In this case, the unresolved concern is that some obligations are deliberately conditional; further checks are needed before a general conclusion can be drawn.",
+      "matches_in_current_source": 1,
+      "editorial_rationale_vi": "Sửa mệnh đề sai sau about thành that-clause; giữ nguyên nội dung và mức độ thận trọng.",
+      "source_candidate_en": "A formal deliberation on a treaty-language review must distinguish the authority of the available documents from the implications attributed to them. The day-to-day arrangements for a treaty-language review are being coordinated by the drafting adviser. As the planning notes make clear, some obligations are deliberately conditional. Several people offered suggestions, but no one has checked whether those suggestions would work in every situation. On Friday, the drafting adviser counted 25 interpretation notes at the treaty secretariat. The chair was about to publish the guidance when an objection was raised. The team has written a short explanation of the count so that the next reviewer can check how the information was collected. The proposed change is still being reviewed; no final approval has been issued. The final review is scheduled for Wednesday. The internal team, not an external regulator, prepared this preliminary assessment. The committee is not being asked to decide whether every disputed interpretation is equally persuasive. It must identify which propositions are defensible, whose evidence supports them and which conclusions would exceed the limited mandate of the review. The preliminary record covers only the activity described here and should not be generalised to every site. In this case, the unresolved concern is that some obligations are deliberately conditional; further checks are needed before a general conclusion can be drawn. A statement that presents this concern as an established cause would exceed the available evidence.",
+      "upstream_question_ids": [
+        "M25D-GIC-C2-005-Q1",
+        "M25D-GIC-C2-005-Q2",
+        "M25D-GIC-C2-005-Q3"
+      ],
+      "upstream_editing_task_id": "M25D-GIC-C2-005-Q4",
+      "downstream_task_ids": [
+        "M26-GTS-C2-05-SG"
+      ],
+      "downstream_model_ids": [
+        "M26-GTS-C2-05-SG"
+      ],
+      "downstream_candidate_ids": [],
+      "needs_rewrite_question_and_answer_keys": true,
+      "requires_full_dependency_rehash": true,
+      "teacher_approved": false,
+      "applied_to_m25d": false,
+      "release_status": "NO_GO_PRODUCTION"
+    },
+    {
+      "case_id": "M25D-GIC-C2-021",
+      "linked_task_id": "M26-GTS-C2-06-SG",
+      "old_source_sha256": "b355fa984c5807b23c9b34477745516637bce699d6752c3ee4f828b43e256a73",
+      "candidate_source_sha256": "4243aa59a13a6517b5c92a275e668e6bff39aee23b36030ecb75d31b4e2cfaa4",
+      "old_fragment_en": "In this case, the unresolved concern about the monitoring obligations are not yet final requires further checks before a general conclusion can be drawn.",
+      "proposed_fragment_en": "In this case, the unresolved concern is that the monitoring obligations are not yet final; further checks are needed before a general conclusion can be drawn.",
+      "matches_in_current_source": 1,
+      "editorial_rationale_vi": "Sửa mệnh đề sai sau about thành that-clause; giữ nguyên nội dung và mức độ thận trọng.",
+      "source_candidate_en": "A specialist panel is drafting a qualified assessment of a conservation agreement in response to conflicting interpretations of the record. The diplomatic editor is coordinating a conservation agreement and has asked readers to distinguish confirmed details from requests still being considered. The written record mentions a practical concern: the monitoring obligations are not yet final. Several people offered suggestions, but no one has checked whether those suggestions would work in every situation. People involved in the work have been asked not to circulate an unverified final timetable. On Wednesday, the diplomatic editor counted 26 negotiation drafts at the secretariat. Had the panel examined the missing records earlier, it might have identified the discrepancy sooner. The team has written a short explanation of the count so that the next reviewer can check how the information was collected. The proposed change is still being reviewed; no final approval has been issued. The final review is scheduled for Wednesday. The internal team, not an external regulator, prepared this preliminary assessment. The strongest admissible reading is narrower than the first draft implied. A chronological association does not establish that the earlier event caused the later one, and an internal observation does not carry the authority of an external adjudication. Both distinctions affect the institutional implications of the statement. A separate note contains a visitor suggestion, but it has not been independently checked. In this case, the unresolved concern is that the monitoring obligations are not yet final; further checks are needed before a general conclusion can be drawn. A statement that presents this concern as an established cause would exceed the available evidence.",
+      "upstream_question_ids": [
+        "M25D-GIC-C2-021-Q1",
+        "M25D-GIC-C2-021-Q2",
+        "M25D-GIC-C2-021-Q3"
+      ],
+      "upstream_editing_task_id": "M25D-GIC-C2-021-Q4",
+      "downstream_task_ids": [
+        "M26-GTS-C2-06-SG"
+      ],
+      "downstream_model_ids": [
+        "M26-GTS-C2-06-SG"
+      ],
+      "downstream_candidate_ids": [],
+      "needs_rewrite_question_and_answer_keys": true,
+      "requires_full_dependency_rehash": true,
+      "teacher_approved": false,
+      "applied_to_m25d": false,
+      "release_status": "NO_GO_PRODUCTION"
+    },
+    {
+      "case_id": "M25D-GIC-C2-024",
+      "linked_task_id": "M26-GTS-C2-09-SG",
+      "old_source_sha256": "a5a0dad8fe2553cfd6cc3fcb379a9bd49e6cd8ae01a1f78f9f971b48d327f8d9",
+      "candidate_source_sha256": "d93a768e6c49217beebc8dc22f6f39690ee61e3f3e43c84dcd462b7acdf74412",
+      "old_fragment_en": "In this case, the unresolved concern about some evidence was obtained after the original decision requires further checks before a general conclusion can be drawn.",
+      "proposed_fragment_en": "In this case, the unresolved concern is that some evidence was obtained after the original decision; further checks are needed before a general conclusion can be drawn.",
+      "matches_in_current_source": 1,
+      "editorial_rationale_vi": "Sửa mệnh đề sai sau about thành that-clause; giữ nguyên nội dung và mức độ thận trọng.",
+      "source_candidate_en": "The institutional record concerning an integrity arbitration is being scrutinised for temporal scope, evidential provenance and rhetorical overreach. The arbitrator is responsible for checking the supporting records before a new decision about an integrity arbitration is announced. The organisers have drawn attention to the fact that some evidence was obtained after the original decision. Several people offered suggestions, but no one has checked whether those suggestions would work in every situation. People involved in the work have been asked not to circulate an unverified final timetable. On Saturday, the arbitrator counted 47 audit documentation at the academic panel. The decision was postponed pending further evidence, not cancelled. The team has written a short explanation of the count so that the next reviewer can check how the information was collected. The proposed change is still being reviewed; no final approval has been issued. The final review is scheduled for Saturday. The internal team, not an external regulator, prepared this preliminary assessment. Two apparently consistent accounts rely on different definitions of completion. Unless those definitions are reconciled, neither account should be used to authorise an irreversible action. The present note deliberately stops short of treating disagreement about terminology as proof of misconduct. The project team received a second request after the count, but that request is not included in the current total. In this case, the unresolved concern is that some evidence was obtained after the original decision; further checks are needed before a general conclusion can be drawn. A statement that presents this concern as an established cause would exceed the available evidence.",
+      "upstream_question_ids": [
+        "M25D-GIC-C2-024-Q1",
+        "M25D-GIC-C2-024-Q2",
+        "M25D-GIC-C2-024-Q3"
+      ],
+      "upstream_editing_task_id": "M25D-GIC-C2-024-Q4",
+      "downstream_task_ids": [
+        "M26-GTS-C2-09-SG"
+      ],
+      "downstream_model_ids": [
+        "M26-GTS-C2-09-SG"
+      ],
+      "downstream_candidate_ids": [],
+      "needs_rewrite_question_and_answer_keys": true,
+      "requires_full_dependency_rehash": true,
+      "teacher_approved": false,
+      "applied_to_m25d": false,
+      "release_status": "NO_GO_PRODUCTION"
+    },
+    {
+      "case_id": "M25D-GIC-C2-018",
+      "linked_task_id": "M26-GTS-C2-18-SG",
+      "old_source_sha256": "67be0a0b713b161ba8594f1faf4109193c24c0b29bccae445e9a4db384b7f71f",
+      "candidate_source_sha256": "0006f2093bec61d1ac5c7058a7bc1fb1ca94fea3b72fe733e53d7dab9b143590",
+      "old_fragment_en": "In this case, the unresolved concern about the contested criteria were not uniformly applied requires further checks before a general conclusion can be drawn.",
+      "proposed_fragment_en": "In this case, the unresolved concern is that the contested criteria were not uniformly applied; further checks are needed before a general conclusion can be drawn.",
+      "matches_in_current_source": 1,
+      "editorial_rationale_vi": "Sửa mệnh đề sai sau about thành that-clause; giữ nguyên nội dung và mức độ thận trọng.",
+      "source_candidate_en": "An expert editorial group is redrafting its conclusions on a procurement appeal to avoid converting a conditional finding into an unqualified assertion. During preparations for a procurement appeal, the adjudication officer noticed that some public statements were stronger than the evidence allowed. Staff have identified a problem that may require a separate response: the contested criteria were not uniformly applied. Several people offered suggestions, but no one has checked whether those suggestions would work in every situation. People involved in the work have been asked not to circulate an unverified final timetable. On Saturday, the adjudication officer counted 42 tender findings at the review chamber. Not until the conflicting accounts were checked could the panel reach a provisional view. The team has written a short explanation of the count so that the next reviewer can check how the information was collected. The proposed change is still being reviewed; no final approval has been issued. The final review is scheduled for Saturday. The internal team, not an external regulator, prepared this preliminary assessment. The report’s argumentative structure matters as much as its individual clauses. Moving a qualification from the main claim into a footnote can make the headline seem firmer than the supporting data. The revision should therefore preserve the location as well as the substance of the qualification. One participant recalled a different sequence of events, yet the written log is the only record agreed by the team. In this case, the unresolved concern is that the contested criteria were not uniformly applied; further checks are needed before a general conclusion can be drawn. A statement that presents this concern as an established cause would exceed the available evidence.",
+      "upstream_question_ids": [
+        "M25D-GIC-C2-018-Q1",
+        "M25D-GIC-C2-018-Q2",
+        "M25D-GIC-C2-018-Q3"
+      ],
+      "upstream_editing_task_id": "M25D-GIC-C2-018-Q4",
+      "downstream_task_ids": [
+        "M26-GTS-C2-18-SG"
+      ],
+      "downstream_model_ids": [
+        "M26-GTS-C2-18-SG"
+      ],
+      "downstream_candidate_ids": [],
+      "needs_rewrite_question_and_answer_keys": true,
+      "requires_full_dependency_rehash": true,
+      "teacher_approved": false,
+      "applied_to_m25d": false,
+      "release_status": "NO_GO_PRODUCTION"
+    },
+    {
+      "case_id": "M25D-GIC-C2-019",
+      "linked_task_id": "M26-GTS-C2-19-SG",
+      "old_source_sha256": "41150b148c6f60cdb69cedf962e9d6c96e512a64fc0e1754874badb348dd2784",
+      "candidate_source_sha256": "dd0adf4158250497182ad6f1903f36a76b6400ec15470c1c4ad584fefee30833",
+      "old_fragment_en": "In this case, the unresolved concern about the external comparisons are imperfect requires further checks before a general conclusion can be drawn.",
+      "proposed_fragment_en": "In this case, the unresolved concern is that the external comparisons are imperfect; further checks are needed before a general conclusion can be drawn.",
+      "matches_in_current_source": 1,
+      "editorial_rationale_vi": "Sửa mệnh đề sai sau about thành that-clause; giữ nguyên nội dung và mức độ thận trọng.",
+      "source_candidate_en": "The institutional record concerning a standards revision is being scrutinised for temporal scope, evidential provenance and rhetorical overreach. The assessment chair is drafting the next update about a standards revision without assuming that earlier suggestions were formally accepted. The purpose of this note is to help readers distinguish the event itself from the decisions that may follow. The available record includes one qualification: the external comparisons are imperfect. Several people offered suggestions, but no one has checked whether those suggestions would work in every situation. On Monday, the assessment chair counted 12 benchmark studies at the standards council. The decision was postponed pending further evidence, not cancelled. The team has written a short explanation of the count so that the next reviewer can check how the information was collected. The proposed change is still being reviewed; no final approval has been issued. The final review is scheduled for Wednesday. The internal team, not an external regulator, prepared this preliminary assessment. Two apparently consistent accounts rely on different definitions of completion. Unless those definitions are reconciled, neither account should be used to authorise an irreversible action. The present note deliberately stops short of treating disagreement about terminology as proof of misconduct. The project team received a second request after the count, but that request is not included in the current total. In this case, the unresolved concern is that the external comparisons are imperfect; further checks are needed before a general conclusion can be drawn. A statement that presents this concern as an established cause would exceed the available evidence.",
+      "upstream_question_ids": [
+        "M25D-GIC-C2-019-Q1",
+        "M25D-GIC-C2-019-Q2",
+        "M25D-GIC-C2-019-Q3"
+      ],
+      "upstream_editing_task_id": "M25D-GIC-C2-019-Q4",
+      "downstream_task_ids": [
+        "M26-GTS-C2-19-SG"
+      ],
+      "downstream_model_ids": [
+        "M26-GTS-C2-19-SG"
+      ],
+      "downstream_candidate_ids": [],
+      "needs_rewrite_question_and_answer_keys": true,
+      "requires_full_dependency_rehash": true,
+      "teacher_approved": false,
+      "applied_to_m25d": false,
+      "release_status": "NO_GO_PRODUCTION"
+    },
+    {
+      "case_id": "M25D-GIC-C2-020",
+      "linked_task_id": "M26-GTS-C2-20-SG",
+      "old_source_sha256": "f872e66cf5ac36184d83cf6d8dc39a99418b208a05a2349dd8edbad1215bf667",
+      "candidate_source_sha256": "23cfa02191da8b887bdfecd20c9ef3248c23ad2fa813474f6f943e8304f61bd5",
+      "old_fragment_en": "In this case, the unresolved concern about the investigation is ongoing requires further checks before a general conclusion can be drawn.",
+      "proposed_fragment_en": "In this case, the unresolved concern is that the investigation is ongoing; further checks are needed before a general conclusion can be drawn.",
+      "matches_in_current_source": 1,
+      "editorial_rationale_vi": "Sửa mệnh đề sai sau about thành that-clause; giữ nguyên nội dung và mức độ thận trọng.",
+      "source_candidate_en": "A formal deliberation on an accountability statement must distinguish the authority of the available documents from the implications attributed to them. Responsibility for the current review of an accountability statement rests with the communications adviser, rather than with an outside authority. An important limitation in the current arrangements is that the investigation is ongoing. Several people offered suggestions, but no one has checked whether those suggestions would work in every situation. On Tuesday, the communications adviser counted 19 investigation summaries at the institutional board. The chair was about to publish the guidance when an objection was raised. The team has written a short explanation of the count so that the next reviewer can check how the information was collected. The proposed change is still being reviewed; no final approval has been issued. The final review is scheduled for Saturday. The internal team, not an external regulator, prepared this preliminary assessment. The committee is not being asked to decide whether every disputed interpretation is equally persuasive. It must identify which propositions are defensible, whose evidence supports them and which conclusions would exceed the limited mandate of the review. The preliminary record covers only the activity described here and should not be generalised to every site. In this case, the unresolved concern is that the investigation is ongoing; further checks are needed before a general conclusion can be drawn. A statement that presents this concern as an established cause would exceed the available evidence.",
+      "upstream_question_ids": [
+        "M25D-GIC-C2-020-Q1",
+        "M25D-GIC-C2-020-Q2",
+        "M25D-GIC-C2-020-Q3"
+      ],
+      "upstream_editing_task_id": "M25D-GIC-C2-020-Q4",
+      "downstream_task_ids": [
+        "M26-GTS-C2-20-SG"
+      ],
+      "downstream_model_ids": [
+        "M26-GTS-C2-20-SG"
+      ],
+      "downstream_candidate_ids": [],
+      "needs_rewrite_question_and_answer_keys": true,
+      "requires_full_dependency_rehash": true,
+      "teacher_approved": false,
+      "applied_to_m25d": false,
+      "release_status": "NO_GO_PRODUCTION"
+    }
+  ]
+}

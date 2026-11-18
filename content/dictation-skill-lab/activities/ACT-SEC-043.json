@@ -1,0 +1,282 @@
+{
+  "schema_version": "m34.1.0",
+  "activity_id": "ACT-SEC-043",
+  "status": "draft_pending_audio",
+  "module": "dictation",
+  "activity_kind": "section_skill_drill",
+  "title": "Choosing a Method for a Sleep Research Project — Phân tích quan điểm và đáp án gây nhiễu",
+  "section": 3,
+  "source_lesson_id": "S3-EXP-002",
+  "source_milestone": "M23",
+  "source_zip": "English_Skill_Lab_Dictation_M23_Section_3_Expanded_Practice_20_Full_Content.zip",
+  "reuse_parent_id": "S3-EXP-002",
+  "source_bank": "section_practice_training",
+  "source_audio_id": "section-training/S3-EXP-002/T01",
+  "source_audio_id_type": "logical_source_turn_key_not_physical_audio",
+  "source_segments": [
+    {
+      "source_audio_id": "section-training/S3-EXP-002/T01",
+      "source_audio_id_type": "logical_turn_key_not_verified_physical_audio",
+      "source_lesson_id": "S3-EXP-002",
+      "source_turn_id": "T01",
+      "source_speaker_id": "A",
+      "source_audio_asset_id": null,
+      "source_audio_url": null,
+      "start_ms": null,
+      "end_ms": null,
+      "source_transcript_sha256": "292437be5794df00dba75ce52e5bd81e56b8166bf216e0ba7815c1941f9df1e6",
+      "source_bank": "training",
+      "source_is_protected": false,
+      "audio_status": "not_generated",
+      "alignment_status": "pending_verified_turn_offsets"
+    },
+    {
+      "source_audio_id": "section-training/S3-EXP-002/T02",
+      "source_audio_id_type": "logical_turn_key_not_verified_physical_audio",
+      "source_lesson_id": "S3-EXP-002",
+      "source_turn_id": "T02",
+      "source_speaker_id": "B",
+      "source_audio_asset_id": null,
+      "source_audio_url": null,
+      "start_ms": null,
+      "end_ms": null,
+      "source_transcript_sha256": "7c315af39b2c6000802e16fe9a7e2d6160bb8fb24dd75541931d204093979de8",
+      "source_bank": "training",
+      "source_is_protected": false,
+      "audio_status": "not_generated",
+      "alignment_status": "pending_verified_turn_offsets"
+    },
+    {
+      "source_audio_id": "section-training/S3-EXP-002/T07",
+      "source_audio_id_type": "logical_turn_key_not_verified_physical_audio",
+      "source_lesson_id": "S3-EXP-002",
+      "source_turn_id": "T07",
+      "source_speaker_id": "A",
+      "source_audio_asset_id": null,
+      "source_audio_url": null,
+      "start_ms": null,
+      "end_ms": null,
+      "source_transcript_sha256": "07d363bf1f5411ab7fe4c6b98d586b6d5ad3e909f150f2b237b6ade7fa851702",
+      "source_bank": "training",
+      "source_is_protected": false,
+      "audio_status": "not_generated",
+      "alignment_status": "pending_verified_turn_offsets"
+    },
+    {
+      "source_audio_id": "section-training/S3-EXP-002/T08",
+      "source_audio_id_type": "logical_turn_key_not_verified_physical_audio",
+      "source_lesson_id": "S3-EXP-002",
+      "source_turn_id": "T08",
+      "source_speaker_id": "B",
+      "source_audio_asset_id": null,
+      "source_audio_url": null,
+      "start_ms": null,
+      "end_ms": null,
+      "source_transcript_sha256": "f00e9bd62b8d4c9195012286bbbf5304c6fa30c980eec0626fdec11c51df8096",
+      "source_bank": "training",
+      "source_is_protected": false,
+      "audio_status": "not_generated",
+      "alignment_status": "pending_verified_turn_offsets"
+    }
+  ],
+  "start_ms": null,
+  "end_ms": null,
+  "alignment_policy": "verified_turn_level_audio_or_measured_offsets_only",
+  "clip_audio_status": "not_generated",
+  "topic": "Sleep research and survey bias",
+  "drill_skill": "opinion_distractor",
+  "skill_tags": [
+    "section_practice",
+    "listening",
+    "reuse",
+    "section_3",
+    "opinion_tracking",
+    "contradiction",
+    "mcq_distractor"
+  ],
+  "teacher_notes": {
+    "goal": "Theo dõi phương án ban đầu, phản biện và kết luận trong thảo luận học thuật.",
+    "theory": "Section 3 có thể nhắc cả ba đáp án ở các thời điểm khác nhau. Chỉ chọn đáp án phù hợp với câu hỏi và quan điểm cuối cùng.",
+    "tip": "Nghe các dấu hiệu bác bỏ như impractical, however, instead, the better option, decided.",
+    "mistakes": [
+      "Chọn giải pháp được nhắc tới nhưng bị giáo viên phản đối.",
+      "Nhầm dự đoán của sinh viên với quyết định cuối cùng của nhóm."
+    ],
+    "worked_example": "Ví dụ ngoài đề: “An online survey is quick; however, interviews would explain the reasons.” → Chọn interviews nếu hỏi phương pháp được khuyến nghị."
+  },
+  "playback": {
+    "first_listen_max_replays": 1,
+    "guided_replay_max_replays": 3,
+    "source_turn_order": [
+      "T01",
+      "T02",
+      "T07",
+      "T08"
+    ],
+    "transcript_hidden_until_submit": true,
+    "answers_hidden_until_submit": true,
+    "playback_speed_default": 1.0,
+    "prelisten_question_reading": true,
+    "asset_concatenation": "respect_speaker_turns; never use timestamps until aligned"
+  },
+  "questions": [
+    {
+      "question_id": "ACT-SEC-043-Q1",
+      "phase": "first_listen",
+      "origin_question_id": "Q01",
+      "origin_question_type": "mcq",
+      "type": "single_choice",
+      "prompt_en": "Why was the automatic tracking app rejected?",
+      "prompt_vi": "Nghe phần được chỉ định và trả lời câu hỏi theo thông tin thực sự được phát. Đừng chọn phương án được nhắc trước khi người nói sửa ý.",
+      "options": [
+        {
+          "value": "It could not measure screen brightness",
+          "label": "It could not measure screen brightness"
+        },
+        {
+          "value": "It did not work on university phones",
+          "label": "It did not work on university phones"
+        },
+        {
+          "value": "It collected unnecessary personal data",
+          "label": "It collected unnecessary personal data"
+        }
+      ],
+      "correct_answers": [
+        "It collected unnecessary personal data"
+      ],
+      "correct_option": "C",
+      "word_limit": null,
+      "scoring_policy": "strict",
+      "play_turn_ids": [
+        "T01",
+        "T02"
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "evidence_excerpt_en": "I wanted to install an app that tracks screen time automatically, but several volunteers refused because it would collect more personal information than we need. They are happy to report their habits instead.",
+      "evidence_excerpt_exact_in_turn": true,
+      "evidence_source_kind": "authored_source_annotated",
+      "explanation_vi": "Người tham gia lo ứng dụng thu quá nhiều thông tin cá nhân.",
+      "grading_is_ielts_band": false
+    },
+    {
+      "question_id": "ACT-SEC-043-Q2",
+      "phase": "targeted_replay",
+      "origin_question_id": "Q04",
+      "origin_question_type": "mcq",
+      "type": "single_choice",
+      "prompt_en": "What is the concern about a month-long study?",
+      "prompt_vi": "Nghe phần được chỉ định và trả lời câu hỏi theo thông tin thực sự được phát. Đừng chọn phương án được nhắc trước khi người nói sửa ý.",
+      "options": [
+        {
+          "value": "Exams could distort the final week",
+          "label": "Exams could distort the final week"
+        },
+        {
+          "value": "Diary forms expire after twenty days",
+          "label": "Diary forms expire after twenty days"
+        },
+        {
+          "value": "Volunteers will be on holiday",
+          "label": "Volunteers will be on holiday"
+        }
+      ],
+      "correct_answers": [
+        "Exams could distort the final week"
+      ],
+      "correct_option": "A",
+      "word_limit": null,
+      "scoring_policy": "strict",
+      "play_turn_ids": [
+        "T07",
+        "T08"
+      ],
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "evidence_excerpt_en": "I imagined running it for one month, though exams fall in week four. Would two ordinary teaching weeks give cleaner observations, even if the total number of diary entries is smaller?",
+      "evidence_excerpt_exact_in_turn": true,
+      "evidence_source_kind": "authored_source_annotated",
+      "explanation_vi": "Tuần bốn có kỳ thi, gây nhiễu quan sát.",
+      "grading_is_ielts_band": false
+    },
+    {
+      "question_id": "ACT-SEC-043-Q3",
+      "phase": "focused_dictation_repair",
+      "type": "focused_dictation",
+      "prompt_vi": "Nghe lại lượt thoại rồi chép đúng ba từ còn thiếu trong đoạn trích (không viết cả câu).",
+      "prompt_en": "…exams fall in week four. Would two ____ give cleaner observations, even if the total…",
+      "word_limit": 3,
+      "correct_answers": [
+        "ordinary teaching weeks"
+      ],
+      "correct_option": null,
+      "options": null,
+      "normalization_policy": "casefold_unicode_nfkc_trim_whitespace_and_terminal_punctuation",
+      "play_turn_ids": [
+        "T08"
+      ],
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "evidence_excerpt_en": "ordinary teaching weeks",
+      "evidence_char_start": 79,
+      "evidence_char_end": 102,
+      "evidence_source_kind": "exact_spoken_transcript_source",
+      "evidence_excerpt_exact_in_turn": true,
+      "explanation_vi": "Cụm cần ghi chính xác là “ordinary teaching weeks”. Nghe lại vị trí này và đối chiếu các âm cuối, từ chức năng và trọng âm.",
+      "origin_question_id": null,
+      "grading_is_ielts_band": false,
+      "novel_question_authored_for_m34": true
+    }
+  ],
+  "evidence": {
+    "source_lesson_id": "S3-EXP-002",
+    "source_question_ids": [
+      "Q01",
+      "Q04"
+    ],
+    "source_turn_ids": [
+      "T01",
+      "T02",
+      "T07",
+      "T08"
+    ],
+    "source_transcript_sha256_map": {
+      "T01": "292437be5794df00dba75ce52e5bd81e56b8166bf216e0ba7815c1941f9df1e6",
+      "T02": "7c315af39b2c6000802e16fe9a7e2d6160bb8fb24dd75541931d204093979de8",
+      "T07": "07d363bf1f5411ab7fe4c6b98d586b6d5ad3e909f150f2b237b6ade7fa851702",
+      "T08": "f00e9bd62b8d4c9195012286bbbf5304c6fa30c980eec0626fdec11c51df8096"
+    },
+    "provenance": "original_training_2026_m21_m23_m24",
+    "copied_source_has_human_signoff": false,
+    "source_confidence": "authored_draft_not_independently_validated"
+  },
+  "exposure_rules": {
+    "allowed_source_banks": [
+      "section_practice_training"
+    ],
+    "train_only": true,
+    "never_use_protected_source": true,
+    "never_use_unseen_section_simulation": true,
+    "never_use_mock_before_first_attempt": true,
+    "track_source_audio_id": true,
+    "track_first_exposure": true,
+    "track_replay_count": true,
+    "not_band_estimate": true
+  },
+  "rights_status": "pending_review",
+  "review": {
+    "automated_content_check": "pending",
+    "human_language_review": "pending",
+    "human_audio_listening": "pending",
+    "teacher_signoff": "pending",
+    "timing_verification": "pending",
+    "rights_clearance": "pending",
+    "publish_ready": false
+  },
+  "import_policy": "insert_only_idempotent",
+  "version": "m34.1.0"
+}

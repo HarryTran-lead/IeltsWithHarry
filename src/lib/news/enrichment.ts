@@ -2,6 +2,7 @@ import { load } from "cheerio";
 import { z } from "zod";
 import { newsAdminClient } from "./sync";
 import { loadNewsSettings } from "./settings";
+import { pauseLegacyPressRewrites } from "./rights-pause";
 import { AiArtLimitError, aiArtBucket, aiArtCredit, aiArtLicense, aiArtSlots, aiArtSourceUrl, generateAiArt } from "./ai-art";
 
 /** IELTS Reading question types, in the order a set presents them. */
@@ -198,22 +199,29 @@ function geminiModels() {
  * configured model; anything else fails the request.
  */
 export type GeminiPart = { text: string } | { inlineData: { mimeType: string; data: string } };
-export async function geminiJson<T>(system: string, user: string | GeminiPart[], schema: unknown, { fetcher = fetch, maxOutputTokens = 16000, temperature = 0.4 }: { fetcher?: typeof fetch; maxOutputTokens?: number; temperature?: number } = {}): Promise<{ model: string; data: T }> {
-  const key = process.env.GEMINI_API_KEY;
-  if (!key) throw new Error("GEMINI_API_KEY is not configured");
+export function newsQuizFreeTierReady() {
+  return process.env.AI_FACTORY_FREE_TIER_ONLY === "true"
+    && process.env.AI_FACTORY_FREE_TIER_CONFIRMED === "true"
+    && Boolean(process.env.AI_FACTORY_GEMINI_API_KEY);
+}
+export async function geminiJson<T>(system: string, user: string | GeminiPart[], schema: unknown, { fetcher = fetch, maxOutputTokens = 16000, temperature = 0.4, googleSearch = false, models, freeTierOnly = false }: { fetcher?: typeof fetch; maxOutputTokens?: number; temperature?: number; googleSearch?: boolean; models?: string[]; freeTierOnly?: boolean } = {}): Promise<{ model: string; data: T }> {
+  const key = freeTierOnly ? (newsQuizFreeTierReady() ? process.env.AI_FACTORY_GEMINI_API_KEY : undefined) : process.env.GEMINI_API_KEY;
+  if (!key) throw new Error(freeTierOnly ? "Confirmed free-tier Gemini key is not configured" : "GEMINI_API_KEY is not configured");
   const request = JSON.stringify({
     systemInstruction: { parts: [{ text: system }] },
     contents: [{ role: "user", parts: typeof user === "string" ? [{ text: user }] : user }],
+    ...(googleSearch ? { tools: [{ googleSearch: {} }] } : {}),
     generationConfig: { maxOutputTokens, temperature, responseFormat: { text: { mimeType: "APPLICATION_JSON", schema } } },
   });
   let lastError: Error = new Error("AI service unavailable");
-  for (const model of geminiModels()) {
+  for (const model of models ?? geminiModels()) {
     const response = await fetcher(`https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent`, {
       method: "POST", signal: AbortSignal.timeout(45000), cache: "no-store",
       headers: { "x-goog-api-key": key, "Content-Type": "application/json" }, body: request,
     });
     if (response.status === 429) { lastError = await quotaError(response); continue; }
     if (response.status === 404) { lastError = new Error(`AI model ${model} is unavailable`); continue; }
+    if (response.status >= 500) { lastError = new Error(`AI service returned HTTP ${response.status}`); continue; }
     if (!response.ok) {
       const detail = await response.json().then((body: { error?: { message?: string } }) => body.error?.message ?? "", () => "");
       throw new Error(`AI service returned HTTP ${response.status}${detail ? `: ${detail.slice(0, 200)}` : ""}`);
@@ -262,7 +270,7 @@ export async function generateNewsQuiz(title: string, body: string, fetcher: typ
 ${quizInstructionsFor(plan)}
 
 Additional editor guidance (apply only when consistent with the requirements above):
-${customPrompt.slice(0, 4000)}`, `Article title: ${title}\n\nArticle text:\n${excerpt}`, schema, { fetcher });
+${customPrompt.slice(0, 4000)}`, `Article title: ${title}\n\nArticle text:\n${excerpt}`, schema, { fetcher, freeTierOnly: true });
   return { model, ...finalizeQuiz(data, excerpt, plan) };
 }
 
@@ -552,20 +560,50 @@ async function createAiIllustration(db: Db, article: Claim, query: string, fetch
   };
 }
 
+export function scheduledNewsWorkSlot(now: Date): "quiz" | "image" | "translation" | "discovery" {
+  const minute = now.getUTCMinutes();
+  if (minute % 20 === 15) return "discovery";
+  if (minute === 25) return "image";
+  if (minute === 45 && now.getUTCHours() % 2 === 0) return "translation";
+  return "quiz";
+}
+
 export async function enrichNews({ scheduled = false }: { scheduled?: boolean } = {}) {
   const db = newsAdminClient();
+  await pauseLegacyPressRewrites(db);
   const settings = await loadNewsSettings(db);
-  const result = { imagesChecked: 0, imagesAdded: 0, quizzesChecked: 0, quizzesAdded: 0, rewritesChecked: 0, rewritesAdded: 0, aiConfigured: Boolean(process.env.GEMINI_API_KEY), paused: scheduled && !settings.auto_enrich_enabled, quotaLimited: false, errors: [] as string[] };
+  const result = { imagesChecked: 0, imagesAdded: 0, quizzesChecked: 0, quizzesAdded: 0, rewritesChecked: 0, rewritesAdded: 0, translationsChecked: 0, translationsAdded: 0, aiConfigured: Boolean(process.env.GEMINI_API_KEY), paused: scheduled && !settings.auto_enrich_enabled, quotaLimited: false, errors: [] as string[] };
   if (result.paused) return result;
-  // On scheduled runs, give the available AI capacity to recent article images
-  // first. Quiz and rewrite work use the other ten-minute slots.
-  // Loaded on demand: rewrite.ts builds on this module's quiz helpers.
-  const { rewriteVietnamNews } = await import("./rewrite");
-  if (scheduled) {
+  const slot = scheduled ? scheduledNewsWorkSlot(new Date()) : null;
+  // Reserve 36 quiz slots, 24 image slots, 12 translation slots and 72 fact
+  // discovery slots per day. A busy backlog in one kind cannot starve quizzes.
+  if (slot === "quiz") {
+    await enrichQuiz(db, result, settings, true);
+    if (result.quizzesChecked) return result;
+  }
+  if (slot === "image") {
     await enrichImages(db, result);
-    if (!result.imagesChecked) await Promise.all([enrichQuiz(db, result, settings, scheduled), rewriteVietnamNews(db, result, settings)]);
+    if (result.imagesChecked) return result;
+  }
+  if (!scheduled || slot === "translation") {
+    const { translateNextNewsArticle } = await import("./article-translation");
+    const translated = await translateNextNewsArticle(db, fetch, true);
+    result.translationsChecked = translated.checked;
+    result.translationsAdded = translated.added;
+    if (translated.error) result.errors.push(`Translation: ${translated.error}`);
+    if (translated.quotaLimited) result.quotaLimited = true;
+    if (translated.checked) return result;
+  }
+  if (!scheduled || slot === "discovery") {
+    const { discoverPressFacts } = await import("./press-discovery");
+    await discoverPressFacts(db, result, settings, fetch, scheduled);
+    if (result.rewritesChecked) return result;
+  }
+  if (scheduled) {
+    if (slot !== "image") await enrichImages(db, result);
+    if (!result.imagesChecked && slot !== "quiz") await enrichQuiz(db, result, settings, true);
   } else {
-    await Promise.all([enrichImages(db, result), enrichQuiz(db, result, settings, scheduled), rewriteVietnamNews(db, result, settings)]);
+    await Promise.all([enrichImages(db, result), enrichQuiz(db, result, settings, scheduled)]);
   }
   return result;
 }
@@ -638,7 +676,7 @@ async function enrichImages(db: Db, result: EnrichResult) {
 }
 
 async function enrichQuiz(db: Db, result: EnrichResult, settings: Awaited<ReturnType<typeof loadNewsSettings>>, scheduled: boolean) {
-  if (!result.aiConfigured) return;
+  if (!newsQuizFreeTierReady()) { result.errors.push("Confirmed free-tier Gemini key is not configured for news quizzes"); return; }
   if (scheduled) {
     const today = new Date(); today.setUTCHours(0, 0, 0, 0);
     const { count, error } = await db.from("news_enrichment_attempts").select("article_id", { count: "exact", head: true }).eq("kind", "quiz").gte("attempted_at", today.toISOString());

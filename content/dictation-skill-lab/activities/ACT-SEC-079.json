@@ -1,0 +1,254 @@
+{
+  "schema_version": "m34.2.0",
+  "activity_id": "ACT-SEC-079",
+  "status": "draft_pending_audio",
+  "module": "dictation",
+  "activity_kind": "section_skill_drill",
+  "title": "Southfield Food Education Centre — Dẫn đường trên bản đồ và sửa lỗi",
+  "section": 2,
+  "source_lesson_id": "S2-EXP-019",
+  "source_milestone": "M22",
+  "source_zip": "English_Skill_Lab_Dictation_M22_Section_2_Expanded_Practice_20.zip",
+  "reuse_parent_id": "S2-EXP-019",
+  "source_bank": "section_practice_training",
+  "source_audio_id": "section-training/S2-EXP-019/T03",
+  "source_audio_id_type": "logical_source_turn_key_not_physical_audio",
+  "source_segments": [
+    {
+      "source_audio_id": "section-training/S2-EXP-019/T03",
+      "source_audio_id_type": "logical_turn_key_not_verified_physical_audio",
+      "source_lesson_id": "S2-EXP-019",
+      "source_turn_id": "T03",
+      "source_speaker_id": "A",
+      "source_audio_asset_id": null,
+      "source_audio_url": null,
+      "start_ms": null,
+      "end_ms": null,
+      "source_transcript_sha256": "20e2dced19a296c9226eb0dc0c248c513e187a9806c57d55686ec33a7f712057",
+      "source_bank": "training",
+      "source_is_protected": false,
+      "audio_status": "not_generated",
+      "alignment_status": "pending_verified_turn_offsets"
+    },
+    {
+      "source_audio_id": "section-training/S2-EXP-019/T09",
+      "source_audio_id_type": "logical_turn_key_not_verified_physical_audio",
+      "source_lesson_id": "S2-EXP-019",
+      "source_turn_id": "T09",
+      "source_speaker_id": "A",
+      "source_audio_asset_id": null,
+      "source_audio_url": null,
+      "start_ms": null,
+      "end_ms": null,
+      "source_transcript_sha256": "564566af884988834315c54db718db93226f5e5d5e9066a927583df57ce560c1",
+      "source_bank": "training",
+      "source_is_protected": false,
+      "audio_status": "not_generated",
+      "alignment_status": "pending_verified_turn_offsets"
+    }
+  ],
+  "start_ms": null,
+  "end_ms": null,
+  "alignment_policy": "verified_turn_level_audio_or_measured_offsets_only",
+  "clip_audio_status": "not_generated",
+  "topic": "Cooking orientation",
+  "drill_skill": "map_direction_navigation",
+  "skill_tags": [
+    "section_practice",
+    "listening",
+    "reuse",
+    "section_2",
+    "map_navigation",
+    "compass_orientation",
+    "note_completion",
+    "focused_dictation"
+  ],
+  "teacher_notes": {
+    "goal": "Phân biệt vị trí theo hướng Bắc/Nam/Đông/Tây, sau đó xác minh thông tin thực tế được nói.",
+    "theory": "Map Labelling: trước tiên tìm đúng cổng vào (có thể ở các hướng khác nhau), sau đó theo lối đi và mốc cố định trên sơ đồ để suy ra chữ cái.",
+    "tip": "Không mặc định cổng nằm phía Nam; đối chiếu mốc cố định và hướng la bàn trước khi chọn.",
+    "mistakes": [
+      "Tưởng mọi bản đồ có cấu trúc hai hàng.",
+      "Không xác định đúng tên mốc cố định.",
+      "Nhầm hướng tương đối khi bản đồ khác nhau."
+    ],
+    "worked_example": "Ví dụ khác: “The rehearsal area is at the far north-east corner.” → ô góc trên bên phải của sơ đồ."
+  },
+  "playback": {
+    "first_listen_max_replays": 1,
+    "guided_replay_max_replays": 3,
+    "source_turn_order": [
+      "T03",
+      "T09"
+    ],
+    "transcript_hidden_until_submit": true,
+    "answers_hidden_until_submit": true,
+    "playback_speed_default": 1.0,
+    "prelisten_question_reading": true,
+    "asset_concatenation": "respect_source_turns_verified_only"
+  },
+  "questions": [
+    {
+      "question_id": "ACT-SEC-079-Q1",
+      "phase": "first_listen",
+      "origin_question_id": "Q01",
+      "origin_question_type": "map_labelling",
+      "type": "map_labelling",
+      "prompt_en": "Which letter marks Recipe Library?",
+      "prompt_vi": "Nghe mốc cố định, xác định hướng tương đối rồi chọn chữ cái trên bản đồ.",
+      "options": [
+        {
+          "value": "A",
+          "label": "A"
+        },
+        {
+          "value": "B",
+          "label": "B"
+        },
+        {
+          "value": "C",
+          "label": "C"
+        },
+        {
+          "value": "D",
+          "label": "D"
+        },
+        {
+          "value": "E",
+          "label": "E"
+        },
+        {
+          "value": "F",
+          "label": "F"
+        },
+        {
+          "value": "G",
+          "label": "G"
+        },
+        {
+          "value": "H",
+          "label": "H"
+        }
+      ],
+      "correct_answers": [
+        "F"
+      ],
+      "correct_option": "F",
+      "word_limit": null,
+      "scoring_policy": "map_letter",
+      "map_asset_path": "04_MAP_ASSETS_CLIENT_SAFE/M22_MAP_019.svg",
+      "map_asset_id": "M22-MAP-019",
+      "play_turn_ids": [
+        "T03"
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "evidence_excerpt_en": "Now find the Demo Counter. From that landmark, look south to the nearest lettered point. That's where you'll find Recipe Library. Don't confuse it with the other lettered buildings further away.",
+      "evidence_excerpt_exact_in_turn": true,
+      "evidence_source_kind": "original_m22_training",
+      "explanation_vi": "Trên sơ đồ mới, tìm mốc Demo Counter, rồi nhìn ngay phía nam. Khu được đánh dấu F là Recipe Library.",
+      "grading_is_ielts_band": false
+    },
+    {
+      "question_id": "ACT-SEC-079-Q2",
+      "phase": "targeted_replay",
+      "origin_question_id": "Q07",
+      "origin_question_type": "note_completion",
+      "type": "spoken_word_completion",
+      "prompt_en": "Required document: ____",
+      "prompt_vi": "Lắng nghe chi tiết đã được xác nhận, bỏ qua thông tin cũ.",
+      "options": null,
+      "correct_answers": [
+        "allergy form"
+      ],
+      "correct_option": null,
+      "word_limit": 3,
+      "scoring_policy": "controlled_variants",
+      "play_turn_ids": [
+        "T09"
+      ],
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "evidence_excerpt_en": "Return your allergy form to the tutor even if you have no known allergies.",
+      "evidence_excerpt_exact_in_turn": true,
+      "evidence_source_kind": "original_m22_training",
+      "explanation_vi": "Nghe thông tin cuối cùng về required document; đáp án là “allergy form”, không chọn thông tin cũ hoặc phương án bị loại.",
+      "grading_is_ielts_band": false
+    },
+    {
+      "question_id": "ACT-SEC-079-Q3",
+      "phase": "focused_dictation_repair",
+      "origin_question_id": null,
+      "type": "focused_dictation",
+      "prompt_vi": "Nghe lại và chép chính xác cụm chỉ vị trí bị ẩn (không viết cả câu).",
+      "prompt_en": "Now find ____. From that landmark, look south to the nearest lettered point. That's where you'll find Recipe Library. Don't confuse it with the other lettered buildings further away.",
+      "word_limit": 3,
+      "correct_answers": [
+        "the Demo Counter"
+      ],
+      "correct_option": null,
+      "options": null,
+      "normalization_policy": "casefold_unicode_nfkc_trim_whitespace_and_terminal_punctuation",
+      "play_turn_ids": [
+        "T03"
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "evidence_excerpt_en": "the Demo Counter",
+      "evidence_char_start": 9,
+      "evidence_char_end": 25,
+      "evidence_source_kind": "exact_spoken_transcript_source",
+      "evidence_excerpt_exact_in_turn": true,
+      "explanation_vi": "Nghe mốc định hướng trong câu thoại mới, đối chiếu cách viết chính xác sau khi nộp.",
+      "grading_is_ielts_band": false,
+      "novel_question_authored_for_m34": true
+    }
+  ],
+  "evidence": {
+    "source_lesson_id": "S2-EXP-019",
+    "source_question_ids": [
+      "Q01",
+      "Q07"
+    ],
+    "source_turn_ids": [
+      "T03",
+      "T09"
+    ],
+    "source_transcript_sha256_map": {
+      "T03": "78d800f6a1a6440a58d5754d528620d40b5da0a220289a7e3d09e97d2c7ecedc",
+      "T09": "564566af884988834315c54db718db93226f5e5d5e9066a927583df57ce560c1"
+    },
+    "provenance": "original_training_2026_m22",
+    "source_confidence": "authored_draft_requires_human_signoff"
+  },
+  "exposure_rules": {
+    "allowed_source_banks": [
+      "section_practice_training"
+    ],
+    "train_only": true,
+    "never_use_protected_source": true,
+    "never_use_unseen_section_simulation": true,
+    "never_use_mock_before_first_attempt": true,
+    "track_source_audio_id": true,
+    "track_first_exposure": true,
+    "track_replay_count": true,
+    "not_band_estimate": true
+  },
+  "rights_status": "pending_review",
+  "review": {
+    "automated_content_check": "passed_structural",
+    "human_language_review": "pending",
+    "human_audio_listening": "pending",
+    "teacher_signoff": "pending",
+    "timing_verification": "pending",
+    "rights_clearance": "pending",
+    "publish_ready": false
+  },
+  "import_policy": "conditional_replace_draft_only_must_not_override_exposed_record",
+  "version": "m34.2.0",
+  "content_source_version": "m22.1.0-distinct-maps",
+  "release_eligible": false
+}

@@ -1,0 +1,616 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "FND2-098",
+  "status": "draft",
+  "level": "L2",
+  "section": 0,
+  "topic": "Foundation M20 – connected_speech",
+  "title": "Directions and linked instructions",
+  "learning_objectives_vi": [
+    "Nghe chuỗi chỉ dẫn nhiều bước, giới từ chỉ vị trí và mốc rẽ.",
+    "Kiểm tra bằng lời nghe mới, không lấy số bài hoàn thành làm bằng chứng thành thạo.",
+    "Không suy ra IELTS band từ điểm Foundation."
+  ],
+  "content_format": "sentence_drill",
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Foundation narrator",
+      "tts_voice_id": null,
+      "accent_requested": "british"
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "Walk along the river until you reach the footbridge.",
+      "translation_vi": "Đi dọc sông cho đến khi bạn tới cầu đi bộ.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m20",
+        "directions_chunking",
+        "connected_speech"
+      ],
+      "target_value": "footbridge",
+      "target_kind": "lexical_phrase",
+      "target_meaning_vi": "cầu đi bộ",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "A",
+      "text_en": "Go through the glass doors and turn left at reception.",
+      "translation_vi": "Đi qua cửa kính rồi rẽ trái tại quầy lễ tân.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m20",
+        "directions_chunking",
+        "connected_speech"
+      ],
+      "target_value": "turn left",
+      "target_kind": "lexical_phrase",
+      "target_meaning_vi": "rẽ trái",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "A",
+      "text_en": "Head up the stairs and look for the second corridor.",
+      "translation_vi": "Đi lên cầu thang rồi tìm hành lang thứ hai.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m20",
+        "directions_chunking",
+        "connected_speech"
+      ],
+      "target_value": "second corridor",
+      "target_kind": "lexical_phrase",
+      "target_meaning_vi": "hành lang thứ hai",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "A",
+      "text_en": "Take the exit after the petrol station, not the one before it.",
+      "translation_vi": "Đi lối ra sau trạm xăng chứ không phải lối trước đó.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m20",
+        "directions_chunking",
+        "connected_speech"
+      ],
+      "target_value": "after the petrol station",
+      "target_kind": "lexical_phrase",
+      "target_meaning_vi": "sau trạm xăng",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "A",
+      "text_en": "Follow the signs until the path splits into two.",
+      "translation_vi": "Đi theo biển báo cho đến khi lối đi chia làm hai.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m20",
+        "directions_chunking",
+        "connected_speech"
+      ],
+      "target_value": "splits into two",
+      "target_kind": "lexical_phrase",
+      "target_meaning_vi": "chia làm hai",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "A",
+      "text_en": "Keep to the right and pass the small ticket office.",
+      "translation_vi": "Giữ bên phải và đi qua phòng bán vé nhỏ.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m20",
+        "directions_chunking",
+        "connected_speech"
+      ],
+      "target_value": "ticket office",
+      "target_kind": "lexical_phrase",
+      "target_meaning_vi": "phòng bán vé",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "The lift is opposite the information desk.",
+      "translation_vi": "Thang máy nằm đối diện quầy thông tin.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m20",
+        "directions_chunking",
+        "connected_speech"
+      ],
+      "target_value": "opposite",
+      "target_kind": "lexical_phrase",
+      "target_meaning_vi": "đối diện",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "A",
+      "text_en": "Turn back if you reach the loading bay.",
+      "translation_vi": "Hãy quay lại nếu bạn đến khu bốc dỡ hàng.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m20",
+        "directions_chunking",
+        "connected_speech"
+      ],
+      "target_value": "loading bay",
+      "target_kind": "lexical_phrase",
+      "target_meaning_vi": "khu bốc dỡ hàng",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T09",
+      "speaker_id": "A",
+      "text_en": "Cross over at the lights, then stay on the same side.",
+      "translation_vi": "Băng qua đường ở đèn giao thông rồi cứ đi cùng phía.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m20",
+        "directions_chunking",
+        "connected_speech"
+      ],
+      "target_value": "at the lights",
+      "target_kind": "lexical_phrase",
+      "target_meaning_vi": "tại đèn giao thông",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T10",
+      "speaker_id": "A",
+      "text_en": "You'll find the workshop just beyond the courtyard.",
+      "translation_vi": "Bạn sẽ thấy xưởng thực hành ngay phía sau sân trong.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m20",
+        "directions_chunking",
+        "connected_speech"
+      ],
+      "target_value": "beyond the courtyard",
+      "target_kind": "lexical_phrase",
+      "target_meaning_vi": "ở phía sau sân trong",
+      "bank_role": "training"
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "type": "dictation",
+      "prompt": "Nghe lượt T01 rồi chép đầy đủ câu tiếng Anh được nói.",
+      "correct_answers": [
+        "Walk along the river until you reach the footbridge."
+      ],
+      "evidence_turn_ids": [
+        "T01"
+      ],
+      "explanation_vi": "Câu gốc: Walk along the river until you reach the footbridge. Nghĩa: Đi dọc sông cho đến khi bạn tới cầu đi bộ.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "connected_speech"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q02",
+      "type": "dictation",
+      "prompt": "Nghe lượt T02 rồi chép đầy đủ câu tiếng Anh được nói.",
+      "correct_answers": [
+        "Go through the glass doors and turn left at reception."
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Câu gốc: Go through the glass doors and turn left at reception. Nghĩa: Đi qua cửa kính rồi rẽ trái tại quầy lễ tân.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "connected_speech"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q03",
+      "type": "dictation",
+      "prompt": "Nghe lượt T03 rồi chép đầy đủ câu tiếng Anh được nói.",
+      "correct_answers": [
+        "Head up the stairs and look for the second corridor."
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Câu gốc: Head up the stairs and look for the second corridor. Nghĩa: Đi lên cầu thang rồi tìm hành lang thứ hai.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "connected_speech"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q04",
+      "type": "dictation",
+      "prompt": "Nghe lượt T04 rồi chép đầy đủ câu tiếng Anh được nói.",
+      "correct_answers": [
+        "Take the exit after the petrol station, not the one before it."
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Câu gốc: Take the exit after the petrol station, not the one before it. Nghĩa: Đi lối ra sau trạm xăng chứ không phải lối trước đó.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "connected_speech"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q05",
+      "type": "dictation",
+      "prompt": "Nghe lượt T05 rồi chép đầy đủ câu tiếng Anh được nói.",
+      "correct_answers": [
+        "Follow the signs until the path splits into two."
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Câu gốc: Follow the signs until the path splits into two. Nghĩa: Đi theo biển báo cho đến khi lối đi chia làm hai.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "connected_speech"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q06",
+      "type": "dictation",
+      "prompt": "Nghe lượt T06 rồi chép đầy đủ câu tiếng Anh được nói.",
+      "correct_answers": [
+        "Keep to the right and pass the small ticket office."
+      ],
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "explanation_vi": "Câu gốc: Keep to the right and pass the small ticket office. Nghĩa: Giữ bên phải và đi qua phòng bán vé nhỏ.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "connected_speech"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q07",
+      "type": "dictation",
+      "prompt": "Nghe lượt T07 rồi chép đầy đủ câu tiếng Anh được nói.",
+      "correct_answers": [
+        "The lift is opposite the information desk."
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "Câu gốc: The lift is opposite the information desk. Nghĩa: Thang máy nằm đối diện quầy thông tin.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "connected_speech"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q08",
+      "type": "dictation",
+      "prompt": "Nghe lượt T08 rồi chép đầy đủ câu tiếng Anh được nói.",
+      "correct_answers": [
+        "Turn back if you reach the loading bay."
+      ],
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "explanation_vi": "Câu gốc: Turn back if you reach the loading bay. Nghĩa: Hãy quay lại nếu bạn đến khu bốc dỡ hàng.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "connected_speech"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q09",
+      "type": "dictation",
+      "prompt": "Nghe lượt T09 rồi chép đầy đủ câu tiếng Anh được nói.",
+      "correct_answers": [
+        "Cross over at the lights, then stay on the same side."
+      ],
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "explanation_vi": "Câu gốc: Cross over at the lights, then stay on the same side. Nghĩa: Băng qua đường ở đèn giao thông rồi cứ đi cùng phía.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "connected_speech"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q10",
+      "type": "dictation",
+      "prompt": "Nghe lượt T10 rồi chép đầy đủ câu tiếng Anh được nói.",
+      "correct_answers": [
+        "You'll find the workshop just beyond the courtyard."
+      ],
+      "evidence_turn_ids": [
+        "T10"
+      ],
+      "explanation_vi": "Câu gốc: You'll find the workshop just beyond the courtyard. Nghĩa: Bạn sẽ thấy xưởng thực hành ngay phía sau sân trong.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "connected_speech"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q11",
+      "type": "short_answer",
+      "prompt": "Nghe lượt T06. Viết đúng từ/cụm tiếng Anh diễn đạt ý: “phòng bán vé”.",
+      "correct_answers": [
+        "ticket office"
+      ],
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "explanation_vi": "Người nói dùng “ticket office” trong câu: Keep to the right and pass the small ticket office. Nghĩa: Giữ bên phải và đi qua phòng bán vé nhỏ.",
+      "scoring_policy": "lexical_case_punctuation_insensitive_server",
+      "question_tags": [
+        "connected_speech",
+        "targeted_listening",
+        "guided_replay"
+      ],
+      "max_replays_practice": 5,
+      "word_limit": 4,
+      "first_listen_only_for_mastery": false
+    },
+    {
+      "question_id": "Q12",
+      "type": "short_answer",
+      "prompt": "Nghe lượt T07. Viết đúng từ/cụm tiếng Anh diễn đạt ý: “đối diện”.",
+      "correct_answers": [
+        "opposite"
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "Người nói dùng “opposite” trong câu: The lift is opposite the information desk. Nghĩa: Thang máy nằm đối diện quầy thông tin.",
+      "scoring_policy": "lexical_case_punctuation_insensitive_server",
+      "question_tags": [
+        "connected_speech",
+        "targeted_listening",
+        "guided_replay"
+      ],
+      "max_replays_practice": 5,
+      "word_limit": 3,
+      "first_listen_only_for_mastery": false
+    },
+    {
+      "question_id": "Q13",
+      "type": "short_answer",
+      "prompt": "Nghe lượt T08. Viết đúng từ/cụm tiếng Anh diễn đạt ý: “khu bốc dỡ hàng”.",
+      "correct_answers": [
+        "loading bay"
+      ],
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "explanation_vi": "Người nói dùng “loading bay” trong câu: Turn back if you reach the loading bay. Nghĩa: Hãy quay lại nếu bạn đến khu bốc dỡ hàng.",
+      "scoring_policy": "lexical_case_punctuation_insensitive_server",
+      "question_tags": [
+        "connected_speech",
+        "targeted_listening",
+        "guided_replay"
+      ],
+      "max_replays_practice": 5,
+      "word_limit": 4,
+      "first_listen_only_for_mastery": false
+    },
+    {
+      "question_id": "Q14",
+      "type": "short_answer",
+      "prompt": "Nghe lượt T09. Viết đúng từ/cụm tiếng Anh diễn đạt ý: “tại đèn giao thông”.",
+      "correct_answers": [
+        "at the lights"
+      ],
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "explanation_vi": "Người nói dùng “at the lights” trong câu: Cross over at the lights, then stay on the same side. Nghĩa: Băng qua đường ở đèn giao thông rồi cứ đi cùng phía.",
+      "scoring_policy": "lexical_case_punctuation_insensitive_server",
+      "question_tags": [
+        "connected_speech",
+        "targeted_listening",
+        "guided_replay"
+      ],
+      "max_replays_practice": 5,
+      "word_limit": 5,
+      "first_listen_only_for_mastery": false
+    },
+    {
+      "question_id": "Q15",
+      "type": "short_answer",
+      "prompt": "Nghe lượt T10. Viết đúng từ/cụm tiếng Anh diễn đạt ý: “ở phía sau sân trong”.",
+      "correct_answers": [
+        "beyond the courtyard"
+      ],
+      "evidence_turn_ids": [
+        "T10"
+      ],
+      "explanation_vi": "Người nói dùng “beyond the courtyard” trong câu: You'll find the workshop just beyond the courtyard. Nghĩa: Bạn sẽ thấy xưởng thực hành ngay phía sau sân trong.",
+      "scoring_policy": "lexical_case_punctuation_insensitive_server",
+      "question_tags": [
+        "connected_speech",
+        "targeted_listening",
+        "guided_replay"
+      ],
+      "max_replays_practice": 5,
+      "word_limit": 5,
+      "first_listen_only_for_mastery": false
+    }
+  ],
+  "vocabulary": [
+    {
+      "term": "footbridge",
+      "pos": "word / expression (contextual)",
+      "meaning_vi": "cầu đi bộ",
+      "example_en": "Walk along the river until you reach the footbridge.",
+      "example_vi": "Đi dọc sông cho đến khi bạn tới cầu đi bộ.",
+      "is_illustrative_context": false
+    },
+    {
+      "term": "turn left",
+      "pos": "phrase",
+      "meaning_vi": "rẽ trái",
+      "example_en": "Go through the glass doors and turn left at reception.",
+      "example_vi": "Đi qua cửa kính rồi rẽ trái tại quầy lễ tân.",
+      "is_illustrative_context": false
+    },
+    {
+      "term": "second corridor",
+      "pos": "phrase",
+      "meaning_vi": "hành lang thứ hai",
+      "example_en": "Head up the stairs and look for the second corridor.",
+      "example_vi": "Đi lên cầu thang rồi tìm hành lang thứ hai.",
+      "is_illustrative_context": false
+    },
+    {
+      "term": "after the petrol station",
+      "pos": "phrase",
+      "meaning_vi": "sau trạm xăng",
+      "example_en": "Take the exit after the petrol station, not the one before it.",
+      "example_vi": "Đi lối ra sau trạm xăng chứ không phải lối trước đó.",
+      "is_illustrative_context": false
+    },
+    {
+      "term": "splits into two",
+      "pos": "phrase",
+      "meaning_vi": "chia làm hai",
+      "example_en": "Follow the signs until the path splits into two.",
+      "example_vi": "Đi theo biển báo cho đến khi lối đi chia làm hai.",
+      "is_illustrative_context": false
+    },
+    {
+      "term": "ticket office",
+      "pos": "phrase",
+      "meaning_vi": "phòng bán vé",
+      "example_en": "Keep to the right and pass the small ticket office.",
+      "example_vi": "Giữ bên phải và đi qua phòng bán vé nhỏ.",
+      "is_illustrative_context": false
+    }
+  ],
+  "micro_skill_id": "directions_chunking",
+  "bank_role": "training",
+  "content_design": {
+    "sequence": "10_unique_turns",
+    "first_listen": "1x",
+    "guided_replay_max": 5,
+    "mastery_requires_unseen": true,
+    "category": "connected_speech",
+    "post_submit_review_only": true,
+    "unseen_assessment_id": "FND2-098-HOLDOUT",
+    "holdout_must_be_server_side": true,
+    "no_band_claim": true,
+    "production_import_requires_approval": true
+  },
+  "audio": {
+    "status": "not_generated",
+    "url": null,
+    "duration_ms": null,
+    "provider": null,
+    "model": null,
+    "voice_config": null,
+    "format": null,
+    "audio_sha256": null,
+    "source_transcript_hash": "618a85dd49feab28d2a8912734d90bb40bc3e4caa671f5e3f5118576b588248b"
+  },
+  "qa": {
+    "content_reviewed": false,
+    "answers_verified": false,
+    "audio_verified": false,
+    "human_signed_off": false,
+    "duplicate_reviewed": false,
+    "notes": [
+      "Original M20 draft: automatic checks do not replace teacher/audio review."
+    ]
+  },
+  "provenance": {
+    "content_origin": "original_ai_assisted",
+    "rights_status": "pending_tts_audio_terms_review",
+    "source_urls": [],
+    "reviewer": null
+  },
+  "release_metadata": {
+    "published_at": null,
+    "version": 1
+  },
+  "lesson_theory_vi": {
+    "core_rule": "Nghe chuỗi chỉ dẫn nhiều bước, giới từ chỉ vị trí và mốc rẽ.",
+    "worked_contrasts": [
+      {
+        "spoken_example": "Could you take it away?",
+        "written_value": "take it away",
+        "teacher_note_vi": "Khi phụ âm đứng trước nguyên âm, các tiếng có thể nối nhưng chữ viết vẫn tách từ."
+      },
+      {
+        "spoken_example": "There is a note on the desk.",
+        "written_value": "a note on the desk",
+        "teacher_note_vi": "Từ chức năng không nhấn vẫn cần chép đầy đủ; kiểm tra thực tế cách đọc qua audio."
+      }
+    ],
+    "learning_steps": [
+      "Xem ví dụ hướng dẫn, nhưng không xem trước lời của các lượt nghe cần làm.",
+      "Nghe lần đầu và chép hoặc trả lời bằng chứng; khi luyện có thể nghe lại tối đa năm lần.",
+      "Sau khi nộp mới xem dịch nghĩa, giải thích và mẫu âm.",
+      "Kiểm tra bằng câu mới ngoài ngân hàng luyện, chỉ ghi nhận Mastered khi đủ bằng chứng."
+    ],
+    "common_mistakes": [
+      "Chép theo cách phát âm ước đoán, bỏ trợ động từ hoặc giới từ.",
+      "Chọn số/ngày xuất hiện ban đầu thay vì thông tin cuối cùng.",
+      "Nghe thuộc câu cũ nhưng không hiểu câu mới.",
+      "Coi transcript là bằng chứng TTS có nối âm tự nhiên (sai)."
+    ],
+    "phonetic_review_required": true,
+    "phonetic_note": "Các biến thể connected speech khác nhau theo giọng, ngữ cảnh và tốc độ; cần giáo viên nghe file thật."
+  }
+}

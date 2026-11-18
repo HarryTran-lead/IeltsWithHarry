@@ -1,0 +1,347 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "DICT-S2-011",
+  "status": "draft",
+  "level": "L3",
+  "section": 2,
+  "topic": "Safety Instructions",
+  "title": "Safety Rules at the Adventure Centre",
+  "learning_objectives_vi": [
+    "Nghe độc thoại chủ đề Safety Instructions và xác định mục đích thông báo.",
+    "Nhận diện cấu trúc ý và các chi tiết quan trọng theo thứ tự phát biểu.",
+    "Luyện nhận diện thời gian, chi phí, điều kiện và chi tiết được thay đổi."
+  ],
+  "content_format": "section_bridge",
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Visitor guide / programme coordinator (one narrator)",
+      "tts_voice_id": null,
+      "accent_requested": "british"
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "Before the activity begins, I need everyone to listen to a few safety rules.",
+      "translation_vi": "Trước khi bắt đầu hoạt động, mọi người cần nghe vài quy định an toàn.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_2",
+        "monologue",
+        "l3",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "A",
+      "text_en": "You must wear a helmet when using the climbing wall.",
+      "translation_vi": "Bạn phải đội mũ bảo hiểm khi leo tường.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_2",
+        "monologue",
+        "l3",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "A",
+      "text_en": "Please keep all bags in the storage area near reception.",
+      "translation_vi": "Hãy để túi trong khu cất đồ gần tiếp tân.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_2",
+        "monologue",
+        "l3",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "A",
+      "text_en": "If you feel unwell, tell an instructor immediately.",
+      "translation_vi": "Nếu thấy không khỏe, hãy báo huấn luyện viên ngay.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_2",
+        "monologue",
+        "l3",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "A",
+      "text_en": "The emergency exit is beside the green door at the end of the corridor.",
+      "translation_vi": "Lối thoát hiểm cạnh cửa xanh ở cuối hành lang.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_2",
+        "monologue",
+        "l3",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "A",
+      "text_en": "Our outdoor activities stop at five, even when it is still light.",
+      "translation_vi": "Hoạt động ngoài trời dừng lúc năm giờ dù trời còn sáng.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_2",
+        "monologue",
+        "l3",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "The instructors are happy to explain any instruction again before you enter the activity area.",
+      "translation_vi": "Huấn luyện viên sẵn sàng giải thích lại chỉ dẫn trước khi bạn vào khu hoạt động.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_2",
+        "monologue",
+        "l3",
+        "signposting"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "type": "note_completion",
+      "prompt": "Notes — Equipment required on climbing wall: ____",
+      "correct_answers": [
+        "helmet"
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Phải đội mũ.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_2",
+        "ielts_practice",
+        "detail_recognition"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q02",
+      "type": "table_completion",
+      "prompt": "Table — Bag storage near: ____",
+      "correct_answers": [
+        "reception"
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Cất túi gần tiếp tân.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_2",
+        "ielts_practice",
+        "detail_recognition"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q03",
+      "type": "note_completion",
+      "prompt": "Notes — Report illness to an: ____",
+      "correct_answers": [
+        "instructor"
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Báo huấn luyện viên khi không khỏe.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_2",
+        "ielts_practice",
+        "detail_recognition"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q04",
+      "type": "note_completion",
+      "prompt": "Notes — Exit is beside the green: ____",
+      "correct_answers": [
+        "door"
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Lối thoát cạnh cửa xanh.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_2",
+        "ielts_practice",
+        "detail_recognition"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q05",
+      "type": "note_completion",
+      "prompt": "Notes — Outdoor activities stop at: ____",
+      "correct_answers": [
+        "five"
+      ],
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "explanation_vi": "Hoạt động dừng lúc năm giờ.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_2",
+        "ielts_practice",
+        "detail_recognition"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "D01",
+      "type": "dictation",
+      "prompt": "Nghe lại và chép nguyên văn đoạn T03 (toàn bộ lời người dẫn).",
+      "correct_answers": [
+        "Please keep all bags in the storage area near reception."
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Câu gốc: Please keep all bags in the storage area near reception. Nghĩa: Hãy để túi trong khu cất đồ gần tiếp tân. Lưu ý từ chức năng, âm cuối và cụm từ nối.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "exact_transcript",
+        "section_2"
+      ]
+    },
+    {
+      "question_id": "D02",
+      "type": "dictation",
+      "prompt": "Nghe lại và chép nguyên văn đoạn T05 (toàn bộ lời người dẫn).",
+      "correct_answers": [
+        "The emergency exit is beside the green door at the end of the corridor."
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Câu gốc: The emergency exit is beside the green door at the end of the corridor. Nghĩa: Lối thoát hiểm cạnh cửa xanh ở cuối hành lang. Lưu ý từ chức năng, âm cuối và cụm từ nối.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "exact_transcript",
+        "section_2"
+      ]
+    },
+    {
+      "question_id": "G01",
+      "type": "gap_fill",
+      "prompt": "Điền cụm từ bị ẩn sau khi nghe: You must wear a ____ when using the climbing wall.",
+      "correct_answers": [
+        "helmet"
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "helmet: mũ bảo hiểm. Ngữ cảnh: Bạn phải đội mũ bảo hiểm khi leo tường.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "gap_fill",
+        "vocab_in_context",
+        "section_2"
+      ]
+    }
+  ],
+  "vocabulary": [
+    {
+      "term": "emergency exit",
+      "pos": "n. phr.",
+      "meaning_vi": "lối thoát hiểm",
+      "example_en": "The emergency exit is beside the green door at the end of the corridor.",
+      "example_vi": "Lối thoát hiểm cạnh cửa xanh ở cuối hành lang.",
+      "source_turn_id": "T05"
+    },
+    {
+      "term": "helmet",
+      "pos": "n.",
+      "meaning_vi": "mũ bảo hiểm",
+      "example_en": "You must wear a helmet when using the climbing wall.",
+      "example_vi": "Bạn phải đội mũ bảo hiểm khi leo tường.",
+      "source_turn_id": "T02"
+    },
+    {
+      "term": "instructor",
+      "pos": "n.",
+      "meaning_vi": "người hướng dẫn",
+      "example_en": "If you feel unwell, tell an instructor immediately.",
+      "example_vi": "Nếu thấy không khỏe, hãy báo huấn luyện viên ngay.",
+      "source_turn_id": "T04"
+    },
+    {
+      "term": "storage area",
+      "pos": "n. phr.",
+      "meaning_vi": "khu cất giữ",
+      "example_en": "Please keep all bags in the storage area near reception.",
+      "example_vi": "Hãy để túi trong khu cất đồ gần tiếp tân.",
+      "source_turn_id": "T03"
+    }
+  ],
+  "audio": {
+    "status": "not_generated",
+    "url": null,
+    "duration_ms": null,
+    "model": null,
+    "provider": null,
+    "voice_config": null,
+    "source_transcript_hash": "efdbafaacba2ee52dd903af28f289613f2a5e941eeb6c303a3a5a93bcc55140a",
+    "audio_sha256": null,
+    "format": null
+  },
+  "qa": {
+    "content_reviewed": false,
+    "answers_verified": false,
+    "audio_verified": false,
+    "rights_cleared": false,
+    "duplicate_reviewed": false,
+    "notes": [
+      "AI-assisted original writing; pedagogical and pronunciation review still required.",
+      "No TTS or sentence-level timestamps supplied; do not publish.",
+      "This is Section 2 skill practice, not an official IELTS test.",
+      "M16.2: automated edits are provisional; IELTS teacher final signoff, audio and rights clearance pending."
+    ]
+  },
+  "provenance": {
+    "content_origin": "original_ai_assisted",
+    "source_urls": [],
+    "source_rights_note": "Newly authored educational monologue. Confirm audio model distribution, age suitability and TOS separately before publishing.",
+    "reviewer": null
+  },
+  "release_metadata": {
+    "published_at": null,
+    "version": 1
+  }
+}

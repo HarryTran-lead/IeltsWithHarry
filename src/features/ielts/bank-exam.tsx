@@ -5,28 +5,27 @@ import { useSearchParams } from "next/navigation";
 import { useEffect, useRef, useState, type ReactNode } from "react";
 import { ArrowLeft, ArrowRight, CalendarPlus, Check, CircleAlert, Clock3, Flag, Headphones, ListChecks, Maximize2, Mic, Minimize2, NotebookPen, RotateCcw, ShieldCheck, Square, X } from "lucide-react";
 import { TopicArt } from "@/components/illustrations/topic-art";
-import type { ExamContent, ExamQuestion } from "@/lib/ielts-bank/schema";
+import type { ExamContent, ExamQuestion, FiveStep } from "@/lib/ielts-bank/schema";
+import { estimateBand } from "@/lib/ielts-bank/band";
+import { typeLabel } from "@/lib/ielts-bank/labels";
+import { customAttemptMinutes, listeningFullMinutes, listeningPartMinutes, readingFullMinutes, readingPassageMinutes } from "@/lib/ielts-bank/schema";
 import { catalogGroups, type CatalogSkill } from "@/lib/ielts-bank/catalog";
+import { displayExamTitle } from "@/lib/ielts-bank/display-title";
 import { librarySkills } from "./bank-library";
+import { writingFacets, writingSticker } from "./bank-writing-library";
+import { TaskFigure } from "./writing-figure";
+import { Sticker } from "@/components/stickers/stickers";
 import { RichText } from "./rich-text";
 import "./bank-exam.css";
 
 export { RichText };
 
 export type BankExam = { id: string; title: string; skill: string; practice_type?: string; format: string; mode: string; duration_minutes: number; attribution: string; license: string; license_url: string; source_url: string; ai_generated: boolean; topic?: string | null; content?: ExamContent };
-export type ReviewItem = { id: string; given: string; correct: boolean; answers: string[]; explanation: string; type?: string };
+export type ReviewItem = { id: string; given: string; correct: boolean; answers: string[]; explanation: string; type?: string; evidence?: { quote: string; paragraph: string } | null; fiveStep?: FiveStep; evidenceLines?: number[] };
 
 export const toneOf = (skill: string) => librarySkills[skill as CatalogSkill]?.tone ?? "reading";
 
-/** "true_false_not_given" → "True / False / Not Given", "form_completion" → "Form completion". */
-export function typeLabel(type: string) {
-  if (/true[_-]false/.test(type)) return "True / False / Not Given";
-  if (/yes[_-]no/.test(type)) return "Yes / No / Not Given";
-  if (/multiple[_-]answers/.test(type)) return "Multiple choice · nhiều đáp án";
-  if (/multiple[_-]choice/.test(type)) return "Multiple choice";
-  const words = type.replace(/[_-]+/g, " ").trim();
-  return words.charAt(0).toUpperCase() + words.slice(1);
-}
+export { typeLabel };
 
 function practiceLabel(exam: BankExam) {
   return catalogGroups[exam.skill as CatalogSkill]?.find((group) => group.id === exam.practice_type)?.label ?? exam.skill;
@@ -41,15 +40,82 @@ const skillIcon = { Reading: ListChecks, Listening: Headphones, Writing: Noteboo
 const beforeYouStart: Record<string, string[]> = {
   Reading: ["Đồng hồ chạy ngay khi bắt đầu; hết giờ bài được nộp tự động.", "Bài đọc ở bên trái, câu hỏi bên phải — dùng phím ← → để chuyển câu.", "Đánh dấu câu chưa chắc để quay lại trước khi nộp."],
   Listening: ["Đeo tai nghe và kiểm tra âm lượng trước khi bắt đầu.", "Đọc trước câu hỏi trong lúc chờ đoạn ghi âm phát.", "Viết đúng số từ yêu cầu; chính tả được tính khi chấm."],
-  Writing: ["Dành vài phút đọc đề và lập dàn ý trước khi viết.", "Bộ đếm từ cho biết bạn đã đạt số từ tối thiểu chưa.", "Bài được lưu tự động; Writing cần người chấm, không có điểm tự động."],
+  Writing: ["Dành vài phút đọc đề và lập dàn ý trước khi viết.", "Bộ đếm từ cho biết bạn đã đạt số từ tối thiểu chưa.", "Sau khi nộp bài, bấm Gửi bài để chấm để nhận band luyện tập ước lượng từ AI."],
   Speaking: ["Cho phép trình duyệt dùng micro để ghi âm câu trả lời.", "Bản ghi âm chỉ phát lại trên máy của bạn, không tải lên.", "Ghi ý chính vào ô bên dưới để lưu lại và ôn sau."],
 };
 
+/** "Passage 3: Should Public Data…" → "Should Public Data…"; a bare "Passage 3" gives "". */
+function bareTitle(title: string) {
+  return title.replace(/^(?:reading\s+)?(?:passage|part|section)\s*\d+\s*(?:[:\-–—]\s*)?/i, "").trim();
+}
+
+/**
+ * A Writing task's cover: Task 1 shows its own figure (the image, or the chart
+ * drawn from its data), Task 2 a sticker for the essay theme, never a stock picture.
+ */
+function WritingHeroArt({ exam }: { exam: BankExam }) {
+  const content = exam.content;
+  const facets = writingFacets({ title: exam.title, topic: exam.topic, practice_type: exam.practice_type ?? "task2", prompt_preview: content?.prompt ?? null, visual: (content?.visual as Record<string, unknown> | undefined) ?? null, task_type: content?.taskType ?? null });
+  if (exam.practice_type === "task1_academic") return <div className="bx-hero-art is-figure">
+    {/* The figure is the task itself, hosted wherever the source keeps it. */}
+    {/* eslint-disable-next-line @next/next/no-img-element */}
+    {content?.imageUrl ? <img src={content.imageUrl} alt={content.figureDescription || "Hình của đề"} /> : content?.visual ? <TaskFigure visual={content.visual} /> : <Sticker name="chart" size={120} tilt={-5} pop={false} />}
+    <b className="bx-hero-kind">{facets.kindLabel}</b>
+  </div>;
+  const sticker = writingSticker(facets.topic);
+  return <div className="bx-hero-art is-sticker" style={{ background: sticker.tone }}>
+    <Sticker name={sticker.name} size={150} tilt={-6} pop={false} />
+    <b className="bx-hero-kind">{facets.topicLabel}</b>
+  </div>;
+}
+
 /** The exam's cover page: what it is, what to expect, and when to practise it. */
-export function ExamIntro({ exam, backHref, busy, error, onStart, scheduleSlot }: { exam: BankExam; backHref: string; busy: boolean; error: string; onStart: (scope?: { section: string; ids: string[] }) => void; scheduleSlot: ReactNode }) {
+export type ResumableAttempt = { id: string; part: number; minutesLeft: number };
+
+function TimeChoice({ label, choices, value, custom, onChange, onCustom }: { label: string; choices: readonly number[]; value: number; custom: boolean; onChange: (minutes: number) => void; onCustom: (custom: boolean) => void }) {
+  return <div className="br-launch-time">
+    <select value={custom ? "custom" : String(value)} onChange={(event) => {
+      if (event.target.value === "custom") onCustom(true);
+      else { onCustom(false); onChange(Number(event.target.value)); }
+    }} aria-label={label}>
+      {choices.map((minutes) => <option key={minutes} value={minutes}>{minutes} phút</option>)}
+      <option value="custom">Tự nhập</option>
+    </select>
+    {custom && <input type="number" min={5} max={180} step={1} value={value || ""} onChange={(event) => onChange(event.target.value === "" ? 0 : Number(event.target.value))} aria-label={`${label} tự nhập (5–180 phút)`} placeholder="Phút" />}
+  </div>;
+}
+
+function savedDuration(key: string) {
+  try { return Number(window.localStorage.getItem(key)); } catch { return 0; }
+}
+
+function rememberDuration(key: string, minutes: number) {
+  if (!customAttemptMinutes(minutes)) return;
+  try { window.localStorage.setItem(key, String(minutes)); } catch { /* The current attempt still uses this choice. */ }
+}
+
+export function ExamIntro({ exam, backHref, busy, error, onStart, scheduleSlot, resumable = [] }: { exam: BankExam; backHref: string; busy: boolean; error: string; onStart: (scope?: { section: string; ids: string[] }, options?: { view: "practice" | "exam"; minutes?: number }) => void; scheduleSlot: ReactNode; resumable?: ResumableAttempt[] }) {
   const searchParams = useSearchParams();
   const parts = (exam.content?.sections ?? []).filter((section) => section.questions.length);
   const partNumber = Number(searchParams.get("part"));
+  const [readingPart, setReadingPart] = useState(Number.isInteger(partNumber) && partNumber > 0 ? partNumber : 0);
+  const [readingView, setReadingView] = useState<"practice" | "exam">("practice");
+  const [readingMinutes, setReadingMinutes] = useState<number>(exam.skill === "Listening" ? 40 : 60);
+  const [passageMinutes, setPassageMinutes] = useState<number>(20);
+  const [customFull, setCustomFull] = useState(false);
+  const [customPart, setCustomPart] = useState(false);
+  useEffect(() => {
+    if (exam.skill !== "Reading" && exam.skill !== "Listening") return;
+    const full = savedDuration(`ielts-${exam.skill}-full-minutes`);
+    const part = savedDuration(`ielts-${exam.skill}-part-minutes`);
+    let active = true;
+    queueMicrotask(() => {
+      if (!active) return;
+      if (customAttemptMinutes(full)) { setReadingMinutes(full); setCustomFull(!(exam.skill === "Reading" ? readingFullMinutes : listeningFullMinutes).some((item) => item === full)); }
+      if (customAttemptMinutes(part)) { setPassageMinutes(part); setCustomPart(!(exam.skill === "Reading" ? readingPassageMinutes : listeningPartMinutes).some((item) => item === part)); }
+    });
+    return () => { active = false; };
+  }, [exam.skill]);
   const selectedPart = (exam.skill === "Reading" || exam.skill === "Listening") && Number.isInteger(partNumber) && partNumber > 0 ? parts[partNumber - 1] : undefined;
   const partName = (index: number) => exam.skill === "Listening" ? `Part ${index + 1}` : `Passage ${index + 1}`;
   const questions = selectedPart?.questions ?? examQuestions(exam.content);
@@ -58,13 +124,45 @@ export function ExamIntro({ exam, backHref, busy, error, onStart, scheduleSlot }
   const types = [...new Set(questions.map((question) => typeLabel(question.type)))];
   const Icon = skillIcon[exam.skill as keyof typeof skillIcon] ?? ListChecks;
   const preview = exam.skill === "Speaking" ? questions.slice(0, 3).map((question) => question.prompt) : [];
+  if (exam.skill === "Reading" || exam.skill === "Listening") {
+    const listening = exam.skill === "Listening";
+    const fullTimes = listening ? listeningFullMinutes : readingFullMinutes;
+    const partTimes = listening ? listeningPartMinutes : readingPassageMinutes;
+    const chosen = readingPart > 0 ? parts[readingPart - 1] : undefined;
+    const count = chosen ? chosen.questions.length : examQuestions(exam.content).length;
+    return <main className={`bx-reading-launch bl-tone-${toneOf(exam.skill)}`}>
+      <div className="br-launch-dialog" role="dialog" aria-modal="true" aria-labelledby="br-launch-title">
+        <header className="br-launch-head"><div><span className="bx-kicker">IELTS {exam.skill}{chosen ? ` · ${displayExamTitle(exam.title)}` : ""}</span><h1 id="br-launch-title">{chosen ? `${partName(readingPart - 1)}: ${bareTitle(chosen.title)}` : displayExamTitle(exam.title)}</h1></div><Link href={backHref} aria-label="Đóng và về danh sách đề"><X size={19} /></Link></header>
+        {(() => {
+          // An unfinished attempt of the part being chosen (or of any part) is offered before starting again.
+          const open = resumable.find((item) => item.part === readingPart) ?? resumable[0];
+          if (!open) return null;
+          const what = open.part ? partName(open.part - 1) : "Full test";
+          return <div className="br-launch-resume" role="status"><span>Bạn có một lượt làm dở <b>{what}</b> · {open.minutesLeft > 0 ? `còn ${open.minutesLeft} phút` : "đã hết giờ, mở để nộp"}.</span><Link href={`/app/question-bank/attempt/${open.id}`}>Làm tiếp <ArrowRight size={15} /></Link></div>;
+        })()}
+        <div className="br-launch-scroll">
+          <section className="br-launch-card"><h2>Bước 1: Chọn chế độ luyện tập</h2><div className="br-launch-choices">
+            <div className={`br-launch-choice ${readingPart === 0 ? "is-on" : ""}`}><div className="br-launch-choice-head"><strong>Làm full test</strong><TimeChoice label="Thời gian làm full đề" choices={fullTimes} value={readingMinutes} custom={customFull} onCustom={setCustomFull} onChange={(minutes) => { setReadingMinutes(minutes); rememberDuration(`ielts-${exam.skill}-full-minutes`, minutes); }} /></div><small>Làm toàn bộ bài {exam.skill}</small><label><input type="radio" name="exam-part" checked={readingPart === 0} onChange={() => setReadingPart(0)} /><span>Full test</span><em>{examQuestions(exam.content).length} câu</em></label></div>
+            <div className={`br-launch-choice br-launch-parts ${readingPart > 0 ? "is-on" : ""}`}><div className="br-launch-choice-head"><strong>Luyện từng phần</strong><TimeChoice label="Thời gian làm từng phần" choices={partTimes} value={passageMinutes} custom={customPart} onCustom={setCustomPart} onChange={(minutes) => { setPassageMinutes(minutes); rememberDuration(`ielts-${exam.skill}-part-minutes`, minutes); }} /></div><small>Chọn phần bạn muốn luyện</small>{parts.map((part, index) => <label key={part.id}><input type="radio" name="exam-part" checked={readingPart === index + 1} onChange={() => setReadingPart(index + 1)} /><span>{partName(index)}{bareTitle(part.title) && <small className="br-launch-part-title">{bareTitle(part.title)}</small>}</span><em>{part.questions.length} câu</em></label>)}</div>
+          </div></section>
+          <section className="br-launch-card"><h2>Bước 2: Chọn giao diện làm bài</h2><div className="br-launch-choices">
+            <label className={`br-launch-choice br-launch-view ${readingView === "practice" ? "is-on" : ""}`}><div className="br-launch-preview is-practice"><i /><span /><span /><b /></div><div><input type="radio" name="exam-view" checked={readingView === "practice"} onChange={() => setReadingView("practice")} /><strong>Giao diện Luyện tập</strong></div><small>{listening ? "Có điều khiển âm thanh, ghi chú và chuyển Part để luyện." : "Có tô sáng và điều chỉnh cỡ chữ. Bài đọc và câu hỏi ở hai khung."}</small></label>
+            <label className={`br-launch-choice br-launch-view ${readingView === "exam" ? "is-on" : ""}`}><div className="br-launch-preview is-exam"><i /><span /><span /><b /></div><div><input type="radio" name="exam-view" checked={readingView === "exam"} onChange={() => setReadingView("exam")} /><strong>Giao diện Thi thật</strong></div><small>{listening ? "Bố cục thi máy tập trung vào âm thanh, câu hỏi và đồng hồ." : "Bố cục thi máy gọn, tập trung vào đồng hồ, bài đọc và câu hỏi."}</small></label>
+          </div></section>
+        </div>
+        <footer className="br-launch-footer"><span>{count} câu · {chosen ? passageMinutes : readingMinutes} phút · {readingView === "practice" ? "Luyện tập" : "Thi thật"}</span><button type="button" className="bx-start" disabled={busy || !customAttemptMinutes(chosen ? passageMinutes : readingMinutes)} onClick={() => onStart(chosen ? { section: chosen.id, ids: chosen.questions.map((question) => question.id) } : undefined, { view: readingView, minutes: chosen ? passageMinutes : readingMinutes })}>{busy ? "Đang mở đề…" : resumable.some((item) => item.part === readingPart) ? "Bắt đầu lượt mới" : "Bắt đầu làm bài"} <ArrowRight size={18} /></button></footer>
+        {error && <p className="bx-error" role="alert">{error}</p>}
+      </div>
+    </main>;
+  }
   return <main className={`bx-page bl-tone-${toneOf(exam.skill)}`}>
     <nav className="bx-crumbs"><Link href={backHref}><ArrowLeft size={15} /> {exam.skill}</Link><span>/</span>{selectedLabel}</nav>
     <section className="bx-hero">
-      <div className="bx-hero-art"><TopicArt topic={`${(exam.topic ?? "").replace(/^topic_/, "")} ${exam.title}`} className="bx-art" /><span className="bx-hero-icon"><Icon size={22} /></span></div>
+      {exam.skill === "Writing" ? <WritingHeroArt exam={exam} />
+        : <div className="bx-hero-art"><TopicArt topic={`${(exam.topic ?? "").replace(/^topic_/, "")} ${exam.title}`} className="bx-art" /><span className="bx-hero-icon"><Icon size={22} /></span></div>}
       <div className="bx-hero-copy">
         <span className="bx-kicker">{exam.skill} · {selectedLabel}</span>
-        <h1>{selectedPart && !/^(?:reading\s+)?passage\s*\d+\s*$|^(?:listening\s+)?(?:section|part)\s*\d+\s*$/i.test(selectedPart.title) ? selectedPart.title : exam.title}</h1>
+        <h1>{selectedPart && !/^(?:reading\s+)?passage\s*\d+\s*$|^(?:listening\s+)?(?:section|part)\s*\d+\s*$/i.test(selectedPart.title) ? selectedPart.title : displayExamTitle(exam.title)}</h1>
         <div className="bx-facts">
           <span><Clock3 size={15} /> {duration} phút</span>
           {questions.length > 0 && <span><ListChecks size={15} /> {questions.length} câu hỏi</span>}
@@ -90,7 +188,7 @@ export function ExamIntro({ exam, backHref, busy, error, onStart, scheduleSlot }
 }
 
 /** The fixed bar above an attempt: title, progress, timer, fullscreen and submit. */
-export function ExamBar({ exam, answered, total, remaining, busy, saveState, onSubmit }: { exam: BankExam; answered: number; total: number; remaining: number; busy: boolean; saveState: "idle" | "saving" | "saved" | "error"; onSubmit: () => void }) {
+export function ExamBar({ exam, answered, total, remaining, busy, saveState, onSubmit, onExit }: { exam: BankExam; answered: number; total: number; remaining: number; busy: boolean; saveState: "idle" | "saving" | "saved" | "error"; onSubmit: () => void; onExit?: () => void }) {
   const [fullscreen, setFullscreen] = useState(false);
   useEffect(() => {
     const sync = () => setFullscreen(Boolean(document.fullscreenElement));
@@ -99,10 +197,15 @@ export function ExamBar({ exam, answered, total, remaining, busy, saveState, onS
   }, []);
   const minutes = Math.floor(remaining / 60), seconds = remaining % 60;
   const tone = remaining <= 60 ? "is-danger" : remaining <= 300 ? "is-warning" : "";
-  return <header className="bx-bar">
-    <div className="bx-bar-title"><span className="bx-skill-chip">{exam.skill}</span><div><strong>{exam.title}</strong><small>{total ? `Đã làm ${answered}/${total} câu` : "Bài viết tự do"} · {saveState === "saving" ? "Đang lưu…" : saveState === "saved" ? "Đã lưu" : saveState === "error" ? "Chưa lưu được" : "Tự động lưu"}</small></div></div>
+  return <header className={`bx-bar ${exam.skill === "Reading" && onExit ? "bx-test-bar" : ""}`}>
+    <div className="bx-bar-title">{onExit && exam.skill === "Reading" ? <span className="bx-test-brand">
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img src="/ieltswithharry-mascot.webp" alt="" />
+      <span>Ielts<b>WithHarry</b></span>
+    </span> : <span className="bx-skill-chip">{exam.skill}</span>}<div><strong>{displayExamTitle(exam.title)}</strong><small>{total ? `Đã làm ${answered}/${total} câu` : "Bài viết tự do"} · {saveState === "saving" ? "Đang lưu…" : saveState === "saved" ? "Đã lưu" : saveState === "error" ? "Chưa lưu được" : "Tự động lưu"}</small></div></div>
     <span className={`bx-timer ${tone}`} role="timer" aria-label={`Còn ${minutes} phút ${seconds} giây`}><Clock3 size={16} /> {minutes}:{String(seconds).padStart(2, "0")}</span>
     <div className="bx-bar-actions">
+      {onExit && <button type="button" className="bx-ghost bx-exit" disabled={busy} onClick={onExit}><ArrowLeft size={17} /><span>Rời bài</span></button>}
       <button type="button" className="bx-ghost" onClick={() => { if (document.fullscreenElement) void document.exitFullscreen(); else void document.documentElement.requestFullscreen?.(); }} aria-label={fullscreen ? "Thoát toàn màn hình" : "Toàn màn hình"}>{fullscreen ? <Minimize2 size={17} /> : <Maximize2 size={17} />}<span>{fullscreen ? "Thu nhỏ" : "Toàn màn hình"}</span></button>
       <button type="button" className="bx-submit" disabled={busy} onClick={onSubmit}>Nộp bài</button>
     </div>
@@ -189,33 +292,36 @@ export function SpeakingAnswer({ value, onChange, index }: { value: string; onCh
 }
 
 /** Asks before submitting, with what is still unanswered or flagged. */
-export function SubmitDialog({ unanswered, flagged, busy, onCancel, onConfirm }: { unanswered: number; flagged: number; busy: boolean; onCancel: () => void; onConfirm: () => void }) {
+export type QuestionRef = { id: string; number: number };
+
+/** Asks before submitting, with what is still unanswered or flagged; with `onJump`, each number opens that question. */
+export function SubmitDialog({ unanswered, flagged, busy, onCancel, onConfirm, answered, unansweredList, flaggedList, onJump }: { unanswered: number; flagged: number; busy: boolean; onCancel: () => void; onConfirm: () => void; answered?: number; unansweredList?: QuestionRef[]; flaggedList?: QuestionRef[]; onJump?: (id: string) => void }) {
   const confirm = useRef<HTMLButtonElement>(null);
-  useEffect(() => { confirm.current?.focus(); const escape = (event: KeyboardEvent) => { if (event.key === "Escape") onCancel(); }; window.addEventListener("keydown", escape); return () => window.removeEventListener("keydown", escape); }, [onCancel]);
+  const continueButton = useRef<HTMLButtonElement>(null);
+  useEffect(() => { (unanswered || flagged ? continueButton : confirm).current?.focus(); const escape = (event: KeyboardEvent) => { if (event.key === "Escape") onCancel(); }; window.addEventListener("keydown", escape); return () => window.removeEventListener("keydown", escape); }, [onCancel, unanswered, flagged]);
+  const numbers = (list: QuestionRef[], tone: string) => <div className="bx-jump-list">{list.map((item) => <button type="button" key={item.id} className={tone} onClick={() => onJump?.(item.id)} aria-label={`Mở câu ${item.number}`}>{item.number}</button>)}</div>;
+  const detailed = Boolean(onJump && (unansweredList?.length || flaggedList?.length));
   return <div className="bx-dialog-layer" role="dialog" aria-modal="true" aria-labelledby="bx-submit-title">
     <button type="button" className="bx-dialog-backdrop" aria-label="Đóng" tabIndex={-1} onClick={onCancel} />
-    <div className="bx-dialog">
+    <div className={`bx-dialog ${detailed ? "is-detailed" : ""}`}>
       <button type="button" className="bx-dialog-close" onClick={onCancel} aria-label="Đóng"><X size={18} /></button>
       <h2 id="bx-submit-title">Nộp bài ngay?</h2>
-      {unanswered || flagged ? <ul>{unanswered > 0 && <li><CircleAlert size={16} /> Còn <b>{unanswered}</b> câu chưa trả lời</li>}{flagged > 0 && <li><Flag size={16} /> <b>{flagged}</b> câu đang đánh dấu xem lại</li>}</ul> : <p>Bạn đã trả lời tất cả câu hỏi.</p>}
-      <div className="bx-dialog-actions"><button type="button" className="bx-ghost" onClick={onCancel}>Làm tiếp</button><button ref={confirm} type="button" className="bx-submit" disabled={busy} onClick={onConfirm}>{busy ? "Đang nộp…" : "Nộp bài"}</button></div>
+      {detailed ? <>
+        <div className="bx-submit-stats">
+          {answered !== undefined && <span className="is-done"><b>{answered}</b>đã làm</span>}
+          <span className="is-empty"><b>{unanswered}</b>còn trống</span>
+          <span className="is-flag"><b>{flagged}</b>đang đánh dấu</span>
+        </div>
+        {unansweredList && unansweredList.length > 0 && <div className="bx-jump-group"><strong>Câu còn trống</strong>{numbers(unansweredList, "is-empty")}</div>}
+        {flaggedList && flaggedList.length > 0 && <div className="bx-jump-group"><strong>Đang đánh dấu xem lại</strong>{numbers(flaggedList, "is-flag")}</div>}
+        <p className="bx-jump-hint">Bấm một số để đóng hộp này và mở câu đó.</p>
+      </> : unanswered || flagged ? <ul>{unanswered > 0 && <li><CircleAlert size={16} /> Còn <b>{unanswered}</b> câu chưa trả lời</li>}{flagged > 0 && <li><Flag size={16} /> <b>{flagged}</b> câu đang đánh dấu xem lại</li>}</ul> : <p>Bạn đã trả lời tất cả câu hỏi.</p>}
+      <div className="bx-dialog-actions"><button ref={continueButton} type="button" className="bx-ghost" onClick={onCancel}>Làm tiếp</button><button ref={confirm} type="button" className="bx-submit" disabled={busy} onClick={onConfirm}>{busy ? "Đang nộp…" : unanswered ? "Vẫn nộp bài" : "Nộp bài"}</button></div>
     </div>
   </div>;
 }
 
-// Raw score out of 40 → band, from the published IELTS conversion tables.
-const bandTables: Record<string, [number, number][]> = {
-  Listening: [[39, 9], [37, 8.5], [35, 8], [32, 7.5], [30, 7], [26, 6.5], [23, 6], [18, 5.5], [16, 5], [13, 4.5], [10, 4], [8, 3.5], [6, 3], [4, 2.5]],
-  Academic: [[39, 9], [37, 8.5], [35, 8], [33, 7.5], [30, 7], [27, 6.5], [23, 6], [19, 5.5], [15, 5], [13, 4.5], [10, 4], [8, 3.5], [6, 3], [4, 2.5]],
-  General: [[40, 9], [39, 8.5], [37, 8], [36, 7.5], [34, 7], [32, 6.5], [30, 6], [27, 5.5], [23, 5], [19, 4.5], [15, 4], [12, 3.5], [9, 3], [6, 2.5]],
-};
-/** Band for a Reading/Listening result; partial tests are scaled to 40 questions and marked as an estimate. */
-export function estimateBand(skill: string, format: string, score: number, total: number) {
-  if (!total || (skill !== "Reading" && skill !== "Listening")) return null;
-  const table = skill === "Listening" ? bandTables.Listening : /general/i.test(format) ? bandTables.General : bandTables.Academic;
-  const raw = Math.round((score / total) * 40);
-  return table.find(([minimum]) => raw >= minimum)?.[1] ?? (raw > 0 ? 2 : 0);
-}
+export { estimateBand };
 
 /** Score, band, per-question-type table and a filterable review of every question. */
 export function ExamResult({ title, skill, format = "Academic", score, total, review, response, backHref, retryHref, onRetry, numberOf, extra }: { title: string; skill: string; format?: string; score: number | null; total: number; review: ReviewItem[]; response?: string; backHref: string; retryHref?: string; onRetry?: () => void; numberOf?: (id: string) => number; extra?: ReactNode }) {
@@ -234,16 +340,16 @@ export function ExamResult({ title, skill, format = "Academic", score, total, re
   }, new Map<string, { total: number; right: number; wrong: number; skipped: number }>())];
   return <main className={`bx-page bl-tone-${toneOf(skill)}`}>
     <nav className="bx-crumbs"><Link href={backHref}><ArrowLeft size={15} /> {skill}</Link><span>/</span>Kết quả</nav>
-    <section className="bx-result-hero">
+    <section className={`bx-result-hero${skill === "Writing" ? " bx-writing-result-hero" : ""}`}>
       {band !== null ? <span className="bx-band"><small>Band ước tính</small><b>{band.toFixed(1)}</b></span> : null}
-      <span className="bx-ring" style={{ "--ratio": percent === null ? 1 : percent / 100 } as React.CSSProperties}>{percent === null ? <Check size={34} /> : <><b>{score}</b><small>/{total}</small></>}</span>
+      {skill !== "Writing" && <span className="bx-ring" style={{ "--ratio": percent === null ? 1 : percent / 100 } as React.CSSProperties}>{percent === null ? <Check size={34} /> : <><b>{score}</b><small>/{total}</small></>}</span>}
       <div>
         <span className="bx-kicker">{skill} · Kết quả bài luyện</span>
         <h1>{title}</h1>
         <p className="bx-verdict">{verdict}</p>
         {total > 0 && <div className="bx-tally"><span className="is-right">Đúng <b>{score}</b></span><span className="is-wrong">Sai <b>{wrong}</b></span><span>Bỏ qua <b>{skipped}</b></span></div>}
         <p className="bx-muted">{total ? `Band quy đổi theo bảng điểm IELTS${total !== 40 ? ", ước tính từ số câu bạn đã làm" : ""}; đây là bài luyện tập, không phải điểm chính thức.` : "Bài của bạn đã được lưu để xem lại."}</p>
-        <div className="bx-hero-actions">{onRetry ? <button type="button" className="bx-start" onClick={onRetry}><RotateCcw size={17} /> Làm lại</button> : retryHref && <Link className="bx-start" href={retryHref}><RotateCcw size={17} /> Làm lại</Link>}<Link className="bx-ghost" href={backHref}>Về ngân hàng đề <ArrowRight size={16} /></Link></div>
+        <div className="bx-hero-actions">{skill === "Writing" && <a className="bx-ghost" href="#writing-review">Xem đánh giá ↓</a>}{onRetry ? <button type="button" className="bx-start" onClick={onRetry}><RotateCcw size={17} /> Làm lại</button> : retryHref && <Link className="bx-start" href={retryHref}><RotateCcw size={17} /> Làm lại</Link>}<Link className="bx-ghost" href={backHref}>Về ngân hàng đề <ArrowRight size={16} /></Link></div>
       </div>
     </section>
     {extra}

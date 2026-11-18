@@ -62,5 +62,6 @@ describe("IELTS catalog grouping", () => {
     expect(first).toHaveLength(1);
     expect(catalogQuestionTypeIds(first[0].questionTypes)).toEqual(["headings", "tfng"]);
     expect(catalogQuestionTypeIds(full[0].questionTypes)).toEqual(["headings", "tfng", "mc_one"]);
+    expect(catalogQuestionTypeIds(["mcq", "mcq_choose_two", "map_labelling"])).toEqual(["mc_one", "mc_many", "labels"]);
   });
 });

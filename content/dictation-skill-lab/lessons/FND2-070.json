@@ -1,0 +1,623 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "FND2-070",
+  "status": "draft",
+  "level": "L3",
+  "section": 0,
+  "topic": "Foundation M19 – Dates",
+  "title": "Multiple date corrections",
+  "learning_objectives_vi": [
+    "Theo dõi hơn một lần điều chỉnh và chọn thông tin cuối cùng.",
+    "Nghe lại theo lỗi trọng tâm, không chỉ hoàn thành số bài.",
+    "Đánh giá bằng nội dung chưa gặp và một lần nghe."
+  ],
+  "content_format": "sentence_drill",
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Foundation narrator",
+      "tts_voice_id": null,
+      "accent_requested": "australian"
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "We booked the hall for Monday, changed it to Tuesday, and finally chose Friday.",
+      "translation_vi": "Chúng tôi đặt hội trường thứ Hai, đổi sang thứ Ba và cuối cùng chọn thứ Sáu.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m19",
+        "multi_step_corrections",
+        "dates"
+      ],
+      "target_value": "Friday",
+      "target_kind": "lexical_phrase",
+      "target_meaning_vi": "thứ Sáu",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "A",
+      "text_en": "The course was due to end on Thursday, but it will finish on Wednesday instead.",
+      "translation_vi": "Khóa học dự kiến kết thúc thứ Năm nhưng thay vào đó sẽ kết thúc thứ Tư.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m19",
+        "multi_step_corrections",
+        "dates"
+      ],
+      "target_value": "Wednesday",
+      "target_kind": "lexical_phrase",
+      "target_meaning_vi": "thứ Tư",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "A",
+      "text_en": "Please ignore the first email: the ceremony is now on Saturday.",
+      "translation_vi": "Vui lòng bỏ qua email đầu tiên: lễ trao giải nay vào thứ Bảy.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m19",
+        "multi_step_corrections",
+        "dates"
+      ],
+      "target_value": "Saturday",
+      "target_kind": "lexical_phrase",
+      "target_meaning_vi": "thứ Bảy",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "A",
+      "text_en": "I offered Thursday or Friday, and the client confirmed Friday.",
+      "translation_vi": "Tôi đề xuất thứ Năm hoặc thứ Sáu và khách xác nhận thứ Sáu.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m19",
+        "multi_step_corrections",
+        "dates"
+      ],
+      "target_value": "Friday",
+      "target_kind": "lexical_phrase",
+      "target_meaning_vi": "thứ Sáu",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "A",
+      "text_en": "The practice session stays on Monday, but the test moves to Wednesday.",
+      "translation_vi": "Buổi luyện tập vẫn thứ Hai nhưng bài kiểm tra chuyển sang thứ Tư.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m19",
+        "multi_step_corrections",
+        "dates"
+      ],
+      "target_value": "Wednesday",
+      "target_kind": "lexical_phrase",
+      "target_meaning_vi": "thứ Tư",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "A",
+      "text_en": "Our visit has changed twice; the confirmed date is next Tuesday.",
+      "translation_vi": "Chuyến thăm đổi hai lần; ngày xác nhận là thứ Ba tuần sau.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m19",
+        "multi_step_corrections",
+        "dates"
+      ],
+      "target_value": "next Tuesday",
+      "target_kind": "lexical_phrase",
+      "target_meaning_vi": "thứ Ba tuần sau",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "The receptionist mentioned Friday, then checked and corrected it to Sunday.",
+      "translation_vi": "Lễ tân nói thứ Sáu, sau đó kiểm tra và sửa thành Chủ nhật.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m19",
+        "multi_step_corrections",
+        "dates"
+      ],
+      "target_value": "Sunday",
+      "target_kind": "lexical_phrase",
+      "target_meaning_vi": "Chủ nhật",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "A",
+      "text_en": "We need the room on Thursday, not Tuesday as printed on the form.",
+      "translation_vi": "Chúng tôi cần phòng vào thứ Năm, không phải thứ Ba ghi trên đơn.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m19",
+        "multi_step_corrections",
+        "dates"
+      ],
+      "target_value": "Thursday",
+      "target_kind": "lexical_phrase",
+      "target_meaning_vi": "thứ Năm",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T09",
+      "speaker_id": "A",
+      "text_en": "The booking is provisional for Wednesday; the final confirmation comes on Monday.",
+      "translation_vi": "Đặt chỗ đang tạm giữ cho thứ Tư; xác nhận cuối sẽ có vào thứ Hai.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m19",
+        "multi_step_corrections",
+        "dates"
+      ],
+      "target_value": "Wednesday",
+      "target_kind": "lexical_phrase",
+      "target_meaning_vi": "thứ Tư",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T10",
+      "speaker_id": "A",
+      "text_en": "I cancelled Saturday and reserved the same slot on Sunday instead.",
+      "translation_vi": "Tôi hủy thứ Bảy và đặt lại cùng khung giờ vào Chủ nhật.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m19",
+        "multi_step_corrections",
+        "dates"
+      ],
+      "target_value": "Sunday",
+      "target_kind": "lexical_phrase",
+      "target_meaning_vi": "Chủ nhật",
+      "bank_role": "training"
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "type": "dictation",
+      "prompt": "Nghe lượt T01 rồi chép đầy đủ câu tiếng Anh được nói.",
+      "correct_answers": [
+        "We booked the hall for Monday, changed it to Tuesday, and finally chose Friday."
+      ],
+      "evidence_turn_ids": [
+        "T01"
+      ],
+      "explanation_vi": "Nghe lại theo nhóm từ; câu gốc là: We booked the hall for Monday, changed it to Tuesday, and finally chose Friday. Nghĩa: Chúng tôi đặt hội trường thứ Hai, đổi sang thứ Ba và cuối cùng chọn thứ Sáu.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "multi_step_corrections"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q02",
+      "type": "dictation",
+      "prompt": "Nghe lượt T02 rồi chép đầy đủ câu tiếng Anh được nói.",
+      "correct_answers": [
+        "The course was due to end on Thursday, but it will finish on Wednesday instead."
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Nghe lại theo nhóm từ; câu gốc là: The course was due to end on Thursday, but it will finish on Wednesday instead. Nghĩa: Khóa học dự kiến kết thúc thứ Năm nhưng thay vào đó sẽ kết thúc thứ Tư.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "multi_step_corrections"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q03",
+      "type": "dictation",
+      "prompt": "Nghe lượt T03 rồi chép đầy đủ câu tiếng Anh được nói.",
+      "correct_answers": [
+        "Please ignore the first email: the ceremony is now on Saturday."
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Nghe lại theo nhóm từ; câu gốc là: Please ignore the first email: the ceremony is now on Saturday. Nghĩa: Vui lòng bỏ qua email đầu tiên: lễ trao giải nay vào thứ Bảy.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "multi_step_corrections"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q04",
+      "type": "dictation",
+      "prompt": "Nghe lượt T04 rồi chép đầy đủ câu tiếng Anh được nói.",
+      "correct_answers": [
+        "I offered Thursday or Friday, and the client confirmed Friday."
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Nghe lại theo nhóm từ; câu gốc là: I offered Thursday or Friday, and the client confirmed Friday. Nghĩa: Tôi đề xuất thứ Năm hoặc thứ Sáu và khách xác nhận thứ Sáu.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "multi_step_corrections"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q05",
+      "type": "dictation",
+      "prompt": "Nghe lượt T05 rồi chép đầy đủ câu tiếng Anh được nói.",
+      "correct_answers": [
+        "The practice session stays on Monday, but the test moves to Wednesday."
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Nghe lại theo nhóm từ; câu gốc là: The practice session stays on Monday, but the test moves to Wednesday. Nghĩa: Buổi luyện tập vẫn thứ Hai nhưng bài kiểm tra chuyển sang thứ Tư.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "multi_step_corrections"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q06",
+      "type": "dictation",
+      "prompt": "Nghe lượt T06 rồi chép đầy đủ câu tiếng Anh được nói.",
+      "correct_answers": [
+        "Our visit has changed twice; the confirmed date is next Tuesday."
+      ],
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "explanation_vi": "Nghe lại theo nhóm từ; câu gốc là: Our visit has changed twice; the confirmed date is next Tuesday. Nghĩa: Chuyến thăm đổi hai lần; ngày xác nhận là thứ Ba tuần sau.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "multi_step_corrections"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q07",
+      "type": "dictation",
+      "prompt": "Nghe lượt T07 rồi chép đầy đủ câu tiếng Anh được nói.",
+      "correct_answers": [
+        "The receptionist mentioned Friday, then checked and corrected it to Sunday."
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "Nghe lại theo nhóm từ; câu gốc là: The receptionist mentioned Friday, then checked and corrected it to Sunday. Nghĩa: Lễ tân nói thứ Sáu, sau đó kiểm tra và sửa thành Chủ nhật.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "multi_step_corrections"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q08",
+      "type": "dictation",
+      "prompt": "Nghe lượt T08 rồi chép đầy đủ câu tiếng Anh được nói.",
+      "correct_answers": [
+        "We need the room on Thursday, not Tuesday as printed on the form."
+      ],
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "explanation_vi": "Nghe lại theo nhóm từ; câu gốc là: We need the room on Thursday, not Tuesday as printed on the form. Nghĩa: Chúng tôi cần phòng vào thứ Năm, không phải thứ Ba ghi trên đơn.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "multi_step_corrections"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q09",
+      "type": "dictation",
+      "prompt": "Nghe lượt T09 rồi chép đầy đủ câu tiếng Anh được nói.",
+      "correct_answers": [
+        "The booking is provisional for Wednesday; the final confirmation comes on Monday."
+      ],
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "explanation_vi": "Nghe lại theo nhóm từ; câu gốc là: The booking is provisional for Wednesday; the final confirmation comes on Monday. Nghĩa: Đặt chỗ đang tạm giữ cho thứ Tư; xác nhận cuối sẽ có vào thứ Hai.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "multi_step_corrections"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q10",
+      "type": "dictation",
+      "prompt": "Nghe lượt T10 rồi chép đầy đủ câu tiếng Anh được nói.",
+      "correct_answers": [
+        "I cancelled Saturday and reserved the same slot on Sunday instead."
+      ],
+      "evidence_turn_ids": [
+        "T10"
+      ],
+      "explanation_vi": "Nghe lại theo nhóm từ; câu gốc là: I cancelled Saturday and reserved the same slot on Sunday instead. Nghĩa: Tôi hủy thứ Bảy và đặt lại cùng khung giờ vào Chủ nhật.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "multi_step_corrections"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q11",
+      "type": "short_answer",
+      "prompt": "Nghe lượt T06. Chuyến thăm được xác nhận vào khi nào? Trả lời bằng từ/cụm tiếng Anh đúng như lời nghe.",
+      "correct_answers": [
+        "next Tuesday"
+      ],
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "explanation_vi": "Thông tin đúng: next Tuesday (thứ Ba tuần sau). Dẫn chứng: Our visit has changed twice; the confirmed date is next Tuesday. Nghĩa: Chuyến thăm đổi hai lần; ngày xác nhận là thứ Ba tuần sau.",
+      "scoring_policy": "lexical_case_punctuation_insensitive_server",
+      "target_kind": "lexical_phrase",
+      "question_tags": [
+        "short_answer",
+        "multi_step_corrections",
+        "training_comprehension"
+      ],
+      "max_replays_practice": 5,
+      "first_listen_only_for_mastery": false
+    },
+    {
+      "question_id": "Q12",
+      "type": "short_answer",
+      "prompt": "Nghe lượt T07. Ngày cuối cùng sau khi sửa là ngày nào? Trả lời bằng từ/cụm tiếng Anh đúng như lời nghe.",
+      "correct_answers": [
+        "Sunday"
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "Thông tin đúng: Sunday (Chủ nhật). Dẫn chứng: The receptionist mentioned Friday, then checked and corrected it to Sunday. Nghĩa: Lễ tân nói thứ Sáu, sau đó kiểm tra và sửa thành Chủ nhật.",
+      "scoring_policy": "lexical_case_punctuation_insensitive_server",
+      "target_kind": "lexical_phrase",
+      "question_tags": [
+        "short_answer",
+        "multi_step_corrections",
+        "training_comprehension"
+      ],
+      "max_replays_practice": 5,
+      "first_listen_only_for_mastery": false
+    },
+    {
+      "question_id": "Q13",
+      "type": "short_answer",
+      "prompt": "Nghe lượt T08. Ngày cần dùng phòng là thứ mấy? Trả lời bằng từ/cụm tiếng Anh đúng như lời nghe.",
+      "correct_answers": [
+        "Thursday"
+      ],
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "explanation_vi": "Thông tin đúng: Thursday (thứ Năm). Dẫn chứng: We need the room on Thursday, not Tuesday as printed on the form. Nghĩa: Chúng tôi cần phòng vào thứ Năm, không phải thứ Ba ghi trên đơn.",
+      "scoring_policy": "lexical_case_punctuation_insensitive_server",
+      "target_kind": "lexical_phrase",
+      "question_tags": [
+        "short_answer",
+        "multi_step_corrections",
+        "training_comprehension"
+      ],
+      "max_replays_practice": 5,
+      "first_listen_only_for_mastery": false
+    },
+    {
+      "question_id": "Q14",
+      "type": "short_answer",
+      "prompt": "Nghe lượt T09. Ngày tạm giữ phòng là thứ mấy? Trả lời bằng từ/cụm tiếng Anh đúng như lời nghe.",
+      "correct_answers": [
+        "Wednesday"
+      ],
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "explanation_vi": "Thông tin đúng: Wednesday (thứ Tư). Dẫn chứng: The booking is provisional for Wednesday; the final confirmation comes on Monday. Nghĩa: Đặt chỗ đang tạm giữ cho thứ Tư; xác nhận cuối sẽ có vào thứ Hai.",
+      "scoring_policy": "lexical_case_punctuation_insensitive_server",
+      "target_kind": "lexical_phrase",
+      "question_tags": [
+        "short_answer",
+        "multi_step_corrections",
+        "training_comprehension"
+      ],
+      "max_replays_practice": 5,
+      "first_listen_only_for_mastery": false
+    },
+    {
+      "question_id": "Q15",
+      "type": "short_answer",
+      "prompt": "Nghe lượt T10. Khung giờ được đặt lại vào thứ mấy? Trả lời bằng từ/cụm tiếng Anh đúng như lời nghe.",
+      "correct_answers": [
+        "Sunday"
+      ],
+      "evidence_turn_ids": [
+        "T10"
+      ],
+      "explanation_vi": "Thông tin đúng: Sunday (Chủ nhật). Dẫn chứng: I cancelled Saturday and reserved the same slot on Sunday instead. Nghĩa: Tôi hủy thứ Bảy và đặt lại cùng khung giờ vào Chủ nhật.",
+      "scoring_policy": "lexical_case_punctuation_insensitive_server",
+      "target_kind": "lexical_phrase",
+      "question_tags": [
+        "short_answer",
+        "multi_step_corrections",
+        "training_comprehension"
+      ],
+      "max_replays_practice": 5,
+      "first_listen_only_for_mastery": false
+    }
+  ],
+  "vocabulary": [
+    {
+      "term": "Friday",
+      "pos": "time expression",
+      "meaning_vi": "thứ Sáu",
+      "example_en": "We booked the hall for Monday, changed it to Tuesday, and finally chose Friday.",
+      "example_vi": "Chúng tôi đặt hội trường thứ Hai, đổi sang thứ Ba và cuối cùng chọn thứ Sáu.",
+      "is_illustrative_context": false
+    },
+    {
+      "term": "Wednesday",
+      "pos": "time expression",
+      "meaning_vi": "thứ Tư",
+      "example_en": "The course was due to end on Thursday, but it will finish on Wednesday instead.",
+      "example_vi": "Khóa học dự kiến kết thúc thứ Năm nhưng thay vào đó sẽ kết thúc thứ Tư.",
+      "is_illustrative_context": false
+    },
+    {
+      "term": "Saturday",
+      "pos": "time expression",
+      "meaning_vi": "thứ Bảy",
+      "example_en": "Please ignore the first email: the ceremony is now on Saturday.",
+      "example_vi": "Vui lòng bỏ qua email đầu tiên: lễ trao giải nay vào thứ Bảy.",
+      "is_illustrative_context": false
+    },
+    {
+      "term": "Friday",
+      "pos": "time expression",
+      "meaning_vi": "thứ Sáu",
+      "example_en": "I offered Thursday or Friday, and the client confirmed Friday.",
+      "example_vi": "Tôi đề xuất thứ Năm hoặc thứ Sáu và khách xác nhận thứ Sáu.",
+      "is_illustrative_context": false
+    },
+    {
+      "term": "Wednesday",
+      "pos": "time expression",
+      "meaning_vi": "thứ Tư",
+      "example_en": "The practice session stays on Monday, but the test moves to Wednesday.",
+      "example_vi": "Buổi luyện tập vẫn thứ Hai nhưng bài kiểm tra chuyển sang thứ Tư.",
+      "is_illustrative_context": false
+    },
+    {
+      "term": "next Tuesday",
+      "pos": "time expression",
+      "meaning_vi": "thứ Ba tuần sau",
+      "example_en": "Our visit has changed twice; the confirmed date is next Tuesday.",
+      "example_vi": "Chuyến thăm đổi hai lần; ngày xác nhận là thứ Ba tuần sau.",
+      "is_illustrative_context": false
+    }
+  ],
+  "micro_skill_id": "multi_step_corrections",
+  "bank_role": "training",
+  "content_design": {
+    "sequence": "10_varied_contexts",
+    "first_listen": "1x",
+    "guided_replay_max": 5,
+    "mastery_requires_unseen": true,
+    "learning_note_vi": "Theo dõi hơn một lần điều chỉnh và chọn thông tin cuối cùng.",
+    "category": "dates",
+    "post_submit_review_only": true,
+    "unseen_assessment_id": "FND2-070-HOLDOUT",
+    "spoken_text_must_match_target": true,
+    "holdout_must_be_server_side": true,
+    "no_band_claim": true
+  },
+  "audio": {
+    "status": "not_generated",
+    "url": null,
+    "duration_ms": null,
+    "provider": null,
+    "model": null,
+    "voice_config": null,
+    "format": null,
+    "audio_sha256": null,
+    "source_transcript_hash": "df26014556cf1a210a0ef1cb93aa16c586732c44e32a97508cd81f20385306c0",
+    "generation_notes": "Synthesize actual spoken utterance only; never read learning metadata. Human verify dates, names and connected-speech target."
+  },
+  "qa": {
+    "content_reviewed": false,
+    "answers_verified": false,
+    "audio_verified": false,
+    "human_signed_off": false,
+    "duplicate_reviewed": false,
+    "notes": [
+      "M19 originally authored DRAFT, machine-verified only.",
+      "Connected-speech phonetic features NOT established until actual audio is reviewed."
+    ]
+  },
+  "provenance": {
+    "content_origin": "original_ai_assisted",
+    "rights_status": "pending_tts_audio_terms_review",
+    "source_urls": [],
+    "reviewer": null
+  },
+  "release_metadata": {
+    "published_at": null,
+    "version": 1
+  },
+  "lesson_theory_vi": {
+    "core_rule": "Theo dõi hơn một lần điều chỉnh và chọn thông tin cuối cùng.",
+    "worked_contrasts": [
+      {
+        "spoken_example": "The booking was for Tuesday, but it is now on Sunday.",
+        "written_value": "Sunday",
+        "teacher_note_vi": "Từ but/now báo hiệu ngày cuối cùng đã thay đổi."
+      },
+      {
+        "spoken_example": "The early appointment is at nine; the class begins at ten.",
+        "written_value": "ten",
+        "teacher_note_vi": "Xác định đang được hỏi giờ hẹn hay giờ lớp học, không lấy số xuất hiện đầu."
+      }
+    ],
+    "learning_steps": [
+      "Đọc ví dụ hướng dẫn phân biệt lịch cũ và lịch chốt.",
+      "Nghe một lần, khoanh cụm chỉ lịch cuối cùng hoặc đối tượng được hỏi.",
+      "Làm Dictation và câu hỏi rút thông tin; chỉ mở transcript sau khi nộp.",
+      "Kiểm tra chuyển giao bằng hai câu audio chưa gặp, lần nghe đầu."
+    ],
+    "common_mistakes": [
+      "Dừng nghe sau lựa chọn thứ nhất hoặc lựa chọn thứ hai.",
+      "Chỉ nhìn từ khóa quen mà không nghe phần phủ định hoặc cách người nói sửa lại."
+    ],
+    "before_audio_question": "Đâu là thông tin cuối cùng, và nó thuộc mốc thời gian nào?",
+    "difficulty_steps": [
+      "T01–T03: ngữ cảnh ngắn, thông tin chính rõ ràng.",
+      "T04–T07: thêm thông tin phụ, dạng phủ định hoặc tương phản.",
+      "T08–T10: nội dung dài hơn, nhiều chi tiết hoặc đổi ý."
+    ],
+    "examples_are_not_mastery_items": true,
+    "audio_review_warning_vi": null
+  }
+}

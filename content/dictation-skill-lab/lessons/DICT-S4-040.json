@@ -1,0 +1,351 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "DICT-S4-040",
+  "status": "draft",
+  "level": "L7",
+  "section": 4,
+  "topic": "Public Health",
+  "title": "Comparing Surveillance, Trials and Qualitative Evidence",
+  "learning_objectives_vi": [
+    "Nghe bài giảng học thuật một người nói, theo dõi quan hệ giữa luận điểm và bằng chứng.",
+    "Luyện các câu hỏi Section 4 theo thứ tự lời giảng; phân tích giới hạn của khái niệm và cách diễn đạt lại.",
+    "Chép chính xác hai đoạn, luyện từ học thuật theo ngữ cảnh và ôn điểm yếu qua Mistake Bank."
+  ],
+  "content_format": "section_practice",
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Academic lecturer",
+      "tts_voice_id": null,
+      "accent_requested": "american"
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "When an unexpected rise in illness is reported, public-health investigators use several forms of evidence. Routine surveillance tracks patterns over time, while targeted studies can examine a particular question in greater depth. Neither method replaces the other. Surveillance may alert teams to a possible problem, but further investigation is often needed to understand what produced the pattern.",
+      "translation_vi": "Khi có báo cáo về sự gia tăng bệnh bất thường, nhóm điều tra y tế công cộng dùng nhiều loại bằng chứng. Giám sát thường quy theo dõi các mô hình theo thời gian, còn nghiên cứu tập trung có thể xem kỹ một câu hỏi cụ thể. Không cách nào thay thế hoàn toàn cách kia. Giám sát giúp cảnh báo vấn đề có thể tồn tại, nhưng thường cần điều tra thêm để hiểu nguyên nhân mô hình ấy.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_4",
+        "academic_lecture",
+        "compare",
+        "l7"
+      ]
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "A",
+      "text_en": "A cross-sectional survey describes a population during a defined period. It may reveal that people who report limited access to green space also report lower activity levels. However, the timing of responses makes it difficult to determine which factor came first. The association is useful for generating questions but cannot alone establish a causal explanation.",
+      "translation_vi": "Khảo sát cắt ngang mô tả quần thể trong một khoảng thời gian xác định. Nó có thể cho thấy người báo cáo ít tiếp cận không gian xanh cũng báo cáo hoạt động thể chất thấp hơn. Tuy nhiên, thời điểm phản hồi khiến khó biết yếu tố nào có trước. Mối liên hệ hữu ích để đặt câu hỏi nhưng riêng nó không xác lập lời giải thích nhân quả.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_4",
+        "academic_lecture",
+        "compare",
+        "l7"
+      ]
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "A",
+      "text_en": "Randomised trials can provide stronger evidence about particular interventions when they are feasible and ethical. By assigning participants or groups randomly, researchers reduce certain pre-existing differences. Yet trials also have limitations: participants may not represent every community, and conditions may differ from ordinary services. A strong result within a trial still requires thought before wider adoption.",
+      "translation_vi": "Thử nghiệm ngẫu nhiên có thể đưa bằng chứng mạnh hơn về can thiệp cụ thể khi khả thi và phù hợp đạo đức. Phân người tham gia hoặc nhóm ngẫu nhiên giúp giảm một số khác biệt vốn có. Tuy nhiên thử nghiệm cũng có hạn chế: người tham gia có thể không đại diện mọi cộng đồng và điều kiện khác dịch vụ thường ngày. Kết quả tốt trong thử nghiệm vẫn cần cân nhắc trước khi áp dụng rộng.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_4",
+        "academic_lecture",
+        "compare",
+        "l7"
+      ]
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "A",
+      "text_en": "Qualitative interviews add detail about experiences that numbers alone may miss. They can explain why a service feels unwelcoming or why opening hours exclude particular workers. But a small interview sample cannot estimate how common a problem is across an entire region. Researchers should distinguish rich explanations from representative frequency estimates and use each for its appropriate purpose.",
+      "translation_vi": "Phỏng vấn định tính bổ sung chi tiết về trải nghiệm mà con số có thể bỏ lỡ. Chúng giải thích vì sao dịch vụ khiến người dùng thấy không được chào đón hoặc giờ mở cửa loại trừ nhóm lao động nào. Nhưng mẫu phỏng vấn nhỏ không ước lượng được vấn đề phổ biến ra sao trên toàn vùng. Nhà nghiên cứu cần phân biệt giải thích sâu với ước lượng tần suất có tính đại diện và dùng đúng mục đích.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_4",
+        "academic_lecture",
+        "compare",
+        "l7"
+      ]
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "A",
+      "text_en": "The best evidence strategy often combines several methods. Surveillance may show a change, a trial may test a response and interviews may explain obstacles to implementation. Conflicting findings should be investigated rather than concealed. By matching each method to a clearly defined question, public-health teams can make recommendations that are both better supported and more practical.",
+      "translation_vi": "Chiến lược bằng chứng tốt nhất thường phối hợp nhiều phương pháp. Giám sát cho thấy thay đổi, thử nghiệm kiểm tra một phản ứng và phỏng vấn giải thích trở ngại triển khai. Kết quả mâu thuẫn cần được điều tra chứ không che giấu. Khi ghép mỗi phương pháp với câu hỏi rõ ràng, nhóm y tế công cộng có thể đưa khuyến nghị vừa có căn cứ hơn vừa khả thi hơn.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_4",
+        "academic_lecture",
+        "compare",
+        "l7"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "type": "note_completion",
+      "prompt": "Routine ____ tracks changes in disease patterns.",
+      "correct_answers": [
+        "surveillance"
+      ],
+      "evidence_turn_ids": [
+        "T01"
+      ],
+      "explanation_vi": "Đáp án “surveillance” nằm tại đoạn T01. Nội dung bằng chứng: Khi có báo cáo về sự gia tăng bệnh bất thường, nhóm điều tra y tế công cộng dùng nhiều loại bằng chứng. Giám sát thường quy theo dõi các mô hình theo thời gian, còn nghiên cứu tập trung có thể xem kỹ một câu hỏi cụ thể. Không cách nào thay thế hoàn toàn cách kia. Giám sát giúp cảnh báo vấn đề có thể tồn tại, nhưng thường cần điều tra thêm để hiểu nguyên nhân mô hình ấy.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_4",
+        "ielts_practice",
+        "compare",
+        "note_completion"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q02",
+      "type": "note_completion",
+      "prompt": "A ____ describes a population during a defined period.",
+      "correct_answers": [
+        "cross-sectional survey"
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Đáp án “cross-sectional survey” nằm tại đoạn T02. Nội dung bằng chứng: Khảo sát cắt ngang mô tả quần thể trong một khoảng thời gian xác định. Nó có thể cho thấy người báo cáo ít tiếp cận không gian xanh cũng báo cáo hoạt động thể chất thấp hơn. Tuy nhiên, thời điểm phản hồi khiến khó biết yếu tố nào có trước. Mối liên hệ hữu ích để đặt câu hỏi nhưng riêng nó không xác lập lời giải thích nhân quả.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_4",
+        "ielts_practice",
+        "compare",
+        "note_completion"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q03",
+      "type": "note_completion",
+      "prompt": "Some trials reduce pre-existing differences through ____ assignment.",
+      "correct_answers": [
+        "randomly"
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Đáp án “randomly” nằm tại đoạn T03. Nội dung bằng chứng: Thử nghiệm ngẫu nhiên có thể đưa bằng chứng mạnh hơn về can thiệp cụ thể khi khả thi và phù hợp đạo đức. Phân người tham gia hoặc nhóm ngẫu nhiên giúp giảm một số khác biệt vốn có. Tuy nhiên thử nghiệm cũng có hạn chế: người tham gia có thể không đại diện mọi cộng đồng và điều kiện khác dịch vụ thường ngày. Kết quả tốt trong thử nghiệm vẫn cần cân nhắc trước khi áp dụng rộng.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_4",
+        "ielts_practice",
+        "compare",
+        "note_completion"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q04",
+      "type": "note_completion",
+      "prompt": "____ interviews explain experiences that numbers may miss.",
+      "correct_answers": [
+        "Qualitative"
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Đáp án “Qualitative” nằm tại đoạn T04. Nội dung bằng chứng: Phỏng vấn định tính bổ sung chi tiết về trải nghiệm mà con số có thể bỏ lỡ. Chúng giải thích vì sao dịch vụ khiến người dùng thấy không được chào đón hoặc giờ mở cửa loại trừ nhóm lao động nào. Nhưng mẫu phỏng vấn nhỏ không ước lượng được vấn đề phổ biến ra sao trên toàn vùng. Nhà nghiên cứu cần phân biệt giải thích sâu với ước lượng tần suất có tính đại diện và dùng đúng mục đích.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_4",
+        "ielts_practice",
+        "compare",
+        "note_completion"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q05",
+      "type": "note_completion",
+      "prompt": "Teams should investigate ____ findings rather than conceal them.",
+      "correct_answers": [
+        "Conflicting"
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Đáp án “Conflicting” nằm tại đoạn T05. Nội dung bằng chứng: Chiến lược bằng chứng tốt nhất thường phối hợp nhiều phương pháp. Giám sát cho thấy thay đổi, thử nghiệm kiểm tra một phản ứng và phỏng vấn giải thích trở ngại triển khai. Kết quả mâu thuẫn cần được điều tra chứ không che giấu. Khi ghép mỗi phương pháp với câu hỏi rõ ràng, nhóm y tế công cộng có thể đưa khuyến nghị vừa có căn cứ hơn vừa khả thi hơn.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_4",
+        "ielts_practice",
+        "compare",
+        "note_completion"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q06",
+      "type": "mcq",
+      "prompt": "Which pairing is accurate?",
+      "correct_answers": [
+        "Surveillance detects patterns; trials can test interventions"
+      ],
+      "options": [
+        "Small interviews estimate the prevalence of a disease in a region",
+        "Surveillance detects patterns; trials can test interventions",
+        "Randomised trials automatically represent every community"
+      ],
+      "evidence_turn_ids": [
+        "T01",
+        "T03",
+        "T05"
+      ],
+      "explanation_vi": "Hãy kết hợp luận điểm đầu, ví dụ ở giữa và kết luận cuối bài. Chiến lược bằng chứng tốt nhất thường phối hợp nhiều phương pháp. Giám sát cho thấy thay đổi, thử nghiệm kiểm tra một phản ứng và phỏng vấn giải thích trở ngại triển khai. Kết quả mâu thuẫn cần được điều tra chứ không che giấu. Khi ghép mỗi phương pháp với câu hỏi rõ ràng, nhóm y tế công cộng có thể đưa khuyến nghị vừa có căn cứ hơn vừa khả thi hơn. Phương án chính xác: “Surveillance detects patterns; trials can test interventions”; hai phương án khác khái quát quá mức hoặc không phù hợp bằng chứng.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "section_4",
+        "ielts_practice",
+        "compare",
+        "main_idea"
+      ]
+    },
+    {
+      "question_id": "D01",
+      "type": "dictation",
+      "prompt": "Nghe đoạn T02 và chép lại chính xác lời giảng.",
+      "correct_answers": [
+        "A cross-sectional survey describes a population during a defined period. It may reveal that people who report limited access to green space also report lower activity levels. However, the timing of responses makes it difficult to determine which factor came first. The association is useful for generating questions but cannot alone establish a causal explanation."
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Phân tích từ nối, âm yếu và cụm thuật ngữ học thuật. Nghĩa của đoạn: Khảo sát cắt ngang mô tả quần thể trong một khoảng thời gian xác định. Nó có thể cho thấy người báo cáo ít tiếp cận không gian xanh cũng báo cáo hoạt động thể chất thấp hơn. Tuy nhiên, thời điểm phản hồi khiến khó biết yếu tố nào có trước. Mối liên hệ hữu ích để đặt câu hỏi nhưng riêng nó không xác lập lời giải thích nhân quả.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_4",
+        "dictation",
+        "exact_transcript"
+      ]
+    },
+    {
+      "question_id": "D02",
+      "type": "dictation",
+      "prompt": "Nghe đoạn T04 và chép lại chính xác lời giảng.",
+      "correct_answers": [
+        "Qualitative interviews add detail about experiences that numbers alone may miss. They can explain why a service feels unwelcoming or why opening hours exclude particular workers. But a small interview sample cannot estimate how common a problem is across an entire region. Researchers should distinguish rich explanations from representative frequency estimates and use each for its appropriate purpose."
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Phân tích từ nối, âm yếu và cụm thuật ngữ học thuật. Nghĩa của đoạn: Phỏng vấn định tính bổ sung chi tiết về trải nghiệm mà con số có thể bỏ lỡ. Chúng giải thích vì sao dịch vụ khiến người dùng thấy không được chào đón hoặc giờ mở cửa loại trừ nhóm lao động nào. Nhưng mẫu phỏng vấn nhỏ không ước lượng được vấn đề phổ biến ra sao trên toàn vùng. Nhà nghiên cứu cần phân biệt giải thích sâu với ước lượng tần suất có tính đại diện và dùng đúng mục đích.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_4",
+        "dictation",
+        "exact_transcript"
+      ]
+    },
+    {
+      "question_id": "G01",
+      "type": "gap_fill",
+      "prompt": "Nghe T01 rồi điền phần thiếu: When an unexpected rise in illness is reported, public-health investigators use several forms of evidence. Routine ____ tracks patterns over time, while targeted studies can examine a particular question in greater depth.",
+      "correct_answers": [
+        "surveillance"
+      ],
+      "evidence_turn_ids": [
+        "T01"
+      ],
+      "explanation_vi": "Điền “surveillance”, nghĩa: giám sát. Cụm từ này xuất hiện trong T01.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_4",
+        "gap_fill",
+        "academic_vocabulary"
+      ]
+    }
+  ],
+  "vocabulary": [
+    {
+      "term": "surveillance",
+      "pos": "n.",
+      "meaning_vi": "giám sát",
+      "example_en": "When an unexpected rise in illness is reported, public-health investigators use several forms of evidence. Routine surveillance tracks patterns over time, while targeted studies can examine a particular question in greater depth. Neither method replaces the other. Surveillance may alert teams to a possible problem, but further investigation is often needed to understand what produced the pattern.",
+      "example_vi": "Khi có báo cáo về sự gia tăng bệnh bất thường, nhóm điều tra y tế công cộng dùng nhiều loại bằng chứng. Giám sát thường quy theo dõi các mô hình theo thời gian, còn nghiên cứu tập trung có thể xem kỹ một câu hỏi cụ thể. Không cách nào thay thế hoàn toàn cách kia. Giám sát giúp cảnh báo vấn đề có thể tồn tại, nhưng thường cần điều tra thêm để hiểu nguyên nhân mô hình ấy.",
+      "source_turn_id": "T01"
+    },
+    {
+      "term": "cross-sectional survey",
+      "pos": "n. phr.",
+      "meaning_vi": "khảo sát cắt ngang",
+      "example_en": "A cross-sectional survey describes a population during a defined period. It may reveal that people who report limited access to green space also report lower activity levels. However, the timing of responses makes it difficult to determine which factor came first. The association is useful for generating questions but cannot alone establish a causal explanation.",
+      "example_vi": "Khảo sát cắt ngang mô tả quần thể trong một khoảng thời gian xác định. Nó có thể cho thấy người báo cáo ít tiếp cận không gian xanh cũng báo cáo hoạt động thể chất thấp hơn. Tuy nhiên, thời điểm phản hồi khiến khó biết yếu tố nào có trước. Mối liên hệ hữu ích để đặt câu hỏi nhưng riêng nó không xác lập lời giải thích nhân quả.",
+      "source_turn_id": "T02"
+    },
+    {
+      "term": "Randomised trials",
+      "pos": "n. phr.",
+      "meaning_vi": "thử nghiệm ngẫu nhiên",
+      "example_en": "Randomised trials can provide stronger evidence about particular interventions when they are feasible and ethical. By assigning participants or groups randomly, researchers reduce certain pre-existing differences. Yet trials also have limitations: participants may not represent every community, and conditions may differ from ordinary services. A strong result within a trial still requires thought before wider adoption.",
+      "example_vi": "Thử nghiệm ngẫu nhiên có thể đưa bằng chứng mạnh hơn về can thiệp cụ thể khi khả thi và phù hợp đạo đức. Phân người tham gia hoặc nhóm ngẫu nhiên giúp giảm một số khác biệt vốn có. Tuy nhiên thử nghiệm cũng có hạn chế: người tham gia có thể không đại diện mọi cộng đồng và điều kiện khác dịch vụ thường ngày. Kết quả tốt trong thử nghiệm vẫn cần cân nhắc trước khi áp dụng rộng.",
+      "source_turn_id": "T03"
+    },
+    {
+      "term": "Qualitative interviews",
+      "pos": "n. phr.",
+      "meaning_vi": "phỏng vấn định tính",
+      "example_en": "Qualitative interviews add detail about experiences that numbers alone may miss. They can explain why a service feels unwelcoming or why opening hours exclude particular workers. But a small interview sample cannot estimate how common a problem is across an entire region. Researchers should distinguish rich explanations from representative frequency estimates and use each for its appropriate purpose.",
+      "example_vi": "Phỏng vấn định tính bổ sung chi tiết về trải nghiệm mà con số có thể bỏ lỡ. Chúng giải thích vì sao dịch vụ khiến người dùng thấy không được chào đón hoặc giờ mở cửa loại trừ nhóm lao động nào. Nhưng mẫu phỏng vấn nhỏ không ước lượng được vấn đề phổ biến ra sao trên toàn vùng. Nhà nghiên cứu cần phân biệt giải thích sâu với ước lượng tần suất có tính đại diện và dùng đúng mục đích.",
+      "source_turn_id": "T04"
+    }
+  ],
+  "audio": {
+    "status": "not_generated",
+    "url": null,
+    "duration_ms": null,
+    "model": null,
+    "provider": null,
+    "voice_config": null,
+    "source_transcript_hash": "a0130afd44f95a2cb7cdaa1a763322eea31f3e1cc10f2d8b7b691a5a0b290cb1",
+    "audio_sha256": null,
+    "format": null
+  },
+  "qa": {
+    "content_reviewed": false,
+    "answers_verified": false,
+    "audio_verified": false,
+    "rights_cleared": false,
+    "duplicate_reviewed": false,
+    "notes": [
+      "Original AI-assisted educational script, not an official IELTS transcript.",
+      "Editorial, academic and linguistic review pending.",
+      "Audio/TTS not generated; text-to-speech distribution rights must be confirmed before use, especially for minors.",
+      "Six IELTS-style practice questions per lesson; this is not a full official Part 4 test or a calibrated IELTS Band test.",
+      "M16.2: automated edits are provisional; IELTS teacher final signoff, audio and rights clearance pending."
+    ]
+  },
+  "provenance": {
+    "content_origin": "original_ai_assisted",
+    "source_urls": [],
+    "source_rights_note": "Original transcript and translation drafts; verify academic claims and terms, and TTS provider redistribution conditions before release.",
+    "reviewer": null
+  },
+  "release_metadata": {
+    "published_at": null,
+    "version": 1
+  }
+}

@@ -1,0 +1,627 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "S2-EXP-013",
+  "status": "draft_pending_audio",
+  "level": "L4",
+  "section": 2,
+  "topic": "Evening astronomy",
+  "title": "Redstone Observatory Visitor Night",
+  "learning_objectives_vi": [
+    "Lần theo những lối đi đa dạng trên bản đồ, không dựa vào bố cục ô lưới.",
+    "Nhận diện mốc cố định rồi kết hợp hướng la bàn để chọn đúng vị trí.",
+    "Phân biệt những thông tin cũ và thông tin cuối cùng trong câu hỏi điền từ."
+  ],
+  "content_format": "section_practice",
+  "target_skills": [
+    "map_navigation",
+    "compass_orientation",
+    "detail_accuracy",
+    "distractor_rejection"
+  ],
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Venue guide",
+      "accent_requested": "british",
+      "tts_voice_id": null
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "Welcome to Redstone Observatory Visitor Night. Please use the new visitor plan rather than an old photograph or timetable. Today's route is marked as the hill path. On this plan, north is at the top, and the entrance is labelled west hill gate.",
+      "translation_vi": "Chào mừng đến Redstone Observatory Visitor Night. Hãy tìm west hill gate trên sơ đồ, sau đó đi theo hill path. Mũi tên chỉ hướng Bắc.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "orientation",
+        "map_reading"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "A",
+      "text_en": "To protect night vision, the room lights are dimmed shortly before the telescope sessions begin. The fixed landmarks are labelled by name, while the places you need to identify are marked only A to H. Listen for a landmark and a direction; do not guess from the order of letters.",
+      "translation_vi": "Các mốc cố định có tên sẵn, còn những vị trí cần xác định được đánh dấu A đến H. Hãy nghe mốc và hướng di chuyển.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "orientation",
+        "compass"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "A",
+      "text_en": "If you're looking for Safety Station, use the Telescope Dome as your reference point. Choose the nearest lettered location directly south of that landmark. Other marked areas are for different activities.",
+      "translation_vi": "Hãy xác định mốc Telescope Dome trên sơ đồ. Safety Station nằm ngay phía nam của mốc đó. Không chọn các khu xa hơn.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "map_navigation",
+        "location_F"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "A",
+      "text_en": "There's a useful sign for the Red Lantern on the plan. Immediately south of it is a lettered location: that's where you'll find Star Charts. People sometimes choose the more distant area, but that isn't the right one.",
+      "translation_vi": "Hãy xác định mốc Red Lantern trên sơ đồ. Star Charts nằm ngay phía nam của mốc đó. Không chọn các khu xa hơn.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "map_navigation",
+        "location_C"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "A",
+      "text_en": "Now find the Weather Board. From that landmark, look north-west to the nearest lettered point. That's where you'll find Meteor Display. Don't confuse it with the other lettered buildings further away.",
+      "translation_vi": "Hãy xác định mốc Weather Board trên sơ đồ. Meteor Display nằm ngay phía tây bắc của mốc đó. Không chọn các khu xa hơn.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "map_navigation",
+        "location_G"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "A",
+      "text_en": "First locate the Hill Steps on the visitor plan. You'll find Dark Room at the lettered location immediately south-west of it. Check the position against the nearest other buildings before moving on.",
+      "translation_vi": "Hãy xác định mốc Hill Steps trên sơ đồ. Dark Room nằm ngay phía tây nam của mốc đó. Không chọn các khu xa hơn.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "map_navigation",
+        "location_H"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "Turning to the practical information, Each telescope group has ten visitors, allowing everyone time to look through the equipment.",
+      "translation_vi": null,
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "practical_information",
+        "distractor_detection"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "A",
+      "text_en": "As for booking details, Please check in by 7:10, or your place may be offered to someone on the waiting list.",
+      "translation_vi": null,
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "practical_information",
+        "distractor_detection"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T09",
+      "speaker_id": "A",
+      "text_en": "There is also a useful change to note: The weather cancellation update will arrive by text message, not by email.",
+      "translation_vi": null,
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "practical_information",
+        "distractor_detection"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T10",
+      "speaker_id": "A",
+      "text_en": "Before you arrive, remember this: Bring a warm coat; even summer evenings can be cold on the open deck.",
+      "translation_vi": null,
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "practical_information",
+        "distractor_detection"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T11",
+      "speaker_id": "A",
+      "text_en": "Any photographs taken on the viewing deck must be made without flash. The visitor team at Redstone Observatory Visitor Night will answer any remaining questions after the tour.",
+      "translation_vi": null,
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "closing"
+      ],
+      "bank_role": "training"
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "group_id": "MAP_Q01_TO_04",
+      "type": "map_labelling",
+      "prompt": "Safety Station",
+      "correct_answers": [
+        "F"
+      ],
+      "correct_option": "F",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G",
+        "H"
+      ],
+      "word_limit": null,
+      "scoring_policy": "map_letter",
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "evidence_excerpt_en": "If you're looking for Safety Station, use the Telescope Dome as your reference point. Choose the nearest lettered location directly south of that landmark. Other marked areas are for different activities.",
+      "explanation_vi": "Trên sơ đồ mới, tìm mốc Telescope Dome, rồi nhìn ngay phía nam. Khu được đánh dấu F là Safety Station.",
+      "question_tags": [
+        "m22",
+        "map_navigation",
+        "section_2_practice"
+      ],
+      "answer_source": "spoken_spatial_directions",
+      "map_asset_id": "M22-MAP-013"
+    },
+    {
+      "question_id": "Q02",
+      "group_id": "MAP_Q01_TO_04",
+      "type": "map_labelling",
+      "prompt": "Star Charts",
+      "correct_answers": [
+        "C"
+      ],
+      "correct_option": "C",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G",
+        "H"
+      ],
+      "word_limit": null,
+      "scoring_policy": "map_letter",
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "evidence_excerpt_en": "There's a useful sign for the Red Lantern on the plan. Immediately south of it is a lettered location: that's where you'll find Star Charts. People sometimes choose the more distant area, but that isn't the right one.",
+      "explanation_vi": "Trên sơ đồ mới, tìm mốc Red Lantern, rồi nhìn ngay phía nam. Khu được đánh dấu C là Star Charts.",
+      "question_tags": [
+        "m22",
+        "map_navigation",
+        "section_2_practice"
+      ],
+      "answer_source": "spoken_spatial_directions",
+      "map_asset_id": "M22-MAP-013"
+    },
+    {
+      "question_id": "Q03",
+      "group_id": "MAP_Q01_TO_04",
+      "type": "map_labelling",
+      "prompt": "Meteor Display",
+      "correct_answers": [
+        "G"
+      ],
+      "correct_option": "G",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G",
+        "H"
+      ],
+      "word_limit": null,
+      "scoring_policy": "map_letter",
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "evidence_excerpt_en": "Now find the Weather Board. From that landmark, look north-west to the nearest lettered point. That's where you'll find Meteor Display. Don't confuse it with the other lettered buildings further away.",
+      "explanation_vi": "Trên sơ đồ mới, tìm mốc Weather Board, rồi nhìn ngay phía tây bắc. Khu được đánh dấu G là Meteor Display.",
+      "question_tags": [
+        "m22",
+        "map_navigation",
+        "section_2_practice"
+      ],
+      "answer_source": "spoken_spatial_directions",
+      "map_asset_id": "M22-MAP-013"
+    },
+    {
+      "question_id": "Q04",
+      "group_id": "MAP_Q01_TO_04",
+      "type": "map_labelling",
+      "prompt": "Dark Room",
+      "correct_answers": [
+        "H"
+      ],
+      "correct_option": "H",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G",
+        "H"
+      ],
+      "word_limit": null,
+      "scoring_policy": "map_letter",
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "evidence_excerpt_en": "First locate the Hill Steps on the visitor plan. You'll find Dark Room at the lettered location immediately south-west of it. Check the position against the nearest other buildings before moving on.",
+      "explanation_vi": "Trên sơ đồ mới, tìm mốc Hill Steps, rồi nhìn ngay phía tây nam. Khu được đánh dấu H là Dark Room.",
+      "question_tags": [
+        "m22",
+        "map_navigation",
+        "section_2_practice"
+      ],
+      "answer_source": "spoken_spatial_directions",
+      "map_asset_id": "M22-MAP-013"
+    },
+    {
+      "question_id": "Q05",
+      "group_id": "NOTES_Q05_TO_08",
+      "type": "note_completion",
+      "prompt": "Viewing group size: ____",
+      "correct_answers": [
+        "ten"
+      ],
+      "spoken_answer": "ten",
+      "word_limit": 3,
+      "scoring_policy": "controlled_variants",
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "evidence_excerpt_en": "Each telescope group has ten visitors, allowing everyone time to look through the equipment.",
+      "explanation_vi": "Nghe thông tin cuối cùng về viewing group size; đáp án là “ten”, không chọn thông tin cũ hoặc phương án bị loại.",
+      "question_tags": [
+        "m22",
+        "note_completion",
+        "section_2_practice"
+      ],
+      "answer_source": "literal_spoken_wording"
+    },
+    {
+      "question_id": "Q06",
+      "group_id": "NOTES_Q05_TO_08",
+      "type": "note_completion",
+      "prompt": "Arrival cutoff: ____",
+      "correct_answers": [
+        "7:10"
+      ],
+      "spoken_answer": "7:10",
+      "word_limit": 3,
+      "scoring_policy": "controlled_variants",
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "evidence_excerpt_en": "Please check in by 7:10, or your place may be offered to someone on the waiting list.",
+      "explanation_vi": "Nghe thông tin cuối cùng về arrival cutoff; đáp án là “7:10”, không chọn thông tin cũ hoặc phương án bị loại.",
+      "question_tags": [
+        "m22",
+        "note_completion",
+        "section_2_practice"
+      ],
+      "answer_source": "literal_spoken_wording"
+    },
+    {
+      "question_id": "Q07",
+      "group_id": "NOTES_Q05_TO_08",
+      "type": "note_completion",
+      "prompt": "Weather update channel: ____",
+      "correct_answers": [
+        "text message"
+      ],
+      "spoken_answer": "text message",
+      "word_limit": 3,
+      "scoring_policy": "controlled_variants",
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "evidence_excerpt_en": "The weather cancellation update will arrive by text message, not by email.",
+      "explanation_vi": "Nghe thông tin cuối cùng về weather update channel; đáp án là “text message”, không chọn thông tin cũ hoặc phương án bị loại.",
+      "question_tags": [
+        "m22",
+        "note_completion",
+        "section_2_practice"
+      ],
+      "answer_source": "literal_spoken_wording"
+    },
+    {
+      "question_id": "Q08",
+      "group_id": "NOTES_Q05_TO_08",
+      "type": "note_completion",
+      "prompt": "Clothing advice: ____",
+      "correct_answers": [
+        "warm coat"
+      ],
+      "spoken_answer": "warm coat",
+      "word_limit": 3,
+      "scoring_policy": "controlled_variants",
+      "evidence_turn_ids": [
+        "T10"
+      ],
+      "evidence_excerpt_en": "Bring a warm coat; even summer evenings can be cold on the open deck.",
+      "explanation_vi": "Nghe thông tin cuối cùng về clothing advice; đáp án là “warm coat”, không chọn thông tin cũ hoặc phương án bị loại.",
+      "question_tags": [
+        "m22",
+        "note_completion",
+        "section_2_practice"
+      ],
+      "answer_source": "literal_spoken_wording"
+    }
+  ],
+  "question_groups": [
+    {
+      "group_id": "MAP_Q01_TO_04",
+      "question_ids": [
+        "Q01",
+        "Q02",
+        "Q03",
+        "Q04"
+      ],
+      "question_type": "map_labelling",
+      "instructions_en": "Label the plan. Choose the correct letter A–H for each place. Follow the named landmarks and directions in the audio.",
+      "map_asset_id": "M22-MAP-013",
+      "map_asset_path": "04_MAP_ASSETS_CLIENT_SAFE/M22_MAP_013.svg",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G",
+        "H"
+      ]
+    },
+    {
+      "group_id": "NOTES_Q05_TO_08",
+      "question_ids": [
+        "Q05",
+        "Q06",
+        "Q07",
+        "Q08"
+      ],
+      "question_type": "note_completion",
+      "instructions_en": "Complete the notes. Write NO MORE THAN THREE WORDS AND/OR A NUMBER for each answer."
+    }
+  ],
+  "vocabulary": [
+    {
+      "expression_en": "Safety Station",
+      "meaning_vi": "Vị trí Safety Station trên sơ đồ; luyện nghe định hướng tương đối so với Telescope Dome.",
+      "part_of_speech": "noun phrase",
+      "example_en": "If you're looking for Safety Station, use the Telescope Dome as your reference point. Choose the nearest lettered location directly south of that landmark. Other marked areas are for different activities.",
+      "can_save_to_notebook": true
+    },
+    {
+      "expression_en": "Star Charts",
+      "meaning_vi": "Vị trí Star Charts trên sơ đồ; luyện nghe định hướng tương đối so với Red Lantern.",
+      "part_of_speech": "noun phrase",
+      "example_en": "There's a useful sign for the Red Lantern on the plan. Immediately south of it is a lettered location: that's where you'll find Star Charts. People sometimes choose the more distant area, but that isn't the right one.",
+      "can_save_to_notebook": true
+    },
+    {
+      "expression_en": "Meteor Display",
+      "meaning_vi": "Vị trí Meteor Display trên sơ đồ; luyện nghe định hướng tương đối so với Weather Board.",
+      "part_of_speech": "noun phrase",
+      "example_en": "Now find the Weather Board. From that landmark, look north-west to the nearest lettered point. That's where you'll find Meteor Display. Don't confuse it with the other lettered buildings further away.",
+      "can_save_to_notebook": true
+    },
+    {
+      "expression_en": "Dark Room",
+      "meaning_vi": "Vị trí Dark Room trên sơ đồ; luyện nghe định hướng tương đối so với Hill Steps.",
+      "part_of_speech": "noun phrase",
+      "example_en": "First locate the Hill Steps on the visitor plan. You'll find Dark Room at the lettered location immediately south-west of it. Check the position against the nearest other buildings before moving on.",
+      "can_save_to_notebook": true
+    }
+  ],
+  "audio": {
+    "status": "not_generated",
+    "audio_url": null,
+    "audio_asset_id": null,
+    "duration_ms": null,
+    "source_text_sha256": "fc13e743d98e045224ca33d61968006743fa8b61c56847981464927ed1cb91aa",
+    "generation_strategy": "one_continuous_monologue",
+    "aligned_turns": false
+  },
+  "learning_flow": {
+    "intro": {
+      "theory_vi": "IELTS Map Labelling yêu cầu tìm lối vào, mũi tên Bắc, các mốc cố định và con đường nối chúng. Không mặc định mọi lối vào ở phía Nam, không suy vị trí chỉ từ thứ tự A–H.",
+      "worked_examples": [
+        {
+          "prompt": "The activity area is immediately east of the old clock.",
+          "reason_vi": "Tìm Old Clock có ghi tên trên sơ đồ; từ đó nhìn sang phía Đông (bên phải nếu Bắc ở trên) để xác định ô chữ cái."
+        }
+      ],
+      "common_mistakes_vi": [
+        "Giả định mọi bản đồ đều có lối vào phía Nam.",
+        "Chọn chữ cái trước khi nghe mốc cố định.",
+        "Bỏ qua các từ immediately, across, rather than và north-east."
+      ]
+    },
+    "after_submit": {
+      "unlock_transcript": true,
+      "unlock_answers": true,
+      "dictation_turns": [
+        "T03",
+        "T07"
+      ]
+    }
+  },
+  "map_asset": {
+    "map_asset_id": "M22-MAP-013",
+    "asset_path": "04_MAP_ASSETS_CLIENT_SAFE/M22_MAP_013.svg",
+    "orientation": "NORTH UP / ENTRANCE VARIES BY PLAN",
+    "location_key_server_only": {
+      "Safety Station": "F",
+      "Star Charts": "C",
+      "Meteor Display": "G",
+      "Dark Room": "H"
+    },
+    "human_spatial_review_required": true,
+    "answer_key_is_server_only": true,
+    "layout_type": "observatory",
+    "source_map_version": "m22-map-v2-distinct",
+    "entry_point": "WEST HILL GATE",
+    "route_name": "hill path",
+    "letter_coordinates_server_only": {
+      "F": {
+        "x": 560,
+        "y": 425
+      },
+      "C": {
+        "x": 145,
+        "y": 415
+      },
+      "G": {
+        "x": 465,
+        "y": 185
+      },
+      "H": {
+        "x": 740,
+        "y": 220
+      },
+      "E": {
+        "x": 285,
+        "y": 360
+      },
+      "B": {
+        "x": 385,
+        "y": 275
+      },
+      "A": {
+        "x": 605,
+        "y": 155
+      },
+      "D": {
+        "x": 755,
+        "y": 370
+      }
+    },
+    "reference_landmarks_server_only": [
+      {
+        "name": "Telescope Dome",
+        "x": 560,
+        "y": 358,
+        "letter": "F"
+      },
+      {
+        "name": "Red Lantern",
+        "x": 145,
+        "y": 348,
+        "letter": "C"
+      },
+      {
+        "name": "Weather Board",
+        "x": 517,
+        "y": 237,
+        "letter": "G"
+      },
+      {
+        "name": "Hill Steps",
+        "x": 792,
+        "y": 168,
+        "letter": "H"
+      }
+    ],
+    "direction_evidence_server_only": {
+      "Q01": {
+        "landmark": "Telescope Dome",
+        "compass_direction": "south",
+        "answer_letter": "F"
+      },
+      "Q02": {
+        "landmark": "Red Lantern",
+        "compass_direction": "south",
+        "answer_letter": "C"
+      },
+      "Q03": {
+        "landmark": "Weather Board",
+        "compass_direction": "north-west",
+        "answer_letter": "G"
+      },
+      "Q04": {
+        "landmark": "Hill Steps",
+        "compass_direction": "south-west",
+        "answer_letter": "H"
+      }
+    }
+  },
+  "qa": {
+    "automated_data_validation": "passed_scope_spatial_reference_and_text_containment",
+    "human_transcript_approved": false,
+    "human_audio_approved": false,
+    "human_map_approved": false,
+    "human_translation_approved": false,
+    "release_eligible": false,
+    "estimated_word_count": 332,
+    "visual_diversity_review": "pending_human_check",
+    "previous_map_replaced_reason": "identical_2x4_grid_template"
+  },
+  "provenance": {
+    "source_type": "original_authored",
+    "authoring_milestone": "M22",
+    "reference_copying": false,
+    "target_bank": "training"
+  },
+  "release_metadata": {
+    "version": "m22.1.0-distinct-maps",
+    "published": false,
+    "needs_audio": true,
+    "requires_human_approval": true,
+    "import_policy": "replace_draft_only_or_explicit_version_migration",
+    "target_bank": "training",
+    "no_bands": true
+  }
+}

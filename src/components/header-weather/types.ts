@@ -1,5 +1,6 @@
 export type DayPhase = 'earlyMorning' | 'lateMorning' | 'midday' | 'lateAfternoon' | 'sunset' | 'night' | 'lateNight';
 export type HeaderDisplayMode = 'full' | 'sky' | 'off';
+export type HeaderEffectStrength = 'light' | 'medium' | 'strong';
 
 export type SelectedLocation = {
   name: string;
@@ -15,6 +16,11 @@ export type WeatherSnapshot = {
   weatherCode: number;
   isDay: boolean;
   cloudCover: number | null;
+  /** Current precipitation reported by Open-Meteo, in mm. */
+  precipitationMm?: number | null;
+  windSpeedKmh?: number | null;
+  /** Meteorological direction the wind blows FROM, degrees (270 = from the west). */
+  windDirectionDeg?: number | null;
   timezone?: string;
   observedAt?: string;
 };

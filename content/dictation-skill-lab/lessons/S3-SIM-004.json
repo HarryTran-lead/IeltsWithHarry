@@ -1,0 +1,1005 @@
+{
+  "schema_version": "1.2.0",
+  "lesson_id": "S3-SIM-004",
+  "status": "draft",
+  "level": "L6",
+  "section": 3,
+  "topic": "Archaeology and historical interpretation",
+  "title": "Tracing a Medieval Trade Route",
+  "content_format": "section_exam_simulation",
+  "exam_part": "IELTS_LISTENING_PART_3_STYLE",
+  "official_ielts_material": false,
+  "learning_objectives_vi": [
+    "Theo dõi thảo luận có nhiều quan điểm và lý do thay đổi quyết định.",
+    "Phân biệt bằng chứng chắc chắn với các hạn chế phương pháp nghiên cứu.",
+    "Làm 10 câu Multiple Choice và Matching trong một lần nghe mà không xem transcript."
+  ],
+  "target_skills": [
+    "academic_discussion",
+    "tracking_opinions",
+    "paraphrase",
+    "evidence_quality",
+    "matching_features"
+  ],
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "University tutor / academic adviser",
+      "accent_requested": "new_zealand",
+      "tts_voice_id": null
+    },
+    {
+      "speaker_id": "B",
+      "role": "Student researcher one",
+      "accent_requested": "british",
+      "tts_voice_id": null
+    },
+    {
+      "speaker_id": "C",
+      "role": "Student researcher two",
+      "accent_requested": "north_american",
+      "tts_voice_id": null
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "B",
+      "text_en": "We have five different pieces of evidence about the market road.",
+      "meaning_vi": "B: Có năm loại chứng cứ về đường chợ cổ nhưng chúng không thống nhất; cần phân biệt giả thuyết và kết luận chắc chắn.",
+      "translation_vi": null,
+      "translation_status": "pending_full_sentence_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "part3_opinion_tracking",
+        "paraphrase",
+        "evidence_evaluation"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "scene_setup"
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "C",
+      "text_en": "They do not all point to the same place.",
+      "meaning_vi": "B: Có năm loại chứng cứ về đường chợ cổ nhưng chúng không thống nhất; cần phân biệt giả thuyết và kết luận chắc chắn.",
+      "translation_vi": null,
+      "translation_status": "pending_full_sentence_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "part3_opinion_tracking",
+        "paraphrase",
+        "evidence_evaluation"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "scene_setup"
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "A",
+      "text_en": "That is precisely why the exhibition needs to distinguish a hypothesis from a proven route.",
+      "meaning_vi": "B: Có năm loại chứng cứ về đường chợ cổ nhưng chúng không thống nhất; cần phân biệt giả thuyết và kết luận chắc chắn.",
+      "translation_vi": null,
+      "translation_status": "pending_full_sentence_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "part3_opinion_tracking",
+        "paraphrase",
+        "evidence_evaluation"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "scene_setup"
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "A",
+      "text_en": "Retain the coin catalogue, but add a note separating mint dates from the date of deposition. The list is useful once that limitation is clear.",
+      "meaning_vi": "A: Giữ danh mục tiền cổ nhưng phân biệt năm đúc và thời điểm bị bỏ lại.",
+      "translation_vi": null,
+      "translation_status": "pending_full_sentence_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "part3_opinion_tracking",
+        "paraphrase",
+        "evidence_evaluation"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "evidence"
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "C",
+      "text_en": "Our surveyed crossing points are the strongest constraint on the model. We will use them to frame the main route comparison.",
+      "meaning_vi": "C: Điểm vượt sông khảo sát là căn cứ chính cho so sánh tuyến đường.",
+      "translation_vi": null,
+      "translation_status": "pending_full_sentence_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "part3_opinion_tracking",
+        "paraphrase",
+        "evidence_evaluation"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "evidence"
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "C",
+      "text_en": "A single object can move through trade, inheritance or later collecting. Even a precisely dated coin therefore gives only partial evidence about the movement of the people who carried it.",
+      "meaning_vi": "C: Một đồng tiền có thể qua buôn bán hoặc sưu tập nên chỉ cung cấp chứng cứ một phần.",
+      "translation_vi": null,
+      "translation_status": "pending_full_sentence_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "part3_opinion_tracking",
+        "paraphrase",
+        "evidence_evaluation"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "critical_discussion"
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "B",
+      "text_en": "That would also stop people assuming an object travelled on the same day it was manufactured.",
+      "meaning_vi": "B: Không nên cho rằng vật thể di chuyển ngay khi được chế tạo.",
+      "translation_vi": null,
+      "translation_status": "pending_full_sentence_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "part3_opinion_tracking",
+        "paraphrase",
+        "evidence_evaluation"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "peer_response"
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "B",
+      "text_en": "There is no record of where the market token was recovered. A photograph is attractive, but without its find location it cannot support a route hypothesis.",
+      "meaning_vi": "B: Loại vật chứng không rõ nơi tìm khỏi lập luận về tuyến đường.",
+      "translation_vi": null,
+      "translation_status": "pending_full_sentence_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "part3_opinion_tracking",
+        "paraphrase",
+        "evidence_evaluation"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "evidence"
+    },
+    {
+      "turn_id": "T09",
+      "speaker_id": "A",
+      "text_en": "The Victorian drawing may appear on the introduction panel to show later ideas about the landscape, not as medieval evidence.",
+      "meaning_vi": "A: Tranh thời Victoria chỉ dùng minh họa cách nhìn đời sau.",
+      "translation_vi": null,
+      "translation_status": "pending_full_sentence_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "part3_opinion_tracking",
+        "paraphrase",
+        "evidence_evaluation"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "evidence"
+    },
+    {
+      "turn_id": "T10",
+      "speaker_id": "C",
+      "text_en": "The choice of symbols on the map needs to convey degrees of confidence, not just locations.",
+      "meaning_vi": "C: Ký hiệu trên bản đồ cần thể hiện mức độ chắc chắn.",
+      "translation_vi": null,
+      "translation_status": "pending_full_sentence_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "part3_opinion_tracking",
+        "paraphrase",
+        "evidence_evaluation"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "peer_response"
+    },
+    {
+      "turn_id": "T11",
+      "speaker_id": "C",
+      "text_en": "Before we print the Latin place-name, a medieval-language specialist should check the proposed translation; one disputed term changes which settlement it describes.",
+      "meaning_vi": "C: Cần chuyên gia ngôn ngữ trung cổ xác nhận tên địa danh Latin.",
+      "translation_vi": null,
+      "translation_status": "pending_full_sentence_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "part3_opinion_tracking",
+        "paraphrase",
+        "evidence_evaluation"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "evidence"
+    },
+    {
+      "turn_id": "T12",
+      "speaker_id": "C",
+      "text_en": "The old display shows a thick red line from port to castle as though we know the exact road. In fact we only have scattered finds, and several alternative routes are possible.",
+      "meaning_vi": "C: Triển lãm cũ thể hiện tuyến đường chưa chắc chắn như sự thật đã xác minh.",
+      "translation_vi": null,
+      "translation_status": "pending_full_sentence_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "part3_opinion_tracking",
+        "paraphrase",
+        "evidence_evaluation"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "evidence"
+    },
+    {
+      "turn_id": "T13",
+      "speaker_id": "A",
+      "text_en": "The exhibition designer has asked for one clean route, because alternative lines may look messy. But visual simplicity is not a good reason to remove important uncertainty from our findings.",
+      "meaning_vi": "A: Thiết kế đẹp không phải lý do để xóa sự bất định lịch sử.",
+      "translation_vi": null,
+      "translation_status": "pending_full_sentence_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "part3_opinion_tracking",
+        "paraphrase",
+        "evidence_evaluation"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "critical_discussion"
+    },
+    {
+      "turn_id": "T14",
+      "speaker_id": "B",
+      "text_en": "A coin minted in the twelfth century could have been lost many decades later. The date stamped on it is not necessarily the date when traders passed through that field.",
+      "meaning_vi": "B: Tiền cổ có thể được lưu hành lâu sau năm đúc nên khó xác định thời điểm đi lại.",
+      "translation_vi": null,
+      "translation_status": "pending_full_sentence_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "part3_opinion_tracking",
+        "paraphrase",
+        "evidence_evaluation"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "evidence"
+    },
+    {
+      "turn_id": "T15",
+      "speaker_id": "A",
+      "text_en": "Please ask the museum designer to test whether visitors notice the uncertainty labels.",
+      "meaning_vi": "A: Hãy thử xem khách có nhận thấy các nhãn bất định không.",
+      "translation_vi": null,
+      "translation_status": "pending_full_sentence_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "part3_opinion_tracking",
+        "paraphrase",
+        "evidence_evaluation"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "peer_response"
+    },
+    {
+      "turn_id": "T16",
+      "speaker_id": "A",
+      "text_en": "Rather than join the find spots by the shortest line, consider the valley’s steep sides and the two known river crossings. Those physical constraints help us test which route was practical.",
+      "meaning_vi": "A: Dùng địa hình và điểm vượt sông có chứng cứ để đánh giá tuyến đường khả thi.",
+      "translation_vi": null,
+      "translation_status": "pending_full_sentence_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "part3_opinion_tracking",
+        "paraphrase",
+        "evidence_evaluation"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "evidence"
+    },
+    {
+      "turn_id": "T17",
+      "speaker_id": "C",
+      "text_en": "Two chronicles name different settlements. Choosing the older text automatically would conceal the disagreement. Give visitors both interpretations and say why the authors may have described separate journeys.",
+      "meaning_vi": "C: Trình bày sự bất đồng giữa hai biên niên sử thay vì chỉ chọn bản cũ nhất.",
+      "translation_vi": null,
+      "translation_status": "pending_full_sentence_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "part3_opinion_tracking",
+        "paraphrase",
+        "evidence_evaluation"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "evidence"
+    },
+    {
+      "turn_id": "T18",
+      "speaker_id": "B",
+      "text_en": "Perhaps we can ask visitors to move a slider between the two route hypotheses and read what changes when each type of evidence is given more weight.",
+      "meaning_vi": "B: Có thể cho khách kéo thanh để so hai giả thuyết tuyến đường và các chứng cứ.",
+      "translation_vi": null,
+      "translation_status": "pending_full_sentence_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "part3_opinion_tracking",
+        "paraphrase",
+        "evidence_evaluation"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "critical_discussion"
+    },
+    {
+      "turn_id": "T19",
+      "speaker_id": "B",
+      "text_en": "We can write a short caption that explains the difference between evidence and interpretation.",
+      "meaning_vi": "B: Ta có thể chú thích ngắn sự khác nhau giữa chứng cứ và diễn giải.",
+      "translation_vi": null,
+      "translation_status": "pending_full_sentence_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "part3_opinion_tracking",
+        "paraphrase",
+        "evidence_evaluation"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "peer_response"
+    },
+    {
+      "turn_id": "T20",
+      "speaker_id": "B",
+      "text_en": "We could print a blank map, but the tutor’s suggestion is more engaging: show two plausible routes and ask visitors which evidence supports each one before revealing our assessment.",
+      "meaning_vi": "B: Hoạt động đề xuất là để khách so sánh hai bản đồ tuyến đường theo chứng cứ.",
+      "translation_vi": null,
+      "translation_status": "pending_full_sentence_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "part3_opinion_tracking",
+        "paraphrase",
+        "evidence_evaluation"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "evidence"
+    },
+    {
+      "turn_id": "T21",
+      "speaker_id": "A",
+      "text_en": "If visitors leave understanding why historians disagree, the exhibition will have done something more valuable than drawing a confident line on a map.",
+      "meaning_vi": "A: Triển lãm nên giúp khách hiểu vì sao các sử gia bất đồng, thay vì vẽ một tuyến đường quá chắc chắn.",
+      "translation_vi": null,
+      "translation_status": "pending_full_sentence_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "part3_opinion_tracking",
+        "paraphrase",
+        "evidence_evaluation"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "conclusion"
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "group_id": "PART3_MATCHING_Q01_TO_05",
+      "type": "matching",
+      "prompt": "Coin catalogue",
+      "options": [
+        {
+          "key": "A",
+          "text": "Anonymise personal testimony"
+        },
+        {
+          "key": "B",
+          "text": "Seek specialist linguistic verification"
+        },
+        {
+          "key": "C",
+          "text": "Make central to the route model"
+        },
+        {
+          "key": "D",
+          "text": "Preserve with a dating warning"
+        },
+        {
+          "key": "E",
+          "text": "Exclude owing to missing provenance"
+        },
+        {
+          "key": "F",
+          "text": "Use as a later historical illustration"
+        },
+        {
+          "key": "G",
+          "text": "Repeat an archaeological excavation"
+        }
+      ],
+      "correct_option": "D",
+      "correct_answers": [
+        "D"
+      ],
+      "scoring_policy": "matching_letter",
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "evidence_excerpt_en": "Retain the coin catalogue, but add a note separating mint dates from the date of deposition. The list is useful once that limitation is clear.",
+      "explanation_vi": "A: Giữ danh mục tiền cổ nhưng phân biệt năm đúc và thời điểm bị bỏ lại.",
+      "answer_source": "paraphrased_or_explicit_recording",
+      "question_tags": [
+        "M27",
+        "part3",
+        "academic_discussion",
+        "matching",
+        "evaluation_of_evidence"
+      ],
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true
+    },
+    {
+      "question_id": "Q02",
+      "group_id": "PART3_MATCHING_Q01_TO_05",
+      "type": "matching",
+      "prompt": "River-crossing survey",
+      "options": [
+        {
+          "key": "A",
+          "text": "Anonymise personal testimony"
+        },
+        {
+          "key": "B",
+          "text": "Seek specialist linguistic verification"
+        },
+        {
+          "key": "C",
+          "text": "Make central to the route model"
+        },
+        {
+          "key": "D",
+          "text": "Preserve with a dating warning"
+        },
+        {
+          "key": "E",
+          "text": "Exclude owing to missing provenance"
+        },
+        {
+          "key": "F",
+          "text": "Use as a later historical illustration"
+        },
+        {
+          "key": "G",
+          "text": "Repeat an archaeological excavation"
+        }
+      ],
+      "correct_option": "C",
+      "correct_answers": [
+        "C"
+      ],
+      "scoring_policy": "matching_letter",
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "evidence_excerpt_en": "Our surveyed crossing points are the strongest constraint on the model. We will use them to frame the main route comparison.",
+      "explanation_vi": "C: Điểm vượt sông khảo sát là căn cứ chính cho so sánh tuyến đường.",
+      "answer_source": "paraphrased_or_explicit_recording",
+      "question_tags": [
+        "M27",
+        "part3",
+        "academic_discussion",
+        "matching",
+        "evaluation_of_evidence"
+      ],
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true
+    },
+    {
+      "question_id": "Q03",
+      "group_id": "PART3_MATCHING_Q01_TO_05",
+      "type": "matching",
+      "prompt": "Unprovenanced market token",
+      "options": [
+        {
+          "key": "A",
+          "text": "Anonymise personal testimony"
+        },
+        {
+          "key": "B",
+          "text": "Seek specialist linguistic verification"
+        },
+        {
+          "key": "C",
+          "text": "Make central to the route model"
+        },
+        {
+          "key": "D",
+          "text": "Preserve with a dating warning"
+        },
+        {
+          "key": "E",
+          "text": "Exclude owing to missing provenance"
+        },
+        {
+          "key": "F",
+          "text": "Use as a later historical illustration"
+        },
+        {
+          "key": "G",
+          "text": "Repeat an archaeological excavation"
+        }
+      ],
+      "correct_option": "E",
+      "correct_answers": [
+        "E"
+      ],
+      "scoring_policy": "matching_letter",
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "evidence_excerpt_en": "There is no record of where the market token was recovered. A photograph is attractive, but without its find location it cannot support a route hypothesis.",
+      "explanation_vi": "B: Loại vật chứng không rõ nơi tìm khỏi lập luận về tuyến đường.",
+      "answer_source": "paraphrased_or_explicit_recording",
+      "question_tags": [
+        "M27",
+        "part3",
+        "academic_discussion",
+        "matching",
+        "evaluation_of_evidence"
+      ],
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true
+    },
+    {
+      "question_id": "Q04",
+      "group_id": "PART3_MATCHING_Q01_TO_05",
+      "type": "matching",
+      "prompt": "Victorian sketch",
+      "options": [
+        {
+          "key": "A",
+          "text": "Anonymise personal testimony"
+        },
+        {
+          "key": "B",
+          "text": "Seek specialist linguistic verification"
+        },
+        {
+          "key": "C",
+          "text": "Make central to the route model"
+        },
+        {
+          "key": "D",
+          "text": "Preserve with a dating warning"
+        },
+        {
+          "key": "E",
+          "text": "Exclude owing to missing provenance"
+        },
+        {
+          "key": "F",
+          "text": "Use as a later historical illustration"
+        },
+        {
+          "key": "G",
+          "text": "Repeat an archaeological excavation"
+        }
+      ],
+      "correct_option": "F",
+      "correct_answers": [
+        "F"
+      ],
+      "scoring_policy": "matching_letter",
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "evidence_excerpt_en": "The Victorian drawing may appear on the introduction panel to show later ideas about the landscape, not as medieval evidence.",
+      "explanation_vi": "A: Tranh thời Victoria chỉ dùng minh họa cách nhìn đời sau.",
+      "answer_source": "paraphrased_or_explicit_recording",
+      "question_tags": [
+        "M27",
+        "part3",
+        "academic_discussion",
+        "matching",
+        "evaluation_of_evidence"
+      ],
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true
+    },
+    {
+      "question_id": "Q05",
+      "group_id": "PART3_MATCHING_Q01_TO_05",
+      "type": "matching",
+      "prompt": "Latin place-name translation",
+      "options": [
+        {
+          "key": "A",
+          "text": "Anonymise personal testimony"
+        },
+        {
+          "key": "B",
+          "text": "Seek specialist linguistic verification"
+        },
+        {
+          "key": "C",
+          "text": "Make central to the route model"
+        },
+        {
+          "key": "D",
+          "text": "Preserve with a dating warning"
+        },
+        {
+          "key": "E",
+          "text": "Exclude owing to missing provenance"
+        },
+        {
+          "key": "F",
+          "text": "Use as a later historical illustration"
+        },
+        {
+          "key": "G",
+          "text": "Repeat an archaeological excavation"
+        }
+      ],
+      "correct_option": "B",
+      "correct_answers": [
+        "B"
+      ],
+      "scoring_policy": "matching_letter",
+      "evidence_turn_ids": [
+        "T11"
+      ],
+      "evidence_excerpt_en": "Before we print the Latin place-name, a medieval-language specialist should check the proposed translation; one disputed term changes which settlement it describes.",
+      "explanation_vi": "C: Cần chuyên gia ngôn ngữ trung cổ xác nhận tên địa danh Latin.",
+      "answer_source": "paraphrased_or_explicit_recording",
+      "question_tags": [
+        "M27",
+        "part3",
+        "academic_discussion",
+        "matching",
+        "evaluation_of_evidence"
+      ],
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true
+    },
+    {
+      "question_id": "Q06",
+      "group_id": "PART3_MCQ_Q06_TO_10",
+      "type": "mcq",
+      "prompt": "What is the central weakness of the old exhibition?",
+      "options": [
+        {
+          "key": "A",
+          "text": "It uses modern road names"
+        },
+        {
+          "key": "B",
+          "text": "It contains too few artefacts"
+        },
+        {
+          "key": "C",
+          "text": "It presents an uncertain route as established fact"
+        }
+      ],
+      "correct_option": "C",
+      "correct_answers": [
+        "It presents an uncertain route as established fact"
+      ],
+      "scoring_policy": "one_correct_option",
+      "evidence_turn_ids": [
+        "T12"
+      ],
+      "evidence_excerpt_en": "The old display shows a thick red line from port to castle as though we know the exact road. In fact we only have scattered finds, and several alternative routes are possible.",
+      "explanation_vi": "C: Triển lãm cũ thể hiện tuyến đường chưa chắc chắn như sự thật đã xác minh.",
+      "answer_source": "paraphrased_or_explicit_recording",
+      "question_tags": [
+        "M27",
+        "part3",
+        "academic_discussion",
+        "mcq",
+        "opinion_tracking"
+      ],
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true
+    },
+    {
+      "question_id": "Q07",
+      "group_id": "PART3_MCQ_Q06_TO_10",
+      "type": "mcq",
+      "prompt": "Why are the coin finds difficult to interpret?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Coins may have circulated long after they were minted"
+        },
+        {
+          "key": "B",
+          "text": "Their dates are completely unreadable"
+        },
+        {
+          "key": "C",
+          "text": "They were found only inside the castle"
+        }
+      ],
+      "correct_option": "A",
+      "correct_answers": [
+        "Coins may have circulated long after they were minted"
+      ],
+      "scoring_policy": "one_correct_option",
+      "evidence_turn_ids": [
+        "T14"
+      ],
+      "evidence_excerpt_en": "A coin minted in the twelfth century could have been lost many decades later. The date stamped on it is not necessarily the date when traders passed through that field.",
+      "explanation_vi": "B: Tiền cổ có thể được lưu hành lâu sau năm đúc nên khó xác định thời điểm đi lại.",
+      "answer_source": "paraphrased_or_explicit_recording",
+      "question_tags": [
+        "M27",
+        "part3",
+        "academic_discussion",
+        "mcq",
+        "opinion_tracking"
+      ],
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true
+    },
+    {
+      "question_id": "Q08",
+      "group_id": "PART3_MCQ_Q06_TO_10",
+      "type": "mcq",
+      "prompt": "Which evidence will guide the revised route?",
+      "options": [
+        {
+          "key": "A",
+          "text": "A nineteenth-century tourist guide"
+        },
+        {
+          "key": "B",
+          "text": "A combination of terrain and documented crossing points"
+        },
+        {
+          "key": "C",
+          "text": "The shortest straight line on the map"
+        }
+      ],
+      "correct_option": "B",
+      "correct_answers": [
+        "A combination of terrain and documented crossing points"
+      ],
+      "scoring_policy": "one_correct_option",
+      "evidence_turn_ids": [
+        "T16"
+      ],
+      "evidence_excerpt_en": "Rather than join the find spots by the shortest line, consider the valley’s steep sides and the two known river crossings. Those physical constraints help us test which route was practical.",
+      "explanation_vi": "A: Dùng địa hình và điểm vượt sông có chứng cứ để đánh giá tuyến đường khả thi.",
+      "answer_source": "paraphrased_or_explicit_recording",
+      "question_tags": [
+        "M27",
+        "part3",
+        "academic_discussion",
+        "mcq",
+        "opinion_tracking"
+      ],
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true
+    },
+    {
+      "question_id": "Q09",
+      "group_id": "PART3_MCQ_Q06_TO_10",
+      "type": "mcq",
+      "prompt": "What will the students do with contradictory written sources?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Use only the oldest manuscript"
+        },
+        {
+          "key": "B",
+          "text": "Remove all written evidence"
+        },
+        {
+          "key": "C",
+          "text": "Explain the disagreement beside the maps"
+        }
+      ],
+      "correct_option": "C",
+      "correct_answers": [
+        "Explain the disagreement beside the maps"
+      ],
+      "scoring_policy": "one_correct_option",
+      "evidence_turn_ids": [
+        "T17"
+      ],
+      "evidence_excerpt_en": "Two chronicles name different settlements. Choosing the older text automatically would conceal the disagreement. Give visitors both interpretations and say why the authors may have described separate journeys.",
+      "explanation_vi": "C: Trình bày sự bất đồng giữa hai biên niên sử thay vì chỉ chọn bản cũ nhất.",
+      "answer_source": "paraphrased_or_explicit_recording",
+      "question_tags": [
+        "M27",
+        "part3",
+        "academic_discussion",
+        "mcq",
+        "opinion_tracking"
+      ],
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true
+    },
+    {
+      "question_id": "Q10",
+      "group_id": "PART3_MCQ_Q06_TO_10",
+      "type": "mcq",
+      "prompt": "What is the proposed visitor activity?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Let visitors compare competing route maps"
+        },
+        {
+          "key": "B",
+          "text": "Provide a single route to trace with a pen"
+        },
+        {
+          "key": "C",
+          "text": "Ask visitors to memorise trade dates"
+        }
+      ],
+      "correct_option": "A",
+      "correct_answers": [
+        "Let visitors compare competing route maps"
+      ],
+      "scoring_policy": "one_correct_option",
+      "evidence_turn_ids": [
+        "T20"
+      ],
+      "evidence_excerpt_en": "We could print a blank map, but the tutor’s suggestion is more engaging: show two plausible routes and ask visitors which evidence supports each one before revealing our assessment.",
+      "explanation_vi": "B: Hoạt động đề xuất là để khách so sánh hai bản đồ tuyến đường theo chứng cứ.",
+      "answer_source": "paraphrased_or_explicit_recording",
+      "question_tags": [
+        "M27",
+        "part3",
+        "academic_discussion",
+        "mcq",
+        "opinion_tracking"
+      ],
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true
+    }
+  ],
+  "question_groups": [
+    {
+      "group_id": "PART3_MATCHING_Q01_TO_05",
+      "question_ids": [
+        "Q01",
+        "Q02",
+        "Q03",
+        "Q04",
+        "Q05"
+      ],
+      "question_type": "matching",
+      "instructions_en": "Match each item with the correct description. Choose A–G. You may use a letter more than once.",
+      "question_display_start": "before_audio",
+      "requires_one_listen": true,
+      "pause_between_groups_seconds": 0,
+      "options": [
+        {
+          "key": "A",
+          "text": "Anonymise personal testimony"
+        },
+        {
+          "key": "B",
+          "text": "Seek specialist linguistic verification"
+        },
+        {
+          "key": "C",
+          "text": "Make central to the route model"
+        },
+        {
+          "key": "D",
+          "text": "Preserve with a dating warning"
+        },
+        {
+          "key": "E",
+          "text": "Exclude owing to missing provenance"
+        },
+        {
+          "key": "F",
+          "text": "Use as a later historical illustration"
+        },
+        {
+          "key": "G",
+          "text": "Repeat an archaeological excavation"
+        }
+      ]
+    },
+    {
+      "group_id": "PART3_MCQ_Q06_TO_10",
+      "question_ids": [
+        "Q06",
+        "Q07",
+        "Q08",
+        "Q09",
+        "Q10"
+      ],
+      "question_type": "mcq",
+      "instructions_en": "Choose the correct letter A, B or C for each question.",
+      "question_display_start": "before_audio",
+      "requires_one_listen": true,
+      "pause_between_groups_seconds": 0
+    }
+  ],
+  "pedagogy_vi": {
+    "topic_summary_vi": "B: Có năm loại chứng cứ về đường chợ cổ nhưng chúng không thống nhất; cần phân biệt giả thuyết và kết luận chắc chắn.",
+    "question_explanations_status": "draft_semantic_review_required",
+    "turn_meanings_are_not_full_translations": true,
+    "full_line_translation_required_before_release": true
+  },
+  "audio": {
+    "status": "not_generated",
+    "audio_url": null,
+    "audio_asset_id": null,
+    "duration_ms": null,
+    "source_text_sha256": "7b5f57485ffbe833bb686c58c730cf4e1de628fd1846d37a1115c00a5ccc53a8",
+    "generation_strategy": "three_speakers_turnwise_then_seamless_mix",
+    "aligned_turns": false,
+    "voice_consistency_verified": false,
+    "human_listening_review": false
+  },
+  "exam_mode": {
+    "bank_role": "protected_assessment",
+    "use_as_training_before_first_attempt": false,
+    "listening_attempts_allowed_for_scored_first_attempt": 1,
+    "replay_before_submit": false,
+    "speed_control_before_submit": false,
+    "transcript_visible_before_submit": false,
+    "answer_key_visible_before_submit": false,
+    "post_attempt_review_allowed": true,
+    "question_count": 10,
+    "points_per_correct_answer": 1,
+    "question_order_monotonic": true,
+    "estimated_speech_minutes_at_140_wpm": 3.34,
+    "exam_band_score_enabled": false,
+    "repeated_attempt_marked_as_seen": true,
+    "all_questions_visible_before_audio": true
+  },
+  "qa": {
+    "automatic_data_validation": "pending",
+    "content_human_review": "pending",
+    "translation_human_review": "pending",
+    "audio_human_review": "pending",
+    "exam_simulation_rubric_score": null,
+    "rubric_90_verified": false,
+    "published": false,
+    "release_eligible": false
+  },
+  "provenance": {
+    "source_type": "original_authored_english_academic_dialogue",
+    "milestone": "M27",
+    "no_official_ielts_question_copied": true,
+    "training_exposure_guard": true,
+    "fictional_scenarios": true
+  },
+  "release_metadata": {
+    "target_bank": "protected_assessment",
+    "import_policy": "insert_only",
+    "version": "m27.0.1",
+    "preserve_existing_ids": true,
+    "allow_client_answer_payload": false
+  }
+}

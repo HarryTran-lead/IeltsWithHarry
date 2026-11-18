@@ -1,0 +1,351 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "DICT-S4-030",
+  "status": "draft",
+  "level": "L6",
+  "section": 4,
+  "topic": "Space Exploration",
+  "title": "Radiation, Energy and Spacecraft Reliability",
+  "learning_objectives_vi": [
+    "Nghe bài giảng học thuật một người nói, theo dõi quan hệ giữa luận điểm và bằng chứng.",
+    "Luyện các câu hỏi Section 4 theo thứ tự lời giảng; phân tích giới hạn của khái niệm và cách diễn đạt lại.",
+    "Chép chính xác hai đoạn, luyện từ học thuật theo ngữ cảnh và ôn điểm yếu qua Mistake Bank."
+  ],
+  "content_format": "section_practice",
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Academic lecturer",
+      "tts_voice_id": null,
+      "accent_requested": "british"
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "A spacecraft exploring a distant world must survive conditions that engineers cannot easily repair. Extreme temperature changes, radiation and limited energy all affect the design. Because sending replacement parts is usually impractical, mission teams anticipate failure points before launch. This is why spacecraft systems often appear conservative compared with consumer electronics that can be replaced quickly.",
+      "translation_vi": "Tàu thăm dò thế giới xa phải sống sót trong điều kiện kỹ sư khó sửa chữa. Thay đổi nhiệt độ cực đoan, bức xạ và năng lượng hạn chế đều ảnh hưởng thiết kế. Vì đưa linh kiện thay thế thường không thực tế, nhóm nhiệm vụ dự đoán điểm hỏng trước khi phóng. Vì vậy hệ thống tàu thường có vẻ thận trọng so với điện tử tiêu dùng dễ thay nhanh.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_4",
+        "academic_lecture",
+        "cause",
+        "l6"
+      ]
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "A",
+      "text_en": "Radiation can disturb electronic components by changing signals inside a circuit. Engineers may use shielding, error detection and components designed to tolerate greater exposure. No method removes every hazard. Extra shielding adds mass, and mass affects launch requirements. A solution that increases reliability in one area may introduce a cost elsewhere in the mission.",
+      "translation_vi": "Bức xạ có thể làm nhiễu linh kiện điện tử bằng cách thay đổi tín hiệu trong mạch. Kỹ sư có thể dùng che chắn, phát hiện lỗi và linh kiện chịu phơi nhiễm cao hơn. Không phương pháp nào loại hết nguy hiểm. Che chắn thêm làm tăng khối lượng, ảnh hưởng yêu cầu phóng. Giải pháp tăng độ tin cậy ở mặt này có thể thêm chi phí nơi khác trong nhiệm vụ.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_4",
+        "academic_lecture",
+        "cause",
+        "l6"
+      ]
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "A",
+      "text_en": "Energy availability creates a second chain of decisions. Solar panels can provide power where sunlight is sufficient, but distance from the Sun and shadowing influence their output. Batteries store energy for periods when generation is limited, yet they add weight and have finite capacity. Mission planners therefore schedule power-intensive observations around the energy budget rather than treating electricity as unlimited.",
+      "translation_vi": "Khả năng cung cấp năng lượng tạo chuỗi quyết định thứ hai. Pin mặt trời cấp điện khi đủ nắng, nhưng khoảng cách tới Mặt Trời và bóng che ảnh hưởng sản lượng. Pin lưu trữ giữ năng lượng khi phát điện hạn chế, nhưng tăng trọng lượng và dung lượng hữu hạn. Vì thế nhóm nhiệm vụ xếp lịch quan sát tốn điện theo ngân sách năng lượng thay vì coi điện vô hạn.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_4",
+        "academic_lecture",
+        "cause",
+        "l6"
+      ]
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "A",
+      "text_en": "Temperature control is closely linked to energy management. Sensitive instruments may require heating in cold conditions and protection from overheating in others. Insulation reduces some heat exchange, while active systems consume power. Engineers must also consider how components expand or contract as temperatures change. A design that works in one phase of flight may behave differently during landing or surface operations.",
+      "translation_vi": "Kiểm soát nhiệt độ gắn chặt với quản lý năng lượng. Thiết bị nhạy cảm có thể cần sưởi khi lạnh và bảo vệ khỏi quá nóng khi khác. Cách nhiệt giảm một phần trao đổi nhiệt, còn hệ thống chủ động tiêu thụ điện. Kỹ sư cũng phải xét linh kiện giãn nở hay co lại khi nhiệt độ đổi. Thiết kế hoạt động tốt ở một giai đoạn bay có thể ứng xử khác khi hạ cánh hoặc làm việc trên bề mặt.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_4",
+        "academic_lecture",
+        "cause",
+        "l6"
+      ]
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "A",
+      "text_en": "Reliability comes from managing interacting constraints, not from solving each hazard independently. Engineers test components under simulated conditions and include contingency procedures for unexpected events. Even then, uncertainty remains. A sensible mission plan reserves resources for recovery and prioritises the most valuable observations when conditions become difficult. Robustness is therefore as much a matter of planning as hardware.",
+      "translation_vi": "Độ tin cậy đến từ quản lý các ràng buộc tương tác, không phải giải quyết từng nguy cơ riêng lẻ. Kỹ sư thử linh kiện trong điều kiện mô phỏng và chuẩn bị quy trình dự phòng cho sự kiện bất ngờ. Dù vậy vẫn còn bất định. Kế hoạch hợp lý dự trữ nguồn lực để phục hồi và ưu tiên quan sát giá trị nhất khi điều kiện khó khăn. Vì thế khả năng chống chịu là vấn đề lập kế hoạch không kém phần cứng.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_4",
+        "academic_lecture",
+        "cause",
+        "l6"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "type": "note_completion",
+      "prompt": "Engineers anticipate potential ____ points before launch.",
+      "correct_answers": [
+        "failure"
+      ],
+      "evidence_turn_ids": [
+        "T01"
+      ],
+      "explanation_vi": "Đáp án “failure” nằm tại đoạn T01. Nội dung bằng chứng: Tàu thăm dò thế giới xa phải sống sót trong điều kiện kỹ sư khó sửa chữa. Thay đổi nhiệt độ cực đoan, bức xạ và năng lượng hạn chế đều ảnh hưởng thiết kế. Vì đưa linh kiện thay thế thường không thực tế, nhóm nhiệm vụ dự đoán điểm hỏng trước khi phóng. Vì vậy hệ thống tàu thường có vẻ thận trọng so với điện tử tiêu dùng dễ thay nhanh.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_4",
+        "ielts_practice",
+        "cause",
+        "note_completion"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q02",
+      "type": "note_completion",
+      "prompt": "Radiation protection may require additional ____.",
+      "correct_answers": [
+        "shielding"
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Đáp án “shielding” nằm tại đoạn T02. Nội dung bằng chứng: Bức xạ có thể làm nhiễu linh kiện điện tử bằng cách thay đổi tín hiệu trong mạch. Kỹ sư có thể dùng che chắn, phát hiện lỗi và linh kiện chịu phơi nhiễm cao hơn. Không phương pháp nào loại hết nguy hiểm. Che chắn thêm làm tăng khối lượng, ảnh hưởng yêu cầu phóng. Giải pháp tăng độ tin cậy ở mặt này có thể thêm chi phí nơi khác trong nhiệm vụ.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_4",
+        "ielts_practice",
+        "cause",
+        "note_completion"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q03",
+      "type": "note_completion",
+      "prompt": "Mission observations must fit within an energy ____.",
+      "correct_answers": [
+        "budget"
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Đáp án “budget” nằm tại đoạn T03. Nội dung bằng chứng: Khả năng cung cấp năng lượng tạo chuỗi quyết định thứ hai. Pin mặt trời cấp điện khi đủ nắng, nhưng khoảng cách tới Mặt Trời và bóng che ảnh hưởng sản lượng. Pin lưu trữ giữ năng lượng khi phát điện hạn chế, nhưng tăng trọng lượng và dung lượng hữu hạn. Vì thế nhóm nhiệm vụ xếp lịch quan sát tốn điện theo ngân sách năng lượng thay vì coi điện vô hạn.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_4",
+        "ielts_practice",
+        "cause",
+        "note_completion"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q04",
+      "type": "note_completion",
+      "prompt": "Some equipment needs protection from ____.",
+      "correct_answers": [
+        "overheating"
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Đáp án “overheating” nằm tại đoạn T04. Nội dung bằng chứng: Kiểm soát nhiệt độ gắn chặt với quản lý năng lượng. Thiết bị nhạy cảm có thể cần sưởi khi lạnh và bảo vệ khỏi quá nóng khi khác. Cách nhiệt giảm một phần trao đổi nhiệt, còn hệ thống chủ động tiêu thụ điện. Kỹ sư cũng phải xét linh kiện giãn nở hay co lại khi nhiệt độ đổi. Thiết kế hoạt động tốt ở một giai đoạn bay có thể ứng xử khác khi hạ cánh hoặc làm việc trên bề mặt.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_4",
+        "ielts_practice",
+        "cause",
+        "note_completion"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q05",
+      "type": "note_completion",
+      "prompt": "Emergency procedures are called ____ procedures.",
+      "correct_answers": [
+        "contingency"
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Đáp án “contingency” nằm tại đoạn T05. Nội dung bằng chứng: Độ tin cậy đến từ quản lý các ràng buộc tương tác, không phải giải quyết từng nguy cơ riêng lẻ. Kỹ sư thử linh kiện trong điều kiện mô phỏng và chuẩn bị quy trình dự phòng cho sự kiện bất ngờ. Dù vậy vẫn còn bất định. Kế hoạch hợp lý dự trữ nguồn lực để phục hồi và ưu tiên quan sát giá trị nhất khi điều kiện khó khăn. Vì thế khả năng chống chịu là vấn đề lập kế hoạch không kém phần cứng.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_4",
+        "ielts_practice",
+        "cause",
+        "note_completion"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q06",
+      "type": "mcq",
+      "prompt": "What makes spacecraft reliability a system-level issue?",
+      "correct_answers": [
+        "Protecting one component can increase mass or power demands elsewhere"
+      ],
+      "options": [
+        "Additional shielding never affects the launch vehicle",
+        "Protecting one component can increase mass or power demands elsewhere",
+        "Energy and temperature are independent of mission design"
+      ],
+      "evidence_turn_ids": [
+        "T01",
+        "T03",
+        "T05"
+      ],
+      "explanation_vi": "Hãy kết hợp luận điểm đầu, ví dụ ở giữa và kết luận cuối bài. Độ tin cậy đến từ quản lý các ràng buộc tương tác, không phải giải quyết từng nguy cơ riêng lẻ. Kỹ sư thử linh kiện trong điều kiện mô phỏng và chuẩn bị quy trình dự phòng cho sự kiện bất ngờ. Dù vậy vẫn còn bất định. Kế hoạch hợp lý dự trữ nguồn lực để phục hồi và ưu tiên quan sát giá trị nhất khi điều kiện khó khăn. Vì thế khả năng chống chịu là vấn đề lập kế hoạch không kém phần cứng. Phương án chính xác: “Protecting one component can increase mass or power demands elsewhere”; hai phương án khác khái quát quá mức hoặc không phù hợp bằng chứng.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "section_4",
+        "ielts_practice",
+        "cause",
+        "main_idea"
+      ]
+    },
+    {
+      "question_id": "D01",
+      "type": "dictation",
+      "prompt": "Nghe đoạn T02 và chép lại chính xác lời giảng.",
+      "correct_answers": [
+        "Radiation can disturb electronic components by changing signals inside a circuit. Engineers may use shielding, error detection and components designed to tolerate greater exposure. No method removes every hazard. Extra shielding adds mass, and mass affects launch requirements. A solution that increases reliability in one area may introduce a cost elsewhere in the mission."
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Phân tích từ nối, âm yếu và cụm thuật ngữ học thuật. Nghĩa của đoạn: Bức xạ có thể làm nhiễu linh kiện điện tử bằng cách thay đổi tín hiệu trong mạch. Kỹ sư có thể dùng che chắn, phát hiện lỗi và linh kiện chịu phơi nhiễm cao hơn. Không phương pháp nào loại hết nguy hiểm. Che chắn thêm làm tăng khối lượng, ảnh hưởng yêu cầu phóng. Giải pháp tăng độ tin cậy ở mặt này có thể thêm chi phí nơi khác trong nhiệm vụ.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_4",
+        "dictation",
+        "exact_transcript"
+      ]
+    },
+    {
+      "question_id": "D02",
+      "type": "dictation",
+      "prompt": "Nghe đoạn T04 và chép lại chính xác lời giảng.",
+      "correct_answers": [
+        "Temperature control is closely linked to energy management. Sensitive instruments may require heating in cold conditions and protection from overheating in others. Insulation reduces some heat exchange, while active systems consume power. Engineers must also consider how components expand or contract as temperatures change. A design that works in one phase of flight may behave differently during landing or surface operations."
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Phân tích từ nối, âm yếu và cụm thuật ngữ học thuật. Nghĩa của đoạn: Kiểm soát nhiệt độ gắn chặt với quản lý năng lượng. Thiết bị nhạy cảm có thể cần sưởi khi lạnh và bảo vệ khỏi quá nóng khi khác. Cách nhiệt giảm một phần trao đổi nhiệt, còn hệ thống chủ động tiêu thụ điện. Kỹ sư cũng phải xét linh kiện giãn nở hay co lại khi nhiệt độ đổi. Thiết kế hoạt động tốt ở một giai đoạn bay có thể ứng xử khác khi hạ cánh hoặc làm việc trên bề mặt.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_4",
+        "dictation",
+        "exact_transcript"
+      ]
+    },
+    {
+      "question_id": "G01",
+      "type": "gap_fill",
+      "prompt": "Nghe T01 rồi điền phần thiếu: A spacecraft exploring a distant world must survive conditions that engineers cannot easily repair. Extreme temperature changes, ____ and limited energy all affect the design. Because sending replacement parts is usually impractical, mission teams anticipate failure points before launch. This is why spacecraft systems often appear conservative compared with consumer electronics that can be replaced quickly.",
+      "correct_answers": [
+        "radiation"
+      ],
+      "evidence_turn_ids": [
+        "T01"
+      ],
+      "explanation_vi": "Điền “radiation”, nghĩa: bức xạ. Cụm từ này xuất hiện trong T01.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_4",
+        "gap_fill",
+        "academic_vocabulary"
+      ]
+    }
+  ],
+  "vocabulary": [
+    {
+      "term": "radiation",
+      "pos": "n.",
+      "meaning_vi": "bức xạ",
+      "example_en": "A spacecraft exploring a distant world must survive conditions that engineers cannot easily repair. Extreme temperature changes, radiation and limited energy all affect the design. Because sending replacement parts is usually impractical, mission teams anticipate failure points before launch. This is why spacecraft systems often appear conservative compared with consumer electronics that can be replaced quickly.",
+      "example_vi": "Tàu thăm dò thế giới xa phải sống sót trong điều kiện kỹ sư khó sửa chữa. Thay đổi nhiệt độ cực đoan, bức xạ và năng lượng hạn chế đều ảnh hưởng thiết kế. Vì đưa linh kiện thay thế thường không thực tế, nhóm nhiệm vụ dự đoán điểm hỏng trước khi phóng. Vì vậy hệ thống tàu thường có vẻ thận trọng so với điện tử tiêu dùng dễ thay nhanh.",
+      "source_turn_id": "T01"
+    },
+    {
+      "term": "shielding",
+      "pos": "n.",
+      "meaning_vi": "che chắn",
+      "example_en": "Radiation can disturb electronic components by changing signals inside a circuit. Engineers may use shielding, error detection and components designed to tolerate greater exposure. No method removes every hazard. Extra shielding adds mass, and mass affects launch requirements. A solution that increases reliability in one area may introduce a cost elsewhere in the mission.",
+      "example_vi": "Bức xạ có thể làm nhiễu linh kiện điện tử bằng cách thay đổi tín hiệu trong mạch. Kỹ sư có thể dùng che chắn, phát hiện lỗi và linh kiện chịu phơi nhiễm cao hơn. Không phương pháp nào loại hết nguy hiểm. Che chắn thêm làm tăng khối lượng, ảnh hưởng yêu cầu phóng. Giải pháp tăng độ tin cậy ở mặt này có thể thêm chi phí nơi khác trong nhiệm vụ.",
+      "source_turn_id": "T02"
+    },
+    {
+      "term": "energy budget",
+      "pos": "n. phr.",
+      "meaning_vi": "ngân sách năng lượng",
+      "example_en": "Energy availability creates a second chain of decisions. Solar panels can provide power where sunlight is sufficient, but distance from the Sun and shadowing influence their output. Batteries store energy for periods when generation is limited, yet they add weight and have finite capacity. Mission planners therefore schedule power-intensive observations around the energy budget rather than treating electricity as unlimited.",
+      "example_vi": "Khả năng cung cấp năng lượng tạo chuỗi quyết định thứ hai. Pin mặt trời cấp điện khi đủ nắng, nhưng khoảng cách tới Mặt Trời và bóng che ảnh hưởng sản lượng. Pin lưu trữ giữ năng lượng khi phát điện hạn chế, nhưng tăng trọng lượng và dung lượng hữu hạn. Vì thế nhóm nhiệm vụ xếp lịch quan sát tốn điện theo ngân sách năng lượng thay vì coi điện vô hạn.",
+      "source_turn_id": "T03"
+    },
+    {
+      "term": "contingency procedures",
+      "pos": "n. phr.",
+      "meaning_vi": "quy trình dự phòng",
+      "example_en": "Reliability comes from managing interacting constraints, not from solving each hazard independently. Engineers test components under simulated conditions and include contingency procedures for unexpected events. Even then, uncertainty remains. A sensible mission plan reserves resources for recovery and prioritises the most valuable observations when conditions become difficult. Robustness is therefore as much a matter of planning as hardware.",
+      "example_vi": "Độ tin cậy đến từ quản lý các ràng buộc tương tác, không phải giải quyết từng nguy cơ riêng lẻ. Kỹ sư thử linh kiện trong điều kiện mô phỏng và chuẩn bị quy trình dự phòng cho sự kiện bất ngờ. Dù vậy vẫn còn bất định. Kế hoạch hợp lý dự trữ nguồn lực để phục hồi và ưu tiên quan sát giá trị nhất khi điều kiện khó khăn. Vì thế khả năng chống chịu là vấn đề lập kế hoạch không kém phần cứng.",
+      "source_turn_id": "T05"
+    }
+  ],
+  "audio": {
+    "status": "not_generated",
+    "url": null,
+    "duration_ms": null,
+    "model": null,
+    "provider": null,
+    "voice_config": null,
+    "source_transcript_hash": "d248d645d1bd6b916d2f57627c604634e78e1bb224350bd2b8a9c2ded032facb",
+    "audio_sha256": null,
+    "format": null
+  },
+  "qa": {
+    "content_reviewed": false,
+    "answers_verified": false,
+    "audio_verified": false,
+    "rights_cleared": false,
+    "duplicate_reviewed": false,
+    "notes": [
+      "Original AI-assisted educational script, not an official IELTS transcript.",
+      "Editorial, academic and linguistic review pending.",
+      "Audio/TTS not generated; text-to-speech distribution rights must be confirmed before use, especially for minors.",
+      "Six IELTS-style practice questions per lesson; this is not a full official Part 4 test or a calibrated IELTS Band test.",
+      "M16.2: automated edits are provisional; IELTS teacher final signoff, audio and rights clearance pending."
+    ]
+  },
+  "provenance": {
+    "content_origin": "original_ai_assisted",
+    "source_urls": [],
+    "source_rights_note": "Original transcript and translation drafts; verify academic claims and terms, and TTS provider redistribution conditions before release.",
+    "reviewer": null
+  },
+  "release_metadata": {
+    "published_at": null,
+    "version": 1
+  }
+}

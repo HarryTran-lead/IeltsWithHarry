@@ -1,0 +1,458 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "DICT-S3-030",
+  "status": "draft",
+  "level": "L5",
+  "section": 3,
+  "topic": "Team Problem Solving",
+  "title": "Team Problem Solving: Evaluating the Options",
+  "learning_objectives_vi": [
+    "Theo dõi ý kiến và lập luận của nhiều người trong một thảo luận học thuật.",
+    "Xác định thông tin cuối cùng sau khi người nói đề xuất, phản biện hoặc sửa ý.",
+    "Chép chính xác những đoạn trọng tâm và đối chiếu bằng chứng trong transcript."
+  ],
+  "content_format": "section_practice",
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Ivy – university student / tutor discussion participant",
+      "tts_voice_id": null,
+      "accent_requested": "british"
+    },
+    {
+      "speaker_id": "B",
+      "role": "Max – university student / tutor discussion participant",
+      "tts_voice_id": null,
+      "accent_requested": "british"
+    },
+    {
+      "speaker_id": "C",
+      "role": "Elena – university student / tutor discussion participant",
+      "tts_voice_id": null,
+      "accent_requested": "british"
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "Our accessibility app can generate live captions for lectures, but the tests showed delays of several seconds when speakers changed quickly.",
+      "translation_vi": "Ứng dụng tiếp cận có thể tạo phụ đề trực tiếp cho bài giảng, nhưng thử nghiệm cho thấy chậm vài giây khi người nói đổi nhanh.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "l5",
+        "opinion_comparison"
+      ]
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "B",
+      "text_en": "I think we should release the current version anyway. The captions work well during single-speaker lectures, which is our main use case.",
+      "translation_vi": "Mình nghĩ vẫn nên phát hành bản hiện tại. Phụ đề hoạt động tốt trong bài giảng một người, vốn là tình huống chính.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "l5",
+        "opinion_comparison"
+      ]
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "C",
+      "text_en": "I'm not comfortable promoting it as suitable for group discussions yet. In that setting the delay could make students miss important responses.",
+      "translation_vi": "Mình chưa thoải mái quảng bá nó phù hợp thảo luận nhóm. Trong tình huống đó độ trễ có thể làm sinh viên bỏ lỡ phản hồi quan trọng.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "l5",
+        "opinion_comparison"
+      ]
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "A",
+      "text_en": "What if we describe it as a pilot for lectures only? We could limit access to a small volunteer group while we collect more feedback.",
+      "translation_vi": "Nếu mô tả là bản thử cho bài giảng thôi thì sao? Ta giới hạn cho nhóm tình nguyện viên nhỏ khi lấy thêm phản hồi.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "l5",
+        "opinion_comparison"
+      ]
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "B",
+      "text_en": "That's more cautious, but the app currently stores transcripts automatically. We need to check whether lecturers and students agreed to that.",
+      "translation_vi": "Cách đó thận trọng hơn, nhưng ứng dụng hiện tự lưu bản chép. Ta cần kiểm tra giảng viên và sinh viên có đồng ý không.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "l5",
+        "opinion_comparison"
+      ]
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "C",
+      "text_en": "The data protection officer specifically asked us to disable automatic storage by default and make the recording option explicit.",
+      "translation_vi": "Cán bộ bảo vệ dữ liệu yêu cầu tắt mặc định lưu tự động và làm rõ lựa chọn ghi.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "l5",
+        "opinion_comparison"
+      ]
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "I can change the default settings before the pilot. The bigger issue is how to notify users when the captions may contain mistakes.",
+      "translation_vi": "Mình có thể sửa cài đặt mặc định trước thử nghiệm. Vấn đề lớn hơn là thông báo người dùng khi phụ đề có thể sai.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "l5",
+        "opinion_comparison"
+      ]
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "B",
+      "text_en": "Could we add a short notice at the beginning, explaining that captions are generated automatically and shouldn't replace official course materials?",
+      "translation_vi": "Ta có thể thêm thông báo đầu buổi rằng phụ đề được tạo tự động và không thay thế tài liệu môn học chính thức không?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "l5",
+        "opinion_comparison"
+      ]
+    },
+    {
+      "turn_id": "T09",
+      "speaker_id": "C",
+      "text_en": "Yes, and our feedback form should ask whether errors affected comprehension, not merely whether users liked the interface.",
+      "translation_vi": "Được, và mẫu phản hồi nên hỏi lỗi có ảnh hưởng hiểu nội dung không, không chỉ người dùng thích giao diện hay không.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "l5",
+        "opinion_comparison"
+      ]
+    },
+    {
+      "turn_id": "T10",
+      "speaker_id": "A",
+      "text_en": "For testing, let's include three lecture styles: a prepared talk, an informal question period and a lecture with technical terms.",
+      "translation_vi": "Để thử, hãy gồm ba kiểu: bài nói chuẩn bị sẵn, phần hỏi đáp tự do và bài giảng có thuật ngữ.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "l5",
+        "opinion_comparison"
+      ]
+    },
+    {
+      "turn_id": "T11",
+      "speaker_id": "B",
+      "text_en": "We should also measure caption delay and word accuracy separately. A high word score doesn't guarantee that information arrives at the right time.",
+      "translation_vi": "Ta cũng nên đo riêng độ trễ và độ chính xác từ. Điểm từ cao không bảo đảm thông tin xuất hiện đúng lúc.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "l5",
+        "opinion_comparison"
+      ]
+    },
+    {
+      "turn_id": "T12",
+      "speaker_id": "C",
+      "text_en": "Then our decision is a limited lecture-only pilot after privacy changes, with clear warnings and a review before wider release.",
+      "translation_vi": "Vậy quyết định là thử nghiệm giới hạn cho bài giảng sau khi sửa quyền riêng tư, có cảnh báo rõ và đánh giá trước mở rộng.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "l5",
+        "opinion_comparison"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "type": "mcq",
+      "prompt": "Why does Max initially support releasing the current app?",
+      "correct_answers": [
+        "It works well for single-speaker lectures"
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Bằng chứng ở T02 (Max): “Mình nghĩ vẫn nên phát hành bản hiện tại. Phụ đề hoạt động tốt trong bài giảng một người, vốn là tình huống chính.” Đáp án: “It works well for single-speaker lectures”. Đây là ý cuối cùng hoặc lập luận cần xác định; các lựa chọn khác không được đoạn này xác nhận.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "section_3",
+        "ielts_practice",
+        "opinion_inference"
+      ],
+      "options": [
+        "It has no delay at all",
+        "It is already approved for every class",
+        "It works well for single-speaker lectures"
+      ]
+    },
+    {
+      "question_id": "Q02",
+      "type": "note_completion",
+      "prompt": "The team should not promote the app for group ____.",
+      "correct_answers": [
+        "discussions"
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Bằng chứng ở T03 (Elena): “Mình chưa thoải mái quảng bá nó phù hợp thảo luận nhóm. Trong tình huống đó độ trễ có thể làm sinh viên bỏ lỡ phản hồi quan trọng.” Đáp án: “discussions”. Từ/cụm từ nằm trong lời nói; không chọn thông tin đã bị sửa hoặc người khác chỉ đề xuất.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_3",
+        "ielts_practice",
+        "detail_recognition"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q03",
+      "type": "matching",
+      "prompt": "What change did the data protection officer request?",
+      "correct_answers": [
+        "disable automatic storage by default"
+      ],
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "explanation_vi": "Bằng chứng ở T06 (Elena): “Cán bộ bảo vệ dữ liệu yêu cầu tắt mặc định lưu tự động và làm rõ lựa chọn ghi.” Đáp án: “disable automatic storage by default”. Đối chiếu đúng thông tin được người nói nêu, chú ý các ý kiến hoặc phương án trước đó.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "section_3",
+        "ielts_practice",
+        "speaker_attribution"
+      ],
+      "options": [
+        "disable automatic storage by default",
+        "keep every transcript forever",
+        "publish recordings online"
+      ]
+    },
+    {
+      "question_id": "Q04",
+      "type": "note_completion",
+      "prompt": "The opening notice must say captions are generated ____.",
+      "correct_answers": [
+        "automatically"
+      ],
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "explanation_vi": "Bằng chứng ở T08 (Max): “Ta có thể thêm thông báo đầu buổi rằng phụ đề được tạo tự động và không thay thế tài liệu môn học chính thức không?” Đáp án: “automatically”. Từ/cụm từ nằm trong lời nói; không chọn thông tin đã bị sửa hoặc người khác chỉ đề xuất.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_3",
+        "ielts_practice",
+        "detail_recognition"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q05",
+      "type": "mcq",
+      "prompt": "Which set of lecture styles will be used for testing?",
+      "correct_answers": [
+        "Prepared talk, question period and technical lecture"
+      ],
+      "evidence_turn_ids": [
+        "T10"
+      ],
+      "explanation_vi": "Bằng chứng ở T10 (Ivy): “Để thử, hãy gồm ba kiểu: bài nói chuẩn bị sẵn, phần hỏi đáp tự do và bài giảng có thuật ngữ.” Đáp án: “Prepared talk, question period and technical lecture”. Đây là ý cuối cùng hoặc lập luận cần xác định; các lựa chọn khác không được đoạn này xác nhận.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "section_3",
+        "ielts_practice",
+        "opinion_inference"
+      ],
+      "options": [
+        "Only group discussions",
+        "Prepared talk, question period and technical lecture",
+        "Three identical lectures"
+      ]
+    },
+    {
+      "question_id": "Q06",
+      "type": "short_answer",
+      "prompt": "What is agreed before wider release?",
+      "correct_answers": [
+        "limited lecture-only pilot"
+      ],
+      "evidence_turn_ids": [
+        "T12"
+      ],
+      "explanation_vi": "Bằng chứng ở T12 (Elena): “Vậy quyết định là thử nghiệm giới hạn cho bài giảng sau khi sửa quyền riêng tư, có cảnh báo rõ và đánh giá trước mở rộng.” Đáp án: “limited lecture-only pilot”. Từ/cụm từ nằm trong lời nói; không chọn thông tin đã bị sửa hoặc người khác chỉ đề xuất.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_3",
+        "ielts_practice",
+        "detail_recognition"
+      ],
+      "word_limit": 3,
+      "instructions_en": "NO MORE THAN THREE WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "D01",
+      "type": "dictation",
+      "prompt": "Nghe đoạn T04 và chép nguyên văn tiếng Anh (Speaker A).",
+      "correct_answers": [
+        "What if we describe it as a pilot for lectures only? We could limit access to a small volunteer group while we collect more feedback."
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Câu gốc: “What if we describe it as a pilot for lectures only? We could limit access to a small volunteer group while we collect more feedback.”\nNghĩa: Nếu mô tả là bản thử cho bài giảng thôi thì sao? Ta giới hạn cho nhóm tình nguyện viên nhỏ khi lấy thêm phản hồi.\nChú ý từ chức năng, âm yếu, cụm từ nối và ý người nói.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_3",
+        "dictation",
+        "exact_transcript"
+      ]
+    },
+    {
+      "question_id": "D02",
+      "type": "dictation",
+      "prompt": "Nghe đoạn T08 và chép nguyên văn tiếng Anh (Speaker B).",
+      "correct_answers": [
+        "Could we add a short notice at the beginning, explaining that captions are generated automatically and shouldn't replace official course materials?"
+      ],
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "explanation_vi": "Câu gốc: “Could we add a short notice at the beginning, explaining that captions are generated automatically and shouldn't replace official course materials?”\nNghĩa: Ta có thể thêm thông báo đầu buổi rằng phụ đề được tạo tự động và không thay thế tài liệu môn học chính thức không?\nChú ý từ chức năng, âm yếu, cụm từ nối và ý người nói.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_3",
+        "dictation",
+        "exact_transcript"
+      ]
+    },
+    {
+      "question_id": "G01",
+      "type": "gap_fill",
+      "prompt": "Nghe T01, điền từ/cụm từ bị thiếu: Our accessibility app can generate ____ for lectures, but the tests showed delays of several seconds when speakers changed quickly.",
+      "correct_answers": [
+        "live captions"
+      ],
+      "evidence_turn_ids": [
+        "T01"
+      ],
+      "explanation_vi": "Cụm cần nghe: “live captions” (phụ đề trực tiếp). Lời gốc: “Our accessibility app can generate live captions for lectures, but the tests showed delays of several seconds when speakers changed quickly.”.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_3",
+        "gap_fill",
+        "vocabulary_in_context"
+      ]
+    }
+  ],
+  "vocabulary": [
+    {
+      "term": "live captions",
+      "pos": "n. phr.",
+      "meaning_vi": "phụ đề trực tiếp",
+      "example_en": "Our accessibility app can generate live captions for lectures, but the tests showed delays of several seconds when speakers changed quickly.",
+      "example_vi": "Ứng dụng tiếp cận có thể tạo phụ đề trực tiếp cho bài giảng, nhưng thử nghiệm cho thấy chậm vài giây khi người nói đổi nhanh.",
+      "source_turn_id": "T01"
+    },
+    {
+      "term": "privacy changes",
+      "pos": "n. phr.",
+      "meaning_vi": "thay đổi quyền riêng tư",
+      "example_en": "Then our decision is a limited lecture-only pilot after privacy changes, with clear warnings and a review before wider release.",
+      "example_vi": "Vậy quyết định là thử nghiệm giới hạn cho bài giảng sau khi sửa quyền riêng tư, có cảnh báo rõ và đánh giá trước mở rộng.",
+      "source_turn_id": "T12"
+    },
+    {
+      "term": "automatic storage",
+      "pos": "n. phr.",
+      "meaning_vi": "lưu trữ tự động",
+      "example_en": "The data protection officer specifically asked us to disable automatic storage by default and make the recording option explicit.",
+      "example_vi": "Cán bộ bảo vệ dữ liệu yêu cầu tắt mặc định lưu tự động và làm rõ lựa chọn ghi.",
+      "source_turn_id": "T06"
+    },
+    {
+      "term": "caption delay",
+      "pos": "n. phr.",
+      "meaning_vi": "độ trễ phụ đề",
+      "example_en": "We should also measure caption delay and word accuracy separately. A high word score doesn't guarantee that information arrives at the right time.",
+      "example_vi": "Ta cũng nên đo riêng độ trễ và độ chính xác từ. Điểm từ cao không bảo đảm thông tin xuất hiện đúng lúc.",
+      "source_turn_id": "T11"
+    }
+  ],
+  "audio": {
+    "status": "not_generated",
+    "url": null,
+    "duration_ms": null,
+    "model": null,
+    "provider": null,
+    "voice_config": null,
+    "source_transcript_hash": "6e2a9ca6099314c211fc290779d23e5ed2a13d6bb18e89d197d5bd79671cc24d",
+    "audio_sha256": null,
+    "format": null
+  },
+  "qa": {
+    "content_reviewed": false,
+    "answers_verified": false,
+    "audio_verified": false,
+    "rights_cleared": false,
+    "duplicate_reviewed": false,
+    "notes": [
+      "Original synthetic dialogues: human educational review required.",
+      "Audio, timestamps, voice suitability and service/distribution rights not yet verified.",
+      "Training lessons, NOT official IELTS Part 3 tests or calibrated band tests.",
+      "M16.2: automated edits are provisional; IELTS teacher final signoff, audio and rights clearance pending."
+    ]
+  },
+  "provenance": {
+    "content_origin": "original_ai_assisted",
+    "source_urls": [],
+    "source_rights_note": "Original text; verify TTS provider terms and distribution rights before publishing to a youth-accessible website.",
+    "reviewer": null
+  },
+  "release_metadata": {
+    "published_at": null,
+    "version": 1
+  }
+}

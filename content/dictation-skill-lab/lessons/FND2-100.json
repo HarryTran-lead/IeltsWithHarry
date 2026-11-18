@@ -1,0 +1,616 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "FND2-100",
+  "status": "draft",
+  "level": "L2",
+  "section": 0,
+  "topic": "Foundation M20 – connected_speech",
+  "title": "Academic phrases and smooth transitions",
+  "learning_objectives_vi": [
+    "Nghe cụm chuyển ý trong lời trình bày mà không bỏ sót từ chức năng.",
+    "Kiểm tra bằng lời nghe mới, không lấy số bài hoàn thành làm bằng chứng thành thạo.",
+    "Không suy ra IELTS band từ điểm Foundation."
+  ],
+  "content_format": "sentence_drill",
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Foundation narrator",
+      "tts_voice_id": null,
+      "accent_requested": "british"
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "As a result, the survey was repeated in September.",
+      "translation_vi": "Vì vậy, cuộc khảo sát được tiến hành lại vào tháng Chín.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m20",
+        "academic_chunking",
+        "connected_speech"
+      ],
+      "target_value": "As a result",
+      "target_kind": "lexical_phrase",
+      "target_meaning_vi": "vì vậy",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "A",
+      "text_en": "In other words, the sample was too small to be reliable.",
+      "translation_vi": "Nói cách khác, mẫu quá nhỏ để đáng tin cậy.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m20",
+        "academic_chunking",
+        "connected_speech"
+      ],
+      "target_value": "In other words",
+      "target_kind": "lexical_phrase",
+      "target_meaning_vi": "nói cách khác",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "A",
+      "text_en": "One possible explanation is the change in temperature.",
+      "translation_vi": "Một cách giải thích có thể là thay đổi nhiệt độ.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m20",
+        "academic_chunking",
+        "connected_speech"
+      ],
+      "target_value": "One possible explanation",
+      "target_kind": "lexical_phrase",
+      "target_meaning_vi": "một cách giải thích có thể",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "A",
+      "text_en": "To begin with, we need to define the main problem.",
+      "translation_vi": "Trước hết, chúng ta cần xác định vấn đề chính.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m20",
+        "academic_chunking",
+        "connected_speech"
+      ],
+      "target_value": "To begin with",
+      "target_kind": "lexical_phrase",
+      "target_meaning_vi": "trước hết",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "A",
+      "text_en": "By contrast, the second group reported fewer delays.",
+      "translation_vi": "Ngược lại, nhóm thứ hai báo cáo ít chậm trễ hơn.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m20",
+        "academic_chunking",
+        "connected_speech"
+      ],
+      "target_value": "By contrast",
+      "target_kind": "lexical_phrase",
+      "target_meaning_vi": "ngược lại",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "A",
+      "text_en": "According to the report, attendance rose during spring.",
+      "translation_vi": "Theo báo cáo, số người tham gia tăng trong mùa xuân.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m20",
+        "academic_chunking",
+        "connected_speech"
+      ],
+      "target_value": "According to the report",
+      "target_kind": "lexical_phrase",
+      "target_meaning_vi": "theo báo cáo",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "The evidence suggests a link, but not a direct cause.",
+      "translation_vi": "Bằng chứng gợi ý một mối liên hệ, nhưng không phải nguyên nhân trực tiếp.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m20",
+        "academic_chunking",
+        "connected_speech"
+      ],
+      "target_value": "suggests a link",
+      "target_kind": "lexical_phrase",
+      "target_meaning_vi": "gợi ý một mối liên hệ",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "A",
+      "text_en": "For example, several villages shared a single water source.",
+      "translation_vi": "Chẳng hạn, nhiều ngôi làng dùng chung một nguồn nước.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m20",
+        "academic_chunking",
+        "connected_speech"
+      ],
+      "target_value": "For example",
+      "target_kind": "lexical_phrase",
+      "target_meaning_vi": "ví dụ",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T09",
+      "speaker_id": "A",
+      "text_en": "On the whole, participants preferred the shorter course.",
+      "translation_vi": "Nhìn chung, người tham gia thích khóa ngắn hơn.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m20",
+        "academic_chunking",
+        "connected_speech"
+      ],
+      "target_value": "On the whole",
+      "target_kind": "lexical_phrase",
+      "target_meaning_vi": "nhìn chung",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T10",
+      "speaker_id": "A",
+      "text_en": "Finally, I'll summarise the findings and their limitations.",
+      "translation_vi": "Cuối cùng, tôi sẽ tóm tắt phát hiện và những hạn chế của chúng.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m20",
+        "academic_chunking",
+        "connected_speech"
+      ],
+      "target_value": "their limitations",
+      "target_kind": "lexical_phrase",
+      "target_meaning_vi": "những hạn chế của chúng",
+      "bank_role": "training"
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "type": "dictation",
+      "prompt": "Nghe lượt T01 rồi chép đầy đủ câu tiếng Anh được nói.",
+      "correct_answers": [
+        "As a result, the survey was repeated in September."
+      ],
+      "evidence_turn_ids": [
+        "T01"
+      ],
+      "explanation_vi": "Câu gốc: As a result, the survey was repeated in September. Nghĩa: Vì vậy, cuộc khảo sát được tiến hành lại vào tháng Chín.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "connected_speech"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q02",
+      "type": "dictation",
+      "prompt": "Nghe lượt T02 rồi chép đầy đủ câu tiếng Anh được nói.",
+      "correct_answers": [
+        "In other words, the sample was too small to be reliable."
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Câu gốc: In other words, the sample was too small to be reliable. Nghĩa: Nói cách khác, mẫu quá nhỏ để đáng tin cậy.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "connected_speech"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q03",
+      "type": "dictation",
+      "prompt": "Nghe lượt T03 rồi chép đầy đủ câu tiếng Anh được nói.",
+      "correct_answers": [
+        "One possible explanation is the change in temperature."
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Câu gốc: One possible explanation is the change in temperature. Nghĩa: Một cách giải thích có thể là thay đổi nhiệt độ.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "connected_speech"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q04",
+      "type": "dictation",
+      "prompt": "Nghe lượt T04 rồi chép đầy đủ câu tiếng Anh được nói.",
+      "correct_answers": [
+        "To begin with, we need to define the main problem."
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Câu gốc: To begin with, we need to define the main problem. Nghĩa: Trước hết, chúng ta cần xác định vấn đề chính.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "connected_speech"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q05",
+      "type": "dictation",
+      "prompt": "Nghe lượt T05 rồi chép đầy đủ câu tiếng Anh được nói.",
+      "correct_answers": [
+        "By contrast, the second group reported fewer delays."
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Câu gốc: By contrast, the second group reported fewer delays. Nghĩa: Ngược lại, nhóm thứ hai báo cáo ít chậm trễ hơn.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "connected_speech"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q06",
+      "type": "dictation",
+      "prompt": "Nghe lượt T06 rồi chép đầy đủ câu tiếng Anh được nói.",
+      "correct_answers": [
+        "According to the report, attendance rose during spring."
+      ],
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "explanation_vi": "Câu gốc: According to the report, attendance rose during spring. Nghĩa: Theo báo cáo, số người tham gia tăng trong mùa xuân.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "connected_speech"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q07",
+      "type": "dictation",
+      "prompt": "Nghe lượt T07 rồi chép đầy đủ câu tiếng Anh được nói.",
+      "correct_answers": [
+        "The evidence suggests a link, but not a direct cause."
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "Câu gốc: The evidence suggests a link, but not a direct cause. Nghĩa: Bằng chứng gợi ý một mối liên hệ, nhưng không phải nguyên nhân trực tiếp.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "connected_speech"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q08",
+      "type": "dictation",
+      "prompt": "Nghe lượt T08 rồi chép đầy đủ câu tiếng Anh được nói.",
+      "correct_answers": [
+        "For example, several villages shared a single water source."
+      ],
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "explanation_vi": "Câu gốc: For example, several villages shared a single water source. Nghĩa: Chẳng hạn, nhiều ngôi làng dùng chung một nguồn nước.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "connected_speech"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q09",
+      "type": "dictation",
+      "prompt": "Nghe lượt T09 rồi chép đầy đủ câu tiếng Anh được nói.",
+      "correct_answers": [
+        "On the whole, participants preferred the shorter course."
+      ],
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "explanation_vi": "Câu gốc: On the whole, participants preferred the shorter course. Nghĩa: Nhìn chung, người tham gia thích khóa ngắn hơn.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "connected_speech"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q10",
+      "type": "dictation",
+      "prompt": "Nghe lượt T10 rồi chép đầy đủ câu tiếng Anh được nói.",
+      "correct_answers": [
+        "Finally, I'll summarise the findings and their limitations."
+      ],
+      "evidence_turn_ids": [
+        "T10"
+      ],
+      "explanation_vi": "Câu gốc: Finally, I'll summarise the findings and their limitations. Nghĩa: Cuối cùng, tôi sẽ tóm tắt phát hiện và những hạn chế của chúng.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "connected_speech"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q11",
+      "type": "short_answer",
+      "prompt": "Nghe lượt T06. Viết đúng từ/cụm tiếng Anh diễn đạt ý: “theo báo cáo”.",
+      "correct_answers": [
+        "According to the report"
+      ],
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "explanation_vi": "Người nói dùng “According to the report” trong câu: According to the report, attendance rose during spring. Nghĩa: Theo báo cáo, số người tham gia tăng trong mùa xuân.",
+      "scoring_policy": "lexical_case_punctuation_insensitive_server",
+      "question_tags": [
+        "connected_speech",
+        "targeted_listening",
+        "guided_replay"
+      ],
+      "max_replays_practice": 5,
+      "word_limit": 6,
+      "first_listen_only_for_mastery": false
+    },
+    {
+      "question_id": "Q12",
+      "type": "short_answer",
+      "prompt": "Nghe lượt T07. Viết đúng từ/cụm tiếng Anh diễn đạt ý: “gợi ý một mối liên hệ”.",
+      "correct_answers": [
+        "suggests a link"
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "Người nói dùng “suggests a link” trong câu: The evidence suggests a link, but not a direct cause. Nghĩa: Bằng chứng gợi ý một mối liên hệ, nhưng không phải nguyên nhân trực tiếp.",
+      "scoring_policy": "lexical_case_punctuation_insensitive_server",
+      "question_tags": [
+        "connected_speech",
+        "targeted_listening",
+        "guided_replay"
+      ],
+      "max_replays_practice": 5,
+      "word_limit": 5,
+      "first_listen_only_for_mastery": false
+    },
+    {
+      "question_id": "Q13",
+      "type": "short_answer",
+      "prompt": "Nghe lượt T08. Viết đúng từ/cụm tiếng Anh diễn đạt ý: “ví dụ”.",
+      "correct_answers": [
+        "For example"
+      ],
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "explanation_vi": "Người nói dùng “For example” trong câu: For example, several villages shared a single water source. Nghĩa: Chẳng hạn, nhiều ngôi làng dùng chung một nguồn nước.",
+      "scoring_policy": "lexical_case_punctuation_insensitive_server",
+      "question_tags": [
+        "connected_speech",
+        "targeted_listening",
+        "guided_replay"
+      ],
+      "max_replays_practice": 5,
+      "word_limit": 4,
+      "first_listen_only_for_mastery": false
+    },
+    {
+      "question_id": "Q14",
+      "type": "short_answer",
+      "prompt": "Nghe lượt T09. Viết đúng từ/cụm tiếng Anh diễn đạt ý: “nhìn chung”.",
+      "correct_answers": [
+        "On the whole"
+      ],
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "explanation_vi": "Người nói dùng “On the whole” trong câu: On the whole, participants preferred the shorter course. Nghĩa: Nhìn chung, người tham gia thích khóa ngắn hơn.",
+      "scoring_policy": "lexical_case_punctuation_insensitive_server",
+      "question_tags": [
+        "connected_speech",
+        "targeted_listening",
+        "guided_replay"
+      ],
+      "max_replays_practice": 5,
+      "word_limit": 5,
+      "first_listen_only_for_mastery": false
+    },
+    {
+      "question_id": "Q15",
+      "type": "short_answer",
+      "prompt": "Nghe lượt T10. Viết đúng từ/cụm tiếng Anh diễn đạt ý: “những hạn chế của chúng”.",
+      "correct_answers": [
+        "their limitations"
+      ],
+      "evidence_turn_ids": [
+        "T10"
+      ],
+      "explanation_vi": "Người nói dùng “their limitations” trong câu: Finally, I'll summarise the findings and their limitations. Nghĩa: Cuối cùng, tôi sẽ tóm tắt phát hiện và những hạn chế của chúng.",
+      "scoring_policy": "lexical_case_punctuation_insensitive_server",
+      "question_tags": [
+        "connected_speech",
+        "targeted_listening",
+        "guided_replay"
+      ],
+      "max_replays_practice": 5,
+      "word_limit": 4,
+      "first_listen_only_for_mastery": false
+    }
+  ],
+  "vocabulary": [
+    {
+      "term": "As a result",
+      "pos": "phrase",
+      "meaning_vi": "vì vậy",
+      "example_en": "As a result, the survey was repeated in September.",
+      "example_vi": "Vì vậy, cuộc khảo sát được tiến hành lại vào tháng Chín.",
+      "is_illustrative_context": false
+    },
+    {
+      "term": "In other words",
+      "pos": "phrase",
+      "meaning_vi": "nói cách khác",
+      "example_en": "In other words, the sample was too small to be reliable.",
+      "example_vi": "Nói cách khác, mẫu quá nhỏ để đáng tin cậy.",
+      "is_illustrative_context": false
+    },
+    {
+      "term": "One possible explanation",
+      "pos": "phrase",
+      "meaning_vi": "một cách giải thích có thể",
+      "example_en": "One possible explanation is the change in temperature.",
+      "example_vi": "Một cách giải thích có thể là thay đổi nhiệt độ.",
+      "is_illustrative_context": false
+    },
+    {
+      "term": "To begin with",
+      "pos": "phrase",
+      "meaning_vi": "trước hết",
+      "example_en": "To begin with, we need to define the main problem.",
+      "example_vi": "Trước hết, chúng ta cần xác định vấn đề chính.",
+      "is_illustrative_context": false
+    },
+    {
+      "term": "By contrast",
+      "pos": "phrase",
+      "meaning_vi": "ngược lại",
+      "example_en": "By contrast, the second group reported fewer delays.",
+      "example_vi": "Ngược lại, nhóm thứ hai báo cáo ít chậm trễ hơn.",
+      "is_illustrative_context": false
+    },
+    {
+      "term": "According to the report",
+      "pos": "phrase",
+      "meaning_vi": "theo báo cáo",
+      "example_en": "According to the report, attendance rose during spring.",
+      "example_vi": "Theo báo cáo, số người tham gia tăng trong mùa xuân.",
+      "is_illustrative_context": false
+    }
+  ],
+  "micro_skill_id": "academic_chunking",
+  "bank_role": "training",
+  "content_design": {
+    "sequence": "10_unique_turns",
+    "first_listen": "1x",
+    "guided_replay_max": 5,
+    "mastery_requires_unseen": true,
+    "category": "connected_speech",
+    "post_submit_review_only": true,
+    "unseen_assessment_id": "FND2-100-HOLDOUT",
+    "holdout_must_be_server_side": true,
+    "no_band_claim": true,
+    "production_import_requires_approval": true
+  },
+  "audio": {
+    "status": "not_generated",
+    "url": null,
+    "duration_ms": null,
+    "provider": null,
+    "model": null,
+    "voice_config": null,
+    "format": null,
+    "audio_sha256": null,
+    "source_transcript_hash": "f87b6320a145ee6e5c2ff46f27dc867aa339d7c3e3c95e059f37d3706dba56b6"
+  },
+  "qa": {
+    "content_reviewed": false,
+    "answers_verified": false,
+    "audio_verified": false,
+    "human_signed_off": false,
+    "duplicate_reviewed": false,
+    "notes": [
+      "Original M20 draft: automatic checks do not replace teacher/audio review."
+    ]
+  },
+  "provenance": {
+    "content_origin": "original_ai_assisted",
+    "rights_status": "pending_tts_audio_terms_review",
+    "source_urls": [],
+    "reviewer": null
+  },
+  "release_metadata": {
+    "published_at": null,
+    "version": 1
+  },
+  "lesson_theory_vi": {
+    "core_rule": "Nghe cụm chuyển ý trong lời trình bày mà không bỏ sót từ chức năng.",
+    "worked_contrasts": [
+      {
+        "spoken_example": "Could you take it away?",
+        "written_value": "take it away",
+        "teacher_note_vi": "Khi phụ âm đứng trước nguyên âm, các tiếng có thể nối nhưng chữ viết vẫn tách từ."
+      },
+      {
+        "spoken_example": "There is a note on the desk.",
+        "written_value": "a note on the desk",
+        "teacher_note_vi": "Từ chức năng không nhấn vẫn cần chép đầy đủ; kiểm tra thực tế cách đọc qua audio."
+      }
+    ],
+    "learning_steps": [
+      "Xem ví dụ hướng dẫn, nhưng không xem trước lời của các lượt nghe cần làm.",
+      "Nghe lần đầu và chép hoặc trả lời bằng chứng; khi luyện có thể nghe lại tối đa năm lần.",
+      "Sau khi nộp mới xem dịch nghĩa, giải thích và mẫu âm.",
+      "Kiểm tra bằng câu mới ngoài ngân hàng luyện, chỉ ghi nhận Mastered khi đủ bằng chứng."
+    ],
+    "common_mistakes": [
+      "Chép theo cách phát âm ước đoán, bỏ trợ động từ hoặc giới từ.",
+      "Chọn số/ngày xuất hiện ban đầu thay vì thông tin cuối cùng.",
+      "Nghe thuộc câu cũ nhưng không hiểu câu mới.",
+      "Coi transcript là bằng chứng TTS có nối âm tự nhiên (sai)."
+    ],
+    "phonetic_review_required": true,
+    "phonetic_note": "Các biến thể connected speech khác nhau theo giọng, ngữ cảnh và tốc độ; cần giáo viên nghe file thật."
+  }
+}

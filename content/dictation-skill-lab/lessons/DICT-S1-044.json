@@ -1,0 +1,462 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "DICT-S1-044",
+  "status": "draft",
+  "level": "L4",
+  "section": 1,
+  "topic": "Library Membership",
+  "title": "A Research Borrower Card",
+  "learning_objectives_vi": [
+    "Luyện nghe tình huống: A student asks about special library access and borrowing rules.",
+    "Nhận diện constraints and options và thông tin cuối cùng của cuộc hội thoại.",
+    "Nghe chép lời nói tự nhiên, hiểu bằng chứng trước khi xem transcript."
+  ],
+  "content_format": "section_practice",
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Service staff / representative",
+      "tts_voice_id": null,
+      "accent_requested": "british"
+    },
+    {
+      "speaker_id": "B",
+      "role": "Customer / attendee",
+      "tts_voice_id": null,
+      "accent_requested": "british"
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "Central Library enquiries, how may I help?",
+      "translation_vi": "Bộ phận thông tin thư viện Central xin nghe.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "library",
+        "restrictions",
+        "time",
+        "section_1",
+        "two_speaker_dialogue",
+        "l4"
+      ]
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "B",
+      "text_en": "I'm studying local history and need to consult newspapers from the archive.",
+      "translation_vi": "Tôi đang nghiên cứu lịch sử địa phương và cần đọc báo lưu trữ.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "library",
+        "restrictions",
+        "time",
+        "section_1",
+        "two_speaker_dialogue",
+        "l4"
+      ]
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "A",
+      "text_en": "You can read them in the archive room, but those items cannot be taken home.",
+      "translation_vi": "Bạn được đọc trong phòng lưu trữ, nhưng không được mang tài liệu đó về.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "library",
+        "restrictions",
+        "time",
+        "section_1",
+        "two_speaker_dialogue",
+        "l4"
+      ]
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "B",
+      "text_en": "I have a regular library card. Do I need a research card as well?",
+      "translation_vi": "Tôi có thẻ thư viện thường rồi. Tôi có cần thẻ nghiên cứu nữa không?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "library",
+        "restrictions",
+        "time",
+        "section_1",
+        "two_speaker_dialogue",
+        "l4"
+      ]
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "A",
+      "text_en": "Yes, and you'll need a letter from your college. There is no charge for the new card.",
+      "translation_vi": "Có, và bạn cần thư từ trường đại học. Thẻ mới không mất phí.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "library",
+        "restrictions",
+        "time",
+        "section_1",
+        "two_speaker_dialogue",
+        "l4"
+      ]
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "B",
+      "text_en": "Can I visit the archive on Saturday afternoon?",
+      "translation_vi": "Tôi có thể đến phòng lưu trữ chiều thứ Bảy không?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "library",
+        "restrictions",
+        "time",
+        "section_1",
+        "two_speaker_dialogue",
+        "l4"
+      ]
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "The main library is open until six, but the archive closes at one on Saturdays.",
+      "translation_vi": "Thư viện chính mở đến sáu giờ, nhưng phòng lưu trữ đóng lúc một giờ vào thứ Bảy.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "library",
+        "restrictions",
+        "time",
+        "section_1",
+        "two_speaker_dialogue",
+        "l4"
+      ]
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "B",
+      "text_en": "That's difficult. I'll come on Wednesday instead. Can I reserve a reading desk?",
+      "translation_vi": "Vậy khó quá. Tôi sẽ đến thứ Tư. Tôi đặt trước bàn đọc được không?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "library",
+        "restrictions",
+        "time",
+        "section_1",
+        "two_speaker_dialogue",
+        "l4"
+      ]
+    },
+    {
+      "turn_id": "T09",
+      "speaker_id": "A",
+      "text_en": "Certainly. We can book you desk number seven, from ten until midday.",
+      "translation_vi": "Được. Chúng tôi đặt cho bạn bàn số bảy từ mười giờ đến trưa.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "library",
+        "restrictions",
+        "time",
+        "section_1",
+        "two_speaker_dialogue",
+        "l4"
+      ]
+    },
+    {
+      "turn_id": "T10",
+      "speaker_id": "B",
+      "text_en": "Do I have to scan the newspapers myself?",
+      "translation_vi": "Tôi có phải tự quét báo không?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "library",
+        "restrictions",
+        "time",
+        "section_1",
+        "two_speaker_dialogue",
+        "l4"
+      ]
+    },
+    {
+      "turn_id": "T11",
+      "speaker_id": "A",
+      "text_en": "Staff can make scans, but requests must be submitted at least twenty-four hours in advance.",
+      "translation_vi": "Nhân viên có thể quét tài liệu, nhưng phải gửi yêu cầu trước ít nhất hai mươi bốn giờ.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "library",
+        "restrictions",
+        "time",
+        "section_1",
+        "two_speaker_dialogue",
+        "l4"
+      ]
+    },
+    {
+      "turn_id": "T12",
+      "speaker_id": "B",
+      "text_en": "Thanks. I'll send the college letter and scanning request today.",
+      "translation_vi": "Cảm ơn. Tôi sẽ gửi thư trường và yêu cầu quét hôm nay.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "library",
+        "restrictions",
+        "time",
+        "section_1",
+        "two_speaker_dialogue",
+        "l4"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "type": "form_completion",
+      "prompt": "Archive newspapers must be read in the ____.",
+      "correct_answers": [
+        "archive room"
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Bài nói dùng “in the archive room”. Ô trống cần đúng cụm danh từ “archive room”.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "library",
+        "restrictions",
+        "time",
+        "ielts_section1_practice"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q02",
+      "type": "form_completion",
+      "prompt": "Required document: college ____",
+      "correct_answers": [
+        "letter"
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Phải nộp thư của trường để làm thẻ nghiên cứu.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "library",
+        "restrictions",
+        "time",
+        "ielts_section1_practice"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q03",
+      "type": "form_completion",
+      "prompt": "Research card fee: ____",
+      "correct_answers": [
+        "no charge"
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Làm thẻ nghiên cứu không thu phí.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "library",
+        "restrictions",
+        "time",
+        "ielts_section1_practice"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q04",
+      "type": "mcq",
+      "prompt": "When does the archive close on Saturdays?",
+      "correct_answers": [
+        "one"
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "Thư viện chính đóng 6 giờ nhưng kho lưu trữ đóng 1 giờ.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "library",
+        "restrictions",
+        "time",
+        "ielts_section1_practice"
+      ],
+      "options": [
+        "five",
+        "six",
+        "one"
+      ]
+    },
+    {
+      "question_id": "Q05",
+      "type": "form_completion",
+      "prompt": "Wednesday reading desk number: ____",
+      "correct_answers": [
+        "seven"
+      ],
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "explanation_vi": "Bàn đã đặt là số bảy.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "library",
+        "restrictions",
+        "time",
+        "ielts_section1_practice"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q06",
+      "type": "form_completion",
+      "prompt": "Scanning requests need ____ hours notice",
+      "correct_answers": [
+        "twenty-four"
+      ],
+      "evidence_turn_ids": [
+        "T11"
+      ],
+      "explanation_vi": "Yêu cầu quét phải gửi trước ít nhất 24 giờ.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "library",
+        "restrictions",
+        "time",
+        "ielts_section1_practice"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "D01",
+      "type": "dictation",
+      "prompt": "Nghe và chép nguyên văn lượt thoại T05 của nhân vật A.",
+      "correct_answers": [
+        "Yes, and you'll need a letter from your college. There is no charge for the new card."
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Câu gốc: Yes, and you'll need a letter from your college. There is no charge for the new card. Nghĩa: Có, và bạn cần thư từ trường đại học. Thẻ mới không mất phí. Hãy kiểm tra âm cuối, từ chức năng và chi tiết được sửa nếu có.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "library",
+        "restrictions",
+        "time",
+        "dictation",
+        "exact_words"
+      ]
+    },
+    {
+      "question_id": "G01",
+      "type": "gap_fill",
+      "prompt": "Điền từ/cụm từ bị lược bỏ sau khi nghe: You can read them in the ____, but those items cannot be taken home.",
+      "correct_answers": [
+        "archive room"
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "archive room: phòng lưu trữ. Câu gốc: You can read them in the archive room, but those items cannot be taken home.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "library",
+        "restrictions",
+        "time",
+        "gap_fill",
+        "vocabulary_in_context"
+      ]
+    }
+  ],
+  "vocabulary": [
+    {
+      "term": "archive room",
+      "pos": "phrase",
+      "meaning_vi": "phòng lưu trữ",
+      "example_en": "You can read them in the archive room, but those items cannot be taken home.",
+      "example_vi": "Bạn được đọc trong phòng lưu trữ, nhưng không được mang tài liệu đó về.",
+      "source_turn_id": "T03"
+    },
+    {
+      "term": "research card",
+      "pos": "phrase",
+      "meaning_vi": "thẻ nghiên cứu",
+      "example_en": "I have a regular library card. Do I need a research card as well?",
+      "example_vi": "Tôi có thẻ thư viện thường rồi. Tôi có cần thẻ nghiên cứu nữa không?",
+      "source_turn_id": "T04"
+    },
+    {
+      "term": "reading desk",
+      "pos": "phrase",
+      "meaning_vi": "bàn đọc",
+      "example_en": "That's difficult. I'll come on Wednesday instead. Can I reserve a reading desk?",
+      "example_vi": "Vậy khó quá. Tôi sẽ đến thứ Tư. Tôi đặt trước bàn đọc được không?",
+      "source_turn_id": "T08"
+    },
+    {
+      "term": "in advance",
+      "pos": "phrase",
+      "meaning_vi": "trước thời điểm",
+      "example_en": "Staff can make scans, but requests must be submitted at least twenty-four hours in advance.",
+      "example_vi": "Nhân viên có thể quét tài liệu, nhưng phải gửi yêu cầu trước ít nhất hai mươi bốn giờ.",
+      "source_turn_id": "T11"
+    }
+  ],
+  "audio": {
+    "status": "not_generated",
+    "url": null,
+    "duration_ms": null,
+    "model": null,
+    "provider": null,
+    "voice_config": null,
+    "source_transcript_hash": "af9331331e532aeee0286c9ba2183e25a0774764b5a74e2dc7ce4c0e1fbb5899",
+    "audio_sha256": null,
+    "format": null
+  },
+  "qa": {
+    "content_reviewed": false,
+    "answers_verified": false,
+    "audio_verified": false,
+    "rights_cleared": false,
+    "duplicate_reviewed": false,
+    "notes": [
+      "Original AI-assisted draft; expert listening pedagogical review required.",
+      "Audio and word-level timestamps do not exist yet.",
+      "This is a practice lesson, not an official IELTS Listening test.",
+      "M16.2: automated edits are provisional; IELTS teacher final signoff, audio and rights clearance pending."
+    ]
+  },
+  "provenance": {
+    "content_origin": "original_ai_assisted",
+    "source_urls": [],
+    "source_rights_note": "Author-created educational dialogue. Verify audio provider distribution rights, service terms and suitability for user age before synthesis and publishing.",
+    "reviewer": null
+  },
+  "release_metadata": {
+    "published_at": null,
+    "version": 1
+  }
+}

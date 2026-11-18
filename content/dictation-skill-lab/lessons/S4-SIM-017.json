@@ -1,0 +1,616 @@
+{
+  "schema_version": "1.2.0",
+  "lesson_id": "S4-SIM-017",
+  "status": "draft",
+  "level": "L7",
+  "section": 4,
+  "topic": "Deep ocean ecology",
+  "title": "Life Without Sunlight",
+  "content_format": "section_exam_simulation",
+  "exam_part": "IELTS_LISTENING_PART_4_STYLE",
+  "official_ielts_material": false,
+  "learning_objectives_vi": [
+    "Theo dõi bài giảng học thuật có lập luận và ví dụ.",
+    "Hoàn thành ghi chú, tóm tắt hoặc bảng bằng đúng từ được nghe.",
+    "Nhận diện signposting và mối quan hệ giữa các ý."
+  ],
+  "target_skills": [
+    "academic_lecture",
+    "signposting",
+    "note_taking",
+    "technical_vocabulary",
+    "information_tracking"
+  ],
+  "speakers": [
+    {
+      "speaker_id": "LECTURER",
+      "role": "Academic lecturer",
+      "accent_requested": "british",
+      "tts_voice_id": null
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "LECTURER",
+      "text_en": "Most familiar ecosystems ultimately depend on sunlight. Yet some deep-sea communities live far below the reach of daylight, close to places where hot, mineral-rich fluids escape from the ocean floor. Their existence changed how biologists think about energy in ecosystems. Today's lecture explains what supports these organisms and why the habitats are difficult to study.",
+      "meaning_vi": "Bài giảng giới thiệu hệ sinh thái biển sâu sống nhờ hóa năng gần miệng phun thủy nhiệt.",
+      "translation_vi": null,
+      "translation_status": "pending_exact_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "academic_lecture",
+        "signposting",
+        "note_taking"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "opening"
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "LECTURER",
+      "text_en": "The first discovery of dense life around hot springs on the seabed surprised scientists who expected such dark environments to support only sparse communities. The organisms survive through relationships involving microbes, minerals and flowing water. Understanding these links requires measurements of the environment as well as inventories of the visible animals.",
+      "meaning_vi": "Mở rộng bối cảnh, giới thiệu vấn đề nghiên cứu.",
+      "translation_vi": null,
+      "translation_status": "pending_exact_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "academic_lecture",
+        "signposting",
+        "note_taking"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "opening"
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "LECTURER",
+      "text_en": "At a hydrothermal vent, heated water emerges through cracks in the seabed after interacting with hot rock. Some microbes obtain energy through chemosynthesis, using chemical reactions rather than sunlight to produce organic material. The existence of this pathway does not mean every organism can perform it. Many larger animals depend on microbes either directly or through food webs. The conditions can vary sharply over distances of just a few metres.",
+      "meaning_vi": "Miệng phun thủy nhiệt có vi sinh vật dùng hóa tổng hợp thay cho ánh sáng.",
+      "translation_vi": null,
+      "translation_status": "pending_exact_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "academic_lecture",
+        "signposting",
+        "note_taking"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "core_exposition"
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "LECTURER",
+      "text_en": "Certain animals depend on a close symbiotic relationship with microbes that live inside or on their bodies. Tube worms, for instance, have specialised arrangements for obtaining resources from their environment. Another local challenge is temperature variation, because the water near a hot fluid stream can differ sharply from the surrounding deep ocean. Organisms must respond to these gradients, and researchers cannot assume that a sample collected a short distance away represents the same conditions.",
+      "meaning_vi": "Quan hệ cộng sinh và nhiệt độ thay đổi mạnh tạo nên môi trường đặc biệt.",
+      "translation_vi": null,
+      "translation_status": "pending_exact_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "academic_lecture",
+        "signposting",
+        "note_taking"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "core_exposition"
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "LECTURER",
+      "text_en": "To observe the habitat, scientists often use a remotely operated vehicle carrying cameras and sampling tools. Direct access is restricted by the extreme water pressure at great depth. A video recording can document behaviour without removing organisms, while a physical sample enables chemical or genetic work but may disturb the site. Each research method has a different cost and impact, so investigators plan their sampling carefully.",
+      "meaning_vi": "Robot điều khiển từ xa và áp suất nước là các yếu tố cốt lõi khi khảo sát.",
+      "translation_vi": null,
+      "translation_status": "pending_exact_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "academic_lecture",
+        "signposting",
+        "note_taking"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "core_exposition"
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "LECTURER",
+      "text_en": "The chemistry of the vent fluid can change over time, affecting the supply of dissolved sulphide used by some microbes. Researchers also study the shape of mineral deposits known as chimney structures, which can grow or break apart. These changes alter the distribution of suitable habitats. An area that once hosted many organisms may become less active, while new sites appear elsewhere. The ecological picture is therefore dynamic rather than permanently fixed.",
+      "meaning_vi": "Nồng độ sulphide và cấu trúc ống khói khoáng thay đổi theo hoạt động địa chất.",
+      "translation_vi": null,
+      "translation_status": "pending_exact_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "academic_lecture",
+        "signposting",
+        "note_taking"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "core_exposition"
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "LECTURER",
+      "text_en": "When comparing vents, scientists examine species diversity rather than counting only the largest animals visible on camera. They also consider habitat disturbance caused by sampling, tourism proposals or industrial activity. Because many species remain poorly understood, decisions about protection must account for uncertainty. A conservative survey plan can preserve a location for future research while still allowing carefully selected measurements of the processes taking place there.",
+      "meaning_vi": "Đa dạng loài và mức độ xáo trộn môi trường cần được tính tới trong bảo tồn.",
+      "translation_vi": null,
+      "translation_status": "pending_exact_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "academic_lecture",
+        "signposting",
+        "note_taking"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "core_exposition"
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "LECTURER",
+      "text_en": "Deep environments are also difficult to revisit. Weather, ship time and equipment costs can limit observations to brief windows. A species seen once may not be absent on the next visit; it may simply be difficult to detect. Responsible studies therefore describe uncertainty and avoid claiming complete knowledge of a poorly sampled habitat.",
+      "meaning_vi": "Nêu giới hạn, ví dụ ứng dụng và ý nghĩa thực tế.",
+      "translation_vi": null,
+      "translation_status": "pending_exact_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "academic_lecture",
+        "signposting",
+        "note_taking"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "closing"
+    },
+    {
+      "turn_id": "T09",
+      "speaker_id": "LECTURER",
+      "text_en": "These deep communities demonstrate that biological productivity can be based on chemical energy. Studying them requires a combination of geology, chemistry, engineering and ecological restraint.",
+      "meaning_vi": "Tổng kết và lưu ý cách diễn giải bằng chứng.",
+      "translation_vi": null,
+      "translation_status": "pending_exact_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "academic_lecture",
+        "signposting",
+        "note_taking"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "closing"
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "group_id": "PART4_NOTE_COMPLETION_01_05",
+      "type": "note_completion",
+      "prompt": "Heated mineral-rich fluids emerge at a ____.",
+      "correct_answers": [
+        "hydrothermal vent"
+      ],
+      "scoring_policy": "strict_spoken_words",
+      "word_limit": 2,
+      "instructions_en": "Complete the notes below. Write NO MORE THAN TWO WORDS for each answer.",
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "evidence_excerpt_en": "At a hydrothermal vent, heated water emerges through cracks in the seabed after interacting with hot rock.",
+      "evidence_span": {
+        "turn_id": "T03",
+        "start_char": 5,
+        "end_char": 22
+      },
+      "explanation_vi": "Đáp án “hydrothermal vent” được nói trực tiếp trong phần bài giảng này. Miệng phun thủy nhiệt có vi sinh vật dùng hóa tổng hợp thay cho ánh sáng.",
+      "answer_source": "exact_words_spoken",
+      "question_tags": [
+        "M28",
+        "part4",
+        "note_completion",
+        "academic_note_taking"
+      ],
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true,
+      "answer_review_status": "draft_teacher_verification_required"
+    },
+    {
+      "question_id": "Q02",
+      "group_id": "PART4_NOTE_COMPLETION_01_05",
+      "type": "note_completion",
+      "prompt": "Microbes can make organic material through ____.",
+      "correct_answers": [
+        "chemosynthesis"
+      ],
+      "scoring_policy": "strict_spoken_words",
+      "word_limit": 2,
+      "instructions_en": "Complete the notes below. Write NO MORE THAN TWO WORDS for each answer.",
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "evidence_excerpt_en": "Some microbes obtain energy through chemosynthesis, using chemical reactions rather than sunlight to produce organic material.",
+      "evidence_span": {
+        "turn_id": "T03",
+        "start_char": 143,
+        "end_char": 157
+      },
+      "explanation_vi": "Đáp án “chemosynthesis” được nói trực tiếp trong phần bài giảng này. Miệng phun thủy nhiệt có vi sinh vật dùng hóa tổng hợp thay cho ánh sáng.",
+      "answer_source": "exact_words_spoken",
+      "question_tags": [
+        "M28",
+        "part4",
+        "note_completion",
+        "academic_note_taking"
+      ],
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true,
+      "answer_review_status": "draft_teacher_verification_required"
+    },
+    {
+      "question_id": "Q03",
+      "group_id": "PART4_NOTE_COMPLETION_01_05",
+      "type": "note_completion",
+      "prompt": "Some animals rely on a microbial ____.",
+      "correct_answers": [
+        "symbiotic relationship"
+      ],
+      "scoring_policy": "strict_spoken_words",
+      "word_limit": 2,
+      "instructions_en": "Complete the notes below. Write NO MORE THAN TWO WORDS for each answer.",
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "evidence_excerpt_en": "Certain animals depend on a close symbiotic relationship with microbes that live inside or on their bodies.",
+      "evidence_span": {
+        "turn_id": "T04",
+        "start_char": 34,
+        "end_char": 56
+      },
+      "explanation_vi": "Đáp án “symbiotic relationship” được nói trực tiếp trong phần bài giảng này. Quan hệ cộng sinh và nhiệt độ thay đổi mạnh tạo nên môi trường đặc biệt.",
+      "answer_source": "exact_words_spoken",
+      "question_tags": [
+        "M28",
+        "part4",
+        "note_completion",
+        "academic_note_taking"
+      ],
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true,
+      "answer_review_status": "draft_teacher_verification_required"
+    },
+    {
+      "question_id": "Q04",
+      "group_id": "PART4_NOTE_COMPLETION_01_05",
+      "type": "note_completion",
+      "prompt": "Nearby water conditions can show strong ____.",
+      "correct_answers": [
+        "temperature variation"
+      ],
+      "scoring_policy": "strict_spoken_words",
+      "word_limit": 2,
+      "instructions_en": "Complete the notes below. Write NO MORE THAN TWO WORDS for each answer.",
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "evidence_excerpt_en": "Another local challenge is temperature variation, because the water near a hot fluid stream can differ sharply from the surrounding deep ocean.",
+      "evidence_span": {
+        "turn_id": "T04",
+        "start_char": 239,
+        "end_char": 260
+      },
+      "explanation_vi": "Đáp án “temperature variation” được nói trực tiếp trong phần bài giảng này. Quan hệ cộng sinh và nhiệt độ thay đổi mạnh tạo nên môi trường đặc biệt.",
+      "answer_source": "exact_words_spoken",
+      "question_tags": [
+        "M28",
+        "part4",
+        "note_completion",
+        "academic_note_taking"
+      ],
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true,
+      "answer_review_status": "draft_teacher_verification_required"
+    },
+    {
+      "question_id": "Q05",
+      "group_id": "PART4_NOTE_COMPLETION_01_05",
+      "type": "note_completion",
+      "prompt": "An underwater research vehicle may be ____.",
+      "correct_answers": [
+        "remotely operated"
+      ],
+      "scoring_policy": "strict_spoken_words",
+      "word_limit": 2,
+      "instructions_en": "Complete the notes below. Write NO MORE THAN TWO WORDS for each answer.",
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "evidence_excerpt_en": "To observe the habitat, scientists often use a remotely operated vehicle carrying cameras and sampling tools.",
+      "evidence_span": {
+        "turn_id": "T05",
+        "start_char": 47,
+        "end_char": 64
+      },
+      "explanation_vi": "Đáp án “remotely operated” được nói trực tiếp trong phần bài giảng này. Robot điều khiển từ xa và áp suất nước là các yếu tố cốt lõi khi khảo sát.",
+      "answer_source": "exact_words_spoken",
+      "question_tags": [
+        "M28",
+        "part4",
+        "note_completion",
+        "academic_note_taking"
+      ],
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true,
+      "answer_review_status": "draft_teacher_verification_required"
+    },
+    {
+      "question_id": "Q06",
+      "group_id": "PART4_TABLE_COMPLETION_06_10",
+      "type": "table_completion",
+      "prompt": "Deep-sea equipment must withstand high ____.",
+      "correct_answers": [
+        "water pressure"
+      ],
+      "scoring_policy": "strict_spoken_words",
+      "word_limit": 2,
+      "instructions_en": "Complete the table below. Write NO MORE THAN TWO WORDS for each answer.",
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "evidence_excerpt_en": "Direct access is restricted by the extreme water pressure at great depth.",
+      "evidence_span": {
+        "turn_id": "T05",
+        "start_char": 153,
+        "end_char": 167
+      },
+      "explanation_vi": "Đáp án “water pressure” được nói trực tiếp trong phần bài giảng này. Robot điều khiển từ xa và áp suất nước là các yếu tố cốt lõi khi khảo sát.",
+      "answer_source": "exact_words_spoken",
+      "question_tags": [
+        "M28",
+        "part4",
+        "table_completion",
+        "academic_note_taking"
+      ],
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true,
+      "answer_review_status": "draft_teacher_verification_required"
+    },
+    {
+      "question_id": "Q07",
+      "group_id": "PART4_TABLE_COMPLETION_06_10",
+      "type": "table_completion",
+      "prompt": "An energy-related chemical can be ____.",
+      "correct_answers": [
+        "dissolved sulphide"
+      ],
+      "scoring_policy": "strict_spoken_words",
+      "word_limit": 2,
+      "instructions_en": "Complete the table below. Write NO MORE THAN TWO WORDS for each answer.",
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "evidence_excerpt_en": "The chemistry of the vent fluid can change over time, affecting the supply of dissolved sulphide used by some microbes.",
+      "evidence_span": {
+        "turn_id": "T06",
+        "start_char": 78,
+        "end_char": 96
+      },
+      "explanation_vi": "Đáp án “dissolved sulphide” được nói trực tiếp trong phần bài giảng này. Nồng độ sulphide và cấu trúc ống khói khoáng thay đổi theo hoạt động địa chất.",
+      "answer_source": "exact_words_spoken",
+      "question_tags": [
+        "M28",
+        "part4",
+        "table_completion",
+        "academic_note_taking"
+      ],
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true,
+      "answer_review_status": "draft_teacher_verification_required"
+    },
+    {
+      "question_id": "Q08",
+      "group_id": "PART4_TABLE_COMPLETION_06_10",
+      "type": "table_completion",
+      "prompt": "Mineral deposits may form tall ____.",
+      "correct_answers": [
+        "chimney structures"
+      ],
+      "scoring_policy": "strict_spoken_words",
+      "word_limit": 2,
+      "instructions_en": "Complete the table below. Write NO MORE THAN TWO WORDS for each answer.",
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "evidence_excerpt_en": "Researchers also study the shape of mineral deposits known as chimney structures, which can grow or break apart.",
+      "evidence_span": {
+        "turn_id": "T06",
+        "start_char": 182,
+        "end_char": 200
+      },
+      "explanation_vi": "Đáp án “chimney structures” được nói trực tiếp trong phần bài giảng này. Nồng độ sulphide và cấu trúc ống khói khoáng thay đổi theo hoạt động địa chất.",
+      "answer_source": "exact_words_spoken",
+      "question_tags": [
+        "M28",
+        "part4",
+        "table_completion",
+        "academic_note_taking"
+      ],
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true,
+      "answer_review_status": "draft_teacher_verification_required"
+    },
+    {
+      "question_id": "Q09",
+      "group_id": "PART4_TABLE_COMPLETION_06_10",
+      "type": "table_completion",
+      "prompt": "Biologists assess the range of organisms through ____.",
+      "correct_answers": [
+        "species diversity"
+      ],
+      "scoring_policy": "strict_spoken_words",
+      "word_limit": 2,
+      "instructions_en": "Complete the table below. Write NO MORE THAN TWO WORDS for each answer.",
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "evidence_excerpt_en": "When comparing vents, scientists examine species diversity rather than counting only the largest animals visible on camera.",
+      "evidence_span": {
+        "turn_id": "T07",
+        "start_char": 41,
+        "end_char": 58
+      },
+      "explanation_vi": "Đáp án “species diversity” được nói trực tiếp trong phần bài giảng này. Đa dạng loài và mức độ xáo trộn môi trường cần được tính tới trong bảo tồn.",
+      "answer_source": "exact_words_spoken",
+      "question_tags": [
+        "M28",
+        "part4",
+        "table_completion",
+        "academic_note_taking"
+      ],
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true,
+      "answer_review_status": "draft_teacher_verification_required"
+    },
+    {
+      "question_id": "Q10",
+      "group_id": "PART4_TABLE_COMPLETION_06_10",
+      "type": "table_completion",
+      "prompt": "Research and development may lead to ____.",
+      "correct_answers": [
+        "habitat disturbance"
+      ],
+      "scoring_policy": "strict_spoken_words",
+      "word_limit": 2,
+      "instructions_en": "Complete the table below. Write NO MORE THAN TWO WORDS for each answer.",
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "evidence_excerpt_en": "They also consider habitat disturbance caused by sampling, tourism proposals or industrial activity.",
+      "evidence_span": {
+        "turn_id": "T07",
+        "start_char": 143,
+        "end_char": 162
+      },
+      "explanation_vi": "Đáp án “habitat disturbance” được nói trực tiếp trong phần bài giảng này. Đa dạng loài và mức độ xáo trộn môi trường cần được tính tới trong bảo tồn.",
+      "answer_source": "exact_words_spoken",
+      "question_tags": [
+        "M28",
+        "part4",
+        "table_completion",
+        "academic_note_taking"
+      ],
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true,
+      "answer_review_status": "draft_teacher_verification_required"
+    }
+  ],
+  "question_groups": [
+    {
+      "group_id": "PART4_NOTE_COMPLETION_01_05",
+      "title_en": "Life Without Sunlight — Notes",
+      "question_ids": [
+        "Q01",
+        "Q02",
+        "Q03",
+        "Q04",
+        "Q05"
+      ],
+      "question_type": "note_completion",
+      "instructions_en": "Complete the notes below. Write NO MORE THAN TWO WORDS for each answer.",
+      "word_limit": 2,
+      "requires_one_listen": true,
+      "question_display_start": "before_audio",
+      "pause_between_groups_seconds": 0,
+      "layout_metadata": {
+        "presentation": "grouped_blanks",
+        "flow_order": null,
+        "table_columns": null
+      }
+    },
+    {
+      "group_id": "PART4_TABLE_COMPLETION_06_10",
+      "title_en": "Life Without Sunlight — Table",
+      "question_ids": [
+        "Q06",
+        "Q07",
+        "Q08",
+        "Q09",
+        "Q10"
+      ],
+      "question_type": "table_completion",
+      "instructions_en": "Complete the table below. Write NO MORE THAN TWO WORDS for each answer.",
+      "word_limit": 2,
+      "requires_one_listen": true,
+      "question_display_start": "before_audio",
+      "pause_between_groups_seconds": 0,
+      "layout_metadata": {
+        "presentation": "grouped_blanks",
+        "flow_order": null,
+        "table_columns": [
+          "Main point",
+          "Detail"
+        ]
+      }
+    }
+  ],
+  "pedagogy_vi": {
+    "topic_summary_vi": "Bài giảng giới thiệu hệ sinh thái biển sâu sống nhờ hóa năng gần miệng phun thủy nhiệt.",
+    "question_explanations_status": "draft_review_required",
+    "turn_meanings_are_not_full_translations": true,
+    "full_line_translation_required_before_release": true
+  },
+  "audio": {
+    "status": "not_generated",
+    "audio_url": null,
+    "audio_asset_id": null,
+    "duration_ms": null,
+    "source_text_sha256": "a3f7dfd73d4393472f9968dc9b8f591b699fea920e79ae2fb4827edcb980c0b8",
+    "generation_strategy": "single_speaker_continuous_full_lecture",
+    "aligned_turns": false,
+    "voice_consistency_verified": false,
+    "human_listening_review": false
+  },
+  "exam_mode": {
+    "bank_role": "protected_assessment",
+    "use_as_training_before_first_attempt": false,
+    "listening_attempts_allowed_for_scored_first_attempt": 1,
+    "replay_before_submit": false,
+    "speed_control_before_submit": false,
+    "transcript_visible_before_submit": false,
+    "answer_key_visible_before_submit": false,
+    "post_attempt_review_allowed": true,
+    "question_count": 10,
+    "points_per_correct_answer": 1,
+    "question_order_monotonic": true,
+    "estimated_speech_minutes_at_140_wpm": 3.8,
+    "exam_band_score_enabled": false,
+    "repeated_attempt_marked_as_seen": true,
+    "all_questions_visible_before_audio": true
+  },
+  "qa": {
+    "automatic_data_validation": "pending",
+    "content_human_review": "pending",
+    "translation_human_review": "pending",
+    "audio_human_review": "pending",
+    "exam_simulation_rubric_score": null,
+    "rubric_90_verified": false,
+    "published": false,
+    "release_eligible": false
+  },
+  "provenance": {
+    "source_type": "original_authoring_english_academic_lecture",
+    "milestone": "M28",
+    "no_official_ielts_question_copied": true,
+    "training_exposure_guard": true,
+    "fictional_illustrations_only_when_specified": true
+  },
+  "release_metadata": {
+    "target_bank": "protected_assessment",
+    "import_policy": "insert_only",
+    "version": "m28.0.1",
+    "preserve_existing_ids": true,
+    "allow_client_answer_payload": false
+  }
+}

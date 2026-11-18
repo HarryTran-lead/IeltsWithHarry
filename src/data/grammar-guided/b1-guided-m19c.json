@@ -1,0 +1,2242 @@
+{
+  "B1-01": {
+    "code": "B1-01",
+    "title": "Present Perfect vs Past Simple",
+    "context_vi": "Bạn gửi báo cáo và báo tiến độ cho trưởng nhóm.",
+    "goal_vi": "Học viên xác định được cách dùng Present Perfect vs Past Simple, phân tích bằng chứng và vận dụng trong đoạn văn.",
+    "contrast_cue_vi": "Đọc từng câu và xác định điều người nói muốn NHẤN MẠNH, không chỉ dò công thức. Cả hai có thể đúng; câu đầu nhấn kết quả, câu sau xác định thời điểm.",
+    "checkpoints": [
+      {
+        "id": "B1-01-M19C-C1",
+        "prompt_vi": "Bạn báo cáo một vấn đề hiện vẫn còn: máy in vừa hỏng và giờ không in được vé. Chọn cách nói phù hợp.",
+        "options_en": [
+          "The printer has stopped working, so we can't print.",
+          "The printer has stopped working yesterday.",
+          "The printer stop working, so we can't print."
+        ],
+        "correct_index": 0,
+        "option_feedback_vi": [
+          "Present Perfect gắn sự cố với hậu quả hiện tại: không in được vé.",
+          "Yesterday là mốc quá khứ khép lại nên không đi trực tiếp với Present Perfect.",
+          "Printer số ít và động từ không ở dạng quá khứ hay hoàn thành trong câu này."
+        ],
+        "focus": "diagnose"
+      },
+      {
+        "id": "B1-01-M19C-C2",
+        "prompt_vi": "Bạn muốn nhấn đúng thời điểm máy in hỏng: lúc 9 giờ sáng hôm qua.",
+        "options_en": [
+          "The printer has stopped at nine yesterday.",
+          "The printer stopping at nine yesterday.",
+          "The printer stopped at nine yesterday."
+        ],
+        "correct_index": 2,
+        "option_feedback_vi": [
+          "Present Perfect không phù hợp khi sự kiện gắn mốc quá khứ cụ thể đã kết thúc.",
+          "Thiếu trợ động từ hoặc động từ chia thì, nên câu chưa hoàn chỉnh.",
+          "Mốc at nine yesterday đã khép lại; dùng Past Simple."
+        ],
+        "focus": "contrast"
+      },
+      {
+        "id": "B1-01-M19C-C3",
+        "prompt_vi": "Trong ba câu sau, câu NÀO mắc lỗi cần sửa ở chủ điểm Present Perfect vs Past Simple?",
+        "options_en": [
+          "We visited the exhibition last Sunday.",
+          "I have just finish my homework, so I can go out now.",
+          "I have just finished my homework, so I can go out now."
+        ],
+        "correct_index": 1,
+        "option_feedback_vi": [
+          "Last Sunday là mốc thời gian quá khứ đã kết thúc; visited dùng Past Simple hợp lý.",
+          "Sau have just phải dùng quá khứ phân từ finished, không dùng finish. Sửa: I have just finished my homework, so I can go out now.",
+          "Have just finished là Present Perfect với V3 finished, diễn tả kết quả mới hoàn thành."
+        ],
+        "focus": "error_detection"
+      }
+    ],
+    "transfer": {
+      "prompt_vi": "Tự viết một đoạn 2–4 câu theo nhiệm vụ sau (viết trước khi xem mẫu): Write two sentences: say you have finished the draft and say when you sent it.",
+      "sample_en": "I have finished the draft, so you can review it now. I sent the file at 10 a.m.",
+      "rubric_vi": "Dùng Present Perfect cho kết quả hiện tại; Past Simple cho hành động có mốc rõ. Kiểm tra thêm: (1) diễn đạt đúng ý trong tình huống; (2) dùng cấu trúc phù hợp; (3) thì, trật tự từ và dấu câu nhất quán. Bản mẫu là một phương án, không phải đáp án duy nhất."
+    },
+    "review_status": "DRAFT_TEACHER_REVIEW_REQUIRED",
+    "assessment_mode": "FORMATIVE_ONLY"
+  },
+  "B1-02": {
+    "code": "B1-02",
+    "title": "Present Perfect – Duration",
+    "context_vi": "Bạn giới thiệu thời gian đã gắn bó với câu lạc bộ.",
+    "goal_vi": "Học viên xác định được cách dùng Present Perfect – Duration, phân tích bằng chứng và vận dụng trong đoạn văn.",
+    "contrast_cue_vi": "Đọc từng câu và xác định điều người nói muốn NHẤN MẠNH, không chỉ dò công thức. Câu đầu thường gợi tình trạng tới hiện tại; câu sau nói về một khoảng thời gian đã khép lại.",
+    "checkpoints": [
+      {
+        "id": "B1-02-M19C-C1",
+        "prompt_vi": "Bạn gia nhập câu lạc bộ tháng 3 và hiện vẫn là thành viên. Chọn câu đúng.",
+        "options_en": [
+          "I've been a member for March.",
+          "I was a member since March and still am.",
+          "I've been a member since March."
+        ],
+        "correct_index": 2,
+        "option_feedback_vi": [
+          "For cần một khoảng như three months, không phải mốc March.",
+          "Past Simple không diễn đạt đúng khoảng kéo dài đến hiện tại khi đi trực tiếp với since.",
+          "Since đi với điểm bắt đầu March, và Present Perfect nối trạng thái đến hiện tại."
+        ],
+        "focus": "diagnose"
+      },
+      {
+        "id": "B1-02-M19C-C2",
+        "prompt_vi": "Một người đã sống ở đây suốt ba năm và vẫn đang sống tại đây.",
+        "options_en": [
+          "She lived here for three years and still lives here.",
+          "She has lived here for three years.",
+          "She has lived here since three years."
+        ],
+        "correct_index": 1,
+        "option_feedback_vi": [
+          "Câu Past Simple mô tả khoảng đã khép lại; phần nối hiện tại làm cách diễn đạt thiếu thống nhất.",
+          "For three years đo độ dài; Present Perfect kết nối quá khứ tới hiện tại.",
+          "Since cần một mốc như 2023, không phải ba năm."
+        ],
+        "focus": "contrast"
+      },
+      {
+        "id": "B1-02-M19C-C3",
+        "prompt_vi": "Trong ba câu sau, câu NÀO mắc lỗi cần sửa ở chủ điểm Present Perfect – Duration?",
+        "options_en": [
+          "She has known him since a long time.",
+          "She has known him for a long time.",
+          "I have known my neighbour for four years."
+        ],
+        "correct_index": 0,
+        "option_feedback_vi": [
+          "A long time là khoảng thời gian, không phải mốc khởi đầu. Cách sửa: She has known him for a long time.",
+          "For a long time chỉ khoảng kéo dài đến hiện tại, đúng với has known.",
+          "For four years chỉ khoảng thời gian; have known diễn tả quan hệ còn tiếp tục."
+        ],
+        "focus": "error_detection"
+      }
+    ],
+    "transfer": {
+      "prompt_vi": "Tự viết một đoạn 2–4 câu theo nhiệm vụ sau (viết trước khi xem mẫu): Write two sentences about a membership that began in 2022 and continues now.",
+      "sample_en": "I have been a member of this club since 2022. I have made several friends here.",
+      "rubric_vi": "Câu đầu cho mốc bắt đầu còn hiệu lực; câu sau kể kết quả đến hiện tại. Kiểm tra thêm: (1) diễn đạt đúng ý trong tình huống; (2) dùng cấu trúc phù hợp; (3) thì, trật tự từ và dấu câu nhất quán. Bản mẫu là một phương án, không phải đáp án duy nhất."
+    },
+    "review_status": "DRAFT_TEACHER_REVIEW_REQUIRED",
+    "assessment_mode": "FORMATIVE_ONLY"
+  },
+  "B1-03": {
+    "code": "B1-03",
+    "title": "Present Perfect Continuous",
+    "context_vi": "Bạn giải thích sự chậm trễ trước cuộc họp.",
+    "goal_vi": "Học viên xác định được cách dùng Present Perfect Continuous, phân tích bằng chứng và vận dụng trong đoạn văn.",
+    "contrast_cue_vi": "Đọc từng câu và xác định điều người nói muốn NHẤN MẠNH, không chỉ dò công thức. Câu đầu thường nhấn thành quả/hoàn tất; câu sau nhấn quá trình, chưa xác nhận xong.",
+    "checkpoints": [
+      {
+        "id": "B1-03-M19C-C1",
+        "prompt_vi": "Hộp sơn còn mở, quần áo dính sơn. Bạn giải thích vì sao mình bẩn.",
+        "options_en": [
+          "I have paint the hallway.",
+          "I've been painting the hallway.",
+          "I've been knowing the hallway."
+        ],
+        "correct_index": 1,
+        "option_feedback_vi": [
+          "Sau have cần quá khứ phân từ painted, không phải paint.",
+          "Present Perfect Continuous nhấn quá trình đang/gần đây diễn ra và dấu vết hiện tại.",
+          "Know thường là động từ trạng thái nên không dùng dạng tiếp diễn theo nghĩa biết."
+        ],
+        "focus": "diagnose"
+      },
+      {
+        "id": "B1-03-M19C-C2",
+        "prompt_vi": "Bạn muốn báo rằng bức tường đã được sơn xong, nhấn kết quả hoàn tất.",
+        "options_en": [
+          "I've painted the wall.",
+          "I've been painting the wall since noon, and I'm still working on it.",
+          "I've painting the wall."
+        ],
+        "correct_index": 0,
+        "option_feedback_vi": [
+          "Present Perfect Simple nhấn sản phẩm đã hoàn tất.",
+          "Continuous và mệnh đề I'm still working on it cho thấy việc chưa xong; trái yêu cầu xác nhận đã hoàn tất.",
+          "Thiếu been cho cấu trúc tiếp diễn và thiếu V3 cho cấu trúc hoàn thành đơn."
+        ],
+        "focus": "contrast"
+      },
+      {
+        "id": "B1-03-M19C-C3",
+        "prompt_vi": "Trong ba câu sau, câu NÀO mắc lỗi cần sửa ở chủ điểm Present Perfect Continuous?",
+        "options_en": [
+          "He has been working since dawn.",
+          "I have been painting the bedroom.",
+          "He has working since dawn."
+        ],
+        "correct_index": 2,
+        "option_feedback_vi": [
+          "Has been working dùng have/has + been + V-ing với since dawn.",
+          "Have been painting là dạng hoàn thành tiếp diễn chuẩn, có thể nhấn quá trình.",
+          "Thiếu been trong cấu trúc hoàn thành tiếp diễn. Cách sửa: He has been working since dawn."
+        ],
+        "focus": "error_detection"
+      }
+    ],
+    "transfer": {
+      "prompt_vi": "Tự viết một đoạn 2–4 câu theo nhiệm vụ sau (viết trước khi xem mẫu): Write two sentences explaining why you look tired and whether the task is complete.",
+      "sample_en": "I have been checking the data since breakfast, so I am tired. I have not finished the report yet.",
+      "rubric_vi": "Thể tiếp diễn giải thích quá trình, câu phủ định cho biết chưa hoàn tất. Kiểm tra thêm: (1) diễn đạt đúng ý trong tình huống; (2) dùng cấu trúc phù hợp; (3) thì, trật tự từ và dấu câu nhất quán. Bản mẫu là một phương án, không phải đáp án duy nhất."
+    },
+    "review_status": "DRAFT_TEACHER_REVIEW_REQUIRED",
+    "assessment_mode": "FORMATIVE_ONLY"
+  },
+  "B1-04": {
+    "code": "B1-04",
+    "title": "Perfect Simple vs Continuous",
+    "context_vi": "Bạn báo cáo tiến độ dịch thuật.",
+    "goal_vi": "Học viên xác định được cách dùng Perfect Simple vs Continuous, phân tích bằng chứng và vận dụng trong đoạn văn.",
+    "contrast_cue_vi": "Đọc từng câu và xác định điều người nói muốn NHẤN MẠNH, không chỉ dò công thức. Một câu hỏi về số lượng hoàn tất; một câu hỏi về thời gian đọc.",
+    "checkpoints": [
+      {
+        "id": "B1-04-M19C-C1",
+        "prompt_vi": "Quản lý hỏi số báo cáo bạn đã hoàn thành, không hỏi bạn làm bao lâu.",
+        "options_en": [
+          "I've finished three reports.",
+          "I've been finishing three reports.",
+          "I have finish three reports."
+        ],
+        "correct_index": 0,
+        "option_feedback_vi": [
+          "Số sản phẩm đã hoàn thành dẫn tới Present Perfect Simple.",
+          "Continuous thiên về quá trình; ở đây dùng finishing cho ba kết quả hoàn tất không tự nhiên.",
+          "Present Perfect Simple dùng have + quá khứ phân từ finished, không dùng finish nguyên mẫu."
+        ],
+        "focus": "diagnose"
+      },
+      {
+        "id": "B1-04-M19C-C2",
+        "prompt_vi": "Quản lý hỏi bạn đã làm đề án trong bao lâu, chưa bàn số sản phẩm.",
+        "options_en": [
+          "I've worked two reports for two hours.",
+          "I've working on it for two hours.",
+          "I've been working on it for two hours."
+        ],
+        "correct_index": 2,
+        "option_feedback_vi": [
+          "Worked two reports không diễn đạt hoạt động làm đề án tự nhiên trong ngữ cảnh.",
+          "Dạng tiếp diễn hoàn thành cần have been working.",
+          "Continuous làm nổi bật thời gian nỗ lực kéo dài."
+        ],
+        "focus": "contrast"
+      },
+      {
+        "id": "B1-04-M19C-C3",
+        "prompt_vi": "Trong ba câu sau, câu NÀO mắc lỗi cần sửa ở chủ điểm Perfect Simple vs Continuous?",
+        "options_en": [
+          "She has been translating documents all afternoon.",
+          "How long have you writing this essay?",
+          "How long have you been writing this essay?"
+        ],
+        "correct_index": 1,
+        "option_feedback_vi": [
+          "Has been translating nhấn hành động kéo dài suốt buổi chiều, phù hợp all afternoon.",
+          "Câu hoàn thành tiếp diễn thiếu been. Sửa: How long have you been writing this essay?",
+          "Have you been writing có been + V-ing, đúng khi hỏi quá trình đang kéo dài."
+        ],
+        "focus": "error_detection"
+      }
+    ],
+    "transfer": {
+      "prompt_vi": "Tự viết một đoạn 2–4 câu theo nhiệm vụ sau (viết trước khi xem mẫu): Write two sentences: say how long you have worked and how much you have completed.",
+      "sample_en": "I have been translating since 8 a.m. I have translated six pages so far.",
+      "rubric_vi": "Một câu nhấn thời lượng, một câu nhấn kết quả đếm được. Kiểm tra thêm: (1) diễn đạt đúng ý trong tình huống; (2) dùng cấu trúc phù hợp; (3) thì, trật tự từ và dấu câu nhất quán. Bản mẫu là một phương án, không phải đáp án duy nhất."
+    },
+    "review_status": "DRAFT_TEACHER_REVIEW_REQUIRED",
+    "assessment_mode": "FORMATIVE_ONLY"
+  },
+  "B1-05": {
+    "code": "B1-05",
+    "title": "Past Perfect",
+    "context_vi": "Bạn giải thích lý do tới buổi họp muộn.",
+    "goal_vi": "Học viên xác định được cách dùng Past Perfect, phân tích bằng chứng và vận dụng trong đoạn văn.",
+    "contrast_cue_vi": "Đọc từng câu và xác định điều người nói muốn NHẤN MẠNH, không chỉ dò công thức. Câu đầu có thể là cô ấy rời đi lúc tôi đến; câu sau xác định cô ấy rời đi trước.",
+    "checkpoints": [
+      {
+        "id": "B1-05-M19C-C1",
+        "prompt_vi": "Bạn tới nhà ga lúc 8h, tàu đã đi lúc 7h55. Chọn câu đúng.",
+        "options_en": [
+          "The train has left before I arrived yesterday.",
+          "The train had leave before I arrived.",
+          "The train had left before I arrived."
+        ],
+        "correct_index": 2,
+        "option_feedback_vi": [
+          "Present Perfect không kết hợp tự nhiên với mốc quá khứ cụ thể đã khép lại.",
+          "Sau had phải dùng V3 left, không phải leave.",
+          "Had left đánh dấu chuyến tàu rời ga sớm hơn mốc tới ga trong quá khứ."
+        ],
+        "focus": "diagnose"
+      },
+      {
+        "id": "B1-05-M19C-C2",
+        "prompt_vi": "Bạn muốn cho biết khi tới hội trường, bài thuyết trình đã bắt đầu trước đó.",
+        "options_en": [
+          "By the time we arrive yesterday, the talk started.",
+          "By the time we arrived, the talk had started.",
+          "By the time we had arrived, the talk will start."
+        ],
+        "correct_index": 1,
+        "option_feedback_vi": [
+          "Arrive không chia quá khứ dù có yesterday, và không đánh dấu rõ sự kiện sớm hơn.",
+          "Sự kiện bắt đầu trước dùng had started; mốc đến dùng Past Simple.",
+          "Will start chuyển sang tương lai, trái với diễn biến đã xảy ra."
+        ],
+        "focus": "contrast"
+      },
+      {
+        "id": "B1-05-M19C-C3",
+        "prompt_vi": "Trong ba câu sau, câu NÀO mắc lỗi cần sửa ở chủ điểm Past Perfect?",
+        "options_en": [
+          "By the time we arrived, she had ate dinner.",
+          "By the time we arrived, she had eaten dinner.",
+          "I had saved the file before the power went out."
+        ],
+        "correct_index": 0,
+        "option_feedback_vi": [
+          "Sau had dùng V3 eaten, không dùng dạng quá khứ ate. Cách sửa: By the time we arrived, she had eaten dinner.",
+          "Had eaten là V3 sau had; hành động ăn đã xong trước khi chúng tôi đến.",
+          "Had saved đúng dạng Past Perfect, phân biệt với sự cố mất điện xảy ra sau."
+        ],
+        "focus": "error_detection"
+      }
+    ],
+    "transfer": {
+      "prompt_vi": "Tự viết một đoạn 2–4 câu theo nhiệm vụ sau (viết trước khi xem mẫu): Write two sentences using Past Perfect for a missed event and Past Simple for your arrival.",
+      "sample_en": "The meeting had started when I entered the room. I apologised to the team.",
+      "rubric_vi": "Past Perfect dựng mốc trước; Past Simple kể hành động tiếp theo. Kiểm tra thêm: (1) diễn đạt đúng ý trong tình huống; (2) dùng cấu trúc phù hợp; (3) thì, trật tự từ và dấu câu nhất quán. Bản mẫu là một phương án, không phải đáp án duy nhất."
+    },
+    "review_status": "DRAFT_TEACHER_REVIEW_REQUIRED",
+    "assessment_mode": "FORMATIVE_ONLY"
+  },
+  "B1-06": {
+    "code": "B1-06",
+    "title": "Narrative Tenses",
+    "context_vi": "Bạn viết một đoạn kể sự cố nhỏ tại nơi làm việc.",
+    "goal_vi": "Học viên xác định được cách dùng Narrative Tenses, phân tích bằng chứng và vận dụng trong đoạn văn.",
+    "contrast_cue_vi": "Đọc từng câu và xác định điều người nói muốn NHẤN MẠNH, không chỉ dò công thức. Câu thứ hai làm rõ hành động đọc đang diễn ra khi chuông reo.",
+    "checkpoints": [
+      {
+        "id": "B1-06-M19C-C1",
+        "prompt_vi": "Bạn đang đọc sách thì chuông cửa reo.",
+        "options_en": [
+          "I was read when the doorbell rang.",
+          "I was reading when the doorbell rang.",
+          "I read when the doorbell was ringing suddenly."
+        ],
+        "correct_index": 1,
+        "option_feedback_vi": [
+          "Was read là bị động, không phải quá khứ tiếp diễn của read.",
+          "Was reading là hoạt động nền; rang là sự kiện xen vào.",
+          "Câu không thể hiện rõ hoạt động đang diễn ra và sự kiện bất chợt như yêu cầu."
+        ],
+        "focus": "diagnose"
+      },
+      {
+        "id": "B1-06-M19C-C2",
+        "prompt_vi": "Bạn mở máy thì thấy tệp đã được sao lưu từ trước.",
+        "options_en": [
+          "I opened the laptop and found that I had saved the file.",
+          "I had opened the laptop and will save the file.",
+          "I open the laptop yesterday and had saved the file."
+        ],
+        "correct_index": 0,
+        "option_feedback_vi": [
+          "Past Perfect đánh dấu hành động lưu xảy ra trước khi mở máy.",
+          "Will save biến hành động lưu sang tương lai, trái ngữ cảnh.",
+          "Open cần ở quá khứ; cách phối thì chưa nhất quán."
+        ],
+        "focus": "contrast"
+      },
+      {
+        "id": "B1-06-M19C-C3",
+        "prompt_vi": "Trong ba câu sau, câu NÀO mắc lỗi cần sửa ở chủ điểm Narrative Tenses?",
+        "options_en": [
+          "I arrived and then greeted everyone.",
+          "I went back because I had forgotten my wallet.",
+          "I had arrive and then had greeted everyone."
+        ],
+        "correct_index": 2,
+        "option_feedback_vi": [
+          "Arrived and then greeted là hai hành động nối tiếp, Past Simple giúp kể theo thứ tự.",
+          "Had forgotten diễn tả quên ví trước hành động quay lại, nên Past Perfect hợp lý.",
+          "Sau had phải dùng V3 arrived, không phải arrive. Khi kể hai sự kiện nối tiếp thông thường, I arrived and then greeted everyone rõ hơn."
+        ],
+        "focus": "error_detection"
+      }
+    ],
+    "transfer": {
+      "prompt_vi": "Tự viết một đoạn 2–4 câu theo nhiệm vụ sau (viết trước khi xem mẫu): Write three sentences about preparing a presentation, a power cut, and a saved backup.",
+      "sample_en": "I was preparing a presentation when the power went out. Luckily, I had saved a copy earlier. I restarted my laptop and continued.",
+      "rubric_vi": "Ba thì tạo bối cảnh, sự kiện sớm hơn và chuỗi hành động. Kiểm tra thêm: (1) diễn đạt đúng ý trong tình huống; (2) dùng cấu trúc phù hợp; (3) thì, trật tự từ và dấu câu nhất quán. Bản mẫu là một phương án, không phải đáp án duy nhất."
+    },
+    "review_status": "DRAFT_TEACHER_REVIEW_REQUIRED",
+    "assessment_mode": "FORMATIVE_ONLY"
+  },
+  "B1-07": {
+    "code": "B1-07",
+    "title": "Past Habits & Familiarity",
+    "context_vi": "Bạn nói về lịch sinh hoạt trước và sau khi đi làm.",
+    "goal_vi": "Học viên xác định được cách dùng Past Habits & Familiarity, phân tích bằng chứng và vận dụng trong đoạn văn.",
+    "contrast_cue_vi": "Đọc từng câu và xác định điều người nói muốn NHẤN MẠNH, không chỉ dò công thức. Từng làm trước đây khác với hiện đã quen làm.",
+    "checkpoints": [
+      {
+        "id": "B1-07-M19C-C1",
+        "prompt_vi": "Ngày xưa bạn thức dậy lúc 5h, hiện không còn thói quen đó.",
+        "options_en": [
+          "I used to get up at five.",
+          "I'm used to get up at five.",
+          "I use to got up at five."
+        ],
+        "correct_index": 0,
+        "option_feedback_vi": [
+          "Used to + V diễn tả thói quen từng có, nay thay đổi.",
+          "Be used to + V-ing/noun diễn tả quen với một việc, không phải thói quen đã chấm dứt.",
+          "Sau used to dùng động từ nguyên mẫu, không dùng got."
+        ],
+        "focus": "diagnose"
+      },
+      {
+        "id": "B1-07-M19C-C2",
+        "prompt_vi": "Hiện bạn đã quen làm việc ca đêm.",
+        "options_en": [
+          "I used to working night shifts.",
+          "I'm used to work night shifts.",
+          "I'm used to working night shifts."
+        ],
+        "correct_index": 2,
+        "option_feedback_vi": [
+          "Used to + V diễn tả thói quen cũ, không đi với working.",
+          "Sau be used to dùng V-ing hoặc danh từ, không dùng nguyên mẫu trong nghĩa quen với.",
+          "Be used to + V-ing diễn tả đã quen với tình huống hiện tại."
+        ],
+        "focus": "contrast"
+      },
+      {
+        "id": "B1-07-M19C-C3",
+        "prompt_vi": "Trong ba câu sau, câu NÀO mắc lỗi cần sửa ở chủ điểm Past Habits & Familiarity?",
+        "options_en": [
+          "I am used to getting up at six.",
+          "I am used to work at night.",
+          "I am used to working at night."
+        ],
+        "correct_index": 1,
+        "option_feedback_vi": [
+          "Be used to + V-ing: getting up diễn tả đã quen dậy lúc sáu giờ.",
+          "Be used to theo sau danh từ hoặc V-ing, không phải động từ nguyên mẫu. Cách sửa: I am used to working at night.",
+          "Be used to + V-ing: working đúng sau to là giới từ trong cụm này."
+        ],
+        "focus": "error_detection"
+      }
+    ],
+    "transfer": {
+      "prompt_vi": "Tự viết một đoạn 2–4 câu theo nhiệm vụ sau (viết trước khi xem mẫu): Write two sentences describing a former habit and something you are now accustomed to.",
+      "sample_en": "I used to sleep late at weekends. Now I am used to waking up early.",
+      "rubric_vi": "Đối chiếu thói quen xưa với mức độ quen hiện tại. Kiểm tra thêm: (1) diễn đạt đúng ý trong tình huống; (2) dùng cấu trúc phù hợp; (3) thì, trật tự từ và dấu câu nhất quán. Bản mẫu là một phương án, không phải đáp án duy nhất."
+    },
+    "review_status": "DRAFT_TEACHER_REVIEW_REQUIRED",
+    "assessment_mode": "FORMATIVE_ONLY"
+  },
+  "B1-08": {
+    "code": "B1-08",
+    "title": "Future Continuous",
+    "context_vi": "Bạn giải thích lịch trình ngày mai với một người bạn.",
+    "goal_vi": "Học viên xác định được cách dùng Future Continuous, phân tích bằng chứng và vận dụng trong đoạn văn.",
+    "contrast_cue_vi": "Đọc từng câu và xác định điều người nói muốn NHẤN MẠNH, không chỉ dò công thức. Câu đầu có thể nêu quyết định/hành động sẽ làm; câu sau nhấn trạng thái đang làm lúc sáu giờ.",
+    "checkpoints": [
+      {
+        "id": "B1-08-M19C-C1",
+        "prompt_vi": "10 giờ sáng mai bạn đang tham dự cuộc họp, nên không thể gọi điện.",
+        "options_en": [
+          "I'll have attended a meeting at ten tomorrow.",
+          "I'll be attend a meeting at ten tomorrow.",
+          "I'll be attending a meeting at ten tomorrow."
+        ],
+        "correct_index": 2,
+        "option_feedback_vi": [
+          "Future Perfect nhấn đã hoàn thành trước một mốc, không phù hợp việc đang họp.",
+          "Will be phải theo sau bằng V-ing attending.",
+          "Future Continuous diễn tả hành động đang diễn ra tại đúng thời điểm tương lai."
+        ],
+        "focus": "diagnose"
+      },
+      {
+        "id": "B1-08-M19C-C2",
+        "prompt_vi": "Bạn hỏi đồng nghiệp một cách lịch sự về lịch trình dự kiến tối mai.",
+        "options_en": [
+          "Did you be working tomorrow evening?",
+          "Will you be working tomorrow evening?",
+          "Will you working tomorrow evening?"
+        ],
+        "correct_index": 1,
+        "option_feedback_vi": [
+          "Did không đi với be working để hỏi một lịch trong tương lai.",
+          "Will + S + be + V-ing là hình thức hỏi lịch dự kiến.",
+          "Thiếu be trong cấu trúc Future Continuous."
+        ],
+        "focus": "contrast"
+      },
+      {
+        "id": "B1-08-M19C-C3",
+        "prompt_vi": "Trong ba câu sau, câu NÀO mắc lỗi cần sửa ở chủ điểm Future Continuous?",
+        "options_en": [
+          "At this time tomorrow I will be drive home.",
+          "At this time tomorrow I will be driving home.",
+          "Will you be using the projector this afternoon?"
+        ],
+        "correct_index": 0,
+        "option_feedback_vi": [
+          "Future Continuous phải có will be + V-ing. Cách sửa: At this time tomorrow I will be driving home.",
+          "Will be driving là will be + V-ing, diễn tả hành động đang diễn ra vào giờ xác định ngày mai.",
+          "Will you be using có cấu trúc nghi vấn tương lai tiếp diễn đúng."
+        ],
+        "focus": "error_detection"
+      }
+    ],
+    "transfer": {
+      "prompt_vi": "Tự viết một đoạn 2–4 câu theo nhiệm vụ sau (viết trước khi xem mẫu): Write two sentences about being unavailable at 10 a.m. and free at lunchtime.",
+      "sample_en": "I will be attending training at ten tomorrow, so I cannot answer calls. I should be free at lunchtime.",
+      "rubric_vi": "Nhấn hoạt động đang diễn ra ở thời điểm tương lai. Kiểm tra thêm: (1) diễn đạt đúng ý trong tình huống; (2) dùng cấu trúc phù hợp; (3) thì, trật tự từ và dấu câu nhất quán. Bản mẫu là một phương án, không phải đáp án duy nhất."
+    },
+    "review_status": "DRAFT_TEACHER_REVIEW_REQUIRED",
+    "assessment_mode": "FORMATIVE_ONLY"
+  },
+  "B1-09": {
+    "code": "B1-09",
+    "title": "Future Perfect",
+    "context_vi": "Bạn cập nhật hạn bàn giao cho khách hàng.",
+    "goal_vi": "Học viên xác định được cách dùng Future Perfect, phân tích bằng chứng và vận dụng trong đoạn văn.",
+    "contrast_cue_vi": "Đọc từng câu và xác định điều người nói muốn NHẤN MẠNH, không chỉ dò công thức. At six nhấn đang làm; by six nhấn đã xong.",
+    "checkpoints": [
+      {
+        "id": "B1-09-M19C-C1",
+        "prompt_vi": "Bạn cam kết bài kiểm thử hoàn tất trước hoặc đúng thứ Năm.",
+        "options_en": [
+          "We'll have complete the tests by Thursday.",
+          "We'll have completed the tests by Thursday.",
+          "We'll be completing the tests by Thursday, so they're done."
+        ],
+        "correct_index": 1,
+        "option_feedback_vi": [
+          "Sau have phải dùng completed, không phải complete.",
+          "Will have + V3 + by đánh dấu kết quả hoàn tất trước mốc.",
+          "Future Continuous tập trung quá trình, không bảo đảm kết quả đã xong như yêu cầu."
+        ],
+        "focus": "diagnose"
+      },
+      {
+        "id": "B1-09-M19C-C2",
+        "prompt_vi": "Bạn phân biệt việc đang làm lúc 6 giờ với việc đã xong trước 6 giờ.",
+        "options_en": [
+          "By six, I will have written the summary.",
+          "By six, I will be write the summary.",
+          "By six, I have been wrote the summary."
+        ],
+        "correct_index": 0,
+        "option_feedback_vi": [
+          "Future Perfect đặt kết quả hoàn tất trước mốc by six.",
+          "Will be cần V-ing nếu dùng Future Continuous.",
+          "Have been wrote không phải cấu trúc ngữ pháp hợp lệ."
+        ],
+        "focus": "contrast"
+      },
+      {
+        "id": "B1-09-M19C-C3",
+        "prompt_vi": "Trong ba câu sau, câu NÀO mắc lỗi cần sửa ở chủ điểm Future Perfect?",
+        "options_en": [
+          "By Friday I will have completed the training.",
+          "The plane will have landed before we reach the airport.",
+          "By Friday I will be completed the training."
+        ],
+        "correct_index": 2,
+        "option_feedback_vi": [
+          "Will have completed là Future Perfect, nhấn hoàn tất trước Friday.",
+          "Will have landed diễn tả máy bay hoàn tất việc hạ cánh trước thời điểm chúng tôi đến.",
+          "Future Perfect chủ động dùng will have + V3. Cách sửa: By Friday I will have completed the training."
+        ],
+        "focus": "error_detection"
+      }
+    ],
+    "transfer": {
+      "prompt_vi": "Tự viết một đoạn 2–4 câu theo nhiệm vụ sau (viết trước khi xem mẫu): Write two sentences about completing tests by Thursday and sending results on Friday.",
+      "sample_en": "We will have completed the tests by Thursday. We will send the results on Friday.",
+      "rubric_vi": "Future Perfect cho hạn hoàn tất; Future Simple cho bước tiếp theo. Kiểm tra thêm: (1) diễn đạt đúng ý trong tình huống; (2) dùng cấu trúc phù hợp; (3) thì, trật tự từ và dấu câu nhất quán. Bản mẫu là một phương án, không phải đáp án duy nhất."
+    },
+    "review_status": "DRAFT_TEACHER_REVIEW_REQUIRED",
+    "assessment_mode": "FORMATIVE_ONLY"
+  },
+  "B1-10": {
+    "code": "B1-10",
+    "title": "Future Time Clauses",
+    "context_vi": "Bạn viết hướng dẫn bàn giao.",
+    "goal_vi": "Học viên xác định được cách dùng Future Time Clauses, phân tích bằng chứng và vận dụng trong đoạn văn.",
+    "contrast_cue_vi": "Đọc từng câu và xác định điều người nói muốn NHẤN MẠNH, không chỉ dò công thức. When nêu mốc thời gian; because nêu nguyên nhân, không thay thế tùy tiện.",
+    "checkpoints": [
+      {
+        "id": "B1-10-M19C-C1",
+        "prompt_vi": "Bạn sẽ gửi email ngay sau khi nhận được tài liệu vào ngày mai.",
+        "options_en": [
+          "I'll email you as soon as the file arrives.",
+          "I'll email you as soon as the file will arrive.",
+          "I'll emailing you as soon as the file arrives."
+        ],
+        "correct_index": 0,
+        "option_feedback_vi": [
+          "Mệnh đề thời gian dùng Present Simple dù nói về tương lai.",
+          "Trong mệnh đề thời gian với as soon as, không dùng will để chỉ tương lai thông thường.",
+          "Will phải đi với nguyên mẫu email, không đi với emailing."
+        ],
+        "focus": "diagnose"
+      },
+      {
+        "id": "B1-10-M19C-C2",
+        "prompt_vi": "Bạn nói: Khi cuộc họp kết thúc ngày mai, chúng tôi sẽ về.",
+        "options_en": [
+          "When the meeting will end, we'll leave.",
+          "When the meeting end, we'll leave.",
+          "When the meeting ends, we'll leave."
+        ],
+        "correct_index": 2,
+        "option_feedback_vi": [
+          "Không dùng will trong mệnh đề phụ when theo cách diễn đạt này.",
+          "Meeting số ít nên động từ hiện tại phải thêm -s.",
+          "Trong when-clause tương lai, dùng Present Simple ends."
+        ],
+        "focus": "contrast"
+      },
+      {
+        "id": "B1-10-M19C-C3",
+        "prompt_vi": "Trong ba câu sau, câu NÀO mắc lỗi cần sửa ở chủ điểm Future Time Clauses?",
+        "options_en": [
+          "I will wait until you arrive.",
+          "As soon as she will finish, we will leave.",
+          "As soon as she finishes, we will leave."
+        ],
+        "correct_index": 1,
+        "option_feedback_vi": [
+          "Until you arrive dùng hiện tại đơn sau until dù nói về tương lai.",
+          "Sau as soon as dùng Present Simple trong mệnh đề thời gian. Cách sửa: As soon as she finishes, we will leave.",
+          "As soon as she finishes dùng hiện tại đơn trong mệnh đề thời gian tương lai."
+        ],
+        "focus": "error_detection"
+      }
+    ],
+    "transfer": {
+      "prompt_vi": "Tự viết một đoạn 2–4 câu theo nhiệm vụ sau (viết trước khi xem mẫu): Write two sentences about checking a file after it arrives and sending confirmation.",
+      "sample_en": "As soon as the file arrives, I will check it. I will send confirmation when the review is complete.",
+      "rubric_vi": "Mệnh đề thời gian dùng hiện tại đơn, mệnh đề chính dùng tương lai. Kiểm tra thêm: (1) diễn đạt đúng ý trong tình huống; (2) dùng cấu trúc phù hợp; (3) thì, trật tự từ và dấu câu nhất quán. Bản mẫu là một phương án, không phải đáp án duy nhất."
+    },
+    "review_status": "DRAFT_TEACHER_REVIEW_REQUIRED",
+    "assessment_mode": "FORMATIVE_ONLY"
+  },
+  "B1-11": {
+    "code": "B1-11",
+    "title": "First Conditional – Extended",
+    "context_vi": "Bạn viết hướng dẫn cho buổi hội thảo.",
+    "goal_vi": "Học viên xác định được cách dùng First Conditional – Extended, phân tích bằng chứng và vận dụng trong đoạn văn.",
+    "contrast_cue_vi": "Đọc từng câu và xác định điều người nói muốn NHẤN MẠNH, không chỉ dò công thức. Will là kết quả được dự đoán chắc hơn; might nói khả năng.",
+    "checkpoints": [
+      {
+        "id": "B1-11-M19C-C1",
+        "prompt_vi": "Có khả năng mưa, nhưng dự báo chưa chắc. Hãy nói về điều có thể xảy ra.",
+        "options_en": [
+          "If it will rain, the event might move indoors.",
+          "If it rains, the event might moved indoors.",
+          "If it rains, the event might move indoors."
+        ],
+        "correct_index": 2,
+        "option_feedback_vi": [
+          "If-clause cho khả năng tương lai không cần will.",
+          "Sau might là động từ nguyên mẫu move.",
+          "If + Present Simple và might + V diễn tả kết quả có khả năng xảy ra."
+        ],
+        "focus": "diagnose"
+      },
+      {
+        "id": "B1-11-M19C-C2",
+        "prompt_vi": "Bạn đưa hướng dẫn: Nếu hệ thống báo lỗi, hãy gọi kỹ thuật viên.",
+        "options_en": [
+          "If the system show an error, calling the technician.",
+          "If the system shows an error, call the technician.",
+          "If the system will show an error, call the technician."
+        ],
+        "correct_index": 1,
+        "option_feedback_vi": [
+          "System số ít cần shows; câu mệnh lệnh cần call.",
+          "First Conditional có thể dùng câu mệnh lệnh ở vế kết quả.",
+          "If-clause không dùng will trong kiểu hướng dẫn này."
+        ],
+        "focus": "contrast"
+      },
+      {
+        "id": "B1-11-M19C-C3",
+        "prompt_vi": "Trong ba câu sau, câu NÀO mắc lỗi cần sửa ở chủ điểm First Conditional – Extended?",
+        "options_en": [
+          "If the alarm will ring, call security.",
+          "If the alarm rings, call security.",
+          "If you don't understand the question, read it again."
+        ],
+        "correct_index": 0,
+        "option_feedback_vi": [
+          "Trong điều kiện thực với câu mệnh lệnh ở vế sau, if-clause thường dùng Present Simple. Cách sửa: If the alarm rings, call security.",
+          "If the alarm rings dùng hiện tại đơn trong điều kiện có thật; mệnh lệnh ở vế chính.",
+          "If you don’t understand dùng hiện tại đơn ở mệnh đề if, phù hợp lời khuyên."
+        ],
+        "focus": "error_detection"
+      }
+    ],
+    "transfer": {
+      "prompt_vi": "Tự viết một đoạn 2–4 câu theo nhiệm vụ sau (viết trước khi xem mẫu): Write two instructions for possible technical problems during the event.",
+      "sample_en": "If the microphone fails, ask the technician for help. If the internet drops, we may pause the session.",
+      "rubric_vi": "Hai điều kiện có hệ quả khác nhau: mệnh lệnh và khả năng. Kiểm tra thêm: (1) diễn đạt đúng ý trong tình huống; (2) dùng cấu trúc phù hợp; (3) thì, trật tự từ và dấu câu nhất quán. Bản mẫu là một phương án, không phải đáp án duy nhất."
+    },
+    "review_status": "DRAFT_TEACHER_REVIEW_REQUIRED",
+    "assessment_mode": "FORMATIVE_ONLY"
+  },
+  "B1-12": {
+    "code": "B1-12",
+    "title": "Second Conditional",
+    "context_vi": "Bạn đưa lời khuyên cho một người muốn đổi nghề.",
+    "goal_vi": "Học viên xác định được cách dùng Second Conditional, phân tích bằng chứng và vận dụng trong đoạn văn.",
+    "contrast_cue_vi": "Đọc từng câu và xác định điều người nói muốn NHẤN MẠNH, không chỉ dò công thức. First Conditional là khả năng thực; Second Conditional là giả định xa thực tế hơn.",
+    "checkpoints": [
+      {
+        "id": "B1-12-M19C-C1",
+        "prompt_vi": "Bạn không có nhiều tiền hiện nay. Bạn tưởng tượng sẽ mua máy mới nếu có.",
+        "options_en": [
+          "If I have had more money, I'd bought a new laptop.",
+          "If I had more money, I'd buy a new laptop.",
+          "If I would have more money, I'd buy a new laptop."
+        ],
+        "correct_index": 1,
+        "option_feedback_vi": [
+          "Have had + would bought không theo cấu trúc giả định loại hai.",
+          "Second Conditional dùng if + Past Simple và would + V cho giả định trái hiện tại.",
+          "Không dùng would trong mệnh đề if của mẫu này."
+        ],
+        "focus": "diagnose"
+      },
+      {
+        "id": "B1-12-M19C-C2",
+        "prompt_vi": "Bạn đang nói về tình huống giả định, không phải kế hoạch khả thi tuần sau.",
+        "options_en": [
+          "If I were the manager, I would change the schedule.",
+          "If I will be the manager, I would change the schedule.",
+          "If I was being the manager, I would changed the schedule."
+        ],
+        "correct_index": 0,
+        "option_feedback_vi": [
+          "Were và would mark tình huống không có thật ở hiện tại.",
+          "Will trong if-clause không thể hiện đúng cấu trúc giả định này.",
+          "Would cần nguyên mẫu change, không phải changed."
+        ],
+        "focus": "contrast"
+      },
+      {
+        "id": "B1-12-M19C-C3",
+        "prompt_vi": "Trong ba câu sau, câu NÀO mắc lỗi cần sửa ở chủ điểm Second Conditional?",
+        "options_en": [
+          "If I were you, I would apologise.",
+          "If I had a free weekend, I would travel.",
+          "If I was you, I will apologise."
+        ],
+        "correct_index": 2,
+        "option_feedback_vi": [
+          "If I were you... would là mẫu đưa lời khuyên giả định chuẩn.",
+          "If I had ... would diễn tả giả định trái hiện tại với past simple + would.",
+          "Giữ nhất quán cấu trúc giả định; was có thể xuất hiện khẩu ngữ nhưng were phù hợp mẫu dạy. Cách sửa: If I were you, I would apologise."
+        ],
+        "focus": "error_detection"
+      }
+    ],
+    "transfer": {
+      "prompt_vi": "Tự viết một đoạn 2–4 câu theo nhiệm vụ sau (viết trước khi xem mẫu): Write two sentences: imagine being in their position and explain one possible result.",
+      "sample_en": "If I were in your position, I would take a short course first. Then I could test whether I enjoy the field.",
+      "rubric_vi": "Would nêu hành động giả định, could nêu khả năng. Kiểm tra thêm: (1) diễn đạt đúng ý trong tình huống; (2) dùng cấu trúc phù hợp; (3) thì, trật tự từ và dấu câu nhất quán. Bản mẫu là một phương án, không phải đáp án duy nhất."
+    },
+    "review_status": "DRAFT_TEACHER_REVIEW_REQUIRED",
+    "assessment_mode": "FORMATIVE_ONLY"
+  },
+  "B1-13": {
+    "code": "B1-13",
+    "title": "Preferences",
+    "context_vi": "Bạn đề xuất hình thức gặp khách hàng.",
+    "goal_vi": "Học viên xác định được cách dùng Preferences, phân tích bằng chứng và vận dụng trong đoạn văn.",
+    "contrast_cue_vi": "Đọc từng câu và xác định điều người nói muốn NHẤN MẠNH, không chỉ dò công thức. Câu đầu nói lựa chọn nhất thời; câu sau nói sở thích thường xuyên.",
+    "checkpoints": [
+      {
+        "id": "B1-13-M19C-C1",
+        "prompt_vi": "Hôm nay bạn chọn đi tàu thay vì đi máy bay; đó là lựa chọn cụ thể.",
+        "options_en": [
+          "I'd rather take the train today.",
+          "I'd rather to take the train today.",
+          "I'd rather taking the train today."
+        ],
+        "correct_index": 0,
+        "option_feedback_vi": [
+          "Would rather + V nguyên mẫu, không to, cho lựa chọn cụ thể.",
+          "Sau would rather không dùng to + V.",
+          "Sau would rather không dùng V-ing."
+        ],
+        "focus": "diagnose"
+      },
+      {
+        "id": "B1-13-M19C-C2",
+        "prompt_vi": "Bạn diễn đạt sở thích chung là đọc sách buổi tối.",
+        "options_en": [
+          "I prefer read in the evening.",
+          "I am prefer reading in the evening.",
+          "I prefer reading in the evening."
+        ],
+        "correct_index": 2,
+        "option_feedback_vi": [
+          "Prefer không đi trực tiếp với bare infinitive trong mẫu này.",
+          "Prefer là động từ chính nên không thêm am phía trước.",
+          "Prefer + V-ing là mẫu thường dùng cho sở thích chung."
+        ],
+        "focus": "contrast"
+      },
+      {
+        "id": "B1-13-M19C-C3",
+        "prompt_vi": "Trong ba câu sau, câu NÀO mắc lỗi cần sửa ở chủ điểm Preferences?",
+        "options_en": [
+          "I prefer reading online to printing documents.",
+          "I prefer tea than coffee.",
+          "I prefer tea to coffee."
+        ],
+        "correct_index": 1,
+        "option_feedback_vi": [
+          "Prefer reading to printing dùng hai V-ing song song và giới từ to.",
+          "Mẫu prefer A to B, không dùng than ở đây. Cách sửa: I prefer tea to coffee.",
+          "Prefer tea to coffee dùng to để so sánh hai lựa chọn."
+        ],
+        "focus": "error_detection"
+      }
+    ],
+    "transfer": {
+      "prompt_vi": "Tự viết một đoạn 2–4 câu theo nhiệm vụ sau (viết trước khi xem mẫu): Write two sentences comparing your general preference and today's choice.",
+      "sample_en": "I prefer meeting clients in person, but today I'd rather use a video call because the weather is bad.",
+      "rubric_vi": "Phân biệt sở thích chung với lựa chọn cụ thể. Kiểm tra thêm: (1) diễn đạt đúng ý trong tình huống; (2) dùng cấu trúc phù hợp; (3) thì, trật tự từ và dấu câu nhất quán. Bản mẫu là một phương án, không phải đáp án duy nhất."
+    },
+    "review_status": "DRAFT_TEACHER_REVIEW_REQUIRED",
+    "assessment_mode": "FORMATIVE_ONLY"
+  },
+  "B1-14": {
+    "code": "B1-14",
+    "title": "Wish & If Only – Present",
+    "context_vi": "Bạn nhắn cho bạn về khó khăn khi học trực tuyến.",
+    "goal_vi": "Học viên xác định được cách dùng Wish & If Only – Present, phân tích bằng chứng và vận dụng trong đoạn văn.",
+    "contrast_cue_vi": "Đọc từng câu và xác định điều người nói muốn NHẤN MẠNH, không chỉ dò công thức. Hope dành cho kết quả còn có thể xảy ra; wish thường diễn đạt điều trái thực tế.",
+    "checkpoints": [
+      {
+        "id": "B1-14-M19C-C1",
+        "prompt_vi": "Bạn không biết chơi đàn piano, bạn ước hiện nay mình biết.",
+        "options_en": [
+          "I wish I can play the piano.",
+          "I wish I will playing the piano.",
+          "I wish I could play the piano."
+        ],
+        "correct_index": 2,
+        "option_feedback_vi": [
+          "Can không thể hiện khoảng cách giả định mong muốn theo mẫu này.",
+          "Will playing sai dạng động từ và không diễn đạt ước muốn hiện tại.",
+          "Wish + could thể hiện điều hiện tại chưa làm được."
+        ],
+        "focus": "diagnose"
+      },
+      {
+        "id": "B1-14-M19C-C2",
+        "prompt_vi": "Căn hộ hiện đang ồn. Bạn muốn tình trạng hiện tại khác đi.",
+        "options_en": [
+          "I wish the apartment will be quieter right now.",
+          "I wish the apartment were quieter.",
+          "I wish the apartment is quieter."
+        ],
+        "correct_index": 1,
+        "option_feedback_vi": [
+          "Will không phải cấu trúc phù hợp cho mong muốn thay đổi trạng thái hiện tại.",
+          "Wish + past form diễn tả giả định khác thực tế hiện tại.",
+          "Is không tạo khoảng cách giả định ở câu ước này."
+        ],
+        "focus": "contrast"
+      },
+      {
+        "id": "B1-14-M19C-C3",
+        "prompt_vi": "Trong ba câu sau, câu NÀO mắc lỗi cần sửa ở chủ điểm Wish & If Only – Present?",
+        "options_en": [
+          "If only I can drive.",
+          "If only I could drive.",
+          "If only I could attend the conference."
+        ],
+        "correct_index": 0,
+        "option_feedback_vi": [
+          "Could biểu đạt khả năng giả định không có hiện tại. Cách sửa: If only I could drive.",
+          "If only I could drive dùng could để diễn tả mong muốn khác thực tế hiện tại.",
+          "If only I could attend... dùng could để nói điều khó thực hiện hiện nay."
+        ],
+        "focus": "error_detection"
+      }
+    ],
+    "transfer": {
+      "prompt_vi": "Tự viết một đoạn 2–4 câu theo nhiệm vụ sau (viết trước khi xem mẫu): Write two sentences about a noisy apartment and a missing skill.",
+      "sample_en": "I wish my apartment were quieter. If only I could concentrate for longer.",
+      "rubric_vi": "Hai mong muốn nói về trạng thái và khả năng hiện tại. Kiểm tra thêm: (1) diễn đạt đúng ý trong tình huống; (2) dùng cấu trúc phù hợp; (3) thì, trật tự từ và dấu câu nhất quán. Bản mẫu là một phương án, không phải đáp án duy nhất."
+    },
+    "review_status": "DRAFT_TEACHER_REVIEW_REQUIRED",
+    "assessment_mode": "FORMATIVE_ONLY"
+  },
+  "B1-15": {
+    "code": "B1-15",
+    "title": "Passive Voice – Present & Past",
+    "context_vi": "Bạn giới thiệu cách trung tâm xử lý hồ sơ.",
+    "goal_vi": "Học viên xác định được cách dùng Passive Voice – Present & Past, phân tích bằng chứng và vận dụng trong đoạn văn.",
+    "contrast_cue_vi": "Đọc từng câu và xác định điều người nói muốn NHẤN MẠNH, không chỉ dò công thức. Câu chủ động nhấn đội thực hiện; bị động nhấn các biểu mẫu.",
+    "checkpoints": [
+      {
+        "id": "B1-15-M19C-C1",
+        "prompt_vi": "Mỗi tuần các biểu mẫu được kiểm tra bởi bộ phận tiếp nhận.",
+        "options_en": [
+          "The forms is checked every week.",
+          "The forms are checked every week.",
+          "The forms checked every week."
+        ],
+        "correct_index": 1,
+        "option_feedback_vi": [
+          "Forms số nhiều không đi với is.",
+          "Bị động hiện tại dùng are + V3 với forms số nhiều.",
+          "Thiếu trợ động từ are của bị động."
+        ],
+        "focus": "diagnose"
+      },
+      {
+        "id": "B1-15-M19C-C2",
+        "prompt_vi": "Bạn thông báo toà nhà được sửa năm ngoái.",
+        "options_en": [
+          "The building was renovated last year.",
+          "The building is renovated last year.",
+          "The building was renovate last year."
+        ],
+        "correct_index": 0,
+        "option_feedback_vi": [
+          "Bị động quá khứ dùng was + V3 với chủ ngữ số ít.",
+          "Last year là mốc quá khứ; is không thể hiện đúng thời điểm.",
+          "Bị động ở quá khứ yêu cầu was + quá khứ phân từ renovated, không phải nguyên mẫu renovate."
+        ],
+        "focus": "contrast"
+      },
+      {
+        "id": "B1-15-M19C-C3",
+        "prompt_vi": "Trong ba câu sau, câu NÀO mắc lỗi cần sửa ở chủ điểm Passive Voice – Present & Past?",
+        "options_en": [
+          "The road was repaired last month.",
+          "The library was built in 2010.",
+          "The road was repair last month."
+        ],
+        "correct_index": 2,
+        "option_feedback_vi": [
+          "Was repaired dùng be quá khứ + V3 repaired, đúng bị động.",
+          "Was built dùng be quá khứ + V3 built, đúng bị động.",
+          "Sau was phải là V3 repaired. Cách sửa: The road was repaired last month."
+        ],
+        "focus": "error_detection"
+      }
+    ],
+    "transfer": {
+      "prompt_vi": "Tự viết một đoạn 2–4 câu theo nhiệm vụ sau (viết trước khi xem mẫu): Write two sentences about routine registration and a recent renovation.",
+      "sample_en": "All forms are checked by staff. The reception area was renovated last month.",
+      "rubric_vi": "Hai câu bị động ở hai thì khác nhau. Kiểm tra thêm: (1) diễn đạt đúng ý trong tình huống; (2) dùng cấu trúc phù hợp; (3) thì, trật tự từ và dấu câu nhất quán. Bản mẫu là một phương án, không phải đáp án duy nhất."
+    },
+    "review_status": "DRAFT_TEACHER_REVIEW_REQUIRED",
+    "assessment_mode": "FORMATIVE_ONLY"
+  },
+  "B1-16": {
+    "code": "B1-16",
+    "title": "Passive Voice – Other Tenses",
+    "context_vi": "Bạn báo tiến độ sửa hệ thống cho đồng nghiệp.",
+    "goal_vi": "Học viên xác định được cách dùng Passive Voice – Other Tenses, phân tích bằng chứng và vận dụng trong đoạn văn.",
+    "contrast_cue_vi": "Đọc từng câu và xác định điều người nói muốn NHẤN MẠNH, không chỉ dò công thức. Đang thay khác với đã thay xong.",
+    "checkpoints": [
+      {
+        "id": "B1-16-M19C-C1",
+        "prompt_vi": "Công nhân đang thay màn hình ngay bây giờ; việc chưa xong.",
+        "options_en": [
+          "The screen is being replaced now.",
+          "The screen has been replaced now and is still being changed.",
+          "The screen is being replace now."
+        ],
+        "correct_index": 0,
+        "option_feedback_vi": [
+          "Is being + V3 diễn tả bị động đang diễn ra.",
+          "Has been replaced nhấn việc đã hoàn thành, không đúng trạng thái đang làm.",
+          "Sau being phải dùng V3 replaced."
+        ],
+        "focus": "diagnose"
+      },
+      {
+        "id": "B1-16-M19C-C2",
+        "prompt_vi": "Thông báo kết quả: màn hình đã được thay xong và dùng bình thường.",
+        "options_en": [
+          "The screen is being replaced and is ready to use.",
+          "The screen has been replace.",
+          "The screen has been replaced."
+        ],
+        "correct_index": 2,
+        "option_feedback_vi": [
+          "Is being replaced diễn tả vẫn đang tiến hành.",
+          "Cấu trúc has been + V3 bắt buộc dùng replaced để biểu thị kết quả bị động đã hoàn tất.",
+          "Has been + V3 nhấn kết quả bị động đã hoàn tất."
+        ],
+        "focus": "contrast"
+      },
+      {
+        "id": "B1-16-M19C-C3",
+        "prompt_vi": "Trong ba câu sau, câu NÀO mắc lỗi cần sửa ở chủ điểm Passive Voice – Other Tenses?",
+        "options_en": [
+          "The contract has been signed.",
+          "The packages have delivered.",
+          "The packages have been delivered."
+        ],
+        "correct_index": 1,
+        "option_feedback_vi": [
+          "Has been signed là bị động Present Perfect đúng, với been + V3.",
+          "Perfect Passive cần been giữa have và V3. Cách sửa: The packages have been delivered.",
+          "Have been delivered đúng khi packages là vật nhận hành động giao hàng."
+        ],
+        "focus": "error_detection"
+      }
+    ],
+    "transfer": {
+      "prompt_vi": "Tự viết một đoạn 2–4 câu theo nhiệm vụ sau (viết trước khi xem mẫu): Write two sentences contrasting current repairs and completed work.",
+      "sample_en": "The server is being updated now. The backup files have already been checked.",
+      "rubric_vi": "Dùng bị động tiếp diễn cho công việc hiện tại và hoàn thành cho kết quả. Kiểm tra thêm: (1) diễn đạt đúng ý trong tình huống; (2) dùng cấu trúc phù hợp; (3) thì, trật tự từ và dấu câu nhất quán. Bản mẫu là một phương án, không phải đáp án duy nhất."
+    },
+    "review_status": "DRAFT_TEACHER_REVIEW_REQUIRED",
+    "assessment_mode": "FORMATIVE_ONLY"
+  },
+  "B1-17": {
+    "code": "B1-17",
+    "title": "Passive Agents & Instruments",
+    "context_vi": "Bạn mô tả hiện vật bảo tàng và cách làm.",
+    "goal_vi": "Học viên xác định được cách dùng Passive Agents & Instruments, phân tích bằng chứng và vận dụng trong đoạn văn.",
+    "contrast_cue_vi": "Đọc từng câu và xác định điều người nói muốn NHẤN MẠNH, không chỉ dò công thức. Football có thể là vật gây tác động, hammer là dụng cụ người sử dụng; không thay giới từ theo mẹo tuyệt đối, cần xét nghĩa.",
+    "checkpoints": [
+      {
+        "id": "B1-17-M19C-C1",
+        "prompt_vi": "Bạn muốn nói ai đã viết bức thư.",
+        "options_en": [
+          "The letter was written with my aunt.",
+          "The letter written by my aunt.",
+          "The letter was written by my aunt."
+        ],
+        "correct_index": 2,
+        "option_feedback_vi": [
+          "With my aunt có thể hiểu là viết cùng cô ấy; nếu muốn chỉ chính cô ấy là người viết, phải dùng by my aunt.",
+          "Thiếu was để tạo bị động quá khứ.",
+          "By giới thiệu tác nhân thực hiện hành động viết."
+        ],
+        "focus": "diagnose"
+      },
+      {
+        "id": "B1-17-M19C-C2",
+        "prompt_vi": "Bạn muốn nhấn dụng cụ được dùng để mở hộp.",
+        "options_en": [
+          "The box was opened with a technician.",
+          "The box was opened with a screwdriver.",
+          "The box was opened by a technician."
+        ],
+        "correct_index": 1,
+        "option_feedback_vi": [
+          "With a technician khiến người kỹ thuật viên thành công cụ, không đúng ý.",
+          "With chỉ dụng cụ screwdriver được sử dụng.",
+          "By a technician nêu người làm, không nêu dụng cụ screwdriver như nhiệm vụ yêu cầu."
+        ],
+        "focus": "contrast"
+      },
+      {
+        "id": "B1-17-M19C-C3",
+        "prompt_vi": "Trong ba câu sau, câu NÀO mắc lỗi cần sửa ở chủ điểm Passive Agents & Instruments?",
+        "options_en": [
+          "The cake was decorated by a knife.",
+          "The cake was decorated with a knife.",
+          "The box was opened with a small knife."
+        ],
+        "correct_index": 0,
+        "option_feedback_vi": [
+          "Knife là dụng cụ; cách diễn đạt with a knife tự nhiên hơn nếu thực sự dùng để trang trí. Cách sửa: The cake was decorated with a knife.",
+          "With a knife diễn tả công cụ thực hiện thao tác trang trí.",
+          "Was opened with a small knife có with cho phương tiện, không nhầm với by chỉ tác nhân."
+        ],
+        "focus": "error_detection"
+      }
+    ],
+    "transfer": {
+      "prompt_vi": "Tự viết một đoạn 2–4 câu theo nhiệm vụ sau (viết trước khi xem mẫu): Write two passive sentences: who made the model and what tool was used.",
+      "sample_en": "The model was built by local volunteers. It was painted with small brushes.",
+      "rubric_vi": "By = người xây; with = dụng cụ sơn. Kiểm tra thêm: (1) diễn đạt đúng ý trong tình huống; (2) dùng cấu trúc phù hợp; (3) thì, trật tự từ và dấu câu nhất quán. Bản mẫu là một phương án, không phải đáp án duy nhất."
+    },
+    "review_status": "DRAFT_TEACHER_REVIEW_REQUIRED",
+    "assessment_mode": "FORMATIVE_ONLY"
+  },
+  "B1-18": {
+    "code": "B1-18",
+    "title": "Defining Relative Clauses",
+    "context_vi": "Bạn giải thích cách chọn giáo viên và tài liệu.",
+    "goal_vi": "Học viên xác định được cách dùng Defining Relative Clauses, phân tích bằng chứng và vận dụng trong đoạn văn.",
+    "contrast_cue_vi": "Đọc từng câu và xác định điều người nói muốn NHẤN MẠNH, không chỉ dò công thức. Dấu phẩy đổi từ thông tin phân loại sang thông tin bổ sung, có thể đổi nghĩa.",
+    "checkpoints": [
+      {
+        "id": "B1-18-M19C-C1",
+        "prompt_vi": "Có ba người hướng dẫn; bạn muốn xác định người đã gọi điện.",
+        "options_en": [
+          "The trainer which called me is waiting.",
+          "The trainer who called me is waiting.",
+          "The trainer, who called me, is waiting."
+        ],
+        "correct_index": 1,
+        "option_feedback_vi": [
+          "Which không dùng cho người trong cấu trúc này.",
+          "Mệnh đề xác định không có dấu phẩy giúp người nghe nhận đúng người.",
+          "Có dấu phẩy chuyển sang bổ sung thông tin và không còn phân biệt người trong nhóm."
+        ],
+        "focus": "diagnose"
+      },
+      {
+        "id": "B1-18-M19C-C2",
+        "prompt_vi": "Bạn cần xác định chiếc máy tính mà nhóm đã mua.",
+        "options_en": [
+          "The laptop that the team bought is here.",
+          "The laptop who the team bought is here.",
+          "The laptop that team bought is here."
+        ],
+        "correct_index": 0,
+        "option_feedback_vi": [
+          "That có thể thay thế cho vật trong mệnh đề xác định.",
+          "Who thường thay cho người, không phải laptop.",
+          "Thiếu the trước team trong ngữ cảnh xác định nhóm đã nhắc."
+        ],
+        "focus": "contrast"
+      },
+      {
+        "id": "B1-18-M19C-C3",
+        "prompt_vi": "Trong ba câu sau, câu NÀO mắc lỗi cần sửa ở chủ điểm Defining Relative Clauses?",
+        "options_en": [
+          "The course that starts in July is full.",
+          "I need the guide that explains the new rules.",
+          "The course, that starts in July, is full."
+        ],
+        "correct_index": 2,
+        "option_feedback_vi": [
+          "That starts in July xác định rõ khóa học nào, không có dấu phẩy.",
+          "That explains the new rules là mệnh đề quan hệ xác định, dùng that hợp lý.",
+          "Defining clause với that không đặt dấu phẩy. Cách sửa: The course that starts in July is full."
+        ],
+        "focus": "error_detection"
+      }
+    ],
+    "transfer": {
+      "prompt_vi": "Tự viết một đoạn 2–4 câu theo nhiệm vụ sau (viết trước khi xem mẫu): Write two sentences identifying a trainer and a resource you recommend.",
+      "sample_en": "Choose a tutor who gives clear feedback. Use a website that provides short practice tests.",
+      "rubric_vi": "Hai mệnh đề quan hệ giúp giới hạn người và tài liệu. Kiểm tra thêm: (1) diễn đạt đúng ý trong tình huống; (2) dùng cấu trúc phù hợp; (3) thì, trật tự từ và dấu câu nhất quán. Bản mẫu là một phương án, không phải đáp án duy nhất."
+    },
+    "review_status": "DRAFT_TEACHER_REVIEW_REQUIRED",
+    "assessment_mode": "FORMATIVE_ONLY"
+  },
+  "B1-19": {
+    "code": "B1-19",
+    "title": "Non-defining Relative Clauses",
+    "context_vi": "Bạn viết lời giới thiệu khách mời.",
+    "goal_vi": "Học viên xác định được cách dùng Non-defining Relative Clauses, phân tích bằng chứng và vận dụng trong đoạn văn.",
+    "contrast_cue_vi": "Đọc từng câu và xác định điều người nói muốn NHẤN MẠNH, không chỉ dò công thức. Không dấu phẩy chỉ một nhóm giáo viên; có dấu phẩy thường nói toàn bộ nhóm đã xác định.",
+    "checkpoints": [
+      {
+        "id": "B1-19-M19C-C1",
+        "prompt_vi": "Bạn giới thiệu Mai, người nghe đã biết cô ấy; bạn thêm thông tin cô ấy sống ở Huế.",
+        "options_en": [
+          "Mai, who lives in Hue, will join us.",
+          "Mai that lives in Hue will join us.",
+          "Mai, who lives in Hue will join us."
+        ],
+        "correct_index": 0,
+        "option_feedback_vi": [
+          "Mệnh đề bổ sung thông tin dùng who và có hai dấu phẩy.",
+          "That không dùng trong non-defining relative clause với tên riêng đã xác định.",
+          "Mệnh đề chèn vào cần đóng bằng dấu phẩy sau Hue."
+        ],
+        "focus": "diagnose"
+      },
+      {
+        "id": "B1-19-M19C-C2",
+        "prompt_vi": "Bạn thêm một nhận xét về địa điểm hội thảo đã được xác định.",
+        "options_en": [
+          "The venue, that opened in 2020, has good access.",
+          "The venue which opened in 2020, has good access.",
+          "The venue, which opened in 2020, has good access."
+        ],
+        "correct_index": 2,
+        "option_feedback_vi": [
+          "That không dùng sau dấu phẩy trong non-defining clause.",
+          "Dấu phẩy sau 2020 không đi kèm dấu phẩy mở đầu ở dạng bổ sung.",
+          "Which phù hợp mệnh đề bổ sung được ngăn cách bằng hai dấu phẩy."
+        ],
+        "focus": "contrast"
+      },
+      {
+        "id": "B1-19-M19C-C3",
+        "prompt_vi": "Trong ba câu sau, câu NÀO mắc lỗi cần sửa ở chủ điểm Non-defining Relative Clauses?",
+        "options_en": [
+          "The town museum, which opened last year, is popular.",
+          "Anna who studies music, is arriving.",
+          "Anna, who studies music, is arriving."
+        ],
+        "correct_index": 1,
+        "option_feedback_vi": [
+          "Which opened last year là thông tin bổ sung, có hai dấu phẩy.",
+          "Cần dấu phẩy mở và đóng mệnh đề chêm giữa. Cách sửa: Anna, who studies music, is arriving.",
+          "Anna, who studies music, ... đặt mệnh đề không xác định giữa hai dấu phẩy."
+        ],
+        "focus": "error_detection"
+      }
+    ],
+    "transfer": {
+      "prompt_vi": "Tự viết một đoạn 2–4 câu theo nhiệm vụ sau (viết trước khi xem mẫu): Write two sentences introducing a known speaker and a conference venue.",
+      "sample_en": "Ms Hoa, who founded the club, will speak first. The conference hall, which was renovated recently, is on the ground floor.",
+      "rubric_vi": "Tên người và địa điểm đã xác định, mệnh đề chỉ cung cấp thêm chi tiết. Kiểm tra thêm: (1) diễn đạt đúng ý trong tình huống; (2) dùng cấu trúc phù hợp; (3) thì, trật tự từ và dấu câu nhất quán. Bản mẫu là một phương án, không phải đáp án duy nhất."
+    },
+    "review_status": "DRAFT_TEACHER_REVIEW_REQUIRED",
+    "assessment_mode": "FORMATIVE_ONLY"
+  },
+  "B1-20": {
+    "code": "B1-20",
+    "title": "Relative Pronouns & Omission",
+    "context_vi": "Bạn giới thiệu tài liệu và một chuyên gia.",
+    "goal_vi": "Học viên xác định được cách dùng Relative Pronouns & Omission, phân tích bằng chứng và vận dụng trong đoạn văn.",
+    "contrast_cue_vi": "Đọc từng câu và xác định điều người nói muốn NHẤN MẠNH, không chỉ dò công thức. Hai câu đều đúng do that làm tân ngữ.",
+    "checkpoints": [
+      {
+        "id": "B1-20-M19C-C1",
+        "prompt_vi": "Bạn nói về tập tin chúng tôi đã chia sẻ: có thể lược đại từ quan hệ tân ngữ.",
+        "options_en": [
+          "The file shared us is missing.",
+          "The file we shared it is missing.",
+          "The file we shared is missing."
+        ],
+        "correct_index": 2,
+        "option_feedback_vi": [
+          "Shared us làm thay đổi quan hệ người/vật.",
+          "It lặp lại tân ngữ file khi đã lược đại từ quan hệ.",
+          "We là chủ ngữ mệnh đề quan hệ; đại từ tân ngữ có thể được lược."
+        ],
+        "focus": "diagnose"
+      },
+      {
+        "id": "B1-20-M19C-C2",
+        "prompt_vi": "Đại từ quan hệ làm chủ ngữ của passed phải được giữ.",
+        "options_en": [
+          "The student whom passed is my cousin.",
+          "The student who passed is my cousin.",
+          "The student passed is my cousin."
+        ],
+        "correct_index": 1,
+        "option_feedback_vi": [
+          "Whom là dạng tân ngữ, không thay chủ ngữ who ở đây.",
+          "Who là chủ ngữ của passed và không được lược trong mệnh đề xác định đầy đủ.",
+          "Thiếu chủ ngữ cho động từ passed trong mệnh đề quan hệ."
+        ],
+        "focus": "contrast"
+      },
+      {
+        "id": "B1-20-M19C-C3",
+        "prompt_vi": "Trong ba câu sau, câu NÀO mắc lỗi cần sửa ở chủ điểm Relative Pronouns & Omission?",
+        "options_en": [
+          "My bike, I bought in 2020, was stolen.",
+          "My bike, which I bought in 2020, was stolen.",
+          "The woman who called you is waiting."
+        ],
+        "correct_index": 0,
+        "option_feedback_vi": [
+          "Non-defining clause cần đại từ quan hệ và dấu phẩy. Cách sửa: My bike, which I bought in 2020, was stolen.",
+          "Which I bought in 2020 là mệnh đề quan hệ không xác định, phải giữ đại từ which.",
+          "Who called you là chủ ngữ trong mệnh đề xác định, nên không bỏ who."
+        ],
+        "focus": "error_detection"
+      }
+    ],
+    "transfer": {
+      "prompt_vi": "Tự viết một đoạn 2–4 câu theo nhiệm vụ sau (viết trước khi xem mẫu): Write two sentences: one with an omitted object relative and one with a required subject relative.",
+      "sample_en": "The checklist we created is ready. The consultant who designed it will join the meeting.",
+      "rubric_vi": "Câu đầu lược that tân ngữ; câu sau giữ who chủ ngữ. Kiểm tra thêm: (1) diễn đạt đúng ý trong tình huống; (2) dùng cấu trúc phù hợp; (3) thì, trật tự từ và dấu câu nhất quán. Bản mẫu là một phương án, không phải đáp án duy nhất."
+    },
+    "review_status": "DRAFT_TEACHER_REVIEW_REQUIRED",
+    "assessment_mode": "FORMATIVE_ONLY"
+  },
+  "B1-21": {
+    "code": "B1-21",
+    "title": "Reported Statements",
+    "context_vi": "Bạn gửi tóm tắt trao đổi cho người vắng họp.",
+    "goal_vi": "Học viên xác định được cách dùng Reported Statements, phân tích bằng chứng và vận dụng trong đoạn văn.",
+    "contrast_cue_vi": "Đọc từng câu và xác định điều người nói muốn NHẤN MẠNH, không chỉ dò công thức. Cả hai có thể đúng nếu tình trạng vẫn đúng; chọn theo bối cảnh.",
+    "checkpoints": [
+      {
+        "id": "B1-21-M19C-C1",
+        "prompt_vi": "Hôm qua anh ấy nói với bạn rằng mình đang bận.",
+        "options_en": [
+          "He told that he was busy.",
+          "He told me that he was busy.",
+          "He said me that he was busy."
+        ],
+        "correct_index": 1,
+        "option_feedback_vi": [
+          "Tell trong nghĩa này cần chỉ rõ người nghe.",
+          "Tell đi với tân ngữ người nghe me và mệnh đề.",
+          "Say không nhận me trực tiếp theo kiểu told me."
+        ],
+        "focus": "diagnose"
+      },
+      {
+        "id": "B1-21-M19C-C2",
+        "prompt_vi": "Bạn thuật lại lời nói hôm qua, chọn cách lùi thì tự nhiên khi thời điểm kể đã thay đổi.",
+        "options_en": [
+          "She said she was ready.",
+          "She said she had ready.",
+          "She said me she was ready."
+        ],
+        "correct_index": 0,
+        "option_feedback_vi": [
+          "Was ready là cách lùi thì thường gặp từ am ready khi thuật lại lời nói quá khứ.",
+          "Had ready thiếu quá khứ phân từ hoặc bổ ngữ phù hợp.",
+          "Said me sai kết cấu; dùng told me hoặc said to me."
+        ],
+        "focus": "contrast"
+      },
+      {
+        "id": "B1-21-M19C-C3",
+        "prompt_vi": "Trong ba câu sau, câu NÀO mắc lỗi cần sửa ở chủ điểm Reported Statements?",
+        "options_en": [
+          "She said that she would come.",
+          "The manager told us that the deadline had changed.",
+          "She told that she would come."
+        ],
+        "correct_index": 2,
+        "option_feedback_vi": [
+          "Said that... would come đúng khi thuật lại lời hứa, dùng said không cần tân ngữ.",
+          "Told us that... có người nhận thông tin us, phù hợp mẫu told + object.",
+          "Told thường cần người nhận lời nói. Cách sửa: She said that she would come."
+        ],
+        "focus": "error_detection"
+      }
+    ],
+    "transfer": {
+      "prompt_vi": "Tự viết một đoạn 2–4 câu theo nhiệm vụ sau (viết trước khi xem mẫu): Write two sentences reporting what the designer and manager said yesterday.",
+      "sample_en": "The designer said that the mock-up was ready. The manager told us that the review would start on Friday.",
+      "rubric_vi": "Thống nhất góc nhìn người thuật lại và phân biệt said/told. Kiểm tra thêm: (1) diễn đạt đúng ý trong tình huống; (2) dùng cấu trúc phù hợp; (3) thì, trật tự từ và dấu câu nhất quán. Bản mẫu là một phương án, không phải đáp án duy nhất."
+    },
+    "review_status": "DRAFT_TEACHER_REVIEW_REQUIRED",
+    "assessment_mode": "FORMATIVE_ONLY"
+  },
+  "B1-22": {
+    "code": "B1-22",
+    "title": "Reported Questions",
+    "context_vi": "Bạn ghi lại hai câu hỏi của khách hàng.",
+    "goal_vi": "Học viên xác định được cách dùng Reported Questions, phân tích bằng chứng và vận dụng trong đoạn văn.",
+    "contrast_cue_vi": "Đọc từng câu và xác định điều người nói muốn NHẤN MẠNH, không chỉ dò công thức. Câu hỏi trực tiếp đảo trợ động từ; câu tường thuật dùng trật tự trần thuật.",
+    "checkpoints": [
+      {
+        "id": "B1-22-M19C-C1",
+        "prompt_vi": "Câu trực tiếp: 'Where is the station?' Bạn thuật lại.",
+        "options_en": [
+          "She asked where the station was.",
+          "She asked where was the station.",
+          "She asked where did the station be."
+        ],
+        "correct_index": 0,
+        "option_feedback_vi": [
+          "Reported wh-question dùng trật tự S + V: where the station was.",
+          "Không đảo trợ động từ như câu hỏi trực tiếp.",
+          "Did the station be sai cấu trúc tường thuật và trật tự từ."
+        ],
+        "focus": "diagnose"
+      },
+      {
+        "id": "B1-22-M19C-C2",
+        "prompt_vi": "Câu trực tiếp: 'Is delivery free?' Hãy thuật lại dưới dạng yes/no.",
+        "options_en": [
+          "He asked was delivery free.",
+          "He asked where delivery was free.",
+          "He asked whether delivery was free."
+        ],
+        "correct_index": 2,
+        "option_feedback_vi": [
+          "Không giữ đảo ngữ câu hỏi trực tiếp sau asked.",
+          "Where hỏi địa điểm, không phù hợp câu hỏi yes/no về miễn phí.",
+          "Whether/if nối câu hỏi yes/no trong tường thuật, theo sau là S + V."
+        ],
+        "focus": "contrast"
+      },
+      {
+        "id": "B1-22-M19C-C3",
+        "prompt_vi": "Trong ba câu sau, câu NÀO mắc lỗi cần sửa ở chủ điểm Reported Questions?",
+        "options_en": [
+          "He asked where the station was.",
+          "He asked did I need help.",
+          "He asked if I needed help."
+        ],
+        "correct_index": 1,
+        "option_feedback_vi": [
+          "Where the station was là trật tự câu trần thuật trong câu hỏi gián tiếp.",
+          "Câu yes/no thuật lại dùng if/whether, không giữ did. Cách sửa: He asked if I needed help.",
+          "Asked if I needed help dùng if + chủ ngữ + động từ, không đảo như câu hỏi trực tiếp."
+        ],
+        "focus": "error_detection"
+      }
+    ],
+    "transfer": {
+      "prompt_vi": "Tự viết một đoạn 2–4 câu theo nhiệm vụ sau (viết trước khi xem mẫu): Report a yes/no question about delivery and a wh-question about price.",
+      "sample_en": "The customer asked whether the parcel had arrived. She also asked how much delivery cost.",
+      "rubric_vi": "Trật tự trần thuật trong cả hai câu hỏi thuật lại. Kiểm tra thêm: (1) diễn đạt đúng ý trong tình huống; (2) dùng cấu trúc phù hợp; (3) thì, trật tự từ và dấu câu nhất quán. Bản mẫu là một phương án, không phải đáp án duy nhất."
+    },
+    "review_status": "DRAFT_TEACHER_REVIEW_REQUIRED",
+    "assessment_mode": "FORMATIVE_ONLY"
+  },
+  "B1-23": {
+    "code": "B1-23",
+    "title": "Reported Commands & Requests",
+    "context_vi": "Bạn tóm tắt hướng dẫn an toàn phòng thí nghiệm.",
+    "goal_vi": "Học viên xác định được cách dùng Reported Commands & Requests, phân tích bằng chứng và vận dụng trong đoạn văn.",
+    "contrast_cue_vi": "Đọc từng câu và xác định điều người nói muốn NHẤN MẠNH, không chỉ dò công thức. Cả hai cấu trúc đúng nhưng told thường thể hiện chỉ thị mạnh hơn asked.",
+    "checkpoints": [
+      {
+        "id": "B1-23-M19C-C1",
+        "prompt_vi": "Người quản lý nói 'Wear safety glasses'. Thuật lại lời chỉ dẫn.",
+        "options_en": [
+          "The manager told us wear safety glasses.",
+          "The manager said us to wear safety glasses.",
+          "The manager told us to wear safety glasses."
+        ],
+        "correct_index": 2,
+        "option_feedback_vi": [
+          "Told + người nghe phải theo sau bằng to + V trong câu tường thuật mệnh lệnh này.",
+          "Said us không đúng cấu trúc chỉ người nghe.",
+          "Told + người nghe + to V chuyển câu mệnh lệnh sang tường thuật."
+        ],
+        "focus": "diagnose"
+      },
+      {
+        "id": "B1-23-M19C-C2",
+        "prompt_vi": "Giáo viên yêu cầu đừng ăn trong phòng thí nghiệm.",
+        "options_en": [
+          "The teacher asked we not eat in the lab.",
+          "The teacher asked us not to eat in the lab.",
+          "The teacher asked us to not eating in the lab."
+        ],
+        "correct_index": 1,
+        "option_feedback_vi": [
+          "Asked cần tân ngữ us, không dùng we.",
+          "Not to V là dạng tường thuật yêu cầu phủ định.",
+          "Sau to dùng nguyên mẫu eat; not eating sai dạng trong cấu trúc này."
+        ],
+        "focus": "contrast"
+      },
+      {
+        "id": "B1-23-M19C-C3",
+        "prompt_vi": "Trong ba câu sau, câu NÀO mắc lỗi cần sửa ở chủ điểm Reported Commands & Requests?",
+        "options_en": [
+          "The guard asked us not enter.",
+          "The guard asked us not to enter.",
+          "The technician told us not to touch the wires."
+        ],
+        "correct_index": 0,
+        "option_feedback_vi": [
+          "Ask + người nghe + not to + V khi tường thuật lời yêu cầu phủ định. Cách sửa: The guard asked us not to enter.",
+          "Asked us not to enter là request + object + not to + verb.",
+          "Told us not to touch là told + object + not to + verb."
+        ],
+        "focus": "error_detection"
+      }
+    ],
+    "transfer": {
+      "prompt_vi": "Tự viết một đoạn 2–4 câu theo nhiệm vụ sau (viết trước khi xem mẫu): Write two reported instructions: wear safety glasses; do not eat in the lab.",
+      "sample_en": "The supervisor told us to wear safety glasses. She asked us not to eat in the lab.",
+      "rubric_vi": "Khẳng định và phủ định với told/asked + object + to V. Kiểm tra thêm: (1) diễn đạt đúng ý trong tình huống; (2) dùng cấu trúc phù hợp; (3) thì, trật tự từ và dấu câu nhất quán. Bản mẫu là một phương án, không phải đáp án duy nhất."
+    },
+    "review_status": "DRAFT_TEACHER_REVIEW_REQUIRED",
+    "assessment_mode": "FORMATIVE_ONLY"
+  },
+  "B1-24": {
+    "code": "B1-24",
+    "title": "Indirect Questions",
+    "context_vi": "Bạn cần hỏi lễ tân ba thông tin.",
+    "goal_vi": "Học viên xác định được cách dùng Indirect Questions, phân tích bằng chứng và vận dụng trong đoạn văn.",
+    "contrast_cue_vi": "Đọc từng câu và xác định điều người nói muốn NHẤN MẠNH, không chỉ dò công thức. Câu hỏi trực tiếp đảo is; gián tiếp giữ station is.",
+    "checkpoints": [
+      {
+        "id": "B1-24-M19C-C1",
+        "prompt_vi": "Bạn lịch sự hỏi người lạ nhà ga ở đâu.",
+        "options_en": [
+          "Could you tell me where does the station is?",
+          "Could you tell me where the station is?",
+          "Could you tell me where is the station?"
+        ],
+        "correct_index": 1,
+        "option_feedback_vi": [
+          "Dùng does thừa và làm câu sai cấu trúc.",
+          "Trong indirect question, where theo sau bởi chủ ngữ và động từ trần thuật.",
+          "Không đảo is ra trước the station."
+        ],
+        "focus": "diagnose"
+      },
+      {
+        "id": "B1-24-M19C-C2",
+        "prompt_vi": "Bạn hỏi liệu còn ghế trống hay không theo cách gián tiếp.",
+        "options_en": [
+          "Do you know if there are any seats left?",
+          "Do you know are there any seats left?",
+          "Do you know where there are any seats left?"
+        ],
+        "correct_index": 0,
+        "option_feedback_vi": [
+          "If/whether mở mệnh đề hỏi yes/no gián tiếp, theo trật tự trần thuật.",
+          "Không giữ đảo trật tự are there trong mệnh đề phụ.",
+          "Where hỏi vị trí, không tương ứng câu hỏi có/không."
+        ],
+        "focus": "contrast"
+      },
+      {
+        "id": "B1-24-M19C-C3",
+        "prompt_vi": "Trong ba câu sau, câu NÀO mắc lỗi cần sửa ở chủ điểm Indirect Questions?",
+        "options_en": [
+          "Do you know if the café opens today?",
+          "Do you know whether this train stops here?",
+          "Do you know does the café open today?"
+        ],
+        "correct_index": 2,
+        "option_feedback_vi": [
+          "Do you know if... có mệnh đề if với trật tự trần thuật café opens.",
+          "Whether this train stops here có trật tự khẳng định trong mệnh đề nghi vấn gián tiếp.",
+          "Dùng if cho yes/no, bỏ does bên trong. Cách sửa: Do you know if the café opens today?"
+        ],
+        "focus": "error_detection"
+      }
+    ],
+    "transfer": {
+      "prompt_vi": "Tự viết một đoạn 2–4 câu theo nhiệm vụ sau (viết trước khi xem mẫu): Write two polite questions about the start time and available seats.",
+      "sample_en": "Could you tell me when the session begins? Do you know whether any seats are available?",
+      "rubric_vi": "Dùng hai dạng indirect questions, giữ trật tự câu kể. Kiểm tra thêm: (1) diễn đạt đúng ý trong tình huống; (2) dùng cấu trúc phù hợp; (3) thì, trật tự từ và dấu câu nhất quán. Bản mẫu là một phương án, không phải đáp án duy nhất."
+    },
+    "review_status": "DRAFT_TEACHER_REVIEW_REQUIRED",
+    "assessment_mode": "FORMATIVE_ONLY"
+  },
+  "B1-25": {
+    "code": "B1-25",
+    "title": "Question Tags",
+    "context_vi": "Bạn xác nhận lịch của nhóm trước sự kiện.",
+    "goal_vi": "Học viên xác định được cách dùng Question Tags, phân tích bằng chứng và vận dụng trong đoạn văn.",
+    "contrast_cue_vi": "Đọc từng câu và xác định điều người nói muốn NHẤN MẠNH, không chỉ dò công thức. Thay đổi cực tính của câu chính dẫn tới đuôi đối lập.",
+    "checkpoints": [
+      {
+        "id": "B1-25-M19C-C1",
+        "prompt_vi": "Bạn muốn xác nhận: 'He plays tennis, ...?'",
+        "options_en": [
+          "He plays tennis, doesn't he?",
+          "He plays tennis, isn't he?",
+          "He plays tennis, don't he?"
+        ],
+        "correct_index": 0,
+        "option_feedback_vi": [
+          "Động từ thường plays cần trợ động từ does trong đuôi phủ định.",
+          "Isn't không dùng khi mệnh đề chính dùng động từ thường plays.",
+          "He số ít nên dùng doesn't, không dùng don't."
+        ],
+        "focus": "diagnose"
+      },
+      {
+        "id": "B1-25-M19C-C2",
+        "prompt_vi": "Bạn xác nhận điều phủ định: 'They weren't late, ...?'",
+        "options_en": [
+          "They weren't late, weren't they?",
+          "They weren't late, did they?",
+          "They weren't late, were they?"
+        ],
+        "correct_index": 2,
+        "option_feedback_vi": [
+          "Tag thường đảo cực tính, không lặp weren't.",
+          "Tag phải dùng were của động từ be trong mệnh đề chính.",
+          "Mệnh đề phủ định với were tạo tag khẳng định were they."
+        ],
+        "focus": "contrast"
+      },
+      {
+        "id": "B1-25-M19C-C3",
+        "prompt_vi": "Trong ba câu sau, câu NÀO mắc lỗi cần sửa ở chủ điểm Question Tags?",
+        "options_en": [
+          "They aren't taking the bus, are they?",
+          "They didn't come, didn't they?",
+          "They didn't come, did they?"
+        ],
+        "correct_index": 1,
+        "option_feedback_vi": [
+          "Aren’t ... are they? đổi từ phủ định sang đuôi khẳng định và giữ trợ động từ are.",
+          "Mệnh đề phủ định cần đuôi khẳng định. Cách sửa: They didn't come, did they?",
+          "Didn’t ... did they? đổi từ phủ định sang đuôi khẳng định với did."
+        ],
+        "focus": "error_detection"
+      }
+    ],
+    "transfer": {
+      "prompt_vi": "Tự viết một đoạn 2–4 câu theo nhiệm vụ sau (viết trước khi xem mẫu): Write two checking questions: one positive statement and one negative statement.",
+      "sample_en": "The meeting starts at nine, doesn't it? We aren't using the main hall, are we?",
+      "rubric_vi": "Chọn đúng trợ động từ và cực tính tương ứng. Kiểm tra thêm: (1) diễn đạt đúng ý trong tình huống; (2) dùng cấu trúc phù hợp; (3) thì, trật tự từ và dấu câu nhất quán. Bản mẫu là một phương án, không phải đáp án duy nhất."
+    },
+    "review_status": "DRAFT_TEACHER_REVIEW_REQUIRED",
+    "assessment_mode": "FORMATIVE_ONLY"
+  },
+  "B1-26": {
+    "code": "B1-26",
+    "title": "Modals of Deduction – Present",
+    "context_vi": "Bạn nhắn cho đồng nghiệp khi một người vắng mặt.",
+    "goal_vi": "Học viên xác định được cách dùng Modals of Deduction – Present, phân tích bằng chứng và vận dụng trong đoạn văn.",
+    "contrast_cue_vi": "Đọc từng câu và xác định điều người nói muốn NHẤN MẠNH, không chỉ dò công thức. Must thể hiện suy luận mạnh hơn; might để ngỏ.",
+    "checkpoints": [
+      {
+        "id": "B1-26-M19C-C1",
+        "prompt_vi": "Bạn thấy đèn văn phòng sáng và đồng nghiệp đang có mặt; suy luận rất có cơ sở.",
+        "options_en": [
+          "She might be at the office, so it is certain.",
+          "She must to be at the office.",
+          "She must be at the office."
+        ],
+        "correct_index": 2,
+        "option_feedback_vi": [
+          "Might chỉ khả năng, không hợp với so it is certain trong cùng suy luận.",
+          "Sau modal must dùng động từ nguyên mẫu be, không chèn giới từ to.",
+          "Must be diễn tả suy luận mạnh dựa trên bằng chứng."
+        ],
+        "focus": "diagnose"
+      },
+      {
+        "id": "B1-26-M19C-C2",
+        "prompt_vi": "Bạn chỉ thấy xe của cô ấy đỗ gần đó; chưa chắc cô ấy còn trong nhà.",
+        "options_en": [
+          "She might to be inside.",
+          "She might be inside.",
+          "She must be inside because nothing is certain."
+        ],
+        "correct_index": 1,
+        "option_feedback_vi": [
+          "Sau might dùng nguyên mẫu be, không dùng to.",
+          "Might + V phù hợp một khả năng chưa được xác nhận.",
+          "Must mang mức chắc chắn cao, trái cách diễn đạt chưa có chứng cứ đủ mạnh."
+        ],
+        "focus": "contrast"
+      },
+      {
+        "id": "B1-26-M19C-C3",
+        "prompt_vi": "Trong ba câu sau, câu NÀO mắc lỗi cần sửa ở chủ điểm Modals of Deduction – Present?",
+        "options_en": [
+          "He must to be at home.",
+          "He must be at home.",
+          "He might be in the computer lab."
+        ],
+        "correct_index": 0,
+        "option_feedback_vi": [
+          "Must dùng với động từ nguyên mẫu không to. Cách sửa: He must be at home.",
+          "Must be là modal + nguyên thể be, không có to.",
+          "Might be đúng cho khả năng chưa chắc chắn, modal + bare infinitive."
+        ],
+        "focus": "error_detection"
+      }
+    ],
+    "transfer": {
+      "prompt_vi": "Tự viết một đoạn 2–4 câu theo nhiệm vụ sau (viết trước khi xem mẫu): Write two evidence-based guesses about where the colleague is.",
+      "sample_en": "Her bag is here, so she must still be in the building. She might be attending another meeting.",
+      "rubric_vi": "Một câu suy luận mạnh và một câu khả năng yếu hơn. Kiểm tra thêm: (1) diễn đạt đúng ý trong tình huống; (2) dùng cấu trúc phù hợp; (3) thì, trật tự từ và dấu câu nhất quán. Bản mẫu là một phương án, không phải đáp án duy nhất."
+    },
+    "review_status": "DRAFT_TEACHER_REVIEW_REQUIRED",
+    "assessment_mode": "FORMATIVE_ONLY"
+  },
+  "B1-27": {
+    "code": "B1-27",
+    "title": "Modals – Obligation & Permission",
+    "context_vi": "Bạn viết thông báo quy định cho lớp học.",
+    "goal_vi": "Học viên xác định được cách dùng Modals – Obligation & Permission, phân tích bằng chứng và vận dụng trong đoạn văn.",
+    "contrast_cue_vi": "Đọc từng câu và xác định điều người nói muốn NHẤN MẠNH, không chỉ dò công thức. Câu đầu cấm tham dự; câu sau nói không bắt buộc.",
+    "checkpoints": [
+      {
+        "id": "B1-27-M19C-C1",
+        "prompt_vi": "Có biển cấm ăn trong phòng thí nghiệm.",
+        "options_en": [
+          "You mustn't to eat in the lab.",
+          "You mustn't eat in the lab.",
+          "You don't have to eat in the lab."
+        ],
+        "correct_index": 1,
+        "option_feedback_vi": [
+          "Modal mustn't + động từ nguyên mẫu eat; không thêm to vào giữa.",
+          "Mustn't diễn tả cấm, không phải chỉ không bắt buộc.",
+          "Don't have to nghĩa là không cần ăn, không truyền đạt lệnh cấm."
+        ],
+        "focus": "diagnose"
+      },
+      {
+        "id": "B1-27-M19C-C2",
+        "prompt_vi": "In tài liệu là tùy chọn, không bắt buộc.",
+        "options_en": [
+          "You don't have to print the materials.",
+          "You mustn't print the materials.",
+          "You don't have print the materials."
+        ],
+        "correct_index": 0,
+        "option_feedback_vi": [
+          "Don't have to nói không cần làm, không cấm làm.",
+          "Mustn't biến việc in thành hành vi bị cấm.",
+          "Have to là cụm bắt buộc trong don't have to, không thể bỏ to."
+        ],
+        "focus": "contrast"
+      },
+      {
+        "id": "B1-27-M19C-C3",
+        "prompt_vi": "Lệ phí là tùy chọn: người tham gia có thể trả hoặc không. Câu NÀO diễn đạt SAI ý nghĩa chính sách?",
+        "options_en": [
+          "You don't have to pay a fee; it's optional.",
+          "Students don't have to print their assignments.",
+          "You mustn't pay a fee; it's optional."
+        ],
+        "correct_index": 2,
+        "option_feedback_vi": [
+          "Don’t have to pay diễn đạt không bắt buộc trả, đúng với optional.",
+          "Don’t have to print diễn đạt không bắt buộc in bài, không phải bị cấm in.",
+          "Mustn’t pay nghĩa là bị cấm trả phí, trái với chính sách tùy chọn. Don’t have to pay mới là không bắt buộc phải trả."
+        ],
+        "focus": "error_detection"
+      }
+    ],
+    "transfer": {
+      "prompt_vi": "Tự viết một đoạn 2–4 câu theo nhiệm vụ sau (viết trước khi xem mẫu): Write two rules: no food in the room; printing is optional.",
+      "sample_en": "Students mustn't bring food into the room. They don't have to print the worksheet.",
+      "rubric_vi": "Phân biệt điều cấm và điều không bắt buộc. Kiểm tra thêm: (1) diễn đạt đúng ý trong tình huống; (2) dùng cấu trúc phù hợp; (3) thì, trật tự từ và dấu câu nhất quán. Bản mẫu là một phương án, không phải đáp án duy nhất."
+    },
+    "review_status": "DRAFT_TEACHER_REVIEW_REQUIRED",
+    "assessment_mode": "FORMATIVE_ONLY"
+  },
+  "B1-28": {
+    "code": "B1-28",
+    "title": "Gerunds & Infinitives",
+    "context_vi": "Bạn viết về kế hoạch học kỹ năng mới.",
+    "goal_vi": "Học viên xác định được cách dùng Gerunds & Infinitives, phân tích bằng chứng và vận dụng trong đoạn văn.",
+    "contrast_cue_vi": "Đọc từng câu và xác định điều người nói muốn NHẤN MẠNH, không chỉ dò công thức. Enjoy đi với V-ing, hope với to V.",
+    "checkpoints": [
+      {
+        "id": "B1-28-M19C-C1",
+        "prompt_vi": "Bạn nói mình thích đọc sách trước khi ngủ.",
+        "options_en": [
+          "I enjoy reading before bed.",
+          "I enjoy to read before bed.",
+          "I enjoy read before bed."
+        ],
+        "correct_index": 0,
+        "option_feedback_vi": [
+          "Enjoy đi với danh động từ V-ing.",
+          "Enjoy không đi với to-infinitive trong mẫu này.",
+          "Enjoy không đi trực tiếp với nguyên mẫu read."
+        ],
+        "focus": "diagnose"
+      },
+      {
+        "id": "B1-28-M19C-C2",
+        "prompt_vi": "Bạn dự định tham gia khoá học vào tháng tới.",
+        "options_en": [
+          "I plan joining the course next month.",
+          "I plan join the course next month.",
+          "I plan to join the course next month."
+        ],
+        "correct_index": 2,
+        "option_feedback_vi": [
+          "Plan không thường đi trực tiếp với V-ing để diễn đạt kế hoạch này.",
+          "Plan trong trường hợp này đi với to-infinitive, vì vậy phải viết plan to join.",
+          "Plan + to V là cấu trúc cơ bản."
+        ],
+        "focus": "contrast"
+      },
+      {
+        "id": "B1-28-M19C-C3",
+        "prompt_vi": "Trong ba câu sau, câu NÀO mắc lỗi cần sửa ở chủ điểm Gerunds & Infinitives?",
+        "options_en": [
+          "She decided to take an evening course.",
+          "We decided going by train.",
+          "We decided to go by train."
+        ],
+        "correct_index": 1,
+        "option_feedback_vi": [
+          "Decided to take là decide + to-infinitive, không dùng V-ing.",
+          "Decide + to V. Cách sửa: We decided to go by train.",
+          "Decided to go là decide + to-infinitive, đúng mẫu."
+        ],
+        "focus": "error_detection"
+      }
+    ],
+    "transfer": {
+      "prompt_vi": "Tự viết một đoạn 2–4 câu theo nhiệm vụ sau (viết trước khi xem mẫu): Write two sentences using one V-ing verb pattern and one to-infinitive pattern.",
+      "sample_en": "I enjoy learning languages, and I plan to practise every evening.",
+      "rubric_vi": "Hai động từ dẫn yêu cầu hai dạng bổ ngữ khác nhau. Kiểm tra thêm: (1) diễn đạt đúng ý trong tình huống; (2) dùng cấu trúc phù hợp; (3) thì, trật tự từ và dấu câu nhất quán. Bản mẫu là một phương án, không phải đáp án duy nhất."
+    },
+    "review_status": "DRAFT_TEACHER_REVIEW_REQUIRED",
+    "assessment_mode": "FORMATIVE_ONLY"
+  },
+  "B1-29": {
+    "code": "B1-29",
+    "title": "Verb Patterns – Meaning Changes",
+    "context_vi": "Bạn kể một sai lầm khi gửi hồ sơ.",
+    "goal_vi": "Học viên xác định được cách dùng Verb Patterns – Meaning Changes, phân tích bằng chứng và vận dụng trong đoạn văn.",
+    "contrast_cue_vi": "Đọc từng câu và xác định điều người nói muốn NHẤN MẠNH, không chỉ dò công thức. Câu đầu: bỏ hút thuốc; câu sau: dừng việc khác để hút thuốc.",
+    "checkpoints": [
+      {
+        "id": "B1-29-M19C-C1",
+        "prompt_vi": "Bạn nhớ rõ đã gặp cô ấy năm ngoái; đó là ký ức về sự kiện đã xảy ra.",
+        "options_en": [
+          "I remember to meet her last year.",
+          "I remember meet her last year.",
+          "I remember meeting her last year."
+        ],
+        "correct_index": 2,
+        "option_feedback_vi": [
+          "Remember to V là nhớ phải làm việc gì, không phải ký ức đã gặp.",
+          "Sau remember cần V-ing hoặc to V theo ý nghĩa, không bare infinitive.",
+          "Remember + V-ing là nhớ lại điều đã xảy ra."
+        ],
+        "focus": "diagnose"
+      },
+      {
+        "id": "B1-29-M19C-C2",
+        "prompt_vi": "Bạn muốn dặn mình đừng quên khóa cửa trước khi rời đi.",
+        "options_en": [
+          "Remember lock the door.",
+          "Remember to lock the door.",
+          "Remember locking the door before you leave."
+        ],
+        "correct_index": 1,
+        "option_feedback_vi": [
+          "Thiếu to giữa remember và lock trong nghĩa nhiệm vụ.",
+          "Remember to V chỉ nhiệm vụ cần nhớ thực hiện.",
+          "Remember V-ing gợi ký ức đã từng khóa; không phải nhắc việc sắp làm."
+        ],
+        "focus": "contrast"
+      },
+      {
+        "id": "B1-29-M19C-C3",
+        "prompt_vi": "Trong ba câu sau, câu NÀO mắc lỗi cần sửa ở chủ điểm Verb Patterns – Meaning Changes?",
+        "options_en": [
+          "I remember to meeting her yesterday.",
+          "I remember meeting her yesterday.",
+          "I remember locking the door."
+        ],
+        "correct_index": 0,
+        "option_feedback_vi": [
+          "Remember + V-ing diễn tả nhớ lại sự việc đã xảy ra. Cách sửa: I remember meeting her yesterday.",
+          "Remember meeting dùng V-ing để nhớ sự việc đã xảy ra.",
+          "Remember locking nhấn hồi tưởng hành động đã khóa cửa trong quá khứ."
+        ],
+        "focus": "error_detection"
+      }
+    ],
+    "transfer": {
+      "prompt_vi": "Tự viết một đoạn 2–4 câu theo nhiệm vụ sau (viết trước khi xem mẫu): Write two sentences explaining what you forgot and what you remember doing.",
+      "sample_en": "I forgot to attach the document. I remember checking the email subject, but not the attachment.",
+      "rubric_vi": "Forget to nói nhiệm vụ chưa làm; remember V-ing nói hành động đã làm. Kiểm tra thêm: (1) diễn đạt đúng ý trong tình huống; (2) dùng cấu trúc phù hợp; (3) thì, trật tự từ và dấu câu nhất quán. Bản mẫu là một phương án, không phải đáp án duy nhất."
+    },
+    "review_status": "DRAFT_TEACHER_REVIEW_REQUIRED",
+    "assessment_mode": "FORMATIVE_ONLY"
+  },
+  "B1-30": {
+    "code": "B1-30",
+    "title": "Phrasal Verb Grammar",
+    "context_vi": "Bạn viết hướng dẫn rời phòng học.",
+    "goal_vi": "Học viên xác định được cách dùng Phrasal Verb Grammar, phân tích bằng chứng và vận dụng trong đoạn văn.",
+    "contrast_cue_vi": "Đọc từng câu và xác định điều người nói muốn NHẤN MẠNH, không chỉ dò công thức. Danh từ có thể đứng sau particle; đại từ phải đứng giữa.",
+    "checkpoints": [
+      {
+        "id": "B1-30-M19C-C1",
+        "prompt_vi": "Đèn đã bật, bạn bảo bạn mình tắt nó đi.",
+        "options_en": [
+          "Please turn it down off.",
+          "Please turn it off.",
+          "Please turn off it."
+        ],
+        "correct_index": 1,
+        "option_feedback_vi": [
+          "Down off ghép hai tiểu từ không phù hợp mẫu turn off.",
+          "Với turn off tách được, đại từ it nằm giữa turn và off.",
+          "Đại từ tân ngữ không đứng sau off trong phrasal verb tách được."
+        ],
+        "focus": "diagnose"
+      },
+      {
+        "id": "B1-30-M19C-C2",
+        "prompt_vi": "Bạn dặn bạn mình chăm sóc chú chó trong lúc đi vắng.",
+        "options_en": [
+          "Please look after the dog.",
+          "Please look the dog after.",
+          "Please look after it after."
+        ],
+        "correct_index": 0,
+        "option_feedback_vi": [
+          "Look after là phrasal verb không tách được, giữ after ngay sau look.",
+          "Không đặt tân ngữ giữa look và after.",
+          "After lặp ở cuối không cần thiết và sai cấu trúc."
+        ],
+        "focus": "contrast"
+      },
+      {
+        "id": "B1-30-M19C-C3",
+        "prompt_vi": "Trong ba câu sau, câu NÀO mắc lỗi cần sửa ở chủ điểm Phrasal Verb Grammar?",
+        "options_en": [
+          "She looks after her brother.",
+          "My neighbour looks after my cat when I travel.",
+          "She looks her brother after."
+        ],
+        "correct_index": 2,
+        "option_feedback_vi": [
+          "Looks after her brother đúng thứ tự của phrasal verb không tách look after.",
+          "Looks after my cat dùng after đi trước tân ngữ my cat.",
+          "Look after là cụm không tách. Cách sửa: She looks after her brother."
+        ],
+        "focus": "error_detection"
+      }
+    ],
+    "transfer": {
+      "prompt_vi": "Tự viết một đoạn 2–4 câu theo nhiệm vụ sau (viết trước khi xem mẫu): Write two instructions using a separable and an inseparable phrasal verb.",
+      "sample_en": "Turn off the projector before you leave. Look after the equipment carefully.",
+      "rubric_vi": "Một cụm có thể tách; một cụm không thể tách. Kiểm tra thêm: (1) diễn đạt đúng ý trong tình huống; (2) dùng cấu trúc phù hợp; (3) thì, trật tự từ và dấu câu nhất quán. Bản mẫu là một phương án, không phải đáp án duy nhất."
+    },
+    "review_status": "DRAFT_TEACHER_REVIEW_REQUIRED",
+    "assessment_mode": "FORMATIVE_ONLY"
+  },
+  "B1-31": {
+    "code": "B1-31",
+    "title": "Concession",
+    "context_vi": "Bạn nhận xét một buổi sự kiện tổ chức trong điều kiện khó.",
+    "goal_vi": "Học viên xác định được cách dùng Concession, phân tích bằng chứng và vận dụng trong đoạn văn.",
+    "contrast_cue_vi": "Đọc từng câu và xác định điều người nói muốn NHẤN MẠNH, không chỉ dò công thức. Hai câu tương đương ở nghĩa chính nhưng cấu trúc theo sau khác.",
+    "checkpoints": [
+      {
+        "id": "B1-31-M19C-C1",
+        "prompt_vi": "Bạn muốn nối hai mệnh đề đầy đủ: Anh ấy ốm nhưng vẫn đi làm.",
+        "options_en": [
+          "Although he was ill, he went to work.",
+          "Despite he was ill, he went to work.",
+          "Although being ill, he went to work."
+        ],
+        "correct_index": 0,
+        "option_feedback_vi": [
+          "Although theo sau là mệnh đề đầy đủ he was ill.",
+          "Despite cần danh từ hoặc V-ing, không đi trực tiếp với mệnh đề he was ill.",
+          "Although ở đây cần một mệnh đề có chủ ngữ và động từ hữu hạn."
+        ],
+        "focus": "diagnose"
+      },
+      {
+        "id": "B1-31-M19C-C2",
+        "prompt_vi": "Bạn muốn dùng despite để diễn tả việc đã mệt nhưng vẫn làm.",
+        "options_en": [
+          "Despite she was tired, she kept working.",
+          "Despite of being tired, she kept working.",
+          "Despite being tired, she kept working."
+        ],
+        "correct_index": 2,
+        "option_feedback_vi": [
+          "Despite không theo sau trực tiếp bằng mệnh đề đầy đủ.",
+          "Không có of sau despite; in spite of mới có of.",
+          "Despite + V-ing dùng được để chỉ tình huống nhượng bộ."
+        ],
+        "focus": "contrast"
+      },
+      {
+        "id": "B1-31-M19C-C3",
+        "prompt_vi": "Trong ba câu sau, câu NÀO mắc lỗi cần sửa ở chủ điểm Concession?",
+        "options_en": [
+          "Despite the power cut, the meeting continued.",
+          "Although it rained, but we went.",
+          "Although it rained, we went."
+        ],
+        "correct_index": 1,
+        "option_feedback_vi": [
+          "Despite + danh từ the power cut, không nối trực tiếp mệnh đề như although.",
+          "Trong cùng mệnh đề nhượng bộ thường không kết hợp although với but. Cách sửa: Although it rained, we went.",
+          "Although it rained, we went dùng although để liên kết mệnh đề mà không thêm but."
+        ],
+        "focus": "error_detection"
+      }
+    ],
+    "transfer": {
+      "prompt_vi": "Tự viết một đoạn 2–4 câu theo nhiệm vụ sau (viết trước khi xem mẫu): Write two sentences using although and despite to explain unexpected success.",
+      "sample_en": "Although the venue was small, everyone enjoyed the event. Despite the noise outside, the speakers were easy to hear.",
+      "rubric_vi": "Chọn dạng mệnh đề và dạng danh ngữ phù hợp. Kiểm tra thêm: (1) diễn đạt đúng ý trong tình huống; (2) dùng cấu trúc phù hợp; (3) thì, trật tự từ và dấu câu nhất quán. Bản mẫu là một phương án, không phải đáp án duy nhất."
+    },
+    "review_status": "DRAFT_TEACHER_REVIEW_REQUIRED",
+    "assessment_mode": "FORMATIVE_ONLY"
+  },
+  "B1-32": {
+    "code": "B1-32",
+    "title": "Purpose, Reason & Result",
+    "context_vi": "Bạn kể lý do tham gia khóa học và kết quả của thói quen.",
+    "goal_vi": "Học viên xác định được cách dùng Purpose, Reason & Result, phân tích bằng chứng và vận dụng trong đoạn văn.",
+    "contrast_cue_vi": "Đọc từng câu và xác định điều người nói muốn NHẤN MẠNH, không chỉ dò công thức. Hai câu có cùng tình huống nhưng góc nhìn và chiều quan hệ đảo nhau.",
+    "checkpoints": [
+      {
+        "id": "B1-32-M19C-C1",
+        "prompt_vi": "Bạn tham gia lớp học với mục đích cải thiện tiếng Anh.",
+        "options_en": [
+          "I joined the course for improve my English.",
+          "I joined the course because improve my English.",
+          "I joined the course to improve my English."
+        ],
+        "correct_index": 2,
+        "option_feedback_vi": [
+          "For không đi trực tiếp với nguyên mẫu improve.",
+          "Because phải nối mệnh đề có chủ ngữ và động từ, không nối nguyên mẫu trần.",
+          "To + V diễn tả mục đích của hành động tham gia."
+        ],
+        "focus": "diagnose"
+      },
+      {
+        "id": "B1-32-M19C-C2",
+        "prompt_vi": "Bạn giải thích mối quan hệ nguyên nhân → kết quả: Tôi bị ốm, vì vậy về sớm.",
+        "options_en": [
+          "I felt ill because I left early.",
+          "I felt ill, so I left early.",
+          "I left early so I felt ill."
+        ],
+        "correct_index": 1,
+        "option_feedback_vi": [
+          "Because ở đây đảo quan hệ nhân quả so với tình huống đã cho.",
+          "So nối kết quả với nguyên nhân đứng trước.",
+          "Đảo quan hệ làm việc về sớm trở thành nguyên nhân gây ốm, khác ý nghĩa."
+        ],
+        "focus": "contrast"
+      },
+      {
+        "id": "B1-32-M19C-C3",
+        "prompt_vi": "Trong ba câu sau, câu NÀO mắc lỗi cần sửa ở chủ điểm Purpose, Reason & Result?",
+        "options_en": [
+          "Because the bus was late, so I missed class.",
+          "Because the bus was late, I missed class.",
+          "I woke up late, so I missed the train."
+        ],
+        "correct_index": 0,
+        "option_feedback_vi": [
+          "Không cần dùng because và so cùng nối hai vế trong mẫu cơ bản này. Cách sửa: Because the bus was late, I missed class.",
+          "Because ... I missed class diễn tả quan hệ nguyên nhân–kết quả, không cần so đồng thời.",
+          "So I missed the train diễn tả kết quả của việc dậy muộn."
+        ],
+        "focus": "error_detection"
+      }
+    ],
+    "transfer": {
+      "prompt_vi": "Tự viết một đoạn 2–4 câu theo nhiệm vụ sau (viết trước khi xem mẫu): Write three connected sentences using purpose, reason and result.",
+      "sample_en": "I joined an evening course to practise speaking. I chose it because the timetable was flexible, so I could attend after work.",
+      "rubric_vi": "Ba ý nối có quan hệ mục đích, nguyên nhân và kết quả. Kiểm tra thêm: (1) diễn đạt đúng ý trong tình huống; (2) dùng cấu trúc phù hợp; (3) thì, trật tự từ và dấu câu nhất quán. Bản mẫu là một phương án, không phải đáp án duy nhất."
+    },
+    "review_status": "DRAFT_TEACHER_REVIEW_REQUIRED",
+    "assessment_mode": "FORMATIVE_ONLY"
+  },
+  "B1-33": {
+    "code": "B1-33",
+    "title": "Correlative Structures",
+    "context_vi": "Bạn so sánh lựa chọn học theo nhóm.",
+    "goal_vi": "Học viên xác định được cách dùng Correlative Structures, phân tích bằng chứng và vận dụng trong đoạn văn.",
+    "contrast_cue_vi": "Đọc từng câu và xác định điều người nói muốn NHẤN MẠNH, không chỉ dò công thức. Both xác nhận hai người; either...or nói một trong hai (tùy ngữ cảnh không phủ định cả hai một cách tuyệt đối).",
+    "checkpoints": [
+      {
+        "id": "B1-33-M19C-C1",
+        "prompt_vi": "Bạn muốn khẳng định CẢ Anna VÀ Ben đều tham gia.",
+        "options_en": [
+          "Neither Anna and Ben joined.",
+          "Both Anna and Ben joined.",
+          "Either Anna and Ben joined."
+        ],
+        "correct_index": 1,
+        "option_feedback_vi": [
+          "Neither đi với nor và phủ định cả hai.",
+          "Both ... and diễn tả cả hai người đều tham gia.",
+          "Either phải đi với or và chỉ một trong hai lựa chọn."
+        ],
+        "focus": "diagnose"
+      },
+      {
+        "id": "B1-33-M19C-C2",
+        "prompt_vi": "Chỉ một trong hai người (Anna hoặc Ben) sẽ trực lễ tân.",
+        "options_en": [
+          "Either Anna or Ben will cover reception.",
+          "Both Anna or Ben will cover reception.",
+          "Neither Anna or Ben will cover reception."
+        ],
+        "correct_index": 0,
+        "option_feedback_vi": [
+          "Either ... or chỉ một trong hai phương án.",
+          "Both phải đi với and và nghĩa cả hai.",
+          "Neither phải đi với nor và nghĩa không ai trong hai người."
+        ],
+        "focus": "contrast"
+      },
+      {
+        "id": "B1-33-M19C-C3",
+        "prompt_vi": "Trong ba câu sau, câu NÀO mắc lỗi cần sửa ở chủ điểm Correlative Structures?",
+        "options_en": [
+          "Neither he nor his brother can drive.",
+          "Neither the design team nor the support team has the budget.",
+          "Neither he or his brother can drive."
+        ],
+        "correct_index": 2,
+        "option_feedback_vi": [
+          "Neither ... nor phối hợp hai thành phần phủ định, không dùng or.",
+          "Neither ... nor đi cùng nhau; động từ has phù hợp chủ ngữ số ít gần nhất.",
+          "Neither đi với nor. Cách sửa: Neither he nor his brother can drive."
+        ],
+        "focus": "error_detection"
+      }
+    ],
+    "transfer": {
+      "prompt_vi": "Tự viết một đoạn 2–4 câu theo nhiệm vụ sau (viết trước khi xem mẫu): Write two sentences using both...and and either...or.",
+      "sample_en": "Both online lessons and study groups can be useful. You can either join a class or practise with a friend.",
+      "rubric_vi": "Hai cặp nối đúng ý và cân xứng từ loại. Kiểm tra thêm: (1) diễn đạt đúng ý trong tình huống; (2) dùng cấu trúc phù hợp; (3) thì, trật tự từ và dấu câu nhất quán. Bản mẫu là một phương án, không phải đáp án duy nhất."
+    },
+    "review_status": "DRAFT_TEACHER_REVIEW_REQUIRED",
+    "assessment_mode": "FORMATIVE_ONLY"
+  },
+  "B1-34": {
+    "code": "B1-34",
+    "title": "Determiners",
+    "context_vi": "Bạn viết cập nhật nguồn lực cho một dự án.",
+    "goal_vi": "Học viên xác định được cách dùng Determiners, phân tích bằng chứng và vận dụng trong đoạn văn.",
+    "contrast_cue_vi": "Đọc từng câu và xác định điều người nói muốn NHẤN MẠNH, không chỉ dò công thức. Few nhấn thiếu lựa chọn; a few nhấn còn vài lựa chọn.",
+    "checkpoints": [
+      {
+        "id": "B1-34-M19C-C1",
+        "prompt_vi": "Chúng ta còn một ít lựa chọn, vẫn có vài phương án để thử.",
+        "options_en": [
+          "We have a few options left.",
+          "We have a little options left.",
+          "We have few options left."
+        ],
+        "correct_index": 0,
+        "option_feedback_vi": [
+          "A few + danh từ đếm được số nhiều mang sắc thái vẫn có một ít.",
+          "A little dùng với danh từ không đếm được.",
+          "Few options đúng ngữ pháp nhưng ngụ ý gần như không còn lựa chọn; đề bài muốn nói vẫn có một vài lựa chọn nên dùng a few."
+        ],
+        "focus": "diagnose"
+      },
+      {
+        "id": "B1-34-M19C-C2",
+        "prompt_vi": "Chúng ta còn một ít nước, đủ để uống.",
+        "options_en": [
+          "We have a few water left.",
+          "We have many water left.",
+          "We have a little water left."
+        ],
+        "correct_index": 2,
+        "option_feedback_vi": [
+          "A few chỉ dùng với danh từ đếm được số nhiều.",
+          "Many chỉ dùng với danh từ đếm được số nhiều.",
+          "A little dùng với lượng không đếm được như water."
+        ],
+        "focus": "contrast"
+      },
+      {
+        "id": "B1-34-M19C-C3",
+        "prompt_vi": "Trong ba câu sau, câu NÀO mắc lỗi cần sửa ở chủ điểm Determiners?",
+        "options_en": [
+          "We need a little more time.",
+          "We have much chairs now.",
+          "We have fewer chairs now."
+        ],
+        "correct_index": 1,
+        "option_feedback_vi": [
+          "A little more time đúng vì time không đếm trực tiếp trong ngữ cảnh này.",
+          "Much không bổ nghĩa trực tiếp danh từ đếm được số nhiều chairs. Trong ngữ cảnh so sánh số lượng ghế, dùng fewer chairs.",
+          "Fewer chairs đúng vì chairs là danh từ đếm được số nhiều."
+        ],
+        "focus": "error_detection"
+      }
+    ],
+    "transfer": {
+      "prompt_vi": "Tự viết một đoạn 2–4 câu theo nhiệm vụ sau (viết trước khi xem mẫu): Write two sentences using a few and a little to report remaining resources.",
+      "sample_en": "We have a few volunteers available and a little time before the event starts.",
+      "rubric_vi": "Phân biệt volunteers đếm được và time không đếm được. Kiểm tra thêm: (1) diễn đạt đúng ý trong tình huống; (2) dùng cấu trúc phù hợp; (3) thì, trật tự từ và dấu câu nhất quán. Bản mẫu là một phương án, không phải đáp án duy nhất."
+    },
+    "review_status": "DRAFT_TEACHER_REVIEW_REQUIRED",
+    "assessment_mode": "FORMATIVE_ONLY"
+  },
+  "B1-35": {
+    "code": "B1-35",
+    "title": "Noun Clauses – Introduction",
+    "context_vi": "Bạn viết báo cáo về hai điều chưa rõ.",
+    "goal_vi": "Học viên xác định được cách dùng Noun Clauses – Introduction, phân tích bằng chứng và vận dụng trong đoạn văn.",
+    "contrast_cue_vi": "Đọc từng câu và xác định điều người nói muốn NHẤN MẠNH, không chỉ dò công thức. Câu hỏi trực tiếp đảo trợ động từ; noun clause giữ trật tự kể.",
+    "checkpoints": [
+      {
+        "id": "B1-35-M19C-C1",
+        "prompt_vi": "Bạn đang kể: Bạn biết vì sao cuộc họp kết thúc.",
+        "options_en": [
+          "I know why did the meeting end.",
+          "I know why the meeting did ended.",
+          "I know why the meeting ended."
+        ],
+        "correct_index": 2,
+        "option_feedback_vi": [
+          "Không giữ trợ động từ did và đảo động từ trong mệnh đề phụ.",
+          "Did phải đi với nguyên mẫu end, không dùng ended.",
+          "Mệnh đề danh từ sau know giữ thứ tự S + V, không đảo như câu hỏi trực tiếp."
+        ],
+        "focus": "diagnose"
+      },
+      {
+        "id": "B1-35-M19C-C2",
+        "prompt_vi": "Bạn chưa chắc liệu dự án có đúng hạn hay không.",
+        "options_en": [
+          "I'm not sure why will the project finish on time.",
+          "I'm not sure whether the project will finish on time.",
+          "I'm not sure whether will the project finish on time."
+        ],
+        "correct_index": 1,
+        "option_feedback_vi": [
+          "Why hỏi lý do, không tương ứng sự không chắc về khả năng có/không.",
+          "Whether nối nội dung có/không và đi với trật tự S + V.",
+          "Không đảo will lên trước chủ ngữ trong mệnh đề phụ."
+        ],
+        "focus": "contrast"
+      },
+      {
+        "id": "B1-35-M19C-C3",
+        "prompt_vi": "Trong ba câu sau, câu NÀO mắc lỗi cần sửa ở chủ điểm Noun Clauses – Introduction?",
+        "options_en": [
+          "We don't know whether will the train arrive.",
+          "We don't know whether the train will arrive.",
+          "I understand what the client needs."
+        ],
+        "correct_index": 0,
+        "option_feedback_vi": [
+          "Đặt chủ ngữ the train trước will. Cách sửa: We don't know whether the train will arrive.",
+          "Whether the train will arrive là mệnh đề danh từ với trật tự câu trần thuật.",
+          "What the client needs đúng trật tự chủ ngữ + động từ trong mệnh đề danh từ."
+        ],
+        "focus": "error_detection"
+      }
+    ],
+    "transfer": {
+      "prompt_vi": "Tự viết một đoạn 2–4 câu theo nhiệm vụ sau (viết trước khi xem mẫu): Write two sentences saying what you know and what remains uncertain about a project.",
+      "sample_en": "We understand why the deadline changed. We still don't know whether the supplier can deliver on time.",
+      "rubric_vi": "Noun clauses sau understand và know làm tân ngữ. Kiểm tra thêm: (1) diễn đạt đúng ý trong tình huống; (2) dùng cấu trúc phù hợp; (3) thì, trật tự từ và dấu câu nhất quán. Bản mẫu là một phương án, không phải đáp án duy nhất."
+    },
+    "review_status": "DRAFT_TEACHER_REVIEW_REQUIRED",
+    "assessment_mode": "FORMATIVE_ONLY"
+  }
+}

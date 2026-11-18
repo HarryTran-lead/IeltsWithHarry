@@ -1,0 +1,462 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "DICT-S1-043",
+  "status": "draft",
+  "level": "L4",
+  "section": 1,
+  "topic": "Event Registration",
+  "title": "Registering a Charity Stall",
+  "learning_objectives_vi": [
+    "Luyện nghe tình huống: A volunteer registers a stall with equipment limits.",
+    "Nhận diện constraints and options và thông tin cuối cùng của cuộc hội thoại.",
+    "Nghe chép lời nói tự nhiên, hiểu bằng chứng trước khi xem transcript."
+  ],
+  "content_format": "section_practice",
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Service staff / representative",
+      "tts_voice_id": null,
+      "accent_requested": "british"
+    },
+    {
+      "speaker_id": "B",
+      "role": "Customer / attendee",
+      "tts_voice_id": null,
+      "accent_requested": "british"
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "Good afternoon, Lakeside Community Fair office.",
+      "translation_vi": "Chào buổi chiều, văn phòng hội chợ cộng đồng Lakeside.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "events",
+        "deadlines",
+        "conditions",
+        "section_1",
+        "two_speaker_dialogue",
+        "l4"
+      ]
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "B",
+      "text_en": "Our volunteer group would like to run a stall at next month's fair.",
+      "translation_vi": "Nhóm tình nguyện của chúng tôi muốn mở gian hàng tại hội chợ tháng tới.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "events",
+        "deadlines",
+        "conditions",
+        "section_1",
+        "two_speaker_dialogue",
+        "l4"
+      ]
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "A",
+      "text_en": "That's possible. Food stalls cost forty pounds, while craft stalls are twenty-five. What will you be selling?",
+      "translation_vi": "Được chứ. Gian đồ ăn bốn mươi bảng, gian thủ công hai mươi lăm. Nhóm bạn bán gì?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "events",
+        "deadlines",
+        "conditions",
+        "section_1",
+        "two_speaker_dialogue",
+        "l4"
+      ]
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "B",
+      "text_en": "Handmade notebooks and cards, so I suppose we need a craft stall.",
+      "translation_vi": "Sổ tay và thiệp làm thủ công, nên chắc chúng tôi cần gian thủ công.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "events",
+        "deadlines",
+        "conditions",
+        "section_1",
+        "two_speaker_dialogue",
+        "l4"
+      ]
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "A",
+      "text_en": "Correct. The fee includes one table and two chairs, but not access to electricity.",
+      "translation_vi": "Đúng. Phí bao gồm một bàn và hai ghế, nhưng không có điện.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "events",
+        "deadlines",
+        "conditions",
+        "section_1",
+        "two_speaker_dialogue",
+        "l4"
+      ]
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "B",
+      "text_en": "We won't need power. Could we set up at seven in the morning?",
+      "translation_vi": "Chúng tôi không cần điện. Bảy giờ sáng có thể bắt đầu dựng gian không?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "events",
+        "deadlines",
+        "conditions",
+        "section_1",
+        "two_speaker_dialogue",
+        "l4"
+      ]
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "Volunteers can enter from seven thirty; visitors arrive at nine. Please use the service gate behind the library.",
+      "translation_vi": "Tình nguyện viên được vào từ 7:30; khách tham quan đến lúc 9. Hãy đi cổng dịch vụ sau thư viện.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "events",
+        "deadlines",
+        "conditions",
+        "section_1",
+        "two_speaker_dialogue",
+        "l4"
+      ]
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "B",
+      "text_en": "Are there any forms to complete before the event?",
+      "translation_vi": "Trước sự kiện có mẫu đơn nào phải điền không?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "events",
+        "deadlines",
+        "conditions",
+        "section_1",
+        "two_speaker_dialogue",
+        "l4"
+      ]
+    },
+    {
+      "turn_id": "T09",
+      "speaker_id": "A",
+      "text_en": "Please send your stall description by the tenth. The safety declaration can be completed on the day.",
+      "translation_vi": "Hãy gửi mô tả gian hàng trước ngày mười. Phiếu cam kết an toàn có thể điền ngay hôm đó.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "events",
+        "deadlines",
+        "conditions",
+        "section_1",
+        "two_speaker_dialogue",
+        "l4"
+      ]
+    },
+    {
+      "turn_id": "T10",
+      "speaker_id": "B",
+      "text_en": "Will we receive the final stall number by email?",
+      "translation_vi": "Chúng tôi sẽ nhận số gian hàng cuối cùng qua email chứ?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "events",
+        "deadlines",
+        "conditions",
+        "section_1",
+        "two_speaker_dialogue",
+        "l4"
+      ]
+    },
+    {
+      "turn_id": "T11",
+      "speaker_id": "A",
+      "text_en": "Yes, on the twelfth. We use that number to guide each group to its place.",
+      "translation_vi": "Có, vào ngày mười hai. Chúng tôi dùng số đó để hướng dẫn từng nhóm vào đúng chỗ.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "events",
+        "deadlines",
+        "conditions",
+        "section_1",
+        "two_speaker_dialogue",
+        "l4"
+      ]
+    },
+    {
+      "turn_id": "T12",
+      "speaker_id": "B",
+      "text_en": "Excellent. I'll pay the twenty-five-pound fee today.",
+      "translation_vi": "Tuyệt. Tôi sẽ thanh toán khoản phí hai mươi lăm bảng hôm nay.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "events",
+        "deadlines",
+        "conditions",
+        "section_1",
+        "two_speaker_dialogue",
+        "l4"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "type": "mcq",
+      "prompt": "What type of stall is needed?",
+      "correct_answers": [
+        "craft"
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Nhóm bán sổ tay, thiệp nên chọn gian thủ công.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "events",
+        "deadlines",
+        "conditions",
+        "ielts_section1_practice"
+      ],
+      "options": [
+        "food",
+        "craft",
+        "information"
+      ]
+    },
+    {
+      "question_id": "Q02",
+      "type": "form_completion",
+      "prompt": "Included furniture: one table and two ____",
+      "correct_answers": [
+        "chairs"
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Gói thuê có một bàn, hai ghế.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "events",
+        "deadlines",
+        "conditions",
+        "ielts_section1_practice"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q03",
+      "type": "form_completion",
+      "prompt": "Not included: access to ____",
+      "correct_answers": [
+        "electricity"
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Phí không bao gồm điện.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "events",
+        "deadlines",
+        "conditions",
+        "ielts_section1_practice"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q04",
+      "type": "form_completion",
+      "prompt": "Volunteer entry time: ____",
+      "correct_answers": [
+        "seven thirty"
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "7:00 là đề xuất của người gọi; 7:30 mới được vào.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "events",
+        "deadlines",
+        "conditions",
+        "ielts_section1_practice"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q05",
+      "type": "form_completion",
+      "prompt": "Stall description deadline: the ____",
+      "correct_answers": [
+        "tenth"
+      ],
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "explanation_vi": "Mô tả gian hàng phải nộp trước ngày 10.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "events",
+        "deadlines",
+        "conditions",
+        "ielts_section1_practice"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q06",
+      "type": "form_completion",
+      "prompt": "Final stall number emailed on the ____",
+      "correct_answers": [
+        "twelfth"
+      ],
+      "evidence_turn_ids": [
+        "T11"
+      ],
+      "explanation_vi": "Số gian hàng được gửi ngày 12.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "events",
+        "deadlines",
+        "conditions",
+        "ielts_section1_practice"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "D01",
+      "type": "dictation",
+      "prompt": "Nghe và chép nguyên văn lượt thoại T05 của nhân vật A.",
+      "correct_answers": [
+        "Correct. The fee includes one table and two chairs, but not access to electricity."
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Câu gốc: Correct. The fee includes one table and two chairs, but not access to electricity. Nghĩa: Đúng. Phí bao gồm một bàn và hai ghế, nhưng không có điện. Hãy kiểm tra âm cuối, từ chức năng và chi tiết được sửa nếu có.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "events",
+        "deadlines",
+        "conditions",
+        "dictation",
+        "exact_words"
+      ]
+    },
+    {
+      "question_id": "G01",
+      "type": "gap_fill",
+      "prompt": "That's possible. Food stalls cost forty pounds, while ____ are twenty-five. What will you be selling?",
+      "correct_answers": [
+        "craft stalls"
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Nghe nguyên cụm số nhiều “craft stalls”. Không để hậu tố s nằm ngoài ô trống.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "events",
+        "deadlines",
+        "conditions",
+        "gap_fill",
+        "vocabulary_in_context"
+      ]
+    }
+  ],
+  "vocabulary": [
+    {
+      "term": "craft stall",
+      "pos": "phrase",
+      "meaning_vi": "gian hàng thủ công",
+      "example_en": "That's possible. Food stalls cost forty pounds, while craft stalls are twenty-five. What will you be selling?",
+      "example_vi": "Được chứ. Gian đồ ăn bốn mươi bảng, gian thủ công hai mươi lăm. Nhóm bạn bán gì?",
+      "source_turn_id": "T03"
+    },
+    {
+      "term": "electricity",
+      "pos": "word",
+      "meaning_vi": "điện",
+      "example_en": "Correct. The fee includes one table and two chairs, but not access to electricity.",
+      "example_vi": "Đúng. Phí bao gồm một bàn và hai ghế, nhưng không có điện.",
+      "source_turn_id": "T05"
+    },
+    {
+      "term": "service gate",
+      "pos": "phrase",
+      "meaning_vi": "cổng dành cho dịch vụ",
+      "example_en": "Volunteers can enter from seven thirty; visitors arrive at nine. Please use the service gate behind the library.",
+      "example_vi": "Tình nguyện viên được vào từ 7:30; khách tham quan đến lúc 9. Hãy đi cổng dịch vụ sau thư viện.",
+      "source_turn_id": "T07"
+    },
+    {
+      "term": "safety declaration",
+      "pos": "phrase",
+      "meaning_vi": "bản cam kết an toàn",
+      "example_en": "Please send your stall description by the tenth. The safety declaration can be completed on the day.",
+      "example_vi": "Hãy gửi mô tả gian hàng trước ngày mười. Phiếu cam kết an toàn có thể điền ngay hôm đó.",
+      "source_turn_id": "T09"
+    }
+  ],
+  "audio": {
+    "status": "not_generated",
+    "url": null,
+    "duration_ms": null,
+    "model": null,
+    "provider": null,
+    "voice_config": null,
+    "source_transcript_hash": "21921d2ea56e68a66c6adea548f4e55e5d0b7eedf9ca5bdaa80bcecf8c3fef1e",
+    "audio_sha256": null,
+    "format": null
+  },
+  "qa": {
+    "content_reviewed": false,
+    "answers_verified": false,
+    "audio_verified": false,
+    "rights_cleared": false,
+    "duplicate_reviewed": false,
+    "notes": [
+      "Original AI-assisted draft; expert listening pedagogical review required.",
+      "Audio and word-level timestamps do not exist yet.",
+      "This is a practice lesson, not an official IELTS Listening test.",
+      "M16.2: automated edits are provisional; IELTS teacher final signoff, audio and rights clearance pending."
+    ]
+  },
+  "provenance": {
+    "content_origin": "original_ai_assisted",
+    "source_urls": [],
+    "source_rights_note": "Author-created educational dialogue. Verify audio provider distribution rights, service terms and suitability for user age before synthesis and publishing.",
+    "reviewer": null
+  },
+  "release_metadata": {
+    "published_at": null,
+    "version": 1
+  }
+}

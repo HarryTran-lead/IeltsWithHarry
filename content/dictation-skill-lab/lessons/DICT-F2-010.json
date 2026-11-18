@@ -1,0 +1,440 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "DICT-F2-010",
+  "status": "draft",
+  "level": "L2",
+  "section": 0,
+  "topic": "Foundation",
+  "title": "Question Forms",
+  "learning_objectives_vi": [
+    "Nghe câu hỏi Wh- và Yes/No",
+    "Nghe trợ động từ và hình thái động từ, đối chiếu với chủ ngữ hoặc mốc thời gian."
+  ],
+  "content_format": "sentence_drill",
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Foundation narrator",
+      "tts_voice_id": null,
+      "accent_requested": "american"
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "Where do you usually buy your groceries?",
+      "translation_vi": "Bạn thường mua thực phẩm ở đâu?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "grammar",
+        "sentence_dictation",
+        "foundation_f2"
+      ]
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "A",
+      "text_en": "What time does your first lesson begin?",
+      "translation_vi": "Tiết học đầu tiên của bạn bắt đầu lúc mấy giờ?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "grammar",
+        "sentence_dictation",
+        "foundation_f2"
+      ]
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "A",
+      "text_en": "Who is waiting outside the classroom?",
+      "translation_vi": "Ai đang đợi bên ngoài lớp học?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "grammar",
+        "sentence_dictation",
+        "foundation_f2"
+      ]
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "A",
+      "text_en": "Why did you leave the meeting early?",
+      "translation_vi": "Vì sao bạn rời cuộc họp sớm?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "grammar",
+        "sentence_dictation",
+        "foundation_f2"
+      ]
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "A",
+      "text_en": "How many tickets do we need for the show?",
+      "translation_vi": "Chúng ta cần bao nhiêu vé cho buổi diễn?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "grammar",
+        "sentence_dictation",
+        "foundation_f2"
+      ]
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "A",
+      "text_en": "Is your brother studying at university?",
+      "translation_vi": "Anh trai bạn đang học đại học à?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "grammar",
+        "sentence_dictation",
+        "foundation_f2"
+      ]
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "Have they finished the science project yet?",
+      "translation_vi": "Họ đã hoàn thành dự án khoa học chưa?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "grammar",
+        "sentence_dictation",
+        "foundation_f2"
+      ]
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "A",
+      "text_en": "Could you tell me where the station is?",
+      "translation_vi": "Bạn có thể cho tôi biết nhà ga ở đâu không?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "grammar",
+        "sentence_dictation",
+        "foundation_f2"
+      ]
+    },
+    {
+      "turn_id": "T09",
+      "speaker_id": "A",
+      "text_en": "Which bus goes to the city centre?",
+      "translation_vi": "Xe buýt nào đi đến trung tâm thành phố?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "grammar",
+        "sentence_dictation",
+        "foundation_f2"
+      ]
+    },
+    {
+      "turn_id": "T10",
+      "speaker_id": "A",
+      "text_en": "Do you want tea or a glass of water?",
+      "translation_vi": "Bạn muốn trà hay một cốc nước?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "grammar",
+        "sentence_dictation",
+        "foundation_f2"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "type": "dictation",
+      "prompt": "Nghe câu T01 rồi chép lại đúng những từ được nói.",
+      "correct_answers": [
+        "Where do you usually buy your groceries?"
+      ],
+      "evidence_turn_ids": [
+        "T01"
+      ],
+      "explanation_vi": "Where hỏi địa điểm; do là trợ động từ. Nghĩa: Bạn thường mua thực phẩm ở đâu?",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "grammar"
+      ]
+    },
+    {
+      "question_id": "Q02",
+      "type": "dictation",
+      "prompt": "Nghe câu T02 rồi chép lại đúng những từ được nói.",
+      "correct_answers": [
+        "What time does your first lesson begin?"
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "What time hỏi giờ; does đi cùng begin. Nghĩa: Tiết học đầu tiên của bạn bắt đầu lúc mấy giờ?",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "grammar"
+      ]
+    },
+    {
+      "question_id": "Q03",
+      "type": "dictation",
+      "prompt": "Nghe câu T03 rồi chép lại đúng những từ được nói.",
+      "correct_answers": [
+        "Who is waiting outside the classroom?"
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Who làm chủ ngữ, theo sau là is waiting. Nghĩa: Ai đang đợi bên ngoài lớp học?",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "grammar"
+      ]
+    },
+    {
+      "question_id": "Q04",
+      "type": "dictation",
+      "prompt": "Nghe câu T04 rồi chép lại đúng những từ được nói.",
+      "correct_answers": [
+        "Why did you leave the meeting early?"
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Did + leave, không phải left. Nghĩa: Vì sao bạn rời cuộc họp sớm?",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "grammar"
+      ]
+    },
+    {
+      "question_id": "Q05",
+      "type": "dictation",
+      "prompt": "Nghe câu T05 rồi chép lại đúng những từ được nói.",
+      "correct_answers": [
+        "How many tickets do we need for the show?"
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "How many + danh từ đếm được số nhiều. Nghĩa: Chúng ta cần bao nhiêu vé cho buổi diễn?",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "grammar"
+      ]
+    },
+    {
+      "question_id": "Q06",
+      "type": "dictation",
+      "prompt": "Nghe câu T06 rồi chép lại đúng những từ được nói.",
+      "correct_answers": [
+        "Is your brother studying at university?"
+      ],
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "explanation_vi": "Is mở đầu câu hỏi Yes/No. Nghĩa: Anh trai bạn đang học đại học à?",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "grammar"
+      ]
+    },
+    {
+      "question_id": "Q07",
+      "type": "dictation",
+      "prompt": "Nghe câu T07 rồi chép lại đúng những từ được nói.",
+      "correct_answers": [
+        "Have they finished the science project yet?"
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "Have + finished là thì hiện tại hoàn thành. Nghĩa: Họ đã hoàn thành dự án khoa học chưa?",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "grammar"
+      ]
+    },
+    {
+      "question_id": "Q08",
+      "type": "dictation",
+      "prompt": "Nghe câu T08 rồi chép lại đúng những từ được nói.",
+      "correct_answers": [
+        "Could you tell me where the station is?"
+      ],
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "explanation_vi": "Câu hỏi gián tiếp: where the station is, không đảo is. Nghĩa: Bạn có thể cho tôi biết nhà ga ở đâu không?",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "grammar"
+      ]
+    },
+    {
+      "question_id": "Q09",
+      "type": "dictation",
+      "prompt": "Nghe câu T09 rồi chép lại đúng những từ được nói.",
+      "correct_answers": [
+        "Which bus goes to the city centre?"
+      ],
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "explanation_vi": "Which bus là chủ ngữ số ít, goes có /z/. Nghĩa: Xe buýt nào đi đến trung tâm thành phố?",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "grammar"
+      ]
+    },
+    {
+      "question_id": "Q10",
+      "type": "dictation",
+      "prompt": "Nghe câu T10 rồi chép lại đúng những từ được nói.",
+      "correct_answers": [
+        "Do you want tea or a glass of water?"
+      ],
+      "evidence_turn_ids": [
+        "T10"
+      ],
+      "explanation_vi": "Or đánh dấu hai lựa chọn, nghe rõ tea và water. Nghĩa: Bạn muốn trà hay một cốc nước?",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "grammar"
+      ]
+    },
+    {
+      "question_id": "Q11",
+      "type": "word_choice",
+      "prompt": "Câu hỏi hỏi số lượng của vật gì?",
+      "options": [
+        "tickets",
+        "books",
+        "cars"
+      ],
+      "correct_answers": [
+        "tickets"
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "How many tickets do we need?",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "comprehension",
+        "meaning_check",
+        "grammar"
+      ]
+    },
+    {
+      "question_id": "Q12",
+      "type": "word_choice",
+      "prompt": "Câu hỏi nhắc đến phương tiện nào?",
+      "options": [
+        "train",
+        "taxi",
+        "bus"
+      ],
+      "correct_answers": [
+        "bus"
+      ],
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "explanation_vi": "T09: Which bus goes to the city centre?",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "comprehension",
+        "meaning_check",
+        "grammar"
+      ]
+    }
+  ],
+  "vocabulary": [
+    {
+      "term": "groceries",
+      "pos": "noun",
+      "meaning_vi": "thực phẩm, hàng tạp hóa",
+      "example_en": "Where do you usually buy your groceries?",
+      "example_vi": "Bạn thường mua thực phẩm ở đâu?",
+      "source_turn_id": "T01"
+    },
+    {
+      "term": "how many",
+      "pos": "question phrase",
+      "meaning_vi": "bao nhiêu (đếm được)",
+      "example_en": "How many tickets do we need for the show?",
+      "example_vi": "Chúng ta cần bao nhiêu vé cho buổi diễn?",
+      "source_turn_id": "T05"
+    },
+    {
+      "term": "yet",
+      "pos": "adverb",
+      "meaning_vi": "chưa, rồi (trong câu hỏi)",
+      "example_en": "Have they finished the science project yet?",
+      "example_vi": "Họ đã hoàn thành dự án khoa học chưa?",
+      "source_turn_id": "T07"
+    },
+    {
+      "term": "city centre",
+      "pos": "noun phrase",
+      "meaning_vi": "trung tâm thành phố",
+      "example_en": "Which bus goes to the city centre?",
+      "example_vi": "Xe buýt nào đi đến trung tâm thành phố?",
+      "source_turn_id": "T09"
+    }
+  ],
+  "audio": {
+    "status": "not_generated",
+    "url": null,
+    "duration_ms": null,
+    "model": null,
+    "provider": null,
+    "voice_config": null,
+    "source_transcript_hash": "29e5287622aef05baf1fec36899cf9f48fa744f7de8b3084ef1f38bf3ef63c46",
+    "audio_sha256": null,
+    "format": null
+  },
+  "qa": {
+    "content_reviewed": false,
+    "answers_verified": false,
+    "audio_verified": false,
+    "rights_cleared": false,
+    "duplicate_reviewed": false,
+    "notes": [
+      "Original AI-assisted authored draft. Human editorial review needed before publishing.",
+      "TTS audio and timestamps not produced. Keep lesson locked until audio verified.",
+      "If TTS output differs from canonical text, regenerate or update transcript and recheck evidence.",
+      "M16.2: automated edits are provisional; IELTS teacher final signoff, audio and rights clearance pending."
+    ]
+  },
+  "provenance": {
+    "content_origin": "original_ai_assisted",
+    "source_urls": [],
+    "source_rights_note": "Original material; inspect TTS provider terms, distribution rights and access restrictions before production.",
+    "reviewer": null
+  },
+  "release_metadata": {
+    "published_at": null,
+    "version": 1
+  }
+}

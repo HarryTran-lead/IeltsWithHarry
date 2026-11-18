@@ -17,7 +17,7 @@ export async function GET(_request: Request, context: { params: Promise<{ id: st
   const { data: clip } = await db.from("dictation_clips")
     .select("audio_object_key,status").eq("id", id).maybeSingle();
   if (!clip || !["preview", "published"].includes(clip.status)
-    || !/^dictation\/clips\/(quick|numbers)\/[0-9a-f]{64}\.(flac|wav)$/.test(clip.audio_object_key))
+    || !/^dictation\/clips\/quick\/[0-9a-f]{64}\.(flac|wav)$/.test(clip.audio_object_key))
     return new Response("Not found", { status: 404 });
   const response = NextResponse.redirect(new URL(clip.audio_object_key, media), 307);
   response.headers.set("Cache-Control", "private, max-age=60");

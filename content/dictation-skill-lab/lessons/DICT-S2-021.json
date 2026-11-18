@@ -1,0 +1,381 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "DICT-S2-021",
+  "status": "draft",
+  "level": "L4",
+  "section": 2,
+  "topic": "Sports Facilities",
+  "title": "Finding Your Way Around the New Leisure Complex",
+  "learning_objectives_vi": [
+    "Nghe độc thoại chủ đề Sports Facilities và xác định mục đích thông báo.",
+    "Nhận diện cấu trúc ý và các chi tiết quan trọng theo thứ tự phát biểu.",
+    "Luyện chỉ đường theo sơ đồ A–F, phân biệt điểm trước/sau và hướng trái/phải."
+  ],
+  "content_format": "section_practice",
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Visitor guide / programme coordinator (one narrator)",
+      "tts_voice_id": null,
+      "accent_requested": "american"
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "Good morning, members. The leisure complex has reopened with two new activity spaces, so I will explain how to find them and which facilities require advance booking.",
+      "translation_vi": "Chào buổi sáng, các hội viên. Khu thể thao mở lại với hai không gian mới. Tôi sẽ chỉ đường và nêu nơi cần đặt trước.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_2",
+        "monologue",
+        "l4",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "A",
+      "text_en": "You entered from the south. The climbing studio occupies the first room on your left, while the accessible changing room is the first space on your right.",
+      "translation_vi": "Các bạn vào từ phía nam. Phòng leo núi là phòng đầu bên trái, phòng thay đồ tiếp cận được là phòng đầu bên phải.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_2",
+        "monologue",
+        "l4",
+        "signposting",
+        "spatial_directions"
+      ]
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "A",
+      "text_en": "At the far end of the building, the swimming pool lies in the back-left area. The new dance studio has been built in the back-right corner, overlooking the gardens.",
+      "translation_vi": "Ở cuối tòa nhà, hồ bơi nằm khu sau bên trái. Phòng khiêu vũ mới ở góc sau bên phải nhìn ra vườn.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_2",
+        "monologue",
+        "l4",
+        "signposting",
+        "spatial_directions"
+      ]
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "A",
+      "text_en": "The central room at the far end is the sports medicine clinic. It is open to everyone, but treatment is charged separately from ordinary membership.",
+      "translation_vi": "Phòng giữa cuối tòa nhà là phòng khám y học thể thao. Ai cũng được dùng, nhưng phí điều trị tính riêng với hội viên.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_2",
+        "monologue",
+        "l4",
+        "signposting",
+        "spatial_directions"
+      ]
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "A",
+      "text_en": "Our introductory climbing sessions run at five forty-five on Tuesdays. They previously began at five thirty, but additional safety checks have lengthened the preparation time.",
+      "translation_vi": "Buổi leo núi nhập môn diễn ra lúc 5:45 thứ Ba. Trước là 5:30 nhưng kiểm tra an toàn kéo dài phần chuẩn bị.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_2",
+        "monologue",
+        "l4",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "A",
+      "text_en": "Please reserve a place in the dance studio at least two days in advance. Walk-in visitors may use the gym, but dance classes have a strict limit of sixteen participants.",
+      "translation_vi": "Hãy đặt lớp khiêu vũ ít nhất hai ngày trước. Khách đến trực tiếp được dùng phòng gym, nhưng lớp nhảy giới hạn mười sáu người.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_2",
+        "monologue",
+        "l4",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "Members pay five pounds for a guest pass. Guests must sign a short safety form, even if they only intend to use the pool.",
+      "translation_vi": "Hội viên trả năm bảng cho vé khách. Khách phải ký phiếu an toàn ngắn, kể cả chỉ dùng hồ bơi.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_2",
+        "monologue",
+        "l4",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "A",
+      "text_en": "During tournaments, the upper spectator area can become crowded. Anyone bringing a pushchair should use the side lift rather than the staircase.",
+      "translation_vi": "Trong giải đấu, tầng khán giả có thể đông. Ai mang xe đẩy em bé nên dùng thang máy bên cạnh thay vì cầu thang.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_2",
+        "monologue",
+        "l4",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T09",
+      "speaker_id": "A",
+      "text_en": "Finally, remember that the building closes at ten on Fridays, but the pool stops admitting swimmers at nine fifteen. These are separate times.",
+      "translation_vi": "Cuối cùng, thứ Sáu tòa nhà đóng lúc mười giờ, nhưng hồ bơi ngừng nhận người lúc 9:15. Đây là hai giờ khác nhau.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_2",
+        "monologue",
+        "l4",
+        "signposting"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "type": "map_labelling",
+      "prompt": "Use the location plan (A–F): Climbing studio position: ____",
+      "correct_answers": [
+        "D"
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Phòng leo núi là phòng đầu bên trái.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "section_2",
+        "ielts_practice",
+        "map_orientation"
+      ],
+      "map_asset": "maps/DICT-S2-021.svg"
+    },
+    {
+      "question_id": "Q02",
+      "type": "map_labelling",
+      "prompt": "Use the location plan (A–F): Dance studio position: ____",
+      "correct_answers": [
+        "C"
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Phòng khiêu vũ ở góc sau bên phải.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "section_2",
+        "ielts_practice",
+        "map_orientation"
+      ],
+      "map_asset": "maps/DICT-S2-021.svg"
+    },
+    {
+      "question_id": "Q03",
+      "type": "mcq",
+      "prompt": "At what time does climbing start on Tuesday?",
+      "correct_answers": [
+        "five forty-five"
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Đã đổi giờ từ 5:30 thành 5:45.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "section_2",
+        "ielts_practice",
+        "detail_recognition"
+      ],
+      "options": [
+        "five forty-five",
+        "five thirty",
+        "nine fifteen"
+      ]
+    },
+    {
+      "question_id": "Q04",
+      "type": "note_completion",
+      "prompt": "Notes — Dance class maximum participants: ____",
+      "correct_answers": [
+        "sixteen"
+      ],
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "explanation_vi": "Lớp khiêu vũ tối đa mười sáu người.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_2",
+        "ielts_practice",
+        "detail_recognition"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q05",
+      "type": "note_completion",
+      "prompt": "Notes — Guest pass fee in pounds: ____",
+      "correct_answers": [
+        "five"
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "Vé khách giá năm bảng.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_2",
+        "ielts_practice",
+        "detail_recognition"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q06",
+      "type": "note_completion",
+      "prompt": "Notes — Pool stops admitting swimmers at: ____",
+      "correct_answers": [
+        "nine fifteen"
+      ],
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "explanation_vi": "Hồ bơi dừng nhận lúc 9:15, tòa nhà đóng lúc mười.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_2",
+        "ielts_practice",
+        "detail_recognition"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "D01",
+      "type": "dictation",
+      "prompt": "Nghe lại và chép nguyên văn đoạn T05 (toàn bộ lời người dẫn).",
+      "correct_answers": [
+        "Our introductory climbing sessions run at five forty-five on Tuesdays. They previously began at five thirty, but additional safety checks have lengthened the preparation time."
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Câu gốc: Our introductory climbing sessions run at five forty-five on Tuesdays. They previously began at five thirty, but additional safety checks have lengthened the preparation time. Nghĩa: Buổi leo núi nhập môn diễn ra lúc 5:45 thứ Ba. Trước là 5:30 nhưng kiểm tra an toàn kéo dài phần chuẩn bị. Lưu ý từ chức năng, âm cuối và cụm từ nối.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "exact_transcript",
+        "section_2"
+      ]
+    },
+    {
+      "question_id": "G01",
+      "type": "gap_fill",
+      "prompt": "Điền cụm từ bị ẩn sau khi nghe: You entered from the south. The climbing studio occupies the first room on your left, while the accessible ____ is the first space on your right.",
+      "correct_answers": [
+        "changing room"
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "changing room: phòng thay đồ. Ngữ cảnh: Các bạn vào từ phía nam. Phòng leo núi là phòng đầu bên trái, phòng thay đồ tiếp cận được là phòng đầu bên phải.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "gap_fill",
+        "vocab_in_context",
+        "section_2"
+      ]
+    }
+  ],
+  "vocabulary": [
+    {
+      "term": "changing room",
+      "pos": "n. phr.",
+      "meaning_vi": "phòng thay đồ",
+      "example_en": "You entered from the south. The climbing studio occupies the first room on your left, while the accessible changing room is the first space on your right.",
+      "example_vi": "Các bạn vào từ phía nam. Phòng leo núi là phòng đầu bên trái, phòng thay đồ tiếp cận được là phòng đầu bên phải.",
+      "source_turn_id": "T02"
+    },
+    {
+      "term": "spectator",
+      "pos": "n.",
+      "meaning_vi": "khán giả",
+      "example_en": "During tournaments, the upper spectator area can become crowded. Anyone bringing a pushchair should use the side lift rather than the staircase.",
+      "example_vi": "Trong giải đấu, tầng khán giả có thể đông. Ai mang xe đẩy em bé nên dùng thang máy bên cạnh thay vì cầu thang.",
+      "source_turn_id": "T08"
+    },
+    {
+      "term": "swimming pool",
+      "pos": "n. phr.",
+      "meaning_vi": "hồ bơi",
+      "example_en": "At the far end of the building, the swimming pool lies in the back-left area. The new dance studio has been built in the back-right corner, overlooking the gardens.",
+      "example_vi": "Ở cuối tòa nhà, hồ bơi nằm khu sau bên trái. Phòng khiêu vũ mới ở góc sau bên phải nhìn ra vườn.",
+      "source_turn_id": "T03"
+    },
+    {
+      "term": "membership",
+      "pos": "n.",
+      "meaning_vi": "hội viên",
+      "example_en": "The central room at the far end is the sports medicine clinic. It is open to everyone, but treatment is charged separately from ordinary membership.",
+      "example_vi": "Phòng giữa cuối tòa nhà là phòng khám y học thể thao. Ai cũng được dùng, nhưng phí điều trị tính riêng với hội viên.",
+      "source_turn_id": "T04"
+    }
+  ],
+  "audio": {
+    "status": "not_generated",
+    "url": null,
+    "duration_ms": null,
+    "model": null,
+    "provider": null,
+    "voice_config": null,
+    "source_transcript_hash": "d390c6def6b70fd56f34e74ebf97f72d5c90cf77345c9216a8f2dbe8587e8370",
+    "audio_sha256": null,
+    "format": null
+  },
+  "qa": {
+    "content_reviewed": false,
+    "answers_verified": false,
+    "audio_verified": false,
+    "rights_cleared": false,
+    "duplicate_reviewed": false,
+    "notes": [
+      "AI-assisted original writing; pedagogical and pronunciation review still required.",
+      "No TTS or sentence-level timestamps supplied; do not publish.",
+      "This is Section 2 skill practice, not an official IELTS test.",
+      "M16.2: automated edits are provisional; IELTS teacher final signoff, audio and rights clearance pending."
+    ]
+  },
+  "provenance": {
+    "content_origin": "original_ai_assisted",
+    "source_urls": [],
+    "source_rights_note": "Newly authored educational monologue. Confirm audio model distribution, age suitability and TOS separately before publishing.",
+    "reviewer": null
+  },
+  "release_metadata": {
+    "published_at": null,
+    "version": 1
+  }
+}

@@ -5,6 +5,7 @@ import { usePathname } from "next/navigation";
 import { z } from "zod";
 import { demoMode } from "@/lib/runtime";
 import { createClient } from "@/lib/supabase/browser";
+import { fetchAllRows } from "@/lib/supabase/fetch-all";
 import { notebookInputSchema, type NotebookInput } from "@/lib/validation/notebook";
 
 const STORAGE_KEY = "english-skill-lab-notebook-v1";
@@ -94,8 +95,8 @@ export function NotebookProvider({ children }: { children: React.ReactNode }) {
         } catch { /* Damaged local demo data can be replaced with a fresh notebook. */ }
       } else {
         const [entryResult, visitResult] = await Promise.all([
-          // Words learned in Vocabulary sessions are saved here too, so the review queue needs more than 500.
-          supabase!.from("notebook_entries").select("*").order("created_at", { ascending: false }).limit(1000),
+          // Words learned in Vocabulary sessions are saved here too, so a learner can pass 1,000 entries: read every page.
+          fetchAllRows<EntryRow>((from, to) => supabase!.from("notebook_entries").select("*").order("created_at", { ascending: false }).order("id").range(from, to)),
           supabase!.from("study_visits").select("*").order("visited_at", { ascending: false }).limit(200),
         ]);
         if (entryResult.error || visitResult.error) setError(entryResult.error?.message ?? visitResult.error!.message);

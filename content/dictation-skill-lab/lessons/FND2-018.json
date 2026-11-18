@@ -1,0 +1,675 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "FND2-018",
+  "status": "draft",
+  "level": "L1",
+  "section": 0,
+  "topic": "Foundation M17 – Sound Accuracy",
+  "title": "Present simple endings: -s and -es",
+  "learning_objectives_vi": [
+    "Nghe phân biệt present simple endings: -s and -es.",
+    "Đây là luyện nghe đuôi ngữ pháp, không phải các cặp tối thiểu từ vựng",
+    "Chép được câu chưa nhìn transcript; đối chiếu từ trọng tâm sau khi nộp."
+  ],
+  "content_format": "micro_drill",
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Foundation narrator",
+      "tts_voice_id": null,
+      "accent_requested": "british"
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "I walk to work on Mondays.",
+      "translation_vi": "Tôi đi bộ đến chỗ làm vào các thứ Hai.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "morphological_ending",
+        "third_person_s"
+      ],
+      "target_word": "walk",
+      "focus_pair_id": "PAIR-01",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "A",
+      "text_en": "She walks to work on Mondays.",
+      "translation_vi": "Cô ấy đi bộ đến chỗ làm vào các thứ Hai.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "morphological_ending",
+        "third_person_s"
+      ],
+      "target_word": "walks",
+      "focus_pair_id": "PAIR-01",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "A",
+      "text_en": "They play tennis after school.",
+      "translation_vi": "Họ chơi quần vợt sau giờ học.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "morphological_ending",
+        "third_person_s"
+      ],
+      "target_word": "play",
+      "focus_pair_id": "PAIR-02",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "A",
+      "text_en": "He plays tennis after school.",
+      "translation_vi": "Anh ấy chơi quần vợt sau giờ học.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "morphological_ending",
+        "third_person_s"
+      ],
+      "target_word": "plays",
+      "focus_pair_id": "PAIR-02",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "A",
+      "text_en": "We need extra chairs for tonight.",
+      "translation_vi": "Chúng tôi cần thêm ghế cho tối nay.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "morphological_ending",
+        "third_person_s"
+      ],
+      "target_word": "need",
+      "focus_pair_id": "PAIR-03",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "A",
+      "text_en": "The hall needs extra chairs tonight.",
+      "translation_vi": "Hội trường cần thêm ghế tối nay.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "morphological_ending",
+        "third_person_s"
+      ],
+      "target_word": "needs",
+      "focus_pair_id": "PAIR-03",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "I watch the news after dinner.",
+      "translation_vi": "Tôi xem tin tức sau bữa tối.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "morphological_ending",
+        "third_person_s"
+      ],
+      "target_word": "watch",
+      "focus_pair_id": "PAIR-04",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "A",
+      "text_en": "My father watches the news after dinner.",
+      "translation_vi": "Bố tôi xem tin tức sau bữa tối.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "morphological_ending",
+        "third_person_s"
+      ],
+      "target_word": "watches",
+      "focus_pair_id": "PAIR-04",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T09",
+      "speaker_id": "A",
+      "text_en": "They pass the library on the way home.",
+      "translation_vi": "Họ đi ngang thư viện trên đường về nhà.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "morphological_ending",
+        "third_person_s"
+      ],
+      "target_word": "pass",
+      "focus_pair_id": "PAIR-05",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T10",
+      "speaker_id": "A",
+      "text_en": "The bus passes the library on its way back.",
+      "translation_vi": "Xe buýt đi ngang thư viện trên đường quay về.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "morphological_ending",
+        "third_person_s"
+      ],
+      "target_word": "passes",
+      "focus_pair_id": "PAIR-05",
+      "bank_role": "training"
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "type": "dictation",
+      "prompt": "Nghe lượt T01 một lần rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "I walk to work on Mondays."
+      ],
+      "evidence_turn_ids": [
+        "T01"
+      ],
+      "explanation_vi": "Tập trung nghe walk / walks (Đây là luyện nghe đuôi ngữ pháp, không phải các cặp tối thiểu từ vựng). Nghĩa: Tôi đi bộ đến chỗ làm vào các thứ Hai.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text",
+        "walk / walks (Đây là luyện nghe đuôi ngữ pháp, không phải các cặp tối thiểu từ vựng)"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q02",
+      "type": "dictation",
+      "prompt": "Nghe lượt T02 một lần rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "She walks to work on Mondays."
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Tập trung nghe walk / walks (Đây là luyện nghe đuôi ngữ pháp, không phải các cặp tối thiểu từ vựng). Nghĩa: Cô ấy đi bộ đến chỗ làm vào các thứ Hai.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text",
+        "walk / walks (Đây là luyện nghe đuôi ngữ pháp, không phải các cặp tối thiểu từ vựng)"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q03",
+      "type": "dictation",
+      "prompt": "Nghe lượt T03 một lần rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "They play tennis after school."
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Tập trung nghe play / plays (Đây là luyện nghe đuôi ngữ pháp, không phải các cặp tối thiểu từ vựng). Nghĩa: Họ chơi quần vợt sau giờ học.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text",
+        "play / plays (Đây là luyện nghe đuôi ngữ pháp, không phải các cặp tối thiểu từ vựng)"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q04",
+      "type": "dictation",
+      "prompt": "Nghe lượt T04 một lần rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "He plays tennis after school."
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Tập trung nghe play / plays (Đây là luyện nghe đuôi ngữ pháp, không phải các cặp tối thiểu từ vựng). Nghĩa: Anh ấy chơi quần vợt sau giờ học.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text",
+        "play / plays (Đây là luyện nghe đuôi ngữ pháp, không phải các cặp tối thiểu từ vựng)"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q05",
+      "type": "dictation",
+      "prompt": "Nghe lượt T05 một lần rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "We need extra chairs for tonight."
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Tập trung nghe need / needs (Đây là luyện nghe đuôi ngữ pháp, không phải các cặp tối thiểu từ vựng). Nghĩa: Chúng tôi cần thêm ghế cho tối nay.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text",
+        "need / needs (Đây là luyện nghe đuôi ngữ pháp, không phải các cặp tối thiểu từ vựng)"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q06",
+      "type": "dictation",
+      "prompt": "Nghe lượt T06 một lần rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "The hall needs extra chairs tonight."
+      ],
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "explanation_vi": "Tập trung nghe need / needs (Đây là luyện nghe đuôi ngữ pháp, không phải các cặp tối thiểu từ vựng). Nghĩa: Hội trường cần thêm ghế tối nay.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text",
+        "need / needs (Đây là luyện nghe đuôi ngữ pháp, không phải các cặp tối thiểu từ vựng)"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q07",
+      "type": "dictation",
+      "prompt": "Nghe lượt T07 một lần rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "I watch the news after dinner."
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "Tập trung nghe watch / watches (Đây là luyện nghe đuôi ngữ pháp, không phải các cặp tối thiểu từ vựng). Nghĩa: Tôi xem tin tức sau bữa tối.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text",
+        "watch / watches (Đây là luyện nghe đuôi ngữ pháp, không phải các cặp tối thiểu từ vựng)"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q08",
+      "type": "dictation",
+      "prompt": "Nghe lượt T08 một lần rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "My father watches the news after dinner."
+      ],
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "explanation_vi": "Tập trung nghe watch / watches (Đây là luyện nghe đuôi ngữ pháp, không phải các cặp tối thiểu từ vựng). Nghĩa: Bố tôi xem tin tức sau bữa tối.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text",
+        "watch / watches (Đây là luyện nghe đuôi ngữ pháp, không phải các cặp tối thiểu từ vựng)"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q09",
+      "type": "dictation",
+      "prompt": "Nghe lượt T09 một lần rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "They pass the library on the way home."
+      ],
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "explanation_vi": "Tập trung nghe pass / passes (Đây là luyện nghe đuôi ngữ pháp, không phải các cặp tối thiểu từ vựng). Nghĩa: Họ đi ngang thư viện trên đường về nhà.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text",
+        "pass / passes (Đây là luyện nghe đuôi ngữ pháp, không phải các cặp tối thiểu từ vựng)"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q10",
+      "type": "dictation",
+      "prompt": "Nghe lượt T10 một lần rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "The bus passes the library on its way back."
+      ],
+      "evidence_turn_ids": [
+        "T10"
+      ],
+      "explanation_vi": "Tập trung nghe pass / passes (Đây là luyện nghe đuôi ngữ pháp, không phải các cặp tối thiểu từ vựng). Nghĩa: Xe buýt đi ngang thư viện trên đường quay về.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text",
+        "pass / passes (Đây là luyện nghe đuôi ngữ pháp, không phải các cặp tối thiểu từ vựng)"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q11",
+      "type": "word_choice",
+      "prompt": "Nghe lượt T01. Từ nào được nói?",
+      "correct_answers": [
+        "walk"
+      ],
+      "options": [
+        "walk",
+        "walks"
+      ],
+      "evidence_turn_ids": [
+        "T01"
+      ],
+      "explanation_vi": "Phân biệt walk và walks. Đây là luyện nghe đuôi ngữ pháp, không phải các cặp tối thiểu từ vựng. Hãy nghe âm thực tế; không chỉ dựa vào nghĩa của cả câu.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "comprehension",
+        "sound_discrimination",
+        "third_person_s"
+      ],
+      "max_replays_practice": 3
+    },
+    {
+      "question_id": "Q12",
+      "type": "word_choice",
+      "prompt": "Nghe lượt T04. Từ nào được nói?",
+      "correct_answers": [
+        "plays"
+      ],
+      "options": [
+        "plays",
+        "play"
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Phân biệt play và plays. Đây là luyện nghe đuôi ngữ pháp, không phải các cặp tối thiểu từ vựng. Hãy nghe âm thực tế; không chỉ dựa vào nghĩa của cả câu.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "comprehension",
+        "sound_discrimination",
+        "third_person_s"
+      ],
+      "max_replays_practice": 3
+    },
+    {
+      "question_id": "Q13",
+      "type": "word_choice",
+      "prompt": "Nghe lượt T05. Từ nào được nói?",
+      "correct_answers": [
+        "need"
+      ],
+      "options": [
+        "need",
+        "needs"
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Phân biệt need và needs. Đây là luyện nghe đuôi ngữ pháp, không phải các cặp tối thiểu từ vựng. Hãy nghe âm thực tế; không chỉ dựa vào nghĩa của cả câu.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "comprehension",
+        "sound_discrimination",
+        "third_person_s"
+      ],
+      "max_replays_practice": 3
+    },
+    {
+      "question_id": "Q14",
+      "type": "word_choice",
+      "prompt": "Nghe lượt T08. Từ nào được nói?",
+      "correct_answers": [
+        "watches"
+      ],
+      "options": [
+        "watches",
+        "watch"
+      ],
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "explanation_vi": "Phân biệt watch và watches. Đây là luyện nghe đuôi ngữ pháp, không phải các cặp tối thiểu từ vựng. Hãy nghe âm thực tế; không chỉ dựa vào nghĩa của cả câu.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "comprehension",
+        "sound_discrimination",
+        "third_person_s"
+      ],
+      "max_replays_practice": 3
+    },
+    {
+      "question_id": "Q15",
+      "type": "word_choice",
+      "prompt": "Nghe lượt T09. Từ nào được nói?",
+      "correct_answers": [
+        "pass"
+      ],
+      "options": [
+        "pass",
+        "passes"
+      ],
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "explanation_vi": "Phân biệt pass và passes. Đây là luyện nghe đuôi ngữ pháp, không phải các cặp tối thiểu từ vựng. Hãy nghe âm thực tế; không chỉ dựa vào nghĩa của cả câu.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "comprehension",
+        "sound_discrimination",
+        "third_person_s"
+      ],
+      "max_replays_practice": 3
+    }
+  ],
+  "vocabulary": [
+    {
+      "term": "walk",
+      "pos": "target",
+      "meaning_vi": "đi bộ",
+      "example_en": "I walk to work on Mondays.",
+      "example_vi": "Tôi đi bộ đến chỗ làm vào các thứ Hai.",
+      "source_turn_id": "T01",
+      "phoneme_focus": "third_person_s"
+    },
+    {
+      "term": "walks",
+      "pos": "target",
+      "meaning_vi": "đi bộ (ngôi thứ ba)",
+      "example_en": "She walks to work on Mondays.",
+      "example_vi": "Cô ấy đi bộ đến chỗ làm vào các thứ Hai.",
+      "source_turn_id": "T02",
+      "phoneme_focus": "third_person_s"
+    },
+    {
+      "term": "play",
+      "pos": "target",
+      "meaning_vi": "chơi",
+      "example_en": "They play tennis after school.",
+      "example_vi": "Họ chơi quần vợt sau giờ học.",
+      "source_turn_id": "T03",
+      "phoneme_focus": "third_person_s"
+    },
+    {
+      "term": "plays",
+      "pos": "target",
+      "meaning_vi": "chơi (ngôi thứ ba)",
+      "example_en": "He plays tennis after school.",
+      "example_vi": "Anh ấy chơi quần vợt sau giờ học.",
+      "source_turn_id": "T04",
+      "phoneme_focus": "third_person_s"
+    },
+    {
+      "term": "need",
+      "pos": "target",
+      "meaning_vi": "cần",
+      "example_en": "We need extra chairs for tonight.",
+      "example_vi": "Chúng tôi cần thêm ghế cho tối nay.",
+      "source_turn_id": "T05",
+      "phoneme_focus": "third_person_s"
+    },
+    {
+      "term": "needs",
+      "pos": "target",
+      "meaning_vi": "cần (ngôi thứ ba)",
+      "example_en": "The hall needs extra chairs tonight.",
+      "example_vi": "Hội trường cần thêm ghế tối nay.",
+      "source_turn_id": "T06",
+      "phoneme_focus": "third_person_s"
+    },
+    {
+      "term": "watch",
+      "pos": "target",
+      "meaning_vi": "xem",
+      "example_en": "I watch the news after dinner.",
+      "example_vi": "Tôi xem tin tức sau bữa tối.",
+      "source_turn_id": "T07",
+      "phoneme_focus": "third_person_s"
+    },
+    {
+      "term": "watches",
+      "pos": "target",
+      "meaning_vi": "xem (ngôi thứ ba)",
+      "example_en": "My father watches the news after dinner.",
+      "example_vi": "Bố tôi xem tin tức sau bữa tối.",
+      "source_turn_id": "T08",
+      "phoneme_focus": "third_person_s"
+    },
+    {
+      "term": "pass",
+      "pos": "target",
+      "meaning_vi": "đi ngang qua",
+      "example_en": "They pass the library on the way home.",
+      "example_vi": "Họ đi ngang thư viện trên đường về nhà.",
+      "source_turn_id": "T09",
+      "phoneme_focus": "third_person_s"
+    },
+    {
+      "term": "passes",
+      "pos": "target",
+      "meaning_vi": "đi ngang qua (ngôi thứ ba)",
+      "example_en": "The bus passes the library on its way back.",
+      "example_vi": "Xe buýt đi ngang thư viện trên đường quay về.",
+      "source_turn_id": "T10",
+      "phoneme_focus": "third_person_s"
+    }
+  ],
+  "micro_skill_id": "third_person_s",
+  "bank_role": "training",
+  "content_design": {
+    "sequence": "five_contrast_pairs",
+    "pairs": [
+      [
+        "walk",
+        "walks"
+      ],
+      [
+        "play",
+        "plays"
+      ],
+      [
+        "need",
+        "needs"
+      ],
+      [
+        "watch",
+        "watches"
+      ],
+      [
+        "pass",
+        "passes"
+      ]
+    ],
+    "first_listen": "1x",
+    "guided_replay_max": 5,
+    "mastery_requires_unseen": true,
+    "note_vi": "Đây là luyện nghe đuôi ngữ pháp, không phải các cặp tối thiểu từ vựng"
+  },
+  "audio": {
+    "status": "not_generated",
+    "url": null,
+    "duration_ms": null,
+    "provider": null,
+    "model": null,
+    "voice_config": null,
+    "format": null,
+    "audio_sha256": null,
+    "source_transcript_hash": "8f40e1601e7612af2c7eb2b57d02534f0a14717189705136b4cd210d96c52376",
+    "generation_notes": "Generate each turn as speech only; no spoken question numbers, answers or coaching. Validate text and pronunciation before release."
+  },
+  "qa": {
+    "content_reviewed": false,
+    "answers_verified": true,
+    "audio_verified": false,
+    "human_signed_off": false,
+    "duplicate_reviewed": false,
+    "notes": [
+      "Original draft, automated evidence matching passed; pedagogical expert review still required.",
+      "Audio and timestamp not created; protected holdouts are separate server-only payloads."
+    ]
+  },
+  "provenance": {
+    "content_origin": "original_ai_assisted",
+    "rights_status": "pending_tts_terms_review",
+    "source_urls": [],
+    "reviewer": null,
+    "originality_check": "Exact comparisons against prior 300 drafts pending final QA."
+  },
+  "release_metadata": {
+    "published_at": null,
+    "version": 1
+  },
+  "lesson_theory_vi": {
+    "core_rule": "Ngôi he/she/it thường mang đuôi -s/-es. Luyện nghe các đuôi /s/, /z/, /ɪz/ trong câu, không chỉ học công thức.",
+    "worked_contrasts": [
+      {
+        "contrast": "walk / walks",
+        "meaning_vi": "đi bộ / đi bộ (ngôi thứ ba)",
+        "teacher_note_vi": "Ngôi he/she/it thường mang đuôi -s/-es. Luyện nghe các đuôi /s/, /z/, /ɪz/ trong câu, không chỉ học công thức."
+      },
+      {
+        "contrast": "play / plays",
+        "meaning_vi": "chơi / chơi (ngôi thứ ba)",
+        "teacher_note_vi": "Ngôi he/she/it thường mang đuôi -s/-es. Luyện nghe các đuôi /s/, /z/, /ɪz/ trong câu, không chỉ học công thức."
+      }
+    ],
+    "learning_steps": [
+      "Nghe giáo viên/TTS đọc cặp từ ở tốc độ tự nhiên và nhận diện từ thứ nhất.",
+      "Làm lượt T01–T04 với nút nghe lại theo nhu cầu; nộp xong mới xem transcript và nghĩa.",
+      "Làm T05–T10 độc lập hơn và hạn chế nghe lại.",
+      "Nếu đạt yêu cầu luyện tập, hệ thống phát 2 câu chưa từng nghe từ ngân hàng riêng để kiểm tra chuyển giao."
+    ],
+    "common_mistakes": [
+      "Quên ghi đuôi -s dù audio có; dựa vào ngữ pháp để đoán mà không nghe.",
+      "Đúng sau năm lần nghe lại không đồng nghĩa với nghe đúng ngay lần đầu."
+    ],
+    "before_audio_question": "Bạn có thể phân biệt hai từ qua âm đầu/nguyên âm/âm cuối mà không nhìn chữ không?"
+  }
+}

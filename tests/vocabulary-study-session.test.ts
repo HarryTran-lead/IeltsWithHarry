@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { buildLearnQueue, buildTest, checkTyped, intervalLabel, requeue, reviewQueue, sessionGrade, testCorrect, wordState } from "../src/lib/vocabulary/study-session";
+import { buildLearnQueue, buildTest, checkTyped, headwordForms, intervalLabel, learnProgress, requeue, reviewQueue, sessionGrade, testCorrect, wordState } from "../src/lib/vocabulary/study-session";
 import type { WordReview } from "../src/lib/news/review";
 
 describe("Learn session queue", () => {
@@ -12,7 +12,16 @@ describe("Learn session queue", () => {
     const queue = buildLearnQueue(["a", "b", "c", "d", "e"]).slice(5);
     const next = requeue(queue, queue[0]);
     expect(next.slice(0, 4).map((item) => item.id)).toEqual(["b", "c", "d", "a"]);
-    expect(requeue([queue[0]], queue[0])).toEqual([queue[0]]);
+    expect(next[3].retry).toBe(true);
+    expect(requeue([queue[0]], queue[0])).toEqual([{ ...queue[0], retry: true }]);
+  });
+
+  it("counts a step as done only once it leaves the queue", () => {
+    const queue = buildLearnQueue(["a", "b"]);
+    expect(learnProgress(queue, 2)).toBe(0);
+    expect(learnProgress(queue.slice(2), 2)).toBeCloseTo(2 / 6);
+    expect(learnProgress(requeue(queue.slice(2), queue[2]), 2)).toBeCloseTo(2 / 6);
+    expect(learnProgress([], 2)).toBe(1);
   });
 
   it("grades the session by how often the word was missed", () => {
@@ -26,6 +35,13 @@ describe("typed answers", () => {
     expect(checkTyped("sustainble", "sustainable")).toBe("close");
     expect(checkTyped("cat", "car")).toBe("wrong");
     expect(checkTyped("", "car")).toBe("wrong");
+  });
+
+  it("accepts any spelling of a headword written as variants", () => {
+    expect(headwordForms("a.m./A.M./am/AM")).toEqual(["a.m.", "A.M.", "am", "AM"]);
+    expect(headwordForms("and/or")).toEqual(["and/or"]);
+    expect(checkTyped("am", "a.m./A.M./am/AM")).toBe("exact");
+    expect(checkTyped("A.M.", "a.m./A.M./am/AM")).toBe("exact");
   });
 });
 

@@ -1,0 +1,623 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "FND2-075",
+  "status": "draft",
+  "level": "L1",
+  "section": 0,
+  "topic": "Foundation M19 – Vocabulary",
+  "title": "Everyday services and errands",
+  "learning_objectives_vi": [
+    "Hiểu các dịch vụ thiết thực: bưu điện, tiệm sửa, gia hạn, hoàn trả.",
+    "Nghe lại theo lỗi trọng tâm, không chỉ hoàn thành số bài.",
+    "Đánh giá bằng nội dung chưa gặp và một lần nghe."
+  ],
+  "content_format": "sentence_drill",
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Foundation narrator",
+      "tts_voice_id": null,
+      "accent_requested": "new_zealand"
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "I need to collect a parcel from the post office before it closes.",
+      "translation_vi": "Tôi cần lấy bưu kiện ở bưu điện trước khi đóng cửa.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m19",
+        "errands",
+        "vocabulary"
+      ],
+      "target_value": "parcel",
+      "target_kind": "lexical_phrase",
+      "target_meaning_vi": "bưu kiện",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "A",
+      "text_en": "Could you make a copy of this document at the print shop?",
+      "translation_vi": "Bạn có thể sao chép tài liệu này ở tiệm in không?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m19",
+        "errands",
+        "vocabulary"
+      ],
+      "target_value": "document",
+      "target_kind": "lexical_phrase",
+      "target_meaning_vi": "tài liệu",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "A",
+      "text_en": "The bank branch is closed, but the cash machine is working.",
+      "translation_vi": "Chi nhánh ngân hàng đã đóng nhưng máy rút tiền vẫn hoạt động.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m19",
+        "errands",
+        "vocabulary"
+      ],
+      "target_value": "cash machine",
+      "target_kind": "lexical_phrase",
+      "target_meaning_vi": "máy rút tiền",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "A",
+      "text_en": "I left the shoes at the repair shop to have the soles replaced.",
+      "translation_vi": "Tôi gửi giày ở tiệm sửa để thay đế.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m19",
+        "errands",
+        "vocabulary"
+      ],
+      "target_value": "soles",
+      "target_kind": "lexical_phrase",
+      "target_meaning_vi": "đế giày",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "A",
+      "text_en": "They offered a refund, but I asked for an exchange instead.",
+      "translation_vi": "Họ đề nghị hoàn tiền, nhưng tôi yêu cầu đổi hàng.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m19",
+        "errands",
+        "vocabulary"
+      ],
+      "target_value": "exchange",
+      "target_kind": "lexical_phrase",
+      "target_meaning_vi": "đổi hàng",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "A",
+      "text_en": "You can renew the card online rather than visiting the office.",
+      "translation_vi": "Bạn có thể gia hạn thẻ trực tuyến thay vì đến văn phòng.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m19",
+        "errands",
+        "vocabulary"
+      ],
+      "target_value": "renew",
+      "target_kind": "lexical_phrase",
+      "target_meaning_vi": "gia hạn",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "The dry cleaner said my jacket would be ready on Friday.",
+      "translation_vi": "Tiệm giặt khô nói áo khoác tôi sẽ xong vào thứ Sáu.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m19",
+        "errands",
+        "vocabulary"
+      ],
+      "target_value": "jacket",
+      "target_kind": "lexical_phrase",
+      "target_meaning_vi": "áo khoác",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "A",
+      "text_en": "I booked a haircut, not a colour treatment.",
+      "translation_vi": "Tôi đặt lịch cắt tóc, không phải nhuộm tóc.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m19",
+        "errands",
+        "vocabulary"
+      ],
+      "target_value": "haircut",
+      "target_kind": "lexical_phrase",
+      "target_meaning_vi": "cắt tóc",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T09",
+      "speaker_id": "A",
+      "text_en": "The receipt is in my email, so I don't need a paper copy.",
+      "translation_vi": "Hóa đơn nằm trong email nên tôi không cần bản giấy.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m19",
+        "errands",
+        "vocabulary"
+      ],
+      "target_value": "receipt",
+      "target_kind": "lexical_phrase",
+      "target_meaning_vi": "hóa đơn",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T10",
+      "speaker_id": "A",
+      "text_en": "The service desk is upstairs, beside the customer lounge.",
+      "translation_vi": "Quầy dịch vụ ở trên lầu, cạnh phòng chờ khách.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m19",
+        "errands",
+        "vocabulary"
+      ],
+      "target_value": "upstairs",
+      "target_kind": "lexical_phrase",
+      "target_meaning_vi": "tầng trên",
+      "bank_role": "training"
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "type": "dictation",
+      "prompt": "Nghe lượt T01 rồi chép đầy đủ câu tiếng Anh được nói.",
+      "correct_answers": [
+        "I need to collect a parcel from the post office before it closes."
+      ],
+      "evidence_turn_ids": [
+        "T01"
+      ],
+      "explanation_vi": "Nghe lại theo nhóm từ; câu gốc là: I need to collect a parcel from the post office before it closes. Nghĩa: Tôi cần lấy bưu kiện ở bưu điện trước khi đóng cửa.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "errands"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q02",
+      "type": "dictation",
+      "prompt": "Nghe lượt T02 rồi chép đầy đủ câu tiếng Anh được nói.",
+      "correct_answers": [
+        "Could you make a copy of this document at the print shop?"
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Nghe lại theo nhóm từ; câu gốc là: Could you make a copy of this document at the print shop? Nghĩa: Bạn có thể sao chép tài liệu này ở tiệm in không?",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "errands"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q03",
+      "type": "dictation",
+      "prompt": "Nghe lượt T03 rồi chép đầy đủ câu tiếng Anh được nói.",
+      "correct_answers": [
+        "The bank branch is closed, but the cash machine is working."
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Nghe lại theo nhóm từ; câu gốc là: The bank branch is closed, but the cash machine is working. Nghĩa: Chi nhánh ngân hàng đã đóng nhưng máy rút tiền vẫn hoạt động.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "errands"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q04",
+      "type": "dictation",
+      "prompt": "Nghe lượt T04 rồi chép đầy đủ câu tiếng Anh được nói.",
+      "correct_answers": [
+        "I left the shoes at the repair shop to have the soles replaced."
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Nghe lại theo nhóm từ; câu gốc là: I left the shoes at the repair shop to have the soles replaced. Nghĩa: Tôi gửi giày ở tiệm sửa để thay đế.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "errands"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q05",
+      "type": "dictation",
+      "prompt": "Nghe lượt T05 rồi chép đầy đủ câu tiếng Anh được nói.",
+      "correct_answers": [
+        "They offered a refund, but I asked for an exchange instead."
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Nghe lại theo nhóm từ; câu gốc là: They offered a refund, but I asked for an exchange instead. Nghĩa: Họ đề nghị hoàn tiền, nhưng tôi yêu cầu đổi hàng.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "errands"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q06",
+      "type": "dictation",
+      "prompt": "Nghe lượt T06 rồi chép đầy đủ câu tiếng Anh được nói.",
+      "correct_answers": [
+        "You can renew the card online rather than visiting the office."
+      ],
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "explanation_vi": "Nghe lại theo nhóm từ; câu gốc là: You can renew the card online rather than visiting the office. Nghĩa: Bạn có thể gia hạn thẻ trực tuyến thay vì đến văn phòng.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "errands"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q07",
+      "type": "dictation",
+      "prompt": "Nghe lượt T07 rồi chép đầy đủ câu tiếng Anh được nói.",
+      "correct_answers": [
+        "The dry cleaner said my jacket would be ready on Friday."
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "Nghe lại theo nhóm từ; câu gốc là: The dry cleaner said my jacket would be ready on Friday. Nghĩa: Tiệm giặt khô nói áo khoác tôi sẽ xong vào thứ Sáu.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "errands"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q08",
+      "type": "dictation",
+      "prompt": "Nghe lượt T08 rồi chép đầy đủ câu tiếng Anh được nói.",
+      "correct_answers": [
+        "I booked a haircut, not a colour treatment."
+      ],
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "explanation_vi": "Nghe lại theo nhóm từ; câu gốc là: I booked a haircut, not a colour treatment. Nghĩa: Tôi đặt lịch cắt tóc, không phải nhuộm tóc.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "errands"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q09",
+      "type": "dictation",
+      "prompt": "Nghe lượt T09 rồi chép đầy đủ câu tiếng Anh được nói.",
+      "correct_answers": [
+        "The receipt is in my email, so I don't need a paper copy."
+      ],
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "explanation_vi": "Nghe lại theo nhóm từ; câu gốc là: The receipt is in my email, so I don't need a paper copy. Nghĩa: Hóa đơn nằm trong email nên tôi không cần bản giấy.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "errands"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q10",
+      "type": "dictation",
+      "prompt": "Nghe lượt T10 rồi chép đầy đủ câu tiếng Anh được nói.",
+      "correct_answers": [
+        "The service desk is upstairs, beside the customer lounge."
+      ],
+      "evidence_turn_ids": [
+        "T10"
+      ],
+      "explanation_vi": "Nghe lại theo nhóm từ; câu gốc là: The service desk is upstairs, beside the customer lounge. Nghĩa: Quầy dịch vụ ở trên lầu, cạnh phòng chờ khách.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "errands"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q11",
+      "type": "short_answer",
+      "prompt": "Nghe lượt T06. Có thể thực hiện thao tác gì với thẻ? Trả lời bằng từ/cụm tiếng Anh đúng như lời nghe.",
+      "correct_answers": [
+        "renew"
+      ],
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "explanation_vi": "Thông tin đúng: renew (gia hạn). Dẫn chứng: You can renew the card online rather than visiting the office. Nghĩa: Bạn có thể gia hạn thẻ trực tuyến thay vì đến văn phòng.",
+      "scoring_policy": "lexical_case_punctuation_insensitive_server",
+      "target_kind": "lexical_phrase",
+      "question_tags": [
+        "short_answer",
+        "errands",
+        "training_comprehension"
+      ],
+      "max_replays_practice": 5,
+      "first_listen_only_for_mastery": false
+    },
+    {
+      "question_id": "Q12",
+      "type": "short_answer",
+      "prompt": "Nghe lượt T07. Món đồ nào được đưa đi giặt khô? Trả lời bằng từ/cụm tiếng Anh đúng như lời nghe.",
+      "correct_answers": [
+        "jacket"
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "Thông tin đúng: jacket (áo khoác). Dẫn chứng: The dry cleaner said my jacket would be ready on Friday. Nghĩa: Tiệm giặt khô nói áo khoác tôi sẽ xong vào thứ Sáu.",
+      "scoring_policy": "lexical_case_punctuation_insensitive_server",
+      "target_kind": "lexical_phrase",
+      "question_tags": [
+        "short_answer",
+        "errands",
+        "training_comprehension"
+      ],
+      "max_replays_practice": 5,
+      "first_listen_only_for_mastery": false
+    },
+    {
+      "question_id": "Q13",
+      "type": "short_answer",
+      "prompt": "Nghe lượt T08. Khách đặt dịch vụ nào? Trả lời bằng từ/cụm tiếng Anh đúng như lời nghe.",
+      "correct_answers": [
+        "haircut"
+      ],
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "explanation_vi": "Thông tin đúng: haircut (cắt tóc). Dẫn chứng: I booked a haircut, not a colour treatment. Nghĩa: Tôi đặt lịch cắt tóc, không phải nhuộm tóc.",
+      "scoring_policy": "lexical_case_punctuation_insensitive_server",
+      "target_kind": "lexical_phrase",
+      "question_tags": [
+        "short_answer",
+        "errands",
+        "training_comprehension"
+      ],
+      "max_replays_practice": 5,
+      "first_listen_only_for_mastery": false
+    },
+    {
+      "question_id": "Q14",
+      "type": "short_answer",
+      "prompt": "Nghe lượt T09. Tài liệu nào được gửi qua email? Trả lời bằng từ/cụm tiếng Anh đúng như lời nghe.",
+      "correct_answers": [
+        "receipt"
+      ],
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "explanation_vi": "Thông tin đúng: receipt (hóa đơn). Dẫn chứng: The receipt is in my email, so I don't need a paper copy. Nghĩa: Hóa đơn nằm trong email nên tôi không cần bản giấy.",
+      "scoring_policy": "lexical_case_punctuation_insensitive_server",
+      "target_kind": "lexical_phrase",
+      "question_tags": [
+        "short_answer",
+        "errands",
+        "training_comprehension"
+      ],
+      "max_replays_practice": 5,
+      "first_listen_only_for_mastery": false
+    },
+    {
+      "question_id": "Q15",
+      "type": "short_answer",
+      "prompt": "Nghe lượt T10. Quầy dịch vụ nằm ở đâu? Trả lời bằng từ/cụm tiếng Anh đúng như lời nghe.",
+      "correct_answers": [
+        "upstairs"
+      ],
+      "evidence_turn_ids": [
+        "T10"
+      ],
+      "explanation_vi": "Thông tin đúng: upstairs (tầng trên). Dẫn chứng: The service desk is upstairs, beside the customer lounge. Nghĩa: Quầy dịch vụ ở trên lầu, cạnh phòng chờ khách.",
+      "scoring_policy": "lexical_case_punctuation_insensitive_server",
+      "target_kind": "lexical_phrase",
+      "question_tags": [
+        "short_answer",
+        "errands",
+        "training_comprehension"
+      ],
+      "max_replays_practice": 5,
+      "first_listen_only_for_mastery": false
+    }
+  ],
+  "vocabulary": [
+    {
+      "term": "parcel",
+      "pos": "noun (contextual)",
+      "meaning_vi": "bưu kiện",
+      "example_en": "I need to collect a parcel from the post office before it closes.",
+      "example_vi": "Tôi cần lấy bưu kiện ở bưu điện trước khi đóng cửa.",
+      "is_illustrative_context": false
+    },
+    {
+      "term": "document",
+      "pos": "noun (contextual)",
+      "meaning_vi": "tài liệu",
+      "example_en": "Could you make a copy of this document at the print shop?",
+      "example_vi": "Bạn có thể sao chép tài liệu này ở tiệm in không?",
+      "is_illustrative_context": false
+    },
+    {
+      "term": "cash machine",
+      "pos": "noun phrase",
+      "meaning_vi": "máy rút tiền",
+      "example_en": "The bank branch is closed, but the cash machine is working.",
+      "example_vi": "Chi nhánh ngân hàng đã đóng nhưng máy rút tiền vẫn hoạt động.",
+      "is_illustrative_context": false
+    },
+    {
+      "term": "soles",
+      "pos": "noun (contextual)",
+      "meaning_vi": "đế giày",
+      "example_en": "I left the shoes at the repair shop to have the soles replaced.",
+      "example_vi": "Tôi gửi giày ở tiệm sửa để thay đế.",
+      "is_illustrative_context": false
+    },
+    {
+      "term": "exchange",
+      "pos": "noun (contextual)",
+      "meaning_vi": "đổi hàng",
+      "example_en": "They offered a refund, but I asked for an exchange instead.",
+      "example_vi": "Họ đề nghị hoàn tiền, nhưng tôi yêu cầu đổi hàng.",
+      "is_illustrative_context": false
+    },
+    {
+      "term": "renew",
+      "pos": "verb / adjective / adverb (contextual)",
+      "meaning_vi": "gia hạn",
+      "example_en": "You can renew the card online rather than visiting the office.",
+      "example_vi": "Bạn có thể gia hạn thẻ trực tuyến thay vì đến văn phòng.",
+      "is_illustrative_context": false
+    }
+  ],
+  "micro_skill_id": "errands",
+  "bank_role": "training",
+  "content_design": {
+    "sequence": "10_varied_contexts",
+    "first_listen": "1x",
+    "guided_replay_max": 5,
+    "mastery_requires_unseen": true,
+    "learning_note_vi": "Hiểu các dịch vụ thiết thực: bưu điện, tiệm sửa, gia hạn, hoàn trả.",
+    "category": "vocabulary",
+    "post_submit_review_only": true,
+    "unseen_assessment_id": "FND2-075-HOLDOUT",
+    "spoken_text_must_match_target": true,
+    "holdout_must_be_server_side": true,
+    "no_band_claim": true
+  },
+  "audio": {
+    "status": "not_generated",
+    "url": null,
+    "duration_ms": null,
+    "provider": null,
+    "model": null,
+    "voice_config": null,
+    "format": null,
+    "audio_sha256": null,
+    "source_transcript_hash": "eb3db5e11c99f8db70d9b2a9f066c6f6ed32445fd8678cb8c2c4d69045c108b9",
+    "generation_notes": "Synthesize actual spoken utterance only; never read learning metadata. Human verify dates, names and connected-speech target."
+  },
+  "qa": {
+    "content_reviewed": false,
+    "answers_verified": false,
+    "audio_verified": false,
+    "human_signed_off": false,
+    "duplicate_reviewed": false,
+    "notes": [
+      "M19 originally authored DRAFT, machine-verified only.",
+      "Connected-speech phonetic features NOT established until actual audio is reviewed."
+    ]
+  },
+  "provenance": {
+    "content_origin": "original_ai_assisted",
+    "rights_status": "pending_tts_audio_terms_review",
+    "source_urls": [],
+    "reviewer": null
+  },
+  "release_metadata": {
+    "published_at": null,
+    "version": 1
+  },
+  "lesson_theory_vi": {
+    "core_rule": "Hiểu các dịch vụ thiết thực: bưu điện, tiệm sửa, gia hạn, hoàn trả.",
+    "worked_contrasts": [
+      {
+        "spoken_example": "The shop was out of tea, so I bought coffee instead.",
+        "written_value": "coffee",
+        "teacher_note_vi": "So/instead báo lựa chọn thay thế; tea chỉ là thông tin cũ."
+      },
+      {
+        "spoken_example": "The receipt is in the bag, beside the charger.",
+        "written_value": "receipt",
+        "teacher_note_vi": "Dựa câu hỏi để chọn đúng đồ vật, không chọn mọi từ vựng nghe thấy."
+      }
+    ],
+    "learning_steps": [
+      "Đọc nghĩa và ví dụ mới, chú ý từ loại, ngữ cảnh dùng từ.",
+      "Nghe mỗi câu một lần để dự đoán từ đích, sau đó chép cả câu.",
+      "Làm năm câu kiểm tra thông tin có ngữ cảnh mà không xem đáp án.",
+      "Cuối bài thử hai câu chưa gặp; nếu sai, quay về kỹ năng nhỏ tương ứng."
+    ],
+    "common_mistakes": [
+      "Chọn refund thay cho exchange khi người nói từ chối hoàn tiền.",
+      "Chỉ nhìn từ khóa quen mà không nghe phần phủ định hoặc cách người nói sửa lại."
+    ],
+    "before_audio_question": "Từ/cụm nào phù hợp với câu hỏi, và từ bị phủ định có phải đáp án không?",
+    "difficulty_steps": [
+      "T01–T03: ngữ cảnh ngắn, thông tin chính rõ ràng.",
+      "T04–T07: thêm thông tin phụ, dạng phủ định hoặc tương phản.",
+      "T08–T10: nội dung dài hơn, nhiều chi tiết hoặc đổi ý."
+    ],
+    "examples_are_not_mastery_items": true,
+    "audio_review_warning_vi": null
+  }
+}

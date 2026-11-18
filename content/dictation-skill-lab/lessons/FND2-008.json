@@ -1,0 +1,675 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "FND2-008",
+  "status": "draft",
+  "level": "L1",
+  "section": 0,
+  "topic": "Foundation M17 – Sound Accuracy",
+  "title": "British /ɔː/ versus /əʊ/",
+  "learning_objectives_vi": [
+    "Nghe phân biệt british /ɔː/ versus /əʊ/.",
+    "Luyện /ɔː/ và /əʊ/ bằng các cặp gần âm trong giọng Anh",
+    "Chép được câu chưa nhìn transcript; đối chiếu từ trọng tâm sau khi nộp."
+  ],
+  "content_format": "micro_drill",
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Foundation narrator",
+      "tts_voice_id": null,
+      "accent_requested": "british"
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "The new law takes effect next month.",
+      "translation_vi": "Luật mới có hiệu lực vào tháng tới.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "minimal_pair",
+        "aw_vs_oh"
+      ],
+      "target_word": "law",
+      "focus_pair_id": "PAIR-01",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "A",
+      "text_en": "The ceiling is unusually low.",
+      "translation_vi": "Trần nhà thấp một cách bất thường.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "minimal_pair",
+        "aw_vs_oh"
+      ],
+      "target_word": "low",
+      "focus_pair_id": "PAIR-01",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "A",
+      "text_en": "She bought a second-hand bicycle.",
+      "translation_vi": "Cô ấy đã mua một chiếc xe đạp cũ.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "minimal_pair",
+        "aw_vs_oh"
+      ],
+      "target_word": "bought",
+      "focus_pair_id": "PAIR-02",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "A",
+      "text_en": "She rented a small boat for the afternoon.",
+      "translation_vi": "Cô ấy thuê một chiếc thuyền nhỏ vào buổi chiều.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "minimal_pair",
+        "aw_vs_oh"
+      ],
+      "target_word": "boat",
+      "focus_pair_id": "PAIR-02",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "A",
+      "text_en": "I caught the early bus to town.",
+      "translation_vi": "Tôi đã bắt chuyến xe buýt sớm vào thị trấn.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "minimal_pair",
+        "aw_vs_oh"
+      ],
+      "target_word": "caught",
+      "focus_pair_id": "PAIR-03",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "A",
+      "text_en": "I left my coat on the bus.",
+      "translation_vi": "Tôi để quên áo khoác trên xe buýt.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "minimal_pair",
+        "aw_vs_oh"
+      ],
+      "target_word": "coat",
+      "focus_pair_id": "PAIR-03",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "Be careful not to fall on the steps.",
+      "translation_vi": "Cẩn thận đừng ngã trên bậc thang.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "minimal_pair",
+        "aw_vs_oh"
+      ],
+      "target_word": "fall",
+      "focus_pair_id": "PAIR-04",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "A",
+      "text_en": "The foal stayed close to its mother.",
+      "translation_vi": "Chú ngựa con ở sát mẹ nó.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "minimal_pair",
+        "aw_vs_oh"
+      ],
+      "target_word": "foal",
+      "focus_pair_id": "PAIR-04",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T09",
+      "speaker_id": "A",
+      "text_en": "The meeting is in the main hall.",
+      "translation_vi": "Cuộc họp diễn ra ở hội trường chính.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "minimal_pair",
+        "aw_vs_oh"
+      ],
+      "target_word": "hall",
+      "focus_pair_id": "PAIR-05",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T10",
+      "speaker_id": "A",
+      "text_en": "There is a small hole in the fence.",
+      "translation_vi": "Có một lỗ nhỏ trên hàng rào.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "minimal_pair",
+        "aw_vs_oh"
+      ],
+      "target_word": "hole",
+      "focus_pair_id": "PAIR-05",
+      "bank_role": "training"
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "type": "dictation",
+      "prompt": "Nghe lượt T01 một lần rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "The new law takes effect next month."
+      ],
+      "evidence_turn_ids": [
+        "T01"
+      ],
+      "explanation_vi": "Tập trung nghe law / low (Luyện /ɔː/ và /əʊ/ bằng các cặp gần âm trong giọng Anh). Nghĩa: Luật mới có hiệu lực vào tháng tới.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text",
+        "law / low (Luyện /ɔː/ và /əʊ/ bằng các cặp gần âm trong giọng Anh)"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q02",
+      "type": "dictation",
+      "prompt": "Nghe lượt T02 một lần rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "The ceiling is unusually low."
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Tập trung nghe law / low (Luyện /ɔː/ và /əʊ/ bằng các cặp gần âm trong giọng Anh). Nghĩa: Trần nhà thấp một cách bất thường.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text",
+        "law / low (Luyện /ɔː/ và /əʊ/ bằng các cặp gần âm trong giọng Anh)"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q03",
+      "type": "dictation",
+      "prompt": "Nghe lượt T03 một lần rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "She bought a second-hand bicycle."
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Tập trung nghe bought / boat (Luyện /ɔː/ và /əʊ/ bằng các cặp gần âm trong giọng Anh). Nghĩa: Cô ấy đã mua một chiếc xe đạp cũ.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text",
+        "bought / boat (Luyện /ɔː/ và /əʊ/ bằng các cặp gần âm trong giọng Anh)"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q04",
+      "type": "dictation",
+      "prompt": "Nghe lượt T04 một lần rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "She rented a small boat for the afternoon."
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Tập trung nghe bought / boat (Luyện /ɔː/ và /əʊ/ bằng các cặp gần âm trong giọng Anh). Nghĩa: Cô ấy thuê một chiếc thuyền nhỏ vào buổi chiều.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text",
+        "bought / boat (Luyện /ɔː/ và /əʊ/ bằng các cặp gần âm trong giọng Anh)"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q05",
+      "type": "dictation",
+      "prompt": "Nghe lượt T05 một lần rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "I caught the early bus to town."
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Tập trung nghe caught / coat (Luyện /ɔː/ và /əʊ/ bằng các cặp gần âm trong giọng Anh). Nghĩa: Tôi đã bắt chuyến xe buýt sớm vào thị trấn.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text",
+        "caught / coat (Luyện /ɔː/ và /əʊ/ bằng các cặp gần âm trong giọng Anh)"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q06",
+      "type": "dictation",
+      "prompt": "Nghe lượt T06 một lần rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "I left my coat on the bus."
+      ],
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "explanation_vi": "Tập trung nghe caught / coat (Luyện /ɔː/ và /əʊ/ bằng các cặp gần âm trong giọng Anh). Nghĩa: Tôi để quên áo khoác trên xe buýt.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text",
+        "caught / coat (Luyện /ɔː/ và /əʊ/ bằng các cặp gần âm trong giọng Anh)"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q07",
+      "type": "dictation",
+      "prompt": "Nghe lượt T07 một lần rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "Be careful not to fall on the steps."
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "Tập trung nghe fall / foal (Luyện /ɔː/ và /əʊ/ bằng các cặp gần âm trong giọng Anh). Nghĩa: Cẩn thận đừng ngã trên bậc thang.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text",
+        "fall / foal (Luyện /ɔː/ và /əʊ/ bằng các cặp gần âm trong giọng Anh)"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q08",
+      "type": "dictation",
+      "prompt": "Nghe lượt T08 một lần rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "The foal stayed close to its mother."
+      ],
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "explanation_vi": "Tập trung nghe fall / foal (Luyện /ɔː/ và /əʊ/ bằng các cặp gần âm trong giọng Anh). Nghĩa: Chú ngựa con ở sát mẹ nó.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text",
+        "fall / foal (Luyện /ɔː/ và /əʊ/ bằng các cặp gần âm trong giọng Anh)"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q09",
+      "type": "dictation",
+      "prompt": "Nghe lượt T09 một lần rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "The meeting is in the main hall."
+      ],
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "explanation_vi": "Tập trung nghe hall / hole (Luyện /ɔː/ và /əʊ/ bằng các cặp gần âm trong giọng Anh). Nghĩa: Cuộc họp diễn ra ở hội trường chính.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text",
+        "hall / hole (Luyện /ɔː/ và /əʊ/ bằng các cặp gần âm trong giọng Anh)"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q10",
+      "type": "dictation",
+      "prompt": "Nghe lượt T10 một lần rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "There is a small hole in the fence."
+      ],
+      "evidence_turn_ids": [
+        "T10"
+      ],
+      "explanation_vi": "Tập trung nghe hall / hole (Luyện /ɔː/ và /əʊ/ bằng các cặp gần âm trong giọng Anh). Nghĩa: Có một lỗ nhỏ trên hàng rào.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text",
+        "hall / hole (Luyện /ɔː/ và /əʊ/ bằng các cặp gần âm trong giọng Anh)"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q11",
+      "type": "word_choice",
+      "prompt": "Nghe lượt T01. Từ nào được nói?",
+      "correct_answers": [
+        "law"
+      ],
+      "options": [
+        "law",
+        "low"
+      ],
+      "evidence_turn_ids": [
+        "T01"
+      ],
+      "explanation_vi": "Phân biệt law và low. Luyện /ɔː/ và /əʊ/ bằng các cặp gần âm trong giọng Anh. Hãy nghe âm thực tế; không chỉ dựa vào nghĩa của cả câu.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "comprehension",
+        "sound_discrimination",
+        "aw_vs_oh"
+      ],
+      "max_replays_practice": 3
+    },
+    {
+      "question_id": "Q12",
+      "type": "word_choice",
+      "prompt": "Nghe lượt T04. Từ nào được nói?",
+      "correct_answers": [
+        "boat"
+      ],
+      "options": [
+        "boat",
+        "bought"
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Phân biệt bought và boat. Luyện /ɔː/ và /əʊ/ bằng các cặp gần âm trong giọng Anh. Hãy nghe âm thực tế; không chỉ dựa vào nghĩa của cả câu.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "comprehension",
+        "sound_discrimination",
+        "aw_vs_oh"
+      ],
+      "max_replays_practice": 3
+    },
+    {
+      "question_id": "Q13",
+      "type": "word_choice",
+      "prompt": "Nghe lượt T05. Từ nào được nói?",
+      "correct_answers": [
+        "caught"
+      ],
+      "options": [
+        "caught",
+        "coat"
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Phân biệt caught và coat. Luyện /ɔː/ và /əʊ/ bằng các cặp gần âm trong giọng Anh. Hãy nghe âm thực tế; không chỉ dựa vào nghĩa của cả câu.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "comprehension",
+        "sound_discrimination",
+        "aw_vs_oh"
+      ],
+      "max_replays_practice": 3
+    },
+    {
+      "question_id": "Q14",
+      "type": "word_choice",
+      "prompt": "Nghe lượt T08. Từ nào được nói?",
+      "correct_answers": [
+        "foal"
+      ],
+      "options": [
+        "foal",
+        "fall"
+      ],
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "explanation_vi": "Phân biệt fall và foal. Luyện /ɔː/ và /əʊ/ bằng các cặp gần âm trong giọng Anh. Hãy nghe âm thực tế; không chỉ dựa vào nghĩa của cả câu.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "comprehension",
+        "sound_discrimination",
+        "aw_vs_oh"
+      ],
+      "max_replays_practice": 3
+    },
+    {
+      "question_id": "Q15",
+      "type": "word_choice",
+      "prompt": "Nghe lượt T09. Từ nào được nói?",
+      "correct_answers": [
+        "hall"
+      ],
+      "options": [
+        "hall",
+        "hole"
+      ],
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "explanation_vi": "Phân biệt hall và hole. Luyện /ɔː/ và /əʊ/ bằng các cặp gần âm trong giọng Anh. Hãy nghe âm thực tế; không chỉ dựa vào nghĩa của cả câu.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "comprehension",
+        "sound_discrimination",
+        "aw_vs_oh"
+      ],
+      "max_replays_practice": 3
+    }
+  ],
+  "vocabulary": [
+    {
+      "term": "law",
+      "pos": "target",
+      "meaning_vi": "luật",
+      "example_en": "The new law takes effect next month.",
+      "example_vi": "Luật mới có hiệu lực vào tháng tới.",
+      "source_turn_id": "T01",
+      "phoneme_focus": "aw_vs_oh"
+    },
+    {
+      "term": "low",
+      "pos": "target",
+      "meaning_vi": "thấp",
+      "example_en": "The ceiling is unusually low.",
+      "example_vi": "Trần nhà thấp một cách bất thường.",
+      "source_turn_id": "T02",
+      "phoneme_focus": "aw_vs_oh"
+    },
+    {
+      "term": "bought",
+      "pos": "target",
+      "meaning_vi": "đã mua",
+      "example_en": "She bought a second-hand bicycle.",
+      "example_vi": "Cô ấy đã mua một chiếc xe đạp cũ.",
+      "source_turn_id": "T03",
+      "phoneme_focus": "aw_vs_oh"
+    },
+    {
+      "term": "boat",
+      "pos": "target",
+      "meaning_vi": "thuyền",
+      "example_en": "She rented a small boat for the afternoon.",
+      "example_vi": "Cô ấy thuê một chiếc thuyền nhỏ vào buổi chiều.",
+      "source_turn_id": "T04",
+      "phoneme_focus": "aw_vs_oh"
+    },
+    {
+      "term": "caught",
+      "pos": "target",
+      "meaning_vi": "đã bắt/kịp",
+      "example_en": "I caught the early bus to town.",
+      "example_vi": "Tôi đã bắt chuyến xe buýt sớm vào thị trấn.",
+      "source_turn_id": "T05",
+      "phoneme_focus": "aw_vs_oh"
+    },
+    {
+      "term": "coat",
+      "pos": "target",
+      "meaning_vi": "áo khoác",
+      "example_en": "I left my coat on the bus.",
+      "example_vi": "Tôi để quên áo khoác trên xe buýt.",
+      "source_turn_id": "T06",
+      "phoneme_focus": "aw_vs_oh"
+    },
+    {
+      "term": "fall",
+      "pos": "target",
+      "meaning_vi": "ngã",
+      "example_en": "Be careful not to fall on the steps.",
+      "example_vi": "Cẩn thận đừng ngã trên bậc thang.",
+      "source_turn_id": "T07",
+      "phoneme_focus": "aw_vs_oh"
+    },
+    {
+      "term": "foal",
+      "pos": "target",
+      "meaning_vi": "ngựa con",
+      "example_en": "The foal stayed close to its mother.",
+      "example_vi": "Chú ngựa con ở sát mẹ nó.",
+      "source_turn_id": "T08",
+      "phoneme_focus": "aw_vs_oh"
+    },
+    {
+      "term": "hall",
+      "pos": "target",
+      "meaning_vi": "hội trường",
+      "example_en": "The meeting is in the main hall.",
+      "example_vi": "Cuộc họp diễn ra ở hội trường chính.",
+      "source_turn_id": "T09",
+      "phoneme_focus": "aw_vs_oh"
+    },
+    {
+      "term": "hole",
+      "pos": "target",
+      "meaning_vi": "lỗ",
+      "example_en": "There is a small hole in the fence.",
+      "example_vi": "Có một lỗ nhỏ trên hàng rào.",
+      "source_turn_id": "T10",
+      "phoneme_focus": "aw_vs_oh"
+    }
+  ],
+  "micro_skill_id": "aw_vs_oh",
+  "bank_role": "training",
+  "content_design": {
+    "sequence": "five_contrast_pairs",
+    "pairs": [
+      [
+        "law",
+        "low"
+      ],
+      [
+        "bought",
+        "boat"
+      ],
+      [
+        "caught",
+        "coat"
+      ],
+      [
+        "fall",
+        "foal"
+      ],
+      [
+        "hall",
+        "hole"
+      ]
+    ],
+    "first_listen": "1x",
+    "guided_replay_max": 5,
+    "mastery_requires_unseen": true,
+    "note_vi": "Luyện /ɔː/ và /əʊ/ bằng các cặp gần âm trong giọng Anh"
+  },
+  "audio": {
+    "status": "not_generated",
+    "url": null,
+    "duration_ms": null,
+    "provider": null,
+    "model": null,
+    "voice_config": null,
+    "format": null,
+    "audio_sha256": null,
+    "source_transcript_hash": "7f2a87908354c9ebc28958ef839260ff709c2f5dc0f5e7c21f2e588c4ef7ce7f",
+    "generation_notes": "Generate each turn as speech only; no spoken question numbers, answers or coaching. Validate text and pronunciation before release."
+  },
+  "qa": {
+    "content_reviewed": false,
+    "answers_verified": true,
+    "audio_verified": false,
+    "human_signed_off": false,
+    "duplicate_reviewed": false,
+    "notes": [
+      "Original draft, automated evidence matching passed; pedagogical expert review still required.",
+      "Audio and timestamp not created; protected holdouts are separate server-only payloads."
+    ]
+  },
+  "provenance": {
+    "content_origin": "original_ai_assisted",
+    "rights_status": "pending_tts_terms_review",
+    "source_urls": [],
+    "reviewer": null,
+    "originality_check": "Exact comparisons against prior 300 drafts pending final QA."
+  },
+  "release_metadata": {
+    "published_at": null,
+    "version": 1
+  },
+  "lesson_theory_vi": {
+    "core_rule": "Trong giọng Anh, /ɔː/ như law/hall có chất âm khác /əʊ/ như low/hole.",
+    "worked_contrasts": [
+      {
+        "contrast": "law / low",
+        "meaning_vi": "luật / thấp",
+        "teacher_note_vi": "Trong giọng Anh, /ɔː/ như law/hall có chất âm khác /əʊ/ như low/hole."
+      },
+      {
+        "contrast": "bought / boat",
+        "meaning_vi": "đã mua / thuyền",
+        "teacher_note_vi": "Trong giọng Anh, /ɔː/ như law/hall có chất âm khác /əʊ/ như low/hole."
+      }
+    ],
+    "learning_steps": [
+      "Nghe giáo viên/TTS đọc cặp từ ở tốc độ tự nhiên và nhận diện từ thứ nhất.",
+      "Làm lượt T01–T04 với nút nghe lại theo nhu cầu; nộp xong mới xem transcript và nghĩa.",
+      "Làm T05–T10 độc lập hơn và hạn chế nghe lại.",
+      "Nếu đạt yêu cầu luyện tập, hệ thống phát 2 câu chưa từng nghe từ ngân hàng riêng để kiểm tra chuyển giao."
+    ],
+    "common_mistakes": [
+      "Dùng kiến thức mặt chữ để đoán thay vì phân biệt nguyên âm thực tế.",
+      "Đúng sau năm lần nghe lại không đồng nghĩa với nghe đúng ngay lần đầu."
+    ],
+    "before_audio_question": "Bạn có thể phân biệt hai từ qua âm đầu/nguyên âm/âm cuối mà không nhìn chữ không?"
+  }
+}

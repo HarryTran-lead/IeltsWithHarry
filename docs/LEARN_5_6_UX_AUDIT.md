@@ -2,6 +2,48 @@
 
 Ngày 03/11/2026. Góc nhìn: người thiết kế giao diện và người tự học IELTS ở mức 5.0–6.0.
 
+## Lượt rà soát 3: học trọn Unit 1 (04/11/2026)
+
+Đọc toàn bộ 16 bài, 186 câu, 3 bài đọc, 4 audio/transcript, 2 bộ số liệu; đối chiếu từng đáp án với bài đọc/transcript. Trên giao diện: làm câu ở cả 4 kỹ năng, nghe audio (132 giây, tải được), viết đủ/thiếu 150 từ, bấm giờ và xem bài mẫu bài Nói, nhảy tới bằng chứng; desktop và 375px.
+
+**Đáp án đúng về nội dung:** không thấy câu nào có đáp án sai nghĩa. Lời giải bài Đọc/Nghe trích đúng câu bằng chứng, có cảnh báo bẫy (giá cũ £500, giờ cũ 10:00, hạn cũ Monday). Đây là phần mạnh nhất của unit.
+
+| Vấn đề | Bằng chứng | Tác động | Đã sửa |
+| --- | --- | --- | --- |
+| Chấm sai câu trả lời đúng | “ten fifteen” cho 10:15, “five”, “345.000”, “2,4”, “don't use”, “from, to” (khóa lưu “from;to”) đều bị chấm sai; lời giải ghi “chấp nhận ID” nhưng khóa không có ID | Người học làm đúng mà bị báo sai, mất niềm tin. Ảnh hưởng 65 câu đáp án số trên toàn khóa | Quy tắc chấm đọc số bằng chữ, dấu phân cách kiểu Việt, dạng rút gọn, nhiều chỗ trống; thêm từ đồng nghĩa cho câu điền xu hướng (gradually/steadily, fall/decline, rose/increased, minor/slight), ID, areas |
+| Câu từ vựng 13–20 đoán được | 8 câu dùng chung 3 phương án nhiễu “public consultation / pedestrian corridor / urban regeneration” | Chọn phương án “lạ” là đúng, không cần biết từ | Phương án nhiễu mới, gần nghĩa, cùng chủ đề |
+| Đề và khóa lệch nhau | “Write insulation and ONE OTHER WORD” nhưng đáp án “window design”; khóa “5 pm” cho chiều dài mét | Người học làm theo đề sẽ sai | Sửa đề và khóa |
+| Bằng chứng trỏ sai | Câu “association, not proof of cause” trỏ bài C, cụm này ở bài A (bài trước); câu bài B/C chỉ nhảy lên đầu bài | Bấm “Xem tư liệu” không thấy câu cần tìm | Bỏ liên kết sai, ghi rõ nguồn; nhảy tới đúng đoạn theo “Đoạn X” trong lời giải |
+| Bài Nói không có âm thanh | Không nghe được câu mẫu hay từ cần nhận trọng âm | Người 5.0 không biết câu mẫu đọc thế nào | Nút “Nghe câu mẫu” và “Nghe từ …” bằng giọng máy |
+| Đồng hồ bài Nói | Mọi câu cho nói 120 giây | Part 1 trả lời 2 phút là sai dạng thi | Part 1 khoảng 30 giây, Part 3 khoảng 60 giây, Part 2 chuẩn bị 60 giây/nói 120 giây |
+| Mã nội bộ trên màn hình | “Write … for W-HOUSING-01”, “Bài nghe · U01_Listening_2” | Khó hiểu | Hiện tên biểu đồ, “Bài nghe 1/2” |
+| Bài Nghe trên điện thoại | Khung audio thu gọn mặc định | Phải bấm mở mới thấy nút phát | Bài chỉ có audio mở sẵn khung |
+| Ôn bài ngữ pháp | Câu tự kiểm tra hỏi “có tìm được câu bằng chứng” ở bài chia thì | Không khớp bài | Hỏi về dấu hiệu thời gian/động từ trạng thái |
+
+**Đánh giá giáo viên (chưa sửa, cần quyết định):**
+- Tải lượng: Unit 1 ước tính 780 phút (13 giờ). Bài 1 có 36 câu trong 35 phút, và 20/36 câu là nhận diện nghĩa từ cùng một mẫu. Thời lượng ghi trên bài cao hơn nhiều so với thời gian làm thực tế (ví dụ bài 9: 4 câu nhưng ghi 45 phút), dễ làm người học nản ngay từ đầu.
+- Thứ tự học: 4 Đọc → 4 Viết → 4 Nghe → 4 Nói. Người 5.0 học liền 3 bài đọc dài (700 + 455 + 418 từ) trước khi được nghe. Bài ngữ pháp (hiện tại đơn/tiếp diễn) xếp ở vị trí Đọc 4, sau các bài đọc; nên học trước bài Viết 6 (trend language) và có thể chuyển lên sớm hơn.
+- Từ vựng: 28 từ ở bài 1, nhưng bài 2–3 (bài đọc chứa các từ này) không ôn lại. Bài Nói chỉ có 6 cụm từ.
+- Viết/Nói vẫn tự chấm 1–4. Phần này hữu ích để tự rà, nhưng chưa cho biết người học đang ở band nào.
+
+## Lượt rà soát 2 (04/11/2026)
+
+Đi lại bằng bản demo (Book 2 là dữ liệu tĩnh nên demo giờ mở được khóa thật, tiến độ lưu trên trình duyệt). Desktop 1440px và điện thoại 375px.
+
+**Đã đi qua:** Learn tổng quan; trang chặng 5.0–6.0 (bộ lọc, unit mở/đóng, trạng thái chưa học/đang dở/cần ôn); bài Đọc chỉ có từ vựng (U01 R1) và bài Đọc có văn bản (U01 R2); bài Viết có bản đồ/bảng (U04 W1); dữ liệu bài Nghe (U01 L2, U07 L9) và Nói (U01 S1); câu trắc nghiệm đúng/sai và làm lại; câu điền từ; bước Ôn lại; khung tư liệu trên điện thoại; quay lại bài đang dở. Chưa xem: tài khoản thật đồng bộ nhiều thiết bị, ghi âm bằng micro, trạng thái lỗi mạng thật.
+
+| Màn hình | Tái hiện | Tác động tới việc học | Nguyên nhân | Ưu tiên | Đã sửa |
+| --- | --- | --- | --- | --- | --- |
+| Câu trắc nghiệm | Đếm vị trí đáp án đúng trong 479 câu | 384 câu (81%) đúng ở A hoặc B: đoán được mà không cần hiểu | Thứ tự phương án của nguồn | P0 | Xáo ổn định theo mã câu; giữ nguyên TRUE/FALSE/NOT GIVEN, chữ cái, số, danh sách heading, “Either” ở cuối |
+| Phản hồi sau khi chấm | Chọn sai rồi bấm Kiểm tra | Phương án sai vẫn viền xanh như đúng; đáp án đúng không được đánh dấu; vẫn đổi được lựa chọn | CSS chỉ có trạng thái “đang chọn” | P0 | Đáp án đúng xanh ✓, lựa chọn sai cam ✗, khóa câu tới khi bấm “Làm lại câu này”; ghi rõ “Bạn trả lời · Đáp án” |
+| Câu điền từ | Gõ “Hotel & cafe.” cho đáp án “hotel and café” | Trả lời đúng bị chấm sai, người học mất niềm tin vào phản hồi | So khớp chỉ bỏ hoa/thường | P1 | Bỏ qua dấu, nháy cong, ký hiệu tiền, “per cent”, mạo từ đầu; Enter để kiểm tra |
+| Khung tư liệu trên điện thoại | Mở bài Đọc ở 375px | Khung ghim chiếm 292/812px, câu hỏi bị che | Dock luôn mở | P1 | Mặc định thu gọn thành một thanh 49px; “Xem tư liệu liên quan” tự mở và tô sáng |
+| Unit 7 | Mở nhóm bài U07 | 16 nhóm hiện mã “B2-U07-L-E03”, không hướng dẫn; 32 lời giải tiếng Anh nhắc “the page says” mà người học không có trang | Dữ liệu nguồn | P1 | `scripts/enrich-book2-u07-feedback.py` thêm tên, hướng dẫn và lời giải tiếng Việt; verify chặn tái phát |
+| Learn tổng quan | Mở /app/learn | Tiến độ đếm “bài đã mở”, khác với “bài đã luyện” ở trang chặng; khóa đang mở nằm dưới đường 7 chặng | Hai thước đo khác nhau | P2 | Đếm bài đã luyện, ghi rõ chặng đang học, đưa khóa đang mở lên trước |
+| Trang chặng | Mở /app/learn/ielts-builder | Hai nút chính và hai bộ đếm cạnh nhau | Header cũ còn lại | P2 | Một nút duy nhất; nút đổi nhãn “Sửa câu chưa đạt” khi bài cần ôn |
+
+**Còn lại:** thứ tự trong unit theo sách nguồn (4 Đọc → 4 Viết → 4 Nghe → 4 Nói), nên “Học tiếp” đi hết một kỹ năng mới sang kỹ năng khác. Nên xen kẽ kỹ năng, nhưng việc này cần quyết định về sư phạm. Nhiều lời giải ở Unit 7 vẫn chỉ nhắc lại đáp án (“Đáp án là …”). Bài Viết/Nói vẫn tự chấm. Bài đầu tiên của khóa vẫn có 36 câu (35 phút).
+
 ## Cập nhật sau lượt sửa
 
 Các bảng quan sát bên dưới ghi nhận trạng thái **trước khi sửa**. Lượt triển khai tiếp theo đã đặt tư liệu cạnh câu hỏi, bổ sung bốn audio/transcript Unit 7, sửa bốn câu Speaking lỗi schema, chia bài thành nhóm tối đa sáu câu, lưu câu trả lời và vị trí học vào tài khoản, thêm danh sách câu cần ôn, tự đánh giá có chủ đích cho Viết/Nói, lọc CTA theo kỹ năng, làm rõ số bài của khóa chính và Việt hóa các nút ở Learn. Unit 7 đã có mục tiêu, lý thuyết, chiến lược và nhóm từ vựng ngắn.

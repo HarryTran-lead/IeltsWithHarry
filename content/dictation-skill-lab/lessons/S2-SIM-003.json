@@ -1,0 +1,721 @@
+{
+  "schema_version": "1.2.0",
+  "lesson_id": "S2-SIM-003",
+  "status": "draft",
+  "level": "L5",
+  "section": 2,
+  "topic": "Museum orientation and gallery plan",
+  "title": "Old Quay Maritime Museum: Site Tour",
+  "content_format": "section_exam_simulation",
+  "exam_part": "IELTS_LISTENING_PART_2_STYLE",
+  "official_ielts_material": false,
+  "learning_objectives_vi": [
+    "Nghe một bài thuyết minh liền mạch trong tình huống xã hội đời sống.",
+    "Đọc nhóm câu hỏi trước khi nghe và định vị thông tin theo trình tự.",
+    "Hiểu paraphrase, thông tin gây nhiễu và giới hạn từ mà không được nghe lại."
+  ],
+  "target_skills": [
+    "map_navigation",
+    "museum_facilities"
+  ],
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Local service or visitor information presenter",
+      "accent_requested": "new_zealand",
+      "tts_voice_id": null
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "Hello and welcome to the Old Quay Maritime Museum. My name is Anika, and I coordinate the weekend tours. This building used to be a warehouse, so the routes can look confusing at first. Your plan shows the entrance along the south wall and the museum information point near the middle.",
+      "translation_vi": "Xin chào, tôi là Anika, điều phối tour Bảo tàng Hàng hải Old Quay. Tòa nhà từng là kho hàng nên sơ đồ hơi khó; cổng phía nam, bàn thông tin gần giữa.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_2",
+        "m26",
+        "introduction",
+        "map_navigation",
+        "museum_facilities"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "A",
+      "text_en": "If you would like to see traditional navigation tools, the compass gallery is tucked into the north-west corner. Head past the information point and take the left-hand passage almost to its end.",
+      "translation_vi": "Phòng la bàn ở góc tây bắc, đi qua bàn thông tin rồi theo hành lang bên trái đến gần cuối.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_2",
+        "m26",
+        "evidence",
+        "map_navigation",
+        "museum_facilities"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "A",
+      "text_en": "The shipbuilders’ workshop is straight ahead after you enter, in the southern part of the central corridor before the information point. You may hear hammering there, but the vessels themselves are displayed upstairs.",
+      "translation_vi": "Xưởng đóng tàu nằm ngay phía trước khi vào, ở phần nam hành lang giữa trước bàn thông tin. Có thể nghe tiếng búa, còn tàu trưng bày ở tầng trên.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_2",
+        "m26",
+        "evidence",
+        "map_navigation",
+        "museum_facilities"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "A",
+      "text_en": "For the lighthouse exhibit, go straight towards the north end of the central corridor. It sits at the end of that corridor rather than in the larger eastern gallery.",
+      "translation_vi": "Triển lãm hải đăng nằm cuối hành lang giữa về phía bắc, không ở phòng lớn phía đông.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_2",
+        "m26",
+        "evidence",
+        "map_navigation",
+        "museum_facilities"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "A",
+      "text_en": "Our maritime reading room is immediately west of the information point. Researchers should check in there before consulting any of the fragile original logbooks.",
+      "translation_vi": "Phòng đọc hàng hải nằm ngay phía tây bàn thông tin; người nghiên cứu phải đăng ký trước khi xem nhật ký tàu gốc.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_2",
+        "m26",
+        "evidence",
+        "map_navigation",
+        "museum_facilities"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "A",
+      "text_en": "The rescued-objects display is in the north-east corner beyond the staircase, and it contains objects recovered from shallow wrecks. The room beside the entrance is only the volunteer office.",
+      "translation_vi": "Phòng đồ vật cứu hộ ở góc đông bắc, qua cầu thang, có vật được vớt từ xác tàu; phòng gần cửa là văn phòng tình nguyện.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_2",
+        "m26",
+        "evidence",
+        "map_navigation",
+        "museum_facilities"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "You may notice that some exhibition labels include two dates. The first marks when an object was made, and the second shows when the museum acquired it. The distinction is important: objects often spent decades in working boats or private homes before they became part of the public collection.",
+      "translation_vi": "Một số nhãn có hai mốc: năm chế tạo và năm bảo tàng tiếp nhận. Hiện vật thường được dùng nhiều thập kỷ trên tàu hoặc ở nhà dân trước khi vào bộ sưu tập.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_2",
+        "m26",
+        "context",
+        "map_navigation",
+        "museum_facilities"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "A",
+      "text_en": "Now that you can find the galleries, let me cover the arrangements for this afternoon. A few notices in the foyer were printed before our renovation and contain the old opening times.",
+      "translation_vi": "Đã xác định được các phòng; tiếp theo là lịch chiều nay. Một số biển ở tiền sảnh vẫn có giờ cũ trước cải tạo.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_2",
+        "m26",
+        "transition",
+        "map_navigation",
+        "museum_facilities"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T09",
+      "speaker_id": "A",
+      "text_en": "Today’s live rope-making demonstration begins at quarter past two. The earlier session was cancelled because the instructor is helping a school group.",
+      "translation_vi": "Buổi trình diễn bện dây bắt đầu lúc hai giờ mười lăm; buổi sớm đã hủy vì giảng viên đang hướng dẫn đoàn học sinh.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_2",
+        "m26",
+        "evidence",
+        "map_navigation",
+        "museum_facilities"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T10",
+      "speaker_id": "A",
+      "text_en": "The temporary exhibition focuses on fishing communities rather than naval battles. Families have contributed photographs and recordings of everyday working life.",
+      "translation_vi": "Triển lãm tạm thời nói về cộng đồng đánh cá, không phải hải chiến; gia đình đóng góp ảnh và ghi âm đời sống lao động.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_2",
+        "m26",
+        "evidence",
+        "map_navigation",
+        "museum_facilities"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T11",
+      "speaker_id": "A",
+      "text_en": "If you want to photograph the exhibits, you may do so without flash. Flash can damage some materials, even though ordinary phone cameras are permitted.",
+      "translation_vi": "Được chụp ảnh nhưng không dùng đèn flash vì có thể làm hỏng hiện vật; điện thoại thông thường vẫn được phép.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_2",
+        "m26",
+        "evidence",
+        "map_navigation",
+        "museum_facilities"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T12",
+      "speaker_id": "A",
+      "text_en": "Audio guides are available in four languages, but you need to collect a headset from the front desk. We cannot send the recordings to personal phones yet.",
+      "translation_vi": "Có thuyết minh bốn ngôn ngữ, phải nhận tai nghe ở quầy trước; chưa gửi file vào điện thoại cá nhân.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_2",
+        "m26",
+        "evidence",
+        "map_navigation",
+        "museum_facilities"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T13",
+      "speaker_id": "A",
+      "text_en": "After your tour, you can send feedback using the short online survey. Paper forms have been withdrawn so that our team can analyse responses more quickly.",
+      "translation_vi": "Sau tour có thể góp ý qua khảo sát trực tuyến; biểu mẫu giấy đã bỏ.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_2",
+        "m26",
+        "evidence",
+        "map_navigation",
+        "museum_facilities"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T14",
+      "speaker_id": "A",
+      "text_en": "The museum is currently recording the memories of retired harbour workers. Their stories can help explain how everyday jobs changed as equipment became more automated. We invite visitors to share contact details if they know someone with a story, but nobody will be recorded without their permission.",
+      "translation_vi": "Bảo tàng đang thu ký ức người lao động cảng nghỉ hưu để hiểu việc làm thay đổi do tự động hóa. Khách có thể giới thiệu người có chuyện kể, nhưng không ai bị ghi âm khi chưa đồng ý.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_2",
+        "m26",
+        "context",
+        "map_navigation",
+        "museum_facilities"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T15",
+      "speaker_id": "A",
+      "text_en": "Please keep your admission slip until you leave, as it also allows you back into the ground-floor galleries after the demonstration. Enjoy the museum.",
+      "translation_vi": "Hãy giữ vé vào cửa đến lúc ra về để có thể quay lại phòng trưng bày tầng trệt sau phần trình diễn.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_2",
+        "m26",
+        "closing",
+        "map_navigation",
+        "museum_facilities"
+      ],
+      "bank_role": "protected_assessment"
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "group_id": "PART2_Q01_TO_05",
+      "type": "map_labelling",
+      "prompt": "Compass gallery",
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "evidence_excerpt_en": "If you would like to see traditional navigation tools, the compass gallery is tucked into the north-west corner. Head past the information point and take the left-hand passage almost to its end.",
+      "explanation_vi": "Phòng la bàn ở góc tây bắc, đi qua bàn thông tin rồi theo hành lang bên trái đến gần cuối.",
+      "question_tags": [
+        "M26",
+        "part2",
+        "map_labelling",
+        "map_navigation",
+        "museum_facilities"
+      ],
+      "answer_source": "explicit_or_contextual_recording",
+      "scoring_policy": "map_letter",
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true,
+      "correct_answers": [
+        "A"
+      ],
+      "correct_option": "A",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G",
+        "H"
+      ],
+      "map_asset_id": "M26-MAP-003",
+      "map_asset_path": "04_MAP_ASSETS_CLIENT_SAFE/M26_MAP_003.svg"
+    },
+    {
+      "question_id": "Q02",
+      "group_id": "PART2_Q01_TO_05",
+      "type": "map_labelling",
+      "prompt": "Shipbuilders’ workshop",
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "evidence_excerpt_en": "The shipbuilders’ workshop is straight ahead after you enter, in the southern part of the central corridor before the information point. You may hear hammering there, but the vessels themselves are displayed upstairs.",
+      "explanation_vi": "Xưởng đóng tàu nằm ngay phía trước khi vào, ở phần nam hành lang giữa trước bàn thông tin. Có thể nghe tiếng búa, còn tàu trưng bày ở tầng trên.",
+      "question_tags": [
+        "M26",
+        "part2",
+        "map_labelling",
+        "map_navigation",
+        "museum_facilities"
+      ],
+      "answer_source": "explicit_or_contextual_recording",
+      "scoring_policy": "map_letter",
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true,
+      "correct_answers": [
+        "G"
+      ],
+      "correct_option": "G",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G",
+        "H"
+      ],
+      "map_asset_id": "M26-MAP-003",
+      "map_asset_path": "04_MAP_ASSETS_CLIENT_SAFE/M26_MAP_003.svg"
+    },
+    {
+      "question_id": "Q03",
+      "group_id": "PART2_Q01_TO_05",
+      "type": "map_labelling",
+      "prompt": "Lighthouse exhibit",
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "evidence_excerpt_en": "For the lighthouse exhibit, go straight towards the north end of the central corridor. It sits at the end of that corridor rather than in the larger eastern gallery.",
+      "explanation_vi": "Triển lãm hải đăng nằm cuối hành lang giữa về phía bắc, không ở phòng lớn phía đông.",
+      "question_tags": [
+        "M26",
+        "part2",
+        "map_labelling",
+        "map_navigation",
+        "museum_facilities"
+      ],
+      "answer_source": "explicit_or_contextual_recording",
+      "scoring_policy": "map_letter",
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true,
+      "correct_answers": [
+        "B"
+      ],
+      "correct_option": "B",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G",
+        "H"
+      ],
+      "map_asset_id": "M26-MAP-003",
+      "map_asset_path": "04_MAP_ASSETS_CLIENT_SAFE/M26_MAP_003.svg"
+    },
+    {
+      "question_id": "Q04",
+      "group_id": "PART2_Q01_TO_05",
+      "type": "map_labelling",
+      "prompt": "Maritime reading room",
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "evidence_excerpt_en": "Our maritime reading room is immediately west of the information point. Researchers should check in there before consulting any of the fragile original logbooks.",
+      "explanation_vi": "Phòng đọc hàng hải nằm ngay phía tây bàn thông tin; người nghiên cứu phải đăng ký trước khi xem nhật ký tàu gốc.",
+      "question_tags": [
+        "M26",
+        "part2",
+        "map_labelling",
+        "map_navigation",
+        "museum_facilities"
+      ],
+      "answer_source": "explicit_or_contextual_recording",
+      "scoring_policy": "map_letter",
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true,
+      "correct_answers": [
+        "D"
+      ],
+      "correct_option": "D",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G",
+        "H"
+      ],
+      "map_asset_id": "M26-MAP-003",
+      "map_asset_path": "04_MAP_ASSETS_CLIENT_SAFE/M26_MAP_003.svg"
+    },
+    {
+      "question_id": "Q05",
+      "group_id": "PART2_Q01_TO_05",
+      "type": "map_labelling",
+      "prompt": "Rescued-objects display",
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "evidence_excerpt_en": "The rescued-objects display is in the north-east corner beyond the staircase, and it contains objects recovered from shallow wrecks. The room beside the entrance is only the volunteer office.",
+      "explanation_vi": "Phòng đồ vật cứu hộ ở góc đông bắc, qua cầu thang, có vật được vớt từ xác tàu; phòng gần cửa là văn phòng tình nguyện.",
+      "question_tags": [
+        "M26",
+        "part2",
+        "map_labelling",
+        "map_navigation",
+        "museum_facilities"
+      ],
+      "answer_source": "explicit_or_contextual_recording",
+      "scoring_policy": "map_letter",
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true,
+      "correct_answers": [
+        "C"
+      ],
+      "correct_option": "C",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G",
+        "H"
+      ],
+      "map_asset_id": "M26-MAP-003",
+      "map_asset_path": "04_MAP_ASSETS_CLIENT_SAFE/M26_MAP_003.svg"
+    },
+    {
+      "question_id": "Q06",
+      "group_id": "PART2_Q06_TO_10",
+      "type": "note_completion",
+      "prompt": "Rope-making begins at ____.",
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "evidence_excerpt_en": "Today’s live rope-making demonstration begins at quarter past two. The earlier session was cancelled because the instructor is helping a school group.",
+      "explanation_vi": "Buổi trình diễn bện dây bắt đầu lúc hai giờ mười lăm; buổi sớm đã hủy vì giảng viên đang hướng dẫn đoàn học sinh.",
+      "question_tags": [
+        "M26",
+        "part2",
+        "note_completion",
+        "map_navigation",
+        "museum_facilities"
+      ],
+      "answer_source": "explicit_or_contextual_recording",
+      "scoring_policy": "controlled_variants",
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": false,
+      "correct_answers": [
+        "quarter past two"
+      ],
+      "spoken_answer": "quarter past two",
+      "word_limit": 3,
+      "instructions_en": "NO MORE THAN THREE WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q07",
+      "group_id": "PART2_Q06_TO_10",
+      "type": "note_completion",
+      "prompt": "Temporary exhibit: ____ communities.",
+      "evidence_turn_ids": [
+        "T10"
+      ],
+      "evidence_excerpt_en": "The temporary exhibition focuses on fishing communities rather than naval battles. Families have contributed photographs and recordings of everyday working life.",
+      "explanation_vi": "Triển lãm tạm thời nói về cộng đồng đánh cá, không phải hải chiến; gia đình đóng góp ảnh và ghi âm đời sống lao động.",
+      "question_tags": [
+        "M26",
+        "part2",
+        "note_completion",
+        "map_navigation",
+        "museum_facilities"
+      ],
+      "answer_source": "explicit_or_contextual_recording",
+      "scoring_policy": "controlled_variants",
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": false,
+      "correct_answers": [
+        "fishing"
+      ],
+      "spoken_answer": "fishing",
+      "word_limit": 3,
+      "instructions_en": "NO MORE THAN THREE WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q08",
+      "group_id": "PART2_Q06_TO_10",
+      "type": "note_completion",
+      "prompt": "Photography must not use ____.",
+      "evidence_turn_ids": [
+        "T11"
+      ],
+      "evidence_excerpt_en": "If you want to photograph the exhibits, you may do so without flash. Flash can damage some materials, even though ordinary phone cameras are permitted.",
+      "explanation_vi": "Được chụp ảnh nhưng không dùng đèn flash vì có thể làm hỏng hiện vật; điện thoại thông thường vẫn được phép.",
+      "question_tags": [
+        "M26",
+        "part2",
+        "note_completion",
+        "map_navigation",
+        "museum_facilities"
+      ],
+      "answer_source": "explicit_or_contextual_recording",
+      "scoring_policy": "controlled_variants",
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": false,
+      "correct_answers": [
+        "flash"
+      ],
+      "spoken_answer": "flash",
+      "word_limit": 3,
+      "instructions_en": "NO MORE THAN THREE WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q09",
+      "group_id": "PART2_Q06_TO_10",
+      "type": "note_completion",
+      "prompt": "Collect an audio-guide ____ at the desk.",
+      "evidence_turn_ids": [
+        "T12"
+      ],
+      "evidence_excerpt_en": "Audio guides are available in four languages, but you need to collect a headset from the front desk. We cannot send the recordings to personal phones yet.",
+      "explanation_vi": "Có thuyết minh bốn ngôn ngữ, phải nhận tai nghe ở quầy trước; chưa gửi file vào điện thoại cá nhân.",
+      "question_tags": [
+        "M26",
+        "part2",
+        "note_completion",
+        "map_navigation",
+        "museum_facilities"
+      ],
+      "answer_source": "explicit_or_contextual_recording",
+      "scoring_policy": "controlled_variants",
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": false,
+      "correct_answers": [
+        "headset"
+      ],
+      "spoken_answer": "headset",
+      "word_limit": 3,
+      "instructions_en": "NO MORE THAN THREE WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q10",
+      "group_id": "PART2_Q06_TO_10",
+      "type": "note_completion",
+      "prompt": "Give feedback through an online ____.",
+      "evidence_turn_ids": [
+        "T13"
+      ],
+      "evidence_excerpt_en": "After your tour, you can send feedback using the short online survey. Paper forms have been withdrawn so that our team can analyse responses more quickly.",
+      "explanation_vi": "Sau tour có thể góp ý qua khảo sát trực tuyến; biểu mẫu giấy đã bỏ.",
+      "question_tags": [
+        "M26",
+        "part2",
+        "note_completion",
+        "map_navigation",
+        "museum_facilities"
+      ],
+      "answer_source": "explicit_or_contextual_recording",
+      "scoring_policy": "controlled_variants",
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": false,
+      "correct_answers": [
+        "survey"
+      ],
+      "spoken_answer": "survey",
+      "word_limit": 3,
+      "instructions_en": "NO MORE THAN THREE WORDS AND/OR A NUMBER"
+    }
+  ],
+  "question_groups": [
+    {
+      "group_id": "PART2_Q01_TO_05",
+      "question_ids": [
+        "Q01",
+        "Q02",
+        "Q03",
+        "Q04",
+        "Q05"
+      ],
+      "question_type": "map_labelling",
+      "instructions_en": "Label the plan. Choose the correct letter A–H for each place.",
+      "question_display_start": "before_audio",
+      "requires_one_listen": true,
+      "pause_between_groups_seconds": 0,
+      "map_asset_id": "M26-MAP-003",
+      "map_asset_path": "04_MAP_ASSETS_CLIENT_SAFE/M26_MAP_003.svg",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G",
+        "H"
+      ]
+    },
+    {
+      "group_id": "PART2_Q06_TO_10",
+      "question_ids": [
+        "Q06",
+        "Q07",
+        "Q08",
+        "Q09",
+        "Q10"
+      ],
+      "question_type": "note_completion",
+      "instructions_en": "Complete the notes. Write NO MORE THAN THREE WORDS AND/OR A NUMBER for each answer.",
+      "question_display_start": "before_audio",
+      "requires_one_listen": true,
+      "pause_between_groups_seconds": 0
+    }
+  ],
+  "audio": {
+    "status": "not_generated",
+    "audio_url": null,
+    "audio_asset_id": null,
+    "duration_ms": null,
+    "source_text_sha256": "1fed1b91c5d9b19a7223b47684e9bf8e7dd57e106c36cbd556ad3aa3d2914210",
+    "generation_strategy": "single_continuous_monologue",
+    "aligned_turns": false
+  },
+  "exam_mode": {
+    "bank_role": "protected_assessment",
+    "use_as_training_before_first_attempt": false,
+    "listening_attempts_allowed_for_scored_first_attempt": 1,
+    "replay_before_submit": false,
+    "speed_control_before_submit": false,
+    "transcript_visible_before_submit": false,
+    "answer_key_visible_before_submit": false,
+    "post_attempt_review_allowed": true,
+    "question_count": 10,
+    "points_per_correct_answer": 1,
+    "question_order_monotonic": true,
+    "estimated_speech_minutes_at_135_wpm": 3.49,
+    "exam_band_score_enabled": false,
+    "repeated_attempt_marked_as_seen": true,
+    "all_questions_visible_before_audio": true
+  },
+  "qa": {
+    "automatic_data_validation": "pending",
+    "content_human_review": "pending",
+    "audio_human_review": "pending",
+    "exam_simulation_rubric_score": null,
+    "rubric_90_verified": false,
+    "published": false,
+    "release_eligible": false
+  },
+  "provenance": {
+    "source_type": "original_authored_english_monologue",
+    "milestone": "M26",
+    "no_official_ielts_question_copied": true,
+    "training_exposure_guard": true,
+    "fictional_scenarios": true
+  },
+  "release_metadata": {
+    "target_bank": "protected_assessment",
+    "import_policy": "insert_only",
+    "version": "m26.0.1",
+    "preserve_existing_ids": true,
+    "allow_client_answer_payload": false
+  },
+  "map_asset": {
+    "map_asset_id": "M26-MAP-003",
+    "asset_path": "04_MAP_ASSETS_CLIENT_SAFE/M26_MAP_003.svg",
+    "format": "svg",
+    "orientation": "NORTH UP / MAIN ENTRANCE SOUTH",
+    "question_ids": [
+      "Q01",
+      "Q02",
+      "Q03",
+      "Q04",
+      "Q05"
+    ],
+    "choices": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F",
+      "G",
+      "H"
+    ],
+    "human_spatial_review_required": true,
+    "answer_key_is_server_only": true
+  }
+}

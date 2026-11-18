@@ -1,0 +1,462 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "DICT-S1-052",
+  "status": "draft",
+  "level": "L4",
+  "section": 1,
+  "topic": "Shopping & Returns",
+  "title": "A Backpack That Did Not Match the Description",
+  "learning_objectives_vi": [
+    "Luyện natural speed & paraphrase trong tình huống: A shopper negotiates a different remedy for an incorrect online order.",
+    "Nhận diện thông tin cuối cùng thay vì lặp lại dữ kiện đã bị sửa hoặc phủ định.",
+    "Chép đúng lời thoại, hiểu bằng chứng và học từ vựng trong ngữ cảnh."
+  ],
+  "content_format": "section_practice",
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Customer / applicant",
+      "tts_voice_id": null,
+      "accent_requested": "australian"
+    },
+    {
+      "speaker_id": "B",
+      "role": "Service representative / employee",
+      "tts_voice_id": null,
+      "accent_requested": "australian"
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "Hello, I received the hiking backpack I ordered, but there's a problem with the description on your website.",
+      "translation_vi": "Chào anh, tôi đã nhận ba lô leo núi đặt mua, nhưng mô tả trên web có vấn đề.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "paraphrase",
+        "refunds",
+        "conditional_timing",
+        "section_1",
+        "two_speaker_dialogue",
+        "l4"
+      ]
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "B",
+      "text_en": "I'm sorry about that. Was the colour different from the one shown?",
+      "translation_vi": "Rất tiếc. Có phải màu khác ảnh không?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "paraphrase",
+        "refunds",
+        "conditional_timing",
+        "section_1",
+        "two_speaker_dialogue",
+        "l4"
+      ]
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "A",
+      "text_en": "No, the colour's right. It was advertised as waterproof, but the label says it's only water-resistant.",
+      "translation_vi": "Không, màu đúng. Quảng cáo ghi chống nước hoàn toàn, nhưng nhãn chỉ ghi kháng nước.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "paraphrase",
+        "refunds",
+        "conditional_timing",
+        "section_1",
+        "two_speaker_dialogue",
+        "l4"
+      ]
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "B",
+      "text_en": "I can see why that's disappointing. We could send you the waterproof model for an extra fifteen pounds.",
+      "translation_vi": "Tôi hiểu vì sao bạn thất vọng. Chúng tôi có thể gửi mẫu chống nước với phụ phí mười lăm bảng.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "paraphrase",
+        "refunds",
+        "conditional_timing",
+        "section_1",
+        "two_speaker_dialogue",
+        "l4"
+      ]
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "A",
+      "text_en": "I'd rather not spend more. Could you replace this one without another charge?",
+      "translation_vi": "Tôi không muốn chi thêm. Có thể đổi mà không tính thêm phí không?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "paraphrase",
+        "refunds",
+        "conditional_timing",
+        "section_1",
+        "two_speaker_dialogue",
+        "l4"
+      ]
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "B",
+      "text_en": "Let me check. The model you ordered was part of a clearance sale, so we don't have more in stock.",
+      "translation_vi": "Tôi kiểm tra nhé. Mẫu bạn đặt thuộc đợt xả kho nên đã hết hàng.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "paraphrase",
+        "refunds",
+        "conditional_timing",
+        "section_1",
+        "two_speaker_dialogue",
+        "l4"
+      ]
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "Then I'd prefer a full refund. I paid seventy-four pounds, including delivery.",
+      "translation_vi": "Vậy tôi muốn hoàn toàn bộ tiền. Tôi trả bảy mươi tư bảng, gồm vận chuyển.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "paraphrase",
+        "refunds",
+        "conditional_timing",
+        "section_1",
+        "two_speaker_dialogue",
+        "l4"
+      ]
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "B",
+      "text_en": "We can refund the sixty-eight pounds for the bag and the six-pound delivery charge as well, because the description was wrong.",
+      "translation_vi": "Chúng tôi sẽ hoàn sáu mươi tám bảng tiền ba lô và cả sáu bảng phí giao vì mô tả sai.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "paraphrase",
+        "refunds",
+        "conditional_timing",
+        "section_1",
+        "two_speaker_dialogue",
+        "l4"
+      ]
+    },
+    {
+      "turn_id": "T09",
+      "speaker_id": "A",
+      "text_en": "That's fair. Do I need to arrange a collection?",
+      "translation_vi": "Hợp lý. Tôi có cần đặt lịch lấy hàng không?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "paraphrase",
+        "refunds",
+        "conditional_timing",
+        "section_1",
+        "two_speaker_dialogue",
+        "l4"
+      ]
+    },
+    {
+      "turn_id": "T10",
+      "speaker_id": "B",
+      "text_en": "No. We'll email a prepaid returns label. You can drop the parcel at any Bluepost point.",
+      "translation_vi": "Không. Chúng tôi sẽ gửi nhãn hoàn hàng trả trước qua email. Bạn có thể gửi tại bất kỳ điểm Bluepost.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "paraphrase",
+        "refunds",
+        "conditional_timing",
+        "section_1",
+        "two_speaker_dialogue",
+        "l4"
+      ]
+    },
+    {
+      "turn_id": "T11",
+      "speaker_id": "A",
+      "text_en": "There's one near my flat. When should I expect the money?",
+      "translation_vi": "Có một điểm gần nhà tôi. Bao giờ tôi nhận lại tiền?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "paraphrase",
+        "refunds",
+        "conditional_timing",
+        "section_1",
+        "two_speaker_dialogue",
+        "l4"
+      ]
+    },
+    {
+      "turn_id": "T12",
+      "speaker_id": "B",
+      "text_en": "Within seven working days after the parcel is scanned, not from the day you post it.",
+      "translation_vi": "Trong bảy ngày làm việc kể từ lúc bưu kiện được quét nhận, không tính từ ngày bạn gửi.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "paraphrase",
+        "refunds",
+        "conditional_timing",
+        "section_1",
+        "two_speaker_dialogue",
+        "l4"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "type": "form_completion",
+      "prompt": "Actual bag specification: water-____",
+      "correct_answers": [
+        "resistant"
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Nhãn ghi water-resistant, khác với waterproof trên web.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "paraphrase",
+        "refunds",
+        "conditional_timing",
+        "ielts_section1_practice"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q02",
+      "type": "form_completion",
+      "prompt": "Upgrade would cost £____ extra",
+      "correct_answers": [
+        "15"
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Mẫu chống nước hoàn toàn phải trả thêm 15 bảng.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "paraphrase",
+        "refunds",
+        "conditional_timing",
+        "ielts_section1_practice"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q03",
+      "type": "mcq",
+      "prompt": "Which solution does the customer finally choose?",
+      "correct_answers": [
+        "A full refund"
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "Khách không chọn đổi sang mẫu đắt hơn.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "paraphrase",
+        "refunds",
+        "conditional_timing",
+        "ielts_section1_practice"
+      ],
+      "options": [
+        "An exchange",
+        "Store credit",
+        "A full refund"
+      ]
+    },
+    {
+      "question_id": "Q04",
+      "type": "sentence_completion",
+      "prompt": "The refund includes the bag price and the ____ charge.",
+      "correct_answers": [
+        "delivery"
+      ],
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "explanation_vi": "Lời nói có “the six-pound delivery charge as well”; chỉ điền đúng từ “delivery” từ audio.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "paraphrase",
+        "refunds",
+        "conditional_timing",
+        "ielts_section1_practice"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q05",
+      "type": "form_completion",
+      "prompt": "Returns label sent by ____",
+      "correct_answers": [
+        "email"
+      ],
+      "evidence_turn_ids": [
+        "T10"
+      ],
+      "explanation_vi": "Nhãn hoàn hàng gửi qua email.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "paraphrase",
+        "refunds",
+        "conditional_timing",
+        "ielts_section1_practice"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q06",
+      "type": "form_completion",
+      "prompt": "Refund time: within ____ working days",
+      "correct_answers": [
+        "seven"
+      ],
+      "evidence_turn_ids": [
+        "T12"
+      ],
+      "explanation_vi": "Thời gian tính từ lúc gói hàng được quét, là 7 ngày làm việc.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "paraphrase",
+        "refunds",
+        "conditional_timing",
+        "ielts_section1_practice"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "D01",
+      "type": "dictation",
+      "prompt": "Nghe và chép nguyên văn lời nhân vật A (lượt T05).",
+      "correct_answers": [
+        "I'd rather not spend more. Could you replace this one without another charge?"
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Câu chuẩn: I'd rather not spend more. Could you replace this one without another charge? Nghĩa: Tôi không muốn chi thêm. Có thể đổi mà không tính thêm phí không? Cần nghe rõ từ chức năng, âm cuối và thông tin cụ thể.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "paraphrase",
+        "refunds",
+        "conditional_timing",
+        "dictation",
+        "transcription_accuracy"
+      ]
+    },
+    {
+      "question_id": "G01",
+      "type": "gap_fill",
+      "prompt": "Nghe và điền từ/cụm từ thiếu: No, the colour's right. It was advertised as waterproof, but the label says it's only ____.",
+      "correct_answers": [
+        "water-resistant"
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Cụm cần điền: water-resistant (kháng nước). Câu gốc: No, the colour's right. It was advertised as waterproof, but the label says it's only water-resistant.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "paraphrase",
+        "refunds",
+        "conditional_timing",
+        "gap_fill",
+        "vocabulary_in_context"
+      ]
+    }
+  ],
+  "vocabulary": [
+    {
+      "term": "water-resistant",
+      "pos": "word",
+      "meaning_vi": "kháng nước",
+      "example_en": "No, the colour's right. It was advertised as waterproof, but the label says it's only water-resistant.",
+      "example_vi": "Không, màu đúng. Quảng cáo ghi chống nước hoàn toàn, nhưng nhãn chỉ ghi kháng nước.",
+      "source_turn_id": "T03"
+    },
+    {
+      "term": "clearance sale",
+      "pos": "phrase",
+      "meaning_vi": "đợt xả kho",
+      "example_en": "Let me check. The model you ordered was part of a clearance sale, so we don't have more in stock.",
+      "example_vi": "Tôi kiểm tra nhé. Mẫu bạn đặt thuộc đợt xả kho nên đã hết hàng.",
+      "source_turn_id": "T06"
+    },
+    {
+      "term": "prepaid returns label",
+      "pos": "phrase",
+      "meaning_vi": "nhãn trả hàng trả phí trước",
+      "example_en": "No. We'll email a prepaid returns label. You can drop the parcel at any Bluepost point.",
+      "example_vi": "Không. Chúng tôi sẽ gửi nhãn hoàn hàng trả trước qua email. Bạn có thể gửi tại bất kỳ điểm Bluepost.",
+      "source_turn_id": "T10"
+    },
+    {
+      "term": "scanned",
+      "pos": "word",
+      "meaning_vi": "được quét mã",
+      "example_en": "Within seven working days after the parcel is scanned, not from the day you post it.",
+      "example_vi": "Trong bảy ngày làm việc kể từ lúc bưu kiện được quét nhận, không tính từ ngày bạn gửi.",
+      "source_turn_id": "T12"
+    }
+  ],
+  "audio": {
+    "status": "not_generated",
+    "url": null,
+    "duration_ms": null,
+    "model": null,
+    "provider": null,
+    "voice_config": null,
+    "source_transcript_hash": "ca8cbe68d0b7544bcffae9e414f6694418c8b0b00293339e5b6521ec7c37bc33",
+    "audio_sha256": null,
+    "format": null
+  },
+  "qa": {
+    "content_reviewed": false,
+    "answers_verified": false,
+    "audio_verified": false,
+    "rights_cleared": false,
+    "duplicate_reviewed": false,
+    "notes": [
+      "AI-assisted original draft; requires IELTS-teacher review of all items and ambiguity.",
+      "Audio and time-alignment are pending.",
+      "Do not release automatically after structural validation.",
+      "M16.2: automated edits are provisional; IELTS teacher final signoff, audio and rights clearance pending."
+    ]
+  },
+  "provenance": {
+    "content_origin": "original_ai_assisted",
+    "source_urls": [],
+    "source_rights_note": "Original educational dialogue. Verify TTS provider usage conditions, rights and accessibility before production. Not an official IELTS item.",
+    "reviewer": null
+  },
+  "release_metadata": {
+    "published_at": null,
+    "version": 1
+  }
+}

@@ -1,0 +1,720 @@
+{
+  "schema_version": "1.2.0",
+  "lesson_id": "S2-SIM-013",
+  "status": "draft",
+  "level": "L5",
+  "section": 2,
+  "topic": "Small-farm visitor programme",
+  "title": "The Willow Farm Open Day",
+  "content_format": "section_exam_simulation",
+  "exam_part": "IELTS_LISTENING_PART_2_STYLE",
+  "official_ielts_material": false,
+  "learning_objectives_vi": [
+    "Nghe một bài thuyết minh liền mạch trong tình huống xã hội đời sống.",
+    "Đọc nhóm câu hỏi trước khi nghe và định vị thông tin theo trình tự.",
+    "Hiểu paraphrase, thông tin gây nhiễu và giới hạn từ mà không được nghe lại."
+  ],
+  "target_skills": [
+    "mcq_reasoning",
+    "farm_tour",
+    "programme_changes"
+  ],
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Local service or visitor information presenter",
+      "accent_requested": "british",
+      "tts_voice_id": null
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "Good morning and welcome to Willow Farm. I am Harriet, the visitor coordinator. Today is an open day rather than our normal working tour, so the sequence of activities is slightly different. Please listen to the reasons for the changes; several visitors have brought last year’s leaflet.",
+      "translation_vi": "Xin chào và chào mừng đến Nông trại Willow. Tôi là Harriet, điều phối khách. Hôm nay là ngày mở cửa đặc biệt nên lịch khác tour thường; hãy chú ý lý do thay đổi.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_2",
+        "m26",
+        "introduction",
+        "mcq_reasoning",
+        "farm_tour",
+        "programme_changes"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "A",
+      "text_en": "We planned to begin beside the orchard, but the path is flooded after last night’s rain. Instead, the first demonstration will be inside the packing barn, where everyone can gather safely.",
+      "translation_vi": "Ban đầu định bắt đầu bên vườn cây, nhưng đường ngập sau mưa tối qua; trình diễn đầu chuyển vào nhà đóng gói cho an toàn.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_2",
+        "m26",
+        "evidence",
+        "mcq_reasoning",
+        "farm_tour",
+        "programme_changes"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "A",
+      "text_en": "Some people expected to pick apples today. We are not offering that activity because the fruit is not ripe. The tour will show sorting and storage techniques instead.",
+      "translation_vi": "Một số khách tưởng được hái táo, nhưng quả chưa chín; tour thay bằng xem phân loại và bảo quản.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_2",
+        "m26",
+        "evidence",
+        "mcq_reasoning",
+        "farm_tour",
+        "programme_changes"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "A",
+      "text_en": "Children sometimes want to feed the lambs. Please leave feeding to our animal team: their diet is carefully controlled, and extra treats can cause illness.",
+      "translation_vi": "Trẻ thường muốn cho cừu con ăn, nhưng chỉ đội chăm sóc động vật được làm; thức ăn thêm có thể gây bệnh.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_2",
+        "m26",
+        "evidence",
+        "mcq_reasoning",
+        "farm_tour",
+        "programme_changes"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "A",
+      "text_en": "A farm shop is open today, but we recommend buying fresh vegetables at the end. They will stay cooler in our store than in a bag carried around the fields.",
+      "translation_vi": "Cửa hàng nông trại mở, nhưng nên mua rau cuối buổi; rau mát hơn nếu để ở kho thay vì mang suốt chuyến đi.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_2",
+        "m26",
+        "evidence",
+        "mcq_reasoning",
+        "farm_tour",
+        "programme_changes"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "A",
+      "text_en": "If the weather clears, we may visit the bee meadow. But the scheduled honey talk is still indoors, because the beekeeper needs a controlled space for the demonstration equipment.",
+      "translation_vi": "Nếu tạnh mưa có thể thăm đồng ong; buổi nói về mật vẫn ở trong nhà vì người nuôi ong cần nơi kiểm soát thiết bị.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_2",
+        "m26",
+        "evidence",
+        "mcq_reasoning",
+        "farm_tour",
+        "programme_changes"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "Willow Farm is a working family business that has gradually opened more of its operations to the public. Staff are proud of the educational visits, but animal welfare and food safety take priority. That is why some popular attractions are offered only when conditions are suitable, rather than every day.",
+      "translation_vi": "Willow là nông trại gia đình dần mở cho khách. Nhân viên tự hào về tour giáo dục nhưng ưu tiên phúc lợi động vật và an toàn thực phẩm; vài hoạt động chỉ diễn ra khi điều kiện phù hợp.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_2",
+        "m26",
+        "context",
+        "mcq_reasoning",
+        "farm_tour",
+        "programme_changes"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "A",
+      "text_en": "Let me finish with the practical details for the rest of the day, particularly for anyone with younger children or limited mobility.",
+      "translation_vi": "Cuối cùng là thông tin thực tế cho phần còn lại trong ngày, nhất là gia đình có trẻ nhỏ hoặc người di chuyển khó.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_2",
+        "m26",
+        "transition",
+        "mcq_reasoning",
+        "farm_tour",
+        "programme_changes"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T09",
+      "speaker_id": "A",
+      "text_en": "The packing-barn demonstration starts at ten twenty. It takes around thirty minutes, so please be ready near the barn door before the announced time.",
+      "translation_vi": "Trình diễn ở nhà đóng gói bắt đầu lúc mười giờ hai mươi và kéo dài khoảng nửa giờ.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_2",
+        "m26",
+        "evidence",
+        "mcq_reasoning",
+        "farm_tour",
+        "programme_changes"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T10",
+      "speaker_id": "A",
+      "text_en": "Visitors who need step-free access can use the level path beside the pond. The narrow steps behind the orchard are unsuitable for wheelchairs.",
+      "translation_vi": "Khách cần đường không bậc có thể đi lối phẳng cạnh hồ; bậc hẹp sau vườn không phù hợp xe lăn.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_2",
+        "m26",
+        "evidence",
+        "mcq_reasoning",
+        "farm_tour",
+        "programme_changes"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T11",
+      "speaker_id": "A",
+      "text_en": "All school-age children will receive a small activity sheet to fill in during the tour. Parents can keep it afterwards as a record of what they learned.",
+      "translation_vi": "Trẻ tuổi đi học nhận phiếu hoạt động điền trong tour, gia đình có thể giữ lại.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_2",
+        "m26",
+        "evidence",
+        "mcq_reasoning",
+        "farm_tour",
+        "programme_changes"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T12",
+      "speaker_id": "A",
+      "text_en": "Hot drinks are served from the mobile trailer near the entrance. The permanent café is not yet open after the winter renovation.",
+      "translation_vi": "Đồ uống nóng bán ở xe kéo di động gần cổng; quán cố định chưa mở sau sửa mùa đông.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_2",
+        "m26",
+        "evidence",
+        "mcq_reasoning",
+        "farm_tour",
+        "programme_changes"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T13",
+      "speaker_id": "A",
+      "text_en": "If you would like a recipe leaflet, please ask at the farm shop. It contains simple dishes using seasonal produce grown here.",
+      "translation_vi": "Muốn tờ công thức nấu ăn, hãy hỏi ở cửa hàng nông trại, có món dùng nông sản theo mùa.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_2",
+        "m26",
+        "evidence",
+        "mcq_reasoning",
+        "farm_tour",
+        "programme_changes"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T14",
+      "speaker_id": "A",
+      "text_en": "One part of the visit involves comparing what people imagine farm work looks like with the real tasks workers do. Modern farming includes record keeping, careful storage and frequent equipment checks. We hope that seeing these less dramatic activities gives visitors a fuller picture of where their food comes from.",
+      "translation_vi": "Tour so sánh hình dung về nghề nông với việc thực: nông nghiệp hiện đại có ghi chép, bảo quản và kiểm tra thiết bị thường xuyên. Khách sẽ hiểu nguồn thực phẩm đầy đủ hơn.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_2",
+        "m26",
+        "context",
+        "mcq_reasoning",
+        "farm_tour",
+        "programme_changes"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T15",
+      "speaker_id": "A",
+      "text_en": "Our staff can answer questions after the final demonstration. Please respect working areas: this is still a farm, even on a public open day.",
+      "translation_vi": "Nhân viên sẽ trả lời sau phần trình diễn cuối. Hãy tôn trọng khu lao động vì đây vẫn là nông trại.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_2",
+        "m26",
+        "closing",
+        "mcq_reasoning",
+        "farm_tour",
+        "programme_changes"
+      ],
+      "bank_role": "protected_assessment"
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "group_id": "PART2_Q01_TO_05",
+      "type": "mcq",
+      "prompt": "Where will the first demonstration take place?",
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "evidence_excerpt_en": "We planned to begin beside the orchard, but the path is flooded after last night’s rain. Instead, the first demonstration will be inside the packing barn, where everyone can gather safely.",
+      "explanation_vi": "Ban đầu định bắt đầu bên vườn cây, nhưng đường ngập sau mưa tối qua; trình diễn đầu chuyển vào nhà đóng gói cho an toàn.",
+      "question_tags": [
+        "M26",
+        "part2",
+        "mcq",
+        "mcq_reasoning",
+        "farm_tour",
+        "programme_changes"
+      ],
+      "answer_source": "explicit_or_contextual_recording",
+      "scoring_policy": "one_correct_option",
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true,
+      "correct_answers": [
+        "Inside the packing barn"
+      ],
+      "options": [
+        {
+          "key": "A",
+          "text": "Beside the orchard"
+        },
+        {
+          "key": "B",
+          "text": "Inside the packing barn"
+        },
+        {
+          "key": "C",
+          "text": "At the farm café"
+        }
+      ],
+      "correct_option": "B"
+    },
+    {
+      "question_id": "Q02",
+      "group_id": "PART2_Q01_TO_05",
+      "type": "mcq",
+      "prompt": "What is the main change to the programme?",
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "evidence_excerpt_en": "Some people expected to pick apples today. We are not offering that activity because the fruit is not ripe. The tour will show sorting and storage techniques instead.",
+      "explanation_vi": "Một số khách tưởng được hái táo, nhưng quả chưa chín; tour thay bằng xem phân loại và bảo quản.",
+      "question_tags": [
+        "M26",
+        "part2",
+        "mcq",
+        "mcq_reasoning",
+        "farm_tour",
+        "programme_changes"
+      ],
+      "answer_source": "explicit_or_contextual_recording",
+      "scoring_policy": "one_correct_option",
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true,
+      "correct_answers": [
+        "Visitors will see produce being sorted"
+      ],
+      "options": [
+        {
+          "key": "A",
+          "text": "Visitors will pick apples"
+        },
+        {
+          "key": "B",
+          "text": "Visitors will plant new trees"
+        },
+        {
+          "key": "C",
+          "text": "Visitors will see produce being sorted"
+        }
+      ],
+      "correct_option": "C"
+    },
+    {
+      "question_id": "Q03",
+      "group_id": "PART2_Q01_TO_05",
+      "type": "mcq",
+      "prompt": "Why may visitors not feed the lambs?",
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "evidence_excerpt_en": "Children sometimes want to feed the lambs. Please leave feeding to our animal team: their diet is carefully controlled, and extra treats can cause illness.",
+      "explanation_vi": "Trẻ thường muốn cho cừu con ăn, nhưng chỉ đội chăm sóc động vật được làm; thức ăn thêm có thể gây bệnh.",
+      "question_tags": [
+        "M26",
+        "part2",
+        "mcq",
+        "mcq_reasoning",
+        "farm_tour",
+        "programme_changes"
+      ],
+      "answer_source": "explicit_or_contextual_recording",
+      "scoring_policy": "one_correct_option",
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true,
+      "correct_answers": [
+        "To protect their diet"
+      ],
+      "options": [
+        {
+          "key": "A",
+          "text": "Because the animals are asleep"
+        },
+        {
+          "key": "B",
+          "text": "Because feeding costs extra"
+        },
+        {
+          "key": "C",
+          "text": "To protect their diet"
+        }
+      ],
+      "correct_option": "C"
+    },
+    {
+      "question_id": "Q04",
+      "group_id": "PART2_Q01_TO_05",
+      "type": "mcq",
+      "prompt": "When does the guide recommend buying vegetables?",
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "evidence_excerpt_en": "A farm shop is open today, but we recommend buying fresh vegetables at the end. They will stay cooler in our store than in a bag carried around the fields.",
+      "explanation_vi": "Cửa hàng nông trại mở, nhưng nên mua rau cuối buổi; rau mát hơn nếu để ở kho thay vì mang suốt chuyến đi.",
+      "question_tags": [
+        "M26",
+        "part2",
+        "mcq",
+        "mcq_reasoning",
+        "farm_tour",
+        "programme_changes"
+      ],
+      "answer_source": "explicit_or_contextual_recording",
+      "scoring_policy": "one_correct_option",
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true,
+      "correct_answers": [
+        "After the tour finishes"
+      ],
+      "options": [
+        {
+          "key": "A",
+          "text": "Before the tour starts"
+        },
+        {
+          "key": "B",
+          "text": "After the tour finishes"
+        },
+        {
+          "key": "C",
+          "text": "During the first demonstration"
+        }
+      ],
+      "correct_option": "B"
+    },
+    {
+      "question_id": "Q05",
+      "group_id": "PART2_Q01_TO_05",
+      "type": "mcq",
+      "prompt": "Why is the honey talk held indoors?",
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "evidence_excerpt_en": "If the weather clears, we may visit the bee meadow. But the scheduled honey talk is still indoors, because the beekeeper needs a controlled space for the demonstration equipment.",
+      "explanation_vi": "Nếu tạnh mưa có thể thăm đồng ong; buổi nói về mật vẫn ở trong nhà vì người nuôi ong cần nơi kiểm soát thiết bị.",
+      "question_tags": [
+        "M26",
+        "part2",
+        "mcq",
+        "mcq_reasoning",
+        "farm_tour",
+        "programme_changes"
+      ],
+      "answer_source": "explicit_or_contextual_recording",
+      "scoring_policy": "one_correct_option",
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true,
+      "correct_answers": [
+        "The equipment needs a controlled area"
+      ],
+      "options": [
+        {
+          "key": "A",
+          "text": "The meadow is being replanted"
+        },
+        {
+          "key": "B",
+          "text": "Visitors cannot see bees outside"
+        },
+        {
+          "key": "C",
+          "text": "The equipment needs a controlled area"
+        }
+      ],
+      "correct_option": "C"
+    },
+    {
+      "question_id": "Q06",
+      "group_id": "PART2_Q06_TO_10",
+      "type": "note_completion",
+      "prompt": "Packing-barn start time: ____.",
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "evidence_excerpt_en": "The packing-barn demonstration starts at ten twenty. It takes around thirty minutes, so please be ready near the barn door before the announced time.",
+      "explanation_vi": "Trình diễn ở nhà đóng gói bắt đầu lúc mười giờ hai mươi và kéo dài khoảng nửa giờ.",
+      "question_tags": [
+        "M26",
+        "part2",
+        "note_completion",
+        "mcq_reasoning",
+        "farm_tour",
+        "programme_changes"
+      ],
+      "answer_source": "explicit_or_contextual_recording",
+      "scoring_policy": "controlled_variants",
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": false,
+      "correct_answers": [
+        "ten twenty"
+      ],
+      "spoken_answer": "ten twenty",
+      "word_limit": 3,
+      "instructions_en": "NO MORE THAN THREE WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q07",
+      "group_id": "PART2_Q06_TO_10",
+      "type": "note_completion",
+      "prompt": "Step-free route runs beside the ____.",
+      "evidence_turn_ids": [
+        "T10"
+      ],
+      "evidence_excerpt_en": "Visitors who need step-free access can use the level path beside the pond. The narrow steps behind the orchard are unsuitable for wheelchairs.",
+      "explanation_vi": "Khách cần đường không bậc có thể đi lối phẳng cạnh hồ; bậc hẹp sau vườn không phù hợp xe lăn.",
+      "question_tags": [
+        "M26",
+        "part2",
+        "note_completion",
+        "mcq_reasoning",
+        "farm_tour",
+        "programme_changes"
+      ],
+      "answer_source": "explicit_or_contextual_recording",
+      "scoring_policy": "controlled_variants",
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": false,
+      "correct_answers": [
+        "pond"
+      ],
+      "spoken_answer": "pond",
+      "word_limit": 3,
+      "instructions_en": "NO MORE THAN THREE WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q08",
+      "group_id": "PART2_Q06_TO_10",
+      "type": "note_completion",
+      "prompt": "Children receive an activity ____.",
+      "evidence_turn_ids": [
+        "T11"
+      ],
+      "evidence_excerpt_en": "All school-age children will receive a small activity sheet to fill in during the tour. Parents can keep it afterwards as a record of what they learned.",
+      "explanation_vi": "Trẻ tuổi đi học nhận phiếu hoạt động điền trong tour, gia đình có thể giữ lại.",
+      "question_tags": [
+        "M26",
+        "part2",
+        "note_completion",
+        "mcq_reasoning",
+        "farm_tour",
+        "programme_changes"
+      ],
+      "answer_source": "explicit_or_contextual_recording",
+      "scoring_policy": "controlled_variants",
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": false,
+      "correct_answers": [
+        "sheet"
+      ],
+      "spoken_answer": "sheet",
+      "word_limit": 3,
+      "instructions_en": "NO MORE THAN THREE WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q09",
+      "group_id": "PART2_Q06_TO_10",
+      "type": "note_completion",
+      "prompt": "Hot drinks sold from a mobile ____.",
+      "evidence_turn_ids": [
+        "T12"
+      ],
+      "evidence_excerpt_en": "Hot drinks are served from the mobile trailer near the entrance. The permanent café is not yet open after the winter renovation.",
+      "explanation_vi": "Đồ uống nóng bán ở xe kéo di động gần cổng; quán cố định chưa mở sau sửa mùa đông.",
+      "question_tags": [
+        "M26",
+        "part2",
+        "note_completion",
+        "mcq_reasoning",
+        "farm_tour",
+        "programme_changes"
+      ],
+      "answer_source": "explicit_or_contextual_recording",
+      "scoring_policy": "controlled_variants",
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": false,
+      "correct_answers": [
+        "trailer"
+      ],
+      "spoken_answer": "trailer",
+      "word_limit": 3,
+      "instructions_en": "NO MORE THAN THREE WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q10",
+      "group_id": "PART2_Q06_TO_10",
+      "type": "note_completion",
+      "prompt": "Collect recipe leaflets from the farm ____.",
+      "evidence_turn_ids": [
+        "T13"
+      ],
+      "evidence_excerpt_en": "If you would like a recipe leaflet, please ask at the farm shop. It contains simple dishes using seasonal produce grown here.",
+      "explanation_vi": "Muốn tờ công thức nấu ăn, hãy hỏi ở cửa hàng nông trại, có món dùng nông sản theo mùa.",
+      "question_tags": [
+        "M26",
+        "part2",
+        "note_completion",
+        "mcq_reasoning",
+        "farm_tour",
+        "programme_changes"
+      ],
+      "answer_source": "explicit_or_contextual_recording",
+      "scoring_policy": "controlled_variants",
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": false,
+      "correct_answers": [
+        "shop"
+      ],
+      "spoken_answer": "shop",
+      "word_limit": 3,
+      "instructions_en": "NO MORE THAN THREE WORDS AND/OR A NUMBER"
+    }
+  ],
+  "question_groups": [
+    {
+      "group_id": "PART2_Q01_TO_05",
+      "question_ids": [
+        "Q01",
+        "Q02",
+        "Q03",
+        "Q04",
+        "Q05"
+      ],
+      "question_type": "mcq",
+      "instructions_en": "Choose the correct letter A, B or C.",
+      "question_display_start": "before_audio",
+      "requires_one_listen": true,
+      "pause_between_groups_seconds": 0
+    },
+    {
+      "group_id": "PART2_Q06_TO_10",
+      "question_ids": [
+        "Q06",
+        "Q07",
+        "Q08",
+        "Q09",
+        "Q10"
+      ],
+      "question_type": "note_completion",
+      "instructions_en": "Complete the notes. Write NO MORE THAN THREE WORDS AND/OR A NUMBER for each answer.",
+      "question_display_start": "before_audio",
+      "requires_one_listen": true,
+      "pause_between_groups_seconds": 0
+    }
+  ],
+  "audio": {
+    "status": "not_generated",
+    "audio_url": null,
+    "audio_asset_id": null,
+    "duration_ms": null,
+    "source_text_sha256": "20f4e5340e5fae7a9b290841e474715796bae82d56ca8ff10ef8c04710816d2a",
+    "generation_strategy": "single_continuous_monologue",
+    "aligned_turns": false
+  },
+  "exam_mode": {
+    "bank_role": "protected_assessment",
+    "use_as_training_before_first_attempt": false,
+    "listening_attempts_allowed_for_scored_first_attempt": 1,
+    "replay_before_submit": false,
+    "speed_control_before_submit": false,
+    "transcript_visible_before_submit": false,
+    "answer_key_visible_before_submit": false,
+    "post_attempt_review_allowed": true,
+    "question_count": 10,
+    "points_per_correct_answer": 1,
+    "question_order_monotonic": true,
+    "estimated_speech_minutes_at_135_wpm": 3.36,
+    "exam_band_score_enabled": false,
+    "repeated_attempt_marked_as_seen": true,
+    "all_questions_visible_before_audio": true
+  },
+  "qa": {
+    "automatic_data_validation": "pending",
+    "content_human_review": "pending",
+    "audio_human_review": "pending",
+    "exam_simulation_rubric_score": null,
+    "rubric_90_verified": false,
+    "published": false,
+    "release_eligible": false
+  },
+  "provenance": {
+    "source_type": "original_authored_english_monologue",
+    "milestone": "M26",
+    "no_official_ielts_question_copied": true,
+    "training_exposure_guard": true,
+    "fictional_scenarios": true
+  },
+  "release_metadata": {
+    "target_bank": "protected_assessment",
+    "import_policy": "insert_only",
+    "version": "m26.0.1",
+    "preserve_existing_ids": true,
+    "allow_client_answer_payload": false
+  }
+}

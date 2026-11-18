@@ -1,0 +1,230 @@
+{
+  "schema_version": "m35.1.0",
+  "id": "ACT-POST-127",
+  "activity_id": "ACT-POST-127",
+  "status": "draft_pending_audio_and_teacher_signoff",
+  "module": "dictation",
+  "kind": "post_test_error_repair",
+  "section": 3,
+  "title": "Investigating Bee Habitats on University Grounds — Sửa lỗi sau bài thi",
+  "source_bank": "full_mock_part",
+  "origin_bank": "protected_assessment",
+  "source_milestone": "M31",
+  "source_package": "English_Skill_Lab_Dictation_M31_Full_Listening_Mocks_11-15.zip",
+  "source_entry_path": "ESL_Dictation_M31_Full_Mocks_11_15/01_TESTS_SERVER_ONLY/M31-LISTENING-MOCK-12.SERVER_ONLY.json",
+  "source_test_id": "M31-LISTENING-MOCK-12",
+  "source_lesson_id": null,
+  "source_part_id": "M31-LISTENING-MOCK-12-P3",
+  "reuse_parent_id": "M31-LISTENING-MOCK-12-P3",
+  "source_question_id": "Q02",
+  "source_audio_id": "assessment/full_mock_part/M31-LISTENING-MOCK-12-P3",
+  "source_audio_id_kind": "logical_source_part_identifier_not_file",
+  "source_audio_asset_id": null,
+  "source_declared_unverified_audio_id": null,
+  "source_audio_url": null,
+  "audio_file_provided": false,
+  "source_turn_ids": [
+    "T05",
+    "T09",
+    "T13"
+  ],
+  "segment_timing": {
+    "T05": {
+      "start_ms": null,
+      "end_ms": null,
+      "sha256": "5f256d5ad13623477d8f024f3c1d1463fe58b8579e3700369d69f78f39da765b"
+    },
+    "T09": {
+      "start_ms": null,
+      "end_ms": null,
+      "sha256": "0a4f54b4237cd415b038793f9e1d66254694543d1de23aee231c86e1a57e2165"
+    },
+    "T13": {
+      "start_ms": null,
+      "end_ms": null,
+      "sha256": "cb05226a31447303e0d27bb83452b39d4e84be3af51b6a30c3c93ad6adda4d7b"
+    }
+  },
+  "clip_start_ms": null,
+  "clip_end_ms": null,
+  "audio_alignment_status": "pending_real_audio_and_verified_offsets",
+  "evidence_transcript_sha256": "509b1002d49ca0d3f1cf013b91fc0cac5d888abb5628f2931aa80e6a0d62a581",
+  "anchor_turn_id": "T09",
+  "teacher_only_evidence_text_en": "Midday observations alone are misleading because activity changes with temperature and sunlight.",
+  "questions": [
+    {
+      "exercise_id": "ACT-POST-127-01",
+      "phase": "guided_relisten",
+      "mode": "single_choice",
+      "title_vi": "Nghe lại điểm đã bỏ lỡ",
+      "prompt_en": "Why might observations made at midday be misleading?",
+      "prompt_vi": "Nghe lại đoạn bằng chứng và trả lời lại câu hỏi gốc sau khi đã nộp bài thi.",
+      "options": [
+        {
+          "key": "A",
+          "text": "activity changes with temperature"
+        },
+        {
+          "key": "B",
+          "text": "all insects become inactive at noon"
+        },
+        {
+          "key": "C",
+          "text": "the site is closed to students"
+        }
+      ],
+      "correct_option": "A",
+      "correct_answers": [
+        "A"
+      ],
+      "spoken_answer": "activity changes with temperature",
+      "word_limit": null,
+      "normalization_policy": "trim_unicode_nfkc_casefold_collapse_spaces_keep_meaningful_digits_and_letters",
+      "scoring_policy": "post_test_training_only",
+      "source_question_id": "Q02",
+      "source_question_type": "mcq",
+      "play_turn_ids": [
+        "T09"
+      ],
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "teacher_explanation_vi": "Đáp án biên soạn: A. Giáo viên phải nghe âm thanh, đối chiếu câu nói T09 và kiểm tra tính duy nhất của câu trả lời.",
+      "feedback_vi": "Đáp án gốc: A. Đối chiếu với các lượt thoại T09; chú ý thông tin cuối cùng và từ khóa được diễn đạt lại.",
+      "is_exam_score": false
+    },
+    {
+      "exercise_id": "ACT-POST-127-02",
+      "phase": "evidence_recognition",
+      "mode": "evidence_choice",
+      "title_vi": "Tìm câu thoại chứng minh đáp án",
+      "prompt_vi": "Trong ba trích đoạn thực sự có trong cùng bài nghe, trích đoạn nào liên quan trực tiếp nhất đến câu hỏi vừa làm?",
+      "source_question_id": "Q02",
+      "source_question_prompt_en": "Why might observations made at midday be misleading?",
+      "choices": [
+        {
+          "key": "T05",
+          "excerpt_en": "Our main unit should be visits to a flower patch, recorded over a fixed observation period.",
+          "source_turn_id": "T05"
+        },
+        {
+          "key": "T13",
+          "excerpt_en": "Comparing different-sized plots directly creates unequal sampling effort.",
+          "source_turn_id": "T13"
+        },
+        {
+          "key": "T09",
+          "excerpt_en": "Midday observations alone are misleading because activity changes with temperature and sunlight.",
+          "source_turn_id": "T09"
+        }
+      ],
+      "correct_answers": [
+        "T09"
+      ],
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "evidence_text_sha256": "0a4f54b4237cd415b038793f9e1d66254694543d1de23aee231c86e1a57e2165",
+      "play_turn_ids": [
+        "T05",
+        "T13",
+        "T09"
+      ],
+      "feedback_vi": "Câu hỏi này được chứng minh tại lượt T09. Hai lựa chọn còn lại là lời nói có thật nhưng nằm ở các ý khác trong cùng đoạn nghe.",
+      "grading_policy": "exact_source_turn_id",
+      "is_exam_score": false
+    },
+    {
+      "exercise_id": "ACT-POST-127-03",
+      "phase": "focus_dictation",
+      "mode": "source_phrase_dictation",
+      "title_vi": "Chép lại cụm âm thanh trọng tâm",
+      "prompt_en": "…Midday observations alone are  [____]  temperature and sunlight.…",
+      "prompt_vi": "Nghe lượt thoại và điền chính xác cụm từ còn thiếu vào dấu trống. Không chép cả câu.",
+      "word_limit": 5,
+      "correct_answers": [
+        "misleading because activity changes with"
+      ],
+      "play_turn_ids": [
+        "T09"
+      ],
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "source_excerpt_exact": "misleading because activity changes with",
+      "evidence_char_start": 30,
+      "evidence_char_end": 70,
+      "source_turn_sha256": "0a4f54b4237cd415b038793f9e1d66254694543d1de23aee231c86e1a57e2165",
+      "feedback_vi": "Cụm nghe-chép chính xác là “misleading because activity changes with”. Hãy đối chiếu từ chức năng, âm cuối và cách nối âm trước khi thử lại.",
+      "normalization_policy": "trim_unicode_nfkc_casefold_collapse_spaces_keep_meaningful_digits_and_letters",
+      "is_exam_score": false,
+      "newly_authored_for_m35": true
+    }
+  ],
+  "teacher_source_answer_key": {
+    "original_correct_answers": [
+      "A"
+    ],
+    "original_correct_option": "A",
+    "evidence_turn_ids": [
+      "T09"
+    ],
+    "raw_question_evidence_excerpt_en": "Midday observations alone are misleading because activity changes with temperature and sunlight.",
+    "original_explanation_vi": "Đáp án biên soạn: A. Giáo viên phải nghe âm thanh, đối chiếu câu nói T09 và kiểm tra tính duy nhất của câu trả lời."
+  },
+  "skill_tags": [
+    "post_test_repair",
+    "section_3",
+    "mcq",
+    "evidence_matching",
+    "focused_dictation",
+    "first_attempt_exposure_protection"
+  ],
+  "learner_variants": {
+    "if_original_answer_incorrect": "required_repair",
+    "if_original_answer_correct": "optional_reinforcement",
+    "if_no_question_response": "optional_first_attempt_submitted_only"
+  },
+  "repair_rule": {
+    "compare_response_to_original_question_id": "Q02",
+    "source_user_attempt_answer_from_db": true,
+    "error_record_type": "original_question_review",
+    "recommend_retention_days": [
+      1,
+      3,
+      7
+    ],
+    "new_first_attempt_scoring": false,
+    "band_calibration": false
+  },
+  "access_policy": {
+    "access": "post_submission_only",
+    "gate_parent_id": "M31-LISTENING-MOCK-12",
+    "gate_kind": "whole_mock_submitted",
+    "user_bound": true,
+    "server_side_enforced": true,
+    "has_prior_attempt_required": true,
+    "cross_user_unlock": false,
+    "exposure_records_required": true,
+    "do_not_return_in_public_catalog": true,
+    "transcript_hidden_in_exam_session": true,
+    "pre_first_attempt_reuse": false,
+    "after_submit_irreversible_seen": true,
+    "retest_is_exposed": true,
+    "allow_any_public_index": false
+  },
+  "rights_status": "pending_review",
+  "review": {
+    "source_quality_review": "pending",
+    "semantic_answer_review": "pending",
+    "human_audio_listening": "pending",
+    "alignment_verified": false,
+    "teacher_signoff": "pending",
+    "publication_approved": false
+  },
+  "map_asset_id": null,
+  "map_asset_private_path": null,
+  "source_speaker_roles": [],
+  "version": "m35.1.0",
+  "import_policy": "insert_only_idempotent_do_not_overwrite_source"
+}

@@ -11,6 +11,7 @@ import {
 } from "@/lib/listening/vocabulary";
 import "./listening-vocabulary-page.css";
 import { VocabPageHeader } from "@/features/vocabulary/vocab-page-header";
+import { LoadingBlock } from "@/components/layout/loading-block";
 
 type Mode = "cards" | "choice" | "dictation";
 type Tab = "topics" | "study" | "library";
@@ -124,7 +125,7 @@ export function ListeningVocabularyPage() {
     <div className="listening-vocab-stats"><span><strong>{studied}</strong> / {scoped.length} đã học</span><span><strong>{due}</strong> đến hạn ôn</span><span><strong>{Math.max(0, scoped.length - studied)}</strong> chưa học</span></div>
     <nav className="listening-vocab-tabs" aria-label="Các phần của bộ Listening"><button className={tab === "topics" ? "active" : ""} onClick={() => setTab("topics")}>Chủ đề</button><button className={tab === "study" ? "active" : ""} onClick={() => setTab("study")}>Học & luyện</button><button className={tab === "library" ? "active" : ""} onClick={() => setTab("library")}>Kho 1.200 mục</button></nav>
     {error && <p className="listening-vocab-error" role="alert">{error}</p>}
-    {loading ? <div className="listening-vocab-empty">Đang tải bộ Listening…</div>
+    {loading ? <div className="listening-vocab-empty"><LoadingBlock label="Đang tải bộ Listening…" /></div>
       : !db ? <div className="listening-vocab-empty">Đăng nhập vào tài khoản để học và lưu tiến độ.</div>
       : tab === "topics" ? <section className="listening-vocab-topics"><div className="listening-vocab-section-head"><div><h2>Chọn chủ đề để bắt đầu</h2><p>Mỗi mục giữ nguyên chủ đề nguồn. Bạn cũng có thể học toàn bộ bộ từ.</p></div><button className="listening-vocab-primary" onClick={() => { changeScope(null); setTab("study"); }}>Học đề xuất <ArrowRight size={16} /></button></div><div className="listening-vocab-topic-grid">{topics.map((topic) => {
         const count = words.filter((word) => word.topic_id === topic.id && byId.has(word.id)).length;

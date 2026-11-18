@@ -1,0 +1,435 @@
+[
+  {
+    "id": "01",
+    "level": "1.0–2.0",
+    "title": "Phân biệt âm dễ nhầm",
+    "objective": "Chọn từ thực sự được nói.",
+    "strategy": "Nghe nguyên âm/phụ âm trước khi nhìn nghĩa của câu.",
+    "stages": [
+      "F1",
+      "FND2"
+    ],
+    "types": [
+      "word_choice"
+    ],
+    "sourceFrom": 1,
+    "sourceTo": 20
+  },
+  {
+    "id": "02",
+    "level": "1.0–2.0",
+    "title": "Tên riêng và đánh vần",
+    "objective": "Ghi đúng tên, chữ cái và địa chỉ được đánh vần.",
+    "strategy": "Đọc trước ô trống; chú ý chữ cái được người nói nhắc lại hoặc sửa.",
+    "stages": [
+      "FND2"
+    ],
+    "types": [
+      "short_answer"
+    ],
+    "sourceFrom": 41,
+    "sourceTo": 55
+  },
+  {
+    "id": "03",
+    "level": "1.0–2.0",
+    "title": "Số, giá và thời gian",
+    "objective": "Ghi đúng số, giá, ngày và giờ.",
+    "strategy": "Giữ cả đơn vị và nghe đến cuối lượt nói trước khi chốt số.",
+    "stages": [
+      "FND2"
+    ],
+    "types": [
+      "short_answer"
+    ],
+    "sourceFrom": 21,
+    "sourceTo": 40
+  },
+  {
+    "id": "04",
+    "level": "1.0–2.0",
+    "title": "Thông tin trong câu ngắn",
+    "objective": "Bắt đúng một thông tin trực tiếp trong câu đời sống.",
+    "strategy": "Tìm từ hỏi trước khi nghe và ghi câu trả lời ngắn.",
+    "stages": [
+      "FND2"
+    ],
+    "types": [
+      "short_answer"
+    ],
+    "sourceFrom": 71,
+    "sourceTo": 85
+  },
+  {
+    "id": "05",
+    "level": "2.0–3.0",
+    "title": "Dự đoán loại đáp án",
+    "objective": "Nhận biết ô trống cần tên, số hay địa điểm.",
+    "strategy": "Đọc nhãn ô trống, dự đoán loại từ rồi mới bật audio.",
+    "stages": [
+      "F3",
+      "S1"
+    ],
+    "types": [
+      "form_completion",
+      "gap_fill"
+    ]
+  },
+  {
+    "id": "06",
+    "level": "2.0–3.0",
+    "title": "Theo dõi người nói",
+    "objective": "Phân biệt thông tin của hai người trong hội thoại.",
+    "strategy": "Chú ý lượt nói và đối tượng mà mỗi người đang nhắc đến.",
+    "stages": [
+      "F3",
+      "S1"
+    ],
+    "types": [
+      "short_answer",
+      "mcq"
+    ]
+  },
+  {
+    "id": "07",
+    "level": "2.0–3.0",
+    "title": "Thông tin được sửa lại",
+    "objective": "Lấy thông tin cuối cùng sau lời đính chính.",
+    "strategy": "Đừng chốt đáp án ở lần nhắc đầu; nghe các từ đổi ý và phủ định.",
+    "stages": [
+      "FND2"
+    ],
+    "types": [
+      "short_answer"
+    ],
+    "sourceFrom": 25,
+    "sourceTo": 40
+  },
+  {
+    "id": "08",
+    "level": "2.0–3.0",
+    "title": "Điền form đơn giản",
+    "objective": "Điền thông tin đặt chỗ và liên hệ.",
+    "strategy": "Đọc thứ tự các ô, giữ đúng chính tả và giới hạn từ.",
+    "stages": [
+      "F3",
+      "S1"
+    ],
+    "types": [
+      "form_completion"
+    ]
+  },
+  {
+    "id": "09",
+    "level": "3.0–4.0",
+    "title": "Form và câu trả lời ngắn",
+    "objective": "Trả lời chính xác các ô và câu hỏi ngắn.",
+    "strategy": "Xác định câu hỏi hỏi ai, ở đâu, bao nhiêu; bỏ thông tin thừa.",
+    "stages": [
+      "F3",
+      "S1"
+    ],
+    "types": [
+      "form_completion",
+      "short_answer"
+    ]
+  },
+  {
+    "id": "10",
+    "level": "3.0–4.0",
+    "title": "Note completion",
+    "objective": "Theo dòng ghi chú và điền từ còn thiếu.",
+    "strategy": "Dùng các tiêu đề ghi chú làm mốc khi audio chuyển ý.",
+    "stages": [
+      "S1",
+      "S2"
+    ],
+    "types": [
+      "note_completion"
+    ]
+  },
+  {
+    "id": "11",
+    "level": "3.0–4.0",
+    "title": "MCQ một đáp án",
+    "objective": "Chọn ý đúng sau khi nghe đủ các lựa chọn.",
+    "strategy": "So sánh điểm khác nhau giữa đáp án; cảnh giác phương án chỉ được nhắc tên.",
+    "stages": [
+      "S1",
+      "S2"
+    ],
+    "types": [
+      "mcq"
+    ]
+  },
+  {
+    "id": "12",
+    "level": "3.0–4.0",
+    "title": "Cụm câu Section 1",
+    "objective": "Làm liên tiếp nhiều câu theo thứ tự audio.",
+    "strategy": "Đọc trước cả cụm câu và dùng câu kế tiếp để bắt lại vị trí.",
+    "stages": [
+      "S1"
+    ],
+    "types": [
+      "form_completion",
+      "note_completion",
+      "mcq",
+      "gap_fill"
+    ]
+  },
+  {
+    "id": "13",
+    "level": "4.0–5.0",
+    "title": "Section 1 trọn phần",
+    "objective": "Giữ tập trung trong hội thoại đời sống dài hơn.",
+    "strategy": "Nghe các lượt sửa giá, ngày, tên; rà soát chính tả trước khi nộp.",
+    "stages": [
+      "S1"
+    ],
+    "types": [
+      "form_completion",
+      "note_completion",
+      "mcq",
+      "gap_fill"
+    ]
+  },
+  {
+    "id": "14",
+    "level": "4.0–5.0",
+    "title": "Chỉ đường và mốc cố định",
+    "objective": "Theo tuyến đường từ điểm xuất phát.",
+    "strategy": "Xác định lối vào, hướng và mốc cố định trước khi nghe.",
+    "stages": [
+      "S2"
+    ],
+    "types": [
+      "map_labelling"
+    ]
+  },
+  {
+    "id": "15",
+    "level": "4.0–5.0",
+    "title": "Map, table và matching",
+    "objective": "Kết hợp vị trí, hàng bảng và đối tượng.",
+    "strategy": "Theo từng bước di chuyển hoặc từng hàng; đừng đoán theo thứ tự chữ cái.",
+    "stages": [
+      "S2"
+    ],
+    "types": [
+      "map_labelling",
+      "table_completion",
+      "matching"
+    ]
+  },
+  {
+    "id": "16",
+    "level": "4.0–5.0",
+    "title": "Section 2 trọn phần",
+    "objective": "Theo một bài nói về địa điểm hoặc dịch vụ.",
+    "strategy": "Đánh dấu tín hiệu chuyển ý để không lạc câu tiếp theo.",
+    "stages": [
+      "S2"
+    ],
+    "types": [
+      "note_completion",
+      "table_completion",
+      "map_labelling",
+      "mcq",
+      "matching"
+    ]
+  },
+  {
+    "id": "17",
+    "level": "5.0–6.0",
+    "title": "Theo dõi nhiều người nói",
+    "objective": "Gắn đúng quan điểm với từng người.",
+    "strategy": "Ghi nhanh ai đang nói và họ đồng ý hay phản đối.",
+    "stages": [
+      "S3"
+    ],
+    "types": [
+      "matching"
+    ]
+  },
+  {
+    "id": "18",
+    "level": "5.0–6.0",
+    "title": "Nhận ra paraphrase",
+    "objective": "Nối ý trong audio với cách diễn đạt khác của câu hỏi.",
+    "strategy": "So ý nghĩa của cả mệnh đề, không săn một từ giống hệt.",
+    "stages": [
+      "S3"
+    ],
+    "types": [
+      "mcq",
+      "matching"
+    ]
+  },
+  {
+    "id": "19",
+    "level": "5.0–6.0",
+    "title": "MCQ và matching có bẫy",
+    "objective": "Loại phương án được nhắc nhưng bị bác bỏ.",
+    "strategy": "Chờ kết luận cuối của người nói trước khi chọn.",
+    "stages": [
+      "S3"
+    ],
+    "types": [
+      "mcq",
+      "matching"
+    ]
+  },
+  {
+    "id": "20",
+    "level": "5.0–6.0",
+    "title": "Section 3 trọn phần",
+    "objective": "Theo một cuộc thảo luận học thuật.",
+    "strategy": "Chú ý sự đổi ý và quan điểm của từng người xuyên suốt bài.",
+    "stages": [
+      "S3"
+    ],
+    "types": [
+      "mcq",
+      "matching",
+      "note_completion",
+      "short_answer"
+    ]
+  },
+  {
+    "id": "21",
+    "level": "6.0–7.0",
+    "title": "Dấu hiệu chuyển ý",
+    "objective": "Theo cấu trúc bài giảng khi chủ đề thay đổi.",
+    "strategy": "Nghe các từ chỉ thứ tự, nguyên nhân, kết quả và ví dụ.",
+    "stages": [
+      "S4"
+    ],
+    "types": [
+      "note_completion",
+      "gap_fill"
+    ]
+  },
+  {
+    "id": "22",
+    "level": "6.0–7.0",
+    "title": "Note và table học thuật",
+    "objective": "Điền ghi chú và bảng từ bài nói học thuật.",
+    "strategy": "Dùng tiêu đề, hàng và cột để đoán từ loại.",
+    "stages": [
+      "S4"
+    ],
+    "types": [
+      "note_completion",
+      "table_completion"
+    ]
+  },
+  {
+    "id": "23",
+    "level": "6.0–7.0",
+    "title": "Summary, flow chart và sentence",
+    "objective": "Điền chuỗi ý, bước quy trình và câu hoàn chỉnh.",
+    "strategy": "Theo quan hệ giữa các ý và kiểm tra ngữ pháp của ô trống.",
+    "stages": [
+      "S4"
+    ],
+    "types": [
+      "summary_completion",
+      "flow_chart_completion",
+      "sentence_completion"
+    ]
+  },
+  {
+    "id": "24",
+    "level": "6.0–7.0",
+    "title": "Section 4 trọn phần",
+    "objective": "Theo bài giảng dài và tự bắt lại vị trí.",
+    "strategy": "Dùng cấu trúc ghi chú, từ nối và câu tiếp theo làm mốc.",
+    "stages": [
+      "S4"
+    ],
+    "types": [
+      "note_completion",
+      "summary_completion",
+      "table_completion",
+      "flow_chart_completion"
+    ]
+  },
+  {
+    "id": "25",
+    "level": "7.0+",
+    "title": "Trộn dạng và giới hạn từ",
+    "objective": "Chuyển dạng câu hỏi mà vẫn giữ yêu cầu từng câu.",
+    "strategy": "Kiểm tra giới hạn từ và loại câu hỏi trước mỗi cụm.",
+    "stages": [
+      "S1",
+      "S2",
+      "S3",
+      "S4"
+    ],
+    "types": [
+      "form_completion",
+      "mcq",
+      "matching",
+      "note_completion",
+      "summary_completion"
+    ]
+  },
+  {
+    "id": "26",
+    "level": "7.0+",
+    "title": "Paraphrase và phương án gây nhiễu",
+    "objective": "Nhận ra ý đúng dù cách nói thay đổi.",
+    "strategy": "So kết luận cuối với tất cả lựa chọn; ghi lý do loại mỗi phương án.",
+    "stages": [
+      "S2",
+      "S3",
+      "S4"
+    ],
+    "types": [
+      "mcq",
+      "matching"
+    ]
+  },
+  {
+    "id": "27",
+    "level": "7.0+",
+    "title": "Luân phiên Section 1–4",
+    "objective": "Đổi chiến lược theo ngữ cảnh và người nói.",
+    "strategy": "Đọc đề trước, nghe một lượt rồi rà soát đáp án.",
+    "stages": [
+      "S1",
+      "S2",
+      "S3",
+      "S4"
+    ],
+    "types": [
+      "form_completion",
+      "note_completion",
+      "mcq",
+      "matching",
+      "summary_completion"
+    ]
+  },
+  {
+    "id": "28",
+    "level": "7.0+",
+    "title": "Thử thách tổng hợp và sửa lỗi",
+    "objective": "Làm bộ 40 câu tổng hợp rồi phân tích điểm yếu.",
+    "strategy": "Giữ một lượt nghe ở phần kiểm tra; xem bằng chứng sau khi nộp.",
+    "stages": [
+      "S1",
+      "S2",
+      "S3",
+      "S4"
+    ],
+    "types": [
+      "form_completion",
+      "note_completion",
+      "mcq",
+      "matching",
+      "summary_completion",
+      "table_completion"
+    ]
+  }
+]

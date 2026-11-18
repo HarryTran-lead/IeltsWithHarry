@@ -1,0 +1,396 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "DICT-S1-002",
+  "status": "draft",
+  "level": "L1",
+  "section": 1,
+  "topic": "Restaurant Reservations",
+  "title": "A Window Table for Lunch",
+  "learning_objectives_vi": [
+    "Rèn core information exchange qua tình huống: A diner calls a café to book a table for a small group.",
+    "Xác định thông tin cuối cùng và phân biệt dữ liệu gây nhiễu (nếu có).",
+    "Nghe chép chính xác, lý giải đáp án từ transcript và học từ trong ngữ cảnh."
+  ],
+  "content_format": "section_bridge",
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Service representative / employee",
+      "tts_voice_id": null,
+      "accent_requested": "british"
+    },
+    {
+      "speaker_id": "B",
+      "role": "Customer / applicant",
+      "tts_voice_id": null,
+      "accent_requested": "british"
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "Hello, Willow Café. This is Daisy.",
+      "translation_vi": "Xin chào, quán Willow. Daisy xin nghe.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "people_numbers",
+        "days_dates",
+        "time",
+        "seating",
+        "section_1",
+        "two_speaker_dialogue",
+        "l1"
+      ]
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "B",
+      "text_en": "Can I reserve a table for three people?",
+      "translation_vi": "Tôi có thể đặt bàn cho ba người không?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "people_numbers",
+        "days_dates",
+        "time",
+        "seating",
+        "section_1",
+        "two_speaker_dialogue",
+        "l1"
+      ]
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "A",
+      "text_en": "Of course. Which day would you like?",
+      "translation_vi": "Dĩ nhiên. Anh muốn ngày nào?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "people_numbers",
+        "days_dates",
+        "time",
+        "seating",
+        "section_1",
+        "two_speaker_dialogue",
+        "l1"
+      ]
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "B",
+      "text_en": "Sunday, at one o'clock, please.",
+      "translation_vi": "Chủ nhật, lúc một giờ nhé.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "people_numbers",
+        "days_dates",
+        "time",
+        "seating",
+        "section_1",
+        "two_speaker_dialogue",
+        "l1"
+      ]
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "A",
+      "text_en": "Would you like a table near the window?",
+      "translation_vi": "Anh muốn ngồi gần cửa sổ không?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "people_numbers",
+        "days_dates",
+        "time",
+        "seating",
+        "section_1",
+        "two_speaker_dialogue",
+        "l1"
+      ]
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "B",
+      "text_en": "Yes, please. The booking is under Patel.",
+      "translation_vi": "Vâng. Đặt bàn dưới tên Patel.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "people_numbers",
+        "days_dates",
+        "time",
+        "seating",
+        "section_1",
+        "two_speaker_dialogue",
+        "l1"
+      ]
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "Thank you. We will see you on Sunday.",
+      "translation_vi": "Cảm ơn. Hẹn gặp anh vào Chủ nhật.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "people_numbers",
+        "days_dates",
+        "time",
+        "seating",
+        "section_1",
+        "two_speaker_dialogue",
+        "l1"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "type": "form_completion",
+      "prompt": "Number of diners: ____",
+      "correct_answers": [
+        "3",
+        "three"
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Người gọi đặt bàn cho ba người.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "people_numbers",
+        "days_dates",
+        "time",
+        "seating",
+        "ielts_section1_practice"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q02",
+      "type": "form_completion",
+      "prompt": "Booking day: ____",
+      "correct_answers": [
+        "Sunday"
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Ngày đặt bàn là Chủ nhật.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "people_numbers",
+        "days_dates",
+        "time",
+        "seating",
+        "ielts_section1_practice"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q03",
+      "type": "form_completion",
+      "prompt": "Booking time: ____",
+      "correct_answers": [
+        "1:00",
+        "one o'clock",
+        "1 o'clock"
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Người gọi yêu cầu một giờ.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "people_numbers",
+        "days_dates",
+        "time",
+        "seating",
+        "ielts_section1_practice"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q04",
+      "type": "form_completion",
+      "prompt": "Preferred seat: near the ____",
+      "correct_answers": [
+        "window"
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Bàn gần cửa sổ được đề xuất và đồng ý.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "people_numbers",
+        "days_dates",
+        "time",
+        "seating",
+        "ielts_section1_practice"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q05",
+      "type": "form_completion",
+      "prompt": "Booking surname: ____",
+      "correct_answers": [
+        "Patel"
+      ],
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "explanation_vi": "Người gọi nói rõ Patel.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "people_numbers",
+        "days_dates",
+        "time",
+        "seating",
+        "ielts_section1_practice"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "D01",
+      "type": "dictation",
+      "prompt": "Nghe và chép nguyên văn câu của nhân vật B (lượt T02).",
+      "correct_answers": [
+        "Can I reserve a table for three people?"
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Nội dung cần chép: Can I reserve a table for three people? Nghĩa: Tôi có thể đặt bàn cho ba người không? Chú ý đầy đủ từ chức năng, số ít/số nhiều và âm cuối.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "transcription_accuracy",
+        "people_numbers",
+        "days_dates",
+        "time",
+        "seating"
+      ]
+    },
+    {
+      "question_id": "D02",
+      "type": "dictation",
+      "prompt": "Nghe và chép nguyên văn câu của nhân vật A (lượt T05).",
+      "correct_answers": [
+        "Would you like a table near the window?"
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Nội dung cần chép: Would you like a table near the window? Nghĩa: Anh muốn ngồi gần cửa sổ không? Chú ý đầy đủ từ chức năng, số ít/số nhiều và âm cuối.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "transcription_accuracy",
+        "people_numbers",
+        "days_dates",
+        "time",
+        "seating"
+      ]
+    },
+    {
+      "question_id": "G01",
+      "type": "gap_fill",
+      "prompt": "Nghe và điền phần còn thiếu: Yes, please. The ____ Patel.",
+      "correct_answers": [
+        "booking is under"
+      ],
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "explanation_vi": "Từ/cụm nghe được là “booking is under”. Câu đầy đủ: Yes, please. The booking is under Patel.. Nghĩa: Vâng. Đặt bàn dưới tên Patel.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "gap_fill",
+        "vocabulary_in_context",
+        "people_numbers",
+        "days_dates",
+        "time",
+        "seating"
+      ]
+    }
+  ],
+  "vocabulary": [
+    {
+      "term": "reserve a table",
+      "pos": "verb phrase",
+      "meaning_vi": "đặt bàn",
+      "example_en": "Can I reserve a table for three people?",
+      "example_vi": "Tôi có thể đặt bàn cho ba người không?",
+      "source_turn_id": "T02"
+    },
+    {
+      "term": "near the window",
+      "pos": "phrase",
+      "meaning_vi": "gần cửa sổ",
+      "example_en": "Would you like a table near the window?",
+      "example_vi": "Anh muốn ngồi gần cửa sổ không?",
+      "source_turn_id": "T05"
+    },
+    {
+      "term": "booking",
+      "pos": "noun",
+      "meaning_vi": "đặt chỗ",
+      "example_en": "Yes, please. The booking is under Patel.",
+      "example_vi": "Vâng. Đặt bàn dưới tên Patel.",
+      "source_turn_id": "T06"
+    },
+    {
+      "term": "booking is under",
+      "pos": "phrase",
+      "meaning_vi": "đặt chỗ mang tên",
+      "example_en": "Yes, please. The booking is under Patel.",
+      "example_vi": "Vâng. Đặt bàn dưới tên Patel.",
+      "source_turn_id": "T06"
+    }
+  ],
+  "audio": {
+    "status": "not_generated",
+    "url": null,
+    "duration_ms": null,
+    "model": null,
+    "provider": null,
+    "voice_config": null,
+    "source_transcript_hash": "7ebaae62c0968016566b238627f17beffa84b65da0019686145f702f2f45242c",
+    "audio_sha256": null,
+    "format": null
+  },
+  "qa": {
+    "content_reviewed": false,
+    "answers_verified": false,
+    "audio_verified": false,
+    "rights_cleared": false,
+    "duplicate_reviewed": false,
+    "notes": [
+      "Draft authoring, not expert reviewed.",
+      "TTS output pending; timestamps must be aligned after synthesis.",
+      "Keep unpublished until audio and question evidence are checked by a reviewer.",
+      "M16.2: automated edits are provisional; IELTS teacher final signoff, audio and rights clearance pending."
+    ]
+  },
+  "provenance": {
+    "content_origin": "original_ai_assisted",
+    "source_urls": [],
+    "source_rights_note": "Original pedagogical dialogues, not IELTS/Cambridge exam content. Review all TTS provider terms and permissions before audio generation/distribution.",
+    "reviewer": null
+  },
+  "release_metadata": {
+    "published_at": null,
+    "version": 1
+  }
+}

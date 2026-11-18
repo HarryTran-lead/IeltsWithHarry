@@ -1,0 +1,421 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "DICT-S3-040",
+  "status": "draft",
+  "level": "L6",
+  "section": 3,
+  "topic": "Time Management",
+  "title": "Time Management – Conference Poster Deadline",
+  "learning_objectives_vi": [
+    "Theo dõi ba nhân vật thảo luận và phân biệt quan điểm ban đầu với quyết định sau cùng.",
+    "Nhận biết lập luận, điều kiện, hạn chế nghiên cứu và diễn đạt lại (paraphrase) trong Section 3.",
+    "Nghe chép đúng phát ngôn then chốt và truy xuất bằng chứng theo lượt thoại."
+  ],
+  "content_format": "section_practice",
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Daisy – academic project discussion participant",
+      "tts_voice_id": null,
+      "accent_requested": "american"
+    },
+    {
+      "speaker_id": "B",
+      "role": "Leo – academic project discussion participant",
+      "tts_voice_id": null,
+      "accent_requested": "american"
+    },
+    {
+      "speaker_id": "C",
+      "role": "Sara – academic project discussion participant",
+      "tts_voice_id": null,
+      "accent_requested": "american"
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "Our research poster has to be displayed at the regional conference, and I booked the train for Thursday morning. I assumed we could print the poster on Wednesday afternoon.",
+      "translation_vi": "Poster nghiên cứu phải trưng bày ở hội nghị khu vực, và mình đặt tàu sáng thứ Năm. Mình nghĩ có thể in poster vào chiều thứ Tư.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "multi_speaker",
+        "l6"
+      ]
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "B",
+      "text_en": "The print shop requires final artwork forty-eight hours in advance for the large format. If we send it Wednesday, they won't guarantee delivery before we leave.",
+      "translation_vi": "Tiệm in yêu cầu gửi bản thiết kế cuối trước bốn mươi tám giờ đối với khổ lớn. Nếu gửi thứ Tư, họ không đảm bảo giao trước lúc ta đi.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "multi_speaker",
+        "l6"
+      ]
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "C",
+      "text_en": "We also need the department's logo approval, which can take a full working day. The design isn't the only dependency, so the printing deadline should be calculated backward from the train time.",
+      "translation_vi": "Ta còn cần khoa duyệt logo, có thể mất cả ngày làm việc. Thiết kế không phải việc phụ thuộc duy nhất, nên phải tính ngược hạn in từ giờ tàu chạy.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "multi_speaker",
+        "l6"
+      ]
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "A",
+      "text_en": "Then our real deadline is Monday evening for the text and graphics, Tuesday morning for approval and Tuesday afternoon for submission to the printer. That leaves a small buffer.",
+      "translation_vi": "Vậy hạn thật là tối thứ Hai chốt chữ và hình, sáng thứ Ba xin duyệt và chiều thứ Ba gửi in. Như thế còn một khoảng dự phòng nhỏ.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "multi_speaker",
+        "l6"
+      ]
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "B",
+      "text_en": "I would allow more time for the charts. The latest dataset has an outlier, and the supervisor won't approve a graph until we explain whether it is a measurement error.",
+      "translation_vi": "Mình muốn thêm thời gian cho biểu đồ. Bộ số liệu mới có điểm ngoại lệ, và người hướng dẫn chưa duyệt đồ thị nếu chưa giải thích đó có phải lỗi đo không.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "multi_speaker",
+        "l6"
+      ]
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "C",
+      "text_en": "We could submit the layout with a clearly marked placeholder while the chart is reviewed, but the printer must not receive that provisional file. Let's separate internal approval from production release.",
+      "translation_vi": "Ta có thể gửi bố cục với chỗ chờ rõ ràng trong khi biểu đồ được duyệt, nhưng tuyệt đối không đưa file tạm ấy cho tiệm in. Hãy tách duyệt nội bộ khỏi phát hành in.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "multi_speaker",
+        "l6"
+      ]
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "Good point. I'll create two file versions with different names and put the approved one in a locked folder. That should prevent someone accidentally printing an old graph.",
+      "translation_vi": "Ý hay. Mình tạo hai phiên bản tên khác nhau và để bản đã duyệt trong thư mục khóa. Như vậy tránh in nhầm biểu đồ cũ.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "multi_speaker",
+        "l6"
+      ]
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "B",
+      "text_en": "If the data issue isn't resolved by Tuesday noon, we should remove that chart and use a summary table already checked by the supervisor. We need a fallback, not an emergency rewrite.",
+      "translation_vi": "Nếu lỗi dữ liệu chưa giải quyết trước trưa thứ Ba, ta bỏ biểu đồ và dùng bảng tóm tắt đã được người hướng dẫn kiểm. Ta cần phương án dự phòng chứ không phải viết lại gấp.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "multi_speaker",
+        "l6"
+      ]
+    },
+    {
+      "turn_id": "T09",
+      "speaker_id": "C",
+      "text_en": "Agreed: Monday for content, Tuesday noon for the chart decision, and Tuesday afternoon for print release. I'll tell the team that Wednesday is a buffer day, not the production deadline.",
+      "translation_vi": "Đồng ý: thứ Hai chốt nội dung, trưa thứ Ba quyết biểu đồ, chiều thứ Ba phát lệnh in. Mình sẽ báo cả nhóm thứ Tư là ngày dự phòng, không phải hạn sản xuất.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "multi_speaker",
+        "l6"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "type": "mcq",
+      "prompt": "Why can the poster not be sent for printing on Wednesday?",
+      "correct_answers": [
+        "The shop needs final artwork forty-eight hours in advance"
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Tại T02, Leo nói: “Tiệm in yêu cầu gửi bản thiết kế cuối trước bốn mươi tám giờ đối với khổ lớn. Nếu gửi thứ Tư, họ không đảm bảo giao trước lúc ta đi.” Đáp án “The shop needs final artwork forty-eight hours in advance” diễn đạt đúng ý được nêu. Các phương án còn lại không phù hợp với bằng chứng; chú ý ý kiến bị sửa và tính điều kiện.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "section_3",
+        "ielts_practice",
+        "inference",
+        "paraphrase"
+      ],
+      "options": [
+        "The new outlier makes every chart unusable",
+        "The shop needs final artwork forty-eight hours in advance",
+        "The logo approval is scheduled for Thursday"
+      ]
+    },
+    {
+      "question_id": "Q02",
+      "type": "note_completion",
+      "prompt": "The department's ____ also requires approval.",
+      "correct_answers": [
+        "logo"
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Bằng chứng T03: “Ta còn cần khoa duyệt logo, có thể mất cả ngày làm việc. Thiết kế không phải việc phụ thuộc duy nhất, nên phải tính ngược hạn in từ giờ tàu chạy.” Cụm cần điền nghe đúng nguyên văn là “logo”.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_3",
+        "ielts_practice",
+        "detail",
+        "note_completion"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q03",
+      "type": "matching",
+      "prompt": "Which speaker sets revised deadlines by working backward from the trip?",
+      "correct_answers": [
+        "Speaker A"
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Người nói Daisy (Speaker A) đưa ra ý này tại T04: “Vậy hạn thật là tối thứ Hai chốt chữ và hình, sáng thứ Ba xin duyệt và chiều thứ Ba gửi in. Như thế còn một khoảng dự phòng nhỏ.”",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "section_3",
+        "ielts_practice",
+        "speaker_attribution"
+      ],
+      "options": [
+        "Speaker A",
+        "Speaker B",
+        "Speaker C"
+      ]
+    },
+    {
+      "question_id": "Q04",
+      "type": "mcq",
+      "prompt": "Why are two separate file versions needed?",
+      "correct_answers": [
+        "To prevent an unapproved graph being printed"
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "Tại T07, Daisy nói: “Ý hay. Mình tạo hai phiên bản tên khác nhau và để bản đã duyệt trong thư mục khóa. Như vậy tránh in nhầm biểu đồ cũ.” Đáp án “To prevent an unapproved graph being printed” diễn đạt đúng ý được nêu. Các phương án còn lại không phù hợp với bằng chứng; chú ý ý kiến bị sửa và tính điều kiện.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "section_3",
+        "ielts_practice",
+        "inference",
+        "paraphrase"
+      ],
+      "options": [
+        "To preserve a colourful design for the conference",
+        "To prevent an unapproved graph being printed",
+        "To give the print shop several options"
+      ]
+    },
+    {
+      "question_id": "Q05",
+      "type": "note_completion",
+      "prompt": "An approved ____ can replace the chart if data remain unresolved.",
+      "correct_answers": [
+        "summary table"
+      ],
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "explanation_vi": "Bằng chứng T08: “Nếu lỗi dữ liệu chưa giải quyết trước trưa thứ Ba, ta bỏ biểu đồ và dùng bảng tóm tắt đã được người hướng dẫn kiểm. Ta cần phương án dự phòng chứ không phải viết lại gấp.” Cụm cần điền nghe đúng nguyên văn là “summary table”.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_3",
+        "ielts_practice",
+        "detail",
+        "note_completion"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q06",
+      "type": "short_answer",
+      "prompt": "What is Wednesday now treated as?",
+      "correct_answers": [
+        "buffer day"
+      ],
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "explanation_vi": "Bằng chứng T09: “Đồng ý: thứ Hai chốt nội dung, trưa thứ Ba quyết biểu đồ, chiều thứ Ba phát lệnh in. Mình sẽ báo cả nhóm thứ Tư là ngày dự phòng, không phải hạn sản xuất.” Trả lời ngắn theo chi tiết “buffer day”.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_3",
+        "ielts_practice",
+        "detail",
+        "short_answer"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "D01",
+      "type": "dictation",
+      "prompt": "Nghe T04 (Speaker A) rồi chép chính xác câu nói tiếng Anh.",
+      "correct_answers": [
+        "Then our real deadline is Monday evening for the text and graphics, Tuesday morning for approval and Tuesday afternoon for submission to the printer. That leaves a small buffer."
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Câu gốc: “Then our real deadline is Monday evening for the text and graphics, Tuesday morning for approval and Tuesday afternoon for submission to the printer. That leaves a small buffer.”\nBản dịch: Vậy hạn thật là tối thứ Hai chốt chữ và hình, sáng thứ Ba xin duyệt và chiều thứ Ba gửi in. Như thế còn một khoảng dự phòng nhỏ.\nChú ý âm yếu, nối âm và ý được sửa trong đoạn.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_3",
+        "dictation",
+        "exact_transcript"
+      ]
+    },
+    {
+      "question_id": "D02",
+      "type": "dictation",
+      "prompt": "Nghe T07 (Speaker A) rồi chép chính xác câu nói tiếng Anh.",
+      "correct_answers": [
+        "Good point. I'll create two file versions with different names and put the approved one in a locked folder. That should prevent someone accidentally printing an old graph."
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "Câu gốc: “Good point. I'll create two file versions with different names and put the approved one in a locked folder. That should prevent someone accidentally printing an old graph.”\nBản dịch: Ý hay. Mình tạo hai phiên bản tên khác nhau và để bản đã duyệt trong thư mục khóa. Như vậy tránh in nhầm biểu đồ cũ.\nChú ý âm yếu, nối âm và ý được sửa trong đoạn.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_3",
+        "dictation",
+        "exact_transcript"
+      ]
+    },
+    {
+      "question_id": "G01",
+      "type": "gap_fill",
+      "prompt": "Nghe T02 rồi điền đúng phần thiếu: The print shop requires final ____ forty-eight hours in advance for the large format. If we send it Wednesday, they won't guarantee delivery before we leave.",
+      "correct_answers": [
+        "artwork"
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Đáp án “artwork” nghĩa là bản thiết kế đồ họa. Đối chiếu: “The print shop requires final artwork forty-eight hours in advance for the large format. If we send it Wednesday, they won't guarantee delivery before we leave.”",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_3",
+        "gap_fill",
+        "vocabulary_in_context"
+      ]
+    }
+  ],
+  "vocabulary": [
+    {
+      "term": "artwork",
+      "pos": "n.",
+      "meaning_vi": "bản thiết kế đồ họa",
+      "example_en": "The print shop requires final artwork forty-eight hours in advance for the large format. If we send it Wednesday, they won't guarantee delivery before we leave.",
+      "example_vi": "Tiệm in yêu cầu gửi bản thiết kế cuối trước bốn mươi tám giờ đối với khổ lớn. Nếu gửi thứ Tư, họ không đảm bảo giao trước lúc ta đi.",
+      "source_turn_id": "T02"
+    },
+    {
+      "term": "approval",
+      "pos": "n.",
+      "meaning_vi": "sự phê duyệt",
+      "example_en": "We also need the department's logo approval, which can take a full working day. The design isn't the only dependency, so the printing deadline should be calculated backward from the train time.",
+      "example_vi": "Ta còn cần khoa duyệt logo, có thể mất cả ngày làm việc. Thiết kế không phải việc phụ thuộc duy nhất, nên phải tính ngược hạn in từ giờ tàu chạy.",
+      "source_turn_id": "T03"
+    },
+    {
+      "term": "outlier",
+      "pos": "n.",
+      "meaning_vi": "giá trị ngoại lệ",
+      "example_en": "I would allow more time for the charts. The latest dataset has an outlier, and the supervisor won't approve a graph until we explain whether it is a measurement error.",
+      "example_vi": "Mình muốn thêm thời gian cho biểu đồ. Bộ số liệu mới có điểm ngoại lệ, và người hướng dẫn chưa duyệt đồ thị nếu chưa giải thích đó có phải lỗi đo không.",
+      "source_turn_id": "T05"
+    },
+    {
+      "term": "summary table",
+      "pos": "n. phr.",
+      "meaning_vi": "bảng tóm tắt",
+      "example_en": "If the data issue isn't resolved by Tuesday noon, we should remove that chart and use a summary table already checked by the supervisor. We need a fallback, not an emergency rewrite.",
+      "example_vi": "Nếu lỗi dữ liệu chưa giải quyết trước trưa thứ Ba, ta bỏ biểu đồ và dùng bảng tóm tắt đã được người hướng dẫn kiểm. Ta cần phương án dự phòng chứ không phải viết lại gấp.",
+      "source_turn_id": "T08"
+    }
+  ],
+  "audio": {
+    "status": "not_generated",
+    "url": null,
+    "duration_ms": null,
+    "model": null,
+    "provider": null,
+    "voice_config": null,
+    "source_transcript_hash": "1dd06679bc05ab0ea6b8c22b54dd6a61036e4c932837780fa29b44aa83ab4804",
+    "audio_sha256": null,
+    "format": null
+  },
+  "qa": {
+    "content_reviewed": false,
+    "answers_verified": false,
+    "audio_verified": false,
+    "rights_cleared": false,
+    "duplicate_reviewed": false,
+    "notes": [
+      "Original AI-assisted draft, awaiting expert pedagogical review and option-disambiguation review.",
+      "Audio not produced: all segment times are null. TTS terms and distribution rights must be checked.",
+      "Practice lesson only; not an official/full IELTS Listening Part 3 exam or a calibrated band test.",
+      "M16.2: automated edits are provisional; IELTS teacher final signoff, audio and rights clearance pending."
+    ]
+  },
+  "provenance": {
+    "content_origin": "original_ai_assisted",
+    "source_urls": [],
+    "source_rights_note": "Original scripts; verify TTS service/voice production and distribution rights before publishing to students, including minors.",
+    "reviewer": null
+  },
+  "release_metadata": {
+    "published_at": null,
+    "version": 1
+  }
+}

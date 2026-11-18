@@ -1,0 +1,333 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "DICT-S2-012",
+  "status": "draft",
+  "level": "L3",
+  "section": 2,
+  "topic": "Tourist Attractions",
+  "title": "Visiting the Hilltop Castle",
+  "learning_objectives_vi": [
+    "Nghe độc thoại chủ đề Tourist Attractions và xác định mục đích thông báo.",
+    "Nhận diện cấu trúc ý và các chi tiết quan trọng theo thứ tự phát biểu.",
+    "Luyện nhận diện thời gian, chi phí, điều kiện và chi tiết được thay đổi."
+  ],
+  "content_format": "section_bridge",
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Visitor guide / programme coordinator (one narrator)",
+      "tts_voice_id": null,
+      "accent_requested": "british"
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "Welcome to Hilltop Castle. The following information will help you plan your visit.",
+      "translation_vi": "Chào mừng đến lâu đài Hilltop. Thông tin sau giúp bạn lên kế hoạch tham quan.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_2",
+        "monologue",
+        "l3",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "A",
+      "text_en": "The castle opens at ten and closes at half past five.",
+      "translation_vi": "Lâu đài mở lúc mười giờ và đóng lúc năm rưỡi.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_2",
+        "monologue",
+        "l3",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "A",
+      "text_en": "Family tickets are available at the ticket booth near the entrance.",
+      "translation_vi": "Vé gia đình bán ở quầy gần cổng.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_2",
+        "monologue",
+        "l3",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "A",
+      "text_en": "The guided visit begins in the courtyard, beside the stone fountain.",
+      "translation_vi": "Tour có hướng dẫn bắt đầu trong sân cạnh đài phun nước đá.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_2",
+        "monologue",
+        "l3",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "A",
+      "text_en": "You can take photographs in the garden but not inside the old library.",
+      "translation_vi": "Bạn có thể chụp ảnh trong vườn nhưng không được chụp trong thư viện cổ.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_2",
+        "monologue",
+        "l3",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "A",
+      "text_en": "Visitors can buy cold drinks at the café near the south wall.",
+      "translation_vi": "Khách có thể mua đồ uống lạnh ở quán gần tường phía nam.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_2",
+        "monologue",
+        "l3",
+        "signposting"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "type": "note_completion",
+      "prompt": "Notes — Castle opening time: ____",
+      "correct_answers": [
+        "ten"
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Mở lúc mười giờ.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_2",
+        "ielts_practice",
+        "detail_recognition"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q02",
+      "type": "table_completion",
+      "prompt": "Table — Closing time: ____",
+      "correct_answers": [
+        "half past five"
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Đóng lúc năm rưỡi.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_2",
+        "ielts_practice",
+        "detail_recognition"
+      ],
+      "word_limit": 3,
+      "instructions_en": "NO MORE THAN THREE WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q03",
+      "type": "note_completion",
+      "prompt": "Notes — Tickets sold at the ticket: ____",
+      "correct_answers": [
+        "booth"
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Vé bán ở quầy.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_2",
+        "ielts_practice",
+        "detail_recognition"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q04",
+      "type": "note_completion",
+      "prompt": "Notes — Tour starts in the: ____",
+      "correct_answers": [
+        "courtyard"
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Tour bắt đầu tại sân trong.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_2",
+        "ielts_practice",
+        "detail_recognition"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q05",
+      "type": "note_completion",
+      "prompt": "Notes — No photographs inside the old: ____",
+      "correct_answers": [
+        "library"
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Không chụp ảnh trong thư viện cổ.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_2",
+        "ielts_practice",
+        "detail_recognition"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "D01",
+      "type": "dictation",
+      "prompt": "Nghe lại và chép nguyên văn đoạn T03 (toàn bộ lời người dẫn).",
+      "correct_answers": [
+        "Family tickets are available at the ticket booth near the entrance."
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Câu gốc: Family tickets are available at the ticket booth near the entrance. Nghĩa: Vé gia đình bán ở quầy gần cổng. Lưu ý từ chức năng, âm cuối và cụm từ nối.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "exact_transcript",
+        "section_2"
+      ]
+    },
+    {
+      "question_id": "D02",
+      "type": "dictation",
+      "prompt": "Nghe lại và chép nguyên văn đoạn T05 (toàn bộ lời người dẫn).",
+      "correct_answers": [
+        "You can take photographs in the garden but not inside the old library."
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Câu gốc: You can take photographs in the garden but not inside the old library. Nghĩa: Bạn có thể chụp ảnh trong vườn nhưng không được chụp trong thư viện cổ. Lưu ý từ chức năng, âm cuối và cụm từ nối.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "exact_transcript",
+        "section_2"
+      ]
+    },
+    {
+      "question_id": "G01",
+      "type": "gap_fill",
+      "prompt": "Điền cụm từ bị ẩn sau khi nghe: The ____ begins in the courtyard, beside the stone fountain.",
+      "correct_answers": [
+        "guided visit"
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "guided visit: chuyến tham quan có hướng dẫn. Ngữ cảnh: Tour có hướng dẫn bắt đầu trong sân cạnh đài phun nước đá.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "gap_fill",
+        "vocab_in_context",
+        "section_2"
+      ]
+    }
+  ],
+  "vocabulary": [
+    {
+      "term": "guided visit",
+      "pos": "n. phr.",
+      "meaning_vi": "chuyến tham quan có hướng dẫn",
+      "example_en": "The guided visit begins in the courtyard, beside the stone fountain.",
+      "example_vi": "Tour có hướng dẫn bắt đầu trong sân cạnh đài phun nước đá.",
+      "source_turn_id": "T04"
+    },
+    {
+      "term": "ticket booth",
+      "pos": "n. phr.",
+      "meaning_vi": "quầy vé",
+      "example_en": "Family tickets are available at the ticket booth near the entrance.",
+      "example_vi": "Vé gia đình bán ở quầy gần cổng.",
+      "source_turn_id": "T03"
+    },
+    {
+      "term": "entrance",
+      "pos": "n.",
+      "meaning_vi": "lối vào",
+      "example_en": "Family tickets are available at the ticket booth near the entrance.",
+      "example_vi": "Vé gia đình bán ở quầy gần cổng.",
+      "source_turn_id": "T03"
+    },
+    {
+      "term": "café",
+      "pos": "n.",
+      "meaning_vi": "quán cà phê",
+      "example_en": "Visitors can buy cold drinks at the café near the south wall.",
+      "example_vi": "Khách có thể mua đồ uống lạnh ở quán gần tường phía nam.",
+      "source_turn_id": "T06"
+    }
+  ],
+  "audio": {
+    "status": "not_generated",
+    "url": null,
+    "duration_ms": null,
+    "model": null,
+    "provider": null,
+    "voice_config": null,
+    "source_transcript_hash": "3498a22c1f051e57c65472e0703f037a104f041ddb3f1fc10ae33d7c692f974d",
+    "audio_sha256": null,
+    "format": null
+  },
+  "qa": {
+    "content_reviewed": false,
+    "answers_verified": false,
+    "audio_verified": false,
+    "rights_cleared": false,
+    "duplicate_reviewed": false,
+    "notes": [
+      "AI-assisted original writing; pedagogical and pronunciation review still required.",
+      "No TTS or sentence-level timestamps supplied; do not publish.",
+      "This is Section 2 skill practice, not an official IELTS test.",
+      "M16.2: automated edits are provisional; IELTS teacher final signoff, audio and rights clearance pending."
+    ]
+  },
+  "provenance": {
+    "content_origin": "original_ai_assisted",
+    "source_urls": [],
+    "source_rights_note": "Newly authored educational monologue. Confirm audio model distribution, age suitability and TOS separately before publishing.",
+    "reviewer": null
+  },
+  "release_metadata": {
+    "published_at": null,
+    "version": 1
+  }
+}

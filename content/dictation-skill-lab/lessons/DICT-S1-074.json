@@ -1,0 +1,462 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "DICT-S1-074",
+  "status": "draft",
+  "level": "L7",
+  "section": 1,
+  "topic": "Library Membership",
+  "title": "A Short-Term Library Archive Pass",
+  "learning_objectives_vi": [
+    "Luyện nghe tình huống: A visitor chooses archive access with reproduction limits.",
+    "Nhận diện integrated information challenge và thông tin cuối cùng của cuộc hội thoại.",
+    "Nghe chép lời nói tự nhiên, hiểu bằng chứng trước khi xem transcript."
+  ],
+  "content_format": "section_practice",
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Service staff / representative",
+      "tts_voice_id": null,
+      "accent_requested": "american"
+    },
+    {
+      "speaker_id": "B",
+      "role": "Customer / attendee",
+      "tts_voice_id": null,
+      "accent_requested": "american"
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "Good morning, Heritage Library archive desk.",
+      "translation_vi": "Chào buổi sáng, quầy lưu trữ Thư viện Heritage.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "integrated_information",
+        "library",
+        "restrictions",
+        "section_1",
+        "two_speaker_dialogue",
+        "l7"
+      ]
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "B",
+      "text_en": "I'm visiting for a week and want to examine maps for a local history article.",
+      "translation_vi": "Tôi ghé thăm một tuần và muốn xem bản đồ để viết bài lịch sử địa phương.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "integrated_information",
+        "library",
+        "restrictions",
+        "section_1",
+        "two_speaker_dialogue",
+        "l7"
+      ]
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "A",
+      "text_en": "A normal reading card is free, but that won't let you handle the original maps.",
+      "translation_vi": "Thẻ đọc thường miễn phí, nhưng không cho cầm các bản đồ gốc.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "integrated_information",
+        "library",
+        "restrictions",
+        "section_1",
+        "two_speaker_dialogue",
+        "l7"
+      ]
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "B",
+      "text_en": "Do you offer temporary access for researchers from outside the area?",
+      "translation_vi": "Có thẻ tạm thời cho nhà nghiên cứu từ nơi khác không?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "integrated_information",
+        "library",
+        "restrictions",
+        "section_1",
+        "two_speaker_dialogue",
+        "l7"
+      ]
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "A",
+      "text_en": "Yes. A seven-day archive pass costs twenty-eight pounds and requires photo ID plus a short research statement.",
+      "translation_vi": "Có. Thẻ lưu trữ bảy ngày giá hai mươi tám bảng, cần giấy tờ có ảnh và bản mô tả nghiên cứu ngắn.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "integrated_information",
+        "library",
+        "restrictions",
+        "section_1",
+        "two_speaker_dialogue",
+        "l7"
+      ]
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "B",
+      "text_en": "I also need copies of two maps. Is the scanning price included in that pass?",
+      "translation_vi": "Tôi còn cần bản sao hai bản đồ. Phí quét có bao gồm trong thẻ không?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "integrated_information",
+        "library",
+        "restrictions",
+        "section_1",
+        "two_speaker_dialogue",
+        "l7"
+      ]
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "No. Ordinary pages cost two pounds each, while large-format maps are six pounds per scan.",
+      "translation_vi": "Không. Trang thường hai bảng, còn bản đồ khổ lớn sáu bảng mỗi lần quét.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "integrated_information",
+        "library",
+        "restrictions",
+        "section_1",
+        "two_speaker_dialogue",
+        "l7"
+      ]
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "B",
+      "text_en": "Both are large maps. Could the scans be ready by tomorrow afternoon?",
+      "translation_vi": "Cả hai đều khổ lớn. Có thể nhận bản quét chiều mai không?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "integrated_information",
+        "library",
+        "restrictions",
+        "section_1",
+        "two_speaker_dialogue",
+        "l7"
+      ]
+    },
+    {
+      "turn_id": "T09",
+      "speaker_id": "A",
+      "text_en": "Not tomorrow. Conservation staff have to inspect the originals first; the earliest collection is Friday after eleven.",
+      "translation_vi": "Mai chưa được. Nhân viên bảo tồn phải kiểm tra bản gốc trước; sớm nhất lấy vào thứ Sáu sau 11 giờ.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "integrated_information",
+        "library",
+        "restrictions",
+        "section_1",
+        "two_speaker_dialogue",
+        "l7"
+      ]
+    },
+    {
+      "turn_id": "T10",
+      "speaker_id": "B",
+      "text_en": "That's workable. May I take photographs while I'm waiting?",
+      "translation_vi": "Vậy cũng được. Trong lúc chờ tôi chụp ảnh được không?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "integrated_information",
+        "library",
+        "restrictions",
+        "section_1",
+        "two_speaker_dialogue",
+        "l7"
+      ]
+    },
+    {
+      "turn_id": "T11",
+      "speaker_id": "A",
+      "text_en": "You may photograph the reference copies without flash, but photography of original maps isn't permitted.",
+      "translation_vi": "Bạn có thể chụp bản tham khảo không dùng đèn flash, nhưng không được chụp bản đồ gốc.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "integrated_information",
+        "library",
+        "restrictions",
+        "section_1",
+        "two_speaker_dialogue",
+        "l7"
+      ]
+    },
+    {
+      "turn_id": "T12",
+      "speaker_id": "B",
+      "text_en": "I'll apply for the archive pass and request the two scans, then.",
+      "translation_vi": "Vậy tôi đăng ký thẻ lưu trữ và yêu cầu quét hai bản đồ.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "integrated_information",
+        "library",
+        "restrictions",
+        "section_1",
+        "two_speaker_dialogue",
+        "l7"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "type": "form_completion",
+      "prompt": "Normal reading card costs ____",
+      "correct_answers": [
+        "free"
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Thẻ đọc thông thường miễn phí nhưng không đủ quyền xem bản đồ gốc.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "integrated_information",
+        "library",
+        "restrictions",
+        "ielts_section1_practice"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q02",
+      "type": "form_completion",
+      "prompt": "Archive pass validity: ____ days",
+      "correct_answers": [
+        "seven"
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Thẻ tạm thời có hiệu lực bảy ngày.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "integrated_information",
+        "library",
+        "restrictions",
+        "ielts_section1_practice"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q03",
+      "type": "form_completion",
+      "prompt": "Archive pass price: £____",
+      "correct_answers": [
+        "twenty-eight"
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Giá thẻ truy cập kho lưu trữ là 28 bảng.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "integrated_information",
+        "library",
+        "restrictions",
+        "ielts_section1_practice"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q04",
+      "type": "mcq",
+      "prompt": "What is the fee per large-map scan?",
+      "correct_answers": [
+        "six"
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "Bản đồ lớn được quét với giá 6 bảng mỗi bản.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "integrated_information",
+        "library",
+        "restrictions",
+        "ielts_section1_practice"
+      ],
+      "options": [
+        "six",
+        "two",
+        "eight"
+      ]
+    },
+    {
+      "question_id": "Q05",
+      "type": "form_completion",
+      "prompt": "Earliest scan collection: Friday after ____",
+      "correct_answers": [
+        "eleven"
+      ],
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "explanation_vi": "Do phải kiểm tra bản gốc, sớm nhất nhận thứ Sáu sau 11 giờ.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "integrated_information",
+        "library",
+        "restrictions",
+        "ielts_section1_practice"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q06",
+      "type": "form_completion",
+      "prompt": "Reference-copy photography must be without ____",
+      "correct_answers": [
+        "flash"
+      ],
+      "evidence_turn_ids": [
+        "T11"
+      ],
+      "explanation_vi": "Chỉ được chụp bản tham khảo khi không dùng đèn flash.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "integrated_information",
+        "library",
+        "restrictions",
+        "ielts_section1_practice"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "D01",
+      "type": "dictation",
+      "prompt": "Nghe và chép nguyên văn lượt thoại T05 của nhân vật A.",
+      "correct_answers": [
+        "Yes. A seven-day archive pass costs twenty-eight pounds and requires photo ID plus a short research statement."
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Câu gốc: Yes. A seven-day archive pass costs twenty-eight pounds and requires photo ID plus a short research statement. Nghĩa: Có. Thẻ lưu trữ bảy ngày giá hai mươi tám bảng, cần giấy tờ có ảnh và bản mô tả nghiên cứu ngắn. Hãy kiểm tra âm cuối, từ chức năng và chi tiết được sửa nếu có.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "integrated_information",
+        "library",
+        "restrictions",
+        "dictation",
+        "exact_words"
+      ]
+    },
+    {
+      "question_id": "G01",
+      "type": "gap_fill",
+      "prompt": "Điền từ/cụm từ bị lược bỏ sau khi nghe: No. Ordinary pages cost two pounds each, while ____ are six pounds per scan.",
+      "correct_answers": [
+        "large-format maps"
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "large-format maps: bản đồ khổ lớn. Câu gốc: No. Ordinary pages cost two pounds each, while large-format maps are six pounds per scan.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "integrated_information",
+        "library",
+        "restrictions",
+        "gap_fill",
+        "vocabulary_in_context"
+      ]
+    }
+  ],
+  "vocabulary": [
+    {
+      "term": "archive pass",
+      "pos": "phrase",
+      "meaning_vi": "thẻ vào kho lưu trữ",
+      "example_en": "Yes. A seven-day archive pass costs twenty-eight pounds and requires photo ID plus a short research statement.",
+      "example_vi": "Có. Thẻ lưu trữ bảy ngày giá hai mươi tám bảng, cần giấy tờ có ảnh và bản mô tả nghiên cứu ngắn.",
+      "source_turn_id": "T05"
+    },
+    {
+      "term": "large-format maps",
+      "pos": "phrase",
+      "meaning_vi": "bản đồ khổ lớn",
+      "example_en": "No. Ordinary pages cost two pounds each, while large-format maps are six pounds per scan.",
+      "example_vi": "Không. Trang thường hai bảng, còn bản đồ khổ lớn sáu bảng mỗi lần quét.",
+      "source_turn_id": "T07"
+    },
+    {
+      "term": "conservation staff",
+      "pos": "phrase",
+      "meaning_vi": "nhân viên bảo tồn",
+      "example_en": "Not tomorrow. Conservation staff have to inspect the originals first; the earliest collection is Friday after eleven.",
+      "example_vi": "Mai chưa được. Nhân viên bảo tồn phải kiểm tra bản gốc trước; sớm nhất lấy vào thứ Sáu sau 11 giờ.",
+      "source_turn_id": "T09"
+    },
+    {
+      "term": "reference copies",
+      "pos": "phrase",
+      "meaning_vi": "bản tham khảo",
+      "example_en": "You may photograph the reference copies without flash, but photography of original maps isn't permitted.",
+      "example_vi": "Bạn có thể chụp bản tham khảo không dùng đèn flash, nhưng không được chụp bản đồ gốc.",
+      "source_turn_id": "T11"
+    }
+  ],
+  "audio": {
+    "status": "not_generated",
+    "url": null,
+    "duration_ms": null,
+    "model": null,
+    "provider": null,
+    "voice_config": null,
+    "source_transcript_hash": "ba1d623dbc2f0673eff83b8505449e29b81bd5602a59875d29f9636b5d638979",
+    "audio_sha256": null,
+    "format": null
+  },
+  "qa": {
+    "content_reviewed": false,
+    "answers_verified": false,
+    "audio_verified": false,
+    "rights_cleared": false,
+    "duplicate_reviewed": false,
+    "notes": [
+      "Original AI-assisted draft; expert listening pedagogical review required.",
+      "Audio and word-level timestamps do not exist yet.",
+      "This is a practice lesson, not an official IELTS Listening test.",
+      "M16.2: automated edits are provisional; IELTS teacher final signoff, audio and rights clearance pending."
+    ]
+  },
+  "provenance": {
+    "content_origin": "original_ai_assisted",
+    "source_urls": [],
+    "source_rights_note": "Author-created educational dialogue. Verify audio provider distribution rights, service terms and suitability for user age before synthesis and publishing.",
+    "reviewer": null
+  },
+  "release_metadata": {
+    "published_at": null,
+    "version": 1
+  }
+}

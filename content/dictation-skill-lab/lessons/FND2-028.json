@@ -1,0 +1,652 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "FND2-028",
+  "status": "draft",
+  "level": "L3",
+  "section": 0,
+  "topic": "Foundation M17 – Numbers",
+  "title": "Times, numbers and appointments",
+  "learning_objectives_vi": [
+    "Nghe chính xác times, numbers and appointments.",
+    "Giờ và phút phải nghe đủ; tránh nhầm 8:15 với 8:50",
+    "Chuyển lời đọc thành chữ số/mã chính xác, không đoán theo ý nghĩa."
+  ],
+  "content_format": "sentence_drill",
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Foundation narrator",
+      "tts_voice_id": null,
+      "accent_requested": "british"
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "Your appointment starts at eight fifteen.",
+      "translation_vi": "Lịch hẹn của bạn bắt đầu lúc 8 giờ 15.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "numbers",
+        "times_numbers",
+        "time"
+      ],
+      "target_value": "08:15",
+      "target_kind": "time",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "A",
+      "text_en": "The workshop begins at eight fifty.",
+      "translation_vi": "Hội thảo bắt đầu lúc 8 giờ 50.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "numbers",
+        "times_numbers",
+        "time"
+      ],
+      "target_value": "08:50",
+      "target_kind": "time",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "A",
+      "text_en": "The shuttle arrives at nine thirteen on weekdays.",
+      "translation_vi": "Xe trung chuyển đến lúc 9 giờ 13 vào ngày thường.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "numbers",
+        "times_numbers",
+        "time"
+      ],
+      "target_value": "09:13",
+      "target_kind": "time",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "A",
+      "text_en": "Please arrive by nine thirty.",
+      "translation_vi": "Vui lòng đến trước hoặc đúng 9 giờ 30.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "numbers",
+        "times_numbers",
+        "time"
+      ],
+      "target_value": "09:30",
+      "target_kind": "time",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "A",
+      "text_en": "The dentist will see you at ten forty-five.",
+      "translation_vi": "Nha sĩ sẽ khám cho bạn lúc 10 giờ 45.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "numbers",
+        "times_numbers",
+        "time"
+      ],
+      "target_value": "10:45",
+      "target_kind": "time",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "A",
+      "text_en": "The next session begins at eleven fifteen.",
+      "translation_vi": "Buổi tiếp theo bắt đầu lúc 11 giờ 15.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "numbers",
+        "times_numbers",
+        "time"
+      ],
+      "target_value": "11:15",
+      "target_kind": "time",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "The coach departs at seven sixteen.",
+      "translation_vi": "Xe khách khởi hành lúc 7 giờ 16.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "numbers",
+        "times_numbers",
+        "time"
+      ],
+      "target_value": "07:16",
+      "target_kind": "time",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "A",
+      "text_en": "The lecture finishes at four fifty.",
+      "translation_vi": "Bài giảng kết thúc lúc 4 giờ 50.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "numbers",
+        "times_numbers",
+        "time"
+      ],
+      "target_value": "04:50",
+      "target_kind": "time",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T09",
+      "speaker_id": "A",
+      "text_en": "Our call is scheduled for three fourteen.",
+      "translation_vi": "Cuộc gọi của chúng ta được lên lịch lúc 3 giờ 14.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "numbers",
+        "times_numbers",
+        "time"
+      ],
+      "target_value": "03:14",
+      "target_kind": "time",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T10",
+      "speaker_id": "A",
+      "text_en": "The library tour starts at twelve thirty.",
+      "translation_vi": "Tour tham quan thư viện bắt đầu lúc 12 giờ 30.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "numbers",
+        "times_numbers",
+        "time"
+      ],
+      "target_value": "12:30",
+      "target_kind": "time",
+      "bank_role": "training"
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "type": "dictation",
+      "prompt": "Nghe lượt T01 một lần rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "Your appointment starts at eight fifteen."
+      ],
+      "evidence_turn_ids": [
+        "T01"
+      ],
+      "explanation_vi": "Tập trung nghe times_numbers. Nghĩa: Lịch hẹn của bạn bắt đầu lúc 8 giờ 15.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text",
+        "times_numbers"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q11",
+      "type": "short_answer",
+      "prompt": "T01: Nghe lượt này rồi ghi giờ theo dạng HH:MM, dùng đồng hồ 12 giờ nếu không có AM/PM.",
+      "correct_answers": [
+        "08:15"
+      ],
+      "evidence_turn_ids": [
+        "T01"
+      ],
+      "explanation_vi": "Kết quả cần ghi: 08:15. Ngữ cảnh: Lịch hẹn của bạn bắt đầu lúc 8 giờ 15.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "listening_comprehension",
+        "numeric_transcription",
+        "time"
+      ],
+      "answer_normalization": "canonical_numeric",
+      "numeric_type": "time",
+      "word_limit": null,
+      "instructions_en": null,
+      "max_replays_practice": 3
+    },
+    {
+      "question_id": "Q02",
+      "type": "dictation",
+      "prompt": "Nghe lượt T02 một lần rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "The workshop begins at eight fifty."
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Tập trung nghe times_numbers. Nghĩa: Hội thảo bắt đầu lúc 8 giờ 50.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text",
+        "times_numbers"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q12",
+      "type": "short_answer",
+      "prompt": "T02: Nghe lượt này rồi ghi giờ theo dạng HH:MM, dùng đồng hồ 12 giờ nếu không có AM/PM.",
+      "correct_answers": [
+        "08:50"
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Kết quả cần ghi: 08:50. Ngữ cảnh: Hội thảo bắt đầu lúc 8 giờ 50.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "listening_comprehension",
+        "numeric_transcription",
+        "time"
+      ],
+      "answer_normalization": "canonical_numeric",
+      "numeric_type": "time",
+      "word_limit": null,
+      "instructions_en": null,
+      "max_replays_practice": 3
+    },
+    {
+      "question_id": "Q03",
+      "type": "dictation",
+      "prompt": "Nghe lượt T03 một lần rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "The shuttle arrives at nine thirteen on weekdays."
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Tập trung nghe times_numbers. Nghĩa: Xe trung chuyển đến lúc 9 giờ 13 vào ngày thường.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text",
+        "times_numbers"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q13",
+      "type": "short_answer",
+      "prompt": "T03: Nghe lượt này rồi ghi giờ theo dạng HH:MM, dùng đồng hồ 12 giờ nếu không có AM/PM.",
+      "correct_answers": [
+        "09:13"
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Kết quả cần ghi: 09:13. Ngữ cảnh: Xe trung chuyển đến lúc 9 giờ 13 vào ngày thường.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "listening_comprehension",
+        "numeric_transcription",
+        "time"
+      ],
+      "answer_normalization": "canonical_numeric",
+      "numeric_type": "time",
+      "word_limit": null,
+      "instructions_en": null,
+      "max_replays_practice": 3
+    },
+    {
+      "question_id": "Q04",
+      "type": "dictation",
+      "prompt": "Nghe lượt T04 một lần rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "Please arrive by nine thirty."
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Tập trung nghe times_numbers. Nghĩa: Vui lòng đến trước hoặc đúng 9 giờ 30.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text",
+        "times_numbers"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q14",
+      "type": "short_answer",
+      "prompt": "T04: Nghe lượt này rồi ghi giờ theo dạng HH:MM, dùng đồng hồ 12 giờ nếu không có AM/PM.",
+      "correct_answers": [
+        "09:30"
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Kết quả cần ghi: 09:30. Ngữ cảnh: Vui lòng đến trước hoặc đúng 9 giờ 30.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "listening_comprehension",
+        "numeric_transcription",
+        "time"
+      ],
+      "answer_normalization": "canonical_numeric",
+      "numeric_type": "time",
+      "word_limit": null,
+      "instructions_en": null,
+      "max_replays_practice": 3
+    },
+    {
+      "question_id": "Q05",
+      "type": "dictation",
+      "prompt": "Nghe lượt T05 một lần rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "The dentist will see you at ten forty-five."
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Tập trung nghe times_numbers. Nghĩa: Nha sĩ sẽ khám cho bạn lúc 10 giờ 45.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text",
+        "times_numbers"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q15",
+      "type": "short_answer",
+      "prompt": "T05: Nghe lượt này rồi ghi giờ theo dạng HH:MM, dùng đồng hồ 12 giờ nếu không có AM/PM.",
+      "correct_answers": [
+        "10:45"
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Kết quả cần ghi: 10:45. Ngữ cảnh: Nha sĩ sẽ khám cho bạn lúc 10 giờ 45.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "listening_comprehension",
+        "numeric_transcription",
+        "time"
+      ],
+      "answer_normalization": "canonical_numeric",
+      "numeric_type": "time",
+      "word_limit": null,
+      "instructions_en": null,
+      "max_replays_practice": 3
+    },
+    {
+      "question_id": "Q06",
+      "type": "dictation",
+      "prompt": "Nghe lượt T06 một lần rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "The next session begins at eleven fifteen."
+      ],
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "explanation_vi": "Tập trung nghe times_numbers. Nghĩa: Buổi tiếp theo bắt đầu lúc 11 giờ 15.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text",
+        "times_numbers"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q07",
+      "type": "dictation",
+      "prompt": "Nghe lượt T07 một lần rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "The coach departs at seven sixteen."
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "Tập trung nghe times_numbers. Nghĩa: Xe khách khởi hành lúc 7 giờ 16.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text",
+        "times_numbers"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q08",
+      "type": "dictation",
+      "prompt": "Nghe lượt T08 một lần rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "The lecture finishes at four fifty."
+      ],
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "explanation_vi": "Tập trung nghe times_numbers. Nghĩa: Bài giảng kết thúc lúc 4 giờ 50.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text",
+        "times_numbers"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q09",
+      "type": "dictation",
+      "prompt": "Nghe lượt T09 một lần rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "Our call is scheduled for three fourteen."
+      ],
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "explanation_vi": "Tập trung nghe times_numbers. Nghĩa: Cuộc gọi của chúng ta được lên lịch lúc 3 giờ 14.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text",
+        "times_numbers"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q10",
+      "type": "dictation",
+      "prompt": "Nghe lượt T10 một lần rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "The library tour starts at twelve thirty."
+      ],
+      "evidence_turn_ids": [
+        "T10"
+      ],
+      "explanation_vi": "Tập trung nghe times_numbers. Nghĩa: Tour tham quan thư viện bắt đầu lúc 12 giờ 30.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text",
+        "times_numbers"
+      ],
+      "max_replays_practice": 5
+    }
+  ],
+  "vocabulary": [
+    {
+      "term": "08:15",
+      "pos": "time",
+      "meaning_vi": "08:15 (time)",
+      "example_en": "Your appointment starts at eight fifteen.",
+      "example_vi": "Lịch hẹn của bạn bắt đầu lúc 8 giờ 15.",
+      "source_turn_id": "T01"
+    },
+    {
+      "term": "08:50",
+      "pos": "time",
+      "meaning_vi": "08:50 (time)",
+      "example_en": "The workshop begins at eight fifty.",
+      "example_vi": "Hội thảo bắt đầu lúc 8 giờ 50.",
+      "source_turn_id": "T02"
+    },
+    {
+      "term": "09:13",
+      "pos": "time",
+      "meaning_vi": "09:13 (time)",
+      "example_en": "The shuttle arrives at nine thirteen on weekdays.",
+      "example_vi": "Xe trung chuyển đến lúc 9 giờ 13 vào ngày thường.",
+      "source_turn_id": "T03"
+    },
+    {
+      "term": "09:30",
+      "pos": "time",
+      "meaning_vi": "09:30 (time)",
+      "example_en": "Please arrive by nine thirty.",
+      "example_vi": "Vui lòng đến trước hoặc đúng 9 giờ 30.",
+      "source_turn_id": "T04"
+    },
+    {
+      "term": "10:45",
+      "pos": "time",
+      "meaning_vi": "10:45 (time)",
+      "example_en": "The dentist will see you at ten forty-five.",
+      "example_vi": "Nha sĩ sẽ khám cho bạn lúc 10 giờ 45.",
+      "source_turn_id": "T05"
+    },
+    {
+      "term": "11:15",
+      "pos": "time",
+      "meaning_vi": "11:15 (time)",
+      "example_en": "The next session begins at eleven fifteen.",
+      "example_vi": "Buổi tiếp theo bắt đầu lúc 11 giờ 15.",
+      "source_turn_id": "T06"
+    },
+    {
+      "term": "07:16",
+      "pos": "time",
+      "meaning_vi": "07:16 (time)",
+      "example_en": "The coach departs at seven sixteen.",
+      "example_vi": "Xe khách khởi hành lúc 7 giờ 16.",
+      "source_turn_id": "T07"
+    },
+    {
+      "term": "04:50",
+      "pos": "time",
+      "meaning_vi": "04:50 (time)",
+      "example_en": "The lecture finishes at four fifty.",
+      "example_vi": "Bài giảng kết thúc lúc 4 giờ 50.",
+      "source_turn_id": "T08"
+    },
+    {
+      "term": "03:14",
+      "pos": "time",
+      "meaning_vi": "03:14 (time)",
+      "example_en": "Our call is scheduled for three fourteen.",
+      "example_vi": "Cuộc gọi của chúng ta được lên lịch lúc 3 giờ 14.",
+      "source_turn_id": "T09"
+    },
+    {
+      "term": "12:30",
+      "pos": "time",
+      "meaning_vi": "12:30 (time)",
+      "example_en": "The library tour starts at twelve thirty.",
+      "example_vi": "Tour tham quan thư viện bắt đầu lúc 12 giờ 30.",
+      "source_turn_id": "T10"
+    }
+  ],
+  "micro_skill_id": "times_numbers",
+  "bank_role": "training",
+  "content_design": {
+    "sequence": "10_distinct_contexts",
+    "first_listen": "1x",
+    "guided_replay_max": 5,
+    "mastery_requires_unseen": true,
+    "note_vi": "Giờ và phút phải nghe đủ; tránh nhầm 8:15 với 8:50"
+  },
+  "audio": {
+    "status": "not_generated",
+    "url": null,
+    "duration_ms": null,
+    "provider": null,
+    "model": null,
+    "voice_config": null,
+    "format": null,
+    "audio_sha256": null,
+    "source_transcript_hash": "a1d0b783c89cde565406f4616c8ded40d57c2d84635fdf7adecb1626b9256337",
+    "generation_notes": "Generate each turn as speech only; no spoken question numbers, answers or coaching. Validate text and pronunciation before release."
+  },
+  "qa": {
+    "content_reviewed": false,
+    "answers_verified": true,
+    "audio_verified": false,
+    "human_signed_off": false,
+    "duplicate_reviewed": false,
+    "notes": [
+      "Original draft; numeric normalization and pronunciation require teacher/audio QA.",
+      "Fictional UK phone number ranges used for instructional safety; do not dial."
+    ]
+  },
+  "provenance": {
+    "content_origin": "original_ai_assisted",
+    "rights_status": "pending_tts_terms_review",
+    "source_urls": [],
+    "reviewer": null
+  },
+  "release_metadata": {
+    "published_at": null,
+    "version": 1
+  },
+  "lesson_theory_vi": {
+    "core_rule": "Tám giờ mười lăm là 08:15, không phải 08:50. Trong dạng giờ không có AM/PM, đừng tự suy ra buổi.",
+    "worked_contrasts": [
+      {
+        "spoken_example": "six twenty",
+        "written_value": "06:20",
+        "teacher_note_vi": "Đây là ví dụ riêng để học cách chuyển lời đọc sang số; không phải đáp án của các lượt T01–T10."
+      },
+      {
+        "spoken_example": "six forty",
+        "written_value": "06:40",
+        "teacher_note_vi": "Đây là ví dụ riêng để học cách chuyển lời đọc sang số; không phải đáp án của các lượt T01–T10."
+      }
+    ],
+    "learning_steps": [
+      "Xem quy tắc và hai ví dụ bên dưới trước khi bắt đầu.",
+      "Nghe mỗi câu một lần, chép toàn câu hoặc nhập thông tin số theo yêu cầu.",
+      "Đối chiếu chữ/số và vị trí sai sau khi nộp; nghe lại từng câu khi cần.",
+      "Kiểm tra bằng 2 câu mới chưa xuất hiện trong nội dung luyện."
+    ],
+    "common_mistakes": [
+      "Nhầm -teen/-ty hoặc diễn giải 12/24 giờ vượt quá lời nghe.",
+      "Không dùng lại câu quen thuộc để chứng minh độ vững của kỹ năng."
+    ],
+    "before_audio_question": "Thông tin cần nghe là số lượng, số điện thoại, giờ, tiền hay mã chữ-số?"
+  }
+}

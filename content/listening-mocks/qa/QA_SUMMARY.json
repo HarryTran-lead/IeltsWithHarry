@@ -1,0 +1,201 @@
+{
+  "timestamp_utc": "2026-11-08T06:05:55.518206+00:00",
+  "counts": {
+    "legacy_reference_ids": 300,
+    "new_dictation_lessons": 280,
+    "new_section_practice": 80,
+    "new_section_simulations": 80,
+    "new_foundation": 120,
+    "lesson_questions": 3550,
+    "new_activities": 400,
+    "listening_mocks": 20,
+    "listening_parts": 80,
+    "listening_questions": 800,
+    "listening_covers": 80,
+    "listening_maps": 8,
+    "dictation_svg_assets": 28
+  },
+  "levels": {
+    "L1": 31,
+    "L2": 61,
+    "L3": 28,
+    "L4": 47,
+    "L5": 27,
+    "L6": 46,
+    "L7": 40
+  },
+  "level_by_family": {
+    "foundation": {
+      "L1": 31,
+      "L2": 61,
+      "L3": 28
+    },
+    "section_practice": {
+      "L4": 27,
+      "L5": 7,
+      "L6": 26,
+      "L7": 20
+    },
+    "section_simulation": {
+      "L4": 20,
+      "L5": 20,
+      "L6": 20,
+      "L7": 20
+    }
+  },
+  "audio_source_status": {
+    "not_generated": 280
+  },
+  "structural_blockers": 10,
+  "editorial_review_flags": 9,
+  "issue_categories": {
+    "EMPTY_LESSON": 10,
+    "EXACT_TRANSCRIPT_DUPLICATE": 9
+  },
+  "legacy_collisions": 0,
+  "exact_transcript_duplicates": [
+    [
+      "FND2-111",
+      "FND2-112"
+    ],
+    [
+      "FND2-111",
+      "FND2-113"
+    ],
+    [
+      "FND2-111",
+      "FND2-114"
+    ],
+    [
+      "FND2-111",
+      "FND2-115"
+    ],
+    [
+      "FND2-111",
+      "FND2-116"
+    ],
+    [
+      "FND2-111",
+      "FND2-117"
+    ],
+    [
+      "FND2-111",
+      "FND2-118"
+    ],
+    [
+      "FND2-111",
+      "FND2-119"
+    ],
+    [
+      "FND2-111",
+      "FND2-120"
+    ]
+  ],
+  "media_approved": 0,
+  "teacher_review_verified": false,
+  "production_db_compared": false,
+  "production_import_executed": false,
+  "website_e2e_executed": false,
+  "release_gate": "BLOCKED_PENDING_MEDIA_HUMAN_QA_AND_LIVE_DB",
+  "recommended_import_stage": "STAGING_DRAFT_ONLY",
+  "notes": [
+    "The attached legacy zip is not a production DB export; 300 source IDs are not evidence of live database state.",
+    "Release restricted until real audio, timestamps, teacher signoff and live E2E.",
+    "Level labels L1-L7 are editorial metadata, not empirical IELTS band equivalence."
+  ],
+  "repair_m49l": {
+    "cases_rebuilt": 10,
+    "turns_authored": 100,
+    "dictation_questions_authored": 100,
+    "source_shells_no_longer_empty": 10,
+    "pedagogy_human_verified": false,
+    "audio_rendered": false
+  },
+  "structural_blockers_after_repair": 0,
+  "editorial_review_flags_after_repair": 0,
+  "deep_validation": {
+    "dictation_question_count": 3550,
+    "mock_question_count": 800,
+    "dictation_question_types": {
+      "dictation": 1440,
+      "word_choice": 100,
+      "short_answer": 450,
+      "mcq": 332,
+      "note_completion": 448,
+      "form_completion": 140,
+      "gap_fill": 120,
+      "map_labelling": 120,
+      "matching": 208,
+      "table_completion": 70,
+      "summary_completion": 68,
+      "flow_chart_completion": 42,
+      "sentence_completion": 12
+    },
+    "mock_question_types": {
+      "form_completion": 32,
+      "short_answer": 25,
+      "mcq": 195,
+      "map_labelling": 40,
+      "note_completion": 222,
+      "matching": 115,
+      "sentence_completion": 31,
+      "table_completion": 86,
+      "mcq_choose_two": 14,
+      "flow_chart_completion": 25,
+      "summary_completion": 15
+    },
+    "missing_vi_translations": 100,
+    "missing_vi_by_lesson": {
+      "S2-EXP-001": 5,
+      "S2-EXP-002": 5,
+      "S2-EXP-003": 5,
+      "S2-EXP-004": 5,
+      "S2-EXP-005": 5,
+      "S2-EXP-006": 5,
+      "S2-EXP-007": 5,
+      "S2-EXP-008": 5,
+      "S2-EXP-009": 5,
+      "S2-EXP-010": 5,
+      "S2-EXP-011": 5,
+      "S2-EXP-012": 5,
+      "S2-EXP-013": 5,
+      "S2-EXP-014": 5,
+      "S2-EXP-015": 5,
+      "S2-EXP-016": 5,
+      "S2-EXP-017": 5,
+      "S2-EXP-018": 5,
+      "S2-EXP-019": 5,
+      "S2-EXP-020": 5
+    },
+    "mean_words_per_turn_by_level": {
+      "L1": 7.8,
+      "L2": 9.9,
+      "L3": 9.4,
+      "L4": 21.0,
+      "L5": 30.8,
+      "L6": 26.2,
+      "L7": 59.2
+    },
+    "mock_audio_present_count": 0,
+    "mock_timestamp_pending_question_count": 800,
+    "activities_without_both_timestamp_endpoints": 400,
+    "activity_parent_unknown_count": 0,
+    "static_svg_count": 36,
+    "cover_unique_file_hashes": 80,
+    "hard_errors": 0,
+    "review_warnings": 0,
+    "audio_source_truly_present_in_package": 0,
+    "structural_integrity": "PASS",
+    "editorial_and_audio_approval": "NOT_VERIFIED",
+    "production_import": "NOT_RUN"
+  },
+  "editorial_triage": {
+    "near_duplicate_pairs_over_jaccard_0_32": 40,
+    "manual_decision_required": true,
+    "known_historical_m36_answer_evidence_flags_across_multiple_milestones": 304,
+    "historical_flags_all_new_content_only": false,
+    "missing_vietnamese_turn_translations": 100,
+    "visual_cover_semantics_human_verified": false,
+    "map_spatial_reasoning_human_verified": false
+  }
+}

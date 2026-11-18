@@ -1,0 +1,610 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "FND2-043",
+  "status": "draft",
+  "level": "L1",
+  "section": 0,
+  "topic": "Foundation M18 – Spelling",
+  "title": "Names with M, N, S and F",
+  "learning_objectives_vi": [
+    "Nghe được names with m, n, s and f trong tình huống mới.",
+    "Chép chính xác thông tin mục tiêu (m_n_s_f).",
+    "Phân biệt bài luyện quen và bài kiểm tra chưa từng nghe."
+  ],
+  "content_format": "sentence_drill",
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Foundation narrator",
+      "tts_voice_id": null,
+      "accent_requested": "british"
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "Her first name is Nina, N, I, N, A.",
+      "translation_vi": "Tên cô ấy là Nina, đánh vần N–I–N–A.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m18",
+        "m_n_s_f",
+        "name"
+      ],
+      "target_value": "Nina",
+      "target_kind": "name",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "A",
+      "text_en": "The surname is Mason: M, A, S, O, N.",
+      "translation_vi": "Họ là Mason, đánh vần M–A–S–O–N.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m18",
+        "m_n_s_f",
+        "name"
+      ],
+      "target_value": "Mason",
+      "target_kind": "name",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "A",
+      "text_en": "Please write Simon, S, I, M, O, N.",
+      "translation_vi": "Hãy viết Simon, đánh vần S–I–M–O–N.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m18",
+        "m_n_s_f",
+        "name"
+      ],
+      "target_value": "Simon",
+      "target_kind": "name",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "A",
+      "text_en": "The trainee is called Finn, F, I, N, N.",
+      "translation_vi": "Thực tập sinh tên Finn, đánh vần F–I–N–N.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m18",
+        "m_n_s_f",
+        "name"
+      ],
+      "target_value": "Finn",
+      "target_kind": "name",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "A",
+      "text_en": "The contact is Sofia, S, O, F, I, A.",
+      "translation_vi": "Người liên hệ tên Sofia, đánh vần S–O–F–I–A.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m18",
+        "m_n_s_f",
+        "name"
+      ],
+      "target_value": "Sofia",
+      "target_kind": "name",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "A",
+      "text_en": "The researcher is named Naomi, N, A, O, M, I.",
+      "translation_vi": "Nhà nghiên cứu tên Naomi, đánh vần N–A–O–M–I.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m18",
+        "m_n_s_f",
+        "name"
+      ],
+      "target_value": "Naomi",
+      "target_kind": "name",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "Our guest speaker is Felix, F, E, L, I, X.",
+      "translation_vi": "Diễn giả khách mời tên Felix, đánh vần F–E–L–I–X.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m18",
+        "m_n_s_f",
+        "name"
+      ],
+      "target_value": "Felix",
+      "target_kind": "name",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "A",
+      "text_en": "The librarian is called Marnie, M, A, R, N, I, E.",
+      "translation_vi": "Thủ thư tên Marnie, đánh vần M–A–R–N–I–E.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m18",
+        "m_n_s_f",
+        "name"
+      ],
+      "target_value": "Marnie",
+      "target_kind": "name",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T09",
+      "speaker_id": "A",
+      "text_en": "The surname on the form is Norris, N, O, R, R, I, S.",
+      "translation_vi": "Họ trên mẫu đơn là Norris, đánh vần N–O–R–R–I–S.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m18",
+        "m_n_s_f",
+        "name"
+      ],
+      "target_value": "Norris",
+      "target_kind": "name",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T10",
+      "speaker_id": "A",
+      "text_en": "The volunteer is called Selma: S, E, L, M, A.",
+      "translation_vi": "Tình nguyện viên tên Selma, đánh vần S–E–L–M–A.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m18",
+        "m_n_s_f",
+        "name"
+      ],
+      "target_value": "Selma",
+      "target_kind": "name",
+      "bank_role": "training"
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "type": "dictation",
+      "prompt": "Nghe lượt T01 rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "Her first name is Nina, N, I, N, A."
+      ],
+      "evidence_turn_ids": [
+        "T01"
+      ],
+      "explanation_vi": "Câu gốc: Her first name is Nina, N, I, N, A. Nghĩa: Tên cô ấy là Nina, đánh vần N–I–N–A. Lưu ý: Chú ý chữ M/N và chữ S/F khi người nói đánh vần tên.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "m_n_s_f"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q02",
+      "type": "dictation",
+      "prompt": "Nghe lượt T02 rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "The surname is Mason: M, A, S, O, N."
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Câu gốc: The surname is Mason: M, A, S, O, N. Nghĩa: Họ là Mason, đánh vần M–A–S–O–N. Lưu ý: Chú ý chữ M/N và chữ S/F khi người nói đánh vần tên.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "m_n_s_f"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q03",
+      "type": "dictation",
+      "prompt": "Nghe lượt T03 rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "Please write Simon, S, I, M, O, N."
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Câu gốc: Please write Simon, S, I, M, O, N. Nghĩa: Hãy viết Simon, đánh vần S–I–M–O–N. Lưu ý: Chú ý chữ M/N và chữ S/F khi người nói đánh vần tên.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "m_n_s_f"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q04",
+      "type": "dictation",
+      "prompt": "Nghe lượt T04 rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "The trainee is called Finn, F, I, N, N."
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Câu gốc: The trainee is called Finn, F, I, N, N. Nghĩa: Thực tập sinh tên Finn, đánh vần F–I–N–N. Lưu ý: Chú ý chữ M/N và chữ S/F khi người nói đánh vần tên.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "m_n_s_f"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q05",
+      "type": "dictation",
+      "prompt": "Nghe lượt T05 rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "The contact is Sofia, S, O, F, I, A."
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Câu gốc: The contact is Sofia, S, O, F, I, A. Nghĩa: Người liên hệ tên Sofia, đánh vần S–O–F–I–A. Lưu ý: Chú ý chữ M/N và chữ S/F khi người nói đánh vần tên.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "m_n_s_f"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q06",
+      "type": "dictation",
+      "prompt": "Nghe lượt T06 rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "The researcher is named Naomi, N, A, O, M, I."
+      ],
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "explanation_vi": "Câu gốc: The researcher is named Naomi, N, A, O, M, I. Nghĩa: Nhà nghiên cứu tên Naomi, đánh vần N–A–O–M–I. Lưu ý: Chú ý chữ M/N và chữ S/F khi người nói đánh vần tên.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "m_n_s_f"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q07",
+      "type": "dictation",
+      "prompt": "Nghe lượt T07 rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "Our guest speaker is Felix, F, E, L, I, X."
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "Câu gốc: Our guest speaker is Felix, F, E, L, I, X. Nghĩa: Diễn giả khách mời tên Felix, đánh vần F–E–L–I–X. Lưu ý: Chú ý chữ M/N và chữ S/F khi người nói đánh vần tên.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "m_n_s_f"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q08",
+      "type": "dictation",
+      "prompt": "Nghe lượt T08 rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "The librarian is called Marnie, M, A, R, N, I, E."
+      ],
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "explanation_vi": "Câu gốc: The librarian is called Marnie, M, A, R, N, I, E. Nghĩa: Thủ thư tên Marnie, đánh vần M–A–R–N–I–E. Lưu ý: Chú ý chữ M/N và chữ S/F khi người nói đánh vần tên.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "m_n_s_f"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q09",
+      "type": "dictation",
+      "prompt": "Nghe lượt T09 rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "The surname on the form is Norris, N, O, R, R, I, S."
+      ],
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "explanation_vi": "Câu gốc: The surname on the form is Norris, N, O, R, R, I, S. Nghĩa: Họ trên mẫu đơn là Norris, đánh vần N–O–R–R–I–S. Lưu ý: Chú ý chữ M/N và chữ S/F khi người nói đánh vần tên.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "m_n_s_f"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q10",
+      "type": "dictation",
+      "prompt": "Nghe lượt T10 rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "The volunteer is called Selma: S, E, L, M, A."
+      ],
+      "evidence_turn_ids": [
+        "T10"
+      ],
+      "explanation_vi": "Câu gốc: The volunteer is called Selma: S, E, L, M, A. Nghĩa: Tình nguyện viên tên Selma, đánh vần S–E–L–M–A. Lưu ý: Chú ý chữ M/N và chữ S/F khi người nói đánh vần tên.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "m_n_s_f"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q11",
+      "type": "short_answer",
+      "prompt": "Nghe lượt T06 rồi nhập tên/họ được đánh vần được xác nhận trong câu.",
+      "correct_answers": [
+        "Naomi"
+      ],
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "explanation_vi": "Nghe từng ký tự được đánh vần; không tự đoán cách viết. Đáp án: Naomi. Nội dung: Nhà nghiên cứu tên Naomi, đánh vần N–A–O–M–I.",
+      "scoring_policy": "case_insensitive_preserve_letters_and_internal_punctuation",
+      "target_kind": "name",
+      "question_tags": [
+        "short_answer",
+        "m_n_s_f",
+        "name"
+      ],
+      "max_replays_practice": 5,
+      "first_listen_only_for_mastery": false
+    },
+    {
+      "question_id": "Q12",
+      "type": "short_answer",
+      "prompt": "Nghe lượt T07 rồi nhập tên/họ được đánh vần được xác nhận trong câu.",
+      "correct_answers": [
+        "Felix"
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "Nghe từng ký tự được đánh vần; không tự đoán cách viết. Đáp án: Felix. Nội dung: Diễn giả khách mời tên Felix, đánh vần F–E–L–I–X.",
+      "scoring_policy": "case_insensitive_preserve_letters_and_internal_punctuation",
+      "target_kind": "name",
+      "question_tags": [
+        "short_answer",
+        "m_n_s_f",
+        "name"
+      ],
+      "max_replays_practice": 5,
+      "first_listen_only_for_mastery": false
+    },
+    {
+      "question_id": "Q13",
+      "type": "short_answer",
+      "prompt": "Nghe lượt T08 rồi nhập tên/họ được đánh vần được xác nhận trong câu.",
+      "correct_answers": [
+        "Marnie"
+      ],
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "explanation_vi": "Nghe từng ký tự được đánh vần; không tự đoán cách viết. Đáp án: Marnie. Nội dung: Thủ thư tên Marnie, đánh vần M–A–R–N–I–E.",
+      "scoring_policy": "case_insensitive_preserve_letters_and_internal_punctuation",
+      "target_kind": "name",
+      "question_tags": [
+        "short_answer",
+        "m_n_s_f",
+        "name"
+      ],
+      "max_replays_practice": 5,
+      "first_listen_only_for_mastery": false
+    },
+    {
+      "question_id": "Q14",
+      "type": "short_answer",
+      "prompt": "Nghe lượt T09 rồi nhập tên/họ được đánh vần được xác nhận trong câu.",
+      "correct_answers": [
+        "Norris"
+      ],
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "explanation_vi": "Nghe từng ký tự được đánh vần; không tự đoán cách viết. Đáp án: Norris. Nội dung: Họ trên mẫu đơn là Norris, đánh vần N–O–R–R–I–S.",
+      "scoring_policy": "case_insensitive_preserve_letters_and_internal_punctuation",
+      "target_kind": "name",
+      "question_tags": [
+        "short_answer",
+        "m_n_s_f",
+        "name"
+      ],
+      "max_replays_practice": 5,
+      "first_listen_only_for_mastery": false
+    },
+    {
+      "question_id": "Q15",
+      "type": "short_answer",
+      "prompt": "Nghe lượt T10 rồi nhập tên/họ được đánh vần được xác nhận trong câu.",
+      "correct_answers": [
+        "Selma"
+      ],
+      "evidence_turn_ids": [
+        "T10"
+      ],
+      "explanation_vi": "Nghe từng ký tự được đánh vần; không tự đoán cách viết. Đáp án: Selma. Nội dung: Tình nguyện viên tên Selma, đánh vần S–E–L–M–A.",
+      "scoring_policy": "case_insensitive_preserve_letters_and_internal_punctuation",
+      "target_kind": "name",
+      "question_tags": [
+        "short_answer",
+        "m_n_s_f",
+        "name"
+      ],
+      "max_replays_practice": 5,
+      "first_listen_only_for_mastery": false
+    }
+  ],
+  "vocabulary": [
+    {
+      "term": "surname",
+      "pos": "n",
+      "meaning_vi": "họ",
+      "example_en": "The surname is Mason: M, A, S, O, N.",
+      "example_vi": "Họ là Mason, đánh vần M–A–S–O–N.",
+      "is_illustrative_context": true
+    },
+    {
+      "term": "first name",
+      "pos": "n",
+      "meaning_vi": "tên",
+      "example_en": "Her first name is Nina, N, I, N, A.",
+      "example_vi": "Tên cô ấy là Nina, đánh vần N–I–N–A.",
+      "is_illustrative_context": true
+    },
+    {
+      "term": "spell",
+      "pos": "v",
+      "meaning_vi": "đánh vần",
+      "example_en": "Could you spell your surname slowly, please?",
+      "example_vi": "Bạn có thể đánh vần họ chậm lại được không?",
+      "is_illustrative_context": true
+    },
+    {
+      "term": "letter",
+      "pos": "n",
+      "meaning_vi": "chữ cái",
+      "example_en": "The first letter is B, not P.",
+      "example_vi": "Chữ cái đầu là B, không phải P.",
+      "is_illustrative_context": true
+    },
+    {
+      "term": "registration",
+      "pos": "n",
+      "meaning_vi": "việc đăng ký",
+      "example_en": "Registration closes at five in the afternoon.",
+      "example_vi": "Việc đăng ký kết thúc lúc năm giờ chiều.",
+      "is_illustrative_context": true
+    },
+    {
+      "term": "applicant",
+      "pos": "n",
+      "meaning_vi": "người nộp đơn",
+      "example_en": "Each applicant must spell their surname clearly.",
+      "example_vi": "Mỗi ứng viên phải đánh vần họ rõ ràng.",
+      "is_illustrative_context": true
+    }
+  ],
+  "micro_skill_id": "m_n_s_f",
+  "bank_role": "training",
+  "content_design": {
+    "sequence": "10_varied_contexts",
+    "first_listen": "1x",
+    "guided_replay_max": 5,
+    "mastery_requires_unseen": true,
+    "learning_note_vi": "Chú ý chữ M/N và chữ S/F khi người nói đánh vần tên.",
+    "category": "spelling",
+    "post_submit_review_only": true,
+    "unseen_assessment_id": "FND2-043-HOLDOUT",
+    "spoken_text_must_match_target": true
+  },
+  "audio": {
+    "status": "not_generated",
+    "url": null,
+    "duration_ms": null,
+    "provider": null,
+    "model": null,
+    "voice_config": null,
+    "format": null,
+    "audio_sha256": null,
+    "source_transcript_hash": "56a4bbd9d002bddff71b866d83b82d6a0b6a522bf2a6964faedf3b403482aaac",
+    "generation_notes": "Synthesize spoken utterance only, speak spelled letters and punctuation explicitly. Never read teaching metadata. QA each target by a person."
+  },
+  "qa": {
+    "content_reviewed": false,
+    "answers_verified": false,
+    "audio_verified": false,
+    "human_signed_off": false,
+    "duplicate_reviewed": false,
+    "notes": [
+      "M18 originally authored drafts; automated checks only, teacher/accent review pending.",
+      "No TTS audio and no measured timestamps. Domain/email examples use reserved example.* names."
+    ]
+  },
+  "provenance": {
+    "content_origin": "original_ai_assisted",
+    "rights_status": "pending_audio_terms_review",
+    "source_urls": [],
+    "reviewer": null
+  },
+  "release_metadata": {
+    "published_at": null,
+    "version": 1
+  },
+  "lesson_theory_vi": {
+    "core_rule": "Chú ý chữ M/N và chữ S/F khi người nói đánh vần tên.",
+    "worked_contrasts": [
+      {
+        "spoken_example": "M, I, A",
+        "written_value": "MIA",
+        "teacher_note_vi": "M không phải N."
+      },
+      {
+        "spoken_example": "F, I, N",
+        "written_value": "FIN",
+        "teacher_note_vi": "F không phải S."
+      }
+    ],
+    "learning_steps": [
+      "Nhìn quy tắc nhận diện chữ cái và dấu câu, đọc hai ví dụ.",
+      "Nghe chuỗi được đánh vần, ghi lại từng ký tự ngay khi nghe.",
+      "Chỉ xem transcript/đáp án sau khi nộp, rà từng chữ/dấu nối.",
+      "Dùng hai câu chưa gặp để kiểm tra trong một lần nghe với giọng khác."
+    ],
+    "common_mistakes": [
+      "Suy đoán cách viết tên theo phát âm thay vì ký tự đánh vần.",
+      "Bỏ chữ lặp, dấu gạch nối, dấu nháy hoặc số 0 trong mã."
+    ],
+    "before_audio_question": "Người nói đang đọc tên, mã chữ-số, email, tên miền hay postcode? Có từ double, hyphen, underscore không?",
+    "difficulty_steps": [
+      "T01–T03: nghe thông tin chính trong ngữ cảnh rõ.",
+      "T04–T07: nghe chuỗi dài hơn, chọn chữ/số đúng.",
+      "T08–T10: chú ý thông tin sửa lại, định dạng và ngữ cảnh pha trộn."
+    ],
+    "examples_are_not_mastery_items": true
+  }
+}

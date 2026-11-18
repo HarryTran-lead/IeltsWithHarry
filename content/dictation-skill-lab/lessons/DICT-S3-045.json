@@ -1,0 +1,421 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "DICT-S3-045",
+  "status": "draft",
+  "level": "L6",
+  "section": 3,
+  "topic": "Team Problem Solving",
+  "title": "Team Problem Solving – Offline Weather Data Synchronisation",
+  "learning_objectives_vi": [
+    "Theo dõi ba nhân vật thảo luận và phân biệt quan điểm ban đầu với quyết định sau cùng.",
+    "Nhận biết lập luận, điều kiện, hạn chế nghiên cứu và diễn đạt lại (paraphrase) trong Section 3.",
+    "Nghe chép đúng phát ngôn then chốt và truy xuất bằng chứng theo lượt thoại."
+  ],
+  "content_format": "section_practice",
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Sienna – academic project discussion participant",
+      "tts_voice_id": null,
+      "accent_requested": "new_zealand"
+    },
+    {
+      "speaker_id": "B",
+      "role": "Marco – academic project discussion participant",
+      "tts_voice_id": null,
+      "accent_requested": "new_zealand"
+    },
+    {
+      "speaker_id": "C",
+      "role": "Helen – academic project discussion participant",
+      "tts_voice_id": null,
+      "accent_requested": "new_zealand"
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "Our weather-station app can display live measurements, but field researchers say it sometimes duplicates records when their tablets reconnect after being offline for several hours.",
+      "translation_vi": "Ứng dụng trạm thời tiết hiển thị số đo trực tiếp, nhưng người làm thực địa nói nó đôi khi nhân đôi dữ liệu khi máy tính bảng kết nối lại sau nhiều giờ ngoại tuyến.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "multi_speaker",
+        "l6"
+      ]
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "B",
+      "text_en": "I checked the logs. The app sends every locally saved record again after reconnection, even if the server received some of them just before the signal dropped.",
+      "translation_vi": "Mình đã xem nhật ký. Ứng dụng gửi lại mọi bản ghi lưu cục bộ sau khi nối mạng, kể cả những bản ghi máy chủ đã nhận ngay trước khi mất tín hiệu.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "multi_speaker",
+        "l6"
+      ]
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "C",
+      "text_en": "We could delete duplicates by matching timestamps, but two sensors can legitimately report at exactly the same second. That rule might remove valid measurements as well.",
+      "translation_vi": "Ta có thể xóa bản trùng bằng cách khớp dấu thời gian, nhưng hai cảm biến hợp lệ có thể báo đúng cùng giây. Quy tắc đó cũng có thể xóa dữ liệu đúng.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "multi_speaker",
+        "l6"
+      ]
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "A",
+      "text_en": "What if each device assigns a unique record identifier before sending anything? The server could reject an identifier it has already stored without assuming the timestamp should be unique.",
+      "translation_vi": "Hay mỗi thiết bị gán mã bản ghi duy nhất trước khi gửi? Máy chủ có thể từ chối mã đã lưu mà không giả định dấu thời gian phải duy nhất.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "multi_speaker",
+        "l6"
+      ]
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "B",
+      "text_en": "That would solve the duplicate problem, but we still need to show the user whether records are pending, uploaded or rejected. At present the interface says 'complete' before synchronization finishes.",
+      "translation_vi": "Cách đó xử lý trùng, nhưng vẫn cần cho người dùng biết bản ghi đang chờ, đã tải hoặc bị từ chối. Hiện giao diện báo 'hoàn tất' trước khi đồng bộ xong.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "multi_speaker",
+        "l6"
+      ]
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "C",
+      "text_en": "And records must not be overwritten when someone edits a note offline. We need a version history so that later corrections don't silently replace the original field observation.",
+      "translation_vi": "Và không được ghi đè bản ghi khi ai đó sửa ghi chú ngoại tuyến. Ta cần lịch sử phiên bản để chỉnh sửa sau không âm thầm thay quan sát gốc.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "multi_speaker",
+        "l6"
+      ]
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "Let's test three cases: reconnection after a short interruption, two sensors reporting simultaneously and a corrected note arriving after its first upload. We should inspect both the display and database.",
+      "translation_vi": "Hãy thử ba trường hợp: nối lại sau gián đoạn ngắn, hai cảm biến báo cùng lúc và ghi chú sửa được gửi sau lần tải đầu. Ta cần kiểm tra cả màn hình lẫn cơ sở dữ liệu.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "multi_speaker",
+        "l6"
+      ]
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "B",
+      "text_en": "I can implement unique identifiers and clear synchronization states by Friday. The audit history may take longer, so the release should stay internal until the team verifies it.",
+      "translation_vi": "Mình có thể làm mã duy nhất và trạng thái đồng bộ rõ ràng trước thứ Sáu. Lịch sử kiểm toán cần lâu hơn, nên bản phát hành chỉ dùng nội bộ cho đến khi kiểm chứng.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "multi_speaker",
+        "l6"
+      ]
+    },
+    {
+      "turn_id": "T09",
+      "speaker_id": "C",
+      "text_en": "Then the decision is to fix duplicate uploads first, add visible status messages and block public release until version history passes testing. A fast patch isn't useful if it loses trustworthy records.",
+      "translation_vi": "Vậy quyết định là sửa gửi trùng trước, thêm trạng thái rõ và chặn phát hành công khai đến khi lịch sử phiên bản qua kiểm thử. Bản vá nhanh vô ích nếu làm mất tính tin cậy của dữ liệu.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "multi_speaker",
+        "l6"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "type": "mcq",
+      "prompt": "Why would timestamp-based duplicate removal be unreliable?",
+      "correct_answers": [
+        "Two sensors can legitimately report at the same second"
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Tại T02, Marco nói: “Mình đã xem nhật ký. Ứng dụng gửi lại mọi bản ghi lưu cục bộ sau khi nối mạng, kể cả những bản ghi máy chủ đã nhận ngay trước khi mất tín hiệu.” Đáp án “Two sensors can legitimately report at the same second” diễn đạt đúng ý được nêu. Các phương án còn lại không phù hợp với bằng chứng; chú ý ý kiến bị sửa và tính điều kiện.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "section_3",
+        "ielts_practice",
+        "inference",
+        "paraphrase"
+      ],
+      "options": [
+        "The app marks sync as complete too early",
+        "Offline notes lack version history",
+        "Two sensors can legitimately report at the same second"
+      ]
+    },
+    {
+      "question_id": "Q02",
+      "type": "note_completion",
+      "prompt": "Two sensors can legitimately report at the same ____ .",
+      "correct_answers": [
+        "second"
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Bằng chứng T03: “Ta có thể xóa bản trùng bằng cách khớp dấu thời gian, nhưng hai cảm biến hợp lệ có thể báo đúng cùng giây. Quy tắc đó cũng có thể xóa dữ liệu đúng.” Cụm cần điền nghe đúng nguyên văn là “second”.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_3",
+        "ielts_practice",
+        "detail",
+        "note_completion"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q03",
+      "type": "matching",
+      "prompt": "Which speaker proposes unique record identifiers before data upload?",
+      "correct_answers": [
+        "Speaker A"
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Người nói Sienna (Speaker A) đưa ra ý này tại T04: “Hay mỗi thiết bị gán mã bản ghi duy nhất trước khi gửi? Máy chủ có thể từ chối mã đã lưu mà không giả định dấu thời gian phải duy nhất.”",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "section_3",
+        "ielts_practice",
+        "speaker_attribution"
+      ],
+      "options": [
+        "Speaker A",
+        "Speaker B",
+        "Speaker C"
+      ]
+    },
+    {
+      "question_id": "Q04",
+      "type": "mcq",
+      "prompt": "Which cases are included in the team's test plan?",
+      "correct_answers": [
+        "Reconnection, simultaneous sensors and a corrected note"
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "Tại T07, Sienna nói: “Hãy thử ba trường hợp: nối lại sau gián đoạn ngắn, hai cảm biến báo cùng lúc và ghi chú sửa được gửi sau lần tải đầu. Ta cần kiểm tra cả màn hình lẫn cơ sở dữ liệu.” Đáp án “Reconnection, simultaneous sensors and a corrected note” diễn đạt đúng ý được nêu. Các phương án còn lại không phù hợp với bằng chứng; chú ý ý kiến bị sửa và tính điều kiện.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "section_3",
+        "ielts_practice",
+        "inference",
+        "paraphrase"
+      ],
+      "options": [
+        "Only duplicate timestamps across all devices",
+        "One upload with no connection interruptions",
+        "Reconnection, simultaneous sensors and a corrected note"
+      ]
+    },
+    {
+      "question_id": "Q05",
+      "type": "note_completion",
+      "prompt": "Marco expects the audit history to take ____ .",
+      "correct_answers": [
+        "longer"
+      ],
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "explanation_vi": "Bằng chứng T08: “Mình có thể làm mã duy nhất và trạng thái đồng bộ rõ ràng trước thứ Sáu. Lịch sử kiểm toán cần lâu hơn, nên bản phát hành chỉ dùng nội bộ cho đến khi kiểm chứng.” Cụm cần điền nghe đúng nguyên văn là “longer”.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_3",
+        "ielts_practice",
+        "detail",
+        "note_completion"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q06",
+      "type": "short_answer",
+      "prompt": "What must pass testing before public release?",
+      "correct_answers": [
+        "version history"
+      ],
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "explanation_vi": "Bằng chứng T09: “Vậy quyết định là sửa gửi trùng trước, thêm trạng thái rõ và chặn phát hành công khai đến khi lịch sử phiên bản qua kiểm thử. Bản vá nhanh vô ích nếu làm mất tính tin cậy của dữ liệu.” Trả lời ngắn theo chi tiết “version history”.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_3",
+        "ielts_practice",
+        "detail",
+        "short_answer"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "D01",
+      "type": "dictation",
+      "prompt": "Nghe T04 (Speaker A) rồi chép chính xác câu nói tiếng Anh.",
+      "correct_answers": [
+        "What if each device assigns a unique record identifier before sending anything? The server could reject an identifier it has already stored without assuming the timestamp should be unique."
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Câu gốc: “What if each device assigns a unique record identifier before sending anything? The server could reject an identifier it has already stored without assuming the timestamp should be unique.”\nBản dịch: Hay mỗi thiết bị gán mã bản ghi duy nhất trước khi gửi? Máy chủ có thể từ chối mã đã lưu mà không giả định dấu thời gian phải duy nhất.\nChú ý âm yếu, nối âm và ý được sửa trong đoạn.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_3",
+        "dictation",
+        "exact_transcript"
+      ]
+    },
+    {
+      "question_id": "D02",
+      "type": "dictation",
+      "prompt": "Nghe T07 (Speaker A) rồi chép chính xác câu nói tiếng Anh.",
+      "correct_answers": [
+        "Let's test three cases: reconnection after a short interruption, two sensors reporting simultaneously and a corrected note arriving after its first upload. We should inspect both the display and database."
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "Câu gốc: “Let's test three cases: reconnection after a short interruption, two sensors reporting simultaneously and a corrected note arriving after its first upload. We should inspect both the display and database.”\nBản dịch: Hãy thử ba trường hợp: nối lại sau gián đoạn ngắn, hai cảm biến báo cùng lúc và ghi chú sửa được gửi sau lần tải đầu. Ta cần kiểm tra cả màn hình lẫn cơ sở dữ liệu.\nChú ý âm yếu, nối âm và ý được sửa trong đoạn.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_3",
+        "dictation",
+        "exact_transcript"
+      ]
+    },
+    {
+      "question_id": "G01",
+      "type": "gap_fill",
+      "prompt": "Nghe T01 rồi điền đúng phần thiếu: Our weather-station app can display live measurements, but field researchers say it sometimes ____ records when their tablets reconnect after being offline for several hours.",
+      "correct_answers": [
+        "duplicates"
+      ],
+      "evidence_turn_ids": [
+        "T01"
+      ],
+      "explanation_vi": "Đáp án “duplicates” nghĩa là bản ghi trùng. Đối chiếu: “Our weather-station app can display live measurements, but field researchers say it sometimes duplicates records when their tablets reconnect after being offline for several hours.”",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_3",
+        "gap_fill",
+        "vocabulary_in_context"
+      ]
+    }
+  ],
+  "vocabulary": [
+    {
+      "term": "duplicates",
+      "pos": "n.",
+      "meaning_vi": "bản ghi trùng",
+      "example_en": "Our weather-station app can display live measurements, but field researchers say it sometimes duplicates records when their tablets reconnect after being offline for several hours.",
+      "example_vi": "Ứng dụng trạm thời tiết hiển thị số đo trực tiếp, nhưng người làm thực địa nói nó đôi khi nhân đôi dữ liệu khi máy tính bảng kết nối lại sau nhiều giờ ngoại tuyến.",
+      "source_turn_id": "T01"
+    },
+    {
+      "term": "reconnection",
+      "pos": "n.",
+      "meaning_vi": "tái kết nối",
+      "example_en": "I checked the logs. The app sends every locally saved record again after reconnection, even if the server received some of them just before the signal dropped.",
+      "example_vi": "Mình đã xem nhật ký. Ứng dụng gửi lại mọi bản ghi lưu cục bộ sau khi nối mạng, kể cả những bản ghi máy chủ đã nhận ngay trước khi mất tín hiệu.",
+      "source_turn_id": "T02"
+    },
+    {
+      "term": "unique record identifier",
+      "pos": "n. phr.",
+      "meaning_vi": "mã định danh bản ghi duy nhất",
+      "example_en": "What if each device assigns a unique record identifier before sending anything? The server could reject an identifier it has already stored without assuming the timestamp should be unique.",
+      "example_vi": "Hay mỗi thiết bị gán mã bản ghi duy nhất trước khi gửi? Máy chủ có thể từ chối mã đã lưu mà không giả định dấu thời gian phải duy nhất.",
+      "source_turn_id": "T04"
+    },
+    {
+      "term": "version history",
+      "pos": "n. phr.",
+      "meaning_vi": "lịch sử phiên bản",
+      "example_en": "And records must not be overwritten when someone edits a note offline. We need a version history so that later corrections don't silently replace the original field observation.",
+      "example_vi": "Và không được ghi đè bản ghi khi ai đó sửa ghi chú ngoại tuyến. Ta cần lịch sử phiên bản để chỉnh sửa sau không âm thầm thay quan sát gốc.",
+      "source_turn_id": "T06"
+    }
+  ],
+  "audio": {
+    "status": "not_generated",
+    "url": null,
+    "duration_ms": null,
+    "model": null,
+    "provider": null,
+    "voice_config": null,
+    "source_transcript_hash": "dfbe9e1eeb8cb98812697b601600b5e6a54dad5f81fe30292a7fbe767c01a273",
+    "audio_sha256": null,
+    "format": null
+  },
+  "qa": {
+    "content_reviewed": false,
+    "answers_verified": false,
+    "audio_verified": false,
+    "rights_cleared": false,
+    "duplicate_reviewed": false,
+    "notes": [
+      "Original AI-assisted draft, awaiting expert pedagogical review and option-disambiguation review.",
+      "Audio not produced: all segment times are null. TTS terms and distribution rights must be checked.",
+      "Practice lesson only; not an official/full IELTS Listening Part 3 exam or a calibrated band test.",
+      "M16.2: automated edits are provisional; IELTS teacher final signoff, audio and rights clearance pending."
+    ]
+  },
+  "provenance": {
+    "content_origin": "original_ai_assisted",
+    "source_urls": [],
+    "source_rights_note": "Original scripts; verify TTS service/voice production and distribution rights before publishing to students, including minors.",
+    "reviewer": null
+  },
+  "release_metadata": {
+    "published_at": null,
+    "version": 1
+  }
+}

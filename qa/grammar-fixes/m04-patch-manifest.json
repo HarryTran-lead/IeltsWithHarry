@@ -1,0 +1,90 @@
+{
+  "milestone": "M04",
+  "source": "src/data/grammar-editorial/C1.json",
+  "scope": "C1-12 (7 error_choice items)",
+  "root_cause": "correct_answer uses unspaced em dash but correct visible option uses spaces",
+  "source_sha256": "93b39d30260599aa780580a9392017e45ccfaa105446dc04a6c4f843d51f6f11",
+  "patched_sha256": "b096850378b46053ada104f0fa6eb8fbf4caca070149fbaf9042ae8f505968ef",
+  "modifications": [
+    {
+      "question_id": "C1-12-Q055",
+      "stage": "independent",
+      "rule_group": "end_app",
+      "option_index": 3,
+      "old_option": "The report made one recommendation— an immediate independent review of the dosage recommendation.",
+      "new_option": "The report made one recommendation—an immediate independent review of the dosage recommendation.",
+      "old_option_sha256": "209c91446e114e87ee00c461bceb2e1b5eb6e203b62259c0d950b31f581de73d",
+      "answer_sha256": "783d6fa221fb78b2f089063535be4a013e87d361f02279d3959d7fbd2b204679"
+    },
+    {
+      "question_id": "C1-12-Q057",
+      "stage": "independent",
+      "rule_group": "dash_appositive",
+      "option_index": 3,
+      "old_option": "The maintenance policy— the main subject of the hearing —was discussed for several hours.",
+      "new_option": "The maintenance policy—the main subject of the hearing—was discussed for several hours.",
+      "old_option_sha256": "e93f69462b50a4ecac84a45aafbad9f0114f415b92c93e7c68f8faec2db44d58",
+      "answer_sha256": "2c4bf535b098152284d67ae309c30bb2d533692aee581f62c68deb421fee1f6a"
+    },
+    {
+      "question_id": "C1-12-Q081",
+      "stage": "mastery",
+      "rule_group": "dash_cause",
+      "option_index": 2,
+      "old_option": "The issue— a lack of reliable data —continued to affect decisions about the vessel inspection report.",
+      "new_option": "The issue—a lack of reliable data—continued to affect decisions about the vessel inspection report.",
+      "old_option_sha256": "800babcfa51ab069ccd2a2479292718e6e1dd50d6d39c0cd38c1273b9b1c4d1a",
+      "answer_sha256": "5a9ede2ba3246bad9cc85c162b08838d275e042795cb2bd4d7fa6d00dd937cc1"
+    },
+    {
+      "question_id": "C1-12-Q083",
+      "stage": "mastery",
+      "rule_group": "end_app",
+      "option_index": 1,
+      "old_option": "The report made one recommendation— an immediate independent review of the seed-distribution plan.",
+      "new_option": "The report made one recommendation—an immediate independent review of the seed-distribution plan.",
+      "old_option_sha256": "0fd9fdaf5bd7f03331e4874ac4fecfc601983203cab8b2bb617f0f84947dcc99",
+      "answer_sha256": "0c43b6e5149b8f415b95932a9ebf553f6117bde4f3ae3497e5f87d268f8ea618"
+    },
+    {
+      "question_id": "C1-12-Q085",
+      "stage": "mastery",
+      "rule_group": "dash_appositive",
+      "option_index": 2,
+      "old_option": "The restoration proposal— the main subject of the hearing —was discussed for several hours.",
+      "new_option": "The restoration proposal—the main subject of the hearing—was discussed for several hours.",
+      "old_option_sha256": "6cd26931d28f27fd90028076e287a86a47b3f1360046c4c3eca05ad3830d1bcb",
+      "answer_sha256": "71066db6653d2aac278a7876f4c7d1c39d3438b6c707fd91f4e1a57bbe91e927"
+    },
+    {
+      "question_id": "C1-12-Q102",
+      "stage": "spaced_review",
+      "rule_group": "dash_cause",
+      "option_index": 2,
+      "old_option": "The issue— a lack of reliable data —continued to affect decisions about the public consultation report.",
+      "new_option": "The issue—a lack of reliable data—continued to affect decisions about the public consultation report.",
+      "old_option_sha256": "ddae9b2915ac58dd2a49c5a629edc700907a0f9ad3a5ad2abeef656baad655f2",
+      "answer_sha256": "cab199b4bc5dccf0cd90bbf71527df15773943ced0a0c2372e21a4ff17875150"
+    },
+    {
+      "question_id": "C1-12-Q104",
+      "stage": "spaced_review",
+      "rule_group": "end_app",
+      "option_index": 0,
+      "old_option": "The report made one recommendation— an immediate independent review of the consultation draft.",
+      "new_option": "The report made one recommendation—an immediate independent review of the consultation draft.",
+      "old_option_sha256": "77eb63c5277b47db9f2e10d9c6c779376adb28d31eb1653ea56ed9e1e4bb1415",
+      "answer_sha256": "49806ba6f8457020ac40c5fc0ddfe608b9c741ab5ba428d3563053a91da2a929"
+    }
+  ],
+  "does_not_modify": [
+    "id",
+    "correct_answer",
+    "accepted_answers",
+    "wrong options",
+    "grading flags",
+    "publishable",
+    "progress data",
+    "lesson theory"
+  ]
+}

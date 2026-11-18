@@ -1,0 +1,351 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "DICT-S4-014",
+  "status": "draft",
+  "level": "L6",
+  "section": 4,
+  "topic": "Economics & Society",
+  "title": "Growth, Productivity and Unequal Outcomes",
+  "learning_objectives_vi": [
+    "Nghe bài giảng học thuật một người nói, theo dõi quan hệ giữa luận điểm và bằng chứng.",
+    "Luyện các câu hỏi Section 4 theo thứ tự lời giảng; phân tích giới hạn của khái niệm và cách diễn đạt lại.",
+    "Chép chính xác hai đoạn, luyện từ học thuật theo ngữ cảnh và ôn điểm yếu qua Mistake Bank."
+  ],
+  "content_format": "section_practice",
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Academic lecturer",
+      "tts_voice_id": null,
+      "accent_requested": "australian"
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "Economic growth describes an increase in the value of goods and services produced, but it does not automatically mean that everyone experiences better living conditions. Two regions can record similar growth while households face very different costs and opportunities. Economists therefore study distribution as well as output, asking who receives new income and who remains exposed to financial insecurity.",
+      "translation_vi": "Tăng trưởng kinh tế mô tả sự gia tăng giá trị hàng hóa và dịch vụ được tạo ra, nhưng không tự động có nghĩa mọi người đều sống tốt hơn. Hai vùng có thể có tăng trưởng tương tự trong khi hộ gia đình đối mặt chi phí và cơ hội rất khác. Vì thế nhà kinh tế nghiên cứu phân phối bên cạnh sản lượng, hỏi ai nhận thu nhập mới và ai vẫn chịu bất ổn tài chính.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_4",
+        "academic_lecture",
+        "concept",
+        "l6"
+      ]
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "A",
+      "text_en": "A common measure is productivity, often expressed as output per worker or per hour worked. Higher productivity can support better wages and services, yet that outcome depends on institutions and bargaining conditions. If new technology increases output but reduces demand for a particular skill, some workers may need training before they can benefit. An average gain is not a guarantee for every occupation.",
+      "translation_vi": "Một thước đo phổ biến là năng suất lao động, thường biểu thị bằng sản lượng mỗi người lao động hoặc mỗi giờ làm. Năng suất cao hơn có thể hỗ trợ lương và dịch vụ tốt hơn, nhưng kết quả tùy thể chế và điều kiện thương lượng. Nếu công nghệ tăng sản lượng nhưng giảm nhu cầu về một kỹ năng, một số lao động cần đào tạo mới được hưởng lợi. Mức tăng trung bình không bảo đảm cho mọi nghề.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_4",
+        "academic_lecture",
+        "concept",
+        "l6"
+      ]
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "A",
+      "text_en": "To examine inequality, researchers compare incomes across groups, but income is only part of the picture. Wealth includes assets such as savings and property, minus debts. A family with temporary income loss and substantial savings may be less vulnerable than one with the same income and no financial buffer. Different measures describe different dimensions of economic security.",
+      "translation_vi": "Để nghiên cứu bất bình đẳng, nhà nghiên cứu so sánh thu nhập giữa các nhóm, nhưng thu nhập chỉ là một phần. Tài sản ròng gồm tài sản như tiền tiết kiệm và bất động sản trừ nợ. Gia đình tạm giảm thu nhập nhưng có tiết kiệm lớn có thể ít dễ tổn thương hơn gia đình có thu nhập tương tự mà không có dự phòng. Các thước đo khác nhau mô tả những chiều khác nhau của an toàn kinh tế.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_4",
+        "academic_lecture",
+        "concept",
+        "l6"
+      ]
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "A",
+      "text_en": "Prices also affect living standards. Inflation reduces the purchasing power of money when prices rise faster than income. However, households do not buy exactly the same items. Rising transport costs may affect commuters more strongly, while increased rent can dominate another family’s budget. An overall price index is useful, but personal experiences can diverge sharply from the average.",
+      "translation_vi": "Giá cả cũng ảnh hưởng mức sống. Lạm phát làm giảm sức mua của tiền khi giá tăng nhanh hơn thu nhập. Tuy nhiên hộ gia đình không mua cùng một rổ hàng. Chi phí đi lại tăng có thể ảnh hưởng mạnh người đi làm xa, còn tiền thuê nhà tăng chiếm phần lớn ngân sách gia đình khác. Chỉ số giá chung hữu ích nhưng trải nghiệm cá nhân có thể khác xa mức trung bình.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_4",
+        "academic_lecture",
+        "concept",
+        "l6"
+      ]
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "A",
+      "text_en": "The broad question is how economic performance connects with human wellbeing. Researchers may combine output data with housing affordability, health access and educational opportunities. No single indicator captures every outcome, and policy choices involve trade-offs. A careful assessment looks beyond whether the economy is expanding to whether the benefits are accessible and reasonably secure.",
+      "translation_vi": "Câu hỏi rộng là hiệu quả kinh tế liên hệ với phúc lợi con người thế nào. Nhà nghiên cứu có thể kết hợp dữ liệu sản lượng với khả năng chi trả nhà ở, tiếp cận y tế và cơ hội giáo dục. Không chỉ số đơn lẻ nào nắm trọn mọi kết quả, và chính sách có đánh đổi. Đánh giá cẩn thận nhìn xa hơn việc kinh tế có tăng trưởng không để xem lợi ích có dễ tiếp cận và đủ ổn định không.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_4",
+        "academic_lecture",
+        "concept",
+        "l6"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "type": "note_completion",
+      "prompt": "Researchers study income ____ as well as total output.",
+      "correct_answers": [
+        "distribution"
+      ],
+      "evidence_turn_ids": [
+        "T01"
+      ],
+      "explanation_vi": "Đáp án “distribution” nằm tại đoạn T01. Nội dung bằng chứng: Tăng trưởng kinh tế mô tả sự gia tăng giá trị hàng hóa và dịch vụ được tạo ra, nhưng không tự động có nghĩa mọi người đều sống tốt hơn. Hai vùng có thể có tăng trưởng tương tự trong khi hộ gia đình đối mặt chi phí và cơ hội rất khác. Vì thế nhà kinh tế nghiên cứu phân phối bên cạnh sản lượng, hỏi ai nhận thu nhập mới và ai vẫn chịu bất ổn tài chính.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_4",
+        "ielts_practice",
+        "concept",
+        "note_completion"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q02",
+      "type": "note_completion",
+      "prompt": "Output per hour worked is a measure of ____.",
+      "correct_answers": [
+        "productivity"
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Đáp án “productivity” nằm tại đoạn T02. Nội dung bằng chứng: Một thước đo phổ biến là năng suất lao động, thường biểu thị bằng sản lượng mỗi người lao động hoặc mỗi giờ làm. Năng suất cao hơn có thể hỗ trợ lương và dịch vụ tốt hơn, nhưng kết quả tùy thể chế và điều kiện thương lượng. Nếu công nghệ tăng sản lượng nhưng giảm nhu cầu về một kỹ năng, một số lao động cần đào tạo mới được hưởng lợi. Mức tăng trung bình không bảo đảm cho mọi nghề.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_4",
+        "ielts_practice",
+        "concept",
+        "note_completion"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q03",
+      "type": "note_completion",
+      "prompt": "Net assets minus debts help describe household ____.",
+      "correct_answers": [
+        "Wealth"
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Đáp án “Wealth” nằm tại đoạn T03. Nội dung bằng chứng: Để nghiên cứu bất bình đẳng, nhà nghiên cứu so sánh thu nhập giữa các nhóm, nhưng thu nhập chỉ là một phần. Tài sản ròng gồm tài sản như tiền tiết kiệm và bất động sản trừ nợ. Gia đình tạm giảm thu nhập nhưng có tiết kiệm lớn có thể ít dễ tổn thương hơn gia đình có thu nhập tương tự mà không có dự phòng. Các thước đo khác nhau mô tả những chiều khác nhau của an toàn kinh tế.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_4",
+        "ielts_practice",
+        "concept",
+        "note_completion"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q04",
+      "type": "note_completion",
+      "prompt": "Rising prices can reduce the ____ power of money.",
+      "correct_answers": [
+        "purchasing"
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Đáp án “purchasing” nằm tại đoạn T04. Nội dung bằng chứng: Giá cả cũng ảnh hưởng mức sống. Lạm phát làm giảm sức mua của tiền khi giá tăng nhanh hơn thu nhập. Tuy nhiên hộ gia đình không mua cùng một rổ hàng. Chi phí đi lại tăng có thể ảnh hưởng mạnh người đi làm xa, còn tiền thuê nhà tăng chiếm phần lớn ngân sách gia đình khác. Chỉ số giá chung hữu ích nhưng trải nghiệm cá nhân có thể khác xa mức trung bình.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_4",
+        "ielts_practice",
+        "concept",
+        "note_completion"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q05",
+      "type": "note_completion",
+      "prompt": "Housing ____ is one indicator of living conditions.",
+      "correct_answers": [
+        "affordability"
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Đáp án “affordability” nằm tại đoạn T05. Nội dung bằng chứng: Câu hỏi rộng là hiệu quả kinh tế liên hệ với phúc lợi con người thế nào. Nhà nghiên cứu có thể kết hợp dữ liệu sản lượng với khả năng chi trả nhà ở, tiếp cận y tế và cơ hội giáo dục. Không chỉ số đơn lẻ nào nắm trọn mọi kết quả, và chính sách có đánh đổi. Đánh giá cẩn thận nhìn xa hơn việc kinh tế có tăng trưởng không để xem lợi ích có dễ tiếp cận và đủ ổn định không.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_4",
+        "ielts_practice",
+        "concept",
+        "note_completion"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q06",
+      "type": "mcq",
+      "prompt": "What is the lecture’s main caution about economic growth?",
+      "correct_answers": [
+        "Aggregate output can rise while economic security remains unequal"
+      ],
+      "options": [
+        "Inflation affects every household through exactly the same purchases",
+        "Higher national production always protects every household",
+        "Aggregate output can rise while economic security remains unequal"
+      ],
+      "evidence_turn_ids": [
+        "T01",
+        "T03",
+        "T05"
+      ],
+      "explanation_vi": "Hãy kết hợp luận điểm đầu, ví dụ ở giữa và kết luận cuối bài. Câu hỏi rộng là hiệu quả kinh tế liên hệ với phúc lợi con người thế nào. Nhà nghiên cứu có thể kết hợp dữ liệu sản lượng với khả năng chi trả nhà ở, tiếp cận y tế và cơ hội giáo dục. Không chỉ số đơn lẻ nào nắm trọn mọi kết quả, và chính sách có đánh đổi. Đánh giá cẩn thận nhìn xa hơn việc kinh tế có tăng trưởng không để xem lợi ích có dễ tiếp cận và đủ ổn định không. Phương án chính xác: “Aggregate output can rise while economic security remains unequal”; hai phương án khác khái quát quá mức hoặc không phù hợp bằng chứng.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "section_4",
+        "ielts_practice",
+        "concept",
+        "main_idea"
+      ]
+    },
+    {
+      "question_id": "D01",
+      "type": "dictation",
+      "prompt": "Nghe đoạn T02 và chép lại chính xác lời giảng.",
+      "correct_answers": [
+        "A common measure is productivity, often expressed as output per worker or per hour worked. Higher productivity can support better wages and services, yet that outcome depends on institutions and bargaining conditions. If new technology increases output but reduces demand for a particular skill, some workers may need training before they can benefit. An average gain is not a guarantee for every occupation."
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Phân tích từ nối, âm yếu và cụm thuật ngữ học thuật. Nghĩa của đoạn: Một thước đo phổ biến là năng suất lao động, thường biểu thị bằng sản lượng mỗi người lao động hoặc mỗi giờ làm. Năng suất cao hơn có thể hỗ trợ lương và dịch vụ tốt hơn, nhưng kết quả tùy thể chế và điều kiện thương lượng. Nếu công nghệ tăng sản lượng nhưng giảm nhu cầu về một kỹ năng, một số lao động cần đào tạo mới được hưởng lợi. Mức tăng trung bình không bảo đảm cho mọi nghề.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_4",
+        "dictation",
+        "exact_transcript"
+      ]
+    },
+    {
+      "question_id": "D02",
+      "type": "dictation",
+      "prompt": "Nghe đoạn T04 và chép lại chính xác lời giảng.",
+      "correct_answers": [
+        "Prices also affect living standards. Inflation reduces the purchasing power of money when prices rise faster than income. However, households do not buy exactly the same items. Rising transport costs may affect commuters more strongly, while increased rent can dominate another family’s budget. An overall price index is useful, but personal experiences can diverge sharply from the average."
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Phân tích từ nối, âm yếu và cụm thuật ngữ học thuật. Nghĩa của đoạn: Giá cả cũng ảnh hưởng mức sống. Lạm phát làm giảm sức mua của tiền khi giá tăng nhanh hơn thu nhập. Tuy nhiên hộ gia đình không mua cùng một rổ hàng. Chi phí đi lại tăng có thể ảnh hưởng mạnh người đi làm xa, còn tiền thuê nhà tăng chiếm phần lớn ngân sách gia đình khác. Chỉ số giá chung hữu ích nhưng trải nghiệm cá nhân có thể khác xa mức trung bình.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_4",
+        "dictation",
+        "exact_transcript"
+      ]
+    },
+    {
+      "question_id": "G01",
+      "type": "gap_fill",
+      "prompt": "Nghe T01 rồi điền phần thiếu: Economic growth describes an increase in the value of goods and services produced, but it does not automatically mean that everyone experiences better living conditions. Two regions can record similar growth while households face very different costs and opportunities. Economists therefore study ____ as well as output, asking who receives new income and who remains exposed to financial insecurity.",
+      "correct_answers": [
+        "distribution"
+      ],
+      "evidence_turn_ids": [
+        "T01"
+      ],
+      "explanation_vi": "Điền “distribution”, nghĩa: sự phân phối. Cụm từ này xuất hiện trong T01.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_4",
+        "gap_fill",
+        "academic_vocabulary"
+      ]
+    }
+  ],
+  "vocabulary": [
+    {
+      "term": "distribution",
+      "pos": "n.",
+      "meaning_vi": "sự phân phối",
+      "example_en": "Economic growth describes an increase in the value of goods and services produced, but it does not automatically mean that everyone experiences better living conditions. Two regions can record similar growth while households face very different costs and opportunities. Economists therefore study distribution as well as output, asking who receives new income and who remains exposed to financial insecurity.",
+      "example_vi": "Tăng trưởng kinh tế mô tả sự gia tăng giá trị hàng hóa và dịch vụ được tạo ra, nhưng không tự động có nghĩa mọi người đều sống tốt hơn. Hai vùng có thể có tăng trưởng tương tự trong khi hộ gia đình đối mặt chi phí và cơ hội rất khác. Vì thế nhà kinh tế nghiên cứu phân phối bên cạnh sản lượng, hỏi ai nhận thu nhập mới và ai vẫn chịu bất ổn tài chính.",
+      "source_turn_id": "T01"
+    },
+    {
+      "term": "productivity",
+      "pos": "n.",
+      "meaning_vi": "năng suất lao động",
+      "example_en": "A common measure is productivity, often expressed as output per worker or per hour worked. Higher productivity can support better wages and services, yet that outcome depends on institutions and bargaining conditions. If new technology increases output but reduces demand for a particular skill, some workers may need training before they can benefit. An average gain is not a guarantee for every occupation.",
+      "example_vi": "Một thước đo phổ biến là năng suất lao động, thường biểu thị bằng sản lượng mỗi người lao động hoặc mỗi giờ làm. Năng suất cao hơn có thể hỗ trợ lương và dịch vụ tốt hơn, nhưng kết quả tùy thể chế và điều kiện thương lượng. Nếu công nghệ tăng sản lượng nhưng giảm nhu cầu về một kỹ năng, một số lao động cần đào tạo mới được hưởng lợi. Mức tăng trung bình không bảo đảm cho mọi nghề.",
+      "source_turn_id": "T02"
+    },
+    {
+      "term": "Wealth",
+      "pos": "n.",
+      "meaning_vi": "tài sản ròng",
+      "example_en": "To examine inequality, researchers compare incomes across groups, but income is only part of the picture. Wealth includes assets such as savings and property, minus debts. A family with temporary income loss and substantial savings may be less vulnerable than one with the same income and no financial buffer. Different measures describe different dimensions of economic security.",
+      "example_vi": "Để nghiên cứu bất bình đẳng, nhà nghiên cứu so sánh thu nhập giữa các nhóm, nhưng thu nhập chỉ là một phần. Tài sản ròng gồm tài sản như tiền tiết kiệm và bất động sản trừ nợ. Gia đình tạm giảm thu nhập nhưng có tiết kiệm lớn có thể ít dễ tổn thương hơn gia đình có thu nhập tương tự mà không có dự phòng. Các thước đo khác nhau mô tả những chiều khác nhau của an toàn kinh tế.",
+      "source_turn_id": "T03"
+    },
+    {
+      "term": "purchasing power",
+      "pos": "n. phr.",
+      "meaning_vi": "sức mua",
+      "example_en": "Prices also affect living standards. Inflation reduces the purchasing power of money when prices rise faster than income. However, households do not buy exactly the same items. Rising transport costs may affect commuters more strongly, while increased rent can dominate another family’s budget. An overall price index is useful, but personal experiences can diverge sharply from the average.",
+      "example_vi": "Giá cả cũng ảnh hưởng mức sống. Lạm phát làm giảm sức mua của tiền khi giá tăng nhanh hơn thu nhập. Tuy nhiên hộ gia đình không mua cùng một rổ hàng. Chi phí đi lại tăng có thể ảnh hưởng mạnh người đi làm xa, còn tiền thuê nhà tăng chiếm phần lớn ngân sách gia đình khác. Chỉ số giá chung hữu ích nhưng trải nghiệm cá nhân có thể khác xa mức trung bình.",
+      "source_turn_id": "T04"
+    }
+  ],
+  "audio": {
+    "status": "not_generated",
+    "url": null,
+    "duration_ms": null,
+    "model": null,
+    "provider": null,
+    "voice_config": null,
+    "source_transcript_hash": "b6eaf2cc36e1b7df50d69b245a4c582630d7381ea74aa9ad8cb0aa5aa8099a47",
+    "audio_sha256": null,
+    "format": null
+  },
+  "qa": {
+    "content_reviewed": false,
+    "answers_verified": false,
+    "audio_verified": false,
+    "rights_cleared": false,
+    "duplicate_reviewed": false,
+    "notes": [
+      "Original AI-assisted educational script, not an official IELTS transcript.",
+      "Editorial, academic and linguistic review pending.",
+      "Audio/TTS not generated; text-to-speech distribution rights must be confirmed before use, especially for minors.",
+      "Six IELTS-style practice questions per lesson; this is not a full official Part 4 test or a calibrated IELTS Band test.",
+      "M16.2: automated edits are provisional; IELTS teacher final signoff, audio and rights clearance pending."
+    ]
+  },
+  "provenance": {
+    "content_origin": "original_ai_assisted",
+    "source_urls": [],
+    "source_rights_note": "Original transcript and translation drafts; verify academic claims and terms, and TTS provider redistribution conditions before release.",
+    "reviewer": null
+  },
+  "release_metadata": {
+    "published_at": null,
+    "version": 1
+  }
+}

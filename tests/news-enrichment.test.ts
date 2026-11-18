@@ -1,5 +1,11 @@
 import { describe, expect, it } from "vitest";
-import { AiQuotaError, findNewsIllustration, generateNewsQuiz, imageClaimLimit, imageKeywords, normalizeAnswer, quizExcerpt, tfngOptions, validateGeneratedQuiz } from "../src/lib/news/enrichment";
+import { AiQuotaError, findNewsIllustration, generateNewsQuiz, imageClaimLimit, imageKeywords, normalizeAnswer, quizExcerpt, scheduledNewsWorkSlot, tfngOptions, validateGeneratedQuiz as validateWithPlan } from "../src/lib/news/enrichment";
+
+it("reserves quiz work even while translation, image and discovery backlogs exist", () => {
+  const slot = (hour: number, minute: number) => scheduledNewsWorkSlot(new Date(`2026-11-11T${String(hour).padStart(2, "0")}:${String(minute).padStart(2, "0")}:00Z`));
+  expect([5, 15, 25, 35, 45, 55].map((minute) => slot(0, minute))).toEqual(["quiz", "discovery", "image", "discovery", "translation", "discovery"]);
+  expect([5, 15, 25, 35, 45, 55].map((minute) => slot(1, minute))).toEqual(["quiz", "discovery", "image", "discovery", "quiz", "discovery"]);
+});
 
 const passage = "The Artemis team tested a new spacecraft on Tuesday. The spacecraft will carry instruments to study the Moon. Scientists will use the results to prepare later missions. The test took place at Kennedy Space Center in Florida. Engineers measured the heat shield during the flight.";
 const quote = "The Artemis team tested a new spacecraft on Tuesday.";
@@ -16,14 +22,23 @@ function reply(evidence = quote) {
 }
 const types = (questions: { type: string }[]) => questions.map((question) => question.type);
 const planned = [...Array(6).fill("tfng"), ...Array(6).fill("mcq"), ...Array(4).fill("sentence_completion"), ...Array(4).fill("short_answer")];
+const fixedPlan = { tfng: 6, mcq: 6, sentence_completion: 4, short_answer: 4 };
+const validateGeneratedQuiz = (value: unknown, body: string) => validateWithPlan(value, body, fixedPlan);
 const geminiReply = (value: unknown) => new Response(JSON.stringify({ candidates: [{ finishReason: "STOP", content: { parts: [{ text: JSON.stringify(value) }] } }] }), { status: 200 });
 async function withKey<T>(run: () => Promise<T>, models?: string) {
-  const previous = { key: process.env.GEMINI_API_KEY, models: process.env.GEMINI_MODELS };
-  process.env.GEMINI_API_KEY = "test-key";
+  const previous = { key: process.env.GEMINI_API_KEY, freeKey: process.env.AI_FACTORY_GEMINI_API_KEY,
+    confirmed: process.env.AI_FACTORY_FREE_TIER_CONFIRMED, only: process.env.AI_FACTORY_FREE_TIER_ONLY, models: process.env.GEMINI_MODELS };
+  process.env.GEMINI_API_KEY = "paid-key-must-not-be-used";
+  process.env.AI_FACTORY_GEMINI_API_KEY = "test-key";
+  process.env.AI_FACTORY_FREE_TIER_CONFIRMED = "true";
+  process.env.AI_FACTORY_FREE_TIER_ONLY = "true";
   if (models) process.env.GEMINI_MODELS = models; else delete process.env.GEMINI_MODELS;
   try { return await run(); }
   finally {
     if (previous.key === undefined) delete process.env.GEMINI_API_KEY; else process.env.GEMINI_API_KEY = previous.key;
+    if (previous.freeKey === undefined) delete process.env.AI_FACTORY_GEMINI_API_KEY; else process.env.AI_FACTORY_GEMINI_API_KEY = previous.freeKey;
+    if (previous.confirmed === undefined) delete process.env.AI_FACTORY_FREE_TIER_CONFIRMED; else process.env.AI_FACTORY_FREE_TIER_CONFIRMED = previous.confirmed;
+    if (previous.only === undefined) delete process.env.AI_FACTORY_FREE_TIER_ONLY; else process.env.AI_FACTORY_FREE_TIER_ONLY = previous.only;
     if (previous.models === undefined) delete process.env.GEMINI_MODELS; else process.env.GEMINI_MODELS = previous.models;
   }
 }
@@ -50,23 +65,25 @@ describe("IELTS-style AI quiz validation", () => {
     expect(quiz).toHaveLength(20);
     expect(types(quiz).filter((type) => type === "sentence_completion")).toHaveLength(2);
   });
-  it("rejects claims without a matching sentence in the article", () => {
-    expect(() => validateGeneratedQuiz(reply("The mission landed on Mars yesterday."), passage)).toThrow(/evidence/);
+  it("drops claims without a matching sentence in the article", () => {
+    const quiz = validateGeneratedQuiz(reply("The mission landed on Mars yesterday."), passage);
+    expect(types(quiz)).not.toContain("tfng");
+    expect(types(quiz)).not.toContain("mcq");
   });
-  it("rejects a set whose multiple-choice options repeat", () => {
+  it("drops multiple-choice questions whose options repeat", () => {
     const data = reply(); for (const item of data.multiple_choice) item.options[1] = item.options[0];
-    expect(() => validateGeneratedQuiz(data, passage)).toThrow(/option.*too few mcq/);
+    expect(types(validateGeneratedQuiz(data, passage))).not.toContain("mcq");
   });
   it("checks written answers against the IELTS word limit and the quoted sentence", () => {
     const broken = (change: (item: { sentence: string; answer: string }) => void) => {
       const data = reply(); for (const item of data.sentence_completion) change(item);
-      return () => validateGeneratedQuiz(data, passage);
+      return validateGeneratedQuiz(data, passage);
     };
-    expect(broken((item) => { item.answer = "Kennedy Space Center in Florida"; })).toThrow(/three words/);
-    expect(broken((item) => { item.answer = "Houston"; })).toThrow(/not in the quoted sentence/);
-    expect(broken((item) => { item.sentence = item.sentence.replace("______", "Kennedy Space Center"); })).toThrow(/gap|gives away/);
+    expect(types(broken((item) => { item.answer = "Kennedy Space Center in Florida"; }))).not.toContain("sentence_completion");
+    expect(types(broken((item) => { item.answer = "Houston"; }))).not.toContain("sentence_completion");
+    expect(types(broken((item) => { item.sentence = item.sentence.replace("______", "Kennedy Space Center"); }))).not.toContain("sentence_completion");
     const data = reply(); for (const item of data.short_answer) item.question = item.question.replace("?", ".");
-    expect(() => validateGeneratedQuiz(data, passage)).toThrow(/not a question/);
+    expect(types(validateGeneratedQuiz(data, passage))).not.toContain("short_answer");
   });
   it("prefers a True/False/Not Given selection that uses every answer, in article order", () => {
     const data = reply();
@@ -80,7 +97,7 @@ describe("IELTS-style AI quiz validation", () => {
     for (const group of [english.true_false_not_given, english.multiple_choice, english.sentence_completion, english.short_answer]) for (const item of group) item.explanation = "The quoted sentence states this directly.";
     expect(() => validateGeneratedQuiz(english, passage)).toThrow(/not in Vietnamese/);
     const missing = reply(); for (const item of missing.multiple_choice) item.option_notes = item.option_notes.slice(0, 3);
-    expect(() => validateGeneratedQuiz(missing, passage)).toThrow(/too few mcq/);
+    expect(types(validateGeneratedQuiz(missing, passage))).not.toContain("mcq");
     const quiz = validateGeneratedQuiz(reply(), passage);
     expect(quiz[0].option_notes).toHaveLength(3);
     expect(quiz[12].option_notes).toBeNull();
@@ -92,7 +109,7 @@ describe("IELTS-style AI quiz validation", () => {
   it("matches evidence by its words even when punctuation differs", () => {
     const punctuated = `${passage} The figure — naked or clothed, for example — appears in [many] “paintings”.`;
     expect(validateGeneratedQuiz(reply("The figure naked or clothed for example appears in many paintings"), punctuated)).toHaveLength(20);
-    expect(() => validateGeneratedQuiz(reply("The figure naked or clothed appears in many paintings"), punctuated)).toThrow(/evidence/);
+    expect(types(validateGeneratedQuiz(reply("The figure naked or clothed appears in many paintings"), punctuated))).not.toContain("tfng");
   });
   it("treats typographic quotes and dashes in evidence as equal", () => {
     const curly = `${passage} NASA’s team — working fast — recorded every result.`;
@@ -113,6 +130,13 @@ describe("IELTS-style AI quiz validation", () => {
 });
 
 describe("Gemini news quiz generation", () => {
+  it("refuses the paid key when free-tier confirmation is absent", async () => {
+    await withKey(async () => {
+      process.env.AI_FACTORY_FREE_TIER_CONFIRMED = "false";
+      const fetcher = async () => { throw new Error("Paid Gemini request must not be sent"); };
+      await expect(generateNewsQuiz("Artemis test", passage, fetcher as typeof fetch)).rejects.toThrow("Confirmed free-tier Gemini key is not configured");
+    });
+  });
   it("sends a server-side Gemini request, validates and shuffles its response", async () => {
     await withKey(async () => {
       const fetcher = async (url: string | URL | Request, init?: RequestInit) => {
@@ -126,14 +150,15 @@ describe("Gemini news quiz generation", () => {
       };
       const result = await generateNewsQuiz("Artemis test", passage, fetcher as typeof fetch);
       expect(result.model).toBe("gemini-3.5-flash-lite");
-      expect(result.questions).toHaveLength(20);
+      expect(result.questions.length).toBeGreaterThanOrEqual(8);
+      expect(result.questions.length).toBeLessThanOrEqual(13);
       expect(result.imageQuery).toBe("Artemis spacecraft");
       // Shuffling keeps each option's note with its option.
       for (const question of result.questions.filter((item) => item.type === "mcq")) {
         expect(question.options[question.correct_index!]).toBe("A spacecraft");
         expect(question.option_notes![question.correct_index!]).toMatch(/^Đúng/);
       }
-      expect(result.questions[0].options).toEqual(tfngOptions);
+      for (const question of result.questions.filter((item) => item.type === "tfng")) expect(question.options).toEqual(tfngOptions);
     });
   });
   it("falls back to the next configured model when one is rate limited", async () => {

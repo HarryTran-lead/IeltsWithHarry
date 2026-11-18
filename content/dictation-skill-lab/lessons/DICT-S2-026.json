@@ -1,0 +1,380 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "DICT-S2-026",
+  "status": "draft",
+  "level": "L4",
+  "section": 2,
+  "topic": "Safety Instructions",
+  "title": "Emergency Procedures for the Riverside Exhibition",
+  "learning_objectives_vi": [
+    "Nghe độc thoại chủ đề Safety Instructions và xác định mục đích thông báo.",
+    "Nhận diện cấu trúc ý và các chi tiết quan trọng theo thứ tự phát biểu.",
+    "Luyện nhận diện thời gian, chi phí, điều kiện và chi tiết được thay đổi."
+  ],
+  "content_format": "section_practice",
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Visitor guide / programme coordinator (one narrator)",
+      "tts_voice_id": null,
+      "accent_requested": "british"
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "Before visitors enter the exhibition area, I must explain how our emergency system works. These instructions apply to staff and guests, including those attending evening performances.",
+      "translation_vi": "Trước khi vào triển lãm, tôi cần hướng dẫn hệ thống khẩn cấp. Quy định áp dụng cho nhân viên và khách, kể cả người dự diễn tối.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_2",
+        "monologue",
+        "l4",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "A",
+      "text_en": "If you hear a continuous alarm, leave by the nearest marked exit. A short test bell at ten every morning is different and does not require evacuation.",
+      "translation_vi": "Nếu nghe chuông liên tục, hãy rời bằng cửa thoát gần nhất. Chuông thử ngắn lúc mười giờ sáng khác và không cần sơ tán.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_2",
+        "monologue",
+        "l4",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "A",
+      "text_en": "The main assembly point is the gravel courtyard behind the east gate. Please do not wait at the visitor car park, where emergency vehicles must have clear access.",
+      "translation_vi": "Điểm tập kết chính là sân sỏi sau cổng đông. Không chờ ở bãi xe khách vì xe cứu hộ cần đường thông.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_2",
+        "monologue",
+        "l4",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "A",
+      "text_en": "Families should stay together, but nobody should return inside to look for missing possessions. Staff will check the building before anyone is allowed back.",
+      "translation_vi": "Gia đình nên đi cùng nhau nhưng không ai được quay vào tìm đồ. Nhân viên sẽ kiểm tra tòa nhà trước khi cho trở lại.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_2",
+        "monologue",
+        "l4",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "A",
+      "text_en": "The first-aid room is on the lower floor, opposite the main lift. A trained medical volunteer is present during all public opening hours.",
+      "translation_vi": "Phòng sơ cứu ở tầng dưới đối diện thang máy chính. Tình nguyện viên y tế có mặt trong giờ mở cửa.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_2",
+        "monologue",
+        "l4",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "A",
+      "text_en": "Visitors using wheelchairs must move to the protected waiting area by Staircase B. A safety officer will assist them; ordinary passenger lifts must not be used during an evacuation.",
+      "translation_vi": "Khách dùng xe lăn tới khu chờ được bảo vệ cạnh cầu thang B. Nhân viên an toàn sẽ hỗ trợ; không dùng thang máy khách khi sơ tán.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_2",
+        "monologue",
+        "l4",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "We updated our procedure after last month’s drill. Instead of meeting beside the fountain, all guides now report to the east courtyard so we can account for groups more quickly.",
+      "translation_vi": "Chúng tôi đổi quy trình sau diễn tập tháng trước: thay vì cạnh đài phun nước, hướng dẫn viên đều báo về sân phía đông để điểm danh nhanh.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_2",
+        "monologue",
+        "l4",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "A",
+      "text_en": "In the unlikely event of smoke, stay low and follow the illuminated signs. Do not open doors that feel hot, and never stop to take photographs.",
+      "translation_vi": "Nếu có khói, cúi thấp và theo biển phát sáng. Không mở cửa nóng và không dừng chụp ảnh.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_2",
+        "monologue",
+        "l4",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T09",
+      "speaker_id": "A",
+      "text_en": "At the end of this briefing, please check the emergency diagram on your ticket. If anything is unclear, ask a member of staff before entering the exhibition.",
+      "translation_vi": "Cuối buổi, hãy xem sơ đồ khẩn cấp trên vé. Nếu chưa rõ, hỏi nhân viên trước khi vào triển lãm.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_2",
+        "monologue",
+        "l4",
+        "signposting"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "type": "mcq",
+      "prompt": "Which alarm means that visitors must leave the building?",
+      "correct_answers": [
+        "continuous"
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Chuông liên tục yêu cầu sơ tán, chuông thử thì không.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "section_2",
+        "ielts_practice",
+        "detail_recognition"
+      ],
+      "options": [
+        "short",
+        "test",
+        "continuous"
+      ]
+    },
+    {
+      "question_id": "Q02",
+      "type": "table_completion",
+      "prompt": "Table — Assembly point is a gravel: ____",
+      "correct_answers": [
+        "courtyard"
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Tập kết tại sân sỏi.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_2",
+        "ielts_practice",
+        "detail_recognition"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q03",
+      "type": "note_completion",
+      "prompt": "Notes — First-aid room opposite the main: ____",
+      "correct_answers": [
+        "lift"
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Phòng sơ cứu đối diện thang máy chính.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_2",
+        "ielts_practice",
+        "detail_recognition"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q04",
+      "type": "note_completion",
+      "prompt": "Notes — Accessible waiting area beside Staircase: ____",
+      "correct_answers": [
+        "B"
+      ],
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "explanation_vi": "Khách xe lăn chờ cạnh cầu thang B.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_2",
+        "ielts_practice",
+        "detail_recognition"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q05",
+      "type": "note_completion",
+      "prompt": "Notes — Old assembly point by the: ____",
+      "correct_answers": [
+        "fountain"
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "Điểm cũ cạnh đài phun nước; điểm mới là sân phía đông.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_2",
+        "ielts_practice",
+        "detail_recognition"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q06",
+      "type": "note_completion",
+      "prompt": "Notes — When smoke is present, stay: ____",
+      "correct_answers": [
+        "low"
+      ],
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "explanation_vi": "Trong khói phải cúi thấp.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_2",
+        "ielts_practice",
+        "detail_recognition"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "D01",
+      "type": "dictation",
+      "prompt": "Nghe lại và chép nguyên văn đoạn T05 (toàn bộ lời người dẫn).",
+      "correct_answers": [
+        "The first-aid room is on the lower floor, opposite the main lift. A trained medical volunteer is present during all public opening hours."
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Câu gốc: The first-aid room is on the lower floor, opposite the main lift. A trained medical volunteer is present during all public opening hours. Nghĩa: Phòng sơ cứu ở tầng dưới đối diện thang máy chính. Tình nguyện viên y tế có mặt trong giờ mở cửa. Lưu ý từ chức năng, âm cuối và cụm từ nối.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "exact_transcript",
+        "section_2"
+      ]
+    },
+    {
+      "question_id": "G01",
+      "type": "gap_fill",
+      "prompt": "Điền cụm từ bị ẩn sau khi nghe: The main ____ is the gravel courtyard behind the east gate. Please do not wait at the visitor car park, where emergency vehicles must have clear access.",
+      "correct_answers": [
+        "assembly point"
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "assembly point: điểm tập kết. Ngữ cảnh: Điểm tập kết chính là sân sỏi sau cổng đông. Không chờ ở bãi xe khách vì xe cứu hộ cần đường thông.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "gap_fill",
+        "vocab_in_context",
+        "section_2"
+      ]
+    }
+  ],
+  "vocabulary": [
+    {
+      "term": "assembly point",
+      "pos": "n. phr.",
+      "meaning_vi": "điểm tập kết",
+      "example_en": "The main assembly point is the gravel courtyard behind the east gate. Please do not wait at the visitor car park, where emergency vehicles must have clear access.",
+      "example_vi": "Điểm tập kết chính là sân sỏi sau cổng đông. Không chờ ở bãi xe khách vì xe cứu hộ cần đường thông.",
+      "source_turn_id": "T03"
+    },
+    {
+      "term": "evacuation",
+      "pos": "n.",
+      "meaning_vi": "sơ tán",
+      "example_en": "If you hear a continuous alarm, leave by the nearest marked exit. A short test bell at ten every morning is different and does not require evacuation.",
+      "example_vi": "Nếu nghe chuông liên tục, hãy rời bằng cửa thoát gần nhất. Chuông thử ngắn lúc mười giờ sáng khác và không cần sơ tán.",
+      "source_turn_id": "T02"
+    },
+    {
+      "term": "room",
+      "pos": "n.",
+      "meaning_vi": "phòng",
+      "example_en": "The first-aid room is on the lower floor, opposite the main lift. A trained medical volunteer is present during all public opening hours.",
+      "example_vi": "Phòng sơ cứu ở tầng dưới đối diện thang máy chính. Tình nguyện viên y tế có mặt trong giờ mở cửa.",
+      "source_turn_id": "T05"
+    },
+    {
+      "term": "volunteer",
+      "pos": "n.",
+      "meaning_vi": "tình nguyện viên",
+      "example_en": "The first-aid room is on the lower floor, opposite the main lift. A trained medical volunteer is present during all public opening hours.",
+      "example_vi": "Phòng sơ cứu ở tầng dưới đối diện thang máy chính. Tình nguyện viên y tế có mặt trong giờ mở cửa.",
+      "source_turn_id": "T05"
+    }
+  ],
+  "audio": {
+    "status": "not_generated",
+    "url": null,
+    "duration_ms": null,
+    "model": null,
+    "provider": null,
+    "voice_config": null,
+    "source_transcript_hash": "47b61c1d2f3810c40b29b122a2b0983bbd1f0bb07f58b5c75e2eb0c4e9109ae4",
+    "audio_sha256": null,
+    "format": null
+  },
+  "qa": {
+    "content_reviewed": false,
+    "answers_verified": false,
+    "audio_verified": false,
+    "rights_cleared": false,
+    "duplicate_reviewed": false,
+    "notes": [
+      "AI-assisted original writing; pedagogical and pronunciation review still required.",
+      "No TTS or sentence-level timestamps supplied; do not publish.",
+      "This is Section 2 skill practice, not an official IELTS test.",
+      "M16.2: automated edits are provisional; IELTS teacher final signoff, audio and rights clearance pending."
+    ]
+  },
+  "provenance": {
+    "content_origin": "original_ai_assisted",
+    "source_urls": [],
+    "source_rights_note": "Newly authored educational monologue. Confirm audio model distribution, age suitability and TOS separately before publishing.",
+    "reviewer": null
+  },
+  "release_metadata": {
+    "published_at": null,
+    "version": 1
+  }
+}

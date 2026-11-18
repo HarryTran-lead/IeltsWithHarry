@@ -6,13 +6,14 @@ import Link from "next/link";
 import { ArrowRight, ChevronRight, Clock3, Flame, Newspaper, Play, UsersRound } from "lucide-react";
 import { liveStreams, liveThumbnail, savedStream, saveStream, STREAM_EVENT, type LiveStream } from "@/features/study-room/live-streams";
 import { HeadIcon } from "@/components/ui/head-icon";
+import { AvatarFrame } from "@/components/account/avatar-frame";
 import { useStudyPresence } from "@/features/study-room/study-presence";
 import { createClient } from "@/lib/supabase/browser";
 import { liveMode } from "@/lib/runtime";
 
 type NewsRow = { id: string; title: string; publisher: string; category: string; published_at: string; image_url: string | null; image_alt: string | null; image_credit: string | null };
 type RoomMessage = { id: string; display_name: string; body: string };
-type StreakLeader = { name: string; days: number; isYou: boolean };
+type StreakLeader = { name: string; days: number; isYou: boolean; avatar?: string; frame?: string };
 
 function ago(value: string, now: number) {
   const hours = Math.max(0, Math.floor((now - new Date(value).valueOf()) / 3600000));
@@ -119,7 +120,8 @@ export function StreakLeaderboardCard() {
     <p className="dash-leaderboard-caption">Chuỗi ngày học đang duy trì</p>
     {leaders?.length ? <ol className="dash-leaderboard-list">{leaders.map((leader, index) => <li key={`${leader.name}-${index}`}>
       <span className={`dash-leaderboard-rank rank-${index + 1}`}>{index + 1}</span>
-      <span className="dash-leaderboard-avatar" aria-hidden="true">{leader.name.trim().charAt(0).toUpperCase() || "H"}</span>
+      {leader.avatar ? <span className="dash-leaderboard-frame" aria-hidden="true"><AvatarFrame avatar={leader.avatar} frame={leader.frame} size={40} alt="" /></span>
+        : <span className="dash-leaderboard-avatar" aria-hidden="true">{leader.name.trim().charAt(0).toUpperCase() || "H"}</span>}
       <span className="dash-leaderboard-name" title={leader.name}>{leader.name}{leader.isYou && <small> (Bạn)</small>}</span>
       <strong className="dash-leaderboard-days"><Flame size={16} aria-hidden="true" />{leader.days} <small>ngày</small></strong>
     </li>)}</ol> : <p className="dash-leaderboard-empty">{error ? "Chưa tải được bảng xếp hạng. Vui lòng thử lại sau." : leaders ? "Chưa có chuỗi học đang duy trì." : "Đang tải bảng xếp hạng…"}</p>}

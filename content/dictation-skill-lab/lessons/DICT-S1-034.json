@@ -1,0 +1,448 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "DICT-S1-034",
+  "status": "draft",
+  "level": "L3",
+  "section": 1,
+  "topic": "Renting Accommodation",
+  "title": "Finding a Bicycle-Friendly Flat",
+  "learning_objectives_vi": [
+    "Rèn constraints and options qua tình huống: A renter asks an agent about pet rules, bills and secure cycle storage.",
+    "Xác định thông tin cuối cùng và phân biệt dữ liệu gây nhiễu (nếu có).",
+    "Nghe chép chính xác, lý giải đáp án từ transcript và học từ trong ngữ cảnh."
+  ],
+  "content_format": "section_bridge",
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Service representative / employee",
+      "tts_voice_id": null,
+      "accent_requested": "american"
+    },
+    {
+      "speaker_id": "B",
+      "role": "Customer / applicant",
+      "tts_voice_id": null,
+      "accent_requested": "american"
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "Good morning, Meadow Property. Are you looking for a room or a whole flat?",
+      "translation_vi": "Chào buổi sáng, Meadow Property. Anh tìm phòng hay cả căn hộ?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "facilities",
+        "pet_policy",
+        "utilities",
+        "lease_constraints",
+        "section_1",
+        "two_speaker_dialogue",
+        "l3"
+      ]
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "B",
+      "text_en": "A small flat, please. I cycle to work, so I need somewhere secure for my bike.",
+      "translation_vi": "Một căn hộ nhỏ. Tôi đạp xe đi làm nên cần chỗ an toàn cho xe.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "facilities",
+        "pet_policy",
+        "utilities",
+        "lease_constraints",
+        "section_1",
+        "two_speaker_dialogue",
+        "l3"
+      ]
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "A",
+      "text_en": "The Elm Street flat has a locked bicycle shed beside the garden.",
+      "translation_vi": "Căn hộ ở phố Elm có nhà để xe đạp có khóa cạnh vườn.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "facilities",
+        "pet_policy",
+        "utilities",
+        "lease_constraints",
+        "section_1",
+        "two_speaker_dialogue",
+        "l3"
+      ]
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "B",
+      "text_en": "That would help. Can I keep a small cat there?",
+      "translation_vi": "Tốt đấy. Tôi có thể nuôi một con mèo nhỏ không?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "facilities",
+        "pet_policy",
+        "utilities",
+        "lease_constraints",
+        "section_1",
+        "two_speaker_dialogue",
+        "l3"
+      ]
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "A",
+      "text_en": "The owner allows cats, but not dogs. There's no extra pet fee.",
+      "translation_vi": "Chủ nhà cho nuôi mèo, không cho nuôi chó. Không có phụ phí thú cưng.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "facilities",
+        "pet_policy",
+        "utilities",
+        "lease_constraints",
+        "section_1",
+        "two_speaker_dialogue",
+        "l3"
+      ]
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "B",
+      "text_en": "Which bills are included in the rent?",
+      "translation_vi": "Tiền thuê đã bao gồm hóa đơn nào?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "facilities",
+        "pet_policy",
+        "utilities",
+        "lease_constraints",
+        "section_1",
+        "two_speaker_dialogue",
+        "l3"
+      ]
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "Water and internet are included. You pay separately for heating.",
+      "translation_vi": "Đã gồm nước và internet. Anh trả tiền sưởi riêng.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "facilities",
+        "pet_policy",
+        "utilities",
+        "lease_constraints",
+        "section_1",
+        "two_speaker_dialogue",
+        "l3"
+      ]
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "B",
+      "text_en": "Is the flat available for a six-month contract?",
+      "translation_vi": "Có thể thuê theo hợp đồng sáu tháng không?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "facilities",
+        "pet_policy",
+        "utilities",
+        "lease_constraints",
+        "section_1",
+        "two_speaker_dialogue",
+        "l3"
+      ]
+    },
+    {
+      "turn_id": "T09",
+      "speaker_id": "A",
+      "text_en": "Yes, but you need to give one month's notice before leaving.",
+      "translation_vi": "Có, nhưng phải báo trước một tháng khi dọn đi.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "facilities",
+        "pet_policy",
+        "utilities",
+        "lease_constraints",
+        "section_1",
+        "two_speaker_dialogue",
+        "l3"
+      ]
+    },
+    {
+      "turn_id": "T10",
+      "speaker_id": "B",
+      "text_en": "That sounds reasonable. I'd like to view it.",
+      "translation_vi": "Hợp lý. Tôi muốn đến xem.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "facilities",
+        "pet_policy",
+        "utilities",
+        "lease_constraints",
+        "section_1",
+        "two_speaker_dialogue",
+        "l3"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "type": "form_completion",
+      "prompt": "Bike storage: locked bicycle ____",
+      "correct_answers": [
+        "shed"
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Chỗ để xe là bicycle shed có khóa.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "facilities",
+        "pet_policy",
+        "utilities",
+        "lease_constraints",
+        "ielts_section1_practice"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q02",
+      "type": "mcq",
+      "prompt": "Which pet is permitted?",
+      "correct_answers": [
+        "A cat"
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Chủ nhà cho mèo, không cho chó.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "facilities",
+        "pet_policy",
+        "utilities",
+        "lease_constraints",
+        "ielts_section1_practice"
+      ],
+      "options": [
+        "A dog",
+        "A cat",
+        "Neither cats nor dogs"
+      ]
+    },
+    {
+      "question_id": "Q03",
+      "type": "form_completion",
+      "prompt": "There is ____ extra pet fee.",
+      "correct_answers": [
+        "no"
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Chủ nhà nói “There’s no extra pet fee”, vì vậy điền đúng từ được nghe là “no”.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "facilities",
+        "pet_policy",
+        "utilities",
+        "lease_constraints",
+        "ielts_section1_practice"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q04",
+      "type": "form_completion",
+      "prompt": "Bill paid separately: ____",
+      "correct_answers": [
+        "heating"
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "Nước và internet đã gồm, tiền sưởi trả riêng.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "facilities",
+        "pet_policy",
+        "utilities",
+        "lease_constraints",
+        "ielts_section1_practice"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q05",
+      "type": "form_completion",
+      "prompt": "Notice period: ____ month",
+      "correct_answers": [
+        "one",
+        "1"
+      ],
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "explanation_vi": "Cần báo trước một tháng.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "facilities",
+        "pet_policy",
+        "utilities",
+        "lease_constraints",
+        "ielts_section1_practice"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "D01",
+      "type": "dictation",
+      "prompt": "Nghe và chép nguyên văn câu của nhân vật A (lượt T03).",
+      "correct_answers": [
+        "The Elm Street flat has a locked bicycle shed beside the garden."
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Nội dung cần chép: The Elm Street flat has a locked bicycle shed beside the garden. Nghĩa: Căn hộ ở phố Elm có nhà để xe đạp có khóa cạnh vườn. Chú ý đầy đủ từ chức năng, số ít/số nhiều và âm cuối.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "transcription_accuracy",
+        "facilities",
+        "pet_policy",
+        "utilities",
+        "lease_constraints"
+      ]
+    },
+    {
+      "question_id": "D02",
+      "type": "dictation",
+      "prompt": "Nghe và chép nguyên văn câu của nhân vật A (lượt T07).",
+      "correct_answers": [
+        "Water and internet are included. You pay separately for heating."
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "Nội dung cần chép: Water and internet are included. You pay separately for heating. Nghĩa: Đã gồm nước và internet. Anh trả tiền sưởi riêng. Chú ý đầy đủ từ chức năng, số ít/số nhiều và âm cuối.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "transcription_accuracy",
+        "facilities",
+        "pet_policy",
+        "utilities",
+        "lease_constraints"
+      ]
+    },
+    {
+      "question_id": "G01",
+      "type": "gap_fill",
+      "prompt": "Nghe và điền phần còn thiếu: The Elm Street flat has a ____ beside the garden.",
+      "correct_answers": [
+        "locked bicycle shed"
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Từ/cụm nghe được là “locked bicycle shed”. Câu đầy đủ: The Elm Street flat has a locked bicycle shed beside the garden.. Nghĩa: Căn hộ ở phố Elm có nhà để xe đạp có khóa cạnh vườn.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "gap_fill",
+        "vocabulary_in_context",
+        "facilities",
+        "pet_policy",
+        "utilities",
+        "lease_constraints"
+      ]
+    }
+  ],
+  "vocabulary": [
+    {
+      "term": "locked bicycle shed",
+      "pos": "noun phrase",
+      "meaning_vi": "nhà để xe đạp có khóa",
+      "example_en": "The Elm Street flat has a locked bicycle shed beside the garden.",
+      "example_vi": "Căn hộ ở phố Elm có nhà để xe đạp có khóa cạnh vườn.",
+      "source_turn_id": "T03"
+    },
+    {
+      "term": "pet fee",
+      "pos": "noun phrase",
+      "meaning_vi": "phí thú cưng",
+      "example_en": "The owner allows cats, but not dogs. There's no extra pet fee.",
+      "example_vi": "Chủ nhà cho nuôi mèo, không cho nuôi chó. Không có phụ phí thú cưng.",
+      "source_turn_id": "T05"
+    },
+    {
+      "term": "heating",
+      "pos": "noun",
+      "meaning_vi": "tiền sưởi",
+      "example_en": "Water and internet are included. You pay separately for heating.",
+      "example_vi": "Đã gồm nước và internet. Anh trả tiền sưởi riêng.",
+      "source_turn_id": "T07"
+    },
+    {
+      "term": "one month's notice",
+      "pos": "noun phrase",
+      "meaning_vi": "báo trước một tháng",
+      "example_en": "Yes, but you need to give one month's notice before leaving.",
+      "example_vi": "Có, nhưng phải báo trước một tháng khi dọn đi.",
+      "source_turn_id": "T09"
+    }
+  ],
+  "audio": {
+    "status": "not_generated",
+    "url": null,
+    "duration_ms": null,
+    "model": null,
+    "provider": null,
+    "voice_config": null,
+    "source_transcript_hash": "bf8c3c7e48c6cb988377b7c67bbd88ccc087de88a2a0a886d0d566b455c9f355",
+    "audio_sha256": null,
+    "format": null
+  },
+  "qa": {
+    "content_reviewed": false,
+    "answers_verified": false,
+    "audio_verified": false,
+    "rights_cleared": false,
+    "duplicate_reviewed": false,
+    "notes": [
+      "Draft authoring, not expert reviewed.",
+      "TTS output pending; timestamps must be aligned after synthesis.",
+      "Keep unpublished until audio and question evidence are checked by a reviewer.",
+      "M16.2: automated edits are provisional; IELTS teacher final signoff, audio and rights clearance pending."
+    ]
+  },
+  "provenance": {
+    "content_origin": "original_ai_assisted",
+    "source_urls": [],
+    "source_rights_note": "Original pedagogical dialogues, not IELTS/Cambridge exam content. Review all TTS provider terms and permissions before audio generation/distribution.",
+    "reviewer": null
+  },
+  "release_metadata": {
+    "published_at": null,
+    "version": 1
+  }
+}

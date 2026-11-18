@@ -1,0 +1,254 @@
+{
+  "schema_version": "m34.2.0",
+  "activity_id": "ACT-SEC-074",
+  "status": "draft_pending_audio",
+  "module": "dictation",
+  "activity_kind": "section_skill_drill",
+  "title": "Riverstone Outdoor Education Base — Dẫn đường trên bản đồ và sửa lỗi",
+  "section": 2,
+  "source_lesson_id": "S2-EXP-014",
+  "source_milestone": "M22",
+  "source_zip": "English_Skill_Lab_Dictation_M22_Section_2_Expanded_Practice_20.zip",
+  "reuse_parent_id": "S2-EXP-014",
+  "source_bank": "section_practice_training",
+  "source_audio_id": "section-training/S2-EXP-014/T03",
+  "source_audio_id_type": "logical_source_turn_key_not_physical_audio",
+  "source_segments": [
+    {
+      "source_audio_id": "section-training/S2-EXP-014/T03",
+      "source_audio_id_type": "logical_turn_key_not_verified_physical_audio",
+      "source_lesson_id": "S2-EXP-014",
+      "source_turn_id": "T03",
+      "source_speaker_id": "A",
+      "source_audio_asset_id": null,
+      "source_audio_url": null,
+      "start_ms": null,
+      "end_ms": null,
+      "source_transcript_sha256": "911e0c878d5b8087d4649ccce0068926a9c03902e184d0368126c4aef2709468",
+      "source_bank": "training",
+      "source_is_protected": false,
+      "audio_status": "not_generated",
+      "alignment_status": "pending_verified_turn_offsets"
+    },
+    {
+      "source_audio_id": "section-training/S2-EXP-014/T08",
+      "source_audio_id_type": "logical_turn_key_not_verified_physical_audio",
+      "source_lesson_id": "S2-EXP-014",
+      "source_turn_id": "T08",
+      "source_speaker_id": "A",
+      "source_audio_asset_id": null,
+      "source_audio_url": null,
+      "start_ms": null,
+      "end_ms": null,
+      "source_transcript_sha256": "9e2b159dfde4ed270144dba7115aece5f9686e43cd581e7c0210f3668b888330",
+      "source_bank": "training",
+      "source_is_protected": false,
+      "audio_status": "not_generated",
+      "alignment_status": "pending_verified_turn_offsets"
+    }
+  ],
+  "start_ms": null,
+  "end_ms": null,
+  "alignment_policy": "verified_turn_level_audio_or_measured_offsets_only",
+  "clip_audio_status": "not_generated",
+  "topic": "Adventure induction",
+  "drill_skill": "map_direction_navigation",
+  "skill_tags": [
+    "section_practice",
+    "listening",
+    "reuse",
+    "section_2",
+    "map_navigation",
+    "compass_orientation",
+    "note_completion",
+    "focused_dictation"
+  ],
+  "teacher_notes": {
+    "goal": "Phân biệt vị trí theo hướng Bắc/Nam/Đông/Tây, sau đó xác minh thông tin thực tế được nói.",
+    "theory": "Map Labelling: trước tiên tìm đúng cổng vào (có thể ở các hướng khác nhau), sau đó theo lối đi và mốc cố định trên sơ đồ để suy ra chữ cái.",
+    "tip": "Không mặc định cổng nằm phía Nam; đối chiếu mốc cố định và hướng la bàn trước khi chọn.",
+    "mistakes": [
+      "Tưởng mọi bản đồ có cấu trúc hai hàng.",
+      "Không xác định đúng tên mốc cố định.",
+      "Nhầm hướng tương đối khi bản đồ khác nhau."
+    ],
+    "worked_example": "Ví dụ khác: “The rehearsal area is at the far north-east corner.” → ô góc trên bên phải của sơ đồ."
+  },
+  "playback": {
+    "first_listen_max_replays": 1,
+    "guided_replay_max_replays": 3,
+    "source_turn_order": [
+      "T03",
+      "T08"
+    ],
+    "transcript_hidden_until_submit": true,
+    "answers_hidden_until_submit": true,
+    "playback_speed_default": 1.0,
+    "prelisten_question_reading": true,
+    "asset_concatenation": "respect_source_turns_verified_only"
+  },
+  "questions": [
+    {
+      "question_id": "ACT-SEC-074-Q1",
+      "phase": "first_listen",
+      "origin_question_id": "Q01",
+      "origin_question_type": "map_labelling",
+      "type": "map_labelling",
+      "prompt_en": "Which letter marks Group Shelter?",
+      "prompt_vi": "Nghe mốc cố định, xác định hướng tương đối rồi chọn chữ cái trên bản đồ.",
+      "options": [
+        {
+          "value": "A",
+          "label": "A"
+        },
+        {
+          "value": "B",
+          "label": "B"
+        },
+        {
+          "value": "C",
+          "label": "C"
+        },
+        {
+          "value": "D",
+          "label": "D"
+        },
+        {
+          "value": "E",
+          "label": "E"
+        },
+        {
+          "value": "F",
+          "label": "F"
+        },
+        {
+          "value": "G",
+          "label": "G"
+        },
+        {
+          "value": "H",
+          "label": "H"
+        }
+      ],
+      "correct_answers": [
+        "H"
+      ],
+      "correct_option": "H",
+      "word_limit": null,
+      "scoring_policy": "map_letter",
+      "map_asset_path": "04_MAP_ASSETS_CLIENT_SAFE/M22_MAP_014.svg",
+      "map_asset_id": "M22-MAP-014",
+      "play_turn_ids": [
+        "T03"
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "evidence_excerpt_en": "There's a useful sign for the Campfire Circle on the plan. Immediately south of it is a lettered location: that's where you'll find Group Shelter. People sometimes choose the more distant area, but that isn't the right one.",
+      "evidence_excerpt_exact_in_turn": true,
+      "evidence_source_kind": "original_m22_training",
+      "explanation_vi": "Trên sơ đồ mới, tìm mốc Campfire Circle, rồi nhìn ngay phía nam. Khu được đánh dấu H là Group Shelter.",
+      "grading_is_ielts_band": false
+    },
+    {
+      "question_id": "ACT-SEC-074-Q2",
+      "phase": "targeted_replay",
+      "origin_question_id": "Q06",
+      "origin_question_type": "note_completion",
+      "type": "spoken_word_completion",
+      "prompt_en": "Minimum swim test: ____",
+      "prompt_vi": "Lắng nghe chi tiết đã được xác nhận, bỏ qua thông tin cũ.",
+      "options": null,
+      "correct_answers": [
+        "25 metres"
+      ],
+      "correct_option": null,
+      "word_limit": 3,
+      "scoring_policy": "controlled_variants",
+      "play_turn_ids": [
+        "T08"
+      ],
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "evidence_excerpt_en": "Anyone joining the canoe session must swim 25 metres without stopping.",
+      "evidence_excerpt_exact_in_turn": true,
+      "evidence_source_kind": "original_m22_training",
+      "explanation_vi": "Nghe thông tin cuối cùng về minimum swim test; đáp án là “25 metres”, không chọn thông tin cũ hoặc phương án bị loại.",
+      "grading_is_ielts_band": false
+    },
+    {
+      "question_id": "ACT-SEC-074-Q3",
+      "phase": "focused_dictation_repair",
+      "origin_question_id": null,
+      "type": "focused_dictation",
+      "prompt_vi": "Nghe lại và chép chính xác cụm chỉ vị trí bị ẩn (không viết cả câu).",
+      "prompt_en": "There's a useful sign for ____ on the plan. Immediately south of it is a lettered location: that's where you'll find Group Shelter. People sometimes choose the more distant area, but that isn't the right one.",
+      "word_limit": 3,
+      "correct_answers": [
+        "the Campfire Circle"
+      ],
+      "correct_option": null,
+      "options": null,
+      "normalization_policy": "casefold_unicode_nfkc_trim_whitespace_and_terminal_punctuation",
+      "play_turn_ids": [
+        "T03"
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "evidence_excerpt_en": "the Campfire Circle",
+      "evidence_char_start": 26,
+      "evidence_char_end": 45,
+      "evidence_source_kind": "exact_spoken_transcript_source",
+      "evidence_excerpt_exact_in_turn": true,
+      "explanation_vi": "Nghe mốc định hướng trong câu thoại mới, đối chiếu cách viết chính xác sau khi nộp.",
+      "grading_is_ielts_band": false,
+      "novel_question_authored_for_m34": true
+    }
+  ],
+  "evidence": {
+    "source_lesson_id": "S2-EXP-014",
+    "source_question_ids": [
+      "Q01",
+      "Q06"
+    ],
+    "source_turn_ids": [
+      "T03",
+      "T08"
+    ],
+    "source_transcript_sha256_map": {
+      "T03": "fa2524332eb6c2067948e2e65ae7237e5570a9bb2e2c3c5f2a90fac98b6654f5",
+      "T08": "9e2b159dfde4ed270144dba7115aece5f9686e43cd581e7c0210f3668b888330"
+    },
+    "provenance": "original_training_2026_m22",
+    "source_confidence": "authored_draft_requires_human_signoff"
+  },
+  "exposure_rules": {
+    "allowed_source_banks": [
+      "section_practice_training"
+    ],
+    "train_only": true,
+    "never_use_protected_source": true,
+    "never_use_unseen_section_simulation": true,
+    "never_use_mock_before_first_attempt": true,
+    "track_source_audio_id": true,
+    "track_first_exposure": true,
+    "track_replay_count": true,
+    "not_band_estimate": true
+  },
+  "rights_status": "pending_review",
+  "review": {
+    "automated_content_check": "passed_structural",
+    "human_language_review": "pending",
+    "human_audio_listening": "pending",
+    "teacher_signoff": "pending",
+    "timing_verification": "pending",
+    "rights_clearance": "pending",
+    "publish_ready": false
+  },
+  "import_policy": "conditional_replace_draft_only_must_not_override_exposed_record",
+  "version": "m34.2.0",
+  "content_source_version": "m22.1.0-distinct-maps",
+  "release_eligible": false
+}

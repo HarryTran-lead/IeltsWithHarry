@@ -1,0 +1,509 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "DICT-F3-011",
+  "status": "draft",
+  "level": "L3",
+  "section": 0,
+  "topic": "Foundation",
+  "title": "Event Booking",
+  "learning_objectives_vi": [
+    "Nghe thời gian mở cửa và giờ bắt đầu, phân biệt hạng vé."
+  ],
+  "content_format": "mini_conversation",
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Event organiser",
+      "tts_voice_id": null,
+      "accent_requested": "american"
+    },
+    {
+      "speaker_id": "B",
+      "role": "Attendee",
+      "tts_voice_id": null,
+      "accent_requested": "american"
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "Hello, River Arts Festival booking desk.",
+      "translation_vi": "Xin chào, bộ phận đặt vé lễ hội nghệ thuật River.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "events",
+        "tickets",
+        "discounts",
+        "arrival_instructions",
+        "mini_conversation",
+        "foundation_f3"
+      ]
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "B",
+      "text_en": "Hi. I'd like two tickets for Saturday's afternoon concert.",
+      "translation_vi": "Chào anh. Tôi muốn hai vé cho buổi hòa nhạc chiều thứ Bảy.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "events",
+        "tickets",
+        "discounts",
+        "arrival_instructions",
+        "mini_conversation",
+        "foundation_f3"
+      ]
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "A",
+      "text_en": "The concert begins at two, but the doors open at one thirty.",
+      "translation_vi": "Buổi hòa nhạc bắt đầu lúc hai giờ, nhưng cửa mở lúc một giờ rưỡi.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "events",
+        "tickets",
+        "discounts",
+        "arrival_instructions",
+        "mini_conversation",
+        "foundation_f3"
+      ]
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "B",
+      "text_en": "Are there any seats near the front?",
+      "translation_vi": "Còn chỗ ngồi nào gần phía trước không?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "events",
+        "tickets",
+        "discounts",
+        "arrival_instructions",
+        "mini_conversation",
+        "foundation_f3"
+      ]
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "A",
+      "text_en": "The front rows are full. We have seats in row H.",
+      "translation_vi": "Các hàng phía trước đã hết. Chúng tôi còn ghế ở hàng H.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "events",
+        "tickets",
+        "discounts",
+        "arrival_instructions",
+        "mini_conversation",
+        "foundation_f3"
+      ]
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "B",
+      "text_en": "That is fine. How much are the tickets?",
+      "translation_vi": "Như vậy được. Vé giá bao nhiêu?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "events",
+        "tickets",
+        "discounts",
+        "arrival_instructions",
+        "mini_conversation",
+        "foundation_f3"
+      ]
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "Adults pay twelve pounds each, but students pay nine.",
+      "translation_vi": "Người lớn trả 12 bảng một vé, còn sinh viên trả 9 bảng.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "events",
+        "tickets",
+        "discounts",
+        "arrival_instructions",
+        "mini_conversation",
+        "foundation_f3"
+      ]
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "B",
+      "text_en": "One adult and one student, please.",
+      "translation_vi": "Cho tôi một vé người lớn và một vé sinh viên.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "events",
+        "tickets",
+        "discounts",
+        "arrival_instructions",
+        "mini_conversation",
+        "foundation_f3"
+      ]
+    },
+    {
+      "turn_id": "T09",
+      "speaker_id": "A",
+      "text_en": "That will be twenty-one pounds altogether.",
+      "translation_vi": "Tổng cộng là 21 bảng.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "events",
+        "tickets",
+        "discounts",
+        "arrival_instructions",
+        "mini_conversation",
+        "foundation_f3"
+      ]
+    },
+    {
+      "turn_id": "T10",
+      "speaker_id": "B",
+      "text_en": "Can I collect the tickets at the entrance?",
+      "translation_vi": "Tôi có thể lấy vé ở lối vào không?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "events",
+        "tickets",
+        "discounts",
+        "arrival_instructions",
+        "mini_conversation",
+        "foundation_f3"
+      ]
+    },
+    {
+      "turn_id": "T11",
+      "speaker_id": "A",
+      "text_en": "Yes. Bring the booking email and a student card.",
+      "translation_vi": "Có. Hãy mang email xác nhận đặt vé và thẻ sinh viên.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "events",
+        "tickets",
+        "discounts",
+        "arrival_instructions",
+        "mini_conversation",
+        "foundation_f3"
+      ]
+    },
+    {
+      "turn_id": "T12",
+      "speaker_id": "B",
+      "text_en": "Perfect. I will see you on Saturday afternoon.",
+      "translation_vi": "Tuyệt. Hẹn gặp lại chiều thứ Bảy.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "events",
+        "tickets",
+        "discounts",
+        "arrival_instructions",
+        "mini_conversation",
+        "foundation_f3"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "type": "short_answer",
+      "prompt": "What kind of event is booked?",
+      "correct_answers": [
+        "concert"
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Khách muốn dự afternoon concert, không phải triển lãm.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "listening_comprehension",
+        "events",
+        "tickets",
+        "discounts",
+        "arrival_instructions"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q02",
+      "type": "form_completion",
+      "prompt": "Concert start time: ____.",
+      "correct_answers": [
+        "2:00",
+        "2 pm",
+        "two"
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Concert begins at two; 1:30 là lúc mở cửa.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "listening_comprehension",
+        "events",
+        "tickets",
+        "discounts",
+        "arrival_instructions"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q03",
+      "type": "form_completion",
+      "prompt": "Seat row: ____.",
+      "correct_answers": [
+        "H"
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Hàng phía trước đã kín, còn row H.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "listening_comprehension",
+        "events",
+        "tickets",
+        "discounts",
+        "arrival_instructions"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q04",
+      "type": "form_completion",
+      "prompt": "Total ticket cost: £____.",
+      "correct_answers": [
+        "21",
+        "twenty-one"
+      ],
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "explanation_vi": "Một vé 12 bảng và một vé 9 bảng = 21 bảng.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "listening_comprehension",
+        "events",
+        "tickets",
+        "discounts",
+        "arrival_instructions"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q05",
+      "type": "short_answer",
+      "prompt": "What should the student bring besides the booking email?",
+      "correct_answers": [
+        "student card"
+      ],
+      "evidence_turn_ids": [
+        "T11"
+      ],
+      "explanation_vi": "Yêu cầu thêm student card khi đến lấy vé.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "listening_comprehension",
+        "events",
+        "tickets",
+        "discounts",
+        "arrival_instructions"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "D01",
+      "type": "dictation",
+      "prompt": "Nghe lượt thoại T03 và chép lại toàn bộ câu tiếng Anh.",
+      "correct_answers": [
+        "The concert begins at two, but the doors open at one thirty."
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Phân biệt thời gian mở cửa và bắt đầu. Nghĩa: Buổi hòa nhạc bắt đầu lúc hai giờ, nhưng cửa mở lúc một giờ rưỡi.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sentence_recognition",
+        "events",
+        "tickets",
+        "discounts",
+        "arrival_instructions"
+      ]
+    },
+    {
+      "question_id": "D02",
+      "type": "dictation",
+      "prompt": "Nghe lượt thoại T07 và chép lại toàn bộ câu tiếng Anh.",
+      "correct_answers": [
+        "Adults pay twelve pounds each, but students pay nine."
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "Nghe giá hai loại vé khác nhau. Nghĩa: Người lớn trả 12 bảng một vé, còn sinh viên trả 9 bảng.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sentence_recognition",
+        "events",
+        "tickets",
+        "discounts",
+        "arrival_instructions"
+      ]
+    },
+    {
+      "question_id": "D03",
+      "type": "dictation",
+      "prompt": "Nghe lượt thoại T09 và chép lại toàn bộ câu tiếng Anh.",
+      "correct_answers": [
+        "That will be twenty-one pounds altogether."
+      ],
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "explanation_vi": "Nghe tổng tiền được nhân viên xác nhận. Nghĩa: Tổng cộng là 21 bảng.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sentence_recognition",
+        "events",
+        "tickets",
+        "discounts",
+        "arrival_instructions"
+      ]
+    },
+    {
+      "question_id": "G01",
+      "type": "gap_fill",
+      "prompt": "Nghe lượt T05 và điền từ/cụm từ bị thiếu: The front rows are full. We have seats in ____.",
+      "correct_answers": [
+        "row H"
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "H là chữ cái tên hàng ghế.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "gap_fill",
+        "guided_dictation",
+        "events",
+        "tickets",
+        "discounts",
+        "arrival_instructions"
+      ]
+    },
+    {
+      "question_id": "G02",
+      "type": "gap_fill",
+      "prompt": "Nghe lượt T09 và điền từ/cụm từ bị thiếu: That will be ____ altogether.",
+      "correct_answers": [
+        "twenty-one pounds"
+      ],
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "explanation_vi": "Là tổng của một vé người lớn và một vé sinh viên.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "gap_fill",
+        "guided_dictation",
+        "events",
+        "tickets",
+        "discounts",
+        "arrival_instructions"
+      ]
+    }
+  ],
+  "vocabulary": [
+    {
+      "term": "doors open",
+      "pos": "verb phrase",
+      "meaning_vi": "cửa mở cho khách vào",
+      "example_en": "The concert begins at two, but the doors open at one thirty.",
+      "example_vi": "Buổi hòa nhạc bắt đầu lúc hai giờ, nhưng cửa mở lúc một giờ rưỡi.",
+      "source_turn_id": "T03"
+    },
+    {
+      "term": "front rows",
+      "pos": "noun phrase",
+      "meaning_vi": "hàng ghế phía trước",
+      "example_en": "The front rows are full. We have seats in row H.",
+      "example_vi": "Các hàng phía trước đã hết. Chúng tôi còn ghế ở hàng H.",
+      "source_turn_id": "T05"
+    },
+    {
+      "term": "altogether",
+      "pos": "adverb",
+      "meaning_vi": "tổng cộng",
+      "example_en": "That will be twenty-one pounds altogether.",
+      "example_vi": "Tổng cộng là 21 bảng.",
+      "source_turn_id": "T09"
+    },
+    {
+      "term": "booking email",
+      "pos": "noun phrase",
+      "meaning_vi": "email đặt vé",
+      "example_en": "Yes. Bring the booking email and a student card.",
+      "example_vi": "Có. Hãy mang email xác nhận đặt vé và thẻ sinh viên.",
+      "source_turn_id": "T11"
+    }
+  ],
+  "audio": {
+    "status": "not_generated",
+    "url": null,
+    "duration_ms": null,
+    "model": null,
+    "provider": null,
+    "voice_config": null,
+    "source_transcript_hash": "eba3e78275a7f35a1a6379fc8a924a2530cd4c5f13d944169bef7c37e9ac2043",
+    "audio_sha256": null,
+    "format": null
+  },
+  "qa": {
+    "content_reviewed": false,
+    "answers_verified": false,
+    "audio_verified": false,
+    "rights_cleared": false,
+    "duplicate_reviewed": false,
+    "notes": [
+      "Original AI-assisted authored draft: human editorial and pedagogical review required.",
+      "Audio and timestamps not created; do not publish until audio is verified.",
+      "All answer variants and distractors must be rechecked after voice synthesis.",
+      "M16.2: automated edits are provisional; IELTS teacher final signoff, audio and rights clearance pending."
+    ]
+  },
+  "provenance": {
+    "content_origin": "original_ai_assisted",
+    "source_urls": [],
+    "source_rights_note": "Original learning scenarios; TTS provider usage and distribution rights must be checked before production release.",
+    "reviewer": null
+  },
+  "release_metadata": {
+    "published_at": null,
+    "version": 1
+  }
+}

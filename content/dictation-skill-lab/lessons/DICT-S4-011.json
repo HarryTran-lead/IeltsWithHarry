@@ -1,0 +1,351 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "DICT-S4-011",
+  "status": "draft",
+  "level": "L6",
+  "section": 4,
+  "topic": "Food Production",
+  "title": "Food Security Is More Than Harvest Volume",
+  "learning_objectives_vi": [
+    "Nghe bài giảng học thuật một người nói, theo dõi quan hệ giữa luận điểm và bằng chứng.",
+    "Luyện các câu hỏi Section 4 theo thứ tự lời giảng; phân tích giới hạn của khái niệm và cách diễn đạt lại.",
+    "Chép chính xác hai đoạn, luyện từ học thuật theo ngữ cảnh và ôn điểm yếu qua Mistake Bank."
+  ],
+  "content_format": "section_practice",
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Academic lecturer",
+      "tts_voice_id": null,
+      "accent_requested": "british"
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "Food production is not simply a matter of growing more crops. It is a system that connects soil, water, labour, processing and distribution. A field can produce an impressive harvest while nearby households still struggle to obtain nutritious meals. Researchers therefore distinguish the quantity of food produced from food security, which also depends on affordability, access and stability over time.",
+      "translation_vi": "Sản xuất thực phẩm không chỉ là trồng thêm cây. Đó là hệ thống liên kết đất, nước, lao động, chế biến và phân phối. Một cánh đồng có thể cho thu hoạch lớn nhưng các hộ gia đình gần đó vẫn khó có bữa ăn đủ dinh dưỡng. Vì thế, nhà nghiên cứu phân biệt sản lượng thực phẩm với an ninh lương thực, vốn còn phụ thuộc khả năng chi trả, tiếp cận và tính ổn định theo thời gian.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_4",
+        "academic_lecture",
+        "concept",
+        "l6"
+      ]
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "A",
+      "text_en": "One important measure is yield, meaning the amount harvested from a given area. Yield is useful, but it does not tell us the whole environmental story. A farmer might raise production by applying additional fertiliser or pumping more groundwater. Those inputs have costs, and excessive use may damage water quality or reduce the resources available for future growing seasons.",
+      "translation_vi": "Một thước đo quan trọng là năng suất, tức lượng thu hoạch trên một diện tích nhất định. Năng suất hữu ích nhưng không kể hết câu chuyện môi trường. Nông dân có thể tăng sản lượng bằng cách bón thêm phân hoặc bơm thêm nước ngầm. Những đầu vào này có chi phí, và sử dụng quá mức có thể gây hại chất lượng nước hoặc làm giảm nguồn lực cho các vụ sau.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_4",
+        "academic_lecture",
+        "concept",
+        "l6"
+      ]
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "A",
+      "text_en": "Production systems also differ in how they maintain soil fertility. Crop rotation alternates plant species over time instead of repeatedly planting the same crop. Some rotations can interrupt pest cycles or help manage nutrients. Yet the benefits vary with the local climate and the crops chosen. A practice that performs well on one farm cannot automatically be copied everywhere.",
+      "translation_vi": "Các hệ thống sản xuất còn khác nhau ở cách duy trì độ phì nhiêu của đất. Luân canh thay đổi loại cây theo thời gian thay vì trồng liên tục cùng một loại. Một số cách luân canh có thể ngắt chu kỳ sâu bệnh hoặc giúp quản lý dinh dưỡng. Tuy nhiên lợi ích thay đổi theo khí hậu địa phương và cây được chọn. Cách làm hiệu quả ở một trang trại không thể tự động sao chép mọi nơi.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_4",
+        "academic_lecture",
+        "concept",
+        "l6"
+      ]
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "A",
+      "text_en": "After harvest, food moves through storage, transport and sometimes processing. Losses at any of these stages matter. Grain exposed to moisture can spoil, while fresh vegetables may deteriorate if refrigeration is interrupted. Improving storage may therefore protect more usable food without expanding farmland. However, cold storage requires energy, and that additional demand must also be considered.",
+      "translation_vi": "Sau thu hoạch, thực phẩm đi qua khâu bảo quản, vận chuyển và đôi khi chế biến. Tổn thất ở bất cứ giai đoạn nào đều đáng kể. Hạt ngũ cốc bị ẩm có thể hỏng, còn rau tươi dễ xuống chất lượng khi chuỗi làm lạnh bị gián đoạn. Cải thiện bảo quản vì thế có thể giữ được nhiều thực phẩm dùng được hơn mà không cần mở rộng đất trồng. Tuy nhiên kho lạnh tiêu thụ năng lượng nên nhu cầu tăng thêm cũng phải được tính đến.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_4",
+        "academic_lecture",
+        "concept",
+        "l6"
+      ]
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "A",
+      "text_en": "The central lesson is that a successful food system should be assessed through several indicators, not harvest volume alone. Scientists may examine nutritional outcomes, resource use, waste and the reliability of supplies. Trade-offs are unavoidable, but making them visible supports better decisions. The goal is to produce food that people can actually use while protecting the system that produces it.",
+      "translation_vi": "Bài học chính là một hệ thống thực phẩm thành công cần được đánh giá bằng nhiều chỉ số, không chỉ khối lượng thu hoạch. Nhà khoa học có thể xem xét kết quả dinh dưỡng, việc dùng tài nguyên, lãng phí và độ tin cậy của nguồn cung. Khó tránh khỏi đánh đổi, nhưng làm rõ chúng giúp quyết định tốt hơn. Mục tiêu là tạo ra thực phẩm mọi người thực sự sử dụng được đồng thời bảo vệ hệ thống sản xuất.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_4",
+        "academic_lecture",
+        "concept",
+        "l6"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "type": "note_completion",
+      "prompt": "Access and stability, alongside availability, are components of food ____.",
+      "correct_answers": [
+        "security"
+      ],
+      "evidence_turn_ids": [
+        "T01"
+      ],
+      "explanation_vi": "Đáp án “security” nằm tại đoạn T01. Nội dung bằng chứng: Sản xuất thực phẩm không chỉ là trồng thêm cây. Đó là hệ thống liên kết đất, nước, lao động, chế biến và phân phối. Một cánh đồng có thể cho thu hoạch lớn nhưng các hộ gia đình gần đó vẫn khó có bữa ăn đủ dinh dưỡng. Vì thế, nhà nghiên cứu phân biệt sản lượng thực phẩm với an ninh lương thực, vốn còn phụ thuộc khả năng chi trả, tiếp cận và tính ổn định theo thời gian.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_4",
+        "ielts_practice",
+        "concept",
+        "note_completion"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q02",
+      "type": "note_completion",
+      "prompt": "Harvested output per unit of land is known as ____.",
+      "correct_answers": [
+        "yield"
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Đáp án “yield” nằm tại đoạn T02. Nội dung bằng chứng: Một thước đo quan trọng là năng suất, tức lượng thu hoạch trên một diện tích nhất định. Năng suất hữu ích nhưng không kể hết câu chuyện môi trường. Nông dân có thể tăng sản lượng bằng cách bón thêm phân hoặc bơm thêm nước ngầm. Những đầu vào này có chi phí, và sử dụng quá mức có thể gây hại chất lượng nước hoặc làm giảm nguồn lực cho các vụ sau.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_4",
+        "ielts_practice",
+        "concept",
+        "note_completion"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q03",
+      "type": "note_completion",
+      "prompt": "Alternating species across seasons is called ____.",
+      "correct_answers": [
+        "Crop rotation"
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Đáp án “Crop rotation” nằm tại đoạn T03. Nội dung bằng chứng: Các hệ thống sản xuất còn khác nhau ở cách duy trì độ phì nhiêu của đất. Luân canh thay đổi loại cây theo thời gian thay vì trồng liên tục cùng một loại. Một số cách luân canh có thể ngắt chu kỳ sâu bệnh hoặc giúp quản lý dinh dưỡng. Tuy nhiên lợi ích thay đổi theo khí hậu địa phương và cây được chọn. Cách làm hiệu quả ở một trang trại không thể tự động sao chép mọi nơi.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_4",
+        "ielts_practice",
+        "concept",
+        "note_completion"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q04",
+      "type": "sentence_completion",
+      "prompt": "Keeping produce in good condition may require improved ____.",
+      "correct_answers": [
+        "storage"
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Đáp án “storage” nằm tại đoạn T04. Nội dung bằng chứng: Sau thu hoạch, thực phẩm đi qua khâu bảo quản, vận chuyển và đôi khi chế biến. Tổn thất ở bất cứ giai đoạn nào đều đáng kể. Hạt ngũ cốc bị ẩm có thể hỏng, còn rau tươi dễ xuống chất lượng khi chuỗi làm lạnh bị gián đoạn. Cải thiện bảo quản vì thế có thể giữ được nhiều thực phẩm dùng được hơn mà không cần mở rộng đất trồng. Tuy nhiên kho lạnh tiêu thụ năng lượng nên nhu cầu tăng thêm cũng phải được tính đến.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_4",
+        "ielts_practice",
+        "concept",
+        "sentence_completion"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q05",
+      "type": "short_answer",
+      "prompt": "Besides resource use, what outcome concerning people should scientists examine?",
+      "correct_answers": [
+        "nutritional outcomes"
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Đáp án “nutritional outcomes” nằm tại đoạn T05. Nội dung bằng chứng: Bài học chính là một hệ thống thực phẩm thành công cần được đánh giá bằng nhiều chỉ số, không chỉ khối lượng thu hoạch. Nhà khoa học có thể xem xét kết quả dinh dưỡng, việc dùng tài nguyên, lãng phí và độ tin cậy của nguồn cung. Khó tránh khỏi đánh đổi, nhưng làm rõ chúng giúp quyết định tốt hơn. Mục tiêu là tạo ra thực phẩm mọi người thực sự sử dụng được đồng thời bảo vệ hệ thống sản xuất.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_4",
+        "ielts_practice",
+        "concept",
+        "short_answer"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q06",
+      "type": "mcq",
+      "prompt": "Why is a larger harvest not sufficient evidence of a successful food system?",
+      "correct_answers": [
+        "People may still lack affordable, dependable access to nutritious food"
+      ],
+      "options": [
+        "The quantity harvested is irrelevant to food security",
+        "Larger harvests always mean less waste in transport",
+        "People may still lack affordable, dependable access to nutritious food"
+      ],
+      "evidence_turn_ids": [
+        "T01",
+        "T03",
+        "T05"
+      ],
+      "explanation_vi": "Hãy kết hợp luận điểm đầu, ví dụ ở giữa và kết luận cuối bài. Bài học chính là một hệ thống thực phẩm thành công cần được đánh giá bằng nhiều chỉ số, không chỉ khối lượng thu hoạch. Nhà khoa học có thể xem xét kết quả dinh dưỡng, việc dùng tài nguyên, lãng phí và độ tin cậy của nguồn cung. Khó tránh khỏi đánh đổi, nhưng làm rõ chúng giúp quyết định tốt hơn. Mục tiêu là tạo ra thực phẩm mọi người thực sự sử dụng được đồng thời bảo vệ hệ thống sản xuất. Phương án chính xác: “People may still lack affordable, dependable access to nutritious food”; hai phương án khác khái quát quá mức hoặc không phù hợp bằng chứng.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "section_4",
+        "ielts_practice",
+        "concept",
+        "main_idea"
+      ]
+    },
+    {
+      "question_id": "D01",
+      "type": "dictation",
+      "prompt": "Nghe đoạn T02 và chép lại chính xác lời giảng.",
+      "correct_answers": [
+        "One important measure is yield, meaning the amount harvested from a given area. Yield is useful, but it does not tell us the whole environmental story. A farmer might raise production by applying additional fertiliser or pumping more groundwater. Those inputs have costs, and excessive use may damage water quality or reduce the resources available for future growing seasons."
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Phân tích từ nối, âm yếu và cụm thuật ngữ học thuật. Nghĩa của đoạn: Một thước đo quan trọng là năng suất, tức lượng thu hoạch trên một diện tích nhất định. Năng suất hữu ích nhưng không kể hết câu chuyện môi trường. Nông dân có thể tăng sản lượng bằng cách bón thêm phân hoặc bơm thêm nước ngầm. Những đầu vào này có chi phí, và sử dụng quá mức có thể gây hại chất lượng nước hoặc làm giảm nguồn lực cho các vụ sau.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_4",
+        "dictation",
+        "exact_transcript"
+      ]
+    },
+    {
+      "question_id": "D02",
+      "type": "dictation",
+      "prompt": "Nghe đoạn T04 và chép lại chính xác lời giảng.",
+      "correct_answers": [
+        "After harvest, food moves through storage, transport and sometimes processing. Losses at any of these stages matter. Grain exposed to moisture can spoil, while fresh vegetables may deteriorate if refrigeration is interrupted. Improving storage may therefore protect more usable food without expanding farmland. However, cold storage requires energy, and that additional demand must also be considered."
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Phân tích từ nối, âm yếu và cụm thuật ngữ học thuật. Nghĩa của đoạn: Sau thu hoạch, thực phẩm đi qua khâu bảo quản, vận chuyển và đôi khi chế biến. Tổn thất ở bất cứ giai đoạn nào đều đáng kể. Hạt ngũ cốc bị ẩm có thể hỏng, còn rau tươi dễ xuống chất lượng khi chuỗi làm lạnh bị gián đoạn. Cải thiện bảo quản vì thế có thể giữ được nhiều thực phẩm dùng được hơn mà không cần mở rộng đất trồng. Tuy nhiên kho lạnh tiêu thụ năng lượng nên nhu cầu tăng thêm cũng phải được tính đến.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_4",
+        "dictation",
+        "exact_transcript"
+      ]
+    },
+    {
+      "question_id": "G01",
+      "type": "gap_fill",
+      "prompt": "Nghe T01 rồi điền phần thiếu: Food production is not simply a matter of growing more crops. It is a system that connects soil, water, labour, processing and distribution. A field can produce an impressive harvest while nearby households still struggle to obtain nutritious meals. Researchers therefore distinguish the quantity of food produced from ____, which also depends on affordability, access and stability over time.",
+      "correct_answers": [
+        "food security"
+      ],
+      "evidence_turn_ids": [
+        "T01"
+      ],
+      "explanation_vi": "Điền “food security”, nghĩa: an ninh lương thực. Cụm từ này xuất hiện trong T01.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_4",
+        "gap_fill",
+        "academic_vocabulary"
+      ]
+    }
+  ],
+  "vocabulary": [
+    {
+      "term": "food security",
+      "pos": "n. phr.",
+      "meaning_vi": "an ninh lương thực",
+      "example_en": "Food production is not simply a matter of growing more crops. It is a system that connects soil, water, labour, processing and distribution. A field can produce an impressive harvest while nearby households still struggle to obtain nutritious meals. Researchers therefore distinguish the quantity of food produced from food security, which also depends on affordability, access and stability over time.",
+      "example_vi": "Sản xuất thực phẩm không chỉ là trồng thêm cây. Đó là hệ thống liên kết đất, nước, lao động, chế biến và phân phối. Một cánh đồng có thể cho thu hoạch lớn nhưng các hộ gia đình gần đó vẫn khó có bữa ăn đủ dinh dưỡng. Vì thế, nhà nghiên cứu phân biệt sản lượng thực phẩm với an ninh lương thực, vốn còn phụ thuộc khả năng chi trả, tiếp cận và tính ổn định theo thời gian.",
+      "source_turn_id": "T01"
+    },
+    {
+      "term": "yield",
+      "pos": "n.",
+      "meaning_vi": "năng suất",
+      "example_en": "One important measure is yield, meaning the amount harvested from a given area. Yield is useful, but it does not tell us the whole environmental story. A farmer might raise production by applying additional fertiliser or pumping more groundwater. Those inputs have costs, and excessive use may damage water quality or reduce the resources available for future growing seasons.",
+      "example_vi": "Một thước đo quan trọng là năng suất, tức lượng thu hoạch trên một diện tích nhất định. Năng suất hữu ích nhưng không kể hết câu chuyện môi trường. Nông dân có thể tăng sản lượng bằng cách bón thêm phân hoặc bơm thêm nước ngầm. Những đầu vào này có chi phí, và sử dụng quá mức có thể gây hại chất lượng nước hoặc làm giảm nguồn lực cho các vụ sau.",
+      "source_turn_id": "T02"
+    },
+    {
+      "term": "Crop rotation",
+      "pos": "n. phr.",
+      "meaning_vi": "luân canh cây trồng",
+      "example_en": "Production systems also differ in how they maintain soil fertility. Crop rotation alternates plant species over time instead of repeatedly planting the same crop. Some rotations can interrupt pest cycles or help manage nutrients. Yet the benefits vary with the local climate and the crops chosen. A practice that performs well on one farm cannot automatically be copied everywhere.",
+      "example_vi": "Các hệ thống sản xuất còn khác nhau ở cách duy trì độ phì nhiêu của đất. Luân canh thay đổi loại cây theo thời gian thay vì trồng liên tục cùng một loại. Một số cách luân canh có thể ngắt chu kỳ sâu bệnh hoặc giúp quản lý dinh dưỡng. Tuy nhiên lợi ích thay đổi theo khí hậu địa phương và cây được chọn. Cách làm hiệu quả ở một trang trại không thể tự động sao chép mọi nơi.",
+      "source_turn_id": "T03"
+    },
+    {
+      "term": "storage",
+      "pos": "n.",
+      "meaning_vi": "bảo quản, lưu kho",
+      "example_en": "After harvest, food moves through storage, transport and sometimes processing. Losses at any of these stages matter. Grain exposed to moisture can spoil, while fresh vegetables may deteriorate if refrigeration is interrupted. Improving storage may therefore protect more usable food without expanding farmland. However, cold storage requires energy, and that additional demand must also be considered.",
+      "example_vi": "Sau thu hoạch, thực phẩm đi qua khâu bảo quản, vận chuyển và đôi khi chế biến. Tổn thất ở bất cứ giai đoạn nào đều đáng kể. Hạt ngũ cốc bị ẩm có thể hỏng, còn rau tươi dễ xuống chất lượng khi chuỗi làm lạnh bị gián đoạn. Cải thiện bảo quản vì thế có thể giữ được nhiều thực phẩm dùng được hơn mà không cần mở rộng đất trồng. Tuy nhiên kho lạnh tiêu thụ năng lượng nên nhu cầu tăng thêm cũng phải được tính đến.",
+      "source_turn_id": "T04"
+    }
+  ],
+  "audio": {
+    "status": "not_generated",
+    "url": null,
+    "duration_ms": null,
+    "model": null,
+    "provider": null,
+    "voice_config": null,
+    "source_transcript_hash": "67d82319950c63bed1d5952718d44be1329e317f573524a9499c7c1555520511",
+    "audio_sha256": null,
+    "format": null
+  },
+  "qa": {
+    "content_reviewed": false,
+    "answers_verified": false,
+    "audio_verified": false,
+    "rights_cleared": false,
+    "duplicate_reviewed": false,
+    "notes": [
+      "Original AI-assisted educational script, not an official IELTS transcript.",
+      "Editorial, academic and linguistic review pending.",
+      "Audio/TTS not generated; text-to-speech distribution rights must be confirmed before use, especially for minors.",
+      "Six IELTS-style practice questions per lesson; this is not a full official Part 4 test or a calibrated IELTS Band test.",
+      "M16.2: automated edits are provisional; IELTS teacher final signoff, audio and rights clearance pending."
+    ]
+  },
+  "provenance": {
+    "content_origin": "original_ai_assisted",
+    "source_urls": [],
+    "source_rights_note": "Original transcript and translation drafts; verify academic claims and terms, and TTS provider redistribution conditions before release.",
+    "reviewer": null
+  },
+  "release_metadata": {
+    "published_at": null,
+    "version": 1
+  }
+}

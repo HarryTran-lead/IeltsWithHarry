@@ -1,0 +1,623 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "FND2-084",
+  "status": "draft",
+  "level": "L2",
+  "section": 0,
+  "topic": "Foundation M19 – Vocabulary",
+  "title": "Digital tasks and notifications",
+  "learning_objectives_vi": [
+    "Hiểu thao tác số thường gặp, sao lưu, tệp đính kèm và thanh toán.",
+    "Nghe lại theo lỗi trọng tâm, không chỉ hoàn thành số bài.",
+    "Đánh giá bằng nội dung chưa gặp và một lần nghe."
+  ],
+  "content_format": "sentence_drill",
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Foundation narrator",
+      "tts_voice_id": null,
+      "accent_requested": "north_american"
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "I reset my password after getting a security notification.",
+      "translation_vi": "Tôi đặt lại mật khẩu sau khi nhận cảnh báo bảo mật.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m19",
+        "digital_tasks",
+        "vocabulary"
+      ],
+      "target_value": "password",
+      "target_kind": "lexical_phrase",
+      "target_meaning_vi": "mật khẩu",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "A",
+      "text_en": "The document is too large, so I'll send a shared link instead.",
+      "translation_vi": "Tài liệu quá lớn nên tôi sẽ gửi liên kết chia sẻ thay thế.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m19",
+        "digital_tasks",
+        "vocabulary"
+      ],
+      "target_value": "shared link",
+      "target_kind": "lexical_phrase",
+      "target_meaning_vi": "liên kết chia sẻ",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "A",
+      "text_en": "Please turn off notifications while you're in the meeting.",
+      "translation_vi": "Vui lòng tắt thông báo khi đang họp.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m19",
+        "digital_tasks",
+        "vocabulary"
+      ],
+      "target_value": "notifications",
+      "target_kind": "lexical_phrase",
+      "target_meaning_vi": "thông báo",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "A",
+      "text_en": "The app needs permission to access the camera, not your contacts.",
+      "translation_vi": "Ứng dụng cần quyền truy cập máy ảnh, không phải danh bạ.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m19",
+        "digital_tasks",
+        "vocabulary"
+      ],
+      "target_value": "camera",
+      "target_kind": "lexical_phrase",
+      "target_meaning_vi": "máy ảnh",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "A",
+      "text_en": "I saved a backup before installing the update.",
+      "translation_vi": "Tôi lưu bản sao dự phòng trước khi cài bản cập nhật.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m19",
+        "digital_tasks",
+        "vocabulary"
+      ],
+      "target_value": "backup",
+      "target_kind": "lexical_phrase",
+      "target_meaning_vi": "bản sao dự phòng",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "A",
+      "text_en": "The video call froze, so we switched to an audio call.",
+      "translation_vi": "Cuộc gọi video bị đứng nên chúng tôi chuyển sang gọi âm thanh.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m19",
+        "digital_tasks",
+        "vocabulary"
+      ],
+      "target_value": "audio call",
+      "target_kind": "lexical_phrase",
+      "target_meaning_vi": "gọi âm thanh",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "Check the attachment before forwarding the email to the whole team.",
+      "translation_vi": "Hãy kiểm tra tệp đính kèm trước khi chuyển tiếp email cho cả nhóm.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m19",
+        "digital_tasks",
+        "vocabulary"
+      ],
+      "target_value": "attachment",
+      "target_kind": "lexical_phrase",
+      "target_meaning_vi": "tệp đính kèm",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "A",
+      "text_en": "The payment failed because the connection dropped for a moment.",
+      "translation_vi": "Thanh toán thất bại vì kết nối bị ngắt trong chốc lát.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m19",
+        "digital_tasks",
+        "vocabulary"
+      ],
+      "target_value": "connection",
+      "target_kind": "lexical_phrase",
+      "target_meaning_vi": "kết nối",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T09",
+      "speaker_id": "A",
+      "text_en": "I've muted the microphone, but the camera is still on.",
+      "translation_vi": "Tôi đã tắt tiếng micro nhưng camera vẫn bật.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m19",
+        "digital_tasks",
+        "vocabulary"
+      ],
+      "target_value": "microphone",
+      "target_kind": "lexical_phrase",
+      "target_meaning_vi": "micro",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T10",
+      "speaker_id": "A",
+      "text_en": "The file is stored in a folder called Archived Projects.",
+      "translation_vi": "Tệp được lưu trong thư mục tên Archived Projects.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m19",
+        "digital_tasks",
+        "vocabulary"
+      ],
+      "target_value": "folder",
+      "target_kind": "lexical_phrase",
+      "target_meaning_vi": "thư mục",
+      "bank_role": "training"
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "type": "dictation",
+      "prompt": "Nghe lượt T01 rồi chép đầy đủ câu tiếng Anh được nói.",
+      "correct_answers": [
+        "I reset my password after getting a security notification."
+      ],
+      "evidence_turn_ids": [
+        "T01"
+      ],
+      "explanation_vi": "Nghe lại theo nhóm từ; câu gốc là: I reset my password after getting a security notification. Nghĩa: Tôi đặt lại mật khẩu sau khi nhận cảnh báo bảo mật.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "digital_tasks"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q02",
+      "type": "dictation",
+      "prompt": "Nghe lượt T02 rồi chép đầy đủ câu tiếng Anh được nói.",
+      "correct_answers": [
+        "The document is too large, so I'll send a shared link instead."
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Nghe lại theo nhóm từ; câu gốc là: The document is too large, so I'll send a shared link instead. Nghĩa: Tài liệu quá lớn nên tôi sẽ gửi liên kết chia sẻ thay thế.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "digital_tasks"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q03",
+      "type": "dictation",
+      "prompt": "Nghe lượt T03 rồi chép đầy đủ câu tiếng Anh được nói.",
+      "correct_answers": [
+        "Please turn off notifications while you're in the meeting."
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Nghe lại theo nhóm từ; câu gốc là: Please turn off notifications while you're in the meeting. Nghĩa: Vui lòng tắt thông báo khi đang họp.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "digital_tasks"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q04",
+      "type": "dictation",
+      "prompt": "Nghe lượt T04 rồi chép đầy đủ câu tiếng Anh được nói.",
+      "correct_answers": [
+        "The app needs permission to access the camera, not your contacts."
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Nghe lại theo nhóm từ; câu gốc là: The app needs permission to access the camera, not your contacts. Nghĩa: Ứng dụng cần quyền truy cập máy ảnh, không phải danh bạ.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "digital_tasks"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q05",
+      "type": "dictation",
+      "prompt": "Nghe lượt T05 rồi chép đầy đủ câu tiếng Anh được nói.",
+      "correct_answers": [
+        "I saved a backup before installing the update."
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Nghe lại theo nhóm từ; câu gốc là: I saved a backup before installing the update. Nghĩa: Tôi lưu bản sao dự phòng trước khi cài bản cập nhật.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "digital_tasks"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q06",
+      "type": "dictation",
+      "prompt": "Nghe lượt T06 rồi chép đầy đủ câu tiếng Anh được nói.",
+      "correct_answers": [
+        "The video call froze, so we switched to an audio call."
+      ],
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "explanation_vi": "Nghe lại theo nhóm từ; câu gốc là: The video call froze, so we switched to an audio call. Nghĩa: Cuộc gọi video bị đứng nên chúng tôi chuyển sang gọi âm thanh.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "digital_tasks"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q07",
+      "type": "dictation",
+      "prompt": "Nghe lượt T07 rồi chép đầy đủ câu tiếng Anh được nói.",
+      "correct_answers": [
+        "Check the attachment before forwarding the email to the whole team."
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "Nghe lại theo nhóm từ; câu gốc là: Check the attachment before forwarding the email to the whole team. Nghĩa: Hãy kiểm tra tệp đính kèm trước khi chuyển tiếp email cho cả nhóm.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "digital_tasks"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q08",
+      "type": "dictation",
+      "prompt": "Nghe lượt T08 rồi chép đầy đủ câu tiếng Anh được nói.",
+      "correct_answers": [
+        "The payment failed because the connection dropped for a moment."
+      ],
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "explanation_vi": "Nghe lại theo nhóm từ; câu gốc là: The payment failed because the connection dropped for a moment. Nghĩa: Thanh toán thất bại vì kết nối bị ngắt trong chốc lát.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "digital_tasks"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q09",
+      "type": "dictation",
+      "prompt": "Nghe lượt T09 rồi chép đầy đủ câu tiếng Anh được nói.",
+      "correct_answers": [
+        "I've muted the microphone, but the camera is still on."
+      ],
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "explanation_vi": "Nghe lại theo nhóm từ; câu gốc là: I've muted the microphone, but the camera is still on. Nghĩa: Tôi đã tắt tiếng micro nhưng camera vẫn bật.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "digital_tasks"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q10",
+      "type": "dictation",
+      "prompt": "Nghe lượt T10 rồi chép đầy đủ câu tiếng Anh được nói.",
+      "correct_answers": [
+        "The file is stored in a folder called Archived Projects."
+      ],
+      "evidence_turn_ids": [
+        "T10"
+      ],
+      "explanation_vi": "Nghe lại theo nhóm từ; câu gốc là: The file is stored in a folder called Archived Projects. Nghĩa: Tệp được lưu trong thư mục tên Archived Projects.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "digital_tasks"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q11",
+      "type": "short_answer",
+      "prompt": "Nghe lượt T06. Nhóm chuyển sang loại cuộc gọi nào? Trả lời bằng từ/cụm tiếng Anh đúng như lời nghe.",
+      "correct_answers": [
+        "audio call"
+      ],
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "explanation_vi": "Thông tin đúng: audio call (gọi âm thanh). Dẫn chứng: The video call froze, so we switched to an audio call. Nghĩa: Cuộc gọi video bị đứng nên chúng tôi chuyển sang gọi âm thanh.",
+      "scoring_policy": "lexical_case_punctuation_insensitive_server",
+      "target_kind": "lexical_phrase",
+      "question_tags": [
+        "short_answer",
+        "digital_tasks",
+        "training_comprehension"
+      ],
+      "max_replays_practice": 5,
+      "first_listen_only_for_mastery": false
+    },
+    {
+      "question_id": "Q12",
+      "type": "short_answer",
+      "prompt": "Nghe lượt T07. Cần kiểm tra phần nào của email? Trả lời bằng từ/cụm tiếng Anh đúng như lời nghe.",
+      "correct_answers": [
+        "attachment"
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "Thông tin đúng: attachment (tệp đính kèm). Dẫn chứng: Check the attachment before forwarding the email to the whole team. Nghĩa: Hãy kiểm tra tệp đính kèm trước khi chuyển tiếp email cho cả nhóm.",
+      "scoring_policy": "lexical_case_punctuation_insensitive_server",
+      "target_kind": "lexical_phrase",
+      "question_tags": [
+        "short_answer",
+        "digital_tasks",
+        "training_comprehension"
+      ],
+      "max_replays_practice": 5,
+      "first_listen_only_for_mastery": false
+    },
+    {
+      "question_id": "Q13",
+      "type": "short_answer",
+      "prompt": "Nghe lượt T08. Điều gì bị ngắt làm thanh toán thất bại? Trả lời bằng từ/cụm tiếng Anh đúng như lời nghe.",
+      "correct_answers": [
+        "connection"
+      ],
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "explanation_vi": "Thông tin đúng: connection (kết nối). Dẫn chứng: The payment failed because the connection dropped for a moment. Nghĩa: Thanh toán thất bại vì kết nối bị ngắt trong chốc lát.",
+      "scoring_policy": "lexical_case_punctuation_insensitive_server",
+      "target_kind": "lexical_phrase",
+      "question_tags": [
+        "short_answer",
+        "digital_tasks",
+        "training_comprehension"
+      ],
+      "max_replays_practice": 5,
+      "first_listen_only_for_mastery": false
+    },
+    {
+      "question_id": "Q14",
+      "type": "short_answer",
+      "prompt": "Nghe lượt T09. Thiết bị nào đã được tắt tiếng? Trả lời bằng từ/cụm tiếng Anh đúng như lời nghe.",
+      "correct_answers": [
+        "microphone"
+      ],
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "explanation_vi": "Thông tin đúng: microphone (micro). Dẫn chứng: I've muted the microphone, but the camera is still on. Nghĩa: Tôi đã tắt tiếng micro nhưng camera vẫn bật.",
+      "scoring_policy": "lexical_case_punctuation_insensitive_server",
+      "target_kind": "lexical_phrase",
+      "question_tags": [
+        "short_answer",
+        "digital_tasks",
+        "training_comprehension"
+      ],
+      "max_replays_practice": 5,
+      "first_listen_only_for_mastery": false
+    },
+    {
+      "question_id": "Q15",
+      "type": "short_answer",
+      "prompt": "Nghe lượt T10. Tệp được lưu ở loại nơi nào? Trả lời bằng từ/cụm tiếng Anh đúng như lời nghe.",
+      "correct_answers": [
+        "folder"
+      ],
+      "evidence_turn_ids": [
+        "T10"
+      ],
+      "explanation_vi": "Thông tin đúng: folder (thư mục). Dẫn chứng: The file is stored in a folder called Archived Projects. Nghĩa: Tệp được lưu trong thư mục tên Archived Projects.",
+      "scoring_policy": "lexical_case_punctuation_insensitive_server",
+      "target_kind": "lexical_phrase",
+      "question_tags": [
+        "short_answer",
+        "digital_tasks",
+        "training_comprehension"
+      ],
+      "max_replays_practice": 5,
+      "first_listen_only_for_mastery": false
+    }
+  ],
+  "vocabulary": [
+    {
+      "term": "password",
+      "pos": "noun (contextual)",
+      "meaning_vi": "mật khẩu",
+      "example_en": "I reset my password after getting a security notification.",
+      "example_vi": "Tôi đặt lại mật khẩu sau khi nhận cảnh báo bảo mật.",
+      "is_illustrative_context": false
+    },
+    {
+      "term": "shared link",
+      "pos": "noun phrase",
+      "meaning_vi": "liên kết chia sẻ",
+      "example_en": "The document is too large, so I'll send a shared link instead.",
+      "example_vi": "Tài liệu quá lớn nên tôi sẽ gửi liên kết chia sẻ thay thế.",
+      "is_illustrative_context": false
+    },
+    {
+      "term": "notifications",
+      "pos": "noun (contextual)",
+      "meaning_vi": "thông báo",
+      "example_en": "Please turn off notifications while you're in the meeting.",
+      "example_vi": "Vui lòng tắt thông báo khi đang họp.",
+      "is_illustrative_context": false
+    },
+    {
+      "term": "camera",
+      "pos": "noun (contextual)",
+      "meaning_vi": "máy ảnh",
+      "example_en": "The app needs permission to access the camera, not your contacts.",
+      "example_vi": "Ứng dụng cần quyền truy cập máy ảnh, không phải danh bạ.",
+      "is_illustrative_context": false
+    },
+    {
+      "term": "backup",
+      "pos": "noun (contextual)",
+      "meaning_vi": "bản sao dự phòng",
+      "example_en": "I saved a backup before installing the update.",
+      "example_vi": "Tôi lưu bản sao dự phòng trước khi cài bản cập nhật.",
+      "is_illustrative_context": false
+    },
+    {
+      "term": "audio call",
+      "pos": "noun phrase",
+      "meaning_vi": "gọi âm thanh",
+      "example_en": "The video call froze, so we switched to an audio call.",
+      "example_vi": "Cuộc gọi video bị đứng nên chúng tôi chuyển sang gọi âm thanh.",
+      "is_illustrative_context": false
+    }
+  ],
+  "micro_skill_id": "digital_tasks",
+  "bank_role": "training",
+  "content_design": {
+    "sequence": "10_varied_contexts",
+    "first_listen": "1x",
+    "guided_replay_max": 5,
+    "mastery_requires_unseen": true,
+    "learning_note_vi": "Hiểu thao tác số thường gặp, sao lưu, tệp đính kèm và thanh toán.",
+    "category": "vocabulary",
+    "post_submit_review_only": true,
+    "unseen_assessment_id": "FND2-084-HOLDOUT",
+    "spoken_text_must_match_target": true,
+    "holdout_must_be_server_side": true,
+    "no_band_claim": true
+  },
+  "audio": {
+    "status": "not_generated",
+    "url": null,
+    "duration_ms": null,
+    "provider": null,
+    "model": null,
+    "voice_config": null,
+    "format": null,
+    "audio_sha256": null,
+    "source_transcript_hash": "3ddfbc8ae4bb57b4d072444018189977eb1f784ffd7f397b9e13d3b00018bf5c",
+    "generation_notes": "Synthesize actual spoken utterance only; never read learning metadata. Human verify dates, names and connected-speech target."
+  },
+  "qa": {
+    "content_reviewed": false,
+    "answers_verified": false,
+    "audio_verified": false,
+    "human_signed_off": false,
+    "duplicate_reviewed": false,
+    "notes": [
+      "M19 originally authored DRAFT, machine-verified only.",
+      "Connected-speech phonetic features NOT established until actual audio is reviewed."
+    ]
+  },
+  "provenance": {
+    "content_origin": "original_ai_assisted",
+    "rights_status": "pending_tts_audio_terms_review",
+    "source_urls": [],
+    "reviewer": null
+  },
+  "release_metadata": {
+    "published_at": null,
+    "version": 1
+  },
+  "lesson_theory_vi": {
+    "core_rule": "Hiểu thao tác số thường gặp, sao lưu, tệp đính kèm và thanh toán.",
+    "worked_contrasts": [
+      {
+        "spoken_example": "The shop was out of tea, so I bought coffee instead.",
+        "written_value": "coffee",
+        "teacher_note_vi": "So/instead báo lựa chọn thay thế; tea chỉ là thông tin cũ."
+      },
+      {
+        "spoken_example": "The receipt is in the bag, beside the charger.",
+        "written_value": "receipt",
+        "teacher_note_vi": "Dựa câu hỏi để chọn đúng đồ vật, không chọn mọi từ vựng nghe thấy."
+      }
+    ],
+    "learning_steps": [
+      "Đọc nghĩa và ví dụ mới, chú ý từ loại, ngữ cảnh dùng từ.",
+      "Nghe mỗi câu một lần để dự đoán từ đích, sau đó chép cả câu.",
+      "Làm năm câu kiểm tra thông tin có ngữ cảnh mà không xem đáp án.",
+      "Cuối bài thử hai câu chưa gặp; nếu sai, quay về kỹ năng nhỏ tương ứng."
+    ],
+    "common_mistakes": [
+      "Nhầm ứng dụng cần quyền truy cập nào.",
+      "Chỉ nhìn từ khóa quen mà không nghe phần phủ định hoặc cách người nói sửa lại."
+    ],
+    "before_audio_question": "Từ/cụm nào phù hợp với câu hỏi, và từ bị phủ định có phải đáp án không?",
+    "difficulty_steps": [
+      "T01–T03: ngữ cảnh ngắn, thông tin chính rõ ràng.",
+      "T04–T07: thêm thông tin phụ, dạng phủ định hoặc tương phản.",
+      "T08–T10: nội dung dài hơn, nhiều chi tiết hoặc đổi ý."
+    ],
+    "examples_are_not_mastery_items": true,
+    "audio_review_warning_vi": null
+  }
+}

@@ -1,7 +1,8 @@
-import { describe, expect, it } from "vitest";
+import { describe, expect, it, vi } from "vitest";
 import { checkFormat } from "../ielts-bank/format-rules";
 import type { ExamQuestion, NormalizedExam } from "../ielts-bank/schema";
-import { chooseDailySet, composeFullDraft, dailyPieceKinds, dailySetId, nextMissingPiece, type DailyPiece, type DailyPieces } from "./daily-set";
+import { chooseDailySet, composeFullDraft, continueWithFallback, dailyPieceKinds, dailySetId, nextMissingPiece, type DailyPiece, type DailyPieces } from "./daily-set";
+import { FactoryModelError } from "./text-generation";
 
 const meta = { externalId: "piece", format: "Academic", mode: "practice", title: "A new practice item", topic: "Research",
   durationMinutes: 20, sourceUrl: "https://example.org", attribution: "Original", license: "Original", licenseUrl: "https://example.org",
@@ -39,6 +40,24 @@ function piece(skill: "Listening" | "Reading", part: number): DailyPiece {
 }
 
 describe("AI Factory daily set", () => {
+  it("tries the primary twice, then the free-tier fallback after HTTP 503", async () => {
+    const create = vi.fn().mockRejectedValueOnce(new FactoryModelError("gemini-3.8-flash", 503, "unavailable"))
+      .mockRejectedValueOnce(new FactoryModelError("gemini-3.8-flash", 503, "unavailable"))
+      .mockResolvedValue("finished piece");
+    const wait = vi.fn(async () => {});
+    await expect(continueWithFallback(create, wait, "gemini-3.8-flash", "gemini-3.7-flash")).resolves.toBe("finished piece");
+    expect(create.mock.calls).toEqual([["gemini-3.8-flash"], ["gemini-3.8-flash"], ["gemini-3.7-flash"]]);
+    expect(wait.mock.calls).toEqual([[30_000], [90_000]]);
+  });
+
+  it("stops on HTTP 429 without switching models", async () => {
+    const create = vi.fn().mockRejectedValue(new FactoryModelError("gemini-3.8-flash", 429, "rate_limit"));
+    const wait = vi.fn(async () => {});
+    await expect(continueWithFallback(create, wait, "gemini-3.8-flash", "gemini-3.7-flash")).rejects.toThrow("HTTP 429");
+    expect(create).toHaveBeenCalledTimes(1);
+    expect(wait).not.toHaveBeenCalled();
+  });
+
   it("resumes from the first missing piece and uses one ID per UTC day", () => {
     const pieces: DailyPieces = { listening_part1: piece("Listening", 1), listening_part2: piece("Listening", 2) };
     expect(nextMissingPiece(pieces)).toBe("writing_task1_academic");

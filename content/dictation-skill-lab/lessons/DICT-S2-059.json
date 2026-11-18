@@ -1,0 +1,391 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "DICT-S2-059",
+  "status": "draft",
+  "level": "L7",
+  "section": 2,
+  "topic": "Environmental Campaigns",
+  "title": "The District Waste Audit: Results and Next Steps",
+  "learning_objectives_vi": [
+    "Nghe và hiểu bài độc thoại Environmental Campaigns ở mức L7, phân biệt chi tiết chính/phụ.",
+    "Nhận ra thông tin cập nhật, điều kiện và phương án thay thế thay vì chọn chi tiết đầu tiên nghe được.",
+    "Chép chính xác các đoạn mục tiêu và giải thích bằng chứng theo thứ tự lời nói."
+  ],
+  "content_format": "section_practice",
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Guide / public information presenter (single narrator)",
+      "tts_voice_id": null,
+      "accent_requested": "american"
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "Thank you for attending the district's waste-audit presentation. Our aim was not to blame individual households but to identify which parts of the collection system create unnecessary waste.",
+      "translation_vi": "Cảm ơn mọi người dự buổi trình bày kiểm toán rác của quận. Mục tiêu không phải đổ lỗi từng hộ mà xác định khâu nào trong hệ thống thu gom tạo lãng phí không cần thiết.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_2",
+        "monologue",
+        "l7",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "A",
+      "text_en": "The survey covered six neighbourhoods during a three-week period. Although the original plan involved eight areas, two withdrew because their collection schedules were being reorganised.",
+      "translation_vi": "Khảo sát bao phủ sáu khu dân cư trong ba tuần. Kế hoạch ban đầu gồm tám khu nhưng hai khu rút do lịch thu gom đang sắp xếp lại.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_2",
+        "monologue",
+        "l7",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "A",
+      "text_en": "Researchers measured the weight of discarded material and separated reusable packaging from genuine rubbish. Counting the number of bins alone would have concealed important differences between streets.",
+      "translation_vi": "Nhà nghiên cứu đo khối lượng vật liệu bị bỏ và tách bao bì tái sử dụng khỏi rác thực. Chỉ đếm số thùng sẽ che lấp khác biệt quan trọng giữa các đường phố.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_2",
+        "monologue",
+        "l7",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "A",
+      "text_en": "The most surprising finding concerned food packaging. Restaurants were initially expected to be the largest source, but household deliveries produced more single-use containers in the surveyed area.",
+      "translation_vi": "Phát hiện bất ngờ nhất là bao bì thực phẩm. Ban đầu nghĩ nhà hàng là nguồn lớn nhất, nhưng giao hàng đến hộ gia đình tạo nhiều hộp dùng một lần hơn trong khu khảo sát.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_2",
+        "monologue",
+        "l7",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "A",
+      "text_en": "Our response will begin with a pilot programme in the eastern district, where reusable containers will be offered through participating shops. The programme is voluntary during its first month.",
+      "translation_vi": "Hành động sẽ bắt đầu bằng chương trình thí điểm ở quận phía đông, nơi các cửa hàng tham gia cung cấp hộp dùng lại. Chương trình tự nguyện trong tháng đầu.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_2",
+        "monologue",
+        "l7",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "A",
+      "text_en": "We will assess success through changes in waste weight rather than the number of people who sign up. This is essential because participation does not always lead to changed behaviour.",
+      "translation_vi": "Chúng tôi đánh giá thành công qua thay đổi khối lượng rác thay vì số người đăng ký. Điều này quan trọng vì tham gia không phải lúc nào cũng thay đổi hành vi.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_2",
+        "monologue",
+        "l7",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "A public report will be released in September, with anonymised data available for local schools. Household addresses and individual shopping records will not be published.",
+      "translation_vi": "Báo cáo công khai ra tháng Chín, với dữ liệu ẩn danh cho trường học địa phương. Địa chỉ hộ và hồ sơ mua sắm cá nhân sẽ không được công bố.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_2",
+        "monologue",
+        "l7",
+        "signposting"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "type": "note_completion",
+      "prompt": "Notes — Survey covered: ____",
+      "correct_answers": [
+        "six"
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Khảo sát bao phủ sáu khu dân cư trong ba tuần. Kế hoạch ban đầu gồm tám khu nhưng hai khu rút do lịch thu gom đang sắp xếp lại. Đáp án được nhắc trong đoạn T02: “six”.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_2",
+        "ielts_practice",
+        "detail_recognition"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q02",
+      "type": "table_completion",
+      "prompt": "Table — Research measured waste by: ____",
+      "correct_answers": [
+        "weight"
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Nhà nghiên cứu đo khối lượng vật liệu bị bỏ và tách bao bì tái sử dụng khỏi rác thực. Chỉ đếm số thùng sẽ che lấp khác biệt quan trọng giữa các đường phố. Đáp án được nhắc trong đoạn T03: “weight”.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_2",
+        "ielts_practice",
+        "detail_recognition"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q03",
+      "type": "sentence_completion",
+      "prompt": "Complete the sentence — Largest unexpected source was household: ____",
+      "correct_answers": [
+        "deliveries"
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Phát hiện bất ngờ nhất là bao bì thực phẩm. Ban đầu nghĩ nhà hàng là nguồn lớn nhất, nhưng giao hàng đến hộ gia đình tạo nhiều hộp dùng một lần hơn trong khu khảo sát. Đáp án được nhắc trong đoạn T04: “deliveries”.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_2",
+        "ielts_practice",
+        "detail_recognition"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q04",
+      "type": "note_completion",
+      "prompt": "Notes — Pilot programme in the: ____",
+      "correct_answers": [
+        "eastern district"
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Hành động sẽ bắt đầu bằng chương trình thí điểm ở quận phía đông, nơi các cửa hàng tham gia cung cấp hộp dùng lại. Chương trình tự nguyện trong tháng đầu. Đáp án được nhắc trong đoạn T05: “eastern district”.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_2",
+        "ielts_practice",
+        "detail_recognition"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q05",
+      "type": "short_answer",
+      "prompt": "Answer briefly: Success judged by change in waste?",
+      "correct_answers": [
+        "weight"
+      ],
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "explanation_vi": "Chúng tôi đánh giá thành công qua thay đổi khối lượng rác thay vì số người đăng ký. Điều này quan trọng vì tham gia không phải lúc nào cũng thay đổi hành vi. Đáp án được nhắc trong đoạn T06: “weight”.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_2",
+        "ielts_practice",
+        "detail_recognition"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q06",
+      "type": "note_completion",
+      "prompt": "Notes — Public report released in: ____",
+      "correct_answers": [
+        "September"
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "Báo cáo công khai ra tháng Chín, với dữ liệu ẩn danh cho trường học địa phương. Địa chỉ hộ và hồ sơ mua sắm cá nhân sẽ không được công bố. Đáp án được nhắc trong đoạn T07: “September”.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_2",
+        "ielts_practice",
+        "detail_recognition"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "X01",
+      "type": "mcq",
+      "prompt": "What produced more single-use containers than expected?",
+      "options": [
+        "restaurants",
+        "household deliveries",
+        "school canteens"
+      ],
+      "correct_answers": [
+        "household deliveries"
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Phát hiện bất ngờ nhất là bao bì thực phẩm. Ban đầu nghĩ nhà hàng là nguồn lớn nhất, nhưng giao hàng đến hộ gia đình tạo nhiều hộp dùng một lần hơn trong khu khảo sát. Trong ba lựa chọn, đáp án chính xác là “household deliveries”.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "section_2",
+        "supplementary_mcq",
+        "distractor_detection",
+        "paraphrase"
+      ]
+    },
+    {
+      "question_id": "D01",
+      "type": "dictation",
+      "prompt": "Nghe và chép nguyên văn lời người dẫn tại đoạn T03.",
+      "correct_answers": [
+        "Researchers measured the weight of discarded material and separated reusable packaging from genuine rubbish. Counting the number of bins alone would have concealed important differences between streets."
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Câu gốc: Researchers measured the weight of discarded material and separated reusable packaging from genuine rubbish. Counting the number of bins alone would have concealed important differences between streets. Nghĩa: Nhà nghiên cứu đo khối lượng vật liệu bị bỏ và tách bao bì tái sử dụng khỏi rác thực. Chỉ đếm số thùng sẽ che lấp khác biệt quan trọng giữa các đường phố. Chú ý từ chức năng, âm cuối và nhịp nói.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "exact_transcript",
+        "section_2"
+      ]
+    },
+    {
+      "question_id": "D02",
+      "type": "dictation",
+      "prompt": "Nghe và chép nguyên văn lời người dẫn tại đoạn T05.",
+      "correct_answers": [
+        "Our response will begin with a pilot programme in the eastern district, where reusable containers will be offered through participating shops. The programme is voluntary during its first month."
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Câu gốc: Our response will begin with a pilot programme in the eastern district, where reusable containers will be offered through participating shops. The programme is voluntary during its first month. Nghĩa: Hành động sẽ bắt đầu bằng chương trình thí điểm ở quận phía đông, nơi các cửa hàng tham gia cung cấp hộp dùng lại. Chương trình tự nguyện trong tháng đầu. Chú ý từ chức năng, âm cuối và nhịp nói.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "exact_transcript",
+        "section_2"
+      ]
+    },
+    {
+      "question_id": "G01",
+      "type": "gap_fill",
+      "prompt": "Nghe và điền từ/cụm từ còn thiếu: The survey covered ____ neighbourhoods during a three-week period. Although the original plan involved eight areas, two withdrew because their collection schedules were being reorganised.",
+      "correct_answers": [
+        "six"
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Cụm “six” xuất hiện trong câu gốc: The survey covered six neighbourhoods during a three-week period. Although the original plan involved eight areas, two withdrew because their collection schedules were being reorganised. Nghĩa: Khảo sát bao phủ sáu khu dân cư trong ba tuần. Kế hoạch ban đầu gồm tám khu nhưng hai khu rút do lịch thu gom đang sắp xếp lại.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "gap_fill",
+        "vocab_in_context",
+        "section_2"
+      ]
+    }
+  ],
+  "vocabulary": [
+    {
+      "term": "audit",
+      "pos": "n.",
+      "meaning_vi": "cuộc kiểm toán/đánh giá",
+      "example_en": "Thank you for attending the district's waste-audit presentation. Our aim was not to blame individual households but to identify which parts of the collection system create unnecessary waste.",
+      "example_vi": "Cảm ơn mọi người dự buổi trình bày kiểm toán rác của quận. Mục tiêu không phải đổ lỗi từng hộ mà xác định khâu nào trong hệ thống thu gom tạo lãng phí không cần thiết.",
+      "source_turn_id": "T01"
+    },
+    {
+      "term": "single-use",
+      "pos": "adj.",
+      "meaning_vi": "dùng một lần",
+      "example_en": "The most surprising finding concerned food packaging. Restaurants were initially expected to be the largest source, but household deliveries produced more single-use containers in the surveyed area.",
+      "example_vi": "Phát hiện bất ngờ nhất là bao bì thực phẩm. Ban đầu nghĩ nhà hàng là nguồn lớn nhất, nhưng giao hàng đến hộ gia đình tạo nhiều hộp dùng một lần hơn trong khu khảo sát.",
+      "source_turn_id": "T04"
+    },
+    {
+      "term": "pilot programme",
+      "pos": "n. phr.",
+      "meaning_vi": "chương trình thí điểm",
+      "example_en": "Our response will begin with a pilot programme in the eastern district, where reusable containers will be offered through participating shops. The programme is voluntary during its first month.",
+      "example_vi": "Hành động sẽ bắt đầu bằng chương trình thí điểm ở quận phía đông, nơi các cửa hàng tham gia cung cấp hộp dùng lại. Chương trình tự nguyện trong tháng đầu.",
+      "source_turn_id": "T05"
+    },
+    {
+      "term": "anonymised",
+      "pos": "adj.",
+      "meaning_vi": "đã ẩn danh",
+      "example_en": "A public report will be released in September, with anonymised data available for local schools. Household addresses and individual shopping records will not be published.",
+      "example_vi": "Báo cáo công khai ra tháng Chín, với dữ liệu ẩn danh cho trường học địa phương. Địa chỉ hộ và hồ sơ mua sắm cá nhân sẽ không được công bố.",
+      "source_turn_id": "T07"
+    }
+  ],
+  "audio": {
+    "status": "not_generated",
+    "url": null,
+    "duration_ms": null,
+    "model": null,
+    "provider": null,
+    "voice_config": null,
+    "source_transcript_hash": "4cba3a4e00cbb0fff64a6c690e6e7ca89530bd333527f5bcb1657331b5b7828a",
+    "audio_sha256": null,
+    "format": null
+  },
+  "qa": {
+    "content_reviewed": false,
+    "answers_verified": false,
+    "audio_verified": false,
+    "rights_cleared": false,
+    "duplicate_reviewed": false,
+    "notes": [
+      "Original AI-assisted educational monologue; subject specialist review pending.",
+      "TTS, timestamps, audio verification and rights clearance are pending. Keep draft locked.",
+      "IELTS Section 2 practice, not an official IELTS Listening part or calibrated band test.",
+      "M16.2: automated edits are provisional; IELTS teacher final signoff, audio and rights clearance pending."
+    ]
+  },
+  "provenance": {
+    "content_origin": "original_ai_assisted",
+    "source_urls": [],
+    "source_rights_note": "Original learning text; obtain separate TTS service and distribution clearance, especially for under-18 users.",
+    "reviewer": null
+  },
+  "release_metadata": {
+    "published_at": null,
+    "version": 1
+  }
+}

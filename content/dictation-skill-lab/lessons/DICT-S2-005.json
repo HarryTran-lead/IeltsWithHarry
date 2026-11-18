@@ -1,0 +1,333 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "DICT-S2-005",
+  "status": "draft",
+  "level": "L2",
+  "section": 2,
+  "topic": "Library Facilities",
+  "title": "Using the Riverside Library",
+  "learning_objectives_vi": [
+    "Nghe độc thoại chủ đề Library Facilities và xác định mục đích thông báo.",
+    "Nhận diện cấu trúc ý và các chi tiết quan trọng theo thứ tự phát biểu.",
+    "Luyện nhận diện thời gian, chi phí, điều kiện và chi tiết được thay đổi."
+  ],
+  "content_format": "section_bridge",
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Visitor guide / programme coordinator (one narrator)",
+      "tts_voice_id": null,
+      "accent_requested": "new_zealand"
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "Hello. Here is a quick guide to the Riverside Library for our new visitors.",
+      "translation_vi": "Xin chào. Đây là hướng dẫn nhanh về thư viện Riverside dành cho khách mới.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_2",
+        "monologue",
+        "l2",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "A",
+      "text_en": "The main reading room is on the first floor, next to the large windows.",
+      "translation_vi": "Phòng đọc chính ở tầng một, cạnh các cửa sổ lớn.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_2",
+        "monologue",
+        "l2",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "A",
+      "text_en": "You may borrow six books for three weeks with a free library card.",
+      "translation_vi": "Bạn có thể mượn sáu cuốn trong ba tuần bằng thẻ thư viện miễn phí.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_2",
+        "monologue",
+        "l2",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "A",
+      "text_en": "Use the self-service machine near the door to renew your books.",
+      "translation_vi": "Dùng máy tự phục vụ gần cửa để gia hạn sách.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_2",
+        "monologue",
+        "l2",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "A",
+      "text_en": "Phones must be silent in the study area, although calls are allowed outside.",
+      "translation_vi": "Điện thoại phải để im lặng trong khu tự học, nhưng được gọi ngoài trời.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_2",
+        "monologue",
+        "l2",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "A",
+      "text_en": "On Friday, the library stays open until seven in the evening.",
+      "translation_vi": "Vào thứ Sáu thư viện mở đến bảy giờ tối.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_2",
+        "monologue",
+        "l2",
+        "signposting"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "type": "note_completion",
+      "prompt": "Notes — Main reading room floor: ____",
+      "correct_answers": [
+        "first"
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Phòng đọc ở tầng một.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_2",
+        "ielts_practice",
+        "detail_recognition"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q02",
+      "type": "table_completion",
+      "prompt": "Table — Maximum books to borrow: ____",
+      "correct_answers": [
+        "six"
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Được mượn sáu cuốn sách.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_2",
+        "ielts_practice",
+        "detail_recognition"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q03",
+      "type": "note_completion",
+      "prompt": "Notes — Loan duration in weeks: ____",
+      "correct_answers": [
+        "three"
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Thời hạn mượn ba tuần.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_2",
+        "ielts_practice",
+        "detail_recognition"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q04",
+      "type": "note_completion",
+      "prompt": "Notes — Books can be renewed at the self-service: ____",
+      "correct_answers": [
+        "machine"
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Gia hạn qua máy tự phục vụ.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_2",
+        "ielts_practice",
+        "detail_recognition"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q05",
+      "type": "note_completion",
+      "prompt": "Notes — Friday closing time: ____",
+      "correct_answers": [
+        "seven"
+      ],
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "explanation_vi": "Thứ Sáu đóng lúc bảy giờ.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_2",
+        "ielts_practice",
+        "detail_recognition"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "D01",
+      "type": "dictation",
+      "prompt": "Nghe lại và chép nguyên văn đoạn T03 (toàn bộ lời người dẫn).",
+      "correct_answers": [
+        "You may borrow six books for three weeks with a free library card."
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Câu gốc: You may borrow six books for three weeks with a free library card. Nghĩa: Bạn có thể mượn sáu cuốn trong ba tuần bằng thẻ thư viện miễn phí. Lưu ý từ chức năng, âm cuối và cụm từ nối.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "exact_transcript",
+        "section_2"
+      ]
+    },
+    {
+      "question_id": "D02",
+      "type": "dictation",
+      "prompt": "Nghe lại và chép nguyên văn đoạn T05 (toàn bộ lời người dẫn).",
+      "correct_answers": [
+        "Phones must be silent in the study area, although calls are allowed outside."
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Câu gốc: Phones must be silent in the study area, although calls are allowed outside. Nghĩa: Điện thoại phải để im lặng trong khu tự học, nhưng được gọi ngoài trời. Lưu ý từ chức năng, âm cuối và cụm từ nối.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "exact_transcript",
+        "section_2"
+      ]
+    },
+    {
+      "question_id": "G01",
+      "type": "gap_fill",
+      "prompt": "Điền cụm từ bị ẩn sau khi nghe: Use the self-service machine near the door to ____ your books.",
+      "correct_answers": [
+        "renew"
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "renew: gia hạn. Ngữ cảnh: Dùng máy tự phục vụ gần cửa để gia hạn sách.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "gap_fill",
+        "vocab_in_context",
+        "section_2"
+      ]
+    }
+  ],
+  "vocabulary": [
+    {
+      "term": "renew",
+      "pos": "v.",
+      "meaning_vi": "gia hạn",
+      "example_en": "Use the self-service machine near the door to renew your books.",
+      "example_vi": "Dùng máy tự phục vụ gần cửa để gia hạn sách.",
+      "source_turn_id": "T04"
+    },
+    {
+      "term": "self-service",
+      "pos": "n.",
+      "meaning_vi": "tự phục vụ",
+      "example_en": "Use the self-service machine near the door to renew your books.",
+      "example_vi": "Dùng máy tự phục vụ gần cửa để gia hạn sách.",
+      "source_turn_id": "T04"
+    },
+    {
+      "term": "guide",
+      "pos": "n.",
+      "meaning_vi": "hướng dẫn viên",
+      "example_en": "Hello. Here is a quick guide to the Riverside Library for our new visitors.",
+      "example_vi": "Xin chào. Đây là hướng dẫn nhanh về thư viện Riverside dành cho khách mới.",
+      "source_turn_id": "T01"
+    },
+    {
+      "term": "room",
+      "pos": "n.",
+      "meaning_vi": "phòng",
+      "example_en": "The main reading room is on the first floor, next to the large windows.",
+      "example_vi": "Phòng đọc chính ở tầng một, cạnh các cửa sổ lớn.",
+      "source_turn_id": "T02"
+    }
+  ],
+  "audio": {
+    "status": "not_generated",
+    "url": null,
+    "duration_ms": null,
+    "model": null,
+    "provider": null,
+    "voice_config": null,
+    "source_transcript_hash": "bfa96ce06d46c2295ce9549d90e8a99b0bb784df6c23df1b5b0434b2118dc903",
+    "audio_sha256": null,
+    "format": null
+  },
+  "qa": {
+    "content_reviewed": false,
+    "answers_verified": false,
+    "audio_verified": false,
+    "rights_cleared": false,
+    "duplicate_reviewed": false,
+    "notes": [
+      "AI-assisted original writing; pedagogical and pronunciation review still required.",
+      "No TTS or sentence-level timestamps supplied; do not publish.",
+      "This is Section 2 skill practice, not an official IELTS test.",
+      "M16.2: automated edits are provisional; IELTS teacher final signoff, audio and rights clearance pending."
+    ]
+  },
+  "provenance": {
+    "content_origin": "original_ai_assisted",
+    "source_urls": [],
+    "source_rights_note": "Newly authored educational monologue. Confirm audio model distribution, age suitability and TOS separately before publishing.",
+    "reviewer": null
+  },
+  "release_metadata": {
+    "published_at": null,
+    "version": 1
+  }
+}

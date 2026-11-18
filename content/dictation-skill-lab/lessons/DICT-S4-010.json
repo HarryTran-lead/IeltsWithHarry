@@ -1,0 +1,351 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "DICT-S4-010",
+  "status": "draft",
+  "level": "L5",
+  "section": 4,
+  "topic": "Public Health",
+  "title": "Incidence, Prevalence and Population-Level Prevention",
+  "learning_objectives_vi": [
+    "Nghe bài giảng học thuật một người nói, theo dõi quan hệ giữa luận điểm và bằng chứng.",
+    "Luyện các câu hỏi Section 4 theo thứ tự lời giảng; phân tích giới hạn của khái niệm và cách diễn đạt lại.",
+    "Chép chính xác hai đoạn, luyện từ học thuật theo ngữ cảnh và ôn điểm yếu qua Mistake Bank."
+  ],
+  "content_format": "section_practice",
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Academic lecturer",
+      "tts_voice_id": null,
+      "accent_requested": "british"
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "Public health looks at patterns of health across populations rather than focusing only on the treatment of one patient. A clinic may help someone manage an illness, while a public-health team asks why similar problems occur more frequently in particular communities. Both perspectives matter. Population data can reveal patterns that are difficult to notice during a series of individual appointments.",
+      "translation_vi": "Y tế công cộng xem xét các kiểu hình sức khỏe trong quần thể thay vì chỉ tập trung điều trị một bệnh nhân. Phòng khám có thể giúp một người quản lý bệnh, còn nhóm y tế công cộng hỏi vì sao vấn đề tương tự xuất hiện nhiều hơn ở những cộng đồng nhất định. Cả hai góc nhìn đều quan trọng. Dữ liệu quần thể cho thấy mô hình khó nhận ra qua các cuộc hẹn cá nhân.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_4",
+        "academic_lecture",
+        "concept",
+        "l5"
+      ]
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "A",
+      "text_en": "Two useful measures are incidence and prevalence. Incidence counts new cases occurring over a specified period in a population at risk. Prevalence describes existing cases at a particular time or during a period. A condition may have low incidence but considerable prevalence if people live with it for many years. The choice of measure depends on the question being asked.",
+      "translation_vi": "Hai thước đo hữu ích là tỷ lệ mắc mới và mức hiện mắc. Tỷ lệ mắc mới đếm ca mới xuất hiện trong khoảng thời gian xác định ở quần thể có nguy cơ. Hiện mắc mô tả số ca đang tồn tại tại một thời điểm hoặc giai đoạn. Một tình trạng có thể ít ca mới nhưng nhiều ca đang mắc nếu người bệnh sống với nó nhiều năm. Chọn thước đo tùy câu hỏi nghiên cứu.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_4",
+        "academic_lecture",
+        "concept",
+        "l5"
+      ]
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "A",
+      "text_en": "Risk should also be interpreted carefully. A relative risk compares the likelihood of an outcome between groups, while absolute risk expresses the chance within a group. A large relative change may correspond to a small absolute difference when an event is rare. Communicating both figures helps people understand the scale of a finding without exaggerating or dismissing it.",
+      "translation_vi": "Nguy cơ cũng cần hiểu thận trọng. Nguy cơ tương đối so sánh xác suất một kết cục giữa các nhóm, còn nguy cơ tuyệt đối thể hiện xác suất trong một nhóm. Mức thay đổi tương đối lớn có thể ứng với chênh lệch tuyệt đối nhỏ khi sự kiện hiếm. Truyền đạt cả hai con số giúp hiểu quy mô phát hiện mà không phóng đại hay xem nhẹ.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_4",
+        "academic_lecture",
+        "concept",
+        "l5"
+      ]
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "A",
+      "text_en": "Prevention happens at several levels. Some actions aim to reduce exposure before a problem begins. Others seek early detection, while further measures reduce harm among people already affected. These categories can overlap in real programmes. It is more useful to ask what the intervention is expected to change, and for whom, than to memorise a label without its context.",
+      "translation_vi": "Phòng ngừa diễn ra ở nhiều mức. Một số hành động giảm phơi nhiễm trước khi vấn đề bắt đầu. Những biện pháp khác nhằm phát hiện sớm, còn nhóm tiếp theo giảm tác hại ở người đã bị ảnh hưởng. Các nhóm này có thể chồng lấn trong chương trình thực tế. Hữu ích hơn là hỏi can thiệp dự kiến thay đổi điều gì và cho ai, thay vì nhớ nhãn mà không hiểu bối cảnh.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_4",
+        "academic_lecture",
+        "concept",
+        "l5"
+      ]
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "A",
+      "text_en": "Finally, inequalities in health often reflect conditions beyond individual choices. Housing, safe water, working environments and access to services shape what options people actually have. A recommendation that seems simple in one neighbourhood may be difficult elsewhere. Good public-health analysis combines population measures with an understanding of these social conditions.",
+      "translation_vi": "Cuối cùng, bất bình đẳng sức khỏe thường phản ánh điều kiện ngoài lựa chọn cá nhân. Nhà ở, nước sạch, môi trường làm việc và tiếp cận dịch vụ quyết định các lựa chọn thực tế. Khuyến nghị có vẻ đơn giản tại khu phố này có thể khó thực hiện ở nơi khác. Phân tích y tế công cộng tốt kết hợp chỉ số quần thể với sự hiểu biết về những điều kiện xã hội ấy.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_4",
+        "academic_lecture",
+        "concept",
+        "l5"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "type": "note_completion",
+      "prompt": "Public health often studies patterns across ____.",
+      "correct_answers": [
+        "populations"
+      ],
+      "evidence_turn_ids": [
+        "T01"
+      ],
+      "explanation_vi": "Đáp án “populations” nằm tại đoạn T01. Nội dung bằng chứng: Y tế công cộng xem xét các kiểu hình sức khỏe trong quần thể thay vì chỉ tập trung điều trị một bệnh nhân. Phòng khám có thể giúp một người quản lý bệnh, còn nhóm y tế công cộng hỏi vì sao vấn đề tương tự xuất hiện nhiều hơn ở những cộng đồng nhất định. Cả hai góc nhìn đều quan trọng. Dữ liệu quần thể cho thấy mô hình khó nhận ra qua các cuộc hẹn cá nhân.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_4",
+        "ielts_practice",
+        "concept",
+        "note_completion"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q02",
+      "type": "note_completion",
+      "prompt": "The measure for new cases over time is ____.",
+      "correct_answers": [
+        "Incidence"
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Đáp án “Incidence” nằm tại đoạn T02. Nội dung bằng chứng: Hai thước đo hữu ích là tỷ lệ mắc mới và mức hiện mắc. Tỷ lệ mắc mới đếm ca mới xuất hiện trong khoảng thời gian xác định ở quần thể có nguy cơ. Hiện mắc mô tả số ca đang tồn tại tại một thời điểm hoặc giai đoạn. Một tình trạng có thể ít ca mới nhưng nhiều ca đang mắc nếu người bệnh sống với nó nhiều năm. Chọn thước đo tùy câu hỏi nghiên cứu.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_4",
+        "ielts_practice",
+        "concept",
+        "note_completion"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q03",
+      "type": "note_completion",
+      "prompt": "The chance of an outcome within a group is called ____.",
+      "correct_answers": [
+        "absolute risk"
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Đáp án “absolute risk” nằm tại đoạn T03. Nội dung bằng chứng: Nguy cơ cũng cần hiểu thận trọng. Nguy cơ tương đối so sánh xác suất một kết cục giữa các nhóm, còn nguy cơ tuyệt đối thể hiện xác suất trong một nhóm. Mức thay đổi tương đối lớn có thể ứng với chênh lệch tuyệt đối nhỏ khi sự kiện hiếm. Truyền đạt cả hai con số giúp hiểu quy mô phát hiện mà không phóng đại hay xem nhẹ.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_4",
+        "ielts_practice",
+        "concept",
+        "note_completion"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q04",
+      "type": "note_completion",
+      "prompt": "Some prevention programmes concentrate on early ____.",
+      "correct_answers": [
+        "detection"
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Đáp án “detection” nằm tại đoạn T04. Nội dung bằng chứng: Phòng ngừa diễn ra ở nhiều mức. Một số hành động giảm phơi nhiễm trước khi vấn đề bắt đầu. Những biện pháp khác nhằm phát hiện sớm, còn nhóm tiếp theo giảm tác hại ở người đã bị ảnh hưởng. Các nhóm này có thể chồng lấn trong chương trình thực tế. Hữu ích hơn là hỏi can thiệp dự kiến thay đổi điều gì và cho ai, thay vì nhớ nhãn mà không hiểu bối cảnh.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_4",
+        "ielts_practice",
+        "concept",
+        "note_completion"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q05",
+      "type": "note_completion",
+      "prompt": "Health inequalities can reflect differences in access to ____.",
+      "correct_answers": [
+        "services"
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Đáp án “services” nằm tại đoạn T05. Nội dung bằng chứng: Cuối cùng, bất bình đẳng sức khỏe thường phản ánh điều kiện ngoài lựa chọn cá nhân. Nhà ở, nước sạch, môi trường làm việc và tiếp cận dịch vụ quyết định các lựa chọn thực tế. Khuyến nghị có vẻ đơn giản tại khu phố này có thể khó thực hiện ở nơi khác. Phân tích y tế công cộng tốt kết hợp chỉ số quần thể với sự hiểu biết về những điều kiện xã hội ấy.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_4",
+        "ielts_practice",
+        "concept",
+        "note_completion"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q06",
+      "type": "mcq",
+      "prompt": "Why should risk reports include both relative and absolute measures?",
+      "correct_answers": [
+        "A large relative change may represent a small absolute difference"
+      ],
+      "options": [
+        "A large relative change may represent a small absolute difference",
+        "Absolute risk is useful only when every patient is identical",
+        "Relative risk always gives the number of new cases"
+      ],
+      "evidence_turn_ids": [
+        "T01",
+        "T03",
+        "T05"
+      ],
+      "explanation_vi": "Hãy kết hợp luận điểm đầu, ví dụ ở giữa và kết luận cuối bài. Cuối cùng, bất bình đẳng sức khỏe thường phản ánh điều kiện ngoài lựa chọn cá nhân. Nhà ở, nước sạch, môi trường làm việc và tiếp cận dịch vụ quyết định các lựa chọn thực tế. Khuyến nghị có vẻ đơn giản tại khu phố này có thể khó thực hiện ở nơi khác. Phân tích y tế công cộng tốt kết hợp chỉ số quần thể với sự hiểu biết về những điều kiện xã hội ấy. Phương án chính xác: “A large relative change may represent a small absolute difference”; hai phương án khác khái quát quá mức hoặc không phù hợp bằng chứng.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "section_4",
+        "ielts_practice",
+        "concept",
+        "main_idea"
+      ]
+    },
+    {
+      "question_id": "D01",
+      "type": "dictation",
+      "prompt": "Nghe đoạn T02 và chép lại chính xác lời giảng.",
+      "correct_answers": [
+        "Two useful measures are incidence and prevalence. Incidence counts new cases occurring over a specified period in a population at risk. Prevalence describes existing cases at a particular time or during a period. A condition may have low incidence but considerable prevalence if people live with it for many years. The choice of measure depends on the question being asked."
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Phân tích từ nối, âm yếu và cụm thuật ngữ học thuật. Nghĩa của đoạn: Hai thước đo hữu ích là tỷ lệ mắc mới và mức hiện mắc. Tỷ lệ mắc mới đếm ca mới xuất hiện trong khoảng thời gian xác định ở quần thể có nguy cơ. Hiện mắc mô tả số ca đang tồn tại tại một thời điểm hoặc giai đoạn. Một tình trạng có thể ít ca mới nhưng nhiều ca đang mắc nếu người bệnh sống với nó nhiều năm. Chọn thước đo tùy câu hỏi nghiên cứu.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_4",
+        "dictation",
+        "exact_transcript"
+      ]
+    },
+    {
+      "question_id": "D02",
+      "type": "dictation",
+      "prompt": "Nghe đoạn T04 và chép lại chính xác lời giảng.",
+      "correct_answers": [
+        "Prevention happens at several levels. Some actions aim to reduce exposure before a problem begins. Others seek early detection, while further measures reduce harm among people already affected. These categories can overlap in real programmes. It is more useful to ask what the intervention is expected to change, and for whom, than to memorise a label without its context."
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Phân tích từ nối, âm yếu và cụm thuật ngữ học thuật. Nghĩa của đoạn: Phòng ngừa diễn ra ở nhiều mức. Một số hành động giảm phơi nhiễm trước khi vấn đề bắt đầu. Những biện pháp khác nhằm phát hiện sớm, còn nhóm tiếp theo giảm tác hại ở người đã bị ảnh hưởng. Các nhóm này có thể chồng lấn trong chương trình thực tế. Hữu ích hơn là hỏi can thiệp dự kiến thay đổi điều gì và cho ai, thay vì nhớ nhãn mà không hiểu bối cảnh.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_4",
+        "dictation",
+        "exact_transcript"
+      ]
+    },
+    {
+      "question_id": "G01",
+      "type": "gap_fill",
+      "prompt": "Nghe T02 rồi điền phần thiếu: Two useful measures are ____ and prevalence.",
+      "correct_answers": [
+        "Incidence"
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Điền “Incidence”, nghĩa: mắc mới. Cụm từ này xuất hiện trong T02.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_4",
+        "gap_fill",
+        "academic_vocabulary"
+      ]
+    }
+  ],
+  "vocabulary": [
+    {
+      "term": "Incidence",
+      "pos": "n.",
+      "meaning_vi": "mắc mới",
+      "example_en": "Two useful measures are incidence and prevalence. Incidence counts new cases occurring over a specified period in a population at risk. Prevalence describes existing cases at a particular time or during a period. A condition may have low incidence but considerable prevalence if people live with it for many years. The choice of measure depends on the question being asked.",
+      "example_vi": "Hai thước đo hữu ích là tỷ lệ mắc mới và mức hiện mắc. Tỷ lệ mắc mới đếm ca mới xuất hiện trong khoảng thời gian xác định ở quần thể có nguy cơ. Hiện mắc mô tả số ca đang tồn tại tại một thời điểm hoặc giai đoạn. Một tình trạng có thể ít ca mới nhưng nhiều ca đang mắc nếu người bệnh sống với nó nhiều năm. Chọn thước đo tùy câu hỏi nghiên cứu.",
+      "source_turn_id": "T02"
+    },
+    {
+      "term": "Prevalence",
+      "pos": "n.",
+      "meaning_vi": "hiện mắc",
+      "example_en": "Two useful measures are incidence and prevalence. Incidence counts new cases occurring over a specified period in a population at risk. Prevalence describes existing cases at a particular time or during a period. A condition may have low incidence but considerable prevalence if people live with it for many years. The choice of measure depends on the question being asked.",
+      "example_vi": "Hai thước đo hữu ích là tỷ lệ mắc mới và mức hiện mắc. Tỷ lệ mắc mới đếm ca mới xuất hiện trong khoảng thời gian xác định ở quần thể có nguy cơ. Hiện mắc mô tả số ca đang tồn tại tại một thời điểm hoặc giai đoạn. Một tình trạng có thể ít ca mới nhưng nhiều ca đang mắc nếu người bệnh sống với nó nhiều năm. Chọn thước đo tùy câu hỏi nghiên cứu.",
+      "source_turn_id": "T02"
+    },
+    {
+      "term": "relative risk",
+      "pos": "n. phr.",
+      "meaning_vi": "nguy cơ tương đối",
+      "example_en": "Risk should also be interpreted carefully. A relative risk compares the likelihood of an outcome between groups, while absolute risk expresses the chance within a group. A large relative change may correspond to a small absolute difference when an event is rare. Communicating both figures helps people understand the scale of a finding without exaggerating or dismissing it.",
+      "example_vi": "Nguy cơ cũng cần hiểu thận trọng. Nguy cơ tương đối so sánh xác suất một kết cục giữa các nhóm, còn nguy cơ tuyệt đối thể hiện xác suất trong một nhóm. Mức thay đổi tương đối lớn có thể ứng với chênh lệch tuyệt đối nhỏ khi sự kiện hiếm. Truyền đạt cả hai con số giúp hiểu quy mô phát hiện mà không phóng đại hay xem nhẹ.",
+      "source_turn_id": "T03"
+    },
+    {
+      "term": "absolute risk",
+      "pos": "n. phr.",
+      "meaning_vi": "nguy cơ tuyệt đối",
+      "example_en": "Risk should also be interpreted carefully. A relative risk compares the likelihood of an outcome between groups, while absolute risk expresses the chance within a group. A large relative change may correspond to a small absolute difference when an event is rare. Communicating both figures helps people understand the scale of a finding without exaggerating or dismissing it.",
+      "example_vi": "Nguy cơ cũng cần hiểu thận trọng. Nguy cơ tương đối so sánh xác suất một kết cục giữa các nhóm, còn nguy cơ tuyệt đối thể hiện xác suất trong một nhóm. Mức thay đổi tương đối lớn có thể ứng với chênh lệch tuyệt đối nhỏ khi sự kiện hiếm. Truyền đạt cả hai con số giúp hiểu quy mô phát hiện mà không phóng đại hay xem nhẹ.",
+      "source_turn_id": "T03"
+    }
+  ],
+  "audio": {
+    "status": "not_generated",
+    "url": null,
+    "duration_ms": null,
+    "model": null,
+    "provider": null,
+    "voice_config": null,
+    "source_transcript_hash": "64b4f84b442f77ded3901bdda67bb1e3322dfd59c77b582f1b209256c8cc6243",
+    "audio_sha256": null,
+    "format": null
+  },
+  "qa": {
+    "content_reviewed": false,
+    "answers_verified": false,
+    "audio_verified": false,
+    "rights_cleared": false,
+    "duplicate_reviewed": false,
+    "notes": [
+      "Original AI-assisted educational script, not an official IELTS transcript.",
+      "Editorial, academic and linguistic review pending.",
+      "Audio/TTS not generated; text-to-speech distribution rights must be confirmed before use, especially for minors.",
+      "Six IELTS-style practice questions per lesson; this is not a full official Part 4 test or a calibrated IELTS Band test.",
+      "M16.2: automated edits are provisional; IELTS teacher final signoff, audio and rights clearance pending."
+    ]
+  },
+  "provenance": {
+    "content_origin": "original_ai_assisted",
+    "source_urls": [],
+    "source_rights_note": "Original transcript and translation drafts; verify academic claims and terms, and TTS provider redistribution conditions before release.",
+    "reviewer": null
+  },
+  "release_metadata": {
+    "published_at": null,
+    "version": 1
+  }
+}

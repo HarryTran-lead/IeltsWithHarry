@@ -3,10 +3,13 @@ import { isIP } from "node:net";
 import { XMLParser } from "fast-xml-parser";
 import { load } from "cheerio";
 import { NEWS_CATEGORIES, type NewsCategory } from "./constants";
+import { pressDiscoveryFeedUrls } from "./press-feeds";
+
+export { pressDiscoveryFeedUrls } from "./press-feeds";
 
 export { NEWS_CATEGORIES };
-export type NewsSource = { id: string; name: string; provider: "gdelt" | "rss"; feed_url: string | null; category: NewsCategory; policy_status: string; reviewed_basis: string; attribution_text: string; auto_publish: boolean; enabled: boolean; etag: string | null; last_modified: string | null; min_interval_minutes: number; archive_next_page: number | null };
-export type NewsItem = { source_id: string; provider: string; external_id: string | null; canonical_hash: string; canonical_url: string; title: string; publisher: string; language: string; category: NewsCategory; published_at: string; publication_status: "review" | "published"; attribution_text: string; sensitive: boolean; metadata: Record<string, never> };
+export type NewsSource = { id: string; name: string; provider: "gdelt" | "rss"; feed_url: string | null; category: NewsCategory; origin_region?: "vietnam" | "international"; interest_topic?: "conflict" | "entertainment" | "curious" | null; policy_status: string; reviewed_basis: string; attribution_text: string; auto_publish: boolean; enabled: boolean; etag: string | null; last_modified: string | null; min_interval_minutes: number; archive_next_page: number | null };
+export type NewsItem = { source_id: string; provider: string; external_id: string | null; canonical_hash: string; canonical_url: string; title: string; publisher: string; language: string; category: NewsCategory; origin_region: "vietnam" | "international"; interest_topics: string[]; published_at: string; publication_status: "review" | "published"; attribution_text: string; sensitive: boolean; metadata: Record<string, never> };
 export type NewsBodyCandidate = { canonical_hash: string; body_text: string; rights_basis: string; source_url: string; image_url: string | null; image_alt: string | null; image_credit: string | null; image_rights_basis: string | null; byline?: string | null };
 export type NewsImageCandidate = { canonical_hash: string; source_url: string; image_url: string; image_alt: string; image_credit: string; image_rights_basis: string };
 /** `summaries` holds RSS descriptions in memory only, as fact evidence for AI-written articles; they are never stored. */
@@ -14,6 +17,13 @@ export type FetchResult = { items: NewsItem[]; bodies?: NewsBodyCandidate[]; ima
 export interface NewsProvider { readonly kind: NewsSource["provider"]; fetch(source: NewsSource, fetcher?: typeof fetch, archivePage?: number): Promise<FetchResult> }
 
 const sensitive = /\b(killed|murder|shooting|bomb|war|attack|assault|graphic|suicide|abuse)\b/i;
+export function interestTopicsForTitle(title: string): string[] {
+  const topics: string[] = [];
+  if (/\b(war|conflict|invasion|ceasefire|military|airstrike|battle|refugees?)\b/i.test(title)) topics.push("conflict");
+  if (/\b(film|movie|cinema|music|concert|actor|actress|celebrity|drama|television|festival)\b/i.test(title)) topics.push("entertainment");
+  if (/\b(humou?r|funny|quirky|unusual|good news|uplifting|heartwarming|surprise)\b/i.test(title)) topics.push("curious");
+  return topics;
+}
 const cleanText = (value: unknown, max: number) => String(value ?? "").replace(/<[^>]*>/g, "").replace(/\s+/g, " ").trim().slice(0, max);
 export function parsePublishedDate(value: unknown): string | null {
   if (!value) return null;
@@ -32,7 +42,7 @@ export function canonicalUrl(raw: string): string | null {
   } catch { return null; }
 }
 export function newsHash(url: string): string { return createHash("sha256").update(url).digest("hex"); }
-function makeItem(source: NewsSource, raw: { url: unknown; title: unknown; date: unknown; publisher?: unknown; language?: unknown; externalId?: unknown }): NewsItem | null {
+function makeItem(source: NewsSource, raw: { url: unknown; title: unknown; date: unknown; publisher?: unknown; language?: unknown; externalId?: unknown; category?: NewsCategory }): NewsItem | null {
   const canonical_url = canonicalUrl(String(raw.url ?? ""));
   const title = cleanText(raw.title, 400);
   const published_at = parsePublishedDate(raw.date);
@@ -40,8 +50,8 @@ function makeItem(source: NewsSource, raw: { url: unknown; title: unknown; date:
   if (!canonical_url || title.length < 5 || !published_at || !/^(en|english)$/i.test(language)) return null;
   const flagged = sensitive.test(title);
   return { source_id: source.id, provider: source.provider, external_id: raw.externalId ? cleanText(raw.externalId, 400) : null,
-    canonical_hash: newsHash(canonical_url), canonical_url, title, publisher: cleanText(raw.publisher || source.name, 150), language: "English",
-    category: source.category, published_at, publication_status: source.auto_publish && !flagged && source.reviewed_basis.length >= 12 && ["METADATA_ONLY","FULL_REUSE_ALLOWED"].includes(source.policy_status) ? "published" : "review",
+    canonical_hash: newsHash(canonical_url), canonical_url, title, publisher: cleanText(raw.publisher || (source.name.startsWith("Global Voices") ? "Global Voices" : source.name), 150), language: "English",
+    category: raw.category ?? source.category, origin_region: source.origin_region ?? "international", interest_topics: [...new Set([...interestTopicsForTitle(title), ...(source.interest_topic ? [source.interest_topic] : [])])], published_at, publication_status: source.auto_publish && !flagged && source.reviewed_basis.length >= 12 && ["METADATA_ONLY","FULL_REUSE_ALLOWED"].includes(source.policy_status) ? "published" : "review",
     attribution_text: source.attribution_text, sensitive: flagged, metadata: {} };
 }
 
@@ -98,12 +108,35 @@ function rssSummaries(xml: string): Record<string, string> {
     return url && summary ? [[newsHash(url), summary]] : [];
   }));
 }
+export function vietnamLeadCategory(title: string, fallback: NewsCategory): NewsCategory {
+  const words = title.normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/đ/gi, "d").toLowerCase();
+  if (/\b(vac xin|vaccine|y te|suc khoe|benh vien|duoc|hospital|health|flu|medical|mental health)\b/.test(words)) return "Health";
+  if (/\b(giao duc|hoc sinh|sinh vien|dai hoc|truong hoc|dao tao|hoc tap|students?|schools?|universit(?:y|ies)|education|scholarship|exam|campus)\b/.test(words)) return "Education";
+  if (/\b(van hoa|di san|du lich|nghe thuat|bao tang|le hoi|concert|music|films?|cinema|festival|touris[mt]|travel|football|sports?|food)\b/.test(words)) return "Culture";
+  if (/\b(moi truong|khi hau|phat thai|nang luong|bao ton|environment|climate|emissions?|conservation|pollution)\b/.test(words)) return "Environment";
+  if (/\b(doanh nghiep|kinh doanh|thuong mai|thi truong|kinh te|khoi nghiep|business|economy|market|startups?|jobs?|wages?|housing)\b/.test(words)) return "Business";
+  if (/\b(chuyen doi so|tri tue nhan tao|ai|vien thong|5g|vneid|internet|ten mien|nen tang so|digital|robots?|technology|apps?)\b/.test(words)) return "Technology";
+  if (/\b(nghien cuu|khoa hoc|research|science|space)\b/.test(words)) return "Science";
+  return fallback;
+}
+
 export function parseRss(xml: string, source: NewsSource): NewsItem[] {
   const { rss, entries } = rssEntries(xml);
   return entries.map((row) => {
+    const rawDate = xmlText(row.pubDate ?? row["dc:date"] ?? row.published ?? row.updated);
+    // Government News publishes local wall-clock times without an offset.
+    const vietnamTime = source.feed_url?.startsWith("https://baochinhphu.vn/")
+      ? /^(\d{1,2})\/(\d{1,2})\/(\d{4}) (\d{1,2}):(\d{2}):(\d{2}) (AM|PM)$/i.exec(rawDate)
+      : null;
+    const date = vietnamTime
+      ? `${vietnamTime[3]}-${vietnamTime[1].padStart(2, "0")}-${vietnamTime[2].padStart(2, "0")}T${String(Number(vietnamTime[4]) % 12 + (vietnamTime[7].toUpperCase() === "PM" ? 12 : 0)).padStart(2, "0")}:${vietnamTime[5]}:${vietnamTime[6]}+07:00`
+      : rawDate;
     return makeItem(source, { url: rss ? xmlText(row.link) : atomLink(row.link), title: xmlText(row.title),
-      date: row.pubDate ?? row["dc:date"] ?? row.published ?? row.updated,
-      publisher: source.name, language: "English", externalId: row.guid ? xmlText(row.guid) : row.id ? xmlText(row.id) : undefined });
+      date,
+      category: source.feed_url && pressDiscoveryFeedUrls.has(source.feed_url)
+        && (!source.feed_url.startsWith("https://baochinhphu.vn/") || source.feed_url === "https://baochinhphu.vn/home.rss")
+        ? vietnamLeadCategory(xmlText(row.title), source.category) : source.category,
+      publisher: source.name.startsWith("Global Voices") ? "Global Voices" : source.name, language: "English", externalId: row.guid ? xmlText(row.guid) : row.id ? xmlText(row.id) : undefined });
   }).filter((item): item is NewsItem => item !== null);
 }
 
@@ -275,7 +308,7 @@ export const globalVoicesFeedUrl = "https://globalvoices.org/feed/";
 const globalVoicesRightsBasis = "Global Voices Republishing Guidelines: content created by Global Voices is licensed CC BY 3.0; credit the author and link to the original at the top; third-party works excluded. https://globalvoices.org/about/global-voices-attribution-policy/";
 /** Global Voices full text with its author byline; partner and third-party pieces stay link-only. */
 export function parseGlobalVoicesBodies(xml: string, source: NewsSource): NewsBodyCandidate[] {
-  if (source.feed_url !== globalVoicesFeedUrl || hasUnsafeXmlDeclaration(xml)) return [];
+  if (!source.feed_url || !/^https:\/\/globalvoices\.org\/(?:feed\/|\-\/topics\/(?:war-conflict|film|humor|good-news)\/feed\/)$/i.test(source.feed_url) || hasUnsafeXmlDeclaration(xml)) return [];
   const { rss, entries } = rssEntries(xml);
   if (!rss) return [];
   return entries.slice(0, 50).flatMap((row) => {
@@ -325,7 +358,7 @@ export async function fetchGovUkBody(sourceUrl: string, fetcher: typeof fetch = 
 export function assertApprovedFeedUrl(raw: string): URL {
   const url = new URL(raw);
   const allowed = (process.env.NEWS_RSS_ALLOWED_HOSTS ?? "www.nasa.gov,science.nasa.gov,earthobservatory.nasa.gov,www.noaa.gov,oceanservice.noaa.gov,www.nsf.gov,globalvoices.org,www.gov.uk,e.vnexpress.net,news.tuoitre.vn").split(",").map((host) => host.trim().toLowerCase());
-  if (url.protocol !== "https:" || url.port || url.username || url.password || isIP(url.hostname) || !allowed.includes(url.hostname.toLowerCase())) throw new Error("Feed host is not approved in NEWS_RSS_ALLOWED_HOSTS");
+  if (url.protocol !== "https:" || url.port || url.username || url.password || isIP(url.hostname) || !(allowed.includes(url.hostname.toLowerCase()) || pressDiscoveryFeedUrls.has(url.toString()))) throw new Error("Feed host is not approved in NEWS_RSS_ALLOWED_HOSTS");
   return url;
 }
 async function boundedFetch(url: URL, init: RequestInit, fetcher: typeof fetch): Promise<Response> {
@@ -391,6 +424,7 @@ export const rssProvider: NewsProvider = { kind: "rss", async fetch(source, fetc
   if (response.status === 304) return { items: [], etag: source.etag, lastModified: source.last_modified, cacheUntil: cacheUntil(response), notModified: true };
   if (!response.ok) throw new Error(`RSS HTTP ${response.status}`);
   const xml = await boundedText(response);
+  if (pressDiscoveryFeedUrls.has(source.feed_url)) return { items: parseRss(xml, source), etag: response.headers.get("etag"), lastModified: response.headers.get("last-modified"), cacheUntil: cacheUntil(response), notModified: false };
   return { items: parseRss(xml, source), summaries: rssSummaries(xml), bodies: [...parseNasaNewsBodies(xml, source), ...parseNoaaNewsBodies(xml, source), ...parseGlobalVoicesBodies(xml, source)], images: parseRssImages(xml, source), etag: response.headers.get("etag"), lastModified: response.headers.get("last-modified"), cacheUntil: cacheUntil(response), notModified: false };
 } };
 export const providers: Record<NewsSource["provider"], NewsProvider> = { gdelt: gdeltProvider, rss: rssProvider };

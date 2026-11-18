@@ -1,0 +1,1952 @@
+{
+  "C1-01": {
+    "code": "C1-01",
+    "title": "Negative Adverbial Inversion",
+    "context_vi": "Báo cáo phân tích chuỗi số liệu đang suy giảm. Bạn đang biên tập đoạn văn cho người đọc chuyên môn; phải giữ nguyên dữ kiện và làm rõ mục đích diễn đạt.",
+    "goal_vi": "Đảo ngữ sau trạng ngữ phủ định tạo nhấn mạnh trang trọng; không nên dùng liên tục vì khiến văn viết khoa trương.",
+    "contrast_cue_vi": "Hai cách viết có thể cùng đúng về hình thức nhưng khác trọng tâm, sắc thái hoặc tác động đến người đọc. Xác định mục đích thực trước khi lựa chọn.",
+    "checkpoints": [
+      {
+        "id": "M19E-C1-01-CHECK-01",
+        "prompt_vi": "Một báo cáo muốn nhấn mạnh rằng nhóm chưa từng gặp lỗi như thế này. Chọn câu đảo ngữ trang trọng, đúng thì.",
+        "options_en": [
+          "Never did the analysts encountered this type of error.",
+          "Never have the analysts encountered this type of error.",
+          "Never the analysts have encountered this type of error."
+        ],
+        "correct_index": 1,
+        "option_feedback_vi": [
+          "Sau did phải là encounter; hơn nữa đổi thì không cần thiết.",
+          "Never đầu câu kích hoạt đảo have trước chủ ngữ; encountered giữ present perfect.",
+          "Thiếu đảo trợ động từ have và chủ ngữ."
+        ],
+        "focus": "contextual_decision"
+      },
+      {
+        "id": "M19E-C1-01-CHECK-02",
+        "prompt_vi": "Một đoạn học thuật đã nhấn mạnh hai lần bằng đảo ngữ. Câu thứ ba chỉ cần nêu thông tin trung tính. Cách nào tự nhiên nhất?",
+        "options_en": [
+          "The committee has rarely changed its position.",
+          "Rarely has the committee changed its position!",
+          "Rarely the committee has changed its position."
+        ],
+        "correct_index": 0,
+        "option_feedback_vi": [
+          "Trật tự thường trung tính giúp tránh lạm dụng đảo ngữ; nội dung hiếm xảy ra vẫn giữ nguyên.",
+          "Đúng ngữ pháp nhưng thêm đảo ngữ và dấu chấm than làm văn phong trở nên khoa trương không cần thiết.",
+          "Rarely đặt đầu mà không đảo trợ động từ."
+        ],
+        "focus": "register_and_meaning"
+      },
+      {
+        "id": "M19E-C1-01-CHECK-03",
+        "prompt_vi": "Đọc câu sai “Never we have encountered such an urgent request.”. Hãy chọn bản sửa đúng GIỮ NGUYÊN ý nghĩa và không thêm sự kiện.",
+        "options_en": [
+          "Never we have encountered such an urgent request.",
+          "Rarely does the panel changes its mind.",
+          "Never have we encountered such an urgent request."
+        ],
+        "correct_index": 2,
+        "option_feedback_vi": [
+          "Câu này chính là lỗi được yêu cầu sửa. Trợ động từ phải đứng trước chủ ngữ khi Never đứng đầu.",
+          "Câu này thuộc một ví dụ khác và vẫn chứa lỗi: Sau does phải dùng động từ nguyên mẫu change, không thêm -s.",
+          "Bản sửa giữ nguyên ý định ban đầu. Trợ động từ phải đứng trước chủ ngữ khi Never đứng đầu."
+        ],
+        "focus": "guided_error_repair"
+      }
+    ],
+    "transfer": {
+      "prompt_vi": "Viết đoạn văn 3–5 câu: Write a cautious three-sentence report using one negative-fronting inversion.. Hãy giải thích ít nhất một quyết định ngữ pháp về ý nghĩa, mức chắc chắn hoặc trọng tâm.",
+      "sample_en": "Rarely have regional figures fallen this sharply within a single quarter. Nevertheless, the sample covers only three districts, so broader conclusions would be premature. The next report should include data from the remaining areas.",
+      "rubric_vi": "Đối chiếu theo bốn tiêu chí: (1) đúng dữ kiện và người thực hiện; (2) cấu trúc C1 tạo hiệu quả rõ ràng thay vì trang trí; (3) độ chắc chắn phù hợp chứng cứ; (4) liên kết câu và văn phong tự nhiên. Đáp án mẫu chỉ là một khả năng hợp lệ."
+    },
+    "review_status": "DRAFT_TEACHER_REVIEW_REQUIRED",
+    "assessment_mode": "FORMATIVE_ONLY",
+    "source_lesson_id": "C1-01"
+  },
+  "C1-02": {
+    "code": "C1-02",
+    "title": "Sequencing Inversion",
+    "context_vi": "Biên bản sự cố trong phòng thí nghiệm. Bạn đang biên tập đoạn văn cho người đọc chuyên môn; phải giữ nguyên dữ kiện và làm rõ mục đích diễn đạt.",
+    "goal_vi": "No sooner...than và Hardly/Scarcely...when diễn đạt hai sự kiện nối sát nhau; đây không phải cách nối thời gian trung tính.",
+    "contrast_cue_vi": "Hai cách viết có thể cùng đúng về hình thức nhưng khác trọng tâm, sắc thái hoặc tác động đến người đọc. Xác định mục đích thực trước khi lựa chọn.",
+    "checkpoints": [
+      {
+        "id": "M19E-C1-02-CHECK-01",
+        "prompt_vi": "Chuông cảnh báo vang lên ngay sau khi cuộc họp bắt đầu. Chọn mẫu đảo ngữ diễn đạt hai sự kiện nối sát.",
+        "options_en": [
+          "No sooner had the meeting begun than the alarm sounded.",
+          "No sooner had the meeting begun when the alarm sounded.",
+          "No sooner the meeting had begun than the alarm sounded."
+        ],
+        "correct_index": 0,
+        "option_feedback_vi": [
+          "No sooner đi với than và đảo had trước chủ ngữ của sự kiện xảy ra trước.",
+          "Ghép no sooner với when là sai cặp liên từ.",
+          "Thiếu đảo had trước the meeting."
+        ],
+        "focus": "contextual_decision"
+      },
+      {
+        "id": "M19E-C1-02-CHECK-02",
+        "prompt_vi": "Tác giả chỉ muốn nói hai sự kiện theo thứ tự, KHÔNG có bằng chứng chúng diễn ra gần như ngay lập tức.",
+        "options_en": [
+          "Hardly had the lecture ended when the audience left.",
+          "No sooner had the lecture ended than the audience immediately left.",
+          "After the lecture ended, the audience left."
+        ],
+        "correct_index": 2,
+        "option_feedback_vi": [
+          "Hardly...when ám chỉ sự kiện sau xảy ra gần như ngay lập tức, vượt dữ kiện.",
+          "No sooner...than cộng immediately thêm thông tin tốc độ không có bằng chứng.",
+          "After nêu thứ tự mà không tự thêm sắc thái hai sự kiện nối sát."
+        ],
+        "focus": "register_and_meaning"
+      },
+      {
+        "id": "M19E-C1-02-CHECK-03",
+        "prompt_vi": "Đọc câu sai “No sooner the guests had arrived than the show began.”. Hãy chọn bản sửa đúng GIỮ NGUYÊN ý nghĩa và không thêm sự kiện.",
+        "options_en": [
+          "Hardly had we sat down than the phone rang.",
+          "No sooner had the guests arrived than the show began.",
+          "No sooner the guests had arrived than the show began."
+        ],
+        "correct_index": 1,
+        "option_feedback_vi": [
+          "Câu này thuộc một ví dụ khác và vẫn chứa lỗi: Hardly trong mẫu mục tiêu thường đi với when, không phải than.",
+          "Bản sửa giữ nguyên ý định ban đầu. No sooner ở đầu câu yêu cầu đảo had + chủ ngữ.",
+          "Câu này chính là lỗi được yêu cầu sửa. No sooner ở đầu câu yêu cầu đảo had + chủ ngữ."
+        ],
+        "focus": "guided_error_repair"
+      }
+    ],
+    "transfer": {
+      "prompt_vi": "Viết đoạn văn 3–5 câu: Write a three-sentence incident report using one sequencing inversion.. Hãy giải thích ít nhất một quyết định ngữ pháp về ý nghĩa, mức chắc chắn hoặc trọng tâm.",
+      "sample_en": "Hardly had the equipment been switched on when an error appeared on the display. The team shut the system down and recorded the message. An investigation is under way, but the initial cause remains uncertain.",
+      "rubric_vi": "Đối chiếu theo bốn tiêu chí: (1) đúng dữ kiện và người thực hiện; (2) cấu trúc C1 tạo hiệu quả rõ ràng thay vì trang trí; (3) độ chắc chắn phù hợp chứng cứ; (4) liên kết câu và văn phong tự nhiên. Đáp án mẫu chỉ là một khả năng hợp lệ."
+    },
+    "review_status": "DRAFT_TEACHER_REVIEW_REQUIRED",
+    "assessment_mode": "FORMATIVE_ONLY",
+    "source_lesson_id": "C1-02"
+  },
+  "C1-03": {
+    "code": "C1-03",
+    "title": "Conditional Inversion",
+    "context_vi": "Bản ghi nhớ hội đồng cấp vốn. Bạn đang biên tập đoạn văn cho người đọc chuyên môn; phải giữ nguyên dữ kiện và làm rõ mục đích diễn đạt.",
+    "goal_vi": "Đảo điều kiện Had/Were/Should không có if mang sắc thái trang trọng; không áp dụng máy móc cho mọi câu điều kiện.",
+    "contrast_cue_vi": "Hai cách viết có thể cùng đúng về hình thức nhưng khác trọng tâm, sắc thái hoặc tác động đến người đọc. Xác định mục đích thực trước khi lựa chọn.",
+    "checkpoints": [
+      {
+        "id": "M19E-C1-03-CHECK-01",
+        "prompt_vi": "Trên thực tế nhóm không kiểm tra tài liệu hôm qua. Chọn câu phản thực quá khứ trang trọng, không dùng if.",
+        "options_en": [
+          "Had the team check the records, it might notice the error.",
+          "Had if the team checked the records, it might have noticed the error.",
+          "Had the team checked the records, it might have noticed the error."
+        ],
+        "correct_index": 2,
+        "option_feedback_vi": [
+          "Thiếu V3 ở điều kiện; might notice chuyển kết quả sang hiện tại/tương lai.",
+          "Không dùng if cùng với dạng đảo Had.",
+          "Had + chủ ngữ + V3 tạo đảo điều kiện quá khứ; might have không nói kết quả chắc chắn."
+        ],
+        "focus": "contextual_decision"
+      },
+      {
+        "id": "M19E-C1-03-CHECK-02",
+        "prompt_vi": "Thông báo đang nói về một khả năng còn mở vào tuần tới, cần giọng trang trọng. Chọn câu không biến nó thành quá khứ giả định.",
+        "options_en": [
+          "Were further evidence emerged, we will revise the report.",
+          "Should further evidence emerge, we will revise the report.",
+          "Had further evidence emerged, we would have revised the report."
+        ],
+        "correct_index": 1,
+        "option_feedback_vi": [
+          "Were không đi trực tiếp với emerged theo khuôn này.",
+          "Should + S + V mô tả điều kiện có thể xảy ra trong tương lai một cách trang trọng.",
+          "Had + V3 nói về quá khứ đã khép lại, trái mốc tuần tới."
+        ],
+        "focus": "register_and_meaning"
+      },
+      {
+        "id": "M19E-C1-03-CHECK-03",
+        "prompt_vi": "Đọc câu sai “Had we leave earlier, we would have caught the train.”. Hãy chọn bản sửa đúng GIỮ NGUYÊN ý nghĩa và không thêm sự kiện.",
+        "options_en": [
+          "Had we left earlier, we would have caught the train.",
+          "Had we leave earlier, we would have caught the train.",
+          "Had the guard did not check the door, the files might have been stolen."
+        ],
+        "correct_index": 0,
+        "option_feedback_vi": [
+          "Bản sửa giữ nguyên ý định ban đầu. Had cần V3 (left), không phải nguyên mẫu leave.",
+          "Câu này chính là lỗi được yêu cầu sửa. Had cần V3 (left), không phải nguyên mẫu leave.",
+          "Câu này thuộc một ví dụ khác và vẫn chứa lỗi: Không kết hợp had với did not; phải dùng Had + S + not + V3."
+        ],
+        "focus": "guided_error_repair"
+      }
+    ],
+    "transfer": {
+      "prompt_vi": "Viết đoạn văn 3–5 câu: Write a formal conditional recommendation without using if.. Hãy giải thích ít nhất một quyết định ngữ pháp về ý nghĩa, mức chắc chắn hoặc trọng tâm.",
+      "sample_en": "Should additional funding become available, the team will expand the pilot to two further sites. Had the initial review identified these risks, the current delay might have been avoided. Both possibilities require separate consideration.",
+      "rubric_vi": "Đối chiếu theo bốn tiêu chí: (1) đúng dữ kiện và người thực hiện; (2) cấu trúc C1 tạo hiệu quả rõ ràng thay vì trang trí; (3) độ chắc chắn phù hợp chứng cứ; (4) liên kết câu và văn phong tự nhiên. Đáp án mẫu chỉ là một khả năng hợp lệ."
+    },
+    "review_status": "DRAFT_TEACHER_REVIEW_REQUIRED",
+    "assessment_mode": "FORMATIVE_ONLY",
+    "source_lesson_id": "C1-03"
+  },
+  "C1-04": {
+    "code": "C1-04",
+    "title": "So / Such Inversion",
+    "context_vi": "Báo cáo gián đoạn dịch vụ trong thành phố. Bạn đang biên tập đoạn văn cho người đọc chuyên môn; phải giữ nguyên dữ kiện và làm rõ mục đích diễn đạt.",
+    "goal_vi": "So/Such đảo ngữ tạo nhấn mạnh về mức độ và kết quả; thường thấy trong văn phong văn chương, nhận xét trang trọng.",
+    "contrast_cue_vi": "Hai cách viết có thể cùng đúng về hình thức nhưng khác trọng tâm, sắc thái hoặc tác động đến người đọc. Xác định mục đích thực trước khi lựa chọn.",
+    "checkpoints": [
+      {
+        "id": "M19E-C1-04-CHECK-01",
+        "prompt_vi": "Dịch vụ quá thiếu nhân lực đến mức phải ngừng nhận hồ sơ. Hãy nhấn mạnh mức độ bằng so-inversion.",
+        "options_en": [
+          "Such severe was the staff shortage that applications were suspended.",
+          "So severe was the staff shortage that applications were suspended.",
+          "So severe the staff shortage was that applications were suspended."
+        ],
+        "correct_index": 1,
+        "option_feedback_vi": [
+          "Such không dùng trực tiếp trước tính từ severe ở vị trí này.",
+          "So + adjective đứng đầu kéo be lên trước chủ ngữ; that chỉ hệ quả.",
+          "Thiếu đảo was theo sau tính từ đầu câu."
+        ],
+        "focus": "contextual_decision"
+      },
+      {
+        "id": "M19E-C1-04-CHECK-02",
+        "prompt_vi": "Nhóm đang viết hướng dẫn hành chính trung tính; muốn tránh văn phong quá kịch tính. Câu nào thích hợp?",
+        "options_en": [
+          "The shortage was so severe that the office reduced its opening hours.",
+          "So severe was the shortage that the office reduced its opening hours!",
+          "Such was so severe the shortage that opening hours fell."
+        ],
+        "correct_index": 0,
+        "option_feedback_vi": [
+          "Dạng so...that bình thường rõ ràng, không thêm giọng tu từ hay dấu cảm thán.",
+          "Có thể đúng ngữ pháp nhưng đảo ngữ và cảm thán quá mạnh cho hướng dẫn trung tính.",
+          "Trật tự such/so không đúng mẫu."
+        ],
+        "focus": "register_and_meaning"
+      },
+      {
+        "id": "M19E-C1-04-CHECK-03",
+        "prompt_vi": "Đọc câu sai “So serious the response was to the translation contract that the publication date was reconsidered.”. Hãy chọn bản sửa đúng GIỮ NGUYÊN ý nghĩa và không thêm sự kiện.",
+        "options_en": [
+          "So serious the response was to the translation contract that the publication date was reconsidered.",
+          "So quickly the agricultural research centre did revise the irrigation trial that the deadline had to be changed.",
+          "So serious was the response to the translation contract that the publication date was reconsidered."
+        ],
+        "correct_index": 2,
+        "option_feedback_vi": [
+          "Câu này chính là lỗi được yêu cầu sửa. Thành phần được thay không đúng với khuôn cần dùng. Khi So + tính từ đứng đầu, động từ be đảo lên trước chủ ngữ.",
+          "Câu này thuộc một ví dụ khác và vẫn chứa lỗi: Thành phần được thay không đúng với khuôn cần dùng. Trạng từ được đưa lên đầu khiến trợ động từ did đứng trước chủ ngữ; revise giữ nguyên mẫu.",
+          "Bản sửa giữ nguyên ý định ban đầu. Thành phần được thay không đúng với khuôn cần dùng. Khi So + tính từ đứng đầu, động từ be đảo lên trước chủ ngữ."
+        ],
+        "focus": "guided_error_repair"
+      }
+    ],
+    "transfer": {
+      "prompt_vi": "Viết đoạn văn 3–5 câu: Write a concise description with one degree inversion, then qualify its scope.. Hãy giải thích ít nhất một quyết định ngữ pháp về ý nghĩa, mức chắc chắn hoặc trọng tâm.",
+      "sample_en": "So limited was access to the eastern route that deliveries had to be redirected. The disruption lasted less than a day, however, and the western route remained open. It would therefore be misleading to describe the entire network as closed.",
+      "rubric_vi": "Đối chiếu theo bốn tiêu chí: (1) đúng dữ kiện và người thực hiện; (2) cấu trúc C1 tạo hiệu quả rõ ràng thay vì trang trí; (3) độ chắc chắn phù hợp chứng cứ; (4) liên kết câu và văn phong tự nhiên. Đáp án mẫu chỉ là một khả năng hợp lệ."
+    },
+    "review_status": "DRAFT_TEACHER_REVIEW_REQUIRED",
+    "assessment_mode": "FORMATIVE_ONLY",
+    "source_lesson_id": "C1-04"
+  },
+  "C1-05": {
+    "code": "C1-05",
+    "title": "It-cleft Sentences",
+    "context_vi": "Email làm rõ nguyên nhân trễ hạn. Bạn đang biên tập đoạn văn cho người đọc chuyên môn; phải giữ nguyên dữ kiện và làm rõ mục đích diễn đạt.",
+    "goal_vi": "It-cleft nhấn một thành tố cụ thể và thường gợi đối chiếu với lựa chọn khác.",
+    "contrast_cue_vi": "Hai cách viết có thể cùng đúng về hình thức nhưng khác trọng tâm, sắc thái hoặc tác động đến người đọc. Xác định mục đích thực trước khi lựa chọn.",
+    "checkpoints": [
+      {
+        "id": "M19E-C1-05-CHECK-01",
+        "prompt_vi": "Không phải chủ nhật mà chính THỨ HAI hội đồng thông qua kế hoạch. Chọn it-cleft nhấn thời điểm.",
+        "options_en": [
+          "It was on Monday that the board approved the plan.",
+          "It was the board that approved the plan on Monday.",
+          "It was on Monday when the board approve the plan."
+        ],
+        "correct_index": 0,
+        "option_feedback_vi": [
+          "On Monday được đưa vào tiêu điểm đối lập với chủ nhật; that-clause giữ thông tin nền.",
+          "Câu nhấn người thông qua, không giải quyết đối lập về thời gian.",
+          "Trong mẫu này dùng that và approve cần chia quá khứ approved."
+        ],
+        "focus": "contextual_decision"
+      },
+      {
+        "id": "M19E-C1-05-CHECK-02",
+        "prompt_vi": "Thông tin nền là đề xuất đã được sửa. Cần nhấn rằng CHÍNH BẢN NGÂN SÁCH mới được sửa, không phải kế hoạch thời gian.",
+        "options_en": [
+          "It was the team that revised the budget, not the timetable.",
+          "It was the budget that revised the team, not the timetable.",
+          "It was the budget that the team revised, not the timetable."
+        ],
+        "correct_index": 2,
+        "option_feedback_vi": [
+          "Focus team (người sửa) thay vì đối tượng được sửa, sai mục đích thông tin.",
+          "Đảo vai nghĩa khiến budget thành tác nhân sửa team.",
+          "Focus đặt ở budget và đối lập với timetable, đúng điều người viết cần sửa."
+        ],
+        "focus": "register_and_meaning"
+      },
+      {
+        "id": "M19E-C1-05-CHECK-03",
+        "prompt_vi": "Đọc câu sai “It the national statistics team was that presented the sampling methodology, not the outside consultants.”. Hãy chọn bản sửa đúng GIỮ NGUYÊN ý nghĩa và không thêm sự kiện.",
+        "options_en": [
+          "It were the internal controls review that the financial compliance division updated, rather than the original schedule.",
+          "It was the national statistics team that presented the sampling methodology, not the outside consultants.",
+          "It the national statistics team was that presented the sampling methodology, not the outside consultants."
+        ],
+        "correct_index": 1,
+        "option_feedback_vi": [
+          "Câu này thuộc một ví dụ khác và vẫn chứa lỗi: Thành phần được thay không đúng với khuôn cần dùng. Câu chẻ đưa tân ngữ vào vị trí nhấn mạnh sau It was.",
+          "Bản sửa giữ nguyên ý định ban đầu. Thành phần được thay không đúng với khuôn cần dùng. Câu chẻ nhấn mạnh chủ thể thực hiện hành động; phần sau that giữ mệnh đề.",
+          "Câu này chính là lỗi được yêu cầu sửa. Thành phần được thay không đúng với khuôn cần dùng. Câu chẻ nhấn mạnh chủ thể thực hiện hành động; phần sau that giữ mệnh đề."
+        ],
+        "focus": "guided_error_repair"
+      }
+    ],
+    "transfer": {
+      "prompt_vi": "Viết đoạn văn 3–5 câu: Write a clarification in which one cleft corrects a misunderstanding.. Hãy giải thích ít nhất một quyết định ngữ pháp về ý nghĩa, mức chắc chắn hoặc trọng tâm.",
+      "sample_en": "The decision was not made by the finance team. It was the safety panel that requested further testing. The schedule will be updated after the new results have been reviewed.",
+      "rubric_vi": "Đối chiếu theo bốn tiêu chí: (1) đúng dữ kiện và người thực hiện; (2) cấu trúc C1 tạo hiệu quả rõ ràng thay vì trang trí; (3) độ chắc chắn phù hợp chứng cứ; (4) liên kết câu và văn phong tự nhiên. Đáp án mẫu chỉ là một khả năng hợp lệ."
+    },
+    "review_status": "DRAFT_TEACHER_REVIEW_REQUIRED",
+    "assessment_mode": "FORMATIVE_ONLY",
+    "source_lesson_id": "C1-05"
+  },
+  "C1-06": {
+    "code": "C1-06",
+    "title": "Wh-cleft Sentences",
+    "context_vi": "Cuộc họp xác định ưu tiên của nhóm nghiên cứu. Bạn đang biên tập đoạn văn cho người đọc chuyên môn; phải giữ nguyên dữ kiện và làm rõ mục đích diễn đạt.",
+    "goal_vi": "Wh-cleft dùng What...is/was... để nêu điều quan trọng hoặc hiệu chỉnh trọng tâm lập luận.",
+    "contrast_cue_vi": "Hai cách viết có thể cùng đúng về hình thức nhưng khác trọng tâm, sắc thái hoặc tác động đến người đọc. Xác định mục đích thực trước khi lựa chọn.",
+    "checkpoints": [
+      {
+        "id": "M19E-C1-06-CHECK-01",
+        "prompt_vi": "Cuộc họp không cần thêm thời gian, mà cần bằng chứng độc lập. Chọn wh-cleft chỉnh trọng tâm đúng.",
+        "options_en": [
+          "What the panel need are independent evidence, not more time.",
+          "What does the panel need is independent evidence, not more time.",
+          "What the panel needs is independent evidence, not more time."
+        ],
+        "correct_index": 2,
+        "option_feedback_vi": [
+          "Panel số ít cần needs và evidence không đếm được nên không dùng are ở đây.",
+          "Mệnh đề what-cleft không đảo does như câu hỏi trực tiếp.",
+          "What + clause là chủ ngữ của is; câu làm nổi bật nhu cầu thực."
+        ],
+        "focus": "contextual_decision"
+      },
+      {
+        "id": "M19E-C1-06-CHECK-02",
+        "prompt_vi": "Kết luận báo cáo cần nhấn GIẢI PHÁP chứ không nhấn nhóm thực hiện. Chọn câu thích hợp.",
+        "options_en": [
+          "What would help most are a transparent review process.",
+          "What would help most is a transparent review process.",
+          "It was the auditors who carried out the review."
+        ],
+        "correct_index": 1,
+        "option_feedback_vi": [
+          "Chủ ngữ bổ ngữ là a ... process số ít, nên dùng is.",
+          "Wh-cleft tập trung vào giải pháp giúp ích, đúng nhu cầu báo cáo.",
+          "It-cleft này nhấn người làm, không nói giải pháp quan trọng."
+        ],
+        "focus": "register_and_meaning"
+      },
+      {
+        "id": "M19E-C1-06-CHECK-03",
+        "prompt_vi": "Đọc câu sai “Which the film festival committee needed was a second opinion on the selection criteria.”. Hãy chọn bản sửa đúng GIỮ NGUYÊN ý nghĩa và không thêm sự kiện.",
+        "options_en": [
+          "What the film festival committee needed was a second opinion on the selection criteria.",
+          "Which the film festival committee needed was a second opinion on the selection criteria.",
+          "That the public wanted was a clear account of the enforcement notice."
+        ],
+        "correct_index": 0,
+        "option_feedback_vi": [
+          "Bản sửa giữ nguyên ý định ban đầu. Thành phần được thay không đúng với khuôn cần dùng. What tạo mệnh đề danh ngữ làm chủ ngữ của was.",
+          "Câu này chính là lỗi được yêu cầu sửa. Thành phần được thay không đúng với khuôn cần dùng. What tạo mệnh đề danh ngữ làm chủ ngữ của was.",
+          "Câu này thuộc một ví dụ khác và vẫn chứa lỗi: Thành phần được thay không đúng với khuôn cần dùng. What đóng vai trò tân ngữ trong mệnh đề What the public wanted."
+        ],
+        "focus": "guided_error_repair"
+      }
+    ],
+    "transfer": {
+      "prompt_vi": "Viết đoạn văn 3–5 câu: Write a proposal clarification using two contrasting priorities.. Hãy giải thích ít nhất một quyết định ngữ pháp về ý nghĩa, mức chắc chắn hoặc trọng tâm.",
+      "sample_en": "What the team needs is a reliable way to measure participation, not another promotional campaign. We can develop a short survey first and test whether it captures meaningful changes. The findings should guide any larger investment.",
+      "rubric_vi": "Đối chiếu theo bốn tiêu chí: (1) đúng dữ kiện và người thực hiện; (2) cấu trúc C1 tạo hiệu quả rõ ràng thay vì trang trí; (3) độ chắc chắn phù hợp chứng cứ; (4) liên kết câu và văn phong tự nhiên. Đáp án mẫu chỉ là một khả năng hợp lệ."
+    },
+    "review_status": "DRAFT_TEACHER_REVIEW_REQUIRED",
+    "assessment_mode": "FORMATIVE_ONLY",
+    "source_lesson_id": "C1-06"
+  },
+  "C1-07": {
+    "code": "C1-07",
+    "title": "Fronting & Topicalisation",
+    "context_vi": "Bản cập nhật nhiều hạng mục công việc. Bạn đang biên tập đoạn văn cho người đọc chuyên môn; phải giữ nguyên dữ kiện và làm rõ mục đích diễn đạt.",
+    "goal_vi": "Fronting và topicalisation di chuyển thông tin ra đầu câu để nối mạch chủ đề, thường không đòi đảo trợ động từ.",
+    "contrast_cue_vi": "Hai cách viết có thể cùng đúng về hình thức nhưng khác trọng tâm, sắc thái hoặc tác động đến người đọc. Xác định mục đích thực trước khi lựa chọn.",
+    "checkpoints": [
+      {
+        "id": "M19E-C1-07-CHECK-01",
+        "prompt_vi": "Đoạn trước vừa bàn về chi phí. Câu tiếp theo muốn nối tiếp chủ đề CHI PHÍ mà không thay nội dung.",
+        "options_en": [
+          "We can address the staffing issue next month.",
+          "The cost issue, we can address next month.",
+          "The cost issue, can we address next month."
+        ],
+        "correct_index": 1,
+        "option_feedback_vi": [
+          "Đổi chi phí thành nhân sự, làm sai chủ đề đã có.",
+          "Fronted object đưa cost issue lên đầu để nối mạch; không phải đảo trợ động từ.",
+          "Đảo can tạo dạng câu hỏi, không phải fronting khẳng định."
+        ],
+        "focus": "contextual_decision"
+      },
+      {
+        "id": "M19E-C1-07-CHECK-02",
+        "prompt_vi": "Báo cáo ngắn, cần nêu rõ ưu tiên quan trọng mà vẫn giữ phong cách trang trọng.",
+        "options_en": [
+          "Of particular importance is the independent safety audit.",
+          "Of particular importance the independent safety audit is.",
+          "Of importance particularly the independent safety audit."
+        ],
+        "correct_index": 0,
+        "option_feedback_vi": [
+          "Cấu trúc locative/subject-complement fronting với be đảo phù hợp kiểu nêu ưu tiên trang trọng.",
+          "Trật tự ở dạng này không tự nhiên theo mẫu đảo be.",
+          "Cụm thiếu động từ chính và trạng từ đặt không hợp lý."
+        ],
+        "focus": "register_and_meaning"
+      },
+      {
+        "id": "M19E-C1-07-CHECK-03",
+        "prompt_vi": "Đọc câu sai “The revised syllabus, did the school curriculum department reviewed in detail before making a recommendation.”. Hãy chọn bản sửa đúng GIỮ NGUYÊN ý nghĩa và không thêm sự kiện.",
+        "options_en": [
+          "The revised syllabus, did the school curriculum department reviewed in detail before making a recommendation.",
+          "Of particular importance the site documentation was during the consultation process.",
+          "The revised syllabus, the school curriculum department reviewed in detail before making a recommendation."
+        ],
+        "correct_index": 2,
+        "option_feedback_vi": [
+          "Câu này chính là lỗi được yêu cầu sửa. Thành phần được thay không đúng với khuôn cần dùng. Tân ngữ được chuyển lên đầu để làm chủ đề; mệnh đề sau giữ S + V.",
+          "Câu này thuộc một ví dụ khác và vẫn chứa lỗi: Thành phần được thay không đúng với khuôn cần dùng. Cụm bổ ngữ đứng đầu có thể kéo theo đảo be + danh ngữ.",
+          "Bản sửa giữ nguyên ý định ban đầu. Thành phần được thay không đúng với khuôn cần dùng. Tân ngữ được chuyển lên đầu để làm chủ đề; mệnh đề sau giữ S + V."
+        ],
+        "focus": "guided_error_repair"
+      }
+    ],
+    "transfer": {
+      "prompt_vi": "Viết đoạn văn 3–5 câu: Write a coherent update contrasting what can and cannot be completed.. Hãy giải thích ít nhất một quyết định ngữ pháp về ý nghĩa, mức chắc chắn hoặc trọng tâm.",
+      "sample_en": "The survey design, we can finish this week. The participant interviews, however, will require ethical approval and may take longer. We should therefore distinguish work already under way from tasks still awaiting clearance.",
+      "rubric_vi": "Đối chiếu theo bốn tiêu chí: (1) đúng dữ kiện và người thực hiện; (2) cấu trúc C1 tạo hiệu quả rõ ràng thay vì trang trí; (3) độ chắc chắn phù hợp chứng cứ; (4) liên kết câu và văn phong tự nhiên. Đáp án mẫu chỉ là một khả năng hợp lệ."
+    },
+    "review_status": "DRAFT_TEACHER_REVIEW_REQUIRED",
+    "assessment_mode": "FORMATIVE_ONLY",
+    "source_lesson_id": "C1-07"
+  },
+  "C1-08": {
+    "code": "C1-08",
+    "title": "Advanced Ellipsis",
+    "context_vi": "Email phân công nhóm nghiên cứu. Bạn đang biên tập đoạn văn cho người đọc chuyên môn; phải giữ nguyên dữ kiện và làm rõ mục đích diễn đạt.",
+    "goal_vi": "Ellipsis lược thông tin đã suy ra được từ trước; cần bảo đảm mệnh đề sau vẫn giải thích được.",
+    "contrast_cue_vi": "Hai cách viết có thể cùng đúng về hình thức nhưng khác trọng tâm, sắc thái hoặc tác động đến người đọc. Xác định mục đích thực trước khi lựa chọn.",
+    "checkpoints": [
+      {
+        "id": "M19E-C1-08-CHECK-01",
+        "prompt_vi": "Maya will attend the hearing and Leo cũng sẽ tham dự. Hãy tránh lặp mà vẫn giữ thì tương lai.",
+        "options_en": [
+          "Maya will attend the hearing, and Leo will too.",
+          "Maya will attend the hearing, and Leo did too.",
+          "Maya will attend the hearing, and Leo does too."
+        ],
+        "correct_index": 0,
+        "option_feedback_vi": [
+          "Will too giữ đúng trợ động từ của hành động tương lai đã nhắc.",
+          "Did đổi sự kiện của Leo sang quá khứ.",
+          "Does đổi ý sang hành động hiện tại/thói quen."
+        ],
+        "focus": "contextual_decision"
+      },
+      {
+        "id": "M19E-C1-08-CHECK-02",
+        "prompt_vi": "Câu hướng dẫn nói một điều kiện được phép lược chủ ngữ và be; lựa chọn nào tự nhiên, không mơ hồ?",
+        "options_en": [
+          "If necessary, the inspectors will repeated the checks.",
+          "If necessity, the inspection repeats.",
+          "If necessary, the inspection will be repeated."
+        ],
+        "correct_index": 2,
+        "option_feedback_vi": [
+          "Sau will phải dùng repeat, không dùng repeated.",
+          "If necessity không phải cấu trúc rút gọn thông dụng.",
+          "If necessary lược it is khi tình huống rõ; vế chính có bị động will be repeated."
+        ],
+        "focus": "register_and_meaning"
+      },
+      {
+        "id": "M19E-C1-08-CHECK-03",
+        "prompt_vi": "Đọc câu sai “The pharmaceutical review board reviewed the labelling proposal; the external auditors did also reviewed .”. Hãy chọn bản sửa đúng GIỮ NGUYÊN ý nghĩa và không thêm sự kiện.",
+        "options_en": [
+          "If it necessary , the drought response plan will be revised before publication.",
+          "The pharmaceutical review board reviewed the labelling proposal; the external auditors did too.",
+          "The pharmaceutical review board reviewed the labelling proposal; the external auditors did also reviewed ."
+        ],
+        "correct_index": 1,
+        "option_feedback_vi": [
+          "Câu này thuộc một ví dụ khác và vẫn chứa lỗi: Thành phần được thay không đúng với khuôn cần dùng. If necessary là mệnh đề điều kiện rút gọn từ if it is necessary.",
+          "Bản sửa giữ nguyên ý định ban đầu. Thành phần được thay không đúng với khuôn cần dùng. Dùng did too để lược bỏ động từ reviewed cùng tân ngữ khỏi mệnh đề hai.",
+          "Câu này chính là lỗi được yêu cầu sửa. Thành phần được thay không đúng với khuôn cần dùng. Dùng did too để lược bỏ động từ reviewed cùng tân ngữ khỏi mệnh đề hai."
+        ],
+        "focus": "guided_error_repair"
+      }
+    ],
+    "transfer": {
+      "prompt_vi": "Viết đoạn văn 3–5 câu: Write a concise coordination message using safe ellipsis.. Hãy giải thích ít nhất một quyết định ngữ pháp về ý nghĩa, mức chắc chắn hoặc trọng tâm.",
+      "sample_en": "Linh has finished the coding checks, and Minh has too. The design team has not completed its review, but expects to by Friday. We will publish the results only after both groups confirm their findings.",
+      "rubric_vi": "Đối chiếu theo bốn tiêu chí: (1) đúng dữ kiện và người thực hiện; (2) cấu trúc C1 tạo hiệu quả rõ ràng thay vì trang trí; (3) độ chắc chắn phù hợp chứng cứ; (4) liên kết câu và văn phong tự nhiên. Đáp án mẫu chỉ là một khả năng hợp lệ."
+    },
+    "review_status": "DRAFT_TEACHER_REVIEW_REQUIRED",
+    "assessment_mode": "FORMATIVE_ONLY",
+    "source_lesson_id": "C1-08"
+  },
+  "C1-09": {
+    "code": "C1-09",
+    "title": "Advanced Substitution",
+    "context_vi": "Nhóm nghiên cứu mô tả quy trình xử lý phản hồi. Bạn đang biên tập đoạn văn cho người đọc chuyên môn; phải giữ nguyên dữ kiện và làm rõ mục đích diễn đạt.",
+    "goal_vi": "Substitution dùng do so, one/ones, so/not để tránh lặp; không phải mọi trợ động từ đều thay được mọi nhóm động từ.",
+    "contrast_cue_vi": "Hai cách viết có thể cùng đúng về hình thức nhưng khác trọng tâm, sắc thái hoặc tác động đến người đọc. Xác định mục đích thực trước khi lựa chọn.",
+    "checkpoints": [
+      {
+        "id": "M19E-C1-09-CHECK-01",
+        "prompt_vi": "Ban quản lý đã đánh giá kế hoạch năm ngoái và định đánh giá lại năm sau. Tránh lặp cụm động từ.",
+        "options_en": [
+          "The board reviewed the plan last year and intends to one again next year.",
+          "The board reviewed the plan last year and intends to so again next year.",
+          "The board reviewed the plan last year and intends to do so again next year."
+        ],
+        "correct_index": 2,
+        "option_feedback_vi": [
+          "One thay danh ngữ, không thay hành động.",
+          "So đơn lẻ không đứng sau to để thay cả verb phrase này.",
+          "Do so thay cho verb phrase reviewed the plan, giữ cùng hành động."
+        ],
+        "focus": "contextual_decision"
+      },
+      {
+        "id": "M19E-C1-09-CHECK-02",
+        "prompt_vi": "Phiên bản cũ đã bị thu hồi; ủy ban cần MỘT PHIÊN BẢN sửa đổi khác.",
+        "options_en": [
+          "The old version was withdrawn, so the committee requested a revised ones.",
+          "The old version was withdrawn, so the committee requested a revised one.",
+          "The old version was withdrawn, so the committee requested a revised do so."
+        ],
+        "correct_index": 1,
+        "option_feedback_vi": [
+          "Ones là số nhiều, không hợp a revised.",
+          "One thay danh từ đếm được số ít version.",
+          "Do so dùng thay động từ, không đi sau revised để thay danh từ."
+        ],
+        "focus": "register_and_meaning"
+      },
+      {
+        "id": "M19E-C1-09-CHECK-03",
+        "prompt_vi": "Đọc câu sai “The regional tourism board reviewed the visitor-management policy last year and plans to do it so again next year.”. Hãy chọn bản sửa đúng GIỮ NGUYÊN ý nghĩa và không thêm sự kiện.",
+        "options_en": [
+          "The regional tourism board reviewed the visitor-management policy last year and plans to do so again next year.",
+          "The regional tourism board reviewed the visitor-management policy last year and plans to do it so again next year.",
+          "The older version of the investigative outline was withdrawn, so the committee requested a revised ones ."
+        ],
+        "correct_index": 0,
+        "option_feedback_vi": [
+          "Bản sửa giữ nguyên ý định ban đầu. Thành phần được thay không đúng với khuôn cần dùng. Do so thay cho hành động review the document, không lặp toàn bộ cụm động từ.",
+          "Câu này chính là lỗi được yêu cầu sửa. Thành phần được thay không đúng với khuôn cần dùng. Do so thay cho hành động review the document, không lặp toàn bộ cụm động từ.",
+          "Câu này thuộc một ví dụ khác và vẫn chứa lỗi: Thành phần được thay không đúng với khuôn cần dùng. One thay thế cho version (danh từ đếm được số ít) đã nhắc."
+        ],
+        "focus": "guided_error_repair"
+      }
+    ],
+    "transfer": {
+      "prompt_vi": "Viết đoạn văn 3–5 câu: Write a brief report using do so and one without ambiguous references.. Hãy giải thích ít nhất một quyết định ngữ pháp về ý nghĩa, mức chắc chắn hoặc trọng tâm.",
+      "sample_en": "Several teams tested the new form, and our group did so as well. One form worked on desktop, whereas the other displayed errors on smaller screens. We therefore postponed the rollout until the interface could be corrected.",
+      "rubric_vi": "Đối chiếu theo bốn tiêu chí: (1) đúng dữ kiện và người thực hiện; (2) cấu trúc C1 tạo hiệu quả rõ ràng thay vì trang trí; (3) độ chắc chắn phù hợp chứng cứ; (4) liên kết câu và văn phong tự nhiên. Đáp án mẫu chỉ là một khả năng hợp lệ."
+    },
+    "review_status": "DRAFT_TEACHER_REVIEW_REQUIRED",
+    "assessment_mode": "FORMATIVE_ONLY",
+    "source_lesson_id": "C1-09"
+  },
+  "C1-10": {
+    "code": "C1-10",
+    "title": "Nominalisation",
+    "context_vi": "Báo cáo đánh giá một chính sách trường học. Bạn đang biên tập đoạn văn cho người đọc chuyên môn; phải giữ nguyên dữ kiện và làm rõ mục đích diễn đạt.",
+    "goal_vi": "Nominalisation làm ý tưởng trừu tượng và giúp nối lập luận nhưng có thể che tác nhân hành động.",
+    "contrast_cue_vi": "Hai cách viết có thể cùng đúng về hình thức nhưng khác trọng tâm, sắc thái hoặc tác động đến người đọc. Xác định mục đích thực trước khi lựa chọn.",
+    "checkpoints": [
+      {
+        "id": "M19E-C1-10-CHECK-01",
+        "prompt_vi": "Báo cáo chính sách cần danh hóa nhưng phải giữ rõ AI là người đánh giá.",
+        "options_en": [
+          "The evaluate of the policy identified two risks.",
+          "The committee’s evaluation of the policy identified two risks.",
+          "The evaluation of the policy identified two risks, and nobody knows who evaluated it."
+        ],
+        "correct_index": 1,
+        "option_feedback_vi": [
+          "Evaluate là động từ, không phải danh từ trong cấu trúc the ... of.",
+          "Committee’s evaluation giữ rõ tác nhân; evaluation là danh từ của evaluate.",
+          "Thêm tuyên bố không ai biết người đánh giá làm mất thông tin tác nhân."
+        ],
+        "focus": "contextual_decision"
+      },
+      {
+        "id": "M19E-C1-10-CHECK-02",
+        "prompt_vi": "Dữ liệu chỉ cho thấy nhóm đánh giá bản dự thảo; không cho biết kết quả tốt hay xấu.",
+        "options_en": [
+          "The team carried out an evaluation of the draft.",
+          "The team’s evaluation proved that the draft was ineffective.",
+          "An evaluation was carried out and the draft was rejected."
+        ],
+        "correct_index": 0,
+        "option_feedback_vi": [
+          "Danh hóa trung tính giữ sự kiện đã đánh giá nhưng không thêm kết luận.",
+          "Proved...ineffective thêm kết quả chưa có.",
+          "Was rejected thêm quyết định không có trong dữ liệu."
+        ],
+        "focus": "register_and_meaning"
+      },
+      {
+        "id": "M19E-C1-10-CHECK-03",
+        "prompt_vi": "Đọc câu sai “The formal analyse of the rescue coordination plan was completed at the harbour authority office.”. Hãy chọn bản sửa đúng GIỮ NGUYÊN ý nghĩa và không thêm sự kiện.",
+        "options_en": [
+          "The formal analyse of the rescue coordination plan was completed at the harbour authority office.",
+          "The formal evaluate of the procedural amendment was completed at the justice ministry.",
+          "The formal analysis of the rescue coordination plan was completed at the harbour authority office."
+        ],
+        "correct_index": 2,
+        "option_feedback_vi": [
+          "Câu này chính là lỗi được yêu cầu sửa. Thành phần được thay không đúng với khuôn cần dùng. Danh từ hóa động từ analyse thành analysis để làm trung tâm danh ngữ với The formal ... of.",
+          "Câu này thuộc một ví dụ khác và vẫn chứa lỗi: Thành phần được thay không đúng với khuôn cần dùng. Danh từ hóa động từ evaluate thành evaluation để làm trung tâm danh ngữ với The formal ... of.",
+          "Bản sửa giữ nguyên ý định ban đầu. Thành phần được thay không đúng với khuôn cần dùng. Danh từ hóa động từ analyse thành analysis để làm trung tâm danh ngữ với The formal ... of."
+        ],
+        "focus": "guided_error_repair"
+      }
+    ],
+    "transfer": {
+      "prompt_vi": "Viết đoạn văn 3–5 câu: Write a balanced paragraph using one nominalisation while retaining agency.. Hãy giải thích ít nhất một quyết định ngữ pháp về ý nghĩa, mức chắc chắn hoặc trọng tâm.",
+      "sample_en": "The school introduced a revised attendance policy in September. An evaluation of its first month showed fewer late arrivals, although the data came from only two classes. Teachers will review the policy again before recommending wider adoption.",
+      "rubric_vi": "Đối chiếu theo bốn tiêu chí: (1) đúng dữ kiện và người thực hiện; (2) cấu trúc C1 tạo hiệu quả rõ ràng thay vì trang trí; (3) độ chắc chắn phù hợp chứng cứ; (4) liên kết câu và văn phong tự nhiên. Đáp án mẫu chỉ là một khả năng hợp lệ."
+    },
+    "review_status": "DRAFT_TEACHER_REVIEW_REQUIRED",
+    "assessment_mode": "FORMATIVE_ONLY",
+    "source_lesson_id": "C1-10"
+  },
+  "C1-11": {
+    "code": "C1-11",
+    "title": "Complex Noun Phrases",
+    "context_vi": "Bản mô tả thiết bị dùng trong thí nghiệm. Bạn đang biên tập đoạn văn cho người đọc chuyên môn; phải giữ nguyên dữ kiện và làm rõ mục đích diễn đạt.",
+    "goal_vi": "Complex noun phrases nén nhiều thông tin vào danh ngữ; khi quá nhiều modifier, ranh giới ý nghĩa bị mơ hồ.",
+    "contrast_cue_vi": "Hai cách viết có thể cùng đúng về hình thức nhưng khác trọng tâm, sắc thái hoặc tác động đến người đọc. Xác định mục đích thực trước khi lựa chọn.",
+    "checkpoints": [
+      {
+        "id": "M19E-C1-11-CHECK-01",
+        "prompt_vi": "Câu gốc: báo cáo đã được bên ngoài kiểm toán và nhóm đã đọc nó. Chọn cách nén danh ngữ đúng.",
+        "options_en": [
+          "The team reviewed an independently audited report.",
+          "The team reviewed an independently auditing report.",
+          "The team reviewed an independent audited report."
+        ],
+        "correct_index": 0,
+        "option_feedback_vi": [
+          "Independently bổ nghĩa cho audited; audited mô tả report nhận hành động.",
+          "Auditing làm report trở thành chủ thể thực hiện audit.",
+          "Independent là tính từ nhưng cần trạng từ independently để bổ nghĩa cho audited."
+        ],
+        "focus": "contextual_decision"
+      },
+      {
+        "id": "M19E-C1-11-CHECK-02",
+        "prompt_vi": "Một danh ngữ quá dài khiến khó biết tài liệu nào đã được sửa. Chọn câu rõ nghĩa hơn.",
+        "options_en": [
+          "The committee reviewed the consultation-revised-post-plan assessment.",
+          "The committee reviewed the plan that revised the consultation.",
+          "The committee reviewed the plan that had been revised after the consultation."
+        ],
+        "correct_index": 2,
+        "option_feedback_vi": [
+          "Danh ngữ ghép quá nhiều thông tin, khó đọc và quan hệ không rõ.",
+          "Đổi plan thành tác nhân sửa consultation, sai nghĩa.",
+          "Mệnh đề quan hệ làm rõ plan được sửa sau consultation."
+        ],
+        "focus": "register_and_meaning"
+      },
+      {
+        "id": "M19E-C1-11-CHECK-03",
+        "prompt_vi": "Đọc câu sai “The committee circulated a revised carefully version of the quality assurance plan to every department.”. Hãy chọn bản sửa đúng GIỮ NGUYÊN ý nghĩa và không thêm sự kiện.",
+        "options_en": [
+          "The panel requested a detailed of assessment the collection schedule before making a final decision.",
+          "The committee circulated a carefully revised version of the quality assurance plan to every department.",
+          "The committee circulated a revised carefully version of the quality assurance plan to every department."
+        ],
+        "correct_index": 1,
+        "option_feedback_vi": [
+          "Câu này thuộc một ví dụ khác và vẫn chứa lỗi: Thành phần được thay không đúng với khuôn cần dùng. Đưa of-phrase sau danh từ assessment để làm rõ đối tượng được đánh giá.",
+          "Bản sửa giữ nguyên ý định ban đầu. Thành phần được thay không đúng với khuôn cần dùng. Trật tự tiền bổ nghĩa: carefully bổ nghĩa cho revised trước danh từ version.",
+          "Câu này chính là lỗi được yêu cầu sửa. Thành phần được thay không đúng với khuôn cần dùng. Trật tự tiền bổ nghĩa: carefully bổ nghĩa cho revised trước danh từ version."
+        ],
+        "focus": "guided_error_repair"
+      }
+    ],
+    "transfer": {
+      "prompt_vi": "Viết đoạn văn 3–5 câu: Describe a technical item with a compact noun phrase and a clarifying sentence.. Hãy giải thích ít nhất một quyết định ngữ pháp về ý nghĩa, mức chắc chắn hoặc trọng tâm.",
+      "sample_en": "The engineers tested a recently upgraded, temperature-sensitive sensor. The device performed reliably indoors but showed inconsistent readings outdoors. Further trials will determine whether the variation reflects calibration or environmental conditions.",
+      "rubric_vi": "Đối chiếu theo bốn tiêu chí: (1) đúng dữ kiện và người thực hiện; (2) cấu trúc C1 tạo hiệu quả rõ ràng thay vì trang trí; (3) độ chắc chắn phù hợp chứng cứ; (4) liên kết câu và văn phong tự nhiên. Đáp án mẫu chỉ là một khả năng hợp lệ."
+    },
+    "review_status": "DRAFT_TEACHER_REVIEW_REQUIRED",
+    "assessment_mode": "FORMATIVE_ONLY",
+    "source_lesson_id": "C1-11"
+  },
+  "C1-12": {
+    "code": "C1-12",
+    "title": "Apposition",
+    "context_vi": "Thông báo bổ nhiệm điều phối viên mới. Bạn đang biên tập đoạn văn cho người đọc chuyên môn; phải giữ nguyên dữ kiện và làm rõ mục đích diễn đạt.",
+    "goal_vi": "Apposition bổ sung cách gọi hoặc diễn giải cùng một đối tượng; dấu phẩy/gạch ngang tạo khác biệt về nhịp và tính thiết yếu.",
+    "contrast_cue_vi": "Hai cách viết có thể cùng đúng về hình thức nhưng khác trọng tâm, sắc thái hoặc tác động đến người đọc. Xác định mục đích thực trước khi lựa chọn.",
+    "checkpoints": [
+      {
+        "id": "M19E-C1-12-CHECK-01",
+        "prompt_vi": "Trong bản tin, Maria Chen là giám đốc duy nhất và tên chỉ để bổ sung thông tin. Chọn cách đặt cụm đồng vị.",
+        "options_en": [
+          "The director Maria Chen approved, the draft.",
+          "The director, Maria Chen approved the draft.",
+          "The director, Maria Chen, approved the draft."
+        ],
+        "correct_index": 2,
+        "option_feedback_vi": [
+          "Dấu phẩy cắt sai vị trí giữa động từ approved và tân ngữ.",
+          "Chỉ có dấu phẩy mở mà không có dấu phẩy đóng cụm đồng vị.",
+          "Tên được ngăn cách bởi hai dấu phẩy khi là thông tin không thiết yếu."
+        ],
+        "focus": "contextual_decision"
+      },
+      {
+        "id": "M19E-C1-12-CHECK-02",
+        "prompt_vi": "Tác giả muốn giải thích một lịch trình chính là chủ đề tranh luận; dùng cặp gạch ngang hoàn chỉnh.",
+        "options_en": [
+          "The contingency plan the central issue—at the hearing—was delayed.",
+          "The contingency plan—the central issue at the hearing—was delayed.",
+          "The contingency plan—the central issue at the hearing was delayed."
+        ],
+        "correct_index": 1,
+        "option_feedback_vi": [
+          "Dấu gạch ngang phân tách sai thành phần giải thích.",
+          "Hai dấu gạch ngang đóng/mở thành phần đồng vị, giữ the plan là chủ ngữ was delayed.",
+          "Thiếu dấu gạch ngang đóng, dễ làm sai cấu trúc câu."
+        ],
+        "focus": "register_and_meaning"
+      },
+      {
+        "id": "M19E-C1-12-CHECK-03",
+        "prompt_vi": "Đọc câu sai “The wildlife rehabilitation centre, a a non-profit conservation facility reviewed the release protocol before publication.”. Hãy chọn bản sửa đúng GIỮ NGUYÊN ý nghĩa và không thêm sự kiện.",
+        "options_en": [
+          "The wildlife rehabilitation centre, a non-profit conservation facility, reviewed the release protocol before publication.",
+          "The wildlife rehabilitation centre, a a non-profit conservation facility reviewed the release protocol before publication.",
+          "The contingency schedule— was the main subject of the hearing —was discussed for several hours."
+        ],
+        "correct_index": 0,
+        "option_feedback_vi": [
+          "Bản sửa giữ nguyên ý định ban đầu. Thành phần được thay không đúng với khuôn cần dùng. Cụm đồng vị không xác định thêm thông tin nên được ngăn bằng hai dấu phẩy.",
+          "Câu này chính là lỗi được yêu cầu sửa. Thành phần được thay không đúng với khuôn cần dùng. Cụm đồng vị không xác định thêm thông tin nên được ngăn bằng hai dấu phẩy.",
+          "Câu này thuộc một ví dụ khác và vẫn chứa lỗi: Thành phần được thay không đúng với khuôn cần dùng. Dấu gạch ngang đôi bao cụm đồng vị giải thích thêm."
+        ],
+        "focus": "guided_error_repair"
+      }
+    ],
+    "transfer": {
+      "prompt_vi": "Viết đoạn văn 3–5 câu: Write a short announcement with an appositive and an unambiguous role.. Hãy giải thích ít nhất một quyết định ngữ pháp về ý nghĩa, mức chắc chắn hoặc trọng tâm.",
+      "sample_en": "Our new coordinator, Dr Helen Moore, will lead the community survey. She has previously managed projects involving several schools. The first planning meeting is scheduled for Monday.",
+      "rubric_vi": "Đối chiếu theo bốn tiêu chí: (1) đúng dữ kiện và người thực hiện; (2) cấu trúc C1 tạo hiệu quả rõ ràng thay vì trang trí; (3) độ chắc chắn phù hợp chứng cứ; (4) liên kết câu và văn phong tự nhiên. Đáp án mẫu chỉ là một khả năng hợp lệ."
+    },
+    "review_status": "DRAFT_TEACHER_REVIEW_REQUIRED",
+    "assessment_mode": "FORMATIVE_ONLY",
+    "source_lesson_id": "C1-12"
+  },
+  "C1-13": {
+    "code": "C1-13",
+    "title": "Mandative Subjunctive",
+    "context_vi": "Biên bản hội đồng đánh giá an toàn. Bạn đang biên tập đoạn văn cho người đọc chuyên môn; phải giữ nguyên dữ kiện và làm rõ mục đích diễn đạt.",
+    "goal_vi": "Mandative subjunctive diễn đạt yêu cầu, khuyến nghị, đề xuất trong văn phong trang trọng; biến thể should và indicative tùy phương ngữ.",
+    "contrast_cue_vi": "Hai cách viết có thể cùng đúng về hình thức nhưng khác trọng tâm, sắc thái hoặc tác động đến người đọc. Xác định mục đích thực trước khi lựa chọn.",
+    "checkpoints": [
+      {
+        "id": "M19E-C1-13-CHECK-01",
+        "prompt_vi": "Ủy ban đề nghị cô ấy tham dự phiên điều trần. Chọn mandative subjunctive trang trọng.",
+        "options_en": [
+          "The board recommended that she attending the hearing.",
+          "The board recommended that she attend the hearing.",
+          "The board recommended that she attends the hearing."
+        ],
+        "correct_index": 1,
+        "option_feedback_vi": [
+          "Attending thiếu động từ chia theo cấu trúc that-clause này.",
+          "Sau recommend that dùng base form attend trong mandative subjunctive.",
+          "Attends có thể xuất hiện trong một số cách dùng indicative tùy biến thể ngôn ngữ, nhưng không phải mandative subjunctive đang được yêu cầu."
+        ],
+        "focus": "contextual_decision"
+      },
+      {
+        "id": "M19E-C1-13-CHECK-02",
+        "prompt_vi": "Bản dự thảo yêu cầu biểu mẫu phải được xem xét, không khẳng định nó đã được xem xét.",
+        "options_en": [
+          "The policy requires that the form be reviewed before submission.",
+          "The policy confirms that the form has been reviewed before submission.",
+          "The policy requires that the form is already reviewed before submission."
+        ],
+        "correct_index": 0,
+        "option_feedback_vi": [
+          "Be reviewed thể hiện yêu cầu ở dạng bị động, không giả định việc đã xảy ra.",
+          "Confirms...has been thay yêu cầu bằng một sự kiện hoàn tất.",
+          "Is already reviewed chuyển trọng tâm thành trạng thái đã có và không diễn đạt mandative như mục tiêu."
+        ],
+        "focus": "register_and_meaning"
+      },
+      {
+        "id": "M19E-C1-13-CHECK-03",
+        "prompt_vi": "Đọc câu sai “The ethics board recommended that the evening event plan is reviewed before implementation.”. Hãy chọn bản sửa đúng GIỮ NGUYÊN ý nghĩa và không thêm sự kiện.",
+        "options_en": [
+          "The ethics board recommended that the evening event plan is reviewed before implementation.",
+          "The director insisted that the historical records office submits the digitisation plan by Friday.",
+          "The ethics board recommended that the evening event plan be reviewed before implementation."
+        ],
+        "correct_index": 2,
+        "option_feedback_vi": [
+          "Câu này chính là lỗi được yêu cầu sửa. Thành phần được thay không đúng với khuôn cần dùng. Trong mandative subjunctive dùng be nguyên mẫu sau that, không phụ thuộc số ngôi.",
+          "Câu này thuộc một ví dụ khác và vẫn chứa lỗi: Thành phần được thay không đúng với khuôn cần dùng. Insist với nghĩa yêu cầu thực hiện dùng động từ nguyên mẫu submit trong cấu trúc giả định.",
+          "Bản sửa giữ nguyên ý định ban đầu. Thành phần được thay không đúng với khuôn cần dùng. Trong mandative subjunctive dùng be nguyên mẫu sau that, không phụ thuộc số ngôi."
+        ],
+        "focus": "guided_error_repair"
+      }
+    ],
+    "transfer": {
+      "prompt_vi": "Viết đoạn văn 3–5 câu: Write a formal recommendation with a mandative construction.. Hãy giải thích ít nhất một quyết định ngữ pháp về ý nghĩa, mức chắc chắn hoặc trọng tâm.",
+      "sample_en": "The committee recommended that each site submit a revised safety checklist. It also requested that the findings be reviewed by an independent specialist. Implementation will begin only after the review is complete.",
+      "rubric_vi": "Đối chiếu theo bốn tiêu chí: (1) đúng dữ kiện và người thực hiện; (2) cấu trúc C1 tạo hiệu quả rõ ràng thay vì trang trí; (3) độ chắc chắn phù hợp chứng cứ; (4) liên kết câu và văn phong tự nhiên. Đáp án mẫu chỉ là một khả năng hợp lệ."
+    },
+    "review_status": "DRAFT_TEACHER_REVIEW_REQUIRED",
+    "assessment_mode": "FORMATIVE_ONLY",
+    "source_lesson_id": "C1-13"
+  },
+  "C1-14": {
+    "code": "C1-14",
+    "title": "Counterfactual Subjunctive",
+    "context_vi": "Nhận xét về một quyết định quản trị. Bạn đang biên tập đoạn văn cho người đọc chuyên môn; phải giữ nguyên dữ kiện và làm rõ mục đích diễn đạt.",
+    "goal_vi": "Counterfactual subjunctive tạo khoảng cách với thực tế, thường dùng were trong phong cách trang trọng.",
+    "contrast_cue_vi": "Hai cách viết có thể cùng đúng về hình thức nhưng khác trọng tâm, sắc thái hoặc tác động đến người đọc. Xác định mục đích thực trước khi lựa chọn.",
+    "checkpoints": [
+      {
+        "id": "M19E-C1-14-CHECK-01",
+        "prompt_vi": "Người viết không phải điều phối viên nhưng đang giả định nếu mình là điều phối viên.",
+        "options_en": [
+          "If I were the coordinator, I would request another review.",
+          "If I am the coordinator, I would request another review.",
+          "If I had been the coordinator, I would request another review yesterday."
+        ],
+        "correct_index": 0,
+        "option_feedback_vi": [
+          "Were + would diễn đạt giả định trái thực ở hiện tại theo văn phong trang trọng.",
+          "Am đặt điều kiện có thật nhưng kết quả would giả định, lệch mục đích.",
+          "Had been nói quá khứ trong khi hệ quả would request đặt hiện tại kèm yesterday."
+        ],
+        "focus": "contextual_decision"
+      },
+      {
+        "id": "M19E-C1-14-CHECK-02",
+        "prompt_vi": "Đây là lời mong ước về trạng thái hiện tại của báo cáo, không phải lịch sử đã thay đổi.",
+        "options_en": [
+          "I wish the final report had been less ambiguous last year.",
+          "I wish the final report will be less ambiguous.",
+          "I wish the final report were less ambiguous."
+        ],
+        "correct_index": 2,
+        "option_feedback_vi": [
+          "Had been dùng cho sự hối tiếc về quá khứ, không đúng hiện tại đang nói.",
+          "Wish will không phải mẫu thông dụng cho tình huống này.",
+          "Wish + were diễn tả mong trạng thái hiện tại khác đi."
+        ],
+        "focus": "register_and_meaning"
+      },
+      {
+        "id": "M19E-C1-14-CHECK-03",
+        "prompt_vi": "Đọc câu sai “If the workplace mediation service is more transparent about the confidential findings, the public might respond more positively.”. Hãy chọn bản sửa đúng GIỮ NGUYÊN ý nghĩa và không thêm sự kiện.",
+        "options_en": [
+          "I wish the final recommendation is less ambiguous about the patient information sheet.",
+          "If the workplace mediation service were more transparent about the confidential findings, the public might respond more positively.",
+          "If the workplace mediation service is more transparent about the confidential findings, the public might respond more positively."
+        ],
+        "correct_index": 1,
+        "option_feedback_vi": [
+          "Câu này thuộc một ví dụ khác và vẫn chứa lỗi: Thành phần được thay không đúng với khuôn cần dùng. Wish về hiện tại trái thực tế dùng were trong văn phong trang trọng.",
+          "Bản sửa giữ nguyên ý định ban đầu. Thành phần được thay không đúng với khuôn cần dùng. Were được ưu tiên trong giả định trái thực tế, kể cả chủ ngữ số ít/tập thể.",
+          "Câu này chính là lỗi được yêu cầu sửa. Thành phần được thay không đúng với khuôn cần dùng. Were được ưu tiên trong giả định trái thực tế, kể cả chủ ngữ số ít/tập thể."
+        ],
+        "focus": "guided_error_repair"
+      }
+    ],
+    "transfer": {
+      "prompt_vi": "Viết đoạn văn 3–5 câu: Write a reflective paragraph that clearly distinguishes hypothetical advice from fact.. Hãy giải thích ít nhất một quyết định ngữ pháp về ý nghĩa, mức chắc chắn hoặc trọng tâm.",
+      "sample_en": "If I were responsible for the review, I would invite a second assessor. That does not mean the original decision was necessarily wrong; independent scrutiny could simply improve confidence in the result. The final recommendation should rest on the available evidence.",
+      "rubric_vi": "Đối chiếu theo bốn tiêu chí: (1) đúng dữ kiện và người thực hiện; (2) cấu trúc C1 tạo hiệu quả rõ ràng thay vì trang trí; (3) độ chắc chắn phù hợp chứng cứ; (4) liên kết câu và văn phong tự nhiên. Đáp án mẫu chỉ là một khả năng hợp lệ."
+    },
+    "review_status": "DRAFT_TEACHER_REVIEW_REQUIRED",
+    "assessment_mode": "FORMATIVE_ONLY",
+    "source_lesson_id": "C1-14"
+  },
+  "C1-15": {
+    "code": "C1-15",
+    "title": "Advanced Modality",
+    "context_vi": "Báo cáo sơ bộ về kết quả thử nghiệm. Bạn đang biên tập đoạn văn cho người đọc chuyên môn; phải giữ nguyên dữ kiện và làm rõ mục đích diễn đạt.",
+    "goal_vi": "Advanced modality cho phép điều chỉnh độ chắc chắn, đánh giá và mức độ kết luận.",
+    "contrast_cue_vi": "Hai cách viết có thể cùng đúng về hình thức nhưng khác trọng tâm, sắc thái hoặc tác động đến người đọc. Xác định mục đích thực trước khi lựa chọn.",
+    "checkpoints": [
+      {
+        "id": "M19E-C1-15-CHECK-01",
+        "prompt_vi": "Dữ liệu mới chỉ là dấu hiệu gián tiếp; nhóm cần nêu một khả năng, không khẳng định chắc chắn.",
+        "options_en": [
+          "The figures prove a change in demand.",
+          "The figures must indicate a change in demand.",
+          "The figures may indicate a change in demand."
+        ],
+        "correct_index": 2,
+        "option_feedback_vi": [
+          "Prove đưa ra mức độ chắc chắn quá cao.",
+          "Must indicate suy luận gần như bắt buộc, vượt bằng chứng.",
+          "May điều chỉnh mức độ chắc chắn tương xứng với dữ liệu gián tiếp."
+        ],
+        "focus": "contextual_decision"
+      },
+      {
+        "id": "M19E-C1-15-CHECK-02",
+        "prompt_vi": "Người nghiên cứu suy luận về một sự kiện đã xảy ra, nhưng chứng cứ chưa đủ kết luận.",
+        "options_en": [
+          "The samples might contaminate the test tomorrow.",
+          "The samples might have been contaminated before testing.",
+          "The samples were certainly contaminated before testing."
+        ],
+        "correct_index": 1,
+        "option_feedback_vi": [
+          "Might contaminate thay mốc sang tương lai và chuyển vai tác nhân.",
+          "Might have been + V3 cho khả năng bị động trong quá khứ.",
+          "Certainly khẳng định vượt quá bằng chứng."
+        ],
+        "focus": "register_and_meaning"
+      },
+      {
+        "id": "M19E-C1-15-CHECK-03",
+        "prompt_vi": "Đọc câu sai “Given the latest evidence, the coastal research team may to well revise the flood-risk assessment before the vote.”. Hãy chọn bản sửa đúng GIỮ NGUYÊN ý nghĩa và không thêm sự kiện.",
+        "options_en": [
+          "Given the latest evidence, the coastal research team may well revise the flood-risk assessment before the vote.",
+          "Given the latest evidence, the coastal research team may to well revise the flood-risk assessment before the vote.",
+          "In exceptional circumstances, the exhibition schedule might conceivably to be withdrawn before the hearing."
+        ],
+        "correct_index": 0,
+        "option_feedback_vi": [
+          "Bản sửa giữ nguyên ý định ban đầu. Thành phần được thay không đúng với khuôn cần dùng. May well diễn đạt khả năng tương đối đáng kể; theo sau là động từ nguyên mẫu revise.",
+          "Câu này chính là lỗi được yêu cầu sửa. Thành phần được thay không đúng với khuôn cần dùng. May well diễn đạt khả năng tương đối đáng kể; theo sau là động từ nguyên mẫu revise.",
+          "Câu này thuộc một ví dụ khác và vẫn chứa lỗi: Thành phần được thay không đúng với khuôn cần dùng. Might conceivably diễn đạt khả năng xa nhưng vẫn có thể xảy ra."
+        ],
+        "focus": "guided_error_repair"
+      }
+    ],
+    "transfer": {
+      "prompt_vi": "Viết đoạn văn 3–5 câu: Write a tentative interpretation of incomplete evidence.. Hãy giải thích ít nhất một quyết định ngữ pháp về ý nghĩa, mức chắc chắn hoặc trọng tâm.",
+      "sample_en": "The early results may well indicate a modest improvement in retention. However, the trial involved only one group and did not control for previous experience. It would be premature to claim that the intervention caused the change.",
+      "rubric_vi": "Đối chiếu theo bốn tiêu chí: (1) đúng dữ kiện và người thực hiện; (2) cấu trúc C1 tạo hiệu quả rõ ràng thay vì trang trí; (3) độ chắc chắn phù hợp chứng cứ; (4) liên kết câu và văn phong tự nhiên. Đáp án mẫu chỉ là một khả năng hợp lệ."
+    },
+    "review_status": "DRAFT_TEACHER_REVIEW_REQUIRED",
+    "assessment_mode": "FORMATIVE_ONLY",
+    "source_lesson_id": "C1-15"
+  },
+  "C1-16": {
+    "code": "C1-16",
+    "title": "Counterfactual Modals",
+    "context_vi": "Biên bản đánh giá một cảnh báo sự cố. Bạn đang biên tập đoạn văn cho người đọc chuyên môn; phải giữ nguyên dữ kiện và làm rõ mục đích diễn đạt.",
+    "goal_vi": "Counterfactual modals thể hiện khả năng, đánh giá hoặc kết quả giả định trái thực trong quá khứ; would/could/might không đồng nghĩa.",
+    "contrast_cue_vi": "Hai cách viết có thể cùng đúng về hình thức nhưng khác trọng tâm, sắc thái hoặc tác động đến người đọc. Xác định mục đích thực trước khi lựa chọn.",
+    "checkpoints": [
+      {
+        "id": "M19E-C1-16-CHECK-01",
+        "prompt_vi": "Cuộc họp đã kết thúc trước khi tài liệu được gửi; muốn diễn đạt trách nhiệm đáng lẽ đã làm mà không làm.",
+        "options_en": [
+          "The documents should have sent before the meeting.",
+          "The documents should have been sent before the meeting.",
+          "The documents should be sent before the meeting yesterday."
+        ],
+        "correct_index": 1,
+        "option_feedback_vi": [
+          "Thiếu been khiến documents thành chủ thể tự gửi.",
+          "Should have been + V3 là nhận xét về nghĩa vụ bị động đã không được đáp ứng ở quá khứ.",
+          "Should be nói lời khuyên hiện tại, không thể gắn tự nhiên với yesterday."
+        ],
+        "focus": "contextual_decision"
+      },
+      {
+        "id": "M19E-C1-16-CHECK-02",
+        "prompt_vi": "Chúng ta không biết chắc vì sao hồ sơ bị thất lạc. Chọn câu suy đoán quá khứ không khẳng định chắc chắn.",
+        "options_en": [
+          "The folder could have been misplaced during the transfer.",
+          "The folder must have been stolen by the courier.",
+          "The folder should be misplacing during the transfer."
+        ],
+        "correct_index": 0,
+        "option_feedback_vi": [
+          "Could have been + V3 giữ giả thuyết mở về sự việc đã qua.",
+          "Must have been stolen và gán tác nhân courier làm tăng mức độ chắc chắn không có bằng chứng.",
+          "Should be misplacing không diễn đạt suy đoán bị động quá khứ."
+        ],
+        "focus": "register_and_meaning"
+      },
+      {
+        "id": "M19E-C1-16-CHECK-03",
+        "prompt_vi": "Đọc câu sai “The chair confirmed that without additional evidence, the curriculum team will have rejected the assessment rubric.”. Hãy chọn bản sửa đúng GIỮ NGUYÊN ý nghĩa và không thêm sự kiện.",
+        "options_en": [
+          "The chair confirmed that without additional evidence, the curriculum team will have rejected the assessment rubric.",
+          "If the deadline had been extended, the safety commission could revise the inspection report more thoroughly.",
+          "The chair confirmed that without additional evidence, the curriculum team would have rejected the assessment rubric."
+        ],
+        "correct_index": 2,
+        "option_feedback_vi": [
+          "Câu này chính là lỗi được yêu cầu sửa. Không phù hợp với mẫu without + noun, would have + V3 trong câu này. Cần dùng «would have rejected», không phải «will have rejected». Would have + V3 diễn tả hệ quả trái với điều đã xảy ra trong quá khứ.",
+          "Câu này thuộc một ví dụ khác và vẫn chứa lỗi: Không phù hợp với mẫu If + past perfect, could have + V3 trong câu này. Cần dùng «could have revised», không phải «could revise». Could have + V3 nói một khả năng đã không được thực hiện.",
+          "Bản sửa giữ nguyên ý định ban đầu. Không phù hợp với mẫu without + noun, would have + V3 trong câu này. Cần dùng «would have rejected», không phải «will have rejected». Would have + V3 diễn tả hệ quả trái với điều đã xảy ra trong quá khứ."
+        ],
+        "focus": "guided_error_repair"
+      }
+    ],
+    "transfer": {
+      "prompt_vi": "Viết đoạn văn 3–5 câu: Write a non-accusatory retrospective using two counterfactual modal strengths.. Hãy giải thích ít nhất một quyết định ngữ pháp về ý nghĩa, mức chắc chắn hoặc trọng tâm.",
+      "sample_en": "Without the automated alert, the team might have overlooked the unusual readings. Earlier maintenance could have reduced the risk, although the cause has not been confirmed. A further inspection is needed before responsibility can be assigned.",
+      "rubric_vi": "Đối chiếu theo bốn tiêu chí: (1) đúng dữ kiện và người thực hiện; (2) cấu trúc C1 tạo hiệu quả rõ ràng thay vì trang trí; (3) độ chắc chắn phù hợp chứng cứ; (4) liên kết câu và văn phong tự nhiên. Đáp án mẫu chỉ là một khả năng hợp lệ."
+    },
+    "review_status": "DRAFT_TEACHER_REVIEW_REQUIRED",
+    "assessment_mode": "FORMATIVE_ONLY",
+    "source_lesson_id": "C1-16"
+  },
+  "C1-17": {
+    "code": "C1-17",
+    "title": "Advanced Non-finite Clauses",
+    "context_vi": "Báo cáo kiểm định và công bố kết quả. Bạn đang biên tập đoạn văn cho người đọc chuyên môn; phải giữ nguyên dữ kiện và làm rõ mục đích diễn đạt.",
+    "goal_vi": "Advanced non-finite clauses nén quan hệ thời gian, nguyên nhân hoặc mục đích; người đọc phải biết chủ ngữ ngầm là ai.",
+    "contrast_cue_vi": "Hai cách viết có thể cùng đúng về hình thức nhưng khác trọng tâm, sắc thái hoặc tác động đến người đọc. Xác định mục đích thực trước khi lựa chọn.",
+    "checkpoints": [
+      {
+        "id": "M19E-C1-17-CHECK-01",
+        "prompt_vi": "Sau khi xem xong dữ liệu, nhà nghiên cứu mới công bố kết luận. Chọn cụm phi hữu hạn rõ thời gian và đúng chủ ngữ.",
+        "options_en": [
+          "Having examined the data, the researcher published her findings.",
+          "Having examined the data, the findings were published by the researcher.",
+          "Examined the data, the researcher published her findings."
+        ],
+        "correct_index": 0,
+        "option_feedback_vi": [
+          "Having + V3 cho hành động hoàn tất trước; researcher là người đã xem dữ liệu.",
+          "Cụm mở đầu trở thành dangling vì findings không thể tự examined data.",
+          "Thiếu having, examined không hoạt động như perfect participle chỉ thứ tự thời gian."
+        ],
+        "focus": "contextual_decision"
+      },
+      {
+        "id": "M19E-C1-17-CHECK-02",
+        "prompt_vi": "Trong một báo cáo, tài liệu đã được kiểm chứng trước khi nhóm sử dụng. Chọn câu giữ đúng thể bị động.",
+        "options_en": [
+          "Having verified, the documents were used in the analysis.",
+          "Having been verifying, the documents were used in the analysis.",
+          "Having been verified, the documents were used in the analysis."
+        ],
+        "correct_index": 2,
+        "option_feedback_vi": [
+          "Having verified khiến documents thành chủ thể đã kiểm chứng thứ khác.",
+          "Been verifying không tạo dạng perfect passive hoàn tất mong muốn.",
+          "Having been verified nói documents nhận hành động kiểm chứng trước khi được sử dụng."
+        ],
+        "focus": "register_and_meaning"
+      },
+      {
+        "id": "M19E-C1-17-CHECK-03",
+        "prompt_vi": "Đọc câu sai “Having review the air-quality standard, the environment agency issued a recommendation.”. Hãy chọn bản sửa đúng GIỮ NGUYÊN ý nghĩa và không thêm sự kiện.",
+        "options_en": [
+          "Not wished to delay publication, the journalism network revised the source-protection policy immediately.",
+          "Having reviewed the air-quality standard, the environment agency issued a recommendation.",
+          "Having review the air-quality standard, the environment agency issued a recommendation."
+        ],
+        "correct_index": 1,
+        "option_feedback_vi": [
+          "Câu này thuộc một ví dụ khác và vẫn chứa lỗi: Không phù hợp với mẫu Not + V-ing, main clause trong câu này. Cần dùng «Not wishing», không phải «Not wished». Not wishing là mệnh đề phân từ chủ động phủ định cùng chủ thể với mệnh đề chính.",
+          "Bản sửa giữ nguyên ý định ban đầu. Không phù hợp với mẫu Having + V3, main clause trong câu này. Cần dùng «Having reviewed», không phải «Having review». Having reviewed nhấn mạnh việc xem xét xong trước khi đưa khuyến nghị.",
+          "Câu này chính là lỗi được yêu cầu sửa. Không phù hợp với mẫu Having + V3, main clause trong câu này. Cần dùng «Having reviewed», không phải «Having review». Having reviewed nhấn mạnh việc xem xét xong trước khi đưa khuyến nghị."
+        ],
+        "focus": "guided_error_repair"
+      }
+    ],
+    "transfer": {
+      "prompt_vi": "Viết đoạn văn 3–5 câu: Write a sequence of research actions using one non-finite clause.. Hãy giải thích ít nhất một quyết định ngữ pháp về ý nghĩa, mức chắc chắn hoặc trọng tâm.",
+      "sample_en": "Having reviewed all three datasets, the researchers identified a discrepancy in the second set. They then repeated the calculation using an independent method. The revised figures were published together with a note explaining the correction.",
+      "rubric_vi": "Đối chiếu theo bốn tiêu chí: (1) đúng dữ kiện và người thực hiện; (2) cấu trúc C1 tạo hiệu quả rõ ràng thay vì trang trí; (3) độ chắc chắn phù hợp chứng cứ; (4) liên kết câu và văn phong tự nhiên. Đáp án mẫu chỉ là một khả năng hợp lệ."
+    },
+    "review_status": "DRAFT_TEACHER_REVIEW_REQUIRED",
+    "assessment_mode": "FORMATIVE_ONLY",
+    "source_lesson_id": "C1-17"
+  },
+  "C1-18": {
+    "code": "C1-18",
+    "title": "Absolute Constructions",
+    "context_vi": "Biên bản kết thúc một hoạt động thực địa. Bạn đang biên tập đoạn văn cho người đọc chuyên môn; phải giữ nguyên dữ kiện và làm rõ mục đích diễn đạt.",
+    "goal_vi": "Absolute constructions có chủ ngữ riêng, thường nối bối cảnh với mệnh đề chính trong văn viết cô đọng.",
+    "contrast_cue_vi": "Hai cách viết có thể cùng đúng về hình thức nhưng khác trọng tâm, sắc thái hoặc tác động đến người đọc. Xác định mục đích thực trước khi lựa chọn.",
+    "checkpoints": [
+      {
+        "id": "M19E-C1-18-CHECK-01",
+        "prompt_vi": "Việc đánh giá đã hoàn tất; sau đó nhóm rời phòng. Dùng absolute construction có chủ ngữ riêng.",
+        "options_en": [
+          "Completing the review, the room was left by the team.",
+          "The review completed the team left the room.",
+          "The review complete, the team left the room."
+        ],
+        "correct_index": 2,
+        "option_feedback_vi": [
+          "Room không phải người thực hiện completing; câu sai liên hệ chủ ngữ.",
+          "Thiếu dấu ngăn hai mệnh đề và cấu trúc không rõ ràng.",
+          "The review complete là cụm tuyệt đối có chủ ngữ riêng, nêu bối cảnh cho hành động tiếp theo."
+        ],
+        "focus": "contextual_decision"
+      },
+      {
+        "id": "M19E-C1-18-CHECK-02",
+        "prompt_vi": "Bài thông báo chỉ hứa sẽ đi khảo sát nếu thời tiết cho phép. Chọn cách diễn đạt không biến điều kiện thành sự thật.",
+        "options_en": [
+          "Weather permitted, the team will certainly visit tomorrow.",
+          "Weather permitting, the team will visit the site tomorrow.",
+          "The weather will permit, and the team will certainly visit tomorrow."
+        ],
+        "correct_index": 1,
+        "option_feedback_vi": [
+          "Weather permitted khác cấu trúc quy ước và certainly làm mất sắc thái có điều kiện.",
+          "Weather permitting giữ khả năng có điều kiện, không tiên đoán chắc chắn thời tiết.",
+          "Tuyên bố chắc chắn về thời tiết và lịch đi vượt thông tin."
+        ],
+        "focus": "register_and_meaning"
+      },
+      {
+        "id": "M19E-C1-18-CHECK-03",
+        "prompt_vi": "Đọc câu sai “The evidence has been checked, the medicines board issued its findings on the dosage recommendation.”. Hãy chọn bản sửa đúng GIỮ NGUYÊN ý nghĩa và không thêm sự kiện.",
+        "options_en": [
+          "The evidence having been checked, the medicines board issued its findings on the dosage recommendation.",
+          "The evidence has been checked, the medicines board issued its findings on the dosage recommendation.",
+          "Weather permits, the textile cooperative will complete its field visit tomorrow."
+        ],
+        "correct_index": 0,
+        "option_feedback_vi": [
+          "Bản sửa giữ nguyên ý định ban đầu. Không phù hợp với mẫu N + having been + V3, main clause trong câu này. Cần dùng «The evidence having been checked,», không phải «The evidence has been checked,». Cụm tuyệt đối chỉ một hành động đã hoàn tất trước hành động chính.",
+          "Câu này chính là lỗi được yêu cầu sửa. Không phù hợp với mẫu N + having been + V3, main clause trong câu này. Cần dùng «The evidence having been checked,», không phải «The evidence has been checked,». Cụm tuyệt đối chỉ một hành động đã hoàn tất trước hành động chính.",
+          "Câu này thuộc một ví dụ khác và vẫn chứa lỗi: Không phù hợp với mẫu Weather permitting, main clause trong câu này. Cần dùng «Weather permitting,», không phải «Weather permits,». Weather permitting là cấu trúc tuyệt đối nói điều kiện thời tiết."
+        ],
+        "focus": "guided_error_repair"
+      }
+    ],
+    "transfer": {
+      "prompt_vi": "Viết đoạn văn 3–5 câu: Write a formal fieldwork closure note with a clear absolute construction.. Hãy giải thích ít nhất một quyết định ngữ pháp về ý nghĩa, mức chắc chắn hoặc trọng tâm.",
+      "sample_en": "The final samples labelled and sealed, the field team returned to the laboratory. A technician logged each container before storage. The team will compare the new readings with last month’s baseline.",
+      "rubric_vi": "Đối chiếu theo bốn tiêu chí: (1) đúng dữ kiện và người thực hiện; (2) cấu trúc C1 tạo hiệu quả rõ ràng thay vì trang trí; (3) độ chắc chắn phù hợp chứng cứ; (4) liên kết câu và văn phong tự nhiên. Đáp án mẫu chỉ là một khả năng hợp lệ."
+    },
+    "review_status": "DRAFT_TEACHER_REVIEW_REQUIRED",
+    "assessment_mode": "FORMATIVE_ONLY",
+    "source_lesson_id": "C1-18"
+  },
+  "C1-19": {
+    "code": "C1-19",
+    "title": "Proportional Comparisons",
+    "context_vi": "Nhận xét biểu đồ giữa thời gian học và độ chính xác. Bạn đang biên tập đoạn văn cho người đọc chuyên môn; phải giữ nguyên dữ kiện và làm rõ mục đích diễn đạt.",
+    "goal_vi": "Proportional comparisons The more..., the more/less... mô tả sự đồng biến hoặc nghịch biến; không tự chứng minh quan hệ nhân quả.",
+    "contrast_cue_vi": "Hai cách viết có thể cùng đúng về hình thức nhưng khác trọng tâm, sắc thái hoặc tác động đến người đọc. Xác định mục đích thực trước khi lựa chọn.",
+    "checkpoints": [
+      {
+        "id": "M19E-C1-19-CHECK-01",
+        "prompt_vi": "Biểu đồ cho thấy thời gian chờ càng dài thì chi phí càng tăng. Không có bằng chứng quan hệ nhân quả.",
+        "options_en": [
+          "Longer the wait, higher reported costs.",
+          "The longer the wait, the higher the reported costs.",
+          "The longer the wait, the more costs are necessarily caused by waiting."
+        ],
+        "correct_index": 1,
+        "option_feedback_vi": [
+          "Thiếu the ở hai vế của proportional comparison.",
+          "The + comparative, the + comparative mô tả biến thiên cùng chiều mà không tự khẳng định nguyên nhân.",
+          "Necessarily caused by thêm quan hệ nhân quả chưa được chứng minh."
+        ],
+        "focus": "contextual_decision"
+      },
+      {
+        "id": "M19E-C1-19-CHECK-02",
+        "prompt_vi": "Khi tần suất kiểm tra tăng, số lỗi bị bỏ sót có xu hướng giảm. Dùng fewer đúng với danh từ đếm được.",
+        "options_en": [
+          "The more often the team checks, the fewer errors it is likely to miss.",
+          "The more often the team checks, the less errors it is likely to miss.",
+          "The more often the team checks, the fewer error it is likely to miss."
+        ],
+        "correct_index": 0,
+        "option_feedback_vi": [
+          "Fewer đi với errors số nhiều đếm được; likely giữ mức độ có thể thay vì chắc chắn.",
+          "Less thường đi với danh từ không đếm được; ở bài viết chỉnh chu nên dùng fewer errors.",
+          "Fewer đòi danh từ đếm được số nhiều errors."
+        ],
+        "focus": "register_and_meaning"
+      },
+      {
+        "id": "M19E-C1-19-CHECK-03",
+        "prompt_vi": "Đọc câu sai “The more carefully the accessibility unit checks the interface prototype, the less errors it is likely to miss.”. Hãy chọn bản sửa đúng GIỮ NGUYÊN ý nghĩa và không thêm sự kiện.",
+        "options_en": [
+          "The more carefully the accessibility unit checks the interface prototype, the less errors it is likely to miss.",
+          "The longer the review takes, more costly it becomes for the weather service.",
+          "The more carefully the accessibility unit checks the interface prototype, the fewer errors it is likely to miss."
+        ],
+        "correct_index": 2,
+        "option_feedback_vi": [
+          "Câu này chính là lỗi được yêu cầu sửa. Không phù hợp với mẫu the more ..., the fewer + plural noun trong câu này. Cần dùng «the fewer», không phải «the less». The fewer dùng với danh từ đếm được số nhiều errors.",
+          "Câu này thuộc một ví dụ khác và vẫn chứa lỗi: Không phù hợp với mẫu the longer ..., the more + adjective trong câu này. Cần dùng «the more costly», không phải «more costly». Hai vế so sánh kép thể hiện hai mức độ thay đổi cùng nhau.",
+          "Bản sửa giữ nguyên ý định ban đầu. Không phù hợp với mẫu the more ..., the fewer + plural noun trong câu này. Cần dùng «the fewer», không phải «the less». The fewer dùng với danh từ đếm được số nhiều errors."
+        ],
+        "focus": "guided_error_repair"
+      }
+    ],
+    "transfer": {
+      "prompt_vi": "Viết đoạn văn 3–5 câu: Write a data-commentary paragraph with one proportional comparison and one caveat.. Hãy giải thích ít nhất một quyết định ngữ pháp về ý nghĩa, mức chắc chắn hoặc trọng tâm.",
+      "sample_en": "The longer participants spent reviewing the material, the fewer errors they made on the follow-up task. This pattern was strongest among those who had missed the initial session. Because the groups were not randomly assigned, the association should not be treated as proof of causation.",
+      "rubric_vi": "Đối chiếu theo bốn tiêu chí: (1) đúng dữ kiện và người thực hiện; (2) cấu trúc C1 tạo hiệu quả rõ ràng thay vì trang trí; (3) độ chắc chắn phù hợp chứng cứ; (4) liên kết câu và văn phong tự nhiên. Đáp án mẫu chỉ là một khả năng hợp lệ."
+    },
+    "review_status": "DRAFT_TEACHER_REVIEW_REQUIRED",
+    "assessment_mode": "FORMATIVE_ONLY",
+    "source_lesson_id": "C1-19"
+  },
+  "C1-20": {
+    "code": "C1-20",
+    "title": "Advanced Correlative Comparisons",
+    "context_vi": "Bài phản biện về một dự án công nghệ. Bạn đang biên tập đoạn văn cho người đọc chuyên môn; phải giữ nguyên dữ kiện và làm rõ mục đích diễn đạt.",
+    "goal_vi": "Advanced correlative comparisons như not so much A as B sửa trọng tâm diễn đạt, khác với more A than B theo ngữ cảnh.",
+    "contrast_cue_vi": "Hai cách viết có thể cùng đúng về hình thức nhưng khác trọng tâm, sắc thái hoặc tác động đến người đọc. Xác định mục đích thực trước khi lựa chọn.",
+    "checkpoints": [
+      {
+        "id": "M19E-C1-20-CHECK-01",
+        "prompt_vi": "Người viết muốn điều chỉnh nhận thức: tranh cãi KHÔNG CHỦ YẾU về chi phí mà về tính minh bạch.",
+        "options_en": [
+          "The dispute was not so much about cost as about transparency.",
+          "The dispute was not so much about cost than about transparency.",
+          "The dispute was more cost as transparency."
+        ],
+        "correct_index": 0,
+        "option_feedback_vi": [
+          "Not so much A as B chuyển trọng tâm từ A sang B.",
+          "Mẫu not so much cần as, không dùng than.",
+          "Hai thành phần và cấu trúc so sánh không song song."
+        ],
+        "focus": "contextual_decision"
+      },
+      {
+        "id": "M19E-C1-20-CHECK-02",
+        "prompt_vi": "Báo cáo nêu ưu tiên cải thiện chứ không thay thế hoàn toàn hệ thống. Chọn cấu trúc song song.",
+        "options_en": [
+          "The team focused on improving the system rather than to replace it.",
+          "The team focused on replacing the system rather than improving it.",
+          "The team focused on improving the system rather than replacing it."
+        ],
+        "correct_index": 2,
+        "option_feedback_vi": [
+          "Sau rather than trong cấu trúc song song này nên dùng replacing, không chuyển sang to replace.",
+          "Đảo ưu tiên thành thay thế toàn bộ thay vì cải thiện.",
+          "Improving / replacing cùng dạng V-ing và giữ đúng thứ tự ưu tiên."
+        ],
+        "focus": "register_and_meaning"
+      },
+      {
+        "id": "M19E-C1-20-CHECK-03",
+        "prompt_vi": "Đọc câu sai “The debate was not such much about the cost of the artefact inventory as about its long-term effects.”. Hãy chọn bản sửa đúng GIỮ NGUYÊN ý nghĩa và không thêm sự kiện.",
+        "options_en": [
+          "The reform committee focused on improving the consultation draft rather then replacing it altogether.",
+          "The debate was not so much about the cost of the artefact inventory as about its long-term effects.",
+          "The debate was not such much about the cost of the artefact inventory as about its long-term effects."
+        ],
+        "correct_index": 1,
+        "option_feedback_vi": [
+          "Câu này thuộc một ví dụ khác và vẫn chứa lỗi: Không phù hợp với mẫu V-ing rather than V-ing trong câu này. Cần dùng «rather than», không phải «rather then». Rather than nối hai hành động cùng dạng ngữ pháp.",
+          "Bản sửa giữ nguyên ý định ban đầu. Không phù hợp với mẫu not so much A as B trong câu này. Cần dùng «not so much», không phải «not such much». Không hẳn là A mà chủ yếu là B; dùng cặp not so much ... as.",
+          "Câu này chính là lỗi được yêu cầu sửa. Không phù hợp với mẫu not so much A as B trong câu này. Cần dùng «not so much», không phải «not such much». Không hẳn là A mà chủ yếu là B; dùng cặp not so much ... as."
+        ],
+        "focus": "guided_error_repair"
+      }
+    ],
+    "transfer": {
+      "prompt_vi": "Viết đoạn văn 3–5 câu: Write a nuanced evaluation that corrects a simplistic diagnosis.. Hãy giải thích ít nhất một quyết định ngữ pháp về ý nghĩa, mức chắc chắn hoặc trọng tâm.",
+      "sample_en": "The delay was not so much a failure of the software as a consequence of incomplete requirements. Several teams interpreted the same specification differently, which led to repeated revisions. The next phase should therefore begin with a jointly reviewed brief.",
+      "rubric_vi": "Đối chiếu theo bốn tiêu chí: (1) đúng dữ kiện và người thực hiện; (2) cấu trúc C1 tạo hiệu quả rõ ràng thay vì trang trí; (3) độ chắc chắn phù hợp chứng cứ; (4) liên kết câu và văn phong tự nhiên. Đáp án mẫu chỉ là một khả năng hợp lệ."
+    },
+    "review_status": "DRAFT_TEACHER_REVIEW_REQUIRED",
+    "assessment_mode": "FORMATIVE_ONLY",
+    "source_lesson_id": "C1-20"
+  },
+  "C1-21": {
+    "code": "C1-21",
+    "title": "Advanced Articles & Determiners",
+    "context_vi": "Bản giới thiệu chương trình hỗ trợ học sinh. Bạn đang biên tập đoạn văn cho người đọc chuyên môn; phải giữ nguyên dữ kiện và làm rõ mục đích diễn đạt.",
+    "goal_vi": "Advanced articles/determiners dùng the/zero article/each/every để đánh dấu tính xác định và phạm vi tham chiếu.",
+    "contrast_cue_vi": "Hai cách viết có thể cùng đúng về hình thức nhưng khác trọng tâm, sắc thái hoặc tác động đến người đọc. Xác định mục đích thực trước khi lựa chọn.",
+    "checkpoints": [
+      {
+        "id": "M19E-C1-21-CHECK-01",
+        "prompt_vi": "Tác giả nói đến giáo dục nói chung, không phải chương trình cụ thể.",
+        "options_en": [
+          "The education can improve access to employment.",
+          "An education can improve access to employment.",
+          "Education can improve access to employment."
+        ],
+        "correct_index": 2,
+        "option_feedback_vi": [
+          "The education cần giới hạn/nhắc trước về loại giáo dục cụ thể, không có ở đây.",
+          "An education thường nói một nền giáo dục cụ thể mà một người nhận; khác nghĩa khái quát hiện tại.",
+          "Education không xác định dùng zero article khi nói khái niệm chung."
+        ],
+        "focus": "contextual_decision"
+      },
+      {
+        "id": "M19E-C1-21-CHECK-02",
+        "prompt_vi": "Đoạn trước đã xác định rõ một thiết bị cụ thể trong phòng thí nghiệm. Chọn mạo từ để tham chiếu lại đúng.",
+        "options_en": [
+          "An equipment specified in the report was inspected.",
+          "The equipment specified in the report was inspected.",
+          "Equipment specified in the report was inspected, including all equipment everywhere."
+        ],
+        "correct_index": 1,
+        "option_feedback_vi": [
+          "Equipment là danh từ không đếm được, không dùng an equipment.",
+          "The xác định đúng thiết bị đã được nêu và giới hạn bằng specified in the report.",
+          "Thêm all equipment everywhere vượt phạm vi nhóm thiết bị cụ thể."
+        ],
+        "focus": "register_and_meaning"
+      },
+      {
+        "id": "M19E-C1-21-CHECK-03",
+        "prompt_vi": "Đọc câu sai “The inspectors examined a equipment specified in the heritage trail map.”. Hãy chọn bản sửa đúng GIỮ NGUYÊN ý nghĩa và không thêm sự kiện.",
+        "options_en": [
+          "The inspectors examined the equipment specified in the heritage trail map.",
+          "The inspectors examined a equipment specified in the heritage trail map.",
+          "The wildlife centre requested a independent estimate before approving the release protocol."
+        ],
+        "correct_index": 0,
+        "option_feedback_vi": [
+          "Bản sửa giữ nguyên ý định ban đầu. Không phù hợp với mẫu the + specified noun trong câu này. Cần dùng «the», không phải «a». Thiết bị đã được xác định cụ thể bằng mệnh đề specified in ..., nên dùng the.",
+          "Câu này chính là lỗi được yêu cầu sửa. Không phù hợp với mẫu the + specified noun trong câu này. Cần dùng «the», không phải «a». Thiết bị đã được xác định cụ thể bằng mệnh đề specified in ..., nên dùng the.",
+          "Câu này thuộc một ví dụ khác và vẫn chứa lỗi: Không phù hợp với mẫu an + vowel sound trong câu này. Cần dùng «an», không phải «a». Independent bắt đầu bằng nguyên âm /ɪ/, do đó dùng an."
+        ],
+        "focus": "guided_error_repair"
+      }
+    ],
+    "transfer": {
+      "prompt_vi": "Viết đoạn văn 3–5 câu: Write a precise programme description distinguishing general and specific reference.. Hãy giải thích ít nhất một quyết định ngữ pháp về ý nghĩa, mức chắc chắn hoặc trọng tâm.",
+      "sample_en": "Education can widen access to employment, but the training offered in this programme addresses only basic digital skills. Each participant receives a short assessment before the course begins. The results will be used to tailor the first workshop.",
+      "rubric_vi": "Đối chiếu theo bốn tiêu chí: (1) đúng dữ kiện và người thực hiện; (2) cấu trúc C1 tạo hiệu quả rõ ràng thay vì trang trí; (3) độ chắc chắn phù hợp chứng cứ; (4) liên kết câu và văn phong tự nhiên. Đáp án mẫu chỉ là một khả năng hợp lệ."
+    },
+    "review_status": "DRAFT_TEACHER_REVIEW_REQUIRED",
+    "assessment_mode": "FORMATIVE_ONLY",
+    "source_lesson_id": "C1-21"
+  },
+  "C1-22": {
+    "code": "C1-22",
+    "title": "Advanced Tense & Aspect",
+    "context_vi": "Bản tường thuật triển khai hệ thống mới. Bạn đang biên tập đoạn văn cho người đọc chuyên môn; phải giữ nguyên dữ kiện và làm rõ mục đích diễn đạt.",
+    "goal_vi": "Advanced tense/aspect dùng hoàn thành, tiếp diễn và thời điểm tham chiếu để kể lại chuỗi sự kiện chính xác.",
+    "contrast_cue_vi": "Hai cách viết có thể cùng đúng về hình thức nhưng khác trọng tâm, sắc thái hoặc tác động đến người đọc. Xác định mục đích thực trước khi lựa chọn.",
+    "checkpoints": [
+      {
+        "id": "M19E-C1-22-CHECK-01",
+        "prompt_vi": "Buổi điều trần bắt đầu lúc 9 giờ; nhóm đã sửa báo cáo hai lần TRƯỚC lúc đó.",
+        "options_en": [
+          "By the time the hearing began, the team will revise the report twice.",
+          "By the time the hearing began, the team had revised the report twice.",
+          "By the time the hearing began, the team has revised the report twice."
+        ],
+        "correct_index": 1,
+        "option_feedback_vi": [
+          "Will revise đặt việc sửa trong tương lai, trái dữ kiện đã hoàn tất.",
+          "Had revised định vị hai lần sửa trước mốc quá khứ hearing began.",
+          "Has revised gắn đến hiện tại, không cùng mốc nhìn quá khứ của câu."
+        ],
+        "focus": "contextual_decision"
+      },
+      {
+        "id": "M19E-C1-22-CHECK-02",
+        "prompt_vi": "Nhóm bắt đầu theo dõi từ tháng Một và vẫn tiếp tục. Cần nêu quá trình kéo dài tới nay.",
+        "options_en": [
+          "The team has been monitoring the samples since January.",
+          "The team had monitored the samples since January, and is still doing so.",
+          "The team monitored the samples since January, and still monitors now."
+        ],
+        "correct_index": 0,
+        "option_feedback_vi": [
+          "Present perfect continuous nối quá trình bắt đầu trước đây với hiện tại.",
+          "Past perfect cần một mốc nhìn quá khứ khác, không phù hợp với vẫn tiếp tục hiện nay.",
+          "Past simple kết hợp since January ở bối cảnh kéo đến hiện tại kém phù hợp hơn."
+        ],
+        "focus": "register_and_meaning"
+      },
+      {
+        "id": "M19E-C1-22-CHECK-03",
+        "prompt_vi": "Đọc câu sai “By the time the hearing began, the water department has already revised the drought response plan twice.”. Hãy chọn bản sửa đúng GIỮ NGUYÊN ý nghĩa và không thêm sự kiện.",
+        "options_en": [
+          "By the time the hearing began, the water department has already revised the drought response plan twice.",
+          "The waste service has monitoring the impact of the recycling guidelines since January, and the process is still under way.",
+          "By the time the hearing began, the water department had already revised the drought response plan twice."
+        ],
+        "correct_index": 2,
+        "option_feedback_vi": [
+          "Câu này chính là lỗi được yêu cầu sửa. Không phù hợp với mẫu by the time + past, had + V3 trong câu này. Cần dùng «had already revised», không phải «has already revised». Past Perfect đánh dấu hành động đã xong trước một mốc trong quá khứ.",
+          "Câu này thuộc một ví dụ khác và vẫn chứa lỗi: Không phù hợp với mẫu has/have been + V-ing + since trong câu này. Cần dùng «has been monitoring», không phải «has monitoring». Hiện tại hoàn thành tiếp diễn nhấn mạnh quá trình bắt đầu trong quá khứ và còn tiếp tục.",
+          "Bản sửa giữ nguyên ý định ban đầu. Không phù hợp với mẫu by the time + past, had + V3 trong câu này. Cần dùng «had already revised», không phải «has already revised». Past Perfect đánh dấu hành động đã xong trước một mốc trong quá khứ."
+        ],
+        "focus": "guided_error_repair"
+      }
+    ],
+    "transfer": {
+      "prompt_vi": "Viết đoạn văn 3–5 câu: Write a timeline report preserving the order of events.. Hãy giải thích ít nhất một quyết định ngữ pháp về ý nghĩa, mức chắc chắn hoặc trọng tâm.",
+      "sample_en": "By the time the inspectors arrived, the technicians had completed the first round of tests. They were checking the final sensor when the network connection failed. The results were saved locally and uploaded after the service was restored.",
+      "rubric_vi": "Đối chiếu theo bốn tiêu chí: (1) đúng dữ kiện và người thực hiện; (2) cấu trúc C1 tạo hiệu quả rõ ràng thay vì trang trí; (3) độ chắc chắn phù hợp chứng cứ; (4) liên kết câu và văn phong tự nhiên. Đáp án mẫu chỉ là một khả năng hợp lệ."
+    },
+    "review_status": "DRAFT_TEACHER_REVIEW_REQUIRED",
+    "assessment_mode": "FORMATIVE_ONLY",
+    "source_lesson_id": "C1-22"
+  },
+  "C1-23": {
+    "code": "C1-23",
+    "title": "Hedging",
+    "context_vi": "Nhận xét một nghiên cứu có mẫu hạn chế. Bạn đang biên tập đoạn văn cho người đọc chuyên môn; phải giữ nguyên dữ kiện và làm rõ mục đích diễn đạt.",
+    "goal_vi": "Hedging giúp diễn đạt kết quả chưa chắc chắn trong nghiên cứu và tranh luận; quá nhiều hedge cũng làm luận điểm yếu.",
+    "contrast_cue_vi": "Hai cách viết có thể cùng đúng về hình thức nhưng khác trọng tâm, sắc thái hoặc tác động đến người đọc. Xác định mục đích thực trước khi lựa chọn.",
+    "checkpoints": [
+      {
+        "id": "M19E-C1-23-CHECK-01",
+        "prompt_vi": "Thử nghiệm chỉ có 18 người và kết quả chưa được lặp lại. Chọn cách kết luận tương xứng chứng cứ.",
+        "options_en": [
+          "The preliminary results suggest that the programme may improve concentration.",
+          "The programme definitively improves concentration in all learners.",
+          "The programme proves that concentration always increases."
+        ],
+        "correct_index": 0,
+        "option_feedback_vi": [
+          "Suggest + may làm rõ kết luận chỉ mang tính sơ bộ, không ngoại suy cho mọi người.",
+          "Definitively và all learners khái quát vượt mẫu thử nhỏ.",
+          "Proves và always biến bằng chứng ban đầu thành khẳng định tuyệt đối."
+        ],
+        "focus": "contextual_decision"
+      },
+      {
+        "id": "M19E-C1-23-CHECK-02",
+        "prompt_vi": "Dữ liệu cho thấy xu hướng yếu, nhưng tác giả không muốn né tránh hoàn toàn kết luận.",
+        "options_en": [
+          "The figures perhaps might maybe possibly indicate some kind of change.",
+          "The figures establish an undeniable dramatic increase.",
+          "The figures appear to indicate a modest increase."
+        ],
+        "correct_index": 2,
+        "option_feedback_vi": [
+          "Chồng nhiều hedge làm luận điểm mơ hồ và kém hữu ích.",
+          "Undeniable dramatic tăng sức mạnh kết luận ngoài dữ liệu.",
+          "Appear to điều chỉnh độ chắc chắn, modest giữ đúng mức tăng nhỏ."
+        ],
+        "focus": "register_and_meaning"
+      },
+      {
+        "id": "M19E-C1-23-CHECK-03",
+        "prompt_vi": "Đọc câu sai “The preliminary figures appears to support the recommendation in the inspection report.”. Hãy chọn bản sửa đúng GIỮ NGUYÊN ý nghĩa và không thêm sự kiện.",
+        "options_en": [
+          "It seem that the costs of the shoreline assessment were underestimated.",
+          "The preliminary figures appear to support the recommendation in the inspection report.",
+          "The preliminary figures appears to support the recommendation in the inspection report."
+        ],
+        "correct_index": 1,
+        "option_feedback_vi": [
+          "Câu này thuộc một ví dụ khác và vẫn chứa lỗi: Không phù hợp với mẫu It seems that + clause trong câu này. Cần dùng «seems», không phải «seem». It seems that đưa nhận định dè dặt, tránh khẳng định tuyệt đối.",
+          "Bản sửa giữ nguyên ý định ban đầu. Không phù hợp với mẫu appear to + V trong câu này. Cần dùng «appear to», không phải «appears to». Appear to + V giảm độ chắc chắn của kết luận dựa trên dữ kiện sơ bộ.",
+          "Câu này chính là lỗi được yêu cầu sửa. Không phù hợp với mẫu appear to + V trong câu này. Cần dùng «appear to», không phải «appears to». Appear to + V giảm độ chắc chắn của kết luận dựa trên dữ kiện sơ bộ."
+        ],
+        "focus": "guided_error_repair"
+      }
+    ],
+    "transfer": {
+      "prompt_vi": "Viết đoạn văn 3–5 câu: Write a balanced two-claim discussion using measured hedging.. Hãy giải thích ít nhất một quyết định ngữ pháp về ý nghĩa, mức chắc chắn hoặc trọng tâm.",
+      "sample_en": "Participants who received weekly feedback tended to complete more tasks than those who did not. This pattern may reflect improved motivation, although the groups differed in prior experience. Further controlled research is needed to establish whether feedback itself caused the difference.",
+      "rubric_vi": "Đối chiếu theo bốn tiêu chí: (1) đúng dữ kiện và người thực hiện; (2) cấu trúc C1 tạo hiệu quả rõ ràng thay vì trang trí; (3) độ chắc chắn phù hợp chứng cứ; (4) liên kết câu và văn phong tự nhiên. Đáp án mẫu chỉ là một khả năng hợp lệ."
+    },
+    "review_status": "DRAFT_TEACHER_REVIEW_REQUIRED",
+    "assessment_mode": "FORMATIVE_ONLY",
+    "source_lesson_id": "C1-23"
+  },
+  "C1-24": {
+    "code": "C1-24",
+    "title": "Distancing & Evidentiality",
+    "context_vi": "Bản tổng hợp thông tin về hiệu năng thiết bị. Bạn đang biên tập đoạn văn cho người đọc chuyên môn; phải giữ nguyên dữ kiện và làm rõ mục đích diễn đạt.",
+    "goal_vi": "Distancing/evidentiality dùng source attribution và passive reporting để tách thông tin được báo cáo khỏi điều đã được xác minh.",
+    "contrast_cue_vi": "Hai cách viết có thể cùng đúng về hình thức nhưng khác trọng tâm, sắc thái hoặc tác động đến người đọc. Xác định mục đích thực trước khi lựa chọn.",
+    "checkpoints": [
+      {
+        "id": "M19E-C1-24-CHECK-01",
+        "prompt_vi": "Nguồn đưa tin nói quy định sẽ thay đổi; nhóm chưa kiểm chứng độc lập.",
+        "options_en": [
+          "The regulation will certainly be revised next month.",
+          "The agency has proved the regulation was revised last month.",
+          "According to the agency, the regulation may be revised next month."
+        ],
+        "correct_index": 2,
+        "option_feedback_vi": [
+          "Will certainly biến dự báo nguồn tin thành sự thật đã chắc chắn.",
+          "Proved và last month đổi cả độ chắc chắn lẫn mốc thời gian.",
+          "According to quy nguồn; may giữ sự chưa chắc chắn và đúng mốc tháng tới."
+        ],
+        "focus": "contextual_decision"
+      },
+      {
+        "id": "M19E-C1-24-CHECK-02",
+        "prompt_vi": "Có lời tố cáo thiết bị không an toàn trong một số điều kiện, nhưng chưa có kết luận độc lập.",
+        "options_en": [
+          "Independent inspectors have confirmed that every device is unsafe.",
+          "A consumer group alleges that the device is unsafe under certain conditions.",
+          "The device is undoubtedly unsafe in all conditions."
+        ],
+        "correct_index": 1,
+        "option_feedback_vi": [
+          "Đưa vào bằng chứng độc lập chưa tồn tại và tổng quát cho mọi thiết bị.",
+          "Alleges phân biệt lời tố cáo với sự thật và giữ điều kiện giới hạn.",
+          "Undoubtedly và all xóa nguồn và giới hạn thông tin."
+        ],
+        "focus": "register_and_meaning"
+      },
+      {
+        "id": "M19E-C1-24-CHECK-03",
+        "prompt_vi": "Đọc câu sai “It has reported that the source-protection policy will be revised before publication.”. Hãy chọn bản sửa đúng GIỮ NGUYÊN ý nghĩa và không thêm sự kiện.",
+        "options_en": [
+          "It has been reported that the source-protection policy will be revised before publication.",
+          "It has reported that the source-protection policy will be revised before publication.",
+          "The ethics committee is said be considering changes to the consent procedure."
+        ],
+        "correct_index": 0,
+        "option_feedback_vi": [
+          "Bản sửa giữ nguyên ý định ban đầu. Không phù hợp với mẫu It has been reported that + clause trong câu này. Cần dùng «has been reported», không phải «has reported». Cấu trúc bị động đưa thông tin có nguồn được báo cáo, không xác nhận tuyệt đối.",
+          "Câu này chính là lỗi được yêu cầu sửa. Không phù hợp với mẫu It has been reported that + clause trong câu này. Cần dùng «has been reported», không phải «has reported». Cấu trúc bị động đưa thông tin có nguồn được báo cáo, không xác nhận tuyệt đối.",
+          "Câu này thuộc một ví dụ khác và vẫn chứa lỗi: Không phù hợp với mẫu be said to be + V-ing trong câu này. Cần dùng «said to be», không phải «said be». Be said to be considering nêu hành động đang được đưa tin ở hiện tại."
+        ],
+        "focus": "guided_error_repair"
+      }
+    ],
+    "transfer": {
+      "prompt_vi": "Viết đoạn văn 3–5 câu: Write a neutral briefing separating reported claims and independently checked facts.. Hãy giải thích ít nhất một quyết định ngữ pháp về ý nghĩa, mức chắc chắn hoặc trọng tâm.",
+      "sample_en": "The supplier reports that the revised model uses less energy. Independent measurements have not yet been published, so the claim cannot be verified from the available documents. The procurement team will seek test results before recommending a purchase.",
+      "rubric_vi": "Đối chiếu theo bốn tiêu chí: (1) đúng dữ kiện và người thực hiện; (2) cấu trúc C1 tạo hiệu quả rõ ràng thay vì trang trí; (3) độ chắc chắn phù hợp chứng cứ; (4) liên kết câu và văn phong tự nhiên. Đáp án mẫu chỉ là một khả năng hợp lệ."
+    },
+    "review_status": "DRAFT_TEACHER_REVIEW_REQUIRED",
+    "assessment_mode": "FORMATIVE_ONLY",
+    "source_lesson_id": "C1-24"
+  },
+  "C1-25": {
+    "code": "C1-25",
+    "title": "Advanced Concession & Qualification",
+    "context_vi": "Thư góp ý một đề xuất chưa có bằng chứng. Bạn đang biên tập đoạn văn cho người đọc chuyên môn; phải giữ nguyên dữ kiện và làm rõ mục đích diễn đạt.",
+    "goal_vi": "Advanced concession như Much as, Even if, While... giúp nhượng bộ có kiểm soát, phân biệt sự thật với giả định.",
+    "contrast_cue_vi": "Hai cách viết có thể cùng đúng về hình thức nhưng khác trọng tâm, sắc thái hoặc tác động đến người đọc. Xác định mục đích thực trước khi lựa chọn.",
+    "checkpoints": [
+      {
+        "id": "M19E-C1-25-CHECK-01",
+        "prompt_vi": "Tác giả thực sự đánh giá cao sáng kiến nhưng không ủng hộ lịch triển khai. Chọn cách nhượng bộ trang trọng.",
+        "options_en": [
+          "Much as I appreciated the initiative, I can certainly support the timetable.",
+          "Much as I appreciate the initiative, I cannot support the timetable.",
+          "Even if I appreciate the initiative, I cannot support the timetable."
+        ],
+        "correct_index": 1,
+        "option_feedback_vi": [
+          "Đổi quan điểm từ không ủng hộ thành ủng hộ, trái thông tin.",
+          "Much as thừa nhận cảm nhận có thật rồi chuyển sang quan điểm đối lập.",
+          "Even if thường đặt giả định chứ không xác nhận mình thực sự trân trọng sáng kiến."
+        ],
+        "focus": "contextual_decision"
+      },
+      {
+        "id": "M19E-C1-25-CHECK-02",
+        "prompt_vi": "Nhóm dự định thử nghiệm dù đối thủ có thể phản đối trong tương lai; chưa biết họ có phản đối hay không.",
+        "options_en": [
+          "Even if competitors object, we will continue the pilot.",
+          "Although competitors objected, we will continue the pilot.",
+          "Much as competitors objected, we have stopped the pilot."
+        ],
+        "correct_index": 0,
+        "option_feedback_vi": [
+          "Even if diễn đạt tình huống giả định có thể xảy ra.",
+          "Although objected xem sự phản đối là việc đã xảy ra, không đúng dữ kiện.",
+          "Lấy sự phản đối làm việc đã xảy ra và đổi kết quả thành ngừng thử nghiệm."
+        ],
+        "focus": "register_and_meaning"
+      },
+      {
+        "id": "M19E-C1-25-CHECK-03",
+        "prompt_vi": "Đọc câu sai “Much although the textile cooperative respected the original design, it decided to revise the production proposal.”. Hãy chọn bản sửa đúng GIỮ NGUYÊN ý nghĩa và không thêm sự kiện.",
+        "options_en": [
+          "Much although the textile cooperative respected the original design, it decided to revise the production proposal.",
+          "However careful the planning department assessed the revised zoning plan, some uncertainty remained.",
+          "Much as the textile cooperative respected the original design, it decided to revise the production proposal."
+        ],
+        "correct_index": 2,
+        "option_feedback_vi": [
+          "Câu này chính là lỗi được yêu cầu sửa. Không phù hợp với mẫu Much as + S + V, main clause trong câu này. Cần dùng «Much as», không phải «Much although». Much as nghĩa là mặc dù rất...; trong câu trang trọng thể hiện nhượng bộ.",
+          "Câu này thuộc một ví dụ khác và vẫn chứa lỗi: Không phù hợp với mẫu However + adverb + S + V trong câu này. Cần dùng «However carefully», không phải «However careful». However carefully nghĩa là dù xem xét cẩn thận đến đâu.",
+          "Bản sửa giữ nguyên ý định ban đầu. Không phù hợp với mẫu Much as + S + V, main clause trong câu này. Cần dùng «Much as», không phải «Much although». Much as nghĩa là mặc dù rất...; trong câu trang trọng thể hiện nhượng bộ."
+        ],
+        "focus": "guided_error_repair"
+      }
+    ],
+    "transfer": {
+      "prompt_vi": "Viết đoạn văn 3–5 câu: Write a tactful rejection that preserves a constructive tone.. Hãy giải thích ít nhất một quyết định ngữ pháp về ý nghĩa, mức chắc chắn hoặc trọng tâm.",
+      "sample_en": "Much as we welcome the intention to broaden access, the current proposal lacks a workable evaluation plan. Even if additional funding became available, the team would still need to identify measurable outcomes. We suggest a smaller pilot before a full launch.",
+      "rubric_vi": "Đối chiếu theo bốn tiêu chí: (1) đúng dữ kiện và người thực hiện; (2) cấu trúc C1 tạo hiệu quả rõ ràng thay vì trang trí; (3) độ chắc chắn phù hợp chứng cứ; (4) liên kết câu và văn phong tự nhiên. Đáp án mẫu chỉ là một khả năng hợp lệ."
+    },
+    "review_status": "DRAFT_TEACHER_REVIEW_REQUIRED",
+    "assessment_mode": "FORMATIVE_ONLY",
+    "source_lesson_id": "C1-25"
+  },
+  "C1-26": {
+    "code": "C1-26",
+    "title": "Alternative Conditional Structures",
+    "context_vi": "Đánh giá kế hoạch dự phòng tổ chức sự kiện. Bạn đang biên tập đoạn văn cho người đọc chuyên môn; phải giữ nguyên dữ kiện và làm rõ mục đích diễn đạt.",
+    "goal_vi": "Alternative conditionals such as but for, otherwise, provided that diễn đạt điều kiện ngoài mệnh đề if thông thường.",
+    "contrast_cue_vi": "Hai cách viết có thể cùng đúng về hình thức nhưng khác trọng tâm, sắc thái hoặc tác động đến người đọc. Xác định mục đích thực trước khi lựa chọn.",
+    "checkpoints": [
+      {
+        "id": "M19E-C1-26-CHECK-01",
+        "prompt_vi": "Sự hỗ trợ của tình nguyện viên thực sự đã cứu sự kiện. Chọn điều kiện phản thực không dùng if.",
+        "options_en": [
+          "But for the volunteers’ help, the event would have failed.",
+          "Provided that the volunteers helped, the event would have failed.",
+          "But for the volunteers’ help, the event will fail tomorrow."
+        ],
+        "correct_index": 0,
+        "option_feedback_vi": [
+          "But for + noun và would have V3 nói kết quả đã có thể xảy ra nếu thiếu trợ giúp trong quá khứ.",
+          "Provided that diễn đạt điều kiện thực/hiện tại hoặc tương lai, không phản thực quá khứ như ý này.",
+          "Will fail tomorrow đổi từ quá khứ sang tương lai."
+        ],
+        "focus": "contextual_decision"
+      },
+      {
+        "id": "M19E-C1-26-CHECK-02",
+        "prompt_vi": "Quy trình sẽ bắt đầu CHỈ KHI hội đồng phê duyệt. Cần điều kiện cần cho tương lai.",
+        "options_en": [
+          "The project proceeded but for the board approval.",
+          "The project will proceed unless the board approves it.",
+          "The project can proceed provided that the board approves it."
+        ],
+        "correct_index": 2,
+        "option_feedback_vi": [
+          "But for không diễn đạt điều kiện cần cho một kế hoạch tương lai theo cách này.",
+          "Unless đảo nghĩa: tiến hành nếu hội đồng KHÔNG phê duyệt.",
+          "Provided that nêu điều kiện phải thỏa, approves đúng thì trong mệnh đề điều kiện tương lai."
+        ],
+        "focus": "register_and_meaning"
+      },
+      {
+        "id": "M19E-C1-26-CHECK-03",
+        "prompt_vi": "Đọc câu sai “But of the additional funding, the weather service would have abandoned the storm-warning bulletin.”. Hãy chọn bản sửa đúng GIỮ NGUYÊN ý nghĩa và không thêm sự kiện.",
+        "options_en": [
+          "Were it not of the independent experts, the museum board would struggle to revise the restoration proposal.",
+          "But for the additional funding, the weather service would have abandoned the storm-warning bulletin.",
+          "But of the additional funding, the weather service would have abandoned the storm-warning bulletin."
+        ],
+        "correct_index": 1,
+        "option_feedback_vi": [
+          "Câu này thuộc một ví dụ khác và vẫn chứa lỗi: Không phù hợp với mẫu Were it not for + NP, would + V trong câu này. Cần dùng «Were it not for», không phải «Were it not of». Cấu trúc đảo điều kiện giả định hiện tại, không dùng if.",
+          "Bản sửa giữ nguyên ý định ban đầu. Không phù hợp với mẫu But for + noun, would have + V3 trong câu này. Cần dùng «But for», không phải «But of». But for biểu thị một điều kiện ngầm trái thực tế.",
+          "Câu này chính là lỗi được yêu cầu sửa. Không phù hợp với mẫu But for + noun, would have + V3 trong câu này. Cần dùng «But for», không phải «But of». But for biểu thị một điều kiện ngầm trái thực tế."
+        ],
+        "focus": "guided_error_repair"
+      }
+    ],
+    "transfer": {
+      "prompt_vi": "Viết đoạn văn 3–5 câu: Write a short contingency note using two alternative conditional forms.. Hãy giải thích ít nhất một quyết định ngữ pháp về ý nghĩa, mức chắc chắn hoặc trọng tâm.",
+      "sample_en": "The workshop can proceed provided that the accessibility checks are completed by Friday. Otherwise, the organisers will move the session to an alternative venue. But for the support of volunteers last year, the original pilot might not have taken place.",
+      "rubric_vi": "Đối chiếu theo bốn tiêu chí: (1) đúng dữ kiện và người thực hiện; (2) cấu trúc C1 tạo hiệu quả rõ ràng thay vì trang trí; (3) độ chắc chắn phù hợp chứng cứ; (4) liên kết câu và văn phong tự nhiên. Đáp án mẫu chỉ là một khả năng hợp lệ."
+    },
+    "review_status": "DRAFT_TEACHER_REVIEW_REQUIRED",
+    "assessment_mode": "FORMATIVE_ONLY",
+    "source_lesson_id": "C1-26"
+  },
+  "C1-27": {
+    "code": "C1-27",
+    "title": "Academic Cohesion",
+    "context_vi": "Đoạn phân tích ưu và nhược của hình thức học trực tuyến. Bạn đang biên tập đoạn văn cho người đọc chuyên môn; phải giữ nguyên dữ kiện và làm rõ mục đích diễn đạt.",
+    "goal_vi": "Academic cohesion yêu cầu quan hệ logic giữa câu: nhượng bộ, bổ sung, hệ quả và giới hạn; từ nối không thể sửa lập luận thiếu bằng chứng.",
+    "contrast_cue_vi": "Hai cách viết có thể cùng đúng về hình thức nhưng khác trọng tâm, sắc thái hoặc tác động đến người đọc. Xác định mục đích thực trước khi lựa chọn.",
+    "checkpoints": [
+      {
+        "id": "M19E-C1-27-CHECK-01",
+        "prompt_vi": "Mẫu chỉ gồm 12 trường, nhóm quyết định CHƯA công bố kết quả. Chọn từ nối thể hiện hệ quả.",
+        "options_en": [
+          "The sample was too small. Nevertheless, the team delayed publication.",
+          "The sample was too small. In contrast, the team delayed publication.",
+          "The sample was too small. Consequently, the team delayed publication."
+        ],
+        "correct_index": 2,
+        "option_feedback_vi": [
+          "Nevertheless thể hiện kết quả trái kỳ vọng, không phù hợp quan hệ nguyên nhân đã nêu.",
+          "In contrast cần đối chiếu hai tình huống, không nói hệ quả trực tiếp.",
+          "Consequently kết nối nguyên nhân mẫu nhỏ với hệ quả hoãn công bố."
+        ],
+        "focus": "contextual_decision"
+      },
+      {
+        "id": "M19E-C1-27-CHECK-02",
+        "prompt_vi": "Dù thử nghiệm chưa đầy đủ, nhóm vẫn xuất bản bản báo cáo sơ bộ. Chọn quan hệ nhượng bộ.",
+        "options_en": [
+          "Testing was incomplete. Similarly, a preliminary report was published.",
+          "Testing was incomplete. Nevertheless, a preliminary report was published.",
+          "Testing was incomplete. Therefore, a preliminary report was published."
+        ],
+        "correct_index": 1,
+        "option_feedback_vi": [
+          "Similarly nói sự tương tự, không phải quan hệ nhượng bộ.",
+          "Nevertheless diễn đạt hành động xuất bản trái kỳ vọng dù thử nghiệm còn thiếu.",
+          "Therefore khiến việc xuất bản có vẻ là hệ quả tất yếu của sự thiếu kiểm thử."
+        ],
+        "focus": "register_and_meaning"
+      },
+      {
+        "id": "M19E-C1-27-CHECK-03",
+        "prompt_vi": "Đọc câu sai “The consultation draft appeared feasible. Consequently, the reform committee requested additional testing.”. Hãy chọn bản sửa đúng GIỮ NGUYÊN ý nghĩa và không thêm sự kiện.",
+        "options_en": [
+          "The consultation draft appeared feasible. Nevertheless, the reform committee requested additional testing.",
+          "The consultation draft appeared feasible. Consequently, the reform committee requested additional testing.",
+          "The sample size was too small. Nevertheless, the admissions panel delayed publication of the scholarship policy."
+        ],
+        "correct_index": 0,
+        "option_feedback_vi": [
+          "Bản sửa giữ nguyên ý định ban đầu. Không phù hợp với mẫu statement. Nevertheless, contrast trong câu này. Cần dùng «Nevertheless,», không phải «Consequently,». Nevertheless nối hai phát biểu có quan hệ tương phản.",
+          "Câu này chính là lỗi được yêu cầu sửa. Không phù hợp với mẫu statement. Nevertheless, contrast trong câu này. Cần dùng «Nevertheless,», không phải «Consequently,». Nevertheless nối hai phát biểu có quan hệ tương phản.",
+          "Câu này thuộc một ví dụ khác và vẫn chứa lỗi: Không phù hợp với mẫu cause. Consequently, result trong câu này. Cần dùng «Consequently,», không phải «Nevertheless,». Consequently đánh dấu hệ quả trực tiếp, khác với bổ sung hoặc đối lập."
+        ],
+        "focus": "guided_error_repair"
+      }
+    ],
+    "transfer": {
+      "prompt_vi": "Viết đoạn văn 3–5 câu: Write a balanced paragraph with explicit contrast and a justified conclusion.. Hãy giải thích ít nhất một quyết định ngữ pháp về ý nghĩa, mức chắc chắn hoặc trọng tâm.",
+      "sample_en": "Online lessons allow learners to work at their own pace. However, those who need immediate feedback may struggle with recorded materials. For this reason, a blended approach could be appropriate for students with different learning needs.",
+      "rubric_vi": "Đối chiếu theo bốn tiêu chí: (1) đúng dữ kiện và người thực hiện; (2) cấu trúc C1 tạo hiệu quả rõ ràng thay vì trang trí; (3) độ chắc chắn phù hợp chứng cứ; (4) liên kết câu và văn phong tự nhiên. Đáp án mẫu chỉ là một khả năng hợp lệ."
+    },
+    "review_status": "DRAFT_TEACHER_REVIEW_REQUIRED",
+    "assessment_mode": "FORMATIVE_ONLY",
+    "source_lesson_id": "C1-27"
+  },
+  "C1-28": {
+    "code": "C1-28",
+    "title": "Parallelism",
+    "context_vi": "Bản công bố mục tiêu của một nhóm dự án. Bạn đang biên tập đoạn văn cho người đọc chuyên môn; phải giữ nguyên dữ kiện và làm rõ mục đích diễn đạt.",
+    "goal_vi": "Parallelism giúp các ý cùng vai trò ngữ pháp có cấu trúc tương xứng, đặc biệt trong danh sách và đối chiếu.",
+    "contrast_cue_vi": "Hai cách viết có thể cùng đúng về hình thức nhưng khác trọng tâm, sắc thái hoặc tác động đến người đọc. Xác định mục đích thực trước khi lựa chọn.",
+    "checkpoints": [
+      {
+        "id": "M19E-C1-28-CHECK-01",
+        "prompt_vi": "Nhóm đặt ba mục tiêu cùng vai trò: cải thiện truy cập, giảm chi phí, tăng niềm tin.",
+        "options_en": [
+          "The project aims improving access, to reduce costs and trust is strengthened.",
+          "The project aims to improve access, reduce costs and strengthen trust.",
+          "The project aims to improve access, reduce costs and strengthening trust."
+        ],
+        "correct_index": 1,
+        "option_feedback_vi": [
+          "Trộn V-ing, to-infinitive và mệnh đề độc lập trong cùng danh sách.",
+          "Ba động từ nguyên mẫu chia sẻ to sau aims to, giữ danh sách song song.",
+          "Strengthening phá vỡ cấu trúc song song của improve và reduce."
+        ],
+        "focus": "contextual_decision"
+      },
+      {
+        "id": "M19E-C1-28-CHECK-02",
+        "prompt_vi": "Báo cáo nhấn đồng thời hai phẩm chất: độ chính xác và tính minh bạch.",
+        "options_en": [
+          "The strategy should improve both accuracy and transparency.",
+          "The strategy should improve both accurate and transparency.",
+          "The strategy should improve both accuracy and to be transparent."
+        ],
+        "correct_index": 0,
+        "option_feedback_vi": [
+          "Both A and B nối hai danh từ cùng vai trò: accuracy và transparency.",
+          "Accurate là tính từ, không song song với danh từ transparency.",
+          "Danh từ và cụm to be không song song ở vị trí này."
+        ],
+        "focus": "register_and_meaning"
+      },
+      {
+        "id": "M19E-C1-28-CHECK-03",
+        "prompt_vi": "Đọc câu sai “The wildlife centre agreed to evaluate, revising and publish the release protocol according to the same timetable.”. Hãy chọn bản sửa đúng GIỮ NGUYÊN ý nghĩa và không thêm sự kiện.",
+        "options_en": [
+          "The wildlife centre agreed to evaluate, revising and publish the release protocol according to the same timetable.",
+          "The revised strategy aims to improve both accurate and transparency in the handling of the incident report.",
+          "The wildlife centre agreed to evaluate, to revise and to publish the release protocol according to the same timetable."
+        ],
+        "correct_index": 2,
+        "option_feedback_vi": [
+          "Câu này chính là lỗi được yêu cầu sửa. Không phù hợp với mẫu to V, to V and to V trong câu này. Cần dùng «to evaluate, to revise and to publish», không phải «to evaluate, revising and publish». Các mục đồng chức năng của chuỗi giữ cùng dạng to-infinitive.",
+          "Câu này thuộc một ví dụ khác và vẫn chứa lỗi: Không phù hợp với mẫu both noun and noun trong câu này. Cần dùng «both accuracy and transparency», không phải «both accurate and transparency». Both ... and nối hai danh từ cùng chức năng.",
+          "Bản sửa giữ nguyên ý định ban đầu. Không phù hợp với mẫu to V, to V and to V trong câu này. Cần dùng «to evaluate, to revise and to publish», không phải «to evaluate, revising and publish». Các mục đồng chức năng của chuỗi giữ cùng dạng to-infinitive."
+        ],
+        "focus": "guided_error_repair"
+      }
+    ],
+    "transfer": {
+      "prompt_vi": "Viết đoạn văn 3–5 câu: Write a mission statement with three parallel goals and one realistic qualification.. Hãy giải thích ít nhất một quyết định ngữ pháp về ý nghĩa, mức chắc chắn hoặc trọng tâm.",
+      "sample_en": "The project aims to improve access, reduce delays and strengthen accountability. These goals will be reviewed after the six-month pilot. The team will publish both successful outcomes and unresolved problems.",
+      "rubric_vi": "Đối chiếu theo bốn tiêu chí: (1) đúng dữ kiện và người thực hiện; (2) cấu trúc C1 tạo hiệu quả rõ ràng thay vì trang trí; (3) độ chắc chắn phù hợp chứng cứ; (4) liên kết câu và văn phong tự nhiên. Đáp án mẫu chỉ là một khả năng hợp lệ."
+    },
+    "review_status": "DRAFT_TEACHER_REVIEW_REQUIRED",
+    "assessment_mode": "FORMATIVE_ONLY",
+    "source_lesson_id": "C1-28"
+  },
+  "C1-29": {
+    "code": "C1-29",
+    "title": "Extraposition & Anticipatory Subjects",
+    "context_vi": "Khuyến nghị về minh bạch nghiên cứu. Bạn đang biên tập đoạn văn cho người đọc chuyên môn; phải giữ nguyên dữ kiện và làm rõ mục đích diễn đạt.",
+    "goal_vi": "Extraposition/anticipatory it đưa chủ ngữ dài xuống sau để cải thiện nhịp câu; không gán nghĩa thực thể cho it.",
+    "contrast_cue_vi": "Hai cách viết có thể cùng đúng về hình thức nhưng khác trọng tâm, sắc thái hoặc tác động đến người đọc. Xác định mục đích thực trước khi lựa chọn.",
+    "checkpoints": [
+      {
+        "id": "M19E-C1-29-CHECK-01",
+        "prompt_vi": "Muốn viết trang trọng về tầm quan trọng của kiểm chứng mà không mở câu bằng một chủ ngữ dài.",
+        "options_en": [
+          "It is essential to verify the findings independently.",
+          "It is essential verifying the findings independently to.",
+          "There is essential to verify the findings independently."
+        ],
+        "correct_index": 0,
+        "option_feedback_vi": [
+          "Anticipatory it đặt trước is essential và to-infinitive dời về sau, câu dễ theo dõi.",
+          "Trật tự và to cuối câu không đúng dạng extraposition.",
+          "There không thay cho anticipatory it trong cấu trúc đánh giá này."
+        ],
+        "focus": "contextual_decision"
+      },
+      {
+        "id": "M19E-C1-29-CHECK-02",
+        "prompt_vi": "Bằng chứng chỉ cho thấy đề xuất CÓ VẺ sẽ được xem lại. Chọn ngoại suy thận trọng, không khẳng định.",
+        "options_en": [
+          "It is indisputable that the proposal has already been reconsidered.",
+          "It seems that proposal was definitely reconsidered last year.",
+          "It seems likely that the proposal will be reconsidered."
+        ],
+        "correct_index": 2,
+        "option_feedback_vi": [
+          "Indisputable và already thay mức độ, thì, và thời điểm của dữ kiện.",
+          "Thiếu the và definitely...last year đổi thành sự kiện quá khứ chắc chắn.",
+          "It seems likely that giữ mức dự báo có khả năng về tương lai."
+        ],
+        "focus": "register_and_meaning"
+      },
+      {
+        "id": "M19E-C1-29-CHECK-03",
+        "prompt_vi": "Đọc câu sai “It essential to distinguish observation from interpretation when discussing the recycling guidelines.”. Hãy chọn bản sửa đúng GIỮ NGUYÊN ý nghĩa và không thêm sự kiện.",
+        "options_en": [
+          "It likely seems that the energy commission will revise the feasibility study after the hearing.",
+          "It is essential to distinguish observation from interpretation when discussing the recycling guidelines.",
+          "It essential to distinguish observation from interpretation when discussing the recycling guidelines."
+        ],
+        "correct_index": 1,
+        "option_feedback_vi": [
+          "Câu này thuộc một ví dụ khác và vẫn chứa lỗi: Không phù hợp với mẫu It seems likely that + clause trong câu này. Cần dùng «It seems likely that», không phải «It likely seems that». It làm chủ ngữ dự kiến trước một mệnh đề that dài.",
+          "Bản sửa giữ nguyên ý định ban đầu. Không phù hợp với mẫu It is + adjective + to V trong câu này. Cần dùng «It is essential to», không phải «It essential to». It là chủ ngữ giả; cụm nguyên mẫu mang nội dung chính.",
+          "Câu này chính là lỗi được yêu cầu sửa. Không phù hợp với mẫu It is + adjective + to V trong câu này. Cần dùng «It is essential to», không phải «It essential to». It là chủ ngữ giả; cụm nguyên mẫu mang nội dung chính."
+        ],
+        "focus": "guided_error_repair"
+      }
+    ],
+    "transfer": {
+      "prompt_vi": "Viết đoạn văn 3–5 câu: Write a short recommendation using an anticipatory subject and a reason.. Hãy giải thích ít nhất một quyết định ngữ pháp về ý nghĩa, mức chắc chắn hoặc trọng tâm.",
+      "sample_en": "It is important to publish the full methodology before drawing broad conclusions. This would allow other researchers to identify possible sources of bias and reproduce the analysis. Any remaining uncertainty should be stated in the final report.",
+      "rubric_vi": "Đối chiếu theo bốn tiêu chí: (1) đúng dữ kiện và người thực hiện; (2) cấu trúc C1 tạo hiệu quả rõ ràng thay vì trang trí; (3) độ chắc chắn phù hợp chứng cứ; (4) liên kết câu và văn phong tự nhiên. Đáp án mẫu chỉ là một khả năng hợp lệ."
+    },
+    "review_status": "DRAFT_TEACHER_REVIEW_REQUIRED",
+    "assessment_mode": "FORMATIVE_ONLY",
+    "source_lesson_id": "C1-29"
+  },
+  "C1-30": {
+    "code": "C1-30",
+    "title": "Punctuation, Scope & Formal Register",
+    "context_vi": "Đoạn giới thiệu phát hiện và giới hạn phương pháp. Bạn đang biên tập đoạn văn cho người đọc chuyên môn; phải giữ nguyên dữ kiện và làm rõ mục đích diễn đạt.",
+    "goal_vi": "Punctuation, scope và formal register ảnh hưởng quan hệ ý nghĩa; một dấu phẩy có thể làm thay đổi mệnh đề mà từ nối áp dụng.",
+    "contrast_cue_vi": "Hai cách viết có thể cùng đúng về hình thức nhưng khác trọng tâm, sắc thái hoặc tác động đến người đọc. Xác định mục đích thực trước khi lựa chọn.",
+    "checkpoints": [
+      {
+        "id": "M19E-C1-30-CHECK-01",
+        "prompt_vi": "Hai mệnh đề độc lập đối lập trong báo cáo. Câu nào dùng however và dấu câu phù hợp?",
+        "options_en": [
+          "The review was delayed, however, the results were released.",
+          "The review was delayed however the results, were released.",
+          "The review was delayed; however, the results were released."
+        ],
+        "correct_index": 2,
+        "option_feedback_vi": [
+          "Comma splice: chỉ dùng dấu phẩy để nối hai mệnh đề độc lập với however.",
+          "Thiếu dấu ngắt trước however và thêm dấu phẩy sai giữa chủ ngữ-từ bổ nghĩa.",
+          "Chấm phẩy nối hai mệnh đề độc lập, however được theo sau bằng dấu phẩy."
+        ],
+        "focus": "contextual_decision"
+      },
+      {
+        "id": "M19E-C1-30-CHECK-02",
+        "prompt_vi": "Báo cáo liệt kê đúng ba tài liệu cần nộp; không phải mệnh đề giải thích nguyên nhân.",
+        "options_en": [
+          "The office requested three documents, however the dataset, the budget and the summary.",
+          "The office requested three documents: the dataset, the budget and the summary.",
+          "The office requested three documents; because the dataset, the budget and the summary."
+        ],
+        "correct_index": 1,
+        "option_feedback_vi": [
+          "However không giới thiệu danh sách và kết cấu sau dấu phẩy không thành mệnh đề.",
+          "Dấu hai chấm giới thiệu danh sách giải thích three documents.",
+          "Dấu chấm phẩy và because không nối được cụm danh từ làm lý do."
+        ],
+        "focus": "register_and_meaning"
+      },
+      {
+        "id": "M19E-C1-30-CHECK-03",
+        "prompt_vi": "Đọc câu sai “The committee, however asked for further evidence before endorsing the shoreline assessment.”. Hãy chọn bản sửa đúng GIỮ NGUYÊN ý nghĩa và không thêm sự kiện.",
+        "options_en": [
+          "The committee, however, asked for further evidence before endorsing the shoreline assessment.",
+          "The committee, however asked for further evidence before endorsing the shoreline assessment.",
+          "The housing association requested three items, the source data, the final budget and the summary of the renovation plan."
+        ],
+        "correct_index": 0,
+        "option_feedback_vi": [
+          "Bản sửa giữ nguyên ý định ban đầu. Không phù hợp với mẫu S, however, V trong câu này. Cần dùng «however,», không phải «however». However là trạng từ nối được đặt giữa hai dấu phẩy khi xen giữa chủ ngữ và động từ.",
+          "Câu này chính là lỗi được yêu cầu sửa. Không phù hợp với mẫu S, however, V trong câu này. Cần dùng «however,», không phải «however». However là trạng từ nối được đặt giữa hai dấu phẩy khi xen giữa chủ ngữ và động từ.",
+          "Câu này thuộc một ví dụ khác và vẫn chứa lỗi: Không phù hợp với mẫu full clause: list trong câu này. Cần dùng «:», không phải «,». Dấu hai chấm dùng sau mệnh đề hoàn chỉnh để dẫn danh sách."
+        ],
+        "focus": "guided_error_repair"
+      }
+    ],
+    "transfer": {
+      "prompt_vi": "Viết đoạn văn 3–5 câu: Write a formal three-sentence summary with a correctly punctuated contrast.. Hãy giải thích ít nhất một quyết định ngữ pháp về ý nghĩa, mức chắc chắn hoặc trọng tâm.",
+      "sample_en": "The results indicate a small improvement; however, the evidence remains preliminary. Only two sites took part in the trial, and the groups were not randomly assigned. Further research is therefore necessary before a general recommendation can be made.",
+      "rubric_vi": "Đối chiếu theo bốn tiêu chí: (1) đúng dữ kiện và người thực hiện; (2) cấu trúc C1 tạo hiệu quả rõ ràng thay vì trang trí; (3) độ chắc chắn phù hợp chứng cứ; (4) liên kết câu và văn phong tự nhiên. Đáp án mẫu chỉ là một khả năng hợp lệ."
+    },
+    "review_status": "DRAFT_TEACHER_REVIEW_REQUIRED",
+    "assessment_mode": "FORMATIVE_ONLY",
+    "source_lesson_id": "C1-30"
+  }
+}

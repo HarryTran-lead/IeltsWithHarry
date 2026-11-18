@@ -1,0 +1,425 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "DICT-F1-020",
+  "status": "draft",
+  "level": "L1",
+  "section": 0,
+  "topic": "Foundation",
+  "title": "Years and Appointment Dates",
+  "learning_objectives_vi": [
+    "Nghe năm và ngày hẹn",
+    "Nghe và chép chính xác các lượt nghe ngắn mà không dựa vào transcript."
+  ],
+  "content_format": "micro_drill",
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Foundation narrator",
+      "tts_voice_id": null,
+      "accent_requested": "new_zealand"
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "The office opened in twenty eighteen.",
+      "translation_vi": "Văn phòng mở cửa vào năm 2018.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "time_dates",
+        "micro_listening"
+      ]
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "A",
+      "text_en": "The club started in two thousand five.",
+      "translation_vi": "Câu lạc bộ bắt đầu vào năm 2005.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "time_dates",
+        "micro_listening"
+      ]
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "A",
+      "text_en": "The new course begins on May sixth.",
+      "translation_vi": "Khóa học mới bắt đầu ngày 6 tháng 5.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "time_dates",
+        "micro_listening"
+      ]
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "A",
+      "text_en": "Your appointment is on June ninth.",
+      "translation_vi": "Lịch hẹn của bạn vào ngày 9 tháng 6.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "time_dates",
+        "micro_listening"
+      ]
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "A",
+      "text_en": "The festival returns in twenty twenty-seven.",
+      "translation_vi": "Lễ hội trở lại năm 2027.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "time_dates",
+        "micro_listening"
+      ]
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "A",
+      "text_en": "The interview is on April fourteenth.",
+      "translation_vi": "Buổi phỏng vấn ngày 14 tháng 4.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "time_dates",
+        "micro_listening"
+      ]
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "The visit was in nineteen ninety-eight.",
+      "translation_vi": "Chuyến thăm diễn ra năm 1998.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "time_dates",
+        "micro_listening"
+      ]
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "A",
+      "text_en": "The meeting moves to October third.",
+      "translation_vi": "Cuộc họp dời sang ngày 3 tháng 10.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "time_dates",
+        "micro_listening"
+      ]
+    },
+    {
+      "turn_id": "T09",
+      "speaker_id": "A",
+      "text_en": "The form is dated July twenty-first.",
+      "translation_vi": "Đơn được ghi ngày 21 tháng 7.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "time_dates",
+        "micro_listening"
+      ]
+    },
+    {
+      "turn_id": "T10",
+      "speaker_id": "A",
+      "text_en": "The next class is on November eleventh.",
+      "translation_vi": "Lớp tiếp theo vào ngày 11 tháng 11.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "time_dates",
+        "micro_listening"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "type": "dictation",
+      "prompt": "Nghe lượt T01 và chép chính xác những từ được nói.",
+      "correct_answers": [
+        "The office opened in twenty eighteen."
+      ],
+      "evidence_turn_ids": [
+        "T01"
+      ],
+      "explanation_vi": "twenty eighteen là 2018. Nghĩa: Văn phòng mở cửa vào năm 2018.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text"
+      ]
+    },
+    {
+      "question_id": "Q02",
+      "type": "dictation",
+      "prompt": "Nghe lượt T02 và chép chính xác những từ được nói.",
+      "correct_answers": [
+        "The club started in two thousand five."
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "two thousand five là 2005. Nghĩa: Câu lạc bộ bắt đầu vào năm 2005.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text"
+      ]
+    },
+    {
+      "question_id": "Q03",
+      "type": "dictation",
+      "prompt": "Nghe lượt T03 và chép chính xác những từ được nói.",
+      "correct_answers": [
+        "The new course begins on May sixth."
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "May sixth = 6 May. Nghĩa: Khóa học mới bắt đầu ngày 6 tháng 5.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text"
+      ]
+    },
+    {
+      "question_id": "Q04",
+      "type": "dictation",
+      "prompt": "Nghe lượt T04 và chép chính xác những từ được nói.",
+      "correct_answers": [
+        "Your appointment is on June ninth."
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "June ninth = 9 June. Nghĩa: Lịch hẹn của bạn vào ngày 9 tháng 6.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text"
+      ]
+    },
+    {
+      "question_id": "Q05",
+      "type": "dictation",
+      "prompt": "Nghe lượt T05 và chép chính xác những từ được nói.",
+      "correct_answers": [
+        "The festival returns in twenty twenty-seven."
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "twenty twenty-seven là 2027. Nghĩa: Lễ hội trở lại năm 2027.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text"
+      ]
+    },
+    {
+      "question_id": "Q06",
+      "type": "dictation",
+      "prompt": "Nghe lượt T06 và chép chính xác những từ được nói.",
+      "correct_answers": [
+        "The interview is on April fourteenth."
+      ],
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "explanation_vi": "April fourteenth = 14 April. Nghĩa: Buổi phỏng vấn ngày 14 tháng 4.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text"
+      ]
+    },
+    {
+      "question_id": "Q07",
+      "type": "dictation",
+      "prompt": "Nghe lượt T07 và chép chính xác những từ được nói.",
+      "correct_answers": [
+        "The visit was in nineteen ninety-eight."
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "nineteen ninety-eight = 1998. Nghĩa: Chuyến thăm diễn ra năm 1998.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text"
+      ]
+    },
+    {
+      "question_id": "Q08",
+      "type": "dictation",
+      "prompt": "Nghe lượt T08 và chép chính xác những từ được nói.",
+      "correct_answers": [
+        "The meeting moves to October third."
+      ],
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "explanation_vi": "moves to báo đổi lịch. Nghĩa: Cuộc họp dời sang ngày 3 tháng 10.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text"
+      ]
+    },
+    {
+      "question_id": "Q09",
+      "type": "dictation",
+      "prompt": "Nghe lượt T09 và chép chính xác những từ được nói.",
+      "correct_answers": [
+        "The form is dated July twenty-first."
+      ],
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "explanation_vi": "July twenty-first = 21 July. Nghĩa: Đơn được ghi ngày 21 tháng 7.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text"
+      ]
+    },
+    {
+      "question_id": "Q10",
+      "type": "dictation",
+      "prompt": "Nghe lượt T10 và chép chính xác những từ được nói.",
+      "correct_answers": [
+        "The next class is on November eleventh."
+      ],
+      "evidence_turn_ids": [
+        "T10"
+      ],
+      "explanation_vi": "November eleventh = 11 November. Nghĩa: Lớp tiếp theo vào ngày 11 tháng 11.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text"
+      ]
+    },
+    {
+      "question_id": "Q11",
+      "type": "word_choice",
+      "prompt": "T02: Câu lạc bộ bắt đầu năm nào?",
+      "correct_answers": [
+        "2005"
+      ],
+      "options": [
+        "2005",
+        "2015"
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Two thousand five = 2005. Hãy nghe lại lượt T02, đối chiếu với lựa chọn còn lại và xác định từ/ý được nói thật.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "comprehension",
+        "foundation_discrimination"
+      ]
+    },
+    {
+      "question_id": "Q12",
+      "type": "word_choice",
+      "prompt": "T08: Cuộc họp chuyển sang ngày nào?",
+      "correct_answers": [
+        "October 3"
+      ],
+      "options": [
+        "October 3",
+        "October 13"
+      ],
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "explanation_vi": "October third = ngày 3/10. Hãy nghe lại lượt T08, đối chiếu với lựa chọn còn lại và xác định từ/ý được nói thật.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "comprehension",
+        "foundation_discrimination"
+      ]
+    }
+  ],
+  "vocabulary": [
+    {
+      "term": "appointment",
+      "pos": "noun",
+      "meaning_vi": "lịch hẹn",
+      "example_en": "Your appointment is on June ninth.",
+      "example_vi": "Lịch hẹn của bạn vào ngày 9 tháng 6.",
+      "source_turn_id": "T04"
+    },
+    {
+      "term": "interview",
+      "pos": "noun",
+      "meaning_vi": "buổi phỏng vấn",
+      "example_en": "The interview is on April fourteenth.",
+      "example_vi": "Buổi phỏng vấn ngày 14 tháng 4.",
+      "source_turn_id": "T06"
+    },
+    {
+      "term": "meeting",
+      "pos": "noun",
+      "meaning_vi": "cuộc họp",
+      "example_en": "The meeting moves to October third.",
+      "example_vi": "Cuộc họp dời sang ngày 3 tháng 10.",
+      "source_turn_id": "T08"
+    },
+    {
+      "term": "course",
+      "pos": "noun",
+      "meaning_vi": "khóa học",
+      "example_en": "The new course begins on May sixth.",
+      "example_vi": "Khóa học mới bắt đầu ngày 6 tháng 5.",
+      "source_turn_id": "T03"
+    }
+  ],
+  "audio": {
+    "status": "not_generated",
+    "url": null,
+    "duration_ms": null,
+    "model": null,
+    "provider": null,
+    "voice_config": null,
+    "source_transcript_hash": "b5ea0ed7b25f4b35e6b6348d1fe739c104ec76ae87a15c0ebd194ae05c80cf25",
+    "audio_sha256": null,
+    "format": null
+  },
+  "qa": {
+    "content_reviewed": false,
+    "answers_verified": false,
+    "audio_verified": false,
+    "rights_cleared": false,
+    "duplicate_reviewed": false,
+    "notes": [
+      "Author draft. Editorial, native-like audio, rights and device QA pending.",
+      "TTS: generate each turn separately, then combine and generate timestamps.",
+      "M16.2: automated edits are provisional; IELTS teacher final signoff, audio and rights clearance pending."
+    ]
+  },
+  "provenance": {
+    "content_origin": "original_ai_assisted",
+    "source_urls": [],
+    "source_rights_note": "New original learning material written for English Skill Lab; verify TTS and distribution conditions prior to release.",
+    "reviewer": null
+  },
+  "release_metadata": {
+    "published_at": null,
+    "version": 1
+  }
+}

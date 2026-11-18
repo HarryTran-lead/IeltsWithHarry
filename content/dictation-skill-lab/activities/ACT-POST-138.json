@@ -1,0 +1,217 @@
+{
+  "schema_version": "m35.1.0",
+  "id": "ACT-POST-138",
+  "activity_id": "ACT-POST-138",
+  "status": "draft_pending_audio_and_teacher_signoff",
+  "module": "dictation",
+  "kind": "post_test_error_repair",
+  "section": 2,
+  "title": "Introducing the Community Learning Hub — Sửa lỗi sau bài thi",
+  "source_bank": "full_mock_part",
+  "origin_bank": "protected_assessment",
+  "source_milestone": "M31",
+  "source_package": "English_Skill_Lab_Dictation_M31_Full_Listening_Mocks_11-15.zip",
+  "source_entry_path": "ESL_Dictation_M31_Full_Mocks_11_15/01_TESTS_SERVER_ONLY/M31-LISTENING-MOCK-15.SERVER_ONLY.json",
+  "source_test_id": "M31-LISTENING-MOCK-15",
+  "source_lesson_id": null,
+  "source_part_id": "M31-LISTENING-MOCK-15-P2",
+  "reuse_parent_id": "M31-LISTENING-MOCK-15-P2",
+  "source_question_id": "Q10",
+  "source_audio_id": "assessment/full_mock_part/M31-LISTENING-MOCK-15-P2",
+  "source_audio_id_kind": "logical_source_part_identifier_not_file",
+  "source_audio_asset_id": null,
+  "source_declared_unverified_audio_id": null,
+  "source_audio_url": null,
+  "audio_file_provided": false,
+  "source_turn_ids": [
+    "T04",
+    "T05",
+    "T18"
+  ],
+  "segment_timing": {
+    "T04": {
+      "start_ms": null,
+      "end_ms": null,
+      "sha256": "281a2cce2d6b7d6dbf9a6f9f6f9ae9b70669ead6c84a0c3ccbc2948dc8ae386c"
+    },
+    "T05": {
+      "start_ms": null,
+      "end_ms": null,
+      "sha256": "d740dc9d02cf20ce971d719284498c4272a8e88397202d3ab43d21982b2468b3"
+    },
+    "T18": {
+      "start_ms": null,
+      "end_ms": null,
+      "sha256": "f3b8053d6b5efdb6917730f21ae5c78d0d51d408576bf795d4b92eaef1300a49"
+    }
+  },
+  "clip_start_ms": null,
+  "clip_end_ms": null,
+  "audio_alignment_status": "pending_real_audio_and_verified_offsets",
+  "evidence_transcript_sha256": "cff99f71ff1f6ef187d07306ec5c11591eee60dae3e62e87010e9c83752aefbf",
+  "anchor_turn_id": "T18",
+  "teacher_only_evidence_text_en": "The monthly bulletin lists new courses, timetable changes and occasional guest sessions. Residents can choose email delivery or collect a printed copy at reception.",
+  "questions": [
+    {
+      "exercise_id": "ACT-POST-138-01",
+      "phase": "guided_relisten",
+      "mode": "short_answer",
+      "title_vi": "Nghe lại điểm đã bỏ lỡ",
+      "prompt_en": "How new schedules are announced: ____",
+      "prompt_vi": "Nghe lại đoạn bằng chứng và trả lời lại câu hỏi gốc sau khi đã nộp bài thi.",
+      "options": null,
+      "correct_option": null,
+      "correct_answers": [
+        "monthly bulletin"
+      ],
+      "spoken_answer": "monthly bulletin",
+      "word_limit": 3,
+      "normalization_policy": "trim_unicode_nfkc_casefold_collapse_spaces_keep_meaningful_digits_and_letters",
+      "scoring_policy": "post_test_training_only",
+      "source_question_id": "Q10",
+      "source_question_type": "note_completion",
+      "play_turn_ids": [
+        "T18"
+      ],
+      "evidence_turn_ids": [
+        "T18"
+      ],
+      "teacher_explanation_vi": "Đáp án biên soạn: monthly bulletin. Giáo viên phải nghe âm thanh, đối chiếu câu nói T18 và kiểm tra tính duy nhất của câu trả lời.",
+      "feedback_vi": "Đáp án gốc: monthly bulletin. Đối chiếu với các lượt thoại T18; chú ý thông tin cuối cùng và từ khóa được diễn đạt lại.",
+      "is_exam_score": false
+    },
+    {
+      "exercise_id": "ACT-POST-138-02",
+      "phase": "evidence_recognition",
+      "mode": "evidence_choice",
+      "title_vi": "Tìm câu thoại chứng minh đáp án",
+      "prompt_vi": "Trong ba trích đoạn thực sự có trong cùng bài nghe, trích đoạn nào liên quan trực tiếp nhất đến câu hỏi vừa làm?",
+      "source_question_id": "Q10",
+      "source_question_prompt_en": "How new schedules are announced: ____",
+      "choices": [
+        {
+          "key": "T04",
+          "excerpt_en": "The digital help desk specialises in assisting with online forms such as service applications and account setup. It does not offer a full computer repair service, although staff can suggest where to find one.",
+          "source_turn_id": "T04"
+        },
+        {
+          "key": "T05",
+          "excerpt_en": "The conversation circle provides opportunities for practising informal speaking in small groups. It is not a formal language examination or an assessed writing course.",
+          "source_turn_id": "T05"
+        },
+        {
+          "key": "T18",
+          "excerpt_en": "The monthly bulletin lists new courses, timetable changes and occasional guest sessions. Residents can choose email delivery or collect a printed copy at reception.",
+          "source_turn_id": "T18"
+        }
+      ],
+      "correct_answers": [
+        "T18"
+      ],
+      "evidence_turn_ids": [
+        "T18"
+      ],
+      "evidence_text_sha256": "f3b8053d6b5efdb6917730f21ae5c78d0d51d408576bf795d4b92eaef1300a49",
+      "play_turn_ids": [
+        "T04",
+        "T05",
+        "T18"
+      ],
+      "feedback_vi": "Câu hỏi này được chứng minh tại lượt T18. Hai lựa chọn còn lại là lời nói có thật nhưng nằm ở các ý khác trong cùng đoạn nghe.",
+      "grading_policy": "exact_source_turn_id",
+      "is_exam_score": false
+    },
+    {
+      "exercise_id": "ACT-POST-138-03",
+      "phase": "focus_dictation",
+      "mode": "source_phrase_dictation",
+      "title_vi": "Chép lại cụm âm thanh trọng tâm",
+      "prompt_en": "[____]  courses, timetable changes and occasional gu…",
+      "prompt_vi": "Nghe lượt thoại và điền chính xác cụm từ còn thiếu vào dấu trống. Không chép cả câu.",
+      "word_limit": 5,
+      "correct_answers": [
+        "The monthly bulletin lists new"
+      ],
+      "play_turn_ids": [
+        "T18"
+      ],
+      "evidence_turn_ids": [
+        "T18"
+      ],
+      "source_excerpt_exact": "The monthly bulletin lists new",
+      "evidence_char_start": 0,
+      "evidence_char_end": 30,
+      "source_turn_sha256": "f3b8053d6b5efdb6917730f21ae5c78d0d51d408576bf795d4b92eaef1300a49",
+      "feedback_vi": "Cụm nghe-chép chính xác là “The monthly bulletin lists new”. Hãy đối chiếu từ chức năng, âm cuối và cách nối âm trước khi thử lại.",
+      "normalization_policy": "trim_unicode_nfkc_casefold_collapse_spaces_keep_meaningful_digits_and_letters",
+      "is_exam_score": false,
+      "newly_authored_for_m35": true
+    }
+  ],
+  "teacher_source_answer_key": {
+    "original_correct_answers": [
+      "monthly bulletin"
+    ],
+    "original_correct_option": null,
+    "evidence_turn_ids": [
+      "T18"
+    ],
+    "raw_question_evidence_excerpt_en": "The monthly bulletin lists new courses, timetable changes and occasional guest sessions. Residents can choose email delivery or collect a printed copy at reception.",
+    "original_explanation_vi": "Đáp án biên soạn: monthly bulletin. Giáo viên phải nghe âm thanh, đối chiếu câu nói T18 và kiểm tra tính duy nhất của câu trả lời."
+  },
+  "skill_tags": [
+    "post_test_repair",
+    "section_2",
+    "note_completion",
+    "evidence_matching",
+    "focused_dictation",
+    "first_attempt_exposure_protection"
+  ],
+  "learner_variants": {
+    "if_original_answer_incorrect": "required_repair",
+    "if_original_answer_correct": "optional_reinforcement",
+    "if_no_question_response": "optional_first_attempt_submitted_only"
+  },
+  "repair_rule": {
+    "compare_response_to_original_question_id": "Q10",
+    "source_user_attempt_answer_from_db": true,
+    "error_record_type": "original_question_review",
+    "recommend_retention_days": [
+      1,
+      3,
+      7
+    ],
+    "new_first_attempt_scoring": false,
+    "band_calibration": false
+  },
+  "access_policy": {
+    "access": "post_submission_only",
+    "gate_parent_id": "M31-LISTENING-MOCK-15",
+    "gate_kind": "whole_mock_submitted",
+    "user_bound": true,
+    "server_side_enforced": true,
+    "has_prior_attempt_required": true,
+    "cross_user_unlock": false,
+    "exposure_records_required": true,
+    "do_not_return_in_public_catalog": true,
+    "transcript_hidden_in_exam_session": true,
+    "pre_first_attempt_reuse": false,
+    "after_submit_irreversible_seen": true,
+    "retest_is_exposed": true,
+    "allow_any_public_index": false
+  },
+  "rights_status": "pending_review",
+  "review": {
+    "source_quality_review": "pending",
+    "semantic_answer_review": "pending",
+    "human_audio_listening": "pending",
+    "alignment_verified": false,
+    "teacher_signoff": "pending",
+    "publication_approved": false
+  },
+  "map_asset_id": null,
+  "map_asset_private_path": null,
+  "source_speaker_roles": [],
+  "version": "m35.1.0",
+  "import_policy": "insert_only_idempotent_do_not_overwrite_source"
+}

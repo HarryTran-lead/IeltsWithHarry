@@ -79,7 +79,7 @@
 
 /* Loading placeholder. */
 .skeleton {
-  border-radius: 12px;
+  border-radius: var(--r-md);
   background: linear-gradient(90deg, #eceee8 0%, #f6f7f3 40%, #eceee8 80%) 0 0 / 200% 100%;
   animation: shimmer 1.3s linear infinite;
 }

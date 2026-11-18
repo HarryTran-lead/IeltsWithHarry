@@ -1,0 +1,652 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "FND2-024",
+  "status": "draft",
+  "level": "L2",
+  "section": 0,
+  "topic": "Foundation M17 – Numbers",
+  "title": "Double digits, triple digits and zero",
+  "learning_objectives_vi": [
+    "Nghe chính xác double digits, triple digits and zero.",
+    "Phân biệt double, triple, zero và oh khi đọc dãy số",
+    "Chuyển lời đọc thành chữ số/mã chính xác, không đoán theo ý nghĩa."
+  ],
+  "content_format": "sentence_drill",
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Foundation narrator",
+      "tts_voice_id": null,
+      "accent_requested": "british"
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "The last five digits are double seven, four, one, six.",
+      "translation_vi": "Năm chữ số cuối là 77416.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "numbers",
+        "phone_repetition",
+        "digit_string"
+      ],
+      "target_value": "77416",
+      "target_kind": "digit_string",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "A",
+      "text_en": "The help desk number ends with triple five, two, eight.",
+      "translation_vi": "Số của bàn hỗ trợ kết thúc bằng 55528.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "numbers",
+        "phone_repetition",
+        "digit_string"
+      ],
+      "target_value": "55528",
+      "target_kind": "digit_string",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "A",
+      "text_en": "Please write zero, zero, seven, three, four.",
+      "translation_vi": "Hãy viết 00734.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "numbers",
+        "phone_repetition",
+        "digit_string"
+      ],
+      "target_value": "00734",
+      "target_kind": "digit_string",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "A",
+      "text_en": "The access code is double three, eight, zero, six.",
+      "translation_vi": "Mã truy cập là 33806.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "numbers",
+        "phone_repetition",
+        "digit_string"
+      ],
+      "target_value": "33806",
+      "target_kind": "digit_string",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "A",
+      "text_en": "Her extension is nine, double two, five.",
+      "translation_vi": "Số máy lẻ của cô ấy là 9225.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "numbers",
+        "phone_repetition",
+        "digit_string"
+      ],
+      "target_value": "9225",
+      "target_kind": "digit_string",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "A",
+      "text_en": "Our reference ends in triple one, zero, four.",
+      "translation_vi": "Mã tham chiếu của chúng tôi kết thúc bằng 11104.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "numbers",
+        "phone_repetition",
+        "digit_string"
+      ],
+      "target_value": "11104",
+      "target_kind": "digit_string",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "The final digits are double eight, six, two, zero.",
+      "translation_vi": "Các chữ số cuối là 88620.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "numbers",
+        "phone_repetition",
+        "digit_string"
+      ],
+      "target_value": "88620",
+      "target_kind": "digit_string",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "A",
+      "text_en": "Dial oh, five, double four, seven.",
+      "translation_vi": "Hãy bấm 05447.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "numbers",
+        "phone_repetition",
+        "digit_string"
+      ],
+      "target_value": "05447",
+      "target_kind": "digit_string",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T09",
+      "speaker_id": "A",
+      "text_en": "The code begins with triple six, two, nine.",
+      "translation_vi": "Mã bắt đầu bằng 66629.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "numbers",
+        "phone_repetition",
+        "digit_string"
+      ],
+      "target_value": "66629",
+      "target_kind": "digit_string",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T10",
+      "speaker_id": "A",
+      "text_en": "Please confirm double zero, five, nine, three.",
+      "translation_vi": "Hãy xác nhận 00593.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "numbers",
+        "phone_repetition",
+        "digit_string"
+      ],
+      "target_value": "00593",
+      "target_kind": "digit_string",
+      "bank_role": "training"
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "type": "dictation",
+      "prompt": "Nghe lượt T01 một lần rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "The last five digits are double seven, four, one, six."
+      ],
+      "evidence_turn_ids": [
+        "T01"
+      ],
+      "explanation_vi": "Tập trung nghe phone_repetition. Nghĩa: Năm chữ số cuối là 77416.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text",
+        "phone_repetition"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q11",
+      "type": "short_answer",
+      "prompt": "T01: Nghe lượt này rồi nhập chuỗi chữ số, giữ số 0 ở đầu nếu được đọc.",
+      "correct_answers": [
+        "77416"
+      ],
+      "evidence_turn_ids": [
+        "T01"
+      ],
+      "explanation_vi": "Kết quả cần ghi: 77416. Ngữ cảnh: Năm chữ số cuối là 77416.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "listening_comprehension",
+        "numeric_transcription",
+        "digit_string"
+      ],
+      "answer_normalization": "ignore_spaces_for_codes",
+      "numeric_type": "digit_string",
+      "word_limit": null,
+      "instructions_en": null,
+      "max_replays_practice": 3
+    },
+    {
+      "question_id": "Q02",
+      "type": "dictation",
+      "prompt": "Nghe lượt T02 một lần rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "The help desk number ends with triple five, two, eight."
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Tập trung nghe phone_repetition. Nghĩa: Số của bàn hỗ trợ kết thúc bằng 55528.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text",
+        "phone_repetition"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q12",
+      "type": "short_answer",
+      "prompt": "T02: Nghe lượt này rồi nhập chuỗi chữ số, giữ số 0 ở đầu nếu được đọc.",
+      "correct_answers": [
+        "55528"
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Kết quả cần ghi: 55528. Ngữ cảnh: Số của bàn hỗ trợ kết thúc bằng 55528.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "listening_comprehension",
+        "numeric_transcription",
+        "digit_string"
+      ],
+      "answer_normalization": "ignore_spaces_for_codes",
+      "numeric_type": "digit_string",
+      "word_limit": null,
+      "instructions_en": null,
+      "max_replays_practice": 3
+    },
+    {
+      "question_id": "Q03",
+      "type": "dictation",
+      "prompt": "Nghe lượt T03 một lần rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "Please write zero, zero, seven, three, four."
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Tập trung nghe phone_repetition. Nghĩa: Hãy viết 00734.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text",
+        "phone_repetition"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q13",
+      "type": "short_answer",
+      "prompt": "T03: Nghe lượt này rồi nhập chuỗi chữ số, giữ số 0 ở đầu nếu được đọc.",
+      "correct_answers": [
+        "00734"
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Kết quả cần ghi: 00734. Ngữ cảnh: Hãy viết 00734.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "listening_comprehension",
+        "numeric_transcription",
+        "digit_string"
+      ],
+      "answer_normalization": "ignore_spaces_for_codes",
+      "numeric_type": "digit_string",
+      "word_limit": null,
+      "instructions_en": null,
+      "max_replays_practice": 3
+    },
+    {
+      "question_id": "Q04",
+      "type": "dictation",
+      "prompt": "Nghe lượt T04 một lần rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "The access code is double three, eight, zero, six."
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Tập trung nghe phone_repetition. Nghĩa: Mã truy cập là 33806.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text",
+        "phone_repetition"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q14",
+      "type": "short_answer",
+      "prompt": "T04: Nghe lượt này rồi nhập chuỗi chữ số, giữ số 0 ở đầu nếu được đọc.",
+      "correct_answers": [
+        "33806"
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Kết quả cần ghi: 33806. Ngữ cảnh: Mã truy cập là 33806.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "listening_comprehension",
+        "numeric_transcription",
+        "digit_string"
+      ],
+      "answer_normalization": "ignore_spaces_for_codes",
+      "numeric_type": "digit_string",
+      "word_limit": null,
+      "instructions_en": null,
+      "max_replays_practice": 3
+    },
+    {
+      "question_id": "Q05",
+      "type": "dictation",
+      "prompt": "Nghe lượt T05 một lần rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "Her extension is nine, double two, five."
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Tập trung nghe phone_repetition. Nghĩa: Số máy lẻ của cô ấy là 9225.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text",
+        "phone_repetition"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q15",
+      "type": "short_answer",
+      "prompt": "T05: Nghe lượt này rồi nhập chuỗi chữ số, giữ số 0 ở đầu nếu được đọc.",
+      "correct_answers": [
+        "9225"
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Kết quả cần ghi: 9225. Ngữ cảnh: Số máy lẻ của cô ấy là 9225.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "listening_comprehension",
+        "numeric_transcription",
+        "digit_string"
+      ],
+      "answer_normalization": "ignore_spaces_for_codes",
+      "numeric_type": "digit_string",
+      "word_limit": null,
+      "instructions_en": null,
+      "max_replays_practice": 3
+    },
+    {
+      "question_id": "Q06",
+      "type": "dictation",
+      "prompt": "Nghe lượt T06 một lần rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "Our reference ends in triple one, zero, four."
+      ],
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "explanation_vi": "Tập trung nghe phone_repetition. Nghĩa: Mã tham chiếu của chúng tôi kết thúc bằng 11104.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text",
+        "phone_repetition"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q07",
+      "type": "dictation",
+      "prompt": "Nghe lượt T07 một lần rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "The final digits are double eight, six, two, zero."
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "Tập trung nghe phone_repetition. Nghĩa: Các chữ số cuối là 88620.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text",
+        "phone_repetition"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q08",
+      "type": "dictation",
+      "prompt": "Nghe lượt T08 một lần rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "Dial oh, five, double four, seven."
+      ],
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "explanation_vi": "Tập trung nghe phone_repetition. Nghĩa: Hãy bấm 05447.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text",
+        "phone_repetition"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q09",
+      "type": "dictation",
+      "prompt": "Nghe lượt T09 một lần rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "The code begins with triple six, two, nine."
+      ],
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "explanation_vi": "Tập trung nghe phone_repetition. Nghĩa: Mã bắt đầu bằng 66629.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text",
+        "phone_repetition"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q10",
+      "type": "dictation",
+      "prompt": "Nghe lượt T10 một lần rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "Please confirm double zero, five, nine, three."
+      ],
+      "evidence_turn_ids": [
+        "T10"
+      ],
+      "explanation_vi": "Tập trung nghe phone_repetition. Nghĩa: Hãy xác nhận 00593.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text",
+        "phone_repetition"
+      ],
+      "max_replays_practice": 5
+    }
+  ],
+  "vocabulary": [
+    {
+      "term": "77416",
+      "pos": "digit_string",
+      "meaning_vi": "77416 (digit_string)",
+      "example_en": "The last five digits are double seven, four, one, six.",
+      "example_vi": "Năm chữ số cuối là 77416.",
+      "source_turn_id": "T01"
+    },
+    {
+      "term": "55528",
+      "pos": "digit_string",
+      "meaning_vi": "55528 (digit_string)",
+      "example_en": "The help desk number ends with triple five, two, eight.",
+      "example_vi": "Số của bàn hỗ trợ kết thúc bằng 55528.",
+      "source_turn_id": "T02"
+    },
+    {
+      "term": "00734",
+      "pos": "digit_string",
+      "meaning_vi": "00734 (digit_string)",
+      "example_en": "Please write zero, zero, seven, three, four.",
+      "example_vi": "Hãy viết 00734.",
+      "source_turn_id": "T03"
+    },
+    {
+      "term": "33806",
+      "pos": "digit_string",
+      "meaning_vi": "33806 (digit_string)",
+      "example_en": "The access code is double three, eight, zero, six.",
+      "example_vi": "Mã truy cập là 33806.",
+      "source_turn_id": "T04"
+    },
+    {
+      "term": "9225",
+      "pos": "digit_string",
+      "meaning_vi": "9225 (digit_string)",
+      "example_en": "Her extension is nine, double two, five.",
+      "example_vi": "Số máy lẻ của cô ấy là 9225.",
+      "source_turn_id": "T05"
+    },
+    {
+      "term": "11104",
+      "pos": "digit_string",
+      "meaning_vi": "11104 (digit_string)",
+      "example_en": "Our reference ends in triple one, zero, four.",
+      "example_vi": "Mã tham chiếu của chúng tôi kết thúc bằng 11104.",
+      "source_turn_id": "T06"
+    },
+    {
+      "term": "88620",
+      "pos": "digit_string",
+      "meaning_vi": "88620 (digit_string)",
+      "example_en": "The final digits are double eight, six, two, zero.",
+      "example_vi": "Các chữ số cuối là 88620.",
+      "source_turn_id": "T07"
+    },
+    {
+      "term": "05447",
+      "pos": "digit_string",
+      "meaning_vi": "05447 (digit_string)",
+      "example_en": "Dial oh, five, double four, seven.",
+      "example_vi": "Hãy bấm 05447.",
+      "source_turn_id": "T08"
+    },
+    {
+      "term": "66629",
+      "pos": "digit_string",
+      "meaning_vi": "66629 (digit_string)",
+      "example_en": "The code begins with triple six, two, nine.",
+      "example_vi": "Mã bắt đầu bằng 66629.",
+      "source_turn_id": "T09"
+    },
+    {
+      "term": "00593",
+      "pos": "digit_string",
+      "meaning_vi": "00593 (digit_string)",
+      "example_en": "Please confirm double zero, five, nine, three.",
+      "example_vi": "Hãy xác nhận 00593.",
+      "source_turn_id": "T10"
+    }
+  ],
+  "micro_skill_id": "phone_repetition",
+  "bank_role": "training",
+  "content_design": {
+    "sequence": "10_distinct_contexts",
+    "first_listen": "1x",
+    "guided_replay_max": 5,
+    "mastery_requires_unseen": true,
+    "note_vi": "Phân biệt double, triple, zero và oh khi đọc dãy số"
+  },
+  "audio": {
+    "status": "not_generated",
+    "url": null,
+    "duration_ms": null,
+    "provider": null,
+    "model": null,
+    "voice_config": null,
+    "format": null,
+    "audio_sha256": null,
+    "source_transcript_hash": "77748a31341e8bdfae5318263bd9709d818a67923cc8a0d7fbcdbdadd4ead606",
+    "generation_notes": "Generate each turn as speech only; no spoken question numbers, answers or coaching. Validate text and pronunciation before release."
+  },
+  "qa": {
+    "content_reviewed": false,
+    "answers_verified": true,
+    "audio_verified": false,
+    "human_signed_off": false,
+    "duplicate_reviewed": false,
+    "notes": [
+      "Original draft; numeric normalization and pronunciation require teacher/audio QA.",
+      "Fictional UK phone number ranges used for instructional safety; do not dial."
+    ]
+  },
+  "provenance": {
+    "content_origin": "original_ai_assisted",
+    "rights_status": "pending_tts_terms_review",
+    "source_urls": [],
+    "reviewer": null
+  },
+  "release_metadata": {
+    "published_at": null,
+    "version": 1
+  },
+  "lesson_theory_vi": {
+    "core_rule": "Double A là hai chữ số A; triple A là ba. Oh có thể chỉ chữ số 0.",
+    "worked_contrasts": [
+      {
+        "spoken_example": "double four, one",
+        "written_value": "441",
+        "teacher_note_vi": "Đây là ví dụ riêng để học cách chuyển lời đọc sang số; không phải đáp án của các lượt T01–T10."
+      },
+      {
+        "spoken_example": "triple seven, two",
+        "written_value": "7772",
+        "teacher_note_vi": "Đây là ví dụ riêng để học cách chuyển lời đọc sang số; không phải đáp án của các lượt T01–T10."
+      }
+    ],
+    "learning_steps": [
+      "Xem quy tắc và hai ví dụ bên dưới trước khi bắt đầu.",
+      "Nghe mỗi câu một lần, chép toàn câu hoặc nhập thông tin số theo yêu cầu.",
+      "Đối chiếu chữ/số và vị trí sai sau khi nộp; nghe lại từng câu khi cần.",
+      "Kiểm tra bằng 2 câu mới chưa xuất hiện trong nội dung luyện."
+    ],
+    "common_mistakes": [
+      "Sai số lượng chữ số khi gặp double/triple.",
+      "Không dùng lại câu quen thuộc để chứng minh độ vững của kỹ năng."
+    ],
+    "before_audio_question": "Thông tin cần nghe là số lượng, số điện thoại, giờ, tiền hay mã chữ-số?"
+  }
+}

@@ -1,0 +1,397 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "DICT-S1-001",
+  "status": "draft",
+  "level": "L1",
+  "section": 1,
+  "topic": "Hotel Booking",
+  "title": "A Quiet Single Room",
+  "learning_objectives_vi": [
+    "Rèn core information exchange qua tình huống: A guest calls a small hotel to ask about an available room.",
+    "Xác định thông tin cuối cùng và phân biệt dữ liệu gây nhiễu (nếu có).",
+    "Nghe chép chính xác, lý giải đáp án từ transcript và học từ trong ngữ cảnh."
+  ],
+  "content_format": "section_bridge",
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Service representative / employee",
+      "tts_voice_id": null,
+      "accent_requested": "british"
+    },
+    {
+      "speaker_id": "B",
+      "role": "Customer / applicant",
+      "tts_voice_id": null,
+      "accent_requested": "british"
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "Good afternoon, Green Lane Hotel. How can I help?",
+      "translation_vi": "Chào buổi chiều, khách sạn Green Lane. Tôi có thể giúp gì?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "room_type",
+        "days_dates",
+        "prices",
+        "spelling",
+        "section_1",
+        "two_speaker_dialogue",
+        "l1"
+      ]
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "B",
+      "text_en": "Do you have a single room for Friday night?",
+      "translation_vi": "Khách sạn có phòng đơn cho tối thứ Sáu không?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "room_type",
+        "days_dates",
+        "prices",
+        "spelling",
+        "section_1",
+        "two_speaker_dialogue",
+        "l1"
+      ]
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "A",
+      "text_en": "Yes, it costs sixty pounds.",
+      "translation_vi": "Có, giá sáu mươi bảng.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "room_type",
+        "days_dates",
+        "prices",
+        "spelling",
+        "section_1",
+        "two_speaker_dialogue",
+        "l1"
+      ]
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "B",
+      "text_en": "Does that include breakfast?",
+      "translation_vi": "Giá đã bao gồm bữa sáng chưa?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "room_type",
+        "days_dates",
+        "prices",
+        "spelling",
+        "section_1",
+        "two_speaker_dialogue",
+        "l1"
+      ]
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "A",
+      "text_en": "Yes. Breakfast starts at seven.",
+      "translation_vi": "Có. Bữa sáng bắt đầu lúc bảy giờ.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "room_type",
+        "days_dates",
+        "prices",
+        "spelling",
+        "section_1",
+        "two_speaker_dialogue",
+        "l1"
+      ]
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "B",
+      "text_en": "Great. My surname is Cole, C-O-L-E.",
+      "translation_vi": "Tốt quá. Họ tôi là Cole, C-O-L-E.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "room_type",
+        "days_dates",
+        "prices",
+        "spelling",
+        "section_1",
+        "two_speaker_dialogue",
+        "l1"
+      ]
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "Thank you, Mr Cole. Your room is reserved.",
+      "translation_vi": "Cảm ơn anh Cole. Phòng của anh đã được giữ.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "room_type",
+        "days_dates",
+        "prices",
+        "spelling",
+        "section_1",
+        "two_speaker_dialogue",
+        "l1"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "type": "form_completion",
+      "prompt": "Room type: ____ room",
+      "correct_answers": [
+        "single"
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Khách yêu cầu phòng đơn, không phải phòng đôi.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "room_type",
+        "days_dates",
+        "prices",
+        "spelling",
+        "ielts_section1_practice"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q02",
+      "type": "form_completion",
+      "prompt": "Arrival day: ____",
+      "correct_answers": [
+        "Friday"
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Khách muốn ở tối thứ Sáu.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "room_type",
+        "days_dates",
+        "prices",
+        "spelling",
+        "ielts_section1_practice"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q03",
+      "type": "form_completion",
+      "prompt": "Room price: £____",
+      "correct_answers": [
+        "60",
+        "sixty"
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Giá phòng là sixty pounds.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "room_type",
+        "days_dates",
+        "prices",
+        "spelling",
+        "ielts_section1_practice"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q04",
+      "type": "form_completion",
+      "prompt": "Breakfast begins at ____",
+      "correct_answers": [
+        "7",
+        "seven",
+        "7:00"
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Nhân viên nói breakfast starts at seven.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "room_type",
+        "days_dates",
+        "prices",
+        "spelling",
+        "ielts_section1_practice"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q05",
+      "type": "form_completion",
+      "prompt": "Surname: ____",
+      "correct_answers": [
+        "Cole",
+        "C-O-L-E"
+      ],
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "explanation_vi": "Khách đánh vần C-O-L-E để xác nhận họ.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "room_type",
+        "days_dates",
+        "prices",
+        "spelling",
+        "ielts_section1_practice"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "D01",
+      "type": "dictation",
+      "prompt": "Nghe và chép nguyên văn câu của nhân vật B (lượt T02).",
+      "correct_answers": [
+        "Do you have a single room for Friday night?"
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Nội dung cần chép: Do you have a single room for Friday night? Nghĩa: Khách sạn có phòng đơn cho tối thứ Sáu không? Chú ý đầy đủ từ chức năng, số ít/số nhiều và âm cuối.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "transcription_accuracy",
+        "room_type",
+        "days_dates",
+        "prices",
+        "spelling"
+      ]
+    },
+    {
+      "question_id": "D02",
+      "type": "dictation",
+      "prompt": "Nghe và chép nguyên văn câu của nhân vật A (lượt T05).",
+      "correct_answers": [
+        "Yes. Breakfast starts at seven."
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Nội dung cần chép: Yes. Breakfast starts at seven. Nghĩa: Có. Bữa sáng bắt đầu lúc bảy giờ. Chú ý đầy đủ từ chức năng, số ít/số nhiều và âm cuối.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "transcription_accuracy",
+        "room_type",
+        "days_dates",
+        "prices",
+        "spelling"
+      ]
+    },
+    {
+      "question_id": "G01",
+      "type": "gap_fill",
+      "prompt": "Nghe và điền phần còn thiếu: Does that ____?",
+      "correct_answers": [
+        "include breakfast"
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Từ/cụm nghe được là “include breakfast”. Câu đầy đủ: Does that include breakfast?. Nghĩa: Giá đã bao gồm bữa sáng chưa?",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "gap_fill",
+        "vocabulary_in_context",
+        "room_type",
+        "days_dates",
+        "prices",
+        "spelling"
+      ]
+    }
+  ],
+  "vocabulary": [
+    {
+      "term": "single room",
+      "pos": "noun phrase",
+      "meaning_vi": "phòng đơn",
+      "example_en": "Do you have a single room for Friday night?",
+      "example_vi": "Khách sạn có phòng đơn cho tối thứ Sáu không?",
+      "source_turn_id": "T02"
+    },
+    {
+      "term": "include breakfast",
+      "pos": "verb phrase",
+      "meaning_vi": "bao gồm bữa sáng",
+      "example_en": "Does that include breakfast?",
+      "example_vi": "Giá đã bao gồm bữa sáng chưa?",
+      "source_turn_id": "T04"
+    },
+    {
+      "term": "reserved",
+      "pos": "adjective",
+      "meaning_vi": "được giữ chỗ",
+      "example_en": "Thank you, Mr Cole. Your room is reserved.",
+      "example_vi": "Cảm ơn anh Cole. Phòng của anh đã được giữ.",
+      "source_turn_id": "T07"
+    },
+    {
+      "term": "surname",
+      "pos": "noun",
+      "meaning_vi": "họ",
+      "example_en": "Great. My surname is Cole, C-O-L-E.",
+      "example_vi": "Tốt quá. Họ tôi là Cole, C-O-L-E.",
+      "source_turn_id": "T06"
+    }
+  ],
+  "audio": {
+    "status": "not_generated",
+    "url": null,
+    "duration_ms": null,
+    "model": null,
+    "provider": null,
+    "voice_config": null,
+    "source_transcript_hash": "bffb44f0b295403110e263b755b18ad08f17c7bd270d19da8f82fce52bdb9ed3",
+    "audio_sha256": null,
+    "format": null
+  },
+  "qa": {
+    "content_reviewed": false,
+    "answers_verified": false,
+    "audio_verified": false,
+    "rights_cleared": false,
+    "duplicate_reviewed": false,
+    "notes": [
+      "Draft authoring, not expert reviewed.",
+      "TTS output pending; timestamps must be aligned after synthesis.",
+      "Keep unpublished until audio and question evidence are checked by a reviewer.",
+      "M16.2: automated edits are provisional; IELTS teacher final signoff, audio and rights clearance pending."
+    ]
+  },
+  "provenance": {
+    "content_origin": "original_ai_assisted",
+    "source_urls": [],
+    "source_rights_note": "Original pedagogical dialogues, not IELTS/Cambridge exam content. Review all TTS provider terms and permissions before audio generation/distribution.",
+    "reviewer": null
+  },
+  "release_metadata": {
+    "published_at": null,
+    "version": 1
+  }
+}

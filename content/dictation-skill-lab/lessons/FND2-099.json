@@ -1,0 +1,616 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "FND2-099",
+  "status": "draft",
+  "level": "L2",
+  "section": 0,
+  "topic": "Foundation M20 – connected_speech",
+  "title": "Number phrases in connected speech",
+  "learning_objectives_vi": [
+    "Nghe số lồng trong câu tự nhiên, không dựa vào nhịp đọc số rời rạc.",
+    "Kiểm tra bằng lời nghe mới, không lấy số bài hoàn thành làm bằng chứng thành thạo.",
+    "Không suy ra IELTS band từ điểm Foundation."
+  ],
+  "content_format": "sentence_drill",
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Foundation narrator",
+      "tts_voice_id": null,
+      "accent_requested": "australian"
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "We need another twelve chairs before the guests arrive.",
+      "translation_vi": "Chúng ta cần thêm mười hai chiếc ghế trước khi khách đến.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m20",
+        "numbers_in_flow",
+        "connected_speech"
+      ],
+      "target_value": "twelve",
+      "target_kind": "lexical_phrase",
+      "target_meaning_vi": "mười hai",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "A",
+      "text_en": "The discount applies to orders above seventy pounds.",
+      "translation_vi": "Giảm giá áp dụng cho đơn trên bảy mươi bảng.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m20",
+        "numbers_in_flow",
+        "connected_speech"
+      ],
+      "target_value": "seventy pounds",
+      "target_kind": "lexical_phrase",
+      "target_meaning_vi": "bảy mươi bảng",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "A",
+      "text_en": "Platform thirteen is behind the main waiting area.",
+      "translation_vi": "Sân ga mười ba ở sau khu chờ chính.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m20",
+        "numbers_in_flow",
+        "connected_speech"
+      ],
+      "target_value": "Platform thirteen",
+      "target_kind": "lexical_phrase",
+      "target_meaning_vi": "sân ga mười ba",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "A",
+      "text_en": "The delivery window is between ten fifteen and eleven.",
+      "translation_vi": "Khung giao hàng nằm trong khoảng mười giờ mười lăm đến mười một giờ.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m20",
+        "numbers_in_flow",
+        "connected_speech"
+      ],
+      "target_value": "ten fifteen",
+      "target_kind": "lexical_phrase",
+      "target_meaning_vi": "mười giờ mười lăm",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "A",
+      "text_en": "They reduced the group size from thirty to thirteen.",
+      "translation_vi": "Họ giảm quy mô nhóm từ ba mươi xuống mười ba.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m20",
+        "numbers_in_flow",
+        "connected_speech"
+      ],
+      "target_value": "thirteen",
+      "target_kind": "lexical_phrase",
+      "target_meaning_vi": "mười ba",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "A",
+      "text_en": "The organiser expects roughly a hundred and fifty visitors.",
+      "translation_vi": "Ban tổ chức dự kiến khoảng một trăm năm mươi khách.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m20",
+        "numbers_in_flow",
+        "connected_speech"
+      ],
+      "target_value": "a hundred and fifty",
+      "target_kind": "lexical_phrase",
+      "target_meaning_vi": "một trăm năm mươi",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "Our reference number ends with eight zero six.",
+      "translation_vi": "Mã tham chiếu của chúng tôi kết thúc bằng tám không sáu.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m20",
+        "numbers_in_flow",
+        "connected_speech"
+      ],
+      "target_value": "eight zero six",
+      "target_kind": "lexical_phrase",
+      "target_meaning_vi": "tám không sáu",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "A",
+      "text_en": "The repair took twenty-five minutes longer than planned.",
+      "translation_vi": "Việc sửa chữa lâu hơn dự kiến hai mươi lăm phút.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m20",
+        "numbers_in_flow",
+        "connected_speech"
+      ],
+      "target_value": "twenty-five minutes",
+      "target_kind": "lexical_phrase",
+      "target_meaning_vi": "hai mươi lăm phút",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T09",
+      "speaker_id": "A",
+      "text_en": "The ticket includes two transfers within ninety minutes.",
+      "translation_vi": "Vé bao gồm hai lần chuyển tuyến trong chín mươi phút.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m20",
+        "numbers_in_flow",
+        "connected_speech"
+      ],
+      "target_value": "ninety minutes",
+      "target_kind": "lexical_phrase",
+      "target_meaning_vi": "chín mươi phút",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T10",
+      "speaker_id": "A",
+      "text_en": "The new fee is fourteen pounds fifty, not forty pounds.",
+      "translation_vi": "Lệ phí mới là mười bốn bảng năm mươi, không phải bốn mươi bảng.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m20",
+        "numbers_in_flow",
+        "connected_speech"
+      ],
+      "target_value": "fourteen pounds fifty",
+      "target_kind": "lexical_phrase",
+      "target_meaning_vi": "mười bốn bảng năm mươi",
+      "bank_role": "training"
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "type": "dictation",
+      "prompt": "Nghe lượt T01 rồi chép đầy đủ câu tiếng Anh được nói.",
+      "correct_answers": [
+        "We need another twelve chairs before the guests arrive."
+      ],
+      "evidence_turn_ids": [
+        "T01"
+      ],
+      "explanation_vi": "Câu gốc: We need another twelve chairs before the guests arrive. Nghĩa: Chúng ta cần thêm mười hai chiếc ghế trước khi khách đến.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "connected_speech"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q02",
+      "type": "dictation",
+      "prompt": "Nghe lượt T02 rồi chép đầy đủ câu tiếng Anh được nói.",
+      "correct_answers": [
+        "The discount applies to orders above seventy pounds."
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Câu gốc: The discount applies to orders above seventy pounds. Nghĩa: Giảm giá áp dụng cho đơn trên bảy mươi bảng.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "connected_speech"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q03",
+      "type": "dictation",
+      "prompt": "Nghe lượt T03 rồi chép đầy đủ câu tiếng Anh được nói.",
+      "correct_answers": [
+        "Platform thirteen is behind the main waiting area."
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Câu gốc: Platform thirteen is behind the main waiting area. Nghĩa: Sân ga mười ba ở sau khu chờ chính.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "connected_speech"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q04",
+      "type": "dictation",
+      "prompt": "Nghe lượt T04 rồi chép đầy đủ câu tiếng Anh được nói.",
+      "correct_answers": [
+        "The delivery window is between ten fifteen and eleven."
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Câu gốc: The delivery window is between ten fifteen and eleven. Nghĩa: Khung giao hàng nằm trong khoảng mười giờ mười lăm đến mười một giờ.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "connected_speech"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q05",
+      "type": "dictation",
+      "prompt": "Nghe lượt T05 rồi chép đầy đủ câu tiếng Anh được nói.",
+      "correct_answers": [
+        "They reduced the group size from thirty to thirteen."
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Câu gốc: They reduced the group size from thirty to thirteen. Nghĩa: Họ giảm quy mô nhóm từ ba mươi xuống mười ba.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "connected_speech"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q06",
+      "type": "dictation",
+      "prompt": "Nghe lượt T06 rồi chép đầy đủ câu tiếng Anh được nói.",
+      "correct_answers": [
+        "The organiser expects roughly a hundred and fifty visitors."
+      ],
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "explanation_vi": "Câu gốc: The organiser expects roughly a hundred and fifty visitors. Nghĩa: Ban tổ chức dự kiến khoảng một trăm năm mươi khách.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "connected_speech"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q07",
+      "type": "dictation",
+      "prompt": "Nghe lượt T07 rồi chép đầy đủ câu tiếng Anh được nói.",
+      "correct_answers": [
+        "Our reference number ends with eight zero six."
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "Câu gốc: Our reference number ends with eight zero six. Nghĩa: Mã tham chiếu của chúng tôi kết thúc bằng tám không sáu.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "connected_speech"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q08",
+      "type": "dictation",
+      "prompt": "Nghe lượt T08 rồi chép đầy đủ câu tiếng Anh được nói.",
+      "correct_answers": [
+        "The repair took twenty-five minutes longer than planned."
+      ],
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "explanation_vi": "Câu gốc: The repair took twenty-five minutes longer than planned. Nghĩa: Việc sửa chữa lâu hơn dự kiến hai mươi lăm phút.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "connected_speech"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q09",
+      "type": "dictation",
+      "prompt": "Nghe lượt T09 rồi chép đầy đủ câu tiếng Anh được nói.",
+      "correct_answers": [
+        "The ticket includes two transfers within ninety minutes."
+      ],
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "explanation_vi": "Câu gốc: The ticket includes two transfers within ninety minutes. Nghĩa: Vé bao gồm hai lần chuyển tuyến trong chín mươi phút.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "connected_speech"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q10",
+      "type": "dictation",
+      "prompt": "Nghe lượt T10 rồi chép đầy đủ câu tiếng Anh được nói.",
+      "correct_answers": [
+        "The new fee is fourteen pounds fifty, not forty pounds."
+      ],
+      "evidence_turn_ids": [
+        "T10"
+      ],
+      "explanation_vi": "Câu gốc: The new fee is fourteen pounds fifty, not forty pounds. Nghĩa: Lệ phí mới là mười bốn bảng năm mươi, không phải bốn mươi bảng.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "connected_speech"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q11",
+      "type": "short_answer",
+      "prompt": "Nghe lượt T06. Viết đúng từ/cụm tiếng Anh diễn đạt ý: “một trăm năm mươi”.",
+      "correct_answers": [
+        "a hundred and fifty"
+      ],
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "explanation_vi": "Người nói dùng “a hundred and fifty” trong câu: The organiser expects roughly a hundred and fifty visitors. Nghĩa: Ban tổ chức dự kiến khoảng một trăm năm mươi khách.",
+      "scoring_policy": "lexical_case_punctuation_insensitive_server",
+      "question_tags": [
+        "connected_speech",
+        "targeted_listening",
+        "guided_replay"
+      ],
+      "max_replays_practice": 5,
+      "word_limit": 6,
+      "first_listen_only_for_mastery": false
+    },
+    {
+      "question_id": "Q12",
+      "type": "short_answer",
+      "prompt": "Nghe lượt T07. Viết đúng từ/cụm tiếng Anh diễn đạt ý: “tám không sáu”.",
+      "correct_answers": [
+        "eight zero six"
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "Người nói dùng “eight zero six” trong câu: Our reference number ends with eight zero six. Nghĩa: Mã tham chiếu của chúng tôi kết thúc bằng tám không sáu.",
+      "scoring_policy": "lexical_case_punctuation_insensitive_server",
+      "question_tags": [
+        "connected_speech",
+        "targeted_listening",
+        "guided_replay"
+      ],
+      "max_replays_practice": 5,
+      "word_limit": 5,
+      "first_listen_only_for_mastery": false
+    },
+    {
+      "question_id": "Q13",
+      "type": "short_answer",
+      "prompt": "Nghe lượt T08. Viết đúng từ/cụm tiếng Anh diễn đạt ý: “hai mươi lăm phút”.",
+      "correct_answers": [
+        "twenty-five minutes"
+      ],
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "explanation_vi": "Người nói dùng “twenty-five minutes” trong câu: The repair took twenty-five minutes longer than planned. Nghĩa: Việc sửa chữa lâu hơn dự kiến hai mươi lăm phút.",
+      "scoring_policy": "lexical_case_punctuation_insensitive_server",
+      "question_tags": [
+        "connected_speech",
+        "targeted_listening",
+        "guided_replay"
+      ],
+      "max_replays_practice": 5,
+      "word_limit": 4,
+      "first_listen_only_for_mastery": false
+    },
+    {
+      "question_id": "Q14",
+      "type": "short_answer",
+      "prompt": "Nghe lượt T09. Viết đúng từ/cụm tiếng Anh diễn đạt ý: “chín mươi phút”.",
+      "correct_answers": [
+        "ninety minutes"
+      ],
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "explanation_vi": "Người nói dùng “ninety minutes” trong câu: The ticket includes two transfers within ninety minutes. Nghĩa: Vé bao gồm hai lần chuyển tuyến trong chín mươi phút.",
+      "scoring_policy": "lexical_case_punctuation_insensitive_server",
+      "question_tags": [
+        "connected_speech",
+        "targeted_listening",
+        "guided_replay"
+      ],
+      "max_replays_practice": 5,
+      "word_limit": 4,
+      "first_listen_only_for_mastery": false
+    },
+    {
+      "question_id": "Q15",
+      "type": "short_answer",
+      "prompt": "Nghe lượt T10. Viết đúng từ/cụm tiếng Anh diễn đạt ý: “mười bốn bảng năm mươi”.",
+      "correct_answers": [
+        "fourteen pounds fifty"
+      ],
+      "evidence_turn_ids": [
+        "T10"
+      ],
+      "explanation_vi": "Người nói dùng “fourteen pounds fifty” trong câu: The new fee is fourteen pounds fifty, not forty pounds. Nghĩa: Lệ phí mới là mười bốn bảng năm mươi, không phải bốn mươi bảng.",
+      "scoring_policy": "lexical_case_punctuation_insensitive_server",
+      "question_tags": [
+        "connected_speech",
+        "targeted_listening",
+        "guided_replay"
+      ],
+      "max_replays_practice": 5,
+      "word_limit": 5,
+      "first_listen_only_for_mastery": false
+    }
+  ],
+  "vocabulary": [
+    {
+      "term": "twelve",
+      "pos": "word / expression (contextual)",
+      "meaning_vi": "mười hai",
+      "example_en": "We need another twelve chairs before the guests arrive.",
+      "example_vi": "Chúng ta cần thêm mười hai chiếc ghế trước khi khách đến.",
+      "is_illustrative_context": false
+    },
+    {
+      "term": "seventy pounds",
+      "pos": "phrase",
+      "meaning_vi": "bảy mươi bảng",
+      "example_en": "The discount applies to orders above seventy pounds.",
+      "example_vi": "Giảm giá áp dụng cho đơn trên bảy mươi bảng.",
+      "is_illustrative_context": false
+    },
+    {
+      "term": "Platform thirteen",
+      "pos": "phrase",
+      "meaning_vi": "sân ga mười ba",
+      "example_en": "Platform thirteen is behind the main waiting area.",
+      "example_vi": "Sân ga mười ba ở sau khu chờ chính.",
+      "is_illustrative_context": false
+    },
+    {
+      "term": "ten fifteen",
+      "pos": "phrase",
+      "meaning_vi": "mười giờ mười lăm",
+      "example_en": "The delivery window is between ten fifteen and eleven.",
+      "example_vi": "Khung giao hàng nằm trong khoảng mười giờ mười lăm đến mười một giờ.",
+      "is_illustrative_context": false
+    },
+    {
+      "term": "thirteen",
+      "pos": "word / expression (contextual)",
+      "meaning_vi": "mười ba",
+      "example_en": "They reduced the group size from thirty to thirteen.",
+      "example_vi": "Họ giảm quy mô nhóm từ ba mươi xuống mười ba.",
+      "is_illustrative_context": false
+    },
+    {
+      "term": "a hundred and fifty",
+      "pos": "phrase",
+      "meaning_vi": "một trăm năm mươi",
+      "example_en": "The organiser expects roughly a hundred and fifty visitors.",
+      "example_vi": "Ban tổ chức dự kiến khoảng một trăm năm mươi khách.",
+      "is_illustrative_context": false
+    }
+  ],
+  "micro_skill_id": "numbers_in_flow",
+  "bank_role": "training",
+  "content_design": {
+    "sequence": "10_unique_turns",
+    "first_listen": "1x",
+    "guided_replay_max": 5,
+    "mastery_requires_unseen": true,
+    "category": "connected_speech",
+    "post_submit_review_only": true,
+    "unseen_assessment_id": "FND2-099-HOLDOUT",
+    "holdout_must_be_server_side": true,
+    "no_band_claim": true,
+    "production_import_requires_approval": true
+  },
+  "audio": {
+    "status": "not_generated",
+    "url": null,
+    "duration_ms": null,
+    "provider": null,
+    "model": null,
+    "voice_config": null,
+    "format": null,
+    "audio_sha256": null,
+    "source_transcript_hash": "cbf453ffa1450fbd7ab2042b5249bea63a8cd5c45591445b9ccf2680c62c4985"
+  },
+  "qa": {
+    "content_reviewed": false,
+    "answers_verified": false,
+    "audio_verified": false,
+    "human_signed_off": false,
+    "duplicate_reviewed": false,
+    "notes": [
+      "Original M20 draft: automatic checks do not replace teacher/audio review."
+    ]
+  },
+  "provenance": {
+    "content_origin": "original_ai_assisted",
+    "rights_status": "pending_tts_audio_terms_review",
+    "source_urls": [],
+    "reviewer": null
+  },
+  "release_metadata": {
+    "published_at": null,
+    "version": 1
+  },
+  "lesson_theory_vi": {
+    "core_rule": "Nghe số lồng trong câu tự nhiên, không dựa vào nhịp đọc số rời rạc.",
+    "worked_contrasts": [
+      {
+        "spoken_example": "Could you take it away?",
+        "written_value": "take it away",
+        "teacher_note_vi": "Khi phụ âm đứng trước nguyên âm, các tiếng có thể nối nhưng chữ viết vẫn tách từ."
+      },
+      {
+        "spoken_example": "There is a note on the desk.",
+        "written_value": "a note on the desk",
+        "teacher_note_vi": "Từ chức năng không nhấn vẫn cần chép đầy đủ; kiểm tra thực tế cách đọc qua audio."
+      }
+    ],
+    "learning_steps": [
+      "Xem ví dụ hướng dẫn, nhưng không xem trước lời của các lượt nghe cần làm.",
+      "Nghe lần đầu và chép hoặc trả lời bằng chứng; khi luyện có thể nghe lại tối đa năm lần.",
+      "Sau khi nộp mới xem dịch nghĩa, giải thích và mẫu âm.",
+      "Kiểm tra bằng câu mới ngoài ngân hàng luyện, chỉ ghi nhận Mastered khi đủ bằng chứng."
+    ],
+    "common_mistakes": [
+      "Chép theo cách phát âm ước đoán, bỏ trợ động từ hoặc giới từ.",
+      "Chọn số/ngày xuất hiện ban đầu thay vì thông tin cuối cùng.",
+      "Nghe thuộc câu cũ nhưng không hiểu câu mới.",
+      "Coi transcript là bằng chứng TTS có nối âm tự nhiên (sai)."
+    ],
+    "phonetic_review_required": true,
+    "phonetic_note": "Các biến thể connected speech khác nhau theo giọng, ngữ cảnh và tốc độ; cần giáo viên nghe file thật."
+  }
+}

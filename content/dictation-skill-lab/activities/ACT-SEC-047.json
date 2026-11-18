@@ -1,0 +1,282 @@
+{
+  "schema_version": "m34.1.0",
+  "activity_id": "ACT-SEC-047",
+  "status": "draft_pending_audio",
+  "module": "dictation",
+  "activity_kind": "section_skill_drill",
+  "title": "Analysing Remote Teamwork in Engineering — Phân tích quan điểm và đáp án gây nhiễu",
+  "section": 3,
+  "source_lesson_id": "S3-EXP-004",
+  "source_milestone": "M23",
+  "source_zip": "English_Skill_Lab_Dictation_M23_Section_3_Expanded_Practice_20_Full_Content.zip",
+  "reuse_parent_id": "S3-EXP-004",
+  "source_bank": "section_practice_training",
+  "source_audio_id": "section-training/S3-EXP-004/T01",
+  "source_audio_id_type": "logical_source_turn_key_not_physical_audio",
+  "source_segments": [
+    {
+      "source_audio_id": "section-training/S3-EXP-004/T01",
+      "source_audio_id_type": "logical_turn_key_not_verified_physical_audio",
+      "source_lesson_id": "S3-EXP-004",
+      "source_turn_id": "T01",
+      "source_speaker_id": "A",
+      "source_audio_asset_id": null,
+      "source_audio_url": null,
+      "start_ms": null,
+      "end_ms": null,
+      "source_transcript_sha256": "1464f6c9a21c60e69b7a8baf360bb6b7f93e11f54311903ad4dee2f890ef60de",
+      "source_bank": "training",
+      "source_is_protected": false,
+      "audio_status": "not_generated",
+      "alignment_status": "pending_verified_turn_offsets"
+    },
+    {
+      "source_audio_id": "section-training/S3-EXP-004/T02",
+      "source_audio_id_type": "logical_turn_key_not_verified_physical_audio",
+      "source_lesson_id": "S3-EXP-004",
+      "source_turn_id": "T02",
+      "source_speaker_id": "B",
+      "source_audio_asset_id": null,
+      "source_audio_url": null,
+      "start_ms": null,
+      "end_ms": null,
+      "source_transcript_sha256": "3f2ef42c98fef9eb78a53fb53fbf8bf193bb7c8a612b924b7741e876454affba",
+      "source_bank": "training",
+      "source_is_protected": false,
+      "audio_status": "not_generated",
+      "alignment_status": "pending_verified_turn_offsets"
+    },
+    {
+      "source_audio_id": "section-training/S3-EXP-004/T05",
+      "source_audio_id_type": "logical_turn_key_not_verified_physical_audio",
+      "source_lesson_id": "S3-EXP-004",
+      "source_turn_id": "T05",
+      "source_speaker_id": "B",
+      "source_audio_asset_id": null,
+      "source_audio_url": null,
+      "start_ms": null,
+      "end_ms": null,
+      "source_transcript_sha256": "b16dfc7c0b74fb5dba0af86e6e9ccff1d17eace2a72a1ffd4acd9311fcdeda34",
+      "source_bank": "training",
+      "source_is_protected": false,
+      "audio_status": "not_generated",
+      "alignment_status": "pending_verified_turn_offsets"
+    },
+    {
+      "source_audio_id": "section-training/S3-EXP-004/T06",
+      "source_audio_id_type": "logical_turn_key_not_verified_physical_audio",
+      "source_lesson_id": "S3-EXP-004",
+      "source_turn_id": "T06",
+      "source_speaker_id": "C",
+      "source_audio_asset_id": null,
+      "source_audio_url": null,
+      "start_ms": null,
+      "end_ms": null,
+      "source_transcript_sha256": "caba28092853d225f076831963c232d406244181ca3e1a4f45b47258a8d929af",
+      "source_bank": "training",
+      "source_is_protected": false,
+      "audio_status": "not_generated",
+      "alignment_status": "pending_verified_turn_offsets"
+    }
+  ],
+  "start_ms": null,
+  "end_ms": null,
+  "alignment_policy": "verified_turn_level_audio_or_measured_offsets_only",
+  "clip_audio_status": "not_generated",
+  "topic": "Engineering group assessment",
+  "drill_skill": "opinion_distractor",
+  "skill_tags": [
+    "section_practice",
+    "listening",
+    "reuse",
+    "section_3",
+    "opinion_tracking",
+    "contradiction",
+    "mcq_distractor"
+  ],
+  "teacher_notes": {
+    "goal": "Theo dõi phương án ban đầu, phản biện và kết luận trong thảo luận học thuật.",
+    "theory": "Section 3 có thể nhắc cả ba đáp án ở các thời điểm khác nhau. Chỉ chọn đáp án phù hợp với câu hỏi và quan điểm cuối cùng.",
+    "tip": "Nghe các dấu hiệu bác bỏ như impractical, however, instead, the better option, decided.",
+    "mistakes": [
+      "Chọn giải pháp được nhắc tới nhưng bị giáo viên phản đối.",
+      "Nhầm dự đoán của sinh viên với quyết định cuối cùng của nhóm."
+    ],
+    "worked_example": "Ví dụ ngoài đề: “An online survey is quick; however, interviews would explain the reasons.” → Chọn interviews nếu hỏi phương pháp được khuyến nghị."
+  },
+  "playback": {
+    "first_listen_max_replays": 1,
+    "guided_replay_max_replays": 3,
+    "source_turn_order": [
+      "T01",
+      "T02",
+      "T05",
+      "T06"
+    ],
+    "transcript_hidden_until_submit": true,
+    "answers_hidden_until_submit": true,
+    "playback_speed_default": 1.0,
+    "prelisten_question_reading": true,
+    "asset_concatenation": "respect_speaker_turns; never use timestamps until aligned"
+  },
+  "questions": [
+    {
+      "question_id": "ACT-SEC-047-Q1",
+      "phase": "first_listen",
+      "origin_question_id": "Q01",
+      "origin_question_type": "mcq",
+      "type": "single_choice",
+      "prompt_en": "Why is one team’s missed deadline hard to interpret?",
+      "prompt_vi": "Nghe phần được chỉ định và trả lời câu hỏi theo thông tin thực sự được phát. Đừng chọn phương án được nhắc trước khi người nói sửa ý.",
+      "options": [
+        {
+          "value": "The team lost access to specialist software",
+          "label": "The team lost access to specialist software"
+        },
+        {
+          "value": "Its members refused to attend interviews",
+          "label": "Its members refused to attend interviews"
+        },
+        {
+          "value": "It worked only at night",
+          "label": "It worked only at night"
+        }
+      ],
+      "correct_answers": [
+        "The team lost access to specialist software"
+      ],
+      "correct_option": "A",
+      "word_limit": null,
+      "scoring_policy": "strict",
+      "play_turn_ids": [
+        "T01",
+        "T02"
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "evidence_excerpt_en": "I chose that title because two groups missed their deadlines. However, one of them lost access to specialist software during the project, which is not necessarily a problem caused by working remotely.",
+      "evidence_excerpt_exact_in_turn": true,
+      "evidence_source_kind": "authored_source_annotated",
+      "explanation_vi": "Trễ hạn có thể do mất quyền dùng phần mềm.",
+      "grading_is_ielts_band": false
+    },
+    {
+      "question_id": "ACT-SEC-047-Q2",
+      "phase": "targeted_replay",
+      "origin_question_id": "Q03",
+      "origin_question_type": "mcq",
+      "type": "single_choice",
+      "prompt_en": "What indicator is suggested beyond meeting frequency?",
+      "prompt_vi": "Nghe phần được chỉ định và trả lời câu hỏi theo thông tin thực sự được phát. Đừng chọn phương án được nhắc trước khi người nói sửa ý.",
+      "options": [
+        {
+          "value": "Number of cameras used",
+          "label": "Number of cameras used"
+        },
+        {
+          "value": "The size of the meeting room",
+          "label": "The size of the meeting room"
+        },
+        {
+          "value": "Decisions left unresolved",
+          "label": "Decisions left unresolved"
+        }
+      ],
+      "correct_answers": [
+        "Decisions left unresolved"
+      ],
+      "correct_option": "C",
+      "word_limit": null,
+      "scoring_policy": "strict",
+      "play_turn_ids": [
+        "T05",
+        "T06"
+      ],
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "evidence_excerpt_en": "We should examine meeting records alongside interviews, perhaps counting unresolved decisions. A team can meet frequently yet leave every important issue open, so meeting frequency alone is not a reliable indicator.",
+      "evidence_excerpt_exact_in_turn": true,
+      "evidence_source_kind": "authored_source_annotated",
+      "explanation_vi": "Đếm các quyết định còn treo thay vì chỉ số lần họp.",
+      "grading_is_ielts_band": false
+    },
+    {
+      "question_id": "ACT-SEC-047-Q3",
+      "phase": "focused_dictation_repair",
+      "type": "focused_dictation",
+      "prompt_vi": "Nghe lại lượt thoại rồi chép đúng ba từ còn thiếu trong đoạn trích (không viết cả câu).",
+      "prompt_en": "…decisions. A team can meet frequently yet ____ issue open, so meeting frequency alone is…",
+      "word_limit": 3,
+      "correct_answers": [
+        "leave every important"
+      ],
+      "correct_option": null,
+      "options": null,
+      "normalization_policy": "casefold_unicode_nfkc_trim_whitespace_and_terminal_punctuation",
+      "play_turn_ids": [
+        "T06"
+      ],
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "evidence_excerpt_en": "leave every important",
+      "evidence_char_start": 126,
+      "evidence_char_end": 147,
+      "evidence_source_kind": "exact_spoken_transcript_source",
+      "evidence_excerpt_exact_in_turn": true,
+      "explanation_vi": "Cụm cần ghi chính xác là “leave every important”. Nghe lại vị trí này và đối chiếu các âm cuối, từ chức năng và trọng âm.",
+      "origin_question_id": null,
+      "grading_is_ielts_band": false,
+      "novel_question_authored_for_m34": true
+    }
+  ],
+  "evidence": {
+    "source_lesson_id": "S3-EXP-004",
+    "source_question_ids": [
+      "Q01",
+      "Q03"
+    ],
+    "source_turn_ids": [
+      "T01",
+      "T02",
+      "T05",
+      "T06"
+    ],
+    "source_transcript_sha256_map": {
+      "T01": "1464f6c9a21c60e69b7a8baf360bb6b7f93e11f54311903ad4dee2f890ef60de",
+      "T02": "3f2ef42c98fef9eb78a53fb53fbf8bf193bb7c8a612b924b7741e876454affba",
+      "T05": "b16dfc7c0b74fb5dba0af86e6e9ccff1d17eace2a72a1ffd4acd9311fcdeda34",
+      "T06": "caba28092853d225f076831963c232d406244181ca3e1a4f45b47258a8d929af"
+    },
+    "provenance": "original_training_2026_m21_m23_m24",
+    "copied_source_has_human_signoff": false,
+    "source_confidence": "authored_draft_not_independently_validated"
+  },
+  "exposure_rules": {
+    "allowed_source_banks": [
+      "section_practice_training"
+    ],
+    "train_only": true,
+    "never_use_protected_source": true,
+    "never_use_unseen_section_simulation": true,
+    "never_use_mock_before_first_attempt": true,
+    "track_source_audio_id": true,
+    "track_first_exposure": true,
+    "track_replay_count": true,
+    "not_band_estimate": true
+  },
+  "rights_status": "pending_review",
+  "review": {
+    "automated_content_check": "pending",
+    "human_language_review": "pending",
+    "human_audio_listening": "pending",
+    "teacher_signoff": "pending",
+    "timing_verification": "pending",
+    "rights_clearance": "pending",
+    "publish_ready": false
+  },
+  "import_policy": "insert_only_idempotent",
+  "version": "m34.1.0"
+}

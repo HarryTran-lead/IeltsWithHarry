@@ -8,13 +8,17 @@ const errors = [];
 let questions = 0;
 
 for (const entry of lessons) {
-  const path = join(root, "public/book-2/lessons", `${entry.slug}.json`);
+  const path = join(root, "content/book2/lessons", `${entry.slug}.json`);
   if (!existsSync(path)) { errors.push(`${entry.slug}: missing lesson`); continue; }
   const data = JSON.parse(readFileSync(path, "utf8"));
   const sourceIds = new Set([...data.passages, ...data.audios, ...data.visuals].map((item) => item.id));
   for (const audio of data.audios) {
     if (!audio.audio_url || !existsSync(join(root, "public", audio.audio_url.replace(/^\//, "")))) errors.push(`${entry.slug}: missing audio ${audio.id}`);
     if (!audio.transcript?.trim()) errors.push(`${entry.slug}: missing transcript ${audio.id}`);
+  }
+  for (const exercise of data.exercises) {
+    if (!exercise.title?.trim() || exercise.title === exercise.id) errors.push(`${entry.slug}/${exercise.id}: exercise needs a learner-facing title`);
+    if (!exercise.instruction?.vi?.trim()) errors.push(`${entry.slug}/${exercise.id}: exercise needs a Vietnamese instruction`);
   }
   for (const exercise of data.exercises) for (const item of exercise.questions) {
     questions++;

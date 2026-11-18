@@ -1,0 +1,622 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "FND2-105",
+  "status": "draft",
+  "level": "L3",
+  "section": 0,
+  "topic": "Foundation M20 – mixed_conversations",
+  "title": "Volunteer event briefing",
+  "learning_objectives_vi": [
+    "Xác định nhiệm vụ, địa điểm và thay đổi giờ cho sự kiện cộng đồng.",
+    "Kiểm tra bằng lời nghe mới, không lấy số bài hoàn thành làm bằng chứng thành thạo.",
+    "Không suy ra IELTS band từ điểm Foundation."
+  ],
+  "content_format": "sentence_drill",
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Speaker 1",
+      "tts_voice_id": null,
+      "accent_requested": "north_american"
+    },
+    {
+      "speaker_id": "B",
+      "role": "Speaker 2",
+      "tts_voice_id": null,
+      "accent_requested": "north_american"
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "Are you still helping at the community garden this weekend?",
+      "translation_vi": "Bạn vẫn tham gia hỗ trợ vườn cộng đồng cuối tuần này chứ?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m20",
+        "volunteer_schedule",
+        "mixed_conversations"
+      ],
+      "target_value": "community garden",
+      "target_kind": "lexical_phrase",
+      "target_meaning_vi": "vườn cộng đồng",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "B",
+      "text_en": "Yes, but I haven't received the final schedule.",
+      "translation_vi": "Có, nhưng tôi chưa nhận lịch cuối cùng.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m20",
+        "volunteer_schedule",
+        "mixed_conversations"
+      ],
+      "target_value": "final schedule",
+      "target_kind": "lexical_phrase",
+      "target_meaning_vi": "lịch cuối cùng",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "A",
+      "text_en": "The organisers moved the start from nine to half past eight.",
+      "translation_vi": "Ban tổ chức chuyển giờ bắt đầu từ chín giờ sang tám giờ rưỡi.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m20",
+        "volunteer_schedule",
+        "mixed_conversations"
+      ],
+      "target_value": "half past eight",
+      "target_kind": "lexical_phrase",
+      "target_meaning_vi": "tám giờ rưỡi",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "B",
+      "text_en": "That's early. Where should new volunteers meet?",
+      "translation_vi": "Sớm quá. Tình nguyện viên mới nên gặp nhau ở đâu?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m20",
+        "volunteer_schedule",
+        "mixed_conversations"
+      ],
+      "target_value": "new volunteers",
+      "target_kind": "lexical_phrase",
+      "target_meaning_vi": "tình nguyện viên mới",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "A",
+      "text_en": "Beside the greenhouse, just inside the east gate.",
+      "translation_vi": "Bên cạnh nhà kính, ngay trong cổng phía đông.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m20",
+        "volunteer_schedule",
+        "mixed_conversations"
+      ],
+      "target_value": "east gate",
+      "target_kind": "lexical_phrase",
+      "target_meaning_vi": "cổng phía đông",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "B",
+      "text_en": "Should I bring any tools from home?",
+      "translation_vi": "Tôi có nên mang dụng cụ ở nhà đến không?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m20",
+        "volunteer_schedule",
+        "mixed_conversations"
+      ],
+      "target_value": "tools",
+      "target_kind": "lexical_phrase",
+      "target_meaning_vi": "dụng cụ",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "No, all the equipment will be provided.",
+      "translation_vi": "Không, mọi thiết bị sẽ được cung cấp.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m20",
+        "volunteer_schedule",
+        "mixed_conversations"
+      ],
+      "target_value": "provided",
+      "target_kind": "lexical_phrase",
+      "target_meaning_vi": "được cung cấp",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "B",
+      "text_en": "What about drinking water for the morning?",
+      "translation_vi": "Còn nước uống cho buổi sáng thì sao?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m20",
+        "volunteer_schedule",
+        "mixed_conversations"
+      ],
+      "target_value": "drinking water",
+      "target_kind": "lexical_phrase",
+      "target_meaning_vi": "nước uống",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T09",
+      "speaker_id": "A",
+      "text_en": "There will be a refill station near the shed.",
+      "translation_vi": "Sẽ có trạm lấy thêm nước gần nhà kho nhỏ.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m20",
+        "volunteer_schedule",
+        "mixed_conversations"
+      ],
+      "target_value": "refill station",
+      "target_kind": "lexical_phrase",
+      "target_meaning_vi": "trạm lấy thêm nước",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T10",
+      "speaker_id": "B",
+      "text_en": "Great. I'll arrive at eight twenty to check in.",
+      "translation_vi": "Tuyệt. Tôi sẽ đến lúc tám giờ hai mươi để điểm danh.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m20",
+        "volunteer_schedule",
+        "mixed_conversations"
+      ],
+      "target_value": "eight twenty",
+      "target_kind": "lexical_phrase",
+      "target_meaning_vi": "tám giờ hai mươi",
+      "bank_role": "training"
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "type": "dictation",
+      "prompt": "Nghe lượt T01 rồi chép đầy đủ câu tiếng Anh được nói.",
+      "correct_answers": [
+        "Are you still helping at the community garden this weekend?"
+      ],
+      "evidence_turn_ids": [
+        "T01"
+      ],
+      "explanation_vi": "Câu gốc: Are you still helping at the community garden this weekend? Nghĩa: Bạn vẫn tham gia hỗ trợ vườn cộng đồng cuối tuần này chứ?",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "mixed_conversations"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q02",
+      "type": "dictation",
+      "prompt": "Nghe lượt T02 rồi chép đầy đủ câu tiếng Anh được nói.",
+      "correct_answers": [
+        "Yes, but I haven't received the final schedule."
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Câu gốc: Yes, but I haven't received the final schedule. Nghĩa: Có, nhưng tôi chưa nhận lịch cuối cùng.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "mixed_conversations"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q03",
+      "type": "dictation",
+      "prompt": "Nghe lượt T03 rồi chép đầy đủ câu tiếng Anh được nói.",
+      "correct_answers": [
+        "The organisers moved the start from nine to half past eight."
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Câu gốc: The organisers moved the start from nine to half past eight. Nghĩa: Ban tổ chức chuyển giờ bắt đầu từ chín giờ sang tám giờ rưỡi.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "mixed_conversations"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q04",
+      "type": "dictation",
+      "prompt": "Nghe lượt T04 rồi chép đầy đủ câu tiếng Anh được nói.",
+      "correct_answers": [
+        "That's early. Where should new volunteers meet?"
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Câu gốc: That's early. Where should new volunteers meet? Nghĩa: Sớm quá. Tình nguyện viên mới nên gặp nhau ở đâu?",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "mixed_conversations"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q05",
+      "type": "dictation",
+      "prompt": "Nghe lượt T05 rồi chép đầy đủ câu tiếng Anh được nói.",
+      "correct_answers": [
+        "Beside the greenhouse, just inside the east gate."
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Câu gốc: Beside the greenhouse, just inside the east gate. Nghĩa: Bên cạnh nhà kính, ngay trong cổng phía đông.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "mixed_conversations"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q06",
+      "type": "dictation",
+      "prompt": "Nghe lượt T06 rồi chép đầy đủ câu tiếng Anh được nói.",
+      "correct_answers": [
+        "Should I bring any tools from home?"
+      ],
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "explanation_vi": "Câu gốc: Should I bring any tools from home? Nghĩa: Tôi có nên mang dụng cụ ở nhà đến không?",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "mixed_conversations"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q07",
+      "type": "dictation",
+      "prompt": "Nghe lượt T07 rồi chép đầy đủ câu tiếng Anh được nói.",
+      "correct_answers": [
+        "No, all the equipment will be provided."
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "Câu gốc: No, all the equipment will be provided. Nghĩa: Không, mọi thiết bị sẽ được cung cấp.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "mixed_conversations"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q08",
+      "type": "dictation",
+      "prompt": "Nghe lượt T08 rồi chép đầy đủ câu tiếng Anh được nói.",
+      "correct_answers": [
+        "What about drinking water for the morning?"
+      ],
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "explanation_vi": "Câu gốc: What about drinking water for the morning? Nghĩa: Còn nước uống cho buổi sáng thì sao?",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "mixed_conversations"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q09",
+      "type": "dictation",
+      "prompt": "Nghe lượt T09 rồi chép đầy đủ câu tiếng Anh được nói.",
+      "correct_answers": [
+        "There will be a refill station near the shed."
+      ],
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "explanation_vi": "Câu gốc: There will be a refill station near the shed. Nghĩa: Sẽ có trạm lấy thêm nước gần nhà kho nhỏ.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "mixed_conversations"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q10",
+      "type": "dictation",
+      "prompt": "Nghe lượt T10 rồi chép đầy đủ câu tiếng Anh được nói.",
+      "correct_answers": [
+        "Great. I'll arrive at eight twenty to check in."
+      ],
+      "evidence_turn_ids": [
+        "T10"
+      ],
+      "explanation_vi": "Câu gốc: Great. I'll arrive at eight twenty to check in. Nghĩa: Tuyệt. Tôi sẽ đến lúc tám giờ hai mươi để điểm danh.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "mixed_conversations"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q11",
+      "type": "short_answer",
+      "prompt": "Nghe lượt T06. Viết đúng từ/cụm tiếng Anh diễn đạt ý: “dụng cụ”.",
+      "correct_answers": [
+        "tools"
+      ],
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "explanation_vi": "Người nói dùng “tools” trong câu: Should I bring any tools from home? Nghĩa: Tôi có nên mang dụng cụ ở nhà đến không?",
+      "scoring_policy": "lexical_case_punctuation_insensitive_server",
+      "question_tags": [
+        "mixed_conversations",
+        "targeted_listening",
+        "guided_replay"
+      ],
+      "max_replays_practice": 5,
+      "word_limit": 3,
+      "first_listen_only_for_mastery": false
+    },
+    {
+      "question_id": "Q12",
+      "type": "short_answer",
+      "prompt": "Nghe lượt T07. Viết đúng từ/cụm tiếng Anh diễn đạt ý: “được cung cấp”.",
+      "correct_answers": [
+        "provided"
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "Người nói dùng “provided” trong câu: No, all the equipment will be provided. Nghĩa: Không, mọi thiết bị sẽ được cung cấp.",
+      "scoring_policy": "lexical_case_punctuation_insensitive_server",
+      "question_tags": [
+        "mixed_conversations",
+        "targeted_listening",
+        "guided_replay"
+      ],
+      "max_replays_practice": 5,
+      "word_limit": 3,
+      "first_listen_only_for_mastery": false
+    },
+    {
+      "question_id": "Q13",
+      "type": "short_answer",
+      "prompt": "Nghe lượt T08. Viết đúng từ/cụm tiếng Anh diễn đạt ý: “nước uống”.",
+      "correct_answers": [
+        "drinking water"
+      ],
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "explanation_vi": "Người nói dùng “drinking water” trong câu: What about drinking water for the morning? Nghĩa: Còn nước uống cho buổi sáng thì sao?",
+      "scoring_policy": "lexical_case_punctuation_insensitive_server",
+      "question_tags": [
+        "mixed_conversations",
+        "targeted_listening",
+        "guided_replay"
+      ],
+      "max_replays_practice": 5,
+      "word_limit": 4,
+      "first_listen_only_for_mastery": false
+    },
+    {
+      "question_id": "Q14",
+      "type": "short_answer",
+      "prompt": "Nghe lượt T09. Viết đúng từ/cụm tiếng Anh diễn đạt ý: “trạm lấy thêm nước”.",
+      "correct_answers": [
+        "refill station"
+      ],
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "explanation_vi": "Người nói dùng “refill station” trong câu: There will be a refill station near the shed. Nghĩa: Sẽ có trạm lấy thêm nước gần nhà kho nhỏ.",
+      "scoring_policy": "lexical_case_punctuation_insensitive_server",
+      "question_tags": [
+        "mixed_conversations",
+        "targeted_listening",
+        "guided_replay"
+      ],
+      "max_replays_practice": 5,
+      "word_limit": 4,
+      "first_listen_only_for_mastery": false
+    },
+    {
+      "question_id": "Q15",
+      "type": "short_answer",
+      "prompt": "Nghe lượt T10. Viết đúng từ/cụm tiếng Anh diễn đạt ý: “tám giờ hai mươi”.",
+      "correct_answers": [
+        "eight twenty"
+      ],
+      "evidence_turn_ids": [
+        "T10"
+      ],
+      "explanation_vi": "Người nói dùng “eight twenty” trong câu: Great. I'll arrive at eight twenty to check in. Nghĩa: Tuyệt. Tôi sẽ đến lúc tám giờ hai mươi để điểm danh.",
+      "scoring_policy": "lexical_case_punctuation_insensitive_server",
+      "question_tags": [
+        "mixed_conversations",
+        "targeted_listening",
+        "guided_replay"
+      ],
+      "max_replays_practice": 5,
+      "word_limit": 4,
+      "first_listen_only_for_mastery": false
+    }
+  ],
+  "vocabulary": [
+    {
+      "term": "community garden",
+      "pos": "phrase",
+      "meaning_vi": "vườn cộng đồng",
+      "example_en": "Are you still helping at the community garden this weekend?",
+      "example_vi": "Bạn vẫn tham gia hỗ trợ vườn cộng đồng cuối tuần này chứ?",
+      "is_illustrative_context": false
+    },
+    {
+      "term": "final schedule",
+      "pos": "phrase",
+      "meaning_vi": "lịch cuối cùng",
+      "example_en": "Yes, but I haven't received the final schedule.",
+      "example_vi": "Có, nhưng tôi chưa nhận lịch cuối cùng.",
+      "is_illustrative_context": false
+    },
+    {
+      "term": "half past eight",
+      "pos": "phrase",
+      "meaning_vi": "tám giờ rưỡi",
+      "example_en": "The organisers moved the start from nine to half past eight.",
+      "example_vi": "Ban tổ chức chuyển giờ bắt đầu từ chín giờ sang tám giờ rưỡi.",
+      "is_illustrative_context": false
+    },
+    {
+      "term": "new volunteers",
+      "pos": "phrase",
+      "meaning_vi": "tình nguyện viên mới",
+      "example_en": "That's early. Where should new volunteers meet?",
+      "example_vi": "Sớm quá. Tình nguyện viên mới nên gặp nhau ở đâu?",
+      "is_illustrative_context": false
+    },
+    {
+      "term": "east gate",
+      "pos": "phrase",
+      "meaning_vi": "cổng phía đông",
+      "example_en": "Beside the greenhouse, just inside the east gate.",
+      "example_vi": "Bên cạnh nhà kính, ngay trong cổng phía đông.",
+      "is_illustrative_context": false
+    },
+    {
+      "term": "tools",
+      "pos": "word / expression (contextual)",
+      "meaning_vi": "dụng cụ",
+      "example_en": "Should I bring any tools from home?",
+      "example_vi": "Tôi có nên mang dụng cụ ở nhà đến không?",
+      "is_illustrative_context": false
+    }
+  ],
+  "micro_skill_id": "volunteer_schedule",
+  "bank_role": "training",
+  "content_design": {
+    "sequence": "10_unique_turns",
+    "first_listen": "1x",
+    "guided_replay_max": 5,
+    "mastery_requires_unseen": true,
+    "category": "mixed_conversations",
+    "post_submit_review_only": true,
+    "unseen_assessment_id": "FND2-105-HOLDOUT",
+    "holdout_must_be_server_side": true,
+    "no_band_claim": true,
+    "production_import_requires_approval": true
+  },
+  "audio": {
+    "status": "not_generated",
+    "url": null,
+    "duration_ms": null,
+    "provider": null,
+    "model": null,
+    "voice_config": null,
+    "format": null,
+    "audio_sha256": null,
+    "source_transcript_hash": "edd625a72a844188fbc2b3915313efaefe30f33962f0c590ce371cfc875e071b"
+  },
+  "qa": {
+    "content_reviewed": false,
+    "answers_verified": false,
+    "audio_verified": false,
+    "human_signed_off": false,
+    "duplicate_reviewed": false,
+    "notes": [
+      "Original M20 draft: automatic checks do not replace teacher/audio review."
+    ]
+  },
+  "provenance": {
+    "content_origin": "original_ai_assisted",
+    "rights_status": "pending_tts_audio_terms_review",
+    "source_urls": [],
+    "reviewer": null
+  },
+  "release_metadata": {
+    "published_at": null,
+    "version": 1
+  },
+  "lesson_theory_vi": {
+    "core_rule": "Xác định nhiệm vụ, địa điểm và thay đổi giờ cho sự kiện cộng đồng.",
+    "worked_contrasts": [
+      {
+        "spoken_example": "We said Monday first, but Tuesday is confirmed.",
+        "written_value": "Tuesday",
+        "teacher_note_vi": "Thông tin sau từ but mới là lựa chọn cuối cùng."
+      },
+      {
+        "spoken_example": "Is that fifteen or fifty? I mean fifteen.",
+        "written_value": "fifteen",
+        "teacher_note_vi": "Phải nghe câu sửa để không lấy thông tin ban đầu."
+      }
+    ],
+    "learning_steps": [
+      "Xem ví dụ hướng dẫn, nhưng không xem trước lời của các lượt nghe cần làm.",
+      "Nghe lần đầu và chép hoặc trả lời bằng chứng; khi luyện có thể nghe lại tối đa năm lần.",
+      "Sau khi nộp mới xem dịch nghĩa, giải thích và mẫu âm.",
+      "Kiểm tra bằng câu mới ngoài ngân hàng luyện, chỉ ghi nhận Mastered khi đủ bằng chứng."
+    ],
+    "common_mistakes": [
+      "Chép theo cách phát âm ước đoán, bỏ trợ động từ hoặc giới từ.",
+      "Chọn số/ngày xuất hiện ban đầu thay vì thông tin cuối cùng.",
+      "Nghe thuộc câu cũ nhưng không hiểu câu mới.",
+      "Coi transcript là bằng chứng TTS có nối âm tự nhiên (sai)."
+    ],
+    "phonetic_review_required": false,
+    "phonetic_note": "Kiểm tra rõ lượt thoại và diễn biến hội thoại trên audio thật."
+  }
+}

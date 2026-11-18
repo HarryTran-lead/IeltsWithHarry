@@ -1,0 +1,613 @@
+{
+  "schema_version": "1.2.0",
+  "lesson_id": "S4-SIM-002",
+  "status": "draft",
+  "level": "L7",
+  "section": 4,
+  "topic": "Urban soil ecology",
+  "title": "The Hidden Life of City Soil",
+  "content_format": "section_exam_simulation",
+  "exam_part": "IELTS_LISTENING_PART_4_STYLE",
+  "official_ielts_material": false,
+  "learning_objectives_vi": [
+    "Theo dõi bài giảng học thuật có lập luận và ví dụ.",
+    "Hoàn thành ghi chú, tóm tắt hoặc bảng bằng đúng từ được nghe.",
+    "Nhận diện signposting và mối quan hệ giữa các ý."
+  ],
+  "target_skills": [
+    "academic_lecture",
+    "signposting",
+    "note_taking",
+    "technical_vocabulary",
+    "information_tracking"
+  ],
+  "speakers": [
+    {
+      "speaker_id": "LECTURER",
+      "role": "Academic lecturer",
+      "accent_requested": "australian",
+      "tts_voice_id": null
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "LECTURER",
+      "text_en": "Urban soil is easily dismissed as dirt beneath pavements, yet it is a living system with a history. Soil beneath a street tree may behave very differently from soil in a nearby garden, even when both began with the same parent material. We will examine five ways in which building activity changes that system and what researchers can measure to detect the damage.",
+      "meaning_vi": "Đất đô thị là một hệ sinh thái; xây dựng và ô nhiễm làm thay đổi hoạt động của đất.",
+      "translation_vi": null,
+      "translation_status": "pending_exact_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "academic_lecture",
+        "signposting",
+        "note_taking"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "opening"
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "LECTURER",
+      "text_en": "Consider a new shopping street where young trees die after only a few summers. It would be easy to blame hot weather, and temperatures may indeed contribute. Yet underground conditions are often very different from those in a woodland. Building foundations, buried services and tightly sealed surfaces can limit resources even when the planting scheme looks attractive from above.",
+      "meaning_vi": "Mở rộng bối cảnh, giới thiệu vấn đề nghiên cứu.",
+      "translation_vi": null,
+      "translation_status": "pending_exact_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "academic_lecture",
+        "signposting",
+        "note_taking"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "opening"
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "LECTURER",
+      "text_en": "Heavy construction equipment often causes compaction, pressing the spaces between soil particles closer together. This reduces the movement of air and water, so roots may struggle even when the ground appears moist. One useful measurement is bulk density, which compares the mass of dry soil with the volume it occupies. A higher reading can suggest that the soil has become tightly packed, although the expected range depends on the soil type. A roadside tree may therefore need improved root space rather than simply more fertiliser.",
+      "meaning_vi": "Máy móc nén đất, làm giảm lỗ rỗng; dung trọng giúp theo dõi mức độ nén.",
+      "translation_vi": null,
+      "translation_status": "pending_exact_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "academic_lecture",
+        "signposting",
+        "note_taking"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "core_exposition"
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "LECTURER",
+      "text_en": "Soil organisms help break down fallen leaves and other organic matter, releasing nutrients slowly instead of delivering them all at once. Fungi may form a partnership called mycorrhiza, in which their fine filaments help roots obtain resources while the plant supplies energy. These processes depend on temperature, moisture and an adequate supply of air. Covering the ground with an impermeable surface can interrupt this living network even though it leaves the deeper soil visually unchanged.",
+      "meaning_vi": "Chất hữu cơ và nấm cộng sinh với rễ duy trì hoạt động sinh học của đất.",
+      "translation_vi": null,
+      "translation_status": "pending_exact_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "academic_lecture",
+        "signposting",
+        "note_taking"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "core_exposition"
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "LECTURER",
+      "text_en": "When water cannot enter the soil, it becomes surface runoff and may carry pollutants toward drains. In contrast, infiltration describes water moving into the ground. The distinction matters when designing a public square: a surface that looks attractive after installation may produce large volumes of dirty water during a sudden downpour. Researchers sometimes pour a measured amount of water into a small ring on the ground and record how quickly it disappears. The test is simple, but it should be repeated in several locations.",
+      "meaning_vi": "Dòng chảy tràn khác với quá trình nước thấm xuống đất.",
+      "translation_vi": null,
+      "translation_status": "pending_exact_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "academic_lecture",
+        "signposting",
+        "note_taking"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "core_exposition"
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "LECTURER",
+      "text_en": "Some street trees suffer not from a lack of nutrients but from exposure to road salt, which changes the chemical conditions around their roots. Another problem is heavy metals left behind by older industry or traffic. Neither issue can be diagnosed reliably from leaf colour alone. Laboratory tests are required, and the interpretation depends on both the concentration and the form of the substance. In our case study, the correct response is to investigate the source before choosing a treatment.",
+      "meaning_vi": "Muối rải đường và kim loại nặng đều có thể ảnh hưởng đất đô thị.",
+      "translation_vi": null,
+      "translation_status": "pending_exact_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "academic_lecture",
+        "signposting",
+        "note_taking"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "core_exposition"
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "LECTURER",
+      "text_en": "A common improvement is to protect the soil with a layer of mulch, which moderates temperature and reduces evaporation, rather than paving directly against the trunk. For newly planted areas, designers can also provide a larger root zone beneath adjacent surfaces. These changes do not guarantee instant recovery: soil organisms and root systems develop gradually. The strongest projects therefore measure conditions for several years and make allowances for differences between seasons, instead of declaring success after the first inspection.",
+      "meaning_vi": "Lớp phủ hữu cơ và không gian cho rễ hỗ trợ cây đường phố về lâu dài.",
+      "translation_vi": null,
+      "translation_status": "pending_exact_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "academic_lecture",
+        "signposting",
+        "note_taking"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "core_exposition"
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "LECTURER",
+      "text_en": "An effective urban planting programme begins before the saplings arrive. The design team must decide how the ground will remain accessible for maintenance, how stormwater will be handled and how physical conditions will be checked over time. A healthy-looking tree after one wet season is encouraging, but it is not enough to establish that the soil system will continue functioning.",
+      "meaning_vi": "Nêu giới hạn, ví dụ ứng dụng và ý nghĩa thực tế.",
+      "translation_vi": null,
+      "translation_status": "pending_exact_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "academic_lecture",
+        "signposting",
+        "note_taking"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "closing"
+    },
+    {
+      "turn_id": "T09",
+      "speaker_id": "LECTURER",
+      "text_en": "City soils are not interchangeable containers for trees. Once we recognise their biological and physical processes, practical design can reduce damage and monitoring can show whether those improvements last.",
+      "meaning_vi": "Tổng kết và lưu ý cách diễn giải bằng chứng.",
+      "translation_vi": null,
+      "translation_status": "pending_exact_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "academic_lecture",
+        "signposting",
+        "note_taking"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "closing"
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "group_id": "PART4_NOTE_COMPLETION_01_05",
+      "type": "note_completion",
+      "prompt": "Construction machinery can cause soil ____.",
+      "correct_answers": [
+        "compaction"
+      ],
+      "scoring_policy": "strict_spoken_words",
+      "word_limit": 2,
+      "instructions_en": "Complete the notes below. Write NO MORE THAN TWO WORDS for each answer.",
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "evidence_excerpt_en": "Heavy construction equipment often causes compaction, pressing the spaces between soil particles closer together.",
+      "evidence_span": {
+        "turn_id": "T03",
+        "start_char": 42,
+        "end_char": 52
+      },
+      "explanation_vi": "Đáp án “compaction” được nói trực tiếp trong phần bài giảng này. Máy móc nén đất, làm giảm lỗ rỗng; dung trọng giúp theo dõi mức độ nén.",
+      "answer_source": "exact_words_spoken",
+      "question_tags": [
+        "M28",
+        "part4",
+        "note_completion",
+        "academic_note_taking"
+      ],
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true,
+      "answer_review_status": "draft_teacher_verification_required"
+    },
+    {
+      "question_id": "Q02",
+      "group_id": "PART4_NOTE_COMPLETION_01_05",
+      "type": "note_completion",
+      "prompt": "Soil mass per unit volume is expressed as ____.",
+      "correct_answers": [
+        "bulk density"
+      ],
+      "scoring_policy": "strict_spoken_words",
+      "word_limit": 2,
+      "instructions_en": "Complete the notes below. Write NO MORE THAN TWO WORDS for each answer.",
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "evidence_excerpt_en": "One useful measurement is bulk density, which compares the mass of dry soil with the volume it occupies.",
+      "evidence_span": {
+        "turn_id": "T03",
+        "start_char": 242,
+        "end_char": 254
+      },
+      "explanation_vi": "Đáp án “bulk density” được nói trực tiếp trong phần bài giảng này. Máy móc nén đất, làm giảm lỗ rỗng; dung trọng giúp theo dõi mức độ nén.",
+      "answer_source": "exact_words_spoken",
+      "question_tags": [
+        "M28",
+        "part4",
+        "note_completion",
+        "academic_note_taking"
+      ],
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true,
+      "answer_review_status": "draft_teacher_verification_required"
+    },
+    {
+      "question_id": "Q03",
+      "group_id": "PART4_NOTE_COMPLETION_01_05",
+      "type": "note_completion",
+      "prompt": "Dead leaves eventually contribute to soil ____.",
+      "correct_answers": [
+        "organic matter"
+      ],
+      "scoring_policy": "strict_spoken_words",
+      "word_limit": 2,
+      "instructions_en": "Complete the notes below. Write NO MORE THAN TWO WORDS for each answer.",
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "evidence_excerpt_en": "Soil organisms help break down fallen leaves and other organic matter, releasing nutrients slowly instead of delivering them all at once.",
+      "evidence_span": {
+        "turn_id": "T04",
+        "start_char": 55,
+        "end_char": 69
+      },
+      "explanation_vi": "Đáp án “organic matter” được nói trực tiếp trong phần bài giảng này. Chất hữu cơ và nấm cộng sinh với rễ duy trì hoạt động sinh học của đất.",
+      "answer_source": "exact_words_spoken",
+      "question_tags": [
+        "M28",
+        "part4",
+        "note_completion",
+        "academic_note_taking"
+      ],
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true,
+      "answer_review_status": "draft_teacher_verification_required"
+    },
+    {
+      "question_id": "Q04",
+      "group_id": "PART4_NOTE_COMPLETION_01_05",
+      "type": "note_completion",
+      "prompt": "A root–fungus partnership is called ____.",
+      "correct_answers": [
+        "mycorrhiza"
+      ],
+      "scoring_policy": "strict_spoken_words",
+      "word_limit": 2,
+      "instructions_en": "Complete the notes below. Write NO MORE THAN TWO WORDS for each answer.",
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "evidence_excerpt_en": "Fungi may form a partnership called mycorrhiza, in which their fine filaments help roots obtain resources while the plant supplies energy.",
+      "evidence_span": {
+        "turn_id": "T04",
+        "start_char": 174,
+        "end_char": 184
+      },
+      "explanation_vi": "Đáp án “mycorrhiza” được nói trực tiếp trong phần bài giảng này. Chất hữu cơ và nấm cộng sinh với rễ duy trì hoạt động sinh học của đất.",
+      "answer_source": "exact_words_spoken",
+      "question_tags": [
+        "M28",
+        "part4",
+        "note_completion",
+        "academic_note_taking"
+      ],
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true,
+      "answer_review_status": "draft_teacher_verification_required"
+    },
+    {
+      "question_id": "Q05",
+      "group_id": "PART4_NOTE_COMPLETION_01_05",
+      "type": "note_completion",
+      "prompt": "Water flowing over the ground is called ____.",
+      "correct_answers": [
+        "runoff"
+      ],
+      "scoring_policy": "strict_spoken_words",
+      "word_limit": 2,
+      "instructions_en": "Complete the notes below. Write NO MORE THAN TWO WORDS for each answer.",
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "evidence_excerpt_en": "When water cannot enter the soil, it becomes surface runoff and may carry pollutants toward drains.",
+      "evidence_span": {
+        "turn_id": "T05",
+        "start_char": 53,
+        "end_char": 59
+      },
+      "explanation_vi": "Đáp án “runoff” được nói trực tiếp trong phần bài giảng này. Dòng chảy tràn khác với quá trình nước thấm xuống đất.",
+      "answer_source": "exact_words_spoken",
+      "question_tags": [
+        "M28",
+        "part4",
+        "note_completion",
+        "academic_note_taking"
+      ],
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true,
+      "answer_review_status": "draft_teacher_verification_required"
+    },
+    {
+      "question_id": "Q06",
+      "group_id": "PART4_SUMMARY_COMPLETION_06_10",
+      "type": "summary_completion",
+      "prompt": "Water entering the ground is known as ____.",
+      "correct_answers": [
+        "infiltration"
+      ],
+      "scoring_policy": "strict_spoken_words",
+      "word_limit": 2,
+      "instructions_en": "Complete the summary below. Write NO MORE THAN TWO WORDS for each answer.",
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "evidence_excerpt_en": "In contrast, infiltration describes water moving into the ground.",
+      "evidence_span": {
+        "turn_id": "T05",
+        "start_char": 113,
+        "end_char": 125
+      },
+      "explanation_vi": "Đáp án “infiltration” được nói trực tiếp trong phần bài giảng này. Dòng chảy tràn khác với quá trình nước thấm xuống đất.",
+      "answer_source": "exact_words_spoken",
+      "question_tags": [
+        "M28",
+        "part4",
+        "summary_completion",
+        "academic_note_taking"
+      ],
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true,
+      "answer_review_status": "draft_teacher_verification_required"
+    },
+    {
+      "question_id": "Q07",
+      "group_id": "PART4_SUMMARY_COMPLETION_06_10",
+      "type": "summary_completion",
+      "prompt": "Winter maintenance can introduce ____ into roadside soil.",
+      "correct_answers": [
+        "road salt"
+      ],
+      "scoring_policy": "strict_spoken_words",
+      "word_limit": 2,
+      "instructions_en": "Complete the summary below. Write NO MORE THAN TWO WORDS for each answer.",
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "evidence_excerpt_en": "Some street trees suffer not from a lack of nutrients but from exposure to road salt, which changes the chemical conditions around their roots.",
+      "evidence_span": {
+        "turn_id": "T06",
+        "start_char": 75,
+        "end_char": 84
+      },
+      "explanation_vi": "Đáp án “road salt” được nói trực tiếp trong phần bài giảng này. Muối rải đường và kim loại nặng đều có thể ảnh hưởng đất đô thị.",
+      "answer_source": "exact_words_spoken",
+      "question_tags": [
+        "M28",
+        "part4",
+        "summary_completion",
+        "academic_note_taking"
+      ],
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true,
+      "answer_review_status": "draft_teacher_verification_required"
+    },
+    {
+      "question_id": "Q08",
+      "group_id": "PART4_SUMMARY_COMPLETION_06_10",
+      "type": "summary_completion",
+      "prompt": "Historic traffic and industry may leave ____ in the ground.",
+      "correct_answers": [
+        "heavy metals"
+      ],
+      "scoring_policy": "strict_spoken_words",
+      "word_limit": 2,
+      "instructions_en": "Complete the summary below. Write NO MORE THAN TWO WORDS for each answer.",
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "evidence_excerpt_en": "Another problem is heavy metals left behind by older industry or traffic.",
+      "evidence_span": {
+        "turn_id": "T06",
+        "start_char": 163,
+        "end_char": 175
+      },
+      "explanation_vi": "Đáp án “heavy metals” được nói trực tiếp trong phần bài giảng này. Muối rải đường và kim loại nặng đều có thể ảnh hưởng đất đô thị.",
+      "answer_source": "exact_words_spoken",
+      "question_tags": [
+        "M28",
+        "part4",
+        "summary_completion",
+        "academic_note_taking"
+      ],
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true,
+      "answer_review_status": "draft_teacher_verification_required"
+    },
+    {
+      "question_id": "Q09",
+      "group_id": "PART4_SUMMARY_COMPLETION_06_10",
+      "type": "summary_completion",
+      "prompt": "A protective organic surface layer is called ____.",
+      "correct_answers": [
+        "mulch"
+      ],
+      "scoring_policy": "strict_spoken_words",
+      "word_limit": 2,
+      "instructions_en": "Complete the summary below. Write NO MORE THAN TWO WORDS for each answer.",
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "evidence_excerpt_en": "A common improvement is to protect the soil with a layer of mulch, which moderates temperature and reduces evaporation, rather than paving directly against the trunk.",
+      "evidence_span": {
+        "turn_id": "T07",
+        "start_char": 60,
+        "end_char": 65
+      },
+      "explanation_vi": "Đáp án “mulch” được nói trực tiếp trong phần bài giảng này. Lớp phủ hữu cơ và không gian cho rễ hỗ trợ cây đường phố về lâu dài.",
+      "answer_source": "exact_words_spoken",
+      "question_tags": [
+        "M28",
+        "part4",
+        "summary_completion",
+        "academic_note_taking"
+      ],
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true,
+      "answer_review_status": "draft_teacher_verification_required"
+    },
+    {
+      "question_id": "Q10",
+      "group_id": "PART4_SUMMARY_COMPLETION_06_10",
+      "type": "summary_completion",
+      "prompt": "Tree design should allow a sufficiently large ____.",
+      "correct_answers": [
+        "root zone"
+      ],
+      "scoring_policy": "strict_spoken_words",
+      "word_limit": 2,
+      "instructions_en": "Complete the summary below. Write NO MORE THAN TWO WORDS for each answer.",
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "evidence_excerpt_en": "For newly planted areas, designers can also provide a larger root zone beneath adjacent surfaces.",
+      "evidence_span": {
+        "turn_id": "T07",
+        "start_char": 228,
+        "end_char": 237
+      },
+      "explanation_vi": "Đáp án “root zone” được nói trực tiếp trong phần bài giảng này. Lớp phủ hữu cơ và không gian cho rễ hỗ trợ cây đường phố về lâu dài.",
+      "answer_source": "exact_words_spoken",
+      "question_tags": [
+        "M28",
+        "part4",
+        "summary_completion",
+        "academic_note_taking"
+      ],
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true,
+      "answer_review_status": "draft_teacher_verification_required"
+    }
+  ],
+  "question_groups": [
+    {
+      "group_id": "PART4_NOTE_COMPLETION_01_05",
+      "title_en": "The Hidden Life of City Soil — Notes",
+      "question_ids": [
+        "Q01",
+        "Q02",
+        "Q03",
+        "Q04",
+        "Q05"
+      ],
+      "question_type": "note_completion",
+      "instructions_en": "Complete the notes below. Write NO MORE THAN TWO WORDS for each answer.",
+      "word_limit": 2,
+      "requires_one_listen": true,
+      "question_display_start": "before_audio",
+      "pause_between_groups_seconds": 0,
+      "layout_metadata": {
+        "presentation": "grouped_blanks",
+        "flow_order": null,
+        "table_columns": null
+      }
+    },
+    {
+      "group_id": "PART4_SUMMARY_COMPLETION_06_10",
+      "title_en": "The Hidden Life of City Soil — Summary",
+      "question_ids": [
+        "Q06",
+        "Q07",
+        "Q08",
+        "Q09",
+        "Q10"
+      ],
+      "question_type": "summary_completion",
+      "instructions_en": "Complete the summary below. Write NO MORE THAN TWO WORDS for each answer.",
+      "word_limit": 2,
+      "requires_one_listen": true,
+      "question_display_start": "before_audio",
+      "pause_between_groups_seconds": 0,
+      "layout_metadata": {
+        "presentation": "grouped_blanks",
+        "flow_order": null,
+        "table_columns": null
+      }
+    }
+  ],
+  "pedagogy_vi": {
+    "topic_summary_vi": "Đất đô thị là một hệ sinh thái; xây dựng và ô nhiễm làm thay đổi hoạt động của đất.",
+    "question_explanations_status": "draft_review_required",
+    "turn_meanings_are_not_full_translations": true,
+    "full_line_translation_required_before_release": true
+  },
+  "audio": {
+    "status": "not_generated",
+    "audio_url": null,
+    "audio_asset_id": null,
+    "duration_ms": null,
+    "source_text_sha256": "fd67f90fb9570ec40ef2b4ca7511436d885798ddbc06a6b0b2728ca2d64c503c",
+    "generation_strategy": "single_speaker_continuous_full_lecture",
+    "aligned_turns": false,
+    "voice_consistency_verified": false,
+    "human_listening_review": false
+  },
+  "exam_mode": {
+    "bank_role": "protected_assessment",
+    "use_as_training_before_first_attempt": false,
+    "listening_attempts_allowed_for_scored_first_attempt": 1,
+    "replay_before_submit": false,
+    "speed_control_before_submit": false,
+    "transcript_visible_before_submit": false,
+    "answer_key_visible_before_submit": false,
+    "post_attempt_review_allowed": true,
+    "question_count": 10,
+    "points_per_correct_answer": 1,
+    "question_order_monotonic": true,
+    "estimated_speech_minutes_at_140_wpm": 4.39,
+    "exam_band_score_enabled": false,
+    "repeated_attempt_marked_as_seen": true,
+    "all_questions_visible_before_audio": true
+  },
+  "qa": {
+    "automatic_data_validation": "pending",
+    "content_human_review": "pending",
+    "translation_human_review": "pending",
+    "audio_human_review": "pending",
+    "exam_simulation_rubric_score": null,
+    "rubric_90_verified": false,
+    "published": false,
+    "release_eligible": false
+  },
+  "provenance": {
+    "source_type": "original_authoring_english_academic_lecture",
+    "milestone": "M28",
+    "no_official_ielts_question_copied": true,
+    "training_exposure_guard": true,
+    "fictional_illustrations_only_when_specified": true
+  },
+  "release_metadata": {
+    "target_bank": "protected_assessment",
+    "import_policy": "insert_only",
+    "version": "m28.0.1",
+    "preserve_existing_ids": true,
+    "allow_client_answer_payload": false
+  }
+}

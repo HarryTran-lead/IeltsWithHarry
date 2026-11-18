@@ -1,0 +1,421 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "DICT-S3-033",
+  "status": "draft",
+  "level": "L5",
+  "section": 3,
+  "topic": "University Assignments",
+  "title": "University Assignments – Poetry Translation Comparison",
+  "learning_objectives_vi": [
+    "Theo dõi ba nhân vật thảo luận và phân biệt quan điểm ban đầu với quyết định sau cùng.",
+    "Nhận biết lập luận, điều kiện, hạn chế nghiên cứu và diễn đạt lại (paraphrase) trong Section 3.",
+    "Nghe chép đúng phát ngôn then chốt và truy xuất bằng chứng theo lượt thoại."
+  ],
+  "content_format": "section_practice",
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Sophie – academic project discussion participant",
+      "tts_voice_id": null,
+      "accent_requested": "australian"
+    },
+    {
+      "speaker_id": "B",
+      "role": "Ben – academic project discussion participant",
+      "tts_voice_id": null,
+      "accent_requested": "australian"
+    },
+    {
+      "speaker_id": "C",
+      "role": "Isabel – academic project discussion participant",
+      "tts_voice_id": null,
+      "accent_requested": "australian"
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "Our comparative literature essay is supposed to examine two English translations of the same poem, but I've found that the versions in online study guides omit different lines.",
+      "translation_vi": "Bài luận văn học so sánh yêu cầu phân tích hai bản dịch tiếng Anh của cùng một bài thơ, nhưng mình thấy các bản trên trang hướng dẫn học tập lược bỏ những dòng khác nhau.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "multi_speaker",
+        "l5"
+      ]
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "B",
+      "text_en": "Then those websites are unsuitable as primary texts. We need complete editions with the translators named and the publication dates recorded, otherwise we can't explain why their choices differ.",
+      "translation_vi": "Vậy các trang ấy không phù hợp làm văn bản gốc. Ta cần ấn bản đầy đủ có tên dịch giả và ngày xuất bản, nếu không sẽ không giải thích được vì sao họ chọn cách dịch khác nhau.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "multi_speaker",
+        "l5"
+      ]
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "C",
+      "text_en": "The library holds a bilingual anthology from 1998 and a revised edition from 2015. However, the newer one credits an editor as well as a translator, so the changes may not be the translator's alone.",
+      "translation_vi": "Thư viện có tuyển tập song ngữ năm 1998 và bản sửa năm 2015. Tuy nhiên bản mới ghi công cả biên tập viên lẫn dịch giả, nên thay đổi có thể không chỉ do dịch giả.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "multi_speaker",
+        "l5"
+      ]
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "A",
+      "text_en": "I initially wanted to argue that the later version is more accurate, but 'accuracy' may be impossible to judge without discussing rhythm and cultural references. Could we compare how each creates a particular tone?",
+      "translation_vi": "Ban đầu mình muốn nói bản sau chính xác hơn, nhưng khó đánh giá 'chính xác' nếu không bàn về nhịp và liên tưởng văn hóa. Ta có thể so cách mỗi bản tạo sắc thái không?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "multi_speaker",
+        "l5"
+      ]
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "B",
+      "text_en": "That would give us a defensible argument. For example, one translation uses formal verbs while the other introduces conversational contractions, which changes the speaker's apparent relationship with the reader.",
+      "translation_vi": "Như vậy lập luận sẽ vững hơn. Chẳng hạn, một bản dùng động từ trang trọng, bản kia dùng dạng rút gọn thân mật, làm thay đổi quan hệ mà người nói có vẻ thiết lập với độc giả.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "multi_speaker",
+        "l5"
+      ]
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "C",
+      "text_en": "We should also distinguish quotation from interpretation in our notes. Last week I copied a critic's claim about irony and almost included it as if it were my own observation.",
+      "translation_vi": "Ta cũng nên tách trích dẫn và diễn giải trong ghi chú. Tuần trước mình chép nhận xét của một nhà phê bình về mỉa mai và suýt đưa vào như nhận xét của bản thân.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "multi_speaker",
+        "l5"
+      ]
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "Let's use a comparison table with the original line, both published translations and our comments in separate columns. That way we can trace every claim back to an actual passage.",
+      "translation_vi": "Hãy làm bảng với câu thơ gốc, hai bản dịch đã xuất bản và nhận xét riêng ở các cột khác nhau. Như vậy truy được mỗi nhận định về đúng đoạn văn bản.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "multi_speaker",
+        "l5"
+      ]
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "B",
+      "text_en": "The tutor said we may discuss only three short extracts, so we don't need a line-by-line account of the whole poem. We should select passages where the translation strategies clearly diverge.",
+      "translation_vi": "Giảng viên nói chỉ cần thảo luận ba trích đoạn ngắn, nên không cần phân tích từng dòng toàn bài. Ta chọn những đoạn mà chiến lược dịch khác nhau rõ nhất.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "multi_speaker",
+        "l5"
+      ]
+    },
+    {
+      "turn_id": "T09",
+      "speaker_id": "C",
+      "text_en": "I'll borrow the editions, and you two can identify the three extracts. The final thesis will concern tone and reader relationship, not the unsupported claim that one translation is universally better.",
+      "translation_vi": "Mình sẽ mượn hai ấn bản, còn hai bạn xác định ba trích đoạn. Luận điểm cuối sẽ nói về sắc thái và quan hệ với người đọc, không khẳng định vô căn cứ rằng một bản luôn tốt hơn.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "multi_speaker",
+        "l5"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "type": "mcq",
+      "prompt": "What kind of editions does Ben say the essay requires?",
+      "correct_answers": [
+        "Complete editions naming translators and publication dates"
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Tại T02, Ben nói: “Vậy các trang ấy không phù hợp làm văn bản gốc. Ta cần ấn bản đầy đủ có tên dịch giả và ngày xuất bản, nếu không sẽ không giải thích được vì sao họ chọn cách dịch khác nhau.” Đáp án “Complete editions naming translators and publication dates” diễn đạt đúng ý được nêu. Các phương án còn lại không phù hợp với bằng chứng; chú ý ý kiến bị sửa và tính điều kiện.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "section_3",
+        "ielts_practice",
+        "inference",
+        "paraphrase"
+      ],
+      "options": [
+        "Study-guide excerpts with simpler wording",
+        "The edition with the highest sales",
+        "Complete editions naming translators and publication dates"
+      ]
+    },
+    {
+      "question_id": "Q02",
+      "type": "note_completion",
+      "prompt": "The library holds a revised edition from ____ .",
+      "correct_answers": [
+        "2015"
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Bằng chứng T03: “Thư viện có tuyển tập song ngữ năm 1998 và bản sửa năm 2015. Tuy nhiên bản mới ghi công cả biên tập viên lẫn dịch giả, nên thay đổi có thể không chỉ do dịch giả.” Cụm cần điền nghe đúng nguyên văn là “2015”.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_3",
+        "ielts_practice",
+        "detail",
+        "note_completion"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q03",
+      "type": "matching",
+      "prompt": "Which speaker questions whether accuracy is a suitable basis for comparing translations?",
+      "correct_answers": [
+        "Speaker A"
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Người nói Sophie (Speaker A) đưa ra ý này tại T04: “Ban đầu mình muốn nói bản sau chính xác hơn, nhưng khó đánh giá 'chính xác' nếu không bàn về nhịp và liên tưởng văn hóa. Ta có thể so cách mỗi bản tạo sắc thái không?”",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "section_3",
+        "ielts_practice",
+        "speaker_attribution"
+      ],
+      "options": [
+        "Speaker A",
+        "Speaker B",
+        "Speaker C"
+      ]
+    },
+    {
+      "question_id": "Q04",
+      "type": "mcq",
+      "prompt": "What will the comparison table help the group do?",
+      "correct_answers": [
+        "Trace each claim back to an actual passage"
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "Tại T07, Sophie nói: “Hãy làm bảng với câu thơ gốc, hai bản dịch đã xuất bản và nhận xét riêng ở các cột khác nhau. Như vậy truy được mỗi nhận định về đúng đoạn văn bản.” Đáp án “Trace each claim back to an actual passage” diễn đạt đúng ý được nêu. Các phương án còn lại không phù hợp với bằng chứng; chú ý ý kiến bị sửa và tính điều kiện.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "section_3",
+        "ielts_practice",
+        "inference",
+        "paraphrase"
+      ],
+      "options": [
+        "Check which translation is more widely published",
+        "Avoid consulting the original poem",
+        "Trace each claim back to an actual passage"
+      ]
+    },
+    {
+      "question_id": "Q05",
+      "type": "note_completion",
+      "prompt": "The tutor permits only ____ short extracts.",
+      "correct_answers": [
+        "three"
+      ],
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "explanation_vi": "Bằng chứng T08: “Giảng viên nói chỉ cần thảo luận ba trích đoạn ngắn, nên không cần phân tích từng dòng toàn bài. Ta chọn những đoạn mà chiến lược dịch khác nhau rõ nhất.” Cụm cần điền nghe đúng nguyên văn là “three”.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_3",
+        "ielts_practice",
+        "detail",
+        "note_completion"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q06",
+      "type": "short_answer",
+      "prompt": "Which aspect will the final thesis focus on?",
+      "correct_answers": [
+        "tone"
+      ],
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "explanation_vi": "Bằng chứng T09: “Mình sẽ mượn hai ấn bản, còn hai bạn xác định ba trích đoạn. Luận điểm cuối sẽ nói về sắc thái và quan hệ với người đọc, không khẳng định vô căn cứ rằng một bản luôn tốt hơn.” Trả lời ngắn theo chi tiết “tone”.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_3",
+        "ielts_practice",
+        "detail",
+        "short_answer"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "D01",
+      "type": "dictation",
+      "prompt": "Nghe T04 (Speaker A) rồi chép chính xác câu nói tiếng Anh.",
+      "correct_answers": [
+        "I initially wanted to argue that the later version is more accurate, but 'accuracy' may be impossible to judge without discussing rhythm and cultural references. Could we compare how each creates a particular tone?"
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Câu gốc: “I initially wanted to argue that the later version is more accurate, but 'accuracy' may be impossible to judge without discussing rhythm and cultural references. Could we compare how each creates a particular tone?”\nBản dịch: Ban đầu mình muốn nói bản sau chính xác hơn, nhưng khó đánh giá 'chính xác' nếu không bàn về nhịp và liên tưởng văn hóa. Ta có thể so cách mỗi bản tạo sắc thái không?\nChú ý âm yếu, nối âm và ý được sửa trong đoạn.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_3",
+        "dictation",
+        "exact_transcript"
+      ]
+    },
+    {
+      "question_id": "D02",
+      "type": "dictation",
+      "prompt": "Nghe T07 (Speaker A) rồi chép chính xác câu nói tiếng Anh.",
+      "correct_answers": [
+        "Let's use a comparison table with the original line, both published translations and our comments in separate columns. That way we can trace every claim back to an actual passage."
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "Câu gốc: “Let's use a comparison table with the original line, both published translations and our comments in separate columns. That way we can trace every claim back to an actual passage.”\nBản dịch: Hãy làm bảng với câu thơ gốc, hai bản dịch đã xuất bản và nhận xét riêng ở các cột khác nhau. Như vậy truy được mỗi nhận định về đúng đoạn văn bản.\nChú ý âm yếu, nối âm và ý được sửa trong đoạn.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_3",
+        "dictation",
+        "exact_transcript"
+      ]
+    },
+    {
+      "question_id": "G01",
+      "type": "gap_fill",
+      "prompt": "Nghe T02 rồi điền đúng phần thiếu: Then those websites are unsuitable as ____. We need complete editions with the translators named and the publication dates recorded, otherwise we can't explain why their choices differ.",
+      "correct_answers": [
+        "primary texts"
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Đáp án “primary texts” nghĩa là văn bản gốc. Đối chiếu: “Then those websites are unsuitable as primary texts. We need complete editions with the translators named and the publication dates recorded, otherwise we can't explain why their choices differ.”",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_3",
+        "gap_fill",
+        "vocabulary_in_context"
+      ]
+    }
+  ],
+  "vocabulary": [
+    {
+      "term": "primary texts",
+      "pos": "n. phr.",
+      "meaning_vi": "văn bản gốc",
+      "example_en": "Then those websites are unsuitable as primary texts. We need complete editions with the translators named and the publication dates recorded, otherwise we can't explain why their choices differ.",
+      "example_vi": "Vậy các trang ấy không phù hợp làm văn bản gốc. Ta cần ấn bản đầy đủ có tên dịch giả và ngày xuất bản, nếu không sẽ không giải thích được vì sao họ chọn cách dịch khác nhau.",
+      "source_turn_id": "T02"
+    },
+    {
+      "term": "publication dates",
+      "pos": "n. phr.",
+      "meaning_vi": "ngày xuất bản",
+      "example_en": "Then those websites are unsuitable as primary texts. We need complete editions with the translators named and the publication dates recorded, otherwise we can't explain why their choices differ.",
+      "example_vi": "Vậy các trang ấy không phù hợp làm văn bản gốc. Ta cần ấn bản đầy đủ có tên dịch giả và ngày xuất bản, nếu không sẽ không giải thích được vì sao họ chọn cách dịch khác nhau.",
+      "source_turn_id": "T02"
+    },
+    {
+      "term": "conversational contractions",
+      "pos": "n. phr.",
+      "meaning_vi": "dạng rút gọn khẩu ngữ",
+      "example_en": "That would give us a defensible argument. For example, one translation uses formal verbs while the other introduces conversational contractions, which changes the speaker's apparent relationship with the reader.",
+      "example_vi": "Như vậy lập luận sẽ vững hơn. Chẳng hạn, một bản dùng động từ trang trọng, bản kia dùng dạng rút gọn thân mật, làm thay đổi quan hệ mà người nói có vẻ thiết lập với độc giả.",
+      "source_turn_id": "T05"
+    },
+    {
+      "term": "comparison table",
+      "pos": "n. phr.",
+      "meaning_vi": "bảng so sánh",
+      "example_en": "Let's use a comparison table with the original line, both published translations and our comments in separate columns. That way we can trace every claim back to an actual passage.",
+      "example_vi": "Hãy làm bảng với câu thơ gốc, hai bản dịch đã xuất bản và nhận xét riêng ở các cột khác nhau. Như vậy truy được mỗi nhận định về đúng đoạn văn bản.",
+      "source_turn_id": "T07"
+    }
+  ],
+  "audio": {
+    "status": "not_generated",
+    "url": null,
+    "duration_ms": null,
+    "model": null,
+    "provider": null,
+    "voice_config": null,
+    "source_transcript_hash": "a14e387aeb2a3c90fb97ea0d4c8143340fe301229ad766dbec7bc96f851326f2",
+    "audio_sha256": null,
+    "format": null
+  },
+  "qa": {
+    "content_reviewed": false,
+    "answers_verified": false,
+    "audio_verified": false,
+    "rights_cleared": false,
+    "duplicate_reviewed": false,
+    "notes": [
+      "Original AI-assisted draft, awaiting expert pedagogical review and option-disambiguation review.",
+      "Audio not produced: all segment times are null. TTS terms and distribution rights must be checked.",
+      "Practice lesson only; not an official/full IELTS Listening Part 3 exam or a calibrated band test.",
+      "M16.2: automated edits are provisional; IELTS teacher final signoff, audio and rights clearance pending."
+    ]
+  },
+  "provenance": {
+    "content_origin": "original_ai_assisted",
+    "source_urls": [],
+    "source_rights_note": "Original scripts; verify TTS service/voice production and distribution rights before publishing to students, including minors.",
+    "reviewer": null
+  },
+  "release_metadata": {
+    "published_at": null,
+    "version": 1
+  }
+}

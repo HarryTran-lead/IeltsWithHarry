@@ -1,0 +1,834 @@
+{
+  "schema_version": "1.2.0",
+  "lesson_id": "S1-SIM-017",
+  "status": "draft",
+  "level": "L4",
+  "section": 1,
+  "topic": "Booking a family camping pitch",
+  "title": "Reserving an Electric Campsite Pitch",
+  "content_format": "section_exam_simulation",
+  "exam_part": "IELTS_LISTENING_PART_1_STYLE",
+  "official_ielts_material": false,
+  "learning_objectives_vi": [
+    "Theo dõi hội thoại giao dịch đời sống hai người nói trong một lần nghe.",
+    "Điền chính xác thông tin, kể cả khi có phương án cũ và thông tin đính chính.",
+    "Phân tích MCQ dựa trên ý nghĩa cuối cùng và bằng chứng sau khi nộp bài."
+  ],
+  "target_skills": [
+    "accommodation",
+    "electricity",
+    "dates",
+    "facilities",
+    "deposit"
+  ],
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Campsite reservations assistant",
+      "accent_requested": "british",
+      "tts_voice_id": null
+    },
+    {
+      "speaker_id": "B",
+      "role": "Camper",
+      "accent_requested": "british",
+      "tts_voice_id": null
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "Lark Meadow Campsite, good evening. Sam speaking. Are you looking for a tent pitch or space for a motorhome?",
+      "translation_vi": "Chào tối, Khu cắm trại Lark Meadow, Sam đây. Anh cần chỗ cho lều hay xe nhà lưu động?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "accommodation",
+        "electricity",
+        "dates",
+        "facilities",
+        "deposit"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "B",
+      "text_en": "A tent pitch, please. We're bringing two young children, and we'd like electricity because one of our lamps needs charging.",
+      "translation_vi": "Chỗ cho lều nhé. Chúng tôi mang hai con nhỏ và cần điện vì một đèn phải sạc.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "accommodation",
+        "electricity",
+        "dates",
+        "facilities",
+        "deposit"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "A",
+      "text_en": "Our powered tent area is called Meadow East. The Riverside field has no electricity, although it's nearer to the playground.",
+      "translation_vi": "Khu lều có điện tên Meadow East. Bãi Riverside không có điện, dù gần sân chơi hơn.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "accommodation",
+        "electricity",
+        "dates",
+        "facilities",
+        "deposit"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "B",
+      "text_en": "Meadow East sounds best. We can always walk to the playground, and keeping the lamp working is more important.",
+      "translation_vi": "Meadow East phù hợp. Chúng tôi đi bộ tới sân chơi được, và đèn hoạt động quan trọng hơn.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "accommodation",
+        "electricity",
+        "dates",
+        "facilities",
+        "deposit"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "A",
+      "text_en": "Which nights were you considering? The bank holiday weekend is filling quickly, so some dates are already unavailable.",
+      "translation_vi": "Anh định ở những đêm nào? Cuối tuần lễ đã gần kín nên vài ngày không còn chỗ.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "accommodation",
+        "electricity",
+        "dates",
+        "facilities",
+        "deposit"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "B",
+      "text_en": "We first planned Friday and Saturday, but my partner can't leave work until Saturday afternoon. Could we stay Saturday and Sunday?",
+      "translation_vi": "Chúng tôi ban đầu định tối thứ Sáu và thứ Bảy, nhưng bạn đời phải làm đến chiều thứ Bảy. Có thể ở tối thứ Bảy và Chủ nhật không?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "accommodation",
+        "electricity",
+        "dates",
+        "facilities",
+        "deposit"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "Yes, Saturday and Sunday are available, with departure on Monday morning. Friday in that area has already been booked.",
+      "translation_vi": "Được, còn tối thứ Bảy và Chủ nhật, trả chỗ sáng thứ Hai. Tối thứ Sáu khu đó đã có người đặt.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "accommodation",
+        "electricity",
+        "dates",
+        "facilities",
+        "deposit"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "B",
+      "text_en": "Great. What time can we arrive on Saturday? The drive is about two hours and we'll need to stop for food.",
+      "translation_vi": "Tốt. Thứ Bảy chúng tôi đến lúc nào? Lái xe khoảng hai tiếng, còn phải dừng ăn.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "accommodation",
+        "electricity",
+        "dates",
+        "facilities",
+        "deposit"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T09",
+      "speaker_id": "A",
+      "text_en": "Check-in begins at two thirty in the afternoon. If you arrive earlier, you may park outside but not set up the tent.",
+      "translation_vi": "Nhận chỗ bắt đầu hai giờ rưỡi chiều. Đến sớm có thể đỗ bên ngoài nhưng chưa dựng lều.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "accommodation",
+        "electricity",
+        "dates",
+        "facilities",
+        "deposit"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T10",
+      "speaker_id": "B",
+      "text_en": "Two thirty is fine. Does the pitch include an electrical socket, or must we ask for an extra connection?",
+      "translation_vi": "Hai rưỡi được. Chỗ có ổ điện sẵn hay cần đăng ký kết nối thêm?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "accommodation",
+        "electricity",
+        "dates",
+        "facilities",
+        "deposit"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T11",
+      "speaker_id": "A",
+      "text_en": "There is one socket per powered pitch. Please bring a fifteen-metre outdoor cable; ordinary indoor extension leads aren't safe on the grass.",
+      "translation_vi": "Có một ổ mỗi chỗ có điện. Hãy mang dây ngoài trời dài mười lăm mét; dây trong nhà không an toàn trên cỏ.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "accommodation",
+        "electricity",
+        "dates",
+        "facilities",
+        "deposit"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T12",
+      "speaker_id": "B",
+      "text_en": "I'll check our cable length. My tent is quite wide, but it shouldn't take up the entire pitch.",
+      "translation_vi": "Tôi sẽ xem chiều dài dây. Lều khá rộng nhưng chắc không chiếm hết chỗ.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "accommodation",
+        "electricity",
+        "dates",
+        "facilities",
+        "deposit"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T13",
+      "speaker_id": "A",
+      "text_en": "Each pitch is eight metres across. We ask campers to keep one metre clear between tents in case staff need access.",
+      "translation_vi": "Mỗi chỗ rộng tám mét. Khách cần chừa một mét giữa các lều để nhân viên đi lại.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "accommodation",
+        "electricity",
+        "dates",
+        "facilities",
+        "deposit"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T14",
+      "speaker_id": "B",
+      "text_en": "That's enough. What's the nightly charge for two adults and two children on a powered pitch?",
+      "translation_vi": "Đủ. Giá mỗi đêm cho hai người lớn hai trẻ với chỗ có điện là bao nhiêu?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "accommodation",
+        "electricity",
+        "dates",
+        "facilities",
+        "deposit"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T15",
+      "speaker_id": "A",
+      "text_en": "It's thirty-one pounds per night. The unpowered field is twenty-four, but that wouldn't meet your electrical needs.",
+      "translation_vi": "Ba mươi mốt bảng mỗi đêm. Bãi không điện hai mươi bốn, nhưng không đáp ứng nhu cầu.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "accommodation",
+        "electricity",
+        "dates",
+        "facilities",
+        "deposit"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T16",
+      "speaker_id": "B",
+      "text_en": "I'll book two nights. I heard there's a washing block near the eastern field. Does it have a place to wash baby bottles?",
+      "translation_vi": "Tôi đặt hai đêm. Tôi nghe khu rửa gần bãi đông. Có chỗ rửa bình sữa không?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "accommodation",
+        "electricity",
+        "dates",
+        "facilities",
+        "deposit"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T17",
+      "speaker_id": "A",
+      "text_en": "The wash block has a separate sink for food utensils, but the hot-water tap closes at ten in the evening to limit noise.",
+      "translation_vi": "Khu rửa có bồn riêng cho dụng cụ ăn, nhưng vòi nước nóng đóng lúc mười giờ tối để giảm ồn.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "accommodation",
+        "electricity",
+        "dates",
+        "facilities",
+        "deposit"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T18",
+      "speaker_id": "B",
+      "text_en": "We'll wash bottles before then. Is there a deposit to hold the space? I'd rather not pay the whole amount tonight.",
+      "translation_vi": "Chúng tôi sẽ rửa trước giờ đó. Có tiền cọc giữ chỗ không? Tôi chưa muốn trả hết tối nay.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "accommodation",
+        "electricity",
+        "dates",
+        "facilities",
+        "deposit"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T19",
+      "speaker_id": "A",
+      "text_en": "A fifteen-pound deposit secures the booking. The remainder is due on arrival, and you can pay by card at reception.",
+      "translation_vi": "Đặt cọc mười lăm bảng giữ chỗ. Phần còn lại trả khi đến, có thể thanh toán thẻ tại quầy.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "accommodation",
+        "electricity",
+        "dates",
+        "facilities",
+        "deposit"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T20",
+      "speaker_id": "B",
+      "text_en": "That works. Is the campsite still allowing campfires? The children would love to toast marshmallows after dinner.",
+      "translation_vi": "Được. Khu cắm trại còn cho đốt lửa không? Trẻ muốn nướng kẹo sau bữa tối.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "accommodation",
+        "electricity",
+        "dates",
+        "facilities",
+        "deposit"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T21",
+      "speaker_id": "A",
+      "text_en": "Open campfires are prohibited this season. You may use a raised camping stove, provided it stays well clear of the tent fabric.",
+      "translation_vi": "Mùa này cấm lửa trại ngoài trời. Được dùng bếp cắm trại nâng cao nếu cách xa vải lều.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "accommodation",
+        "electricity",
+        "dates",
+        "facilities",
+        "deposit"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T22",
+      "speaker_id": "B",
+      "text_en": "Understood. Please reserve Meadow East for Saturday and Sunday; we'll bring the outdoor cable and a safe camping stove.",
+      "translation_vi": "Hiểu rồi. Hãy đặt Meadow East tối thứ Bảy và Chủ nhật; chúng tôi mang dây ngoài trời và bếp an toàn.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "accommodation",
+        "electricity",
+        "dates",
+        "facilities",
+        "deposit"
+      ],
+      "bank_role": "protected_assessment"
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "group_id": "PART1_FORM_1_TO_6",
+      "type": "form_completion",
+      "prompt": "Powered camping area: ____ East",
+      "correct_answers": [
+        "Meadow"
+      ],
+      "spoken_answer": "Meadow",
+      "word_limit": 3,
+      "instructions_en": "NO MORE THAN THREE WORDS AND/OR A NUMBER",
+      "scoring_policy": "controlled_variants",
+      "explanation_vi": "Khu có điện là Meadow East.",
+      "answer_source": "explicit_recording",
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "evidence_excerpt_en": "Meadow East",
+      "question_tags": [
+        "M25",
+        "part1",
+        "completion",
+        "accommodation",
+        "electricity",
+        "dates",
+        "facilities",
+        "deposit"
+      ]
+    },
+    {
+      "question_id": "Q02",
+      "group_id": "PART1_FORM_1_TO_6",
+      "type": "form_completion",
+      "prompt": "First night of the confirmed stay: ____",
+      "correct_answers": [
+        "Saturday"
+      ],
+      "spoken_answer": "Saturday",
+      "word_limit": 3,
+      "instructions_en": "NO MORE THAN THREE WORDS AND/OR A NUMBER",
+      "scoring_policy": "controlled_variants",
+      "explanation_vi": "Ngày đầu được chốt là thứ Bảy.",
+      "answer_source": "explicit_recording",
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "evidence_excerpt_en": "Saturday and Sunday are available",
+      "question_tags": [
+        "M25",
+        "part1",
+        "completion",
+        "accommodation",
+        "electricity",
+        "dates",
+        "facilities",
+        "deposit"
+      ]
+    },
+    {
+      "question_id": "Q03",
+      "group_id": "PART1_FORM_1_TO_6",
+      "type": "form_completion",
+      "prompt": "Check-in starts at ____",
+      "correct_answers": [
+        "two thirty",
+        "2:30"
+      ],
+      "spoken_answer": "two thirty",
+      "word_limit": 3,
+      "instructions_en": "NO MORE THAN THREE WORDS AND/OR A NUMBER",
+      "scoring_policy": "controlled_variants",
+      "explanation_vi": "Nhận chỗ từ 2:30 chiều.",
+      "answer_source": "explicit_recording",
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "evidence_excerpt_en": "at two thirty",
+      "question_tags": [
+        "M25",
+        "part1",
+        "completion",
+        "accommodation",
+        "electricity",
+        "dates",
+        "facilities",
+        "deposit"
+      ]
+    },
+    {
+      "question_id": "Q04",
+      "group_id": "PART1_FORM_1_TO_6",
+      "type": "note_completion",
+      "prompt": "Required cable length: ____ metres",
+      "correct_answers": [
+        "fifteen",
+        "15"
+      ],
+      "spoken_answer": "fifteen",
+      "word_limit": 3,
+      "instructions_en": "NO MORE THAN THREE WORDS AND/OR A NUMBER",
+      "scoring_policy": "controlled_variants",
+      "explanation_vi": "Cần dây 15 m dùng ngoài trời.",
+      "answer_source": "explicit_recording",
+      "evidence_turn_ids": [
+        "T11"
+      ],
+      "evidence_excerpt_en": "fifteen-metre outdoor cable",
+      "question_tags": [
+        "M25",
+        "part1",
+        "completion",
+        "accommodation",
+        "electricity",
+        "dates",
+        "facilities",
+        "deposit"
+      ]
+    },
+    {
+      "question_id": "Q05",
+      "group_id": "PART1_FORM_1_TO_6",
+      "type": "form_completion",
+      "prompt": "Width of each pitch: ____ metres",
+      "correct_answers": [
+        "eight",
+        "8"
+      ],
+      "spoken_answer": "eight",
+      "word_limit": 3,
+      "instructions_en": "NO MORE THAN THREE WORDS AND/OR A NUMBER",
+      "scoring_policy": "controlled_variants",
+      "explanation_vi": "Mỗi vị trí cắm trại rộng tám mét; các lều vẫn phải giữ khoảng cách trống một mét.",
+      "answer_source": "explicit_recording",
+      "evidence_turn_ids": [
+        "T13"
+      ],
+      "evidence_excerpt_en": "eight metres across",
+      "question_tags": [
+        "M25",
+        "part1",
+        "completion",
+        "accommodation",
+        "electricity",
+        "dates",
+        "facilities",
+        "deposit"
+      ]
+    },
+    {
+      "question_id": "Q06",
+      "group_id": "PART1_FORM_1_TO_6",
+      "type": "form_completion",
+      "prompt": "Nightly price: £____",
+      "correct_answers": [
+        "thirty-one",
+        "31"
+      ],
+      "spoken_answer": "thirty-one",
+      "word_limit": 3,
+      "instructions_en": "NO MORE THAN THREE WORDS AND/OR A NUMBER",
+      "scoring_policy": "controlled_variants",
+      "explanation_vi": "Giá có điện 31 bảng mỗi đêm.",
+      "answer_source": "explicit_recording",
+      "evidence_turn_ids": [
+        "T15"
+      ],
+      "evidence_excerpt_en": "thirty-one pounds per night",
+      "question_tags": [
+        "M25",
+        "part1",
+        "completion",
+        "accommodation",
+        "electricity",
+        "dates",
+        "facilities",
+        "deposit"
+      ]
+    },
+    {
+      "question_id": "Q07",
+      "group_id": "PART1_MCQ_7_TO_10",
+      "type": "mcq",
+      "prompt": "When does the wash block's hot-water tap close?",
+      "correct_answers": [
+        "At ten in the evening"
+      ],
+      "options": [
+        {
+          "key": "A",
+          "text": "At eight in the morning"
+        },
+        {
+          "key": "B",
+          "text": "At ten in the evening"
+        },
+        {
+          "key": "C",
+          "text": "At midnight"
+        }
+      ],
+      "correct_option": "B",
+      "scoring_policy": "one_correct_option",
+      "explanation_vi": "Vòi nước nóng đóng lúc 10 giờ tối.",
+      "answer_source": "explicit_or_contextual_recording",
+      "evidence_turn_ids": [
+        "T17"
+      ],
+      "evidence_excerpt_en": "closes at ten in the evening",
+      "question_tags": [
+        "M25",
+        "part1",
+        "mcq",
+        "accommodation",
+        "electricity",
+        "dates",
+        "facilities",
+        "deposit"
+      ]
+    },
+    {
+      "question_id": "Q08",
+      "group_id": "PART1_MCQ_7_TO_10",
+      "type": "mcq",
+      "prompt": "How much deposit is required?",
+      "correct_answers": [
+        "Fifteen pounds"
+      ],
+      "options": [
+        {
+          "key": "A",
+          "text": "Thirty-one pounds"
+        },
+        {
+          "key": "B",
+          "text": "The full two-night price"
+        },
+        {
+          "key": "C",
+          "text": "Fifteen pounds"
+        }
+      ],
+      "correct_option": "C",
+      "scoring_policy": "one_correct_option",
+      "explanation_vi": "Đặt cọc 15 bảng.",
+      "answer_source": "explicit_or_contextual_recording",
+      "evidence_turn_ids": [
+        "T19"
+      ],
+      "evidence_excerpt_en": "fifteen-pound deposit",
+      "question_tags": [
+        "M25",
+        "part1",
+        "mcq",
+        "accommodation",
+        "electricity",
+        "dates",
+        "facilities",
+        "deposit"
+      ]
+    },
+    {
+      "question_id": "Q09",
+      "group_id": "PART1_MCQ_7_TO_10",
+      "type": "mcq",
+      "prompt": "What is not permitted at the campsite?",
+      "correct_answers": [
+        "Open campfires"
+      ],
+      "options": [
+        {
+          "key": "A",
+          "text": "Open campfires"
+        },
+        {
+          "key": "B",
+          "text": "Raised camping stoves"
+        },
+        {
+          "key": "C",
+          "text": "Outdoor electricity cables"
+        }
+      ],
+      "correct_option": "A",
+      "scoring_policy": "one_correct_option",
+      "explanation_vi": "Cấm đốt lửa trại ngoài trời.",
+      "answer_source": "explicit_or_contextual_recording",
+      "evidence_turn_ids": [
+        "T21"
+      ],
+      "evidence_excerpt_en": "Open campfires are prohibited",
+      "question_tags": [
+        "M25",
+        "part1",
+        "mcq",
+        "accommodation",
+        "electricity",
+        "dates",
+        "facilities",
+        "deposit"
+      ]
+    },
+    {
+      "question_id": "Q10",
+      "group_id": "PART1_MCQ_7_TO_10",
+      "type": "mcq",
+      "prompt": "What will the family bring?",
+      "correct_answers": [
+        "An outdoor cable and safe stove"
+      ],
+      "options": [
+        {
+          "key": "A",
+          "text": "Extra indoor extension leads"
+        },
+        {
+          "key": "B",
+          "text": "An outdoor cable and safe stove"
+        },
+        {
+          "key": "C",
+          "text": "An electric heater for the tent"
+        }
+      ],
+      "correct_option": "B",
+      "scoring_policy": "one_correct_option",
+      "explanation_vi": "Gia đình sẽ mang dây điện ngoài trời và bếp an toàn.",
+      "answer_source": "explicit_or_contextual_recording",
+      "evidence_turn_ids": [
+        "T22"
+      ],
+      "evidence_excerpt_en": "bring the outdoor cable and a safe camping stove",
+      "question_tags": [
+        "M25",
+        "part1",
+        "mcq",
+        "accommodation",
+        "electricity",
+        "dates",
+        "facilities",
+        "deposit"
+      ]
+    }
+  ],
+  "question_groups": [
+    {
+      "group_id": "PART1_FORM_1_TO_6",
+      "question_ids": [
+        "Q01",
+        "Q02",
+        "Q03",
+        "Q04",
+        "Q05",
+        "Q06"
+      ],
+      "instructions_en": "Complete the form. Write NO MORE THAN THREE WORDS AND/OR A NUMBER for each answer.",
+      "pre_read_seconds": 30,
+      "break_after_turn_id": "T15",
+      "requires_one_listen": true
+    },
+    {
+      "group_id": "PART1_MCQ_7_TO_10",
+      "question_ids": [
+        "Q07",
+        "Q08",
+        "Q09",
+        "Q10"
+      ],
+      "instructions_en": "Choose the correct letter A, B or C.",
+      "pre_read_seconds": 25,
+      "requires_one_listen": true
+    }
+  ],
+  "audio": {
+    "status": "not_generated",
+    "audio_url": null,
+    "audio_asset_id": null,
+    "duration_ms": null,
+    "source_text_sha256": "d89b0b938e19abb7d577e96e420a9b9a546e64eaf89ecfab2c59dfe279911094",
+    "generation_strategy": "single_continuous_two_person_dialogue",
+    "aligned_turns": false
+  },
+  "exam_mode": {
+    "bank_role": "protected_assessment",
+    "use_as_training_before_first_attempt": false,
+    "listening_attempts_allowed_for_scored_first_attempt": 1,
+    "replay_before_submit": false,
+    "speed_control_before_submit": false,
+    "transcript_visible_before_submit": false,
+    "answer_key_visible_before_submit": false,
+    "post_attempt_review_allowed": true,
+    "question_count": 10,
+    "points_per_correct_answer": 1,
+    "question_order_monotonic": true,
+    "estimated_speech_minutes_at_135_wpm": 3.24,
+    "exam_band_score_enabled": false,
+    "repeated_attempt_marked_as_seen": true
+  },
+  "qa": {
+    "automatic_data_validation": "pending",
+    "content_human_review": "pending",
+    "audio_human_review": "pending",
+    "exam_simulation_rubric_score": null,
+    "rubric_90_verified": false,
+    "published": false,
+    "release_eligible": false
+  },
+  "provenance": {
+    "source_type": "original_authored_english_dialogue",
+    "milestone": "M25",
+    "no_official_ielts_question_copied": true,
+    "training_exposure_guard": true
+  },
+  "release_metadata": {
+    "target_bank": "protected_assessment",
+    "import_policy": "insert_only",
+    "version": "m25.0.1",
+    "preserve_existing_ids": true,
+    "allow_client_answer_payload": false
+  }
+}

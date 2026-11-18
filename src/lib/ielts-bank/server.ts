@@ -1,8 +1,9 @@
 import { createClient as createSupabaseClient } from "@supabase/supabase-js";
 import { randomUUID } from "node:crypto";
 import { createClient } from "@/lib/supabase/server";
+import { assertPublishRightsEvidence, type RightsEvidence } from "@/lib/content-rights";
 import { demoMode } from "@/lib/runtime";
-import { attemptContent, attemptMinutes, contentHash, contentSchema, scoreAnswers, validateExam, type ExamContent, type NormalizedExam } from "./schema";
+import { attemptContent, attemptMinutes, contentHash, contentSchema, explanationMismatches, fiveStepSchema, scoreAnswers, validateExam, type ExamContent, type FiveStep, type NormalizedExam } from "./schema";
 import { createConnector, sources, type SourceId } from "./connectors";
 
 export function bankClient() {
@@ -191,48 +192,107 @@ export async function saveRevision(examId: string, content: unknown, actorId: st
   const parsed = contentSchema.parse(content), client = bankClient();
   const { data: exam, error } = await client.from("ielts_exams").select("*,ielts_exam_versions!ielts_current_version_fk(revision,upstream_version)").eq("id", examId).single();
   if (error || !exam) throw new Error(error?.message || "Exam unavailable");
+  if (expectedVersionId && exam.current_version_id !== expectedVersionId) throw new Error("Exam changed; reload before saving");
   const version = Array.isArray(exam.ielts_exam_versions) ? exam.ielts_exam_versions[0] : exam.ielts_exam_versions;
   const warnings = validateExam({ ...exam, externalId: exam.external_id, durationMinutes: exam.duration_minutes, sourceUrl: exam.source_url, licenseUrl: exam.license_url, aiGenerated: exam.ai_generated, upstreamVersion: version?.upstream_version ?? "manual", content: parsed });
+  const { data: practiceType, error: typeError } = await client.rpc("ielts_practice_type", { p_skill: exam.skill, p_format: exam.format, p_content: parsed });
+  if (typeError) throw new Error(typeError.message);
   const { data: row, error: insertError } = await client.from("ielts_exam_versions").insert({ exam_id: examId, revision: (version?.revision ?? 0) + 1, upstream_version: version?.upstream_version ?? "manual", content_hash: contentHash(parsed), content: parsed, warnings }).select("id").single();
   if (insertError || !row) throw new Error(insertError?.message || "Revision failed");
-  let update = client.from("ielts_exams").update({ current_version_id: row.id, status: "needs_review", updated_at: new Date().toISOString() }).eq("id", examId);
+  let update = client.from("ielts_exams").update({ current_version_id: row.id, ...(exam.published_version_id ? {} : { practice_type: practiceType }), status: "needs_review", updated_at: new Date().toISOString() }).eq("id", examId);
   if (expectedVersionId) update = update.eq("current_version_id", expectedVersionId);
   const { data: updated, error: updateError } = await update.select("id").maybeSingle();
-  if (updateError || !updated) throw new Error(updateError?.message || "Exam changed during revision");
+  if (updateError || !updated) {
+    await client.from("ielts_exam_versions").delete().eq("id", row.id);
+    throw new Error(updateError?.message || "Exam changed during revision");
+  }
   const { error: logError } = await client.from("ielts_review_log").insert({ exam_id: examId, version_id: row.id, actor_id: actorId, action: "edit" });
   if (logError) throw new Error(logError.message);
   return { versionId: row.id, warnings };
 }
-export async function reviewExam(examId: string, action: "ready" | "publish" | "reject" | "archive", actorId: string, note = "") {
+export type ExplanationItem = { questionId: string; answers: string[]; fiveStep: FiveStep };
+
+/**
+ * Attaches five-step explanations to the version learners are using now. Nothing is
+ * written unless every item names an existing question and its answer is the one the
+ * live key accepts (a choose-several set must equal the keys of its group); the new
+ * revision differs from the published one only by the explanations.
+ */
+export async function attachExplanations(externalId: string, items: ExplanationItem[], actorId: string) {
+  const client = bankClient();
+  const { data: exam, error } = await client.from("ielts_exams").select("id,skill,current_version_id,published_version_id").eq("source_id", "manual").eq("external_id", externalId).maybeSingle();
+  if (error) throw new Error(error.message);
+  if (!exam?.published_version_id) throw new Error(`${externalId}: chưa có bản đang xuất bản để gắn lời giải`);
+  if (exam.skill !== "Reading") throw new Error(`${externalId}: chỉ gắn lời giải cho đề Reading`);
+  if (exam.current_version_id !== exam.published_version_id) throw new Error(`${externalId}: đang có bản sửa chờ duyệt; duyệt hoặc bỏ bản đó trước`);
+  const { data: version, error: versionError } = await client.from("ielts_exam_versions").select("content").eq("id", exam.published_version_id).single();
+  if (versionError || !version) throw new Error(versionError?.message || "Published version unavailable");
+  const content = contentSchema.parse(version.content);
+  const mismatches = explanationMismatches(content, items);
+  if (mismatches.length) throw new Error(`${externalId}: không gắn vì ${mismatches.length} câu lệch đáp án — ${mismatches.slice(0, 5).join("; ")}`);
+  const byId = new Map(items.map((item) => [item.questionId, item.fiveStep]));
+  const merged = { ...content, sections: content.sections.map((section) => ({ ...section, questions: section.questions.map((question) => byId.has(question.id) ? { ...question, fiveStep: fiveStepSchema.parse(byId.get(question.id)) } : question) })) };
+  if (contentHash(merged) === contentHash(content)) return { examId: exam.id, attached: 0, unchanged: true };
+  const saved = await saveRevision(exam.id, merged, actorId, exam.current_version_id);
+  return { examId: exam.id, attached: byId.size, versionId: saved.versionId, warnings: saved.warnings };
+}
+
+export async function reviewExam(examId: string, action: "ready" | "publish" | "reject" | "archive" | "unpublish", actorId: string, note = "") {
   const client = bankClient();
   const { data: exam, error } = await client.from("ielts_exams").select("*,ielts_exam_versions!ielts_current_version_fk(content,warnings)").eq("id", examId).single();
   if (error || !exam) throw new Error(error?.message || "Exam unavailable");
   const version = Array.isArray(exam.ielts_exam_versions) ? exam.ielts_exam_versions[0] : exam.ielts_exam_versions;
   if (["ready", "publish"].includes(action)) {
     if (!version || (version.warnings as string[]).length) throw new Error("Resolve validation warnings before approval");
+    const liveWarnings = validateExam({ ...exam, externalId: exam.external_id, durationMinutes: exam.duration_minutes, sourceUrl: exam.source_url, licenseUrl: exam.license_url, aiGenerated: exam.ai_generated, upstreamVersion: "review", content: contentSchema.parse(version.content) });
+    if (liveWarnings.length) throw new Error(`Resolve validation warnings before approval: ${liveWarnings.join(", ")}`);
     if (action === "publish" && !["ready", "published"].includes(exam.status)) throw new Error("Mark exam ready before publishing");
+    if (action === "publish") {
+      if (String(exam.external_id ?? "").startsWith("ESL-PILOT-2026-")) throw new Error("Original pilot tests remain blocked pending editorial and rights review");
+      const content = contentSchema.parse(version.content);
+      const assets = [
+        ...content.sections.flatMap((section) => section.audioUrl ? [{ kind: "audio" as const, url: section.audioUrl }] : []),
+        ...content.sections.flatMap((section) => section.questions.flatMap((question) => question.mediaUrl ? [{ kind: /\.(mp3|wav|m4a|ogg)(?:\?|$)/i.test(question.mediaUrl) ? "audio" as const : "image" as const, url: question.mediaUrl }] : [])),
+        ...(content.imageUrl ? [{ kind: "image" as const, url: content.imageUrl }] : []),
+      ];
+      const rights = await client.from("content_rights_evidence").select("asset_kind,asset_url,author_name,rights_holder,permission_document_ref,permission_scope,web_publication_allowed,commercial_use_allowed,modification_translation_allowed,source_package_name,source_package_sha256")
+        .eq("content_kind", "ielts_exam").eq("content_id", examId);
+      if (rights.error) throw new Error(`Rights evidence unavailable: ${rights.error.message}`);
+      assertPublishRightsEvidence((rights.data ?? []) as RightsEvidence[], assets);
+    }
     if (exam.source_id === "ai-factory") {
       const { data: audioReview, error: audioError } = await client.from("ai_factory_jobs").select("id").eq("exam_id", examId).eq("exam_version_id", exam.current_version_id).eq("status", "approved").limit(1);
       if (audioError || !audioReview?.length) throw new Error("Content Factory QA and human review required");
     }
   }
-  const status = { ready: "ready", publish: "published", reject: "rejected", archive: "archived" }[action];
-  const { error: updateError } = await client.from("ielts_exams").update({ status, ...(action === "publish" ? { published_version_id: exam.current_version_id } : {}), ...(action === "archive" ? { published_version_id: null } : {}), updated_at: new Date().toISOString() }).eq("id", examId);
+  if (action === "unpublish" && !exam.published_version_id) throw new Error("Exam is not published");
+  const status = action === "unpublish"
+    ? version && !(version.warnings as string[]).length ? "ready" : "needs_review"
+    : { ready: "ready", publish: "published", reject: "rejected", archive: "archived" }[action];
+  const nextType = ["publish", "unpublish"].includes(action) && version
+    ? await client.rpc("ielts_practice_type", { p_skill: exam.skill, p_format: exam.format, p_content: version.content })
+    : null;
+  if (nextType?.error) throw new Error(nextType.error.message);
+  const { error: updateError } = await client.from("ielts_exams").update({ status, ...(nextType ? { practice_type: nextType.data } : {}), ...(action === "publish" ? { published_version_id: exam.current_version_id } : {}), ...(["archive", "unpublish"].includes(action) ? { published_version_id: null } : {}), updated_at: new Date().toISOString() }).eq("id", examId);
   if (updateError) throw new Error(updateError.message);
   const { error: logError } = await client.from("ielts_review_log").insert({ exam_id: examId, version_id: exam.current_version_id, actor_id: actorId, action, note });
   if (logError) throw new Error(logError.message);
   return { status };
 }
-export async function submitAttempt(attemptId: string, userId: string, answers: Record<string, string>, state: "submitted" | "expired") {
+export async function submitAttempt(attemptId: string, userId: string, answers: Record<string, string>, state: "submitted" | "expired", input?: { notes?: Record<string, string>; flags?: string[]; difficulty?: "easy" | "balanced" | "hard" }) {
   const client = bankClient();
   const { data: attempt, error } = await client.from("ielts_attempts").select("*,ielts_exam_versions(content),ielts_exams(duration_minutes,skill)").eq("id", attemptId).eq("user_id", userId).single();
   if (error || !attempt || attempt.state !== "in_progress") throw new Error("Attempt unavailable");
   const version = Array.isArray(attempt.ielts_exam_versions) ? attempt.ielts_exam_versions[0] : attempt.ielts_exam_versions;
   const content = contentSchema.parse(version.content) as ExamContent;
-  const result = scoreAnswers(attemptContent(content, attempt.notes), answers);
+  const savedNotes = (attempt.notes || {}) as Record<string, string>;
+  const notes = input?.notes ? { ...savedNotes, ...input.notes, ...Object.fromEntries(Object.entries(savedNotes).filter(([key]) => key.startsWith("__"))) } : savedNotes;
+  const result = scoreAnswers(attemptContent(content, notes), answers);
   const exam = Array.isArray(attempt.ielts_exams) ? attempt.ielts_exams[0] : attempt.ielts_exams;
-  const expired = Date.now() > new Date(attempt.started_at).getTime() + attemptMinutes(exam.skill, exam.duration_minutes, attempt.notes) * 60000;
-  const { data: updated, error: updateError } = await client.from("ielts_attempts").update({ answers, state: expired ? "expired" : state, score: result.total ? result.score : null, total: result.total || null, submitted_at: new Date().toISOString() }).eq("id", attemptId).eq("state", "in_progress").select("id").single();
+  if (exam.skill === "Writing" && state === "submitted" && !String(answers.__response ?? "").trim()) throw new Error("Hãy viết bài trước khi nộp.");
+  const expired = Date.now() > new Date(attempt.started_at).getTime() + attemptMinutes(exam.skill, exam.duration_minutes, notes) * 60000;
+  const finalNotes = input?.difficulty && exam.skill === "Reading" ? { ...notes, reading_difficulty: input.difficulty } : notes;
+  const { data: updated, error: updateError } = await client.from("ielts_attempts").update({ answers, flags: input?.flags ?? attempt.flags, notes: finalNotes, state: expired ? "expired" : state, score: result.total ? result.score : null, total: result.total || null, submitted_at: new Date().toISOString() }).eq("id", attemptId).eq("user_id", userId).eq("state", "in_progress").select("id").single();
   if (updateError || !updated) throw new Error("Attempt already submitted");
   await client.from("study_tasks").update({ completed: true }).eq("user_id", userId).eq("lesson_slug", `ielts:${attempt.exam_id}`).eq("completed", false);
   return result;

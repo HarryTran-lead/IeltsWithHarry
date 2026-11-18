@@ -1,0 +1,521 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "DICT-S1-064",
+  "status": "draft",
+  "level": "L5",
+  "section": 1,
+  "topic": "Renting Accommodation",
+  "title": "A Flat Reassignment and Inventory Check",
+  "learning_objectives_vi": [
+    "Rèn integrated information challenge qua tình huống: A tenant deals with a last-minute apartment change and sets conditions before paying.",
+    "Xác định thông tin cuối cùng và phân biệt dữ liệu gây nhiễu (nếu có).",
+    "Nghe chép chính xác, lý giải đáp án từ transcript và học từ trong ngữ cảnh."
+  ],
+  "content_format": "section_practice",
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Service representative / employee",
+      "tts_voice_id": null,
+      "accent_requested": "british"
+    },
+    {
+      "speaker_id": "B",
+      "role": "Customer / applicant",
+      "tts_voice_id": null,
+      "accent_requested": "british"
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "Good afternoon, Parkside Lettings. You're speaking to Mira.",
+      "translation_vi": "Chào buổi chiều, Parkside Lettings. Mira xin nghe.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "reassignment",
+        "rent_terms",
+        "appliance_inventory",
+        "deposit_transfer",
+        "section_1",
+        "two_speaker_dialogue",
+        "l5"
+      ]
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "B",
+      "text_en": "Hello. I've paid a holding deposit for flat twelve on Market Street, and I'm supposed to move in next Monday.",
+      "translation_vi": "Xin chào. Tôi đã cọc giữ căn số 12 trên đường Market, và dự định chuyển vào thứ Hai tới.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "reassignment",
+        "rent_terms",
+        "appliance_inventory",
+        "deposit_transfer",
+        "section_1",
+        "two_speaker_dialogue",
+        "l5"
+      ]
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "A",
+      "text_en": "Yes. I'm sorry, but the owner has delayed essential repairs, so flat twelve will not be ready on time.",
+      "translation_vi": "Đúng vậy. Xin lỗi, nhưng chủ nhà hoãn việc sửa chữa cần thiết nên căn 12 chưa sẵn sàng đúng hạn.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "reassignment",
+        "rent_terms",
+        "appliance_inventory",
+        "deposit_transfer",
+        "section_1",
+        "two_speaker_dialogue",
+        "l5"
+      ]
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "B",
+      "text_en": "I need somewhere immediately because my current lease ends on Sunday.",
+      "translation_vi": "Tôi cần chỗ ở ngay vì hợp đồng hiện tại hết hạn Chủ nhật.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "reassignment",
+        "rent_terms",
+        "appliance_inventory",
+        "deposit_transfer",
+        "section_1",
+        "two_speaker_dialogue",
+        "l5"
+      ]
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "A",
+      "text_en": "We can offer flat eighteen in the same building. It's on the third floor and has a lift.",
+      "translation_vi": "Chúng tôi có căn số 18 cùng tòa nhà. Căn ở tầng ba và có thang máy.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "reassignment",
+        "rent_terms",
+        "appliance_inventory",
+        "deposit_transfer",
+        "section_1",
+        "two_speaker_dialogue",
+        "l5"
+      ]
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "B",
+      "text_en": "Is the monthly rent the same? I was quoted eight hundred and ninety pounds for flat twelve.",
+      "translation_vi": "Tiền thuê hàng tháng có giống không? Tôi được báo 890 bảng cho căn 12.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "reassignment",
+        "rent_terms",
+        "appliance_inventory",
+        "deposit_transfer",
+        "section_1",
+        "two_speaker_dialogue",
+        "l5"
+      ]
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "Flat eighteen is normally nine hundred and thirty, but we'll honour the original price for your first six months.",
+      "translation_vi": "Căn 18 thường 930 bảng, nhưng chúng tôi giữ giá ban đầu trong sáu tháng đầu.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "reassignment",
+        "rent_terms",
+        "appliance_inventory",
+        "deposit_transfer",
+        "section_1",
+        "two_speaker_dialogue",
+        "l5"
+      ]
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "B",
+      "text_en": "That helps. Does the replacement flat include a washing machine?",
+      "translation_vi": "Được đấy. Căn thay thế có máy giặt không?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "reassignment",
+        "rent_terms",
+        "appliance_inventory",
+        "deposit_transfer",
+        "section_1",
+        "two_speaker_dialogue",
+        "l5"
+      ]
+    },
+    {
+      "turn_id": "T09",
+      "speaker_id": "A",
+      "text_en": "It has a washing machine, but no dishwasher. The original flat had both appliances.",
+      "translation_vi": "Có máy giặt nhưng không có máy rửa bát. Căn ban đầu có cả hai.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "reassignment",
+        "rent_terms",
+        "appliance_inventory",
+        "deposit_transfer",
+        "section_1",
+        "two_speaker_dialogue",
+        "l5"
+      ]
+    },
+    {
+      "turn_id": "T10",
+      "speaker_id": "B",
+      "text_en": "I can manage without a dishwasher. What happens to the holding deposit?",
+      "translation_vi": "Tôi có thể sống không cần máy rửa bát. Tiền cọc giữ chỗ sẽ thế nào?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "reassignment",
+        "rent_terms",
+        "appliance_inventory",
+        "deposit_transfer",
+        "section_1",
+        "two_speaker_dialogue",
+        "l5"
+      ]
+    },
+    {
+      "turn_id": "T11",
+      "speaker_id": "A",
+      "text_en": "We'll transfer it to flat eighteen. You won't need to pay that amount again.",
+      "translation_vi": "Chúng tôi chuyển khoản cọc đó sang căn 18. Anh không phải trả lại.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "reassignment",
+        "rent_terms",
+        "appliance_inventory",
+        "deposit_transfer",
+        "section_1",
+        "two_speaker_dialogue",
+        "l5"
+      ]
+    },
+    {
+      "turn_id": "T12",
+      "speaker_id": "B",
+      "text_en": "Before signing, I'd like an inventory of the furniture and photographs of any existing damage.",
+      "translation_vi": "Trước khi ký, tôi muốn bản kiểm kê đồ đạc và ảnh các hư hỏng sẵn có.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "reassignment",
+        "rent_terms",
+        "appliance_inventory",
+        "deposit_transfer",
+        "section_1",
+        "two_speaker_dialogue",
+        "l5"
+      ]
+    },
+    {
+      "turn_id": "T13",
+      "speaker_id": "A",
+      "text_en": "That's sensible. Our inspector can meet you on Monday at half past ten, before the keys are handed over.",
+      "translation_vi": "Hợp lý. Nhân viên kiểm tra có thể gặp anh thứ Hai lúc 10 giờ 30, trước khi bàn giao chìa khóa.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "reassignment",
+        "rent_terms",
+        "appliance_inventory",
+        "deposit_transfer",
+        "section_1",
+        "two_speaker_dialogue",
+        "l5"
+      ]
+    },
+    {
+      "turn_id": "T14",
+      "speaker_id": "B",
+      "text_en": "Fine. Please email the inventory first, and I'll confirm the reassignment after reading it.",
+      "translation_vi": "Được. Hãy gửi email bản kiểm kê trước; tôi sẽ xác nhận đổi căn sau khi đọc.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "reassignment",
+        "rent_terms",
+        "appliance_inventory",
+        "deposit_transfer",
+        "section_1",
+        "two_speaker_dialogue",
+        "l5"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "type": "form_completion",
+      "prompt": "Replacement flat number: ____",
+      "correct_answers": [
+        "18",
+        "eighteen"
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Căn 12 chưa sẵn sàng; căn thay thế là 18.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "reassignment",
+        "rent_terms",
+        "appliance_inventory",
+        "deposit_transfer",
+        "ielts_section1_practice"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q02",
+      "type": "form_completion",
+      "prompt": "Replacement flat floor: ____",
+      "correct_answers": [
+        "third",
+        "3",
+        "3rd"
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Căn mới ở tầng ba và có thang máy.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "reassignment",
+        "rent_terms",
+        "appliance_inventory",
+        "deposit_transfer",
+        "ielts_section1_practice"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q03",
+      "type": "form_completion",
+      "prompt": "Original rent honoured for ____ months",
+      "correct_answers": [
+        "6",
+        "six"
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "Giữ giá 890 bảng trong sáu tháng đầu, sau đó có thể thay đổi.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "reassignment",
+        "rent_terms",
+        "appliance_inventory",
+        "deposit_transfer",
+        "ielts_section1_practice"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q04",
+      "type": "form_completion",
+      "prompt": "Appliance missing: ____",
+      "correct_answers": [
+        "dishwasher"
+      ],
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "explanation_vi": "Căn mới có máy giặt nhưng thiếu máy rửa bát.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "reassignment",
+        "rent_terms",
+        "appliance_inventory",
+        "deposit_transfer",
+        "ielts_section1_practice"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q05",
+      "type": "mcq",
+      "prompt": "What happens to the holding deposit?",
+      "correct_answers": [
+        "It is transferred to the replacement flat"
+      ],
+      "evidence_turn_ids": [
+        "T11"
+      ],
+      "explanation_vi": "Tiền cọc được chuyển sang căn mới, không phải đóng lại.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "reassignment",
+        "rent_terms",
+        "appliance_inventory",
+        "deposit_transfer",
+        "ielts_section1_practice"
+      ],
+      "options": [
+        "It is refunded immediately",
+        "It is charged again",
+        "It is transferred to the replacement flat"
+      ]
+    },
+    {
+      "question_id": "Q06",
+      "type": "form_completion",
+      "prompt": "Inspection meeting time: ____",
+      "correct_answers": [
+        "10:30",
+        "half past ten"
+      ],
+      "evidence_turn_ids": [
+        "T13"
+      ],
+      "explanation_vi": "Hẹn kiểm kê lúc 10 giờ 30 thứ Hai.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "reassignment",
+        "rent_terms",
+        "appliance_inventory",
+        "deposit_transfer",
+        "ielts_section1_practice"
+      ],
+      "word_limit": 3,
+      "instructions_en": "NO MORE THAN THREE WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "D01",
+      "type": "dictation",
+      "prompt": "Nghe và chép nguyên văn câu của nhân vật B (lượt T08).",
+      "correct_answers": [
+        "That helps. Does the replacement flat include a washing machine?"
+      ],
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "explanation_vi": "Nội dung cần chép: That helps. Does the replacement flat include a washing machine? Nghĩa: Được đấy. Căn thay thế có máy giặt không? Chú ý đầy đủ từ chức năng, số ít/số nhiều và âm cuối.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "transcription_accuracy",
+        "reassignment",
+        "rent_terms",
+        "appliance_inventory",
+        "deposit_transfer"
+      ]
+    },
+    {
+      "question_id": "G01",
+      "type": "gap_fill",
+      "prompt": "Nghe và điền phần còn thiếu: Flat eighteen is normally nine hundred and thirty, but we'll ____ for your first six months.",
+      "correct_answers": [
+        "honour the original price"
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "Từ/cụm nghe được là “honour the original price”. Câu đầy đủ: Flat eighteen is normally nine hundred and thirty, but we'll honour the original price for your first six months.. Nghĩa: Căn 18 thường 930 bảng, nhưng chúng tôi giữ giá ban đầu trong sáu tháng đầu.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "gap_fill",
+        "vocabulary_in_context",
+        "reassignment",
+        "rent_terms",
+        "appliance_inventory",
+        "deposit_transfer"
+      ]
+    }
+  ],
+  "vocabulary": [
+    {
+      "term": "holding deposit",
+      "pos": "noun phrase",
+      "meaning_vi": "tiền cọc giữ chỗ",
+      "example_en": "Hello. I've paid a holding deposit for flat twelve on Market Street, and I'm supposed to move in next Monday.",
+      "example_vi": "Xin chào. Tôi đã cọc giữ căn số 12 trên đường Market, và dự định chuyển vào thứ Hai tới.",
+      "source_turn_id": "T02"
+    },
+    {
+      "term": "honour the original price",
+      "pos": "verb phrase",
+      "meaning_vi": "giữ nguyên giá ban đầu",
+      "example_en": "Flat eighteen is normally nine hundred and thirty, but we'll honour the original price for your first six months.",
+      "example_vi": "Căn 18 thường 930 bảng, nhưng chúng tôi giữ giá ban đầu trong sáu tháng đầu.",
+      "source_turn_id": "T07"
+    },
+    {
+      "term": "inventory",
+      "pos": "noun",
+      "meaning_vi": "biên bản kiểm kê",
+      "example_en": "Before signing, I'd like an inventory of the furniture and photographs of any existing damage.",
+      "example_vi": "Trước khi ký, tôi muốn bản kiểm kê đồ đạc và ảnh các hư hỏng sẵn có.",
+      "source_turn_id": "T12"
+    },
+    {
+      "term": "reassignment",
+      "pos": "noun",
+      "meaning_vi": "việc chuyển sang căn khác",
+      "example_en": "Fine. Please email the inventory first, and I'll confirm the reassignment after reading it.",
+      "example_vi": "Được. Hãy gửi email bản kiểm kê trước; tôi sẽ xác nhận đổi căn sau khi đọc.",
+      "source_turn_id": "T14"
+    }
+  ],
+  "audio": {
+    "status": "not_generated",
+    "url": null,
+    "duration_ms": null,
+    "model": null,
+    "provider": null,
+    "voice_config": null,
+    "source_transcript_hash": "24213038c87590e67ae61dd48c07bca570f35a4326483cbeea19bad0d93a7987",
+    "audio_sha256": null,
+    "format": null
+  },
+  "qa": {
+    "content_reviewed": false,
+    "answers_verified": false,
+    "audio_verified": false,
+    "rights_cleared": false,
+    "duplicate_reviewed": false,
+    "notes": [
+      "Draft authoring, not expert reviewed.",
+      "TTS output pending; timestamps must be aligned after synthesis.",
+      "Keep unpublished until audio and question evidence are checked by a reviewer.",
+      "M16.2: automated edits are provisional; IELTS teacher final signoff, audio and rights clearance pending."
+    ]
+  },
+  "provenance": {
+    "content_origin": "original_ai_assisted",
+    "source_urls": [],
+    "source_rights_note": "Original pedagogical dialogues, not IELTS/Cambridge exam content. Review all TTS provider terms and permissions before audio generation/distribution.",
+    "reviewer": null
+  },
+  "release_metadata": {
+    "published_at": null,
+    "version": 1
+  }
+}

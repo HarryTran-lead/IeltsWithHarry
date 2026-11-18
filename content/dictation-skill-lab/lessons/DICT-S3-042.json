@@ -1,0 +1,421 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "DICT-S3-042",
+  "status": "draft",
+  "level": "L6",
+  "section": 3,
+  "topic": "Survey Design",
+  "title": "Survey Design – Multilingual Library Survey",
+  "learning_objectives_vi": [
+    "Theo dõi ba nhân vật thảo luận và phân biệt quan điểm ban đầu với quyết định sau cùng.",
+    "Nhận biết lập luận, điều kiện, hạn chế nghiên cứu và diễn đạt lại (paraphrase) trong Section 3.",
+    "Nghe chép đúng phát ngôn then chốt và truy xuất bằng chứng theo lượt thoại."
+  ],
+  "content_format": "section_practice",
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Anya – academic project discussion participant",
+      "tts_voice_id": null,
+      "accent_requested": "new_zealand"
+    },
+    {
+      "speaker_id": "B",
+      "role": "George – academic project discussion participant",
+      "tts_voice_id": null,
+      "accent_requested": "new_zealand"
+    },
+    {
+      "speaker_id": "C",
+      "role": "Luca – academic project discussion participant",
+      "tts_voice_id": null,
+      "accent_requested": "new_zealand"
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "Our library satisfaction survey will be offered in English, Vietnamese and Spanish. I translated the questions myself, but I'm worried some phrases sound polite in one language and demanding in another.",
+      "translation_vi": "Khảo sát hài lòng thư viện có tiếng Anh, tiếng Việt và tiếng Tây Ban Nha. Mình tự dịch câu hỏi nhưng lo vài cách nói lịch sự ở ngôn ngữ này lại thành đòi hỏi ở ngôn ngữ khác.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "multi_speaker",
+        "l6"
+      ]
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "B",
+      "text_en": "Literal translation won't guarantee equivalent meaning. We could ask independent translators to translate the versions back into English and compare where the meaning shifts.",
+      "translation_vi": "Dịch sát chữ không đảm bảo nghĩa tương đương. Ta có thể nhờ người dịch độc lập dịch ngược về tiếng Anh rồi đối chiếu chỗ nghĩa đổi.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "multi_speaker",
+        "l6"
+      ]
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "C",
+      "text_en": "Back-translation might catch obvious mistakes, but it won't reveal how a real respondent interprets the question. I'd prefer cognitive interviews with a few speakers of each language.",
+      "translation_vi": "Dịch ngược có thể bắt lỗi rõ, nhưng không cho biết người trả lời thực sự hiểu câu hỏi thế nào. Mình thích phỏng vấn nhận thức với vài người nói từng ngôn ngữ.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "multi_speaker",
+        "l6"
+      ]
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "A",
+      "text_en": "The first item says, 'The library rarely fails to provide a quiet place.' That double negative is awkward even in English, especially when respondents must select from a five-point agreement scale.",
+      "translation_vi": "Câu đầu viết 'Thư viện hiếm khi không cung cấp chỗ yên tĩnh'. Phủ định kép này đã khó trong tiếng Anh, nhất là khi người tham gia chọn thang đồng ý năm mức.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "multi_speaker",
+        "l6"
+      ]
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "B",
+      "text_en": "Let's rewrite it positively as, 'I can usually find a quiet place in the library.' That tests the same practical experience without forcing people to decode the grammar.",
+      "translation_vi": "Hãy viết tích cực: 'Tôi thường tìm được chỗ yên tĩnh trong thư viện'. Câu đó đo cùng trải nghiệm thực tế mà không bắt người làm giải mã ngữ pháp.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "multi_speaker",
+        "l6"
+      ]
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "C",
+      "text_en": "We should avoid changing half the questions into positive statements and leaving the others negatively worded without a clear reason. Mixed direction can create confusion rather than improve attention.",
+      "translation_vi": "Ta nên tránh đổi nửa câu thành khẳng định còn nửa kia phủ định mà không có lý do. Hướng câu trộn lẫn có thể gây rối chứ không cải thiện chú ý.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "multi_speaker",
+        "l6"
+      ]
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "For the pilot, I propose four participants per language version. We'll ask them to explain what each item means rather than judging the translation solely by whether they choose similar ratings.",
+      "translation_vi": "Đợt thử mình đề xuất bốn người cho mỗi phiên bản ngôn ngữ. Ta hỏi họ giải thích nghĩa từng câu thay vì chỉ xem họ có chấm điểm giống nhau không.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "multi_speaker",
+        "l6"
+      ]
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "B",
+      "text_en": "And the consent page should explain that respondents can skip questions about accessibility needs. Otherwise the survey may feel compulsory even though participation is voluntary.",
+      "translation_vi": "Trang đồng ý cũng phải nói người tham gia có thể bỏ câu về nhu cầu tiếp cận. Nếu không, khảo sát có thể giống bắt buộc dù thực tế tự nguyện.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "multi_speaker",
+        "l6"
+      ]
+    },
+    {
+      "turn_id": "T09",
+      "speaker_id": "C",
+      "text_en": "Agreed. We'll simplify the wording, run twelve cognitive interviews altogether and revise the versions before the public launch. Comparability matters more than having identical sentences in three languages.",
+      "translation_vi": "Đồng ý. Ta đơn giản hóa câu chữ, làm tổng cộng mười hai cuộc phỏng vấn nhận thức rồi sửa các bản trước khi mở khảo sát. Tính tương đương quan trọng hơn câu chữ y hệt nhau.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "multi_speaker",
+        "l6"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "type": "mcq",
+      "prompt": "What is George's concern about literal translation of survey items?",
+      "correct_answers": [
+        "The questions may not preserve equivalent meaning"
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Tại T02, George nói: “Dịch sát chữ không đảm bảo nghĩa tương đương. Ta có thể nhờ người dịch độc lập dịch ngược về tiếng Anh rồi đối chiếu chỗ nghĩa đổi.” Đáp án “The questions may not preserve equivalent meaning” diễn đạt đúng ý được nêu. Các phương án còn lại không phù hợp với bằng chứng; chú ý ý kiến bị sửa và tính điều kiện.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "section_3",
+        "ielts_practice",
+        "inference",
+        "paraphrase"
+      ],
+      "options": [
+        "Respondents receive mixed positive and negative items",
+        "Accessibility questions are not mandatory",
+        "The questions may not preserve equivalent meaning"
+      ]
+    },
+    {
+      "question_id": "Q02",
+      "type": "note_completion",
+      "prompt": "Luca recommends ____ interviews with speakers of each language.",
+      "correct_answers": [
+        "cognitive"
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Bằng chứng T03: “Dịch ngược có thể bắt lỗi rõ, nhưng không cho biết người trả lời thực sự hiểu câu hỏi thế nào. Mình thích phỏng vấn nhận thức với vài người nói từng ngôn ngữ.” Cụm cần điền nghe đúng nguyên văn là “cognitive”.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_3",
+        "ielts_practice",
+        "detail",
+        "note_completion"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q03",
+      "type": "matching",
+      "prompt": "Which speaker warns that mixed positive and negative wording may confuse people?",
+      "correct_answers": [
+        "Speaker C"
+      ],
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "explanation_vi": "Người nói Luca (Speaker C) đưa ra ý này tại T06: “Ta nên tránh đổi nửa câu thành khẳng định còn nửa kia phủ định mà không có lý do. Hướng câu trộn lẫn có thể gây rối chứ không cải thiện chú ý.”",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "section_3",
+        "ielts_practice",
+        "speaker_attribution"
+      ],
+      "options": [
+        "Speaker A",
+        "Speaker B",
+        "Speaker C"
+      ]
+    },
+    {
+      "question_id": "Q04",
+      "type": "mcq",
+      "prompt": "Why use four participants for each language version?",
+      "correct_answers": [
+        "To explore how people interpret each question"
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "Tại T07, Anya nói: “Đợt thử mình đề xuất bốn người cho mỗi phiên bản ngôn ngữ. Ta hỏi họ giải thích nghĩa từng câu thay vì chỉ xem họ có chấm điểm giống nhau không.” Đáp án “To explore how people interpret each question” diễn đạt đúng ý được nêu. Các phương án còn lại không phù hợp với bằng chứng; chú ý ý kiến bị sửa và tính điều kiện.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "section_3",
+        "ielts_practice",
+        "inference",
+        "paraphrase"
+      ],
+      "options": [
+        "To guarantee the same ratings in three languages",
+        "To replace the final public questionnaire",
+        "To explore how people interpret each question"
+      ]
+    },
+    {
+      "question_id": "Q05",
+      "type": "note_completion",
+      "prompt": "The consent page should let respondents ____ questions.",
+      "correct_answers": [
+        "skip"
+      ],
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "explanation_vi": "Bằng chứng T08: “Trang đồng ý cũng phải nói người tham gia có thể bỏ câu về nhu cầu tiếp cận. Nếu không, khảo sát có thể giống bắt buộc dù thực tế tự nguyện.” Cụm cần điền nghe đúng nguyên văn là “skip”.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_3",
+        "ielts_practice",
+        "detail",
+        "note_completion"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q06",
+      "type": "short_answer",
+      "prompt": "How many cognitive interviews are planned in total?",
+      "correct_answers": [
+        "twelve"
+      ],
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "explanation_vi": "Bằng chứng T09: “Đồng ý. Ta đơn giản hóa câu chữ, làm tổng cộng mười hai cuộc phỏng vấn nhận thức rồi sửa các bản trước khi mở khảo sát. Tính tương đương quan trọng hơn câu chữ y hệt nhau.” Trả lời ngắn theo chi tiết “twelve”.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_3",
+        "ielts_practice",
+        "detail",
+        "short_answer"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "D01",
+      "type": "dictation",
+      "prompt": "Nghe T04 (Speaker A) rồi chép chính xác câu nói tiếng Anh.",
+      "correct_answers": [
+        "The first item says, 'The library rarely fails to provide a quiet place.' That double negative is awkward even in English, especially when respondents must select from a five-point agreement scale."
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Câu gốc: “The first item says, 'The library rarely fails to provide a quiet place.' That double negative is awkward even in English, especially when respondents must select from a five-point agreement scale.”\nBản dịch: Câu đầu viết 'Thư viện hiếm khi không cung cấp chỗ yên tĩnh'. Phủ định kép này đã khó trong tiếng Anh, nhất là khi người tham gia chọn thang đồng ý năm mức.\nChú ý âm yếu, nối âm và ý được sửa trong đoạn.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_3",
+        "dictation",
+        "exact_transcript"
+      ]
+    },
+    {
+      "question_id": "D02",
+      "type": "dictation",
+      "prompt": "Nghe T07 (Speaker A) rồi chép chính xác câu nói tiếng Anh.",
+      "correct_answers": [
+        "For the pilot, I propose four participants per language version. We'll ask them to explain what each item means rather than judging the translation solely by whether they choose similar ratings."
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "Câu gốc: “For the pilot, I propose four participants per language version. We'll ask them to explain what each item means rather than judging the translation solely by whether they choose similar ratings.”\nBản dịch: Đợt thử mình đề xuất bốn người cho mỗi phiên bản ngôn ngữ. Ta hỏi họ giải thích nghĩa từng câu thay vì chỉ xem họ có chấm điểm giống nhau không.\nChú ý âm yếu, nối âm và ý được sửa trong đoạn.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_3",
+        "dictation",
+        "exact_transcript"
+      ]
+    },
+    {
+      "question_id": "G01",
+      "type": "gap_fill",
+      "prompt": "Nghe T02 rồi điền đúng phần thiếu: Literal translation won't guarantee ____. We could ask independent translators to translate the versions back into English and compare where the meaning shifts.",
+      "correct_answers": [
+        "equivalent meaning"
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Đáp án “equivalent meaning” nghĩa là nghĩa tương đương. Đối chiếu: “Literal translation won't guarantee equivalent meaning. We could ask independent translators to translate the versions back into English and compare where the meaning shifts.”",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_3",
+        "gap_fill",
+        "vocabulary_in_context"
+      ]
+    }
+  ],
+  "vocabulary": [
+    {
+      "term": "equivalent meaning",
+      "pos": "n. phr.",
+      "meaning_vi": "nghĩa tương đương",
+      "example_en": "Literal translation won't guarantee equivalent meaning. We could ask independent translators to translate the versions back into English and compare where the meaning shifts.",
+      "example_vi": "Dịch sát chữ không đảm bảo nghĩa tương đương. Ta có thể nhờ người dịch độc lập dịch ngược về tiếng Anh rồi đối chiếu chỗ nghĩa đổi.",
+      "source_turn_id": "T02"
+    },
+    {
+      "term": "back-translation",
+      "pos": "n.",
+      "meaning_vi": "dịch ngược",
+      "example_en": "Back-translation might catch obvious mistakes, but it won't reveal how a real respondent interprets the question. I'd prefer cognitive interviews with a few speakers of each language.",
+      "example_vi": "Dịch ngược có thể bắt lỗi rõ, nhưng không cho biết người trả lời thực sự hiểu câu hỏi thế nào. Mình thích phỏng vấn nhận thức với vài người nói từng ngôn ngữ.",
+      "source_turn_id": "T03"
+    },
+    {
+      "term": "cognitive interviews",
+      "pos": "n. phr.",
+      "meaning_vi": "phỏng vấn nhận thức",
+      "example_en": "Back-translation might catch obvious mistakes, but it won't reveal how a real respondent interprets the question. I'd prefer cognitive interviews with a few speakers of each language.",
+      "example_vi": "Dịch ngược có thể bắt lỗi rõ, nhưng không cho biết người trả lời thực sự hiểu câu hỏi thế nào. Mình thích phỏng vấn nhận thức với vài người nói từng ngôn ngữ.",
+      "source_turn_id": "T03"
+    },
+    {
+      "term": "double negative",
+      "pos": "n. phr.",
+      "meaning_vi": "phủ định kép",
+      "example_en": "The first item says, 'The library rarely fails to provide a quiet place.' That double negative is awkward even in English, especially when respondents must select from a five-point agreement scale.",
+      "example_vi": "Câu đầu viết 'Thư viện hiếm khi không cung cấp chỗ yên tĩnh'. Phủ định kép này đã khó trong tiếng Anh, nhất là khi người tham gia chọn thang đồng ý năm mức.",
+      "source_turn_id": "T04"
+    }
+  ],
+  "audio": {
+    "status": "not_generated",
+    "url": null,
+    "duration_ms": null,
+    "model": null,
+    "provider": null,
+    "voice_config": null,
+    "source_transcript_hash": "01a8056f3efb52c3f52a8119f17ad8b72cf1d247d6462a56731c60ba79604905",
+    "audio_sha256": null,
+    "format": null
+  },
+  "qa": {
+    "content_reviewed": false,
+    "answers_verified": false,
+    "audio_verified": false,
+    "rights_cleared": false,
+    "duplicate_reviewed": false,
+    "notes": [
+      "Original AI-assisted draft, awaiting expert pedagogical review and option-disambiguation review.",
+      "Audio not produced: all segment times are null. TTS terms and distribution rights must be checked.",
+      "Practice lesson only; not an official/full IELTS Listening Part 3 exam or a calibrated band test.",
+      "M16.2: automated edits are provisional; IELTS teacher final signoff, audio and rights clearance pending."
+    ]
+  },
+  "provenance": {
+    "content_origin": "original_ai_assisted",
+    "source_urls": [],
+    "source_rights_note": "Original scripts; verify TTS service/voice production and distribution rights before publishing to students, including minors.",
+    "reviewer": null
+  },
+  "release_metadata": {
+    "published_at": null,
+    "version": 1
+  }
+}

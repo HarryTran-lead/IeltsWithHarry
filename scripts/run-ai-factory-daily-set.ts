@@ -1,13 +1,14 @@
 import { createClient, type SupabaseClient } from "@supabase/supabase-js";
-import { chooseDailySet, composeFullDraft, dailyPieceKinds, dailySetId, nextMissingPiece, type DailyPieces } from "../src/lib/ai-factory/daily-set";
+import { chooseDailySet, composeFullDraft, continueWithFallback, dailyPieceKinds, dailySetId, nextMissingPiece, type DailyPieces } from "../src/lib/ai-factory/daily-set";
 import { factoryKinds, topicSeeds, type FactoryKind } from "../src/lib/ai-factory/kinds";
 import { recordFactoryDraft } from "../src/lib/ai-factory/produce";
-import { generateFactoryDraft } from "../src/lib/ai-factory/text-generation";
+import { FactoryModelError, generateFactoryDraft } from "../src/lib/ai-factory/text-generation";
 import { contentHash, validateExam } from "../src/lib/ielts-bank/schema";
 
-type Progress = { dailySet: true; setId: string; pieces: DailyPieces; materialized: string[]; quotaDay: string; longRequestsUsed: number; lastLongRequestAt?: string; completedAt?: string };
+type ModelFailure = { kind: string; model: string; status: number; reason: string; at: string };
+type Progress = { dailySet: true; setId: string; pieces: DailyPieces; materialized: string[]; quotaDay: string; longRequestsUsed: number; lastLongRequestAt?: string; completedAt?: string; activeKind?: string; lastModelFailure?: ModelFailure };
 type SetRow = { id: string; status: string; payload: Progress };
-const pause = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
+const pause = (ms: number) => new Promise<void>((resolve) => setTimeout(resolve, ms));
 const today = () => new Date().toISOString().slice(0, 10);
 
 async function save(client: SupabaseClient, row: SetRow, patch: Record<string, unknown> = {}) {
@@ -112,21 +113,33 @@ async function main() {
     let kind = nextMissingPiece(active.payload.pieces);
     while (kind) {
       const chosen: FactoryKind = kind;
+      active.payload.activeKind = chosen;
+      await save(client, active);
       const dayNumber = Math.floor(new Date(`${active.payload.setId.slice(4)}T00:00:00Z`).getTime() / 86_400_000);
       const { data: recent } = await client.from("ielts_exams").select("title").eq("source_id", "ai-factory").eq("skill", factoryKinds[chosen].skill).order("created_at", { ascending: false }).limit(30);
       const seeds = topicSeeds[chosen];
-      const draft = await generateFactoryDraft(chosen, seeds[dayNumber % seeds.length], {
-        day: dayNumber, avoid: (recent ?? []).map((item) => item.title),
-        beforeRequest: async () => {
+      const generate = (model?: string) => generateFactoryDraft(chosen, seeds[dayNumber % seeds.length], {
+        day: dayNumber, avoid: (recent ?? []).map((item) => item.title), model, retryTransient: !model,
+        beforeRequest: async (requestedModel) => {
           if (!chosen.startsWith("listening") && !chosen.startsWith("reading")) return;
           if (active.payload.longRequestsUsed >= 20) throw new Error("AI Factory daily request budget exhausted");
           const last = active.payload.lastLongRequestAt ? Date.parse(active.payload.lastLongRequestAt) : 0;
           await pause(Math.max(0, 13_000 - (Date.now() - last)));
-          active.payload.longRequestsUsed += 1; active.payload.lastLongRequestAt = new Date().toISOString(); await save(client, active);
+          active.payload.longRequestsUsed += 1; active.payload.lastLongRequestAt = new Date().toISOString();
+          console.log(`${active.payload.setId} ${chosen}: request ${active.payload.longRequestsUsed}/20 on ${requestedModel}`);
+          await save(client, active);
         },
       });
+      const long = chosen.startsWith("listening") || chosen.startsWith("reading");
+      const primary = /^[\w.-]+$/.test(process.env.AI_FACTORY_LONG_MODEL ?? "") ? process.env.AI_FACTORY_LONG_MODEL! : "gemini-3.8-flash";
+      const draft = long ? await continueWithFallback(generate, pause, primary, "gemini-3.7-flash", async (model, nextModel, delay, failure) => {
+        active.payload.lastModelFailure = { kind: chosen, model, status: failure.status, reason: failure.failure, at: new Date().toISOString() };
+        await save(client, active, { error: `${chosen}: ${model} HTTP ${failure.status}; retrying ${nextModel}` });
+        console.warn(`${active.payload.setId} ${chosen}: ${model} HTTP ${failure.status}; trying ${nextModel} in ${delay / 1000}s`);
+      }) : await generate();
       if (draft.warnings.length) throw new Error(`${chosen} failed format gate: ${draft.warnings.join("; ").slice(0, 800)}`);
-      active.payload.pieces[chosen] = draft; await save(client, active);
+      active.payload.pieces[chosen] = draft; active.payload.activeKind = undefined; active.payload.lastModelFailure = undefined;
+      await save(client, active, { error: null });
       console.log(`Checkpointed ${chosen}; long model requests today: ${active.payload.longRequestsUsed}/20`);
       await materialize(client, active);
       kind = nextMissingPiece(active.payload.pieces);
@@ -135,8 +148,15 @@ async function main() {
     console.log(`Completed ${active.payload.setId}; long model requests today: ${active.payload.longRequestsUsed}/20`);
   } catch (error) {
     const message = error instanceof Error ? error.message : String(error);
-    await save(client, active, { error: message.slice(0, 1000) });
-    if (/daily request budget|daily quota exhausted|timeout|model unavailable \(HTTP 5\d\d\)/i.test(message)) { console.log(`${active.payload.setId} paused: ${message}`); return; }
+    if (error instanceof FactoryModelError) active.payload.lastModelFailure = { kind: active.payload.activeKind ?? "unknown", model: error.model, status: error.status, reason: error.failure, at: new Date().toISOString() };
+    const last = active.payload.lastModelFailure;
+    const detail = last ? `${last.kind}: ${last.model} HTTP ${last.status} (${last.reason})` : message;
+    await save(client, active, { error: detail.slice(0, 1000) });
+    if (/daily request budget|timeout/i.test(message) || (error instanceof FactoryModelError && ["daily_quota", "rate_limit", "quota_unknown"].includes(error.failure))) {
+      console.log(`${active.payload.setId} paused: ${message}; last model error: ${last ? detail : "none"}`);
+      return;
+    }
+    // Persistent server errors stay visible as failed Actions runs as well as in the admin status.
     throw error;
   }
 }

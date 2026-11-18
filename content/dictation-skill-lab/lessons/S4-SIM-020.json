@@ -1,0 +1,613 @@
+{
+  "schema_version": "1.2.0",
+  "lesson_id": "S4-SIM-020",
+  "status": "draft",
+  "level": "L7",
+  "section": 4,
+  "topic": "Digital heritage preservation",
+  "title": "Keeping Digital Culture Alive",
+  "content_format": "section_exam_simulation",
+  "exam_part": "IELTS_LISTENING_PART_4_STYLE",
+  "official_ielts_material": false,
+  "learning_objectives_vi": [
+    "Theo dõi bài giảng học thuật có lập luận và ví dụ.",
+    "Hoàn thành ghi chú, tóm tắt hoặc bảng bằng đúng từ được nghe.",
+    "Nhận diện signposting và mối quan hệ giữa các ý."
+  ],
+  "target_skills": [
+    "academic_lecture",
+    "signposting",
+    "note_taking",
+    "technical_vocabulary",
+    "information_tracking"
+  ],
+  "speakers": [
+    {
+      "speaker_id": "LECTURER",
+      "role": "Academic lecturer",
+      "accent_requested": "north_american",
+      "tts_voice_id": null
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "LECTURER",
+      "text_en": "Museums increasingly collect works that exist primarily as software: interactive art, early games and digital installations. Unlike a painting, such a work may stop functioning when its original computer fails. Conservators must decide what it means to preserve an experience that depends on changing technology, and which aspects of that experience are essential.",
+      "meaning_vi": "Bảo tồn di sản số cần lưu file, hệ thống tương tác và quyền sử dụng.",
+      "translation_vi": null,
+      "translation_status": "pending_exact_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "academic_lecture",
+        "signposting",
+        "note_taking"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "opening"
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "LECTURER",
+      "text_en": "A researcher opens an old digital artwork and discovers that its images still exist, but the controls no longer respond. The visible files survived, yet part of the experience has vanished. This illustrates why collecting software requires attention to systems, interactions and the knowledge of people who once operated them.",
+      "meaning_vi": "Mở rộng bối cảnh, giới thiệu vấn đề nghiên cứu.",
+      "translation_vi": null,
+      "translation_status": "pending_exact_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "academic_lecture",
+        "signposting",
+        "note_taking"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "opening"
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "LECTURER",
+      "text_en": "A first step is to create a disk image, an exact copy of storage content that can be examined without repeatedly handling fragile original media. The team also records file metadata, including formats and other technical details needed to interpret the copy. This is different from simply keeping a folder of screenshots. An interactive work may depend on files hidden from the user, and those dependencies can be lost if only the visible images are preserved.",
+      "meaning_vi": "Ảnh đĩa và siêu dữ liệu giúp lưu nội dung phần mềm gốc.",
+      "translation_vi": null,
+      "translation_status": "pending_exact_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "academic_lecture",
+        "signposting",
+        "note_taking"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "core_exposition"
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "LECTURER",
+      "text_en": "One preservation strategy is emulation, in which modern hardware reproduces the behaviour of an older computing environment. Another is migration, converting files into a newer format. This approach may retain older interactions but can be difficult to maintain, while conversion may improve access at the cost of changing how a work looks or behaves. Conservators should document which parts of the original experience each method preserves and which it alters.",
+      "meaning_vi": "Giả lập và chuyển đổi định dạng đều có ưu và nhược điểm bảo tồn.",
+      "translation_vi": null,
+      "translation_status": "pending_exact_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "academic_lecture",
+        "signposting",
+        "note_taking"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "core_exposition"
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "LECTURER",
+      "text_en": "Digital objects often depend on external services that no longer operate, such as a remote server used for shared interaction. They may also require input devices that are rare today, including unusual controllers or sensors. A modern copy can run yet fail to reproduce the original experience if these components are ignored. Conservators sometimes record video demonstrations and detailed descriptions from people who used the work while the complete system still functioned.",
+      "meaning_vi": "Dịch vụ bên ngoài và thiết bị điều khiển là phần quan trọng của tác phẩm số.",
+      "translation_vi": null,
+      "translation_status": "pending_exact_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "academic_lecture",
+        "signposting",
+        "note_taking"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "core_exposition"
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "LECTURER",
+      "text_en": "Over time, storage materials can degrade through bit rot, a term for unwanted changes or losses in digital information. Institutions therefore use a checksum to detect whether a file has changed since it was copied. A matching value cannot guarantee that the original work was understood correctly, but it helps establish that the preserved bits have not silently altered. Backups stored in different locations provide another layer of protection against equipment failure.",
+      "meaning_vi": "Dữ liệu có thể hỏng theo thời gian; checksum giúp phát hiện sự thay đổi.",
+      "translation_vi": null,
+      "translation_status": "pending_exact_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "academic_lecture",
+        "signposting",
+        "note_taking"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "core_exposition"
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "LECTURER",
+      "text_en": "Finally, preservation requires clear access rights, because a museum may own a physical disk without owning all the software needed to run it. The team should produce a written preservation plan explaining priorities, technical dependencies and future maintenance. There may never be a perfect replacement for the original machine, but honest documentation lets later researchers understand what has changed and why. Preservation is an ongoing responsibility rather than a one-time conversion.",
+      "meaning_vi": "Quyền truy cập và kế hoạch bảo tồn quyết định khả năng duy trì di sản số.",
+      "translation_vi": null,
+      "translation_status": "pending_exact_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "academic_lecture",
+        "signposting",
+        "note_taking"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "core_exposition"
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "LECTURER",
+      "text_en": "Future access will also depend on decisions made today. If a museum records how a work operated and which components were essential, later conservators can evaluate whether a new version is faithful. If those choices remain undocumented, a technically functional replacement may quietly change the meaning of the piece.",
+      "meaning_vi": "Nêu giới hạn, ví dụ ứng dụng và ý nghĩa thực tế.",
+      "translation_vi": null,
+      "translation_status": "pending_exact_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "academic_lecture",
+        "signposting",
+        "note_taking"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "closing"
+    },
+    {
+      "turn_id": "T09",
+      "speaker_id": "LECTURER",
+      "text_en": "The central issue is not only keeping files readable. It is preserving enough evidence for future people to understand how a digital work was experienced, even when its original equipment is gone.",
+      "meaning_vi": "Tổng kết và lưu ý cách diễn giải bằng chứng.",
+      "translation_vi": null,
+      "translation_status": "pending_exact_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "academic_lecture",
+        "signposting",
+        "note_taking"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "closing"
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "group_id": "PART4_FLOW_CHART_COMPLETION_01_05",
+      "type": "flow_chart_completion",
+      "prompt": "An exact storage copy is a ____.",
+      "correct_answers": [
+        "disk image"
+      ],
+      "scoring_policy": "strict_spoken_words",
+      "word_limit": 2,
+      "instructions_en": "Complete the flow chart below. Write NO MORE THAN TWO WORDS for each answer.",
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "evidence_excerpt_en": "A first step is to create a disk image, an exact copy of storage content that can be examined without repeatedly handling fragile original media.",
+      "evidence_span": {
+        "turn_id": "T03",
+        "start_char": 28,
+        "end_char": 38
+      },
+      "explanation_vi": "Đáp án “disk image” được nói trực tiếp trong phần bài giảng này. Ảnh đĩa và siêu dữ liệu giúp lưu nội dung phần mềm gốc.",
+      "answer_source": "exact_words_spoken",
+      "question_tags": [
+        "M28",
+        "part4",
+        "flow_chart_completion",
+        "academic_note_taking"
+      ],
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true,
+      "answer_review_status": "draft_teacher_verification_required"
+    },
+    {
+      "question_id": "Q02",
+      "group_id": "PART4_FLOW_CHART_COMPLETION_01_05",
+      "type": "flow_chart_completion",
+      "prompt": "Technical information about files is ____.",
+      "correct_answers": [
+        "file metadata"
+      ],
+      "scoring_policy": "strict_spoken_words",
+      "word_limit": 2,
+      "instructions_en": "Complete the flow chart below. Write NO MORE THAN TWO WORDS for each answer.",
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "evidence_excerpt_en": "The team also records file metadata, including formats and other technical details needed to interpret the copy.",
+      "evidence_span": {
+        "turn_id": "T03",
+        "start_char": 168,
+        "end_char": 181
+      },
+      "explanation_vi": "Đáp án “file metadata” được nói trực tiếp trong phần bài giảng này. Ảnh đĩa và siêu dữ liệu giúp lưu nội dung phần mềm gốc.",
+      "answer_source": "exact_words_spoken",
+      "question_tags": [
+        "M28",
+        "part4",
+        "flow_chart_completion",
+        "academic_note_taking"
+      ],
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true,
+      "answer_review_status": "draft_teacher_verification_required"
+    },
+    {
+      "question_id": "Q03",
+      "group_id": "PART4_FLOW_CHART_COMPLETION_01_05",
+      "type": "flow_chart_completion",
+      "prompt": "Recreating an old computing environment is ____.",
+      "correct_answers": [
+        "emulation"
+      ],
+      "scoring_policy": "strict_spoken_words",
+      "word_limit": 2,
+      "instructions_en": "Complete the flow chart below. Write NO MORE THAN TWO WORDS for each answer.",
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "evidence_excerpt_en": "One preservation strategy is emulation, in which modern hardware reproduces the behaviour of an older computing environment.",
+      "evidence_span": {
+        "turn_id": "T04",
+        "start_char": 29,
+        "end_char": 38
+      },
+      "explanation_vi": "Đáp án “emulation” được nói trực tiếp trong phần bài giảng này. Giả lập và chuyển đổi định dạng đều có ưu và nhược điểm bảo tồn.",
+      "answer_source": "exact_words_spoken",
+      "question_tags": [
+        "M28",
+        "part4",
+        "flow_chart_completion",
+        "academic_note_taking"
+      ],
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true,
+      "answer_review_status": "draft_teacher_verification_required"
+    },
+    {
+      "question_id": "Q04",
+      "group_id": "PART4_FLOW_CHART_COMPLETION_01_05",
+      "type": "flow_chart_completion",
+      "prompt": "Converting content into newer formats is ____.",
+      "correct_answers": [
+        "migration"
+      ],
+      "scoring_policy": "strict_spoken_words",
+      "word_limit": 2,
+      "instructions_en": "Complete the flow chart below. Write NO MORE THAN TWO WORDS for each answer.",
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "evidence_excerpt_en": "Another is migration, converting files into a newer format.",
+      "evidence_span": {
+        "turn_id": "T04",
+        "start_char": 136,
+        "end_char": 145
+      },
+      "explanation_vi": "Đáp án “migration” được nói trực tiếp trong phần bài giảng này. Giả lập và chuyển đổi định dạng đều có ưu và nhược điểm bảo tồn.",
+      "answer_source": "exact_words_spoken",
+      "question_tags": [
+        "M28",
+        "part4",
+        "flow_chart_completion",
+        "academic_note_taking"
+      ],
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true,
+      "answer_review_status": "draft_teacher_verification_required"
+    },
+    {
+      "question_id": "Q05",
+      "group_id": "PART4_FLOW_CHART_COMPLETION_01_05",
+      "type": "flow_chart_completion",
+      "prompt": "Some digital works depend on unavailable ____.",
+      "correct_answers": [
+        "external services"
+      ],
+      "scoring_policy": "strict_spoken_words",
+      "word_limit": 2,
+      "instructions_en": "Complete the flow chart below. Write NO MORE THAN TWO WORDS for each answer.",
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "evidence_excerpt_en": "Digital objects often depend on external services that no longer operate, such as a remote server used for shared interaction.",
+      "evidence_span": {
+        "turn_id": "T05",
+        "start_char": 32,
+        "end_char": 49
+      },
+      "explanation_vi": "Đáp án “external services” được nói trực tiếp trong phần bài giảng này. Dịch vụ bên ngoài và thiết bị điều khiển là phần quan trọng của tác phẩm số.",
+      "answer_source": "exact_words_spoken",
+      "question_tags": [
+        "M28",
+        "part4",
+        "flow_chart_completion",
+        "academic_note_taking"
+      ],
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true,
+      "answer_review_status": "draft_teacher_verification_required"
+    },
+    {
+      "question_id": "Q06",
+      "group_id": "PART4_SUMMARY_COMPLETION_06_10",
+      "type": "summary_completion",
+      "prompt": "Interaction may require special ____.",
+      "correct_answers": [
+        "input devices"
+      ],
+      "scoring_policy": "strict_spoken_words",
+      "word_limit": 2,
+      "instructions_en": "Complete the summary below. Write NO MORE THAN TWO WORDS for each answer.",
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "evidence_excerpt_en": "They may also require input devices that are rare today, including unusual controllers or sensors.",
+      "evidence_span": {
+        "turn_id": "T05",
+        "start_char": 149,
+        "end_char": 162
+      },
+      "explanation_vi": "Đáp án “input devices” được nói trực tiếp trong phần bài giảng này. Dịch vụ bên ngoài và thiết bị điều khiển là phần quan trọng của tác phẩm số.",
+      "answer_source": "exact_words_spoken",
+      "question_tags": [
+        "M28",
+        "part4",
+        "summary_completion",
+        "academic_note_taking"
+      ],
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true,
+      "answer_review_status": "draft_teacher_verification_required"
+    },
+    {
+      "question_id": "Q07",
+      "group_id": "PART4_SUMMARY_COMPLETION_06_10",
+      "type": "summary_completion",
+      "prompt": "Unwanted digital corruption is sometimes called ____.",
+      "correct_answers": [
+        "bit rot"
+      ],
+      "scoring_policy": "strict_spoken_words",
+      "word_limit": 2,
+      "instructions_en": "Complete the summary below. Write NO MORE THAN TWO WORDS for each answer.",
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "evidence_excerpt_en": "Over time, storage materials can degrade through bit rot, a term for unwanted changes or losses in digital information.",
+      "evidence_span": {
+        "turn_id": "T06",
+        "start_char": 49,
+        "end_char": 56
+      },
+      "explanation_vi": "Đáp án “bit rot” được nói trực tiếp trong phần bài giảng này. Dữ liệu có thể hỏng theo thời gian; checksum giúp phát hiện sự thay đổi.",
+      "answer_source": "exact_words_spoken",
+      "question_tags": [
+        "M28",
+        "part4",
+        "summary_completion",
+        "academic_note_taking"
+      ],
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true,
+      "answer_review_status": "draft_teacher_verification_required"
+    },
+    {
+      "question_id": "Q08",
+      "group_id": "PART4_SUMMARY_COMPLETION_06_10",
+      "type": "summary_completion",
+      "prompt": "File integrity can be checked with a ____.",
+      "correct_answers": [
+        "checksum"
+      ],
+      "scoring_policy": "strict_spoken_words",
+      "word_limit": 2,
+      "instructions_en": "Complete the summary below. Write NO MORE THAN TWO WORDS for each answer.",
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "evidence_excerpt_en": "Institutions therefore use a checksum to detect whether a file has changed since it was copied.",
+      "evidence_span": {
+        "turn_id": "T06",
+        "start_char": 149,
+        "end_char": 157
+      },
+      "explanation_vi": "Đáp án “checksum” được nói trực tiếp trong phần bài giảng này. Dữ liệu có thể hỏng theo thời gian; checksum giúp phát hiện sự thay đổi.",
+      "answer_source": "exact_words_spoken",
+      "question_tags": [
+        "M28",
+        "part4",
+        "summary_completion",
+        "academic_note_taking"
+      ],
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true,
+      "answer_review_status": "draft_teacher_verification_required"
+    },
+    {
+      "question_id": "Q09",
+      "group_id": "PART4_SUMMARY_COMPLETION_06_10",
+      "type": "summary_completion",
+      "prompt": "Use of old software may be restricted by ____.",
+      "correct_answers": [
+        "access rights"
+      ],
+      "scoring_policy": "strict_spoken_words",
+      "word_limit": 2,
+      "instructions_en": "Complete the summary below. Write NO MORE THAN TWO WORDS for each answer.",
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "evidence_excerpt_en": "Finally, preservation requires clear access rights, because a museum may own a physical disk without owning all the software needed to run it.",
+      "evidence_span": {
+        "turn_id": "T07",
+        "start_char": 37,
+        "end_char": 50
+      },
+      "explanation_vi": "Đáp án “access rights” được nói trực tiếp trong phần bài giảng này. Quyền truy cập và kế hoạch bảo tồn quyết định khả năng duy trì di sản số.",
+      "answer_source": "exact_words_spoken",
+      "question_tags": [
+        "M28",
+        "part4",
+        "summary_completion",
+        "academic_note_taking"
+      ],
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true,
+      "answer_review_status": "draft_teacher_verification_required"
+    },
+    {
+      "question_id": "Q10",
+      "group_id": "PART4_SUMMARY_COMPLETION_06_10",
+      "type": "summary_completion",
+      "prompt": "Long-term care should follow a ____.",
+      "correct_answers": [
+        "preservation plan"
+      ],
+      "scoring_policy": "strict_spoken_words",
+      "word_limit": 2,
+      "instructions_en": "Complete the summary below. Write NO MORE THAN TWO WORDS for each answer.",
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "evidence_excerpt_en": "The team should produce a written preservation plan explaining priorities, technical dependencies and future maintenance.",
+      "evidence_span": {
+        "turn_id": "T07",
+        "start_char": 177,
+        "end_char": 194
+      },
+      "explanation_vi": "Đáp án “preservation plan” được nói trực tiếp trong phần bài giảng này. Quyền truy cập và kế hoạch bảo tồn quyết định khả năng duy trì di sản số.",
+      "answer_source": "exact_words_spoken",
+      "question_tags": [
+        "M28",
+        "part4",
+        "summary_completion",
+        "academic_note_taking"
+      ],
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true,
+      "answer_review_status": "draft_teacher_verification_required"
+    }
+  ],
+  "question_groups": [
+    {
+      "group_id": "PART4_FLOW_CHART_COMPLETION_01_05",
+      "title_en": "Keeping Digital Culture Alive — Flow chart",
+      "question_ids": [
+        "Q01",
+        "Q02",
+        "Q03",
+        "Q04",
+        "Q05"
+      ],
+      "question_type": "flow_chart_completion",
+      "instructions_en": "Complete the flow chart below. Write NO MORE THAN TWO WORDS for each answer.",
+      "word_limit": 2,
+      "requires_one_listen": true,
+      "question_display_start": "before_audio",
+      "pause_between_groups_seconds": 0,
+      "layout_metadata": {
+        "presentation": "grouped_blanks",
+        "flow_order": "top_to_bottom",
+        "table_columns": null
+      }
+    },
+    {
+      "group_id": "PART4_SUMMARY_COMPLETION_06_10",
+      "title_en": "Keeping Digital Culture Alive — Summary",
+      "question_ids": [
+        "Q06",
+        "Q07",
+        "Q08",
+        "Q09",
+        "Q10"
+      ],
+      "question_type": "summary_completion",
+      "instructions_en": "Complete the summary below. Write NO MORE THAN TWO WORDS for each answer.",
+      "word_limit": 2,
+      "requires_one_listen": true,
+      "question_display_start": "before_audio",
+      "pause_between_groups_seconds": 0,
+      "layout_metadata": {
+        "presentation": "grouped_blanks",
+        "flow_order": null,
+        "table_columns": null
+      }
+    }
+  ],
+  "pedagogy_vi": {
+    "topic_summary_vi": "Bảo tồn di sản số cần lưu file, hệ thống tương tác và quyền sử dụng.",
+    "question_explanations_status": "draft_review_required",
+    "turn_meanings_are_not_full_translations": true,
+    "full_line_translation_required_before_release": true
+  },
+  "audio": {
+    "status": "not_generated",
+    "audio_url": null,
+    "audio_asset_id": null,
+    "duration_ms": null,
+    "source_text_sha256": "db7e175ae4d30dbee11d414a7a82411ac76fd5664e7555a8992f3468806564f4",
+    "generation_strategy": "single_speaker_continuous_full_lecture",
+    "aligned_turns": false,
+    "voice_consistency_verified": false,
+    "human_listening_review": false
+  },
+  "exam_mode": {
+    "bank_role": "protected_assessment",
+    "use_as_training_before_first_attempt": false,
+    "listening_attempts_allowed_for_scored_first_attempt": 1,
+    "replay_before_submit": false,
+    "speed_control_before_submit": false,
+    "transcript_visible_before_submit": false,
+    "answer_key_visible_before_submit": false,
+    "post_attempt_review_allowed": true,
+    "question_count": 10,
+    "points_per_correct_answer": 1,
+    "question_order_monotonic": true,
+    "estimated_speech_minutes_at_140_wpm": 3.89,
+    "exam_band_score_enabled": false,
+    "repeated_attempt_marked_as_seen": true,
+    "all_questions_visible_before_audio": true
+  },
+  "qa": {
+    "automatic_data_validation": "pending",
+    "content_human_review": "pending",
+    "translation_human_review": "pending",
+    "audio_human_review": "pending",
+    "exam_simulation_rubric_score": null,
+    "rubric_90_verified": false,
+    "published": false,
+    "release_eligible": false
+  },
+  "provenance": {
+    "source_type": "original_authoring_english_academic_lecture",
+    "milestone": "M28",
+    "no_official_ielts_question_copied": true,
+    "training_exposure_guard": true,
+    "fictional_illustrations_only_when_specified": true
+  },
+  "release_metadata": {
+    "target_bank": "protected_assessment",
+    "import_policy": "insert_only",
+    "version": "m28.0.1",
+    "preserve_existing_ids": true,
+    "allow_client_answer_payload": false
+  }
+}

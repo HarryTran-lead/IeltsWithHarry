@@ -1,0 +1,217 @@
+{
+  "schema_version": "m35.1.0",
+  "id": "ACT-POST-074",
+  "activity_id": "ACT-POST-074",
+  "status": "draft_pending_audio_and_teacher_signoff",
+  "module": "dictation",
+  "kind": "post_test_error_repair",
+  "section": 4,
+  "title": "Why Groundwater Moves Slowly — Sửa lỗi sau bài thi",
+  "source_bank": "section_simulation",
+  "origin_bank": "protected_assessment",
+  "source_milestone": "M28",
+  "source_package": "English_Skill_Lab_Dictation_M28_Section_4_Exam_Simulation_20_Full_Content.zip",
+  "source_entry_path": "ESL_Dictation_M28_Section4_Exam_Simulation/01_LESSONS_SERVER_ONLY/S4-SIM-014.json",
+  "source_test_id": null,
+  "source_lesson_id": "S4-SIM-014",
+  "source_part_id": null,
+  "reuse_parent_id": "S4-SIM-014",
+  "source_question_id": "Q09",
+  "source_audio_id": "assessment/section_simulation/S4-SIM-014",
+  "source_audio_id_kind": "logical_source_part_identifier_not_file",
+  "source_audio_asset_id": null,
+  "source_declared_unverified_audio_id": null,
+  "source_audio_url": null,
+  "audio_file_provided": false,
+  "source_turn_ids": [
+    "T03",
+    "T04",
+    "T07"
+  ],
+  "segment_timing": {
+    "T03": {
+      "start_ms": null,
+      "end_ms": null,
+      "sha256": "ebdcce3bb05706908a15979114118d4b91c25ddec9ef548160e175a2ff561738"
+    },
+    "T04": {
+      "start_ms": null,
+      "end_ms": null,
+      "sha256": "5cff938ef7d3ce605283a0940ebbb8aa88f9c18fc974343cc9396708b279a563"
+    },
+    "T07": {
+      "start_ms": null,
+      "end_ms": null,
+      "sha256": "5b6ac75ed587fe154122b5dc83f097b65940f25696d384a5350799d815f03b4b"
+    }
+  },
+  "clip_start_ms": null,
+  "clip_end_ms": null,
+  "audio_alignment_status": "pending_real_audio_and_verified_offsets",
+  "evidence_transcript_sha256": "495b2bc9d8f365285ad0b6ad7a297f6e13f24d2660801bde8988e7b8a3e09a8c",
+  "anchor_turn_id": "T07",
+  "teacher_only_evidence_text_en": "Water quality introduces another concern. A spreading contamination plume may be difficult to detect at first because pollutants move below the surface. Some communities designate a protection zone around important supply wells to reduce the chance of harmful activities nearby. However, regulations must follow the actual underground flow system, not just a simple circle drawn on a map. Protecting an aquifer requires both geological evidence and long-term monitoring.",
+  "questions": [
+    {
+      "exercise_id": "ACT-POST-074-01",
+      "phase": "guided_relisten",
+      "mode": "short_answer",
+      "title_vi": "Nghe lại điểm đã bỏ lỡ",
+      "prompt_en": "Pollution may spread as a ____.",
+      "prompt_vi": "Nghe lại đoạn bằng chứng và trả lời lại câu hỏi gốc sau khi đã nộp bài thi.",
+      "options": null,
+      "correct_option": null,
+      "correct_answers": [
+        "contamination plume"
+      ],
+      "spoken_answer": "contamination plume",
+      "word_limit": 2,
+      "normalization_policy": "trim_unicode_nfkc_casefold_collapse_spaces_keep_meaningful_digits_and_letters",
+      "scoring_policy": "post_test_training_only",
+      "source_question_id": "Q09",
+      "source_question_type": "flow_chart_completion",
+      "play_turn_ids": [
+        "T07"
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "teacher_explanation_vi": "Đáp án “contamination plume” được nói trực tiếp trong phần bài giảng này. Ô nhiễm nước ngầm lan theo dòng chảy và cần vùng bảo vệ dựa trên địa chất.",
+      "feedback_vi": "Đáp án gốc: contamination plume. Đối chiếu với các lượt thoại T07; chú ý thông tin cuối cùng và từ khóa được diễn đạt lại.",
+      "is_exam_score": false
+    },
+    {
+      "exercise_id": "ACT-POST-074-02",
+      "phase": "evidence_recognition",
+      "mode": "evidence_choice",
+      "title_vi": "Tìm câu thoại chứng minh đáp án",
+      "prompt_vi": "Trong ba trích đoạn thực sự có trong cùng bài nghe, trích đoạn nào liên quan trực tiếp nhất đến câu hỏi vừa làm?",
+      "source_question_id": "Q09",
+      "source_question_prompt_en": "Pollution may spread as a ____.",
+      "choices": [
+        {
+          "key": "T07",
+          "excerpt_en": "…her concern. A spreading contamination plume may be difficult to detect at first because pollutants move below the surface. Some communities designate a protection zone around important supply wells to reduce the chance of harmful…",
+          "source_turn_id": "T07"
+        },
+        {
+          "key": "T04",
+          "excerpt_en": "…draulic level toward a lower one, following a hydraulic gradient. This underground movement is seldom a straight vertical fall. The geological structure may direct water sideways over long distances. Consequently, a well can be in…",
+          "source_turn_id": "T04"
+        },
+        {
+          "key": "T03",
+          "excerpt_en": "…ble to hold water is its porosity, but a high value does not guarantee rapid flow. The pores must also be connected. Some clay can store considerable water yet release it only very slowly. A comparison of sandy ground and compacte…",
+          "source_turn_id": "T03"
+        }
+      ],
+      "correct_answers": [
+        "T07"
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "evidence_text_sha256": "5b6ac75ed587fe154122b5dc83f097b65940f25696d384a5350799d815f03b4b",
+      "play_turn_ids": [
+        "T07",
+        "T04",
+        "T03"
+      ],
+      "feedback_vi": "Câu hỏi này được chứng minh tại lượt T07. Hai lựa chọn còn lại là lời nói có thật nhưng nằm ở các ý khác trong cùng đoạn nghe.",
+      "grading_policy": "exact_source_turn_id",
+      "is_exam_score": false
+    },
+    {
+      "exercise_id": "ACT-POST-074-03",
+      "phase": "focus_dictation",
+      "mode": "source_phrase_dictation",
+      "title_vi": "Chép lại cụm âm thanh trọng tâm",
+      "prompt_en": "… [____]  be difficult to detect at first because poll…",
+      "prompt_vi": "Nghe lượt thoại và điền chính xác cụm từ còn thiếu vào dấu trống. Không chép cả câu.",
+      "word_limit": 5,
+      "correct_answers": [
+        "A spreading contamination plume may"
+      ],
+      "play_turn_ids": [
+        "T07"
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "source_excerpt_exact": "A spreading contamination plume may",
+      "evidence_char_start": 42,
+      "evidence_char_end": 77,
+      "source_turn_sha256": "5b6ac75ed587fe154122b5dc83f097b65940f25696d384a5350799d815f03b4b",
+      "feedback_vi": "Cụm nghe-chép chính xác là “A spreading contamination plume may”. Hãy đối chiếu từ chức năng, âm cuối và cách nối âm trước khi thử lại.",
+      "normalization_policy": "trim_unicode_nfkc_casefold_collapse_spaces_keep_meaningful_digits_and_letters",
+      "is_exam_score": false,
+      "newly_authored_for_m35": true
+    }
+  ],
+  "teacher_source_answer_key": {
+    "original_correct_answers": [
+      "contamination plume"
+    ],
+    "original_correct_option": null,
+    "evidence_turn_ids": [
+      "T07"
+    ],
+    "raw_question_evidence_excerpt_en": "A spreading contamination plume may be difficult to detect at first because pollutants move below the surface.",
+    "original_explanation_vi": "Đáp án “contamination plume” được nói trực tiếp trong phần bài giảng này. Ô nhiễm nước ngầm lan theo dòng chảy và cần vùng bảo vệ dựa trên địa chất."
+  },
+  "skill_tags": [
+    "post_test_repair",
+    "section_4",
+    "flow_chart_completion",
+    "evidence_matching",
+    "focused_dictation",
+    "first_attempt_exposure_protection"
+  ],
+  "learner_variants": {
+    "if_original_answer_incorrect": "required_repair",
+    "if_original_answer_correct": "optional_reinforcement",
+    "if_no_question_response": "optional_first_attempt_submitted_only"
+  },
+  "repair_rule": {
+    "compare_response_to_original_question_id": "Q09",
+    "source_user_attempt_answer_from_db": true,
+    "error_record_type": "original_question_review",
+    "recommend_retention_days": [
+      1,
+      3,
+      7
+    ],
+    "new_first_attempt_scoring": false,
+    "band_calibration": false
+  },
+  "access_policy": {
+    "access": "post_submission_only",
+    "gate_parent_id": "S4-SIM-014",
+    "gate_kind": "section_simulation_submitted",
+    "user_bound": true,
+    "server_side_enforced": true,
+    "has_prior_attempt_required": true,
+    "cross_user_unlock": false,
+    "exposure_records_required": true,
+    "do_not_return_in_public_catalog": true,
+    "transcript_hidden_in_exam_session": true,
+    "pre_first_attempt_reuse": false,
+    "after_submit_irreversible_seen": true,
+    "retest_is_exposed": true,
+    "allow_any_public_index": false
+  },
+  "rights_status": "pending_review",
+  "review": {
+    "source_quality_review": "pending",
+    "semantic_answer_review": "pending",
+    "human_audio_listening": "pending",
+    "alignment_verified": false,
+    "teacher_signoff": "pending",
+    "publication_approved": false
+  },
+  "map_asset_id": null,
+  "map_asset_private_path": null,
+  "source_speaker_roles": [],
+  "version": "m35.1.0",
+  "import_policy": "insert_only_idempotent_do_not_overwrite_source"
+}

@@ -1,0 +1,623 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "FND2-081",
+  "status": "draft",
+  "level": "L2",
+  "section": 0,
+  "topic": "Foundation M19 – Vocabulary",
+  "title": "Travel logistics vocabulary",
+  "learning_objectives_vi": [
+    "Nghe giấy tờ, hành lý, thủ tục và dịch vụ tại sân bay, khách sạn.",
+    "Nghe lại theo lỗi trọng tâm, không chỉ hoàn thành số bài.",
+    "Đánh giá bằng nội dung chưa gặp và một lần nghe."
+  ],
+  "content_format": "sentence_drill",
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Foundation narrator",
+      "tts_voice_id": null,
+      "accent_requested": "british"
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "Our suitcase was sent to the wrong terminal by mistake.",
+      "translation_vi": "Vali của chúng tôi bị đưa nhầm đến nhà ga khác.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m19",
+        "travel_logistics",
+        "vocabulary"
+      ],
+      "target_value": "terminal",
+      "target_kind": "lexical_phrase",
+      "target_meaning_vi": "nhà ga",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "A",
+      "text_en": "The hotel offered luggage storage until our room was ready.",
+      "translation_vi": "Khách sạn cung cấp chỗ giữ hành lý đến khi phòng sẵn sàng.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m19",
+        "travel_logistics",
+        "vocabulary"
+      ],
+      "target_value": "luggage storage",
+      "target_kind": "lexical_phrase",
+      "target_meaning_vi": "giữ hành lý",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "A",
+      "text_en": "I downloaded the boarding pass before leaving for the airport.",
+      "translation_vi": "Tôi tải thẻ lên máy bay trước khi ra sân bay.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m19",
+        "travel_logistics",
+        "vocabulary"
+      ],
+      "target_value": "boarding pass",
+      "target_kind": "lexical_phrase",
+      "target_meaning_vi": "thẻ lên máy bay",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "A",
+      "text_en": "We need to confirm the reservation number at the front desk.",
+      "translation_vi": "Chúng ta phải xác nhận mã đặt chỗ ở quầy lễ tân.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m19",
+        "travel_logistics",
+        "vocabulary"
+      ],
+      "target_value": "reservation number",
+      "target_kind": "lexical_phrase",
+      "target_meaning_vi": "mã đặt chỗ",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "A",
+      "text_en": "The hostel charges extra for breakfast, but towels are included.",
+      "translation_vi": "Nhà nghỉ tính thêm phí bữa sáng nhưng đã bao gồm khăn tắm.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m19",
+        "travel_logistics",
+        "vocabulary"
+      ],
+      "target_value": "towels",
+      "target_kind": "lexical_phrase",
+      "target_meaning_vi": "khăn tắm",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "A",
+      "text_en": "The airport shuttle stops outside the arrivals hall.",
+      "translation_vi": "Xe trung chuyển sân bay dừng bên ngoài sảnh đến.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m19",
+        "travel_logistics",
+        "vocabulary"
+      ],
+      "target_value": "arrivals hall",
+      "target_kind": "lexical_phrase",
+      "target_meaning_vi": "sảnh đến",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "I packed a small day bag so I wouldn't carry the full backpack.",
+      "translation_vi": "Tôi chuẩn bị một túi nhỏ đi trong ngày để không phải mang cả ba lô.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m19",
+        "travel_logistics",
+        "vocabulary"
+      ],
+      "target_value": "day bag",
+      "target_kind": "lexical_phrase",
+      "target_meaning_vi": "túi đi trong ngày",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "A",
+      "text_en": "They asked us to check in online rather than at the counter.",
+      "translation_vi": "Họ yêu cầu chúng tôi làm thủ tục trực tuyến thay vì ở quầy.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m19",
+        "travel_logistics",
+        "vocabulary"
+      ],
+      "target_value": "online",
+      "target_kind": "lexical_phrase",
+      "target_meaning_vi": "trực tuyến",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T09",
+      "speaker_id": "A",
+      "text_en": "There is a connecting flight, so allow extra time between planes.",
+      "translation_vi": "Có chuyến bay nối chuyến nên hãy dành thêm thời gian giữa hai chuyến.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m19",
+        "travel_logistics",
+        "vocabulary"
+      ],
+      "target_value": "connecting flight",
+      "target_kind": "lexical_phrase",
+      "target_meaning_vi": "bay nối chuyến",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T10",
+      "speaker_id": "A",
+      "text_en": "The receptionist explained that late checkout wasn't available.",
+      "translation_vi": "Lễ tân giải thích rằng không có dịch vụ trả phòng muộn.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m19",
+        "travel_logistics",
+        "vocabulary"
+      ],
+      "target_value": "checkout",
+      "target_kind": "lexical_phrase",
+      "target_meaning_vi": "trả phòng",
+      "bank_role": "training"
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "type": "dictation",
+      "prompt": "Nghe lượt T01 rồi chép đầy đủ câu tiếng Anh được nói.",
+      "correct_answers": [
+        "Our suitcase was sent to the wrong terminal by mistake."
+      ],
+      "evidence_turn_ids": [
+        "T01"
+      ],
+      "explanation_vi": "Nghe lại theo nhóm từ; câu gốc là: Our suitcase was sent to the wrong terminal by mistake. Nghĩa: Vali của chúng tôi bị đưa nhầm đến nhà ga khác.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "travel_logistics"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q02",
+      "type": "dictation",
+      "prompt": "Nghe lượt T02 rồi chép đầy đủ câu tiếng Anh được nói.",
+      "correct_answers": [
+        "The hotel offered luggage storage until our room was ready."
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Nghe lại theo nhóm từ; câu gốc là: The hotel offered luggage storage until our room was ready. Nghĩa: Khách sạn cung cấp chỗ giữ hành lý đến khi phòng sẵn sàng.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "travel_logistics"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q03",
+      "type": "dictation",
+      "prompt": "Nghe lượt T03 rồi chép đầy đủ câu tiếng Anh được nói.",
+      "correct_answers": [
+        "I downloaded the boarding pass before leaving for the airport."
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Nghe lại theo nhóm từ; câu gốc là: I downloaded the boarding pass before leaving for the airport. Nghĩa: Tôi tải thẻ lên máy bay trước khi ra sân bay.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "travel_logistics"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q04",
+      "type": "dictation",
+      "prompt": "Nghe lượt T04 rồi chép đầy đủ câu tiếng Anh được nói.",
+      "correct_answers": [
+        "We need to confirm the reservation number at the front desk."
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Nghe lại theo nhóm từ; câu gốc là: We need to confirm the reservation number at the front desk. Nghĩa: Chúng ta phải xác nhận mã đặt chỗ ở quầy lễ tân.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "travel_logistics"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q05",
+      "type": "dictation",
+      "prompt": "Nghe lượt T05 rồi chép đầy đủ câu tiếng Anh được nói.",
+      "correct_answers": [
+        "The hostel charges extra for breakfast, but towels are included."
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Nghe lại theo nhóm từ; câu gốc là: The hostel charges extra for breakfast, but towels are included. Nghĩa: Nhà nghỉ tính thêm phí bữa sáng nhưng đã bao gồm khăn tắm.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "travel_logistics"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q06",
+      "type": "dictation",
+      "prompt": "Nghe lượt T06 rồi chép đầy đủ câu tiếng Anh được nói.",
+      "correct_answers": [
+        "The airport shuttle stops outside the arrivals hall."
+      ],
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "explanation_vi": "Nghe lại theo nhóm từ; câu gốc là: The airport shuttle stops outside the arrivals hall. Nghĩa: Xe trung chuyển sân bay dừng bên ngoài sảnh đến.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "travel_logistics"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q07",
+      "type": "dictation",
+      "prompt": "Nghe lượt T07 rồi chép đầy đủ câu tiếng Anh được nói.",
+      "correct_answers": [
+        "I packed a small day bag so I wouldn't carry the full backpack."
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "Nghe lại theo nhóm từ; câu gốc là: I packed a small day bag so I wouldn't carry the full backpack. Nghĩa: Tôi chuẩn bị một túi nhỏ đi trong ngày để không phải mang cả ba lô.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "travel_logistics"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q08",
+      "type": "dictation",
+      "prompt": "Nghe lượt T08 rồi chép đầy đủ câu tiếng Anh được nói.",
+      "correct_answers": [
+        "They asked us to check in online rather than at the counter."
+      ],
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "explanation_vi": "Nghe lại theo nhóm từ; câu gốc là: They asked us to check in online rather than at the counter. Nghĩa: Họ yêu cầu chúng tôi làm thủ tục trực tuyến thay vì ở quầy.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "travel_logistics"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q09",
+      "type": "dictation",
+      "prompt": "Nghe lượt T09 rồi chép đầy đủ câu tiếng Anh được nói.",
+      "correct_answers": [
+        "There is a connecting flight, so allow extra time between planes."
+      ],
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "explanation_vi": "Nghe lại theo nhóm từ; câu gốc là: There is a connecting flight, so allow extra time between planes. Nghĩa: Có chuyến bay nối chuyến nên hãy dành thêm thời gian giữa hai chuyến.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "travel_logistics"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q10",
+      "type": "dictation",
+      "prompt": "Nghe lượt T10 rồi chép đầy đủ câu tiếng Anh được nói.",
+      "correct_answers": [
+        "The receptionist explained that late checkout wasn't available."
+      ],
+      "evidence_turn_ids": [
+        "T10"
+      ],
+      "explanation_vi": "Nghe lại theo nhóm từ; câu gốc là: The receptionist explained that late checkout wasn't available. Nghĩa: Lễ tân giải thích rằng không có dịch vụ trả phòng muộn.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "travel_logistics"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q11",
+      "type": "short_answer",
+      "prompt": "Nghe lượt T06. Xe dừng bên ngoài khu vực nào? Trả lời bằng từ/cụm tiếng Anh đúng như lời nghe.",
+      "correct_answers": [
+        "arrivals hall"
+      ],
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "explanation_vi": "Thông tin đúng: arrivals hall (sảnh đến). Dẫn chứng: The airport shuttle stops outside the arrivals hall. Nghĩa: Xe trung chuyển sân bay dừng bên ngoài sảnh đến.",
+      "scoring_policy": "lexical_case_punctuation_insensitive_server",
+      "target_kind": "lexical_phrase",
+      "question_tags": [
+        "short_answer",
+        "travel_logistics",
+        "training_comprehension"
+      ],
+      "max_replays_practice": 5,
+      "first_listen_only_for_mastery": false
+    },
+    {
+      "question_id": "Q12",
+      "type": "short_answer",
+      "prompt": "Nghe lượt T07. Người nói chuẩn bị loại túi nào? Trả lời bằng từ/cụm tiếng Anh đúng như lời nghe.",
+      "correct_answers": [
+        "day bag"
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "Thông tin đúng: day bag (túi đi trong ngày). Dẫn chứng: I packed a small day bag so I wouldn't carry the full backpack. Nghĩa: Tôi chuẩn bị một túi nhỏ đi trong ngày để không phải mang cả ba lô.",
+      "scoring_policy": "lexical_case_punctuation_insensitive_server",
+      "target_kind": "lexical_phrase",
+      "question_tags": [
+        "short_answer",
+        "travel_logistics",
+        "training_comprehension"
+      ],
+      "max_replays_practice": 5,
+      "first_listen_only_for_mastery": false
+    },
+    {
+      "question_id": "Q13",
+      "type": "short_answer",
+      "prompt": "Nghe lượt T08. Cần làm thủ tục bằng cách nào? Trả lời bằng từ/cụm tiếng Anh đúng như lời nghe.",
+      "correct_answers": [
+        "online"
+      ],
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "explanation_vi": "Thông tin đúng: online (trực tuyến). Dẫn chứng: They asked us to check in online rather than at the counter. Nghĩa: Họ yêu cầu chúng tôi làm thủ tục trực tuyến thay vì ở quầy.",
+      "scoring_policy": "lexical_case_punctuation_insensitive_server",
+      "target_kind": "lexical_phrase",
+      "question_tags": [
+        "short_answer",
+        "travel_logistics",
+        "training_comprehension"
+      ],
+      "max_replays_practice": 5,
+      "first_listen_only_for_mastery": false
+    },
+    {
+      "question_id": "Q14",
+      "type": "short_answer",
+      "prompt": "Nghe lượt T09. Hành trình có loại chuyến bay nào? Trả lời bằng từ/cụm tiếng Anh đúng như lời nghe.",
+      "correct_answers": [
+        "connecting flight"
+      ],
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "explanation_vi": "Thông tin đúng: connecting flight (bay nối chuyến). Dẫn chứng: There is a connecting flight, so allow extra time between planes. Nghĩa: Có chuyến bay nối chuyến nên hãy dành thêm thời gian giữa hai chuyến.",
+      "scoring_policy": "lexical_case_punctuation_insensitive_server",
+      "target_kind": "lexical_phrase",
+      "question_tags": [
+        "short_answer",
+        "travel_logistics",
+        "training_comprehension"
+      ],
+      "max_replays_practice": 5,
+      "first_listen_only_for_mastery": false
+    },
+    {
+      "question_id": "Q15",
+      "type": "short_answer",
+      "prompt": "Nghe lượt T10. Dịch vụ liên quan đến việc trả phòng nào không có? Trả lời bằng từ/cụm tiếng Anh đúng như lời nghe.",
+      "correct_answers": [
+        "checkout"
+      ],
+      "evidence_turn_ids": [
+        "T10"
+      ],
+      "explanation_vi": "Thông tin đúng: checkout (trả phòng). Dẫn chứng: The receptionist explained that late checkout wasn't available. Nghĩa: Lễ tân giải thích rằng không có dịch vụ trả phòng muộn.",
+      "scoring_policy": "lexical_case_punctuation_insensitive_server",
+      "target_kind": "lexical_phrase",
+      "question_tags": [
+        "short_answer",
+        "travel_logistics",
+        "training_comprehension"
+      ],
+      "max_replays_practice": 5,
+      "first_listen_only_for_mastery": false
+    }
+  ],
+  "vocabulary": [
+    {
+      "term": "terminal",
+      "pos": "noun (contextual)",
+      "meaning_vi": "nhà ga",
+      "example_en": "Our suitcase was sent to the wrong terminal by mistake.",
+      "example_vi": "Vali của chúng tôi bị đưa nhầm đến nhà ga khác.",
+      "is_illustrative_context": false
+    },
+    {
+      "term": "luggage storage",
+      "pos": "noun phrase",
+      "meaning_vi": "giữ hành lý",
+      "example_en": "The hotel offered luggage storage until our room was ready.",
+      "example_vi": "Khách sạn cung cấp chỗ giữ hành lý đến khi phòng sẵn sàng.",
+      "is_illustrative_context": false
+    },
+    {
+      "term": "boarding pass",
+      "pos": "noun phrase",
+      "meaning_vi": "thẻ lên máy bay",
+      "example_en": "I downloaded the boarding pass before leaving for the airport.",
+      "example_vi": "Tôi tải thẻ lên máy bay trước khi ra sân bay.",
+      "is_illustrative_context": false
+    },
+    {
+      "term": "reservation number",
+      "pos": "noun phrase",
+      "meaning_vi": "mã đặt chỗ",
+      "example_en": "We need to confirm the reservation number at the front desk.",
+      "example_vi": "Chúng ta phải xác nhận mã đặt chỗ ở quầy lễ tân.",
+      "is_illustrative_context": false
+    },
+    {
+      "term": "towels",
+      "pos": "noun (contextual)",
+      "meaning_vi": "khăn tắm",
+      "example_en": "The hostel charges extra for breakfast, but towels are included.",
+      "example_vi": "Nhà nghỉ tính thêm phí bữa sáng nhưng đã bao gồm khăn tắm.",
+      "is_illustrative_context": false
+    },
+    {
+      "term": "arrivals hall",
+      "pos": "noun phrase",
+      "meaning_vi": "sảnh đến",
+      "example_en": "The airport shuttle stops outside the arrivals hall.",
+      "example_vi": "Xe trung chuyển sân bay dừng bên ngoài sảnh đến.",
+      "is_illustrative_context": false
+    }
+  ],
+  "micro_skill_id": "travel_logistics",
+  "bank_role": "training",
+  "content_design": {
+    "sequence": "10_varied_contexts",
+    "first_listen": "1x",
+    "guided_replay_max": 5,
+    "mastery_requires_unseen": true,
+    "learning_note_vi": "Nghe giấy tờ, hành lý, thủ tục và dịch vụ tại sân bay, khách sạn.",
+    "category": "vocabulary",
+    "post_submit_review_only": true,
+    "unseen_assessment_id": "FND2-081-HOLDOUT",
+    "spoken_text_must_match_target": true,
+    "holdout_must_be_server_side": true,
+    "no_band_claim": true
+  },
+  "audio": {
+    "status": "not_generated",
+    "url": null,
+    "duration_ms": null,
+    "provider": null,
+    "model": null,
+    "voice_config": null,
+    "format": null,
+    "audio_sha256": null,
+    "source_transcript_hash": "2ea3a6568847af3a9db496f47401c80e74352bdf16d6afe0a702d37c67817ab9",
+    "generation_notes": "Synthesize actual spoken utterance only; never read learning metadata. Human verify dates, names and connected-speech target."
+  },
+  "qa": {
+    "content_reviewed": false,
+    "answers_verified": false,
+    "audio_verified": false,
+    "human_signed_off": false,
+    "duplicate_reviewed": false,
+    "notes": [
+      "M19 originally authored DRAFT, machine-verified only.",
+      "Connected-speech phonetic features NOT established until actual audio is reviewed."
+    ]
+  },
+  "provenance": {
+    "content_origin": "original_ai_assisted",
+    "rights_status": "pending_tts_audio_terms_review",
+    "source_urls": [],
+    "reviewer": null
+  },
+  "release_metadata": {
+    "published_at": null,
+    "version": 1
+  },
+  "lesson_theory_vi": {
+    "core_rule": "Nghe giấy tờ, hành lý, thủ tục và dịch vụ tại sân bay, khách sạn.",
+    "worked_contrasts": [
+      {
+        "spoken_example": "The shop was out of tea, so I bought coffee instead.",
+        "written_value": "coffee",
+        "teacher_note_vi": "So/instead báo lựa chọn thay thế; tea chỉ là thông tin cũ."
+      },
+      {
+        "spoken_example": "The receipt is in the bag, beside the charger.",
+        "written_value": "receipt",
+        "teacher_note_vi": "Dựa câu hỏi để chọn đúng đồ vật, không chọn mọi từ vựng nghe thấy."
+      }
+    ],
+    "learning_steps": [
+      "Đọc nghĩa và ví dụ mới, chú ý từ loại, ngữ cảnh dùng từ.",
+      "Nghe mỗi câu một lần để dự đoán từ đích, sau đó chép cả câu.",
+      "Làm năm câu kiểm tra thông tin có ngữ cảnh mà không xem đáp án.",
+      "Cuối bài thử hai câu chưa gặp; nếu sai, quay về kỹ năng nhỏ tương ứng."
+    ],
+    "common_mistakes": [
+      "Nhầm thủ tục tại quầy với thủ tục online.",
+      "Chỉ nhìn từ khóa quen mà không nghe phần phủ định hoặc cách người nói sửa lại."
+    ],
+    "before_audio_question": "Từ/cụm nào phù hợp với câu hỏi, và từ bị phủ định có phải đáp án không?",
+    "difficulty_steps": [
+      "T01–T03: ngữ cảnh ngắn, thông tin chính rõ ràng.",
+      "T04–T07: thêm thông tin phụ, dạng phủ định hoặc tương phản.",
+      "T08–T10: nội dung dài hơn, nhiều chi tiết hoặc đổi ý."
+    ],
+    "examples_are_not_mastery_items": true,
+    "audio_review_warning_vi": null
+  }
+}

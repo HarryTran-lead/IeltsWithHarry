@@ -1,0 +1,866 @@
+{
+  "schema_version": "1.2.0",
+  "lesson_id": "S1-SIM-010",
+  "status": "draft",
+  "level": "L4",
+  "section": 1,
+  "topic": "Booking a garden seed-swap session",
+  "title": "Signing Up for a Community Seed Exchange",
+  "content_format": "section_exam_simulation",
+  "exam_part": "IELTS_LISTENING_PART_1_STYLE",
+  "official_ielts_material": false,
+  "learning_objectives_vi": [
+    "Theo dõi hội thoại giao dịch đời sống hai người nói trong một lần nghe.",
+    "Điền chính xác thông tin, kể cả khi có phương án cũ và thông tin đính chính.",
+    "Phân tích MCQ dựa trên ý nghĩa cuối cùng và bằng chứng sau khi nộp bài."
+  ],
+  "target_skills": [
+    "community_events",
+    "seeds",
+    "equipment",
+    "registration",
+    "contributions"
+  ],
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Garden club organiser",
+      "accent_requested": "australian",
+      "tts_voice_id": null
+    },
+    {
+      "speaker_id": "B",
+      "role": "New participant",
+      "accent_requested": "australian",
+      "tts_voice_id": null
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "Good morning, Elmbridge Garden Club. This is Ruth. Our seed exchange is coming up soon; were you hoping to attend?",
+      "translation_vi": "Chào sáng, Câu lạc bộ Vườn Elmbridge, Ruth đây. Buổi trao đổi hạt giống sắp diễn ra; anh muốn tham dự phải không?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "community_events",
+        "seeds",
+        "equipment",
+        "registration",
+        "contributions"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "B",
+      "text_en": "Yes, though I've never joined one before. I have spare herb seeds and thought swapping might be more useful than storing them.",
+      "translation_vi": "Vâng, dù tôi chưa dự lần nào. Tôi có hạt rau thơm dư và nghĩ đổi sẽ hữu ích hơn cất đi.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "community_events",
+        "seeds",
+        "equipment",
+        "registration",
+        "contributions"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "A",
+      "text_en": "It's straightforward. The event is called Seed Circle, and people bring labelled packets to exchange with other local gardeners.",
+      "translation_vi": "Rất đơn giản. Sự kiện tên Seed Circle; mọi người mang gói hạt ghi nhãn để đổi với người làm vườn khác.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "community_events",
+        "seeds",
+        "equipment",
+        "registration",
+        "contributions"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "B",
+      "text_en": "I saw posters for Plant Parade as well, but that's a flower show, isn't it? I'm more interested in growing food.",
+      "translation_vi": "Tôi còn thấy quảng cáo Plant Parade, nhưng đó là triển lãm hoa phải không? Tôi quan tâm trồng thức ăn hơn.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "community_events",
+        "seeds",
+        "equipment",
+        "registration",
+        "contributions"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "A",
+      "text_en": "They are separate events. Some people visit both, but this exchange attracts more people growing vegetables, herbs and fruit.",
+      "translation_vi": "Đó là hai sự kiện riêng. Có người đi cả hai, nhưng buổi trao đổi thu hút người trồng rau, thảo mộc và cây ăn quả.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "community_events",
+        "seeds",
+        "equipment",
+        "registration",
+        "contributions"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "B",
+      "text_en": "That's encouraging. I might meet somebody who has tried growing herbs on a balcony rather than in a big garden.",
+      "translation_vi": "Thật đáng mừng. Có thể tôi gặp người từng trồng thảo mộc ở ban công thay vì vườn lớn.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "community_events",
+        "seeds",
+        "equipment",
+        "registration",
+        "contributions"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "Exactly. Seed Circle is on the final Sunday of April. Plant Parade happens a week earlier, so the dates are easy to mix up.",
+      "translation_vi": "Đúng. Seed Circle diễn ra Chủ nhật cuối tháng Tư. Plant Parade trước đó một tuần nên dễ nhầm ngày.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "community_events",
+        "seeds",
+        "equipment",
+        "registration",
+        "contributions"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "B",
+      "text_en": "I'll mark that Sunday. The posters give noon as the opening time, but I need to come early to set out my packets.",
+      "translation_vi": "Tôi sẽ ghi Chủ nhật đó. Poster ghi mở cửa trưa, nhưng tôi cần đến sớm để bày gói hạt.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "community_events",
+        "seeds",
+        "equipment",
+        "registration",
+        "contributions"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T09",
+      "speaker_id": "A",
+      "text_en": "Registered contributors can enter at eleven fifteen. General visitors come in at noon after the tables have been organised.",
+      "translation_vi": "Người đóng góp đã đăng ký được vào từ mười một giờ mười lăm. Khách thường vào lúc trưa sau khi xếp bàn.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "community_events",
+        "seeds",
+        "equipment",
+        "registration",
+        "contributions"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T10",
+      "speaker_id": "B",
+      "text_en": "Eleven fifteen should be fine. Do we use the greenhouse at the park, or have you moved the event indoors?",
+      "translation_vi": "Mười một giờ mười lăm ổn. Sự kiện ở nhà kính công viên hay đã chuyển vào trong nhà?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "community_events",
+        "seeds",
+        "equipment",
+        "registration",
+        "contributions"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T11",
+      "speaker_id": "A",
+      "text_en": "The greenhouse is too small this year. We'll use the old reading room beside the town library, which has accessible tables.",
+      "translation_vi": "Nhà kính năm nay quá nhỏ. Chúng tôi dùng phòng đọc cũ cạnh thư viện thị trấn, có bàn dễ tiếp cận.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "community_events",
+        "seeds",
+        "equipment",
+        "registration",
+        "contributions"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T12",
+      "speaker_id": "B",
+      "text_en": "I know that room. Is there a minimum number of packets I should bring? I have some basil and parsley seeds.",
+      "translation_vi": "Tôi biết phòng ấy. Cần mang tối thiểu bao nhiêu gói? Tôi có húng quế và mùi tây.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "community_events",
+        "seeds",
+        "equipment",
+        "registration",
+        "contributions"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T13",
+      "speaker_id": "A",
+      "text_en": "Each contributor should bring at least five packets. They don't all have to be different varieties, provided every packet has a clear label.",
+      "translation_vi": "Mỗi người đóng góp mang ít nhất năm gói, không cần tất cả khác loại nếu đều ghi nhãn rõ.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "community_events",
+        "seeds",
+        "equipment",
+        "registration",
+        "contributions"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T14",
+      "speaker_id": "B",
+      "text_en": "Five is easy. I kept the seeds from last year's harvest; do you allow home-collected seed or only commercial packets?",
+      "translation_vi": "Năm gói thì dễ. Hạt tôi để dành từ mùa trước; chấp nhận hạt tự thu hay chỉ gói mua?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "community_events",
+        "seeds",
+        "equipment",
+        "registration",
+        "contributions"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T15",
+      "speaker_id": "A",
+      "text_en": "Home-collected seed is welcome, but please write the harvest year on every packet. People need to judge how fresh the seed is.",
+      "translation_vi": "Chấp nhận hạt tự thu, nhưng hãy ghi năm thu hoạch lên từng gói để mọi người biết độ mới.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "community_events",
+        "seeds",
+        "equipment",
+        "registration",
+        "contributions"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T16",
+      "speaker_id": "B",
+      "text_en": "I'll add the year. Do I pay an entrance fee if I'm contributing, or is there just a charge for visitors?",
+      "translation_vi": "Tôi sẽ thêm năm. Tôi đóng góp thì có trả phí vào không hay chỉ khách tham quan trả?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "community_events",
+        "seeds",
+        "equipment",
+        "registration",
+        "contributions"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T17",
+      "speaker_id": "A",
+      "text_en": "Contributors attend free. Visitors pay two pounds, and that money covers the room hire and printed growing guides.",
+      "translation_vi": "Người đóng góp vào miễn phí. Khách tham quan trả hai bảng để thuê phòng và in hướng dẫn trồng.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "community_events",
+        "seeds",
+        "equipment",
+        "registration",
+        "contributions"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T18",
+      "speaker_id": "B",
+      "text_en": "That's generous. My neighbour may come to help me arrange the table, though she hasn't grown anything this season.",
+      "translation_vi": "Tốt quá. Hàng xóm có thể giúp tôi xếp bàn dù mùa này cô ấy chưa trồng gì.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "community_events",
+        "seeds",
+        "equipment",
+        "registration",
+        "contributions"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T19",
+      "speaker_id": "A",
+      "text_en": "She can visit, but only registered contributors may run a table. It keeps the exchange fair when the room gets crowded.",
+      "translation_vi": "Cô ấy có thể tham quan, nhưng chỉ người đăng ký đóng góp được đứng bàn, để công bằng khi đông.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "community_events",
+        "seeds",
+        "equipment",
+        "registration",
+        "contributions"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T20",
+      "speaker_id": "B",
+      "text_en": "I understand. Will there be envelopes to take new seeds home? I don't want different varieties getting mixed in my bag.",
+      "translation_vi": "Tôi hiểu. Có phong bì để mang hạt mới về không? Tôi không muốn lẫn loại trong túi.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "community_events",
+        "seeds",
+        "equipment",
+        "registration",
+        "contributions"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T21",
+      "speaker_id": "A",
+      "text_en": "We supply small paper envelopes, but not plastic bags. We also have pencils for noting the variety and the planting month.",
+      "translation_vi": "Chúng tôi cung cấp phong bì giấy nhỏ, không có túi nhựa. Có bút chì ghi giống và tháng trồng.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "community_events",
+        "seeds",
+        "equipment",
+        "registration",
+        "contributions"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T22",
+      "speaker_id": "B",
+      "text_en": "Good. My own packets will be labelled at home, so I'll only need envelopes for the varieties I collect.",
+      "translation_vi": "Tốt. Gói của tôi sẽ ghi nhãn ở nhà, tôi chỉ cần phong bì cho loại đổi được.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "community_events",
+        "seeds",
+        "equipment",
+        "registration",
+        "contributions"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T23",
+      "speaker_id": "A",
+      "text_en": "Please register online by Wednesday evening. After that we can't guarantee a table, though you may still attend as a visitor.",
+      "translation_vi": "Hãy đăng ký trực tuyến trước tối thứ Tư. Sau đó không bảo đảm bàn nhưng vẫn có thể tham quan.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "community_events",
+        "seeds",
+        "equipment",
+        "registration",
+        "contributions"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T24",
+      "speaker_id": "B",
+      "text_en": "I'll register tonight, label five packets and arrive at the old reading room shortly after eleven.",
+      "translation_vi": "Tôi sẽ đăng ký tối nay, ghi nhãn năm gói và đến phòng đọc cũ sau mười một giờ.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "community_events",
+        "seeds",
+        "equipment",
+        "registration",
+        "contributions"
+      ],
+      "bank_role": "protected_assessment"
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "group_id": "PART1_FORM_1_TO_6",
+      "type": "form_completion",
+      "prompt": "Name of the exchange: ____",
+      "correct_answers": [
+        "Seed Circle"
+      ],
+      "spoken_answer": "Seed Circle",
+      "word_limit": 3,
+      "instructions_en": "NO MORE THAN THREE WORDS AND/OR A NUMBER",
+      "scoring_policy": "controlled_variants",
+      "explanation_vi": "Buổi trao đổi tên Seed Circle.",
+      "answer_source": "explicit_recording",
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "evidence_excerpt_en": "called Seed Circle",
+      "question_tags": [
+        "M25",
+        "part1",
+        "completion",
+        "community_events",
+        "seeds",
+        "equipment",
+        "registration",
+        "contributions"
+      ]
+    },
+    {
+      "question_id": "Q02",
+      "group_id": "PART1_FORM_1_TO_6",
+      "type": "form_completion",
+      "prompt": "Month of the event: ____",
+      "correct_answers": [
+        "April"
+      ],
+      "spoken_answer": "April",
+      "word_limit": 3,
+      "instructions_en": "NO MORE THAN THREE WORDS AND/OR A NUMBER",
+      "scoring_policy": "controlled_variants",
+      "explanation_vi": "Sự kiện diễn ra tháng Tư.",
+      "answer_source": "explicit_recording",
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "evidence_excerpt_en": "Sunday of April",
+      "question_tags": [
+        "M25",
+        "part1",
+        "completion",
+        "community_events",
+        "seeds",
+        "equipment",
+        "registration",
+        "contributions"
+      ]
+    },
+    {
+      "question_id": "Q03",
+      "group_id": "PART1_FORM_1_TO_6",
+      "type": "form_completion",
+      "prompt": "Early access time: ____",
+      "correct_answers": [
+        "eleven fifteen",
+        "11:15"
+      ],
+      "spoken_answer": "eleven fifteen",
+      "word_limit": 3,
+      "instructions_en": "NO MORE THAN THREE WORDS AND/OR A NUMBER",
+      "scoring_policy": "controlled_variants",
+      "explanation_vi": "Người đóng góp vào lúc 11:15.",
+      "answer_source": "explicit_recording",
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "evidence_excerpt_en": "at eleven fifteen",
+      "question_tags": [
+        "M25",
+        "part1",
+        "completion",
+        "community_events",
+        "seeds",
+        "equipment",
+        "registration",
+        "contributions"
+      ]
+    },
+    {
+      "question_id": "Q04",
+      "group_id": "PART1_FORM_1_TO_6",
+      "type": "note_completion",
+      "prompt": "Location: old ____ room",
+      "correct_answers": [
+        "reading"
+      ],
+      "spoken_answer": "reading",
+      "word_limit": 3,
+      "instructions_en": "NO MORE THAN THREE WORDS AND/OR A NUMBER",
+      "scoring_policy": "controlled_variants",
+      "explanation_vi": "Địa điểm là phòng đọc cũ.",
+      "answer_source": "explicit_recording",
+      "evidence_turn_ids": [
+        "T11"
+      ],
+      "evidence_excerpt_en": "old reading room",
+      "question_tags": [
+        "M25",
+        "part1",
+        "completion",
+        "community_events",
+        "seeds",
+        "equipment",
+        "registration",
+        "contributions"
+      ]
+    },
+    {
+      "question_id": "Q05",
+      "group_id": "PART1_FORM_1_TO_6",
+      "type": "form_completion",
+      "prompt": "Minimum packets to bring: ____",
+      "correct_answers": [
+        "five",
+        "5"
+      ],
+      "spoken_answer": "five",
+      "word_limit": 3,
+      "instructions_en": "NO MORE THAN THREE WORDS AND/OR A NUMBER",
+      "scoring_policy": "controlled_variants",
+      "explanation_vi": "Mang ít nhất năm gói.",
+      "answer_source": "explicit_recording",
+      "evidence_turn_ids": [
+        "T13"
+      ],
+      "evidence_excerpt_en": "at least five packets",
+      "question_tags": [
+        "M25",
+        "part1",
+        "completion",
+        "community_events",
+        "seeds",
+        "equipment",
+        "registration",
+        "contributions"
+      ]
+    },
+    {
+      "question_id": "Q06",
+      "group_id": "PART1_FORM_1_TO_6",
+      "type": "form_completion",
+      "prompt": "Information to include on packets: harvest ____",
+      "correct_answers": [
+        "year"
+      ],
+      "spoken_answer": "year",
+      "word_limit": 3,
+      "instructions_en": "NO MORE THAN THREE WORDS AND/OR A NUMBER",
+      "scoring_policy": "controlled_variants",
+      "explanation_vi": "Phải ghi năm thu hoạch.",
+      "answer_source": "explicit_recording",
+      "evidence_turn_ids": [
+        "T15"
+      ],
+      "evidence_excerpt_en": "harvest year",
+      "question_tags": [
+        "M25",
+        "part1",
+        "completion",
+        "community_events",
+        "seeds",
+        "equipment",
+        "registration",
+        "contributions"
+      ]
+    },
+    {
+      "question_id": "Q07",
+      "group_id": "PART1_MCQ_7_TO_10",
+      "type": "mcq",
+      "prompt": "How much does a registered contributor pay?",
+      "correct_answers": [
+        "Nothing"
+      ],
+      "options": [
+        {
+          "key": "A",
+          "text": "Nothing"
+        },
+        {
+          "key": "B",
+          "text": "Two pounds"
+        },
+        {
+          "key": "C",
+          "text": "A room-hire deposit"
+        }
+      ],
+      "correct_option": "A",
+      "scoring_policy": "one_correct_option",
+      "explanation_vi": "Người đóng góp được vào miễn phí.",
+      "answer_source": "explicit_or_contextual_recording",
+      "evidence_turn_ids": [
+        "T17"
+      ],
+      "evidence_excerpt_en": "Contributors attend free",
+      "question_tags": [
+        "M25",
+        "part1",
+        "mcq",
+        "community_events",
+        "seeds",
+        "equipment",
+        "registration",
+        "contributions"
+      ]
+    },
+    {
+      "question_id": "Q08",
+      "group_id": "PART1_MCQ_7_TO_10",
+      "type": "mcq",
+      "prompt": "Who is allowed to operate a table?",
+      "correct_answers": [
+        "Registered contributors only"
+      ],
+      "options": [
+        {
+          "key": "A",
+          "text": "Anyone who buys a visitor ticket"
+        },
+        {
+          "key": "B",
+          "text": "Registered contributors only"
+        },
+        {
+          "key": "C",
+          "text": "Everyone accompanied by a neighbour"
+        }
+      ],
+      "correct_option": "B",
+      "scoring_policy": "one_correct_option",
+      "explanation_vi": "Chỉ người đăng ký đóng góp được đứng bàn.",
+      "answer_source": "explicit_or_contextual_recording",
+      "evidence_turn_ids": [
+        "T19"
+      ],
+      "evidence_excerpt_en": "only registered contributors may run a table",
+      "question_tags": [
+        "M25",
+        "part1",
+        "mcq",
+        "community_events",
+        "seeds",
+        "equipment",
+        "registration",
+        "contributions"
+      ]
+    },
+    {
+      "question_id": "Q09",
+      "group_id": "PART1_MCQ_7_TO_10",
+      "type": "mcq",
+      "prompt": "What type of containers will organisers provide?",
+      "correct_answers": [
+        "Paper envelopes"
+      ],
+      "options": [
+        {
+          "key": "A",
+          "text": "Plastic bags"
+        },
+        {
+          "key": "B",
+          "text": "Glass jars"
+        },
+        {
+          "key": "C",
+          "text": "Paper envelopes"
+        }
+      ],
+      "correct_option": "C",
+      "scoring_policy": "one_correct_option",
+      "explanation_vi": "Có phong bì giấy, không cung cấp túi nhựa.",
+      "answer_source": "explicit_or_contextual_recording",
+      "evidence_turn_ids": [
+        "T21"
+      ],
+      "evidence_excerpt_en": "small paper envelopes",
+      "question_tags": [
+        "M25",
+        "part1",
+        "mcq",
+        "community_events",
+        "seeds",
+        "equipment",
+        "registration",
+        "contributions"
+      ]
+    },
+    {
+      "question_id": "Q10",
+      "group_id": "PART1_MCQ_7_TO_10",
+      "type": "mcq",
+      "prompt": "What is the deadline for guaranteed table space?",
+      "correct_answers": [
+        "Wednesday evening"
+      ],
+      "options": [
+        {
+          "key": "A",
+          "text": "Wednesday evening"
+        },
+        {
+          "key": "B",
+          "text": "Noon on Sunday"
+        },
+        {
+          "key": "C",
+          "text": "Friday morning"
+        }
+      ],
+      "correct_option": "A",
+      "scoring_policy": "one_correct_option",
+      "explanation_vi": "Đăng ký trước tối thứ Tư để được bảo đảm bàn.",
+      "answer_source": "explicit_or_contextual_recording",
+      "evidence_turn_ids": [
+        "T23"
+      ],
+      "evidence_excerpt_en": "by Wednesday evening",
+      "question_tags": [
+        "M25",
+        "part1",
+        "mcq",
+        "community_events",
+        "seeds",
+        "equipment",
+        "registration",
+        "contributions"
+      ]
+    }
+  ],
+  "question_groups": [
+    {
+      "group_id": "PART1_FORM_1_TO_6",
+      "question_ids": [
+        "Q01",
+        "Q02",
+        "Q03",
+        "Q04",
+        "Q05",
+        "Q06"
+      ],
+      "instructions_en": "Complete the form. Write NO MORE THAN THREE WORDS AND/OR A NUMBER for each answer.",
+      "pre_read_seconds": 30,
+      "break_after_turn_id": "T15",
+      "requires_one_listen": true
+    },
+    {
+      "group_id": "PART1_MCQ_7_TO_10",
+      "question_ids": [
+        "Q07",
+        "Q08",
+        "Q09",
+        "Q10"
+      ],
+      "instructions_en": "Choose the correct letter A, B or C.",
+      "pre_read_seconds": 25,
+      "requires_one_listen": true
+    }
+  ],
+  "audio": {
+    "status": "not_generated",
+    "audio_url": null,
+    "audio_asset_id": null,
+    "duration_ms": null,
+    "source_text_sha256": "f0b59b85b8f0a05f881c2a0b66665d36de79a91306b6842920770519a4536c9d",
+    "generation_strategy": "single_continuous_two_person_dialogue",
+    "aligned_turns": false
+  },
+  "exam_mode": {
+    "bank_role": "protected_assessment",
+    "use_as_training_before_first_attempt": false,
+    "listening_attempts_allowed_for_scored_first_attempt": 1,
+    "replay_before_submit": false,
+    "speed_control_before_submit": false,
+    "transcript_visible_before_submit": false,
+    "answer_key_visible_before_submit": false,
+    "post_attempt_review_allowed": true,
+    "question_count": 10,
+    "points_per_correct_answer": 1,
+    "question_order_monotonic": true,
+    "estimated_speech_minutes_at_135_wpm": 3.64,
+    "exam_band_score_enabled": false,
+    "repeated_attempt_marked_as_seen": true
+  },
+  "qa": {
+    "automatic_data_validation": "pending",
+    "content_human_review": "pending",
+    "audio_human_review": "pending",
+    "exam_simulation_rubric_score": null,
+    "rubric_90_verified": false,
+    "published": false,
+    "release_eligible": false
+  },
+  "provenance": {
+    "source_type": "original_authored_english_dialogue",
+    "milestone": "M25",
+    "no_official_ielts_question_copied": true,
+    "training_exposure_guard": true
+  },
+  "release_metadata": {
+    "target_bank": "protected_assessment",
+    "import_policy": "insert_only",
+    "version": "m25.0.1",
+    "preserve_existing_ids": true,
+    "allow_client_answer_payload": false
+  }
+}

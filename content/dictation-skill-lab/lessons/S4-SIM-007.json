@@ -1,0 +1,613 @@
+{
+  "schema_version": "1.2.0",
+  "lesson_id": "S4-SIM-007",
+  "status": "draft",
+  "level": "L7",
+  "section": 4,
+  "topic": "Industrial ecology",
+  "title": "The Journey of a Reusable Container",
+  "content_format": "section_exam_simulation",
+  "exam_part": "IELTS_LISTENING_PART_4_STYLE",
+  "official_ielts_material": false,
+  "learning_objectives_vi": [
+    "Theo dõi bài giảng học thuật có lập luận và ví dụ.",
+    "Hoàn thành ghi chú, tóm tắt hoặc bảng bằng đúng từ được nghe.",
+    "Nhận diện signposting và mối quan hệ giữa các ý."
+  ],
+  "target_skills": [
+    "academic_lecture",
+    "signposting",
+    "note_taking",
+    "technical_vocabulary",
+    "information_tracking"
+  ],
+  "speakers": [
+    {
+      "speaker_id": "LECTURER",
+      "role": "Academic lecturer",
+      "accent_requested": "new_zealand",
+      "tts_voice_id": null
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "LECTURER",
+      "text_en": "Reusable packaging sounds environmentally beneficial, but the result depends on how far a container travels, how often it returns and what happens when it is damaged. Today's lecture considers a hypothetical food-delivery network, using the example to show why an attractive design does not automatically guarantee a smaller environmental impact.",
+      "meaning_vi": "Bài giảng đánh giá tác động của hộp đựng tái sử dụng theo cả vòng đời.",
+      "translation_vi": null,
+      "translation_status": "pending_exact_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "academic_lecture",
+        "signposting",
+        "note_taking"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "opening"
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "LECTURER",
+      "text_en": "The thought experiment begins with two customers ordering the same meal. One receives a disposable box; the other receives a sturdy container intended to return to the restaurant. At the door, the reusable option looks more substantial, but that observation says little about its eventual effect. The important comparison includes how the container circulates over time.",
+      "meaning_vi": "Mở rộng bối cảnh, giới thiệu vấn đề nghiên cứu.",
+      "translation_vi": null,
+      "translation_status": "pending_exact_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "academic_lecture",
+        "signposting",
+        "note_taking"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "opening"
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "LECTURER",
+      "text_en": "The first decision is the system boundary, which specifies which activities the analysis will include. A study might cover manufacturing, cleaning, delivery and final disposal, or it might overlook one of them. Researchers also need a functional unit: for example, delivering one meal safely rather than comparing the mass of two empty boxes. Without a common unit, a heavy reusable container may appear worse even though it performs many deliveries. Clear boundaries make comparisons more transparent.",
+      "meaning_vi": "Ranh giới hệ thống và đơn vị chức năng quyết định cách so sánh bao bì.",
+      "translation_vi": null,
+      "translation_status": "pending_exact_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "academic_lecture",
+        "signposting",
+        "note_taking"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "core_exposition"
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "LECTURER",
+      "text_en": "Manufacturing a rigid container may require more material than making a disposable one, so the initial production impact can be higher. The benefit appears only if the box achieves enough reuse cycles to spread that cost across many meals. In a classroom calculation, we might imagine a container used once, ten times and fifty times. The precise break-even point is not universal: it changes with the manufacturing process and the environmental effect being measured.",
+      "meaning_vi": "Tác động sản xuất ban đầu có thể bù lại qua nhiều vòng sử dụng.",
+      "translation_vi": null,
+      "translation_status": "pending_exact_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "academic_lecture",
+        "signposting",
+        "note_taking"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "core_exposition"
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "LECTURER",
+      "text_en": "A return system can fail if customers must make an extra car trip solely to bring the box back. Designers therefore examine return logistics, including collection routes and the proportion of containers that come home. Another key measure is the loss rate, the share of boxes that disappear from circulation. A low figure means fewer replacements; a high one can overwhelm any advantage from repeated use. Return journeys need to be included in the calculation instead of treated as invisible.",
+      "meaning_vi": "Tuyến thu hồi và tỷ lệ thất lạc ảnh hưởng mạnh tới hiệu quả tái sử dụng.",
+      "translation_vi": null,
+      "translation_status": "pending_exact_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "academic_lecture",
+        "signposting",
+        "note_taking"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "core_exposition"
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "LECTURER",
+      "text_en": "Cleaning also matters. A central facility may use a controlled wash cycle that reduces variation in water temperature and detergent, while poor drying can increase the risk of microbial growth. Hygiene requirements should not be sacrificed to improve an environmental score. A better design reduces unnecessary water use while preserving a validated cleaning process. Researchers must record the actual procedure, not merely the label 'washable', to assess energy and water consumption realistically.",
+      "meaning_vi": "Rửa và làm khô phải bảo đảm vệ sinh, đồng thời đo nước và năng lượng dùng.",
+      "translation_vi": null,
+      "translation_status": "pending_exact_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "academic_lecture",
+        "signposting",
+        "note_taking"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "core_exposition"
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "LECTURER",
+      "text_en": "Finally, an unusable container may go through material recovery if the local system can collect and process it. However, labels promising recycling do not prove that recycling occurs. Teams should run a sensitivity analysis, changing uncertain assumptions to see whether the result reverses. If the calculation depends entirely on an implausibly high return rate, the claim is weak. If the advantage persists across several realistic cases, confidence in the recommendation is stronger.",
+      "meaning_vi": "Tái chế thực tế và phân tích độ nhạy giúp kiểm định tuyên bố môi trường.",
+      "translation_vi": null,
+      "translation_status": "pending_exact_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "academic_lecture",
+        "signposting",
+        "note_taking"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "core_exposition"
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "LECTURER",
+      "text_en": "A proposed programme may look excellent in a spreadsheet but perform poorly once customers use it. Containers are forgotten, some are damaged and a collection route may be less efficient than expected. Researchers should collect operating data after launch and revise earlier assumptions. That feedback can change the preferred design as much as a new manufacturing material would.",
+      "meaning_vi": "Nêu giới hạn, ví dụ ứng dụng và ý nghĩa thực tế.",
+      "translation_vi": null,
+      "translation_status": "pending_exact_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "academic_lecture",
+        "signposting",
+        "note_taking"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "closing"
+    },
+    {
+      "turn_id": "T09",
+      "speaker_id": "LECTURER",
+      "text_en": "The lesson is not that reuse is always better or always worse. It is that the answer rests on a working system, and a good study tests that system rather than the packaging alone.",
+      "meaning_vi": "Tổng kết và lưu ý cách diễn giải bằng chứng.",
+      "translation_vi": null,
+      "translation_status": "pending_exact_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "academic_lecture",
+        "signposting",
+        "note_taking"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "closing"
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "group_id": "PART4_FLOW_CHART_COMPLETION_01_05",
+      "type": "flow_chart_completion",
+      "prompt": "An analysis must first define its ____.",
+      "correct_answers": [
+        "system boundary"
+      ],
+      "scoring_policy": "strict_spoken_words",
+      "word_limit": 2,
+      "instructions_en": "Complete the flow chart below. Write NO MORE THAN TWO WORDS for each answer.",
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "evidence_excerpt_en": "The first decision is the system boundary, which specifies which activities the analysis will include.",
+      "evidence_span": {
+        "turn_id": "T03",
+        "start_char": 26,
+        "end_char": 41
+      },
+      "explanation_vi": "Đáp án “system boundary” được nói trực tiếp trong phần bài giảng này. Ranh giới hệ thống và đơn vị chức năng quyết định cách so sánh bao bì.",
+      "answer_source": "exact_words_spoken",
+      "question_tags": [
+        "M28",
+        "part4",
+        "flow_chart_completion",
+        "academic_note_taking"
+      ],
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true,
+      "answer_review_status": "draft_teacher_verification_required"
+    },
+    {
+      "question_id": "Q02",
+      "group_id": "PART4_FLOW_CHART_COMPLETION_01_05",
+      "type": "flow_chart_completion",
+      "prompt": "Products are compared using a common ____.",
+      "correct_answers": [
+        "functional unit"
+      ],
+      "scoring_policy": "strict_spoken_words",
+      "word_limit": 2,
+      "instructions_en": "Complete the flow chart below. Write NO MORE THAN TWO WORDS for each answer.",
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "evidence_excerpt_en": "Researchers also need a functional unit: for example, delivering one meal safely rather than comparing the mass of two empty boxes.",
+      "evidence_span": {
+        "turn_id": "T03",
+        "start_char": 235,
+        "end_char": 250
+      },
+      "explanation_vi": "Đáp án “functional unit” được nói trực tiếp trong phần bài giảng này. Ranh giới hệ thống và đơn vị chức năng quyết định cách so sánh bao bì.",
+      "answer_source": "exact_words_spoken",
+      "question_tags": [
+        "M28",
+        "part4",
+        "flow_chart_completion",
+        "academic_note_taking"
+      ],
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true,
+      "answer_review_status": "draft_teacher_verification_required"
+    },
+    {
+      "question_id": "Q03",
+      "group_id": "PART4_FLOW_CHART_COMPLETION_01_05",
+      "type": "flow_chart_completion",
+      "prompt": "A durable box may have a higher initial ____.",
+      "correct_answers": [
+        "production impact"
+      ],
+      "scoring_policy": "strict_spoken_words",
+      "word_limit": 2,
+      "instructions_en": "Complete the flow chart below. Write NO MORE THAN TWO WORDS for each answer.",
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "evidence_excerpt_en": "Manufacturing a rigid container may require more material than making a disposable one, so the initial production impact can be higher.",
+      "evidence_span": {
+        "turn_id": "T04",
+        "start_char": 103,
+        "end_char": 120
+      },
+      "explanation_vi": "Đáp án “production impact” được nói trực tiếp trong phần bài giảng này. Tác động sản xuất ban đầu có thể bù lại qua nhiều vòng sử dụng.",
+      "answer_source": "exact_words_spoken",
+      "question_tags": [
+        "M28",
+        "part4",
+        "flow_chart_completion",
+        "academic_note_taking"
+      ],
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true,
+      "answer_review_status": "draft_teacher_verification_required"
+    },
+    {
+      "question_id": "Q04",
+      "group_id": "PART4_FLOW_CHART_COMPLETION_01_05",
+      "type": "flow_chart_completion",
+      "prompt": "Its advantage depends on completing enough ____.",
+      "correct_answers": [
+        "reuse cycles"
+      ],
+      "scoring_policy": "strict_spoken_words",
+      "word_limit": 2,
+      "instructions_en": "Complete the flow chart below. Write NO MORE THAN TWO WORDS for each answer.",
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "evidence_excerpt_en": "The benefit appears only if the box achieves enough reuse cycles to spread that cost across many meals.",
+      "evidence_span": {
+        "turn_id": "T04",
+        "start_char": 188,
+        "end_char": 200
+      },
+      "explanation_vi": "Đáp án “reuse cycles” được nói trực tiếp trong phần bài giảng này. Tác động sản xuất ban đầu có thể bù lại qua nhiều vòng sử dụng.",
+      "answer_source": "exact_words_spoken",
+      "question_tags": [
+        "M28",
+        "part4",
+        "flow_chart_completion",
+        "academic_note_taking"
+      ],
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true,
+      "answer_review_status": "draft_teacher_verification_required"
+    },
+    {
+      "question_id": "Q05",
+      "group_id": "PART4_FLOW_CHART_COMPLETION_01_05",
+      "type": "flow_chart_completion",
+      "prompt": "Collection and transport back to the supplier are ____.",
+      "correct_answers": [
+        "return logistics"
+      ],
+      "scoring_policy": "strict_spoken_words",
+      "word_limit": 2,
+      "instructions_en": "Complete the flow chart below. Write NO MORE THAN TWO WORDS for each answer.",
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "evidence_excerpt_en": "Designers therefore examine return logistics, including collection routes and the proportion of containers that come home.",
+      "evidence_span": {
+        "turn_id": "T05",
+        "start_char": 124,
+        "end_char": 140
+      },
+      "explanation_vi": "Đáp án “return logistics” được nói trực tiếp trong phần bài giảng này. Tuyến thu hồi và tỷ lệ thất lạc ảnh hưởng mạnh tới hiệu quả tái sử dụng.",
+      "answer_source": "exact_words_spoken",
+      "question_tags": [
+        "M28",
+        "part4",
+        "flow_chart_completion",
+        "academic_note_taking"
+      ],
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true,
+      "answer_review_status": "draft_teacher_verification_required"
+    },
+    {
+      "question_id": "Q06",
+      "group_id": "PART4_NOTE_COMPLETION_06_10",
+      "type": "note_completion",
+      "prompt": "Missing containers affect the system's ____.",
+      "correct_answers": [
+        "loss rate"
+      ],
+      "scoring_policy": "strict_spoken_words",
+      "word_limit": 2,
+      "instructions_en": "Complete the notes below. Write NO MORE THAN TWO WORDS for each answer.",
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "evidence_excerpt_en": "Another key measure is the loss rate, the share of boxes that disappear from circulation.",
+      "evidence_span": {
+        "turn_id": "T05",
+        "start_char": 246,
+        "end_char": 255
+      },
+      "explanation_vi": "Đáp án “loss rate” được nói trực tiếp trong phần bài giảng này. Tuyến thu hồi và tỷ lệ thất lạc ảnh hưởng mạnh tới hiệu quả tái sử dụng.",
+      "answer_source": "exact_words_spoken",
+      "question_tags": [
+        "M28",
+        "part4",
+        "note_completion",
+        "academic_note_taking"
+      ],
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true,
+      "answer_review_status": "draft_teacher_verification_required"
+    },
+    {
+      "question_id": "Q07",
+      "group_id": "PART4_NOTE_COMPLETION_06_10",
+      "type": "note_completion",
+      "prompt": "Central cleaning procedures are organised into a ____.",
+      "correct_answers": [
+        "wash cycle"
+      ],
+      "scoring_policy": "strict_spoken_words",
+      "word_limit": 2,
+      "instructions_en": "Complete the notes below. Write NO MORE THAN TWO WORDS for each answer.",
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "evidence_excerpt_en": "A central facility may use a controlled wash cycle that reduces variation in water temperature and detergent, while poor drying can increase the risk of microbial growth.",
+      "evidence_span": {
+        "turn_id": "T06",
+        "start_char": 63,
+        "end_char": 73
+      },
+      "explanation_vi": "Đáp án “wash cycle” được nói trực tiếp trong phần bài giảng này. Rửa và làm khô phải bảo đảm vệ sinh, đồng thời đo nước và năng lượng dùng.",
+      "answer_source": "exact_words_spoken",
+      "question_tags": [
+        "M28",
+        "part4",
+        "note_completion",
+        "academic_note_taking"
+      ],
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true,
+      "answer_review_status": "draft_teacher_verification_required"
+    },
+    {
+      "question_id": "Q08",
+      "group_id": "PART4_NOTE_COMPLETION_06_10",
+      "type": "note_completion",
+      "prompt": "Insufficient drying can encourage ____.",
+      "correct_answers": [
+        "microbial growth"
+      ],
+      "scoring_policy": "strict_spoken_words",
+      "word_limit": 2,
+      "instructions_en": "Complete the notes below. Write NO MORE THAN TWO WORDS for each answer.",
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "evidence_excerpt_en": "A central facility may use a controlled wash cycle that reduces variation in water temperature and detergent, while poor drying can increase the risk of microbial growth.",
+      "evidence_span": {
+        "turn_id": "T06",
+        "start_char": 176,
+        "end_char": 192
+      },
+      "explanation_vi": "Đáp án “microbial growth” được nói trực tiếp trong phần bài giảng này. Rửa và làm khô phải bảo đảm vệ sinh, đồng thời đo nước và năng lượng dùng.",
+      "answer_source": "exact_words_spoken",
+      "question_tags": [
+        "M28",
+        "part4",
+        "note_completion",
+        "academic_note_taking"
+      ],
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true,
+      "answer_review_status": "draft_teacher_verification_required"
+    },
+    {
+      "question_id": "Q09",
+      "group_id": "PART4_NOTE_COMPLETION_06_10",
+      "type": "note_completion",
+      "prompt": "End-of-life processing may involve ____.",
+      "correct_answers": [
+        "material recovery"
+      ],
+      "scoring_policy": "strict_spoken_words",
+      "word_limit": 2,
+      "instructions_en": "Complete the notes below. Write NO MORE THAN TWO WORDS for each answer.",
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "evidence_excerpt_en": "Finally, an unusable container may go through material recovery if the local system can collect and process it.",
+      "evidence_span": {
+        "turn_id": "T07",
+        "start_char": 46,
+        "end_char": 63
+      },
+      "explanation_vi": "Đáp án “material recovery” được nói trực tiếp trong phần bài giảng này. Tái chế thực tế và phân tích độ nhạy giúp kiểm định tuyên bố môi trường.",
+      "answer_source": "exact_words_spoken",
+      "question_tags": [
+        "M28",
+        "part4",
+        "note_completion",
+        "academic_note_taking"
+      ],
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true,
+      "answer_review_status": "draft_teacher_verification_required"
+    },
+    {
+      "question_id": "Q10",
+      "group_id": "PART4_NOTE_COMPLETION_06_10",
+      "type": "note_completion",
+      "prompt": "Uncertain assumptions should be tested through ____.",
+      "correct_answers": [
+        "sensitivity analysis"
+      ],
+      "scoring_policy": "strict_spoken_words",
+      "word_limit": 2,
+      "instructions_en": "Complete the notes below. Write NO MORE THAN TWO WORDS for each answer.",
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "evidence_excerpt_en": "Teams should run a sensitivity analysis, changing uncertain assumptions to see whether the result reverses.",
+      "evidence_span": {
+        "turn_id": "T07",
+        "start_char": 203,
+        "end_char": 223
+      },
+      "explanation_vi": "Đáp án “sensitivity analysis” được nói trực tiếp trong phần bài giảng này. Tái chế thực tế và phân tích độ nhạy giúp kiểm định tuyên bố môi trường.",
+      "answer_source": "exact_words_spoken",
+      "question_tags": [
+        "M28",
+        "part4",
+        "note_completion",
+        "academic_note_taking"
+      ],
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true,
+      "answer_review_status": "draft_teacher_verification_required"
+    }
+  ],
+  "question_groups": [
+    {
+      "group_id": "PART4_FLOW_CHART_COMPLETION_01_05",
+      "title_en": "The Journey of a Reusable Container — Flow chart",
+      "question_ids": [
+        "Q01",
+        "Q02",
+        "Q03",
+        "Q04",
+        "Q05"
+      ],
+      "question_type": "flow_chart_completion",
+      "instructions_en": "Complete the flow chart below. Write NO MORE THAN TWO WORDS for each answer.",
+      "word_limit": 2,
+      "requires_one_listen": true,
+      "question_display_start": "before_audio",
+      "pause_between_groups_seconds": 0,
+      "layout_metadata": {
+        "presentation": "grouped_blanks",
+        "flow_order": "top_to_bottom",
+        "table_columns": null
+      }
+    },
+    {
+      "group_id": "PART4_NOTE_COMPLETION_06_10",
+      "title_en": "The Journey of a Reusable Container — Notes",
+      "question_ids": [
+        "Q06",
+        "Q07",
+        "Q08",
+        "Q09",
+        "Q10"
+      ],
+      "question_type": "note_completion",
+      "instructions_en": "Complete the notes below. Write NO MORE THAN TWO WORDS for each answer.",
+      "word_limit": 2,
+      "requires_one_listen": true,
+      "question_display_start": "before_audio",
+      "pause_between_groups_seconds": 0,
+      "layout_metadata": {
+        "presentation": "grouped_blanks",
+        "flow_order": null,
+        "table_columns": null
+      }
+    }
+  ],
+  "pedagogy_vi": {
+    "topic_summary_vi": "Bài giảng đánh giá tác động của hộp đựng tái sử dụng theo cả vòng đời.",
+    "question_explanations_status": "draft_review_required",
+    "turn_meanings_are_not_full_translations": true,
+    "full_line_translation_required_before_release": true
+  },
+  "audio": {
+    "status": "not_generated",
+    "audio_url": null,
+    "audio_asset_id": null,
+    "duration_ms": null,
+    "source_text_sha256": "cdc42886351eec70829cef058c3370e6167c6e8f776d67e8a1fc7e3b8a4dac4d",
+    "generation_strategy": "single_speaker_continuous_full_lecture",
+    "aligned_turns": false,
+    "voice_consistency_verified": false,
+    "human_listening_review": false
+  },
+  "exam_mode": {
+    "bank_role": "protected_assessment",
+    "use_as_training_before_first_attempt": false,
+    "listening_attempts_allowed_for_scored_first_attempt": 1,
+    "replay_before_submit": false,
+    "speed_control_before_submit": false,
+    "transcript_visible_before_submit": false,
+    "answer_key_visible_before_submit": false,
+    "post_attempt_review_allowed": true,
+    "question_count": 10,
+    "points_per_correct_answer": 1,
+    "question_order_monotonic": true,
+    "estimated_speech_minutes_at_140_wpm": 4.09,
+    "exam_band_score_enabled": false,
+    "repeated_attempt_marked_as_seen": true,
+    "all_questions_visible_before_audio": true
+  },
+  "qa": {
+    "automatic_data_validation": "pending",
+    "content_human_review": "pending",
+    "translation_human_review": "pending",
+    "audio_human_review": "pending",
+    "exam_simulation_rubric_score": null,
+    "rubric_90_verified": false,
+    "published": false,
+    "release_eligible": false
+  },
+  "provenance": {
+    "source_type": "original_authoring_english_academic_lecture",
+    "milestone": "M28",
+    "no_official_ielts_question_copied": true,
+    "training_exposure_guard": true,
+    "fictional_illustrations_only_when_specified": true
+  },
+  "release_metadata": {
+    "target_bank": "protected_assessment",
+    "import_policy": "insert_only",
+    "version": "m28.0.1",
+    "preserve_existing_ids": true,
+    "allow_client_answer_payload": false
+  }
+}

@@ -1,0 +1,413 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "DICT-S3-011",
+  "status": "draft",
+  "level": "L4",
+  "section": 3,
+  "topic": "Data Collection",
+  "title": "Data Collection: Planning & Roles",
+  "learning_objectives_vi": [
+    "Theo dõi ý kiến và lập luận của nhiều người trong một thảo luận học thuật.",
+    "Xác định thông tin cuối cùng sau khi người nói đề xuất, phản biện hoặc sửa ý.",
+    "Chép chính xác những đoạn trọng tâm và đối chiếu bằng chứng trong transcript."
+  ],
+  "content_format": "section_practice",
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Olivia – university student / tutor discussion participant",
+      "tts_voice_id": null,
+      "accent_requested": "british"
+    },
+    {
+      "speaker_id": "B",
+      "role": "Finn – university student / tutor discussion participant",
+      "tts_voice_id": null,
+      "accent_requested": "british"
+    },
+    {
+      "speaker_id": "C",
+      "role": "Maya – university student / tutor discussion participant",
+      "tts_voice_id": null,
+      "accent_requested": "british"
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "The library study asked us to record temperature and noise levels, but we only have two portable sensors.",
+      "translation_vi": "Nghiên cứu ở thư viện yêu cầu ghi nhiệt độ và mức ồn, nhưng chúng ta chỉ có hai cảm biến di động.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "l4",
+        "planning"
+      ]
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "B",
+      "text_en": "We could move them between floors every hour, though that may miss short periods of noise.",
+      "translation_vi": "Ta có thể chuyển chúng giữa các tầng mỗi giờ, dù có thể bỏ lỡ những khoảng ồn ngắn.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "l4",
+        "planning"
+      ]
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "C",
+      "text_en": "The technician recommended keeping one sensor in a fixed position as a reference point.",
+      "translation_vi": "Kỹ thuật viên khuyên giữ một cảm biến ở vị trí cố định để làm mốc tham chiếu.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "l4",
+        "planning"
+      ]
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "A",
+      "text_en": "Then the second sensor can move. Which floor has the most visitors during the afternoon?",
+      "translation_vi": "Vậy cảm biến thứ hai có thể di chuyển. Tầng nào đông khách nhất vào buổi chiều?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "l4",
+        "planning"
+      ]
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "B",
+      "text_en": "The ground floor is usually busiest, but the group rooms upstairs get noisy before exams.",
+      "translation_vi": "Tầng trệt thường đông nhất, nhưng các phòng học nhóm tầng trên ồn trước kỳ thi.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "l4",
+        "planning"
+      ]
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "C",
+      "text_en": "Let's collect visitor counts as well, so we can explain why the sound readings change.",
+      "translation_vi": "Hãy ghi cả số lượng khách để giải thích vì sao chỉ số âm thanh thay đổi.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "l4",
+        "planning"
+      ]
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "We need permission before installing anything near the entrance, even if the sensors are small.",
+      "translation_vi": "Ta cần xin phép trước khi đặt thứ gì gần lối vào, dù cảm biến nhỏ.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "l4",
+        "planning"
+      ]
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "B",
+      "text_en": "I'll contact the librarian. Can you check whether both devices record data at the same interval?",
+      "translation_vi": "Mình sẽ liên hệ thủ thư. Bạn kiểm tra hai thiết bị có ghi dữ liệu cùng khoảng thời gian không?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "l4",
+        "planning"
+      ]
+    },
+    {
+      "turn_id": "T09",
+      "speaker_id": "C",
+      "text_en": "Yes. I'll test them for fifteen minutes tomorrow before we start the real collection.",
+      "translation_vi": "Được. Mai mình sẽ thử chúng mười lăm phút trước khi thu thập thật.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "l4",
+        "planning"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "type": "note_completion",
+      "prompt": "The students have only ____ portable sensors.",
+      "correct_answers": [
+        "two"
+      ],
+      "evidence_turn_ids": [
+        "T01"
+      ],
+      "explanation_vi": "Bằng chứng ở T01 (Olivia): “Nghiên cứu ở thư viện yêu cầu ghi nhiệt độ và mức ồn, nhưng chúng ta chỉ có hai cảm biến di động.” Đáp án: “two”. Từ/cụm từ nằm trong lời nói; không chọn thông tin đã bị sửa hoặc người khác chỉ đề xuất.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_3",
+        "ielts_practice",
+        "detail_recognition"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q02",
+      "type": "mcq",
+      "prompt": "Why should one sensor remain in a fixed place?",
+      "correct_answers": [
+        "To provide a reference point"
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Bằng chứng ở T03 (Maya): “Kỹ thuật viên khuyên giữ một cảm biến ở vị trí cố định để làm mốc tham chiếu.” Đáp án: “To provide a reference point”. Đây là ý cuối cùng hoặc lập luận cần xác định; các lựa chọn khác không được đoạn này xác nhận.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "section_3",
+        "ielts_practice",
+        "opinion_inference"
+      ],
+      "options": [
+        "To protect its battery",
+        "To count the visitors",
+        "To provide a reference point"
+      ]
+    },
+    {
+      "question_id": "Q03",
+      "type": "note_completion",
+      "prompt": "The group-work rooms become noisy before ____.",
+      "correct_answers": [
+        "exams"
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Bằng chứng ở T05 (Finn): “Tầng trệt thường đông nhất, nhưng các phòng học nhóm tầng trên ồn trước kỳ thi.” Đáp án: “exams”. Từ/cụm từ nằm trong lời nói; không chọn thông tin đã bị sửa hoặc người khác chỉ đề xuất.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_3",
+        "ielts_practice",
+        "detail_recognition"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q04",
+      "type": "short_answer",
+      "prompt": "What additional information will the group collect?",
+      "correct_answers": [
+        "visitor counts"
+      ],
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "explanation_vi": "Bằng chứng ở T06 (Maya): “Hãy ghi cả số lượng khách để giải thích vì sao chỉ số âm thanh thay đổi.” Đáp án: “visitor counts”. Từ/cụm từ nằm trong lời nói; không chọn thông tin đã bị sửa hoặc người khác chỉ đề xuất.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_3",
+        "ielts_practice",
+        "detail_recognition"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q05",
+      "type": "matching",
+      "prompt": "Who will contact the librarian?",
+      "correct_answers": [
+        "Speaker B"
+      ],
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "explanation_vi": "Bằng chứng ở T08 (Finn): “Mình sẽ liên hệ thủ thư. Bạn kiểm tra hai thiết bị có ghi dữ liệu cùng khoảng thời gian không?” Đáp án: “Speaker B”. Đối chiếu đúng thông tin được người nói nêu, chú ý các ý kiến hoặc phương án trước đó.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "section_3",
+        "ielts_practice",
+        "speaker_attribution"
+      ],
+      "options": [
+        "Speaker A",
+        "Speaker C",
+        "Speaker B"
+      ]
+    },
+    {
+      "question_id": "Q06",
+      "type": "note_completion",
+      "prompt": "Maya will test the sensors for ____ minutes.",
+      "correct_answers": [
+        "fifteen"
+      ],
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "explanation_vi": "Bằng chứng ở T09 (Maya): “Được. Mai mình sẽ thử chúng mười lăm phút trước khi thu thập thật.” Đáp án: “fifteen”. Từ/cụm từ nằm trong lời nói; không chọn thông tin đã bị sửa hoặc người khác chỉ đề xuất.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_3",
+        "ielts_practice",
+        "detail_recognition"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "D01",
+      "type": "dictation",
+      "prompt": "Nghe đoạn T03 và chép nguyên văn tiếng Anh (Speaker C).",
+      "correct_answers": [
+        "The technician recommended keeping one sensor in a fixed position as a reference point."
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Câu gốc: “The technician recommended keeping one sensor in a fixed position as a reference point.”\nNghĩa: Kỹ thuật viên khuyên giữ một cảm biến ở vị trí cố định để làm mốc tham chiếu.\nChú ý từ chức năng, âm yếu, cụm từ nối và ý người nói.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_3",
+        "dictation",
+        "exact_transcript"
+      ]
+    },
+    {
+      "question_id": "D02",
+      "type": "dictation",
+      "prompt": "Nghe đoạn T06 và chép nguyên văn tiếng Anh (Speaker C).",
+      "correct_answers": [
+        "Let's collect visitor counts as well, so we can explain why the sound readings change."
+      ],
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "explanation_vi": "Câu gốc: “Let's collect visitor counts as well, so we can explain why the sound readings change.”\nNghĩa: Hãy ghi cả số lượng khách để giải thích vì sao chỉ số âm thanh thay đổi.\nChú ý từ chức năng, âm yếu, cụm từ nối và ý người nói.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_3",
+        "dictation",
+        "exact_transcript"
+      ]
+    },
+    {
+      "question_id": "G01",
+      "type": "gap_fill",
+      "prompt": "Nghe T01, điền từ/cụm từ bị thiếu: The library study asked us to record temperature and noise levels, but we only have two ____.",
+      "correct_answers": [
+        "portable sensors"
+      ],
+      "evidence_turn_ids": [
+        "T01"
+      ],
+      "explanation_vi": "Cụm cần nghe: “portable sensors” (cảm biến di động). Lời gốc: “The library study asked us to record temperature and noise levels, but we only have two portable sensors.”.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_3",
+        "gap_fill",
+        "vocabulary_in_context"
+      ]
+    }
+  ],
+  "vocabulary": [
+    {
+      "term": "portable sensors",
+      "pos": "n. phr.",
+      "meaning_vi": "cảm biến di động",
+      "example_en": "The library study asked us to record temperature and noise levels, but we only have two portable sensors.",
+      "example_vi": "Nghiên cứu ở thư viện yêu cầu ghi nhiệt độ và mức ồn, nhưng chúng ta chỉ có hai cảm biến di động.",
+      "source_turn_id": "T01"
+    },
+    {
+      "term": "reference point",
+      "pos": "n. phr.",
+      "meaning_vi": "điểm tham chiếu",
+      "example_en": "The technician recommended keeping one sensor in a fixed position as a reference point.",
+      "example_vi": "Kỹ thuật viên khuyên giữ một cảm biến ở vị trí cố định để làm mốc tham chiếu.",
+      "source_turn_id": "T03"
+    },
+    {
+      "term": "visitor counts",
+      "pos": "n. phr.",
+      "meaning_vi": "số lượng khách",
+      "example_en": "Let's collect visitor counts as well, so we can explain why the sound readings change.",
+      "example_vi": "Hãy ghi cả số lượng khách để giải thích vì sao chỉ số âm thanh thay đổi.",
+      "source_turn_id": "T06"
+    },
+    {
+      "term": "interval",
+      "pos": "n.",
+      "meaning_vi": "khoảng thời gian",
+      "example_en": "I'll contact the librarian. Can you check whether both devices record data at the same interval?",
+      "example_vi": "Mình sẽ liên hệ thủ thư. Bạn kiểm tra hai thiết bị có ghi dữ liệu cùng khoảng thời gian không?",
+      "source_turn_id": "T08"
+    }
+  ],
+  "audio": {
+    "status": "not_generated",
+    "url": null,
+    "duration_ms": null,
+    "model": null,
+    "provider": null,
+    "voice_config": null,
+    "source_transcript_hash": "d315992daf7bc6628c4173829ee717af7c9f8397b933db50dcf094cbe6f5540b",
+    "audio_sha256": null,
+    "format": null
+  },
+  "qa": {
+    "content_reviewed": false,
+    "answers_verified": false,
+    "audio_verified": false,
+    "rights_cleared": false,
+    "duplicate_reviewed": false,
+    "notes": [
+      "Original synthetic dialogues: human educational review required.",
+      "Audio, timestamps, voice suitability and service/distribution rights not yet verified.",
+      "Training lessons, NOT official IELTS Part 3 tests or calibrated band tests.",
+      "M16.2: automated edits are provisional; IELTS teacher final signoff, audio and rights clearance pending."
+    ]
+  },
+  "provenance": {
+    "content_origin": "original_ai_assisted",
+    "source_urls": [],
+    "source_rights_note": "Original text; verify TTS provider terms and distribution rights before publishing to a youth-accessible website.",
+    "reviewer": null
+  },
+  "release_metadata": {
+    "published_at": null,
+    "version": 1
+  }
+}

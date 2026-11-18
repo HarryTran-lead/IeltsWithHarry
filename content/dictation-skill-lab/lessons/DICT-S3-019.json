@@ -1,0 +1,458 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "DICT-S3-019",
+  "status": "draft",
+  "level": "L5",
+  "section": 3,
+  "topic": "Student Presentations",
+  "title": "Student Presentations: Evaluating the Options",
+  "learning_objectives_vi": [
+    "Theo dõi ý kiến và lập luận của nhiều người trong một thảo luận học thuật.",
+    "Xác định thông tin cuối cùng sau khi người nói đề xuất, phản biện hoặc sửa ý.",
+    "Chép chính xác những đoạn trọng tâm và đối chiếu bằng chứng trong transcript."
+  ],
+  "content_format": "section_practice",
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Anna – university student / tutor discussion participant",
+      "tts_voice_id": null,
+      "accent_requested": "american"
+    },
+    {
+      "speaker_id": "B",
+      "role": "Ben – university student / tutor discussion participant",
+      "tts_voice_id": null,
+      "accent_requested": "american"
+    },
+    {
+      "speaker_id": "C",
+      "role": "Chloe – university student / tutor discussion participant",
+      "tts_voice_id": null,
+      "accent_requested": "american"
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "For our seminar presentation on student wellbeing, I planned to open with a dramatic statistic about stress, then move straight to recommendations.",
+      "translation_vi": "Với bài thuyết trình về sức khỏe tinh thần sinh viên, mình định mở bằng thống kê gây chú ý về căng thẳng rồi chuyển thẳng sang đề xuất.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "l5",
+        "opinion_comparison"
+      ]
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "B",
+      "text_en": "I'd be careful. The survey behind that statistic only involved thirty volunteers from one department, so it may not represent the whole university.",
+      "translation_vi": "Mình sẽ thận trọng. Khảo sát cho số đó chỉ có ba mươi tình nguyện viên của một khoa nên không đại diện toàn trường.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "l5",
+        "opinion_comparison"
+      ]
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "C",
+      "text_en": "We could still use it as an example if we describe the limitation clearly. The presentation should show how evidence is evaluated.",
+      "translation_vi": "Ta vẫn có thể dùng làm ví dụ nếu nêu rõ giới hạn. Bài trình bày nên cho thấy cách đánh giá chứng cứ.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "l5",
+        "opinion_comparison"
+      ]
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "A",
+      "text_en": "Perhaps start with a question about study pressure instead, then introduce the survey with its sample size stated on the slide.",
+      "translation_vi": "Có lẽ hãy mở bằng câu hỏi về áp lực học, rồi giới thiệu khảo sát và ghi cỡ mẫu trên slide.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "l5",
+        "opinion_comparison"
+      ]
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "B",
+      "text_en": "That would be more balanced. I also think we need to separate support services from the causes of stress, rather than mixing them.",
+      "translation_vi": "Như vậy cân bằng hơn. Mình cũng nghĩ cần tách dịch vụ hỗ trợ khỏi nguyên nhân căng thẳng thay vì trộn chúng.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "l5",
+        "opinion_comparison"
+      ]
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "C",
+      "text_en": "Agreed. I can explain the survey method, while Ben discusses the findings. Anna could then evaluate which recommendations follow from the data.",
+      "translation_vi": "Đồng ý. Mình giải thích phương pháp khảo sát, Ben trình bày kết quả, rồi Anna đánh giá đề xuất nào dựa trên dữ liệu.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "l5",
+        "opinion_comparison"
+      ]
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "I was going to take the findings section, but I'll switch if that makes the transitions smoother. How long does each speaker get?",
+      "translation_vi": "Mình định trình bày kết quả, nhưng có thể đổi nếu các phần chuyển tiếp mượt hơn. Mỗi người nói bao lâu?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "l5",
+        "opinion_comparison"
+      ]
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "B",
+      "text_en": "We have twelve minutes altogether. Three minutes each would leave time for a short conclusion and one audience question.",
+      "translation_vi": "Ta có tổng mười hai phút. Mỗi người ba phút sẽ còn thời gian kết luận ngắn và một câu hỏi từ khán giả.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "l5",
+        "opinion_comparison"
+      ]
+    },
+    {
+      "turn_id": "T09",
+      "speaker_id": "C",
+      "text_en": "The tutor specifically wants a discussion of limitations, so I need at least one extra minute for that part.",
+      "translation_vi": "Gia sư yêu cầu thảo luận hạn chế nghiên cứu nên mình cần thêm ít nhất một phút cho phần đó.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "l5",
+        "opinion_comparison"
+      ]
+    },
+    {
+      "turn_id": "T10",
+      "speaker_id": "A",
+      "text_en": "Then let's allocate four minutes to methods and limitations, three to findings, three to implications and two to the introduction and conclusion.",
+      "translation_vi": "Vậy dành bốn phút cho phương pháp và hạn chế, ba phút cho kết quả, ba phút cho hệ quả, hai phút cho mở và kết.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "l5",
+        "opinion_comparison"
+      ]
+    },
+    {
+      "turn_id": "T11",
+      "speaker_id": "B",
+      "text_en": "That adds up to twelve. I'll redesign the graph so its scale is clear and we aren't exaggerating small differences.",
+      "translation_vi": "Tổng đúng mười hai. Mình sẽ thiết kế lại biểu đồ để thang đo rõ, không phóng đại khác biệt nhỏ.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "l5",
+        "opinion_comparison"
+      ]
+    },
+    {
+      "turn_id": "T12",
+      "speaker_id": "C",
+      "text_en": "We'll rehearse on Monday and ask a classmate to note any claims that sound stronger than the evidence supports.",
+      "translation_vi": "Thứ Hai ta tập và nhờ bạn học ghi lại các khẳng định mạnh hơn mức chứng cứ hỗ trợ.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "l5",
+        "opinion_comparison"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "type": "mcq",
+      "prompt": "Why is the opening statistic potentially misleading?",
+      "correct_answers": [
+        "Its sample was small and limited to one department"
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Bằng chứng ở T02 (Ben): “Mình sẽ thận trọng. Khảo sát cho số đó chỉ có ba mươi tình nguyện viên của một khoa nên không đại diện toàn trường.” Đáp án: “Its sample was small and limited to one department”. Đây là ý cuối cùng hoặc lập luận cần xác định; các lựa chọn khác không được đoạn này xác nhận.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "section_3",
+        "ielts_practice",
+        "opinion_inference"
+      ],
+      "options": [
+        "It was collected yesterday",
+        "Its sample was small and limited to one department",
+        "It came from a national census"
+      ]
+    },
+    {
+      "question_id": "Q02",
+      "type": "note_completion",
+      "prompt": "The revised opening will begin with a question about study ____.",
+      "correct_answers": [
+        "pressure"
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Bằng chứng ở T04 (Anna): “Có lẽ hãy mở bằng câu hỏi về áp lực học, rồi giới thiệu khảo sát và ghi cỡ mẫu trên slide.” Đáp án: “pressure”. Từ/cụm từ nằm trong lời nói; không chọn thông tin đã bị sửa hoặc người khác chỉ đề xuất.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_3",
+        "ielts_practice",
+        "detail_recognition"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q03",
+      "type": "matching",
+      "prompt": "Who will explain the survey method?",
+      "correct_answers": [
+        "Speaker C"
+      ],
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "explanation_vi": "Bằng chứng ở T06 (Chloe): “Đồng ý. Mình giải thích phương pháp khảo sát, Ben trình bày kết quả, rồi Anna đánh giá đề xuất nào dựa trên dữ liệu.” Đáp án: “Speaker C”. Đối chiếu đúng thông tin được người nói nêu, chú ý các ý kiến hoặc phương án trước đó.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "section_3",
+        "ielts_practice",
+        "speaker_attribution"
+      ],
+      "options": [
+        "Speaker A",
+        "Speaker B",
+        "Speaker C"
+      ]
+    },
+    {
+      "question_id": "Q04",
+      "type": "note_completion",
+      "prompt": "The presentation lasts ____ minutes in total.",
+      "correct_answers": [
+        "twelve"
+      ],
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "explanation_vi": "Bằng chứng ở T08 (Ben): “Ta có tổng mười hai phút. Mỗi người ba phút sẽ còn thời gian kết luận ngắn và một câu hỏi từ khán giả.” Đáp án: “twelve”. Từ/cụm từ nằm trong lời nói; không chọn thông tin đã bị sửa hoặc người khác chỉ đề xuất.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_3",
+        "ielts_practice",
+        "detail_recognition"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q05",
+      "type": "mcq",
+      "prompt": "How much time is allocated to methods and limitations?",
+      "correct_answers": [
+        "four minutes"
+      ],
+      "evidence_turn_ids": [
+        "T10"
+      ],
+      "explanation_vi": "Bằng chứng ở T10 (Anna): “Vậy dành bốn phút cho phương pháp và hạn chế, ba phút cho kết quả, ba phút cho hệ quả, hai phút cho mở và kết.” Đáp án: “four minutes”. Đây là ý cuối cùng hoặc lập luận cần xác định; các lựa chọn khác không được đoạn này xác nhận.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "section_3",
+        "ielts_practice",
+        "opinion_inference"
+      ],
+      "options": [
+        "four minutes",
+        "two minutes",
+        "three minutes"
+      ]
+    },
+    {
+      "question_id": "Q06",
+      "type": "short_answer",
+      "prompt": "When will the group rehearse?",
+      "correct_answers": [
+        "Monday"
+      ],
+      "evidence_turn_ids": [
+        "T12"
+      ],
+      "explanation_vi": "Bằng chứng ở T12 (Chloe): “Thứ Hai ta tập và nhờ bạn học ghi lại các khẳng định mạnh hơn mức chứng cứ hỗ trợ.” Đáp án: “Monday”. Từ/cụm từ nằm trong lời nói; không chọn thông tin đã bị sửa hoặc người khác chỉ đề xuất.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_3",
+        "ielts_practice",
+        "detail_recognition"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "D01",
+      "type": "dictation",
+      "prompt": "Nghe đoạn T04 và chép nguyên văn tiếng Anh (Speaker A).",
+      "correct_answers": [
+        "Perhaps start with a question about study pressure instead, then introduce the survey with its sample size stated on the slide."
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Câu gốc: “Perhaps start with a question about study pressure instead, then introduce the survey with its sample size stated on the slide.”\nNghĩa: Có lẽ hãy mở bằng câu hỏi về áp lực học, rồi giới thiệu khảo sát và ghi cỡ mẫu trên slide.\nChú ý từ chức năng, âm yếu, cụm từ nối và ý người nói.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_3",
+        "dictation",
+        "exact_transcript"
+      ]
+    },
+    {
+      "question_id": "D02",
+      "type": "dictation",
+      "prompt": "Nghe đoạn T08 và chép nguyên văn tiếng Anh (Speaker B).",
+      "correct_answers": [
+        "We have twelve minutes altogether. Three minutes each would leave time for a short conclusion and one audience question."
+      ],
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "explanation_vi": "Câu gốc: “We have twelve minutes altogether. Three minutes each would leave time for a short conclusion and one audience question.”\nNghĩa: Ta có tổng mười hai phút. Mỗi người ba phút sẽ còn thời gian kết luận ngắn và một câu hỏi từ khán giả.\nChú ý từ chức năng, âm yếu, cụm từ nối và ý người nói.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_3",
+        "dictation",
+        "exact_transcript"
+      ]
+    },
+    {
+      "question_id": "G01",
+      "type": "gap_fill",
+      "prompt": "Nghe T01, điền từ/cụm từ bị thiếu: For our seminar presentation on student ____, I planned to open with a dramatic statistic about stress, then move straight to recommendations.",
+      "correct_answers": [
+        "wellbeing"
+      ],
+      "evidence_turn_ids": [
+        "T01"
+      ],
+      "explanation_vi": "Cụm cần nghe: “wellbeing” (sức khỏe tinh thần). Lời gốc: “For our seminar presentation on student wellbeing, I planned to open with a dramatic statistic about stress, then move straight to recommendations.”.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_3",
+        "gap_fill",
+        "vocabulary_in_context"
+      ]
+    }
+  ],
+  "vocabulary": [
+    {
+      "term": "wellbeing",
+      "pos": "n.",
+      "meaning_vi": "sức khỏe tinh thần",
+      "example_en": "For our seminar presentation on student wellbeing, I planned to open with a dramatic statistic about stress, then move straight to recommendations.",
+      "example_vi": "Với bài thuyết trình về sức khỏe tinh thần sinh viên, mình định mở bằng thống kê gây chú ý về căng thẳng rồi chuyển thẳng sang đề xuất.",
+      "source_turn_id": "T01"
+    },
+    {
+      "term": "sample size",
+      "pos": "n. phr.",
+      "meaning_vi": "cỡ mẫu",
+      "example_en": "Perhaps start with a question about study pressure instead, then introduce the survey with its sample size stated on the slide.",
+      "example_vi": "Có lẽ hãy mở bằng câu hỏi về áp lực học, rồi giới thiệu khảo sát và ghi cỡ mẫu trên slide.",
+      "source_turn_id": "T04"
+    },
+    {
+      "term": "limitations",
+      "pos": "n.",
+      "meaning_vi": "giới hạn",
+      "example_en": "The tutor specifically wants a discussion of limitations, so I need at least one extra minute for that part.",
+      "example_vi": "Gia sư yêu cầu thảo luận hạn chế nghiên cứu nên mình cần thêm ít nhất một phút cho phần đó.",
+      "source_turn_id": "T09"
+    },
+    {
+      "term": "implications",
+      "pos": "n.",
+      "meaning_vi": "hệ quả",
+      "example_en": "Then let's allocate four minutes to methods and limitations, three to findings, three to implications and two to the introduction and conclusion.",
+      "example_vi": "Vậy dành bốn phút cho phương pháp và hạn chế, ba phút cho kết quả, ba phút cho hệ quả, hai phút cho mở và kết.",
+      "source_turn_id": "T10"
+    }
+  ],
+  "audio": {
+    "status": "not_generated",
+    "url": null,
+    "duration_ms": null,
+    "model": null,
+    "provider": null,
+    "voice_config": null,
+    "source_transcript_hash": "fb27e5b9ca28676fbd474d60535ca7ea27170a5c9605bbd710825a0d74ebbf7d",
+    "audio_sha256": null,
+    "format": null
+  },
+  "qa": {
+    "content_reviewed": false,
+    "answers_verified": false,
+    "audio_verified": false,
+    "rights_cleared": false,
+    "duplicate_reviewed": false,
+    "notes": [
+      "Original synthetic dialogues: human educational review required.",
+      "Audio, timestamps, voice suitability and service/distribution rights not yet verified.",
+      "Training lessons, NOT official IELTS Part 3 tests or calibrated band tests.",
+      "M16.2: automated edits are provisional; IELTS teacher final signoff, audio and rights clearance pending."
+    ]
+  },
+  "provenance": {
+    "content_origin": "original_ai_assisted",
+    "source_urls": [],
+    "source_rights_note": "Original text; verify TTS provider terms and distribution rights before publishing to a youth-accessible website.",
+    "reviewer": null
+  },
+  "release_metadata": {
+    "published_at": null,
+    "version": 1
+  }
+}

@@ -1,0 +1,3128 @@
+{
+  "A1-01": {
+    "lesson_id": "A1-01",
+    "overview_vi": "Đại từ chủ ngữ cho biết ai hoặc cái gì thực hiện hành động. Muốn chọn đúng, hãy nhìn vai trò của người/vật trong câu chứ không chỉ học thuộc bản dịch.",
+    "decision_steps_vi": [
+      "Tìm người hoặc vật được nói tới",
+      "Xác định một người, một vật hay một nhóm",
+      "Chọn đại từ làm chủ ngữ và chia động từ phù hợp"
+    ],
+    "patterns": [
+      {
+        "pattern": "I / you / he / she / it + verb",
+        "use_vi": "Tôi, bạn, anh ấy, cô ấy, nó ở vị trí chủ ngữ.",
+        "example_en": "She reads every evening.",
+        "example_vi": "Cô ấy đọc sách mỗi tối."
+      },
+      {
+        "pattern": "we / they + verb",
+        "use_vi": "Dùng we khi có người nói trong nhóm; they khi nói về nhóm khác.",
+        "example_en": "We are classmates.",
+        "example_vi": "Chúng tôi là bạn cùng lớp."
+      }
+    ],
+    "worked_examples": [
+      {
+        "situation_vi": "Thay Anna bằng đại từ chủ ngữ.",
+        "answer_en": "She is my friend.",
+        "translation_vi": "Cô ấy là bạn tôi.",
+        "reason_vi": "Anna là một người nữ được xác định trong ngữ cảnh và đứng trước is, nên dùng she."
+      },
+      {
+        "situation_vi": "Thay my parents bằng đại từ chủ ngữ.",
+        "answer_en": "They work at a hospital.",
+        "translation_vi": "Họ làm việc ở bệnh viện.",
+        "reason_vi": "My parents là hai người không bao gồm người nói; dùng they."
+      }
+    ],
+    "contrasts": [
+      {
+        "first_en": "She knows him.",
+        "second_en": "Her knows he.",
+        "difference_vi": "She là chủ ngữ, him là tân ngữ; không đổi hai vị trí cho nhau."
+      }
+    ],
+    "common_mistakes": [
+      {
+        "wrong": "Me is tired.",
+        "correct": "I am tired.",
+        "why_vi": "I làm chủ ngữ; me thường làm tân ngữ."
+      },
+      {
+        "wrong": "They is here.",
+        "correct": "They are here.",
+        "why_vi": "They dùng với are dù chỉ một người theo cách dùng singular they."
+      }
+    ],
+    "supplemental_practice": [
+      {
+        "stage": "guided",
+        "prompt_en": "Maria is my sister. ___ is kind.",
+        "answer": "She",
+        "explanation_vi": "Maria là chủ ngữ số ít được xác định là nữ.",
+        "translation_vi": "Maria là chị/em gái tôi. Cô ấy tốt bụng.",
+        "draft_id": "M08-A1-01-GUIDED-01"
+      },
+      {
+        "stage": "independent",
+        "prompt_en": "My brother and I are ready. ___ are ready.",
+        "answer": "We",
+        "explanation_vi": "Nhóm có người nói nên dùng we.",
+        "translation_vi": "Anh trai tôi và tôi đã sẵn sàng.",
+        "draft_id": "M08-A1-01-INDEPENDENT-02"
+      },
+      {
+        "stage": "mastery",
+        "prompt_en": "Replace 'the bicycle' in: The bicycle is blue.",
+        "answer": "It is blue.",
+        "explanation_vi": "The bicycle là một vật số ít làm chủ ngữ.",
+        "translation_vi": "Chiếc xe đạp màu xanh.",
+        "draft_id": "M08-A1-01-MASTERY-03"
+      },
+      {
+        "stage": "spaced_review",
+        "prompt_en": "Replace 'the children' in: The children are outside.",
+        "answer": "They are outside.",
+        "explanation_vi": "Children là danh từ số nhiều làm chủ ngữ.",
+        "translation_vi": "Những đứa trẻ ở bên ngoài.",
+        "draft_id": "M08-A1-01-SPACED_REVIEW-04"
+      }
+    ],
+    "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED",
+    "question_import_policy": "SEPARATE_BANK_NO_OVERWRITE",
+    "title": "Subject Pronouns",
+    "source_question_count": 51,
+    "source_stages": {
+      "guided": 15,
+      "independent": 20,
+      "mastery": 10,
+      "spaced_review": 6
+    }
+  },
+  "A1-02": {
+    "lesson_id": "A1-02",
+    "overview_vi": "Động từ be miêu tả tên, nghề nghiệp, tình trạng hoặc vị trí. Ở hiện tại, be thay đổi theo chủ ngữ: am, is, are.",
+    "decision_steps_vi": [
+      "Gạch chân chủ ngữ",
+      "Xác định I, số ít hay số nhiều",
+      "Chọn am, is hoặc are trước phần mô tả"
+    ],
+    "patterns": [
+      {
+        "pattern": "I + am",
+        "use_vi": "Chỉ I đi với am.",
+        "example_en": "I am a student.",
+        "example_vi": "Tôi là học sinh."
+      },
+      {
+        "pattern": "He / she / it + is",
+        "use_vi": "Chủ ngữ số ít ngôi thứ ba dùng is.",
+        "example_en": "The room is quiet.",
+        "example_vi": "Căn phòng yên tĩnh."
+      },
+      {
+        "pattern": "You / we / they + are",
+        "use_vi": "You đi với are ở cả nghĩa số ít và số nhiều.",
+        "example_en": "You are early.",
+        "example_vi": "Bạn đến sớm."
+      }
+    ],
+    "worked_examples": [
+      {
+        "situation_vi": "Điền be: My dad ___ a driver.",
+        "answer_en": "My dad is a driver.",
+        "translation_vi": "Bố tôi là tài xế.",
+        "reason_vi": "My dad là một người, tương đương he, nên dùng is."
+      },
+      {
+        "situation_vi": "Điền be: We ___ at home.",
+        "answer_en": "We are at home.",
+        "translation_vi": "Chúng tôi đang ở nhà.",
+        "reason_vi": "We là chủ ngữ số nhiều, dùng are."
+      }
+    ],
+    "contrasts": [
+      {
+        "first_en": "She is a teacher.",
+        "second_en": "She teacher.",
+        "difference_vi": "Trong câu miêu tả nghề nghiệp, tiếng Anh cần động từ be."
+      }
+    ],
+    "common_mistakes": [
+      {
+        "wrong": "I is hungry.",
+        "correct": "I am hungry.",
+        "why_vi": "I chỉ đi với am ở hiện tại."
+      },
+      {
+        "wrong": "The books is new.",
+        "correct": "The books are new.",
+        "why_vi": "Books là danh từ số nhiều, dùng are."
+      }
+    ],
+    "supplemental_practice": [
+      {
+        "stage": "guided",
+        "prompt_en": "I ___ from Viet Nam.",
+        "answer": "am",
+        "explanation_vi": "I đi với am.",
+        "translation_vi": "Tôi đến từ Việt Nam.",
+        "draft_id": "M08-A1-02-GUIDED-01"
+      },
+      {
+        "stage": "independent",
+        "prompt_en": "Our classroom ___ bright.",
+        "answer": "is",
+        "explanation_vi": "Classroom là danh từ số ít.",
+        "translation_vi": "Lớp học của chúng tôi sáng sủa.",
+        "draft_id": "M08-A1-02-INDEPENDENT-02"
+      },
+      {
+        "stage": "mastery",
+        "prompt_en": "Complete: My friends ___ at the library.",
+        "answer": "are",
+        "explanation_vi": "Friends là số nhiều.",
+        "translation_vi": "Bạn tôi ở thư viện.",
+        "draft_id": "M08-A1-02-MASTERY-03"
+      },
+      {
+        "stage": "spaced_review",
+        "prompt_en": "Correct: You is very helpful.",
+        "answer": "You are very helpful.",
+        "explanation_vi": "You luôn đi với are ở hiện tại.",
+        "translation_vi": "Bạn rất hay giúp đỡ.",
+        "draft_id": "M08-A1-02-SPACED_REVIEW-04"
+      }
+    ],
+    "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED",
+    "question_import_policy": "SEPARATE_BANK_NO_OVERWRITE",
+    "title": "To be – Affirmative",
+    "source_question_count": 51,
+    "source_stages": {
+      "guided": 15,
+      "independent": 20,
+      "mastery": 10,
+      "spaced_review": 6
+    }
+  },
+  "A1-03": {
+    "lesson_id": "A1-03",
+    "overview_vi": "Câu phủ định với be thêm not sau am/is/are. Câu hỏi Yes/No đưa be lên trước chủ ngữ, không thêm do/does.",
+    "decision_steps_vi": [
+      "Tìm am/is/are trong câu khẳng định",
+      "Muốn phủ định hãy thêm not",
+      "Muốn hỏi hãy đảo be lên trước chủ ngữ"
+    ],
+    "patterns": [
+      {
+        "pattern": "Subject + be + not",
+        "use_vi": "Phủ định tình trạng, tên hay vị trí.",
+        "example_en": "They are not late.",
+        "example_vi": "Họ không đến muộn."
+      },
+      {
+        "pattern": "Be + subject + ...?",
+        "use_vi": "Hỏi có/không với be.",
+        "example_en": "Is your sister at school?",
+        "example_vi": "Chị/em gái bạn có ở trường không?"
+      },
+      {
+        "pattern": "Yes, subject + be / No, subject + be not",
+        "use_vi": "Trả lời ngắn giữ đúng be theo chủ ngữ.",
+        "example_en": "No, she isn't.",
+        "example_vi": "Không, cô ấy không ở đó."
+      }
+    ],
+    "worked_examples": [
+      {
+        "situation_vi": "Chuyển She is tired thành câu hỏi.",
+        "answer_en": "Is she tired?",
+        "translation_vi": "Cô ấy có mệt không?",
+        "reason_vi": "Đảo is ra trước she, không dùng Does."
+      },
+      {
+        "situation_vi": "Chuyển We are busy thành phủ định.",
+        "answer_en": "We aren't busy.",
+        "translation_vi": "Chúng tôi không bận.",
+        "reason_vi": "Are not có thể rút gọn thành aren't."
+      }
+    ],
+    "contrasts": [
+      {
+        "first_en": "Are you ready?",
+        "second_en": "Do you are ready?",
+        "difference_vi": "Câu có be thì không dùng thêm do để hỏi."
+      }
+    ],
+    "common_mistakes": [
+      {
+        "wrong": "He not is here.",
+        "correct": "He is not here.",
+        "why_vi": "Not phải đứng sau is."
+      },
+      {
+        "wrong": "Does she be a nurse?",
+        "correct": "Is she a nurse?",
+        "why_vi": "Đảo is khi be là động từ chính."
+      }
+    ],
+    "supplemental_practice": [
+      {
+        "stage": "guided",
+        "prompt_en": "Make negative: It is cold.",
+        "answer": "It is not cold.",
+        "explanation_vi": "Thêm not sau is.",
+        "translation_vi": "Trời không lạnh.",
+        "draft_id": "M08-A1-03-GUIDED-01"
+      },
+      {
+        "stage": "independent",
+        "prompt_en": "Make a question: They are classmates.",
+        "answer": "Are they classmates?",
+        "explanation_vi": "Đưa are lên trước they.",
+        "translation_vi": "Họ có phải bạn cùng lớp không?",
+        "draft_id": "M08-A1-03-INDEPENDENT-02"
+      },
+      {
+        "stage": "mastery",
+        "prompt_en": "Short answer: Is Anna at home? (no)",
+        "answer": "No, she isn't.",
+        "explanation_vi": "Chủ ngữ Anna là she và phủ định is.",
+        "translation_vi": "Không, cô ấy không ở nhà.",
+        "draft_id": "M08-A1-03-MASTERY-03"
+      },
+      {
+        "stage": "spaced_review",
+        "prompt_en": "Correct: Are he your teacher?",
+        "answer": "Is he your teacher?",
+        "explanation_vi": "He đi với is.",
+        "translation_vi": "Anh ấy có phải giáo viên của bạn không?",
+        "draft_id": "M08-A1-03-SPACED_REVIEW-04"
+      }
+    ],
+    "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED",
+    "question_import_policy": "SEPARATE_BANK_NO_OVERWRITE",
+    "title": "To be – Negative & Questions",
+    "source_question_count": 51,
+    "source_stages": {
+      "guided": 15,
+      "independent": 20,
+      "mastery": 10,
+      "spaced_review": 6
+    }
+  },
+  "A1-04": {
+    "lesson_id": "A1-04",
+    "overview_vi": "Đại từ tân ngữ thay cho người hoặc vật nhận hành động. Không nhầm vị trí chủ ngữ (I/he/she) và tân ngữ (me/him/her).",
+    "decision_steps_vi": [
+      "Xác định ai thực hiện hành động",
+      "Tìm người/vật nhận hành động hoặc đứng sau giới từ",
+      "Chọn me, you, him, her, it, us, them"
+    ],
+    "patterns": [
+      {
+        "pattern": "verb + object pronoun",
+        "use_vi": "Tân ngữ theo sau động từ cần người/vật nhận hành động.",
+        "example_en": "I see her every day.",
+        "example_vi": "Tôi gặp cô ấy mỗi ngày."
+      },
+      {
+        "pattern": "preposition + object pronoun",
+        "use_vi": "Sau for, with, to thường dùng đại từ tân ngữ.",
+        "example_en": "Please sit with us.",
+        "example_vi": "Hãy ngồi cùng chúng tôi."
+      }
+    ],
+    "worked_examples": [
+      {
+        "situation_vi": "Thay Lisa trong I know Lisa.",
+        "answer_en": "I know her.",
+        "translation_vi": "Tôi biết Lisa.",
+        "reason_vi": "Lisa đứng sau know và là người nhận hành động, nên dùng her."
+      },
+      {
+        "situation_vi": "Thay my classmates trong I study with my classmates.",
+        "answer_en": "I study with them.",
+        "translation_vi": "Tôi học cùng bạn cùng lớp.",
+        "reason_vi": "Sau with cần dạng tân ngữ them."
+      }
+    ],
+    "contrasts": [
+      {
+        "first_en": "She calls him.",
+        "second_en": "Her calls he.",
+        "difference_vi": "She làm chủ ngữ; him làm tân ngữ sau calls."
+      }
+    ],
+    "common_mistakes": [
+      {
+        "wrong": "Can you help I?",
+        "correct": "Can you help me?",
+        "why_vi": "Sau help dùng dạng tân ngữ me."
+      },
+      {
+        "wrong": "Please talk to she.",
+        "correct": "Please talk to her.",
+        "why_vi": "Sau giới từ to dùng her."
+      }
+    ],
+    "supplemental_practice": [
+      {
+        "stage": "guided",
+        "prompt_en": "My teacher helps ___. (I)",
+        "answer": "me",
+        "explanation_vi": "Sau helps cần tân ngữ.",
+        "translation_vi": "Giáo viên giúp tôi.",
+        "draft_id": "M08-A1-04-GUIDED-01"
+      },
+      {
+        "stage": "independent",
+        "prompt_en": "We visit ___. (they)",
+        "answer": "them",
+        "explanation_vi": "Sau visit dùng them.",
+        "translation_vi": "Chúng tôi đến thăm họ.",
+        "draft_id": "M08-A1-04-INDEPENDENT-02"
+      },
+      {
+        "stage": "mastery",
+        "prompt_en": "Rewrite: I like Ben. Use an object pronoun.",
+        "answer": "I like him.",
+        "explanation_vi": "Ben là người nam được xác định và nằm sau like.",
+        "translation_vi": "Tôi thích Ben.",
+        "draft_id": "M08-A1-04-MASTERY-03"
+      },
+      {
+        "stage": "spaced_review",
+        "prompt_en": "Correct: She studies with we.",
+        "answer": "She studies with us.",
+        "explanation_vi": "Sau with dùng đại từ tân ngữ us.",
+        "translation_vi": "Cô ấy học cùng chúng tôi.",
+        "draft_id": "M08-A1-04-SPACED_REVIEW-04"
+      }
+    ],
+    "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED",
+    "question_import_policy": "SEPARATE_BANK_NO_OVERWRITE",
+    "title": "Object Pronouns",
+    "source_question_count": 51,
+    "source_stages": {
+      "guided": 15,
+      "independent": 20,
+      "mastery": 10,
+      "spaced_review": 6
+    }
+  },
+  "A1-05": {
+    "lesson_id": "A1-05",
+    "overview_vi": "Danh từ đếm được có dạng số ít và số nhiều. Với số nhiều thông thường thêm -s, nhưng đuôi -s/-sh/-ch/-x cần -es.",
+    "decision_steps_vi": [
+      "Xác định có một hay nhiều",
+      "Xem chữ cuối danh từ",
+      "Thêm -s hoặc -es và kiểm tra số của động từ"
+    ],
+    "patterns": [
+      {
+        "pattern": "one + singular noun",
+        "use_vi": "Một vật dùng dạng số ít.",
+        "example_en": "One book is on the desk.",
+        "example_vi": "Một quyển sách ở trên bàn."
+      },
+      {
+        "pattern": "two or more + plural noun",
+        "use_vi": "Thông thường thêm -s.",
+        "example_en": "Three pens are in my bag.",
+        "example_vi": "Ba cây bút ở trong cặp tôi."
+      },
+      {
+        "pattern": "-s / -sh / -ch / -x + es",
+        "use_vi": "Một số đuôi cần -es.",
+        "example_en": "Two buses stop here.",
+        "example_vi": "Hai xe buýt dừng ở đây."
+      }
+    ],
+    "worked_examples": [
+      {
+        "situation_vi": "Đổi one box thành three...",
+        "answer_en": "three boxes",
+        "translation_vi": "ba chiếc hộp",
+        "reason_vi": "Box kết thúc bằng x nên thêm es."
+      },
+      {
+        "situation_vi": "Đổi one student thành four...",
+        "answer_en": "four students",
+        "translation_vi": "bốn học sinh",
+        "reason_vi": "Student thuộc nhóm thông thường nên thêm s."
+      }
+    ],
+    "contrasts": [
+      {
+        "first_en": "One apple is red.",
+        "second_en": "Two apples are red.",
+        "difference_vi": "Một vật dùng is và danh từ số ít; nhiều vật dùng are và danh từ số nhiều."
+      }
+    ],
+    "common_mistakes": [
+      {
+        "wrong": "Two boxs are here.",
+        "correct": "Two boxes are here.",
+        "why_vi": "Box thêm es."
+      },
+      {
+        "wrong": "Three chair is new.",
+        "correct": "Three chairs are new.",
+        "why_vi": "Ba chiếc ghế cần danh từ số nhiều chairs và are."
+      }
+    ],
+    "supplemental_practice": [
+      {
+        "stage": "guided",
+        "prompt_en": "Two ___ (dish) are clean.",
+        "answer": "dishes",
+        "explanation_vi": "Dish kết thúc bằng sh nên thêm es.",
+        "translation_vi": "Hai cái đĩa sạch.",
+        "draft_id": "M08-A1-05-GUIDED-01"
+      },
+      {
+        "stage": "independent",
+        "prompt_en": "There are five ___ (book).",
+        "answer": "books",
+        "explanation_vi": "Book thêm s.",
+        "translation_vi": "Có năm cuốn sách.",
+        "draft_id": "M08-A1-05-INDEPENDENT-02"
+      },
+      {
+        "stage": "mastery",
+        "prompt_en": "Correct: Four bus are outside.",
+        "answer": "Four buses are outside.",
+        "explanation_vi": "Bus số nhiều là buses.",
+        "translation_vi": "Bốn xe buýt ở bên ngoài.",
+        "draft_id": "M08-A1-05-MASTERY-03"
+      },
+      {
+        "stage": "spaced_review",
+        "prompt_en": "Write the plural of watch.",
+        "answer": "watches",
+        "explanation_vi": "Watch kết thúc bằng ch nên thêm es.",
+        "translation_vi": "Những chiếc đồng hồ.",
+        "draft_id": "M08-A1-05-SPACED_REVIEW-04"
+      }
+    ],
+    "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED",
+    "question_import_policy": "SEPARATE_BANK_NO_OVERWRITE",
+    "title": "Singular & Regular Plural Nouns",
+    "source_question_count": 51,
+    "source_stages": {
+      "guided": 15,
+      "independent": 20,
+      "mastery": 10,
+      "spaced_review": 6
+    }
+  },
+  "A1-06": {
+    "lesson_id": "A1-06",
+    "overview_vi": "Một số danh từ số nhiều không theo quy tắc thêm -s/-es. Phải ghi nhớ dạng riêng trong những từ thông dụng như child/children, person/people, man/men.",
+    "decision_steps_vi": [
+      "Tìm số lượng trong câu",
+      "Tra dạng số nhiều bất quy tắc đã học",
+      "Đừng tự thêm -s vào dạng bất quy tắc"
+    ],
+    "patterns": [
+      {
+        "pattern": "child → children; person → people",
+        "use_vi": "Dùng dạng riêng cho người.",
+        "example_en": "Two children are playing.",
+        "example_vi": "Hai đứa trẻ đang chơi."
+      },
+      {
+        "pattern": "man → men; woman → women",
+        "use_vi": "Nguyên âm trong từ thay đổi.",
+        "example_en": "Three women work here.",
+        "example_vi": "Ba người phụ nữ làm việc ở đây."
+      },
+      {
+        "pattern": "foot → feet; tooth → teeth",
+        "use_vi": "Một số bộ phận cơ thể cũng bất quy tắc.",
+        "example_en": "My feet are cold.",
+        "example_vi": "Hai bàn chân tôi lạnh."
+      }
+    ],
+    "worked_examples": [
+      {
+        "situation_vi": "Đổi one child thành two...",
+        "answer_en": "two children",
+        "translation_vi": "hai đứa trẻ",
+        "reason_vi": "Child không đổi thành childs."
+      },
+      {
+        "situation_vi": "Đổi one person thành five...",
+        "answer_en": "five people",
+        "translation_vi": "năm người",
+        "reason_vi": "People là dạng số nhiều thông dụng của person."
+      }
+    ],
+    "contrasts": [
+      {
+        "first_en": "One child is outside.",
+        "second_en": "Three children are outside.",
+        "difference_vi": "Child là số ít; children là số nhiều và thường dùng are."
+      }
+    ],
+    "common_mistakes": [
+      {
+        "wrong": "Two childs are here.",
+        "correct": "Two children are here.",
+        "why_vi": "Số nhiều của child là children."
+      },
+      {
+        "wrong": "Many womans work here.",
+        "correct": "Many women work here.",
+        "why_vi": "Woman đổi thành women."
+      }
+    ],
+    "supplemental_practice": [
+      {
+        "stage": "guided",
+        "prompt_en": "Three ___ (man) are waiting.",
+        "answer": "men",
+        "explanation_vi": "Số nhiều man là men.",
+        "translation_vi": "Ba người đàn ông đang chờ.",
+        "draft_id": "M08-A1-06-GUIDED-01"
+      },
+      {
+        "stage": "independent",
+        "prompt_en": "The ___ (child) are happy.",
+        "answer": "children",
+        "explanation_vi": "The với động từ are cho thấy cần số nhiều.",
+        "translation_vi": "Những đứa trẻ vui vẻ.",
+        "draft_id": "M08-A1-06-INDEPENDENT-02"
+      },
+      {
+        "stage": "mastery",
+        "prompt_en": "Correct: My tooths are white.",
+        "answer": "My teeth are white.",
+        "explanation_vi": "Tooth số nhiều là teeth.",
+        "translation_vi": "Răng tôi trắng.",
+        "draft_id": "M08-A1-06-MASTERY-03"
+      },
+      {
+        "stage": "spaced_review",
+        "prompt_en": "Write the plural of person.",
+        "answer": "people",
+        "explanation_vi": "People là dạng số nhiều thông dụng.",
+        "translation_vi": "Nhiều người.",
+        "draft_id": "M08-A1-06-SPACED_REVIEW-04"
+      }
+    ],
+    "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED",
+    "question_import_policy": "SEPARATE_BANK_NO_OVERWRITE",
+    "title": "Irregular Plural Nouns",
+    "source_question_count": 51,
+    "source_stages": {
+      "guided": 15,
+      "independent": 20,
+      "mastery": 10,
+      "spaced_review": 6
+    }
+  },
+  "A1-07": {
+    "lesson_id": "A1-07",
+    "overview_vi": "Danh từ đếm được có thể đi với one/two và a/an khi số ít. Danh từ không đếm được như water, rice thường không thêm -s và không dùng a/an trực tiếp.",
+    "decision_steps_vi": [
+      "Thử đếm bằng one, two",
+      "Nếu không đếm trực tiếp, dùng đơn vị đo/chứa",
+      "Chọn động từ và lượng từ phù hợp"
+    ],
+    "patterns": [
+      {
+        "pattern": "a / an + singular countable noun",
+        "use_vi": "Một đồ vật riêng lẻ có thể đếm.",
+        "example_en": "I have an egg.",
+        "example_vi": "Tôi có một quả trứng."
+      },
+      {
+        "pattern": "some + uncountable noun",
+        "use_vi": "Chỉ lượng chung của đồ uống/chất liệu.",
+        "example_en": "We need some water.",
+        "example_vi": "Chúng ta cần một ít nước."
+      },
+      {
+        "pattern": "a glass of / a piece of + noun",
+        "use_vi": "Dùng đơn vị khi cần đếm danh từ không đếm được.",
+        "example_en": "Two cups of tea, please.",
+        "example_vi": "Cho tôi hai tách trà."
+      }
+    ],
+    "worked_examples": [
+      {
+        "situation_vi": "Muốn nói hai phần bánh mì.",
+        "answer_en": "two pieces of bread",
+        "translation_vi": "hai miếng bánh mì",
+        "reason_vi": "Bread trong nghĩa cơ bản là không đếm được; dùng piece."
+      },
+      {
+        "situation_vi": "Muốn nói ba quả táo.",
+        "answer_en": "three apples",
+        "translation_vi": "ba quả táo",
+        "reason_vi": "Apple đếm trực tiếp được nên thêm -s."
+      }
+    ],
+    "contrasts": [
+      {
+        "first_en": "I need an apple.",
+        "second_en": "I need some rice.",
+        "difference_vi": "Apple đếm được; rice không đếm trực tiếp theo hạt trong ngữ cảnh ăn uống."
+      }
+    ],
+    "common_mistakes": [
+      {
+        "wrong": "A water, please.",
+        "correct": "A bottle of water, please.",
+        "why_vi": "Dùng một đơn vị chứa khi muốn một chai nước."
+      },
+      {
+        "wrong": "Two rices are here.",
+        "correct": "Two bowls of rice are here.",
+        "why_vi": "Dùng bowls of rice để đếm phần ăn."
+      }
+    ],
+    "supplemental_practice": [
+      {
+        "stage": "guided",
+        "prompt_en": "I need some ___ (milk).",
+        "answer": "milk",
+        "explanation_vi": "Milk không thêm s trong nghĩa cơ bản.",
+        "translation_vi": "Tôi cần một ít sữa.",
+        "draft_id": "M08-A1-07-GUIDED-01"
+      },
+      {
+        "stage": "independent",
+        "prompt_en": "She has three ___ (orange).",
+        "answer": "oranges",
+        "explanation_vi": "Orange là danh từ đếm được.",
+        "translation_vi": "Cô ấy có ba quả cam.",
+        "draft_id": "M08-A1-07-INDEPENDENT-02"
+      },
+      {
+        "stage": "mastery",
+        "prompt_en": "Correct: We bought two breads.",
+        "answer": "We bought two loaves of bread.",
+        "explanation_vi": "Bread cần đơn vị đếm loaf ở đây.",
+        "translation_vi": "Chúng tôi mua hai ổ bánh mì.",
+        "draft_id": "M08-A1-07-MASTERY-03"
+      },
+      {
+        "stage": "spaced_review",
+        "prompt_en": "Complete: a ___ of water (bottle)",
+        "answer": "bottle",
+        "explanation_vi": "Bottle là đơn vị đếm được của water.",
+        "translation_vi": "Một chai nước.",
+        "draft_id": "M08-A1-07-SPACED_REVIEW-04"
+      }
+    ],
+    "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED",
+    "question_import_policy": "SEPARATE_BANK_NO_OVERWRITE",
+    "title": "Countable & Uncountable Nouns",
+    "source_question_count": 51,
+    "source_stages": {
+      "guided": 15,
+      "independent": 20,
+      "mastery": 10,
+      "spaced_review": 6
+    }
+  },
+  "A1-08": {
+    "lesson_id": "A1-08",
+    "overview_vi": "A và an chỉ một người hoặc vật chưa xác định rõ và đi với danh từ đếm được số ít. Chọn a/an theo âm đầu khi phát âm, không chỉ nhìn chữ cái.",
+    "decision_steps_vi": [
+      "Kiểm tra danh từ có đếm được và số ít không",
+      "Xác định người nghe đã biết rõ đối tượng chưa",
+      "Nghe âm đầu để chọn a hay an"
+    ],
+    "patterns": [
+      {
+        "pattern": "a + consonant sound",
+        "use_vi": "Dùng trước âm phụ âm.",
+        "example_en": "She is a teacher.",
+        "example_vi": "Cô ấy là giáo viên."
+      },
+      {
+        "pattern": "an + vowel sound",
+        "use_vi": "Dùng trước âm nguyên âm.",
+        "example_en": "He has an umbrella.",
+        "example_vi": "Anh ấy có một chiếc ô."
+      },
+      {
+        "pattern": "a university / an hour",
+        "use_vi": "Chữ cái đầu không luôn quyết định mạo từ.",
+        "example_en": "It takes an hour.",
+        "example_vi": "Mất một giờ."
+      }
+    ],
+    "worked_examples": [
+      {
+        "situation_vi": "Chọn mạo từ cho apple.",
+        "answer_en": "an apple",
+        "translation_vi": "một quả táo",
+        "reason_vi": "Apple bắt đầu bằng âm nguyên âm /æ/ nên dùng an."
+      },
+      {
+        "situation_vi": "Chọn mạo từ cho university.",
+        "answer_en": "a university",
+        "translation_vi": "một trường đại học",
+        "reason_vi": "University mở đầu bằng âm /j/ giống âm y nên dùng a."
+      }
+    ],
+    "contrasts": [
+      {
+        "first_en": "a book",
+        "second_en": "an egg",
+        "difference_vi": "Book mở đầu âm phụ âm; egg mở đầu âm nguyên âm."
+      }
+    ],
+    "common_mistakes": [
+      {
+        "wrong": "She has a umbrella.",
+        "correct": "She has an umbrella.",
+        "why_vi": "Umbrella bắt đầu bằng âm nguyên âm."
+      },
+      {
+        "wrong": "He is an student.",
+        "correct": "He is a student.",
+        "why_vi": "Student bắt đầu âm /s/ là phụ âm."
+      }
+    ],
+    "supplemental_practice": [
+      {
+        "stage": "guided",
+        "prompt_en": "It's ___ orange.",
+        "answer": "an",
+        "explanation_vi": "Orange bắt đầu âm nguyên âm.",
+        "translation_vi": "Đó là một quả cam.",
+        "draft_id": "M08-A1-08-GUIDED-01"
+      },
+      {
+        "stage": "independent",
+        "prompt_en": "My dad is ___ engineer.",
+        "answer": "an",
+        "explanation_vi": "Engineer bắt đầu âm nguyên âm.",
+        "translation_vi": "Bố tôi là kỹ sư.",
+        "draft_id": "M08-A1-08-INDEPENDENT-02"
+      },
+      {
+        "stage": "mastery",
+        "prompt_en": "Correct: I waited a hour.",
+        "answer": "I waited an hour.",
+        "explanation_vi": "H trong hour không phát âm.",
+        "translation_vi": "Tôi đã đợi một giờ.",
+        "draft_id": "M08-A1-08-MASTERY-03"
+      },
+      {
+        "stage": "spaced_review",
+        "prompt_en": "Choose: a / an university.",
+        "answer": "a university",
+        "explanation_vi": "Âm đầu /j/ là phụ âm.",
+        "translation_vi": "Một trường đại học.",
+        "draft_id": "M08-A1-08-SPACED_REVIEW-04"
+      }
+    ],
+    "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED",
+    "question_import_policy": "SEPARATE_BANK_NO_OVERWRITE",
+    "title": "Indefinite Articles",
+    "source_question_count": 51,
+    "source_stages": {
+      "guided": 15,
+      "independent": 20,
+      "mastery": 10,
+      "spaced_review": 6
+    }
+  },
+  "A1-09": {
+    "lesson_id": "A1-09",
+    "overview_vi": "The dùng khi người nói và người nghe xác định được đối tượng. Nhiều trường hợp nói chung không dùng mạo từ, chẳng hạn với danh từ số nhiều hoặc không đếm được.",
+    "decision_steps_vi": [
+      "Đối tượng này đã được xác định trong ngữ cảnh chưa",
+      "Nếu nói chung hãy xem có cần bỏ mạo từ không",
+      "Kiểm tra cụm danh từ sau lựa chọn"
+    ],
+    "patterns": [
+      {
+        "pattern": "the + known/specific noun",
+        "use_vi": "Đối tượng được nhắc đến hoặc dễ xác định.",
+        "example_en": "Close the door, please.",
+        "example_vi": "Làm ơn đóng cánh cửa đó."
+      },
+      {
+        "pattern": "plural / uncountable in general",
+        "use_vi": "Nói chung về loại vật/chất thường không có the.",
+        "example_en": "Dogs need exercise.",
+        "example_vi": "Chó cần vận động."
+      },
+      {
+        "pattern": "a ... then the ...",
+        "use_vi": "Giới thiệu lần đầu bằng a/an, sau đó dùng the.",
+        "example_en": "I saw a cat. The cat was black.",
+        "example_vi": "Tôi nhìn thấy một con mèo. Con mèo đó màu đen."
+      }
+    ],
+    "worked_examples": [
+      {
+        "situation_vi": "Nói về chiếc cốc trên bàn mà cả hai đều thấy.",
+        "answer_en": "the cup on the table",
+        "translation_vi": "chiếc cốc ở trên bàn",
+        "reason_vi": "Cụm on the table xác định chiếc cốc cụ thể."
+      },
+      {
+        "situation_vi": "Nói về sữa nói chung.",
+        "answer_en": "Milk is good in coffee.",
+        "translation_vi": "Sữa hợp khi pha cà phê.",
+        "reason_vi": "Milk mang nghĩa chung, không cần the."
+      }
+    ],
+    "contrasts": [
+      {
+        "first_en": "I saw a dog.",
+        "second_en": "The dog was friendly.",
+        "difference_vi": "Lần đầu giới thiệu a dog, lần sau the dog vì đã rõ đối tượng."
+      }
+    ],
+    "common_mistakes": [
+      {
+        "wrong": "I like the apples. (all apples in general)",
+        "correct": "I like apples.",
+        "why_vi": "Nói chung về táo dùng số nhiều không mạo từ."
+      },
+      {
+        "wrong": "I opened a box. Box was empty.",
+        "correct": "I opened a box. The box was empty.",
+        "why_vi": "Lần nhắc sau cần the vì box đã được xác định."
+      }
+    ],
+    "supplemental_practice": [
+      {
+        "stage": "guided",
+        "prompt_en": "I have a pen. ___ pen is blue.",
+        "answer": "The",
+        "explanation_vi": "Đã đề cập pen trước đó.",
+        "translation_vi": "Tôi có một cây bút. Cây bút ấy màu xanh.",
+        "draft_id": "M08-A1-09-GUIDED-01"
+      },
+      {
+        "stage": "independent",
+        "prompt_en": "___ books can be expensive. (books in general)",
+        "answer": "Books",
+        "explanation_vi": "Nói chung về sách không dùng the.",
+        "translation_vi": "Sách có thể đắt.",
+        "draft_id": "M08-A1-09-INDEPENDENT-02"
+      },
+      {
+        "stage": "mastery",
+        "prompt_en": "Correct: I love the music. (music in general)",
+        "answer": "I love music.",
+        "explanation_vi": "Danh từ không đếm được nói chung không dùng the.",
+        "translation_vi": "Tôi yêu âm nhạc.",
+        "draft_id": "M08-A1-09-MASTERY-03"
+      },
+      {
+        "stage": "spaced_review",
+        "prompt_en": "Complete: Please turn off ___ light in this room.",
+        "answer": "the",
+        "explanation_vi": "Ngữ cảnh xác định chiếc đèn trong phòng.",
+        "translation_vi": "Làm ơn tắt đèn trong phòng này.",
+        "draft_id": "M08-A1-09-SPACED_REVIEW-04"
+      }
+    ],
+    "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED",
+    "question_import_policy": "SEPARATE_BANK_NO_OVERWRITE",
+    "title": "Definite Article & Zero Article",
+    "source_question_count": 51,
+    "source_stages": {
+      "guided": 15,
+      "independent": 20,
+      "mastery": 10,
+      "spaced_review": 6
+    }
+  },
+  "A1-10": {
+    "lesson_id": "A1-10",
+    "overview_vi": "This/these chỉ người hoặc vật gần người nói; that/those chỉ vật xa hơn. Đồng thời phải nhìn số ít hay số nhiều để chọn đúng.",
+    "decision_steps_vi": [
+      "Xem ngữ cảnh gần hay xa người nói",
+      "Kiểm tra một hay nhiều vật",
+      "Chọn this/that với số ít, these/those với số nhiều"
+    ],
+    "patterns": [
+      {
+        "pattern": "this / that + singular noun",
+        "use_vi": "This là gần, that là xa.",
+        "example_en": "That house is very old.",
+        "example_vi": "Ngôi nhà kia rất cũ."
+      },
+      {
+        "pattern": "these / those + plural noun",
+        "use_vi": "These là gần, those là xa.",
+        "example_en": "These shoes are comfortable.",
+        "example_vi": "Đôi giày này thoải mái."
+      }
+    ],
+    "worked_examples": [
+      {
+        "situation_vi": "Cầm một chiếc bút trong tay.",
+        "answer_en": "This pen is mine.",
+        "translation_vi": "Cây bút này là của tôi.",
+        "reason_vi": "Gần người nói và số ít nên dùng this."
+      },
+      {
+        "situation_vi": "Chỉ nhiều ngọn núi ở xa.",
+        "answer_en": "Those mountains are beautiful.",
+        "translation_vi": "Những ngọn núi kia rất đẹp.",
+        "reason_vi": "Xa người nói và số nhiều nên dùng those."
+      }
+    ],
+    "contrasts": [
+      {
+        "first_en": "This book is new.",
+        "second_en": "These books are new.",
+        "difference_vi": "Book số ít dùng this; books số nhiều dùng these."
+      }
+    ],
+    "common_mistakes": [
+      {
+        "wrong": "This books are mine.",
+        "correct": "These books are mine.",
+        "why_vi": "Books là số nhiều."
+      },
+      {
+        "wrong": "Those is my friends.",
+        "correct": "Those are my friends.",
+        "why_vi": "Those đi với are khi là đại từ chỉ nhiều người/vật."
+      }
+    ],
+    "supplemental_practice": [
+      {
+        "stage": "guided",
+        "prompt_en": "___ apples here are fresh. (near)",
+        "answer": "These",
+        "explanation_vi": "Apples số nhiều và ở gần.",
+        "translation_vi": "Những quả táo ở đây còn tươi.",
+        "draft_id": "M08-A1-10-GUIDED-01"
+      },
+      {
+        "stage": "independent",
+        "prompt_en": "Look at ___ bird over there. (far)",
+        "answer": "that",
+        "explanation_vi": "Bird số ít và ở xa.",
+        "translation_vi": "Nhìn con chim đằng kia.",
+        "draft_id": "M08-A1-10-INDEPENDENT-02"
+      },
+      {
+        "stage": "mastery",
+        "prompt_en": "Correct: That chairs are new.",
+        "answer": "Those chairs are new.",
+        "explanation_vi": "Chairs số nhiều nên dùng those.",
+        "translation_vi": "Những cái ghế kia còn mới.",
+        "draft_id": "M08-A1-10-MASTERY-03"
+      },
+      {
+        "stage": "spaced_review",
+        "prompt_en": "One bag in my hand: ___ is my bag.",
+        "answer": "This",
+        "explanation_vi": "Một túi ở ngay gần người nói.",
+        "translation_vi": "Đây là túi của tôi.",
+        "draft_id": "M08-A1-10-SPACED_REVIEW-04"
+      }
+    ],
+    "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED",
+    "question_import_policy": "SEPARATE_BANK_NO_OVERWRITE",
+    "title": "Demonstratives",
+    "source_question_count": 51,
+    "source_stages": {
+      "guided": 15,
+      "independent": 20,
+      "mastery": 10,
+      "spaced_review": 6
+    }
+  },
+  "A1-11": {
+    "lesson_id": "A1-11",
+    "overview_vi": "Tính từ sở hữu đứng trước danh từ để nói vật hoặc người thuộc về ai: my, your, his, her, its, our, their.",
+    "decision_steps_vi": [
+      "Tìm chủ sở hữu của vật",
+      "Chọn từ sở hữu theo người sở hữu",
+      "Đặt trước danh từ và không thêm mạo từ a/the cho cùng vị trí"
+    ],
+    "patterns": [
+      {
+        "pattern": "my / your / his / her + noun",
+        "use_vi": "Từ sở hữu đứng ngay trước danh từ.",
+        "example_en": "Her brother is a doctor.",
+        "example_vi": "Anh trai cô ấy là bác sĩ."
+      },
+      {
+        "pattern": "its / our / their + noun",
+        "use_vi": "Its là của nó; our của chúng ta; their của họ.",
+        "example_en": "Their house has a garden.",
+        "example_vi": "Nhà của họ có vườn."
+      }
+    ],
+    "worked_examples": [
+      {
+        "situation_vi": "Tìm từ đúng: Anna has a cat. ___ cat is white.",
+        "answer_en": "Her cat is white.",
+        "translation_vi": "Con mèo của cô ấy màu trắng.",
+        "reason_vi": "Anna là chủ sở hữu được xác định là nữ trong ngữ cảnh."
+      },
+      {
+        "situation_vi": "Tìm từ đúng: We have a teacher. ___ teacher is kind.",
+        "answer_en": "Our teacher is kind.",
+        "translation_vi": "Giáo viên của chúng tôi tốt bụng.",
+        "reason_vi": "We là nhóm bao gồm người nói nên chọn our."
+      }
+    ],
+    "contrasts": [
+      {
+        "first_en": "She has a dog.",
+        "second_en": "Her dog is small.",
+        "difference_vi": "She là chủ ngữ; her đứng trước danh từ dog để chỉ sở hữu."
+      }
+    ],
+    "common_mistakes": [
+      {
+        "wrong": "He likes him bike.",
+        "correct": "He likes his bike.",
+        "why_vi": "His đứng trước bike để chỉ của anh ấy."
+      },
+      {
+        "wrong": "The my bag is red.",
+        "correct": "My bag is red.",
+        "why_vi": "My đã làm nhiệm vụ xác định danh từ, không thêm the."
+      }
+    ],
+    "supplemental_practice": [
+      {
+        "stage": "guided",
+        "prompt_en": "I have a sister. ___ sister is ten.",
+        "answer": "My",
+        "explanation_vi": "Người sở hữu là I nên dùng my.",
+        "translation_vi": "Tôi có chị/em gái. Chị/em tôi mười tuổi.",
+        "draft_id": "M08-A1-11-GUIDED-01"
+      },
+      {
+        "stage": "independent",
+        "prompt_en": "Tom is here. ___ bag is blue.",
+        "answer": "His",
+        "explanation_vi": "Tom là người nam được xác định.",
+        "translation_vi": "Túi của Tom màu xanh.",
+        "draft_id": "M08-A1-11-INDEPENDENT-02"
+      },
+      {
+        "stage": "mastery",
+        "prompt_en": "Correct: Their is a new car.",
+        "answer": "Their car is new.",
+        "explanation_vi": "Their cần đi trước danh từ car.",
+        "translation_vi": "Xe của họ mới.",
+        "draft_id": "M08-A1-11-MASTERY-03"
+      },
+      {
+        "stage": "spaced_review",
+        "prompt_en": "We have a dog. ___ dog is friendly.",
+        "answer": "Our",
+        "explanation_vi": "We tương ứng our.",
+        "translation_vi": "Chó của chúng tôi thân thiện.",
+        "draft_id": "M08-A1-11-SPACED_REVIEW-04"
+      }
+    ],
+    "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED",
+    "question_import_policy": "SEPARATE_BANK_NO_OVERWRITE",
+    "title": "Possessive Adjectives",
+    "source_question_count": 51,
+    "source_stages": {
+      "guided": 15,
+      "independent": 20,
+      "mastery": 10,
+      "spaced_review": 6
+    }
+  },
+  "A1-12": {
+    "lesson_id": "A1-12",
+    "overview_vi": "Mine, yours, his, hers, ours, theirs thay cho cả cụm danh từ sở hữu; còn my, your, her, our, their phải đứng trước danh từ. Sở hữu cách ’s nối với người sở hữu.",
+    "decision_steps_vi": [
+      "Xem sau vị trí trống có danh từ hay không",
+      "Có danh từ chọn my/your...",
+      "Không có danh từ chọn mine/yours... hoặc dùng tên + ’s"
+    ],
+    "patterns": [
+      {
+        "pattern": "possessive adjective + noun",
+        "use_vi": "Có danh từ đi sau: my bike.",
+        "example_en": "This is her bike.",
+        "example_vi": "Đây là xe đạp của cô ấy."
+      },
+      {
+        "pattern": "possessive pronoun (no noun)",
+        "use_vi": "Tự đứng một mình: mine, hers, ours.",
+        "example_en": "This bike is hers.",
+        "example_vi": "Xe đạp này là của cô ấy."
+      },
+      {
+        "pattern": "name + 's + noun",
+        "use_vi": "Thêm ’s để chỉ sở hữu của người.",
+        "example_en": "This is Lan's notebook.",
+        "example_vi": "Đây là vở của Lan."
+      }
+    ],
+    "worked_examples": [
+      {
+        "situation_vi": "Chọn đại từ: This is my seat. That seat is ___. (you)",
+        "answer_en": "That seat is yours.",
+        "translation_vi": "Chỗ kia là của bạn.",
+        "reason_vi": "Sau yours không có danh từ, nên dùng đại từ sở hữu."
+      },
+      {
+        "situation_vi": "Viết: bag belonging to Tom.",
+        "answer_en": "Tom's bag",
+        "translation_vi": "cặp của Tom",
+        "reason_vi": "Tên người + ’s + danh từ."
+      }
+    ],
+    "contrasts": [
+      {
+        "first_en": "This is my book.",
+        "second_en": "This book is mine.",
+        "difference_vi": "My đứng trước book, mine thay cho my book."
+      }
+    ],
+    "common_mistakes": [
+      {
+        "wrong": "This bag is my.",
+        "correct": "This bag is mine.",
+        "why_vi": "Vị trí cuối câu không có danh từ nên dùng mine."
+      },
+      {
+        "wrong": "Her's book is here.",
+        "correct": "Her book is here.",
+        "why_vi": "Her là tính từ sở hữu, không thêm ’s."
+      }
+    ],
+    "supplemental_practice": [
+      {
+        "stage": "guided",
+        "prompt_en": "That coat is ___. (I)",
+        "answer": "mine",
+        "explanation_vi": "Không có danh từ sau chỗ trống.",
+        "translation_vi": "Áo khoác kia là của tôi.",
+        "draft_id": "M08-A1-12-GUIDED-01"
+      },
+      {
+        "stage": "independent",
+        "prompt_en": "This is ___ phone. (Anna)",
+        "answer": "Anna's",
+        "explanation_vi": "Tên Anna thêm ’s.",
+        "translation_vi": "Đây là điện thoại của Anna.",
+        "draft_id": "M08-A1-12-INDEPENDENT-02"
+      },
+      {
+        "stage": "mastery",
+        "prompt_en": "Correct: The blue pen is her.",
+        "answer": "The blue pen is hers.",
+        "explanation_vi": "Hers tự đứng một mình.",
+        "translation_vi": "Cây bút xanh là của cô ấy.",
+        "draft_id": "M08-A1-12-MASTERY-03"
+      },
+      {
+        "stage": "spaced_review",
+        "prompt_en": "These toys are ___. (we)",
+        "answer": "ours",
+        "explanation_vi": "Sau chỗ trống không có danh từ.",
+        "translation_vi": "Những món đồ chơi này là của chúng tôi.",
+        "draft_id": "M08-A1-12-SPACED_REVIEW-04"
+      }
+    ],
+    "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED",
+    "question_import_policy": "SEPARATE_BANK_NO_OVERWRITE",
+    "title": "Possessive Pronouns & 's",
+    "source_question_count": 51,
+    "source_stages": {
+      "guided": 15,
+      "independent": 20,
+      "mastery": 10,
+      "spaced_review": 6
+    }
+  },
+  "A1-13": {
+    "lesson_id": "A1-13",
+    "overview_vi": "Have/has nói về sở hữu, quan hệ hoặc đặc điểm; have got/has got cũng thường dùng với nghĩa sở hữu. Không trộn mẫu phủ định hỏi của have got với have thường.",
+    "decision_steps_vi": [
+      "Tìm chủ ngữ",
+      "Chọn have với I/you/we/they và has với he/she/it",
+      "Nếu dùng have got, giữ got theo sau have/has"
+    ],
+    "patterns": [
+      {
+        "pattern": "I / you / we / they + have",
+        "use_vi": "Dùng have với I, you và số nhiều.",
+        "example_en": "We have two bicycles.",
+        "example_vi": "Chúng tôi có hai xe đạp."
+      },
+      {
+        "pattern": "he / she / it + has",
+        "use_vi": "Dùng has với ngôi thứ ba số ít.",
+        "example_en": "She has a new phone.",
+        "example_vi": "Cô ấy có điện thoại mới."
+      },
+      {
+        "pattern": "have got / has got",
+        "use_vi": "Thường gặp trong lời nói về sở hữu.",
+        "example_en": "He's got brown eyes.",
+        "example_vi": "Anh ấy có đôi mắt nâu."
+      }
+    ],
+    "worked_examples": [
+      {
+        "situation_vi": "Điền: My sister ___ a laptop.",
+        "answer_en": "My sister has a laptop.",
+        "translation_vi": "Chị/em gái tôi có máy tính xách tay.",
+        "reason_vi": "My sister tương ứng she nên dùng has."
+      },
+      {
+        "situation_vi": "Chuyển We have a garden sang have got.",
+        "answer_en": "We have got a garden.",
+        "translation_vi": "Chúng tôi có vườn.",
+        "reason_vi": "Giữ have và thêm got, không dùng has với we."
+      }
+    ],
+    "contrasts": [
+      {
+        "first_en": "She has a dog.",
+        "second_en": "She has got a dog.",
+        "difference_vi": "Hai mẫu đều nói về sở hữu; không kết hợp has got have."
+      }
+    ],
+    "common_mistakes": [
+      {
+        "wrong": "He have a bike.",
+        "correct": "He has a bike.",
+        "why_vi": "He đi với has."
+      },
+      {
+        "wrong": "They has got two cats.",
+        "correct": "They have got two cats.",
+        "why_vi": "They đi với have got."
+      }
+    ],
+    "supplemental_practice": [
+      {
+        "stage": "guided",
+        "prompt_en": "I ___ a little brother.",
+        "answer": "have",
+        "explanation_vi": "I đi với have.",
+        "translation_vi": "Tôi có em trai.",
+        "draft_id": "M08-A1-13-GUIDED-01"
+      },
+      {
+        "stage": "independent",
+        "prompt_en": "My father ___ a car.",
+        "answer": "has",
+        "explanation_vi": "Father là chủ ngữ số ít.",
+        "translation_vi": "Bố tôi có ô tô.",
+        "draft_id": "M08-A1-13-INDEPENDENT-02"
+      },
+      {
+        "stage": "mastery",
+        "prompt_en": "Correct: She have got a red bag.",
+        "answer": "She has got a red bag.",
+        "explanation_vi": "She dùng has got.",
+        "translation_vi": "Cô ấy có một túi đỏ.",
+        "draft_id": "M08-A1-13-MASTERY-03"
+      },
+      {
+        "stage": "spaced_review",
+        "prompt_en": "Fill: My friends ___ two dogs.",
+        "answer": "have",
+        "explanation_vi": "Friends là số nhiều.",
+        "translation_vi": "Bạn tôi có hai con chó.",
+        "draft_id": "M08-A1-13-SPACED_REVIEW-04"
+      }
+    ],
+    "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED",
+    "question_import_policy": "SEPARATE_BANK_NO_OVERWRITE",
+    "title": "Have / Has (got)",
+    "source_question_count": 51,
+    "source_stages": {
+      "guided": 15,
+      "independent": 20,
+      "mastery": 10,
+      "spaced_review": 6
+    }
+  },
+  "A1-14": {
+    "lesson_id": "A1-14",
+    "overview_vi": "There is/there are giới thiệu sự tồn tại hoặc số lượng đồ vật ở một nơi. Phải chọn is/are dựa theo cụm danh từ đi sau.",
+    "decision_steps_vi": [
+      "Xác định có bao nhiêu vật/người",
+      "Một vật hoặc danh từ không đếm được dùng there is",
+      "Nhiều vật dùng there are"
+    ],
+    "patterns": [
+      {
+        "pattern": "There is + singular / uncountable",
+        "use_vi": "Có một vật hoặc một lượng không đếm được.",
+        "example_en": "There is some rice in the bowl.",
+        "example_vi": "Có ít cơm trong bát."
+      },
+      {
+        "pattern": "There are + plural noun",
+        "use_vi": "Có nhiều đồ vật/người.",
+        "example_en": "There are four desks in the room.",
+        "example_vi": "Có bốn cái bàn trong phòng."
+      },
+      {
+        "pattern": "Is there...? / Are there...?",
+        "use_vi": "Đảo is/are để hỏi có hay không.",
+        "example_en": "Are there any chairs?",
+        "example_vi": "Có chiếc ghế nào không?"
+      }
+    ],
+    "worked_examples": [
+      {
+        "situation_vi": "Miêu tả một chiếc giường trong phòng.",
+        "answer_en": "There is a bed in the room.",
+        "translation_vi": "Có một cái giường trong phòng.",
+        "reason_vi": "Một chiếc bed là danh từ số ít nên dùng is."
+      },
+      {
+        "situation_vi": "Miêu tả năm cái ly trên bàn.",
+        "answer_en": "There are five glasses on the table.",
+        "translation_vi": "Có năm chiếc ly trên bàn.",
+        "reason_vi": "Five glasses là số nhiều nên dùng are."
+      }
+    ],
+    "contrasts": [
+      {
+        "first_en": "There is a lamp.",
+        "second_en": "There are two lamps.",
+        "difference_vi": "Động từ thay đổi theo danh từ sau there."
+      }
+    ],
+    "common_mistakes": [
+      {
+        "wrong": "There are a cat on the sofa.",
+        "correct": "There is a cat on the sofa.",
+        "why_vi": "A cat là số ít."
+      },
+      {
+        "wrong": "There is three windows.",
+        "correct": "There are three windows.",
+        "why_vi": "Three windows là số nhiều."
+      }
+    ],
+    "supplemental_practice": [
+      {
+        "stage": "guided",
+        "prompt_en": "There ___ a shop near here.",
+        "answer": "is",
+        "explanation_vi": "A shop là số ít.",
+        "translation_vi": "Có một cửa hàng gần đây.",
+        "draft_id": "M08-A1-14-GUIDED-01"
+      },
+      {
+        "stage": "independent",
+        "prompt_en": "There ___ two parks in my town.",
+        "answer": "are",
+        "explanation_vi": "Two parks là số nhiều.",
+        "translation_vi": "Có hai công viên trong thị trấn.",
+        "draft_id": "M08-A1-14-INDEPENDENT-02"
+      },
+      {
+        "stage": "mastery",
+        "prompt_en": "Make a question: There is a library nearby.",
+        "answer": "Is there a library nearby?",
+        "explanation_vi": "Đảo is trước there.",
+        "translation_vi": "Có thư viện nào gần đây không?",
+        "draft_id": "M08-A1-14-MASTERY-03"
+      },
+      {
+        "stage": "spaced_review",
+        "prompt_en": "Correct: There are some milk in the fridge.",
+        "answer": "There is some milk in the fridge.",
+        "explanation_vi": "Milk là danh từ không đếm được.",
+        "translation_vi": "Có ít sữa trong tủ lạnh.",
+        "draft_id": "M08-A1-14-SPACED_REVIEW-04"
+      }
+    ],
+    "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED",
+    "question_import_policy": "SEPARATE_BANK_NO_OVERWRITE",
+    "title": "There is / There are",
+    "source_question_count": 51,
+    "source_stages": {
+      "guided": 15,
+      "independent": 20,
+      "mastery": 10,
+      "spaced_review": 6
+    }
+  },
+  "A1-15": {
+    "lesson_id": "A1-15",
+    "overview_vi": "Some thường gặp trong khẳng định; any thường dùng trong phủ định và câu hỏi thông thường. Some cũng thường dùng trong lời mời hoặc đề nghị mang ý tích cực.",
+    "decision_steps_vi": [
+      "Xem câu khẳng định, phủ định hay câu hỏi",
+      "Kiểm tra danh từ số nhiều/không đếm được",
+      "Xem câu hỏi có mang tính mời hay đề nghị không"
+    ],
+    "patterns": [
+      {
+        "pattern": "some + plural / uncountable",
+        "use_vi": "Lượng không xác định trong câu khẳng định.",
+        "example_en": "We have some bananas.",
+        "example_vi": "Chúng tôi có vài quả chuối."
+      },
+      {
+        "pattern": "any + plural / uncountable",
+        "use_vi": "Thường dùng với phủ định và câu hỏi.",
+        "example_en": "Do you have any sugar?",
+        "example_vi": "Bạn có chút đường nào không?"
+      },
+      {
+        "pattern": "Would you like some...?",
+        "use_vi": "Lời mời thường dùng some.",
+        "example_en": "Would you like some tea?",
+        "example_vi": "Bạn dùng một ít trà nhé?"
+      }
+    ],
+    "worked_examples": [
+      {
+        "situation_vi": "Phủ định: We have ___ eggs.",
+        "answer_en": "We don't have any eggs.",
+        "translation_vi": "Chúng tôi không có trứng.",
+        "reason_vi": "Any phù hợp với câu phủ định thông thường."
+      },
+      {
+        "situation_vi": "Lời mời: Would you like ___ water?",
+        "answer_en": "Would you like some water?",
+        "translation_vi": "Bạn muốn uống chút nước không?",
+        "reason_vi": "Câu hỏi mang nghĩa mời dùng some tự nhiên."
+      }
+    ],
+    "contrasts": [
+      {
+        "first_en": "I have some friends here.",
+        "second_en": "I don't have any friends here.",
+        "difference_vi": "Some trong câu khẳng định; any trong phủ định."
+      }
+    ],
+    "common_mistakes": [
+      {
+        "wrong": "I don't have some money.",
+        "correct": "I don't have any money.",
+        "why_vi": "Câu phủ định thông thường dùng any."
+      },
+      {
+        "wrong": "Would you like any coffee? (offer)",
+        "correct": "Would you like some coffee?",
+        "why_vi": "Some tự nhiên hơn khi mời."
+      }
+    ],
+    "supplemental_practice": [
+      {
+        "stage": "guided",
+        "prompt_en": "There are ___ apples on the table.",
+        "answer": "some",
+        "explanation_vi": "Câu khẳng định với danh từ số nhiều.",
+        "translation_vi": "Có vài quả táo trên bàn.",
+        "draft_id": "M08-A1-15-GUIDED-01"
+      },
+      {
+        "stage": "independent",
+        "prompt_en": "I don't have ___ bread.",
+        "answer": "any",
+        "explanation_vi": "Phủ định và bread không đếm được.",
+        "translation_vi": "Tôi không có bánh mì.",
+        "draft_id": "M08-A1-15-INDEPENDENT-02"
+      },
+      {
+        "stage": "mastery",
+        "prompt_en": "Offer: Would you like ___ juice?",
+        "answer": "some",
+        "explanation_vi": "Lời mời thường dùng some.",
+        "translation_vi": "Bạn có muốn uống chút nước ép không?",
+        "draft_id": "M08-A1-15-MASTERY-03"
+      },
+      {
+        "stage": "spaced_review",
+        "prompt_en": "Do you have ___ questions?",
+        "answer": "any",
+        "explanation_vi": "Câu hỏi thông thường dùng any.",
+        "translation_vi": "Bạn có câu hỏi nào không?",
+        "draft_id": "M08-A1-15-SPACED_REVIEW-04"
+      }
+    ],
+    "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED",
+    "question_import_policy": "SEPARATE_BANK_NO_OVERWRITE",
+    "title": "Some & Any",
+    "source_question_count": 51,
+    "source_stages": {
+      "guided": 15,
+      "independent": 20,
+      "mastery": 10,
+      "spaced_review": 6
+    }
+  },
+  "A1-16": {
+    "lesson_id": "A1-16",
+    "overview_vi": "Much dùng với danh từ không đếm được; many với danh từ đếm được số nhiều. A lot of dùng được với cả hai nhóm, đặc biệt tự nhiên trong câu khẳng định hằng ngày.",
+    "decision_steps_vi": [
+      "Xác định danh từ đếm được hay không",
+      "Chọn many hoặc much",
+      "Nếu muốn dùng một cách linh hoạt, cân nhắc a lot of"
+    ],
+    "patterns": [
+      {
+        "pattern": "many + plural countable",
+        "use_vi": "Hỏi hoặc nói về số lượng vật đếm được.",
+        "example_en": "How many cousins do you have?",
+        "example_vi": "Bạn có bao nhiêu anh chị em họ?"
+      },
+      {
+        "pattern": "much + uncountable",
+        "use_vi": "Hỏi về lượng chất/liệu trừu tượng.",
+        "example_en": "How much time do we have?",
+        "example_vi": "Chúng ta còn bao nhiêu thời gian?"
+      },
+      {
+        "pattern": "a lot of + both",
+        "use_vi": "Dùng với cả hai loại danh từ.",
+        "example_en": "She has a lot of homework.",
+        "example_vi": "Cô ấy có nhiều bài tập về nhà."
+      }
+    ],
+    "worked_examples": [
+      {
+        "situation_vi": "Chọn từ trong How ___ chairs are there?",
+        "answer_en": "How many chairs are there?",
+        "translation_vi": "Có bao nhiêu cái ghế?",
+        "reason_vi": "Chairs là số nhiều đếm được nên dùng many."
+      },
+      {
+        "situation_vi": "Chọn từ trong How ___ water do you drink?",
+        "answer_en": "How much water do you drink?",
+        "translation_vi": "Bạn uống bao nhiêu nước?",
+        "reason_vi": "Water không đếm được nên dùng much."
+      }
+    ],
+    "contrasts": [
+      {
+        "first_en": "many books",
+        "second_en": "much milk",
+        "difference_vi": "Books là đếm được số nhiều; milk không đếm được."
+      }
+    ],
+    "common_mistakes": [
+      {
+        "wrong": "How many rice do you need?",
+        "correct": "How much rice do you need?",
+        "why_vi": "Rice không đếm được."
+      },
+      {
+        "wrong": "How much students are here?",
+        "correct": "How many students are here?",
+        "why_vi": "Students là danh từ đếm được số nhiều."
+      }
+    ],
+    "supplemental_practice": [
+      {
+        "stage": "guided",
+        "prompt_en": "How ___ bananas do you want?",
+        "answer": "many",
+        "explanation_vi": "Bananas số nhiều đếm được.",
+        "translation_vi": "Bạn muốn bao nhiêu quả chuối?",
+        "draft_id": "M08-A1-16-GUIDED-01"
+      },
+      {
+        "stage": "independent",
+        "prompt_en": "How ___ coffee is left?",
+        "answer": "much",
+        "explanation_vi": "Coffee ở đây là chất lỏng không đếm được.",
+        "translation_vi": "Còn bao nhiêu cà phê?",
+        "draft_id": "M08-A1-16-INDEPENDENT-02"
+      },
+      {
+        "stage": "mastery",
+        "prompt_en": "Correct: We have many homework.",
+        "answer": "We have a lot of homework.",
+        "explanation_vi": "Homework là danh từ không đếm được.",
+        "translation_vi": "Chúng tôi có nhiều bài tập về nhà.",
+        "draft_id": "M08-A1-16-MASTERY-03"
+      },
+      {
+        "stage": "spaced_review",
+        "prompt_en": "Choose: many / much people",
+        "answer": "many",
+        "explanation_vi": "People là số nhiều đếm được.",
+        "translation_vi": "Nhiều người.",
+        "draft_id": "M08-A1-16-SPACED_REVIEW-04"
+      }
+    ],
+    "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED",
+    "question_import_policy": "SEPARATE_BANK_NO_OVERWRITE",
+    "title": "Basic Quantifiers",
+    "source_question_count": 51,
+    "source_stages": {
+      "guided": 15,
+      "independent": 20,
+      "mastery": 10,
+      "spaced_review": 6
+    }
+  },
+  "A1-17": {
+    "lesson_id": "A1-17",
+    "overview_vi": "Tính từ bổ nghĩa cho danh từ hoặc mô tả chủ ngữ sau be. Trong tiếng Anh, tính từ thường đứng trước danh từ, không đứng sau danh từ như cách nói phổ biến trong tiếng Việt.",
+    "decision_steps_vi": [
+      "Tìm danh từ được mô tả",
+      "Nếu tính từ bổ nghĩa trực tiếp, đặt trước danh từ",
+      "Nếu mô tả chủ ngữ, dùng be + adjective"
+    ],
+    "patterns": [
+      {
+        "pattern": "adjective + noun",
+        "use_vi": "Tính từ đứng trước danh từ.",
+        "example_en": "She has a small house.",
+        "example_vi": "Cô ấy có một ngôi nhà nhỏ."
+      },
+      {
+        "pattern": "subject + be + adjective",
+        "use_vi": "Tính từ đứng sau be để mô tả chủ ngữ.",
+        "example_en": "The house is small.",
+        "example_vi": "Ngôi nhà nhỏ."
+      },
+      {
+        "pattern": "very + adjective",
+        "use_vi": "Very tăng mức độ của tính từ.",
+        "example_en": "The test is very easy.",
+        "example_vi": "Bài kiểm tra rất dễ."
+      }
+    ],
+    "worked_examples": [
+      {
+        "situation_vi": "Sắp xếp: a / red / bag",
+        "answer_en": "a red bag",
+        "translation_vi": "một chiếc túi đỏ",
+        "reason_vi": "Red đứng trước bag."
+      },
+      {
+        "situation_vi": "Đổi a happy child sang câu với be.",
+        "answer_en": "The child is happy.",
+        "translation_vi": "Đứa trẻ vui.",
+        "reason_vi": "Happy đứng sau be vì đang mô tả chủ ngữ."
+      }
+    ],
+    "contrasts": [
+      {
+        "first_en": "a quiet room",
+        "second_en": "The room is quiet.",
+        "difference_vi": "Hai cách đặt adjective: trước noun hoặc sau be."
+      }
+    ],
+    "common_mistakes": [
+      {
+        "wrong": "I have a car new.",
+        "correct": "I have a new car.",
+        "why_vi": "Tính từ new đứng trước danh từ car."
+      },
+      {
+        "wrong": "She is a girl beautiful.",
+        "correct": "She is a beautiful girl.",
+        "why_vi": "Tính từ beautiful đứng trước girl."
+      }
+    ],
+    "supplemental_practice": [
+      {
+        "stage": "guided",
+        "prompt_en": "It is a ___ cat. (black)",
+        "answer": "black",
+        "explanation_vi": "Black bổ nghĩa cho cat.",
+        "translation_vi": "Đó là một con mèo đen.",
+        "draft_id": "M08-A1-17-GUIDED-01"
+      },
+      {
+        "stage": "independent",
+        "prompt_en": "Write: một căn phòng lớn",
+        "answer": "a big room",
+        "explanation_vi": "Big đứng trước room.",
+        "translation_vi": "Một căn phòng lớn.",
+        "draft_id": "M08-A1-17-INDEPENDENT-02"
+      },
+      {
+        "stage": "mastery",
+        "prompt_en": "Correct: My brother is a boy tall.",
+        "answer": "My brother is a tall boy.",
+        "explanation_vi": "Tall đứng trước boy.",
+        "translation_vi": "Anh trai tôi là một cậu bé cao.",
+        "draft_id": "M08-A1-17-MASTERY-03"
+      },
+      {
+        "stage": "spaced_review",
+        "prompt_en": "Complete: The soup ___ hot.",
+        "answer": "is",
+        "explanation_vi": "Sau be có tính từ hot.",
+        "translation_vi": "Món súp nóng.",
+        "draft_id": "M08-A1-17-SPACED_REVIEW-04"
+      }
+    ],
+    "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED",
+    "question_import_policy": "SEPARATE_BANK_NO_OVERWRITE",
+    "title": "Adjectives & Word Order",
+    "source_question_count": 51,
+    "source_stages": {
+      "guided": 15,
+      "independent": 20,
+      "mastery": 10,
+      "spaced_review": 6
+    }
+  },
+  "A1-18": {
+    "lesson_id": "A1-18",
+    "overview_vi": "Giới từ vị trí chỉ nơi người/vật đang ở: in (bên trong), on (trên bề mặt), under (bên dưới), next to (bên cạnh), between (ở giữa hai vị trí).",
+    "decision_steps_vi": [
+      "Hình dung vị trí của vật so với vật mốc",
+      "Chọn giới từ theo quan hệ không gian",
+      "Đặt giới từ trước cụm danh từ chỉ vật mốc"
+    ],
+    "patterns": [
+      {
+        "pattern": "in / on / under + noun",
+        "use_vi": "Inside, trên bề mặt, hoặc ở dưới.",
+        "example_en": "The keys are in the drawer.",
+        "example_vi": "Chìa khóa ở trong ngăn kéo."
+      },
+      {
+        "pattern": "next to / between + noun",
+        "use_vi": "Bên cạnh hoặc ở giữa hai đối tượng.",
+        "example_en": "The bank is between two shops.",
+        "example_vi": "Ngân hàng nằm giữa hai cửa hàng."
+      }
+    ],
+    "worked_examples": [
+      {
+        "situation_vi": "Miêu tả cuốn sách nằm trên mặt bàn.",
+        "answer_en": "The book is on the desk.",
+        "translation_vi": "Cuốn sách ở trên bàn.",
+        "reason_vi": "Sách tiếp xúc mặt bàn nên dùng on."
+      },
+      {
+        "situation_vi": "Miêu tả một chiếc hộp trong tủ.",
+        "answer_en": "The box is in the cupboard.",
+        "translation_vi": "Chiếc hộp ở trong tủ.",
+        "reason_vi": "Chiếc hộp nằm trong không gian của tủ nên dùng in."
+      }
+    ],
+    "contrasts": [
+      {
+        "first_en": "The cat is on the box.",
+        "second_en": "The cat is in the box.",
+        "difference_vi": "On chỉ ở trên bề mặt; in chỉ ở bên trong hộp."
+      }
+    ],
+    "common_mistakes": [
+      {
+        "wrong": "The pencil is in the table. (on its surface)",
+        "correct": "The pencil is on the table.",
+        "why_vi": "Nằm trên mặt bàn dùng on."
+      },
+      {
+        "wrong": "The chair is between the desk. (one desk)",
+        "correct": "The chair is next to the desk.",
+        "why_vi": "Between cần hai điểm/đối tượng trong mẫu cơ bản."
+      }
+    ],
+    "supplemental_practice": [
+      {
+        "stage": "guided",
+        "prompt_en": "The ball is ___ the bed. (below it)",
+        "answer": "under",
+        "explanation_vi": "Under là bên dưới.",
+        "translation_vi": "Quả bóng nằm dưới gầm giường.",
+        "draft_id": "M08-A1-18-GUIDED-01"
+      },
+      {
+        "stage": "independent",
+        "prompt_en": "The milk is ___ the fridge.",
+        "answer": "in",
+        "explanation_vi": "Fridge là một không gian chứa.",
+        "translation_vi": "Sữa nằm trong tủ lạnh.",
+        "draft_id": "M08-A1-18-INDEPENDENT-02"
+      },
+      {
+        "stage": "mastery",
+        "prompt_en": "Write: Ngân hàng ở giữa hai cửa hàng.",
+        "answer": "The bank is between two shops.",
+        "explanation_vi": "Between đi với hai vật mốc.",
+        "translation_vi": "Ngân hàng nằm giữa hai cửa hàng.",
+        "draft_id": "M08-A1-18-MASTERY-03"
+      },
+      {
+        "stage": "spaced_review",
+        "prompt_en": "The phone is ___ the table. (on its surface)",
+        "answer": "on",
+        "explanation_vi": "Dùng on cho bề mặt.",
+        "translation_vi": "Điện thoại nằm trên bàn.",
+        "draft_id": "M08-A1-18-SPACED_REVIEW-04"
+      }
+    ],
+    "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED",
+    "question_import_policy": "SEPARATE_BANK_NO_OVERWRITE",
+    "title": "Prepositions of Place",
+    "source_question_count": 51,
+    "source_stages": {
+      "guided": 15,
+      "independent": 20,
+      "mastery": 10,
+      "spaced_review": 6
+    }
+  },
+  "A1-19": {
+    "lesson_id": "A1-19",
+    "overview_vi": "In, on và at chỉ thời gian theo các mức độ khác nhau. Dùng at cho giờ cụ thể, on cho ngày/thứ, in cho tháng, năm, mùa hoặc khoảng thời gian rộng.",
+    "decision_steps_vi": [
+      "Nhìn cụm thời gian sau giới từ",
+      "Phân loại giờ, ngày hay tháng/năm",
+      "Chọn at, on hoặc in phù hợp"
+    ],
+    "patterns": [
+      {
+        "pattern": "at + exact time",
+        "use_vi": "Giờ hoặc thời điểm cụ thể.",
+        "example_en": "The lesson starts at seven.",
+        "example_vi": "Buổi học bắt đầu lúc bảy giờ."
+      },
+      {
+        "pattern": "on + day / date",
+        "use_vi": "Ngày trong tuần hoặc ngày tháng cụ thể.",
+        "example_en": "We meet on Friday.",
+        "example_vi": "Chúng tôi gặp nhau vào thứ Sáu."
+      },
+      {
+        "pattern": "in + month / year / season",
+        "use_vi": "Tháng, năm, mùa.",
+        "example_en": "My birthday is in July.",
+        "example_vi": "Sinh nhật tôi vào tháng Bảy."
+      }
+    ],
+    "worked_examples": [
+      {
+        "situation_vi": "Điền: I wake up ___ 6:30.",
+        "answer_en": "I wake up at 6:30.",
+        "translation_vi": "Tôi thức dậy lúc 6:30.",
+        "reason_vi": "6:30 là giờ cụ thể nên dùng at."
+      },
+      {
+        "situation_vi": "Điền: School starts ___ September.",
+        "answer_en": "School starts in September.",
+        "translation_vi": "Năm học bắt đầu vào tháng Chín.",
+        "reason_vi": "September là tháng nên dùng in."
+      }
+    ],
+    "contrasts": [
+      {
+        "first_en": "at 8 a.m.",
+        "second_en": "on Monday",
+        "difference_vi": "At dùng giờ; on dùng thứ trong tuần."
+      }
+    ],
+    "common_mistakes": [
+      {
+        "wrong": "I study at Monday.",
+        "correct": "I study on Monday.",
+        "why_vi": "Monday là ngày nên dùng on."
+      },
+      {
+        "wrong": "We travel on December.",
+        "correct": "We travel in December.",
+        "why_vi": "December là tháng nên dùng in."
+      }
+    ],
+    "supplemental_practice": [
+      {
+        "stage": "guided",
+        "prompt_en": "The film starts ___ 9 p.m.",
+        "answer": "at",
+        "explanation_vi": "9 p.m. là giờ.",
+        "translation_vi": "Phim bắt đầu lúc chín giờ tối.",
+        "draft_id": "M08-A1-19-GUIDED-01"
+      },
+      {
+        "stage": "independent",
+        "prompt_en": "I visit my grandma ___ Sunday.",
+        "answer": "on",
+        "explanation_vi": "Sunday là thứ trong tuần.",
+        "translation_vi": "Tôi thăm bà vào Chủ nhật.",
+        "draft_id": "M08-A1-19-INDEPENDENT-02"
+      },
+      {
+        "stage": "mastery",
+        "prompt_en": "Correct: My sister was born on 2012.",
+        "answer": "My sister was born in 2012.",
+        "explanation_vi": "2012 là năm nên dùng in.",
+        "translation_vi": "Em/chị gái tôi sinh năm 2012.",
+        "draft_id": "M08-A1-19-MASTERY-03"
+      },
+      {
+        "stage": "spaced_review",
+        "prompt_en": "Complete: My birthday is ___ May.",
+        "answer": "in",
+        "explanation_vi": "May là tháng.",
+        "translation_vi": "Sinh nhật tôi vào tháng Năm.",
+        "draft_id": "M08-A1-19-SPACED_REVIEW-04"
+      }
+    ],
+    "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED",
+    "question_import_policy": "SEPARATE_BANK_NO_OVERWRITE",
+    "title": "Prepositions of Time",
+    "source_question_count": 51,
+    "source_stages": {
+      "guided": 15,
+      "independent": 20,
+      "mastery": 10,
+      "spaced_review": 6
+    }
+  },
+  "A1-20": {
+    "lesson_id": "A1-20",
+    "overview_vi": "Hiện tại đơn dùng cho thói quen, lịch trình và sự thật nói chung. Với I/you/we/they, dùng động từ nguyên thể không to trong câu khẳng định.",
+    "decision_steps_vi": [
+      "Câu nói về việc lặp lại hay đang diễn ra ngay lúc này",
+      "Nếu là thói quen, dùng hiện tại đơn",
+      "Với I/you/we/they, giữ nguyên động từ cơ bản"
+    ],
+    "patterns": [
+      {
+        "pattern": "I / you / we / they + base verb",
+        "use_vi": "Hành động lặp lại hoặc thói quen.",
+        "example_en": "I walk to school every day.",
+        "example_vi": "Tôi đi bộ đến trường mỗi ngày."
+      },
+      {
+        "pattern": "subject + verb + frequency phrase",
+        "use_vi": "Cụm chỉ tần suất giúp hiểu thói quen.",
+        "example_en": "They play tennis on Sundays.",
+        "example_vi": "Họ chơi tennis vào Chủ nhật."
+      }
+    ],
+    "worked_examples": [
+      {
+        "situation_vi": "Chọn: I ___ (drink) tea every morning.",
+        "answer_en": "I drink tea every morning.",
+        "translation_vi": "Tôi uống trà mỗi sáng.",
+        "reason_vi": "Every morning diễn tả thói quen; I dùng drink."
+      },
+      {
+        "situation_vi": "Chọn: We ___ (study) after school.",
+        "answer_en": "We study after school.",
+        "translation_vi": "Chúng tôi học sau giờ học.",
+        "reason_vi": "We đi với động từ nguyên thể study."
+      }
+    ],
+    "contrasts": [
+      {
+        "first_en": "I cook every evening.",
+        "second_en": "I am cooking right now.",
+        "difference_vi": "Thói quen thường dùng hiện tại đơn; hành động đang xảy ra dùng hiện tại tiếp diễn."
+      }
+    ],
+    "common_mistakes": [
+      {
+        "wrong": "I am play football on Fridays.",
+        "correct": "I play football on Fridays.",
+        "why_vi": "Hiện tại đơn không dùng am trước động từ thường."
+      },
+      {
+        "wrong": "They plays chess every weekend.",
+        "correct": "They play chess every weekend.",
+        "why_vi": "They không thêm s vào play."
+      }
+    ],
+    "supplemental_practice": [
+      {
+        "stage": "guided",
+        "prompt_en": "I ___ (read) every night.",
+        "answer": "read",
+        "explanation_vi": "I với thói quen dùng read.",
+        "translation_vi": "Tôi đọc sách mỗi tối.",
+        "draft_id": "M08-A1-20-GUIDED-01"
+      },
+      {
+        "stage": "independent",
+        "prompt_en": "They ___ (live) near school.",
+        "answer": "live",
+        "explanation_vi": "They dùng động từ cơ bản.",
+        "translation_vi": "Họ sống gần trường.",
+        "draft_id": "M08-A1-20-INDEPENDENT-02"
+      },
+      {
+        "stage": "mastery",
+        "prompt_en": "Correct: We goes home at five.",
+        "answer": "We go home at five.",
+        "explanation_vi": "We không dùng goes.",
+        "translation_vi": "Chúng tôi về nhà lúc năm giờ.",
+        "draft_id": "M08-A1-20-MASTERY-03"
+      },
+      {
+        "stage": "spaced_review",
+        "prompt_en": "Complete: I ___ (eat) breakfast at seven every day.",
+        "answer": "eat",
+        "explanation_vi": "Every day chỉ thói quen.",
+        "translation_vi": "Tôi ăn sáng lúc bảy giờ hằng ngày.",
+        "draft_id": "M08-A1-20-SPACED_REVIEW-04"
+      }
+    ],
+    "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED",
+    "question_import_policy": "SEPARATE_BANK_NO_OVERWRITE",
+    "title": "Present Simple – Affirmative",
+    "source_question_count": 51,
+    "source_stages": {
+      "guided": 15,
+      "independent": 20,
+      "mastery": 10,
+      "spaced_review": 6
+    }
+  },
+  "A1-21": {
+    "lesson_id": "A1-21",
+    "overview_vi": "Ở hiện tại đơn, chủ ngữ he/she/it hoặc một người/vật số ít thường cần động từ thêm -s/-es. Một số động từ như study đổi y thành ies.",
+    "decision_steps_vi": [
+      "Tìm chủ ngữ có phải ngôi thứ ba số ít không",
+      "Xem đuôi động từ",
+      "Thêm s/es hoặc đổi y thành ies nếu đúng quy tắc"
+    ],
+    "patterns": [
+      {
+        "pattern": "he / she / it + V-s",
+        "use_vi": "Hầu hết động từ thêm -s.",
+        "example_en": "She speaks English.",
+        "example_vi": "Cô ấy nói tiếng Anh."
+      },
+      {
+        "pattern": "go / watch / wash + es",
+        "use_vi": "Một số đuôi cần -es.",
+        "example_en": "He watches TV at night.",
+        "example_vi": "Anh ấy xem TV buổi tối."
+      },
+      {
+        "pattern": "consonant + y → ies",
+        "use_vi": "Study thành studies; play thành plays vì trước y là nguyên âm.",
+        "example_en": "My sister studies at home.",
+        "example_vi": "Chị/em gái tôi học ở nhà."
+      }
+    ],
+    "worked_examples": [
+      {
+        "situation_vi": "Điền: My dad ___ (go) to work early.",
+        "answer_en": "My dad goes to work early.",
+        "translation_vi": "Bố tôi đi làm sớm.",
+        "reason_vi": "Go với chủ ngữ số ít ngôi thứ ba thành goes."
+      },
+      {
+        "situation_vi": "Điền: She ___ (study) English.",
+        "answer_en": "She studies English.",
+        "translation_vi": "Cô ấy học tiếng Anh.",
+        "reason_vi": "Study có phụ âm trước y nên đổi thành studies."
+      }
+    ],
+    "contrasts": [
+      {
+        "first_en": "I play tennis.",
+        "second_en": "He plays tennis.",
+        "difference_vi": "Khi đổi chủ ngữ từ I sang he, động từ cần -s."
+      }
+    ],
+    "common_mistakes": [
+      {
+        "wrong": "He go to school.",
+        "correct": "He goes to school.",
+        "why_vi": "He ở hiện tại đơn cần goes."
+      },
+      {
+        "wrong": "She studys every night.",
+        "correct": "She studies every night.",
+        "why_vi": "Study đổi y thành ies."
+      }
+    ],
+    "supplemental_practice": [
+      {
+        "stage": "guided",
+        "prompt_en": "My mother ___ (cook) dinner.",
+        "answer": "cooks",
+        "explanation_vi": "Mother là she; thêm s.",
+        "translation_vi": "Mẹ tôi nấu bữa tối.",
+        "draft_id": "M08-A1-21-GUIDED-01"
+      },
+      {
+        "stage": "independent",
+        "prompt_en": "The bus ___ (stop) here.",
+        "answer": "stops",
+        "explanation_vi": "The bus là chủ ngữ số ít.",
+        "translation_vi": "Xe buýt dừng ở đây.",
+        "draft_id": "M08-A1-21-INDEPENDENT-02"
+      },
+      {
+        "stage": "mastery",
+        "prompt_en": "Correct: He watchs TV at night.",
+        "answer": "He watches TV at night.",
+        "explanation_vi": "Watch thêm es.",
+        "translation_vi": "Anh ấy xem TV vào buổi tối.",
+        "draft_id": "M08-A1-21-MASTERY-03"
+      },
+      {
+        "stage": "spaced_review",
+        "prompt_en": "Complete: Anna ___ (play) the piano.",
+        "answer": "plays",
+        "explanation_vi": "Play có nguyên âm a trước y, chỉ thêm s.",
+        "translation_vi": "Anna chơi piano.",
+        "draft_id": "M08-A1-21-SPACED_REVIEW-04"
+      }
+    ],
+    "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED",
+    "question_import_policy": "SEPARATE_BANK_NO_OVERWRITE",
+    "title": "Third-person Singular",
+    "source_question_count": 51,
+    "source_stages": {
+      "guided": 15,
+      "independent": 20,
+      "mastery": 10,
+      "spaced_review": 6
+    }
+  },
+  "A1-22": {
+    "lesson_id": "A1-22",
+    "overview_vi": "Câu phủ định hiện tại đơn với động từ thường dùng do not (don’t) hoặc does not (doesn’t) trước động từ nguyên thể. Sau doesn’t không thêm -s vào động từ.",
+    "decision_steps_vi": [
+      "Xác định động từ chính có phải be không",
+      "Với động từ thường, chọn do not hoặc does not theo chủ ngữ",
+      "Đưa động từ chính về nguyên thể"
+    ],
+    "patterns": [
+      {
+        "pattern": "I / you / we / they + don't + base verb",
+        "use_vi": "Phủ định thói quen với các chủ ngữ này.",
+        "example_en": "We don't eat meat.",
+        "example_vi": "Chúng tôi không ăn thịt."
+      },
+      {
+        "pattern": "he / she / it + doesn't + base verb",
+        "use_vi": "He/she/it dùng doesn't; động từ không thêm s.",
+        "example_en": "She doesn't like coffee.",
+        "example_vi": "Cô ấy không thích cà phê."
+      }
+    ],
+    "worked_examples": [
+      {
+        "situation_vi": "Đổi He plays tennis sang phủ định.",
+        "answer_en": "He doesn't play tennis.",
+        "translation_vi": "Anh ấy không chơi tennis.",
+        "reason_vi": "Doesn't đã thể hiện ngôi thứ ba số ít; dùng play."
+      },
+      {
+        "situation_vi": "Đổi I watch TV sang phủ định.",
+        "answer_en": "I don't watch TV.",
+        "translation_vi": "Tôi không xem TV.",
+        "reason_vi": "I đi với don't."
+      }
+    ],
+    "contrasts": [
+      {
+        "first_en": "He plays football.",
+        "second_en": "He doesn't play football.",
+        "difference_vi": "Trong phủ định, -s chuyển sang does; play không thêm s."
+      }
+    ],
+    "common_mistakes": [
+      {
+        "wrong": "She doesn't likes tea.",
+        "correct": "She doesn't like tea.",
+        "why_vi": "Sau doesn't dùng động từ nguyên thể."
+      },
+      {
+        "wrong": "I doesn't know.",
+        "correct": "I don't know.",
+        "why_vi": "I dùng don't, không dùng doesn't."
+      }
+    ],
+    "supplemental_practice": [
+      {
+        "stage": "guided",
+        "prompt_en": "They ___ (not/live) here.",
+        "answer": "don't live",
+        "explanation_vi": "They đi với don't + động từ cơ bản.",
+        "translation_vi": "Họ không sống ở đây.",
+        "draft_id": "M08-A1-22-GUIDED-01"
+      },
+      {
+        "stage": "independent",
+        "prompt_en": "My dad ___ (not/work) on Sunday.",
+        "answer": "doesn't work",
+        "explanation_vi": "Dad là he, dùng doesn't work.",
+        "translation_vi": "Bố tôi không làm vào Chủ nhật.",
+        "draft_id": "M08-A1-22-INDEPENDENT-02"
+      },
+      {
+        "stage": "mastery",
+        "prompt_en": "Correct: She don't speak French.",
+        "answer": "She doesn't speak French.",
+        "explanation_vi": "She cần doesn't.",
+        "translation_vi": "Cô ấy không nói tiếng Pháp.",
+        "draft_id": "M08-A1-22-MASTERY-03"
+      },
+      {
+        "stage": "spaced_review",
+        "prompt_en": "Complete: The train ___ (not/stop) here.",
+        "answer": "doesn't stop",
+        "explanation_vi": "Train số ít, sau doesn't dùng stop.",
+        "translation_vi": "Tàu không dừng ở đây.",
+        "draft_id": "M08-A1-22-SPACED_REVIEW-04"
+      }
+    ],
+    "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED",
+    "question_import_policy": "SEPARATE_BANK_NO_OVERWRITE",
+    "title": "Present Simple – Negatives",
+    "source_question_count": 51,
+    "source_stages": {
+      "guided": 15,
+      "independent": 20,
+      "mastery": 10,
+      "spaced_review": 6
+    }
+  },
+  "A1-23": {
+    "lesson_id": "A1-23",
+    "overview_vi": "Câu hỏi với động từ thường ở hiện tại đơn dùng Do/Does đứng đầu. Khi đã có does, động từ chính trở lại nguyên thể; còn câu hỏi với be thì chỉ đảo am/is/are.",
+    "decision_steps_vi": [
+      "Xác định động từ chính là be hay động từ thường",
+      "Với động từ thường chọn Do/Does",
+      "Đặt chủ ngữ sau Do/Does và dùng động từ nguyên thể"
+    ],
+    "patterns": [
+      {
+        "pattern": "Do + I/you/we/they + base verb?",
+        "use_vi": "Hỏi về thói quen của I/you/we/they.",
+        "example_en": "Do you study at night?",
+        "example_vi": "Bạn học vào buổi tối à?"
+      },
+      {
+        "pattern": "Does + he/she/it + base verb?",
+        "use_vi": "Câu hỏi với chủ ngữ số ít ngôi ba.",
+        "example_en": "Does Lan walk to school?",
+        "example_vi": "Lan có đi bộ đến trường không?"
+      },
+      {
+        "pattern": "Yes, ... do / does; No, ... don't / doesn't",
+        "use_vi": "Trả lời ngắn đồng nhất trợ động từ.",
+        "example_en": "Yes, he does.",
+        "example_vi": "Có, anh ấy có."
+      }
+    ],
+    "worked_examples": [
+      {
+        "situation_vi": "Đổi She works here thành câu hỏi.",
+        "answer_en": "Does she work here?",
+        "translation_vi": "Cô ấy có làm ở đây không?",
+        "reason_vi": "Chọn does cho she, đổi works về work."
+      },
+      {
+        "situation_vi": "Hỏi bạn học tiếng Anh mỗi ngày không.",
+        "answer_en": "Do you study English every day?",
+        "translation_vi": "Bạn có học tiếng Anh mỗi ngày không?",
+        "reason_vi": "You dùng do, động từ study nguyên thể."
+      }
+    ],
+    "contrasts": [
+      {
+        "first_en": "Is she a teacher?",
+        "second_en": "Does she teach English?",
+        "difference_vi": "Với be đảo is; với teach là động từ thường dùng does."
+      }
+    ],
+    "common_mistakes": [
+      {
+        "wrong": "Does he plays football?",
+        "correct": "Does he play football?",
+        "why_vi": "Sau does dùng play nguyên thể."
+      },
+      {
+        "wrong": "Do she study here?",
+        "correct": "Does she study here?",
+        "why_vi": "She dùng does."
+      }
+    ],
+    "supplemental_practice": [
+      {
+        "stage": "guided",
+        "prompt_en": "___ you like music?",
+        "answer": "Do",
+        "explanation_vi": "You dùng do với động từ like.",
+        "translation_vi": "Bạn có thích âm nhạc không?",
+        "draft_id": "M08-A1-23-GUIDED-01"
+      },
+      {
+        "stage": "independent",
+        "prompt_en": "___ your brother ride a bike?",
+        "answer": "Does",
+        "explanation_vi": "Brother là số ít, dùng does.",
+        "translation_vi": "Anh trai bạn có đi xe đạp không?",
+        "draft_id": "M08-A1-23-INDEPENDENT-02"
+      },
+      {
+        "stage": "mastery",
+        "prompt_en": "Correct: Does Anna likes dogs?",
+        "answer": "Does Anna like dogs?",
+        "explanation_vi": "Sau does dùng động từ cơ bản like.",
+        "translation_vi": "Anna có thích chó không?",
+        "draft_id": "M08-A1-23-MASTERY-03"
+      },
+      {
+        "stage": "spaced_review",
+        "prompt_en": "Short answer: Do they live here? (no)",
+        "answer": "No, they don't.",
+        "explanation_vi": "They đi với don't.",
+        "translation_vi": "Không, họ không sống ở đây.",
+        "draft_id": "M08-A1-23-SPACED_REVIEW-04"
+      }
+    ],
+    "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED",
+    "question_import_policy": "SEPARATE_BANK_NO_OVERWRITE",
+    "title": "Present Simple – Questions",
+    "source_question_count": 51,
+    "source_stages": {
+      "guided": 15,
+      "independent": 20,
+      "mastery": 10,
+      "spaced_review": 6
+    }
+  },
+  "A1-24": {
+    "lesson_id": "A1-24",
+    "overview_vi": "Trạng từ tần suất nói một hành động diễn ra thường xuyên tới mức nào. Với động từ thường, đặt trước động từ; với be, đặt sau am/is/are.",
+    "decision_steps_vi": [
+      "Xác định động từ thường hay be",
+      "Chọn từ diễn tả tần suất thực tế",
+      "Đặt trạng từ đúng vị trí"
+    ],
+    "patterns": [
+      {
+        "pattern": "subject + frequency adverb + main verb",
+        "use_vi": "Always, usually, often, sometimes, never thường đứng trước động từ thường.",
+        "example_en": "I usually eat breakfast at home.",
+        "example_vi": "Tôi thường ăn sáng ở nhà."
+      },
+      {
+        "pattern": "subject + be + frequency adverb",
+        "use_vi": "Với am/is/are, trạng từ đứng sau be.",
+        "example_en": "She is always polite.",
+        "example_vi": "Cô ấy luôn lịch sự."
+      }
+    ],
+    "worked_examples": [
+      {
+        "situation_vi": "Sắp xếp: I / often / walk / to school.",
+        "answer_en": "I often walk to school.",
+        "translation_vi": "Tôi thường đi bộ đến trường.",
+        "reason_vi": "Often đứng trước động từ thường walk."
+      },
+      {
+        "situation_vi": "Sắp xếp: He / is / never / late.",
+        "answer_en": "He is never late.",
+        "translation_vi": "Anh ấy không bao giờ đến muộn.",
+        "reason_vi": "Never đứng sau is."
+      }
+    ],
+    "contrasts": [
+      {
+        "first_en": "He often plays football.",
+        "second_en": "He is often busy.",
+        "difference_vi": "Often trước plays nhưng sau is."
+      }
+    ],
+    "common_mistakes": [
+      {
+        "wrong": "She goes always home early.",
+        "correct": "She always goes home early.",
+        "why_vi": "Always đứng trước động từ thường goes."
+      },
+      {
+        "wrong": "They never are tired.",
+        "correct": "They are never tired.",
+        "why_vi": "Trạng từ đứng sau are."
+      }
+    ],
+    "supplemental_practice": [
+      {
+        "stage": "guided",
+        "prompt_en": "I ___ read before bed. (usually)",
+        "answer": "usually",
+        "explanation_vi": "Usually đứng trước read.",
+        "translation_vi": "Tôi thường đọc trước khi ngủ.",
+        "draft_id": "M08-A1-24-GUIDED-01"
+      },
+      {
+        "stage": "independent",
+        "prompt_en": "Order: is / often / busy / my dad.",
+        "answer": "My dad is often busy.",
+        "explanation_vi": "Often đứng sau is.",
+        "translation_vi": "Bố tôi thường bận.",
+        "draft_id": "M08-A1-24-INDEPENDENT-02"
+      },
+      {
+        "stage": "mastery",
+        "prompt_en": "Correct: He is late never.",
+        "answer": "He is never late.",
+        "explanation_vi": "Never đứng sau is.",
+        "translation_vi": "Anh ấy không bao giờ đến muộn.",
+        "draft_id": "M08-A1-24-MASTERY-03"
+      },
+      {
+        "stage": "spaced_review",
+        "prompt_en": "Order: sometimes / we / eat / outside.",
+        "answer": "We sometimes eat outside.",
+        "explanation_vi": "Sometimes đặt trước eat.",
+        "translation_vi": "Đôi khi chúng tôi ăn ngoài.",
+        "draft_id": "M08-A1-24-SPACED_REVIEW-04"
+      }
+    ],
+    "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED",
+    "question_import_policy": "SEPARATE_BANK_NO_OVERWRITE",
+    "title": "Adverbs of Frequency",
+    "source_question_count": 51,
+    "source_stages": {
+      "guided": 15,
+      "independent": 20,
+      "mastery": 10,
+      "spaced_review": 6
+    }
+  },
+  "A1-25": {
+    "lesson_id": "A1-25",
+    "overview_vi": "Hiện tại tiếp diễn mô tả hành động đang xảy ra ngay khi nói hoặc quanh thời điểm hiện tại. Công thức bắt buộc có am/is/are và động từ V-ing.",
+    "decision_steps_vi": [
+      "Có hành động đang diễn ra ngay bây giờ không",
+      "Chọn am/is/are theo chủ ngữ",
+      "Thêm -ing vào động từ, kiểm tra quy tắc chính tả"
+    ],
+    "patterns": [
+      {
+        "pattern": "subject + am/is/are + V-ing",
+        "use_vi": "Công thức hiện tại tiếp diễn khẳng định.",
+        "example_en": "I am studying now.",
+        "example_vi": "Tôi đang học bây giờ."
+      },
+      {
+        "pattern": "make → making; run → running",
+        "use_vi": "Bỏ e câm hoặc gấp đôi phụ âm ở mẫu thường gặp.",
+        "example_en": "He is running in the park.",
+        "example_vi": "Anh ấy đang chạy trong công viên."
+      }
+    ],
+    "worked_examples": [
+      {
+        "situation_vi": "Điền: Look! The baby ___ (sleep).",
+        "answer_en": "The baby is sleeping.",
+        "translation_vi": "Nhìn kìa! Em bé đang ngủ.",
+        "reason_vi": "Baby tương ứng it; hành động đang xảy ra nên dùng is sleeping."
+      },
+      {
+        "situation_vi": "Đổi I write an email thành đang viết ngay bây giờ.",
+        "answer_en": "I am writing an email now.",
+        "translation_vi": "Tôi đang viết email.",
+        "reason_vi": "I dùng am và write bỏ e trước ing thành writing."
+      }
+    ],
+    "contrasts": [
+      {
+        "first_en": "She reads every day.",
+        "second_en": "She is reading now.",
+        "difference_vi": "Thói quen dùng reads; đang diễn ra dùng is reading."
+      }
+    ],
+    "common_mistakes": [
+      {
+        "wrong": "She is read a book now.",
+        "correct": "She is reading a book now.",
+        "why_vi": "Sau is ở thì tiếp diễn dùng V-ing."
+      },
+      {
+        "wrong": "I am makeing dinner.",
+        "correct": "I am making dinner.",
+        "why_vi": "Make bỏ e câm trước ing."
+      }
+    ],
+    "supplemental_practice": [
+      {
+        "stage": "guided",
+        "prompt_en": "I ___ (study) right now.",
+        "answer": "am studying",
+        "explanation_vi": "I dùng am; study thêm ing.",
+        "translation_vi": "Tôi đang học ngay bây giờ.",
+        "draft_id": "M08-A1-25-GUIDED-01"
+      },
+      {
+        "stage": "independent",
+        "prompt_en": "Listen! The dog ___ (bark).",
+        "answer": "is barking",
+        "explanation_vi": "Dog là số ít, hành động đang diễn ra.",
+        "translation_vi": "Nghe kìa! Con chó đang sủa.",
+        "draft_id": "M08-A1-25-INDEPENDENT-02"
+      },
+      {
+        "stage": "mastery",
+        "prompt_en": "Correct: We are cook dinner now.",
+        "answer": "We are cooking dinner now.",
+        "explanation_vi": "Cần V-ing sau are.",
+        "translation_vi": "Chúng tôi đang nấu bữa tối.",
+        "draft_id": "M08-A1-25-MASTERY-03"
+      },
+      {
+        "stage": "spaced_review",
+        "prompt_en": "Complete: They ___ (play) outside now.",
+        "answer": "are playing",
+        "explanation_vi": "They dùng are và playing.",
+        "translation_vi": "Họ đang chơi bên ngoài.",
+        "draft_id": "M08-A1-25-SPACED_REVIEW-04"
+      }
+    ],
+    "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED",
+    "question_import_policy": "SEPARATE_BANK_NO_OVERWRITE",
+    "title": "Present Continuous – Affirmative",
+    "source_question_count": 51,
+    "source_stages": {
+      "guided": 15,
+      "independent": 20,
+      "mastery": 10,
+      "spaced_review": 6
+    }
+  },
+  "A1-26": {
+    "lesson_id": "A1-26",
+    "overview_vi": "Với hiện tại tiếp diễn, thêm not sau am/is/are để phủ định. Muốn hỏi Yes/No, đảo am/is/are trước chủ ngữ và giữ V-ing.",
+    "decision_steps_vi": [
+      "Nhận diện cấu trúc be + V-ing",
+      "Phủ định: thêm not sau be",
+      "Câu hỏi: chuyển be ra đầu câu"
+    ],
+    "patterns": [
+      {
+        "pattern": "subject + be + not + V-ing",
+        "use_vi": "Phủ định việc đang diễn ra.",
+        "example_en": "He isn't sleeping.",
+        "example_vi": "Anh ấy không ngủ (vào lúc này)."
+      },
+      {
+        "pattern": "Be + subject + V-ing?",
+        "use_vi": "Hỏi về việc đang xảy ra.",
+        "example_en": "Are you waiting for me?",
+        "example_vi": "Bạn đang đợi tôi à?"
+      },
+      {
+        "pattern": "Yes, subject + be / No, subject + be not",
+        "use_vi": "Trả lời ngắn theo be.",
+        "example_en": "No, they aren't.",
+        "example_vi": "Không, họ không đang làm vậy."
+      }
+    ],
+    "worked_examples": [
+      {
+        "situation_vi": "Đổi She is working thành câu hỏi.",
+        "answer_en": "Is she working?",
+        "translation_vi": "Cô ấy đang làm việc à?",
+        "reason_vi": "Đảo is trước she và giữ working."
+      },
+      {
+        "situation_vi": "Đổi They are eating thành phủ định.",
+        "answer_en": "They aren't eating.",
+        "translation_vi": "Họ không đang ăn.",
+        "reason_vi": "Thêm not sau are; aren't là dạng rút gọn."
+      }
+    ],
+    "contrasts": [
+      {
+        "first_en": "She works on Sundays.",
+        "second_en": "Is she working now?",
+        "difference_vi": "Hỏi về thói quen dùng does; hỏi hành động đang diễn ra dùng is."
+      }
+    ],
+    "common_mistakes": [
+      {
+        "wrong": "Does he is playing?",
+        "correct": "Is he playing?",
+        "why_vi": "Không thêm does trước be."
+      },
+      {
+        "wrong": "They not are studying.",
+        "correct": "They are not studying.",
+        "why_vi": "Not đứng sau are."
+      }
+    ],
+    "supplemental_practice": [
+      {
+        "stage": "guided",
+        "prompt_en": "She ___ (not/read) now.",
+        "answer": "isn't reading",
+        "explanation_vi": "She dùng isn't + V-ing.",
+        "translation_vi": "Cô ấy không đọc sách lúc này.",
+        "draft_id": "M08-A1-26-GUIDED-01"
+      },
+      {
+        "stage": "independent",
+        "prompt_en": "Make a question: We are leaving.",
+        "answer": "Are we leaving?",
+        "explanation_vi": "Đảo are lên trước we.",
+        "translation_vi": "Chúng ta đang rời đi à?",
+        "draft_id": "M08-A1-26-INDEPENDENT-02"
+      },
+      {
+        "stage": "mastery",
+        "prompt_en": "Correct: Are she watching TV?",
+        "answer": "Is she watching TV?",
+        "explanation_vi": "She đi với is.",
+        "translation_vi": "Cô ấy đang xem TV à?",
+        "draft_id": "M08-A1-26-MASTERY-03"
+      },
+      {
+        "stage": "spaced_review",
+        "prompt_en": "Short answer: Is he sleeping? (no)",
+        "answer": "No, he isn't.",
+        "explanation_vi": "Phủ định is trong trả lời ngắn.",
+        "translation_vi": "Không, anh ấy không ngủ.",
+        "draft_id": "M08-A1-26-SPACED_REVIEW-04"
+      }
+    ],
+    "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED",
+    "question_import_policy": "SEPARATE_BANK_NO_OVERWRITE",
+    "title": "Present Continuous – Questions & Negatives",
+    "source_question_count": 51,
+    "source_stages": {
+      "guided": 15,
+      "independent": 20,
+      "mastery": 10,
+      "spaced_review": 6
+    }
+  },
+  "A1-27": {
+    "lesson_id": "A1-27",
+    "overview_vi": "Hiện tại đơn nhấn mạnh thói quen hoặc sự thật nói chung; hiện tại tiếp diễn nhấn mạnh hành động đang xảy ra hoặc tình huống tạm thời. Hãy dựa vào ý nghĩa, không chỉ săn từ khóa.",
+    "decision_steps_vi": [
+      "Hỏi: hành động lặp lại hay xảy ra ngay lúc này",
+      "Đối chiếu dấu hiệu như usually/now với ngữ cảnh",
+      "Chọn V(s/es) hoặc be + V-ing"
+    ],
+    "patterns": [
+      {
+        "pattern": "routine → present simple",
+        "use_vi": "Thói quen và sự thật nói chung.",
+        "example_en": "She walks to work every day.",
+        "example_vi": "Cô ấy đi bộ đi làm mỗi ngày."
+      },
+      {
+        "pattern": "action happening now → continuous",
+        "use_vi": "Hành động diễn ra tại thời điểm nói.",
+        "example_en": "She is walking to work now.",
+        "example_vi": "Giờ cô ấy đang đi bộ đến nơi làm."
+      },
+      {
+        "pattern": "stative verb → usually simple",
+        "use_vi": "Know, like, need thường không dùng tiếp diễn với nghĩa cơ bản.",
+        "example_en": "I know the answer.",
+        "example_vi": "Tôi biết câu trả lời."
+      }
+    ],
+    "worked_examples": [
+      {
+        "situation_vi": "Cùng một người: every day / now.",
+        "answer_en": "He drives to work every day. He is taking the bus today.",
+        "translation_vi": "Anh ấy thường lái xe đi làm, hôm nay đang đi xe buýt.",
+        "reason_vi": "Một câu nói thói quen; câu còn lại nói tình huống hôm nay."
+      },
+      {
+        "situation_vi": "Điền: Listen! Someone ___ (sing).",
+        "answer_en": "Someone is singing.",
+        "translation_vi": "Nghe kìa! Ai đó đang hát.",
+        "reason_vi": "Listen! cho biết hành động đang diễn ra."
+      }
+    ],
+    "contrasts": [
+      {
+        "first_en": "I usually eat at home.",
+        "second_en": "I am eating out tonight.",
+        "difference_vi": "Một thói quen; một kế hoạch/tình huống hiện thời, không thể chọn chỉ vì có tonight."
+      }
+    ],
+    "common_mistakes": [
+      {
+        "wrong": "She is knowing the answer.",
+        "correct": "She knows the answer.",
+        "why_vi": "Know với nghĩa nhận biết là động từ trạng thái."
+      },
+      {
+        "wrong": "He goes to school right now. (in progress)",
+        "correct": "He is going to school right now.",
+        "why_vi": "Right now với hành động đang diễn ra dùng tiếp diễn."
+      }
+    ],
+    "supplemental_practice": [
+      {
+        "stage": "guided",
+        "prompt_en": "My dad ___ (work) at a bank.",
+        "answer": "works",
+        "explanation_vi": "Nói nghề nghiệp/làm việc thường xuyên.",
+        "translation_vi": "Bố tôi làm tại ngân hàng.",
+        "draft_id": "M08-A1-27-GUIDED-01"
+      },
+      {
+        "stage": "independent",
+        "prompt_en": "Look! It ___ (rain).",
+        "answer": "is raining",
+        "explanation_vi": "Hành động đang diễn ra.",
+        "translation_vi": "Nhìn kìa! Trời đang mưa.",
+        "draft_id": "M08-A1-27-INDEPENDENT-02"
+      },
+      {
+        "stage": "mastery",
+        "prompt_en": "Correct: I am usually walking to school. (habit)",
+        "answer": "I usually walk to school.",
+        "explanation_vi": "Usually với thói quen trong ngữ cảnh dùng hiện tại đơn.",
+        "translation_vi": "Tôi thường đi bộ đến trường.",
+        "draft_id": "M08-A1-27-MASTERY-03"
+      },
+      {
+        "stage": "spaced_review",
+        "prompt_en": "Complete: She ___ (study) now, but she usually ___ (play) outside.",
+        "answer": "is studying; plays",
+        "explanation_vi": "Now diễn tả đang học; usually diễn tả thói quen.",
+        "translation_vi": "Cô ấy đang học nhưng thường chơi ngoài trời.",
+        "draft_id": "M08-A1-27-SPACED_REVIEW-04"
+      }
+    ],
+    "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED",
+    "question_import_policy": "SEPARATE_BANK_NO_OVERWRITE",
+    "title": "Present Simple vs Continuous",
+    "source_question_count": 51,
+    "source_stages": {
+      "guided": 15,
+      "independent": 20,
+      "mastery": 10,
+      "spaced_review": 6
+    }
+  },
+  "A1-28": {
+    "lesson_id": "A1-28",
+    "overview_vi": "Can dùng để nói khả năng, xin phép hoặc đề nghị đơn giản. Can là động từ khuyết thiếu, nên động từ sau nó ở dạng nguyên thể và không thêm -s với he/she.",
+    "decision_steps_vi": [
+      "Xác định câu nói về khả năng hay xin phép",
+      "Đặt can/can’t sau chủ ngữ",
+      "Dùng động từ nguyên thể sau can/can’t"
+    ],
+    "patterns": [
+      {
+        "pattern": "subject + can + base verb",
+        "use_vi": "Nói có thể làm điều gì.",
+        "example_en": "She can swim very well.",
+        "example_vi": "Cô ấy có thể bơi rất giỏi."
+      },
+      {
+        "pattern": "subject + can't + base verb",
+        "use_vi": "Nói không có khả năng hoặc không được phép theo ngữ cảnh.",
+        "example_en": "I can't drive.",
+        "example_vi": "Tôi không biết lái xe."
+      },
+      {
+        "pattern": "Can + subject + base verb?",
+        "use_vi": "Hỏi về khả năng hoặc xin phép.",
+        "example_en": "Can I open the window?",
+        "example_vi": "Tôi mở cửa sổ được không?"
+      }
+    ],
+    "worked_examples": [
+      {
+        "situation_vi": "Điền: My brother ___ (can/play) guitar.",
+        "answer_en": "My brother can play the guitar.",
+        "translation_vi": "Anh trai tôi có thể chơi guitar.",
+        "reason_vi": "Sau can dùng play, không phải plays."
+      },
+      {
+        "situation_vi": "Hỏi xin phép dùng điện thoại.",
+        "answer_en": "Can I use your phone?",
+        "translation_vi": "Tôi dùng điện thoại của bạn được không?",
+        "reason_vi": "Can I...? là mẫu xin phép lịch sự thông dụng."
+      }
+    ],
+    "contrasts": [
+      {
+        "first_en": "He plays football.",
+        "second_en": "He can play football.",
+        "difference_vi": "Sau can không dùng plays dù chủ ngữ là he."
+      }
+    ],
+    "common_mistakes": [
+      {
+        "wrong": "She cans sing.",
+        "correct": "She can sing.",
+        "why_vi": "Can không thêm s."
+      },
+      {
+        "wrong": "Can you to help me?",
+        "correct": "Can you help me?",
+        "why_vi": "Sau can không dùng to."
+      }
+    ],
+    "supplemental_practice": [
+      {
+        "stage": "guided",
+        "prompt_en": "I ___ (can/speak) English.",
+        "answer": "can speak",
+        "explanation_vi": "Can đi cùng động từ nguyên thể.",
+        "translation_vi": "Tôi có thể nói tiếng Anh.",
+        "draft_id": "M08-A1-28-GUIDED-01"
+      },
+      {
+        "stage": "independent",
+        "prompt_en": "Make negative: He can swim.",
+        "answer": "He can't swim.",
+        "explanation_vi": "Can't đứng trước swim nguyên thể.",
+        "translation_vi": "Anh ấy không biết bơi.",
+        "draft_id": "M08-A1-28-INDEPENDENT-02"
+      },
+      {
+        "stage": "mastery",
+        "prompt_en": "Correct: She can dances.",
+        "answer": "She can dance.",
+        "explanation_vi": "Sau can dùng dance.",
+        "translation_vi": "Cô ấy biết nhảy.",
+        "draft_id": "M08-A1-28-MASTERY-03"
+      },
+      {
+        "stage": "spaced_review",
+        "prompt_en": "Ask: You can play chess.",
+        "answer": "Can you play chess?",
+        "explanation_vi": "Đưa can lên trước you.",
+        "translation_vi": "Bạn có biết chơi cờ không?",
+        "draft_id": "M08-A1-28-SPACED_REVIEW-04"
+      }
+    ],
+    "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED",
+    "question_import_policy": "SEPARATE_BANK_NO_OVERWRITE",
+    "title": "Can / Can't",
+    "source_question_count": 51,
+    "source_stages": {
+      "guided": 15,
+      "independent": 20,
+      "mastery": 10,
+      "spaced_review": 6
+    }
+  },
+  "A1-29": {
+    "lesson_id": "A1-29",
+    "overview_vi": "Câu mệnh lệnh thường bắt đầu bằng động từ nguyên thể, không cần chủ ngữ you. Để cấm hoặc nhắc không làm gì, dùng Don’t + động từ; Let’s + động từ dùng để rủ cùng làm.",
+    "decision_steps_vi": [
+      "Muốn yêu cầu, cấm hay rủ cùng làm",
+      "Nếu yêu cầu: động từ nguyên thể, nếu cấm: Don’t + động từ",
+      "Nếu rủ: Let’s + động từ"
+    ],
+    "patterns": [
+      {
+        "pattern": "base verb + ...",
+        "use_vi": "Chỉ dẫn hoặc yêu cầu trực tiếp.",
+        "example_en": "Open your book, please.",
+        "example_vi": "Làm ơn mở sách."
+      },
+      {
+        "pattern": "Don't + base verb",
+        "use_vi": "Đưa yêu cầu không làm việc gì.",
+        "example_en": "Don't run in the hall.",
+        "example_vi": "Đừng chạy trong hành lang."
+      },
+      {
+        "pattern": "Let's + base verb",
+        "use_vi": "Rủ người nghe cùng thực hiện.",
+        "example_en": "Let's make a sandwich.",
+        "example_vi": "Chúng ta làm bánh sandwich nhé."
+      }
+    ],
+    "worked_examples": [
+      {
+        "situation_vi": "Chuyển You should sit down sang yêu cầu đơn giản.",
+        "answer_en": "Sit down, please.",
+        "translation_vi": "Mời ngồi xuống.",
+        "reason_vi": "Câu mệnh lệnh bắt đầu bằng động từ nguyên thể sit."
+      },
+      {
+        "situation_vi": "Rủ cả nhóm đi công viên.",
+        "answer_en": "Let's go to the park.",
+        "translation_vi": "Chúng ta đi công viên nhé.",
+        "reason_vi": "Let's + go, không thêm to trước go."
+      }
+    ],
+    "contrasts": [
+      {
+        "first_en": "Close the door.",
+        "second_en": "Let's close the door.",
+        "difference_vi": "Close the door là yêu cầu; Let's close the door là rủ cùng làm."
+      }
+    ],
+    "common_mistakes": [
+      {
+        "wrong": "Don't to touch that.",
+        "correct": "Don't touch that.",
+        "why_vi": "Sau Don't dùng động từ nguyên thể không to."
+      },
+      {
+        "wrong": "Let's going home.",
+        "correct": "Let's go home.",
+        "why_vi": "Sau Let's dùng go nguyên thể."
+      }
+    ],
+    "supplemental_practice": [
+      {
+        "stage": "guided",
+        "prompt_en": "___ quiet, please. (be)",
+        "answer": "Be",
+        "explanation_vi": "Câu mệnh lệnh dùng be nguyên thể.",
+        "translation_vi": "Xin hãy yên lặng.",
+        "draft_id": "M08-A1-29-GUIDED-01"
+      },
+      {
+        "stage": "independent",
+        "prompt_en": "Make negative command: Open the window.",
+        "answer": "Don't open the window.",
+        "explanation_vi": "Đặt Don't trước open.",
+        "translation_vi": "Đừng mở cửa sổ.",
+        "draft_id": "M08-A1-29-INDEPENDENT-02"
+      },
+      {
+        "stage": "mastery",
+        "prompt_en": "Correct: Let's to watch a film.",
+        "answer": "Let's watch a film.",
+        "explanation_vi": "Let's + động từ nguyên thể.",
+        "translation_vi": "Chúng ta xem phim nhé.",
+        "draft_id": "M08-A1-29-MASTERY-03"
+      },
+      {
+        "stage": "spaced_review",
+        "prompt_en": "Write an invitation with 'play football'.",
+        "answer": "Let's play football.",
+        "explanation_vi": "Let's dùng để rủ cùng chơi.",
+        "translation_vi": "Chúng ta chơi bóng đá nhé.",
+        "draft_id": "M08-A1-29-SPACED_REVIEW-04"
+      }
+    ],
+    "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED",
+    "question_import_policy": "SEPARATE_BANK_NO_OVERWRITE",
+    "title": "Imperatives & Let's",
+    "source_question_count": 51,
+    "source_stages": {
+      "guided": 15,
+      "independent": 20,
+      "mastery": 10,
+      "spaced_review": 6
+    }
+  },
+  "A1-30": {
+    "lesson_id": "A1-30",
+    "overview_vi": "And nối các ý thêm vào; but diễn tả đối lập; because nêu lý do; so nêu kết quả. Khi viết câu dài, hãy chọn từ nối theo quan hệ ý nghĩa.",
+    "decision_steps_vi": [
+      "Đọc ý thứ nhất",
+      "Xác định ý tiếp theo bổ sung, đối lập, giải thích hay kết quả",
+      "Chọn and, but, because hoặc so và kiểm tra hai vế"
+    ],
+    "patterns": [
+      {
+        "pattern": "A and B",
+        "use_vi": "Thêm một thông tin cùng hướng.",
+        "example_en": "I have a pen and a notebook.",
+        "example_vi": "Tôi có một cây bút và một quyển vở."
+      },
+      {
+        "pattern": "A but B",
+        "use_vi": "Nối hai thông tin tương phản.",
+        "example_en": "It is small but comfortable.",
+        "example_vi": "Nó nhỏ nhưng thoải mái."
+      },
+      {
+        "pattern": "result because reason / reason so result",
+        "use_vi": "Because đi trước lý do; so đi trước kết quả.",
+        "example_en": "I stayed home because it rained.",
+        "example_vi": "Tôi ở nhà vì trời mưa."
+      }
+    ],
+    "worked_examples": [
+      {
+        "situation_vi": "Ghép: I was tired. I went to bed early.",
+        "answer_en": "I was tired, so I went to bed early.",
+        "translation_vi": "Tôi mệt nên đi ngủ sớm.",
+        "reason_vi": "Mệt là nguyên nhân, đi ngủ sớm là kết quả; dùng so."
+      },
+      {
+        "situation_vi": "Ghép: I like tea. I don't like coffee.",
+        "answer_en": "I like tea, but I don't like coffee.",
+        "translation_vi": "Tôi thích trà nhưng không thích cà phê.",
+        "reason_vi": "Hai sở thích đối lập, dùng but."
+      }
+    ],
+    "contrasts": [
+      {
+        "first_en": "I stayed home because I was sick.",
+        "second_en": "I was sick, so I stayed home.",
+        "difference_vi": "Because theo sau bởi lý do; so theo sau bởi kết quả."
+      }
+    ],
+    "common_mistakes": [
+      {
+        "wrong": "I was tired because I went to bed early. (intended result)",
+        "correct": "I was tired, so I went to bed early.",
+        "why_vi": "Nếu đi ngủ sớm là kết quả do mệt, dùng so."
+      },
+      {
+        "wrong": "She is tall but her brother is short because.",
+        "correct": "She is tall, but her brother is short.",
+        "why_vi": "Because không đứng riêng ở cuối câu; but nối hai ý tương phản."
+      }
+    ],
+    "supplemental_practice": [
+      {
+        "stage": "guided",
+        "prompt_en": "I have a dog ___ a cat.",
+        "answer": "and",
+        "explanation_vi": "Hai danh từ được thêm vào danh sách.",
+        "translation_vi": "Tôi có một con chó và một con mèo.",
+        "draft_id": "M08-A1-30-GUIDED-01"
+      },
+      {
+        "stage": "independent",
+        "prompt_en": "He is tired, ___ he keeps working.",
+        "answer": "but",
+        "explanation_vi": "Mệt mà vẫn làm việc tạo tương phản.",
+        "translation_vi": "Anh ấy mệt nhưng vẫn tiếp tục làm.",
+        "draft_id": "M08-A1-30-INDEPENDENT-02"
+      },
+      {
+        "stage": "mastery",
+        "prompt_en": "Join with because: I went home. It was late.",
+        "answer": "I went home because it was late.",
+        "explanation_vi": "Because giới thiệu lý do.",
+        "translation_vi": "Tôi về nhà vì trời đã muộn.",
+        "draft_id": "M08-A1-30-MASTERY-03"
+      },
+      {
+        "stage": "spaced_review",
+        "prompt_en": "Join with so: It rained. We stayed inside.",
+        "answer": "It rained, so we stayed inside.",
+        "explanation_vi": "So giới thiệu kết quả.",
+        "translation_vi": "Trời mưa nên chúng tôi ở trong nhà.",
+        "draft_id": "M08-A1-30-SPACED_REVIEW-04"
+      }
+    ],
+    "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED",
+    "question_import_policy": "SEPARATE_BANK_NO_OVERWRITE",
+    "title": "Basic Conjunctions & Sentence Building",
+    "source_question_count": 51,
+    "source_stages": {
+      "guided": 15,
+      "independent": 20,
+      "mastery": 10,
+      "spaced_review": 6
+    }
+  }
+}

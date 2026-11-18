@@ -1,0 +1,112 @@
+{
+  "U02/audio/U02_Listening_5.mp3": {
+    "source": "gemini-tts",
+    "voices": {
+      "Narrator": "Charon"
+    },
+    "transcript_sha256": "fa60abe0327b5ecd96a2315be39ac06587e022ca550c33817774e6c441ebbbe7",
+    "seconds": 57.9,
+    "requests": 1,
+    "replaced": "package espeak draft"
+  },
+  "U01/audio/U01_Listening_4.mp3": {
+    "source": "gemini-tts",
+    "voices": {
+      "Agent": "Puck",
+      "Caller": "Kore"
+    },
+    "transcript_sha256": "54ece0df336beff82e0976cc518c5f1f6ce5a917eef4446a2cf1ff11d5eb0d1e",
+    "seconds": 68.8,
+    "requests": 1,
+    "replaced": "package espeak draft"
+  },
+  "U02/audio/U02_Listening_4.mp3": {
+    "source": "gemini-tts",
+    "voices": {
+      "Narrator": "Aoede"
+    },
+    "transcript_sha256": "e2d3d2a60a2504e1d0cbb7f8095d0cbc79846c1c5f6e116cbe079f49449e5fa0",
+    "seconds": 63.2,
+    "requests": 1,
+    "replaced": "package espeak draft"
+  },
+  "U03/audio/U03_Listening_4.mp3": {
+    "source": "gemini-tts",
+    "voices": {
+      "Host": "Charon",
+      "Anna": "Kore",
+      "Ben": "Puck",
+      "Chloe": "Leda"
+    },
+    "transcript_sha256": "0acdcc848302d5d1160ab71d0b285cbd66fa96f9c1b31eae87bb3794ef78d256",
+    "seconds": 86.4,
+    "requests": 5,
+    "replaced": "package espeak draft"
+  },
+  "U04/audio/U04_Listening_4.mp3": {
+    "source": "gemini-tts",
+    "voices": {
+      "Interviewer": "Orus",
+      "Maya": "Kore",
+      "Leo": "Puck"
+    },
+    "transcript_sha256": "1d05d26916b8eef16411a7627371183ada8121ce5bbe87a670b3321953f35cd1",
+    "seconds": 103.2,
+    "requests": 6,
+    "replaced": "package espeak draft"
+  },
+  "U06/audio/U06_Listening_4.mp3": {
+    "source": "gemini-tts",
+    "voices": {
+      "Lecturer": "Iapetus"
+    },
+    "transcript_sha256": "fdb6b20c79247ed35160eeafa05d661aa906c4acc3a9c2c47f350fdfdd8db892",
+    "seconds": 105.1,
+    "requests": 1,
+    "replaced": "package espeak draft"
+  },
+  "U07/audio/U07_Listening_1.mp3": {
+    "source": "gemini-tts",
+    "voices": {
+      "Receptionist": "Leda",
+      "Applicant": "Puck"
+    },
+    "transcript_sha256": "c6d6089a9265b87d6e233c520dc530bab2af66962901749ae22818705016aeca",
+    "seconds": 113.9,
+    "requests": 2,
+    "replaced": "package espeak draft"
+  },
+  "U07/audio/U07_Listening_2.mp3": {
+    "source": "gemini-tts",
+    "voices": {
+      "Guide": "Kore",
+      "Student": "Orus"
+    },
+    "transcript_sha256": "bffa15bbadfdd7bc2258f656ba1052510309bddcf7c1b76b80f0b3770138f7cc",
+    "seconds": 132.5,
+    "requests": 2,
+    "replaced": "package espeak draft"
+  },
+  "U07/audio/U07_Listening_3.mp3": {
+    "source": "gemini-tts",
+    "voices": {
+      "Tutor": "Charon",
+      "Maya": "Kore",
+      "Jon": "Puck"
+    },
+    "transcript_sha256": "d68ccb83368116301c0be3c5a9d02e7c1de456c16fc20f3fde5a918a2076cd53",
+    "seconds": 166.1,
+    "requests": 9,
+    "replaced": "package espeak draft"
+  },
+  "U07/audio/U07_Listening_4.mp3": {
+    "source": "gemini-tts",
+    "voices": {
+      "Lecturer": "Aoede"
+    },
+    "transcript_sha256": "4835732531d191e0c46342ee70d82ae1217dd194a4f679b11eda901e081e8f66",
+    "seconds": 166.6,
+    "requests": 1,
+    "replaced": "package espeak draft"
+  }
+}

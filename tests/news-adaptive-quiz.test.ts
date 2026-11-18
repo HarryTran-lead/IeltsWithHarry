@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { validateAdaptiveQuiz } from "../src/lib/news/adaptive-quiz";
+import { generateAdaptiveNewsQuiz, longestSharedQuestionPhrase, looksLikeDirectLookup, targetQuestionCount, validateAdaptiveQuiz } from "../src/lib/news/adaptive-quiz";
 import { choiceTypes, gapTypes, ieltsQuestionTypes, typesForKey, type IeltsQuestionType } from "../src/lib/news/ielts-passage";
 
 const quote = "Scientists used solar panels to power the research station during the summer.";
@@ -43,9 +43,90 @@ describe("adaptive IELTS passage quiz", () => {
     partial.questions.slice(0, 3).forEach((question) => { question.supporting_sentence = "A fabricated sentence about the Moon."; });
     expect(validateAdaptiveQuiz(partial, body, selected, 2)).toHaveLength(3);
   });
+  it("drops copied evidence clues and a uniquely copied multiple-choice answer", () => {
+    expect(longestSharedQuestionPhrase(
+      "What did scientists use to power the research station during the summer?", quote,
+    )).toBeGreaterThanOrEqual(6);
+    const direct = generated(["mcq"]);
+    direct.questions[0].prompt = "What did scientists use to power the research station during the summer?";
+    direct.questions[1].prompt = "What did the scientists power?";
+    direct.questions[1].options = ["the research station", "the city power grid", "the nearby laboratory"];
+    const kept = validateAdaptiveQuiz(direct, body, ["mcq"], 2);
+    expect(kept).toHaveLength(2);
+    expect(kept.every((question) => question.prompt !== direct.questions[0].prompt && question.prompt !== direct.questions[1].prompt)).toBe(true);
+    expect(looksLikeDirectLookup("What did researchers record during survey stage 4?", "Researchers recorded soil temperature during survey stage 4 for comparison.")).toBe(true);
+    expect(looksLikeDirectLookup("Which measurement was documented during phase 4?", "Researchers recorded soil temperature during survey stage 4 for comparison.")).toBe(false);
+  });
   it("assigns varied question groups", () => {
     const groups = typesForKey("article-one");
     expect(groups).toHaveLength(3);
     expect(new Set(groups).size).toBe(3);
+  });
+  it("does not request thirteen questions from a repetitive long article", () => {
+    const sentence = "Researchers measured the same feature during the survey and wrote down the same result for the field station.";
+    expect(targetQuestionCount(Array(50).fill(sentence).join(" "))).toBe(1);
+    const varied = Array.from({ length: 40 }, (_, index) =>
+      `Researchers measured feature ${index + 1} during the survey and recorded its distinct result at the field station for later comparison with earlier observations across several seasons in the region.`).join(" ");
+    expect(targetQuestionCount(varied)).toBe(13);
+  });
+  it("reviews every flagged candidate in one call for a supported thirteen-question article", async () => {
+    const sentences = Array.from({ length: 40 }, (_, index) =>
+      `Researchers recorded detail${index + 1} during survey stage ${index + 1} and compared the measurement with earlier records to explain how the local environment changed across several months at the field station.`);
+    const passage = Array.from({ length: 8 }, (_, index) => sentences.slice(index * 5, index * 5 + 5).join(" ")).join("\n\n");
+    const requests: string[] = [];
+    const reply = (value: unknown) => new Response(JSON.stringify({ candidates: [{ finishReason: "STOP", content: { parts: [{ text: JSON.stringify(value) }] } }] }), { status: 200 });
+    const fetcher = async (_url: string | URL | Request, init?: RequestInit) => {
+      expect(init?.headers).toMatchObject({ "x-goog-api-key": "test-key" });
+      const request = JSON.parse(String(init?.body)) as { systemInstruction: { parts: { text: string }[] } };
+      const system = request.systemInstruction.parts[0].text;
+      requests.push(system);
+      if (system.includes("Focused second-pass quality check")) {
+        const ids = [...system.matchAll(/"id":(\d+)/g)].map((match) => Number(match[1]));
+        return reply({ reviews: ids.map((id) => ({ id, action: "keep", reason: "Evidence and answer checked." })) });
+      }
+      let index = 0;
+      const questions = [...system.matchAll(/(\d+) ([a-z_]+) candidates \(\d+ kept\)/g)].flatMap((match) =>
+        Array.from({ length: Number(match[1]) }, () => {
+          const type = match[2] as IeltsQuestionType;
+          const number = ++index;
+          const options = type === "tfng" ? ["True", "False", "Not Given"] : type === "ynng" ? ["Yes", "No", "Not Given"] : ["First", "Second", "Third", "Fourth"];
+          const choice = choiceTypes.has(type);
+          const prompt = number % 3 === 0
+            ? gapTypes.has(type)
+              ? `${type === "flow_chart_completion" ? `Step ${number}: ` : type === "table_completion" ? "Survey finding: " : ""}Researchers recorded ______ during survey stage ${number}.`
+              : type === "short_answer" ? `What did researchers record during survey stage ${number}?`
+                : `Which option describes researchers recording survey stage ${number}?`
+            : gapTypes.has(type)
+            ? `${type === "flow_chart_completion" ? `Step ${number}: ` : type === "table_completion" ? "Survey finding: " : ""}The team documented ______ for later comparison in phase ${number}.`
+            : type === "short_answer" ? `Which measurement was documented in phase ${number}?`
+              : `Which interpretation best fits phase ${number}?`;
+          return { type, prompt, options: choice ? options : [], correct_index: choice ? 0 : -1,
+            answer: choice ? "" : `detail${number}`, supporting_sentence: sentences[number - 1], explanation,
+            option_notes: choice ? options.map(() => note) : [], needs_review: true, review_reason: "Check this fact." };
+        }));
+      return reply({ questions, image_query: "research field station" });
+    };
+    const previous = { key: process.env.AI_FACTORY_GEMINI_API_KEY,
+      confirmed: process.env.AI_FACTORY_FREE_TIER_CONFIRMED, only: process.env.AI_FACTORY_FREE_TIER_ONLY };
+    process.env.AI_FACTORY_GEMINI_API_KEY = "test-key";
+    process.env.AI_FACTORY_FREE_TIER_CONFIRMED = "true";
+    process.env.AI_FACTORY_FREE_TIER_ONLY = "true";
+    try {
+      const result = await generateAdaptiveNewsQuiz("Survey findings", passage, "long-article", fetcher as typeof fetch);
+      expect(result.questions).toHaveLength(13);
+      const directCount = result.questions.filter((question) => looksLikeDirectLookup(question.prompt, question.supporting_sentence)).length;
+      expect(directCount).toBeGreaterThan(0);
+      expect(directCount).toBeLessThanOrEqual(3);
+      expect(new Set(result.questions.map((question) => question.type)).size).toBeGreaterThanOrEqual(2);
+      expect(requests).toHaveLength(2);
+      expect(requests[0]).toContain("Balance the set across difficulty");
+      const candidateCount = Number(requests[0].match(/Create (\d+) candidate questions/)?.[1]);
+      expect(candidateCount).toBeGreaterThan(13);
+      expect([...requests[1].matchAll(/"id":\d+/g)]).toHaveLength(candidateCount);
+    } finally {
+      if (previous.key === undefined) delete process.env.AI_FACTORY_GEMINI_API_KEY; else process.env.AI_FACTORY_GEMINI_API_KEY = previous.key;
+      if (previous.confirmed === undefined) delete process.env.AI_FACTORY_FREE_TIER_CONFIRMED; else process.env.AI_FACTORY_FREE_TIER_CONFIRMED = previous.confirmed;
+      if (previous.only === undefined) delete process.env.AI_FACTORY_FREE_TIER_ONLY; else process.env.AI_FACTORY_FREE_TIER_ONLY = previous.only;
+    }
   });
 });

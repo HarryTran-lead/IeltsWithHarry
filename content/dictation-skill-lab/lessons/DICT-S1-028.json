@@ -1,0 +1,426 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "DICT-S1-028",
+  "status": "draft",
+  "level": "L3",
+  "section": 1,
+  "topic": "Event Registration",
+  "title": "The Workshop Has a New Venue",
+  "learning_objectives_vi": [
+    "Luyện nghe tình huống: An organiser updates a registration.",
+    "Nhận diện corrected detail / distractors và thông tin cuối cùng của cuộc hội thoại.",
+    "Nghe chép lời nói tự nhiên, hiểu bằng chứng trước khi xem transcript."
+  ],
+  "content_format": "section_bridge",
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Service staff / representative",
+      "tts_voice_id": null,
+      "accent_requested": "australian"
+    },
+    {
+      "speaker_id": "B",
+      "role": "Customer / attendee",
+      "tts_voice_id": null,
+      "accent_requested": "australian"
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "Meadow Arts Festival, registration desk.",
+      "translation_vi": "Bàn đăng ký Lễ hội Nghệ thuật Meadow xin nghe.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "events",
+        "venues",
+        "corrections",
+        "section_1",
+        "two_speaker_dialogue",
+        "l3"
+      ]
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "B",
+      "text_en": "I've signed up for the Saturday photography workshop.",
+      "translation_vi": "Tôi đã đăng ký hội thảo nhiếp ảnh thứ Bảy.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "events",
+        "venues",
+        "corrections",
+        "section_1",
+        "two_speaker_dialogue",
+        "l3"
+      ]
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "A",
+      "text_en": "Yes, you're on the list. There has been a venue change.",
+      "translation_vi": "Vâng, bạn có tên trong danh sách. Địa điểm đã thay đổi.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "events",
+        "venues",
+        "corrections",
+        "section_1",
+        "two_speaker_dialogue",
+        "l3"
+      ]
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "B",
+      "text_en": "Oh, is it no longer at the town hall?",
+      "translation_vi": "Ồ, vậy không còn ở hội trường thị trấn nữa à?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "events",
+        "venues",
+        "corrections",
+        "section_1",
+        "two_speaker_dialogue",
+        "l3"
+      ]
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "A",
+      "text_en": "Correct. It will be at the riverside studio on Mill Lane.",
+      "translation_vi": "Đúng. Hội thảo sẽ ở studio ven sông trên đường Mill Lane.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "events",
+        "venues",
+        "corrections",
+        "section_1",
+        "two_speaker_dialogue",
+        "l3"
+      ]
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "B",
+      "text_en": "Does registration still begin at nine?",
+      "translation_vi": "Giờ đăng ký vẫn bắt đầu lúc chín giờ chứ?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "events",
+        "venues",
+        "corrections",
+        "section_1",
+        "two_speaker_dialogue",
+        "l3"
+      ]
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "The doors open at nine, but the practical session starts at nine thirty.",
+      "translation_vi": "Cửa mở lúc chín giờ, nhưng buổi thực hành bắt đầu lúc chín giờ ba mươi.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "events",
+        "venues",
+        "corrections",
+        "section_1",
+        "two_speaker_dialogue",
+        "l3"
+      ]
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "B",
+      "text_en": "I was told to bring a camera and a tripod.",
+      "translation_vi": "Tôi được bảo mang máy ảnh và chân máy.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "events",
+        "venues",
+        "corrections",
+        "section_1",
+        "two_speaker_dialogue",
+        "l3"
+      ]
+    },
+    {
+      "turn_id": "T09",
+      "speaker_id": "A",
+      "text_en": "Bring a camera, certainly. The studio will provide tripods for everyone.",
+      "translation_vi": "Hãy mang máy ảnh. Studio sẽ cung cấp chân máy cho mọi người.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "events",
+        "venues",
+        "corrections",
+        "section_1",
+        "two_speaker_dialogue",
+        "l3"
+      ]
+    },
+    {
+      "turn_id": "T10",
+      "speaker_id": "B",
+      "text_en": "Great. Please send the updated details to my email.",
+      "translation_vi": "Tuyệt. Vui lòng gửi thông tin đã cập nhật qua email cho tôi.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "events",
+        "venues",
+        "corrections",
+        "section_1",
+        "two_speaker_dialogue",
+        "l3"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "type": "form_completion",
+      "prompt": "Change announced: workshop ____",
+      "correct_answers": [
+        "venue"
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Nhân viên nói địa điểm tổ chức đã đổi.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "events",
+        "venues",
+        "corrections",
+        "ielts_section1_practice"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q02",
+      "type": "form_completion",
+      "prompt": "New address: ____ Lane",
+      "correct_answers": [
+        "Mill"
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Địa điểm mới ở đường Mill Lane, không phải hội trường thị trấn.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "events",
+        "venues",
+        "corrections",
+        "ielts_section1_practice"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q03",
+      "type": "form_completion",
+      "prompt": "Practical session begins at ____",
+      "correct_answers": [
+        "nine thirty"
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "Chín giờ là giờ mở cửa; 9:30 mới bắt đầu thực hành.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "events",
+        "venues",
+        "corrections",
+        "ielts_section1_practice"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q04",
+      "type": "form_completion",
+      "prompt": "Participants must bring a ____",
+      "correct_answers": [
+        "camera"
+      ],
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "explanation_vi": "Người tham gia phải mang máy ảnh.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "events",
+        "venues",
+        "corrections",
+        "ielts_section1_practice"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q05",
+      "type": "form_completion",
+      "prompt": "The studio provides ____",
+      "correct_answers": [
+        "tripods"
+      ],
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "explanation_vi": "Studio cung cấp chân máy nên không phải tự mang.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "events",
+        "venues",
+        "corrections",
+        "ielts_section1_practice"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "D01",
+      "type": "dictation",
+      "prompt": "Nghe và chép nguyên văn lượt thoại T04 của nhân vật B.",
+      "correct_answers": [
+        "Oh, is it no longer at the town hall?"
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Câu gốc: Oh, is it no longer at the town hall? Nghĩa: Ồ, vậy không còn ở hội trường thị trấn nữa à? Hãy kiểm tra âm cuối, từ chức năng và chi tiết được sửa nếu có.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "events",
+        "venues",
+        "corrections",
+        "dictation",
+        "exact_words"
+      ]
+    },
+    {
+      "question_id": "D02",
+      "type": "dictation",
+      "prompt": "Nghe và chép nguyên văn lượt thoại T09 của nhân vật A.",
+      "correct_answers": [
+        "Bring a camera, certainly. The studio will provide tripods for everyone."
+      ],
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "explanation_vi": "Câu gốc: Bring a camera, certainly. The studio will provide tripods for everyone. Nghĩa: Hãy mang máy ảnh. Studio sẽ cung cấp chân máy cho mọi người. Hãy kiểm tra âm cuối, từ chức năng và chi tiết được sửa nếu có.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "events",
+        "venues",
+        "corrections",
+        "dictation",
+        "exact_words"
+      ]
+    },
+    {
+      "question_id": "G01",
+      "type": "gap_fill",
+      "prompt": "Điền từ/cụm từ bị lược bỏ sau khi nghe: Meadow Arts Festival, ____.",
+      "correct_answers": [
+        "registration desk"
+      ],
+      "evidence_turn_ids": [
+        "T01"
+      ],
+      "explanation_vi": "registration desk: bàn đăng ký. Câu gốc: Meadow Arts Festival, registration desk.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "events",
+        "venues",
+        "corrections",
+        "gap_fill",
+        "vocabulary_in_context"
+      ]
+    }
+  ],
+  "vocabulary": [
+    {
+      "term": "registration desk",
+      "pos": "phrase",
+      "meaning_vi": "bàn đăng ký",
+      "example_en": "Meadow Arts Festival, registration desk.",
+      "example_vi": "Bàn đăng ký Lễ hội Nghệ thuật Meadow xin nghe.",
+      "source_turn_id": "T01"
+    },
+    {
+      "term": "venue change",
+      "pos": "phrase",
+      "meaning_vi": "thay đổi địa điểm",
+      "example_en": "Yes, you're on the list. There has been a venue change.",
+      "example_vi": "Vâng, bạn có tên trong danh sách. Địa điểm đã thay đổi.",
+      "source_turn_id": "T03"
+    },
+    {
+      "term": "practical session",
+      "pos": "phrase",
+      "meaning_vi": "buổi thực hành",
+      "example_en": "The doors open at nine, but the practical session starts at nine thirty.",
+      "example_vi": "Cửa mở lúc chín giờ, nhưng buổi thực hành bắt đầu lúc chín giờ ba mươi.",
+      "source_turn_id": "T07"
+    },
+    {
+      "term": "tripods",
+      "pos": "word",
+      "meaning_vi": "chân máy",
+      "example_en": "Bring a camera, certainly. The studio will provide tripods for everyone.",
+      "example_vi": "Hãy mang máy ảnh. Studio sẽ cung cấp chân máy cho mọi người.",
+      "source_turn_id": "T09"
+    }
+  ],
+  "audio": {
+    "status": "not_generated",
+    "url": null,
+    "duration_ms": null,
+    "model": null,
+    "provider": null,
+    "voice_config": null,
+    "source_transcript_hash": "c6cca7cdbe2832e6c3554f4110892af14b09574ea283baf196c7cfde3bb3ab8b",
+    "audio_sha256": null,
+    "format": null
+  },
+  "qa": {
+    "content_reviewed": false,
+    "answers_verified": false,
+    "audio_verified": false,
+    "rights_cleared": false,
+    "duplicate_reviewed": false,
+    "notes": [
+      "Original AI-assisted draft; expert listening pedagogical review required.",
+      "Audio and word-level timestamps do not exist yet.",
+      "This is a practice lesson, not an official IELTS Listening test.",
+      "M16.2: automated edits are provisional; IELTS teacher final signoff, audio and rights clearance pending."
+    ]
+  },
+  "provenance": {
+    "content_origin": "original_ai_assisted",
+    "source_urls": [],
+    "source_rights_note": "Author-created educational dialogue. Verify audio provider distribution rights, service terms and suitability for user age before synthesis and publishing.",
+    "reviewer": null
+  },
+  "release_metadata": {
+    "published_at": null,
+    "version": 1
+  }
+}

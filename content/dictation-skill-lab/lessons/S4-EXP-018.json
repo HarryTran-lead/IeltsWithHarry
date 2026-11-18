@@ -1,0 +1,742 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "S4-EXP-018",
+  "status": "draft",
+  "level": "L7",
+  "section": 4,
+  "topic": "Mathematical epidemiology and interpretation",
+  "title": "Understanding How Epidemics Spread",
+  "learning_objectives_vi": [
+    "Theo dõi lập luận học thuật: định nghĩa → chứng cứ → hạn chế → kết luận.",
+    "Nghe từ khóa, từ đồng nghĩa và cấu trúc nguyên nhân–kết quả trong bài độc thoại.",
+    "Hoàn thành Note/Table/Summary/Sentence hoặc Flow-chart theo thứ tự audio với giới hạn từ."
+  ],
+  "content_format": "section_practice",
+  "target_skills": [
+    "epidemic_models",
+    "academic_lecture",
+    "note_completion",
+    "summary_completion",
+    "signposting",
+    "paraphrase"
+  ],
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Academic lecturer",
+      "accent_requested": "australian",
+      "tts_voice_id": null
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "Infectious disease models can help researchers think about how an outbreak develops, but no model is a crystal ball. A simple framework groups people according to whether they are susceptible, infectious or recovered. This is often called a compartment model. The categories simplify reality so investigators can study patterns without describing every individual interaction.",
+      "translation_vi": "Mô hình dịch bệnh giúp nghiên cứu diễn tiến bùng phát nhưng không dự đoán tương lai tuyệt đối. Một khung đơn giản chia người thành nhóm dễ nhiễm, đang lây và đã hồi phục. Đó là mô hình ngăn, đơn giản hóa thực tế để nghiên cứu quy luật mà không mô tả mọi tương tác cá nhân.",
+      "start_ms": null,
+      "end_ms": null,
+      "paragraph_index": 1,
+      "bank_role": "training",
+      "skill_tags": [
+        "m24",
+        "ielts_part_4_practice",
+        "epidemic_models",
+        "academic_lecture",
+        "paraphrase",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "A",
+      "text_en": "The number of people an infectious individual might pass a disease to depends on several factors, including contact patterns and duration of infectiousness. Researchers sometimes summarise transmission potential with the reproduction number. It must be interpreted within a specific context: a number estimated in one population cannot simply be copied to another with different conditions.",
+      "translation_vi": "Số người một người nhiễm có thể lây tùy số lần tiếp xúc và thời gian lây. Nhà nghiên cứu tóm tắt tiềm năng truyền bệnh bằng số tái sản xuất, phải hiểu trong một bối cảnh cụ thể. Không thể bê con số của cộng đồng này sang cộng đồng khác khác điều kiện.",
+      "start_ms": null,
+      "end_ms": null,
+      "paragraph_index": 2,
+      "bank_role": "training",
+      "skill_tags": [
+        "m24",
+        "ielts_part_4_practice",
+        "epidemic_models",
+        "academic_lecture",
+        "paraphrase",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "A",
+      "text_en": "Models often show that people do not mix completely at random. Some have many contacts at work, while others interact with only a few neighbours. Investigators therefore use contact networks to represent connections among individuals or groups. The structure of the network may affect outbreak patterns even if the average number of contacts stays the same.",
+      "translation_vi": "Mô hình cho thấy con người không tiếp xúc ngẫu nhiên hoàn toàn. Có người gặp nhiều đồng nghiệp, người khác chỉ gặp hàng xóm. Nhà nghiên cứu dùng mạng tiếp xúc để biểu diễn liên hệ giữa người hay nhóm. Cấu trúc mạng có thể đổi diễn tiến dịch dù trung bình số tiếp xúc như nhau.",
+      "start_ms": null,
+      "end_ms": null,
+      "paragraph_index": 3,
+      "bank_role": "training",
+      "skill_tags": [
+        "m24",
+        "ielts_part_4_practice",
+        "epidemic_models",
+        "academic_lecture",
+        "paraphrase",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "A",
+      "text_en": "A common source of confusion is the delay between an infection and its appearance in official records. Symptoms, test access and reporting procedures all affect timing. This delay is known as reporting lag. If cases reported today rise, it does not necessarily mean every additional infection happened today. Analysts need to consider when observations entered the system.",
+      "translation_vi": "Nhầm lẫn thường gặp là độ trễ giữa nhiễm bệnh và lúc xuất hiện trên báo cáo. Triệu chứng, tiếp cận xét nghiệm và quy trình ghi nhận đều ảnh hưởng. Đó là độ trễ báo cáo. Số ca báo hôm nay tăng không có nghĩa mọi ca mới nhiễm hôm nay; phải xét thời điểm dữ liệu được đưa vào hệ thống.",
+      "start_ms": null,
+      "end_ms": null,
+      "paragraph_index": 4,
+      "bank_role": "training",
+      "skill_tags": [
+        "m24",
+        "ielts_part_4_practice",
+        "epidemic_models",
+        "academic_lecture",
+        "paraphrase",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "A",
+      "text_en": "Another challenge is incomplete observation. People with mild symptoms may not be tested, while some groups have better access to health services. As a result, recorded cases are not identical to all infections. Researchers discuss ascertainment bias when the likelihood of a case being detected differs across groups or time periods.",
+      "translation_vi": "Một khó khăn là quan sát thiếu. Người triệu chứng nhẹ có thể không xét nghiệm, nhóm khác nhau có mức tiếp cận y tế khác nhau. Vì vậy ca ghi nhận không bằng toàn bộ ca nhiễm. Nhà nghiên cứu xem sai lệch phát hiện khi xác suất ca được ghi nhận khác giữa nhóm hay giai đoạn.",
+      "start_ms": null,
+      "end_ms": null,
+      "paragraph_index": 5,
+      "bank_role": "training",
+      "skill_tags": [
+        "m24",
+        "ielts_part_4_practice",
+        "epidemic_models",
+        "academic_lecture",
+        "paraphrase",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "A",
+      "text_en": "Models are built with assumptions, and results should be compared against real-world observations. Researchers may adjust parameters until a model describes available data, a process called model fitting. But a model that fits the past does not automatically predict the future accurately, particularly if behaviour or conditions change.",
+      "translation_vi": "Mô hình xây từ giả định và phải so với thực tế. Nhà nghiên cứu chỉnh tham số để mô hình mô tả dữ liệu sẵn có, gọi là khớp mô hình. Nhưng khớp quá khứ không tự động dự báo đúng tương lai, nhất là khi hành vi hoặc điều kiện đổi.",
+      "start_ms": null,
+      "end_ms": null,
+      "paragraph_index": 6,
+      "bank_role": "training",
+      "skill_tags": [
+        "m24",
+        "ielts_part_4_practice",
+        "epidemic_models",
+        "academic_lecture",
+        "paraphrase",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "Rather than offering one exact future figure, careful analyses often explore several scenarios. They vary assumptions about behaviour or interventions and examine how conclusions respond. This is known as sensitivity analysis. Its purpose is to reveal which uncertainties matter most, not to make a weak prediction appear more precise than the evidence permits.",
+      "translation_vi": "Thay vì một số tương lai chính xác, phân tích tốt xem nhiều kịch bản, thay giả định về hành vi hoặc can thiệp rồi xem kết luận thay đổi thế nào. Đó là phân tích độ nhạy, nhằm nhận ra bất định quan trọng chứ không tô vẻ chính xác cho dự báo yếu.",
+      "start_ms": null,
+      "end_ms": null,
+      "paragraph_index": 7,
+      "bank_role": "training",
+      "skill_tags": [
+        "m24",
+        "ielts_part_4_practice",
+        "epidemic_models",
+        "academic_lecture",
+        "paraphrase",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "A",
+      "text_en": "The responsible use of epidemic models is to support decisions while stating their limitations. Models can clarify plausible mechanisms and compare hypothetical outcomes, but they cannot substitute for surveillance, clinical evidence or local judgement. The clearest reports provide uncertainty ranges alongside central estimates, allowing readers to understand why apparently confident numbers may still change.",
+      "translation_vi": "Dùng mô hình dịch bệnh có trách nhiệm là hỗ trợ quyết định và nêu hạn chế. Nó làm rõ cơ chế khả dĩ và so kết quả giả định, nhưng không thay giám sát, bằng chứng lâm sàng hay hiểu biết địa phương. Báo cáo rõ ràng đưa khoảng bất định bên cạnh ước lượng trung tâm để người đọc hiểu vì sao số liệu có thể đổi.",
+      "start_ms": null,
+      "end_ms": null,
+      "paragraph_index": 8,
+      "bank_role": "training",
+      "skill_tags": [
+        "m24",
+        "ielts_part_4_practice",
+        "epidemic_models",
+        "academic_lecture",
+        "paraphrase",
+        "signposting"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "group_id": "IELTS_NOTE_01_04",
+      "type": "note_completion",
+      "prompt": "Dividing a population into disease-status groups creates a ____.",
+      "correct_answers": [
+        "compartment model"
+      ],
+      "evidence_turn_ids": [
+        "T01"
+      ],
+      "evidence_excerpt_en": "This is often called a compartment model.",
+      "explanation_vi": "Compartment model phân nhóm dân số theo trạng thái dịch tễ.",
+      "question_tags": [
+        "m24",
+        "ielts_part_4_practice",
+        "epidemic_models",
+        "note_completion"
+      ],
+      "scoring_policy": "strict_spoken_words",
+      "bank_role": "training",
+      "answer_provenance": "original_draft_authored_against_transcript",
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS",
+      "review_status": "awaiting_teacher_and_audio_review"
+    },
+    {
+      "question_id": "Q02",
+      "group_id": "IELTS_NOTE_01_04",
+      "type": "note_completion",
+      "prompt": "Transmission potential may be summarised by the ____.",
+      "correct_answers": [
+        "reproduction number"
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "evidence_excerpt_en": "Researchers sometimes summarise transmission potential with the reproduction number.",
+      "explanation_vi": "Reproduction number là chỉ số tóm tắt lây truyền, phụ thuộc điều kiện đang xét.",
+      "question_tags": [
+        "m24",
+        "ielts_part_4_practice",
+        "epidemic_models",
+        "note_completion"
+      ],
+      "scoring_policy": "strict_spoken_words",
+      "bank_role": "training",
+      "answer_provenance": "original_draft_authored_against_transcript",
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS",
+      "review_status": "awaiting_teacher_and_audio_review"
+    },
+    {
+      "question_id": "Q03",
+      "group_id": "IELTS_NOTE_01_04",
+      "type": "note_completion",
+      "prompt": "Connections between people can be represented as ____.",
+      "correct_answers": [
+        "contact networks"
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "evidence_excerpt_en": "Investigators therefore use contact networks to represent connections among individuals or groups.",
+      "explanation_vi": "Contact networks mô tả ai có thể tiếp xúc và lây cho ai.",
+      "question_tags": [
+        "m24",
+        "ielts_part_4_practice",
+        "epidemic_models",
+        "note_completion"
+      ],
+      "scoring_policy": "strict_spoken_words",
+      "bank_role": "training",
+      "answer_provenance": "original_draft_authored_against_transcript",
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS",
+      "review_status": "awaiting_teacher_and_audio_review"
+    },
+    {
+      "question_id": "Q04",
+      "group_id": "IELTS_NOTE_01_04",
+      "type": "note_completion",
+      "prompt": "The delay before cases appear in records is ____.",
+      "correct_answers": [
+        "reporting lag"
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "evidence_excerpt_en": "This delay is known as reporting lag.",
+      "explanation_vi": "Reporting lag là độ trễ ghi nhận, không phải thời gian lây nhiễm.",
+      "question_tags": [
+        "m24",
+        "ielts_part_4_practice",
+        "epidemic_models",
+        "note_completion"
+      ],
+      "scoring_policy": "strict_spoken_words",
+      "bank_role": "training",
+      "answer_provenance": "original_draft_authored_against_transcript",
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS",
+      "review_status": "awaiting_teacher_and_audio_review"
+    },
+    {
+      "question_id": "Q05",
+      "group_id": "IELTS_FLOW_05_06",
+      "type": "flow_chart_completion",
+      "prompt": "Unequal detection of cases can cause ____.",
+      "correct_answers": [
+        "ascertainment bias"
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "evidence_excerpt_en": "Researchers discuss ascertainment bias when the likelihood of a case being detected differs across groups or time periods.",
+      "explanation_vi": "Ascertainment bias là sai lệch do khả năng phát hiện ca không đồng đều.",
+      "question_tags": [
+        "m24",
+        "ielts_part_4_practice",
+        "epidemic_models",
+        "flow_chart_completion"
+      ],
+      "scoring_policy": "strict_spoken_words",
+      "bank_role": "training",
+      "answer_provenance": "original_draft_authored_against_transcript",
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS",
+      "review_status": "awaiting_teacher_and_audio_review"
+    },
+    {
+      "question_id": "Q06",
+      "group_id": "IELTS_FLOW_05_06",
+      "type": "flow_chart_completion",
+      "prompt": "Adjusting parameters to match observations is ____.",
+      "correct_answers": [
+        "model fitting"
+      ],
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "evidence_excerpt_en": "Researchers may adjust parameters until a model describes available data, a process called model fitting.",
+      "explanation_vi": "Model fitting là hiệu chỉnh tham số để tái hiện dữ liệu đã thấy.",
+      "question_tags": [
+        "m24",
+        "ielts_part_4_practice",
+        "epidemic_models",
+        "flow_chart_completion"
+      ],
+      "scoring_policy": "strict_spoken_words",
+      "bank_role": "training",
+      "answer_provenance": "original_draft_authored_against_transcript",
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS",
+      "review_status": "awaiting_teacher_and_audio_review"
+    },
+    {
+      "question_id": "Q07",
+      "group_id": "IELTS_SENTENCE_07_08",
+      "type": "sentence_completion",
+      "prompt": "Testing how assumptions change conclusions is ____.",
+      "correct_answers": [
+        "sensitivity analysis"
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "evidence_excerpt_en": "This is known as sensitivity analysis.",
+      "explanation_vi": "Sensitivity analysis nghiên cứu mô hình nhạy với yếu tố đầu vào nào.",
+      "question_tags": [
+        "m24",
+        "ielts_part_4_practice",
+        "epidemic_models",
+        "sentence_completion"
+      ],
+      "scoring_policy": "strict_spoken_words",
+      "bank_role": "training",
+      "answer_provenance": "original_draft_authored_against_transcript",
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS",
+      "review_status": "awaiting_teacher_and_audio_review"
+    },
+    {
+      "question_id": "Q08",
+      "group_id": "IELTS_SENTENCE_07_08",
+      "type": "sentence_completion",
+      "prompt": "Responsible model reports include ____ with their estimates.",
+      "correct_answers": [
+        "uncertainty ranges"
+      ],
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "evidence_excerpt_en": "The clearest reports provide uncertainty ranges alongside central estimates, allowing readers to understand why apparently confident numbers may still change.",
+      "explanation_vi": "Uncertainty ranges là khoảng thể hiện mức không chắc của kết quả.",
+      "question_tags": [
+        "m24",
+        "ielts_part_4_practice",
+        "epidemic_models",
+        "sentence_completion"
+      ],
+      "scoring_policy": "strict_spoken_words",
+      "bank_role": "training",
+      "answer_provenance": "original_draft_authored_against_transcript",
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS",
+      "review_status": "awaiting_teacher_and_audio_review"
+    },
+    {
+      "question_id": "D01",
+      "group_id": "SELECTIVE_DICTATION",
+      "type": "dictation",
+      "prompt": "Nghe đoạn trích từ phần 2 và chép lại chính xác câu được phát.",
+      "correct_answers": [
+        "The number of people an infectious individual might pass a disease to depends on several factors, including contact patterns and duration of infectiousness. Researchers sometimes summarise transmission potential with the reproduction number."
+      ],
+      "source_turn_id": "T02",
+      "source_char_start": 0,
+      "source_char_end": 241,
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "evidence_excerpt_en": "The number of people an infectious individual might pass a disease to depends on several factors, including contact patterns and duration of infectiousness. Researchers sometimes summarise transmission potential with the reproduction number.",
+      "explanation_vi": "Luyện nghe chính xác cả cụm từ học thuật và từ chức năng trong một câu hoàn chỉnh.",
+      "scoring_policy": "dictation_token_alignment",
+      "bank_role": "training",
+      "word_limit": null,
+      "review_status": "awaiting_teacher_and_audio_review"
+    },
+    {
+      "question_id": "D02",
+      "group_id": "SELECTIVE_DICTATION",
+      "type": "dictation",
+      "prompt": "Nghe đoạn trích từ phần 4 và chép lại chính xác câu được phát.",
+      "correct_answers": [
+        "Symptoms, test access and reporting procedures all affect timing. This delay is known as reporting lag."
+      ],
+      "source_turn_id": "T04",
+      "source_char_start": 103,
+      "source_char_end": 206,
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "evidence_excerpt_en": "Symptoms, test access and reporting procedures all affect timing. This delay is known as reporting lag.",
+      "explanation_vi": "Luyện nghe chính xác cả cụm từ học thuật và từ chức năng trong một câu hoàn chỉnh.",
+      "scoring_policy": "dictation_token_alignment",
+      "bank_role": "training",
+      "word_limit": null,
+      "review_status": "awaiting_teacher_and_audio_review"
+    },
+    {
+      "question_id": "D03",
+      "group_id": "SELECTIVE_DICTATION",
+      "type": "dictation",
+      "prompt": "Nghe đoạn trích từ phần 6 và chép lại chính xác câu được phát.",
+      "correct_answers": [
+        "Researchers may adjust parameters until a model describes available data, a process called model fitting."
+      ],
+      "source_turn_id": "T06",
+      "source_char_start": 99,
+      "source_char_end": 204,
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "evidence_excerpt_en": "Researchers may adjust parameters until a model describes available data, a process called model fitting.",
+      "explanation_vi": "Luyện nghe chính xác cả cụm từ học thuật và từ chức năng trong một câu hoàn chỉnh.",
+      "scoring_policy": "dictation_token_alignment",
+      "bank_role": "training",
+      "word_limit": null,
+      "review_status": "awaiting_teacher_and_audio_review"
+    },
+    {
+      "question_id": "D04",
+      "group_id": "SELECTIVE_DICTATION",
+      "type": "dictation",
+      "prompt": "Nghe đoạn trích từ phần 8 và chép lại chính xác câu được phát.",
+      "correct_answers": [
+        "The clearest reports provide uncertainty ranges alongside central estimates, allowing readers to understand why apparently confident numbers may still change."
+      ],
+      "source_turn_id": "T08",
+      "source_char_start": 254,
+      "source_char_end": 412,
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "evidence_excerpt_en": "The clearest reports provide uncertainty ranges alongside central estimates, allowing readers to understand why apparently confident numbers may still change.",
+      "explanation_vi": "Luyện nghe chính xác cả cụm từ học thuật và từ chức năng trong một câu hoàn chỉnh.",
+      "scoring_policy": "dictation_token_alignment",
+      "bank_role": "training",
+      "word_limit": null,
+      "review_status": "awaiting_teacher_and_audio_review"
+    },
+    {
+      "question_id": "G01",
+      "group_id": "POST_LISTEN_GAP_FILL",
+      "type": "gap_fill",
+      "prompt": "Nghe và điền phần thiếu: Investigators therefore use ____ to represent connections among individuals or groups.",
+      "correct_answers": [
+        "contact networks"
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "evidence_excerpt_en": "Investigators therefore use contact networks to represent connections among individuals or groups.",
+      "explanation_vi": "Luyện ghi lại thuật ngữ chính xác sau khi đã hoàn thành lượt làm IELTS.",
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS",
+      "scoring_policy": "strict_spoken_words",
+      "bank_role": "training",
+      "unlock_after_ielts_submission": true,
+      "review_status": "awaiting_teacher_and_audio_review"
+    },
+    {
+      "question_id": "G02",
+      "group_id": "POST_LISTEN_GAP_FILL",
+      "type": "gap_fill",
+      "prompt": "Nghe và điền phần thiếu: This is known as ____.",
+      "correct_answers": [
+        "sensitivity analysis"
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "evidence_excerpt_en": "This is known as sensitivity analysis.",
+      "explanation_vi": "Luyện ghi lại thuật ngữ chính xác sau khi đã hoàn thành lượt làm IELTS.",
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS",
+      "scoring_policy": "strict_spoken_words",
+      "bank_role": "training",
+      "unlock_after_ielts_submission": true,
+      "review_status": "awaiting_teacher_and_audio_review"
+    }
+  ],
+  "vocabulary": [
+    {
+      "vocab_id": "S4-EXP-018-V01",
+      "expression_en": "compartment model",
+      "meaning_vi": "mô hình chia nhóm theo trạng thái bệnh",
+      "part_of_speech": "noun phrase",
+      "example_en": "This is often called a compartment model.",
+      "example_vi": "Mô hình dịch bệnh giúp nghiên cứu diễn tiến bùng phát nhưng không dự đoán tương lai tuyệt đối. Một khung đơn giản chia người thành nhóm dễ nhiễm, đang lây và đã hồi phục. Đó là mô hình ngăn, đơn giản hóa thực tế để nghiên cứu quy luật mà không mô tả mọi tương tác cá nhân.",
+      "evidence_turn_id": "T01",
+      "can_save_to_notebook": true,
+      "requires_human_pos_verification": true
+    },
+    {
+      "vocab_id": "S4-EXP-018-V02",
+      "expression_en": "reproduction number",
+      "meaning_vi": "số tái sản xuất",
+      "part_of_speech": "noun phrase",
+      "example_en": "Researchers sometimes summarise transmission potential with the reproduction number.",
+      "example_vi": "Số người một người nhiễm có thể lây tùy số lần tiếp xúc và thời gian lây. Nhà nghiên cứu tóm tắt tiềm năng truyền bệnh bằng số tái sản xuất, phải hiểu trong một bối cảnh cụ thể. Không thể bê con số của cộng đồng này sang cộng đồng khác khác điều kiện.",
+      "evidence_turn_id": "T02",
+      "can_save_to_notebook": true,
+      "requires_human_pos_verification": true
+    },
+    {
+      "vocab_id": "S4-EXP-018-V03",
+      "expression_en": "contact networks",
+      "meaning_vi": "mạng lưới tiếp xúc",
+      "part_of_speech": "noun phrase",
+      "example_en": "Investigators therefore use contact networks to represent connections among individuals or groups.",
+      "example_vi": "Mô hình cho thấy con người không tiếp xúc ngẫu nhiên hoàn toàn. Có người gặp nhiều đồng nghiệp, người khác chỉ gặp hàng xóm. Nhà nghiên cứu dùng mạng tiếp xúc để biểu diễn liên hệ giữa người hay nhóm. Cấu trúc mạng có thể đổi diễn tiến dịch dù trung bình số tiếp xúc như nhau.",
+      "evidence_turn_id": "T03",
+      "can_save_to_notebook": true,
+      "requires_human_pos_verification": true
+    },
+    {
+      "vocab_id": "S4-EXP-018-V04",
+      "expression_en": "reporting lag",
+      "meaning_vi": "độ trễ báo cáo",
+      "part_of_speech": "noun phrase",
+      "example_en": "This delay is known as reporting lag.",
+      "example_vi": "Nhầm lẫn thường gặp là độ trễ giữa nhiễm bệnh và lúc xuất hiện trên báo cáo. Triệu chứng, tiếp cận xét nghiệm và quy trình ghi nhận đều ảnh hưởng. Đó là độ trễ báo cáo. Số ca báo hôm nay tăng không có nghĩa mọi ca mới nhiễm hôm nay; phải xét thời điểm dữ liệu được đưa vào hệ thống.",
+      "evidence_turn_id": "T04",
+      "can_save_to_notebook": true,
+      "requires_human_pos_verification": true
+    },
+    {
+      "vocab_id": "S4-EXP-018-V05",
+      "expression_en": "ascertainment bias",
+      "meaning_vi": "sai lệch phát hiện ca",
+      "part_of_speech": "noun phrase",
+      "example_en": "Researchers discuss ascertainment bias when the likelihood of a case being detected differs across groups or time periods.",
+      "example_vi": "Một khó khăn là quan sát thiếu. Người triệu chứng nhẹ có thể không xét nghiệm, nhóm khác nhau có mức tiếp cận y tế khác nhau. Vì vậy ca ghi nhận không bằng toàn bộ ca nhiễm. Nhà nghiên cứu xem sai lệch phát hiện khi xác suất ca được ghi nhận khác giữa nhóm hay giai đoạn.",
+      "evidence_turn_id": "T05",
+      "can_save_to_notebook": true,
+      "requires_human_pos_verification": true
+    },
+    {
+      "vocab_id": "S4-EXP-018-V06",
+      "expression_en": "model fitting",
+      "meaning_vi": "việc khớp mô hình với dữ liệu",
+      "part_of_speech": "noun phrase",
+      "example_en": "Researchers may adjust parameters until a model describes available data, a process called model fitting.",
+      "example_vi": "Mô hình xây từ giả định và phải so với thực tế. Nhà nghiên cứu chỉnh tham số để mô hình mô tả dữ liệu sẵn có, gọi là khớp mô hình. Nhưng khớp quá khứ không tự động dự báo đúng tương lai, nhất là khi hành vi hoặc điều kiện đổi.",
+      "evidence_turn_id": "T06",
+      "can_save_to_notebook": true,
+      "requires_human_pos_verification": true
+    }
+  ],
+  "audio": {
+    "status": "not_generated",
+    "audio_url": null,
+    "duration_ms": null,
+    "source_text_sha256": "6a6b1f3aff129e93dd10098e90181f168af785c4178145fb1d241cc8080a38e4",
+    "generation_strategy": "single_speaker_paragraph_tts_then_seamless_stitch",
+    "audio_asset_id": null,
+    "requires_human_naturalness_review": true,
+    "requires_timing_alignment": true
+  },
+  "learning_flow": {
+    "intro": {
+      "theory_vi": "Part 4 là bài giảng học thuật một người nói. Bài luyện này rèn khả năng theo dõi các ý từ khái niệm đến ví dụ, phương pháp và giới hạn của kết luận. Trước khi nghe, hãy đọc tiêu đề nhóm câu hỏi, dự đoán loại từ và không cố chép mọi chữ.",
+      "tip_vi": "Câu hỏi nghe xuất hiện theo thứ tự bài giảng. Chú ý từ nối như however, therefore, for example, finally; đáp án Completion phải lấy đúng từ đã nghe và không vượt quá giới hạn.",
+      "common_mistakes_vi": [
+        "Ghi từ có nghĩa gần đúng nhưng không xuất hiện trong lời nghe.",
+        "Không chú ý số nhiều hoặc dạng ghép của thuật ngữ.",
+        "Dừng quá lâu ở một câu và bỏ lỡ câu tiếp theo.",
+        "Chọn thông tin trong ví dụ rồi bỏ qua kết luận có điều kiện."
+      ],
+      "worked_examples": [
+        {
+          "audio_example_en": "The first trial used a plastic container, but a glass bottle was chosen for the final experiment.",
+          "question": "Final container: ____",
+          "answer": "glass bottle",
+          "explanation_vi": "Đáp án là phương án cuối; plastic container chỉ là lựa chọn ban đầu."
+        },
+        {
+          "audio_example_en": "The instrument measures pressure. It does not directly measure temperature.",
+          "question": "The instrument records ____.",
+          "answer": "pressure",
+          "explanation_vi": "Hãy lấy chính từ được nói và phân biệt điều được đo với điều không đo."
+        }
+      ]
+    },
+    "steps": [
+      "pre_listening",
+      "first_listen_ielts_questions",
+      "submit_ielts_first_pass",
+      "review_with_evidence",
+      "selective_dictation",
+      "gap_fill",
+      "summary"
+    ],
+    "ielts_question_ids": [
+      "Q01",
+      "Q02",
+      "Q03",
+      "Q04",
+      "Q05",
+      "Q06",
+      "Q07",
+      "Q08"
+    ],
+    "ielts_groups": [
+      {
+        "group_id": "IELTS_NOTE_01_04",
+        "type": "note_completion",
+        "instruction_en": "NO MORE THAN TWO WORDS",
+        "display_mode": "bullet_notes",
+        "group_heading": "Key concepts and evidence",
+        "items": [
+          {
+            "question_id": "Q01",
+            "prompt": "Dividing a population into disease-status groups creates a ____."
+          },
+          {
+            "question_id": "Q02",
+            "prompt": "Transmission potential may be summarised by the ____."
+          },
+          {
+            "question_id": "Q03",
+            "prompt": "Connections between people can be represented as ____."
+          },
+          {
+            "question_id": "Q04",
+            "prompt": "The delay before cases appear in records is ____."
+          }
+        ],
+        "question_ids": [
+          "Q01",
+          "Q02",
+          "Q03",
+          "Q04"
+        ]
+      },
+      {
+        "group_id": "IELTS_FLOW_05_06",
+        "type": "flow_chart_completion",
+        "instruction_en": "NO MORE THAN TWO WORDS",
+        "display_mode": "ordered_flow_steps",
+        "group_heading": "Process and assessment steps",
+        "items": [
+          {
+            "question_id": "Q05",
+            "prompt": "Unequal detection of cases can cause ____."
+          },
+          {
+            "question_id": "Q06",
+            "prompt": "Adjusting parameters to match observations is ____."
+          }
+        ],
+        "question_ids": [
+          "Q05",
+          "Q06"
+        ]
+      },
+      {
+        "group_id": "IELTS_SENTENCE_07_08",
+        "type": "sentence_completion",
+        "instruction_en": "NO MORE THAN TWO WORDS",
+        "display_mode": "numbered_sentences",
+        "group_heading": "Conclusions from the lecture",
+        "items": [
+          {
+            "question_id": "Q07",
+            "prompt": "Testing how assumptions change conclusions is ____."
+          },
+          {
+            "question_id": "Q08",
+            "prompt": "Responsible model reports include ____ with their estimates."
+          }
+        ],
+        "question_ids": [
+          "Q07",
+          "Q08"
+        ]
+      }
+    ],
+    "recommended_first_listen_play_limit": 1,
+    "practice_replay_allowed_after_first_attempt": true,
+    "word_count": 428,
+    "estimated_audio_minutes_at_135_wpm": 3.17,
+    "exposure_bank": "training",
+    "exam_simulation": false,
+    "mock_test": false,
+    "audio_alignment_required": true,
+    "answer_release_after_submission": true
+  },
+  "qa": {
+    "status": "awaiting_human_content_and_audio_review",
+    "automated_validation": "passed",
+    "human_transcript_approved": false,
+    "human_audio_approved": false,
+    "ielts_exam_equivalent": false,
+    "release_eligible": false
+  },
+  "provenance": {
+    "source_type": "original_authored",
+    "reference_copying": false,
+    "authoring_milestone": "M24",
+    "educational_examples": "Some case studies are illustrative rather than published research",
+    "scientific_fact_check_required": true,
+    "do_not_reuse_in_unseen_assessment_before_exposure_check": true
+  },
+  "release_metadata": {
+    "version": "m24.0.1",
+    "published": false,
+    "needs_audio": true,
+    "requires_human_approval": true,
+    "import_policy": "insert_only",
+    "target_bank": "training"
+  }
+}

@@ -1,0 +1,827 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "S1-EXP-013",
+  "status": "draft",
+  "level": "L4",
+  "section": 1,
+  "topic": "Adult education registration",
+  "title": "Enrolling in an Evening Language Course",
+  "learning_objectives_vi": [
+    "Theo dõi một cuộc hội thoại đời sống hai người nói có thay đổi và đối chiếu thông tin.",
+    "Lấy thông tin cuối cùng đúng theo thứ tự audio, không chọn đáp án chỉ vì xuất hiện sớm.",
+    "Luyện 8 câu IELTS-style và sau đó sửa lỗi bằng Dictation có bằng chứng rõ ràng."
+  ],
+  "content_format": "section_practice",
+  "target_skills": [
+    "schedule",
+    "fees",
+    "materials",
+    "course_level"
+  ],
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Reception/service representative",
+      "accent_requested": "british",
+      "tts_voice_id": null
+    },
+    {
+      "speaker_id": "B",
+      "role": "Customer/visitor",
+      "accent_requested": "australian",
+      "tts_voice_id": null
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "Hello, Southbank Adult Learning Centre. Are you looking for a short course or a full term of study?",
+      "translation_vi": "Xin chào, trung tâm giáo dục người lớn Southbank. Anh muốn khóa ngắn hay học cả học kỳ?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_1",
+        "two_speaker_dialogue",
+        "m21",
+        "schedule",
+        "fees",
+        "materials",
+        "course_level"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "B",
+      "text_en": "I'm interested in the beginner Italian course. I learnt a little at school but haven't spoken it for years.",
+      "translation_vi": "Tôi muốn học tiếng Ý cơ bản. Tôi từng học ở trường nhưng nhiều năm không nói.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_1",
+        "two_speaker_dialogue",
+        "m21",
+        "schedule",
+        "fees",
+        "materials",
+        "course_level"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "A",
+      "text_en": "Our beginner course starts from everyday phrases, so it should be suitable. There's also an intermediate group with a placement test.",
+      "translation_vi": "Khóa cơ bản bắt đầu từ cụm giao tiếp thường ngày nên phù hợp. Nhóm trung cấp có bài xếp lớp.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_1",
+        "two_speaker_dialogue",
+        "m21",
+        "schedule",
+        "fees",
+        "materials",
+        "course_level"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "B",
+      "text_en": "I'd rather start with beginners. Does it still run on Mondays? My work schedule has changed recently.",
+      "translation_vi": "Tôi muốn học lớp cơ bản. Nó còn học thứ Hai không? Lịch làm việc tôi mới đổi.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_1",
+        "two_speaker_dialogue",
+        "m21",
+        "schedule",
+        "fees",
+        "materials",
+        "course_level"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "A",
+      "text_en": "The Monday group was moved to Thursday because the teacher is supervising exams at the start of term.",
+      "translation_vi": "Lớp thứ Hai chuyển sang thứ Năm vì giáo viên coi thi đầu kỳ.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_1",
+        "two_speaker_dialogue",
+        "m21",
+        "schedule",
+        "fees",
+        "materials",
+        "course_level"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "B",
+      "text_en": "Thursday's good. The website said lessons begin at six, but my colleague told me half past six.",
+      "translation_vi": "Thứ Năm được. Website ghi sáu giờ, nhưng đồng nghiệp bảo sáu rưỡi.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_1",
+        "two_speaker_dialogue",
+        "m21",
+        "schedule",
+        "fees",
+        "materials",
+        "course_level"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "Your colleague is right. The new start time is six thirty, and each lesson lasts ninety minutes.",
+      "translation_vi": "Đồng nghiệp đúng. Giờ mới là 6:30, mỗi buổi kéo dài 90 phút.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_1",
+        "two_speaker_dialogue",
+        "m21",
+        "schedule",
+        "fees",
+        "materials",
+        "course_level"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "B",
+      "text_en": "Fine. How many weeks does the term run? I may be away for a few days in October.",
+      "translation_vi": "Được. Học kỳ dài bao nhiêu tuần? Có thể tôi đi vắng mấy ngày tháng Mười.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_1",
+        "two_speaker_dialogue",
+        "m21",
+        "schedule",
+        "fees",
+        "materials",
+        "course_level"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T09",
+      "speaker_id": "A",
+      "text_en": "It's a ten-week course. If you miss a lesson, you can collect the handouts from the office, but we don't record the sessions.",
+      "translation_vi": "Khóa dài mười tuần. Nếu nghỉ có thể lấy tài liệu ở văn phòng, nhưng chúng tôi không ghi hình.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_1",
+        "two_speaker_dialogue",
+        "m21",
+        "schedule",
+        "fees",
+        "materials",
+        "course_level"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T10",
+      "speaker_id": "B",
+      "text_en": "Understood. Is the total cost one hundred pounds, or is there a discount for local residents?",
+      "translation_vi": "Rõ rồi. Tổng phí một trăm bảng hay có giảm giá cho dân địa phương?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_1",
+        "two_speaker_dialogue",
+        "m21",
+        "schedule",
+        "fees",
+        "materials",
+        "course_level"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T11",
+      "speaker_id": "A",
+      "text_en": "The standard fee is one hundred and ten pounds. Residents over sixty-five pay eighty-five, but there is no general local discount.",
+      "translation_vi": "Phí thường 110 bảng. Cư dân trên 65 tuổi trả 85, không có giảm chung cho dân địa phương.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_1",
+        "two_speaker_dialogue",
+        "m21",
+        "schedule",
+        "fees",
+        "materials",
+        "course_level"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T12",
+      "speaker_id": "B",
+      "text_en": "I'll pay the standard amount. Is the textbook included, or should I order it before the first class?",
+      "translation_vi": "Tôi trả phí thường. Giá đã gồm sách chưa, hay cần đặt mua trước buổi đầu?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_1",
+        "two_speaker_dialogue",
+        "m21",
+        "schedule",
+        "fees",
+        "materials",
+        "course_level"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T13",
+      "speaker_id": "A",
+      "text_en": "The online exercises are included, but the printed textbook is optional. The teacher will give you the title on day one.",
+      "translation_vi": "Bài online đã có, nhưng sách in tùy chọn. Giáo viên sẽ cho biết tên sách ngày đầu.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_1",
+        "two_speaker_dialogue",
+        "m21",
+        "schedule",
+        "fees",
+        "materials",
+        "course_level"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T14",
+      "speaker_id": "B",
+      "text_en": "Excellent. Where is the classroom? I remember taking another course in Room Twelve.",
+      "translation_vi": "Tốt. Phòng học ở đâu? Tôi nhớ từng học khóa khác ở phòng 12.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_1",
+        "two_speaker_dialogue",
+        "m21",
+        "schedule",
+        "fees",
+        "materials",
+        "course_level"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T15",
+      "speaker_id": "A",
+      "text_en": "Italian is in Room Eight this term, at the end of the east corridor, close to the stairs.",
+      "translation_vi": "Lớp tiếng Ý học phòng 8, cuối hành lang phía đông gần cầu thang.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_1",
+        "two_speaker_dialogue",
+        "m21",
+        "schedule",
+        "fees",
+        "materials",
+        "course_level"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T16",
+      "speaker_id": "B",
+      "text_en": "Thanks. Could you email the enrolment form to me? I'd like to complete it after dinner tonight.",
+      "translation_vi": "Cảm ơn. Chị email mẫu đăng ký giúp tôi nhé? Tôi sẽ điền sau bữa tối nay.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_1",
+        "two_speaker_dialogue",
+        "m21",
+        "schedule",
+        "fees",
+        "materials",
+        "course_level"
+      ],
+      "bank_role": "training"
+    }
+  ],
+  "questions": [
+    {
+      "type": "note_completion",
+      "prompt": "Language course: beginner ____",
+      "correct_answers": [
+        "Italian"
+      ],
+      "spoken_answer": "Italian",
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER",
+      "scoring_policy": "controlled_variants",
+      "explanation_vi": "Khách chọn tiếng Ý cơ bản.",
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "evidence_excerpt_en": "beginner Italian course",
+      "question_tags": [
+        "m21",
+        "ielts_part_1_practice",
+        "schedule",
+        "fees",
+        "materials",
+        "course_level"
+      ],
+      "question_id": "Q01",
+      "group_id": "IELTS_S1_PRACTICE"
+    },
+    {
+      "type": "note_completion",
+      "prompt": "New class day: ____",
+      "correct_answers": [
+        "Thursday"
+      ],
+      "spoken_answer": "Thursday",
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER",
+      "scoring_policy": "controlled_variants",
+      "explanation_vi": "Lớp đã chuyển từ thứ Hai sang thứ Năm.",
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "evidence_excerpt_en": "moved to Thursday",
+      "question_tags": [
+        "m21",
+        "ielts_part_1_practice",
+        "schedule",
+        "fees",
+        "materials",
+        "course_level"
+      ],
+      "question_id": "Q02",
+      "group_id": "IELTS_S1_PRACTICE"
+    },
+    {
+      "type": "form_completion",
+      "prompt": "Class start time: ____",
+      "correct_answers": [
+        "six thirty",
+        "6:30"
+      ],
+      "spoken_answer": "six thirty",
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER",
+      "scoring_policy": "controlled_variants",
+      "explanation_vi": "Giờ mới là 6:30, không phải 6:00.",
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "evidence_excerpt_en": "six thirty",
+      "question_tags": [
+        "m21",
+        "ielts_part_1_practice",
+        "schedule",
+        "fees",
+        "materials",
+        "course_level"
+      ],
+      "question_id": "Q03",
+      "group_id": "IELTS_S1_PRACTICE"
+    },
+    {
+      "type": "mcq",
+      "prompt": "How long is one lesson?",
+      "correct_answers": [
+        "ninety minutes"
+      ],
+      "options": [
+        "ninety minutes",
+        "sixty minutes",
+        "two hours"
+      ],
+      "correct_option": "A",
+      "scoring_policy": "strict",
+      "explanation_vi": "Một buổi học 90 phút.",
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "evidence_excerpt_en": "each lesson lasts ninety minutes",
+      "question_tags": [
+        "m21",
+        "ielts_part_1_practice",
+        "schedule",
+        "fees",
+        "materials",
+        "course_level"
+      ],
+      "question_id": "Q04",
+      "group_id": "IELTS_S1_PRACTICE"
+    },
+    {
+      "type": "note_completion",
+      "prompt": "Course length: ____ weeks",
+      "correct_answers": [
+        "ten",
+        "10"
+      ],
+      "spoken_answer": "ten",
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER",
+      "scoring_policy": "controlled_variants",
+      "explanation_vi": "Khóa học kéo dài mười tuần.",
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "evidence_excerpt_en": "ten-week course",
+      "question_tags": [
+        "m21",
+        "ielts_part_1_practice",
+        "schedule",
+        "fees",
+        "materials",
+        "course_level"
+      ],
+      "question_id": "Q05",
+      "group_id": "IELTS_S1_PRACTICE"
+    },
+    {
+      "type": "note_completion",
+      "prompt": "Standard fee: £____",
+      "correct_answers": [
+        "110"
+      ],
+      "spoken_answer": "one hundred and ten",
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER",
+      "scoring_policy": "controlled_variants",
+      "explanation_vi": "110 bảng là phí thường, 85 bảng chỉ cho người trên 65.",
+      "evidence_turn_ids": [
+        "T11"
+      ],
+      "evidence_excerpt_en": "one hundred and ten pounds",
+      "question_tags": [
+        "m21",
+        "ielts_part_1_practice",
+        "schedule",
+        "fees",
+        "materials",
+        "course_level"
+      ],
+      "question_id": "Q06",
+      "group_id": "IELTS_S1_PRACTICE"
+    },
+    {
+      "type": "mcq",
+      "prompt": "Which learning resource is optional?",
+      "correct_answers": [
+        "printed textbook"
+      ],
+      "options": [
+        "online exercises",
+        "printed textbook",
+        "handouts"
+      ],
+      "correct_option": "B",
+      "scoring_policy": "strict",
+      "explanation_vi": "Sách in không bắt buộc; bài online đã gồm.",
+      "evidence_turn_ids": [
+        "T13"
+      ],
+      "evidence_excerpt_en": "printed textbook is optional",
+      "question_tags": [
+        "m21",
+        "ielts_part_1_practice",
+        "schedule",
+        "fees",
+        "materials",
+        "course_level"
+      ],
+      "question_id": "Q07",
+      "group_id": "IELTS_S1_PRACTICE"
+    },
+    {
+      "type": "form_completion",
+      "prompt": "Current classroom: Room ____",
+      "correct_answers": [
+        "Eight",
+        "8"
+      ],
+      "spoken_answer": "Eight",
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER",
+      "scoring_policy": "controlled_variants",
+      "explanation_vi": "Phòng hiện tại là 8, khác khóa trước.",
+      "evidence_turn_ids": [
+        "T15"
+      ],
+      "evidence_excerpt_en": "Room Eight",
+      "question_tags": [
+        "m21",
+        "ielts_part_1_practice",
+        "schedule",
+        "fees",
+        "materials",
+        "course_level"
+      ],
+      "question_id": "Q08",
+      "group_id": "IELTS_S1_PRACTICE"
+    },
+    {
+      "question_id": "D01",
+      "group_id": "DICTATION",
+      "type": "dictation",
+      "prompt": "Nghe và chép nguyên văn lượt thoại T04.",
+      "correct_answers": [
+        "I'd rather start with beginners. Does it still run on Mondays? My work schedule has changed recently."
+      ],
+      "scoring_policy": "case_punctuation_insensitive",
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Tôi muốn học lớp cơ bản. Nó còn học thứ Hai không? Lịch làm việc tôi mới đổi.",
+      "question_tags": [
+        "m21",
+        "dictation",
+        "exact_words",
+        "schedule",
+        "fees",
+        "materials",
+        "course_level"
+      ]
+    },
+    {
+      "question_id": "D02",
+      "group_id": "DICTATION",
+      "type": "dictation",
+      "prompt": "Nghe và chép nguyên văn lượt thoại T07.",
+      "correct_answers": [
+        "Your colleague is right. The new start time is six thirty, and each lesson lasts ninety minutes."
+      ],
+      "scoring_policy": "case_punctuation_insensitive",
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "Đồng nghiệp đúng. Giờ mới là 6:30, mỗi buổi kéo dài 90 phút.",
+      "question_tags": [
+        "m21",
+        "dictation",
+        "exact_words",
+        "schedule",
+        "fees",
+        "materials",
+        "course_level"
+      ]
+    },
+    {
+      "question_id": "D03",
+      "group_id": "DICTATION",
+      "type": "dictation",
+      "prompt": "Nghe và chép nguyên văn lượt thoại T10.",
+      "correct_answers": [
+        "Understood. Is the total cost one hundred pounds, or is there a discount for local residents?"
+      ],
+      "scoring_policy": "case_punctuation_insensitive",
+      "evidence_turn_ids": [
+        "T10"
+      ],
+      "explanation_vi": "Rõ rồi. Tổng phí một trăm bảng hay có giảm giá cho dân địa phương?",
+      "question_tags": [
+        "m21",
+        "dictation",
+        "exact_words",
+        "schedule",
+        "fees",
+        "materials",
+        "course_level"
+      ]
+    },
+    {
+      "question_id": "D04",
+      "group_id": "DICTATION",
+      "type": "dictation",
+      "prompt": "Nghe và chép nguyên văn lượt thoại T14.",
+      "correct_answers": [
+        "Excellent. Where is the classroom? I remember taking another course in Room Twelve."
+      ],
+      "scoring_policy": "case_punctuation_insensitive",
+      "evidence_turn_ids": [
+        "T14"
+      ],
+      "explanation_vi": "Tốt. Phòng học ở đâu? Tôi nhớ từng học khóa khác ở phòng 12.",
+      "question_tags": [
+        "m21",
+        "dictation",
+        "exact_words",
+        "schedule",
+        "fees",
+        "materials",
+        "course_level"
+      ]
+    },
+    {
+      "question_id": "G01",
+      "group_id": "GAP_FILL",
+      "type": "gap_fill",
+      "prompt": "Nghe và điền đúng cụm từ bị thiếu: I'm interested in the beginner ____ course. I learnt a little at school but haven't spoken it for years.",
+      "correct_answers": [
+        "Italian"
+      ],
+      "word_limit": 2,
+      "scoring_policy": "controlled_variants",
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Khách chọn tiếng Ý cơ bản.",
+      "question_tags": [
+        "m21",
+        "gap_fill",
+        "listen_for_detail",
+        "schedule",
+        "fees",
+        "materials",
+        "course_level"
+      ]
+    },
+    {
+      "question_id": "G02",
+      "group_id": "GAP_FILL",
+      "type": "gap_fill",
+      "prompt": "Nghe và điền đúng cụm từ bị thiếu: The Monday group was moved to ____ because the teacher is supervising exams at the start of term.",
+      "correct_answers": [
+        "Thursday"
+      ],
+      "word_limit": 2,
+      "scoring_policy": "controlled_variants",
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Lớp đã chuyển từ thứ Hai sang thứ Năm.",
+      "question_tags": [
+        "m21",
+        "gap_fill",
+        "listen_for_detail",
+        "schedule",
+        "fees",
+        "materials",
+        "course_level"
+      ]
+    }
+  ],
+  "vocabulary": [
+    {
+      "vocab_id": "S1-EXP-013-V01",
+      "expression_en": "beginner course",
+      "meaning_vi": "khóa cơ bản",
+      "part_of_speech": "noun phrase",
+      "example_en": "Our beginner course starts from everyday phrases, so it should be suitable. There's also an intermediate group with a placement test.",
+      "example_vi": "Khóa cơ bản bắt đầu từ cụm giao tiếp thường ngày nên phù hợp. Nhóm trung cấp có bài xếp lớp.",
+      "evidence_turn_id": "T03",
+      "can_save_to_notebook": true
+    },
+    {
+      "vocab_id": "S1-EXP-013-V02",
+      "expression_en": "placement test",
+      "meaning_vi": "bài kiểm tra xếp lớp",
+      "part_of_speech": "noun phrase",
+      "example_en": "Our beginner course starts from everyday phrases, so it should be suitable. There's also an intermediate group with a placement test.",
+      "example_vi": "Khóa cơ bản bắt đầu từ cụm giao tiếp thường ngày nên phù hợp. Nhóm trung cấp có bài xếp lớp.",
+      "evidence_turn_id": "T03",
+      "can_save_to_notebook": true
+    },
+    {
+      "vocab_id": "S1-EXP-013-V03",
+      "expression_en": "full term",
+      "meaning_vi": "cả học kỳ",
+      "part_of_speech": "noun phrase",
+      "example_en": "Hello, Southbank Adult Learning Centre. Are you looking for a short course or a full term of study?",
+      "example_vi": "Xin chào, trung tâm giáo dục người lớn Southbank. Anh muốn khóa ngắn hay học cả học kỳ?",
+      "evidence_turn_id": "T01",
+      "can_save_to_notebook": true
+    },
+    {
+      "vocab_id": "S1-EXP-013-V04",
+      "expression_en": "handouts",
+      "meaning_vi": "tài liệu phát tay",
+      "part_of_speech": "noun",
+      "example_en": "It's a ten-week course. If you miss a lesson, you can collect the handouts from the office, but we don't record the sessions.",
+      "example_vi": "Khóa dài mười tuần. Nếu nghỉ có thể lấy tài liệu ở văn phòng, nhưng chúng tôi không ghi hình.",
+      "evidence_turn_id": "T09",
+      "can_save_to_notebook": true
+    },
+    {
+      "vocab_id": "S1-EXP-013-V05",
+      "expression_en": "printed textbook",
+      "meaning_vi": "sách giáo khoa bản in",
+      "part_of_speech": "noun phrase",
+      "example_en": "The online exercises are included, but the printed textbook is optional. The teacher will give you the title on day one.",
+      "example_vi": "Bài online đã có, nhưng sách in tùy chọn. Giáo viên sẽ cho biết tên sách ngày đầu.",
+      "evidence_turn_id": "T13",
+      "can_save_to_notebook": true
+    },
+    {
+      "vocab_id": "S1-EXP-013-V06",
+      "expression_en": "enrolment form",
+      "meaning_vi": "đơn ghi danh",
+      "part_of_speech": "noun phrase",
+      "example_en": "Thanks. Could you email the enrolment form to me? I'd like to complete it after dinner tonight.",
+      "example_vi": "Cảm ơn. Chị email mẫu đăng ký giúp tôi nhé? Tôi sẽ điền sau bữa tối nay.",
+      "evidence_turn_id": "T16",
+      "can_save_to_notebook": true
+    }
+  ],
+  "audio": {
+    "status": "not_generated",
+    "audio_url": null,
+    "duration_ms": null,
+    "source_text_sha256": "90f3d77bfd02729881af139bb44d53abe030b4e2b84ce8313a135a3320c8ce25",
+    "generation_strategy": "full_dialogue_multi_speaker",
+    "audio_asset_id": null
+  },
+  "learning_flow": {
+    "intro": {
+      "theory_vi": "IELTS Part 1 thường có hội thoại hai người về dịch vụ hoặc hoạt động đời sống. Hãy xem trước từ loại và đơn vị của từng chỗ trống; đừng đoán đáp án trước khi nghe.",
+      "tip_vi": "Nghe đến cuối lượt trao đổi: người nói có thể sửa ngày, giá, địa điểm hoặc đổi lựa chọn. Thông tin đầu tiên nhiều khi là phương án bị loại.",
+      "common_mistakes_vi": [
+        "Ghi phương án ban đầu dù người nói đã đổi ý.",
+        "Nhầm giờ mở cửa với giờ buổi học bắt đầu.",
+        "Điền dư từ so với giới hạn của nhóm câu hỏi.",
+        "Chọn MCQ vì trùng từ với audio mà bỏ qua ý định cuối cùng."
+      ],
+      "worked_examples": [
+        {
+          "audio_example_en": "I first asked for Tuesday, but Friday is the day I can attend.",
+          "question": "Final day: ____",
+          "answer": "Friday",
+          "explanation_vi": "Tuesday là phương án cũ; Friday mới là quyết định cuối."
+        },
+        {
+          "audio_example_en": "The ordinary ticket is twenty pounds, although students pay fifteen.",
+          "question": "Student ticket: £____",
+          "answer": "15",
+          "explanation_vi": "Chọn mức giá đúng đối tượng được hỏi; 20 là giá thường."
+        }
+      ]
+    },
+    "steps": [
+      "pre_listening",
+      "first_listen_ielts_questions",
+      "review_with_evidence",
+      "selective_dictation",
+      "gap_fill",
+      "summary"
+    ],
+    "ielts_question_ids": [
+      "Q01",
+      "Q02",
+      "Q03",
+      "Q04",
+      "Q05",
+      "Q06",
+      "Q07",
+      "Q08"
+    ],
+    "recommended_first_listen_play_limit": 1,
+    "practice_replay_allowed_after_first_attempt": true,
+    "word_count": 292,
+    "estimated_audio_minutes_at_135_wpm": 2.16,
+    "exposure_bank": "training",
+    "exam_simulation": false,
+    "mock_test": false
+  },
+  "qa": {
+    "status": "awaiting_human_audio_review",
+    "automated_validation": "pending",
+    "human_transcript_approved": false,
+    "human_audio_approved": false,
+    "ielts_exam_equivalent": false,
+    "release_eligible": false
+  },
+  "provenance": {
+    "source_type": "original_authored",
+    "reference_copying": false,
+    "authoring_milestone": "M21",
+    "do_not_reuse_in_unseen_assessment_before_exposure_check": true
+  },
+  "release_metadata": {
+    "version": "m21.0.1",
+    "published": false,
+    "needs_audio": true,
+    "requires_human_approval": true,
+    "import_policy": "insert_only",
+    "target_bank": "training"
+  }
+}

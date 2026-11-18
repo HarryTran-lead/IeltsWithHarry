@@ -1,0 +1,269 @@
+{
+  "schema_version": "m34.1.0",
+  "activity_id": "ACT-SEC-017",
+  "status": "draft_pending_audio",
+  "module": "dictation",
+  "activity_kind": "section_skill_drill",
+  "title": "Booking a Market Cooking Demonstration — Loại bẫy và thông tin cuối cùng",
+  "section": 1,
+  "source_lesson_id": "S1-EXP-009",
+  "source_milestone": "M21",
+  "source_zip": "English_Skill_Lab_Dictation_M21_Section_1_Expanded_Practice_20_Full_Content.zip",
+  "reuse_parent_id": "S1-EXP-009",
+  "source_bank": "section_practice_training",
+  "source_audio_id": "section-training/S1-EXP-009/T06",
+  "source_audio_id_type": "logical_source_turn_key_not_physical_audio",
+  "source_segments": [
+    {
+      "source_audio_id": "section-training/S1-EXP-009/T06",
+      "source_audio_id_type": "logical_turn_key_not_verified_physical_audio",
+      "source_lesson_id": "S1-EXP-009",
+      "source_turn_id": "T06",
+      "source_speaker_id": "B",
+      "source_audio_asset_id": null,
+      "source_audio_url": null,
+      "start_ms": null,
+      "end_ms": null,
+      "source_transcript_sha256": "a7a644002648fbb3f468bfaeeff30e2ee6427612327ed0d7a0424646d97704ed",
+      "source_bank": "training",
+      "source_is_protected": false,
+      "audio_status": "not_generated",
+      "alignment_status": "pending_verified_turn_offsets"
+    },
+    {
+      "source_audio_id": "section-training/S1-EXP-009/T07",
+      "source_audio_id_type": "logical_turn_key_not_verified_physical_audio",
+      "source_lesson_id": "S1-EXP-009",
+      "source_turn_id": "T07",
+      "source_speaker_id": "A",
+      "source_audio_asset_id": null,
+      "source_audio_url": null,
+      "start_ms": null,
+      "end_ms": null,
+      "source_transcript_sha256": "af7d871d2fcb6ed3f7b7b99b4f97811318580fe210f4a6f2174998e78153dd85",
+      "source_bank": "training",
+      "source_is_protected": false,
+      "audio_status": "not_generated",
+      "alignment_status": "pending_verified_turn_offsets"
+    },
+    {
+      "source_audio_id": "section-training/S1-EXP-009/T15",
+      "source_audio_id_type": "logical_turn_key_not_verified_physical_audio",
+      "source_lesson_id": "S1-EXP-009",
+      "source_turn_id": "T15",
+      "source_speaker_id": "A",
+      "source_audio_asset_id": null,
+      "source_audio_url": null,
+      "start_ms": null,
+      "end_ms": null,
+      "source_transcript_sha256": "7ed38dc56604c804667d0600f8c4b1a0bc5bed98fd156e063d7b99df601f3e50",
+      "source_bank": "training",
+      "source_is_protected": false,
+      "audio_status": "not_generated",
+      "alignment_status": "pending_verified_turn_offsets"
+    },
+    {
+      "source_audio_id": "section-training/S1-EXP-009/T16",
+      "source_audio_id_type": "logical_turn_key_not_verified_physical_audio",
+      "source_lesson_id": "S1-EXP-009",
+      "source_turn_id": "T16",
+      "source_speaker_id": "B",
+      "source_audio_asset_id": null,
+      "source_audio_url": null,
+      "start_ms": null,
+      "end_ms": null,
+      "source_transcript_sha256": "46091cfd879db5eead9c507699108b35b34a125036713a33cda50f7b9c068833",
+      "source_bank": "training",
+      "source_is_protected": false,
+      "audio_status": "not_generated",
+      "alignment_status": "pending_verified_turn_offsets"
+    }
+  ],
+  "start_ms": null,
+  "end_ms": null,
+  "alignment_policy": "verified_turn_level_audio_or_measured_offsets_only",
+  "clip_audio_status": "not_generated",
+  "topic": "Weekend food workshop",
+  "drill_skill": "corrected_detail",
+  "skill_tags": [
+    "section_practice",
+    "listening",
+    "reuse",
+    "section_1",
+    "distractor_rejection",
+    "decision_tracking",
+    "revisions"
+  ],
+  "teacher_notes": {
+    "goal": "Nhận ra lựa chọn cuối cùng sau khi người nói chỉnh sửa hoặc loại bỏ phương án trước.",
+    "theory": "Đáp án đúng phải khớp quyết định cuối cùng. Các phương án được nhắc tới nhưng sau đó bị bác bỏ là bẫy điển hình.",
+    "tip": "Gạch nháp từ thay đổi: actually, instead, not, rather than, but, in the end. Nghe cả lượt sau trước khi chốt.",
+    "mistakes": [
+      "Chọn ngay số/địa điểm được nhắc đầu tiên.",
+      "Đồng nhất chữ giống trong lựa chọn với đáp án chính xác."
+    ],
+    "worked_example": "Ví dụ ngoài đề: “I wanted Tuesday, but Thursday is the only available day.” → Chốt Thursday, không phải Tuesday."
+  },
+  "playback": {
+    "first_listen_max_replays": 1,
+    "guided_replay_max_replays": 3,
+    "source_turn_order": [
+      "T06",
+      "T07",
+      "T15",
+      "T16"
+    ],
+    "transcript_hidden_until_submit": true,
+    "answers_hidden_until_submit": true,
+    "playback_speed_default": 1.0,
+    "prelisten_question_reading": true,
+    "asset_concatenation": "respect_speaker_turns; never use timestamps until aligned"
+  },
+  "questions": [
+    {
+      "question_id": "ACT-SEC-017-Q1",
+      "phase": "first_listen",
+      "origin_question_id": "Q08",
+      "origin_question_type": "mcq",
+      "type": "single_choice",
+      "prompt_en": "How many places does the customer reserve?",
+      "prompt_vi": "Nghe phần được chỉ định và trả lời câu hỏi theo thông tin thực sự được phát. Đừng chọn phương án được nhắc trước khi người nói sửa ý.",
+      "options": [
+        {
+          "value": "three",
+          "label": "three"
+        },
+        {
+          "value": "two",
+          "label": "two"
+        },
+        {
+          "value": "four",
+          "label": "four"
+        }
+      ],
+      "correct_answers": [
+        "three"
+      ],
+      "correct_option": "A",
+      "word_limit": null,
+      "scoring_policy": "strict",
+      "play_turn_ids": [
+        "T15",
+        "T16"
+      ],
+      "evidence_turn_ids": [
+        "T16"
+      ],
+      "evidence_excerpt_en": "reserve three places",
+      "evidence_excerpt_exact_in_turn": true,
+      "evidence_source_kind": "authored_source_annotated",
+      "explanation_vi": "Khách đặt ba chỗ cho nhóm.",
+      "grading_is_ielts_band": false
+    },
+    {
+      "question_id": "ACT-SEC-017-Q2",
+      "phase": "targeted_replay",
+      "origin_question_id": "Q03",
+      "origin_question_type": "note_completion",
+      "type": "spoken_word_completion",
+      "prompt_en": "Replacement class date: Sunday the ____",
+      "prompt_vi": "Nghe phần được chỉ định và trả lời câu hỏi theo thông tin thực sự được phát. Đừng chọn phương án được nhắc trước khi người nói sửa ý.",
+      "options": null,
+      "correct_answers": [
+        "fifteenth"
+      ],
+      "correct_option": null,
+      "word_limit": 2,
+      "scoring_policy": "controlled_variants",
+      "play_turn_ids": [
+        "T06",
+        "T07"
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "evidence_excerpt_en": "Sunday the fifteenth",
+      "evidence_excerpt_exact_in_turn": true,
+      "evidence_source_kind": "authored_source_annotated",
+      "explanation_vi": "Lớp ngày 8 bị hủy và đổi sang ngày 15.",
+      "grading_is_ielts_band": false
+    },
+    {
+      "question_id": "ACT-SEC-017-Q3",
+      "phase": "focused_dictation_repair",
+      "type": "focused_dictation",
+      "prompt_vi": "Nghe lại lượt thoại rồi chép đúng ba từ còn thiếu trong đoạn trích (không viết cả câu).",
+      "prompt_en": "…I'll ask the others. Please ____ under the name Clarke; I'll confirm by…",
+      "word_limit": 3,
+      "correct_answers": [
+        "reserve three places"
+      ],
+      "correct_option": null,
+      "options": null,
+      "normalization_policy": "casefold_unicode_nfkc_trim_whitespace_and_terminal_punctuation",
+      "play_turn_ids": [
+        "T16"
+      ],
+      "evidence_turn_ids": [
+        "T16"
+      ],
+      "evidence_excerpt_en": "reserve three places",
+      "evidence_char_start": 28,
+      "evidence_char_end": 48,
+      "evidence_source_kind": "exact_spoken_transcript_source",
+      "evidence_excerpt_exact_in_turn": true,
+      "explanation_vi": "Cụm cần ghi chính xác là “reserve three places”. Nghe lại vị trí này và đối chiếu các âm cuối, từ chức năng và trọng âm.",
+      "origin_question_id": null,
+      "grading_is_ielts_band": false,
+      "novel_question_authored_for_m34": true
+    }
+  ],
+  "evidence": {
+    "source_lesson_id": "S1-EXP-009",
+    "source_question_ids": [
+      "Q08",
+      "Q03"
+    ],
+    "source_turn_ids": [
+      "T06",
+      "T07",
+      "T15",
+      "T16"
+    ],
+    "source_transcript_sha256_map": {
+      "T06": "a7a644002648fbb3f468bfaeeff30e2ee6427612327ed0d7a0424646d97704ed",
+      "T07": "af7d871d2fcb6ed3f7b7b99b4f97811318580fe210f4a6f2174998e78153dd85",
+      "T15": "7ed38dc56604c804667d0600f8c4b1a0bc5bed98fd156e063d7b99df601f3e50",
+      "T16": "46091cfd879db5eead9c507699108b35b34a125036713a33cda50f7b9c068833"
+    },
+    "provenance": "original_training_2026_m21_m23_m24",
+    "copied_source_has_human_signoff": false,
+    "source_confidence": "authored_draft_not_independently_validated"
+  },
+  "exposure_rules": {
+    "allowed_source_banks": [
+      "section_practice_training"
+    ],
+    "train_only": true,
+    "never_use_protected_source": true,
+    "never_use_unseen_section_simulation": true,
+    "never_use_mock_before_first_attempt": true,
+    "track_source_audio_id": true,
+    "track_first_exposure": true,
+    "track_replay_count": true,
+    "not_band_estimate": true
+  },
+  "rights_status": "pending_review",
+  "review": {
+    "automated_content_check": "pending",
+    "human_language_review": "pending",
+    "human_audio_listening": "pending",
+    "teacher_signoff": "pending",
+    "timing_verification": "pending",
+    "rights_clearance": "pending",
+    "publish_ready": false
+  },
+  "import_policy": "insert_only_idempotent",
+  "version": "m34.1.0"
+}

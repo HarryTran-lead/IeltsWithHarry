@@ -1,0 +1,988 @@
+{
+  "schema_version": "1.2.0",
+  "lesson_id": "S3-SIM-009",
+  "status": "draft",
+  "level": "L6",
+  "section": 3,
+  "topic": "Environmental science and community engagement",
+  "title": "Choosing a River Restoration Measure",
+  "content_format": "section_exam_simulation",
+  "exam_part": "IELTS_LISTENING_PART_3_STYLE",
+  "official_ielts_material": false,
+  "learning_objectives_vi": [
+    "Theo dõi thảo luận có nhiều quan điểm và lý do thay đổi quyết định.",
+    "Phân biệt bằng chứng chắc chắn với các hạn chế phương pháp nghiên cứu.",
+    "Làm 10 câu Multiple Choice và Matching trong một lần nghe mà không xem transcript."
+  ],
+  "target_skills": [
+    "academic_discussion",
+    "tracking_opinions",
+    "paraphrase",
+    "evidence_quality",
+    "matching_features"
+  ],
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "University tutor / academic adviser",
+      "accent_requested": "british",
+      "tts_voice_id": null
+    },
+    {
+      "speaker_id": "B",
+      "role": "Student researcher one",
+      "accent_requested": "australian",
+      "tts_voice_id": null
+    },
+    {
+      "speaker_id": "C",
+      "role": "Student researcher two",
+      "accent_requested": "north_american",
+      "tts_voice_id": null
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "C",
+      "text_en": "The council is considering restoration along a short urban stream.",
+      "meaning_vi": "C: Hội đồng cân nhắc phục hồi suối đô thị; dữ liệu và ý kiến cư dân gợi nhiều ưu tiên.",
+      "translation_vi": null,
+      "translation_status": "pending_full_sentence_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "part3_opinion_tracking",
+        "paraphrase",
+        "evidence_evaluation"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "scene_setup"
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "B",
+      "text_en": "We have measurements and residents’ accounts, but they point to several possible priorities.",
+      "meaning_vi": "C: Hội đồng cân nhắc phục hồi suối đô thị; dữ liệu và ý kiến cư dân gợi nhiều ưu tiên.",
+      "translation_vi": null,
+      "translation_status": "pending_full_sentence_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "part3_opinion_tracking",
+        "paraphrase",
+        "evidence_evaluation"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "scene_setup"
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "A",
+      "text_en": "People assume the stream is dead because it looks muddy. The measurements show a repeated rise in suspended sediment immediately after heavy rain; oxygen levels have generally remained within our expected range.",
+      "meaning_vi": "A: Vấn đề trước mắt là bùn cặn tăng sau mưa lớn, không phải thiếu oxy.",
+      "translation_vi": null,
+      "translation_status": "pending_full_sentence_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "part3_opinion_tracking",
+        "paraphrase",
+        "evidence_evaluation"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "evidence"
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "B",
+      "text_en": "More trees could help in the long term, but most of the muddy runoff currently enters through two uncovered storm drains. Planting alone will not intercept those discharges.",
+      "meaning_vi": "B: Trồng cây không đủ vì nước bẩn vào suối qua hai cống thoát mưa.",
+      "translation_vi": null,
+      "translation_status": "pending_full_sentence_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "part3_opinion_tracking",
+        "paraphrase",
+        "evidence_evaluation"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "evidence"
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "B",
+      "text_en": "The rainfall record has several storms of different sizes. If we compare a tiny shower before the trial with a major storm afterwards, the intervention will look worse for the wrong reason.",
+      "meaning_vi": "B: Phải so trận mưa tương đương; trận mưa nhỏ và lớn cho kết quả khác không do biện pháp.",
+      "translation_vi": null,
+      "translation_status": "pending_full_sentence_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "part3_opinion_tracking",
+        "paraphrase",
+        "evidence_evaluation"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "critical_discussion"
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "B",
+      "text_en": "The hydrograph helps explain why a single dry-day reading hides the problem.",
+      "meaning_vi": "B: Biểu đồ dòng chảy cho thấy số đo ngày khô dễ che vấn đề.",
+      "translation_vi": null,
+      "translation_status": "pending_full_sentence_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "part3_opinion_tracking",
+        "paraphrase",
+        "evidence_evaluation"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "peer_response"
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "C",
+      "text_en": "A small sediment trap beside the upper drain would be reversible and easy to monitor. A dam would interfere with flow, and moving the path would not address the source.",
+      "meaning_vi": "C: Thử bẫy giữ bùn cạnh cống phía trên vì có thể tháo bỏ và dễ theo dõi.",
+      "translation_vi": null,
+      "translation_status": "pending_full_sentence_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "part3_opinion_tracking",
+        "paraphrase",
+        "evidence_evaluation"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "evidence"
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "A",
+      "text_en": "Do not just take one clear-water photograph after installation. Record sediment readings upstream and downstream before and after comparable rain events.",
+      "meaning_vi": "A: Đánh giá bằng đo lượng bùn trước sau các đợt mưa tương đương ở trên và dưới dòng.",
+      "translation_vi": null,
+      "translation_status": "pending_full_sentence_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "part3_opinion_tracking",
+        "paraphrase",
+        "evidence_evaluation"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "evidence"
+    },
+    {
+      "turn_id": "T09",
+      "speaker_id": "C",
+      "text_en": "We should photograph the trap after each storm, alongside the numerical measurements.",
+      "meaning_vi": "C: Sau mỗi trận mưa nên chụp bẫy cùng với số đo.",
+      "translation_vi": null,
+      "translation_status": "pending_full_sentence_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "part3_opinion_tracking",
+        "paraphrase",
+        "evidence_evaluation"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "peer_response"
+    },
+    {
+      "turn_id": "T10",
+      "speaker_id": "B",
+      "text_en": "The trap might work technically, but someone must empty it after storms. Unless the council funds regular removal, it will simply fill up and stop functioning.",
+      "meaning_vi": "B: Lo ngại còn lại là kinh phí và người dọn bùn định kỳ.",
+      "translation_vi": null,
+      "translation_status": "pending_full_sentence_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "part3_opinion_tracking",
+        "paraphrase",
+        "evidence_evaluation"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "evidence"
+    },
+    {
+      "turn_id": "T11",
+      "speaker_id": "C",
+      "text_en": "Those after-rain samples identify the peak pollution episodes and form the strongest evidence for evaluating the trial.",
+      "meaning_vi": "C: Mẫu nước sau mưa là bằng chứng chính về đợt ô nhiễm cao.",
+      "translation_vi": null,
+      "translation_status": "pending_full_sentence_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "part3_opinion_tracking",
+        "paraphrase",
+        "evidence_evaluation"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "evidence"
+    },
+    {
+      "turn_id": "T12",
+      "speaker_id": "C",
+      "text_en": "The council asked if this would stop every flood. It cannot, and our report should say so. We are testing sediment reduction at one drain, not solving the catchment’s entire flood risk.",
+      "meaning_vi": "C: Không thể hứa biện pháp ngăn mọi trận lũ vì chỉ xử lý bùn ở một cống.",
+      "translation_vi": null,
+      "translation_status": "pending_full_sentence_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "part3_opinion_tracking",
+        "paraphrase",
+        "evidence_evaluation"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "critical_discussion"
+    },
+    {
+      "turn_id": "T13",
+      "speaker_id": "B",
+      "text_en": "The photographs help locate where flooding is noticed, but light and camera settings make the water colour unsuitable as a scientific measurement.",
+      "meaning_vi": "B: Ảnh cư dân chỉ giúp xác định nơi ngập, không đo được độ đục.",
+      "translation_vi": null,
+      "translation_status": "pending_full_sentence_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "part3_opinion_tracking",
+        "paraphrase",
+        "evidence_evaluation"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "evidence"
+    },
+    {
+      "turn_id": "T14",
+      "speaker_id": "A",
+      "text_en": "Check that the monitoring method is manageable for council staff as well as for students.",
+      "meaning_vi": "A: Cách theo dõi phải phù hợp khả năng nhân viên hội đồng.",
+      "translation_vi": null,
+      "translation_status": "pending_full_sentence_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "part3_opinion_tracking",
+        "paraphrase",
+        "evidence_evaluation"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "peer_response"
+    },
+    {
+      "turn_id": "T15",
+      "speaker_id": "A",
+      "text_en": "Keep the February sensor values with a note that the probe drifted during the final week. The earlier readings are still usable.",
+      "meaning_vi": "A: Giữ số liệu tháng Hai kèm lưu ý cảm biến lệch cuối tuần.",
+      "translation_vi": null,
+      "translation_status": "pending_full_sentence_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "part3_opinion_tracking",
+        "paraphrase",
+        "evidence_evaluation"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "evidence"
+    },
+    {
+      "turn_id": "T16",
+      "speaker_id": "C",
+      "text_en": "We need the engineering department to confirm who owns the upper drain before anyone installs equipment there.",
+      "meaning_vi": "C: Cần cơ quan kỹ thuật xác nhận quyền quản lý cống.",
+      "translation_vi": null,
+      "translation_status": "pending_full_sentence_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "part3_opinion_tracking",
+        "paraphrase",
+        "evidence_evaluation"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "evidence"
+    },
+    {
+      "turn_id": "T17",
+      "speaker_id": "A",
+      "text_en": "We should state the maintenance threshold clearly: at what point must the trap be emptied, and what observation would show it is no longer performing as intended?",
+      "meaning_vi": "A: Cần quy định mức bùn nào phải dọn và dấu hiệu bẫy ngừng hiệu quả.",
+      "translation_vi": null,
+      "translation_status": "pending_full_sentence_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "part3_opinion_tracking",
+        "paraphrase",
+        "evidence_evaluation"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "critical_discussion"
+    },
+    {
+      "turn_id": "T18",
+      "speaker_id": "B",
+      "text_en": "The proposal should state what would count as failure, not just what success might look like.",
+      "meaning_vi": "B: Đề xuất phải nêu thế nào là thất bại chứ không chỉ thành công.",
+      "translation_vi": null,
+      "translation_status": "pending_full_sentence_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "part3_opinion_tracking",
+        "paraphrase",
+        "evidence_evaluation"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "peer_response"
+    },
+    {
+      "turn_id": "T19",
+      "speaker_id": "A",
+      "text_en": "The complaint records include names and home addresses. Report concerns in aggregate, not as a list of identifiable households.",
+      "meaning_vi": "A: Phải tổng hợp khiếu nại, không để lộ tên và địa chỉ nhà.",
+      "translation_vi": null,
+      "translation_status": "pending_full_sentence_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "part3_opinion_tracking",
+        "paraphrase",
+        "evidence_evaluation"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "evidence"
+    },
+    {
+      "turn_id": "T20",
+      "speaker_id": "A",
+      "text_en": "Give the council a decision it could implement and monitor, rather than a wish list of unrelated interventions.",
+      "meaning_vi": "A: Cần đưa ra giải pháp khả thi có thể theo dõi, không chỉ liệt kê mong muốn.",
+      "translation_vi": null,
+      "translation_status": "pending_full_sentence_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "part3_opinion_tracking",
+        "paraphrase",
+        "evidence_evaluation"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "conclusion"
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "group_id": "PART3_MCQ_Q01_TO_05",
+      "type": "mcq",
+      "prompt": "What does the tutor say is the immediate problem?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Sediment entering after heavy rain"
+        },
+        {
+          "key": "B",
+          "text": "Low oxygen during winter"
+        },
+        {
+          "key": "C",
+          "text": "A complete absence of fish"
+        }
+      ],
+      "correct_option": "A",
+      "correct_answers": [
+        "Sediment entering after heavy rain"
+      ],
+      "scoring_policy": "one_correct_option",
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "evidence_excerpt_en": "People assume the stream is dead because it looks muddy. The measurements show a repeated rise in suspended sediment immediately after heavy rain; oxygen levels have generally remained within our expected range.",
+      "explanation_vi": "A: Vấn đề trước mắt là bùn cặn tăng sau mưa lớn, không phải thiếu oxy.",
+      "answer_source": "paraphrased_or_explicit_recording",
+      "question_tags": [
+        "M27",
+        "part3",
+        "academic_discussion",
+        "mcq",
+        "opinion_tracking"
+      ],
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true
+    },
+    {
+      "question_id": "Q02",
+      "group_id": "PART3_MCQ_Q01_TO_05",
+      "type": "mcq",
+      "prompt": "Why is planting trees alone insufficient?",
+      "options": [
+        {
+          "key": "A",
+          "text": "The stream already has full shade"
+        },
+        {
+          "key": "B",
+          "text": "Runoff enters through uncovered drains"
+        },
+        {
+          "key": "C",
+          "text": "Saplings cannot survive beside water"
+        }
+      ],
+      "correct_option": "B",
+      "correct_answers": [
+        "Runoff enters through uncovered drains"
+      ],
+      "scoring_policy": "one_correct_option",
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "evidence_excerpt_en": "More trees could help in the long term, but most of the muddy runoff currently enters through two uncovered storm drains. Planting alone will not intercept those discharges.",
+      "explanation_vi": "B: Trồng cây không đủ vì nước bẩn vào suối qua hai cống thoát mưa.",
+      "answer_source": "paraphrased_or_explicit_recording",
+      "question_tags": [
+        "M27",
+        "part3",
+        "academic_discussion",
+        "mcq",
+        "opinion_tracking"
+      ],
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true
+    },
+    {
+      "question_id": "Q03",
+      "group_id": "PART3_MCQ_Q01_TO_05",
+      "type": "mcq",
+      "prompt": "Which intervention is proposed for the first trial?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Building a dam across the stream"
+        },
+        {
+          "key": "B",
+          "text": "Moving the footpath downstream"
+        },
+        {
+          "key": "C",
+          "text": "A sediment trap beside the upper drain"
+        }
+      ],
+      "correct_option": "C",
+      "correct_answers": [
+        "A sediment trap beside the upper drain"
+      ],
+      "scoring_policy": "one_correct_option",
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "evidence_excerpt_en": "A small sediment trap beside the upper drain would be reversible and easy to monitor. A dam would interfere with flow, and moving the path would not address the source.",
+      "explanation_vi": "C: Thử bẫy giữ bùn cạnh cống phía trên vì có thể tháo bỏ và dễ theo dõi.",
+      "answer_source": "paraphrased_or_explicit_recording",
+      "question_tags": [
+        "M27",
+        "part3",
+        "academic_discussion",
+        "mcq",
+        "opinion_tracking"
+      ],
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true
+    },
+    {
+      "question_id": "Q04",
+      "group_id": "PART3_MCQ_Q01_TO_05",
+      "type": "mcq",
+      "prompt": "How will effectiveness be measured?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Compare sediment readings before and after rain events"
+        },
+        {
+          "key": "B",
+          "text": "Measure the length of the footpath"
+        },
+        {
+          "key": "C",
+          "text": "Count photographs posted by residents"
+        }
+      ],
+      "correct_option": "A",
+      "correct_answers": [
+        "Compare sediment readings before and after rain events"
+      ],
+      "scoring_policy": "one_correct_option",
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "evidence_excerpt_en": "Do not just take one clear-water photograph after installation. Record sediment readings upstream and downstream before and after comparable rain events.",
+      "explanation_vi": "A: Đánh giá bằng đo lượng bùn trước sau các đợt mưa tương đương ở trên và dưới dòng.",
+      "answer_source": "paraphrased_or_explicit_recording",
+      "question_tags": [
+        "M27",
+        "part3",
+        "academic_discussion",
+        "mcq",
+        "opinion_tracking"
+      ],
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true
+    },
+    {
+      "question_id": "Q05",
+      "group_id": "PART3_MCQ_Q01_TO_05",
+      "type": "mcq",
+      "prompt": "What is the remaining concern about the proposal?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Whether visitors will notice the equipment"
+        },
+        {
+          "key": "B",
+          "text": "Who will remove collected material regularly"
+        },
+        {
+          "key": "C",
+          "text": "Whether plants will grow in winter"
+        }
+      ],
+      "correct_option": "B",
+      "correct_answers": [
+        "Who will remove collected material regularly"
+      ],
+      "scoring_policy": "one_correct_option",
+      "evidence_turn_ids": [
+        "T10"
+      ],
+      "evidence_excerpt_en": "The trap might work technically, but someone must empty it after storms. Unless the council funds regular removal, it will simply fill up and stop functioning.",
+      "explanation_vi": "B: Lo ngại còn lại là kinh phí và người dọn bùn định kỳ.",
+      "answer_source": "paraphrased_or_explicit_recording",
+      "question_tags": [
+        "M27",
+        "part3",
+        "academic_discussion",
+        "mcq",
+        "opinion_tracking"
+      ],
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true
+    },
+    {
+      "question_id": "Q06",
+      "group_id": "PART3_MATCHING_Q06_TO_10",
+      "type": "matching",
+      "prompt": "After-rain water samples",
+      "options": [
+        {
+          "key": "A",
+          "text": "Use as the principal environmental measure"
+        },
+        {
+          "key": "B",
+          "text": "Anonymise before publication"
+        },
+        {
+          "key": "C",
+          "text": "Seek technical permission"
+        },
+        {
+          "key": "D",
+          "text": "Remove because the date is unknown"
+        },
+        {
+          "key": "E",
+          "text": "Collect a larger plant sample"
+        },
+        {
+          "key": "F",
+          "text": "Keep with sensor-calibration caveat"
+        },
+        {
+          "key": "G",
+          "text": "Use only for spatial context"
+        }
+      ],
+      "correct_option": "A",
+      "correct_answers": [
+        "A"
+      ],
+      "scoring_policy": "matching_letter",
+      "evidence_turn_ids": [
+        "T11"
+      ],
+      "evidence_excerpt_en": "Those after-rain samples identify the peak pollution episodes and form the strongest evidence for evaluating the trial.",
+      "explanation_vi": "C: Mẫu nước sau mưa là bằng chứng chính về đợt ô nhiễm cao.",
+      "answer_source": "paraphrased_or_explicit_recording",
+      "question_tags": [
+        "M27",
+        "part3",
+        "academic_discussion",
+        "matching",
+        "evaluation_of_evidence"
+      ],
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true
+    },
+    {
+      "question_id": "Q07",
+      "group_id": "PART3_MATCHING_Q06_TO_10",
+      "type": "matching",
+      "prompt": "Residents’ photographs",
+      "options": [
+        {
+          "key": "A",
+          "text": "Use as the principal environmental measure"
+        },
+        {
+          "key": "B",
+          "text": "Anonymise before publication"
+        },
+        {
+          "key": "C",
+          "text": "Seek technical permission"
+        },
+        {
+          "key": "D",
+          "text": "Remove because the date is unknown"
+        },
+        {
+          "key": "E",
+          "text": "Collect a larger plant sample"
+        },
+        {
+          "key": "F",
+          "text": "Keep with sensor-calibration caveat"
+        },
+        {
+          "key": "G",
+          "text": "Use only for spatial context"
+        }
+      ],
+      "correct_option": "G",
+      "correct_answers": [
+        "G"
+      ],
+      "scoring_policy": "matching_letter",
+      "evidence_turn_ids": [
+        "T13"
+      ],
+      "evidence_excerpt_en": "The photographs help locate where flooding is noticed, but light and camera settings make the water colour unsuitable as a scientific measurement.",
+      "explanation_vi": "B: Ảnh cư dân chỉ giúp xác định nơi ngập, không đo được độ đục.",
+      "answer_source": "paraphrased_or_explicit_recording",
+      "question_tags": [
+        "M27",
+        "part3",
+        "academic_discussion",
+        "matching",
+        "evaluation_of_evidence"
+      ],
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true
+    },
+    {
+      "question_id": "Q08",
+      "group_id": "PART3_MATCHING_Q06_TO_10",
+      "type": "matching",
+      "prompt": "Sensor readings from February",
+      "options": [
+        {
+          "key": "A",
+          "text": "Use as the principal environmental measure"
+        },
+        {
+          "key": "B",
+          "text": "Anonymise before publication"
+        },
+        {
+          "key": "C",
+          "text": "Seek technical permission"
+        },
+        {
+          "key": "D",
+          "text": "Remove because the date is unknown"
+        },
+        {
+          "key": "E",
+          "text": "Collect a larger plant sample"
+        },
+        {
+          "key": "F",
+          "text": "Keep with sensor-calibration caveat"
+        },
+        {
+          "key": "G",
+          "text": "Use only for spatial context"
+        }
+      ],
+      "correct_option": "F",
+      "correct_answers": [
+        "F"
+      ],
+      "scoring_policy": "matching_letter",
+      "evidence_turn_ids": [
+        "T15"
+      ],
+      "evidence_excerpt_en": "Keep the February sensor values with a note that the probe drifted during the final week. The earlier readings are still usable.",
+      "explanation_vi": "A: Giữ số liệu tháng Hai kèm lưu ý cảm biến lệch cuối tuần.",
+      "answer_source": "paraphrased_or_explicit_recording",
+      "question_tags": [
+        "M27",
+        "part3",
+        "academic_discussion",
+        "matching",
+        "evaluation_of_evidence"
+      ],
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true
+    },
+    {
+      "question_id": "Q09",
+      "group_id": "PART3_MATCHING_Q06_TO_10",
+      "type": "matching",
+      "prompt": "Drainage ownership records",
+      "options": [
+        {
+          "key": "A",
+          "text": "Use as the principal environmental measure"
+        },
+        {
+          "key": "B",
+          "text": "Anonymise before publication"
+        },
+        {
+          "key": "C",
+          "text": "Seek technical permission"
+        },
+        {
+          "key": "D",
+          "text": "Remove because the date is unknown"
+        },
+        {
+          "key": "E",
+          "text": "Collect a larger plant sample"
+        },
+        {
+          "key": "F",
+          "text": "Keep with sensor-calibration caveat"
+        },
+        {
+          "key": "G",
+          "text": "Use only for spatial context"
+        }
+      ],
+      "correct_option": "C",
+      "correct_answers": [
+        "C"
+      ],
+      "scoring_policy": "matching_letter",
+      "evidence_turn_ids": [
+        "T16"
+      ],
+      "evidence_excerpt_en": "We need the engineering department to confirm who owns the upper drain before anyone installs equipment there.",
+      "explanation_vi": "C: Cần cơ quan kỹ thuật xác nhận quyền quản lý cống.",
+      "answer_source": "paraphrased_or_explicit_recording",
+      "question_tags": [
+        "M27",
+        "part3",
+        "academic_discussion",
+        "matching",
+        "evaluation_of_evidence"
+      ],
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true
+    },
+    {
+      "question_id": "Q10",
+      "group_id": "PART3_MATCHING_Q06_TO_10",
+      "type": "matching",
+      "prompt": "Resident complaint database",
+      "options": [
+        {
+          "key": "A",
+          "text": "Use as the principal environmental measure"
+        },
+        {
+          "key": "B",
+          "text": "Anonymise before publication"
+        },
+        {
+          "key": "C",
+          "text": "Seek technical permission"
+        },
+        {
+          "key": "D",
+          "text": "Remove because the date is unknown"
+        },
+        {
+          "key": "E",
+          "text": "Collect a larger plant sample"
+        },
+        {
+          "key": "F",
+          "text": "Keep with sensor-calibration caveat"
+        },
+        {
+          "key": "G",
+          "text": "Use only for spatial context"
+        }
+      ],
+      "correct_option": "B",
+      "correct_answers": [
+        "B"
+      ],
+      "scoring_policy": "matching_letter",
+      "evidence_turn_ids": [
+        "T19"
+      ],
+      "evidence_excerpt_en": "The complaint records include names and home addresses. Report concerns in aggregate, not as a list of identifiable households.",
+      "explanation_vi": "A: Phải tổng hợp khiếu nại, không để lộ tên và địa chỉ nhà.",
+      "answer_source": "paraphrased_or_explicit_recording",
+      "question_tags": [
+        "M27",
+        "part3",
+        "academic_discussion",
+        "matching",
+        "evaluation_of_evidence"
+      ],
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true
+    }
+  ],
+  "question_groups": [
+    {
+      "group_id": "PART3_MCQ_Q01_TO_05",
+      "question_ids": [
+        "Q01",
+        "Q02",
+        "Q03",
+        "Q04",
+        "Q05"
+      ],
+      "question_type": "mcq",
+      "instructions_en": "Choose the correct letter A, B or C for each question.",
+      "question_display_start": "before_audio",
+      "requires_one_listen": true,
+      "pause_between_groups_seconds": 0
+    },
+    {
+      "group_id": "PART3_MATCHING_Q06_TO_10",
+      "question_ids": [
+        "Q06",
+        "Q07",
+        "Q08",
+        "Q09",
+        "Q10"
+      ],
+      "question_type": "matching",
+      "instructions_en": "Match each item with the correct description. Choose A–G. You may use a letter more than once.",
+      "question_display_start": "before_audio",
+      "requires_one_listen": true,
+      "pause_between_groups_seconds": 0,
+      "options": [
+        {
+          "key": "A",
+          "text": "Use as the principal environmental measure"
+        },
+        {
+          "key": "B",
+          "text": "Anonymise before publication"
+        },
+        {
+          "key": "C",
+          "text": "Seek technical permission"
+        },
+        {
+          "key": "D",
+          "text": "Remove because the date is unknown"
+        },
+        {
+          "key": "E",
+          "text": "Collect a larger plant sample"
+        },
+        {
+          "key": "F",
+          "text": "Keep with sensor-calibration caveat"
+        },
+        {
+          "key": "G",
+          "text": "Use only for spatial context"
+        }
+      ]
+    }
+  ],
+  "pedagogy_vi": {
+    "topic_summary_vi": "C: Hội đồng cân nhắc phục hồi suối đô thị; dữ liệu và ý kiến cư dân gợi nhiều ưu tiên.",
+    "question_explanations_status": "draft_semantic_review_required",
+    "turn_meanings_are_not_full_translations": true,
+    "full_line_translation_required_before_release": true
+  },
+  "audio": {
+    "status": "not_generated",
+    "audio_url": null,
+    "audio_asset_id": null,
+    "duration_ms": null,
+    "source_text_sha256": "4159900b13fe72f52979e8cf06d4398465b76345316c70c015126af9cd53fc03",
+    "generation_strategy": "three_speakers_turnwise_then_seamless_mix",
+    "aligned_turns": false,
+    "voice_consistency_verified": false,
+    "human_listening_review": false
+  },
+  "exam_mode": {
+    "bank_role": "protected_assessment",
+    "use_as_training_before_first_attempt": false,
+    "listening_attempts_allowed_for_scored_first_attempt": 1,
+    "replay_before_submit": false,
+    "speed_control_before_submit": false,
+    "transcript_visible_before_submit": false,
+    "answer_key_visible_before_submit": false,
+    "post_attempt_review_allowed": true,
+    "question_count": 10,
+    "points_per_correct_answer": 1,
+    "question_order_monotonic": true,
+    "estimated_speech_minutes_at_140_wpm": 3.01,
+    "exam_band_score_enabled": false,
+    "repeated_attempt_marked_as_seen": true,
+    "all_questions_visible_before_audio": true
+  },
+  "qa": {
+    "automatic_data_validation": "pending",
+    "content_human_review": "pending",
+    "translation_human_review": "pending",
+    "audio_human_review": "pending",
+    "exam_simulation_rubric_score": null,
+    "rubric_90_verified": false,
+    "published": false,
+    "release_eligible": false
+  },
+  "provenance": {
+    "source_type": "original_authored_english_academic_dialogue",
+    "milestone": "M27",
+    "no_official_ielts_question_copied": true,
+    "training_exposure_guard": true,
+    "fictional_scenarios": true
+  },
+  "release_metadata": {
+    "target_bank": "protected_assessment",
+    "import_policy": "insert_only",
+    "version": "m27.0.1",
+    "preserve_existing_ids": true,
+    "allow_client_answer_payload": false
+  }
+}

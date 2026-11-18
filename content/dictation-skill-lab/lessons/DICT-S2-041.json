@@ -1,0 +1,367 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "DICT-S2-041",
+  "status": "draft",
+  "level": "L5",
+  "section": 2,
+  "topic": "Safety Instructions",
+  "title": "Safety Briefing for a Woodland Activity Course",
+  "learning_objectives_vi": [
+    "Nghe và hiểu bài độc thoại Safety Instructions ở mức L5, phân biệt chi tiết chính/phụ.",
+    "Nhận ra thông tin cập nhật, điều kiện và phương án thay thế thay vì chọn chi tiết đầu tiên nghe được.",
+    "Chép chính xác các đoạn mục tiêu và giải thích bằng chứng theo thứ tự lời nói."
+  ],
+  "content_format": "section_practice",
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Guide / public information presenter (single narrator)",
+      "tts_voice_id": null,
+      "accent_requested": "american"
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "Before beginning the woodland activities, please listen carefully to the safety procedures. The site contains steep ground and shallow streams, so following the group leader is essential even in fine weather.",
+      "translation_vi": "Trước khi bắt đầu hoạt động trong rừng, hãy nghe kỹ quy trình an toàn. Khu vực có dốc và suối nông, nên phải theo trưởng nhóm ngay cả khi thời tiết đẹp.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_2",
+        "monologue",
+        "l5",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "A",
+      "text_en": "Every participant must collect a helmet from the equipment shed. The colour of your helmet identifies your group; green helmets are for the introductory course, not the advanced climbing group.",
+      "translation_vi": "Mỗi người phải nhận mũ bảo hiểm ở nhà chứa thiết bị. Màu mũ xác định nhóm; mũ xanh dành cho lớp nhập môn, không phải nhóm leo nâng cao.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_2",
+        "monologue",
+        "l5",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "A",
+      "text_en": "The briefing originally included a short rope exercise, but this has been moved until after lunch because the instructor wants to check the condition of the climbing frames first.",
+      "translation_vi": "Buổi hướng dẫn ban đầu có bài tập dây ngắn nhưng đã chuyển sang sau trưa vì người hướng dẫn muốn kiểm tra khung leo trước.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_2",
+        "monologue",
+        "l5",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "A",
+      "text_en": "If anyone becomes separated from the group, they must stay where they are and use the whistle attached to their jacket. Trying to find the main gate alone may lead them towards restricted areas.",
+      "translation_vi": "Nếu ai bị tách nhóm, hãy đứng yên và dùng còi gắn trên áo. Tự tìm cổng chính có thể đi vào khu vực hạn chế.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_2",
+        "monologue",
+        "l5",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "A",
+      "text_en": "We will meet for the midday break at the timber shelter beside the pond. The old picnic tables are closed because tree branches there have recently been damaged by storms.",
+      "translation_vi": "Chúng ta tập trung nghỉ trưa tại nhà trú bằng gỗ cạnh ao. Bàn picnic cũ đóng vì cành cây ở đó vừa hư hại do bão.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_2",
+        "monologue",
+        "l5",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "A",
+      "text_en": "Water stations are available along the main path, but participants must bring their own bottles. Staff can refill them and provide first aid if anyone suffers a minor injury.",
+      "translation_vi": "Có điểm cấp nước dọc đường chính, nhưng mọi người phải tự mang bình. Nhân viên có thể châm nước và sơ cứu nếu ai bị thương nhẹ.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_2",
+        "monologue",
+        "l5",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "The final safety check begins at three forty-five. Please return all borrowed equipment before that time, even if your group finishes its activity early.",
+      "translation_vi": "Lần kiểm tra an toàn cuối bắt đầu lúc ba giờ bốn mươi lăm. Hãy trả mọi thiết bị mượn trước đó ngay cả khi nhóm hoàn thành sớm.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_2",
+        "monologue",
+        "l5",
+        "signposting"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "type": "note_completion",
+      "prompt": "Notes — Collect helmets from the: ____",
+      "correct_answers": [
+        "equipment shed"
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Mỗi người phải nhận mũ bảo hiểm ở nhà chứa thiết bị. Màu mũ xác định nhóm; mũ xanh dành cho lớp nhập môn, không phải nhóm leo nâng cao. Đáp án được nhắc trong đoạn T02: “equipment shed”.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_2",
+        "ielts_practice",
+        "detail_recognition"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q02",
+      "type": "table_completion",
+      "prompt": "Table — Green helmets indicate the: ____",
+      "correct_answers": [
+        "introductory course"
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Mỗi người phải nhận mũ bảo hiểm ở nhà chứa thiết bị. Màu mũ xác định nhóm; mũ xanh dành cho lớp nhập môn, không phải nhóm leo nâng cao. Đáp án được nhắc trong đoạn T02: “introductory course”.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_2",
+        "ielts_practice",
+        "detail_recognition"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q03",
+      "type": "sentence_completion",
+      "prompt": "Complete the sentence — Rope exercise moved to: ____",
+      "correct_answers": [
+        "after lunch"
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Buổi hướng dẫn ban đầu có bài tập dây ngắn nhưng đã chuyển sang sau trưa vì người hướng dẫn muốn kiểm tra khung leo trước. Đáp án được nhắc trong đoạn T03: “after lunch”.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_2",
+        "ielts_practice",
+        "detail_recognition"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q04",
+      "type": "note_completion",
+      "prompt": "Notes — Use the attached: ____",
+      "correct_answers": [
+        "whistle"
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Nếu ai bị tách nhóm, hãy đứng yên và dùng còi gắn trên áo. Tự tìm cổng chính có thể đi vào khu vực hạn chế. Đáp án được nhắc trong đoạn T04: “whistle”.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_2",
+        "ielts_practice",
+        "detail_recognition"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q05",
+      "type": "short_answer",
+      "prompt": "Answer briefly: Midday meeting point?",
+      "correct_answers": [
+        "timber shelter"
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Chúng ta tập trung nghỉ trưa tại nhà trú bằng gỗ cạnh ao. Bàn picnic cũ đóng vì cành cây ở đó vừa hư hại do bão. Đáp án được nhắc trong đoạn T05: “timber shelter”.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_2",
+        "ielts_practice",
+        "detail_recognition"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q06",
+      "type": "note_completion",
+      "prompt": "Notes — Final safety check begins at: ____",
+      "correct_answers": [
+        "three forty-five"
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "Lần kiểm tra an toàn cuối bắt đầu lúc ba giờ bốn mươi lăm. Hãy trả mọi thiết bị mượn trước đó ngay cả khi nhóm hoàn thành sớm. Đáp án được nhắc trong đoạn T07: “three forty-five”.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_2",
+        "ielts_practice",
+        "detail_recognition"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "D01",
+      "type": "dictation",
+      "prompt": "Nghe và chép nguyên văn lời người dẫn tại đoạn T03.",
+      "correct_answers": [
+        "The briefing originally included a short rope exercise, but this has been moved until after lunch because the instructor wants to check the condition of the climbing frames first."
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Câu gốc: The briefing originally included a short rope exercise, but this has been moved until after lunch because the instructor wants to check the condition of the climbing frames first. Nghĩa: Buổi hướng dẫn ban đầu có bài tập dây ngắn nhưng đã chuyển sang sau trưa vì người hướng dẫn muốn kiểm tra khung leo trước. Chú ý từ chức năng, âm cuối và nhịp nói.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "exact_transcript",
+        "section_2"
+      ]
+    },
+    {
+      "question_id": "D02",
+      "type": "dictation",
+      "prompt": "Nghe và chép nguyên văn lời người dẫn tại đoạn T05.",
+      "correct_answers": [
+        "We will meet for the midday break at the timber shelter beside the pond. The old picnic tables are closed because tree branches there have recently been damaged by storms."
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Câu gốc: We will meet for the midday break at the timber shelter beside the pond. The old picnic tables are closed because tree branches there have recently been damaged by storms. Nghĩa: Chúng ta tập trung nghỉ trưa tại nhà trú bằng gỗ cạnh ao. Bàn picnic cũ đóng vì cành cây ở đó vừa hư hại do bão. Chú ý từ chức năng, âm cuối và nhịp nói.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "exact_transcript",
+        "section_2"
+      ]
+    },
+    {
+      "question_id": "G01",
+      "type": "gap_fill",
+      "prompt": "Nghe và điền từ/cụm từ còn thiếu: Every participant must collect a helmet from the ____. The colour of your helmet identifies your group; green helmets are for the introductory course, not the advanced climbing group.",
+      "correct_answers": [
+        "equipment shed"
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Cụm “equipment shed” xuất hiện trong câu gốc: Every participant must collect a helmet from the equipment shed. The colour of your helmet identifies your group; green helmets are for the introductory course, not the advanced climbing group. Nghĩa: Mỗi người phải nhận mũ bảo hiểm ở nhà chứa thiết bị. Màu mũ xác định nhóm; mũ xanh dành cho lớp nhập môn, không phải nhóm leo nâng cao.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "gap_fill",
+        "vocab_in_context",
+        "section_2"
+      ]
+    }
+  ],
+  "vocabulary": [
+    {
+      "term": "equipment shed",
+      "pos": "n. phr.",
+      "meaning_vi": "nhà chứa thiết bị",
+      "example_en": "Every participant must collect a helmet from the equipment shed. The colour of your helmet identifies your group; green helmets are for the introductory course, not the advanced climbing group.",
+      "example_vi": "Mỗi người phải nhận mũ bảo hiểm ở nhà chứa thiết bị. Màu mũ xác định nhóm; mũ xanh dành cho lớp nhập môn, không phải nhóm leo nâng cao.",
+      "source_turn_id": "T02"
+    },
+    {
+      "term": "whistle",
+      "pos": "n.",
+      "meaning_vi": "còi",
+      "example_en": "If anyone becomes separated from the group, they must stay where they are and use the whistle attached to their jacket. Trying to find the main gate alone may lead them towards restricted areas.",
+      "example_vi": "Nếu ai bị tách nhóm, hãy đứng yên và dùng còi gắn trên áo. Tự tìm cổng chính có thể đi vào khu vực hạn chế.",
+      "source_turn_id": "T04"
+    },
+    {
+      "term": "restricted areas",
+      "pos": "n. phr.",
+      "meaning_vi": "khu vực hạn chế",
+      "example_en": "If anyone becomes separated from the group, they must stay where they are and use the whistle attached to their jacket. Trying to find the main gate alone may lead them towards restricted areas.",
+      "example_vi": "Nếu ai bị tách nhóm, hãy đứng yên và dùng còi gắn trên áo. Tự tìm cổng chính có thể đi vào khu vực hạn chế.",
+      "source_turn_id": "T04"
+    },
+    {
+      "term": "first aid",
+      "pos": "n. phr.",
+      "meaning_vi": "sơ cứu",
+      "example_en": "Water stations are available along the main path, but participants must bring their own bottles. Staff can refill them and provide first aid if anyone suffers a minor injury.",
+      "example_vi": "Có điểm cấp nước dọc đường chính, nhưng mọi người phải tự mang bình. Nhân viên có thể châm nước và sơ cứu nếu ai bị thương nhẹ.",
+      "source_turn_id": "T06"
+    }
+  ],
+  "audio": {
+    "status": "not_generated",
+    "url": null,
+    "duration_ms": null,
+    "model": null,
+    "provider": null,
+    "voice_config": null,
+    "source_transcript_hash": "5527c4bc75894dd2bca97d36feead1a7e480b5a2eb7b9a3404b72135b7eb6ada",
+    "audio_sha256": null,
+    "format": null
+  },
+  "qa": {
+    "content_reviewed": false,
+    "answers_verified": false,
+    "audio_verified": false,
+    "rights_cleared": false,
+    "duplicate_reviewed": false,
+    "notes": [
+      "Original AI-assisted educational monologue; subject specialist review pending.",
+      "TTS, timestamps, audio verification and rights clearance are pending. Keep draft locked.",
+      "IELTS Section 2 practice, not an official IELTS Listening part or calibrated band test.",
+      "M16.2: automated edits are provisional; IELTS teacher final signoff, audio and rights clearance pending."
+    ]
+  },
+  "provenance": {
+    "content_origin": "original_ai_assisted",
+    "source_urls": [],
+    "source_rights_note": "Original learning text; obtain separate TTS service and distribution clearance, especially for under-18 users.",
+    "reviewer": null
+  },
+  "release_metadata": {
+    "published_at": null,
+    "version": 1
+  }
+}

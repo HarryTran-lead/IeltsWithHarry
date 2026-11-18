@@ -7,6 +7,7 @@ import { demoMode } from "@/lib/runtime";
 import { CollocationEntry, CollocationProgress, nextCollocationProgress, recommendCollocations } from "@/lib/vocabulary/collocation-recommendations";
 import "./collocations-page.css";
 import { VocabPageHeader } from "./vocab-page-header";
+import { LoadingBlock } from "@/components/layout/loading-block";
 
 type Grade = CollocationProgress["last_grade"];
 const levels = ["all", "A1", "A2", "B1", "B2", "C1", "C2"];
@@ -92,7 +93,7 @@ export function CollocationsPage() {
     </section>
     <div className="collocations-stats"><span><strong>{learned}</strong> / {filtered.length} đã học</span><span><strong>{due}</strong> cần ôn</span><span><strong>{Math.max(0, filtered.length - learned)}</strong> chưa học</span></div>
     {error && <p className="collocations-error" role="alert">{error}</p>}
-    {loading ? <div className="collocations-empty">Đang tải bộ collocations…</div>
+    {loading ? <div className="collocations-empty"><LoadingBlock label="Đang tải bộ collocations…" /></div>
       : !db ? <div className="collocations-empty">Đăng nhập vào tài khoản để học và lưu tiến độ collocations.</div>
       : tab === "library" ? <section className="collocations-library"><div className="collocations-library-head"><h2>Toàn bộ cụm từ <small>{matches.length} kết quả</small></h2><label><Search size={17} /><input value={query} onChange={(event) => { setQuery(event.target.value); setPage(0); }} placeholder="Tìm cụm từ hoặc nghĩa…" /></label></div><div className="collocations-list">{visible.map((entry) => <article key={entry.id}><span className="collocations-level">{entry.level}</span><div><h3>{entry.phrase}</h3><p>{entry.meaning_vi}</p></div><button aria-label={`Nghe ${entry.phrase}`} onClick={() => speak(entry.phrase)}><Volume2 size={19} /></button><span className={progressById.has(entry.id) ? "collocations-learned" : ""}>{progressById.has(entry.id) ? "Đã học" : "Chưa học"}</span></article>)}</div><div className="collocations-pagination"><button disabled={page === 0} onClick={() => setPage(page - 1)}>← Trước</button><span>Trang {page + 1}/{Math.max(1, Math.ceil(matches.length / 30))}</span><button disabled={(page + 1) * 30 >= matches.length} onClick={() => setPage(page + 1)}>Tiếp →</button></div></section>
       : <section className="collocations-study"><div className="collocations-session"><div><span className="collocations-kicker">HÔM NAY HỌC GÌ?</span><h2>{sessionIds.length >= daily ? "Hoàn thành buổi học" : current ? current.reason === "due" ? "Ôn cụm đến hạn" : "Học cụm mới" : "Bạn đã học hết mức này"}</h2><p>Ưu tiên cụm cần ôn, sau đó đến cụm mới ở trình độ bạn chọn.</p></div><span className="collocations-session-count">{Math.min(sessionIds.length, daily)}/{daily} cụm</span></div><div className="collocations-progress"><div style={{ width: `${Math.min(100, sessionIds.length / daily * 100)}%` }} /></div>

@@ -1,0 +1,426 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "DICT-S2-032",
+  "status": "draft",
+  "level": "L4",
+  "section": 2,
+  "topic": "City Tours",
+  "title": "An Evening Architecture Walk",
+  "learning_objectives_vi": [
+    "Nghe và hiểu bài độc thoại City Tours ở mức L4, phân biệt chi tiết chính/phụ.",
+    "Nhận ra thông tin cập nhật, điều kiện và phương án thay thế thay vì chọn chi tiết đầu tiên nghe được.",
+    "Chép chính xác các đoạn mục tiêu và giải thích bằng chứng theo thứ tự lời nói."
+  ],
+  "content_format": "section_practice",
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Guide / public information presenter (single narrator)",
+      "tts_voice_id": null,
+      "accent_requested": "british"
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "Welcome to the twilight architecture walk. You may have booked the earlier riverside route, but because the footbridge is closed for maintenance, tonight's group will explore the historic warehouses instead.",
+      "translation_vi": "Chào mừng đến tour đi bộ kiến trúc lúc chạng vạng. Có thể bạn đã đặt tuyến ven sông trước đó, nhưng vì cầu đi bộ đang bảo trì, tối nay nhóm sẽ khám phá các nhà kho lịch sử.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_2",
+        "monologue",
+        "l4",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "A",
+      "text_en": "We gather outside the old post office at six fifteen, not at the tourist office where the daytime walks usually begin. Look for the guide wearing a red scarf.",
+      "translation_vi": "Chúng ta tập trung bên ngoài bưu điện cũ lúc sáu giờ mười lăm, không phải văn phòng du lịch nơi các tour ban ngày thường khởi hành. Hãy tìm hướng dẫn viên quàng khăn đỏ.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_2",
+        "monologue",
+        "l4",
+        "signposting",
+        "spatial_directions"
+      ]
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "A",
+      "text_en": "The first stop is the iron market hall. Its roof dates from the nineteenth century, although the stalls underneath were replaced only about a decade ago. Please remain on the paved route.",
+      "translation_vi": "Điểm dừng đầu là nhà chợ mái sắt. Mái nhà có từ thế kỷ mười chín, dù các quầy hàng phía dưới mới được thay khoảng mười năm trước. Hãy đi trên đường lát.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_2",
+        "monologue",
+        "l4",
+        "signposting",
+        "spatial_directions"
+      ]
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "A",
+      "text_en": "Next, we'll enter Cooper Lane and turn right at the bakery. The design studio ahead is not part of our visit, so please continue until you reach the courtyard with a stone fountain.",
+      "translation_vi": "Tiếp theo chúng ta vào ngõ Cooper và rẽ phải ở tiệm bánh. Xưởng thiết kế phía trước không thuộc chuyến tham quan nên hãy đi tiếp đến sân trong có đài phun nước bằng đá.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_2",
+        "monologue",
+        "l4",
+        "signposting",
+        "spatial_directions"
+      ]
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "A",
+      "text_en": "There will be a short talk in that courtyard about the buildings' original purpose. The tour then climbs a flight of steps to a covered terrace overlooking the station.",
+      "translation_vi": "Tại sân trong sẽ có một bài giới thiệu ngắn về công năng ban đầu của các tòa nhà. Sau đó tour leo một đoạn cầu thang lên sân hiên có mái nhìn ra nhà ga.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_2",
+        "monologue",
+        "l4",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "A",
+      "text_en": "For accessibility reasons, anyone who cannot manage the steps may take the level passage through the café, and the guide will meet them at the terrace entrance.",
+      "translation_vi": "Để thuận tiện tiếp cận, ai không đi được cầu thang có thể đi qua lối bằng phẳng xuyên quán cà phê; hướng dẫn viên sẽ đón tại lối vào sân hiên.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_2",
+        "monologue",
+        "l4",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "The walk ends at the railway square around eight, where several buses leave for the town centre. Please note that return transport is not included in your ticket.",
+      "translation_vi": "Chuyến đi kết thúc tại quảng trường đường sắt khoảng tám giờ, nơi có nhiều xe buýt về trung tâm. Lưu ý vé không bao gồm xe đưa về.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_2",
+        "monologue",
+        "l4",
+        "signposting"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "type": "note_completion",
+      "prompt": "Notes — Alternative route focuses on historic: ____",
+      "correct_answers": [
+        "warehouses"
+      ],
+      "evidence_turn_ids": [
+        "T01"
+      ],
+      "explanation_vi": "Chào mừng đến tour đi bộ kiến trúc lúc chạng vạng. Có thể bạn đã đặt tuyến ven sông trước đó, nhưng vì cầu đi bộ đang bảo trì, tối nay nhóm sẽ khám phá các nhà kho lịch sử. Đáp án được nhắc trong đoạn T01: “warehouses”.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_2",
+        "ielts_practice",
+        "detail_recognition"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q02",
+      "type": "table_completion",
+      "prompt": "Table — Meeting point: ____",
+      "correct_answers": [
+        "old post office"
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Chúng ta tập trung bên ngoài bưu điện cũ lúc sáu giờ mười lăm, không phải văn phòng du lịch nơi các tour ban ngày thường khởi hành. Hãy tìm hướng dẫn viên quàng khăn đỏ. Đáp án được nhắc trong đoạn T02: “old post office”.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_2",
+        "ielts_practice",
+        "detail_recognition"
+      ],
+      "word_limit": 3,
+      "instructions_en": "NO MORE THAN THREE WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q03",
+      "type": "sentence_completion",
+      "prompt": "Complete the sentence — Meeting time: ____",
+      "correct_answers": [
+        "six fifteen"
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Chúng ta tập trung bên ngoài bưu điện cũ lúc sáu giờ mười lăm, không phải văn phòng du lịch nơi các tour ban ngày thường khởi hành. Hãy tìm hướng dẫn viên quàng khăn đỏ. Đáp án được nhắc trong đoạn T02: “six fifteen”.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_2",
+        "ielts_practice",
+        "detail_recognition"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q04",
+      "type": "note_completion",
+      "prompt": "Notes — Turn right at the: ____",
+      "correct_answers": [
+        "bakery"
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Tiếp theo chúng ta vào ngõ Cooper và rẽ phải ở tiệm bánh. Xưởng thiết kế phía trước không thuộc chuyến tham quan nên hãy đi tiếp đến sân trong có đài phun nước bằng đá. Đáp án được nhắc trong đoạn T04: “bakery”.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_2",
+        "ielts_practice",
+        "detail_recognition"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q05",
+      "type": "short_answer",
+      "prompt": "Answer briefly: Accessible alternative passes through the?",
+      "correct_answers": [
+        "café"
+      ],
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "explanation_vi": "Để thuận tiện tiếp cận, ai không đi được cầu thang có thể đi qua lối bằng phẳng xuyên quán cà phê; hướng dẫn viên sẽ đón tại lối vào sân hiên. Đáp án được nhắc trong đoạn T06: “café”.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_2",
+        "ielts_practice",
+        "detail_recognition"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q06",
+      "type": "note_completion",
+      "prompt": "Notes — The tour finishes at the: ____",
+      "correct_answers": [
+        "railway square"
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "Chuyến đi kết thúc tại quảng trường đường sắt khoảng tám giờ, nơi có nhiều xe buýt về trung tâm. Lưu ý vé không bao gồm xe đưa về. Đáp án được nhắc trong đoạn T07: “railway square”.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_2",
+        "ielts_practice",
+        "detail_recognition"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "M01",
+      "type": "map_labelling",
+      "prompt": "Use the six-point route plan (A–F). Which marker represents the old post office?",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F"
+      ],
+      "correct_answers": [
+        "A"
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Chúng ta tập trung bên ngoài bưu điện cũ lúc sáu giờ mười lăm, không phải văn phòng du lịch nơi các tour ban ngày thường khởi hành. Hãy tìm hướng dẫn viên quàng khăn đỏ. Trên sơ đồ tuyến giả lập, old post office ứng với điểm A.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "section_2",
+        "ielts_practice",
+        "map_labelling",
+        "spatial_directions"
+      ],
+      "map_asset": "maps/DICT-S2-032.svg"
+    },
+    {
+      "question_id": "M02",
+      "type": "map_labelling",
+      "prompt": "Use the six-point route plan (A–F). Which marker represents the courtyard with fountain?",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F"
+      ],
+      "correct_answers": [
+        "D"
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Tiếp theo chúng ta vào ngõ Cooper và rẽ phải ở tiệm bánh. Xưởng thiết kế phía trước không thuộc chuyến tham quan nên hãy đi tiếp đến sân trong có đài phun nước bằng đá. Trên sơ đồ tuyến giả lập, courtyard with fountain ứng với điểm D.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "section_2",
+        "ielts_practice",
+        "map_labelling",
+        "spatial_directions"
+      ],
+      "map_asset": "maps/DICT-S2-032.svg"
+    },
+    {
+      "question_id": "D01",
+      "type": "dictation",
+      "prompt": "Nghe và chép nguyên văn lời người dẫn tại đoạn T03.",
+      "correct_answers": [
+        "The first stop is the iron market hall. Its roof dates from the nineteenth century, although the stalls underneath were replaced only about a decade ago. Please remain on the paved route."
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Câu gốc: The first stop is the iron market hall. Its roof dates from the nineteenth century, although the stalls underneath were replaced only about a decade ago. Please remain on the paved route. Nghĩa: Điểm dừng đầu là nhà chợ mái sắt. Mái nhà có từ thế kỷ mười chín, dù các quầy hàng phía dưới mới được thay khoảng mười năm trước. Hãy đi trên đường lát. Chú ý từ chức năng, âm cuối và nhịp nói.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "exact_transcript",
+        "section_2"
+      ]
+    },
+    {
+      "question_id": "D02",
+      "type": "dictation",
+      "prompt": "Nghe và chép nguyên văn lời người dẫn tại đoạn T05.",
+      "correct_answers": [
+        "There will be a short talk in that courtyard about the buildings' original purpose. The tour then climbs a flight of steps to a covered terrace overlooking the station."
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Câu gốc: There will be a short talk in that courtyard about the buildings' original purpose. The tour then climbs a flight of steps to a covered terrace overlooking the station. Nghĩa: Tại sân trong sẽ có một bài giới thiệu ngắn về công năng ban đầu của các tòa nhà. Sau đó tour leo một đoạn cầu thang lên sân hiên có mái nhìn ra nhà ga. Chú ý từ chức năng, âm cuối và nhịp nói.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "exact_transcript",
+        "section_2"
+      ]
+    },
+    {
+      "question_id": "G01",
+      "type": "gap_fill",
+      "prompt": "Nghe và điền từ/cụm từ còn thiếu: We gather outside the ____ at six fifteen, not at the tourist office where the daytime walks usually begin. Look for the guide wearing a red scarf.",
+      "correct_answers": [
+        "old post office"
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Cụm “old post office” xuất hiện trong câu gốc: We gather outside the old post office at six fifteen, not at the tourist office where the daytime walks usually begin. Look for the guide wearing a red scarf. Nghĩa: Chúng ta tập trung bên ngoài bưu điện cũ lúc sáu giờ mười lăm, không phải văn phòng du lịch nơi các tour ban ngày thường khởi hành. Hãy tìm hướng dẫn viên quàng khăn đỏ.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "gap_fill",
+        "vocab_in_context",
+        "section_2"
+      ]
+    }
+  ],
+  "vocabulary": [
+    {
+      "term": "maintenance",
+      "pos": "n.",
+      "meaning_vi": "công việc bảo trì",
+      "example_en": "Welcome to the twilight architecture walk. You may have booked the earlier riverside route, but because the footbridge is closed for maintenance, tonight's group will explore the historic warehouses instead.",
+      "example_vi": "Chào mừng đến tour đi bộ kiến trúc lúc chạng vạng. Có thể bạn đã đặt tuyến ven sông trước đó, nhưng vì cầu đi bộ đang bảo trì, tối nay nhóm sẽ khám phá các nhà kho lịch sử.",
+      "source_turn_id": "T01"
+    },
+    {
+      "term": "courtyard",
+      "pos": "n.",
+      "meaning_vi": "sân trong",
+      "example_en": "Next, we'll enter Cooper Lane and turn right at the bakery. The design studio ahead is not part of our visit, so please continue until you reach the courtyard with a stone fountain.",
+      "example_vi": "Tiếp theo chúng ta vào ngõ Cooper và rẽ phải ở tiệm bánh. Xưởng thiết kế phía trước không thuộc chuyến tham quan nên hãy đi tiếp đến sân trong có đài phun nước bằng đá.",
+      "source_turn_id": "T04"
+    },
+    {
+      "term": "terrace",
+      "pos": "n.",
+      "meaning_vi": "sân hiên",
+      "example_en": "There will be a short talk in that courtyard about the buildings' original purpose. The tour then climbs a flight of steps to a covered terrace overlooking the station.",
+      "example_vi": "Tại sân trong sẽ có một bài giới thiệu ngắn về công năng ban đầu của các tòa nhà. Sau đó tour leo một đoạn cầu thang lên sân hiên có mái nhìn ra nhà ga.",
+      "source_turn_id": "T05"
+    },
+    {
+      "term": "accessibility",
+      "pos": "n.",
+      "meaning_vi": "khả năng tiếp cận",
+      "example_en": "For accessibility reasons, anyone who cannot manage the steps may take the level passage through the café, and the guide will meet them at the terrace entrance.",
+      "example_vi": "Để thuận tiện tiếp cận, ai không đi được cầu thang có thể đi qua lối bằng phẳng xuyên quán cà phê; hướng dẫn viên sẽ đón tại lối vào sân hiên.",
+      "source_turn_id": "T06"
+    }
+  ],
+  "audio": {
+    "status": "not_generated",
+    "url": null,
+    "duration_ms": null,
+    "model": null,
+    "provider": null,
+    "voice_config": null,
+    "source_transcript_hash": "9c4bb20d0214731ae8eb9abf8974a6e51aec23620de4402d8bb5c413c51b1312",
+    "audio_sha256": null,
+    "format": null
+  },
+  "qa": {
+    "content_reviewed": false,
+    "answers_verified": false,
+    "audio_verified": false,
+    "rights_cleared": false,
+    "duplicate_reviewed": false,
+    "notes": [
+      "Original AI-assisted educational monologue; subject specialist review pending.",
+      "TTS, timestamps, audio verification and rights clearance are pending. Keep draft locked.",
+      "IELTS Section 2 practice, not an official IELTS Listening part or calibrated band test.",
+      "M16.2: automated edits are provisional; IELTS teacher final signoff, audio and rights clearance pending."
+    ]
+  },
+  "provenance": {
+    "content_origin": "original_ai_assisted",
+    "source_urls": [],
+    "source_rights_note": "Original learning text; obtain separate TTS service and distribution clearance, especially for under-18 users.",
+    "reviewer": null
+  },
+  "release_metadata": {
+    "published_at": null,
+    "version": 1
+  }
+}

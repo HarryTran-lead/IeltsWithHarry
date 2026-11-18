@@ -1,0 +1,826 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "S1-EXP-002",
+  "status": "draft",
+  "level": "L4",
+  "section": 1,
+  "topic": "Adult workshop registration",
+  "title": "Arranging a Bicycle Repair Course",
+  "learning_objectives_vi": [
+    "Theo dõi một cuộc hội thoại đời sống hai người nói có thay đổi và đối chiếu thông tin.",
+    "Lấy thông tin cuối cùng đúng theo thứ tự audio, không chọn đáp án chỉ vì xuất hiện sớm.",
+    "Luyện 8 câu IELTS-style và sau đó sửa lỗi bằng Dictation có bằng chứng rõ ràng."
+  ],
+  "content_format": "section_practice",
+  "target_skills": [
+    "spelling",
+    "times",
+    "fees",
+    "requirements"
+  ],
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Reception/service representative",
+      "accent_requested": "australian",
+      "tts_voice_id": null
+    },
+    {
+      "speaker_id": "B",
+      "role": "Customer/visitor",
+      "accent_requested": "australian",
+      "tts_voice_id": null
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "B",
+      "text_en": "Hello, I saw a poster for the bike maintenance course. I'm quite new to cycling, so I'm wondering whether it's suitable.",
+      "translation_vi": "Xin chào, tôi thấy áp phích lớp bảo dưỡng xe đạp. Tôi mới đi xe nên không biết lớp có phù hợp không.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_1",
+        "two_speaker_dialogue",
+        "m21",
+        "spelling",
+        "times",
+        "fees",
+        "requirements"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "A",
+      "text_en": "Absolutely. We start with punctures and basic checks, then move on to brakes. You don't need any previous mechanical experience.",
+      "translation_vi": "Hoàn toàn phù hợp. Lớp bắt đầu bằng vá lốp và kiểm tra cơ bản, rồi đến phanh. Không cần kinh nghiệm sửa máy.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_1",
+        "two_speaker_dialogue",
+        "m21",
+        "spelling",
+        "times",
+        "fees",
+        "requirements"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "B",
+      "text_en": "Good. The poster mentions two sessions, one in May and another in June. Have you still got places on both?",
+      "translation_vi": "Tốt. Áp phích ghi có hai đợt, tháng Năm và tháng Sáu. Cả hai còn chỗ chứ?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_1",
+        "two_speaker_dialogue",
+        "m21",
+        "spelling",
+        "times",
+        "fees",
+        "requirements"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "A",
+      "text_en": "The May session is full. The next one starts on the ninth of June and runs for three consecutive evenings.",
+      "translation_vi": "Đợt tháng Năm đầy rồi. Đợt tiếp theo bắt đầu ngày 9 tháng Sáu, học ba tối liên tiếp.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_1",
+        "two_speaker_dialogue",
+        "m21",
+        "spelling",
+        "times",
+        "fees",
+        "requirements"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "B",
+      "text_en": "Three evenings sounds manageable. I leave work at half past five, but the bus takes about twenty minutes. When do you begin?",
+      "translation_vi": "Ba tối thì được. Tôi tan làm lúc năm rưỡi, đi xe buýt mất khoảng hai mươi phút. Mấy giờ bắt đầu?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_1",
+        "two_speaker_dialogue",
+        "m21",
+        "spelling",
+        "times",
+        "fees",
+        "requirements"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "A",
+      "text_en": "We used to begin at six, but most people couldn't arrive in time, so we've moved the start to six forty-five.",
+      "translation_vi": "Trước đây bắt đầu lúc sáu giờ, nhưng nhiều người không tới kịp nên đã chuyển sang sáu giờ bốn mươi lăm.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_1",
+        "two_speaker_dialogue",
+        "m21",
+        "spelling",
+        "times",
+        "fees",
+        "requirements"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "B",
+      "text_en": "Excellent. Is the course held in the main sports centre, next to the swimming pool?",
+      "translation_vi": "Tuyệt. Lớp tổ chức tại trung tâm thể thao chính, cạnh hồ bơi phải không?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_1",
+        "two_speaker_dialogue",
+        "m21",
+        "spelling",
+        "times",
+        "fees",
+        "requirements"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "A",
+      "text_en": "Not this year. It's at the repair shed behind the library, because the sports centre is being renovated.",
+      "translation_vi": "Không phải năm nay. Lớp ở nhà sửa xe phía sau thư viện vì trung tâm thể thao đang được cải tạo.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_1",
+        "two_speaker_dialogue",
+        "m21",
+        "spelling",
+        "times",
+        "fees",
+        "requirements"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T09",
+      "speaker_id": "B",
+      "text_en": "I'll find that. I noticed a price of thirty-five pounds online, but the printed poster says twenty-eight. Which one is correct?",
+      "translation_vi": "Tôi tìm được. Trên mạng ghi 35 bảng, còn áp phích in ghi 28. Giá nào đúng?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_1",
+        "two_speaker_dialogue",
+        "m21",
+        "spelling",
+        "times",
+        "fees",
+        "requirements"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T10",
+      "speaker_id": "A",
+      "text_en": "Twenty-eight is the discounted price for students. The standard fee is thirty-five, and tools are included.",
+      "translation_vi": "Hai mươi tám là giá sinh viên. Phí thông thường là ba mươi lăm bảng, đã gồm dụng cụ.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_1",
+        "two_speaker_dialogue",
+        "m21",
+        "spelling",
+        "times",
+        "fees",
+        "requirements"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T11",
+      "speaker_id": "B",
+      "text_en": "I see. I'll pay the standard fee. I was going to bring my road bike, but it's got a damaged wheel.",
+      "translation_vi": "À. Tôi sẽ trả phí thông thường. Tôi định mang xe đạp đường trường, nhưng bánh đang hỏng.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_1",
+        "two_speaker_dialogue",
+        "m21",
+        "spelling",
+        "times",
+        "fees",
+        "requirements"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T12",
+      "speaker_id": "A",
+      "text_en": "Please don't bring a bike at all. We supply practice bicycles, so everyone can work on the same model.",
+      "translation_vi": "Anh không cần mang xe. Chúng tôi cung cấp xe thực hành để mọi người làm trên cùng một mẫu.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_1",
+        "two_speaker_dialogue",
+        "m21",
+        "spelling",
+        "times",
+        "fees",
+        "requirements"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T13",
+      "speaker_id": "B",
+      "text_en": "That's easier. Could you put the booking under my surname, Baines, B A I N E S?",
+      "translation_vi": "Tiện hơn. Chị ghi tên đặt chỗ là Baines, đánh vần B A I N E S nhé.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_1",
+        "two_speaker_dialogue",
+        "m21",
+        "spelling",
+        "times",
+        "fees",
+        "requirements"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T14",
+      "speaker_id": "A",
+      "text_en": "Of course. I can send a payment link now. We ask people to wear closed shoes rather than sandals.",
+      "translation_vi": "Được. Tôi có thể gửi đường dẫn thanh toán ngay. Mọi người cần mang giày kín mũi thay vì dép.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_1",
+        "two_speaker_dialogue",
+        "m21",
+        "spelling",
+        "times",
+        "fees",
+        "requirements"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T15",
+      "speaker_id": "B",
+      "text_en": "No problem. I'd also like to know if the course covers electric bikes, since that's what my sister uses.",
+      "translation_vi": "Được. Lớp có dạy xe điện không, vì chị tôi dùng loại đó?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_1",
+        "two_speaker_dialogue",
+        "m21",
+        "spelling",
+        "times",
+        "fees",
+        "requirements"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T16",
+      "speaker_id": "A",
+      "text_en": "Only ordinary bicycles this time. We're planning a separate electric-bike session later in the summer, but it isn't open for booking.",
+      "translation_vi": "Lần này chỉ xe đạp thường. Chúng tôi dự định có lớp xe điện riêng cuối hè nhưng chưa mở đăng ký.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_1",
+        "two_speaker_dialogue",
+        "m21",
+        "spelling",
+        "times",
+        "fees",
+        "requirements"
+      ],
+      "bank_role": "training"
+    }
+  ],
+  "questions": [
+    {
+      "type": "note_completion",
+      "prompt": "Next course starts on 9 ____",
+      "correct_answers": [
+        "June"
+      ],
+      "spoken_answer": "June",
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER",
+      "scoring_policy": "controlled_variants",
+      "explanation_vi": "Khóa tới bắt đầu ngày 9 tháng Sáu.",
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "evidence_excerpt_en": "ninth of June",
+      "question_tags": [
+        "m21",
+        "ielts_part_1_practice",
+        "spelling",
+        "times",
+        "fees",
+        "requirements"
+      ],
+      "question_id": "Q01",
+      "group_id": "IELTS_S1_PRACTICE"
+    },
+    {
+      "type": "note_completion",
+      "prompt": "New evening start time: ____",
+      "correct_answers": [
+        "six forty-five",
+        "6:45"
+      ],
+      "spoken_answer": "six forty-five",
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER",
+      "scoring_policy": "controlled_variants",
+      "explanation_vi": "Giờ cũ sáu giờ đã chuyển thành 6:45.",
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "evidence_excerpt_en": "six forty-five",
+      "question_tags": [
+        "m21",
+        "ielts_part_1_practice",
+        "spelling",
+        "times",
+        "fees",
+        "requirements"
+      ],
+      "question_id": "Q02",
+      "group_id": "IELTS_S1_PRACTICE"
+    },
+    {
+      "type": "form_completion",
+      "prompt": "Venue: repair shed behind the ____",
+      "correct_answers": [
+        "library"
+      ],
+      "spoken_answer": "library",
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER",
+      "scoring_policy": "controlled_variants",
+      "explanation_vi": "Địa điểm sau thư viện, không phải trung tâm thể thao.",
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "evidence_excerpt_en": "behind the library",
+      "question_tags": [
+        "m21",
+        "ielts_part_1_practice",
+        "spelling",
+        "times",
+        "fees",
+        "requirements"
+      ],
+      "question_id": "Q03",
+      "group_id": "IELTS_S1_PRACTICE"
+    },
+    {
+      "type": "mcq",
+      "prompt": "Who qualifies for the lower price?",
+      "correct_answers": [
+        "students"
+      ],
+      "options": [
+        "first-time cyclists",
+        "students",
+        "local residents"
+      ],
+      "correct_option": "B",
+      "scoring_policy": "strict",
+      "explanation_vi": "Giá 28 bảng chỉ dành cho sinh viên.",
+      "evidence_turn_ids": [
+        "T10"
+      ],
+      "evidence_excerpt_en": "for students",
+      "question_tags": [
+        "m21",
+        "ielts_part_1_practice",
+        "spelling",
+        "times",
+        "fees",
+        "requirements"
+      ],
+      "question_id": "Q04",
+      "group_id": "IELTS_S1_PRACTICE"
+    },
+    {
+      "type": "note_completion",
+      "prompt": "Standard fee: £____",
+      "correct_answers": [
+        "thirty-five",
+        "35"
+      ],
+      "spoken_answer": "thirty-five",
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER",
+      "scoring_policy": "controlled_variants",
+      "explanation_vi": "Phí thông thường là 35 bảng.",
+      "evidence_turn_ids": [
+        "T10"
+      ],
+      "evidence_excerpt_en": "standard fee is thirty-five",
+      "question_tags": [
+        "m21",
+        "ielts_part_1_practice",
+        "spelling",
+        "times",
+        "fees",
+        "requirements"
+      ],
+      "question_id": "Q05",
+      "group_id": "IELTS_S1_PRACTICE"
+    },
+    {
+      "type": "note_completion",
+      "prompt": "Practice ____ are supplied",
+      "correct_answers": [
+        "bicycles"
+      ],
+      "spoken_answer": "bicycles",
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER",
+      "scoring_policy": "controlled_variants",
+      "explanation_vi": "Người học không cần mang xe đạp.",
+      "evidence_turn_ids": [
+        "T12"
+      ],
+      "evidence_excerpt_en": "practice bicycles",
+      "question_tags": [
+        "m21",
+        "ielts_part_1_practice",
+        "spelling",
+        "times",
+        "fees",
+        "requirements"
+      ],
+      "question_id": "Q06",
+      "group_id": "IELTS_S1_PRACTICE"
+    },
+    {
+      "type": "form_completion",
+      "prompt": "Surname: ____",
+      "correct_answers": [
+        "Baines"
+      ],
+      "spoken_answer": "Baines",
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER",
+      "scoring_policy": "controlled_variants",
+      "explanation_vi": "Họ Baines được đánh vần rõ.",
+      "evidence_turn_ids": [
+        "T13"
+      ],
+      "evidence_excerpt_en": "surname, Baines",
+      "question_tags": [
+        "m21",
+        "ielts_part_1_practice",
+        "spelling",
+        "times",
+        "fees",
+        "requirements"
+      ],
+      "question_id": "Q07",
+      "group_id": "IELTS_S1_PRACTICE"
+    },
+    {
+      "type": "mcq",
+      "prompt": "Which type of bike will this course cover?",
+      "correct_answers": [
+        "ordinary bicycles"
+      ],
+      "options": [
+        "electric bikes",
+        "both kinds",
+        "ordinary bicycles"
+      ],
+      "correct_option": "C",
+      "scoring_policy": "strict",
+      "explanation_vi": "Xe điện thuộc khóa riêng chưa mở đăng ký.",
+      "evidence_turn_ids": [
+        "T16"
+      ],
+      "evidence_excerpt_en": "Only ordinary bicycles",
+      "question_tags": [
+        "m21",
+        "ielts_part_1_practice",
+        "spelling",
+        "times",
+        "fees",
+        "requirements"
+      ],
+      "question_id": "Q08",
+      "group_id": "IELTS_S1_PRACTICE"
+    },
+    {
+      "question_id": "D01",
+      "group_id": "DICTATION",
+      "type": "dictation",
+      "prompt": "Nghe và chép nguyên văn lượt thoại T04.",
+      "correct_answers": [
+        "The May session is full. The next one starts on the ninth of June and runs for three consecutive evenings."
+      ],
+      "scoring_policy": "case_punctuation_insensitive",
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Đợt tháng Năm đầy rồi. Đợt tiếp theo bắt đầu ngày 9 tháng Sáu, học ba tối liên tiếp.",
+      "question_tags": [
+        "m21",
+        "dictation",
+        "exact_words",
+        "spelling",
+        "times",
+        "fees",
+        "requirements"
+      ]
+    },
+    {
+      "question_id": "D02",
+      "group_id": "DICTATION",
+      "type": "dictation",
+      "prompt": "Nghe và chép nguyên văn lượt thoại T07.",
+      "correct_answers": [
+        "Excellent. Is the course held in the main sports centre, next to the swimming pool?"
+      ],
+      "scoring_policy": "case_punctuation_insensitive",
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "Tuyệt. Lớp tổ chức tại trung tâm thể thao chính, cạnh hồ bơi phải không?",
+      "question_tags": [
+        "m21",
+        "dictation",
+        "exact_words",
+        "spelling",
+        "times",
+        "fees",
+        "requirements"
+      ]
+    },
+    {
+      "question_id": "D03",
+      "group_id": "DICTATION",
+      "type": "dictation",
+      "prompt": "Nghe và chép nguyên văn lượt thoại T10.",
+      "correct_answers": [
+        "Twenty-eight is the discounted price for students. The standard fee is thirty-five, and tools are included."
+      ],
+      "scoring_policy": "case_punctuation_insensitive",
+      "evidence_turn_ids": [
+        "T10"
+      ],
+      "explanation_vi": "Hai mươi tám là giá sinh viên. Phí thông thường là ba mươi lăm bảng, đã gồm dụng cụ.",
+      "question_tags": [
+        "m21",
+        "dictation",
+        "exact_words",
+        "spelling",
+        "times",
+        "fees",
+        "requirements"
+      ]
+    },
+    {
+      "question_id": "D04",
+      "group_id": "DICTATION",
+      "type": "dictation",
+      "prompt": "Nghe và chép nguyên văn lượt thoại T14.",
+      "correct_answers": [
+        "Of course. I can send a payment link now. We ask people to wear closed shoes rather than sandals."
+      ],
+      "scoring_policy": "case_punctuation_insensitive",
+      "evidence_turn_ids": [
+        "T14"
+      ],
+      "explanation_vi": "Được. Tôi có thể gửi đường dẫn thanh toán ngay. Mọi người cần mang giày kín mũi thay vì dép.",
+      "question_tags": [
+        "m21",
+        "dictation",
+        "exact_words",
+        "spelling",
+        "times",
+        "fees",
+        "requirements"
+      ]
+    },
+    {
+      "question_id": "G01",
+      "group_id": "GAP_FILL",
+      "type": "gap_fill",
+      "prompt": "Nghe và điền đúng cụm từ bị thiếu: The May session is full. The next one starts on the ninth of ____ and runs for three consecutive evenings.",
+      "correct_answers": [
+        "June"
+      ],
+      "word_limit": 2,
+      "scoring_policy": "controlled_variants",
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Khóa tới bắt đầu ngày 9 tháng Sáu.",
+      "question_tags": [
+        "m21",
+        "gap_fill",
+        "listen_for_detail",
+        "spelling",
+        "times",
+        "fees",
+        "requirements"
+      ]
+    },
+    {
+      "question_id": "G02",
+      "group_id": "GAP_FILL",
+      "type": "gap_fill",
+      "prompt": "Nghe và điền đúng cụm từ bị thiếu: We used to begin at six, but most people couldn't arrive in time, so we've moved the start to ____.",
+      "correct_answers": [
+        "six forty-five"
+      ],
+      "word_limit": 2,
+      "scoring_policy": "controlled_variants",
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "explanation_vi": "Giờ cũ sáu giờ đã chuyển thành 6:45.",
+      "question_tags": [
+        "m21",
+        "gap_fill",
+        "listen_for_detail",
+        "spelling",
+        "times",
+        "fees",
+        "requirements"
+      ]
+    }
+  ],
+  "vocabulary": [
+    {
+      "vocab_id": "S1-EXP-002-V01",
+      "expression_en": "punctures",
+      "meaning_vi": "lỗ thủng lốp xe",
+      "part_of_speech": "noun",
+      "example_en": "Absolutely. We start with punctures and basic checks, then move on to brakes. You don't need any previous mechanical experience.",
+      "example_vi": "Hoàn toàn phù hợp. Lớp bắt đầu bằng vá lốp và kiểm tra cơ bản, rồi đến phanh. Không cần kinh nghiệm sửa máy.",
+      "evidence_turn_id": "T02",
+      "can_save_to_notebook": true
+    },
+    {
+      "vocab_id": "S1-EXP-002-V02",
+      "expression_en": "brakes",
+      "meaning_vi": "phanh xe",
+      "part_of_speech": "noun",
+      "example_en": "Absolutely. We start with punctures and basic checks, then move on to brakes. You don't need any previous mechanical experience.",
+      "example_vi": "Hoàn toàn phù hợp. Lớp bắt đầu bằng vá lốp và kiểm tra cơ bản, rồi đến phanh. Không cần kinh nghiệm sửa máy.",
+      "evidence_turn_id": "T02",
+      "can_save_to_notebook": true
+    },
+    {
+      "vocab_id": "S1-EXP-002-V03",
+      "expression_en": "consecutive evenings",
+      "meaning_vi": "các buổi tối liên tiếp",
+      "part_of_speech": "noun phrase",
+      "example_en": "The May session is full. The next one starts on the ninth of June and runs for three consecutive evenings.",
+      "example_vi": "Đợt tháng Năm đầy rồi. Đợt tiếp theo bắt đầu ngày 9 tháng Sáu, học ba tối liên tiếp.",
+      "evidence_turn_id": "T04",
+      "can_save_to_notebook": true
+    },
+    {
+      "vocab_id": "S1-EXP-002-V04",
+      "expression_en": "discounted price",
+      "meaning_vi": "giá đã giảm",
+      "part_of_speech": "noun phrase",
+      "example_en": "Twenty-eight is the discounted price for students. The standard fee is thirty-five, and tools are included.",
+      "example_vi": "Hai mươi tám là giá sinh viên. Phí thông thường là ba mươi lăm bảng, đã gồm dụng cụ.",
+      "evidence_turn_id": "T10",
+      "can_save_to_notebook": true
+    },
+    {
+      "vocab_id": "S1-EXP-002-V05",
+      "expression_en": "practice bicycles",
+      "meaning_vi": "xe đạp thực hành",
+      "part_of_speech": "noun phrase",
+      "example_en": "Please don't bring a bike at all. We supply practice bicycles, so everyone can work on the same model.",
+      "example_vi": "Anh không cần mang xe. Chúng tôi cung cấp xe thực hành để mọi người làm trên cùng một mẫu.",
+      "evidence_turn_id": "T12",
+      "can_save_to_notebook": true
+    },
+    {
+      "vocab_id": "S1-EXP-002-V06",
+      "expression_en": "closed shoes",
+      "meaning_vi": "giày kín mũi",
+      "part_of_speech": "noun phrase",
+      "example_en": "Of course. I can send a payment link now. We ask people to wear closed shoes rather than sandals.",
+      "example_vi": "Được. Tôi có thể gửi đường dẫn thanh toán ngay. Mọi người cần mang giày kín mũi thay vì dép.",
+      "evidence_turn_id": "T14",
+      "can_save_to_notebook": true
+    }
+  ],
+  "audio": {
+    "status": "not_generated",
+    "audio_url": null,
+    "duration_ms": null,
+    "source_text_sha256": "3a597369cf08e02ef5ba4ec415d07a209f98fcc08b35002a8bee6acf071589bf",
+    "generation_strategy": "full_dialogue_multi_speaker",
+    "audio_asset_id": null
+  },
+  "learning_flow": {
+    "intro": {
+      "theory_vi": "IELTS Part 1 thường có hội thoại hai người về dịch vụ hoặc hoạt động đời sống. Hãy xem trước từ loại và đơn vị của từng chỗ trống; đừng đoán đáp án trước khi nghe.",
+      "tip_vi": "Nghe đến cuối lượt trao đổi: người nói có thể sửa ngày, giá, địa điểm hoặc đổi lựa chọn. Thông tin đầu tiên nhiều khi là phương án bị loại.",
+      "common_mistakes_vi": [
+        "Ghi phương án ban đầu dù người nói đã đổi ý.",
+        "Nhầm giờ mở cửa với giờ buổi học bắt đầu.",
+        "Điền dư từ so với giới hạn của nhóm câu hỏi.",
+        "Chọn MCQ vì trùng từ với audio mà bỏ qua ý định cuối cùng."
+      ],
+      "worked_examples": [
+        {
+          "audio_example_en": "I first asked for Tuesday, but Friday is the day I can attend.",
+          "question": "Final day: ____",
+          "answer": "Friday",
+          "explanation_vi": "Tuesday là phương án cũ; Friday mới là quyết định cuối."
+        },
+        {
+          "audio_example_en": "The ordinary ticket is twenty pounds, although students pay fifteen.",
+          "question": "Student ticket: £____",
+          "answer": "15",
+          "explanation_vi": "Chọn mức giá đúng đối tượng được hỏi; 20 là giá thường."
+        }
+      ]
+    },
+    "steps": [
+      "pre_listening",
+      "first_listen_ielts_questions",
+      "review_with_evidence",
+      "selective_dictation",
+      "gap_fill",
+      "summary"
+    ],
+    "ielts_question_ids": [
+      "Q01",
+      "Q02",
+      "Q03",
+      "Q04",
+      "Q05",
+      "Q06",
+      "Q07",
+      "Q08"
+    ],
+    "recommended_first_listen_play_limit": 1,
+    "practice_replay_allowed_after_first_attempt": true,
+    "word_count": 310,
+    "estimated_audio_minutes_at_135_wpm": 2.3,
+    "exposure_bank": "training",
+    "exam_simulation": false,
+    "mock_test": false
+  },
+  "qa": {
+    "status": "awaiting_human_audio_review",
+    "automated_validation": "pending",
+    "human_transcript_approved": false,
+    "human_audio_approved": false,
+    "ielts_exam_equivalent": false,
+    "release_eligible": false
+  },
+  "provenance": {
+    "source_type": "original_authored",
+    "reference_copying": false,
+    "authoring_milestone": "M21",
+    "do_not_reuse_in_unseen_assessment_before_exposure_check": true
+  },
+  "release_metadata": {
+    "version": "m21.0.1",
+    "published": false,
+    "needs_audio": true,
+    "requires_human_approval": true,
+    "import_policy": "insert_only",
+    "target_bank": "training"
+  }
+}

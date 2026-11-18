@@ -1,0 +1,391 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "DICT-S2-049",
+  "status": "draft",
+  "level": "L5",
+  "section": 2,
+  "topic": "Community Centres",
+  "title": "New Services at the Community Learning Hub",
+  "learning_objectives_vi": [
+    "Nghe và hiểu bài độc thoại Community Centres ở mức L5, phân biệt chi tiết chính/phụ.",
+    "Nhận ra thông tin cập nhật, điều kiện và phương án thay thế thay vì chọn chi tiết đầu tiên nghe được.",
+    "Chép chính xác các đoạn mục tiêu và giải thích bằng chứng theo thứ tự lời nói."
+  ],
+  "content_format": "section_practice",
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Guide / public information presenter (single narrator)",
+      "tts_voice_id": null,
+      "accent_requested": "british"
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "The community learning hub has reopened after six months of construction, and this short introduction covers the facilities now available. The building looks familiar from outside, but several activities have changed location.",
+      "translation_vi": "Trung tâm học tập cộng đồng đã mở lại sau sáu tháng xây dựng, và phần giới thiệu ngắn này nói về cơ sở vật chất hiện có. Bên ngoài trông quen thuộc nhưng nhiều hoạt động đã đổi vị trí.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_2",
+        "monologue",
+        "l5",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "A",
+      "text_en": "The adult literacy classes have moved upstairs to Room Eight, where soundproof doors help learners concentrate. The former classroom downstairs now operates as a small exhibition space.",
+      "translation_vi": "Các lớp xóa mù chữ cho người lớn chuyển lên Phòng Tám ở tầng trên, nơi cửa cách âm giúp tập trung. Phòng học cũ dưới tầng nay là khu triển lãm nhỏ.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_2",
+        "monologue",
+        "l5",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "A",
+      "text_en": "Visitors can use the computer room for one hour without booking. However, people needing assistance with online forms should arrange an appointment with the digital support team.",
+      "translation_vi": "Khách có thể dùng phòng máy một giờ không cần đặt chỗ. Nhưng ai cần trợ giúp điền biểu mẫu trực tuyến nên hẹn với nhóm hỗ trợ kỹ thuật số.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_2",
+        "monologue",
+        "l5",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "A",
+      "text_en": "The craft workshop on Tuesday evenings has been replaced by a Thursday afternoon session. This change allows local school pupils to use the shared equipment earlier in the week.",
+      "translation_vi": "Buổi thủ công tối thứ Ba được thay bằng buổi chiều thứ Năm. Thay đổi này cho phép học sinh địa phương dùng thiết bị chung sớm trong tuần.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_2",
+        "monologue",
+        "l5",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "A",
+      "text_en": "At the rear of the building, a quiet garden has been developed for reading and conversation. Food is not allowed there, though drinks in covered cups are acceptable.",
+      "translation_vi": "Phía sau tòa nhà có khu vườn yên tĩnh dành cho đọc sách và trò chuyện. Không được ăn ở đó, nhưng có thể mang đồ uống trong cốc có nắp.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_2",
+        "monologue",
+        "l5",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "A",
+      "text_en": "Membership remains free for residents. For specialist workshops, a small materials charge may apply, and this will always be shown before you complete a booking.",
+      "translation_vi": "Tư cách hội viên vẫn miễn phí cho cư dân. Với buổi học chuyên biệt có thể thu ít tiền vật liệu, và phí luôn được thông báo trước khi đặt chỗ.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_2",
+        "monologue",
+        "l5",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "Finally, staff will collect feedback cards at reception until the end of the month. Suggestions will be reviewed by the centre's advisory committee in the next planning meeting.",
+      "translation_vi": "Cuối cùng, nhân viên nhận phiếu góp ý tại lễ tân đến hết tháng. Đề xuất sẽ được ủy ban tư vấn xem xét trong cuộc họp kế hoạch sau.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_2",
+        "monologue",
+        "l5",
+        "signposting"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "type": "note_completion",
+      "prompt": "Notes — Literacy classes moved to: ____",
+      "correct_answers": [
+        "Room Eight"
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Các lớp xóa mù chữ cho người lớn chuyển lên Phòng Tám ở tầng trên, nơi cửa cách âm giúp tập trung. Phòng học cũ dưới tầng nay là khu triển lãm nhỏ. Đáp án được nhắc trong đoạn T02: “Room Eight”.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_2",
+        "ielts_practice",
+        "detail_recognition"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q02",
+      "type": "table_completion",
+      "prompt": "Table — Computer room can be used for: ____",
+      "correct_answers": [
+        "one hour"
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Khách có thể dùng phòng máy một giờ không cần đặt chỗ. Nhưng ai cần trợ giúp điền biểu mẫu trực tuyến nên hẹn với nhóm hỗ trợ kỹ thuật số. Đáp án được nhắc trong đoạn T03: “one hour”.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_2",
+        "ielts_practice",
+        "detail_recognition"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q03",
+      "type": "sentence_completion",
+      "prompt": "Complete the sentence — Craft workshop now runs on: ____",
+      "correct_answers": [
+        "Thursday"
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Buổi thủ công tối thứ Ba được thay bằng buổi chiều thứ Năm. Thay đổi này cho phép học sinh địa phương dùng thiết bị chung sớm trong tuần. Đáp án được nhắc trong đoạn T04: “Thursday”.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_2",
+        "ielts_practice",
+        "detail_recognition"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q04",
+      "type": "note_completion",
+      "prompt": "Notes — Quiet area at the rear is a: ____",
+      "correct_answers": [
+        "garden"
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Phía sau tòa nhà có khu vườn yên tĩnh dành cho đọc sách và trò chuyện. Không được ăn ở đó, nhưng có thể mang đồ uống trong cốc có nắp. Đáp án được nhắc trong đoạn T05: “garden”.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_2",
+        "ielts_practice",
+        "detail_recognition"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q05",
+      "type": "short_answer",
+      "prompt": "Answer briefly: Membership for residents is?",
+      "correct_answers": [
+        "free"
+      ],
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "explanation_vi": "Tư cách hội viên vẫn miễn phí cho cư dân. Với buổi học chuyên biệt có thể thu ít tiền vật liệu, và phí luôn được thông báo trước khi đặt chỗ. Đáp án được nhắc trong đoạn T06: “free”.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_2",
+        "ielts_practice",
+        "detail_recognition"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q06",
+      "type": "note_completion",
+      "prompt": "Notes — Feedback cards submitted at: ____",
+      "correct_answers": [
+        "reception"
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "Cuối cùng, nhân viên nhận phiếu góp ý tại lễ tân đến hết tháng. Đề xuất sẽ được ủy ban tư vấn xem xét trong cuộc họp kế hoạch sau. Đáp án được nhắc trong đoạn T07: “reception”.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_2",
+        "ielts_practice",
+        "detail_recognition"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "X01",
+      "type": "mcq",
+      "prompt": "When does the craft workshop take place now?",
+      "options": [
+        "Tuesday evening",
+        "Thursday afternoon",
+        "Saturday morning"
+      ],
+      "correct_answers": [
+        "Thursday afternoon"
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Buổi thủ công tối thứ Ba được thay bằng buổi chiều thứ Năm. Thay đổi này cho phép học sinh địa phương dùng thiết bị chung sớm trong tuần. Trong ba lựa chọn, đáp án chính xác là “Thursday afternoon”.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "section_2",
+        "supplementary_mcq",
+        "distractor_detection",
+        "paraphrase"
+      ]
+    },
+    {
+      "question_id": "D01",
+      "type": "dictation",
+      "prompt": "Nghe và chép nguyên văn lời người dẫn tại đoạn T03.",
+      "correct_answers": [
+        "Visitors can use the computer room for one hour without booking. However, people needing assistance with online forms should arrange an appointment with the digital support team."
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Câu gốc: Visitors can use the computer room for one hour without booking. However, people needing assistance with online forms should arrange an appointment with the digital support team. Nghĩa: Khách có thể dùng phòng máy một giờ không cần đặt chỗ. Nhưng ai cần trợ giúp điền biểu mẫu trực tuyến nên hẹn với nhóm hỗ trợ kỹ thuật số. Chú ý từ chức năng, âm cuối và nhịp nói.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "exact_transcript",
+        "section_2"
+      ]
+    },
+    {
+      "question_id": "D02",
+      "type": "dictation",
+      "prompt": "Nghe và chép nguyên văn lời người dẫn tại đoạn T05.",
+      "correct_answers": [
+        "At the rear of the building, a quiet garden has been developed for reading and conversation. Food is not allowed there, though drinks in covered cups are acceptable."
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Câu gốc: At the rear of the building, a quiet garden has been developed for reading and conversation. Food is not allowed there, though drinks in covered cups are acceptable. Nghĩa: Phía sau tòa nhà có khu vườn yên tĩnh dành cho đọc sách và trò chuyện. Không được ăn ở đó, nhưng có thể mang đồ uống trong cốc có nắp. Chú ý từ chức năng, âm cuối và nhịp nói.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "exact_transcript",
+        "section_2"
+      ]
+    },
+    {
+      "question_id": "G01",
+      "type": "gap_fill",
+      "prompt": "Nghe và điền từ/cụm từ còn thiếu: The adult ____ have moved upstairs to Room Eight, where soundproof doors help learners concentrate. The former classroom downstairs now operates as a small exhibition space.",
+      "correct_answers": [
+        "literacy classes"
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Cụm “literacy classes” xuất hiện trong câu gốc: The adult literacy classes have moved upstairs to Room Eight, where soundproof doors help learners concentrate. The former classroom downstairs now operates as a small exhibition space. Nghĩa: Các lớp xóa mù chữ cho người lớn chuyển lên Phòng Tám ở tầng trên, nơi cửa cách âm giúp tập trung. Phòng học cũ dưới tầng nay là khu triển lãm nhỏ.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "gap_fill",
+        "vocab_in_context",
+        "section_2"
+      ]
+    }
+  ],
+  "vocabulary": [
+    {
+      "term": "literacy classes",
+      "pos": "n. phr.",
+      "meaning_vi": "lớp học đọc viết cơ bản",
+      "example_en": "The adult literacy classes have moved upstairs to Room Eight, where soundproof doors help learners concentrate. The former classroom downstairs now operates as a small exhibition space.",
+      "example_vi": "Các lớp xóa mù chữ cho người lớn chuyển lên Phòng Tám ở tầng trên, nơi cửa cách âm giúp tập trung. Phòng học cũ dưới tầng nay là khu triển lãm nhỏ.",
+      "source_turn_id": "T02"
+    },
+    {
+      "term": "soundproof",
+      "pos": "adj.",
+      "meaning_vi": "cách âm",
+      "example_en": "The adult literacy classes have moved upstairs to Room Eight, where soundproof doors help learners concentrate. The former classroom downstairs now operates as a small exhibition space.",
+      "example_vi": "Các lớp xóa mù chữ cho người lớn chuyển lên Phòng Tám ở tầng trên, nơi cửa cách âm giúp tập trung. Phòng học cũ dưới tầng nay là khu triển lãm nhỏ.",
+      "source_turn_id": "T02"
+    },
+    {
+      "term": "digital support",
+      "pos": "n. phr.",
+      "meaning_vi": "hỗ trợ kỹ thuật số",
+      "example_en": "Visitors can use the computer room for one hour without booking. However, people needing assistance with online forms should arrange an appointment with the digital support team.",
+      "example_vi": "Khách có thể dùng phòng máy một giờ không cần đặt chỗ. Nhưng ai cần trợ giúp điền biểu mẫu trực tuyến nên hẹn với nhóm hỗ trợ kỹ thuật số.",
+      "source_turn_id": "T03"
+    },
+    {
+      "term": "materials charge",
+      "pos": "n. phr.",
+      "meaning_vi": "phí vật liệu",
+      "example_en": "Membership remains free for residents. For specialist workshops, a small materials charge may apply, and this will always be shown before you complete a booking.",
+      "example_vi": "Tư cách hội viên vẫn miễn phí cho cư dân. Với buổi học chuyên biệt có thể thu ít tiền vật liệu, và phí luôn được thông báo trước khi đặt chỗ.",
+      "source_turn_id": "T06"
+    }
+  ],
+  "audio": {
+    "status": "not_generated",
+    "url": null,
+    "duration_ms": null,
+    "model": null,
+    "provider": null,
+    "voice_config": null,
+    "source_transcript_hash": "a095d2df75ef576f3840d9625d59d4cba336b002fd1bbbabe728036a442e4276",
+    "audio_sha256": null,
+    "format": null
+  },
+  "qa": {
+    "content_reviewed": false,
+    "answers_verified": false,
+    "audio_verified": false,
+    "rights_cleared": false,
+    "duplicate_reviewed": false,
+    "notes": [
+      "Original AI-assisted educational monologue; subject specialist review pending.",
+      "TTS, timestamps, audio verification and rights clearance are pending. Keep draft locked.",
+      "IELTS Section 2 practice, not an official IELTS Listening part or calibrated band test.",
+      "M16.2: automated edits are provisional; IELTS teacher final signoff, audio and rights clearance pending."
+    ]
+  },
+  "provenance": {
+    "content_origin": "original_ai_assisted",
+    "source_urls": [],
+    "source_rights_note": "Original learning text; obtain separate TTS service and distribution clearance, especially for under-18 users.",
+    "reviewer": null
+  },
+  "release_metadata": {
+    "published_at": null,
+    "version": 1
+  }
+}

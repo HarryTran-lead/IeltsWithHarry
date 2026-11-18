@@ -1,0 +1,399 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "DICT-S3-003",
+  "status": "draft",
+  "level": "L3",
+  "section": 3,
+  "topic": "University Assignments",
+  "title": "University Assignments: Planning & Roles",
+  "learning_objectives_vi": [
+    "Theo dõi ý kiến và lập luận của nhiều người trong một thảo luận học thuật.",
+    "Xác định thông tin cuối cùng sau khi người nói đề xuất, phản biện hoặc sửa ý.",
+    "Chép chính xác những đoạn trọng tâm và đối chiếu bằng chứng trong transcript."
+  ],
+  "content_format": "section_practice",
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Linh – university student / tutor discussion participant",
+      "tts_voice_id": null,
+      "accent_requested": "new_zealand"
+    },
+    {
+      "speaker_id": "B",
+      "role": "Daniel – university student / tutor discussion participant",
+      "tts_voice_id": null,
+      "accent_requested": "new_zealand"
+    },
+    {
+      "speaker_id": "C",
+      "role": "Isabel – university student / tutor discussion participant",
+      "tts_voice_id": null,
+      "accent_requested": "new_zealand"
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "I've started our essay on urban transport, but the introduction is much too long.",
+      "translation_vi": "Mình đã bắt đầu bài luận về giao thông đô thị, nhưng phần mở bài quá dài.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "l3",
+        "planning"
+      ]
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "B",
+      "text_en": "We only have twelve hundred words in total. The introduction should be brief.",
+      "translation_vi": "Tổng bài chỉ có một nghìn hai trăm từ. Mở bài nên ngắn.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "l3",
+        "planning"
+      ]
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "A",
+      "text_en": "I wrote about the history of buses. Maybe that belongs in the background section.",
+      "translation_vi": "Mình đã viết về lịch sử xe buýt. Có lẽ phần đó nên nằm trong mục bối cảnh.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "l3",
+        "planning"
+      ]
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "C",
+      "text_en": "The tutor asked us to compare two policies, not give a history lesson.",
+      "translation_vi": "Gia sư yêu cầu so sánh hai chính sách chứ không phải kể lịch sử.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "l3",
+        "planning"
+      ]
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "B",
+      "text_en": "Let's focus on lower fares and dedicated bus lanes. Both have clear evidence.",
+      "translation_vi": "Hãy tập trung vào giảm giá vé và làn xe buýt riêng. Cả hai đều có chứng cứ rõ.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "l3",
+        "planning"
+      ]
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "A",
+      "text_en": "I'll rewrite the opening tonight. Could you check the references tomorrow?",
+      "translation_vi": "Mình sẽ viết lại mở bài tối nay. Bạn kiểm tra tài liệu tham khảo ngày mai nhé?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "l3",
+        "planning"
+      ]
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "C",
+      "text_en": "Yes, but please use the university citation guide. The online examples are inconsistent.",
+      "translation_vi": "Được, nhưng hãy dùng hướng dẫn trích dẫn của trường. Ví dụ trên mạng không thống nhất.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "l3",
+        "planning"
+      ]
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "B",
+      "text_en": "I'll combine the sections on Saturday, leaving Sunday for proofreading.",
+      "translation_vi": "Mình sẽ ghép các phần vào thứ Bảy và dành Chủ nhật để đọc soát.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "l3",
+        "planning"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "type": "note_completion",
+      "prompt": "The essay has a total limit of ____ words.",
+      "correct_answers": [
+        "twelve hundred"
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Bằng chứng ở T02 (Daniel): “Tổng bài chỉ có một nghìn hai trăm từ. Mở bài nên ngắn.” Đáp án: “twelve hundred”. Từ/cụm từ nằm trong lời nói; không chọn thông tin đã bị sửa hoặc người khác chỉ đề xuất.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_3",
+        "ielts_practice",
+        "detail_recognition"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q02",
+      "type": "mcq",
+      "prompt": "What is the central requirement of the assignment?",
+      "correct_answers": [
+        "Compare two policies"
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Bằng chứng ở T04 (Isabel): “Gia sư yêu cầu so sánh hai chính sách chứ không phải kể lịch sử.” Đáp án: “Compare two policies”. Đây là ý cuối cùng hoặc lập luận cần xác định; các lựa chọn khác không được đoạn này xác nhận.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "section_3",
+        "ielts_practice",
+        "opinion_inference"
+      ],
+      "options": [
+        "Describe one bus route",
+        "Compare two policies",
+        "Write the history of buses"
+      ]
+    },
+    {
+      "question_id": "Q03",
+      "type": "note_completion",
+      "prompt": "The two policies are lower fares and dedicated bus ____.",
+      "correct_answers": [
+        "lanes"
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Bằng chứng ở T05 (Daniel): “Hãy tập trung vào giảm giá vé và làn xe buýt riêng. Cả hai đều có chứng cứ rõ.” Đáp án: “lanes”. Từ/cụm từ nằm trong lời nói; không chọn thông tin đã bị sửa hoặc người khác chỉ đề xuất.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_3",
+        "ielts_practice",
+        "detail_recognition"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q04",
+      "type": "matching",
+      "prompt": "Who will rewrite the introduction?",
+      "correct_answers": [
+        "Speaker A"
+      ],
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "explanation_vi": "Bằng chứng ở T06 (Linh): “Mình sẽ viết lại mở bài tối nay. Bạn kiểm tra tài liệu tham khảo ngày mai nhé?” Đáp án: “Speaker A”. Đối chiếu đúng thông tin được người nói nêu, chú ý các ý kiến hoặc phương án trước đó.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "section_3",
+        "ielts_practice",
+        "speaker_attribution"
+      ],
+      "options": [
+        "Speaker B",
+        "Speaker C",
+        "Speaker A"
+      ]
+    },
+    {
+      "question_id": "Q05",
+      "type": "short_answer",
+      "prompt": "Which citation source should the group follow?",
+      "correct_answers": [
+        "university citation guide"
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "Bằng chứng ở T07 (Isabel): “Được, nhưng hãy dùng hướng dẫn trích dẫn của trường. Ví dụ trên mạng không thống nhất.” Đáp án: “university citation guide”. Từ/cụm từ nằm trong lời nói; không chọn thông tin đã bị sửa hoặc người khác chỉ đề xuất.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_3",
+        "ielts_practice",
+        "detail_recognition"
+      ],
+      "word_limit": 3,
+      "instructions_en": "NO MORE THAN THREE WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q06",
+      "type": "note_completion",
+      "prompt": "The team reserves ____ for proofreading.",
+      "correct_answers": [
+        "Sunday"
+      ],
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "explanation_vi": "Bằng chứng ở T08 (Daniel): “Mình sẽ ghép các phần vào thứ Bảy và dành Chủ nhật để đọc soát.” Đáp án: “Sunday”. Từ/cụm từ nằm trong lời nói; không chọn thông tin đã bị sửa hoặc người khác chỉ đề xuất.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_3",
+        "ielts_practice",
+        "detail_recognition"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "D01",
+      "type": "dictation",
+      "prompt": "Nghe đoạn T02 và chép nguyên văn tiếng Anh (Speaker B).",
+      "correct_answers": [
+        "We only have twelve hundred words in total. The introduction should be brief."
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Câu gốc: “We only have twelve hundred words in total. The introduction should be brief.”\nNghĩa: Tổng bài chỉ có một nghìn hai trăm từ. Mở bài nên ngắn.\nChú ý từ chức năng, âm yếu, cụm từ nối và ý người nói.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_3",
+        "dictation",
+        "exact_transcript"
+      ]
+    },
+    {
+      "question_id": "D02",
+      "type": "dictation",
+      "prompt": "Nghe đoạn T05 và chép nguyên văn tiếng Anh (Speaker B).",
+      "correct_answers": [
+        "Let's focus on lower fares and dedicated bus lanes. Both have clear evidence."
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Câu gốc: “Let's focus on lower fares and dedicated bus lanes. Both have clear evidence.”\nNghĩa: Hãy tập trung vào giảm giá vé và làn xe buýt riêng. Cả hai đều có chứng cứ rõ.\nChú ý từ chức năng, âm yếu, cụm từ nối và ý người nói.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_3",
+        "dictation",
+        "exact_transcript"
+      ]
+    },
+    {
+      "question_id": "G01",
+      "type": "gap_fill",
+      "prompt": "Nghe T01, điền từ/cụm từ bị thiếu: I've started our essay on ____, but the introduction is much too long.",
+      "correct_answers": [
+        "urban transport"
+      ],
+      "evidence_turn_ids": [
+        "T01"
+      ],
+      "explanation_vi": "Cụm cần nghe: “urban transport” (giao thông đô thị). Lời gốc: “I've started our essay on urban transport, but the introduction is much too long.”.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_3",
+        "gap_fill",
+        "vocabulary_in_context"
+      ]
+    }
+  ],
+  "vocabulary": [
+    {
+      "term": "urban transport",
+      "pos": "n. phr.",
+      "meaning_vi": "giao thông đô thị",
+      "example_en": "I've started our essay on urban transport, but the introduction is much too long.",
+      "example_vi": "Mình đã bắt đầu bài luận về giao thông đô thị, nhưng phần mở bài quá dài.",
+      "source_turn_id": "T01"
+    },
+    {
+      "term": "dedicated bus lanes",
+      "pos": "n. phr.",
+      "meaning_vi": "làn xe buýt riêng",
+      "example_en": "Let's focus on lower fares and dedicated bus lanes. Both have clear evidence.",
+      "example_vi": "Hãy tập trung vào giảm giá vé và làn xe buýt riêng. Cả hai đều có chứng cứ rõ.",
+      "source_turn_id": "T05"
+    },
+    {
+      "term": "references",
+      "pos": "n.",
+      "meaning_vi": "tài liệu tham khảo",
+      "example_en": "I'll rewrite the opening tonight. Could you check the references tomorrow?",
+      "example_vi": "Mình sẽ viết lại mở bài tối nay. Bạn kiểm tra tài liệu tham khảo ngày mai nhé?",
+      "source_turn_id": "T06"
+    },
+    {
+      "term": "proofreading",
+      "pos": "n.",
+      "meaning_vi": "đọc soát lỗi",
+      "example_en": "I'll combine the sections on Saturday, leaving Sunday for proofreading.",
+      "example_vi": "Mình sẽ ghép các phần vào thứ Bảy và dành Chủ nhật để đọc soát.",
+      "source_turn_id": "T08"
+    }
+  ],
+  "audio": {
+    "status": "not_generated",
+    "url": null,
+    "duration_ms": null,
+    "model": null,
+    "provider": null,
+    "voice_config": null,
+    "source_transcript_hash": "b1a6d5b2687c07e7c17a7a2f6487fc1d7af1d10b74b6e13212cc2a19d2bdd323",
+    "audio_sha256": null,
+    "format": null
+  },
+  "qa": {
+    "content_reviewed": false,
+    "answers_verified": false,
+    "audio_verified": false,
+    "rights_cleared": false,
+    "duplicate_reviewed": false,
+    "notes": [
+      "Original synthetic dialogues: human educational review required.",
+      "Audio, timestamps, voice suitability and service/distribution rights not yet verified.",
+      "Training lessons, NOT official IELTS Part 3 tests or calibrated band tests.",
+      "M16.2: automated edits are provisional; IELTS teacher final signoff, audio and rights clearance pending."
+    ]
+  },
+  "provenance": {
+    "content_origin": "original_ai_assisted",
+    "source_urls": [],
+    "source_rights_note": "Original text; verify TTS provider terms and distribution rights before publishing to a youth-accessible website.",
+    "reviewer": null
+  },
+  "release_metadata": {
+    "published_at": null,
+    "version": 1
+  }
+}

@@ -1,0 +1,426 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "DICT-S1-021",
+  "status": "draft",
+  "level": "L3",
+  "section": 1,
+  "topic": "Course Registration",
+  "title": "A Course Moved to Wednesday",
+  "learning_objectives_vi": [
+    "Luyện corrected detail / distractors trong tình huống: A learner confirms a revised workshop schedule.",
+    "Nhận diện thông tin cuối cùng thay vì lặp lại dữ kiện đã bị sửa hoặc phủ định.",
+    "Chép đúng lời thoại, hiểu bằng chứng và học từ vựng trong ngữ cảnh."
+  ],
+  "content_format": "section_bridge",
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Service representative / employee",
+      "tts_voice_id": null,
+      "accent_requested": "british"
+    },
+    {
+      "speaker_id": "B",
+      "role": "Customer / applicant",
+      "tts_voice_id": null,
+      "accent_requested": "british"
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "Harbour Learning Centre, Oliver speaking.",
+      "translation_vi": "Trung tâm Harbour Learning, Oliver xin nghe.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "correction",
+        "days",
+        "rooms",
+        "section_1",
+        "two_speaker_dialogue",
+        "l3"
+      ]
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "B",
+      "text_en": "I'm enrolled in the beginners photography course. Has the timetable changed?",
+      "translation_vi": "Tôi đăng ký lớp nhiếp ảnh cơ bản. Lịch có đổi không ạ?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "correction",
+        "days",
+        "rooms",
+        "section_1",
+        "two_speaker_dialogue",
+        "l3"
+      ]
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "A",
+      "text_en": "Yes. It was on Mondays, but the new class is on Wednesdays.",
+      "translation_vi": "Có. Trước là thứ Hai, nhưng lớp mới học thứ Tư.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "correction",
+        "days",
+        "rooms",
+        "section_1",
+        "two_speaker_dialogue",
+        "l3"
+      ]
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "B",
+      "text_en": "And is it still at five o'clock?",
+      "translation_vi": "Vậy vẫn là năm giờ chứ?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "correction",
+        "days",
+        "rooms",
+        "section_1",
+        "two_speaker_dialogue",
+        "l3"
+      ]
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "A",
+      "text_en": "Actually, the tutor needs the studio earlier, so we now start at four thirty.",
+      "translation_vi": "Thật ra giáo viên cần phòng sớm hơn, nên giờ bắt đầu là bốn giờ ba mươi.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "correction",
+        "days",
+        "rooms",
+        "section_1",
+        "two_speaker_dialogue",
+        "l3"
+      ]
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "B",
+      "text_en": "I paid sixty pounds online. Is that the correct amount?",
+      "translation_vi": "Tôi trả sáu mươi bảng trực tuyến. Đúng mức phí không?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "correction",
+        "days",
+        "rooms",
+        "section_1",
+        "two_speaker_dialogue",
+        "l3"
+      ]
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "Yes. That's the full fee, and your materials are included.",
+      "translation_vi": "Đúng. Đó là toàn bộ học phí, đã bao gồm dụng cụ.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "correction",
+        "days",
+        "rooms",
+        "section_1",
+        "two_speaker_dialogue",
+        "l3"
+      ]
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "B",
+      "text_en": "Do we meet in Room Twelve?",
+      "translation_vi": "Chúng tôi học ở phòng Mười Hai phải không?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "correction",
+        "days",
+        "rooms",
+        "section_1",
+        "two_speaker_dialogue",
+        "l3"
+      ]
+    },
+    {
+      "turn_id": "T09",
+      "speaker_id": "A",
+      "text_en": "No, the new room is Eight, beside the main office.",
+      "translation_vi": "Không, phòng mới là phòng Tám, cạnh văn phòng chính.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "correction",
+        "days",
+        "rooms",
+        "section_1",
+        "two_speaker_dialogue",
+        "l3"
+      ]
+    },
+    {
+      "turn_id": "T10",
+      "speaker_id": "B",
+      "text_en": "All right. I'll change the details in my diary.",
+      "translation_vi": "Được. Tôi sẽ sửa thông tin trong lịch của mình.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "correction",
+        "days",
+        "rooms",
+        "section_1",
+        "two_speaker_dialogue",
+        "l3"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "type": "form_completion",
+      "prompt": "The new class is on ____.",
+      "correct_answers": [
+        "Wednesdays"
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Thông báo dùng nguyên dạng số nhiều “on Wednesdays”, không dùng Wednesday.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "correction",
+        "days",
+        "rooms",
+        "ielts_section1_practice"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q02",
+      "type": "form_completion",
+      "prompt": "New start time: ____",
+      "correct_answers": [
+        "4:30"
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Nhân viên đính chính từ 5 giờ sang 4:30.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "correction",
+        "days",
+        "rooms",
+        "ielts_section1_practice"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q03",
+      "type": "form_completion",
+      "prompt": "Fee already paid: £____",
+      "correct_answers": [
+        "60"
+      ],
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "explanation_vi": "Khách đã trả sáu mươi bảng.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "correction",
+        "days",
+        "rooms",
+        "ielts_section1_practice"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q04",
+      "type": "form_completion",
+      "prompt": "Course fee includes ____",
+      "correct_answers": [
+        "materials"
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "Dụng cụ đã có trong học phí.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "correction",
+        "days",
+        "rooms",
+        "ielts_section1_practice"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q05",
+      "type": "form_completion",
+      "prompt": "New classroom: Room ____",
+      "correct_answers": [
+        "8"
+      ],
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "explanation_vi": "Room Twelve là thông tin cũ; Room Eight mới đúng.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "correction",
+        "days",
+        "rooms",
+        "ielts_section1_practice"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "D01",
+      "type": "dictation",
+      "prompt": "Nghe và chép nguyên văn lời nhân vật A (lượt T03).",
+      "correct_answers": [
+        "Yes. It was on Mondays, but the new class is on Wednesdays."
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Câu chuẩn: Yes. It was on Mondays, but the new class is on Wednesdays. Nghĩa: Có. Trước là thứ Hai, nhưng lớp mới học thứ Tư. Cần nghe rõ từ chức năng, âm cuối và thông tin cụ thể.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "correction",
+        "days",
+        "rooms",
+        "dictation",
+        "transcription_accuracy"
+      ]
+    },
+    {
+      "question_id": "D02",
+      "type": "dictation",
+      "prompt": "Nghe và chép nguyên văn lời nhân vật A (lượt T07).",
+      "correct_answers": [
+        "Yes. That's the full fee, and your materials are included."
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "Câu chuẩn: Yes. That's the full fee, and your materials are included. Nghĩa: Đúng. Đó là toàn bộ học phí, đã bao gồm dụng cụ. Cần nghe rõ từ chức năng, âm cuối và thông tin cụ thể.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "correction",
+        "days",
+        "rooms",
+        "dictation",
+        "transcription_accuracy"
+      ]
+    },
+    {
+      "question_id": "G01",
+      "type": "gap_fill",
+      "prompt": "Nghe và điền từ/cụm từ thiếu: I'm ____ in the beginners photography course. Has the timetable changed?",
+      "correct_answers": [
+        "enrolled"
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Cụm cần điền: enrolled (đã ghi danh). Câu gốc: I'm enrolled in the beginners photography course. Has the timetable changed?",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "correction",
+        "days",
+        "rooms",
+        "gap_fill",
+        "vocabulary_in_context"
+      ]
+    }
+  ],
+  "vocabulary": [
+    {
+      "term": "enrolled",
+      "pos": "word",
+      "meaning_vi": "đã ghi danh",
+      "example_en": "I'm enrolled in the beginners photography course. Has the timetable changed?",
+      "example_vi": "Tôi đăng ký lớp nhiếp ảnh cơ bản. Lịch có đổi không ạ?",
+      "source_turn_id": "T02"
+    },
+    {
+      "term": "timetable",
+      "pos": "word",
+      "meaning_vi": "thời khóa biểu",
+      "example_en": "I'm enrolled in the beginners photography course. Has the timetable changed?",
+      "example_vi": "Tôi đăng ký lớp nhiếp ảnh cơ bản. Lịch có đổi không ạ?",
+      "source_turn_id": "T02"
+    },
+    {
+      "term": "materials",
+      "pos": "word",
+      "meaning_vi": "dụng cụ",
+      "example_en": "Yes. That's the full fee, and your materials are included.",
+      "example_vi": "Đúng. Đó là toàn bộ học phí, đã bao gồm dụng cụ.",
+      "source_turn_id": "T07"
+    },
+    {
+      "term": "diary",
+      "pos": "word",
+      "meaning_vi": "sổ lịch",
+      "example_en": "All right. I'll change the details in my diary.",
+      "example_vi": "Được. Tôi sẽ sửa thông tin trong lịch của mình.",
+      "source_turn_id": "T10"
+    }
+  ],
+  "audio": {
+    "status": "not_generated",
+    "url": null,
+    "duration_ms": null,
+    "model": null,
+    "provider": null,
+    "voice_config": null,
+    "source_transcript_hash": "45f40dc71dec0a4284a4d478e3df245d28ee69c1390bd2f83d365f6b4758b36c",
+    "audio_sha256": null,
+    "format": null
+  },
+  "qa": {
+    "content_reviewed": false,
+    "answers_verified": false,
+    "audio_verified": false,
+    "rights_cleared": false,
+    "duplicate_reviewed": false,
+    "notes": [
+      "AI-assisted original draft; requires IELTS-teacher review of all items and ambiguity.",
+      "Audio and time-alignment are pending.",
+      "Do not release automatically after structural validation.",
+      "M16.2: automated edits are provisional; IELTS teacher final signoff, audio and rights clearance pending."
+    ]
+  },
+  "provenance": {
+    "content_origin": "original_ai_assisted",
+    "source_urls": [],
+    "source_rights_note": "Original educational dialogue. Verify TTS provider usage conditions, rights and accessibility before production. Not an official IELTS item.",
+    "reviewer": null
+  },
+  "release_metadata": {
+    "published_at": null,
+    "version": 1
+  }
+}

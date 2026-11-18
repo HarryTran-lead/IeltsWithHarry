@@ -1,0 +1,425 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "DICT-F1-009",
+  "status": "draft",
+  "level": "L1",
+  "section": 0,
+  "topic": "Foundation",
+  "title": "Surnames and Places",
+  "learning_objectives_vi": [
+    "Nghe họ và địa danh được đánh vần",
+    "Nghe và chép chính xác các lượt nghe ngắn mà không dựa vào transcript."
+  ],
+  "content_format": "micro_drill",
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Foundation narrator",
+      "tts_voice_id": null,
+      "accent_requested": "australian"
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "The surname is Baker. B, A, K, E, R.",
+      "translation_vi": "Họ là Baker, đánh vần B-A-K-E-R.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "alphabet_spelling",
+        "micro_listening"
+      ]
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "A",
+      "text_en": "The surname is Chen. C, H, E, N.",
+      "translation_vi": "Họ là Chen, đánh vần C-H-E-N.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "alphabet_spelling",
+        "micro_listening"
+      ]
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "A",
+      "text_en": "The family name is Walsh. W, A, L, S, H.",
+      "translation_vi": "Họ gia đình là Walsh, đánh vần W-A-L-S-H.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "alphabet_spelling",
+        "micro_listening"
+      ]
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "A",
+      "text_en": "The surname is Reed. R, E, E, D.",
+      "translation_vi": "Họ là Reed, đánh vần R-E-E-D.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "alphabet_spelling",
+        "micro_listening"
+      ]
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "A",
+      "text_en": "The surname is Fox. F, O, X.",
+      "translation_vi": "Họ là Fox, đánh vần F-O-X.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "alphabet_spelling",
+        "micro_listening"
+      ]
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "A",
+      "text_en": "The town is Dover. D, O, V, E, R.",
+      "translation_vi": "Thị trấn là Dover, đánh vần D-O-V-E-R.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "alphabet_spelling",
+        "micro_listening"
+      ]
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "The city is York. Y, O, R, K.",
+      "translation_vi": "Thành phố là York, đánh vần Y-O-R-K.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "alphabet_spelling",
+        "micro_listening"
+      ]
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "A",
+      "text_en": "The village is Wells. W, E, L, L, S.",
+      "translation_vi": "Làng là Wells, đánh vần W-E-L-L-S.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "alphabet_spelling",
+        "micro_listening"
+      ]
+    },
+    {
+      "turn_id": "T09",
+      "speaker_id": "A",
+      "text_en": "The town is Bath. B, A, T, H.",
+      "translation_vi": "Thị trấn là Bath, đánh vần B-A-T-H.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "alphabet_spelling",
+        "micro_listening"
+      ]
+    },
+    {
+      "turn_id": "T10",
+      "speaker_id": "A",
+      "text_en": "The city is Perth. P, E, R, T, H.",
+      "translation_vi": "Thành phố là Perth, đánh vần P-E-R-T-H.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "alphabet_spelling",
+        "micro_listening"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "type": "dictation",
+      "prompt": "Nghe lượt T01 và chép chính xác những từ được nói.",
+      "correct_answers": [
+        "The surname is Baker. B, A, K, E, R."
+      ],
+      "evidence_turn_ids": [
+        "T01"
+      ],
+      "explanation_vi": "Baker có K, không phải C. Nghĩa: Họ là Baker, đánh vần B-A-K-E-R.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text"
+      ]
+    },
+    {
+      "question_id": "Q02",
+      "type": "dictation",
+      "prompt": "Nghe lượt T02 và chép chính xác những từ được nói.",
+      "correct_answers": [
+        "The surname is Chen. C, H, E, N."
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Chen bắt đầu bằng C-H. Nghĩa: Họ là Chen, đánh vần C-H-E-N.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text"
+      ]
+    },
+    {
+      "question_id": "Q03",
+      "type": "dictation",
+      "prompt": "Nghe lượt T03 và chép chính xác những từ được nói.",
+      "correct_answers": [
+        "The family name is Walsh. W, A, L, S, H."
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Walsh kết thúc S-H. Nghĩa: Họ gia đình là Walsh, đánh vần W-A-L-S-H.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text"
+      ]
+    },
+    {
+      "question_id": "Q04",
+      "type": "dictation",
+      "prompt": "Nghe lượt T04 và chép chính xác những từ được nói.",
+      "correct_answers": [
+        "The surname is Reed. R, E, E, D."
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Reed có hai chữ E. Nghĩa: Họ là Reed, đánh vần R-E-E-D.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text"
+      ]
+    },
+    {
+      "question_id": "Q05",
+      "type": "dictation",
+      "prompt": "Nghe lượt T05 và chép chính xác những từ được nói.",
+      "correct_answers": [
+        "The surname is Fox. F, O, X."
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "X ở cuối họ Fox. Nghĩa: Họ là Fox, đánh vần F-O-X.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text"
+      ]
+    },
+    {
+      "question_id": "Q06",
+      "type": "dictation",
+      "prompt": "Nghe lượt T06 và chép chính xác những từ được nói.",
+      "correct_answers": [
+        "The town is Dover. D, O, V, E, R."
+      ],
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "explanation_vi": "Dover có V. Nghĩa: Thị trấn là Dover, đánh vần D-O-V-E-R.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text"
+      ]
+    },
+    {
+      "question_id": "Q07",
+      "type": "dictation",
+      "prompt": "Nghe lượt T07 và chép chính xác những từ được nói.",
+      "correct_answers": [
+        "The city is York. Y, O, R, K."
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "York kết thúc bằng K. Nghĩa: Thành phố là York, đánh vần Y-O-R-K.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text"
+      ]
+    },
+    {
+      "question_id": "Q08",
+      "type": "dictation",
+      "prompt": "Nghe lượt T08 và chép chính xác những từ được nói.",
+      "correct_answers": [
+        "The village is Wells. W, E, L, L, S."
+      ],
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "explanation_vi": "Wells có hai L. Nghĩa: Làng là Wells, đánh vần W-E-L-L-S.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text"
+      ]
+    },
+    {
+      "question_id": "Q09",
+      "type": "dictation",
+      "prompt": "Nghe lượt T09 và chép chính xác những từ được nói.",
+      "correct_answers": [
+        "The town is Bath. B, A, T, H."
+      ],
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "explanation_vi": "Bath có T-H. Nghĩa: Thị trấn là Bath, đánh vần B-A-T-H.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text"
+      ]
+    },
+    {
+      "question_id": "Q10",
+      "type": "dictation",
+      "prompt": "Nghe lượt T10 và chép chính xác những từ được nói.",
+      "correct_answers": [
+        "The city is Perth. P, E, R, T, H."
+      ],
+      "evidence_turn_ids": [
+        "T10"
+      ],
+      "explanation_vi": "Perth có T-H. Nghĩa: Thành phố là Perth, đánh vần P-E-R-T-H.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text"
+      ]
+    },
+    {
+      "question_id": "Q11",
+      "type": "word_choice",
+      "prompt": "T04: Họ có bao nhiêu chữ E?",
+      "correct_answers": [
+        "2"
+      ],
+      "options": [
+        "1",
+        "2"
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Reed được đánh vần R-E-E-D, có hai E. Hãy nghe lại lượt T04, đối chiếu với lựa chọn còn lại và xác định từ/ý được nói thật.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "comprehension",
+        "foundation_discrimination"
+      ]
+    },
+    {
+      "question_id": "Q12",
+      "type": "word_choice",
+      "prompt": "T08: Tên làng là gì?",
+      "correct_answers": [
+        "Wells"
+      ],
+      "options": [
+        "Wells",
+        "Wales"
+      ],
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "explanation_vi": "Wells được đánh vần W-E-L-L-S. Hãy nghe lại lượt T08, đối chiếu với lựa chọn còn lại và xác định từ/ý được nói thật.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "comprehension",
+        "foundation_discrimination"
+      ]
+    }
+  ],
+  "vocabulary": [
+    {
+      "term": "surname",
+      "pos": "noun",
+      "meaning_vi": "họ",
+      "example_en": "The surname is Baker. B, A, K, E, R.",
+      "example_vi": "Họ là Baker, đánh vần B-A-K-E-R.",
+      "source_turn_id": "T01"
+    },
+    {
+      "term": "family name",
+      "pos": "noun phrase",
+      "meaning_vi": "họ gia đình",
+      "example_en": "The family name is Walsh. W, A, L, S, H.",
+      "example_vi": "Họ gia đình là Walsh, đánh vần W-A-L-S-H.",
+      "source_turn_id": "T03"
+    },
+    {
+      "term": "town",
+      "pos": "noun",
+      "meaning_vi": "thị trấn",
+      "example_en": "The town is Dover. D, O, V, E, R.",
+      "example_vi": "Thị trấn là Dover, đánh vần D-O-V-E-R.",
+      "source_turn_id": "T06"
+    },
+    {
+      "term": "village",
+      "pos": "noun",
+      "meaning_vi": "ngôi làng",
+      "example_en": "The village is Wells. W, E, L, L, S.",
+      "example_vi": "Làng là Wells, đánh vần W-E-L-L-S.",
+      "source_turn_id": "T08"
+    }
+  ],
+  "audio": {
+    "status": "not_generated",
+    "url": null,
+    "duration_ms": null,
+    "model": null,
+    "provider": null,
+    "voice_config": null,
+    "source_transcript_hash": "6ea2c28f089aaf658e570566fe62f4322be32069dfefd4e59e4fba5fe226f743",
+    "audio_sha256": null,
+    "format": null
+  },
+  "qa": {
+    "content_reviewed": false,
+    "answers_verified": false,
+    "audio_verified": false,
+    "rights_cleared": false,
+    "duplicate_reviewed": false,
+    "notes": [
+      "Author draft. Editorial, native-like audio, rights and device QA pending.",
+      "TTS: generate each turn separately, then combine and generate timestamps.",
+      "M16.2: automated edits are provisional; IELTS teacher final signoff, audio and rights clearance pending."
+    ]
+  },
+  "provenance": {
+    "content_origin": "original_ai_assisted",
+    "source_urls": [],
+    "source_rights_note": "New original learning material written for English Skill Lab; verify TTS and distribution conditions prior to release.",
+    "reviewer": null
+  },
+  "release_metadata": {
+    "published_at": null,
+    "version": 1
+  }
+}

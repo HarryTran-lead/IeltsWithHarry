@@ -16,7 +16,8 @@ export function Book2LessonRoute({ slug, canManage }: { slug: string; canManage:
   const index = lessons.findIndex((lesson) => lesson.slug === slug);
   useEffect(() => {
     const controller = new AbortController();
-    void fetch(`/book-2/lessons/${slug}.json`, { signal: controller.signal }).then(async (response) => {
+    void fetch(`/api/book2/lessons/${slug}`, { signal: controller.signal, cache: "no-store" }).then(async (response) => {
+      if (response.status === 401) throw new Error("Hãy đăng nhập để mở bài học.");
       if (!response.ok) throw new Error("Không tải được dữ liệu bài học.");
       const value = await response.json() as Book2Content;
       if (value.book_id !== "BOOK_2" || value.source_id.toLowerCase() !== slug) throw new Error("Dữ liệu bài học không hợp lệ.");
@@ -29,6 +30,6 @@ export function Book2LessonRoute({ slug, canManage }: { slug: string; canManage:
   const navigation = { previous: lessons[index - 1] ?? null, next: lessons[index + 1] ?? null, index: index + 1, total: lessons.length };
   return <DemoProvider><NotebookProvider>{content?.source_id.toLowerCase() === slug
     ? <Book2LessonPage key={slug} lesson={lesson} content={content} navigation={navigation} canManage={canManage} />
-    : <AppShell canManage={canManage}><div className="content-page book2-page"><div className="book2-card"><h1>{error ? "Chưa tải được bài học" : "Đang tải bài học…"}</h1>{error && <><p role="alert">{error}</p><div className="book2-next"><button className="button primary" type="button" onClick={() => { setError(""); setAttempt((value) => value + 1); }}>Thử tải lại</button><Link className="button subtle" href="/app/learn/ielts-builder">Về lộ trình 5.0–6.0</Link></div></>}</div></div></AppShell>}
+    : <AppShell canManage={canManage}><div className="content-page book2-page"><div className="book2-card"><h1>{error ? "Chưa tải được bài học" : "Đang tải bài học…"}</h1>{error && <><p role="alert">{error}</p><div className="book2-next"><button className="button primary" type="button" onClick={() => { setError(""); setAttempt((value) => value + 1); }}>Thử tải lại</button><Link className="button subtle" href="/app/learn/ielts-builder">Về Level 2</Link></div></>}</div></div></AppShell>}
   </NotebookProvider></DemoProvider>;
 }

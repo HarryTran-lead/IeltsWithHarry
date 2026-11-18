@@ -1,0 +1,825 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "S1-EXP-018",
+  "status": "draft",
+  "level": "L4",
+  "section": 1,
+  "topic": "Bakery order",
+  "title": "Discussing a Custom Celebration Cake",
+  "learning_objectives_vi": [
+    "Theo dõi một cuộc hội thoại đời sống hai người nói có thay đổi và đối chiếu thông tin.",
+    "Lấy thông tin cuối cùng đúng theo thứ tự audio, không chọn đáp án chỉ vì xuất hiện sớm.",
+    "Luyện 8 câu IELTS-style và sau đó sửa lỗi bằng Dictation có bằng chứng rõ ràng."
+  ],
+  "content_format": "section_practice",
+  "target_skills": [
+    "allergies",
+    "dates",
+    "delivery",
+    "design"
+  ],
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Reception/service representative",
+      "accent_requested": "australian",
+      "tts_voice_id": null
+    },
+    {
+      "speaker_id": "B",
+      "role": "Customer/visitor",
+      "accent_requested": "australian",
+      "tts_voice_id": null
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "B",
+      "text_en": "Hello, I'm hoping to order a birthday cake for my mother's seventieth. Do you still take custom orders?",
+      "translation_vi": "Xin chào, tôi muốn đặt bánh sinh nhật cho mẹ tròn 70 tuổi. Tiệm còn nhận bánh thiết kế riêng không?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_1",
+        "two_speaker_dialogue",
+        "m21",
+        "allergies",
+        "dates",
+        "delivery",
+        "design"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "A",
+      "text_en": "We do, as long as we have at least five days' notice. What sort of cake does she like?",
+      "translation_vi": "Có, nếu đặt trước ít nhất năm ngày. Mẹ chị thích loại bánh nào?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_1",
+        "two_speaker_dialogue",
+        "m21",
+        "allergies",
+        "dates",
+        "delivery",
+        "design"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "B",
+      "text_en": "She loves chocolate, but one of the guests has a serious nut allergy, so we need to be very careful.",
+      "translation_vi": "Mẹ thích sô cô la, nhưng một khách dị ứng hạt nghiêm trọng nên phải rất cẩn thận.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_1",
+        "two_speaker_dialogue",
+        "m21",
+        "allergies",
+        "dates",
+        "delivery",
+        "design"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "A",
+      "text_en": "Our kitchen handles nuts, so we cannot guarantee a nut-free cake. We can offer detailed ingredient information, though.",
+      "translation_vi": "Bếp có xử lý hạt nên không thể bảo đảm bánh hoàn toàn không có hạt. Chúng tôi có thể cung cấp thành phần chi tiết.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_1",
+        "two_speaker_dialogue",
+        "m21",
+        "allergies",
+        "dates",
+        "delivery",
+        "design"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "B",
+      "text_en": "I appreciate you saying that. We'll order a cake for the family and arrange a separate safe dessert for that guest.",
+      "translation_vi": "Cảm ơn chị nói rõ. Chúng tôi đặt bánh cho gia đình và chuẩn bị món tráng miệng riêng an toàn cho khách đó.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_1",
+        "two_speaker_dialogue",
+        "m21",
+        "allergies",
+        "dates",
+        "delivery",
+        "design"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "A",
+      "text_en": "That's sensible. For the family cake, would you prefer chocolate sponge or the orange sponge we featured last month?",
+      "translation_vi": "Hợp lý. Bánh gia đình chị muốn cốt sô cô la hay cốt cam như tháng trước?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_1",
+        "two_speaker_dialogue",
+        "m21",
+        "allergies",
+        "dates",
+        "delivery",
+        "design"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "B",
+      "text_en": "Chocolate sponge, please, with vanilla icing rather than chocolate icing. She prefers a lighter finish.",
+      "translation_vi": "Cho cốt sô cô la, phủ kem vanilla thay vì kem sô cô la. Mẹ thích vị nhẹ hơn.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_1",
+        "two_speaker_dialogue",
+        "m21",
+        "allergies",
+        "dates",
+        "delivery",
+        "design"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "A",
+      "text_en": "Certainly. How many portions do you need? We have a small cake for twelve people and a larger one for twenty.",
+      "translation_vi": "Được. Chị cần bao nhiêu phần? Bánh nhỏ cho 12 người, bánh lớn cho 20.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_1",
+        "two_speaker_dialogue",
+        "m21",
+        "allergies",
+        "dates",
+        "delivery",
+        "design"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T09",
+      "speaker_id": "B",
+      "text_en": "There will be around eighteen of us, so the twenty-portion cake would be safer.",
+      "translation_vi": "Khoảng 18 người, nên bánh 20 phần sẽ chắc hơn.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_1",
+        "two_speaker_dialogue",
+        "m21",
+        "allergies",
+        "dates",
+        "delivery",
+        "design"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T10",
+      "speaker_id": "A",
+      "text_en": "That size is forty-eight pounds. A personalised message on the top is included in the price.",
+      "translation_vi": "Cỡ đó 48 bảng. Viết lời chúc riêng trên mặt bánh đã gồm giá.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_1",
+        "two_speaker_dialogue",
+        "m21",
+        "allergies",
+        "dates",
+        "delivery",
+        "design"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T11",
+      "speaker_id": "B",
+      "text_en": "Great. I originally planned to collect it on Friday, but the party has moved to Sunday. Could we collect on Saturday?",
+      "translation_vi": "Tốt. Ban đầu tôi định nhận thứ Sáu, nhưng tiệc dời sang Chủ Nhật. Chúng tôi nhận thứ Bảy được không?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_1",
+        "two_speaker_dialogue",
+        "m21",
+        "allergies",
+        "dates",
+        "delivery",
+        "design"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T12",
+      "speaker_id": "A",
+      "text_en": "Yes, Saturday collection is fine. We close at four, so please come before three thirty to allow time to check the box.",
+      "translation_vi": "Được, nhận thứ Bảy được. Tiệm đóng 4 giờ, hãy tới trước 3:30 để kiểm tra hộp.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_1",
+        "two_speaker_dialogue",
+        "m21",
+        "allergies",
+        "dates",
+        "delivery",
+        "design"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T13",
+      "speaker_id": "B",
+      "text_en": "I can do that. Do you offer delivery? My car is small, and the roads can be busy before the weekend.",
+      "translation_vi": "Tôi đến được. Tiệm có giao hàng không? Xe tôi nhỏ, đường cuối tuần có thể đông.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_1",
+        "two_speaker_dialogue",
+        "m21",
+        "allergies",
+        "dates",
+        "delivery",
+        "design"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T14",
+      "speaker_id": "A",
+      "text_en": "We deliver locally for seven pounds, but not on Saturdays. For this order, collection is the practical choice.",
+      "translation_vi": "Chúng tôi giao nội vùng 7 bảng nhưng không giao thứ Bảy. Đơn này nên tự tới lấy.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_1",
+        "two_speaker_dialogue",
+        "m21",
+        "allergies",
+        "dates",
+        "delivery",
+        "design"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T15",
+      "speaker_id": "B",
+      "text_en": "All right. Please write 'Happy 70th, Mum' on top, with blue flowers rather than pink ones.",
+      "translation_vi": "Được. Hãy viết 'Mừng sinh nhật 70 tuổi, mẹ' và trang trí hoa xanh thay vì hồng.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_1",
+        "two_speaker_dialogue",
+        "m21",
+        "allergies",
+        "dates",
+        "delivery",
+        "design"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T16",
+      "speaker_id": "A",
+      "text_en": "I'll note the blue flowers. We'll email the ingredient list and ask you to approve the design before we begin.",
+      "translation_vi": "Tôi ghi hoa xanh. Chúng tôi sẽ email thành phần và xin chị duyệt mẫu trước khi bắt đầu.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_1",
+        "two_speaker_dialogue",
+        "m21",
+        "allergies",
+        "dates",
+        "delivery",
+        "design"
+      ],
+      "bank_role": "training"
+    }
+  ],
+  "questions": [
+    {
+      "type": "mcq",
+      "prompt": "Why can the bakery not promise a nut-free cake?",
+      "correct_answers": [
+        "kitchen handles nuts"
+      ],
+      "options": [
+        "no allergy information",
+        "no chocolate available",
+        "kitchen handles nuts"
+      ],
+      "correct_option": "C",
+      "scoring_policy": "strict",
+      "explanation_vi": "Bếp có sử dụng hạt nên không thể bảo đảm không lây chéo.",
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "evidence_excerpt_en": "kitchen handles nuts",
+      "question_tags": [
+        "m21",
+        "ielts_part_1_practice",
+        "allergies",
+        "dates",
+        "delivery",
+        "design"
+      ],
+      "question_id": "Q01",
+      "group_id": "IELTS_S1_PRACTICE"
+    },
+    {
+      "type": "note_completion",
+      "prompt": "Chosen sponge flavour: ____",
+      "correct_answers": [
+        "chocolate"
+      ],
+      "spoken_answer": "chocolate",
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER",
+      "scoring_policy": "controlled_variants",
+      "explanation_vi": "Cốt bánh sô cô la, kem phủ vanilla.",
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "evidence_excerpt_en": "Chocolate sponge, please",
+      "question_tags": [
+        "m21",
+        "ielts_part_1_practice",
+        "allergies",
+        "dates",
+        "delivery",
+        "design"
+      ],
+      "question_id": "Q02",
+      "group_id": "IELTS_S1_PRACTICE"
+    },
+    {
+      "type": "note_completion",
+      "prompt": "Chosen icing flavour: ____",
+      "correct_answers": [
+        "vanilla"
+      ],
+      "spoken_answer": "vanilla",
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER",
+      "scoring_policy": "controlled_variants",
+      "explanation_vi": "Kem phủ là vanilla chứ không phải chocolate.",
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "evidence_excerpt_en": "with vanilla icing",
+      "question_tags": [
+        "m21",
+        "ielts_part_1_practice",
+        "allergies",
+        "dates",
+        "delivery",
+        "design"
+      ],
+      "question_id": "Q03",
+      "group_id": "IELTS_S1_PRACTICE"
+    },
+    {
+      "type": "form_completion",
+      "prompt": "Cake serves ____ people",
+      "correct_answers": [
+        "twenty"
+      ],
+      "spoken_answer": "twenty",
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER",
+      "scoring_policy": "controlled_variants",
+      "explanation_vi": "Chọn cỡ 20 phần vì có khoảng 18 khách.",
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "evidence_excerpt_en": "twenty-portion cake",
+      "question_tags": [
+        "m21",
+        "ielts_part_1_practice",
+        "allergies",
+        "dates",
+        "delivery",
+        "design"
+      ],
+      "question_id": "Q04",
+      "group_id": "IELTS_S1_PRACTICE"
+    },
+    {
+      "type": "note_completion",
+      "prompt": "Large cake price: £____",
+      "correct_answers": [
+        "forty-eight",
+        "48"
+      ],
+      "spoken_answer": "forty-eight",
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER",
+      "scoring_policy": "controlled_variants",
+      "explanation_vi": "Giá 48 bảng đã gồm chữ trên mặt bánh.",
+      "evidence_turn_ids": [
+        "T10"
+      ],
+      "evidence_excerpt_en": "forty-eight pounds",
+      "question_tags": [
+        "m21",
+        "ielts_part_1_practice",
+        "allergies",
+        "dates",
+        "delivery",
+        "design"
+      ],
+      "question_id": "Q05",
+      "group_id": "IELTS_S1_PRACTICE"
+    },
+    {
+      "type": "note_completion",
+      "prompt": "Final collection day: ____",
+      "correct_answers": [
+        "Saturday"
+      ],
+      "spoken_answer": "Saturday",
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER",
+      "scoring_policy": "controlled_variants",
+      "explanation_vi": "Tiệc chuyển sang Chủ Nhật và nhận bánh thứ Bảy.",
+      "evidence_turn_ids": [
+        "T12"
+      ],
+      "evidence_excerpt_en": "Saturday collection is fine",
+      "question_tags": [
+        "m21",
+        "ielts_part_1_practice",
+        "allergies",
+        "dates",
+        "delivery",
+        "design"
+      ],
+      "question_id": "Q06",
+      "group_id": "IELTS_S1_PRACTICE"
+    },
+    {
+      "type": "form_completion",
+      "prompt": "Come before ____",
+      "correct_answers": [
+        "three thirty"
+      ],
+      "spoken_answer": "three thirty",
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER",
+      "scoring_policy": "controlled_variants",
+      "explanation_vi": "Dù tiệm đóng lúc 4 giờ, nên tới trước 3:30.",
+      "evidence_turn_ids": [
+        "T12"
+      ],
+      "evidence_excerpt_en": "before three thirty",
+      "question_tags": [
+        "m21",
+        "ielts_part_1_practice",
+        "allergies",
+        "dates",
+        "delivery",
+        "design"
+      ],
+      "question_id": "Q07",
+      "group_id": "IELTS_S1_PRACTICE"
+    },
+    {
+      "type": "mcq",
+      "prompt": "What colour flowers will decorate the cake?",
+      "correct_answers": [
+        "blue"
+      ],
+      "options": [
+        "blue",
+        "pink",
+        "yellow"
+      ],
+      "correct_option": "A",
+      "scoring_policy": "strict",
+      "explanation_vi": "Khách đổi lựa chọn từ hồng sang xanh.",
+      "evidence_turn_ids": [
+        "T16"
+      ],
+      "evidence_excerpt_en": "blue flowers",
+      "question_tags": [
+        "m21",
+        "ielts_part_1_practice",
+        "allergies",
+        "dates",
+        "delivery",
+        "design"
+      ],
+      "question_id": "Q08",
+      "group_id": "IELTS_S1_PRACTICE"
+    },
+    {
+      "question_id": "D01",
+      "group_id": "DICTATION",
+      "type": "dictation",
+      "prompt": "Nghe và chép nguyên văn lượt thoại T04.",
+      "correct_answers": [
+        "Our kitchen handles nuts, so we cannot guarantee a nut-free cake. We can offer detailed ingredient information, though."
+      ],
+      "scoring_policy": "case_punctuation_insensitive",
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Bếp có xử lý hạt nên không thể bảo đảm bánh hoàn toàn không có hạt. Chúng tôi có thể cung cấp thành phần chi tiết.",
+      "question_tags": [
+        "m21",
+        "dictation",
+        "exact_words",
+        "allergies",
+        "dates",
+        "delivery",
+        "design"
+      ]
+    },
+    {
+      "question_id": "D02",
+      "group_id": "DICTATION",
+      "type": "dictation",
+      "prompt": "Nghe và chép nguyên văn lượt thoại T07.",
+      "correct_answers": [
+        "Chocolate sponge, please, with vanilla icing rather than chocolate icing. She prefers a lighter finish."
+      ],
+      "scoring_policy": "case_punctuation_insensitive",
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "Cho cốt sô cô la, phủ kem vanilla thay vì kem sô cô la. Mẹ thích vị nhẹ hơn.",
+      "question_tags": [
+        "m21",
+        "dictation",
+        "exact_words",
+        "allergies",
+        "dates",
+        "delivery",
+        "design"
+      ]
+    },
+    {
+      "question_id": "D03",
+      "group_id": "DICTATION",
+      "type": "dictation",
+      "prompt": "Nghe và chép nguyên văn lượt thoại T10.",
+      "correct_answers": [
+        "That size is forty-eight pounds. A personalised message on the top is included in the price."
+      ],
+      "scoring_policy": "case_punctuation_insensitive",
+      "evidence_turn_ids": [
+        "T10"
+      ],
+      "explanation_vi": "Cỡ đó 48 bảng. Viết lời chúc riêng trên mặt bánh đã gồm giá.",
+      "question_tags": [
+        "m21",
+        "dictation",
+        "exact_words",
+        "allergies",
+        "dates",
+        "delivery",
+        "design"
+      ]
+    },
+    {
+      "question_id": "D04",
+      "group_id": "DICTATION",
+      "type": "dictation",
+      "prompt": "Nghe và chép nguyên văn lượt thoại T14.",
+      "correct_answers": [
+        "We deliver locally for seven pounds, but not on Saturdays. For this order, collection is the practical choice."
+      ],
+      "scoring_policy": "case_punctuation_insensitive",
+      "evidence_turn_ids": [
+        "T14"
+      ],
+      "explanation_vi": "Chúng tôi giao nội vùng 7 bảng nhưng không giao thứ Bảy. Đơn này nên tự tới lấy.",
+      "question_tags": [
+        "m21",
+        "dictation",
+        "exact_words",
+        "allergies",
+        "dates",
+        "delivery",
+        "design"
+      ]
+    },
+    {
+      "question_id": "G01",
+      "group_id": "GAP_FILL",
+      "type": "gap_fill",
+      "prompt": "Nghe và điền đúng cụm từ bị thiếu: Chocolate sponge, please, with ____ icing rather than chocolate icing. She prefers a lighter finish.",
+      "correct_answers": [
+        "vanilla"
+      ],
+      "word_limit": 2,
+      "scoring_policy": "controlled_variants",
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "Kem phủ là vanilla chứ không phải chocolate.",
+      "question_tags": [
+        "m21",
+        "gap_fill",
+        "listen_for_detail",
+        "allergies",
+        "dates",
+        "delivery",
+        "design"
+      ]
+    },
+    {
+      "question_id": "G02",
+      "group_id": "GAP_FILL",
+      "type": "gap_fill",
+      "prompt": "Nghe và điền đúng cụm từ bị thiếu: There will be around eighteen of us, so the ____-portion cake would be safer.",
+      "correct_answers": [
+        "twenty"
+      ],
+      "word_limit": 2,
+      "scoring_policy": "controlled_variants",
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "explanation_vi": "Chọn cỡ 20 phần vì có khoảng 18 khách.",
+      "question_tags": [
+        "m21",
+        "gap_fill",
+        "listen_for_detail",
+        "allergies",
+        "dates",
+        "delivery",
+        "design"
+      ]
+    }
+  ],
+  "vocabulary": [
+    {
+      "vocab_id": "S1-EXP-018-V01",
+      "expression_en": "custom orders",
+      "meaning_vi": "đơn hàng làm riêng",
+      "part_of_speech": "noun phrase",
+      "example_en": "Hello, I'm hoping to order a birthday cake for my mother's seventieth. Do you still take custom orders?",
+      "example_vi": "Xin chào, tôi muốn đặt bánh sinh nhật cho mẹ tròn 70 tuổi. Tiệm còn nhận bánh thiết kế riêng không?",
+      "evidence_turn_id": "T01",
+      "can_save_to_notebook": true
+    },
+    {
+      "vocab_id": "S1-EXP-018-V02",
+      "expression_en": "nut allergy",
+      "meaning_vi": "dị ứng các loại hạt",
+      "part_of_speech": "noun phrase",
+      "example_en": "She loves chocolate, but one of the guests has a serious nut allergy, so we need to be very careful.",
+      "example_vi": "Mẹ thích sô cô la, nhưng một khách dị ứng hạt nghiêm trọng nên phải rất cẩn thận.",
+      "evidence_turn_id": "T03",
+      "can_save_to_notebook": true
+    },
+    {
+      "vocab_id": "S1-EXP-018-V03",
+      "expression_en": "nut-free cake",
+      "meaning_vi": "bánh không có hạt",
+      "part_of_speech": "noun phrase",
+      "example_en": "Our kitchen handles nuts, so we cannot guarantee a nut-free cake. We can offer detailed ingredient information, though.",
+      "example_vi": "Bếp có xử lý hạt nên không thể bảo đảm bánh hoàn toàn không có hạt. Chúng tôi có thể cung cấp thành phần chi tiết.",
+      "evidence_turn_id": "T04",
+      "can_save_to_notebook": true
+    },
+    {
+      "vocab_id": "S1-EXP-018-V04",
+      "expression_en": "chocolate sponge",
+      "meaning_vi": "cốt bánh sô cô la",
+      "part_of_speech": "noun phrase",
+      "example_en": "That's sensible. For the family cake, would you prefer chocolate sponge or the orange sponge we featured last month?",
+      "example_vi": "Hợp lý. Bánh gia đình chị muốn cốt sô cô la hay cốt cam như tháng trước?",
+      "evidence_turn_id": "T06",
+      "can_save_to_notebook": true
+    },
+    {
+      "vocab_id": "S1-EXP-018-V05",
+      "expression_en": "personalised message",
+      "meaning_vi": "lời chúc riêng",
+      "part_of_speech": "noun phrase",
+      "example_en": "That size is forty-eight pounds. A personalised message on the top is included in the price.",
+      "example_vi": "Cỡ đó 48 bảng. Viết lời chúc riêng trên mặt bánh đã gồm giá.",
+      "evidence_turn_id": "T10",
+      "can_save_to_notebook": true
+    },
+    {
+      "vocab_id": "S1-EXP-018-V06",
+      "expression_en": "ingredient list",
+      "meaning_vi": "danh sách thành phần",
+      "part_of_speech": "noun phrase",
+      "example_en": "I'll note the blue flowers. We'll email the ingredient list and ask you to approve the design before we begin.",
+      "example_vi": "Tôi ghi hoa xanh. Chúng tôi sẽ email thành phần và xin chị duyệt mẫu trước khi bắt đầu.",
+      "evidence_turn_id": "T16",
+      "can_save_to_notebook": true
+    }
+  ],
+  "audio": {
+    "status": "not_generated",
+    "audio_url": null,
+    "duration_ms": null,
+    "source_text_sha256": "029467a46041b1a0ec5937f2d1532596690c916d86bd32654e9566cf3999f55d",
+    "generation_strategy": "full_dialogue_multi_speaker",
+    "audio_asset_id": null
+  },
+  "learning_flow": {
+    "intro": {
+      "theory_vi": "IELTS Part 1 thường có hội thoại hai người về dịch vụ hoặc hoạt động đời sống. Hãy xem trước từ loại và đơn vị của từng chỗ trống; đừng đoán đáp án trước khi nghe.",
+      "tip_vi": "Nghe đến cuối lượt trao đổi: người nói có thể sửa ngày, giá, địa điểm hoặc đổi lựa chọn. Thông tin đầu tiên nhiều khi là phương án bị loại.",
+      "common_mistakes_vi": [
+        "Ghi phương án ban đầu dù người nói đã đổi ý.",
+        "Nhầm giờ mở cửa với giờ buổi học bắt đầu.",
+        "Điền dư từ so với giới hạn của nhóm câu hỏi.",
+        "Chọn MCQ vì trùng từ với audio mà bỏ qua ý định cuối cùng."
+      ],
+      "worked_examples": [
+        {
+          "audio_example_en": "I first asked for Tuesday, but Friday is the day I can attend.",
+          "question": "Final day: ____",
+          "answer": "Friday",
+          "explanation_vi": "Tuesday là phương án cũ; Friday mới là quyết định cuối."
+        },
+        {
+          "audio_example_en": "The ordinary ticket is twenty pounds, although students pay fifteen.",
+          "question": "Student ticket: £____",
+          "answer": "15",
+          "explanation_vi": "Chọn mức giá đúng đối tượng được hỏi; 20 là giá thường."
+        }
+      ]
+    },
+    "steps": [
+      "pre_listening",
+      "first_listen_ielts_questions",
+      "review_with_evidence",
+      "selective_dictation",
+      "gap_fill",
+      "summary"
+    ],
+    "ielts_question_ids": [
+      "Q01",
+      "Q02",
+      "Q03",
+      "Q04",
+      "Q05",
+      "Q06",
+      "Q07",
+      "Q08"
+    ],
+    "recommended_first_listen_play_limit": 1,
+    "practice_replay_allowed_after_first_attempt": true,
+    "word_count": 299,
+    "estimated_audio_minutes_at_135_wpm": 2.21,
+    "exposure_bank": "training",
+    "exam_simulation": false,
+    "mock_test": false
+  },
+  "qa": {
+    "status": "awaiting_human_audio_review",
+    "automated_validation": "pending",
+    "human_transcript_approved": false,
+    "human_audio_approved": false,
+    "ielts_exam_equivalent": false,
+    "release_eligible": false
+  },
+  "provenance": {
+    "source_type": "original_authored",
+    "reference_copying": false,
+    "authoring_milestone": "M21",
+    "do_not_reuse_in_unseen_assessment_before_exposure_check": true
+  },
+  "release_metadata": {
+    "version": "m21.0.1",
+    "published": false,
+    "needs_audio": true,
+    "requires_human_approval": true,
+    "import_policy": "insert_only",
+    "target_bank": "training"
+  }
+}

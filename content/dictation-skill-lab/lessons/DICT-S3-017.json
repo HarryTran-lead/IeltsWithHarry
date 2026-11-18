@@ -1,0 +1,458 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "DICT-S3-017",
+  "status": "draft",
+  "level": "L5",
+  "section": 3,
+  "topic": "Research Planning",
+  "title": "Research Planning: Evaluating the Options",
+  "learning_objectives_vi": [
+    "Theo dõi ý kiến và lập luận của nhiều người trong một thảo luận học thuật.",
+    "Xác định thông tin cuối cùng sau khi người nói đề xuất, phản biện hoặc sửa ý.",
+    "Chép chính xác những đoạn trọng tâm và đối chiếu bằng chứng trong transcript."
+  ],
+  "content_format": "section_practice",
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Mina – university student / tutor discussion participant",
+      "tts_voice_id": null,
+      "accent_requested": "australian"
+    },
+    {
+      "speaker_id": "B",
+      "role": "Omar – university student / tutor discussion participant",
+      "tts_voice_id": null,
+      "accent_requested": "australian"
+    },
+    {
+      "speaker_id": "C",
+      "role": "Sofia – university student / tutor discussion participant",
+      "tts_voice_id": null,
+      "accent_requested": "australian"
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "Our research proposal says we'll estimate food waste by weighing leftovers in the dining hall. I thought we could start collecting data next Monday.",
+      "translation_vi": "Đề cương nói ta ước tính thức ăn thừa bằng cách cân đồ ăn còn lại tại căng tin. Mình nghĩ có thể bắt đầu lấy dữ liệu thứ Hai tới.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "l5",
+        "opinion_comparison"
+      ]
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "B",
+      "text_en": "I'm concerned about that method. The catering staff mix food from several counters before disposal, so the totals wouldn't identify which meals generate waste.",
+      "translation_vi": "Mình lo về phương pháp đó. Nhân viên trộn thức ăn từ nhiều quầy trước khi bỏ nên tổng khối lượng không cho biết món nào tạo ra rác thải.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "l5",
+        "opinion_comparison"
+      ]
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "C",
+      "text_en": "What if we asked customers to photograph their trays instead? It would let us distinguish meal types without disturbing the kitchen routine.",
+      "translation_vi": "Nếu yêu cầu khách chụp khay thì sao? Ta phân biệt món ăn mà không làm xáo trộn quy trình bếp.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "l5",
+        "opinion_comparison"
+      ]
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "A",
+      "text_en": "Photographs could raise privacy concerns, and some students might refuse. We also couldn't measure the weight very accurately from an image.",
+      "translation_vi": "Ảnh có thể gây lo ngại quyền riêng tư và một số sinh viên từ chối. Ta cũng khó đo khối lượng chính xác từ hình.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "l5",
+        "opinion_comparison"
+      ]
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "B",
+      "text_en": "The supervisor recommended separating the bins by serving station for a short pilot. That might be manageable if the manager agrees.",
+      "translation_vi": "Người hướng dẫn đề nghị tách thùng rác theo quầy phục vụ trong thử nghiệm ngắn. Cách này khả thi nếu quản lý đồng ý.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "l5",
+        "opinion_comparison"
+      ]
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "C",
+      "text_en": "A pilot is sensible, but we should avoid measuring on only one day. Monday tends to be unusually busy after the weekend.",
+      "translation_vi": "Thử nghiệm nhỏ là hợp lý, nhưng không nên đo chỉ một ngày. Thứ Hai thường đông bất thường sau cuối tuần.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "l5",
+        "opinion_comparison"
+      ]
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "Then we could collect data on Tuesday, Wednesday and Thursday, keeping the same lunch period each day to make comparisons fair.",
+      "translation_vi": "Vậy ta lấy dữ liệu thứ Ba, Tư, Năm, luôn trong cùng khung giờ ăn trưa để so sánh công bằng.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "l5",
+        "opinion_comparison"
+      ]
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "B",
+      "text_en": "Good. I'd also like to record the number of meals sold. A larger pile of waste might simply mean more customers.",
+      "translation_vi": "Tốt. Mình cũng muốn ghi số suất đã bán. Rác nhiều hơn có thể chỉ vì khách đông hơn.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "l5",
+        "opinion_comparison"
+      ]
+    },
+    {
+      "turn_id": "T09",
+      "speaker_id": "C",
+      "text_en": "Should we interview diners about why they leave food? Their explanations could give context to the measurements.",
+      "translation_vi": "Ta có nên phỏng vấn người ăn về lý do để thừa không? Giải thích của họ có thể bổ sung bối cảnh cho số liệu.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "l5",
+        "opinion_comparison"
+      ]
+    },
+    {
+      "turn_id": "T10",
+      "speaker_id": "A",
+      "text_en": "Maybe later. First let's test the weighing procedure and see if staff can separate the bins without extra pressure.",
+      "translation_vi": "Có lẽ để sau. Trước tiên hãy thử quy trình cân và xem nhân viên có thể tách thùng mà không thêm áp lực không.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "l5",
+        "opinion_comparison"
+      ]
+    },
+    {
+      "turn_id": "T11",
+      "speaker_id": "B",
+      "text_en": "I'll arrange a meeting with the dining manager, and you can revise the methods section before we submit the ethics form.",
+      "translation_vi": "Mình sẽ hẹn quản lý căng tin, còn bạn sửa phần phương pháp trước khi nộp biểu mẫu đạo đức.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "l5",
+        "opinion_comparison"
+      ]
+    },
+    {
+      "turn_id": "T12",
+      "speaker_id": "C",
+      "text_en": "So our decision is a three-day pilot using separate bins and meal counts, with interviews considered only if the pilot works.",
+      "translation_vi": "Vậy quyết định là thử nghiệm ba ngày dùng thùng riêng và số suất ăn, còn phỏng vấn chỉ tính đến nếu thử nghiệm ổn.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "l5",
+        "opinion_comparison"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "type": "mcq",
+      "prompt": "What problem does Omar identify with the weighing plan?",
+      "correct_answers": [
+        "Waste from different counters is mixed"
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Bằng chứng ở T02 (Omar): “Mình lo về phương pháp đó. Nhân viên trộn thức ăn từ nhiều quầy trước khi bỏ nên tổng khối lượng không cho biết món nào tạo ra rác thải.” Đáp án: “Waste from different counters is mixed”. Đây là ý cuối cùng hoặc lập luận cần xác định; các lựa chọn khác không được đoạn này xác nhận.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "section_3",
+        "ielts_practice",
+        "opinion_inference"
+      ],
+      "options": [
+        "Waste from different counters is mixed",
+        "There is no dining hall",
+        "Students refuse to eat lunch"
+      ]
+    },
+    {
+      "question_id": "Q02",
+      "type": "note_completion",
+      "prompt": "Photographs cannot provide an accurate measurement of ____.",
+      "correct_answers": [
+        "weight"
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Bằng chứng ở T04 (Mina): “Ảnh có thể gây lo ngại quyền riêng tư và một số sinh viên từ chối. Ta cũng khó đo khối lượng chính xác từ hình.” Đáp án: “weight”. Từ/cụm từ nằm trong lời nói; không chọn thông tin đã bị sửa hoặc người khác chỉ đề xuất.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_3",
+        "ielts_practice",
+        "detail_recognition"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q03",
+      "type": "matching",
+      "prompt": "Who suggested separating bins for a pilot?",
+      "correct_answers": [
+        "the supervisor"
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Bằng chứng ở T05 (Omar): “Người hướng dẫn đề nghị tách thùng rác theo quầy phục vụ trong thử nghiệm ngắn. Cách này khả thi nếu quản lý đồng ý.” Đáp án: “the supervisor”. Đối chiếu đúng thông tin được người nói nêu, chú ý các ý kiến hoặc phương án trước đó.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "section_3",
+        "ielts_practice",
+        "speaker_attribution"
+      ],
+      "options": [
+        "the catering assistant",
+        "the supervisor",
+        "the photographer"
+      ]
+    },
+    {
+      "question_id": "Q04",
+      "type": "note_completion",
+      "prompt": "The team plans to collect data on Tuesday, Wednesday and ____.",
+      "correct_answers": [
+        "Thursday"
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "Bằng chứng ở T07 (Mina): “Vậy ta lấy dữ liệu thứ Ba, Tư, Năm, luôn trong cùng khung giờ ăn trưa để so sánh công bằng.” Đáp án: “Thursday”. Từ/cụm từ nằm trong lời nói; không chọn thông tin đã bị sửa hoặc người khác chỉ đề xuất.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_3",
+        "ielts_practice",
+        "detail_recognition"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q05",
+      "type": "mcq",
+      "prompt": "Why record the number of meals sold?",
+      "correct_answers": [
+        "To account for changes in customer numbers"
+      ],
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "explanation_vi": "Bằng chứng ở T08 (Omar): “Tốt. Mình cũng muốn ghi số suất đã bán. Rác nhiều hơn có thể chỉ vì khách đông hơn.” Đáp án: “To account for changes in customer numbers”. Đây là ý cuối cùng hoặc lập luận cần xác định; các lựa chọn khác không được đoạn này xác nhận.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "section_3",
+        "ielts_practice",
+        "opinion_inference"
+      ],
+      "options": [
+        "To calculate tuition fees",
+        "To identify students",
+        "To account for changes in customer numbers"
+      ]
+    },
+    {
+      "question_id": "Q06",
+      "type": "short_answer",
+      "prompt": "What is postponed until after the pilot?",
+      "correct_answers": [
+        "interviews"
+      ],
+      "evidence_turn_ids": [
+        "T12"
+      ],
+      "explanation_vi": "Bằng chứng ở T12 (Sofia): “Vậy quyết định là thử nghiệm ba ngày dùng thùng riêng và số suất ăn, còn phỏng vấn chỉ tính đến nếu thử nghiệm ổn.” Đáp án: “interviews”. Từ/cụm từ nằm trong lời nói; không chọn thông tin đã bị sửa hoặc người khác chỉ đề xuất.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_3",
+        "ielts_practice",
+        "detail_recognition"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "D01",
+      "type": "dictation",
+      "prompt": "Nghe đoạn T04 và chép nguyên văn tiếng Anh (Speaker A).",
+      "correct_answers": [
+        "Photographs could raise privacy concerns, and some students might refuse. We also couldn't measure the weight very accurately from an image."
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Câu gốc: “Photographs could raise privacy concerns, and some students might refuse. We also couldn't measure the weight very accurately from an image.”\nNghĩa: Ảnh có thể gây lo ngại quyền riêng tư và một số sinh viên từ chối. Ta cũng khó đo khối lượng chính xác từ hình.\nChú ý từ chức năng, âm yếu, cụm từ nối và ý người nói.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_3",
+        "dictation",
+        "exact_transcript"
+      ]
+    },
+    {
+      "question_id": "D02",
+      "type": "dictation",
+      "prompt": "Nghe đoạn T08 và chép nguyên văn tiếng Anh (Speaker B).",
+      "correct_answers": [
+        "Good. I'd also like to record the number of meals sold. A larger pile of waste might simply mean more customers."
+      ],
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "explanation_vi": "Câu gốc: “Good. I'd also like to record the number of meals sold. A larger pile of waste might simply mean more customers.”\nNghĩa: Tốt. Mình cũng muốn ghi số suất đã bán. Rác nhiều hơn có thể chỉ vì khách đông hơn.\nChú ý từ chức năng, âm yếu, cụm từ nối và ý người nói.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_3",
+        "dictation",
+        "exact_transcript"
+      ]
+    },
+    {
+      "question_id": "G01",
+      "type": "gap_fill",
+      "prompt": "Nghe T01, điền từ/cụm từ bị thiếu: Our research proposal says we'll estimate ____ by weighing leftovers in the dining hall. I thought we could start collecting data next Monday.",
+      "correct_answers": [
+        "food waste"
+      ],
+      "evidence_turn_ids": [
+        "T01"
+      ],
+      "explanation_vi": "Cụm cần nghe: “food waste” (thức ăn thừa). Lời gốc: “Our research proposal says we'll estimate food waste by weighing leftovers in the dining hall. I thought we could start collecting data next Monday.”.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_3",
+        "gap_fill",
+        "vocabulary_in_context"
+      ]
+    }
+  ],
+  "vocabulary": [
+    {
+      "term": "food waste",
+      "pos": "n. phr.",
+      "meaning_vi": "thức ăn thừa",
+      "example_en": "Our research proposal says we'll estimate food waste by weighing leftovers in the dining hall. I thought we could start collecting data next Monday.",
+      "example_vi": "Đề cương nói ta ước tính thức ăn thừa bằng cách cân đồ ăn còn lại tại căng tin. Mình nghĩ có thể bắt đầu lấy dữ liệu thứ Hai tới.",
+      "source_turn_id": "T01"
+    },
+    {
+      "term": "privacy concerns",
+      "pos": "n. phr.",
+      "meaning_vi": "lo ngại quyền riêng tư",
+      "example_en": "Photographs could raise privacy concerns, and some students might refuse. We also couldn't measure the weight very accurately from an image.",
+      "example_vi": "Ảnh có thể gây lo ngại quyền riêng tư và một số sinh viên từ chối. Ta cũng khó đo khối lượng chính xác từ hình.",
+      "source_turn_id": "T04"
+    },
+    {
+      "term": "pilot",
+      "pos": "n.",
+      "meaning_vi": "thử nghiệm nhỏ",
+      "example_en": "The supervisor recommended separating the bins by serving station for a short pilot. That might be manageable if the manager agrees.",
+      "example_vi": "Người hướng dẫn đề nghị tách thùng rác theo quầy phục vụ trong thử nghiệm ngắn. Cách này khả thi nếu quản lý đồng ý.",
+      "source_turn_id": "T05"
+    },
+    {
+      "term": "meal counts",
+      "pos": "n. phr.",
+      "meaning_vi": "số suất ăn",
+      "example_en": "So our decision is a three-day pilot using separate bins and meal counts, with interviews considered only if the pilot works.",
+      "example_vi": "Vậy quyết định là thử nghiệm ba ngày dùng thùng riêng và số suất ăn, còn phỏng vấn chỉ tính đến nếu thử nghiệm ổn.",
+      "source_turn_id": "T12"
+    }
+  ],
+  "audio": {
+    "status": "not_generated",
+    "url": null,
+    "duration_ms": null,
+    "model": null,
+    "provider": null,
+    "voice_config": null,
+    "source_transcript_hash": "1dabe88ffdedad863926c72a1e487d69906247e892b4beea8405bb2631dc52b8",
+    "audio_sha256": null,
+    "format": null
+  },
+  "qa": {
+    "content_reviewed": false,
+    "answers_verified": false,
+    "audio_verified": false,
+    "rights_cleared": false,
+    "duplicate_reviewed": false,
+    "notes": [
+      "Original synthetic dialogues: human educational review required.",
+      "Audio, timestamps, voice suitability and service/distribution rights not yet verified.",
+      "Training lessons, NOT official IELTS Part 3 tests or calibrated band tests.",
+      "M16.2: automated edits are provisional; IELTS teacher final signoff, audio and rights clearance pending."
+    ]
+  },
+  "provenance": {
+    "content_origin": "original_ai_assisted",
+    "source_urls": [],
+    "source_rights_note": "Original text; verify TTS provider terms and distribution rights before publishing to a youth-accessible website.",
+    "reviewer": null
+  },
+  "release_metadata": {
+    "published_at": null,
+    "version": 1
+  }
+}

@@ -1,0 +1,351 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "DICT-S4-007",
+  "status": "draft",
+  "level": "L5",
+  "section": 4,
+  "topic": "Archaeology",
+  "title": "Artefacts, Stratigraphy and Archaeological Context",
+  "learning_objectives_vi": [
+    "Nghe bài giảng học thuật một người nói, theo dõi quan hệ giữa luận điểm và bằng chứng.",
+    "Luyện các câu hỏi Section 4 theo thứ tự lời giảng; phân tích giới hạn của khái niệm và cách diễn đạt lại.",
+    "Chép chính xác hai đoạn, luyện từ học thuật theo ngữ cảnh và ôn điểm yếu qua Mistake Bank."
+  ],
+  "content_format": "section_practice",
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Academic lecturer",
+      "tts_voice_id": null,
+      "accent_requested": "british"
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "When archaeologists uncover a broken bowl, the object itself is only part of the evidence. They also record where it was found, which soil layer surrounded it and what other objects lay nearby. This set of relationships is called archaeological context. A bowl removed without documentation may still be attractive, but it tells researchers much less about the lives connected to it.",
+      "translation_vi": "Khi nhà khảo cổ tìm thấy một chiếc bát vỡ, bản thân đồ vật chỉ là một phần của bằng chứng. Họ còn ghi vị trí tìm thấy, lớp đất bao quanh và những vật khác ở gần. Tập hợp các mối quan hệ ấy gọi là bối cảnh khảo cổ. Chiếc bát bị mang đi mà không ghi chép có thể vẫn đẹp, nhưng cho biết ít hơn nhiều về cuộc sống liên quan đến nó.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_4",
+        "academic_lecture",
+        "concept",
+        "l5"
+      ]
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "A",
+      "text_en": "A site often contains stratigraphy, meaning a sequence of layers formed through different activities and events. In an undisturbed setting, lower deposits are usually older than those above them. Yet the principle is not automatic. Burrowing animals, later construction or the digging of a pit can mix materials. Archaeologists therefore investigate how each layer was formed before assigning a date.",
+      "translation_vi": "Một di chỉ thường có địa tầng, tức chuỗi lớp hình thành qua những hoạt động và sự kiện khác nhau. Trong bối cảnh không bị xáo trộn, lớp trầm tích bên dưới thường cổ hơn lớp trên. Nhưng nguyên tắc đó không áp dụng máy móc. Động vật đào hang, xây dựng về sau hoặc đào hố có thể làm vật liệu lẫn nhau. Vì vậy nhà khảo cổ xem mỗi lớp hình thành ra sao trước khi định niên đại.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_4",
+        "academic_lecture",
+        "concept",
+        "l5"
+      ]
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "A",
+      "text_en": "Objects also have different functions at different stages of their lives. A stone tool could be made for cutting, repaired repeatedly and later reused for another purpose. Wear marks might reveal something about its use, but similar marks can have different causes. Researchers combine microscopic examination with experiments and the surrounding context instead of relying on appearance alone.",
+      "translation_vi": "Đồ vật cũng có chức năng khác nhau ở các giai đoạn sử dụng. Công cụ đá có thể được làm để cắt, sửa nhiều lần rồi dùng vào mục đích khác. Vết mòn có thể hé lộ cách dùng, nhưng những dấu tương tự có thể có nhiều nguyên nhân. Nhà nghiên cứu kết hợp quan sát hiển vi, thí nghiệm và bối cảnh xung quanh thay vì chỉ dựa vào bề ngoài.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_4",
+        "academic_lecture",
+        "concept",
+        "l5"
+      ]
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "A",
+      "text_en": "Excavation is unusual because removing soil changes the very evidence being studied. This is why field teams use measured grids, photographs, drawings and detailed recording systems. A record should make it possible for another researcher to understand which observations supported an interpretation. The goal is not simply to collect the largest number of artefacts.",
+      "translation_vi": "Khai quật đặc biệt ở chỗ việc lấy đất đi làm thay đổi chính bằng chứng đang nghiên cứu. Vì vậy các nhóm hiện trường dùng lưới đo, ảnh, bản vẽ và hệ thống ghi chép chi tiết. Hồ sơ cần giúp nhà nghiên cứu khác hiểu những quan sát nào nâng đỡ một cách giải thích. Mục tiêu không chỉ là thu thập càng nhiều hiện vật càng tốt.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_4",
+        "academic_lecture",
+        "concept",
+        "l5"
+      ]
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "A",
+      "text_en": "Finally, interpretations remain open to revision. An arrangement of stones might once have been described as a wall, then reinterpreted after new evidence suggested a drainage feature. Responsible archaeology distinguishes observations from explanations and shows why one explanation currently fits best. That caution does not make the subject less interesting; it makes the resulting story more reliable.",
+      "translation_vi": "Cuối cùng, cách giải thích vẫn có thể được sửa đổi. Một hàng đá có thể từng được cho là bức tường, rồi được diễn giải lại khi bằng chứng mới gợi ý đó là công trình thoát nước. Khảo cổ học có trách nhiệm phân biệt quan sát với giải thích và trình bày vì sao một cách hiểu hiện phù hợp nhất. Sự thận trọng ấy không làm môn học kém hấp dẫn; nó khiến câu chuyện đáng tin hơn.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_4",
+        "academic_lecture",
+        "concept",
+        "l5"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "type": "note_completion",
+      "prompt": "The relationships around an artefact form its archaeological ____.",
+      "correct_answers": [
+        "context"
+      ],
+      "evidence_turn_ids": [
+        "T01"
+      ],
+      "explanation_vi": "Đáp án “context” nằm tại đoạn T01. Nội dung bằng chứng: Khi nhà khảo cổ tìm thấy một chiếc bát vỡ, bản thân đồ vật chỉ là một phần của bằng chứng. Họ còn ghi vị trí tìm thấy, lớp đất bao quanh và những vật khác ở gần. Tập hợp các mối quan hệ ấy gọi là bối cảnh khảo cổ. Chiếc bát bị mang đi mà không ghi chép có thể vẫn đẹp, nhưng cho biết ít hơn nhiều về cuộc sống liên quan đến nó.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_4",
+        "ielts_practice",
+        "concept",
+        "note_completion"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q02",
+      "type": "note_completion",
+      "prompt": "A sequence of archaeological layers is called ____.",
+      "correct_answers": [
+        "stratigraphy"
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Đáp án “stratigraphy” nằm tại đoạn T02. Nội dung bằng chứng: Một di chỉ thường có địa tầng, tức chuỗi lớp hình thành qua những hoạt động và sự kiện khác nhau. Trong bối cảnh không bị xáo trộn, lớp trầm tích bên dưới thường cổ hơn lớp trên. Nhưng nguyên tắc đó không áp dụng máy móc. Động vật đào hang, xây dựng về sau hoặc đào hố có thể làm vật liệu lẫn nhau. Vì vậy nhà khảo cổ xem mỗi lớp hình thành ra sao trước khi định niên đại.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_4",
+        "ielts_practice",
+        "concept",
+        "note_completion"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q03",
+      "type": "sentence_completion",
+      "prompt": "Researchers may examine ____ on tools to investigate use.",
+      "correct_answers": [
+        "Wear marks"
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Đáp án “Wear marks” nằm tại đoạn T03. Nội dung bằng chứng: Đồ vật cũng có chức năng khác nhau ở các giai đoạn sử dụng. Công cụ đá có thể được làm để cắt, sửa nhiều lần rồi dùng vào mục đích khác. Vết mòn có thể hé lộ cách dùng, nhưng những dấu tương tự có thể có nhiều nguyên nhân. Nhà nghiên cứu kết hợp quan sát hiển vi, thí nghiệm và bối cảnh xung quanh thay vì chỉ dựa vào bề ngoài.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_4",
+        "ielts_practice",
+        "concept",
+        "sentence_completion"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q04",
+      "type": "note_completion",
+      "prompt": "Excavation teams record observations with measured ____.",
+      "correct_answers": [
+        "grids"
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Đáp án “grids” nằm tại đoạn T04. Nội dung bằng chứng: Khai quật đặc biệt ở chỗ việc lấy đất đi làm thay đổi chính bằng chứng đang nghiên cứu. Vì vậy các nhóm hiện trường dùng lưới đo, ảnh, bản vẽ và hệ thống ghi chép chi tiết. Hồ sơ cần giúp nhà nghiên cứu khác hiểu những quan sát nào nâng đỡ một cách giải thích. Mục tiêu không chỉ là thu thập càng nhiều hiện vật càng tốt.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_4",
+        "ielts_practice",
+        "concept",
+        "note_completion"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q05",
+      "type": "short_answer",
+      "prompt": "What feature might a line of stones represent instead of a wall?",
+      "correct_answers": [
+        "drainage feature"
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Đáp án “drainage feature” nằm tại đoạn T05. Nội dung bằng chứng: Cuối cùng, cách giải thích vẫn có thể được sửa đổi. Một hàng đá có thể từng được cho là bức tường, rồi được diễn giải lại khi bằng chứng mới gợi ý đó là công trình thoát nước. Khảo cổ học có trách nhiệm phân biệt quan sát với giải thích và trình bày vì sao một cách hiểu hiện phù hợp nhất. Sự thận trọng ấy không làm môn học kém hấp dẫn; nó khiến câu chuyện đáng tin hơn.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_4",
+        "ielts_practice",
+        "concept",
+        "short_answer"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q06",
+      "type": "mcq",
+      "prompt": "Why is recording context essential in archaeology?",
+      "correct_answers": [
+        "Removing objects destroys some original relationships"
+      ],
+      "options": [
+        "Removing objects destroys some original relationships",
+        "It proves that every lower layer is older",
+        "It makes every artefact easier to sell"
+      ],
+      "evidence_turn_ids": [
+        "T01",
+        "T03",
+        "T05"
+      ],
+      "explanation_vi": "Hãy kết hợp luận điểm đầu, ví dụ ở giữa và kết luận cuối bài. Cuối cùng, cách giải thích vẫn có thể được sửa đổi. Một hàng đá có thể từng được cho là bức tường, rồi được diễn giải lại khi bằng chứng mới gợi ý đó là công trình thoát nước. Khảo cổ học có trách nhiệm phân biệt quan sát với giải thích và trình bày vì sao một cách hiểu hiện phù hợp nhất. Sự thận trọng ấy không làm môn học kém hấp dẫn; nó khiến câu chuyện đáng tin hơn. Phương án chính xác: “Removing objects destroys some original relationships”; hai phương án khác khái quát quá mức hoặc không phù hợp bằng chứng.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "section_4",
+        "ielts_practice",
+        "concept",
+        "main_idea"
+      ]
+    },
+    {
+      "question_id": "D01",
+      "type": "dictation",
+      "prompt": "Nghe đoạn T02 và chép lại chính xác lời giảng.",
+      "correct_answers": [
+        "A site often contains stratigraphy, meaning a sequence of layers formed through different activities and events. In an undisturbed setting, lower deposits are usually older than those above them. Yet the principle is not automatic. Burrowing animals, later construction or the digging of a pit can mix materials. Archaeologists therefore investigate how each layer was formed before assigning a date."
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Phân tích từ nối, âm yếu và cụm thuật ngữ học thuật. Nghĩa của đoạn: Một di chỉ thường có địa tầng, tức chuỗi lớp hình thành qua những hoạt động và sự kiện khác nhau. Trong bối cảnh không bị xáo trộn, lớp trầm tích bên dưới thường cổ hơn lớp trên. Nhưng nguyên tắc đó không áp dụng máy móc. Động vật đào hang, xây dựng về sau hoặc đào hố có thể làm vật liệu lẫn nhau. Vì vậy nhà khảo cổ xem mỗi lớp hình thành ra sao trước khi định niên đại.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_4",
+        "dictation",
+        "exact_transcript"
+      ]
+    },
+    {
+      "question_id": "D02",
+      "type": "dictation",
+      "prompt": "Nghe đoạn T04 và chép lại chính xác lời giảng.",
+      "correct_answers": [
+        "Excavation is unusual because removing soil changes the very evidence being studied. This is why field teams use measured grids, photographs, drawings and detailed recording systems. A record should make it possible for another researcher to understand which observations supported an interpretation. The goal is not simply to collect the largest number of artefacts."
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Phân tích từ nối, âm yếu và cụm thuật ngữ học thuật. Nghĩa của đoạn: Khai quật đặc biệt ở chỗ việc lấy đất đi làm thay đổi chính bằng chứng đang nghiên cứu. Vì vậy các nhóm hiện trường dùng lưới đo, ảnh, bản vẽ và hệ thống ghi chép chi tiết. Hồ sơ cần giúp nhà nghiên cứu khác hiểu những quan sát nào nâng đỡ một cách giải thích. Mục tiêu không chỉ là thu thập càng nhiều hiện vật càng tốt.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_4",
+        "dictation",
+        "exact_transcript"
+      ]
+    },
+    {
+      "question_id": "G01",
+      "type": "gap_fill",
+      "prompt": "Nghe T01 rồi điền phần thiếu: When archaeologists uncover a broken bowl, the object itself is only part of the evidence. They also record where it was found, which soil layer surrounded it and what other objects lay nearby. This set of relationships is called ____. A bowl removed without documentation may still be attractive, but it tells researchers much less about the lives connected to it.",
+      "correct_answers": [
+        "archaeological context"
+      ],
+      "evidence_turn_ids": [
+        "T01"
+      ],
+      "explanation_vi": "Điền “archaeological context”, nghĩa: bối cảnh khảo cổ. Cụm từ này xuất hiện trong T01.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_4",
+        "gap_fill",
+        "academic_vocabulary"
+      ]
+    }
+  ],
+  "vocabulary": [
+    {
+      "term": "archaeological context",
+      "pos": "n. phr.",
+      "meaning_vi": "bối cảnh khảo cổ",
+      "example_en": "When archaeologists uncover a broken bowl, the object itself is only part of the evidence. They also record where it was found, which soil layer surrounded it and what other objects lay nearby. This set of relationships is called archaeological context. A bowl removed without documentation may still be attractive, but it tells researchers much less about the lives connected to it.",
+      "example_vi": "Khi nhà khảo cổ tìm thấy một chiếc bát vỡ, bản thân đồ vật chỉ là một phần của bằng chứng. Họ còn ghi vị trí tìm thấy, lớp đất bao quanh và những vật khác ở gần. Tập hợp các mối quan hệ ấy gọi là bối cảnh khảo cổ. Chiếc bát bị mang đi mà không ghi chép có thể vẫn đẹp, nhưng cho biết ít hơn nhiều về cuộc sống liên quan đến nó.",
+      "source_turn_id": "T01"
+    },
+    {
+      "term": "stratigraphy",
+      "pos": "n.",
+      "meaning_vi": "địa tầng",
+      "example_en": "A site often contains stratigraphy, meaning a sequence of layers formed through different activities and events. In an undisturbed setting, lower deposits are usually older than those above them. Yet the principle is not automatic. Burrowing animals, later construction or the digging of a pit can mix materials. Archaeologists therefore investigate how each layer was formed before assigning a date.",
+      "example_vi": "Một di chỉ thường có địa tầng, tức chuỗi lớp hình thành qua những hoạt động và sự kiện khác nhau. Trong bối cảnh không bị xáo trộn, lớp trầm tích bên dưới thường cổ hơn lớp trên. Nhưng nguyên tắc đó không áp dụng máy móc. Động vật đào hang, xây dựng về sau hoặc đào hố có thể làm vật liệu lẫn nhau. Vì vậy nhà khảo cổ xem mỗi lớp hình thành ra sao trước khi định niên đại.",
+      "source_turn_id": "T02"
+    },
+    {
+      "term": "Wear marks",
+      "pos": "n. phr.",
+      "meaning_vi": "vết mòn",
+      "example_en": "Objects also have different functions at different stages of their lives. A stone tool could be made for cutting, repaired repeatedly and later reused for another purpose. Wear marks might reveal something about its use, but similar marks can have different causes. Researchers combine microscopic examination with experiments and the surrounding context instead of relying on appearance alone.",
+      "example_vi": "Đồ vật cũng có chức năng khác nhau ở các giai đoạn sử dụng. Công cụ đá có thể được làm để cắt, sửa nhiều lần rồi dùng vào mục đích khác. Vết mòn có thể hé lộ cách dùng, nhưng những dấu tương tự có thể có nhiều nguyên nhân. Nhà nghiên cứu kết hợp quan sát hiển vi, thí nghiệm và bối cảnh xung quanh thay vì chỉ dựa vào bề ngoài.",
+      "source_turn_id": "T03"
+    },
+    {
+      "term": "grids",
+      "pos": "n. pl.",
+      "meaning_vi": "lưới đo",
+      "example_en": "Excavation is unusual because removing soil changes the very evidence being studied. This is why field teams use measured grids, photographs, drawings and detailed recording systems. A record should make it possible for another researcher to understand which observations supported an interpretation. The goal is not simply to collect the largest number of artefacts.",
+      "example_vi": "Khai quật đặc biệt ở chỗ việc lấy đất đi làm thay đổi chính bằng chứng đang nghiên cứu. Vì vậy các nhóm hiện trường dùng lưới đo, ảnh, bản vẽ và hệ thống ghi chép chi tiết. Hồ sơ cần giúp nhà nghiên cứu khác hiểu những quan sát nào nâng đỡ một cách giải thích. Mục tiêu không chỉ là thu thập càng nhiều hiện vật càng tốt.",
+      "source_turn_id": "T04"
+    }
+  ],
+  "audio": {
+    "status": "not_generated",
+    "url": null,
+    "duration_ms": null,
+    "model": null,
+    "provider": null,
+    "voice_config": null,
+    "source_transcript_hash": "e57ef48257235d96e272604cdf8b3a89ca8cf538e4dbd268eee3a45968fb4a98",
+    "audio_sha256": null,
+    "format": null
+  },
+  "qa": {
+    "content_reviewed": false,
+    "answers_verified": false,
+    "audio_verified": false,
+    "rights_cleared": false,
+    "duplicate_reviewed": false,
+    "notes": [
+      "Original AI-assisted educational script, not an official IELTS transcript.",
+      "Editorial, academic and linguistic review pending.",
+      "Audio/TTS not generated; text-to-speech distribution rights must be confirmed before use, especially for minors.",
+      "Six IELTS-style practice questions per lesson; this is not a full official Part 4 test or a calibrated IELTS Band test.",
+      "M16.2: automated edits are provisional; IELTS teacher final signoff, audio and rights clearance pending."
+    ]
+  },
+  "provenance": {
+    "content_origin": "original_ai_assisted",
+    "source_urls": [],
+    "source_rights_note": "Original transcript and translation drafts; verify academic claims and terms, and TTS provider redistribution conditions before release.",
+    "reviewer": null
+  },
+  "release_metadata": {
+    "published_at": null,
+    "version": 1
+  }
+}

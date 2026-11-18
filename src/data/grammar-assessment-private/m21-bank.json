@@ -1,0 +1,1734 @@
+{
+  "version": "M21.1",
+  "status": "DRAFT_ONLY",
+  "questions": [
+    {
+      "id": "M21-DIAG-A1-01-01",
+      "level": "A1",
+      "lesson_id": "A1-01",
+      "concept_id": "GC-A1-01",
+      "micro_skill_target": "SUBJECT_VS_OBJECT_PRONOUN",
+      "version": "M21.1",
+      "prompt": "Mai is my colleague. ___ works in Da Nang.",
+      "options": [
+        "Her",
+        "She",
+        "Hers"
+      ],
+      "correct_index": 1,
+      "rationales_vi": [
+        "Her là tính từ sở hữu hoặc tân ngữ, không đứng làm chủ ngữ ở đây.",
+        "She thay Mai và đóng vai trò chủ ngữ của works.",
+        "Hers là đại từ sở hữu, không thể làm chủ ngữ có nghĩa Mai trong câu này."
+      ],
+      "source": "ORIGINAL_M21_DIAGNOSTIC_EXCLUSIVE",
+      "release_status": "DRAFT_TEACHER_REVIEW",
+      "exposure_policy": "SERVER_ONLY",
+      "teacher_approved": false
+    },
+    {
+      "id": "M21-DIAG-A1-01-02",
+      "level": "A1",
+      "lesson_id": "A1-01",
+      "concept_id": "GC-A1-01",
+      "micro_skill_target": "SUBJECT_VS_OBJECT_PRONOUN",
+      "version": "M21.1",
+      "prompt": "My parents are teachers. ___ work at the same school.",
+      "options": [
+        "Them",
+        "Their",
+        "They"
+      ],
+      "correct_index": 2,
+      "rationales_vi": [
+        "Them là tân ngữ, không đứng trước động từ work làm chủ ngữ.",
+        "Their cần một danh từ đi sau như their school.",
+        "They thay thế my parents ở vị trí chủ ngữ."
+      ],
+      "source": "ORIGINAL_M21_DIAGNOSTIC_EXCLUSIVE",
+      "release_status": "DRAFT_TEACHER_REVIEW",
+      "exposure_policy": "SERVER_ONLY",
+      "teacher_approved": false
+    },
+    {
+      "id": "M21-DIAG-A1-08-01",
+      "level": "A1",
+      "lesson_id": "A1-08",
+      "concept_id": "GC-A1-08",
+      "micro_skill_target": "INDEFINITE_ARTICLE_SOUND",
+      "version": "M21.1",
+      "prompt": "Linh has ___ umbrella in her bag.",
+      "options": [
+        "an",
+        "a",
+        "the"
+      ],
+      "correct_index": 0,
+      "rationales_vi": [
+        "Umbrella bắt đầu bằng âm nguyên âm và đang được nhắc tới lần đầu nên dùng an.",
+        "A không đi trước âm nguyên âm /ʌ/ trong umbrella.",
+        "The cần ngữ cảnh xác định chiếc ô cụ thể, nhưng câu chưa cung cấp."
+      ],
+      "source": "ORIGINAL_M21_DIAGNOSTIC_EXCLUSIVE",
+      "release_status": "DRAFT_TEACHER_REVIEW",
+      "exposure_policy": "SERVER_ONLY",
+      "teacher_approved": false
+    },
+    {
+      "id": "M21-DIAG-A1-08-02",
+      "level": "A1",
+      "lesson_id": "A1-08",
+      "concept_id": "GC-A1-08",
+      "micro_skill_target": "INDEFINITE_ARTICLE_SOUND",
+      "version": "M21.1",
+      "prompt": "I bought ___ university guidebook yesterday.",
+      "options": [
+        "an",
+        "the",
+        "a"
+      ],
+      "correct_index": 2,
+      "rationales_vi": [
+        "University bắt đầu bằng âm /j/ phụ âm, nên không dùng an.",
+        "The đòi hỏi quyển sách cụ thể đã xác định trong ngữ cảnh.",
+        "A dùng trước âm /j/ trong university và danh từ đếm được số ít mới giới thiệu."
+      ],
+      "source": "ORIGINAL_M21_DIAGNOSTIC_EXCLUSIVE",
+      "release_status": "DRAFT_TEACHER_REVIEW",
+      "exposure_policy": "SERVER_ONLY",
+      "teacher_approved": false
+    },
+    {
+      "id": "M21-DIAG-A1-14-01",
+      "level": "A1",
+      "lesson_id": "A1-14",
+      "concept_id": "GC-A1-14",
+      "micro_skill_target": "THERE_IS_ARE_AGREEMENT",
+      "version": "M21.1",
+      "prompt": "Look! ___ three buses outside.",
+      "options": [
+        "There are",
+        "There is",
+        "It is"
+      ],
+      "correct_index": 0,
+      "rationales_vi": [
+        "Three buses là số nhiều nên There are phù hợp.",
+        "There is không hòa hợp với danh từ số nhiều three buses.",
+        "It is không dùng để giới thiệu sự tồn tại của ba xe buýt."
+      ],
+      "source": "ORIGINAL_M21_DIAGNOSTIC_EXCLUSIVE",
+      "release_status": "DRAFT_TEACHER_REVIEW",
+      "exposure_policy": "SERVER_ONLY",
+      "teacher_approved": false
+    },
+    {
+      "id": "M21-DIAG-A1-14-02",
+      "level": "A1",
+      "lesson_id": "A1-14",
+      "concept_id": "GC-A1-14",
+      "micro_skill_target": "THERE_IS_ARE_AGREEMENT",
+      "version": "M21.1",
+      "prompt": "___ a small café next to our office.",
+      "options": [
+        "There are",
+        "There is",
+        "They are"
+      ],
+      "correct_index": 1,
+      "rationales_vi": [
+        "A small café là một danh từ số ít nên không dùng There are.",
+        "There is giới thiệu sự tồn tại của một quán cà phê.",
+        "They are cần một chủ ngữ số nhiều đã biết, không giới thiệu một địa điểm."
+      ],
+      "source": "ORIGINAL_M21_DIAGNOSTIC_EXCLUSIVE",
+      "release_status": "DRAFT_TEACHER_REVIEW",
+      "exposure_policy": "SERVER_ONLY",
+      "teacher_approved": false
+    },
+    {
+      "id": "M21-DIAG-A1-21-01",
+      "level": "A1",
+      "lesson_id": "A1-21",
+      "concept_id": "GC-A1-21",
+      "micro_skill_target": "PRESENT_SIMPLE_THIRD_PERSON",
+      "version": "M21.1",
+      "prompt": "My sister ___ to work by train every day.",
+      "options": [
+        "go",
+        "going",
+        "goes"
+      ],
+      "correct_index": 2,
+      "rationales_vi": [
+        "Go không chia ngôi thứ ba số ít của chủ ngữ my sister.",
+        "Going không phải động từ chính hoàn chỉnh ở thì hiện tại đơn.",
+        "Goes là hiện tại đơn ngôi thứ ba số ít, diễn tả thói quen mỗi ngày."
+      ],
+      "source": "ORIGINAL_M21_DIAGNOSTIC_EXCLUSIVE",
+      "release_status": "DRAFT_TEACHER_REVIEW",
+      "exposure_policy": "SERVER_ONLY",
+      "teacher_approved": false
+    },
+    {
+      "id": "M21-DIAG-A1-21-02",
+      "level": "A1",
+      "lesson_id": "A1-21",
+      "concept_id": "GC-A1-21",
+      "micro_skill_target": "PRESENT_SIMPLE_THIRD_PERSON",
+      "version": "M21.1",
+      "prompt": "Our teacher usually ___ the class at eight.",
+      "options": [
+        "starts",
+        "start",
+        "starting"
+      ],
+      "correct_index": 0,
+      "rationales_vi": [
+        "Teacher là ngôi thứ ba số ít nên starts đúng.",
+        "Start không chia số ít theo teacher.",
+        "Starting thiếu trợ động từ để tạo thì tiếp diễn, nhưng usually chỉ thói quen."
+      ],
+      "source": "ORIGINAL_M21_DIAGNOSTIC_EXCLUSIVE",
+      "release_status": "DRAFT_TEACHER_REVIEW",
+      "exposure_policy": "SERVER_ONLY",
+      "teacher_approved": false
+    },
+    {
+      "id": "M21-DIAG-A1-27-01",
+      "level": "A1",
+      "lesson_id": "A1-27",
+      "concept_id": "GC-A1-27",
+      "micro_skill_target": "SIMPLE_VS_CONTINUOUS_NOW",
+      "version": "M21.1",
+      "prompt": "Please be quiet. I ___ to an online lesson right now.",
+      "options": [
+        "listen",
+        "listens",
+        "am listening"
+      ],
+      "correct_index": 2,
+      "rationales_vi": [
+        "Listen ở hiện tại đơn không diễn đạt rõ hành động đang diễn ra right now.",
+        "Listens sai hòa hợp chủ ngữ I và không biểu thị tiếp diễn.",
+        "Am listening diễn tả hành động đang diễn ra tại thời điểm nói."
+      ],
+      "source": "ORIGINAL_M21_DIAGNOSTIC_EXCLUSIVE",
+      "release_status": "DRAFT_TEACHER_REVIEW",
+      "exposure_policy": "SERVER_ONLY",
+      "teacher_approved": false
+    },
+    {
+      "id": "M21-DIAG-A1-27-02",
+      "level": "A1",
+      "lesson_id": "A1-27",
+      "concept_id": "GC-A1-27",
+      "micro_skill_target": "SIMPLE_VS_CONTINUOUS_NOW",
+      "version": "M21.1",
+      "prompt": "My father ___ coffee every morning.",
+      "options": [
+        "drinks",
+        "is drinking",
+        "drink"
+      ],
+      "correct_index": 0,
+      "rationales_vi": [
+        "Every morning biểu thị thói quen; he/my father + drinks.",
+        "Is drinking chỉ một hoạt động đang diễn ra, không phù hợp với thói quen được nhấn mạnh.",
+        "Drink chưa chia ngôi thứ ba số ít."
+      ],
+      "source": "ORIGINAL_M21_DIAGNOSTIC_EXCLUSIVE",
+      "release_status": "DRAFT_TEACHER_REVIEW",
+      "exposure_policy": "SERVER_ONLY",
+      "teacher_approved": false
+    },
+    {
+      "id": "M21-DIAG-A1-28-01",
+      "level": "A1",
+      "lesson_id": "A1-28",
+      "concept_id": "GC-A1-28",
+      "micro_skill_target": "CAN_ABILITY_FORM",
+      "version": "M21.1",
+      "prompt": "My cousin ___ swim, but she can ride a bike.",
+      "options": [
+        "doesn't can",
+        "can't",
+        "not can"
+      ],
+      "correct_index": 1,
+      "rationales_vi": [
+        "Không kết hợp does not với modal can.",
+        "Can't là dạng phủ định đúng của can.",
+        "Not can không phải trật tự phủ định chuẩn của modal can."
+      ],
+      "source": "ORIGINAL_M21_DIAGNOSTIC_EXCLUSIVE",
+      "release_status": "DRAFT_TEACHER_REVIEW",
+      "exposure_policy": "SERVER_ONLY",
+      "teacher_approved": false
+    },
+    {
+      "id": "M21-DIAG-A1-28-02",
+      "level": "A1",
+      "lesson_id": "A1-28",
+      "concept_id": "GC-A1-28",
+      "micro_skill_target": "CAN_ABILITY_FORM",
+      "version": "M21.1",
+      "prompt": "___ you speak French?",
+      "options": [
+        "Do can",
+        "Are can",
+        "Can"
+      ],
+      "correct_index": 2,
+      "rationales_vi": [
+        "Do không đứng trước modal can để lập câu hỏi.",
+        "Are không dùng cùng can theo cách này.",
+        "Can đứng đầu câu hỏi về khả năng."
+      ],
+      "source": "ORIGINAL_M21_DIAGNOSTIC_EXCLUSIVE",
+      "release_status": "DRAFT_TEACHER_REVIEW",
+      "exposure_policy": "SERVER_ONLY",
+      "teacher_approved": false
+    },
+    {
+      "id": "M21-DIAG-A2-07-01",
+      "level": "A2",
+      "lesson_id": "A2-07",
+      "concept_id": "GC-A2-07",
+      "micro_skill_target": "PAST_SIMPLE_VS_CONTINUOUS_INTERRUPTION",
+      "version": "M21.1",
+      "prompt": "I ___ dinner when the phone rang.",
+      "options": [
+        "was cooking",
+        "cooked",
+        "have cooked"
+      ],
+      "correct_index": 0,
+      "rationales_vi": [
+        "Was cooking là hành động đang diễn ra khi sự kiện ngắn rang xen vào.",
+        "Cooked chỉ một sự kiện quá khứ đã hoàn tất, không thể hiện nền đang diễn ra như đề yêu cầu.",
+        "Have cooked không phù hợp mốc when the phone rang trong quá khứ."
+      ],
+      "source": "ORIGINAL_M21_DIAGNOSTIC_EXCLUSIVE",
+      "release_status": "DRAFT_TEACHER_REVIEW",
+      "exposure_policy": "SERVER_ONLY",
+      "teacher_approved": false
+    },
+    {
+      "id": "M21-DIAG-A2-07-02",
+      "level": "A2",
+      "lesson_id": "A2-07",
+      "concept_id": "GC-A2-07",
+      "micro_skill_target": "PAST_SIMPLE_VS_CONTINUOUS_INTERRUPTION",
+      "version": "M21.1",
+      "prompt": "While we ___ home, it started to rain.",
+      "options": [
+        "are walking",
+        "were walking",
+        "have walked"
+      ],
+      "correct_index": 1,
+      "rationales_vi": [
+        "Are walking ở hiện tại tiếp diễn không phù hợp với sự kiện it started ở quá khứ.",
+        "Were walking biểu thị hành động đang diễn ra khi trời bắt đầu mưa.",
+        "Have walked không phù hợp với sự kiện it started ở quá khứ."
+      ],
+      "source": "ORIGINAL_M21_DIAGNOSTIC_EXCLUSIVE",
+      "release_status": "DRAFT_TEACHER_REVIEW",
+      "exposure_policy": "SERVER_ONLY",
+      "teacher_approved": false
+    },
+    {
+      "id": "M21-DIAG-A2-17-01",
+      "level": "A2",
+      "lesson_id": "A2-17",
+      "concept_id": "GC-A2-17",
+      "micro_skill_target": "WILL_VS_GOING_TO_EVIDENCE",
+      "version": "M21.1",
+      "prompt": "Look at those black clouds! It ___ rain.",
+      "options": [
+        "is going to",
+        "will have",
+        "was going to"
+      ],
+      "correct_index": 0,
+      "rationales_vi": [
+        "Is going to diễn tả dự đoán từ dấu hiệu nhìn thấy.",
+        "Will have cần một cấu trúc tiếp theo hoặc dùng sai với rain trong câu này.",
+        "Was going to đặt kế hoạch/dự đoán trong quá khứ, không phù hợp look hiện tại."
+      ],
+      "source": "ORIGINAL_M21_DIAGNOSTIC_EXCLUSIVE",
+      "release_status": "DRAFT_TEACHER_REVIEW",
+      "exposure_policy": "SERVER_ONLY",
+      "teacher_approved": false
+    },
+    {
+      "id": "M21-DIAG-A2-17-02",
+      "level": "A2",
+      "lesson_id": "A2-17",
+      "concept_id": "GC-A2-17",
+      "micro_skill_target": "WILL_VS_GOING_TO_EVIDENCE",
+      "version": "M21.1",
+      "prompt": "A: The doorbell is ringing. B: I ___ answer it.",
+      "options": [
+        "am going to",
+        "will",
+        "have"
+      ],
+      "correct_index": 1,
+      "rationales_vi": [
+        "Am going to thường nhấn mạnh kế hoạch có trước, trong khi đây là quyết định ngay.",
+        "Will dùng khi quyết định ngay tại thời điểm nói.",
+        "Have không diễn đạt lời hứa/quyết định tương lai theo cấu trúc này."
+      ],
+      "source": "ORIGINAL_M21_DIAGNOSTIC_EXCLUSIVE",
+      "release_status": "DRAFT_TEACHER_REVIEW",
+      "exposure_policy": "SERVER_ONLY",
+      "teacher_approved": false
+    },
+    {
+      "id": "M21-DIAG-A2-21-01",
+      "level": "A2",
+      "lesson_id": "A2-21",
+      "concept_id": "GC-A2-21",
+      "micro_skill_target": "EXPERIENCE_VS_FINISHED_PAST",
+      "version": "M21.1",
+      "prompt": "I ___ that museum in 2021.",
+      "options": [
+        "have visited",
+        "visit",
+        "visited"
+      ],
+      "correct_index": 2,
+      "rationales_vi": [
+        "Have visited không kết hợp với mốc quá khứ đã kết thúc in 2021.",
+        "Visit ở hiện tại đơn không diễn tả một lần đã xảy ra năm 2021.",
+        "Visited phù hợp hành động tại thời điểm quá khứ xác định."
+      ],
+      "source": "ORIGINAL_M21_DIAGNOSTIC_EXCLUSIVE",
+      "release_status": "DRAFT_TEACHER_REVIEW",
+      "exposure_policy": "SERVER_ONLY",
+      "teacher_approved": false
+    },
+    {
+      "id": "M21-DIAG-A2-21-02",
+      "level": "A2",
+      "lesson_id": "A2-21",
+      "concept_id": "GC-A2-21",
+      "micro_skill_target": "EXPERIENCE_VS_FINISHED_PAST",
+      "version": "M21.1",
+      "prompt": "She ___ to Singapore three times in her life.",
+      "options": [
+        "has been",
+        "went",
+        "had gone"
+      ],
+      "correct_index": 0,
+      "rationales_vi": [
+        "Has been diễn tả số lần trải nghiệm tính đến hiện tại, không có mốc quá khứ kết thúc.",
+        "Went cần một mốc hoặc ngữ cảnh quá khứ cụ thể, không phù hợp với in her life ở đây.",
+        "Had gone cần một mốc tham chiếu quá khứ khác."
+      ],
+      "source": "ORIGINAL_M21_DIAGNOSTIC_EXCLUSIVE",
+      "release_status": "DRAFT_TEACHER_REVIEW",
+      "exposure_policy": "SERVER_ONLY",
+      "teacher_approved": false
+    },
+    {
+      "id": "M21-DIAG-A2-23-01",
+      "level": "A2",
+      "lesson_id": "A2-23",
+      "concept_id": "GC-A2-23",
+      "micro_skill_target": "MUSTNT_VS_DONT_HAVE_TO",
+      "version": "M21.1",
+      "prompt": "Visitors ___ take photographs inside this gallery; photography is prohibited.",
+      "options": [
+        "don't have to",
+        "mustn't",
+        "must"
+      ],
+      "correct_index": 1,
+      "rationales_vi": [
+        "Don't have to nghĩa là không bắt buộc, không phải bị cấm.",
+        "Mustn't diễn tả lệnh cấm rõ ràng.",
+        "Must yêu cầu làm việc gì, trái với nội quy cấm."
+      ],
+      "source": "ORIGINAL_M21_DIAGNOSTIC_EXCLUSIVE",
+      "release_status": "DRAFT_TEACHER_REVIEW",
+      "exposure_policy": "SERVER_ONLY",
+      "teacher_approved": false
+    },
+    {
+      "id": "M21-DIAG-A2-23-02",
+      "level": "A2",
+      "lesson_id": "A2-23",
+      "concept_id": "GC-A2-23",
+      "micro_skill_target": "MUSTNT_VS_DONT_HAVE_TO",
+      "version": "M21.1",
+      "prompt": "You ___ bring lunch; meals are provided for everyone.",
+      "options": [
+        "mustn't",
+        "must",
+        "don't have to"
+      ],
+      "correct_index": 2,
+      "rationales_vi": [
+        "Mustn't biến sự không cần thiết thành lệnh cấm.",
+        "Must biểu thị bắt buộc, trái thông tin meals are provided.",
+        "Don't have to nghĩa là không cần mang vì đã có bữa ăn."
+      ],
+      "source": "ORIGINAL_M21_DIAGNOSTIC_EXCLUSIVE",
+      "release_status": "DRAFT_TEACHER_REVIEW",
+      "exposure_policy": "SERVER_ONLY",
+      "teacher_approved": false
+    },
+    {
+      "id": "M21-DIAG-A2-28-01",
+      "level": "A2",
+      "lesson_id": "A2-28",
+      "concept_id": "GC-A2-28",
+      "micro_skill_target": "FIRST_CONDITIONAL_REAL_FUTURE",
+      "version": "M21.1",
+      "prompt": "If it rains tomorrow, we ___ indoors.",
+      "options": [
+        "will stay",
+        "would stay",
+        "stayed"
+      ],
+      "correct_index": 0,
+      "rationales_vi": [
+        "If + hiện tại đơn và will + động từ nguyên mẫu diễn tả khả năng thực tế trong tương lai.",
+        "Would stay chuyển sắc thái sang giả định không có trong tình huống này.",
+        "Stayed thiếu mệnh đề tương lai cần thiết."
+      ],
+      "source": "ORIGINAL_M21_DIAGNOSTIC_EXCLUSIVE",
+      "release_status": "DRAFT_TEACHER_REVIEW",
+      "exposure_policy": "SERVER_ONLY",
+      "teacher_approved": false
+    },
+    {
+      "id": "M21-DIAG-A2-28-02",
+      "level": "A2",
+      "lesson_id": "A2-28",
+      "concept_id": "GC-A2-28",
+      "micro_skill_target": "FIRST_CONDITIONAL_REAL_FUTURE",
+      "version": "M21.1",
+      "prompt": "If you ___ now, you will catch the early train.",
+      "options": [
+        "will leave",
+        "leave",
+        "left"
+      ],
+      "correct_index": 1,
+      "rationales_vi": [
+        "Sau if trong câu điều kiện loại 1 không dùng will để nói điều kiện thông thường.",
+        "Leave là hiện tại đơn trong mệnh đề if.",
+        "Left tạo cấu trúc loại 2 nếu đi với would."
+      ],
+      "source": "ORIGINAL_M21_DIAGNOSTIC_EXCLUSIVE",
+      "release_status": "DRAFT_TEACHER_REVIEW",
+      "exposure_policy": "SERVER_ONLY",
+      "teacher_approved": false
+    },
+    {
+      "id": "M21-DIAG-A2-30-01",
+      "level": "A2",
+      "lesson_id": "A2-30",
+      "concept_id": "GC-A2-30",
+      "micro_skill_target": "BASIC_RELATIVE_PRONOUN_PERSON",
+      "version": "M21.1",
+      "prompt": "The woman ___ lives next door is a doctor.",
+      "options": [
+        "which",
+        "where",
+        "who"
+      ],
+      "correct_index": 2,
+      "rationales_vi": [
+        "Which không dùng thay cho người làm chủ ngữ ở đây.",
+        "Where chỉ địa điểm, không thay người.",
+        "Who thay the woman và đóng vai trò chủ ngữ của lives."
+      ],
+      "source": "ORIGINAL_M21_DIAGNOSTIC_EXCLUSIVE",
+      "release_status": "DRAFT_TEACHER_REVIEW",
+      "exposure_policy": "SERVER_ONLY",
+      "teacher_approved": false
+    },
+    {
+      "id": "M21-DIAG-A2-30-02",
+      "level": "A2",
+      "lesson_id": "A2-30",
+      "concept_id": "GC-A2-30",
+      "micro_skill_target": "BASIC_RELATIVE_PRONOUN_PERSON",
+      "version": "M21.1",
+      "prompt": "This is the book ___ I bought yesterday.",
+      "options": [
+        "that",
+        "who",
+        "where"
+      ],
+      "correct_index": 0,
+      "rationales_vi": [
+        "That có thể thay book làm tân ngữ trong mệnh đề quan hệ xác định.",
+        "Who thường thay người, không thay book.",
+        "Where chỉ nơi chốn, không thay book."
+      ],
+      "source": "ORIGINAL_M21_DIAGNOSTIC_EXCLUSIVE",
+      "release_status": "DRAFT_TEACHER_REVIEW",
+      "exposure_policy": "SERVER_ONLY",
+      "teacher_approved": false
+    },
+    {
+      "id": "M21-DIAG-B1-01-01",
+      "level": "B1",
+      "lesson_id": "B1-01",
+      "concept_id": "GC-B1-01",
+      "micro_skill_target": "PRESENT_PERFECT_VS_PAST_TIME",
+      "version": "M21.1",
+      "prompt": "We ___ the contract last Friday.",
+      "options": [
+        "have signed",
+        "signed",
+        "had signed"
+      ],
+      "correct_index": 1,
+      "rationales_vi": [
+        "Have signed không đi với mốc quá khứ đã hoàn tất last Friday.",
+        "Signed diễn tả hành động hoàn tất vào thứ Sáu trước.",
+        "Had signed cần một mốc tham chiếu quá khứ trước đó."
+      ],
+      "source": "ORIGINAL_M21_DIAGNOSTIC_EXCLUSIVE",
+      "release_status": "DRAFT_TEACHER_REVIEW",
+      "exposure_policy": "SERVER_ONLY",
+      "teacher_approved": false
+    },
+    {
+      "id": "M21-DIAG-B1-01-02",
+      "level": "B1",
+      "lesson_id": "B1-01",
+      "concept_id": "GC-B1-01",
+      "micro_skill_target": "PRESENT_PERFECT_VS_PAST_TIME",
+      "version": "M21.1",
+      "prompt": "I ___ three training courses so far this year.",
+      "options": [
+        "completed",
+        "had completed",
+        "have completed"
+      ],
+      "correct_index": 2,
+      "rationales_vi": [
+        "Completed không nhấn mạnh giai đoạn tính đến hiện tại của so far this year.",
+        "Had completed yêu cầu điểm tham chiếu ở quá khứ.",
+        "Have completed phù hợp so far trong khoảng thời gian đang tiếp diễn."
+      ],
+      "source": "ORIGINAL_M21_DIAGNOSTIC_EXCLUSIVE",
+      "release_status": "DRAFT_TEACHER_REVIEW",
+      "exposure_policy": "SERVER_ONLY",
+      "teacher_approved": false
+    },
+    {
+      "id": "M21-DIAG-B1-12-01",
+      "level": "B1",
+      "lesson_id": "B1-12",
+      "concept_id": "GC-B1-12",
+      "micro_skill_target": "SECOND_CONDITIONAL_UNREAL_PRESENT",
+      "version": "M21.1",
+      "prompt": "If I had more free time, I ___ Spanish.",
+      "options": [
+        "would learn",
+        "will learn",
+        "learned"
+      ],
+      "correct_index": 0,
+      "rationales_vi": [
+        "Would learn diễn tả kết quả giả định trái/khác hiện tại.",
+        "Will learn thuộc điều kiện có thực loại 1, không phù hợp if I had giả định.",
+        "Learned không hoàn thành kết quả giả định."
+      ],
+      "source": "ORIGINAL_M21_DIAGNOSTIC_EXCLUSIVE",
+      "release_status": "DRAFT_TEACHER_REVIEW",
+      "exposure_policy": "SERVER_ONLY",
+      "teacher_approved": false
+    },
+    {
+      "id": "M21-DIAG-B1-12-02",
+      "level": "B1",
+      "lesson_id": "B1-12",
+      "concept_id": "GC-B1-12",
+      "micro_skill_target": "SECOND_CONDITIONAL_UNREAL_PRESENT",
+      "version": "M21.1",
+      "prompt": "If she ___ closer to the office, she would walk to work.",
+      "options": [
+        "lives",
+        "lived",
+        "had lived"
+      ],
+      "correct_index": 1,
+      "rationales_vi": [
+        "Lives cùng would tạo mốc không nhất quán trong mẫu câu này.",
+        "Lived là quá khứ hình thái biểu thị giả định ở hiện tại.",
+        "Had lived gợi loại 3 nói về quá khứ, cần would have."
+      ],
+      "source": "ORIGINAL_M21_DIAGNOSTIC_EXCLUSIVE",
+      "release_status": "DRAFT_TEACHER_REVIEW",
+      "exposure_policy": "SERVER_ONLY",
+      "teacher_approved": false
+    },
+    {
+      "id": "M21-DIAG-B1-15-01",
+      "level": "B1",
+      "lesson_id": "B1-15",
+      "concept_id": "GC-B1-15",
+      "micro_skill_target": "PASSIVE_VOICE_PRESENT_PAST",
+      "version": "M21.1",
+      "prompt": "The invitations ___ by the assistant yesterday.",
+      "options": [
+        "are sent",
+        "sent",
+        "were sent"
+      ],
+      "correct_index": 2,
+      "rationales_vi": [
+        "Are sent ở hiện tại không phù hợp yesterday.",
+        "Sent thiếu trợ động từ bị động trước phân từ.",
+        "Were sent là quá khứ bị động số nhiều của invitations."
+      ],
+      "source": "ORIGINAL_M21_DIAGNOSTIC_EXCLUSIVE",
+      "release_status": "DRAFT_TEACHER_REVIEW",
+      "exposure_policy": "SERVER_ONLY",
+      "teacher_approved": false
+    },
+    {
+      "id": "M21-DIAG-B1-15-02",
+      "level": "B1",
+      "lesson_id": "B1-15",
+      "concept_id": "GC-B1-15",
+      "micro_skill_target": "PASSIVE_VOICE_PRESENT_PAST",
+      "version": "M21.1",
+      "prompt": "The reports ___ every Monday.",
+      "options": [
+        "are checked",
+        "were checked",
+        "checks"
+      ],
+      "correct_index": 0,
+      "rationales_vi": [
+        "Are checked dùng hiện tại đơn bị động cho lịch thường xuyên.",
+        "Were checked là quá khứ đơn, không diễn đạt lịch every Monday đang áp dụng.",
+        "Checks sai cả vai trò chủ thể và hòa hợp của reports."
+      ],
+      "source": "ORIGINAL_M21_DIAGNOSTIC_EXCLUSIVE",
+      "release_status": "DRAFT_TEACHER_REVIEW",
+      "exposure_policy": "SERVER_ONLY",
+      "teacher_approved": false
+    },
+    {
+      "id": "M21-DIAG-B1-19-01",
+      "level": "B1",
+      "lesson_id": "B1-19",
+      "concept_id": "GC-B1-19",
+      "micro_skill_target": "NONDEFINING_RELATIVE_COMMAS",
+      "version": "M21.1",
+      "prompt": "My sister, ___ lives in Hue, is visiting us.",
+      "options": [
+        "that",
+        "who",
+        "which"
+      ],
+      "correct_index": 1,
+      "rationales_vi": [
+        "That không dùng trong mệnh đề quan hệ không xác định đặt giữa dấu phẩy.",
+        "Who dùng cho người trong mệnh đề không xác định.",
+        "Which thường dùng cho vật/sự việc, không thay sister."
+      ],
+      "source": "ORIGINAL_M21_DIAGNOSTIC_EXCLUSIVE",
+      "release_status": "DRAFT_TEACHER_REVIEW",
+      "exposure_policy": "SERVER_ONLY",
+      "teacher_approved": false
+    },
+    {
+      "id": "M21-DIAG-B1-19-02",
+      "level": "B1",
+      "lesson_id": "B1-19",
+      "concept_id": "GC-B1-19",
+      "micro_skill_target": "NONDEFINING_RELATIVE_COMMAS",
+      "version": "M21.1",
+      "prompt": "Our office, ___ opened in 2018, is being renovated.",
+      "options": [
+        "that",
+        "who",
+        "which"
+      ],
+      "correct_index": 2,
+      "rationales_vi": [
+        "That không dùng trong mệnh đề không xác định có dấu phẩy.",
+        "Who dùng cho người, không dùng cho office.",
+        "Which dùng cho vật/địa điểm được xem như danh từ vật trong mệnh đề thêm thông tin."
+      ],
+      "source": "ORIGINAL_M21_DIAGNOSTIC_EXCLUSIVE",
+      "release_status": "DRAFT_TEACHER_REVIEW",
+      "exposure_policy": "SERVER_ONLY",
+      "teacher_approved": false
+    },
+    {
+      "id": "M21-DIAG-B1-22-01",
+      "level": "B1",
+      "lesson_id": "B1-22",
+      "concept_id": "GC-B1-22",
+      "micro_skill_target": "REPORTED_QUESTION_WORD_ORDER",
+      "version": "M21.1",
+      "prompt": "She asked me where ___.",
+      "options": [
+        "the meeting was",
+        "was the meeting",
+        "is the meeting?"
+      ],
+      "correct_index": 0,
+      "rationales_vi": [
+        "Reported questions dùng trật tự chủ ngữ + động từ, không đảo như câu hỏi trực tiếp.",
+        "Was the meeting giữ trật tự câu hỏi trực tiếp sau where.",
+        "Is the meeting? vừa giữ dấu hỏi sai vừa không lùi thì theo tình huống tường thuật quá khứ."
+      ],
+      "source": "ORIGINAL_M21_DIAGNOSTIC_EXCLUSIVE",
+      "release_status": "DRAFT_TEACHER_REVIEW",
+      "exposure_policy": "SERVER_ONLY",
+      "teacher_approved": false
+    },
+    {
+      "id": "M21-DIAG-B1-22-02",
+      "level": "B1",
+      "lesson_id": "B1-22",
+      "concept_id": "GC-B1-22",
+      "micro_skill_target": "REPORTED_QUESTION_WORD_ORDER",
+      "version": "M21.1",
+      "prompt": "He asked whether I ___ the instructions.",
+      "options": [
+        "does understood",
+        "understood",
+        "do understand?"
+      ],
+      "correct_index": 1,
+      "rationales_vi": [
+        "Does understood sai cấu trúc: trợ động từ does không đi với động từ quá khứ understood.",
+        "Understood là quá khứ đơn phù hợp sau asked whether.",
+        "Do understand? giữ trật tự câu hỏi và dấu hỏi trực tiếp, không phù hợp."
+      ],
+      "source": "ORIGINAL_M21_DIAGNOSTIC_EXCLUSIVE",
+      "release_status": "DRAFT_TEACHER_REVIEW",
+      "exposure_policy": "SERVER_ONLY",
+      "teacher_approved": false
+    },
+    {
+      "id": "M21-DIAG-B1-29-01",
+      "level": "B1",
+      "lesson_id": "B1-29",
+      "concept_id": "GC-B1-29",
+      "micro_skill_target": "REMEMBER_DOING_VS_TO_DO",
+      "version": "M21.1",
+      "prompt": "Please remember ___ the office door before you leave.",
+      "options": [
+        "locking",
+        "locked",
+        "to lock"
+      ],
+      "correct_index": 2,
+      "rationales_vi": [
+        "Remember locking nói nhớ một việc đã làm, không phải lời nhắc việc cần làm.",
+        "Locked không phải bổ ngữ hợp lệ sau remember ở đây.",
+        "Remember to lock là nhớ thực hiện việc khóa cửa sau đó."
+      ],
+      "source": "ORIGINAL_M21_DIAGNOSTIC_EXCLUSIVE",
+      "release_status": "DRAFT_TEACHER_REVIEW",
+      "exposure_policy": "SERVER_ONLY",
+      "teacher_approved": false
+    },
+    {
+      "id": "M21-DIAG-B1-29-02",
+      "level": "B1",
+      "lesson_id": "B1-29",
+      "concept_id": "GC-B1-29",
+      "micro_skill_target": "REMEMBER_DOING_VS_TO_DO",
+      "version": "M21.1",
+      "prompt": "I remember ___ this author at a book fair last year.",
+      "options": [
+        "meeting",
+        "to meet",
+        "meet"
+      ],
+      "correct_index": 0,
+      "rationales_vi": [
+        "Remember meeting gợi nhớ một trải nghiệm đã xảy ra.",
+        "Remember to meet chỉ nhớ nhiệm vụ cần làm, trái với last year.",
+        "Meet nguyên mẫu trần không dùng trực tiếp sau remember trong nghĩa này."
+      ],
+      "source": "ORIGINAL_M21_DIAGNOSTIC_EXCLUSIVE",
+      "release_status": "DRAFT_TEACHER_REVIEW",
+      "exposure_policy": "SERVER_ONLY",
+      "teacher_approved": false
+    },
+    {
+      "id": "M21-DIAG-B2-01-01",
+      "level": "B2",
+      "lesson_id": "B2-01",
+      "concept_id": "GC-B2-01",
+      "micro_skill_target": "THIRD_CONDITIONAL_COUNTERFACTUAL",
+      "version": "M21.1",
+      "prompt": "If the team had checked the figures, they ___ the error.",
+      "options": [
+        "would avoid",
+        "would have avoided",
+        "will have avoided"
+      ],
+      "correct_index": 1,
+      "rationales_vi": [
+        "Would avoid không đặt hệ quả giả định trong quá khứ hoàn tất.",
+        "Would have avoided phù hợp điều kiện trái thực tế ở quá khứ.",
+        "Will have avoided là tương lai hoàn thành, không phải điều kiện loại 3."
+      ],
+      "source": "ORIGINAL_M21_DIAGNOSTIC_EXCLUSIVE",
+      "release_status": "DRAFT_TEACHER_REVIEW",
+      "exposure_policy": "SERVER_ONLY",
+      "teacher_approved": false
+    },
+    {
+      "id": "M21-DIAG-B2-01-02",
+      "level": "B2",
+      "lesson_id": "B2-01",
+      "concept_id": "GC-B2-01",
+      "micro_skill_target": "THIRD_CONDITIONAL_COUNTERFACTUAL",
+      "version": "M21.1",
+      "prompt": "The shipment would have arrived earlier if the road ___ closed.",
+      "options": [
+        "wasn't",
+        "hasn't been",
+        "hadn't been"
+      ],
+      "correct_index": 2,
+      "rationales_vi": [
+        "Wasn't không dùng quá khứ hoàn thành cho điều kiện đối chiếu trong bài này.",
+        "Hasn't been đặt hiện tại hoàn thành không phù hợp kết quả would have arrived.",
+        "Hadn't been phù hợp giả định quá khứ đối lập thực tế."
+      ],
+      "source": "ORIGINAL_M21_DIAGNOSTIC_EXCLUSIVE",
+      "release_status": "DRAFT_TEACHER_REVIEW",
+      "exposure_policy": "SERVER_ONLY",
+      "teacher_approved": false
+    },
+    {
+      "id": "M21-DIAG-B2-02-01",
+      "level": "B2",
+      "lesson_id": "B2-02",
+      "concept_id": "GC-B2-02",
+      "micro_skill_target": "MIXED_CONDITIONAL_PAST_TO_PRESENT",
+      "version": "M21.1",
+      "prompt": "If I had taken that course, I ___ more confident now.",
+      "options": [
+        "would be",
+        "would have been",
+        "will be"
+      ],
+      "correct_index": 0,
+      "rationales_vi": [
+        "Would be nói kết quả ở hiện tại của một điều kiện quá khứ.",
+        "Would have been nói kết quả quá khứ, không phù hợp now.",
+        "Will be không nhất quán với điều kiện if I had taken."
+      ],
+      "source": "ORIGINAL_M21_DIAGNOSTIC_EXCLUSIVE",
+      "release_status": "DRAFT_TEACHER_REVIEW",
+      "exposure_policy": "SERVER_ONLY",
+      "teacher_approved": false
+    },
+    {
+      "id": "M21-DIAG-B2-02-02",
+      "level": "B2",
+      "lesson_id": "B2-02",
+      "concept_id": "GC-B2-02",
+      "micro_skill_target": "MIXED_CONDITIONAL_PAST_TO_PRESENT",
+      "version": "M21.1",
+      "prompt": "If they hadn't missed the flight, they ___ here with us today.",
+      "options": [
+        "would have been",
+        "would be",
+        "were"
+      ],
+      "correct_index": 1,
+      "rationales_vi": [
+        "Would have been nhấn mạnh kết quả quá khứ, trong khi today chỉ trạng thái hiện tại.",
+        "Would be là hệ quả hiện tại từ điều kiện quá khứ.",
+        "Were không thể hiện kết quả giả định sau if ... hadn't."
+      ],
+      "source": "ORIGINAL_M21_DIAGNOSTIC_EXCLUSIVE",
+      "release_status": "DRAFT_TEACHER_REVIEW",
+      "exposure_policy": "SERVER_ONLY",
+      "teacher_approved": false
+    },
+    {
+      "id": "M21-DIAG-B2-05-01",
+      "level": "B2",
+      "lesson_id": "B2-05",
+      "concept_id": "GC-B2-05",
+      "micro_skill_target": "MODAL_PERFECT_EVIDENCE",
+      "version": "M21.1",
+      "prompt": "The lights are off and nobody answers. They ___ gone home.",
+      "options": [
+        "must have",
+        "must",
+        "should"
+      ],
+      "correct_index": 0,
+      "rationales_vi": [
+        "Must have + phân từ thể hiện suy luận có xác suất cao về sự kiện quá khứ.",
+        "Must gone thiếu have và phân từ đúng cấu trúc.",
+        "Should gone thiếu have và không diễn đạt suy luận chắc dựa trên bằng chứng."
+      ],
+      "source": "ORIGINAL_M21_DIAGNOSTIC_EXCLUSIVE",
+      "release_status": "DRAFT_TEACHER_REVIEW",
+      "exposure_policy": "SERVER_ONLY",
+      "teacher_approved": false
+    },
+    {
+      "id": "M21-DIAG-B2-05-02",
+      "level": "B2",
+      "lesson_id": "B2-05",
+      "concept_id": "GC-B2-05",
+      "micro_skill_target": "MODAL_PERFECT_EVIDENCE",
+      "version": "M21.1",
+      "prompt": "I can see her working in the office right now; she ___ left the building already.",
+      "options": [
+        "must have",
+        "can't have",
+        "should have"
+      ],
+      "correct_index": 1,
+      "rationales_vi": [
+        "Must have trái với việc người nói vẫn nhìn thấy cô ấy ở văn phòng ngay lúc này.",
+        "Can't have diễn tả suy luận điều đó khó có thể đã xảy ra.",
+        "Should have diễn tả kỳ vọng hoặc trách móc, không phải suy luận phủ định."
+      ],
+      "source": "ORIGINAL_M21_DIAGNOSTIC_EXCLUSIVE",
+      "release_status": "DRAFT_TEACHER_REVIEW",
+      "exposure_policy": "SERVER_ONLY",
+      "teacher_approved": false
+    },
+    {
+      "id": "M21-DIAG-B2-15-01",
+      "level": "B2",
+      "lesson_id": "B2-15",
+      "concept_id": "GC-B2-15",
+      "micro_skill_target": "PARTICIPLE_DANGLING_SUBJECT",
+      "version": "M21.1",
+      "prompt": "Which revision keeps the intended meaning: The analyst reviewed the chart and then noticed an error?",
+      "options": [
+        "Reviewing the chart, an error was noticed by the analyst.",
+        "The chart reviewing, the analyst noticed an error.",
+        "Reviewing the chart, the analyst noticed an error."
+      ],
+      "correct_index": 2,
+      "rationales_vi": [
+        "Chủ ngữ ngầm của reviewing phải là analyst, không phải an error.",
+        "The chart reviewing sai cấu trúc và gán hành động review cho chart.",
+        "The analyst là chủ thể của both reviewing và noticed, tránh dangling modifier."
+      ],
+      "source": "ORIGINAL_M21_DIAGNOSTIC_EXCLUSIVE",
+      "release_status": "DRAFT_TEACHER_REVIEW",
+      "exposure_policy": "SERVER_ONLY",
+      "teacher_approved": false
+    },
+    {
+      "id": "M21-DIAG-B2-15-02",
+      "level": "B2",
+      "lesson_id": "B2-15",
+      "concept_id": "GC-B2-15",
+      "micro_skill_target": "PARTICIPLE_DANGLING_SUBJECT",
+      "version": "M21.1",
+      "prompt": "Rewrite: As Maria walked into the room, she heard an alarm.",
+      "options": [
+        "Walking into the room, Maria heard an alarm.",
+        "Walking into the room, an alarm was heard by Maria.",
+        "Walked into the room, Maria heard an alarm."
+      ],
+      "correct_index": 0,
+      "rationales_vi": [
+        "Maria là chủ ngữ của walking và heard, giữ đúng người thực hiện hai hành động.",
+        "An alarm bị hiểu là tác nhân đang đi vào phòng, gây dangling modifier.",
+        "Walked không dùng làm mệnh đề rút gọn mở đầu theo nghĩa này."
+      ],
+      "source": "ORIGINAL_M21_DIAGNOSTIC_EXCLUSIVE",
+      "release_status": "DRAFT_TEACHER_REVIEW",
+      "exposure_policy": "SERVER_ONLY",
+      "teacher_approved": false
+    },
+    {
+      "id": "M21-DIAG-B2-28-01",
+      "level": "B2",
+      "lesson_id": "B2-28",
+      "concept_id": "GC-B2-28",
+      "micro_skill_target": "ADVANCED_CONCESSION_LOGIC",
+      "version": "M21.1",
+      "prompt": "The proposal was accepted ___ several reviewers raised concerns.",
+      "options": [
+        "because",
+        "although",
+        "so that"
+      ],
+      "correct_index": 1,
+      "rationales_vi": [
+        "Because chuyển quan hệ nhượng bộ thành nguyên nhân không được hỗ trợ.",
+        "Although diễn tả sự đối lập giữa được chấp nhận và có lo ngại.",
+        "So that nói mục đích, không đúng quan hệ giữa hai mệnh đề."
+      ],
+      "source": "ORIGINAL_M21_DIAGNOSTIC_EXCLUSIVE",
+      "release_status": "DRAFT_TEACHER_REVIEW",
+      "exposure_policy": "SERVER_ONLY",
+      "teacher_approved": false
+    },
+    {
+      "id": "M21-DIAG-B2-28-02",
+      "level": "B2",
+      "lesson_id": "B2-28",
+      "concept_id": "GC-B2-28",
+      "micro_skill_target": "ADVANCED_CONCESSION_LOGIC",
+      "version": "M21.1",
+      "prompt": "___ the budget was limited, the team completed the project.",
+      "options": [
+        "Despite",
+        "Although",
+        "Because of"
+      ],
+      "correct_index": 1,
+      "rationales_vi": [
+        "Despite cần danh từ hoặc V-ing, không đứng trực tiếp trước mệnh đề the budget was limited.",
+        "Although đứng trước mệnh đề đầy đủ và diễn tả nhượng bộ.",
+        "Because of cần cụm danh từ, không đi trực tiếp với mệnh đề."
+      ],
+      "source": "ORIGINAL_M21_DIAGNOSTIC_EXCLUSIVE",
+      "release_status": "DRAFT_TEACHER_REVIEW",
+      "exposure_policy": "SERVER_ONLY",
+      "teacher_approved": false
+    },
+    {
+      "id": "M21-DIAG-B2-35-01",
+      "level": "B2",
+      "lesson_id": "B2-35",
+      "concept_id": "GC-B2-35",
+      "micro_skill_target": "CLEFT_EMPHASIS_PRESERVE_MEANING",
+      "version": "M21.1",
+      "prompt": "The board rejected the timeline, not the overall proposal. Which sentence highlights the rejected element?",
+      "options": [
+        "It was the timeline that the board rejected.",
+        "It was the board that rejected the timeline.",
+        "What the board rejected was not the timeline."
+      ],
+      "correct_index": 0,
+      "rationales_vi": [
+        "It-cleft đưa the timeline vào vị trí nhấn mạnh, giữ đúng nội dung bị bác bỏ.",
+        "Câu này nhấn mạnh người bác bỏ, không phải yếu tố bị bác bỏ theo yêu cầu.",
+        "Câu phủ định timeline trái sự kiện đề bài."
+      ],
+      "source": "ORIGINAL_M21_DIAGNOSTIC_EXCLUSIVE",
+      "release_status": "DRAFT_TEACHER_REVIEW",
+      "exposure_policy": "SERVER_ONLY",
+      "teacher_approved": false
+    },
+    {
+      "id": "M21-DIAG-B2-35-02",
+      "level": "B2",
+      "lesson_id": "B2-35",
+      "concept_id": "GC-B2-35",
+      "micro_skill_target": "CLEFT_EMPHASIS_PRESERVE_MEANING",
+      "version": "M21.1",
+      "prompt": "Only the venue changed; the date stayed the same. Choose the focus structure.",
+      "options": [
+        "It was the date that changed.",
+        "What changed was the venue.",
+        "What changed were both venue and date."
+      ],
+      "correct_index": 1,
+      "rationales_vi": [
+        "Nhấn mạnh date changed là trái dữ kiện.",
+        "What-cleft nhấn mạnh venue là phần thay đổi.",
+        "Both venue and date trái với thông tin ngày giữ nguyên."
+      ],
+      "source": "ORIGINAL_M21_DIAGNOSTIC_EXCLUSIVE",
+      "release_status": "DRAFT_TEACHER_REVIEW",
+      "exposure_policy": "SERVER_ONLY",
+      "teacher_approved": false
+    },
+    {
+      "id": "M21-DIAG-C1-01-01",
+      "level": "C1",
+      "lesson_id": "C1-01",
+      "concept_id": "GC-C1-01",
+      "micro_skill_target": "NEGATIVE_ADVERBIAL_INVERSION",
+      "version": "M21.1",
+      "prompt": "Choose the grammatical formal opening: ___ had the meeting begun when the power failed.",
+      "options": [
+        "Hardly",
+        "Hardly it",
+        "Hardly had it"
+      ],
+      "correct_index": 0,
+      "rationales_vi": [
+        "Hardly had the meeting begun là đảo ngữ sau trạng từ phủ định đầu câu.",
+        "Hardly it had the meeting begun tạo cấu trúc thừa, sai trật tự.",
+        "Hardly had it had the meeting begun có hai trợ động từ/chủ ngữ không phù hợp."
+      ],
+      "source": "ORIGINAL_M21_DIAGNOSTIC_EXCLUSIVE",
+      "release_status": "DRAFT_TEACHER_REVIEW",
+      "exposure_policy": "SERVER_ONLY",
+      "teacher_approved": false
+    },
+    {
+      "id": "M21-DIAG-C1-01-02",
+      "level": "C1",
+      "lesson_id": "C1-01",
+      "concept_id": "GC-C1-01",
+      "micro_skill_target": "NEGATIVE_ADVERBIAL_INVERSION",
+      "version": "M21.1",
+      "prompt": "Choose the inversion that preserves the meaning: I had never seen such extensive evidence.",
+      "options": [
+        "Never I had seen such extensive evidence.",
+        "Never had I seen such extensive evidence.",
+        "Never have I saw such extensive evidence."
+      ],
+      "correct_index": 1,
+      "rationales_vi": [
+        "Sau Never đầu câu cần đảo had trước I.",
+        "Never had I seen giữ thì quá khứ hoàn thành và đảo ngữ chuẩn.",
+        "Have I saw vừa đổi thì vừa dùng quá khứ đơn saw sau have."
+      ],
+      "source": "ORIGINAL_M21_DIAGNOSTIC_EXCLUSIVE",
+      "release_status": "DRAFT_TEACHER_REVIEW",
+      "exposure_policy": "SERVER_ONLY",
+      "teacher_approved": false
+    },
+    {
+      "id": "M21-DIAG-C1-10-01",
+      "level": "C1",
+      "lesson_id": "C1-10",
+      "concept_id": "GC-C1-10",
+      "micro_skill_target": "NOMINALISATION_AGENT_CLARITY",
+      "version": "M21.1",
+      "prompt": "The researchers analysed the samples carefully. Which formal revision keeps the agent explicit?",
+      "options": [
+        "The analysis of the samples was conducted carefully by the researchers.",
+        "The samples were analysed carefully, and the researchers were eliminated.",
+        "The analysis carefully performed the researchers."
+      ],
+      "correct_index": 0,
+      "rationales_vi": [
+        "Danh từ hóa analysis vẫn chỉ rõ tác nhân by the researchers, không đổi sự kiện.",
+        "Câu đổi nội dung thành researchers bị loại bỏ, hoàn toàn sai nghĩa.",
+        "Analysis không thể tự perform researchers và câu sai cú pháp."
+      ],
+      "source": "ORIGINAL_M21_DIAGNOSTIC_EXCLUSIVE",
+      "release_status": "DRAFT_TEACHER_REVIEW",
+      "exposure_policy": "SERVER_ONLY",
+      "teacher_approved": false
+    },
+    {
+      "id": "M21-DIAG-C1-10-02",
+      "level": "C1",
+      "lesson_id": "C1-10",
+      "concept_id": "GC-C1-10",
+      "micro_skill_target": "NOMINALISATION_AGENT_CLARITY",
+      "version": "M21.1",
+      "prompt": "Which sentence nominalises “The committee decided to postpone the vote” without inventing a new cause?",
+      "options": [
+        "The postponement forced the committee to decide.",
+        "The committee’s decision to postpone the vote was announced.",
+        "The vote postponed the committee decision."
+      ],
+      "correct_index": 1,
+      "rationales_vi": [
+        "Gán quyết định thành hệ quả bị ép và thay đổi quan hệ nhân quả.",
+        "Decision danh từ hóa decided, giữ rõ chủ thể và nội dung postpone.",
+        "Biến vote thành tác nhân và thay đổi quan hệ."
+      ],
+      "source": "ORIGINAL_M21_DIAGNOSTIC_EXCLUSIVE",
+      "release_status": "DRAFT_TEACHER_REVIEW",
+      "exposure_policy": "SERVER_ONLY",
+      "teacher_approved": false
+    },
+    {
+      "id": "M21-DIAG-C1-13-01",
+      "level": "C1",
+      "lesson_id": "C1-13",
+      "concept_id": "GC-C1-13",
+      "micro_skill_target": "MANDATIVE_SUBJUNCTIVE",
+      "version": "M21.1",
+      "prompt": "The chair recommended that the report ___ revised before publication.",
+      "options": [
+        "is",
+        "be",
+        "was"
+      ],
+      "correct_index": 1,
+      "rationales_vi": [
+        "Is diễn đạt một nhận định hiện tại, không phải mandative subjunctive ở đây.",
+        "Be là động từ nguyên mẫu trong mandative subjunctive sau recommended that.",
+        "Was không phải hình thức mandative subjunctive theo cách viết trang trọng yêu cầu."
+      ],
+      "source": "ORIGINAL_M21_DIAGNOSTIC_EXCLUSIVE",
+      "release_status": "DRAFT_TEACHER_REVIEW",
+      "exposure_policy": "SERVER_ONLY",
+      "teacher_approved": false
+    },
+    {
+      "id": "M21-DIAG-C1-13-02",
+      "level": "C1",
+      "lesson_id": "C1-13",
+      "concept_id": "GC-C1-13",
+      "micro_skill_target": "MANDATIVE_SUBJUNCTIVE",
+      "version": "M21.1",
+      "prompt": "The policy requires that every applicant ___ proof of identity.",
+      "options": [
+        "provides",
+        "provided",
+        "provide"
+      ],
+      "correct_index": 2,
+      "rationales_vi": [
+        "Provides là chia ngôi số ít, không phải dạng nguyên thể sau requires that.",
+        "Provided chuyển sang quá khứ và không thực hiện cấu trúc mandative này.",
+        "Provide là dạng nguyên thể sau requires that."
+      ],
+      "source": "ORIGINAL_M21_DIAGNOSTIC_EXCLUSIVE",
+      "release_status": "DRAFT_TEACHER_REVIEW",
+      "exposure_policy": "SERVER_ONLY",
+      "teacher_approved": false
+    },
+    {
+      "id": "M21-DIAG-C1-23-01",
+      "level": "C1",
+      "lesson_id": "C1-23",
+      "concept_id": "GC-C1-23",
+      "micro_skill_target": "HEDGING_MATCH_EVIDENCE",
+      "version": "M21.1",
+      "prompt": "A pilot involved twelve volunteers. Which conclusion has appropriate certainty?",
+      "options": [
+        "The results suggest the method may help some users.",
+        "The method proves effective for everyone.",
+        "The method will always prevent errors."
+      ],
+      "correct_index": 0,
+      "rationales_vi": [
+        "Suggest và may phản ánh bằng chứng ban đầu hạn chế.",
+        "Proves và everyone khái quát quá mức từ mẫu nhỏ.",
+        "Will always là khẳng định tuyệt đối không được dữ liệu hỗ trợ."
+      ],
+      "source": "ORIGINAL_M21_DIAGNOSTIC_EXCLUSIVE",
+      "release_status": "DRAFT_TEACHER_REVIEW",
+      "exposure_policy": "SERVER_ONLY",
+      "teacher_approved": false
+    },
+    {
+      "id": "M21-DIAG-C1-23-02",
+      "level": "C1",
+      "lesson_id": "C1-23",
+      "concept_id": "GC-C1-23",
+      "micro_skill_target": "HEDGING_MATCH_EVIDENCE",
+      "version": "M21.1",
+      "prompt": "One observational study found an association. Choose the wording that does not assert causation.",
+      "options": [
+        "The intervention caused the improvement.",
+        "The findings are consistent with a possible association.",
+        "The intervention guarantees improvement."
+      ],
+      "correct_index": 1,
+      "rationales_vi": [
+        "Caused khẳng định quan hệ nhân quả không được chứng minh bởi nghiên cứu quan sát.",
+        "Consistent with và possible giữ mức độ chắc chắn phù hợp.",
+        "Guarantees là khẳng định mạnh quá mức."
+      ],
+      "source": "ORIGINAL_M21_DIAGNOSTIC_EXCLUSIVE",
+      "release_status": "DRAFT_TEACHER_REVIEW",
+      "exposure_policy": "SERVER_ONLY",
+      "teacher_approved": false
+    },
+    {
+      "id": "M21-DIAG-C1-24-01",
+      "level": "C1",
+      "lesson_id": "C1-24",
+      "concept_id": "GC-C1-24",
+      "micro_skill_target": "EVIDENTIALITY_ATTRIBUTE_CLAIMS",
+      "version": "M21.1",
+      "prompt": "The director claims that costs fell, but no figures were supplied. Which reporting sentence preserves uncertainty?",
+      "options": [
+        "Costs definitely fell according to proven figures.",
+        "The director proved that costs fell.",
+        "According to the director, costs fell; the claim has not been independently verified."
+      ],
+      "correct_index": 2,
+      "rationales_vi": [
+        "Definitely và proven figures tạo bằng chứng không có.",
+        "Proved đổi lời tuyên bố thành kết luận đã được xác minh.",
+        "According to quy thuộc nguồn và nêu rõ chưa xác minh, tránh đánh tráo mức độ bằng chứng."
+      ],
+      "source": "ORIGINAL_M21_DIAGNOSTIC_EXCLUSIVE",
+      "release_status": "DRAFT_TEACHER_REVIEW",
+      "exposure_policy": "SERVER_ONLY",
+      "teacher_approved": false
+    },
+    {
+      "id": "M21-DIAG-C1-24-02",
+      "level": "C1",
+      "lesson_id": "C1-24",
+      "concept_id": "GC-C1-24",
+      "micro_skill_target": "EVIDENTIALITY_ATTRIBUTE_CLAIMS",
+      "version": "M21.1",
+      "prompt": "A witness reported hearing a noise but did not see its source. Which sentence is most accurate?",
+      "options": [
+        "The witness reported hearing a noise, without identifying its source.",
+        "The witness saw the intruder making a noise.",
+        "The noise was certainly caused by an intruder."
+      ],
+      "correct_index": 0,
+      "rationales_vi": [
+        "Reported và without identifying phản ánh đúng phạm vi quan sát.",
+        "Seen intruder bịa thêm sự kiện không được nhân chứng thấy.",
+        "Certainly và intruder gán tác nhân không có bằng chứng."
+      ],
+      "source": "ORIGINAL_M21_DIAGNOSTIC_EXCLUSIVE",
+      "release_status": "DRAFT_TEACHER_REVIEW",
+      "exposure_policy": "SERVER_ONLY",
+      "teacher_approved": false
+    },
+    {
+      "id": "M21-DIAG-C1-28-01",
+      "level": "C1",
+      "lesson_id": "C1-28",
+      "concept_id": "GC-C1-28",
+      "micro_skill_target": "PARALLELISM_LOGICAL_ALIGNMENT",
+      "version": "M21.1",
+      "prompt": "The policy aims to reduce delays, improve access, and ___.",
+      "options": [
+        "costs should be lowered",
+        "lower costs",
+        "the lowering of costs"
+      ],
+      "correct_index": 1,
+      "rationales_vi": [
+        "Mệnh đề có should bị lệch cấu trúc với to reduce và improve.",
+        "Lower costs song song cùng hai động từ nguyên thể.",
+        "Danh từ hóa the lowering làm đứt cấu trúc song song của động từ."
+      ],
+      "source": "ORIGINAL_M21_DIAGNOSTIC_EXCLUSIVE",
+      "release_status": "DRAFT_TEACHER_REVIEW",
+      "exposure_policy": "SERVER_ONLY",
+      "teacher_approved": false
+    },
+    {
+      "id": "M21-DIAG-C1-28-02",
+      "level": "C1",
+      "lesson_id": "C1-28",
+      "concept_id": "GC-C1-28",
+      "micro_skill_target": "PARALLELISM_LOGICAL_ALIGNMENT",
+      "version": "M21.1",
+      "prompt": "Choose a parallel revision: She values accuracy, fairness, and ___.",
+      "options": [
+        "to be transparent",
+        "she is transparent",
+        "transparency"
+      ],
+      "correct_index": 2,
+      "rationales_vi": [
+        "To be transparent khác loại với danh từ accuracy và fairness.",
+        "She is transparent là mệnh đề, không song song ba danh từ.",
+        "Transparency là danh từ song song với accuracy và fairness."
+      ],
+      "source": "ORIGINAL_M21_DIAGNOSTIC_EXCLUSIVE",
+      "release_status": "DRAFT_TEACHER_REVIEW",
+      "exposure_policy": "SERVER_ONLY",
+      "teacher_approved": false
+    },
+    {
+      "id": "M21-DIAG-C2-03-01",
+      "level": "C2",
+      "lesson_id": "C2-03",
+      "concept_id": "GC-C2-03",
+      "micro_skill_target": "MODALITY_DEGREE_OF_INFERENCE",
+      "version": "M21.1",
+      "prompt": "The author has not replied, but there is no evidence of refusal. Which sentence avoids overclaiming?",
+      "options": [
+        "The author must have refused the invitation.",
+        "The author may not have seen the invitation yet.",
+        "The author definitely rejected the invitation."
+      ],
+      "correct_index": 1,
+      "rationales_vi": [
+        "Must have refused suy diễn quá chắc chắn, không có bằng chứng.",
+        "May not have seen diễn đạt một khả năng phù hợp với dữ kiện hạn chế.",
+        "Definitely rejected biến việc không trả lời thành từ chối được xác nhận."
+      ],
+      "source": "ORIGINAL_M21_DIAGNOSTIC_EXCLUSIVE",
+      "release_status": "DRAFT_TEACHER_REVIEW",
+      "exposure_policy": "SERVER_ONLY",
+      "teacher_approved": false
+    },
+    {
+      "id": "M21-DIAG-C2-03-02",
+      "level": "C2",
+      "lesson_id": "C2-03",
+      "concept_id": "GC-C2-03",
+      "micro_skill_target": "MODALITY_DEGREE_OF_INFERENCE",
+      "version": "M21.1",
+      "prompt": "There is strong but not conclusive evidence that the file was altered. Choose the best formulation.",
+      "options": [
+        "The file has unquestionably been altered.",
+        "The file was never altered.",
+        "The file appears to have been altered."
+      ],
+      "correct_index": 2,
+      "rationales_vi": [
+        "Unquestionably bỏ qua tính chưa kết luận của chứng cứ.",
+        "Never phủ định trái với hướng chứng cứ.",
+        "Appears to have been giữ đúng mức độ suy luận và thời điểm quá khứ."
+      ],
+      "source": "ORIGINAL_M21_DIAGNOSTIC_EXCLUSIVE",
+      "release_status": "DRAFT_TEACHER_REVIEW",
+      "exposure_policy": "SERVER_ONLY",
+      "teacher_approved": false
+    },
+    {
+      "id": "M21-DIAG-C2-04-01",
+      "level": "C2",
+      "lesson_id": "C2-04",
+      "concept_id": "GC-C2-04",
+      "micro_skill_target": "LAYERED_COUNTERFACTUAL_TIME",
+      "version": "M21.1",
+      "prompt": "He did not invest in 2019, so he is not wealthy now. Choose the counterfactual.",
+      "options": [
+        "If he had invested in 2019, he might be wealthy now.",
+        "If he invested in 2019, he might have been wealthy now.",
+        "If he has invested in 2019, he is wealthy now."
+      ],
+      "correct_index": 0,
+      "rationales_vi": [
+        "Had invested diễn tả điều kiện trái quá khứ, might be nêu hệ quả hiện tại chưa chắc chắn.",
+        "Invested và might have been tạo mốc thời gian không đúng với now theo ý định.",
+        "Has invested không hợp in 2019 và không diễn tả giả định trái thực tế."
+      ],
+      "source": "ORIGINAL_M21_DIAGNOSTIC_EXCLUSIVE",
+      "release_status": "DRAFT_TEACHER_REVIEW",
+      "exposure_policy": "SERVER_ONLY",
+      "teacher_approved": false
+    },
+    {
+      "id": "M21-DIAG-C2-04-02",
+      "level": "C2",
+      "lesson_id": "C2-04",
+      "concept_id": "GC-C2-04",
+      "micro_skill_target": "LAYERED_COUNTERFACTUAL_TIME",
+      "version": "M21.1",
+      "prompt": "She ignored the warning yesterday and is now facing delays. Which statement preserves the time relation?",
+      "options": [
+        "If she heeded yesterday’s warning, she would have avoided delays now.",
+        "Had she heeded the warning yesterday, she might not be facing delays now.",
+        "Had she heeded the warning, she definitely never faced a delay."
+      ],
+      "correct_index": 1,
+      "rationales_vi": [
+        "Heeded + would have avoided nhấn mạnh hệ quả quá khứ chứ không phải trạng thái đang xảy ra now.",
+        "Had she heeded là đảo điều kiện quá khứ; might not be facing giữ kết quả hiện tại và mức bất định.",
+        "Definitely never là suy diễn tuyệt đối không có trong dữ liệu."
+      ],
+      "source": "ORIGINAL_M21_DIAGNOSTIC_EXCLUSIVE",
+      "release_status": "DRAFT_TEACHER_REVIEW",
+      "exposure_policy": "SERVER_ONLY",
+      "teacher_approved": false
+    },
+    {
+      "id": "M21-DIAG-C2-12-01",
+      "level": "C2",
+      "lesson_id": "C2-12",
+      "concept_id": "GC-C2-12",
+      "micro_skill_target": "REGISTER_SHIFT_WITHOUT_MEANING_CHANGE",
+      "version": "M21.1",
+      "prompt": "A research memo says “We kinda messed up the estimate.” Choose a professional revision without shifting responsibility.",
+      "options": [
+        "The estimate was perhaps inaccurate for unknown reasons.",
+        "The team intentionally falsified the estimate.",
+        "Our team made an error in the estimate."
+      ],
+      "correct_index": 2,
+      "rationales_vi": [
+        "Perhaps và unknown reasons che khuất sự thừa nhận đã mắc lỗi.",
+        "Intentionally falsified thêm ý gian lận không có trong phát biểu.",
+        "Our team made an error giữ sự thừa nhận trách nhiệm và dùng văn phong chuyên nghiệp."
+      ],
+      "source": "ORIGINAL_M21_DIAGNOSTIC_EXCLUSIVE",
+      "release_status": "DRAFT_TEACHER_REVIEW",
+      "exposure_policy": "SERVER_ONLY",
+      "teacher_approved": false
+    },
+    {
+      "id": "M21-DIAG-C2-12-02",
+      "level": "C2",
+      "lesson_id": "C2-12",
+      "concept_id": "GC-C2-12",
+      "micro_skill_target": "REGISTER_SHIFT_WITHOUT_MEANING_CHANGE",
+      "version": "M21.1",
+      "prompt": "A manager says “Please send me the updated figures when you can.” Choose a courteous, formal equivalent.",
+      "options": [
+        "Could you please send me the updated figures when convenient?",
+        "You are ordered to send the figures immediately.",
+        "You must submit the figures by 5 p.m."
+      ],
+      "correct_index": 0,
+      "rationales_vi": [
+        "Could you please và when convenient giữ yêu cầu lịch sự và không thêm hạn chót.",
+        "Ordered và immediately đổi mức độ áp đặt và thời hạn.",
+        "By 5 p.m. thêm thời hạn không có trong lời gốc."
+      ],
+      "source": "ORIGINAL_M21_DIAGNOSTIC_EXCLUSIVE",
+      "release_status": "DRAFT_TEACHER_REVIEW",
+      "exposure_policy": "SERVER_ONLY",
+      "teacher_approved": false
+    },
+    {
+      "id": "M21-DIAG-C2-16-01",
+      "level": "C2",
+      "lesson_id": "C2-16",
+      "concept_id": "GC-C2-16",
+      "micro_skill_target": "INFORMATION_STRUCTURE_GIVEN_NEW",
+      "version": "M21.1",
+      "prompt": "The question is “Who approved the revised budget?” Which reply most directly supplies the new information?",
+      "options": [
+        "The revised budget, it was approved.",
+        "It was the finance director who approved it.",
+        "The revised budget was under review."
+      ],
+      "correct_index": 1,
+      "rationales_vi": [
+        "Câu không nêu người phê duyệt, không trả lời phần thông tin mới.",
+        "It-cleft đặt finance director vào tiêu điểm cần trả lời.",
+        "Under review trái hoặc không đủ dữ kiện với câu hỏi đã phê duyệt."
+      ],
+      "source": "ORIGINAL_M21_DIAGNOSTIC_EXCLUSIVE",
+      "release_status": "DRAFT_TEACHER_REVIEW",
+      "exposure_policy": "SERVER_ONLY",
+      "teacher_approved": false
+    },
+    {
+      "id": "M21-DIAG-C2-16-02",
+      "level": "C2",
+      "lesson_id": "C2-16",
+      "concept_id": "GC-C2-16",
+      "micro_skill_target": "INFORMATION_STRUCTURE_GIVEN_NEW",
+      "version": "M21.1",
+      "prompt": "The audience already knows the report was delayed. The new fact is the reason: a server outage. Best focus?",
+      "options": [
+        "The report was delayed, as everyone knows.",
+        "A server outage happened sometime.",
+        "What caused the delay was a server outage."
+      ],
+      "correct_index": 2,
+      "rationales_vi": [
+        "Lặp thông tin cũ mà không nêu nguyên nhân mới.",
+        "Nêu outage nhưng không liên kết trực tiếp với lý do báo cáo chậm.",
+        "What-cleft tập trung đúng thông tin mới về nguyên nhân."
+      ],
+      "source": "ORIGINAL_M21_DIAGNOSTIC_EXCLUSIVE",
+      "release_status": "DRAFT_TEACHER_REVIEW",
+      "exposure_policy": "SERVER_ONLY",
+      "teacher_approved": false
+    },
+    {
+      "id": "M21-DIAG-C2-17-01",
+      "level": "C2",
+      "lesson_id": "C2-17",
+      "concept_id": "GC-C2-17",
+      "micro_skill_target": "NEGATION_SCOPE_ALL_VS_NONE",
+      "version": "M21.1",
+      "prompt": "Eight of ten reviewers approved the draft. Which sentence is true?",
+      "options": [
+        "Not all reviewers approved the draft.",
+        "No reviewers approved the draft.",
+        "All reviewers rejected the draft."
+      ],
+      "correct_index": 0,
+      "rationales_vi": [
+        "Not all phù hợp vì hai người không phê duyệt; không phủ định tám người đã duyệt.",
+        "No reviewers trái với tám người đã duyệt.",
+        "All rejected cũng trái với tám người đã duyệt."
+      ],
+      "source": "ORIGINAL_M21_DIAGNOSTIC_EXCLUSIVE",
+      "release_status": "DRAFT_TEACHER_REVIEW",
+      "exposure_policy": "SERVER_ONLY",
+      "teacher_approved": false
+    },
+    {
+      "id": "M21-DIAG-C2-17-02",
+      "level": "C2",
+      "lesson_id": "C2-17",
+      "concept_id": "GC-C2-17",
+      "micro_skill_target": "NEGATION_SCOPE_ALL_VS_NONE",
+      "version": "M21.1",
+      "prompt": "Exactly three of five applications were rejected. Which statement preserves the scope?",
+      "options": [
+        "None of the applications were accepted.",
+        "Not every application was rejected.",
+        "Every application was rejected."
+      ],
+      "correct_index": 1,
+      "rationales_vi": [
+        "None accepted là sai vì hai đơn được chấp nhận.",
+        "Not every rejected đúng vì hai đơn không bị từ chối.",
+        "Every rejected là sai với ba trong năm."
+      ],
+      "source": "ORIGINAL_M21_DIAGNOSTIC_EXCLUSIVE",
+      "release_status": "DRAFT_TEACHER_REVIEW",
+      "exposure_policy": "SERVER_ONLY",
+      "teacher_approved": false
+    },
+    {
+      "id": "M21-DIAG-C2-19-01",
+      "level": "C2",
+      "lesson_id": "C2-19",
+      "concept_id": "GC-C2-19",
+      "micro_skill_target": "PRAGMATIC_POLITENESS",
+      "version": "M21.1",
+      "prompt": "A colleague made a questionable assumption. Choose a tactful challenge in a formal meeting.",
+      "options": [
+        "Your assumption is ridiculous.",
+        "You obviously have no evidence.",
+        "Could we examine the evidence supporting that assumption?"
+      ],
+      "correct_index": 2,
+      "rationales_vi": [
+        "Ridiculous là phán xét cá nhân, có thể làm cuộc họp đối đầu.",
+        "Obviously have no evidence là kết luận và công kích khi chưa phân tích.",
+        "Could we examine nêu nghi vấn mang tính hợp tác mà vẫn kiểm tra luận cứ."
+      ],
+      "source": "ORIGINAL_M21_DIAGNOSTIC_EXCLUSIVE",
+      "release_status": "DRAFT_TEACHER_REVIEW",
+      "exposure_policy": "SERVER_ONLY",
+      "teacher_approved": false
+    },
+    {
+      "id": "M21-DIAG-C2-19-02",
+      "level": "C2",
+      "lesson_id": "C2-19",
+      "concept_id": "GC-C2-19",
+      "micro_skill_target": "PRAGMATIC_POLITENESS",
+      "version": "M21.1",
+      "prompt": "You need to disagree with a senior researcher while preserving collegial tone.",
+      "options": [
+        "I see the rationale, but the available data may support a different interpretation.",
+        "You are wrong and should retract the claim.",
+        "Everyone knows your interpretation is false."
+      ],
+      "correct_index": 0,
+      "rationales_vi": [
+        "Ghi nhận lập luận trước, nêu giới hạn bằng chứng và gợi khả năng khác, giữ giọng chuyên nghiệp.",
+        "You are wrong áp đặt và đòi rút lại khi chưa trình bày chứng cứ.",
+        "Everyone knows bịa đồng thuận và công kích."
+      ],
+      "source": "ORIGINAL_M21_DIAGNOSTIC_EXCLUSIVE",
+      "release_status": "DRAFT_TEACHER_REVIEW",
+      "exposure_policy": "SERVER_ONLY",
+      "teacher_approved": false
+    }
+  ]
+}

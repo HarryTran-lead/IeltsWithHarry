@@ -1,0 +1,462 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "DICT-S1-060",
+  "status": "draft",
+  "level": "L5",
+  "section": 1,
+  "topic": "Delivery Services",
+  "title": "A Collection Point Instead of Home Delivery",
+  "learning_objectives_vi": [
+    "Luyện nghe tình huống: A shopper selects a more reliable parcel route.",
+    "Nhận diện natural speed & paraphrase và thông tin cuối cùng của cuộc hội thoại.",
+    "Nghe chép lời nói tự nhiên, hiểu bằng chứng trước khi xem transcript."
+  ],
+  "content_format": "section_practice",
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Service staff / representative",
+      "tts_voice_id": null,
+      "accent_requested": "new_zealand"
+    },
+    {
+      "speaker_id": "B",
+      "role": "Customer / attendee",
+      "tts_voice_id": null,
+      "accent_requested": "new_zealand"
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "Good morning, ParcelPath support.",
+      "translation_vi": "Chào buổi sáng, bộ phận hỗ trợ ParcelPath.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "delivery",
+        "paraphrase",
+        "conditions",
+        "section_1",
+        "two_speaker_dialogue",
+        "l5"
+      ]
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "B",
+      "text_en": "I'm expecting a laptop charger, but nobody will be home when the courier comes.",
+      "translation_vi": "Tôi đang chờ bộ sạc laptop, nhưng lúc người giao đến sẽ không có ai ở nhà.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "delivery",
+        "paraphrase",
+        "conditions",
+        "section_1",
+        "two_speaker_dialogue",
+        "l5"
+      ]
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "A",
+      "text_en": "We can try a neighbour, or send it to a collection point. Which would you prefer?",
+      "translation_vi": "Chúng tôi có thể giao cho hàng xóm hoặc chuyển đến điểm nhận hàng. Bạn muốn cách nào?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "delivery",
+        "paraphrase",
+        "conditions",
+        "section_1",
+        "two_speaker_dialogue",
+        "l5"
+      ]
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "B",
+      "text_en": "I'd rather collect it myself, because the neighbour is away this week.",
+      "translation_vi": "Tôi muốn tự đến nhận, vì hàng xóm đi vắng cả tuần này.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "delivery",
+        "paraphrase",
+        "conditions",
+        "section_1",
+        "two_speaker_dialogue",
+        "l5"
+      ]
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "A",
+      "text_en": "There's a locker outside Elm Station and a staffed counter inside the shopping centre.",
+      "translation_vi": "Có tủ nhận hàng ngoài ga Elm và quầy có nhân viên trong trung tâm mua sắm.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "delivery",
+        "paraphrase",
+        "conditions",
+        "section_1",
+        "two_speaker_dialogue",
+        "l5"
+      ]
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "B",
+      "text_en": "Does the station locker accept larger parcels?",
+      "translation_vi": "Tủ ở ga có nhận kiện lớn không?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "delivery",
+        "paraphrase",
+        "conditions",
+        "section_1",
+        "two_speaker_dialogue",
+        "l5"
+      ]
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "Not this one. The charger will fit, though, and the locker is available around the clock.",
+      "translation_vi": "Tủ này không nhận kiện lớn. Tuy nhiên bộ sạc vẫn vừa, và tủ dùng được suốt ngày đêm.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "delivery",
+        "paraphrase",
+        "conditions",
+        "section_1",
+        "two_speaker_dialogue",
+        "l5"
+      ]
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "B",
+      "text_en": "I might need help, so I'll choose the staffed counter. When does it close?",
+      "translation_vi": "Tôi có thể cần hỗ trợ, nên chọn quầy có nhân viên. Quầy đóng lúc nào?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "delivery",
+        "paraphrase",
+        "conditions",
+        "section_1",
+        "two_speaker_dialogue",
+        "l5"
+      ]
+    },
+    {
+      "turn_id": "T09",
+      "speaker_id": "A",
+      "text_en": "At seven on weekdays. Your parcel should arrive there on Thursday afternoon.",
+      "translation_vi": "Quầy đóng lúc bảy giờ vào ngày thường. Hàng dự kiến tới đó chiều thứ Năm.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "delivery",
+        "paraphrase",
+        "conditions",
+        "section_1",
+        "two_speaker_dialogue",
+        "l5"
+      ]
+    },
+    {
+      "turn_id": "T10",
+      "speaker_id": "B",
+      "text_en": "Is there a collection deadline?",
+      "translation_vi": "Có hạn cuối đến lấy không?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "delivery",
+        "paraphrase",
+        "conditions",
+        "section_1",
+        "two_speaker_dialogue",
+        "l5"
+      ]
+    },
+    {
+      "turn_id": "T11",
+      "speaker_id": "A",
+      "text_en": "You have five calendar days. You'll need the pickup code and a form of identification.",
+      "translation_vi": "Bạn có năm ngày theo lịch. Cần mã nhận hàng và giấy tờ tùy thân.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "delivery",
+        "paraphrase",
+        "conditions",
+        "section_1",
+        "two_speaker_dialogue",
+        "l5"
+      ]
+    },
+    {
+      "turn_id": "T12",
+      "speaker_id": "B",
+      "text_en": "Fine. Please send the code to my mobile rather than my email.",
+      "translation_vi": "Được. Hãy gửi mã vào điện thoại thay vì email.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "delivery",
+        "paraphrase",
+        "conditions",
+        "section_1",
+        "two_speaker_dialogue",
+        "l5"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "type": "form_completion",
+      "prompt": "Item expected: laptop ____",
+      "correct_answers": [
+        "charger"
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Mặt hàng là bộ sạc máy tính xách tay.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "delivery",
+        "paraphrase",
+        "conditions",
+        "ielts_section1_practice"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q02",
+      "type": "form_completion",
+      "prompt": "Neighbour unavailable because they are ____",
+      "correct_answers": [
+        "away"
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Hàng xóm đi vắng nên không thể nhận hộ.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "delivery",
+        "paraphrase",
+        "conditions",
+        "ielts_section1_practice"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q03",
+      "type": "form_completion",
+      "prompt": "One collection point is outside ____ Station",
+      "correct_answers": [
+        "Elm"
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Một điểm là tủ tại ga Elm.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "delivery",
+        "paraphrase",
+        "conditions",
+        "ielts_section1_practice"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q04",
+      "type": "mcq",
+      "prompt": "Which collection option does the customer choose?",
+      "correct_answers": [
+        "counter"
+      ],
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "explanation_vi": "Khách quyết định lấy tại quầy có nhân viên.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "delivery",
+        "paraphrase",
+        "conditions",
+        "ielts_section1_practice"
+      ],
+      "options": [
+        "locker",
+        "counter",
+        "neighbour"
+      ]
+    },
+    {
+      "question_id": "Q05",
+      "type": "form_completion",
+      "prompt": "Weekday counter closing time: ____",
+      "correct_answers": [
+        "seven"
+      ],
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "explanation_vi": "Quầy có nhân viên đóng lúc bảy giờ.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "delivery",
+        "paraphrase",
+        "conditions",
+        "ielts_section1_practice"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q06",
+      "type": "form_completion",
+      "prompt": "Parcel must be collected within ____ days",
+      "correct_answers": [
+        "five"
+      ],
+      "evidence_turn_ids": [
+        "T11"
+      ],
+      "explanation_vi": "Người nhận có năm ngày theo lịch để lấy.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "delivery",
+        "paraphrase",
+        "conditions",
+        "ielts_section1_practice"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "D01",
+      "type": "dictation",
+      "prompt": "Nghe và chép nguyên văn lượt thoại T05 của nhân vật A.",
+      "correct_answers": [
+        "There's a locker outside Elm Station and a staffed counter inside the shopping centre."
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Câu gốc: There's a locker outside Elm Station and a staffed counter inside the shopping centre. Nghĩa: Có tủ nhận hàng ngoài ga Elm và quầy có nhân viên trong trung tâm mua sắm. Hãy kiểm tra âm cuối, từ chức năng và chi tiết được sửa nếu có.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "delivery",
+        "paraphrase",
+        "conditions",
+        "dictation",
+        "exact_words"
+      ]
+    },
+    {
+      "question_id": "G01",
+      "type": "gap_fill",
+      "prompt": "Điền từ/cụm từ bị lược bỏ sau khi nghe: We can try a neighbour, or send it to a ____. Which would you prefer?",
+      "correct_answers": [
+        "collection point"
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "collection point: điểm nhận hàng. Câu gốc: We can try a neighbour, or send it to a collection point. Which would you prefer?",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "delivery",
+        "paraphrase",
+        "conditions",
+        "gap_fill",
+        "vocabulary_in_context"
+      ]
+    }
+  ],
+  "vocabulary": [
+    {
+      "term": "collection point",
+      "pos": "phrase",
+      "meaning_vi": "điểm nhận hàng",
+      "example_en": "We can try a neighbour, or send it to a collection point. Which would you prefer?",
+      "example_vi": "Chúng tôi có thể giao cho hàng xóm hoặc chuyển đến điểm nhận hàng. Bạn muốn cách nào?",
+      "source_turn_id": "T03"
+    },
+    {
+      "term": "staffed counter",
+      "pos": "phrase",
+      "meaning_vi": "quầy có nhân viên",
+      "example_en": "There's a locker outside Elm Station and a staffed counter inside the shopping centre.",
+      "example_vi": "Có tủ nhận hàng ngoài ga Elm và quầy có nhân viên trong trung tâm mua sắm.",
+      "source_turn_id": "T05"
+    },
+    {
+      "term": "pickup code",
+      "pos": "phrase",
+      "meaning_vi": "mã nhận hàng",
+      "example_en": "You have five calendar days. You'll need the pickup code and a form of identification.",
+      "example_vi": "Bạn có năm ngày theo lịch. Cần mã nhận hàng và giấy tờ tùy thân.",
+      "source_turn_id": "T11"
+    },
+    {
+      "term": "identification",
+      "pos": "word",
+      "meaning_vi": "giấy tờ tùy thân",
+      "example_en": "You have five calendar days. You'll need the pickup code and a form of identification.",
+      "example_vi": "Bạn có năm ngày theo lịch. Cần mã nhận hàng và giấy tờ tùy thân.",
+      "source_turn_id": "T11"
+    }
+  ],
+  "audio": {
+    "status": "not_generated",
+    "url": null,
+    "duration_ms": null,
+    "model": null,
+    "provider": null,
+    "voice_config": null,
+    "source_transcript_hash": "134f102ee74c0cd2aeb8f3f6c08647b2e1232e5b497c88de5cd16e95ea2d80a3",
+    "audio_sha256": null,
+    "format": null
+  },
+  "qa": {
+    "content_reviewed": false,
+    "answers_verified": false,
+    "audio_verified": false,
+    "rights_cleared": false,
+    "duplicate_reviewed": false,
+    "notes": [
+      "Original AI-assisted draft; expert listening pedagogical review required.",
+      "Audio and word-level timestamps do not exist yet.",
+      "This is a practice lesson, not an official IELTS Listening test.",
+      "M16.2: automated edits are provisional; IELTS teacher final signoff, audio and rights clearance pending."
+    ]
+  },
+  "provenance": {
+    "content_origin": "original_ai_assisted",
+    "source_urls": [],
+    "source_rights_note": "Author-created educational dialogue. Verify audio provider distribution rights, service terms and suitability for user age before synthesis and publishing.",
+    "reviewer": null
+  },
+  "release_metadata": {
+    "published_at": null,
+    "version": 1
+  }
+}

@@ -1,0 +1,351 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "DICT-S4-041",
+  "status": "draft",
+  "level": "L7",
+  "section": 4,
+  "topic": "Food Production",
+  "title": "Comparing the Environmental Impact of Farming Methods",
+  "learning_objectives_vi": [
+    "Nghe bài giảng học thuật một người nói, theo dõi quan hệ giữa luận điểm và bằng chứng.",
+    "Luyện các câu hỏi Section 4 theo thứ tự lời giảng; phân tích giới hạn của khái niệm và cách diễn đạt lại.",
+    "Chép chính xác hai đoạn, luyện từ học thuật theo ngữ cảnh và ôn điểm yếu qua Mistake Bank."
+  ],
+  "content_format": "section_practice",
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Academic lecturer",
+      "tts_voice_id": null,
+      "accent_requested": "american"
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "When scientists compare food-production methods, the first challenge is choosing the unit of comparison. Measuring emissions per hectare may favour a different system from measuring emissions per kilogram of edible food. Neither calculation is automatically wrong. They answer different questions. A fair comparison should state whether the priority is land use, total output, nutritional value or some combination of these outcomes.",
+      "translation_vi": "Khi so sánh phương thức sản xuất thực phẩm, thách thức đầu tiên là chọn đơn vị so sánh. Đo phát thải trên mỗi hecta có thể ưu tiên hệ thống khác với đo phát thải trên mỗi kilogram thực phẩm ăn được. Không phép tính nào tự động sai. Chúng trả lời các câu hỏi khác nhau. So sánh công bằng cần nêu ưu tiên là dùng đất, sản lượng, giá trị dinh dưỡng hay kết hợp các kết quả này.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_4",
+        "academic_lecture",
+        "compare",
+        "l7"
+      ]
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "A",
+      "text_en": "One approach is life-cycle assessment, which follows environmental impacts beyond the farm gate. It can include fertiliser manufacture, machinery, packaging, transport and disposal. However, researchers must choose system boundaries. Excluding refrigeration from one product while including it for another would distort the comparison. Transparency about which stages are counted is therefore as important as the final number.",
+      "translation_vi": "Một cách là đánh giá vòng đời, theo dõi tác động môi trường vượt ra ngoài cổng trang trại. Nó có thể gồm sản xuất phân bón, máy móc, đóng gói, vận chuyển và xử lý thải bỏ. Tuy nhiên nhà nghiên cứu phải chọn ranh giới hệ thống. Loại khâu làm lạnh ở một sản phẩm nhưng đưa vào ở sản phẩm khác sẽ làm méo so sánh. Vì thế minh bạch về các giai đoạn được tính quan trọng không kém con số cuối.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_4",
+        "academic_lecture",
+        "compare",
+        "l7"
+      ]
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "A",
+      "text_en": "A second comparison concerns yield and biodiversity. Intensive farming can generate high output on existing land, but it may rely on simplified habitats. More diverse farms may support additional species, while producing less of a particular crop in some conditions. The outcome depends on landscape context, and on what happens to land that is not cultivated. Simple labels such as efficient and natural conceal important variation.",
+      "translation_vi": "So sánh thứ hai liên quan năng suất và đa dạng sinh học. Canh tác thâm canh có thể cho sản lượng cao trên đất hiện có, nhưng có thể dựa vào môi trường sống đơn giản hóa. Trang trại đa dạng hơn có thể hỗ trợ thêm loài, dù đôi lúc tạo ít sản lượng của một cây nhất định. Kết quả còn tùy bối cảnh cảnh quan và điều xảy ra trên phần đất không canh tác. Nhãn đơn giản như hiệu quả hay tự nhiên che đi những biến thiên quan trọng.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_4",
+        "academic_lecture",
+        "compare",
+        "l7"
+      ]
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "A",
+      "text_en": "Researchers also consider uncertainty. Weather, soil properties and farm management can make results vary between locations and years. A single trial may show a promising improvement without establishing how widely it can be reproduced. Replication across seasons helps test reliability. Equally, data from one well-equipped research station may not represent farms with different budgets, labour constraints or access to advice.",
+      "translation_vi": "Nhà nghiên cứu còn xem xét sự bất định. Thời tiết, đặc tính đất và quản lý trang trại có thể khiến kết quả khác theo địa điểm, năm. Một thử nghiệm đơn lẻ có thể cho cải thiện hứa hẹn nhưng chưa chứng minh được tái lập rộng rãi. Lặp lại qua nhiều mùa giúp kiểm tra độ tin cậy. Tương tự, dữ liệu từ trạm nghiên cứu đầy đủ thiết bị có thể không đại diện trang trại với ngân sách, lao động hoặc tư vấn khác nhau.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_4",
+        "academic_lecture",
+        "compare",
+        "l7"
+      ]
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "A",
+      "text_en": "The strongest evaluation does not declare one system universally superior. Instead, it identifies the relevant outcomes, compares like with like and explains the remaining uncertainty. Decision-makers can then weigh food prices, livelihoods, nutrition and environmental protection in a specific region. Evidence becomes useful when it clarifies trade-offs rather than hiding them behind a single ranking.",
+      "translation_vi": "Đánh giá mạnh nhất không tuyên bố một hệ thống vượt trội ở mọi nơi. Thay vào đó, nó xác định kết quả liên quan, so sánh những thứ tương đương và giải thích phần bất định còn lại. Nhà quản lý khi ấy cân nhắc giá thực phẩm, sinh kế, dinh dưỡng và bảo vệ môi trường ở một vùng cụ thể. Bằng chứng hữu ích khi làm rõ đánh đổi thay vì che chúng sau một bảng xếp hạng đơn nhất.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_4",
+        "academic_lecture",
+        "compare",
+        "l7"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "type": "note_completion",
+      "prompt": "Two emissions measures may use hectares or kilograms of ____ food.",
+      "correct_answers": [
+        "edible"
+      ],
+      "evidence_turn_ids": [
+        "T01"
+      ],
+      "explanation_vi": "Đáp án “edible” nằm tại đoạn T01. Nội dung bằng chứng: Khi so sánh phương thức sản xuất thực phẩm, thách thức đầu tiên là chọn đơn vị so sánh. Đo phát thải trên mỗi hecta có thể ưu tiên hệ thống khác với đo phát thải trên mỗi kilogram thực phẩm ăn được. Không phép tính nào tự động sai. Chúng trả lời các câu hỏi khác nhau. So sánh công bằng cần nêu ưu tiên là dùng đất, sản lượng, giá trị dinh dưỡng hay kết hợp các kết quả này.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_4",
+        "ielts_practice",
+        "compare",
+        "note_completion"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q02",
+      "type": "note_completion",
+      "prompt": "The assessment that tracks impacts through multiple production stages is ____.",
+      "correct_answers": [
+        "life-cycle assessment"
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Đáp án “life-cycle assessment” nằm tại đoạn T02. Nội dung bằng chứng: Một cách là đánh giá vòng đời, theo dõi tác động môi trường vượt ra ngoài cổng trang trại. Nó có thể gồm sản xuất phân bón, máy móc, đóng gói, vận chuyển và xử lý thải bỏ. Tuy nhiên nhà nghiên cứu phải chọn ranh giới hệ thống. Loại khâu làm lạnh ở một sản phẩm nhưng đưa vào ở sản phẩm khác sẽ làm méo so sánh. Vì thế minh bạch về các giai đoạn được tính quan trọng không kém con số cuối.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_4",
+        "ielts_practice",
+        "compare",
+        "note_completion"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q03",
+      "type": "note_completion",
+      "prompt": "Different farming systems may create trade-offs between yield and ____.",
+      "correct_answers": [
+        "biodiversity"
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Đáp án “biodiversity” nằm tại đoạn T03. Nội dung bằng chứng: So sánh thứ hai liên quan năng suất và đa dạng sinh học. Canh tác thâm canh có thể cho sản lượng cao trên đất hiện có, nhưng có thể dựa vào môi trường sống đơn giản hóa. Trang trại đa dạng hơn có thể hỗ trợ thêm loài, dù đôi lúc tạo ít sản lượng của một cây nhất định. Kết quả còn tùy bối cảnh cảnh quan và điều xảy ra trên phần đất không canh tác. Nhãn đơn giản như hiệu quả hay tự nhiên che đi những biến thiên quan trọng.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_4",
+        "ielts_practice",
+        "compare",
+        "note_completion"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q04",
+      "type": "note_completion",
+      "prompt": "Repeated studies across seasons help test ____.",
+      "correct_answers": [
+        "reliability"
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Đáp án “reliability” nằm tại đoạn T04. Nội dung bằng chứng: Nhà nghiên cứu còn xem xét sự bất định. Thời tiết, đặc tính đất và quản lý trang trại có thể khiến kết quả khác theo địa điểm, năm. Một thử nghiệm đơn lẻ có thể cho cải thiện hứa hẹn nhưng chưa chứng minh được tái lập rộng rãi. Lặp lại qua nhiều mùa giúp kiểm tra độ tin cậy. Tương tự, dữ liệu từ trạm nghiên cứu đầy đủ thiết bị có thể không đại diện trang trại với ngân sách, lao động hoặc tư vấn khác nhau.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_4",
+        "ielts_practice",
+        "compare",
+        "note_completion"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q05",
+      "type": "sentence_completion",
+      "prompt": "Strong evaluations should make their remaining ____ explicit.",
+      "correct_answers": [
+        "uncertainty"
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Đáp án “uncertainty” nằm tại đoạn T05. Nội dung bằng chứng: Đánh giá mạnh nhất không tuyên bố một hệ thống vượt trội ở mọi nơi. Thay vào đó, nó xác định kết quả liên quan, so sánh những thứ tương đương và giải thích phần bất định còn lại. Nhà quản lý khi ấy cân nhắc giá thực phẩm, sinh kế, dinh dưỡng và bảo vệ môi trường ở một vùng cụ thể. Bằng chứng hữu ích khi làm rõ đánh đổi thay vì che chúng sau một bảng xếp hạng đơn nhất.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_4",
+        "ielts_practice",
+        "compare",
+        "sentence_completion"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q06",
+      "type": "mcq",
+      "prompt": "Which design best supports a fair comparison between farming systems?",
+      "correct_answers": [
+        "Use a consistent unit, clear boundaries and evidence across settings"
+      ],
+      "options": [
+        "Compare one farm’s annual yield with another farm’s emissions per meal",
+        "Use a consistent unit, clear boundaries and evidence across settings",
+        "Ignore uncertainty once a single trial has produced a positive result"
+      ],
+      "evidence_turn_ids": [
+        "T01",
+        "T03",
+        "T05"
+      ],
+      "explanation_vi": "Hãy kết hợp luận điểm đầu, ví dụ ở giữa và kết luận cuối bài. Đánh giá mạnh nhất không tuyên bố một hệ thống vượt trội ở mọi nơi. Thay vào đó, nó xác định kết quả liên quan, so sánh những thứ tương đương và giải thích phần bất định còn lại. Nhà quản lý khi ấy cân nhắc giá thực phẩm, sinh kế, dinh dưỡng và bảo vệ môi trường ở một vùng cụ thể. Bằng chứng hữu ích khi làm rõ đánh đổi thay vì che chúng sau một bảng xếp hạng đơn nhất. Phương án chính xác: “Use a consistent unit, clear boundaries and evidence across settings”; hai phương án khác khái quát quá mức hoặc không phù hợp bằng chứng.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "section_4",
+        "ielts_practice",
+        "compare",
+        "main_idea"
+      ]
+    },
+    {
+      "question_id": "D01",
+      "type": "dictation",
+      "prompt": "Nghe đoạn T02 và chép lại chính xác lời giảng.",
+      "correct_answers": [
+        "One approach is life-cycle assessment, which follows environmental impacts beyond the farm gate. It can include fertiliser manufacture, machinery, packaging, transport and disposal. However, researchers must choose system boundaries. Excluding refrigeration from one product while including it for another would distort the comparison. Transparency about which stages are counted is therefore as important as the final number."
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Phân tích từ nối, âm yếu và cụm thuật ngữ học thuật. Nghĩa của đoạn: Một cách là đánh giá vòng đời, theo dõi tác động môi trường vượt ra ngoài cổng trang trại. Nó có thể gồm sản xuất phân bón, máy móc, đóng gói, vận chuyển và xử lý thải bỏ. Tuy nhiên nhà nghiên cứu phải chọn ranh giới hệ thống. Loại khâu làm lạnh ở một sản phẩm nhưng đưa vào ở sản phẩm khác sẽ làm méo so sánh. Vì thế minh bạch về các giai đoạn được tính quan trọng không kém con số cuối.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_4",
+        "dictation",
+        "exact_transcript"
+      ]
+    },
+    {
+      "question_id": "D02",
+      "type": "dictation",
+      "prompt": "Nghe đoạn T04 và chép lại chính xác lời giảng.",
+      "correct_answers": [
+        "Researchers also consider uncertainty. Weather, soil properties and farm management can make results vary between locations and years. A single trial may show a promising improvement without establishing how widely it can be reproduced. Replication across seasons helps test reliability. Equally, data from one well-equipped research station may not represent farms with different budgets, labour constraints or access to advice."
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Phân tích từ nối, âm yếu và cụm thuật ngữ học thuật. Nghĩa của đoạn: Nhà nghiên cứu còn xem xét sự bất định. Thời tiết, đặc tính đất và quản lý trang trại có thể khiến kết quả khác theo địa điểm, năm. Một thử nghiệm đơn lẻ có thể cho cải thiện hứa hẹn nhưng chưa chứng minh được tái lập rộng rãi. Lặp lại qua nhiều mùa giúp kiểm tra độ tin cậy. Tương tự, dữ liệu từ trạm nghiên cứu đầy đủ thiết bị có thể không đại diện trang trại với ngân sách, lao động hoặc tư vấn khác nhau.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_4",
+        "dictation",
+        "exact_transcript"
+      ]
+    },
+    {
+      "question_id": "G01",
+      "type": "gap_fill",
+      "prompt": "Nghe T01 rồi điền phần thiếu: When scientists compare food-production methods, the first challenge is choosing the unit of comparison. Measuring emissions per hectare may favour a different system from measuring emissions per kilogram of ____. Neither calculation is automatically wrong. They answer different questions. A fair comparison should state whether the priority is land use, total output, nutritional value or some combination of these outcomes.",
+      "correct_answers": [
+        "edible food"
+      ],
+      "evidence_turn_ids": [
+        "T01"
+      ],
+      "explanation_vi": "Điền “edible food”, nghĩa: thực phẩm ăn được. Cụm từ này xuất hiện trong T01.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_4",
+        "gap_fill",
+        "academic_vocabulary"
+      ]
+    }
+  ],
+  "vocabulary": [
+    {
+      "term": "edible food",
+      "pos": "n. phr.",
+      "meaning_vi": "thực phẩm ăn được",
+      "example_en": "When scientists compare food-production methods, the first challenge is choosing the unit of comparison. Measuring emissions per hectare may favour a different system from measuring emissions per kilogram of edible food. Neither calculation is automatically wrong. They answer different questions. A fair comparison should state whether the priority is land use, total output, nutritional value or some combination of these outcomes.",
+      "example_vi": "Khi so sánh phương thức sản xuất thực phẩm, thách thức đầu tiên là chọn đơn vị so sánh. Đo phát thải trên mỗi hecta có thể ưu tiên hệ thống khác với đo phát thải trên mỗi kilogram thực phẩm ăn được. Không phép tính nào tự động sai. Chúng trả lời các câu hỏi khác nhau. So sánh công bằng cần nêu ưu tiên là dùng đất, sản lượng, giá trị dinh dưỡng hay kết hợp các kết quả này.",
+      "source_turn_id": "T01"
+    },
+    {
+      "term": "life-cycle assessment",
+      "pos": "n. phr.",
+      "meaning_vi": "đánh giá vòng đời",
+      "example_en": "One approach is life-cycle assessment, which follows environmental impacts beyond the farm gate. It can include fertiliser manufacture, machinery, packaging, transport and disposal. However, researchers must choose system boundaries. Excluding refrigeration from one product while including it for another would distort the comparison. Transparency about which stages are counted is therefore as important as the final number.",
+      "example_vi": "Một cách là đánh giá vòng đời, theo dõi tác động môi trường vượt ra ngoài cổng trang trại. Nó có thể gồm sản xuất phân bón, máy móc, đóng gói, vận chuyển và xử lý thải bỏ. Tuy nhiên nhà nghiên cứu phải chọn ranh giới hệ thống. Loại khâu làm lạnh ở một sản phẩm nhưng đưa vào ở sản phẩm khác sẽ làm méo so sánh. Vì thế minh bạch về các giai đoạn được tính quan trọng không kém con số cuối.",
+      "source_turn_id": "T02"
+    },
+    {
+      "term": "biodiversity",
+      "pos": "n.",
+      "meaning_vi": "đa dạng sinh học",
+      "example_en": "A second comparison concerns yield and biodiversity. Intensive farming can generate high output on existing land, but it may rely on simplified habitats. More diverse farms may support additional species, while producing less of a particular crop in some conditions. The outcome depends on landscape context, and on what happens to land that is not cultivated. Simple labels such as efficient and natural conceal important variation.",
+      "example_vi": "So sánh thứ hai liên quan năng suất và đa dạng sinh học. Canh tác thâm canh có thể cho sản lượng cao trên đất hiện có, nhưng có thể dựa vào môi trường sống đơn giản hóa. Trang trại đa dạng hơn có thể hỗ trợ thêm loài, dù đôi lúc tạo ít sản lượng của một cây nhất định. Kết quả còn tùy bối cảnh cảnh quan và điều xảy ra trên phần đất không canh tác. Nhãn đơn giản như hiệu quả hay tự nhiên che đi những biến thiên quan trọng.",
+      "source_turn_id": "T03"
+    },
+    {
+      "term": "Replication",
+      "pos": "n.",
+      "meaning_vi": "việc lặp lại phép thử",
+      "example_en": "Researchers also consider uncertainty. Weather, soil properties and farm management can make results vary between locations and years. A single trial may show a promising improvement without establishing how widely it can be reproduced. Replication across seasons helps test reliability. Equally, data from one well-equipped research station may not represent farms with different budgets, labour constraints or access to advice.",
+      "example_vi": "Nhà nghiên cứu còn xem xét sự bất định. Thời tiết, đặc tính đất và quản lý trang trại có thể khiến kết quả khác theo địa điểm, năm. Một thử nghiệm đơn lẻ có thể cho cải thiện hứa hẹn nhưng chưa chứng minh được tái lập rộng rãi. Lặp lại qua nhiều mùa giúp kiểm tra độ tin cậy. Tương tự, dữ liệu từ trạm nghiên cứu đầy đủ thiết bị có thể không đại diện trang trại với ngân sách, lao động hoặc tư vấn khác nhau.",
+      "source_turn_id": "T04"
+    }
+  ],
+  "audio": {
+    "status": "not_generated",
+    "url": null,
+    "duration_ms": null,
+    "model": null,
+    "provider": null,
+    "voice_config": null,
+    "source_transcript_hash": "456455670914c59f2709a2c55b64175991f2de486684896988ef63e372ba7538",
+    "audio_sha256": null,
+    "format": null
+  },
+  "qa": {
+    "content_reviewed": false,
+    "answers_verified": false,
+    "audio_verified": false,
+    "rights_cleared": false,
+    "duplicate_reviewed": false,
+    "notes": [
+      "Original AI-assisted educational script, not an official IELTS transcript.",
+      "Editorial, academic and linguistic review pending.",
+      "Audio/TTS not generated; text-to-speech distribution rights must be confirmed before use, especially for minors.",
+      "Six IELTS-style practice questions per lesson; this is not a full official Part 4 test or a calibrated IELTS Band test.",
+      "M16.2: automated edits are provisional; IELTS teacher final signoff, audio and rights clearance pending."
+    ]
+  },
+  "provenance": {
+    "content_origin": "original_ai_assisted",
+    "source_urls": [],
+    "source_rights_note": "Original transcript and translation drafts; verify academic claims and terms, and TTS provider redistribution conditions before release.",
+    "reviewer": null
+  },
+  "release_metadata": {
+    "published_at": null,
+    "version": 1
+  }
+}

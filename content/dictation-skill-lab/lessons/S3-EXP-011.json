@@ -1,0 +1,810 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "S3-EXP-011",
+  "status": "draft",
+  "level": "L6",
+  "section": 3,
+  "topic": "Psychology memory and confounding factors",
+  "title": "Revising a Psychology Memory Experiment",
+  "learning_objectives_vi": [
+    "Phân biệt quan điểm ban đầu, lời phản biện và quyết định cuối trong thảo luận học thuật.",
+    "Nghe các phương án gây nhiễu và từ đồng nghĩa để chọn đáp án theo ý nghĩa.",
+    "Ghép nhiều mục với người nói mà không suy đoán chỉ dựa vào từ khóa."
+  ],
+  "content_format": "section_practice",
+  "target_skills": [
+    "experimental_design",
+    "opinion_tracking",
+    "academic_discussion",
+    "matching",
+    "multiple_choice"
+  ],
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "University tutor / seminar adviser",
+      "accent_requested": "north_american",
+      "tts_voice_id": null
+    },
+    {
+      "speaker_id": "B",
+      "role": "University student 1",
+      "accent_requested": "british",
+      "tts_voice_id": null
+    },
+    {
+      "speaker_id": "C",
+      "role": "University student 2",
+      "accent_requested": "new_zealand",
+      "tts_voice_id": null
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "The psychology department approved your class experiment in principle, but the two groups have very different materials. One reads a story and the other memorises a list of unrelated words. What are you really comparing?",
+      "translation_vi": "Khoa tâm lý đồng ý về nguyên tắc, nhưng hai nhóm dùng tài liệu rất khác. Một nhóm đọc truyện, nhóm kia học danh sách từ rời; các em đang so cái gì?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "experimental_design",
+        "academic_discussion",
+        "opinion_tracking",
+        "paraphrase",
+        "distractor_analysis"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "B",
+      "text_en": "We wanted to see whether music improves memory. Yet the story group was given music, while the word-list group worked in silence. Now I see we changed both the material and the sound condition.",
+      "translation_vi": "Bọn em muốn xem nhạc cải thiện trí nhớ không. Nhưng nhóm đọc truyện có nhạc, nhóm học từ thì im lặng; chúng em đã đổi cả tài liệu lẫn điều kiện âm.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "experimental_design",
+        "academic_discussion",
+        "opinion_tracking",
+        "paraphrase",
+        "distractor_analysis"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "C",
+      "text_en": "We should give everyone the same kind of material and randomly assign the sound condition. Otherwise better results could come from the story being easier to remember rather than from the music.",
+      "translation_vi": "Nên cho mọi người cùng loại tài liệu và phân ngẫu nhiên điều kiện âm, nếu không có thể do truyện dễ nhớ hơn chứ không vì nhạc.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "experimental_design",
+        "academic_discussion",
+        "opinion_tracking",
+        "paraphrase",
+        "distractor_analysis"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "A",
+      "text_en": "Use equivalent word lists and change only whether quiet instrumental music is playing. You can then compare recall fairly, though you must still be cautious about drawing conclusions from a small class sample.",
+      "translation_vi": "Dùng danh sách từ tương đương và chỉ đổi có nhạc không lời nhẹ hay không. So hồi tưởng công bằng hơn, nhưng vẫn thận trọng vì mẫu nhỏ.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "experimental_design",
+        "academic_discussion",
+        "opinion_tracking",
+        "paraphrase",
+        "distractor_analysis"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "B",
+      "text_en": "We also planned to let volunteers choose their preferred music, but some would select fast songs with lyrics. Their familiarity and attention might then differ in ways the experiment cannot control.",
+      "translation_vi": "Bọn em định cho chọn nhạc yêu thích, nhưng có người sẽ chọn bài nhanh có lời. Độ quen và tập trung khác nhau khó kiểm soát.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "experimental_design",
+        "academic_discussion",
+        "opinion_tracking",
+        "paraphrase",
+        "distractor_analysis"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "C",
+      "text_en": "Use the same instrumental recording for everybody in the music condition. Ask afterwards whether they found it distracting, but don't change the track halfway through because somebody dislikes it.",
+      "translation_vi": "Hãy dùng một bản không lời cho cả nhóm có nhạc. Hỏi sau có thấy mất tập trung không, nhưng không đổi nhạc giữa chừng vì ai đó không thích.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "experimental_design",
+        "academic_discussion",
+        "opinion_tracking",
+        "paraphrase",
+        "distractor_analysis"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "Exactly. Give participants the same study time and an identical delay before recall. If one group has five extra minutes, the experiment would no longer isolate the effect of sound.",
+      "translation_vi": "Đúng. Cho thời gian học như nhau và khoảng chờ trước khi nhớ lại giống nhau. Nếu một nhóm hơn năm phút, không còn cô lập tác động của âm.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "experimental_design",
+        "academic_discussion",
+        "opinion_tracking",
+        "paraphrase",
+        "distractor_analysis"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "B",
+      "text_en": "I suggest using a practice round to make the task familiar, then a fresh set of words for the actual measurement. Otherwise nervousness about the procedure may influence the first results.",
+      "translation_vi": "Em đề xuất vòng thử để quen thao tác, rồi bộ từ mới cho đo chính; nếu không căng thẳng với quy trình có thể ảnh hưởng lần đầu.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "experimental_design",
+        "academic_discussion",
+        "opinion_tracking",
+        "paraphrase",
+        "distractor_analysis"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T09",
+      "speaker_id": "C",
+      "text_en": "I'll prepare two word lists matched for length and everyday familiarity. A list full of unusual terms could make one condition look worse even if the music had no effect.",
+      "translation_vi": "Em sẽ chuẩn bị hai danh sách từ cân bằng độ dài và độ quen. Danh sách toàn từ lạ có thể khiến một điều kiện trông kém dù nhạc không tác động.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "experimental_design",
+        "academic_discussion",
+        "opinion_tracking",
+        "paraphrase",
+        "distractor_analysis"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T10",
+      "speaker_id": "A",
+      "text_en": "I will review the consent statement and make sure students understand that memory scores are not part of their course grades. They should be free to leave the trial at any point.",
+      "translation_vi": "Thầy sẽ rà phiếu đồng ý, bảo đảm mọi người hiểu điểm nhớ không tính điểm môn. Họ có quyền rời thử nghiệm bất cứ lúc nào.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "experimental_design",
+        "academic_discussion",
+        "opinion_tracking",
+        "paraphrase",
+        "distractor_analysis"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T11",
+      "speaker_id": "B",
+      "text_en": "I'll build the recall sheet and check that the instructions are worded identically for both conditions. Small differences in coaching could change the outcome.",
+      "translation_vi": "Em sẽ làm phiếu nhớ lại và kiểm tra hướng dẫn giống hệt giữa hai điều kiện. Khác biệt nhỏ trong lời hướng dẫn cũng làm đổi kết quả.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "experimental_design",
+        "academic_discussion",
+        "opinion_tracking",
+        "paraphrase",
+        "distractor_analysis"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T12",
+      "speaker_id": "C",
+      "text_en": "I'll randomise the order of participants and record the actual room noise. Even a controlled soundtrack won't help if a noisy corridor affects only one session.",
+      "translation_vi": "Em sẽ ngẫu nhiên thứ tự người tham gia và ghi tiếng ồn phòng thực tế; nhạc được kiểm soát vẫn vô ích nếu hành lang ồn chỉ ở một buổi.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "experimental_design",
+        "academic_discussion",
+        "opinion_tracking",
+        "paraphrase",
+        "distractor_analysis"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T13",
+      "speaker_id": "A",
+      "text_en": "Run the trial with a small number first and report how many words were recalled, not whether music is 'good for the brain'. That conclusion would go far beyond this experiment.",
+      "translation_vi": "Hãy thử với nhóm nhỏ và báo số từ nhớ được, không kết luận âm nhạc 'tốt cho não'. Kết luận đó vượt xa thí nghiệm.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "experimental_design",
+        "academic_discussion",
+        "opinion_tracking",
+        "paraphrase",
+        "distractor_analysis"
+      ],
+      "bank_role": "training"
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "group_id": "IELTS_S3_MC_GROUP",
+      "type": "mcq",
+      "prompt": "What was the central weakness of the initial experiment?",
+      "correct_answers": [
+        "Two variables were changed at once"
+      ],
+      "options": [
+        "The students were tested outdoors",
+        "The reading material was copyrighted",
+        "Two variables were changed at once"
+      ],
+      "correct_option": "C",
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "evidence_excerpt_en": "We wanted to see whether music improves memory. Yet the story group was given music, while the word-list group worked in silence. Now I see we changed both the material and the sound condition.",
+      "explanation_vi": "Vừa đổi loại tài liệu vừa đổi điều kiện nghe nhạc.",
+      "question_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "infer_decision",
+        "paraphrase",
+        "experimental_design"
+      ],
+      "scoring_policy": "strict",
+      "bank_role": "training",
+      "answer_provenance": "original_draft_authored_against_transcript",
+      "review_status": "awaiting_teacher_and_audio_review"
+    },
+    {
+      "question_id": "Q02",
+      "group_id": "IELTS_S3_MC_GROUP",
+      "type": "mcq",
+      "prompt": "What material does the tutor want both groups to use?",
+      "correct_answers": [
+        "Comparable lists of words"
+      ],
+      "options": [
+        "Separate lecture recordings",
+        "Comparable lists of words",
+        "Different short stories"
+      ],
+      "correct_option": "B",
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "evidence_excerpt_en": "Use equivalent word lists and change only whether quiet instrumental music is playing. You can then compare recall fairly, though you must still be cautious about drawing conclusions from a small class sample.",
+      "explanation_vi": "Hai nhóm dùng danh sách từ tương đương.",
+      "question_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "infer_decision",
+        "paraphrase",
+        "experimental_design"
+      ],
+      "scoring_policy": "strict",
+      "bank_role": "training",
+      "answer_provenance": "original_draft_authored_against_transcript",
+      "review_status": "awaiting_teacher_and_audio_review"
+    },
+    {
+      "question_id": "Q03",
+      "group_id": "IELTS_S3_MC_GROUP",
+      "type": "mcq",
+      "prompt": "Why should all music-condition participants hear one recording?",
+      "correct_answers": [
+        "To keep the sound condition consistent"
+      ],
+      "options": [
+        "To measure personal taste accurately",
+        "To keep the sound condition consistent",
+        "To make the music more entertaining"
+      ],
+      "correct_option": "B",
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "evidence_excerpt_en": "Use the same instrumental recording for everybody in the music condition. Ask afterwards whether they found it distracting, but don't change the track halfway through because somebody dislikes it.",
+      "explanation_vi": "Phải giữ âm nhạc nhất quán.",
+      "question_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "infer_decision",
+        "paraphrase",
+        "experimental_design"
+      ],
+      "scoring_policy": "strict",
+      "bank_role": "training",
+      "answer_provenance": "original_draft_authored_against_transcript",
+      "review_status": "awaiting_teacher_and_audio_review"
+    },
+    {
+      "question_id": "Q04",
+      "group_id": "IELTS_S3_MC_GROUP",
+      "type": "mcq",
+      "prompt": "What is the purpose of a practice round?",
+      "correct_answers": [
+        "To reduce unfamiliarity with the procedure"
+      ],
+      "options": [
+        "To replace the main memory test",
+        "To reduce unfamiliarity with the procedure",
+        "To improve participants’ vocabulary permanently"
+      ],
+      "correct_option": "B",
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "evidence_excerpt_en": "I suggest using a practice round to make the task familiar, then a fresh set of words for the actual measurement. Otherwise nervousness about the procedure may influence the first results.",
+      "explanation_vi": "Vòng thử giúp quen thao tác trước khi đo.",
+      "question_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "infer_decision",
+        "paraphrase",
+        "experimental_design"
+      ],
+      "scoring_policy": "strict",
+      "bank_role": "training",
+      "answer_provenance": "original_draft_authored_against_transcript",
+      "review_status": "awaiting_teacher_and_audio_review"
+    },
+    {
+      "question_id": "Q05",
+      "group_id": "IELTS_S3_SPEAKER_MATCHING_GROUP",
+      "type": "matching",
+      "prompt": "Which speaker is associated with this proposal or responsibility: prepare matched word lists?",
+      "options": [
+        "A — course tutor",
+        "B — first student",
+        "C — second student"
+      ],
+      "correct_answers": [
+        "C"
+      ],
+      "correct_option": "C",
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "evidence_excerpt_en": "I'll prepare two word lists matched for length and everyday familiarity. A list full of unusual terms could make one condition look worse even if the music had no effect.",
+      "explanation_vi": "Đề cập trong lượt T09 của người nói C. Cần nghe đúng ai đưa ra đề xuất, không chỉ xác định ý tưởng xuất hiện ở đoạn nào.",
+      "question_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "speaker_opinion_matching",
+        "experimental_design"
+      ],
+      "scoring_policy": "strict",
+      "bank_role": "training",
+      "answer_provenance": "original_draft_authored_against_transcript",
+      "review_status": "awaiting_teacher_and_audio_review",
+      "matching_group_instructions_en": "Match each proposal or responsibility to the speaker who introduced it or volunteered for it. Choose A, B or C. You may use each letter more than once."
+    },
+    {
+      "question_id": "Q06",
+      "group_id": "IELTS_S3_SPEAKER_MATCHING_GROUP",
+      "type": "matching",
+      "prompt": "Which speaker is associated with this proposal or responsibility: review voluntary participation and consent?",
+      "options": [
+        "A — course tutor",
+        "B — first student",
+        "C — second student"
+      ],
+      "correct_answers": [
+        "A"
+      ],
+      "correct_option": "A",
+      "evidence_turn_ids": [
+        "T10"
+      ],
+      "evidence_excerpt_en": "I will review the consent statement and make sure students understand that memory scores are not part of their course grades. They should be free to leave the trial at any point.",
+      "explanation_vi": "Đề cập trong lượt T10 của người nói A. Cần nghe đúng ai đưa ra đề xuất, không chỉ xác định ý tưởng xuất hiện ở đoạn nào.",
+      "question_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "speaker_opinion_matching",
+        "experimental_design"
+      ],
+      "scoring_policy": "strict",
+      "bank_role": "training",
+      "answer_provenance": "original_draft_authored_against_transcript",
+      "review_status": "awaiting_teacher_and_audio_review",
+      "matching_group_instructions_en": "Match each proposal or responsibility to the speaker who introduced it or volunteered for it. Choose A, B or C. You may use each letter more than once."
+    },
+    {
+      "question_id": "Q07",
+      "group_id": "IELTS_S3_SPEAKER_MATCHING_GROUP",
+      "type": "matching",
+      "prompt": "Which speaker is associated with this proposal or responsibility: write identical recall instructions?",
+      "options": [
+        "A — course tutor",
+        "B — first student",
+        "C — second student"
+      ],
+      "correct_answers": [
+        "B"
+      ],
+      "correct_option": "B",
+      "evidence_turn_ids": [
+        "T11"
+      ],
+      "evidence_excerpt_en": "I'll build the recall sheet and check that the instructions are worded identically for both conditions. Small differences in coaching could change the outcome.",
+      "explanation_vi": "Đề cập trong lượt T11 của người nói B. Cần nghe đúng ai đưa ra đề xuất, không chỉ xác định ý tưởng xuất hiện ở đoạn nào.",
+      "question_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "speaker_opinion_matching",
+        "experimental_design"
+      ],
+      "scoring_policy": "strict",
+      "bank_role": "training",
+      "answer_provenance": "original_draft_authored_against_transcript",
+      "review_status": "awaiting_teacher_and_audio_review",
+      "matching_group_instructions_en": "Match each proposal or responsibility to the speaker who introduced it or volunteered for it. Choose A, B or C. You may use each letter more than once."
+    },
+    {
+      "question_id": "Q08",
+      "group_id": "IELTS_S3_SPEAKER_MATCHING_GROUP",
+      "type": "matching",
+      "prompt": "Which speaker is associated with this proposal or responsibility: randomise participant order and monitor room noise?",
+      "options": [
+        "A — course tutor",
+        "B — first student",
+        "C — second student"
+      ],
+      "correct_answers": [
+        "C"
+      ],
+      "correct_option": "C",
+      "evidence_turn_ids": [
+        "T12"
+      ],
+      "evidence_excerpt_en": "I'll randomise the order of participants and record the actual room noise. Even a controlled soundtrack won't help if a noisy corridor affects only one session.",
+      "explanation_vi": "Đề cập trong lượt T12 của người nói C. Cần nghe đúng ai đưa ra đề xuất, không chỉ xác định ý tưởng xuất hiện ở đoạn nào.",
+      "question_tags": [
+        "m23",
+        "ielts_part_3_practice",
+        "speaker_opinion_matching",
+        "experimental_design"
+      ],
+      "scoring_policy": "strict",
+      "bank_role": "training",
+      "answer_provenance": "original_draft_authored_against_transcript",
+      "review_status": "awaiting_teacher_and_audio_review",
+      "matching_group_instructions_en": "Match each proposal or responsibility to the speaker who introduced it or volunteered for it. Choose A, B or C. You may use each letter more than once."
+    },
+    {
+      "question_id": "D01",
+      "group_id": "SELECTIVE_DICTATION",
+      "type": "dictation",
+      "prompt": "Nghe và chép nguyên văn lượt thoại T03 của người nói C.",
+      "correct_answers": [
+        "We should give everyone the same kind of material and randomly assign the sound condition. Otherwise better results could come from the story being easier to remember rather than from the music."
+      ],
+      "scoring_policy": "dictation_normalised",
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "evidence_excerpt_en": "We should give everyone the same kind of material and randomly assign the sound condition. Otherwise better results could come from the story being easier to remember rather than from the music.",
+      "explanation_vi": "Đối chiếu từng từ, mạo từ và từ nối; đánh giá cả khả năng nhận diện cụm từ ở tốc độ nói tự nhiên.",
+      "bank_role": "training",
+      "question_tags": [
+        "m23",
+        "selective_dictation",
+        "experimental_design"
+      ]
+    },
+    {
+      "question_id": "D02",
+      "group_id": "SELECTIVE_DICTATION",
+      "type": "dictation",
+      "prompt": "Nghe và chép nguyên văn lượt thoại T05 của người nói B.",
+      "correct_answers": [
+        "We also planned to let volunteers choose their preferred music, but some would select fast songs with lyrics. Their familiarity and attention might then differ in ways the experiment cannot control."
+      ],
+      "scoring_policy": "dictation_normalised",
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "evidence_excerpt_en": "We also planned to let volunteers choose their preferred music, but some would select fast songs with lyrics. Their familiarity and attention might then differ in ways the experiment cannot control.",
+      "explanation_vi": "Đối chiếu từng từ, mạo từ và từ nối; đánh giá cả khả năng nhận diện cụm từ ở tốc độ nói tự nhiên.",
+      "bank_role": "training",
+      "question_tags": [
+        "m23",
+        "selective_dictation",
+        "experimental_design"
+      ]
+    },
+    {
+      "question_id": "D03",
+      "group_id": "SELECTIVE_DICTATION",
+      "type": "dictation",
+      "prompt": "Nghe và chép nguyên văn lượt thoại T07 của người nói A.",
+      "correct_answers": [
+        "Exactly. Give participants the same study time and an identical delay before recall. If one group has five extra minutes, the experiment would no longer isolate the effect of sound."
+      ],
+      "scoring_policy": "dictation_normalised",
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "evidence_excerpt_en": "Exactly. Give participants the same study time and an identical delay before recall. If one group has five extra minutes, the experiment would no longer isolate the effect of sound.",
+      "explanation_vi": "Đối chiếu từng từ, mạo từ và từ nối; đánh giá cả khả năng nhận diện cụm từ ở tốc độ nói tự nhiên.",
+      "bank_role": "training",
+      "question_tags": [
+        "m23",
+        "selective_dictation",
+        "experimental_design"
+      ]
+    },
+    {
+      "question_id": "D04",
+      "group_id": "SELECTIVE_DICTATION",
+      "type": "dictation",
+      "prompt": "Nghe và chép nguyên văn lượt thoại T11 của người nói B.",
+      "correct_answers": [
+        "I'll build the recall sheet and check that the instructions are worded identically for both conditions. Small differences in coaching could change the outcome."
+      ],
+      "scoring_policy": "dictation_normalised",
+      "evidence_turn_ids": [
+        "T11"
+      ],
+      "evidence_excerpt_en": "I'll build the recall sheet and check that the instructions are worded identically for both conditions. Small differences in coaching could change the outcome.",
+      "explanation_vi": "Đối chiếu từng từ, mạo từ và từ nối; đánh giá cả khả năng nhận diện cụm từ ở tốc độ nói tự nhiên.",
+      "bank_role": "training",
+      "question_tags": [
+        "m23",
+        "selective_dictation",
+        "experimental_design"
+      ]
+    },
+    {
+      "question_id": "G01",
+      "group_id": "GAP_FILL_PRACTICE",
+      "type": "gap_fill",
+      "prompt": "Nghe lượt thoại T01 và điền cụm bị thiếu: The psychology department approved your class experiment in principle, but the two groups have very different materials. One reads a story and the other ____s a list of unrelated words. What are you really comparing?",
+      "correct_answers": [
+        "memorise"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN 2 WORDS",
+      "scoring_policy": "controlled_variants",
+      "evidence_turn_ids": [
+        "T01"
+      ],
+      "evidence_excerpt_en": "The psychology department approved your class experiment in principle, but the two groups have very different materials. One reads a story and the other memorises a list of unrelated words. What are you really comparing?",
+      "explanation_vi": "Cụm nghe được là “memorise” (ghi nhớ); cần dựa vào ngữ cảnh chứ không chỉ đoán từ loại.",
+      "question_tags": [
+        "m23",
+        "gap_fill",
+        "experimental_design"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "question_id": "G02",
+      "group_id": "GAP_FILL_PRACTICE",
+      "type": "gap_fill",
+      "prompt": "Nghe lượt thoại T02 và điền cụm bị thiếu: We wanted to see whether music improves memory. Yet the story group was given music, while the word-list group worked in silence. Now I see we changed both the material and the ____.",
+      "correct_answers": [
+        "sound condition"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN 2 WORDS",
+      "scoring_policy": "controlled_variants",
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "evidence_excerpt_en": "We wanted to see whether music improves memory. Yet the story group was given music, while the word-list group worked in silence. Now I see we changed both the material and the sound condition.",
+      "explanation_vi": "Cụm nghe được là “sound condition” (điều kiện âm thanh); cần dựa vào ngữ cảnh chứ không chỉ đoán từ loại.",
+      "question_tags": [
+        "m23",
+        "gap_fill",
+        "experimental_design"
+      ],
+      "bank_role": "training"
+    }
+  ],
+  "vocabulary": [
+    {
+      "vocab_id": "S3-EXP-011-V01",
+      "expression_en": "memorise",
+      "meaning_vi": "ghi nhớ",
+      "part_of_speech": "noun phrase",
+      "example_en": "The psychology department approved your class experiment in principle, but the two groups have very different materials. One reads a story and the other memorises a list of unrelated words. What are you really comparing?",
+      "example_vi": "Khoa tâm lý đồng ý về nguyên tắc, nhưng hai nhóm dùng tài liệu rất khác. Một nhóm đọc truyện, nhóm kia học danh sách từ rời; các em đang so cái gì?",
+      "evidence_turn_id": "T01",
+      "can_save_to_notebook": true,
+      "requires_human_pos_verification": true
+    },
+    {
+      "vocab_id": "S3-EXP-011-V02",
+      "expression_en": "sound condition",
+      "meaning_vi": "điều kiện âm thanh",
+      "part_of_speech": "noun phrase",
+      "example_en": "We wanted to see whether music improves memory. Yet the story group was given music, while the word-list group worked in silence. Now I see we changed both the material and the sound condition.",
+      "example_vi": "Bọn em muốn xem nhạc cải thiện trí nhớ không. Nhưng nhóm đọc truyện có nhạc, nhóm học từ thì im lặng; chúng em đã đổi cả tài liệu lẫn điều kiện âm.",
+      "evidence_turn_id": "T02",
+      "can_save_to_notebook": true,
+      "requires_human_pos_verification": true
+    },
+    {
+      "vocab_id": "S3-EXP-011-V03",
+      "expression_en": "randomly assign",
+      "meaning_vi": "phân ngẫu nhiên",
+      "part_of_speech": "noun phrase",
+      "example_en": "We should give everyone the same kind of material and randomly assign the sound condition. Otherwise better results could come from the story being easier to remember rather than from the music.",
+      "example_vi": "Nên cho mọi người cùng loại tài liệu và phân ngẫu nhiên điều kiện âm, nếu không có thể do truyện dễ nhớ hơn chứ không vì nhạc.",
+      "evidence_turn_id": "T03",
+      "can_save_to_notebook": true,
+      "requires_human_pos_verification": true
+    },
+    {
+      "vocab_id": "S3-EXP-011-V04",
+      "expression_en": "recall",
+      "meaning_vi": "nhớ lại",
+      "part_of_speech": "noun phrase",
+      "example_en": "Use equivalent word lists and change only whether quiet instrumental music is playing. You can then compare recall fairly, though you must still be cautious about drawing conclusions from a small class sample.",
+      "example_vi": "Dùng danh sách từ tương đương và chỉ đổi có nhạc không lời nhẹ hay không. So hồi tưởng công bằng hơn, nhưng vẫn thận trọng vì mẫu nhỏ.",
+      "evidence_turn_id": "T04",
+      "can_save_to_notebook": true,
+      "requires_human_pos_verification": true
+    },
+    {
+      "vocab_id": "S3-EXP-011-V05",
+      "expression_en": "instrumental music",
+      "meaning_vi": "nhạc không lời",
+      "part_of_speech": "noun phrase",
+      "example_en": "Use equivalent word lists and change only whether quiet instrumental music is playing. You can then compare recall fairly, though you must still be cautious about drawing conclusions from a small class sample.",
+      "example_vi": "Dùng danh sách từ tương đương và chỉ đổi có nhạc không lời nhẹ hay không. So hồi tưởng công bằng hơn, nhưng vẫn thận trọng vì mẫu nhỏ.",
+      "evidence_turn_id": "T04",
+      "can_save_to_notebook": true,
+      "requires_human_pos_verification": true
+    },
+    {
+      "vocab_id": "S3-EXP-011-V06",
+      "expression_en": "consent statement",
+      "meaning_vi": "tuyên bố đồng ý tham gia",
+      "part_of_speech": "noun phrase",
+      "example_en": "I will review the consent statement and make sure students understand that memory scores are not part of their course grades. They should be free to leave the trial at any point.",
+      "example_vi": "Thầy sẽ rà phiếu đồng ý, bảo đảm mọi người hiểu điểm nhớ không tính điểm môn. Họ có quyền rời thử nghiệm bất cứ lúc nào.",
+      "evidence_turn_id": "T10",
+      "can_save_to_notebook": true,
+      "requires_human_pos_verification": true
+    }
+  ],
+  "audio": {
+    "status": "not_generated",
+    "audio_url": null,
+    "duration_ms": null,
+    "source_text_sha256": "1068354aef8da0480a032bf74d2c1d9896de4d3197259b6d01a4c4990848eff8",
+    "generation_strategy": "per_turn_tts_three_speakers_then_stitch",
+    "audio_asset_id": null,
+    "requires_dialogue_prosody_review": true
+  },
+  "learning_flow": {
+    "intro": {
+      "theory_vi": "IELTS Listening Part 3 thường có thảo luận học thuật. Hãy dự đoán người nói và mục đích câu hỏi trước khi nghe. Đừng chọn một phương án chỉ vì nó xuất hiện sớm; theo dõi phản biện, cách diễn đạt lại và đề xuất cuối cùng.",
+      "tip_vi": "Với Matching, các chữ A/B/C là người nói và có thể lặp lại. Nghe người thực sự đề xuất hành động; một người khác có thể chỉ đồng tình hoặc nhắc lại đề xuất đó.",
+      "common_mistakes_vi": [
+        "Chọn lập luận đầu tiên dù người khác đã bác bỏ.",
+        "Không phân biệt người phát biểu đề xuất với người tán thành.",
+        "Chọn đáp án chứa từ giống audio nhưng sai ý.",
+        "Làm lộ transcript khi chưa nộp bài nghe đầu."
+      ],
+      "worked_examples": [
+        {
+          "audio_example_en": "Maya: We could interview everyone. Leo: That would be too expensive. Tutor: Let us start with a small pilot instead.",
+          "question": "What approach is finally recommended?",
+          "answer": "A small pilot",
+          "explanation_vi": "Phỏng vấn toàn bộ là đề xuất ban đầu, pilot mới là hướng được chọn."
+        },
+        {
+          "audio_example_en": "Student A: I can prepare the participant forms. Student B: I will check the recording equipment.",
+          "question": "Who will check the recording equipment?",
+          "answer": "Student B",
+          "explanation_vi": "Cần ghép đúng nhiệm vụ với người nhận trách nhiệm."
+        }
+      ]
+    },
+    "steps": [
+      "pre_listening",
+      "first_listen_ielts_questions",
+      "review_with_evidence",
+      "selective_dictation",
+      "gap_fill",
+      "summary"
+    ],
+    "ielts_question_ids": [
+      "Q01",
+      "Q02",
+      "Q03",
+      "Q04",
+      "Q05",
+      "Q06",
+      "Q07",
+      "Q08"
+    ],
+    "recommended_first_listen_play_limit": 1,
+    "practice_replay_allowed_after_first_attempt": true,
+    "word_count": 398,
+    "estimated_audio_minutes_at_135_wpm": 2.95,
+    "exposure_bank": "training",
+    "exam_simulation": false,
+    "mock_test": false,
+    "audio_alignment_required": true,
+    "matching_options_are_reusable": true
+  },
+  "qa": {
+    "status": "awaiting_human_content_and_audio_review",
+    "automated_validation": "passed",
+    "human_transcript_approved": false,
+    "human_audio_approved": false,
+    "ielts_exam_equivalent": false,
+    "release_eligible": false
+  },
+  "provenance": {
+    "source_type": "original_authored",
+    "reference_copying": false,
+    "authoring_milestone": "M23",
+    "do_not_reuse_in_unseen_assessment_before_exposure_check": true
+  },
+  "release_metadata": {
+    "version": "m23.0.1",
+    "published": false,
+    "needs_audio": true,
+    "requires_human_approval": true,
+    "import_policy": "insert_only",
+    "target_bank": "training"
+  }
+}

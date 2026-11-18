@@ -1,0 +1,440 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "DICT-F2-012",
+  "status": "draft",
+  "level": "L2",
+  "section": 0,
+  "topic": "Foundation",
+  "title": "Pronouns and Possessives",
+  "learning_objectives_vi": [
+    "Nghe he/him/his và they/their",
+    "Theo dõi từ chức năng ngắn xen giữa từ mang nghĩa; nghe cả cụm không tách từng chữ."
+  ],
+  "content_format": "sentence_drill",
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Foundation narrator",
+      "tts_voice_id": null,
+      "accent_requested": "new_zealand"
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "He gave me his old bicycle last summer.",
+      "translation_vi": "Mùa hè trước cậu ấy cho tôi chiếc xe đạp cũ của cậu ấy.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "function_words",
+        "sentence_dictation",
+        "foundation_f2"
+      ]
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "A",
+      "text_en": "I met her outside the library yesterday.",
+      "translation_vi": "Hôm qua tôi gặp cô ấy bên ngoài thư viện.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "function_words",
+        "sentence_dictation",
+        "foundation_f2"
+      ]
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "A",
+      "text_en": "Their classroom is next to ours.",
+      "translation_vi": "Lớp học của họ ở cạnh lớp của chúng tôi.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "function_words",
+        "sentence_dictation",
+        "foundation_f2"
+      ]
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "A",
+      "text_en": "She sent us a message about the timetable.",
+      "translation_vi": "Cô ấy gửi cho chúng tôi tin nhắn về thời khóa biểu.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "function_words",
+        "sentence_dictation",
+        "foundation_f2"
+      ]
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "A",
+      "text_en": "The red backpack is mine, not yours.",
+      "translation_vi": "Chiếc ba lô đỏ là của tôi, không phải của bạn.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "function_words",
+        "sentence_dictation",
+        "foundation_f2"
+      ]
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "A",
+      "text_en": "We asked them to arrive before eight.",
+      "translation_vi": "Chúng tôi yêu cầu họ đến trước tám giờ.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "function_words",
+        "sentence_dictation",
+        "foundation_f2"
+      ]
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "My cousin lost his ticket on the train.",
+      "translation_vi": "Anh họ tôi làm mất vé của mình trên tàu.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "function_words",
+        "sentence_dictation",
+        "foundation_f2"
+      ]
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "A",
+      "text_en": "The teacher told him to check his answer.",
+      "translation_vi": "Giáo viên bảo cậu ấy kiểm tra câu trả lời của mình.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "function_words",
+        "sentence_dictation",
+        "foundation_f2"
+      ]
+    },
+    {
+      "turn_id": "T09",
+      "speaker_id": "A",
+      "text_en": "These books belong to our neighbours.",
+      "translation_vi": "Những cuốn sách này thuộc về hàng xóm chúng tôi.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "function_words",
+        "sentence_dictation",
+        "foundation_f2"
+      ]
+    },
+    {
+      "turn_id": "T10",
+      "speaker_id": "A",
+      "text_en": "I think that seat is theirs, not ours.",
+      "translation_vi": "Tôi nghĩ ghế đó là của họ, không phải của chúng ta.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "function_words",
+        "sentence_dictation",
+        "foundation_f2"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "type": "dictation",
+      "prompt": "Nghe câu T01 rồi chép lại đúng những từ được nói.",
+      "correct_answers": [
+        "He gave me his old bicycle last summer."
+      ],
+      "evidence_turn_ids": [
+        "T01"
+      ],
+      "explanation_vi": "He là chủ ngữ; me là tân ngữ; his là sở hữu. Nghĩa: Mùa hè trước cậu ấy cho tôi chiếc xe đạp cũ của cậu ấy.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "function_words"
+      ]
+    },
+    {
+      "question_id": "Q02",
+      "type": "dictation",
+      "prompt": "Nghe câu T02 rồi chép lại đúng những từ được nói.",
+      "correct_answers": [
+        "I met her outside the library yesterday."
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Her là tân ngữ sau met. Nghĩa: Hôm qua tôi gặp cô ấy bên ngoài thư viện.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "function_words"
+      ]
+    },
+    {
+      "question_id": "Q03",
+      "type": "dictation",
+      "prompt": "Nghe câu T03 rồi chép lại đúng những từ được nói.",
+      "correct_answers": [
+        "Their classroom is next to ours."
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Their + classroom; ours không cần danh từ theo sau. Nghĩa: Lớp học của họ ở cạnh lớp của chúng tôi.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "function_words"
+      ]
+    },
+    {
+      "question_id": "Q04",
+      "type": "dictation",
+      "prompt": "Nghe câu T04 rồi chép lại đúng những từ được nói.",
+      "correct_answers": [
+        "She sent us a message about the timetable."
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Us là tân ngữ, khác we. Nghĩa: Cô ấy gửi cho chúng tôi tin nhắn về thời khóa biểu.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "function_words"
+      ]
+    },
+    {
+      "question_id": "Q05",
+      "type": "dictation",
+      "prompt": "Nghe câu T05 rồi chép lại đúng những từ được nói.",
+      "correct_answers": [
+        "The red backpack is mine, not yours."
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Mine và yours là đại từ sở hữu độc lập. Nghĩa: Chiếc ba lô đỏ là của tôi, không phải của bạn.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "function_words"
+      ]
+    },
+    {
+      "question_id": "Q06",
+      "type": "dictation",
+      "prompt": "Nghe câu T06 rồi chép lại đúng những từ được nói.",
+      "correct_answers": [
+        "We asked them to arrive before eight."
+      ],
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "explanation_vi": "Them là tân ngữ sau asked. Nghĩa: Chúng tôi yêu cầu họ đến trước tám giờ.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "function_words"
+      ]
+    },
+    {
+      "question_id": "Q07",
+      "type": "dictation",
+      "prompt": "Nghe câu T07 rồi chép lại đúng những từ được nói.",
+      "correct_answers": [
+        "My cousin lost his ticket on the train."
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "His chỉ người nam sở hữu; không phải he's. Nghĩa: Anh họ tôi làm mất vé của mình trên tàu.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "function_words"
+      ]
+    },
+    {
+      "question_id": "Q08",
+      "type": "dictation",
+      "prompt": "Nghe câu T08 rồi chép lại đúng những từ được nói.",
+      "correct_answers": [
+        "The teacher told him to check his answer."
+      ],
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "explanation_vi": "Him là tân ngữ, his là tính từ sở hữu. Nghĩa: Giáo viên bảo cậu ấy kiểm tra câu trả lời của mình.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "function_words"
+      ]
+    },
+    {
+      "question_id": "Q09",
+      "type": "dictation",
+      "prompt": "Nghe câu T09 rồi chép lại đúng những từ được nói.",
+      "correct_answers": [
+        "These books belong to our neighbours."
+      ],
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "explanation_vi": "Our đi cùng neighbours, không phải ours. Nghĩa: Những cuốn sách này thuộc về hàng xóm chúng tôi.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "function_words"
+      ]
+    },
+    {
+      "question_id": "Q10",
+      "type": "dictation",
+      "prompt": "Nghe câu T10 rồi chép lại đúng những từ được nói.",
+      "correct_answers": [
+        "I think that seat is theirs, not ours."
+      ],
+      "evidence_turn_ids": [
+        "T10"
+      ],
+      "explanation_vi": "Theirs và ours không có danh từ đứng sau. Nghĩa: Tôi nghĩ ghế đó là của họ, không phải của chúng ta.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "function_words"
+      ]
+    },
+    {
+      "question_id": "Q11",
+      "type": "word_choice",
+      "prompt": "Chiếc ba lô màu đỏ là của ai?",
+      "options": [
+        "the listener",
+        "a teacher",
+        "the speaker"
+      ],
+      "correct_answers": [
+        "the speaker"
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Mine nghĩa là của tôi.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "comprehension",
+        "meaning_check",
+        "function_words"
+      ]
+    },
+    {
+      "question_id": "Q12",
+      "type": "word_choice",
+      "prompt": "Ghế đó được cho là của ai?",
+      "options": [
+        "his",
+        "theirs",
+        "ours"
+      ],
+      "correct_answers": [
+        "theirs"
+      ],
+      "evidence_turn_ids": [
+        "T10"
+      ],
+      "explanation_vi": "T10: theirs, not ours.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "comprehension",
+        "meaning_check",
+        "function_words"
+      ]
+    }
+  ],
+  "vocabulary": [
+    {
+      "term": "his old bicycle",
+      "pos": "noun phrase",
+      "meaning_vi": "chiếc xe đạp cũ của cậu ấy",
+      "example_en": "He gave me his old bicycle last summer.",
+      "example_vi": "Mùa hè trước cậu ấy cho tôi chiếc xe đạp cũ của cậu ấy.",
+      "source_turn_id": "T01"
+    },
+    {
+      "term": "ours",
+      "pos": "possessive pronoun",
+      "meaning_vi": "của chúng tôi",
+      "example_en": "Their classroom is next to ours.",
+      "example_vi": "Lớp học của họ ở cạnh lớp của chúng tôi.",
+      "source_turn_id": "T03"
+    },
+    {
+      "term": "mine",
+      "pos": "possessive pronoun",
+      "meaning_vi": "của tôi",
+      "example_en": "The red backpack is mine, not yours.",
+      "example_vi": "Chiếc ba lô đỏ là của tôi, không phải của bạn.",
+      "source_turn_id": "T05"
+    },
+    {
+      "term": "theirs",
+      "pos": "possessive pronoun",
+      "meaning_vi": "của họ",
+      "example_en": "I think that seat is theirs, not ours.",
+      "example_vi": "Tôi nghĩ ghế đó là của họ, không phải của chúng ta.",
+      "source_turn_id": "T10"
+    }
+  ],
+  "audio": {
+    "status": "not_generated",
+    "url": null,
+    "duration_ms": null,
+    "model": null,
+    "provider": null,
+    "voice_config": null,
+    "source_transcript_hash": "f3f6718928c7c21938fcbb1ce796892958abe214f172d536854b09ea4ae4997d",
+    "audio_sha256": null,
+    "format": null
+  },
+  "qa": {
+    "content_reviewed": false,
+    "answers_verified": false,
+    "audio_verified": false,
+    "rights_cleared": false,
+    "duplicate_reviewed": false,
+    "notes": [
+      "Original AI-assisted authored draft. Human editorial review needed before publishing.",
+      "TTS audio and timestamps not produced. Keep lesson locked until audio verified.",
+      "If TTS output differs from canonical text, regenerate or update transcript and recheck evidence.",
+      "M16.2: automated edits are provisional; IELTS teacher final signoff, audio and rights clearance pending."
+    ]
+  },
+  "provenance": {
+    "content_origin": "original_ai_assisted",
+    "source_urls": [],
+    "source_rights_note": "Original material; inspect TTS provider terms, distribution rights and access restrictions before production.",
+    "reviewer": null
+  },
+  "release_metadata": {
+    "published_at": null,
+    "version": 1
+  }
+}

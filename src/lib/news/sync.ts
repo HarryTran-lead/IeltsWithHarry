@@ -1,6 +1,7 @@
 import { createClient } from "@supabase/supabase-js";
 import { fetchGovUkBody, fetchOceanServiceBody, providers, type FetchResult, type NewsBodyCandidate, type NewsSource } from "./providers";
 import { loadNewsSettings } from "./settings";
+import { pauseLegacyPressRewrites } from "./rights-pause";
 
 const nasaArchiveFeed = "https://www.nasa.gov/news-release/feed/";
 /** Teaser-only feeds and how their article text is read. */
@@ -33,12 +34,20 @@ async function ingest(db: AdminClient, response: FetchResult, requireBody: boole
   for (const group of batches(unique)) {
     const hashes = group.map((item) => item.canonical_hash);
     const [{ data: existing, error: existingError }, { data: skipped, error: skippedError }] = await Promise.all([
-      db.from("news_articles").select("canonical_hash").in("canonical_hash", hashes),
+      db.from("news_articles").select("id,canonical_hash,interest_topics").in("canonical_hash", hashes),
       db.from("news_skipped_urls").select("canonical_hash").in("canonical_hash", hashes),
     ]);
     if (existingError) throw existingError;
     if (skippedError) throw skippedError;
     const known = new Set([...(existing ?? []), ...(skipped ?? [])].map((row) => row.canonical_hash));
+    for (const article of existing ?? []) {
+      const incoming = group.find((item) => item.canonical_hash === article.canonical_hash)?.interest_topics ?? [];
+      const merged = [...new Set([...(article.interest_topics ?? []), ...incoming])];
+      if (merged.length > (article.interest_topics ?? []).length) {
+        const { error } = await db.from("news_articles").update({ interest_topics: merged }).eq("id", article.id);
+        if (error) throw error;
+      }
+    }
     const fresh = group.filter((item) => !known.has(item.canonical_hash));
     if (fresh.length) {
       const { error } = await db.from("news_articles").upsert(fresh, { onConflict: "canonical_hash", ignoreDuplicates: true });
@@ -111,6 +120,7 @@ export async function backfillNews(pages: number[]) {
 
 export async function syncNews({ scheduled = false }: { scheduled?: boolean } = {}) {
   const db = newsAdminClient();
+  await pauseLegacyPressRewrites(db);
   const settings = await loadNewsSettings(db);
   if (scheduled && !settings.auto_sync_enabled) return [];
   const { data: sources, error } = await db.from("news_sources").select("*").eq("enabled", true).order("created_at").limit(25);

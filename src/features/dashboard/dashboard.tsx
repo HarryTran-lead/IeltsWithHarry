@@ -1,8 +1,10 @@
 "use client";
+import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import {
   Activity,
   ArrowRight,
+  LayoutGrid,
   BookOpenText,
   CalendarDays,
   Check,
@@ -11,8 +13,10 @@ import {
   Headphones,
   Medal,
   Mic,
+  Newspaper,
   PenLine,
   Route,
+  Sun,
   Target,
   Zap,
 } from "lucide-react";
@@ -29,7 +33,12 @@ import { StudyProgress } from "./study-progress";
 import { StageMap, useStageStops } from "@/features/learning/stage-map";
 import { useLearnerStreak } from "@/features/account/use-learner-streak";
 import { streakWeek } from "@/lib/account";
+import { GrammarTodayCard } from "@/features/grammar/grammar-today";
+import dynamic from "next/dynamic";
 import "./dashboard.css";
+
+/** Loaded on demand: the Skill Lab path module is large and only needs its weekly summary here. */
+const DictationWeekCard = dynamic(() => import("@/features/listening/skill-lab-path").then((module) => module.DictationWeekCard));
 
 const skillIcons: Partial<Record<Skill, typeof BookOpenText>> = {
   Reading: BookOpenText,
@@ -42,7 +51,7 @@ function WelcomeBanner() {
   const { tasks, goal } = useDemo();
   const hour = new Date().getHours();
   const greeting =
-    hour < 12 ? "Good morning" : hour < 18 ? "Good afternoon" : "Good evening";
+    hour < 12 ? "Chào buổi sáng" : hour < 18 ? "Chào buổi chiều" : "Chào buổi tối";
   const doneToday = tasks.filter((t) => t.date === todayISO() && t.completed).length;
   return (
     <section className="welcome-banner">
@@ -50,16 +59,16 @@ function WelcomeBanner() {
       <div className="welcome-copy">
         <p className="welcome-greeting">{greeting}!</p>
         <h1>
-          Keep going, you’re doing <span className="hl">great</span>!
+          Cứ tiếp tục nhé, bạn đang làm <span className="hl">rất tốt</span>!
         </h1>
         <div className="welcome-row">
         <StreakWeek />
         <div className="welcome-actions">
-          {releaseLocks ? <button className="button primary" disabled>Learn · Sắp mở</button> : <Link href="/app/lesson/technology-digital-life" className="button primary">
-            Continue learning <ArrowRight size={16} />
+          {releaseLocks ? <Link href="/app/learn/ielts-builder" className="button primary">Học Level 2 <ArrowRight size={16} /></Link> : <Link href="/app/lesson/technology-digital-life" className="button primary">
+            Học tiếp <ArrowRight size={16} />
           </Link>}
           <Link href="/app/planner" className="button ghost">
-            <CalendarDays size={16} /> {doneToday}/{goal} tasks today
+            <CalendarDays size={16} /> {doneToday}/{goal} nhiệm vụ<span className="welcome-plan-extra"> hôm nay</span>
           </Link>
         </div>
         </div>
@@ -103,7 +112,7 @@ function StreakWeek() {
   );
 }
 
-function LearningPath() {
+function LearningPath({ withContinue = false }: { withContinue?: boolean }) {
   const stops = useStageStops();
   return (
     <section className="card learning-path">
@@ -111,15 +120,25 @@ function LearningPath() {
         <div className="head-title">
           <HeadIcon icon={Route} />
           <div>
-            <h2>Your Learning Path</h2>
-            <p>From band 1.0 to 7.0+ — build your skills step by step.</p>
+            <h2>Lộ trình học của bạn</h2>
+            <p>4 chặng từ Foundation đến Level 3, hướng tới band 7.5.</p>
           </div>
         </div>
-        {releaseLocks ? <span className="link-pill" aria-disabled="true">Sắp mở</span> : <Link href="/app/learn" className="link-pill">
-          View all levels <ArrowRight size={15} />
-        </Link>}
+        <Link href="/app/learn" className="link-pill">Xem 4 chặng <ArrowRight size={15} /></Link>
       </div>
       <StageMap stops={stops} />
+      {withContinue && <ContinueBody />}
+    </section>
+  );
+}
+
+/** The lesson or stage to pick up next, shown on the "Hôm nay" tab. */
+function ContinueCard() {
+  return <section className="card dash-continue" aria-label="Học tiếp"><ContinueBody /></section>;
+}
+
+function ContinueBody() {
+  return (
       <div className="continue-card">
         <div className="continue-art" aria-hidden="true">
           <Sticker name="globe" size={62} tilt={-8} delay={100} />
@@ -127,17 +146,14 @@ function LearningPath() {
           <Sticker name="abc" size={58} tilt={-4} delay={300} />
         </div>
         <div className="continue-body">
-          <span className="current-label">{demoMode ? "Current unit" : "Featured unit"}</span>
-          <h3>Technology &amp; Digital Life</h3>
-          <p>
-            Learn useful vocabulary, reading strategies, writing tasks and
-            speaking skills for real-world topics.
-          </p>
-          {releaseLocks ? <button className="button coral" disabled>Sắp mở</button> : <Link
+          <span className="current-label">{releaseLocks ? "Chặng đang mở" : demoMode ? "Bài đang học" : "Bài nổi bật"}</span>
+          <h3>{releaseLocks ? "Level 2 · English Skill Lab Book 2" : "Technology & Digital Life"}</h3>
+          <p>{releaseLocks ? "Học theo nhóm câu ngắn, xem tư liệu khi làm bài và ôn lại những câu cần sửa." : "Learn useful vocabulary, reading strategies, writing tasks and speaking skills for real-world topics."}</p>
+          {releaseLocks ? <Link href="/app/learn/ielts-builder" className="button coral">Vào lộ trình <ArrowRight size={16} /></Link> : <Link
             href="/app/lesson/technology-digital-life"
             className="button coral"
           >
-            Continue learning <ArrowRight size={16} />
+            Học tiếp <ArrowRight size={16} />
           </Link>}
         </div>
         <div className="continue-skills">
@@ -153,7 +169,6 @@ function LearningPath() {
           )}
         </div>
       </div>
-    </section>
   );
 }
 
@@ -181,10 +196,10 @@ function TodayGoal() {
           className="text-link"
           onClick={() => {
             const value = prompt(
-              "How many tasks is your daily goal?",
+              "Mỗi ngày bạn muốn hoàn thành bao nhiêu nhiệm vụ?",
               String(goal),
             );
-            if (value && /^d+$/.test(value)) void setGoal(Number(value)).catch(() => {});
+            if (value && /^\d+$/.test(value)) void setGoal(Number(value)).catch(() => {});
           }}
         >
           Mục tiêu {goal} <ChevronRight size={14} />
@@ -224,19 +239,19 @@ function PracticeNow() {
       <div className="card-head">
         <div className="head-title">
           <HeadIcon icon={Zap} tone="lavender" />
-          <h2>Practice Now</h2>
+          <h2>Luyện ngay</h2>
         </div>
         <Link href="/app/learn" className="text-link">
-          See all <ChevronRight size={14} />
+          Xem tất cả <ChevronRight size={14} />
         </Link>
       </div>
       <div className="practice-panel">
         <div>
-          <span className="purple-tag">Speaking practice</span>
+          <span className="purple-tag">Luyện Speaking</span>
           <h3>Talk about Technology</h3>
-          <p>Answer 3 simple questions and listen to your recording.</p>
+          <p>Trả lời 3 câu hỏi ngắn rồi nghe lại bản ghi âm của bạn.</p>
           <Link href="/app/speaking" className="button purple">
-            Start practice <ArrowRight size={16} />
+            Bắt đầu luyện <ArrowRight size={16} />
           </Link>
         </div>
         <Sticker name="mic" size={78} tilt={12} float className="practice-sticker" />
@@ -251,10 +266,10 @@ function Recommended() {
       <div className="card-head">
         <div className="head-title">
           <HeadIcon icon={Compass} tone="sky" />
-          <h2>Recommended for You</h2>
+          <h2>Gợi ý cho bạn</h2>
         </div>
         <Link href="/app/learn" className="text-link">
-          More lessons <ArrowRight size={14} />
+          Thêm bài học <ArrowRight size={14} />
         </Link>
       </div>
       <div className="recommend-grid">
@@ -280,29 +295,29 @@ function Recommended() {
 }
 
 const badges: { sticker: StickerName; label: string; detail: string; earned: boolean; tilt: number }[] = [
-  { sticker: "star", label: "First Steps", detail: "Complete 5 tasks", earned: true, tilt: -8 },
-  { sticker: "rocket", label: "On a Roll", detail: "7 day streak", earned: true, tilt: 6 },
-  { sticker: "mountain", label: "Explorer", detail: "Complete a unit", earned: true, tilt: -4 },
-  { sticker: "lock", label: "Word Master", detail: "Learn 100 words", earned: false, tilt: 5 },
+  { sticker: "star", label: "Bước đầu tiên", detail: "Hoàn thành 5 nhiệm vụ", earned: true, tilt: -8 },
+  { sticker: "rocket", label: "Đang vào guồng", detail: "Chuỗi 7 ngày", earned: true, tilt: 6 },
+  { sticker: "mountain", label: "Nhà thám hiểm", detail: "Hoàn thành một unit", earned: true, tilt: -4 },
+  { sticker: "lock", label: "Bậc thầy từ vựng", detail: "Học 100 từ", earned: false, tilt: 5 },
 ];
 
 function Achievements() {
   const { tasks, attempts } = useDemo();
-  if (!demoMode) return <section className="card achievements"><div className="card-head"><div className="head-title"><HeadIcon icon={Activity} tone="mint" /><h2>Your activity</h2></div><Link href="/app/progress" className="text-link">View all</Link></div><div className="activity-tiles"><div><strong>{tasks.filter((task) => task.completed).length}</strong><small>Completed tasks</small></div><div><strong>{attempts.length}</strong><small>Practice attempts</small></div></div></section>;
+  if (!demoMode) return <section className="card achievements"><div className="card-head"><div className="head-title"><HeadIcon icon={Activity} tone="mint" /><h2>Hoạt động của bạn</h2></div><Link href="/app/progress" className="text-link">Xem tất cả</Link></div><div className="activity-tiles"><div><strong>{tasks.filter((task) => task.completed).length}</strong><small>Nhiệm vụ đã xong</small></div><div><strong>{attempts.length}</strong><small>Lượt luyện tập</small></div></div></section>;
   return (
     <section className="card achievements">
       <div className="card-head">
         <div className="head-title">
           <HeadIcon icon={Medal} tone="sun" />
-          <h2>Your Progress</h2>
+          <h2>Thành tích của bạn</h2>
         </div>
         <Link href="/app/progress" className="text-link">
-          View all
+          Xem tất cả
         </Link>
       </div>
       <div className="achievement-tabs">
-        <span className="active">Achievements</span>
-        <Link href="/app/progress">Skill stats</Link>
+        <span className="active">Huy hiệu</span>
+        <Link href="/app/progress">Thống kê kỹ năng</Link>
       </div>
       <div className="badge-grid">
         {badges.map((badge, index) => (
@@ -320,26 +335,101 @@ function Achievements() {
   );
 }
 
+const dashTabs = [
+  { id: "overview", label: "Tổng quan", icon: LayoutGrid },
+  { id: "today", label: "Hôm nay", icon: Sun },
+  { id: "path", label: "Lộ trình", icon: Route },
+  { id: "progress", label: "Tiến độ", icon: Activity },
+  { id: "news", label: "Daily News", icon: Newspaper },
+  { id: "ranks", label: "Thành tích", icon: Medal },
+] as const;
+type DashTab = (typeof dashTabs)[number]["id"];
+const TAB_KEY = "ieltswithharry-dashboard-tab-v1";
+
+/**
+ * The dashboard is one screen: the welcome strip, then one tab at a time in the space left. "Tổng quan"
+ * is the full dashboard as it was before the tabs, scrolling inside its panel. A panel is mounted the
+ * first time it is opened and then kept (hidden when not chosen), so switching back is instant and keeps
+ * its state; a panel longer than the screen scrolls inside itself. The last tab is remembered here.
+ */
+function DashboardTabs() {
+  const [tab, setTab] = useState<DashTab>("overview");
+  const [opened, setOpened] = useState<DashTab[]>(["overview"]);
+  if (!opened.includes(tab)) setOpened([...opened, tab]);
+  const list = useRef<HTMLDivElement>(null);
+  useEffect(() => {
+    const raf = requestAnimationFrame(() => {
+      try {
+        const saved = localStorage.getItem(TAB_KEY);
+        if (dashTabs.some((item) => item.id === saved)) setTab(saved as DashTab);
+      } catch { /* storage may be blocked */ }
+    });
+    return () => cancelAnimationFrame(raf);
+  }, []);
+  function choose(id: DashTab, focus = false) {
+    setTab(id);
+    try { localStorage.setItem(TAB_KEY, id); } catch { /* storage may be blocked */ }
+    if (focus) list.current?.querySelector<HTMLButtonElement>(`#dash-tab-${id}`)?.focus();
+  }
+  function onKey(event: React.KeyboardEvent) {
+    const index = dashTabs.findIndex((item) => item.id === tab);
+    const next = event.key === "ArrowRight" ? index + 1 : event.key === "ArrowLeft" ? index - 1 : event.key === "Home" ? 0 : event.key === "End" ? dashTabs.length - 1 : null;
+    if (next === null) return;
+    event.preventDefault();
+    choose(dashTabs[(next + dashTabs.length) % dashTabs.length].id, true);
+  }
+  const panel = (id: DashTab, className: string, children: React.ReactNode) => (
+    <div key={id} role="tabpanel" id={`dash-panel-${id}`} aria-labelledby={`dash-tab-${id}`} className={`dash-panel ${className}`} hidden={tab !== id} tabIndex={0}>{opened.includes(id) ? children : null}</div>
+  );
+  return (
+    <section className="dash-tabs" aria-label="Bảng điều khiển">
+      <div className="dash-tablist" role="tablist" aria-label="Chọn nội dung" ref={list} onKeyDown={onKey}>
+        {dashTabs.map(({ id, label, icon: Icon }) => (
+          <button key={id} type="button" role="tab" id={`dash-tab-${id}`} aria-selected={tab === id} aria-controls={`dash-panel-${id}`} tabIndex={tab === id ? 0 : -1} onClick={() => choose(id)}>
+            <Icon size={15} aria-hidden="true" /> {label}
+          </button>
+        ))}
+      </div>
+      {panel("overview", "dash-overview", <>
+        <div className="dash-overview-main">
+          <LatestNews />
+          <StudyProgress />
+          <LearningPath withContinue />
+          <GrammarTodayCard />
+          <DictationWeekCard />
+          {releaseLocks ? <TodayGoal /> : <><div className="dashboard-duo"><TodayGoal /><PracticeNow /></div><Recommended /></>}
+        </div>
+        <div className="dash-overview-side">
+          <StreakLeaderboardCard />
+          <Achievements />
+        </div>
+      </>)}
+      {panel("today", "dash-today", <>
+        <TodayGoal />
+        <ContinueCard />
+        <GrammarTodayCard />
+        <DictationWeekCard />
+        {!releaseLocks && <><PracticeNow /><Recommended /></>}
+      </>)}
+      {panel("path", "dash-path", <LearningPath />)}
+      {panel("progress", "dash-progress", <StudyProgress />)}
+      {panel("news", "dash-news-panel", <LatestNews />)}
+      {panel("ranks", "dash-ranks", <><StreakLeaderboardCard /><Achievements /></>)}
+    </section>
+  );
+}
+
 export function Dashboard() {
   return (
-    <div className="dashboard-grid">
+    <div className="dashboard-grid dash-board">
       <div className="dashboard-main stagger">
-        {demoMode && <div className="demo-note"><i aria-hidden="true" /> Demo preview · Your changes are saved in this browser</div>}
+        {demoMode && <div className="demo-note"><i aria-hidden="true" /> Bản xem thử · Thay đổi của bạn được lưu trong trình duyệt này</div>}
         <WelcomeBanner />
-        <LatestNews />
-        <StudyProgress />
-        <LearningPath />
-        {releaseLocks ? <TodayGoal /> : <><div className="dashboard-duo">
-          <TodayGoal />
-          <PracticeNow />
-        </div>
-        <Recommended /></>}
+        <DashboardTabs />
       </div>
       <aside className="dashboard-aside stagger">
         <StudyRoomCard />
         <PlannerMini />
-        <StreakLeaderboardCard />
-        <Achievements />
       </aside>
     </div>
   );

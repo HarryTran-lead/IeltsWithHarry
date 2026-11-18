@@ -1,0 +1,367 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "DICT-S2-040",
+  "status": "draft",
+  "level": "L5",
+  "section": 2,
+  "topic": "Transport Information",
+  "title": "Harbour Ferry Service Changes",
+  "learning_objectives_vi": [
+    "Nghe và hiểu bài độc thoại Transport Information ở mức L5, phân biệt chi tiết chính/phụ.",
+    "Nhận ra thông tin cập nhật, điều kiện và phương án thay thế thay vì chọn chi tiết đầu tiên nghe được.",
+    "Chép chính xác các đoạn mục tiêu và giải thích bằng chứng theo thứ tự lời nói."
+  ],
+  "content_format": "section_practice",
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Guide / public information presenter (single narrator)",
+      "tts_voice_id": null,
+      "accent_requested": "american"
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "This announcement concerns passengers travelling on the harbour ferries over the next three weekends. Due to maintenance at the eastern pier, several services will depart from different points.",
+      "translation_vi": "Thông báo này dành cho hành khách đi phà cảng trong ba cuối tuần tới. Do bảo trì cầu tàu phía đông, một số chuyến sẽ khởi hành từ vị trí khác.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_2",
+        "monologue",
+        "l5",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "A",
+      "text_en": "The first ferry to North Island will still leave at eight twenty, but you must board at Pier Four rather than Pier Two. Staff will place temporary signs along the waterfront.",
+      "translation_vi": "Chuyến phà đầu đến Đảo Bắc vẫn rời lúc tám giờ hai mươi, nhưng phải lên ở Cầu tàu Bốn thay vì Cầu tàu Hai. Nhân viên sẽ đặt biển tạm dọc bờ cảng.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_2",
+        "monologue",
+        "l5",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "A",
+      "text_en": "Passengers for West Bay should allow fifteen extra minutes, because the boat will follow a longer route around the work area. The published arrival time has already been adjusted.",
+      "translation_vi": "Khách đến Vịnh Tây nên dự trù thêm mười lăm phút vì thuyền đi tuyến dài hơn vòng qua khu thi công. Giờ đến công bố đã được điều chỉnh.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_2",
+        "monologue",
+        "l5",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "A",
+      "text_en": "All bicycles must now be booked in advance. Previously you could bring one without warning, but reduced deck space means the crew needs an accurate count before departure.",
+      "translation_vi": "Nay phải đặt chỗ trước cho mọi xe đạp. Trước đây có thể mang xe lên không báo, nhưng sàn tàu hẹp hơn khiến thủy thủ đoàn cần biết số lượng chính xác.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_2",
+        "monologue",
+        "l5",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "A",
+      "text_en": "The ticket office beside the marina closes at six on Fridays. After that, electronic tickets remain available through the transport app, though cash purchases are not possible on board.",
+      "translation_vi": "Phòng vé cạnh bến du thuyền đóng lúc sáu giờ các thứ Sáu. Sau đó vẫn mua vé điện tử bằng ứng dụng giao thông, nhưng không thể trả tiền mặt trên tàu.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_2",
+        "monologue",
+        "l5",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "A",
+      "text_en": "For passengers with mobility needs, a shuttle vehicle runs between the main bus station and Pier Four. It is free, but please reserve a seat at least one day beforehand.",
+      "translation_vi": "Với hành khách cần hỗ trợ di chuyển, có xe trung chuyển giữa bến xe chính và Cầu tàu Bốn. Xe miễn phí nhưng cần giữ chỗ ít nhất một ngày trước.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_2",
+        "monologue",
+        "l5",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "We apologise for the inconvenience and expect normal boarding arrangements to return in early July. Please check the website on the day of travel for weather-related cancellations.",
+      "translation_vi": "Chúng tôi xin lỗi vì bất tiện và dự kiến việc lên tàu trở lại bình thường đầu tháng Bảy. Hãy xem website vào ngày đi để biết chuyến hủy do thời tiết.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_2",
+        "monologue",
+        "l5",
+        "signposting"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "type": "note_completion",
+      "prompt": "Notes — North Island boat leaves from: ____",
+      "correct_answers": [
+        "Pier Four"
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Chuyến phà đầu đến Đảo Bắc vẫn rời lúc tám giờ hai mươi, nhưng phải lên ở Cầu tàu Bốn thay vì Cầu tàu Hai. Nhân viên sẽ đặt biển tạm dọc bờ cảng. Đáp án được nhắc trong đoạn T02: “Pier Four”.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_2",
+        "ielts_practice",
+        "detail_recognition"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q02",
+      "type": "table_completion",
+      "prompt": "Table — First North Island ferry leaves at: ____",
+      "correct_answers": [
+        "eight twenty"
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Chuyến phà đầu đến Đảo Bắc vẫn rời lúc tám giờ hai mươi, nhưng phải lên ở Cầu tàu Bốn thay vì Cầu tàu Hai. Nhân viên sẽ đặt biển tạm dọc bờ cảng. Đáp án được nhắc trong đoạn T02: “eight twenty”.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_2",
+        "ielts_practice",
+        "detail_recognition"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q03",
+      "type": "sentence_completion",
+      "prompt": "Complete the sentence — West Bay journey is longer by: ____",
+      "correct_answers": [
+        "fifteen"
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Khách đến Vịnh Tây nên dự trù thêm mười lăm phút vì thuyền đi tuyến dài hơn vòng qua khu thi công. Giờ đến công bố đã được điều chỉnh. Đáp án được nhắc trong đoạn T03: “fifteen”.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_2",
+        "ielts_practice",
+        "detail_recognition"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q04",
+      "type": "note_completion",
+      "prompt": "Notes — Bicycles require: ____",
+      "correct_answers": [
+        "advance"
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Nay phải đặt chỗ trước cho mọi xe đạp. Trước đây có thể mang xe lên không báo, nhưng sàn tàu hẹp hơn khiến thủy thủ đoàn cần biết số lượng chính xác. Đáp án được nhắc trong đoạn T04: “advance”.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_2",
+        "ielts_practice",
+        "detail_recognition"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q05",
+      "type": "short_answer",
+      "prompt": "Answer briefly: Friday ticket office closes at?",
+      "correct_answers": [
+        "six"
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Phòng vé cạnh bến du thuyền đóng lúc sáu giờ các thứ Sáu. Sau đó vẫn mua vé điện tử bằng ứng dụng giao thông, nhưng không thể trả tiền mặt trên tàu. Đáp án được nhắc trong đoạn T05: “six”.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_2",
+        "ielts_practice",
+        "detail_recognition"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q06",
+      "type": "note_completion",
+      "prompt": "Notes — Shuttle reservation needed at least: ____",
+      "correct_answers": [
+        "one day"
+      ],
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "explanation_vi": "Với hành khách cần hỗ trợ di chuyển, có xe trung chuyển giữa bến xe chính và Cầu tàu Bốn. Xe miễn phí nhưng cần giữ chỗ ít nhất một ngày trước. Đáp án được nhắc trong đoạn T06: “one day”.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_2",
+        "ielts_practice",
+        "detail_recognition"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "D01",
+      "type": "dictation",
+      "prompt": "Nghe và chép nguyên văn lời người dẫn tại đoạn T03.",
+      "correct_answers": [
+        "Passengers for West Bay should allow fifteen extra minutes, because the boat will follow a longer route around the work area. The published arrival time has already been adjusted."
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Câu gốc: Passengers for West Bay should allow fifteen extra minutes, because the boat will follow a longer route around the work area. The published arrival time has already been adjusted. Nghĩa: Khách đến Vịnh Tây nên dự trù thêm mười lăm phút vì thuyền đi tuyến dài hơn vòng qua khu thi công. Giờ đến công bố đã được điều chỉnh. Chú ý từ chức năng, âm cuối và nhịp nói.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "exact_transcript",
+        "section_2"
+      ]
+    },
+    {
+      "question_id": "D02",
+      "type": "dictation",
+      "prompt": "Nghe và chép nguyên văn lời người dẫn tại đoạn T05.",
+      "correct_answers": [
+        "The ticket office beside the marina closes at six on Fridays. After that, electronic tickets remain available through the transport app, though cash purchases are not possible on board."
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Câu gốc: The ticket office beside the marina closes at six on Fridays. After that, electronic tickets remain available through the transport app, though cash purchases are not possible on board. Nghĩa: Phòng vé cạnh bến du thuyền đóng lúc sáu giờ các thứ Sáu. Sau đó vẫn mua vé điện tử bằng ứng dụng giao thông, nhưng không thể trả tiền mặt trên tàu. Chú ý từ chức năng, âm cuối và nhịp nói.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "exact_transcript",
+        "section_2"
+      ]
+    },
+    {
+      "question_id": "G01",
+      "type": "gap_fill",
+      "prompt": "Nghe và điền: The first ferry to North Island will still leave at eight twenty, but you must board at ____ Four.",
+      "correct_answers": [
+        "pier"
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Lời nói đối chiếu Pier Four và Pier Two. Cần điền đúng từ “Pier” theo audio.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "gap_fill",
+        "vocab_in_context",
+        "section_2"
+      ]
+    }
+  ],
+  "vocabulary": [
+    {
+      "term": "pier",
+      "pos": "n.",
+      "meaning_vi": "cầu tàu",
+      "example_en": "This announcement concerns passengers travelling on the harbour ferries over the next three weekends. Due to maintenance at the eastern pier, several services will depart from different points.",
+      "example_vi": "Thông báo này dành cho hành khách đi phà cảng trong ba cuối tuần tới. Do bảo trì cầu tàu phía đông, một số chuyến sẽ khởi hành từ vị trí khác.",
+      "source_turn_id": "T01"
+    },
+    {
+      "term": "deck space",
+      "pos": "n. phr.",
+      "meaning_vi": "diện tích sàn tàu",
+      "example_en": "All bicycles must now be booked in advance. Previously you could bring one without warning, but reduced deck space means the crew needs an accurate count before departure.",
+      "example_vi": "Nay phải đặt chỗ trước cho mọi xe đạp. Trước đây có thể mang xe lên không báo, nhưng sàn tàu hẹp hơn khiến thủy thủ đoàn cần biết số lượng chính xác.",
+      "source_turn_id": "T04"
+    },
+    {
+      "term": "marina",
+      "pos": "n.",
+      "meaning_vi": "bến du thuyền",
+      "example_en": "The ticket office beside the marina closes at six on Fridays. After that, electronic tickets remain available through the transport app, though cash purchases are not possible on board.",
+      "example_vi": "Phòng vé cạnh bến du thuyền đóng lúc sáu giờ các thứ Sáu. Sau đó vẫn mua vé điện tử bằng ứng dụng giao thông, nhưng không thể trả tiền mặt trên tàu.",
+      "source_turn_id": "T05"
+    },
+    {
+      "term": "mobility needs",
+      "pos": "n. phr.",
+      "meaning_vi": "nhu cầu hỗ trợ di chuyển",
+      "example_en": "For passengers with mobility needs, a shuttle vehicle runs between the main bus station and Pier Four. It is free, but please reserve a seat at least one day beforehand.",
+      "example_vi": "Với hành khách cần hỗ trợ di chuyển, có xe trung chuyển giữa bến xe chính và Cầu tàu Bốn. Xe miễn phí nhưng cần giữ chỗ ít nhất một ngày trước.",
+      "source_turn_id": "T06"
+    }
+  ],
+  "audio": {
+    "status": "not_generated",
+    "url": null,
+    "duration_ms": null,
+    "model": null,
+    "provider": null,
+    "voice_config": null,
+    "source_transcript_hash": "a5c0c160857deefc58084c87b7a05572950cde5dd1f2481db51ea452c4c4098f",
+    "audio_sha256": null,
+    "format": null
+  },
+  "qa": {
+    "content_reviewed": false,
+    "answers_verified": false,
+    "audio_verified": false,
+    "rights_cleared": false,
+    "duplicate_reviewed": false,
+    "notes": [
+      "Original AI-assisted educational monologue; subject specialist review pending.",
+      "TTS, timestamps, audio verification and rights clearance are pending. Keep draft locked.",
+      "IELTS Section 2 practice, not an official IELTS Listening part or calibrated band test.",
+      "M16.2: automated edits are provisional; IELTS teacher final signoff, audio and rights clearance pending."
+    ]
+  },
+  "provenance": {
+    "content_origin": "original_ai_assisted",
+    "source_urls": [],
+    "source_rights_note": "Original learning text; obtain separate TTS service and distribution clearance, especially for under-18 users.",
+    "reviewer": null
+  },
+  "release_metadata": {
+    "published_at": null,
+    "version": 1
+  }
+}

@@ -1,0 +1,806 @@
+{
+  "schema_version": "1.2.0",
+  "lesson_id": "S2-SIM-010",
+  "status": "draft",
+  "level": "L5",
+  "section": 2,
+  "topic": "Community cultural programme",
+  "title": "Eastborough Cultural Week: Events Guide",
+  "content_format": "section_exam_simulation",
+  "exam_part": "IELTS_LISTENING_PART_2_STYLE",
+  "official_ielts_material": false,
+  "learning_objectives_vi": [
+    "Nghe một bài thuyết minh liền mạch trong tình huống xã hội đời sống.",
+    "Đọc nhóm câu hỏi trước khi nghe và định vị thông tin theo trình tự.",
+    "Hiểu paraphrase, thông tin gây nhiễu và giới hạn từ mà không được nghe lại."
+  ],
+  "target_skills": [
+    "matching",
+    "events",
+    "accessibility"
+  ],
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Local service or visitor information presenter",
+      "accent_requested": "british",
+      "tts_voice_id": null
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "Hello, I am Felix, the programme manager for Eastborough Cultural Week. This year’s schedule looks larger than it really is because several activities run twice. Before you book, I want to explain which type of session each event offers. Afterwards I will cover ticketing and access arrangements.",
+      "translation_vi": "Xin chào, tôi là Felix, quản lý Tuần Văn hóa Eastborough. Lịch trông dày vì nhiều hoạt động lặp hai buổi. Tôi sẽ giải thích loại hình từng sự kiện rồi cách đặt vé và tiếp cận.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_2",
+        "m26",
+        "introduction",
+        "matching",
+        "events",
+        "accessibility"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "A",
+      "text_en": "The oral-history walk is not a performance. A guide takes a small group around the old shopping streets and plays recordings from former shopkeepers at several stops.",
+      "translation_vi": "Tour lịch sử truyền miệng là đi bộ theo nhóm qua phố mua sắm cũ, nghe ghi âm người bán hàng ở vài điểm, không phải buổi diễn.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_2",
+        "m26",
+        "evidence",
+        "matching",
+        "events",
+        "accessibility"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "A",
+      "text_en": "The lantern workshop is designed as a practical family activity. Children make simple paper lanterns with an adult beside them, using safe tools provided by the artists.",
+      "translation_vi": "Workshop đèn lồng là hoạt động thực hành gia đình: trẻ làm đèn giấy cùng người lớn và dụng cụ an toàn.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_2",
+        "m26",
+        "evidence",
+        "matching",
+        "events",
+        "accessibility"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "A",
+      "text_en": "Our courtyard concert features musicians from three local ensembles. Audience members remain seated; there is no teaching element or opportunity to practise an instrument.",
+      "translation_vi": "Buổi hòa nhạc sân trong có ba nhóm nhạc địa phương; khán giả ngồi nghe, không có phần dạy chơi nhạc cụ.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_2",
+        "m26",
+        "evidence",
+        "matching",
+        "events",
+        "accessibility"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "A",
+      "text_en": "The costume archive visit is led by a curator who explains how historical garments are repaired and stored. Numbers are restricted because the original fabrics are fragile.",
+      "translation_vi": "Tham quan kho trang phục do giám tuyển hướng dẫn cách sửa và bảo quản đồ cổ, hạn chế khách vì vải dễ hỏng.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_2",
+        "m26",
+        "evidence",
+        "matching",
+        "events",
+        "accessibility"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "A",
+      "text_en": "In the poetry exchange, visitors bring a short piece of writing and discuss it in small groups. You do not need to perform it on stage or submit work in advance.",
+      "translation_vi": "Buổi trao đổi thơ yêu cầu khách mang đoạn viết ngắn để thảo luận nhóm, không cần đọc trên sân khấu hay nộp trước.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_2",
+        "m26",
+        "evidence",
+        "matching",
+        "events",
+        "accessibility"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "Cultural Week began as a small exhibition in a disused shop and gradually grew into a city-wide programme. The organisers still want to keep some of that informal character, which is why several events take place in ordinary public spaces rather than large theatres.",
+      "translation_vi": "Tuần Văn hóa bắt đầu từ triển lãm nhỏ trong cửa hàng bỏ trống, rồi phát triển toàn thành phố. Ban tổ chức vẫn giữ tính thân mật nên có sự kiện ở không gian công cộng thường thay vì nhà hát lớn.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_2",
+        "m26",
+        "context",
+        "matching",
+        "events",
+        "accessibility"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "A",
+      "text_en": "Those are the five activities visitors ask about most frequently. Please also note a few practical details, as the printed posters were prepared before our final venue inspection.",
+      "translation_vi": "Đó là năm hoạt động được hỏi nhiều nhất. Hãy chú ý vài chi tiết vì poster in trước khi kiểm tra địa điểm cuối cùng.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_2",
+        "m26",
+        "transition",
+        "matching",
+        "events",
+        "accessibility"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T09",
+      "speaker_id": "A",
+      "text_en": "Tickets for the courtyard concert must be collected from the library foyer rather than from the theatre box office. This reduces queues on the narrow street.",
+      "translation_vi": "Vé hòa nhạc nhận tại tiền sảnh thư viện, không ở quầy vé nhà hát, để giảm ùn trên phố nhỏ.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_2",
+        "m26",
+        "evidence",
+        "matching",
+        "events",
+        "accessibility"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T10",
+      "speaker_id": "A",
+      "text_en": "The lantern workshop now starts at four fifteen. The original four o’clock slot was changed to give artists more time to prepare their materials.",
+      "translation_vi": "Lớp đèn lồng bắt đầu lúc bốn giờ mười lăm thay vì bốn giờ để nghệ sĩ chuẩn bị vật liệu.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_2",
+        "m26",
+        "evidence",
+        "matching",
+        "events",
+        "accessibility"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T11",
+      "speaker_id": "A",
+      "text_en": "The oral-history walk is free, but participants need comfortable shoes because parts of the route use uneven paving stones. No specialist equipment is required.",
+      "translation_vi": "Tour lịch sử miễn phí nhưng cần giày thoải mái vì có đoạn đường lát đá gồ ghề, không cần thiết bị chuyên môn.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_2",
+        "m26",
+        "evidence",
+        "matching",
+        "events",
+        "accessibility"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T12",
+      "speaker_id": "A",
+      "text_en": "Visitors who need a step-free route should contact the access coordinator by email. Our general ticket system cannot record every individual requirement.",
+      "translation_vi": "Khách cần lối không bậc nên email cho điều phối viên tiếp cận; hệ thống vé chung không ghi đủ nhu cầu riêng.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_2",
+        "m26",
+        "evidence",
+        "matching",
+        "events",
+        "accessibility"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T13",
+      "speaker_id": "A",
+      "text_en": "The main festival information point will be inside the railway waiting room. The former outdoor kiosk is too exposed to rain for our volunteers.",
+      "translation_vi": "Quầy thông tin lễ hội chính nằm trong phòng chờ nhà ga; ki-ốt ngoài trời dễ bị mưa.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_2",
+        "m26",
+        "evidence",
+        "matching",
+        "events",
+        "accessibility"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T14",
+      "speaker_id": "A",
+      "text_en": "We have tried to make the programme less dependent on specialist knowledge. The events are designed so that first-time visitors can enjoy them, while people who already know the subject may ask more detailed questions. No one should feel they need to study beforehand simply to take part.",
+      "translation_vi": "Chương trình không đòi hỏi kiến thức chuyên sâu: người mới vẫn có thể tham gia, người am hiểu có thể hỏi sâu. Không ai cần học trước mới được dự.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_2",
+        "m26",
+        "context",
+        "matching",
+        "events",
+        "accessibility"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T15",
+      "speaker_id": "A",
+      "text_en": "A full calendar is available at the information desk and online. We encourage people to try something unfamiliar, but please observe the age limits where they are listed.",
+      "translation_vi": "Lịch đầy đủ có ở quầy thông tin và trên mạng. Hãy thử hoạt động mới nhưng nhớ giới hạn tuổi nếu có.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_2",
+        "m26",
+        "closing",
+        "matching",
+        "events",
+        "accessibility"
+      ],
+      "bank_role": "protected_assessment"
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "group_id": "PART2_Q01_TO_05",
+      "type": "matching",
+      "prompt": "Oral-history walk",
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "evidence_excerpt_en": "The oral-history walk is not a performance. A guide takes a small group around the old shopping streets and plays recordings from former shopkeepers at several stops.",
+      "explanation_vi": "Tour lịch sử truyền miệng là đi bộ theo nhóm qua phố mua sắm cũ, nghe ghi âm người bán hàng ở vài điểm, không phải buổi diễn.",
+      "question_tags": [
+        "M26",
+        "part2",
+        "matching",
+        "matching",
+        "events",
+        "accessibility"
+      ],
+      "answer_source": "explicit_or_contextual_recording",
+      "scoring_policy": "matching_letter",
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true,
+      "correct_answers": [
+        "C"
+      ],
+      "correct_option": "C",
+      "options": [
+        {
+          "key": "A",
+          "text": "Adult-supported craft activity"
+        },
+        {
+          "key": "B",
+          "text": "Small-group collection tour"
+        },
+        {
+          "key": "C",
+          "text": "Guided walk with recordings"
+        },
+        {
+          "key": "D",
+          "text": "Discussion of participants’ own work"
+        },
+        {
+          "key": "E",
+          "text": "Formal lecture without discussion"
+        },
+        {
+          "key": "F",
+          "text": "Seated musical performance"
+        }
+      ]
+    },
+    {
+      "question_id": "Q02",
+      "group_id": "PART2_Q01_TO_05",
+      "type": "matching",
+      "prompt": "Lantern workshop",
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "evidence_excerpt_en": "The lantern workshop is designed as a practical family activity. Children make simple paper lanterns with an adult beside them, using safe tools provided by the artists.",
+      "explanation_vi": "Workshop đèn lồng là hoạt động thực hành gia đình: trẻ làm đèn giấy cùng người lớn và dụng cụ an toàn.",
+      "question_tags": [
+        "M26",
+        "part2",
+        "matching",
+        "matching",
+        "events",
+        "accessibility"
+      ],
+      "answer_source": "explicit_or_contextual_recording",
+      "scoring_policy": "matching_letter",
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true,
+      "correct_answers": [
+        "A"
+      ],
+      "correct_option": "A",
+      "options": [
+        {
+          "key": "A",
+          "text": "Adult-supported craft activity"
+        },
+        {
+          "key": "B",
+          "text": "Small-group collection tour"
+        },
+        {
+          "key": "C",
+          "text": "Guided walk with recordings"
+        },
+        {
+          "key": "D",
+          "text": "Discussion of participants’ own work"
+        },
+        {
+          "key": "E",
+          "text": "Formal lecture without discussion"
+        },
+        {
+          "key": "F",
+          "text": "Seated musical performance"
+        }
+      ]
+    },
+    {
+      "question_id": "Q03",
+      "group_id": "PART2_Q01_TO_05",
+      "type": "matching",
+      "prompt": "Courtyard concert",
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "evidence_excerpt_en": "Our courtyard concert features musicians from three local ensembles. Audience members remain seated; there is no teaching element or opportunity to practise an instrument.",
+      "explanation_vi": "Buổi hòa nhạc sân trong có ba nhóm nhạc địa phương; khán giả ngồi nghe, không có phần dạy chơi nhạc cụ.",
+      "question_tags": [
+        "M26",
+        "part2",
+        "matching",
+        "matching",
+        "events",
+        "accessibility"
+      ],
+      "answer_source": "explicit_or_contextual_recording",
+      "scoring_policy": "matching_letter",
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true,
+      "correct_answers": [
+        "F"
+      ],
+      "correct_option": "F",
+      "options": [
+        {
+          "key": "A",
+          "text": "Adult-supported craft activity"
+        },
+        {
+          "key": "B",
+          "text": "Small-group collection tour"
+        },
+        {
+          "key": "C",
+          "text": "Guided walk with recordings"
+        },
+        {
+          "key": "D",
+          "text": "Discussion of participants’ own work"
+        },
+        {
+          "key": "E",
+          "text": "Formal lecture without discussion"
+        },
+        {
+          "key": "F",
+          "text": "Seated musical performance"
+        }
+      ]
+    },
+    {
+      "question_id": "Q04",
+      "group_id": "PART2_Q01_TO_05",
+      "type": "matching",
+      "prompt": "Costume archive visit",
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "evidence_excerpt_en": "The costume archive visit is led by a curator who explains how historical garments are repaired and stored. Numbers are restricted because the original fabrics are fragile.",
+      "explanation_vi": "Tham quan kho trang phục do giám tuyển hướng dẫn cách sửa và bảo quản đồ cổ, hạn chế khách vì vải dễ hỏng.",
+      "question_tags": [
+        "M26",
+        "part2",
+        "matching",
+        "matching",
+        "events",
+        "accessibility"
+      ],
+      "answer_source": "explicit_or_contextual_recording",
+      "scoring_policy": "matching_letter",
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true,
+      "correct_answers": [
+        "B"
+      ],
+      "correct_option": "B",
+      "options": [
+        {
+          "key": "A",
+          "text": "Adult-supported craft activity"
+        },
+        {
+          "key": "B",
+          "text": "Small-group collection tour"
+        },
+        {
+          "key": "C",
+          "text": "Guided walk with recordings"
+        },
+        {
+          "key": "D",
+          "text": "Discussion of participants’ own work"
+        },
+        {
+          "key": "E",
+          "text": "Formal lecture without discussion"
+        },
+        {
+          "key": "F",
+          "text": "Seated musical performance"
+        }
+      ]
+    },
+    {
+      "question_id": "Q05",
+      "group_id": "PART2_Q01_TO_05",
+      "type": "matching",
+      "prompt": "Poetry exchange",
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "evidence_excerpt_en": "In the poetry exchange, visitors bring a short piece of writing and discuss it in small groups. You do not need to perform it on stage or submit work in advance.",
+      "explanation_vi": "Buổi trao đổi thơ yêu cầu khách mang đoạn viết ngắn để thảo luận nhóm, không cần đọc trên sân khấu hay nộp trước.",
+      "question_tags": [
+        "M26",
+        "part2",
+        "matching",
+        "matching",
+        "events",
+        "accessibility"
+      ],
+      "answer_source": "explicit_or_contextual_recording",
+      "scoring_policy": "matching_letter",
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true,
+      "correct_answers": [
+        "D"
+      ],
+      "correct_option": "D",
+      "options": [
+        {
+          "key": "A",
+          "text": "Adult-supported craft activity"
+        },
+        {
+          "key": "B",
+          "text": "Small-group collection tour"
+        },
+        {
+          "key": "C",
+          "text": "Guided walk with recordings"
+        },
+        {
+          "key": "D",
+          "text": "Discussion of participants’ own work"
+        },
+        {
+          "key": "E",
+          "text": "Formal lecture without discussion"
+        },
+        {
+          "key": "F",
+          "text": "Seated musical performance"
+        }
+      ]
+    },
+    {
+      "question_id": "Q06",
+      "group_id": "PART2_Q06_TO_10",
+      "type": "note_completion",
+      "prompt": "Concert tickets collected at the library ____.",
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "evidence_excerpt_en": "Tickets for the courtyard concert must be collected from the library foyer rather than from the theatre box office. This reduces queues on the narrow street.",
+      "explanation_vi": "Vé hòa nhạc nhận tại tiền sảnh thư viện, không ở quầy vé nhà hát, để giảm ùn trên phố nhỏ.",
+      "question_tags": [
+        "M26",
+        "part2",
+        "note_completion",
+        "matching",
+        "events",
+        "accessibility"
+      ],
+      "answer_source": "explicit_or_contextual_recording",
+      "scoring_policy": "controlled_variants",
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": false,
+      "correct_answers": [
+        "foyer"
+      ],
+      "spoken_answer": "foyer",
+      "word_limit": 3,
+      "instructions_en": "NO MORE THAN THREE WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q07",
+      "group_id": "PART2_Q06_TO_10",
+      "type": "note_completion",
+      "prompt": "Lantern workshop begins at ____.",
+      "evidence_turn_ids": [
+        "T10"
+      ],
+      "evidence_excerpt_en": "The lantern workshop now starts at four fifteen. The original four o’clock slot was changed to give artists more time to prepare their materials.",
+      "explanation_vi": "Lớp đèn lồng bắt đầu lúc bốn giờ mười lăm thay vì bốn giờ để nghệ sĩ chuẩn bị vật liệu.",
+      "question_tags": [
+        "M26",
+        "part2",
+        "note_completion",
+        "matching",
+        "events",
+        "accessibility"
+      ],
+      "answer_source": "explicit_or_contextual_recording",
+      "scoring_policy": "controlled_variants",
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": false,
+      "correct_answers": [
+        "four fifteen"
+      ],
+      "spoken_answer": "four fifteen",
+      "word_limit": 3,
+      "instructions_en": "NO MORE THAN THREE WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q08",
+      "group_id": "PART2_Q06_TO_10",
+      "type": "note_completion",
+      "prompt": "Recommended clothing: comfortable ____.",
+      "evidence_turn_ids": [
+        "T11"
+      ],
+      "evidence_excerpt_en": "The oral-history walk is free, but participants need comfortable shoes because parts of the route use uneven paving stones. No specialist equipment is required.",
+      "explanation_vi": "Tour lịch sử miễn phí nhưng cần giày thoải mái vì có đoạn đường lát đá gồ ghề, không cần thiết bị chuyên môn.",
+      "question_tags": [
+        "M26",
+        "part2",
+        "note_completion",
+        "matching",
+        "events",
+        "accessibility"
+      ],
+      "answer_source": "explicit_or_contextual_recording",
+      "scoring_policy": "controlled_variants",
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": false,
+      "correct_answers": [
+        "shoes"
+      ],
+      "spoken_answer": "shoes",
+      "word_limit": 3,
+      "instructions_en": "NO MORE THAN THREE WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q09",
+      "group_id": "PART2_Q06_TO_10",
+      "type": "note_completion",
+      "prompt": "Step-free queries: email the access ____.",
+      "evidence_turn_ids": [
+        "T12"
+      ],
+      "evidence_excerpt_en": "Visitors who need a step-free route should contact the access coordinator by email. Our general ticket system cannot record every individual requirement.",
+      "explanation_vi": "Khách cần lối không bậc nên email cho điều phối viên tiếp cận; hệ thống vé chung không ghi đủ nhu cầu riêng.",
+      "question_tags": [
+        "M26",
+        "part2",
+        "note_completion",
+        "matching",
+        "events",
+        "accessibility"
+      ],
+      "answer_source": "explicit_or_contextual_recording",
+      "scoring_policy": "controlled_variants",
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": false,
+      "correct_answers": [
+        "coordinator"
+      ],
+      "spoken_answer": "coordinator",
+      "word_limit": 3,
+      "instructions_en": "NO MORE THAN THREE WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q10",
+      "group_id": "PART2_Q06_TO_10",
+      "type": "note_completion",
+      "prompt": "Festival information point: railway ____ room.",
+      "evidence_turn_ids": [
+        "T13"
+      ],
+      "evidence_excerpt_en": "The main festival information point will be inside the railway waiting room. The former outdoor kiosk is too exposed to rain for our volunteers.",
+      "explanation_vi": "Quầy thông tin lễ hội chính nằm trong phòng chờ nhà ga; ki-ốt ngoài trời dễ bị mưa.",
+      "question_tags": [
+        "M26",
+        "part2",
+        "note_completion",
+        "matching",
+        "events",
+        "accessibility"
+      ],
+      "answer_source": "explicit_or_contextual_recording",
+      "scoring_policy": "controlled_variants",
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": false,
+      "correct_answers": [
+        "waiting"
+      ],
+      "spoken_answer": "waiting",
+      "word_limit": 3,
+      "instructions_en": "NO MORE THAN THREE WORDS AND/OR A NUMBER"
+    }
+  ],
+  "question_groups": [
+    {
+      "group_id": "PART2_Q01_TO_05",
+      "question_ids": [
+        "Q01",
+        "Q02",
+        "Q03",
+        "Q04",
+        "Q05"
+      ],
+      "question_type": "matching",
+      "instructions_en": "Match each item with the correct description. Choose A–F. You may use a letter more than once.",
+      "question_display_start": "before_audio",
+      "requires_one_listen": true,
+      "pause_between_groups_seconds": 0,
+      "options": [
+        {
+          "key": "A",
+          "text": "Adult-supported craft activity"
+        },
+        {
+          "key": "B",
+          "text": "Small-group collection tour"
+        },
+        {
+          "key": "C",
+          "text": "Guided walk with recordings"
+        },
+        {
+          "key": "D",
+          "text": "Discussion of participants’ own work"
+        },
+        {
+          "key": "E",
+          "text": "Formal lecture without discussion"
+        },
+        {
+          "key": "F",
+          "text": "Seated musical performance"
+        }
+      ]
+    },
+    {
+      "group_id": "PART2_Q06_TO_10",
+      "question_ids": [
+        "Q06",
+        "Q07",
+        "Q08",
+        "Q09",
+        "Q10"
+      ],
+      "question_type": "note_completion",
+      "instructions_en": "Complete the notes. Write NO MORE THAN THREE WORDS AND/OR A NUMBER for each answer.",
+      "question_display_start": "before_audio",
+      "requires_one_listen": true,
+      "pause_between_groups_seconds": 0
+    }
+  ],
+  "audio": {
+    "status": "not_generated",
+    "audio_url": null,
+    "audio_asset_id": null,
+    "duration_ms": null,
+    "source_text_sha256": "5e9abb5a014cb473eb9477bb68fbe8a776e6f56840bbc4df5a14723a911c982c",
+    "generation_strategy": "single_continuous_monologue",
+    "aligned_turns": false
+  },
+  "exam_mode": {
+    "bank_role": "protected_assessment",
+    "use_as_training_before_first_attempt": false,
+    "listening_attempts_allowed_for_scored_first_attempt": 1,
+    "replay_before_submit": false,
+    "speed_control_before_submit": false,
+    "transcript_visible_before_submit": false,
+    "answer_key_visible_before_submit": false,
+    "post_attempt_review_allowed": true,
+    "question_count": 10,
+    "points_per_correct_answer": 1,
+    "question_order_monotonic": true,
+    "estimated_speech_minutes_at_135_wpm": 3.34,
+    "exam_band_score_enabled": false,
+    "repeated_attempt_marked_as_seen": true,
+    "all_questions_visible_before_audio": true
+  },
+  "qa": {
+    "automatic_data_validation": "pending",
+    "content_human_review": "pending",
+    "audio_human_review": "pending",
+    "exam_simulation_rubric_score": null,
+    "rubric_90_verified": false,
+    "published": false,
+    "release_eligible": false
+  },
+  "provenance": {
+    "source_type": "original_authored_english_monologue",
+    "milestone": "M26",
+    "no_official_ielts_question_copied": true,
+    "training_exposure_guard": true,
+    "fictional_scenarios": true
+  },
+  "release_metadata": {
+    "target_bank": "protected_assessment",
+    "import_policy": "insert_only",
+    "version": "m26.0.1",
+    "preserve_existing_ids": true,
+    "allow_client_answer_payload": false
+  }
+}

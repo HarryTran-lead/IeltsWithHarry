@@ -1,0 +1,425 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "DICT-F1-023",
+  "status": "draft",
+  "level": "L1",
+  "section": 0,
+  "topic": "Foundation",
+  "title": "Food and Drinks",
+  "learning_objectives_vi": [
+    "Nghe tên món phổ biến",
+    "Nghe và chép chính xác các lượt nghe ngắn mà không dựa vào transcript."
+  ],
+  "content_format": "micro_drill",
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Foundation narrator",
+      "tts_voice_id": null,
+      "accent_requested": "british"
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "I want a glass of water.",
+      "translation_vi": "Tôi muốn một cốc nước.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "everyday_vocabulary",
+        "micro_listening"
+      ]
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "A",
+      "text_en": "She drinks orange juice.",
+      "translation_vi": "Cô ấy uống nước cam.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "everyday_vocabulary",
+        "micro_listening"
+      ]
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "A",
+      "text_en": "We ordered chicken and rice.",
+      "translation_vi": "Chúng tôi gọi gà và cơm.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "everyday_vocabulary",
+        "micro_listening"
+      ]
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "A",
+      "text_en": "The soup is very hot.",
+      "translation_vi": "Món súp rất nóng.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "everyday_vocabulary",
+        "micro_listening"
+      ]
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "A",
+      "text_en": "Please bring two apples.",
+      "translation_vi": "Vui lòng mang hai quả táo.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "everyday_vocabulary",
+        "micro_listening"
+      ]
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "A",
+      "text_en": "I eat bread for breakfast.",
+      "translation_vi": "Tôi ăn bánh mì vào bữa sáng.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "everyday_vocabulary",
+        "micro_listening"
+      ]
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "He likes cheese sandwiches.",
+      "translation_vi": "Anh ấy thích bánh mì kẹp phô mai.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "everyday_vocabulary",
+        "micro_listening"
+      ]
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "A",
+      "text_en": "The salad has fresh tomatoes.",
+      "translation_vi": "Món salad có cà chua tươi.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "everyday_vocabulary",
+        "micro_listening"
+      ]
+    },
+    {
+      "turn_id": "T09",
+      "speaker_id": "A",
+      "text_en": "Would you like some tea?",
+      "translation_vi": "Bạn có muốn một ít trà không?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "everyday_vocabulary",
+        "micro_listening"
+      ]
+    },
+    {
+      "turn_id": "T10",
+      "speaker_id": "A",
+      "text_en": "The milk is in the fridge.",
+      "translation_vi": "Sữa ở trong tủ lạnh.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "everyday_vocabulary",
+        "micro_listening"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "type": "dictation",
+      "prompt": "Nghe lượt T01 và chép chính xác những từ được nói.",
+      "correct_answers": [
+        "I want a glass of water."
+      ],
+      "evidence_turn_ids": [
+        "T01"
+      ],
+      "explanation_vi": "water là nước. Nghĩa: Tôi muốn một cốc nước.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text"
+      ]
+    },
+    {
+      "question_id": "Q02",
+      "type": "dictation",
+      "prompt": "Nghe lượt T02 và chép chính xác những từ được nói.",
+      "correct_answers": [
+        "She drinks orange juice."
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "orange juice là nước cam. Nghĩa: Cô ấy uống nước cam.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text"
+      ]
+    },
+    {
+      "question_id": "Q03",
+      "type": "dictation",
+      "prompt": "Nghe lượt T03 và chép chính xác những từ được nói.",
+      "correct_answers": [
+        "We ordered chicken and rice."
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "chicken khác kitchen. Nghĩa: Chúng tôi gọi gà và cơm.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text"
+      ]
+    },
+    {
+      "question_id": "Q04",
+      "type": "dictation",
+      "prompt": "Nghe lượt T04 và chép chính xác những từ được nói.",
+      "correct_answers": [
+        "The soup is very hot."
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "soup khác soap. Nghĩa: Món súp rất nóng.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text"
+      ]
+    },
+    {
+      "question_id": "Q05",
+      "type": "dictation",
+      "prompt": "Nghe lượt T05 và chép chính xác những từ được nói.",
+      "correct_answers": [
+        "Please bring two apples."
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "apples số nhiều có âm cuối /z/. Nghĩa: Vui lòng mang hai quả táo.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text"
+      ]
+    },
+    {
+      "question_id": "Q06",
+      "type": "dictation",
+      "prompt": "Nghe lượt T06 và chép chính xác những từ được nói.",
+      "correct_answers": [
+        "I eat bread for breakfast."
+      ],
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "explanation_vi": "bread có âm /e/, không phải breed. Nghĩa: Tôi ăn bánh mì vào bữa sáng.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text"
+      ]
+    },
+    {
+      "question_id": "Q07",
+      "type": "dictation",
+      "prompt": "Nghe lượt T07 và chép chính xác những từ được nói.",
+      "correct_answers": [
+        "He likes cheese sandwiches."
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "cheese có âm cuối /z/. Nghĩa: Anh ấy thích bánh mì kẹp phô mai.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text"
+      ]
+    },
+    {
+      "question_id": "Q08",
+      "type": "dictation",
+      "prompt": "Nghe lượt T08 và chép chính xác những từ được nói.",
+      "correct_answers": [
+        "The salad has fresh tomatoes."
+      ],
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "explanation_vi": "tomatoes số nhiều. Nghĩa: Món salad có cà chua tươi.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text"
+      ]
+    },
+    {
+      "question_id": "Q09",
+      "type": "dictation",
+      "prompt": "Nghe lượt T09 và chép chính xác những từ được nói.",
+      "correct_answers": [
+        "Would you like some tea?"
+      ],
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "explanation_vi": "tea có âm dài /iː/. Nghĩa: Bạn có muốn một ít trà không?",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text"
+      ]
+    },
+    {
+      "question_id": "Q10",
+      "type": "dictation",
+      "prompt": "Nghe lượt T10 và chép chính xác những từ được nói.",
+      "correct_answers": [
+        "The milk is in the fridge."
+      ],
+      "evidence_turn_ids": [
+        "T10"
+      ],
+      "explanation_vi": "milk kết thúc bằng /lk/. Nghĩa: Sữa ở trong tủ lạnh.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text"
+      ]
+    },
+    {
+      "question_id": "Q11",
+      "type": "word_choice",
+      "prompt": "T04: Món gì đang nóng?",
+      "correct_answers": [
+        "soup"
+      ],
+      "options": [
+        "soup",
+        "soap"
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Soup là món súp, khác soap (xà phòng). Hãy nghe lại lượt T04, đối chiếu với lựa chọn còn lại và xác định từ/ý được nói thật.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "comprehension",
+        "foundation_discrimination"
+      ]
+    },
+    {
+      "question_id": "Q12",
+      "type": "word_choice",
+      "prompt": "T09: Người nói mời đồ uống gì?",
+      "correct_answers": [
+        "tea"
+      ],
+      "options": [
+        "tea",
+        "coffee"
+      ],
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "explanation_vi": "Tea là trà. Hãy nghe lại lượt T09, đối chiếu với lựa chọn còn lại và xác định từ/ý được nói thật.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "comprehension",
+        "foundation_discrimination"
+      ]
+    }
+  ],
+  "vocabulary": [
+    {
+      "term": "water",
+      "pos": "noun",
+      "meaning_vi": "nước",
+      "example_en": "I want a glass of water.",
+      "example_vi": "Tôi muốn một cốc nước.",
+      "source_turn_id": "T01"
+    },
+    {
+      "term": "juice",
+      "pos": "noun",
+      "meaning_vi": "nước ép",
+      "example_en": "She drinks orange juice.",
+      "example_vi": "Cô ấy uống nước cam.",
+      "source_turn_id": "T02"
+    },
+    {
+      "term": "soup",
+      "pos": "noun",
+      "meaning_vi": "súp",
+      "example_en": "The soup is very hot.",
+      "example_vi": "Món súp rất nóng.",
+      "source_turn_id": "T04"
+    },
+    {
+      "term": "bread",
+      "pos": "noun",
+      "meaning_vi": "bánh mì",
+      "example_en": "I eat bread for breakfast.",
+      "example_vi": "Tôi ăn bánh mì vào bữa sáng.",
+      "source_turn_id": "T06"
+    }
+  ],
+  "audio": {
+    "status": "not_generated",
+    "url": null,
+    "duration_ms": null,
+    "model": null,
+    "provider": null,
+    "voice_config": null,
+    "source_transcript_hash": "16594893ee8cf88687c19f48032f8208bd3b4b5adc65cd4af299764455de665d",
+    "audio_sha256": null,
+    "format": null
+  },
+  "qa": {
+    "content_reviewed": false,
+    "answers_verified": false,
+    "audio_verified": false,
+    "rights_cleared": false,
+    "duplicate_reviewed": false,
+    "notes": [
+      "Author draft. Editorial, native-like audio, rights and device QA pending.",
+      "TTS: generate each turn separately, then combine and generate timestamps.",
+      "M16.2: automated edits are provisional; IELTS teacher final signoff, audio and rights clearance pending."
+    ]
+  },
+  "provenance": {
+    "content_origin": "original_ai_assisted",
+    "source_urls": [],
+    "source_rights_note": "New original learning material written for English Skill Lab; verify TTS and distribution conditions prior to release.",
+    "reviewer": null
+  },
+  "release_metadata": {
+    "published_at": null,
+    "version": 1
+  }
+}

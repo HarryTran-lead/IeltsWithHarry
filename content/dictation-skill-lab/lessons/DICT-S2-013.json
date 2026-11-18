@@ -1,0 +1,347 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "DICT-S2-013",
+  "status": "draft",
+  "level": "L3",
+  "section": 2,
+  "topic": "Workplace Orientation",
+  "title": "A Welcome Tour for New Staff",
+  "learning_objectives_vi": [
+    "Nghe độc thoại chủ đề Workplace Orientation và xác định mục đích thông báo.",
+    "Nhận diện cấu trúc ý và các chi tiết quan trọng theo thứ tự phát biểu.",
+    "Luyện nhận diện thời gian, chi phí, điều kiện và chi tiết được thay đổi."
+  ],
+  "content_format": "section_bridge",
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Visitor guide / programme coordinator (one narrator)",
+      "tts_voice_id": null,
+      "accent_requested": "australian"
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "Hello, and welcome to your first day at Alder Design Studio.",
+      "translation_vi": "Xin chào, chào mừng ngày đầu ở studio thiết kế Alder.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_2",
+        "monologue",
+        "l3",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "A",
+      "text_en": "Our morning induction begins at nine in the meeting room.",
+      "translation_vi": "Buổi hướng dẫn đầu sáng bắt đầu lúc chín giờ ở phòng họp.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_2",
+        "monologue",
+        "l3",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "A",
+      "text_en": "The staff kitchen is next to the break room on the ground floor.",
+      "translation_vi": "Bếp nhân viên cạnh phòng nghỉ ở tầng trệt.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_2",
+        "monologue",
+        "l3",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "A",
+      "text_en": "Please wear your identification card whenever you are in the building.",
+      "translation_vi": "Hãy đeo thẻ nhận diện khi ở trong tòa nhà.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_2",
+        "monologue",
+        "l3",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "A",
+      "text_en": "If you have a computer problem, contact the technology team on the second floor.",
+      "translation_vi": "Nếu máy tính trục trặc, liên hệ nhóm công nghệ ở tầng hai.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_2",
+        "monologue",
+        "l3",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "A",
+      "text_en": "Your supervisor will meet you again after lunch at one thirty.",
+      "translation_vi": "Người giám sát sẽ gặp lại sau trưa lúc 1:30.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_2",
+        "monologue",
+        "l3",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "The induction booklet also includes a building map that you can keep after the tour.",
+      "translation_vi": "Sổ tay làm quen còn có sơ đồ tòa nhà mà bạn được giữ sau buổi tham quan.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_2",
+        "monologue",
+        "l3",
+        "signposting"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "type": "note_completion",
+      "prompt": "Notes — Induction begins at: ____",
+      "correct_answers": [
+        "nine"
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Buổi làm quen bắt đầu lúc chín.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_2",
+        "ielts_practice",
+        "detail_recognition"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q02",
+      "type": "table_completion",
+      "prompt": "Table — Induction location: ____",
+      "correct_answers": [
+        "meeting room"
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Diễn ra trong phòng họp.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_2",
+        "ielts_practice",
+        "detail_recognition"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q03",
+      "type": "note_completion",
+      "prompt": "Notes — Staff kitchen is on the ground: ____",
+      "correct_answers": [
+        "floor"
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Bếp ở tầng trệt.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_2",
+        "ielts_practice",
+        "detail_recognition"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q04",
+      "type": "note_completion",
+      "prompt": "Notes — Technology team on the second: ____",
+      "correct_answers": [
+        "floor"
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Nhóm kỹ thuật ở tầng hai.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_2",
+        "ielts_practice",
+        "detail_recognition"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q05",
+      "type": "note_completion",
+      "prompt": "Notes — Supervisor meeting time: ____",
+      "correct_answers": [
+        "one thirty"
+      ],
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "explanation_vi": "Gặp người giám sát lúc 1:30.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_2",
+        "ielts_practice",
+        "detail_recognition"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "D01",
+      "type": "dictation",
+      "prompt": "Nghe lại và chép nguyên văn đoạn T03 (toàn bộ lời người dẫn).",
+      "correct_answers": [
+        "The staff kitchen is next to the break room on the ground floor."
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Câu gốc: The staff kitchen is next to the break room on the ground floor. Nghĩa: Bếp nhân viên cạnh phòng nghỉ ở tầng trệt. Lưu ý từ chức năng, âm cuối và cụm từ nối.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "exact_transcript",
+        "section_2"
+      ]
+    },
+    {
+      "question_id": "D02",
+      "type": "dictation",
+      "prompt": "Nghe lại và chép nguyên văn đoạn T05 (toàn bộ lời người dẫn).",
+      "correct_answers": [
+        "If you have a computer problem, contact the technology team on the second floor."
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Câu gốc: If you have a computer problem, contact the technology team on the second floor. Nghĩa: Nếu máy tính trục trặc, liên hệ nhóm công nghệ ở tầng hai. Lưu ý từ chức năng, âm cuối và cụm từ nối.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "exact_transcript",
+        "section_2"
+      ]
+    },
+    {
+      "question_id": "G01",
+      "type": "gap_fill",
+      "prompt": "Điền cụm từ bị ẩn sau khi nghe: Our morning ____ begins at nine in the meeting room.",
+      "correct_answers": [
+        "induction"
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "induction: buổi làm quen công việc. Ngữ cảnh: Buổi hướng dẫn đầu sáng bắt đầu lúc chín giờ ở phòng họp.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "gap_fill",
+        "vocab_in_context",
+        "section_2"
+      ]
+    }
+  ],
+  "vocabulary": [
+    {
+      "term": "induction",
+      "pos": "n.",
+      "meaning_vi": "buổi làm quen công việc",
+      "example_en": "Our morning induction begins at nine in the meeting room.",
+      "example_vi": "Buổi hướng dẫn đầu sáng bắt đầu lúc chín giờ ở phòng họp.",
+      "source_turn_id": "T02"
+    },
+    {
+      "term": "supervisor",
+      "pos": "n.",
+      "meaning_vi": "người giám sát",
+      "example_en": "Your supervisor will meet you again after lunch at one thirty.",
+      "example_vi": "Người giám sát sẽ gặp lại sau trưa lúc 1:30.",
+      "source_turn_id": "T06"
+    },
+    {
+      "term": "break room",
+      "pos": "n. phr.",
+      "meaning_vi": "phòng nghỉ",
+      "example_en": "The staff kitchen is next to the break room on the ground floor.",
+      "example_vi": "Bếp nhân viên cạnh phòng nghỉ ở tầng trệt.",
+      "source_turn_id": "T03"
+    },
+    {
+      "term": "room",
+      "pos": "n.",
+      "meaning_vi": "phòng",
+      "example_en": "Our morning induction begins at nine in the meeting room.",
+      "example_vi": "Buổi hướng dẫn đầu sáng bắt đầu lúc chín giờ ở phòng họp.",
+      "source_turn_id": "T02"
+    }
+  ],
+  "audio": {
+    "status": "not_generated",
+    "url": null,
+    "duration_ms": null,
+    "model": null,
+    "provider": null,
+    "voice_config": null,
+    "source_transcript_hash": "e5da012fbc12cec797aa75334efefb3aea8cb523e237c93ac76f97092ad0c28b",
+    "audio_sha256": null,
+    "format": null
+  },
+  "qa": {
+    "content_reviewed": false,
+    "answers_verified": false,
+    "audio_verified": false,
+    "rights_cleared": false,
+    "duplicate_reviewed": false,
+    "notes": [
+      "AI-assisted original writing; pedagogical and pronunciation review still required.",
+      "No TTS or sentence-level timestamps supplied; do not publish.",
+      "This is Section 2 skill practice, not an official IELTS test.",
+      "M16.2: automated edits are provisional; IELTS teacher final signoff, audio and rights clearance pending."
+    ]
+  },
+  "provenance": {
+    "content_origin": "original_ai_assisted",
+    "source_urls": [],
+    "source_rights_note": "Newly authored educational monologue. Confirm audio model distribution, age suitability and TOS separately before publishing.",
+    "reviewer": null
+  },
+  "release_metadata": {
+    "published_at": null,
+    "version": 1
+  }
+}

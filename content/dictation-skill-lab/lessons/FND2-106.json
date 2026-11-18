@@ -1,0 +1,622 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "FND2-106",
+  "status": "draft",
+  "level": "L3",
+  "section": 0,
+  "topic": "Foundation M20 – mixed_conversations",
+  "title": "Renting equipment and deposits",
+  "learning_objectives_vi": [
+    "Nghe thông tin đặt cọc, thời hạn trả đồ và phí phạt.",
+    "Kiểm tra bằng lời nghe mới, không lấy số bài hoàn thành làm bằng chứng thành thạo.",
+    "Không suy ra IELTS band từ điểm Foundation."
+  ],
+  "content_format": "sentence_drill",
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Speaker 1",
+      "tts_voice_id": null,
+      "accent_requested": "british"
+    },
+    {
+      "speaker_id": "B",
+      "role": "Speaker 2",
+      "tts_voice_id": null,
+      "accent_requested": "british"
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "Do you rent cameras for weekend projects?",
+      "translation_vi": "Bên bạn có cho thuê máy ảnh cho dự án cuối tuần không?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m20",
+        "rental_prices",
+        "mixed_conversations"
+      ],
+      "target_value": "cameras",
+      "target_kind": "lexical_phrase",
+      "target_meaning_vi": "máy ảnh",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "B",
+      "text_en": "Yes, we have several models available.",
+      "translation_vi": "Có, chúng tôi có một số mẫu máy.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m20",
+        "rental_prices",
+        "mixed_conversations"
+      ],
+      "target_value": "models",
+      "target_kind": "lexical_phrase",
+      "target_meaning_vi": "các mẫu máy",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "A",
+      "text_en": "I only need a basic one from Saturday morning.",
+      "translation_vi": "Tôi chỉ cần mẫu cơ bản từ sáng thứ Bảy.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m20",
+        "rental_prices",
+        "mixed_conversations"
+      ],
+      "target_value": "Saturday morning",
+      "target_kind": "lexical_phrase",
+      "target_meaning_vi": "sáng thứ Bảy",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "B",
+      "text_en": "The daily rate is eighteen pounds, plus a refundable deposit.",
+      "translation_vi": "Giá thuê ngày là mười tám bảng, cộng khoản đặt cọc được hoàn lại.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m20",
+        "rental_prices",
+        "mixed_conversations"
+      ],
+      "target_value": "refundable deposit",
+      "target_kind": "lexical_phrase",
+      "target_meaning_vi": "tiền cọc được hoàn lại",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "A",
+      "text_en": "How much is the deposit for that model?",
+      "translation_vi": "Tiền cọc cho mẫu đó là bao nhiêu?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m20",
+        "rental_prices",
+        "mixed_conversations"
+      ],
+      "target_value": "deposit",
+      "target_kind": "lexical_phrase",
+      "target_meaning_vi": "tiền cọc",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "B",
+      "text_en": "It's forty pounds, returned when the camera comes back undamaged.",
+      "translation_vi": "Bốn mươi bảng, hoàn khi máy trả lại không hỏng.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m20",
+        "rental_prices",
+        "mixed_conversations"
+      ],
+      "target_value": "forty pounds",
+      "target_kind": "lexical_phrase",
+      "target_meaning_vi": "bốn mươi bảng",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "Could I return it on Monday before lunch?",
+      "translation_vi": "Tôi trả vào thứ Hai trước giờ trưa được không?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m20",
+        "rental_prices",
+        "mixed_conversations"
+      ],
+      "target_value": "Monday",
+      "target_kind": "lexical_phrase",
+      "target_meaning_vi": "thứ Hai",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "B",
+      "text_en": "Yes, before twelve thirty at the latest.",
+      "translation_vi": "Được, muộn nhất là trước mười hai giờ rưỡi.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m20",
+        "rental_prices",
+        "mixed_conversations"
+      ],
+      "target_value": "twelve thirty",
+      "target_kind": "lexical_phrase",
+      "target_meaning_vi": "12 giờ 30",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T09",
+      "speaker_id": "A",
+      "text_en": "Is a memory card included in the rental?",
+      "translation_vi": "Thuê có kèm thẻ nhớ không?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m20",
+        "rental_prices",
+        "mixed_conversations"
+      ],
+      "target_value": "memory card",
+      "target_kind": "lexical_phrase",
+      "target_meaning_vi": "thẻ nhớ",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T10",
+      "speaker_id": "B",
+      "text_en": "No, but you can buy one at the counter.",
+      "translation_vi": "Không, nhưng bạn có thể mua ở quầy.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "m20",
+        "rental_prices",
+        "mixed_conversations"
+      ],
+      "target_value": "at the counter",
+      "target_kind": "lexical_phrase",
+      "target_meaning_vi": "ở quầy",
+      "bank_role": "training"
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "type": "dictation",
+      "prompt": "Nghe lượt T01 rồi chép đầy đủ câu tiếng Anh được nói.",
+      "correct_answers": [
+        "Do you rent cameras for weekend projects?"
+      ],
+      "evidence_turn_ids": [
+        "T01"
+      ],
+      "explanation_vi": "Câu gốc: Do you rent cameras for weekend projects? Nghĩa: Bên bạn có cho thuê máy ảnh cho dự án cuối tuần không?",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "mixed_conversations"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q02",
+      "type": "dictation",
+      "prompt": "Nghe lượt T02 rồi chép đầy đủ câu tiếng Anh được nói.",
+      "correct_answers": [
+        "Yes, we have several models available."
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Câu gốc: Yes, we have several models available. Nghĩa: Có, chúng tôi có một số mẫu máy.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "mixed_conversations"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q03",
+      "type": "dictation",
+      "prompt": "Nghe lượt T03 rồi chép đầy đủ câu tiếng Anh được nói.",
+      "correct_answers": [
+        "I only need a basic one from Saturday morning."
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Câu gốc: I only need a basic one from Saturday morning. Nghĩa: Tôi chỉ cần mẫu cơ bản từ sáng thứ Bảy.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "mixed_conversations"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q04",
+      "type": "dictation",
+      "prompt": "Nghe lượt T04 rồi chép đầy đủ câu tiếng Anh được nói.",
+      "correct_answers": [
+        "The daily rate is eighteen pounds, plus a refundable deposit."
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Câu gốc: The daily rate is eighteen pounds, plus a refundable deposit. Nghĩa: Giá thuê ngày là mười tám bảng, cộng khoản đặt cọc được hoàn lại.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "mixed_conversations"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q05",
+      "type": "dictation",
+      "prompt": "Nghe lượt T05 rồi chép đầy đủ câu tiếng Anh được nói.",
+      "correct_answers": [
+        "How much is the deposit for that model?"
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Câu gốc: How much is the deposit for that model? Nghĩa: Tiền cọc cho mẫu đó là bao nhiêu?",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "mixed_conversations"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q06",
+      "type": "dictation",
+      "prompt": "Nghe lượt T06 rồi chép đầy đủ câu tiếng Anh được nói.",
+      "correct_answers": [
+        "It's forty pounds, returned when the camera comes back undamaged."
+      ],
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "explanation_vi": "Câu gốc: It's forty pounds, returned when the camera comes back undamaged. Nghĩa: Bốn mươi bảng, hoàn khi máy trả lại không hỏng.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "mixed_conversations"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q07",
+      "type": "dictation",
+      "prompt": "Nghe lượt T07 rồi chép đầy đủ câu tiếng Anh được nói.",
+      "correct_answers": [
+        "Could I return it on Monday before lunch?"
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "Câu gốc: Could I return it on Monday before lunch? Nghĩa: Tôi trả vào thứ Hai trước giờ trưa được không?",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "mixed_conversations"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q08",
+      "type": "dictation",
+      "prompt": "Nghe lượt T08 rồi chép đầy đủ câu tiếng Anh được nói.",
+      "correct_answers": [
+        "Yes, before twelve thirty at the latest."
+      ],
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "explanation_vi": "Câu gốc: Yes, before twelve thirty at the latest. Nghĩa: Được, muộn nhất là trước mười hai giờ rưỡi.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "mixed_conversations"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q09",
+      "type": "dictation",
+      "prompt": "Nghe lượt T09 rồi chép đầy đủ câu tiếng Anh được nói.",
+      "correct_answers": [
+        "Is a memory card included in the rental?"
+      ],
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "explanation_vi": "Câu gốc: Is a memory card included in the rental? Nghĩa: Thuê có kèm thẻ nhớ không?",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "mixed_conversations"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q10",
+      "type": "dictation",
+      "prompt": "Nghe lượt T10 rồi chép đầy đủ câu tiếng Anh được nói.",
+      "correct_answers": [
+        "No, but you can buy one at the counter."
+      ],
+      "evidence_turn_ids": [
+        "T10"
+      ],
+      "explanation_vi": "Câu gốc: No, but you can buy one at the counter. Nghĩa: Không, nhưng bạn có thể mua ở quầy.",
+      "scoring_policy": "case_punctuation_insensitive_preserve_lexical_forms",
+      "question_tags": [
+        "dictation",
+        "mixed_conversations"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q11",
+      "type": "short_answer",
+      "prompt": "Nghe lượt T06. Viết đúng từ/cụm tiếng Anh diễn đạt ý: “bốn mươi bảng”.",
+      "correct_answers": [
+        "forty pounds"
+      ],
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "explanation_vi": "Người nói dùng “forty pounds” trong câu: It's forty pounds, returned when the camera comes back undamaged. Nghĩa: Bốn mươi bảng, hoàn khi máy trả lại không hỏng.",
+      "scoring_policy": "lexical_case_punctuation_insensitive_server",
+      "question_tags": [
+        "mixed_conversations",
+        "targeted_listening",
+        "guided_replay"
+      ],
+      "max_replays_practice": 5,
+      "word_limit": 4,
+      "first_listen_only_for_mastery": false
+    },
+    {
+      "question_id": "Q12",
+      "type": "short_answer",
+      "prompt": "Nghe lượt T07. Viết đúng từ/cụm tiếng Anh diễn đạt ý: “thứ Hai”.",
+      "correct_answers": [
+        "Monday"
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "Người nói dùng “Monday” trong câu: Could I return it on Monday before lunch? Nghĩa: Tôi trả vào thứ Hai trước giờ trưa được không?",
+      "scoring_policy": "lexical_case_punctuation_insensitive_server",
+      "question_tags": [
+        "mixed_conversations",
+        "targeted_listening",
+        "guided_replay"
+      ],
+      "max_replays_practice": 5,
+      "word_limit": 3,
+      "first_listen_only_for_mastery": false
+    },
+    {
+      "question_id": "Q13",
+      "type": "short_answer",
+      "prompt": "Nghe lượt T08. Viết đúng từ/cụm tiếng Anh diễn đạt ý: “12 giờ 30”.",
+      "correct_answers": [
+        "twelve thirty"
+      ],
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "explanation_vi": "Người nói dùng “twelve thirty” trong câu: Yes, before twelve thirty at the latest. Nghĩa: Được, muộn nhất là trước mười hai giờ rưỡi.",
+      "scoring_policy": "lexical_case_punctuation_insensitive_server",
+      "question_tags": [
+        "mixed_conversations",
+        "targeted_listening",
+        "guided_replay"
+      ],
+      "max_replays_practice": 5,
+      "word_limit": 4,
+      "first_listen_only_for_mastery": false
+    },
+    {
+      "question_id": "Q14",
+      "type": "short_answer",
+      "prompt": "Nghe lượt T09. Viết đúng từ/cụm tiếng Anh diễn đạt ý: “thẻ nhớ”.",
+      "correct_answers": [
+        "memory card"
+      ],
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "explanation_vi": "Người nói dùng “memory card” trong câu: Is a memory card included in the rental? Nghĩa: Thuê có kèm thẻ nhớ không?",
+      "scoring_policy": "lexical_case_punctuation_insensitive_server",
+      "question_tags": [
+        "mixed_conversations",
+        "targeted_listening",
+        "guided_replay"
+      ],
+      "max_replays_practice": 5,
+      "word_limit": 4,
+      "first_listen_only_for_mastery": false
+    },
+    {
+      "question_id": "Q15",
+      "type": "short_answer",
+      "prompt": "Nghe lượt T10. Viết đúng từ/cụm tiếng Anh diễn đạt ý: “ở quầy”.",
+      "correct_answers": [
+        "at the counter"
+      ],
+      "evidence_turn_ids": [
+        "T10"
+      ],
+      "explanation_vi": "Người nói dùng “at the counter” trong câu: No, but you can buy one at the counter. Nghĩa: Không, nhưng bạn có thể mua ở quầy.",
+      "scoring_policy": "lexical_case_punctuation_insensitive_server",
+      "question_tags": [
+        "mixed_conversations",
+        "targeted_listening",
+        "guided_replay"
+      ],
+      "max_replays_practice": 5,
+      "word_limit": 5,
+      "first_listen_only_for_mastery": false
+    }
+  ],
+  "vocabulary": [
+    {
+      "term": "cameras",
+      "pos": "word / expression (contextual)",
+      "meaning_vi": "máy ảnh",
+      "example_en": "Do you rent cameras for weekend projects?",
+      "example_vi": "Bên bạn có cho thuê máy ảnh cho dự án cuối tuần không?",
+      "is_illustrative_context": false
+    },
+    {
+      "term": "models",
+      "pos": "word / expression (contextual)",
+      "meaning_vi": "các mẫu máy",
+      "example_en": "Yes, we have several models available.",
+      "example_vi": "Có, chúng tôi có một số mẫu máy.",
+      "is_illustrative_context": false
+    },
+    {
+      "term": "Saturday morning",
+      "pos": "phrase",
+      "meaning_vi": "sáng thứ Bảy",
+      "example_en": "I only need a basic one from Saturday morning.",
+      "example_vi": "Tôi chỉ cần mẫu cơ bản từ sáng thứ Bảy.",
+      "is_illustrative_context": false
+    },
+    {
+      "term": "refundable deposit",
+      "pos": "phrase",
+      "meaning_vi": "tiền cọc được hoàn lại",
+      "example_en": "The daily rate is eighteen pounds, plus a refundable deposit.",
+      "example_vi": "Giá thuê ngày là mười tám bảng, cộng khoản đặt cọc được hoàn lại.",
+      "is_illustrative_context": false
+    },
+    {
+      "term": "deposit",
+      "pos": "word / expression (contextual)",
+      "meaning_vi": "tiền cọc",
+      "example_en": "How much is the deposit for that model?",
+      "example_vi": "Tiền cọc cho mẫu đó là bao nhiêu?",
+      "is_illustrative_context": false
+    },
+    {
+      "term": "forty pounds",
+      "pos": "phrase",
+      "meaning_vi": "bốn mươi bảng",
+      "example_en": "It's forty pounds, returned when the camera comes back undamaged.",
+      "example_vi": "Bốn mươi bảng, hoàn khi máy trả lại không hỏng.",
+      "is_illustrative_context": false
+    }
+  ],
+  "micro_skill_id": "rental_prices",
+  "bank_role": "training",
+  "content_design": {
+    "sequence": "10_unique_turns",
+    "first_listen": "1x",
+    "guided_replay_max": 5,
+    "mastery_requires_unseen": true,
+    "category": "mixed_conversations",
+    "post_submit_review_only": true,
+    "unseen_assessment_id": "FND2-106-HOLDOUT",
+    "holdout_must_be_server_side": true,
+    "no_band_claim": true,
+    "production_import_requires_approval": true
+  },
+  "audio": {
+    "status": "not_generated",
+    "url": null,
+    "duration_ms": null,
+    "provider": null,
+    "model": null,
+    "voice_config": null,
+    "format": null,
+    "audio_sha256": null,
+    "source_transcript_hash": "2baaea7b448000dedeb99008c302ea45097e9c5bf5b0d2ae9d33f3b88b4b612c"
+  },
+  "qa": {
+    "content_reviewed": false,
+    "answers_verified": false,
+    "audio_verified": false,
+    "human_signed_off": false,
+    "duplicate_reviewed": false,
+    "notes": [
+      "Original M20 draft: automatic checks do not replace teacher/audio review."
+    ]
+  },
+  "provenance": {
+    "content_origin": "original_ai_assisted",
+    "rights_status": "pending_tts_audio_terms_review",
+    "source_urls": [],
+    "reviewer": null
+  },
+  "release_metadata": {
+    "published_at": null,
+    "version": 1
+  },
+  "lesson_theory_vi": {
+    "core_rule": "Nghe thông tin đặt cọc, thời hạn trả đồ và phí phạt.",
+    "worked_contrasts": [
+      {
+        "spoken_example": "We said Monday first, but Tuesday is confirmed.",
+        "written_value": "Tuesday",
+        "teacher_note_vi": "Thông tin sau từ but mới là lựa chọn cuối cùng."
+      },
+      {
+        "spoken_example": "Is that fifteen or fifty? I mean fifteen.",
+        "written_value": "fifteen",
+        "teacher_note_vi": "Phải nghe câu sửa để không lấy thông tin ban đầu."
+      }
+    ],
+    "learning_steps": [
+      "Xem ví dụ hướng dẫn, nhưng không xem trước lời của các lượt nghe cần làm.",
+      "Nghe lần đầu và chép hoặc trả lời bằng chứng; khi luyện có thể nghe lại tối đa năm lần.",
+      "Sau khi nộp mới xem dịch nghĩa, giải thích và mẫu âm.",
+      "Kiểm tra bằng câu mới ngoài ngân hàng luyện, chỉ ghi nhận Mastered khi đủ bằng chứng."
+    ],
+    "common_mistakes": [
+      "Chép theo cách phát âm ước đoán, bỏ trợ động từ hoặc giới từ.",
+      "Chọn số/ngày xuất hiện ban đầu thay vì thông tin cuối cùng.",
+      "Nghe thuộc câu cũ nhưng không hiểu câu mới.",
+      "Coi transcript là bằng chứng TTS có nối âm tự nhiên (sai)."
+    ],
+    "phonetic_review_required": false,
+    "phonetic_note": "Kiểm tra rõ lượt thoại và diễn biến hội thoại trên audio thật."
+  }
+}

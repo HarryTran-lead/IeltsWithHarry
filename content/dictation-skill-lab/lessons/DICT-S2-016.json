@@ -1,0 +1,381 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "DICT-S2-016",
+  "status": "draft",
+  "level": "L4",
+  "section": 2,
+  "topic": "Museum Tours",
+  "title": "Behind the Scenes at the Riverside Collection",
+  "learning_objectives_vi": [
+    "Nghe độc thoại chủ đề Museum Tours và xác định mục đích thông báo.",
+    "Nhận diện cấu trúc ý và các chi tiết quan trọng theo thứ tự phát biểu.",
+    "Luyện chỉ đường theo sơ đồ A–F, phân biệt điểm trước/sau và hướng trái/phải."
+  ],
+  "content_format": "section_practice",
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Visitor guide / programme coordinator (one narrator)",
+      "tts_voice_id": null,
+      "accent_requested": "australian"
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "Good afternoon, and welcome to our newly reorganised collection. Today I will explain the layout, then introduce two activities that are not included in a normal museum visit.",
+      "translation_vi": "Xin chào, chào mừng đến bộ sưu tập mới sắp xếp lại. Hôm nay tôi sẽ giới thiệu sơ đồ rồi nói về hai hoạt động đặc biệt.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_2",
+        "monologue",
+        "l4",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "A",
+      "text_en": "You are standing at the main entrance on the south side. The ticket counter is the first room on your left, and the family workshop occupies the back-left corner of the building.",
+      "translation_vi": "Các bạn đang đứng tại cổng phía nam. Quầy vé là phòng đầu bên trái, còn xưởng gia đình nằm ở góc sau bên trái.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_2",
+        "monologue",
+        "l4",
+        "signposting",
+        "spatial_directions"
+      ]
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "A",
+      "text_en": "The conservation studio is at the back-right corner. It used to be a public gallery, but sensitive paintings now need controlled light, so visitors can only watch through the glass wall.",
+      "translation_vi": "Phòng bảo tồn ở góc sau bên phải. Trước kia là khu trưng bày, nay tranh cần ánh sáng kiểm soát nên khách chỉ xem qua kính.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_2",
+        "monologue",
+        "l4",
+        "signposting",
+        "spatial_directions"
+      ]
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "A",
+      "text_en": "If you booked a restoration demonstration, go to the central room at the far end, directly ahead of the entrance. The demonstration is scheduled for eleven forty, not eleven fifteen as shown on the old leaflet.",
+      "translation_vi": "Nếu đặt buổi trình diễn phục chế, hãy tới phòng giữa phía cuối, đi thẳng từ lối vào. Buổi trình diễn lúc 11 giờ 40, không phải 11 giờ 15 như tờ rơi cũ.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_2",
+        "monologue",
+        "l4",
+        "signposting",
+        "spatial_directions"
+      ]
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "A",
+      "text_en": "We cannot allow food in any exhibition space. You may eat in the small café, which is the first room on your right, but drinks must remain there as well.",
+      "translation_vi": "Không được ăn trong phòng triển lãm. Có thể ăn ở quán cà phê, phòng đầu bên phải, nhưng đồ uống cũng phải để lại tại đó.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_2",
+        "monologue",
+        "l4",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "A",
+      "text_en": "An optional audio guide costs four pounds. It includes descriptions of twelve objects, although only eight are currently on public display because four have been lent to another museum.",
+      "translation_vi": "Thiết bị hướng dẫn âm thanh giá bốn bảng, giới thiệu mười hai hiện vật, nhưng chỉ tám hiện vật đang trưng bày vì bốn hiện vật được cho mượn.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_2",
+        "monologue",
+        "l4",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "At half past twelve, the family workshop begins in the room I mentioned earlier. Children will make a model boat with recycled materials; protective aprons are supplied, so please do not bring paint.",
+      "translation_vi": "Lúc 12 giờ 30, xưởng gia đình bắt đầu ở phòng vừa nhắc. Trẻ làm thuyền mô hình từ vật liệu tái chế; đã có tạp dề nên không cần mang sơn.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_2",
+        "monologue",
+        "l4",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "A",
+      "text_en": "Finally, the north corridor is closed for repairs. Follow the signs through the central room rather than trying the narrow passage beside the conservation studio.",
+      "translation_vi": "Cuối cùng, hành lang phía bắc đóng để sửa chữa. Hãy đi theo biển qua phòng giữa thay vì lối nhỏ cạnh phòng bảo tồn.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_2",
+        "monologue",
+        "l4",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T09",
+      "speaker_id": "A",
+      "text_en": "We will meet again beside the main entrance at one fifteen. Please ask a member of staff if you need a quieter route or a step-free entrance.",
+      "translation_vi": "Chúng ta sẽ gặp lại ở cổng chính lúc 1 giờ 15. Hãy hỏi nhân viên nếu cần đường yên tĩnh hoặc không có bậc thang.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_2",
+        "monologue",
+        "l4",
+        "signposting"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "type": "map_labelling",
+      "prompt": "Use the location plan (A–F): Location of the ticket counter: ____",
+      "correct_answers": [
+        "D"
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Quầy vé là phòng đầu bên trái từ cửa phía nam.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "section_2",
+        "ielts_practice",
+        "map_orientation"
+      ],
+      "map_asset": "maps/DICT-S2-016.svg"
+    },
+    {
+      "question_id": "Q02",
+      "type": "map_labelling",
+      "prompt": "Use the location plan (A–F): Location of the conservation studio: ____",
+      "correct_answers": [
+        "C"
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Phòng bảo tồn ở góc sau bên phải.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "section_2",
+        "ielts_practice",
+        "map_orientation"
+      ],
+      "map_asset": "maps/DICT-S2-016.svg"
+    },
+    {
+      "question_id": "Q03",
+      "type": "mcq",
+      "prompt": "What is the revised time for the restoration demonstration?",
+      "correct_answers": [
+        "eleven forty"
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Giờ mới là 11:40; 11:15 là giờ trên tờ rơi cũ.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "section_2",
+        "ielts_practice",
+        "detail_recognition"
+      ],
+      "options": [
+        "eleven fifteen",
+        "twelve forty-five",
+        "eleven forty"
+      ]
+    },
+    {
+      "question_id": "Q04",
+      "type": "note_completion",
+      "prompt": "Notes — Audio guide fee in pounds: ____",
+      "correct_answers": [
+        "four"
+      ],
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "explanation_vi": "Thiết bị hướng dẫn giá bốn bảng.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_2",
+        "ielts_practice",
+        "detail_recognition"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q05",
+      "type": "note_completion",
+      "prompt": "Notes — Children make a model: ____",
+      "correct_answers": [
+        "boat"
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "Các em làm mô hình thuyền.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_2",
+        "ielts_practice",
+        "detail_recognition"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q06",
+      "type": "note_completion",
+      "prompt": "Notes — Final meeting time: ____",
+      "correct_answers": [
+        "one fifteen"
+      ],
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "explanation_vi": "Hẹn gặp lại lúc 1:15.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_2",
+        "ielts_practice",
+        "detail_recognition"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "D01",
+      "type": "dictation",
+      "prompt": "Nghe lại và chép nguyên văn đoạn T05 (toàn bộ lời người dẫn).",
+      "correct_answers": [
+        "We cannot allow food in any exhibition space. You may eat in the small café, which is the first room on your right, but drinks must remain there as well."
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Câu gốc: We cannot allow food in any exhibition space. You may eat in the small café, which is the first room on your right, but drinks must remain there as well. Nghĩa: Không được ăn trong phòng triển lãm. Có thể ăn ở quán cà phê, phòng đầu bên phải, nhưng đồ uống cũng phải để lại tại đó. Lưu ý từ chức năng, âm cuối và cụm từ nối.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "exact_transcript",
+        "section_2"
+      ]
+    },
+    {
+      "question_id": "G01",
+      "type": "gap_fill",
+      "prompt": "Điền cụm từ bị ẩn sau khi nghe: The conservation studio is at the back-right corner. It used to be a public ____, but sensitive paintings now need controlled light, so visitors can only watch through the glass wall.",
+      "correct_answers": [
+        "gallery"
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "gallery: phòng trưng bày. Ngữ cảnh: Phòng bảo tồn ở góc sau bên phải. Trước kia là khu trưng bày, nay tranh cần ánh sáng kiểm soát nên khách chỉ xem qua kính.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "gap_fill",
+        "vocab_in_context",
+        "section_2"
+      ]
+    }
+  ],
+  "vocabulary": [
+    {
+      "term": "gallery",
+      "pos": "n.",
+      "meaning_vi": "phòng trưng bày",
+      "example_en": "The conservation studio is at the back-right corner. It used to be a public gallery, but sensitive paintings now need controlled light, so visitors can only watch through the glass wall.",
+      "example_vi": "Phòng bảo tồn ở góc sau bên phải. Trước kia là khu trưng bày, nay tranh cần ánh sáng kiểm soát nên khách chỉ xem qua kính.",
+      "source_turn_id": "T03"
+    },
+    {
+      "term": "restoration",
+      "pos": "n.",
+      "meaning_vi": "phục chế",
+      "example_en": "If you booked a restoration demonstration, go to the central room at the far end, directly ahead of the entrance. The demonstration is scheduled for eleven forty, not eleven fifteen as shown on the old leaflet.",
+      "example_vi": "Nếu đặt buổi trình diễn phục chế, hãy tới phòng giữa phía cuối, đi thẳng từ lối vào. Buổi trình diễn lúc 11 giờ 40, không phải 11 giờ 15 như tờ rơi cũ.",
+      "source_turn_id": "T04"
+    },
+    {
+      "term": "exhibition",
+      "pos": "n.",
+      "meaning_vi": "triển lãm",
+      "example_en": "We cannot allow food in any exhibition space. You may eat in the small café, which is the first room on your right, but drinks must remain there as well.",
+      "example_vi": "Không được ăn trong phòng triển lãm. Có thể ăn ở quán cà phê, phòng đầu bên phải, nhưng đồ uống cũng phải để lại tại đó.",
+      "source_turn_id": "T05"
+    },
+    {
+      "term": "entrance",
+      "pos": "n.",
+      "meaning_vi": "lối vào",
+      "example_en": "You are standing at the main entrance on the south side. The ticket counter is the first room on your left, and the family workshop occupies the back-left corner of the building.",
+      "example_vi": "Các bạn đang đứng tại cổng phía nam. Quầy vé là phòng đầu bên trái, còn xưởng gia đình nằm ở góc sau bên trái.",
+      "source_turn_id": "T02"
+    }
+  ],
+  "audio": {
+    "status": "not_generated",
+    "url": null,
+    "duration_ms": null,
+    "model": null,
+    "provider": null,
+    "voice_config": null,
+    "source_transcript_hash": "5958ed0b1ff8d52b61b603757c02e2b442558b6a6962801cbd1b9f8751911c8e",
+    "audio_sha256": null,
+    "format": null
+  },
+  "qa": {
+    "content_reviewed": false,
+    "answers_verified": false,
+    "audio_verified": false,
+    "rights_cleared": false,
+    "duplicate_reviewed": false,
+    "notes": [
+      "AI-assisted original writing; pedagogical and pronunciation review still required.",
+      "No TTS or sentence-level timestamps supplied; do not publish.",
+      "This is Section 2 skill practice, not an official IELTS test.",
+      "M16.2: automated edits are provisional; IELTS teacher final signoff, audio and rights clearance pending."
+    ]
+  },
+  "provenance": {
+    "content_origin": "original_ai_assisted",
+    "source_urls": [],
+    "source_rights_note": "Newly authored educational monologue. Confirm audio model distribution, age suitability and TOS separately before publishing.",
+    "reviewer": null
+  },
+  "release_metadata": {
+    "published_at": null,
+    "version": 1
+  }
+}

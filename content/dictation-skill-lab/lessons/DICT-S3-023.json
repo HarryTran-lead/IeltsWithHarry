@@ -1,0 +1,458 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "DICT-S3-023",
+  "status": "draft",
+  "level": "L5",
+  "section": 3,
+  "topic": "Internship Discussions",
+  "title": "Internship Discussions: Evaluating the Options",
+  "learning_objectives_vi": [
+    "Theo dõi ý kiến và lập luận của nhiều người trong một thảo luận học thuật.",
+    "Xác định thông tin cuối cùng sau khi người nói đề xuất, phản biện hoặc sửa ý.",
+    "Chép chính xác những đoạn trọng tâm và đối chiếu bằng chứng trong transcript."
+  ],
+  "content_format": "section_practice",
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Nina – university student / tutor discussion participant",
+      "tts_voice_id": null,
+      "accent_requested": "new_zealand"
+    },
+    {
+      "speaker_id": "B",
+      "role": "Leo – university student / tutor discussion participant",
+      "tts_voice_id": null,
+      "accent_requested": "new_zealand"
+    },
+    {
+      "speaker_id": "C",
+      "role": "Holly – university student / tutor discussion participant",
+      "tts_voice_id": null,
+      "accent_requested": "new_zealand"
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "The engineering company offered three internship rotations, but I'm unsure whether to choose product testing or software support first.",
+      "translation_vi": "Công ty kỹ thuật có ba đợt luân chuyển thực tập, nhưng mình chưa biết chọn kiểm thử sản phẩm hay hỗ trợ phần mềm trước.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "l5",
+        "opinion_comparison"
+      ]
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "B",
+      "text_en": "Testing might give you a better understanding of the equipment. On the other hand, support would involve more contact with users.",
+      "translation_vi": "Kiểm thử có thể giúp hiểu thiết bị hơn. Mặt khác, hỗ trợ sẽ tiếp xúc người dùng nhiều hơn.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "l5",
+        "opinion_comparison"
+      ]
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "C",
+      "text_en": "The internship coordinator said students must complete a safety induction before working in the testing laboratory, which could delay that rotation.",
+      "translation_vi": "Điều phối viên nói sinh viên phải học an toàn trước khi vào phòng kiểm thử, điều đó có thể trì hoãn đợt đó.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "l5",
+        "opinion_comparison"
+      ]
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "A",
+      "text_en": "I hadn't realised the induction takes a whole week. I could begin in support, but I don't want to be limited to answering basic emails.",
+      "translation_vi": "Mình không biết buổi học an toàn mất cả tuần. Có thể bắt đầu ở hỗ trợ, nhưng không muốn chỉ trả lời email cơ bản.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "l5",
+        "opinion_comparison"
+      ]
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "B",
+      "text_en": "The company mentor told me that support interns analyse recurring faults and suggest changes to the user guides, not merely reply to customers.",
+      "translation_vi": "Người hướng dẫn công ty nói thực tập sinh hỗ trợ phân tích lỗi lặp lại và đề xuất sửa hướng dẫn, không chỉ trả lời khách.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "l5",
+        "opinion_comparison"
+      ]
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "C",
+      "text_en": "That sounds relevant. You could then take your observations into testing and investigate the technical causes in the second rotation.",
+      "translation_vi": "Nghe có liên quan. Sau đó bạn đưa quan sát sang kiểm thử để điều tra nguyên nhân kỹ thuật ở đợt hai.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "l5",
+        "opinion_comparison"
+      ]
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "What about the third rotation? I hoped to join the design team, but apparently places are limited.",
+      "translation_vi": "Còn đợt ba? Mình muốn vào nhóm thiết kế, nhưng nghe nói chỗ có hạn.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "l5",
+        "opinion_comparison"
+      ]
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "B",
+      "text_en": "They allocate those places after a review. The mentor considers the quality of your project log, not simply your academic grades.",
+      "translation_vi": "Họ phân chỗ sau đánh giá. Người hướng dẫn xét chất lượng nhật ký dự án, không chỉ điểm học tập.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "l5",
+        "opinion_comparison"
+      ]
+    },
+    {
+      "turn_id": "T09",
+      "speaker_id": "C",
+      "text_en": "Make sure you never include client names in the university report. The confidentiality agreement covers information from both support and testing.",
+      "translation_vi": "Đảm bảo không đưa tên khách hàng vào báo cáo trường. Thỏa thuận bảo mật bao phủ thông tin từ hỗ trợ lẫn kiểm thử.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "l5",
+        "opinion_comparison"
+      ]
+    },
+    {
+      "turn_id": "T10",
+      "speaker_id": "A",
+      "text_en": "Right. I can describe the general problem and the approach without identifying a particular customer or sharing private records.",
+      "translation_vi": "Đúng. Mình có thể mô tả vấn đề và cách tiếp cận chung mà không nêu khách cụ thể hay chia sẻ hồ sơ riêng.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "l5",
+        "opinion_comparison"
+      ]
+    },
+    {
+      "turn_id": "T11",
+      "speaker_id": "B",
+      "text_en": "So you could start in support, move to testing after the induction, and apply for design using a strong project log.",
+      "translation_vi": "Vậy bạn có thể bắt đầu ở hỗ trợ, sang kiểm thử sau khi học an toàn, rồi ứng tuyển thiết kế với nhật ký tốt.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "l5",
+        "opinion_comparison"
+      ]
+    },
+    {
+      "turn_id": "T12",
+      "speaker_id": "C",
+      "text_en": "Email the coordinator today to confirm that order. Don't assume the rotations are automatic once your contract is signed.",
+      "translation_vi": "Gửi email cho điều phối viên hôm nay để xác nhận thứ tự. Đừng mặc định luân chuyển tự động sau khi ký hợp đồng.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "l5",
+        "opinion_comparison"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "type": "mcq",
+      "prompt": "Why may the testing rotation be delayed?",
+      "correct_answers": [
+        "A safety induction must be completed"
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Bằng chứng ở T03 (Holly): “Điều phối viên nói sinh viên phải học an toàn trước khi vào phòng kiểm thử, điều đó có thể trì hoãn đợt đó.” Đáp án: “A safety induction must be completed”. Đây là ý cuối cùng hoặc lập luận cần xác định; các lựa chọn khác không được đoạn này xác nhận.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "section_3",
+        "ielts_practice",
+        "opinion_inference"
+      ],
+      "options": [
+        "A safety induction must be completed",
+        "The company lacks computers",
+        "Clients have cancelled"
+      ]
+    },
+    {
+      "question_id": "Q02",
+      "type": "note_completion",
+      "prompt": "Support interns analyse recurring ____.",
+      "correct_answers": [
+        "faults"
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Bằng chứng ở T05 (Leo): “Người hướng dẫn công ty nói thực tập sinh hỗ trợ phân tích lỗi lặp lại và đề xuất sửa hướng dẫn, không chỉ trả lời khách.” Đáp án: “faults”. Từ/cụm từ nằm trong lời nói; không chọn thông tin đã bị sửa hoặc người khác chỉ đề xuất.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_3",
+        "ielts_practice",
+        "detail_recognition"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q03",
+      "type": "matching",
+      "prompt": "Which rotation will follow the initial support period?",
+      "correct_answers": [
+        "testing"
+      ],
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "explanation_vi": "Bằng chứng ở T06 (Holly): “Nghe có liên quan. Sau đó bạn đưa quan sát sang kiểm thử để điều tra nguyên nhân kỹ thuật ở đợt hai.” Đáp án: “testing”. Đối chiếu đúng thông tin được người nói nêu, chú ý các ý kiến hoặc phương án trước đó.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "section_3",
+        "ielts_practice",
+        "speaker_attribution"
+      ],
+      "options": [
+        "marketing",
+        "testing",
+        "design"
+      ]
+    },
+    {
+      "question_id": "Q04",
+      "type": "note_completion",
+      "prompt": "Design places depend on the quality of a project ____.",
+      "correct_answers": [
+        "log"
+      ],
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "explanation_vi": "Bằng chứng ở T08 (Leo): “Họ phân chỗ sau đánh giá. Người hướng dẫn xét chất lượng nhật ký dự án, không chỉ điểm học tập.” Đáp án: “log”. Từ/cụm từ nằm trong lời nói; không chọn thông tin đã bị sửa hoặc người khác chỉ đề xuất.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_3",
+        "ielts_practice",
+        "detail_recognition"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q05",
+      "type": "mcq",
+      "prompt": "Why must client names be left out of the university report?",
+      "correct_answers": [
+        "Confidentiality rules protect client information"
+      ],
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "explanation_vi": "Bằng chứng ở T09 (Holly): “Đảm bảo không đưa tên khách hàng vào báo cáo trường. Thỏa thuận bảo mật bao phủ thông tin từ hỗ trợ lẫn kiểm thử.” Đáp án: “Confidentiality rules protect client information”. Đây là ý cuối cùng hoặc lập luận cần xác định; các lựa chọn khác không được đoạn này xác nhận.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "section_3",
+        "ielts_practice",
+        "opinion_inference"
+      ],
+      "options": [
+        "The report has a word limit",
+        "Names are difficult to spell",
+        "Confidentiality rules protect client information"
+      ]
+    },
+    {
+      "question_id": "Q06",
+      "type": "short_answer",
+      "prompt": "Who must confirm the planned rotation order?",
+      "correct_answers": [
+        "coordinator"
+      ],
+      "evidence_turn_ids": [
+        "T12"
+      ],
+      "explanation_vi": "Bằng chứng ở T12 (Holly): “Gửi email cho điều phối viên hôm nay để xác nhận thứ tự. Đừng mặc định luân chuyển tự động sau khi ký hợp đồng.” Đáp án: “coordinator”. Từ/cụm từ nằm trong lời nói; không chọn thông tin đã bị sửa hoặc người khác chỉ đề xuất.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_3",
+        "ielts_practice",
+        "detail_recognition"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "D01",
+      "type": "dictation",
+      "prompt": "Nghe đoạn T04 và chép nguyên văn tiếng Anh (Speaker A).",
+      "correct_answers": [
+        "I hadn't realised the induction takes a whole week. I could begin in support, but I don't want to be limited to answering basic emails."
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Câu gốc: “I hadn't realised the induction takes a whole week. I could begin in support, but I don't want to be limited to answering basic emails.”\nNghĩa: Mình không biết buổi học an toàn mất cả tuần. Có thể bắt đầu ở hỗ trợ, nhưng không muốn chỉ trả lời email cơ bản.\nChú ý từ chức năng, âm yếu, cụm từ nối và ý người nói.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_3",
+        "dictation",
+        "exact_transcript"
+      ]
+    },
+    {
+      "question_id": "D02",
+      "type": "dictation",
+      "prompt": "Nghe đoạn T08 và chép nguyên văn tiếng Anh (Speaker B).",
+      "correct_answers": [
+        "They allocate those places after a review. The mentor considers the quality of your project log, not simply your academic grades."
+      ],
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "explanation_vi": "Câu gốc: “They allocate those places after a review. The mentor considers the quality of your project log, not simply your academic grades.”\nNghĩa: Họ phân chỗ sau đánh giá. Người hướng dẫn xét chất lượng nhật ký dự án, không chỉ điểm học tập.\nChú ý từ chức năng, âm yếu, cụm từ nối và ý người nói.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_3",
+        "dictation",
+        "exact_transcript"
+      ]
+    },
+    {
+      "question_id": "G01",
+      "type": "gap_fill",
+      "prompt": "Nghe T01, điền từ/cụm từ bị thiếu: The engineering company offered three ____, but I'm unsure whether to choose product testing or software support first.",
+      "correct_answers": [
+        "internship rotations"
+      ],
+      "evidence_turn_ids": [
+        "T01"
+      ],
+      "explanation_vi": "Cụm cần nghe: “internship rotations” (các đợt luân chuyển thực tập). Lời gốc: “The engineering company offered three internship rotations, but I'm unsure whether to choose product testing or software support first.”.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_3",
+        "gap_fill",
+        "vocabulary_in_context"
+      ]
+    }
+  ],
+  "vocabulary": [
+    {
+      "term": "internship rotations",
+      "pos": "n. phr.",
+      "meaning_vi": "các đợt luân chuyển thực tập",
+      "example_en": "The engineering company offered three internship rotations, but I'm unsure whether to choose product testing or software support first.",
+      "example_vi": "Công ty kỹ thuật có ba đợt luân chuyển thực tập, nhưng mình chưa biết chọn kiểm thử sản phẩm hay hỗ trợ phần mềm trước.",
+      "source_turn_id": "T01"
+    },
+    {
+      "term": "safety induction",
+      "pos": "n. phr.",
+      "meaning_vi": "định hướng an toàn",
+      "example_en": "The internship coordinator said students must complete a safety induction before working in the testing laboratory, which could delay that rotation.",
+      "example_vi": "Điều phối viên nói sinh viên phải học an toàn trước khi vào phòng kiểm thử, điều đó có thể trì hoãn đợt đó.",
+      "source_turn_id": "T03"
+    },
+    {
+      "term": "recurring faults",
+      "pos": "n. phr.",
+      "meaning_vi": "lỗi lặp lại",
+      "example_en": "The company mentor told me that support interns analyse recurring faults and suggest changes to the user guides, not merely reply to customers.",
+      "example_vi": "Người hướng dẫn công ty nói thực tập sinh hỗ trợ phân tích lỗi lặp lại và đề xuất sửa hướng dẫn, không chỉ trả lời khách.",
+      "source_turn_id": "T05"
+    },
+    {
+      "term": "confidentiality agreement",
+      "pos": "n. phr.",
+      "meaning_vi": "thỏa thuận bảo mật",
+      "example_en": "Make sure you never include client names in the university report. The confidentiality agreement covers information from both support and testing.",
+      "example_vi": "Đảm bảo không đưa tên khách hàng vào báo cáo trường. Thỏa thuận bảo mật bao phủ thông tin từ hỗ trợ lẫn kiểm thử.",
+      "source_turn_id": "T09"
+    }
+  ],
+  "audio": {
+    "status": "not_generated",
+    "url": null,
+    "duration_ms": null,
+    "model": null,
+    "provider": null,
+    "voice_config": null,
+    "source_transcript_hash": "08ffa1bbd24d1c3a0d72212cfdab2fe431ede4fc995024bed11e20e601d02c78",
+    "audio_sha256": null,
+    "format": null
+  },
+  "qa": {
+    "content_reviewed": false,
+    "answers_verified": false,
+    "audio_verified": false,
+    "rights_cleared": false,
+    "duplicate_reviewed": false,
+    "notes": [
+      "Original synthetic dialogues: human educational review required.",
+      "Audio, timestamps, voice suitability and service/distribution rights not yet verified.",
+      "Training lessons, NOT official IELTS Part 3 tests or calibrated band tests.",
+      "M16.2: automated edits are provisional; IELTS teacher final signoff, audio and rights clearance pending."
+    ]
+  },
+  "provenance": {
+    "content_origin": "original_ai_assisted",
+    "source_urls": [],
+    "source_rights_note": "Original text; verify TTS provider terms and distribution rights before publishing to a youth-accessible website.",
+    "reviewer": null
+  },
+  "release_metadata": {
+    "published_at": null,
+    "version": 1
+  }
+}

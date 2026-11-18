@@ -1,0 +1,440 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "DICT-F2-007",
+  "status": "draft",
+  "level": "L2",
+  "section": 0,
+  "topic": "Foundation",
+  "title": "Present Continuous",
+  "learning_objectives_vi": [
+    "Nghe be + V-ing",
+    "Nghe trợ động từ và hình thái động từ, đối chiếu với chủ ngữ hoặc mốc thời gian."
+  ],
+  "content_format": "sentence_drill",
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Foundation narrator",
+      "tts_voice_id": null,
+      "accent_requested": "australian"
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "I'm waiting for the bus outside the station.",
+      "translation_vi": "Tôi đang đợi xe buýt bên ngoài nhà ga.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "grammar",
+        "sentence_dictation",
+        "foundation_f2"
+      ]
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "A",
+      "text_en": "Look, the children are crossing the road.",
+      "translation_vi": "Nhìn kìa, bọn trẻ đang băng qua đường.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "grammar",
+        "sentence_dictation",
+        "foundation_f2"
+      ]
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "A",
+      "text_en": "My dad is cooking dinner in the kitchen.",
+      "translation_vi": "Bố tôi đang nấu bữa tối trong bếp.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "grammar",
+        "sentence_dictation",
+        "foundation_f2"
+      ]
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "A",
+      "text_en": "We're studying for our English test tonight.",
+      "translation_vi": "Chúng tôi đang ôn thi tiếng Anh tối nay.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "grammar",
+        "sentence_dictation",
+        "foundation_f2"
+      ]
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "A",
+      "text_en": "Why is your phone ringing so loudly?",
+      "translation_vi": "Sao điện thoại của bạn đang reo to vậy?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "grammar",
+        "sentence_dictation",
+        "foundation_f2"
+      ]
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "A",
+      "text_en": "She's wearing a blue jacket today.",
+      "translation_vi": "Hôm nay cô ấy đang mặc áo khoác xanh.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "grammar",
+        "sentence_dictation",
+        "foundation_f2"
+      ]
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "The workers are painting the classroom walls.",
+      "translation_vi": "Các công nhân đang sơn tường lớp học.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "grammar",
+        "sentence_dictation",
+        "foundation_f2"
+      ]
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "A",
+      "text_en": "I'm not using my laptop at the moment.",
+      "translation_vi": "Hiện tại tôi không dùng máy tính xách tay.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "grammar",
+        "sentence_dictation",
+        "foundation_f2"
+      ]
+    },
+    {
+      "turn_id": "T09",
+      "speaker_id": "A",
+      "text_en": "Are you listening to the instructions?",
+      "translation_vi": "Bạn có đang lắng nghe hướng dẫn không?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "grammar",
+        "sentence_dictation",
+        "foundation_f2"
+      ]
+    },
+    {
+      "turn_id": "T10",
+      "speaker_id": "A",
+      "text_en": "The rain is getting heavier now.",
+      "translation_vi": "Mưa đang ngày càng nặng hạt.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "grammar",
+        "sentence_dictation",
+        "foundation_f2"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "type": "dictation",
+      "prompt": "Nghe câu T01 rồi chép lại đúng những từ được nói.",
+      "correct_answers": [
+        "I'm waiting for the bus outside the station."
+      ],
+      "evidence_turn_ids": [
+        "T01"
+      ],
+      "explanation_vi": "I'm là I am; waiting có /ɪŋ/ cuối. Nghĩa: Tôi đang đợi xe buýt bên ngoài nhà ga.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "grammar"
+      ]
+    },
+    {
+      "question_id": "Q02",
+      "type": "dictation",
+      "prompt": "Nghe câu T02 rồi chép lại đúng những từ được nói.",
+      "correct_answers": [
+        "Look, the children are crossing the road."
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Are crossing mang nghĩa đang diễn ra. Nghĩa: Nhìn kìa, bọn trẻ đang băng qua đường.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "grammar"
+      ]
+    },
+    {
+      "question_id": "Q03",
+      "type": "dictation",
+      "prompt": "Nghe câu T03 rồi chép lại đúng những từ được nói.",
+      "correct_answers": [
+        "My dad is cooking dinner in the kitchen."
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Is cooking nối sát; cooking có âm /ŋ/. Nghĩa: Bố tôi đang nấu bữa tối trong bếp.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "grammar"
+      ]
+    },
+    {
+      "question_id": "Q04",
+      "type": "dictation",
+      "prompt": "Nghe câu T04 rồi chép lại đúng những từ được nói.",
+      "correct_answers": [
+        "We're studying for our English test tonight."
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "We're = we are, không phải were. Nghĩa: Chúng tôi đang ôn thi tiếng Anh tối nay.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "grammar"
+      ]
+    },
+    {
+      "question_id": "Q05",
+      "type": "dictation",
+      "prompt": "Nghe câu T05 rồi chép lại đúng những từ được nói.",
+      "correct_answers": [
+        "Why is your phone ringing so loudly?"
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Is đứng trước chủ ngữ phone trong câu hỏi. Nghĩa: Sao điện thoại của bạn đang reo to vậy?",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "grammar"
+      ]
+    },
+    {
+      "question_id": "Q06",
+      "type": "dictation",
+      "prompt": "Nghe câu T06 rồi chép lại đúng những từ được nói.",
+      "correct_answers": [
+        "She's wearing a blue jacket today."
+      ],
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "explanation_vi": "She's ở đây là she is; wearing /ˈweərɪŋ/. Nghĩa: Hôm nay cô ấy đang mặc áo khoác xanh.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "grammar"
+      ]
+    },
+    {
+      "question_id": "Q07",
+      "type": "dictation",
+      "prompt": "Nghe câu T07 rồi chép lại đúng những từ được nói.",
+      "correct_answers": [
+        "The workers are painting the classroom walls."
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "Workers số nhiều đi với are, không phải is. Nghĩa: Các công nhân đang sơn tường lớp học.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "grammar"
+      ]
+    },
+    {
+      "question_id": "Q08",
+      "type": "dictation",
+      "prompt": "Nghe câu T08 rồi chép lại đúng những từ được nói.",
+      "correct_answers": [
+        "I'm not using my laptop at the moment."
+      ],
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "explanation_vi": "I'm not + V-ing chỉ phủ định tiếp diễn. Nghĩa: Hiện tại tôi không dùng máy tính xách tay.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "grammar"
+      ]
+    },
+    {
+      "question_id": "Q09",
+      "type": "dictation",
+      "prompt": "Nghe câu T09 rồi chép lại đúng những từ được nói.",
+      "correct_answers": [
+        "Are you listening to the instructions?"
+      ],
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "explanation_vi": "Are you thường nối âm; listen to có to yếu. Nghĩa: Bạn có đang lắng nghe hướng dẫn không?",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "grammar"
+      ]
+    },
+    {
+      "question_id": "Q10",
+      "type": "dictation",
+      "prompt": "Nghe câu T10 rồi chép lại đúng những từ được nói.",
+      "correct_answers": [
+        "The rain is getting heavier now."
+      ],
+      "evidence_turn_ids": [
+        "T10"
+      ],
+      "explanation_vi": "Is getting và heavier mô tả thay đổi ngay lúc nói. Nghĩa: Mưa đang ngày càng nặng hạt.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "grammar"
+      ]
+    },
+    {
+      "question_id": "Q11",
+      "type": "word_choice",
+      "prompt": "Bố đang nấu bữa nào?",
+      "options": [
+        "dinner",
+        "breakfast",
+        "lunch"
+      ],
+      "correct_answers": [
+        "dinner"
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "T03 nói cooking dinner.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "comprehension",
+        "meaning_check",
+        "grammar"
+      ]
+    },
+    {
+      "question_id": "Q12",
+      "type": "word_choice",
+      "prompt": "Trời mưa đang thay đổi thế nào?",
+      "options": [
+        "getting lighter",
+        "stopping",
+        "getting heavier"
+      ],
+      "correct_answers": [
+        "getting heavier"
+      ],
+      "evidence_turn_ids": [
+        "T10"
+      ],
+      "explanation_vi": "T10 dùng getting heavier.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "comprehension",
+        "meaning_check",
+        "grammar"
+      ]
+    }
+  ],
+  "vocabulary": [
+    {
+      "term": "waiting",
+      "pos": "verb",
+      "meaning_vi": "đang đợi",
+      "example_en": "I'm waiting for the bus outside the station.",
+      "example_vi": "Tôi đang đợi xe buýt bên ngoài nhà ga.",
+      "source_turn_id": "T01"
+    },
+    {
+      "term": "crossing",
+      "pos": "verb",
+      "meaning_vi": "đang băng qua",
+      "example_en": "Look, the children are crossing the road.",
+      "example_vi": "Nhìn kìa, bọn trẻ đang băng qua đường.",
+      "source_turn_id": "T02"
+    },
+    {
+      "term": "at the moment",
+      "pos": "adverbial phrase",
+      "meaning_vi": "ngay lúc này",
+      "example_en": "I'm not using my laptop at the moment.",
+      "example_vi": "Hiện tại tôi không dùng máy tính xách tay.",
+      "source_turn_id": "T08"
+    },
+    {
+      "term": "getting heavier",
+      "pos": "verb phrase",
+      "meaning_vi": "ngày càng nặng hạt",
+      "example_en": "The rain is getting heavier now.",
+      "example_vi": "Mưa đang ngày càng nặng hạt.",
+      "source_turn_id": "T10"
+    }
+  ],
+  "audio": {
+    "status": "not_generated",
+    "url": null,
+    "duration_ms": null,
+    "model": null,
+    "provider": null,
+    "voice_config": null,
+    "source_transcript_hash": "b8ce701dcc88a0589099ea9dc34d860c959ac3bddb1e63371fd094a0b0c4f193",
+    "audio_sha256": null,
+    "format": null
+  },
+  "qa": {
+    "content_reviewed": false,
+    "answers_verified": false,
+    "audio_verified": false,
+    "rights_cleared": false,
+    "duplicate_reviewed": false,
+    "notes": [
+      "Original AI-assisted authored draft. Human editorial review needed before publishing.",
+      "TTS audio and timestamps not produced. Keep lesson locked until audio verified.",
+      "If TTS output differs from canonical text, regenerate or update transcript and recheck evidence.",
+      "M16.2: automated edits are provisional; IELTS teacher final signoff, audio and rights clearance pending."
+    ]
+  },
+  "provenance": {
+    "content_origin": "original_ai_assisted",
+    "source_urls": [],
+    "source_rights_note": "Original material; inspect TTS provider terms, distribution rights and access restrictions before production.",
+    "reviewer": null
+  },
+  "release_metadata": {
+    "published_at": null,
+    "version": 1
+  }
+}

@@ -1,0 +1,421 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "DICT-S3-057",
+  "status": "draft",
+  "level": "L7",
+  "section": 3,
+  "topic": "Survey Design",
+  "title": "Survey Design – Student Housing Costs Survey",
+  "learning_objectives_vi": [
+    "Theo dõi ba nhân vật thảo luận và phân biệt quan điểm ban đầu với quyết định sau cùng.",
+    "Nhận biết lập luận, điều kiện, hạn chế nghiên cứu và diễn đạt lại (paraphrase) trong Section 3.",
+    "Nghe chép đúng phát ngôn then chốt và truy xuất bằng chứng theo lượt thoại."
+  ],
+  "content_format": "section_practice",
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Anya – academic project discussion participant",
+      "tts_voice_id": null,
+      "accent_requested": "australian"
+    },
+    {
+      "speaker_id": "B",
+      "role": "George – academic project discussion participant",
+      "tts_voice_id": null,
+      "accent_requested": "australian"
+    },
+    {
+      "speaker_id": "C",
+      "role": "Luca – academic project discussion participant",
+      "tts_voice_id": null,
+      "accent_requested": "australian"
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "The housing-cost survey asks students to report monthly rent and household income. Several pilot participants skipped the income question, although they completed the rest of the form.",
+      "translation_vi": "Khảo sát chi phí nhà ở hỏi sinh viên tiền thuê tháng và thu nhập hộ gia đình. Vài người thử bỏ câu thu nhập dù hoàn thành phần còn lại.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "multi_speaker",
+        "l7"
+      ]
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "B",
+      "text_en": "Income is sensitive, and some students may not know the full household figure. We shouldn't force an exact amount or assume a blank response means the person has no income.",
+      "translation_vi": "Thu nhập nhạy cảm và vài sinh viên có thể không biết tổng thu nhập hộ. Ta không nên ép số chính xác hay coi để trống nghĩa là không có thu nhập.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "multi_speaker",
+        "l7"
+      ]
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "C",
+      "text_en": "What if we offer broad ranges and an explicit 'prefer not to say' option? That may improve trust, although it means our analysis won't have exact income values.",
+      "translation_vi": "Hay ta đưa các khoảng rộng và lựa chọn 'không muốn tiết lộ'? Cách đó tăng niềm tin, dù phân tích sẽ không có số thu nhập chính xác.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "multi_speaker",
+        "l7"
+      ]
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "A",
+      "text_en": "I'm also concerned that comparing average rent across the whole university hides differences between students living alone and those sharing with several people. The unit of analysis needs clarification.",
+      "translation_vi": "Mình còn lo so tiền thuê trung bình toàn trường che khác biệt giữa người ở một mình và người ở ghép. Cần làm rõ đơn vị phân tích.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "multi_speaker",
+        "l7"
+      ]
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "B",
+      "text_en": "Let's collect personal rent contribution, not the total amount paid for the entire property. We can then compare what each student actually pays without dividing shared rent incorrectly.",
+      "translation_vi": "Hãy thu phần tiền thuê cá nhân, không phải tổng cả căn. Ta sẽ so số mỗi sinh viên thật trả mà không chia sai tiền thuê chung.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "multi_speaker",
+        "l7"
+      ]
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "C",
+      "text_en": "But our sampling is heavily weighted toward first-year students because we recruited through residence halls. We should invite students in later years through course mailing lists too.",
+      "translation_vi": "Nhưng mẫu thiên về sinh viên năm nhất vì tuyển qua ký túc xá. Ta cũng nên mời năm sau qua danh sách email môn học.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "multi_speaker",
+        "l7"
+      ]
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "For the report, perhaps we can present separate results by year of study and living arrangement. That will be more informative than one university-wide number that suggests false precision.",
+      "translation_vi": "Trong báo cáo, ta có thể trình bày riêng theo năm học và kiểu ở. Như vậy hữu ích hơn một con số toàn trường tạo cảm giác chính xác giả.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "multi_speaker",
+        "l7"
+      ]
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "B",
+      "text_en": "The ethics form should also state that individual responses won't be shared with landlords or departments. Otherwise, people may underreport costs because they fear consequences.",
+      "translation_vi": "Mẫu đồng ý cũng cần nêu phản hồi cá nhân không chia cho chủ nhà hay khoa. Nếu không, họ có thể khai thấp chi phí vì sợ hệ quả.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "multi_speaker",
+        "l7"
+      ]
+    },
+    {
+      "turn_id": "T09",
+      "speaker_id": "C",
+      "text_en": "Agreed: use rent contributions, broad income bands, a refusal option and a wider recruitment plan. We'll describe who responded rather than claim to represent every student without qualification.",
+      "translation_vi": "Đồng ý: dùng phần thuê cá nhân, khoảng thu nhập rộng, quyền không trả lời và tuyển mẫu rộng hơn. Ta mô tả ai đã phản hồi thay vì khẳng định đại diện mọi sinh viên vô điều kiện.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "multi_speaker",
+        "l7"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "type": "mcq",
+      "prompt": "Why should an unanswered income item not be interpreted as zero income?",
+      "correct_answers": [
+        "Some respondents consider it sensitive or don't know the household amount"
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Tại T02, George nói: “Thu nhập nhạy cảm và vài sinh viên có thể không biết tổng thu nhập hộ. Ta không nên ép số chính xác hay coi để trống nghĩa là không có thu nhập.” Đáp án “Some respondents consider it sensitive or don't know the household amount” diễn đạt đúng ý được nêu. Các phương án còn lại không phù hợp với bằng chứng; chú ý ý kiến bị sửa và tính điều kiện.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "section_3",
+        "ielts_practice",
+        "inference",
+        "paraphrase"
+      ],
+      "options": [
+        "Shared housing requires a different rent measure",
+        "First-year students dominate the pilot",
+        "Some respondents consider it sensitive or don't know the household amount"
+      ]
+    },
+    {
+      "question_id": "Q02",
+      "type": "note_completion",
+      "prompt": "The proposed income question offers broad ____ .",
+      "correct_answers": [
+        "ranges"
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Bằng chứng T03: “Hay ta đưa các khoảng rộng và lựa chọn 'không muốn tiết lộ'? Cách đó tăng niềm tin, dù phân tích sẽ không có số thu nhập chính xác.” Cụm cần điền nghe đúng nguyên văn là “ranges”.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_3",
+        "ielts_practice",
+        "detail",
+        "note_completion"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q03",
+      "type": "matching",
+      "prompt": "Which speaker questions whether total property rent is the right unit?",
+      "correct_answers": [
+        "Speaker A"
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Người nói Anya (Speaker A) đưa ra ý này tại T04: “Mình còn lo so tiền thuê trung bình toàn trường che khác biệt giữa người ở một mình và người ở ghép. Cần làm rõ đơn vị phân tích.”",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "section_3",
+        "ielts_practice",
+        "speaker_attribution"
+      ],
+      "options": [
+        "Speaker A",
+        "Speaker B",
+        "Speaker C"
+      ]
+    },
+    {
+      "question_id": "Q04",
+      "type": "mcq",
+      "prompt": "Why report the results separately by study year and living arrangement?",
+      "correct_answers": [
+        "A single university-wide average could obscure meaningful differences"
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "Tại T07, Anya nói: “Trong báo cáo, ta có thể trình bày riêng theo năm học và kiểu ở. Như vậy hữu ích hơn một con số toàn trường tạo cảm giác chính xác giả.” Đáp án “A single university-wide average could obscure meaningful differences” diễn đạt đúng ý được nêu. Các phương án còn lại không phù hợp với bằng chứng; chú ý ý kiến bị sửa và tính điều kiện.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "section_3",
+        "ielts_practice",
+        "inference",
+        "paraphrase"
+      ],
+      "options": [
+        "To estimate the rental cost of whole properties",
+        "To remove students who refuse income questions",
+        "A single university-wide average could obscure meaningful differences"
+      ]
+    },
+    {
+      "question_id": "Q05",
+      "type": "note_completion",
+      "prompt": "Individual responses must not be shared with ____ .",
+      "correct_answers": [
+        "landlords"
+      ],
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "explanation_vi": "Bằng chứng T08: “Mẫu đồng ý cũng cần nêu phản hồi cá nhân không chia cho chủ nhà hay khoa. Nếu không, họ có thể khai thấp chi phí vì sợ hệ quả.” Cụm cần điền nghe đúng nguyên văn là “landlords”.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_3",
+        "ielts_practice",
+        "detail",
+        "note_completion"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q06",
+      "type": "short_answer",
+      "prompt": "What kind of income categories will the final survey use?",
+      "correct_answers": [
+        "broad income bands"
+      ],
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "explanation_vi": "Bằng chứng T09: “Đồng ý: dùng phần thuê cá nhân, khoảng thu nhập rộng, quyền không trả lời và tuyển mẫu rộng hơn. Ta mô tả ai đã phản hồi thay vì khẳng định đại diện mọi sinh viên vô điều kiện.” Trả lời ngắn theo chi tiết “broad income bands”.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_3",
+        "ielts_practice",
+        "detail",
+        "short_answer"
+      ],
+      "word_limit": 3,
+      "instructions_en": "NO MORE THAN THREE WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "D01",
+      "type": "dictation",
+      "prompt": "Nghe T04 (Speaker A) rồi chép chính xác câu nói tiếng Anh.",
+      "correct_answers": [
+        "I'm also concerned that comparing average rent across the whole university hides differences between students living alone and those sharing with several people. The unit of analysis needs clarification."
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Câu gốc: “I'm also concerned that comparing average rent across the whole university hides differences between students living alone and those sharing with several people. The unit of analysis needs clarification.”\nBản dịch: Mình còn lo so tiền thuê trung bình toàn trường che khác biệt giữa người ở một mình và người ở ghép. Cần làm rõ đơn vị phân tích.\nChú ý âm yếu, nối âm và ý được sửa trong đoạn.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_3",
+        "dictation",
+        "exact_transcript"
+      ]
+    },
+    {
+      "question_id": "D02",
+      "type": "dictation",
+      "prompt": "Nghe T07 (Speaker A) rồi chép chính xác câu nói tiếng Anh.",
+      "correct_answers": [
+        "For the report, perhaps we can present separate results by year of study and living arrangement. That will be more informative than one university-wide number that suggests false precision."
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "Câu gốc: “For the report, perhaps we can present separate results by year of study and living arrangement. That will be more informative than one university-wide number that suggests false precision.”\nBản dịch: Trong báo cáo, ta có thể trình bày riêng theo năm học và kiểu ở. Như vậy hữu ích hơn một con số toàn trường tạo cảm giác chính xác giả.\nChú ý âm yếu, nối âm và ý được sửa trong đoạn.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_3",
+        "dictation",
+        "exact_transcript"
+      ]
+    },
+    {
+      "question_id": "G01",
+      "type": "gap_fill",
+      "prompt": "Nghe T01 rồi điền đúng phần thiếu: The housing-cost survey asks students to report monthly rent and ____. Several pilot participants skipped the income question, although they completed the rest of the form.",
+      "correct_answers": [
+        "household income"
+      ],
+      "evidence_turn_ids": [
+        "T01"
+      ],
+      "explanation_vi": "Đáp án “household income” nghĩa là thu nhập hộ gia đình. Đối chiếu: “The housing-cost survey asks students to report monthly rent and household income. Several pilot participants skipped the income question, although they completed the rest of the form.”",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_3",
+        "gap_fill",
+        "vocabulary_in_context"
+      ]
+    }
+  ],
+  "vocabulary": [
+    {
+      "term": "household income",
+      "pos": "n. phr.",
+      "meaning_vi": "thu nhập hộ gia đình",
+      "example_en": "The housing-cost survey asks students to report monthly rent and household income. Several pilot participants skipped the income question, although they completed the rest of the form.",
+      "example_vi": "Khảo sát chi phí nhà ở hỏi sinh viên tiền thuê tháng và thu nhập hộ gia đình. Vài người thử bỏ câu thu nhập dù hoàn thành phần còn lại.",
+      "source_turn_id": "T01"
+    },
+    {
+      "term": "prefer not to say",
+      "pos": "phr.",
+      "meaning_vi": "không muốn tiết lộ",
+      "example_en": "What if we offer broad ranges and an explicit 'prefer not to say' option? That may improve trust, although it means our analysis won't have exact income values.",
+      "example_vi": "Hay ta đưa các khoảng rộng và lựa chọn 'không muốn tiết lộ'? Cách đó tăng niềm tin, dù phân tích sẽ không có số thu nhập chính xác.",
+      "source_turn_id": "T03"
+    },
+    {
+      "term": "unit of analysis",
+      "pos": "n. phr.",
+      "meaning_vi": "đơn vị phân tích",
+      "example_en": "I'm also concerned that comparing average rent across the whole university hides differences between students living alone and those sharing with several people. The unit of analysis needs clarification.",
+      "example_vi": "Mình còn lo so tiền thuê trung bình toàn trường che khác biệt giữa người ở một mình và người ở ghép. Cần làm rõ đơn vị phân tích.",
+      "source_turn_id": "T04"
+    },
+    {
+      "term": "rent contribution",
+      "pos": "n. phr.",
+      "meaning_vi": "phần tiền thuê cá nhân đóng góp",
+      "example_en": "Let's collect personal rent contribution, not the total amount paid for the entire property. We can then compare what each student actually pays without dividing shared rent incorrectly.",
+      "example_vi": "Hãy thu phần tiền thuê cá nhân, không phải tổng cả căn. Ta sẽ so số mỗi sinh viên thật trả mà không chia sai tiền thuê chung.",
+      "source_turn_id": "T05"
+    }
+  ],
+  "audio": {
+    "status": "not_generated",
+    "url": null,
+    "duration_ms": null,
+    "model": null,
+    "provider": null,
+    "voice_config": null,
+    "source_transcript_hash": "f6f501dc10f1075a1fbd2d503572f478539af2e6db1a1e9b20174a46101f75b9",
+    "audio_sha256": null,
+    "format": null
+  },
+  "qa": {
+    "content_reviewed": false,
+    "answers_verified": false,
+    "audio_verified": false,
+    "rights_cleared": false,
+    "duplicate_reviewed": false,
+    "notes": [
+      "Original AI-assisted draft, awaiting expert pedagogical review and option-disambiguation review.",
+      "Audio not produced: all segment times are null. TTS terms and distribution rights must be checked.",
+      "Practice lesson only; not an official/full IELTS Listening Part 3 exam or a calibrated band test.",
+      "M16.2: automated edits are provisional; IELTS teacher final signoff, audio and rights clearance pending."
+    ]
+  },
+  "provenance": {
+    "content_origin": "original_ai_assisted",
+    "source_urls": [],
+    "source_rights_note": "Original scripts; verify TTS service/voice production and distribution rights before publishing to students, including minors.",
+    "reviewer": null
+  },
+  "release_metadata": {
+    "published_at": null,
+    "version": 1
+  }
+}

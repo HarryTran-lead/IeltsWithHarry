@@ -1,0 +1,616 @@
+{
+  "schema_version": "1.2.0",
+  "lesson_id": "S4-SIM-009",
+  "status": "draft",
+  "level": "L7",
+  "section": 4,
+  "topic": "Freshwater limnology",
+  "title": "Measuring the Health of a Lake",
+  "content_format": "section_exam_simulation",
+  "exam_part": "IELTS_LISTENING_PART_4_STYLE",
+  "official_ielts_material": false,
+  "learning_objectives_vi": [
+    "Theo dõi bài giảng học thuật có lập luận và ví dụ.",
+    "Hoàn thành ghi chú, tóm tắt hoặc bảng bằng đúng từ được nghe.",
+    "Nhận diện signposting và mối quan hệ giữa các ý."
+  ],
+  "target_skills": [
+    "academic_lecture",
+    "signposting",
+    "note_taking",
+    "technical_vocabulary",
+    "information_tracking"
+  ],
+  "speakers": [
+    {
+      "speaker_id": "LECTURER",
+      "role": "Academic lecturer",
+      "accent_requested": "british",
+      "tts_voice_id": null
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "LECTURER",
+      "text_en": "A lake can look perfectly clear at the surface and still have serious problems below. Because water changes with depth and season, scientists rarely rely on a single sample taken near the shore. This lecture introduces the physical layers of a lake, the processes that move nutrients and the measurements needed to understand an entire system.",
+      "meaning_vi": "Bài giảng về phân tầng, oxy, chất dinh dưỡng và đo đạc hồ nước.",
+      "translation_vi": null,
+      "translation_status": "pending_exact_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "academic_lecture",
+        "signposting",
+        "note_taking"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "opening"
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "LECTURER",
+      "text_en": "Imagine measuring a lake on a bright afternoon and again after several days of strong wind. Even if no pollution has entered, readings can differ because the water has moved. This example illustrates why environmental interpretation depends on timing and physical conditions, not only the numerical precision of an instrument.",
+      "meaning_vi": "Mở rộng bối cảnh, giới thiệu vấn đề nghiên cứu.",
+      "translation_vi": null,
+      "translation_status": "pending_exact_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "academic_lecture",
+        "signposting",
+        "note_taking"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "opening"
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "LECTURER",
+      "text_en": "In summer, many lakes develop thermal stratification, with warmer water near the surface and colder water below. The boundary where temperature changes rapidly is the thermocline. These layers restrict mixing and affect where oxygen and nutrients accumulate. A visitor swimming near the surface might have no idea that the deepest water has very different conditions. Researchers therefore lower instruments through the water column rather than measuring temperature only at the edge.",
+      "meaning_vi": "Hồ có thể phân tầng nhiệt; ranh giới thay đổi nhiệt nhanh gọi là thermocline.",
+      "translation_vi": null,
+      "translation_status": "pending_exact_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "academic_lecture",
+        "signposting",
+        "note_taking"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "core_exposition"
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "LECTURER",
+      "text_en": "Organisms need dissolved oxygen in water, and low levels can place stress on fish and invertebrates. Another basic indicator is water clarity, often measured by lowering a patterned disc until it disappears from view. Clarity is useful but cannot explain all changes: colour may come from harmless natural substances or from suspended particles. For that reason, the oxygen profile and visual measurement provide different pieces of information about the lake.",
+      "meaning_vi": "Oxy hòa tan và độ trong phản ánh các khía cạnh khác nhau của hồ.",
+      "translation_vi": null,
+      "translation_status": "pending_exact_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "academic_lecture",
+        "signposting",
+        "note_taking"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "core_exposition"
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "LECTURER",
+      "text_en": "Excess nutrients can encourage rapid growth of algal blooms. In many freshwater systems, the supply of phosphorus is a particularly important factor, although the controlling nutrient can vary. Blooms may alter the balance of food webs and, as organic material decomposes, reduce oxygen at depth. But not every change in colour indicates toxic algae. Identifying species and measuring nutrients are more reliable than diagnosing the cause from a photograph.",
+      "meaning_vi": "Phú dưỡng có thể kích thích tảo nở hoa; phosphorus là một chất dinh dưỡng quan trọng.",
+      "translation_vi": null,
+      "translation_status": "pending_exact_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "academic_lecture",
+        "signposting",
+        "note_taking"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "core_exposition"
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "LECTURER",
+      "text_en": "Near the bottom, decomposing material creates an environment where the sediment layer can release stored nutrients under some chemical conditions. Seasonal lake turnover may later mix deep water with surface water, redistributing both nutrients and oxygen. The effects depend on the lake's climate, depth and wind exposure. A single early-summer survey cannot reveal what will happen during autumn mixing, so repeated measurements across the year are essential.",
+      "meaning_vi": "Bùn đáy và quá trình đảo trộn nước theo mùa ảnh hưởng chất dinh dưỡng.",
+      "translation_vi": null,
+      "translation_status": "pending_exact_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "academic_lecture",
+        "signposting",
+        "note_taking"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "core_exposition"
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "LECTURER",
+      "text_en": "When designing a monitoring programme, teams may establish a fixed sampling depth at several locations and maintain a consistent measurement schedule. Changes in equipment or sampling dates can make an apparent trend difficult to interpret. If oxygen levels improve after a restoration project, scientists still need to ask whether cooler weather or stronger winds contributed. A sound conclusion separates environmental variation from the effect of a deliberate intervention.",
+      "meaning_vi": "Độ sâu lấy mẫu và lịch đo cố định giúp so sánh các mùa.",
+      "translation_vi": null,
+      "translation_status": "pending_exact_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "academic_lecture",
+        "signposting",
+        "note_taking"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "core_exposition"
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "LECTURER",
+      "text_en": "Managers may want one simple indicator for a public report, but a complex ecosystem does not always provide it. A useful summary can describe several measures together and explain which changes are expected naturally. Scientists should also keep the original records, because future methods may allow the same observations to be interpreted in new ways.",
+      "meaning_vi": "Nêu giới hạn, ví dụ ứng dụng và ý nghĩa thực tế.",
+      "translation_vi": null,
+      "translation_status": "pending_exact_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "academic_lecture",
+        "signposting",
+        "note_taking"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "closing"
+    },
+    {
+      "turn_id": "T09",
+      "speaker_id": "LECTURER",
+      "text_en": "The condition of a lake is a moving picture, not a single number. Understanding the links between physical layers, organisms and nutrient movement makes the monitoring results meaningful.",
+      "meaning_vi": "Tổng kết và lưu ý cách diễn giải bằng chứng.",
+      "translation_vi": null,
+      "translation_status": "pending_exact_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "academic_lecture",
+        "signposting",
+        "note_taking"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "closing"
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "group_id": "PART4_TABLE_COMPLETION_01_05",
+      "type": "table_completion",
+      "prompt": "The separation of warm and cold water is ____.",
+      "correct_answers": [
+        "thermal stratification"
+      ],
+      "scoring_policy": "strict_spoken_words",
+      "word_limit": 2,
+      "instructions_en": "Complete the table below. Write NO MORE THAN TWO WORDS for each answer.",
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "evidence_excerpt_en": "In summer, many lakes develop thermal stratification, with warmer water near the surface and colder water below.",
+      "evidence_span": {
+        "turn_id": "T03",
+        "start_char": 30,
+        "end_char": 52
+      },
+      "explanation_vi": "Đáp án “thermal stratification” được nói trực tiếp trong phần bài giảng này. Hồ có thể phân tầng nhiệt; ranh giới thay đổi nhiệt nhanh gọi là thermocline.",
+      "answer_source": "exact_words_spoken",
+      "question_tags": [
+        "M28",
+        "part4",
+        "table_completion",
+        "academic_note_taking"
+      ],
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true,
+      "answer_review_status": "draft_teacher_verification_required"
+    },
+    {
+      "question_id": "Q02",
+      "group_id": "PART4_TABLE_COMPLETION_01_05",
+      "type": "table_completion",
+      "prompt": "The layer of rapid temperature change is the ____.",
+      "correct_answers": [
+        "thermocline"
+      ],
+      "scoring_policy": "strict_spoken_words",
+      "word_limit": 2,
+      "instructions_en": "Complete the table below. Write NO MORE THAN TWO WORDS for each answer.",
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "evidence_excerpt_en": "The boundary where temperature changes rapidly is the thermocline.",
+      "evidence_span": {
+        "turn_id": "T03",
+        "start_char": 167,
+        "end_char": 178
+      },
+      "explanation_vi": "Đáp án “thermocline” được nói trực tiếp trong phần bài giảng này. Hồ có thể phân tầng nhiệt; ranh giới thay đổi nhiệt nhanh gọi là thermocline.",
+      "answer_source": "exact_words_spoken",
+      "question_tags": [
+        "M28",
+        "part4",
+        "table_completion",
+        "academic_note_taking"
+      ],
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true,
+      "answer_review_status": "draft_teacher_verification_required"
+    },
+    {
+      "question_id": "Q03",
+      "group_id": "PART4_TABLE_COMPLETION_01_05",
+      "type": "table_completion",
+      "prompt": "Aquatic organisms rely on ____.",
+      "correct_answers": [
+        "dissolved oxygen"
+      ],
+      "scoring_policy": "strict_spoken_words",
+      "word_limit": 2,
+      "instructions_en": "Complete the table below. Write NO MORE THAN TWO WORDS for each answer.",
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "evidence_excerpt_en": "Organisms need dissolved oxygen in water, and low levels can place stress on fish and invertebrates.",
+      "evidence_span": {
+        "turn_id": "T04",
+        "start_char": 15,
+        "end_char": 31
+      },
+      "explanation_vi": "Đáp án “dissolved oxygen” được nói trực tiếp trong phần bài giảng này. Oxy hòa tan và độ trong phản ánh các khía cạnh khác nhau của hồ.",
+      "answer_source": "exact_words_spoken",
+      "question_tags": [
+        "M28",
+        "part4",
+        "table_completion",
+        "academic_note_taking"
+      ],
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true,
+      "answer_review_status": "draft_teacher_verification_required"
+    },
+    {
+      "question_id": "Q04",
+      "group_id": "PART4_TABLE_COMPLETION_01_05",
+      "type": "table_completion",
+      "prompt": "A patterned disc is used to estimate ____.",
+      "correct_answers": [
+        "water clarity"
+      ],
+      "scoring_policy": "strict_spoken_words",
+      "word_limit": 2,
+      "instructions_en": "Complete the table below. Write NO MORE THAN TWO WORDS for each answer.",
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "evidence_excerpt_en": "Another basic indicator is water clarity, often measured by lowering a patterned disc until it disappears from view.",
+      "evidence_span": {
+        "turn_id": "T04",
+        "start_char": 128,
+        "end_char": 141
+      },
+      "explanation_vi": "Đáp án “water clarity” được nói trực tiếp trong phần bài giảng này. Oxy hòa tan và độ trong phản ánh các khía cạnh khác nhau của hồ.",
+      "answer_source": "exact_words_spoken",
+      "question_tags": [
+        "M28",
+        "part4",
+        "table_completion",
+        "academic_note_taking"
+      ],
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true,
+      "answer_review_status": "draft_teacher_verification_required"
+    },
+    {
+      "question_id": "Q05",
+      "group_id": "PART4_TABLE_COMPLETION_01_05",
+      "type": "table_completion",
+      "prompt": "Rapid growth of algae produces ____.",
+      "correct_answers": [
+        "algal blooms"
+      ],
+      "scoring_policy": "strict_spoken_words",
+      "word_limit": 2,
+      "instructions_en": "Complete the table below. Write NO MORE THAN TWO WORDS for each answer.",
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "evidence_excerpt_en": "Excess nutrients can encourage rapid growth of algal blooms.",
+      "evidence_span": {
+        "turn_id": "T05",
+        "start_char": 47,
+        "end_char": 59
+      },
+      "explanation_vi": "Đáp án “algal blooms” được nói trực tiếp trong phần bài giảng này. Phú dưỡng có thể kích thích tảo nở hoa; phosphorus là một chất dinh dưỡng quan trọng.",
+      "answer_source": "exact_words_spoken",
+      "question_tags": [
+        "M28",
+        "part4",
+        "table_completion",
+        "academic_note_taking"
+      ],
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true,
+      "answer_review_status": "draft_teacher_verification_required"
+    },
+    {
+      "question_id": "Q06",
+      "group_id": "PART4_NOTE_COMPLETION_06_10",
+      "type": "note_completion",
+      "prompt": "A nutrient often important in freshwater is ____.",
+      "correct_answers": [
+        "phosphorus"
+      ],
+      "scoring_policy": "strict_spoken_words",
+      "word_limit": 2,
+      "instructions_en": "Complete the notes below. Write NO MORE THAN TWO WORDS for each answer.",
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "evidence_excerpt_en": "In many freshwater systems, the supply of phosphorus is a particularly important factor, although the controlling nutrient can vary.",
+      "evidence_span": {
+        "turn_id": "T05",
+        "start_char": 103,
+        "end_char": 113
+      },
+      "explanation_vi": "Đáp án “phosphorus” được nói trực tiếp trong phần bài giảng này. Phú dưỡng có thể kích thích tảo nở hoa; phosphorus là một chất dinh dưỡng quan trọng.",
+      "answer_source": "exact_words_spoken",
+      "question_tags": [
+        "M28",
+        "part4",
+        "note_completion",
+        "academic_note_taking"
+      ],
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true,
+      "answer_review_status": "draft_teacher_verification_required"
+    },
+    {
+      "question_id": "Q07",
+      "group_id": "PART4_NOTE_COMPLETION_06_10",
+      "type": "note_completion",
+      "prompt": "Stored nutrients may be released from the ____.",
+      "correct_answers": [
+        "sediment layer"
+      ],
+      "scoring_policy": "strict_spoken_words",
+      "word_limit": 2,
+      "instructions_en": "Complete the notes below. Write NO MORE THAN TWO WORDS for each answer.",
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "evidence_excerpt_en": "Near the bottom, decomposing material creates an environment where the sediment layer can release stored nutrients under some chemical conditions.",
+      "evidence_span": {
+        "turn_id": "T06",
+        "start_char": 71,
+        "end_char": 85
+      },
+      "explanation_vi": "Đáp án “sediment layer” được nói trực tiếp trong phần bài giảng này. Bùn đáy và quá trình đảo trộn nước theo mùa ảnh hưởng chất dinh dưỡng.",
+      "answer_source": "exact_words_spoken",
+      "question_tags": [
+        "M28",
+        "part4",
+        "note_completion",
+        "academic_note_taking"
+      ],
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true,
+      "answer_review_status": "draft_teacher_verification_required"
+    },
+    {
+      "question_id": "Q08",
+      "group_id": "PART4_NOTE_COMPLETION_06_10",
+      "type": "note_completion",
+      "prompt": "Seasonal vertical mixing is called ____.",
+      "correct_answers": [
+        "lake turnover"
+      ],
+      "scoring_policy": "strict_spoken_words",
+      "word_limit": 2,
+      "instructions_en": "Complete the notes below. Write NO MORE THAN TWO WORDS for each answer.",
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "evidence_excerpt_en": "Seasonal lake turnover may later mix deep water with surface water, redistributing both nutrients and oxygen.",
+      "evidence_span": {
+        "turn_id": "T06",
+        "start_char": 156,
+        "end_char": 169
+      },
+      "explanation_vi": "Đáp án “lake turnover” được nói trực tiếp trong phần bài giảng này. Bùn đáy và quá trình đảo trộn nước theo mùa ảnh hưởng chất dinh dưỡng.",
+      "answer_source": "exact_words_spoken",
+      "question_tags": [
+        "M28",
+        "part4",
+        "note_completion",
+        "academic_note_taking"
+      ],
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true,
+      "answer_review_status": "draft_teacher_verification_required"
+    },
+    {
+      "question_id": "Q09",
+      "group_id": "PART4_NOTE_COMPLETION_06_10",
+      "type": "note_completion",
+      "prompt": "Samples should be taken at a defined ____.",
+      "correct_answers": [
+        "sampling depth"
+      ],
+      "scoring_policy": "strict_spoken_words",
+      "word_limit": 2,
+      "instructions_en": "Complete the notes below. Write NO MORE THAN TWO WORDS for each answer.",
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "evidence_excerpt_en": "When designing a monitoring programme, teams may establish a fixed sampling depth at several locations and maintain a consistent measurement schedule.",
+      "evidence_span": {
+        "turn_id": "T07",
+        "start_char": 67,
+        "end_char": 81
+      },
+      "explanation_vi": "Đáp án “sampling depth” được nói trực tiếp trong phần bài giảng này. Độ sâu lấy mẫu và lịch đo cố định giúp so sánh các mùa.",
+      "answer_source": "exact_words_spoken",
+      "question_tags": [
+        "M28",
+        "part4",
+        "note_completion",
+        "academic_note_taking"
+      ],
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true,
+      "answer_review_status": "draft_teacher_verification_required"
+    },
+    {
+      "question_id": "Q10",
+      "group_id": "PART4_NOTE_COMPLETION_06_10",
+      "type": "note_completion",
+      "prompt": "Repeated observations need a consistent ____.",
+      "correct_answers": [
+        "measurement schedule"
+      ],
+      "scoring_policy": "strict_spoken_words",
+      "word_limit": 2,
+      "instructions_en": "Complete the notes below. Write NO MORE THAN TWO WORDS for each answer.",
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "evidence_excerpt_en": "When designing a monitoring programme, teams may establish a fixed sampling depth at several locations and maintain a consistent measurement schedule.",
+      "evidence_span": {
+        "turn_id": "T07",
+        "start_char": 129,
+        "end_char": 149
+      },
+      "explanation_vi": "Đáp án “measurement schedule” được nói trực tiếp trong phần bài giảng này. Độ sâu lấy mẫu và lịch đo cố định giúp so sánh các mùa.",
+      "answer_source": "exact_words_spoken",
+      "question_tags": [
+        "M28",
+        "part4",
+        "note_completion",
+        "academic_note_taking"
+      ],
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true,
+      "answer_review_status": "draft_teacher_verification_required"
+    }
+  ],
+  "question_groups": [
+    {
+      "group_id": "PART4_TABLE_COMPLETION_01_05",
+      "title_en": "Measuring the Health of a Lake — Table",
+      "question_ids": [
+        "Q01",
+        "Q02",
+        "Q03",
+        "Q04",
+        "Q05"
+      ],
+      "question_type": "table_completion",
+      "instructions_en": "Complete the table below. Write NO MORE THAN TWO WORDS for each answer.",
+      "word_limit": 2,
+      "requires_one_listen": true,
+      "question_display_start": "before_audio",
+      "pause_between_groups_seconds": 0,
+      "layout_metadata": {
+        "presentation": "grouped_blanks",
+        "flow_order": null,
+        "table_columns": [
+          "Main point",
+          "Detail"
+        ]
+      }
+    },
+    {
+      "group_id": "PART4_NOTE_COMPLETION_06_10",
+      "title_en": "Measuring the Health of a Lake — Notes",
+      "question_ids": [
+        "Q06",
+        "Q07",
+        "Q08",
+        "Q09",
+        "Q10"
+      ],
+      "question_type": "note_completion",
+      "instructions_en": "Complete the notes below. Write NO MORE THAN TWO WORDS for each answer.",
+      "word_limit": 2,
+      "requires_one_listen": true,
+      "question_display_start": "before_audio",
+      "pause_between_groups_seconds": 0,
+      "layout_metadata": {
+        "presentation": "grouped_blanks",
+        "flow_order": null,
+        "table_columns": null
+      }
+    }
+  ],
+  "pedagogy_vi": {
+    "topic_summary_vi": "Bài giảng về phân tầng, oxy, chất dinh dưỡng và đo đạc hồ nước.",
+    "question_explanations_status": "draft_review_required",
+    "turn_meanings_are_not_full_translations": true,
+    "full_line_translation_required_before_release": true
+  },
+  "audio": {
+    "status": "not_generated",
+    "audio_url": null,
+    "audio_asset_id": null,
+    "duration_ms": null,
+    "source_text_sha256": "cc819095d17f6a3a037529c9155960ffa803ebe9fa7e229715e0cbeda2a1cf0a",
+    "generation_strategy": "single_speaker_continuous_full_lecture",
+    "aligned_turns": false,
+    "voice_consistency_verified": false,
+    "human_listening_review": false
+  },
+  "exam_mode": {
+    "bank_role": "protected_assessment",
+    "use_as_training_before_first_attempt": false,
+    "listening_attempts_allowed_for_scored_first_attempt": 1,
+    "replay_before_submit": false,
+    "speed_control_before_submit": false,
+    "transcript_visible_before_submit": false,
+    "answer_key_visible_before_submit": false,
+    "post_attempt_review_allowed": true,
+    "question_count": 10,
+    "points_per_correct_answer": 1,
+    "question_order_monotonic": true,
+    "estimated_speech_minutes_at_140_wpm": 3.81,
+    "exam_band_score_enabled": false,
+    "repeated_attempt_marked_as_seen": true,
+    "all_questions_visible_before_audio": true
+  },
+  "qa": {
+    "automatic_data_validation": "pending",
+    "content_human_review": "pending",
+    "translation_human_review": "pending",
+    "audio_human_review": "pending",
+    "exam_simulation_rubric_score": null,
+    "rubric_90_verified": false,
+    "published": false,
+    "release_eligible": false
+  },
+  "provenance": {
+    "source_type": "original_authoring_english_academic_lecture",
+    "milestone": "M28",
+    "no_official_ielts_question_copied": true,
+    "training_exposure_guard": true,
+    "fictional_illustrations_only_when_specified": true
+  },
+  "release_metadata": {
+    "target_bank": "protected_assessment",
+    "import_policy": "insert_only",
+    "version": "m28.0.1",
+    "preserve_existing_ids": true,
+    "allow_client_answer_payload": false
+  }
+}

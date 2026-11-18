@@ -1,0 +1,867 @@
+{
+  "schema_version": "1.2.0",
+  "lesson_id": "S1-SIM-003",
+  "status": "draft",
+  "level": "L4",
+  "section": 1,
+  "topic": "Booking a traditional weaving workshop",
+  "title": "Joining a Heritage Weaving Workshop",
+  "content_format": "section_exam_simulation",
+  "exam_part": "IELTS_LISTENING_PART_1_STYLE",
+  "official_ielts_material": false,
+  "learning_objectives_vi": [
+    "Theo dõi hội thoại giao dịch đời sống hai người nói trong một lần nghe.",
+    "Điền chính xác thông tin, kể cả khi có phương án cũ và thông tin đính chính.",
+    "Phân tích MCQ dựa trên ý nghĩa cuối cùng và bằng chứng sau khi nộp bài."
+  ],
+  "target_skills": [
+    "course_registration",
+    "dates",
+    "fees",
+    "materials",
+    "spelling"
+  ],
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Craft studio coordinator",
+      "accent_requested": "north_american",
+      "tts_voice_id": null
+    },
+    {
+      "speaker_id": "B",
+      "role": "New learner",
+      "accent_requested": "north_american",
+      "tts_voice_id": null
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "Good morning, Birch Loom Studio. This is Priya. Are you interested in our regular classes or one of the short weekend workshops?",
+      "translation_vi": "Chào sáng, Xưởng dệt Birch Loom, Priya đây. Chị muốn lớp thường kỳ hay buổi học ngắn cuối tuần?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "course_registration",
+        "dates",
+        "fees",
+        "materials",
+        "spelling"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "B",
+      "text_en": "A short workshop. My sister and I are visiting the area, and we'd like to try weaving without committing to several weeks.",
+      "translation_vi": "Một buổi ngắn. Tôi và chị gái đến đây chơi, muốn thử dệt mà không đăng ký nhiều tuần.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "course_registration",
+        "dates",
+        "fees",
+        "materials",
+        "spelling"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "A",
+      "text_en": "Our introductory session is called First Threads. It covers basic loom setup and a small woven coaster you can take home.",
+      "translation_vi": "Buổi nhập môn tên First Threads. Học viên học lắp khung cơ bản và dệt một miếng lót cốc mang về.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "course_registration",
+        "dates",
+        "fees",
+        "materials",
+        "spelling"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "B",
+      "text_en": "That would be lovely. I saw something about dyeing scarves, but we don't have enough time to learn two techniques.",
+      "translation_vi": "Hay quá. Tôi thấy có nhuộm khăn, nhưng không đủ thời gian học hai kỹ thuật.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "course_registration",
+        "dates",
+        "fees",
+        "materials",
+        "spelling"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "A",
+      "text_en": "The two skills are quite different. Weaving needs patience at the loom; dyeing is usually more colourful and a little messier.",
+      "translation_vi": "Hai kỹ thuật khá khác. Dệt cần kiên nhẫn ở khung; nhuộm thường nhiều màu và có phần bừa bộn hơn.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "course_registration",
+        "dates",
+        "fees",
+        "materials",
+        "spelling"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "B",
+      "text_en": "I'd rather make one small object properly than rush through both activities. The coaster sounds like a good souvenir.",
+      "translation_vi": "Tôi thích làm một món nhỏ cho cẩn thận hơn là vội hai hoạt động. Miếng lót cốc sẽ là quà lưu niệm hay.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "course_registration",
+        "dates",
+        "fees",
+        "materials",
+        "spelling"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "The scarf-dyeing workshop is on Sunday. First Threads runs on Saturday, which is better if you're travelling home that evening.",
+      "translation_vi": "Lớp nhuộm khăn là Chủ nhật. First Threads học thứ Bảy, phù hợp nếu tối đó chị về.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "course_registration",
+        "dates",
+        "fees",
+        "materials",
+        "spelling"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "B",
+      "text_en": "Yes, Saturday. I expected a morning class, but our train doesn't arrive until nearly eleven. Is the afternoon session still open?",
+      "translation_vi": "Vâng, thứ Bảy. Tôi tưởng học sáng nhưng tàu gần mười một giờ mới đến. Lớp chiều còn chỗ chứ?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "course_registration",
+        "dates",
+        "fees",
+        "materials",
+        "spelling"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T09",
+      "speaker_id": "A",
+      "text_en": "It begins at one forty-five. Registration starts fifteen minutes earlier, so people can choose a seat and collect their materials.",
+      "translation_vi": "Lớp bắt đầu lúc một giờ bốn mươi lăm. Làm thủ tục trước mười lăm phút để chọn chỗ và nhận vật liệu.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "course_registration",
+        "dates",
+        "fees",
+        "materials",
+        "spelling"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T10",
+      "speaker_id": "B",
+      "text_en": "One forty-five is manageable. How many learners are in a group? My sister finds crowded rooms rather distracting.",
+      "translation_vi": "Một giờ bốn mươi lăm thì được. Nhóm có bao nhiêu học viên? Chị tôi khá phân tâm trong phòng đông.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "course_registration",
+        "dates",
+        "fees",
+        "materials",
+        "spelling"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T11",
+      "speaker_id": "A",
+      "text_en": "We keep it to eight people. The older hall has room for twelve, but we use the smaller studio to make instruction easier.",
+      "translation_vi": "Chúng tôi chỉ nhận tám người. Phòng cũ chứa mười hai, nhưng học ở xưởng nhỏ để dễ hướng dẫn.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "course_registration",
+        "dates",
+        "fees",
+        "materials",
+        "spelling"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T12",
+      "speaker_id": "B",
+      "text_en": "Good. The description lists wool as the main material, but my sister reacts badly to it. Is there a different thread available?",
+      "translation_vi": "Tốt. Mô tả ghi nguyên liệu chính là len, nhưng chị tôi dị ứng với len. Có sợi khác không?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "course_registration",
+        "dates",
+        "fees",
+        "materials",
+        "spelling"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T13",
+      "speaker_id": "A",
+      "text_en": "Absolutely. We can prepare cotton instead. Just write that preference in the booking notes so the tutor can set it aside.",
+      "translation_vi": "Tất nhiên. Chúng tôi chuẩn bị sợi bông thay thế. Hãy ghi vào ghi chú để giáo viên để riêng.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "course_registration",
+        "dates",
+        "fees",
+        "materials",
+        "spelling"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T14",
+      "speaker_id": "B",
+      "text_en": "I'll do that. Is the equipment included in the fee, or would we have to hire a loom separately?",
+      "translation_vi": "Tôi sẽ ghi. Thiết bị đã gồm trong phí hay phải thuê khung dệt riêng?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "course_registration",
+        "dates",
+        "fees",
+        "materials",
+        "spelling"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T15",
+      "speaker_id": "A",
+      "text_en": "The loom and tools are included. The fee is twenty-six pounds per person; the optional gift box costs another four.",
+      "translation_vi": "Khung dệt và dụng cụ đã gồm. Phí là hai mươi sáu bảng một người; hộp quà tùy chọn thêm bốn bảng.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "course_registration",
+        "dates",
+        "fees",
+        "materials",
+        "spelling"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T16",
+      "speaker_id": "B",
+      "text_en": "We'll skip the gift boxes. Could you put both places under my surname, Fenwick? That's F E N W I C K.",
+      "translation_vi": "Chúng tôi không lấy hộp quà. Chị đặt cả hai chỗ dưới họ Fenwick nhé? Đánh vần F E N W I C K.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "course_registration",
+        "dates",
+        "fees",
+        "materials",
+        "spelling"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T17",
+      "speaker_id": "A",
+      "text_en": "Certainly, Ms Fenwick. The loom and tools will be waiting at your seat. I'll email your confirmation and a needle-safety sheet today.",
+      "translation_vi": "Được, cô Fenwick. Khung dệt và dụng cụ đã đặt tại chỗ ngồi. Hôm nay tôi sẽ gửi email xác nhận cùng hướng dẫn an toàn khi dùng kim.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "course_registration",
+        "dates",
+        "fees",
+        "materials",
+        "spelling"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T18",
+      "speaker_id": "B",
+      "text_en": "Do you provide protective gloves? I have a pair of gardening gloves, but they're quite thick and hard to work in.",
+      "translation_vi": "Có găng tay bảo hộ không? Tôi có găng làm vườn nhưng dày quá, khó thao tác.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "course_registration",
+        "dates",
+        "fees",
+        "materials",
+        "spelling"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T19",
+      "speaker_id": "A",
+      "text_en": "You don't need gloves for the basic weaving. We do ask everyone to tie back long hair before using the spinning demonstration wheel.",
+      "translation_vi": "Không cần găng khi dệt cơ bản. Chúng tôi yêu cầu buộc tóc dài trước khi dùng bánh xe quay minh họa.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "course_registration",
+        "dates",
+        "fees",
+        "materials",
+        "spelling"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T20",
+      "speaker_id": "B",
+      "text_en": "That's straightforward. We might arrive by bus. Is the studio opposite the town museum, as the map on your old website shows?",
+      "translation_vi": "Dễ thôi. Có thể chúng tôi đi xe buýt. Xưởng đối diện bảo tàng như bản đồ cũ trên web không?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "course_registration",
+        "dates",
+        "fees",
+        "materials",
+        "spelling"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T21",
+      "speaker_id": "A",
+      "text_en": "We moved last spring. The entrance is now beside the post office, just around the corner from the museum's back gate.",
+      "translation_vi": "Chúng tôi chuyển địa điểm mùa xuân trước. Lối vào nay cạnh bưu điện, gần cổng sau bảo tàng.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "course_registration",
+        "dates",
+        "fees",
+        "materials",
+        "spelling"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T22",
+      "speaker_id": "B",
+      "text_en": "Thanks for warning me. The last time I visited, I waited outside the old workshop for half an hour.",
+      "translation_vi": "Cảm ơn đã báo. Lần trước tôi đứng chờ trước xưởng cũ nửa tiếng.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "course_registration",
+        "dates",
+        "fees",
+        "materials",
+        "spelling"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T23",
+      "speaker_id": "A",
+      "text_en": "If either of you cannot attend, you may transfer your place to a friend, but refunds need at least forty-eight hours' notice.",
+      "translation_vi": "Nếu không đến được, có thể chuyển chỗ cho bạn; hoàn tiền cần báo trước ít nhất bốn mươi tám giờ.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "course_registration",
+        "dates",
+        "fees",
+        "materials",
+        "spelling"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T24",
+      "speaker_id": "B",
+      "text_en": "That's fair. I'll book for two, request cotton and make sure we're at the new entrance before registration opens.",
+      "translation_vi": "Hợp lý. Tôi đặt hai chỗ, yêu cầu sợi bông và sẽ đến lối vào mới trước giờ đăng ký.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_1",
+        "course_registration",
+        "dates",
+        "fees",
+        "materials",
+        "spelling"
+      ],
+      "bank_role": "protected_assessment"
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "group_id": "PART1_FORM_1_TO_6",
+      "type": "form_completion",
+      "prompt": "Introductory workshop title: ____",
+      "correct_answers": [
+        "First Threads"
+      ],
+      "spoken_answer": "First Threads",
+      "word_limit": 3,
+      "instructions_en": "NO MORE THAN THREE WORDS AND/OR A NUMBER",
+      "scoring_policy": "controlled_variants",
+      "explanation_vi": "Buổi nhập môn tên First Threads.",
+      "answer_source": "explicit_recording",
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "evidence_excerpt_en": "called First Threads",
+      "question_tags": [
+        "M25",
+        "part1",
+        "completion",
+        "course_registration",
+        "dates",
+        "fees",
+        "materials",
+        "spelling"
+      ]
+    },
+    {
+      "question_id": "Q02",
+      "group_id": "PART1_FORM_1_TO_6",
+      "type": "form_completion",
+      "prompt": "Day of the introductory workshop: ____",
+      "correct_answers": [
+        "Saturday"
+      ],
+      "spoken_answer": "Saturday",
+      "word_limit": 3,
+      "instructions_en": "NO MORE THAN THREE WORDS AND/OR A NUMBER",
+      "scoring_policy": "controlled_variants",
+      "explanation_vi": "First Threads là thứ Bảy, khác lớp nhuộm khăn Chủ nhật.",
+      "answer_source": "explicit_recording",
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "evidence_excerpt_en": "runs on Saturday",
+      "question_tags": [
+        "M25",
+        "part1",
+        "completion",
+        "course_registration",
+        "dates",
+        "fees",
+        "materials",
+        "spelling"
+      ]
+    },
+    {
+      "question_id": "Q03",
+      "group_id": "PART1_FORM_1_TO_6",
+      "type": "form_completion",
+      "prompt": "Class start time: ____",
+      "correct_answers": [
+        "one forty-five",
+        "1:45"
+      ],
+      "spoken_answer": "one forty-five",
+      "word_limit": 3,
+      "instructions_en": "NO MORE THAN THREE WORDS AND/OR A NUMBER",
+      "scoring_policy": "controlled_variants",
+      "explanation_vi": "Buổi học bắt đầu 1:45, không phải lúc đăng ký.",
+      "answer_source": "explicit_recording",
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "evidence_excerpt_en": "begins at one forty-five",
+      "question_tags": [
+        "M25",
+        "part1",
+        "completion",
+        "course_registration",
+        "dates",
+        "fees",
+        "materials",
+        "spelling"
+      ]
+    },
+    {
+      "question_id": "Q04",
+      "group_id": "PART1_FORM_1_TO_6",
+      "type": "note_completion",
+      "prompt": "Maximum group size: ____ learners",
+      "correct_answers": [
+        "eight",
+        "8"
+      ],
+      "spoken_answer": "eight",
+      "word_limit": 3,
+      "instructions_en": "NO MORE THAN THREE WORDS AND/OR A NUMBER",
+      "scoring_policy": "controlled_variants",
+      "explanation_vi": "Nhóm giới hạn tám học viên.",
+      "answer_source": "explicit_recording",
+      "evidence_turn_ids": [
+        "T11"
+      ],
+      "evidence_excerpt_en": "to eight people",
+      "question_tags": [
+        "M25",
+        "part1",
+        "completion",
+        "course_registration",
+        "dates",
+        "fees",
+        "materials",
+        "spelling"
+      ]
+    },
+    {
+      "question_id": "Q05",
+      "group_id": "PART1_FORM_1_TO_6",
+      "type": "form_completion",
+      "prompt": "Alternative thread requested: ____",
+      "correct_answers": [
+        "cotton"
+      ],
+      "spoken_answer": "cotton",
+      "word_limit": 3,
+      "instructions_en": "NO MORE THAN THREE WORDS AND/OR A NUMBER",
+      "scoring_policy": "controlled_variants",
+      "explanation_vi": "Cần sợi bông thay len.",
+      "answer_source": "explicit_recording",
+      "evidence_turn_ids": [
+        "T13"
+      ],
+      "evidence_excerpt_en": "prepare cotton instead",
+      "question_tags": [
+        "M25",
+        "part1",
+        "completion",
+        "course_registration",
+        "dates",
+        "fees",
+        "materials",
+        "spelling"
+      ]
+    },
+    {
+      "question_id": "Q06",
+      "group_id": "PART1_FORM_1_TO_6",
+      "type": "form_completion",
+      "prompt": "Fee per person: £____",
+      "correct_answers": [
+        "twenty-six",
+        "26"
+      ],
+      "spoken_answer": "twenty-six",
+      "word_limit": 3,
+      "instructions_en": "NO MORE THAN THREE WORDS AND/OR A NUMBER",
+      "scoring_policy": "controlled_variants",
+      "explanation_vi": "26 bảng không gồm hộp quà tùy chọn.",
+      "answer_source": "explicit_recording",
+      "evidence_turn_ids": [
+        "T15"
+      ],
+      "evidence_excerpt_en": "twenty-six pounds per person",
+      "question_tags": [
+        "M25",
+        "part1",
+        "completion",
+        "course_registration",
+        "dates",
+        "fees",
+        "materials",
+        "spelling"
+      ]
+    },
+    {
+      "question_id": "Q07",
+      "group_id": "PART1_MCQ_7_TO_10",
+      "type": "mcq",
+      "prompt": "What is included in the workshop fee?",
+      "correct_answers": [
+        "Use of the loom and tools"
+      ],
+      "options": [
+        {
+          "key": "A",
+          "text": "A gift box"
+        },
+        {
+          "key": "B",
+          "text": "Travel from the station"
+        },
+        {
+          "key": "C",
+          "text": "Use of the loom and tools"
+        }
+      ],
+      "correct_option": "C",
+      "scoring_policy": "one_correct_option",
+      "explanation_vi": "Khung dệt và dụng cụ đã gồm trong phí và chuẩn bị tại chỗ ngồi.",
+      "answer_source": "explicit_or_contextual_recording",
+      "evidence_turn_ids": [
+        "T17"
+      ],
+      "evidence_excerpt_en": "loom and tools will be waiting at your seat",
+      "question_tags": [
+        "M25",
+        "part1",
+        "mcq",
+        "course_registration",
+        "dates",
+        "fees",
+        "materials",
+        "spelling"
+      ]
+    },
+    {
+      "question_id": "Q08",
+      "group_id": "PART1_MCQ_7_TO_10",
+      "type": "mcq",
+      "prompt": "What safety advice is given?",
+      "correct_answers": [
+        "Tie back long hair"
+      ],
+      "options": [
+        {
+          "key": "A",
+          "text": "Tie back long hair"
+        },
+        {
+          "key": "B",
+          "text": "Wear gardening gloves"
+        },
+        {
+          "key": "C",
+          "text": "Avoid using needles completely"
+        }
+      ],
+      "correct_option": "A",
+      "scoring_policy": "one_correct_option",
+      "explanation_vi": "Buộc tóc dài khi dùng thiết bị minh họa.",
+      "answer_source": "explicit_or_contextual_recording",
+      "evidence_turn_ids": [
+        "T19"
+      ],
+      "evidence_excerpt_en": "tie back long hair",
+      "question_tags": [
+        "M25",
+        "part1",
+        "mcq",
+        "course_registration",
+        "dates",
+        "fees",
+        "materials",
+        "spelling"
+      ]
+    },
+    {
+      "question_id": "Q09",
+      "group_id": "PART1_MCQ_7_TO_10",
+      "type": "mcq",
+      "prompt": "Where is the studio entrance now?",
+      "correct_answers": [
+        "Beside the post office"
+      ],
+      "options": [
+        {
+          "key": "A",
+          "text": "Opposite the museum front gate"
+        },
+        {
+          "key": "B",
+          "text": "Beside the post office"
+        },
+        {
+          "key": "C",
+          "text": "Inside the old hall"
+        }
+      ],
+      "correct_option": "B",
+      "scoring_policy": "one_correct_option",
+      "explanation_vi": "Vị trí đã chuyển sang bên bưu điện.",
+      "answer_source": "explicit_or_contextual_recording",
+      "evidence_turn_ids": [
+        "T21"
+      ],
+      "evidence_excerpt_en": "entrance is now beside the post office",
+      "question_tags": [
+        "M25",
+        "part1",
+        "mcq",
+        "course_registration",
+        "dates",
+        "fees",
+        "materials",
+        "spelling"
+      ]
+    },
+    {
+      "question_id": "Q10",
+      "group_id": "PART1_MCQ_7_TO_10",
+      "type": "mcq",
+      "prompt": "What is the refund condition?",
+      "correct_answers": [
+        "Notice at least 48 hours ahead"
+      ],
+      "options": [
+        {
+          "key": "A",
+          "text": "Notice on the day"
+        },
+        {
+          "key": "B",
+          "text": "A replacement participant is required"
+        },
+        {
+          "key": "C",
+          "text": "Notice at least 48 hours ahead"
+        }
+      ],
+      "correct_option": "C",
+      "scoring_policy": "one_correct_option",
+      "explanation_vi": "Hoàn tiền cần báo trước 48 giờ.",
+      "answer_source": "explicit_or_contextual_recording",
+      "evidence_turn_ids": [
+        "T23"
+      ],
+      "evidence_excerpt_en": "refunds need at least forty-eight hours' notice",
+      "question_tags": [
+        "M25",
+        "part1",
+        "mcq",
+        "course_registration",
+        "dates",
+        "fees",
+        "materials",
+        "spelling"
+      ]
+    }
+  ],
+  "question_groups": [
+    {
+      "group_id": "PART1_FORM_1_TO_6",
+      "question_ids": [
+        "Q01",
+        "Q02",
+        "Q03",
+        "Q04",
+        "Q05",
+        "Q06"
+      ],
+      "instructions_en": "Complete the form. Write NO MORE THAN THREE WORDS AND/OR A NUMBER for each answer.",
+      "pre_read_seconds": 30,
+      "break_after_turn_id": "T15",
+      "requires_one_listen": true
+    },
+    {
+      "group_id": "PART1_MCQ_7_TO_10",
+      "question_ids": [
+        "Q07",
+        "Q08",
+        "Q09",
+        "Q10"
+      ],
+      "instructions_en": "Choose the correct letter A, B or C.",
+      "pre_read_seconds": 25,
+      "requires_one_listen": true
+    }
+  ],
+  "audio": {
+    "status": "not_generated",
+    "audio_url": null,
+    "audio_asset_id": null,
+    "duration_ms": null,
+    "source_text_sha256": "176a27a4dcfd5f7a99f9782708a55bf11d39403dabf2800173d2c1a536b242eb",
+    "generation_strategy": "single_continuous_two_person_dialogue",
+    "aligned_turns": false
+  },
+  "exam_mode": {
+    "bank_role": "protected_assessment",
+    "use_as_training_before_first_attempt": false,
+    "listening_attempts_allowed_for_scored_first_attempt": 1,
+    "replay_before_submit": false,
+    "speed_control_before_submit": false,
+    "transcript_visible_before_submit": false,
+    "answer_key_visible_before_submit": false,
+    "post_attempt_review_allowed": true,
+    "question_count": 10,
+    "points_per_correct_answer": 1,
+    "question_order_monotonic": true,
+    "estimated_speech_minutes_at_135_wpm": 3.7,
+    "exam_band_score_enabled": false,
+    "repeated_attempt_marked_as_seen": true
+  },
+  "qa": {
+    "automatic_data_validation": "pending",
+    "content_human_review": "pending",
+    "audio_human_review": "pending",
+    "exam_simulation_rubric_score": null,
+    "rubric_90_verified": false,
+    "published": false,
+    "release_eligible": false
+  },
+  "provenance": {
+    "source_type": "original_authored_english_dialogue",
+    "milestone": "M25",
+    "no_official_ielts_question_copied": true,
+    "training_exposure_guard": true
+  },
+  "release_metadata": {
+    "target_bank": "protected_assessment",
+    "import_policy": "insert_only",
+    "version": "m25.0.1",
+    "preserve_existing_ids": true,
+    "allow_client_answer_payload": false
+  }
+}

@@ -12,6 +12,21 @@ const supportedTypes = new Set([
   "flow_chart_completion", "flowchart-completion", "diagram_labelling", "diagram-labelling",
   "short_answer", "short-answer", "map_labelling", "map-labelling", "plan_labelling", "plan-labelling", "form_completion", "form-completion", "speaking",
 ]);
+const bilingual = { en: z.string().max(4000).default(""), vi: z.string().max(4000).default("") };
+/**
+ * A worked explanation in five steps (understand the question, word class, paraphrase,
+ * evidence, final answer and trap), in English and Vietnamese. It carries the answer, so
+ * like `answers` it never leaves the server before the attempt is graded.
+ */
+export const fiveStepSchema = z.object({
+  understand: z.object(bilingual),
+  wordClass: z.object(bilingual),
+  paraphrase: z.object({ ...bilingual, pairs: z.array(z.object({ question: z.string().max(400), passage: z.string().max(600) })).max(12).default([]) }),
+  evidence: z.object({ ...bilingual, quotes: z.array(z.object({ paragraph: z.string().max(40).default(""), quote: z.string().min(1).max(1200), role: z.string().max(40).default("supports"), exact: z.boolean().default(true) })).max(12).default([]) }),
+  final: z.object({ ...bilingual, answer: z.string().max(200).default(""), trapEn: z.string().max(2000).default(""), trapVi: z.string().max(2000).default(""), tipEn: z.string().max(2000).default(""), tipVi: z.string().max(2000).default("") }),
+});
+export type FiveStep = z.infer<typeof fiveStepSchema>;
+
 export const questionSchema = z.object({
   id: z.string().min(1), number: z.number().int().positive(),
   type: z.string().min(1), prompt: z.string().min(1), instructions: z.string().default(""),
@@ -21,10 +36,16 @@ export const questionSchema = z.object({
   // Questions sharing a group form one "Choose TWO letters" item: each is answered with one letter,
   // and every distinct correct letter in the group earns one mark, in any order.
   group: z.string().optional(),
+  fiveStep: fiveStepSchema.optional(),
+  // Listening: the transcript lines (0-based) that answer this question; shown only after grading.
+  evidenceLines: z.array(z.number().int().nonnegative()).max(12).optional(),
 });
 export const sectionSchema = z.object({
   id: z.string().min(1), title: z.string().min(1), passage: z.string().default(""),
   transcript: z.string().default(""), audioUrl: z.string().url().optional(),
+  // Listening: when each transcript line starts in the recording (seconds), so review can follow the audio.
+  transcriptTimes: z.array(z.number().nonnegative()).max(400).optional(),
+  coverUrl: z.string().url().optional(),
   questions: z.array(questionSchema).default([]),
 });
 export const contentSchema = z.object({
@@ -75,7 +96,7 @@ export function contentHash(content: unknown): string {
 
 export function publicContent(content: ExamContent): ExamContent {
   return { ...content, sections: content.sections.map((section) => ({
-    ...section, transcript: "", questions: section.questions.map((question) => ({ ...question, answers: [], explanation: "" })),
+    ...section, transcript: "", questions: section.questions.map((question) => { const visible = { ...question, answers: [], explanation: "" }; delete visible.fiveStep; delete visible.evidenceLines; return visible; }),
   })) };
 }
 
@@ -99,9 +120,23 @@ export function scoreAnswers(content: ExamContent, answers: Record<string, strin
       : /multiple[_-]answers/.test(q.type)
         ? q.answers.map(normalize).sort().join("|") === given.split(",").map((part) => normalize(optionKey(part))).filter(Boolean).sort().join("|")
         : q.answers.some((answer) => normalize(answer) === normalize(selected));
-    return { id: q.id, given, correct, answers: q.answers, explanation: q.explanation, type: q.type };
+    return { id: q.id, given, correct, answers: q.answers, explanation: q.explanation, type: q.type, ...(q.fiveStep ? { fiveStep: q.fiveStep } : {}), ...(q.evidenceLines?.length ? { evidenceLines: q.evidenceLines } : {}) };
   });
   return { score: review.filter((q) => q.correct).length, total: review.length, review };
+}
+
+/**
+ * Explanations written after an attempt was graded: copy each question's five steps
+ * from the live version, but only while that question keeps the same answer key.
+ */
+export function withLatestFiveStep<T extends { id: string; answers: string[]; fiveStep?: FiveStep }>(review: T[], latest: ExamContent): T[] {
+  const live = new Map(latest.sections.flatMap((section) => section.questions).map((question) => [question.id, question]));
+  const key = (answers: string[]) => answers.map((answer) => answer.trim().replace(/\s+/g, " ").toLocaleLowerCase("en")).sort().join("|");
+  return review.map((item) => {
+    if (item.fiveStep) return item;
+    const question = live.get(item.id);
+    return question?.fiveStep && key(question.answers) === key(item.answers) ? { ...item, fiveStep: question.fiveStep } : item;
+  });
 }
 
 /** Limit grading to the passage chosen when the attempt began. */
@@ -112,11 +147,44 @@ export function attemptContent(content: ExamContent, notes: Record<string, strin
   return section ? { ...content, sections: [section] } : content;
 }
 
+export const readingFullMinutes = [50, 55, 60, 65, 70] as const;
+export const readingPassageMinutes = [10, 15, 20, 25, 30] as const;
+export const listeningFullMinutes = [30, 35, 40, 45] as const;
+export const listeningPartMinutes = [10, 15, 20] as const;
+export const customAttemptMinutes = (value: number) => Number.isInteger(value) && value >= 5 && value <= 180;
+
 export function attemptMinutes(skill: string, examMinutes: number, notes: Record<string, string> | null | undefined) {
-  return notes?.__section ? skill === "Reading" ? 20 : skill === "Listening" ? 10 : examMinutes : examMinutes;
+  const selected = Number(notes?.__minutes);
+  if (notes?.__section) {
+    if (skill === "Reading") return customAttemptMinutes(selected) ? selected : 20;
+    return skill === "Listening" ? customAttemptMinutes(selected) ? selected : 10 : examMinutes;
+  }
+  // Keep the duration of attempts started before the current time choices changed.
+  if ((skill === "Reading" || skill === "Listening") && customAttemptMinutes(selected)) return selected;
+  return examMinutes;
 }
 /** The scored key of an option: "G — text" → G, "iii — text" → iii, " — B. text" → B, "C. text" → C; plain keys pass through. */
 export function qOptionKey(value: string) {
   const text = value.trim();
   return /^([A-Za-z]{1,2}|[ivxlc]{1,6})\s+—/.exec(text)?.[1] ?? /^—\s*([A-Z])\.\s/.exec(text)?.[1] ?? /^([A-Z])\.\s/.exec(text)?.[1] ?? text;
+}
+
+/**
+ * Why explanations cannot be attached to this content: a question that does not exist,
+ * or an answer the live key does not accept. A choose-several set must equal the keys of
+ * its whole group, in any order. An empty list means every item matches.
+ */
+export function explanationMismatches(content: ExamContent, items: { questionId: string; answers: string[] }[]) {
+  const questions = new Map(content.sections.flatMap((section) => section.questions).map((question) => [question.id, question]));
+  const normal = (value: string) => qOptionKey(value).trim().replace(/\s+/g, " ").toLocaleLowerCase("en");
+  const mismatches: string[] = [];
+  for (const item of items) {
+    const question = questions.get(item.questionId);
+    if (!question) { mismatches.push(`${item.questionId}: không có câu này trong đề đang chạy`); continue; }
+    const accepted = new Set((question.group ? [...questions.values()].filter((other) => other.group === question.group).flatMap((other) => other.answers) : question.answers).map(normal));
+    const wanted = item.answers.map(normal);
+    const same = question.group ? wanted.length === accepted.size && wanted.every((value) => accepted.has(value)) : wanted.length > 0 && wanted.every((value) => accepted.has(value));
+    if (!same) mismatches.push(`${item.questionId}: lời giải ghi “${item.answers.join(", ")}”, đề đang chạy chấm “${[...accepted].join(", ")}”`);
+  }
+  return mismatches;
 }

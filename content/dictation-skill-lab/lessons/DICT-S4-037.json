@@ -1,0 +1,351 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "DICT-S4-037",
+  "status": "draft",
+  "level": "L7",
+  "section": 4,
+  "topic": "Archaeology",
+  "title": "Ground Survey, Remote Sensing and Dating Methods",
+  "learning_objectives_vi": [
+    "Nghe bài giảng học thuật một người nói, theo dõi quan hệ giữa luận điểm và bằng chứng.",
+    "Luyện các câu hỏi Section 4 theo thứ tự lời giảng; phân tích giới hạn của khái niệm và cách diễn đạt lại.",
+    "Chép chính xác hai đoạn, luyện từ học thuật theo ngữ cảnh và ôn điểm yếu qua Mistake Bank."
+  ],
+  "content_format": "section_practice",
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Academic lecturer",
+      "tts_voice_id": null,
+      "accent_requested": "australian"
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "Archaeologists rarely choose a technique just because it is technologically impressive. Different methods answer different questions. Ground survey identifies traces visible at or near the surface, while excavation exposes buried relationships in detail. Remote sensing can reveal patterns across a wider landscape without removing large amounts of soil. Each approach trades some precision or coverage for another advantage.",
+      "translation_vi": "Nhà khảo cổ hiếm khi chọn kỹ thuật chỉ vì nó trông hiện đại. Các phương pháp khác nhau trả lời câu hỏi khác nhau. Khảo sát mặt đất phát hiện dấu tích ở hoặc gần bề mặt, còn khai quật làm lộ mối quan hệ dưới lòng đất một cách chi tiết. Viễn thám có thể cho thấy các mô hình trên vùng rộng mà không phải đào nhiều. Mỗi cách đánh đổi phần nào độ chi tiết hoặc phạm vi để có lợi thế khác.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_4",
+        "academic_lecture",
+        "compare",
+        "l7"
+      ]
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "A",
+      "text_en": "Aerial photographs may show faint changes in vegetation where old walls affect soil moisture. Laser scanning can map subtle landforms beneath some forest canopies. However, neither image directly proves the date or purpose of a structure. A rectangular shape could reflect several periods of activity. Researchers still need ground observations and, where appropriate, carefully selected samples.",
+      "translation_vi": "Ảnh chụp từ trên cao có thể cho thấy thay đổi nhỏ của cây cối ở nơi tường cũ ảnh hưởng độ ẩm đất. Quét laser có thể lập bản đồ địa hình tinh tế dưới một số tán rừng. Tuy nhiên, không hình ảnh nào tự chứng minh tuổi hoặc mục đích của công trình. Hình chữ nhật có thể thuộc nhiều thời kỳ hoạt động. Nhà nghiên cứu vẫn cần quan sát dưới đất và khi phù hợp, lấy mẫu được chọn cẩn thận.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_4",
+        "academic_lecture",
+        "compare",
+        "l7"
+      ]
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "A",
+      "text_en": "Dating methods also provide different kinds of information. Relative dating places events in an order, often using stratigraphy or comparisons between artefact styles. Radiocarbon dating estimates the age of suitable organic material. But the date belongs first to the sampled material, not automatically to every object nearby. A piece of old wood may have been reused in a much later building.",
+      "translation_vi": "Các phương pháp định niên đại cũng cung cấp những kiểu thông tin khác nhau. Định tuổi tương đối đặt sự kiện theo thứ tự, thường dựa vào địa tầng hoặc so sánh kiểu hiện vật. Định tuổi carbon phóng xạ ước tính tuổi vật liệu hữu cơ phù hợp. Nhưng niên đại trước hết thuộc về mẫu được xét, không tự động áp cho mọi vật gần đó. Mảnh gỗ cũ có thể được tái sử dụng trong công trình mới hơn nhiều.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_4",
+        "academic_lecture",
+        "compare",
+        "l7"
+      ]
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "A",
+      "text_en": "Good research design begins with an explicit question. If the aim is to map the extent of a settlement, survey may be efficient. If the aim is to discover how a room was used, controlled excavation and laboratory analysis may be necessary. The most expensive method is not necessarily the most informative one when the question is poorly defined.",
+      "translation_vi": "Thiết kế nghiên cứu tốt bắt đầu bằng câu hỏi rõ ràng. Nếu mục tiêu là lập bản đồ phạm vi khu định cư, khảo sát có thể hiệu quả. Nếu mục tiêu là tìm hiểu căn phòng được dùng ra sao, có thể cần khai quật có kiểm soát và phân tích phòng thí nghiệm. Phương pháp đắt nhất chưa chắc hữu ích nhất khi câu hỏi không được xác định rõ.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_4",
+        "academic_lecture",
+        "compare",
+        "l7"
+      ]
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "A",
+      "text_en": "The strongest interpretation emerges when independent forms of evidence agree, while disagreements prompt further investigation. A map may suggest a buried road, but excavation might reveal drainage channels instead. Publishing the conflicting findings is part of scientific practice. It allows future teams to refine the account rather than repeat an attractive but unsupported story.",
+      "translation_vi": "Cách giải thích mạnh nhất xuất hiện khi các loại bằng chứng độc lập phù hợp nhau, còn bất đồng thúc đẩy điều tra thêm. Bản đồ có thể gợi ý con đường bị chôn, nhưng khai quật lại phát hiện kênh thoát nước. Công bố các kết quả mâu thuẫn là một phần của thực hành khoa học. Điều đó giúp nhóm tương lai hoàn thiện lời giải thích thay vì lặp câu chuyện hấp dẫn nhưng thiếu căn cứ.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_4",
+        "academic_lecture",
+        "compare",
+        "l7"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "type": "note_completion",
+      "prompt": "____ may reveal patterns over wide areas without major excavation.",
+      "correct_answers": [
+        "Remote sensing"
+      ],
+      "evidence_turn_ids": [
+        "T01"
+      ],
+      "explanation_vi": "Đáp án “Remote sensing” nằm tại đoạn T01. Nội dung bằng chứng: Nhà khảo cổ hiếm khi chọn kỹ thuật chỉ vì nó trông hiện đại. Các phương pháp khác nhau trả lời câu hỏi khác nhau. Khảo sát mặt đất phát hiện dấu tích ở hoặc gần bề mặt, còn khai quật làm lộ mối quan hệ dưới lòng đất một cách chi tiết. Viễn thám có thể cho thấy các mô hình trên vùng rộng mà không phải đào nhiều. Mỗi cách đánh đổi phần nào độ chi tiết hoặc phạm vi để có lợi thế khác.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_4",
+        "ielts_practice",
+        "compare",
+        "note_completion"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q02",
+      "type": "note_completion",
+      "prompt": "____ can identify subtle landforms beneath some forests.",
+      "correct_answers": [
+        "Laser scanning"
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Đáp án “Laser scanning” nằm tại đoạn T02. Nội dung bằng chứng: Ảnh chụp từ trên cao có thể cho thấy thay đổi nhỏ của cây cối ở nơi tường cũ ảnh hưởng độ ẩm đất. Quét laser có thể lập bản đồ địa hình tinh tế dưới một số tán rừng. Tuy nhiên, không hình ảnh nào tự chứng minh tuổi hoặc mục đích của công trình. Hình chữ nhật có thể thuộc nhiều thời kỳ hoạt động. Nhà nghiên cứu vẫn cần quan sát dưới đất và khi phù hợp, lấy mẫu được chọn cẩn thận.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_4",
+        "ielts_practice",
+        "compare",
+        "note_completion"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q03",
+      "type": "note_completion",
+      "prompt": "Radiocarbon dating can estimate the age of suitable ____.",
+      "correct_answers": [
+        "organic material"
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Đáp án “organic material” nằm tại đoạn T03. Nội dung bằng chứng: Các phương pháp định niên đại cũng cung cấp những kiểu thông tin khác nhau. Định tuổi tương đối đặt sự kiện theo thứ tự, thường dựa vào địa tầng hoặc so sánh kiểu hiện vật. Định tuổi carbon phóng xạ ước tính tuổi vật liệu hữu cơ phù hợp. Nhưng niên đại trước hết thuộc về mẫu được xét, không tự động áp cho mọi vật gần đó. Mảnh gỗ cũ có thể được tái sử dụng trong công trình mới hơn nhiều.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_4",
+        "ielts_practice",
+        "compare",
+        "note_completion"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q04",
+      "type": "sentence_completion",
+      "prompt": "A good research design begins with an explicit ____.",
+      "correct_answers": [
+        "question"
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Đáp án “question” nằm tại đoạn T04. Nội dung bằng chứng: Thiết kế nghiên cứu tốt bắt đầu bằng câu hỏi rõ ràng. Nếu mục tiêu là lập bản đồ phạm vi khu định cư, khảo sát có thể hiệu quả. Nếu mục tiêu là tìm hiểu căn phòng được dùng ra sao, có thể cần khai quật có kiểm soát và phân tích phòng thí nghiệm. Phương pháp đắt nhất chưa chắc hữu ích nhất khi câu hỏi không được xác định rõ.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_4",
+        "ielts_practice",
+        "compare",
+        "sentence_completion"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q05",
+      "type": "short_answer",
+      "prompt": "What might excavation identify instead of a buried road?",
+      "correct_answers": [
+        "drainage channels"
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Đáp án “drainage channels” nằm tại đoạn T05. Nội dung bằng chứng: Cách giải thích mạnh nhất xuất hiện khi các loại bằng chứng độc lập phù hợp nhau, còn bất đồng thúc đẩy điều tra thêm. Bản đồ có thể gợi ý con đường bị chôn, nhưng khai quật lại phát hiện kênh thoát nước. Công bố các kết quả mâu thuẫn là một phần của thực hành khoa học. Điều đó giúp nhóm tương lai hoàn thiện lời giải thích thay vì lặp câu chuyện hấp dẫn nhưng thiếu căn cứ.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_4",
+        "ielts_practice",
+        "compare",
+        "short_answer"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q06",
+      "type": "mcq",
+      "prompt": "What caution does the lecturer give about dating?",
+      "correct_answers": [
+        "A sample date cannot automatically be assigned to nearby objects"
+      ],
+      "options": [
+        "A sample date cannot automatically be assigned to nearby objects",
+        "Remote sensing always dates structures accurately",
+        "Relative dating measures exact calendar years"
+      ],
+      "evidence_turn_ids": [
+        "T01",
+        "T03",
+        "T05"
+      ],
+      "explanation_vi": "Hãy kết hợp luận điểm đầu, ví dụ ở giữa và kết luận cuối bài. Cách giải thích mạnh nhất xuất hiện khi các loại bằng chứng độc lập phù hợp nhau, còn bất đồng thúc đẩy điều tra thêm. Bản đồ có thể gợi ý con đường bị chôn, nhưng khai quật lại phát hiện kênh thoát nước. Công bố các kết quả mâu thuẫn là một phần của thực hành khoa học. Điều đó giúp nhóm tương lai hoàn thiện lời giải thích thay vì lặp câu chuyện hấp dẫn nhưng thiếu căn cứ. Phương án chính xác: “A sample date cannot automatically be assigned to nearby objects”; hai phương án khác khái quát quá mức hoặc không phù hợp bằng chứng.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "section_4",
+        "ielts_practice",
+        "compare",
+        "main_idea"
+      ]
+    },
+    {
+      "question_id": "D01",
+      "type": "dictation",
+      "prompt": "Nghe đoạn T02 và chép lại chính xác lời giảng.",
+      "correct_answers": [
+        "Aerial photographs may show faint changes in vegetation where old walls affect soil moisture. Laser scanning can map subtle landforms beneath some forest canopies. However, neither image directly proves the date or purpose of a structure. A rectangular shape could reflect several periods of activity. Researchers still need ground observations and, where appropriate, carefully selected samples."
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Phân tích từ nối, âm yếu và cụm thuật ngữ học thuật. Nghĩa của đoạn: Ảnh chụp từ trên cao có thể cho thấy thay đổi nhỏ của cây cối ở nơi tường cũ ảnh hưởng độ ẩm đất. Quét laser có thể lập bản đồ địa hình tinh tế dưới một số tán rừng. Tuy nhiên, không hình ảnh nào tự chứng minh tuổi hoặc mục đích của công trình. Hình chữ nhật có thể thuộc nhiều thời kỳ hoạt động. Nhà nghiên cứu vẫn cần quan sát dưới đất và khi phù hợp, lấy mẫu được chọn cẩn thận.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_4",
+        "dictation",
+        "exact_transcript"
+      ]
+    },
+    {
+      "question_id": "D02",
+      "type": "dictation",
+      "prompt": "Nghe đoạn T04 và chép lại chính xác lời giảng.",
+      "correct_answers": [
+        "Good research design begins with an explicit question. If the aim is to map the extent of a settlement, survey may be efficient. If the aim is to discover how a room was used, controlled excavation and laboratory analysis may be necessary. The most expensive method is not necessarily the most informative one when the question is poorly defined."
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Phân tích từ nối, âm yếu và cụm thuật ngữ học thuật. Nghĩa của đoạn: Thiết kế nghiên cứu tốt bắt đầu bằng câu hỏi rõ ràng. Nếu mục tiêu là lập bản đồ phạm vi khu định cư, khảo sát có thể hiệu quả. Nếu mục tiêu là tìm hiểu căn phòng được dùng ra sao, có thể cần khai quật có kiểm soát và phân tích phòng thí nghiệm. Phương pháp đắt nhất chưa chắc hữu ích nhất khi câu hỏi không được xác định rõ.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_4",
+        "dictation",
+        "exact_transcript"
+      ]
+    },
+    {
+      "question_id": "G01",
+      "type": "gap_fill",
+      "prompt": "Nghe T01 rồi điền phần thiếu: Archaeologists rarely choose a technique just because it is technologically impressive. Different methods answer different questions. Ground survey identifies traces visible at or near the surface, while excavation exposes buried relationships in detail. ____ can reveal patterns across a wider landscape without removing large amounts of soil. Each approach trades some precision or coverage for another advantage.",
+      "correct_answers": [
+        "Remote sensing"
+      ],
+      "evidence_turn_ids": [
+        "T01"
+      ],
+      "explanation_vi": "Điền “Remote sensing”, nghĩa: viễn thám. Cụm từ này xuất hiện trong T01.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_4",
+        "gap_fill",
+        "academic_vocabulary"
+      ]
+    }
+  ],
+  "vocabulary": [
+    {
+      "term": "Remote sensing",
+      "pos": "n. phr.",
+      "meaning_vi": "viễn thám",
+      "example_en": "Archaeologists rarely choose a technique just because it is technologically impressive. Different methods answer different questions. Ground survey identifies traces visible at or near the surface, while excavation exposes buried relationships in detail. Remote sensing can reveal patterns across a wider landscape without removing large amounts of soil. Each approach trades some precision or coverage for another advantage.",
+      "example_vi": "Nhà khảo cổ hiếm khi chọn kỹ thuật chỉ vì nó trông hiện đại. Các phương pháp khác nhau trả lời câu hỏi khác nhau. Khảo sát mặt đất phát hiện dấu tích ở hoặc gần bề mặt, còn khai quật làm lộ mối quan hệ dưới lòng đất một cách chi tiết. Viễn thám có thể cho thấy các mô hình trên vùng rộng mà không phải đào nhiều. Mỗi cách đánh đổi phần nào độ chi tiết hoặc phạm vi để có lợi thế khác.",
+      "source_turn_id": "T01"
+    },
+    {
+      "term": "Laser scanning",
+      "pos": "n. phr.",
+      "meaning_vi": "quét laser",
+      "example_en": "Aerial photographs may show faint changes in vegetation where old walls affect soil moisture. Laser scanning can map subtle landforms beneath some forest canopies. However, neither image directly proves the date or purpose of a structure. A rectangular shape could reflect several periods of activity. Researchers still need ground observations and, where appropriate, carefully selected samples.",
+      "example_vi": "Ảnh chụp từ trên cao có thể cho thấy thay đổi nhỏ của cây cối ở nơi tường cũ ảnh hưởng độ ẩm đất. Quét laser có thể lập bản đồ địa hình tinh tế dưới một số tán rừng. Tuy nhiên, không hình ảnh nào tự chứng minh tuổi hoặc mục đích của công trình. Hình chữ nhật có thể thuộc nhiều thời kỳ hoạt động. Nhà nghiên cứu vẫn cần quan sát dưới đất và khi phù hợp, lấy mẫu được chọn cẩn thận.",
+      "source_turn_id": "T02"
+    },
+    {
+      "term": "Relative dating",
+      "pos": "n. phr.",
+      "meaning_vi": "định tuổi tương đối",
+      "example_en": "Dating methods also provide different kinds of information. Relative dating places events in an order, often using stratigraphy or comparisons between artefact styles. Radiocarbon dating estimates the age of suitable organic material. But the date belongs first to the sampled material, not automatically to every object nearby. A piece of old wood may have been reused in a much later building.",
+      "example_vi": "Các phương pháp định niên đại cũng cung cấp những kiểu thông tin khác nhau. Định tuổi tương đối đặt sự kiện theo thứ tự, thường dựa vào địa tầng hoặc so sánh kiểu hiện vật. Định tuổi carbon phóng xạ ước tính tuổi vật liệu hữu cơ phù hợp. Nhưng niên đại trước hết thuộc về mẫu được xét, không tự động áp cho mọi vật gần đó. Mảnh gỗ cũ có thể được tái sử dụng trong công trình mới hơn nhiều.",
+      "source_turn_id": "T03"
+    },
+    {
+      "term": "Radiocarbon dating",
+      "pos": "n. phr.",
+      "meaning_vi": "định tuổi bằng carbon phóng xạ",
+      "example_en": "Dating methods also provide different kinds of information. Relative dating places events in an order, often using stratigraphy or comparisons between artefact styles. Radiocarbon dating estimates the age of suitable organic material. But the date belongs first to the sampled material, not automatically to every object nearby. A piece of old wood may have been reused in a much later building.",
+      "example_vi": "Các phương pháp định niên đại cũng cung cấp những kiểu thông tin khác nhau. Định tuổi tương đối đặt sự kiện theo thứ tự, thường dựa vào địa tầng hoặc so sánh kiểu hiện vật. Định tuổi carbon phóng xạ ước tính tuổi vật liệu hữu cơ phù hợp. Nhưng niên đại trước hết thuộc về mẫu được xét, không tự động áp cho mọi vật gần đó. Mảnh gỗ cũ có thể được tái sử dụng trong công trình mới hơn nhiều.",
+      "source_turn_id": "T03"
+    }
+  ],
+  "audio": {
+    "status": "not_generated",
+    "url": null,
+    "duration_ms": null,
+    "model": null,
+    "provider": null,
+    "voice_config": null,
+    "source_transcript_hash": "861a29c0a31a9662c995ae895c9958bf5846fbe0f550f92e321315096ee9b244",
+    "audio_sha256": null,
+    "format": null
+  },
+  "qa": {
+    "content_reviewed": false,
+    "answers_verified": false,
+    "audio_verified": false,
+    "rights_cleared": false,
+    "duplicate_reviewed": false,
+    "notes": [
+      "Original AI-assisted educational script, not an official IELTS transcript.",
+      "Editorial, academic and linguistic review pending.",
+      "Audio/TTS not generated; text-to-speech distribution rights must be confirmed before use, especially for minors.",
+      "Six IELTS-style practice questions per lesson; this is not a full official Part 4 test or a calibrated IELTS Band test.",
+      "M16.2: automated edits are provisional; IELTS teacher final signoff, audio and rights clearance pending."
+    ]
+  },
+  "provenance": {
+    "content_origin": "original_ai_assisted",
+    "source_urls": [],
+    "source_rights_note": "Original transcript and translation drafts; verify academic claims and terms, and TTS provider redistribution conditions before release.",
+    "reviewer": null
+  },
+  "release_metadata": {
+    "published_at": null,
+    "version": 1
+  }
+}

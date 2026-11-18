@@ -1,0 +1,217 @@
+{
+  "schema_version": "m35.1.0",
+  "id": "ACT-POST-153",
+  "activity_id": "ACT-POST-153",
+  "status": "draft_pending_audio_and_teacher_signoff",
+  "module": "dictation",
+  "kind": "post_test_error_repair",
+  "section": 1,
+  "title": "Applying for a Secure Bicycle Locker — Sửa lỗi sau bài thi",
+  "source_bank": "full_mock_part",
+  "origin_bank": "protected_assessment",
+  "source_milestone": "M32",
+  "source_package": "English_Skill_Lab_Dictation_M32_Full_Listening_Mocks_16-20.zip",
+  "source_entry_path": "ESL_Dictation_M32_Full_Mocks_16_20/01_TESTS_SERVER_ONLY/M32-LISTENING-MOCK-19.SERVER_ONLY.json",
+  "source_test_id": "M32-LISTENING-MOCK-19",
+  "source_lesson_id": null,
+  "source_part_id": "M32-LISTENING-MOCK-19-P1",
+  "reuse_parent_id": "M32-LISTENING-MOCK-19-P1",
+  "source_question_id": "Q03",
+  "source_audio_id": "assessment/full_mock_part/M32-LISTENING-MOCK-19-P1",
+  "source_audio_id_kind": "logical_source_part_identifier_not_file",
+  "source_audio_asset_id": null,
+  "source_declared_unverified_audio_id": "M32-AUD-19-P1",
+  "source_audio_url": null,
+  "audio_file_provided": false,
+  "source_turn_ids": [
+    "T06",
+    "T09",
+    "T14"
+  ],
+  "segment_timing": {
+    "T06": {
+      "start_ms": null,
+      "end_ms": null,
+      "sha256": "9d908b9efa900a3b904f7700ebd8c5243f62bb5e0a3297977cf0042a2aa329b1"
+    },
+    "T09": {
+      "start_ms": null,
+      "end_ms": null,
+      "sha256": "5faf087ecf870964699ed946408312cc5de086d4af6ca67007fd7fb5a62111ad"
+    },
+    "T14": {
+      "start_ms": null,
+      "end_ms": null,
+      "sha256": "322a1bb1cfe82b0ffaa51f7f8cd59399d55fc9aea4c99f4d2a0238070cd08845"
+    }
+  },
+  "clip_start_ms": null,
+  "clip_end_ms": null,
+  "audio_alignment_status": "pending_real_audio_and_verified_offsets",
+  "evidence_transcript_sha256": "7eaba45174dd5d583b9bcda6ee18b151cdb6b3c74d8b31c815ad29958ae2b169",
+  "anchor_turn_id": "T14",
+  "teacher_only_evidence_text_en": "The tenth of October is when your trial week would finish, but your rental starts on 3 October.",
+  "questions": [
+    {
+      "exercise_id": "ACT-POST-153-01",
+      "phase": "guided_relisten",
+      "mode": "short_answer",
+      "title_vi": "Nghe lại điểm đã bỏ lỡ",
+      "prompt_en": "Start date: ____",
+      "prompt_vi": "Nghe lại đoạn bằng chứng và trả lời lại câu hỏi gốc sau khi đã nộp bài thi.",
+      "options": null,
+      "correct_option": null,
+      "correct_answers": [
+        "3 October"
+      ],
+      "spoken_answer": "3 October",
+      "word_limit": 3,
+      "normalization_policy": "trim_unicode_nfkc_casefold_collapse_spaces_keep_meaningful_digits_and_letters",
+      "scoring_policy": "post_test_training_only",
+      "source_question_id": "Q03",
+      "source_question_type": "form_completion",
+      "play_turn_ids": [
+        "T14"
+      ],
+      "evidence_turn_ids": [
+        "T14"
+      ],
+      "teacher_explanation_vi": "Đáp án biên soạn: 3 October. Giáo viên phải nghe âm thanh, đối chiếu câu nói T14 và kiểm tra tính duy nhất của câu trả lời.",
+      "feedback_vi": "Đáp án gốc: 3 October. Đối chiếu với các lượt thoại T14; chú ý thông tin cuối cùng và từ khóa được diễn đạt lại.",
+      "is_exam_score": false
+    },
+    {
+      "exercise_id": "ACT-POST-153-02",
+      "phase": "evidence_recognition",
+      "mode": "evidence_choice",
+      "title_vi": "Tìm câu thoại chứng minh đáp án",
+      "prompt_vi": "Trong ba trích đoạn thực sự có trong cùng bài nghe, trích đoạn nào liên quan trực tiếp nhất đến câu hỏi vừa làm?",
+      "source_question_id": "Q03",
+      "source_question_prompt_en": "Start date: ____",
+      "choices": [
+        {
+          "key": "T06",
+          "excerpt_en": "I first looked beside the east platform. The available secure lockers are at the west concourse, near the staffed ticket hall.",
+          "source_turn_id": "T06"
+        },
+        {
+          "key": "T14",
+          "excerpt_en": "The tenth of October is when your trial week would finish, but your rental starts on 3 October.",
+          "source_turn_id": "T14"
+        },
+        {
+          "key": "T09",
+          "excerpt_en": "The older lockers used a metal key, but the new rental uses a digital pass loaded onto a transport card.",
+          "source_turn_id": "T09"
+        }
+      ],
+      "correct_answers": [
+        "T14"
+      ],
+      "evidence_turn_ids": [
+        "T14"
+      ],
+      "evidence_text_sha256": "322a1bb1cfe82b0ffaa51f7f8cd59399d55fc9aea4c99f4d2a0238070cd08845",
+      "play_turn_ids": [
+        "T06",
+        "T14",
+        "T09"
+      ],
+      "feedback_vi": "Câu hỏi này được chứng minh tại lượt T14. Hai lựa chọn còn lại là lời nói có thật nhưng nằm ở các ý khác trong cùng đoạn nghe.",
+      "grading_policy": "exact_source_turn_id",
+      "is_exam_score": false
+    },
+    {
+      "exercise_id": "ACT-POST-153-03",
+      "phase": "focus_dictation",
+      "mode": "source_phrase_dictation",
+      "title_vi": "Chép lại cụm âm thanh trọng tâm",
+      "prompt_en": "…when your trial week would finish, but your  [____] .…",
+      "prompt_vi": "Nghe lượt thoại và điền chính xác cụm từ còn thiếu vào dấu trống. Không chép cả câu.",
+      "word_limit": 5,
+      "correct_answers": [
+        "rental starts on 3 October"
+      ],
+      "play_turn_ids": [
+        "T14"
+      ],
+      "evidence_turn_ids": [
+        "T14"
+      ],
+      "source_excerpt_exact": "rental starts on 3 October",
+      "evidence_char_start": 68,
+      "evidence_char_end": 94,
+      "source_turn_sha256": "322a1bb1cfe82b0ffaa51f7f8cd59399d55fc9aea4c99f4d2a0238070cd08845",
+      "feedback_vi": "Cụm nghe-chép chính xác là “rental starts on 3 October”. Hãy đối chiếu từ chức năng, âm cuối và cách nối âm trước khi thử lại.",
+      "normalization_policy": "trim_unicode_nfkc_casefold_collapse_spaces_keep_meaningful_digits_and_letters",
+      "is_exam_score": false,
+      "newly_authored_for_m35": true
+    }
+  ],
+  "teacher_source_answer_key": {
+    "original_correct_answers": [
+      "3 October"
+    ],
+    "original_correct_option": null,
+    "evidence_turn_ids": [
+      "T14"
+    ],
+    "raw_question_evidence_excerpt_en": "The tenth of October is when your trial week would finish, but your rental starts on 3 October.",
+    "original_explanation_vi": "Đáp án biên soạn: 3 October. Giáo viên phải nghe âm thanh, đối chiếu câu nói T14 và kiểm tra tính duy nhất của câu trả lời."
+  },
+  "skill_tags": [
+    "post_test_repair",
+    "section_1",
+    "form_completion",
+    "evidence_matching",
+    "focused_dictation",
+    "first_attempt_exposure_protection"
+  ],
+  "learner_variants": {
+    "if_original_answer_incorrect": "required_repair",
+    "if_original_answer_correct": "optional_reinforcement",
+    "if_no_question_response": "optional_first_attempt_submitted_only"
+  },
+  "repair_rule": {
+    "compare_response_to_original_question_id": "Q03",
+    "source_user_attempt_answer_from_db": true,
+    "error_record_type": "original_question_review",
+    "recommend_retention_days": [
+      1,
+      3,
+      7
+    ],
+    "new_first_attempt_scoring": false,
+    "band_calibration": false
+  },
+  "access_policy": {
+    "access": "post_submission_only",
+    "gate_parent_id": "M32-LISTENING-MOCK-19",
+    "gate_kind": "whole_mock_submitted",
+    "user_bound": true,
+    "server_side_enforced": true,
+    "has_prior_attempt_required": true,
+    "cross_user_unlock": false,
+    "exposure_records_required": true,
+    "do_not_return_in_public_catalog": true,
+    "transcript_hidden_in_exam_session": true,
+    "pre_first_attempt_reuse": false,
+    "after_submit_irreversible_seen": true,
+    "retest_is_exposed": true,
+    "allow_any_public_index": false
+  },
+  "rights_status": "pending_review",
+  "review": {
+    "source_quality_review": "pending",
+    "semantic_answer_review": "pending",
+    "human_audio_listening": "pending",
+    "alignment_verified": false,
+    "teacher_signoff": "pending",
+    "publication_approved": false
+  },
+  "map_asset_id": null,
+  "map_asset_private_path": null,
+  "source_speaker_roles": [],
+  "version": "m35.1.0",
+  "import_policy": "insert_only_idempotent_do_not_overwrite_source"
+}

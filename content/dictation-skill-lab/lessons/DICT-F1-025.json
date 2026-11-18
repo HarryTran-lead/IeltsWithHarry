@@ -1,0 +1,425 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "DICT-F1-025",
+  "status": "draft",
+  "level": "L1",
+  "section": 0,
+  "topic": "Foundation",
+  "title": "Places Around Town",
+  "learning_objectives_vi": [
+    "Nghe địa điểm thường gặp",
+    "Nghe và chép chính xác các lượt nghe ngắn mà không dựa vào transcript."
+  ],
+  "content_format": "micro_drill",
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Foundation narrator",
+      "tts_voice_id": null,
+      "accent_requested": "british"
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "The library is behind the school.",
+      "translation_vi": "Thư viện ở phía sau trường học.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "everyday_vocabulary",
+        "micro_listening"
+      ]
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "A",
+      "text_en": "The hospital is next to the park.",
+      "translation_vi": "Bệnh viện ở cạnh công viên.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "everyday_vocabulary",
+        "micro_listening"
+      ]
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "A",
+      "text_en": "The bank is on the corner.",
+      "translation_vi": "Ngân hàng nằm ở góc đường.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "everyday_vocabulary",
+        "micro_listening"
+      ]
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "A",
+      "text_en": "Meet me outside the cinema.",
+      "translation_vi": "Gặp tôi bên ngoài rạp chiếu phim.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "everyday_vocabulary",
+        "micro_listening"
+      ]
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "A",
+      "text_en": "The museum opens at ten.",
+      "translation_vi": "Bảo tàng mở cửa lúc mười giờ.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "everyday_vocabulary",
+        "micro_listening"
+      ]
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "A",
+      "text_en": "There is a bridge near here.",
+      "translation_vi": "Có một cây cầu gần đây.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "everyday_vocabulary",
+        "micro_listening"
+      ]
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "The pharmacy is across the road.",
+      "translation_vi": "Nhà thuốc nằm bên kia đường.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "everyday_vocabulary",
+        "micro_listening"
+      ]
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "A",
+      "text_en": "The post office closes early.",
+      "translation_vi": "Bưu điện đóng cửa sớm.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "everyday_vocabulary",
+        "micro_listening"
+      ]
+    },
+    {
+      "turn_id": "T09",
+      "speaker_id": "A",
+      "text_en": "Our hotel is opposite the station.",
+      "translation_vi": "Khách sạn của chúng tôi đối diện nhà ga.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "everyday_vocabulary",
+        "micro_listening"
+      ]
+    },
+    {
+      "turn_id": "T10",
+      "speaker_id": "A",
+      "text_en": "The supermarket is beside the bakery.",
+      "translation_vi": "Siêu thị ở cạnh tiệm bánh.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "everyday_vocabulary",
+        "micro_listening"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "type": "dictation",
+      "prompt": "Nghe lượt T01 và chép chính xác những từ được nói.",
+      "correct_answers": [
+        "The library is behind the school."
+      ],
+      "evidence_turn_ids": [
+        "T01"
+      ],
+      "explanation_vi": "library là thư viện; behind là phía sau. Nghĩa: Thư viện ở phía sau trường học.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text"
+      ]
+    },
+    {
+      "question_id": "Q02",
+      "type": "dictation",
+      "prompt": "Nghe lượt T02 và chép chính xác những từ được nói.",
+      "correct_answers": [
+        "The hospital is next to the park."
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "hospital khác hotel. Nghĩa: Bệnh viện ở cạnh công viên.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text"
+      ]
+    },
+    {
+      "question_id": "Q03",
+      "type": "dictation",
+      "prompt": "Nghe lượt T03 và chép chính xác những từ được nói.",
+      "correct_answers": [
+        "The bank is on the corner."
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "bank có nghĩa ngân hàng trong ngữ cảnh. Nghĩa: Ngân hàng nằm ở góc đường.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text"
+      ]
+    },
+    {
+      "question_id": "Q04",
+      "type": "dictation",
+      "prompt": "Nghe lượt T04 và chép chính xác những từ được nói.",
+      "correct_answers": [
+        "Meet me outside the cinema."
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "cinema là rạp chiếu phim. Nghĩa: Gặp tôi bên ngoài rạp chiếu phim.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text"
+      ]
+    },
+    {
+      "question_id": "Q05",
+      "type": "dictation",
+      "prompt": "Nghe lượt T05 và chép chính xác những từ được nói.",
+      "correct_answers": [
+        "The museum opens at ten."
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "museum thường có ba âm tiết. Nghĩa: Bảo tàng mở cửa lúc mười giờ.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text"
+      ]
+    },
+    {
+      "question_id": "Q06",
+      "type": "dictation",
+      "prompt": "Nghe lượt T06 và chép chính xác những từ được nói.",
+      "correct_answers": [
+        "There is a bridge near here."
+      ],
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "explanation_vi": "bridge là cây cầu. Nghĩa: Có một cây cầu gần đây.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text"
+      ]
+    },
+    {
+      "question_id": "Q07",
+      "type": "dictation",
+      "prompt": "Nghe lượt T07 và chép chính xác những từ được nói.",
+      "correct_answers": [
+        "The pharmacy is across the road."
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "pharmacy là hiệu thuốc. Nghĩa: Nhà thuốc nằm bên kia đường.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text"
+      ]
+    },
+    {
+      "question_id": "Q08",
+      "type": "dictation",
+      "prompt": "Nghe lượt T08 và chép chính xác những từ được nói.",
+      "correct_answers": [
+        "The post office closes early."
+      ],
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "explanation_vi": "post office là bưu điện. Nghĩa: Bưu điện đóng cửa sớm.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text"
+      ]
+    },
+    {
+      "question_id": "Q09",
+      "type": "dictation",
+      "prompt": "Nghe lượt T09 và chép chính xác những từ được nói.",
+      "correct_answers": [
+        "Our hotel is opposite the station."
+      ],
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "explanation_vi": "opposite chỉ vị trí đối diện. Nghĩa: Khách sạn của chúng tôi đối diện nhà ga.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text"
+      ]
+    },
+    {
+      "question_id": "Q10",
+      "type": "dictation",
+      "prompt": "Nghe lượt T10 và chép chính xác những từ được nói.",
+      "correct_answers": [
+        "The supermarket is beside the bakery."
+      ],
+      "evidence_turn_ids": [
+        "T10"
+      ],
+      "explanation_vi": "bakery là cửa hàng bánh. Nghĩa: Siêu thị ở cạnh tiệm bánh.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text"
+      ]
+    },
+    {
+      "question_id": "Q11",
+      "type": "word_choice",
+      "prompt": "T02: Địa điểm nào ở cạnh công viên?",
+      "correct_answers": [
+        "hospital"
+      ],
+      "options": [
+        "hospital",
+        "hotel"
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Hospital là bệnh viện. Hãy nghe lại lượt T02, đối chiếu với lựa chọn còn lại và xác định từ/ý được nói thật.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "comprehension",
+        "foundation_discrimination"
+      ]
+    },
+    {
+      "question_id": "Q12",
+      "type": "word_choice",
+      "prompt": "T07: Địa điểm nào ở bên kia đường?",
+      "correct_answers": [
+        "pharmacy"
+      ],
+      "options": [
+        "pharmacy",
+        "bakery"
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "Pharmacy là nhà thuốc. Hãy nghe lại lượt T07, đối chiếu với lựa chọn còn lại và xác định từ/ý được nói thật.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "comprehension",
+        "foundation_discrimination"
+      ]
+    }
+  ],
+  "vocabulary": [
+    {
+      "term": "library",
+      "pos": "noun",
+      "meaning_vi": "thư viện",
+      "example_en": "The library is behind the school.",
+      "example_vi": "Thư viện ở phía sau trường học.",
+      "source_turn_id": "T01"
+    },
+    {
+      "term": "hospital",
+      "pos": "noun",
+      "meaning_vi": "bệnh viện",
+      "example_en": "The hospital is next to the park.",
+      "example_vi": "Bệnh viện ở cạnh công viên.",
+      "source_turn_id": "T02"
+    },
+    {
+      "term": "museum",
+      "pos": "noun",
+      "meaning_vi": "bảo tàng",
+      "example_en": "The museum opens at ten.",
+      "example_vi": "Bảo tàng mở cửa lúc mười giờ.",
+      "source_turn_id": "T05"
+    },
+    {
+      "term": "pharmacy",
+      "pos": "noun",
+      "meaning_vi": "hiệu thuốc",
+      "example_en": "The pharmacy is across the road.",
+      "example_vi": "Nhà thuốc nằm bên kia đường.",
+      "source_turn_id": "T07"
+    }
+  ],
+  "audio": {
+    "status": "not_generated",
+    "url": null,
+    "duration_ms": null,
+    "model": null,
+    "provider": null,
+    "voice_config": null,
+    "source_transcript_hash": "664dd5ed8022a98b355343aee9bfc9577b5f3170f4bd1549eee292bd0a0fd0ea",
+    "audio_sha256": null,
+    "format": null
+  },
+  "qa": {
+    "content_reviewed": false,
+    "answers_verified": false,
+    "audio_verified": false,
+    "rights_cleared": false,
+    "duplicate_reviewed": false,
+    "notes": [
+      "Author draft. Editorial, native-like audio, rights and device QA pending.",
+      "TTS: generate each turn separately, then combine and generate timestamps.",
+      "M16.2: automated edits are provisional; IELTS teacher final signoff, audio and rights clearance pending."
+    ]
+  },
+  "provenance": {
+    "content_origin": "original_ai_assisted",
+    "source_urls": [],
+    "source_rights_note": "New original learning material written for English Skill Lab; verify TTS and distribution conditions prior to release.",
+    "reviewer": null
+  },
+  "release_metadata": {
+    "published_at": null,
+    "version": 1
+  }
+}

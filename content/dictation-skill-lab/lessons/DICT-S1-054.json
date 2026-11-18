@@ -1,0 +1,462 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "DICT-S1-054",
+  "status": "draft",
+  "level": "L4",
+  "section": 1,
+  "topic": "Medical Appointments",
+  "title": "Rescheduling an Eye Test",
+  "learning_objectives_vi": [
+    "Luyện natural speed & paraphrase trong tình huống: A receptionist explains available locations and an optional service.",
+    "Nhận diện thông tin cuối cùng thay vì lặp lại dữ kiện đã bị sửa hoặc phủ định.",
+    "Chép đúng lời thoại, hiểu bằng chứng và học từ vựng trong ngữ cảnh."
+  ],
+  "content_format": "section_practice",
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Customer / applicant",
+      "tts_voice_id": null,
+      "accent_requested": "american"
+    },
+    {
+      "speaker_id": "B",
+      "role": "Service representative / employee",
+      "tts_voice_id": null,
+      "accent_requested": "american"
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "Hello, I need to move an eye test because my train has been cancelled. I'm booked for eleven today.",
+      "translation_vi": "Xin chào, tôi cần đổi lịch kiểm tra mắt vì tàu bị hủy. Hôm nay tôi đặt lúc mười một giờ.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "location_choice",
+        "preparation",
+        "service_options",
+        "section_1",
+        "two_speaker_dialogue",
+        "l4"
+      ]
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "B",
+      "text_en": "I'm sorry to hear that. We could see you this afternoon at the South Street practice.",
+      "translation_vi": "Thật tiếc. Chúng tôi có thể khám chiều nay ở cơ sở South Street.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "location_choice",
+        "preparation",
+        "service_options",
+        "section_1",
+        "two_speaker_dialogue",
+        "l4"
+      ]
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "A",
+      "text_en": "Is that the one by the library? I'd rather use the branch near the bus station.",
+      "translation_vi": "Đó là nơi gần thư viện phải không? Tôi muốn đến chi nhánh gần bến xe hơn.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "location_choice",
+        "preparation",
+        "service_options",
+        "section_1",
+        "two_speaker_dialogue",
+        "l4"
+      ]
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "B",
+      "text_en": "The bus station branch is on Market Lane. Its next available appointment is Monday at nine fifteen.",
+      "translation_vi": "Chi nhánh gần bến xe ở Market Lane. Lịch trống gần nhất là thứ Hai lúc chín giờ mười lăm.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "location_choice",
+        "preparation",
+        "service_options",
+        "section_1",
+        "two_speaker_dialogue",
+        "l4"
+      ]
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "A",
+      "text_en": "Monday works. I wear contact lenses. Do I need to leave them out before the test?",
+      "translation_vi": "Thứ Hai được. Tôi đeo kính áp tròng. Tôi có cần tháo trước khi khám không?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "location_choice",
+        "preparation",
+        "service_options",
+        "section_1",
+        "two_speaker_dialogue",
+        "l4"
+      ]
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "B",
+      "text_en": "Please remove them twenty minutes beforehand and bring your glasses if you have them.",
+      "translation_vi": "Hãy tháo trước hai mươi phút và mang kính gọng nếu có.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "location_choice",
+        "preparation",
+        "service_options",
+        "section_1",
+        "two_speaker_dialogue",
+        "l4"
+      ]
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "Will the regular eye test include a photograph of the back of my eye?",
+      "translation_vi": "Buổi khám mắt thông thường có chụp đáy mắt không?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "location_choice",
+        "preparation",
+        "service_options",
+        "section_1",
+        "two_speaker_dialogue",
+        "l4"
+      ]
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "B",
+      "text_en": "No, retinal photography is optional and costs an additional twelve pounds.",
+      "translation_vi": "Không, chụp võng mạc là dịch vụ tùy chọn, thêm mười hai bảng.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "location_choice",
+        "preparation",
+        "service_options",
+        "section_1",
+        "two_speaker_dialogue",
+        "l4"
+      ]
+    },
+    {
+      "turn_id": "T09",
+      "speaker_id": "A",
+      "text_en": "I think I'll skip that for now. How much is the standard test?",
+      "translation_vi": "Tôi tạm bỏ qua. Khám thông thường giá bao nhiêu?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "location_choice",
+        "preparation",
+        "service_options",
+        "section_1",
+        "two_speaker_dialogue",
+        "l4"
+      ]
+    },
+    {
+      "turn_id": "T10",
+      "speaker_id": "B",
+      "text_en": "The standard test is twenty-five pounds, unless you have a valid voucher.",
+      "translation_vi": "Buổi khám thông thường giá hai mươi lăm bảng, trừ khi có phiếu ưu đãi hợp lệ.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "location_choice",
+        "preparation",
+        "service_options",
+        "section_1",
+        "two_speaker_dialogue",
+        "l4"
+      ]
+    },
+    {
+      "turn_id": "T11",
+      "speaker_id": "A",
+      "text_en": "Thanks. Please move the appointment to Market Lane for Monday morning.",
+      "translation_vi": "Cảm ơn. Xin chuyển lịch đến Market Lane sáng thứ Hai.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "location_choice",
+        "preparation",
+        "service_options",
+        "section_1",
+        "two_speaker_dialogue",
+        "l4"
+      ]
+    },
+    {
+      "turn_id": "T12",
+      "speaker_id": "B",
+      "text_en": "Certainly. You'll receive a confirmation text in the next few minutes.",
+      "translation_vi": "Được. Bạn sẽ nhận tin nhắn xác nhận trong vài phút tới.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "location_choice",
+        "preparation",
+        "service_options",
+        "section_1",
+        "two_speaker_dialogue",
+        "l4"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "type": "mcq",
+      "prompt": "Which lane is the selected practice on?",
+      "correct_answers": [
+        "Market"
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Khách chọn cơ sở Market Lane gần bến xe.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "location_choice",
+        "preparation",
+        "service_options",
+        "ielts_section1_practice"
+      ],
+      "options": [
+        "South",
+        "North",
+        "Market"
+      ]
+    },
+    {
+      "question_id": "Q02",
+      "type": "form_completion",
+      "prompt": "New appointment day: ____",
+      "correct_answers": [
+        "Monday"
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Khách dời sang thứ Hai.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "location_choice",
+        "preparation",
+        "service_options",
+        "ielts_section1_practice"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q03",
+      "type": "form_completion",
+      "prompt": "New time: ____",
+      "correct_answers": [
+        "9:15"
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Giờ trống là chín giờ mười lăm.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "location_choice",
+        "preparation",
+        "service_options",
+        "ielts_section1_practice"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q04",
+      "type": "form_completion",
+      "prompt": "Remove contact lenses ____ minutes before",
+      "correct_answers": [
+        "twenty"
+      ],
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "explanation_vi": "Cần tháo kính áp tròng trước 20 phút.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "location_choice",
+        "preparation",
+        "service_options",
+        "ielts_section1_practice"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q05",
+      "type": "form_completion",
+      "prompt": "Optional retinal photography costs £____",
+      "correct_answers": [
+        "12"
+      ],
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "explanation_vi": "Chụp võng mạc có phụ phí 12 bảng.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "location_choice",
+        "preparation",
+        "service_options",
+        "ielts_section1_practice"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q06",
+      "type": "form_completion",
+      "prompt": "Standard eye test costs £____",
+      "correct_answers": [
+        "25"
+      ],
+      "evidence_turn_ids": [
+        "T10"
+      ],
+      "explanation_vi": "Buổi kiểm tra cơ bản giá 25 bảng.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "location_choice",
+        "preparation",
+        "service_options",
+        "ielts_section1_practice"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "D01",
+      "type": "dictation",
+      "prompt": "Nghe và chép nguyên văn lời nhân vật A (lượt T05).",
+      "correct_answers": [
+        "Monday works. I wear contact lenses. Do I need to leave them out before the test?"
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Câu chuẩn: Monday works. I wear contact lenses. Do I need to leave them out before the test? Nghĩa: Thứ Hai được. Tôi đeo kính áp tròng. Tôi có cần tháo trước khi khám không? Cần nghe rõ từ chức năng, âm cuối và thông tin cụ thể.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "location_choice",
+        "preparation",
+        "service_options",
+        "dictation",
+        "transcription_accuracy"
+      ]
+    },
+    {
+      "question_id": "G01",
+      "type": "gap_fill",
+      "prompt": "Nghe và điền từ/cụm từ thiếu: Hello, I need to move an ____ because my train has been cancelled. I'm booked for eleven today.",
+      "correct_answers": [
+        "eye test"
+      ],
+      "evidence_turn_ids": [
+        "T01"
+      ],
+      "explanation_vi": "Cụm cần điền: eye test (kiểm tra mắt). Câu gốc: Hello, I need to move an eye test because my train has been cancelled. I'm booked for eleven today.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "location_choice",
+        "preparation",
+        "service_options",
+        "gap_fill",
+        "vocabulary_in_context"
+      ]
+    }
+  ],
+  "vocabulary": [
+    {
+      "term": "eye test",
+      "pos": "phrase",
+      "meaning_vi": "kiểm tra mắt",
+      "example_en": "Hello, I need to move an eye test because my train has been cancelled. I'm booked for eleven today.",
+      "example_vi": "Xin chào, tôi cần đổi lịch kiểm tra mắt vì tàu bị hủy. Hôm nay tôi đặt lúc mười một giờ.",
+      "source_turn_id": "T01"
+    },
+    {
+      "term": "contact lenses",
+      "pos": "phrase",
+      "meaning_vi": "kính áp tròng",
+      "example_en": "Monday works. I wear contact lenses. Do I need to leave them out before the test?",
+      "example_vi": "Thứ Hai được. Tôi đeo kính áp tròng. Tôi có cần tháo trước khi khám không?",
+      "source_turn_id": "T05"
+    },
+    {
+      "term": "retinal photography",
+      "pos": "phrase",
+      "meaning_vi": "chụp võng mạc",
+      "example_en": "No, retinal photography is optional and costs an additional twelve pounds.",
+      "example_vi": "Không, chụp võng mạc là dịch vụ tùy chọn, thêm mười hai bảng.",
+      "source_turn_id": "T08"
+    },
+    {
+      "term": "valid voucher",
+      "pos": "phrase",
+      "meaning_vi": "phiếu ưu đãi hợp lệ",
+      "example_en": "The standard test is twenty-five pounds, unless you have a valid voucher.",
+      "example_vi": "Buổi khám thông thường giá hai mươi lăm bảng, trừ khi có phiếu ưu đãi hợp lệ.",
+      "source_turn_id": "T10"
+    }
+  ],
+  "audio": {
+    "status": "not_generated",
+    "url": null,
+    "duration_ms": null,
+    "model": null,
+    "provider": null,
+    "voice_config": null,
+    "source_transcript_hash": "cb78b93212b8c0a15ab47983205570e40808453273e254ec7e01f9b37bfa3028",
+    "audio_sha256": null,
+    "format": null
+  },
+  "qa": {
+    "content_reviewed": false,
+    "answers_verified": false,
+    "audio_verified": false,
+    "rights_cleared": false,
+    "duplicate_reviewed": false,
+    "notes": [
+      "AI-assisted original draft; requires IELTS-teacher review of all items and ambiguity.",
+      "Audio and time-alignment are pending.",
+      "Do not release automatically after structural validation.",
+      "M16.2: automated edits are provisional; IELTS teacher final signoff, audio and rights clearance pending."
+    ]
+  },
+  "provenance": {
+    "content_origin": "original_ai_assisted",
+    "source_urls": [],
+    "source_rights_note": "Original educational dialogue. Verify TTS provider usage conditions, rights and accessibility before production. Not an official IELTS item.",
+    "reviewer": null
+  },
+  "release_metadata": {
+    "published_at": null,
+    "version": 1
+  }
+}

@@ -1,0 +1,742 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "S4-EXP-002",
+  "status": "draft",
+  "level": "L7",
+  "section": 4,
+  "topic": "Marine ecology and restoration",
+  "title": "How Coral Reefs Recover After Disturbance",
+  "learning_objectives_vi": [
+    "Theo dõi lập luận học thuật: định nghĩa → chứng cứ → hạn chế → kết luận.",
+    "Nghe từ khóa, từ đồng nghĩa và cấu trúc nguyên nhân–kết quả trong bài độc thoại.",
+    "Hoàn thành Note/Table/Summary/Sentence hoặc Flow-chart theo thứ tự audio với giới hạn từ."
+  ],
+  "content_format": "section_practice",
+  "target_skills": [
+    "reef_recovery",
+    "academic_lecture",
+    "note_completion",
+    "summary_completion",
+    "signposting",
+    "paraphrase"
+  ],
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Academic lecturer",
+      "accent_requested": "australian",
+      "tts_voice_id": null
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "A coral reef is often described as a colourful underwater garden, yet its structure is built by tiny animals. They create hard skeletons over many years. After a damaging storm, the reef may look empty, but scientists distinguish physical damage from the loss of living coral. We begin an assessment with habitat structure, because fish can still shelter among broken formations.",
+      "translation_vi": "Rạn san hô trông như vườn dưới biển nhưng thực chất được xây từ bộ xương của động vật rất nhỏ. Sau bão, rạn có thể trống trải nhưng cần phân biệt hư hại vật lý và san hô chết. Đánh giá nên bắt đầu với cấu trúc nơi sống, vì cá còn có thể trú trong các khối san hô gãy.",
+      "start_ms": null,
+      "end_ms": null,
+      "paragraph_index": 1,
+      "bank_role": "training",
+      "skill_tags": [
+        "m24",
+        "ielts_part_4_practice",
+        "reef_recovery",
+        "academic_lecture",
+        "paraphrase",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "A",
+      "text_en": "Recovery starts when young coral settle on suitable surfaces. Those young organisms are known as coral recruits. A large number of adults nearby does not guarantee new growth: currents may carry larvae elsewhere, and algae can occupy the available rock. Recruitment is therefore measured separately from the survival of established colonies.",
+      "translation_vi": "Rạn phục hồi khi san hô non bám lên bề mặt phù hợp. Chúng gọi là coral recruits. Nhiều san hô trưởng thành gần đó không bảo đảm có cây con; dòng chảy có thể mang ấu trùng đi và tảo chiếm chỗ. Cần đo tuyển mộ san hô riêng với tỷ lệ sống của quần thể cũ.",
+      "start_ms": null,
+      "end_ms": null,
+      "paragraph_index": 2,
+      "bank_role": "training",
+      "skill_tags": [
+        "m24",
+        "ielts_part_4_practice",
+        "reef_recovery",
+        "academic_lecture",
+        "paraphrase",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "A",
+      "text_en": "One serious obstacle is the rapid growth of algae after disturbance. Grazing fish, particularly some herbivorous species, can keep those plants from covering young corals. The ecological service involved is called grazing pressure. When fishing reduces herbivore populations, managers may see slower coral recovery even if water temperature returns to normal.",
+      "translation_vi": "Tảo thường phát triển nhanh sau khi rạn bị xáo trộn. Cá ăn thực vật có thể hạn chế tảo che phủ san hô non. Áp lực ăn gặm được gọi là grazing pressure. Nếu đánh bắt làm giảm cá ăn thực vật, rạn có thể phục hồi chậm dù nhiệt độ nước bình thường.",
+      "start_ms": null,
+      "end_ms": null,
+      "paragraph_index": 3,
+      "bank_role": "training",
+      "skill_tags": [
+        "m24",
+        "ielts_part_4_practice",
+        "reef_recovery",
+        "academic_lecture",
+        "paraphrase",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "A",
+      "text_en": "We must also consider the source of suspended material. Sediment washed down from a building site can cloud the water and settle on the coral. That reduces light and may interfere with feeding. In a hypothetical restoration plan, the first land-based action was to control soil erosion upstream, not immediately to attach more coral fragments underwater.",
+      "translation_vi": "Cần xem nguồn vật chất lơ lửng. Bùn đất từ công trường làm nước đục, phủ lên san hô, giảm ánh sáng và cản kiếm ăn. Trong kế hoạch phục hồi giả định, bước trên đất liền đầu tiên là kiểm soát xói mòn đất ở thượng nguồn, chứ không chỉ gắn mảnh san hô xuống biển.",
+      "start_ms": null,
+      "end_ms": null,
+      "paragraph_index": 4,
+      "bank_role": "training",
+      "skill_tags": [
+        "m24",
+        "ielts_part_4_practice",
+        "reef_recovery",
+        "academic_lecture",
+        "paraphrase",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "A",
+      "text_en": "Water temperature creates another challenge. Short, unusually warm periods may cause corals to lose the algae living inside their tissues, a response called bleaching. Bleaching does not always mean immediate death. Some colonies recover if stressful conditions end quickly, while others weaken and later die. Therefore a single photograph taken after a heatwave cannot measure long-term survival.",
+      "translation_vi": "Nước nóng bất thường làm san hô mất tảo cộng sinh trong mô, hiện tượng gọi là tẩy trắng. Tẩy trắng không luôn đồng nghĩa chết ngay; một số quần thể phục hồi nếu stress kết thúc sớm, số khác suy yếu. Ảnh chụp một lần sau nắng nóng không chứng minh khả năng sống dài hạn.",
+      "start_ms": null,
+      "end_ms": null,
+      "paragraph_index": 5,
+      "bank_role": "training",
+      "skill_tags": [
+        "m24",
+        "ielts_part_4_practice",
+        "reef_recovery",
+        "academic_lecture",
+        "paraphrase",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "A",
+      "text_en": "To follow change properly, scientists return to the same marked areas. The repeated method is long-term monitoring, which may record living cover, juvenile growth and numbers of grazing fish. Different variables respond at different speeds, so a reef can show more fish within months without gaining much new coral cover during that time.",
+      "translation_vi": "Để theo dõi biến đổi, nhà khoa học quay lại những khu vực đánh dấu. Đó là theo dõi dài hạn, ghi độ che phủ san hô sống, san hô non và cá ăn tảo. Các biến thay đổi không cùng tốc độ: cá tăng sau vài tháng không có nghĩa san hô sống tăng nhanh như vậy.",
+      "start_ms": null,
+      "end_ms": null,
+      "paragraph_index": 6,
+      "bank_role": "training",
+      "skill_tags": [
+        "m24",
+        "ielts_part_4_practice",
+        "reef_recovery",
+        "academic_lecture",
+        "paraphrase",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "Restoration teams sometimes attach nursery-grown fragments to damaged sites. The technique may help where natural recruitment is limited, but fragments must come from suitable species and be attached securely. More importantly, planting is ineffective if the original threat remains. Teams therefore evaluate water quality before transferring nursery corals to an exposed site.",
+      "translation_vi": "Nhóm phục hồi đôi khi gắn các mảnh san hô nuôi trong vườn ươm lên rạn hư hại. Cách này hữu ích khi ít san hô non, nhưng phải chọn loài phù hợp và gắn chắc. Quan trọng hơn, trồng thêm vô ích nếu mối đe dọa ban đầu còn. Vì thế cần đo chất lượng nước trước khi chuyển san hô.",
+      "start_ms": null,
+      "end_ms": null,
+      "paragraph_index": 7,
+      "bank_role": "training",
+      "skill_tags": [
+        "m24",
+        "ielts_part_4_practice",
+        "reef_recovery",
+        "academic_lecture",
+        "paraphrase",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "A",
+      "text_en": "The overall conclusion is that recovery cannot be judged by one attractive photograph or a single percentage. Healthy reefs depend on biological interactions, conditions on nearby land and the timing of disturbances. The most reliable evaluation uses multiple indicators rather than declaring success because one measure improves. Managers should also report uncertainty when monitoring periods are short.",
+      "translation_vi": "Kết luận: không thể đánh giá phục hồi chỉ qua ảnh đẹp hay một tỷ lệ. Rạn khỏe phụ thuộc tương tác sinh học, hoạt động trên đất liền và thời điểm bị ảnh hưởng. Đánh giá đáng tin cần nhiều chỉ số thay vì tuyên bố thành công vì một con số tốt lên; thời gian theo dõi ngắn phải báo rõ độ bất định.",
+      "start_ms": null,
+      "end_ms": null,
+      "paragraph_index": 8,
+      "bank_role": "training",
+      "skill_tags": [
+        "m24",
+        "ielts_part_4_practice",
+        "reef_recovery",
+        "academic_lecture",
+        "paraphrase",
+        "signposting"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "group_id": "IELTS_NOTE_01_03",
+      "type": "note_completion",
+      "prompt": "The first assessment examines the reef's ____ rather than appearance alone.",
+      "correct_answers": [
+        "habitat structure"
+      ],
+      "evidence_turn_ids": [
+        "T01"
+      ],
+      "evidence_excerpt_en": "We begin an assessment with habitat structure, because fish can still shelter among broken formations.",
+      "explanation_vi": "Habitat structure là cấu trúc không gian sinh vật dùng làm nơi sinh sống.",
+      "question_tags": [
+        "m24",
+        "ielts_part_4_practice",
+        "reef_recovery",
+        "note_completion"
+      ],
+      "scoring_policy": "strict_spoken_words",
+      "bank_role": "training",
+      "answer_provenance": "original_draft_authored_against_transcript",
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS",
+      "review_status": "awaiting_teacher_and_audio_review"
+    },
+    {
+      "question_id": "Q02",
+      "group_id": "IELTS_NOTE_01_03",
+      "type": "note_completion",
+      "prompt": "Newly settled young corals are called ____.",
+      "correct_answers": [
+        "coral recruits"
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "evidence_excerpt_en": "Those young organisms are known as coral recruits.",
+      "explanation_vi": "Đây là tên kỹ thuật cho các cá thể san hô non vừa bám vào rạn.",
+      "question_tags": [
+        "m24",
+        "ielts_part_4_practice",
+        "reef_recovery",
+        "note_completion"
+      ],
+      "scoring_policy": "strict_spoken_words",
+      "bank_role": "training",
+      "answer_provenance": "original_draft_authored_against_transcript",
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS",
+      "review_status": "awaiting_teacher_and_audio_review"
+    },
+    {
+      "question_id": "Q03",
+      "group_id": "IELTS_NOTE_01_03",
+      "type": "note_completion",
+      "prompt": "Herbivorous fish help reefs by maintaining ____.",
+      "correct_answers": [
+        "grazing pressure"
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "evidence_excerpt_en": "The ecological service involved is called grazing pressure.",
+      "explanation_vi": "Grazing pressure là hoạt động ăn tảo giúp giữ bề mặt cho san hô non.",
+      "question_tags": [
+        "m24",
+        "ielts_part_4_practice",
+        "reef_recovery",
+        "note_completion"
+      ],
+      "scoring_policy": "strict_spoken_words",
+      "bank_role": "training",
+      "answer_provenance": "original_draft_authored_against_transcript",
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS",
+      "review_status": "awaiting_teacher_and_audio_review"
+    },
+    {
+      "question_id": "Q04",
+      "group_id": "IELTS_TABLE_04_06",
+      "type": "table_completion",
+      "prompt": "The proposed land-based intervention addresses ____.",
+      "correct_answers": [
+        "soil erosion"
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "evidence_excerpt_en": "In a hypothetical restoration plan, the first land-based action was to control soil erosion upstream, not immediately to attach more coral fragments underwater.",
+      "explanation_vi": "Giảm xói mòn đất giúp giảm lượng bùn vào vùng biển.",
+      "question_tags": [
+        "m24",
+        "ielts_part_4_practice",
+        "reef_recovery",
+        "table_completion"
+      ],
+      "scoring_policy": "strict_spoken_words",
+      "bank_role": "training",
+      "answer_provenance": "original_draft_authored_against_transcript",
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS",
+      "review_status": "awaiting_teacher_and_audio_review"
+    },
+    {
+      "question_id": "Q05",
+      "group_id": "IELTS_TABLE_04_06",
+      "type": "table_completion",
+      "prompt": "Loss of the corals' internal algae is called ____.",
+      "correct_answers": [
+        "bleaching"
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "evidence_excerpt_en": "Short, unusually warm periods may cause corals to lose the algae living inside their tissues, a response called bleaching.",
+      "explanation_vi": "Bleaching mô tả hiện tượng mất tảo cộng sinh khiến san hô nhạt màu.",
+      "question_tags": [
+        "m24",
+        "ielts_part_4_practice",
+        "reef_recovery",
+        "table_completion"
+      ],
+      "scoring_policy": "strict_spoken_words",
+      "bank_role": "training",
+      "answer_provenance": "original_draft_authored_against_transcript",
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS",
+      "review_status": "awaiting_teacher_and_audio_review"
+    },
+    {
+      "question_id": "Q06",
+      "group_id": "IELTS_TABLE_04_06",
+      "type": "table_completion",
+      "prompt": "Repeated visits to marked sites are part of ____.",
+      "correct_answers": [
+        "long-term monitoring"
+      ],
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "evidence_excerpt_en": "The repeated method is long-term monitoring, which may record living cover, juvenile growth and numbers of grazing fish.",
+      "explanation_vi": "Theo dõi dài hạn dùng nhiều lần đo, không phải một chuyến khảo sát.",
+      "question_tags": [
+        "m24",
+        "ielts_part_4_practice",
+        "reef_recovery",
+        "table_completion"
+      ],
+      "scoring_policy": "strict_spoken_words",
+      "bank_role": "training",
+      "answer_provenance": "original_draft_authored_against_transcript",
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS",
+      "review_status": "awaiting_teacher_and_audio_review"
+    },
+    {
+      "question_id": "Q07",
+      "group_id": "IELTS_SUMMARY_07_08",
+      "type": "summary_completion",
+      "prompt": "Restoration teams check ____ before installing nursery-grown fragments.",
+      "correct_answers": [
+        "water quality"
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "evidence_excerpt_en": "Teams therefore evaluate water quality before transferring nursery corals to an exposed site.",
+      "explanation_vi": "Nước xấu có thể khiến san hô mới chết dù trồng đúng kỹ thuật.",
+      "question_tags": [
+        "m24",
+        "ielts_part_4_practice",
+        "reef_recovery",
+        "summary_completion"
+      ],
+      "scoring_policy": "strict_spoken_words",
+      "bank_role": "training",
+      "answer_provenance": "original_draft_authored_against_transcript",
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS",
+      "review_status": "awaiting_teacher_and_audio_review"
+    },
+    {
+      "question_id": "Q08",
+      "group_id": "IELTS_SUMMARY_07_08",
+      "type": "summary_completion",
+      "prompt": "Success should be judged using ____ rather than one figure.",
+      "correct_answers": [
+        "multiple indicators"
+      ],
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "evidence_excerpt_en": "The most reliable evaluation uses multiple indicators rather than declaring success because one measure improves.",
+      "explanation_vi": "Phải kết hợp nhiều chỉ dấu sinh thái mới đánh giá đúng tiến triển.",
+      "question_tags": [
+        "m24",
+        "ielts_part_4_practice",
+        "reef_recovery",
+        "summary_completion"
+      ],
+      "scoring_policy": "strict_spoken_words",
+      "bank_role": "training",
+      "answer_provenance": "original_draft_authored_against_transcript",
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS",
+      "review_status": "awaiting_teacher_and_audio_review"
+    },
+    {
+      "question_id": "D01",
+      "group_id": "SELECTIVE_DICTATION",
+      "type": "dictation",
+      "prompt": "Nghe đoạn trích từ phần 2 và chép lại chính xác câu được phát.",
+      "correct_answers": [
+        "Recovery starts when young coral settle on suitable surfaces. Those young organisms are known as coral recruits."
+      ],
+      "source_turn_id": "T02",
+      "source_char_start": 0,
+      "source_char_end": 112,
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "evidence_excerpt_en": "Recovery starts when young coral settle on suitable surfaces. Those young organisms are known as coral recruits.",
+      "explanation_vi": "Luyện nghe chính xác cả cụm từ học thuật và từ chức năng trong một câu hoàn chỉnh.",
+      "scoring_policy": "dictation_token_alignment",
+      "bank_role": "training",
+      "word_limit": null,
+      "review_status": "awaiting_teacher_and_audio_review"
+    },
+    {
+      "question_id": "D02",
+      "group_id": "SELECTIVE_DICTATION",
+      "type": "dictation",
+      "prompt": "Nghe đoạn trích từ phần 4 và chép lại chính xác câu được phát.",
+      "correct_answers": [
+        "In a hypothetical restoration plan, the first land-based action was to control soil erosion upstream, not immediately to attach more coral fragments underwater."
+      ],
+      "source_turn_id": "T04",
+      "source_char_start": 194,
+      "source_char_end": 354,
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "evidence_excerpt_en": "In a hypothetical restoration plan, the first land-based action was to control soil erosion upstream, not immediately to attach more coral fragments underwater.",
+      "explanation_vi": "Luyện nghe chính xác cả cụm từ học thuật và từ chức năng trong một câu hoàn chỉnh.",
+      "scoring_policy": "dictation_token_alignment",
+      "bank_role": "training",
+      "word_limit": null,
+      "review_status": "awaiting_teacher_and_audio_review"
+    },
+    {
+      "question_id": "D03",
+      "group_id": "SELECTIVE_DICTATION",
+      "type": "dictation",
+      "prompt": "Nghe đoạn trích từ phần 6 và chép lại chính xác câu được phát.",
+      "correct_answers": [
+        "The repeated method is long-term monitoring, which may record living cover, juvenile growth and numbers of grazing fish."
+      ],
+      "source_turn_id": "T06",
+      "source_char_start": 71,
+      "source_char_end": 191,
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "evidence_excerpt_en": "The repeated method is long-term monitoring, which may record living cover, juvenile growth and numbers of grazing fish.",
+      "explanation_vi": "Luyện nghe chính xác cả cụm từ học thuật và từ chức năng trong một câu hoàn chỉnh.",
+      "scoring_policy": "dictation_token_alignment",
+      "bank_role": "training",
+      "word_limit": null,
+      "review_status": "awaiting_teacher_and_audio_review"
+    },
+    {
+      "question_id": "D04",
+      "group_id": "SELECTIVE_DICTATION",
+      "type": "dictation",
+      "prompt": "Nghe đoạn trích từ phần 8 và chép lại chính xác câu được phát.",
+      "correct_answers": [
+        "The most reliable evaluation uses multiple indicators rather than declaring success because one measure improves."
+      ],
+      "source_turn_id": "T08",
+      "source_char_start": 217,
+      "source_char_end": 330,
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "evidence_excerpt_en": "The most reliable evaluation uses multiple indicators rather than declaring success because one measure improves.",
+      "explanation_vi": "Luyện nghe chính xác cả cụm từ học thuật và từ chức năng trong một câu hoàn chỉnh.",
+      "scoring_policy": "dictation_token_alignment",
+      "bank_role": "training",
+      "word_limit": null,
+      "review_status": "awaiting_teacher_and_audio_review"
+    },
+    {
+      "question_id": "G01",
+      "group_id": "POST_LISTEN_GAP_FILL",
+      "type": "gap_fill",
+      "prompt": "Nghe và điền phần thiếu: The ecological service involved is called ____.",
+      "correct_answers": [
+        "grazing pressure"
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "evidence_excerpt_en": "The ecological service involved is called grazing pressure.",
+      "explanation_vi": "Luyện ghi lại thuật ngữ chính xác sau khi đã hoàn thành lượt làm IELTS.",
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS",
+      "scoring_policy": "strict_spoken_words",
+      "bank_role": "training",
+      "unlock_after_ielts_submission": true,
+      "review_status": "awaiting_teacher_and_audio_review"
+    },
+    {
+      "question_id": "G02",
+      "group_id": "POST_LISTEN_GAP_FILL",
+      "type": "gap_fill",
+      "prompt": "Nghe và điền phần thiếu: Teams therefore evaluate ____ before transferring nursery corals to an exposed site.",
+      "correct_answers": [
+        "water quality"
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "evidence_excerpt_en": "Teams therefore evaluate water quality before transferring nursery corals to an exposed site.",
+      "explanation_vi": "Luyện ghi lại thuật ngữ chính xác sau khi đã hoàn thành lượt làm IELTS.",
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS",
+      "scoring_policy": "strict_spoken_words",
+      "bank_role": "training",
+      "unlock_after_ielts_submission": true,
+      "review_status": "awaiting_teacher_and_audio_review"
+    }
+  ],
+  "vocabulary": [
+    {
+      "vocab_id": "S4-EXP-002-V01",
+      "expression_en": "habitat structure",
+      "meaning_vi": "cấu trúc nơi sinh sống",
+      "part_of_speech": "noun phrase",
+      "example_en": "We begin an assessment with habitat structure, because fish can still shelter among broken formations.",
+      "example_vi": "Rạn san hô trông như vườn dưới biển nhưng thực chất được xây từ bộ xương của động vật rất nhỏ. Sau bão, rạn có thể trống trải nhưng cần phân biệt hư hại vật lý và san hô chết. Đánh giá nên bắt đầu với cấu trúc nơi sống, vì cá còn có thể trú trong các khối san hô gãy.",
+      "evidence_turn_id": "T01",
+      "can_save_to_notebook": true,
+      "requires_human_pos_verification": true
+    },
+    {
+      "vocab_id": "S4-EXP-002-V02",
+      "expression_en": "coral recruits",
+      "meaning_vi": "san hô non vừa bám vào nền",
+      "part_of_speech": "noun phrase",
+      "example_en": "Those young organisms are known as coral recruits.",
+      "example_vi": "Rạn phục hồi khi san hô non bám lên bề mặt phù hợp. Chúng gọi là coral recruits. Nhiều san hô trưởng thành gần đó không bảo đảm có cây con; dòng chảy có thể mang ấu trùng đi và tảo chiếm chỗ. Cần đo tuyển mộ san hô riêng với tỷ lệ sống của quần thể cũ.",
+      "evidence_turn_id": "T02",
+      "can_save_to_notebook": true,
+      "requires_human_pos_verification": true
+    },
+    {
+      "vocab_id": "S4-EXP-002-V03",
+      "expression_en": "grazing pressure",
+      "meaning_vi": "áp lực ăn gặm của động vật ăn thực vật",
+      "part_of_speech": "noun phrase",
+      "example_en": "The ecological service involved is called grazing pressure.",
+      "example_vi": "Tảo thường phát triển nhanh sau khi rạn bị xáo trộn. Cá ăn thực vật có thể hạn chế tảo che phủ san hô non. Áp lực ăn gặm được gọi là grazing pressure. Nếu đánh bắt làm giảm cá ăn thực vật, rạn có thể phục hồi chậm dù nhiệt độ nước bình thường.",
+      "evidence_turn_id": "T03",
+      "can_save_to_notebook": true,
+      "requires_human_pos_verification": true
+    },
+    {
+      "vocab_id": "S4-EXP-002-V04",
+      "expression_en": "soil erosion",
+      "meaning_vi": "xói mòn đất",
+      "part_of_speech": "noun phrase",
+      "example_en": "In a hypothetical restoration plan, the first land-based action was to control soil erosion upstream, not immediately to attach more coral fragments underwater.",
+      "example_vi": "Cần xem nguồn vật chất lơ lửng. Bùn đất từ công trường làm nước đục, phủ lên san hô, giảm ánh sáng và cản kiếm ăn. Trong kế hoạch phục hồi giả định, bước trên đất liền đầu tiên là kiểm soát xói mòn đất ở thượng nguồn, chứ không chỉ gắn mảnh san hô xuống biển.",
+      "evidence_turn_id": "T04",
+      "can_save_to_notebook": true,
+      "requires_human_pos_verification": true
+    },
+    {
+      "vocab_id": "S4-EXP-002-V05",
+      "expression_en": "bleaching",
+      "meaning_vi": "hiện tượng san hô tẩy trắng",
+      "part_of_speech": "noun",
+      "example_en": "Short, unusually warm periods may cause corals to lose the algae living inside their tissues, a response called bleaching.",
+      "example_vi": "Nước nóng bất thường làm san hô mất tảo cộng sinh trong mô, hiện tượng gọi là tẩy trắng. Tẩy trắng không luôn đồng nghĩa chết ngay; một số quần thể phục hồi nếu stress kết thúc sớm, số khác suy yếu. Ảnh chụp một lần sau nắng nóng không chứng minh khả năng sống dài hạn.",
+      "evidence_turn_id": "T05",
+      "can_save_to_notebook": true,
+      "requires_human_pos_verification": true
+    },
+    {
+      "vocab_id": "S4-EXP-002-V06",
+      "expression_en": "long-term monitoring",
+      "meaning_vi": "theo dõi dài hạn",
+      "part_of_speech": "noun phrase",
+      "example_en": "The repeated method is long-term monitoring, which may record living cover, juvenile growth and numbers of grazing fish.",
+      "example_vi": "Để theo dõi biến đổi, nhà khoa học quay lại những khu vực đánh dấu. Đó là theo dõi dài hạn, ghi độ che phủ san hô sống, san hô non và cá ăn tảo. Các biến thay đổi không cùng tốc độ: cá tăng sau vài tháng không có nghĩa san hô sống tăng nhanh như vậy.",
+      "evidence_turn_id": "T06",
+      "can_save_to_notebook": true,
+      "requires_human_pos_verification": true
+    }
+  ],
+  "audio": {
+    "status": "not_generated",
+    "audio_url": null,
+    "duration_ms": null,
+    "source_text_sha256": "e60b5dc196abba0da12fa072c7c165ffe906fd3b7f3140d007ba93df46d2af38",
+    "generation_strategy": "single_speaker_paragraph_tts_then_seamless_stitch",
+    "audio_asset_id": null,
+    "requires_human_naturalness_review": true,
+    "requires_timing_alignment": true
+  },
+  "learning_flow": {
+    "intro": {
+      "theory_vi": "Part 4 là bài giảng học thuật một người nói. Bài luyện này rèn khả năng theo dõi các ý từ khái niệm đến ví dụ, phương pháp và giới hạn của kết luận. Trước khi nghe, hãy đọc tiêu đề nhóm câu hỏi, dự đoán loại từ và không cố chép mọi chữ.",
+      "tip_vi": "Câu hỏi nghe xuất hiện theo thứ tự bài giảng. Chú ý từ nối như however, therefore, for example, finally; đáp án Completion phải lấy đúng từ đã nghe và không vượt quá giới hạn.",
+      "common_mistakes_vi": [
+        "Ghi từ có nghĩa gần đúng nhưng không xuất hiện trong lời nghe.",
+        "Không chú ý số nhiều hoặc dạng ghép của thuật ngữ.",
+        "Dừng quá lâu ở một câu và bỏ lỡ câu tiếp theo.",
+        "Chọn thông tin trong ví dụ rồi bỏ qua kết luận có điều kiện."
+      ],
+      "worked_examples": [
+        {
+          "audio_example_en": "The first trial used a plastic container, but a glass bottle was chosen for the final experiment.",
+          "question": "Final container: ____",
+          "answer": "glass bottle",
+          "explanation_vi": "Đáp án là phương án cuối; plastic container chỉ là lựa chọn ban đầu."
+        },
+        {
+          "audio_example_en": "The instrument measures pressure. It does not directly measure temperature.",
+          "question": "The instrument records ____.",
+          "answer": "pressure",
+          "explanation_vi": "Hãy lấy chính từ được nói và phân biệt điều được đo với điều không đo."
+        }
+      ]
+    },
+    "steps": [
+      "pre_listening",
+      "first_listen_ielts_questions",
+      "submit_ielts_first_pass",
+      "review_with_evidence",
+      "selective_dictation",
+      "gap_fill",
+      "summary"
+    ],
+    "ielts_question_ids": [
+      "Q01",
+      "Q02",
+      "Q03",
+      "Q04",
+      "Q05",
+      "Q06",
+      "Q07",
+      "Q08"
+    ],
+    "ielts_groups": [
+      {
+        "group_id": "IELTS_NOTE_01_03",
+        "type": "note_completion",
+        "instruction_en": "NO MORE THAN TWO WORDS",
+        "display_mode": "bullet_notes",
+        "group_heading": "Key concepts and evidence",
+        "items": [
+          {
+            "question_id": "Q01",
+            "prompt": "The first assessment examines the reef's ____ rather than appearance alone."
+          },
+          {
+            "question_id": "Q02",
+            "prompt": "Newly settled young corals are called ____."
+          },
+          {
+            "question_id": "Q03",
+            "prompt": "Herbivorous fish help reefs by maintaining ____."
+          }
+        ],
+        "question_ids": [
+          "Q01",
+          "Q02",
+          "Q03"
+        ]
+      },
+      {
+        "group_id": "IELTS_TABLE_04_06",
+        "type": "table_completion",
+        "instruction_en": "NO MORE THAN TWO WORDS",
+        "display_mode": "two_column_table",
+        "group_heading": "Methods and comparisons",
+        "items": [
+          {
+            "question_id": "Q04",
+            "prompt": "The proposed land-based intervention addresses ____."
+          },
+          {
+            "question_id": "Q05",
+            "prompt": "Loss of the corals' internal algae is called ____."
+          },
+          {
+            "question_id": "Q06",
+            "prompt": "Repeated visits to marked sites are part of ____."
+          }
+        ],
+        "question_ids": [
+          "Q04",
+          "Q05",
+          "Q06"
+        ]
+      },
+      {
+        "group_id": "IELTS_SUMMARY_07_08",
+        "type": "summary_completion",
+        "instruction_en": "NO MORE THAN TWO WORDS",
+        "display_mode": "connected_summary",
+        "group_heading": "Interpretation and conclusions",
+        "items": [
+          {
+            "question_id": "Q07",
+            "prompt": "Restoration teams check ____ before installing nursery-grown fragments."
+          },
+          {
+            "question_id": "Q08",
+            "prompt": "Success should be judged using ____ rather than one figure."
+          }
+        ],
+        "question_ids": [
+          "Q07",
+          "Q08"
+        ]
+      }
+    ],
+    "recommended_first_listen_play_limit": 1,
+    "practice_replay_allowed_after_first_attempt": true,
+    "word_count": 438,
+    "estimated_audio_minutes_at_135_wpm": 3.24,
+    "exposure_bank": "training",
+    "exam_simulation": false,
+    "mock_test": false,
+    "audio_alignment_required": true,
+    "answer_release_after_submission": true
+  },
+  "qa": {
+    "status": "awaiting_human_content_and_audio_review",
+    "automated_validation": "passed",
+    "human_transcript_approved": false,
+    "human_audio_approved": false,
+    "ielts_exam_equivalent": false,
+    "release_eligible": false
+  },
+  "provenance": {
+    "source_type": "original_authored",
+    "reference_copying": false,
+    "authoring_milestone": "M24",
+    "educational_examples": "Some case studies are illustrative rather than published research",
+    "scientific_fact_check_required": true,
+    "do_not_reuse_in_unseen_assessment_before_exposure_check": true
+  },
+  "release_metadata": {
+    "version": "m24.0.1",
+    "published": false,
+    "needs_audio": true,
+    "requires_human_approval": true,
+    "import_policy": "insert_only",
+    "target_bank": "training"
+  }
+}

@@ -5,6 +5,8 @@ import { AppShell } from "@/components/layout/app-shell";
 import { TopicArt } from "@/components/illustrations/topic-art";
 import { DemoProvider } from "@/features/demo/demo-store";
 import { NotebookProvider } from "@/features/notebook/notebook-store";
+import { Languages } from "lucide-react";
+import { Sticker } from "@/components/stickers/stickers";
 import {
   ListeningStudioPractice,
   OpenResponsePractice,
@@ -145,7 +147,7 @@ export function AssessmentBody({ content, stageId, slug }: { content: Assessment
       {content.stage_warning && <p className="lab-note">{content.stage_warning}</p>}
       {content.goal_vi && (
         <p className="lab-note">
-          <b>🎯 Mục tiêu đạt chuẩn:</b> {content.goal_vi}
+          <b><Sticker name="target" size={22} pop={false} className="sticker-inline" />Mục tiêu đạt chuẩn:</b> {content.goal_vi}
         </p>
       )}
       {content.note && <p>{content.note}</p>}
@@ -163,7 +165,7 @@ export function AssessmentBody({ content, stageId, slug }: { content: Assessment
                 {word.example && (
                   <div className="v3-vocab-example">
                     <p>“{word.example}”</p>
-                    {word.example_vi && <p className="v3-vocab-example-vi">🌐 {word.example_vi}</p>}
+                    {word.example_vi && <p className="v3-vocab-example-vi"><Languages size={14} aria-hidden="true" /> {word.example_vi}</p>}
                   </div>
                 )}
               </div>

@@ -1,0 +1,351 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "DICT-S4-001",
+  "status": "draft",
+  "level": "L5",
+  "section": 4,
+  "topic": "Climate Change",
+  "title": "Climate Patterns, Greenhouse Gases and Responses",
+  "learning_objectives_vi": [
+    "Nghe bài giảng học thuật một người nói và xác định cấu trúc luận điểm, ví dụ và kết luận.",
+    "Hoàn thành Note/Summary Completion, Multiple Choice, Short Answer và chép đúng đoạn nghe đã học.",
+    "Phân tích bằng chứng theo từng đoạn và ghi nhớ từ học thuật trong bối cảnh."
+  ],
+  "content_format": "section_practice",
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Academic lecturer",
+      "tts_voice_id": null,
+      "accent_requested": "american"
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "When people discuss climate change, they often start with an unusually hot afternoon or a violent storm. However, a single event cannot tell us how the climate is changing. Weather describes conditions over short periods, whereas climate refers to patterns observed across many years. Scientists therefore examine long-term records rather than treating one dramatic day as decisive evidence.",
+      "translation_vi": "Khi nói về biến đổi khí hậu, người ta thường bắt đầu bằng một buổi chiều nóng bất thường hoặc một trận bão dữ dội. Tuy nhiên, một sự kiện riêng lẻ không thể cho biết khí hậu đang thay đổi như thế nào. Thời tiết là điều kiện trong thời gian ngắn, còn khí hậu là các kiểu hình quan sát qua nhiều năm. Vì vậy, nhà khoa học nghiên cứu chuỗi ghi nhận dài hạn thay vì xem một ngày đặc biệt là bằng chứng quyết định.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_4",
+        "academic_lecture",
+        "concept",
+        "l5"
+      ]
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "A",
+      "text_en": "A second distinction concerns the greenhouse effect. Certain gases in the atmosphere absorb and re-emit some of the heat leaving Earth. This natural process makes the planet habitable. The concern is that human activities, particularly burning fossil fuels, increase the concentration of these gases and strengthen the effect. Carbon dioxide is important because it can influence the climate for a long time.",
+      "translation_vi": "Phân biệt thứ hai là hiệu ứng nhà kính. Một số khí trong khí quyển hấp thụ rồi phát lại một phần nhiệt thoát ra từ Trái Đất. Quá trình tự nhiên này giúp hành tinh thích hợp cho sự sống. Điều đáng lo là hoạt động của con người, nhất là đốt nhiên liệu hóa thạch, làm tăng nồng độ các khí ấy và khuếch đại hiệu ứng. Carbon dioxide quan trọng vì có thể tác động đến khí hậu trong thời gian dài.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_4",
+        "academic_lecture",
+        "concept",
+        "l5"
+      ]
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "A",
+      "text_en": "We should also distinguish global averages from local experiences. A rise in the average temperature does not mean every location warms at exactly the same rate. Coastal areas, cities and mountain regions can respond differently. In a city, dark surfaces and a shortage of trees may add a local warming effect. These factors complicate what residents notice, although they do not cancel the broader trend.",
+      "translation_vi": "Cũng cần phân biệt mức trung bình toàn cầu với trải nghiệm tại địa phương. Nhiệt độ trung bình tăng không có nghĩa nơi nào cũng ấm lên với cùng tốc độ. Vùng ven biển, đô thị và miền núi có thể phản ứng khác nhau. Trong thành phố, bề mặt sẫm màu và ít cây xanh có thể gây thêm nóng cục bộ. Những yếu tố ấy khiến trải nghiệm của cư dân phức tạp hơn, nhưng không phủ nhận xu hướng chung.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_4",
+        "academic_lecture",
+        "concept",
+        "l5"
+      ]
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "A",
+      "text_en": "In response, policy makers use two related ideas: mitigation and adaptation. Mitigation aims to limit future warming, for example by reducing greenhouse-gas emissions. Adaptation aims to reduce harm from changes that are already occurring or expected, such as improving drainage before heavier rainfall. The two approaches are complementary; choosing one does not remove the need for the other.",
+      "translation_vi": "Để ứng phó, nhà hoạch định chính sách dùng hai khái niệm liên quan: giảm nhẹ và thích ứng. Giảm nhẹ nhằm hạn chế nóng lên trong tương lai, chẳng hạn giảm phát thải khí nhà kính. Thích ứng nhằm giảm thiệt hại từ những thay đổi đang hoặc sẽ diễn ra, như cải thiện hệ thống thoát nước trước các trận mưa lớn hơn. Hai cách bổ sung cho nhau; chọn một không loại bỏ nhu cầu về cách còn lại.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_4",
+        "academic_lecture",
+        "concept",
+        "l5"
+      ]
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "A",
+      "text_en": "Finally, interpreting climate information requires care with uncertainty. A projection is not a prediction of the precise weather on a particular date. It describes possible futures under specified conditions, including choices about emissions. Researchers compare several lines of evidence and explain the range of plausible outcomes. Understanding these distinctions is more useful than remembering one alarming headline.",
+      "translation_vi": "Cuối cùng, đọc thông tin khí hậu cần hiểu sự bất định. Dự báo kịch bản không phải lời tiên đoán thời tiết chính xác vào một ngày cụ thể. Nó mô tả những tương lai có thể xảy ra dưới các điều kiện nhất định, bao gồm lựa chọn về phát thải. Nhà nghiên cứu đối chiếu nhiều loại bằng chứng và giải thích khoảng kết quả khả dĩ. Hiểu các phân biệt này hữu ích hơn ghi nhớ một dòng tít gây lo sợ.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_4",
+        "academic_lecture",
+        "concept",
+        "l5"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "type": "note_completion",
+      "prompt": "Climate refers to patterns observed across many ____.",
+      "correct_answers": [
+        "years"
+      ],
+      "evidence_turn_ids": [
+        "T01"
+      ],
+      "explanation_vi": "Bằng chứng tại T01: Khi nói về biến đổi khí hậu, người ta thường bắt đầu bằng một buổi chiều nóng bất thường hoặc một trận bão dữ dội. Tuy nhiên, một sự kiện riêng lẻ không thể cho biết khí hậu đang thay đổi như thế nào. Thời tiết là điều kiện trong thời gian ngắn, còn khí hậu là các kiểu hình quan sát qua nhiều năm. Vì vậy, nhà khoa học nghiên cứu chuỗi ghi nhận dài hạn thay vì xem một ngày đặc biệt là bằng chứng quyết định. Đáp án cần chọn/điền: “years”.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_4",
+        "ielts_practice",
+        "concept",
+        "note_completion"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q02",
+      "type": "summary_completion",
+      "prompt": "The extra greenhouse gases are associated particularly with burning ____.",
+      "correct_answers": [
+        "fossil fuels"
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Bằng chứng tại T02: Phân biệt thứ hai là hiệu ứng nhà kính. Một số khí trong khí quyển hấp thụ rồi phát lại một phần nhiệt thoát ra từ Trái Đất. Quá trình tự nhiên này giúp hành tinh thích hợp cho sự sống. Điều đáng lo là hoạt động của con người, nhất là đốt nhiên liệu hóa thạch, làm tăng nồng độ các khí ấy và khuếch đại hiệu ứng. Carbon dioxide quan trọng vì có thể tác động đến khí hậu trong thời gian dài. Đáp án cần chọn/điền: “fossil fuels”.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_4",
+        "ielts_practice",
+        "concept",
+        "summary_completion"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q03",
+      "type": "sentence_completion",
+      "prompt": "A shortage of ____ can add to urban warming.",
+      "correct_answers": [
+        "trees"
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Bằng chứng tại T03: Cũng cần phân biệt mức trung bình toàn cầu với trải nghiệm tại địa phương. Nhiệt độ trung bình tăng không có nghĩa nơi nào cũng ấm lên với cùng tốc độ. Vùng ven biển, đô thị và miền núi có thể phản ứng khác nhau. Trong thành phố, bề mặt sẫm màu và ít cây xanh có thể gây thêm nóng cục bộ. Những yếu tố ấy khiến trải nghiệm của cư dân phức tạp hơn, nhưng không phủ nhận xu hướng chung. Đáp án cần chọn/điền: “trees”.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_4",
+        "ielts_practice",
+        "concept",
+        "sentence_completion"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q04",
+      "type": "mcq",
+      "prompt": "What is the aim of mitigation?",
+      "correct_answers": [
+        "limit future warming"
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Bằng chứng tại T04: Để ứng phó, nhà hoạch định chính sách dùng hai khái niệm liên quan: giảm nhẹ và thích ứng. Giảm nhẹ nhằm hạn chế nóng lên trong tương lai, chẳng hạn giảm phát thải khí nhà kính. Thích ứng nhằm giảm thiệt hại từ những thay đổi đang hoặc sẽ diễn ra, như cải thiện hệ thống thoát nước trước các trận mưa lớn hơn. Hai cách bổ sung cho nhau; chọn một không loại bỏ nhu cầu về cách còn lại. Đáp án cần chọn/điền: “limit future warming”.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "section_4",
+        "ielts_practice",
+        "concept",
+        "mcq"
+      ],
+      "options": [
+        "limit future warming",
+        "predict individual storms",
+        "replace the need for adaptation"
+      ]
+    },
+    {
+      "question_id": "Q05",
+      "type": "short_answer",
+      "prompt": "What do climate projections describe under specified conditions?",
+      "correct_answers": [
+        "possible futures"
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Bằng chứng tại T05: Cuối cùng, đọc thông tin khí hậu cần hiểu sự bất định. Dự báo kịch bản không phải lời tiên đoán thời tiết chính xác vào một ngày cụ thể. Nó mô tả những tương lai có thể xảy ra dưới các điều kiện nhất định, bao gồm lựa chọn về phát thải. Nhà nghiên cứu đối chiếu nhiều loại bằng chứng và giải thích khoảng kết quả khả dĩ. Hiểu các phân biệt này hữu ích hơn ghi nhớ một dòng tít gây lo sợ. Đáp án cần chọn/điền: “possible futures”.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_4",
+        "ielts_practice",
+        "concept",
+        "short_answer"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q06",
+      "type": "mcq",
+      "prompt": "Which statement best summarises the lecture?",
+      "correct_answers": [
+        "Different climate concepts must be interpreted using long-term evidence"
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Bằng chứng tại T05: Cuối cùng, đọc thông tin khí hậu cần hiểu sự bất định. Dự báo kịch bản không phải lời tiên đoán thời tiết chính xác vào một ngày cụ thể. Nó mô tả những tương lai có thể xảy ra dưới các điều kiện nhất định, bao gồm lựa chọn về phát thải. Nhà nghiên cứu đối chiếu nhiều loại bằng chứng và giải thích khoảng kết quả khả dĩ. Hiểu các phân biệt này hữu ích hơn ghi nhớ một dòng tít gây lo sợ. Đây là câu hỏi ý chính; cần hiểu toàn bài và phân biệt các lựa chọn nhiễu.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "section_4",
+        "ielts_practice",
+        "concept",
+        "main_idea"
+      ],
+      "options": [
+        "Different climate concepts must be interpreted using long-term evidence",
+        "Adaptation makes emissions reductions unnecessary",
+        "Every unusual storm proves climate change"
+      ]
+    },
+    {
+      "question_id": "D01",
+      "type": "dictation",
+      "prompt": "Nghe đoạn T02 rồi chép lại toàn bộ phần lời nói tiếng Anh.",
+      "correct_answers": [
+        "A second distinction concerns the greenhouse effect. Certain gases in the atmosphere absorb and re-emit some of the heat leaving Earth. This natural process makes the planet habitable. The concern is that human activities, particularly burning fossil fuels, increase the concentration of these gases and strengthen the effect. Carbon dioxide is important because it can influence the climate for a long time."
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Nghe lại để sửa âm cuối, từ chức năng và từ học thuật. Nội dung: Phân biệt thứ hai là hiệu ứng nhà kính. Một số khí trong khí quyển hấp thụ rồi phát lại một phần nhiệt thoát ra từ Trái Đất. Quá trình tự nhiên này giúp hành tinh thích hợp cho sự sống. Điều đáng lo là hoạt động của con người, nhất là đốt nhiên liệu hóa thạch, làm tăng nồng độ các khí ấy và khuếch đại hiệu ứng. Carbon dioxide quan trọng vì có thể tác động đến khí hậu trong thời gian dài.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_4",
+        "dictation",
+        "exact_transcript"
+      ]
+    },
+    {
+      "question_id": "D02",
+      "type": "dictation",
+      "prompt": "Nghe đoạn T04 rồi chép lại toàn bộ phần lời nói tiếng Anh.",
+      "correct_answers": [
+        "In response, policy makers use two related ideas: mitigation and adaptation. Mitigation aims to limit future warming, for example by reducing greenhouse-gas emissions. Adaptation aims to reduce harm from changes that are already occurring or expected, such as improving drainage before heavier rainfall. The two approaches are complementary; choosing one does not remove the need for the other."
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Nghe lại để sửa âm cuối, từ chức năng và từ học thuật. Nội dung: Để ứng phó, nhà hoạch định chính sách dùng hai khái niệm liên quan: giảm nhẹ và thích ứng. Giảm nhẹ nhằm hạn chế nóng lên trong tương lai, chẳng hạn giảm phát thải khí nhà kính. Thích ứng nhằm giảm thiệt hại từ những thay đổi đang hoặc sẽ diễn ra, như cải thiện hệ thống thoát nước trước các trận mưa lớn hơn. Hai cách bổ sung cho nhau; chọn một không loại bỏ nhu cầu về cách còn lại.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_4",
+        "dictation",
+        "exact_transcript"
+      ]
+    },
+    {
+      "question_id": "G01",
+      "type": "gap_fill",
+      "prompt": "Nghe đoạn T01 rồi điền phần thiếu: When people discuss ____ change, they often start with an unusually hot afternoon or a violent storm.",
+      "correct_answers": [
+        "climate"
+      ],
+      "evidence_turn_ids": [
+        "T01"
+      ],
+      "explanation_vi": "Đáp án là “climate”, nghĩa: khí hậu. Từ xuất hiện nguyên văn ở T01.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_4",
+        "gap_fill",
+        "academic_vocabulary"
+      ]
+    }
+  ],
+  "vocabulary": [
+    {
+      "term": "climate",
+      "pos": "n.",
+      "meaning_vi": "khí hậu",
+      "example_en": "When people discuss climate change, they often start with an unusually hot afternoon or a violent storm. However, a single event cannot tell us how the climate is changing. Weather describes conditions over short periods, whereas climate refers to patterns observed across many years. Scientists therefore examine long-term records rather than treating one dramatic day as decisive evidence.",
+      "example_vi": "Khi nói về biến đổi khí hậu, người ta thường bắt đầu bằng một buổi chiều nóng bất thường hoặc một trận bão dữ dội. Tuy nhiên, một sự kiện riêng lẻ không thể cho biết khí hậu đang thay đổi như thế nào. Thời tiết là điều kiện trong thời gian ngắn, còn khí hậu là các kiểu hình quan sát qua nhiều năm. Vì vậy, nhà khoa học nghiên cứu chuỗi ghi nhận dài hạn thay vì xem một ngày đặc biệt là bằng chứng quyết định.",
+      "source_turn_id": "T01"
+    },
+    {
+      "term": "greenhouse effect",
+      "pos": "n. phr.",
+      "meaning_vi": "hiệu ứng nhà kính",
+      "example_en": "A second distinction concerns the greenhouse effect. Certain gases in the atmosphere absorb and re-emit some of the heat leaving Earth. This natural process makes the planet habitable. The concern is that human activities, particularly burning fossil fuels, increase the concentration of these gases and strengthen the effect. Carbon dioxide is important because it can influence the climate for a long time.",
+      "example_vi": "Phân biệt thứ hai là hiệu ứng nhà kính. Một số khí trong khí quyển hấp thụ rồi phát lại một phần nhiệt thoát ra từ Trái Đất. Quá trình tự nhiên này giúp hành tinh thích hợp cho sự sống. Điều đáng lo là hoạt động của con người, nhất là đốt nhiên liệu hóa thạch, làm tăng nồng độ các khí ấy và khuếch đại hiệu ứng. Carbon dioxide quan trọng vì có thể tác động đến khí hậu trong thời gian dài.",
+      "source_turn_id": "T02"
+    },
+    {
+      "term": "mitigation",
+      "pos": "n.",
+      "meaning_vi": "giảm nhẹ",
+      "example_en": "In response, policy makers use two related ideas: mitigation and adaptation. Mitigation aims to limit future warming, for example by reducing greenhouse-gas emissions. Adaptation aims to reduce harm from changes that are already occurring or expected, such as improving drainage before heavier rainfall. The two approaches are complementary; choosing one does not remove the need for the other.",
+      "example_vi": "Để ứng phó, nhà hoạch định chính sách dùng hai khái niệm liên quan: giảm nhẹ và thích ứng. Giảm nhẹ nhằm hạn chế nóng lên trong tương lai, chẳng hạn giảm phát thải khí nhà kính. Thích ứng nhằm giảm thiệt hại từ những thay đổi đang hoặc sẽ diễn ra, như cải thiện hệ thống thoát nước trước các trận mưa lớn hơn. Hai cách bổ sung cho nhau; chọn một không loại bỏ nhu cầu về cách còn lại.",
+      "source_turn_id": "T04"
+    },
+    {
+      "term": "adaptation",
+      "pos": "n.",
+      "meaning_vi": "thích ứng",
+      "example_en": "In response, policy makers use two related ideas: mitigation and adaptation. Mitigation aims to limit future warming, for example by reducing greenhouse-gas emissions. Adaptation aims to reduce harm from changes that are already occurring or expected, such as improving drainage before heavier rainfall. The two approaches are complementary; choosing one does not remove the need for the other.",
+      "example_vi": "Để ứng phó, nhà hoạch định chính sách dùng hai khái niệm liên quan: giảm nhẹ và thích ứng. Giảm nhẹ nhằm hạn chế nóng lên trong tương lai, chẳng hạn giảm phát thải khí nhà kính. Thích ứng nhằm giảm thiệt hại từ những thay đổi đang hoặc sẽ diễn ra, như cải thiện hệ thống thoát nước trước các trận mưa lớn hơn. Hai cách bổ sung cho nhau; chọn một không loại bỏ nhu cầu về cách còn lại.",
+      "source_turn_id": "T04"
+    }
+  ],
+  "audio": {
+    "status": "not_generated",
+    "url": null,
+    "duration_ms": null,
+    "model": null,
+    "provider": null,
+    "voice_config": null,
+    "source_transcript_hash": "4d4abf4f250c26c85508c4bb5d5f6fa38fdc13cb081317fa11cb24056b321151",
+    "audio_sha256": null,
+    "format": null
+  },
+  "qa": {
+    "content_reviewed": false,
+    "answers_verified": false,
+    "audio_verified": false,
+    "rights_cleared": false,
+    "duplicate_reviewed": false,
+    "notes": [
+      "AI-assisted original first draft; expert scientific and pedagogical review pending.",
+      "Audio not generated, segment timestamps null; TTS provider terms and rights must be approved.",
+      "Short Section 4 skill practice; not a 10-question official IELTS simulation or calibrated band test.",
+      "M16.2: automated edits are provisional; IELTS teacher final signoff, audio and rights clearance pending."
+    ]
+  },
+  "provenance": {
+    "content_origin": "original_ai_assisted",
+    "source_urls": [],
+    "source_rights_note": "Original scripts. Confirm rights of TTS voices and distribution to learners, particularly minors, before release.",
+    "reviewer": null
+  },
+  "release_metadata": {
+    "published_at": null,
+    "version": 1
+  }
+}

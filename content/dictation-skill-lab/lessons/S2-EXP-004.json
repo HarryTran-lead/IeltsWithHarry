@@ -1,0 +1,627 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "S2-EXP-004",
+  "status": "draft_pending_audio",
+  "level": "L4",
+  "section": 2,
+  "topic": "Sports facilities",
+  "title": "Larkspur Leisure Complex",
+  "learning_objectives_vi": [
+    "Lần theo những lối đi đa dạng trên bản đồ, không dựa vào bố cục ô lưới.",
+    "Nhận diện mốc cố định rồi kết hợp hướng la bàn để chọn đúng vị trí.",
+    "Phân biệt những thông tin cũ và thông tin cuối cùng trong câu hỏi điền từ."
+  ],
+  "content_format": "section_practice",
+  "target_skills": [
+    "map_navigation",
+    "compass_orientation",
+    "detail_accuracy",
+    "distractor_rejection"
+  ],
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Venue guide",
+      "accent_requested": "new_zealand",
+      "tts_voice_id": null
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "Hello everyone, and welcome to Larkspur Leisure Complex. We've marked the public route clearly on the plan, including a few fixed landmarks which won't change during the visit. Find north entrance first and then trace the sports concourse. North is shown by the arrow.",
+      "translation_vi": "Chào mừng đến Larkspur Leisure Complex. Hãy tìm north entrance trên sơ đồ, sau đó đi theo sports concourse. Mũi tên chỉ hướng Bắc.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "orientation",
+        "map_reading"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "A",
+      "text_en": "The accessible route follows the middle passage; visitors should not take the shortcut through the equipment store. The fixed landmarks are labelled by name, while the places you need to identify are marked only A to H. Listen for a landmark and a direction; do not guess from the order of letters.",
+      "translation_vi": "Các mốc cố định có tên sẵn, còn những vị trí cần xác định được đánh dấu A đến H. Hãy nghe mốc và hướng di chuyển.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "orientation",
+        "compass"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "A",
+      "text_en": "First locate the Pool Lobby on the visitor plan. You'll find Fitness Suite at the lettered location immediately north-west of it. Check the position against the nearest other buildings before moving on.",
+      "translation_vi": "Hãy xác định mốc Pool Lobby trên sơ đồ. Fitness Suite nằm ngay phía tây bắc của mốc đó. Không chọn các khu xa hơn.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "map_navigation",
+        "location_E"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "A",
+      "text_en": "If you're looking for Physio Office, use the Scoreboard as your reference point. Choose the nearest lettered location directly south of that landmark. Other marked areas are for different activities.",
+      "translation_vi": "Hãy xác định mốc Scoreboard trên sơ đồ. Physio Office nằm ngay phía nam của mốc đó. Không chọn các khu xa hơn.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "map_navigation",
+        "location_B"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "A",
+      "text_en": "There's a useful sign for the Changing Area on the plan. Immediately south-east of it is a lettered location: that's where you'll find Membership Desk. People sometimes choose the more distant area, but that isn't the right one.",
+      "translation_vi": "Hãy xác định mốc Changing Area trên sơ đồ. Membership Desk nằm ngay phía đông nam của mốc đó. Không chọn các khu xa hơn.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "map_navigation",
+        "location_D"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "A",
+      "text_en": "Now find the Cafe Sign. From that landmark, look north to the nearest lettered point. That's where you'll find Cycle Hub. Don't confuse it with the other lettered buildings further away.",
+      "translation_vi": "Hãy xác định mốc Cafe Sign trên sơ đồ. Cycle Hub nằm ngay phía bắc của mốc đó. Không chọn các khu xa hơn.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "map_navigation",
+        "location_C"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "Before you arrive, remember this: A single taster session costs six pounds. The nine-pound figure on the booking site is for a supervised climbing lesson.",
+      "translation_vi": null,
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "practical_information",
+        "distractor_detection"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "A",
+      "text_en": "Turning to the practical information, Online registration closes on Thursday evening; walk-in places are not guaranteed.",
+      "translation_vi": null,
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "practical_information",
+        "distractor_detection"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T09",
+      "speaker_id": "A",
+      "text_en": "As for booking details, You must be at least 14 to join the open climbing session, even with an adult present.",
+      "translation_vi": null,
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "practical_information",
+        "distractor_detection"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T10",
+      "speaker_id": "A",
+      "text_en": "There is also a useful change to note: Bring your own towel; mats and safety harnesses can be borrowed on site.",
+      "translation_vi": null,
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "practical_information",
+        "distractor_detection"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T11",
+      "speaker_id": "A",
+      "text_en": "Staff will announce any last-minute changes at the membership desk; the information screens may update a little later. The visitor team at Larkspur Leisure Complex will answer any remaining questions after the tour.",
+      "translation_vi": null,
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "closing"
+      ],
+      "bank_role": "training"
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "group_id": "MAP_Q01_TO_04",
+      "type": "map_labelling",
+      "prompt": "Fitness Suite",
+      "correct_answers": [
+        "E"
+      ],
+      "correct_option": "E",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G",
+        "H"
+      ],
+      "word_limit": null,
+      "scoring_policy": "map_letter",
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "evidence_excerpt_en": "First locate the Pool Lobby on the visitor plan. You'll find Fitness Suite at the lettered location immediately north-west of it. Check the position against the nearest other buildings before moving on.",
+      "explanation_vi": "Trên sơ đồ mới, tìm mốc Pool Lobby, rồi nhìn ngay phía tây bắc. Khu được đánh dấu E là Fitness Suite.",
+      "question_tags": [
+        "m22",
+        "map_navigation",
+        "section_2_practice"
+      ],
+      "answer_source": "spoken_spatial_directions",
+      "map_asset_id": "M22-MAP-004"
+    },
+    {
+      "question_id": "Q02",
+      "group_id": "MAP_Q01_TO_04",
+      "type": "map_labelling",
+      "prompt": "Physio Office",
+      "correct_answers": [
+        "B"
+      ],
+      "correct_option": "B",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G",
+        "H"
+      ],
+      "word_limit": null,
+      "scoring_policy": "map_letter",
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "evidence_excerpt_en": "If you're looking for Physio Office, use the Scoreboard as your reference point. Choose the nearest lettered location directly south of that landmark. Other marked areas are for different activities.",
+      "explanation_vi": "Trên sơ đồ mới, tìm mốc Scoreboard, rồi nhìn ngay phía nam. Khu được đánh dấu B là Physio Office.",
+      "question_tags": [
+        "m22",
+        "map_navigation",
+        "section_2_practice"
+      ],
+      "answer_source": "spoken_spatial_directions",
+      "map_asset_id": "M22-MAP-004"
+    },
+    {
+      "question_id": "Q03",
+      "group_id": "MAP_Q01_TO_04",
+      "type": "map_labelling",
+      "prompt": "Membership Desk",
+      "correct_answers": [
+        "D"
+      ],
+      "correct_option": "D",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G",
+        "H"
+      ],
+      "word_limit": null,
+      "scoring_policy": "map_letter",
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "evidence_excerpt_en": "There's a useful sign for the Changing Area on the plan. Immediately south-east of it is a lettered location: that's where you'll find Membership Desk. People sometimes choose the more distant area, but that isn't the right one.",
+      "explanation_vi": "Trên sơ đồ mới, tìm mốc Changing Area, rồi nhìn ngay phía đông nam. Khu được đánh dấu D là Membership Desk.",
+      "question_tags": [
+        "m22",
+        "map_navigation",
+        "section_2_practice"
+      ],
+      "answer_source": "spoken_spatial_directions",
+      "map_asset_id": "M22-MAP-004"
+    },
+    {
+      "question_id": "Q04",
+      "group_id": "MAP_Q01_TO_04",
+      "type": "map_labelling",
+      "prompt": "Cycle Hub",
+      "correct_answers": [
+        "C"
+      ],
+      "correct_option": "C",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G",
+        "H"
+      ],
+      "word_limit": null,
+      "scoring_policy": "map_letter",
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "evidence_excerpt_en": "Now find the Cafe Sign. From that landmark, look north to the nearest lettered point. That's where you'll find Cycle Hub. Don't confuse it with the other lettered buildings further away.",
+      "explanation_vi": "Trên sơ đồ mới, tìm mốc Cafe Sign, rồi nhìn ngay phía bắc. Khu được đánh dấu C là Cycle Hub.",
+      "question_tags": [
+        "m22",
+        "map_navigation",
+        "section_2_practice"
+      ],
+      "answer_source": "spoken_spatial_directions",
+      "map_asset_id": "M22-MAP-004"
+    },
+    {
+      "question_id": "Q05",
+      "group_id": "NOTES_Q05_TO_08",
+      "type": "note_completion",
+      "prompt": "Taster session cost: ____",
+      "correct_answers": [
+        "six pounds"
+      ],
+      "spoken_answer": "six pounds",
+      "word_limit": 3,
+      "scoring_policy": "controlled_variants",
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "evidence_excerpt_en": "A single taster session costs six pounds. The nine-pound figure on the booking site is for a supervised climbing lesson.",
+      "explanation_vi": "Nghe thông tin cuối cùng về taster session cost; đáp án là “six pounds”, không chọn thông tin cũ hoặc phương án bị loại.",
+      "question_tags": [
+        "m22",
+        "note_completion",
+        "section_2_practice"
+      ],
+      "answer_source": "literal_spoken_wording"
+    },
+    {
+      "question_id": "Q06",
+      "group_id": "NOTES_Q05_TO_08",
+      "type": "note_completion",
+      "prompt": "Class registration closes: ____",
+      "correct_answers": [
+        "Thursday"
+      ],
+      "spoken_answer": "Thursday",
+      "word_limit": 3,
+      "scoring_policy": "controlled_variants",
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "evidence_excerpt_en": "Online registration closes on Thursday evening; walk-in places are not guaranteed.",
+      "explanation_vi": "Nghe thông tin cuối cùng về class registration closes; đáp án là “Thursday”, không chọn thông tin cũ hoặc phương án bị loại.",
+      "question_tags": [
+        "m22",
+        "note_completion",
+        "section_2_practice"
+      ],
+      "answer_source": "literal_spoken_wording"
+    },
+    {
+      "question_id": "Q07",
+      "group_id": "NOTES_Q05_TO_08",
+      "type": "note_completion",
+      "prompt": "Minimum participant age: ____",
+      "correct_answers": [
+        "14"
+      ],
+      "spoken_answer": "14",
+      "word_limit": 3,
+      "scoring_policy": "controlled_variants",
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "evidence_excerpt_en": "You must be at least 14 to join the open climbing session, even with an adult present.",
+      "explanation_vi": "Nghe thông tin cuối cùng về minimum participant age; đáp án là “14”, không chọn thông tin cũ hoặc phương án bị loại.",
+      "question_tags": [
+        "m22",
+        "note_completion",
+        "section_2_practice"
+      ],
+      "answer_source": "literal_spoken_wording"
+    },
+    {
+      "question_id": "Q08",
+      "group_id": "NOTES_Q05_TO_08",
+      "type": "note_completion",
+      "prompt": "Item to bring: ____",
+      "correct_answers": [
+        "towel"
+      ],
+      "spoken_answer": "towel",
+      "word_limit": 3,
+      "scoring_policy": "controlled_variants",
+      "evidence_turn_ids": [
+        "T10"
+      ],
+      "evidence_excerpt_en": "Bring your own towel; mats and safety harnesses can be borrowed on site.",
+      "explanation_vi": "Nghe thông tin cuối cùng về item to bring; đáp án là “towel”, không chọn thông tin cũ hoặc phương án bị loại.",
+      "question_tags": [
+        "m22",
+        "note_completion",
+        "section_2_practice"
+      ],
+      "answer_source": "literal_spoken_wording"
+    }
+  ],
+  "question_groups": [
+    {
+      "group_id": "MAP_Q01_TO_04",
+      "question_ids": [
+        "Q01",
+        "Q02",
+        "Q03",
+        "Q04"
+      ],
+      "question_type": "map_labelling",
+      "instructions_en": "Label the plan. Choose the correct letter A–H for each place. Follow the named landmarks and directions in the audio.",
+      "map_asset_id": "M22-MAP-004",
+      "map_asset_path": "04_MAP_ASSETS_CLIENT_SAFE/M22_MAP_004.svg",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G",
+        "H"
+      ]
+    },
+    {
+      "group_id": "NOTES_Q05_TO_08",
+      "question_ids": [
+        "Q05",
+        "Q06",
+        "Q07",
+        "Q08"
+      ],
+      "question_type": "note_completion",
+      "instructions_en": "Complete the notes. Write NO MORE THAN THREE WORDS AND/OR A NUMBER for each answer."
+    }
+  ],
+  "vocabulary": [
+    {
+      "expression_en": "Fitness Suite",
+      "meaning_vi": "Vị trí Fitness Suite trên sơ đồ; luyện nghe định hướng tương đối so với Pool Lobby.",
+      "part_of_speech": "noun phrase",
+      "example_en": "First locate the Pool Lobby on the visitor plan. You'll find Fitness Suite at the lettered location immediately north-west of it. Check the position against the nearest other buildings before moving on.",
+      "can_save_to_notebook": true
+    },
+    {
+      "expression_en": "Physio Office",
+      "meaning_vi": "Vị trí Physio Office trên sơ đồ; luyện nghe định hướng tương đối so với Scoreboard.",
+      "part_of_speech": "noun phrase",
+      "example_en": "If you're looking for Physio Office, use the Scoreboard as your reference point. Choose the nearest lettered location directly south of that landmark. Other marked areas are for different activities.",
+      "can_save_to_notebook": true
+    },
+    {
+      "expression_en": "Membership Desk",
+      "meaning_vi": "Vị trí Membership Desk trên sơ đồ; luyện nghe định hướng tương đối so với Changing Area.",
+      "part_of_speech": "noun phrase",
+      "example_en": "There's a useful sign for the Changing Area on the plan. Immediately south-east of it is a lettered location: that's where you'll find Membership Desk. People sometimes choose the more distant area, but that isn't the right one.",
+      "can_save_to_notebook": true
+    },
+    {
+      "expression_en": "Cycle Hub",
+      "meaning_vi": "Vị trí Cycle Hub trên sơ đồ; luyện nghe định hướng tương đối so với Cafe Sign.",
+      "part_of_speech": "noun phrase",
+      "example_en": "Now find the Cafe Sign. From that landmark, look north to the nearest lettered point. That's where you'll find Cycle Hub. Don't confuse it with the other lettered buildings further away.",
+      "can_save_to_notebook": true
+    }
+  ],
+  "audio": {
+    "status": "not_generated",
+    "audio_url": null,
+    "audio_asset_id": null,
+    "duration_ms": null,
+    "source_text_sha256": "d9594e51f003ef9abd573337e84f099c55f040cc23a8dce66508aba0dd52024d",
+    "generation_strategy": "one_continuous_monologue",
+    "aligned_turns": false
+  },
+  "learning_flow": {
+    "intro": {
+      "theory_vi": "IELTS Map Labelling yêu cầu tìm lối vào, mũi tên Bắc, các mốc cố định và con đường nối chúng. Không mặc định mọi lối vào ở phía Nam, không suy vị trí chỉ từ thứ tự A–H.",
+      "worked_examples": [
+        {
+          "prompt": "The activity area is immediately east of the old clock.",
+          "reason_vi": "Tìm Old Clock có ghi tên trên sơ đồ; từ đó nhìn sang phía Đông (bên phải nếu Bắc ở trên) để xác định ô chữ cái."
+        }
+      ],
+      "common_mistakes_vi": [
+        "Giả định mọi bản đồ đều có lối vào phía Nam.",
+        "Chọn chữ cái trước khi nghe mốc cố định.",
+        "Bỏ qua các từ immediately, across, rather than và north-east."
+      ]
+    },
+    "after_submit": {
+      "unlock_transcript": true,
+      "unlock_answers": true,
+      "dictation_turns": [
+        "T03",
+        "T07"
+      ]
+    }
+  },
+  "map_asset": {
+    "map_asset_id": "M22-MAP-004",
+    "asset_path": "04_MAP_ASSETS_CLIENT_SAFE/M22_MAP_004.svg",
+    "orientation": "NORTH UP / ENTRANCE VARIES BY PLAN",
+    "location_key_server_only": {
+      "Fitness Suite": "E",
+      "Physio Office": "B",
+      "Membership Desk": "D",
+      "Cycle Hub": "C"
+    },
+    "human_spatial_review_required": true,
+    "answer_key_is_server_only": true,
+    "layout_type": "leisure",
+    "source_map_version": "m22-map-v2-distinct",
+    "entry_point": "NORTH ENTRANCE",
+    "route_name": "sports concourse",
+    "letter_coordinates_server_only": {
+      "E": {
+        "x": 165,
+        "y": 170
+      },
+      "B": {
+        "x": 760,
+        "y": 230
+      },
+      "D": {
+        "x": 520,
+        "y": 430
+      },
+      "C": {
+        "x": 150,
+        "y": 325
+      },
+      "F": {
+        "x": 345,
+        "y": 185
+      },
+      "G": {
+        "x": 610,
+        "y": 175
+      },
+      "H": {
+        "x": 690,
+        "y": 390
+      },
+      "A": {
+        "x": 300,
+        "y": 405
+      }
+    },
+    "reference_landmarks_server_only": [
+      {
+        "name": "Pool Lobby",
+        "x": 217,
+        "y": 222,
+        "letter": "E"
+      },
+      {
+        "name": "Scoreboard",
+        "x": 760,
+        "y": 163,
+        "letter": "B"
+      },
+      {
+        "name": "Changing Area",
+        "x": 468,
+        "y": 378,
+        "letter": "D"
+      },
+      {
+        "name": "Cafe Sign",
+        "x": 150,
+        "y": 392,
+        "letter": "C"
+      }
+    ],
+    "direction_evidence_server_only": {
+      "Q01": {
+        "landmark": "Pool Lobby",
+        "compass_direction": "north-west",
+        "answer_letter": "E"
+      },
+      "Q02": {
+        "landmark": "Scoreboard",
+        "compass_direction": "south",
+        "answer_letter": "B"
+      },
+      "Q03": {
+        "landmark": "Changing Area",
+        "compass_direction": "south-east",
+        "answer_letter": "D"
+      },
+      "Q04": {
+        "landmark": "Cafe Sign",
+        "compass_direction": "north",
+        "answer_letter": "C"
+      }
+    }
+  },
+  "qa": {
+    "automated_data_validation": "passed_scope_spatial_reference_and_text_containment",
+    "human_transcript_approved": false,
+    "human_audio_approved": false,
+    "human_map_approved": false,
+    "human_translation_approved": false,
+    "release_eligible": false,
+    "estimated_word_count": 343,
+    "visual_diversity_review": "pending_human_check",
+    "previous_map_replaced_reason": "identical_2x4_grid_template"
+  },
+  "provenance": {
+    "source_type": "original_authored",
+    "authoring_milestone": "M22",
+    "reference_copying": false,
+    "target_bank": "training"
+  },
+  "release_metadata": {
+    "version": "m22.1.0-distinct-maps",
+    "published": false,
+    "needs_audio": true,
+    "requires_human_approval": true,
+    "import_policy": "replace_draft_only_or_explicit_version_migration",
+    "target_bank": "training",
+    "no_bands": true
+  }
+}

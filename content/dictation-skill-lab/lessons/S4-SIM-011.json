@@ -1,0 +1,613 @@
+{
+  "schema_version": "1.2.0",
+  "lesson_id": "S4-SIM-011",
+  "status": "draft",
+  "level": "L7",
+  "section": 4,
+  "topic": "Environmental engineering",
+  "title": "Collecting Water from Fog",
+  "content_format": "section_exam_simulation",
+  "exam_part": "IELTS_LISTENING_PART_4_STYLE",
+  "official_ielts_material": false,
+  "learning_objectives_vi": [
+    "Theo dõi bài giảng học thuật có lập luận và ví dụ.",
+    "Hoàn thành ghi chú, tóm tắt hoặc bảng bằng đúng từ được nghe.",
+    "Nhận diện signposting và mối quan hệ giữa các ý."
+  ],
+  "target_skills": [
+    "academic_lecture",
+    "signposting",
+    "note_taking",
+    "technical_vocabulary",
+    "information_tracking"
+  ],
+  "speakers": [
+    {
+      "speaker_id": "LECTURER",
+      "role": "Academic lecturer",
+      "accent_requested": "new_zealand",
+      "tts_voice_id": null
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "LECTURER",
+      "text_en": "In dry coastal mountains, clouds sometimes pass close to the ground without producing much rainfall. Engineers and communities have experimented with collecting droplets from this moving fog. The method sounds simple, but the quantity and reliability of collected water depend on more than putting a net on a hill. We will discuss the physical process and the practical limits of using it.",
+      "meaning_vi": "Thu nước từ sương mù cần cân nhắc lưới, gió, an toàn nước và bảo trì.",
+      "translation_vi": null,
+      "translation_status": "pending_exact_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "academic_lecture",
+        "signposting",
+        "note_taking"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "opening"
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "LECTURER",
+      "text_en": "Picture a village that receives almost no rainfall during part of the year but experiences regular low clouds crossing a nearby ridge. The idea of recovering water from those clouds is appealing. However, the ridge may be remote, difficult to reach or exposed to powerful storms. A practical study must consider accessibility as well as meteorology.",
+      "meaning_vi": "Mở rộng bối cảnh, giới thiệu vấn đề nghiên cứu.",
+      "translation_vi": null,
+      "translation_status": "pending_exact_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "academic_lecture",
+        "signposting",
+        "note_taking"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "opening"
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "LECTURER",
+      "text_en": "A fog collector normally uses a suspended mesh screen to intercept tiny droplets carried by the wind. Water gathers on the fibres and drains into a collection trough below. The principle is distinct from extracting water vapour directly from the air: these are liquid droplets already present in the fog. A demonstration can show water moving down the mesh, but it cannot prove that a particular site will produce enough water throughout the year.",
+      "meaning_vi": "Lưới giữ giọt sương mù, nước chảy xuống máng thu.",
+      "translation_vi": null,
+      "translation_status": "pending_exact_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "academic_lecture",
+        "signposting",
+        "note_taking"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "core_exposition"
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "LECTURER",
+      "text_en": "A suitable location needs frequent fog and an adequate wind speed to move droplets through the screen. The direction of the prevailing wind determines the collector's orientation. A screen facing the wrong way may collect little water even when fog is visible from a nearby village. Teams therefore study local weather records and take field measurements before installing a permanent system. A site with spectacular fog on one morning may be dry for most of the season.",
+      "meaning_vi": "Tốc độ và hướng gió chi phối hiệu suất thu nước từ sương mù.",
+      "translation_vi": null,
+      "translation_status": "pending_exact_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "academic_lecture",
+        "signposting",
+        "note_taking"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "core_exposition"
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "LECTURER",
+      "text_en": "The size and shape of the holes affect capture efficiency, but smaller openings are not always better because they may obstruct airflow. Engineers also test the material's surface coating to encourage droplets to merge and run off. The balance between capture and drainage is important. If water stays trapped on the fibres, it can block incoming fog or be blown away. Laboratory experiments provide useful comparisons, yet final performance must be measured outdoors.",
+      "meaning_vi": "Hiệu suất bắt giọt và tính chất bề mặt lưới cần được cân bằng.",
+      "translation_vi": null,
+      "translation_status": "pending_exact_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "academic_lecture",
+        "signposting",
+        "note_taking"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "core_exposition"
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "LECTURER",
+      "text_en": "A full system needs a covered storage tank so the collected water is not lost or contaminated after leaving the collector. Regular water testing is necessary before people use the supply for drinking, since airborne dust and bird droppings can enter the system. The presence of water is not the same as proof of safe water. Communities may decide to use it for irrigation first, or include treatment if drinking-water quality is required.",
+      "meaning_vi": "Bồn chứa và kiểm tra chất lượng nước cần thiết trước khi sử dụng.",
+      "translation_vi": null,
+      "translation_status": "pending_exact_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "academic_lecture",
+        "signposting",
+        "note_taking"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "core_exposition"
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "LECTURER",
+      "text_en": "Long-term success also relies on a local maintenance team that can replace damaged mesh and clean the channels. Researchers should record seasonal yield instead of reporting only the best day's collection. When output falls during dry months, families need another supply. Fog harvesting may therefore be most valuable as an additional source in a carefully planned water system, not as a guaranteed replacement for existing infrastructure.",
+      "meaning_vi": "Nhóm bảo trì và sản lượng theo mùa quyết định khả năng áp dụng lâu dài.",
+      "translation_vi": null,
+      "translation_status": "pending_exact_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "academic_lecture",
+        "signposting",
+        "note_taking"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "core_exposition"
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "LECTURER",
+      "text_en": "Even a successful pilot should be assessed in relation to demand. A small daily supply may be valuable for a school garden but inadequate for all household uses. Communities need clear expectations before investing in tanks and collection lines. Engineers should present the range of possible outputs and explain how the system would work alongside other sources.",
+      "meaning_vi": "Nêu giới hạn, ví dụ ứng dụng và ý nghĩa thực tế.",
+      "translation_vi": null,
+      "translation_status": "pending_exact_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "academic_lecture",
+        "signposting",
+        "note_taking"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "closing"
+    },
+    {
+      "turn_id": "T09",
+      "speaker_id": "LECTURER",
+      "text_en": "Fog collectors show how an elegant physical idea can become useful technology, provided the design responds to local weather, water quality and the people who must maintain it.",
+      "meaning_vi": "Tổng kết và lưu ý cách diễn giải bằng chứng.",
+      "translation_vi": null,
+      "translation_status": "pending_exact_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "academic_lecture",
+        "signposting",
+        "note_taking"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "closing"
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "group_id": "PART4_FLOW_CHART_COMPLETION_01_05",
+      "type": "flow_chart_completion",
+      "prompt": "Droplets are captured by a ____.",
+      "correct_answers": [
+        "mesh screen"
+      ],
+      "scoring_policy": "strict_spoken_words",
+      "word_limit": 2,
+      "instructions_en": "Complete the flow chart below. Write NO MORE THAN TWO WORDS for each answer.",
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "evidence_excerpt_en": "A fog collector normally uses a suspended mesh screen to intercept tiny droplets carried by the wind.",
+      "evidence_span": {
+        "turn_id": "T03",
+        "start_char": 42,
+        "end_char": 53
+      },
+      "explanation_vi": "Đáp án “mesh screen” được nói trực tiếp trong phần bài giảng này. Lưới giữ giọt sương mù, nước chảy xuống máng thu.",
+      "answer_source": "exact_words_spoken",
+      "question_tags": [
+        "M28",
+        "part4",
+        "flow_chart_completion",
+        "academic_note_taking"
+      ],
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true,
+      "answer_review_status": "draft_teacher_verification_required"
+    },
+    {
+      "question_id": "Q02",
+      "group_id": "PART4_FLOW_CHART_COMPLETION_01_05",
+      "type": "flow_chart_completion",
+      "prompt": "Water drains from the mesh into a ____.",
+      "correct_answers": [
+        "collection trough"
+      ],
+      "scoring_policy": "strict_spoken_words",
+      "word_limit": 2,
+      "instructions_en": "Complete the flow chart below. Write NO MORE THAN TWO WORDS for each answer.",
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "evidence_excerpt_en": "Water gathers on the fibres and drains into a collection trough below.",
+      "evidence_span": {
+        "turn_id": "T03",
+        "start_char": 148,
+        "end_char": 165
+      },
+      "explanation_vi": "Đáp án “collection trough” được nói trực tiếp trong phần bài giảng này. Lưới giữ giọt sương mù, nước chảy xuống máng thu.",
+      "answer_source": "exact_words_spoken",
+      "question_tags": [
+        "M28",
+        "part4",
+        "flow_chart_completion",
+        "academic_note_taking"
+      ],
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true,
+      "answer_review_status": "draft_teacher_verification_required"
+    },
+    {
+      "question_id": "Q03",
+      "group_id": "PART4_FLOW_CHART_COMPLETION_01_05",
+      "type": "flow_chart_completion",
+      "prompt": "Moving droplets across the collector requires sufficient ____.",
+      "correct_answers": [
+        "wind speed"
+      ],
+      "scoring_policy": "strict_spoken_words",
+      "word_limit": 2,
+      "instructions_en": "Complete the flow chart below. Write NO MORE THAN TWO WORDS for each answer.",
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "evidence_excerpt_en": "A suitable location needs frequent fog and an adequate wind speed to move droplets through the screen.",
+      "evidence_span": {
+        "turn_id": "T04",
+        "start_char": 55,
+        "end_char": 65
+      },
+      "explanation_vi": "Đáp án “wind speed” được nói trực tiếp trong phần bài giảng này. Tốc độ và hướng gió chi phối hiệu suất thu nước từ sương mù.",
+      "answer_source": "exact_words_spoken",
+      "question_tags": [
+        "M28",
+        "part4",
+        "flow_chart_completion",
+        "academic_note_taking"
+      ],
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true,
+      "answer_review_status": "draft_teacher_verification_required"
+    },
+    {
+      "question_id": "Q04",
+      "group_id": "PART4_FLOW_CHART_COMPLETION_01_05",
+      "type": "flow_chart_completion",
+      "prompt": "Prevailing winds influence the screen's ____.",
+      "correct_answers": [
+        "orientation"
+      ],
+      "scoring_policy": "strict_spoken_words",
+      "word_limit": 2,
+      "instructions_en": "Complete the flow chart below. Write NO MORE THAN TWO WORDS for each answer.",
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "evidence_excerpt_en": "The direction of the prevailing wind determines the collector's orientation.",
+      "evidence_span": {
+        "turn_id": "T04",
+        "start_char": 167,
+        "end_char": 178
+      },
+      "explanation_vi": "Đáp án “orientation” được nói trực tiếp trong phần bài giảng này. Tốc độ và hướng gió chi phối hiệu suất thu nước từ sương mù.",
+      "answer_source": "exact_words_spoken",
+      "question_tags": [
+        "M28",
+        "part4",
+        "flow_chart_completion",
+        "academic_note_taking"
+      ],
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true,
+      "answer_review_status": "draft_teacher_verification_required"
+    },
+    {
+      "question_id": "Q05",
+      "group_id": "PART4_FLOW_CHART_COMPLETION_01_05",
+      "type": "flow_chart_completion",
+      "prompt": "The proportion of droplets collected is ____.",
+      "correct_answers": [
+        "capture efficiency"
+      ],
+      "scoring_policy": "strict_spoken_words",
+      "word_limit": 2,
+      "instructions_en": "Complete the flow chart below. Write NO MORE THAN TWO WORDS for each answer.",
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "evidence_excerpt_en": "The size and shape of the holes affect capture efficiency, but smaller openings are not always better because they may obstruct airflow.",
+      "evidence_span": {
+        "turn_id": "T05",
+        "start_char": 39,
+        "end_char": 57
+      },
+      "explanation_vi": "Đáp án “capture efficiency” được nói trực tiếp trong phần bài giảng này. Hiệu suất bắt giọt và tính chất bề mặt lưới cần được cân bằng.",
+      "answer_source": "exact_words_spoken",
+      "question_tags": [
+        "M28",
+        "part4",
+        "flow_chart_completion",
+        "academic_note_taking"
+      ],
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true,
+      "answer_review_status": "draft_teacher_verification_required"
+    },
+    {
+      "question_id": "Q06",
+      "group_id": "PART4_NOTE_COMPLETION_06_10",
+      "type": "note_completion",
+      "prompt": "Droplet movement can be influenced by a ____.",
+      "correct_answers": [
+        "surface coating"
+      ],
+      "scoring_policy": "strict_spoken_words",
+      "word_limit": 2,
+      "instructions_en": "Complete the notes below. Write NO MORE THAN TWO WORDS for each answer.",
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "evidence_excerpt_en": "Engineers also test the material's surface coating to encourage droplets to merge and run off.",
+      "evidence_span": {
+        "turn_id": "T05",
+        "start_char": 172,
+        "end_char": 187
+      },
+      "explanation_vi": "Đáp án “surface coating” được nói trực tiếp trong phần bài giảng này. Hiệu suất bắt giọt và tính chất bề mặt lưới cần được cân bằng.",
+      "answer_source": "exact_words_spoken",
+      "question_tags": [
+        "M28",
+        "part4",
+        "note_completion",
+        "academic_note_taking"
+      ],
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true,
+      "answer_review_status": "draft_teacher_verification_required"
+    },
+    {
+      "question_id": "Q07",
+      "group_id": "PART4_NOTE_COMPLETION_06_10",
+      "type": "note_completion",
+      "prompt": "Collected water may be kept in a ____.",
+      "correct_answers": [
+        "storage tank"
+      ],
+      "scoring_policy": "strict_spoken_words",
+      "word_limit": 2,
+      "instructions_en": "Complete the notes below. Write NO MORE THAN TWO WORDS for each answer.",
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "evidence_excerpt_en": "A full system needs a covered storage tank so the collected water is not lost or contaminated after leaving the collector.",
+      "evidence_span": {
+        "turn_id": "T06",
+        "start_char": 30,
+        "end_char": 42
+      },
+      "explanation_vi": "Đáp án “storage tank” được nói trực tiếp trong phần bài giảng này. Bồn chứa và kiểm tra chất lượng nước cần thiết trước khi sử dụng.",
+      "answer_source": "exact_words_spoken",
+      "question_tags": [
+        "M28",
+        "part4",
+        "note_completion",
+        "academic_note_taking"
+      ],
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true,
+      "answer_review_status": "draft_teacher_verification_required"
+    },
+    {
+      "question_id": "Q08",
+      "group_id": "PART4_NOTE_COMPLETION_06_10",
+      "type": "note_completion",
+      "prompt": "Safety depends partly on regular ____.",
+      "correct_answers": [
+        "water testing"
+      ],
+      "scoring_policy": "strict_spoken_words",
+      "word_limit": 2,
+      "instructions_en": "Complete the notes below. Write NO MORE THAN TWO WORDS for each answer.",
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "evidence_excerpt_en": "Regular water testing is necessary before people use the supply for drinking, since airborne dust and bird droppings can enter the system.",
+      "evidence_span": {
+        "turn_id": "T06",
+        "start_char": 131,
+        "end_char": 144
+      },
+      "explanation_vi": "Đáp án “water testing” được nói trực tiếp trong phần bài giảng này. Bồn chứa và kiểm tra chất lượng nước cần thiết trước khi sử dụng.",
+      "answer_source": "exact_words_spoken",
+      "question_tags": [
+        "M28",
+        "part4",
+        "note_completion",
+        "academic_note_taking"
+      ],
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true,
+      "answer_review_status": "draft_teacher_verification_required"
+    },
+    {
+      "question_id": "Q09",
+      "group_id": "PART4_NOTE_COMPLETION_06_10",
+      "type": "note_completion",
+      "prompt": "A local ____ helps keep collectors functioning.",
+      "correct_answers": [
+        "maintenance team"
+      ],
+      "scoring_policy": "strict_spoken_words",
+      "word_limit": 2,
+      "instructions_en": "Complete the notes below. Write NO MORE THAN TWO WORDS for each answer.",
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "evidence_excerpt_en": "Long-term success also relies on a local maintenance team that can replace damaged mesh and clean the channels.",
+      "evidence_span": {
+        "turn_id": "T07",
+        "start_char": 41,
+        "end_char": 57
+      },
+      "explanation_vi": "Đáp án “maintenance team” được nói trực tiếp trong phần bài giảng này. Nhóm bảo trì và sản lượng theo mùa quyết định khả năng áp dụng lâu dài.",
+      "answer_source": "exact_words_spoken",
+      "question_tags": [
+        "M28",
+        "part4",
+        "note_completion",
+        "academic_note_taking"
+      ],
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true,
+      "answer_review_status": "draft_teacher_verification_required"
+    },
+    {
+      "question_id": "Q10",
+      "group_id": "PART4_NOTE_COMPLETION_06_10",
+      "type": "note_completion",
+      "prompt": "Production should be reported as ____ rather than a peak day.",
+      "correct_answers": [
+        "seasonal yield"
+      ],
+      "scoring_policy": "strict_spoken_words",
+      "word_limit": 2,
+      "instructions_en": "Complete the notes below. Write NO MORE THAN TWO WORDS for each answer.",
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "evidence_excerpt_en": "Researchers should record seasonal yield instead of reporting only the best day's collection.",
+      "evidence_span": {
+        "turn_id": "T07",
+        "start_char": 138,
+        "end_char": 152
+      },
+      "explanation_vi": "Đáp án “seasonal yield” được nói trực tiếp trong phần bài giảng này. Nhóm bảo trì và sản lượng theo mùa quyết định khả năng áp dụng lâu dài.",
+      "answer_source": "exact_words_spoken",
+      "question_tags": [
+        "M28",
+        "part4",
+        "note_completion",
+        "academic_note_taking"
+      ],
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true,
+      "answer_review_status": "draft_teacher_verification_required"
+    }
+  ],
+  "question_groups": [
+    {
+      "group_id": "PART4_FLOW_CHART_COMPLETION_01_05",
+      "title_en": "Collecting Water from Fog — Flow chart",
+      "question_ids": [
+        "Q01",
+        "Q02",
+        "Q03",
+        "Q04",
+        "Q05"
+      ],
+      "question_type": "flow_chart_completion",
+      "instructions_en": "Complete the flow chart below. Write NO MORE THAN TWO WORDS for each answer.",
+      "word_limit": 2,
+      "requires_one_listen": true,
+      "question_display_start": "before_audio",
+      "pause_between_groups_seconds": 0,
+      "layout_metadata": {
+        "presentation": "grouped_blanks",
+        "flow_order": "top_to_bottom",
+        "table_columns": null
+      }
+    },
+    {
+      "group_id": "PART4_NOTE_COMPLETION_06_10",
+      "title_en": "Collecting Water from Fog — Notes",
+      "question_ids": [
+        "Q06",
+        "Q07",
+        "Q08",
+        "Q09",
+        "Q10"
+      ],
+      "question_type": "note_completion",
+      "instructions_en": "Complete the notes below. Write NO MORE THAN TWO WORDS for each answer.",
+      "word_limit": 2,
+      "requires_one_listen": true,
+      "question_display_start": "before_audio",
+      "pause_between_groups_seconds": 0,
+      "layout_metadata": {
+        "presentation": "grouped_blanks",
+        "flow_order": null,
+        "table_columns": null
+      }
+    }
+  ],
+  "pedagogy_vi": {
+    "topic_summary_vi": "Thu nước từ sương mù cần cân nhắc lưới, gió, an toàn nước và bảo trì.",
+    "question_explanations_status": "draft_review_required",
+    "turn_meanings_are_not_full_translations": true,
+    "full_line_translation_required_before_release": true
+  },
+  "audio": {
+    "status": "not_generated",
+    "audio_url": null,
+    "audio_asset_id": null,
+    "duration_ms": null,
+    "source_text_sha256": "13774745a32891989f7dbc3dca7f9574bbb4221558aea8391ba27c1f7c41140a",
+    "generation_strategy": "single_speaker_continuous_full_lecture",
+    "aligned_turns": false,
+    "voice_consistency_verified": false,
+    "human_listening_review": false
+  },
+  "exam_mode": {
+    "bank_role": "protected_assessment",
+    "use_as_training_before_first_attempt": false,
+    "listening_attempts_allowed_for_scored_first_attempt": 1,
+    "replay_before_submit": false,
+    "speed_control_before_submit": false,
+    "transcript_visible_before_submit": false,
+    "answer_key_visible_before_submit": false,
+    "post_attempt_review_allowed": true,
+    "question_count": 10,
+    "points_per_correct_answer": 1,
+    "question_order_monotonic": true,
+    "estimated_speech_minutes_at_140_wpm": 4.04,
+    "exam_band_score_enabled": false,
+    "repeated_attempt_marked_as_seen": true,
+    "all_questions_visible_before_audio": true
+  },
+  "qa": {
+    "automatic_data_validation": "pending",
+    "content_human_review": "pending",
+    "translation_human_review": "pending",
+    "audio_human_review": "pending",
+    "exam_simulation_rubric_score": null,
+    "rubric_90_verified": false,
+    "published": false,
+    "release_eligible": false
+  },
+  "provenance": {
+    "source_type": "original_authoring_english_academic_lecture",
+    "milestone": "M28",
+    "no_official_ielts_question_copied": true,
+    "training_exposure_guard": true,
+    "fictional_illustrations_only_when_specified": true
+  },
+  "release_metadata": {
+    "target_bank": "protected_assessment",
+    "import_policy": "insert_only",
+    "version": "m28.0.1",
+    "preserve_existing_ids": true,
+    "allow_client_answer_payload": false
+  }
+}

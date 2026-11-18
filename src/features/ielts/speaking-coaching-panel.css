@@ -1,0 +1,11 @@
+.sc-panel { margin: 18px 0; padding: 18px; border: 1px solid #d9e6ed; border-radius: 18px; background: #fff; }
+.sc-panel h3, .sc-panel h4 { margin: 0 0 10px; }
+.sc-panel p { line-height: 1.6; }
+.sc-note { color: #5d6f7f; }
+.sc-metrics { display: flex; flex-wrap: wrap; gap: 8px; margin: 12px 0; }
+.sc-metrics span { padding: 6px 10px; border-radius: 999px; background: #e9f2f8; color: #28475d; font-weight: 700; }
+.sc-areas { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 12px; margin: 14px 0; }
+.sc-areas article { padding: 14px; border: 1px solid #e2eaf0; border-radius: 12px; }
+.sc-areas q { color: #496579; }
+.sc-panel details { margin: 12px 0; }
+.sc-panel li { margin: 5px 0; }

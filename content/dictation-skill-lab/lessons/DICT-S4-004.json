@@ -1,0 +1,351 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "DICT-S4-004",
+  "status": "draft",
+  "level": "L5",
+  "section": 4,
+  "topic": "Renewable Energy",
+  "title": "Renewables, Power, Energy and the Grid",
+  "learning_objectives_vi": [
+    "Nghe bài giảng học thuật một người nói và xác định cấu trúc luận điểm, ví dụ và kết luận.",
+    "Hoàn thành Note/Summary Completion, Multiple Choice, Short Answer và chép đúng đoạn nghe đã học.",
+    "Phân tích bằng chứng theo từng đoạn và ghi nhớ từ học thuật trong bối cảnh."
+  ],
+  "content_format": "section_practice",
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Academic lecturer",
+      "tts_voice_id": null,
+      "accent_requested": "new_zealand"
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "Renewable energy comes from sources that are replenished naturally on human timescales, including sunlight, wind and flowing water. Yet it is important to separate a source of energy from the electricity produced by a device. Solar panels convert incoming light into electricity, whereas wind turbines convert the movement of air. Both are part of a larger network rather than independent solutions to every energy need.",
+      "translation_vi": "Năng lượng tái tạo đến từ nguồn được bổ sung tự nhiên trong khoảng thời gian của con người, như nắng, gió và nước chảy. Nhưng cần phân biệt nguồn năng lượng với điện do thiết bị sản xuất. Tấm pin mặt trời chuyển ánh sáng thành điện, còn tuabin gió chuyển chuyển động không khí. Cả hai là một phần của mạng điện lớn, không phải giải pháp độc lập cho mọi nhu cầu.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_4",
+        "academic_lecture",
+        "concept",
+        "l5"
+      ]
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "A",
+      "text_en": "We should also distinguish power from energy. Power describes the rate at which electricity is generated or used, while energy measures the total amount delivered over a period. A solar installation may have a high maximum power rating yet produce little electricity during a cloudy afternoon. For planning purposes, the pattern of output matters just as much as the headline capacity.",
+      "translation_vi": "Cũng phải phân biệt công suất với năng lượng. Công suất là tốc độ tạo hoặc dùng điện, còn năng lượng đo tổng lượng cung cấp trong một khoảng thời gian. Hệ thống mặt trời có công suất tối đa cao nhưng tạo ít điện vào chiều nhiều mây. Khi quy hoạch, kiểu biến thiên sản lượng quan trọng không kém công suất ghi trên giấy.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_4",
+        "academic_lecture",
+        "concept",
+        "l5"
+      ]
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "A",
+      "text_en": "Because sunlight and wind vary, the electricity system needs flexibility. A battery can store electricity and release it later, although storage has limits in capacity and duration. Another option is to shift some demand, such as running industrial equipment at times when renewable generation is abundant. This process is often called demand response.",
+      "translation_vi": "Vì nắng và gió thay đổi, hệ thống điện cần linh hoạt. Pin có thể lưu điện rồi phát lại, dù có giới hạn về dung lượng và thời gian. Lựa chọn khác là chuyển một phần nhu cầu, chẳng hạn cho thiết bị công nghiệp chạy khi điện tái tạo dồi dào. Quá trình đó thường được gọi là điều chỉnh phụ tải theo tín hiệu cung–cầu.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_4",
+        "academic_lecture",
+        "concept",
+        "l5"
+      ]
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "A",
+      "text_en": "Electricity must also travel from where it is generated to where people need it. Wind farms may be far from cities, and the existing grid may not have enough capacity to carry all their output. Upgrading transmission lines can therefore be as important as installing additional turbines. Without a reliable network, useful energy may be wasted through curtailment.",
+      "translation_vi": "Điện còn phải đi từ nơi sản xuất đến nơi cần sử dụng. Trang trại gió có thể xa đô thị và lưới hiện tại không đủ khả năng chuyển hết sản lượng. Vì thế, nâng cấp đường truyền tải quan trọng không kém lắp thêm tuabin. Nếu mạng không đáng tin cậy, năng lượng hữu ích có thể bị cắt giảm phát.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_4",
+        "academic_lecture",
+        "concept",
+        "l5"
+      ]
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "A",
+      "text_en": "Finally, renewable does not mean impact-free. Manufacturing equipment requires materials, land and transport, while poorly located facilities can affect wildlife or local communities. A sensible assessment compares environmental effects throughout a project’s life. The central question is not whether an energy technology is perfect, but how it performs alongside realistic alternatives.",
+      "translation_vi": "Cuối cùng, tái tạo không có nghĩa là không tác động. Sản xuất thiết bị cần vật liệu, đất và vận chuyển; công trình đặt sai chỗ có thể ảnh hưởng động vật và cộng đồng. Đánh giá hợp lý so sánh tác động môi trường trong toàn vòng đời dự án. Câu hỏi trọng tâm không phải công nghệ có hoàn hảo không, mà nó vận hành ra sao so với lựa chọn thực tế khác.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_4",
+        "academic_lecture",
+        "concept",
+        "l5"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "type": "note_completion",
+      "prompt": "Wind turbines convert the movement of ____.",
+      "correct_answers": [
+        "air"
+      ],
+      "evidence_turn_ids": [
+        "T01"
+      ],
+      "explanation_vi": "Bằng chứng tại T01: Năng lượng tái tạo đến từ nguồn được bổ sung tự nhiên trong khoảng thời gian của con người, như nắng, gió và nước chảy. Nhưng cần phân biệt nguồn năng lượng với điện do thiết bị sản xuất. Tấm pin mặt trời chuyển ánh sáng thành điện, còn tuabin gió chuyển chuyển động không khí. Cả hai là một phần của mạng điện lớn, không phải giải pháp độc lập cho mọi nhu cầu. Đáp án cần chọn/điền: “air”.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_4",
+        "ielts_practice",
+        "concept",
+        "note_completion"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q02",
+      "type": "summary_completion",
+      "prompt": "____ describes the rate of producing or using electricity.",
+      "correct_answers": [
+        "Power"
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Bằng chứng tại T02: Cũng phải phân biệt công suất với năng lượng. Công suất là tốc độ tạo hoặc dùng điện, còn năng lượng đo tổng lượng cung cấp trong một khoảng thời gian. Hệ thống mặt trời có công suất tối đa cao nhưng tạo ít điện vào chiều nhiều mây. Khi quy hoạch, kiểu biến thiên sản lượng quan trọng không kém công suất ghi trên giấy. Đáp án cần chọn/điền: “Power”.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_4",
+        "ielts_practice",
+        "concept",
+        "summary_completion"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q03",
+      "type": "sentence_completion",
+      "prompt": "Changing the timing of electricity use is called demand ____.",
+      "correct_answers": [
+        "response"
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Bằng chứng tại T03: Vì nắng và gió thay đổi, hệ thống điện cần linh hoạt. Pin có thể lưu điện rồi phát lại, dù có giới hạn về dung lượng và thời gian. Lựa chọn khác là chuyển một phần nhu cầu, chẳng hạn cho thiết bị công nghiệp chạy khi điện tái tạo dồi dào. Quá trình đó thường được gọi là điều chỉnh phụ tải theo tín hiệu cung–cầu. Đáp án cần chọn/điền: “response”.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_4",
+        "ielts_practice",
+        "concept",
+        "sentence_completion"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q04",
+      "type": "mcq",
+      "prompt": "Why might extra wind turbines produce less useful electricity than expected?",
+      "correct_answers": [
+        "The transmission network may lack capacity"
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Bằng chứng tại T04: Điện còn phải đi từ nơi sản xuất đến nơi cần sử dụng. Trang trại gió có thể xa đô thị và lưới hiện tại không đủ khả năng chuyển hết sản lượng. Vì thế, nâng cấp đường truyền tải quan trọng không kém lắp thêm tuabin. Nếu mạng không đáng tin cậy, năng lượng hữu ích có thể bị cắt giảm phát. Đáp án cần chọn/điền: “The transmission network may lack capacity”.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "section_4",
+        "ielts_practice",
+        "concept",
+        "mcq"
+      ],
+      "options": [
+        "The transmission network may lack capacity",
+        "Wind power cannot travel to cities",
+        "Every battery stores unlimited energy"
+      ]
+    },
+    {
+      "question_id": "Q05",
+      "type": "short_answer",
+      "prompt": "What does manufacturing renewable-energy equipment require?",
+      "correct_answers": [
+        "materials"
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Bằng chứng tại T05: Cuối cùng, tái tạo không có nghĩa là không tác động. Sản xuất thiết bị cần vật liệu, đất và vận chuyển; công trình đặt sai chỗ có thể ảnh hưởng động vật và cộng đồng. Đánh giá hợp lý so sánh tác động môi trường trong toàn vòng đời dự án. Câu hỏi trọng tâm không phải công nghệ có hoàn hảo không, mà nó vận hành ra sao so với lựa chọn thực tế khác. Đáp án cần chọn/điền: “materials”.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_4",
+        "ielts_practice",
+        "concept",
+        "short_answer"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q06",
+      "type": "mcq",
+      "prompt": "What is the main focus of the lecture?",
+      "correct_answers": [
+        "Generation must be considered together with the wider electricity system"
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Bằng chứng tại T05: Cuối cùng, tái tạo không có nghĩa là không tác động. Sản xuất thiết bị cần vật liệu, đất và vận chuyển; công trình đặt sai chỗ có thể ảnh hưởng động vật và cộng đồng. Đánh giá hợp lý so sánh tác động môi trường trong toàn vòng đời dự án. Câu hỏi trọng tâm không phải công nghệ có hoàn hảo không, mà nó vận hành ra sao so với lựa chọn thực tế khác. Đây là câu hỏi ý chính; cần hiểu toàn bài và phân biệt các lựa chọn nhiễu.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "section_4",
+        "ielts_practice",
+        "concept",
+        "main_idea"
+      ],
+      "options": [
+        "Generation must be considered together with the wider electricity system",
+        "Maximum power rating equals annual energy",
+        "Renewable power has no environmental consequences"
+      ]
+    },
+    {
+      "question_id": "D01",
+      "type": "dictation",
+      "prompt": "Nghe đoạn T02 rồi chép lại toàn bộ phần lời nói tiếng Anh.",
+      "correct_answers": [
+        "We should also distinguish power from energy. Power describes the rate at which electricity is generated or used, while energy measures the total amount delivered over a period. A solar installation may have a high maximum power rating yet produce little electricity during a cloudy afternoon. For planning purposes, the pattern of output matters just as much as the headline capacity."
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Nghe lại để sửa âm cuối, từ chức năng và từ học thuật. Nội dung: Cũng phải phân biệt công suất với năng lượng. Công suất là tốc độ tạo hoặc dùng điện, còn năng lượng đo tổng lượng cung cấp trong một khoảng thời gian. Hệ thống mặt trời có công suất tối đa cao nhưng tạo ít điện vào chiều nhiều mây. Khi quy hoạch, kiểu biến thiên sản lượng quan trọng không kém công suất ghi trên giấy.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_4",
+        "dictation",
+        "exact_transcript"
+      ]
+    },
+    {
+      "question_id": "D02",
+      "type": "dictation",
+      "prompt": "Nghe đoạn T04 rồi chép lại toàn bộ phần lời nói tiếng Anh.",
+      "correct_answers": [
+        "Electricity must also travel from where it is generated to where people need it. Wind farms may be far from cities, and the existing grid may not have enough capacity to carry all their output. Upgrading transmission lines can therefore be as important as installing additional turbines. Without a reliable network, useful energy may be wasted through curtailment."
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Nghe lại để sửa âm cuối, từ chức năng và từ học thuật. Nội dung: Điện còn phải đi từ nơi sản xuất đến nơi cần sử dụng. Trang trại gió có thể xa đô thị và lưới hiện tại không đủ khả năng chuyển hết sản lượng. Vì thế, nâng cấp đường truyền tải quan trọng không kém lắp thêm tuabin. Nếu mạng không đáng tin cậy, năng lượng hữu ích có thể bị cắt giảm phát.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_4",
+        "dictation",
+        "exact_transcript"
+      ]
+    },
+    {
+      "question_id": "G01",
+      "type": "gap_fill",
+      "prompt": "Nghe đoạn T01 rồi điền phần thiếu: ____ comes from sources that are replenished naturally on human timescales, including sunlight, wind and flowing water. Yet it is important to separate a source of energy from the electricity produced by a device. Solar panels convert incoming light into electricity, whereas wind turbines convert the movement of air. Both are part of a larger network rather than independent solutions to every energy need.",
+      "correct_answers": [
+        "renewable energy"
+      ],
+      "evidence_turn_ids": [
+        "T01"
+      ],
+      "explanation_vi": "Đáp án là “renewable energy”, nghĩa: năng lượng tái tạo. Từ xuất hiện nguyên văn ở T01.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_4",
+        "gap_fill",
+        "academic_vocabulary"
+      ]
+    }
+  ],
+  "vocabulary": [
+    {
+      "term": "renewable energy",
+      "pos": "n. phr.",
+      "meaning_vi": "năng lượng tái tạo",
+      "example_en": "Renewable energy comes from sources that are replenished naturally on human timescales, including sunlight, wind and flowing water. Yet it is important to separate a source of energy from the electricity produced by a device. Solar panels convert incoming light into electricity, whereas wind turbines convert the movement of air. Both are part of a larger network rather than independent solutions to every energy need.",
+      "example_vi": "Năng lượng tái tạo đến từ nguồn được bổ sung tự nhiên trong khoảng thời gian của con người, như nắng, gió và nước chảy. Nhưng cần phân biệt nguồn năng lượng với điện do thiết bị sản xuất. Tấm pin mặt trời chuyển ánh sáng thành điện, còn tuabin gió chuyển chuyển động không khí. Cả hai là một phần của mạng điện lớn, không phải giải pháp độc lập cho mọi nhu cầu.",
+      "source_turn_id": "T01"
+    },
+    {
+      "term": "Power",
+      "pos": "n.",
+      "meaning_vi": "công suất",
+      "example_en": "We should also distinguish power from energy. Power describes the rate at which electricity is generated or used, while energy measures the total amount delivered over a period. A solar installation may have a high maximum power rating yet produce little electricity during a cloudy afternoon. For planning purposes, the pattern of output matters just as much as the headline capacity.",
+      "example_vi": "Cũng phải phân biệt công suất với năng lượng. Công suất là tốc độ tạo hoặc dùng điện, còn năng lượng đo tổng lượng cung cấp trong một khoảng thời gian. Hệ thống mặt trời có công suất tối đa cao nhưng tạo ít điện vào chiều nhiều mây. Khi quy hoạch, kiểu biến thiên sản lượng quan trọng không kém công suất ghi trên giấy.",
+      "source_turn_id": "T02"
+    },
+    {
+      "term": "demand response",
+      "pos": "n. phr.",
+      "meaning_vi": "điều chỉnh phụ tải",
+      "example_en": "Because sunlight and wind vary, the electricity system needs flexibility. A battery can store electricity and release it later, although storage has limits in capacity and duration. Another option is to shift some demand, such as running industrial equipment at times when renewable generation is abundant. This process is often called demand response.",
+      "example_vi": "Vì nắng và gió thay đổi, hệ thống điện cần linh hoạt. Pin có thể lưu điện rồi phát lại, dù có giới hạn về dung lượng và thời gian. Lựa chọn khác là chuyển một phần nhu cầu, chẳng hạn cho thiết bị công nghiệp chạy khi điện tái tạo dồi dào. Quá trình đó thường được gọi là điều chỉnh phụ tải theo tín hiệu cung–cầu.",
+      "source_turn_id": "T03"
+    },
+    {
+      "term": "transmission lines",
+      "pos": "n. phr.",
+      "meaning_vi": "đường truyền tải",
+      "example_en": "Electricity must also travel from where it is generated to where people need it. Wind farms may be far from cities, and the existing grid may not have enough capacity to carry all their output. Upgrading transmission lines can therefore be as important as installing additional turbines. Without a reliable network, useful energy may be wasted through curtailment.",
+      "example_vi": "Điện còn phải đi từ nơi sản xuất đến nơi cần sử dụng. Trang trại gió có thể xa đô thị và lưới hiện tại không đủ khả năng chuyển hết sản lượng. Vì thế, nâng cấp đường truyền tải quan trọng không kém lắp thêm tuabin. Nếu mạng không đáng tin cậy, năng lượng hữu ích có thể bị cắt giảm phát.",
+      "source_turn_id": "T04"
+    }
+  ],
+  "audio": {
+    "status": "not_generated",
+    "url": null,
+    "duration_ms": null,
+    "model": null,
+    "provider": null,
+    "voice_config": null,
+    "source_transcript_hash": "ea71a8a87c4bf842b9fb50cf1f296fcce821483f1243fe9530898827d3793a8d",
+    "audio_sha256": null,
+    "format": null
+  },
+  "qa": {
+    "content_reviewed": false,
+    "answers_verified": false,
+    "audio_verified": false,
+    "rights_cleared": false,
+    "duplicate_reviewed": false,
+    "notes": [
+      "AI-assisted original first draft; expert scientific and pedagogical review pending.",
+      "Audio not generated, segment timestamps null; TTS provider terms and rights must be approved.",
+      "Short Section 4 skill practice; not a 10-question official IELTS simulation or calibrated band test.",
+      "M16.2: automated edits are provisional; IELTS teacher final signoff, audio and rights clearance pending."
+    ]
+  },
+  "provenance": {
+    "content_origin": "original_ai_assisted",
+    "source_urls": [],
+    "source_rights_note": "Original scripts. Confirm rights of TTS voices and distribution to learners, particularly minors, before release.",
+    "reviewer": null
+  },
+  "release_metadata": {
+    "published_at": null,
+    "version": 1
+  }
+}

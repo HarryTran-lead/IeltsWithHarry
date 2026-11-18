@@ -1,0 +1,134 @@
+{
+  "schema_version": "m33.1.0",
+  "activity_id": "ACT-FND-093",
+  "status": "draft_pending_audio",
+  "module": "dictation",
+  "activity_kind": "foundation_micro_practice",
+  "origin_bank": "foundation_training",
+  "source_lesson_id": "FND2-093",
+  "source_zip": "English_Skill_Lab_Dictation_M20_Foundation_D_30_Full_Content.zip",
+  "reuse_parent_id": "FND2-093",
+  "variant": "base",
+  "title": "Contractions and auxiliary verbs — luyện nghe trọng tâm",
+  "category": "connected_speech",
+  "category_vi": "Nối âm và dạng rút gọn",
+  "micro_skill_id": "auxiliaries_contractions",
+  "skill_tags": [
+    "auxiliaries_contractions",
+    "connected_speech",
+    "foundation",
+    "micro_practice"
+  ],
+  "source_audio_id": "foundation-training/FND2-093/T01",
+  "source_segments": [
+    {
+      "source_audio_id": "foundation-training/FND2-093/T01",
+      "source_audio_id_type": "logical_turn_key_not_physical_asset",
+      "source_lesson_id": "FND2-093",
+      "source_turn_id": "T01",
+      "source_audio_asset_id": null,
+      "source_audio_url": null,
+      "source_start_ms": null,
+      "source_end_ms": null,
+      "source_transcript_sha256": "18790938381ebb111e1de0116e2f2cd69b39366e53ad08760ba2743ad50e0c17",
+      "source_speaker_id": "A",
+      "audio_state": "not_generated",
+      "alignment_state": "pending_alignment"
+    }
+  ],
+  "clip_start_ms": null,
+  "clip_end_ms": null,
+  "clip_timing_scope": "turn_level_asset_or_verified_offsets_only",
+  "playback": {
+    "first_listen_replays": 1,
+    "guided_phase_max_replays": 4,
+    "speech_rate": 1.0,
+    "autoplay_transcript": false,
+    "clip_order": "sequence",
+    "inter_turn_gap_ms": 0
+  },
+  "questions": [
+    {
+      "question_id": "ACT-FND-093-Q1",
+      "phase": "first_listen",
+      "type": "connected_phrase_cloze",
+      "prompt_vi": "Nghe cụm từ nối âm/âm yếu và điền chính xác phần còn thiếu. ________ sent the invoice when I called. (Gợi ý nghĩa: cô ấy đã ... rồi.)",
+      "correct_answers": [
+        "She'd already"
+      ],
+      "answer_format": "text_entry",
+      "normalization_policy": "casefold_trim_surrounding_whitespace_and_terminal_punctuation",
+      "evidence_turn_ids": [
+        "T01"
+      ],
+      "play_turn_ids": [
+        "T01"
+      ],
+      "explanation_vi": "Thông tin cần nghe là “She'd already”. Từ/cụm này có nghĩa: cô ấy đã ... rồi. Đối chiếu với câu gốc khi xem transcript sau khi hoàn thành.",
+      "evidence": {
+        "source_sentence_en": "She'd already sent the invoice when I called.",
+        "source_translation_vi": "Cô ấy đã gửi hóa đơn trước khi tôi gọi.",
+        "focus_value": "She'd already",
+        "focus_kind": "lexical_phrase",
+        "origin_lesson_id": "FND2-093",
+        "origin_turn_id": "T01",
+        "origin_lesson_skill": "auxiliaries_contractions",
+        "evidence_sha256": "18790938381ebb111e1de0116e2f2cd69b39366e53ad08760ba2743ad50e0c17"
+      },
+      "score_weight": 1
+    },
+    {
+      "question_id": "ACT-FND-093-Q2",
+      "phase": "guided_replay",
+      "type": "full_sentence_dictation",
+      "prompt_vi": "Nghe lại một lần và chép nguyên câu tiếng Anh.",
+      "correct_answers": [
+        "She'd already sent the invoice when I called."
+      ],
+      "answer_format": "text_entry",
+      "normalization_policy": "casefold_trim_whitespace_and_terminal_punctuation_preserve_words",
+      "evidence_turn_ids": [
+        "T01"
+      ],
+      "play_turn_ids": [
+        "T01"
+      ],
+      "explanation_vi": "Câu đúng: “She'd already sent the invoice when I called.” — Cô ấy đã gửi hóa đơn trước khi tôi gọi.",
+      "evidence": {
+        "source_sentence_en": "She'd already sent the invoice when I called.",
+        "source_translation_vi": "Cô ấy đã gửi hóa đơn trước khi tôi gọi.",
+        "focus_value": "She'd already",
+        "focus_kind": "lexical_phrase",
+        "origin_lesson_id": "FND2-093",
+        "origin_turn_id": "T01",
+        "origin_lesson_skill": "auxiliaries_contractions",
+        "evidence_sha256": "18790938381ebb111e1de0116e2f2cd69b39366e53ad08760ba2743ad50e0c17"
+      },
+      "score_weight": 1
+    }
+  ],
+  "answer_release": "post_activity_submit_only",
+  "feedback_release": "post_activity_submit_only",
+  "grading_is_band_estimate": false,
+  "exposure_rules": {
+    "source_bank": "training",
+    "pretest_reuse_permitted": true,
+    "never_accept_protected_or_unseen_source": true,
+    "do_not_mix_with_mock_source": true,
+    "log_first_exposure": true,
+    "log_replays": true,
+    "log_retention_reviews": true,
+    "source_scope": "training_source_only"
+  },
+  "rights_status": "pending_tts_audio_terms_review",
+  "source_content_status": "authored_draft",
+  "source_audio_status": "not_generated",
+  "review": {
+    "content_editor": "pending",
+    "audio_listening": "pending",
+    "rights_clearance": "pending",
+    "teacher_signoff": "pending",
+    "publish_ready": false
+  },
+  "notes_vi": "Hoạt động luyện tập trích từ lượt thoại gốc M17–M20. Không có audio thật/timestamp ở gói nguồn. Không công bố trước transcript/đáp án."
+}

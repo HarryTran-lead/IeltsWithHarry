@@ -1,0 +1,333 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "DICT-S2-003",
+  "status": "draft",
+  "level": "L2",
+  "section": 2,
+  "topic": "Public Parks",
+  "title": "A Morning in Fernhill Park",
+  "learning_objectives_vi": [
+    "Nghe độc thoại chủ đề Public Parks và xác định mục đích thông báo.",
+    "Nhận diện cấu trúc ý và các chi tiết quan trọng theo thứ tự phát biểu.",
+    "Luyện nhận diện thời gian, chi phí, điều kiện và chi tiết được thay đổi."
+  ],
+  "content_format": "section_bridge",
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Visitor guide / programme coordinator (one narrator)",
+      "tts_voice_id": null,
+      "accent_requested": "new_zealand"
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "Good morning and welcome to Fernhill Park. We have two walking routes for visitors today.",
+      "translation_vi": "Chào buổi sáng và chào mừng đến công viên Fernhill. Hôm nay có hai tuyến đi bộ.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_2",
+        "monologue",
+        "l2",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "A",
+      "text_en": "The short route takes twenty minutes and stays close to the lake.",
+      "translation_vi": "Tuyến ngắn mất hai mươi phút và đi sát hồ.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_2",
+        "monologue",
+        "l2",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "A",
+      "text_en": "The longer route passes the flower garden and reaches the wooden bridge.",
+      "translation_vi": "Tuyến dài đi qua vườn hoa rồi đến cầu gỗ.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_2",
+        "monologue",
+        "l2",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "A",
+      "text_en": "You can collect a free map from the visitor centre by the north gate.",
+      "translation_vi": "Các bạn có thể lấy bản đồ miễn phí tại trung tâm du khách cạnh cổng bắc.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_2",
+        "monologue",
+        "l2",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "A",
+      "text_en": "Please keep dogs on leads because nesting birds live near the water.",
+      "translation_vi": "Vui lòng xích chó vì chim đang làm tổ sống gần nước.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_2",
+        "monologue",
+        "l2",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "A",
+      "text_en": "The café shuts at four, but the park gates remain open until six.",
+      "translation_vi": "Quán cà phê đóng lúc bốn giờ, nhưng cổng công viên mở tới sáu giờ.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_2",
+        "monologue",
+        "l2",
+        "signposting"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "type": "note_completion",
+      "prompt": "Notes — Short route duration in minutes: ____",
+      "correct_answers": [
+        "twenty"
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Tuyến ngắn kéo dài hai mươi phút.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_2",
+        "ielts_practice",
+        "detail_recognition"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q02",
+      "type": "table_completion",
+      "prompt": "Table — Long route crosses the wooden: ____",
+      "correct_answers": [
+        "bridge"
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Tuyến dài đến cầu gỗ.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_2",
+        "ielts_practice",
+        "detail_recognition"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q03",
+      "type": "note_completion",
+      "prompt": "Notes — Free maps available at the: ____",
+      "correct_answers": [
+        "visitor centre"
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Lấy bản đồ ở trung tâm du khách.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_2",
+        "ielts_practice",
+        "detail_recognition"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q04",
+      "type": "note_completion",
+      "prompt": "Notes — Dogs must be kept on: ____",
+      "correct_answers": [
+        "leads"
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Chó phải được xích.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_2",
+        "ielts_practice",
+        "detail_recognition"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q05",
+      "type": "note_completion",
+      "prompt": "Notes — Park gates close at: ____",
+      "correct_answers": [
+        "six"
+      ],
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "explanation_vi": "Cổng đóng lúc sáu giờ, không phải bốn giờ của quán.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_2",
+        "ielts_practice",
+        "distractor"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "D01",
+      "type": "dictation",
+      "prompt": "Nghe lại và chép nguyên văn đoạn T03 (toàn bộ lời người dẫn).",
+      "correct_answers": [
+        "The longer route passes the flower garden and reaches the wooden bridge."
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Câu gốc: The longer route passes the flower garden and reaches the wooden bridge. Nghĩa: Tuyến dài đi qua vườn hoa rồi đến cầu gỗ. Lưu ý từ chức năng, âm cuối và cụm từ nối.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "exact_transcript",
+        "section_2"
+      ]
+    },
+    {
+      "question_id": "D02",
+      "type": "dictation",
+      "prompt": "Nghe lại và chép nguyên văn đoạn T05 (toàn bộ lời người dẫn).",
+      "correct_answers": [
+        "Please keep dogs on leads because nesting birds live near the water."
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Câu gốc: Please keep dogs on leads because nesting birds live near the water. Nghĩa: Vui lòng xích chó vì chim đang làm tổ sống gần nước. Lưu ý từ chức năng, âm cuối và cụm từ nối.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "exact_transcript",
+        "section_2"
+      ]
+    },
+    {
+      "question_id": "G01",
+      "type": "gap_fill",
+      "prompt": "Điền cụm từ bị ẩn sau khi nghe: You can collect a free map from the ____ by the north gate.",
+      "correct_answers": [
+        "visitor centre"
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "visitor centre: trung tâm du khách. Ngữ cảnh: Các bạn có thể lấy bản đồ miễn phí tại trung tâm du khách cạnh cổng bắc.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "gap_fill",
+        "vocab_in_context",
+        "section_2"
+      ]
+    }
+  ],
+  "vocabulary": [
+    {
+      "term": "visitor centre",
+      "pos": "n. phr.",
+      "meaning_vi": "trung tâm du khách",
+      "example_en": "You can collect a free map from the visitor centre by the north gate.",
+      "example_vi": "Các bạn có thể lấy bản đồ miễn phí tại trung tâm du khách cạnh cổng bắc.",
+      "source_turn_id": "T04"
+    },
+    {
+      "term": "route",
+      "pos": "n.",
+      "meaning_vi": "tuyến đường",
+      "example_en": "The short route takes twenty minutes and stays close to the lake.",
+      "example_vi": "Tuyến ngắn mất hai mươi phút và đi sát hồ.",
+      "source_turn_id": "T02"
+    },
+    {
+      "term": "café",
+      "pos": "n.",
+      "meaning_vi": "quán cà phê",
+      "example_en": "The café shuts at four, but the park gates remain open until six.",
+      "example_vi": "Quán cà phê đóng lúc bốn giờ, nhưng cổng công viên mở tới sáu giờ.",
+      "source_turn_id": "T06"
+    },
+    {
+      "term": "garden",
+      "pos": "n.",
+      "meaning_vi": "khu vườn",
+      "example_en": "The longer route passes the flower garden and reaches the wooden bridge.",
+      "example_vi": "Tuyến dài đi qua vườn hoa rồi đến cầu gỗ.",
+      "source_turn_id": "T03"
+    }
+  ],
+  "audio": {
+    "status": "not_generated",
+    "url": null,
+    "duration_ms": null,
+    "model": null,
+    "provider": null,
+    "voice_config": null,
+    "source_transcript_hash": "056a8b1266aae503e8dff2cfb7b700b9503eda454671fbd0f5b0018a0d565c3a",
+    "audio_sha256": null,
+    "format": null
+  },
+  "qa": {
+    "content_reviewed": false,
+    "answers_verified": false,
+    "audio_verified": false,
+    "rights_cleared": false,
+    "duplicate_reviewed": false,
+    "notes": [
+      "AI-assisted original writing; pedagogical and pronunciation review still required.",
+      "No TTS or sentence-level timestamps supplied; do not publish.",
+      "This is Section 2 skill practice, not an official IELTS test.",
+      "M16.2: automated edits are provisional; IELTS teacher final signoff, audio and rights clearance pending."
+    ]
+  },
+  "provenance": {
+    "content_origin": "original_ai_assisted",
+    "source_urls": [],
+    "source_rights_note": "Newly authored educational monologue. Confirm audio model distribution, age suitability and TOS separately before publishing.",
+    "reviewer": null
+  },
+  "release_metadata": {
+    "published_at": null,
+    "version": 1
+  }
+}

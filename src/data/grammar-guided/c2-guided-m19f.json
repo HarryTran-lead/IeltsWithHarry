@@ -1,0 +1,1302 @@
+{
+  "C2-01": {
+    "code": "C2-01",
+    "source_lesson_id": "C2-01",
+    "title": "Subtle Tense Nuances",
+    "context_vi": "Biên tập nhật ký nghiên cứu trước khi công bố",
+    "goal_vi": "Chọn thì và cách quy chiếu thời gian để làm rõ chuỗi sự kiện, dự định dang dở và quan hệ giữa thời điểm kể với thời điểm sự việc.",
+    "contrast_cue_vi": "Câu đầu chỉ một dự định bị gián đoạn, câu sau khẳng định việc công bố đã diễn ra. Đổi thì làm thay đổi sự thật được thông báo.",
+    "checkpoints": [
+      {
+        "id": "M19F-C2-01-CHECK-01",
+        "prompt_vi": "Lúc chuông báo vang lên, chủ tọa mới chuẩn bị công bố phán quyết; chưa công bố. Câu nào giữ nguyên thông tin?",
+        "options_en": [
+          "The chair was about to announce the verdict when the alarm sounded.",
+          "The chair had announced the verdict when the alarm sounded.",
+          "The chair announced the verdict before the alarm sounded."
+        ],
+        "correct_index": 0,
+        "option_feedback_vi": [
+          "Was about to nêu hành động sắp xảy ra; không khẳng định phán quyết đã công bố.",
+          "Had announced khẳng định việc công bố đã hoàn tất, trái dữ kiện.",
+          "Before the alarm biến hành động chưa xảy ra thành sự kiện đã diễn ra."
+        ],
+        "focus": "timeline_intention"
+      },
+      {
+        "id": "M19F-C2-01-CHECK-02",
+        "prompt_vi": "Một bản tường trình ghi: “The team had been preparing the report when approval was withdrawn.” Điều gì có thể kết luận?",
+        "options_en": [
+          "The report had definitely been published.",
+          "The preparation preceded the withdrawal; publication is not confirmed.",
+          "The approval was withdrawn before preparation began."
+        ],
+        "correct_index": 1,
+        "option_feedback_vi": [
+          "Đang chuẩn bị không đồng nghĩa đã xuất bản.",
+          "Past perfect continuous đặt quá trình chuẩn bị trước mốc phê duyệt bị rút; không xác nhận xuất bản.",
+          "Trình tự được nêu là chuẩn bị rồi mới rút phê duyệt."
+        ],
+        "focus": "aspect_implication"
+      },
+      {
+        "id": "M19F-C2-01-CHECK-03",
+        "prompt_vi": "Bản gốc: “We were going to open in May, but the permit arrived in June.” Câu biên tập nào không thêm sự kiện?",
+        "options_en": [
+          "We opened in May despite the delayed permit.",
+          "We finally opened in June.",
+          "We had intended to open in May, but the permit did not arrive until June."
+        ],
+        "correct_index": 2,
+        "option_feedback_vi": [
+          "Tự tạo sự kiện mở cửa tháng Năm.",
+          "Giấy phép đến tháng Sáu không chứng minh đã mở trong tháng Sáu.",
+          "Giữ lại ý định mở tháng Năm và thời điểm giấy phép; không suy ra ngày mở thực tế."
+        ],
+        "focus": "factual_rewrite"
+      }
+    ],
+    "transfer": {
+      "prompt_vi": "Biên tập nhật ký nghiên cứu trước khi công bố. Nhiệm vụ: Write a three-sentence timeline that separates intended action from confirmed events. Viết 3–5 câu, rồi ghi 2 quyết định biên tập: bạn đã giữ nguyên dữ kiện nào và thay đổi sắc thái/nhấn mạnh ra sao?",
+      "sample_en": "The team had been preparing to release the preliminary results when the regulator requested a second review. No findings were published at that stage. The revised report eventually appeared six weeks later, after the additional checks had been completed.",
+      "rubric_vi": "(1) Không tự thêm sự kiện/tác nhân/nguyên nhân; (2) quan hệ thời gian, phạm vi phủ định và độ chắc chắn nhất quán; (3) lựa chọn cấu trúc tạo hiệu quả thực sự về register/cohesion; (4) không có tham chiếu mơ hồ; (5) giải thích được hai quyết định biên tập. Có nhiều đáp án hợp lệ; ví dụ chỉ để đối chiếu."
+    },
+    "review_status": "DRAFT_TEACHER_REVIEW_REQUIRED",
+    "assessment_mode": "FORMATIVE_ONLY"
+  },
+  "C2-02": {
+    "code": "C2-02",
+    "source_lesson_id": "C2-02",
+    "title": "Complex Aspect & Time Reference",
+    "context_vi": "Tường trình một dự án vẫn tiếp tục thu thập dữ liệu",
+    "goal_vi": "Aspect cho phép người viết chọn nhấn quá trình, kết quả, tính lặp lại hoặc hiệu lực còn kéo dài; chuyển dạng có thể thay đổi hàm ý.",
+    "contrast_cue_vi": "Câu đầu có thể nhấn hoạt động đã thực hiện hoặc thành quả; câu sau nêu quá trình kéo dài, không tự khẳng định đã hoàn tất phân tích.",
+    "checkpoints": [
+      {
+        "id": "M19F-C2-02-CHECK-01",
+        "prompt_vi": "Nhóm vẫn đang theo dõi thiết bị kể từ tháng Một; chưa công bố kết luận cuối. Chọn câu có aspect phù hợp.",
+        "options_en": [
+          "The team will have monitored the equipment since January.",
+          "The team has been monitoring the equipment since January.",
+          "The team had monitored the equipment since January."
+        ],
+        "correct_index": 1,
+        "option_feedback_vi": [
+          "Will have monitored đặt điểm nhìn tương lai không được cung cấp.",
+          "Hiện tại hoàn thành tiếp diễn nhấn hoạt động từ tháng Một có thể vẫn đang diễn ra.",
+          "Had monitored cần một mốc quá khứ tham chiếu khác, không có trong bối cảnh."
+        ],
+        "focus": "aspect_continuity"
+      },
+      {
+        "id": "M19F-C2-02-CHECK-02",
+        "prompt_vi": "Báo cáo cần tách thành quả đã hoàn tất khỏi công việc còn tiếp diễn. Câu nào làm rõ hai trạng thái?",
+        "options_en": [
+          "We had completed everything, although we are still analysing the same final data.",
+          "We have been completing the final report, and it has already been issued.",
+          "We have completed three interim reports, but the final review is still under way."
+        ],
+        "correct_index": 2,
+        "option_feedback_vi": [
+          "Had completed everything mâu thuẫn với công việc phân tích cuối chưa hoàn tất.",
+          "Hoàn thành/đã phát hành bị ghép thiếu rõ ràng với tình trạng còn tiếp diễn.",
+          "Completed xác định kết quả đã xong; still under way xác định công việc chưa xong."
+        ],
+        "focus": "result_vs_process"
+      },
+      {
+        "id": "M19F-C2-02-CHECK-03",
+        "prompt_vi": "Câu nguồn: “The staff have been reviewing the files since Monday, and the review is ongoing.” Sửa nào giữ nghĩa?",
+        "options_en": [
+          "The staff have been examining the files since Monday and have not finished the review.",
+          "The staff reviewed the files on Monday and finished.",
+          "The staff had finished the review before Monday."
+        ],
+        "correct_index": 0,
+        "option_feedback_vi": [
+          "Diễn đạt lại quá trình vẫn tiếp diễn, không suy ra kết quả hoàn tất.",
+          "Thêm kết thúc công việc mà câu nguồn không có.",
+          "Đảo thời gian và tự thêm việc hoàn tất."
+        ],
+        "focus": "preserve_aspect"
+      }
+    ],
+    "transfer": {
+      "prompt_vi": "Tường trình một dự án vẫn tiếp tục thu thập dữ liệu. Nhiệm vụ: Draft a progress note that distinguishes work under way from completed milestones. Viết 3–5 câu, rồi ghi 2 quyết định biên tập: bạn đã giữ nguyên dữ kiện nào và thay đổi sắc thái/nhấn mạnh ra sao?",
+      "sample_en": "Researchers have been monitoring the site since January, and the observation phase is still under way. They have completed three interim reports but have not yet issued a final recommendation. Any summary should therefore distinguish established patterns from provisional interpretations.",
+      "rubric_vi": "(1) Không tự thêm sự kiện/tác nhân/nguyên nhân; (2) quan hệ thời gian, phạm vi phủ định và độ chắc chắn nhất quán; (3) lựa chọn cấu trúc tạo hiệu quả thực sự về register/cohesion; (4) không có tham chiếu mơ hồ; (5) giải thích được hai quyết định biên tập. Có nhiều đáp án hợp lệ; ví dụ chỉ để đối chiếu."
+    },
+    "review_status": "DRAFT_TEACHER_REVIEW_REQUIRED",
+    "assessment_mode": "FORMATIVE_ONLY"
+  },
+  "C2-03": {
+    "code": "C2-03",
+    "source_lesson_id": "C2-03",
+    "title": "Fine-grained Modality",
+    "context_vi": "Tóm tắt nguyên nhân sai lệch trong báo cáo kiểm toán",
+    "goal_vi": "Điều chỉnh modality theo bằng chứng, trách nhiệm phát ngôn và mức độ cam kết trong đánh giá chuyên môn.",
+    "contrast_cue_vi": "Must have khẳng định suy luận rất mạnh, đặc biệt rủi ro khi quy kết gian lận; could have chỉ khả năng có thể xảy ra, không xác nhận nguyên nhân.",
+    "checkpoints": [
+      {
+        "id": "M19F-C2-03-CHECK-01",
+        "prompt_vi": "Có sai lệch số liệu nhưng chưa xác định nguyên nhân. Câu nào tránh quy kết quá mức?",
+        "options_en": [
+          "The discrepancy must have resulted from fraud.",
+          "The discrepancy definitely proves misconduct.",
+          "The discrepancy may have resulted from a transcription error."
+        ],
+        "correct_index": 2,
+        "option_feedback_vi": [
+          "Must have cộng fraud quy kết cực mạnh khi chưa có bằng chứng.",
+          "Definitely proves nâng dữ kiện sai lệch thành chứng cứ về hành vi sai trái.",
+          "May have nêu một khả năng cần kiểm chứng, không khẳng định nguyên nhân."
+        ],
+        "focus": "evidence_modality"
+      },
+      {
+        "id": "M19F-C2-03-CHECK-02",
+        "prompt_vi": "Cầu đóng từ 22h đến 6h; biên bản nói đoàn xe qua cầu lúc 0h. Nếu lịch đóng cầu chính xác, phát biểu nào phù hợp nhất?",
+        "options_en": [
+          "The convoy cannot have crossed the bridge at midnight under those conditions.",
+          "The convoy should have crossed the bridge at midnight.",
+          "The convoy might have crossed the bridge at midnight."
+        ],
+        "correct_index": 0,
+        "option_feedback_vi": [
+          "Cannot have biểu thị suy luận bất khả dựa trên điều kiện được xác nhận.",
+          "Should have nói kỳ vọng/nghĩa vụ, không giải thích bằng chứng không thể đi qua.",
+          "Might have bỏ qua bằng chứng cầu bị đóng trong khoảng này."
+        ],
+        "focus": "strength_of_inference"
+      },
+      {
+        "id": "M19F-C2-03-CHECK-03",
+        "prompt_vi": "Lời giải ban đầu: “The missing figure must be a deliberate alteration.” Chưa có bằng chứng về người sửa. Sửa nào thận trọng?",
+        "options_en": [
+          "The missing figure means the manager altered the ledger.",
+          "The missing figure could reflect an entry error; the cause remains unverified.",
+          "The missing figure was certainly inserted by the manager."
+        ],
+        "correct_index": 1,
+        "option_feedback_vi": [
+          "Kết luận nhân quả/quy trách nhiệm chưa có căn cứ.",
+          "Giữ giả thuyết và nói rõ thiếu bằng chứng, không buộc tội.",
+          "Tự xác định người và động cơ."
+        ],
+        "focus": "epistemic_rewrite"
+      }
+    ],
+    "transfer": {
+      "prompt_vi": "Tóm tắt nguyên nhân sai lệch trong báo cáo kiểm toán. Nhiệm vụ: Write a cautious assessment of an unexplained discrepancy without assigning blame. Viết 3–5 câu, rồi ghi 2 quyết định biên tập: bạn đã giữ nguyên dữ kiện nào và thay đổi sắc thái/nhấn mạnh ra sao?",
+      "sample_en": "The discrepancy may reflect a transcription error, although the available records do not establish its cause. A deliberate alteration cannot be excluded, but neither can it be inferred from the figures alone. The audit should therefore verify the original entries before reaching a conclusion.",
+      "rubric_vi": "(1) Không tự thêm sự kiện/tác nhân/nguyên nhân; (2) quan hệ thời gian, phạm vi phủ định và độ chắc chắn nhất quán; (3) lựa chọn cấu trúc tạo hiệu quả thực sự về register/cohesion; (4) không có tham chiếu mơ hồ; (5) giải thích được hai quyết định biên tập. Có nhiều đáp án hợp lệ; ví dụ chỉ để đối chiếu."
+    },
+    "review_status": "DRAFT_TEACHER_REVIEW_REQUIRED",
+    "assessment_mode": "FORMATIVE_ONLY"
+  },
+  "C2-04": {
+    "code": "C2-04",
+    "source_lesson_id": "C2-04",
+    "title": "Layered Counterfactuals",
+    "context_vi": "Bản báo cáo đánh giá rủi ro khi nâng cấp hệ thống chậm",
+    "goal_vi": "Điều kiện phản thực nhiều lớp cần phân biệt rõ kết quả quá khứ, tình trạng hiện tại và giả thuyết mới; không để đảo ngữ khiến mất quan hệ thời gian.",
+    "contrast_cue_vi": "Câu đầu: quá khứ ảnh hưởng mức độ an toàn hiện tại; câu sau: kết quả giả định tại thời điểm quá khứ.",
+    "checkpoints": [
+      {
+        "id": "M19F-C2-04-CHECK-01",
+        "prompt_vi": "Máy không được nâng cấp năm ngoái; hiện an toàn thấp. Chọn phản thực nối quá khứ với hiện tại.",
+        "options_en": [
+          "Had the system been upgraded last year, it would be safer now.",
+          "Had the system been upgraded last year, it would have been safer then.",
+          "Were the system upgraded now, it would have been safer last year."
+        ],
+        "correct_index": 0,
+        "option_feedback_vi": [
+          "Had been upgraded là điều kiện quá khứ; would be safer now là kết quả giả định hiện tại.",
+          "Kết quả then nằm ở quá khứ, không trả lời về hiện tại.",
+          "Giả định nâng cấp hiện tại không tạo kết quả trong quá khứ như yêu cầu."
+        ],
+        "focus": "mixed_counterfactual"
+      },
+      {
+        "id": "M19F-C2-04-CHECK-02",
+        "prompt_vi": "Bạn cần viết chính sách: nếu hội đồng từ chối trong tương lai, dự án sẽ dừng. Chọn đảo ngữ trang trọng.",
+        "options_en": [
+          "Had the board rejected the proposal, the project would stop tomorrow.",
+          "Were the board to reject the proposal, the project would be suspended.",
+          "Should the board rejected the proposal, the project would be suspended."
+        ],
+        "correct_index": 1,
+        "option_feedback_vi": [
+          "Had rejected đưa điều kiện thành phản thực quá khứ, khác giả thiết tương lai.",
+          "Were ... to diễn đạt điều kiện tương lai giả định trang trọng và hệ quả tương ứng.",
+          "Sau should đảo ngữ dùng nguyên mẫu reject, không dùng rejected."
+        ],
+        "focus": "future_hypothesis"
+      },
+      {
+        "id": "M19F-C2-04-CHECK-03",
+        "prompt_vi": "Một báo cáo nói “Had the sensor been replaced, we would have detected the fault earlier.” Không có bằng chứng việc thay đã xảy ra. Chọn cách mô tả đúng.",
+        "options_en": [
+          "The sensor was replaced, and the fault was detected earlier.",
+          "The sensor will be replaced because the fault was detected earlier.",
+          "The sentence presents an unreal past condition and a hypothetical earlier detection."
+        ],
+        "correct_index": 2,
+        "option_feedback_vi": [
+          "Phản thực không chứng minh điều kiện đã xảy ra.",
+          "Tạo chuỗi nhân quả và thời gian mới.",
+          "Diễn giải chính xác điều kiện và kết quả giả định, không xác nhận sự kiện."
+        ],
+        "focus": "hypothetical_status"
+      }
+    ],
+    "transfer": {
+      "prompt_vi": "Bản báo cáo đánh giá rủi ro khi nâng cấp hệ thống chậm. Nhiệm vụ: Write a short retrospective separating an unreal past action from a present consequence. Viết 3–5 câu, rồi ghi 2 quyết định biên tập: bạn đã giữ nguyên dữ kiện nào và thay đổi sắc thái/nhấn mạnh ra sao?",
+      "sample_en": "Had the monitoring system been upgraded before the trial, the team might have detected the fault earlier. The equipment would now be easier to maintain, although the size of that benefit is uncertain. The review should distinguish these hypothetical advantages from outcomes that were actually observed.",
+      "rubric_vi": "(1) Không tự thêm sự kiện/tác nhân/nguyên nhân; (2) quan hệ thời gian, phạm vi phủ định và độ chắc chắn nhất quán; (3) lựa chọn cấu trúc tạo hiệu quả thực sự về register/cohesion; (4) không có tham chiếu mơ hồ; (5) giải thích được hai quyết định biên tập. Có nhiều đáp án hợp lệ; ví dụ chỉ để đối chiếu."
+    },
+    "review_status": "DRAFT_TEACHER_REVIEW_REQUIRED",
+    "assessment_mode": "FORMATIVE_ONLY"
+  },
+  "C2-05": {
+    "code": "C2-05",
+    "source_lesson_id": "C2-05",
+    "title": "Rhetorical Inversion",
+    "context_vi": "Rà soát kết luận điều tra nhằm tránh kịch tính hóa",
+    "goal_vi": "Đảo ngữ tu từ có thể nhấn phản chứng hoặc thứ tự thông tin, nhưng dùng quá mức khiến văn bản khoa trương và khó đọc.",
+    "contrast_cue_vi": "Cả hai diễn đạt thời điểm phát hiện; only after + đảo ngữ làm nổi bật việc phải đợi tới lần kiểm tra thứ hai.",
+    "checkpoints": [
+      {
+        "id": "M19F-C2-05-CHECK-01",
+        "prompt_vi": "Nhóm phát hiện sai lệch chỉ sau lần kiểm tra thứ hai. Chọn câu nhấn mốc phát hiện.",
+        "options_en": [
+          "Only after the second inspection did the discrepancy became clear.",
+          "Only after the second inspection did the discrepancy become clear.",
+          "Only after the second inspection the discrepancy became clear."
+        ],
+        "correct_index": 1,
+        "option_feedback_vi": [
+          "Sau did dùng nguyên mẫu become, không dùng became.",
+          "Only after mở đầu kích hoạt đảo trợ động từ did và nhấn thời điểm muộn.",
+          "Thiếu đảo trợ động từ sau only after ở đầu câu."
+        ],
+        "focus": "licensed_inversion"
+      },
+      {
+        "id": "M19F-C2-05-CHECK-02",
+        "prompt_vi": "Đoạn báo cáo đã có hai câu đảo ngữ liên tiếp. Câu tiếp theo chỉ nêu thông tin trung tính. Phương án tự nhiên?",
+        "options_en": [
+          "Rarely the panel issues this kind of notice.",
+          "Rarely does the panel issue such a routine notice!",
+          "The panel rarely issues this kind of notice."
+        ],
+        "correct_index": 2,
+        "option_feedback_vi": [
+          "Đưa rarely lên đầu mà không đảo trợ động từ là lỗi.",
+          "Đảo ngữ/dấu chấm than thêm kịch tính không cần thiết.",
+          "Trật tự thường rõ và vẫn giữ nghĩa hiếm xảy ra."
+        ],
+        "focus": "register_control"
+      },
+      {
+        "id": "M19F-C2-05-CHECK-03",
+        "prompt_vi": "Đề nguồn: “Never the team had encountered this fault.” Chọn sửa đúng mà không đổi thì.",
+        "options_en": [
+          "Never had the team encountered this fault.",
+          "Never had encountered the team this fault.",
+          "The team never encounters this fault."
+        ],
+        "correct_index": 0,
+        "option_feedback_vi": [
+          "Đảo had trước chủ ngữ, giữ past perfect và ý nghĩa.",
+          "Trật tự chủ ngữ/tân ngữ không đúng.",
+          "Chuyển sang hiện tại đơn, làm đổi mốc thời gian."
+        ],
+        "focus": "syntax_preservation"
+      }
+    ],
+    "transfer": {
+      "prompt_vi": "Rà soát kết luận điều tra nhằm tránh kịch tính hóa. Nhiệm vụ: Revise a three-sentence finding using at most one inversion for justified emphasis. Viết 3–5 câu, rồi ghi 2 quyết định biên tập: bạn đã giữ nguyên dữ kiện nào và thay đổi sắc thái/nhấn mạnh ra sao?",
+      "sample_en": "Only when the original records were examined did the discrepancy become clear. However, the source of the error remains uncertain. The board should avoid treating the timing of its discovery as evidence of misconduct.",
+      "rubric_vi": "(1) Không tự thêm sự kiện/tác nhân/nguyên nhân; (2) quan hệ thời gian, phạm vi phủ định và độ chắc chắn nhất quán; (3) lựa chọn cấu trúc tạo hiệu quả thực sự về register/cohesion; (4) không có tham chiếu mơ hồ; (5) giải thích được hai quyết định biên tập. Có nhiều đáp án hợp lệ; ví dụ chỉ để đối chiếu."
+    },
+    "review_status": "DRAFT_TEACHER_REVIEW_REQUIRED",
+    "assessment_mode": "FORMATIVE_ONLY"
+  },
+  "C2-06": {
+    "code": "C2-06",
+    "source_lesson_id": "C2-06",
+    "title": "Advanced Fronting",
+    "context_vi": "Email giải thích giới hạn nghiên cứu",
+    "goal_vi": "Fronting chuyển trọng tâm thông tin, nhưng phải bảo đảm quan hệ chủ đề–bình luận rõ và tránh câu có trật tự khó hiểu.",
+    "contrast_cue_vi": "Fronting đặt this uncertainty vào vị trí chủ đề/đối lập và có màu sắc nhấn mạnh; bản trung tính thường thích hợp hơn khi không cần đối chiếu.",
+    "checkpoints": [
+      {
+        "id": "M19F-C2-06-CHECK-01",
+        "prompt_vi": "Hai phương án đang được so sánh; chỉ phương án đầu đã bị bác bỏ. Chọn fronting có mục đích rõ.",
+        "options_en": [
+          "The committee rejected every proposal, including the alternative.",
+          "Under no circumstances rejected the committee that proposal.",
+          "That proposal, the committee rejected; the alternative remains under review."
+        ],
+        "correct_index": 2,
+        "option_feedback_vi": [
+          "Sai dữ kiện: phương án thay thế chưa bị bác bỏ.",
+          "Đảo ngữ phủ định sai và thay nghĩa thành cấm tuyệt đối.",
+          "Đưa that proposal lên đầu tạo đối chiếu rõ với the alternative."
+        ],
+        "focus": "topic_fronting"
+      },
+      {
+        "id": "M19F-C2-06-CHECK-02",
+        "prompt_vi": "Đoạn giải trình trung tính, không có tương phản nào trước đó. Câu nào tự nhiên hơn?",
+        "options_en": [
+          "We cannot remove this uncertainty.",
+          "Never this uncertainty we can remove.",
+          "This uncertainty we cannot remove."
+        ],
+        "correct_index": 0,
+        "option_feedback_vi": [
+          "Trật tự trung tính gọn và rõ khi không cần đánh dấu chủ đề.",
+          "Never ở đầu cần đảo trợ động từ và tạo sắc thái cực đoan.",
+          "Fronting không sai nhất thiết nhưng thiếu ngữ cảnh đối chiếu, dễ thành gượng."
+        ],
+        "focus": "markedness"
+      },
+      {
+        "id": "M19F-C2-06-CHECK-03",
+        "prompt_vi": "Câu gốc: “Under no circumstances should records be shared externally.” Chọn diễn giải đúng.",
+        "options_en": [
+          "The records must be shared in urgent circumstances.",
+          "The records must not be shared externally in any circumstances.",
+          "Staff may share the records if the director approves."
+        ],
+        "correct_index": 1,
+        "option_feedback_vi": [
+          "Đổi phủ định thành nghĩa bắt buộc.",
+          "Giữ nguyên phạm vi cấm và diễn đạt lại theo trật tự thường.",
+          "Gỡ bỏ tính cấm tuyệt đối của câu gốc."
+        ],
+        "focus": "negation_scope"
+      }
+    ],
+    "transfer": {
+      "prompt_vi": "Email giải thích giới hạn nghiên cứu. Nhiệm vụ: Draft a diplomatic three-sentence response using one natural topic-fronting construction. Viết 3–5 câu, rồi ghi 2 quyết định biên tập: bạn đã giữ nguyên dữ kiện nào và thay đổi sắc thái/nhấn mạnh ra sao?",
+      "sample_en": "The practical constraints we can address within this quarter. The broader uncertainty, however, requires another round of testing. We will therefore publish an interim note rather than a definitive conclusion.",
+      "rubric_vi": "(1) Không tự thêm sự kiện/tác nhân/nguyên nhân; (2) quan hệ thời gian, phạm vi phủ định và độ chắc chắn nhất quán; (3) lựa chọn cấu trúc tạo hiệu quả thực sự về register/cohesion; (4) không có tham chiếu mơ hồ; (5) giải thích được hai quyết định biên tập. Có nhiều đáp án hợp lệ; ví dụ chỉ để đối chiếu."
+    },
+    "review_status": "DRAFT_TEACHER_REVIEW_REQUIRED",
+    "assessment_mode": "FORMATIVE_ONLY"
+  },
+  "C2-07": {
+    "code": "C2-07",
+    "source_lesson_id": "C2-07",
+    "title": "Complex Clause Compression",
+    "context_vi": "Biên tập phương pháp nghiên cứu nhiều bước",
+    "goal_vi": "Rút gọn mệnh đề phức làm văn bản súc tích nhưng có thể che khuất tác nhân hoặc đảo ngược quan hệ thời gian.",
+    "contrast_cue_vi": "Câu thứ hai có nguy cơ dangling modifier vì chủ ngữ mệnh đề chính là several changes, không phải người đã đọc.",
+    "checkpoints": [
+      {
+        "id": "M19F-C2-07-CHECK-01",
+        "prompt_vi": "Người biên tập đã đọc bản nháp rồi mới yêu cầu sửa. Chọn câu rút gọn không sai tác nhân.",
+        "options_en": [
+          "Having reviewed the draft, the editor requested changes.",
+          "Having reviewed the draft, several changes were requested.",
+          "Reviewed the draft, the changes were requested by the editor."
+        ],
+        "correct_index": 0,
+        "option_feedback_vi": [
+          "Chủ ngữ editor là người thực hiện cả hai hành động.",
+          "Dangling modifier: several changes không thể là người đọc bản nháp.",
+          "Rút gọn không đúng và vẫn mơ hồ chủ thể hành động."
+        ],
+        "focus": "dangling_modifier"
+      },
+      {
+        "id": "M19F-C2-07-CHECK-02",
+        "prompt_vi": "Bản gốc: “After the analysts checked the raw entries, they compared the totals.” Chọn bản rút gọn giữ thứ tự thời gian.",
+        "options_en": [
+          "Checking the raw entries, the totals compared themselves.",
+          "Having checked the raw entries, the analysts compared the totals.",
+          "Having checked the raw entries, the totals were compared."
+        ],
+        "correct_index": 1,
+        "option_feedback_vi": [
+          "Biến totals thành tác nhân, không đúng.",
+          "Having checked đặt hành động kiểm tra trước, analysts làm cả hai hành động.",
+          "Đặt totals làm chủ ngữ mệnh đề chính gây dangling modifier."
+        ],
+        "focus": "sequence_and_agent"
+      },
+      {
+        "id": "M19F-C2-07-CHECK-03",
+        "prompt_vi": "Câu: “Walking into the laboratory, the report was on the desk.” Bản sửa giữ người đi vào là nhà nghiên cứu?",
+        "options_en": [
+          "Walking into the laboratory, the report lay on the desk.",
+          "Walking into the laboratory, the desk held the report.",
+          "Walking into the laboratory, the researcher saw the report on the desk."
+        ],
+        "correct_index": 2,
+        "option_feedback_vi": [
+          "Report không thể đi vào phòng thí nghiệm.",
+          "Desk không thể đi vào phòng thí nghiệm.",
+          "Researcher là tác nhân của walking; thông tin vị trí báo cáo vẫn giữ."
+        ],
+        "focus": "agent_repair"
+      }
+    ],
+    "transfer": {
+      "prompt_vi": "Biên tập phương pháp nghiên cứu nhiều bước. Nhiệm vụ: Edit a method summary to remove a dangling modifier and preserve sequence. Viết 3–5 câu, rồi ghi 2 quyết định biên tập: bạn đã giữ nguyên dữ kiện nào và thay đổi sắc thái/nhấn mạnh ra sao?",
+      "sample_en": "After the analysts had checked the raw entries, they compared the results with the published table. Finding two inconsistencies, they requested a fresh calculation. The report was amended only after the new figures had been verified independently.",
+      "rubric_vi": "(1) Không tự thêm sự kiện/tác nhân/nguyên nhân; (2) quan hệ thời gian, phạm vi phủ định và độ chắc chắn nhất quán; (3) lựa chọn cấu trúc tạo hiệu quả thực sự về register/cohesion; (4) không có tham chiếu mơ hồ; (5) giải thích được hai quyết định biên tập. Có nhiều đáp án hợp lệ; ví dụ chỉ để đối chiếu."
+    },
+    "review_status": "DRAFT_TEACHER_REVIEW_REQUIRED",
+    "assessment_mode": "FORMATIVE_ONLY"
+  },
+  "C2-08": {
+    "code": "C2-08",
+    "source_lesson_id": "C2-08",
+    "title": "Extended Postmodification",
+    "context_vi": "Rà soát thông báo về hồ sơ nghiên cứu",
+    "goal_vi": "Postmodification mở rộng danh ngữ nhưng dễ tạo phạm vi bổ nghĩa mơ hồ hoặc chuỗi danh từ quá tải.",
+    "contrast_cue_vi": "Câu đầu có thể khiến người đọc chậm xác định by the external team bổ nghĩa cho review hay reports; câu sau xác định ai thực hiện việc review.",
+    "checkpoints": [
+      {
+        "id": "M19F-C2-08-CHECK-01",
+        "prompt_vi": "Cần làm rõ nhóm ngoài là bên đánh giá tài liệu. Câu nào không mơ hồ?",
+        "options_en": [
+          "The reports’ review of the external team was delayed.",
+          "The external team’s review of the reports was delayed.",
+          "The review of the reports by the external team was delayed."
+        ],
+        "correct_index": 1,
+        "option_feedback_vi": [
+          "Đảo vai trò giữa đối tượng báo cáo và nhóm đánh giá.",
+          "Sở hữu xác định external team thực hiện review, không bổ nghĩa nhầm reports.",
+          "By the external team đặt xa review nên có thể khó xác định quan hệ."
+        ],
+        "focus": "attachment"
+      },
+      {
+        "id": "M19F-C2-08-CHECK-02",
+        "prompt_vi": "Danh ngữ “the report on the table by the door” có nguy cơ gì?",
+        "options_en": [
+          "It has no postmodifying phrases.",
+          "It necessarily means the table belongs to the door.",
+          "“By the door” may attach to the table or the report depending on context."
+        ],
+        "correct_index": 2,
+        "option_feedback_vi": [
+          "On the table và by the door đều là cụm bổ nghĩa sau danh từ.",
+          "Không có quan hệ sở hữu ấy trong cấu trúc.",
+          "Cụm giới từ có thể gắn vào danh từ khác nhau, tạo hai cách hiểu vị trí."
+        ],
+        "focus": "modifier_scope"
+      },
+      {
+        "id": "M19F-C2-08-CHECK-03",
+        "prompt_vi": "Câu gốc: “The reports prepared by the unit were reviewed by the panel.” Chọn cách làm rõ vẫn giữ hai tác nhân.",
+        "options_en": [
+          "The unit prepared the reports, and the panel reviewed them.",
+          "The panel prepared the reports and the unit reviewed them.",
+          "The panel approved all reports prepared by the unit."
+        ],
+        "correct_index": 0,
+        "option_feedback_vi": [
+          "Tách hai hành động và tác nhân rõ, không thêm việc phê duyệt.",
+          "Hoán đổi vai trò hai nhóm.",
+          "Tự thêm sự kiện approved."
+        ],
+        "focus": "clarifying_actors"
+      }
+    ],
+    "transfer": {
+      "prompt_vi": "Rà soát thông báo về hồ sơ nghiên cứu. Nhiệm vụ: Rewrite a dense noun phrase to make the reviewer, object and deadline unambiguous. Viết 3–5 câu, rồi ghi 2 quyết định biên tập: bạn đã giữ nguyên dữ kiện nào và thay đổi sắc thái/nhấn mạnh ra sao?",
+      "sample_en": "The external panel will review the revised proposals on Friday. The documents were prepared by the research group and include two updated budgets. The panel will issue its recommendation after examining the attachments.",
+      "rubric_vi": "(1) Không tự thêm sự kiện/tác nhân/nguyên nhân; (2) quan hệ thời gian, phạm vi phủ định và độ chắc chắn nhất quán; (3) lựa chọn cấu trúc tạo hiệu quả thực sự về register/cohesion; (4) không có tham chiếu mơ hồ; (5) giải thích được hai quyết định biên tập. Có nhiều đáp án hợp lệ; ví dụ chỉ để đối chiếu."
+    },
+    "review_status": "DRAFT_TEACHER_REVIEW_REQUIRED",
+    "assessment_mode": "FORMATIVE_ONLY"
+  },
+  "C2-09": {
+    "code": "C2-09",
+    "source_lesson_id": "C2-09",
+    "title": "Idiomatic Discourse Markers",
+    "context_vi": "Biên tập abstract về một kết quả bất ngờ",
+    "goal_vi": "Discourse markers mang chức năng quan hệ lập luận; chọn sai tín hiệu như nevertheless/therefore có thể làm sai logic dù ngữ pháp đúng.",
+    "contrast_cue_vi": "Nevertheless đánh dấu thông tin trái kỳ vọng; therefore gợi hệ quả nhân quả không được cung cấp.",
+    "checkpoints": [
+      {
+        "id": "M19F-C2-09-CHECK-01",
+        "prompt_vi": "Thử nghiệm nhỏ nhưng kết quả được lặp lại trong nghiên cứu khác. Chọn liên kết đúng.",
+        "options_en": [
+          "The sample was small; therefore, the pattern was replicated.",
+          "The sample was small; likewise, the pattern was replicated.",
+          "The sample was small; nevertheless, the pattern was replicated."
+        ],
+        "correct_index": 2,
+        "option_feedback_vi": [
+          "Therefore đặt quan hệ nhân quả vô căn cứ.",
+          "Likewise nói tương đồng, không diễn đạt rõ sự nhượng bộ cần có.",
+          "Nevertheless thể hiện trái kỳ vọng giữa hạn chế mẫu và sự tái xuất hiện."
+        ],
+        "focus": "discourse_relation"
+      },
+      {
+        "id": "M19F-C2-09-CHECK-02",
+        "prompt_vi": "Một nghiên cứu mới chưa đủ mạnh để khái quát cho dân số. Câu chuyển phù hợp nhất?",
+        "options_en": [
+          "The pattern appeared twice. That said, wider applicability remains uncertain.",
+          "The pattern appeared twice. Consequently, no further research is needed.",
+          "The pattern appeared twice. Therefore, it applies to everyone."
+        ],
+        "correct_index": 0,
+        "option_feedback_vi": [
+          "That said báo hiệu giới hạn của kết luận sau một kết quả thuận lợi.",
+          "Nêu hệ quả không được bằng chứng hỗ trợ.",
+          "Từ hai lần quan sát suy ra cho toàn bộ là quá mức."
+        ],
+        "focus": "concession"
+      },
+      {
+        "id": "M19F-C2-09-CHECK-03",
+        "prompt_vi": "Câu gốc: “The records are incomplete; therefore, the precise cause cannot yet be established.” Đánh giá quan hệ?",
+        "options_en": [
+          "Nevertheless would mean exactly the same causal link.",
+          "Therefore is justified because incomplete evidence limits the conclusion.",
+          "Therefore is inappropriate because records and causes are unrelated."
+        ],
+        "correct_index": 1,
+        "option_feedback_vi": [
+          "Nevertheless biểu thị nhượng bộ, không tương đương therefore.",
+          "Quan hệ nguyên nhân–hệ quả có căn cứ: thiếu hồ sơ dẫn tới chưa thể kết luận.",
+          "Hồ sơ không đủ là lý do trực tiếp khiến chưa xác định nguyên nhân chính xác."
+        ],
+        "focus": "causal_entailment"
+      }
+    ],
+    "transfer": {
+      "prompt_vi": "Biên tập abstract về một kết quả bất ngờ. Nhiệm vụ: Improve cohesion with one justified concessive marker and one limitation. Viết 3–5 câu, rồi ghi 2 quyết định biên tập: bạn đã giữ nguyên dữ kiện nào và thay đổi sắc thái/nhấn mạnh ra sao?",
+      "sample_en": "The initial trial involved only thirty participants; nevertheless, a similar pattern appeared in a separate pilot. The replication lends limited support to the observation, but neither study was large enough to establish a general population effect. A broader study is therefore warranted.",
+      "rubric_vi": "(1) Không tự thêm sự kiện/tác nhân/nguyên nhân; (2) quan hệ thời gian, phạm vi phủ định và độ chắc chắn nhất quán; (3) lựa chọn cấu trúc tạo hiệu quả thực sự về register/cohesion; (4) không có tham chiếu mơ hồ; (5) giải thích được hai quyết định biên tập. Có nhiều đáp án hợp lệ; ví dụ chỉ để đối chiếu."
+    },
+    "review_status": "DRAFT_TEACHER_REVIEW_REQUIRED",
+    "assessment_mode": "FORMATIVE_ONLY"
+  },
+  "C2-10": {
+    "code": "C2-10",
+    "source_lesson_id": "C2-10",
+    "title": "Spoken Ellipsis & Repairs",
+    "context_vi": "Xử lý biên bản phỏng vấn có sửa số liệu",
+    "goal_vi": "Ngữ pháp hội thoại gồm ellipsis, self-repair và turn-taking; biên tập không được tự biến lời nói tự nhiên thành lỗi.",
+    "contrast_cue_vi": "Câu đầu giữ được quá trình người nói tự sửa, phù hợp transcript; câu sau phù hợp báo cáo tóm lược chỉ cần kết quả cuối.",
+    "checkpoints": [
+      {
+        "id": "M19F-C2-10-CHECK-01",
+        "prompt_vi": "Bản chép lời cần giữ quá trình người nói sửa số 15 thành 18. Chọn cách ghi phù hợp.",
+        "options_en": [
+          "About fifteen people attended—sorry, eighteen.",
+          "Exactly fifteen people attended.",
+          "The verified attendance was eighteen."
+        ],
+        "correct_index": 0,
+        "option_feedback_vi": [
+          "Giữ lần nói đầu và sự tự sửa, phù hợp transcript.",
+          "Bỏ mất con số đã đính chính.",
+          "Người nói tự sửa không đồng nghĩa con số đã được xác minh độc lập."
+        ],
+        "focus": "transcript_repair"
+      },
+      {
+        "id": "M19F-C2-10-CHECK-02",
+        "prompt_vi": "Báo cáo tóm tắt chỉ cần ước lượng cuối của người được phỏng vấn. Chọn câu đúng.",
+        "options_en": [
+          "Attendance records confirm that eighteen attended.",
+          "The interviewee corrected their estimate from fifteen to eighteen attendees.",
+          "Fifteen people attended; the later figure was a mistake."
+        ],
+        "correct_index": 1,
+        "option_feedback_vi": [
+          "Tự thêm xác nhận từ hồ sơ.",
+          "Giữ sự kiện phát ngôn và mức độ chắc chắn là estimate.",
+          "Không có căn cứ bảo số sửa sau sai."
+        ],
+        "focus": "summary_vs_transcript"
+      },
+      {
+        "id": "M19F-C2-10-CHECK-03",
+        "prompt_vi": "Phỏng vấn: “Has the auditor reviewed the file?” “Not yet.” Diễn giải nào chính xác?",
+        "options_en": [
+          "The auditor will never review the file.",
+          "The auditor has already reviewed the file.",
+          "The auditor has not reviewed the file so far."
+        ],
+        "correct_index": 2,
+        "option_feedback_vi": [
+          "Not yet không biểu thị phủ định vĩnh viễn.",
+          "Đảo nghĩa sang đã hoàn tất.",
+          "Not yet là câu tỉnh lược cho hành động chưa xảy ra đến thời điểm nói."
+        ],
+        "focus": "ellipsis_recovery"
+      }
+    ],
+    "transfer": {
+      "prompt_vi": "Xử lý biên bản phỏng vấn có sửa số liệu. Nhiệm vụ: Produce a clean summary while preserving the speaker’s final correction. Viết 3–5 câu, rồi ghi 2 quyết định biên tập: bạn đã giữ nguyên dữ kiện nào và thay đổi sắc thái/nhấn mạnh ra sao?",
+      "sample_en": "The interviewee initially estimated that fifteen participants had attended but immediately corrected the figure to eighteen. The summary therefore records eighteen as the final spoken estimate. Attendance records would still be needed to verify the number independently.",
+      "rubric_vi": "(1) Không tự thêm sự kiện/tác nhân/nguyên nhân; (2) quan hệ thời gian, phạm vi phủ định và độ chắc chắn nhất quán; (3) lựa chọn cấu trúc tạo hiệu quả thực sự về register/cohesion; (4) không có tham chiếu mơ hồ; (5) giải thích được hai quyết định biên tập. Có nhiều đáp án hợp lệ; ví dụ chỉ để đối chiếu."
+    },
+    "review_status": "DRAFT_TEACHER_REVIEW_REQUIRED",
+    "assessment_mode": "FORMATIVE_ONLY"
+  },
+  "C2-11": {
+    "code": "C2-11",
+    "source_lesson_id": "C2-11",
+    "title": "Idiomatic Grammar Patterns",
+    "context_vi": "Viết thông điệp nhắc xử lý hồ sơ quá hạn nhưng không công kích",
+    "goal_vi": "Cấu trúc thành ngữ ngữ pháp cần chính xác hình thức và đúng ngữ cảnh; nhiều mẫu truyền tải phê bình hay mong muốn gián tiếp.",
+    "contrast_cue_vi": "Câu đầu thường bộc lộ sự chậm trễ hoặc sốt ruột; câu sau có thể là đề xuất trung tính hơn.",
+    "checkpoints": [
+      {
+        "id": "M19F-C2-11-CHECK-01",
+        "prompt_vi": "Yêu cầu đã bị trì hoãn lâu; người viết muốn nhắc mạnh nhưng chuyên nghiệp. Câu nào phù hợp?",
+        "options_en": [
+          "It was high time the committee would review the requests.",
+          "It is high time the committee reviewed the outstanding requests.",
+          "It is high time the committee reviews the outstanding requests."
+        ],
+        "correct_index": 1,
+        "option_feedback_vi": [
+          "Would review không phải mẫu thông thường sau it was high time.",
+          "It is high time + past form bộc lộ việc cần làm nay đã bị trì hoãn.",
+          "Sau high time dùng past form trong cấu trúc này, không dùng hiện tại đơn."
+        ],
+        "focus": "idiomatic_urgency"
+      },
+      {
+        "id": "M19F-C2-11-CHECK-02",
+        "prompt_vi": "Câu “I would rather the engineer addressed the fault before Friday.” Diễn đạt gì?",
+        "options_en": [
+          "A factual report that the engineer refused the request.",
+          "Engineer definitely fixed the fault last Friday.",
+          "A present preference about what someone else should do before Friday."
+        ],
+        "correct_index": 2,
+        "option_feedback_vi": [
+          "Không có thông tin từ chối.",
+          "Dạng quá khứ sau would rather không nói một việc đã xảy ra.",
+          "Would rather + người khác + past form biểu thị mong muốn hiện tại/tương lai."
+        ],
+        "focus": "modal_preference"
+      },
+      {
+        "id": "M19F-C2-11-CHECK-03",
+        "prompt_vi": "Thư nhắc việc bị trễ cần giải pháp. Câu nào tránh công kích?",
+        "options_en": [
+          "It is high time we resolved the outstanding requests; could we agree on a deadline?",
+          "It is high time you stopped being incompetent.",
+          "The team has ignored the issue on purpose."
+        ],
+        "correct_index": 0,
+        "option_feedback_vi": [
+          "Khẳng định tính cấp thiết nhưng chuyển sang hành động cụ thể và lịch sự.",
+          "Công kích cá nhân, không phù hợp thư công việc.",
+          "Suy đoán động cơ cố tình mà không có bằng chứng."
+        ],
+        "focus": "pragmatic_repair"
+      }
+    ],
+    "transfer": {
+      "prompt_vi": "Viết thông điệp nhắc xử lý hồ sơ quá hạn nhưng không công kích. Nhiệm vụ: Draft a firm but professional reminder using one idiomatic structure. Viết 3–5 câu, rồi ghi 2 quyết định biên tập: bạn đã giữ nguyên dữ kiện nào và thay đổi sắc thái/nhấn mạnh ra sao?",
+      "sample_en": "It is high time the outstanding requests were reviewed. Several teams have been waiting for clarification, and the delay is affecting their schedules. I suggest that we agree on a decision date and circulate an update to everyone concerned.",
+      "rubric_vi": "(1) Không tự thêm sự kiện/tác nhân/nguyên nhân; (2) quan hệ thời gian, phạm vi phủ định và độ chắc chắn nhất quán; (3) lựa chọn cấu trúc tạo hiệu quả thực sự về register/cohesion; (4) không có tham chiếu mơ hồ; (5) giải thích được hai quyết định biên tập. Có nhiều đáp án hợp lệ; ví dụ chỉ để đối chiếu."
+    },
+    "review_status": "DRAFT_TEACHER_REVIEW_REQUIRED",
+    "assessment_mode": "FORMATIVE_ONLY"
+  },
+  "C2-12": {
+    "code": "C2-12",
+    "source_lesson_id": "C2-12",
+    "title": "Register Shifting",
+    "context_vi": "Viết email gửi hội đồng từ ghi chú nội bộ quá thân mật",
+    "goal_vi": "Chuyển register phải bảo toàn nội dung nhưng thay đổi mức trực tiếp, mức trịnh trọng và lựa chọn từ.",
+    "contrast_cue_vi": "Bản thứ hai phù hợp báo cáo trang trọng, nhưng require verification không nhất thiết khẳng định đã có sai số cần sửa.",
+    "checkpoints": [
+      {
+        "id": "M19F-C2-12-CHECK-01",
+        "prompt_vi": "Một báo cáo chính thức chưa xác định nguyên nhân sai lệch số liệu. Câu nào phù hợp văn phong và bằng chứng?",
+        "options_en": [
+          "We totally messed up the numbers.",
+          "The numbers are definitely fraudulent.",
+          "The figures require verification prior to publication."
+        ],
+        "correct_index": 2,
+        "option_feedback_vi": [
+          "Khẩu ngữ, đồng thời khẳng định chắc chắn có lỗi do “we”.",
+          "Quy kết gian lận thiếu căn cứ.",
+          "Trang trọng, không tự khẳng định có lỗi chắc chắn."
+        ],
+        "focus": "register_and_claim"
+      },
+      {
+        "id": "M19F-C2-12-CHECK-02",
+        "prompt_vi": "Email đồng nghiệp cần đề nghị kiểm tra số liệu, không cáo buộc. Chọn câu phù hợp.",
+        "options_en": [
+          "Could you verify the revised totals by Thursday?",
+          "Your work was unacceptable and must be discarded.",
+          "You obviously calculated everything incorrectly."
+        ],
+        "correct_index": 0,
+        "option_feedback_vi": [
+          "Yêu cầu cụ thể, lịch sự, không suy đoán lỗi.",
+          "Kết luận chất lượng vượt thông tin.",
+          "Đổ lỗi và khẳng định lỗi khi chưa xác minh."
+        ],
+        "focus": "professional_request"
+      },
+      {
+        "id": "M19F-C2-12-CHECK-03",
+        "prompt_vi": "Bản thảo: “We need to fix the numbers before we send this out.” Chưa rõ số liệu sai hay chỉ cần xác minh. Chọn sửa an toàn.",
+        "options_en": [
+          "The figures were falsified before release.",
+          "The figures need to be checked before they are circulated.",
+          "We must correct the proven calculation errors."
+        ],
+        "correct_index": 1,
+        "option_feedback_vi": [
+          "Tự khẳng định hành vi cố ý.",
+          "Chuyển register vừa phải, tránh xác định lỗi khi chưa có bằng chứng.",
+          "Tự biến điều chưa biết thành lỗi đã được chứng minh."
+        ],
+        "focus": "neutral_formalisation"
+      }
+    ],
+    "transfer": {
+      "prompt_vi": "Viết email gửi hội đồng từ ghi chú nội bộ quá thân mật. Nhiệm vụ: Turn a blunt internal note into a concise formal request without changing the decision required. Viết 3–5 câu, rồi ghi 2 quyết định biên tập: bạn đã giữ nguyên dữ kiện nào và thay đổi sắc thái/nhấn mạnh ra sao?",
+      "sample_en": "The figures in the draft require further verification before publication. Could the analysis team confirm the revised totals by Thursday? Once the checks are complete, we can circulate the document for final approval.",
+      "rubric_vi": "(1) Không tự thêm sự kiện/tác nhân/nguyên nhân; (2) quan hệ thời gian, phạm vi phủ định và độ chắc chắn nhất quán; (3) lựa chọn cấu trúc tạo hiệu quả thực sự về register/cohesion; (4) không có tham chiếu mơ hồ; (5) giải thích được hai quyết định biên tập. Có nhiều đáp án hợp lệ; ví dụ chỉ để đối chiếu."
+    },
+    "review_status": "DRAFT_TEACHER_REVIEW_REQUIRED",
+    "assessment_mode": "FORMATIVE_ONLY"
+  },
+  "C2-13": {
+    "code": "C2-13",
+    "source_lesson_id": "C2-13",
+    "title": "Active–Passive Stylistic Choice",
+    "context_vi": "Biên tập báo cáo sự cố có yêu cầu giải trình trách nhiệm",
+    "goal_vi": "Chủ động và bị động không chỉ là biến đổi ngữ pháp; nó quyết định tác nhân nào được nêu và ai chịu trách nhiệm.",
+    "contrast_cue_vi": "Bản bị động giấu người làm và không chỉ rõ lỗi; bản chủ động chỉ phù hợp khi có bằng chứng cho thấy assessment team thực sự tính sai.",
+    "checkpoints": [
+      {
+        "id": "M19F-C2-13-CHECK-01",
+        "prompt_vi": "Nhật ký ghi có thay đổi file nhưng không xác định ai thao tác. Câu nào trung thực?",
+        "options_en": [
+          "The data file was altered before submission, but the person responsible is unknown.",
+          "The audit team secretly altered the file.",
+          "The manager deliberately falsified the data."
+        ],
+        "correct_index": 0,
+        "option_feedback_vi": [
+          "Passive hợp lý vì tác nhân chưa xác định, không thêm buộc tội.",
+          "Tự đưa tác nhân và ý định vào dữ kiện.",
+          "Gán tội và động cơ không có chứng cứ."
+        ],
+        "focus": "agent_uncertainty"
+      },
+      {
+        "id": "M19F-C2-13-CHECK-02",
+        "prompt_vi": "Báo cáo xác nhận nhóm đánh giá đã tính sai điểm. Câu nào minh bạch?",
+        "options_en": [
+          "Mistakes were made.",
+          "The assessment team miscalculated the scores.",
+          "The scores somehow changed themselves."
+        ],
+        "correct_index": 1,
+        "option_feedback_vi": [
+          "Đúng về hình thức nhưng giấu tác nhân và loại lỗi đã được biết.",
+          "Nêu cụ thể tác nhân và hành động đã được xác minh.",
+          "Tạo tác nhân phi lý và không phản ánh dữ liệu."
+        ],
+        "focus": "transparent_agent"
+      },
+      {
+        "id": "M19F-C2-13-CHECK-03",
+        "prompt_vi": "Nguồn chỉ xác nhận “The report was reviewed.” Không biết ai đọc. Chọn cách viết lại an toàn.",
+        "options_en": [
+          "The director personally reviewed the report.",
+          "The entire committee completed a detailed review.",
+          "The report underwent review."
+        ],
+        "correct_index": 2,
+        "option_feedback_vi": [
+          "Bổ sung người làm không có căn cứ.",
+          "Thêm nhóm và mức độ detailed không được xác minh.",
+          "Giữ thông tin đã được xem xét mà không tự gán tác nhân."
+        ],
+        "focus": "noninvented_agent"
+      }
+    ],
+    "transfer": {
+      "prompt_vi": "Biên tập báo cáo sự cố có yêu cầu giải trình trách nhiệm. Nhiệm vụ: Draft two sentences that state the known action and avoid inventing an unknown actor. Viết 3–5 câu, rồi ghi 2 quyết định biên tập: bạn đã giữ nguyên dữ kiện nào và thay đổi sắc thái/nhấn mạnh ra sao?",
+      "sample_en": "The data file was altered shortly before submission, but the available logs do not identify who made the change. The audit team has secured the earlier version and will investigate the access records.",
+      "rubric_vi": "(1) Không tự thêm sự kiện/tác nhân/nguyên nhân; (2) quan hệ thời gian, phạm vi phủ định và độ chắc chắn nhất quán; (3) lựa chọn cấu trúc tạo hiệu quả thực sự về register/cohesion; (4) không có tham chiếu mơ hồ; (5) giải thích được hai quyết định biên tập. Có nhiều đáp án hợp lệ; ví dụ chỉ để đối chiếu."
+    },
+    "review_status": "DRAFT_TEACHER_REVIEW_REQUIRED",
+    "assessment_mode": "FORMATIVE_ONLY"
+  },
+  "C2-14": {
+    "code": "C2-14",
+    "source_lesson_id": "C2-14",
+    "title": "Nominal vs Verbal Style",
+    "context_vi": "Rà soát tóm tắt dự án viết quá nhiều danh từ trừu tượng",
+    "goal_vi": "Chọn danh hóa hay động từ để cân bằng khái quát học thuật và sự rõ ràng của tác nhân, hành động.",
+    "contrast_cue_vi": "Bản thứ hai gọn hơn, làm rõ agent; bản đầu nặng danh hóa mà ít thêm thông tin.",
+    "checkpoints": [
+      {
+        "id": "M19F-C2-14-CHECK-01",
+        "prompt_vi": "Đoạn văn cần rõ ai thực hiện. Chọn câu ít danh hóa rườm rà nhất.",
+        "options_en": [
+          "Implementation was undertaken by various relevant parties.",
+          "The team implemented the recommendation.",
+          "The implementation of the recommendation was undertaken by the team."
+        ],
+        "correct_index": 1,
+        "option_feedback_vi": [
+          "Mơ hồ chủ thể và thêm những người chưa biết.",
+          "Động từ hữu hạn chỉ rõ tác nhân và hành động.",
+          "Danh hóa rườm rà và bị động che tác nhân không cần thiết."
+        ],
+        "focus": "verb_vs_nominal"
+      },
+      {
+        "id": "M19F-C2-14-CHECK-02",
+        "prompt_vi": "Khi nào giữ danh hóa là lựa chọn hợp lý?",
+        "options_en": [
+          "Only when the writer wants to conceal all responsibility.",
+          "Always, because nominalisation automatically sounds academic.",
+          "When the process is already the topic and the agent is not central to the discussion."
+        ],
+        "correct_index": 2,
+        "option_feedback_vi": [
+          "Giấu trách nhiệm không phải mục tiêu sư phạm hợp lệ.",
+          "Danh hóa quá mức làm câu khó hiểu, không luôn trang trọng hơn.",
+          "Có thể giữ danh hóa khi quy trình là thông tin chủ đề và không cần nhắc lại tác nhân."
+        ],
+        "focus": "discourse_topic"
+      },
+      {
+        "id": "M19F-C2-14-CHECK-03",
+        "prompt_vi": "Nguồn: “The analysts conducted an examination of the records.” Câu sửa nào giữ ý và gọn?",
+        "options_en": [
+          "The analysts examined the records.",
+          "The analysts approved the records.",
+          "The records were destroyed by analysts."
+        ],
+        "correct_index": 0,
+        "option_feedback_vi": [
+          "Thay danh từ hành động bằng động từ, giữ tác nhân và nghĩa kiểm tra.",
+          "Examine không đồng nghĩa approve.",
+          "Biến kiểm tra thành phá hủy."
+        ],
+        "focus": "economy_without_loss"
+      }
+    ],
+    "transfer": {
+      "prompt_vi": "Rà soát tóm tắt dự án viết quá nhiều danh từ trừu tượng. Nhiệm vụ: Rewrite a dense project update to identify actions and owners. Viết 3–5 câu, rồi ghi 2 quyết định biên tập: bạn đã giữ nguyên dữ kiện nào và thay đổi sắc thái/nhấn mạnh ra sao?",
+      "sample_en": "The research team reviewed the evidence and revised the sampling plan. The review identified two gaps in the initial dataset. Further validation is needed before the revised findings can be released.",
+      "rubric_vi": "(1) Không tự thêm sự kiện/tác nhân/nguyên nhân; (2) quan hệ thời gian, phạm vi phủ định và độ chắc chắn nhất quán; (3) lựa chọn cấu trúc tạo hiệu quả thực sự về register/cohesion; (4) không có tham chiếu mơ hồ; (5) giải thích được hai quyết định biên tập. Có nhiều đáp án hợp lệ; ví dụ chỉ để đối chiếu."
+    },
+    "review_status": "DRAFT_TEACHER_REVIEW_REQUIRED",
+    "assessment_mode": "FORMATIVE_ONLY"
+  },
+  "C2-15": {
+    "code": "C2-15",
+    "source_lesson_id": "C2-15",
+    "title": "Marked Word Order",
+    "context_vi": "Biên tập bản giải trình hai phương án kỹ thuật",
+    "goal_vi": "Marked word order nhấn một thành phần khi có đối chiếu hoặc thông tin cũ; dùng sai dễ thành văn phong kịch.",
+    "contrast_cue_vi": "Fronting that solution hữu ích nếu đang đối chiếu hai lựa chọn; trật tự trung tính phù hợp khi không có nền đối chiếu.",
+    "checkpoints": [
+      {
+        "id": "M19F-C2-15-CHECK-01",
+        "prompt_vi": "Đang đối chiếu giải pháp giá rẻ với giải pháp còn xét; giá rẻ đã bị loại. Câu nhấn đối chiếu?",
+        "options_en": [
+          "The cheaper option remains approved, while all others were rejected.",
+          "Not until the alternative was rejected did we approve the cheaper option.",
+          "The cheaper option we rejected; the other remains under review."
+        ],
+        "correct_index": 2,
+        "option_feedback_vi": [
+          "Đảo ngược kết quả kiểm tra.",
+          "Tự thêm kết quả đảo ngược hoàn toàn.",
+          "Fronting giúp đối chiếu hai lựa chọn có liên hệ trong ngữ cảnh."
+        ],
+        "focus": "marked_topic"
+      },
+      {
+        "id": "M19F-C2-15-CHECK-02",
+        "prompt_vi": "Một thông báo trung tính không cần nhấn mạnh. Chọn trật tự phù hợp.",
+        "options_en": [
+          "We must review the result before updating the report.",
+          "Only later did we must review the result.",
+          "That result we must discuss, the report we must rewrite!"
+        ],
+        "correct_index": 0,
+        "option_feedback_vi": [
+          "Trật tự thường, quan hệ thời gian rõ ràng.",
+          "Dùng did cùng modal must sai cấu trúc.",
+          "Fronting dồn dập tạo cảm giác kịch tính ngoài mục đích."
+        ],
+        "focus": "avoid_overmarking"
+      },
+      {
+        "id": "M19F-C2-15-CHECK-03",
+        "prompt_vi": "Câu nguồn “We rejected that option because it failed the safety test.” Chọn cách biên tập giữ nguyên nguyên nhân.",
+        "options_en": [
+          "We approved the option after the safety test.",
+          "That option we rejected because it failed the safety test.",
+          "We rejected the option simply because it was expensive."
+        ],
+        "correct_index": 1,
+        "option_feedback_vi": [
+          "Đổi rejected thành approved.",
+          "Thay đổi trọng tâm nhấn, giữ quyết định và nguyên nhân.",
+          "Thay nguyên nhân an toàn thành chi phí."
+        ],
+        "focus": "preserve_cause"
+      }
+    ],
+    "transfer": {
+      "prompt_vi": "Biên tập bản giải trình hai phương án kỹ thuật. Nhiệm vụ: Write a three-sentence contrast with one purposeful marked structure. Viết 3–5 câu, rồi ghi 2 quyết định biên tập: bạn đã giữ nguyên dữ kiện nào và thay đổi sắc thái/nhấn mạnh ra sao?",
+      "sample_en": "The cheaper option we rejected because it failed the safety test. The second proposal remains under review, and no final recommendation has been made. Cost alone should not be presented as the reason for the pending decision.",
+      "rubric_vi": "(1) Không tự thêm sự kiện/tác nhân/nguyên nhân; (2) quan hệ thời gian, phạm vi phủ định và độ chắc chắn nhất quán; (3) lựa chọn cấu trúc tạo hiệu quả thực sự về register/cohesion; (4) không có tham chiếu mơ hồ; (5) giải thích được hai quyết định biên tập. Có nhiều đáp án hợp lệ; ví dụ chỉ để đối chiếu."
+    },
+    "review_status": "DRAFT_TEACHER_REVIEW_REQUIRED",
+    "assessment_mode": "FORMATIVE_ONLY"
+  },
+  "C2-16": {
+    "code": "C2-16",
+    "source_lesson_id": "C2-16",
+    "title": "Information Structure",
+    "context_vi": "Viết lại đoạn báo cáo đang nhảy chủ đề khó theo dõi",
+    "goal_vi": "Information structure tổ chức topic, focus, end weight và given/new information để người đọc theo kịp diễn giải nhiều câu.",
+    "contrast_cue_vi": "Câu thứ hai đặt thời điểm làm khung, tác nhân rõ và nội dung mới revised procedure ở cuối; lựa chọn tốt hơn tùy mạch văn.",
+    "checkpoints": [
+      {
+        "id": "M19F-C2-16-CHECK-01",
+        "prompt_vi": "Đoạn trước nêu lỗi biểu mẫu. Câu tiếp cần nối “vấn đề đó” với hành động mới. Chọn mạch tự nhiên.",
+        "options_en": [
+          "That problem prompted the team to revise the instructions.",
+          "A completely unrelated problem caused new procedures.",
+          "They changed it, which helped them."
+        ],
+        "correct_index": 0,
+        "option_feedback_vi": [
+          "That problem nối thông tin đã biết với hành động mới, tham chiếu rõ.",
+          "Thêm unrelated và cắt mạch nội dung.",
+          "They/it/them mơ hồ, không rõ ai thay cái gì."
+        ],
+        "focus": "given_new"
+      },
+      {
+        "id": "M19F-C2-16-CHECK-02",
+        "prompt_vi": "Muốn kết thúc câu bằng thông tin mới “a revised procedure”. Câu nào hỗ trợ end-focus?",
+        "options_en": [
+          "A revised procedure was by reviewers after the trial proposed.",
+          "After the trial, the reviewers proposed a revised procedure.",
+          "The reviewers, a revised procedure they proposed after trial."
+        ],
+        "correct_index": 1,
+        "option_feedback_vi": [
+          "Trật tự bị động gượng và sai vị trí phân từ.",
+          "Đưa mốc thời gian lên đầu, đặt thông tin mới ở cuối.",
+          "Đứt cú pháp và tham chiếu không tự nhiên."
+        ],
+        "focus": "end_weight"
+      },
+      {
+        "id": "M19F-C2-16-CHECK-03",
+        "prompt_vi": "Nguồn: “The pilot revealed a problem with the response form.” Sau đó nhóm nghiên cứu đã rà soát lại hướng dẫn. Câu tiếp nào nối mạch rõ nhất mà không đổi thông tin?",
+        "options_en": [
+          "This was important and they changed it.",
+          "It was fixed somehow after that.",
+          "That problem led the researchers to review the instructions."
+        ],
+        "correct_index": 2,
+        "option_feedback_vi": [
+          "This/they/it thiếu tham chiếu cụ thể.",
+          "Thêm việc đã được sửa, không có trong nguồn.",
+          "That problem tham chiếu lại lỗi biểu mẫu; hành động rà soát hướng dẫn đã được nêu trong bối cảnh, không phải suy đoán thêm."
+        ],
+        "focus": "cohesion_contingent"
+      }
+    ],
+    "transfer": {
+      "prompt_vi": "Viết lại đoạn báo cáo đang nhảy chủ đề khó theo dõi. Nhiệm vụ: Revise three sentences so each begins with known information and ends with a relevant development. Viết 3–5 câu, rồi ghi 2 quyết định biên tập: bạn đã giữ nguyên dữ kiện nào và thay đổi sắc thái/nhấn mạnh ra sao?",
+      "sample_en": "The first pilot revealed a problem with the response form. That problem prompted the team to revise the instructions. The revised instructions were then tested with a second group, whose feedback informed the final design.",
+      "rubric_vi": "(1) Không tự thêm sự kiện/tác nhân/nguyên nhân; (2) quan hệ thời gian, phạm vi phủ định và độ chắc chắn nhất quán; (3) lựa chọn cấu trúc tạo hiệu quả thực sự về register/cohesion; (4) không có tham chiếu mơ hồ; (5) giải thích được hai quyết định biên tập. Có nhiều đáp án hợp lệ; ví dụ chỉ để đối chiếu."
+    },
+    "review_status": "DRAFT_TEACHER_REVIEW_REQUIRED",
+    "assessment_mode": "FORMATIVE_ONLY"
+  },
+  "C2-17": {
+    "code": "C2-17",
+    "source_lesson_id": "C2-17",
+    "title": "Ambiguity & Scope",
+    "context_vi": "Chỉnh báo cáo số liệu tham gia có câu phủ định mơ hồ",
+    "goal_vi": "Biên tập ambiguity và scope: negation, quantifiers, modifiers và attachment có thể làm thay đổi các mệnh đề đúng/sai.",
+    "contrast_cue_vi": "Not all diễn đạt có ít nhất một người chưa hoàn thành; câu thứ hai thường mơ hồ giữa không ai hoàn thành và không phải tất cả.",
+    "checkpoints": [
+      {
+        "id": "M19F-C2-17-CHECK-01",
+        "prompt_vi": "24/30 người trả lời đầy đủ; 6 người không hoàn thành. Câu nào đúng phạm vi lượng từ?",
+        "options_en": [
+          "All participants failed to complete the survey.",
+          "Not all participants completed the survey.",
+          "No participants completed the survey."
+        ],
+        "correct_index": 1,
+        "option_feedback_vi": [
+          "Sai vì 24 người có phản hồi đầy đủ.",
+          "Not all diễn tả ít nhất một người chưa hoàn thành, phù hợp số 24/30.",
+          "Sai vì 24 người hoàn thành."
+        ],
+        "focus": "quantifier_scope"
+      },
+      {
+        "id": "M19F-C2-17-CHECK-02",
+        "prompt_vi": "Câu “The manager did not approve every request.” Theo cách hiểu thường, điều nào phù hợp?",
+        "options_en": [
+          "The manager approved all requests.",
+          "The manager approved no requests whatsoever.",
+          "At least one request was not approved; others may or may not have been approved."
+        ],
+        "correct_index": 2,
+        "option_feedback_vi": [
+          "Mâu thuẫn trực tiếp với not every.",
+          "Not every không tương đương none.",
+          "Not every phủ định tính toàn bộ, không xác nhận số còn lại."
+        ],
+        "focus": "negation_scope"
+      },
+      {
+        "id": "M19F-C2-17-CHECK-03",
+        "prompt_vi": "Bản nguồn: “Some claims may remain unverified.” Câu nào giữ mức độ và phạm vi?",
+        "options_en": [
+          "A number of claims might still lack verification.",
+          "All claims are definitely false.",
+          "No claim has ever been checked."
+        ],
+        "correct_index": 0,
+        "option_feedback_vi": [
+          "Giữ some và may, không suy ra tất cả sai hoặc chưa kiểm tra.",
+          "Some/may thành all/definitely, sai cả lượng và mức chắc chắn.",
+          "Some unverified không suy ra no claim checked."
+        ],
+        "focus": "semantic_equivalence"
+      }
+    ],
+    "transfer": {
+      "prompt_vi": "Chỉnh báo cáo số liệu tham gia có câu phủ định mơ hồ. Nhiệm vụ: Write a precise report of partial completion without suggesting zero completion. Viết 3–5 câu, rồi ghi 2 quyết định biên tập: bạn đã giữ nguyên dữ kiện nào và thay đổi sắc thái/nhấn mạnh ra sao?",
+      "sample_en": "Not all participants completed the survey: twenty-four of the thirty returned usable forms. Six did not provide a complete response, but the available data do not establish why. The analysis is based solely on the twenty-four usable submissions.",
+      "rubric_vi": "(1) Không tự thêm sự kiện/tác nhân/nguyên nhân; (2) quan hệ thời gian, phạm vi phủ định và độ chắc chắn nhất quán; (3) lựa chọn cấu trúc tạo hiệu quả thực sự về register/cohesion; (4) không có tham chiếu mơ hồ; (5) giải thích được hai quyết định biên tập. Có nhiều đáp án hợp lệ; ví dụ chỉ để đối chiếu."
+    },
+    "review_status": "DRAFT_TEACHER_REVIEW_REQUIRED",
+    "assessment_mode": "FORMATIVE_ONLY"
+  },
+  "C2-18": {
+    "code": "C2-18",
+    "source_lesson_id": "C2-18",
+    "title": "Advanced Punctuation",
+    "context_vi": "Biên tập thông báo người tham gia một cuộc họp",
+    "goal_vi": "Dấu câu góp phần quyết định phạm vi thông tin: bổ nghĩa hạn định, đồng vị không thiết yếu, gạch ngang và dấu hai chấm.",
+    "contrast_cue_vi": "Không phẩy giới hạn nhóm reviewer đã ký; có phẩy nói thêm về tập reviewers đã xác định, có thể mang nghĩa tất cả cùng ký.",
+    "checkpoints": [
+      {
+        "id": "M19F-C2-18-CHECK-01",
+        "prompt_vi": "Chỉ những người đã ký báo cáo mới bắt buộc tham dự. Chọn câu dùng mệnh đề hạn định.",
+        "options_en": [
+          "The reviewers, who signed the report, must attend.",
+          "The reviewers — all of whom signed — must attend.",
+          "The reviewers who signed the report must attend."
+        ],
+        "correct_index": 2,
+        "option_feedback_vi": [
+          "Dấu phẩy biến thông tin thành phụ chú về nhóm reviewers đã biết.",
+          "Khẳng định mọi reviewer đều ký, không có chứng cứ.",
+          "Không có dấu phẩy, who signed giới hạn tập người bắt buộc tham dự."
+        ],
+        "focus": "restrictive_reference"
+      },
+      {
+        "id": "M19F-C2-18-CHECK-02",
+        "prompt_vi": "Cần giới thiệu một lo ngại duy nhất sau dấu hai chấm. Câu nào đúng?",
+        "options_en": [
+          "The panel raised one concern: the unstable foundations.",
+          "The panel raised one concern, namely: the unstable foundations.",
+          "The panel raised one concern; the unstable foundations."
+        ],
+        "correct_index": 0,
+        "option_feedback_vi": [
+          "Dấu hai chấm báo phần giải thích/xác định concern bằng cụm danh từ.",
+          "Namely kết hợp dấu hai chấm ở đây rườm rà và không tự nhiên.",
+          "Dấu chấm phẩy thường nối hai mệnh đề độc lập, sau đây chỉ là cụm danh từ."
+        ],
+        "focus": "colon_scope"
+      },
+      {
+        "id": "M19F-C2-18-CHECK-03",
+        "prompt_vi": "Nguồn: “The reviewers who signed the final report must attend; other reviewers may read the minutes.” Đâu là diễn đạt đúng?",
+        "options_en": [
+          "Only reviewers who did not sign must attend.",
+          "Attendance is required for reviewers who signed; it is optional for the others.",
+          "Every reviewer has to attend."
+        ],
+        "correct_index": 1,
+        "option_feedback_vi": [
+          "Đảo ngược nhóm cần tham dự.",
+          "Giữ nhóm bắt buộc và nhóm được lựa chọn.",
+          "Xóa giới hạn nhóm đã ký."
+        ],
+        "focus": "punctuation_to_meaning"
+      }
+    ],
+    "transfer": {
+      "prompt_vi": "Biên tập thông báo người tham gia một cuộc họp. Nhiệm vụ: Punctuate a two-sentence notice so only signatories are required to attend. Viết 3–5 câu, rồi ghi 2 quyết định biên tập: bạn đã giữ nguyên dữ kiện nào và thay đổi sắc thái/nhấn mạnh ra sao?",
+      "sample_en": "The reviewers who signed the final report must attend the briefing. Other reviewers may read the minutes afterwards. Attendance records should distinguish the required group from those attending voluntarily.",
+      "rubric_vi": "(1) Không tự thêm sự kiện/tác nhân/nguyên nhân; (2) quan hệ thời gian, phạm vi phủ định và độ chắc chắn nhất quán; (3) lựa chọn cấu trúc tạo hiệu quả thực sự về register/cohesion; (4) không có tham chiếu mơ hồ; (5) giải thích được hai quyết định biên tập. Có nhiều đáp án hợp lệ; ví dụ chỉ để đối chiếu."
+    },
+    "review_status": "DRAFT_TEACHER_REVIEW_REQUIRED",
+    "assessment_mode": "FORMATIVE_ONLY"
+  },
+  "C2-19": {
+    "code": "C2-19",
+    "source_lesson_id": "C2-19",
+    "title": "Pragmatic Grammar & Politeness",
+    "context_vi": "Email cho đồng nghiệp cần số liệu trước hạn nộp",
+    "goal_vi": "Lịch sự ngữ dụng không chỉ dựa vào modal: quyền lực, mức áp đặt, độ trực tiếp và trách nhiệm đều ảnh hưởng người nhận.",
+    "contrast_cue_vi": "Bản thứ hai ít áp đặt hơn nhờ modal và câu hỏi, nhưng nếu deadline là bắt buộc thì lời nhắn còn cần nói rõ tính cấp bách.",
+    "checkpoints": [
+      {
+        "id": "M19F-C2-19-CHECK-01",
+        "prompt_vi": "Bạn cần số liệu trước 16h để kịp nộp 17h; yêu cầu lịch sự nhưng rõ hạn. Chọn câu phù hợp.",
+        "options_en": [
+          "Could you send the verified figures by 4 p.m. today? The portal closes at 5 p.m.",
+          "Whenever you feel like it, maybe send the figures.",
+          "Send them now or you are incompetent."
+        ],
+        "correct_index": 0,
+        "option_feedback_vi": [
+          "Có deadline, lý do và cách yêu cầu lịch sự, không gây mơ hồ về thời hạn.",
+          "Để mở thời hạn nên không phù hợp yêu cầu công việc bắt buộc.",
+          "Công kích cá nhân và không hỗ trợ giải quyết công việc."
+        ],
+        "focus": "polite_deadline"
+      },
+      {
+        "id": "M19F-C2-19-CHECK-02",
+        "prompt_vi": "Người nhận có thể không kịp hoàn thành. Câu nào mở lựa chọn phản hồi thực tế?",
+        "options_en": [
+          "Failure is unacceptable. Do not reply.",
+          "If that deadline is not feasible, please let me know today so we can agree on an alternative.",
+          "The deadline is flexible, so no need to check it."
+        ],
+        "correct_index": 1,
+        "option_feedback_vi": [
+          "Đe dọa và cản trở thương lượng khi khó thực hiện.",
+          "Cung cấp lựa chọn phản hồi cụ thể nhưng vẫn giữ mục tiêu thời hạn.",
+          "Tự phủ nhận giới hạn nộp 17h."
+        ],
+        "focus": "mitigation"
+      },
+      {
+        "id": "M19F-C2-19-CHECK-03",
+        "prompt_vi": "Câu gốc: “Send the revised figures today.” Câu nào dịu hơn mà không xóa yêu cầu thời gian?",
+        "options_en": [
+          "You can send the figures some time this month.",
+          "Please consider the numbers in future.",
+          "Could you please send the revised figures by the end of today?"
+        ],
+        "correct_index": 2,
+        "option_feedback_vi": [
+          "Xóa hạn hôm nay.",
+          "Xóa hành động gửi và hạn.",
+          "Giữ gửi số liệu trong hôm nay, giảm độ trực tiếp bằng modal và please."
+        ],
+        "focus": "pragmatic_preservation"
+      }
+    ],
+    "transfer": {
+      "prompt_vi": "Email cho đồng nghiệp cần số liệu trước hạn nộp. Nhiệm vụ: Write a polite but unambiguous request with a firm deadline and justification. Viết 3–5 câu, rồi ghi 2 quyết định biên tập: bạn đã giữ nguyên dữ kiện nào và thay đổi sắc thái/nhấn mạnh ra sao?",
+      "sample_en": "Could you send the verified figures by 4 p.m. today? The submission portal closes at 5 p.m., and we need time to check the totals before uploading. If that deadline is not feasible, please let me know as early as possible so we can agree on an alternative.",
+      "rubric_vi": "(1) Không tự thêm sự kiện/tác nhân/nguyên nhân; (2) quan hệ thời gian, phạm vi phủ định và độ chắc chắn nhất quán; (3) lựa chọn cấu trúc tạo hiệu quả thực sự về register/cohesion; (4) không có tham chiếu mơ hồ; (5) giải thích được hai quyết định biên tập. Có nhiều đáp án hợp lệ; ví dụ chỉ để đối chiếu."
+    },
+    "review_status": "DRAFT_TEACHER_REVIEW_REQUIRED",
+    "assessment_mode": "FORMATIVE_ONLY"
+  },
+  "C2-20": {
+    "code": "C2-20",
+    "source_lesson_id": "C2-20",
+    "title": "Expert Editing & Cohesion",
+    "context_vi": "Rà soát thông cáo về bộ dữ liệu chưa xác minh",
+    "goal_vi": "Biên tập chuyên gia đòi hỏi tính nhất quán, tham chiếu rõ, chuỗi lý do đúng và kiểm soát thay đổi nghĩa trên cả đoạn văn.",
+    "contrast_cue_vi": "Câu sau giải nghĩa rõ this và nêu lý do, nhưng chỉ dùng nếu nguồn xác nhận vấn đề tái lập; không tự tạo lý do từ câu đầu.",
+    "checkpoints": [
+      {
+        "id": "M19F-C2-20-CHECK-01",
+        "prompt_vi": "Một báo cáo thấy sai lệch nhưng chưa tìm nguyên nhân. Chọn phát biểu phù hợp.",
+        "options_en": [
+          "The inconsistencies prove intentional fraud.",
+          "The team has identified inconsistencies but has not yet established their cause.",
+          "The manager caused the inconsistencies by altering the data."
+        ],
+        "correct_index": 1,
+        "option_feedback_vi": [
+          "Suy luận vượt bằng chứng.",
+          "Giữ phát hiện và giới hạn bằng chứng.",
+          "Tự tạo thủ phạm và nguyên nhân."
+        ],
+        "focus": "global_consistency"
+      },
+      {
+        "id": "M19F-C2-20-CHECK-02",
+        "prompt_vi": "Câu “The panel revised the methods. This was necessary.” Vấn đề biên tập chủ yếu là gì?",
+        "options_en": [
+          "The sentence proves that sampling could not be replicated.",
+          "Revised is always the wrong tense here.",
+          "This lacks a clear referent or stated reason; any reason must be verified before adding it."
+        ],
+        "correct_index": 2,
+        "option_feedback_vi": [
+          "Không có bằng chứng cụ thể về khả năng tái lập.",
+          "Không có căn cứ sai thì.",
+          "This mơ hồ; viết rõ reason chỉ khi có bằng chứng."
+        ],
+        "focus": "referent_and_evidence"
+      },
+      {
+        "id": "M19F-C2-20-CHECK-03",
+        "prompt_vi": "Nguồn: “The summary will be revised after the review; the cause is unknown.” Chọn sửa vẫn trung thực.",
+        "options_en": [
+          "The cause remains undetermined; the summary will be revised once the review is complete.",
+          "The cause is fraud, and the summary has already been revised.",
+          "Because the manager caused the error, we published a revised summary."
+        ],
+        "correct_index": 0,
+        "option_feedback_vi": [
+          "Giữ nguyên chưa rõ nguyên nhân và bản tóm tắt chưa sửa.",
+          "Tự xác định nguyên nhân và trạng thái hoàn tất.",
+          "Gán thủ phạm và công bố không có căn cứ."
+        ],
+        "focus": "multi_sentence_preservation"
+      }
+    ],
+    "transfer": {
+      "prompt_vi": "Rà soát thông cáo về bộ dữ liệu chưa xác minh. Nhiệm vụ: Edit a short announcement so its claims match the evidence and its references are clear. Viết 3–5 câu, rồi ghi 2 quyết định biên tập: bạn đã giữ nguyên dữ kiện nào và thay đổi sắc thái/nhấn mạnh ra sao?",
+      "sample_en": "The research team has identified inconsistencies in the second dataset. It is checking the source records and has not yet established the cause. A revised summary will be issued once the review is complete; until then, the preliminary figures should not be cited as final.",
+      "rubric_vi": "(1) Không tự thêm sự kiện/tác nhân/nguyên nhân; (2) quan hệ thời gian, phạm vi phủ định và độ chắc chắn nhất quán; (3) lựa chọn cấu trúc tạo hiệu quả thực sự về register/cohesion; (4) không có tham chiếu mơ hồ; (5) giải thích được hai quyết định biên tập. Có nhiều đáp án hợp lệ; ví dụ chỉ để đối chiếu."
+    },
+    "review_status": "DRAFT_TEACHER_REVIEW_REQUIRED",
+    "assessment_mode": "FORMATIVE_ONLY"
+  }
+}

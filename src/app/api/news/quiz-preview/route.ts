@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import { createClient } from "@/lib/supabase/server";
 import { newsAdminClient } from "@/lib/news/sync";
 import { generateAdaptiveNewsQuiz } from "@/lib/news/adaptive-quiz";
+import { newsQuizFreeTierReady } from "@/lib/news/enrichment";
 
 export const runtime = "nodejs";
 export const maxDuration = 60;
@@ -19,7 +20,7 @@ export async function POST(request: NextRequest) {
     || typeof payload.prompt !== "string" || payload.prompt.length > 4000) {
     return NextResponse.json({ error: "Dữ liệu không hợp lệ." }, { status: 400 });
   }
-  if (!process.env.GEMINI_API_KEY) return NextResponse.json({ error: "Chưa cấu hình GEMINI_API_KEY trên máy chủ." }, { status: 503 });
+  if (!newsQuizFreeTierReady()) return NextResponse.json({ error: "Chưa cấu hình khóa Gemini free tier cho câu hỏi tin tức." }, { status: 503 });
   try {
     const db = newsAdminClient();
     const { data: article, error: articleError } = await db.from("news_articles").select("id,title,sensitive").eq("id", payload.articleId).single();

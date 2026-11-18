@@ -1,0 +1,351 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "DICT-S4-005",
+  "status": "draft",
+  "level": "L5",
+  "section": 4,
+  "topic": "Human Psychology",
+  "title": "Attention, Working Memory and Multitasking",
+  "learning_objectives_vi": [
+    "Nghe bài giảng học thuật một người nói và xác định cấu trúc luận điểm, ví dụ và kết luận.",
+    "Hoàn thành Note/Summary Completion, Multiple Choice, Short Answer và chép đúng đoạn nghe đã học.",
+    "Phân tích bằng chứng theo từng đoạn và ghi nhớ từ học thuật trong bối cảnh."
+  ],
+  "content_format": "section_practice",
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Academic lecturer",
+      "tts_voice_id": null,
+      "accent_requested": "new_zealand"
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "The human mind receives more information than it can process in detail at once. Attention helps select what becomes the focus of conscious activity. Imagine reading in a busy café: you may follow the page while barely noticing the conversation beside you. This selectivity is useful, but it means we cannot assume that every visible event has been fully registered.",
+      "translation_vi": "Tâm trí nhận nhiều thông tin hơn khả năng xử lý chi tiết cùng lúc. Chú ý giúp chọn thông tin trở thành trọng tâm ý thức. Hãy hình dung đọc ở quán cà phê đông: bạn theo dõi trang sách nhưng hầu như không nhận ra cuộc nói chuyện bên cạnh. Sự chọn lọc hữu ích, nhưng ta không thể mặc nhiên cho rằng mọi sự kiện trước mắt đã được ghi nhận đầy đủ.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_4",
+        "academic_lecture",
+        "concept",
+        "l5"
+      ]
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "A",
+      "text_en": "Psychologists distinguish attention from working memory. Attention selects information, whereas working memory briefly maintains and manipulates what is needed for a current task. When you hear a phone number and repeat it before writing it down, you are using working memory. Its capacity is limited, so adding a second demanding task may interfere with the first.",
+      "translation_vi": "Nhà tâm lý học phân biệt chú ý với trí nhớ làm việc. Chú ý chọn thông tin, còn trí nhớ làm việc tạm giữ và xử lý điều cần cho nhiệm vụ hiện tại. Khi nghe số điện thoại rồi nhắc lại trước lúc ghi, bạn dùng trí nhớ làm việc. Khả năng của nó có giới hạn nên thêm nhiệm vụ khó thứ hai có thể gây nhiễu nhiệm vụ đầu.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_4",
+        "academic_lecture",
+        "concept",
+        "l5"
+      ]
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "A",
+      "text_en": "A well-known research idea is inattentional blindness: people can fail to notice something unexpected when concentrating on another task. This does not mean that their eyes never received the image. Rather, the information was not processed in a way that supported conscious reporting. The phenomenon warns against relying too heavily on confident accounts of what someone must have seen.",
+      "translation_vi": "Một ý tưởng nghiên cứu quen thuộc là mù do thiếu chú ý: con người có thể không nhận ra điều bất ngờ khi tập trung vào nhiệm vụ khác. Điều đó không có nghĩa mắt họ chưa nhận hình ảnh. Thay vào đó, thông tin chưa được xử lý đến mức có thể tường thuật có ý thức. Hiện tượng này cảnh báo không nên quá tin vào khẳng định rằng ai đó chắc chắn đã nhìn thấy gì.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_4",
+        "academic_lecture",
+        "concept",
+        "l5"
+      ]
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "A",
+      "text_en": "People also talk about multitasking, but often they are switching attention rapidly between activities rather than processing two complex tasks independently. Switching can introduce delays and errors, especially when both tasks require verbal reasoning. A person listening to instructions while composing a detailed message may remember less than someone who pauses the message first.",
+      "translation_vi": "Người ta cũng nói về đa nhiệm, nhưng thường thực chất họ đang chuyển chú ý nhanh giữa các hoạt động chứ không xử lý độc lập hai nhiệm vụ phức tạp. Chuyển đổi có thể gây trễ và sai, nhất là khi cả hai đều cần suy luận bằng lời. Người nghe chỉ dẫn trong lúc soạn tin nhắn chi tiết có thể nhớ ít hơn người tạm dừng nhắn.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_4",
+        "academic_lecture",
+        "concept",
+        "l5"
+      ]
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "A",
+      "text_en": "The practical message is not to eliminate distractions completely, which may be impossible, but to design tasks around the limits of attention. Clear instructions, short stages and opportunities to check important details can help. Psychology offers useful models of behaviour, although no one experiment can predict precisely how every individual will respond in daily life.",
+      "translation_vi": "Thông điệp thực tế không phải xóa hết xao nhãng, vốn có thể không khả thi, mà thiết kế nhiệm vụ theo giới hạn của sự chú ý. Chỉ dẫn rõ, bước ngắn và cơ hội kiểm tra chi tiết quan trọng có thể hữu ích. Tâm lý học đưa ra mô hình hành vi hữu dụng, dù không thí nghiệm nào dự đoán chính xác mọi người trong đời thường.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_4",
+        "academic_lecture",
+        "concept",
+        "l5"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "type": "note_completion",
+      "prompt": "____ selects what becomes the focus of conscious activity.",
+      "correct_answers": [
+        "Attention"
+      ],
+      "evidence_turn_ids": [
+        "T01"
+      ],
+      "explanation_vi": "Bằng chứng tại T01: Tâm trí nhận nhiều thông tin hơn khả năng xử lý chi tiết cùng lúc. Chú ý giúp chọn thông tin trở thành trọng tâm ý thức. Hãy hình dung đọc ở quán cà phê đông: bạn theo dõi trang sách nhưng hầu như không nhận ra cuộc nói chuyện bên cạnh. Sự chọn lọc hữu ích, nhưng ta không thể mặc nhiên cho rằng mọi sự kiện trước mắt đã được ghi nhận đầy đủ. Đáp án cần chọn/điền: “Attention”.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_4",
+        "ielts_practice",
+        "concept",
+        "note_completion"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q02",
+      "type": "summary_completion",
+      "prompt": "Working memory maintains information needed for a current ____.",
+      "correct_answers": [
+        "task"
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Bằng chứng tại T02: Nhà tâm lý học phân biệt chú ý với trí nhớ làm việc. Chú ý chọn thông tin, còn trí nhớ làm việc tạm giữ và xử lý điều cần cho nhiệm vụ hiện tại. Khi nghe số điện thoại rồi nhắc lại trước lúc ghi, bạn dùng trí nhớ làm việc. Khả năng của nó có giới hạn nên thêm nhiệm vụ khó thứ hai có thể gây nhiễu nhiệm vụ đầu. Đáp án cần chọn/điền: “task”.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_4",
+        "ielts_practice",
+        "concept",
+        "summary_completion"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q03",
+      "type": "sentence_completion",
+      "prompt": "Failing to notice an unexpected event while concentrating is inattentional ____.",
+      "correct_answers": [
+        "blindness"
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Bằng chứng tại T03: Một ý tưởng nghiên cứu quen thuộc là mù do thiếu chú ý: con người có thể không nhận ra điều bất ngờ khi tập trung vào nhiệm vụ khác. Điều đó không có nghĩa mắt họ chưa nhận hình ảnh. Thay vào đó, thông tin chưa được xử lý đến mức có thể tường thuật có ý thức. Hiện tượng này cảnh báo không nên quá tin vào khẳng định rằng ai đó chắc chắn đã nhìn thấy gì. Đáp án cần chọn/điền: “blindness”.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_4",
+        "ielts_practice",
+        "concept",
+        "sentence_completion"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q04",
+      "type": "mcq",
+      "prompt": "What is often happening during so-called multitasking?",
+      "correct_answers": [
+        "Rapid switching of attention"
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Bằng chứng tại T04: Người ta cũng nói về đa nhiệm, nhưng thường thực chất họ đang chuyển chú ý nhanh giữa các hoạt động chứ không xử lý độc lập hai nhiệm vụ phức tạp. Chuyển đổi có thể gây trễ và sai, nhất là khi cả hai đều cần suy luận bằng lời. Người nghe chỉ dẫn trong lúc soạn tin nhắn chi tiết có thể nhớ ít hơn người tạm dừng nhắn. Đáp án cần chọn/điền: “Rapid switching of attention”.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "section_4",
+        "ielts_practice",
+        "concept",
+        "mcq"
+      ],
+      "options": [
+        "Independent processing of every complex task",
+        "Permanent loss of working memory",
+        "Rapid switching of attention"
+      ]
+    },
+    {
+      "question_id": "Q05",
+      "type": "short_answer",
+      "prompt": "What kind of instructions may help people manage limited attention?",
+      "correct_answers": [
+        "Clear instructions"
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Bằng chứng tại T05: Thông điệp thực tế không phải xóa hết xao nhãng, vốn có thể không khả thi, mà thiết kế nhiệm vụ theo giới hạn của sự chú ý. Chỉ dẫn rõ, bước ngắn và cơ hội kiểm tra chi tiết quan trọng có thể hữu ích. Tâm lý học đưa ra mô hình hành vi hữu dụng, dù không thí nghiệm nào dự đoán chính xác mọi người trong đời thường. Đáp án cần chọn/điền: “Clear instructions”.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_4",
+        "ielts_practice",
+        "concept",
+        "short_answer"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q06",
+      "type": "mcq",
+      "prompt": "What is the main message of the lecture?",
+      "correct_answers": [
+        "Attention and memory have limits that affect performance"
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Bằng chứng tại T05: Thông điệp thực tế không phải xóa hết xao nhãng, vốn có thể không khả thi, mà thiết kế nhiệm vụ theo giới hạn của sự chú ý. Chỉ dẫn rõ, bước ngắn và cơ hội kiểm tra chi tiết quan trọng có thể hữu ích. Tâm lý học đưa ra mô hình hành vi hữu dụng, dù không thí nghiệm nào dự đoán chính xác mọi người trong đời thường. Đây là câu hỏi ý chính; cần hiểu toàn bài và phân biệt các lựa chọn nhiễu.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "section_4",
+        "ielts_practice",
+        "concept",
+        "main_idea"
+      ],
+      "options": [
+        "Attention and memory have limits that affect performance",
+        "Distraction can always be removed entirely",
+        "Everyone notices all visible events"
+      ]
+    },
+    {
+      "question_id": "D01",
+      "type": "dictation",
+      "prompt": "Nghe đoạn T02 rồi chép lại toàn bộ phần lời nói tiếng Anh.",
+      "correct_answers": [
+        "Psychologists distinguish attention from working memory. Attention selects information, whereas working memory briefly maintains and manipulates what is needed for a current task. When you hear a phone number and repeat it before writing it down, you are using working memory. Its capacity is limited, so adding a second demanding task may interfere with the first."
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Nghe lại để sửa âm cuối, từ chức năng và từ học thuật. Nội dung: Nhà tâm lý học phân biệt chú ý với trí nhớ làm việc. Chú ý chọn thông tin, còn trí nhớ làm việc tạm giữ và xử lý điều cần cho nhiệm vụ hiện tại. Khi nghe số điện thoại rồi nhắc lại trước lúc ghi, bạn dùng trí nhớ làm việc. Khả năng của nó có giới hạn nên thêm nhiệm vụ khó thứ hai có thể gây nhiễu nhiệm vụ đầu.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_4",
+        "dictation",
+        "exact_transcript"
+      ]
+    },
+    {
+      "question_id": "D02",
+      "type": "dictation",
+      "prompt": "Nghe đoạn T04 rồi chép lại toàn bộ phần lời nói tiếng Anh.",
+      "correct_answers": [
+        "People also talk about multitasking, but often they are switching attention rapidly between activities rather than processing two complex tasks independently. Switching can introduce delays and errors, especially when both tasks require verbal reasoning. A person listening to instructions while composing a detailed message may remember less than someone who pauses the message first."
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Nghe lại để sửa âm cuối, từ chức năng và từ học thuật. Nội dung: Người ta cũng nói về đa nhiệm, nhưng thường thực chất họ đang chuyển chú ý nhanh giữa các hoạt động chứ không xử lý độc lập hai nhiệm vụ phức tạp. Chuyển đổi có thể gây trễ và sai, nhất là khi cả hai đều cần suy luận bằng lời. Người nghe chỉ dẫn trong lúc soạn tin nhắn chi tiết có thể nhớ ít hơn người tạm dừng nhắn.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_4",
+        "dictation",
+        "exact_transcript"
+      ]
+    },
+    {
+      "question_id": "G01",
+      "type": "gap_fill",
+      "prompt": "Nghe đoạn T01 rồi điền phần thiếu: The human mind receives more information than it can process in detail at once. ____ helps select what becomes the focus of conscious activity. Imagine reading in a busy café: you may follow the page while barely noticing the conversation beside you. This selectivity is useful, but it means we cannot assume that every visible event has been fully registered.",
+      "correct_answers": [
+        "Attention"
+      ],
+      "evidence_turn_ids": [
+        "T01"
+      ],
+      "explanation_vi": "Đáp án là “Attention”, nghĩa: sự chú ý. Từ xuất hiện nguyên văn ở T01.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_4",
+        "gap_fill",
+        "academic_vocabulary"
+      ]
+    }
+  ],
+  "vocabulary": [
+    {
+      "term": "Attention",
+      "pos": "n.",
+      "meaning_vi": "sự chú ý",
+      "example_en": "The human mind receives more information than it can process in detail at once. Attention helps select what becomes the focus of conscious activity. Imagine reading in a busy café: you may follow the page while barely noticing the conversation beside you. This selectivity is useful, but it means we cannot assume that every visible event has been fully registered.",
+      "example_vi": "Tâm trí nhận nhiều thông tin hơn khả năng xử lý chi tiết cùng lúc. Chú ý giúp chọn thông tin trở thành trọng tâm ý thức. Hãy hình dung đọc ở quán cà phê đông: bạn theo dõi trang sách nhưng hầu như không nhận ra cuộc nói chuyện bên cạnh. Sự chọn lọc hữu ích, nhưng ta không thể mặc nhiên cho rằng mọi sự kiện trước mắt đã được ghi nhận đầy đủ.",
+      "source_turn_id": "T01"
+    },
+    {
+      "term": "working memory",
+      "pos": "n. phr.",
+      "meaning_vi": "trí nhớ làm việc",
+      "example_en": "Psychologists distinguish attention from working memory. Attention selects information, whereas working memory briefly maintains and manipulates what is needed for a current task. When you hear a phone number and repeat it before writing it down, you are using working memory. Its capacity is limited, so adding a second demanding task may interfere with the first.",
+      "example_vi": "Nhà tâm lý học phân biệt chú ý với trí nhớ làm việc. Chú ý chọn thông tin, còn trí nhớ làm việc tạm giữ và xử lý điều cần cho nhiệm vụ hiện tại. Khi nghe số điện thoại rồi nhắc lại trước lúc ghi, bạn dùng trí nhớ làm việc. Khả năng của nó có giới hạn nên thêm nhiệm vụ khó thứ hai có thể gây nhiễu nhiệm vụ đầu.",
+      "source_turn_id": "T02"
+    },
+    {
+      "term": "inattentional blindness",
+      "pos": "n. phr.",
+      "meaning_vi": "mù do thiếu chú ý",
+      "example_en": "A well-known research idea is inattentional blindness: people can fail to notice something unexpected when concentrating on another task. This does not mean that their eyes never received the image. Rather, the information was not processed in a way that supported conscious reporting. The phenomenon warns against relying too heavily on confident accounts of what someone must have seen.",
+      "example_vi": "Một ý tưởng nghiên cứu quen thuộc là mù do thiếu chú ý: con người có thể không nhận ra điều bất ngờ khi tập trung vào nhiệm vụ khác. Điều đó không có nghĩa mắt họ chưa nhận hình ảnh. Thay vào đó, thông tin chưa được xử lý đến mức có thể tường thuật có ý thức. Hiện tượng này cảnh báo không nên quá tin vào khẳng định rằng ai đó chắc chắn đã nhìn thấy gì.",
+      "source_turn_id": "T03"
+    },
+    {
+      "term": "multitasking",
+      "pos": "n.",
+      "meaning_vi": "đa nhiệm",
+      "example_en": "People also talk about multitasking, but often they are switching attention rapidly between activities rather than processing two complex tasks independently. Switching can introduce delays and errors, especially when both tasks require verbal reasoning. A person listening to instructions while composing a detailed message may remember less than someone who pauses the message first.",
+      "example_vi": "Người ta cũng nói về đa nhiệm, nhưng thường thực chất họ đang chuyển chú ý nhanh giữa các hoạt động chứ không xử lý độc lập hai nhiệm vụ phức tạp. Chuyển đổi có thể gây trễ và sai, nhất là khi cả hai đều cần suy luận bằng lời. Người nghe chỉ dẫn trong lúc soạn tin nhắn chi tiết có thể nhớ ít hơn người tạm dừng nhắn.",
+      "source_turn_id": "T04"
+    }
+  ],
+  "audio": {
+    "status": "not_generated",
+    "url": null,
+    "duration_ms": null,
+    "model": null,
+    "provider": null,
+    "voice_config": null,
+    "source_transcript_hash": "0a81ddd50ae795faadf71701a81706ed113491fcec16a2754d00ed4a6f2cccbf",
+    "audio_sha256": null,
+    "format": null
+  },
+  "qa": {
+    "content_reviewed": false,
+    "answers_verified": false,
+    "audio_verified": false,
+    "rights_cleared": false,
+    "duplicate_reviewed": false,
+    "notes": [
+      "AI-assisted original first draft; expert scientific and pedagogical review pending.",
+      "Audio not generated, segment timestamps null; TTS provider terms and rights must be approved.",
+      "Short Section 4 skill practice; not a 10-question official IELTS simulation or calibrated band test.",
+      "M16.2: automated edits are provisional; IELTS teacher final signoff, audio and rights clearance pending."
+    ]
+  },
+  "provenance": {
+    "content_origin": "original_ai_assisted",
+    "source_urls": [],
+    "source_rights_note": "Original scripts. Confirm rights of TTS voices and distribution to learners, particularly minors, before release.",
+    "reviewer": null
+  },
+  "release_metadata": {
+    "published_at": null,
+    "version": 1
+  }
+}

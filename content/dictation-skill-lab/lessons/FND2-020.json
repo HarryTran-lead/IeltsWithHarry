@@ -1,0 +1,675 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "FND2-020",
+  "status": "draft",
+  "level": "L1",
+  "section": 0,
+  "topic": "Foundation M17 – Sound Accuracy",
+  "title": "Initial /r/ versus /l/",
+  "learning_objectives_vi": [
+    "Nghe phân biệt initial /r/ versus /l/.",
+    "Phân biệt /r/ đầu từ với /l/; chú ý người Việt dễ nhầm khi nghe nhanh",
+    "Chép được câu chưa nhìn transcript; đối chiếu từ trọng tâm sau khi nộp."
+  ],
+  "content_format": "micro_drill",
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Foundation narrator",
+      "tts_voice_id": null,
+      "accent_requested": "british"
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "Turn right at the next junction.",
+      "translation_vi": "Rẽ phải tại giao lộ tiếp theo.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "minimal_pair",
+        "initial_r_l"
+      ],
+      "target_word": "right",
+      "focus_pair_id": "PAIR-01",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "A",
+      "text_en": "The light is green now.",
+      "translation_vi": "Đèn hiện đang màu xanh.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "minimal_pair",
+        "initial_r_l"
+      ],
+      "target_word": "light",
+      "focus_pair_id": "PAIR-01",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "A",
+      "text_en": "The road follows the river.",
+      "translation_vi": "Con đường chạy dọc theo sông.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "minimal_pair",
+        "initial_r_l"
+      ],
+      "target_word": "road",
+      "focus_pair_id": "PAIR-02",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "A",
+      "text_en": "The van carries a heavy load.",
+      "translation_vi": "Xe tải nhỏ chở một tải hàng nặng.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "minimal_pair",
+        "initial_r_l"
+      ],
+      "target_word": "load",
+      "focus_pair_id": "PAIR-02",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "A",
+      "text_en": "Do not walk on the wet grass.",
+      "translation_vi": "Đừng đi trên bãi cỏ ướt.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "minimal_pair",
+        "initial_r_l"
+      ],
+      "target_word": "grass",
+      "focus_pair_id": "PAIR-03",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "A",
+      "text_en": "Please put the glass in the sink.",
+      "translation_vi": "Hãy đặt chiếc cốc thủy tinh vào bồn rửa.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "minimal_pair",
+        "initial_r_l"
+      ],
+      "target_word": "glass",
+      "focus_pair_id": "PAIR-03",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "Read the notice before entering.",
+      "translation_vi": "Hãy đọc thông báo trước khi vào.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "minimal_pair",
+        "initial_r_l"
+      ],
+      "target_word": "read",
+      "focus_pair_id": "PAIR-04",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "A",
+      "text_en": "Lead the group toward the exit.",
+      "translation_vi": "Hãy dẫn cả nhóm về phía lối ra.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "minimal_pair",
+        "initial_r_l"
+      ],
+      "target_word": "lead",
+      "focus_pair_id": "PAIR-04",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T09",
+      "speaker_id": "A",
+      "text_en": "We will fry the onions first.",
+      "translation_vi": "Chúng ta sẽ phi hành tây trước.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "minimal_pair",
+        "initial_r_l"
+      ],
+      "target_word": "fry",
+      "focus_pair_id": "PAIR-05",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T10",
+      "speaker_id": "A",
+      "text_en": "The birds fly south in winter.",
+      "translation_vi": "Những con chim bay về phía nam vào mùa đông.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "minimal_pair",
+        "initial_r_l"
+      ],
+      "target_word": "fly",
+      "focus_pair_id": "PAIR-05",
+      "bank_role": "training"
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "type": "dictation",
+      "prompt": "Nghe lượt T01 một lần rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "Turn right at the next junction."
+      ],
+      "evidence_turn_ids": [
+        "T01"
+      ],
+      "explanation_vi": "Tập trung nghe right / light (Phân biệt /r/ đầu từ với /l/; chú ý người Việt dễ nhầm khi nghe nhanh). Nghĩa: Rẽ phải tại giao lộ tiếp theo.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text",
+        "right / light (Phân biệt /r/ đầu từ với /l/; chú ý người Việt dễ nhầm khi nghe nhanh)"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q02",
+      "type": "dictation",
+      "prompt": "Nghe lượt T02 một lần rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "The light is green now."
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Tập trung nghe right / light (Phân biệt /r/ đầu từ với /l/; chú ý người Việt dễ nhầm khi nghe nhanh). Nghĩa: Đèn hiện đang màu xanh.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text",
+        "right / light (Phân biệt /r/ đầu từ với /l/; chú ý người Việt dễ nhầm khi nghe nhanh)"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q03",
+      "type": "dictation",
+      "prompt": "Nghe lượt T03 một lần rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "The road follows the river."
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Tập trung nghe road / load (Phân biệt /r/ đầu từ với /l/; chú ý người Việt dễ nhầm khi nghe nhanh). Nghĩa: Con đường chạy dọc theo sông.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text",
+        "road / load (Phân biệt /r/ đầu từ với /l/; chú ý người Việt dễ nhầm khi nghe nhanh)"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q04",
+      "type": "dictation",
+      "prompt": "Nghe lượt T04 một lần rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "The van carries a heavy load."
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Tập trung nghe road / load (Phân biệt /r/ đầu từ với /l/; chú ý người Việt dễ nhầm khi nghe nhanh). Nghĩa: Xe tải nhỏ chở một tải hàng nặng.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text",
+        "road / load (Phân biệt /r/ đầu từ với /l/; chú ý người Việt dễ nhầm khi nghe nhanh)"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q05",
+      "type": "dictation",
+      "prompt": "Nghe lượt T05 một lần rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "Do not walk on the wet grass."
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Tập trung nghe grass / glass (Phân biệt /r/ đầu từ với /l/; chú ý người Việt dễ nhầm khi nghe nhanh). Nghĩa: Đừng đi trên bãi cỏ ướt.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text",
+        "grass / glass (Phân biệt /r/ đầu từ với /l/; chú ý người Việt dễ nhầm khi nghe nhanh)"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q06",
+      "type": "dictation",
+      "prompt": "Nghe lượt T06 một lần rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "Please put the glass in the sink."
+      ],
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "explanation_vi": "Tập trung nghe grass / glass (Phân biệt /r/ đầu từ với /l/; chú ý người Việt dễ nhầm khi nghe nhanh). Nghĩa: Hãy đặt chiếc cốc thủy tinh vào bồn rửa.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text",
+        "grass / glass (Phân biệt /r/ đầu từ với /l/; chú ý người Việt dễ nhầm khi nghe nhanh)"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q07",
+      "type": "dictation",
+      "prompt": "Nghe lượt T07 một lần rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "Read the notice before entering."
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "Tập trung nghe read / lead (Phân biệt /r/ đầu từ với /l/; chú ý người Việt dễ nhầm khi nghe nhanh). Nghĩa: Hãy đọc thông báo trước khi vào.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text",
+        "read / lead (Phân biệt /r/ đầu từ với /l/; chú ý người Việt dễ nhầm khi nghe nhanh)"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q08",
+      "type": "dictation",
+      "prompt": "Nghe lượt T08 một lần rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "Lead the group toward the exit."
+      ],
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "explanation_vi": "Tập trung nghe read / lead (Phân biệt /r/ đầu từ với /l/; chú ý người Việt dễ nhầm khi nghe nhanh). Nghĩa: Hãy dẫn cả nhóm về phía lối ra.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text",
+        "read / lead (Phân biệt /r/ đầu từ với /l/; chú ý người Việt dễ nhầm khi nghe nhanh)"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q09",
+      "type": "dictation",
+      "prompt": "Nghe lượt T09 một lần rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "We will fry the onions first."
+      ],
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "explanation_vi": "Tập trung nghe fry / fly (Phân biệt /r/ đầu từ với /l/; chú ý người Việt dễ nhầm khi nghe nhanh). Nghĩa: Chúng ta sẽ phi hành tây trước.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text",
+        "fry / fly (Phân biệt /r/ đầu từ với /l/; chú ý người Việt dễ nhầm khi nghe nhanh)"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q10",
+      "type": "dictation",
+      "prompt": "Nghe lượt T10 một lần rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "The birds fly south in winter."
+      ],
+      "evidence_turn_ids": [
+        "T10"
+      ],
+      "explanation_vi": "Tập trung nghe fry / fly (Phân biệt /r/ đầu từ với /l/; chú ý người Việt dễ nhầm khi nghe nhanh). Nghĩa: Những con chim bay về phía nam vào mùa đông.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text",
+        "fry / fly (Phân biệt /r/ đầu từ với /l/; chú ý người Việt dễ nhầm khi nghe nhanh)"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q11",
+      "type": "word_choice",
+      "prompt": "Nghe lượt T01. Từ nào được nói?",
+      "correct_answers": [
+        "right"
+      ],
+      "options": [
+        "right",
+        "light"
+      ],
+      "evidence_turn_ids": [
+        "T01"
+      ],
+      "explanation_vi": "Phân biệt right và light. Phân biệt /r/ đầu từ với /l/; chú ý người Việt dễ nhầm khi nghe nhanh. Hãy nghe âm thực tế; không chỉ dựa vào nghĩa của cả câu.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "comprehension",
+        "sound_discrimination",
+        "initial_r_l"
+      ],
+      "max_replays_practice": 3
+    },
+    {
+      "question_id": "Q12",
+      "type": "word_choice",
+      "prompt": "Nghe lượt T04. Từ nào được nói?",
+      "correct_answers": [
+        "load"
+      ],
+      "options": [
+        "load",
+        "road"
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Phân biệt road và load. Phân biệt /r/ đầu từ với /l/; chú ý người Việt dễ nhầm khi nghe nhanh. Hãy nghe âm thực tế; không chỉ dựa vào nghĩa của cả câu.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "comprehension",
+        "sound_discrimination",
+        "initial_r_l"
+      ],
+      "max_replays_practice": 3
+    },
+    {
+      "question_id": "Q13",
+      "type": "word_choice",
+      "prompt": "Nghe lượt T05. Từ nào được nói?",
+      "correct_answers": [
+        "grass"
+      ],
+      "options": [
+        "grass",
+        "glass"
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Phân biệt grass và glass. Phân biệt /r/ đầu từ với /l/; chú ý người Việt dễ nhầm khi nghe nhanh. Hãy nghe âm thực tế; không chỉ dựa vào nghĩa của cả câu.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "comprehension",
+        "sound_discrimination",
+        "initial_r_l"
+      ],
+      "max_replays_practice": 3
+    },
+    {
+      "question_id": "Q14",
+      "type": "word_choice",
+      "prompt": "Nghe lượt T08. Từ nào được nói?",
+      "correct_answers": [
+        "lead"
+      ],
+      "options": [
+        "lead",
+        "read"
+      ],
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "explanation_vi": "Phân biệt read và lead. Phân biệt /r/ đầu từ với /l/; chú ý người Việt dễ nhầm khi nghe nhanh. Hãy nghe âm thực tế; không chỉ dựa vào nghĩa của cả câu.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "comprehension",
+        "sound_discrimination",
+        "initial_r_l"
+      ],
+      "max_replays_practice": 3
+    },
+    {
+      "question_id": "Q15",
+      "type": "word_choice",
+      "prompt": "Nghe lượt T09. Từ nào được nói?",
+      "correct_answers": [
+        "fry"
+      ],
+      "options": [
+        "fry",
+        "fly"
+      ],
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "explanation_vi": "Phân biệt fry và fly. Phân biệt /r/ đầu từ với /l/; chú ý người Việt dễ nhầm khi nghe nhanh. Hãy nghe âm thực tế; không chỉ dựa vào nghĩa của cả câu.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "comprehension",
+        "sound_discrimination",
+        "initial_r_l"
+      ],
+      "max_replays_practice": 3
+    }
+  ],
+  "vocabulary": [
+    {
+      "term": "right",
+      "pos": "target",
+      "meaning_vi": "bên phải",
+      "example_en": "Turn right at the next junction.",
+      "example_vi": "Rẽ phải tại giao lộ tiếp theo.",
+      "source_turn_id": "T01",
+      "phoneme_focus": "initial_r_l"
+    },
+    {
+      "term": "light",
+      "pos": "target",
+      "meaning_vi": "đèn",
+      "example_en": "The light is green now.",
+      "example_vi": "Đèn hiện đang màu xanh.",
+      "source_turn_id": "T02",
+      "phoneme_focus": "initial_r_l"
+    },
+    {
+      "term": "road",
+      "pos": "target",
+      "meaning_vi": "con đường",
+      "example_en": "The road follows the river.",
+      "example_vi": "Con đường chạy dọc theo sông.",
+      "source_turn_id": "T03",
+      "phoneme_focus": "initial_r_l"
+    },
+    {
+      "term": "load",
+      "pos": "target",
+      "meaning_vi": "tải hàng",
+      "example_en": "The van carries a heavy load.",
+      "example_vi": "Xe tải nhỏ chở một tải hàng nặng.",
+      "source_turn_id": "T04",
+      "phoneme_focus": "initial_r_l"
+    },
+    {
+      "term": "grass",
+      "pos": "target",
+      "meaning_vi": "cỏ",
+      "example_en": "Do not walk on the wet grass.",
+      "example_vi": "Đừng đi trên bãi cỏ ướt.",
+      "source_turn_id": "T05",
+      "phoneme_focus": "initial_r_l"
+    },
+    {
+      "term": "glass",
+      "pos": "target",
+      "meaning_vi": "cốc thủy tinh",
+      "example_en": "Please put the glass in the sink.",
+      "example_vi": "Hãy đặt chiếc cốc thủy tinh vào bồn rửa.",
+      "source_turn_id": "T06",
+      "phoneme_focus": "initial_r_l"
+    },
+    {
+      "term": "read",
+      "pos": "target",
+      "meaning_vi": "đọc",
+      "example_en": "Read the notice before entering.",
+      "example_vi": "Hãy đọc thông báo trước khi vào.",
+      "source_turn_id": "T07",
+      "phoneme_focus": "initial_r_l"
+    },
+    {
+      "term": "lead",
+      "pos": "target",
+      "meaning_vi": "dẫn dắt",
+      "example_en": "Lead the group toward the exit.",
+      "example_vi": "Hãy dẫn cả nhóm về phía lối ra.",
+      "source_turn_id": "T08",
+      "phoneme_focus": "initial_r_l"
+    },
+    {
+      "term": "fry",
+      "pos": "target",
+      "meaning_vi": "rán/phi",
+      "example_en": "We will fry the onions first.",
+      "example_vi": "Chúng ta sẽ phi hành tây trước.",
+      "source_turn_id": "T09",
+      "phoneme_focus": "initial_r_l"
+    },
+    {
+      "term": "fly",
+      "pos": "target",
+      "meaning_vi": "bay",
+      "example_en": "The birds fly south in winter.",
+      "example_vi": "Những con chim bay về phía nam vào mùa đông.",
+      "source_turn_id": "T10",
+      "phoneme_focus": "initial_r_l"
+    }
+  ],
+  "micro_skill_id": "initial_r_l",
+  "bank_role": "training",
+  "content_design": {
+    "sequence": "five_contrast_pairs",
+    "pairs": [
+      [
+        "right",
+        "light"
+      ],
+      [
+        "road",
+        "load"
+      ],
+      [
+        "grass",
+        "glass"
+      ],
+      [
+        "read",
+        "lead"
+      ],
+      [
+        "fry",
+        "fly"
+      ]
+    ],
+    "first_listen": "1x",
+    "guided_replay_max": 5,
+    "mastery_requires_unseen": true,
+    "note_vi": "Phân biệt /r/ đầu từ với /l/; chú ý người Việt dễ nhầm khi nghe nhanh"
+  },
+  "audio": {
+    "status": "not_generated",
+    "url": null,
+    "duration_ms": null,
+    "provider": null,
+    "model": null,
+    "voice_config": null,
+    "format": null,
+    "audio_sha256": null,
+    "source_transcript_hash": "06efe0e96b0c332ed200243a4cc9de3249694f91328ecb756e86b5cd6da06d69",
+    "generation_notes": "Generate each turn as speech only; no spoken question numbers, answers or coaching. Validate text and pronunciation before release."
+  },
+  "qa": {
+    "content_reviewed": false,
+    "answers_verified": true,
+    "audio_verified": false,
+    "human_signed_off": false,
+    "duplicate_reviewed": false,
+    "notes": [
+      "Original draft, automated evidence matching passed; pedagogical expert review still required.",
+      "Audio and timestamp not created; protected holdouts are separate server-only payloads."
+    ]
+  },
+  "provenance": {
+    "content_origin": "original_ai_assisted",
+    "rights_status": "pending_tts_terms_review",
+    "source_urls": [],
+    "reviewer": null,
+    "originality_check": "Exact comparisons against prior 300 drafts pending final QA."
+  },
+  "release_metadata": {
+    "published_at": null,
+    "version": 1
+  },
+  "lesson_theory_vi": {
+    "core_rule": "Âm /r/ bắt đầu khác /l/; không áp dụng một cách phát âm tiếng Việt cho cả hai.",
+    "worked_contrasts": [
+      {
+        "contrast": "right / light",
+        "meaning_vi": "bên phải / đèn",
+        "teacher_note_vi": "Âm /r/ bắt đầu khác /l/; không áp dụng một cách phát âm tiếng Việt cho cả hai."
+      },
+      {
+        "contrast": "road / load",
+        "meaning_vi": "con đường / tải hàng",
+        "teacher_note_vi": "Âm /r/ bắt đầu khác /l/; không áp dụng một cách phát âm tiếng Việt cho cả hai."
+      }
+    ],
+    "learning_steps": [
+      "Nghe giáo viên/TTS đọc cặp từ ở tốc độ tự nhiên và nhận diện từ thứ nhất.",
+      "Làm lượt T01–T04 với nút nghe lại theo nhu cầu; nộp xong mới xem transcript và nghĩa.",
+      "Làm T05–T10 độc lập hơn và hạn chế nghe lại.",
+      "Nếu đạt yêu cầu luyện tập, hệ thống phát 2 câu chưa từng nghe từ ngân hàng riêng để kiểm tra chuyển giao."
+    ],
+    "common_mistakes": [
+      "Nhầm road/load, right/light do âm đầu.",
+      "Đúng sau năm lần nghe lại không đồng nghĩa với nghe đúng ngay lần đầu."
+    ],
+    "before_audio_question": "Bạn có thể phân biệt hai từ qua âm đầu/nguyên âm/âm cuối mà không nhìn chữ không?"
+  }
+}

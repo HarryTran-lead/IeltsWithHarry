@@ -1,0 +1,1482 @@
+{
+  "C2-01": {
+    "lesson_id": "C2-01",
+    "overview_vi": "Chọn thì và cách quy chiếu thời gian để làm rõ chuỗi sự kiện, dự định dang dở và quan hệ giữa thời điểm kể với thời điểm sự việc.",
+    "decision_steps_vi": [
+      "Xác định thời điểm được nói tới và điểm nhìn của người kể",
+      "Phân biệt sự việc đã xảy ra với dự định hoặc dự kiến không thành",
+      "Kiểm tra xem lựa chọn thì có vô tình khẳng định một sự kiện chưa xảy ra không"
+    ],
+    "semantic_contrast": {
+      "option_a_en": "She was going to disclose the findings when the review was suspended.",
+      "option_b_en": "She disclosed the findings when the review was suspended.",
+      "analysis_vi": "Câu đầu chỉ một dự định bị gián đoạn, câu sau khẳng định việc công bố đã diễn ra. Đổi thì làm thay đổi sự thật được thông báo.",
+      "teacher_review_required": true
+    },
+    "discourse_edit": {
+      "scenario_vi": "Biên tập nhật ký nghiên cứu trước khi công bố",
+      "task_en": "Write a three-sentence timeline that separates intended action from confirmed events.",
+      "model_en": "The team had been preparing to release the preliminary results when the regulator requested a second review. No findings were published at that stage. The revised report eventually appeared six weeks later, after the additional checks had been completed.",
+      "editor_commentary_vi": "Had been preparing không đồng nghĩa had released; eventually và six weeks later xác định hai mốc thực tế khác nhau."
+    },
+    "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED",
+    "question_import_policy": "SEPARATE_BANK_NO_OVERWRITE",
+    "title": "Subtle Tense Nuances",
+    "source_rules": [
+      {
+        "rule_id": "C2-01-R01",
+        "heading": "Imminent action interrupted",
+        "pattern": "was about to + ...",
+        "function_vi": "Was about to + V nguyên mẫu diễn tả sự việc ở sát thời điểm diễn ra, thường có biến cố xen vào.",
+        "example_en": "The chair was about to announce the verdict when the alarm sounded.",
+        "example_vi": "Chủ tọa sắp công bố phán quyết thì chuông báo động vang lên.",
+        "source_status": "REUSED_UNREVIEWED"
+      },
+      {
+        "rule_id": "C2-01-R02",
+        "heading": "Long-standing unrealised intention",
+        "pattern": "had been meaning to + ...",
+        "function_vi": "Had been meaning to + V nhấn mạnh ý định kéo dài trong một thời gian trước thời điểm đang kể.",
+        "example_en": "Before our discussion yesterday, I had been meaning to ask you about the revised contract for weeks.",
+        "example_vi": "Trước buổi trao đổi hôm qua, tôi đã định hỏi bạn về hợp đồng sửa đổi suốt mấy tuần.",
+        "source_status": "REUSED_UNREVIEWED"
+      }
+    ],
+    "draft_practice": [
+      {
+        "stage": "guided",
+        "prompt_en": "Choose the wording that does not assert publication: (A) The lab had published the report when approval was withdrawn. (B) The lab had been about to publish the report when approval was withdrawn.",
+        "draft_id": "M13-C2-01-DRAFT-01",
+        "assessment_mode": "SELF_REVIEW_REQUIRED",
+        "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED"
+      },
+      {
+        "stage": "independent",
+        "prompt_en": "Rewrite without asserting completion: They intended to announce the results, but the power failed first.",
+        "draft_id": "M13-C2-01-DRAFT-02",
+        "assessment_mode": "SELF_REVIEW_REQUIRED",
+        "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED"
+      },
+      {
+        "stage": "mastery",
+        "prompt_en": "Edit this report for accurate chronology: By the time the inspection began, the samples were being sealed the previous day.",
+        "draft_id": "M13-C2-01-DRAFT-03",
+        "assessment_mode": "SELF_REVIEW_REQUIRED",
+        "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED"
+      },
+      {
+        "stage": "spaced_review",
+        "prompt_en": "Correct the factual overstatement: We had been planning to open in May, so we opened in May.",
+        "draft_id": "M13-C2-01-DRAFT-04",
+        "assessment_mode": "SELF_REVIEW_REQUIRED",
+        "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED"
+      }
+    ]
+  },
+  "C2-02": {
+    "lesson_id": "C2-02",
+    "overview_vi": "Aspect cho phép người viết chọn nhấn quá trình, kết quả, tính lặp lại hoặc hiệu lực còn kéo dài; chuyển dạng có thể thay đổi hàm ý.",
+    "decision_steps_vi": [
+      "Xác định mốc tham chiếu hiện tại hay quá khứ",
+      "Hỏi người đọc cần thấy quá trình kéo dài hay kết quả hoàn tất",
+      "Soát hàm ý hoàn tất, lặp lại và liên quan hiện tại trước khi sửa"
+    ],
+    "semantic_contrast": {
+      "option_a_en": "The team has analysed the data for three months.",
+      "option_b_en": "The team has been analysing the data for three months.",
+      "analysis_vi": "Câu đầu có thể nhấn hoạt động đã thực hiện hoặc thành quả; câu sau nêu quá trình kéo dài, không tự khẳng định đã hoàn tất phân tích.",
+      "teacher_review_required": true
+    },
+    "discourse_edit": {
+      "scenario_vi": "Tường trình một dự án vẫn tiếp tục thu thập dữ liệu",
+      "task_en": "Draft a progress note that distinguishes work under way from completed milestones.",
+      "model_en": "Researchers have been monitoring the site since January, and the observation phase is still under way. They have completed three interim reports but have not yet issued a final recommendation. Any summary should therefore distinguish established patterns from provisional interpretations.",
+      "editor_commentary_vi": "Present perfect continuous thể hiện quá trình đang tiếp diễn; have completed thể hiện ba báo cáo đã hoàn tất; not yet giới hạn kết luận."
+    },
+    "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED",
+    "question_import_policy": "SEPARATE_BANK_NO_OVERWRITE",
+    "title": "Complex Aspect & Time Reference",
+    "source_rules": [
+      {
+        "rule_id": "C2-02-R01",
+        "heading": "Past perfect continuous before past reference",
+        "pattern": "had been + ...",
+        "function_vi": "Had been + V-ing nhấn mạnh quá trình đã kéo dài trước một mốc quá khứ được nêu rõ.",
+        "example_en": "By the time the inspector arrived, the technicians had been testing the system for six hours.",
+        "example_vi": "Đến lúc thanh tra tới, kỹ thuật viên đã thử hệ thống suốt sáu giờ.",
+        "source_status": "REUSED_UNREVIEWED"
+      },
+      {
+        "rule_id": "C2-02-R02",
+        "heading": "Future perfect continuous with duration",
+        "pattern": "will have been + ...",
+        "function_vi": "Will have been + V-ing tính độ dài quá trình liên tục tính đến một mốc trong tương lai.",
+        "example_en": "By July, she will have been leading the programme for ten years.",
+        "example_vi": "Đến tháng Bảy, cô ấy sẽ lãnh đạo chương trình được mười năm.",
+        "source_status": "REUSED_UNREVIEWED"
+      }
+    ],
+    "draft_practice": [
+      {
+        "stage": "guided",
+        "prompt_en": "Choose the aspect for an ongoing process: The analysts ___ the readings since Monday and are still checking them. (have reviewed / have been reviewing)",
+        "draft_id": "M13-C2-02-DRAFT-01",
+        "assessment_mode": "SELF_REVIEW_REQUIRED",
+        "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED"
+      },
+      {
+        "stage": "independent",
+        "prompt_en": "Rewrite to foreground completion: We have been drafting the first two chapters, and both are finished.",
+        "draft_id": "M13-C2-02-DRAFT-02",
+        "assessment_mode": "SELF_REVIEW_REQUIRED",
+        "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED"
+      },
+      {
+        "stage": "mastery",
+        "prompt_en": "Edit the following to avoid an unsupported completion claim: The researchers have investigated the issue for weeks; therefore, they have resolved it.",
+        "draft_id": "M13-C2-02-DRAFT-03",
+        "assessment_mode": "SELF_REVIEW_REQUIRED",
+        "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED"
+      },
+      {
+        "stage": "spaced_review",
+        "prompt_en": "Explain the shift in emphasis: She has worked here for ten years. / She has been working here for ten years.",
+        "draft_id": "M13-C2-02-DRAFT-04",
+        "assessment_mode": "SELF_REVIEW_REQUIRED",
+        "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED"
+      }
+    ]
+  },
+  "C2-03": {
+    "lesson_id": "C2-03",
+    "overview_vi": "Điều chỉnh modality theo bằng chứng, trách nhiệm phát ngôn và mức độ cam kết trong đánh giá chuyên môn.",
+    "decision_steps_vi": [
+      "Phân biệt chắc chắn logic, khả năng và khuyến nghị",
+      "Chọn modal phản ánh đúng chất lượng bằng chứng",
+      "Kiểm tra có tạo ra kết luận buộc tội hoặc tất yếu khi chỉ có dữ kiện gián tiếp không"
+    ],
+    "semantic_contrast": {
+      "option_a_en": "The discrepancy must have resulted from fraud.",
+      "option_b_en": "The discrepancy could have arisen from a recording error.",
+      "analysis_vi": "Must have khẳng định suy luận rất mạnh, đặc biệt rủi ro khi quy kết gian lận; could have chỉ khả năng có thể xảy ra, không xác nhận nguyên nhân.",
+      "teacher_review_required": true
+    },
+    "discourse_edit": {
+      "scenario_vi": "Tóm tắt nguyên nhân sai lệch trong báo cáo kiểm toán",
+      "task_en": "Write a cautious assessment of an unexplained discrepancy without assigning blame.",
+      "model_en": "The discrepancy may reflect a transcription error, although the available records do not establish its cause. A deliberate alteration cannot be excluded, but neither can it be inferred from the figures alone. The audit should therefore verify the original entries before reaching a conclusion.",
+      "editor_commentary_vi": "May và cannot be excluded không tương đương đã chứng minh; tránh gọi một giả thiết là sự thật."
+    },
+    "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED",
+    "question_import_policy": "SEPARATE_BANK_NO_OVERWRITE",
+    "title": "Fine-grained Modality",
+    "source_rules": [
+      {
+        "rule_id": "C2-03-R01",
+        "heading": "Strong positive deduction about past",
+        "pattern": "must have + ...",
+        "function_vi": "Must have + V3 biểu thị suy luận có cơ sở mạnh về điều đã xảy ra; khác lời bắt buộc must + V.",
+        "example_en": "Her signature is on the receipt; she must have signed for the package.",
+        "example_vi": "Chữ ký cô ấy nằm trên biên nhận; hẳn cô ấy đã ký nhận gói hàng.",
+        "source_status": "REUSED_UNREVIEWED"
+      },
+      {
+        "rule_id": "C2-03-R02",
+        "heading": "Strong negative deduction about past",
+        "pattern": "cannot have + ...",
+        "function_vi": "Cannot have + V3 phủ định một suy luận về quá khứ do mâu thuẫn với bằng chứng.",
+        "example_en": "The bridge was closed all night; the convoy cannot have crossed it at midnight.",
+        "example_vi": "Cầu đóng suốt đêm; đoàn xe không thể đã qua cầu lúc nửa đêm.",
+        "source_status": "REUSED_UNREVIEWED"
+      }
+    ],
+    "draft_practice": [
+      {
+        "stage": "guided",
+        "prompt_en": "Choose the responsible conclusion: (A) The figures prove manipulation. (B) The figures may indicate a reporting inconsistency.",
+        "draft_id": "M13-C2-03-DRAFT-01",
+        "assessment_mode": "SELF_REVIEW_REQUIRED",
+        "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED"
+      },
+      {
+        "stage": "independent",
+        "prompt_en": "Downgrade an overclaim: The intervention will undoubtedly eliminate the problem.",
+        "draft_id": "M13-C2-03-DRAFT-02",
+        "assessment_mode": "SELF_REVIEW_REQUIRED",
+        "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED"
+      },
+      {
+        "stage": "mastery",
+        "prompt_en": "Edit for epistemic precision: The witness might have seen the vehicle, so the driver is guilty.",
+        "draft_id": "M13-C2-03-DRAFT-03",
+        "assessment_mode": "SELF_REVIEW_REQUIRED",
+        "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED"
+      },
+      {
+        "stage": "spaced_review",
+        "prompt_en": "Provide a plausible alternative reading of: The logs must have been deleted intentionally.",
+        "draft_id": "M13-C2-03-DRAFT-04",
+        "assessment_mode": "SELF_REVIEW_REQUIRED",
+        "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED"
+      }
+    ]
+  },
+  "C2-04": {
+    "lesson_id": "C2-04",
+    "overview_vi": "Điều kiện phản thực nhiều lớp cần phân biệt rõ kết quả quá khứ, tình trạng hiện tại và giả thuyết mới; không để đảo ngữ khiến mất quan hệ thời gian.",
+    "decision_steps_vi": [
+      "Vẽ tuyến thời gian cho mệnh đề điều kiện và mệnh đề kết quả",
+      "Chọn had/were/should đúng quan hệ và mức độ giả định",
+      "Viết lại không có if khi trang trọng nhưng giữ nguyên hệ quả"
+    ],
+    "semantic_contrast": {
+      "option_a_en": "Had the system been upgraded last year, it would be safer now.",
+      "option_b_en": "Had the system been upgraded last year, it would have been safer then.",
+      "analysis_vi": "Câu đầu: quá khứ ảnh hưởng mức độ an toàn hiện tại; câu sau: kết quả giả định tại thời điểm quá khứ.",
+      "teacher_review_required": true
+    },
+    "discourse_edit": {
+      "scenario_vi": "Bản báo cáo đánh giá rủi ro khi nâng cấp hệ thống chậm",
+      "task_en": "Write a short retrospective separating an unreal past action from a present consequence.",
+      "model_en": "Had the monitoring system been upgraded before the trial, the team might have detected the fault earlier. The equipment would now be easier to maintain, although the size of that benefit is uncertain. The review should distinguish these hypothetical advantages from outcomes that were actually observed.",
+      "editor_commentary_vi": "Had ... been upgraded đặt nguyên nhân phản thực trong quá khứ; might have detected và would now chỉ hai trục kết quả khác nhau."
+    },
+    "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED",
+    "question_import_policy": "SEPARATE_BANK_NO_OVERWRITE",
+    "title": "Layered Counterfactuals",
+    "source_rules": [
+      {
+        "rule_id": "C2-04-R01",
+        "heading": "Inverted third conditional",
+        "pattern": "Had",
+        "function_vi": "Đảo điều kiện loại 3: Had + chủ ngữ + V3, không dùng if.",
+        "example_en": "Had the pilot checked the updated forecast, the flight might have been diverted.",
+        "example_vi": null,
+        "source_status": "REUSED_UNREVIEWED"
+      },
+      {
+        "rule_id": "C2-04-R02",
+        "heading": "Inverted hypothetical with were",
+        "pattern": "Were",
+        "function_vi": "Were + chủ ngữ + to V hoặc were + chủ ngữ + danh từ/tính từ dùng trong đảo ngữ giả định.",
+        "example_en": "Were the board to reject the proposal, the project would be suspended.",
+        "example_vi": null,
+        "source_status": "REUSED_UNREVIEWED"
+      }
+    ],
+    "draft_practice": [
+      {
+        "stage": "guided",
+        "prompt_en": "Choose the present-result ending: Had the software been updated earlier, the platform ___ more stable today. (would be / would have been then)",
+        "draft_id": "M13-C2-04-DRAFT-01",
+        "assessment_mode": "SELF_REVIEW_REQUIRED",
+        "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED"
+      },
+      {
+        "stage": "independent",
+        "prompt_en": "Rewrite formally without if: If the audit had identified the fault, remediation might have started sooner.",
+        "draft_id": "M13-C2-04-DRAFT-02",
+        "assessment_mode": "SELF_REVIEW_REQUIRED",
+        "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED"
+      },
+      {
+        "stage": "mastery",
+        "prompt_en": "Edit the timeline: Had the study included a larger sample, the estimate would have been more reliable now.",
+        "draft_id": "M13-C2-04-DRAFT-03",
+        "assessment_mode": "SELF_REVIEW_REQUIRED",
+        "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED"
+      },
+      {
+        "stage": "spaced_review",
+        "prompt_en": "State one hypothetical past action and its present effect without implying the action occurred.",
+        "draft_id": "M13-C2-04-DRAFT-04",
+        "assessment_mode": "SELF_REVIEW_REQUIRED",
+        "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED"
+      }
+    ]
+  },
+  "C2-05": {
+    "lesson_id": "C2-05",
+    "overview_vi": "Đảo ngữ tu từ có thể nhấn phản chứng hoặc thứ tự thông tin, nhưng dùng quá mức khiến văn bản khoa trương và khó đọc.",
+    "decision_steps_vi": [
+      "Xác định yếu tố thật sự cần nhấn",
+      "Kiểm tra chủ ngữ và trợ động từ khi đưa trạng ngữ lên đầu",
+      "Đánh giá lợi ích so với cách diễn đạt trung tính"
+    ],
+    "semantic_contrast": {
+      "option_a_en": "Only after the second inspection did the fault become apparent.",
+      "option_b_en": "After the second inspection, the fault became apparent.",
+      "analysis_vi": "Cả hai diễn đạt thời điểm phát hiện; only after + đảo ngữ làm nổi bật việc phải đợi tới lần kiểm tra thứ hai.",
+      "teacher_review_required": true
+    },
+    "discourse_edit": {
+      "scenario_vi": "Rà soát kết luận điều tra nhằm tránh kịch tính hóa",
+      "task_en": "Revise a three-sentence finding using at most one inversion for justified emphasis.",
+      "model_en": "Only when the original records were examined did the discrepancy become clear. However, the source of the error remains uncertain. The board should avoid treating the timing of its discovery as evidence of misconduct.",
+      "editor_commentary_vi": "Đảo ngữ nhấn ngưỡng phát hiện, không dùng thêm nhiều cụm phủ định chỉ để phô kỹ thuật."
+    },
+    "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED",
+    "question_import_policy": "SEPARATE_BANK_NO_OVERWRITE",
+    "title": "Rhetorical Inversion",
+    "source_rules": [
+      {
+        "rule_id": "C2-05-R01",
+        "heading": "Never + auxiliary inversion",
+        "pattern": "Never have",
+        "function_vi": "Negative fronting: Never + auxiliary + subject + past participle.",
+        "example_en": "Never have I witnessed such an abrupt change in policy.",
+        "example_vi": null,
+        "source_status": "REUSED_UNREVIEWED"
+      },
+      {
+        "rule_id": "C2-05-R02",
+        "heading": "Rarely does + subject + V",
+        "pattern": "Rarely does",
+        "function_vi": "Rarely + does + chủ ngữ số ít + nguyên mẫu động từ.",
+        "example_en": "Rarely does the chair interrupt a witness without warning.",
+        "example_vi": null,
+        "source_status": "REUSED_UNREVIEWED"
+      }
+    ],
+    "draft_practice": [
+      {
+        "stage": "guided",
+        "prompt_en": "Fix inversion after only then: Only then the board realised the implications.",
+        "draft_id": "M13-C2-05-DRAFT-01",
+        "assessment_mode": "SELF_REVIEW_REQUIRED",
+        "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED"
+      },
+      {
+        "stage": "independent",
+        "prompt_en": "Rewrite neutrally: Rarely have we encountered such an extreme response.",
+        "draft_id": "M13-C2-05-DRAFT-02",
+        "assessment_mode": "SELF_REVIEW_REQUIRED",
+        "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED"
+      },
+      {
+        "stage": "mastery",
+        "prompt_en": "Edit for proportionate style: Never had the results been so shocking; seldom had the team been so stunned.",
+        "draft_id": "M13-C2-05-DRAFT-03",
+        "assessment_mode": "SELF_REVIEW_REQUIRED",
+        "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED"
+      },
+      {
+        "stage": "spaced_review",
+        "prompt_en": "Explain the rhetorical effect of: Little did the authors realise that the archive was incomplete.",
+        "draft_id": "M13-C2-05-DRAFT-04",
+        "assessment_mode": "SELF_REVIEW_REQUIRED",
+        "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED"
+      }
+    ]
+  },
+  "C2-06": {
+    "lesson_id": "C2-06",
+    "overview_vi": "Fronting chuyển trọng tâm thông tin, nhưng phải bảo đảm quan hệ chủ đề–bình luận rõ và tránh câu có trật tự khó hiểu.",
+    "decision_steps_vi": [
+      "Xác định thông tin cũ và trọng tâm mới của đoạn văn",
+      "Chọn fronting hoặc trật tự trung tính theo mục đích",
+      "Kiểm tra concord, phép nối và tính tự nhiên sau khi di chuyển thành phần"
+    ],
+    "semantic_contrast": {
+      "option_a_en": "This uncertainty we cannot remove.",
+      "option_b_en": "We cannot remove this uncertainty.",
+      "analysis_vi": "Fronting đặt this uncertainty vào vị trí chủ đề/đối lập và có màu sắc nhấn mạnh; bản trung tính thường thích hợp hơn khi không cần đối chiếu.",
+      "teacher_review_required": true
+    },
+    "discourse_edit": {
+      "scenario_vi": "Email giải thích giới hạn nghiên cứu",
+      "task_en": "Draft a diplomatic three-sentence response using one natural topic-fronting construction.",
+      "model_en": "The practical constraints we can address within this quarter. The broader uncertainty, however, requires another round of testing. We will therefore publish an interim note rather than a definitive conclusion.",
+      "editor_commentary_vi": "Đưa practical constraints lên đầu để đối lập với broader uncertainty; however làm nổi rõ cấu trúc chủ đề của đoạn."
+    },
+    "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED",
+    "question_import_policy": "SEPARATE_BANK_NO_OVERWRITE",
+    "title": "Advanced Fronting",
+    "source_rules": [
+      {
+        "rule_id": "C2-06-R01",
+        "heading": "Object fronting for contrast",
+        "pattern": "That proposal",
+        "function_vi": "Đưa tân ngữ lên đầu để đối lập thông tin, vẫn giữ cấu trúc chủ-vị bình thường.",
+        "example_en": "That proposal, the committee rejected; the revised version, it accepted.",
+        "example_vi": null,
+        "source_status": "REUSED_UNREVIEWED"
+      },
+      {
+        "rule_id": "C2-06-R02",
+        "heading": "Negative fronted adverbial",
+        "pattern": "Under no circumstances",
+        "function_vi": "Fronting cụm phủ định để nhấn mạnh quy tắc tuyệt đối.",
+        "example_en": "Under no circumstances should confidential files be left unattended.",
+        "example_vi": null,
+        "source_status": "REUSED_UNREVIEWED"
+      }
+    ],
+    "draft_practice": [
+      {
+        "stage": "guided",
+        "prompt_en": "Identify marked fronting: (A) This limitation we can address. (B) We can address this limitation.",
+        "draft_id": "M13-C2-06-DRAFT-01",
+        "assessment_mode": "SELF_REVIEW_REQUIRED",
+        "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED"
+      },
+      {
+        "stage": "independent",
+        "prompt_en": "Restore neutral word order: These records we reviewed yesterday.",
+        "draft_id": "M13-C2-06-DRAFT-02",
+        "assessment_mode": "SELF_REVIEW_REQUIRED",
+        "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED"
+      },
+      {
+        "stage": "mastery",
+        "prompt_en": "Edit for purposeful contrast: The timing we can change. The safety standard cannot change.",
+        "draft_id": "M13-C2-06-DRAFT-03",
+        "assessment_mode": "SELF_REVIEW_REQUIRED",
+        "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED"
+      },
+      {
+        "stage": "spaced_review",
+        "prompt_en": "Explain when fronting is unnecessary in a routine notice.",
+        "draft_id": "M13-C2-06-DRAFT-04",
+        "assessment_mode": "SELF_REVIEW_REQUIRED",
+        "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED"
+      }
+    ]
+  },
+  "C2-07": {
+    "lesson_id": "C2-07",
+    "overview_vi": "Rút gọn mệnh đề phức làm văn bản súc tích nhưng có thể che khuất tác nhân hoặc đảo ngược quan hệ thời gian.",
+    "decision_steps_vi": [
+      "Xác định chủ ngữ ngầm của mệnh đề rút gọn",
+      "Xác định quan hệ thời gian, nguyên nhân hay nhượng bộ",
+      "Nếu người đọc có thể hiểu nhầm tác nhân, chuyển sang mệnh đề đầy đủ"
+    ],
+    "semantic_contrast": {
+      "option_a_en": "Having reviewed the draft, the editor requested changes.",
+      "option_b_en": "Having reviewed the draft, several changes were requested.",
+      "analysis_vi": "Câu thứ hai có nguy cơ dangling modifier vì chủ ngữ mệnh đề chính là several changes, không phải người đã đọc.",
+      "teacher_review_required": true
+    },
+    "discourse_edit": {
+      "scenario_vi": "Biên tập phương pháp nghiên cứu nhiều bước",
+      "task_en": "Edit a method summary to remove a dangling modifier and preserve sequence.",
+      "model_en": "After the analysts had checked the raw entries, they compared the results with the published table. Finding two inconsistencies, they requested a fresh calculation. The report was amended only after the new figures had been verified independently.",
+      "editor_commentary_vi": "Finding ... gắn với analysts; when agent matters, mệnh đề đầy đủ tránh chủ ngữ lơ lửng."
+    },
+    "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED",
+    "question_import_policy": "SEPARATE_BANK_NO_OVERWRITE",
+    "title": "Complex Clause Compression",
+    "source_rules": [
+      {
+        "rule_id": "C2-07-R01",
+        "heading": "Perfect participle of reason",
+        "pattern": "Having examined",
+        "function_vi": "Having + V3 cho thấy hành động xem xét đã hoàn tất trước hành động chính.",
+        "example_en": "Having examined the audit trail, the auditor requested an independent review.",
+        "example_vi": "Sau khi xem xét hồ sơ theo dõi kiểm toán, kiểm toán viên đã yêu cầu một cuộc rà soát độc lập.",
+        "source_status": "REUSED_UNREVIEWED"
+      },
+      {
+        "rule_id": "C2-07-R02",
+        "heading": "Concessive participle",
+        "pattern": "Although confronted with",
+        "function_vi": "Although + past participle mô tả tình huống bị tác động, với chủ ngữ ngầm là chủ ngữ mệnh đề chính.",
+        "example_en": "Although confronted with the recurring sensor fault, the engineer ordered further tests.",
+        "example_vi": "Mặc dù phải đối diện với lỗi cảm biến lặp lại, kỹ sư đã yêu cầu kiểm tra bổ sung.",
+        "source_status": "REUSED_UNREVIEWED"
+      }
+    ],
+    "draft_practice": [
+      {
+        "stage": "guided",
+        "prompt_en": "Identify the safe reduction: (A) Having checked the data, the analyst filed the report. (B) Having checked the data, the report was filed.",
+        "draft_id": "M13-C2-07-DRAFT-01",
+        "assessment_mode": "SELF_REVIEW_REQUIRED",
+        "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED"
+      },
+      {
+        "stage": "independent",
+        "prompt_en": "Expand the clause: Having completed the audit, the team sent its recommendation.",
+        "draft_id": "M13-C2-07-DRAFT-02",
+        "assessment_mode": "SELF_REVIEW_REQUIRED",
+        "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED"
+      },
+      {
+        "stage": "mastery",
+        "prompt_en": "Edit the dangling modifier. The researchers worked through the night: Working through the night, the deadline was met.",
+        "draft_id": "M13-C2-07-DRAFT-03",
+        "assessment_mode": "SELF_REVIEW_REQUIRED",
+        "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED"
+      },
+      {
+        "stage": "spaced_review",
+        "prompt_en": "Explain why a compressed clause might be inappropriate in an accident report.",
+        "draft_id": "M13-C2-07-DRAFT-04",
+        "assessment_mode": "SELF_REVIEW_REQUIRED",
+        "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED"
+      }
+    ]
+  },
+  "C2-08": {
+    "lesson_id": "C2-08",
+    "overview_vi": "Postmodification mở rộng danh ngữ nhưng dễ tạo phạm vi bổ nghĩa mơ hồ hoặc chuỗi danh từ quá tải.",
+    "decision_steps_vi": [
+      "Xác định danh từ trung tâm",
+      "Gắn từng bổ ngữ vào đúng danh từ bằng nghĩa và vị trí",
+      "Nếu hai cách phân tích dẫn đến hậu quả khác nhau, tách thành hai câu"
+    ],
+    "semantic_contrast": {
+      "option_a_en": "The review of the reports by the external team was delayed.",
+      "option_b_en": "The external team’s review of the reports was delayed.",
+      "analysis_vi": "Câu đầu có thể khiến người đọc chậm xác định by the external team bổ nghĩa cho review hay reports; câu sau xác định ai thực hiện việc review.",
+      "teacher_review_required": true
+    },
+    "discourse_edit": {
+      "scenario_vi": "Rà soát thông báo về hồ sơ nghiên cứu",
+      "task_en": "Rewrite a dense noun phrase to make the reviewer, object and deadline unambiguous.",
+      "model_en": "The external panel will review the revised proposals on Friday. The documents were prepared by the research group and include two updated budgets. The panel will issue its recommendation after examining the attachments.",
+      "editor_commentary_vi": "Chia đối tượng, tác nhân và mốc thời gian thành các câu có động từ rõ."
+    },
+    "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED",
+    "question_import_policy": "SEPARATE_BANK_NO_OVERWRITE",
+    "title": "Extended Postmodification",
+    "source_rules": [
+      {
+        "rule_id": "C2-08-R01",
+        "heading": "Reduced passive relative",
+        "pattern": "reviewed by",
+        "function_vi": "Past participle + by bổ nghĩa cho danh từ bị tác động, tương đương which was reviewed by.",
+        "example_en": "The audit trail reviewed by the auditor raised further concerns.",
+        "example_vi": "Hồ sơ theo dõi kiểm toán được kiểm toán viên xem xét đã làm dấy lên thêm lo ngại.",
+        "source_status": "REUSED_UNREVIEWED"
+      },
+      {
+        "rule_id": "C2-08-R02",
+        "heading": "Infinitive after ordinal",
+        "pattern": "to flag",
+        "function_vi": "Sau the first / last / only, cụm to-infinitive thường bổ nghĩa cho danh từ chỉ người hoặc vật.",
+        "example_en": "The first person to flag the recurring sensor fault was the engineer.",
+        "example_vi": "Người đầu tiên chỉ ra lỗi cảm biến lặp lại là kỹ sư.",
+        "source_status": "REUSED_UNREVIEWED"
+      }
+    ],
+    "draft_practice": [
+      {
+        "stage": "guided",
+        "prompt_en": "Identify the head noun in: the rapid evaluation of the proposed changes by the committee.",
+        "draft_id": "M13-C2-08-DRAFT-01",
+        "assessment_mode": "SELF_REVIEW_REQUIRED",
+        "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED"
+      },
+      {
+        "stage": "independent",
+        "prompt_en": "Unpack the phrase: the committee's assessment of the updated protocols.",
+        "draft_id": "M13-C2-08-DRAFT-02",
+        "assessment_mode": "SELF_REVIEW_REQUIRED",
+        "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED"
+      },
+      {
+        "stage": "mastery",
+        "prompt_en": "Edit for readability: The report of the investigation of the safety issues of the plant was delayed.",
+        "draft_id": "M13-C2-08-DRAFT-03",
+        "assessment_mode": "SELF_REVIEW_REQUIRED",
+        "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED"
+      },
+      {
+        "stage": "spaced_review",
+        "prompt_en": "Explain a possible ambiguity in: the photograph of the director with the assistant.",
+        "draft_id": "M13-C2-08-DRAFT-04",
+        "assessment_mode": "SELF_REVIEW_REQUIRED",
+        "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED"
+      }
+    ]
+  },
+  "C2-09": {
+    "lesson_id": "C2-09",
+    "overview_vi": "Discourse markers mang chức năng quan hệ lập luận; chọn sai tín hiệu như nevertheless/therefore có thể làm sai logic dù ngữ pháp đúng.",
+    "decision_steps_vi": [
+      "Đặt quan hệ thật giữa hai mệnh đề: nguyên nhân, tương phản hay nhượng bộ",
+      "Chọn marker hợp logic và mức trang trọng",
+      "Kiểm tra dấu câu và tránh quá nhiều liên từ làm đoạn văn nặng nề"
+    ],
+    "semantic_contrast": {
+      "option_a_en": "The sample was small; nevertheless, the effect was replicated.",
+      "option_b_en": "The sample was small; therefore, the effect was replicated.",
+      "analysis_vi": "Nevertheless đánh dấu thông tin trái kỳ vọng; therefore gợi hệ quả nhân quả không được cung cấp.",
+      "teacher_review_required": true
+    },
+    "discourse_edit": {
+      "scenario_vi": "Biên tập abstract về một kết quả bất ngờ",
+      "task_en": "Improve cohesion with one justified concessive marker and one limitation.",
+      "model_en": "The initial trial involved only thirty participants; nevertheless, a similar pattern appeared in a separate pilot. The replication lends limited support to the observation, but neither study was large enough to establish a general population effect. A broader study is therefore warranted.",
+      "editor_commentary_vi": "Nevertheless nối kết quả bất chấp hạn chế; therefore ở câu cuối có suy luận khuyến nghị được lập luận hỗ trợ."
+    },
+    "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED",
+    "question_import_policy": "SEPARATE_BANK_NO_OVERWRITE",
+    "title": "Idiomatic Discourse Markers",
+    "source_rules": [
+      {
+        "rule_id": "C2-09-R01",
+        "heading": "Concession after a positive point",
+        "pattern": "That said",
+        "function_vi": "That said đánh dấu hạn chế hoặc ý trái chiều sau khi thừa nhận một điểm tích cực.",
+        "example_en": "The proposal has merits. That said, the unexplained shortfall remains a concern.",
+        "example_vi": "Đề xuất có những điểm đáng ghi nhận. Tuy vậy, khoản thiếu hụt chưa được giải thích vẫn là điều đáng lo.",
+        "source_status": "REUSED_UNREVIEWED"
+      },
+      {
+        "rule_id": "C2-09-R02",
+        "heading": "Concession despite objection",
+        "pattern": "Be that as it may",
+        "function_vi": "Be that as it may là lối nhượng bộ trang trọng, nhấn mạnh rằng phản biện không làm thay đổi hướng hành động.",
+        "example_en": "The timetable is tight. Be that as it may, the engineer ordered further tests.",
+        "example_vi": "Lịch trình đang rất gấp. Dù vậy, kỹ sư đã yêu cầu kiểm tra bổ sung.",
+        "source_status": "REUSED_UNREVIEWED"
+      }
+    ],
+    "draft_practice": [
+      {
+        "stage": "guided",
+        "prompt_en": "Choose the relation: Funding was reduced; ___, the project continued. (nevertheless / therefore)",
+        "draft_id": "M13-C2-09-DRAFT-01",
+        "assessment_mode": "SELF_REVIEW_REQUIRED",
+        "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED"
+      },
+      {
+        "stage": "independent",
+        "prompt_en": "Replace the misleading connector: The participants were untrained. Therefore, they completed the task successfully.",
+        "draft_id": "M13-C2-09-DRAFT-02",
+        "assessment_mode": "SELF_REVIEW_REQUIRED",
+        "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED"
+      },
+      {
+        "stage": "mastery",
+        "prompt_en": "Edit for logical flow: The method is expensive; however, the cost is high.",
+        "draft_id": "M13-C2-09-DRAFT-03",
+        "assessment_mode": "SELF_REVIEW_REQUIRED",
+        "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED"
+      },
+      {
+        "stage": "spaced_review",
+        "prompt_en": "Explain why 'on the other hand' is weak between two unrelated facts.",
+        "draft_id": "M13-C2-09-DRAFT-04",
+        "assessment_mode": "SELF_REVIEW_REQUIRED",
+        "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED"
+      }
+    ]
+  },
+  "C2-10": {
+    "lesson_id": "C2-10",
+    "overview_vi": "Ngữ pháp hội thoại gồm ellipsis, self-repair và turn-taking; biên tập không được tự biến lời nói tự nhiên thành lỗi.",
+    "decision_steps_vi": [
+      "Xác định mục tiêu: transcript trung thành hay biên tập để công bố",
+      "Giữ repair nếu nó làm rõ người nói đã đính chính điều gì",
+      "Chỉ viết đầy đủ những phần lược khi cần tránh mơ hồ hoặc sai thông tin"
+    ],
+    "semantic_contrast": {
+      "option_a_en": "About fifteen people attended—sorry, eighteen.",
+      "option_b_en": "Eighteen people attended.",
+      "analysis_vi": "Câu đầu giữ được quá trình người nói tự sửa, phù hợp transcript; câu sau phù hợp báo cáo tóm lược chỉ cần kết quả cuối.",
+      "teacher_review_required": true
+    },
+    "discourse_edit": {
+      "scenario_vi": "Xử lý biên bản phỏng vấn có sửa số liệu",
+      "task_en": "Produce a clean summary while preserving the speaker’s final correction.",
+      "model_en": "The interviewee initially estimated that fifteen participants had attended but immediately corrected the figure to eighteen. The summary therefore records eighteen as the final spoken estimate. Attendance records would still be needed to verify the number independently.",
+      "editor_commentary_vi": "Biên bản phân biệt estimate trong lời nói với số liệu đã được xác minh."
+    },
+    "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED",
+    "question_import_policy": "SEPARATE_BANK_NO_OVERWRITE",
+    "title": "Spoken Ellipsis & Repairs",
+    "source_rules": [
+      {
+        "rule_id": "C2-10-R01",
+        "heading": "Minimal negative response",
+        "pattern": "Not yet",
+        "function_vi": "Not yet rút gọn I/they have not ... yet khi hành động chưa xảy ra.",
+        "example_en": "A: Has the auditor reviewed the audit trail? B: Not yet.",
+        "example_vi": "A: kiểm toán viên đã xem lại hồ sơ theo dõi kiểm toán chưa? B: Chưa.",
+        "source_status": "REUSED_UNREVIEWED"
+      },
+      {
+        "rule_id": "C2-10-R02",
+        "heading": "Conditional short response",
+        "pattern": "If necessary",
+        "function_vi": "If necessary là mệnh đề điều kiện tỉnh lược if it is necessary.",
+        "example_en": "A: Could we postpone the review of the safety logs? B: If necessary.",
+        "example_vi": "A: Chúng ta có thể hoãn việc rà soát nhật ký an toàn không? B: Nếu cần.",
+        "source_status": "REUSED_UNREVIEWED"
+      }
+    ],
+    "draft_practice": [
+      {
+        "stage": "guided",
+        "prompt_en": "Identify the final spoken number: We had twenty—no, twenty-two cases.",
+        "draft_id": "M13-C2-10-DRAFT-01",
+        "assessment_mode": "SELF_REVIEW_REQUIRED",
+        "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED"
+      },
+      {
+        "stage": "independent",
+        "prompt_en": "Rewrite a transcript as a neutral summary: 'Maybe Friday—actually, Monday works better.'",
+        "draft_id": "M13-C2-10-DRAFT-02",
+        "assessment_mode": "SELF_REVIEW_REQUIRED",
+        "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED"
+      },
+      {
+        "stage": "mastery",
+        "prompt_en": "Edit the summary: 'Seven teams took part.' The interview actually says: 'Seven—sorry, six teams took part.'",
+        "draft_id": "M13-C2-10-DRAFT-03",
+        "assessment_mode": "SELF_REVIEW_REQUIRED",
+        "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED"
+      },
+      {
+        "stage": "spaced_review",
+        "prompt_en": "Explain why 'You coming?' may be acceptable in dialogue.",
+        "draft_id": "M13-C2-10-DRAFT-04",
+        "assessment_mode": "SELF_REVIEW_REQUIRED",
+        "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED"
+      }
+    ]
+  },
+  "C2-11": {
+    "lesson_id": "C2-11",
+    "overview_vi": "Cấu trúc thành ngữ ngữ pháp cần chính xác hình thức và đúng ngữ cảnh; nhiều mẫu truyền tải phê bình hay mong muốn gián tiếp.",
+    "decision_steps_vi": [
+      "Xác định chức năng: thúc giục, hối tiếc hay ưu tiên",
+      "Chọn hình thái thời gian của mẫu cố định theo nghĩa chứ không theo mốc thì bề mặt",
+      "Kiểm tra ngữ điệu và mức lịch sự của phát biểu"
+    ],
+    "semantic_contrast": {
+      "option_a_en": "It is high time the committee acted.",
+      "option_b_en": "It is time for the committee to act.",
+      "analysis_vi": "Câu đầu thường bộc lộ sự chậm trễ hoặc sốt ruột; câu sau có thể là đề xuất trung tính hơn.",
+      "teacher_review_required": true
+    },
+    "discourse_edit": {
+      "scenario_vi": "Viết thông điệp nhắc xử lý hồ sơ quá hạn nhưng không công kích",
+      "task_en": "Draft a firm but professional reminder using one idiomatic structure.",
+      "model_en": "It is high time the outstanding requests were reviewed. Several teams have been waiting for clarification, and the delay is affecting their schedules. I suggest that we agree on a decision date and circulate an update to everyone concerned.",
+      "editor_commentary_vi": "It is high time + past form mang phê bình kín về việc trì hoãn; câu tiếp đưa giải pháp để giữ lịch sự."
+    },
+    "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED",
+    "question_import_policy": "SEPARATE_BANK_NO_OVERWRITE",
+    "title": "Idiomatic Grammar Patterns",
+    "source_rules": [
+      {
+        "rule_id": "C2-11-R01",
+        "heading": "It is high time + past tense",
+        "pattern": "It is high time",
+        "function_vi": "It is high time + past simple nói việc cần làm ngay, không mang nghĩa quá khứ.",
+        "example_en": "It is high time the auditor dealt with the unexplained shortfall.",
+        "example_vi": "Đã đến lúc kiểm toán viên phải xử lý khoản thiếu hụt chưa được giải thích.",
+        "source_status": "REUSED_UNREVIEWED"
+      },
+      {
+        "rule_id": "C2-11-R02",
+        "heading": "Would rather + past clause",
+        "pattern": "would rather",
+        "function_vi": "Would rather + người khác + past simple diễn đạt mong muốn hiện tại hoặc tương lai.",
+        "example_en": "I would rather the engineer addressed the recurring sensor fault before Friday.",
+        "example_vi": "Tôi muốn kỹ sư xử lý lỗi cảm biến lặp lại trước thứ Sáu hơn.",
+        "source_status": "REUSED_UNREVIEWED"
+      }
+    ],
+    "draft_practice": [
+      {
+        "stage": "guided",
+        "prompt_en": "Complete the idiom: It is high time the panel ___ a decision. (make / made)",
+        "draft_id": "M13-C2-11-DRAFT-01",
+        "assessment_mode": "SELF_REVIEW_REQUIRED",
+        "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED"
+      },
+      {
+        "stage": "independent",
+        "prompt_en": "Rewrite more diplomatically: It is high time you fixed this.",
+        "draft_id": "M13-C2-11-DRAFT-02",
+        "assessment_mode": "SELF_REVIEW_REQUIRED",
+        "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED"
+      },
+      {
+        "stage": "mastery",
+        "prompt_en": "Edit the form: I would rather you submit the figures yesterday.",
+        "draft_id": "M13-C2-11-DRAFT-03",
+        "assessment_mode": "SELF_REVIEW_REQUIRED",
+        "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED"
+      },
+      {
+        "stage": "spaced_review",
+        "prompt_en": "Explain the implication of: You might as well tell them now.",
+        "draft_id": "M13-C2-11-DRAFT-04",
+        "assessment_mode": "SELF_REVIEW_REQUIRED",
+        "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED"
+      }
+    ]
+  },
+  "C2-12": {
+    "lesson_id": "C2-12",
+    "overview_vi": "Chuyển register phải bảo toàn nội dung nhưng thay đổi mức trực tiếp, mức trịnh trọng và lựa chọn từ.",
+    "decision_steps_vi": [
+      "Xác định người đọc, mục đích và quan hệ quyền lực",
+      "Chọn sắc thái phù hợp: informal, neutral, formal",
+      "Kiểm tra xem thay từ có làm thay đổi trách nhiệm hoặc cam kết thực tế không"
+    ],
+    "semantic_contrast": {
+      "option_a_en": "We need to fix the numbers before we send this out.",
+      "option_b_en": "The figures require verification prior to publication.",
+      "analysis_vi": "Bản thứ hai phù hợp báo cáo trang trọng, nhưng require verification không nhất thiết khẳng định đã có sai số cần sửa.",
+      "teacher_review_required": true
+    },
+    "discourse_edit": {
+      "scenario_vi": "Viết email gửi hội đồng từ ghi chú nội bộ quá thân mật",
+      "task_en": "Turn a blunt internal note into a concise formal request without changing the decision required.",
+      "model_en": "The figures in the draft require further verification before publication. Could the analysis team confirm the revised totals by Thursday? Once the checks are complete, we can circulate the document for final approval.",
+      "editor_commentary_vi": "Thay fix bằng verify khi chưa chắc dữ liệu sai; lời đề nghị rõ thời hạn và trách nhiệm."
+    },
+    "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED",
+    "question_import_policy": "SEPARATE_BANK_NO_OVERWRITE",
+    "title": "Register Shifting",
+    "source_rules": [
+      {
+        "rule_id": "C2-12-R01",
+        "heading": "Formal notice of unwelcome news",
+        "pattern": "We regret to inform you that",
+        "function_vi": "We regret to inform you that là lời thông báo trang trọng về thông tin bất lợi.",
+        "example_en": "We regret to inform you that the unexplained shortfall has delayed the review.",
+        "example_vi": "Chúng tôi rất tiếc phải thông báo rằng khoản thiếu hụt chưa được giải thích đã khiến đợt rà soát bị chậm lại.",
+        "source_status": "REUSED_UNREVIEWED"
+      },
+      {
+        "rule_id": "C2-12-R02",
+        "heading": "Impersonal recommendation + subjunctive",
+        "pattern": "It is recommended that",
+        "function_vi": "It is recommended that + S + bare infinitive thường dùng trong khuyến nghị trang trọng.",
+        "example_en": "It is recommended that the engineer review the safety logs carefully.",
+        "example_vi": "Đề nghị kỹ sư xem xét kỹ nhật ký an toàn.",
+        "source_status": "REUSED_UNREVIEWED"
+      }
+    ],
+    "draft_practice": [
+      {
+        "stage": "guided",
+        "prompt_en": "Choose formal phrasing: (A) Can you sort out the figures? (B) Could you verify the figures before publication?",
+        "draft_id": "M13-C2-12-DRAFT-01",
+        "assessment_mode": "SELF_REVIEW_REQUIRED",
+        "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED"
+      },
+      {
+        "stage": "independent",
+        "prompt_en": "Rewrite professionally: 'This draft is a mess. Fix it.'",
+        "draft_id": "M13-C2-12-DRAFT-02",
+        "assessment_mode": "SELF_REVIEW_REQUIRED",
+        "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED"
+      },
+      {
+        "stage": "mastery",
+        "prompt_en": "Edit to preserve meaning: 'We haven't confirmed the figures yet' becomes 'The figures are incorrect.'",
+        "draft_id": "M13-C2-12-DRAFT-03",
+        "assessment_mode": "SELF_REVIEW_REQUIRED",
+        "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED"
+      },
+      {
+        "stage": "spaced_review",
+        "prompt_en": "Explain why nominalisation may not always improve formality.",
+        "draft_id": "M13-C2-12-DRAFT-04",
+        "assessment_mode": "SELF_REVIEW_REQUIRED",
+        "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED"
+      }
+    ]
+  },
+  "C2-13": {
+    "lesson_id": "C2-13",
+    "overview_vi": "Chủ động và bị động không chỉ là biến đổi ngữ pháp; nó quyết định tác nhân nào được nêu và ai chịu trách nhiệm.",
+    "decision_steps_vi": [
+      "Xác định độc giả cần biết người làm hay việc xảy ra",
+      "Chọn passive khi tác nhân không liên quan hoặc chưa biết",
+      "Không dùng passive để xóa trách nhiệm trong tình huống cần minh bạch"
+    ],
+    "semantic_contrast": {
+      "option_a_en": "Mistakes were made in the evaluation.",
+      "option_b_en": "The assessment team miscalculated the scores.",
+      "analysis_vi": "Bản bị động giấu người làm và không chỉ rõ lỗi; bản chủ động chỉ phù hợp khi có bằng chứng cho thấy assessment team thực sự tính sai.",
+      "teacher_review_required": true
+    },
+    "discourse_edit": {
+      "scenario_vi": "Biên tập báo cáo sự cố có yêu cầu giải trình trách nhiệm",
+      "task_en": "Draft two sentences that state the known action and avoid inventing an unknown actor.",
+      "model_en": "The data file was altered shortly before submission, but the available logs do not identify who made the change. The audit team has secured the earlier version and will investigate the access records.",
+      "editor_commentary_vi": "Bị động đúng vì agent chưa xác định; câu sau nêu tác nhân rõ nơi có bằng chứng."
+    },
+    "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED",
+    "question_import_policy": "SEPARATE_BANK_NO_OVERWRITE",
+    "title": "Active–Passive Stylistic Choice",
+    "source_rules": [
+      {
+        "rule_id": "C2-13-R01",
+        "heading": "Completed passive review",
+        "pattern": "was reviewed",
+        "function_vi": "Was + past participle thể hiện hồ sơ là đối tượng được rà soát trong quá khứ.",
+        "example_en": "Before publication, the audit report was reviewed by an independent specialist.",
+        "example_vi": "Trước khi công bố, báo cáo kiểm toán đã được một chuyên gia độc lập rà soát.",
+        "source_status": "REUSED_UNREVIEWED"
+      },
+      {
+        "rule_id": "C2-13-R02",
+        "heading": "Active accountability",
+        "pattern": "identified",
+        "function_vi": "Chủ động xác định rõ ai chịu trách nhiệm phát hiện vấn đề.",
+        "example_en": "At the briefing, the architect identified the unstable foundations in the site assessment.",
+        "example_vi": "Tại buổi họp thông tin, kiến trúc sư đã xác định nền móng không ổn định trong bản đánh giá hiện trường.",
+        "source_status": "REUSED_UNREVIEWED"
+      }
+    ],
+    "draft_practice": [
+      {
+        "stage": "guided",
+        "prompt_en": "Choose passive when the agent is unknown: (A) Someone changed the file, but we do not know who. (B) The file was changed, and the person responsible has not been identified.",
+        "draft_id": "M13-C2-13-DRAFT-01",
+        "assessment_mode": "SELF_REVIEW_REQUIRED",
+        "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED"
+      },
+      {
+        "stage": "independent",
+        "prompt_en": "Rewrite for accountability when evidence identifies the actor: The figures were approved by the board.",
+        "draft_id": "M13-C2-13-DRAFT-02",
+        "assessment_mode": "SELF_REVIEW_REQUIRED",
+        "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED"
+      },
+      {
+        "stage": "mastery",
+        "prompt_en": "Edit an unsupported accusation: The manager deleted the records. The logs only show that records are missing.",
+        "draft_id": "M13-C2-13-DRAFT-03",
+        "assessment_mode": "SELF_REVIEW_REQUIRED",
+        "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED"
+      },
+      {
+        "stage": "spaced_review",
+        "prompt_en": "Explain a legitimate use of agentless passive in a methods section.",
+        "draft_id": "M13-C2-13-DRAFT-04",
+        "assessment_mode": "SELF_REVIEW_REQUIRED",
+        "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED"
+      }
+    ]
+  },
+  "C2-14": {
+    "lesson_id": "C2-14",
+    "overview_vi": "Chọn danh hóa hay động từ để cân bằng khái quát học thuật và sự rõ ràng của tác nhân, hành động.",
+    "decision_steps_vi": [
+      "Xác định hạt nhân thông tin là quy trình hay người thực hiện",
+      "Thử thay nominalisation bằng động từ hữu hạn",
+      "Giữ danh hóa nếu nó là chủ đề đã biết hoặc thuật ngữ không thể thay gọn"
+    ],
+    "semantic_contrast": {
+      "option_a_en": "The implementation of the recommendation was undertaken by the team.",
+      "option_b_en": "The team implemented the recommendation.",
+      "analysis_vi": "Bản thứ hai gọn hơn, làm rõ agent; bản đầu nặng danh hóa mà ít thêm thông tin.",
+      "teacher_review_required": true
+    },
+    "discourse_edit": {
+      "scenario_vi": "Rà soát tóm tắt dự án viết quá nhiều danh từ trừu tượng",
+      "task_en": "Rewrite a dense project update to identify actions and owners.",
+      "model_en": "The research team reviewed the evidence and revised the sampling plan. The review identified two gaps in the initial dataset. Further validation is needed before the revised findings can be released.",
+      "editor_commentary_vi": "Dùng reviewed, revised làm hành động minh bạch; giữ validation như danh từ khi hoạt động tổng quát là chủ đề."
+    },
+    "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED",
+    "question_import_policy": "SEPARATE_BANK_NO_OVERWRITE",
+    "title": "Nominal vs Verbal Style",
+    "source_rules": [
+      {
+        "rule_id": "C2-14-R01",
+        "heading": "Direct verbal style",
+        "pattern": "reviewed",
+        "function_vi": "Dùng động từ hữu hạn sau chủ ngữ để nói rõ hành động; không thay bằng danh ngữ.",
+        "example_en": "To make responsibility clear, the auditor wrote, “We reviewed the audit report yesterday.”",
+        "example_vi": "Để làm rõ trách nhiệm, kiểm toán viên viết: “Chúng tôi đã xem xét báo cáo kiểm toán hôm qua.”",
+        "source_status": "REUSED_UNREVIEWED"
+      },
+      {
+        "rule_id": "C2-14-R02",
+        "heading": "Formal nominalisation",
+        "pattern": "revision of",
+        "function_vi": "Revision of + noun là cụm danh hóa diễn đạt hoạt động sửa đổi.",
+        "example_en": "The revision of the site assessment required additional approval.",
+        "example_vi": "Việc chỉnh sửa bản đánh giá hiện trường cần được phê duyệt bổ sung.",
+        "source_status": "REUSED_UNREVIEWED"
+      }
+    ],
+    "draft_practice": [
+      {
+        "stage": "guided",
+        "prompt_en": "Choose the clearer version: (A) The completion of an evaluation was undertaken by staff. (B) Staff completed an evaluation.",
+        "draft_id": "M13-C2-14-DRAFT-01",
+        "assessment_mode": "SELF_REVIEW_REQUIRED",
+        "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED"
+      },
+      {
+        "stage": "independent",
+        "prompt_en": "Verbify the sentence: An assessment of the risks was conducted by the panel.",
+        "draft_id": "M13-C2-14-DRAFT-02",
+        "assessment_mode": "SELF_REVIEW_REQUIRED",
+        "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED"
+      },
+      {
+        "stage": "mastery",
+        "prompt_en": "Edit for accuracy: A reduction in errors was achieved. The data only show fewer reported errors.",
+        "draft_id": "M13-C2-14-DRAFT-03",
+        "assessment_mode": "SELF_REVIEW_REQUIRED",
+        "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED"
+      },
+      {
+        "stage": "spaced_review",
+        "prompt_en": "Explain when nominalisation is useful in an academic abstract.",
+        "draft_id": "M13-C2-14-DRAFT-04",
+        "assessment_mode": "SELF_REVIEW_REQUIRED",
+        "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED"
+      }
+    ]
+  },
+  "C2-15": {
+    "lesson_id": "C2-15",
+    "overview_vi": "Marked word order nhấn một thành phần khi có đối chiếu hoặc thông tin cũ; dùng sai dễ thành văn phong kịch.",
+    "decision_steps_vi": [
+      "Xác định câu trả lời đang sửa hiểu lầm nào",
+      "Chọn fronting/cleft/inversion có lợi rõ ràng",
+      "Kiểm tra trật tự thông tin khiến câu dễ đọc hơn thay vì chỉ phức tạp hơn"
+    ],
+    "semantic_contrast": {
+      "option_a_en": "That solution we rejected; the alternative remains under review.",
+      "option_b_en": "We rejected that solution; the alternative remains under review.",
+      "analysis_vi": "Fronting that solution hữu ích nếu đang đối chiếu hai lựa chọn; trật tự trung tính phù hợp khi không có nền đối chiếu.",
+      "teacher_review_required": true
+    },
+    "discourse_edit": {
+      "scenario_vi": "Biên tập bản giải trình hai phương án kỹ thuật",
+      "task_en": "Write a three-sentence contrast with one purposeful marked structure.",
+      "model_en": "The cheaper option we rejected because it failed the safety test. The second proposal remains under review, and no final recommendation has been made. Cost alone should not be presented as the reason for the pending decision.",
+      "editor_commentary_vi": "Fronting làm nổi bật option bị loại trong tương phản; câu sau giữ trạng thái chưa quyết định."
+    },
+    "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED",
+    "question_import_policy": "SEPARATE_BANK_NO_OVERWRITE",
+    "title": "Marked Word Order",
+    "source_rules": [
+      {
+        "rule_id": "C2-15-R01",
+        "heading": "Only later inversion",
+        "pattern": "Only later did",
+        "function_vi": "Only + trạng ngữ đặt đầu câu thường kéo theo đảo trợ động từ did với động từ thường quá khứ.",
+        "example_en": "Only later did the compliance committee realise how serious the problem involving the missing signatures was.",
+        "example_vi": "Chỉ về sau ủy ban tuân thủ mới nhận ra vấn đề liên quan đến các chữ ký còn thiếu nghiêm trọng đến mức nào.",
+        "source_status": "REUSED_UNREVIEWED"
+      },
+      {
+        "rule_id": "C2-15-R02",
+        "heading": "Not until inversion",
+        "pattern": "Not until the final review did",
+        "function_vi": "Not until ở đầu câu kéo theo đảo trợ động từ trong mệnh đề chính.",
+        "example_en": "Not until the final review did the architect notice the unstable foundations.",
+        "example_vi": "Mãi đến lần rà soát cuối kiến trúc sư mới nhận thấy nền móng không ổn định.",
+        "source_status": "REUSED_UNREVIEWED"
+      }
+    ],
+    "draft_practice": [
+      {
+        "stage": "guided",
+        "prompt_en": "Identify emphasis: (A) It was the second sample that failed. (B) The second sample failed.",
+        "draft_id": "M13-C2-15-DRAFT-01",
+        "assessment_mode": "SELF_REVIEW_REQUIRED",
+        "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED"
+      },
+      {
+        "stage": "independent",
+        "prompt_en": "Rewrite neutrally: Under no circumstances should the sample be discarded.",
+        "draft_id": "M13-C2-15-DRAFT-02",
+        "assessment_mode": "SELF_REVIEW_REQUIRED",
+        "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED"
+      },
+      {
+        "stage": "mastery",
+        "prompt_en": "Edit this overly marked sentence: Only then did we begin; seldom had we seen such chaos; never would we forget.",
+        "draft_id": "M13-C2-15-DRAFT-03",
+        "assessment_mode": "SELF_REVIEW_REQUIRED",
+        "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED"
+      },
+      {
+        "stage": "spaced_review",
+        "prompt_en": "Explain why a cleft may mislead: It was the consultant who approved the budget.",
+        "draft_id": "M13-C2-15-DRAFT-04",
+        "assessment_mode": "SELF_REVIEW_REQUIRED",
+        "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED"
+      }
+    ]
+  },
+  "C2-16": {
+    "lesson_id": "C2-16",
+    "overview_vi": "Information structure tổ chức topic, focus, end weight và given/new information để người đọc theo kịp diễn giải nhiều câu.",
+    "decision_steps_vi": [
+      "Xác định thông tin đã biết từ câu trước",
+      "Đưa thông tin mới đúng nơi dễ tiếp nhận, thường gần cuối mệnh đề",
+      "Giữ tham chiếu rõ khi thay đổi chủ đề"
+    ],
+    "semantic_contrast": {
+      "option_a_en": "A revised procedure was proposed by the reviewers after the trial.",
+      "option_b_en": "After the trial, the reviewers proposed a revised procedure.",
+      "analysis_vi": "Câu thứ hai đặt thời điểm làm khung, tác nhân rõ và nội dung mới revised procedure ở cuối; lựa chọn tốt hơn tùy mạch văn.",
+      "teacher_review_required": true
+    },
+    "discourse_edit": {
+      "scenario_vi": "Viết lại đoạn báo cáo đang nhảy chủ đề khó theo dõi",
+      "task_en": "Revise three sentences so each begins with known information and ends with a relevant development.",
+      "model_en": "The first pilot revealed a problem with the response form. That problem prompted the team to revise the instructions. The revised instructions were then tested with a second group, whose feedback informed the final design.",
+      "editor_commentary_vi": "Liên kết problem → that problem → revised instructions giúp người đọc đi theo thông tin đã biết tới phát triển mới."
+    },
+    "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED",
+    "question_import_policy": "SEPARATE_BANK_NO_OVERWRITE",
+    "title": "Information Structure",
+    "source_rules": [
+      {
+        "rule_id": "C2-16-R01",
+        "heading": "It-cleft highlights person",
+        "pattern": "It was",
+        "function_vi": "It was ... who nhấn mạnh người thực hiện hành động.",
+        "example_en": "It was the auditor who first pointed out the missing signatures.",
+        "example_vi": "Chính kiểm toán viên là người đầu tiên chỉ ra các chữ ký còn thiếu.",
+        "source_status": "REUSED_UNREVIEWED"
+      },
+      {
+        "rule_id": "C2-16-R02",
+        "heading": "Pseudo-cleft highlights need",
+        "pattern": "What",
+        "function_vi": "What ... needed was ... hướng sự chú ý vào nhu cầu chính.",
+        "example_en": "What the planning committee needed was a clear explanation of the unstable foundations.",
+        "example_vi": "Điều ủy ban quy hoạch cần là lời giải thích rõ ràng về nền móng không ổn định.",
+        "source_status": "REUSED_UNREVIEWED"
+      }
+    ],
+    "draft_practice": [
+      {
+        "stage": "guided",
+        "prompt_en": "Choose a cohesive continuation: 'A discrepancy appeared in the second dataset.' (A) That discrepancy prompted a review. (B) A review was prompted by an unspecified problem.",
+        "draft_id": "M13-C2-16-DRAFT-01",
+        "assessment_mode": "SELF_REVIEW_REQUIRED",
+        "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED"
+      },
+      {
+        "stage": "independent",
+        "prompt_en": "Improve end focus: It was a revised plan that the team approved after discussion. (Emphasise what was approved, neutrally.)",
+        "draft_id": "M13-C2-16-DRAFT-02",
+        "assessment_mode": "SELF_REVIEW_REQUIRED",
+        "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED"
+      },
+      {
+        "stage": "mastery",
+        "prompt_en": "Edit the sequence: The committee reviewed a proposal. New guidance emerged. The proposal was revised.",
+        "draft_id": "M13-C2-16-DRAFT-03",
+        "assessment_mode": "SELF_REVIEW_REQUIRED",
+        "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED"
+      },
+      {
+        "stage": "spaced_review",
+        "prompt_en": "Explain why two pronouns 'it' in a paragraph may confuse readers.",
+        "draft_id": "M13-C2-16-DRAFT-04",
+        "assessment_mode": "SELF_REVIEW_REQUIRED",
+        "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED"
+      }
+    ]
+  },
+  "C2-17": {
+    "lesson_id": "C2-17",
+    "overview_vi": "Biên tập ambiguity và scope: negation, quantifiers, modifiers và attachment có thể làm thay đổi các mệnh đề đúng/sai.",
+    "decision_steps_vi": [
+      "Liệt kê ít nhất hai cách đọc khả dĩ",
+      "Xác định cách đọc phù hợp bằng chứng và mục đích",
+      "Viết lại sao cho chỉ còn nghĩa dự định, hoặc ghi rõ chưa xác định"
+    ],
+    "semantic_contrast": {
+      "option_a_en": "Not all participants completed the survey.",
+      "option_b_en": "All participants did not complete the survey.",
+      "analysis_vi": "Not all diễn đạt có ít nhất một người chưa hoàn thành; câu thứ hai thường mơ hồ giữa không ai hoàn thành và không phải tất cả.",
+      "teacher_review_required": true
+    },
+    "discourse_edit": {
+      "scenario_vi": "Chỉnh báo cáo số liệu tham gia có câu phủ định mơ hồ",
+      "task_en": "Write a precise report of partial completion without suggesting zero completion.",
+      "model_en": "Not all participants completed the survey: twenty-four of the thirty returned usable forms. Six did not provide a complete response, but the available data do not establish why. The analysis is based solely on the twenty-four usable submissions.",
+      "editor_commentary_vi": "Nêu số cụ thể giải quyết scope phủ định, đồng thời không suy đoán lý do."
+    },
+    "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED",
+    "question_import_policy": "SEPARATE_BANK_NO_OVERWRITE",
+    "title": "Ambiguity & Scope",
+    "source_rules": [
+      {
+        "rule_id": "C2-17-R01",
+        "heading": "Partial negation",
+        "pattern": "some may remain unverified",
+        "function_vi": "Not all không đồng nghĩa với none; nó phủ định sự bao quát toàn bộ.",
+        "example_en": "The finding that “not all claims in the audit report were verified” means some may remain unverified.",
+        "example_vi": "Nhận định “không phải mọi tuyên bố trong báo cáo kiểm toán đều đã được xác minh” nghĩa là một số tuyên bố có thể vẫn chưa được xác minh.",
+        "source_status": "REUSED_UNREVIEWED"
+      },
+      {
+        "rule_id": "C2-17-R02",
+        "heading": "Not necessarily",
+        "pattern": "does not necessarily",
+        "function_vi": "Not necessarily hạn chế kết luận, không phủ định tuyệt đối mọi khả năng.",
+        "example_en": "A correlation involving the unstable foundations does not necessarily establish causation.",
+        "example_vi": "Một mối tương quan liên quan đến nền móng không ổn định không nhất thiết chứng minh quan hệ nhân quả.",
+        "source_status": "REUSED_UNREVIEWED"
+      }
+    ],
+    "draft_practice": [
+      {
+        "stage": "guided",
+        "prompt_en": "Select the precise partial-negative: (A) Not all applicants submitted the form. (B) All applicants did not submit the form.",
+        "draft_id": "M13-C2-17-DRAFT-01",
+        "assessment_mode": "SELF_REVIEW_REQUIRED",
+        "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED"
+      },
+      {
+        "stage": "independent",
+        "prompt_en": "Disambiguate: 'I only told the manager on Monday.' (Meaning: I told nobody else.)",
+        "draft_id": "M13-C2-17-DRAFT-02",
+        "assessment_mode": "SELF_REVIEW_REQUIRED",
+        "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED"
+      },
+      {
+        "stage": "mastery",
+        "prompt_en": "Edit the ambiguity: 'The auditor saw the assistant with the telescope.' (The auditor used the telescope.)",
+        "draft_id": "M13-C2-17-DRAFT-03",
+        "assessment_mode": "SELF_REVIEW_REQUIRED",
+        "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED"
+      },
+      {
+        "stage": "spaced_review",
+        "prompt_en": "Explain why 'Every student read a book' can have two readings.",
+        "draft_id": "M13-C2-17-DRAFT-04",
+        "assessment_mode": "SELF_REVIEW_REQUIRED",
+        "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED"
+      }
+    ]
+  },
+  "C2-18": {
+    "lesson_id": "C2-18",
+    "overview_vi": "Dấu câu góp phần quyết định phạm vi thông tin: bổ nghĩa hạn định, đồng vị không thiết yếu, gạch ngang và dấu hai chấm.",
+    "decision_steps_vi": [
+      "Xác định thông tin là hạn định hay chen thêm",
+      "Dùng dấu phẩy/dash/colon để thể hiện đúng quan hệ",
+      "Đọc lại để chắc rằng dấu câu không làm thay đổi tập đối tượng"
+    ],
+    "semantic_contrast": {
+      "option_a_en": "The reviewers who had signed the report attended.",
+      "option_b_en": "The reviewers, who had signed the report, attended.",
+      "analysis_vi": "Không phẩy giới hạn nhóm reviewer đã ký; có phẩy nói thêm về tập reviewers đã xác định, có thể mang nghĩa tất cả cùng ký.",
+      "teacher_review_required": true
+    },
+    "discourse_edit": {
+      "scenario_vi": "Biên tập thông báo người tham gia một cuộc họp",
+      "task_en": "Punctuate a two-sentence notice so only signatories are required to attend.",
+      "model_en": "The reviewers who signed the final report must attend the briefing. Other reviewers may read the minutes afterwards. Attendance records should distinguish the required group from those attending voluntarily.",
+      "editor_commentary_vi": "Relative clause không dấu phẩy xác định đúng subgroup; dấu phẩy sẽ thay đổi tập đối tượng."
+    },
+    "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED",
+    "question_import_policy": "SEPARATE_BANK_NO_OVERWRITE",
+    "title": "Advanced Punctuation",
+    "source_rules": [
+      {
+        "rule_id": "C2-18-R01",
+        "heading": "Semicolon with contrastive linker",
+        "pattern": "; however,",
+        "function_vi": "Khi nối hai mệnh đề độc lập bằng however, dùng chấm phẩy trước và dấu phẩy sau.",
+        "example_en": "the audit report seemed complete; however, the missing signatures remained unresolved.",
+        "example_vi": "báo cáo kiểm toán tưởng như đã đầy đủ; tuy nhiên, các chữ ký còn thiếu vẫn chưa được giải quyết.",
+        "source_status": "REUSED_UNREVIEWED"
+      },
+      {
+        "rule_id": "C2-18-R02",
+        "heading": "Colon introduces explanation",
+        "pattern": ":",
+        "function_vi": "Dấu hai chấm sau mệnh đề hoàn chỉnh dùng để giới thiệu phần giải thích/cụ thể hóa.",
+        "example_en": "The panel raised one concern: the unstable foundations.",
+        "example_vi": "Hội đồng nêu một mối quan ngại: nền móng không ổn định.",
+        "source_status": "REUSED_UNREVIEWED"
+      }
+    ],
+    "draft_practice": [
+      {
+        "stage": "guided",
+        "prompt_en": "Select the restrictive reading: (A) The analysts, who joined remotely, received the files. (B) The analysts who joined remotely received the files.",
+        "draft_id": "M13-C2-18-DRAFT-01",
+        "assessment_mode": "SELF_REVIEW_REQUIRED",
+        "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED"
+      },
+      {
+        "stage": "independent",
+        "prompt_en": "Punctuate the nonessential appositive: Our chair Dr Rao will speak first. (Assume there is only one chair.)",
+        "draft_id": "M13-C2-18-DRAFT-02",
+        "assessment_mode": "SELF_REVIEW_REQUIRED",
+        "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED"
+      },
+      {
+        "stage": "mastery",
+        "prompt_en": "Edit punctuation to clarify consequence: The data were incomplete however the panel proceeded.",
+        "draft_id": "M13-C2-18-DRAFT-03",
+        "assessment_mode": "SELF_REVIEW_REQUIRED",
+        "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED"
+      },
+      {
+        "stage": "spaced_review",
+        "prompt_en": "Explain the scope difference: 'My cousins who live abroad...' versus 'My cousins, who live abroad,...'.",
+        "draft_id": "M13-C2-18-DRAFT-04",
+        "assessment_mode": "SELF_REVIEW_REQUIRED",
+        "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED"
+      }
+    ]
+  },
+  "C2-19": {
+    "lesson_id": "C2-19",
+    "overview_vi": "Lịch sự ngữ dụng không chỉ dựa vào modal: quyền lực, mức áp đặt, độ trực tiếp và trách nhiệm đều ảnh hưởng người nhận.",
+    "decision_steps_vi": [
+      "Xác định người nhận và mức áp đặt của yêu cầu",
+      "Chọn cách mở lời có lý do và quyền lựa chọn phù hợp",
+      "Đọc lại để phát hiện mỉa mai, đổ lỗi hoặc mơ hồ trách nhiệm"
+    ],
+    "semantic_contrast": {
+      "option_a_en": "Send the revised figures today.",
+      "option_b_en": "Would you be able to send the revised figures by the end of today?",
+      "analysis_vi": "Bản thứ hai ít áp đặt hơn nhờ modal và câu hỏi, nhưng nếu deadline là bắt buộc thì lời nhắn còn cần nói rõ tính cấp bách.",
+      "teacher_review_required": true
+    },
+    "discourse_edit": {
+      "scenario_vi": "Email cho đồng nghiệp cần số liệu trước hạn nộp",
+      "task_en": "Write a polite but unambiguous request with a firm deadline and justification.",
+      "model_en": "Could you send the verified figures by 4 p.m. today? The submission portal closes at 5 p.m., and we need time to check the totals before uploading. If that deadline is not feasible, please let me know as early as possible so we can agree on an alternative.",
+      "editor_commentary_vi": "Request rõ mục tiêu, hạn và lý do; câu cuối tạo cơ hội phản hồi, tránh lịch sự đến mức mơ hồ."
+    },
+    "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED",
+    "question_import_policy": "SEPARATE_BANK_NO_OVERWRITE",
+    "title": "Pragmatic Grammar & Politeness",
+    "source_rules": [
+      {
+        "rule_id": "C2-19-R01",
+        "heading": "Tentative request",
+        "pattern": "Would it be possible to",
+        "function_vi": "Would it be possible to + V giảm tính áp đặt trong lời yêu cầu.",
+        "example_en": "In a formal email, the auditor wrote, “Would it be possible to review the audit report by Thursday?”",
+        "example_vi": "Trong email trang trọng, kiểm toán viên viết: “Liệu có thể xem xét báo cáo kiểm toán trước thứ Năm được không?”",
+        "source_status": "REUSED_UNREVIEWED"
+      },
+      {
+        "rule_id": "C2-19-R02",
+        "heading": "Hedged disagreement",
+        "pattern": "I take your point, but",
+        "function_vi": "Thừa nhận quan điểm trước khi nêu bất đồng là cách phản đối lịch sự.",
+        "example_en": "During the meeting, the architect said, “I take your point, but the unstable foundations still needs attention.”",
+        "example_vi": "Trong cuộc họp, kiến trúc sư nói: “Tôi hiểu ý anh/chị, nhưng nền móng không ổn định vẫn cần được quan tâm.”",
+        "source_status": "REUSED_UNREVIEWED"
+      }
+    ],
+    "draft_practice": [
+      {
+        "stage": "guided",
+        "prompt_en": "Choose the more tactful request in a colleague email: (A) Give me the figures. (B) Could you send me the figures when you have a moment?",
+        "draft_id": "M13-C2-19-DRAFT-01",
+        "assessment_mode": "SELF_REVIEW_REQUIRED",
+        "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED"
+      },
+      {
+        "stage": "independent",
+        "prompt_en": "Rewrite with a clear deadline: 'Whenever you can, please send the draft.' (It must arrive by noon.)",
+        "draft_id": "M13-C2-19-DRAFT-02",
+        "assessment_mode": "SELF_REVIEW_REQUIRED",
+        "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED"
+      },
+      {
+        "stage": "mastery",
+        "prompt_en": "Edit this passive-aggressive message: 'As you obviously failed to read my last email, I'll repeat myself.'",
+        "draft_id": "M13-C2-19-DRAFT-03",
+        "assessment_mode": "SELF_REVIEW_REQUIRED",
+        "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED"
+      },
+      {
+        "stage": "spaced_review",
+        "prompt_en": "Explain why 'I was wondering if you could...' may be unsuitable in an emergency.",
+        "draft_id": "M13-C2-19-DRAFT-04",
+        "assessment_mode": "SELF_REVIEW_REQUIRED",
+        "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED"
+      }
+    ]
+  },
+  "C2-20": {
+    "lesson_id": "C2-20",
+    "overview_vi": "Biên tập chuyên gia đòi hỏi tính nhất quán, tham chiếu rõ, chuỗi lý do đúng và kiểm soát thay đổi nghĩa trên cả đoạn văn.",
+    "decision_steps_vi": [
+      "Đọc toàn đoạn tìm chủ đề và luận điểm chính",
+      "Đánh dấu reference, tense, causal claim và register có nguy cơ sai",
+      "Chỉ chỉnh những phần có bằng chứng; ghi chú nếu còn giả định cần xác minh"
+    ],
+    "semantic_contrast": {
+      "option_a_en": "The panel revised the methods. This was necessary.",
+      "option_b_en": "The panel revised the methods because the initial sampling procedure could not be replicated.",
+      "analysis_vi": "Câu sau giải nghĩa rõ this và nêu lý do, nhưng chỉ dùng nếu nguồn xác nhận vấn đề tái lập; không tự tạo lý do từ câu đầu.",
+      "teacher_review_required": true
+    },
+    "discourse_edit": {
+      "scenario_vi": "Rà soát thông cáo về bộ dữ liệu chưa xác minh",
+      "task_en": "Edit a short announcement so its claims match the evidence and its references are clear.",
+      "model_en": "The research team has identified inconsistencies in the second dataset. It is checking the source records and has not yet established the cause. A revised summary will be issued once the review is complete; until then, the preliminary figures should not be cited as final.",
+      "editor_commentary_vi": "It có antecedent research team rõ, cause không bị suy đoán, còn timeline điều kiện khi hoàn tất review."
+    },
+    "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED",
+    "question_import_policy": "SEPARATE_BANK_NO_OVERWRITE",
+    "title": "Expert Editing & Cohesion",
+    "source_rules": [
+      {
+        "rule_id": "C2-20-R01",
+        "heading": "Explicit reference to document",
+        "pattern": "The document",
+        "function_vi": "Lặp có kiểm soát cụm danh từ the document giúp xác định tham chiếu rõ ràng.",
+        "example_en": "the compliance committee reviewed the audit report. The document contained several unresolved questions.",
+        "example_vi": "ủy ban tuân thủ xem xét báo cáo kiểm toán. Tài liệu này có một số vấn đề chưa được giải quyết.",
+        "source_status": "REUSED_UNREVIEWED"
+      },
+      {
+        "rule_id": "C2-20-R02",
+        "heading": "Contrast relation",
+        "pattern": "Nevertheless,",
+        "function_vi": "Nevertheless biểu thị tương phản giữa việc nộp đúng hạn và tình trạng trì hoãn.",
+        "example_en": "the site assessment was submitted on time. Nevertheless, the unstable foundations still delayed approval.",
+        "example_vi": "bản đánh giá hiện trường được nộp đúng hạn. Tuy vậy, nền móng không ổn định vẫn khiến việc phê duyệt bị trì hoãn.",
+        "source_status": "REUSED_UNREVIEWED"
+      }
+    ],
+    "draft_practice": [
+      {
+        "stage": "guided",
+        "prompt_en": "Identify the clearer reference: (A) The team reviewed the draft and the summary. It was inaccurate. (B) The team reviewed both documents; the summary contained an inaccurate figure.",
+        "draft_id": "M13-C2-20-DRAFT-01",
+        "assessment_mode": "SELF_REVIEW_REQUIRED",
+        "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED"
+      },
+      {
+        "stage": "independent",
+        "prompt_en": "Rewrite for consistent cautious register: 'Our numbers prove the scheme works, but more data might be needed.'",
+        "draft_id": "M13-C2-20-DRAFT-02",
+        "assessment_mode": "SELF_REVIEW_REQUIRED",
+        "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED"
+      },
+      {
+        "stage": "mastery",
+        "prompt_en": "Edit for cohesion and factual care: 'The report was late. Therefore, the director hid the results.'",
+        "draft_id": "M13-C2-20-DRAFT-03",
+        "assessment_mode": "SELF_REVIEW_REQUIRED",
+        "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED"
+      },
+      {
+        "stage": "spaced_review",
+        "prompt_en": "Explain a final editorial checklist for a sensitive public report.",
+        "draft_id": "M13-C2-20-DRAFT-04",
+        "assessment_mode": "SELF_REVIEW_REQUIRED",
+        "editorial_status": "DRAFT_TEACHER_REVIEW_REQUIRED"
+      }
+    ]
+  }
+}

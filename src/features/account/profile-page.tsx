@@ -8,15 +8,18 @@ import { HeadIcon } from "@/components/ui/head-icon";
 import { ActivityHeatmap } from "@/components/account/activity-heatmap";
 import { activeUntil, activityLabels, avatarPhotoUrl, avatarStickers, untilLabel, type LearnerOverview } from "@/lib/account";
 import { AccountAvatar } from "@/components/account/account-avatar";
+import { AvatarFrame } from "@/components/account/avatar-frame";
+import { avatarFrames, levelProgress, rankForLevel } from "@/lib/gamification";
 import { HarryMascot } from "@/components/illustrations/harry";
 import { stages } from "@/lib/demo-data";
-import { demoMode, releaseLocks } from "@/lib/runtime";
+import { demoMode, learnStageAvailable } from "@/lib/runtime";
 import { createClient } from "@/lib/supabase/browser";
 import { celebrate } from "@/lib/celebrate";
 import "./profile.css";
 
 const bands = ["", "3.0", "3.5", "4.0", "4.5", "5.0", "5.5", "6.0", "6.5", "7.0", "7.5", "8.0", "8.5", "9.0"];
 const zones = ["Asia/Ho_Chi_Minh", "Asia/Bangkok", "Asia/Singapore", "Asia/Tokyo", "Asia/Seoul", "Australia/Sydney", "Europe/London", "Europe/Berlin", "America/New_York", "America/Los_Angeles"];
+type RecoveryStatus = { missed: number; eligible: boolean; active: boolean; required: number; completed: number };
 
 function dateLabel(value: string) { return new Intl.DateTimeFormat("vi-VN", { dateStyle: "medium" }).format(new Date(value)); }
 function ago(value: string) {
@@ -43,12 +46,20 @@ export function ProfilePage() {
   const [email, setEmail] = useState("");
   const [error, setError] = useState("");
   const [isAdmin, setIsAdmin] = useState(false);
+  const [xp, setXp] = useState(0);
+  const [frameBusy, setFrameBusy] = useState(false);
+  const [frameError, setFrameError] = useState("");
+  const [recovery, setRecovery] = useState<RecoveryStatus | null>(null);
+  const [recoveryBusy, setRecoveryBusy] = useState(false);
+  const [recoveryError, setRecoveryError] = useState("");
   const load = useCallback(async () => {
     if (!db) return;
-    const [overview, user, admin] = await Promise.all([db.rpc("learner_overview"), db.auth.getUser(), db.rpc("is_admin")]);
+    const [overview, user, admin, progress, recoveryStatus] = await Promise.all([db.rpc("learner_overview"), db.auth.getUser(), db.rpc("is_admin"), db.rpc("learner_xp_summary"), db.rpc("streak_recovery_status")]);
     if (overview.error) setError(overview.error.message); else setData(overview.data as LearnerOverview);
+    if (!progress.error) setXp(Number((progress.data as { xp?: number } | null)?.xp ?? 0));
     setEmail(user.data.user?.email ?? "");
     setIsAdmin(admin.data === true);
+    if (!recoveryStatus.error) setRecovery(recoveryStatus.data as RecoveryStatus);
   }, [db]);
   useEffect(() => { void Promise.resolve().then(load); }, [load]);
 
@@ -57,6 +68,24 @@ export function ProfilePage() {
   if (!data) return <div className="content-page profile-page" aria-busy="true"><span className="skeleton profile-skeleton" /><span className="skeleton profile-skeleton short" /></div>;
 
   const { profile, streak, stats, controls } = data;
+  const progress = levelProgress(xp);
+  async function equipFrame(frame: string) {
+    if (!db || progress.level < (avatarFrames.find((item) => item.id === frame)?.level ?? Infinity)) return;
+    setFrameBusy(true); setFrameError("");
+    const { error: updateError } = await db.from("profiles").update({ avatar_frame: frame }).eq("id", profile.id);
+    setFrameBusy(false);
+    if (updateError) { setFrameError(updateError.message); return; }
+    window.dispatchEvent(new Event("account-avatar-updated"));
+    await load();
+  }
+  async function recoverStreak(asAdmin: boolean) {
+    if (!db) return;
+    setRecoveryBusy(true); setRecoveryError("");
+    const result = asAdmin ? await db.rpc("admin_restore_streak", { p_user: profile.id }) : await db.rpc("streak_recovery_start");
+    setRecoveryBusy(false);
+    if (result.error) { setRecoveryError(result.error.message); return; }
+    await load();
+  }
   const stage = stages.find((item) => item.id === profile.stage_id);
   // Counted from the learner's local "today" that the server already worked out.
   const daysToExam = profile.exam_date ? Math.round((Date.parse(`${profile.exam_date}T00:00:00Z`) - Date.parse(`${streak.today}T00:00:00Z`)) / 86400000) : null;
@@ -72,10 +101,11 @@ export function ProfilePage() {
 
   return <div className="content-page profile-page">
     <section className="card profile-hero">
-      <div className="profile-avatar">{isAdmin ? <HarryMascot size={84} /> : <AccountAvatar value={profile.avatar} size={84} />}</div>
+      <div className="profile-avatar">{isAdmin ? <HarryMascot size={84} /> : <AvatarFrame avatar={profile.avatar} frame={profile.avatar_frame} size={94} />}</div>
       <div className="profile-id">
         <span className="eyebrow">HỒ SƠ HỌC VIÊN</span>
         <h1>{profile.display_name}</h1>
+        <div className="profile-level"><strong>Cấp {progress.level}</strong><span>{rankForLevel(progress.level)} · {xp.toLocaleString("vi-VN")} XP</span><div role="progressbar" aria-label="Tiến độ lên cấp" aria-valuemin={0} aria-valuemax={progress.required} aria-valuenow={progress.earned}><i style={{ width: `${progress.percent}%` }} /></div><small>{progress.earned}/{progress.required} XP tới cấp {progress.level + 1}</small></div>
         <p>{email} · Tham gia {dateLabel(profile.created_at)}</p>
         <div className="profile-chips">
           {profile.target_band && <span className="chip-target"><Target size={14} /> Mục tiêu {Number(profile.target_band).toFixed(1)}</span>}
@@ -86,13 +116,38 @@ export function ProfilePage() {
         {profile.bio && <p className="profile-bio">{profile.bio}</p>}
       </div>
       <div className={`profile-streak ${streak.activeToday ? "is-lit" : ""}`}>
-        <Flame size={30} />
+        <Sticker name="flame" size={48} tilt={-6} pop={false} />
         <strong>{streak.current}</strong>
         <span>ngày liên tiếp</span>
         <small>{streak.activeToday ? "Hôm nay đã học ✓" : streak.current ? "Học hôm nay để giữ chuỗi!" : "Bắt đầu chuỗi mới hôm nay"}</small>
         <small>Kỷ lục: {streak.longest} ngày</small>
       </div>
     </section>
+
+    {recovery?.eligible && <section className="card section-card profile-recovery" aria-label="Khôi phục chuỗi học">
+      <div className="section-head"><h2><Flame size={19} /> Khôi phục chuỗi</h2><span>Bạn đã bỏ lỡ {recovery.missed} ngày.</span></div>
+      <p>Đọc {recovery.required} bài báo khác nhau và trả lời đúng toàn bộ câu hỏi của mỗi bài để nối lại chuỗi.</p>
+      {recovery.active ? <>
+        <strong role="status">Đã hoàn thành {recovery.completed}/{recovery.required} lượt đọc và trả lời đúng.</strong>
+        <Link href="/app/news" className="button primary">Chọn bài báo chưa đọc</Link>
+        <small>Chỉ tính bài được đọc xong và làm đủ quiz sau khi bắt đầu thử thách. Hoàn thành trong hôm nay theo múi giờ hồ sơ.</small>
+      </> : <button type="button" className="button primary" disabled={recoveryBusy} onClick={() => void recoverStreak(false)}>{recoveryBusy ? "Đang bắt đầu…" : `Bắt đầu thử thách ${recovery.required} bài`}</button>}
+      {isAdmin && <button type="button" className="button subtle" disabled={recoveryBusy} onClick={() => void recoverStreak(true)}>Admin khôi phục chuỗi ngay</button>}
+      {recoveryError && <p className="form-error" role="alert">{recoveryError}</p>}
+    </section>}
+
+    {!isAdmin && <section className="card section-card profile-frame-section">
+      <div className="section-head"><h2>Bộ khung avatar</h2><span>Khung hiện cạnh tên của bạn trong Cộng đồng.</span></div>
+      <div className="profile-frame-grid">{avatarFrames.map((frame) => {
+        const unlocked = progress.level >= frame.level;
+        const selected = (profile.avatar_frame ?? "classic") === frame.id;
+        return <button key={frame.id} type="button" className={`profile-frame-option ${selected ? "selected" : ""}`} disabled={!unlocked || frameBusy} aria-pressed={selected} onClick={() => void equipFrame(frame.id)}>
+          <AvatarFrame avatar={profile.avatar} frame={frame.id} size={64} />
+          <strong>{frame.label}</strong><small>{unlocked ? selected ? "Đang dùng" : "Chọn khung" : `Mở ở cấp ${frame.level}`}</small>
+        </button>;
+      })}</div>
+      {frameError && <p className="form-error" role="alert">Không lưu được khung: {frameError}</p>}
+    </section>}
 
     {muted && <p className="profile-notice" role="status"><MessageCircleOff size={18} /> Bạn đang bị tạm cấm chat trong phòng cùng học {untilLabel(controls?.chatMutedUntil)}.{controls?.chatMutedReason && ` Lý do: ${controls.chatMutedReason}`}</p>}
 
@@ -205,7 +260,7 @@ function ProfileForm({ data, email, isAdmin, onSaved }: { data: LearnerOverview;
         <label>Tên hiển thị<input value={form.display_name} maxLength={80} onChange={(event) => set("display_name", event.target.value)} required /></label>
         <label>Band mục tiêu<select value={form.target_band} onChange={(event) => set("target_band", event.target.value)}>{bands.map((band) => <option key={band} value={band}>{band || "Chưa chọn"}</option>)}</select></label>
         <label>Ngày thi dự kiến<input type="date" value={form.exam_date} onChange={(event) => set("exam_date", event.target.value)} /></label>
-        <label>Chặng đang học<select value={form.stage_id} onChange={(event) => set("stage_id", event.target.value)}><option value="">Chưa chọn</option>{stages.map((stage) => <option key={stage.id} value={stage.id} disabled={releaseLocks && ["foundation", "elementary", "pre-ielts"].includes(stage.id)}>{stage.range} · {stage.name}{releaseLocks && ["foundation", "elementary", "pre-ielts"].includes(stage.id) ? " · Sắp mở" : ""}</option>)}</select></label>
+        <label>Chặng đang học<select value={form.stage_id} onChange={(event) => set("stage_id", event.target.value)}><option value="">Chưa chọn</option>{stages.map((stage) => <option key={stage.id} value={stage.id} disabled={!learnStageAvailable(stage.id)}>{stage.range} · {stage.name}{!learnStageAvailable(stage.id) ? " · Sắp mở" : ""}</option>)}</select></label>
         <label>Mục tiêu mỗi ngày<input type="number" min={1} max={20} value={form.daily_goal} onChange={(event) => set("daily_goal", Math.min(20, Math.max(1, Number(event.target.value) || 1)))} /></label>
         <label>Múi giờ<select value={form.timezone} onChange={(event) => set("timezone", event.target.value)}>{[...new Set([form.timezone, ...zones])].map((zone) => <option key={zone} value={zone}>{zone}</option>)}</select></label>
         <label className="profile-bio-field">Giới thiệu ngắn<textarea rows={3} maxLength={280} value={form.bio} onChange={(event) => set("bio", event.target.value)} placeholder="Ví dụ: Mình cần 6.5 để du học, mạnh Reading, yếu Speaking." /><small>{form.bio.length}/280</small></label>

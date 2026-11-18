@@ -1,0 +1,458 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "DICT-S3-026",
+  "status": "draft",
+  "level": "L5",
+  "section": 3,
+  "topic": "Data Collection",
+  "title": "Data Collection: Evaluating the Options",
+  "learning_objectives_vi": [
+    "Theo dõi ý kiến và lập luận của nhiều người trong một thảo luận học thuật.",
+    "Xác định thông tin cuối cùng sau khi người nói đề xuất, phản biện hoặc sửa ý.",
+    "Chép chính xác những đoạn trọng tâm và đối chiếu bằng chứng trong transcript."
+  ],
+  "content_format": "section_practice",
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Olivia – university student / tutor discussion participant",
+      "tts_voice_id": null,
+      "accent_requested": "british"
+    },
+    {
+      "speaker_id": "B",
+      "role": "Finn – university student / tutor discussion participant",
+      "tts_voice_id": null,
+      "accent_requested": "british"
+    },
+    {
+      "speaker_id": "C",
+      "role": "Maya – university student / tutor discussion participant",
+      "tts_voice_id": null,
+      "accent_requested": "british"
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "The environmental science class wants us to compare noise pollution across streets. We have readings from two sensors, but they were calibrated differently.",
+      "translation_vi": "Lớp khoa học môi trường muốn so sánh ô nhiễm tiếng ồn giữa các phố. Ta có số đo hai cảm biến nhưng chúng được hiệu chuẩn khác nhau.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "l5",
+        "opinion_comparison"
+      ]
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "B",
+      "text_en": "If we combine those readings directly, we might mistake a device difference for a real difference between the locations.",
+      "translation_vi": "Nếu ghép số đo trực tiếp, ta có thể nhầm khác biệt thiết bị với khác biệt thực giữa địa điểm.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "l5",
+        "opinion_comparison"
+      ]
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "C",
+      "text_en": "The lab technician can recalibrate both devices. However, she's only available on Friday, which leaves less time for collection.",
+      "translation_vi": "Kỹ thuật viên phòng thí nghiệm có thể hiệu chuẩn lại cả hai, nhưng cô chỉ rảnh thứ Sáu khiến thời gian lấy dữ liệu ngắn hơn.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "l5",
+        "opinion_comparison"
+      ]
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "A",
+      "text_en": "We could use one sensor until then and collect the remaining data over the weekend, though that wouldn't capture a typical weekday pattern.",
+      "translation_vi": "Ta có thể dùng một cảm biến đến lúc đó và lấy phần còn lại cuối tuần, nhưng không phản ánh ngày trong tuần điển hình.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "l5",
+        "opinion_comparison"
+      ]
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "B",
+      "text_en": "I'd rather delay collection and record fewer sites properly. Accurate measurements are more valuable than a large but unreliable dataset.",
+      "translation_vi": "Mình thà hoãn lấy dữ liệu và đo ít điểm cho đúng. Đo chính xác giá trị hơn bộ dữ liệu lớn nhưng kém tin cậy.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "l5",
+        "opinion_comparison"
+      ]
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "C",
+      "text_en": "The lecturer agreed that four sites would be enough, provided we measure at the same times and document the weather conditions.",
+      "translation_vi": "Giảng viên đồng ý bốn địa điểm là đủ nếu đo vào cùng giờ và ghi điều kiện thời tiết.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "l5",
+        "opinion_comparison"
+      ]
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "That solves part of the problem. But one street has construction work planned next week, and that could distort the readings.",
+      "translation_vi": "Điều đó giải quyết một phần. Nhưng một phố có công trình tuần sau, có thể làm sai lệch số đo.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "l5",
+        "opinion_comparison"
+      ]
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "B",
+      "text_en": "We should record that as a contextual factor rather than pretend the street is typical. Or replace it if the research question requires normal traffic noise.",
+      "translation_vi": "Ta nên ghi đó là yếu tố bối cảnh thay vì giả vờ phố điển hình. Hoặc thay điểm nếu câu hỏi cần tiếng ồn giao thông bình thường.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "l5",
+        "opinion_comparison"
+      ]
+    },
+    {
+      "turn_id": "T09",
+      "speaker_id": "C",
+      "text_en": "The original objective is normal traffic patterns, so I think replacing that site is justified. There's a similar road nearby without building work.",
+      "translation_vi": "Mục tiêu gốc là mẫu giao thông bình thường, nên mình nghĩ thay địa điểm hợp lý. Có con đường tương tự gần đó không có xây dựng.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "l5",
+        "opinion_comparison"
+      ]
+    },
+    {
+      "turn_id": "T10",
+      "speaker_id": "A",
+      "text_en": "All right. Let's select four sites, recalibrate on Friday and sample twice daily from Monday through Wednesday.",
+      "translation_vi": "Được. Hãy chọn bốn điểm, hiệu chuẩn thứ Sáu và lấy mẫu hai lần mỗi ngày từ thứ Hai tới thứ Tư.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "l5",
+        "opinion_comparison"
+      ]
+    },
+    {
+      "turn_id": "T11",
+      "speaker_id": "B",
+      "text_en": "I'll draft the methods section explaining why we changed the locations, and I'll keep the original sensor readings separate.",
+      "translation_vi": "Mình sẽ soạn phương pháp giải thích lý do đổi địa điểm và để riêng các số đo cảm biến ban đầu.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "l5",
+        "opinion_comparison"
+      ]
+    },
+    {
+      "turn_id": "T12",
+      "speaker_id": "C",
+      "text_en": "I'll prepare a weather log so we can examine whether rain or wind influenced any unusual measurements.",
+      "translation_vi": "Mình sẽ chuẩn bị nhật ký thời tiết để xem mưa hoặc gió có ảnh hưởng số đo bất thường không.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_3",
+        "academic_discussion",
+        "l5",
+        "opinion_comparison"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "type": "mcq",
+      "prompt": "What could happen if readings from differently calibrated sensors are combined?",
+      "correct_answers": [
+        "Device differences may be mistaken for location differences"
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Bằng chứng ở T02 (Finn): “Nếu ghép số đo trực tiếp, ta có thể nhầm khác biệt thiết bị với khác biệt thực giữa địa điểm.” Đáp án: “Device differences may be mistaken for location differences”. Đây là ý cuối cùng hoặc lập luận cần xác định; các lựa chọn khác không được đoạn này xác nhận.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "section_3",
+        "ielts_practice",
+        "opinion_inference"
+      ],
+      "options": [
+        "Device differences may be mistaken for location differences",
+        "Weather records will be lost",
+        "Both readings become identical"
+      ]
+    },
+    {
+      "question_id": "Q02",
+      "type": "note_completion",
+      "prompt": "The technician can recalibrate both sensors on ____.",
+      "correct_answers": [
+        "Friday"
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Bằng chứng ở T03 (Maya): “Kỹ thuật viên phòng thí nghiệm có thể hiệu chuẩn lại cả hai, nhưng cô chỉ rảnh thứ Sáu khiến thời gian lấy dữ liệu ngắn hơn.” Đáp án: “Friday”. Từ/cụm từ nằm trong lời nói; không chọn thông tin đã bị sửa hoặc người khác chỉ đề xuất.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_3",
+        "ielts_practice",
+        "detail_recognition"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q03",
+      "type": "matching",
+      "prompt": "What matters more than collecting a large unreliable dataset?",
+      "correct_answers": [
+        "accurate measurements"
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Bằng chứng ở T05 (Finn): “Mình thà hoãn lấy dữ liệu và đo ít điểm cho đúng. Đo chính xác giá trị hơn bộ dữ liệu lớn nhưng kém tin cậy.” Đáp án: “accurate measurements”. Đối chiếu đúng thông tin được người nói nêu, chú ý các ý kiến hoặc phương án trước đó.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "section_3",
+        "ielts_practice",
+        "speaker_attribution"
+      ],
+      "options": [
+        "more volunteers",
+        "accurate measurements",
+        "a longer survey"
+      ]
+    },
+    {
+      "question_id": "Q04",
+      "type": "note_completion",
+      "prompt": "The lecturer accepts measurements from ____ sites.",
+      "correct_answers": [
+        "four"
+      ],
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "explanation_vi": "Bằng chứng ở T06 (Maya): “Giảng viên đồng ý bốn địa điểm là đủ nếu đo vào cùng giờ và ghi điều kiện thời tiết.” Đáp án: “four”. Từ/cụm từ nằm trong lời nói; không chọn thông tin đã bị sửa hoặc người khác chỉ đề xuất.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_3",
+        "ielts_practice",
+        "detail_recognition"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q05",
+      "type": "mcq",
+      "prompt": "Why will the construction street be replaced?",
+      "correct_answers": [
+        "The study concerns normal traffic noise"
+      ],
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "explanation_vi": "Bằng chứng ở T09 (Maya): “Mục tiêu gốc là mẫu giao thông bình thường, nên mình nghĩ thay địa điểm hợp lý. Có con đường tương tự gần đó không có xây dựng.” Đáp án: “The study concerns normal traffic noise”. Đây là ý cuối cùng hoặc lập luận cần xác định; các lựa chọn khác không được đoạn này xác nhận.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "section_3",
+        "ielts_practice",
+        "opinion_inference"
+      ],
+      "options": [
+        "It is too far from campus",
+        "The sensor is missing",
+        "The study concerns normal traffic noise"
+      ]
+    },
+    {
+      "question_id": "Q06",
+      "type": "short_answer",
+      "prompt": "How many times per day will the group take samples?",
+      "correct_answers": [
+        "twice"
+      ],
+      "evidence_turn_ids": [
+        "T10"
+      ],
+      "explanation_vi": "Bằng chứng ở T10 (Olivia): “Được. Hãy chọn bốn điểm, hiệu chuẩn thứ Sáu và lấy mẫu hai lần mỗi ngày từ thứ Hai tới thứ Tư.” Đáp án: “twice”. Từ/cụm từ nằm trong lời nói; không chọn thông tin đã bị sửa hoặc người khác chỉ đề xuất.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "section_3",
+        "ielts_practice",
+        "detail_recognition"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "D01",
+      "type": "dictation",
+      "prompt": "Nghe đoạn T04 và chép nguyên văn tiếng Anh (Speaker A).",
+      "correct_answers": [
+        "We could use one sensor until then and collect the remaining data over the weekend, though that wouldn't capture a typical weekday pattern."
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Câu gốc: “We could use one sensor until then and collect the remaining data over the weekend, though that wouldn't capture a typical weekday pattern.”\nNghĩa: Ta có thể dùng một cảm biến đến lúc đó và lấy phần còn lại cuối tuần, nhưng không phản ánh ngày trong tuần điển hình.\nChú ý từ chức năng, âm yếu, cụm từ nối và ý người nói.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_3",
+        "dictation",
+        "exact_transcript"
+      ]
+    },
+    {
+      "question_id": "D02",
+      "type": "dictation",
+      "prompt": "Nghe đoạn T08 và chép nguyên văn tiếng Anh (Speaker B).",
+      "correct_answers": [
+        "We should record that as a contextual factor rather than pretend the street is typical. Or replace it if the research question requires normal traffic noise."
+      ],
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "explanation_vi": "Câu gốc: “We should record that as a contextual factor rather than pretend the street is typical. Or replace it if the research question requires normal traffic noise.”\nNghĩa: Ta nên ghi đó là yếu tố bối cảnh thay vì giả vờ phố điển hình. Hoặc thay điểm nếu câu hỏi cần tiếng ồn giao thông bình thường.\nChú ý từ chức năng, âm yếu, cụm từ nối và ý người nói.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_3",
+        "dictation",
+        "exact_transcript"
+      ]
+    },
+    {
+      "question_id": "G01",
+      "type": "gap_fill",
+      "prompt": "Nghe T01, điền từ/cụm từ bị thiếu: The environmental science class wants us to compare noise pollution across streets. We have readings from two sensors, but they were ____ differently.",
+      "correct_answers": [
+        "calibrated"
+      ],
+      "evidence_turn_ids": [
+        "T01"
+      ],
+      "explanation_vi": "Cụm cần nghe: “calibrated” (đã hiệu chuẩn). Lời gốc: “The environmental science class wants us to compare noise pollution across streets. We have readings from two sensors, but they were calibrated differently.”.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "section_3",
+        "gap_fill",
+        "vocabulary_in_context"
+      ]
+    }
+  ],
+  "vocabulary": [
+    {
+      "term": "calibrated",
+      "pos": "adj.",
+      "meaning_vi": "đã hiệu chuẩn",
+      "example_en": "The environmental science class wants us to compare noise pollution across streets. We have readings from two sensors, but they were calibrated differently.",
+      "example_vi": "Lớp khoa học môi trường muốn so sánh ô nhiễm tiếng ồn giữa các phố. Ta có số đo hai cảm biến nhưng chúng được hiệu chuẩn khác nhau.",
+      "source_turn_id": "T01"
+    },
+    {
+      "term": "recalibrate",
+      "pos": "v.",
+      "meaning_vi": "hiệu chuẩn lại",
+      "example_en": "The lab technician can recalibrate both devices. However, she's only available on Friday, which leaves less time for collection.",
+      "example_vi": "Kỹ thuật viên phòng thí nghiệm có thể hiệu chuẩn lại cả hai, nhưng cô chỉ rảnh thứ Sáu khiến thời gian lấy dữ liệu ngắn hơn.",
+      "source_turn_id": "T03"
+    },
+    {
+      "term": "unreliable dataset",
+      "pos": "n. phr.",
+      "meaning_vi": "bộ dữ liệu thiếu tin cậy",
+      "example_en": "I'd rather delay collection and record fewer sites properly. Accurate measurements are more valuable than a large but unreliable dataset.",
+      "example_vi": "Mình thà hoãn lấy dữ liệu và đo ít điểm cho đúng. Đo chính xác giá trị hơn bộ dữ liệu lớn nhưng kém tin cậy.",
+      "source_turn_id": "T05"
+    },
+    {
+      "term": "weather log",
+      "pos": "n. phr.",
+      "meaning_vi": "nhật ký thời tiết",
+      "example_en": "I'll prepare a weather log so we can examine whether rain or wind influenced any unusual measurements.",
+      "example_vi": "Mình sẽ chuẩn bị nhật ký thời tiết để xem mưa hoặc gió có ảnh hưởng số đo bất thường không.",
+      "source_turn_id": "T12"
+    }
+  ],
+  "audio": {
+    "status": "not_generated",
+    "url": null,
+    "duration_ms": null,
+    "model": null,
+    "provider": null,
+    "voice_config": null,
+    "source_transcript_hash": "5c70683babeb4eba44348cf14f60a89495fceee1f2711d393942609d2ac0253d",
+    "audio_sha256": null,
+    "format": null
+  },
+  "qa": {
+    "content_reviewed": false,
+    "answers_verified": false,
+    "audio_verified": false,
+    "rights_cleared": false,
+    "duplicate_reviewed": false,
+    "notes": [
+      "Original synthetic dialogues: human educational review required.",
+      "Audio, timestamps, voice suitability and service/distribution rights not yet verified.",
+      "Training lessons, NOT official IELTS Part 3 tests or calibrated band tests.",
+      "M16.2: automated edits are provisional; IELTS teacher final signoff, audio and rights clearance pending."
+    ]
+  },
+  "provenance": {
+    "content_origin": "original_ai_assisted",
+    "source_urls": [],
+    "source_rights_note": "Original text; verify TTS provider terms and distribution rights before publishing to a youth-accessible website.",
+    "reviewer": null
+  },
+  "release_metadata": {
+    "published_at": null,
+    "version": 1
+  }
+}

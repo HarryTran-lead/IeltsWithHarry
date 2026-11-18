@@ -1,0 +1,825 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "S1-EXP-010",
+  "status": "draft",
+  "level": "L4",
+  "section": 1,
+  "topic": "Library technology workshop",
+  "title": "Signing Up for a Library Makerspace",
+  "learning_objectives_vi": [
+    "Theo dõi một cuộc hội thoại đời sống hai người nói có thay đổi và đối chiếu thông tin.",
+    "Lấy thông tin cuối cùng đúng theo thứ tự audio, không chọn đáp án chỉ vì xuất hiện sớm.",
+    "Luyện 8 câu IELTS-style và sau đó sửa lỗi bằng Dictation có bằng chứng rõ ràng."
+  ],
+  "content_format": "section_practice",
+  "target_skills": [
+    "eligibility",
+    "equipment",
+    "safety",
+    "schedule"
+  ],
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Reception/service representative",
+      "accent_requested": "australian",
+      "tts_voice_id": null
+    },
+    {
+      "speaker_id": "B",
+      "role": "Customer/visitor",
+      "accent_requested": "australian",
+      "tts_voice_id": null
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "B",
+      "text_en": "Hello, I'm interested in the new makerspace at Maple Library. I've never used a laser cutter before.",
+      "translation_vi": "Xin chào, tôi quan tâm khu chế tạo ở thư viện Maple. Tôi chưa từng dùng máy cắt laser.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_1",
+        "two_speaker_dialogue",
+        "m21",
+        "eligibility",
+        "equipment",
+        "safety",
+        "schedule"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "A",
+      "text_en": "That's no problem. We offer introductory sessions, and a member of staff supervises the equipment during your first visit.",
+      "translation_vi": "Không sao. Chúng tôi có buổi giới thiệu, nhân viên giám sát thiết bị trong lần đầu.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_1",
+        "two_speaker_dialogue",
+        "m21",
+        "eligibility",
+        "equipment",
+        "safety",
+        "schedule"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "B",
+      "text_en": "Is the first session still on Monday? I can only come after work, so a daytime class won't be possible.",
+      "translation_vi": "Buổi đầu vẫn vào thứ Hai à? Tôi chỉ có thể đến sau giờ làm nên không học ban ngày được.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_1",
+        "two_speaker_dialogue",
+        "m21",
+        "eligibility",
+        "equipment",
+        "safety",
+        "schedule"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "A",
+      "text_en": "We moved it from Monday afternoon to Thursday evening. It now begins at half past six.",
+      "translation_vi": "Chúng tôi chuyển từ chiều thứ Hai sang tối thứ Năm, bắt đầu lúc sáu rưỡi.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_1",
+        "two_speaker_dialogue",
+        "m21",
+        "eligibility",
+        "equipment",
+        "safety",
+        "schedule"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "B",
+      "text_en": "That suits me. Is there an age restriction? My sixteen-year-old niece wants to come as well.",
+      "translation_vi": "Tôi tham gia được. Có giới hạn tuổi không? Cháu gái 16 tuổi cũng muốn đến.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_1",
+        "two_speaker_dialogue",
+        "m21",
+        "eligibility",
+        "equipment",
+        "safety",
+        "schedule"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "A",
+      "text_en": "Participants must be eighteen to use the laser cutter independently. Younger visitors may observe with an adult, but not operate it.",
+      "translation_vi": "Người tham gia phải đủ 18 tuổi mới được tự dùng máy cắt laser. Người nhỏ hơn được quan sát cùng người lớn nhưng không vận hành.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_1",
+        "two_speaker_dialogue",
+        "m21",
+        "eligibility",
+        "equipment",
+        "safety",
+        "schedule"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "B",
+      "text_en": "I'll explain that to her. What do we need to bring for the induction session?",
+      "translation_vi": "Tôi sẽ nói với cháu. Cần mang gì cho buổi hướng dẫn?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_1",
+        "two_speaker_dialogue",
+        "m21",
+        "eligibility",
+        "equipment",
+        "safety",
+        "schedule"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "A",
+      "text_en": "Just your library card. Protective glasses and other safety equipment are supplied, so please don't buy anything yet.",
+      "translation_vi": "Chỉ cần thẻ thư viện. Kính bảo hộ và thiết bị an toàn đã có, đừng mua thêm.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_1",
+        "two_speaker_dialogue",
+        "m21",
+        "eligibility",
+        "equipment",
+        "safety",
+        "schedule"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T09",
+      "speaker_id": "B",
+      "text_en": "Good. The course page mentions a five-pound charge. Is that a membership fee or a materials charge?",
+      "translation_vi": "Tốt. Trang khóa học có ghi phí năm bảng. Đó là phí hội viên hay vật liệu?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_1",
+        "two_speaker_dialogue",
+        "m21",
+        "eligibility",
+        "equipment",
+        "safety",
+        "schedule"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T10",
+      "speaker_id": "A",
+      "text_en": "It's a materials charge for the first project. Access to the room itself is free once you've completed the induction.",
+      "translation_vi": "Đó là phí vật liệu cho dự án đầu tiên. Vào phòng là miễn phí sau khi học hướng dẫn.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_1",
+        "two_speaker_dialogue",
+        "m21",
+        "eligibility",
+        "equipment",
+        "safety",
+        "schedule"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T11",
+      "speaker_id": "B",
+      "text_en": "What will we actually make? I was hoping to cut a design into a small wooden sign.",
+      "translation_vi": "Chúng tôi sẽ làm gì? Tôi muốn cắt một thiết kế vào tấm biển gỗ nhỏ.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_1",
+        "two_speaker_dialogue",
+        "m21",
+        "eligibility",
+        "equipment",
+        "safety",
+        "schedule"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T12",
+      "speaker_id": "A",
+      "text_en": "The introductory project is a name tag made from recycled acrylic. You can design a wooden sign on a later visit.",
+      "translation_vi": "Dự án đầu là thẻ tên bằng nhựa acrylic tái chế. Có thể làm biển gỗ ở lần sau.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_1",
+        "two_speaker_dialogue",
+        "m21",
+        "eligibility",
+        "equipment",
+        "safety",
+        "schedule"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T13",
+      "speaker_id": "B",
+      "text_en": "Fine. Is the makerspace on the ground floor by the children's area?",
+      "translation_vi": "Được. Khu chế tạo ở tầng trệt cạnh khu trẻ em à?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_1",
+        "two_speaker_dialogue",
+        "m21",
+        "eligibility",
+        "equipment",
+        "safety",
+        "schedule"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T14",
+      "speaker_id": "A",
+      "text_en": "It's on the second floor, beside the computer room. The lift has been repaired, so step-free access is available.",
+      "translation_vi": "Nó ở tầng hai, cạnh phòng máy tính. Thang máy đã sửa, có thể tiếp cận không cần cầu thang bộ.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_1",
+        "two_speaker_dialogue",
+        "m21",
+        "eligibility",
+        "equipment",
+        "safety",
+        "schedule"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T15",
+      "speaker_id": "B",
+      "text_en": "Excellent. May I reserve two places, or do I need to register my niece separately as an observer?",
+      "translation_vi": "Tuyệt. Tôi đặt hai chỗ được không, hay cần đăng ký riêng cháu gái với tư cách người quan sát?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_1",
+        "two_speaker_dialogue",
+        "m21",
+        "eligibility",
+        "equipment",
+        "safety",
+        "schedule"
+      ],
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T16",
+      "speaker_id": "A",
+      "text_en": "Please reserve one active place and one observer place. I'll send the separate forms to your email.",
+      "translation_vi": "Hãy đặt một chỗ thực hành và một chỗ quan sát. Tôi sẽ email hai mẫu riêng.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "section_1",
+        "two_speaker_dialogue",
+        "m21",
+        "eligibility",
+        "equipment",
+        "safety",
+        "schedule"
+      ],
+      "bank_role": "training"
+    }
+  ],
+  "questions": [
+    {
+      "type": "note_completion",
+      "prompt": "Induction day: ____",
+      "correct_answers": [
+        "Thursday"
+      ],
+      "spoken_answer": "Thursday",
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER",
+      "scoring_policy": "controlled_variants",
+      "explanation_vi": "Lớp đã chuyển từ thứ Hai sang thứ Năm.",
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "evidence_excerpt_en": "Thursday evening",
+      "question_tags": [
+        "m21",
+        "ielts_part_1_practice",
+        "eligibility",
+        "equipment",
+        "safety",
+        "schedule"
+      ],
+      "question_id": "Q01",
+      "group_id": "IELTS_S1_PRACTICE"
+    },
+    {
+      "type": "note_completion",
+      "prompt": "Session begins at ____",
+      "correct_answers": [
+        "half past six"
+      ],
+      "spoken_answer": "half past six",
+      "word_limit": 3,
+      "instructions_en": "NO MORE THAN THREE WORDS AND/OR A NUMBER",
+      "scoring_policy": "controlled_variants",
+      "explanation_vi": "Giờ bắt đầu mới là 6:30 tối.",
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "evidence_excerpt_en": "half past six",
+      "question_tags": [
+        "m21",
+        "ielts_part_1_practice",
+        "eligibility",
+        "equipment",
+        "safety",
+        "schedule"
+      ],
+      "question_id": "Q02",
+      "group_id": "IELTS_S1_PRACTICE"
+    },
+    {
+      "type": "form_completion",
+      "prompt": "Minimum age for independent operation: ____",
+      "correct_answers": [
+        "eighteen"
+      ],
+      "spoken_answer": "eighteen",
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER",
+      "scoring_policy": "controlled_variants",
+      "explanation_vi": "Người dưới 18 chỉ được quan sát cùng người lớn.",
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "evidence_excerpt_en": "must be eighteen",
+      "question_tags": [
+        "m21",
+        "ielts_part_1_practice",
+        "eligibility",
+        "equipment",
+        "safety",
+        "schedule"
+      ],
+      "question_id": "Q03",
+      "group_id": "IELTS_S1_PRACTICE"
+    },
+    {
+      "type": "mcq",
+      "prompt": "What must participants bring?",
+      "correct_answers": [
+        "library card"
+      ],
+      "options": [
+        "library card",
+        "protective glasses",
+        "wooden sign"
+      ],
+      "correct_option": "A",
+      "scoring_policy": "strict",
+      "explanation_vi": "Kính an toàn có sẵn; cần mang thẻ thư viện.",
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "evidence_excerpt_en": "your library card",
+      "question_tags": [
+        "m21",
+        "ielts_part_1_practice",
+        "eligibility",
+        "equipment",
+        "safety",
+        "schedule"
+      ],
+      "question_id": "Q04",
+      "group_id": "IELTS_S1_PRACTICE"
+    },
+    {
+      "type": "note_completion",
+      "prompt": "First project materials charge: £____",
+      "correct_answers": [
+        "five",
+        "5"
+      ],
+      "spoken_answer": "five",
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER",
+      "scoring_policy": "controlled_variants",
+      "explanation_vi": "Phí năm bảng dành cho vật liệu.",
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "evidence_excerpt_en": "five-pound charge",
+      "question_tags": [
+        "m21",
+        "ielts_part_1_practice",
+        "eligibility",
+        "equipment",
+        "safety",
+        "schedule"
+      ],
+      "question_id": "Q05",
+      "group_id": "IELTS_S1_PRACTICE"
+    },
+    {
+      "type": "note_completion",
+      "prompt": "First project: a ____",
+      "correct_answers": [
+        "name tag"
+      ],
+      "spoken_answer": "name tag",
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER",
+      "scoring_policy": "controlled_variants",
+      "explanation_vi": "Dự án ban đầu là thẻ tên, chưa phải biển gỗ.",
+      "evidence_turn_ids": [
+        "T12"
+      ],
+      "evidence_excerpt_en": "a name tag made",
+      "question_tags": [
+        "m21",
+        "ielts_part_1_practice",
+        "eligibility",
+        "equipment",
+        "safety",
+        "schedule"
+      ],
+      "question_id": "Q06",
+      "group_id": "IELTS_S1_PRACTICE"
+    },
+    {
+      "type": "form_completion",
+      "prompt": "Makerspace floor: ____",
+      "correct_answers": [
+        "second"
+      ],
+      "spoken_answer": "second",
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER",
+      "scoring_policy": "controlled_variants",
+      "explanation_vi": "Phòng ở tầng hai cạnh khu máy tính.",
+      "evidence_turn_ids": [
+        "T14"
+      ],
+      "evidence_excerpt_en": "second floor",
+      "question_tags": [
+        "m21",
+        "ielts_part_1_practice",
+        "eligibility",
+        "equipment",
+        "safety",
+        "schedule"
+      ],
+      "question_id": "Q07",
+      "group_id": "IELTS_S1_PRACTICE"
+    },
+    {
+      "type": "mcq",
+      "prompt": "What does the member need to reserve?",
+      "correct_answers": [
+        "one active and one observer place"
+      ],
+      "options": [
+        "two active places",
+        "one active and one observer place",
+        "one observer only"
+      ],
+      "correct_option": "B",
+      "scoring_policy": "strict",
+      "explanation_vi": "Một người thực hành và cháu gái quan sát.",
+      "evidence_turn_ids": [
+        "T16"
+      ],
+      "evidence_excerpt_en": "one active place and one observer place",
+      "question_tags": [
+        "m21",
+        "ielts_part_1_practice",
+        "eligibility",
+        "equipment",
+        "safety",
+        "schedule"
+      ],
+      "question_id": "Q08",
+      "group_id": "IELTS_S1_PRACTICE"
+    },
+    {
+      "question_id": "D01",
+      "group_id": "DICTATION",
+      "type": "dictation",
+      "prompt": "Nghe và chép nguyên văn lượt thoại T04.",
+      "correct_answers": [
+        "We moved it from Monday afternoon to Thursday evening. It now begins at half past six."
+      ],
+      "scoring_policy": "case_punctuation_insensitive",
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Chúng tôi chuyển từ chiều thứ Hai sang tối thứ Năm, bắt đầu lúc sáu rưỡi.",
+      "question_tags": [
+        "m21",
+        "dictation",
+        "exact_words",
+        "eligibility",
+        "equipment",
+        "safety",
+        "schedule"
+      ]
+    },
+    {
+      "question_id": "D02",
+      "group_id": "DICTATION",
+      "type": "dictation",
+      "prompt": "Nghe và chép nguyên văn lượt thoại T07.",
+      "correct_answers": [
+        "I'll explain that to her. What do we need to bring for the induction session?"
+      ],
+      "scoring_policy": "case_punctuation_insensitive",
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "Tôi sẽ nói với cháu. Cần mang gì cho buổi hướng dẫn?",
+      "question_tags": [
+        "m21",
+        "dictation",
+        "exact_words",
+        "eligibility",
+        "equipment",
+        "safety",
+        "schedule"
+      ]
+    },
+    {
+      "question_id": "D03",
+      "group_id": "DICTATION",
+      "type": "dictation",
+      "prompt": "Nghe và chép nguyên văn lượt thoại T10.",
+      "correct_answers": [
+        "It's a materials charge for the first project. Access to the room itself is free once you've completed the induction."
+      ],
+      "scoring_policy": "case_punctuation_insensitive",
+      "evidence_turn_ids": [
+        "T10"
+      ],
+      "explanation_vi": "Đó là phí vật liệu cho dự án đầu tiên. Vào phòng là miễn phí sau khi học hướng dẫn.",
+      "question_tags": [
+        "m21",
+        "dictation",
+        "exact_words",
+        "eligibility",
+        "equipment",
+        "safety",
+        "schedule"
+      ]
+    },
+    {
+      "question_id": "D04",
+      "group_id": "DICTATION",
+      "type": "dictation",
+      "prompt": "Nghe và chép nguyên văn lượt thoại T14.",
+      "correct_answers": [
+        "It's on the second floor, beside the computer room. The lift has been repaired, so step-free access is available."
+      ],
+      "scoring_policy": "case_punctuation_insensitive",
+      "evidence_turn_ids": [
+        "T14"
+      ],
+      "explanation_vi": "Nó ở tầng hai, cạnh phòng máy tính. Thang máy đã sửa, có thể tiếp cận không cần cầu thang bộ.",
+      "question_tags": [
+        "m21",
+        "dictation",
+        "exact_words",
+        "eligibility",
+        "equipment",
+        "safety",
+        "schedule"
+      ]
+    },
+    {
+      "question_id": "G01",
+      "group_id": "GAP_FILL",
+      "type": "gap_fill",
+      "prompt": "Nghe và điền đúng cụm từ bị thiếu: We moved it from Monday afternoon to ____ evening. It now begins at half past six.",
+      "correct_answers": [
+        "Thursday"
+      ],
+      "word_limit": 2,
+      "scoring_policy": "controlled_variants",
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Lớp đã chuyển từ thứ Hai sang thứ Năm.",
+      "question_tags": [
+        "m21",
+        "gap_fill",
+        "listen_for_detail",
+        "eligibility",
+        "equipment",
+        "safety",
+        "schedule"
+      ]
+    },
+    {
+      "question_id": "G02",
+      "group_id": "GAP_FILL",
+      "type": "gap_fill",
+      "prompt": "Nghe và điền đúng cụm từ bị thiếu: Participants must be ____ to use the laser cutter independently. Younger visitors may observe with an adult, but not operate it.",
+      "correct_answers": [
+        "eighteen"
+      ],
+      "word_limit": 2,
+      "scoring_policy": "controlled_variants",
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "explanation_vi": "Người dưới 18 chỉ được quan sát cùng người lớn.",
+      "question_tags": [
+        "m21",
+        "gap_fill",
+        "listen_for_detail",
+        "eligibility",
+        "equipment",
+        "safety",
+        "schedule"
+      ]
+    }
+  ],
+  "vocabulary": [
+    {
+      "vocab_id": "S1-EXP-010-V01",
+      "expression_en": "makerspace",
+      "meaning_vi": "không gian chế tạo và thực hành",
+      "part_of_speech": "noun",
+      "example_en": "Hello, I'm interested in the new makerspace at Maple Library. I've never used a laser cutter before.",
+      "example_vi": "Xin chào, tôi quan tâm khu chế tạo ở thư viện Maple. Tôi chưa từng dùng máy cắt laser.",
+      "evidence_turn_id": "T01",
+      "can_save_to_notebook": true
+    },
+    {
+      "vocab_id": "S1-EXP-010-V02",
+      "expression_en": "laser cutter",
+      "meaning_vi": "máy cắt laser",
+      "part_of_speech": "noun phrase",
+      "example_en": "Hello, I'm interested in the new makerspace at Maple Library. I've never used a laser cutter before.",
+      "example_vi": "Xin chào, tôi quan tâm khu chế tạo ở thư viện Maple. Tôi chưa từng dùng máy cắt laser.",
+      "evidence_turn_id": "T01",
+      "can_save_to_notebook": true
+    },
+    {
+      "vocab_id": "S1-EXP-010-V03",
+      "expression_en": "introductory sessions",
+      "meaning_vi": "các buổi hướng dẫn nhập môn",
+      "part_of_speech": "noun phrase",
+      "example_en": "That's no problem. We offer introductory sessions, and a member of staff supervises the equipment during your first visit.",
+      "example_vi": "Không sao. Chúng tôi có buổi giới thiệu, nhân viên giám sát thiết bị trong lần đầu.",
+      "evidence_turn_id": "T02",
+      "can_save_to_notebook": true
+    },
+    {
+      "vocab_id": "S1-EXP-010-V04",
+      "expression_en": "protective glasses",
+      "meaning_vi": "kính bảo hộ",
+      "part_of_speech": "noun phrase",
+      "example_en": "Just your library card. Protective glasses and other safety equipment are supplied, so please don't buy anything yet.",
+      "example_vi": "Chỉ cần thẻ thư viện. Kính bảo hộ và thiết bị an toàn đã có, đừng mua thêm.",
+      "evidence_turn_id": "T08",
+      "can_save_to_notebook": true
+    },
+    {
+      "vocab_id": "S1-EXP-010-V05",
+      "expression_en": "recycled acrylic",
+      "meaning_vi": "nhựa acrylic tái chế",
+      "part_of_speech": "noun phrase",
+      "example_en": "The introductory project is a name tag made from recycled acrylic. You can design a wooden sign on a later visit.",
+      "example_vi": "Dự án đầu là thẻ tên bằng nhựa acrylic tái chế. Có thể làm biển gỗ ở lần sau.",
+      "evidence_turn_id": "T12",
+      "can_save_to_notebook": true
+    },
+    {
+      "vocab_id": "S1-EXP-010-V06",
+      "expression_en": "observer place",
+      "meaning_vi": "chỗ dành cho người quan sát",
+      "part_of_speech": "noun phrase",
+      "example_en": "Please reserve one active place and one observer place. I'll send the separate forms to your email.",
+      "example_vi": "Hãy đặt một chỗ thực hành và một chỗ quan sát. Tôi sẽ email hai mẫu riêng.",
+      "evidence_turn_id": "T16",
+      "can_save_to_notebook": true
+    }
+  ],
+  "audio": {
+    "status": "not_generated",
+    "audio_url": null,
+    "duration_ms": null,
+    "source_text_sha256": "89c5a5281e469225ba4625fffeecba5d64a1a29d1de1333589ccf27d26086bce",
+    "generation_strategy": "full_dialogue_multi_speaker",
+    "audio_asset_id": null
+  },
+  "learning_flow": {
+    "intro": {
+      "theory_vi": "IELTS Part 1 thường có hội thoại hai người về dịch vụ hoặc hoạt động đời sống. Hãy xem trước từ loại và đơn vị của từng chỗ trống; đừng đoán đáp án trước khi nghe.",
+      "tip_vi": "Nghe đến cuối lượt trao đổi: người nói có thể sửa ngày, giá, địa điểm hoặc đổi lựa chọn. Thông tin đầu tiên nhiều khi là phương án bị loại.",
+      "common_mistakes_vi": [
+        "Ghi phương án ban đầu dù người nói đã đổi ý.",
+        "Nhầm giờ mở cửa với giờ buổi học bắt đầu.",
+        "Điền dư từ so với giới hạn của nhóm câu hỏi.",
+        "Chọn MCQ vì trùng từ với audio mà bỏ qua ý định cuối cùng."
+      ],
+      "worked_examples": [
+        {
+          "audio_example_en": "I first asked for Tuesday, but Friday is the day I can attend.",
+          "question": "Final day: ____",
+          "answer": "Friday",
+          "explanation_vi": "Tuesday là phương án cũ; Friday mới là quyết định cuối."
+        },
+        {
+          "audio_example_en": "The ordinary ticket is twenty pounds, although students pay fifteen.",
+          "question": "Student ticket: £____",
+          "answer": "15",
+          "explanation_vi": "Chọn mức giá đúng đối tượng được hỏi; 20 là giá thường."
+        }
+      ]
+    },
+    "steps": [
+      "pre_listening",
+      "first_listen_ielts_questions",
+      "review_with_evidence",
+      "selective_dictation",
+      "gap_fill",
+      "summary"
+    ],
+    "ielts_question_ids": [
+      "Q01",
+      "Q02",
+      "Q03",
+      "Q04",
+      "Q05",
+      "Q06",
+      "Q07",
+      "Q08"
+    ],
+    "recommended_first_listen_play_limit": 1,
+    "practice_replay_allowed_after_first_attempt": true,
+    "word_count": 283,
+    "estimated_audio_minutes_at_135_wpm": 2.1,
+    "exposure_bank": "training",
+    "exam_simulation": false,
+    "mock_test": false
+  },
+  "qa": {
+    "status": "awaiting_human_audio_review",
+    "automated_validation": "pending",
+    "human_transcript_approved": false,
+    "human_audio_approved": false,
+    "ielts_exam_equivalent": false,
+    "release_eligible": false
+  },
+  "provenance": {
+    "source_type": "original_authored",
+    "reference_copying": false,
+    "authoring_milestone": "M21",
+    "do_not_reuse_in_unseen_assessment_before_exposure_check": true
+  },
+  "release_metadata": {
+    "version": "m21.0.1",
+    "published": false,
+    "needs_audio": true,
+    "requires_human_approval": true,
+    "import_policy": "insert_only",
+    "target_bank": "training"
+  }
+}

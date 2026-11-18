@@ -1,0 +1,747 @@
+{
+  "schema_version": "1.2.0",
+  "lesson_id": "S2-SIM-001",
+  "status": "draft",
+  "level": "L5",
+  "section": 2,
+  "topic": "Orientation at an arts centre",
+  "title": "The New Harbour Arts Centre",
+  "content_format": "section_exam_simulation",
+  "exam_part": "IELTS_LISTENING_PART_2_STYLE",
+  "official_ielts_material": false,
+  "learning_objectives_vi": [
+    "Nghe một bài thuyết minh liền mạch trong tình huống xã hội đời sống.",
+    "Đọc nhóm câu hỏi trước khi nghe và định vị thông tin theo trình tự.",
+    "Hiểu paraphrase, thông tin gây nhiễu và giới hạn từ mà không được nghe lại."
+  ],
+  "target_skills": [
+    "map_navigation",
+    "booking",
+    "opening_times"
+  ],
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Local service or visitor information presenter",
+      "accent_requested": "british",
+      "tts_voice_id": null
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "Welcome to the newly renovated Harbour Arts Centre. I am Mara, the building coordinator. The main entrance is at the bottom of your plan, with a central information desk directly ahead. Please use the plan rather than the old leaflets, because several rooms exchanged functions during the renovation.",
+      "translation_vi": "Chào mừng đến Trung tâm Nghệ thuật Harbour vừa cải tạo. Tôi là Mara, điều phối viên. Cổng chính ở cuối sơ đồ, quầy thông tin ở giữa. Hãy dùng sơ đồ mới vì một số phòng đã đổi chức năng.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_2",
+        "m26",
+        "introduction",
+        "map_navigation",
+        "booking",
+        "opening_times"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "A",
+      "text_en": "If you come in through the main entrance, the print studio is the first room on your left. It is in the south-west corner, before you reach the information desk; the old ticket window is no longer in use.",
+      "translation_vi": "Từ cổng chính, phòng in là phòng đầu tiên bên trái, ở góc tây nam, trước quầy thông tin. Quầy vé cũ đã đóng.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_2",
+        "m26",
+        "evidence",
+        "map_navigation",
+        "booking",
+        "opening_times"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "A",
+      "text_en": "To find the ceramics workshop, continue past the desk and take the corridor towards the north-west corner. It is the far room on the left; the neighbouring room nearer the desk is used for storage.",
+      "translation_vi": "Để đến xưởng gốm, đi qua quầy rồi theo hành lang hướng tây bắc. Đó là phòng xa nhất bên trái, không phải phòng kho gần quầy.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_2",
+        "m26",
+        "evidence",
+        "map_navigation",
+        "booking",
+        "opening_times"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "A",
+      "text_en": "The photography gallery sits directly to the east of the information desk, halfway along the building. You may see a temporary sign for an exhibition in the north-east room, but that room is for staff only.",
+      "translation_vi": "Phòng trưng bày ảnh nằm ngay phía đông quầy thông tin, giữa tòa nhà. Phòng phía đông bắc chỉ dành cho nhân viên.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_2",
+        "m26",
+        "evidence",
+        "map_navigation",
+        "booking",
+        "opening_times"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "A",
+      "text_en": "Our small rehearsal room is in the north-east corner, past the stairwell. Do not confuse it with the main performance hall at the northern end of the central corridor.",
+      "translation_vi": "Phòng tập dượt nhỏ ở góc đông bắc, qua cầu thang; khác với hội trường lớn cuối hành lang phía bắc.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_2",
+        "m26",
+        "evidence",
+        "map_navigation",
+        "booking",
+        "opening_times"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "A",
+      "text_en": "Finally, the quiet reading lounge is to the right as you enter, in the south-east corner. This area is deliberately away from the busy print studio across the entrance passage.",
+      "translation_vi": "Cuối cùng, phòng đọc yên tĩnh nằm bên phải cổng, góc đông nam, đối diện phòng in đông người.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_2",
+        "m26",
+        "evidence",
+        "map_navigation",
+        "booking",
+        "opening_times"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "The centre used to have a rather awkward arrangement: visitors entering a class had to pass directly through the gallery, which caused constant interruptions. The new corridors should make both activities quieter. You will also notice the original brick walls have been left visible, so the history of the building remains part of the experience.",
+      "translation_vi": "Trước đây khách vào lớp phải đi xuyên phòng trưng bày gây gián đoạn. Hành lang mới giúp cả hai yên tĩnh hơn; tường gạch cũ vẫn để lộ để giữ lịch sử tòa nhà.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_2",
+        "m26",
+        "context",
+        "map_navigation",
+        "booking",
+        "opening_times"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "A",
+      "text_en": "That covers the building layout. I will now explain how visits and workshops are organised, since the information on last year’s posters is no longer reliable.",
+      "translation_vi": "Đó là sơ đồ tòa nhà. Sau đây là cách tổ chức tham quan và workshop; thông tin trên áp phích cũ không còn chính xác.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_2",
+        "m26",
+        "transition",
+        "map_navigation",
+        "booking",
+        "opening_times"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T09",
+      "speaker_id": "A",
+      "text_en": "The public opening time has moved from nine to ten thirty in the morning. The extra hour lets our technicians check equipment safely before visitors arrive.",
+      "translation_vi": "Giờ mở cửa đã đổi từ chín giờ sang mười giờ ba mươi để kỹ thuật viên kiểm tra thiết bị.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_2",
+        "m26",
+        "evidence",
+        "map_navigation",
+        "booking",
+        "opening_times"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T10",
+      "speaker_id": "A",
+      "text_en": "Most drop-in exhibitions are free. However, anyone joining a practical workshop must reserve a place online, even if no payment is required on the day.",
+      "translation_vi": "Các triển lãm tự do miễn phí, nhưng người tham gia workshop phải đặt chỗ trực tuyến dù không phải trả tiền.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_2",
+        "m26",
+        "evidence",
+        "map_navigation",
+        "booking",
+        "opening_times"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T11",
+      "speaker_id": "A",
+      "text_en": "Visitors attending the evening performance should enter through the side gate on Lantern Street. The main door closes at seven to reduce noise near the galleries.",
+      "translation_vi": "Khách xem biểu diễn buổi tối vào bằng cổng phụ trên đường Lantern; cửa chính đóng lúc bảy giờ.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_2",
+        "m26",
+        "evidence",
+        "map_navigation",
+        "booking",
+        "opening_times"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T12",
+      "speaker_id": "A",
+      "text_en": "For the weekend family sessions, the centre provides paints and protective clothing. Families only need to bring a reusable water bottle for each child.",
+      "translation_vi": "Lớp gia đình cuối tuần được phát màu vẽ và đồ bảo hộ; chỉ cần mang chai nước dùng lại cho mỗi trẻ.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_2",
+        "m26",
+        "evidence",
+        "map_navigation",
+        "booking",
+        "opening_times"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T13",
+      "speaker_id": "A",
+      "text_en": "If you lose an item, do not leave a message with the café. The lost-property service is run by the reception team, who record descriptions in a secure log.",
+      "translation_vi": "Nếu mất đồ, hãy đến bộ phận lễ tân chứ không báo quán cà phê; họ có sổ ghi nhận đồ thất lạc.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_2",
+        "m26",
+        "evidence",
+        "map_navigation",
+        "booking",
+        "opening_times"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T14",
+      "speaker_id": "A",
+      "text_en": "One useful improvement is the way exhibitions change throughout the year. Rather than closing the whole centre to prepare a new show, staff can use the smaller spaces while other workshops continue. It means you may see technicians moving equipment, although the visitor paths will remain clearly marked.",
+      "translation_vi": "Một cải tiến là thay triển lãm theo mùa mà không đóng cả trung tâm. Nhân viên có thể chuyển thiết bị ở phòng nhỏ trong khi workshop vẫn tiếp tục; lối khách luôn được đánh dấu.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_2",
+        "m26",
+        "context",
+        "map_navigation",
+        "booking",
+        "opening_times"
+      ],
+      "bank_role": "protected_assessment"
+    },
+    {
+      "turn_id": "T15",
+      "speaker_id": "A",
+      "text_en": "We are looking forward to welcoming the whole community. If anything on the plan remains unclear, speak to the staff at the central desk before entering a workshop.",
+      "translation_vi": "Chúng tôi rất mong đón cộng đồng. Nếu còn thắc mắc về sơ đồ, hãy hỏi nhân viên tại quầy giữa trước khi vào workshop.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "ielts_part_2",
+        "m26",
+        "closing",
+        "map_navigation",
+        "booking",
+        "opening_times"
+      ],
+      "bank_role": "protected_assessment"
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "group_id": "PART2_Q01_TO_05",
+      "type": "map_labelling",
+      "prompt": "Print studio",
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "evidence_excerpt_en": "If you come in through the main entrance, the print studio is the first room on your left. It is in the south-west corner, before you reach the information desk; the old ticket window is no longer in use.",
+      "explanation_vi": "Từ cổng chính, phòng in là phòng đầu tiên bên trái, ở góc tây nam, trước quầy thông tin. Quầy vé cũ đã đóng.",
+      "question_tags": [
+        "M26",
+        "part2",
+        "map_labelling",
+        "map_navigation",
+        "booking",
+        "opening_times"
+      ],
+      "answer_source": "explicit_or_contextual_recording",
+      "scoring_policy": "map_letter",
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true,
+      "correct_answers": [
+        "F"
+      ],
+      "correct_option": "F",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G",
+        "H"
+      ],
+      "map_asset_id": "M26-MAP-001",
+      "map_asset_path": "04_MAP_ASSETS_CLIENT_SAFE/M26_MAP_001.svg"
+    },
+    {
+      "question_id": "Q02",
+      "group_id": "PART2_Q01_TO_05",
+      "type": "map_labelling",
+      "prompt": "Ceramics workshop",
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "evidence_excerpt_en": "To find the ceramics workshop, continue past the desk and take the corridor towards the north-west corner. It is the far room on the left; the neighbouring room nearer the desk is used for storage.",
+      "explanation_vi": "Để đến xưởng gốm, đi qua quầy rồi theo hành lang hướng tây bắc. Đó là phòng xa nhất bên trái, không phải phòng kho gần quầy.",
+      "question_tags": [
+        "M26",
+        "part2",
+        "map_labelling",
+        "map_navigation",
+        "booking",
+        "opening_times"
+      ],
+      "answer_source": "explicit_or_contextual_recording",
+      "scoring_policy": "map_letter",
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true,
+      "correct_answers": [
+        "A"
+      ],
+      "correct_option": "A",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G",
+        "H"
+      ],
+      "map_asset_id": "M26-MAP-001",
+      "map_asset_path": "04_MAP_ASSETS_CLIENT_SAFE/M26_MAP_001.svg"
+    },
+    {
+      "question_id": "Q03",
+      "group_id": "PART2_Q01_TO_05",
+      "type": "map_labelling",
+      "prompt": "Photography gallery",
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "evidence_excerpt_en": "The photography gallery sits directly to the east of the information desk, halfway along the building. You may see a temporary sign for an exhibition in the north-east room, but that room is for staff only.",
+      "explanation_vi": "Phòng trưng bày ảnh nằm ngay phía đông quầy thông tin, giữa tòa nhà. Phòng phía đông bắc chỉ dành cho nhân viên.",
+      "question_tags": [
+        "M26",
+        "part2",
+        "map_labelling",
+        "map_navigation",
+        "booking",
+        "opening_times"
+      ],
+      "answer_source": "explicit_or_contextual_recording",
+      "scoring_policy": "map_letter",
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true,
+      "correct_answers": [
+        "E"
+      ],
+      "correct_option": "E",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G",
+        "H"
+      ],
+      "map_asset_id": "M26-MAP-001",
+      "map_asset_path": "04_MAP_ASSETS_CLIENT_SAFE/M26_MAP_001.svg"
+    },
+    {
+      "question_id": "Q04",
+      "group_id": "PART2_Q01_TO_05",
+      "type": "map_labelling",
+      "prompt": "Rehearsal room",
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "evidence_excerpt_en": "Our small rehearsal room is in the north-east corner, past the stairwell. Do not confuse it with the main performance hall at the northern end of the central corridor.",
+      "explanation_vi": "Phòng tập dượt nhỏ ở góc đông bắc, qua cầu thang; khác với hội trường lớn cuối hành lang phía bắc.",
+      "question_tags": [
+        "M26",
+        "part2",
+        "map_labelling",
+        "map_navigation",
+        "booking",
+        "opening_times"
+      ],
+      "answer_source": "explicit_or_contextual_recording",
+      "scoring_policy": "map_letter",
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true,
+      "correct_answers": [
+        "C"
+      ],
+      "correct_option": "C",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G",
+        "H"
+      ],
+      "map_asset_id": "M26-MAP-001",
+      "map_asset_path": "04_MAP_ASSETS_CLIENT_SAFE/M26_MAP_001.svg"
+    },
+    {
+      "question_id": "Q05",
+      "group_id": "PART2_Q01_TO_05",
+      "type": "map_labelling",
+      "prompt": "Reading lounge",
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "evidence_excerpt_en": "Finally, the quiet reading lounge is to the right as you enter, in the south-east corner. This area is deliberately away from the busy print studio across the entrance passage.",
+      "explanation_vi": "Cuối cùng, phòng đọc yên tĩnh nằm bên phải cổng, góc đông nam, đối diện phòng in đông người.",
+      "question_tags": [
+        "M26",
+        "part2",
+        "map_labelling",
+        "map_navigation",
+        "booking",
+        "opening_times"
+      ],
+      "answer_source": "explicit_or_contextual_recording",
+      "scoring_policy": "map_letter",
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true,
+      "correct_answers": [
+        "H"
+      ],
+      "correct_option": "H",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G",
+        "H"
+      ],
+      "map_asset_id": "M26-MAP-001",
+      "map_asset_path": "04_MAP_ASSETS_CLIENT_SAFE/M26_MAP_001.svg"
+    },
+    {
+      "question_id": "Q06",
+      "group_id": "PART2_Q06_TO_10",
+      "type": "note_completion",
+      "prompt": "Public opening time: ____",
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "evidence_excerpt_en": "The public opening time has moved from nine to ten thirty in the morning. The extra hour lets our technicians check equipment safely before visitors arrive.",
+      "explanation_vi": "Giờ mở cửa đã đổi từ chín giờ sang mười giờ ba mươi để kỹ thuật viên kiểm tra thiết bị.",
+      "question_tags": [
+        "M26",
+        "part2",
+        "note_completion",
+        "map_navigation",
+        "booking",
+        "opening_times"
+      ],
+      "answer_source": "explicit_or_contextual_recording",
+      "scoring_policy": "controlled_variants",
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": false,
+      "correct_answers": [
+        "ten thirty"
+      ],
+      "spoken_answer": "ten thirty",
+      "word_limit": 3,
+      "instructions_en": "NO MORE THAN THREE WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q07",
+      "group_id": "PART2_Q06_TO_10",
+      "type": "note_completion",
+      "prompt": "Workshop places must be reserved ____.",
+      "evidence_turn_ids": [
+        "T10"
+      ],
+      "evidence_excerpt_en": "Most drop-in exhibitions are free. However, anyone joining a practical workshop must reserve a place online, even if no payment is required on the day.",
+      "explanation_vi": "Các triển lãm tự do miễn phí, nhưng người tham gia workshop phải đặt chỗ trực tuyến dù không phải trả tiền.",
+      "question_tags": [
+        "M26",
+        "part2",
+        "note_completion",
+        "map_navigation",
+        "booking",
+        "opening_times"
+      ],
+      "answer_source": "explicit_or_contextual_recording",
+      "scoring_policy": "controlled_variants",
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": false,
+      "correct_answers": [
+        "online"
+      ],
+      "spoken_answer": "online",
+      "word_limit": 3,
+      "instructions_en": "NO MORE THAN THREE WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q08",
+      "group_id": "PART2_Q06_TO_10",
+      "type": "note_completion",
+      "prompt": "Evening entrance: ____ Street",
+      "evidence_turn_ids": [
+        "T11"
+      ],
+      "evidence_excerpt_en": "Visitors attending the evening performance should enter through the side gate on Lantern Street. The main door closes at seven to reduce noise near the galleries.",
+      "explanation_vi": "Khách xem biểu diễn buổi tối vào bằng cổng phụ trên đường Lantern; cửa chính đóng lúc bảy giờ.",
+      "question_tags": [
+        "M26",
+        "part2",
+        "note_completion",
+        "map_navigation",
+        "booking",
+        "opening_times"
+      ],
+      "answer_source": "explicit_or_contextual_recording",
+      "scoring_policy": "controlled_variants",
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": false,
+      "correct_answers": [
+        "Lantern"
+      ],
+      "spoken_answer": "Lantern",
+      "word_limit": 3,
+      "instructions_en": "NO MORE THAN THREE WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q09",
+      "group_id": "PART2_Q06_TO_10",
+      "type": "note_completion",
+      "prompt": "Bring a reusable ____ for each child.",
+      "evidence_turn_ids": [
+        "T12"
+      ],
+      "evidence_excerpt_en": "For the weekend family sessions, the centre provides paints and protective clothing. Families only need to bring a reusable water bottle for each child.",
+      "explanation_vi": "Lớp gia đình cuối tuần được phát màu vẽ và đồ bảo hộ; chỉ cần mang chai nước dùng lại cho mỗi trẻ.",
+      "question_tags": [
+        "M26",
+        "part2",
+        "note_completion",
+        "map_navigation",
+        "booking",
+        "opening_times"
+      ],
+      "answer_source": "explicit_or_contextual_recording",
+      "scoring_policy": "controlled_variants",
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": false,
+      "correct_answers": [
+        "water bottle"
+      ],
+      "spoken_answer": "water bottle",
+      "word_limit": 3,
+      "instructions_en": "NO MORE THAN THREE WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q10",
+      "group_id": "PART2_Q06_TO_10",
+      "type": "note_completion",
+      "prompt": "Lost property is handled by ____.",
+      "evidence_turn_ids": [
+        "T13"
+      ],
+      "evidence_excerpt_en": "If you lose an item, do not leave a message with the café. The lost-property service is run by the reception team, who record descriptions in a secure log.",
+      "explanation_vi": "Nếu mất đồ, hãy đến bộ phận lễ tân chứ không báo quán cà phê; họ có sổ ghi nhận đồ thất lạc.",
+      "question_tags": [
+        "M26",
+        "part2",
+        "note_completion",
+        "map_navigation",
+        "booking",
+        "opening_times"
+      ],
+      "answer_source": "explicit_or_contextual_recording",
+      "scoring_policy": "controlled_variants",
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": false,
+      "correct_answers": [
+        "reception"
+      ],
+      "spoken_answer": "reception",
+      "word_limit": 3,
+      "instructions_en": "NO MORE THAN THREE WORDS AND/OR A NUMBER"
+    }
+  ],
+  "question_groups": [
+    {
+      "group_id": "PART2_Q01_TO_05",
+      "question_ids": [
+        "Q01",
+        "Q02",
+        "Q03",
+        "Q04",
+        "Q05"
+      ],
+      "question_type": "map_labelling",
+      "instructions_en": "Label the plan. Choose the correct letter A–H for each place.",
+      "question_display_start": "before_audio",
+      "requires_one_listen": true,
+      "pause_between_groups_seconds": 0,
+      "map_asset_id": "M26-MAP-001",
+      "map_asset_path": "04_MAP_ASSETS_CLIENT_SAFE/M26_MAP_001.svg",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G",
+        "H"
+      ]
+    },
+    {
+      "group_id": "PART2_Q06_TO_10",
+      "question_ids": [
+        "Q06",
+        "Q07",
+        "Q08",
+        "Q09",
+        "Q10"
+      ],
+      "question_type": "note_completion",
+      "instructions_en": "Complete the notes. Write NO MORE THAN THREE WORDS AND/OR A NUMBER for each answer.",
+      "question_display_start": "before_audio",
+      "requires_one_listen": true,
+      "pause_between_groups_seconds": 0
+    }
+  ],
+  "audio": {
+    "status": "not_generated",
+    "audio_url": null,
+    "audio_asset_id": null,
+    "duration_ms": null,
+    "source_text_sha256": "6d45e7eea3e24ec8638aad12b9b04339c19a28c7d37b3cdb990d7835790fe247",
+    "generation_strategy": "single_continuous_monologue",
+    "aligned_turns": false
+  },
+  "exam_mode": {
+    "bank_role": "protected_assessment",
+    "use_as_training_before_first_attempt": false,
+    "listening_attempts_allowed_for_scored_first_attempt": 1,
+    "replay_before_submit": false,
+    "speed_control_before_submit": false,
+    "transcript_visible_before_submit": false,
+    "answer_key_visible_before_submit": false,
+    "post_attempt_review_allowed": true,
+    "question_count": 10,
+    "points_per_correct_answer": 1,
+    "question_order_monotonic": true,
+    "estimated_speech_minutes_at_135_wpm": 3.73,
+    "exam_band_score_enabled": false,
+    "repeated_attempt_marked_as_seen": true,
+    "all_questions_visible_before_audio": true
+  },
+  "qa": {
+    "automatic_data_validation": "pending",
+    "content_human_review": "pending",
+    "audio_human_review": "pending",
+    "exam_simulation_rubric_score": null,
+    "rubric_90_verified": false,
+    "published": false,
+    "release_eligible": false
+  },
+  "provenance": {
+    "source_type": "original_authored_english_monologue",
+    "milestone": "M26",
+    "no_official_ielts_question_copied": true,
+    "training_exposure_guard": true,
+    "fictional_scenarios": true
+  },
+  "release_metadata": {
+    "target_bank": "protected_assessment",
+    "import_policy": "insert_only",
+    "version": "m26.0.1",
+    "preserve_existing_ids": true,
+    "allow_client_answer_payload": false
+  },
+  "map_asset": {
+    "map_asset_id": "M26-MAP-001",
+    "asset_path": "04_MAP_ASSETS_CLIENT_SAFE/M26_MAP_001.svg",
+    "format": "svg",
+    "orientation": "NORTH UP / MAIN ENTRANCE SOUTH",
+    "question_ids": [
+      "Q01",
+      "Q02",
+      "Q03",
+      "Q04",
+      "Q05"
+    ],
+    "choices": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F",
+      "G",
+      "H"
+    ],
+    "human_spatial_review_required": true,
+    "answer_key_is_server_only": true
+  }
+}

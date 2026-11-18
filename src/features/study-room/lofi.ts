@@ -38,7 +38,7 @@ export class LofiPlayer {
 
   setVolume(value: number) {
     if (this.volume && this.context) {
-      this.volume.gain.setTargetAtTime(Math.max(0, Math.min(1, value)) * 0.3, this.context.currentTime, 0.04);
+      this.volume.gain.setTargetAtTime(Math.max(0, Math.min(1, value)) * 0.8, this.context.currentTime, 0.04);
     }
   }
 

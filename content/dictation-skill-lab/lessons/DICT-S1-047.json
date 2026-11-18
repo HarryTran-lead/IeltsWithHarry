@@ -1,0 +1,506 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "DICT-S1-047",
+  "status": "draft",
+  "level": "L4",
+  "section": 1,
+  "topic": "Restaurant Reservations",
+  "title": "Arranging a Community Awards Dinner",
+  "learning_objectives_vi": [
+    "Rèn natural speed & paraphrase qua tình huống: A planner negotiates a revised function-room package.",
+    "Xác định thông tin cuối cùng và phân biệt dữ liệu gây nhiễu (nếu có).",
+    "Nghe chép chính xác, lý giải đáp án từ transcript và học từ trong ngữ cảnh."
+  ],
+  "content_format": "section_practice",
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Service representative / employee",
+      "tts_voice_id": null,
+      "accent_requested": "british"
+    },
+    {
+      "speaker_id": "B",
+      "role": "Customer / applicant",
+      "tts_voice_id": null,
+      "accent_requested": "british"
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "Good morning, Riverside Dining. This is Oliver from events.",
+      "translation_vi": "Chào buổi sáng, Riverside Dining. Tôi là Oliver từ bộ phận sự kiện.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "event_capacity",
+        "menu_changes",
+        "fees",
+        "booking_deadline",
+        "section_1",
+        "two_speaker_dialogue",
+        "l4"
+      ]
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "B",
+      "text_en": "Hello. I'm organising an awards dinner for our local photography club next month.",
+      "translation_vi": "Xin chào. Tôi tổ chức bữa tối trao giải cho câu lạc bộ nhiếp ảnh địa phương vào tháng tới.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "event_capacity",
+        "menu_changes",
+        "fees",
+        "booking_deadline",
+        "section_1",
+        "two_speaker_dialogue",
+        "l4"
+      ]
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "A",
+      "text_en": "Wonderful. Our small dining room seats thirty, while the garden hall can accommodate up to fifty.",
+      "translation_vi": "Tuyệt. Phòng ăn nhỏ chứa 30 người, còn sảnh vườn tối đa 50.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "event_capacity",
+        "menu_changes",
+        "fees",
+        "booking_deadline",
+        "section_1",
+        "two_speaker_dialogue",
+        "l4"
+      ]
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "B",
+      "text_en": "We expect about thirty-eight guests, so the garden hall sounds more suitable.",
+      "translation_vi": "Chúng tôi dự kiến khoảng 38 khách, nên sảnh vườn phù hợp hơn.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "event_capacity",
+        "menu_changes",
+        "fees",
+        "booking_deadline",
+        "section_1",
+        "two_speaker_dialogue",
+        "l4"
+      ]
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "A",
+      "text_en": "It's available on the twenty-first, but not on the twentieth because of a wedding.",
+      "translation_vi": "Sảnh còn trống ngày 21, nhưng không trống ngày 20 do có đám cưới.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "event_capacity",
+        "menu_changes",
+        "fees",
+        "booking_deadline",
+        "section_1",
+        "two_speaker_dialogue",
+        "l4"
+      ]
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "B",
+      "text_en": "The twenty-first is fine. We originally wanted a buffet, although several members have asked for a seated meal.",
+      "translation_vi": "Ngày 21 được. Ban đầu chúng tôi muốn buffet, nhưng nhiều thành viên muốn ăn ngồi tại bàn.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "event_capacity",
+        "menu_changes",
+        "fees",
+        "booking_deadline",
+        "section_1",
+        "two_speaker_dialogue",
+        "l4"
+      ]
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "A two-course seated menu costs twenty-eight pounds per person. The buffet would be twenty-four.",
+      "translation_vi": "Thực đơn hai món phục vụ tại bàn giá 28 bảng mỗi người. Buffet giá 24 bảng.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "event_capacity",
+        "menu_changes",
+        "fees",
+        "booking_deadline",
+        "section_1",
+        "two_speaker_dialogue",
+        "l4"
+      ]
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "B",
+      "text_en": "Let's choose the seated menu, then. Is there a charge for the projector?",
+      "translation_vi": "Vậy chọn phục vụ tại bàn. Có tính phí máy chiếu không?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "event_capacity",
+        "menu_changes",
+        "fees",
+        "booking_deadline",
+        "section_1",
+        "two_speaker_dialogue",
+        "l4"
+      ]
+    },
+    {
+      "turn_id": "T09",
+      "speaker_id": "A",
+      "text_en": "The projector is included, but the microphone is fifteen pounds to hire.",
+      "translation_vi": "Máy chiếu đã gồm trong giá, còn thuê micro thêm 15 bảng.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "event_capacity",
+        "menu_changes",
+        "fees",
+        "booking_deadline",
+        "section_1",
+        "two_speaker_dialogue",
+        "l4"
+      ]
+    },
+    {
+      "turn_id": "T10",
+      "speaker_id": "B",
+      "text_en": "We'll bring our own microphone. When must we confirm the final number?",
+      "translation_vi": "Chúng tôi sẽ mang micro riêng. Khi nào phải chốt số khách?",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "event_capacity",
+        "menu_changes",
+        "fees",
+        "booking_deadline",
+        "section_1",
+        "two_speaker_dialogue",
+        "l4"
+      ]
+    },
+    {
+      "turn_id": "T11",
+      "speaker_id": "A",
+      "text_en": "No later than five working days before the event. A deposit of two hundred pounds secures the hall.",
+      "translation_vi": "Chậm nhất năm ngày làm việc trước sự kiện. Đặt cọc 200 bảng để giữ sảnh.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "event_capacity",
+        "menu_changes",
+        "fees",
+        "booking_deadline",
+        "section_1",
+        "two_speaker_dialogue",
+        "l4"
+      ]
+    },
+    {
+      "turn_id": "T12",
+      "speaker_id": "B",
+      "text_en": "Please hold the garden hall for now. I'll pay the deposit after our committee meeting.",
+      "translation_vi": "Vui lòng giữ tạm sảnh vườn. Tôi sẽ cọc sau cuộc họp ban tổ chức.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "event_capacity",
+        "menu_changes",
+        "fees",
+        "booking_deadline",
+        "section_1",
+        "two_speaker_dialogue",
+        "l4"
+      ]
+    },
+    {
+      "turn_id": "T13",
+      "speaker_id": "A",
+      "text_en": "I can place a temporary hold until Friday at four. After that the room will be released.",
+      "translation_vi": "Tôi có thể giữ tạm đến thứ Sáu lúc bốn giờ. Sau đó sảnh sẽ được mở cho người khác đặt.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "event_capacity",
+        "menu_changes",
+        "fees",
+        "booking_deadline",
+        "section_1",
+        "two_speaker_dialogue",
+        "l4"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "type": "form_completion",
+      "prompt": "Expected guests: ____",
+      "correct_answers": [
+        "38",
+        "thirty-eight"
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Dự kiến có 38 khách.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "event_capacity",
+        "menu_changes",
+        "fees",
+        "booking_deadline",
+        "ielts_section1_practice"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q02",
+      "type": "form_completion",
+      "prompt": "Available event date: ____",
+      "correct_answers": [
+        "21",
+        "twenty-first",
+        "21st"
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Ngày 20 đã có đám cưới nên chọn 21.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "event_capacity",
+        "menu_changes",
+        "fees",
+        "booking_deadline",
+        "ielts_section1_practice"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q03",
+      "type": "mcq",
+      "prompt": "Which meal service do the organisers choose?",
+      "correct_answers": [
+        "A seated menu"
+      ],
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "explanation_vi": "Nhóm chuyển từ buffet sang seated menu.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "event_capacity",
+        "menu_changes",
+        "fees",
+        "booking_deadline",
+        "ielts_section1_practice"
+      ],
+      "options": [
+        "A buffet",
+        "A seated menu",
+        "A takeaway service"
+      ]
+    },
+    {
+      "question_id": "Q04",
+      "type": "form_completion",
+      "prompt": "Cost per guest: £____",
+      "correct_answers": [
+        "28",
+        "twenty-eight"
+      ],
+      "evidence_turn_ids": [
+        "T07",
+        "T08"
+      ],
+      "explanation_vi": "Giá thực đơn ngồi tại bàn là 28 bảng, không phải giá buffet 24 bảng.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "event_capacity",
+        "menu_changes",
+        "fees",
+        "booking_deadline",
+        "ielts_section1_practice"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q05",
+      "type": "form_completion",
+      "prompt": "Additional microphone hire: £____",
+      "correct_answers": [
+        "15",
+        "fifteen"
+      ],
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "explanation_vi": "Thuê micro riêng sẽ mất 15 bảng, nên nhóm sẽ tự mang.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "event_capacity",
+        "menu_changes",
+        "fees",
+        "booking_deadline",
+        "ielts_section1_practice"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "Q06",
+      "type": "form_completion",
+      "prompt": "Required hall deposit: £____",
+      "correct_answers": [
+        "200",
+        "two hundred"
+      ],
+      "evidence_turn_ids": [
+        "T11"
+      ],
+      "explanation_vi": "Tiền cọc giữ sảnh là 200 bảng.",
+      "scoring_policy": "controlled_variants",
+      "question_tags": [
+        "event_capacity",
+        "menu_changes",
+        "fees",
+        "booking_deadline",
+        "ielts_section1_practice"
+      ],
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS AND/OR A NUMBER"
+    },
+    {
+      "question_id": "D01",
+      "type": "dictation",
+      "prompt": "Nghe và chép nguyên văn câu của nhân vật B (lượt T08).",
+      "correct_answers": [
+        "Let's choose the seated menu, then. Is there a charge for the projector?"
+      ],
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "explanation_vi": "Nội dung cần chép: Let's choose the seated menu, then. Is there a charge for the projector? Nghĩa: Vậy chọn phục vụ tại bàn. Có tính phí máy chiếu không? Chú ý đầy đủ từ chức năng, số ít/số nhiều và âm cuối.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "transcription_accuracy",
+        "event_capacity",
+        "menu_changes",
+        "fees",
+        "booking_deadline"
+      ]
+    },
+    {
+      "question_id": "G01",
+      "type": "gap_fill",
+      "prompt": "Nghe và điền phần còn thiếu: I can place a ____ until Friday at four. After that the room will be released.",
+      "correct_answers": [
+        "temporary hold"
+      ],
+      "evidence_turn_ids": [
+        "T13"
+      ],
+      "explanation_vi": "Từ/cụm nghe được là “temporary hold”. Câu đầy đủ: I can place a temporary hold until Friday at four. After that the room will be released.. Nghĩa: Tôi có thể giữ tạm đến thứ Sáu lúc bốn giờ. Sau đó sảnh sẽ được mở cho người khác đặt.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "gap_fill",
+        "vocabulary_in_context",
+        "event_capacity",
+        "menu_changes",
+        "fees",
+        "booking_deadline"
+      ]
+    }
+  ],
+  "vocabulary": [
+    {
+      "term": "accommodate",
+      "pos": "verb",
+      "meaning_vi": "chứa được",
+      "example_en": "Wonderful. Our small dining room seats thirty, while the garden hall can accommodate up to fifty.",
+      "example_vi": "Tuyệt. Phòng ăn nhỏ chứa 30 người, còn sảnh vườn tối đa 50.",
+      "source_turn_id": "T03"
+    },
+    {
+      "term": "seated menu",
+      "pos": "noun phrase",
+      "meaning_vi": "thực đơn phục vụ tại bàn",
+      "example_en": "A two-course seated menu costs twenty-eight pounds per person. The buffet would be twenty-four.",
+      "example_vi": "Thực đơn hai món phục vụ tại bàn giá 28 bảng mỗi người. Buffet giá 24 bảng.",
+      "source_turn_id": "T07"
+    },
+    {
+      "term": "projector",
+      "pos": "noun",
+      "meaning_vi": "máy chiếu",
+      "example_en": "Let's choose the seated menu, then. Is there a charge for the projector?",
+      "example_vi": "Vậy chọn phục vụ tại bàn. Có tính phí máy chiếu không?",
+      "source_turn_id": "T08"
+    },
+    {
+      "term": "temporary hold",
+      "pos": "noun phrase",
+      "meaning_vi": "giữ chỗ tạm thời",
+      "example_en": "I can place a temporary hold until Friday at four. After that the room will be released.",
+      "example_vi": "Tôi có thể giữ tạm đến thứ Sáu lúc bốn giờ. Sau đó sảnh sẽ được mở cho người khác đặt.",
+      "source_turn_id": "T13"
+    }
+  ],
+  "audio": {
+    "status": "not_generated",
+    "url": null,
+    "duration_ms": null,
+    "model": null,
+    "provider": null,
+    "voice_config": null,
+    "source_transcript_hash": "e1ae931973314fcf2fe89b1244a49faa878c00adca7b5c02c8e7c875eae4923a",
+    "audio_sha256": null,
+    "format": null
+  },
+  "qa": {
+    "content_reviewed": false,
+    "answers_verified": false,
+    "audio_verified": false,
+    "rights_cleared": false,
+    "duplicate_reviewed": false,
+    "notes": [
+      "Draft authoring, not expert reviewed.",
+      "TTS output pending; timestamps must be aligned after synthesis.",
+      "Keep unpublished until audio and question evidence are checked by a reviewer.",
+      "M16.2: automated edits are provisional; IELTS teacher final signoff, audio and rights clearance pending."
+    ]
+  },
+  "provenance": {
+    "content_origin": "original_ai_assisted",
+    "source_urls": [],
+    "source_rights_note": "Original pedagogical dialogues, not IELTS/Cambridge exam content. Review all TTS provider terms and permissions before audio generation/distribution.",
+    "reviewer": null
+  },
+  "release_metadata": {
+    "published_at": null,
+    "version": 1
+  }
+}

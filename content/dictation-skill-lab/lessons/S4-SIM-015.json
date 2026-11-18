@@ -1,0 +1,616 @@
+{
+  "schema_version": "1.2.0",
+  "lesson_id": "S4-SIM-015",
+  "status": "draft",
+  "level": "L7",
+  "section": 4,
+  "topic": "Bio-inspired robotics",
+  "title": "Robots Inspired by Insects",
+  "content_format": "section_exam_simulation",
+  "exam_part": "IELTS_LISTENING_PART_4_STYLE",
+  "official_ielts_material": false,
+  "learning_objectives_vi": [
+    "Theo dõi bài giảng học thuật có lập luận và ví dụ.",
+    "Hoàn thành ghi chú, tóm tắt hoặc bảng bằng đúng từ được nghe.",
+    "Nhận diện signposting và mối quan hệ giữa các ý."
+  ],
+  "target_skills": [
+    "academic_lecture",
+    "signposting",
+    "note_taking",
+    "technical_vocabulary",
+    "information_tracking"
+  ],
+  "speakers": [
+    {
+      "speaker_id": "LECTURER",
+      "role": "Academic lecturer",
+      "accent_requested": "new_zealand",
+      "tts_voice_id": null
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "LECTURER",
+      "text_en": "An insect can climb over an uneven surface with a brain far smaller than a computer's processor. Engineers do not assume they can copy an animal perfectly, but they investigate which principles of its movement might be useful for a machine. We will examine sensing, control and the practical limits of designing robots based on insects.",
+      "meaning_vi": "Robot lấy cảm hứng từ côn trùng để giải quyết vấn đề di chuyển và điều khiển.",
+      "translation_vi": null,
+      "translation_status": "pending_exact_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "academic_lecture",
+        "signposting",
+        "note_taking"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "opening"
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "LECTURER",
+      "text_en": "Engineers are attracted to insects partly because their movements remain effective in unpredictable surroundings. A small creature can respond quickly without building a perfect map of every stone. Translating that ability into machinery is difficult, since sensors, motors and batteries do not operate like living tissue. The most useful comparison is at the level of a design principle.",
+      "meaning_vi": "Mở rộng bối cảnh, giới thiệu vấn đề nghiên cứu.",
+      "translation_vi": null,
+      "translation_status": "pending_exact_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "academic_lecture",
+        "signposting",
+        "note_taking"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "opening"
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "LECTURER",
+      "text_en": "Many insects use flexible legs and a low centre of gravity to remain stable on uneven ground. A robot may imitate the timing of a tripod gait, in which three legs support the body while the other three move. The arrangement allows repeated steps without requiring the machine to calculate an entirely new posture at every moment. Yet the best gait depends on speed, surface and the robot's weight, so a single biological pattern is not appropriate everywhere.",
+      "meaning_vi": "Robot sáu chân có thể học dáng đi ba chân chống đỡ và giữ trọng tâm thấp.",
+      "translation_vi": null,
+      "translation_status": "pending_exact_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "academic_lecture",
+        "signposting",
+        "note_taking"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "core_exposition"
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "LECTURER",
+      "text_en": "Insects combine vision with contact information from the legs. Engineers sometimes add force sensors so a robot knows whether a foot has reached the ground. Another approach uses optical flow, the apparent motion of the visual scene, to estimate movement without identifying every object. These signals are imperfect: slippery ground can confuse a force-based assumption, while poor light limits vision. Reliable movement requires combining information instead of trusting one measurement.",
+      "meaning_vi": "Cảm biến lực và luồng quang học giúp robot biết mặt đất, chuyển động.",
+      "translation_vi": null,
+      "translation_status": "pending_exact_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "academic_lecture",
+        "signposting",
+        "note_taking"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "core_exposition"
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "LECTURER",
+      "text_en": "A central challenge is how to divide control between a detailed plan and immediate reaction. A simple reflex controller can alter a step when the foot encounters an obstacle, whereas a route planner decides which corridor or direction to follow. Treating these tasks separately saves time: the planner need not compute every leg movement. However, if local reactions consistently move the robot away from its destination, the two systems must exchange information and adjust.",
+      "meaning_vi": "Điều khiển phản xạ và lập kế hoạch đường đi thực hiện hai nhiệm vụ khác nhau.",
+      "translation_vi": null,
+      "translation_status": "pending_exact_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "academic_lecture",
+        "signposting",
+        "note_taking"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "core_exposition"
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "LECTURER",
+      "text_en": "Testing in a laboratory usually begins on a test platform with controlled obstacles. Performance outdoors can differ because of mud, loose stones and sudden changes in light. Engineers track the robot's energy consumption as well as its speed, since more motors and stronger movement may drain the battery rapidly. A machine that crosses a challenging track once but cannot operate for long is of limited use in a real inspection mission.",
+      "meaning_vi": "Thử nghiệm phải đo tiêu hao năng lượng, không chỉ tốc độ vượt chướng ngại.",
+      "translation_vi": null,
+      "translation_status": "pending_exact_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "academic_lecture",
+        "signposting",
+        "note_taking"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "core_exposition"
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "LECTURER",
+      "text_en": "Researchers also examine fault tolerance: whether the robot can continue moving if one sensor or joint stops working. A second requirement is human oversight, especially when machines operate around workers or in public places. The attraction of insect-inspired design is not that a robot becomes an insect. It is that biological examples suggest simple, robust solutions to problems that might otherwise require complicated calculations.",
+      "meaning_vi": "Robot cần chịu lỗi và có con người giám sát trong môi trường thật.",
+      "translation_vi": null,
+      "translation_status": "pending_exact_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "academic_lecture",
+        "signposting",
+        "note_taking"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "core_exposition"
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "LECTURER",
+      "text_en": "Different applications demand different compromises. A laboratory robot might prioritise speed, while a machine inspecting a collapsed structure must protect its components and avoid disturbing unstable material. Neither can be judged solely by how closely its movement resembles an insect. What matters is how reliably it performs the task for which it was built.",
+      "meaning_vi": "Nêu giới hạn, ví dụ ứng dụng và ý nghĩa thực tế.",
+      "translation_vi": null,
+      "translation_status": "pending_exact_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "academic_lecture",
+        "signposting",
+        "note_taking"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "closing"
+    },
+    {
+      "turn_id": "T09",
+      "speaker_id": "LECTURER",
+      "text_en": "Biological inspiration is a starting point for engineering, not an instruction to imitate every detail. Each idea must still be tested against the demands of the machine's actual task.",
+      "meaning_vi": "Tổng kết và lưu ý cách diễn giải bằng chứng.",
+      "translation_vi": null,
+      "translation_status": "pending_exact_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "academic_lecture",
+        "signposting",
+        "note_taking"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "closing"
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "group_id": "PART4_NOTE_COMPLETION_01_05",
+      "type": "note_completion",
+      "prompt": "Stability benefits from a low ____.",
+      "correct_answers": [
+        "centre of gravity"
+      ],
+      "scoring_policy": "strict_spoken_words",
+      "word_limit": 3,
+      "instructions_en": "Complete the notes below. Write NO MORE THAN THREE WORDS for each answer.",
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "evidence_excerpt_en": "Many insects use flexible legs and a low centre of gravity to remain stable on uneven ground.",
+      "evidence_span": {
+        "turn_id": "T03",
+        "start_char": 41,
+        "end_char": 58
+      },
+      "explanation_vi": "Đáp án “centre of gravity” được nói trực tiếp trong phần bài giảng này. Robot sáu chân có thể học dáng đi ba chân chống đỡ và giữ trọng tâm thấp.",
+      "answer_source": "exact_words_spoken",
+      "question_tags": [
+        "M28",
+        "part4",
+        "note_completion",
+        "academic_note_taking"
+      ],
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true,
+      "answer_review_status": "draft_teacher_verification_required"
+    },
+    {
+      "question_id": "Q02",
+      "group_id": "PART4_NOTE_COMPLETION_01_05",
+      "type": "note_completion",
+      "prompt": "Three supporting legs form a ____.",
+      "correct_answers": [
+        "tripod gait"
+      ],
+      "scoring_policy": "strict_spoken_words",
+      "word_limit": 3,
+      "instructions_en": "Complete the notes below. Write NO MORE THAN THREE WORDS for each answer.",
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "evidence_excerpt_en": "A robot may imitate the timing of a tripod gait, in which three legs support the body while the other three move.",
+      "evidence_span": {
+        "turn_id": "T03",
+        "start_char": 130,
+        "end_char": 141
+      },
+      "explanation_vi": "Đáp án “tripod gait” được nói trực tiếp trong phần bài giảng này. Robot sáu chân có thể học dáng đi ba chân chống đỡ và giữ trọng tâm thấp.",
+      "answer_source": "exact_words_spoken",
+      "question_tags": [
+        "M28",
+        "part4",
+        "note_completion",
+        "academic_note_taking"
+      ],
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true,
+      "answer_review_status": "draft_teacher_verification_required"
+    },
+    {
+      "question_id": "Q03",
+      "group_id": "PART4_NOTE_COMPLETION_01_05",
+      "type": "note_completion",
+      "prompt": "Contact with the ground can be detected by ____.",
+      "correct_answers": [
+        "force sensors"
+      ],
+      "scoring_policy": "strict_spoken_words",
+      "word_limit": 3,
+      "instructions_en": "Complete the notes below. Write NO MORE THAN THREE WORDS for each answer.",
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "evidence_excerpt_en": "Engineers sometimes add force sensors so a robot knows whether a foot has reached the ground.",
+      "evidence_span": {
+        "turn_id": "T04",
+        "start_char": 87,
+        "end_char": 100
+      },
+      "explanation_vi": "Đáp án “force sensors” được nói trực tiếp trong phần bài giảng này. Cảm biến lực và luồng quang học giúp robot biết mặt đất, chuyển động.",
+      "answer_source": "exact_words_spoken",
+      "question_tags": [
+        "M28",
+        "part4",
+        "note_completion",
+        "academic_note_taking"
+      ],
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true,
+      "answer_review_status": "draft_teacher_verification_required"
+    },
+    {
+      "question_id": "Q04",
+      "group_id": "PART4_NOTE_COMPLETION_01_05",
+      "type": "note_completion",
+      "prompt": "Apparent movement of the visual scene is ____.",
+      "correct_answers": [
+        "optical flow"
+      ],
+      "scoring_policy": "strict_spoken_words",
+      "word_limit": 3,
+      "instructions_en": "Complete the notes below. Write NO MORE THAN THREE WORDS for each answer.",
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "evidence_excerpt_en": "Another approach uses optical flow, the apparent motion of the visual scene, to estimate movement without identifying every object.",
+      "evidence_span": {
+        "turn_id": "T04",
+        "start_char": 179,
+        "end_char": 191
+      },
+      "explanation_vi": "Đáp án “optical flow” được nói trực tiếp trong phần bài giảng này. Cảm biến lực và luồng quang học giúp robot biết mặt đất, chuyển động.",
+      "answer_source": "exact_words_spoken",
+      "question_tags": [
+        "M28",
+        "part4",
+        "note_completion",
+        "academic_note_taking"
+      ],
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true,
+      "answer_review_status": "draft_teacher_verification_required"
+    },
+    {
+      "question_id": "Q05",
+      "group_id": "PART4_NOTE_COMPLETION_01_05",
+      "type": "note_completion",
+      "prompt": "Fast automatic responses can come from a ____.",
+      "correct_answers": [
+        "reflex controller"
+      ],
+      "scoring_policy": "strict_spoken_words",
+      "word_limit": 3,
+      "instructions_en": "Complete the notes below. Write NO MORE THAN THREE WORDS for each answer.",
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "evidence_excerpt_en": "A simple reflex controller can alter a step when the foot encounters an obstacle, whereas a route planner decides which corridor or direction to follow.",
+      "evidence_span": {
+        "turn_id": "T05",
+        "start_char": 102,
+        "end_char": 119
+      },
+      "explanation_vi": "Đáp án “reflex controller” được nói trực tiếp trong phần bài giảng này. Điều khiển phản xạ và lập kế hoạch đường đi thực hiện hai nhiệm vụ khác nhau.",
+      "answer_source": "exact_words_spoken",
+      "question_tags": [
+        "M28",
+        "part4",
+        "note_completion",
+        "academic_note_taking"
+      ],
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true,
+      "answer_review_status": "draft_teacher_verification_required"
+    },
+    {
+      "question_id": "Q06",
+      "group_id": "PART4_TABLE_COMPLETION_06_10",
+      "type": "table_completion",
+      "prompt": "Longer movement decisions require a ____.",
+      "correct_answers": [
+        "route planner"
+      ],
+      "scoring_policy": "strict_spoken_words",
+      "word_limit": 2,
+      "instructions_en": "Complete the table below. Write NO MORE THAN TWO WORDS for each answer.",
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "evidence_excerpt_en": "A simple reflex controller can alter a step when the foot encounters an obstacle, whereas a route planner decides which corridor or direction to follow.",
+      "evidence_span": {
+        "turn_id": "T05",
+        "start_char": 185,
+        "end_char": 198
+      },
+      "explanation_vi": "Đáp án “route planner” được nói trực tiếp trong phần bài giảng này. Điều khiển phản xạ và lập kế hoạch đường đi thực hiện hai nhiệm vụ khác nhau.",
+      "answer_source": "exact_words_spoken",
+      "question_tags": [
+        "M28",
+        "part4",
+        "table_completion",
+        "academic_note_taking"
+      ],
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true,
+      "answer_review_status": "draft_teacher_verification_required"
+    },
+    {
+      "question_id": "Q07",
+      "group_id": "PART4_TABLE_COMPLETION_06_10",
+      "type": "table_completion",
+      "prompt": "Early trials may use a controlled ____.",
+      "correct_answers": [
+        "test platform"
+      ],
+      "scoring_policy": "strict_spoken_words",
+      "word_limit": 2,
+      "instructions_en": "Complete the table below. Write NO MORE THAN TWO WORDS for each answer.",
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "evidence_excerpt_en": "Testing in a laboratory usually begins on a test platform with controlled obstacles.",
+      "evidence_span": {
+        "turn_id": "T06",
+        "start_char": 44,
+        "end_char": 57
+      },
+      "explanation_vi": "Đáp án “test platform” được nói trực tiếp trong phần bài giảng này. Thử nghiệm phải đo tiêu hao năng lượng, không chỉ tốc độ vượt chướng ngại.",
+      "answer_source": "exact_words_spoken",
+      "question_tags": [
+        "M28",
+        "part4",
+        "table_completion",
+        "academic_note_taking"
+      ],
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true,
+      "answer_review_status": "draft_teacher_verification_required"
+    },
+    {
+      "question_id": "Q08",
+      "group_id": "PART4_TABLE_COMPLETION_06_10",
+      "type": "table_completion",
+      "prompt": "An important operating measure is ____.",
+      "correct_answers": [
+        "energy consumption"
+      ],
+      "scoring_policy": "strict_spoken_words",
+      "word_limit": 2,
+      "instructions_en": "Complete the table below. Write NO MORE THAN TWO WORDS for each answer.",
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "evidence_excerpt_en": "Engineers track the robot's energy consumption as well as its speed, since more motors and stronger movement may drain the battery rapidly.",
+      "evidence_span": {
+        "turn_id": "T06",
+        "start_char": 203,
+        "end_char": 221
+      },
+      "explanation_vi": "Đáp án “energy consumption” được nói trực tiếp trong phần bài giảng này. Thử nghiệm phải đo tiêu hao năng lượng, không chỉ tốc độ vượt chướng ngại.",
+      "answer_source": "exact_words_spoken",
+      "question_tags": [
+        "M28",
+        "part4",
+        "table_completion",
+        "academic_note_taking"
+      ],
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true,
+      "answer_review_status": "draft_teacher_verification_required"
+    },
+    {
+      "question_id": "Q09",
+      "group_id": "PART4_TABLE_COMPLETION_06_10",
+      "type": "table_completion",
+      "prompt": "Ability to continue after partial failure is ____.",
+      "correct_answers": [
+        "fault tolerance"
+      ],
+      "scoring_policy": "strict_spoken_words",
+      "word_limit": 2,
+      "instructions_en": "Complete the table below. Write NO MORE THAN TWO WORDS for each answer.",
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "evidence_excerpt_en": "Researchers also examine fault tolerance: whether the robot can continue moving if one sensor or joint stops working.",
+      "evidence_span": {
+        "turn_id": "T07",
+        "start_char": 25,
+        "end_char": 40
+      },
+      "explanation_vi": "Đáp án “fault tolerance” được nói trực tiếp trong phần bài giảng này. Robot cần chịu lỗi và có con người giám sát trong môi trường thật.",
+      "answer_source": "exact_words_spoken",
+      "question_tags": [
+        "M28",
+        "part4",
+        "table_completion",
+        "academic_note_taking"
+      ],
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true,
+      "answer_review_status": "draft_teacher_verification_required"
+    },
+    {
+      "question_id": "Q10",
+      "group_id": "PART4_TABLE_COMPLETION_06_10",
+      "type": "table_completion",
+      "prompt": "Deployment around people needs ____.",
+      "correct_answers": [
+        "human oversight"
+      ],
+      "scoring_policy": "strict_spoken_words",
+      "word_limit": 2,
+      "instructions_en": "Complete the table below. Write NO MORE THAN TWO WORDS for each answer.",
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "evidence_excerpt_en": "A second requirement is human oversight, especially when machines operate around workers or in public places.",
+      "evidence_span": {
+        "turn_id": "T07",
+        "start_char": 142,
+        "end_char": 157
+      },
+      "explanation_vi": "Đáp án “human oversight” được nói trực tiếp trong phần bài giảng này. Robot cần chịu lỗi và có con người giám sát trong môi trường thật.",
+      "answer_source": "exact_words_spoken",
+      "question_tags": [
+        "M28",
+        "part4",
+        "table_completion",
+        "academic_note_taking"
+      ],
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true,
+      "answer_review_status": "draft_teacher_verification_required"
+    }
+  ],
+  "question_groups": [
+    {
+      "group_id": "PART4_NOTE_COMPLETION_01_05",
+      "title_en": "Robots Inspired by Insects — Notes",
+      "question_ids": [
+        "Q01",
+        "Q02",
+        "Q03",
+        "Q04",
+        "Q05"
+      ],
+      "question_type": "note_completion",
+      "instructions_en": "Complete the notes below. Write NO MORE THAN THREE WORDS for each answer.",
+      "word_limit": 3,
+      "requires_one_listen": true,
+      "question_display_start": "before_audio",
+      "pause_between_groups_seconds": 0,
+      "layout_metadata": {
+        "presentation": "grouped_blanks",
+        "flow_order": null,
+        "table_columns": null
+      }
+    },
+    {
+      "group_id": "PART4_TABLE_COMPLETION_06_10",
+      "title_en": "Robots Inspired by Insects — Table",
+      "question_ids": [
+        "Q06",
+        "Q07",
+        "Q08",
+        "Q09",
+        "Q10"
+      ],
+      "question_type": "table_completion",
+      "instructions_en": "Complete the table below. Write NO MORE THAN TWO WORDS for each answer.",
+      "word_limit": 2,
+      "requires_one_listen": true,
+      "question_display_start": "before_audio",
+      "pause_between_groups_seconds": 0,
+      "layout_metadata": {
+        "presentation": "grouped_blanks",
+        "flow_order": null,
+        "table_columns": [
+          "Main point",
+          "Detail"
+        ]
+      }
+    }
+  ],
+  "pedagogy_vi": {
+    "topic_summary_vi": "Robot lấy cảm hứng từ côn trùng để giải quyết vấn đề di chuyển và điều khiển.",
+    "question_explanations_status": "draft_review_required",
+    "turn_meanings_are_not_full_translations": true,
+    "full_line_translation_required_before_release": true
+  },
+  "audio": {
+    "status": "not_generated",
+    "audio_url": null,
+    "audio_asset_id": null,
+    "duration_ms": null,
+    "source_text_sha256": "30f2a914f4caa1bd2339f573d334f67783ed6ec31284eac26be8d22b19debbe4",
+    "generation_strategy": "single_speaker_continuous_full_lecture",
+    "aligned_turns": false,
+    "voice_consistency_verified": false,
+    "human_listening_review": false
+  },
+  "exam_mode": {
+    "bank_role": "protected_assessment",
+    "use_as_training_before_first_attempt": false,
+    "listening_attempts_allowed_for_scored_first_attempt": 1,
+    "replay_before_submit": false,
+    "speed_control_before_submit": false,
+    "transcript_visible_before_submit": false,
+    "answer_key_visible_before_submit": false,
+    "post_attempt_review_allowed": true,
+    "question_count": 10,
+    "points_per_correct_answer": 1,
+    "question_order_monotonic": true,
+    "estimated_speech_minutes_at_140_wpm": 3.96,
+    "exam_band_score_enabled": false,
+    "repeated_attempt_marked_as_seen": true,
+    "all_questions_visible_before_audio": true
+  },
+  "qa": {
+    "automatic_data_validation": "pending",
+    "content_human_review": "pending",
+    "translation_human_review": "pending",
+    "audio_human_review": "pending",
+    "exam_simulation_rubric_score": null,
+    "rubric_90_verified": false,
+    "published": false,
+    "release_eligible": false
+  },
+  "provenance": {
+    "source_type": "original_authoring_english_academic_lecture",
+    "milestone": "M28",
+    "no_official_ielts_question_copied": true,
+    "training_exposure_guard": true,
+    "fictional_illustrations_only_when_specified": true
+  },
+  "release_metadata": {
+    "target_bank": "protected_assessment",
+    "import_policy": "insert_only",
+    "version": "m28.0.1",
+    "preserve_existing_ids": true,
+    "allow_client_answer_payload": false
+  }
+}

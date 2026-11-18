@@ -1,0 +1,675 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "FND2-017",
+  "status": "draft",
+  "level": "L1",
+  "section": 0,
+  "topic": "Foundation M17 – Sound Accuracy",
+  "title": "Final /n/ versus /ŋ/",
+  "learning_objectives_vi": [
+    "Nghe phân biệt final /n/ versus /ŋ/.",
+    "/ŋ/ như sing là âm mũi sau; không phát âm thêm /g/ trong sing",
+    "Chép được câu chưa nhìn transcript; đối chiếu từ trọng tâm sau khi nộp."
+  ],
+  "content_format": "micro_drill",
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Foundation narrator",
+      "tts_voice_id": null,
+      "accent_requested": "british"
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "There is a pin beside the keyboard.",
+      "translation_vi": "Có một chiếc ghim cạnh bàn phím.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "minimal_pair",
+        "final_n_ng"
+      ],
+      "target_word": "pin",
+      "focus_pair_id": "PAIR-01",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "A",
+      "text_en": "The timer makes a ping at noon.",
+      "translation_vi": "Đồng hồ hẹn giờ phát tiếng báo lúc trưa.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "minimal_pair",
+        "final_n_ng"
+      ],
+      "target_word": "ping",
+      "focus_pair_id": "PAIR-01",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "A",
+      "text_en": "This paper is very thin.",
+      "translation_vi": "Tờ giấy này rất mỏng.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "minimal_pair",
+        "final_n_ng"
+      ],
+      "target_word": "thin",
+      "focus_pair_id": "PAIR-02",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "A",
+      "text_en": "There is one more thing to check.",
+      "translation_vi": "Còn một điều nữa cần kiểm tra.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "minimal_pair",
+        "final_n_ng"
+      ],
+      "target_word": "thing",
+      "focus_pair_id": "PAIR-02",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "A",
+      "text_en": "She ran to the bus stop.",
+      "translation_vi": "Cô ấy chạy đến trạm xe buýt.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "minimal_pair",
+        "final_n_ng"
+      ],
+      "target_word": "ran",
+      "focus_pair_id": "PAIR-03",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "A",
+      "text_en": "The school bell rang at nine.",
+      "translation_vi": "Chuông trường reo lúc chín giờ.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "minimal_pair",
+        "final_n_ng"
+      ],
+      "target_word": "rang",
+      "focus_pair_id": "PAIR-03",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "We hope to win the next game.",
+      "translation_vi": "Chúng tôi hy vọng thắng trận tới.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "minimal_pair",
+        "final_n_ng"
+      ],
+      "target_word": "win",
+      "focus_pair_id": "PAIR-04",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "A",
+      "text_en": "The bird injured one wing.",
+      "translation_vi": "Con chim bị thương ở một cánh.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "minimal_pair",
+        "final_n_ng"
+      ],
+      "target_word": "wing",
+      "focus_pair_id": "PAIR-04",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T09",
+      "speaker_id": "A",
+      "text_en": "The sun appeared after the rain.",
+      "translation_vi": "Mặt trời xuất hiện sau cơn mưa.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "minimal_pair",
+        "final_n_ng"
+      ],
+      "target_word": "sun",
+      "focus_pair_id": "PAIR-05",
+      "bank_role": "training"
+    },
+    {
+      "turn_id": "T10",
+      "speaker_id": "A",
+      "text_en": "That song is sung at every festival.",
+      "translation_vi": "Bài hát đó được hát ở mọi lễ hội.",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "foundation",
+        "minimal_pair",
+        "final_n_ng"
+      ],
+      "target_word": "sung",
+      "focus_pair_id": "PAIR-05",
+      "bank_role": "training"
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "type": "dictation",
+      "prompt": "Nghe lượt T01 một lần rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "There is a pin beside the keyboard."
+      ],
+      "evidence_turn_ids": [
+        "T01"
+      ],
+      "explanation_vi": "Tập trung nghe pin / ping (/ŋ/ như sing là âm mũi sau; không phát âm thêm /g/ trong sing). Nghĩa: Có một chiếc ghim cạnh bàn phím.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text",
+        "pin / ping (/ŋ/ như sing là âm mũi sau; không phát âm thêm /g/ trong sing)"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q02",
+      "type": "dictation",
+      "prompt": "Nghe lượt T02 một lần rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "The timer makes a ping at noon."
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "explanation_vi": "Tập trung nghe pin / ping (/ŋ/ như sing là âm mũi sau; không phát âm thêm /g/ trong sing). Nghĩa: Đồng hồ hẹn giờ phát tiếng báo lúc trưa.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text",
+        "pin / ping (/ŋ/ như sing là âm mũi sau; không phát âm thêm /g/ trong sing)"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q03",
+      "type": "dictation",
+      "prompt": "Nghe lượt T03 một lần rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "This paper is very thin."
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "explanation_vi": "Tập trung nghe thin / thing (/ŋ/ như sing là âm mũi sau; không phát âm thêm /g/ trong sing). Nghĩa: Tờ giấy này rất mỏng.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text",
+        "thin / thing (/ŋ/ như sing là âm mũi sau; không phát âm thêm /g/ trong sing)"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q04",
+      "type": "dictation",
+      "prompt": "Nghe lượt T04 một lần rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "There is one more thing to check."
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Tập trung nghe thin / thing (/ŋ/ như sing là âm mũi sau; không phát âm thêm /g/ trong sing). Nghĩa: Còn một điều nữa cần kiểm tra.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text",
+        "thin / thing (/ŋ/ như sing là âm mũi sau; không phát âm thêm /g/ trong sing)"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q05",
+      "type": "dictation",
+      "prompt": "Nghe lượt T05 một lần rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "She ran to the bus stop."
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Tập trung nghe ran / rang (/ŋ/ như sing là âm mũi sau; không phát âm thêm /g/ trong sing). Nghĩa: Cô ấy chạy đến trạm xe buýt.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text",
+        "ran / rang (/ŋ/ như sing là âm mũi sau; không phát âm thêm /g/ trong sing)"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q06",
+      "type": "dictation",
+      "prompt": "Nghe lượt T06 một lần rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "The school bell rang at nine."
+      ],
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "explanation_vi": "Tập trung nghe ran / rang (/ŋ/ như sing là âm mũi sau; không phát âm thêm /g/ trong sing). Nghĩa: Chuông trường reo lúc chín giờ.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text",
+        "ran / rang (/ŋ/ như sing là âm mũi sau; không phát âm thêm /g/ trong sing)"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q07",
+      "type": "dictation",
+      "prompt": "Nghe lượt T07 một lần rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "We hope to win the next game."
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "explanation_vi": "Tập trung nghe win / wing (/ŋ/ như sing là âm mũi sau; không phát âm thêm /g/ trong sing). Nghĩa: Chúng tôi hy vọng thắng trận tới.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text",
+        "win / wing (/ŋ/ như sing là âm mũi sau; không phát âm thêm /g/ trong sing)"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q08",
+      "type": "dictation",
+      "prompt": "Nghe lượt T08 một lần rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "The bird injured one wing."
+      ],
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "explanation_vi": "Tập trung nghe win / wing (/ŋ/ như sing là âm mũi sau; không phát âm thêm /g/ trong sing). Nghĩa: Con chim bị thương ở một cánh.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text",
+        "win / wing (/ŋ/ như sing là âm mũi sau; không phát âm thêm /g/ trong sing)"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q09",
+      "type": "dictation",
+      "prompt": "Nghe lượt T09 một lần rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "The sun appeared after the rain."
+      ],
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "explanation_vi": "Tập trung nghe sun / sung (/ŋ/ như sing là âm mũi sau; không phát âm thêm /g/ trong sing). Nghĩa: Mặt trời xuất hiện sau cơn mưa.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text",
+        "sun / sung (/ŋ/ như sing là âm mũi sau; không phát âm thêm /g/ trong sing)"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q10",
+      "type": "dictation",
+      "prompt": "Nghe lượt T10 một lần rồi chép chính xác câu được nói.",
+      "correct_answers": [
+        "That song is sung at every festival."
+      ],
+      "evidence_turn_ids": [
+        "T10"
+      ],
+      "explanation_vi": "Tập trung nghe sun / sung (/ŋ/ như sing là âm mũi sau; không phát âm thêm /g/ trong sing). Nghĩa: Bài hát đó được hát ở mọi lễ hội.",
+      "scoring_policy": "case_punctuation_insensitive",
+      "question_tags": [
+        "dictation",
+        "sound_to_text",
+        "sun / sung (/ŋ/ như sing là âm mũi sau; không phát âm thêm /g/ trong sing)"
+      ],
+      "max_replays_practice": 5
+    },
+    {
+      "question_id": "Q11",
+      "type": "word_choice",
+      "prompt": "Nghe lượt T01. Từ nào được nói?",
+      "correct_answers": [
+        "pin"
+      ],
+      "options": [
+        "pin",
+        "ping"
+      ],
+      "evidence_turn_ids": [
+        "T01"
+      ],
+      "explanation_vi": "Phân biệt pin và ping. /ŋ/ như sing là âm mũi sau; không phát âm thêm /g/ trong sing. Hãy nghe âm thực tế; không chỉ dựa vào nghĩa của cả câu.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "comprehension",
+        "sound_discrimination",
+        "final_n_ng"
+      ],
+      "max_replays_practice": 3
+    },
+    {
+      "question_id": "Q12",
+      "type": "word_choice",
+      "prompt": "Nghe lượt T04. Từ nào được nói?",
+      "correct_answers": [
+        "thing"
+      ],
+      "options": [
+        "thing",
+        "thin"
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "explanation_vi": "Phân biệt thin và thing. /ŋ/ như sing là âm mũi sau; không phát âm thêm /g/ trong sing. Hãy nghe âm thực tế; không chỉ dựa vào nghĩa của cả câu.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "comprehension",
+        "sound_discrimination",
+        "final_n_ng"
+      ],
+      "max_replays_practice": 3
+    },
+    {
+      "question_id": "Q13",
+      "type": "word_choice",
+      "prompt": "Nghe lượt T05. Từ nào được nói?",
+      "correct_answers": [
+        "ran"
+      ],
+      "options": [
+        "ran",
+        "rang"
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "explanation_vi": "Phân biệt ran và rang. /ŋ/ như sing là âm mũi sau; không phát âm thêm /g/ trong sing. Hãy nghe âm thực tế; không chỉ dựa vào nghĩa của cả câu.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "comprehension",
+        "sound_discrimination",
+        "final_n_ng"
+      ],
+      "max_replays_practice": 3
+    },
+    {
+      "question_id": "Q14",
+      "type": "word_choice",
+      "prompt": "Nghe lượt T08. Từ nào được nói?",
+      "correct_answers": [
+        "wing"
+      ],
+      "options": [
+        "wing",
+        "win"
+      ],
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "explanation_vi": "Phân biệt win và wing. /ŋ/ như sing là âm mũi sau; không phát âm thêm /g/ trong sing. Hãy nghe âm thực tế; không chỉ dựa vào nghĩa của cả câu.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "comprehension",
+        "sound_discrimination",
+        "final_n_ng"
+      ],
+      "max_replays_practice": 3
+    },
+    {
+      "question_id": "Q15",
+      "type": "word_choice",
+      "prompt": "Nghe lượt T09. Từ nào được nói?",
+      "correct_answers": [
+        "sun"
+      ],
+      "options": [
+        "sun",
+        "sung"
+      ],
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "explanation_vi": "Phân biệt sun và sung. /ŋ/ như sing là âm mũi sau; không phát âm thêm /g/ trong sing. Hãy nghe âm thực tế; không chỉ dựa vào nghĩa của cả câu.",
+      "scoring_policy": "strict",
+      "question_tags": [
+        "comprehension",
+        "sound_discrimination",
+        "final_n_ng"
+      ],
+      "max_replays_practice": 3
+    }
+  ],
+  "vocabulary": [
+    {
+      "term": "pin",
+      "pos": "target",
+      "meaning_vi": "ghim",
+      "example_en": "There is a pin beside the keyboard.",
+      "example_vi": "Có một chiếc ghim cạnh bàn phím.",
+      "source_turn_id": "T01",
+      "phoneme_focus": "final_n_ng"
+    },
+    {
+      "term": "ping",
+      "pos": "target",
+      "meaning_vi": "tiếng báo ngắn",
+      "example_en": "The timer makes a ping at noon.",
+      "example_vi": "Đồng hồ hẹn giờ phát tiếng báo lúc trưa.",
+      "source_turn_id": "T02",
+      "phoneme_focus": "final_n_ng"
+    },
+    {
+      "term": "thin",
+      "pos": "target",
+      "meaning_vi": "mỏng",
+      "example_en": "This paper is very thin.",
+      "example_vi": "Tờ giấy này rất mỏng.",
+      "source_turn_id": "T03",
+      "phoneme_focus": "final_n_ng"
+    },
+    {
+      "term": "thing",
+      "pos": "target",
+      "meaning_vi": "điều/vật",
+      "example_en": "There is one more thing to check.",
+      "example_vi": "Còn một điều nữa cần kiểm tra.",
+      "source_turn_id": "T04",
+      "phoneme_focus": "final_n_ng"
+    },
+    {
+      "term": "ran",
+      "pos": "target",
+      "meaning_vi": "đã chạy",
+      "example_en": "She ran to the bus stop.",
+      "example_vi": "Cô ấy chạy đến trạm xe buýt.",
+      "source_turn_id": "T05",
+      "phoneme_focus": "final_n_ng"
+    },
+    {
+      "term": "rang",
+      "pos": "target",
+      "meaning_vi": "đã reo",
+      "example_en": "The school bell rang at nine.",
+      "example_vi": "Chuông trường reo lúc chín giờ.",
+      "source_turn_id": "T06",
+      "phoneme_focus": "final_n_ng"
+    },
+    {
+      "term": "win",
+      "pos": "target",
+      "meaning_vi": "thắng",
+      "example_en": "We hope to win the next game.",
+      "example_vi": "Chúng tôi hy vọng thắng trận tới.",
+      "source_turn_id": "T07",
+      "phoneme_focus": "final_n_ng"
+    },
+    {
+      "term": "wing",
+      "pos": "target",
+      "meaning_vi": "cánh",
+      "example_en": "The bird injured one wing.",
+      "example_vi": "Con chim bị thương ở một cánh.",
+      "source_turn_id": "T08",
+      "phoneme_focus": "final_n_ng"
+    },
+    {
+      "term": "sun",
+      "pos": "target",
+      "meaning_vi": "mặt trời",
+      "example_en": "The sun appeared after the rain.",
+      "example_vi": "Mặt trời xuất hiện sau cơn mưa.",
+      "source_turn_id": "T09",
+      "phoneme_focus": "final_n_ng"
+    },
+    {
+      "term": "sung",
+      "pos": "target",
+      "meaning_vi": "được hát",
+      "example_en": "That song is sung at every festival.",
+      "example_vi": "Bài hát đó được hát ở mọi lễ hội.",
+      "source_turn_id": "T10",
+      "phoneme_focus": "final_n_ng"
+    }
+  ],
+  "micro_skill_id": "final_n_ng",
+  "bank_role": "training",
+  "content_design": {
+    "sequence": "five_contrast_pairs",
+    "pairs": [
+      [
+        "pin",
+        "ping"
+      ],
+      [
+        "thin",
+        "thing"
+      ],
+      [
+        "ran",
+        "rang"
+      ],
+      [
+        "win",
+        "wing"
+      ],
+      [
+        "sun",
+        "sung"
+      ]
+    ],
+    "first_listen": "1x",
+    "guided_replay_max": 5,
+    "mastery_requires_unseen": true,
+    "note_vi": "/ŋ/ như sing là âm mũi sau; không phát âm thêm /g/ trong sing"
+  },
+  "audio": {
+    "status": "not_generated",
+    "url": null,
+    "duration_ms": null,
+    "provider": null,
+    "model": null,
+    "voice_config": null,
+    "format": null,
+    "audio_sha256": null,
+    "source_transcript_hash": "95ea7ed3b37d555c375a0eed4847d357f251774d86791904f334d6b69e7b1fcc",
+    "generation_notes": "Generate each turn as speech only; no spoken question numbers, answers or coaching. Validate text and pronunciation before release."
+  },
+  "qa": {
+    "content_reviewed": false,
+    "answers_verified": true,
+    "audio_verified": false,
+    "human_signed_off": false,
+    "duplicate_reviewed": false,
+    "notes": [
+      "Original draft, automated evidence matching passed; pedagogical expert review still required.",
+      "Audio and timestamp not created; protected holdouts are separate server-only payloads."
+    ]
+  },
+  "provenance": {
+    "content_origin": "original_ai_assisted",
+    "rights_status": "pending_tts_terms_review",
+    "source_urls": [],
+    "reviewer": null,
+    "originality_check": "Exact comparisons against prior 300 drafts pending final QA."
+  },
+  "release_metadata": {
+    "published_at": null,
+    "version": 1
+  },
+  "lesson_theory_vi": {
+    "core_rule": "Âm /n/ ở đầu lưỡi còn /ŋ/ ở phía sau lưỡi. Trong sing không cần thêm /g/ ở cuối.",
+    "worked_contrasts": [
+      {
+        "contrast": "pin / ping",
+        "meaning_vi": "ghim / tiếng báo ngắn",
+        "teacher_note_vi": "Âm /n/ ở đầu lưỡi còn /ŋ/ ở phía sau lưỡi. Trong sing không cần thêm /g/ ở cuối."
+      },
+      {
+        "contrast": "thin / thing",
+        "meaning_vi": "mỏng / điều/vật",
+        "teacher_note_vi": "Âm /n/ ở đầu lưỡi còn /ŋ/ ở phía sau lưỡi. Trong sing không cần thêm /g/ ở cuối."
+      }
+    ],
+    "learning_steps": [
+      "Nghe giáo viên/TTS đọc cặp từ ở tốc độ tự nhiên và nhận diện từ thứ nhất.",
+      "Làm lượt T01–T04 với nút nghe lại theo nhu cầu; nộp xong mới xem transcript và nghĩa.",
+      "Làm T05–T10 độc lập hơn và hạn chế nghe lại.",
+      "Nếu đạt yêu cầu luyện tập, hệ thống phát 2 câu chưa từng nghe từ ngân hàng riêng để kiểm tra chuyển giao."
+    ],
+    "common_mistakes": [
+      "Viết thiếu ng trong thing/wing hoặc thêm âm /g/ không có. ",
+      "Đúng sau năm lần nghe lại không đồng nghĩa với nghe đúng ngay lần đầu."
+    ],
+    "before_audio_question": "Bạn có thể phân biệt hai từ qua âm đầu/nguyên âm/âm cuối mà không nhìn chữ không?"
+  }
+}

@@ -1,0 +1,217 @@
+{
+  "schema_version": "m35.1.0",
+  "id": "ACT-POST-160",
+  "activity_id": "ACT-POST-160",
+  "status": "draft_pending_audio_and_teacher_signoff",
+  "module": "dictation",
+  "kind": "post_test_error_repair",
+  "section": 4,
+  "title": "Biochar and Soil: What Can the Evidence Show? — Sửa lỗi sau bài thi",
+  "source_bank": "full_mock_part",
+  "origin_bank": "protected_assessment",
+  "source_milestone": "M32",
+  "source_package": "English_Skill_Lab_Dictation_M32_Full_Listening_Mocks_16-20.zip",
+  "source_entry_path": "ESL_Dictation_M32_Full_Mocks_16_20/01_TESTS_SERVER_ONLY/M32-LISTENING-MOCK-20.SERVER_ONLY.json",
+  "source_test_id": "M32-LISTENING-MOCK-20",
+  "source_lesson_id": null,
+  "source_part_id": "M32-LISTENING-MOCK-20-P4",
+  "reuse_parent_id": "M32-LISTENING-MOCK-20-P4",
+  "source_question_id": "Q10",
+  "source_audio_id": "assessment/full_mock_part/M32-LISTENING-MOCK-20-P4",
+  "source_audio_id_kind": "logical_source_part_identifier_not_file",
+  "source_audio_asset_id": null,
+  "source_declared_unverified_audio_id": "M32-AUD-20-P4",
+  "source_audio_url": null,
+  "audio_file_provided": false,
+  "source_turn_ids": [
+    "T03",
+    "T04",
+    "T17"
+  ],
+  "segment_timing": {
+    "T03": {
+      "start_ms": null,
+      "end_ms": null,
+      "sha256": "aea6de7d3e371098bf27b68efa0300b37508e58abff21e8590f1c6db20e0a370"
+    },
+    "T04": {
+      "start_ms": null,
+      "end_ms": null,
+      "sha256": "53caff3f92b6c89cfc0c26fe3327f231c44045f88aef8dcc9ac5ce1aa37bb49a"
+    },
+    "T17": {
+      "start_ms": null,
+      "end_ms": null,
+      "sha256": "c96c3456a1a3c1c9d181a1e0a8d25b5a596728096560bed7cd2dc51b189b2f5a"
+    }
+  },
+  "clip_start_ms": null,
+  "clip_end_ms": null,
+  "audio_alignment_status": "pending_real_audio_and_verified_offsets",
+  "evidence_transcript_sha256": "a20596b37313c75a82b12d6a6f3a7704ac22cb5a3234eff49dfd9651c4063533",
+  "anchor_turn_id": "T17",
+  "teacher_only_evidence_text_en": "Next, consider another aspect. Long-term effects may differ from the first response after biochar is mixed into soil. Weather, microbial activity and material ageing can change outcomes. A field trial should report both short-term results and the limits of what can be inferred about future seasons.",
+  "questions": [
+    {
+      "exercise_id": "ACT-POST-160-01",
+      "phase": "guided_relisten",
+      "mode": "short_answer",
+      "title_vi": "Nghe lại điểm đã bỏ lỡ",
+      "prompt_en": "Reason to monitor over multiple seasons: ____",
+      "prompt_vi": "Nghe lại đoạn bằng chứng và trả lời lại câu hỏi gốc sau khi đã nộp bài thi.",
+      "options": null,
+      "correct_option": null,
+      "correct_answers": [
+        "long-term effects"
+      ],
+      "spoken_answer": "long-term effects",
+      "word_limit": 3,
+      "normalization_policy": "trim_unicode_nfkc_casefold_collapse_spaces_keep_meaningful_digits_and_letters",
+      "scoring_policy": "post_test_training_only",
+      "source_question_id": "Q10",
+      "source_question_type": "summary_completion",
+      "play_turn_ids": [
+        "T17"
+      ],
+      "evidence_turn_ids": [
+        "T17"
+      ],
+      "teacher_explanation_vi": "Đáp án biên soạn: long-term effects. Giáo viên phải nghe âm thanh, đối chiếu câu nói T17 và kiểm tra tính duy nhất của câu trả lời.",
+      "feedback_vi": "Đáp án gốc: long-term effects. Đối chiếu với các lượt thoại T17; chú ý thông tin cuối cùng và từ khóa được diễn đạt lại.",
+      "is_exam_score": false
+    },
+    {
+      "exercise_id": "ACT-POST-160-02",
+      "phase": "evidence_recognition",
+      "mode": "evidence_choice",
+      "title_vi": "Tìm câu thoại chứng minh đáp án",
+      "prompt_vi": "Trong ba trích đoạn thực sự có trong cùng bài nghe, trích đoạn nào liên quan trực tiếp nhất đến câu hỏi vừa làm?",
+      "source_question_id": "Q10",
+      "source_question_prompt_en": "Reason to monitor over multiple seasons: ____",
+      "choices": [
+        {
+          "key": "T17",
+          "excerpt_en": "…consider another aspect. Long-term effects may differ from the first response after biochar is mixed into soil. Weather, microbial activity and material ageing can change outcomes. A field trial should report both short-term resul…",
+          "source_turn_id": "T17"
+        },
+        {
+          "key": "T04",
+          "excerpt_en": "…h as crop residues or woody waste, used to make biochar. Different feedstocks contain different mineral and carbon components. A result obtained with one material should not automatically be applied to another under the same name.",
+          "source_turn_id": "T04"
+        },
+        {
+          "key": "T03",
+          "excerpt_en": "…produce a carbon-rich solid alongside gases and other products. It is different from ordinary open burning. The process temperature and starting material influence the properties of the final char and the wider environmental bala…",
+          "source_turn_id": "T03"
+        }
+      ],
+      "correct_answers": [
+        "T17"
+      ],
+      "evidence_turn_ids": [
+        "T17"
+      ],
+      "evidence_text_sha256": "c96c3456a1a3c1c9d181a1e0a8d25b5a596728096560bed7cd2dc51b189b2f5a",
+      "play_turn_ids": [
+        "T17",
+        "T04",
+        "T03"
+      ],
+      "feedback_vi": "Câu hỏi này được chứng minh tại lượt T17. Hai lựa chọn còn lại là lời nói có thật nhưng nằm ở các ý khác trong cùng đoạn nghe.",
+      "grading_policy": "exact_source_turn_id",
+      "is_exam_score": false
+    },
+    {
+      "exercise_id": "ACT-POST-160-03",
+      "phase": "focus_dictation",
+      "mode": "source_phrase_dictation",
+      "title_vi": "Chép lại cụm âm thanh trọng tâm",
+      "prompt_en": "… [____]  the first response after biochar is mixed in…",
+      "prompt_vi": "Nghe lượt thoại và điền chính xác cụm từ còn thiếu vào dấu trống. Không chép cả câu.",
+      "word_limit": 5,
+      "correct_answers": [
+        "Long-term effects may differ from"
+      ],
+      "play_turn_ids": [
+        "T17"
+      ],
+      "evidence_turn_ids": [
+        "T17"
+      ],
+      "source_excerpt_exact": "Long-term effects may differ from",
+      "evidence_char_start": 31,
+      "evidence_char_end": 64,
+      "source_turn_sha256": "c96c3456a1a3c1c9d181a1e0a8d25b5a596728096560bed7cd2dc51b189b2f5a",
+      "feedback_vi": "Cụm nghe-chép chính xác là “Long-term effects may differ from”. Hãy đối chiếu từ chức năng, âm cuối và cách nối âm trước khi thử lại.",
+      "normalization_policy": "trim_unicode_nfkc_casefold_collapse_spaces_keep_meaningful_digits_and_letters",
+      "is_exam_score": false,
+      "newly_authored_for_m35": true
+    }
+  ],
+  "teacher_source_answer_key": {
+    "original_correct_answers": [
+      "long-term effects"
+    ],
+    "original_correct_option": null,
+    "evidence_turn_ids": [
+      "T17"
+    ],
+    "raw_question_evidence_excerpt_en": "Next, consider another aspect. Long-term effects may differ from the first response after biochar is mixed into soil. Weather, microbial activity and material ageing can change outcomes. A field trial should report both short-term results and the limits of what can be inferred about future seasons.",
+    "original_explanation_vi": "Đáp án biên soạn: long-term effects. Giáo viên phải nghe âm thanh, đối chiếu câu nói T17 và kiểm tra tính duy nhất của câu trả lời."
+  },
+  "skill_tags": [
+    "post_test_repair",
+    "section_4",
+    "summary_completion",
+    "evidence_matching",
+    "focused_dictation",
+    "first_attempt_exposure_protection"
+  ],
+  "learner_variants": {
+    "if_original_answer_incorrect": "required_repair",
+    "if_original_answer_correct": "optional_reinforcement",
+    "if_no_question_response": "optional_first_attempt_submitted_only"
+  },
+  "repair_rule": {
+    "compare_response_to_original_question_id": "Q10",
+    "source_user_attempt_answer_from_db": true,
+    "error_record_type": "original_question_review",
+    "recommend_retention_days": [
+      1,
+      3,
+      7
+    ],
+    "new_first_attempt_scoring": false,
+    "band_calibration": false
+  },
+  "access_policy": {
+    "access": "post_submission_only",
+    "gate_parent_id": "M32-LISTENING-MOCK-20",
+    "gate_kind": "whole_mock_submitted",
+    "user_bound": true,
+    "server_side_enforced": true,
+    "has_prior_attempt_required": true,
+    "cross_user_unlock": false,
+    "exposure_records_required": true,
+    "do_not_return_in_public_catalog": true,
+    "transcript_hidden_in_exam_session": true,
+    "pre_first_attempt_reuse": false,
+    "after_submit_irreversible_seen": true,
+    "retest_is_exposed": true,
+    "allow_any_public_index": false
+  },
+  "rights_status": "pending_review",
+  "review": {
+    "source_quality_review": "pending",
+    "semantic_answer_review": "pending",
+    "human_audio_listening": "pending",
+    "alignment_verified": false,
+    "teacher_signoff": "pending",
+    "publication_approved": false
+  },
+  "map_asset_id": null,
+  "map_asset_private_path": null,
+  "source_speaker_roles": [],
+  "version": "m35.1.0",
+  "import_policy": "insert_only_idempotent_do_not_overwrite_source"
+}

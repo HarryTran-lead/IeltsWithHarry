@@ -1,0 +1,217 @@
+{
+  "schema_version": "m35.1.0",
+  "id": "ACT-POST-084",
+  "activity_id": "ACT-POST-084",
+  "status": "draft_pending_audio_and_teacher_signoff",
+  "module": "dictation",
+  "kind": "post_test_error_repair",
+  "section": 4,
+  "title": "What Tree Rings Can — and Cannot — Tell Us — Sửa lỗi sau bài thi",
+  "source_bank": "full_mock_part",
+  "origin_bank": "protected_assessment",
+  "source_milestone": "M29",
+  "source_package": "English_Skill_Lab_Dictation_M29_Full_Listening_Mocks_01-05.zip",
+  "source_entry_path": "ESL_M29_Full_Listening_Mocks_01_05/01_TESTS_SERVER_ONLY/M29-LISTENING-MOCK-01.SERVER_ONLY.json",
+  "source_test_id": "M29-LISTENING-MOCK-01",
+  "source_lesson_id": null,
+  "source_part_id": "M29-LISTENING-MOCK-01-P4",
+  "reuse_parent_id": "M29-LISTENING-MOCK-01-P4",
+  "source_question_id": "Q01",
+  "source_audio_id": "assessment/full_mock_part/M29-LISTENING-MOCK-01-P4",
+  "source_audio_id_kind": "logical_source_part_identifier_not_file",
+  "source_audio_asset_id": null,
+  "source_declared_unverified_audio_id": null,
+  "source_audio_url": null,
+  "audio_file_provided": false,
+  "source_turn_ids": [
+    "T02",
+    "T03",
+    "T04"
+  ],
+  "segment_timing": {
+    "T02": {
+      "start_ms": null,
+      "end_ms": null,
+      "sha256": "698a0f90f89c86e206887b21e56a3c15f65e79a690a6124b7225db2cc9d10b24"
+    },
+    "T03": {
+      "start_ms": null,
+      "end_ms": null,
+      "sha256": "bc1b3835306fca573e9ad3e1167c1615455973569d427c5576a8d2d6e5993686"
+    },
+    "T04": {
+      "start_ms": null,
+      "end_ms": null,
+      "sha256": "2eb1029cf72ac51825b68ef8f10006d6b588a95c4f14c966a99cefa5b69843cc"
+    }
+  },
+  "clip_start_ms": null,
+  "clip_end_ms": null,
+  "audio_alignment_status": "pending_real_audio_and_verified_offsets",
+  "evidence_transcript_sha256": "f49c6710b39e5eaef029349b3c6122cfe7fe4d0b0337f12befa1178c97b4a860",
+  "anchor_turn_id": "T02",
+  "teacher_only_evidence_text_en": "New wood is produced by a thin living layer called the cambium, situated between the bark and the older wood. Cells formed there gradually become part of the trunk. The width of the new wood is influenced by growing conditions, but it is not a simple thermometer. A warm year might help growth in one location while causing water stress in another, and the age of a tree also affects how much new wood it produces.",
+  "questions": [
+    {
+      "exercise_id": "ACT-POST-084-01",
+      "phase": "guided_relisten",
+      "mode": "short_answer",
+      "title_vi": "Nghe lại điểm đã bỏ lỡ",
+      "prompt_en": "The tissue producing new wood cells is the ____.",
+      "prompt_vi": "Nghe lại đoạn bằng chứng và trả lời lại câu hỏi gốc sau khi đã nộp bài thi.",
+      "options": null,
+      "correct_option": null,
+      "correct_answers": [
+        "cambium"
+      ],
+      "spoken_answer": "cambium",
+      "word_limit": 2,
+      "normalization_policy": "trim_unicode_nfkc_casefold_collapse_spaces_keep_meaningful_digits_and_letters",
+      "scoring_policy": "post_test_training_only",
+      "source_question_id": "Q01",
+      "source_question_type": "note_completion",
+      "play_turn_ids": [
+        "T02"
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "teacher_explanation_vi": "Thông tin phù hợp trong bài nghe là “cambium”. Hãy đối chiếu phần chứng cứ được gắn theo lượt thoại, không chỉ chọn một từ khóa xuất hiện sớm.",
+      "feedback_vi": "Đáp án gốc: cambium. Đối chiếu với các lượt thoại T02; chú ý thông tin cuối cùng và từ khóa được diễn đạt lại.",
+      "is_exam_score": false
+    },
+    {
+      "exercise_id": "ACT-POST-084-02",
+      "phase": "evidence_recognition",
+      "mode": "evidence_choice",
+      "title_vi": "Tìm câu thoại chứng minh đáp án",
+      "prompt_vi": "Trong ba trích đoạn thực sự có trong cùng bài nghe, trích đoạn nào liên quan trực tiếp nhất đến câu hỏi vừa làm?",
+      "source_question_id": "Q01",
+      "source_question_prompt_en": "The tissue producing new wood cells is the ____.",
+      "choices": [
+        {
+          "key": "T02",
+          "excerpt_en": "…living layer called the cambium, situated between the bark and the older wood. Cells formed there gradually become part of the trunk. The width of the new wood is influenced by growing conditions, but it is not a simple thermomet…",
+          "source_turn_id": "T02"
+        },
+        {
+          "key": "T04",
+          "excerpt_en": "…alls and smaller spaces inside. The change from earlywood to latewood creates a visible pattern, but researchers must distinguish a true annual boundary from an interruption caused by a brief dry spell. That is one reason samples…",
+          "source_turn_id": "T04"
+        },
+        {
+          "key": "T03",
+          "excerpt_en": "…f a ring is known as earlywood. Later in the season the cell structure often changes. When a slice of wood is polished and observed under good light, the contrast can help researchers distinguish one growth cycle from the next, al…",
+          "source_turn_id": "T03"
+        }
+      ],
+      "correct_answers": [
+        "T02"
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "evidence_text_sha256": "698a0f90f89c86e206887b21e56a3c15f65e79a690a6124b7225db2cc9d10b24",
+      "play_turn_ids": [
+        "T02",
+        "T04",
+        "T03"
+      ],
+      "feedback_vi": "Câu hỏi này được chứng minh tại lượt T02. Hai lựa chọn còn lại là lời nói có thật nhưng nằm ở các ý khác trong cùng đoạn nghe.",
+      "grading_policy": "exact_source_turn_id",
+      "is_exam_score": false
+    },
+    {
+      "exercise_id": "ACT-POST-084-03",
+      "phase": "focus_dictation",
+      "mode": "source_phrase_dictation",
+      "title_vi": "Chép lại cụm âm thanh trọng tâm",
+      "prompt_en": "…New wood is produced by a thin living layer  [____]  the bark and the older wood.…",
+      "prompt_vi": "Nghe lượt thoại và điền chính xác cụm từ còn thiếu vào dấu trống. Không chép cả câu.",
+      "word_limit": 5,
+      "correct_answers": [
+        "called the cambium, situated between"
+      ],
+      "play_turn_ids": [
+        "T02"
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "source_excerpt_exact": "called the cambium, situated between",
+      "evidence_char_start": 44,
+      "evidence_char_end": 80,
+      "source_turn_sha256": "698a0f90f89c86e206887b21e56a3c15f65e79a690a6124b7225db2cc9d10b24",
+      "feedback_vi": "Cụm nghe-chép chính xác là “called the cambium, situated between”. Hãy đối chiếu từ chức năng, âm cuối và cách nối âm trước khi thử lại.",
+      "normalization_policy": "trim_unicode_nfkc_casefold_collapse_spaces_keep_meaningful_digits_and_letters",
+      "is_exam_score": false,
+      "newly_authored_for_m35": true
+    }
+  ],
+  "teacher_source_answer_key": {
+    "original_correct_answers": [
+      "cambium"
+    ],
+    "original_correct_option": null,
+    "evidence_turn_ids": [
+      "T02"
+    ],
+    "raw_question_evidence_excerpt_en": "New wood is produced by a thin living layer called the cambium, situated between the bark and the older wood. Cells formed there gradually become part of the trunk. The width of the new wood is influenced by growing conditions, but it is not a simple thermometer. A warm year might help growth in one location while causing water stress in another, and the age of a tree also affects how much new wood it produces.",
+    "original_explanation_vi": "Thông tin phù hợp trong bài nghe là “cambium”. Hãy đối chiếu phần chứng cứ được gắn theo lượt thoại, không chỉ chọn một từ khóa xuất hiện sớm."
+  },
+  "skill_tags": [
+    "post_test_repair",
+    "section_4",
+    "note_completion",
+    "evidence_matching",
+    "focused_dictation",
+    "first_attempt_exposure_protection"
+  ],
+  "learner_variants": {
+    "if_original_answer_incorrect": "required_repair",
+    "if_original_answer_correct": "optional_reinforcement",
+    "if_no_question_response": "optional_first_attempt_submitted_only"
+  },
+  "repair_rule": {
+    "compare_response_to_original_question_id": "Q01",
+    "source_user_attempt_answer_from_db": true,
+    "error_record_type": "original_question_review",
+    "recommend_retention_days": [
+      1,
+      3,
+      7
+    ],
+    "new_first_attempt_scoring": false,
+    "band_calibration": false
+  },
+  "access_policy": {
+    "access": "post_submission_only",
+    "gate_parent_id": "M29-LISTENING-MOCK-01",
+    "gate_kind": "whole_mock_submitted",
+    "user_bound": true,
+    "server_side_enforced": true,
+    "has_prior_attempt_required": true,
+    "cross_user_unlock": false,
+    "exposure_records_required": true,
+    "do_not_return_in_public_catalog": true,
+    "transcript_hidden_in_exam_session": true,
+    "pre_first_attempt_reuse": false,
+    "after_submit_irreversible_seen": true,
+    "retest_is_exposed": true,
+    "allow_any_public_index": false
+  },
+  "rights_status": "pending_review",
+  "review": {
+    "source_quality_review": "pending",
+    "semantic_answer_review": "pending",
+    "human_audio_listening": "pending",
+    "alignment_verified": false,
+    "teacher_signoff": "pending",
+    "publication_approved": false
+  },
+  "map_asset_id": null,
+  "map_asset_private_path": null,
+  "source_speaker_roles": [],
+  "version": "m35.1.0",
+  "import_policy": "insert_only_idempotent_do_not_overwrite_source"
+}

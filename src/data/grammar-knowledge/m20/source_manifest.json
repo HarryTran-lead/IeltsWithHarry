@@ -1,0 +1,34 @@
+{
+  "schema_version": "M20-1.0",
+  "source_snapshots": {
+    "A1": {
+      "file": "qa/m14/A1_original_read_only.json",
+      "sha256": "de5a335db53bc4e730b1bb4d19259a2e6d160ca9eeb76490ee44f38a40ac5ef3"
+    },
+    "A2": {
+      "file": "qa/source-snapshot/A2_original_read_only.json",
+      "sha256": "854a2d369ea330d90f9796aca65294580a8fdb687eec035047b5fbef835392ba"
+    },
+    "B1": {
+      "file": "qa/source-snapshot/B1_original_read_only.json",
+      "sha256": "a35e8487eb534207f7b30073f160ba1473dcd2d7bc26d1f01578a3b476fb9e43"
+    },
+    "B2": {
+      "file": "qa/source-snapshot/B2_original_read_only.json",
+      "sha256": "85c5f835aeb4a2602de4aeeb4f8ef8d0c158d60d17e48e37bd96928b35b3fc5b"
+    },
+    "C1": {
+      "file": "qa/source-snapshot/C1_m04_corrected_read_only.json",
+      "sha256": "b096850378b46053ada104f0fa6eb8fbf4caca070149fbaf9042ae8f505968ef"
+    },
+    "C2": {
+      "file": "qa/source-snapshot/C2_m13_read_only.json",
+      "sha256": "9a4f202ec2989bc6376e7abd157a574c1ac027e70cfd46a05b9d3c857161756a"
+    }
+  },
+  "status": "DRAFT_METADATA_ONLY",
+  "generated_from": "M19G",
+  "answer_keys_included": false,
+  "content_gate": "NO_GO_PRODUCTION",
+  "teacher_approved_links": 0
+}

@@ -1,0 +1,11 @@
+name = "ielts-speaking-ai-worker"
+main = "src/index.js"
+compatibility_date = "2026-11-14"
+account_id = "ed8db15daaacf1df5b0c8c3d87d34e17"
+workers_dev = true
+
+[ai]
+binding = "AI"
+
+[triggers]
+crons = ["*/2 * * * *"]

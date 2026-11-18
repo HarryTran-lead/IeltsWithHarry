@@ -1,14 +1,14 @@
 "use client";
 
-import { useCallback, useEffect, useRef, useState } from "react";
-import { Clock3, Headphones, MessageCircle, Music2, Pause, Play, Send, Trash2, UsersRound, Volume2, VolumeX } from "lucide-react";
+import { useEffect, useRef, useState } from "react";
+import { Clock3, MessageCircle, Music2, Pause, Play, Send, Trash2, UsersRound, Volume2, VolumeX } from "lucide-react";
 import { HarryMascot } from "@/components/illustrations/harry";
 import { Sticker } from "@/components/stickers/stickers";
 import { demoMode } from "@/lib/runtime";
 import { createClient } from "@/lib/supabase/browser";
-import { LofiPlayer } from "./lofi";
-import { liveStreams, savedStream, saveStream, STREAM_EVENT } from "./live-streams";
+import { liveStreams } from "./live-streams";
 import { useStudyPresence, type StudyRoomMessage } from "./study-presence";
+import { loadYouTubeIframeApi, type YouTubePlayer } from "@/lib/youtube-iframe-api";
 
 type Message = StudyRoomMessage;
 const pageSize = 60;
@@ -24,14 +24,70 @@ function StudyScene() {
     <div className="study-window"><span className="study-moon" /><i /><i /><i /><i /><i /></div>
     <div className="study-scene-stars">✦ <span>✦</span> ✦</div>
     <div className="study-lamp"><span /></div>
-    <div className="study-student"><HarryMascot size={165} eager /><span className="study-headphones"><Headphones size={29} /></span></div>
-    <div className="study-desk"><div className="study-book"><span /><span /></div><span className="study-pencil" /><div className="study-mug">☕</div></div>
+    <div className="study-student"><HarryMascot size={165} eager /><span className="study-headphones"><Sticker name="headphones" size={46} tilt={-10} pop={false} /></span></div>
+    <div className="study-desk"><div className="study-book"><span /><span /></div><span className="study-pencil" /><div className="study-mug"><Sticker name="coffee" size={46} tilt={6} pop={false} /></div></div>
     <div className="study-wave" aria-hidden="true">{Array.from({ length: 12 }, (_, index) => <i key={index} />)}</div>
     <span className="study-scene-caption">STUDY WITH HARRY · 24/7 FOCUS VIBES</span>
   </div>;
 }
 
-export function StudyRoom({ canManage = false, showVideo = true }: { canManage?: boolean; showVideo?: boolean }) {
+function StudyYouTube({ streamId, title, onReady, onStateChange, onDispose }: {
+  streamId: string;
+  title: string;
+  onReady: (player: YouTubePlayer) => void;
+  onStateChange: (state: number) => void;
+  onDispose: (player: YouTubePlayer) => void;
+}) {
+  const mount = useRef<HTMLDivElement | null>(null);
+  const callbacks = useRef({ onReady, onStateChange, onDispose });
+  useEffect(() => { callbacks.current = { onReady, onStateChange, onDispose }; }, [onReady, onStateChange, onDispose]);
+  useEffect(() => {
+    let alive = true;
+    let player: YouTubePlayer | null = null;
+    const target = mount.current;
+    if (!target) return;
+    const iframe = document.createElement("iframe");
+    iframe.title = `${title} — YouTube livestream`;
+    iframe.src = `https://www.youtube-nocookie.com/embed/${encodeURIComponent(streamId)}?enablejsapi=1&playsinline=1&rel=0&origin=${encodeURIComponent(window.location.origin)}`;
+    iframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";
+    iframe.allowFullscreen = true;
+    iframe.referrerPolicy = "strict-origin-when-cross-origin";
+    target.append(iframe);
+    void loadYouTubeIframeApi().then((api) => {
+      if (!alive) return;
+      player = new api.Player(iframe, {
+        events: {
+          onReady: (event) => { if (alive) callbacks.current.onReady(event.target); },
+          onStateChange: (event) => { if (alive) callbacks.current.onStateChange(event.data); },
+        },
+      });
+    }).catch(() => { /* The video can be retried by reopening the room. */ });
+    return () => {
+      alive = false;
+      if (player) { callbacks.current.onDispose(player); player.destroy(); }
+      iframe.remove();
+    };
+  }, [streamId, title]);
+  return <div className="study-youtube" ref={mount} role="group" aria-label={`${title} — YouTube livestream`} />;
+}
+
+type StudyRoomProps = {
+  canManage?: boolean;
+  showVideo: boolean;
+  videoMode: "youtube" | "harry";
+  streamId: string;
+  musicPlaying: boolean;
+  volume: number;
+  onToggleMusic: () => Promise<void>;
+  onVolumeChange: (volume: number) => void;
+  onSelectVideo: (mode: "youtube" | "harry") => Promise<void>;
+  onSelectStream: (id: string) => Promise<void>;
+  onYoutubeReady: (player: YouTubePlayer) => void;
+  onYoutubeStateChange: (state: number) => void;
+  onYoutubeDispose: (player: YouTubePlayer) => void;
+};
+
+export function StudyRoom({ canManage = false, showVideo, videoMode, streamId, musicPlaying, volume, onToggleMusic, onVolumeChange, onSelectVideo, onSelectStream, onYoutubeReady, onYoutubeStateChange, onYoutubeDispose }: StudyRoomProps) {
   const [messages, setMessages] = useState<Message[]>([]);
   const [currentUser, setCurrentUser] = useState("");
   const { online, status, sessionActive, setSessionActive, studySeconds, subscribeMessages } = useStudyPresence();
@@ -40,23 +96,11 @@ export function StudyRoom({ canManage = false, showVideo = true }: { canManage?:
   const [sending, setSending] = useState(false);
   const [hasOlder, setHasOlder] = useState(false);
   const [loadingOlder, setLoadingOlder] = useState(false);
-  const [musicPlaying, setMusicPlaying] = useState(false);
-  const [videoMode, setVideoMode] = useState<"youtube" | "harry">("youtube");
-  const [streamId, setStreamId] = useState<string>(liveStreams[0].id);
   const selectedStream = liveStreams.find((stream) => stream.id === streamId) ?? liveStreams[0];
-  // Open with the stream picked last time, here or on the dashboard card.
-  useEffect(() => {
-    const sync = () => setStreamId(savedStream().id);
-    sync();
-    window.addEventListener(STREAM_EVENT, sync);
-    return () => window.removeEventListener(STREAM_EVENT, sync);
-  }, []);
-  const [volume, setVolume] = useState(65);
   const [focusMinutes, setFocusMinutes] = useState(25);
   const [secondsLeft, setSecondsLeft] = useState(25 * 60);
   const [timerRunning, setTimerRunning] = useState(false);
   const focusEndsAt = useRef<number | null>(null);
-  const player = useRef<LofiPlayer | null>(null);
   const listRef = useRef<HTMLDivElement | null>(null);
   const supabase = useRef(!demoMode && process.env.NEXT_PUBLIC_SUPABASE_URL ? createClient() : null);
 
@@ -113,41 +157,6 @@ export function StudyRoom({ canManage = false, showVideo = true }: { canManage?:
     return () => clearInterval(timer);
   }, [timerRunning]);
 
-  useEffect(() => () => { void player.current?.stop(); }, []);
-
-  const toggleMusic = useCallback(async () => {
-    try {
-      if (musicPlaying) {
-        await player.current?.stop();
-        player.current = null;
-        setMusicPlaying(false);
-      } else {
-        const next = new LofiPlayer();
-        await next.start();
-        next.setVolume(volume / 100);
-        player.current = next;
-        setMusicPlaying(true);
-      }
-    } catch {
-      setError("Trình duyệt chưa cho phép phát âm thanh. Hãy bấm Bật nhạc một lần nữa.");
-    }
-  }, [musicPlaying, volume]);
-
-  async function selectVideo(mode: "youtube" | "harry") {
-    if (mode === "youtube" && musicPlaying) {
-      await player.current?.stop();
-      player.current = null;
-      setMusicPlaying(false);
-    }
-    setVideoMode(mode);
-  }
-
-  async function selectStream(id: string) {
-    setStreamId(id);
-    saveStream(id);
-    await selectVideo("youtube");
-  }
-
   async function sendMessage(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
     const body = draft.trim();
@@ -191,18 +200,18 @@ export function StudyRoom({ canManage = false, showVideo = true }: { canManage?:
     <div className="study-room-heading"><div><span className="study-eyebrow"><span className="study-live-dot" /> PHÒNG HỌC TRỰC TIẾP</span><h1>Cùng học, cùng tiến bộ <Sticker name="coffee" size={38} tilt={-8} /></h1></div><div className="study-room-stats"><div className="study-online"><UsersRound size={18} /><strong>{online ?? "…"}</strong><span>đang học cùng</span></div><div className="study-elapsed"><Clock3 size={18} /><strong>{String(Math.floor(studySeconds / 60)).padStart(2, "0")}:{String(studySeconds % 60).padStart(2, "0")}</strong><span>đã học hôm nay</span></div><button type="button" className="study-session-toggle" onClick={() => setSessionActive(!sessionActive)}>{sessionActive ? <Pause size={15} /> : <Play size={15} />}{sessionActive ? "Dừng học" : "Tiếp tục học"}</button></div></div>
     <section className="study-control-bar" aria-label="Chọn nhạc và cài đặt thời gian">
       <div className="study-control-top"><div className="study-video-tabs" role="group" aria-label="Chọn không gian học">
-        <button type="button" className={videoMode === "youtube" ? "selected" : ""} onClick={() => void selectVideo("youtube")} aria-pressed={videoMode === "youtube"}>● YouTube live</button>
-        <button type="button" className={videoMode === "harry" ? "selected" : ""} onClick={() => void selectVideo("harry")} aria-pressed={videoMode === "harry"}>Học cùng Harry</button>
+        <button type="button" className={videoMode === "youtube" ? "selected" : ""} onClick={() => void onSelectVideo("youtube")} aria-pressed={videoMode === "youtube"}>● YouTube live</button>
+        <button type="button" className={videoMode === "harry" ? "selected" : ""} onClick={() => void onSelectVideo("harry")} aria-pressed={videoMode === "harry"}>Học cùng Harry</button>
       </div><div className="study-focus-compact"><label htmlFor="study-focus-duration">Hẹn giờ</label><select id="study-focus-duration" value={focusMinutes} onChange={(event) => { const minutes = Number(event.target.value); focusEndsAt.current = null; setFocusMinutes(minutes); setTimerRunning(false); setSecondsLeft(minutes * 60); }}><option value={25}>25 phút</option><option value={50}>50 phút</option><option value={90}>90 phút</option></select><strong aria-label={`Còn ${Math.floor(secondsLeft / 60)} phút ${secondsLeft % 60} giây`}>{String(Math.floor(secondsLeft / 60)).padStart(2, "0")}:{String(secondsLeft % 60).padStart(2, "0")}</strong><button type="button" className="study-focus-start" onClick={() => { if (timerRunning) { focusEndsAt.current = null; setTimerRunning(false); return; } const next = secondsLeft === 0 ? focusMinutes * 60 : secondsLeft; if (secondsLeft === 0) setSecondsLeft(next); focusEndsAt.current = Date.now() + next * 1000; setTimerRunning(true); }}>{timerRunning ? "Tạm dừng" : "Bắt đầu"}</button><button type="button" className="study-focus-reset" onClick={() => { focusEndsAt.current = null; setTimerRunning(false); setSecondsLeft(focusMinutes * 60); }}>Đặt lại</button></div></div>
-      {videoMode === "youtube" && <div className="study-stream-list" role="group" aria-label="Chọn livestream để cùng học">{liveStreams.map((stream) => <button key={stream.id} type="button" className={`study-stream-option ${stream.color} ${stream.id === selectedStream.id ? "selected" : ""}`} onClick={() => void selectStream(stream.id)} aria-pressed={stream.id === selectedStream.id} title={`${stream.channel} · ${stream.description}`}>
+      {videoMode === "youtube" && <div className="study-stream-list" role="group" aria-label="Chọn livestream để cùng học">{liveStreams.map((stream) => <button key={stream.id} type="button" className={`study-stream-option ${stream.color} ${stream.id === selectedStream.id ? "selected" : ""}`} onClick={() => void onSelectStream(stream.id)} aria-pressed={stream.id === selectedStream.id} title={`${stream.channel} · ${stream.description}`}>
         <span className="study-stream-emoji" aria-hidden="true">{stream.emoji}</span><span className="study-stream-copy"><strong>{stream.title}</strong><small>{stream.channel}</small></span><span className="study-stream-badge"><i /> LIVE</span>
       </button>)}</div>}
-      {videoMode === "harry" && <div className="study-music-controls"><Music2 size={18} /><span>Nhạc lofi tạo riêng</span><button type="button" className="study-play" onClick={() => void toggleMusic()} aria-label={musicPlaying ? "Tắt nhạc" : "Bật nhạc"}>{musicPlaying ? <Pause size={16} fill="currentColor" /> : <Play size={16} fill="currentColor" />}{musicPlaying ? "Tạm dừng" : "Bật nhạc"}</button>{volume === 0 ? <VolumeX size={18} /> : <Volume2 size={18} />}<input type="range" aria-label="Âm lượng nhạc" min="0" max="100" value={volume} onChange={(event) => { const value = Number(event.target.value); setVolume(value); player.current?.setVolume(value / 100); }} /></div>}
+      {videoMode === "harry" && <div className="study-music-controls"><Music2 size={18} /><span>Nhạc lofi tạo riêng</span><button type="button" className="study-play" onClick={() => void onToggleMusic()} aria-label={musicPlaying ? "Tắt nhạc" : "Bật nhạc"}>{musicPlaying ? <Pause size={16} fill="currentColor" /> : <Play size={16} fill="currentColor" />}{musicPlaying ? "Tạm dừng" : "Bật nhạc"}</button>{volume === 0 ? <VolumeX size={18} /> : <Volume2 size={18} />}<input type="range" aria-label="Âm lượng nhạc" min="0" max="100" value={volume} onChange={(event) => onVolumeChange(Number(event.target.value))} /></div>}
     </section>
     <div className="study-room-grid">
       {showVideo && <div className={`study-room-main ${videoMode === "youtube" ? "has-youtube" : ""}`}>
         <section className="study-visual-card">
-          {videoMode === "youtube" ? <div className="study-youtube"><iframe key={selectedStream.id} title={`${selectedStream.title} — ${selectedStream.channel} livestream`} src={`https://www.youtube-nocookie.com/embed/${selectedStream.id}?rel=0`} allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen loading="lazy" referrerPolicy="strict-origin-when-cross-origin" /></div> : <StudyScene />}
+          {videoMode === "youtube" ? <StudyYouTube streamId={selectedStream.id} title={`${selectedStream.title} — ${selectedStream.channel}`} onReady={onYoutubeReady} onStateChange={onYoutubeStateChange} onDispose={onYoutubeDispose} /> : <StudyScene />}
           <div className="study-visual-footer"><div><span className="study-on-air"><i /> {videoMode === "youtube" ? "YOUTUBE LIVE" : "STUDY SESSION"}</span><strong>{videoMode === "youtube" ? selectedStream.title : "Một góc nhỏ để tập trung mỗi ngày"}</strong><small>{videoMode === "youtube" ? <>{selectedStream.channel} · <a href={`https://www.youtube.com/watch?v=${selectedStream.id}`} target="_blank" rel="noopener noreferrer">Mở livestream trên YouTube ↗</a></> : "Hoạt cảnh và nhạc lặp tạo riêng cho IeltsWithHarry"}</small></div><Sticker name="headphones" size={40} tilt={8} className="study-visual-sparkle" /></div>
         </section>
       </div>}

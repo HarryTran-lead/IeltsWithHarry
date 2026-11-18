@@ -1,0 +1,1022 @@
+{
+  "schema_version": "1.2.0",
+  "lesson_id": "S3-SIM-018",
+  "status": "draft",
+  "level": "L6",
+  "section": 3,
+  "topic": "Atmospheric science and calibration",
+  "title": "Testing Low-Cost Air Sensors",
+  "content_format": "section_exam_simulation",
+  "exam_part": "IELTS_LISTENING_PART_3_STYLE",
+  "official_ielts_material": false,
+  "learning_objectives_vi": [
+    "Theo dõi thảo luận có nhiều quan điểm và lý do thay đổi quyết định.",
+    "Phân biệt bằng chứng chắc chắn với các hạn chế phương pháp nghiên cứu.",
+    "Làm 10 câu Multiple Choice và Matching trong một lần nghe mà không xem transcript."
+  ],
+  "target_skills": [
+    "academic_discussion",
+    "tracking_opinions",
+    "paraphrase",
+    "evidence_quality",
+    "matching_features"
+  ],
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "University tutor / academic adviser",
+      "accent_requested": "australian",
+      "tts_voice_id": null
+    },
+    {
+      "speaker_id": "B",
+      "role": "Student researcher one",
+      "accent_requested": "british",
+      "tts_voice_id": null
+    },
+    {
+      "speaker_id": "C",
+      "role": "Student researcher two",
+      "accent_requested": "new_zealand",
+      "tts_voice_id": null
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "B",
+      "text_en": "We mounted three inexpensive air sensors near the campus gates.",
+      "meaning_vi": "B: Ba cảm biến không khí rẻ tiền cho số liệu khác nhau gần cổng trường; cần tách nguyên nhân kỹ thuật.",
+      "translation_vi": null,
+      "translation_status": "pending_full_sentence_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "part3_opinion_tracking",
+        "paraphrase",
+        "evidence_evaluation"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "scene_setup"
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "C",
+      "text_en": "Their readings disagree, especially during the morning traffic peak.",
+      "meaning_vi": "B: Ba cảm biến không khí rẻ tiền cho số liệu khác nhau gần cổng trường; cần tách nguyên nhân kỹ thuật.",
+      "translation_vi": null,
+      "translation_status": "pending_full_sentence_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "part3_opinion_tracking",
+        "paraphrase",
+        "evidence_evaluation"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "scene_setup"
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "A",
+      "text_en": "We need to understand whether that difference is environmental or technical.",
+      "meaning_vi": "B: Ba cảm biến không khí rẻ tiền cho số liệu khác nhau gần cổng trường; cần tách nguyên nhân kỹ thuật.",
+      "translation_vi": null,
+      "translation_status": "pending_full_sentence_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "part3_opinion_tracking",
+        "paraphrase",
+        "evidence_evaluation"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "scene_setup"
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "B",
+      "text_en": "The calibrated municipal readings will be the baseline against which we judge the inexpensive sensors.",
+      "meaning_vi": "B: Số liệu trạm đô thị đã hiệu chuẩn là chuẩn so sánh chính.",
+      "translation_vi": null,
+      "translation_status": "pending_full_sentence_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "part3_opinion_tracking",
+        "paraphrase",
+        "evidence_evaluation"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "evidence"
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "C",
+      "text_en": "Keep the humidity-related spikes with a warning about the instrument response; do not silently smooth them away.",
+      "meaning_vi": "C: Giữ các đỉnh số liệu và cảnh báo ảnh hưởng độ ẩm.",
+      "translation_vi": null,
+      "translation_status": "pending_full_sentence_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "part3_opinion_tracking",
+        "paraphrase",
+        "evidence_evaluation"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "evidence"
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "C",
+      "text_en": "The sensors have different response times. A rapid pollution spike may appear at slightly different moments even if two devices are side by side, so timing has to be aligned first.",
+      "meaning_vi": "C: Cảm biến có độ trễ khác nhau, cần căn thời gian trước khi so các đỉnh ô nhiễm.",
+      "translation_vi": null,
+      "translation_status": "pending_full_sentence_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "part3_opinion_tracking",
+        "paraphrase",
+        "evidence_evaluation"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "critical_discussion"
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "A high correlation would still not prove that absolute values are accurate.",
+      "meaning_vi": "A: Tương quan cao vẫn không chứng minh giá trị tuyệt đối chính xác.",
+      "translation_vi": null,
+      "translation_status": "pending_full_sentence_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "part3_opinion_tracking",
+        "paraphrase",
+        "evidence_evaluation"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "peer_response"
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "A",
+      "text_en": "Use the brochure to describe the measurement principle, not as evidence that the devices performed well at our site.",
+      "meaning_vi": "A: Tài liệu hãng chỉ làm nền về cơ chế đo.",
+      "translation_vi": null,
+      "translation_status": "pending_full_sentence_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "part3_opinion_tracking",
+        "paraphrase",
+        "evidence_evaluation"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "evidence"
+    },
+    {
+      "turn_id": "T09",
+      "speaker_id": "B",
+      "text_en": "The inlet on one unit was blocked by grit. We need to clean the device and repeat that section of the comparison.",
+      "meaning_vi": "B: Cần sửa cảm biến có cửa hút bị tắc và đo lại.",
+      "translation_vi": null,
+      "translation_status": "pending_full_sentence_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "part3_opinion_tracking",
+        "paraphrase",
+        "evidence_evaluation"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "evidence"
+    },
+    {
+      "turn_id": "T10",
+      "speaker_id": "B",
+      "text_en": "We can plot the difference from the reference at each reading rather than only averages.",
+      "meaning_vi": "B: Có thể vẽ mức lệch so với trạm chuẩn ở từng lần đo.",
+      "translation_vi": null,
+      "translation_status": "pending_full_sentence_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "part3_opinion_tracking",
+        "paraphrase",
+        "evidence_evaluation"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "peer_response"
+    },
+    {
+      "turn_id": "T11",
+      "speaker_id": "C",
+      "text_en": "Before using the installation photographs, blur any students who can be identified near the gates.",
+      "meaning_vi": "C: Làm mờ học sinh nhận diện được trong ảnh lắp đặt.",
+      "translation_vi": null,
+      "translation_status": "pending_full_sentence_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "part3_opinion_tracking",
+        "paraphrase",
+        "evidence_evaluation"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "evidence"
+    },
+    {
+      "turn_id": "T12",
+      "speaker_id": "C",
+      "text_en": "One sensor was near exhaust level and another sat high above the wall. They were exposed to different air streams, so the comparison was not a fair test of device agreement.",
+      "meaning_vi": "C: Cảm biến đặt ở độ cao khác nhau khiến việc so sánh thiếu công bằng.",
+      "translation_vi": null,
+      "translation_status": "pending_full_sentence_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "part3_opinion_tracking",
+        "paraphrase",
+        "evidence_evaluation"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "evidence"
+    },
+    {
+      "turn_id": "T13",
+      "speaker_id": "B",
+      "text_en": "I almost removed the high-humidity samples as outliers. Instead, we should retain them with a note and test whether a correction method works under wet conditions.",
+      "meaning_vi": "B: Không nên loại mẫu ẩm cao chỉ vì lệch; nên giữ và thử hiệu chỉnh.",
+      "translation_vi": null,
+      "translation_status": "pending_full_sentence_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "part3_opinion_tracking",
+        "paraphrase",
+        "evidence_evaluation"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "critical_discussion"
+    },
+    {
+      "turn_id": "T14",
+      "speaker_id": "A",
+      "text_en": "Compare the low-cost units with readings from the calibrated municipal station. It is not perfect for every street, but it provides a defensible reference for checking systematic error.",
+      "meaning_vi": "A: Dùng trạm quan trắc đô thị đã hiệu chuẩn làm mốc.",
+      "translation_vi": null,
+      "translation_status": "pending_full_sentence_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "part3_opinion_tracking",
+        "paraphrase",
+        "evidence_evaluation"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "evidence"
+    },
+    {
+      "turn_id": "T15",
+      "speaker_id": "C",
+      "text_en": "I will also record whether roadworks were happening during a measurement.",
+      "meaning_vi": "C: Tôi sẽ ghi nhận có công trình đường bộ khi đo không.",
+      "translation_vi": null,
+      "translation_status": "pending_full_sentence_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "part3_opinion_tracking",
+        "paraphrase",
+        "evidence_evaluation"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "peer_response"
+    },
+    {
+      "turn_id": "T16",
+      "speaker_id": "B",
+      "text_en": "We interpreted the spike as traffic pollution. Later we found that high humidity can affect this model’s optical measurement, so part of the rise may be an artefact.",
+      "meaning_vi": "B: Độ ẩm cao có thể làm sai số của cảm biến quang học.",
+      "translation_vi": null,
+      "translation_status": "pending_full_sentence_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "part3_opinion_tracking",
+        "paraphrase",
+        "evidence_evaluation"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "evidence"
+    },
+    {
+      "turn_id": "T17",
+      "speaker_id": "C",
+      "text_en": "For the next stage, we will colocate the three units beside the reference station for several days before distributing them across the campus.",
+      "meaning_vi": "C: Đặt ba thiết bị cạnh trạm chuẩn vài ngày trước khi phân tán.",
+      "translation_vi": null,
+      "translation_status": "pending_full_sentence_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "part3_opinion_tracking",
+        "paraphrase",
+        "evidence_evaluation"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "evidence"
+    },
+    {
+      "turn_id": "T18",
+      "speaker_id": "A",
+      "text_en": "Make the units explicit on every graph. A numerical agreement is meaningless if one data series has been converted and the other still uses the raw manufacturer scale.",
+      "meaning_vi": "A: Phải ghi đơn vị rõ trên mọi biểu đồ; không thể so chuỗi đã đổi đơn vị với chuỗi thô.",
+      "translation_vi": null,
+      "translation_status": "pending_full_sentence_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "part3_opinion_tracking",
+        "paraphrase",
+        "evidence_evaluation"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "critical_discussion"
+    },
+    {
+      "turn_id": "T19",
+      "speaker_id": "A",
+      "text_en": "Describe both uncertainty and practical value in the final summary.",
+      "meaning_vi": "A: Tóm tắt cuối cần nêu cả độ bất định và giá trị thực tế.",
+      "translation_vi": null,
+      "translation_status": "pending_full_sentence_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "part3_opinion_tracking",
+        "paraphrase",
+        "evidence_evaluation"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "peer_response"
+    },
+    {
+      "turn_id": "T20",
+      "speaker_id": "A",
+      "text_en": "Our brief trial may show whether the sensors follow short-term changes. It cannot measure every student’s personal exposure or replace a full-year city monitoring programme.",
+      "meaning_vi": "A: Nghiên cứu nhỏ chỉ kiểm tra khả năng theo dõi biến động ngắn hạn.",
+      "translation_vi": null,
+      "translation_status": "pending_full_sentence_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "part3_opinion_tracking",
+        "paraphrase",
+        "evidence_evaluation"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "evidence"
+    },
+    {
+      "turn_id": "T21",
+      "speaker_id": "C",
+      "text_en": "I also want to report how many readings each sensor produces when conditions are damp, not just the average of the values it successfully returned. If one device misses the most difficult periods, it may appear unusually accurate only because the challenging observations are absent.",
+      "meaning_vi": "C: Nên báo cả số lần cảm biến bỏ lỡ số đo trong điều kiện ẩm; nếu chỉ lấy kết quả có được sẽ tưởng máy chính xác hơn.",
+      "translation_vi": null,
+      "translation_status": "pending_full_sentence_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "part3_opinion_tracking",
+        "paraphrase",
+        "evidence_evaluation"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "final_critical_discussion"
+    },
+    {
+      "turn_id": "T22",
+      "speaker_id": "C",
+      "text_en": "Our graph can show how well the low-cost sensors track changes, without claiming laboratory precision they do not have.",
+      "meaning_vi": "C: Biểu đồ chỉ nên cho thấy xu hướng, không khẳng định độ chính xác như phòng thí nghiệm.",
+      "translation_vi": null,
+      "translation_status": "pending_full_sentence_human_translation",
+      "start_ms": null,
+      "end_ms": null,
+      "skill_tags": [
+        "part3_opinion_tracking",
+        "paraphrase",
+        "evidence_evaluation"
+      ],
+      "bank_role": "protected_assessment",
+      "discourse_role": "conclusion"
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "group_id": "PART3_MATCHING_Q01_TO_05",
+      "type": "matching",
+      "prompt": "Municipal station data",
+      "options": [
+        {
+          "key": "A",
+          "text": "Use as the calibration reference"
+        },
+        {
+          "key": "B",
+          "text": "Keep with humidity caveat"
+        },
+        {
+          "key": "C",
+          "text": "Ask local transport officers"
+        },
+        {
+          "key": "D",
+          "text": "Repair and repeat the affected test"
+        },
+        {
+          "key": "E",
+          "text": "Anonymise visible individuals"
+        },
+        {
+          "key": "F",
+          "text": "Exclude as fabricated data"
+        },
+        {
+          "key": "G",
+          "text": "Describe instrument features only"
+        }
+      ],
+      "correct_option": "A",
+      "correct_answers": [
+        "A"
+      ],
+      "scoring_policy": "matching_letter",
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "evidence_excerpt_en": "The calibrated municipal readings will be the baseline against which we judge the inexpensive sensors.",
+      "explanation_vi": "B: Số liệu trạm đô thị đã hiệu chuẩn là chuẩn so sánh chính.",
+      "answer_source": "paraphrased_or_explicit_recording",
+      "question_tags": [
+        "M27",
+        "part3",
+        "academic_discussion",
+        "matching",
+        "evaluation_of_evidence"
+      ],
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true
+    },
+    {
+      "question_id": "Q02",
+      "group_id": "PART3_MATCHING_Q01_TO_05",
+      "type": "matching",
+      "prompt": "Humidity-affected spikes",
+      "options": [
+        {
+          "key": "A",
+          "text": "Use as the calibration reference"
+        },
+        {
+          "key": "B",
+          "text": "Keep with humidity caveat"
+        },
+        {
+          "key": "C",
+          "text": "Ask local transport officers"
+        },
+        {
+          "key": "D",
+          "text": "Repair and repeat the affected test"
+        },
+        {
+          "key": "E",
+          "text": "Anonymise visible individuals"
+        },
+        {
+          "key": "F",
+          "text": "Exclude as fabricated data"
+        },
+        {
+          "key": "G",
+          "text": "Describe instrument features only"
+        }
+      ],
+      "correct_option": "B",
+      "correct_answers": [
+        "B"
+      ],
+      "scoring_policy": "matching_letter",
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "evidence_excerpt_en": "Keep the humidity-related spikes with a warning about the instrument response; do not silently smooth them away.",
+      "explanation_vi": "C: Giữ các đỉnh số liệu và cảnh báo ảnh hưởng độ ẩm.",
+      "answer_source": "paraphrased_or_explicit_recording",
+      "question_tags": [
+        "M27",
+        "part3",
+        "academic_discussion",
+        "matching",
+        "evaluation_of_evidence"
+      ],
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true
+    },
+    {
+      "question_id": "Q03",
+      "group_id": "PART3_MATCHING_Q01_TO_05",
+      "type": "matching",
+      "prompt": "Manufacturer brochure",
+      "options": [
+        {
+          "key": "A",
+          "text": "Use as the calibration reference"
+        },
+        {
+          "key": "B",
+          "text": "Keep with humidity caveat"
+        },
+        {
+          "key": "C",
+          "text": "Ask local transport officers"
+        },
+        {
+          "key": "D",
+          "text": "Repair and repeat the affected test"
+        },
+        {
+          "key": "E",
+          "text": "Anonymise visible individuals"
+        },
+        {
+          "key": "F",
+          "text": "Exclude as fabricated data"
+        },
+        {
+          "key": "G",
+          "text": "Describe instrument features only"
+        }
+      ],
+      "correct_option": "G",
+      "correct_answers": [
+        "G"
+      ],
+      "scoring_policy": "matching_letter",
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "evidence_excerpt_en": "Use the brochure to describe the measurement principle, not as evidence that the devices performed well at our site.",
+      "explanation_vi": "A: Tài liệu hãng chỉ làm nền về cơ chế đo.",
+      "answer_source": "paraphrased_or_explicit_recording",
+      "question_tags": [
+        "M27",
+        "part3",
+        "academic_discussion",
+        "matching",
+        "evaluation_of_evidence"
+      ],
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true
+    },
+    {
+      "question_id": "Q04",
+      "group_id": "PART3_MATCHING_Q01_TO_05",
+      "type": "matching",
+      "prompt": "Sensor with damaged inlet",
+      "options": [
+        {
+          "key": "A",
+          "text": "Use as the calibration reference"
+        },
+        {
+          "key": "B",
+          "text": "Keep with humidity caveat"
+        },
+        {
+          "key": "C",
+          "text": "Ask local transport officers"
+        },
+        {
+          "key": "D",
+          "text": "Repair and repeat the affected test"
+        },
+        {
+          "key": "E",
+          "text": "Anonymise visible individuals"
+        },
+        {
+          "key": "F",
+          "text": "Exclude as fabricated data"
+        },
+        {
+          "key": "G",
+          "text": "Describe instrument features only"
+        }
+      ],
+      "correct_option": "D",
+      "correct_answers": [
+        "D"
+      ],
+      "scoring_policy": "matching_letter",
+      "evidence_turn_ids": [
+        "T09"
+      ],
+      "evidence_excerpt_en": "The inlet on one unit was blocked by grit. We need to clean the device and repeat that section of the comparison.",
+      "explanation_vi": "B: Cần sửa cảm biến có cửa hút bị tắc và đo lại.",
+      "answer_source": "paraphrased_or_explicit_recording",
+      "question_tags": [
+        "M27",
+        "part3",
+        "academic_discussion",
+        "matching",
+        "evaluation_of_evidence"
+      ],
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true
+    },
+    {
+      "question_id": "Q05",
+      "group_id": "PART3_MATCHING_Q01_TO_05",
+      "type": "matching",
+      "prompt": "Photographs showing students",
+      "options": [
+        {
+          "key": "A",
+          "text": "Use as the calibration reference"
+        },
+        {
+          "key": "B",
+          "text": "Keep with humidity caveat"
+        },
+        {
+          "key": "C",
+          "text": "Ask local transport officers"
+        },
+        {
+          "key": "D",
+          "text": "Repair and repeat the affected test"
+        },
+        {
+          "key": "E",
+          "text": "Anonymise visible individuals"
+        },
+        {
+          "key": "F",
+          "text": "Exclude as fabricated data"
+        },
+        {
+          "key": "G",
+          "text": "Describe instrument features only"
+        }
+      ],
+      "correct_option": "E",
+      "correct_answers": [
+        "E"
+      ],
+      "scoring_policy": "matching_letter",
+      "evidence_turn_ids": [
+        "T11"
+      ],
+      "evidence_excerpt_en": "Before using the installation photographs, blur any students who can be identified near the gates.",
+      "explanation_vi": "C: Làm mờ học sinh nhận diện được trong ảnh lắp đặt.",
+      "answer_source": "paraphrased_or_explicit_recording",
+      "question_tags": [
+        "M27",
+        "part3",
+        "academic_discussion",
+        "matching",
+        "evaluation_of_evidence"
+      ],
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true
+    },
+    {
+      "question_id": "Q06",
+      "group_id": "PART3_MCQ_Q06_TO_10",
+      "type": "mcq",
+      "prompt": "Why were the first measurements hard to compare?",
+      "options": [
+        {
+          "key": "A",
+          "text": "The sensors were installed at different heights"
+        },
+        {
+          "key": "B",
+          "text": "The readings were taken in winter"
+        },
+        {
+          "key": "C",
+          "text": "One sensor used a larger screen"
+        }
+      ],
+      "correct_option": "A",
+      "correct_answers": [
+        "The sensors were installed at different heights"
+      ],
+      "scoring_policy": "one_correct_option",
+      "evidence_turn_ids": [
+        "T12"
+      ],
+      "evidence_excerpt_en": "One sensor was near exhaust level and another sat high above the wall. They were exposed to different air streams, so the comparison was not a fair test of device agreement.",
+      "explanation_vi": "C: Cảm biến đặt ở độ cao khác nhau khiến việc so sánh thiếu công bằng.",
+      "answer_source": "paraphrased_or_explicit_recording",
+      "question_tags": [
+        "M27",
+        "part3",
+        "academic_discussion",
+        "mcq",
+        "opinion_tracking"
+      ],
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true
+    },
+    {
+      "question_id": "Q07",
+      "group_id": "PART3_MCQ_Q06_TO_10",
+      "type": "mcq",
+      "prompt": "What does the tutor recommend as a reference?",
+      "options": [
+        {
+          "key": "A",
+          "text": "A weather forecast application"
+        },
+        {
+          "key": "B",
+          "text": "A calibrated monitoring station nearby"
+        },
+        {
+          "key": "C",
+          "text": "The most expensive student sensor"
+        }
+      ],
+      "correct_option": "B",
+      "correct_answers": [
+        "A calibrated monitoring station nearby"
+      ],
+      "scoring_policy": "one_correct_option",
+      "evidence_turn_ids": [
+        "T14"
+      ],
+      "evidence_excerpt_en": "Compare the low-cost units with readings from the calibrated municipal station. It is not perfect for every street, but it provides a defensible reference for checking systematic error.",
+      "explanation_vi": "A: Dùng trạm quan trắc đô thị đã hiệu chuẩn làm mốc.",
+      "answer_source": "paraphrased_or_explicit_recording",
+      "question_tags": [
+        "M27",
+        "part3",
+        "academic_discussion",
+        "mcq",
+        "opinion_tracking"
+      ],
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true
+    },
+    {
+      "question_id": "Q08",
+      "group_id": "PART3_MCQ_Q06_TO_10",
+      "type": "mcq",
+      "prompt": "Why did readings rise after light rain?",
+      "options": [
+        {
+          "key": "A",
+          "text": "The devices had run out of power"
+        },
+        {
+          "key": "B",
+          "text": "Cars were banned from the road"
+        },
+        {
+          "key": "C",
+          "text": "Humidity interfered with the sensor response"
+        }
+      ],
+      "correct_option": "C",
+      "correct_answers": [
+        "Humidity interfered with the sensor response"
+      ],
+      "scoring_policy": "one_correct_option",
+      "evidence_turn_ids": [
+        "T16"
+      ],
+      "evidence_excerpt_en": "We interpreted the spike as traffic pollution. Later we found that high humidity can affect this model’s optical measurement, so part of the rise may be an artefact.",
+      "explanation_vi": "B: Độ ẩm cao có thể làm sai số của cảm biến quang học.",
+      "answer_source": "paraphrased_or_explicit_recording",
+      "question_tags": [
+        "M27",
+        "part3",
+        "academic_discussion",
+        "mcq",
+        "opinion_tracking"
+      ],
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true
+    },
+    {
+      "question_id": "Q09",
+      "group_id": "PART3_MCQ_Q06_TO_10",
+      "type": "mcq",
+      "prompt": "How will the team improve its field procedure?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Place all units together for a calibration period"
+        },
+        {
+          "key": "B",
+          "text": "Replace the comparison with interviews"
+        },
+        {
+          "key": "C",
+          "text": "Record readings only at lunchtime"
+        }
+      ],
+      "correct_option": "A",
+      "correct_answers": [
+        "Place all units together for a calibration period"
+      ],
+      "scoring_policy": "one_correct_option",
+      "evidence_turn_ids": [
+        "T17"
+      ],
+      "evidence_excerpt_en": "For the next stage, we will colocate the three units beside the reference station for several days before distributing them across the campus.",
+      "explanation_vi": "C: Đặt ba thiết bị cạnh trạm chuẩn vài ngày trước khi phân tán.",
+      "answer_source": "paraphrased_or_explicit_recording",
+      "question_tags": [
+        "M27",
+        "part3",
+        "academic_discussion",
+        "mcq",
+        "opinion_tracking"
+      ],
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true
+    },
+    {
+      "question_id": "Q10",
+      "group_id": "PART3_MCQ_Q06_TO_10",
+      "type": "mcq",
+      "prompt": "What can the study legitimately conclude?",
+      "options": [
+        {
+          "key": "A",
+          "text": "The city’s annual pollution burden"
+        },
+        {
+          "key": "B",
+          "text": "How well sensors track short-term changes"
+        },
+        {
+          "key": "C",
+          "text": "The exact exposure of each student"
+        }
+      ],
+      "correct_option": "B",
+      "correct_answers": [
+        "How well sensors track short-term changes"
+      ],
+      "scoring_policy": "one_correct_option",
+      "evidence_turn_ids": [
+        "T20"
+      ],
+      "evidence_excerpt_en": "Our brief trial may show whether the sensors follow short-term changes. It cannot measure every student’s personal exposure or replace a full-year city monitoring programme.",
+      "explanation_vi": "A: Nghiên cứu nhỏ chỉ kiểm tra khả năng theo dõi biến động ngắn hạn.",
+      "answer_source": "paraphrased_or_explicit_recording",
+      "question_tags": [
+        "M27",
+        "part3",
+        "academic_discussion",
+        "mcq",
+        "opinion_tracking"
+      ],
+      "bank_role": "protected_assessment",
+      "requires_human_semantic_review": true
+    }
+  ],
+  "question_groups": [
+    {
+      "group_id": "PART3_MATCHING_Q01_TO_05",
+      "question_ids": [
+        "Q01",
+        "Q02",
+        "Q03",
+        "Q04",
+        "Q05"
+      ],
+      "question_type": "matching",
+      "instructions_en": "Match each item with the correct description. Choose A–G. You may use a letter more than once.",
+      "question_display_start": "before_audio",
+      "requires_one_listen": true,
+      "pause_between_groups_seconds": 0,
+      "options": [
+        {
+          "key": "A",
+          "text": "Use as the calibration reference"
+        },
+        {
+          "key": "B",
+          "text": "Keep with humidity caveat"
+        },
+        {
+          "key": "C",
+          "text": "Ask local transport officers"
+        },
+        {
+          "key": "D",
+          "text": "Repair and repeat the affected test"
+        },
+        {
+          "key": "E",
+          "text": "Anonymise visible individuals"
+        },
+        {
+          "key": "F",
+          "text": "Exclude as fabricated data"
+        },
+        {
+          "key": "G",
+          "text": "Describe instrument features only"
+        }
+      ]
+    },
+    {
+      "group_id": "PART3_MCQ_Q06_TO_10",
+      "question_ids": [
+        "Q06",
+        "Q07",
+        "Q08",
+        "Q09",
+        "Q10"
+      ],
+      "question_type": "mcq",
+      "instructions_en": "Choose the correct letter A, B or C for each question.",
+      "question_display_start": "before_audio",
+      "requires_one_listen": true,
+      "pause_between_groups_seconds": 0
+    }
+  ],
+  "pedagogy_vi": {
+    "topic_summary_vi": "B: Ba cảm biến không khí rẻ tiền cho số liệu khác nhau gần cổng trường; cần tách nguyên nhân kỹ thuật.",
+    "question_explanations_status": "draft_semantic_review_required",
+    "turn_meanings_are_not_full_translations": true,
+    "full_line_translation_required_before_release": true
+  },
+  "audio": {
+    "status": "not_generated",
+    "audio_url": null,
+    "audio_asset_id": null,
+    "duration_ms": null,
+    "source_text_sha256": "49593425e53820991037c85910cbea81258cd070477c485a963e9620bb58c567",
+    "generation_strategy": "three_speakers_turnwise_then_seamless_mix",
+    "aligned_turns": false,
+    "voice_consistency_verified": false,
+    "human_listening_review": false
+  },
+  "exam_mode": {
+    "bank_role": "protected_assessment",
+    "use_as_training_before_first_attempt": false,
+    "listening_attempts_allowed_for_scored_first_attempt": 1,
+    "replay_before_submit": false,
+    "speed_control_before_submit": false,
+    "transcript_visible_before_submit": false,
+    "answer_key_visible_before_submit": false,
+    "post_attempt_review_allowed": true,
+    "question_count": 10,
+    "points_per_correct_answer": 1,
+    "question_order_monotonic": true,
+    "estimated_speech_minutes_at_140_wpm": 3.21,
+    "exam_band_score_enabled": false,
+    "repeated_attempt_marked_as_seen": true,
+    "all_questions_visible_before_audio": true
+  },
+  "qa": {
+    "automatic_data_validation": "pending",
+    "content_human_review": "pending",
+    "translation_human_review": "pending",
+    "audio_human_review": "pending",
+    "exam_simulation_rubric_score": null,
+    "rubric_90_verified": false,
+    "published": false,
+    "release_eligible": false
+  },
+  "provenance": {
+    "source_type": "original_authored_english_academic_dialogue",
+    "milestone": "M27",
+    "no_official_ielts_question_copied": true,
+    "training_exposure_guard": true,
+    "fictional_scenarios": true
+  },
+  "release_metadata": {
+    "target_bank": "protected_assessment",
+    "import_policy": "insert_only",
+    "version": "m27.0.1",
+    "preserve_existing_ids": true,
+    "allow_client_answer_payload": false
+  }
+}

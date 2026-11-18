@@ -1,0 +1,742 @@
+{
+  "schema_version": "1.1.0",
+  "lesson_id": "S4-EXP-007",
+  "status": "draft",
+  "level": "L7",
+  "section": 4,
+  "topic": "Conservation science and material stability",
+  "title": "Saving Fragile Objects in Museums",
+  "learning_objectives_vi": [
+    "Theo dõi lập luận học thuật: định nghĩa → chứng cứ → hạn chế → kết luận.",
+    "Nghe từ khóa, từ đồng nghĩa và cấu trúc nguyên nhân–kết quả trong bài độc thoại.",
+    "Hoàn thành Note/Table/Summary/Sentence hoặc Flow-chart theo thứ tự audio với giới hạn từ."
+  ],
+  "content_format": "section_practice",
+  "target_skills": [
+    "museum_conservation",
+    "academic_lecture",
+    "note_completion",
+    "summary_completion",
+    "signposting",
+    "paraphrase"
+  ],
+  "speakers": [
+    {
+      "speaker_id": "A",
+      "role": "Academic lecturer",
+      "accent_requested": "new_zealand",
+      "tts_voice_id": null
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "T01",
+      "speaker_id": "A",
+      "text_en": "A museum object can look unchanged for decades and still be deteriorating slowly. Conservators therefore examine not just visible cracks, but the conditions that encourage future damage. The first stage is often a condition survey, a systematic record of the object's materials, earlier repairs and present vulnerabilities. Without such a baseline, later changes are hard to interpret.",
+      "translation_vi": "Hiện vật bảo tàng có thể trông không đổi trong nhiều thập kỷ nhưng vẫn xuống cấp. Người bảo quản xem cả vết nứt hiện rõ và điều kiện gây hại về sau. Bước đầu thường là khảo sát tình trạng, ghi hệ thống chất liệu, lần sửa trước và chỗ dễ tổn thương. Không có mốc ban đầu, khó đánh giá biến đổi về sau.",
+      "start_ms": null,
+      "end_ms": null,
+      "paragraph_index": 1,
+      "bank_role": "training",
+      "skill_tags": [
+        "m24",
+        "ielts_part_4_practice",
+        "museum_conservation",
+        "academic_lecture",
+        "paraphrase",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T02",
+      "speaker_id": "A",
+      "text_en": "The most familiar risk is light. High illumination may improve the visitor experience, but it can fade dyes and weaken some organic materials. Conservators measure the accumulated effect over time as light exposure. A painting displayed briefly under brighter light may face a different risk from a textile left under modest illumination throughout the year.",
+      "translation_vi": "Rủi ro quen thuộc là ánh sáng. Chiếu sáng mạnh giúp khách xem nhưng có thể phai phẩm màu và làm yếu vật liệu hữu cơ. Người bảo quản đo tác động tích lũy dưới tên mức tiếp xúc ánh sáng. Tranh được chiếu sáng mạnh thời gian ngắn có thể chịu rủi ro khác vải trưng bày ánh sáng vừa suốt năm.",
+      "start_ms": null,
+      "end_ms": null,
+      "paragraph_index": 2,
+      "bank_role": "training",
+      "skill_tags": [
+        "m24",
+        "ielts_part_4_practice",
+        "museum_conservation",
+        "academic_lecture",
+        "paraphrase",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T03",
+      "speaker_id": "A",
+      "text_en": "Humidity is another complicated variable. When air becomes damp, certain materials absorb moisture and expand; when it dries, they contract. Repeated change may damage joined pieces or fragile surfaces. The problem is often humidity fluctuations, not merely whether a room's average humidity looks acceptable on a weekly chart. Stable conditions can matter more than one ideal number.",
+      "translation_vi": "Độ ẩm cũng phức tạp. Khi không khí ẩm, vật liệu hút nước và nở; khi khô, co lại. Thay đổi lặp lại làm hỏng chỗ nối và bề mặt yếu. Vấn đề thường là dao động độ ẩm, không chỉ độ ẩm trung bình tuần. Môi trường ổn định đôi khi quan trọng hơn đạt một con số lý tưởng duy nhất.",
+      "start_ms": null,
+      "end_ms": null,
+      "paragraph_index": 3,
+      "bank_role": "training",
+      "skill_tags": [
+        "m24",
+        "ielts_part_4_practice",
+        "museum_conservation",
+        "academic_lecture",
+        "paraphrase",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T04",
+      "speaker_id": "A",
+      "text_en": "Not every material responds in the same way. Iron can corrode under some conditions, while certain plastics become brittle through chemical changes. Before treatment, conservators study material composition so they do not apply a technique suitable for one object to another made from a different substance. Knowing a date or appearance alone is not enough.",
+      "translation_vi": "Không phải vật liệu nào phản ứng giống nhau. Sắt có thể ăn mòn, còn nhựa trở nên giòn qua biến đổi hóa học. Trước xử lý, người bảo quản nghiên cứu thành phần vật liệu để không áp kỹ thuật dành cho chất này lên hiện vật chất khác. Chỉ biết niên đại hay hình dạng là chưa đủ.",
+      "start_ms": null,
+      "end_ms": null,
+      "paragraph_index": 4,
+      "bank_role": "training",
+      "skill_tags": [
+        "m24",
+        "ielts_part_4_practice",
+        "museum_conservation",
+        "academic_lecture",
+        "paraphrase",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T05",
+      "speaker_id": "A",
+      "text_en": "Visitors sometimes expect restoration to make an item look brand new. Modern conservation, however, often prioritises minimal intervention. That principle means changing as little original material as possible while preventing further harm. A stained manuscript may remain discoloured if removing the stain would threaten the paper more than leaving it in place.",
+      "translation_vi": "Khách tham quan đôi khi mong hiện vật được phục hồi như mới. Nhưng bảo tồn hiện đại thường ưu tiên can thiệp tối thiểu: thay đổi ít nhất vật liệu gốc trong khi vẫn ngăn hỏng thêm. Bản thảo ố màu có thể giữ vết ố nếu tẩy đi làm giấy hỏng hơn.",
+      "start_ms": null,
+      "end_ms": null,
+      "paragraph_index": 5,
+      "bank_role": "training",
+      "skill_tags": [
+        "m24",
+        "ielts_part_4_practice",
+        "museum_conservation",
+        "academic_lecture",
+        "paraphrase",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T06",
+      "speaker_id": "A",
+      "text_en": "Whenever a repair is necessary, the treatment should be carefully documented. Conservators record the products used and the areas affected, because later specialists may need to revisit an earlier decision. The goal is treatment records that remain accessible long after individual staff members have left. Documentation makes future comparison and responsible retreatment possible.",
+      "translation_vi": "Khi phải sửa, quy trình phải ghi chép cẩn thận. Người bảo quản ghi sản phẩm dùng và vùng xử lý vì chuyên gia sau này có thể xem lại quyết định cũ. Cần hồ sơ điều trị bảo tồn lưu được lâu ngay cả khi nhân viên chuyển đi; chúng giúp so sánh và xử lý lại có trách nhiệm.",
+      "start_ms": null,
+      "end_ms": null,
+      "paragraph_index": 6,
+      "bank_role": "training",
+      "skill_tags": [
+        "m24",
+        "ielts_part_4_practice",
+        "museum_conservation",
+        "academic_lecture",
+        "paraphrase",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T07",
+      "speaker_id": "A",
+      "text_en": "Transport introduces a different set of risks. A stable object in a gallery may crack when exposed to vibration or a rapid change of climate during shipment. Specialists select cushioning and packaging based on the object's weak points. The protective principle is risk reduction, not the unrealistic promise that transport can be made completely harmless.",
+      "translation_vi": "Vận chuyển tạo rủi ro khác. Hiện vật ổn định trong phòng trưng bày có thể nứt do rung hoặc biến đổi khí hậu nhanh trên đường. Chuyên gia chọn đệm và bao gói theo chỗ yếu của vật. Nguyên tắc là giảm rủi ro, không hứa vận chuyển hoàn toàn vô hại.",
+      "start_ms": null,
+      "end_ms": null,
+      "paragraph_index": 7,
+      "bank_role": "training",
+      "skill_tags": [
+        "m24",
+        "ielts_part_4_practice",
+        "museum_conservation",
+        "academic_lecture",
+        "paraphrase",
+        "signposting"
+      ]
+    },
+    {
+      "turn_id": "T08",
+      "speaker_id": "A",
+      "text_en": "Finally, conservation decisions involve values as well as chemistry. Curators and source communities may disagree about which evidence, appearance or historical traces should remain visible. The strongest process includes stakeholder consultation before irreversible treatment, while still drawing on scientific tests. Preserving an object responsibly means preserving information about its history and significance, not merely keeping it attractive.",
+      "translation_vi": "Cuối cùng, bảo tồn liên quan giá trị văn hóa lẫn hóa học. Người quản lý và cộng đồng gốc có thể khác quan điểm về dấu vết lịch sử nào nên giữ. Quy trình vững cần tham vấn bên liên quan trước can thiệp không thể đảo ngược, song song với kiểm tra khoa học. Bảo tồn là giữ cả thông tin lịch sử và ý nghĩa, không chỉ vẻ ngoài đẹp.",
+      "start_ms": null,
+      "end_ms": null,
+      "paragraph_index": 8,
+      "bank_role": "training",
+      "skill_tags": [
+        "m24",
+        "ielts_part_4_practice",
+        "museum_conservation",
+        "academic_lecture",
+        "paraphrase",
+        "signposting"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q01",
+      "group_id": "IELTS_NOTE_01_04",
+      "type": "note_completion",
+      "prompt": "The initial record of an object's state is a ____.",
+      "correct_answers": [
+        "condition survey"
+      ],
+      "evidence_turn_ids": [
+        "T01"
+      ],
+      "evidence_excerpt_en": "The first stage is often a condition survey, a systematic record of the object's materials, earlier repairs and present vulnerabilities.",
+      "explanation_vi": "Condition survey là kiểm kê có hệ thống tình trạng hiện vật.",
+      "question_tags": [
+        "m24",
+        "ielts_part_4_practice",
+        "museum_conservation",
+        "note_completion"
+      ],
+      "scoring_policy": "strict_spoken_words",
+      "bank_role": "training",
+      "answer_provenance": "original_draft_authored_against_transcript",
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS",
+      "review_status": "awaiting_teacher_and_audio_review"
+    },
+    {
+      "question_id": "Q02",
+      "group_id": "IELTS_NOTE_01_04",
+      "type": "note_completion",
+      "prompt": "Risk from illumination depends partly on accumulated ____.",
+      "correct_answers": [
+        "light exposure"
+      ],
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "evidence_excerpt_en": "Conservators measure the accumulated effect over time as light exposure.",
+      "explanation_vi": "Light exposure là lượng ánh sáng hiện vật nhận trong thời gian dài.",
+      "question_tags": [
+        "m24",
+        "ielts_part_4_practice",
+        "museum_conservation",
+        "note_completion"
+      ],
+      "scoring_policy": "strict_spoken_words",
+      "bank_role": "training",
+      "answer_provenance": "original_draft_authored_against_transcript",
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS",
+      "review_status": "awaiting_teacher_and_audio_review"
+    },
+    {
+      "question_id": "Q03",
+      "group_id": "IELTS_NOTE_01_04",
+      "type": "note_completion",
+      "prompt": "Repeated expansion and contraction may result from ____.",
+      "correct_answers": [
+        "humidity fluctuations"
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "evidence_excerpt_en": "The problem is often humidity fluctuations, not merely whether a room's average humidity looks acceptable on a weekly chart.",
+      "explanation_vi": "Humidity fluctuations là sự lên xuống thường xuyên của độ ẩm.",
+      "question_tags": [
+        "m24",
+        "ielts_part_4_practice",
+        "museum_conservation",
+        "note_completion"
+      ],
+      "scoring_policy": "strict_spoken_words",
+      "bank_role": "training",
+      "answer_provenance": "original_draft_authored_against_transcript",
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS",
+      "review_status": "awaiting_teacher_and_audio_review"
+    },
+    {
+      "question_id": "Q04",
+      "group_id": "IELTS_NOTE_01_04",
+      "type": "note_completion",
+      "prompt": "Treatment decisions require knowledge of ____.",
+      "correct_answers": [
+        "material composition"
+      ],
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "evidence_excerpt_en": "Before treatment, conservators study material composition so they do not apply a technique suitable for one object to another made from a different substance.",
+      "explanation_vi": "Material composition là thành phần vật chất thực tế của hiện vật.",
+      "question_tags": [
+        "m24",
+        "ielts_part_4_practice",
+        "museum_conservation",
+        "note_completion"
+      ],
+      "scoring_policy": "strict_spoken_words",
+      "bank_role": "training",
+      "answer_provenance": "original_draft_authored_against_transcript",
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS",
+      "review_status": "awaiting_teacher_and_audio_review"
+    },
+    {
+      "question_id": "Q05",
+      "group_id": "IELTS_TABLE_05_06",
+      "type": "table_completion",
+      "prompt": "A principle of changing little original material is ____.",
+      "correct_answers": [
+        "minimal intervention"
+      ],
+      "evidence_turn_ids": [
+        "T05"
+      ],
+      "evidence_excerpt_en": "Modern conservation, however, often prioritises minimal intervention.",
+      "explanation_vi": "Minimal intervention nhằm bảo vệ tính nguyên gốc của hiện vật.",
+      "question_tags": [
+        "m24",
+        "ielts_part_4_practice",
+        "museum_conservation",
+        "table_completion"
+      ],
+      "scoring_policy": "strict_spoken_words",
+      "bank_role": "training",
+      "answer_provenance": "original_draft_authored_against_transcript",
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS",
+      "review_status": "awaiting_teacher_and_audio_review"
+    },
+    {
+      "question_id": "Q06",
+      "group_id": "IELTS_TABLE_05_06",
+      "type": "table_completion",
+      "prompt": "Future conservators rely on detailed ____.",
+      "correct_answers": [
+        "treatment records"
+      ],
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "evidence_excerpt_en": "The goal is treatment records that remain accessible long after individual staff members have left.",
+      "explanation_vi": "Treatment records ghi lại phương pháp và vùng can thiệp để tra cứu về sau.",
+      "question_tags": [
+        "m24",
+        "ielts_part_4_practice",
+        "museum_conservation",
+        "table_completion"
+      ],
+      "scoring_policy": "strict_spoken_words",
+      "bank_role": "training",
+      "answer_provenance": "original_draft_authored_against_transcript",
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS",
+      "review_status": "awaiting_teacher_and_audio_review"
+    },
+    {
+      "question_id": "Q07",
+      "group_id": "IELTS_SUMMARY_07_08",
+      "type": "summary_completion",
+      "prompt": "Protective packing is designed mainly for ____.",
+      "correct_answers": [
+        "risk reduction"
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "evidence_excerpt_en": "The protective principle is risk reduction, not the unrealistic promise that transport can be made completely harmless.",
+      "explanation_vi": "Risk reduction nghĩa là giảm xác suất và mức độ hư hại khi vận chuyển.",
+      "question_tags": [
+        "m24",
+        "ielts_part_4_practice",
+        "museum_conservation",
+        "summary_completion"
+      ],
+      "scoring_policy": "strict_spoken_words",
+      "bank_role": "training",
+      "answer_provenance": "original_draft_authored_against_transcript",
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS",
+      "review_status": "awaiting_teacher_and_audio_review"
+    },
+    {
+      "question_id": "Q08",
+      "group_id": "IELTS_SUMMARY_07_08",
+      "type": "summary_completion",
+      "prompt": "Irreversible decisions should include ____.",
+      "correct_answers": [
+        "stakeholder consultation"
+      ],
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "evidence_excerpt_en": "The strongest process includes stakeholder consultation before irreversible treatment, while still drawing on scientific tests.",
+      "explanation_vi": "Stakeholder consultation là hỏi ý kiến những nhóm có quyền lợi và gắn bó với hiện vật.",
+      "question_tags": [
+        "m24",
+        "ielts_part_4_practice",
+        "museum_conservation",
+        "summary_completion"
+      ],
+      "scoring_policy": "strict_spoken_words",
+      "bank_role": "training",
+      "answer_provenance": "original_draft_authored_against_transcript",
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS",
+      "review_status": "awaiting_teacher_and_audio_review"
+    },
+    {
+      "question_id": "D01",
+      "group_id": "SELECTIVE_DICTATION",
+      "type": "dictation",
+      "prompt": "Nghe đoạn trích từ phần 2 và chép lại chính xác câu được phát.",
+      "correct_answers": [
+        "Conservators measure the accumulated effect over time as light exposure."
+      ],
+      "source_turn_id": "T02",
+      "source_char_start": 143,
+      "source_char_end": 215,
+      "evidence_turn_ids": [
+        "T02"
+      ],
+      "evidence_excerpt_en": "Conservators measure the accumulated effect over time as light exposure.",
+      "explanation_vi": "Luyện nghe chính xác cả cụm từ học thuật và từ chức năng trong một câu hoàn chỉnh.",
+      "scoring_policy": "dictation_token_alignment",
+      "bank_role": "training",
+      "word_limit": null,
+      "review_status": "awaiting_teacher_and_audio_review"
+    },
+    {
+      "question_id": "D02",
+      "group_id": "SELECTIVE_DICTATION",
+      "type": "dictation",
+      "prompt": "Nghe đoạn trích từ phần 4 và chép lại chính xác câu được phát.",
+      "correct_answers": [
+        "Before treatment, conservators study material composition so they do not apply a technique suitable for one object to another made from a different substance."
+      ],
+      "source_turn_id": "T04",
+      "source_char_start": 149,
+      "source_char_end": 307,
+      "evidence_turn_ids": [
+        "T04"
+      ],
+      "evidence_excerpt_en": "Before treatment, conservators study material composition so they do not apply a technique suitable for one object to another made from a different substance.",
+      "explanation_vi": "Luyện nghe chính xác cả cụm từ học thuật và từ chức năng trong một câu hoàn chỉnh.",
+      "scoring_policy": "dictation_token_alignment",
+      "bank_role": "training",
+      "word_limit": null,
+      "review_status": "awaiting_teacher_and_audio_review"
+    },
+    {
+      "question_id": "D03",
+      "group_id": "SELECTIVE_DICTATION",
+      "type": "dictation",
+      "prompt": "Nghe đoạn trích từ phần 6 và chép lại chính xác câu được phát.",
+      "correct_answers": [
+        "The goal is treatment records that remain accessible long after individual staff members have left."
+      ],
+      "source_turn_id": "T06",
+      "source_char_start": 207,
+      "source_char_end": 306,
+      "evidence_turn_ids": [
+        "T06"
+      ],
+      "evidence_excerpt_en": "The goal is treatment records that remain accessible long after individual staff members have left.",
+      "explanation_vi": "Luyện nghe chính xác cả cụm từ học thuật và từ chức năng trong một câu hoàn chỉnh.",
+      "scoring_policy": "dictation_token_alignment",
+      "bank_role": "training",
+      "word_limit": null,
+      "review_status": "awaiting_teacher_and_audio_review"
+    },
+    {
+      "question_id": "D04",
+      "group_id": "SELECTIVE_DICTATION",
+      "type": "dictation",
+      "prompt": "Nghe đoạn trích từ phần 8 và chép lại chính xác câu được phát.",
+      "correct_answers": [
+        "The strongest process includes stakeholder consultation before irreversible treatment, while still drawing on scientific tests."
+      ],
+      "source_turn_id": "T08",
+      "source_char_start": 191,
+      "source_char_end": 318,
+      "evidence_turn_ids": [
+        "T08"
+      ],
+      "evidence_excerpt_en": "The strongest process includes stakeholder consultation before irreversible treatment, while still drawing on scientific tests.",
+      "explanation_vi": "Luyện nghe chính xác cả cụm từ học thuật và từ chức năng trong một câu hoàn chỉnh.",
+      "scoring_policy": "dictation_token_alignment",
+      "bank_role": "training",
+      "word_limit": null,
+      "review_status": "awaiting_teacher_and_audio_review"
+    },
+    {
+      "question_id": "G01",
+      "group_id": "POST_LISTEN_GAP_FILL",
+      "type": "gap_fill",
+      "prompt": "Nghe và điền phần thiếu: The problem is often ____, not merely whether a room's average humidity looks acceptable on a weekly chart.",
+      "correct_answers": [
+        "humidity fluctuations"
+      ],
+      "evidence_turn_ids": [
+        "T03"
+      ],
+      "evidence_excerpt_en": "The problem is often humidity fluctuations, not merely whether a room's average humidity looks acceptable on a weekly chart.",
+      "explanation_vi": "Luyện ghi lại thuật ngữ chính xác sau khi đã hoàn thành lượt làm IELTS.",
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS",
+      "scoring_policy": "strict_spoken_words",
+      "bank_role": "training",
+      "unlock_after_ielts_submission": true,
+      "review_status": "awaiting_teacher_and_audio_review"
+    },
+    {
+      "question_id": "G02",
+      "group_id": "POST_LISTEN_GAP_FILL",
+      "type": "gap_fill",
+      "prompt": "Nghe và điền phần thiếu: The protective principle is ____, not the unrealistic promise that transport can be made completely harmless.",
+      "correct_answers": [
+        "risk reduction"
+      ],
+      "evidence_turn_ids": [
+        "T07"
+      ],
+      "evidence_excerpt_en": "The protective principle is risk reduction, not the unrealistic promise that transport can be made completely harmless.",
+      "explanation_vi": "Luyện ghi lại thuật ngữ chính xác sau khi đã hoàn thành lượt làm IELTS.",
+      "word_limit": 2,
+      "instructions_en": "NO MORE THAN TWO WORDS",
+      "scoring_policy": "strict_spoken_words",
+      "bank_role": "training",
+      "unlock_after_ielts_submission": true,
+      "review_status": "awaiting_teacher_and_audio_review"
+    }
+  ],
+  "vocabulary": [
+    {
+      "vocab_id": "S4-EXP-007-V01",
+      "expression_en": "condition survey",
+      "meaning_vi": "khảo sát tình trạng hiện vật",
+      "part_of_speech": "noun phrase",
+      "example_en": "The first stage is often a condition survey, a systematic record of the object's materials, earlier repairs and present vulnerabilities.",
+      "example_vi": "Hiện vật bảo tàng có thể trông không đổi trong nhiều thập kỷ nhưng vẫn xuống cấp. Người bảo quản xem cả vết nứt hiện rõ và điều kiện gây hại về sau. Bước đầu thường là khảo sát tình trạng, ghi hệ thống chất liệu, lần sửa trước và chỗ dễ tổn thương. Không có mốc ban đầu, khó đánh giá biến đổi về sau.",
+      "evidence_turn_id": "T01",
+      "can_save_to_notebook": true,
+      "requires_human_pos_verification": true
+    },
+    {
+      "vocab_id": "S4-EXP-007-V02",
+      "expression_en": "light exposure",
+      "meaning_vi": "mức tiếp xúc ánh sáng",
+      "part_of_speech": "noun phrase",
+      "example_en": "Conservators measure the accumulated effect over time as light exposure.",
+      "example_vi": "Rủi ro quen thuộc là ánh sáng. Chiếu sáng mạnh giúp khách xem nhưng có thể phai phẩm màu và làm yếu vật liệu hữu cơ. Người bảo quản đo tác động tích lũy dưới tên mức tiếp xúc ánh sáng. Tranh được chiếu sáng mạnh thời gian ngắn có thể chịu rủi ro khác vải trưng bày ánh sáng vừa suốt năm.",
+      "evidence_turn_id": "T02",
+      "can_save_to_notebook": true,
+      "requires_human_pos_verification": true
+    },
+    {
+      "vocab_id": "S4-EXP-007-V03",
+      "expression_en": "humidity fluctuations",
+      "meaning_vi": "sự dao động độ ẩm",
+      "part_of_speech": "noun phrase",
+      "example_en": "The problem is often humidity fluctuations, not merely whether a room's average humidity looks acceptable on a weekly chart.",
+      "example_vi": "Độ ẩm cũng phức tạp. Khi không khí ẩm, vật liệu hút nước và nở; khi khô, co lại. Thay đổi lặp lại làm hỏng chỗ nối và bề mặt yếu. Vấn đề thường là dao động độ ẩm, không chỉ độ ẩm trung bình tuần. Môi trường ổn định đôi khi quan trọng hơn đạt một con số lý tưởng duy nhất.",
+      "evidence_turn_id": "T03",
+      "can_save_to_notebook": true,
+      "requires_human_pos_verification": true
+    },
+    {
+      "vocab_id": "S4-EXP-007-V04",
+      "expression_en": "material composition",
+      "meaning_vi": "thành phần vật liệu",
+      "part_of_speech": "noun phrase",
+      "example_en": "Before treatment, conservators study material composition so they do not apply a technique suitable for one object to another made from a different substance.",
+      "example_vi": "Không phải vật liệu nào phản ứng giống nhau. Sắt có thể ăn mòn, còn nhựa trở nên giòn qua biến đổi hóa học. Trước xử lý, người bảo quản nghiên cứu thành phần vật liệu để không áp kỹ thuật dành cho chất này lên hiện vật chất khác. Chỉ biết niên đại hay hình dạng là chưa đủ.",
+      "evidence_turn_id": "T04",
+      "can_save_to_notebook": true,
+      "requires_human_pos_verification": true
+    },
+    {
+      "vocab_id": "S4-EXP-007-V05",
+      "expression_en": "minimal intervention",
+      "meaning_vi": "nguyên tắc can thiệp tối thiểu",
+      "part_of_speech": "noun phrase",
+      "example_en": "Modern conservation, however, often prioritises minimal intervention.",
+      "example_vi": "Khách tham quan đôi khi mong hiện vật được phục hồi như mới. Nhưng bảo tồn hiện đại thường ưu tiên can thiệp tối thiểu: thay đổi ít nhất vật liệu gốc trong khi vẫn ngăn hỏng thêm. Bản thảo ố màu có thể giữ vết ố nếu tẩy đi làm giấy hỏng hơn.",
+      "evidence_turn_id": "T05",
+      "can_save_to_notebook": true,
+      "requires_human_pos_verification": true
+    },
+    {
+      "vocab_id": "S4-EXP-007-V06",
+      "expression_en": "treatment records",
+      "meaning_vi": "hồ sơ xử lý bảo tồn",
+      "part_of_speech": "noun phrase",
+      "example_en": "The goal is treatment records that remain accessible long after individual staff members have left.",
+      "example_vi": "Khi phải sửa, quy trình phải ghi chép cẩn thận. Người bảo quản ghi sản phẩm dùng và vùng xử lý vì chuyên gia sau này có thể xem lại quyết định cũ. Cần hồ sơ điều trị bảo tồn lưu được lâu ngay cả khi nhân viên chuyển đi; chúng giúp so sánh và xử lý lại có trách nhiệm.",
+      "evidence_turn_id": "T06",
+      "can_save_to_notebook": true,
+      "requires_human_pos_verification": true
+    }
+  ],
+  "audio": {
+    "status": "not_generated",
+    "audio_url": null,
+    "duration_ms": null,
+    "source_text_sha256": "2847da7befba5fb502f8664dcdb9cf295d29e3c5dd87d9a8157cd559740eb085",
+    "generation_strategy": "single_speaker_paragraph_tts_then_seamless_stitch",
+    "audio_asset_id": null,
+    "requires_human_naturalness_review": true,
+    "requires_timing_alignment": true
+  },
+  "learning_flow": {
+    "intro": {
+      "theory_vi": "Part 4 là bài giảng học thuật một người nói. Bài luyện này rèn khả năng theo dõi các ý từ khái niệm đến ví dụ, phương pháp và giới hạn của kết luận. Trước khi nghe, hãy đọc tiêu đề nhóm câu hỏi, dự đoán loại từ và không cố chép mọi chữ.",
+      "tip_vi": "Câu hỏi nghe xuất hiện theo thứ tự bài giảng. Chú ý từ nối như however, therefore, for example, finally; đáp án Completion phải lấy đúng từ đã nghe và không vượt quá giới hạn.",
+      "common_mistakes_vi": [
+        "Ghi từ có nghĩa gần đúng nhưng không xuất hiện trong lời nghe.",
+        "Không chú ý số nhiều hoặc dạng ghép của thuật ngữ.",
+        "Dừng quá lâu ở một câu và bỏ lỡ câu tiếp theo.",
+        "Chọn thông tin trong ví dụ rồi bỏ qua kết luận có điều kiện."
+      ],
+      "worked_examples": [
+        {
+          "audio_example_en": "The first trial used a plastic container, but a glass bottle was chosen for the final experiment.",
+          "question": "Final container: ____",
+          "answer": "glass bottle",
+          "explanation_vi": "Đáp án là phương án cuối; plastic container chỉ là lựa chọn ban đầu."
+        },
+        {
+          "audio_example_en": "The instrument measures pressure. It does not directly measure temperature.",
+          "question": "The instrument records ____.",
+          "answer": "pressure",
+          "explanation_vi": "Hãy lấy chính từ được nói và phân biệt điều được đo với điều không đo."
+        }
+      ]
+    },
+    "steps": [
+      "pre_listening",
+      "first_listen_ielts_questions",
+      "submit_ielts_first_pass",
+      "review_with_evidence",
+      "selective_dictation",
+      "gap_fill",
+      "summary"
+    ],
+    "ielts_question_ids": [
+      "Q01",
+      "Q02",
+      "Q03",
+      "Q04",
+      "Q05",
+      "Q06",
+      "Q07",
+      "Q08"
+    ],
+    "ielts_groups": [
+      {
+        "group_id": "IELTS_NOTE_01_04",
+        "type": "note_completion",
+        "instruction_en": "NO MORE THAN TWO WORDS",
+        "display_mode": "bullet_notes",
+        "group_heading": "Key concepts and evidence",
+        "items": [
+          {
+            "question_id": "Q01",
+            "prompt": "The initial record of an object's state is a ____."
+          },
+          {
+            "question_id": "Q02",
+            "prompt": "Risk from illumination depends partly on accumulated ____."
+          },
+          {
+            "question_id": "Q03",
+            "prompt": "Repeated expansion and contraction may result from ____."
+          },
+          {
+            "question_id": "Q04",
+            "prompt": "Treatment decisions require knowledge of ____."
+          }
+        ],
+        "question_ids": [
+          "Q01",
+          "Q02",
+          "Q03",
+          "Q04"
+        ]
+      },
+      {
+        "group_id": "IELTS_TABLE_05_06",
+        "type": "table_completion",
+        "instruction_en": "NO MORE THAN TWO WORDS",
+        "display_mode": "two_column_table",
+        "group_heading": "Methods and comparisons",
+        "items": [
+          {
+            "question_id": "Q05",
+            "prompt": "A principle of changing little original material is ____."
+          },
+          {
+            "question_id": "Q06",
+            "prompt": "Future conservators rely on detailed ____."
+          }
+        ],
+        "question_ids": [
+          "Q05",
+          "Q06"
+        ]
+      },
+      {
+        "group_id": "IELTS_SUMMARY_07_08",
+        "type": "summary_completion",
+        "instruction_en": "NO MORE THAN TWO WORDS",
+        "display_mode": "connected_summary",
+        "group_heading": "Interpretation and conclusions",
+        "items": [
+          {
+            "question_id": "Q07",
+            "prompt": "Protective packing is designed mainly for ____."
+          },
+          {
+            "question_id": "Q08",
+            "prompt": "Irreversible decisions should include ____."
+          }
+        ],
+        "question_ids": [
+          "Q07",
+          "Q08"
+        ]
+      }
+    ],
+    "recommended_first_listen_play_limit": 1,
+    "practice_replay_allowed_after_first_attempt": true,
+    "word_count": 441,
+    "estimated_audio_minutes_at_135_wpm": 3.27,
+    "exposure_bank": "training",
+    "exam_simulation": false,
+    "mock_test": false,
+    "audio_alignment_required": true,
+    "answer_release_after_submission": true
+  },
+  "qa": {
+    "status": "awaiting_human_content_and_audio_review",
+    "automated_validation": "passed",
+    "human_transcript_approved": false,
+    "human_audio_approved": false,
+    "ielts_exam_equivalent": false,
+    "release_eligible": false
+  },
+  "provenance": {
+    "source_type": "original_authored",
+    "reference_copying": false,
+    "authoring_milestone": "M24",
+    "educational_examples": "Some case studies are illustrative rather than published research",
+    "scientific_fact_check_required": true,
+    "do_not_reuse_in_unseen_assessment_before_exposure_check": true
+  },
+  "release_metadata": {
+    "version": "m24.0.1",
+    "published": false,
+    "needs_audio": true,
+    "requires_human_approval": true,
+    "import_policy": "insert_only",
+    "target_bank": "training"
+  }
+}
