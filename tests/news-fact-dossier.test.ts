@@ -1,6 +1,13 @@
-import { expect, it } from "vitest";
+import { afterAll, beforeAll, expect, it } from "vitest";
 import { factDossierSchema } from "../src/lib/news/fact-dossier-schema";
 import { passageWordRange, readFactualSource, writeArticleFromFacts } from "../src/lib/news/fact-dossier";
+
+const previousArticleConfirmation = process.env.NEWS_ARTICLE_FREE_TIER_CONFIRMED;
+beforeAll(() => { process.env.NEWS_ARTICLE_FREE_TIER_CONFIRMED = "true"; });
+afterAll(() => {
+  if (previousArticleConfirmation === undefined) delete process.env.NEWS_ARTICLE_FREE_TIER_CONFIRMED;
+  else process.env.NEWS_ARTICLE_FREE_TIER_CONFIRMED = previousArticleConfirmation;
+});
 
 const facts = Array.from({ length: 14 }, (_, index) => ({
   claim: `NASA reported verified mission detail number ${index + 1} for the upcoming science launch.`,
@@ -47,8 +54,8 @@ it("limits newspaper evidence to a short excerpt and rejects unreviewed hosts", 
 });
 
 it("passes factual notes but no newspaper prose to the independent writer", async () => {
-  const previous = process.env.GEMINI_API_KEY;
-  process.env.GEMINI_API_KEY = "test-key";
+  const previous = process.env.NEWS_ARTICLE_GEMINI_API_KEY;
+  process.env.NEWS_ARTICLE_GEMINI_API_KEY = "test-key";
   const report = "https://news.tuoitre.vn/public-event.html";
   const dossier = { topic: "A student programme in Vietnam", category: "Education", facts: [
     ...facts.slice(0, 5),
@@ -72,12 +79,12 @@ it("passes factual notes but no newspaper prose to the independent writer", asyn
     await writeArticleFromFacts(dossier, fetcher);
     expect(writerInput).toContain(report);
     expect(writerInput).not.toContain("Reporter descriptive prose");
-  } finally { if (previous === undefined) delete process.env.GEMINI_API_KEY; else process.env.GEMINI_API_KEY = previous; }
+  } finally { if (previous === undefined) delete process.env.NEWS_ARTICLE_GEMINI_API_KEY; else process.env.NEWS_ARTICLE_GEMINI_API_KEY = previous; }
 });
 
 it("checks factual notes against the cited page before asking AI to write", async () => {
-  const previous = process.env.GEMINI_API_KEY;
-  process.env.GEMINI_API_KEY = "test-key";
+  const previous = process.env.NEWS_ARTICLE_GEMINI_API_KEY;
+  process.env.NEWS_ARTICLE_GEMINI_API_KEY = "test-key";
   let modelCalls = 0;
   const fetcher = async (input: RequestInfo | URL) => {
     const url = String(input);
@@ -88,12 +95,12 @@ it("checks factual notes against the cited page before asking AI to write", asyn
   try {
     await expect(writeArticleFromFacts({ topic: "A new science launch", category: "Science", facts }, fetcher as typeof fetch)).rejects.toThrow("not verified");
     expect(modelCalls).toBe(1);
-  } finally { if (previous === undefined) delete process.env.GEMINI_API_KEY; else process.env.GEMINI_API_KEY = previous; }
+  } finally { if (previous === undefined) delete process.env.NEWS_ARTICLE_GEMINI_API_KEY; else process.env.NEWS_ARTICLE_GEMINI_API_KEY = previous; }
 });
 
 it("accepts a complete nine-paragraph passage from eight verified facts", async () => {
-  const previous = process.env.GEMINI_API_KEY;
-  process.env.GEMINI_API_KEY = "test-key";
+  const previous = process.env.NEWS_ARTICLE_GEMINI_API_KEY;
+  process.env.NEWS_ARTICLE_GEMINI_API_KEY = "test-key";
   const shortFacts = facts.slice(0, 8);
   let reviews = 0;
   const fetcher = (async (input: RequestInfo | URL, init?: RequestInit) => {
@@ -111,12 +118,12 @@ it("accepts a complete nine-paragraph passage from eight verified facts", async 
     expect(article.body.split(/\s+/)).toHaveLength(540);
     expect(article.body.split(/\n\s*\n/)).toHaveLength(9);
     expect(reviews).toBe(1);
-  } finally { if (previous === undefined) delete process.env.GEMINI_API_KEY; else process.env.GEMINI_API_KEY = previous; }
+  } finally { if (previous === undefined) delete process.env.NEWS_ARTICLE_GEMINI_API_KEY; else process.env.NEWS_ARTICLE_GEMINI_API_KEY = previous; }
 });
 
 it("revises a near-complete short passage from the same facts before final review", async () => {
-  const previous = process.env.GEMINI_API_KEY;
-  process.env.GEMINI_API_KEY = "test-key";
+  const previous = process.env.NEWS_ARTICLE_GEMINI_API_KEY;
+  process.env.NEWS_ARTICLE_GEMINI_API_KEY = "test-key";
   const shortFacts = facts.slice(0, 8);
   let drafts = 0;
   let reviews = 0;
@@ -140,12 +147,12 @@ it("revises a near-complete short passage from the same facts before final revie
     expect(revisionPrompt).toContain("Revise this AI-created draft");
     expect(article.body.split(/\s+/)).toHaveLength(520);
     expect(reviews).toBe(1);
-  } finally { if (previous === undefined) delete process.env.GEMINI_API_KEY; else process.env.GEMINI_API_KEY = previous; }
+  } finally { if (previous === undefined) delete process.env.NEWS_ARTICLE_GEMINI_API_KEY; else process.env.NEWS_ARTICLE_GEMINI_API_KEY = previous; }
 });
 
 it("retries a short draft once, then reviews only a complete article", async () => {
-  const previous = process.env.GEMINI_API_KEY;
-  process.env.GEMINI_API_KEY = "test-key";
+  const previous = process.env.NEWS_ARTICLE_GEMINI_API_KEY;
+  process.env.NEWS_ARTICLE_GEMINI_API_KEY = "test-key";
   let drafts = 0;
   let reviews = 0;
   const fetcher = (async (input: RequestInfo | URL, init?: RequestInit) => {
@@ -165,5 +172,5 @@ it("retries a short draft once, then reviews only a complete article", async () 
     expect(article.body.split(/\s+/)).toHaveLength(660);
     expect(drafts).toBe(2);
     expect(reviews).toBe(1);
-  } finally { if (previous === undefined) delete process.env.GEMINI_API_KEY; else process.env.GEMINI_API_KEY = previous; }
+  } finally { if (previous === undefined) delete process.env.NEWS_ARTICLE_GEMINI_API_KEY; else process.env.NEWS_ARTICLE_GEMINI_API_KEY = previous; }
 });

@@ -1,5 +1,40 @@
 import { describe, expect, it } from "vitest";
-import { AiQuotaError, findNewsIllustration, generateNewsQuiz, imageClaimLimit, imageKeywords, normalizeAnswer, quizExcerpt, scheduledNewsWorkSlot, tfngOptions, validateGeneratedQuiz as validateWithPlan } from "../src/lib/news/enrichment";
+import { AiQuotaError, findNewsIllustration, geminiJson, generateNewsQuiz, imageClaimLimit, imageKeywords, newsArticleFreeTierReady, normalizeAnswer, quizExcerpt, scheduledNewsWorkSlot, tfngOptions, validateGeneratedQuiz as validateWithPlan } from "../src/lib/news/enrichment";
+
+it("routes article research only through its confirmed free-tier key", async () => {
+  const previous = {
+    article: process.env.NEWS_ARTICLE_GEMINI_API_KEY,
+    confirmed: process.env.NEWS_ARTICLE_FREE_TIER_CONFIRMED,
+    legacy: process.env.GEMINI_API_KEY,
+    quiz: process.env.AI_FACTORY_GEMINI_API_KEY,
+  };
+  const calls: string[] = [];
+  const fetcher = (async (_url: RequestInfo | URL, init?: RequestInit) => {
+    calls.push(String((init?.headers as Record<string, string>)["x-goog-api-key"]));
+    return Response.json({ candidates: [{ finishReason: "STOP", content: { parts: [{ text: "{}" }] } }] });
+  }) as typeof fetch;
+  try {
+    process.env.NEWS_ARTICLE_GEMINI_API_KEY = "article-free-key";
+    process.env.NEWS_ARTICLE_FREE_TIER_CONFIRMED = "true";
+    process.env.GEMINI_API_KEY = "legacy-paid-key";
+    process.env.AI_FACTORY_GEMINI_API_KEY = "quiz-free-key";
+    expect(newsArticleFreeTierReady()).toBe(true);
+    await geminiJson("system", "user", {}, { fetcher, articleOnly: true });
+    expect(calls).toEqual(["article-free-key"]);
+    process.env.NEWS_ARTICLE_FREE_TIER_CONFIRMED = "false";
+    await expect(geminiJson("system", "user", {}, { fetcher, articleOnly: true })).rejects.toThrow("not configured for news articles");
+    expect(calls).toHaveLength(1);
+  } finally {
+    for (const [name, value] of Object.entries({
+      NEWS_ARTICLE_GEMINI_API_KEY: previous.article,
+      NEWS_ARTICLE_FREE_TIER_CONFIRMED: previous.confirmed,
+      GEMINI_API_KEY: previous.legacy,
+      AI_FACTORY_GEMINI_API_KEY: previous.quiz,
+    })) {
+      if (value === undefined) delete process.env[name]; else process.env[name] = value;
+    }
+  }
+});
 
 it("reserves quiz work even while translation, image and discovery backlogs exist", () => {
   const slot = (hour: number, minute: number) => scheduledNewsWorkSlot(new Date(`2026-11-11T${String(hour).padStart(2, "0")}:${String(minute).padStart(2, "0")}:00Z`));
