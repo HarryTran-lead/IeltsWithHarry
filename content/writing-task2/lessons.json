@@ -1,0 +1,3468 @@
+{
+ "source": {
+  "package": "IELTS_Task2_M123",
+  "feeds": {
+   "lessons": "import/learner_guided/lessons_36.jsonl",
+   "answers": "import/server_only/lesson_answers_36.jsonl",
+   "essays": "import/server_only/model_essays_7.jsonl"
+  }
+ },
+ "lessons": [
+  {
+   "id": "T2-M113-01",
+   "pack": "M113",
+   "content_sha256": "ff174ee5747695e656c586161935985682c907231ff40eb12a939b0a04ac7a84",
+   "stage": "foundation",
+   "target_range": "1.0–3.0",
+   "question_type": "agree_disagree",
+   "topic": "Community Markets",
+   "prompt": "Local councils should organise free weekend markets where residents can exchange used household items. To what extent do you agree or disagree?",
+   "minutes": 25,
+   "goal_vi": "Câu đơn → câu ghép ngắn; chưa yêu cầu viết bài 250 từ.",
+   "target_vi": "2 câu đúng trật tự + 1 ví dụ. Không chấm band IELTS từ một đoạn ngắn.",
+   "steps": [
+    {
+     "title_vi": "Giải mã câu hỏi",
+     "instruction_vi": "Gạch chân động từ yêu cầu và nhận diện đúng dạng đề.",
+     "sample_en": "Local councils should organise free weekend markets where residents can exchange used household items. To what extent do you agree or disagree?"
+    },
+    {
+     "title_vi": "Chọn và nhóm ý",
+     "instruction_vi": "Viết hai ý riêng không trùng nhau.",
+     "sample_en": "Idea A: Families can obtain useful products without buying new ones. Idea B: The markets may also reduce household waste."
+    },
+    {
+     "title_vi": "Thêm chuỗi giải thích",
+     "instruction_vi": "Giải thích lý do tại sao ý chính dẫn đến kết quả cụ thể, sau đó cho ví dụ hợp lý.",
+     "sample_en": "When people exchange items they no longer need, someone else can use them instead of paying for replacements. Example: A parent could exchange an outgrown school uniform for one in a larger size."
+    },
+    {
+     "title_vi": "Giới hạn và kiểm tra logic",
+     "instruction_vi": "Kiểm tra mức độ khẳng định, ý trái chiều và sự thống nhất với kết luận.",
+     "sample_en": "Organisers still need a safe venue and clear rules about damaged goods."
+    }
+   ],
+   "vocabulary": [
+    {
+     "phrase_en": "exchange used items",
+     "meaning_vi": "trao đổi đồ đã qua sử dụng"
+    },
+    {
+     "phrase_en": "save household money",
+     "meaning_vi": "tiết kiệm chi tiêu gia đình"
+    },
+    {
+     "phrase_en": "remain in use",
+     "meaning_vi": "tiếp tục được sử dụng"
+    },
+    {
+     "phrase_en": "safe venue",
+     "meaning_vi": "địa điểm an toàn"
+    }
+   ],
+   "drills": [
+    {
+     "id": "T2-M113-01-D1",
+     "mode": "identify",
+     "question_vi": "Đề yêu cầu làm gì? Nêu đủ các phần bắt buộc.",
+     "hint_vi": "Xác định yêu cầu của đề và tự viết câu trả lời trước."
+    },
+    {
+     "id": "T2-M113-01-D2",
+     "mode": "idea",
+     "question_vi": "Ghi hai ý đúng trọng tâm, không trùng nhau.",
+     "hint_vi": "Xác định yêu cầu của đề và tự viết câu trả lời trước."
+    },
+    {
+     "id": "T2-M113-01-D3",
+     "mode": "thesis",
+     "question_vi": "Viết thesis/overview đúng nhiệm vụ, không thêm luận điểm chưa có.",
+     "hint_vi": "Xác định yêu cầu của đề và tự viết câu trả lời trước."
+    },
+    {
+     "id": "T2-M113-01-D4",
+     "mode": "causal_chain",
+     "question_vi": "Viết một chuỗi Ý → Vì sao → Ví dụ bằng tiếng Anh.",
+     "hint_vi": "Xác định yêu cầu của đề và tự viết câu trả lời trước."
+    },
+    {
+     "id": "T2-M113-01-D5",
+     "mode": "second_side",
+     "question_vi": "Viết đoạn ý thứ hai kèm lý do và ví dụ; không lặp lại ý đầu.",
+     "hint_vi": "Xác định yêu cầu của đề và tự viết câu trả lời trước."
+    },
+    {
+     "id": "T2-M113-01-D6",
+     "mode": "nuance",
+     "question_vi": "Thêm một giới hạn hoặc điều kiện làm cho lập luận chính xác hơn.",
+     "hint_vi": "Xác định yêu cầu của đề và tự viết câu trả lời trước."
+    },
+    {
+     "id": "T2-M113-01-D7",
+     "mode": "diagnose",
+     "question_vi": "Phát hiện lỗi Task Response cần tránh cho chính đề này.",
+     "hint_vi": "Xác định yêu cầu của đề và tự viết câu trả lời trước."
+    },
+    {
+     "id": "T2-M113-01-D8",
+     "mode": "self_revision",
+     "question_vi": "Đối chiếu kết luận với thesis và tự sửa một cụm khẳng định quá mức.",
+     "hint_vi": "Xác định yêu cầu của đề và tự viết câu trả lời trước."
+    }
+   ],
+   "has_model_essay": false
+  },
+  {
+   "id": "T2-M113-05",
+   "pack": "M113",
+   "content_sha256": "d2a2eab9fd36cfb24b627f9fe802f612c13f2f0efda517b10620d1f36cfbda30",
+   "stage": "foundation",
+   "target_range": "1.0–3.0",
+   "question_type": "discuss_both_views",
+   "topic": "Children’s Free Time",
+   "prompt": "Some parents believe young children should spend their free time playing outdoors, while others prefer organised indoor clubs. Discuss both views and give your opinion.",
+   "minutes": 25,
+   "goal_vi": "Câu đơn → câu ghép ngắn; chưa yêu cầu viết bài 250 từ.",
+   "target_vi": "2 câu đúng trật tự + 1 ví dụ. Không chấm band IELTS từ một đoạn ngắn.",
+   "steps": [
+    {
+     "title_vi": "Giải mã câu hỏi",
+     "instruction_vi": "Gạch chân động từ yêu cầu và nhận diện đúng dạng đề.",
+     "sample_en": "Some parents believe young children should spend their free time playing outdoors, while others prefer organised indoor clubs. Discuss both views and give your opinion."
+    },
+    {
+     "title_vi": "Chọn và nhóm ý",
+     "instruction_vi": "Viết hai ý riêng không trùng nhau.",
+     "sample_en": "Idea A: Outdoor play gives children space to move and explore. Idea B: Indoor clubs can teach specific skills with adult guidance."
+    },
+    {
+     "title_vi": "Thêm chuỗi giải thích",
+     "instruction_vi": "Giải thích lý do tại sao ý chính dẫn đến kết quả cụ thể, sau đó cho ví dụ hợp lý.",
+     "sample_en": "Running and making up games with friends can build confidence and physical skills. Example: Children may invent their own ball game in a safe public park."
+    },
+    {
+     "title_vi": "Giới hạn và kiểm tra logic",
+     "instruction_vi": "Kiểm tra mức độ khẳng định, ý trái chiều và sự thống nhất với kết luận.",
+     "sample_en": "A mixture is better than filling every free hour with supervised activities."
+    }
+   ],
+   "vocabulary": [
+    {
+     "phrase_en": "outdoor play",
+     "meaning_vi": "chơi ngoài trời"
+    },
+    {
+     "phrase_en": "organised club",
+     "meaning_vi": "câu lạc bộ có tổ chức"
+    },
+    {
+     "phrase_en": "build confidence",
+     "meaning_vi": "xây dựng sự tự tin"
+    },
+    {
+     "phrase_en": "free time",
+     "meaning_vi": "thời gian rảnh"
+    }
+   ],
+   "drills": [
+    {
+     "id": "T2-M113-05-D1",
+     "mode": "identify",
+     "question_vi": "Đề yêu cầu làm gì? Nêu đủ các phần bắt buộc.",
+     "hint_vi": "Xác định yêu cầu của đề và tự viết câu trả lời trước."
+    },
+    {
+     "id": "T2-M113-05-D2",
+     "mode": "idea",
+     "question_vi": "Ghi hai ý đúng trọng tâm, không trùng nhau.",
+     "hint_vi": "Xác định yêu cầu của đề và tự viết câu trả lời trước."
+    },
+    {
+     "id": "T2-M113-05-D3",
+     "mode": "thesis",
+     "question_vi": "Viết thesis/overview đúng nhiệm vụ, không thêm luận điểm chưa có.",
+     "hint_vi": "Xác định yêu cầu của đề và tự viết câu trả lời trước."
+    },
+    {
+     "id": "T2-M113-05-D4",
+     "mode": "causal_chain",
+     "question_vi": "Viết một chuỗi Ý → Vì sao → Ví dụ bằng tiếng Anh.",
+     "hint_vi": "Xác định yêu cầu của đề và tự viết câu trả lời trước."
+    },
+    {
+     "id": "T2-M113-05-D5",
+     "mode": "second_side",
+     "question_vi": "Viết đoạn ý thứ hai kèm lý do và ví dụ; không lặp lại ý đầu.",
+     "hint_vi": "Xác định yêu cầu của đề và tự viết câu trả lời trước."
+    },
+    {
+     "id": "T2-M113-05-D6",
+     "mode": "nuance",
+     "question_vi": "Thêm một giới hạn hoặc điều kiện làm cho lập luận chính xác hơn.",
+     "hint_vi": "Xác định yêu cầu của đề và tự viết câu trả lời trước."
+    },
+    {
+     "id": "T2-M113-05-D7",
+     "mode": "diagnose",
+     "question_vi": "Phát hiện lỗi Task Response cần tránh cho chính đề này.",
+     "hint_vi": "Xác định yêu cầu của đề và tự viết câu trả lời trước."
+    },
+    {
+     "id": "T2-M113-05-D8",
+     "mode": "self_revision",
+     "question_vi": "Đối chiếu kết luận với thesis và tự sửa một cụm khẳng định quá mức.",
+     "hint_vi": "Xác định yêu cầu của đề và tự viết câu trả lời trước."
+    }
+   ],
+   "has_model_essay": false
+  },
+  {
+   "id": "T2-M113-09",
+   "pack": "M113",
+   "content_sha256": "9ba9be8d1a8c00fd34620f5fad3b9993428d328e968356f420a57f09bcc54de5",
+   "stage": "foundation",
+   "target_range": "1.0–3.0",
+   "question_type": "advantages_disadvantages",
+   "topic": "Walking to School",
+   "prompt": "In many towns, more families encourage children to walk to school rather than travel by car. What are the advantages and disadvantages of this trend?",
+   "minutes": 25,
+   "goal_vi": "Câu đơn → câu ghép ngắn; chưa yêu cầu viết bài 250 từ.",
+   "target_vi": "2 câu đúng trật tự + 1 ví dụ. Không chấm band IELTS từ một đoạn ngắn.",
+   "steps": [
+    {
+     "title_vi": "Giải mã câu hỏi",
+     "instruction_vi": "Gạch chân động từ yêu cầu và nhận diện đúng dạng đề.",
+     "sample_en": "In many towns, more families encourage children to walk to school rather than travel by car. What are the advantages and disadvantages of this trend?"
+    },
+    {
+     "title_vi": "Chọn và nhóm ý",
+     "instruction_vi": "Viết hai ý riêng không trùng nhau.",
+     "sample_en": "Idea A: Walking gives children daily physical activity. Idea B: Busy crossings can put young pedestrians at risk."
+    },
+    {
+     "title_vi": "Thêm chuỗi giải thích",
+     "instruction_vi": "Giải thích lý do tại sao ý chính dẫn đến kết quả cụ thể, sau đó cho ví dụ hợp lý.",
+     "sample_en": "A short walk helps them move regularly without needing a separate sports lesson. Example: A child may walk with a neighbour each morning."
+    },
+    {
+     "title_vi": "Giới hạn và kiểm tra logic",
+     "instruction_vi": "Kiểm tra mức độ khẳng định, ý trái chiều và sự thống nhất với kết luận.",
+     "sample_en": "Safe crossings and adult supervision can reduce, but not remove, these risks."
+    }
+   ],
+   "vocabulary": [
+    {
+     "phrase_en": "daily physical activity",
+     "meaning_vi": "vận động hằng ngày"
+    },
+    {
+     "phrase_en": "school crossing",
+     "meaning_vi": "lối sang đường gần trường"
+    },
+    {
+     "phrase_en": "busy road",
+     "meaning_vi": "đường đông xe"
+    },
+    {
+     "phrase_en": "adult supervision",
+     "meaning_vi": "sự giám sát của người lớn"
+    }
+   ],
+   "drills": [
+    {
+     "id": "T2-M113-09-D1",
+     "mode": "identify",
+     "question_vi": "Đề yêu cầu làm gì? Nêu đủ các phần bắt buộc.",
+     "hint_vi": "Xác định yêu cầu của đề và tự viết câu trả lời trước."
+    },
+    {
+     "id": "T2-M113-09-D2",
+     "mode": "idea",
+     "question_vi": "Ghi hai ý đúng trọng tâm, không trùng nhau.",
+     "hint_vi": "Xác định yêu cầu của đề và tự viết câu trả lời trước."
+    },
+    {
+     "id": "T2-M113-09-D3",
+     "mode": "thesis",
+     "question_vi": "Viết thesis/overview đúng nhiệm vụ, không thêm luận điểm chưa có.",
+     "hint_vi": "Xác định yêu cầu của đề và tự viết câu trả lời trước."
+    },
+    {
+     "id": "T2-M113-09-D4",
+     "mode": "causal_chain",
+     "question_vi": "Viết một chuỗi Ý → Vì sao → Ví dụ bằng tiếng Anh.",
+     "hint_vi": "Xác định yêu cầu của đề và tự viết câu trả lời trước."
+    },
+    {
+     "id": "T2-M113-09-D5",
+     "mode": "second_side",
+     "question_vi": "Viết đoạn ý thứ hai kèm lý do và ví dụ; không lặp lại ý đầu.",
+     "hint_vi": "Xác định yêu cầu của đề và tự viết câu trả lời trước."
+    },
+    {
+     "id": "T2-M113-09-D6",
+     "mode": "nuance",
+     "question_vi": "Thêm một giới hạn hoặc điều kiện làm cho lập luận chính xác hơn.",
+     "hint_vi": "Xác định yêu cầu của đề và tự viết câu trả lời trước."
+    },
+    {
+     "id": "T2-M113-09-D7",
+     "mode": "diagnose",
+     "question_vi": "Phát hiện lỗi Task Response cần tránh cho chính đề này.",
+     "hint_vi": "Xác định yêu cầu của đề và tự viết câu trả lời trước."
+    },
+    {
+     "id": "T2-M113-09-D8",
+     "mode": "self_revision",
+     "question_vi": "Đối chiếu kết luận với thesis và tự sửa một cụm khẳng định quá mức.",
+     "hint_vi": "Xác định yêu cầu của đề và tự viết câu trả lời trước."
+    }
+   ],
+   "has_model_essay": false
+  },
+  {
+   "id": "T2-M113-13",
+   "pack": "M113",
+   "content_sha256": "d8b23d63f49fecb29bf3cf5383d145b50a6886fdbbfb23b3606ca265f46e846b",
+   "stage": "foundation",
+   "target_range": "1.0–3.0",
+   "question_type": "advantages_outweigh_disadvantages",
+   "topic": "Online School Lessons",
+   "prompt": "Some schools record lessons so that pupils can watch them at home later. Do the advantages outweigh the disadvantages?",
+   "minutes": 25,
+   "goal_vi": "Câu đơn → câu ghép ngắn; chưa yêu cầu viết bài 250 từ.",
+   "target_vi": "2 câu đúng trật tự + 1 ví dụ. Không chấm band IELTS từ một đoạn ngắn.",
+   "steps": [
+    {
+     "title_vi": "Giải mã câu hỏi",
+     "instruction_vi": "Gạch chân động từ yêu cầu và nhận diện đúng dạng đề.",
+     "sample_en": "Some schools record lessons so that pupils can watch them at home later. Do the advantages outweigh the disadvantages?"
+    },
+    {
+     "title_vi": "Chọn và nhóm ý",
+     "instruction_vi": "Viết hai ý riêng không trùng nhau.",
+     "sample_en": "Idea A: Recordings let pupils review difficult explanations. Idea B: Recording can make classmates uncomfortable."
+    },
+    {
+     "title_vi": "Thêm chuỗi giải thích",
+     "instruction_vi": "Giải thích lý do tại sao ý chính dẫn đến kết quả cụ thể, sau đó cho ví dụ hợp lý.",
+     "sample_en": "Students can pause and watch a lesson again when they do not understand it the first time. Example: A pupil who was ill could review a mathematics lesson before returning to class."
+    },
+    {
+     "title_vi": "Giới hạn và kiểm tra logic",
+     "instruction_vi": "Kiểm tra mức độ khẳng định, ý trái chiều và sự thống nhất với kết luận.",
+     "sample_en": "Teachers can record only their explanations and restrict access to the class."
+    }
+   ],
+   "vocabulary": [
+    {
+     "phrase_en": "record a lesson",
+     "meaning_vi": "ghi hình bài học"
+    },
+    {
+     "phrase_en": "catch up on work",
+     "meaning_vi": "theo kịp bài học"
+    },
+    {
+     "phrase_en": "protect privacy",
+     "meaning_vi": "bảo vệ quyền riêng tư"
+    },
+    {
+     "phrase_en": "restricted access",
+     "meaning_vi": "quyền truy cập có giới hạn"
+    }
+   ],
+   "drills": [
+    {
+     "id": "T2-M113-13-D1",
+     "mode": "identify",
+     "question_vi": "Đề yêu cầu làm gì? Nêu đủ các phần bắt buộc.",
+     "hint_vi": "Xác định yêu cầu của đề và tự viết câu trả lời trước."
+    },
+    {
+     "id": "T2-M113-13-D2",
+     "mode": "idea",
+     "question_vi": "Ghi hai ý đúng trọng tâm, không trùng nhau.",
+     "hint_vi": "Xác định yêu cầu của đề và tự viết câu trả lời trước."
+    },
+    {
+     "id": "T2-M113-13-D3",
+     "mode": "thesis",
+     "question_vi": "Viết thesis/overview đúng nhiệm vụ, không thêm luận điểm chưa có.",
+     "hint_vi": "Xác định yêu cầu của đề và tự viết câu trả lời trước."
+    },
+    {
+     "id": "T2-M113-13-D4",
+     "mode": "causal_chain",
+     "question_vi": "Viết một chuỗi Ý → Vì sao → Ví dụ bằng tiếng Anh.",
+     "hint_vi": "Xác định yêu cầu của đề và tự viết câu trả lời trước."
+    },
+    {
+     "id": "T2-M113-13-D5",
+     "mode": "second_side",
+     "question_vi": "Viết đoạn ý thứ hai kèm lý do và ví dụ; không lặp lại ý đầu.",
+     "hint_vi": "Xác định yêu cầu của đề và tự viết câu trả lời trước."
+    },
+    {
+     "id": "T2-M113-13-D6",
+     "mode": "nuance",
+     "question_vi": "Thêm một giới hạn hoặc điều kiện làm cho lập luận chính xác hơn.",
+     "hint_vi": "Xác định yêu cầu của đề và tự viết câu trả lời trước."
+    },
+    {
+     "id": "T2-M113-13-D7",
+     "mode": "diagnose",
+     "question_vi": "Phát hiện lỗi Task Response cần tránh cho chính đề này.",
+     "hint_vi": "Xác định yêu cầu của đề và tự viết câu trả lời trước."
+    },
+    {
+     "id": "T2-M113-13-D8",
+     "mode": "self_revision",
+     "question_vi": "Đối chiếu kết luận với thesis và tự sửa một cụm khẳng định quá mức.",
+     "hint_vi": "Xác định yêu cầu của đề và tự viết câu trả lời trước."
+    }
+   ],
+   "has_model_essay": false
+  },
+  {
+   "id": "T2-M113-17",
+   "pack": "M113",
+   "content_sha256": "947a5326f84c287e83be6b25f133d1b469ab50a9698ad863f58a12a9b9d4da70",
+   "stage": "foundation",
+   "target_range": "1.0–3.0",
+   "question_type": "causes_solutions",
+   "topic": "Litter in Parks",
+   "prompt": "Public parks in many towns have problems with litter. What causes this, and what can local authorities do to solve it?",
+   "minutes": 25,
+   "goal_vi": "Câu đơn → câu ghép ngắn; chưa yêu cầu viết bài 250 từ.",
+   "target_vi": "2 câu đúng trật tự + 1 ví dụ. Không chấm band IELTS từ một đoạn ngắn.",
+   "steps": [
+    {
+     "title_vi": "Giải mã câu hỏi",
+     "instruction_vi": "Gạch chân động từ yêu cầu và nhận diện đúng dạng đề.",
+     "sample_en": "Public parks in many towns have problems with litter. What causes this, and what can local authorities do to solve it?"
+    },
+    {
+     "title_vi": "Chọn và nhóm ý",
+     "instruction_vi": "Viết hai ý riêng không trùng nhau.",
+     "sample_en": "Idea A: People may leave rubbish when bins are difficult to find. Idea B: Local councils can add clearly marked bins and organise regular collection."
+    },
+    {
+     "title_vi": "Thêm chuỗi giải thích",
+     "instruction_vi": "Giải thích lý do tại sao ý chính dẫn đến kết quả cụ thể, sau đó cho ví dụ hợp lý.",
+     "sample_en": "Visitors carrying food wrappers sometimes see no nearby place to put them. Example: Families having a picnic may leave plastic cups beside a crowded bench."
+    },
+    {
+     "title_vi": "Giới hạn và kiểm tra logic",
+     "instruction_vi": "Kiểm tra mức độ khẳng định, ý trái chiều và sự thống nhất với kết luận.",
+     "sample_en": "Schools and local groups can also encourage responsible use of shared spaces."
+    }
+   ],
+   "vocabulary": [
+    {
+     "phrase_en": "public litter bin",
+     "meaning_vi": "thùng rác công cộng"
+    },
+    {
+     "phrase_en": "picnic area",
+     "meaning_vi": "khu dã ngoại"
+    },
+    {
+     "phrase_en": "regular collection",
+     "meaning_vi": "thu gom thường xuyên"
+    },
+    {
+     "phrase_en": "shared space",
+     "meaning_vi": "không gian chung"
+    }
+   ],
+   "drills": [
+    {
+     "id": "T2-M113-17-D1",
+     "mode": "identify",
+     "question_vi": "Đề yêu cầu làm gì? Nêu đủ các phần bắt buộc.",
+     "hint_vi": "Xác định yêu cầu của đề và tự viết câu trả lời trước."
+    },
+    {
+     "id": "T2-M113-17-D2",
+     "mode": "idea",
+     "question_vi": "Ghi hai ý đúng trọng tâm, không trùng nhau.",
+     "hint_vi": "Xác định yêu cầu của đề và tự viết câu trả lời trước."
+    },
+    {
+     "id": "T2-M113-17-D3",
+     "mode": "thesis",
+     "question_vi": "Viết thesis/overview đúng nhiệm vụ, không thêm luận điểm chưa có.",
+     "hint_vi": "Xác định yêu cầu của đề và tự viết câu trả lời trước."
+    },
+    {
+     "id": "T2-M113-17-D4",
+     "mode": "causal_chain",
+     "question_vi": "Viết một chuỗi Ý → Vì sao → Ví dụ bằng tiếng Anh.",
+     "hint_vi": "Xác định yêu cầu của đề và tự viết câu trả lời trước."
+    },
+    {
+     "id": "T2-M113-17-D5",
+     "mode": "second_side",
+     "question_vi": "Viết đoạn ý thứ hai kèm lý do và ví dụ; không lặp lại ý đầu.",
+     "hint_vi": "Xác định yêu cầu của đề và tự viết câu trả lời trước."
+    },
+    {
+     "id": "T2-M113-17-D6",
+     "mode": "nuance",
+     "question_vi": "Thêm một giới hạn hoặc điều kiện làm cho lập luận chính xác hơn.",
+     "hint_vi": "Xác định yêu cầu của đề và tự viết câu trả lời trước."
+    },
+    {
+     "id": "T2-M113-17-D7",
+     "mode": "diagnose",
+     "question_vi": "Phát hiện lỗi Task Response cần tránh cho chính đề này.",
+     "hint_vi": "Xác định yêu cầu của đề và tự viết câu trả lời trước."
+    },
+    {
+     "id": "T2-M113-17-D8",
+     "mode": "self_revision",
+     "question_vi": "Đối chiếu kết luận với thesis và tự sửa một cụm khẳng định quá mức.",
+     "hint_vi": "Xác định yêu cầu của đề và tự viết câu trả lời trước."
+    }
+   ],
+   "has_model_essay": false
+  },
+  {
+   "id": "T2-M113-21",
+   "pack": "M113",
+   "content_sha256": "6e8de3445b573f20b3ad6c8cddf3d8594560baba57aba1421b3f24cbacfcdbd0",
+   "stage": "foundation",
+   "target_range": "1.0–3.0",
+   "question_type": "double_question",
+   "topic": "Household Pets",
+   "prompt": "More families are choosing to keep small pets at home. Why do people make this choice? What responsibilities should pet owners consider?",
+   "minutes": 25,
+   "goal_vi": "Câu đơn → câu ghép ngắn; chưa yêu cầu viết bài 250 từ.",
+   "target_vi": "2 câu đúng trật tự + 1 ví dụ. Không chấm band IELTS từ một đoạn ngắn.",
+   "steps": [
+    {
+     "title_vi": "Giải mã câu hỏi",
+     "instruction_vi": "Gạch chân động từ yêu cầu và nhận diện đúng dạng đề.",
+     "sample_en": "More families are choosing to keep small pets at home. Why do people make this choice? What responsibilities should pet owners consider?"
+    },
+    {
+     "title_vi": "Chọn và nhóm ý",
+     "instruction_vi": "Viết hai ý riêng không trùng nhau.",
+     "sample_en": "Idea A: People may keep pets for companionship. Idea B: Owners must provide regular food, hygiene and veterinary care."
+    },
+    {
+     "title_vi": "Thêm chuỗi giải thích",
+     "instruction_vi": "Giải thích lý do tại sao ý chính dẫn đến kết quả cụ thể, sau đó cho ví dụ hợp lý.",
+     "sample_en": "An animal can become part of a family’s daily routine and provide enjoyment. Example: A child may enjoy caring for a rabbit after school."
+    },
+    {
+     "title_vi": "Giới hạn và kiểm tra logic",
+     "instruction_vi": "Kiểm tra mức độ khẳng định, ý trái chiều và sự thống nhất với kết luận.",
+     "sample_en": "A pet should not be purchased only because it looks cute in a shop."
+    }
+   ],
+   "vocabulary": [
+    {
+     "phrase_en": "pet companionship",
+     "meaning_vi": "sự đồng hành của thú nuôi"
+    },
+    {
+     "phrase_en": "regular care",
+     "meaning_vi": "chăm sóc đều đặn"
+    },
+    {
+     "phrase_en": "veterinary visit",
+     "meaning_vi": "lần khám thú y"
+    },
+    {
+     "phrase_en": "long-term responsibility",
+     "meaning_vi": "trách nhiệm dài hạn"
+    }
+   ],
+   "drills": [
+    {
+     "id": "T2-M113-21-D1",
+     "mode": "identify",
+     "question_vi": "Đề yêu cầu làm gì? Nêu đủ các phần bắt buộc.",
+     "hint_vi": "Xác định yêu cầu của đề và tự viết câu trả lời trước."
+    },
+    {
+     "id": "T2-M113-21-D2",
+     "mode": "idea",
+     "question_vi": "Ghi hai ý đúng trọng tâm, không trùng nhau.",
+     "hint_vi": "Xác định yêu cầu của đề và tự viết câu trả lời trước."
+    },
+    {
+     "id": "T2-M113-21-D3",
+     "mode": "thesis",
+     "question_vi": "Viết thesis/overview đúng nhiệm vụ, không thêm luận điểm chưa có.",
+     "hint_vi": "Xác định yêu cầu của đề và tự viết câu trả lời trước."
+    },
+    {
+     "id": "T2-M113-21-D4",
+     "mode": "causal_chain",
+     "question_vi": "Viết một chuỗi Ý → Vì sao → Ví dụ bằng tiếng Anh.",
+     "hint_vi": "Xác định yêu cầu của đề và tự viết câu trả lời trước."
+    },
+    {
+     "id": "T2-M113-21-D5",
+     "mode": "second_side",
+     "question_vi": "Viết đoạn ý thứ hai kèm lý do và ví dụ; không lặp lại ý đầu.",
+     "hint_vi": "Xác định yêu cầu của đề và tự viết câu trả lời trước."
+    },
+    {
+     "id": "T2-M113-21-D6",
+     "mode": "nuance",
+     "question_vi": "Thêm một giới hạn hoặc điều kiện làm cho lập luận chính xác hơn.",
+     "hint_vi": "Xác định yêu cầu của đề và tự viết câu trả lời trước."
+    },
+    {
+     "id": "T2-M113-21-D7",
+     "mode": "diagnose",
+     "question_vi": "Phát hiện lỗi Task Response cần tránh cho chính đề này.",
+     "hint_vi": "Xác định yêu cầu của đề và tự viết câu trả lời trước."
+    },
+    {
+     "id": "T2-M113-21-D8",
+     "mode": "self_revision",
+     "question_vi": "Đối chiếu kết luận với thesis và tự sửa một cụm khẳng định quá mức.",
+     "hint_vi": "Xác định yêu cầu của đề và tự viết câu trả lời trước."
+    }
+   ],
+   "has_model_essay": false
+  },
+  {
+   "id": "T2-M112-01",
+   "pack": "M112",
+   "content_sha256": "a3084d15edc476f93cd0fe47d851f328ff54c50683adc0cf460eae3ffdb5fc50",
+   "stage": "basic",
+   "target_range": "3.5–4.5",
+   "question_type": "agree_disagree",
+   "topic": "Public Transport",
+   "prompt": "Some people think cities should make buses free for everyone. To what extent do you agree or disagree?",
+   "minutes": 40,
+   "goal_vi": "Nêu một lập trường rõ ràng và giữ nhất quán đến hết bài.",
+   "target_vi": "Viết câu/đoạn theo hướng dẫn; không chấm band từ bài ngắn.",
+   "steps": [
+    {
+     "title_vi": "Giải mã câu hỏi",
+     "instruction_vi": "Gạch chân các từ thể hiện lập trường trong đề.",
+     "sample_en": ""
+    },
+    {
+     "title_vi": "Chọn lập trường",
+     "instruction_vi": "Chọn đồng ý hoàn toàn, phản đối, hoặc đồng ý có điều kiện.",
+     "sample_en": ""
+    },
+    {
+     "title_vi": "Phát triển lý do",
+     "instruction_vi": "Phát triển hai lý do cùng ủng hộ một lập trường.",
+     "sample_en": ""
+    },
+    {
+     "title_vi": "Kiểm tra kết luận",
+     "instruction_vi": "Kiểm tra kết luận có khớp với câu thesis.",
+     "sample_en": ""
+    }
+   ],
+   "vocabulary": [
+    {
+     "phrase_en": "free bus services",
+     "meaning_vi": "dịch vụ xe buýt miễn phí"
+    },
+    {
+     "phrase_en": "daily travel",
+     "meaning_vi": "việc đi lại hằng ngày"
+    },
+    {
+     "phrase_en": "reduce traffic",
+     "meaning_vi": "giảm lưu lượng giao thông"
+    },
+    {
+     "phrase_en": "maintain safe vehicles",
+     "meaning_vi": "bảo dưỡng xe đảm bảo an toàn"
+    }
+   ],
+   "drills": [
+    {
+     "id": "T2-M112-01-D1",
+     "mode": "short_write",
+     "question_vi": "Viết lại đề bằng một câu (paraphrase) mà không làm đổi nghĩa.",
+     "hint_vi": "Đọc lại đề và viết bằng lời của bạn trước khi xem gợi ý."
+    },
+    {
+     "id": "T2-M112-01-D2",
+     "mode": "short_write",
+     "question_vi": "Viết một câu thesis rõ ràng, trả lời trực tiếp mọi phần của đề.",
+     "hint_vi": "Đọc lại đề và viết bằng lời của bạn trước khi xem gợi ý."
+    },
+    {
+     "id": "T2-M112-01-D3",
+     "mode": "short_write",
+     "question_vi": "Viết câu chủ đề và phần giải thích cho một ý hỗ trợ.",
+     "hint_vi": "Đọc lại đề và viết bằng lời của bạn trước khi xem gợi ý."
+    },
+    {
+     "id": "T2-M112-01-D4",
+     "mode": "short_write",
+     "question_vi": "Kiểm tra xem ví dụ của bạn có giải thích được vì sao luận điểm đúng, hay chỉ lặp lại luận điểm.",
+     "hint_vi": "Đọc lại đề và viết bằng lời của bạn trước khi xem gợi ý."
+    }
+   ],
+   "has_model_essay": false
+  },
+  {
+   "id": "T2-M112-04",
+   "pack": "M112",
+   "content_sha256": "a9c5a5e37dcd34f7d23d2e57d3d47fcb39e4d4f8443075c1b993098c331fefd9",
+   "stage": "basic",
+   "target_range": "3.5–4.5",
+   "question_type": "discuss_both_views",
+   "topic": "Reading Habits",
+   "prompt": "Some parents think children should read printed books, while others prefer digital books. Discuss both views and give your opinion.",
+   "minutes": 40,
+   "goal_vi": "Giải thích từng quan điểm trước khi nêu ý kiến của bạn.",
+   "target_vi": "Viết câu/đoạn theo hướng dẫn; không chấm band từ bài ngắn.",
+   "steps": [
+    {
+     "title_vi": "Xác định hai quan điểm",
+     "instruction_vi": "Xác định hai quan điểm đối lập trong đề.",
+     "sample_en": ""
+    },
+    {
+     "title_vi": "Giải thích công bằng",
+     "instruction_vi": "Viết một lời giải thích công bằng cho mỗi bên.",
+     "sample_en": ""
+    },
+    {
+     "title_vi": "Chọn ý kiến riêng",
+     "instruction_vi": "Chọn ý kiến của bạn dựa trên một tiêu chí rõ ràng.",
+     "sample_en": ""
+    },
+    {
+     "title_vi": "Kết nối ở kết luận",
+     "instruction_vi": "Dùng kết luận để nối lại hai quan điểm với ý kiến của bạn.",
+     "sample_en": ""
+    }
+   ],
+   "vocabulary": [
+    {
+     "phrase_en": "printed books",
+     "meaning_vi": "sách in"
+    },
+    {
+     "phrase_en": "focus on reading",
+     "meaning_vi": "tập trung vào việc đọc"
+    },
+    {
+     "phrase_en": "digital books",
+     "meaning_vi": "sách điện tử"
+    },
+    {
+     "phrase_en": "daily activity",
+     "meaning_vi": "hoạt động hằng ngày"
+    }
+   ],
+   "drills": [
+    {
+     "id": "T2-M112-04-D1",
+     "mode": "short_write",
+     "question_vi": "Viết lại đề bằng một câu (paraphrase) mà không làm đổi nghĩa.",
+     "hint_vi": "Đọc lại đề và viết bằng lời của bạn trước khi xem gợi ý."
+    },
+    {
+     "id": "T2-M112-04-D2",
+     "mode": "short_write",
+     "question_vi": "Viết một câu thesis rõ ràng, trả lời trực tiếp mọi phần của đề.",
+     "hint_vi": "Đọc lại đề và viết bằng lời của bạn trước khi xem gợi ý."
+    },
+    {
+     "id": "T2-M112-04-D3",
+     "mode": "short_write",
+     "question_vi": "Viết câu chủ đề và phần giải thích cho một ý hỗ trợ.",
+     "hint_vi": "Đọc lại đề và viết bằng lời của bạn trước khi xem gợi ý."
+    },
+    {
+     "id": "T2-M112-04-D4",
+     "mode": "short_write",
+     "question_vi": "Kiểm tra xem ví dụ của bạn có giải thích được vì sao luận điểm đúng, hay chỉ lặp lại luận điểm.",
+     "hint_vi": "Đọc lại đề và viết bằng lời của bạn trước khi xem gợi ý."
+    }
+   ],
+   "has_model_essay": false
+  },
+  {
+   "id": "T2-M112-07",
+   "pack": "M112",
+   "content_sha256": "b41575ce23b92a371f9c3c43b1e1036bb594046c23558bb0dc96b60b053ec1b6",
+   "stage": "basic",
+   "target_range": "3.5–4.5",
+   "question_type": "advantages_disadvantages",
+   "topic": "Remote Shopping",
+   "prompt": "More people now buy groceries online instead of going to local shops. What are the advantages and disadvantages of this trend?",
+   "minutes": 40,
+   "goal_vi": "Đánh giá lợi ích và bất lợi một cách cụ thể.",
+   "target_vi": "Viết câu/đoạn theo hướng dẫn; không chấm band từ bài ngắn.",
+   "steps": [
+    {
+     "title_vi": "Nêu một lợi ích",
+     "instruction_vi": "Nêu một lợi ích cụ thể và ai được hưởng lợi.",
+     "sample_en": ""
+    },
+    {
+     "title_vi": "Nêu một bất lợi",
+     "instruction_vi": "Nêu một bất lợi cụ thể và ai chịu ảnh hưởng.",
+     "sample_en": ""
+    },
+    {
+     "title_vi": "Giải thích nhân quả",
+     "instruction_vi": "Phát triển mỗi ý bằng một chuỗi nguyên nhân – kết quả.",
+     "sample_en": ""
+    },
+    {
+     "title_vi": "Đúng phạm vi đề",
+     "instruction_vi": "Không tự thêm nhận định lợi nhiều hơn hại nếu đề không hỏi.",
+     "sample_en": ""
+    }
+   ],
+   "vocabulary": [
+    {
+     "phrase_en": "buy groceries online",
+     "meaning_vi": "mua thực phẩm trực tuyến"
+    },
+    {
+     "phrase_en": "home delivery",
+     "meaning_vi": "giao hàng tận nhà"
+    },
+    {
+     "phrase_en": "fresh food",
+     "meaning_vi": "thực phẩm tươi"
+    },
+    {
+     "phrase_en": "replacement product",
+     "meaning_vi": "sản phẩm thay thế"
+    }
+   ],
+   "drills": [
+    {
+     "id": "T2-M112-07-D1",
+     "mode": "short_write",
+     "question_vi": "Viết lại đề bằng một câu (paraphrase) mà không làm đổi nghĩa.",
+     "hint_vi": "Đọc lại đề và viết bằng lời của bạn trước khi xem gợi ý."
+    },
+    {
+     "id": "T2-M112-07-D2",
+     "mode": "short_write",
+     "question_vi": "Viết một câu thesis rõ ràng, trả lời trực tiếp mọi phần của đề.",
+     "hint_vi": "Đọc lại đề và viết bằng lời của bạn trước khi xem gợi ý."
+    },
+    {
+     "id": "T2-M112-07-D3",
+     "mode": "short_write",
+     "question_vi": "Viết câu chủ đề và phần giải thích cho một ý hỗ trợ.",
+     "hint_vi": "Đọc lại đề và viết bằng lời của bạn trước khi xem gợi ý."
+    },
+    {
+     "id": "T2-M112-07-D4",
+     "mode": "short_write",
+     "question_vi": "Kiểm tra xem ví dụ của bạn có giải thích được vì sao luận điểm đúng, hay chỉ lặp lại luận điểm.",
+     "hint_vi": "Đọc lại đề và viết bằng lời của bạn trước khi xem gợi ý."
+    }
+   ],
+   "has_model_essay": false
+  },
+  {
+   "id": "T2-M112-10",
+   "pack": "M112",
+   "content_sha256": "366265de8d7ee3c50dbb0d72a410f7b15f3805d333dcd11ef2179c3259a78237",
+   "stage": "basic",
+   "target_range": "3.5–4.5",
+   "question_type": "problem_solution",
+   "topic": "School Waste",
+   "prompt": "Many schools throw away large amounts of food each day. What causes this problem, and how can it be reduced?",
+   "minutes": 40,
+   "goal_vi": "Tách rõ nguyên nhân và đưa ra giải pháp khả thi.",
+   "target_vi": "Viết câu/đoạn theo hướng dẫn; không chấm band từ bài ngắn.",
+   "steps": [
+    {
+     "title_vi": "Tách nguyên nhân",
+     "instruction_vi": "Phân biệt nguyên nhân với hậu quả của vấn đề.",
+     "sample_en": ""
+    },
+    {
+     "title_vi": "Chọn hai nguyên nhân",
+     "instruction_vi": "Chọn hai nguyên nhân hợp lý, không trùng nhau.",
+     "sample_en": ""
+    },
+    {
+     "title_vi": "Ghép giải pháp",
+     "instruction_vi": "Ghép mỗi giải pháp với một nguyên nhân cụ thể.",
+     "sample_en": ""
+    },
+    {
+     "title_vi": "Ai làm, vì sao hiệu quả",
+     "instruction_vi": "Giải thích ai thực hiện giải pháp và vì sao giải pháp có thể hiệu quả.",
+     "sample_en": ""
+    }
+   ],
+   "vocabulary": [
+    {
+     "phrase_en": "food waste",
+     "meaning_vi": "lãng phí thực phẩm"
+    },
+    {
+     "phrase_en": "lunch portions",
+     "meaning_vi": "khẩu phần ăn trưa"
+    },
+    {
+     "phrase_en": "collect feedback",
+     "meaning_vi": "thu thập ý kiến phản hồi"
+    },
+    {
+     "phrase_en": "reduce waste",
+     "meaning_vi": "giảm lãng phí"
+    }
+   ],
+   "drills": [
+    {
+     "id": "T2-M112-10-D1",
+     "mode": "short_write",
+     "question_vi": "Viết lại đề bằng một câu (paraphrase) mà không làm đổi nghĩa.",
+     "hint_vi": "Đọc lại đề và viết bằng lời của bạn trước khi xem gợi ý."
+    },
+    {
+     "id": "T2-M112-10-D2",
+     "mode": "short_write",
+     "question_vi": "Viết một câu thesis rõ ràng, trả lời trực tiếp mọi phần của đề.",
+     "hint_vi": "Đọc lại đề và viết bằng lời của bạn trước khi xem gợi ý."
+    },
+    {
+     "id": "T2-M112-10-D3",
+     "mode": "short_write",
+     "question_vi": "Viết câu chủ đề và phần giải thích cho một ý hỗ trợ.",
+     "hint_vi": "Đọc lại đề và viết bằng lời của bạn trước khi xem gợi ý."
+    },
+    {
+     "id": "T2-M112-10-D4",
+     "mode": "short_write",
+     "question_vi": "Kiểm tra xem ví dụ của bạn có giải thích được vì sao luận điểm đúng, hay chỉ lặp lại luận điểm.",
+     "hint_vi": "Đọc lại đề và viết bằng lời của bạn trước khi xem gợi ý."
+    }
+   ],
+   "has_model_essay": false
+  },
+  {
+   "id": "T2-M113-02",
+   "pack": "M113",
+   "content_sha256": "572e50b3ee5fd8a4250e5e65582261cb90d605bfcb8fa5860dbea58c319b41a9",
+   "stage": "basic",
+   "target_range": "3.5–4.5",
+   "question_type": "agree_disagree",
+   "topic": "School Gardens",
+   "prompt": "Every primary school should have a small garden where pupils grow plants. To what extent do you agree or disagree?",
+   "minutes": 40,
+   "goal_vi": "Viết mở bài ngắn và một đoạn thân bài có ví dụ.",
+   "target_vi": "Mở bài 2 câu + đoạn thân bài 65–85 từ; sử dụng câu nối đơn giản chính xác.",
+   "steps": [
+    {
+     "title_vi": "Giải mã câu hỏi",
+     "instruction_vi": "Gạch chân động từ yêu cầu và nhận diện đúng dạng đề.",
+     "sample_en": "Every primary school should have a small garden where pupils grow plants. To what extent do you agree or disagree?"
+    },
+    {
+     "title_vi": "Chọn và nhóm ý",
+     "instruction_vi": "Viết hai ý riêng không trùng nhau.",
+     "sample_en": "Idea A: Gardening gives children direct experience of how plants grow. Idea B: It can also encourage shared responsibility."
+    },
+    {
+     "title_vi": "Thêm chuỗi giải thích",
+     "instruction_vi": "Giải thích lý do tại sao ý chính dẫn đến kết quả cụ thể, sau đó cho ví dụ hợp lý.",
+     "sample_en": "Instead of only memorising facts from a textbook, pupils can observe changes over several weeks. Example: A class might compare how seeds grow in sunlight and shade."
+    },
+    {
+     "title_vi": "Giới hạn và kiểm tra logic",
+     "instruction_vi": "Kiểm tra mức độ khẳng định, ý trái chiều và sự thống nhất với kết luận.",
+     "sample_en": "Schools with very little land could use containers or a shared community garden."
+    }
+   ],
+   "vocabulary": [
+    {
+     "phrase_en": "hands-on learning",
+     "meaning_vi": "học thông qua thực hành"
+    },
+    {
+     "phrase_en": "observe plant growth",
+     "meaning_vi": "quan sát sự phát triển của cây"
+    },
+    {
+     "phrase_en": "shared responsibility",
+     "meaning_vi": "trách nhiệm chung"
+    },
+    {
+     "phrase_en": "limited outdoor space",
+     "meaning_vi": "không gian ngoài trời hạn chế"
+    }
+   ],
+   "drills": [
+    {
+     "id": "T2-M113-02-D1",
+     "mode": "identify",
+     "question_vi": "Đề yêu cầu làm gì? Nêu đủ các phần bắt buộc.",
+     "hint_vi": "Xác định yêu cầu của đề và tự viết câu trả lời trước."
+    },
+    {
+     "id": "T2-M113-02-D2",
+     "mode": "idea",
+     "question_vi": "Ghi hai ý đúng trọng tâm, không trùng nhau.",
+     "hint_vi": "Xác định yêu cầu của đề và tự viết câu trả lời trước."
+    },
+    {
+     "id": "T2-M113-02-D3",
+     "mode": "thesis",
+     "question_vi": "Viết thesis/overview đúng nhiệm vụ, không thêm luận điểm chưa có.",
+     "hint_vi": "Xác định yêu cầu của đề và tự viết câu trả lời trước."
+    },
+    {
+     "id": "T2-M113-02-D4",
+     "mode": "causal_chain",
+     "question_vi": "Viết một chuỗi Ý → Vì sao → Ví dụ bằng tiếng Anh.",
+     "hint_vi": "Xác định yêu cầu của đề và tự viết câu trả lời trước."
+    },
+    {
+     "id": "T2-M113-02-D5",
+     "mode": "second_side",
+     "question_vi": "Viết đoạn ý thứ hai kèm lý do và ví dụ; không lặp lại ý đầu.",
+     "hint_vi": "Xác định yêu cầu của đề và tự viết câu trả lời trước."
+    },
+    {
+     "id": "T2-M113-02-D6",
+     "mode": "nuance",
+     "question_vi": "Thêm một giới hạn hoặc điều kiện làm cho lập luận chính xác hơn.",
+     "hint_vi": "Xác định yêu cầu của đề và tự viết câu trả lời trước."
+    },
+    {
+     "id": "T2-M113-02-D7",
+     "mode": "diagnose",
+     "question_vi": "Phát hiện lỗi Task Response cần tránh cho chính đề này.",
+     "hint_vi": "Xác định yêu cầu của đề và tự viết câu trả lời trước."
+    },
+    {
+     "id": "T2-M113-02-D8",
+     "mode": "self_revision",
+     "question_vi": "Đối chiếu kết luận với thesis và tự sửa một cụm khẳng định quá mức.",
+     "hint_vi": "Xác định yêu cầu của đề và tự viết câu trả lời trước."
+    }
+   ],
+   "has_model_essay": false
+  },
+  {
+   "id": "T2-M113-06",
+   "pack": "M113",
+   "content_sha256": "6d793577f22ce7547237283b2eb1643b3322240c8396266c9682c8764094ba0b",
+   "stage": "basic",
+   "target_range": "3.5–4.5",
+   "question_type": "discuss_both_views",
+   "topic": "Science and Arts",
+   "prompt": "Some people believe secondary schools should spend more time teaching science, whereas others think creative subjects are equally important. Discuss both views and give your opinion.",
+   "minutes": 40,
+   "goal_vi": "Viết mở bài ngắn và một đoạn thân bài có ví dụ.",
+   "target_vi": "Mở bài 2 câu + đoạn thân bài 65–85 từ; sử dụng câu nối đơn giản chính xác.",
+   "steps": [
+    {
+     "title_vi": "Giải mã câu hỏi",
+     "instruction_vi": "Gạch chân động từ yêu cầu và nhận diện đúng dạng đề.",
+     "sample_en": "Some people believe secondary schools should spend more time teaching science, whereas others think creative subjects are equally important. Discuss both views and give your opinion."
+    },
+    {
+     "title_vi": "Chọn và nhóm ý",
+     "instruction_vi": "Viết hai ý riêng không trùng nhau.",
+     "sample_en": "Idea A: Science classes develop knowledge used in everyday decisions. Idea B: Creative subjects help students communicate and solve open-ended problems."
+    },
+    {
+     "title_vi": "Thêm chuỗi giải thích",
+     "instruction_vi": "Giải thích lý do tại sao ý chính dẫn đến kết quả cụ thể, sau đó cho ví dụ hợp lý.",
+     "sample_en": "Understanding evidence and basic experiments helps teenagers question unsupported claims. Example: Students who learn about nutrition can compare health information more critically."
+    },
+    {
+     "title_vi": "Giới hạn và kiểm tra logic",
+     "instruction_vi": "Kiểm tra mức độ khẳng định, ý trái chiều và sự thống nhất với kết luận.",
+     "sample_en": "A balanced timetable can protect both without requiring equal hours in every year."
+    }
+   ],
+   "vocabulary": [
+    {
+     "phrase_en": "evidence-based thinking",
+     "meaning_vi": "tư duy dựa trên bằng chứng"
+    },
+    {
+     "phrase_en": "creative subjects",
+     "meaning_vi": "môn học sáng tạo"
+    },
+    {
+     "phrase_en": "balanced timetable",
+     "meaning_vi": "thời khóa biểu cân bằng"
+    },
+    {
+     "phrase_en": "open-ended problem",
+     "meaning_vi": "vấn đề không có một đáp án duy nhất"
+    }
+   ],
+   "drills": [
+    {
+     "id": "T2-M113-06-D1",
+     "mode": "identify",
+     "question_vi": "Đề yêu cầu làm gì? Nêu đủ các phần bắt buộc.",
+     "hint_vi": "Xác định yêu cầu của đề và tự viết câu trả lời trước."
+    },
+    {
+     "id": "T2-M113-06-D2",
+     "mode": "idea",
+     "question_vi": "Ghi hai ý đúng trọng tâm, không trùng nhau.",
+     "hint_vi": "Xác định yêu cầu của đề và tự viết câu trả lời trước."
+    },
+    {
+     "id": "T2-M113-06-D3",
+     "mode": "thesis",
+     "question_vi": "Viết thesis/overview đúng nhiệm vụ, không thêm luận điểm chưa có.",
+     "hint_vi": "Xác định yêu cầu của đề và tự viết câu trả lời trước."
+    },
+    {
+     "id": "T2-M113-06-D4",
+     "mode": "causal_chain",
+     "question_vi": "Viết một chuỗi Ý → Vì sao → Ví dụ bằng tiếng Anh.",
+     "hint_vi": "Xác định yêu cầu của đề và tự viết câu trả lời trước."
+    },
+    {
+     "id": "T2-M113-06-D5",
+     "mode": "second_side",
+     "question_vi": "Viết đoạn ý thứ hai kèm lý do và ví dụ; không lặp lại ý đầu.",
+     "hint_vi": "Xác định yêu cầu của đề và tự viết câu trả lời trước."
+    },
+    {
+     "id": "T2-M113-06-D6",
+     "mode": "nuance",
+     "question_vi": "Thêm một giới hạn hoặc điều kiện làm cho lập luận chính xác hơn.",
+     "hint_vi": "Xác định yêu cầu của đề và tự viết câu trả lời trước."
+    },
+    {
+     "id": "T2-M113-06-D7",
+     "mode": "diagnose",
+     "question_vi": "Phát hiện lỗi Task Response cần tránh cho chính đề này.",
+     "hint_vi": "Xác định yêu cầu của đề và tự viết câu trả lời trước."
+    },
+    {
+     "id": "T2-M113-06-D8",
+     "mode": "self_revision",
+     "question_vi": "Đối chiếu kết luận với thesis và tự sửa một cụm khẳng định quá mức.",
+     "hint_vi": "Xác định yêu cầu của đề và tự viết câu trả lời trước."
+    }
+   ],
+   "has_model_essay": false
+  },
+  {
+   "id": "T2-M113-10",
+   "pack": "M113",
+   "content_sha256": "651b17e54de09eb4142c34b402095141036efc9e51ea34f6a6e263b133482bd9",
+   "stage": "basic",
+   "target_range": "3.5–4.5",
+   "question_type": "advantages_disadvantages",
+   "topic": "Meal Delivery Apps",
+   "prompt": "Ordering cooked meals through smartphone apps has become common in many cities. What are the advantages and disadvantages of this trend?",
+   "minutes": 40,
+   "goal_vi": "Viết mở bài ngắn và một đoạn thân bài có ví dụ.",
+   "target_vi": "Mở bài 2 câu + đoạn thân bài 65–85 từ; sử dụng câu nối đơn giản chính xác.",
+   "steps": [
+    {
+     "title_vi": "Giải mã câu hỏi",
+     "instruction_vi": "Gạch chân động từ yêu cầu và nhận diện đúng dạng đề.",
+     "sample_en": "Ordering cooked meals through smartphone apps has become common in many cities. What are the advantages and disadvantages of this trend?"
+    },
+    {
+     "title_vi": "Chọn và nhóm ý",
+     "instruction_vi": "Viết hai ý riêng không trùng nhau.",
+     "sample_en": "Idea A: Delivery apps help people obtain meals when time is limited. Idea B: Frequent orders may cost more than cooking at home."
+    },
+    {
+     "title_vi": "Thêm chuỗi giải thích",
+     "instruction_vi": "Giải thích lý do tại sao ý chính dẫn đến kết quả cụ thể, sau đó cho ví dụ hợp lý.",
+     "sample_en": "Workers can compare nearby restaurants without travelling during a short break. Example: An employee working late can order dinner directly to the office."
+    },
+    {
+     "title_vi": "Giới hạn và kiểm tra logic",
+     "instruction_vi": "Kiểm tra mức độ khẳng định, ý trái chiều và sự thống nhất với kết luận.",
+     "sample_en": "Occasional use is practical, but relying on apps for every meal can create unhealthy habits."
+    }
+   ],
+   "vocabulary": [
+    {
+     "phrase_en": "delivery fee",
+     "meaning_vi": "phí giao hàng"
+    },
+    {
+     "phrase_en": "wider choice",
+     "meaning_vi": "nhiều lựa chọn hơn"
+    },
+    {
+     "phrase_en": "single-use packaging",
+     "meaning_vi": "bao bì dùng một lần"
+    },
+    {
+     "phrase_en": "rely on takeaways",
+     "meaning_vi": "phụ thuộc vào đồ ăn mang đi"
+    }
+   ],
+   "drills": [
+    {
+     "id": "T2-M113-10-D1",
+     "mode": "identify",
+     "question_vi": "Đề yêu cầu làm gì? Nêu đủ các phần bắt buộc.",
+     "hint_vi": "Xác định yêu cầu của đề và tự viết câu trả lời trước."
+    },
+    {
+     "id": "T2-M113-10-D2",
+     "mode": "idea",
+     "question_vi": "Ghi hai ý đúng trọng tâm, không trùng nhau.",
+     "hint_vi": "Xác định yêu cầu của đề và tự viết câu trả lời trước."
+    },
+    {
+     "id": "T2-M113-10-D3",
+     "mode": "thesis",
+     "question_vi": "Viết thesis/overview đúng nhiệm vụ, không thêm luận điểm chưa có.",
+     "hint_vi": "Xác định yêu cầu của đề và tự viết câu trả lời trước."
+    },
+    {
+     "id": "T2-M113-10-D4",
+     "mode": "causal_chain",
+     "question_vi": "Viết một chuỗi Ý → Vì sao → Ví dụ bằng tiếng Anh.",
+     "hint_vi": "Xác định yêu cầu của đề và tự viết câu trả lời trước."
+    },
+    {
+     "id": "T2-M113-10-D5",
+     "mode": "second_side",
+     "question_vi": "Viết đoạn ý thứ hai kèm lý do và ví dụ; không lặp lại ý đầu.",
+     "hint_vi": "Xác định yêu cầu của đề và tự viết câu trả lời trước."
+    },
+    {
+     "id": "T2-M113-10-D6",
+     "mode": "nuance",
+     "question_vi": "Thêm một giới hạn hoặc điều kiện làm cho lập luận chính xác hơn.",
+     "hint_vi": "Xác định yêu cầu của đề và tự viết câu trả lời trước."
+    },
+    {
+     "id": "T2-M113-10-D7",
+     "mode": "diagnose",
+     "question_vi": "Phát hiện lỗi Task Response cần tránh cho chính đề này.",
+     "hint_vi": "Xác định yêu cầu của đề và tự viết câu trả lời trước."
+    },
+    {
+     "id": "T2-M113-10-D8",
+     "mode": "self_revision",
+     "question_vi": "Đối chiếu kết luận với thesis và tự sửa một cụm khẳng định quá mức.",
+     "hint_vi": "Xác định yêu cầu của đề và tự viết câu trả lời trước."
+    }
+   ],
+   "has_model_essay": false
+  },
+  {
+   "id": "T2-M113-14",
+   "pack": "M113",
+   "content_sha256": "00a1769c91062eee2c9785caa7236be4a85bb08505d990a7aff6b5bc1be72229",
+   "stage": "basic",
+   "target_range": "3.5–4.5",
+   "question_type": "advantages_outweigh_disadvantages",
+   "topic": "Contactless Payments",
+   "prompt": "More small businesses are accepting only contactless payments instead of cash. Do the advantages outweigh the disadvantages?",
+   "minutes": 40,
+   "goal_vi": "Viết mở bài ngắn và một đoạn thân bài có ví dụ.",
+   "target_vi": "Mở bài 2 câu + đoạn thân bài 65–85 từ; sử dụng câu nối đơn giản chính xác.",
+   "steps": [
+    {
+     "title_vi": "Giải mã câu hỏi",
+     "instruction_vi": "Gạch chân động từ yêu cầu và nhận diện đúng dạng đề.",
+     "sample_en": "More small businesses are accepting only contactless payments instead of cash. Do the advantages outweigh the disadvantages?"
+    },
+    {
+     "title_vi": "Chọn và nhóm ý",
+     "instruction_vi": "Viết hai ý riêng không trùng nhau.",
+     "sample_en": "Idea A: Card and phone payments can make transactions faster. Idea B: Cash-only customers may be excluded."
+    },
+    {
+     "title_vi": "Thêm chuỗi giải thích",
+     "instruction_vi": "Giải thích lý do tại sao ý chính dẫn đến kết quả cụ thể, sau đó cho ví dụ hợp lý.",
+     "sample_en": "Staff spend less time counting change and preparing cash at closing. Example: A busy café can serve a line of customers more quickly at lunchtime."
+    },
+    {
+     "title_vi": "Giới hạn và kiểm tra logic",
+     "instruction_vi": "Kiểm tra mức độ khẳng định, ý trái chiều và sự thống nhất với kết luận.",
+     "sample_en": "Accepting both forms may preserve efficiency while keeping the service inclusive."
+    }
+   ],
+   "vocabulary": [
+    {
+     "phrase_en": "contactless transaction",
+     "meaning_vi": "giao dịch không tiếp xúc"
+    },
+    {
+     "phrase_en": "financial inclusion",
+     "meaning_vi": "khả năng tiếp cận tài chính"
+    },
+    {
+     "phrase_en": "count change",
+     "meaning_vi": "đếm tiền thừa"
+    },
+    {
+     "phrase_en": "payment choice",
+     "meaning_vi": "lựa chọn hình thức thanh toán"
+    }
+   ],
+   "drills": [
+    {
+     "id": "T2-M113-14-D1",
+     "mode": "identify",
+     "question_vi": "Đề yêu cầu làm gì? Nêu đủ các phần bắt buộc.",
+     "hint_vi": "Xác định yêu cầu của đề và tự viết câu trả lời trước."
+    },
+    {
+     "id": "T2-M113-14-D2",
+     "mode": "idea",
+     "question_vi": "Ghi hai ý đúng trọng tâm, không trùng nhau.",
+     "hint_vi": "Xác định yêu cầu của đề và tự viết câu trả lời trước."
+    },
+    {
+     "id": "T2-M113-14-D3",
+     "mode": "thesis",
+     "question_vi": "Viết thesis/overview đúng nhiệm vụ, không thêm luận điểm chưa có.",
+     "hint_vi": "Xác định yêu cầu của đề và tự viết câu trả lời trước."
+    },
+    {
+     "id": "T2-M113-14-D4",
+     "mode": "causal_chain",
+     "question_vi": "Viết một chuỗi Ý → Vì sao → Ví dụ bằng tiếng Anh.",
+     "hint_vi": "Xác định yêu cầu của đề và tự viết câu trả lời trước."
+    },
+    {
+     "id": "T2-M113-14-D5",
+     "mode": "second_side",
+     "question_vi": "Viết đoạn ý thứ hai kèm lý do và ví dụ; không lặp lại ý đầu.",
+     "hint_vi": "Xác định yêu cầu của đề và tự viết câu trả lời trước."
+    },
+    {
+     "id": "T2-M113-14-D6",
+     "mode": "nuance",
+     "question_vi": "Thêm một giới hạn hoặc điều kiện làm cho lập luận chính xác hơn.",
+     "hint_vi": "Xác định yêu cầu của đề và tự viết câu trả lời trước."
+    },
+    {
+     "id": "T2-M113-14-D7",
+     "mode": "diagnose",
+     "question_vi": "Phát hiện lỗi Task Response cần tránh cho chính đề này.",
+     "hint_vi": "Xác định yêu cầu của đề và tự viết câu trả lời trước."
+    },
+    {
+     "id": "T2-M113-14-D8",
+     "mode": "self_revision",
+     "question_vi": "Đối chiếu kết luận với thesis và tự sửa một cụm khẳng định quá mức.",
+     "hint_vi": "Xác định yêu cầu của đề và tự viết câu trả lời trước."
+    }
+   ],
+   "has_model_essay": false
+  },
+  {
+   "id": "T2-M113-18",
+   "pack": "M113",
+   "content_sha256": "d994ed5fe9ea0dd1bb9527a1eb2cbb4ca139bfc09816e740de5a770e6cb1f9a8",
+   "stage": "basic",
+   "target_range": "3.5–4.5",
+   "question_type": "causes_solutions",
+   "topic": "Teenage Sleep",
+   "prompt": "Many teenagers do not get enough sleep on school nights. What are the main causes, and what measures could address this problem?",
+   "minutes": 40,
+   "goal_vi": "Viết mở bài ngắn và một đoạn thân bài có ví dụ.",
+   "target_vi": "Mở bài 2 câu + đoạn thân bài 65–85 từ; sử dụng câu nối đơn giản chính xác.",
+   "steps": [
+    {
+     "title_vi": "Giải mã câu hỏi",
+     "instruction_vi": "Gạch chân động từ yêu cầu và nhận diện đúng dạng đề.",
+     "sample_en": "Many teenagers do not get enough sleep on school nights. What are the main causes, and what measures could address this problem?"
+    },
+    {
+     "title_vi": "Chọn và nhóm ý",
+     "instruction_vi": "Viết hai ý riêng không trùng nhau.",
+     "sample_en": "Idea A: Homework and online entertainment can push bedtime later. Idea B: Schools can coordinate deadlines while families establish calmer evening routines."
+    },
+    {
+     "title_vi": "Thêm chuỗi giải thích",
+     "instruction_vi": "Giải thích lý do tại sao ý chính dẫn đến kết quả cụ thể, sau đó cho ví dụ hợp lý.",
+     "sample_en": "Students may keep studying after dinner and then scroll through videos instead of winding down. Example: A teenager with several assignments may stay awake past midnight."
+    },
+    {
+     "title_vi": "Giới hạn và kiểm tra logic",
+     "instruction_vi": "Kiểm tra mức độ khẳng định, ý trái chiều và sự thống nhất với kết luận.",
+     "sample_en": "Changes should be realistic for different family circumstances rather than based on blame."
+    }
+   ],
+   "vocabulary": [
+    {
+     "phrase_en": "school-night sleep",
+     "meaning_vi": "giấc ngủ vào đêm trước ngày học"
+    },
+    {
+     "phrase_en": "assignment deadline",
+     "meaning_vi": "hạn nộp bài"
+    },
+    {
+     "phrase_en": "evening routine",
+     "meaning_vi": "thói quen buổi tối"
+    },
+    {
+     "phrase_en": "consistent bedtime",
+     "meaning_vi": "giờ ngủ ổn định"
+    }
+   ],
+   "drills": [
+    {
+     "id": "T2-M113-18-D1",
+     "mode": "identify",
+     "question_vi": "Đề yêu cầu làm gì? Nêu đủ các phần bắt buộc.",
+     "hint_vi": "Xác định yêu cầu của đề và tự viết câu trả lời trước."
+    },
+    {
+     "id": "T2-M113-18-D2",
+     "mode": "idea",
+     "question_vi": "Ghi hai ý đúng trọng tâm, không trùng nhau.",
+     "hint_vi": "Xác định yêu cầu của đề và tự viết câu trả lời trước."
+    },
+    {
+     "id": "T2-M113-18-D3",
+     "mode": "thesis",
+     "question_vi": "Viết thesis/overview đúng nhiệm vụ, không thêm luận điểm chưa có.",
+     "hint_vi": "Xác định yêu cầu của đề và tự viết câu trả lời trước."
+    },
+    {
+     "id": "T2-M113-18-D4",
+     "mode": "causal_chain",
+     "question_vi": "Viết một chuỗi Ý → Vì sao → Ví dụ bằng tiếng Anh.",
+     "hint_vi": "Xác định yêu cầu của đề và tự viết câu trả lời trước."
+    },
+    {
+     "id": "T2-M113-18-D5",
+     "mode": "second_side",
+     "question_vi": "Viết đoạn ý thứ hai kèm lý do và ví dụ; không lặp lại ý đầu.",
+     "hint_vi": "Xác định yêu cầu của đề và tự viết câu trả lời trước."
+    },
+    {
+     "id": "T2-M113-18-D6",
+     "mode": "nuance",
+     "question_vi": "Thêm một giới hạn hoặc điều kiện làm cho lập luận chính xác hơn.",
+     "hint_vi": "Xác định yêu cầu của đề và tự viết câu trả lời trước."
+    },
+    {
+     "id": "T2-M113-18-D7",
+     "mode": "diagnose",
+     "question_vi": "Phát hiện lỗi Task Response cần tránh cho chính đề này.",
+     "hint_vi": "Xác định yêu cầu của đề và tự viết câu trả lời trước."
+    },
+    {
+     "id": "T2-M113-18-D8",
+     "mode": "self_revision",
+     "question_vi": "Đối chiếu kết luận với thesis và tự sửa một cụm khẳng định quá mức.",
+     "hint_vi": "Xác định yêu cầu của đề và tự viết câu trả lời trước."
+    }
+   ],
+   "has_model_essay": false
+  },
+  {
+   "id": "T2-M113-22",
+   "pack": "M113",
+   "content_sha256": "e881f18bbfb8029e3f674269525c3e354ee005f797c780d2ab38554fbca63f0d",
+   "stage": "basic",
+   "target_range": "3.5–4.5",
+   "question_type": "double_question",
+   "topic": "Gap Year",
+   "prompt": "Some students take a year off after finishing secondary school before entering university. Why do they do this? What should they consider before deciding?",
+   "minutes": 40,
+   "goal_vi": "Viết mở bài ngắn và một đoạn thân bài có ví dụ.",
+   "target_vi": "Mở bài 2 câu + đoạn thân bài 65–85 từ; sử dụng câu nối đơn giản chính xác.",
+   "steps": [
+    {
+     "title_vi": "Giải mã câu hỏi",
+     "instruction_vi": "Gạch chân động từ yêu cầu và nhận diện đúng dạng đề.",
+     "sample_en": "Some students take a year off after finishing secondary school before entering university. Why do they do this? What should they consider before deciding?"
+    },
+    {
+     "title_vi": "Chọn và nhóm ý",
+     "instruction_vi": "Viết hai ý riêng không trùng nhau.",
+     "sample_en": "Idea A: A gap year can help school-leavers explore study and career options. Idea B: They should consider the cost and the risk of losing study habits."
+    },
+    {
+     "title_vi": "Thêm chuỗi giải thích",
+     "instruction_vi": "Giải thích lý do tại sao ý chính dẫn đến kết quả cụ thể, sau đó cho ví dụ hợp lý.",
+     "sample_en": "Working or volunteering introduces them to activities not covered in school. Example: A student interested in hospitality might work at a small hotel for several months."
+    },
+    {
+     "title_vi": "Giới hạn và kiểm tra logic",
+     "instruction_vi": "Kiểm tra mức độ khẳng định, ý trái chiều và sự thống nhất với kết luận.",
+     "sample_en": "The year is most useful when linked to a specific purpose rather than treated as an automatic route to maturity."
+    }
+   ],
+   "vocabulary": [
+    {
+     "phrase_en": "take a gap year",
+     "meaning_vi": "nghỉ một năm trước đại học"
+    },
+    {
+     "phrase_en": "career exploration",
+     "meaning_vi": "khám phá nghề nghiệp"
+    },
+    {
+     "phrase_en": "realistic budget",
+     "meaning_vi": "ngân sách thực tế"
+    },
+    {
+     "phrase_en": "re-enter education",
+     "meaning_vi": "quay lại học tập"
+    }
+   ],
+   "drills": [
+    {
+     "id": "T2-M113-22-D1",
+     "mode": "identify",
+     "question_vi": "Đề yêu cầu làm gì? Nêu đủ các phần bắt buộc.",
+     "hint_vi": "Xác định yêu cầu của đề và tự viết câu trả lời trước."
+    },
+    {
+     "id": "T2-M113-22-D2",
+     "mode": "idea",
+     "question_vi": "Ghi hai ý đúng trọng tâm, không trùng nhau.",
+     "hint_vi": "Xác định yêu cầu của đề và tự viết câu trả lời trước."
+    },
+    {
+     "id": "T2-M113-22-D3",
+     "mode": "thesis",
+     "question_vi": "Viết thesis/overview đúng nhiệm vụ, không thêm luận điểm chưa có.",
+     "hint_vi": "Xác định yêu cầu của đề và tự viết câu trả lời trước."
+    },
+    {
+     "id": "T2-M113-22-D4",
+     "mode": "causal_chain",
+     "question_vi": "Viết một chuỗi Ý → Vì sao → Ví dụ bằng tiếng Anh.",
+     "hint_vi": "Xác định yêu cầu của đề và tự viết câu trả lời trước."
+    },
+    {
+     "id": "T2-M113-22-D5",
+     "mode": "second_side",
+     "question_vi": "Viết đoạn ý thứ hai kèm lý do và ví dụ; không lặp lại ý đầu.",
+     "hint_vi": "Xác định yêu cầu của đề và tự viết câu trả lời trước."
+    },
+    {
+     "id": "T2-M113-22-D6",
+     "mode": "nuance",
+     "question_vi": "Thêm một giới hạn hoặc điều kiện làm cho lập luận chính xác hơn.",
+     "hint_vi": "Xác định yêu cầu của đề và tự viết câu trả lời trước."
+    },
+    {
+     "id": "T2-M113-22-D7",
+     "mode": "diagnose",
+     "question_vi": "Phát hiện lỗi Task Response cần tránh cho chính đề này.",
+     "hint_vi": "Xác định yêu cầu của đề và tự viết câu trả lời trước."
+    },
+    {
+     "id": "T2-M113-22-D8",
+     "mode": "self_revision",
+     "question_vi": "Đối chiếu kết luận với thesis và tự sửa một cụm khẳng định quá mức.",
+     "hint_vi": "Xác định yêu cầu của đề và tự viết câu trả lời trước."
+    }
+   ],
+   "has_model_essay": true
+  },
+  {
+   "id": "T2-M112-02",
+   "pack": "M112",
+   "content_sha256": "7bff46d1c376cd2fe68f7c2cd78afbad0d3c0f7ed519ae06194e2d2a442b0675",
+   "stage": "developing",
+   "target_range": "5.0–6.0",
+   "question_type": "agree_disagree",
+   "topic": "Online Homework",
+   "prompt": "Schools should stop giving students homework because online learning tools are now widely available. To what extent do you agree or disagree?",
+   "minutes": 55,
+   "goal_vi": "Nêu một lập trường rõ ràng và giữ nhất quán đến hết bài.",
+   "target_vi": "Viết câu/đoạn theo hướng dẫn; không chấm band từ bài ngắn.",
+   "steps": [
+    {
+     "title_vi": "Giải mã câu hỏi",
+     "instruction_vi": "Gạch chân các từ thể hiện lập trường trong đề.",
+     "sample_en": ""
+    },
+    {
+     "title_vi": "Chọn lập trường",
+     "instruction_vi": "Chọn đồng ý hoàn toàn, phản đối, hoặc đồng ý có điều kiện.",
+     "sample_en": ""
+    },
+    {
+     "title_vi": "Phát triển lý do",
+     "instruction_vi": "Phát triển hai lý do cùng ủng hộ một lập trường.",
+     "sample_en": ""
+    },
+    {
+     "title_vi": "Kiểm tra kết luận",
+     "instruction_vi": "Kiểm tra kết luận có khớp với câu thesis.",
+     "sample_en": ""
+    }
+   ],
+   "vocabulary": [
+    {
+     "phrase_en": "purposeful tasks",
+     "meaning_vi": "bài tập có mục đích rõ ràng"
+    },
+    {
+     "phrase_en": "independent practice",
+     "meaning_vi": "tự luyện tập"
+    },
+    {
+     "phrase_en": "repetitive worksheets",
+     "meaning_vi": "phiếu bài tập lặp đi lặp lại"
+    },
+    {
+     "phrase_en": "useful feedback",
+     "meaning_vi": "nhận xét hữu ích"
+    }
+   ],
+   "drills": [
+    {
+     "id": "T2-M112-02-D1",
+     "mode": "short_write",
+     "question_vi": "Viết lại đề bằng một câu (paraphrase) mà không làm đổi nghĩa.",
+     "hint_vi": "Đọc lại đề và viết bằng lời của bạn trước khi xem gợi ý."
+    },
+    {
+     "id": "T2-M112-02-D2",
+     "mode": "short_write",
+     "question_vi": "Viết một câu thesis rõ ràng, trả lời trực tiếp mọi phần của đề.",
+     "hint_vi": "Đọc lại đề và viết bằng lời của bạn trước khi xem gợi ý."
+    },
+    {
+     "id": "T2-M112-02-D3",
+     "mode": "short_write",
+     "question_vi": "Viết câu chủ đề và phần giải thích cho một ý hỗ trợ.",
+     "hint_vi": "Đọc lại đề và viết bằng lời của bạn trước khi xem gợi ý."
+    },
+    {
+     "id": "T2-M112-02-D4",
+     "mode": "short_write",
+     "question_vi": "Kiểm tra xem ví dụ của bạn có giải thích được vì sao luận điểm đúng, hay chỉ lặp lại luận điểm.",
+     "hint_vi": "Đọc lại đề và viết bằng lời của bạn trước khi xem gợi ý."
+    }
+   ],
+   "has_model_essay": false
+  },
+  {
+   "id": "T2-M112-05",
+   "pack": "M112",
+   "content_sha256": "fcfbd09bda66bcaab8aefab75e091eeea724d841f638feed45b080327a2f6725",
+   "stage": "developing",
+   "target_range": "5.0–6.0",
+   "question_type": "discuss_both_views",
+   "topic": "Career Choice",
+   "prompt": "Some people say graduates should choose jobs with high salaries. Others believe job satisfaction is more important. Discuss both views and give your opinion.",
+   "minutes": 55,
+   "goal_vi": "Giải thích từng quan điểm trước khi nêu ý kiến của bạn.",
+   "target_vi": "Viết câu/đoạn theo hướng dẫn; không chấm band từ bài ngắn.",
+   "steps": [
+    {
+     "title_vi": "Xác định hai quan điểm",
+     "instruction_vi": "Xác định hai quan điểm đối lập trong đề.",
+     "sample_en": ""
+    },
+    {
+     "title_vi": "Giải thích công bằng",
+     "instruction_vi": "Viết một lời giải thích công bằng cho mỗi bên.",
+     "sample_en": ""
+    },
+    {
+     "title_vi": "Chọn ý kiến riêng",
+     "instruction_vi": "Chọn ý kiến của bạn dựa trên một tiêu chí rõ ràng.",
+     "sample_en": ""
+    },
+    {
+     "title_vi": "Kết nối ở kết luận",
+     "instruction_vi": "Dùng kết luận để nối lại hai quan điểm với ý kiến của bạn.",
+     "sample_en": ""
+    }
+   ],
+   "vocabulary": [
+    {
+     "phrase_en": "financial stability",
+     "meaning_vi": "sự ổn định tài chính"
+    },
+    {
+     "phrase_en": "competitive salary",
+     "meaning_vi": "mức lương cạnh tranh"
+    },
+    {
+     "phrase_en": "remain motivated",
+     "meaning_vi": "duy trì động lực"
+    },
+    {
+     "phrase_en": "balance both considerations",
+     "meaning_vi": "cân bằng cả hai yếu tố"
+    }
+   ],
+   "drills": [
+    {
+     "id": "T2-M112-05-D1",
+     "mode": "short_write",
+     "question_vi": "Viết lại đề bằng một câu (paraphrase) mà không làm đổi nghĩa.",
+     "hint_vi": "Đọc lại đề và viết bằng lời của bạn trước khi xem gợi ý."
+    },
+    {
+     "id": "T2-M112-05-D2",
+     "mode": "short_write",
+     "question_vi": "Viết một câu thesis rõ ràng, trả lời trực tiếp mọi phần của đề.",
+     "hint_vi": "Đọc lại đề và viết bằng lời của bạn trước khi xem gợi ý."
+    },
+    {
+     "id": "T2-M112-05-D3",
+     "mode": "short_write",
+     "question_vi": "Viết câu chủ đề và phần giải thích cho một ý hỗ trợ.",
+     "hint_vi": "Đọc lại đề và viết bằng lời của bạn trước khi xem gợi ý."
+    },
+    {
+     "id": "T2-M112-05-D4",
+     "mode": "short_write",
+     "question_vi": "Kiểm tra xem ví dụ của bạn có giải thích được vì sao luận điểm đúng, hay chỉ lặp lại luận điểm.",
+     "hint_vi": "Đọc lại đề và viết bằng lời của bạn trước khi xem gợi ý."
+    }
+   ],
+   "has_model_essay": false
+  },
+  {
+   "id": "T2-M112-08",
+   "pack": "M112",
+   "content_sha256": "9889282718aa5385a3bbbfa9686103d71501003c285fdd17848344158f6bc4d4",
+   "stage": "developing",
+   "target_range": "5.0–6.0",
+   "question_type": "advantages_disadvantages",
+   "topic": "Flexible Work",
+   "prompt": "Many companies allow employees to work flexible hours. What are the advantages and disadvantages of this development?",
+   "minutes": 55,
+   "goal_vi": "Đánh giá lợi ích và bất lợi một cách cụ thể.",
+   "target_vi": "Viết câu/đoạn theo hướng dẫn; không chấm band từ bài ngắn.",
+   "steps": [
+    {
+     "title_vi": "Nêu một lợi ích",
+     "instruction_vi": "Nêu một lợi ích cụ thể và ai được hưởng lợi.",
+     "sample_en": ""
+    },
+    {
+     "title_vi": "Nêu một bất lợi",
+     "instruction_vi": "Nêu một bất lợi cụ thể và ai chịu ảnh hưởng.",
+     "sample_en": ""
+    },
+    {
+     "title_vi": "Giải thích nhân quả",
+     "instruction_vi": "Phát triển mỗi ý bằng một chuỗi nguyên nhân – kết quả.",
+     "sample_en": ""
+    },
+    {
+     "title_vi": "Đúng phạm vi đề",
+     "instruction_vi": "Không tự thêm nhận định lợi nhiều hơn hại nếu đề không hỏi.",
+     "sample_en": ""
+    }
+   ],
+   "vocabulary": [
+    {
+     "phrase_en": "employee autonomy",
+     "meaning_vi": "quyền tự chủ của nhân viên"
+    },
+    {
+     "phrase_en": "coordinate meetings",
+     "meaning_vi": "sắp xếp các cuộc họp"
+    },
+    {
+     "phrase_en": "time zones",
+     "meaning_vi": "múi giờ"
+    },
+    {
+     "phrase_en": "shared working hours",
+     "meaning_vi": "khung giờ làm việc chung"
+    }
+   ],
+   "drills": [
+    {
+     "id": "T2-M112-08-D1",
+     "mode": "short_write",
+     "question_vi": "Viết lại đề bằng một câu (paraphrase) mà không làm đổi nghĩa.",
+     "hint_vi": "Đọc lại đề và viết bằng lời của bạn trước khi xem gợi ý."
+    },
+    {
+     "id": "T2-M112-08-D2",
+     "mode": "short_write",
+     "question_vi": "Viết một câu thesis rõ ràng, trả lời trực tiếp mọi phần của đề.",
+     "hint_vi": "Đọc lại đề và viết bằng lời của bạn trước khi xem gợi ý."
+    },
+    {
+     "id": "T2-M112-08-D3",
+     "mode": "short_write",
+     "question_vi": "Viết câu chủ đề và phần giải thích cho một ý hỗ trợ.",
+     "hint_vi": "Đọc lại đề và viết bằng lời của bạn trước khi xem gợi ý."
+    },
+    {
+     "id": "T2-M112-08-D4",
+     "mode": "short_write",
+     "question_vi": "Kiểm tra xem ví dụ của bạn có giải thích được vì sao luận điểm đúng, hay chỉ lặp lại luận điểm.",
+     "hint_vi": "Đọc lại đề và viết bằng lời của bạn trước khi xem gợi ý."
+    }
+   ],
+   "has_model_essay": false
+  },
+  {
+   "id": "T2-M112-11",
+   "pack": "M112",
+   "content_sha256": "48bd46967fc81734686f24d8e46f53cb907129b7ce82ad21b3a549fd01434907",
+   "stage": "developing",
+   "target_range": "5.0–6.0",
+   "question_type": "problem_solution",
+   "topic": "Traffic Congestion",
+   "prompt": "Traffic congestion is becoming more serious in many growing towns. What are the main causes, and what measures could solve this problem?",
+   "minutes": 55,
+   "goal_vi": "Tách rõ nguyên nhân và đưa ra giải pháp khả thi.",
+   "target_vi": "Viết câu/đoạn theo hướng dẫn; không chấm band từ bài ngắn.",
+   "steps": [
+    {
+     "title_vi": "Tách nguyên nhân",
+     "instruction_vi": "Phân biệt nguyên nhân với hậu quả của vấn đề.",
+     "sample_en": ""
+    },
+    {
+     "title_vi": "Chọn hai nguyên nhân",
+     "instruction_vi": "Chọn hai nguyên nhân hợp lý, không trùng nhau.",
+     "sample_en": ""
+    },
+    {
+     "title_vi": "Ghép giải pháp",
+     "instruction_vi": "Ghép mỗi giải pháp với một nguyên nhân cụ thể.",
+     "sample_en": ""
+    },
+    {
+     "title_vi": "Ai làm, vì sao hiệu quả",
+     "instruction_vi": "Giải thích ai thực hiện giải pháp và vì sao giải pháp có thể hiệu quả.",
+     "sample_en": ""
+    }
+   ],
+   "vocabulary": [
+    {
+     "phrase_en": "private car ownership",
+     "meaning_vi": "việc sở hữu ô tô cá nhân"
+    },
+    {
+     "phrase_en": "road networks",
+     "meaning_vi": "mạng lưới đường sá"
+    },
+    {
+     "phrase_en": "integrated tickets",
+     "meaning_vi": "vé liên thông"
+    },
+    {
+     "phrase_en": "peak times",
+     "meaning_vi": "giờ cao điểm"
+    }
+   ],
+   "drills": [
+    {
+     "id": "T2-M112-11-D1",
+     "mode": "short_write",
+     "question_vi": "Viết lại đề bằng một câu (paraphrase) mà không làm đổi nghĩa.",
+     "hint_vi": "Đọc lại đề và viết bằng lời của bạn trước khi xem gợi ý."
+    },
+    {
+     "id": "T2-M112-11-D2",
+     "mode": "short_write",
+     "question_vi": "Viết một câu thesis rõ ràng, trả lời trực tiếp mọi phần của đề.",
+     "hint_vi": "Đọc lại đề và viết bằng lời của bạn trước khi xem gợi ý."
+    },
+    {
+     "id": "T2-M112-11-D3",
+     "mode": "short_write",
+     "question_vi": "Viết câu chủ đề và phần giải thích cho một ý hỗ trợ.",
+     "hint_vi": "Đọc lại đề và viết bằng lời của bạn trước khi xem gợi ý."
+    },
+    {
+     "id": "T2-M112-11-D4",
+     "mode": "short_write",
+     "question_vi": "Kiểm tra xem ví dụ của bạn có giải thích được vì sao luận điểm đúng, hay chỉ lặp lại luận điểm.",
+     "hint_vi": "Đọc lại đề và viết bằng lời của bạn trước khi xem gợi ý."
+    }
+   ],
+   "has_model_essay": false
+  },
+  {
+   "id": "T2-M113-03",
+   "pack": "M113",
+   "content_sha256": "00e3adcc9a701c818ef8f7b93b4ff8f1c783078561fd4d9ee6b5598a85f0796a",
+   "stage": "developing",
+   "target_range": "5.0–6.0",
+   "question_type": "agree_disagree",
+   "topic": "Protected Cycle Lanes",
+   "prompt": "To reduce rush-hour traffic, city governments should prioritise protected bicycle lanes over building more roads for cars. To what extent do you agree or disagree?",
+   "minutes": 65,
+   "goal_vi": "Lập dàn ý và viết các đoạn thân bài liên kết hợp lý.",
+   "target_vi": "Dàn ý hai đoạn và bài nháp 250+ từ; ưu tiên phát triển ý trước khi nâng từ vựng.",
+   "steps": [
+    {
+     "title_vi": "Giải mã câu hỏi",
+     "instruction_vi": "Gạch chân động từ yêu cầu và nhận diện đúng dạng đề.",
+     "sample_en": "To reduce rush-hour traffic, city governments should prioritise protected bicycle lanes over building more roads for cars. To what extent do you agree or disagree?"
+    },
+    {
+     "title_vi": "Chọn và nhóm ý",
+     "instruction_vi": "Viết hai ý riêng không trùng nhau.",
+     "sample_en": "Idea A: Protected cycle lanes can make short journeys by bicycle safer and more attractive. Idea B: Building roads alone may not deliver long-term congestion relief."
+    },
+    {
+     "title_vi": "Thêm chuỗi giải thích",
+     "instruction_vi": "Giải thích lý do tại sao ý chính dẫn đến kết quả cụ thể, sau đó cho ví dụ hợp lý.",
+     "sample_en": "Physical separation reduces conflict with cars, especially at busy times when people are choosing how to travel. Example: An office worker living three kilometres away may cycle if the route avoids fast-moving traffic."
+    },
+    {
+     "title_vi": "Giới hạn và kiểm tra logic",
+     "instruction_vi": "Kiểm tra mức độ khẳng định, ý trái chiều và sự thống nhất với kết luận.",
+     "sample_en": "Cycle lanes should connect to stations and be paired with reliable buses for longer trips."
+    }
+   ],
+   "vocabulary": [
+    {
+     "phrase_en": "protected cycle lane",
+     "meaning_vi": "làn xe đạp được bảo vệ"
+    },
+    {
+     "phrase_en": "rush-hour congestion",
+     "meaning_vi": "ùn tắc giờ cao điểm"
+    },
+    {
+     "phrase_en": "short-distance journey",
+     "meaning_vi": "chuyến đi ngắn"
+    },
+    {
+     "phrase_en": "additional road capacity",
+     "meaning_vi": "năng lực đường sá bổ sung"
+    }
+   ],
+   "drills": [
+    {
+     "id": "T2-M113-03-D1",
+     "mode": "identify",
+     "question_vi": "Đề yêu cầu làm gì? Nêu đủ các phần bắt buộc.",
+     "hint_vi": "Xác định yêu cầu của đề và tự viết câu trả lời trước."
+    },
+    {
+     "id": "T2-M113-03-D2",
+     "mode": "idea",
+     "question_vi": "Ghi hai ý đúng trọng tâm, không trùng nhau.",
+     "hint_vi": "Xác định yêu cầu của đề và tự viết câu trả lời trước."
+    },
+    {
+     "id": "T2-M113-03-D3",
+     "mode": "thesis",
+     "question_vi": "Viết thesis/overview đúng nhiệm vụ, không thêm luận điểm chưa có.",
+     "hint_vi": "Xác định yêu cầu của đề và tự viết câu trả lời trước."
+    },
+    {
+     "id": "T2-M113-03-D4",
+     "mode": "causal_chain",
+     "question_vi": "Viết một chuỗi Ý → Vì sao → Ví dụ bằng tiếng Anh.",
+     "hint_vi": "Xác định yêu cầu của đề và tự viết câu trả lời trước."
+    },
+    {
+     "id": "T2-M113-03-D5",
+     "mode": "second_side",
+     "question_vi": "Viết đoạn ý thứ hai kèm lý do và ví dụ; không lặp lại ý đầu.",
+     "hint_vi": "Xác định yêu cầu của đề và tự viết câu trả lời trước."
+    },
+    {
+     "id": "T2-M113-03-D6",
+     "mode": "nuance",
+     "question_vi": "Thêm một giới hạn hoặc điều kiện làm cho lập luận chính xác hơn.",
+     "hint_vi": "Xác định yêu cầu của đề và tự viết câu trả lời trước."
+    },
+    {
+     "id": "T2-M113-03-D7",
+     "mode": "diagnose",
+     "question_vi": "Phát hiện lỗi Task Response cần tránh cho chính đề này.",
+     "hint_vi": "Xác định yêu cầu của đề và tự viết câu trả lời trước."
+    },
+    {
+     "id": "T2-M113-03-D8",
+     "mode": "self_revision",
+     "question_vi": "Đối chiếu kết luận với thesis và tự sửa một cụm khẳng định quá mức.",
+     "hint_vi": "Xác định yêu cầu của đề và tự viết câu trả lời trước."
+    }
+   ],
+   "has_model_essay": false
+  },
+  {
+   "id": "T2-M113-07",
+   "pack": "M113",
+   "content_sha256": "e5f27c91d263c5f5ccc8075a8085953d58fdfbfadb8e4cdec5202e3986e9efee",
+   "stage": "developing",
+   "target_range": "5.0–6.0",
+   "question_type": "discuss_both_views",
+   "topic": "Local and Online News",
+   "prompt": "Some people think residents are better informed by local newspapers, while others consider online news platforms more useful. Discuss both views and give your opinion.",
+   "minutes": 65,
+   "goal_vi": "Lập dàn ý và viết các đoạn thân bài liên kết hợp lý.",
+   "target_vi": "Dàn ý hai đoạn và bài nháp 250+ từ; ưu tiên phát triển ý trước khi nâng từ vựng.",
+   "steps": [
+    {
+     "title_vi": "Giải mã câu hỏi",
+     "instruction_vi": "Gạch chân động từ yêu cầu và nhận diện đúng dạng đề.",
+     "sample_en": "Some people think residents are better informed by local newspapers, while others consider online news platforms more useful. Discuss both views and give your opinion."
+    },
+    {
+     "title_vi": "Chọn và nhóm ý",
+     "instruction_vi": "Viết hai ý riêng không trùng nhau.",
+     "sample_en": "Idea A: Local newspapers can investigate issues that directly affect residents. Idea B: Online platforms make updates easier to find and compare."
+    },
+    {
+     "title_vi": "Thêm chuỗi giải thích",
+     "instruction_vi": "Giải thích lý do tại sao ý chính dẫn đến kết quả cụ thể, sau đó cho ví dụ hợp lý.",
+     "sample_en": "Reporters attending council meetings may explain decisions that large national outlets overlook. Example: A local article could clarify why a neighbourhood bus route is being changed."
+    },
+    {
+     "title_vi": "Giới hạn và kiểm tra logic",
+     "instruction_vi": "Kiểm tra mức độ khẳng định, ý trái chiều và sự thống nhất với kết luận.",
+     "sample_en": "Reliability depends on editorial standards and verification, not simply on whether a report appears on paper or a screen."
+    }
+   ],
+   "vocabulary": [
+    {
+     "phrase_en": "local accountability",
+     "meaning_vi": "trách nhiệm giải trình tại địa phương"
+    },
+    {
+     "phrase_en": "timely updates",
+     "meaning_vi": "cập nhật kịp thời"
+    },
+    {
+     "phrase_en": "editorial standards",
+     "meaning_vi": "tiêu chuẩn biên tập"
+    },
+    {
+     "phrase_en": "verify a claim",
+     "meaning_vi": "xác minh thông tin"
+    }
+   ],
+   "drills": [
+    {
+     "id": "T2-M113-07-D1",
+     "mode": "identify",
+     "question_vi": "Đề yêu cầu làm gì? Nêu đủ các phần bắt buộc.",
+     "hint_vi": "Xác định yêu cầu của đề và tự viết câu trả lời trước."
+    },
+    {
+     "id": "T2-M113-07-D2",
+     "mode": "idea",
+     "question_vi": "Ghi hai ý đúng trọng tâm, không trùng nhau.",
+     "hint_vi": "Xác định yêu cầu của đề và tự viết câu trả lời trước."
+    },
+    {
+     "id": "T2-M113-07-D3",
+     "mode": "thesis",
+     "question_vi": "Viết thesis/overview đúng nhiệm vụ, không thêm luận điểm chưa có.",
+     "hint_vi": "Xác định yêu cầu của đề và tự viết câu trả lời trước."
+    },
+    {
+     "id": "T2-M113-07-D4",
+     "mode": "causal_chain",
+     "question_vi": "Viết một chuỗi Ý → Vì sao → Ví dụ bằng tiếng Anh.",
+     "hint_vi": "Xác định yêu cầu của đề và tự viết câu trả lời trước."
+    },
+    {
+     "id": "T2-M113-07-D5",
+     "mode": "second_side",
+     "question_vi": "Viết đoạn ý thứ hai kèm lý do và ví dụ; không lặp lại ý đầu.",
+     "hint_vi": "Xác định yêu cầu của đề và tự viết câu trả lời trước."
+    },
+    {
+     "id": "T2-M113-07-D6",
+     "mode": "nuance",
+     "question_vi": "Thêm một giới hạn hoặc điều kiện làm cho lập luận chính xác hơn.",
+     "hint_vi": "Xác định yêu cầu của đề và tự viết câu trả lời trước."
+    },
+    {
+     "id": "T2-M113-07-D7",
+     "mode": "diagnose",
+     "question_vi": "Phát hiện lỗi Task Response cần tránh cho chính đề này.",
+     "hint_vi": "Xác định yêu cầu của đề và tự viết câu trả lời trước."
+    },
+    {
+     "id": "T2-M113-07-D8",
+     "mode": "self_revision",
+     "question_vi": "Đối chiếu kết luận với thesis và tự sửa một cụm khẳng định quá mức.",
+     "hint_vi": "Xác định yêu cầu của đề và tự viết câu trả lời trước."
+    }
+   ],
+   "has_model_essay": false
+  },
+  {
+   "id": "T2-M113-11",
+   "pack": "M113",
+   "content_sha256": "5159015dfc588c53a39e37a7a78d0917bf5cff4d973accca9155f4dfcdbf4c09",
+   "stage": "developing",
+   "target_range": "5.0–6.0",
+   "question_type": "advantages_disadvantages",
+   "topic": "Four-day Working Week",
+   "prompt": "An increasing number of employers are experimenting with a four-day working week without reducing employees’ total pay. What are the advantages and disadvantages for businesses and workers?",
+   "minutes": 65,
+   "goal_vi": "Lập dàn ý và viết các đoạn thân bài liên kết hợp lý.",
+   "target_vi": "Dàn ý hai đoạn và bài nháp 250+ từ; ưu tiên phát triển ý trước khi nâng từ vựng.",
+   "steps": [
+    {
+     "title_vi": "Giải mã câu hỏi",
+     "instruction_vi": "Gạch chân động từ yêu cầu và nhận diện đúng dạng đề.",
+     "sample_en": "An increasing number of employers are experimenting with a four-day working week without reducing employees’ total pay. What are the advantages and disadvantages for businesses and workers?"
+    },
+    {
+     "title_vi": "Chọn và nhóm ý",
+     "instruction_vi": "Viết hai ý riêng không trùng nhau.",
+     "sample_en": "Idea A: An extra rest day may improve employee well-being and retention. Idea B: Maintaining service levels can be difficult in customer-facing sectors."
+    },
+    {
+     "title_vi": "Thêm chuỗi giải thích",
+     "instruction_vi": "Giải thích lý do tại sao ý chính dẫn đến kết quả cụ thể, sau đó cho ví dụ hợp lý.",
+     "sample_en": "Workers have more time for caring responsibilities and recovery, which could lower burnout. Example: A parent might manage appointments without repeatedly requesting leave."
+    },
+    {
+     "title_vi": "Giới hạn và kiểm tra logic",
+     "instruction_vi": "Kiểm tra mức độ khẳng định, ý trái chiều và sự thống nhất với kết luận.",
+     "sample_en": "Benefits depend on workload design and measurable output, not merely a change to the calendar."
+    }
+   ],
+   "vocabulary": [
+    {
+     "phrase_en": "employee retention",
+     "meaning_vi": "giữ chân nhân viên"
+    },
+    {
+     "phrase_en": "service coverage",
+     "meaning_vi": "khả năng duy trì phục vụ"
+    },
+    {
+     "phrase_en": "redesign shifts",
+     "meaning_vi": "thiết kế lại ca làm việc"
+    },
+    {
+     "phrase_en": "compressed workload",
+     "meaning_vi": "khối lượng công việc dồn nén"
+    }
+   ],
+   "drills": [
+    {
+     "id": "T2-M113-11-D1",
+     "mode": "identify",
+     "question_vi": "Đề yêu cầu làm gì? Nêu đủ các phần bắt buộc.",
+     "hint_vi": "Xác định yêu cầu của đề và tự viết câu trả lời trước."
+    },
+    {
+     "id": "T2-M113-11-D2",
+     "mode": "idea",
+     "question_vi": "Ghi hai ý đúng trọng tâm, không trùng nhau.",
+     "hint_vi": "Xác định yêu cầu của đề và tự viết câu trả lời trước."
+    },
+    {
+     "id": "T2-M113-11-D3",
+     "mode": "thesis",
+     "question_vi": "Viết thesis/overview đúng nhiệm vụ, không thêm luận điểm chưa có.",
+     "hint_vi": "Xác định yêu cầu của đề và tự viết câu trả lời trước."
+    },
+    {
+     "id": "T2-M113-11-D4",
+     "mode": "causal_chain",
+     "question_vi": "Viết một chuỗi Ý → Vì sao → Ví dụ bằng tiếng Anh.",
+     "hint_vi": "Xác định yêu cầu của đề và tự viết câu trả lời trước."
+    },
+    {
+     "id": "T2-M113-11-D5",
+     "mode": "second_side",
+     "question_vi": "Viết đoạn ý thứ hai kèm lý do và ví dụ; không lặp lại ý đầu.",
+     "hint_vi": "Xác định yêu cầu của đề và tự viết câu trả lời trước."
+    },
+    {
+     "id": "T2-M113-11-D6",
+     "mode": "nuance",
+     "question_vi": "Thêm một giới hạn hoặc điều kiện làm cho lập luận chính xác hơn.",
+     "hint_vi": "Xác định yêu cầu của đề và tự viết câu trả lời trước."
+    },
+    {
+     "id": "T2-M113-11-D7",
+     "mode": "diagnose",
+     "question_vi": "Phát hiện lỗi Task Response cần tránh cho chính đề này.",
+     "hint_vi": "Xác định yêu cầu của đề và tự viết câu trả lời trước."
+    },
+    {
+     "id": "T2-M113-11-D8",
+     "mode": "self_revision",
+     "question_vi": "Đối chiếu kết luận với thesis và tự sửa một cụm khẳng định quá mức.",
+     "hint_vi": "Xác định yêu cầu của đề và tự viết câu trả lời trước."
+    }
+   ],
+   "has_model_essay": true
+  },
+  {
+   "id": "T2-M113-15",
+   "pack": "M113",
+   "content_sha256": "197a00eea63ed1a85b0870da7ba948710fdc69d856fd1157d326eb718d623440",
+   "stage": "developing",
+   "target_range": "5.0–6.0",
+   "question_type": "advantages_outweigh_disadvantages",
+   "topic": "Car-free City Centres",
+   "prompt": "Some cities plan to restrict private cars from their central shopping streets. Do the advantages of these restrictions outweigh the disadvantages?",
+   "minutes": 65,
+   "goal_vi": "Lập dàn ý và viết các đoạn thân bài liên kết hợp lý.",
+   "target_vi": "Dàn ý hai đoạn và bài nháp 250+ từ; ưu tiên phát triển ý trước khi nâng từ vựng.",
+   "steps": [
+    {
+     "title_vi": "Giải mã câu hỏi",
+     "instruction_vi": "Gạch chân động từ yêu cầu và nhận diện đúng dạng đề.",
+     "sample_en": "Some cities plan to restrict private cars from their central shopping streets. Do the advantages of these restrictions outweigh the disadvantages?"
+    },
+    {
+     "title_vi": "Chọn và nhóm ý",
+     "instruction_vi": "Viết hai ý riêng không trùng nhau.",
+     "sample_en": "Idea A: Fewer private vehicles can improve street safety and walking conditions. Idea B: Restrictions may inconvenience some shoppers and traders."
+    },
+    {
+     "title_vi": "Thêm chuỗi giải thích",
+     "instruction_vi": "Giải thích lý do tại sao ý chính dẫn đến kết quả cụ thể, sau đó cho ví dụ hợp lý.",
+     "sample_en": "Pedestrians have more space, and businesses may benefit from people staying longer in calmer streets. Example: A shopping lane could add benches and outdoor seating where cars used to park."
+    },
+    {
+     "title_vi": "Giới hạn và kiểm tra logic",
+     "instruction_vi": "Kiểm tra mức độ khẳng định, ý trái chiều và sự thống nhất với kết luận.",
+     "sample_en": "Exemptions for disability access, delivery hours and transport alternatives are critical to a fair scheme."
+    }
+   ],
+   "vocabulary": [
+    {
+     "phrase_en": "pedestrian-friendly street",
+     "meaning_vi": "đường phố thân thiện người đi bộ"
+    },
+    {
+     "phrase_en": "timed delivery access",
+     "meaning_vi": "khung giờ giao nhận hàng"
+    },
+    {
+     "phrase_en": "disability exemption",
+     "meaning_vi": "ngoại lệ cho người khuyết tật"
+    },
+    {
+     "phrase_en": "long-term public benefit",
+     "meaning_vi": "lợi ích công cộng dài hạn"
+    }
+   ],
+   "drills": [
+    {
+     "id": "T2-M113-15-D1",
+     "mode": "identify",
+     "question_vi": "Đề yêu cầu làm gì? Nêu đủ các phần bắt buộc.",
+     "hint_vi": "Xác định yêu cầu của đề và tự viết câu trả lời trước."
+    },
+    {
+     "id": "T2-M113-15-D2",
+     "mode": "idea",
+     "question_vi": "Ghi hai ý đúng trọng tâm, không trùng nhau.",
+     "hint_vi": "Xác định yêu cầu của đề và tự viết câu trả lời trước."
+    },
+    {
+     "id": "T2-M113-15-D3",
+     "mode": "thesis",
+     "question_vi": "Viết thesis/overview đúng nhiệm vụ, không thêm luận điểm chưa có.",
+     "hint_vi": "Xác định yêu cầu của đề và tự viết câu trả lời trước."
+    },
+    {
+     "id": "T2-M113-15-D4",
+     "mode": "causal_chain",
+     "question_vi": "Viết một chuỗi Ý → Vì sao → Ví dụ bằng tiếng Anh.",
+     "hint_vi": "Xác định yêu cầu của đề và tự viết câu trả lời trước."
+    },
+    {
+     "id": "T2-M113-15-D5",
+     "mode": "second_side",
+     "question_vi": "Viết đoạn ý thứ hai kèm lý do và ví dụ; không lặp lại ý đầu.",
+     "hint_vi": "Xác định yêu cầu của đề và tự viết câu trả lời trước."
+    },
+    {
+     "id": "T2-M113-15-D6",
+     "mode": "nuance",
+     "question_vi": "Thêm một giới hạn hoặc điều kiện làm cho lập luận chính xác hơn.",
+     "hint_vi": "Xác định yêu cầu của đề và tự viết câu trả lời trước."
+    },
+    {
+     "id": "T2-M113-15-D7",
+     "mode": "diagnose",
+     "question_vi": "Phát hiện lỗi Task Response cần tránh cho chính đề này.",
+     "hint_vi": "Xác định yêu cầu của đề và tự viết câu trả lời trước."
+    },
+    {
+     "id": "T2-M113-15-D8",
+     "mode": "self_revision",
+     "question_vi": "Đối chiếu kết luận với thesis và tự sửa một cụm khẳng định quá mức.",
+     "hint_vi": "Xác định yêu cầu của đề và tự viết câu trả lời trước."
+    }
+   ],
+   "has_model_essay": true
+  },
+  {
+   "id": "T2-M113-19",
+   "pack": "M113",
+   "content_sha256": "c4a8b77210fe234fe38a537aea9342c23592c0e2263faa25fe22aa7f80c8cb09",
+   "stage": "developing",
+   "target_range": "5.0–6.0",
+   "question_type": "causes_solutions",
+   "topic": "Restaurant Food Waste",
+   "prompt": "Restaurants in many cities throw away considerable amounts of edible food. What are the causes of this problem, and what solutions could reduce it?",
+   "minutes": 65,
+   "goal_vi": "Lập dàn ý và viết các đoạn thân bài liên kết hợp lý.",
+   "target_vi": "Dàn ý hai đoạn và bài nháp 250+ từ; ưu tiên phát triển ý trước khi nâng từ vựng.",
+   "steps": [
+    {
+     "title_vi": "Giải mã câu hỏi",
+     "instruction_vi": "Gạch chân động từ yêu cầu và nhận diện đúng dạng đề.",
+     "sample_en": "Restaurants in many cities throw away considerable amounts of edible food. What are the causes of this problem, and what solutions could reduce it?"
+    },
+    {
+     "title_vi": "Chọn và nhóm ý",
+     "instruction_vi": "Viết hai ý riêng không trùng nhau.",
+     "sample_en": "Idea A: Restaurants prepare extra food to avoid running out during busy periods. Idea B: Tracking demand and offering smaller portions can reduce avoidable leftovers."
+    },
+    {
+     "title_vi": "Thêm chuỗi giải thích",
+     "instruction_vi": "Giải thích lý do tại sao ý chính dẫn đến kết quả cụ thể, sau đó cho ví dụ hợp lý.",
+     "sample_en": "Demand changes with weather and local events, so managers may prefer surplus to disappointing customers. Example: A café may bake too many pastries on a rainy weekend when fewer people arrive."
+    },
+    {
+     "title_vi": "Giới hạn và kiểm tra logic",
+     "instruction_vi": "Kiểm tra mức độ khẳng định, ý trái chiều và sự thống nhất với kết luận.",
+     "sample_en": "Safe donation of surplus food may help but cannot replace preventing waste at the source."
+    }
+   ],
+   "vocabulary": [
+    {
+     "phrase_en": "demand forecasting",
+     "meaning_vi": "dự báo nhu cầu"
+    },
+    {
+     "phrase_en": "oversized portions",
+     "meaning_vi": "khẩu phần quá lớn"
+    },
+    {
+     "phrase_en": "avoidable surplus",
+     "meaning_vi": "lượng dư thừa có thể tránh"
+    },
+    {
+     "phrase_en": "food-safety standards",
+     "meaning_vi": "tiêu chuẩn an toàn thực phẩm"
+    }
+   ],
+   "drills": [
+    {
+     "id": "T2-M113-19-D1",
+     "mode": "identify",
+     "question_vi": "Đề yêu cầu làm gì? Nêu đủ các phần bắt buộc.",
+     "hint_vi": "Xác định yêu cầu của đề và tự viết câu trả lời trước."
+    },
+    {
+     "id": "T2-M113-19-D2",
+     "mode": "idea",
+     "question_vi": "Ghi hai ý đúng trọng tâm, không trùng nhau.",
+     "hint_vi": "Xác định yêu cầu của đề và tự viết câu trả lời trước."
+    },
+    {
+     "id": "T2-M113-19-D3",
+     "mode": "thesis",
+     "question_vi": "Viết thesis/overview đúng nhiệm vụ, không thêm luận điểm chưa có.",
+     "hint_vi": "Xác định yêu cầu của đề và tự viết câu trả lời trước."
+    },
+    {
+     "id": "T2-M113-19-D4",
+     "mode": "causal_chain",
+     "question_vi": "Viết một chuỗi Ý → Vì sao → Ví dụ bằng tiếng Anh.",
+     "hint_vi": "Xác định yêu cầu của đề và tự viết câu trả lời trước."
+    },
+    {
+     "id": "T2-M113-19-D5",
+     "mode": "second_side",
+     "question_vi": "Viết đoạn ý thứ hai kèm lý do và ví dụ; không lặp lại ý đầu.",
+     "hint_vi": "Xác định yêu cầu của đề và tự viết câu trả lời trước."
+    },
+    {
+     "id": "T2-M113-19-D6",
+     "mode": "nuance",
+     "question_vi": "Thêm một giới hạn hoặc điều kiện làm cho lập luận chính xác hơn.",
+     "hint_vi": "Xác định yêu cầu của đề và tự viết câu trả lời trước."
+    },
+    {
+     "id": "T2-M113-19-D7",
+     "mode": "diagnose",
+     "question_vi": "Phát hiện lỗi Task Response cần tránh cho chính đề này.",
+     "hint_vi": "Xác định yêu cầu của đề và tự viết câu trả lời trước."
+    },
+    {
+     "id": "T2-M113-19-D8",
+     "mode": "self_revision",
+     "question_vi": "Đối chiếu kết luận với thesis và tự sửa một cụm khẳng định quá mức.",
+     "hint_vi": "Xác định yêu cầu của đề và tự viết câu trả lời trước."
+    }
+   ],
+   "has_model_essay": true
+  },
+  {
+   "id": "T2-M113-23",
+   "pack": "M113",
+   "content_sha256": "06ca90876f23c628b19f5d70f8fced35621bfc1472ccbcc170b50a30619ef563",
+   "stage": "developing",
+   "target_range": "5.0–6.0",
+   "question_type": "double_question",
+   "topic": "Student Housing",
+   "prompt": "In many university towns, students increasingly rent accommodation close to campus instead of living with their families. What factors influence this decision? How can it affect students’ academic lives?",
+   "minutes": 65,
+   "goal_vi": "Lập dàn ý và viết các đoạn thân bài liên kết hợp lý.",
+   "target_vi": "Dàn ý hai đoạn và bài nháp 250+ từ; ưu tiên phát triển ý trước khi nâng từ vựng.",
+   "steps": [
+    {
+     "title_vi": "Giải mã câu hỏi",
+     "instruction_vi": "Gạch chân động từ yêu cầu và nhận diện đúng dạng đề.",
+     "sample_en": "In many university towns, students increasingly rent accommodation close to campus instead of living with their families. What factors influence this decision? How can it affect students’ academic lives?"
+    },
+    {
+     "title_vi": "Chọn và nhóm ý",
+     "instruction_vi": "Viết hai ý riêng không trùng nhau.",
+     "sample_en": "Idea A: A long commute and the wish for independence often encourage students to rent near campus. Idea B: Accommodation choices influence study time and concentration."
+    },
+    {
+     "title_vi": "Thêm chuỗi giải thích",
+     "instruction_vi": "Giải thích lý do tại sao ý chính dẫn đến kết quả cụ thể, sau đó cho ví dụ hợp lý.",
+     "sample_en": "Living nearby makes early classes and evening study groups easier to attend. Example: A first-year student may choose shared housing after finding that commuting takes two hours each day."
+    },
+    {
+     "title_vi": "Giới hạn và kiểm tra logic",
+     "instruction_vi": "Kiểm tra mức độ khẳng định, ý trái chiều và sự thống nhất với kết luận.",
+     "sample_en": "Affordable campus housing and transport concessions can help students choose without excessive financial pressure."
+    }
+   ],
+   "vocabulary": [
+    {
+     "phrase_en": "commuting burden",
+     "meaning_vi": "gánh nặng đi lại"
+    },
+    {
+     "phrase_en": "shared accommodation",
+     "meaning_vi": "nhà ở ghép"
+    },
+    {
+     "phrase_en": "academic routine",
+     "meaning_vi": "nề nếp học tập"
+    },
+    {
+     "phrase_en": "rent pressure",
+     "meaning_vi": "áp lực tiền thuê nhà"
+    }
+   ],
+   "drills": [
+    {
+     "id": "T2-M113-23-D1",
+     "mode": "identify",
+     "question_vi": "Đề yêu cầu làm gì? Nêu đủ các phần bắt buộc.",
+     "hint_vi": "Xác định yêu cầu của đề và tự viết câu trả lời trước."
+    },
+    {
+     "id": "T2-M113-23-D2",
+     "mode": "idea",
+     "question_vi": "Ghi hai ý đúng trọng tâm, không trùng nhau.",
+     "hint_vi": "Xác định yêu cầu của đề và tự viết câu trả lời trước."
+    },
+    {
+     "id": "T2-M113-23-D3",
+     "mode": "thesis",
+     "question_vi": "Viết thesis/overview đúng nhiệm vụ, không thêm luận điểm chưa có.",
+     "hint_vi": "Xác định yêu cầu của đề và tự viết câu trả lời trước."
+    },
+    {
+     "id": "T2-M113-23-D4",
+     "mode": "causal_chain",
+     "question_vi": "Viết một chuỗi Ý → Vì sao → Ví dụ bằng tiếng Anh.",
+     "hint_vi": "Xác định yêu cầu của đề và tự viết câu trả lời trước."
+    },
+    {
+     "id": "T2-M113-23-D5",
+     "mode": "second_side",
+     "question_vi": "Viết đoạn ý thứ hai kèm lý do và ví dụ; không lặp lại ý đầu.",
+     "hint_vi": "Xác định yêu cầu của đề và tự viết câu trả lời trước."
+    },
+    {
+     "id": "T2-M113-23-D6",
+     "mode": "nuance",
+     "question_vi": "Thêm một giới hạn hoặc điều kiện làm cho lập luận chính xác hơn.",
+     "hint_vi": "Xác định yêu cầu của đề và tự viết câu trả lời trước."
+    },
+    {
+     "id": "T2-M113-23-D7",
+     "mode": "diagnose",
+     "question_vi": "Phát hiện lỗi Task Response cần tránh cho chính đề này.",
+     "hint_vi": "Xác định yêu cầu của đề và tự viết câu trả lời trước."
+    },
+    {
+     "id": "T2-M113-23-D8",
+     "mode": "self_revision",
+     "question_vi": "Đối chiếu kết luận với thesis và tự sửa một cụm khẳng định quá mức.",
+     "hint_vi": "Xác định yêu cầu của đề và tự viết câu trả lời trước."
+    }
+   ],
+   "has_model_essay": false
+  },
+  {
+   "id": "T2-M112-03",
+   "pack": "M112",
+   "content_sha256": "9849064092e6ced0ca70ed622667e0a98a9974f4dddf7314f3ab27fbc1fcbfe4",
+   "stage": "advanced",
+   "target_range": "6.5–7.5+",
+   "question_type": "agree_disagree",
+   "topic": "Urban Green Space",
+   "prompt": "Some argue that cities should prioritise housing construction over protecting existing public green spaces. To what extent do you agree or disagree?",
+   "minutes": 65,
+   "goal_vi": "Nêu một lập trường rõ ràng và giữ nhất quán đến hết bài.",
+   "target_vi": "Viết câu/đoạn theo hướng dẫn; không chấm band từ bài ngắn.",
+   "steps": [
+    {
+     "title_vi": "Giải mã câu hỏi",
+     "instruction_vi": "Gạch chân các từ thể hiện lập trường trong đề.",
+     "sample_en": ""
+    },
+    {
+     "title_vi": "Chọn lập trường",
+     "instruction_vi": "Chọn đồng ý hoàn toàn, phản đối, hoặc đồng ý có điều kiện.",
+     "sample_en": ""
+    },
+    {
+     "title_vi": "Phát triển lý do",
+     "instruction_vi": "Phát triển hai lý do cùng ủng hộ một lập trường.",
+     "sample_en": ""
+    },
+    {
+     "title_vi": "Kiểm tra kết luận",
+     "instruction_vi": "Kiểm tra kết luận có khớp với câu thesis.",
+     "sample_en": ""
+    }
+   ],
+   "vocabulary": [
+    {
+     "phrase_en": "short-sighted response",
+     "meaning_vi": "cách xử lý thiển cận"
+    },
+    {
+     "phrase_en": "urban parks",
+     "meaning_vi": "công viên đô thị"
+    },
+    {
+     "phrase_en": "heat exposure",
+     "meaning_vi": "mức độ chịu nắng nóng"
+    },
+    {
+     "phrase_en": "underused sites",
+     "meaning_vi": "khu đất ít được sử dụng"
+    }
+   ],
+   "drills": [
+    {
+     "id": "T2-M112-03-D1",
+     "mode": "short_write",
+     "question_vi": "Viết lại đề bằng một câu (paraphrase) mà không làm đổi nghĩa.",
+     "hint_vi": "Đọc lại đề và viết bằng lời của bạn trước khi xem gợi ý."
+    },
+    {
+     "id": "T2-M112-03-D2",
+     "mode": "short_write",
+     "question_vi": "Viết một câu thesis rõ ràng, trả lời trực tiếp mọi phần của đề.",
+     "hint_vi": "Đọc lại đề và viết bằng lời của bạn trước khi xem gợi ý."
+    },
+    {
+     "id": "T2-M112-03-D3",
+     "mode": "short_write",
+     "question_vi": "Viết câu chủ đề và phần giải thích cho một ý hỗ trợ.",
+     "hint_vi": "Đọc lại đề và viết bằng lời của bạn trước khi xem gợi ý."
+    },
+    {
+     "id": "T2-M112-03-D4",
+     "mode": "short_write",
+     "question_vi": "Kiểm tra xem ví dụ của bạn có giải thích được vì sao luận điểm đúng, hay chỉ lặp lại luận điểm.",
+     "hint_vi": "Đọc lại đề và viết bằng lời của bạn trước khi xem gợi ý."
+    }
+   ],
+   "has_model_essay": false
+  },
+  {
+   "id": "T2-M112-06",
+   "pack": "M112",
+   "content_sha256": "ad64f282629da08019a3b8710a06a658228b6c3ba54531ac449ce5b4099a87a8",
+   "stage": "advanced",
+   "target_range": "6.5–7.5+",
+   "question_type": "discuss_both_views",
+   "topic": "Scientific Funding",
+   "prompt": "Some believe public research funding should focus on immediate social needs, while others support investment in basic scientific research. Discuss both views and give your opinion.",
+   "minutes": 65,
+   "goal_vi": "Giải thích từng quan điểm trước khi nêu ý kiến của bạn.",
+   "target_vi": "Viết câu/đoạn theo hướng dẫn; không chấm band từ bài ngắn.",
+   "steps": [
+    {
+     "title_vi": "Xác định hai quan điểm",
+     "instruction_vi": "Xác định hai quan điểm đối lập trong đề.",
+     "sample_en": ""
+    },
+    {
+     "title_vi": "Giải thích công bằng",
+     "instruction_vi": "Viết một lời giải thích công bằng cho mỗi bên.",
+     "sample_en": ""
+    },
+    {
+     "title_vi": "Chọn ý kiến riêng",
+     "instruction_vi": "Chọn ý kiến của bạn dựa trên một tiêu chí rõ ràng.",
+     "sample_en": ""
+    },
+    {
+     "title_vi": "Kết nối ở kết luận",
+     "instruction_vi": "Dùng kết luận để nối lại hai quan điểm với ý kiến của bạn.",
+     "sample_en": ""
+    }
+   ],
+   "vocabulary": [
+    {
+     "phrase_en": "applied research",
+     "meaning_vi": "nghiên cứu ứng dụng"
+    },
+    {
+     "phrase_en": "predefined outcomes",
+     "meaning_vi": "kết quả được định sẵn"
+    },
+    {
+     "phrase_en": "fundamental investigations",
+     "meaning_vi": "nghiên cứu nền tảng"
+    },
+    {
+     "phrase_en": "balanced funding model",
+     "meaning_vi": "mô hình phân bổ kinh phí cân bằng"
+    }
+   ],
+   "drills": [
+    {
+     "id": "T2-M112-06-D1",
+     "mode": "short_write",
+     "question_vi": "Viết lại đề bằng một câu (paraphrase) mà không làm đổi nghĩa.",
+     "hint_vi": "Đọc lại đề và viết bằng lời của bạn trước khi xem gợi ý."
+    },
+    {
+     "id": "T2-M112-06-D2",
+     "mode": "short_write",
+     "question_vi": "Viết một câu thesis rõ ràng, trả lời trực tiếp mọi phần của đề.",
+     "hint_vi": "Đọc lại đề và viết bằng lời của bạn trước khi xem gợi ý."
+    },
+    {
+     "id": "T2-M112-06-D3",
+     "mode": "short_write",
+     "question_vi": "Viết câu chủ đề và phần giải thích cho một ý hỗ trợ.",
+     "hint_vi": "Đọc lại đề và viết bằng lời của bạn trước khi xem gợi ý."
+    },
+    {
+     "id": "T2-M112-06-D4",
+     "mode": "short_write",
+     "question_vi": "Kiểm tra xem ví dụ của bạn có giải thích được vì sao luận điểm đúng, hay chỉ lặp lại luận điểm.",
+     "hint_vi": "Đọc lại đề và viết bằng lời của bạn trước khi xem gợi ý."
+    }
+   ],
+   "has_model_essay": true
+  },
+  {
+   "id": "T2-M112-09",
+   "pack": "M112",
+   "content_sha256": "909d19716eb54c617eab054411040861d3b40c1bba741620c90d48a28b27adc7",
+   "stage": "advanced",
+   "target_range": "6.5–7.5+",
+   "question_type": "advantages_disadvantages",
+   "topic": "Urban Tourism",
+   "prompt": "Historic city centres are attracting increasing numbers of international visitors. What are the advantages and disadvantages for local communities?",
+   "minutes": 65,
+   "goal_vi": "Đánh giá lợi ích và bất lợi một cách cụ thể.",
+   "target_vi": "Viết câu/đoạn theo hướng dẫn; không chấm band từ bài ngắn.",
+   "steps": [
+    {
+     "title_vi": "Nêu một lợi ích",
+     "instruction_vi": "Nêu một lợi ích cụ thể và ai được hưởng lợi.",
+     "sample_en": ""
+    },
+    {
+     "title_vi": "Nêu một bất lợi",
+     "instruction_vi": "Nêu một bất lợi cụ thể và ai chịu ảnh hưởng.",
+     "sample_en": ""
+    },
+    {
+     "title_vi": "Giải thích nhân quả",
+     "instruction_vi": "Phát triển mỗi ý bằng một chuỗi nguyên nhân – kết quả.",
+     "sample_en": ""
+    },
+    {
+     "title_vi": "Đúng phạm vi đề",
+     "instruction_vi": "Không tự thêm nhận định lợi nhiều hơn hại nếu đề không hỏi.",
+     "sample_en": ""
+    }
+   ],
+   "vocabulary": [
+    {
+     "phrase_en": "heritage preservation",
+     "meaning_vi": "bảo tồn di sản"
+    },
+    {
+     "phrase_en": "financial incentive",
+     "meaning_vi": "động lực tài chính"
+    },
+    {
+     "phrase_en": "short-term rentals",
+     "meaning_vi": "cho thuê ngắn hạn"
+    },
+    {
+     "phrase_en": "community networks",
+     "meaning_vi": "mạng lưới cộng đồng"
+    }
+   ],
+   "drills": [
+    {
+     "id": "T2-M112-09-D1",
+     "mode": "short_write",
+     "question_vi": "Viết lại đề bằng một câu (paraphrase) mà không làm đổi nghĩa.",
+     "hint_vi": "Đọc lại đề và viết bằng lời của bạn trước khi xem gợi ý."
+    },
+    {
+     "id": "T2-M112-09-D2",
+     "mode": "short_write",
+     "question_vi": "Viết một câu thesis rõ ràng, trả lời trực tiếp mọi phần của đề.",
+     "hint_vi": "Đọc lại đề và viết bằng lời của bạn trước khi xem gợi ý."
+    },
+    {
+     "id": "T2-M112-09-D3",
+     "mode": "short_write",
+     "question_vi": "Viết câu chủ đề và phần giải thích cho một ý hỗ trợ.",
+     "hint_vi": "Đọc lại đề và viết bằng lời của bạn trước khi xem gợi ý."
+    },
+    {
+     "id": "T2-M112-09-D4",
+     "mode": "short_write",
+     "question_vi": "Kiểm tra xem ví dụ của bạn có giải thích được vì sao luận điểm đúng, hay chỉ lặp lại luận điểm.",
+     "hint_vi": "Đọc lại đề và viết bằng lời của bạn trước khi xem gợi ý."
+    }
+   ],
+   "has_model_essay": false
+  },
+  {
+   "id": "T2-M112-12",
+   "pack": "M112",
+   "content_sha256": "5cf884a152979500cc5abba5ac9d297232ed6840a2a03e160a297ad1af59e653",
+   "stage": "advanced",
+   "target_range": "6.5–7.5+",
+   "question_type": "problem_solution",
+   "topic": "Digital Misinformation",
+   "prompt": "Misleading information spreads rapidly through online communities. What factors contribute to this problem, and what solutions are most likely to be effective?",
+   "minutes": 65,
+   "goal_vi": "Tách rõ nguyên nhân và đưa ra giải pháp khả thi.",
+   "target_vi": "Viết câu/đoạn theo hướng dẫn; không chấm band từ bài ngắn.",
+   "steps": [
+    {
+     "title_vi": "Tách nguyên nhân",
+     "instruction_vi": "Phân biệt nguyên nhân với hậu quả của vấn đề.",
+     "sample_en": ""
+    },
+    {
+     "title_vi": "Chọn hai nguyên nhân",
+     "instruction_vi": "Chọn hai nguyên nhân hợp lý, không trùng nhau.",
+     "sample_en": ""
+    },
+    {
+     "title_vi": "Ghép giải pháp",
+     "instruction_vi": "Ghép mỗi giải pháp với một nguyên nhân cụ thể.",
+     "sample_en": ""
+    },
+    {
+     "title_vi": "Ai làm, vì sao hiệu quả",
+     "instruction_vi": "Giải thích ai thực hiện giải pháp và vì sao giải pháp có thể hiệu quả.",
+     "sample_en": ""
+    }
+   ],
+   "vocabulary": [
+    {
+     "phrase_en": "misleading material",
+     "meaning_vi": "nội dung gây hiểu lầm"
+    },
+    {
+     "phrase_en": "engagement-driven systems",
+     "meaning_vi": "hệ thống ưu tiên lượt tương tác"
+    },
+    {
+     "phrase_en": "assessing evidence",
+     "meaning_vi": "đánh giá bằng chứng"
+    },
+    {
+     "phrase_en": "tracing sources",
+     "meaning_vi": "truy nguồn thông tin"
+    }
+   ],
+   "drills": [
+    {
+     "id": "T2-M112-12-D1",
+     "mode": "short_write",
+     "question_vi": "Viết lại đề bằng một câu (paraphrase) mà không làm đổi nghĩa.",
+     "hint_vi": "Đọc lại đề và viết bằng lời của bạn trước khi xem gợi ý."
+    },
+    {
+     "id": "T2-M112-12-D2",
+     "mode": "short_write",
+     "question_vi": "Viết một câu thesis rõ ràng, trả lời trực tiếp mọi phần của đề.",
+     "hint_vi": "Đọc lại đề và viết bằng lời của bạn trước khi xem gợi ý."
+    },
+    {
+     "id": "T2-M112-12-D3",
+     "mode": "short_write",
+     "question_vi": "Viết câu chủ đề và phần giải thích cho một ý hỗ trợ.",
+     "hint_vi": "Đọc lại đề và viết bằng lời của bạn trước khi xem gợi ý."
+    },
+    {
+     "id": "T2-M112-12-D4",
+     "mode": "short_write",
+     "question_vi": "Kiểm tra xem ví dụ của bạn có giải thích được vì sao luận điểm đúng, hay chỉ lặp lại luận điểm.",
+     "hint_vi": "Đọc lại đề và viết bằng lời của bạn trước khi xem gợi ý."
+    }
+   ],
+   "has_model_essay": true
+  },
+  {
+   "id": "T2-M113-04",
+   "pack": "M113",
+   "content_sha256": "19aaba5a85ff570b2a8793a6725c6184e609469ecf21d96febe536ad34818188",
+   "stage": "advanced",
+   "target_range": "6.5–7.5+",
+   "question_type": "agree_disagree",
+   "topic": "Public Libraries",
+   "prompt": "As digital information becomes easier to access, governments should reduce spending on physical public libraries and invest mainly in online resources. To what extent do you agree or disagree?",
+   "minutes": 65,
+   "goal_vi": "Viết trọn bài 250+ từ, kiểm soát lập luận, ngoại lệ và kết luận.",
+   "target_vi": "Bài đầy đủ 250+ từ, phản hồi đúng mọi ý, có so sánh/ngoại lệ khi cần.",
+   "steps": [
+    {
+     "title_vi": "Giải mã câu hỏi",
+     "instruction_vi": "Gạch chân động từ yêu cầu và nhận diện đúng dạng đề.",
+     "sample_en": "As digital information becomes easier to access, governments should reduce spending on physical public libraries and invest mainly in online resources. To what extent do you agree or disagree?"
+    },
+    {
+     "title_vi": "Chọn và nhóm ý",
+     "instruction_vi": "Viết hai ý riêng không trùng nhau.",
+     "sample_en": "Idea A: Physical libraries provide more than access to books. Idea B: Digital resources expand access but cannot eliminate inequalities by themselves."
+    },
+    {
+     "title_vi": "Thêm chuỗi giải thích",
+     "instruction_vi": "Giải thích lý do tại sao ý chính dẫn đến kết quả cụ thể, sau đó cho ví dụ hợp lý.",
+     "sample_en": "They offer quiet study space, trained guidance and computers to people who cannot easily obtain these at home. Example: A student sharing a small apartment may depend on a library desk to prepare for examinations."
+    },
+    {
+     "title_vi": "Giới hạn và kiểm tra logic",
+     "instruction_vi": "Kiểm tra mức độ khẳng định, ý trái chiều và sự thống nhất với kết luận.",
+     "sample_en": "Libraries should add e-books and remote services while protecting a basic network of physical branches."
+    }
+   ],
+   "vocabulary": [
+    {
+     "phrase_en": "public learning infrastructure",
+     "meaning_vi": "hạ tầng học tập công cộng"
+    },
+    {
+     "phrase_en": "digital exclusion",
+     "meaning_vi": "tình trạng bị gạt ra ngoài môi trường số"
+    },
+    {
+     "phrase_en": "information literacy",
+     "meaning_vi": "năng lực đánh giá thông tin"
+    },
+    {
+     "phrase_en": "physical branch network",
+     "meaning_vi": "mạng lưới thư viện trực tiếp"
+    }
+   ],
+   "drills": [
+    {
+     "id": "T2-M113-04-D1",
+     "mode": "identify",
+     "question_vi": "Đề yêu cầu làm gì? Nêu đủ các phần bắt buộc.",
+     "hint_vi": "Xác định yêu cầu của đề và tự viết câu trả lời trước."
+    },
+    {
+     "id": "T2-M113-04-D2",
+     "mode": "idea",
+     "question_vi": "Ghi hai ý đúng trọng tâm, không trùng nhau.",
+     "hint_vi": "Xác định yêu cầu của đề và tự viết câu trả lời trước."
+    },
+    {
+     "id": "T2-M113-04-D3",
+     "mode": "thesis",
+     "question_vi": "Viết thesis/overview đúng nhiệm vụ, không thêm luận điểm chưa có.",
+     "hint_vi": "Xác định yêu cầu của đề và tự viết câu trả lời trước."
+    },
+    {
+     "id": "T2-M113-04-D4",
+     "mode": "causal_chain",
+     "question_vi": "Viết một chuỗi Ý → Vì sao → Ví dụ bằng tiếng Anh.",
+     "hint_vi": "Xác định yêu cầu của đề và tự viết câu trả lời trước."
+    },
+    {
+     "id": "T2-M113-04-D5",
+     "mode": "second_side",
+     "question_vi": "Viết đoạn ý thứ hai kèm lý do và ví dụ; không lặp lại ý đầu.",
+     "hint_vi": "Xác định yêu cầu của đề và tự viết câu trả lời trước."
+    },
+    {
+     "id": "T2-M113-04-D6",
+     "mode": "nuance",
+     "question_vi": "Thêm một giới hạn hoặc điều kiện làm cho lập luận chính xác hơn.",
+     "hint_vi": "Xác định yêu cầu của đề và tự viết câu trả lời trước."
+    },
+    {
+     "id": "T2-M113-04-D7",
+     "mode": "diagnose",
+     "question_vi": "Phát hiện lỗi Task Response cần tránh cho chính đề này.",
+     "hint_vi": "Xác định yêu cầu của đề và tự viết câu trả lời trước."
+    },
+    {
+     "id": "T2-M113-04-D8",
+     "mode": "self_revision",
+     "question_vi": "Đối chiếu kết luận với thesis và tự sửa một cụm khẳng định quá mức.",
+     "hint_vi": "Xác định yêu cầu của đề và tự viết câu trả lời trước."
+    }
+   ],
+   "has_model_essay": true
+  },
+  {
+   "id": "T2-M113-08",
+   "pack": "M113",
+   "content_sha256": "0cbdc3082e5079278e16f7043ed96eec99bb2a7f2c07ed4a8a88ddd31c5c6fb6",
+   "stage": "advanced",
+   "target_range": "6.5–7.5+",
+   "question_type": "discuss_both_views",
+   "topic": "Specialist and Broad Degrees",
+   "prompt": "Some argue that university students should specialise in one discipline from their first year, while others believe they should study several subjects before choosing a major. Discuss both views and give your opinion.",
+   "minutes": 65,
+   "goal_vi": "Viết trọn bài 250+ từ, kiểm soát lập luận, ngoại lệ và kết luận.",
+   "target_vi": "Bài đầy đủ 250+ từ, phản hồi đúng mọi ý, có so sánh/ngoại lệ khi cần.",
+   "steps": [
+    {
+     "title_vi": "Giải mã câu hỏi",
+     "instruction_vi": "Gạch chân động từ yêu cầu và nhận diện đúng dạng đề.",
+     "sample_en": "Some argue that university students should specialise in one discipline from their first year, while others believe they should study several subjects before choosing a major. Discuss both views and give your opinion."
+    },
+    {
+     "title_vi": "Chọn và nhóm ý",
+     "instruction_vi": "Viết hai ý riêng không trùng nhau.",
+     "sample_en": "Idea A: Specialisation offers a clear route to advanced expertise. Idea B: A broader first year gives students information about their abilities and interests."
+    },
+    {
+     "title_vi": "Thêm chuỗi giải thích",
+     "instruction_vi": "Giải thích lý do tại sao ý chính dẫn đến kết quả cụ thể, sau đó cho ví dụ hợp lý.",
+     "sample_en": "Students in highly sequential fields may need foundational knowledge early to progress into complex material. Example: Engineering students benefit from mastering core mathematics before taking specialised design modules."
+    },
+    {
+     "title_vi": "Giới hạn và kiểm tra logic",
+     "instruction_vi": "Kiểm tra mức độ khẳng định, ý trái chiều và sự thống nhất với kết luận.",
+     "sample_en": "A flexible model can preserve mandatory foundations for regulated courses while allowing choice in other programmes."
+    }
+   ],
+   "vocabulary": [
+    {
+     "phrase_en": "sequential discipline",
+     "meaning_vi": "ngành học cần tích lũy kiến thức theo thứ tự"
+    },
+    {
+     "phrase_en": "interdisciplinary exposure",
+     "meaning_vi": "tiếp xúc liên ngành"
+    },
+    {
+     "phrase_en": "commit to a major",
+     "meaning_vi": "chọn chuyên ngành"
+    },
+    {
+     "phrase_en": "foundational requirement",
+     "meaning_vi": "yêu cầu nền tảng"
+    }
+   ],
+   "drills": [
+    {
+     "id": "T2-M113-08-D1",
+     "mode": "identify",
+     "question_vi": "Đề yêu cầu làm gì? Nêu đủ các phần bắt buộc.",
+     "hint_vi": "Xác định yêu cầu của đề và tự viết câu trả lời trước."
+    },
+    {
+     "id": "T2-M113-08-D2",
+     "mode": "idea",
+     "question_vi": "Ghi hai ý đúng trọng tâm, không trùng nhau.",
+     "hint_vi": "Xác định yêu cầu của đề và tự viết câu trả lời trước."
+    },
+    {
+     "id": "T2-M113-08-D3",
+     "mode": "thesis",
+     "question_vi": "Viết thesis/overview đúng nhiệm vụ, không thêm luận điểm chưa có.",
+     "hint_vi": "Xác định yêu cầu của đề và tự viết câu trả lời trước."
+    },
+    {
+     "id": "T2-M113-08-D4",
+     "mode": "causal_chain",
+     "question_vi": "Viết một chuỗi Ý → Vì sao → Ví dụ bằng tiếng Anh.",
+     "hint_vi": "Xác định yêu cầu của đề và tự viết câu trả lời trước."
+    },
+    {
+     "id": "T2-M113-08-D5",
+     "mode": "second_side",
+     "question_vi": "Viết đoạn ý thứ hai kèm lý do và ví dụ; không lặp lại ý đầu.",
+     "hint_vi": "Xác định yêu cầu của đề và tự viết câu trả lời trước."
+    },
+    {
+     "id": "T2-M113-08-D6",
+     "mode": "nuance",
+     "question_vi": "Thêm một giới hạn hoặc điều kiện làm cho lập luận chính xác hơn.",
+     "hint_vi": "Xác định yêu cầu của đề và tự viết câu trả lời trước."
+    },
+    {
+     "id": "T2-M113-08-D7",
+     "mode": "diagnose",
+     "question_vi": "Phát hiện lỗi Task Response cần tránh cho chính đề này.",
+     "hint_vi": "Xác định yêu cầu của đề và tự viết câu trả lời trước."
+    },
+    {
+     "id": "T2-M113-08-D8",
+     "mode": "self_revision",
+     "question_vi": "Đối chiếu kết luận với thesis và tự sửa một cụm khẳng định quá mức.",
+     "hint_vi": "Xác định yêu cầu của đề và tự viết câu trả lời trước."
+    }
+   ],
+   "has_model_essay": false
+  },
+  {
+   "id": "T2-M113-12",
+   "pack": "M113",
+   "content_sha256": "7b49c1b79fae5ff0ba79d57b24b4eb5b083993c89c1b41055fa0e9d6ac64c651",
+   "stage": "advanced",
+   "target_range": "6.5–7.5+",
+   "question_type": "advantages_disadvantages",
+   "topic": "Telemedicine",
+   "prompt": "More hospitals are offering remote medical consultations through video calls instead of requiring patients to attend appointments in person. What are the advantages and disadvantages of this development?",
+   "minutes": 65,
+   "goal_vi": "Viết trọn bài 250+ từ, kiểm soát lập luận, ngoại lệ và kết luận.",
+   "target_vi": "Bài đầy đủ 250+ từ, phản hồi đúng mọi ý, có so sánh/ngoại lệ khi cần.",
+   "steps": [
+    {
+     "title_vi": "Giải mã câu hỏi",
+     "instruction_vi": "Gạch chân động từ yêu cầu và nhận diện đúng dạng đề.",
+     "sample_en": "More hospitals are offering remote medical consultations through video calls instead of requiring patients to attend appointments in person. What are the advantages and disadvantages of this development?"
+    },
+    {
+     "title_vi": "Chọn và nhóm ý",
+     "instruction_vi": "Viết hai ý riêng không trùng nhau.",
+     "sample_en": "Idea A: Video appointments reduce the burden of travelling for routine care. Idea B: Remote consultations cannot reliably replace every face-to-face examination."
+    },
+    {
+     "title_vi": "Thêm chuỗi giải thích",
+     "instruction_vi": "Giải thích lý do tại sao ý chính dẫn đến kết quả cụ thể, sau đó cho ví dụ hợp lý.",
+     "sample_en": "Patients with stable conditions may discuss symptoms or medication with a clinician without taking a long journey. Example: A patient in a rural area might receive follow-up advice after a test without visiting a distant hospital."
+    },
+    {
+     "title_vi": "Giới hạn và kiểm tra logic",
+     "instruction_vi": "Kiểm tra mức độ khẳng định, ý trái chiều và sự thống nhất với kết luận.",
+     "sample_en": "A hybrid service should triage patients and provide alternatives for those without devices or private space."
+    }
+   ],
+   "vocabulary": [
+    {
+     "phrase_en": "routine follow-up",
+     "meaning_vi": "tái khám định kỳ"
+    },
+    {
+     "phrase_en": "clinical triage",
+     "meaning_vi": "phân loại mức độ cần khám"
+    },
+    {
+     "phrase_en": "digital accessibility",
+     "meaning_vi": "khả năng tiếp cận dịch vụ số"
+    },
+    {
+     "phrase_en": "physical examination",
+     "meaning_vi": "khám lâm sàng"
+    }
+   ],
+   "drills": [
+    {
+     "id": "T2-M113-12-D1",
+     "mode": "identify",
+     "question_vi": "Đề yêu cầu làm gì? Nêu đủ các phần bắt buộc.",
+     "hint_vi": "Xác định yêu cầu của đề và tự viết câu trả lời trước."
+    },
+    {
+     "id": "T2-M113-12-D2",
+     "mode": "idea",
+     "question_vi": "Ghi hai ý đúng trọng tâm, không trùng nhau.",
+     "hint_vi": "Xác định yêu cầu của đề và tự viết câu trả lời trước."
+    },
+    {
+     "id": "T2-M113-12-D3",
+     "mode": "thesis",
+     "question_vi": "Viết thesis/overview đúng nhiệm vụ, không thêm luận điểm chưa có.",
+     "hint_vi": "Xác định yêu cầu của đề và tự viết câu trả lời trước."
+    },
+    {
+     "id": "T2-M113-12-D4",
+     "mode": "causal_chain",
+     "question_vi": "Viết một chuỗi Ý → Vì sao → Ví dụ bằng tiếng Anh.",
+     "hint_vi": "Xác định yêu cầu của đề và tự viết câu trả lời trước."
+    },
+    {
+     "id": "T2-M113-12-D5",
+     "mode": "second_side",
+     "question_vi": "Viết đoạn ý thứ hai kèm lý do và ví dụ; không lặp lại ý đầu.",
+     "hint_vi": "Xác định yêu cầu của đề và tự viết câu trả lời trước."
+    },
+    {
+     "id": "T2-M113-12-D6",
+     "mode": "nuance",
+     "question_vi": "Thêm một giới hạn hoặc điều kiện làm cho lập luận chính xác hơn.",
+     "hint_vi": "Xác định yêu cầu của đề và tự viết câu trả lời trước."
+    },
+    {
+     "id": "T2-M113-12-D7",
+     "mode": "diagnose",
+     "question_vi": "Phát hiện lỗi Task Response cần tránh cho chính đề này.",
+     "hint_vi": "Xác định yêu cầu của đề và tự viết câu trả lời trước."
+    },
+    {
+     "id": "T2-M113-12-D8",
+     "mode": "self_revision",
+     "question_vi": "Đối chiếu kết luận với thesis và tự sửa một cụm khẳng định quá mức.",
+     "hint_vi": "Xác định yêu cầu của đề và tự viết câu trả lời trước."
+    }
+   ],
+   "has_model_essay": false
+  },
+  {
+   "id": "T2-M113-16",
+   "pack": "M113",
+   "content_sha256": "9f72699c4ac2f77d1cc8d33b711b98ca5a29c087da62e8e7b797bfb84024c6b8",
+   "stage": "advanced",
+   "target_range": "6.5–7.5+",
+   "question_type": "advantages_outweigh_disadvantages",
+   "topic": "Government Translation Tools",
+   "prompt": "Public agencies are increasingly using automated translation tools to communicate with residents who speak different languages. Do the advantages outweigh the disadvantages?",
+   "minutes": 65,
+   "goal_vi": "Viết trọn bài 250+ từ, kiểm soát lập luận, ngoại lệ và kết luận.",
+   "target_vi": "Bài đầy đủ 250+ từ, phản hồi đúng mọi ý, có so sánh/ngoại lệ khi cần.",
+   "steps": [
+    {
+     "title_vi": "Giải mã câu hỏi",
+     "instruction_vi": "Gạch chân động từ yêu cầu và nhận diện đúng dạng đề.",
+     "sample_en": "Public agencies are increasingly using automated translation tools to communicate with residents who speak different languages. Do the advantages outweigh the disadvantages?"
+    },
+    {
+     "title_vi": "Chọn và nhóm ý",
+     "instruction_vi": "Viết hai ý riêng không trùng nhau.",
+     "sample_en": "Idea A: Automated translation can make essential information available to more residents quickly. Idea B: Errors in sensitive documents may cause serious harm."
+    },
+    {
+     "title_vi": "Thêm chuỗi giải thích",
+     "instruction_vi": "Giải thích lý do tại sao ý chính dẫn đến kết quả cụ thể, sau đó cho ví dụ hợp lý.",
+     "sample_en": "Agencies often need to explain service hours, application deadlines and basic procedures in several languages. Example: A council could publish a routine waste-collection notice in multiple languages on the same day."
+    },
+    {
+     "title_vi": "Giới hạn và kiểm tra logic",
+     "instruction_vi": "Kiểm tra mức độ khẳng định, ý trái chiều và sự thống nhất với kết luận.",
+     "sample_en": "Use automated drafts for low-risk notices; require specialist review for health, legal and emergency instructions."
+    }
+   ],
+   "vocabulary": [
+    {
+     "phrase_en": "multilingual service",
+     "meaning_vi": "dịch vụ đa ngôn ngữ"
+    },
+    {
+     "phrase_en": "high-stakes communication",
+     "meaning_vi": "thông tin có hậu quả nghiêm trọng"
+    },
+    {
+     "phrase_en": "human verification",
+     "meaning_vi": "kiểm tra bởi người có chuyên môn"
+    },
+    {
+     "phrase_en": "translation error",
+     "meaning_vi": "lỗi dịch thuật"
+    }
+   ],
+   "drills": [
+    {
+     "id": "T2-M113-16-D1",
+     "mode": "identify",
+     "question_vi": "Đề yêu cầu làm gì? Nêu đủ các phần bắt buộc.",
+     "hint_vi": "Xác định yêu cầu của đề và tự viết câu trả lời trước."
+    },
+    {
+     "id": "T2-M113-16-D2",
+     "mode": "idea",
+     "question_vi": "Ghi hai ý đúng trọng tâm, không trùng nhau.",
+     "hint_vi": "Xác định yêu cầu của đề và tự viết câu trả lời trước."
+    },
+    {
+     "id": "T2-M113-16-D3",
+     "mode": "thesis",
+     "question_vi": "Viết thesis/overview đúng nhiệm vụ, không thêm luận điểm chưa có.",
+     "hint_vi": "Xác định yêu cầu của đề và tự viết câu trả lời trước."
+    },
+    {
+     "id": "T2-M113-16-D4",
+     "mode": "causal_chain",
+     "question_vi": "Viết một chuỗi Ý → Vì sao → Ví dụ bằng tiếng Anh.",
+     "hint_vi": "Xác định yêu cầu của đề và tự viết câu trả lời trước."
+    },
+    {
+     "id": "T2-M113-16-D5",
+     "mode": "second_side",
+     "question_vi": "Viết đoạn ý thứ hai kèm lý do và ví dụ; không lặp lại ý đầu.",
+     "hint_vi": "Xác định yêu cầu của đề và tự viết câu trả lời trước."
+    },
+    {
+     "id": "T2-M113-16-D6",
+     "mode": "nuance",
+     "question_vi": "Thêm một giới hạn hoặc điều kiện làm cho lập luận chính xác hơn.",
+     "hint_vi": "Xác định yêu cầu của đề và tự viết câu trả lời trước."
+    },
+    {
+     "id": "T2-M113-16-D7",
+     "mode": "diagnose",
+     "question_vi": "Phát hiện lỗi Task Response cần tránh cho chính đề này.",
+     "hint_vi": "Xác định yêu cầu của đề và tự viết câu trả lời trước."
+    },
+    {
+     "id": "T2-M113-16-D8",
+     "mode": "self_revision",
+     "question_vi": "Đối chiếu kết luận với thesis và tự sửa một cụm khẳng định quá mức.",
+     "hint_vi": "Xác định yêu cầu của đề và tự viết câu trả lời trước."
+    }
+   ],
+   "has_model_essay": false
+  },
+  {
+   "id": "T2-M113-20",
+   "pack": "M113",
+   "content_sha256": "4e7a335c976b37b188eaf1fefb2bd655fb821801b72f307786d2085dace0e8d7",
+   "stage": "advanced",
+   "target_range": "6.5–7.5+",
+   "question_type": "causes_solutions",
+   "topic": "Urban Heat",
+   "prompt": "Many large cities experience increasingly uncomfortable temperatures in summer. What human activities contribute to this problem, and what measures should city governments prioritise?",
+   "minutes": 65,
+   "goal_vi": "Viết trọn bài 250+ từ, kiểm soát lập luận, ngoại lệ và kết luận.",
+   "target_vi": "Bài đầy đủ 250+ từ, phản hồi đúng mọi ý, có so sánh/ngoại lệ khi cần.",
+   "steps": [
+    {
+     "title_vi": "Giải mã câu hỏi",
+     "instruction_vi": "Gạch chân động từ yêu cầu và nhận diện đúng dạng đề.",
+     "sample_en": "Many large cities experience increasingly uncomfortable temperatures in summer. What human activities contribute to this problem, and what measures should city governments prioritise?"
+    },
+    {
+     "title_vi": "Chọn và nhóm ý",
+     "instruction_vi": "Viết hai ý riêng không trùng nhau.",
+     "sample_en": "Idea A: Roads and buildings absorb and retain heat while trees are removed for construction. Idea B: Local governments can protect tree cover and redesign the hottest public areas."
+    },
+    {
+     "title_vi": "Thêm chuỗi giải thích",
+     "instruction_vi": "Giải thích lý do tại sao ý chính dẫn đến kết quả cụ thể, sau đó cho ví dụ hợp lý.",
+     "sample_en": "Hard surfaces store solar energy during the day and release it slowly, limiting cooling after sunset. Example: A densely paved district may remain noticeably hotter at night than a nearby tree-lined neighbourhood."
+    },
+    {
+     "title_vi": "Giới hạn và kiểm tra logic",
+     "instruction_vi": "Kiểm tra mức độ khẳng định, ý trái chiều và sự thống nhất với kết luận.",
+     "sample_en": "A heat action plan also needs alerts and targeted support for older people and outdoor workers."
+    }
+   ],
+   "vocabulary": [
+    {
+     "phrase_en": "urban heat island",
+     "meaning_vi": "đảo nhiệt đô thị"
+    },
+    {
+     "phrase_en": "heat-absorbing surface",
+     "meaning_vi": "bề mặt hấp thu nhiệt"
+    },
+    {
+     "phrase_en": "tree-canopy cover",
+     "meaning_vi": "độ che phủ tán cây"
+    },
+    {
+     "phrase_en": "heat-vulnerable residents",
+     "meaning_vi": "người dân dễ bị ảnh hưởng bởi nhiệt"
+    }
+   ],
+   "drills": [
+    {
+     "id": "T2-M113-20-D1",
+     "mode": "identify",
+     "question_vi": "Đề yêu cầu làm gì? Nêu đủ các phần bắt buộc.",
+     "hint_vi": "Xác định yêu cầu của đề và tự viết câu trả lời trước."
+    },
+    {
+     "id": "T2-M113-20-D2",
+     "mode": "idea",
+     "question_vi": "Ghi hai ý đúng trọng tâm, không trùng nhau.",
+     "hint_vi": "Xác định yêu cầu của đề và tự viết câu trả lời trước."
+    },
+    {
+     "id": "T2-M113-20-D3",
+     "mode": "thesis",
+     "question_vi": "Viết thesis/overview đúng nhiệm vụ, không thêm luận điểm chưa có.",
+     "hint_vi": "Xác định yêu cầu của đề và tự viết câu trả lời trước."
+    },
+    {
+     "id": "T2-M113-20-D4",
+     "mode": "causal_chain",
+     "question_vi": "Viết một chuỗi Ý → Vì sao → Ví dụ bằng tiếng Anh.",
+     "hint_vi": "Xác định yêu cầu của đề và tự viết câu trả lời trước."
+    },
+    {
+     "id": "T2-M113-20-D5",
+     "mode": "second_side",
+     "question_vi": "Viết đoạn ý thứ hai kèm lý do và ví dụ; không lặp lại ý đầu.",
+     "hint_vi": "Xác định yêu cầu của đề và tự viết câu trả lời trước."
+    },
+    {
+     "id": "T2-M113-20-D6",
+     "mode": "nuance",
+     "question_vi": "Thêm một giới hạn hoặc điều kiện làm cho lập luận chính xác hơn.",
+     "hint_vi": "Xác định yêu cầu của đề và tự viết câu trả lời trước."
+    },
+    {
+     "id": "T2-M113-20-D7",
+     "mode": "diagnose",
+     "question_vi": "Phát hiện lỗi Task Response cần tránh cho chính đề này.",
+     "hint_vi": "Xác định yêu cầu của đề và tự viết câu trả lời trước."
+    },
+    {
+     "id": "T2-M113-20-D8",
+     "mode": "self_revision",
+     "question_vi": "Đối chiếu kết luận với thesis và tự sửa một cụm khẳng định quá mức.",
+     "hint_vi": "Xác định yêu cầu của đề và tự viết câu trả lời trước."
+    }
+   ],
+   "has_model_essay": false
+  },
+  {
+   "id": "T2-M113-24",
+   "pack": "M113",
+   "content_sha256": "1de07d50f25682e38f6002c8098736d12bc509e1be447dc5f7b93ce294c38ef2",
+   "stage": "advanced",
+   "target_range": "6.5–7.5+",
+   "question_type": "double_question",
+   "topic": "Short Educational Videos",
+   "prompt": "Short educational videos have become a common way for adults to learn new skills. Why are these videos so popular? How might they change the way people approach long-term learning?",
+   "minutes": 65,
+   "goal_vi": "Viết trọn bài 250+ từ, kiểm soát lập luận, ngoại lệ và kết luận.",
+   "target_vi": "Bài đầy đủ 250+ từ, phản hồi đúng mọi ý, có so sánh/ngoại lệ khi cần.",
+   "steps": [
+    {
+     "title_vi": "Giải mã câu hỏi",
+     "instruction_vi": "Gạch chân động từ yêu cầu và nhận diện đúng dạng đề.",
+     "sample_en": "Short educational videos have become a common way for adults to learn new skills. Why are these videos so popular? How might they change the way people approach long-term learning?"
+    },
+    {
+     "title_vi": "Chọn và nhóm ý",
+     "instruction_vi": "Viết hai ý riêng không trùng nhau.",
+     "sample_en": "Idea A: Short videos fit easily into daily routines and offer quick demonstrations. Idea B: Frequent short lessons may make learning more flexible but also more fragmented."
+    },
+    {
+     "title_vi": "Thêm chuỗi giải thích",
+     "instruction_vi": "Giải thích lý do tại sao ý chính dẫn đến kết quả cụ thể, sau đó cho ví dụ hợp lý.",
+     "sample_en": "People can replay a specific technique without committing to a long scheduled class. Example: Someone learning spreadsheet formulas may watch a two-minute demonstration just before applying it at work."
+    },
+    {
+     "title_vi": "Giới hạn và kiểm tra logic",
+     "instruction_vi": "Kiểm tra mức độ khẳng định, ý trái chiều và sự thống nhất với kết luận.",
+     "sample_en": "Structured learning pathways should connect short clips to projects, feedback and spaced review."
+    }
+   ],
+   "vocabulary": [
+    {
+     "phrase_en": "bite-sized instruction",
+     "meaning_vi": "hướng dẫn theo phần nhỏ"
+    },
+    {
+     "phrase_en": "fragmented knowledge",
+     "meaning_vi": "kiến thức rời rạc"
+    },
+    {
+     "phrase_en": "sustained practice",
+     "meaning_vi": "luyện tập duy trì lâu dài"
+    },
+    {
+     "phrase_en": "structured pathway",
+     "meaning_vi": "lộ trình có cấu trúc"
+    }
+   ],
+   "drills": [
+    {
+     "id": "T2-M113-24-D1",
+     "mode": "identify",
+     "question_vi": "Đề yêu cầu làm gì? Nêu đủ các phần bắt buộc.",
+     "hint_vi": "Xác định yêu cầu của đề và tự viết câu trả lời trước."
+    },
+    {
+     "id": "T2-M113-24-D2",
+     "mode": "idea",
+     "question_vi": "Ghi hai ý đúng trọng tâm, không trùng nhau.",
+     "hint_vi": "Xác định yêu cầu của đề và tự viết câu trả lời trước."
+    },
+    {
+     "id": "T2-M113-24-D3",
+     "mode": "thesis",
+     "question_vi": "Viết thesis/overview đúng nhiệm vụ, không thêm luận điểm chưa có.",
+     "hint_vi": "Xác định yêu cầu của đề và tự viết câu trả lời trước."
+    },
+    {
+     "id": "T2-M113-24-D4",
+     "mode": "causal_chain",
+     "question_vi": "Viết một chuỗi Ý → Vì sao → Ví dụ bằng tiếng Anh.",
+     "hint_vi": "Xác định yêu cầu của đề và tự viết câu trả lời trước."
+    },
+    {
+     "id": "T2-M113-24-D5",
+     "mode": "second_side",
+     "question_vi": "Viết đoạn ý thứ hai kèm lý do và ví dụ; không lặp lại ý đầu.",
+     "hint_vi": "Xác định yêu cầu của đề và tự viết câu trả lời trước."
+    },
+    {
+     "id": "T2-M113-24-D6",
+     "mode": "nuance",
+     "question_vi": "Thêm một giới hạn hoặc điều kiện làm cho lập luận chính xác hơn.",
+     "hint_vi": "Xác định yêu cầu của đề và tự viết câu trả lời trước."
+    },
+    {
+     "id": "T2-M113-24-D7",
+     "mode": "diagnose",
+     "question_vi": "Phát hiện lỗi Task Response cần tránh cho chính đề này.",
+     "hint_vi": "Xác định yêu cầu của đề và tự viết câu trả lời trước."
+    },
+    {
+     "id": "T2-M113-24-D8",
+     "mode": "self_revision",
+     "question_vi": "Đối chiếu kết luận với thesis và tự sửa một cụm khẳng định quá mức.",
+     "hint_vi": "Xác định yêu cầu của đề và tự viết câu trả lời trước."
+    }
+   ],
+   "has_model_essay": false
+  }
+ ]
+}
