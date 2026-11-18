@@ -8,7 +8,7 @@ import { createClient } from "@/lib/supabase/browser";
 import { liveMode } from "@/lib/runtime";
 import { TASK2_API, parseTask2State, task2DraftSlug, type Task2Reveal, type Task2State } from "@/lib/writing-task2/types";
 
-export const emptyTask2State = (): Task2State => ({ t2: 1, answers: {}, saved: {}, essay: "", checklist: {}, updatedAt: 0 });
+export const emptyTask2State = (): Task2State => ({ t2: 1, answers: {}, saved: {}, peeked: {}, choices: {}, fills: {}, essay: "", checklist: {}, updatedAt: 0 });
 const storageKey = (lessonId: string) => `writing-task2-state:${lessonId}`;
 
 function readLocal(lessonId: string) {
@@ -62,9 +62,10 @@ export async function loadAllTask2States(lessonIds: string[]): Promise<Record<st
   return found;
 }
 
-export async function revealTask2(lessonId: string, targets: string[], state: Task2State): Promise<Task2Reveal> {
-  const texts = liveMode ? undefined : Object.fromEntries(targets.map((key) => [key, key === "essay" ? state.essay : state.answers[key] ?? ""]));
-  const response = await fetch(`${TASK2_API}/${lessonId}/reveal`, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ targets, texts }) });
+/** Reference answers for saved work, or, with `peek`, before the learner has written anything. */
+export async function revealTask2(lessonId: string, targets: string[], state: Task2State, peek = false): Promise<Task2Reveal> {
+  const texts = liveMode || peek ? undefined : Object.fromEntries(targets.map((key) => [key, key === "essay" ? state.essay : state.answers[key] ?? ""]));
+  const response = await fetch(`${TASK2_API}/${lessonId}/reveal`, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ targets, texts, ...(peek && { peek: true }) }) });
   const body = await response.json().catch(() => ({}));
   if (!response.ok) throw new Error(body.error ?? "Không mở được đáp án.");
   return body as Task2Reveal;

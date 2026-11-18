@@ -4,24 +4,59 @@ export const TASK2_BASE = "/app/self-study/writing-task-2";
 export const TASK2_API = "/api/self-study/writing-task-2";
 
 export type Task2Stage = "foundation" | "basic" | "developing" | "advanced";
-export type Task2Step = { title_vi: string; instruction_vi: string; sample_en: string };
-export type Task2Drill = { id: string; mode: string; question_vi: string; hint_vi: string };
+/** recognize = pick the right option, complete = fill a sentence frame, produce = write freely. */
+export type Task2DrillLevel = "recognize" | "complete" | "produce";
+export type Task2Annotation = { quote_en: string; label_vi: string; note_vi: string };
+export type Task2Step = { title_vi: string; instruction_vi: string; sample_en: string; sample_vi?: string };
+export type Task2Vocabulary = { phrase_en: string; meaning_vi: string; example_en?: string; example_vi?: string; collocations_en?: string[] };
+export type Task2Drill = {
+  id: string; mode: string; question_vi: string; hint_vi: string;
+  /* Filled in by an enrichment file (content/writing-task2/enrich); every field is optional so the imported lessons keep working. */
+  level?: Task2DrillLevel; how_to_vi?: string; hints?: string[];
+  options?: { id: string; text_en: string }[]; frame_en?: string; word_bank_en?: string[];
+};
 export type Task2Lesson = {
   id: string; pack: string; content_sha256: string; stage: Task2Stage; target_range: string; question_type: string;
   topic: string; prompt: string; minutes: number; goal_vi: string; target_vi: string;
-  steps: Task2Step[]; vocabulary: { phrase_en: string; meaning_vi: string }[]; drills: Task2Drill[]; has_model_essay: boolean;
+  steps: Task2Step[]; vocabulary: Task2Vocabulary[]; drills: Task2Drill[]; has_model_essay: boolean;
+  /* Enrichment, all optional. */
+  enriched?: boolean;
+  topic_id?: string; skill_ids?: string[];
+  prompt_vi?: string;
+  prompt_analysis?: { keywords: { en: string; vi: string }[]; task_vi: string; trap_vi?: string };
+  mini_lesson?: {
+    explain_vi: string; frame_en?: string; worked_example_en?: string; worked_example_vi?: string;
+    annotations?: Task2Annotation[]; good_vs_bad?: { bad_en: string; good_en: string; why_vi: string }[];
+  };
+  grammar_focus?: { name_vi: string; explain_vi: string; examples: { en: string; vi: string }[]; drills?: { task_vi: string; answer_en: string }[] };
+  self_check_vi?: string[];
+  review?: { remember_vi: string[]; mistakes_vi: string[] };
 };
-export type Task2LessonSummary = Omit<Task2Lesson, "steps" | "vocabulary" | "drills" | "content_sha256"> & { drill_count: number };
-export type Task2DrillAnswer = { answer_guide: string; explanation_vi: string };
-export type Task2ModelEssay = { title: string; essay: string; word_count: number; explanation_vi: string; outline_vi: string };
+export type Task2LessonSummary = Omit<Task2Lesson, "steps" | "vocabulary" | "drills" | "content_sha256" | "prompt_analysis" | "mini_lesson" | "grammar_focus" | "self_check_vi" | "review"> & { drill_count: number };
+export type Task2DrillAnswer = {
+  answer_guide: string; explanation_vi: string;
+  answer_vi?: string; alternatives_en?: string[];
+  common_mistake?: { wrong_en: string; fix_en: string; why_vi: string };
+  /** recognize drills: the right option and what each option teaches. */
+  correct?: string; option_feedback?: Record<string, string>;
+};
+export type Task2ModelEssay = {
+  title: string; essay: string; word_count: number; explanation_vi: string; outline_vi: string;
+  kind?: "paragraph" | "intro_body" | "essay"; text_vi?: string; annotations?: Task2Annotation[];
+};
 export type Task2Reveal = { drills: Record<string, Task2DrillAnswer>; model_essay?: Task2ModelEssay | null };
 
 /** What a learner has written in one lesson. It lives in the account's writing_drafts row (slug below). */
 export type Task2State = {
   t2: 1;
   answers: Record<string, string>;
-  /** When each drill answer was saved; the reference answer opens only after a save. */
+  /** When each drill answer was saved. A saved answer is what makes a drill done. */
   saved: Record<string, string>;
+  /** Drills (and "essay") whose reference the learner opened before saving their own work. */
+  peeked: Record<string, string>;
+  /** recognize drills: the option picked; complete drills: the words put in each blank. */
+  choices: Record<string, string>;
+  fills: Record<string, string[]>;
   essay: string;
   essaySavedAt?: string;
   checklist: Record<string, boolean>;
@@ -48,7 +83,10 @@ export function parseTask2State(value: string | null | undefined): Task2State | 
   try {
     const parsed = JSON.parse(value) as Partial<Task2State>;
     if (parsed.t2 !== 1 || typeof parsed.answers !== "object" || !parsed.answers) return null;
-    return { t2: 1, answers: parsed.answers, saved: parsed.saved ?? {}, essay: typeof parsed.essay === "string" ? parsed.essay : "", essaySavedAt: parsed.essaySavedAt, checklist: parsed.checklist ?? {}, updatedAt: Number(parsed.updatedAt) || 0 };
+    return {
+      t2: 1, answers: parsed.answers, saved: parsed.saved ?? {}, peeked: parsed.peeked ?? {}, choices: parsed.choices ?? {}, fills: parsed.fills ?? {},
+      essay: typeof parsed.essay === "string" ? parsed.essay : "", essaySavedAt: parsed.essaySavedAt, checklist: parsed.checklist ?? {}, updatedAt: Number(parsed.updatedAt) || 0,
+    };
   } catch { return null; }
 }
 
@@ -85,15 +123,3 @@ export const drillModeLabels: Record<string, string> = {
   diagnose: "Tìm lỗi",
   self_revision: "Tự sửa bài",
 };
-
-/** A self-check by the four IELTS criteria; it is a checklist, not a score. */
-export const essayChecklist: { id: string; criterion: string; text: string }[] = [
-  { id: "tr-parts", criterion: "TR", text: "Trả lời đủ mọi phần của đề, đúng dạng câu hỏi." },
-  { id: "tr-position", criterion: "TR", text: "Lập trường (thesis) rõ ở mở bài và nhất quán đến kết luận." },
-  { id: "tr-support", criterion: "TR", text: "Mỗi ý chính có giải thích và ví dụ cụ thể." },
-  { id: "cc-paragraph", criterion: "CC", text: "Mỗi đoạn thân bài tập trung vào một ý, có câu chủ đề." },
-  { id: "cc-links", criterion: "CC", text: "Liên kết câu và đoạn tự nhiên, không lạm dụng từ nối." },
-  { id: "lr-range", criterion: "LR", text: "Dùng từ đúng chủ đề, có paraphrase, ít lặp từ." },
-  { id: "gra-range", criterion: "GRA", text: "Có câu phức đúng ngữ pháp, không chỉ câu đơn." },
-  { id: "gra-check", criterion: "GRA", text: "Đã đọc lại để sửa thì, mạo từ, số ít/số nhiều và chính tả." },
-];
