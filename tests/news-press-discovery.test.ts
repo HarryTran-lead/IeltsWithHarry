@@ -1,6 +1,13 @@
-import { expect, it } from "vitest";
+import { afterAll, beforeAll, expect, it } from "vitest";
 import { discoveryBatchLimit, discoveryBudget, discoveryFeedGroup, eligibleDiscoveryLead, findIndependentDossier, rankDiscoveryCandidates, resolveFactualSourceUrl, temporaryDiscoveryFailure, vietnamDayStart, youthRelevanceForTitle } from "../src/lib/news/press-discovery";
 import { parseRss, pressDiscoveryFeedUrls, rssProvider, type NewsItem, type NewsSource } from "../src/lib/news/providers";
+
+const previousArticleConfirmation = process.env.NEWS_ARTICLE_FREE_TIER_CONFIRMED;
+beforeAll(() => { process.env.NEWS_ARTICLE_FREE_TIER_CONFIRMED = "true"; });
+afterAll(() => {
+  if (previousArticleConfirmation === undefined) delete process.env.NEWS_ARTICLE_FREE_TIER_CONFIRMED;
+  else process.env.NEWS_ARTICLE_FREE_TIER_CONFIRMED = previousArticleConfirmation;
+});
 
 const source: NewsSource = {
   id: "11111111-1111-4111-8111-111111111111", name: "Tuoi Tre News", provider: "rss", feed_url: "https://news.tuoitre.vn/rss",
@@ -119,8 +126,8 @@ it("resolves Google grounding citations only when they lead to an approved origi
 });
 
 it("reads an official Vietnamese feed page directly and extracts only its factual notes", async () => {
-  const previous = process.env.GEMINI_API_KEY;
-  process.env.GEMINI_API_KEY = "test-key";
+  const previous = process.env.NEWS_ARTICLE_GEMINI_API_KEY;
+  process.env.NEWS_ARTICLE_GEMINI_API_KEY = "test-key";
   const page = "https://mst.gov.vn/official-news.htm";
   let searchCalls = 0;
   const fetcher = (async (url: RequestInfo | URL, init?: RequestInit) => {
@@ -133,12 +140,12 @@ it("reads an official Vietnamese feed page directly and extracts only its factua
     const result = await findIndependentDossier({ title: "Tin khoa học mới ở Việt Nam", canonical_url: page, category: "Science" } as NewsItem, fetcher);
     expect(result.success).toBe(true);
     expect(searchCalls).toBe(0);
-  } finally { if (previous === undefined) delete process.env.GEMINI_API_KEY; else process.env.GEMINI_API_KEY = previous; }
+  } finally { if (previous === undefined) delete process.env.NEWS_ARTICLE_GEMINI_API_KEY; else process.env.NEWS_ARTICLE_GEMINI_API_KEY = previous; }
 });
 
 it("seeks a second official page when the first page cannot support a full passage", async () => {
-  const previous = process.env.GEMINI_API_KEY;
-  process.env.GEMINI_API_KEY = "test-key";
+  const previous = process.env.NEWS_ARTICLE_GEMINI_API_KEY;
+  process.env.NEWS_ARTICLE_GEMINI_API_KEY = "test-key";
   const first = "https://mst.gov.vn/first-announcement.htm";
   const second = "https://chinhphu.vn/related-announcement";
   let searches = 0;
@@ -158,7 +165,7 @@ it("seeks a second official page when the first page cannot support a full passa
     expect(result.success).toBe(true);
     expect(searches).toBe(1);
     if (result.success) expect(result.data.facts).toHaveLength(13);
-  } finally { if (previous === undefined) delete process.env.GEMINI_API_KEY; else process.env.GEMINI_API_KEY = previous; }
+  } finally { if (previous === undefined) delete process.env.NEWS_ARTICLE_GEMINI_API_KEY; else process.env.NEWS_ARTICLE_GEMINI_API_KEY = previous; }
 });
 
 it("classifies varied ministry leads before fact research without copying feed content", async () => {
@@ -179,8 +186,8 @@ it("classifies varied ministry leads before fact research without copying feed c
 });
 
 it("filters newspaper citations from grounded facts before validating the dossier", async () => {
-  const previous = process.env.GEMINI_API_KEY;
-  process.env.GEMINI_API_KEY = "test-key";
+  const previous = process.env.NEWS_ARTICLE_GEMINI_API_KEY;
+  process.env.NEWS_ARTICLE_GEMINI_API_KEY = "test-key";
   const official = "https://vertexaisearch.cloud.google.com/grounding-api-redirect/official";
   const newspaper = "https://vertexaisearch.cloud.google.com/grounding-api-redirect/newspaper";
   const fetcher = (async (url: RequestInfo | URL, init?: RequestInit) => {
@@ -196,7 +203,7 @@ it("filters newspaper citations from grounded facts before validating the dossie
     const result = await findIndependentDossier({ title: "Public announcement prompts new discussion", category: "World News" } as NewsItem, fetcher);
     expect(result.success).toBe(true);
     if (result.success) expect(result.data.facts.every((fact) => fact.source_url === "https://chinhphu.vn/announcement")).toBe(true);
-  } finally { if (previous === undefined) delete process.env.GEMINI_API_KEY; else process.env.GEMINI_API_KEY = previous; }
+  } finally { if (previous === undefined) delete process.env.NEWS_ARTICLE_GEMINI_API_KEY; else process.env.NEWS_ARTICLE_GEMINI_API_KEY = previous; }
 });
 
 it("press feeds return only event metadata even when RSS contains full prose and an image", async () => {
@@ -211,8 +218,8 @@ it("press feeds return only event metadata even when RSS contains full prose and
 });
 
 it("uses a limited report excerpt for at most three cited facts after finding an original page", async () => {
-  const previous = process.env.GEMINI_API_KEY;
-  process.env.GEMINI_API_KEY = "test-key";
+  const previous = process.env.NEWS_ARTICLE_GEMINI_API_KEY;
+  process.env.NEWS_ARTICLE_GEMINI_API_KEY = "test-key";
   const report = "https://news.tuoitre.vn/students-event.html";
   const original = "https://chinhphu.vn/students-event";
   const fetcher = (async (url: RequestInfo | URL, init?: RequestInit) => {
@@ -227,7 +234,7 @@ it("uses a limited report excerpt for at most three cited facts after finding an
     const result = await findIndependentDossier({ title: "Students gather for a new event", canonical_url: report, category: "Education" } as NewsItem, fetcher);
     expect(result.success).toBe(true);
     if (result.success) expect(result.data.facts.filter((fact) => fact.source_url === report)).toHaveLength(3);
-  } finally { if (previous === undefined) delete process.env.GEMINI_API_KEY; else process.env.GEMINI_API_KEY = previous; }
+  } finally { if (previous === undefined) delete process.env.NEWS_ARTICLE_GEMINI_API_KEY; else process.env.NEWS_ARTICLE_GEMINI_API_KEY = previous; }
 });
 
 it("classifies broader English Vietnam leads into learning topics", async () => {
@@ -257,8 +264,8 @@ it("keeps Government News feeds as discovery leads in distinct learning categori
 });
 
 it("searches independent sources from the event title without sending press prose or URL", async () => {
-  const previous = process.env.GEMINI_API_KEY;
-  process.env.GEMINI_API_KEY = "test-key";
+  const previous = process.env.NEWS_ARTICLE_GEMINI_API_KEY;
+  process.env.NEWS_ARTICLE_GEMINI_API_KEY = "test-key";
   const item = { title: "Science mission brings new findings to Vietnam", canonical_url: "https://news.tuoitre.vn/science-mission-123456.html", category: "Science" } as NewsItem;
   let searchPayload: Record<string, unknown> = {};
   const fetcher = (async (url: RequestInfo | URL, init?: RequestInit) => {
@@ -278,5 +285,5 @@ it("searches independent sources from the event title without sending press pros
     expect(request).toContain(item.title);
     expect(request).not.toContain(item.canonical_url);
     expect(request).not.toContain("Publisher's full prose");
-  } finally { if (previous === undefined) delete process.env.GEMINI_API_KEY; else process.env.GEMINI_API_KEY = previous; }
+  } finally { if (previous === undefined) delete process.env.NEWS_ARTICLE_GEMINI_API_KEY; else process.env.NEWS_ARTICLE_GEMINI_API_KEY = previous; }
 });
