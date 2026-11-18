@@ -70,13 +70,35 @@ it("favors youth-relevant leads and a source absent from today's published passa
     item: { canonical_hash: hash, canonical_url: `https://baochinhphu.vn/${hash}.htm`, title, category: "Culture", published_at: "2026-11-10T04:00:00Z" } as NewsItem,
     source: { ...source, name: sourceName },
   });
-  expect(youthRelevanceForTitle("Sinh viên tham gia lễ hội âm nhạc", "Culture")).toBe(2);
-  expect(youthRelevanceForTitle("A university festival for young people", "Education")).toBe(4);
+  expect(youthRelevanceForTitle("Sinh viên tham gia lễ hội âm nhạc", "Culture")).toBe(3);
+  expect(youthRelevanceForTitle("A university festival for young people", "Education")).toBe(5);
+  expect(youthRelevanceForTitle("A new esports event", "Culture")).toBe(3);
   const ranked = rankDiscoveryCandidates([
     lead("ministry", "A traditional industry meeting", "Vietnam Ministry of Science and Technology"),
     lead("culture", "Sinh viên tham gia lễ hội âm nhạc", "Government News Culture"),
   ], new Map(), new Set(), new Map([["Vietnam Ministry of Science and Technology", 4]]));
   expect(ranked[0].item.canonical_hash).toBe("culture");
+});
+
+it("allows a youth topic to recover after other leads in its category fail", () => {
+  const candidate = (hash: string, title: string, category: NewsItem["category"]) => ({
+    item: { canonical_hash: hash, canonical_url: `https://e.vnexpress.net/${hash}`, title, category,
+      published_at: "2026-11-10T04:00:00Z" } as NewsItem,
+    source,
+  });
+  const ranked = rankDiscoveryCandidates([
+    candidate("sports", "Vietnam students join an esports festival", "Culture"),
+    candidate("business", "An industry meeting", "Business"),
+    candidate("old-a", "An older festival", "Culture"),
+    candidate("old-b", "Another older festival", "Culture"),
+  ], new Map(), new Set(["old-a", "old-b"]));
+  expect(ranked[0].item.canonical_hash).toBe("sports");
+});
+
+it("accepts Vietnamese travel, tech and sports feeds as discovery leads", () => {
+  for (const section of ["travel", "tech", "sports"]) {
+    expect(pressDiscoveryFeedUrls.has(`https://e.vnexpress.net/rss/${section}.rss`)).toBe(true);
+  }
 });
 
 it("considers the last three days of leads without admitting older or future stories", () => {
