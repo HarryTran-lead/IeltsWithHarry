@@ -29,9 +29,9 @@ export function learnStageAvailable(stageId: string) {
 export function lockedLearnerPath(pathname: string) {
   if (pathname === "/app/self-study/listening" || pathname.startsWith("/app/self-study/listening/"))
     return process.env.NEXT_PUBLIC_DISABLE_LISTENING_LAB === "true";
-  // Writing Task 2 Lab opens locally and on the develop Preview; production waits for an explicit release flag.
+  // Writing Task 2 Lab is released; set the disable flag to take it down without a code change.
   if (pathname === "/app/self-study/writing-task-2" || pathname.startsWith("/app/self-study/writing-task-2/"))
-    return releaseLocks && process.env.NEXT_PUBLIC_ENABLE_WRITING_TASK2_LAB !== "true";
+    return process.env.NEXT_PUBLIC_DISABLE_WRITING_TASK2_LAB === "true";
   if (pathname === "/app/self-study" || pathname.startsWith("/app/self-study/")) return true;
   if (!releaseLocks) return false;
   if (["/app/reading", "/app/reading/live", "/app/reading/vocabulary", "/app/writing", "/app/writing/live", "/app/writing/task-1", "/app/writing/task-2", "/app/speaking", "/app/speaking/mock", "/app/speaking/live", "/app/speaking/part-3"].includes(pathname)) return false;

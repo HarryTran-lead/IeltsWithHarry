@@ -77,19 +77,20 @@ describe("Writing Task 2 Lab progress rules", () => {
 });
 
 describe("Writing Task 2 Lab release", () => {
-  it("stays locked in production until its flag is set", async () => {
+  it("opens in production, and the disable flag locks it again", async () => {
     vi.stubEnv("NODE_ENV", "production");
     vi.stubEnv("NEXT_PUBLIC_UNLOCK_DEV_FEATURES", "false");
+    vi.resetModules();
+    const released = (await import("../src/lib/runtime")).lockedLearnerPath;
+    expect(released("/app/self-study/writing-task-2")).toBe(false);
+    expect(released("/app/self-study/writing-task-2/T2-M113-01")).toBe(false);
+    expect(released("/app/self-study/writing-task-1")).toBe(true);
+
+    vi.stubEnv("NEXT_PUBLIC_DISABLE_WRITING_TASK2_LAB", "true");
     vi.resetModules();
     const locked = (await import("../src/lib/runtime")).lockedLearnerPath;
     expect(locked("/app/self-study/writing-task-2")).toBe(true);
     expect(locked("/app/self-study/writing-task-2/T2-M113-01")).toBe(true);
-
-    vi.stubEnv("NEXT_PUBLIC_ENABLE_WRITING_TASK2_LAB", "true");
-    vi.resetModules();
-    const released = (await import("../src/lib/runtime")).lockedLearnerPath;
-    expect(released("/app/self-study/writing-task-2/T2-M113-01")).toBe(false);
-    expect(released("/app/self-study/writing-task-1")).toBe(true);
   });
 
   it("opens in development while the other unfinished labs stay locked", async () => {
