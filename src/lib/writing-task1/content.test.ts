@@ -2,7 +2,8 @@ import { createHash } from "node:crypto";
 import { existsSync, readFileSync } from "node:fs";
 import { join } from "node:path";
 import { afterEach, describe, expect, it, vi } from "vitest";
-import { countWords, essaySaved, parseTask1State, type Task1Lesson } from "./types";
+import { drillFrames, groupGuides } from "./guide";
+import { countWords, essaySaved, lessonDone, modelFirst, modelParagraphs, parseTask1State, type Task1Lesson, type Task1Model } from "./types";
 
 const root = join(process.cwd(), "content/writing-task1");
 const { lessons } = JSON.parse(readFileSync(join(root, "lessons.json"), "utf8")) as { lessons: Task1Lesson[] };
@@ -75,5 +76,35 @@ describe("Writing Task 1 Lab release", () => {
     vi.stubEnv("NEXT_PUBLIC_DISABLE_WRITING_TASK1_LAB", "true");
     const locked = await runtime();
     expect(locked("/app/self-study/writing-task-1/line")).toBe(true);
+  });
+});
+
+describe("Writing Task 1 Lab teaching flow", () => {
+  it("shows a model before writing only in foundation lessons that have one", () => {
+    const first = lessons.filter((lesson) => modelFirst(lesson)).map((lesson) => lesson.id).sort();
+    expect(first).toEqual(lessons.filter((lesson) => lesson.stage === "foundation" && lesson.has_model).map((lesson) => lesson.id).sort());
+    expect(first.length).toBeGreaterThan(0);
+    for (const lesson of lessons.filter((item) => item.stage !== "foundation")) expect(modelFirst(lesson)).toBe(false);
+  });
+
+  it("has a built-in guide for every figure type and a frame for every drill", () => {
+    for (const lesson of lessons) {
+      expect(groupGuides[lesson.group], lesson.group).toBeDefined();
+      for (const drill of lesson.drills) expect(drillFrames[drill.mode]?.(lesson.group), `${lesson.id}:${drill.mode}`).toBeTruthy();
+    }
+  });
+
+  it("reads plain and annotated model paragraphs alike", () => {
+    const plain: Task1Model = { paragraphs: ["Intro.", "Overall, ...", "Body one.", "Body two."], word_count: 6 };
+    expect(modelParagraphs(plain).map((paragraph) => paragraph.role)).toEqual(["intro", "overview", "body1", "body2"]);
+    const annotated: Task1Model = { paragraphs: [{ role: "overview", sentences: [{ en: "Overall, x rose.", note_vi: "Hai ý chính." }] }], word_count: 3 };
+    expect(modelParagraphs(annotated)[0]).toEqual({ role: "overview", sentences: [{ en: "Overall, x rose.", note_vi: "Hai ý chính." }] });
+  });
+
+  it("completes a lesson once the writing is saved at the stage length", () => {
+    const state = parseTask1State(JSON.stringify({ t1: 1, answers: {}, essay: "word ".repeat(30), essaySavedAt: "2026-11-18T00:00:00Z" }));
+    expect(lessonDone(state ?? undefined, "foundation")).toBe(true);
+    expect(lessonDone(state ?? undefined, "developing")).toBe(false);
+    expect(lessonDone(undefined, "foundation")).toBe(false);
   });
 });
