@@ -59,7 +59,7 @@ export function rankDiscoveryCandidates(candidates: DiscoveryCandidate[], publis
     + 2 * (publishedSources.get(source.name) ?? 0)
     + Math.min(rejectedSources.get(source.name) ?? 0, 2)
     - youthRelevanceForTitle(item.title, item.category)
-    - 2 * Number(approvedPressFactSource(item.canonical_url));
+    - 6 * Number(approvedPressFactSource(item.canonical_url));
   return candidates.sort((a, b) => score(a) - score(b)
     || new Date(b.item.published_at).valueOf() - new Date(a.item.published_at).valueOf());
 }

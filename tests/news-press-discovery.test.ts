@@ -87,6 +87,14 @@ it("favors youth-relevant leads and a source absent from today's published passa
   expect(ranked[0].item.canonical_hash).toBe("culture");
 });
 
+it("starts with a reviewed Vietnam newspaper over an equally available official feed", () => {
+  const ranked = rankDiscoveryCandidates([
+    { item: { canonical_hash: "official", canonical_url: "https://baochinhphu.vn/student-news.htm", title: "Students join a university festival", category: "Education", published_at: "2026-11-10T05:00:00Z" } as NewsItem, source },
+    { item: { canonical_hash: "press", canonical_url: "https://news.tuoitre.vn/culture-news.htm", title: "Local heritage project opens", category: "Culture", published_at: "2026-11-10T04:00:00Z" } as NewsItem, source },
+  ], new Map(), new Set());
+  expect(ranked[0].item.canonical_hash).toBe("press");
+});
+
 it("allows a youth topic to recover after other leads in its category fail", () => {
   const candidate = (hash: string, title: string, category: NewsItem["category"]) => ({
     item: { canonical_hash: hash, canonical_url: `https://e.vnexpress.net/${hash}`, title, category,
