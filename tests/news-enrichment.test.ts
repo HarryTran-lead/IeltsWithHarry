@@ -36,6 +36,26 @@ it("routes article research only through its confirmed free-tier key", async () 
   }
 });
 
+it("retries temporary article service failures with the dedicated key", async () => {
+  const previous = { key: process.env.NEWS_ARTICLE_GEMINI_API_KEY, confirmed: process.env.NEWS_ARTICLE_FREE_TIER_CONFIRMED };
+  process.env.NEWS_ARTICLE_GEMINI_API_KEY = "article-free-key";
+  process.env.NEWS_ARTICLE_FREE_TIER_CONFIRMED = "true";
+  let calls = 0;
+  const fetcher = (async (_url: RequestInfo | URL, init?: RequestInit) => {
+    expect((init?.headers as Record<string, string>)["x-goog-api-key"]).toBe("article-free-key");
+    calls++;
+    return calls === 1 ? new Response("", { status: 503 })
+      : Response.json({ candidates: [{ finishReason: "STOP", content: { parts: [{ text: "{}" }] } }] });
+  }) as typeof fetch;
+  try {
+    await geminiJson("system", "user", {}, { fetcher, articleOnly: true });
+    expect(calls).toBe(2);
+  } finally {
+    if (previous.key === undefined) delete process.env.NEWS_ARTICLE_GEMINI_API_KEY; else process.env.NEWS_ARTICLE_GEMINI_API_KEY = previous.key;
+    if (previous.confirmed === undefined) delete process.env.NEWS_ARTICLE_FREE_TIER_CONFIRMED; else process.env.NEWS_ARTICLE_FREE_TIER_CONFIRMED = previous.confirmed;
+  }
+});
+
 it("reserves quiz work even while translation, image and discovery backlogs exist", () => {
   const slot = (hour: number, minute: number) => scheduledNewsWorkSlot(new Date(`2026-11-11T${String(hour).padStart(2, "0")}:${String(minute).padStart(2, "0")}:00Z`));
   expect([5, 15, 25, 35, 45, 55].map((minute) => slot(0, minute))).toEqual(["quiz", "discovery", "image", "discovery", "translation", "discovery"]);
