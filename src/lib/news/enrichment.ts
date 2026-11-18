@@ -599,7 +599,8 @@ export async function enrichNews({ scheduled = false }: { scheduled?: boolean } 
     result.translationsAdded = translated.added;
     if (translated.error) result.errors.push(`Translation: ${translated.error}`);
     if (translated.quotaLimited) result.quotaLimited = true;
-    if (translated.checked) return result;
+    // A failed legacy translation must not block a manual article run using its separate key.
+    if (translated.checked && (scheduled || !translated.error)) return result;
   }
   if (!scheduled || slot === "discovery") {
     const { discoverPressFacts } = await import("./press-discovery");
