@@ -1,0 +1,23 @@
+name: Task 2 Public Repo Safety (no deployment)
+on:
+  pull_request:
+    paths:
+      - 'scripts/task2-s021-public-preflight.mjs'
+      - 'src/app/api/admin/task2-staging/status/route.ts'
+      - '.github/workflows/task2-s021-public-safety.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  security-preflight:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: node --check scripts/task2-s021-public-preflight.mjs
+      - run: node scripts/task2-s021-public-preflight.mjs
+      - run: echo 'Code-only PR. Private answer keys and the 1975-record dataset remain outside GitHub. Production HOLD.'
+# The existing quality.yml independently runs npm ci, typecheck, lint, tests, build.
