@@ -1,11 +1,17 @@
 import { expect, it } from "vitest";
 import { factDossierSchema } from "../src/lib/news/fact-dossier-schema";
-import { readFactualSource, writeArticleFromFacts } from "../src/lib/news/fact-dossier";
+import { passageWordRange, readFactualSource, writeArticleFromFacts } from "../src/lib/news/fact-dossier";
 
 const facts = Array.from({ length: 14 }, (_, index) => ({
   claim: `NASA reported verified mission detail number ${index + 1} for the upcoming science launch.`,
   source_url: "https://www.nasa.gov/news-release/example/",
 }));
+
+it("aims for IELTS passage length when the verified dossier is substantial", () => {
+  expect(passageWordRange(8)).toEqual({ min: 500, max: 650 });
+  expect(passageWordRange(12)).toEqual({ min: 650, max: 800 });
+  expect(passageWordRange(18)).toEqual({ min: 700, max: 900 });
+});
 
 it("requires enough distinct primary-source facts for a full reading passage", () => {
   expect(factDossierSchema.safeParse({ topic: "A new science launch", category: "Science", facts: facts.slice(0, 8) }).success).toBe(true);
@@ -58,7 +64,7 @@ it("passes factual notes but no newspaper prose to the independent writer", asyn
     if (system.startsWith("Check each atomic")) response = { evaluations: (request.contents[0].parts[0].text.includes(report) ? [6, 7, 8] : [1, 2, 3, 4, 5]).map((index) => ({ index, supported: true })) };
     else if (system.startsWith("Write an original")) {
       writerInput = request.contents[0].parts[0].text;
-      response = { title: "An independent student programme", body: Array.from({ length: 6 }, () => Array.from({ length: 75 }, () => "learning").join(" ")).join("\n\n") };
+      response = { title: "An independent student programme", body: Array.from({ length: 6 }, () => Array.from({ length: 100 }, () => "learning").join(" ")).join("\n\n") };
     } else response = { grounded: true, independent_expression: true, unsupported: [] };
     return Response.json({ candidates: [{ finishReason: "STOP", content: { parts: [{ text: JSON.stringify(response) }] } }] });
   }) as typeof fetch;
@@ -96,13 +102,13 @@ it("accepts a complete nine-paragraph passage from eight verified facts", async 
     const system = request.systemInstruction.parts[0].text;
     let response: unknown;
     if (system.startsWith("Check each atomic")) response = { evaluations: shortFacts.map((_, index) => ({ index: index + 1, supported: true })) };
-    else if (system.startsWith("Write an original")) response = { title: "A new science mission", body: Array.from({ length: 9 }, () => Array(45).fill("mission").join(" ")).join("\n\n") };
+    else if (system.startsWith("Write an original")) response = { title: "A new science mission", body: Array.from({ length: 9 }, () => Array(60).fill("mission").join(" ")).join("\n\n") };
     else { reviews++; response = { grounded: true, independent_expression: true, unsupported: [] }; }
     return Response.json({ candidates: [{ finishReason: "STOP", content: { parts: [{ text: JSON.stringify(response) }] } }] });
   }) as typeof fetch;
   try {
     const article = await writeArticleFromFacts({ topic: "A new science launch", category: "Science", facts: shortFacts }, fetcher);
-    expect(article.body.split(/\s+/)).toHaveLength(405);
+    expect(article.body.split(/\s+/)).toHaveLength(540);
     expect(article.body.split(/\n\s*\n/)).toHaveLength(9);
     expect(reviews).toBe(1);
   } finally { if (previous === undefined) delete process.env.GEMINI_API_KEY; else process.env.GEMINI_API_KEY = previous; }
@@ -124,7 +130,7 @@ it("revises a near-complete short passage from the same facts before final revie
     else if (system.startsWith("Write an original")) {
       drafts++;
       revisionPrompt = request.contents[0].parts[0].text;
-      response = { title: "A new science mission", body: Array.from({ length: 8 }, () => Array(drafts === 3 ? 54 : 44).fill("mission").join(" ")).join("\n\n") };
+      response = { title: "A new science mission", body: Array.from({ length: 8 }, () => Array(drafts === 3 ? 65 : 44).fill("mission").join(" ")).join("\n\n") };
     } else { reviews++; response = { grounded: true, independent_expression: true, unsupported: [] }; }
     return Response.json({ candidates: [{ finishReason: "STOP", content: { parts: [{ text: JSON.stringify(response) }] } }] });
   }) as typeof fetch;
@@ -132,7 +138,7 @@ it("revises a near-complete short passage from the same facts before final revie
     const article = await writeArticleFromFacts({ topic: "A new science launch", category: "Science", facts: shortFacts }, fetcher);
     expect(drafts).toBe(3);
     expect(revisionPrompt).toContain("Revise this AI-created draft");
-    expect(article.body.split(/\s+/)).toHaveLength(432);
+    expect(article.body.split(/\s+/)).toHaveLength(520);
     expect(reviews).toBe(1);
   } finally { if (previous === undefined) delete process.env.GEMINI_API_KEY; else process.env.GEMINI_API_KEY = previous; }
 });
@@ -150,13 +156,13 @@ it("retries a short draft once, then reviews only a complete article", async () 
     if (system.startsWith("Check each atomic")) response = { evaluations: facts.map((_, index) => ({ index: index + 1, supported: true })) };
     else if (system.startsWith("Write an original")) {
       drafts++;
-      response = { title: "A new science mission", body: Array.from({ length: 6 }, () => Array.from({ length: drafts === 1 ? 70 : 93 }, () => "mission").join(" ")).join("\n\n") };
+      response = { title: "A new science mission", body: Array.from({ length: 6 }, () => Array.from({ length: drafts === 1 ? 70 : 110 }, () => "mission").join(" ")).join("\n\n") };
     } else { reviews++; response = { grounded: true, independent_expression: true, unsupported: [] }; }
     return Response.json({ candidates: [{ finishReason: "STOP", content: { parts: [{ text: JSON.stringify(response) }] } }] });
   }) as typeof fetch;
   try {
     const article = await writeArticleFromFacts({ topic: "A new science launch", category: "Science", facts }, fetcher);
-    expect(article.body.split(/\s+/)).toHaveLength(558);
+    expect(article.body.split(/\s+/)).toHaveLength(660);
     expect(drafts).toBe(2);
     expect(reviews).toBe(1);
   } finally { if (previous === undefined) delete process.env.GEMINI_API_KEY; else process.env.GEMINI_API_KEY = previous; }

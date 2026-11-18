@@ -40,11 +40,11 @@ export function vietnamDayStart(now = new Date()) {
   local.setUTCHours(0, 0, 0, 0);
   return new Date(local.getTime() - 7 * 60 * 60 * 1000);
 }
-/** Failed leads count toward category rotation, so one busy feed cannot exhaust every research slot. */
+/** Favor topics young readers follow without excluding other news. */
 export function youthRelevanceForTitle(title: string, category: string) {
   const normalized = title.normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/đ/gi, "d").toLowerCase();
-  const topic = /\b(student|school|university|education|youth|young|career|job|startup|gaming|music|film|festival|travel|tourism|sport|digital|ai|environment|sinh vien|hoc sinh|truong hoc|dai hoc|giao duc|viec lam|nghe nghiep|khoi nghiep|am nhac|phim|le hoi|du lich|the thao|chuyen doi so|moi truong)\b/i;
-  return (category === "Education" ? 2 : 0) + (topic.test(normalized) ? 2 : 0);
+  const topic = /\b(student|school|university|education|youth|young|career|job|startup|gaming|games?|esports?|music|concert|film|cinema|festival|travel|tourism|sport|football|food|fashion|creator|streaming|social media|digital|technology|apps?|ai|mental health|environment|sinh vien|hoc sinh|truong hoc|dai hoc|giao duc|viec lam|nghe nghiep|khoi nghiep|tro choi|the thao dien tu|am nhac|hoa nhac|phim|le hoi|du lich|bong da|am thuc|thoi trang|mang xa hoi|chuyen doi so|cong nghe|suc khoe tinh than|moi truong)\b/i;
+  return (category === "Education" ? 2 : 0) + (topic.test(normalized) ? 3 : 0);
 }
 export function rankDiscoveryCandidates(candidates: DiscoveryCandidate[], published: Map<string, number>, rejectedHashes: Set<string>, publishedSources = new Map<string, number>()) {
   const rejected = new Map<string, number>();
@@ -54,8 +54,10 @@ export function rankDiscoveryCandidates(candidates: DiscoveryCandidate[], publis
   }
   for (const { item, source } of candidates) if (rejectedHashes.has(item.canonical_hash))
     rejectedSources.set(source.name, (rejectedSources.get(source.name) ?? 0) + 1);
-  const score = ({ item, source }: DiscoveryCandidate) => 3 * ((published.get(item.category) ?? 0) + (rejected.get(item.category) ?? 0))
-    + 2 * ((publishedSources.get(source.name) ?? 0) + (rejectedSources.get(source.name) ?? 0))
+  const score = ({ item, source }: DiscoveryCandidate) => 3 * (published.get(item.category) ?? 0)
+    + Math.min(rejected.get(item.category) ?? 0, 2)
+    + 2 * (publishedSources.get(source.name) ?? 0)
+    + Math.min(rejectedSources.get(source.name) ?? 0, 2)
     - youthRelevanceForTitle(item.title, item.category)
     - Number(approvedFactualSource(item.canonical_url));
   return candidates.sort((a, b) => score(a) - score(b)
