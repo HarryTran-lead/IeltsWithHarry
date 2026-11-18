@@ -3,9 +3,9 @@
  * Draws a Task 1 figure: the package's chart specs (line, bar, pie, table, mixed panels) as inline SVG,
  * or a supplied diagram (maps and processes) as an image the learner can open full size.
  */
-import { useState } from "react";
+import { useId, useState } from "react";
 import { Maximize2, X } from "lucide-react";
-import type { CartesianSpec, ChartSeries, ChartSpec, Task1Visual } from "@/lib/writing-task1/types";
+import type { CartesianSpec, ChartSeries, ChartSpec, MapSpec, ProcessSpec, Task1Visual } from "@/lib/writing-task1/types";
 
 const palette = ["#2577c8", "#e0803a", "#2f9e6f", "#8a63d2", "#d2524a", "#6b7c93"];
 
@@ -27,6 +27,8 @@ export function Task1Figure({ visual, unit }: { visual: Task1Visual; unit?: stri
 }
 
 function Chart({ spec }: { spec: ChartSpec }) {
+  if (spec.kind === "process") return <div className="t1-chart"><b className="t1-chart-title">{spec.title}</b><ProcessDiagram spec={spec}/></div>;
+  if (spec.kind === "map") return <div className="t1-chart"><b className="t1-chart-title">{spec.title}</b><MapPanels spec={spec}/></div>;
   if (spec.kind === "mixed") return <div className="t1-mixed"><b className="t1-chart-title">{spec.title}</b><div>{spec.panels.map((panel, index) => <Chart key={index} spec={panel}/>)}</div></div>;
   if (spec.kind === "table") return <div className="t1-table-wrap"><b className="t1-chart-title">{spec.title}</b>
     <table className="t1-table"><thead><tr>{spec.rows[0].map((cell, index) => <th key={index} scope="col">{cell}</th>)}</tr></thead>
@@ -95,4 +97,91 @@ function Pie({ series, categories }: { series: ChartSeries; categories: string[]
     {slices.map((slice) => <g key={slice.index}><path d={slice.path} fill={palette[slice.index % palette.length]} stroke="#fff" strokeWidth={2}><title>{`${categories[slice.index]}: ${slice.value}%`}</title></path>
       {slice.value >= 6 && <text x={slice.label.split(",")[0]} y={Number(slice.label.split(",")[1]) + 4} textAnchor="middle" className="t1-slice">{slice.value}%</text>}</g>)}
   </svg><b>{series.name}</b></div>;
+}
+
+/** Splits a stage label into short lines so it fits inside its box. */
+function wrap(text: string, width: number) {
+  const lines: string[] = [];
+  for (const word of text.split(/\s+/)) {
+    const last = lines[lines.length - 1];
+    if (last && `${last} ${word}`.length <= width) lines[lines.length - 1] = `${last} ${word}`;
+    else lines.push(word);
+  }
+  return lines.slice(0, 3);
+}
+
+/**
+ * A process from data: numbered boxes in reading order (a snake of rows, or a ring for a cycle) joined by arrows.
+ * Arrows stop at the box edges so their heads stay visible, and a labelled arrow shows its condition.
+ */
+function ProcessDiagram({ spec }: { spec: ProcessSpec }) {
+  const arrowId = `t1-arrow-${useId().replace(/[^a-zA-Z0-9-]/g, "")}`;
+  const count = spec.stages.length;
+  const boxW = 150, boxH = 62, gapX = 40, gapY = 46;
+  const cycle = spec.process_type === "cycle";
+  const cols = cycle ? 0 : count <= 4 ? count : 3;
+  const width = cycle ? 560 : cols * boxW + (cols - 1) * gapX + 20;
+  const rows = cycle ? 0 : Math.ceil(count / cols);
+  const height = cycle ? 420 : rows * boxH + (rows - 1) * gapY + 20;
+  const centre = (index: number) => {
+    if (cycle) {
+      const angle = -Math.PI / 2 + (index / count) * Math.PI * 2;
+      return { x: width / 2 + 205 * Math.cos(angle), y: height / 2 + 160 * Math.sin(angle) };
+    }
+    const row = Math.floor(index / cols);
+    const col = row % 2 ? cols - 1 - (index % cols) : index % cols;
+    return { x: 10 + col * (boxW + gapX) + boxW / 2, y: 10 + row * (boxH + gapY) + boxH / 2 };
+  };
+  const position = new Map(spec.stages.map((stage, index) => [stage.id, centre(index)]));
+  const edgePoint = (from: { x: number; y: number }, to: { x: number; y: number }, gap: number) => {
+    const dx = to.x - from.x, dy = to.y - from.y;
+    const t = Math.min(dx ? (boxW / 2 + gap) / Math.abs(dx) : Infinity, dy ? (boxH / 2 + gap) / Math.abs(dy) : Infinity);
+    return { x: from.x + dx * t, y: from.y + dy * t };
+  };
+  return <svg className="t1-svg t1-process" viewBox={`0 0 ${width} ${height}`} role="img" aria-label={`${spec.title}: ${spec.stages.map((stage, index) => `${index + 1}. ${stage.label_en}`).join(", ")}`}>
+    <defs><marker id={arrowId} viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#2b4a6b"/></marker></defs>
+    {spec.edges.map((edge, index) => {
+      const a = position.get(edge.from), b = position.get(edge.to);
+      if (!a || !b) return null;
+      const start = edgePoint(a, b, 2), end = edgePoint(b, a, 4);
+      return <g key={index}>
+        <line x1={start.x} y1={start.y} x2={end.x} y2={end.y} className="t1-process-edge" markerEnd={`url(#${arrowId})`}/>
+        {edge.label_en && <text x={(start.x + end.x) / 2} y={(start.y + end.y) / 2 - 6} textAnchor="middle" className="t1-process-label">{edge.label_en}</text>}
+      </g>;
+    })}
+    {spec.stages.map((stage, index) => {
+      const { x, y } = centre(index);
+      const lines = wrap(stage.label_en, 20);
+      return <g key={stage.id}>
+        <rect x={x - boxW / 2} y={y - boxH / 2} width={boxW} height={boxH} rx={10} className="t1-process-box"/>
+        <circle cx={x - boxW / 2 + 14} cy={y - boxH / 2 + 14} r={10} className="t1-process-num"/>
+        <text x={x - boxW / 2 + 14} y={y - boxH / 2 + 18} textAnchor="middle" className="t1-process-num-text">{index + 1}</text>
+        {lines.map((line, lineIndex) => <text key={lineIndex} x={x + 8} y={y + 5 + (lineIndex - (lines.length - 1) / 2) * 15} textAnchor="middle" className="t1-process-text">{line}</text>)}
+      </g>;
+    })}
+  </svg>;
+}
+
+const mapColours: Record<string, string> = {
+  building: "#c9d3df", housing: "#f2c7a5", shop: "#f6d78b", school: "#b9d7f2", road: "#9aa7b5", path: "#d9c7a3", bridge: "#8b97a5",
+  park: "#bfe3b4", trees: "#8ccf8a", farmland: "#e6e2a7", water: "#a8d4f0", "car-park": "#d6dbe1", other: "#e4e0ec",
+};
+
+/** A map from data: each panel is a 12×12 grid with north at the top; features keep their id across dates. */
+function MapPanels({ spec }: { spec: MapSpec }) {
+  const cell = 22, size = cell * 12;
+  return <div className="t1-maps">{spec.panels.map((panel) => <figure key={panel.label} className="t1-map">
+    <svg className="t1-svg" viewBox={`0 0 ${size} ${size}`} role="img" aria-label={`${panel.label}: ${panel.features.map((feature) => feature.name).join(", ")}`}>
+      <rect width={size} height={size} className="t1-map-ground"/>
+      {panel.features.map((feature) => {
+        const lines = wrap(feature.name, Math.max(6, feature.w * 3));
+        return <g key={feature.id}>
+          <rect x={feature.x * cell + 1} y={feature.y * cell + 1} width={feature.w * cell - 2} height={feature.h * cell - 2} rx={feature.type === "water" ? 10 : 3} fill={mapColours[feature.type] ?? mapColours.other} className="t1-map-feature"/>
+          {lines.map((line, index) => <text key={index} x={(feature.x + feature.w / 2) * cell} y={(feature.y + feature.h / 2) * cell + 4 + (index - (lines.length - 1) / 2) * 11} textAnchor="middle" className="t1-map-text">{line}</text>)}
+        </g>;
+      })}
+      {spec.compass !== false && <g className="t1-compass" transform={`translate(${size - 18},20)`}><path d="M0 -12 L5 4 L0 0 L-5 4 Z"/><text y={16} textAnchor="middle">N</text></g>}
+    </svg>
+    <figcaption>{panel.label}</figcaption>
+  </figure>)}</div>;
 }
