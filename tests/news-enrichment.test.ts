@@ -56,6 +56,30 @@ it("retries temporary article service failures with the dedicated key", async ()
   }
 });
 
+it("falls back to another Free Tier model when article generation keeps returning 503", async () => {
+  const previous = { key: process.env.NEWS_ARTICLE_GEMINI_API_KEY, confirmed: process.env.NEWS_ARTICLE_FREE_TIER_CONFIRMED, models: process.env.GEMINI_MODELS };
+  process.env.NEWS_ARTICLE_GEMINI_API_KEY = "article-free-key";
+  process.env.NEWS_ARTICLE_FREE_TIER_CONFIRMED = "true";
+  delete process.env.GEMINI_MODELS;
+  const models: string[] = [];
+  const fetcher = (async (url: RequestInfo | URL, init?: RequestInit) => {
+    expect((init?.headers as Record<string, string>)["x-goog-api-key"]).toBe("article-free-key");
+    models.push(String(url));
+    return String(url).includes("gemini-3.5-flash-lite") ? new Response("", { status: 503 })
+      : Response.json({ candidates: [{ finishReason: "STOP", content: { parts: [{ text: "{}" }] } }] });
+  }) as typeof fetch;
+  try {
+    const result = await geminiJson("system", "user", {}, { fetcher, articleOnly: true });
+    expect(result.model).toBe("gemini-3.1-flash-lite");
+    expect(models.filter((url) => url.includes("gemini-3.5-flash-lite"))).toHaveLength(3);
+    expect(models.filter((url) => url.includes("gemini-3.1-flash-lite"))).toHaveLength(1);
+  } finally {
+    if (previous.key === undefined) delete process.env.NEWS_ARTICLE_GEMINI_API_KEY; else process.env.NEWS_ARTICLE_GEMINI_API_KEY = previous.key;
+    if (previous.confirmed === undefined) delete process.env.NEWS_ARTICLE_FREE_TIER_CONFIRMED; else process.env.NEWS_ARTICLE_FREE_TIER_CONFIRMED = previous.confirmed;
+    if (previous.models === undefined) delete process.env.GEMINI_MODELS; else process.env.GEMINI_MODELS = previous.models;
+  }
+});
+
 it("retries temporary quiz service failures with the separate quiz key", async () => {
   await withKey(async () => {
     let calls = 0;

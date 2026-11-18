@@ -221,7 +221,9 @@ export async function geminiJson<T>(system: string, user: string | GeminiPart[],
     generationConfig: { maxOutputTokens, temperature, responseFormat: { text: { mimeType: "APPLICATION_JSON", schema } } },
   });
   let lastError: Error = new Error("AI service unavailable");
-  for (const model of models ?? geminiModels()) {
+  const modelChoices = models ?? (articleOnly || freeTierOnly
+    ? [...new Set([...geminiModels(), "gemini-3.1-flash-lite"])] : geminiModels());
+  for (const model of modelChoices) {
     let response: Response;
     for (let attempt = 0; ; attempt++) {
       response = await fetcher(`https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent`, {
