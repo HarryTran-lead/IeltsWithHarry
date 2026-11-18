@@ -150,7 +150,7 @@ export async function discoverPressFacts(db: Db, result: DiscoveryRun, settings:
   const dueSources = scheduled ? approvedSources.filter((_, index) => index % 2 === feedGroup) : approvedSources;
   const feeds = await Promise.allSettled(dueSources
     .map(async (source) => {
-      const { data: claimed, error: claimError } = await db.rpc("news_claim_source", { p_source_id: source.id });
+      const { data: claimed, error: claimError } = await db.rpc(scheduled ? "news_claim_source" : "news_claim_source_force", { p_source_id: source.id });
       if (claimError) throw claimError;
       if (!claimed) return null;
       try {
