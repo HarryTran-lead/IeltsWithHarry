@@ -1,0 +1,4182 @@
+[
+ {
+  "id": "band-2.5-010",
+  "practiceLevel": "2.5",
+  "type": "phrase",
+  "topic": "Thói quen",
+  "targetTerm": "usually",
+  "meaningVi": "thường",
+  "promptVi": "thường vào buổi tối",
+  "referenceAnswers": [
+   "usually in the evening"
+  ],
+  "grammarTags": [
+   "frequency-adverb"
+  ],
+  "explanationVi": "Usually thường đứng trước động từ chính trong câu đầy đủ.",
+  "commonErrors": [],
+  "editorialStatus": "pilot",
+  "source": "original-starter",
+  "version": 2,
+  "calibrationStatus": "internal_review",
+  "rationaleVi": "Chuyển từ cụm từ sang câu ngắn với chủ ngữ và động từ quen thuộc. Bài này luyện: Usually thường đứng trước động từ chính trong câu đầy đủ."
+ },
+ {
+  "id": "band-2.5-011",
+  "practiceLevel": "2.5",
+  "type": "phrase",
+  "topic": "Du lịch",
+  "targetTerm": "bus",
+  "meaningVi": "xe buýt",
+  "promptVi": "đi bằng xe buýt",
+  "referenceAnswers": [
+   "go by bus"
+  ],
+  "grammarTags": [
+   "transport-preposition"
+  ],
+  "explanationVi": "Go by bus dùng by để chỉ phương tiện.",
+  "commonErrors": [],
+  "editorialStatus": "pilot",
+  "source": "original-starter",
+  "version": 2,
+  "calibrationStatus": "internal_review",
+  "rationaleVi": "Chuyển từ cụm từ sang câu ngắn với chủ ngữ và động từ quen thuộc. Bài này luyện: Go by bus dùng by để chỉ phương tiện."
+ },
+ {
+  "id": "band-2.5-012",
+  "practiceLevel": "2.5",
+  "type": "phrase",
+  "topic": "Sở thích",
+  "targetTerm": "weekend",
+  "meaningVi": "cuối tuần",
+  "promptVi": "vào cuối tuần",
+  "referenceAnswers": [
+   "at the weekend"
+  ],
+  "grammarTags": [
+   "time-preposition"
+  ],
+  "explanationVi": "At the weekend là cách dùng phổ biến trong Anh-Anh.",
+  "commonErrors": [],
+  "editorialStatus": "pilot",
+  "source": "original-starter",
+  "version": 2,
+  "calibrationStatus": "internal_review",
+  "rationaleVi": "Chuyển từ cụm từ sang câu ngắn với chủ ngữ và động từ quen thuộc. Bài này luyện: At the weekend là cách dùng phổ biến trong Anh-Anh."
+ },
+ {
+  "id": "band-2.5-cal-01",
+  "practiceLevel": "2.5",
+  "type": "sentence",
+  "topic": "Đồ dùng",
+  "targetTerm": "blue bag",
+  "meaningVi": "túi màu xanh",
+  "promptVi": "Tôi có một chiếc túi màu xanh.",
+  "referenceAnswers": [
+   "I have a blue bag."
+  ],
+  "grammarTags": [
+   "present-simple"
+  ],
+  "explanationVi": "Have diễn đạt sở hữu; a đứng trước danh từ số ít.",
+  "rationaleVi": "Một mệnh đề hiện tại đơn với đồ vật quen thuộc.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "original-level-authored",
+  "version": 1
+ },
+ {
+  "id": "band-2.5-cal-02",
+  "practiceLevel": "2.5",
+  "type": "sentence",
+  "topic": "Ăn uống",
+  "targetTerm": "eats rice",
+  "meaningVi": "ăn cơm",
+  "promptVi": "Cậu ấy ăn cơm ở nhà.",
+  "referenceAnswers": [
+   "He eats rice at home."
+  ],
+  "grammarTags": [
+   "third-person-present"
+  ],
+  "explanationVi": "Với he, động từ eat thêm -s ở hiện tại đơn.",
+  "rationaleVi": "Một ý, có chủ ngữ và động từ ở ngôi thứ ba.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "original-level-authored",
+  "version": 1
+ },
+ {
+  "id": "band-2.5-exp-001",
+  "practiceLevel": "2.5",
+  "type": "sentence",
+  "topic": "gia đình",
+  "targetTerm": "looks after",
+  "meaningVi": "chăm sóc",
+  "promptVi": "Mẹ tôi chăm sóc em bé mỗi sáng.",
+  "referenceAnswers": [
+   "My mother looks after the baby every morning."
+  ],
+  "grammarTags": [
+   "Subject-verb-object"
+  ],
+  "explanationVi": "Cụm 'looks after' có nghĩa là chăm sóc ai đó, được dùng trong câu đơn diễn tả hành động hàng ngày.",
+  "rationaleVi": "Câu ngắn sử dụng chủ ngữ quen thuộc 'My mother' và động từ quen thuộc 'looks after' trong bối cảnh đời sống gia đình.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "ai-assisted-level-draft",
+  "version": 1
+ },
+ {
+  "id": "band-2.5-exp-002",
+  "practiceLevel": "2.5",
+  "type": "phrase",
+  "topic": "đi lại",
+  "targetTerm": "on foot",
+  "meaningVi": "đi bộ",
+  "promptVi": "đi bộ đến trường",
+  "referenceAnswers": [
+   "going to school on foot"
+  ],
+  "grammarTags": [
+   "Prepositional phrase"
+  ],
+  "explanationVi": "Cụm giới từ 'on foot' chỉ phương tiện di chuyển là đi bằng chân (đi bộ).",
+  "rationaleVi": "Cụm từ ngắn gọn, nói về việc đi lại hàng ngày đơn giản phù hợp cấp độ 2.5.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "ai-assisted-level-draft",
+  "version": 1
+ },
+ {
+  "id": "band-2.5-exp-003",
+  "practiceLevel": "2.5",
+  "type": "sentence",
+  "topic": "đồ ăn",
+  "targetTerm": "fresh fruit",
+  "meaningVi": "trái cây tươi",
+  "promptVi": "Họ mua trái cây tươi ở chợ.",
+  "referenceAnswers": [
+   "They buy fresh fruit at the market."
+  ],
+  "grammarTags": [
+   "Simple sentence"
+  ],
+  "explanationVi": "Cụm 'fresh fruit' chỉ trái cây chưa qua chế biến hay đóng hộp, mua ở chợ đời sống.",
+  "rationaleVi": "Câu ngắn với chủ ngữ 'They' và động từ 'buy' mô tả một hành động sinh hoạt đời sống rõ ràng.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "ai-assisted-level-draft",
+  "version": 1
+ },
+ {
+  "id": "band-2.5-exp-004",
+  "practiceLevel": "2.5",
+  "type": "sentence",
+  "topic": "sức khỏe",
+  "targetTerm": "drink water",
+  "meaningVi": "uống nước",
+  "promptVi": "Bạn nên uống nước sau khi tập thể dục.",
+  "referenceAnswers": [
+   "You should drink water after exercising."
+  ],
+  "grammarTags": [
+   "Modal verb structure"
+  ],
+  "explanationVi": "Cụm 'drink water' thể hiện hành động uống nước giữ sức khỏe.",
+  "rationaleVi": "Cấu trúc câu lời khuyên ngắn gọn với 'should' và từ vựng quen thuộc cho thói quen sức khỏe.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "ai-assisted-level-draft",
+  "version": 1
+ },
+ {
+  "id": "band-2.5-exp-005",
+  "practiceLevel": "2.5",
+  "type": "phrase",
+  "topic": "thời gian",
+  "targetTerm": "in the afternoon",
+  "meaningVi": "vào buổi chiều",
+  "promptVi": "chơi bóng đá vào buổi chiều",
+  "referenceAnswers": [
+   "playing football in the afternoon"
+  ],
+  "grammarTags": [
+   "Time phrase"
+  ],
+  "explanationVi": "Cụm chỉ thời gian 'in the afternoon' xác định mốc thời gian buổi chiều.",
+  "rationaleVi": "Cụm từ kết hợp hoạt động thể thao quen thuộc và thời gian đời sống đơn giản.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "ai-assisted-level-draft",
+  "version": 1
+ },
+ {
+  "id": "band-2.5-exp-006",
+  "practiceLevel": "2.5",
+  "type": "sentence",
+  "topic": "công việc",
+  "targetTerm": "starts work",
+  "meaningVi": "bắt đầu làm việc",
+  "promptVi": "Anh ấy bắt đầu làm việc lúc tám giờ.",
+  "referenceAnswers": [
+   "He starts work at eight o'clock."
+  ],
+  "grammarTags": [
+   "Daily routine sentence"
+  ],
+  "explanationVi": "Cụm 'starts work' miêu tả thời điểm bắt đầu ca làm việc.",
+  "rationaleVi": "Mệnh đề đơn giản với chủ ngữ 'He' diễn tả lịch trình công việc quen thuộc.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "ai-assisted-level-draft",
+  "version": 1
+ },
+ {
+  "id": "band-2.5-exp-007",
+  "practiceLevel": "2.5",
+  "type": "sentence",
+  "topic": "nhà ở",
+  "targetTerm": "small flat",
+  "meaningVi": "căn hộ nhỏ",
+  "promptVi": "Chúng tôi sống trong một căn hộ nhỏ.",
+  "referenceAnswers": [
+   "We live in a small flat."
+  ],
+  "grammarTags": [
+   "Present simple with place preposition"
+  ],
+  "explanationVi": "Từ 'flat' là cách dùng Anh - Anh phổ biến cho căn hộ, ghép với 'small' thành căn hộ nhỏ.",
+  "rationaleVi": "Câu ngắn miêu tả nơi ở thực tế với từ vựng chuẩn Anh - Anh đơn giản.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "ai-assisted-level-draft",
+  "version": 1
+ },
+ {
+  "id": "band-2.5-exp-008",
+  "practiceLevel": "2.5",
+  "type": "sentence",
+  "topic": "trường học",
+  "targetTerm": "read books",
+  "meaningVi": "đọc sách",
+  "promptVi": "Học sinh đọc sách trong thư viện.",
+  "referenceAnswers": [
+   "Students read books in the library."
+  ],
+  "grammarTags": [
+   "Subject + Verb + Object"
+  ],
+  "explanationVi": "Cụm 'read books' chỉ hoạt động học tập cơ bản của học sinh.",
+  "rationaleVi": "Câu có cấu trúc cơ bản S-V-O đi kèm trạng ngữ chỉ nơi chốn trong môi trường học đường.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "ai-assisted-level-draft",
+  "version": 1
+ },
+ {
+  "id": "band-2.5-exp-009",
+  "practiceLevel": "2.5",
+  "type": "phrase",
+  "topic": "môi trường",
+  "targetTerm": "clean water",
+  "meaningVi": "nước sạch",
+  "promptVi": "nước sạch cho mọi người",
+  "referenceAnswers": [
+   "clean water for everyone"
+  ],
+  "grammarTags": [
+   "Noun phrase"
+  ],
+  "explanationVi": "Cụm danh từ 'clean water' dùng để miêu tả nước an toàn không bị ô nhiễm.",
+  "rationaleVi": "Cụm từ dễ hiểu về môi trường sống, phù hợp định hướng từ cụm từ lên câu ngắn.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "ai-assisted-level-draft",
+  "version": 1
+ },
+ {
+  "id": "band-2.5-exp-010",
+  "practiceLevel": "2.5",
+  "type": "sentence",
+  "topic": "công nghệ",
+  "targetTerm": "uses a mobile phone",
+  "meaningVi": "dùng điện thoại di động",
+  "promptVi": "Ông tôi dùng điện thoại di động để gọi điện.",
+  "referenceAnswers": [
+   "My grandfather uses a mobile phone to make calls."
+  ],
+  "grammarTags": [
+   "Purpose infinitive clause"
+  ],
+  "explanationVi": "Cụm 'uses a mobile phone' nói về thói quen sử dụng thiết bị công nghệ hàng ngày.",
+  "rationaleVi": "Câu ngắn trình bày một ý rõ ràng về thói quen sinh hoạt công nghệ của người thân.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "ai-assisted-level-draft",
+  "version": 1
+ },
+ {
+  "id": "band-2.5-exp-011",
+  "practiceLevel": "2.5",
+  "type": "sentence",
+  "topic": "du lịch",
+  "targetTerm": "visit the museum",
+  "meaningVi": "thăm bảo tàng",
+  "promptVi": "Khách du lịch thăm bảo tàng vào buổi sáng.",
+  "referenceAnswers": [
+   "Tourists visit the museum in the morning."
+  ],
+  "grammarTags": [
+   "Subject + Verb + Object + Time"
+  ],
+  "explanationVi": "Cụm 'visit the museum' là hoạt động tham quan du lịch quen thuộc.",
+  "rationaleVi": "Câu đơn ngắn gọn với chủ ngữ 'Tourists' chỉ một hoạt động du lịch cụ thể.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "ai-assisted-level-draft",
+  "version": 1
+ },
+ {
+  "id": "band-2.5-exp-012",
+  "practiceLevel": "2.5",
+  "type": "sentence",
+  "topic": "đô thị",
+  "targetTerm": "wait for the bus",
+  "meaningVi": "đợi xe buýt",
+  "promptVi": "Nhiều người đợi xe buýt ở bến.",
+  "referenceAnswers": [
+   "Many people wait for the bus at the stop."
+  ],
+  "grammarTags": [
+   "Simple present with prepositional phrase"
+  ],
+  "explanationVi": "Cụm 'wait for the bus' dùng để chỉ hành động chờ phương tiện giao thông công cộng.",
+  "rationaleVi": "Câu ngắn diễn tả cảnh sinh hoạt đô thị quen thuộc với động từ và giới từ cơ bản.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "ai-assisted-level-draft",
+  "version": 1
+ },
+ {
+  "id": "band-2.5-exp-013",
+  "practiceLevel": "2.5",
+  "type": "sentence",
+  "topic": "đồ ăn",
+  "targetTerm": "bake a cake",
+  "meaningVi": "nướng một chiếc bánh",
+  "promptVi": "Tôi muốn nướng một chiếc bánh cho chị gái tôi.",
+  "referenceAnswers": [
+   "I want to bake a cake for my sister."
+  ],
+  "grammarTags": [
+   "infinitive pattern"
+  ],
+  "explanationVi": "Cụm động từ 'bake a cake' nghĩa là nướng một chiếc bánh, kết hợp sau cấu trúc 'want to'.",
+  "rationaleVi": "Câu ngắn sử dụng cấu trúc động từ quen thuộc 'want to' kết hợp cụm hành động thực tế, phù hợp trình độ 2.5.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "ai-assisted-level-draft",
+  "version": 1
+ },
+ {
+  "id": "band-2.5-exp-014",
+  "practiceLevel": "2.5",
+  "type": "sentence",
+  "topic": "đi lại",
+  "targetTerm": "catch a train",
+  "meaningVi": "đón tàu hỏa",
+  "promptVi": "Họ đến nhà ga để đón tàu hỏa đi làm.",
+  "referenceAnswers": [
+   "They go to the station to catch a train to work."
+  ],
+  "grammarTags": [
+   "infinitive of purpose"
+  ],
+  "explanationVi": "Cụm 'catch a train' diễn tả hành động bắt/đón tàu hỏa để di chuyển.",
+  "rationaleVi": "Sử dụng câu ghép chỉ mục đích đơn giản với các danh từ chỉ nơi chốn quen thuộc.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "ai-assisted-level-draft",
+  "version": 1
+ },
+ {
+  "id": "band-2.5-exp-015",
+  "practiceLevel": "2.5",
+  "type": "phrase",
+  "topic": "môi trường",
+  "targetTerm": "clean the local park",
+  "meaningVi": "dọn dẹp công viên địa phương",
+  "promptVi": "dọn dẹp công viên địa phương",
+  "referenceAnswers": [
+   "clean the local park"
+  ],
+  "grammarTags": [
+   "verb phrase"
+  ],
+  "explanationVi": "Cụm động từ chỉ hành động bảo vệ môi trường sống xung quanh.",
+  "rationaleVi": "Cụm từ đơn giản giúp học viên củng cố từ vựng trước khi ghép thành câu hoàn chỉnh.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "ai-assisted-level-draft",
+  "version": 1
+ },
+ {
+  "id": "band-2.5-exp-016",
+  "practiceLevel": "2.5",
+  "type": "sentence",
+  "topic": "thời gian",
+  "targetTerm": "in the morning",
+  "meaningVi": "vào buổi sáng",
+  "promptVi": "Cha tôi thường uống trà nóng vào buổi sáng.",
+  "referenceAnswers": [
+   "My father usually drinks hot tea in the morning."
+  ],
+  "grammarTags": [
+   "time phrase"
+  ],
+  "explanationVi": "Cụm từ chỉ thời gian 'in the morning' thường đứng cuối câu đơn trong thì hiện tại đơn.",
+  "rationaleVi": "Câu thể hiện một thói quen hằng ngày với trạng từ chỉ tần suất và cụm thời gian cơ bản.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "ai-assisted-level-draft",
+  "version": 1
+ },
+ {
+  "id": "band-2.5-exp-017",
+  "practiceLevel": "2.5",
+  "type": "sentence",
+  "topic": "công nghệ",
+  "targetTerm": "send an email",
+  "meaningVi": "gửi một thư điện tử",
+  "promptVi": "Cô ấy muốn gửi một thư điện tử cho giáo viên của mình.",
+  "referenceAnswers": [
+   "She wants to send an email to her teacher."
+  ],
+  "grammarTags": [
+   "simple object clause"
+  ],
+  "explanationVi": "Cụm 'send an email' mô tả hành động truyền thông tin qua máy tính hoặc điện thoại.",
+  "rationaleVi": "Cấu trúc câu ngắn với đại từ nhân xưng quen thuộc và chủ đề giao tiếp công nghệ đơn giản.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "ai-assisted-level-draft",
+  "version": 1
+ },
+ {
+  "id": "band-2.5-exp-018",
+  "practiceLevel": "2.5",
+  "type": "sentence",
+  "topic": "du lịch",
+  "targetTerm": "take photos",
+  "meaningVi": "chụp ảnh",
+  "promptVi": "Du khách thích chụp ảnh bên bờ sông.",
+  "referenceAnswers": [
+   "Tourists like to take photos by the river."
+  ],
+  "grammarTags": [
+   "verb pattern"
+  ],
+  "explanationVi": "'take photos' là cụm từ tự nhiên trong tiếng Anh Anh để nói về việc chụp hình.",
+  "rationaleVi": "Câu kết hợp sở thích đời sống ngắn gọn với động từ quen thuộc 'like to'.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "ai-assisted-level-draft",
+  "version": 1
+ },
+ {
+  "id": "band-2.5-exp-019",
+  "practiceLevel": "2.5",
+  "type": "sentence",
+  "topic": "nhà ở",
+  "targetTerm": "clean the room",
+  "meaningVi": "dọn dẹp phòng",
+  "promptVi": "Trẻ em phải dọn dẹp phòng trước khi chơi.",
+  "referenceAnswers": [
+   "Children must clean the room before playing."
+  ],
+  "grammarTags": [
+   "modal verb"
+  ],
+  "explanationVi": "'clean the room' là cụm hành động sinh hoạt nhà ở phổ biến.",
+  "rationaleVi": "Sử dụng động từ khuyết thiếu 'must' ở mức độ cơ bản để tạo câu ngắn gọn.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "ai-assisted-level-draft",
+  "version": 1
+ },
+ {
+  "id": "band-2.5-exp-020",
+  "practiceLevel": "2.5",
+  "type": "sentence",
+  "topic": "sức khỏe",
+  "targetTerm": "go to sleep",
+  "meaningVi": "đi ngủ",
+  "promptVi": "Trẻ em nên đi ngủ sớm mỗi tối.",
+  "referenceAnswers": [
+   "Children should go to sleep early every night."
+  ],
+  "grammarTags": [
+   "advice sentence"
+  ],
+  "explanationVi": "Cụm 'go to sleep' diễn tả hành động bắt đầu giấc ngủ.",
+  "rationaleVi": "Mô tả một lời khuyên sức khỏe đời sống đơn giản sử dụng động từ khuyết thiếu 'should'.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "ai-assisted-level-draft",
+  "version": 1
+ },
+ {
+  "id": "band-2.5-exp-021",
+  "practiceLevel": "2.5",
+  "type": "phrase",
+  "topic": "giáo dục",
+  "targetTerm": "do homework",
+  "meaningVi": "làm bài tập về nhà",
+  "promptVi": "làm bài tập về nhà sau giờ học",
+  "referenceAnswers": [
+   "do homework after school"
+  ],
+  "grammarTags": [
+   "verb phrase"
+  ],
+  "explanationVi": "'do homework' là cụm từ cố định chỉ việc học sinh làm bài tập ở nhà.",
+  "rationaleVi": "Cụm từ sinh hoạt trường học ngắn gọn dành cho việc luyện tập phản xạ từ vựng.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "ai-assisted-level-draft",
+  "version": 1
+ },
+ {
+  "id": "band-2.5-exp-022",
+  "practiceLevel": "2.5",
+  "type": "sentence",
+  "topic": "thể thao",
+  "targetTerm": "play badminton",
+  "meaningVi": "chơi cầu lông",
+  "promptVi": "Chúng tôi thích chơi cầu lông trong khu vườn.",
+  "referenceAnswers": [
+   "We like to play badminton in the garden."
+  ],
+  "grammarTags": [
+   "simple present"
+  ],
+  "explanationVi": "'play badminton' là cụm từ chỉ môn thể thao phổ biến, 'garden' dùng theo chuẩn tiếng Anh Anh.",
+  "rationaleVi": "Câu đơn diễn tả sở thích thể thao trong ngữ cảnh đời sống thường nhật.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "ai-assisted-level-draft",
+  "version": 1
+ },
+ {
+  "id": "band-2.5-exp-023",
+  "practiceLevel": "2.5",
+  "type": "sentence",
+  "topic": "công việc",
+  "targetTerm": "plant flowers",
+  "meaningVi": "trồng hoa",
+  "promptVi": "Những người thợ làm vườn trồng hoa trong công viên.",
+  "referenceAnswers": [
+   "The gardeners plant flowers in the park."
+  ],
+  "grammarTags": [
+   "subject-verb-object"
+  ],
+  "explanationVi": "Cụm 'plant flowers' chỉ hành động chăm sóc cây cảnh trong công việc làm vườn.",
+  "rationaleVi": "Mô tả hành động của nghề nghiệp bằng một câu đơn đơn giản có chủ ngữ và động từ quen thuộc.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "ai-assisted-level-draft",
+  "version": 1
+ },
+ {
+  "id": "band-2.5-exp-024",
+  "practiceLevel": "2.5",
+  "type": "sentence",
+  "topic": "kinh tế",
+  "targetTerm": "buy vegetables",
+  "meaningVi": "mua rau củ",
+  "promptVi": "Họ mua rau củ ở siêu thị nhỏ.",
+  "referenceAnswers": [
+   "They buy vegetables at the small supermarket."
+  ],
+  "grammarTags": [
+   "simple present tense"
+  ],
+  "explanationVi": "Cụm 'buy vegetables' nói về hoạt động mua sắm hàng hóa thiết yếu hằng ngày.",
+  "rationaleVi": "Cấu trúc S-V-O cơ bản trong bối cảnh mua sắm kinh tế gia đình.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "ai-assisted-level-draft",
+  "version": 1
+ },
+ {
+  "id": "band-2.5-exp-025",
+  "practiceLevel": "2.5",
+  "type": "sentence",
+  "topic": "đồ ăn",
+  "targetTerm": "fresh bread",
+  "meaningVi": "bánh mì tươi",
+  "promptVi": "Anh ấy mua bánh mì tươi từ cửa hàng bánh vào buổi sáng.",
+  "referenceAnswers": [
+   "He buys fresh bread from the bakery in the morning."
+  ],
+  "grammarTags": [
+   "simple sentence - present simple"
+  ],
+  "explanationVi": "Cụm 'fresh bread' có nghĩa là 'bánh mì tươi'. Câu sử dụng thì hiện tại đơn với chủ ngữ 'He' và động từ 'buys'.",
+  "rationaleVi": "Mục này sử dụng một câu đơn ngắn với chủ ngữ và động từ quen thuộc diễn tả hoạt động sinh hoạt đời thường, phù hợp mức độ 2.5.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "ai-assisted-level-draft",
+  "version": 1
+ },
+ {
+  "id": "band-2.5-exp-026",
+  "practiceLevel": "2.5",
+  "type": "sentence",
+  "topic": "sức khỏe",
+  "targetTerm": "drink water",
+  "meaningVi": "uống nước",
+  "promptVi": "Bạn nên uống nước mỗi ngày để giữ sức khỏe.",
+  "referenceAnswers": [
+   "You should drink water every day to stay healthy."
+  ],
+  "grammarTags": [
+   "modal verb sentence"
+  ],
+  "explanationVi": "Cụm 'drink water' nghĩa là 'uống nước', đi sau động từ khuyết thiếu 'should' để đưa ra lời khuyên đơn giản.",
+  "rationaleVi": "Câu diễn đạt một ý rõ ràng về chăm sóc sức khỏe bản thân với cấu trúc câu ngắn gồm chủ ngữ 'You' và động từ chính 'drink'.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "ai-assisted-level-draft",
+  "version": 1
+ },
+ {
+  "id": "band-2.5-exp-027",
+  "practiceLevel": "2.5",
+  "type": "phrase",
+  "topic": "thời gian",
+  "targetTerm": "in the early morning",
+  "meaningVi": "vào sáng sớm",
+  "promptVi": "vào sáng sớm",
+  "referenceAnswers": [
+   "in the early morning"
+  ],
+  "grammarTags": [
+   "prepositional phrase"
+  ],
+  "explanationVi": "Cụm giới từ chỉ thời gian 'in the early morning' dùng để bổ nghĩa cho thời điểm xảy ra sự việc.",
+  "rationaleVi": "Đây là một cụm từ thời gian ngắn và thông dụng, làm bước đệm cho người học kết hợp vào câu ngắn ở mức 2.5.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "ai-assisted-level-draft",
+  "version": 1
+ },
+ {
+  "id": "band-2.5-exp-028",
+  "practiceLevel": "2.5",
+  "type": "sentence",
+  "topic": "giáo dục",
+  "targetTerm": "learn English",
+  "meaningVi": "học tiếng Anh",
+  "promptVi": "Học sinh học tiếng Anh cùng thầy giáo mới.",
+  "referenceAnswers": [
+   "Students learn English with a new teacher."
+  ],
+  "grammarTags": [
+   "simple sentence - present simple"
+  ],
+  "explanationVi": "Cụm 'learn English' nghĩa là 'học tiếng Anh'. Động từ 'learn' đi liền với chủ ngữ số nhiều 'Students'.",
+  "rationaleVi": "Câu thể hiện một ý đơn giản thuộc ngữ cảnh học tập ở trường với ngữ pháp căn bản, rất vừa sức cho trình độ 2.5.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "ai-assisted-level-draft",
+  "version": 1
+ },
+ {
+  "id": "band-2.5-exp-029",
+  "practiceLevel": "2.5",
+  "type": "phrase",
+  "topic": "môi trường",
+  "targetTerm": "green trees",
+  "meaningVi": "những cây xanh",
+  "promptVi": "cây xanh trong khu vườn",
+  "referenceAnswers": [
+   "green trees in the garden"
+  ],
+  "grammarTags": [
+   "noun phrase with modifier"
+  ],
+  "explanationVi": "Cụm danh từ 'green trees' thể hiện đối tượng môi trường quen thuộc, kết hợp cụm giới từ 'in the garden'.",
+  "rationaleVi": "Cụm danh từ cơ bản giúp học viên củng cố khả năng ghép từ trước khi mở rộng thành câu hoàn chỉnh.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "ai-assisted-level-draft",
+  "version": 1
+ },
+ {
+  "id": "band-2.5-exp-030",
+  "practiceLevel": "2.5",
+  "type": "sentence",
+  "topic": "công nghệ",
+  "targetTerm": "use a computer",
+  "meaningVi": "sử dụng máy tính",
+  "promptVi": "Tôi sử dụng máy tính để hoàn thành công việc.",
+  "referenceAnswers": [
+   "I use a computer to finish my work."
+  ],
+  "grammarTags": [
+   "simple sentence with infinitive of purpose"
+  ],
+  "explanationVi": "Cụm 'use a computer' dịch là 'sử dụng máy tính'. Mệnh đề theo sau 'to finish my work' chỉ mục đích đơn giản.",
+  "rationaleVi": "Item này trình bày một thao tác công nghệ cơ bản trong đời sống bằng một câu đơn giản gồm chủ ngữ 'I' và động từ 'use'.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "ai-assisted-level-draft",
+  "version": 1
+ },
+ {
+  "id": "band-2.5-exp-031",
+  "practiceLevel": "2.5",
+  "type": "phrase",
+  "topic": "du lịch",
+  "targetTerm": "visit a new city",
+  "meaningVi": "thăm một thành phố mới",
+  "promptVi": "thăm một thành phố mới",
+  "referenceAnswers": [
+   "visit a new city"
+  ],
+  "grammarTags": [
+   "verb phrase"
+  ],
+  "explanationVi": "Cụm động từ 'visit a new city' diễn tả một hành động du lịch ngắn gọn và quen thuộc.",
+  "rationaleVi": "Cụm động từ dễ hiểu giúp học viên thực hành các ý niệm cốt lõi trước khi nâng lên cấp độ câu phức phức tạp hơn.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "ai-assisted-level-draft",
+  "version": 1
+ },
+ {
+  "id": "band-2.5-exp-032",
+  "practiceLevel": "2.5",
+  "type": "sentence",
+  "topic": "thể thao",
+  "targetTerm": "play tennis",
+  "meaningVi": "chơi quần vợt",
+  "promptVi": "Họ chơi quần vợt ở câu lạc bộ địa phương.",
+  "referenceAnswers": [
+   "They play tennis at the local club."
+  ],
+  "grammarTags": [
+   "simple sentence - location"
+  ],
+  "explanationVi": "Cụm 'play tennis' nghĩa là 'chơi quần vợt'. Động từ 'play' đi cùng chủ ngữ 'They' và trạng ngữ chỉ địa điểm 'at the local club'.",
+  "rationaleVi": "Một câu hoàn chỉnh ngắn diễn tả sở thích thể thao đời thường với các thành phần chủ - vị rất rõ ràng.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "ai-assisted-level-draft",
+  "version": 1
+ },
+ {
+  "id": "band-2.5-exp-033",
+  "practiceLevel": "2.5",
+  "type": "sentence",
+  "topic": "sức khỏe",
+  "targetTerm": "go for a walk",
+  "meaningVi": "đi bộ",
+  "promptVi": "Bác sĩ khuyên chúng ta nên đi bộ hằng ngày.",
+  "referenceAnswers": [
+   "The doctor advises us to go for a walk every day."
+  ],
+  "grammarTags": [
+   "Verb + Object + Infinitive"
+  ],
+  "explanationVi": "Cụm từ \"go for a walk\" nghĩa là đi bộ thư giãn, kết hợp với cấu trúc khuyên ai đó làm gì \"advise someone to do something\".",
+  "rationaleVi": "Câu sử dụng chủ ngữ quen thuộc \"The doctor\" và động từ phổ biến, biểu đạt một ý rõ ràng về thói quen sức khỏe ở mức độ 2.5.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "ai-assisted-level-draft",
+  "version": 1
+ },
+ {
+  "id": "band-2.5-exp-034",
+  "practiceLevel": "2.5",
+  "type": "sentence",
+  "topic": "đi lại",
+  "targetTerm": "take the underground",
+  "meaningVi": "đi tàu điện ngầm",
+  "promptVi": "Họ đi tàu điện ngầm đến văn phòng làm việc.",
+  "referenceAnswers": [
+   "They take the underground to the office."
+  ],
+  "grammarTags": [
+   "Simple Present Tense"
+  ],
+  "explanationVi": "Cụm \"take the underground\" thể hiện việc di chuyển bằng tàu điện ngầm theo phong cách Anh-Anh chuẩn.",
+  "rationaleVi": "Mô tả hành động đi lại hằng ngày bằng một câu ngắn với chủ ngữ \"They\" và động từ chỉ chuyển động cơ bản.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "ai-assisted-level-draft",
+  "version": 1
+ },
+ {
+  "id": "band-2.5-exp-035",
+  "practiceLevel": "2.5",
+  "type": "phrase",
+  "topic": "nhà ở",
+  "targetTerm": "a small back garden",
+  "meaningVi": "một khu vườn nhỏ phía sau nhà",
+  "promptVi": "một khu vườn nhỏ phía sau nhà",
+  "referenceAnswers": [
+   "a small back garden"
+  ],
+  "grammarTags": [
+   "Noun Phrase"
+  ],
+  "explanationVi": "Cụm danh từ đơn giản miêu tả không gian nhà ở, sử dụng từ \"back garden\" tự nhiên trong tiếng Anh-Anh.",
+  "rationaleVi": "Cung cấp cụm từ ngắn gọn, quen thuộc để phối hợp cùng các câu ngắn trong bộ luyện tập cấp độ 2.5.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "ai-assisted-level-draft",
+  "version": 1
+ },
+ {
+  "id": "esl-v2-r05-u01-001",
+  "practiceLevel": "2.5",
+  "type": "phrase",
+  "topic": "Câu trần thuật SVO: Ai làm gì với cái gì?",
+  "promptVi": "đọc một bản đồ",
+  "referenceAnswers": [
+   "read a map"
+  ],
+  "grammarTags": [
+   "R05-U01",
+   "phrase",
+   "R05"
+  ],
+  "explanationVi": "Câu cơ bản: Subject (ai/cái gì) + Verb (làm gì) + Object (ai/cái gì chịu tác động). Ví dụ: They clean the classroom. Đây là cụm từ dùng để chuẩn bị ghép câu; chưa cần một chủ ngữ hoàn chỉnh.",
+  "rationaleVi": "Chuyển từ cụm từ sang câu ngắn với chủ ngữ và động từ quen thuộc. Bài bổ sung từ bộ ESL v2 (R05-U01), chủ đề Câu trần thuật SVO: Ai làm gì với cái gì?.",
+  "commonErrors": [
+   {
+    "incorrect": "read map",
+    "correction": "read a map",
+    "reasonVi": "Xác định đúng vị trí S–V–O, hình thức động từ hiện tại đơn và cụm bổ nghĩa."
+   },
+   {
+    "incorrect": "reading a map",
+    "correction": "read a map",
+    "reasonVi": "Khi thêm thời gian hoặc nơi chốn, giữ tân ngữ liền sau động từ và dùng mạo từ/số nhiều phù hợp."
+   }
+  ],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "esl-v2",
+  "version": 1
+ },
+ {
+  "id": "esl-v2-r05-u01-002",
+  "practiceLevel": "2.5",
+  "type": "phrase",
+  "topic": "Câu trần thuật SVO: Ai làm gì với cái gì?",
+  "promptVi": "một tấm thiệp sinh nhật",
+  "referenceAnswers": [
+   "a birthday card"
+  ],
+  "grammarTags": [
+   "R05-U01",
+   "phrase",
+   "R05"
+  ],
+  "explanationVi": "Tân ngữ đứng sau động từ: I read a book, không đặt object sau cụm thời gian khi không có lý do diễn ngôn. Đây là cụm từ dùng để chuẩn bị ghép câu; chưa cần một chủ ngữ hoàn chỉnh.",
+  "rationaleVi": "Chuyển từ cụm từ sang câu ngắn với chủ ngữ và động từ quen thuộc. Bài bổ sung từ bộ ESL v2 (R05-U01), chủ đề Câu trần thuật SVO: Ai làm gì với cái gì?.",
+  "commonErrors": [
+   {
+    "incorrect": "birthday a card",
+    "correction": "a birthday card",
+    "reasonVi": "So với đáp án mẫu, phần cần sửa: “∅” → “a”, “a” → “∅”. Xác định đúng vị trí S–V–O, hình thức động từ hiện tại đơn và cụm bổ nghĩa."
+   },
+   {
+    "incorrect": "a card birthday",
+    "correction": "a birthday card",
+    "reasonVi": "So với đáp án mẫu, phần cần sửa: “∅” → “birthday”, “birthday” → “∅”. Khi thêm thời gian hoặc nơi chốn, giữ tân ngữ liền sau động từ và dùng mạo từ/số nhiều phù hợp."
+   }
+  ],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "esl-v2",
+  "version": 1
+ },
+ {
+  "id": "esl-v2-r05-u01-003",
+  "practiceLevel": "2.5",
+  "type": "phrase",
+  "topic": "Câu trần thuật SVO: Ai làm gì với cái gì?",
+  "promptVi": "viết một lời nhắn ngắn",
+  "referenceAnswers": [
+   "write a short message"
+  ],
+  "grammarTags": [
+   "R05-U01",
+   "phrase",
+   "R05"
+  ],
+  "explanationVi": "He/she/it + động từ thường ở hiện tại đơn có -s/-es: she writes, he watches. Đây là cụm từ dùng để chuẩn bị ghép câu; chưa cần một chủ ngữ hoàn chỉnh.",
+  "rationaleVi": "Chuyển từ cụm từ sang câu ngắn với chủ ngữ và động từ quen thuộc. Bài bổ sung từ bộ ESL v2 (R05-U01), chủ đề Câu trần thuật SVO: Ai làm gì với cái gì?.",
+  "commonErrors": [
+   {
+    "incorrect": "write short message",
+    "correction": "write a short message",
+    "reasonVi": "Xác định đúng vị trí S–V–O, hình thức động từ hiện tại đơn và cụm bổ nghĩa."
+   },
+   {
+    "incorrect": "write a shortly message",
+    "correction": "write a short message",
+    "reasonVi": "Khi thêm thời gian hoặc nơi chốn, giữ tân ngữ liền sau động từ và dùng mạo từ/số nhiều phù hợp."
+   }
+  ],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "esl-v2",
+  "version": 1
+ },
+ {
+  "id": "esl-v2-r05-u01-004",
+  "practiceLevel": "2.5",
+  "type": "phrase",
+  "topic": "Câu trần thuật SVO: Ai làm gì với cái gì?",
+  "promptVi": "đặt chìa khóa lên bàn",
+  "referenceAnswers": [
+   "put the keys on the table"
+  ],
+  "grammarTags": [
+   "R05-U01",
+   "phrase",
+   "R05"
+  ],
+  "explanationVi": "I/you/we/they + động từ nguyên thể: we work; they visit. Đây là cụm từ dùng để chuẩn bị ghép câu; chưa cần một chủ ngữ hoàn chỉnh.",
+  "rationaleVi": "Chuyển từ cụm từ sang câu ngắn với chủ ngữ và động từ quen thuộc. Bài bổ sung từ bộ ESL v2 (R05-U01), chủ đề Câu trần thuật SVO: Ai làm gì với cái gì?.",
+  "commonErrors": [
+   {
+    "incorrect": "put the keys in the table",
+    "correction": "put the keys on the table",
+    "reasonVi": "Xác định đúng vị trí S–V–O, hình thức động từ hiện tại đơn và cụm bổ nghĩa."
+   },
+   {
+    "incorrect": "put keys on table the",
+    "correction": "put the keys on the table",
+    "reasonVi": "So với đáp án mẫu, phần cần sửa: “∅” → “the”, “∅” → “the”, “the” → “∅”. Khi thêm thời gian hoặc nơi chốn, giữ tân ngữ liền sau động từ và dùng mạo từ/số nhiều phù hợp."
+   }
+  ],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "esl-v2",
+  "version": 1
+ },
+ {
+  "id": "esl-v2-r05-u01-005",
+  "practiceLevel": "2.5",
+  "type": "phrase",
+  "topic": "Câu trần thuật SVO: Ai làm gì với cái gì?",
+  "promptVi": "mang theo một chiếc áo khoác nhẹ",
+  "referenceAnswers": [
+   "carry a light jacket"
+  ],
+  "grammarTags": [
+   "R05-U01",
+   "phrase",
+   "R05"
+  ],
+  "explanationVi": "Thời gian/địa điểm thường đặt sau tân ngữ: I put my phone on the shelf. Đây là cụm từ dùng để chuẩn bị ghép câu; chưa cần một chủ ngữ hoàn chỉnh.",
+  "rationaleVi": "Chuyển từ cụm từ sang câu ngắn với chủ ngữ và động từ quen thuộc. Bài bổ sung từ bộ ESL v2 (R05-U01), chủ đề Câu trần thuật SVO: Ai làm gì với cái gì?.",
+  "commonErrors": [
+   {
+    "incorrect": "carry a light jackets",
+    "correction": "carry a light jacket",
+    "reasonVi": "Xác định đúng vị trí S–V–O, hình thức động từ hiện tại đơn và cụm bổ nghĩa."
+   },
+   {
+    "incorrect": "carry light a jacket",
+    "correction": "carry a light jacket",
+    "reasonVi": "So với đáp án mẫu, phần cần sửa: “∅” → “a”, “a” → “∅”. Khi thêm thời gian hoặc nơi chốn, giữ tân ngữ liền sau động từ và dùng mạo từ/số nhiều phù hợp."
+   }
+  ],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "esl-v2",
+  "version": 1
+ },
+ {
+  "id": "esl-v2-r05-u01-006",
+  "practiceLevel": "2.5",
+  "type": "sentence",
+  "topic": "Câu trần thuật SVO: Ai làm gì với cái gì?",
+  "promptVi": "Tôi khóa cửa trước khi ra ngoài.",
+  "referenceAnswers": [
+   "I lock the door before I go out."
+  ],
+  "grammarTags": [
+   "R05-U01",
+   "sentence",
+   "R05"
+  ],
+  "explanationVi": "Danh từ đếm được số ít thường cần mạo từ/từ hạn định: a ticket, the table, my book. Đây là câu trần thuật hoàn chỉnh; hãy kiểm tra động từ hoặc trợ động từ theo chủ ngữ.",
+  "rationaleVi": "Chuyển từ cụm từ sang câu ngắn với chủ ngữ và động từ quen thuộc. Bài bổ sung từ bộ ESL v2 (R05-U01), chủ đề Câu trần thuật SVO: Ai làm gì với cái gì?.",
+  "commonErrors": [
+   {
+    "incorrect": "I locks the door before I go out.",
+    "correction": "I lock the door before I go out.",
+    "reasonVi": "Xác định đúng vị trí S–V–O, hình thức động từ hiện tại đơn và cụm bổ nghĩa."
+   },
+   {
+    "incorrect": "Lock I the door before I go out.",
+    "correction": "I lock the door before I go out.",
+    "reasonVi": "So với đáp án mẫu, phần cần sửa: “Lock” → “∅”, “∅” → “lock”. Khi thêm thời gian hoặc nơi chốn, giữ tân ngữ liền sau động từ và dùng mạo từ/số nhiều phù hợp."
+   }
+  ],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "esl-v2",
+  "version": 1
+ },
+ {
+  "id": "esl-v2-r05-u01-007",
+  "practiceLevel": "2.5",
+  "type": "sentence",
+  "topic": "Câu trần thuật SVO: Ai làm gì với cái gì?",
+  "promptVi": "Em gái tôi vẽ những bông hoa trong sổ tay.",
+  "referenceAnswers": [
+   "My younger sister draws flowers in her notebook."
+  ],
+  "grammarTags": [
+   "R05-U01",
+   "sentence",
+   "R05"
+  ],
+  "explanationVi": "Câu cơ bản: Subject (ai/cái gì) + Verb (làm gì) + Object (ai/cái gì chịu tác động). Ví dụ: They clean the classroom. Đây là câu trần thuật hoàn chỉnh; hãy kiểm tra động từ hoặc trợ động từ theo chủ ngữ.",
+  "rationaleVi": "Chuyển từ cụm từ sang câu ngắn với chủ ngữ và động từ quen thuộc. Bài bổ sung từ bộ ESL v2 (R05-U01), chủ đề Câu trần thuật SVO: Ai làm gì với cái gì?.",
+  "commonErrors": [
+   {
+    "incorrect": "My younger sister draw flowers in her notebook.",
+    "correction": "My younger sister draws flowers in her notebook.",
+    "reasonVi": "Xác định đúng vị trí S–V–O, hình thức động từ hiện tại đơn và cụm bổ nghĩa."
+   },
+   {
+    "incorrect": "My younger sister draws in flowers her notebook.",
+    "correction": "My younger sister draws flowers in her notebook.",
+    "reasonVi": "So với đáp án mẫu, phần cần sửa: “∅” → “flowers”, “flowers” → “∅”. Khi thêm thời gian hoặc nơi chốn, giữ tân ngữ liền sau động từ và dùng mạo từ/số nhiều phù hợp."
+   }
+  ],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "esl-v2",
+  "version": 1
+ },
+ {
+  "id": "esl-v2-r05-u01-008",
+  "practiceLevel": "2.5",
+  "type": "sentence",
+  "topic": "Câu trần thuật SVO: Ai làm gì với cái gì?",
+  "promptVi": "Chúng tôi rửa bát sau bữa tối.",
+  "referenceAnswers": [
+   "We wash the dishes after dinner."
+  ],
+  "grammarTags": [
+   "R05-U01",
+   "sentence",
+   "R05"
+  ],
+  "explanationVi": "Tân ngữ đứng sau động từ: I read a book, không đặt object sau cụm thời gian khi không có lý do diễn ngôn. Đây là câu trần thuật hoàn chỉnh; hãy kiểm tra động từ hoặc trợ động từ theo chủ ngữ.",
+  "rationaleVi": "Chuyển từ cụm từ sang câu ngắn với chủ ngữ và động từ quen thuộc. Bài bổ sung từ bộ ESL v2 (R05-U01), chủ đề Câu trần thuật SVO: Ai làm gì với cái gì?.",
+  "commonErrors": [
+   {
+    "incorrect": "We washes the dishes after dinner.",
+    "correction": "We wash the dishes after dinner.",
+    "reasonVi": "Xác định đúng vị trí S–V–O, hình thức động từ hiện tại đơn và cụm bổ nghĩa."
+   },
+   {
+    "incorrect": "We wash after dinner the dishes.",
+    "correction": "We wash the dishes after dinner.",
+    "reasonVi": "So với đáp án mẫu, phần cần sửa: “∅” → “the dishes”, “dinner the dishes.” → “dinner.”. Khi thêm thời gian hoặc nơi chốn, giữ tân ngữ liền sau động từ và dùng mạo từ/số nhiều phù hợp."
+   }
+  ],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "esl-v2",
+  "version": 1
+ },
+ {
+  "id": "esl-v2-r05-u01-009",
+  "practiceLevel": "2.5",
+  "type": "sentence",
+  "topic": "Câu trần thuật SVO: Ai làm gì với cái gì?",
+  "promptVi": "Người quản lý kiểm tra danh sách mỗi sáng.",
+  "referenceAnswers": [
+   "The manager checks the list every morning."
+  ],
+  "grammarTags": [
+   "R05-U01",
+   "sentence",
+   "R05"
+  ],
+  "explanationVi": "He/she/it + động từ thường ở hiện tại đơn có -s/-es: she writes, he watches. Đây là câu trần thuật hoàn chỉnh; hãy kiểm tra động từ hoặc trợ động từ theo chủ ngữ.",
+  "rationaleVi": "Chuyển từ cụm từ sang câu ngắn với chủ ngữ và động từ quen thuộc. Bài bổ sung từ bộ ESL v2 (R05-U01), chủ đề Câu trần thuật SVO: Ai làm gì với cái gì?.",
+  "commonErrors": [
+   {
+    "incorrect": "The manager check the list every morning.",
+    "correction": "The manager checks the list every morning.",
+    "reasonVi": "Xác định đúng vị trí S–V–O, hình thức động từ hiện tại đơn và cụm bổ nghĩa."
+   },
+   {
+    "incorrect": "Checks the manager the list every morning.",
+    "correction": "The manager checks the list every morning.",
+    "reasonVi": "So với đáp án mẫu, phần cần sửa: “Checks the” → “The”, “∅” → “checks”. Khi thêm thời gian hoặc nơi chốn, giữ tân ngữ liền sau động từ và dùng mạo từ/số nhiều phù hợp."
+   }
+  ],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "esl-v2",
+  "version": 1
+ },
+ {
+  "id": "esl-v2-r05-u01-010",
+  "practiceLevel": "2.5",
+  "type": "sentence",
+  "topic": "Câu trần thuật SVO: Ai làm gì với cái gì?",
+  "promptVi": "Tôi để đôi giày ở cạnh cửa.",
+  "referenceAnswers": [
+   "I leave my shoes by the door."
+  ],
+  "grammarTags": [
+   "R05-U01",
+   "sentence",
+   "R05"
+  ],
+  "explanationVi": "I/you/we/they + động từ nguyên thể: we work; they visit. Đây là câu trần thuật hoàn chỉnh; hãy kiểm tra động từ hoặc trợ động từ theo chủ ngữ.",
+  "rationaleVi": "Chuyển từ cụm từ sang câu ngắn với chủ ngữ và động từ quen thuộc. Bài bổ sung từ bộ ESL v2 (R05-U01), chủ đề Câu trần thuật SVO: Ai làm gì với cái gì?.",
+  "commonErrors": [
+   {
+    "incorrect": "I leaves my shoes by the door.",
+    "correction": "I leave my shoes by the door.",
+    "reasonVi": "Xác định đúng vị trí S–V–O, hình thức động từ hiện tại đơn và cụm bổ nghĩa."
+   },
+   {
+    "incorrect": "I leave by the door my shoes.",
+    "correction": "I leave my shoes by the door.",
+    "reasonVi": "So với đáp án mẫu, phần cần sửa: “∅” → “my shoes”, “door my shoes.” → “door.”. Khi thêm thời gian hoặc nơi chốn, giữ tân ngữ liền sau động từ và dùng mạo từ/số nhiều phù hợp."
+   }
+  ],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "esl-v2",
+  "version": 1
+ },
+ {
+  "id": "esl-v2-r05-u01-011",
+  "practiceLevel": "2.5",
+  "type": "sentence",
+  "topic": "Câu trần thuật SVO: Ai làm gì với cái gì?",
+  "promptVi": "Các bạn của Lan mang đồ ăn đến buổi dã ngoại.",
+  "referenceAnswers": [
+   "Lan's friends bring food to the picnic."
+  ],
+  "grammarTags": [
+   "R05-U01",
+   "sentence",
+   "R05"
+  ],
+  "explanationVi": "Thời gian/địa điểm thường đặt sau tân ngữ: I put my phone on the shelf. Đây là câu trần thuật hoàn chỉnh; hãy kiểm tra động từ hoặc trợ động từ theo chủ ngữ.",
+  "rationaleVi": "Chuyển từ cụm từ sang câu ngắn với chủ ngữ và động từ quen thuộc. Bài bổ sung từ bộ ESL v2 (R05-U01), chủ đề Câu trần thuật SVO: Ai làm gì với cái gì?.",
+  "commonErrors": [
+   {
+    "incorrect": "Lan's friends brings food to the picnic.",
+    "correction": "Lan's friends bring food to the picnic.",
+    "reasonVi": "Xác định đúng vị trí S–V–O, hình thức động từ hiện tại đơn và cụm bổ nghĩa."
+   },
+   {
+    "incorrect": "Lan's friends bring to the picnic food.",
+    "correction": "Lan's friends bring food to the picnic.",
+    "reasonVi": "So với đáp án mẫu, phần cần sửa: “∅” → “food”, “picnic food.” → “picnic.”. Khi thêm thời gian hoặc nơi chốn, giữ tân ngữ liền sau động từ và dùng mạo từ/số nhiều phù hợp."
+   }
+  ],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "esl-v2",
+  "version": 1
+ },
+ {
+  "id": "esl-v2-r05-u01-012",
+  "practiceLevel": "2.5",
+  "type": "sentence",
+  "topic": "Câu trần thuật SVO: Ai làm gì với cái gì?",
+  "promptVi": "Bố tôi sửa chiếc ghế gỗ vào ngày Chủ nhật.",
+  "referenceAnswers": [
+   "My father repairs the wooden chair on Sundays."
+  ],
+  "grammarTags": [
+   "R05-U01",
+   "sentence",
+   "R05"
+  ],
+  "explanationVi": "Danh từ đếm được số ít thường cần mạo từ/từ hạn định: a ticket, the table, my book. Đây là câu trần thuật hoàn chỉnh; hãy kiểm tra động từ hoặc trợ động từ theo chủ ngữ.",
+  "rationaleVi": "Chuyển từ cụm từ sang câu ngắn với chủ ngữ và động từ quen thuộc. Bài bổ sung từ bộ ESL v2 (R05-U01), chủ đề Câu trần thuật SVO: Ai làm gì với cái gì?.",
+  "commonErrors": [
+   {
+    "incorrect": "My father repair the wooden chair on Sundays.",
+    "correction": "My father repairs the wooden chair on Sundays.",
+    "reasonVi": "Xác định đúng vị trí S–V–O, hình thức động từ hiện tại đơn và cụm bổ nghĩa."
+   },
+   {
+    "incorrect": "My father repairs on Sundays the wooden chair.",
+    "correction": "My father repairs the wooden chair on Sundays.",
+    "reasonVi": "So với đáp án mẫu, phần cần sửa: “on Sundays” → “∅”, “chair.” → “chair on Sundays.”. Khi thêm thời gian hoặc nơi chốn, giữ tân ngữ liền sau động từ và dùng mạo từ/số nhiều phù hợp."
+   }
+  ],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "esl-v2",
+  "version": 1
+ },
+ {
+  "id": "esl-v2-r05-u01-013",
+  "practiceLevel": "2.5",
+  "type": "sentence",
+  "topic": "Câu trần thuật SVO: Ai làm gì với cái gì?",
+  "promptVi": "Người bán hàng mở cửa tiệm lúc chín giờ.",
+  "referenceAnswers": [
+   "The shop assistant opens the shop at nine."
+  ],
+  "grammarTags": [
+   "R05-U01",
+   "sentence",
+   "R05"
+  ],
+  "explanationVi": "Câu cơ bản: Subject (ai/cái gì) + Verb (làm gì) + Object (ai/cái gì chịu tác động). Ví dụ: They clean the classroom. Đây là câu trần thuật hoàn chỉnh; hãy kiểm tra động từ hoặc trợ động từ theo chủ ngữ.",
+  "rationaleVi": "Chuyển từ cụm từ sang câu ngắn với chủ ngữ và động từ quen thuộc. Bài bổ sung từ bộ ESL v2 (R05-U01), chủ đề Câu trần thuật SVO: Ai làm gì với cái gì?.",
+  "commonErrors": [
+   {
+    "incorrect": "The shop assistant open the shop at nine.",
+    "correction": "The shop assistant opens the shop at nine.",
+    "reasonVi": "Xác định đúng vị trí S–V–O, hình thức động từ hiện tại đơn và cụm bổ nghĩa."
+   },
+   {
+    "incorrect": "The shop assistant opens at nine the shop.",
+    "correction": "The shop assistant opens the shop at nine.",
+    "reasonVi": "So với đáp án mẫu, phần cần sửa: “∅” → “the shop”, “nine the shop.” → “nine.”. Khi thêm thời gian hoặc nơi chốn, giữ tân ngữ liền sau động từ và dùng mạo từ/số nhiều phù hợp."
+   }
+  ],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "esl-v2",
+  "version": 1
+ },
+ {
+  "id": "esl-v2-r05-u01-014",
+  "practiceLevel": "2.5",
+  "type": "sentence",
+  "topic": "Câu trần thuật SVO: Ai làm gì với cái gì?",
+  "promptVi": "Chúng tôi gửi một tấm bưu thiếp cho bà.",
+  "referenceAnswers": [
+   "We send a postcard to our grandmother."
+  ],
+  "grammarTags": [
+   "R05-U01",
+   "sentence",
+   "R05"
+  ],
+  "explanationVi": "Tân ngữ đứng sau động từ: I read a book, không đặt object sau cụm thời gian khi không có lý do diễn ngôn. Đây là câu trần thuật hoàn chỉnh; hãy kiểm tra động từ hoặc trợ động từ theo chủ ngữ.",
+  "rationaleVi": "Chuyển từ cụm từ sang câu ngắn với chủ ngữ và động từ quen thuộc. Bài bổ sung từ bộ ESL v2 (R05-U01), chủ đề Câu trần thuật SVO: Ai làm gì với cái gì?.",
+  "commonErrors": [
+   {
+    "incorrect": "We sends a postcard to our grandmother.",
+    "correction": "We send a postcard to our grandmother.",
+    "reasonVi": "Xác định đúng vị trí S–V–O, hình thức động từ hiện tại đơn và cụm bổ nghĩa."
+   },
+   {
+    "incorrect": "We send a postcard our grandmother.",
+    "correction": "We send a postcard to our grandmother.",
+    "reasonVi": "Khi thêm thời gian hoặc nơi chốn, giữ tân ngữ liền sau động từ và dùng mạo từ/số nhiều phù hợp."
+   }
+  ],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "esl-v2",
+  "version": 1
+ },
+ {
+  "id": "esl-v2-r05-u01-015",
+  "practiceLevel": "2.5",
+  "type": "sentence",
+  "topic": "Câu trần thuật SVO: Ai làm gì với cái gì?",
+  "promptVi": "Chú chó mang quả bóng đến cho chủ của nó.",
+  "referenceAnswers": [
+   "The dog brings the ball to its owner."
+  ],
+  "grammarTags": [
+   "R05-U01",
+   "sentence",
+   "R05"
+  ],
+  "explanationVi": "He/she/it + động từ thường ở hiện tại đơn có -s/-es: she writes, he watches. Đây là câu trần thuật hoàn chỉnh; hãy kiểm tra động từ hoặc trợ động từ theo chủ ngữ.",
+  "rationaleVi": "Chuyển từ cụm từ sang câu ngắn với chủ ngữ và động từ quen thuộc. Bài bổ sung từ bộ ESL v2 (R05-U01), chủ đề Câu trần thuật SVO: Ai làm gì với cái gì?.",
+  "commonErrors": [
+   {
+    "incorrect": "The dog bring the ball to its owner.",
+    "correction": "The dog brings the ball to its owner.",
+    "reasonVi": "Xác định đúng vị trí S–V–O, hình thức động từ hiện tại đơn và cụm bổ nghĩa."
+   },
+   {
+    "incorrect": "The dog brings to its owner the ball.",
+    "correction": "The dog brings the ball to its owner.",
+    "reasonVi": "So với đáp án mẫu, phần cần sửa: “∅” → “the ball”, “owner the ball.” → “owner.”. Khi thêm thời gian hoặc nơi chốn, giữ tân ngữ liền sau động từ và dùng mạo từ/số nhiều phù hợp."
+   }
+  ],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "esl-v2",
+  "version": 1
+ },
+ {
+  "id": "esl-v2-r05-u01-016",
+  "practiceLevel": "2.5",
+  "type": "sentence",
+  "topic": "Câu trần thuật SVO: Ai làm gì với cái gì?",
+  "promptVi": "Các công nhân dọn con đường vào buổi sáng.",
+  "referenceAnswers": [
+   "The workers clean the road in the morning."
+  ],
+  "grammarTags": [
+   "R05-U01",
+   "sentence",
+   "R05"
+  ],
+  "explanationVi": "I/you/we/they + động từ nguyên thể: we work; they visit. Đây là câu trần thuật hoàn chỉnh; hãy kiểm tra động từ hoặc trợ động từ theo chủ ngữ.",
+  "rationaleVi": "Chuyển từ cụm từ sang câu ngắn với chủ ngữ và động từ quen thuộc. Bài bổ sung từ bộ ESL v2 (R05-U01), chủ đề Câu trần thuật SVO: Ai làm gì với cái gì?.",
+  "commonErrors": [
+   {
+    "incorrect": "The workers cleans the road in the morning.",
+    "correction": "The workers clean the road in the morning.",
+    "reasonVi": "Xác định đúng vị trí S–V–O, hình thức động từ hiện tại đơn và cụm bổ nghĩa."
+   },
+   {
+    "incorrect": "The workers clean in the morning the road.",
+    "correction": "The workers clean the road in the morning.",
+    "reasonVi": "So với đáp án mẫu, phần cần sửa: “∅” → “the road”, “morning the road.” → “morning.”. Khi thêm thời gian hoặc nơi chốn, giữ tân ngữ liền sau động từ và dùng mạo từ/số nhiều phù hợp."
+   }
+  ],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "esl-v2",
+  "version": 1
+ },
+ {
+  "id": "esl-v2-r05-u01-017",
+  "practiceLevel": "2.5",
+  "type": "sentence",
+  "topic": "Câu trần thuật SVO: Ai làm gì với cái gì?",
+  "promptVi": "Tôi cất vé xe buýt trong ví nhỏ của mình.",
+  "referenceAnswers": [
+   "I keep my bus ticket in my small wallet."
+  ],
+  "grammarTags": [
+   "R05-U01",
+   "sentence",
+   "R05"
+  ],
+  "explanationVi": "Thời gian/địa điểm thường đặt sau tân ngữ: I put my phone on the shelf. Đây là câu trần thuật hoàn chỉnh; hãy kiểm tra động từ hoặc trợ động từ theo chủ ngữ.",
+  "rationaleVi": "Chuyển từ cụm từ sang câu ngắn với chủ ngữ và động từ quen thuộc. Bài bổ sung từ bộ ESL v2 (R05-U01), chủ đề Câu trần thuật SVO: Ai làm gì với cái gì?.",
+  "commonErrors": [
+   {
+    "incorrect": "I keeps my bus ticket in my small wallet.",
+    "correction": "I keep my bus ticket in my small wallet.",
+    "reasonVi": "Xác định đúng vị trí S–V–O, hình thức động từ hiện tại đơn và cụm bổ nghĩa."
+   },
+   {
+    "incorrect": "I keep in my small wallet my bus ticket.",
+    "correction": "I keep my bus ticket in my small wallet.",
+    "reasonVi": "So với đáp án mẫu, phần cần sửa: “∅” → “my bus ticket”, “wallet my bus ticket.” → “wallet.”. Khi thêm thời gian hoặc nơi chốn, giữ tân ngữ liền sau động từ và dùng mạo từ/số nhiều phù hợp."
+   }
+  ],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "esl-v2",
+  "version": 1
+ },
+ {
+  "id": "esl-v2-r05-u02-001",
+  "practiceLevel": "2.5",
+  "type": "phrase",
+  "topic": "To be (am/is/are) để miêu tả người và vật",
+  "promptVi": "một chiếc vali khá nặng",
+  "referenceAnswers": [
+   "a rather heavy suitcase"
+  ],
+  "grammarTags": [
+   "R05-U02",
+   "phrase",
+   "R05"
+  ],
+  "explanationVi": "I am; he/she/it is; you/we/they are. Danh từ số nhiều đi với are. Đây là cụm từ dùng để chuẩn bị ghép câu; chưa cần một chủ ngữ hoàn chỉnh.",
+  "rationaleVi": "Chuyển từ cụm từ sang câu ngắn với chủ ngữ và động từ quen thuộc. Bài bổ sung từ bộ ESL v2 (R05-U02), chủ đề To be (am/is/are) để miêu tả người và vật.",
+  "commonErrors": [
+   {
+    "incorrect": "a rather heavily suitcase",
+    "correction": "a rather heavy suitcase",
+    "reasonVi": "Chọn be đúng theo ngôi/số của chủ ngữ và phân biệt tính từ với danh từ."
+   },
+   {
+    "incorrect": "a suitcase rather heavy",
+    "correction": "a rather heavy suitcase",
+    "reasonVi": "So với đáp án mẫu, phần cần sửa: “suitcase” → “∅”, “∅” → “suitcase”. Câu miêu tả cần am/is/are; sau be dùng tính từ, không tự đổi sang trạng từ."
+   }
+  ],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "esl-v2",
+  "version": 1
+ },
+ {
+  "id": "esl-v2-r05-u02-002",
+  "practiceLevel": "2.5",
+  "type": "phrase",
+  "topic": "To be (am/is/are) để miêu tả người và vật",
+  "promptVi": "rất mệt sau chuyến đi",
+  "referenceAnswers": [
+   "very tired after the trip"
+  ],
+  "grammarTags": [
+   "R05-U02",
+   "phrase",
+   "R05"
+  ],
+  "explanationVi": "Câu miêu tả: S + be + adjective: The road is narrow. Đây là cụm từ dùng để chuẩn bị ghép câu; chưa cần một chủ ngữ hoàn chỉnh.",
+  "rationaleVi": "Chuyển từ cụm từ sang câu ngắn với chủ ngữ và động từ quen thuộc. Bài bổ sung từ bộ ESL v2 (R05-U02), chủ đề To be (am/is/are) để miêu tả người và vật.",
+  "commonErrors": [
+   {
+    "incorrect": "very tiring after the trip",
+    "correction": "very tired after the trip",
+    "reasonVi": "Chọn be đúng theo ngôi/số của chủ ngữ và phân biệt tính từ với danh từ."
+   },
+   {
+    "incorrect": "very tired after trip",
+    "correction": "very tired after the trip",
+    "reasonVi": "Câu miêu tả cần am/is/are; sau be dùng tính từ, không tự đổi sang trạng từ."
+   }
+  ],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "esl-v2",
+  "version": 1
+ },
+ {
+  "id": "esl-v2-r05-u02-003",
+  "practiceLevel": "2.5",
+  "type": "phrase",
+  "topic": "To be (am/is/are) để miêu tả người và vật",
+  "promptVi": "một người hàng xóm thân thiện",
+  "referenceAnswers": [
+   "a friendly neighbour"
+  ],
+  "grammarTags": [
+   "R05-U02",
+   "phrase",
+   "R05"
+  ],
+  "explanationVi": "Nói nghề nghiệp/vai trò: S + be + a/an + singular noun: He is an engineer. Đây là cụm từ dùng để chuẩn bị ghép câu; chưa cần một chủ ngữ hoàn chỉnh.",
+  "rationaleVi": "Chuyển từ cụm từ sang câu ngắn với chủ ngữ và động từ quen thuộc. Bài bổ sung từ bộ ESL v2 (R05-U02), chủ đề To be (am/is/are) để miêu tả người và vật.",
+  "commonErrors": [
+   {
+    "incorrect": "a friend neighbour",
+    "correction": "a friendly neighbour",
+    "reasonVi": "Chọn be đúng theo ngôi/số của chủ ngữ và phân biệt tính từ với danh từ."
+   },
+   {
+    "incorrect": "a neighbour friendly",
+    "correction": "a friendly neighbour",
+    "reasonVi": "So với đáp án mẫu, phần cần sửa: “∅” → “friendly”, “friendly” → “∅”. Câu miêu tả cần am/is/are; sau be dùng tính từ, không tự đổi sang trạng từ."
+   }
+  ],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "esl-v2",
+  "version": 1
+ },
+ {
+  "id": "esl-v2-r05-u02-004",
+  "practiceLevel": "2.5",
+  "type": "phrase",
+  "topic": "To be (am/is/are) để miêu tả người và vật",
+  "promptVi": "sẵn sàng cho bài kiểm tra",
+  "referenceAnswers": [
+   "ready for the test"
+  ],
+  "grammarTags": [
+   "R05-U02",
+   "phrase",
+   "R05"
+  ],
+  "explanationVi": "Nói nơi chốn: S + be + place: My keys are in the drawer. Đây là cụm từ dùng để chuẩn bị ghép câu; chưa cần một chủ ngữ hoàn chỉnh.",
+  "rationaleVi": "Chuyển từ cụm từ sang câu ngắn với chủ ngữ và động từ quen thuộc. Bài bổ sung từ bộ ESL v2 (R05-U02), chủ đề To be (am/is/are) để miêu tả người và vật.",
+  "commonErrors": [
+   {
+    "incorrect": "ready to the test",
+    "correction": "ready for the test",
+    "reasonVi": "Chọn be đúng theo ngôi/số của chủ ngữ và phân biệt tính từ với danh từ."
+   },
+   {
+    "incorrect": "ready for test",
+    "correction": "ready for the test",
+    "reasonVi": "Câu miêu tả cần am/is/are; sau be dùng tính từ, không tự đổi sang trạng từ."
+   }
+  ],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "esl-v2",
+  "version": 1
+ },
+ {
+  "id": "esl-v2-r05-u02-005",
+  "practiceLevel": "2.5",
+  "type": "sentence",
+  "topic": "To be (am/is/are) để miêu tả người và vật",
+  "promptVi": "Tôi đang ở thư viện ngay bây giờ.",
+  "referenceAnswers": [
+   "I am at the library now."
+  ],
+  "grammarTags": [
+   "R05-U02",
+   "sentence",
+   "R05"
+  ],
+  "explanationVi": "Phủ định: am not/is not/are not + bổ ngữ: The windows are not open. Đây là câu trần thuật hoàn chỉnh; hãy kiểm tra động từ hoặc trợ động từ theo chủ ngữ.",
+  "rationaleVi": "Chuyển từ cụm từ sang câu ngắn với chủ ngữ và động từ quen thuộc. Bài bổ sung từ bộ ESL v2 (R05-U02), chủ đề To be (am/is/are) để miêu tả người và vật.",
+  "commonErrors": [
+   {
+    "incorrect": "I is at the library now.",
+    "correction": "I am at the library now.",
+    "reasonVi": "Chọn be đúng theo ngôi/số của chủ ngữ và phân biệt tính từ với danh từ."
+   },
+   {
+    "incorrect": "I at the library now.",
+    "correction": "I am at the library now.",
+    "reasonVi": "Câu miêu tả cần am/is/are; sau be dùng tính từ, không tự đổi sang trạng từ."
+   }
+  ],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "esl-v2",
+  "version": 1
+ },
+ {
+  "id": "esl-v2-r05-u02-006",
+  "practiceLevel": "2.5",
+  "type": "sentence",
+  "topic": "To be (am/is/are) để miêu tả người và vật",
+  "promptVi": "Hai chiếc cốc này sạch.",
+  "referenceAnswers": [
+   "These two cups are clean."
+  ],
+  "grammarTags": [
+   "R05-U02",
+   "sentence",
+   "R05"
+  ],
+  "explanationVi": "Tính từ sau be không thêm -ly: She is calm, không phải calmly. Đây là câu trần thuật hoàn chỉnh; hãy kiểm tra động từ hoặc trợ động từ theo chủ ngữ.",
+  "rationaleVi": "Chuyển từ cụm từ sang câu ngắn với chủ ngữ và động từ quen thuộc. Bài bổ sung từ bộ ESL v2 (R05-U02), chủ đề To be (am/is/are) để miêu tả người và vật.",
+  "commonErrors": [
+   {
+    "incorrect": "These two cups is clean.",
+    "correction": "These two cups are clean.",
+    "reasonVi": "Chọn be đúng theo ngôi/số của chủ ngữ và phân biệt tính từ với danh từ."
+   },
+   {
+    "incorrect": "These two cups clean.",
+    "correction": "These two cups are clean.",
+    "reasonVi": "Câu miêu tả cần am/is/are; sau be dùng tính từ, không tự đổi sang trạng từ."
+   }
+  ],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "esl-v2",
+  "version": 1
+ },
+ {
+  "id": "esl-v2-r05-u02-007",
+  "practiceLevel": "2.5",
+  "type": "sentence",
+  "topic": "To be (am/is/are) để miêu tả người và vật",
+  "promptVi": "Cô giáo của chúng tôi rất kiên nhẫn.",
+  "referenceAnswers": [
+   "Our teacher is very patient."
+  ],
+  "grammarTags": [
+   "R05-U02",
+   "sentence",
+   "R05"
+  ],
+  "explanationVi": "I am; he/she/it is; you/we/they are. Danh từ số nhiều đi với are. Đây là câu trần thuật hoàn chỉnh; hãy kiểm tra động từ hoặc trợ động từ theo chủ ngữ.",
+  "rationaleVi": "Chuyển từ cụm từ sang câu ngắn với chủ ngữ và động từ quen thuộc. Bài bổ sung từ bộ ESL v2 (R05-U02), chủ đề To be (am/is/are) để miêu tả người và vật.",
+  "commonErrors": [
+   {
+    "incorrect": "Our teacher are very patient.",
+    "correction": "Our teacher is very patient.",
+    "reasonVi": "Chọn be đúng theo ngôi/số của chủ ngữ và phân biệt tính từ với danh từ."
+   },
+   {
+    "incorrect": "Our teacher very patient.",
+    "correction": "Our teacher is very patient.",
+    "reasonVi": "Câu miêu tả cần am/is/are; sau be dùng tính từ, không tự đổi sang trạng từ."
+   }
+  ],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "esl-v2",
+  "version": 1
+ },
+ {
+  "id": "esl-v2-r05-u02-008",
+  "practiceLevel": "2.5",
+  "type": "sentence",
+  "topic": "To be (am/is/are) để miêu tả người và vật",
+  "promptVi": "Chiếc hộp dưới giường trống.",
+  "referenceAnswers": [
+   "The box under the bed is empty."
+  ],
+  "grammarTags": [
+   "R05-U02",
+   "sentence",
+   "R05"
+  ],
+  "explanationVi": "Câu miêu tả: S + be + adjective: The road is narrow. Đây là câu trần thuật hoàn chỉnh; hãy kiểm tra động từ hoặc trợ động từ theo chủ ngữ.",
+  "rationaleVi": "Chuyển từ cụm từ sang câu ngắn với chủ ngữ và động từ quen thuộc. Bài bổ sung từ bộ ESL v2 (R05-U02), chủ đề To be (am/is/are) để miêu tả người và vật.",
+  "commonErrors": [
+   {
+    "incorrect": "The box under the bed are empty.",
+    "correction": "The box under the bed is empty.",
+    "reasonVi": "Chọn be đúng theo ngôi/số của chủ ngữ và phân biệt tính từ với danh từ."
+   },
+   {
+    "incorrect": "The box under the bed empty.",
+    "correction": "The box under the bed is empty.",
+    "reasonVi": "Câu miêu tả cần am/is/are; sau be dùng tính từ, không tự đổi sang trạng từ."
+   }
+  ],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "esl-v2",
+  "version": 1
+ },
+ {
+  "id": "esl-v2-r05-u02-009",
+  "practiceLevel": "2.5",
+  "type": "sentence",
+  "topic": "To be (am/is/are) để miêu tả người và vật",
+  "promptVi": "Tôi không lo lắng về bài tập này.",
+  "referenceAnswers": [
+   "I am not worried about this exercise."
+  ],
+  "grammarTags": [
+   "R05-U02",
+   "sentence",
+   "R05"
+  ],
+  "explanationVi": "Nói nghề nghiệp/vai trò: S + be + a/an + singular noun: He is an engineer. Đây là câu trần thuật hoàn chỉnh; hãy kiểm tra động từ hoặc trợ động từ theo chủ ngữ.",
+  "rationaleVi": "Chuyển từ cụm từ sang câu ngắn với chủ ngữ và động từ quen thuộc. Bài bổ sung từ bộ ESL v2 (R05-U02), chủ đề To be (am/is/are) để miêu tả người và vật.",
+  "commonErrors": [
+   {
+    "incorrect": "I not worried about this exercise.",
+    "correction": "I am not worried about this exercise.",
+    "reasonVi": "Chọn be đúng theo ngôi/số của chủ ngữ và phân biệt tính từ với danh từ."
+   },
+   {
+    "incorrect": "I am not worry about this exercise.",
+    "correction": "I am not worried about this exercise.",
+    "reasonVi": "Câu miêu tả cần am/is/are; sau be dùng tính từ, không tự đổi sang trạng từ."
+   }
+  ],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "esl-v2",
+  "version": 1
+ },
+ {
+  "id": "esl-v2-r05-u02-010",
+  "practiceLevel": "2.5",
+  "type": "sentence",
+  "topic": "To be (am/is/are) để miêu tả người và vật",
+  "promptVi": "Những học sinh mới rất hào hứng.",
+  "referenceAnswers": [
+   "The new students are very excited."
+  ],
+  "grammarTags": [
+   "R05-U02",
+   "sentence",
+   "R05"
+  ],
+  "explanationVi": "Nói nơi chốn: S + be + place: My keys are in the drawer. Đây là câu trần thuật hoàn chỉnh; hãy kiểm tra động từ hoặc trợ động từ theo chủ ngữ.",
+  "rationaleVi": "Chuyển từ cụm từ sang câu ngắn với chủ ngữ và động từ quen thuộc. Bài bổ sung từ bộ ESL v2 (R05-U02), chủ đề To be (am/is/are) để miêu tả người và vật.",
+  "commonErrors": [
+   {
+    "incorrect": "The new students is very excited.",
+    "correction": "The new students are very excited.",
+    "reasonVi": "Chọn be đúng theo ngôi/số của chủ ngữ và phân biệt tính từ với danh từ."
+   },
+   {
+    "incorrect": "The new students are very exciting.",
+    "correction": "The new students are very excited.",
+    "reasonVi": "Câu miêu tả cần am/is/are; sau be dùng tính từ, không tự đổi sang trạng từ."
+   }
+  ],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "esl-v2",
+  "version": 1
+ },
+ {
+  "id": "esl-v2-r05-u02-011",
+  "practiceLevel": "2.5",
+  "type": "sentence",
+  "topic": "To be (am/is/are) để miêu tả người và vật",
+  "promptVi": "Anh trai tôi không có mặt ở nhà hôm nay.",
+  "referenceAnswers": [
+   "My older brother is not at home today."
+  ],
+  "grammarTags": [
+   "R05-U02",
+   "sentence",
+   "R05"
+  ],
+  "explanationVi": "Phủ định: am not/is not/are not + bổ ngữ: The windows are not open. Đây là câu trần thuật hoàn chỉnh; hãy kiểm tra động từ hoặc trợ động từ theo chủ ngữ.",
+  "rationaleVi": "Chuyển từ cụm từ sang câu ngắn với chủ ngữ và động từ quen thuộc. Bài bổ sung từ bộ ESL v2 (R05-U02), chủ đề To be (am/is/are) để miêu tả người và vật.",
+  "commonErrors": [
+   {
+    "incorrect": "My older brother not at home today.",
+    "correction": "My older brother is not at home today.",
+    "reasonVi": "Chọn be đúng theo ngôi/số của chủ ngữ và phân biệt tính từ với danh từ."
+   },
+   {
+    "incorrect": "My older brother are not at home today.",
+    "correction": "My older brother is not at home today.",
+    "reasonVi": "Câu miêu tả cần am/is/are; sau be dùng tính từ, không tự đổi sang trạng từ."
+   }
+  ],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "esl-v2",
+  "version": 1
+ },
+ {
+  "id": "esl-v2-r05-u02-012",
+  "practiceLevel": "2.5",
+  "type": "sentence",
+  "topic": "To be (am/is/are) để miêu tả người và vật",
+  "promptVi": "Buổi họp này rất quan trọng với nhóm.",
+  "referenceAnswers": [
+   "This meeting is very important to the team."
+  ],
+  "grammarTags": [
+   "R05-U02",
+   "sentence",
+   "R05"
+  ],
+  "explanationVi": "Tính từ sau be không thêm -ly: She is calm, không phải calmly. Đây là câu trần thuật hoàn chỉnh; hãy kiểm tra động từ hoặc trợ động từ theo chủ ngữ.",
+  "rationaleVi": "Chuyển từ cụm từ sang câu ngắn với chủ ngữ và động từ quen thuộc. Bài bổ sung từ bộ ESL v2 (R05-U02), chủ đề To be (am/is/are) để miêu tả người và vật.",
+  "commonErrors": [
+   {
+    "incorrect": "This meeting are very important to the team.",
+    "correction": "This meeting is very important to the team.",
+    "reasonVi": "Chọn be đúng theo ngôi/số của chủ ngữ và phân biệt tính từ với danh từ."
+   },
+   {
+    "incorrect": "This meeting very important to the team.",
+    "correction": "This meeting is very important to the team.",
+    "reasonVi": "Câu miêu tả cần am/is/are; sau be dùng tính từ, không tự đổi sang trạng từ."
+   }
+  ],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "esl-v2",
+  "version": 1
+ },
+ {
+  "id": "esl-v2-r05-u02-013",
+  "practiceLevel": "2.5",
+  "type": "sentence",
+  "topic": "To be (am/is/are) để miêu tả người và vật",
+  "promptVi": "Hai chiếc ghế bên cửa sổ không thoải mái.",
+  "referenceAnswers": [
+   "The two chairs by the window are not comfortable."
+  ],
+  "grammarTags": [
+   "R05-U02",
+   "sentence",
+   "R05"
+  ],
+  "explanationVi": "I am; he/she/it is; you/we/they are. Danh từ số nhiều đi với are. Đây là câu trần thuật hoàn chỉnh; hãy kiểm tra động từ hoặc trợ động từ theo chủ ngữ.",
+  "rationaleVi": "Chuyển từ cụm từ sang câu ngắn với chủ ngữ và động từ quen thuộc. Bài bổ sung từ bộ ESL v2 (R05-U02), chủ đề To be (am/is/are) để miêu tả người và vật.",
+  "commonErrors": [
+   {
+    "incorrect": "The two chairs by the window is not comfortable.",
+    "correction": "The two chairs by the window are not comfortable.",
+    "reasonVi": "Chọn be đúng theo ngôi/số của chủ ngữ và phân biệt tính từ với danh từ."
+   },
+   {
+    "incorrect": "The two chairs by the window not comfortable.",
+    "correction": "The two chairs by the window are not comfortable.",
+    "reasonVi": "Câu miêu tả cần am/is/are; sau be dùng tính từ, không tự đổi sang trạng từ."
+   }
+  ],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "esl-v2",
+  "version": 1
+ },
+ {
+  "id": "esl-v2-r05-u02-014",
+  "practiceLevel": "2.5",
+  "type": "sentence",
+  "topic": "To be (am/is/are) để miêu tả người và vật",
+  "promptVi": "Món súp quá nóng để ăn ngay.",
+  "referenceAnswers": [
+   "The soup is too hot to eat now."
+  ],
+  "grammarTags": [
+   "R05-U02",
+   "sentence",
+   "R05"
+  ],
+  "explanationVi": "Câu miêu tả: S + be + adjective: The road is narrow. Đây là câu trần thuật hoàn chỉnh; hãy kiểm tra động từ hoặc trợ động từ theo chủ ngữ.",
+  "rationaleVi": "Chuyển từ cụm từ sang câu ngắn với chủ ngữ và động từ quen thuộc. Bài bổ sung từ bộ ESL v2 (R05-U02), chủ đề To be (am/is/are) để miêu tả người và vật.",
+  "commonErrors": [
+   {
+    "incorrect": "The soup are too hot to eat now.",
+    "correction": "The soup is too hot to eat now.",
+    "reasonVi": "Chọn be đúng theo ngôi/số của chủ ngữ và phân biệt tính từ với danh từ."
+   },
+   {
+    "incorrect": "The soup too hot to eat now.",
+    "correction": "The soup is too hot to eat now.",
+    "reasonVi": "Câu miêu tả cần am/is/are; sau be dùng tính từ, không tự đổi sang trạng từ."
+   }
+  ],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "esl-v2",
+  "version": 1
+ },
+ {
+  "id": "esl-v2-r05-u02-015",
+  "practiceLevel": "2.5",
+  "type": "sentence",
+  "topic": "To be (am/is/are) để miêu tả người và vật",
+  "promptVi": "Cô ấy là một tình nguyện viên ở thư viện.",
+  "referenceAnswers": [
+   "She is a volunteer at the library."
+  ],
+  "grammarTags": [
+   "R05-U02",
+   "sentence",
+   "R05"
+  ],
+  "explanationVi": "Nói nghề nghiệp/vai trò: S + be + a/an + singular noun: He is an engineer. Đây là câu trần thuật hoàn chỉnh; hãy kiểm tra động từ hoặc trợ động từ theo chủ ngữ.",
+  "rationaleVi": "Chuyển từ cụm từ sang câu ngắn với chủ ngữ và động từ quen thuộc. Bài bổ sung từ bộ ESL v2 (R05-U02), chủ đề To be (am/is/are) để miêu tả người và vật.",
+  "commonErrors": [
+   {
+    "incorrect": "She are a volunteer at the library.",
+    "correction": "She is a volunteer at the library.",
+    "reasonVi": "Chọn be đúng theo ngôi/số của chủ ngữ và phân biệt tính từ với danh từ."
+   },
+   {
+    "incorrect": "She is volunteer at the library.",
+    "correction": "She is a volunteer at the library.",
+    "reasonVi": "Câu miêu tả cần am/is/are; sau be dùng tính từ, không tự đổi sang trạng từ."
+   }
+  ],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "esl-v2",
+  "version": 1
+ },
+ {
+  "id": "esl-v2-r05-u02-016",
+  "practiceLevel": "2.5",
+  "type": "sentence",
+  "topic": "To be (am/is/are) để miêu tả người và vật",
+  "promptVi": "Chúng tôi chưa sẵn sàng cho chuyến đi.",
+  "referenceAnswers": [
+   "We are not ready for the trip yet."
+  ],
+  "grammarTags": [
+   "R05-U02",
+   "sentence",
+   "R05"
+  ],
+  "explanationVi": "Nói nơi chốn: S + be + place: My keys are in the drawer. Đây là câu trần thuật hoàn chỉnh; hãy kiểm tra động từ hoặc trợ động từ theo chủ ngữ.",
+  "rationaleVi": "Chuyển từ cụm từ sang câu ngắn với chủ ngữ và động từ quen thuộc. Bài bổ sung từ bộ ESL v2 (R05-U02), chủ đề To be (am/is/are) để miêu tả người và vật.",
+  "commonErrors": [
+   {
+    "incorrect": "We is not ready for the trip yet.",
+    "correction": "We are not ready for the trip yet.",
+    "reasonVi": "Chọn be đúng theo ngôi/số của chủ ngữ và phân biệt tính từ với danh từ."
+   },
+   {
+    "incorrect": "We not ready for the trip yet.",
+    "correction": "We are not ready for the trip yet.",
+    "reasonVi": "Câu miêu tả cần am/is/are; sau be dùng tính từ, không tự đổi sang trạng từ."
+   }
+  ],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "esl-v2",
+  "version": 1
+ },
+ {
+  "id": "esl-v2-r05-u02-017",
+  "practiceLevel": "2.5",
+  "type": "sentence",
+  "topic": "To be (am/is/are) để miêu tả người và vật",
+  "promptVi": "Thời tiết hôm nay không phù hợp để cắm trại.",
+  "referenceAnswers": [
+   "The weather today is not suitable for camping."
+  ],
+  "grammarTags": [
+   "R05-U02",
+   "sentence",
+   "R05"
+  ],
+  "explanationVi": "Phủ định: am not/is not/are not + bổ ngữ: The windows are not open. Đây là câu trần thuật hoàn chỉnh; hãy kiểm tra động từ hoặc trợ động từ theo chủ ngữ.",
+  "rationaleVi": "Chuyển từ cụm từ sang câu ngắn với chủ ngữ và động từ quen thuộc. Bài bổ sung từ bộ ESL v2 (R05-U02), chủ đề To be (am/is/are) để miêu tả người và vật.",
+  "commonErrors": [
+   {
+    "incorrect": "The weather today are not suitable for camping.",
+    "correction": "The weather today is not suitable for camping.",
+    "reasonVi": "Chọn be đúng theo ngôi/số của chủ ngữ và phân biệt tính từ với danh từ."
+   },
+   {
+    "incorrect": "The weather today not suitable for camping.",
+    "correction": "The weather today is not suitable for camping.",
+    "reasonVi": "Câu miêu tả cần am/is/are; sau be dùng tính từ, không tự đổi sang trạng từ."
+   }
+  ],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "esl-v2",
+  "version": 1
+ },
+ {
+  "id": "esl-v2-r05-u03-001",
+  "practiceLevel": "2.5",
+  "type": "phrase",
+  "topic": "Have và has: có, sở hữu, đặc điểm",
+  "promptVi": "có một tấm bản đồ giấy",
+  "referenceAnswers": [
+   "have a paper map"
+  ],
+  "grammarTags": [
+   "R05-U03",
+   "phrase",
+   "R05"
+  ],
+  "explanationVi": "I/you/we/they + have; he/she/it hoặc danh từ số ít + has. Đây là cụm từ dùng để chuẩn bị ghép câu; chưa cần một chủ ngữ hoàn chỉnh.",
+  "rationaleVi": "Chuyển từ cụm từ sang câu ngắn với chủ ngữ và động từ quen thuộc. Bài bổ sung từ bộ ESL v2 (R05-U03), chủ đề Have và has: có, sở hữu, đặc điểm.",
+  "commonErrors": [
+   {
+    "incorrect": "have paper map",
+    "correction": "have a paper map",
+    "reasonVi": "Chọn have với I/you/we/they, has với he/she/it."
+   },
+   {
+    "incorrect": "has a paper map",
+    "correction": "have a paper map",
+    "reasonVi": "Chú ý số ít, số nhiều và mạo từ; sau does not phải dùng have."
+   }
+  ],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "esl-v2",
+  "version": 1
+ },
+ {
+  "id": "esl-v2-r05-u03-002",
+  "practiceLevel": "2.5",
+  "type": "phrase",
+  "topic": "Have và has: có, sở hữu, đặc điểm",
+  "promptVi": "có ba người anh em họ",
+  "referenceAnswers": [
+   "have three cousins"
+  ],
+  "grammarTags": [
+   "R05-U03",
+   "phrase",
+   "R05"
+  ],
+  "explanationVi": "Have/has là động từ thường ở câu khẳng định: She has a bicycle. Đây là cụm từ dùng để chuẩn bị ghép câu; chưa cần một chủ ngữ hoàn chỉnh.",
+  "rationaleVi": "Chuyển từ cụm từ sang câu ngắn với chủ ngữ và động từ quen thuộc. Bài bổ sung từ bộ ESL v2 (R05-U03), chủ đề Have và has: có, sở hữu, đặc điểm.",
+  "commonErrors": [
+   {
+    "incorrect": "has three cousins",
+    "correction": "have three cousins",
+    "reasonVi": "Chọn have với I/you/we/they, has với he/she/it."
+   },
+   {
+    "incorrect": "have three cousin",
+    "correction": "have three cousins",
+    "reasonVi": "Chú ý số ít, số nhiều và mạo từ; sau does not phải dùng have."
+   }
+  ],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "esl-v2",
+  "version": 1
+ },
+ {
+  "id": "esl-v2-r05-u03-003",
+  "practiceLevel": "2.5",
+  "type": "phrase",
+  "topic": "Have và has: có, sở hữu, đặc điểm",
+  "promptVi": "có một cuộc hẹn vào thứ Sáu",
+  "referenceAnswers": [
+   "have an appointment on Friday"
+  ],
+  "grammarTags": [
+   "R05-U03",
+   "phrase",
+   "R05"
+  ],
+  "explanationVi": "Số nhiều: two pens, three notebooks; tránh thiếu -s nếu danh từ đếm được. Đây là cụm từ dùng để chuẩn bị ghép câu; chưa cần một chủ ngữ hoàn chỉnh.",
+  "rationaleVi": "Chuyển từ cụm từ sang câu ngắn với chủ ngữ và động từ quen thuộc. Bài bổ sung từ bộ ESL v2 (R05-U03), chủ đề Have và has: có, sở hữu, đặc điểm.",
+  "commonErrors": [
+   {
+    "incorrect": "have a appointment on Friday",
+    "correction": "have an appointment on Friday",
+    "reasonVi": "Chọn have với I/you/we/they, has với he/she/it."
+   },
+   {
+    "incorrect": "have an appointment in Friday",
+    "correction": "have an appointment on Friday",
+    "reasonVi": "Chú ý số ít, số nhiều và mạo từ; sau does not phải dùng have."
+   }
+  ],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "esl-v2",
+  "version": 1
+ },
+ {
+  "id": "esl-v2-r05-u03-004",
+  "practiceLevel": "2.5",
+  "type": "phrase",
+  "topic": "Have và has: có, sở hữu, đặc điểm",
+  "promptVi": "có nhiều bài cần đọc",
+  "referenceAnswers": [
+   "have a lot of reading to do"
+  ],
+  "grammarTags": [
+   "R05-U03",
+   "phrase",
+   "R05"
+  ],
+  "explanationVi": "Danh từ số ít cần mạo từ: an idea, a garden. Đây là cụm từ dùng để chuẩn bị ghép câu; chưa cần một chủ ngữ hoàn chỉnh.",
+  "rationaleVi": "Chuyển từ cụm từ sang câu ngắn với chủ ngữ và động từ quen thuộc. Bài bổ sung từ bộ ESL v2 (R05-U03), chủ đề Have và has: có, sở hữu, đặc điểm.",
+  "commonErrors": [
+   {
+    "incorrect": "have many reading to do",
+    "correction": "have a lot of reading to do",
+    "reasonVi": "Chọn have với I/you/we/they, has với he/she/it."
+   },
+   {
+    "incorrect": "have a lot of readings to do",
+    "correction": "have a lot of reading to do",
+    "reasonVi": "Chú ý số ít, số nhiều và mạo từ; sau does not phải dùng have."
+   }
+  ],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "esl-v2",
+  "version": 1
+ },
+ {
+  "id": "esl-v2-r05-u03-005",
+  "practiceLevel": "2.5",
+  "type": "sentence",
+  "topic": "Have và has: có, sở hữu, đặc điểm",
+  "promptVi": "Tôi có hai chiếc vé cho buổi hòa nhạc.",
+  "referenceAnswers": [
+   "I have two tickets for the concert."
+  ],
+  "grammarTags": [
+   "R05-U03",
+   "sentence",
+   "R05"
+  ],
+  "explanationVi": "Phủ định hiện tại đơn: does not have, không dùng does not has. Đây là câu trần thuật hoàn chỉnh; hãy kiểm tra động từ hoặc trợ động từ theo chủ ngữ.",
+  "rationaleVi": "Chuyển từ cụm từ sang câu ngắn với chủ ngữ và động từ quen thuộc. Bài bổ sung từ bộ ESL v2 (R05-U03), chủ đề Have và has: có, sở hữu, đặc điểm.",
+  "commonErrors": [
+   {
+    "incorrect": "I has two tickets for the concert.",
+    "correction": "I have two tickets for the concert.",
+    "reasonVi": "Chọn have với I/you/we/they, has với he/she/it."
+   },
+   {
+    "incorrect": "I have two ticket for the concert.",
+    "correction": "I have two tickets for the concert.",
+    "reasonVi": "Chú ý số ít, số nhiều và mạo từ; sau does not phải dùng have."
+   }
+  ],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "esl-v2",
+  "version": 1
+ },
+ {
+  "id": "esl-v2-r05-u03-006",
+  "practiceLevel": "2.5",
+  "type": "sentence",
+  "topic": "Have và has: có, sở hữu, đặc điểm",
+  "promptVi": "Cậu ấy có một chiếc đồng hồ màu bạc.",
+  "referenceAnswers": [
+   "He has a silver watch."
+  ],
+  "grammarTags": [
+   "R05-U03",
+   "sentence",
+   "R05"
+  ],
+  "explanationVi": "Phân biệt có vật sở hữu (have a bag) và miêu tả vị trí (the bag is on the chair). Đây là câu trần thuật hoàn chỉnh; hãy kiểm tra động từ hoặc trợ động từ theo chủ ngữ.",
+  "rationaleVi": "Chuyển từ cụm từ sang câu ngắn với chủ ngữ và động từ quen thuộc. Bài bổ sung từ bộ ESL v2 (R05-U03), chủ đề Have và has: có, sở hữu, đặc điểm.",
+  "commonErrors": [
+   {
+    "incorrect": "He have a silver watch.",
+    "correction": "He has a silver watch.",
+    "reasonVi": "Chọn have với I/you/we/they, has với he/she/it."
+   },
+   {
+    "incorrect": "He is have a silver watch.",
+    "correction": "He has a silver watch.",
+    "reasonVi": "Chú ý số ít, số nhiều và mạo từ; sau does not phải dùng have."
+   }
+  ],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "esl-v2",
+  "version": 1
+ },
+ {
+  "id": "esl-v2-r05-u03-007",
+  "practiceLevel": "2.5",
+  "type": "sentence",
+  "topic": "Have và has: có, sở hữu, đặc điểm",
+  "promptVi": "Chúng tôi có đủ ghế cho khách.",
+  "referenceAnswers": [
+   "We have enough chairs for the guests."
+  ],
+  "grammarTags": [
+   "R05-U03",
+   "sentence",
+   "R05"
+  ],
+  "explanationVi": "I/you/we/they + have; he/she/it hoặc danh từ số ít + has. Đây là câu trần thuật hoàn chỉnh; hãy kiểm tra động từ hoặc trợ động từ theo chủ ngữ.",
+  "rationaleVi": "Chuyển từ cụm từ sang câu ngắn với chủ ngữ và động từ quen thuộc. Bài bổ sung từ bộ ESL v2 (R05-U03), chủ đề Have và has: có, sở hữu, đặc điểm.",
+  "commonErrors": [
+   {
+    "incorrect": "We has enough chairs for the guests.",
+    "correction": "We have enough chairs for the guests.",
+    "reasonVi": "Chọn have với I/you/we/they, has với he/she/it."
+   },
+   {
+    "incorrect": "We have enough chair for the guests.",
+    "correction": "We have enough chairs for the guests.",
+    "reasonVi": "Chú ý số ít, số nhiều và mạo từ; sau does not phải dùng have."
+   }
+  ],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "esl-v2",
+  "version": 1
+ },
+ {
+  "id": "esl-v2-r05-u03-008",
+  "practiceLevel": "2.5",
+  "type": "sentence",
+  "topic": "Have và has: có, sở hữu, đặc điểm",
+  "promptVi": "Cô ấy có một ý tưởng đơn giản.",
+  "referenceAnswers": [
+   "She has a simple idea."
+  ],
+  "grammarTags": [
+   "R05-U03",
+   "sentence",
+   "R05"
+  ],
+  "explanationVi": "Have/has là động từ thường ở câu khẳng định: She has a bicycle. Đây là câu trần thuật hoàn chỉnh; hãy kiểm tra động từ hoặc trợ động từ theo chủ ngữ.",
+  "rationaleVi": "Chuyển từ cụm từ sang câu ngắn với chủ ngữ và động từ quen thuộc. Bài bổ sung từ bộ ESL v2 (R05-U03), chủ đề Have và has: có, sở hữu, đặc điểm.",
+  "commonErrors": [
+   {
+    "incorrect": "She have a simple idea.",
+    "correction": "She has a simple idea.",
+    "reasonVi": "Chọn have với I/you/we/they, has với he/she/it."
+   },
+   {
+    "incorrect": "She is has a simple idea.",
+    "correction": "She has a simple idea.",
+    "reasonVi": "Chú ý số ít, số nhiều và mạo từ; sau does not phải dùng have."
+   }
+  ],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "esl-v2",
+  "version": 1
+ },
+ {
+  "id": "esl-v2-r05-u03-009",
+  "practiceLevel": "2.5",
+  "type": "sentence",
+  "topic": "Have và has: có, sở hữu, đặc điểm",
+  "promptVi": "Hai anh em tôi có phòng ngủ riêng.",
+  "referenceAnswers": [
+   "My two brothers have separate bedrooms."
+  ],
+  "grammarTags": [
+   "R05-U03",
+   "sentence",
+   "R05"
+  ],
+  "explanationVi": "Số nhiều: two pens, three notebooks; tránh thiếu -s nếu danh từ đếm được. Đây là câu trần thuật hoàn chỉnh; hãy kiểm tra động từ hoặc trợ động từ theo chủ ngữ.",
+  "rationaleVi": "Chuyển từ cụm từ sang câu ngắn với chủ ngữ và động từ quen thuộc. Bài bổ sung từ bộ ESL v2 (R05-U03), chủ đề Have và has: có, sở hữu, đặc điểm.",
+  "commonErrors": [
+   {
+    "incorrect": "My two brothers has separate bedrooms.",
+    "correction": "My two brothers have separate bedrooms.",
+    "reasonVi": "Chọn have với I/you/we/they, has với he/she/it."
+   },
+   {
+    "incorrect": "My two brothers have separate bedroom.",
+    "correction": "My two brothers have separate bedrooms.",
+    "reasonVi": "Chú ý số ít, số nhiều và mạo từ; sau does not phải dùng have."
+   }
+  ],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "esl-v2",
+  "version": 1
+ },
+ {
+  "id": "esl-v2-r05-u03-010",
+  "practiceLevel": "2.5",
+  "type": "sentence",
+  "topic": "Have và has: có, sở hữu, đặc điểm",
+  "promptVi": "Chiếc máy ảnh này có màn hình lớn.",
+  "referenceAnswers": [
+   "This camera has a large screen."
+  ],
+  "grammarTags": [
+   "R05-U03",
+   "sentence",
+   "R05"
+  ],
+  "explanationVi": "Danh từ số ít cần mạo từ: an idea, a garden. Đây là câu trần thuật hoàn chỉnh; hãy kiểm tra động từ hoặc trợ động từ theo chủ ngữ.",
+  "rationaleVi": "Chuyển từ cụm từ sang câu ngắn với chủ ngữ và động từ quen thuộc. Bài bổ sung từ bộ ESL v2 (R05-U03), chủ đề Have và has: có, sở hữu, đặc điểm.",
+  "commonErrors": [
+   {
+    "incorrect": "This camera have a large screen.",
+    "correction": "This camera has a large screen.",
+    "reasonVi": "Chọn have với I/you/we/they, has với he/she/it."
+   },
+   {
+    "incorrect": "This camera is have a large screen.",
+    "correction": "This camera has a large screen.",
+    "reasonVi": "Chú ý số ít, số nhiều và mạo từ; sau does not phải dùng have."
+   }
+  ],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "esl-v2",
+  "version": 1
+ },
+ {
+  "id": "esl-v2-r05-u03-011",
+  "practiceLevel": "2.5",
+  "type": "sentence",
+  "topic": "Have và has: có, sở hữu, đặc điểm",
+  "promptVi": "Bà tôi có một khu vườn rau nhỏ.",
+  "referenceAnswers": [
+   "My grandmother has a small vegetable garden."
+  ],
+  "grammarTags": [
+   "R05-U03",
+   "sentence",
+   "R05"
+  ],
+  "explanationVi": "Phủ định hiện tại đơn: does not have, không dùng does not has. Đây là câu trần thuật hoàn chỉnh; hãy kiểm tra động từ hoặc trợ động từ theo chủ ngữ.",
+  "rationaleVi": "Chuyển từ cụm từ sang câu ngắn với chủ ngữ và động từ quen thuộc. Bài bổ sung từ bộ ESL v2 (R05-U03), chủ đề Have và has: có, sở hữu, đặc điểm.",
+  "commonErrors": [
+   {
+    "incorrect": "My grandmother have a small vegetable garden.",
+    "correction": "My grandmother has a small vegetable garden.",
+    "reasonVi": "Chọn have với I/you/we/they, has với he/she/it."
+   },
+   {
+    "incorrect": "My grandmother has small vegetable garden.",
+    "correction": "My grandmother has a small vegetable garden.",
+    "reasonVi": "Chú ý số ít, số nhiều và mạo từ; sau does not phải dùng have."
+   }
+  ],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "esl-v2",
+  "version": 1
+ },
+ {
+  "id": "esl-v2-r05-u03-012",
+  "practiceLevel": "2.5",
+  "type": "sentence",
+  "topic": "Have và has: có, sở hữu, đặc điểm",
+  "promptVi": "Bạn và tôi có cùng một giáo viên.",
+  "referenceAnswers": [
+   "You and I have the same teacher."
+  ],
+  "grammarTags": [
+   "R05-U03",
+   "sentence",
+   "R05"
+  ],
+  "explanationVi": "Phân biệt có vật sở hữu (have a bag) và miêu tả vị trí (the bag is on the chair). Đây là câu trần thuật hoàn chỉnh; hãy kiểm tra động từ hoặc trợ động từ theo chủ ngữ.",
+  "rationaleVi": "Chuyển từ cụm từ sang câu ngắn với chủ ngữ và động từ quen thuộc. Bài bổ sung từ bộ ESL v2 (R05-U03), chủ đề Have và has: có, sở hữu, đặc điểm.",
+  "commonErrors": [
+   {
+    "incorrect": "You and I has the same teacher.",
+    "correction": "You and I have the same teacher.",
+    "reasonVi": "Chọn have với I/you/we/they, has với he/she/it."
+   },
+   {
+    "incorrect": "You and I have same teacher.",
+    "correction": "You and I have the same teacher.",
+    "reasonVi": "Chú ý số ít, số nhiều và mạo từ; sau does not phải dùng have."
+   }
+  ],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "esl-v2",
+  "version": 1
+ },
+ {
+  "id": "esl-v2-r05-u03-013",
+  "practiceLevel": "2.5",
+  "type": "sentence",
+  "topic": "Have và has: có, sở hữu, đặc điểm",
+  "promptVi": "Trường của họ có hai phòng máy tính.",
+  "referenceAnswers": [
+   "Their school has two computer rooms."
+  ],
+  "grammarTags": [
+   "R05-U03",
+   "sentence",
+   "R05"
+  ],
+  "explanationVi": "I/you/we/they + have; he/she/it hoặc danh từ số ít + has. Đây là câu trần thuật hoàn chỉnh; hãy kiểm tra động từ hoặc trợ động từ theo chủ ngữ.",
+  "rationaleVi": "Chuyển từ cụm từ sang câu ngắn với chủ ngữ và động từ quen thuộc. Bài bổ sung từ bộ ESL v2 (R05-U03), chủ đề Have và has: có, sở hữu, đặc điểm.",
+  "commonErrors": [
+   {
+    "incorrect": "Their school have two computer rooms.",
+    "correction": "Their school has two computer rooms.",
+    "reasonVi": "Chọn have với I/you/we/they, has với he/she/it."
+   },
+   {
+    "incorrect": "Their school has two computer room.",
+    "correction": "Their school has two computer rooms.",
+    "reasonVi": "Chú ý số ít, số nhiều và mạo từ; sau does not phải dùng have."
+   }
+  ],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "esl-v2",
+  "version": 1
+ },
+ {
+  "id": "esl-v2-r05-u03-014",
+  "practiceLevel": "2.5",
+  "type": "sentence",
+  "topic": "Have và has: có, sở hữu, đặc điểm",
+  "promptVi": "Em bé có đôi mắt rất sáng.",
+  "referenceAnswers": [
+   "The baby has very bright eyes."
+  ],
+  "grammarTags": [
+   "R05-U03",
+   "sentence",
+   "R05"
+  ],
+  "explanationVi": "Have/has là động từ thường ở câu khẳng định: She has a bicycle. Đây là câu trần thuật hoàn chỉnh; hãy kiểm tra động từ hoặc trợ động từ theo chủ ngữ.",
+  "rationaleVi": "Chuyển từ cụm từ sang câu ngắn với chủ ngữ và động từ quen thuộc. Bài bổ sung từ bộ ESL v2 (R05-U03), chủ đề Have và has: có, sở hữu, đặc điểm.",
+  "commonErrors": [
+   {
+    "incorrect": "The baby have very bright eyes.",
+    "correction": "The baby has very bright eyes.",
+    "reasonVi": "Chọn have với I/you/we/they, has với he/she/it."
+   },
+   {
+    "incorrect": "The baby has very bright eye.",
+    "correction": "The baby has very bright eyes.",
+    "reasonVi": "Chú ý số ít, số nhiều và mạo từ; sau does not phải dùng have."
+   }
+  ],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "esl-v2",
+  "version": 1
+ },
+ {
+  "id": "esl-v2-r05-u03-015",
+  "practiceLevel": "2.5",
+  "type": "sentence",
+  "topic": "Have và has: có, sở hữu, đặc điểm",
+  "promptVi": "Tôi có một cuộc hẹn với nha sĩ vào ngày mai.",
+  "referenceAnswers": [
+   "I have an appointment with the dentist tomorrow."
+  ],
+  "grammarTags": [
+   "R05-U03",
+   "sentence",
+   "R05"
+  ],
+  "explanationVi": "Số nhiều: two pens, three notebooks; tránh thiếu -s nếu danh từ đếm được. Đây là câu trần thuật hoàn chỉnh; hãy kiểm tra động từ hoặc trợ động từ theo chủ ngữ.",
+  "rationaleVi": "Chuyển từ cụm từ sang câu ngắn với chủ ngữ và động từ quen thuộc. Bài bổ sung từ bộ ESL v2 (R05-U03), chủ đề Have và has: có, sở hữu, đặc điểm.",
+  "commonErrors": [
+   {
+    "incorrect": "I has an appointment with the dentist tomorrow.",
+    "correction": "I have an appointment with the dentist tomorrow.",
+    "reasonVi": "Chọn have với I/you/we/they, has với he/she/it."
+   },
+   {
+    "incorrect": "I have a appointment with the dentist tomorrow.",
+    "correction": "I have an appointment with the dentist tomorrow.",
+    "reasonVi": "Chú ý số ít, số nhiều và mạo từ; sau does not phải dùng have."
+   }
+  ],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "esl-v2",
+  "version": 1
+ },
+ {
+  "id": "esl-v2-r05-u03-016",
+  "practiceLevel": "2.5",
+  "type": "sentence",
+  "topic": "Have và has: có, sở hữu, đặc điểm",
+  "promptVi": "Cô ấy có ba cuốn sách nhưng không có túi.",
+  "referenceAnswers": [
+   "She has three books but does not have a bag."
+  ],
+  "grammarTags": [
+   "R05-U03",
+   "sentence",
+   "R05"
+  ],
+  "explanationVi": "Danh từ số ít cần mạo từ: an idea, a garden. Đây là câu trần thuật hoàn chỉnh; hãy kiểm tra động từ hoặc trợ động từ theo chủ ngữ.",
+  "rationaleVi": "Chuyển từ cụm từ sang câu ngắn với chủ ngữ và động từ quen thuộc. Bài bổ sung từ bộ ESL v2 (R05-U03), chủ đề Have và has: có, sở hữu, đặc điểm.",
+  "commonErrors": [
+   {
+    "incorrect": "She have three books but does not have a bag.",
+    "correction": "She has three books but does not have a bag.",
+    "reasonVi": "Chọn have với I/you/we/they, has với he/she/it."
+   },
+   {
+    "incorrect": "She has three books but does not has a bag.",
+    "correction": "She has three books but does not have a bag.",
+    "reasonVi": "Chú ý số ít, số nhiều và mạo từ; sau does not phải dùng have."
+   }
+  ],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "esl-v2",
+  "version": 1
+ },
+ {
+  "id": "esl-v2-r05-u03-017",
+  "practiceLevel": "2.5",
+  "type": "sentence",
+  "topic": "Have và has: có, sở hữu, đặc điểm",
+  "promptVi": "Cả hai đội đều có cơ hội giành chiến thắng.",
+  "referenceAnswers": [
+   "Both teams have a chance to win."
+  ],
+  "grammarTags": [
+   "R05-U03",
+   "sentence",
+   "R05"
+  ],
+  "explanationVi": "Phủ định hiện tại đơn: does not have, không dùng does not has. Đây là câu trần thuật hoàn chỉnh; hãy kiểm tra động từ hoặc trợ động từ theo chủ ngữ.",
+  "rationaleVi": "Chuyển từ cụm từ sang câu ngắn với chủ ngữ và động từ quen thuộc. Bài bổ sung từ bộ ESL v2 (R05-U03), chủ đề Have và has: có, sở hữu, đặc điểm.",
+  "commonErrors": [
+   {
+    "incorrect": "Both teams has a chance to win.",
+    "correction": "Both teams have a chance to win.",
+    "reasonVi": "Chọn have với I/you/we/they, has với he/she/it."
+   },
+   {
+    "incorrect": "Both teams have chance to win.",
+    "correction": "Both teams have a chance to win.",
+    "reasonVi": "Chú ý số ít, số nhiều và mạo từ; sau does not phải dùng have."
+   }
+  ],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "esl-v2",
+  "version": 1
+ },
+ {
+  "id": "esl-v2-r05-u04-001",
+  "practiceLevel": "2.5",
+  "type": "phrase",
+  "topic": "Can và cannot: khả năng, yêu cầu, sự cho phép",
+  "promptVi": "có thể đi xe đạp",
+  "referenceAnswers": [
+   "can ride a bicycle"
+  ],
+  "grammarTags": [
+   "R05-U04",
+   "phrase",
+   "R05"
+  ],
+  "explanationVi": "Cấu trúc: S + can + V (nguyên thể không to): He can swim. Đây là cụm từ dùng để chuẩn bị ghép câu; chưa cần một chủ ngữ hoàn chỉnh.",
+  "rationaleVi": "Chuyển từ cụm từ sang câu ngắn với chủ ngữ và động từ quen thuộc. Bài bổ sung từ bộ ESL v2 (R05-U04), chủ đề Can và cannot: khả năng, yêu cầu, sự cho phép.",
+  "commonErrors": [
+   {
+    "incorrect": "can to ride a bicycle",
+    "correction": "can ride a bicycle",
+    "reasonVi": "Sau can/cannot dùng động từ nguyên mẫu không to, không -s, không -ing."
+   },
+   {
+    "incorrect": "cans ride a bicycle",
+    "correction": "can ride a bicycle",
+    "reasonVi": "Nếu là câu hỏi, đảo can lên trước chủ ngữ; modal không biến đổi theo ngôi."
+   }
+  ],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "esl-v2",
+  "version": 1
+ },
+ {
+  "id": "esl-v2-r05-u04-002",
+  "practiceLevel": "2.5",
+  "type": "phrase",
+  "topic": "Can và cannot: khả năng, yêu cầu, sự cho phép",
+  "promptVi": "không thể nhớ mật khẩu",
+  "referenceAnswers": [
+   "cannot remember the password"
+  ],
+  "grammarTags": [
+   "R05-U04",
+   "phrase",
+   "R05"
+  ],
+  "explanationVi": "Can không đổi theo chủ ngữ: she can, không phải she cans. Đây là cụm từ dùng để chuẩn bị ghép câu; chưa cần một chủ ngữ hoàn chỉnh.",
+  "rationaleVi": "Chuyển từ cụm từ sang câu ngắn với chủ ngữ và động từ quen thuộc. Bài bổ sung từ bộ ESL v2 (R05-U04), chủ đề Can và cannot: khả năng, yêu cầu, sự cho phép.",
+  "commonErrors": [
+   {
+    "incorrect": "cannot to remember the password",
+    "correction": "cannot remember the password",
+    "reasonVi": "Sau can/cannot dùng động từ nguyên mẫu không to, không -s, không -ing."
+   },
+   {
+    "incorrect": "cannot remembers the password",
+    "correction": "cannot remember the password",
+    "reasonVi": "Nếu là câu hỏi, đảo can lên trước chủ ngữ; modal không biến đổi theo ngôi."
+   }
+  ],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "esl-v2",
+  "version": 1
+ },
+ {
+  "id": "esl-v2-r05-u04-003",
+  "practiceLevel": "2.5",
+  "type": "phrase",
+  "topic": "Can và cannot: khả năng, yêu cầu, sự cho phép",
+  "promptVi": "có thể nói một chút tiếng Pháp",
+  "referenceAnswers": [
+   "can speak a little French"
+  ],
+  "grammarTags": [
+   "R05-U04",
+   "phrase",
+   "R05"
+  ],
+  "explanationVi": "Phủ định: cannot (hoặc can’t) + V nguyên thể. Đây là cụm từ dùng để chuẩn bị ghép câu; chưa cần một chủ ngữ hoàn chỉnh.",
+  "rationaleVi": "Chuyển từ cụm từ sang câu ngắn với chủ ngữ và động từ quen thuộc. Bài bổ sung từ bộ ESL v2 (R05-U04), chủ đề Can và cannot: khả năng, yêu cầu, sự cho phép.",
+  "commonErrors": [
+   {
+    "incorrect": "can speaks a little French",
+    "correction": "can speak a little French",
+    "reasonVi": "Sau can/cannot dùng động từ nguyên mẫu không to, không -s, không -ing."
+   },
+   {
+    "incorrect": "can speaking a little French",
+    "correction": "can speak a little French",
+    "reasonVi": "Nếu là câu hỏi, đảo can lên trước chủ ngữ; modal không biến đổi theo ngôi."
+   }
+  ],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "esl-v2",
+  "version": 1
+ },
+ {
+  "id": "esl-v2-r05-u04-004",
+  "practiceLevel": "2.5",
+  "type": "phrase",
+  "topic": "Can và cannot: khả năng, yêu cầu, sự cho phép",
+  "promptVi": "không thể vào phòng lúc này",
+  "referenceAnswers": [
+   "cannot enter the room now"
+  ],
+  "grammarTags": [
+   "R05-U04",
+   "phrase",
+   "R05"
+  ],
+  "explanationVi": "Câu hỏi: Can + S + V ... ?; khác câu kể S can V. Đây là cụm từ dùng để chuẩn bị ghép câu; chưa cần một chủ ngữ hoàn chỉnh.",
+  "rationaleVi": "Chuyển từ cụm từ sang câu ngắn với chủ ngữ và động từ quen thuộc. Bài bổ sung từ bộ ESL v2 (R05-U04), chủ đề Can và cannot: khả năng, yêu cầu, sự cho phép.",
+  "commonErrors": [
+   {
+    "incorrect": "cannot to enter the room now",
+    "correction": "cannot enter the room now",
+    "reasonVi": "Sau can/cannot dùng động từ nguyên mẫu không to, không -s, không -ing."
+   },
+   {
+    "incorrect": "cannot entering the room now",
+    "correction": "cannot enter the room now",
+    "reasonVi": "Nếu là câu hỏi, đảo can lên trước chủ ngữ; modal không biến đổi theo ngôi."
+   }
+  ],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "esl-v2",
+  "version": 1
+ },
+ {
+  "id": "esl-v2-r05-u04-005",
+  "practiceLevel": "2.5",
+  "type": "sentence",
+  "topic": "Can và cannot: khả năng, yêu cầu, sự cho phép",
+  "promptVi": "Tôi có thể tìm đường bằng bản đồ này.",
+  "referenceAnswers": [
+   "I can find the way with this map."
+  ],
+  "grammarTags": [
+   "R05-U04",
+   "sentence",
+   "R05"
+  ],
+  "explanationVi": "Can diễn đạt khả năng hoặc xin phép tùy ngữ cảnh: Can I leave early? Đây là câu trần thuật hoàn chỉnh; hãy kiểm tra động từ hoặc trợ động từ theo chủ ngữ.",
+  "rationaleVi": "Chuyển từ cụm từ sang câu ngắn với chủ ngữ và động từ quen thuộc. Bài bổ sung từ bộ ESL v2 (R05-U04), chủ đề Can và cannot: khả năng, yêu cầu, sự cho phép.",
+  "commonErrors": [
+   {
+    "incorrect": "I can to find the way with this map.",
+    "correction": "I can find the way with this map.",
+    "reasonVi": "Sau can/cannot dùng động từ nguyên mẫu không to, không -s, không -ing."
+   },
+   {
+    "incorrect": "I can finds the way with this map.",
+    "correction": "I can find the way with this map.",
+    "reasonVi": "Nếu là câu hỏi, đảo can lên trước chủ ngữ; modal không biến đổi theo ngôi."
+   }
+  ],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "esl-v2",
+  "version": 1
+ },
+ {
+  "id": "esl-v2-r05-u04-006",
+  "practiceLevel": "2.5",
+  "type": "sentence",
+  "topic": "Can và cannot: khả năng, yêu cầu, sự cho phép",
+  "promptVi": "Em họ tôi có thể đếm đến một trăm.",
+  "referenceAnswers": [
+   "My cousin can count to one hundred."
+  ],
+  "grammarTags": [
+   "R05-U04",
+   "sentence",
+   "R05"
+  ],
+  "explanationVi": "Sau can không thêm -ing, -s hay to vào động từ chính. Đây là câu trần thuật hoàn chỉnh; hãy kiểm tra động từ hoặc trợ động từ theo chủ ngữ.",
+  "rationaleVi": "Chuyển từ cụm từ sang câu ngắn với chủ ngữ và động từ quen thuộc. Bài bổ sung từ bộ ESL v2 (R05-U04), chủ đề Can và cannot: khả năng, yêu cầu, sự cho phép.",
+  "commonErrors": [
+   {
+    "incorrect": "My cousin cans count to one hundred.",
+    "correction": "My cousin can count to one hundred.",
+    "reasonVi": "Sau can/cannot dùng động từ nguyên mẫu không to, không -s, không -ing."
+   },
+   {
+    "incorrect": "My cousin can counting to one hundred.",
+    "correction": "My cousin can count to one hundred.",
+    "reasonVi": "Nếu là câu hỏi, đảo can lên trước chủ ngữ; modal không biến đổi theo ngôi."
+   }
+  ],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "esl-v2",
+  "version": 1
+ },
+ {
+  "id": "esl-v2-r05-u04-007",
+  "practiceLevel": "2.5",
+  "type": "sentence",
+  "topic": "Can và cannot: khả năng, yêu cầu, sự cho phép",
+  "promptVi": "Bạn có thể mở cửa sổ giúp tôi.",
+  "referenceAnswers": [
+   "You can open the window for me."
+  ],
+  "grammarTags": [
+   "R05-U04",
+   "sentence",
+   "R05"
+  ],
+  "explanationVi": "Cấu trúc: S + can + V (nguyên thể không to): He can swim. Đây là câu trần thuật hoàn chỉnh; hãy kiểm tra động từ hoặc trợ động từ theo chủ ngữ.",
+  "rationaleVi": "Chuyển từ cụm từ sang câu ngắn với chủ ngữ và động từ quen thuộc. Bài bổ sung từ bộ ESL v2 (R05-U04), chủ đề Can và cannot: khả năng, yêu cầu, sự cho phép.",
+  "commonErrors": [
+   {
+    "incorrect": "You can to open the window for me.",
+    "correction": "You can open the window for me.",
+    "reasonVi": "Sau can/cannot dùng động từ nguyên mẫu không to, không -s, không -ing."
+   },
+   {
+    "incorrect": "You can opens the window for me.",
+    "correction": "You can open the window for me.",
+    "reasonVi": "Nếu là câu hỏi, đảo can lên trước chủ ngữ; modal không biến đổi theo ngôi."
+   }
+  ],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "esl-v2",
+  "version": 1
+ },
+ {
+  "id": "esl-v2-r05-u04-008",
+  "practiceLevel": "2.5",
+  "type": "sentence",
+  "topic": "Can và cannot: khả năng, yêu cầu, sự cho phép",
+  "promptVi": "Chúng tôi không thể nghe thấy tiếng chuông ngoài hành lang.",
+  "referenceAnswers": [
+   "We cannot hear the bell in the corridor."
+  ],
+  "grammarTags": [
+   "R05-U04",
+   "sentence",
+   "R05"
+  ],
+  "explanationVi": "Can không đổi theo chủ ngữ: she can, không phải she cans. Đây là câu trần thuật hoàn chỉnh; hãy kiểm tra động từ hoặc trợ động từ theo chủ ngữ.",
+  "rationaleVi": "Chuyển từ cụm từ sang câu ngắn với chủ ngữ và động từ quen thuộc. Bài bổ sung từ bộ ESL v2 (R05-U04), chủ đề Can và cannot: khả năng, yêu cầu, sự cho phép.",
+  "commonErrors": [
+   {
+    "incorrect": "We cannot to hear the bell in the corridor.",
+    "correction": "We cannot hear the bell in the corridor.",
+    "reasonVi": "Sau can/cannot dùng động từ nguyên mẫu không to, không -s, không -ing."
+   },
+   {
+    "incorrect": "We cannot hears the bell in the corridor.",
+    "correction": "We cannot hear the bell in the corridor.",
+    "reasonVi": "Nếu là câu hỏi, đảo can lên trước chủ ngữ; modal không biến đổi theo ngôi."
+   }
+  ],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "esl-v2",
+  "version": 1
+ },
+ {
+  "id": "esl-v2-r05-u04-009",
+  "practiceLevel": "2.5",
+  "type": "sentence",
+  "topic": "Can và cannot: khả năng, yêu cầu, sự cho phép",
+  "promptVi": "Cô ấy có thể giải thích quy tắc bằng tiếng Anh.",
+  "referenceAnswers": [
+   "She can explain the rule in English."
+  ],
+  "grammarTags": [
+   "R05-U04",
+   "sentence",
+   "R05"
+  ],
+  "explanationVi": "Phủ định: cannot (hoặc can’t) + V nguyên thể. Đây là câu trần thuật hoàn chỉnh; hãy kiểm tra động từ hoặc trợ động từ theo chủ ngữ.",
+  "rationaleVi": "Chuyển từ cụm từ sang câu ngắn với chủ ngữ và động từ quen thuộc. Bài bổ sung từ bộ ESL v2 (R05-U04), chủ đề Can và cannot: khả năng, yêu cầu, sự cho phép.",
+  "commonErrors": [
+   {
+    "incorrect": "She cans explain the rule in English.",
+    "correction": "She can explain the rule in English.",
+    "reasonVi": "Sau can/cannot dùng động từ nguyên mẫu không to, không -s, không -ing."
+   },
+   {
+    "incorrect": "She can explains the rule in English.",
+    "correction": "She can explain the rule in English.",
+    "reasonVi": "Nếu là câu hỏi, đảo can lên trước chủ ngữ; modal không biến đổi theo ngôi."
+   }
+  ],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "esl-v2",
+  "version": 1
+ },
+ {
+  "id": "esl-v2-r05-u04-010",
+  "practiceLevel": "2.5",
+  "type": "sentence",
+  "topic": "Can và cannot: khả năng, yêu cầu, sự cho phép",
+  "promptVi": "Chiếc điện thoại này không thể chụp ảnh dưới nước.",
+  "referenceAnswers": [
+   "This phone cannot take photos underwater."
+  ],
+  "grammarTags": [
+   "R05-U04",
+   "sentence",
+   "R05"
+  ],
+  "explanationVi": "Câu hỏi: Can + S + V ... ?; khác câu kể S can V. Đây là câu trần thuật hoàn chỉnh; hãy kiểm tra động từ hoặc trợ động từ theo chủ ngữ.",
+  "rationaleVi": "Chuyển từ cụm từ sang câu ngắn với chủ ngữ và động từ quen thuộc. Bài bổ sung từ bộ ESL v2 (R05-U04), chủ đề Can và cannot: khả năng, yêu cầu, sự cho phép.",
+  "commonErrors": [
+   {
+    "incorrect": "This phone cannot to take photos underwater.",
+    "correction": "This phone cannot take photos underwater.",
+    "reasonVi": "Sau can/cannot dùng động từ nguyên mẫu không to, không -s, không -ing."
+   },
+   {
+    "incorrect": "This phone cannot takes photos underwater.",
+    "correction": "This phone cannot take photos underwater.",
+    "reasonVi": "Nếu là câu hỏi, đảo can lên trước chủ ngữ; modal không biến đổi theo ngôi."
+   }
+  ],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "esl-v2",
+  "version": 1
+ },
+ {
+  "id": "esl-v2-r05-u04-011",
+  "practiceLevel": "2.5",
+  "type": "sentence",
+  "topic": "Can và cannot: khả năng, yêu cầu, sự cho phép",
+  "promptVi": "Tôi có thể mượn chiếc ghế này được không?",
+  "referenceAnswers": [
+   "Can I borrow this chair?"
+  ],
+  "grammarTags": [
+   "R05-U04",
+   "sentence",
+   "R05"
+  ],
+  "explanationVi": "Can diễn đạt khả năng hoặc xin phép tùy ngữ cảnh: Can I leave early? Đây là câu hỏi hoàn chỉnh; hãy kiểm tra động từ hoặc trợ động từ theo chủ ngữ.",
+  "rationaleVi": "Chuyển từ cụm từ sang câu ngắn với chủ ngữ và động từ quen thuộc. Bài bổ sung từ bộ ESL v2 (R05-U04), chủ đề Can và cannot: khả năng, yêu cầu, sự cho phép.",
+  "commonErrors": [
+   {
+    "incorrect": "Can I to borrow this chair?",
+    "correction": "Can I borrow this chair?",
+    "reasonVi": "Sau can/cannot dùng động từ nguyên mẫu không to, không -s, không -ing."
+   },
+   {
+    "incorrect": "Do I can borrow this chair?",
+    "correction": "Can I borrow this chair?",
+    "reasonVi": "So với đáp án mẫu, phần cần sửa: “Do” → “Can”, “can” → “∅”. Nếu là câu hỏi, đảo can lên trước chủ ngữ; modal không biến đổi theo ngôi."
+   }
+  ],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "esl-v2",
+  "version": 1
+ },
+ {
+  "id": "esl-v2-r05-u04-012",
+  "practiceLevel": "2.5",
+  "type": "sentence",
+  "topic": "Can và cannot: khả năng, yêu cầu, sự cho phép",
+  "promptVi": "Bạn tôi không thể tham gia buổi tập hôm nay.",
+  "referenceAnswers": [
+   "My friend cannot attend practice today."
+  ],
+  "grammarTags": [
+   "R05-U04",
+   "sentence",
+   "R05"
+  ],
+  "explanationVi": "Sau can không thêm -ing, -s hay to vào động từ chính. Đây là câu trần thuật hoàn chỉnh; hãy kiểm tra động từ hoặc trợ động từ theo chủ ngữ.",
+  "rationaleVi": "Chuyển từ cụm từ sang câu ngắn với chủ ngữ và động từ quen thuộc. Bài bổ sung từ bộ ESL v2 (R05-U04), chủ đề Can và cannot: khả năng, yêu cầu, sự cho phép.",
+  "commonErrors": [
+   {
+    "incorrect": "My friend cannot to attend practice today.",
+    "correction": "My friend cannot attend practice today.",
+    "reasonVi": "Sau can/cannot dùng động từ nguyên mẫu không to, không -s, không -ing."
+   },
+   {
+    "incorrect": "My friend cannot attends practice today.",
+    "correction": "My friend cannot attend practice today.",
+    "reasonVi": "Nếu là câu hỏi, đảo can lên trước chủ ngữ; modal không biến đổi theo ngôi."
+   }
+  ],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "esl-v2",
+  "version": 1
+ },
+ {
+  "id": "esl-v2-r05-u04-013",
+  "practiceLevel": "2.5",
+  "type": "sentence",
+  "topic": "Can và cannot: khả năng, yêu cầu, sự cho phép",
+  "promptVi": "Chúng ta có thể sử dụng cửa phụ khi trời mưa.",
+  "referenceAnswers": [
+   "We can use the side entrance when it rains."
+  ],
+  "grammarTags": [
+   "R05-U04",
+   "sentence",
+   "R05"
+  ],
+  "explanationVi": "Cấu trúc: S + can + V (nguyên thể không to): He can swim. Đây là câu trần thuật hoàn chỉnh; hãy kiểm tra động từ hoặc trợ động từ theo chủ ngữ.",
+  "rationaleVi": "Chuyển từ cụm từ sang câu ngắn với chủ ngữ và động từ quen thuộc. Bài bổ sung từ bộ ESL v2 (R05-U04), chủ đề Can và cannot: khả năng, yêu cầu, sự cho phép.",
+  "commonErrors": [
+   {
+    "incorrect": "We can to use the side entrance when it rains.",
+    "correction": "We can use the side entrance when it rains.",
+    "reasonVi": "Sau can/cannot dùng động từ nguyên mẫu không to, không -s, không -ing."
+   },
+   {
+    "incorrect": "We can uses the side entrance when it rains.",
+    "correction": "We can use the side entrance when it rains.",
+    "reasonVi": "Nếu là câu hỏi, đảo can lên trước chủ ngữ; modal không biến đổi theo ngôi."
+   }
+  ],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "esl-v2",
+  "version": 1
+ },
+ {
+  "id": "esl-v2-r05-u04-014",
+  "practiceLevel": "2.5",
+  "type": "sentence",
+  "topic": "Can và cannot: khả năng, yêu cầu, sự cho phép",
+  "promptVi": "Các em nhỏ có thể chơi trong sân sau giờ học.",
+  "referenceAnswers": [
+   "The children can play in the yard after school."
+  ],
+  "grammarTags": [
+   "R05-U04",
+   "sentence",
+   "R05"
+  ],
+  "explanationVi": "Can không đổi theo chủ ngữ: she can, không phải she cans. Đây là câu trần thuật hoàn chỉnh; hãy kiểm tra động từ hoặc trợ động từ theo chủ ngữ.",
+  "rationaleVi": "Chuyển từ cụm từ sang câu ngắn với chủ ngữ và động từ quen thuộc. Bài bổ sung từ bộ ESL v2 (R05-U04), chủ đề Can và cannot: khả năng, yêu cầu, sự cho phép.",
+  "commonErrors": [
+   {
+    "incorrect": "The children cans play in the yard after school.",
+    "correction": "The children can play in the yard after school.",
+    "reasonVi": "Sau can/cannot dùng động từ nguyên mẫu không to, không -s, không -ing."
+   },
+   {
+    "incorrect": "The children can playing in the yard after school.",
+    "correction": "The children can play in the yard after school.",
+    "reasonVi": "Nếu là câu hỏi, đảo can lên trước chủ ngữ; modal không biến đổi theo ngôi."
+   }
+  ],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "esl-v2",
+  "version": 1
+ },
+ {
+  "id": "esl-v2-r05-u04-015",
+  "practiceLevel": "2.5",
+  "type": "sentence",
+  "topic": "Can và cannot: khả năng, yêu cầu, sự cho phép",
+  "promptVi": "Tôi không thể đọc chữ trên tấm biển từ xa.",
+  "referenceAnswers": [
+   "I cannot read the words on the sign from here."
+  ],
+  "grammarTags": [
+   "R05-U04",
+   "sentence",
+   "R05"
+  ],
+  "explanationVi": "Phủ định: cannot (hoặc can’t) + V nguyên thể. Đây là câu trần thuật hoàn chỉnh; hãy kiểm tra động từ hoặc trợ động từ theo chủ ngữ.",
+  "rationaleVi": "Chuyển từ cụm từ sang câu ngắn với chủ ngữ và động từ quen thuộc. Bài bổ sung từ bộ ESL v2 (R05-U04), chủ đề Can và cannot: khả năng, yêu cầu, sự cho phép.",
+  "commonErrors": [
+   {
+    "incorrect": "I cannot to read the words on the sign from here.",
+    "correction": "I cannot read the words on the sign from here.",
+    "reasonVi": "Sau can/cannot dùng động từ nguyên mẫu không to, không -s, không -ing."
+   },
+   {
+    "incorrect": "I cannot reads the words on the sign from here.",
+    "correction": "I cannot read the words on the sign from here.",
+    "reasonVi": "Nếu là câu hỏi, đảo can lên trước chủ ngữ; modal không biến đổi theo ngôi."
+   }
+  ],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "esl-v2",
+  "version": 1
+ },
+ {
+  "id": "esl-v2-r05-u04-016",
+  "practiceLevel": "2.5",
+  "type": "sentence",
+  "topic": "Can và cannot: khả năng, yêu cầu, sự cho phép",
+  "promptVi": "Bố tôi có thể sửa chiếc đèn nhưng không thể sửa máy tính.",
+  "referenceAnswers": [
+   "My father can fix the lamp but cannot fix the computer."
+  ],
+  "grammarTags": [
+   "R05-U04",
+   "sentence",
+   "R05"
+  ],
+  "explanationVi": "Câu hỏi: Can + S + V ... ?; khác câu kể S can V. Đây là câu trần thuật hoàn chỉnh; hãy kiểm tra động từ hoặc trợ động từ theo chủ ngữ.",
+  "rationaleVi": "Chuyển từ cụm từ sang câu ngắn với chủ ngữ và động từ quen thuộc. Bài bổ sung từ bộ ESL v2 (R05-U04), chủ đề Can và cannot: khả năng, yêu cầu, sự cho phép.",
+  "commonErrors": [
+   {
+    "incorrect": "My father cans fix the lamp but cannot fix the computer.",
+    "correction": "My father can fix the lamp but cannot fix the computer.",
+    "reasonVi": "Sau can/cannot dùng động từ nguyên mẫu không to, không -s, không -ing."
+   },
+   {
+    "incorrect": "My father can fix the lamp but cannot to fix the computer.",
+    "correction": "My father can fix the lamp but cannot fix the computer.",
+    "reasonVi": "Nếu là câu hỏi, đảo can lên trước chủ ngữ; modal không biến đổi theo ngôi."
+   }
+  ],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "esl-v2",
+  "version": 1
+ },
+ {
+  "id": "esl-v2-r05-u04-017",
+  "practiceLevel": "2.5",
+  "type": "sentence",
+  "topic": "Can và cannot: khả năng, yêu cầu, sự cho phép",
+  "promptVi": "Chúng ta có thể đổi giờ họp, nhưng không thể đổi địa điểm.",
+  "referenceAnswers": [
+   "We can change the meeting time, but we cannot change the location."
+  ],
+  "grammarTags": [
+   "R05-U04",
+   "sentence",
+   "R05"
+  ],
+  "explanationVi": "Can diễn đạt khả năng hoặc xin phép tùy ngữ cảnh: Can I leave early? Đây là câu trần thuật hoàn chỉnh; hãy kiểm tra động từ hoặc trợ động từ theo chủ ngữ.",
+  "rationaleVi": "Chuyển từ cụm từ sang câu ngắn với chủ ngữ và động từ quen thuộc. Bài bổ sung từ bộ ESL v2 (R05-U04), chủ đề Can và cannot: khả năng, yêu cầu, sự cho phép.",
+  "commonErrors": [
+   {
+    "incorrect": "We can changes the meeting time, but we cannot change the location.",
+    "correction": "We can change the meeting time, but we cannot change the location.",
+    "reasonVi": "Sau can/cannot dùng động từ nguyên mẫu không to, không -s, không -ing."
+   },
+   {
+    "incorrect": "We can change the meeting time, but we cannot to change the location.",
+    "correction": "We can change the meeting time, but we cannot change the location.",
+    "reasonVi": "Nếu là câu hỏi, đảo can lên trước chủ ngữ; modal không biến đổi theo ngôi."
+   }
+  ],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "esl-v2",
+  "version": 1
+ },
+ {
+  "id": "esl-v2-r05-u05-001",
+  "practiceLevel": "2.5",
+  "type": "phrase",
+  "topic": "Phủ định đúng với be, do/does và can",
+  "promptVi": "không ở trên bàn",
+  "referenceAnswers": [
+   "is not on the table"
+  ],
+  "grammarTags": [
+   "R05-U05",
+   "phrase",
+   "R05"
+  ],
+  "explanationVi": "Be: S + am/is/are + not + bổ ngữ: They are not late. Đây là cụm từ dùng để chuẩn bị ghép câu; chưa cần một chủ ngữ hoàn chỉnh.",
+  "rationaleVi": "Chuyển từ cụm từ sang câu ngắn với chủ ngữ và động từ quen thuộc. Bài bổ sung từ bộ ESL v2 (R05-U05), chủ đề Phủ định đúng với be, do/does và can.",
+  "commonErrors": [
+   {
+    "incorrect": "not on the table is",
+    "correction": "is not on the table",
+    "reasonVi": "So với đáp án mẫu, phần cần sửa: “∅” → “is”, “is” → “∅”. Chọn be not, do not, does not hoặc cannot theo động từ và chủ ngữ."
+   },
+   {
+    "incorrect": "is no on the table",
+    "correction": "is not on the table",
+    "reasonVi": "Sau does not dùng nguyên mẫu; không chồng nhiều trợ động từ cho cùng một vị ngữ."
+   }
+  ],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "esl-v2",
+  "version": 1
+ },
+ {
+  "id": "esl-v2-r05-u05-002",
+  "practiceLevel": "2.5",
+  "type": "phrase",
+  "topic": "Phủ định đúng với be, do/does và can",
+  "promptVi": "không thích đồ ăn cay",
+  "referenceAnswers": [
+   "do not like spicy food"
+  ],
+  "grammarTags": [
+   "R05-U05",
+   "phrase",
+   "R05"
+  ],
+  "explanationVi": "Động từ thường với I/you/we/they: do not + V nguyên thể. Đây là cụm từ dùng để chuẩn bị ghép câu; chưa cần một chủ ngữ hoàn chỉnh.",
+  "rationaleVi": "Chuyển từ cụm từ sang câu ngắn với chủ ngữ và động từ quen thuộc. Bài bổ sung từ bộ ESL v2 (R05-U05), chủ đề Phủ định đúng với be, do/does và can.",
+  "commonErrors": [
+   {
+    "incorrect": "do not likes spicy food",
+    "correction": "do not like spicy food",
+    "reasonVi": "Chọn be not, do not, does not hoặc cannot theo động từ và chủ ngữ."
+   },
+   {
+    "incorrect": "no like spicy food",
+    "correction": "do not like spicy food",
+    "reasonVi": "Sau does not dùng nguyên mẫu; không chồng nhiều trợ động từ cho cùng một vị ngữ."
+   }
+  ],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "esl-v2",
+  "version": 1
+ },
+ {
+  "id": "esl-v2-r05-u05-003",
+  "practiceLevel": "2.5",
+  "type": "phrase",
+  "topic": "Phủ định đúng với be, do/does và can",
+  "promptVi": "không có đủ giấy",
+  "referenceAnswers": [
+   "do not have enough paper"
+  ],
+  "grammarTags": [
+   "R05-U05",
+   "phrase",
+   "R05"
+  ],
+  "explanationVi": "Động từ thường với he/she/it: does not + V nguyên thể. Đây là cụm từ dùng để chuẩn bị ghép câu; chưa cần một chủ ngữ hoàn chỉnh.",
+  "rationaleVi": "Chuyển từ cụm từ sang câu ngắn với chủ ngữ và động từ quen thuộc. Bài bổ sung từ bộ ESL v2 (R05-U05), chủ đề Phủ định đúng với be, do/does và can.",
+  "commonErrors": [
+   {
+    "incorrect": "do not has enough paper",
+    "correction": "do not have enough paper",
+    "reasonVi": "Chọn be not, do not, does not hoặc cannot theo động từ và chủ ngữ."
+   },
+   {
+    "incorrect": "not have enough paper",
+    "correction": "do not have enough paper",
+    "reasonVi": "Sau does not dùng nguyên mẫu; không chồng nhiều trợ động từ cho cùng một vị ngữ."
+   }
+  ],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "esl-v2",
+  "version": 1
+ },
+ {
+  "id": "esl-v2-r05-u05-004",
+  "practiceLevel": "2.5",
+  "type": "phrase",
+  "topic": "Phủ định đúng với be, do/does và can",
+  "promptVi": "không thể đợi đến tối",
+  "referenceAnswers": [
+   "cannot wait until tonight"
+  ],
+  "grammarTags": [
+   "R05-U05",
+   "phrase",
+   "R05"
+  ],
+  "explanationVi": "Modal can: cannot + V nguyên thể; không dùng do not can. Đây là cụm từ dùng để chuẩn bị ghép câu; chưa cần một chủ ngữ hoàn chỉnh.",
+  "rationaleVi": "Chuyển từ cụm từ sang câu ngắn với chủ ngữ và động từ quen thuộc. Bài bổ sung từ bộ ESL v2 (R05-U05), chủ đề Phủ định đúng với be, do/does và can.",
+  "commonErrors": [
+   {
+    "incorrect": "cannot to wait until tonight",
+    "correction": "cannot wait until tonight",
+    "reasonVi": "Chọn be not, do not, does not hoặc cannot theo động từ và chủ ngữ."
+   },
+   {
+    "incorrect": "can not waiting until tonight",
+    "correction": "cannot wait until tonight",
+    "reasonVi": "Sau does not dùng nguyên mẫu; không chồng nhiều trợ động từ cho cùng một vị ngữ."
+   }
+  ],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "esl-v2",
+  "version": 1
+ },
+ {
+  "id": "esl-v2-r05-u05-005",
+  "practiceLevel": "2.5",
+  "type": "sentence",
+  "topic": "Phủ định đúng với be, do/does và can",
+  "promptVi": "Tôi không uống cà phê sau sáu giờ tối.",
+  "referenceAnswers": [
+   "I do not drink coffee after six in the evening."
+  ],
+  "grammarTags": [
+   "R05-U05",
+   "sentence",
+   "R05"
+  ],
+  "explanationVi": "Not đứng sau trợ động từ, không đứng độc lập trước động từ thường. Đây là câu trần thuật hoàn chỉnh; hãy kiểm tra động từ hoặc trợ động từ theo chủ ngữ.",
+  "rationaleVi": "Chuyển từ cụm từ sang câu ngắn với chủ ngữ và động từ quen thuộc. Bài bổ sung từ bộ ESL v2 (R05-U05), chủ đề Phủ định đúng với be, do/does và can.",
+  "commonErrors": [
+   {
+    "incorrect": "I does not drink coffee after six in the evening.",
+    "correction": "I do not drink coffee after six in the evening.",
+    "reasonVi": "Chọn be not, do not, does not hoặc cannot theo động từ và chủ ngữ."
+   },
+   {
+    "incorrect": "I do not drinks coffee after six in the evening.",
+    "correction": "I do not drink coffee after six in the evening.",
+    "reasonVi": "Sau does not dùng nguyên mẫu; không chồng nhiều trợ động từ cho cùng một vị ngữ."
+   }
+  ],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "esl-v2",
+  "version": 1
+ },
+ {
+  "id": "esl-v2-r05-u05-006",
+  "practiceLevel": "2.5",
+  "type": "sentence",
+  "topic": "Phủ định đúng với be, do/does và can",
+  "promptVi": "Cô ấy không đi làm bằng xe máy.",
+  "referenceAnswers": [
+   "She does not go to work by motorbike."
+  ],
+  "grammarTags": [
+   "R05-U05",
+   "sentence",
+   "R05"
+  ],
+  "explanationVi": "Does đã mang dấu ngôi thứ ba; động từ chính không thêm -s: she does not play. Đây là câu trần thuật hoàn chỉnh; hãy kiểm tra động từ hoặc trợ động từ theo chủ ngữ.",
+  "rationaleVi": "Chuyển từ cụm từ sang câu ngắn với chủ ngữ và động từ quen thuộc. Bài bổ sung từ bộ ESL v2 (R05-U05), chủ đề Phủ định đúng với be, do/does và can.",
+  "commonErrors": [
+   {
+    "incorrect": "She do not go to work by motorbike.",
+    "correction": "She does not go to work by motorbike.",
+    "reasonVi": "Chọn be not, do not, does not hoặc cannot theo động từ và chủ ngữ."
+   },
+   {
+    "incorrect": "She does not goes to work by motorbike.",
+    "correction": "She does not go to work by motorbike.",
+    "reasonVi": "Sau does not dùng nguyên mẫu; không chồng nhiều trợ động từ cho cùng một vị ngữ."
+   }
+  ],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "esl-v2",
+  "version": 1
+ },
+ {
+  "id": "esl-v2-r05-u05-007",
+  "practiceLevel": "2.5",
+  "type": "sentence",
+  "topic": "Phủ định đúng với be, do/does và can",
+  "promptVi": "Những chiếc bàn này không sạch.",
+  "referenceAnswers": [
+   "These tables are not clean."
+  ],
+  "grammarTags": [
+   "R05-U05",
+   "sentence",
+   "R05"
+  ],
+  "explanationVi": "Be: S + am/is/are + not + bổ ngữ: They are not late. Đây là câu trần thuật hoàn chỉnh; hãy kiểm tra động từ hoặc trợ động từ theo chủ ngữ.",
+  "rationaleVi": "Chuyển từ cụm từ sang câu ngắn với chủ ngữ và động từ quen thuộc. Bài bổ sung từ bộ ESL v2 (R05-U05), chủ đề Phủ định đúng với be, do/does và can.",
+  "commonErrors": [
+   {
+    "incorrect": "These tables is not clean.",
+    "correction": "These tables are not clean.",
+    "reasonVi": "Chọn be not, do not, does not hoặc cannot theo động từ và chủ ngữ."
+   },
+   {
+    "incorrect": "These tables do not clean.",
+    "correction": "These tables are not clean.",
+    "reasonVi": "Sau does not dùng nguyên mẫu; không chồng nhiều trợ động từ cho cùng một vị ngữ."
+   }
+  ],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "esl-v2",
+  "version": 1
+ },
+ {
+  "id": "esl-v2-r05-u05-008",
+  "practiceLevel": "2.5",
+  "type": "sentence",
+  "topic": "Phủ định đúng với be, do/does và can",
+  "promptVi": "Chúng tôi không có lớp học vào thứ Tư.",
+  "referenceAnswers": [
+   "We do not have classes on Wednesdays."
+  ],
+  "grammarTags": [
+   "R05-U05",
+   "sentence",
+   "R05"
+  ],
+  "explanationVi": "Động từ thường với I/you/we/they: do not + V nguyên thể. Đây là câu trần thuật hoàn chỉnh; hãy kiểm tra động từ hoặc trợ động từ theo chủ ngữ.",
+  "rationaleVi": "Chuyển từ cụm từ sang câu ngắn với chủ ngữ và động từ quen thuộc. Bài bổ sung từ bộ ESL v2 (R05-U05), chủ đề Phủ định đúng với be, do/does và can.",
+  "commonErrors": [
+   {
+    "incorrect": "We does not have classes on Wednesdays.",
+    "correction": "We do not have classes on Wednesdays.",
+    "reasonVi": "Chọn be not, do not, does not hoặc cannot theo động từ và chủ ngữ."
+   },
+   {
+    "incorrect": "We do not has classes on Wednesdays.",
+    "correction": "We do not have classes on Wednesdays.",
+    "reasonVi": "Sau does not dùng nguyên mẫu; không chồng nhiều trợ động từ cho cùng một vị ngữ."
+   }
+  ],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "esl-v2",
+  "version": 1
+ },
+ {
+  "id": "esl-v2-r05-u05-009",
+  "practiceLevel": "2.5",
+  "type": "sentence",
+  "topic": "Phủ định đúng với be, do/does và can",
+  "promptVi": "Anh ấy không thích những bộ phim dài.",
+  "referenceAnswers": [
+   "He does not like long films."
+  ],
+  "grammarTags": [
+   "R05-U05",
+   "sentence",
+   "R05"
+  ],
+  "explanationVi": "Động từ thường với he/she/it: does not + V nguyên thể. Đây là câu trần thuật hoàn chỉnh; hãy kiểm tra động từ hoặc trợ động từ theo chủ ngữ.",
+  "rationaleVi": "Chuyển từ cụm từ sang câu ngắn với chủ ngữ và động từ quen thuộc. Bài bổ sung từ bộ ESL v2 (R05-U05), chủ đề Phủ định đúng với be, do/does và can.",
+  "commonErrors": [
+   {
+    "incorrect": "He do not like long films.",
+    "correction": "He does not like long films.",
+    "reasonVi": "Chọn be not, do not, does not hoặc cannot theo động từ và chủ ngữ."
+   },
+   {
+    "incorrect": "He does not likes long films.",
+    "correction": "He does not like long films.",
+    "reasonVi": "Sau does not dùng nguyên mẫu; không chồng nhiều trợ động từ cho cùng một vị ngữ."
+   }
+  ],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "esl-v2",
+  "version": 1
+ },
+ {
+  "id": "esl-v2-r05-u05-010",
+  "practiceLevel": "2.5",
+  "type": "sentence",
+  "topic": "Phủ định đúng với be, do/does và can",
+  "promptVi": "Con mèo không ở trong phòng ngủ.",
+  "referenceAnswers": [
+   "The cat is not in the bedroom."
+  ],
+  "grammarTags": [
+   "R05-U05",
+   "sentence",
+   "R05"
+  ],
+  "explanationVi": "Modal can: cannot + V nguyên thể; không dùng do not can. Đây là câu trần thuật hoàn chỉnh; hãy kiểm tra động từ hoặc trợ động từ theo chủ ngữ.",
+  "rationaleVi": "Chuyển từ cụm từ sang câu ngắn với chủ ngữ và động từ quen thuộc. Bài bổ sung từ bộ ESL v2 (R05-U05), chủ đề Phủ định đúng với be, do/does và can.",
+  "commonErrors": [
+   {
+    "incorrect": "The cat do not in the bedroom.",
+    "correction": "The cat is not in the bedroom.",
+    "reasonVi": "Chọn be not, do not, does not hoặc cannot theo động từ và chủ ngữ."
+   },
+   {
+    "incorrect": "The cat are not in the bedroom.",
+    "correction": "The cat is not in the bedroom.",
+    "reasonVi": "Sau does not dùng nguyên mẫu; không chồng nhiều trợ động từ cho cùng một vị ngữ."
+   }
+  ],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "esl-v2",
+  "version": 1
+ },
+ {
+  "id": "esl-v2-r05-u05-011",
+  "practiceLevel": "2.5",
+  "type": "sentence",
+  "topic": "Phủ định đúng với be, do/does và can",
+  "promptVi": "Tôi không thể tìm thấy chìa khóa dự phòng.",
+  "referenceAnswers": [
+   "I cannot find the spare key."
+  ],
+  "grammarTags": [
+   "R05-U05",
+   "sentence",
+   "R05"
+  ],
+  "explanationVi": "Not đứng sau trợ động từ, không đứng độc lập trước động từ thường. Đây là câu trần thuật hoàn chỉnh; hãy kiểm tra động từ hoặc trợ động từ theo chủ ngữ.",
+  "rationaleVi": "Chuyển từ cụm từ sang câu ngắn với chủ ngữ và động từ quen thuộc. Bài bổ sung từ bộ ESL v2 (R05-U05), chủ đề Phủ định đúng với be, do/does và can.",
+  "commonErrors": [
+   {
+    "incorrect": "I cannot to find the spare key.",
+    "correction": "I cannot find the spare key.",
+    "reasonVi": "Chọn be not, do not, does not hoặc cannot theo động từ và chủ ngữ."
+   },
+   {
+    "incorrect": "I do not can find the spare key.",
+    "correction": "I cannot find the spare key.",
+    "reasonVi": "Sau does not dùng nguyên mẫu; không chồng nhiều trợ động từ cho cùng một vị ngữ."
+   }
+  ],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "esl-v2",
+  "version": 1
+ },
+ {
+  "id": "esl-v2-r05-u05-012",
+  "practiceLevel": "2.5",
+  "type": "sentence",
+  "topic": "Phủ định đúng với be, do/does và can",
+  "promptVi": "Bạn bè tôi không ăn tối ở trường.",
+  "referenceAnswers": [
+   "My friends do not have dinner at school."
+  ],
+  "grammarTags": [
+   "R05-U05",
+   "sentence",
+   "R05"
+  ],
+  "explanationVi": "Does đã mang dấu ngôi thứ ba; động từ chính không thêm -s: she does not play. Đây là câu trần thuật hoàn chỉnh; hãy kiểm tra động từ hoặc trợ động từ theo chủ ngữ.",
+  "rationaleVi": "Chuyển từ cụm từ sang câu ngắn với chủ ngữ và động từ quen thuộc. Bài bổ sung từ bộ ESL v2 (R05-U05), chủ đề Phủ định đúng với be, do/does và can.",
+  "commonErrors": [
+   {
+    "incorrect": "My friends does not have dinner at school.",
+    "correction": "My friends do not have dinner at school.",
+    "reasonVi": "Chọn be not, do not, does not hoặc cannot theo động từ và chủ ngữ."
+   },
+   {
+    "incorrect": "My friends do not has dinner at school.",
+    "correction": "My friends do not have dinner at school.",
+    "reasonVi": "Sau does not dùng nguyên mẫu; không chồng nhiều trợ động từ cho cùng một vị ngữ."
+   }
+  ],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "esl-v2",
+  "version": 1
+ },
+ {
+  "id": "esl-v2-r05-u05-013",
+  "practiceLevel": "2.5",
+  "type": "sentence",
+  "topic": "Phủ định đúng với be, do/does và can",
+  "promptVi": "Cửa hàng này không mở cửa vào thứ Hai.",
+  "referenceAnswers": [
+   "This shop does not open on Mondays."
+  ],
+  "grammarTags": [
+   "R05-U05",
+   "sentence",
+   "R05"
+  ],
+  "explanationVi": "Be: S + am/is/are + not + bổ ngữ: They are not late. Đây là câu trần thuật hoàn chỉnh; hãy kiểm tra động từ hoặc trợ động từ theo chủ ngữ.",
+  "rationaleVi": "Chuyển từ cụm từ sang câu ngắn với chủ ngữ và động từ quen thuộc. Bài bổ sung từ bộ ESL v2 (R05-U05), chủ đề Phủ định đúng với be, do/does và can.",
+  "commonErrors": [
+   {
+    "incorrect": "This shop do not open on Mondays.",
+    "correction": "This shop does not open on Mondays.",
+    "reasonVi": "Chọn be not, do not, does not hoặc cannot theo động từ và chủ ngữ."
+   },
+   {
+    "incorrect": "This shop does not opens on Mondays.",
+    "correction": "This shop does not open on Mondays.",
+    "reasonVi": "Sau does not dùng nguyên mẫu; không chồng nhiều trợ động từ cho cùng một vị ngữ."
+   }
+  ],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "esl-v2",
+  "version": 1
+ },
+ {
+  "id": "esl-v2-r05-u05-014",
+  "practiceLevel": "2.5",
+  "type": "sentence",
+  "topic": "Phủ định đúng với be, do/does và can",
+  "promptVi": "Chúng tôi không đi bộ đến công viên khi trời mưa.",
+  "referenceAnswers": [
+   "We do not walk to the park when it rains."
+  ],
+  "grammarTags": [
+   "R05-U05",
+   "sentence",
+   "R05"
+  ],
+  "explanationVi": "Động từ thường với I/you/we/they: do not + V nguyên thể. Đây là câu trần thuật hoàn chỉnh; hãy kiểm tra động từ hoặc trợ động từ theo chủ ngữ.",
+  "rationaleVi": "Chuyển từ cụm từ sang câu ngắn với chủ ngữ và động từ quen thuộc. Bài bổ sung từ bộ ESL v2 (R05-U05), chủ đề Phủ định đúng với be, do/does và can.",
+  "commonErrors": [
+   {
+    "incorrect": "We does not walk to the park when it rains.",
+    "correction": "We do not walk to the park when it rains.",
+    "reasonVi": "Chọn be not, do not, does not hoặc cannot theo động từ và chủ ngữ."
+   },
+   {
+    "incorrect": "We do not walks to the park when it rains.",
+    "correction": "We do not walk to the park when it rains.",
+    "reasonVi": "Sau does not dùng nguyên mẫu; không chồng nhiều trợ động từ cho cùng một vị ngữ."
+   }
+  ],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "esl-v2",
+  "version": 1
+ },
+ {
+  "id": "esl-v2-r05-u05-015",
+  "practiceLevel": "2.5",
+  "type": "sentence",
+  "topic": "Phủ định đúng với be, do/does và can",
+  "promptVi": "Em trai tôi không có điện thoại riêng.",
+  "referenceAnswers": [
+   "My younger brother does not have his own phone."
+  ],
+  "grammarTags": [
+   "R05-U05",
+   "sentence",
+   "R05"
+  ],
+  "explanationVi": "Động từ thường với he/she/it: does not + V nguyên thể. Đây là câu trần thuật hoàn chỉnh; hãy kiểm tra động từ hoặc trợ động từ theo chủ ngữ.",
+  "rationaleVi": "Chuyển từ cụm từ sang câu ngắn với chủ ngữ và động từ quen thuộc. Bài bổ sung từ bộ ESL v2 (R05-U05), chủ đề Phủ định đúng với be, do/does và can.",
+  "commonErrors": [
+   {
+    "incorrect": "My younger brother do not have his own phone.",
+    "correction": "My younger brother does not have his own phone.",
+    "reasonVi": "Chọn be not, do not, does not hoặc cannot theo động từ và chủ ngữ."
+   },
+   {
+    "incorrect": "My younger brother does not has his own phone.",
+    "correction": "My younger brother does not have his own phone.",
+    "reasonVi": "Sau does not dùng nguyên mẫu; không chồng nhiều trợ động từ cho cùng một vị ngữ."
+   }
+  ],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "esl-v2",
+  "version": 1
+ },
+ {
+  "id": "esl-v2-r05-u05-016",
+  "practiceLevel": "2.5",
+  "type": "sentence",
+  "topic": "Phủ định đúng với be, do/does và can",
+  "promptVi": "Hai người bạn cùng phòng của tôi không xem ti vi vào buổi sáng.",
+  "referenceAnswers": [
+   "My two roommates do not watch television in the morning."
+  ],
+  "grammarTags": [
+   "R05-U05",
+   "sentence",
+   "R05"
+  ],
+  "explanationVi": "Modal can: cannot + V nguyên thể; không dùng do not can. Đây là câu trần thuật hoàn chỉnh; hãy kiểm tra động từ hoặc trợ động từ theo chủ ngữ.",
+  "rationaleVi": "Chuyển từ cụm từ sang câu ngắn với chủ ngữ và động từ quen thuộc. Bài bổ sung từ bộ ESL v2 (R05-U05), chủ đề Phủ định đúng với be, do/does và can.",
+  "commonErrors": [
+   {
+    "incorrect": "My two roommates does not watch television in the morning.",
+    "correction": "My two roommates do not watch television in the morning.",
+    "reasonVi": "Chọn be not, do not, does not hoặc cannot theo động từ và chủ ngữ."
+   },
+   {
+    "incorrect": "My two roommates do not watches television in the morning.",
+    "correction": "My two roommates do not watch television in the morning.",
+    "reasonVi": "Sau does not dùng nguyên mẫu; không chồng nhiều trợ động từ cho cùng một vị ngữ."
+   }
+  ],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "esl-v2",
+  "version": 1
+ },
+ {
+  "id": "esl-v2-r05-u06-001",
+  "practiceLevel": "2.5",
+  "type": "sentence",
+  "topic": "Câu hỏi Yes/No và Wh- cơ bản",
+  "promptVi": "Bây giờ bạn đang ở đâu?",
+  "referenceAnswers": [
+   "Where are you now?"
+  ],
+  "grammarTags": [
+   "R05-U06",
+   "sentence",
+   "R05"
+  ],
+  "explanationVi": "Câu hỏi với be: Am/Is/Are + S + bổ ngữ? Are you ready? Đây là câu hỏi hoàn chỉnh; hãy kiểm tra động từ hoặc trợ động từ theo chủ ngữ.",
+  "rationaleVi": "Chuyển từ cụm từ sang câu ngắn với chủ ngữ và động từ quen thuộc. Bài bổ sung từ bộ ESL v2 (R05-U06), chủ đề Câu hỏi Yes/No và Wh- cơ bản.",
+  "commonErrors": [
+   {
+    "incorrect": "where you are now?",
+    "correction": "Where are you now?",
+    "reasonVi": "So với đáp án mẫu, phần cần sửa: “where” → “Where are”, “are” → “∅”. Câu hỏi với be/can đảo trợ động từ; động từ thường dùng do/does."
+   },
+   {
+    "incorrect": "where is you now?",
+    "correction": "Where are you now?",
+    "reasonVi": "Sau does, dùng động từ nguyên mẫu; câu hỏi trực tiếp cần vị trí Wh- và dấu ?."
+   }
+  ],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "esl-v2",
+  "version": 1
+ },
+ {
+  "id": "esl-v2-r05-u06-002",
+  "practiceLevel": "2.5",
+  "type": "sentence",
+  "topic": "Câu hỏi Yes/No và Wh- cơ bản",
+  "promptVi": "Bạn có thích món súp này không?",
+  "referenceAnswers": [
+   "Do you like this soup?"
+  ],
+  "grammarTags": [
+   "R05-U06",
+   "sentence",
+   "R05"
+  ],
+  "explanationVi": "Động từ thường: Do/Does + S + V nguyên thể ...? Does he work here? Đây là câu hỏi hoàn chỉnh; hãy kiểm tra động từ hoặc trợ động từ theo chủ ngữ.",
+  "rationaleVi": "Chuyển từ cụm từ sang câu ngắn với chủ ngữ và động từ quen thuộc. Bài bổ sung từ bộ ESL v2 (R05-U06), chủ đề Câu hỏi Yes/No và Wh- cơ bản.",
+  "commonErrors": [
+   {
+    "incorrect": "you like this soup?",
+    "correction": "Do you like this soup?",
+    "reasonVi": "Câu hỏi với be/can đảo trợ động từ; động từ thường dùng do/does."
+   },
+   {
+    "incorrect": "does you like this soup?",
+    "correction": "Do you like this soup?",
+    "reasonVi": "Sau does, dùng động từ nguyên mẫu; câu hỏi trực tiếp cần vị trí Wh- và dấu ?."
+   }
+  ],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "esl-v2",
+  "version": 1
+ },
+ {
+  "id": "esl-v2-r05-u06-003",
+  "practiceLevel": "2.5",
+  "type": "sentence",
+  "topic": "Câu hỏi Yes/No và Wh- cơ bản",
+  "promptVi": "Cuộc họp bắt đầu khi nào?",
+  "referenceAnswers": [
+   "When does the meeting start?"
+  ],
+  "grammarTags": [
+   "R05-U06",
+   "sentence",
+   "R05"
+  ],
+  "explanationVi": "Wh- với động từ thường: Where/When/What + do/does + S + V ...? Đây là câu hỏi hoàn chỉnh; hãy kiểm tra động từ hoặc trợ động từ theo chủ ngữ.",
+  "rationaleVi": "Chuyển từ cụm từ sang câu ngắn với chủ ngữ và động từ quen thuộc. Bài bổ sung từ bộ ESL v2 (R05-U06), chủ đề Câu hỏi Yes/No và Wh- cơ bản.",
+  "commonErrors": [
+   {
+    "incorrect": "When the meeting does start?",
+    "correction": "When does the meeting start?",
+    "reasonVi": "So với đáp án mẫu, phần cần sửa: “∅” → “does”, “does” → “∅”. Câu hỏi với be/can đảo trợ động từ; động từ thường dùng do/does."
+   },
+   {
+    "incorrect": "When do the meeting start?",
+    "correction": "When does the meeting start?",
+    "reasonVi": "Sau does, dùng động từ nguyên mẫu; câu hỏi trực tiếp cần vị trí Wh- và dấu ?."
+   }
+  ],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "esl-v2",
+  "version": 1
+ },
+ {
+  "id": "esl-v2-r05-u06-004",
+  "practiceLevel": "2.5",
+  "type": "sentence",
+  "topic": "Câu hỏi Yes/No và Wh- cơ bản",
+  "promptVi": "Tôi có thể dùng chiếc bút này không?",
+  "referenceAnswers": [
+   "Can I use this pen?"
+  ],
+  "grammarTags": [
+   "R05-U06",
+   "sentence",
+   "R05"
+  ],
+  "explanationVi": "Wh- với be: Where + is/are + S? Where are the books? Đây là câu hỏi hoàn chỉnh; hãy kiểm tra động từ hoặc trợ động từ theo chủ ngữ.",
+  "rationaleVi": "Chuyển từ cụm từ sang câu ngắn với chủ ngữ và động từ quen thuộc. Bài bổ sung từ bộ ESL v2 (R05-U06), chủ đề Câu hỏi Yes/No và Wh- cơ bản.",
+  "commonErrors": [
+   {
+    "incorrect": "Can I to use this pen?",
+    "correction": "Can I use this pen?",
+    "reasonVi": "Câu hỏi với be/can đảo trợ động từ; động từ thường dùng do/does."
+   },
+   {
+    "incorrect": "Do I can use this pen?",
+    "correction": "Can I use this pen?",
+    "reasonVi": "So với đáp án mẫu, phần cần sửa: “Do” → “Can”, “can” → “∅”. Sau does, dùng động từ nguyên mẫu; câu hỏi trực tiếp cần vị trí Wh- và dấu ?."
+   }
+  ],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "esl-v2",
+  "version": 1
+ },
+ {
+  "id": "esl-v2-r05-u06-005",
+  "practiceLevel": "2.5",
+  "type": "sentence",
+  "topic": "Câu hỏi Yes/No và Wh- cơ bản",
+  "promptVi": "Bạn có sống gần trường không?",
+  "referenceAnswers": [
+   "Do you live near the school?"
+  ],
+  "grammarTags": [
+   "R05-U06",
+   "sentence",
+   "R05"
+  ],
+  "explanationVi": "Câu hỏi xin phép với can: Can + S + V ...? Đây là câu hỏi hoàn chỉnh; hãy kiểm tra động từ hoặc trợ động từ theo chủ ngữ.",
+  "rationaleVi": "Chuyển từ cụm từ sang câu ngắn với chủ ngữ và động từ quen thuộc. Bài bổ sung từ bộ ESL v2 (R05-U06), chủ đề Câu hỏi Yes/No và Wh- cơ bản.",
+  "commonErrors": [
+   {
+    "incorrect": "Does you live near the school?",
+    "correction": "Do you live near the school?",
+    "reasonVi": "Câu hỏi với be/can đảo trợ động từ; động từ thường dùng do/does."
+   },
+   {
+    "incorrect": "You live near the school?",
+    "correction": "Do you live near the school?",
+    "reasonVi": "Sau does, dùng động từ nguyên mẫu; câu hỏi trực tiếp cần vị trí Wh- và dấu ?."
+   }
+  ],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "esl-v2",
+  "version": 1
+ },
+ {
+  "id": "esl-v2-r05-u06-006",
+  "practiceLevel": "2.5",
+  "type": "sentence",
+  "topic": "Câu hỏi Yes/No và Wh- cơ bản",
+  "promptVi": "Cô ấy có học vào buổi tối không?",
+  "referenceAnswers": [
+   "Does she study in the evening?"
+  ],
+  "grammarTags": [
+   "R05-U06",
+   "sentence",
+   "R05"
+  ],
+  "explanationVi": "Sau does động từ chính không thêm -s; câu hỏi cần dấu hỏi và đúng trật tự. Đây là câu hỏi hoàn chỉnh; hãy kiểm tra động từ hoặc trợ động từ theo chủ ngữ.",
+  "rationaleVi": "Chuyển từ cụm từ sang câu ngắn với chủ ngữ và động từ quen thuộc. Bài bổ sung từ bộ ESL v2 (R05-U06), chủ đề Câu hỏi Yes/No và Wh- cơ bản.",
+  "commonErrors": [
+   {
+    "incorrect": "Do she study in the evening?",
+    "correction": "Does she study in the evening?",
+    "reasonVi": "Câu hỏi với be/can đảo trợ động từ; động từ thường dùng do/does."
+   },
+   {
+    "incorrect": "Does she studies in the evening?",
+    "correction": "Does she study in the evening?",
+    "reasonVi": "Sau does, dùng động từ nguyên mẫu; câu hỏi trực tiếp cần vị trí Wh- và dấu ?."
+   }
+  ],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "esl-v2",
+  "version": 1
+ },
+ {
+  "id": "esl-v2-r05-u06-007",
+  "practiceLevel": "2.5",
+  "type": "sentence",
+  "topic": "Câu hỏi Yes/No và Wh- cơ bản",
+  "promptVi": "Những chiếc vé này có đắt không?",
+  "referenceAnswers": [
+   "Are these tickets expensive?"
+  ],
+  "grammarTags": [
+   "R05-U06",
+   "sentence",
+   "R05"
+  ],
+  "explanationVi": "Câu hỏi với be: Am/Is/Are + S + bổ ngữ? Are you ready? Đây là câu hỏi hoàn chỉnh; hãy kiểm tra động từ hoặc trợ động từ theo chủ ngữ.",
+  "rationaleVi": "Chuyển từ cụm từ sang câu ngắn với chủ ngữ và động từ quen thuộc. Bài bổ sung từ bộ ESL v2 (R05-U06), chủ đề Câu hỏi Yes/No và Wh- cơ bản.",
+  "commonErrors": [
+   {
+    "incorrect": "Is these tickets expensive?",
+    "correction": "Are these tickets expensive?",
+    "reasonVi": "Câu hỏi với be/can đảo trợ động từ; động từ thường dùng do/does."
+   },
+   {
+    "incorrect": "These tickets are expensive?",
+    "correction": "Are these tickets expensive?",
+    "reasonVi": "So với đáp án mẫu, phần cần sửa: “These” → “Are these”, “are” → “∅”. Sau does, dùng động từ nguyên mẫu; câu hỏi trực tiếp cần vị trí Wh- và dấu ?."
+   }
+  ],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "esl-v2",
+  "version": 1
+ },
+ {
+  "id": "esl-v2-r05-u06-008",
+  "practiceLevel": "2.5",
+  "type": "sentence",
+  "topic": "Câu hỏi Yes/No và Wh- cơ bản",
+  "promptVi": "Bố của bạn làm việc ở đâu?",
+  "referenceAnswers": [
+   "Where does your father work?"
+  ],
+  "grammarTags": [
+   "R05-U06",
+   "sentence",
+   "R05"
+  ],
+  "explanationVi": "Động từ thường: Do/Does + S + V nguyên thể ...? Does he work here? Đây là câu hỏi hoàn chỉnh; hãy kiểm tra động từ hoặc trợ động từ theo chủ ngữ.",
+  "rationaleVi": "Chuyển từ cụm từ sang câu ngắn với chủ ngữ và động từ quen thuộc. Bài bổ sung từ bộ ESL v2 (R05-U06), chủ đề Câu hỏi Yes/No và Wh- cơ bản.",
+  "commonErrors": [
+   {
+    "incorrect": "Where do your father work?",
+    "correction": "Where does your father work?",
+    "reasonVi": "Câu hỏi với be/can đảo trợ động từ; động từ thường dùng do/does."
+   },
+   {
+    "incorrect": "Where does your father works?",
+    "correction": "Where does your father work?",
+    "reasonVi": "Sau does, dùng động từ nguyên mẫu; câu hỏi trực tiếp cần vị trí Wh- và dấu ?."
+   }
+  ],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "esl-v2",
+  "version": 1
+ },
+ {
+  "id": "esl-v2-r05-u06-009",
+  "practiceLevel": "2.5",
+  "type": "sentence",
+  "topic": "Câu hỏi Yes/No và Wh- cơ bản",
+  "promptVi": "Bạn ăn sáng lúc mấy giờ?",
+  "referenceAnswers": [
+   "What time do you have breakfast?"
+  ],
+  "grammarTags": [
+   "R05-U06",
+   "sentence",
+   "R05"
+  ],
+  "explanationVi": "Wh- với động từ thường: Where/When/What + do/does + S + V ...? Đây là câu hỏi hoàn chỉnh; hãy kiểm tra động từ hoặc trợ động từ theo chủ ngữ.",
+  "rationaleVi": "Chuyển từ cụm từ sang câu ngắn với chủ ngữ và động từ quen thuộc. Bài bổ sung từ bộ ESL v2 (R05-U06), chủ đề Câu hỏi Yes/No và Wh- cơ bản.",
+  "commonErrors": [
+   {
+    "incorrect": "What time you have breakfast?",
+    "correction": "What time do you have breakfast?",
+    "reasonVi": "Câu hỏi với be/can đảo trợ động từ; động từ thường dùng do/does."
+   },
+   {
+    "incorrect": "What time does you have breakfast?",
+    "correction": "What time do you have breakfast?",
+    "reasonVi": "Sau does, dùng động từ nguyên mẫu; câu hỏi trực tiếp cần vị trí Wh- và dấu ?."
+   }
+  ],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "esl-v2",
+  "version": 1
+ },
+ {
+  "id": "esl-v2-r05-u06-010",
+  "practiceLevel": "2.5",
+  "type": "sentence",
+  "topic": "Câu hỏi Yes/No và Wh- cơ bản",
+  "promptVi": "Phòng máy tính có mở cửa hôm nay không?",
+  "referenceAnswers": [
+   "Is the computer room open today?"
+  ],
+  "grammarTags": [
+   "R05-U06",
+   "sentence",
+   "R05"
+  ],
+  "explanationVi": "Wh- với be: Where + is/are + S? Where are the books? Đây là câu hỏi hoàn chỉnh; hãy kiểm tra động từ hoặc trợ động từ theo chủ ngữ.",
+  "rationaleVi": "Chuyển từ cụm từ sang câu ngắn với chủ ngữ và động từ quen thuộc. Bài bổ sung từ bộ ESL v2 (R05-U06), chủ đề Câu hỏi Yes/No và Wh- cơ bản.",
+  "commonErrors": [
+   {
+    "incorrect": "Do the computer room open today?",
+    "correction": "Is the computer room open today?",
+    "reasonVi": "Câu hỏi với be/can đảo trợ động từ; động từ thường dùng do/does."
+   },
+   {
+    "incorrect": "The computer room is open today?",
+    "correction": "Is the computer room open today?",
+    "reasonVi": "So với đáp án mẫu, phần cần sửa: “The” → “Is the”, “is” → “∅”. Sau does, dùng động từ nguyên mẫu; câu hỏi trực tiếp cần vị trí Wh- và dấu ?."
+   }
+  ],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "esl-v2",
+  "version": 1
+ },
+ {
+  "id": "esl-v2-r05-u06-011",
+  "practiceLevel": "2.5",
+  "type": "sentence",
+  "topic": "Câu hỏi Yes/No và Wh- cơ bản",
+  "promptVi": "Bạn có thể mang theo chiếc ô này không?",
+  "referenceAnswers": [
+   "Can you bring this umbrella?"
+  ],
+  "grammarTags": [
+   "R05-U06",
+   "sentence",
+   "R05"
+  ],
+  "explanationVi": "Câu hỏi xin phép với can: Can + S + V ...? Đây là câu hỏi hoàn chỉnh; hãy kiểm tra động từ hoặc trợ động từ theo chủ ngữ.",
+  "rationaleVi": "Chuyển từ cụm từ sang câu ngắn với chủ ngữ và động từ quen thuộc. Bài bổ sung từ bộ ESL v2 (R05-U06), chủ đề Câu hỏi Yes/No và Wh- cơ bản.",
+  "commonErrors": [
+   {
+    "incorrect": "Do you can bring this umbrella?",
+    "correction": "Can you bring this umbrella?",
+    "reasonVi": "So với đáp án mẫu, phần cần sửa: “Do” → “Can”, “can” → “∅”. Câu hỏi với be/can đảo trợ động từ; động từ thường dùng do/does."
+   },
+   {
+    "incorrect": "Can you to bring this umbrella?",
+    "correction": "Can you bring this umbrella?",
+    "reasonVi": "Sau does, dùng động từ nguyên mẫu; câu hỏi trực tiếp cần vị trí Wh- và dấu ?."
+   }
+  ],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "esl-v2",
+  "version": 1
+ },
+ {
+  "id": "esl-v2-r05-u06-012",
+  "practiceLevel": "2.5",
+  "type": "sentence",
+  "topic": "Câu hỏi Yes/No và Wh- cơ bản",
+  "promptVi": "Ai là giáo viên tiếng Anh của bạn?",
+  "referenceAnswers": [
+   "Who is your English teacher?"
+  ],
+  "grammarTags": [
+   "R05-U06",
+   "sentence",
+   "R05"
+  ],
+  "explanationVi": "Sau does động từ chính không thêm -s; câu hỏi cần dấu hỏi và đúng trật tự. Đây là câu hỏi hoàn chỉnh; hãy kiểm tra động từ hoặc trợ động từ theo chủ ngữ.",
+  "rationaleVi": "Chuyển từ cụm từ sang câu ngắn với chủ ngữ và động từ quen thuộc. Bài bổ sung từ bộ ESL v2 (R05-U06), chủ đề Câu hỏi Yes/No và Wh- cơ bản.",
+  "commonErrors": [
+   {
+    "incorrect": "Who are your English teacher?",
+    "correction": "Who is your English teacher?",
+    "reasonVi": "Câu hỏi với be/can đảo trợ động từ; động từ thường dùng do/does."
+   },
+   {
+    "incorrect": "Who your English teacher is?",
+    "correction": "Who is your English teacher?",
+    "reasonVi": "So với đáp án mẫu, phần cần sửa: “∅” → “is”, “teacher is?” → “teacher?”. Sau does, dùng động từ nguyên mẫu; câu hỏi trực tiếp cần vị trí Wh- và dấu ?."
+   }
+  ],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "esl-v2",
+  "version": 1
+ },
+ {
+  "id": "esl-v2-r05-u06-013",
+  "practiceLevel": "2.5",
+  "type": "sentence",
+  "topic": "Câu hỏi Yes/No và Wh- cơ bản",
+  "promptVi": "Những người hàng xóm của bạn có nuôi chó không?",
+  "referenceAnswers": [
+   "Do your neighbours have a dog?"
+  ],
+  "grammarTags": [
+   "R05-U06",
+   "sentence",
+   "R05"
+  ],
+  "explanationVi": "Câu hỏi với be: Am/Is/Are + S + bổ ngữ? Are you ready? Đây là câu hỏi hoàn chỉnh; hãy kiểm tra động từ hoặc trợ động từ theo chủ ngữ.",
+  "rationaleVi": "Chuyển từ cụm từ sang câu ngắn với chủ ngữ và động từ quen thuộc. Bài bổ sung từ bộ ESL v2 (R05-U06), chủ đề Câu hỏi Yes/No và Wh- cơ bản.",
+  "commonErrors": [
+   {
+    "incorrect": "Does your neighbours have a dog?",
+    "correction": "Do your neighbours have a dog?",
+    "reasonVi": "Câu hỏi với be/can đảo trợ động từ; động từ thường dùng do/does."
+   },
+   {
+    "incorrect": "Do your neighbours has a dog?",
+    "correction": "Do your neighbours have a dog?",
+    "reasonVi": "Sau does, dùng động từ nguyên mẫu; câu hỏi trực tiếp cần vị trí Wh- và dấu ?."
+   }
+  ],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "esl-v2",
+  "version": 1
+ },
+ {
+  "id": "esl-v2-r05-u06-014",
+  "practiceLevel": "2.5",
+  "type": "sentence",
+  "topic": "Câu hỏi Yes/No và Wh- cơ bản",
+  "promptVi": "Khi nào thư viện đóng cửa?",
+  "referenceAnswers": [
+   "When does the library close?"
+  ],
+  "grammarTags": [
+   "R05-U06",
+   "sentence",
+   "R05"
+  ],
+  "explanationVi": "Động từ thường: Do/Does + S + V nguyên thể ...? Does he work here? Đây là câu hỏi hoàn chỉnh; hãy kiểm tra động từ hoặc trợ động từ theo chủ ngữ.",
+  "rationaleVi": "Chuyển từ cụm từ sang câu ngắn với chủ ngữ và động từ quen thuộc. Bài bổ sung từ bộ ESL v2 (R05-U06), chủ đề Câu hỏi Yes/No và Wh- cơ bản.",
+  "commonErrors": [
+   {
+    "incorrect": "When do the library close?",
+    "correction": "When does the library close?",
+    "reasonVi": "Câu hỏi với be/can đảo trợ động từ; động từ thường dùng do/does."
+   },
+   {
+    "incorrect": "When does the library closes?",
+    "correction": "When does the library close?",
+    "reasonVi": "Sau does, dùng động từ nguyên mẫu; câu hỏi trực tiếp cần vị trí Wh- và dấu ?."
+   }
+  ],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "esl-v2",
+  "version": 1
+ },
+ {
+  "id": "esl-v2-r05-u06-015",
+  "practiceLevel": "2.5",
+  "type": "sentence",
+  "topic": "Câu hỏi Yes/No và Wh- cơ bản",
+  "promptVi": "Bạn đã sẵn sàng cho buổi học chưa?",
+  "referenceAnswers": [
+   "Are you ready for the lesson?"
+  ],
+  "grammarTags": [
+   "R05-U06",
+   "sentence",
+   "R05"
+  ],
+  "explanationVi": "Wh- với động từ thường: Where/When/What + do/does + S + V ...? Đây là câu hỏi hoàn chỉnh; hãy kiểm tra động từ hoặc trợ động từ theo chủ ngữ.",
+  "rationaleVi": "Chuyển từ cụm từ sang câu ngắn với chủ ngữ và động từ quen thuộc. Bài bổ sung từ bộ ESL v2 (R05-U06), chủ đề Câu hỏi Yes/No và Wh- cơ bản.",
+  "commonErrors": [
+   {
+    "incorrect": "Do you ready for the lesson?",
+    "correction": "Are you ready for the lesson?",
+    "reasonVi": "Câu hỏi với be/can đảo trợ động từ; động từ thường dùng do/does."
+   },
+   {
+    "incorrect": "Are you is ready for the lesson?",
+    "correction": "Are you ready for the lesson?",
+    "reasonVi": "Sau does, dùng động từ nguyên mẫu; câu hỏi trực tiếp cần vị trí Wh- và dấu ?."
+   }
+  ],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "esl-v2",
+  "version": 1
+ },
+ {
+  "id": "esl-v2-r05-u06-016",
+  "practiceLevel": "2.5",
+  "type": "sentence",
+  "topic": "Câu hỏi Yes/No và Wh- cơ bản",
+  "promptVi": "Tại sao em trai bạn không đi xe buýt đến trường?",
+  "referenceAnswers": [
+   "Why doesn't your younger brother take the bus to school?"
+  ],
+  "grammarTags": [
+   "R05-U06",
+   "sentence",
+   "R05"
+  ],
+  "explanationVi": "Wh- với be: Where + is/are + S? Where are the books? Đây là câu hỏi hoàn chỉnh; hãy kiểm tra động từ hoặc trợ động từ theo chủ ngữ.",
+  "rationaleVi": "Chuyển từ cụm từ sang câu ngắn với chủ ngữ và động từ quen thuộc. Bài bổ sung từ bộ ESL v2 (R05-U06), chủ đề Câu hỏi Yes/No và Wh- cơ bản.",
+  "commonErrors": [
+   {
+    "incorrect": "Why don't your younger brother take the bus to school?",
+    "correction": "Why doesn't your younger brother take the bus to school?",
+    "reasonVi": "Câu hỏi với be/can đảo trợ động từ; động từ thường dùng do/does."
+   },
+   {
+    "incorrect": "Why doesn't your younger brother takes the bus to school?",
+    "correction": "Why doesn't your younger brother take the bus to school?",
+    "reasonVi": "Sau does, dùng động từ nguyên mẫu; câu hỏi trực tiếp cần vị trí Wh- và dấu ?."
+   }
+  ],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "esl-v2",
+  "version": 1
+ }
+]

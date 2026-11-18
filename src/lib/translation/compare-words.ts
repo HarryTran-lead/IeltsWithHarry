@@ -32,3 +32,18 @@ export function compareWords(mine: string, model: string): { mine: DiffToken[]; 
     model: b.map((text, index) => ({ text, same: sameB.has(index) || !kb[index] })),
   };
 }
+
+/**
+ * The model answer closest to what the learner wrote: the one sharing the largest share
+ * of words with it. Ties keep the earlier answer, so the main model wins by default.
+ */
+export function closestAnswer(mine: string, answers: string[]): number {
+  let best = 0, bestScore = -1;
+  answers.forEach((answer, index) => {
+    const { mine: a, model: b } = compareWords(mine, answer);
+    const shared = b.filter((token) => token.same).length;
+    const score = shared / Math.max(a.length, b.length, 1);
+    if (score > bestScore) { best = index; bestScore = score; }
+  });
+  return best;
+}

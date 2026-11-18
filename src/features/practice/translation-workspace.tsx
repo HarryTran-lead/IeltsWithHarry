@@ -6,8 +6,8 @@ import { Sticker, Tape, type StickerName } from "@/components/stickers/stickers"
 import { TranslationModeLink } from "./translation-mode-link";
 import { createClient } from "@/lib/supabase/browser";
 import { demoMode } from "@/lib/runtime";
-import { bandExercises, levelRubric, type BandExercise } from "@/lib/translation/band-practice";
-import { compareWords } from "@/lib/translation/compare-words";
+import { bandIndex, levelRubric, loadBand, reviewKey, type BandExercise } from "@/lib/translation/band-practice";
+import { closestAnswer, compareWords } from "@/lib/translation/compare-words";
 import "./translation-workspace.css";
 // Loaded after the older stylesheet so the "Luyện diễn đạt" layout wins equal-specificity ties.
 import "./expression-practice.css";
@@ -42,9 +42,12 @@ function normalize(value: string) {
   return value.trim().toLocaleLowerCase("en-US").replace(/\s+/g, " ").replace(/[.!?]$/, "");
 }
 
-function reviewKey(item: BandExercise) {
-  return item.version === 1 ? item.id : `${item.id}:v${item.version}`;
+/** Exercises with a key word start by copying it; ESL v2 lessons have none and start writing. */
+function firstPhase(item?: BandExercise): Phase {
+  return item?.targetTerm ? "copy" : "translate";
 }
+
+const allKeys = bandIndex.flatMap((summary) => summary.keys);
 
 function interleavePatterns(items: BandExercise[]) {
   const groups = new Map<string, BandExercise[]>();
@@ -83,6 +86,7 @@ export function TranslationWorkspace() {
   const [showHint, setShowHint] = useState(false);
   const [finished, setFinished] = useState(false);
   const [message, setMessage] = useState("");
+  const [loaded, setLoaded] = useState<{ band: string; items: BandExercise[] } | null>(null);
 
   useEffect(() => {
     let active = true;
@@ -98,8 +102,18 @@ export function TranslationWorkspace() {
     return () => { active = false; };
   }, []);
 
+  // Each band's exercises arrive as their own chunk when the band is opened.
+  useEffect(() => {
+    let active = true;
+    loadBand(band)
+      .then((items) => { if (active) setLoaded({ band, items }); })
+      .catch(() => { if (active) setMessage("Chưa tải được bài của band này. Kiểm tra kết nối rồi chọn lại band."); });
+    return () => { active = false; };
+  }, [band]);
+
   const current = session[position];
-  const bandItems = useMemo(() => bandExercises.filter((item) => item.practiceLevel === band), [band]);
+  const bandItems = useMemo(() => loaded?.band === band ? loaded.items : [], [loaded, band]);
+  const bandSummary = bandIndex.find((item) => item.level === band);
   const currentRubric = levelRubric.find((item) => item.level === band);
   const inSession = session.length > 0;
   const sessionRef = useRef<HTMLElement>(null);
@@ -118,9 +132,10 @@ export function TranslationWorkspace() {
         : "Bạn đã làm hết bài mới ở band này. Chọn ôn câu khó hoặc band khác.");
       return;
     }
-    setSession(interleavePatterns(eligible).slice(0, sessionSize));
+    const next = interleavePatterns(eligible).slice(0, sessionSize);
+    setSession(next);
     setPosition(0);
-    setPhase("copy");
+    setPhase(firstPhase(next[0]));
     setCopyAnswer("");
     setCopyError(false);
     setTranslation("");
@@ -131,7 +146,7 @@ export function TranslationWorkspace() {
 
   function checkCopy() {
     if (!current) return;
-    if (normalize(copyAnswer) === normalize(current.targetTerm)) {
+    if (normalize(copyAnswer) === normalize(current.targetTerm ?? "")) {
       setCopyError(false);
       setPhase("translate");
     } else setCopyError(true);
@@ -147,7 +162,7 @@ export function TranslationWorkspace() {
     }
     if (position + 1 >= session.length) { setFinished(true); return; }
     setPosition(position + 1);
-    setPhase("copy");
+    setPhase(firstPhase(session[position + 1]));
     setCopyAnswer("");
     setCopyError(false);
     setTranslation("");
@@ -173,8 +188,8 @@ export function TranslationWorkspace() {
       const { rate: rateNow, start: startNow, phase: phaseNow, finished: done, current: item, showHint: hint } = keys.current;
       if (event.altKey && !event.ctrlKey && !event.metaKey) {
         const key = event.key.toLowerCase();
-        if (key === "n" && item) { event.preventDefault(); speak(item.targetTerm); }
-        if (key === "g" && phaseNow === "translate") { event.preventDefault(); setShowHint(!hint); }
+        if (key === "n" && item?.targetTerm) { event.preventDefault(); speak(item.targetTerm); }
+        if (key === "g" && phaseNow === "translate" && item?.targetTerm) { event.preventDefault(); setShowHint(!hint); }
         return;
       }
       const target = event.target as HTMLElement | null;
@@ -189,18 +204,19 @@ export function TranslationWorkspace() {
     return () => window.removeEventListener("keydown", onKey);
   }, [inSession]);
 
-  const sample = bandItems.find((item) => item.type !== "word") ?? bandItems[0];
+  const sample = bandSummary?.sample;
+  const isHard = (key: string) => reviews[key]?.rating === "again" || reviews[key]?.rating === "hard";
   const bandStats = (level: string) => {
-    const items = bandExercises.filter((item) => item.practiceLevel === level);
-    return { done: items.filter((item) => Boolean(reviews[reviewKey(item)])).length, total: items.length };
+    const keys = bandIndex.find((item) => item.level === level)?.keys ?? [];
+    return { done: keys.filter((key) => Boolean(reviews[key])).length, total: keys.length };
   };
   const bandDone = bandStats(band);
-  const bandHard = bandItems.filter((item) => reviews[reviewKey(item)]?.rating === "again" || reviews[reviewKey(item)]?.rating === "hard").length;
-  const bandTopics = new Set(bandItems.map((item) => item.topic)).size;
+  const bandHard = (bandSummary?.keys ?? []).filter(isHard).length;
+  const bandTopics = bandSummary?.topics ?? 0;
   const stageIndex = Math.max(0, stages.findIndex((stage) => stage.bands.includes(band)));
   const activeStage = stages[stageIndex];
-  const overallDone = bandExercises.filter((item) => Boolean(reviews[reviewKey(item)])).length;
-  const overallHard = bandExercises.filter((item) => reviews[reviewKey(item)]?.rating === "again" || reviews[reviewKey(item)]?.rating === "hard").length;
+  const overallDone = allKeys.filter((key) => Boolean(reviews[key])).length;
+  const overallHard = allKeys.filter(isHard).length;
   const percentOf = (done: number, total: number) => (total ? Math.round((done / total) * 100) : 0);
   function chooseBand(level: string) {
     setBand(level);
@@ -221,9 +237,9 @@ export function TranslationWorkspace() {
             <li><b>2</b> Viết câu tiếng Anh</li>
             <li><b>3</b> So với câu mẫu</li>
           </ol>
-          <span className="xp-overall" aria-label={`Đã luyện ${overallDone} trên ${bandExercises.length} bài${overallHard ? `, ${overallHard} câu cần ôn` : ""}`}>
-            <span className="xp-overall-bar" aria-hidden="true"><i style={{ width: `${Math.max(overallDone ? 2 : 0, percentOf(overallDone, bandExercises.length))}%` }} /></span>
-            <span aria-hidden="true"><b>{overallDone}</b>/{bandExercises.length} bài{overallHard ? <em> · {overallHard} cần ôn</em> : null}</span>
+          <span className="xp-overall" aria-label={`Đã luyện ${overallDone} trên ${allKeys.length} bài${overallHard ? `, ${overallHard} câu cần ôn` : ""}`}>
+            <span className="xp-overall-bar" aria-hidden="true"><i style={{ width: `${Math.max(overallDone ? 2 : 0, percentOf(overallDone, allKeys.length))}%` }} /></span>
+            <span aria-hidden="true"><b>{overallDone}</b>/{allKeys.length} bài{overallHard ? <em> · {overallHard} cần ôn</em> : null}</span>
           </span>
         </div>
       </div>
@@ -237,7 +253,7 @@ export function TranslationWorkspace() {
         <figcaption>Ví dụ ở band {band} · {unitLabel(currentRubric?.unit)}</figcaption>
         <p lang="vi">{sample.promptVi}</p>
         <ArrowDown size={16} aria-hidden="true" />
-        <p lang="en">{sample.referenceAnswers[0]}</p>
+        <p lang="en">{sample.answer}</p>
       </figure>}
     </header>}
 
@@ -259,12 +275,12 @@ export function TranslationWorkspace() {
         </div>
       </div> : current ? <div className="xp-exercise" key={`${current.id}-${phase}`}>
         <ol className="practice-stepper" aria-label="Các bước">
-          <li className={phase === "copy" ? "active" : "done"}>1 · Chép từ khóa</li>
-          <li className={phase === "translate" ? "active" : phase === "review" ? "done" : ""}>2 · Viết bằng tiếng Anh</li>
-          <li className={phase === "review" ? "active" : ""}>3 · So với câu mẫu</li>
+          {current.targetTerm && <li className={phase === "copy" ? "active" : "done"}>1 · Chép từ khóa</li>}
+          <li className={phase === "translate" ? "active" : phase === "review" ? "done" : ""}>{current.targetTerm ? 2 : 1} · Viết bằng tiếng Anh</li>
+          <li className={phase === "review" ? "active" : ""}>{current.targetTerm ? 3 : 2} · So với câu mẫu</li>
         </ol>
-        {phase === "copy" ? <div className="practice-stage">
-          <div className="practice-word"><strong>{current.targetTerm}</strong><span>{current.meaningVi}</span><button type="button" onClick={() => speak(current.targetTerm)} aria-label={`Nghe phát âm ${current.targetTerm}`} title="Nghe (Alt+N)"><Volume2 size={21} /></button></div>
+        {phase === "copy" && current.targetTerm ? <div className="practice-stage">
+          <div className="practice-word"><strong>{current.targetTerm}</strong><span>{current.meaningVi}</span><button type="button" onClick={() => speak(current.targetTerm ?? "")} aria-label={`Nghe phát âm ${current.targetTerm}`} title="Nghe (Alt+N)"><Volume2 size={21} /></button></div>
           <label className="practice-field">Gõ lại từ khóa để nhớ cách viết<input value={copyAnswer} onChange={(event) => { setCopyAnswer(event.target.value); setCopyError(false); }} onKeyDown={(event) => {
             if (event.key !== "Enter") return;
             event.preventDefault();
@@ -285,20 +301,39 @@ export function TranslationWorkspace() {
           }} rows={current.type === "paragraph" ? 5 : 3} maxLength={2000} autoFocus spellCheck={false} placeholder="Viết bằng tiếng Anh…" /></label>
           <div className="practice-actions">
             <button className="practice-primary" type="button" disabled={!translation.trim()} onClick={() => setPhase("review")}>Xem câu mẫu <kbd>Enter</kbd></button>
-            <button className="practice-hint-toggle" type="button" onClick={() => setShowHint(!showHint)}>{showHint ? "Ẩn gợi ý" : "Gợi ý từ khóa"} <kbd>Alt+G</kbd></button>
+            {current.targetTerm && <button className="practice-hint-toggle" type="button" onClick={() => setShowHint(!showHint)}>{showHint ? "Ẩn gợi ý" : "Gợi ý từ khóa"} <kbd>Alt+G</kbd></button>}
             <small className="xp-key-note">Shift+Enter để xuống dòng</small>
           </div>
-          {showHint && <p className="practice-hint">{current.targetTerm} · {current.meaningVi}</p>}
+          {showHint && current.targetTerm && <p className="practice-hint">{current.targetTerm} · {current.meaningVi}</p>}
         </div> : (() => {
-          const diff = compareWords(translation, current.referenceAnswers[0]);
+          // Compare with the model answer the learner's wording is closest to.
+          const closest = closestAnswer(translation, current.referenceAnswers);
+          const diff = compareWords(translation, current.referenceAnswers[closest]);
+          const others = current.referenceAnswers.filter((_, index) => index !== closest);
           return <div className="practice-stage">
             <blockquote lang="vi" className="is-compact">{current.promptVi}</blockquote>
             <div className="practice-comparison">
               <div><small>Bạn viết</small><p lang="en">{diff.mine.map((token, index) => <span key={index} className={token.same ? undefined : "xp-diff-extra"}>{token.text} </span>)}</p></div>
-              <div><small>Câu mẫu</small><p lang="en">{diff.model.map((token, index) => <span key={index} className={token.same ? undefined : "xp-diff-missing"}>{token.text} </span>)}</p></div>
+              <div><small>{closest ? "Cách diễn đạt gần với bạn nhất" : "Câu mẫu"}</small><p lang="en">{diff.model.map((token, index) => <span key={index} className={token.same ? undefined : "xp-diff-missing"}>{token.text} </span>)}</p></div>
             </div>
             <p className="xp-diff-legend"><span className="xp-diff-extra">từ chỉ có trong câu của bạn</span><span className="xp-diff-missing">từ có trong câu mẫu</span> Một ý có nhiều cách diễn đạt đúng, nên chấm theo nghĩa, ngữ pháp và cách dùng từ.</p>
+            {others.length > 0 && <div className="xp-alternatives">
+              <strong>{closest ? "Câu mẫu" : "Cách diễn đạt khác cũng đúng"}</strong>
+              <ul>{others.map((answer) => <li key={answer} lang="en">{answer}</li>)}</ul>
+            </div>}
             <p className="xp-tip"><strong>Lưu ý:</strong> {current.explanationVi}</p>
+            {current.commonErrors.length > 0 && <div className="xp-errors">
+              <strong>Lỗi hay gặp ở câu này</strong>
+              <ul>{current.commonErrors.map((error) => {
+                // Mark only the words that change, so the mistake stands out in a long sentence.
+                const fix = compareWords(error.incorrect, error.correction);
+                return <li key={error.incorrect}>
+                  <p className="xp-error-line is-wrong" lang="en"><span className="xp-error-tag">Sai</span>{fix.mine.map((token, index) => <span key={index} className={token.same ? undefined : "xp-diff-extra"}>{token.text} </span>)}</p>
+                  <p className="xp-error-line is-right" lang="en"><span className="xp-error-tag">Đúng</span>{fix.model.map((token, index) => <span key={index} className={token.same ? undefined : "xp-diff-missing"}>{token.text} </span>)}</p>
+                  <small>{error.reasonVi}</small>
+                </li>;
+              })}</ul>
+            </div>}
             <div className="practice-ratings" role="group" aria-label="Bạn làm câu này thế nào?">
               <span>Bạn làm câu này thế nào?</span>
               {ratingLabels.map((item, index) => <button key={item.value} type="button" className={`is-${item.value}`} onClick={() => rate(item.value)}><kbd>{index + 1}</kbd>{item.label}</button>)}
@@ -348,7 +383,7 @@ export function TranslationWorkspace() {
         </div>
         {currentRubric && <p className="xp-panel-focus">{currentRubric.focusVi}</p>}
         <dl className="xp-panel-stats">
-          <div className="is-total"><dt><Layers size={13} aria-hidden="true" /> Bài</dt><dd>{bandItems.length}</dd></div>
+          <div className="is-total"><dt><Layers size={13} aria-hidden="true" /> Bài</dt><dd>{bandSummary?.keys.length ?? 0}</dd></div>
           <div className="is-topics"><dt><Tags size={13} aria-hidden="true" /> Chủ đề</dt><dd>{bandTopics}</dd></div>
           <div className="is-done"><dt><CircleCheck size={13} aria-hidden="true" /> Đã làm</dt><dd>{bandDone.done}</dd></div>
           <div className="is-hard"><dt><Flag size={13} aria-hidden="true" /> Cần ôn</dt><dd>{bandHard}</dd></div>
@@ -358,7 +393,7 @@ export function TranslationWorkspace() {
           <div>{[5, 10, 15].map((size) => <button key={size} type="button" aria-pressed={sessionSize === size} className={sessionSize === size ? "selected" : ""} onClick={() => setSessionSize(size)}>{size}</button>)}</div>
         </div>
         <label className="xp-review-only"><input type="checkbox" role="switch" checked={reviewOnly} onChange={(event) => setReviewOnly(event.target.checked)} /> Chỉ ôn câu đã đánh dấu khó</label>
-        <button className="practice-primary xp-start" type="button" onClick={start}>{reviewOnly ? "Ôn" : "Bắt đầu"} {sessionSize} bài <ArrowRight size={18} /></button>
+        <button className="practice-primary xp-start" type="button" onClick={start} disabled={!bandItems.length}>{bandItems.length ? <>{reviewOnly ? "Ôn" : "Bắt đầu"} {sessionSize} bài <ArrowRight size={18} /></> : "Đang tải bài…"}</button>
         {message && <p className="practice-message" role="status">{message}</p>}
         <small className="xp-panel-note">{currentRubric?.noteVi} Band ở đây là mức luyện tập, không phải điểm IELTS được chấm chính thức.{Number(band) >= 7 && " Các nghiên cứu và ví dụ trong bài là tình huống minh họa, không phải dữ kiện trích nguồn."} Tiến độ được lưu trên trình duyệt này.</small>
       </aside>

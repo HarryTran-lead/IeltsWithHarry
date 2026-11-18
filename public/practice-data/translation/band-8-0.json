@@ -1,0 +1,2262 @@
+[
+ {
+  "id": "band-8.0-043",
+  "practiceLevel": "8.0",
+  "type": "paragraph",
+  "topic": "Môi trường",
+  "targetTerm": "trade-off",
+  "meaningVi": "sự đánh đổi",
+  "promptVi": "Khi thiết kế thuế carbon, nhà hoạch định chính sách phải cân nhắc sự đánh đổi giữa hiệu quả môi trường và gánh nặng cho hộ thu nhập thấp. Mức thuế đủ cao có thể thay đổi hành vi, song cũng làm tăng chi phí năng lượng của người nghèo. Hoàn trả một phần doanh thu theo thu nhập sẽ giúp duy trì tín hiệu giá mà giảm tác động bất công.",
+  "referenceAnswers": [
+   "When designing a carbon tax, policymakers must weigh the trade-off between environmental effectiveness and the burden on low-income households. A sufficiently high tax can change behaviour, yet it may also raise energy costs for poorer households. Returning some revenue according to income would preserve the price signal while reducing an unfair burden."
+  ],
+  "grammarTags": [
+   "weigh-trade-off"
+  ],
+  "explanationVi": "Phân tích đánh đổi rồi nêu cơ chế xử lý mà không xóa mục tiêu môi trường.",
+  "commonErrors": [],
+  "editorialStatus": "pilot",
+  "source": "original-starter",
+  "version": 3,
+  "calibrationStatus": "internal_review",
+  "rationaleVi": "Phân tích sự đánh đổi và phân biệt tác động trước mắt với tác động dài hạn. Bài này luyện: Phân tích đánh đổi rồi nêu cơ chế xử lý mà không xóa mục tiêu môi trường."
+ },
+ {
+  "id": "band-8.0-044",
+  "practiceLevel": "8.0",
+  "type": "paragraph",
+  "topic": "Công nghệ",
+  "targetTerm": "algorithmic bias",
+  "meaningVi": "thiên lệch thuật toán",
+  "promptVi": "Nếu dữ liệu huấn luyện phản ánh bất bình đẳng sẵn có, các hệ thống tự động có thể củng cố thiên lệch thuật toán trong tuyển dụng. Ngay cả khi mô hình dự đoán chính xác trên toàn bộ mẫu, sai số vẫn có thể tập trung ở một số nhóm ứng viên. Vì vậy, cần kiểm tra kết quả theo nhóm và rà soát tiêu chí tuyển dụng thay vì chỉ xem một tỷ lệ chính xác chung.",
+  "referenceAnswers": [
+   "If training data reflects existing inequalities, automated systems may reinforce algorithmic bias in recruitment. Even if a model is accurate overall, its errors may be concentrated among particular groups of applicants. Results should therefore be checked by group, and hiring criteria reviewed, rather than relying on a single accuracy figure."
+  ],
+  "grammarTags": [
+   "conditional-reinforce"
+  ],
+  "explanationVi": "Phân biệt độ chính xác chung với tác động phân bố, rồi suy ra cách kiểm tra phù hợp.",
+  "commonErrors": [],
+  "editorialStatus": "pilot",
+  "source": "original-starter",
+  "version": 2,
+  "calibrationStatus": "internal_review",
+  "rationaleVi": "Phân tích sự đánh đổi và phân biệt tác động trước mắt với tác động dài hạn. Bài này luyện: Phân biệt độ chính xác chung với tác động phân bố, rồi suy ra cách kiểm tra phù hợp."
+ },
+ {
+  "id": "band-8.0-045",
+  "practiceLevel": "8.0",
+  "type": "paragraph",
+  "topic": "Xã hội",
+  "targetTerm": "intergenerational inequality",
+  "meaningVi": "bất bình đẳng giữa các thế hệ",
+  "promptVi": "Giá nhà tăng nhanh có thể làm sâu sắc thêm bất bình đẳng giữa các thế hệ, ngay cả khi tiền lương trung bình tiếp tục tăng. Người sở hữu nhà được hưởng lợi từ giá tài sản tăng, còn người trẻ đi thuê phải tiết kiệm lâu hơn. Đánh giá thị trường nhà ở chỉ qua mức lương trung bình vì thế có thể bỏ sót khoảng cách tài sản đang hình thành.",
+  "referenceAnswers": [
+   "Rapidly rising house prices can deepen intergenerational inequality, even if average wages continue to grow. Homeowners gain from rising asset values, whereas younger renters must save for longer. Assessing the housing market through average pay alone can therefore miss a widening gap in wealth."
+  ],
+  "grammarTags": [
+   "even-if"
+  ],
+  "explanationVi": "So sánh hai thế hệ theo tài sản và thu nhập để giải thích vì sao chỉ số trung bình chưa đủ.",
+  "commonErrors": [],
+  "editorialStatus": "pilot",
+  "source": "original-starter",
+  "version": 2,
+  "calibrationStatus": "internal_review",
+  "rationaleVi": "Phân tích sự đánh đổi và phân biệt tác động trước mắt với tác động dài hạn. Bài này luyện: So sánh hai thế hệ theo tài sản và thu nhập để giải thích vì sao chỉ số trung bình chưa đủ."
+ },
+ {
+  "id": "band-8.0-cal-01",
+  "practiceLevel": "8.0",
+  "type": "paragraph",
+  "topic": "Môi trường",
+  "targetTerm": "carbon pricing",
+  "meaningVi": "định giá carbon",
+  "promptVi": "Định giá carbon có thể khiến doanh nghiệp giảm phát thải bằng cách đưa chi phí ô nhiễm vào quyết định sản xuất. Tuy nhiên, nếu chi phí được chuyển hết sang người tiêu dùng, hộ thu nhập thấp sẽ chịu gánh nặng lớn hơn. Chính sách vì vậy cần đi kèm hỗ trợ có mục tiêu.",
+  "referenceAnswers": [
+   "Carbon pricing can encourage firms to cut emissions by incorporating pollution costs into production decisions. Yet if those costs are passed on to consumers, low-income households bear a disproportionate burden. The policy should therefore be accompanied by targeted support."
+  ],
+  "grammarTags": [
+   "distributional-trade-off"
+  ],
+  "explanationVi": "Đoạn phân tích cơ chế, tác động phân bổ và biện pháp giảm gánh nặng.",
+  "rationaleVi": "Lập luận chính sách nhiều bước với từ vựng chính xác.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "original-level-authored",
+  "version": 1
+ },
+ {
+  "id": "band-8.0-cal-02",
+  "practiceLevel": "8.0",
+  "type": "paragraph",
+  "topic": "Công nghệ",
+  "targetTerm": "algorithmic bias",
+  "meaningVi": "thiên lệch thuật toán",
+  "promptVi": "Hệ thống tuyển dụng tự động có thể xử lý số lượng lớn hồ sơ nhanh hơn con người. Nhưng nếu dữ liệu huấn luyện phản ánh định kiến tuyển dụng cũ, hệ thống có thể lặp lại bất công đó dưới dạng thiên lệch thuật toán. Kiểm toán thường xuyên là cần thiết, dù nó không thể thay thế trách nhiệm của người ra quyết định.",
+  "referenceAnswers": [
+   "Automated hiring systems can process large numbers of applications faster than people. But if their training data reflects past hiring prejudice, they may reproduce that unfairness as algorithmic bias. Regular audits are necessary, although they cannot replace human accountability."
+  ],
+  "grammarTags": [
+   "qualified-technology-claim"
+  ],
+  "explanationVi": "Đoạn nêu lợi ích, cơ chế gây lệch và giới hạn của biện pháp kiểm toán.",
+  "rationaleVi": "Có quan hệ nhân quả được giải thích, cùng giới hạn giải pháp.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "original-level-authored",
+  "version": 1
+ },
+ {
+  "id": "band-8.0-exp-001",
+  "practiceLevel": "8.0",
+  "type": "paragraph",
+  "topic": "du lịch",
+  "targetTerm": "short-term economic gains",
+  "meaningVi": "các khoản lợi ích kinh tế ngắn hạn",
+  "promptVi": "Việc thương mại hóa cấp tập các di sản văn hóa có thể mang lại các khoản lợi ích kinh tế ngắn hạn thông qua nguồn thu từ khách du lịch và tạo việc làm tại chỗ. Dẫu vậy, tình trạng quá tải hạ tầng lại đe dọa làm suy thoái nghiêm trọng cấu trúc di sản nguyên bản qua thời gian. Nếu chính quyền địa phương chấp nhận sự đánh đổi này mà thiếu chiến lược bảo tồn dài hạn, danh tiếng của điểm đến chắc chắn sẽ sụt giảm khi những giá trị cốt lõi mất đi.",
+  "referenceAnswers": [
+   "Rapidly commercialising cultural heritage sites can yield short-term economic gains through tourist spend and local job creation. Nevertheless, infrastructure overload risks severely degrading the original heritage structures over time. Should local authorities accept this trade-off without a long-term conservation strategy, the destination's reputation will inevitably decline once its core values erode."
+  ],
+  "grammarTags": [
+   "Condition and trade-off analysis"
+  ],
+  "explanationVi": "Đoạn văn phân tích sự đánh đổi giữa doanh thu du lịch trước mắt và sự xuống cấp di sản lâu dài, sử dụng cấu trúc đảo ngữ điều kiện 'Should local authorities...' để nhấn mạnh hệ quả.",
+  "rationaleVi": "Mục này đạt cấp độ 8.0 nhờ sự kết hợp giữa thuật ngữ kinh tế - xã hội chính xác và cấu trúc câu phức hợp điều kiện, thể hiện rõ tư duy phản biện về tác động ngắn hạn so với dài hạn.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "ai-assisted-level-draft",
+  "version": 1
+ },
+ {
+  "id": "band-8.0-exp-002",
+  "practiceLevel": "8.0",
+  "type": "paragraph",
+  "topic": "công nghệ",
+  "targetTerm": "immediate productivity boosts",
+  "meaningVi": "sự gia tăng năng suất tức thì",
+  "promptVi": "Việc áp dụng diện rộng mô hình làm việc từ xa đem lại sự gia tăng năng suất tức thì nhờ giảm thời gian di chuyển và linh hoạt lịch trình. Tuy nhiên, ranh giới mờ nhạt giữa công việc và đời sống cá nhân lại làm tăng nguy cơ kiệt sức ở nhân viên về lâu dài. Việc đánh giá hiệu quả chỉ dựa trên sản lượng công việc trước mắt do đó bỏ qua rủi ro làm suy giảm sự gắn kết nội bộ và tỷ lệ giữ chân nhân sự trong tương lai.",
+  "referenceAnswers": [
+   "Widespread adoption of remote working offers immediate productivity boosts by reducing commuting time and allowing flexible schedules. However, blurring the boundaries between work and personal life heightens the risk of employee burnout over the long term. Evaluating efficacy purely on immediate output thus overlooks the danger of eroding organisational cohesion and staff retention rates down the line."
+  ],
+  "grammarTags": [
+   "Mechanism and long-term limitation"
+  ],
+  "explanationVi": "Mục này đối chiếu lợi ích hiệu suất ban đầu của làm việc từ xa với nguy cơ tổn hại sức khỏe tinh thần và sự gắn kết doanh nghiệp theo thời gian.",
+  "rationaleVi": "Đạt mức 8.0 nhờ cách diễn đạt học thuật tự nhiên, lập luận sắc bén về sự bất cập khi dùng thước đo ngắn hạn để đánh giá một chính sách nhân sự lâu dài.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "ai-assisted-level-draft",
+  "version": 1
+ },
+ {
+  "id": "band-8.0-exp-003",
+  "practiceLevel": "8.0",
+  "type": "paragraph",
+  "topic": "đô thị",
+  "targetTerm": "long-term environmental dividends",
+  "meaningVi": "những lợi ích môi trường dài hạn",
+  "promptVi": "Dành ngân sách đô thị để giải phóng mặt bằng tạo không gian xanh đòi hỏi mức chi phí tài chính ban đầu rất lớn, làm gia tăng áp lực lên ngân sách địa phương. Mặc dù khoản đầu tư này không tạo ra nguồn thu thuế ngay lập tức, nó lại mang tới những lợi ích môi trường dài hạn thông qua giảm hiệu ứng đảo nhiệt và cải thiện chất lượng không khí. Nếu giới lập quy ưu tiên ngân sách cho hạ tầng xám ngắn hạn, thành phố sẽ phải đối mặt với chi phí khắc phục thiên tai đắt đỏ hơn nhiều trong những thập kỷ tới.",
+  "referenceAnswers": [
+   "Allocating urban budgets to land clearance for green spaces demands substantial initial financial outlay, placing immediate pressure on municipal funds. Although this investment generates no prompt tax revenue, it secures long-term environmental dividends through heat island mitigation and improved air quality. If planners prioritise short-term grey infrastructure instead, cities will face far costlier climate adaptation expenses in coming decades."
+  ],
+  "grammarTags": [
+   "Concession and comparison"
+  ],
+  "explanationVi": "Đoạn văn so sánh chi phí tài chính trước mắt với lợi ích sinh thái lâu dài của công viên đô thị, sử dụng mệnh đề nhượng bộ 'Although...' kết hợp điều kiện giả định.",
+  "rationaleVi": "Cấu trúc lập luận đa tầng và vốn từ vựng chuyên ngành quy hoạch đô thị tinh tế giúp đoạn văn đáp ứng hoàn toàn tiêu chuẩn 8.0.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "ai-assisted-level-draft",
+  "version": 1
+ },
+ {
+  "id": "band-8.0-exp-004",
+  "practiceLevel": "8.0",
+  "type": "paragraph",
+  "topic": "giáo dục",
+  "targetTerm": "transitory academic advantages",
+  "meaningVi": "những lợi thế học thuật tạm thời",
+  "promptVi": "Chuyên môn hóa sớm trong chương trình giáo dục phổ thông có thể tạo ra những lợi thế học thuật tạm thời khi học sinh đạt điểm cao hơn ở các bài kiểm tra chuẩn hóa. Thế nhưng, việc bỏ qua các môn nghệ thuật và nhân văn lại thu hẹp khả năng tư duy phản biện lẫn óc sáng tạo của người học khi bước vào thị trường lao động phức tạp. Việc cân bằng giữa đào tạo kỹ năng chuyên sâu và kiến thức tổng quát vì thế là điều bắt buộc nếu muốn chuẩn bị cho người trẻ một sự nghiệp bền vững.",
+  "referenceAnswers": [
+   "Early specialisation in secondary curricula may yield transitory academic advantages when students achieve higher scores on standardised tests. Yet, neglecting arts and humanities narrows students' critical thinking and creativity when entering a complex labour market. Achieving equilibrium between specialised skills training and broad-based knowledge is therefore imperative to prepare young people for sustainable careers."
+  ],
+  "grammarTags": [
+   "Evidence limitation and recommendation"
+  ],
+  "explanationVi": "Đoạn văn phản biện việc tập trung quá sớm vào một ngành học bằng cách phân biệt thành tích thi cử ngắn hạn với năng lực tư duy toàn diện cần thiết cho tương lai.",
+  "rationaleVi": "Sử dụng từ ngữ chính xác cao ('transitory academic advantages', 'achieving equilibrium') và logic cân bằng giữa lợi ích trước mắt và sự phát triển lâu dài đạt chuẩn 8.0.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "ai-assisted-level-draft",
+  "version": 1
+ },
+ {
+  "id": "band-8.0-exp-005",
+  "practiceLevel": "8.0",
+  "type": "paragraph",
+  "topic": "năng lượng",
+  "targetTerm": "short-term price relief",
+  "meaningVi": "sự hạ nhiệt giá cả ngắn hạn",
+  "promptVi": "Trợ giá nhiên liệu hóa thạch mang lại sự hạ nhiệt giá cả ngắn hạn cho các hộ gia đình đang chật vật với chi phí sinh hoạt tăng cao. Tuy nhiên, chính sách này vô tình làm giảm động lực đầu tư vào công nghệ năng lượng tái tạo và kéo dài sự phụ thuộc vào carbon. Một chiến lược năng lượng bền vững đòi hỏi phải từng bước cắt giảm trợ giá diện rộng, đồng thời chuyển hướng ngân sách sang hỗ trợ các giải pháp công nghệ sạch có mục tiêu.",
+  "referenceAnswers": [
+   "Subsidising fossil fuels provides short-term price relief for households struggling with rising living costs. This policy, however, inadvertently disincentivises investment in renewable energy technologies and sustains carbon dependency over time. A sustainable energy strategy requires phasing out blanket subsidies while reallocating capital towards targeted clean-tech support."
+  ],
+  "grammarTags": [
+   "Unintended consequence and policy shift"
+  ],
+  "explanationVi": "Phân tích tác động tiêu cực ngoài dự kiến của trợ giá năng lượng truyền thống: giải quyết bài toán chi phí tức thì nhưng cản trở quá trình chuyển dịch xanh dài hạn.",
+  "rationaleVi": "Văn phong editorial sắc sảo, cấu trúc mạch lạc phân tích sự đánh đổi chính sách năng lượng ở trình độ C1+/8.0.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "ai-assisted-level-draft",
+  "version": 1
+ },
+ {
+  "id": "band-8.0-exp-006",
+  "practiceLevel": "8.0",
+  "type": "paragraph",
+  "topic": "sức khỏe",
+  "targetTerm": "immediate budgetary strains",
+  "meaningVi": "những áp lực ngân sách trước mắt",
+  "promptVi": "Chuyển dịch ngân sách y tế sang phòng bệnh chủ động thường tạo ra những áp lực ngân sách trước mắt cho hệ thống chăm sóc sức khỏe công. Dù vậy, việc phát hiện sớm và can thiệp lối sống lại giúp giảm thiểu đáng kể tỷ lệ mắc bệnh mãn tính và chi phí điều trị đắt đỏ sau này. Giới hoạch định chính sách nếu chỉ tập trung vào chỉ số cứu chữa ngắn hạn sẽ dễ dàng bỏ qua lợi ích tài chính khổng lồ của một dân số khỏe mạnh lâu dài.",
+  "referenceAnswers": [
+   "Shifting healthcare capital towards proactive prevention frequently imposes immediate budgetary strains on public health systems. Even so, early detection and lifestyle intervention significantly curb chronic disease incidence and subsequent treatment costs. Policy makers who focus solely on short-term curative metrics risk overlooking the immense long-term fiscal benefits of a healthier population."
+  ],
+  "grammarTags": [
+   "Counterargument and implication"
+  ],
+  "explanationVi": "Đoạn văn làm rõ sự đối lập giữa chi phí ngân sách phát sinh tức thì của y tế dự phòng với hiệu quả tiết kiệm ngân sách khổng lồ nhờ giảm gánh nặng bệnh tật trong tương lai.",
+  "rationaleVi": "Sử dụng lối diễn đạt chuẩn Anh-Anh tự nhiên, thuật ngữ quản lý y tế công chuẩn xác, đáp ứng yêu cầu phân tích đánh đổi cấp độ 8.0.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "ai-assisted-level-draft",
+  "version": 1
+ },
+ {
+  "id": "band-8.0-exp-007",
+  "practiceLevel": "8.0",
+  "type": "paragraph",
+  "topic": "kinh tế",
+  "targetTerm": "transitory revenue surges",
+  "meaningVi": "những đợt tăng doanh thu tạm thời",
+  "promptVi": "Tập trung canh tác hàng hóa xuất khẩu quy mô lớn có thể mang đến những đợt tăng doanh thu tạm thời cho doanh nghiệp nông nghiệp. Mặc dù vậy, thói quen lạm dụng phân bón hóa học để tối đa hóa sản lượng nhanh chóng sẽ làm thoái hóa chất lượng đất và suy giảm đa dạng sinh học trầm trọng. Sự đánh đổi này đe dọa chính an ninh lương thực quốc gia trong tương lai nếu đất canh tác mất đi độ phì nhiêu tự nhiên.",
+  "referenceAnswers": [
+   "Intensive cash-crop farming for export may generate transitory revenue surges for agribusiness enterprises. However, over-reliance on chemical fertilisers to maximise immediate yield rapidly degrades soil health and severely depletes biodiversity. This trade-off threatens national food security in the future if arable land loses its natural fertility."
+  ],
+  "grammarTags": [
+   "Trade-off and ecological risk"
+  ],
+  "explanationVi": "Đoạn văn chỉ ra cái giá phải trả của tăng trưởng nông nghiệp ngắn hạn bằng cách phân tích tác hại lâu dài của việc khai thác kiệt quệ tài nguyên đất.",
+  "rationaleVi": "Mục này thể hiện khả năng liên kết logic nguyên nhân - kết quả phức tạp, từ ngữ kinh tế - môi trường đạt độ tinh tế và chuẩn xác ở mức 8.0.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "ai-assisted-level-draft",
+  "version": 1
+ },
+ {
+  "id": "band-8.0-exp-008",
+  "practiceLevel": "8.0",
+  "type": "paragraph",
+  "topic": "xã hội",
+  "targetTerm": "immediate displacement effects",
+  "meaningVi": "những tác động mất việc làm trước mắt",
+  "promptVi": "Tốc độ tự động hóa nhanh chóng trong ngành sản xuất gây ra những tác động mất việc làm trước mắt đối với lực lượng lao động phổ thông. Bất chấp triển vọng tăng trưởng kinh tế vĩ mô nhờ nâng cao hiệu suất lâu dài, khoảng trống kỹ năng dai dẳng vẫn cản trở các nhóm lao động yếu thế. Không có các chương trình tái đào tạo quy mô lớn do nhà nước hỗ trợ, sự chuyển dịch công nghệ này sẽ chỉ làm trầm trọng thêm tình trạng bất bình đẳng thu nhập theo thời gian.",
+  "referenceAnswers": [
+   "Rapid automation in manufacturing creates immediate displacement effects for lower-skilled manual workers. Notwithstanding long-term macroeconomic gains driven by enhanced efficiency, a persistent skills gap hampers vulnerable demographics. Without state-backed, large-scale reskilling initiatives, this technological transition will merely compound income inequality over time."
+  ],
+  "grammarTags": [
+   "Prepositional concession and social impact"
+  ],
+  "explanationVi": "Phân tích khoảng cách giữa lợi ích vĩ mô lâu dài của tự động hóa và hệ lụy mất việc làm tức thì của lao động thu nhập thấp nếu thiếu can thiệp của chính phủ.",
+  "rationaleVi": "Mục này sử dụng cấu trúc nhượng bộ nâng cao ('Notwithstanding...') và lập luận phân hóa tác động ngắn/dài hạn rất rõ ràng, đáp ứng hoàn toàn tiêu chí 8.0.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "ai-assisted-level-draft",
+  "version": 1
+ },
+ {
+  "id": "band-8.0-exp-009",
+  "practiceLevel": "8.0",
+  "type": "paragraph",
+  "topic": "chính sách công",
+  "targetTerm": "short-term fiscal relief",
+  "meaningVi": "sự hỗ trợ tài chính ngắn hạn",
+  "promptVi": "Các khoản miễn thuế dành cho những ngành công nghiệp truyền thống mang lại sự hỗ trợ tài chính ngắn hạn tức thì trong giai đoạn suy thoái kinh tế. Chẳng hạn, việc giảm thuế giá trị gia tăng tạm thời cho ngành chế tạo nặng giúp bảo vệ việc làm trên các dây chuyền sản xuất trong các cuộc khủng hoảng năng lượng. Tuy nhiên, những ưu đãi như vậy làm lệch lạc sự phân bổ vốn bằng cách làm giảm động lực đầu tư tư nhân vào các giải pháp thay thế không phát thải. Việc không gắn hỗ trợ của nhà nước với điều kiện tái cơ cấu xanh sẽ có nguy cơ trói buộc nền kinh tế quốc gia vào sự phụ thuộc không bền vững vào nhiên liệu hóa thạch.",
+  "referenceAnswers": [
+   "Tax exemptions granted to legacy industrial sectors yield immediate short-term fiscal relief during economic downturns. For instance, temporary value-added tax reductions on heavy manufacturing protect assembly-line jobs during energy crises. However, such concessions distort capital allocation by disincentivising private investment in zero-emission alternatives. Failing to condition state support on green restructuring risks locking national economies into unsustainable fossil reliance."
+  ],
+  "grammarTags": [
+   "Fiscal policy & trade-offs"
+  ],
+  "explanationVi": "Từ 'short-term fiscal relief' thể hiện chính xác biện pháp giảm bớt gánh nặng tài chính tạm thời cho doanh nghiệp. Đoạn văn phân tích sự phản tác dụng của trợ cấp ngắn hạn đối với mục tiêu chuyển dịch xanh dài hạn.",
+  "rationaleVi": "Mục này thuộc Level 8.0 vì cấu trúc lập luận thể hiện sự phân tích sắc bén về tác động chính sách vĩ mô, sử dụng từ vựng chuyên ngành chính xác và lập luận đa chiều về sự đánh đổi tài chính.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "ai-assisted-level-draft",
+  "version": 1
+ },
+ {
+  "id": "band-8.0-exp-010",
+  "practiceLevel": "8.0",
+  "type": "paragraph",
+  "topic": "trường học",
+  "targetTerm": "pedagogical trade-off",
+  "meaningVi": "sự đánh đổi về mặt phương pháp giảng dạy",
+  "promptVi": "Việc trò chơi hóa kỹ thuật số trong các lớp học tiểu học mang lại sự gia tăng tức thì về mức độ tham gia và tỷ lệ hoàn thành bài tập của học sinh. Các ứng dụng toán học sử dụng phần thưởng điểm số tức thì minh họa rõ ràng cách phản hồi tương tác giữ cho người học nhỏ tuổi tập trung. Thiết kế này ẩn chứa một sự đánh đổi về mặt phương pháp giảng dạy tinh vi, bởi sự phụ thuộc vào phần thưởng bên ngoài bề nổi sẽ dần làm mai một tính tò mò nội tại. Năng lực học tập bền vững đòi hỏi việc cân bằng giữa động lực tương tác và các nhiệm vụ yêu cầu sự tập trung kéo dài mà không có phần thưởng.",
+  "referenceAnswers": [
+   "Digital gamification in primary classrooms delivers immediate surges in pupil participation and task completion rates. Mathematics apps utilising instant point rewards clearly illustrate how interactive feedback keeps young learners focused. This design involves a subtle pedagogical trade-off, as dependence on superficial external rewards gradually erodes intrinsic curiosity. Sustained academic resilience requires balancing interactive incentives with tasks that demand prolonged, unrewarded focus."
+  ],
+  "grammarTags": [
+   "Educational methodology & qualification"
+  ],
+  "explanationVi": "'Pedagogical trade-off' dùng để mô tả sự hy sinh lợi ích giáo dục lâu dài để đổi lấy hiệu quả giảng dạy tức thì. Đoạn văn phân tích sắc thái giữa động lực bên ngoài và tinh thần tự học.",
+  "rationaleVi": "Đạt Level 8.0 nhờ khả năng diễn đạt các khái niệm sư phạm phức tạp, phân tích tác động tâm lý đối với người học bằng văn phong academic chuẩn mực.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "ai-assisted-level-draft",
+  "version": 1
+ },
+ {
+  "id": "band-8.0-exp-011",
+  "practiceLevel": "8.0",
+  "type": "paragraph",
+  "topic": "đi lại",
+  "targetTerm": "demand suppression",
+  "meaningVi": "sự kìm hãm nhu cầu di chuyển",
+  "promptVi": "Việc áp phí ùn tắc có mục tiêu trên các hành lang nội đô đạt được sự kìm hãm nhu cầu di chuyển tức thì trong giờ cao điểm. Bằng chứng từ các trung tâm đô thị lớn cho thấy sự sụt giảm đáng kể lượt xe cá nhân đi vào chỉ trong vài tháng sau khi áp dụng phí. Mặc dù vậy, chính sách này gây gánh nặng không bình đẳng lên người đi làm có thu nhập thấp hơn, những người thiếu các giải pháp giao thông công cộng đêm khả thi. Giới hoạch định phải dành riêng doanh thu từ phí cho mạng lưới xe buýt ngoại vi nhằm ngăn ngừa tình trạng cô lập không gian ở cư dân ngoại ô dễ bị tổn thương.",
+  "referenceAnswers": [
+   "Subjecting inner-city corridors to targeted congestion charges achieves immediate demand suppression during peak hours. Evidence from major metropolitan centres shows a noticeable drop in private vehicle entries within months of toll implementation. Nevertheless, the policy disproportionately burdens lower-income commuters who lack viable night-time public transit alternatives. Planners must earmark toll revenues for peripheral bus networks to prevent spatial isolation among vulnerable suburban residents."
+  ],
+  "grammarTags": [
+   "Urban transport & equity counterarguments"
+  ],
+  "explanationVi": "Thuật ngữ 'demand suppression' chỉ việc chủ động sử dụng công cụ giá để giảm lưu lượng giao thông. Đoạn văn đối chiếu hiệu quả điều tiết lưu lượng trước mắt với bất bình đẳng xã hội dài hạn.",
+  "rationaleVi": "Mục này thỏa mãn tiêu chuẩn Level 8.0 nhờ sự phân tích phản biện sắc bén về chính sách hạ tầng đô thị cùng vốn từ vựng chuyên biệt về quy hoạch giao thông.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "ai-assisted-level-draft",
+  "version": 1
+ },
+ {
+  "id": "band-8.0-exp-012",
+  "practiceLevel": "8.0",
+  "type": "paragraph",
+  "topic": "sức khỏe",
+  "targetTerm": "systemic dietary intervention",
+  "meaningVi": "sự can thiệp chế độ ăn uống mang tính hệ thống",
+  "promptVi": "Việc giới hạn nghiêm ngặt quảng cáo thực phẩm siêu chế biến trên truyền hình tạo ra sự sụt giảm nhanh chóng lượng đường tiêu thụ ở trẻ em. Các chính sách cấm được thực thi quanh khu vực trường học cho thấy sự giảm sút tức thì trong việc mua sắm ngẫu hứng các loại nước giải khát có ga. Dù vậy, việc chỉ dựa vào lệnh cấm quảng cáo sẽ thất bại với tư cách là một sự can thiệp chế độ ăn uống mang tính hệ thống nếu không giải quyết nguồn cung nông sản tươi giá rẻ. Các mục tiêu sức khỏe cộng đồng dài hạn vẫn vượt tầm tay trừ khi chính quyền đô thị trợ giá cho các chợ nông sản địa phương tại các khu vực thu nhập thấp.",
+  "referenceAnswers": [
+   "Strict limits on broadcasting advertisements for ultra-processed foods generate a prompt reduction in childhood sugar consumption. Ban policies enforced across school zones demonstrate immediate drops in impulse purchases of carbonated drinks. Even so, relying solely on marketing bans fails as a systemic dietary intervention without addressing affordable fresh produce availability. Long-term public health goals remain out of reach unless municipal authorities subsidise local green markets in low-income neighbourhoods."
+  ],
+  "grammarTags": [
+   "Public health & structural policy"
+  ],
+  "explanationVi": "'Systemic dietary intervention' ám chỉ giải pháp toàn diện thay đổi thói quen ăn uống ở cấp độ cấu trúc xã hội. Đoạn văn làm rõ ranh giới giữa kiểm soát truyền thông bề nổi và cải cách nguồn cung thực phẩm.",
+  "rationaleVi": "Sản phẩm đạt độ tinh tế của Level 8.0 nhờ mạch lập luận chặt chẽ, chỉ ra hạn chế của giải pháp truyền thông để hướng tới can thiệp cấu trúc bền vững.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "ai-assisted-level-draft",
+  "version": 1
+ },
+ {
+  "id": "band-8.0-exp-013",
+  "practiceLevel": "8.0",
+  "type": "paragraph",
+  "topic": "công nghệ",
+  "targetTerm": "immediate productivity dividend",
+  "meaningVi": "cổ tức năng suất trước mắt",
+  "promptVi": "Sự tích hợp trí tuệ nhân tạo tạo sinh vào phát triển phần mềm mang lại cổ tức năng suất trước mắt không thể phủ nhận cho các công ty khởi nghiệp công nghệ. Việc tự động hoàn thành mã cho phép các nhóm kỹ thuật nhỏ triển khai các bản mẫu trong vài ngày thay vì vài tháng. Tuy nhiên, sự phụ thuộc hoàn toàn vào các kịch bản do AI tạo ra sẽ tạo ra những lỗ hổng cấu trúc dài hạn khi các lập trình viên trẻ bỏ qua việc thành thạo sửa lỗi thuật toán cốt lõi. Việc bỏ qua năng lực đọc hiểu mã nguồn cơ bản để đuổi theo tốc độ triển khai sẽ đe dọa khả năng chống chịu của hạ tầng kỹ thuật số thiết yếu.",
+  "referenceAnswers": [
+   "The integration of generative artificial intelligence into software development offers an undeniable immediate productivity dividend for tech start-ups. Automated code completion enables small engineering teams to deploy prototypes in days rather than months. Yet, total reliance on AI-generated scripts creates long-term structural vulnerabilities when junior developers forgo mastering core algorithmic debugging. Overlooking foundational code literacy in pursuit of deployment speed endangers the resilience of critical digital infrastructure."
+  ],
+  "grammarTags": [
+   "Technological trade-offs & risk evaluation"
+  ],
+  "explanationVi": "Cụm từ 'immediate productivity dividend' dùng để gọi tên phần lợi ích năng suất thu về ngay tức thì nhờ công nghệ mới. Đoạn văn lập luận về rủi ro suy giảm năng lực cốt lõi khi lạm dụng công cụ tự động.",
+  "rationaleVi": "Thể hiện đúng cấp độ 8.0 thông qua việc cân bằng giữa lợi ích ngắn hạn và nguy cơ kỹ thuật dài hạn với cấu trúc câu phức tạp và tính liên kết cao.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "ai-assisted-level-draft",
+  "version": 1
+ },
+ {
+  "id": "band-8.0-exp-014",
+  "practiceLevel": "8.0",
+  "type": "paragraph",
+  "topic": "năng lượng",
+  "targetTerm": "structural energy shift",
+  "meaningVi": "sự dịch chuyển năng lượng mang tính cấu trúc",
+  "promptVi": "Việc đóng cửa các nhà máy nhiệt điện than cũ gây ra thiệt hại kinh tế nghiêm trọng cho các cộng đồng khai khoáng địa phương trong ngắn hạn. Tình trạng mất việc làm tập trung theo khu vực tại các trung tâm năng lượng truyền thống làm nổi bật chi phí nhân văn của việc đóng cửa công nghiệp không có biện pháp giảm thiểu. Mặc dù vậy, việc trì hoãn quá trình loại bỏ này sẽ cản trở sự dịch chuyển năng lượng mang tính cấu trúc cần thiết để ngăn chặn sự mất ổn định khí hậu dài hạn mang tính thảm họa. Các quỹ chuyển dịch theo mục tiêu phải giảm thiểu tổn thất thu nhập trước mắt đồng thời tài trợ cho sự đa dạng hóa công nghệ sạch tại địa phương.",
+  "referenceAnswers": [
+   "The retirement of legacy coal-fired power stations inflicts severe economic distress on localised mining communities in the short run. Regionally concentrated job losses in traditional energy hubs highlight the human cost of unmitigated industrial closures. Nonetheless, delaying this phase-out impedes the structural energy shift necessary to avert catastrophic long-term climate destabilisation. Target-driven transition funds must cushion immediate wage losses while financing regional clean-tech diversification."
+  ],
+  "grammarTags": [
+   "Energy transition & socio-economic impact"
+  ],
+  "explanationVi": "'Structural energy shift' miêu tả bước chuyển đổi căn bản trong cơ cấu nguồn năng lượng quốc gia. Đoạn văn đào sâu xung đột giữa tổn thất kinh tế địa phương ngắn hạn và lợi ích khí hậu toàn cầu lâu dài.",
+  "rationaleVi": "Đáp ứng tiêu chuẩn 8.0 nhờ cách tiếp cận chính xác về mảng chính sách năng lượng, giải quyết các góc nhìn đối lập giữa an sinh xã hội địa phương và an toàn khí hậu.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "ai-assisted-level-draft",
+  "version": 1
+ },
+ {
+  "id": "band-8.0-exp-015",
+  "practiceLevel": "8.0",
+  "type": "paragraph",
+  "topic": "văn hóa",
+  "targetTerm": "short-term cultural monetisation",
+  "meaningVi": "sự tiền tệ hóa văn hóa ngắn hạn",
+  "promptVi": "Các biến tấu thương mại đối với các nghi lễ bản địa linh thiêng mang lại nguồn thu tài chính nhanh chóng cho các huyện nông thôn yếu thế. Doanh thu từ các buổi biểu diễn dân gian bán vé cung cấp kinh phí tức thì cho hạ tầng địa phương tại các làng nghề xa xôi. Sự tập trung thái quá vào sự tiền tệ hóa văn hóa ngắn hạn này có nguy cơ làm pha loãng tính chân thực tâm linh vốn duy trì bản sắc cộng đồng qua nhiều thế hệ. Việc bảo tồn di sản phi vật thể đòi hỏi những giới hạn nghiêm ngặt về tần suất biểu diễn thương mại cùng với các mô hình quản trị do cộng đồng dẫn dắt.",
+  "referenceAnswers": [
+   "Commercial adaptations of sacred indigenous ceremonies deliver rapid financial returns to marginalised rural districts. Revenue from ticketed folk performances provides immediate funding for local infrastructure in remote craft villages. This excessive focus on short-term cultural monetisation risks diluting the spiritual authenticity that sustains community identity across generations. Preserving intangible heritage requires strict limits on commercial performance frequencies alongside community-led stewardship models."
+  ],
+  "grammarTags": [
+   "Cultural heritage & economic compromise"
+  ],
+  "explanationVi": "'Short-term cultural monetisation' phản ánh hành vi khai thác giá trị văn hóa thành tiền một cách cấp tập. Đoạn văn phân tích tác hại của việc đánh đổi bản sắc lâu đời lấy nguồn thu du lịch trước mắt.",
+  "rationaleVi": "Đặt chuẩn 8.0 nhờ việc sử dụng thuật ngữ di sản chính xác, phân tích sâu sắc tác động xã hội-văn hóa của mô hình du lịch thương mại hóa.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "ai-assisted-level-draft",
+  "version": 1
+ },
+ {
+  "id": "band-8.0-exp-016",
+  "practiceLevel": "8.0",
+  "type": "paragraph",
+  "topic": "nhà ở",
+  "targetTerm": "immediate displacement pressures",
+  "meaningVi": "áp lực di dời trước mắt",
+  "promptVi": "Các dự án tái phát triển đô thị nhằm vào các khu phố công nhân làm tăng nguồn thu thuế đô thị và hiện đại hóa diện mạo thành phố. Những đề xuất chỉnh trang mật độ cao thường cho thấy những lợi ích trước mắt rõ ràng về định giá bất động sản và lượng khách thương mại. Tuy nhiên, quá trình quý tộc hóa đô thị như vậy tạo ra áp lực di dời trước mắt đối với những người thuê nhà thu nhập thấp dễ bị tổn thương bị đẩy ra khỏi khu phố lâu đời của họ. Sự hồi sinh đô thị bền vững phụ thuộc vào việc thực thi chỉ tiêu nhà ở xã hội bắt buộc trong tất cả các dự án tái phát triển tư nhân lớn.",
+  "referenceAnswers": [
+   "Urban renewal projects targeting working-class quarters boost municipal tax revenues and modernise municipal aesthetics. High-density redevelopment project proposals often demonstrate clear short-term gains in property valuation and commercial footfall. However, such gentrification generates immediate displacement pressures for vulnerable low-income renters priced out of their long-standing neighbourhoods. Sustainable urban revitalisation hinges on enforcing mandatory affordable housing quotas within all major private redevelopments."
+  ],
+  "grammarTags": [
+   "Housing economics & social displacement"
+  ],
+  "explanationVi": "Cụm 'immediate displacement pressures' nhấn mạnh sức ép buộc người dân nghèo phải rời đi ngay tức thì do giá nhà gia tăng. Đoạn văn cân bằng giữa lợi ích cảnh quan/thuế và hệ lụy xã hội của quy hoạch.",
+  "rationaleVi": "Phù hợp Level 8.0 nhờ chiều sâu phân tích quá trình đô thị hóa (gentrification), sử dụng ngôn ngữ lập luận chính xác và trung lập về mặt chính sách.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "ai-assisted-level-draft",
+  "version": 1
+ },
+ {
+  "id": "band-8.0-exp-017",
+  "practiceLevel": "8.0",
+  "type": "paragraph",
+  "topic": "thể thao",
+  "targetTerm": "short-term economic windfall",
+  "meaningVi": "khoản lợi nhuận kinh tế ngắn hạn",
+  "promptVi": "Việc đăng cai các giải đấu thể thao quốc tế lớn mang lại khoản lợi nhuận kinh tế ngắn hạn thông qua doanh thu du lịch và bản quyền truyền thông. Chẳng hạn, sự bùng nổ bán lẻ tạm thời trong các sự kiện này giúp tăng thu ngân sách đô thị ngay lập tức. Mặc dù vậy, chi phí bảo trì lâu dài cho hạ tầng chuyên dụng thường làm cạn kiệt quỹ công trong nhiều thập kỷ. Việc đầu tư quá mức vào các sân vận động đỉnh cao mà thiếu kế hoạch chuyển đổi sau giải đấu có nguy cơ biến chúng thành những gánh nặng tài chính hoang phí.",
+  "referenceAnswers": [
+   "Hosting mega-sporting events yields a short-term economic windfall through tourism expenditure and broadcasting rights. For instance, temporary retail surges during such tournaments immediately boost municipal tax revenue. Nevertheless, long-term maintenance costs for specialized infrastructure routinely drain public funds for decades. Over-investing in elite venues without post-tournament conversion plans risks leaving municipalities with unsustainable white elephants."
+  ],
+  "grammarTags": [
+   "Trade-off Analysis / Noun Phrase"
+  ],
+  "explanationVi": "Cụm từ 'short-term economic windfall' chỉ khoản lợi tài chính đột ngột nhưng tạm thời, đối lập trực tiếp với chi phí duy trì hạ tầng kéo dài nhiều thập kỷ.",
+  "rationaleVi": "Đạt mức 8.0 nhờ cấu trúc lập luận chặt chẽ phân tích sự đánh đổi giữa lợi ích ngân sách tức thì và gánh nặng tài chính dài hạn với từ vựng chuyên sâu (mega-sporting events, white elephants).",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "ai-assisted-level-draft",
+  "version": 1
+ },
+ {
+  "id": "band-8.0-exp-018",
+  "practiceLevel": "8.0",
+  "type": "paragraph",
+  "topic": "nghiên cứu",
+  "targetTerm": "subscription paywalls",
+  "meaningVi": "các tường phí đăng ký",
+  "promptVi": "Khi các viện nghiên cứu chuyển đổi sang các kho lưu trữ mở, các phát minh khoa học đạt được khả năng tiếp cận tức thì trên toàn mạng lưới học thuật toàn cầu. Việc dỡ bỏ các tường phí đăng ký cho phép các nhà nghiên cứu độc lập ở các quốc gia đang phát triển tiếp cận các phát hiện mới nhất mà không gặp rào cản. Mặc dù vậy, sự chuyển dịch này buộc các đại học phải gánh chịu chi phí xử lý bài báo đắt đỏ ngay từ đầu. Ngân sách nghiên cứu sẽ tiếp tục chịu áp lực nặng nề trừ khi các nhà xuất bản tái cấu trúc mô hình phí đăng bài.",
+  "referenceAnswers": [
+   "When academic institutions transition to open-access repositories, scientific discoveries gain immediate visibility across global research networks. Removing subscription paywalls allows independent researchers in developing nations to inspect cutting-edge findings without financial barriers. Nevertheless, this shift forces universities to absorb exorbitant article processing charges upfront. Institutional budgets will remain under severe strain unless publishing houses restructure their processing fee models."
+  ],
+  "grammarTags": [
+   "Immediate vs Long-term Impact / Plural Noun"
+  ],
+  "explanationVi": "'Subscription paywalls' nghĩa là các tường phí đăng ký báo chí/tạp chí khoa học, rào cản tài chính bị gỡ bỏ để tạo tác động tiếp cận ngay lập tức nhưng phát sinh chi phí phía sau.",
+  "rationaleVi": "Phù hợp mức 8.0 nhờ việc sử dụng câu điều kiện phản ánh điều kiện giải quyết rủi ro tài chính lâu dài cùng các thuật ngữ học thuật chuẩn xác (exorbitant article processing charges).",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "ai-assisted-level-draft",
+  "version": 1
+ },
+ {
+  "id": "band-8.0-exp-019",
+  "practiceLevel": "8.0",
+  "type": "paragraph",
+  "topic": "đi lại",
+  "targetTerm": "immediate modal shift",
+  "meaningVi": "sự chuyển dịch phương thức di chuyển tức thì",
+  "promptVi": "Các khoản trợ giá đô thị cho xe tay ga điện tạo ra sự chuyển dịch phương thức di chuyển tức thì khỏi ô tô cá nhân tại các trung tâm thành phố ùn tắc. Người đi làm tại các đô thị lớn, chẳng hạn, thường xuyên thay thế các chuyến taxi ngắn bằng xe điện nhỏ trong giờ cao điểm. Tuy nhiên, sự gia tăng nhanh chóng của xe bãi bỏ bừa bãi tạo ra những nguy cơ lâu dài trên vỉa hè và làm gia tăng áp lực lên đội bảo trì đô thị. Việc tích hợp các phương tiện nhỏ vào mạng lưới đường sắt hiện có đòi hỏi các quy định đỗ xe nghiêm ngặt thay vì sự mở rộng thương mại thiếu đồng bộ.",
+  "referenceAnswers": [
+   "Municipal subsidies for e-scooter fleets generate an immediate modal shift away from private cars in congested city centres. Commuters in major metropolitan areas, for example, frequently substitute short taxi rides with micro-mobility options during peak hours. Yet, the rapid proliferation of discarded scooters creates long-term hazards on footpaths and strains municipal maintenance teams. Integrating micro-mobility with existing rail networks requires strict parking regulations rather than uncoordinated commercial expansion."
+  ],
+  "grammarTags": [
+   "Trade-off Analysis / Noun Phrase"
+  ],
+  "explanationVi": "'Immediate modal shift' dùng để miêu tả sự thay đổi phương thức giao thông diễn ra ngay tức thì sau khi áp dụng chính sách trợ giá.",
+  "rationaleVi": "Đáp ứng tiêu chuẩn 8.0 bằng cách phân tích sự tương phản giữa lợi ích giảm ùn tắc tức thì và hệ lụy trật tự đô thị dài hạn, sử dụng văn phong Anh-Anh tự nhiên.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "ai-assisted-level-draft",
+  "version": 1
+ },
+ {
+  "id": "band-8.0-exp-020",
+  "practiceLevel": "8.0",
+  "type": "paragraph",
+  "topic": "đồ ăn",
+  "targetTerm": "long-term epidemiological benefits",
+  "meaningVi": "lợi ích dịch tễ học dài hạn",
+  "promptVi": "Nếu chính phủ bắt buộc áp dụng nhãn dinh dưỡng đèn giao thông trên thực phẩm chế biến, các nhà sản xuất sẽ lập tức điều chỉnh công thức sản phẩm nhằm tránh các cảnh báo đỏ. Dữ liệu thị trường ban đầu cho thấy các công ty nước giải khát đã nhanh chóng giảm lượng đường bổ sung để duy trì niềm tin của người tiêu dùng. Dẫu vậy, những điều chỉnh bao bì như vậy chưa thể giải quyết sự bất bình đẳng kinh tế xã hội sâu xa trong khả năng tiếp cận thực phẩm bổ dưỡng. Việc đạt được các lợi ích dịch tễ học dài hạn đòi hỏi kết hợp nhãn mác rõ ràng với trợ giá có mục tiêu cho thực phẩm nguyên bản tại các khu vực khó khăn.",
+  "referenceAnswers": [
+   "Should governments mandate traffic-light nutrition labelling on processed foods, manufacturers swiftly reformulate products to avoid red warnings. Early market data indicates that beverage companies rapidly reduced added sugar content to maintain consumer trust. However, such packaging tweaks fail to address deeper socioeconomic disparities in food affordability. Achieving long-term epidemiological benefits necessitates combining clear labelling with targeted subsidies for whole foods in deprived neighbourhoods."
+  ],
+  "grammarTags": [
+   "Condition & Long-term Impact / Plural Noun Phrase"
+  ],
+  "explanationVi": "'Long-term epidemiological benefits' thể hiện các lợi ích sức khỏe cộng đồng mang tính lâu dài trên diện rộng ở cấp độ dịch tễ học.",
+  "rationaleVi": "Thuộc cấp độ 8.0 nhờ sử dụng cấu trúc đảo ngữ điều kiện (Should governments...) và tư duy phân tích giới hạn của giải pháp ngắn hạn trước bài toán bất bình đẳng xã hội.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "ai-assisted-level-draft",
+  "version": 1
+ },
+ {
+  "id": "band-8.0-exp-021",
+  "practiceLevel": "8.0",
+  "type": "paragraph",
+  "topic": "nhà ở",
+  "targetTerm": "short-term affordability relief",
+  "meaningVi": "sự hạ nhiệt giá thuê ngắn hạn",
+  "promptVi": "Mặc dù việc áp trần giá thuê nhà mang lại sự hạ nhiệt giá thuê ngắn hạn cho những người thuê nhà dễ bị tổn thương đang đối mặt với chi phí sinh hoạt tăng cao, nó lại gây ra những hệ lụy thị trường phức tạp. Các gia đình thu nhập thấp tại một số thành phố lớn từng hưởng lợi từ sự ổn định tức thì trong chi phí nhà ở hàng tháng sau các quyết định đóng băng giá thuê nghiêm ngặt. Trái lại, việc kiểm soát giá kéo dài làm giảm động lực của các chủ nhà tư nhân trong việc bảo trì bất động sản hoặc xây dựng nguồn cung nhà ở mới. Sự can thiệp kéo dài mà thiếu sự mở rộng nguồn cung nhà ở rốt cuộc sẽ tạo ra sự thiếu hụt trầm trọng trên thị trường cho thuê.",
+  "referenceAnswers": [
+   "Although capping residential rent increases delivers short-term affordability relief to vulnerable tenants facing steep living costs, it induces complex market distortions. Low-income families in major cities benefited from immediate stabilization of their monthly housing expenditures following strict rent freezes. Conversely, persistent price controls discourage private landlords from maintaining properties or constructing new housing stock. Prolonged intervention without housing supply expansion eventually creates acute shortages in the rental market."
+  ],
+  "grammarTags": [
+   "Concession & Trade-off / Noun Phrase"
+  ],
+  "explanationVi": "'Short-term affordability relief' miêu tả mức độ giảm áp lực chi phí nhà ở tạm thời cho người thuê nhà trước khi các tác động tiêu cực về nguồn cung xuất hiện.",
+  "rationaleVi": "Đạt 8.0 với sự kết hợp linh hoạt giữa mệnh đề nhượng bộ ở đầu đoạn và phân tích sâu sắc về sự méo mó thị trường bất động sản trong dài hạn.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "ai-assisted-level-draft",
+  "version": 1
+ },
+ {
+  "id": "band-8.0-exp-022",
+  "practiceLevel": "8.0",
+  "type": "paragraph",
+  "topic": "du lịch",
+  "targetTerm": "immediate revenue drop",
+  "meaningVi": "sự sụt giảm doanh thu trước mắt",
+  "promptVi": "Hạn ngạch khách tham quan hàng ngày nghiêm ngặt tại các di sản văn hóa nhạy cảm tất yếu gây ra sự sụt giảm doanh thu trước mắt cho các doanh nghiệp dịch vụ du lịch địa phương. Các công ty lữ hành tại các thành phố lịch sử từng chịu sự suy giảm tài chính đột ngột khi các hạn chế lối vào lần đầu được áp dụng. Dù vậy, lượng khách tham quan quá tải không kiểm soát sẽ làm xuống cấp vĩnh viễn kiến trúc hàng trăm năm tuổi và làm mất ổn định hệ sinh thái đô thị mỏng manh. Việc bảo tồn các di sản không thể thay thế đòi hỏi phải ưu tiên tính toàn vẹn cấu trúc hơn là lợi ích thương mại theo mùa.",
+  "referenceAnswers": [
+   "Strict daily visitor quotas at fragile cultural heritage sites inevitably cause an immediate revenue drop for local hospitality businesses. Tour agencies in historic cities experienced sudden financial contraction when entry restrictions were first introduced. Nevertheless, untrammelled foot traffic permanently degrades centuries-old architecture and destabilises fragile urban ecosystems. Preserving irreplaceable heritage sites requires prioritizing structural integrity over seasonal commercial gain."
+  ],
+  "grammarTags": [
+   "Trade-off Analysis / Noun Phrase"
+  ],
+  "explanationVi": "'Immediate revenue drop' diễn tả tác động kinh tế hụt thu tức thì đối với ngành dịch vụ địa phương khi áp dụng hạn chế du lịch.",
+  "rationaleVi": "Phù hợp mức 8.0 nhờ lối diễn đạt giàu tính chuyên môn (untrammelled foot traffic, structural integrity) và lập luận phản biện sắc bén về sự đánh đổi tài chính - di sản.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "ai-assisted-level-draft",
+  "version": 1
+ },
+ {
+  "id": "band-8.0-exp-023",
+  "practiceLevel": "8.0",
+  "type": "paragraph",
+  "topic": "năng lượng",
+  "targetTerm": "long-term energy sovereignty",
+  "meaningVi": "chủ quyền năng lượng dài hạn",
+  "promptVi": "Việc hướng vốn công vào nghiên cứu phản ứng hạt nhân hợp nhất đòi hỏi những sự đánh đổi ngắn hạn gay gắt về ngân sách cho việc nâng cấp lưới điện hiện tại. Các cơ sở chuyên dụng như các lò phản ứng thử nghiệm tiêu tốn hàng tỷ bảng Anh mà không bảo đảm tính khả thi thương mại trong thập kỷ này. Mặc dù vậy, việc làm chủ phản ứng tổng hợp hạt nhân có kiểm soát mang lại nguồn năng lượng tải nền gần như vô hạn và không phát thải cho các thế hệ tương lai. Việc đạt được chủ quyền năng lượng dài hạn chính là lý do thỏa đáng để chấp nhận rủi ro tài chính đáng kể trong nghiên cứu khoa học cơ bản hiện nay.",
+  "referenceAnswers": [
+   "Directing public capital into nuclear fusion research demands severe short-term sacrifices in funding for immediate grid upgrades. Specialized facilities like experimental reactors absorb billions of pounds without guaranteeing commercial viability within the current decade. However, mastering controlled fusion offers virtually limitless, zero-emission baseload power for future generations. Achieving long-term energy sovereignty justifies enduring substantial financial uncertainty in fundamental scientific research today."
+  ],
+  "grammarTags": [
+   "Trade-off & Uncertainty / Noun Phrase"
+  ],
+  "explanationVi": "'Long-term energy sovereignty' thể hiện mục tiêu tự chủ năng lượng chiến lược kéo dài qua nhiều thế hệ thông qua đổi mới công nghệ đột phá.",
+  "rationaleVi": "Đạt 8.0 nhờ mạch tư duy xử lý bài toán rủi ro đầu tư khoa học cơ bản và cân bằng giữa tổn thất ngắn hạn với lợi ích chiến lược quốc gia.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "ai-assisted-level-draft",
+  "version": 1
+ },
+ {
+  "id": "band-8.0-exp-024",
+  "practiceLevel": "8.0",
+  "type": "paragraph",
+  "topic": "gia đình",
+  "targetTerm": "immediate operational disruption",
+  "meaningVi": "sự gián đoạn vận hành trước mắt",
+  "promptVi": "Bằng cách trao quyền nghỉ phép bố mẹ được hưởng nguyên lương cho cả hai bên, chính sách công nâng cao bình đẳng nhưng cũng gây ra sự gián đoạn vận hành trước mắt cho các chủ doanh nghiệp vừa và nhỏ. Các công ty khởi nghiệp công nghệ nhỏ, chẳng hạn, phải nhanh chóng phân bổ lại các nhiệm vụ quan trọng khi các lập trình viên chủ chốt nghỉ phép kéo dài. Mặt khác, chính sách nghỉ phép bình đẳng giúp xóa bỏ định kiến đối với người mẹ và thúc đẩy sự cân bằng giới dài hạn trong lực lượng lao động chuyên nghiệp. Khả năng chống chịu của doanh nghiệp phụ thuộc vào việc thích ứng trong quản lý nhân sự thay vì xử phạt người lao động khi họ thực hiện quyền nghỉ phép gia đình.",
+  "referenceAnswers": [
+   "By granting fully paid parental leave to both parents, state policies enhance equity but induce immediate operational disruption for small and medium-sized enterprise employers. Small technology startups, for instance, must rapidly reallocate critical tasks when key developers take extended leave. On the other hand, equitable leave policies dismantle the motherhood penalty and promote long-term gender balance within the professional workforce. Corporate resilience relies on adapting workforce management rather than penalising employees for taking family leave."
+  ],
+  "grammarTags": [
+   "Prepositional Opening & Trade-off / Noun Phrase"
+  ],
+  "explanationVi": "'Immediate operational disruption' chỉ sự xáo trộn hoạt động kinh doanh phát sinh tức thì khi nhân sự chủ chốt nghỉ thai sản.",
+  "rationaleVi": "Đạt mức 8.0 với sự đa dạng trong cấu trúc mở đầu (cụm giới từ 'By granting...'), từ vựng nâng cao (motherhood penalty, corporate resilience) và lập luận bình đẳng giới tinh tế.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "ai-assisted-level-draft",
+  "version": 1
+ },
+ {
+  "id": "band-8.0-exp-025",
+  "practiceLevel": "8.0",
+  "type": "paragraph",
+  "topic": "công việc",
+  "targetTerm": "asynchronous communication",
+  "meaningVi": "truyền thông không đồng bộ",
+  "promptVi": "Việc chuyển sang mô hình truyền thông không đồng bộ giải phóng nhân viên khỏi các cuộc họp trực tiếp liên tục, mang lại mức tăng năng suất tập trung ngay lập tức. Tại các tập đoàn công nghệ toàn cầu, nhóm phát triển phần mềm cho thấy tốc độ hoàn thành dự án nhanh hơn khi các luồng thảo luận được lưu trữ bằng văn bản thay vì trao đổi thời gian thực. Mặc dù vậy, sự thiếu hụt tương tác tự phát trong thời gian dài lại vô tình làm suy giảm tinh thần đồng đội và khả năng giải quyết xung đột phức tạp. Lợi ích hiệu suất ban đầu do đó có thể phải trả giá bằng sự đứt gãy văn hóa doanh nghiệp nếu tổ chức không chủ động duy trì các hoạt động kết nối trực tiếp.",
+  "referenceAnswers": [
+   "Transitioning to asynchronous communication frees employees from continuous face-to-face meetings, offering an immediate boost to focused productivity. In global technology firms, software development teams have demonstrated faster project completion rates when discussion threads are archived in writing rather than conducted in real time. Nevertheless, a prolonged absence of spontaneous interaction inadvertently erodes team cohesion and complex conflict-resolution capabilities. Initial efficiency gains may thus come at the expense of corporate culture unless organizations proactively maintain direct bonding activities."
+  ],
+  "grammarTags": [
+   "Trade-off & Long-term Productivity"
+  ],
+  "explanationVi": "Mục này phân tích sự đánh đổi giữa việc gia tăng năng suất tập trung ngắn hạn nhờ giao tiếp không đồng bộ và nguy cơ suy giảm gắn kết văn hóa doanh nghiệp trong dài hạn.",
+  "rationaleVi": "Đoạn văn sử dụng cấu trúc lập luận phức hợp, từ vựng C1-C2 chính xác (inadvertently erodes, complex conflict-resolution capabilities) và xem xét kỹ lưỡng hệ quả ngắn hạn - dài hạn, đáp ứng yêu cầu Band 8.0.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "ai-assisted-level-draft",
+  "version": 1
+ },
+ {
+  "id": "band-8.0-exp-026",
+  "practiceLevel": "8.0",
+  "type": "paragraph",
+  "topic": "năng lượng",
+  "targetTerm": "intermittent power supply",
+  "meaningVi": "nguồn cung điện chập chờn",
+  "promptVi": "Trong nỗ lực cắt giảm phát thải carbon, việc mở rộng nhanh chóng các trang trại điện gió và mặt trời giúp các đô thị nhanh chóng đạt được các mục tiêu xanh ngắn hạn. Chẳng hạn, các khu công nghiệp tại vùng duyên hải đã giảm đáng kể lượng than tiêu thụ chỉ trong vòng một năm sau khi kết nối với các nguồn năng lượng tái tạo này. Tuy nhiên, bản chất nguồn cung điện chập chờn của các nguồn năng lượng tái tạo lại tạo ra nguy cơ mất ổn định lưới điện nghiêm trọng trong những thời điểm thời tiết bất lợi kéo dài. Việc quá chú trọng vào việc nâng tỷ lệ năng lượng sạch mà chưa đầu tư đồng bộ cho hệ thống lưu trữ quy mô lớn có thể đe dọa trực tiếp đến an ninh năng lượng quốc gia.",
+  "referenceAnswers": [
+   "In an effort to cut carbon emissions, the rapid expansion of wind and solar farms helps urban centers swiftly achieve short-term green targets. For instance, industrial parks in coastal regions significantly reduced coal consumption within a single year after connecting to these renewable resources. However, the nature of an intermittent power supply poses severe grid instability risks during prolonged adverse weather conditions. Overemphasizing clean energy ratios without concurrently investing in large-scale storage systems risks directly compromising national energy security."
+  ],
+  "grammarTags": [
+   "Infrastructure Trade-off"
+  ],
+  "explanationVi": "Mục này đối chiếu lợi ích giảm phát thải nhanh chóng với thách thức kỹ thuật về tính ổn định của lưới điện do nguồn điện không liên tục gây ra.",
+  "rationaleVi": "Mô tả sắc thái đánh đổi kỹ thuật - chính sách vĩ mô với các cụm từ học thuật chuẩn xác (grid instability risks, concurrently investing), phù hợp tiêu chí đánh giá Band 8.0.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "ai-assisted-level-draft",
+  "version": 1
+ },
+ {
+  "id": "band-8.0-exp-027",
+  "practiceLevel": "8.0",
+  "type": "paragraph",
+  "topic": "trường học",
+  "targetTerm": "formative assessment",
+  "meaningVi": "đánh giá quá trình",
+  "promptVi": "Nhờ áp dụng phương pháp đánh giá quá trình thường xuyên, giáo viên có thể nhận biết ngay lập tức các lỗ hổng kiến thức của học sinh để điều chỉnh tiến độ bài giảng. Thực tế tại các trường trung học khu vực cho thấy tỷ lệ hoàn thành bài tập nâng cao tăng đáng kể khi học sinh nhận được phản hồi chi tiết hàng tuần thay vì điểm số thi học kỳ. Trái lại, việc liên tục theo dõi và ghi nhận tiến độ tạo ra gánh nặng hành chính nặng nề kéo dài cho đội ngũ sư phạm. Sự cải thiện thành tích trước mắt có nguy cơ bị dập tắt nếu tình trạng quá tải công việc khiến các nhà giáo mất đi nhiệt huyết giảng dạy lâu dài.",
+  "referenceAnswers": [
+   "Thanks to the application of formative assessment, teachers can instantly identify students' knowledge gaps to adjust the pace of their lectures. Evidence from regional secondary schools demonstrates that completion rates for advanced assignments rose significantly when students received detailed weekly feedback rather than term-end exam grades. Conversely, continuously tracking and recording progress imposes a sustained and heavy administrative burden on teaching staff. Immediate academic gains risk being offset if workload burnout diminishes educators' long-term teaching enthusiasm."
+  ],
+  "grammarTags": [
+   "Pedagogical Evaluation Trade-off"
+  ],
+  "explanationVi": "Mục này phân biệt hiệu quả học tập tức thì từ phản hồi liên tục với áp lực kiệt sức lâu dài của giáo viên.",
+  "rationaleVi": "Sử dụng lối diễn đạt tự nhiên, mạch lạc cao với cấu trúc nhượng bộ và điều kiện lồng ghép tinh tế (risk being offset if...), đặc trưng của kỹ năng viết Band 8.0.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "ai-assisted-level-draft",
+  "version": 1
+ },
+ {
+  "id": "band-8.0-exp-028",
+  "practiceLevel": "8.0",
+  "type": "paragraph",
+  "topic": "đồ ăn",
+  "targetTerm": "dietary diversification",
+  "meaningVi": "đa dạng hóa chế độ ăn",
+  "promptVi": "Bằng cách trợ giá trực tiếp cho các sản phẩm nông nghiệp địa phương, chính sách dinh dưỡng mới đem lại khả năng tiếp cận thực phẩm tươi sống tức thì cho người dân thu nhập thấp. Các dự án thí điểm tại các cộng đồng yếu thế ghi nhận mức gia tăng đột biến trong lượng rau củ tiêu thụ hàng tuần ngay trong tháng đầu tiên triển khai. Dù vậy, thói quen tiêu dùng lâu đời và sự thiếu hụt kiến thức chế biến vẫn là những rào cản lớn ngăn cản một sự đa dạng hóa chế độ ăn bền vững ở cấp độ hộ gia đình. Việc can thiệp giá cả ngắn hạn sẽ khó tạo ra chuyển biến y tế công cộng lâu dài nếu không đi kèm các chương trình giáo dục ẩm thực chuyên sâu.",
+  "referenceAnswers": [
+   "By directly subsidizing local agricultural produce, the new nutritional policy delivers immediate access to fresh food for low-income residents. Pilot schemes in disadvantaged communities recorded a sharp surge in weekly vegetable consumption within the very first month of implementation. Be that as it may, entrenched consumer habits and a lack of culinary knowledge remain major obstacles to sustainable dietary diversification at the household level. Short-term price interventions will struggle to yield lasting public health shifts unless accompanied by comprehensive culinary education initiatives."
+  ],
+  "grammarTags": [
+   "Nutritional Policy Trade-off"
+  ],
+  "explanationVi": "Mục này thảo luận về giới hạn của chính sách trợ giá ngắn hạn so với những giải pháp căn cơ giúp cải thiện thói quen ăn uống lâu dài.",
+  "rationaleVi": "Liên kết logic chặt chẽ qua các liên từ nâng cao (Be that as it may, unless accompanied by), thể hiện lập luận đa chiều chuẩn Band 8.0.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "ai-assisted-level-draft",
+  "version": 1
+ },
+ {
+  "id": "band-8.0-exp-029",
+  "practiceLevel": "8.0",
+  "type": "paragraph",
+  "topic": "đô thị",
+  "targetTerm": "transit-oriented development",
+  "meaningVi": "phát triển đô thị gắn liền với giao thông công cộng",
+  "promptVi": "Thực thi chiến lược phát triển đô thị gắn liền với giao thông công cộng tạo ra sự bùng nổ tức thì về giá trị bất động sản quanh các ga tàu điện ngầm chính. Các quy hoạch mật độ cao tại các trung tâm đô thị lớn đã nhanh chóng thu hút nguồn vốn đầu tư tư nhân khổng lồ vào việc xây dựng các tổ hợp thương mại và căn hộ hiện đại. Tuy nhiên, áp lực tăng giá bồi thường đất đai và chi phí xây dựng cơ sở hạ tầng ngầm lại đặt ra thách thức tài chính trầm trọng cho ngân sách thành phố trong giai đoạn đầu. Nếu chính quyền đô thị không quản lý tốt dòng tiền ngắn hạn, các dự án giao thông trọng điểm có nguy cơ đứt gãy nguồn vốn trước khi kịp mang lại hiệu quả giảm ùn tắc lâu dài.",
+  "referenceAnswers": [
+   "Implementing transit-oriented development triggers an immediate surge in property values around major subway nodes. High-density zoning in major urban centers rapidly attracted massive private investment into constructing modern commercial and residential complexes. However, escalating land compensation costs and underground infrastructure expenses pose severe financial strain on municipal budgets during the initial phase. Should urban authorities fail to manage short-term cash flows effectively, critical transport projects risk funding disruptions long before achieving sustained congestion relief."
+  ],
+  "grammarTags": [
+   "Urban Infrastructure Strategy"
+  ],
+  "explanationVi": "Mục này phân tích sự bất đồng bộ giữa thu hút vốn tư nhân nhanh chóng và rủi ro thâm hụt ngân sách công ngắn hạn trong quy hoạch đô thị.",
+  "rationaleVi": "Cấu trúc đảo ngữ điều kiện (Should urban authorities fail...) và thuật ngữ chuyên ngành chính xác thể hiện trình độ ngôn ngữ Band 8.0.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "ai-assisted-level-draft",
+  "version": 1
+ },
+ {
+  "id": "band-8.0-exp-030",
+  "practiceLevel": "8.0",
+  "type": "paragraph",
+  "topic": "chính sách công",
+  "targetTerm": "universal basic income",
+  "meaningVi": "thu nhập cơ bản phổ quát",
+  "promptVi": "Việc thử nghiệm thu nhập cơ bản phổ quát cung cấp một mạng lưới an sinh tức thì, giúp giảm bớt căng thẳng tài chính cho các hộ gia đình yếu thế trong thời kỳ lạm phát. Dữ liệu từ các cuộc khảo sát khu vực cho thấy những người thụ hưởng đã lập tức sử dụng khoản hỗ trợ này để chi trả cho lương thực và dịch vụ y tế thiết yếu. Dù vậy, việc duy trì chính sách này trên quy mô toàn quốc đòi hỏi một nguồn thu ngân sách khổng lồ, có khả năng buộc chính phủ phải cắt giảm các khoản đầu tư công cho hạ tầng dài hạn. Sự đánh đổi về mặt tài khóa này đe dọa năng lực duy trì tăng trưởng kinh tế bền vững nếu nguồn vốn cho giáo dục và đổi mới sáng tạo bị thu hẹp.",
+  "referenceAnswers": [
+   "Trialling universal basic income provides an immediate safety net, alleviating financial stress for vulnerable households during inflationary periods. Data from regional surveys indicates that beneficiaries promptly spent the support grants on essential groceries and healthcare services. Nevertheless, maintaining this policy nationwide demands immense fiscal revenue, potentially forcing governments to curtail public investment in long-term infrastructure. This fiscal trade-off threatens the capacity to sustain enduring economic growth if funding for education and innovation becomes constrained."
+  ],
+  "grammarTags": [
+   "Socio-economic Policy Analysis"
+  ],
+  "explanationVi": "Mục này đưa ra cái nhìn phản biện về cái giá phải trả của ngân sách quốc gia khi triển khai trợ cấp diện rộng so với cứu trợ xã hội ngắn hạn.",
+  "rationaleVi": "Sử dụng linh hoạt mệnh đề phân từ (alleviating..., potentially forcing...) và từ vựng chính xác cao (curtail, fiscal trade-off) ở mức Band 8.0.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "ai-assisted-level-draft",
+  "version": 1
+ },
+ {
+  "id": "band-8.0-exp-031",
+  "practiceLevel": "8.0",
+  "type": "paragraph",
+  "topic": "nghiên cứu",
+  "targetTerm": "algorithmic transparency",
+  "meaningVi": "sự minh bạch thuật toán",
+  "promptVi": "Yêu cầu cao về sự minh bạch thuật toán củng cố ngay lập tức niềm tin của công chúng đối với các hệ thống trí tuệ nhân tạo trong xét duyệt tín dụng. Khi các ngân hàng giải thích rõ ràng các tiêu chí đánh giá rủi ro, tỷ lệ khiếu nại của khách hàng đã giảm đáng kể ngay trong quý đầu tiên áp dụng. Trái lại, việc buộc các công ty công nghệ tiết lộ mã nguồn cốt lõi có nguy cơ làm rò rỉ bí mật thương mại và giảm lợi thế cạnh tranh của doanh nghiệp. Giới quản lý phải duy trì sự cân bằng giữa trách nhiệm giải trình công khai và việc bảo vệ quyền sở hữu trí tuệ nhằm tránh làm thoái trào động lực nghiên cứu sáng tạo lâu dài.",
+  "referenceAnswers": [
+   "High demands for algorithmic transparency immediately bolster public trust in artificial intelligence systems used for credit scoring. When commercial banks clearly explained their risk assessment criteria, customer complaint rates dropped noticeably within the first quarter of adoption. On the flip side, forcing tech firms to disclose core source code risks leaking trade secrets and eroding corporate competitive advantages. Regulators must maintain a balance between public accountability and intellectual property protection to avoid stifling long-term research and innovation incentives."
+  ],
+  "grammarTags": [
+   "Technology Governance Trade-off"
+  ],
+  "explanationVi": "Mục này cân nhắc giữa lợi ích gia tăng niềm tin tiêu dùng trước mắt và rủi ro tổn hại khả năng cạnh tranh công nghệ dài hạn.",
+  "rationaleVi": "Văn phong học thuật sắc sảo với các cụm động từ và danh từ kết hợp tự nhiên (bolster public trust, eroding corporate competitive advantages), đạt chuẩn IELTS 8.0.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "ai-assisted-level-draft",
+  "version": 1
+ },
+ {
+  "id": "band-8.0-exp-032",
+  "practiceLevel": "8.0",
+  "type": "paragraph",
+  "topic": "du lịch",
+  "targetTerm": "community-based ecotourism",
+  "meaningVi": "du lịch sinh thái dựa vào cộng đồng",
+  "promptVi": "Chuyển hướng sang du lịch sinh thái dựa vào cộng đồng mang lại nguồn sinh kế bổ sung tức thì cho cư dân vùng đệm các khu bảo tồn thiên nhiên. Tại các vùng nông thôn phía Bắc, người dân bản địa đã nhanh chóng tăng thu nhập thông qua dịch vụ lưu trú tại nhà dân và hướng dẫn tham quan rừng nguyên sinh. Mặc dù vậy, sự gia tăng lượng du khách vượt quá khả năng quản lý tự phát của địa phương lại đe dọa làm tổn hại đến sự yên tĩnh và hệ sinh thái bản địa. Thành công của mô hình này về lâu dài phụ thuộc vào việc đào tạo năng lực quản trị du lịch bền vững cho người dân thay vì khai thác thương mại ồ ạt.",
+  "referenceAnswers": [
+   "Shifting towards community-based ecotourism generates immediate supplementary livelihoods for residents living in the buffer zones of nature reserves. In northern rural areas, indigenous villagers rapidly increased their earnings through homestay services and guided tours of pristine forests. However, an influx of visitors exceeding local spontaneous management capacity threatens to damage local tranquility and ecosystems. The long-term success of this model hinges on training residents in sustainable tourism governance rather than engaging in unchecked commercial exploitation."
+  ],
+  "grammarTags": [
+   "Sustainable Tourism Trade-off"
+  ],
+  "explanationVi": "Mục này đối chiếu nguồn thu nhập cải thiện tức thì cho người dân địa phương với nguy cơ quá tải sức chứa sinh thái nếu thiếu quản trị dài hạn.",
+  "rationaleVi": "Lập luận sâu sắc, kết hợp cụm động từ tự nhiên (hinges on) và từ vựng chuyên ngành du lịch bền vững (buffer zones, unchecked commercial exploitation) chuẩn mực 8.0.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "ai-assisted-level-draft",
+  "version": 1
+ },
+ {
+  "id": "band-8.0-exp-033",
+  "practiceLevel": "8.0",
+  "type": "paragraph",
+  "topic": "gia đình",
+  "targetTerm": "statutory care allowances",
+  "meaningVi": "các khoản trợ cấp chăm sóc theo luật định",
+  "promptVi": "Việc mở rộng các khoản trợ cấp chăm sóc theo luật định mang lại sự hỗ trợ tài chính tức thì cho các gia đình đang nuôi dưỡng người thân cao tuổi. Chẳng hạn, các dự án thí điểm tại các hội đồng địa phương nông thôn đã nhanh chóng giảm bớt khó khăn gay gắt cho các hộ gia đình thu nhập thấp chỉ trong vài tháng. Dù vậy, việc phụ thuộc vào trợ cấp tiền mặt mà không đầu tư hạ tầng chăm sóc chuyên nghiệp vẫn không thể giải tỏa sự kiệt sức về mặt thể chất của người chăm sóc gia đình. An sinh xã hội lâu dài đòi hỏi kết hợp hỗ trợ tài chính trực tiếp với các dịch vụ nghỉ ngơi tạm thời ở cấp đô thị.",
+  "referenceAnswers": [
+   "Expanding statutory care allowances provides immediate financial relief to families taking care of elderly relatives. For instance, pilot schemes in rural councils reduced acute hardship for low-income households within months. However, relying on cash transfers without building professional care infrastructure fails to alleviate the physical exhaustion of family carers. Long-term social well-being requires pairing direct financial support with municipal respite services."
+  ],
+  "grammarTags": [
+   "editorial argumentation & policy trade-offs"
+  ],
+  "explanationVi": "Đoạn văn phân tích sự đánh đổi giữa việc giải quyết gánh nặng tài chính trước mắt cho các gia đình thông qua trợ cấp tiền mặt và nhu cầu xây dựng hạ tầng chăm sóc dài hạn.",
+  "rationaleVi": "Đạt mức 8.0 nhờ sử dụng cấu trúc lập luận phức hợp, từ vựng chính xác cao trong chính sách xã hội ('statutory care allowances', 'respite services') và phân tích bài bản hiệu ứng ngắn hạn so với dài hạn.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "ai-assisted-level-draft",
+  "version": 1
+ },
+ {
+  "id": "band-8.0-exp-034",
+  "practiceLevel": "8.0",
+  "type": "paragraph",
+  "topic": "kinh tế",
+  "targetTerm": "open-banking protocols",
+  "meaningVi": "các giao thức ngân hàng mở",
+  "promptVi": "Giới chức tài chính khi bắt buộc áp dụng các giao thức ngân hàng mở tạo ra đợt tăng trưởng tức thì về đổi mới công nghệ tài chính và các dịch vụ cạnh tranh. Người tiêu dùng tại các trung tâm thương mại lớn đã nhanh chóng tiếp cận được các ứng dụng lập ngân sách cá nhân hóa và chi phí giao dịch thấp hơn. Trái lại, sự tích hợp kỹ thuật số này khiến dữ liệu người dùng đối mặt với nguy cơ rò rỉ an ninh mạng ngày càng tăng theo thời gian. Giới quản lý vì vậy phải thực thi các tiêu chuẩn mã hóa dữ liệu nghiêm ngặt thay vì chỉ ưu tiên tốc độ mở rộng thị trường.",
+  "referenceAnswers": [
+   "Enforcing open-banking protocols sparks an immediate surge in financial tech innovation and competitive service offerings. Consumers in major commercial hubs swiftly gained access to personalised budgeting applications and lower transaction fees. Conversely, this digital integration exposes user data to heightened cyber vulnerabilities over time. Regulators must consequently enforce stringent data encryption standards rather than prioritising rapid market adoption alone."
+  ],
+  "grammarTags": [
+   "fintech evaluation & systemic risk"
+  ],
+  "explanationVi": "Đoạn văn đối chiếu lợi ích trước mắt về đổi mới dịch vụ tài chính cá nhân với rủi ro dài hạn về an ninh mạng khi bắt buộc áp dụng giao thức chia sẻ dữ liệu.",
+  "rationaleVi": "Thích hợp cho mức 8.0 vì thể hiện khả năng đánh giá tác động kinh tế công nghệ sắc bén, dùng lập luận quy chiếu phản biện và thuật ngữ chuyên ngành chuẩn xác ('open-banking protocols', 'cyber vulnerabilities').",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "ai-assisted-level-draft",
+  "version": 1
+ },
+ {
+  "id": "band-8.0-exp-035",
+  "practiceLevel": "8.0",
+  "type": "paragraph",
+  "topic": "trường học",
+  "targetTerm": "experiential environmental curricula",
+  "meaningVi": "chương trình giảng dạy môi trường dựa trên trải nghiệm",
+  "promptVi": "Khi các trường tiểu học tích hợp các chương trình giảng dạy môi trường dựa trên trải nghiệm, hoạt động này mang lại lợi ích tức thì cho khả năng điều hòa cảm xúc và nhận thức không gian của học sinh. Các ghi nhận tại nhiều hệ thống trường học cho thấy các buổi học ngoài trời hàng tuần cải thiện đáng kể sự tập trung trong lớp của người học nhỏ tuổi. Mặc dù vậy, việc tổ chức các hoạt động ngoại khóa này lại tạo ra những gánh nặng hậu cần và trách nhiệm an toàn nảy sinh cho đội ngũ giáo viên. Đổi mới giáo dục bền vững vì thế phụ thuộc vào việc bố trí nhân sự hỗ trợ chuyên trách thay vì chất thêm gánh nặng hành chính lên giáo viên đứng lớp.",
+  "referenceAnswers": [
+   "Integrating experiential environmental curricula into primary education yields immediate benefits for pupils' emotional regulation and spatial awareness. Observations across various school systems show that weekly forest sessions significantly improve classroom attentiveness among younger learners. Nevertheless, organising these outdoor activities places heavy logistical demands and safety liabilities on teaching staff. Sustainable educational reform thus hinges on providing dedicated support staff rather than burdening classroom teachers with administrative overhead."
+  ],
+  "grammarTags": [
+   "pedagogical strategy & administrative trade-offs"
+  ],
+  "explanationVi": "Đoạn văn cân nhắc giữa lợi ích tâm lý tức thì cho học sinh và áp lực vận hành kéo dài lên giáo viên khi áp dụng phương pháp học tập trải nghiệm ngoài trời.",
+  "rationaleVi": "Phù hợp với tiêu chuẩn 8.0 nhờ sự kết hợp nhuần nhuyễn giữa bằng chứng thực tế tại trường học và phân tích điều kiện bền vững lâu dài cho chính sách giáo dục.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "ai-assisted-level-draft",
+  "version": 1
+ },
+ {
+  "id": "band-8.0-exp-036",
+  "practiceLevel": "8.0",
+  "type": "paragraph",
+  "topic": "đi lại",
+  "targetTerm": "last-mile logistics micro-hubs",
+  "meaningVi": "các trung tâm logistics siêu nhỏ chặng cuối",
+  "promptVi": "Quyết định trợ giá cho các trung tâm logistics siêu nhỏ chặng cuối đem lại sự cắt giảm nhanh chóng lượng xe tải hạng nặng chạy bằng dầu diesel trong khu vực nội đô lịch sử. Dữ liệu vận hành ban đầu từ các khu vực thử nghiệm đô thị cho thấy mức giảm sâu của khí thải bụi mịn cục bộ trong các khung giờ giao hàng buổi sáng. Mặc dù vậy, các công ty chuyển phát nhỏ phải đối mặt với yêu cầu vốn đầu tư ban đầu rất cao để chuyển đổi đội xe sang xe đạp chở hàng chạy bằng điện. Việc đảm bảo khả năng duy trì của chuỗi cung ứng dài hạn đòi hỏi các khoản trợ cấp thiết bị có mục tiêu đi kèm với các quy định khắt khe về phát thải thấp.",
+  "referenceAnswers": [
+   "Subsidising last-mile logistics micro-hubs delivers a rapid reduction in heavy diesel vehicle traffic within historic inner cities. Early operational metrics from urban trial sites demonstrate a sharp drop in localised particulate emissions during morning delivery windows. Nonetheless, small courier firms face steep upfront capital requirements to transition their vehicle fleets to electric cargo bikes. Ensuring long-term supply chain viability demands tailored equipment grants alongside strict low-emission mandates."
+  ],
+  "grammarTags": [
+   "urban freight policy & capital barriers"
+  ],
+  "explanationVi": "Đoạn văn phân tích hiệu quả cắt giảm ô nhiễm ngắn hạn của mạng lưới giao hàng chặng cuối so với gánh nặng chi phí đầu tư ban đầu đối với các doanh nghiệp nhỏ.",
+  "rationaleVi": "Thể hiện độ chính xác IELTS 8.0 thông qua văn phong nghị luận báo chí (editorial focus), phân tích rào cản tài chính vĩ mô và thuật ngữ hạ tầng đô thị.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "ai-assisted-level-draft",
+  "version": 1
+ },
+ {
+  "id": "band-8.0-exp-037",
+  "practiceLevel": "8.0",
+  "type": "paragraph",
+  "topic": "sức khỏe",
+  "targetTerm": "volumetric sugar taxes",
+  "meaningVi": "thuế đường tính theo thể tích",
+  "promptVi": "Thông qua việc triển khai thuế đường tính theo thể tích, chính quyền thúc đẩy các nhà sản xuất nước giải khát lập tức điều chỉnh công thức sản phẩm nhằm bảo vệ biên lợi nhuận. Các nghiên cứu điển hình từ một số thị trường Châu Âu cho thấy các công ty đã nhanh chóng cắt giảm lượng đường sucrose trong các dòng nước có ga phổ biến. Dù vậy, biện pháp tài khóa này gây ra tác động tài chính mang tính lũy thoái lên các hộ gia đình thu nhập thấp nếu các lựa chọn thay thế lành mạnh hơn vẫn đắt đỏ quá mức. Các lợi ích sức khỏe toàn diện vì thế chỉ xuất hiện khi doanh thu từ thuế được dành riêng để trợ giá thực phẩm tươi sống tại các khu vực nghèo.",
+  "referenceAnswers": [
+   "Through the implementation of volumetric sugar taxes, policymakers prompt immediate product reformulation by beverage manufacturers seeking to preserve profit margins. Case studies from several European markets indicate that companies swiftly reduced sucrose levels across popular carbonated drink lines. However, these fiscal measures exert a regressive financial impact on lower-income households if healthier alternatives remain prohibitively expensive. Comprehensive health gains will therefore materialize only when tax revenues are directly earmarked for subsidising fresh produce in low-income districts."
+  ],
+  "grammarTags": [
+   "fiscal intervention & public health equity"
+  ],
+  "explanationVi": "Đoạn văn làm rõ tác động thay đổi công thức tức thì của doanh nghiệp và nguy cơ gánh nặng tài chính bất bình đẳng lâu dài nếu thiếu biện pháp trợ giá song song.",
+  "rationaleVi": "Đạt 8.0 nhờ góc nhìn phản biện đa chiều về chính sách thuế sức khỏe công cộng, diễn đạt mạch lạc với tính liên kết lập luận cao.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "ai-assisted-level-draft",
+  "version": 1
+ },
+ {
+  "id": "band-8.0-exp-038",
+  "practiceLevel": "8.0",
+  "type": "paragraph",
+  "topic": "năng lượng",
+  "targetTerm": "deep-geothermal exploration",
+  "meaningVi": "hoạt động thăm dò địa nhiệt sâu",
+  "promptVi": "Chi ngân sách nhà nước cho hoạt động thăm dò địa nhiệt sâu gây ra những rủi ro tài chính ngắn hạn đáng kể do tỷ lệ thất bại cao trong các đợt khoan ban đầu. Các công trình khoan thử nghiệm tại các vùng giàu tiềm năng có thể tiêu tốn hàng chục triệu bảng trước khi tìm thấy các mỏ nhiệt có khả năng khai thác thương mại. Mặt khác, việc làm chủ kỹ thuật khai thác địa nhiệt sâu bảo đảm nguồn năng lượng tải nền không carbon liên tục, không phụ thuộc vào sự biến động thời tiết. Chấp nhận những tổn thất thăm dò trước mắt vì vậy là một sự đánh đổi tất yếu để đạt được an ninh lưới điện quốc gia vĩnh viễn.",
+  "referenceAnswers": [
+   "Directing state research grants towards deep-geothermal exploration incurs considerable short-term financial risks due to high initial drilling failure rates. Experimental drilling sites in high-potential regions can spend tens of millions of pounds before striking commercially viable heat reservoirs. On the flip side, mastering deep geothermal extraction guarantees uninterrupted zero-carbon baseload energy independent of weather fluctuations. Accepting present-day exploration losses is consequently a necessary trade-off for achieving permanent national grid security."
+  ],
+  "grammarTags": [
+   "energy investment & risk-benefit analysis"
+  ],
+  "explanationVi": "Đoạn văn so sánh rủi ro thất bại tài chính ban đầu trong nghiên cứu năng lượng với lợi ích an ninh lưới điện tải nền lâu dài.",
+  "rationaleVi": "Phù hợp mức 8.0 nhờ khả năng điều hòa các luận điểm trái ngược (tốn kém ngắn hạn vs an ninh lâu dài) bằng tiếng Anh chuyên sâu và chuẩn xác.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "ai-assisted-level-draft",
+  "version": 1
+ },
+ {
+  "id": "band-8.0-exp-039",
+  "practiceLevel": "8.0",
+  "type": "paragraph",
+  "topic": "văn hóa",
+  "targetTerm": "open-access digital repositories",
+  "meaningVi": "các kho lưu trữ kỹ thuật số truy cập mở",
+  "promptVi": "Các bảo tàng khi thành lập các kho lưu trữ kỹ thuật số truy cập mở cho các hiện vật bản địa mang lại sự bình đẳng hóa tức thì trong tiếp cận di sản văn hóa trên phạm vi toàn cầu. Các dự án quét độ phân giải cao đã cho phép các nhà nghiên cứu nước ngoài nghiên cứu các đồ dệt mỏng manh mà không làm hiện vật gốc chịu sự mài mòn vật lý. Trái lại, sự trải nghiệm qua không gian mạng có nguy cơ làm sụt giảm lượng khách tham quan và doanh thu bán vé của các bảo tàng địa phương vốn phụ thuộc vào lượt khách trực tiếp. Việc quản trị văn hóa lâu dài đòi hỏi kết hợp giữa phổ biến kỹ thuật số với nguồn tài trợ có mục tiêu để bảo tồn các địa điểm trưng bày thực tế.",
+  "referenceAnswers": [
+   "By establishing open-access digital repositories for indigenous artefacts, cultural institutions offer immediate global democratisation of cultural heritage. High-resolution scanning projects have enabled overseas scholars to study fragile textiles without subjecting original items to physical wear. Conversely, digital immersion risks diminishing footfall and ticket revenue for regional museums that rely on physical attendance. Long-term cultural stewardship requires combining digital dissemination with targeted funding to preserve physical exhibition venues."
+  ],
+  "grammarTags": [
+   "heritage preservation & financial trade-offs"
+  ],
+  "explanationVi": "Đoạn văn thảo luận về sự đánh đổi giữa khả năng tiếp cận di sản toàn cầu tức thì và nguy cơ sụt giảm doanh thu trực tiếp của các cơ sở văn hóa địa phương.",
+  "rationaleVi": "Đáp ứng mức 8.0 thông qua ngôn ngữ nghị luận văn hóa sắc bén, phân biệt rõ tác động công nghệ số tới các mô hình tài chính truyền thống.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "ai-assisted-level-draft",
+  "version": 1
+ },
+ {
+  "id": "band-8.0-exp-040",
+  "practiceLevel": "8.0",
+  "type": "paragraph",
+  "topic": "môi trường",
+  "targetTerm": "carbon-offsetting disclosure mandates",
+  "meaningVi": "các quy định bắt buộc công khai bù đắp carbon",
+  "promptVi": "Việc áp dụng các quy định nghiêm ngặt bắt buộc công khai bù đắp carbon buộc các doanh nghiệp phải minh bạch hóa ngay lập tức sổ sách kế toán trên toàn chuỗi cung ứng. Dữ liệu tuân thủ ban đầu cho thấy các công ty logistics lớn đã nhanh chóng kiểm toán dấu chân carbon của mình để bảo vệ uy tín thương hiệu. Mặc dù vậy, việc phụ thuộc quá nhiều vào các tín chỉ carbon bên ngoài tạo ra một cảm giác ảo về tính bền vững trong khi làm chậm trễ các khoản đầu tư vốn thiết yếu vào việc giảm phát thải trực tiếp. Khả năng chống chịu môi trường thực sự đòi hỏi chuyển hướng sự chú ý của giới quản lý từ việc bù đắp trên giấy tờ sang sự phi carbon hóa vận hành đã qua kiểm chứng.",
+  "referenceAnswers": [
+   "Introducing strict carbon-offsetting disclosure mandates forces immediate corporate accounting transparency across supply chains. Initial compliance data revealed that major logistics firms swiftly audited their carbon footprints to protect brand reputations. Nevertheless, relying heavily on off-site carbon credits creates a false sense of sustainability while delaying essential capital investments in direct emission reductions. Achieving genuine environmental resilience mandates shifting regulatory focus from paper offsets to verified operational decarbonisation."
+  ],
+  "grammarTags": [
+   "corporate governance & structural decarbonisation"
+  ],
+  "explanationVi": "Đoạn văn phân tích sự khác biệt giữa tính minh bạch báo cáo tức thì và nguy cơ trì hoãn đầu tư cắt giảm khí thải thực tế trong dài hạn.",
+  "rationaleVi": "Thể hiện tư duy phản biện cấp độ 8.0 khi mổ xẻ hiện tượng 'tính bền vững bề nổi' (false sense of sustainability) và yêu cầu chuyển dịch cơ cấu thực chất.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "ai-assisted-level-draft",
+  "version": 1
+ },
+ {
+  "id": "band-8.0-exp-041",
+  "practiceLevel": "8.0",
+  "type": "paragraph",
+  "topic": "công việc",
+  "targetTerm": "operational friction",
+  "meaningVi": "ma sát vận hành",
+  "promptVi": "Việc triển khai mô hình tuần làm việc bốn ngày nén tạo ra sự cải thiện tức thì về sự hài lòng của nhân viên và tinh thần lao động. Các công ty tư vấn công nghệ tại một số đô thị, chẳng hạn, đã ghi nhận mức giảm đáng kể tỷ lệ nghỉ việc trong những quý đầu tiên áp dụng. Mặc dù vậy, sự sắp xếp này vô tình gây ra ma sát vận hành khi các nhóm kỹ thuật phải nỗ lực duy trì việc bao quát khách hàng liên tục trong những ngày nghỉ xoay vòng. Việc duy trì mô hình này về lâu dài đòi hỏi tái cấu trúc quy trình giao tiếp nội bộ hơn là chỉ đơn thuần rút ngắn thời gian có mặt tại văn phòng.",
+  "referenceAnswers": [
+   "Implementing a compressed four-day workweek yields an immediate improvement in employee satisfaction and workplace morale. Technology consultancies in certain metropolitan areas, for instance, recorded a marked drop in staff turnover during the initial quarters of adoption. Nevertheless, this arrangement inadvertently causes operational friction as engineering teams struggle to maintain continuous client coverage during staggered days off. Sustaining this model over the long run necessitates restructuring internal communication workflows rather than merely shortening office hours."
+  ],
+  "grammarTags": [
+   "Contrastive concession and long-term conditionality"
+  ],
+  "explanationVi": "Đoạn văn phân tích sự đánh đổi giữa lợi ích tinh thần ngắn hạn và những bất cập vận hành xuất hiện khi cắt giảm ngày làm việc, sử dụng thuật ngữ 'operational friction' để chỉ sự trục trặc trong phối hợp công việc.",
+  "rationaleVi": "Đạt cấp độ 8.0 nhờ cấu trúc luận điểm phức hợp, cân bằng giữa lợi ích tâm lý trước mắt và thách thức quản trị lâu dài với từ vựng chính xác cao.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "ai-assisted-level-draft",
+  "version": 1
+ },
+ {
+  "id": "band-8.0-exp-042",
+  "practiceLevel": "8.0",
+  "type": "paragraph",
+  "topic": "chính sách công",
+  "targetTerm": "regressive financial burden",
+  "meaningVi": "gánh nặng tài chính mang tính lũy thoái",
+  "promptVi": "Việc mở rộng các khu vực phát thải cực thấp đối với phương tiện cơ giới nhanh chóng mang lại sự cải thiện rõ rệt về chất lượng không khí nội đô. Dữ liệu giám sát từ những vùng áp dụng phí cho thấy mức giảm sâu của nồng độ nitơ dioxide chỉ trong vài tuần sau khi thực thi. Trái lại, việc phạt tiền các dòng xe cũ không đạt chuẩn lại tạo ra gánh nặng tài chính mang tính lũy thoái lên những người lao động thu nhập thấp vốn không thể chi trả cho việc đổi xe điện mới. Sự công bằng trong chuyển dịch môi trường vì vậy đòi hỏi kết hợp các vùng phát thải với những khoản trợ cấp đổi xe có mục tiêu thay vì chỉ dựa vào hình phạt tài chính.",
+  "referenceAnswers": [
+   "Expanding ultra-low emission zones for motor vehicles yields a swift, measurable improvement in inner-city air quality. Monitoring data from designated fee regions revealed a sharp decline in nitrogen dioxide concentrations within weeks of enforcement. Conversely, penalising older non-compliant vehicles places a regressive financial burden on lower-income commuters who cannot afford an immediate transition to electric alternatives. Achieving an equitable environmental transition demands pairing emission boundaries with targeted vehicle scrappage subsidies rather than relying solely on financial penalties."
+  ],
+  "grammarTags": [
+   "Adversative clause with policy qualification"
+  ],
+  "explanationVi": "Đoạn văn đối chiếu lợi ích môi trường trước mắt với tác động xã hội bất lợi kéo dài, dùng thuật ngữ 'regressive financial burden' để mô tả gánh nặng kinh tế không bình đẳng lên nhóm thu nhập thấp.",
+  "rationaleVi": "Thích hợp cho mức 8.0 nhờ tư duy lập luận chính sách đa chiều, sử dụng thuật ngữ kinh tế - xã hội tinh tế và diễn đạt tự nhiên theo chuẩn Anh - Anh.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "ai-assisted-level-draft",
+  "version": 1
+ },
+ {
+  "id": "band-8.0-exp-043",
+  "practiceLevel": "8.0",
+  "type": "paragraph",
+  "topic": "sức khỏe",
+  "targetTerm": "diagnostic uncertainty",
+  "meaningVi": "sự không chắc chắn trong chẩn đoán",
+  "promptVi": "Việc mở rộng dịch vụ khám chữa bệnh từ xa cung cấp giải pháp can thiệp y tế tức thì cho cư dân tại các vùng nông thôn xa xôi. Các dự án y tế số ở các vùng cao nguyên xa xôi đã nhanh chóng rút ngắn thời gian chờ đợi ban đầu cho những bệnh nhân cần tư vấn chuyên khoa khẩn cấp. Mặc dù vậy, việc thiếu thăm khám thể chất trực tiếp làm gia tăng rủi ro về sự không chắc chắn trong chẩn đoán đối với các triệu chứng lâm sàng phức tạp. Nhằm đảm bảo an toàn lâu dài cho người bệnh, giới quản lý y tế phải xây dựng mô hình chăm sóc kết hợp thay vì thay thế hoàn toàn các cuộc khám trực tiếp.",
+  "referenceAnswers": [
+   "Scaling up telemedicine services provides an immediate healthcare intervention for residents in remote rural locations. Digital health initiatives in remote highland regions rapidly reduced initial waiting times for patients requiring urgent specialist consultations. Even so, the absence of direct physical examinations heightens the risk of diagnostic uncertainty when dealing with complex clinical presentations. To safeguard long-term patient welfare, health authorities must establish integrated hybrid care models rather than completely replacing face-to-face appointments."
+  ],
+  "grammarTags": [
+   "Concessive qualification and prescriptive imperative"
+  ],
+  "explanationVi": "Đoạn văn phân tích giới hạn lâm sàng của y tế kỹ thuật số so với tốc độ tiếp cận ban đầu, sử dụng cụm từ 'diagnostic uncertainty' để thể hiện rủi ro chuyên môn.",
+  "rationaleVi": "Thể hiện độ sâu 8.0 qua việc đánh giá tính đa chiều của đổi mới công nghệ y tế và đưa ra khuyến nghị hệ thống có căn cứ.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "ai-assisted-level-draft",
+  "version": 1
+ },
+ {
+  "id": "band-8.0-exp-044",
+  "practiceLevel": "8.0",
+  "type": "paragraph",
+  "topic": "năng lượng",
+  "targetTerm": "capital outlay",
+  "meaningVi": "chi phí đầu tư vốn",
+  "promptVi": "Trợ giá thiết bị lưu trữ pin tại hộ gia đình tạo ra sự cắt giảm tức thì gánh nặng tải đỉnh lên lưới điện quốc gia trong thời gian nắng nóng gay gắt. Các chương trình khuyến khích hộ gia đình tại một số khu vực phía Nam đã thúc đẩy việc hấp thụ hiệu quả lượng điện mặt trời dư thừa trong các khung giờ cao điểm. Dẫu vậy, chi phí đầu tư vốn ban đầu đắt đỏ của công nghệ lưu trữ vẫn cấu thành một rào cản tài chính lớn đối với các gia đình có thu nhập trung bình. An ninh năng lượng phi tập trung bền vững chỉ có thể đạt được khi nhà nước triển khai các cơ chế cho thuê pin dài hạn cùng với sự hỗ trợ giá trực tiếp.",
+  "referenceAnswers": [
+   "Subsidising residential battery storage units achieves an immediate reduction in peak grid demand during periods of extreme weather. Household incentive schemes in several southern regions successfully prompted the absorption of surplus solar power during high-consumption hours. Nevertheless, the steep initial capital outlay of battery technology remains a substantial financial hurdle for average-income households. Sustainable decentralized energy security can only be realised when governments introduce long-term equipment leasing mechanisms alongside direct price support."
+  ],
+  "grammarTags": [
+   "Passive conditional limitation and strategic implication"
+  ],
+  "explanationVi": "Đoạn văn làm rõ rào cản chi phí ban đầu ('capital outlay') đối với hộ gia đình dù chính sách mang lại hiệu quả hạ nhiệt lưới điện tức thì.",
+  "rationaleVi": "Phù hợp tiêu chuẩn 8.0 nhờ sự mạch lạc trong lập luận về hạ tầng năng lượng và phân tích tác động tài chính ngắn hạn so với giải pháp cơ cấu dài hạn.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "ai-assisted-level-draft",
+  "version": 1
+ },
+ {
+  "id": "band-8.0-exp-045",
+  "practiceLevel": "8.0",
+  "type": "paragraph",
+  "topic": "giáo dục",
+  "targetTerm": "pedagogical distortion",
+  "meaningVi": "sự bóp méo phương pháp giảng dạy",
+  "promptVi": "Việc tăng cường các kỳ thi chuẩn hóa hàng năm cung cấp cho các nhà quản lý giáo dục những chỉ số trách nhiệm giải trình tức thì về hiệu suất của nhà trường. Kết quả kiểm tra công khai giúp phụ huynh nhanh chóng so sánh chất lượng giữa các cơ sở giáo dục địa phương trong các đợt tuyển sinh. Tuy nhiên, sự tập trung quá mức vào các bài kiểm tra áp lực cao gây ra sự bóp méo phương pháp giảng dạy khi giáo viên buộc phải thu hẹp chương trình học để luyện mẹo làm bài. Đổi mới giáo dục lâu dài đòi hỏi sự chuyển dịch sang các phương pháp đánh giá đa chiều nhằm nuôi dưỡng tư duy sáng tạo thay vì chỉ phục vụ thành tích ngắn hạn.",
+  "referenceAnswers": [
+   "Intensifying annual standardised testing provides education administrators with immediate metrics of school performance and accountability. Published examination results enable parents to compare local educational institutions swiftly during admissions cycles. However, an overreliance on high-stakes testing induces a pedagogical distortion as teachers are forced to narrow the curriculum towards exam technique. Long-term educational progress requires shifting towards multidimensional assessment frameworks that nurture creative thinking rather than servicing short-term performance targets."
+  ],
+  "grammarTags": [
+   "Counter-argumentative contrast with structural recommendation"
+  ],
+  "explanationVi": "Đoạn văn phản biện việc minh bạch chỉ số ngắn hạn qua thi cử bằng cách chỉ ra hiện tượng 'pedagogical distortion' (bóp méo sư phạm) làm tổn hại mục tiêu giáo dục dài hạn.",
+  "rationaleVi": "Đáp ứng mức 8.0 nhờ lối phân tích sắc bén về phương pháp luận giáo dục cùng cách dùng từ chính xác và học thuật.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "ai-assisted-level-draft",
+  "version": 1
+ },
+ {
+  "id": "band-8.0-exp-046",
+  "practiceLevel": "8.0",
+  "type": "paragraph",
+  "topic": "du lịch",
+  "targetTerm": "revenue volatility",
+  "meaningVi": "sự biến động doanh thu",
+  "promptVi": "Áp mức thuế bến đỗ nghiêm ngặt đối với tàu du lịch biển mang lại sự bảo vệ sinh thái tức thì cho các hệ thống cảng lịch sử nhạy cảm. Việc hạn chế số lượng tàu lớn cập các cảng đảo xa xôi đã lập tức làm giảm lượng chất thải xả ra và ngăn chặn tình trạng quá tải tại các điểm di sản ven biển. Trái lại, chính sách này gây ra sự biến động doanh thu cho các thương nhân bán lẻ địa phương vốn phụ thuộc hoàn toàn vào nguồn khách du lịch theo mùa. Sự phát triển du lịch bền vững đòi hỏi giới chức địa phương phải đa dạng hóa nền kinh tế dịch vụ ven biển thay vì phụ thuộc vào một ngành duy nhất.",
+  "referenceAnswers": [
+   "Imposing strict berthing levies on cruise ships delivers immediate ecological protection to vulnerable historical port environments. Restricting giant vessel arrivals in remote island ports instantly reduced marine discharge and alleviated crowding at coastal heritage sites. Conversely, this policy introduces revenue volatility for local retail merchants who rely heavily on seasonal footfall. Sustainable tourism management demands that municipal authorities diversify the coastal service economy rather than depending on a single visitor stream."
+  ],
+  "grammarTags": [
+   "Economic trade-off framing with governance imperative"
+  ],
+  "explanationVi": "Đoạn văn thảo luận sự đánh đổi giữa lợi ích môi trường tức thì và nguy cơ 'revenue volatility' (biến động doanh thu) đối với tiểu thương địa phương.",
+  "rationaleVi": "Chuẩn mực 8.0 ở khả năng liên kết logic giữa môi trường và kinh tế địa phương, tránh các kết luận rập khuôn.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "ai-assisted-level-draft",
+  "version": 1
+ },
+ {
+  "id": "band-8.0-exp-047",
+  "practiceLevel": "8.0",
+  "type": "paragraph",
+  "topic": "văn hóa",
+  "targetTerm": "diplomatic goodwill",
+  "meaningVi": "thiện chí ngoại giao",
+  "promptVi": "Việc hoàn trả các cổ vật thời thực dân cho quốc gia xuất xứ tạo ra sự gia tăng tức thì về thiện chí ngoại giao và uy tín quốc tế của các bảo tàng công. Các thỏa thuận trao trả hiện vật gần đây giữa các viện bảo tàng lớn và các quốc gia xuất xứ đã cải thiện đáng kể quan hệ đối ngoại và thúc đẩy sự hợp tác nghiên cứu song phương. Dù vậy, việc mất đi các bộ sưu tập chủ chốt gây ra áp lực tài chính trước mắt cho các viện bảo tàng khi lượng khách mua vé tham quan quốc tế suy giảm. Việc quản trị văn hóa hiện đại phải kết hợp hoạt động hoàn trả công bằng với các chương trình mượn hiện vật số để duy trì nguồn thu tài chính dài hạn.",
+  "referenceAnswers": [
+   "Restituting colonial-era artefacts to their countries of origin generates an immediate surge in diplomatic goodwill and international prestige for public museums. Recent repatriation agreements between major institutions and origin nations significantly enhanced bilateral research collaboration. Even so, surrendering core exhibition pieces creates immediate financial pressure for host galleries through diminished international ticket sales. Modern cultural governance must pair ethical restitution with digital loan frameworks to ensure long-term financial sustainability."
+  ],
+  "grammarTags": [
+   "Concessive financial limitation with policy synthesis"
+  ],
+  "explanationVi": "Đoạn văn phân tích lợi ích đối ngoại trước mắt ('diplomatic goodwill') song song với thách thức hụt thu tài chính của các bảo tàng về lâu dài.",
+  "rationaleVi": "Đạt độ chín 8.0 nhờ tư duy quản trị văn hóa quốc tế sâu sắc, văn phong trang trọng và chuẩn xác.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "ai-assisted-level-draft",
+  "version": 1
+ },
+ {
+  "id": "band-8.0-exp-048",
+  "practiceLevel": "8.0",
+  "type": "paragraph",
+  "topic": "nha ở",
+  "targetTerm": "social cohesion",
+  "meaningVi": "sự gắn kết xã hội",
+  "promptVi": "Việc hỗ trợ tài chính cho các mô hình nhà ở đồng cư giữa các thế hệ mang lại giải pháp tức thì cho cuộc khủng hoảng chi phí sinh hoạt của sinh viên và sự cô lập của người cao tuổi. Các dự án thí điểm tại một số thành phố lớn đã giải quyết hiệu quả nạn thiếu nhà ở giá rẻ bằng cách ghép đôi người trẻ với các chủ nhà lớn tuổi. Tuy nhiên, sự khác biệt về lối sống giữa các thế hệ có thể tạo ra những xung đột hàng ngày nếu thiếu các quy tắc sinh hoạt được thống nhất từ đầu. Về lâu dài, việc củng cố sự gắn kết xã hội thông qua các dự án này đòi hỏi sự hỗ trợ công tác xã hội liên tục hơn là chỉ đơn thuần cung cấp chỗ ở chung.",
+  "referenceAnswers": [
+   "Financial backing for intergenerational co-housing initiatives provides an immediate remedy for student living costs and elderly social isolation. Pilot schemes in several major cities successfully eased affordable housing shortages by pairing young adults with senior homeowners. However, lifestyle friction between generations can trigger daily interpersonal conflicts unless clear domestic boundaries are established early on. Ultimately, fostering genuine social cohesion through such projects requires sustained social work support rather than merely sharing physical spaces."
+  ],
+  "grammarTags": [
+   "Problem-solution trade-off with long-term conditionality"
+  ],
+  "explanationVi": "Đoạn văn làm rõ rằng lợi ích nhà ở ngắn hạn cần có sự can thiệp xã hội chuyên sâu để đạt được kết quả 'social cohesion' (gắn kết xã hội) thực sự trong dài hạn.",
+  "rationaleVi": "Thể hiện năng lực 8.0 qua lập luận mạch lạc về chính sách xã hội, sử dụng điều kiện hóa tinh tế và vốn từ vựng phong phú.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "ai-assisted-level-draft",
+  "version": 1
+ },
+ {
+  "id": "band-8.0-exp-049",
+  "practiceLevel": "8.0",
+  "type": "paragraph",
+  "topic": "nghiên cứu",
+  "targetTerm": "unintended consequence",
+  "meaningVi": "hệ lụy không lường trước",
+  "promptVi": "Chính sách bắt buộc áp dụng truy cập mở đối với các ấn phẩm nghiên cứu tạo ra sự gia tăng tức thì về tính minh bạch và tốc độ chia sẻ tri thức khoa học. Chẳng hạn, các nhà nghiên cứu tại các trường đại học nhỏ đã nhanh chóng tiếp cận được các phát hiện y khoa mới nhất mà không phải trả phí bản quyền đắt đỏ. Tuy nhiên, nghĩa vụ tài trợ phí xử lý bài viết chuyển gánh nặng tài chính sang các tác giả, tạo ra hệ lụy không lường trước là làm thiệt thòi cho các nhà khoa học độc lập thiếu nguồn vốn tài trợ. Việc dân chủ hóa tri thức lâu dài do đó đòi hỏi các cơ chế hỗ trợ chi phí công bằng thay vì chỉ triệt tiêu tường phí đăng ký.",
+  "referenceAnswers": [
+   "Mandating open-access publication policies yields an immediate surge in transparency and the dissemination speed of scientific knowledge. For instance, researchers at smaller universities rapidly gain access to cutting-edge medical findings without paying prohibitive subscription fees. However, the obligation to fund article processing charges shifts the financial burden onto authors, producing the unintended consequence of disadvantaging underfunded independent scholars. Long-term democratization of knowledge requires equitable fee-support mechanisms rather than merely eliminating paywalls."
+  ],
+  "grammarTags": [
+   "Short-term impact vs unexpected long-term downside"
+  ],
+  "explanationVi": "Từ 'unintended consequence' biểu thị một hậu quả ngoài ý muốn xuất hiện từ một hành động vốn có mục đích tốt. Trong đoạn văn, từ này mô tả tác động tiêu cực của chính sách truy cập mở đối với các nhà nghiên cứu thiếu vốn tài trợ.",
+  "rationaleVi": "Đoạn văn phân tích sâu sắc sự đánh đổi giữa lợi ích chia sẻ tri thức tức thì và rủi ro bất bình đẳng tài chính dài hạn trong giới khoa học, sử dụng cấu trúc lập luận chặt chẽ và từ vựng đạt chuẩn 8.0.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "ai-assisted-level-draft",
+  "version": 1
+ },
+ {
+  "id": "band-8.0-exp-050",
+  "practiceLevel": "8.0",
+  "type": "paragraph",
+  "topic": "nhà ở",
+  "targetTerm": "financial strain",
+  "meaningVi": "gánh nặng tài chính",
+  "promptVi": "Quyết định áp thuế lên bất động sản bỏ trống tạo ra sự hạ nhiệt tức thì cho cơn sốt đầu cơ nhà ở tại các trung tâm đô thị. Tại các quận nội thành, chính sách này đã giải phóng hàng nghìn căn hộ ra thị trường cho thuê ngay trong năm đầu áp dụng. Trái lại, quy định tài khóa này gây ra gánh nặng tài chính nặng nề cho những chủ sở hữu cao tuổi vốn thiếu dòng tiền mặt ổn định để nộp thuế dù họ sở hữu tài sản lâu năm. Khả năng chi trả nhà ở bền vững đòi hỏi một chiến lược tổng thể kết hợp điều tiết thuế với sự mở rộng nguồn cung nhà ở xã hội.",
+  "referenceAnswers": [
+   "The decision to levy taxes on vacant properties provides immediate cooling for speculative housing frenzies in urban centers. In inner-city districts, this policy released thousands of apartments into the rental market within its first year of implementation. Conversely, this fiscal measure imposes severe financial strain on elderly property owners who lack steady cash flow to cover the tax despite owning long-held assets. Sustainable housing affordability demands a comprehensive strategy combining tax regulation with the expansion of social housing supply."
+  ],
+  "grammarTags": [
+   "Policy counter-effect and trade-off analysis"
+  ],
+  "explanationVi": "'Financial strain' đề cập đến gánh nặng hoặc áp lực tài chính nghiêm trọng do chi phí phát sinh bất ngờ hoặc chính sách mới gây ra cho một cá nhân hay tổ chức.",
+  "rationaleVi": "Đoạn văn đạt chuẩn 8.0 nhờ phản ánh sự đánh đổi phức tạp giữa việc kiềm chế đầu cơ nhà ở ngắn hạn và áp lực tài chính dài hạn lên nhóm đối tượng yếu thế, được diễn đạt bằng thuật ngữ chuyên ngành tài chính - đô thị chính xác.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "ai-assisted-level-draft",
+  "version": 1
+ },
+ {
+  "id": "band-8.0-exp-051",
+  "practiceLevel": "8.0",
+  "type": "paragraph",
+  "topic": "đi lại",
+  "targetTerm": "perverse incentive",
+  "meaningVi": "động lực lệch lạc",
+  "promptVi": "Trợ giá vé giao thông công cộng trọn gói mang lại mức giảm tức thì về lượng ô tô cá nhân lưu thông trong giờ cao điểm. Các thành phố áp dụng vé tháng giá rẻ ghi nhận tỷ lệ lấp đầy xe buýt và tàu điện ngầm tăng vọt chỉ sau vài tuần. Dù vậy, mức giá cố định lại vô tình tạo ra động lực lệch lạc khi khuyến khích người dân thực hiện các chuyến đi ngắn không cần thiết thay vì đi bộ hay đạp xe. Sự dịch chuyển phương thức di chuyển bền vững đòi hỏi cấu trúc biểu giá linh hoạt dựa trên khoảng cách thay vì bình quân hóa chi phí.",
+  "referenceAnswers": [
+   "Subsidizing flat-rate public transport fares yields an immediate reduction in private car usage during peak traffic hours. Metropolitan areas adopting cheap monthly passes recorded a sharp surge in bus and underground occupancy within mere weeks. Nevertheless, fixed pricing inadvertently creates a perverse incentive by encouraging citizens to make short, unnecessary trips instead of walking or cycling. Sustainable modal shift requires flexible distance-based fare structures rather than cost equalization."
+  ],
+  "grammarTags": [
+   "Unintended behavioral consequence"
+  ],
+  "explanationVi": "'Perverse incentive' là khái niệm kinh tế - xã hội chỉ một chính sách tạo ra động cơ khuyến khích hành vi đi ngược lại mục đích ban đầu của chính sách đó.",
+  "rationaleVi": "Nội dung phân tích rõ tác hại ngược chiều của một giải pháp ngắn hạn lên thói quen di chuyển dài hạn, đáp ứng yêu cầu tư duy phản biện 8.0 với các cấu trúc kết nối nguyên nhân - hệ quả nâng cao.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "ai-assisted-level-draft",
+  "version": 1
+ },
+ {
+  "id": "band-8.0-exp-052",
+  "practiceLevel": "8.0",
+  "type": "paragraph",
+  "topic": "thể thao",
+  "targetTerm": "short-term windfall",
+  "meaningVi": "khoản lợi nhuận ngắn hạn",
+  "promptVi": "Cho phép các nền tảng cá cược trực tuyến tài trợ cho các câu lạc bộ bóng đá tạo ra khoản lợi nhuận ngắn hạn dồi dào để nâng cấp hạ tầng thi đấu. Doanh thu tài trợ gia tăng giúp các đội bóng hạng nhì đầu tư ngay lập tức vào hệ thống đào tạo trẻ và mặt sân hiện đại. Mặc dù vậy, sự bình thường hóa quảng cáo cờ bạc trên truyền hình để lại hậu quả dài hạn là gia tăng tỷ lệ nghiện ngập và kiệt quệ tài chính ở người hâm mộ trẻ tuổi. Sự ổn định tài chính của thể thao chuyên nghiệp không nên được xây dựng trên sự đánh đổi về an sinh cộng đồng.",
+  "referenceAnswers": [
+   "Allowing online gambling platforms to sponsor football clubs generates a substantial short-term windfall for upgrading match infrastructure. Increased sponsorship revenues enable lower-league teams to invest immediately in youth academies and modern playing surfaces. Nevertheless, the normalization of gambling advertisements on television incurs long-term consequences by driving up addiction rates and financial ruin among young supporters. The financial stability of professional sports should not be built on the sacrifice of community well-being."
+  ],
+  "grammarTags": [
+   "Economic trade-off vs social risk"
+  ],
+  "explanationVi": "'Short-term windfall' mô tả một khoản tiền hoặc lợi nhuận đột ngột có được trong ngắn hạn, thường đi kèm với những rủi ro bất ngờ về sau.",
+  "rationaleVi": "Đoạn văn thể hiện góc nhìn phản biện 8.0 khi đặt lợi ích tài chính trước mắt của tổ chức thể thao đối lập với chi phí xã hội phát sinh kéo dài, sử dụng văn phong học thuật mạch lạc.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "ai-assisted-level-draft",
+  "version": 1
+ },
+ {
+  "id": "band-8.0-exp-053",
+  "practiceLevel": "8.0",
+  "type": "paragraph",
+  "topic": "môi trường",
+  "targetTerm": "systemic vulnerability",
+  "meaningVi": "lỗ hổng mang tính hệ thống",
+  "promptVi": "Bằng cách áp dụng các thuật toán dự báo thời tiết tiên tiến, các trang trại năng lượng mặt trời đạt được sự tối ưu hóa tức thì trong việc phân phối điện năng lên lưới. Các thử nghiệm thực địa cho thấy hiệu suất truyền tải tăng đáng kể nhờ khả năng điều chỉnh lưu lượng điện theo thời gian thực. Dù vậy, sự phụ thuộc hoàn toàn vào hạ tầng đám mây tạo ra lỗ hổng mang tính hệ thống trước các cuộc tấn công mạng quy mô lớn. An ninh năng lượng bền vững do đó phải duy trì các hệ thống điều khiển dự phòng vật lý song song với việc số hóa vận hành.",
+  "referenceAnswers": [
+   "By deploying advanced weather forecasting algorithms, solar farms achieve immediate optimization in distributing electricity to the grid. Field trials demonstrated a marked rise in transmission efficiency due to real-time adjustments of power flows. Even so, absolute reliance on cloud infrastructure introduces a systemic vulnerability to large-scale cyberattacks. Sustainable energy security must therefore maintain physical backup control systems alongside operational digitization."
+  ],
+  "grammarTags": [
+   "Technological benefit vs structural risk"
+  ],
+  "explanationVi": "'Systemic vulnerability' chỉ điểm yếu nằm ở chính cấu trúc hoặc cốt lõi của một hệ thống, có thể khiến toàn bộ hệ thống sụp đổ khi bị tấn công.",
+  "rationaleVi": "Đoạn văn làm nổi bật sự đánh đổi giữa hiệu suất công nghệ trước mắt và rủi ro an ninh kết cấu dài hạn, thỏa mãn tiêu chí lập luận chặt chẽ và từ vựng chuẩn xác ở level 8.0.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "ai-assisted-level-draft",
+  "version": 1
+ },
+ {
+  "id": "band-8.0-exp-054",
+  "practiceLevel": "8.0",
+  "type": "paragraph",
+  "topic": "đồ ăn",
+  "targetTerm": "dietary quality",
+  "meaningVi": "chất lượng chế độ ăn uống",
+  "promptVi": "Tự động hóa dây chuyền đóng gói thực phẩm đông lạnh giúp giảm chi phí sản xuất và mang lại khả năng tiếp cận bữa ăn giá rẻ tức thì cho công nhân. Các siêu thị tại khu công nghiệp nhanh chóng lấp đầy kệ hàng với những khẩu phần ăn tiện lợi có giá thành thấp. Mặc dù vậy, việc lạm dụng chất bảo quản nhằm kéo dài thời hạn sử dụng lại làm suy giảm chất lượng chế độ ăn uống và gia tăng rủi ro sức khỏe mãn tính về lâu dài. Lợi ích tiết kiệm chi phí ngắn hạn vì thế không thể khỏa lấp những gánh nặng y tế phát sinh cho cộng đồng lao động.",
+  "referenceAnswers": [
+   "Automating frozen food packaging lines slashes production costs and provides immediate access to cheap meals for factory workers. Supermarkets in industrial zones rapidly stock their shelves with low-cost convenient portions. However, the heavy reliance on preservatives to extend shelf life degrades dietary quality and heightens chronic health risks in the long run. Short-term cost savings cannot offset the resulting healthcare burdens placed on working-class communities."
+  ],
+  "grammarTags": [
+   "Efficiency vs public health impact"
+  ],
+  "explanationVi": "'Dietary quality' chỉ độ bổ dưỡng và tính an toàn toàn diện của chế độ ăn uống đối với sức khỏe con người.",
+  "rationaleVi": "Bài viết phân tích thấu đáo xung đột giữa giá trị kinh tế ngắn hạn và chi phí sức khỏe cộng đồng dài hạn, đáp ứng hoàn toàn tiêu chí 8.0 nhờ cách diễn đạt tinh tế và ngữ pháp chính xác.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "ai-assisted-level-draft",
+  "version": 1
+ },
+ {
+  "id": "band-8.0-exp-055",
+  "practiceLevel": "8.0",
+  "type": "paragraph",
+  "topic": "văn hóa",
+  "targetTerm": "cultural commodification",
+  "meaningVi": "thương mại hóa văn hóa",
+  "promptVi": "Chuyển đổi các lễ hội truyền thống thành các trải nghiệm thực tế ảo mang lại sự bùng nổ tức thì về lượt tương tác từ du khách quốc tế. Các cơ quan du lịch địa phương ghi nhận hàng triệu lượt truy cập ứng dụng ngay trong tuần đầu tiên ra mắt sản phẩm di sản số. Trái lại, quá trình thương mại hóa văn hóa thông qua việc giản lược các nghi lễ phức tạp thành hình ảnh giải trí ngắn hạn có nguy cơ làm xói mòn ý nghĩa tâm linh gốc. Bảo tồn di sản bền vững đòi hỏi việc duy trì tính toàn vẹn của các thực hành thực tế bên cạnh những sáng kiến quảng bá số.",
+  "referenceAnswers": [
+   "Digitizing traditional festivals into virtual reality experiences yields an immediate surge in engagement from international tourists. Local tourism boards recorded millions of app interactions within the first week of launching digital heritage products. Conversely, cultural commodification through reducing complex rituals into short entertainment clips risks eroding the original spiritual significance. Sustainable heritage preservation necessitates maintaining the integrity of physical practices alongside digital promotional initiatives."
+  ],
+  "grammarTags": [
+   "Digital promotion vs heritage integrity"
+  ],
+  "explanationVi": "'Cultural commodification' là thuật ngữ nhân văn chỉ việc biến các giá trị hay nghi lễ văn hóa thiêng liêng thành hàng hóa thương mại phục vụ mục đích kinh doanh.",
+  "rationaleVi": "Đoạn văn so sánh sắc bén giữa chỉ số tương tác số ngắn hạn và sự suy thoái giá trị di sản lâu dài, thể hiện tư duy lập luận bậc cao và vốn từ vựng 8.0 thuộc lĩnh vực văn hóa.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "ai-assisted-level-draft",
+  "version": 1
+ },
+ {
+  "id": "band-8.0-exp-056",
+  "practiceLevel": "8.0",
+  "type": "paragraph",
+  "topic": "chính sách công",
+  "targetTerm": "fiscal trade-off",
+  "meaningVi": "sự đánh đổi về mặt tài khóa",
+  "promptVi": "Việc cắt giảm thuế thu nhập doanh nghiệp cho các công ty khởi nghiệp công nghệ mang lại đợt tăng trưởng tức thì về dòng vốn đầu tư tư nhân vào đổi mới sáng tạo. Nhiều đô thị đã chứng kiến sự xuất hiện nhanh chóng của các trung tâm công nghệ mới chỉ trong hai năm áp dụng chính sách ưu đãi. Tuy nhiên, đợt miễn giảm thuế này tạo ra sự đánh đổi về mặt tài khóa gay gắt khi buộc chính quyền địa phương phải cắt giảm chi tiêu cho hạ tầng công cộng cơ bản. Tăng trưởng kinh tế bền vững chỉ đạt được khi các ưu đãi tài chính đi kèm cam kết tái đầu tư của doanh nghiệp vào cộng đồng.",
+  "referenceAnswers": [
+   "Slashing corporate income tax for technology startups triggers an immediate influx of private investment into innovation. Numerous cities witnessed the rapid emergence of new tech hubs within just two years of implementing incentive policies. However, this tax exemption creates a severe fiscal trade-off by forcing local governments to curb spending on basic public infrastructure. Sustainable economic growth is only attainable when financial incentives are linked to corporate commitments to community reinvestment."
+  ],
+  "grammarTags": [
+   "Tax incentive vs public expenditure limitation"
+  ],
+  "explanationVi": "'Fiscal trade-off' phản ánh tình thế phải lựa chọn giữa hai mục tiêu tài chính của chính phủ (như giảm thuế thu hút đầu tư versus duy trì nguồn thu cho ngân sách hạ tầng).",
+  "rationaleVi": "Sử dụng từ vựng chính xác cao trong phân tích kinh tế vĩ mô, câu văn phát triển logic từ lợi ích ngắn hạn đến thách thức cân đối ngân sách dài hạn, đạt tiêu chuẩn khắt khe của Level 8.0.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "ai-assisted-level-draft",
+  "version": 1
+ },
+ {
+  "id": "band-8.0-exp-057",
+  "practiceLevel": "8.0",
+  "type": "paragraph",
+  "topic": "giáo dục",
+  "targetTerm": "accelerated degree schemes",
+  "meaningVi": "chương trình đại học rút ngắn",
+  "promptVi": "Triển khai các chương trình đại học rút ngắn mang lại sự giảm thiểu tức thì về chi phí giáo dục bậc cao cho sinh viên. Những người tham gia các khóa học hai năm tại nhiều cơ sở giáo dục đại học vùng tiết kiệm đáng kể học phí và sinh hoạt phí trong năm đầu tiên. Mặc dù vậy, sự dồn nén khối lượng kiến thức khiến người học thiếu thời gian để nghiên cứu sâu và phát triển kỹ năng phân tích phản biện. Việc hợp lý hóa thời lượng đào tạo nếu thiếu sự hỗ trợ sư phạm chuyên sâu sẽ có nguy cơ tạo ra một thế hệ cử nhân kém tự tin khi gia nhập thị trường lao động.",
+  "referenceAnswers": [
+   "Implementing accelerated degree schemes yields an immediate reduction in higher education expenses for students. Participants in two-year courses at regional higher education institutions save significantly on tuition and living costs during their first year. Nevertheless, compressing academic workloads leaves learners with insufficient time for deep research and critical analytical development. Streamlining course durations without intensive pedagogical support risks producing graduates ill-equipped for complex workplace demands."
+  ],
+  "grammarTags": [
+   "Paragraph development: Immediate gain vs long-term skill deficit"
+  ],
+  "explanationVi": "Đoạn văn phân tích sự đánh đổi giữa lợi ích tài chính trước mắt (tiết kiệm học phí/sinh hoạt phí) và rào cản dài hạn (thiếu chiều sâu nghiên cứu, tư duy phản biện).",
+  "rationaleVi": "Đạt cấp độ 8.0 nhờ cấu trúc lập luận chặt chẽ, sử dụng ngữ liệu và từ vựng thuật ngữ chính xác ('accelerated degree schemes', 'pedagogical support', 'compressing academic workloads').",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "ai-assisted-level-draft",
+  "version": 1
+ },
+ {
+  "id": "band-8.0-exp-058",
+  "practiceLevel": "8.0",
+  "type": "paragraph",
+  "topic": "nhà ở",
+  "targetTerm": "brownfield redevelopment",
+  "meaningVi": "tái phát triển các khu đất nâu",
+  "promptVi": "Mặc dù các dự án tái phát triển các khu đất nâu đem lại nguồn thu thuế đô thị gia tăng nhanh chóng thông qua việc xây dựng các khu thương mại sang trọng, chúng lại làm trầm trọng thêm tình trạng phân hóa không gian sống theo thời gian. Những đợt chỉnh trang đô thị tại các vùng hậu công nghiệp nhanh chóng thu hút dòng vốn tư nhân dồi dào, làm thay đổi các khu công nghiệp cũ chỉ trong vài tháng. Trái lại, chi phí bất động sản tăng vọt vô tình đẩy các hộ gia đình thu nhập thấp ra khu vực ngoại ô xa xôi. Việc khôi phục đô thị bền vững phụ thuộc vào quy định bắt buộc dành tỷ lệ nhà ở giá rẻ trong các dự án thương mại thay vì chỉ ưu tiên lợi nhuận tài chính ngắn hạn.",
+  "referenceAnswers": [
+   "While brownfield redevelopment projects deliver a rapid influx of municipal tax revenue through luxury commercial construction, they exacerbate spatial segregation over time. High-density regeneration schemes in post-industrial regions quickly attract substantial private capital, transforming derelict industrial sites within months. Conversely, soaring property values inadvertently displace lower-income households to peripheral suburbs. Sustainable urban renewal relies on mandatory affordable housing quotas within commercial projects rather than prioritising short-term financial returns."
+  ],
+  "grammarTags": [
+   "Paragraph development: Concession and spatial equity trade-off"
+  ],
+  "explanationVi": "Đoạn văn đối lập lợi ích tài khóa đô thị ngắn hạn với hệ lụy phân hóa xã hội và đẩy người thu nhập thấp ra ngoại ô về lâu dài.",
+  "rationaleVi": "Phù hợp mức 8.0 nhờ lập luận phân tầng phức hợp, kết hợp mệnh đề nhượng bộ và biệt ngữ quy hoạch đô thị Anh-Anh ('brownfield redevelopment', 'spatial segregation', 'peripheral suburbs').",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "ai-assisted-level-draft",
+  "version": 1
+ },
+ {
+  "id": "band-8.0-exp-059",
+  "practiceLevel": "8.0",
+  "type": "paragraph",
+  "topic": "sức khỏe",
+  "targetTerm": "wearable health monitors",
+  "meaningVi": "thiết bị theo dõi sức khỏe đeo tay",
+  "promptVi": "Việc các doanh nghiệp phân phát thiết bị theo dõi sức khỏe đeo tay thúc đẩy sự gia tăng tức thì về mức độ vận động thể chất của nhân viên văn phòng. Dữ liệu từ các chương trình phúc lợi tại các trung tâm thương mại lớn cho thấy tỷ lệ hoàn thành mục tiêu đi bộ hàng ngày tăng vọt trong những tháng đầu triển khai. Dù vậy, việc thu thập dữ liệu sinh học liên tục lại tạo ra áp lực tâm lý và lo ngại về sự giám sát nơi làm việc. Lợi ích sức khỏe ngắn hạn sẽ bị suy giảm trừ khi ban quản lý doanh nghiệp thiết lập các quy định rõ ràng kiểm soát ranh giới dữ liệu cá nhân.",
+  "referenceAnswers": [
+   "Corporate distribution of wearable health monitors fosters an immediate surge in physical activity among office personnel. Data from wellness initiatives in major commercial hubs reveals a sharp rise in daily step counts during the initial months of implementation. Even so, continuous biometric monitoring creates psychological strain and privacy concerns regarding workplace surveillance. Short-term fitness gains will be undermined unless corporate management establishes clear protocols governing personal data boundaries."
+  ],
+  "grammarTags": [
+   "Paragraph development: Evidence vs psychological limitation"
+  ],
+  "explanationVi": "Đoạn văn phân tích tác động tích cực ngắn hạn tới sức khỏe đối lập với rủi ro tâm lý và xâm phạm riêng tư dài hạn do bị giám sát sinh học.",
+  "rationaleVi": "Cấu trúc 8.0 thể hiện qua việc vận dụng lập luận phản biện sắc bén và các cụm từ tinh tế ('wearable health monitors', 'continuous biometric monitoring', 'workplace surveillance').",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "ai-assisted-level-draft",
+  "version": 1
+ },
+ {
+  "id": "band-8.0-exp-060",
+  "practiceLevel": "8.0",
+  "type": "paragraph",
+  "topic": "đi lại",
+  "targetTerm": "electric retrofit schemes",
+  "meaningVi": "chương trình cải tạo xe buýt điện",
+  "promptVi": "Các chương trình cải tạo xe buýt điện nhắm đến các đội xe công cộng đem lại sự giảm thiểu tức thì về ô nhiễm bụi mịn cục bộ tại các trung tâm thành phố. Các thử nghiệm tại những tuyến đường nội đô ở vùng đô thị lớn ghi nhận chất lượng không khí cải thiện rõ rệt chỉ vài tuần sau khi chuyển đổi động cơ diesel sang bộ truyền động điện. Mặc dù vậy, việc giữ lại bộ khung gầm đã cũ dẫn đến chi phí bảo trì dài hạn gia tăng và các vấn đề về độ tin cậy cơ khí cho các đơn vị vận tải. Việc hiện đại hóa giao thông công cộng đòi hỏi các chiến lược thay thế đội xe toàn diện hơn là chỉ dựa vào các giải pháp điều chỉnh cấu trúc tạm thời.",
+  "referenceAnswers": [
+   "Targeted electric retrofit schemes for public bus fleets deliver an instant reduction in localised particulate pollution across city centres. Trials along urban routes in metropolitan areas record marked air quality improvements mere weeks after converting diesel engines to electric powertrains. However, retaining ageing vehicle chassis leads to elevated long-term maintenance costs and mechanical reliability issues for transit operators. Modernising public transport requires comprehensive fleet replacement strategies rather than relying solely on interim structural modifications."
+  ],
+  "grammarTags": [
+   "Paragraph development: Immediate eco-gain vs operational risk"
+  ],
+  "explanationVi": "Tập trung phân tích sự đánh đổi giữa việc giảm phát thải tức thì với rủi ro chi phí bảo trì và hỏng hóc kỹ thuật do khung gầm xuống cấp theo thời gian.",
+  "rationaleVi": "Đáp ứng tiêu chuẩn 8.0 với sự mạch lạc cao, dùng thuật ngữ chuyên ngành giao thông ('electric retrofit schemes', 'localised particulate pollution', 'interim structural modifications').",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "ai-assisted-level-draft",
+  "version": 1
+ },
+ {
+  "id": "band-8.0-exp-061",
+  "practiceLevel": "8.0",
+  "type": "paragraph",
+  "topic": "văn hóa",
+  "targetTerm": "digitised archival collections",
+  "meaningVi": "các bộ sưu tập lưu trữ số hóa",
+  "promptVi": "Việc thành lập các bộ sưu tập lưu trữ số hóa mang lại cho các nhà nghiên cứu toàn cầu khả năng truy cập tức thì vào các văn bản lịch sử dễ hư hại mà không bị giới hạn về địa lý. Những dự án hợp tác tại các thư viện quốc gia cho phép giới học thuật quốc tế nghiên cứu các bản thảo mỏng mảnh mà không khiến bản gốc chịu sự mài mòn vật lý. Mặc dù vậy, sự sụt giảm lượng khách tham quan trực tiếp đe dọa trực tiếp đến doanh thu bán vé và bán lẻ của các viện di sản vùng. Việc bảo tồn di sản văn hóa về lâu dài đòi hỏi các mô hình tài trợ hỗn hợp nhằm bảo vệ các kho lưu trữ vật lý bên cạnh sự mở rộng kỹ thuật số.",
+  "referenceAnswers": [
+   "Establishing digitised archival collections grants global scholars instant access to fragile historic texts without geographic constraints. Collaborative projects at national libraries enable international researchers to examine delicate manuscripts without subjecting originals to physical wear. Nevertheless, falling footfall directly threatens ticket sales and retail revenue for regional heritage institutions. Preserving cultural legacy long term demands hybrid funding structures that safeguard physical archives alongside digital expansion."
+  ],
+  "grammarTags": [
+   "Paragraph development: Global access vs institution sustainability"
+  ],
+  "explanationVi": "Nêu bật sự đánh đổi giữa lợi ích tiếp cận tri thức toàn cầu tức thì và nguy cơ sụt giảm tài chính kéo dài của các viện lưu trữ địa phương.",
+  "rationaleVi": "Đạt chuẩn 8.0 nhờ văn phong học thuật chuẩn mực, chuyển ý mượt mà cùng thuật ngữ di sản chính xác ('digitised archival collections', 'subjecting originals to physical wear', 'hybrid funding structures').",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "ai-assisted-level-draft",
+  "version": 1
+ },
+ {
+  "id": "band-8.0-exp-062",
+  "practiceLevel": "8.0",
+  "type": "paragraph",
+  "topic": "năng lượng",
+  "targetTerm": "dynamic time-of-use tariffs",
+  "meaningVi": "biểu giá điện theo thời điểm linh hoạt",
+  "promptVi": "Việc áp dụng biểu giá điện theo thời điểm linh hoạt đạt được sự làm phẳng tức thì nhu cầu năng lượng cao điểm trên toàn bộ lưới điện đô thị. Các hộ gia đình sử dụng đồng hồ thông minh tại các khu vực thử nghiệm đã nhanh chóng chuyển việc sử dụng các thiết bị tiêu thụ nhiều năng lượng sang các giờ thấp điểm để giảm hóa đơn hàng tháng. Trái lại, cơ chế định giá này gây ra gánh nặng tài chính không đồng đều lên những lao động làm ca đêm vốn không thể thay đổi thói quen sinh hoạt hàng ngày. Việc đảm bảo công bằng năng lượng về lâu dài đòi hỏi các biện pháp bảo vệ biểu giá mục tiêu cho các nhóm kinh tế - xã hội dễ bị tổn thương bên cạnh định giá linh hoạt.",
+  "referenceAnswers": [
+   "Adopting dynamic time-of-use tariffs achieves an immediate smoothing of peak energy demand across municipal grids. Smart-metered households in trial regions swiftly shift high-energy appliance usage to off-peak hours to reduce monthly bills. Conversely, this pricing mechanism imposes disproportionate financial strain on night-shift workers who cannot alter their daily domestic routines. Ensuring energy equity over time requires targeted tariff protections for vulnerable socio-economic groups alongside flexible pricing."
+  ],
+  "grammarTags": [
+   "Paragraph development: Grid efficiency vs equity limitation"
+  ],
+  "explanationVi": "Đoạn văn đối sánh hiệu quả điều tiết phụ tải điện tức thì với gánh nặng tài chính bất công lên nhóm lao động thiếu tính linh hoạt thời gian về lâu dài.",
+  "rationaleVi": "Ở cấp độ 8.0, câu văn thể hiện sự điều tiết lập luận tinh tế và dùng từ chuyên sâu ('dynamic time-of-use tariffs', 'smoothing of peak energy demand', 'disproportionate financial strain').",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "ai-assisted-level-draft",
+  "version": 1
+ },
+ {
+  "id": "band-8.0-exp-063",
+  "practiceLevel": "8.0",
+  "type": "paragraph",
+  "topic": "đồ ăn",
+  "targetTerm": "takeaway packaging levies",
+  "meaningVi": "các khoản phí bao bì đồ ăn mang đi",
+  "promptVi": "Việc thực thi các khoản phí bao bì đồ ăn mang đi nghiêm ngặt tạo ra sự giảm thiểu nhanh chóng rác thải nhựa dọc theo các tuyến phố thương mại. Các khu ẩm thực tại các trung tâm đô thị ghi nhận lượng thải bỏ hộp chứa dùng một lần giảm đáng kể trong tháng đầu tiên tuân thủ. Tuy nhiên, các quán ăn độc lập nhỏ phải chịu áp lực chi phí vận hành nặng nề khi tìm nguồn cung ứng các giải pháp thay thế tự phân hủy sinh học đắt đỏ. Việc chuyển dịch sang tiêu dùng bền vững có nguy cơ làm phá sản các doanh nghiệp cung cấp dịch vụ ăn uống nhỏ trừ khi chính quyền đô thị trợ giá trực tiếp cho nguồn cung bao bì thân thiện với môi trường.",
+  "referenceAnswers": [
+   "Enforcing stringent takeaway packaging levies produces a swift reduction in plastic litter along commercial high streets. Food courts in urban centres record a marked drop in single-use container disposal during the first month of compliance. However, small independent eateries bear severe operational cost pressures when sourcing expensive biodegradable alternatives. Transitioning towards sustainable consumption risks bankrupting micro-catering businesses unless municipal authorities directly subsidise eco-friendly packaging supplies."
+  ],
+  "grammarTags": [
+   "Paragraph development: Waste reduction vs business solvency"
+  ],
+  "explanationVi": "Đoạn văn phân tích tác động giảm rác thải sinh thái tức thì so với nguy cơ phá sản của các nhà hàng nhỏ do chi phí bao bì sinh học đắt đỏ.",
+  "rationaleVi": "Phù hợp mức 8.0 với sự liên kết chặt chẽ giữa các câu, chính tả Anh-Anh ('subsidise') và diễn đạt tự nhiên, chính xác ('takeaway packaging levies', 'micro-catering businesses').",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "ai-assisted-level-draft",
+  "version": 1
+ },
+ {
+  "id": "band-8.0-exp-064",
+  "practiceLevel": "8.0",
+  "type": "paragraph",
+  "topic": "thời gian",
+  "targetTerm": "off-hours email blackouts",
+  "meaningVi": "thời gian ngừng truy cập email ngoài giờ làm việc",
+  "promptVi": "Quy định thời gian ngừng truy cập email ngoài giờ làm việc mang lại sự giảm sút tức thì về căng thẳng liên quan đến công việc cho nhân viên. Các doanh nghiệp áp dụng chính sách này ghi nhận chỉ số hài lòng của người lao động tăng rõ rệt sau khi chặn máy chủ thư điện tử vào buổi tối. Dù vậy, biện pháp này tạo ra ma sát vận hành đối với các dự án hợp tác xuyên quốc gia lệch múi giờ. Khả năng duy trì hiệu suất làm việc toàn cầu về lâu dài đòi hỏi sự linh hoạt trong giao tiếp được thỏa thuận trước thay vì các quy định cấm đoán cứng nhắc.",
+  "referenceAnswers": [
+   "Instituting mandatory off-hours email blackouts yields an immediate decline in work-related stress among corporate staff. Enterprises adopting this policy often report noticeable improvements in employee satisfaction metrics after blocking email servers during evening hours. Even so, this restriction introduces operational friction for cross-border projects operating across disparate time zones. Maintaining global productivity long term necessitates negotiated communication flexibility rather than blanket communication bans."
+  ],
+  "grammarTags": [
+   "Paragraph development: Stress relief vs cross-border friction"
+  ],
+  "explanationVi": "Chỉ ra sự khác biệt giữa hiệu quả giảm căng thẳng nội bộ tức thì và rào cản vận hành dài hạn đối với quy trình làm việc toàn cầu lệch múi giờ.",
+  "rationaleVi": "Mức 8.0 thể hiện qua khả năng cấu trúc lập luận cân bằng, chính xác về từ vựng tổ chức ('off-hours email blackouts', 'operational friction', 'disparate time zones').",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "ai-assisted-level-draft",
+  "version": 1
+ },
+ {
+  "id": "band-8.0-exp-065",
+  "practiceLevel": "8.0",
+  "type": "paragraph",
+  "topic": "công việc",
+  "targetTerm": "surveillance anxiety",
+  "meaningVi": "mối lo ngại bị giám sát",
+  "promptVi": "Việc tích hợp các phần mềm giám sát năng suất dựa trên trí tuệ nhân tạo mang lại mức tăng trưởng tức thì về hiệu suất làm việc của nhân viên từ xa. Các doanh nghiệp ghi nhận tiến độ hoàn thành dự án nhanh hơn đáng kể trong hai quý đầu triển khai hệ thống theo dõi thời gian thực. Trái lại, sự theo dõi liên tục này vô tình gia tăng mối lo ngại bị giám sát và làm xói mòn niềm tin giữa cấp quản lý và người lao động. Việc duy trì hiệu quả vận hành lâu dài đòi hỏi các doanh nghiệp phải xây dựng cơ chế đánh giá dựa trên kết quả thay vì phụ thuộc vào các công cụ kiểm soát xâm phạm đời tư.",
+  "referenceAnswers": [
+   "Integrating artificial intelligence-driven productivity software yields immediate gains in the output of remote employees. Enterprises often record significantly faster project completion rates during the first two quarters of implementing real-time tracking systems. Conversely, this continuous monitoring inadvertently heightens surveillance anxiety and erodes trust between management and the workforce. Sustaining long-term operational efficiency requires enterprises to build outcome-based evaluation mechanisms rather than relying on intrusive control tools."
+  ],
+  "grammarTags": [
+   "Cause and effect & Trade-off analysis"
+  ],
+  "explanationVi": "Cụm từ 'surveillance anxiety' dịch chính xác khái niệm 'mối lo ngại bị giám sát' trong bối cảnh quản trị nhân sự. Đoạn văn đối lập lợi ích năng suất ngắn hạn với hệ lụy lâu dài về tâm lý người lao động.",
+  "rationaleVi": "Đoạn văn đạt chuẩn 8.0 nhờ cấu trúc lập luận chặt chẽ, từ vựng học thuật chính xác (intrusive control tools, outcome-based evaluation) và sự phân tích sắc bén giữa hiệu quả ngắn hạn với tổn hại niềm tin dài hạn.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "ai-assisted-level-draft",
+  "version": 1
+ },
+ {
+  "id": "esl-v2-r16-u01-003",
+  "practiceLevel": "8.0",
+  "type": "paragraph",
+  "topic": "Đọc hiểu độ chắc chắn",
+  "promptVi": "Một cuộc khảo sát nhỏ ghi nhận người đi xe buýt hài lòng hơn sau khi lịch trình được điều chỉnh. Kết quả này phù hợp với giả thuyết rằng dịch vụ đã cải thiện, nhưng những người không trả lời khảo sát có thể có trải nghiệm khác. Vì vậy, cơ quan quản lý nên xem đây là tín hiệu ban đầu, không phải bằng chứng cuối cùng.",
+  "referenceAnswers": [
+   "A small survey found higher satisfaction among bus users after the timetable was revised. This is consistent with the hypothesis that the service has improved, but non-respondents may have had different experiences. The authority should therefore treat the finding as an initial indication rather than conclusive evidence."
+  ],
+  "grammarTags": [
+   "epistemic_modality",
+   "scope_of_claim",
+   "hedging",
+   "evidence_strength",
+   "guided"
+  ],
+  "explanationVi": "May/might/can tùy ngữ cảnh; không nâng thành will/must. Không đảo quan hệ thời gian. Không biến bằng chứng hạn chế thành kết luận đã chứng minh.",
+  "rationaleVi": "Phân tích sự đánh đổi và phân biệt tác động trước mắt với tác động dài hạn. Bài bổ sung từ bộ ESL v2 (R16-U01), chủ đề Đọc hiểu độ chắc chắn.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "esl-v2",
+  "version": 1
+ },
+ {
+  "id": "esl-v2-r16-u01-004",
+  "practiceLevel": "8.0",
+  "type": "paragraph",
+  "topic": "Đọc hiểu độ chắc chắn",
+  "promptVi": "Một trường cho biết điểm kiểm tra trung bình tăng sau khi đưa máy tính bảng vào lớp. Tuy nhiên, học sinh cũng được học thêm giờ trong cùng học kỳ, nên chưa thể quy toàn bộ sự cải thiện cho thiết bị. Muốn đánh giá tác động riêng của máy tính bảng, nhà trường cần một thiết kế so sánh đáng tin cậy hơn.",
+  "referenceAnswers": [
+   "A school reported higher average test scores after introducing tablets into classrooms. However, pupils also received additional teaching hours that term, so the improvement cannot be attributed entirely to the devices. A more credible comparison would be needed to isolate the tablets' contribution."
+  ],
+  "grammarTags": [
+   "epistemic_modality",
+   "scope_of_claim",
+   "hedging",
+   "evidence_strength",
+   "independent"
+  ],
+  "explanationVi": "Không đảo quan hệ thời gian. Không bỏ luận điểm ban đầu khi diễn đạt ý phản biện.",
+  "rationaleVi": "Phân tích sự đánh đổi và phân biệt tác động trước mắt với tác động dài hạn. Bài bổ sung từ bộ ESL v2 (R16-U01), chủ đề Đọc hiểu độ chắc chắn.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "esl-v2",
+  "version": 1
+ },
+ {
+  "id": "esl-v2-r16-u01-005",
+  "practiceLevel": "8.0",
+  "type": "paragraph",
+  "topic": "Đọc hiểu độ chắc chắn",
+  "promptVi": "Dữ liệu từ hai trạm quan trắc cho thấy mức bụi mịn giảm vào cuối tuần. Điều này có thể phản ánh lượng xe lưu thông thấp hơn, nhưng thời tiết cũng ảnh hưởng đến cách các hạt ô nhiễm phân tán. Nghiên cứu cần xem xét cả hai yếu tố trước khi đưa ra kết luận về giao thông.",
+  "referenceAnswers": [
+   "Measurements from two monitoring stations show lower fine-particle concentrations at weekends. This may reflect lighter traffic, although weather also affects how pollutants disperse. Both influences should be examined before drawing conclusions about transport."
+  ],
+  "grammarTags": [
+   "epistemic_modality",
+   "scope_of_claim",
+   "hedging",
+   "evidence_strength",
+   "independent"
+  ],
+  "explanationVi": "May/might/can tùy ngữ cảnh; không nâng thành will/must. Không đảo thời điểm, hành động và chủ thể.",
+  "rationaleVi": "Phân tích sự đánh đổi và phân biệt tác động trước mắt với tác động dài hạn. Bài bổ sung từ bộ ESL v2 (R16-U01), chủ đề Đọc hiểu độ chắc chắn.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "esl-v2",
+  "version": 1
+ },
+ {
+  "id": "esl-v2-r16-u01-006",
+  "practiceLevel": "8.0",
+  "type": "paragraph",
+  "topic": "Đọc hiểu độ chắc chắn",
+  "promptVi": "Số người tham dự buổi họp cộng đồng cao hơn dự kiến, cho thấy chủ đề này có thể được quan tâm rộng rãi. Tuy vậy, không thể suy ra rằng phần lớn cư dân đồng ý với đề xuất, vì một số người có thể đến để phản đối. Phản hồi cần được phân tích theo nội dung chứ không chỉ theo số người có mặt.",
+  "referenceAnswers": [
+   "Attendance at the community meeting exceeded expectations, suggesting that the issue may attract broad interest. It does not follow, however, that most residents support the proposal, since some may have attended to object. Feedback should be assessed by what people said, not simply by how many were present."
+  ],
+  "grammarTags": [
+   "epistemic_modality",
+   "scope_of_claim",
+   "hedging",
+   "evidence_strength",
+   "independent"
+  ],
+  "explanationVi": "Giữ giới hạn “một số”, không nâng thành tất cả. Giữ lượng từ phần lớn, không khẳng định tuyệt đối. May/might/can tùy ngữ cảnh; không nâng thành will/must. Không biến mệnh đề phủ định/không thể thành khẳng định khả năng.",
+  "rationaleVi": "Phân tích sự đánh đổi và phân biệt tác động trước mắt với tác động dài hạn. Bài bổ sung từ bộ ESL v2 (R16-U01), chủ đề Đọc hiểu độ chắc chắn.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "esl-v2",
+  "version": 1
+ },
+ {
+  "id": "esl-v2-r16-u01-007",
+  "practiceLevel": "8.0",
+  "type": "paragraph",
+  "topic": "Đọc hiểu độ chắc chắn",
+  "promptVi": "Giá thuê nhà tăng nhanh hơn thu nhập trung bình tại một khu vực trong ba năm. Điều này cho thấy khả năng chi trả có thể đang xấu đi, nhưng số liệu trung bình không thể hiện đầy đủ tình hình của từng nhóm hộ. Một phân tích hữu ích cần tách riêng người thuê lâu năm và người mới chuyển đến.",
+  "referenceAnswers": [
+   "Rents rose faster than average incomes in one area over three years. This suggests that affordability may be worsening, but averages do not capture the circumstances of every household. A useful analysis would distinguish long-standing tenants from recent arrivals."
+  ],
+  "grammarTags": [
+   "epistemic_modality",
+   "scope_of_claim",
+   "hedging",
+   "evidence_strength",
+   "challenge"
+  ],
+  "explanationVi": "May/might/can tùy ngữ cảnh; không nâng thành will/must. Không biến mệnh đề phủ định/không thể thành khẳng định khả năng.",
+  "rationaleVi": "Phân tích sự đánh đổi và phân biệt tác động trước mắt với tác động dài hạn. Bài bổ sung từ bộ ESL v2 (R16-U01), chủ đề Đọc hiểu độ chắc chắn.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "esl-v2",
+  "version": 1
+ },
+ {
+  "id": "esl-v2-r16-u01-008",
+  "practiceLevel": "8.0",
+  "type": "paragraph",
+  "topic": "Đọc hiểu độ chắc chắn",
+  "promptVi": "Nhu cầu điện tăng đột biến trong một đợt nắng nóng, nhưng chưa rõ mức tăng có tiếp diễn trong những mùa sau hay không. Nếu đó chỉ là một sự kiện bất thường, đầu tư dựa trên đỉnh nhu cầu ấy có thể dẫn đến công suất dư thừa. Cơ quan lập kế hoạch nên kết hợp dữ liệu nhiều năm với các kịch bản khí hậu khác nhau.",
+  "referenceAnswers": [
+   "Electricity demand spiked during a heatwave, but it is unclear whether the increase will persist in later seasons. If the spike was exceptional, investment based on that peak could create excess capacity. Planners should combine several years of data with different climate scenarios."
+  ],
+  "grammarTags": [
+   "epistemic_modality",
+   "scope_of_claim",
+   "hedging",
+   "evidence_strength",
+   "mastery"
+  ],
+  "explanationVi": "May/might/can tùy ngữ cảnh; không nâng thành will/must. Kiểm tra giả định hay điều kiện thực và thứ tự hai vế. Không nâng thường thành luôn luôn.",
+  "rationaleVi": "Phân tích sự đánh đổi và phân biệt tác động trước mắt với tác động dài hạn. Bài bổ sung từ bộ ESL v2 (R16-U01), chủ đề Đọc hiểu độ chắc chắn.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "esl-v2",
+  "version": 1
+ },
+ {
+  "id": "esl-v2-r16-u02-003",
+  "practiceLevel": "8.0",
+  "type": "paragraph",
+  "topic": "Phân biệt dữ liệu/giả định",
+  "promptVi": "Sau khi một con đường được mở thêm làn xe đạp, cửa hàng gần đó báo doanh thu tăng. Tuy nhiên, một lễ hội kéo dài cả tháng cũng diễn ra trong khu vực, làm tăng lượng khách đi bộ. Nếu không tách được ảnh hưởng của lễ hội, khó có thể khẳng định làn xe đạp là nguyên nhân chính của mức tăng doanh thu.",
+  "referenceAnswers": [
+   "Shops near a street reported higher sales after a cycle lane was added. However, a month-long festival in the area also increased pedestrian traffic. Unless the festival's effect can be separated out, it is difficult to claim that the cycle lane was the main cause of the rise in sales."
+  ],
+  "grammarTags": [
+   "correlation_vs_causation",
+   "data_quality",
+   "confounders",
+   "sampling",
+   "guided"
+  ],
+  "explanationVi": "May/might/can tùy ngữ cảnh; không nâng thành will/must. Kiểm tra giả định hay điều kiện thực và thứ tự hai vế. Không đảo quan hệ thời gian. Không bỏ luận điểm ban đầu khi diễn đạt ý phản biện.",
+  "rationaleVi": "Phân tích sự đánh đổi và phân biệt tác động trước mắt với tác động dài hạn. Bài bổ sung từ bộ ESL v2 (R16-U02), chủ đề Phân biệt dữ liệu/giả định.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "esl-v2",
+  "version": 1
+ },
+ {
+  "id": "esl-v2-r16-u02-004",
+  "practiceLevel": "8.0",
+  "type": "paragraph",
+  "topic": "Phân biệt dữ liệu/giả định",
+  "promptVi": "Một nhóm tình nguyện viên dùng ứng dụng theo dõi sức khỏe cho biết họ ngủ ngon hơn. Vì những người tham gia tự đăng ký, họ có thể đã quan tâm đến sức khỏe hơn người bình thường ngay từ đầu. Kết quả vì vậy chưa thể được khái quát cho tất cả người sử dụng điện thoại.",
+  "referenceAnswers": [
+   "A group of volunteers using a health-tracking app reported better sleep. Because participants enrolled themselves, they may have been more health-conscious than the average person from the outset. The finding therefore cannot yet be generalised to all smartphone users."
+  ],
+  "grammarTags": [
+   "correlation_vs_causation",
+   "data_quality",
+   "confounders",
+   "sampling",
+   "independent"
+  ],
+  "explanationVi": "May/might/can tùy ngữ cảnh; không nâng thành will/must. Không nâng thường thành luôn luôn.",
+  "rationaleVi": "Phân tích sự đánh đổi và phân biệt tác động trước mắt với tác động dài hạn. Bài bổ sung từ bộ ESL v2 (R16-U02), chủ đề Phân biệt dữ liệu/giả định.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "esl-v2",
+  "version": 1
+ },
+ {
+  "id": "esl-v2-r16-u02-005",
+  "practiceLevel": "8.0",
+  "type": "paragraph",
+  "topic": "Phân biệt dữ liệu/giả định",
+  "promptVi": "Nền tảng học trực tuyến công bố tỷ lệ hoàn thành khóa học cao, nhưng chỉ tính những học viên đã vượt qua tuần đầu. Những người bỏ học sớm bị loại khỏi mẫu số, khiến chỉ số trông tích cực hơn. Để so sánh công bằng, báo cáo cần công bố cả tỷ lệ tính từ lúc đăng ký ban đầu.",
+  "referenceAnswers": [
+   "An online learning platform reported a high course-completion rate, but counted only students who had passed the first week. Early dropouts were excluded from the denominator, making the figure appear more favourable. For a fair comparison, the report should also disclose the completion rate based on initial enrolment."
+  ],
+  "grammarTags": [
+   "correlation_vs_causation",
+   "data_quality",
+   "confounders",
+   "sampling",
+   "independent"
+  ],
+  "explanationVi": "Giữ đúng tác nhân, mức chắc chắn, phạm vi và quan hệ giữa các câu.",
+  "rationaleVi": "Phân tích sự đánh đổi và phân biệt tác động trước mắt với tác động dài hạn. Bài bổ sung từ bộ ESL v2 (R16-U02), chủ đề Phân biệt dữ liệu/giả định.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "esl-v2",
+  "version": 1
+ },
+ {
+  "id": "esl-v2-r16-u02-006",
+  "practiceLevel": "8.0",
+  "type": "paragraph",
+  "topic": "Phân biệt dữ liệu/giả định",
+  "promptVi": "Thành phố tuyên bố tỷ lệ tái chế tăng sau chiến dịch truyền thông, song số liệu được tính từ lượng rác thu gom riêng chứ không phải lượng thực sự được tái chế. Một phần vật liệu có thể bị loại tại nhà máy vì nhiễm bẩn. Do đó, số liệu thu gom chỉ nên được xem là chỉ báo trung gian của hiệu quả chương trình.",
+  "referenceAnswers": [
+   "The city said recycling had increased after an awareness campaign, but its figures measured separately collected waste rather than material actually recycled. Some of the material may be rejected at processing plants because of contamination. Collection figures should therefore be treated as a proxy for programme effectiveness, not a direct measure of it."
+  ],
+  "grammarTags": [
+   "correlation_vs_causation",
+   "data_quality",
+   "confounders",
+   "sampling",
+   "independent"
+  ],
+  "explanationVi": "May/might/can tùy ngữ cảnh; không nâng thành will/must.",
+  "rationaleVi": "Phân tích sự đánh đổi và phân biệt tác động trước mắt với tác động dài hạn. Bài bổ sung từ bộ ESL v2 (R16-U02), chủ đề Phân biệt dữ liệu/giả định.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "esl-v2",
+  "version": 1
+ },
+ {
+  "id": "esl-v2-r16-u02-007",
+  "practiceLevel": "8.0",
+  "type": "paragraph",
+  "topic": "Phân biệt dữ liệu/giả định",
+  "promptVi": "Camera tại các ngã tư ghi nhận số vụ va chạm giảm sau khi giới hạn tốc độ được điều chỉnh. Dù xu hướng này đáng khích lệ, thành phố đồng thời thay đổi thiết kế đèn tín hiệu. Một nghiên cứu đáng tin cậy phải xét khả năng cả hai thay đổi cùng góp phần vào kết quả.",
+  "referenceAnswers": [
+   "Cameras at junctions recorded fewer collisions after the speed limit was revised. Encouraging though this trend is, the city also changed the traffic-signal design. A credible evaluation must consider whether both changes contributed to the outcome."
+  ],
+  "grammarTags": [
+   "correlation_vs_causation",
+   "data_quality",
+   "confounders",
+   "sampling",
+   "challenge"
+  ],
+  "explanationVi": "Góp phần là một tác nhân, chưa phải nguyên nhân duy nhất. Không đảo quan hệ thời gian. Giữ giới hạn của phát biểu và điều kiện áp dụng.",
+  "rationaleVi": "Phân tích sự đánh đổi và phân biệt tác động trước mắt với tác động dài hạn. Bài bổ sung từ bộ ESL v2 (R16-U02), chủ đề Phân biệt dữ liệu/giả định.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "esl-v2",
+  "version": 1
+ },
+ {
+  "id": "esl-v2-r16-u02-008",
+  "practiceLevel": "8.0",
+  "type": "paragraph",
+  "topic": "Phân biệt dữ liệu/giả định",
+  "promptVi": "Một khảo sát nhân viên cho thấy nhóm làm việc linh hoạt tự đánh giá năng suất cao hơn nhóm làm toàn thời gian tại văn phòng. Tuy nhiên, hai nhóm đảm nhận công việc khác nhau nên không thể so sánh trực tiếp. Doanh nghiệp cần phân tích theo loại nhiệm vụ trước khi quyết định mở rộng chính sách.",
+  "referenceAnswers": [
+   "An employee survey found that flexible workers rated their productivity more highly than staff based in the office full time. However, the two groups performed different kinds of work, so they cannot be compared directly. The company should analyse results by task type before extending the policy."
+  ],
+  "grammarTags": [
+   "correlation_vs_causation",
+   "data_quality",
+   "confounders",
+   "sampling",
+   "mastery"
+  ],
+  "explanationVi": "Không đảo thời điểm, hành động và chủ thể. Không bỏ luận điểm ban đầu khi diễn đạt ý phản biện. Không biến mệnh đề phủ định/không thể thành khẳng định khả năng.",
+  "rationaleVi": "Phân tích sự đánh đổi và phân biệt tác động trước mắt với tác động dài hạn. Bài bổ sung từ bộ ESL v2 (R16-U02), chủ đề Phân biệt dữ liệu/giả định.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "esl-v2",
+  "version": 1
+ },
+ {
+  "id": "esl-v2-r16-u03-003",
+  "practiceLevel": "8.0",
+  "type": "paragraph",
+  "topic": "Đánh đổi chính sách",
+  "promptVi": "Trồng thêm cây ven đường giúp giảm nắng nóng và cải thiện không gian công cộng. Tuy nhiên, tại những con phố rất hẹp, việc dành thêm diện tích cho cây có thể làm giảm không gian đi bộ nếu thiết kế thiếu cẩn thận. Vì thế, lợi ích của chương trình phụ thuộc không chỉ vào số cây trồng mà còn vào cách bố trí.",
+  "referenceAnswers": [
+   "Planting more roadside trees can reduce heat and improve public spaces. On very narrow streets, however, allocating more room to trees may reduce pedestrian space if the design is careless. The programme's value therefore depends not only on how many trees are planted but also on their placement."
+  ],
+  "grammarTags": [
+   "policy_tradeoffs",
+   "distributional_impacts",
+   "opportunity_cost",
+   "short_vs_long_term",
+   "guided"
+  ],
+  "explanationVi": "May/might/can tùy ngữ cảnh; không nâng thành will/must. Kiểm tra giả định hay điều kiện thực và thứ tự hai vế. Không bỏ luận điểm ban đầu khi diễn đạt ý phản biện.",
+  "rationaleVi": "Phân tích sự đánh đổi và phân biệt tác động trước mắt với tác động dài hạn. Bài bổ sung từ bộ ESL v2 (R16-U03), chủ đề Đánh đổi chính sách.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "esl-v2",
+  "version": 1
+ },
+ {
+  "id": "esl-v2-r16-u03-004",
+  "practiceLevel": "8.0",
+  "type": "paragraph",
+  "topic": "Đánh đổi chính sách",
+  "promptVi": "Trợ cấp kết nối Internet cho mọi hộ có thể thu hẹp chênh lệch về khả năng truy cập, song hỗ trợ đồng đều sẽ tốn nguồn lực cho cả những gia đình vốn đã đủ khả năng chi trả. Một chương trình dựa trên thu nhập có thể tiết kiệm ngân sách hơn, nhưng cũng có nguy cơ bỏ sót người cần giúp đỡ nếu thủ tục phức tạp. Chính quyền phải cân nhắc chi phí hành chính cùng với mức độ bao phủ thực tế.",
+  "referenceAnswers": [
+   "A universal household internet subsidy could narrow gaps in access, but it would also spend public funds on families already able to pay. An income-targeted scheme might cost less, yet complex procedures could exclude people who need help. Policymakers must weigh administrative costs alongside actual coverage."
+  ],
+  "grammarTags": [
+   "policy_tradeoffs",
+   "distributional_impacts",
+   "opportunity_cost",
+   "short_vs_long_term",
+   "independent"
+  ],
+  "explanationVi": "May/might/can tùy ngữ cảnh; không nâng thành will/must. Kiểm tra giả định hay điều kiện thực và thứ tự hai vế. Không tự thêm khoản tiền/nguồn ngân sách không có trong đề.",
+  "rationaleVi": "Phân tích sự đánh đổi và phân biệt tác động trước mắt với tác động dài hạn. Bài bổ sung từ bộ ESL v2 (R16-U03), chủ đề Đánh đổi chính sách.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "esl-v2",
+  "version": 1
+ },
+ {
+  "id": "esl-v2-r16-u03-005",
+  "practiceLevel": "8.0",
+  "type": "paragraph",
+  "topic": "Đánh đổi chính sách",
+  "promptVi": "Thuế phát thải có thể khuyến khích doanh nghiệp sử dụng công nghệ sạch hơn. Tuy nhiên, nếu chi phí được chuyển toàn bộ sang giá hàng hóa thiết yếu, các hộ thu nhập thấp có thể chịu tác động nặng hơn. Một thiết kế công bằng cần xem xét cách hoàn trả nguồn thu hoặc hỗ trợ nhóm dễ bị tổn thương.",
+  "referenceAnswers": [
+   "An emissions tax may encourage firms to adopt cleaner technologies. However, if the cost is passed entirely into the prices of essential goods, lower-income households could be hit harder. An equitable design should consider returning revenue or supporting vulnerable groups."
+  ],
+  "grammarTags": [
+   "policy_tradeoffs",
+   "distributional_impacts",
+   "opportunity_cost",
+   "short_vs_long_term",
+   "independent"
+  ],
+  "explanationVi": "May/might/can tùy ngữ cảnh; không nâng thành will/must. Kiểm tra giả định hay điều kiện thực và thứ tự hai vế. Không bỏ luận điểm ban đầu khi diễn đạt ý phản biện.",
+  "rationaleVi": "Phân tích sự đánh đổi và phân biệt tác động trước mắt với tác động dài hạn. Bài bổ sung từ bộ ESL v2 (R16-U03), chủ đề Đánh đổi chính sách.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "esl-v2",
+  "version": 1
+ },
+ {
+  "id": "esl-v2-r16-u03-006",
+  "practiceLevel": "8.0",
+  "type": "paragraph",
+  "topic": "Đánh đổi chính sách",
+  "promptVi": "Tập trung các phòng khám chuyên khoa có thể giúp sử dụng thiết bị đắt tiền hiệu quả hơn. Mặt khác, bệnh nhân ở xa sẽ phải đi lại nhiều hơn và có thể trì hoãn thăm khám. Việc đánh giá nên tính cả chất lượng chuyên môn lẫn khả năng tiếp cận của người bệnh.",
+  "referenceAnswers": [
+   "Centralising specialist clinics may make more efficient use of costly equipment. On the other hand, patients living farther away would face longer journeys and might delay appointments. An evaluation should consider both clinical quality and patient access."
+  ],
+  "grammarTags": [
+   "policy_tradeoffs",
+   "distributional_impacts",
+   "opportunity_cost",
+   "short_vs_long_term",
+   "independent"
+  ],
+  "explanationVi": "May/might/can tùy ngữ cảnh; không nâng thành will/must.",
+  "rationaleVi": "Phân tích sự đánh đổi và phân biệt tác động trước mắt với tác động dài hạn. Bài bổ sung từ bộ ESL v2 (R16-U03), chủ đề Đánh đổi chính sách.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "esl-v2",
+  "version": 1
+ },
+ {
+  "id": "esl-v2-r16-u03-007",
+  "practiceLevel": "8.0",
+  "type": "paragraph",
+  "topic": "Đánh đổi chính sách",
+  "promptVi": "Nếu trường chỉ được cấp kinh phí theo điểm thi, họ có thể được khuyến khích tập trung vào kết quả đo được. Tuy nhiên, cách làm này cũng có thể khiến các môn khó lượng hóa bị xem nhẹ và làm tăng bất lợi cho trường ở khu vực khó khăn. Cơ chế phân bổ nên kết hợp kết quả với nhu cầu và điều kiện của học sinh.",
+  "referenceAnswers": [
+   "If school funding depends solely on test scores, schools may be encouraged to focus on measurable outcomes. However, such a system could marginalise subjects that are harder to quantify and disadvantage schools in poorer areas. Allocation rules should combine performance with pupils' needs and circumstances."
+  ],
+  "grammarTags": [
+   "policy_tradeoffs",
+   "distributional_impacts",
+   "opportunity_cost",
+   "short_vs_long_term",
+   "challenge"
+  ],
+  "explanationVi": "May/might/can tùy ngữ cảnh; không nâng thành will/must. Kiểm tra giả định hay điều kiện thực và thứ tự hai vế. Không bỏ luận điểm ban đầu khi diễn đạt ý phản biện.",
+  "rationaleVi": "Phân tích sự đánh đổi và phân biệt tác động trước mắt với tác động dài hạn. Bài bổ sung từ bộ ESL v2 (R16-U03), chủ đề Đánh đổi chính sách.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "esl-v2",
+  "version": 1
+ },
+ {
+  "id": "esl-v2-r16-u03-008",
+  "practiceLevel": "8.0",
+  "type": "paragraph",
+  "topic": "Đánh đổi chính sách",
+  "promptVi": "Đê chắn lũ mới có thể bảo vệ những khu dân cư hiện tại, nhưng cũng có nguy cơ khiến người dân tin rằng mọi rủi ro đã biến mất. Nếu việc phát triển nhà ở tiếp tục mở rộng vào vùng dễ ngập, thiệt hại trong một sự cố hiếm gặp có thể trở nên nghiêm trọng hơn. Chính sách cần kết hợp công trình bảo vệ với quy hoạch sử dụng đất thận trọng.",
+  "referenceAnswers": [
+   "New flood defences may protect existing neighbourhoods, but they could also create the impression that all risk has disappeared. If housing continues to expand into flood-prone areas, losses in a rare extreme event may become more severe. The policy should combine protective infrastructure with cautious land-use planning."
+  ],
+  "grammarTags": [
+   "policy_tradeoffs",
+   "distributional_impacts",
+   "opportunity_cost",
+   "short_vs_long_term",
+   "mastery"
+  ],
+  "explanationVi": "May/might/can tùy ngữ cảnh; không nâng thành will/must. Kiểm tra giả định hay điều kiện thực và thứ tự hai vế.",
+  "rationaleVi": "Phân tích sự đánh đổi và phân biệt tác động trước mắt với tác động dài hạn. Bài bổ sung từ bộ ESL v2 (R16-U03), chủ đề Đánh đổi chính sách.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "esl-v2",
+  "version": 1
+ },
+ {
+  "id": "esl-v2-r16-u04-003",
+  "practiceLevel": "8.0",
+  "type": "paragraph",
+  "topic": "Điều kiện hiệu quả",
+  "promptVi": "Thu phí xe vào trung tâm có thể giảm ùn tắc nếu người dân có phương án di chuyển thay thế đáng tin cậy. Nếu xe buýt quá đông và các tuyến kết nối kém, biện pháp này có thể làm tăng chi phí đi lại mà ít thay đổi số xe trên đường. Việc đầu tư vào dịch vụ công cộng nên đi trước hoặc song hành với chính sách thu phí.",
+  "referenceAnswers": [
+   "A charge for driving into the city centre may reduce congestion if reliable alternatives are available. If buses are overcrowded and connections poor, the measure could raise travel costs without significantly reducing traffic. Investment in public transport should therefore precede or accompany the charge."
+  ],
+  "grammarTags": [
+   "conditional_reasoning",
+   "implementation_constraints",
+   "unintended_consequences",
+   "outcome_measures",
+   "guided"
+  ],
+  "explanationVi": "May/might/can tùy ngữ cảnh; không nâng thành will/must. Kiểm tra giả định hay điều kiện thực và thứ tự hai vế.",
+  "rationaleVi": "Phân tích sự đánh đổi và phân biệt tác động trước mắt với tác động dài hạn. Bài bổ sung từ bộ ESL v2 (R16-U04), chủ đề Điều kiện hiệu quả.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "esl-v2",
+  "version": 1
+ },
+ {
+  "id": "esl-v2-r16-u04-004",
+  "practiceLevel": "8.0",
+  "type": "paragraph",
+  "topic": "Điều kiện hiệu quả",
+  "promptVi": "Một chương trình khám sàng lọc có thể giúp phát hiện bệnh sớm, nhưng lợi ích phụ thuộc vào độ chính xác của xét nghiệm và khả năng điều trị sau đó. Nếu kết quả dương tính giả phổ biến, nhiều người có thể phải làm xét nghiệm bổ sung không cần thiết. Vì vậy, số người được sàng lọc không đủ để đánh giá thành công của chương trình.",
+  "referenceAnswers": [
+   "A screening programme may enable earlier detection, but its benefits depend on test accuracy and access to subsequent treatment. If false positives are common, many people may undergo unnecessary follow-up tests. The number screened is therefore insufficient as a measure of success."
+  ],
+  "grammarTags": [
+   "conditional_reasoning",
+   "implementation_constraints",
+   "unintended_consequences",
+   "outcome_measures",
+   "independent"
+  ],
+  "explanationVi": "May/might/can tùy ngữ cảnh; không nâng thành will/must. Kiểm tra giả định hay điều kiện thực và thứ tự hai vế.",
+  "rationaleVi": "Phân tích sự đánh đổi và phân biệt tác động trước mắt với tác động dài hạn. Bài bổ sung từ bộ ESL v2 (R16-U04), chủ đề Điều kiện hiệu quả.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "esl-v2",
+  "version": 1
+ },
+ {
+  "id": "esl-v2-r16-u04-005",
+  "practiceLevel": "8.0",
+  "type": "paragraph",
+  "topic": "Điều kiện hiệu quả",
+  "promptVi": "Trợ cấp điện mặt trời có thể làm tăng số hộ lắp đặt thiết bị, song tác động lên hệ thống điện phụ thuộc vào khả năng lưu trữ và truyền tải. Nếu lưới điện tại địa phương thường xuyên quá tải vào buổi trưa, sản lượng dư thừa có thể không được tận dụng. Vì vậy, ưu đãi tài chính nên được thiết kế cùng với kế hoạch nâng cấp hạ tầng.",
+  "referenceAnswers": [
+   "Solar subsidies may increase household installations, but their effect on the power system depends on storage and transmission capacity. If local grids are regularly overloaded at midday, surplus generation may go unused. Financial incentives should therefore be designed alongside infrastructure upgrades."
+  ],
+  "grammarTags": [
+   "conditional_reasoning",
+   "implementation_constraints",
+   "unintended_consequences",
+   "outcome_measures",
+   "independent"
+  ],
+  "explanationVi": "May/might/can tùy ngữ cảnh; không nâng thành will/must. Kiểm tra giả định hay điều kiện thực và thứ tự hai vế. Không nâng thường thành luôn luôn.",
+  "rationaleVi": "Phân tích sự đánh đổi và phân biệt tác động trước mắt với tác động dài hạn. Bài bổ sung từ bộ ESL v2 (R16-U04), chủ đề Điều kiện hiệu quả.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "esl-v2",
+  "version": 1
+ },
+ {
+  "id": "esl-v2-r16-u04-006",
+  "practiceLevel": "8.0",
+  "type": "paragraph",
+  "topic": "Điều kiện hiệu quả",
+  "promptVi": "Một cơ quan nhà nước định dùng công cụ AI để hỗ trợ phân loại hồ sơ. Cách làm này có thể rút ngắn thời gian xử lý nếu dữ liệu đầu vào đủ tốt và nhân viên có quyền kiểm tra quyết định bất thường. Nếu chỉ dựa vào kết quả tự động, sai sót có thể kéo dài mà người dân không biết cách khiếu nại.",
+  "referenceAnswers": [
+   "A public agency plans to use an AI tool to help classify applications. This could shorten processing times if input data are sound and staff can review unusual decisions. If officials rely solely on automated outputs, errors may persist without citizens knowing how to appeal."
+  ],
+  "grammarTags": [
+   "conditional_reasoning",
+   "implementation_constraints",
+   "unintended_consequences",
+   "outcome_measures",
+   "independent"
+  ],
+  "explanationVi": "May/might/can tùy ngữ cảnh; không nâng thành will/must. Kiểm tra giả định hay điều kiện thực và thứ tự hai vế. Không nâng thường thành luôn luôn.",
+  "rationaleVi": "Phân tích sự đánh đổi và phân biệt tác động trước mắt với tác động dài hạn. Bài bổ sung từ bộ ESL v2 (R16-U04), chủ đề Điều kiện hiệu quả.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "esl-v2",
+  "version": 1
+ },
+ {
+  "id": "esl-v2-r16-u04-007",
+  "practiceLevel": "8.0",
+  "type": "paragraph",
+  "topic": "Điều kiện hiệu quả",
+  "promptVi": "Dạy học bằng ngôn ngữ thứ hai có thể giúp học sinh tiếp xúc thường xuyên với ngoại ngữ, nhưng không bảo đảm các em hiểu nội dung môn học. Nếu giáo viên thiếu khả năng giải thích khái niệm khó bằng nhiều cách, học sinh có thể chỉ ghi nhớ thuật ngữ. Chương trình cần đầu tư vào đào tạo giáo viên và đánh giá cả kiến thức môn học lẫn ngôn ngữ.",
+  "referenceAnswers": [
+   "Teaching through a second language may provide regular exposure to it, but it does not guarantee understanding of subject content. If teachers cannot explain difficult concepts in different ways, pupils may merely memorise terminology. The programme needs teacher training and assessment of both subject knowledge and language development."
+  ],
+  "grammarTags": [
+   "conditional_reasoning",
+   "implementation_constraints",
+   "unintended_consequences",
+   "outcome_measures",
+   "challenge"
+  ],
+  "explanationVi": "May/might/can tùy ngữ cảnh; không nâng thành will/must. Kiểm tra giả định hay điều kiện thực và thứ tự hai vế. Không nâng thường thành luôn luôn.",
+  "rationaleVi": "Phân tích sự đánh đổi và phân biệt tác động trước mắt với tác động dài hạn. Bài bổ sung từ bộ ESL v2 (R16-U04), chủ đề Điều kiện hiệu quả.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "esl-v2",
+  "version": 1
+ },
+ {
+  "id": "esl-v2-r16-u04-008",
+  "practiceLevel": "8.0",
+  "type": "paragraph",
+  "topic": "Điều kiện hiệu quả",
+  "promptVi": "Giảm số ngày làm việc có thể nâng cao sức khỏe tinh thần nếu công việc được tổ chức lại hợp lý. Nhưng nếu nhân viên phải hoàn thành cùng khối lượng nhiệm vụ trong những ngày dài hơn, áp lực có thể chỉ bị dồn lại. Doanh nghiệp nên theo dõi sức khỏe, chất lượng công việc và thời gian làm thêm trước khi kết luận chính sách thành công.",
+  "referenceAnswers": [
+   "A shorter working week may improve mental wellbeing if tasks are reorganised sensibly. But if employees must complete the same workload in longer working days, pressure may simply be compressed. Employers should monitor wellbeing, work quality and overtime before declaring the policy a success."
+  ],
+  "grammarTags": [
+   "conditional_reasoning",
+   "implementation_constraints",
+   "unintended_consequences",
+   "outcome_measures",
+   "mastery"
+  ],
+  "explanationVi": "May/might/can tùy ngữ cảnh; không nâng thành will/must. Kiểm tra giả định hay điều kiện thực và thứ tự hai vế. Không đảo thời điểm, hành động và chủ thể.",
+  "rationaleVi": "Phân tích sự đánh đổi và phân biệt tác động trước mắt với tác động dài hạn. Bài bổ sung từ bộ ESL v2 (R16-U04), chủ đề Điều kiện hiệu quả.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "esl-v2",
+  "version": 1
+ },
+ {
+  "id": "esl-v2-r16-u05-003",
+  "practiceLevel": "8.0",
+  "type": "paragraph",
+  "topic": "Phản biện hợp lý",
+  "promptVi": "Hoạt động tình nguyện bắt buộc có thể giúp học sinh làm quen với trách nhiệm cộng đồng. Tuy nhiên, những em phải chăm sóc người thân ngoài giờ học có thể gặp khó khăn hơn khi hoàn thành yêu cầu. Thay vì bác bỏ mục tiêu giáo dục, nhà trường nên cân nhắc cách thực hiện linh hoạt và công nhận những hình thức đóng góp khác nhau.",
+  "referenceAnswers": [
+   "Compulsory volunteering may introduce pupils to civic responsibility. However, those who care for family members outside school may find the requirement harder to meet. Rather than dismissing the educational goal, schools should consider flexible arrangements and recognise different forms of contribution."
+  ],
+  "grammarTags": [
+   "fair_counterargument",
+   "steelman",
+   "qualified_concession",
+   "safeguards",
+   "guided"
+  ],
+  "explanationVi": "May/might/can tùy ngữ cảnh; không nâng thành will/must. Giữ rõ điều được ưu tiên và điều được thay thế. Không bỏ luận điểm ban đầu khi diễn đạt ý phản biện.",
+  "rationaleVi": "Phân tích sự đánh đổi và phân biệt tác động trước mắt với tác động dài hạn. Bài bổ sung từ bộ ESL v2 (R16-U05), chủ đề Phản biện hợp lý.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "esl-v2",
+  "version": 1
+ },
+ {
+  "id": "esl-v2-r16-u05-004",
+  "practiceLevel": "8.0",
+  "type": "paragraph",
+  "topic": "Phản biện hợp lý",
+  "promptVi": "Người ủng hộ bỏ bài tập về nhà cho rằng trẻ cần thời gian nghỉ ngơi, trong khi người phản đối lo các em mất cơ hội luyện tập độc lập. Cả hai mối quan tâm đều hợp lý, nhưng tác động có thể khác nhau theo độ tuổi và điều kiện học tại nhà. Một chính sách phù hợp nên phân biệt bài tập lặp lại máy móc với nhiệm vụ thực sự giúp củng cố kiến thức.",
+  "referenceAnswers": [
+   "Supporters of removing homework argue that children need time to rest, while opponents fear a loss of independent practice. Both concerns are legitimate, but the effects may differ by age and home learning conditions. A sensible policy should distinguish repetitive busywork from tasks that genuinely reinforce learning."
+  ],
+  "grammarTags": [
+   "fair_counterargument",
+   "steelman",
+   "qualified_concession",
+   "safeguards",
+   "independent"
+  ],
+  "explanationVi": "May/might/can tùy ngữ cảnh; không nâng thành will/must.",
+  "rationaleVi": "Phân tích sự đánh đổi và phân biệt tác động trước mắt với tác động dài hạn. Bài bổ sung từ bộ ESL v2 (R16-U05), chủ đề Phản biện hợp lý.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "esl-v2",
+  "version": 1
+ },
+ {
+  "id": "esl-v2-r16-u05-005",
+  "practiceLevel": "8.0",
+  "type": "paragraph",
+  "topic": "Phản biện hợp lý",
+  "promptVi": "Cấm xe cá nhân tại khu phố cổ có thể giảm ô nhiễm và tạo không gian cho người đi bộ, nhưng các cửa hàng phụ thuộc vào giao hàng cũng có lý do để lo ngại. Phản hồi phù hợp không phải là coi các tiểu thương chống lại môi trường, mà là thiết kế khung giờ giao nhận hợp lý. Như vậy, mục tiêu giảm xe vẫn được theo đuổi mà không bỏ qua nhu cầu vận hành thực tế.",
+  "referenceAnswers": [
+   "Restricting private cars in a historic district may reduce pollution and free up space for pedestrians, but shops that depend on deliveries have legitimate concerns. The appropriate response is not to portray traders as anti-environmental, but to design workable delivery windows. This would pursue the traffic objective without ignoring operational needs."
+  ],
+  "grammarTags": [
+   "fair_counterargument",
+   "steelman",
+   "qualified_concession",
+   "safeguards",
+   "independent"
+  ],
+  "explanationVi": "May/might/can tùy ngữ cảnh; không nâng thành will/must.",
+  "rationaleVi": "Phân tích sự đánh đổi và phân biệt tác động trước mắt với tác động dài hạn. Bài bổ sung từ bộ ESL v2 (R16-U05), chủ đề Phản biện hợp lý.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "esl-v2",
+  "version": 1
+ },
+ {
+  "id": "esl-v2-r16-u05-006",
+  "practiceLevel": "8.0",
+  "type": "paragraph",
+  "topic": "Phản biện hợp lý",
+  "promptVi": "Camera nhận diện khuôn mặt có thể hỗ trợ tìm kiếm người mất tích, nhưng lợi ích đó không tự động giải quyết những lo ngại về giám sát quá mức. Nếu thiếu giới hạn lưu trữ dữ liệu và giám sát độc lập, công nghệ có thể bị sử dụng ngoài mục đích ban đầu. Một đánh giá nghiêm túc cần xem xét cả giá trị thực tiễn lẫn cơ chế bảo vệ quyền cá nhân.",
+  "referenceAnswers": [
+   "Facial-recognition cameras may help locate missing people, but that benefit does not automatically resolve concerns about excessive surveillance. Without limits on data retention and independent oversight, the technology could be used beyond its original purpose. A serious evaluation must consider both practical value and safeguards for individual rights."
+  ],
+  "grammarTags": [
+   "fair_counterargument",
+   "steelman",
+   "qualified_concession",
+   "safeguards",
+   "independent"
+  ],
+  "explanationVi": "May/might/can tùy ngữ cảnh; không nâng thành will/must. Kiểm tra giả định hay điều kiện thực và thứ tự hai vế. Giữ giới hạn của phát biểu và điều kiện áp dụng.",
+  "rationaleVi": "Phân tích sự đánh đổi và phân biệt tác động trước mắt với tác động dài hạn. Bài bổ sung từ bộ ESL v2 (R16-U05), chủ đề Phản biện hợp lý.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "esl-v2",
+  "version": 1
+ },
+ {
+  "id": "esl-v2-r16-u05-007",
+  "practiceLevel": "8.0",
+  "type": "paragraph",
+  "topic": "Phản biện hợp lý",
+  "promptVi": "Bỏ phiếu trực tuyến có thể giúp một số công dân tham gia dễ dàng hơn, đặc biệt là người ở xa điểm bỏ phiếu. Tuy nhiên, những người lo ngại về bảo mật có lý do chính đáng để yêu cầu bằng chứng về khả năng kiểm chứng và phục hồi sau sự cố. Tranh luận nên tập trung vào các điều kiện cần đáp ứng thay vì cho rằng bên nào cũng chống đối tiến bộ.",
+  "referenceAnswers": [
+   "Online voting could make participation easier for some citizens, particularly those far from polling stations. However, people concerned about security have good reason to demand evidence of verifiability and recovery from failures. The debate should focus on the conditions that must be met rather than treating either side as hostile to progress."
+  ],
+  "grammarTags": [
+   "fair_counterargument",
+   "steelman",
+   "qualified_concession",
+   "safeguards",
+   "challenge"
+  ],
+  "explanationVi": "Giữ giới hạn “một số”, không nâng thành tất cả. May/might/can tùy ngữ cảnh; không nâng thành will/must. Giữ rõ điều được ưu tiên và điều được thay thế. Không bỏ luận điểm ban đầu khi diễn đạt ý phản biện. Không biến bằng chứng hạn chế thành kết luận đã chứng minh.",
+  "rationaleVi": "Phân tích sự đánh đổi và phân biệt tác động trước mắt với tác động dài hạn. Bài bổ sung từ bộ ESL v2 (R16-U05), chủ đề Phản biện hợp lý.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "esl-v2",
+  "version": 1
+ },
+ {
+  "id": "esl-v2-r16-u05-008",
+  "practiceLevel": "8.0",
+  "type": "paragraph",
+  "topic": "Phản biện hợp lý",
+  "promptVi": "Hạn chế quảng cáo nhắm đến trẻ em có thể giúp giảm áp lực tiêu dùng, nhưng doanh nghiệp nhỏ có thể lo mất một kênh tiếp cận khách hàng. Mối lo này đáng được xem xét, dù nó không đủ để bỏ qua quyền lợi của trẻ em. Cách tiếp cận thuyết phục hơn là đặt giới hạn rõ ràng về đối tượng và nội dung quảng cáo, đồng thời đánh giá chi phí tuân thủ.",
+  "referenceAnswers": [
+   "Restricting advertising directed at children may reduce consumer pressure, but small firms could worry about losing a marketing channel. That concern deserves consideration, although it is not sufficient to override children's interests. A more convincing approach would set clear limits on audiences and content while assessing compliance costs."
+  ],
+  "grammarTags": [
+   "fair_counterargument",
+   "steelman",
+   "qualified_concession",
+   "safeguards",
+   "mastery"
+  ],
+  "explanationVi": "May/might/can tùy ngữ cảnh; không nâng thành will/must. Giữ giới hạn của phát biểu và điều kiện áp dụng.",
+  "rationaleVi": "Phân tích sự đánh đổi và phân biệt tác động trước mắt với tác động dài hạn. Bài bổ sung từ bộ ESL v2 (R16-U05), chủ đề Phản biện hợp lý.",
+  "commonErrors": [],
+  "calibrationStatus": "internal_review",
+  "editorialStatus": "pilot",
+  "source": "esl-v2",
+  "version": 1
+ }
+]
