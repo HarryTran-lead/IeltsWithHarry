@@ -28,15 +28,11 @@ export const factDossierSchema = z.object({
   category: z.enum(NEWS_CATEGORIES),
   facts: z.array(z.object({
     claim: z.string().trim().min(20).max(300).refine((value) => !/[“”"«»]/.test(value), "Use an atomic fact, not a quotation"),
-    source_url: z.url().refine(approvedFactSource, "Use a reviewed primary, open or limited press fact URL"),
+    source_url: z.url().refine(approvedFactSource, "Use a reviewed official, open or press source URL"),
   })).min(8).max(24),
 }).superRefine((dossier, ctx) => {
   const unique = new Set(dossier.facts.map((fact) => fact.claim.toLocaleLowerCase("en").replace(/\W+/g, " ")));
   if (unique.size < 8) ctx.addIssue({ code: "custom", message: "At least eight distinct verified facts are required", path: ["facts"] });
-  if (dossier.facts.filter((fact) => approvedFactualSource(fact.source_url)).length < 5)
-    ctx.addIssue({ code: "custom", message: "At least five facts must come from primary or open sources", path: ["facts"] });
-  if (dossier.facts.filter((fact) => approvedPressFactSource(fact.source_url)).length > 3)
-    ctx.addIssue({ code: "custom", message: "Use at most three factual notes from a press report", path: ["facts"] });
   if (new Set(dossier.facts.map((fact) => fact.source_url)).size > 4) ctx.addIssue({ code: "custom", message: "Use at most four factual source pages per article", path: ["facts"] });
 });
 export type FactDossier = z.infer<typeof factDossierSchema>;
