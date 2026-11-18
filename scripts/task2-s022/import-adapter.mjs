@@ -1,7 +1,7 @@
 // Pure, code-only adapter. The 1,975-record dataset is NEVER committed to GitHub.
 import { createHash, randomUUID } from 'node:crypto';
 import { readFileSync, realpathSync } from 'node:fs';
-import { resolve, sep, join } from 'node:path';
+import { sep, join } from 'node:path';
 export const FEEDS = Object.freeze({learner_guided:1140,server_only:831,shared:3,docs:1});
 export const NAMESPACE = 'task2_rewrite_v2';
 const hash = value => createHash('sha256').update(value).digest('hex');
