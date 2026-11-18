@@ -1,38 +1,25 @@
 import "server-only";
-import { createHmac, randomInt, timingSafeEqual } from "node:crypto";
+import { randomInt } from "node:crypto";
 import { loadEditorialLesson } from "./editorial";
 import { GRAMMAR_TEST_SIZE, prerequisiteLevel, scoreGrammarPlacement } from "./gate";
 import type { GrammarLevel } from "./types";
+import { resolveGrammarSigningKey, signGrammarAssessmentTicket, verifyGrammarAssessmentTicket, type GrammarAssessmentTicket } from "./assessment-ticket";
 import catalog from "@/data/grammar-editorial/catalog.json";
 
 type Choice = { id: string; prompt: string; instruction: string; options: string[]; lessonCode: string };
 type AnswerKey = Choice & { correct: string; accepted: string[] };
-type Ticket = { userId: string; target: GrammarLevel; ids: string[]; expires: number };
+type Ticket = GrammarAssessmentTicket;
 
 function secret() {
-  const value = process.env.GRAMMAR_ASSESSMENT_SECRET || process.env.SUPABASE_SERVICE_ROLE_KEY;
-  if (!value && process.env.NEXT_PUBLIC_DEMO_MODE !== "true") throw new Error("Grammar assessment signing key is not configured");
-  return value || "local-demo-grammar-assessment-only";
-}
-
-function sign(payload: string) {
-  return createHmac("sha256", secret()).update(payload).digest("base64url");
+  return resolveGrammarSigningKey(process.env.GRAMMAR_ASSESSMENT_SECRET, process.env.NEXT_PUBLIC_DEMO_MODE === "true");
 }
 
 export function issueTicket(ticket: Ticket) {
-  const payload = Buffer.from(JSON.stringify(ticket)).toString("base64url");
-  return `${payload}.${sign(payload)}`;
+  return signGrammarAssessmentTicket(ticket, secret());
 }
 
 export function readTicket(token: string, userId: string, target: GrammarLevel): Ticket | null {
-  const [payload, signature, extra] = token.split(".");
-  if (!payload || !signature || extra) return null;
-  const expected = sign(payload);
-  if (signature.length !== expected.length || !timingSafeEqual(Buffer.from(signature), Buffer.from(expected))) return null;
-  try {
-    const value = JSON.parse(Buffer.from(payload, "base64url").toString()) as Ticket;
-    return value.userId === userId && value.target === target && value.expires > Date.now() && value.ids.length === GRAMMAR_TEST_SIZE && new Set(value.ids).size === GRAMMAR_TEST_SIZE ? value : null;
-  } catch { return null; }
+  return verifyGrammarAssessmentTicket(token, userId, target, secret());
 }
 
 export async function placementPool(target: GrammarLevel): Promise<AnswerKey[]> {
