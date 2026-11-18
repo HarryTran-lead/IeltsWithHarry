@@ -17,7 +17,7 @@ export async function GET(request: Request) {
     if (sessionError || !session) return Response.json({ error: "Không tìm thấy phiên Speaking." }, { status: 404 });
     const { data: job, error } = await db.from("speaking_coaching_jobs")
       .select("id,status,error_code,result,created_at,updated_at")
-      .eq("session_id", sessionId).maybeSingle();
+      .eq("session_id", sessionId).eq("user_id", user.id).maybeSingle();
     if (error && !enabled()) return Response.json({ status: "unavailable", result: null });
     if (error) throw new Error("Không tải được trạng thái phân tích.");
     if (!job) return Response.json({ status: enabled() ? "not_requested" : "unavailable", result: null }, { headers: { "Cache-Control": "private, no-store" } });
@@ -41,7 +41,7 @@ export async function POST(request: Request) {
       .select("id,answers").eq("id", sessionId).eq("user_id", user.id).maybeSingle();
     if (sessionError || !session) return Response.json({ error: "Không tìm thấy phiên Speaking." }, { status: 404 });
     const { data: existing, error: existingError } = await db.from("speaking_coaching_jobs")
-      .select("id,status").eq("session_id", sessionId).maybeSingle();
+      .select("id,status").eq("session_id", sessionId).eq("user_id", user.id).maybeSingle();
     if (existingError) throw new Error("Không kiểm tra được hàng đợi Speaking.");
     if (existing) return Response.json(existing, { status: 200 });
     const answers = answersSchema.parse(session.answers);
@@ -64,7 +64,7 @@ export async function POST(request: Request) {
       recording_seconds: Math.max(5, Math.ceil(answers[answerIndex].seconds)),
     }).select("id,status").single();
     if (insertError?.code === "23505") {
-      const retry = await db.from("speaking_coaching_jobs").select("id,status").eq("session_id", sessionId).single();
+      const retry = await db.from("speaking_coaching_jobs").select("id,status").eq("session_id", sessionId).eq("user_id", user.id).single();
       if (retry.data) return Response.json(retry.data);
     }
     if (insertError || !job) throw new Error("Chưa thể đưa bài Speaking vào hàng đợi.");
