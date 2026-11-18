@@ -13,11 +13,13 @@ if (pkg.name !== 'ieltswithharry' || !String(pkg.dependencies?.next || '').start
 const tracked = execFileSync('git', ['-C',root,'ls-files','-z'], { encoding:'utf8' }).split('\0').filter(Boolean);
 const forbidden = [
   /(?:^|\/)canonical_flat_data\//i,
-  /(?:^|\/)server_only_records\.jsonl$/i,
+  /(?:^|\/)server_only(?:\/|_records\.jsonl$)/i,
+  /(?:^|\/)feeds\/(?:learner_guided|shared|docs)_records\.jsonl$/i,
   /(?:^|\/)R16_FINAL_LOCKED_PROMPTS_7\.json$/i,
   /(?:^|\/)tools\/task2-rewrite-stage-v1\//i,
   /(?:^|\/)source_archive\//i,
-  /(?:^|\/)IELTS_Task2_[^/]*\.zip$/i
+  /(?:^|\/)(?:IELTS[_-])?(?:Writing[_-])?Task[_-]?2[^/]*\.zip$/i,
+  /(?:^|\/)R(?:0[1-9]|1[0-6])_(?:ANSWERS|ANSWER_GUIDANCE|CORRECTIONS|FINAL_LOCKED|SELF_REVISION_ANSWERS|INDEPENDENT_ANSWER|TIMED_REVIEW)[^/]*\.json$/i
 ];
 const bad = tracked.filter(name => forbidden.some(rule => rule.test(name)));
 if (bad.length) fail('PRIVATE_TASK2_CONTENT_TRACKED: ' + bad.slice(0,5).join(','));
