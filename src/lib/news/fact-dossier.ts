@@ -24,9 +24,9 @@ export async function readFactualSource(url: string, fetcher: typeof fetch) {
   $("script,style,nav,footer,header,form,aside,iframe").remove();
   const press = approvedPressFactSource(url);
   const content = (press
-    ? $(".fck_detail p, .detail-content p, article p").toArray().map((node) => $(node).text().trim()).filter((text) => text.length >= 30).slice(0, 10).join(" ")
+    ? $(".fck_detail p, .detail-content p, article p").toArray().map((node) => $(node).text().trim()).filter((text) => text.length >= 30).slice(0, 20).join(" ")
     : "") || $("main").first().text() || $("article").first().text() || $("body").text() || raw;
-  const trimmed = content.replace(/\s+/g, " ").trim().slice(0, press ? 8_000 : 30_000);
+  const trimmed = content.replace(/\s+/g, " ").trim().slice(0, press ? 12_000 : 30_000);
   if (trimmed.length < 300) throw new Error("Factual source contains too little readable evidence");
   return trimmed;
 }

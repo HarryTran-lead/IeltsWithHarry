@@ -1,5 +1,5 @@
 import { afterAll, beforeAll, expect, it } from "vitest";
-import { discoveryBatchLimit, discoveryBudget, discoveryFeedGroup, eligibleDiscoveryLead, findIndependentDossier, rankDiscoveryCandidates, resolveFactualSourceUrl, temporaryDiscoveryFailure, vietnamDayStart, youthRelevanceForTitle } from "../src/lib/news/press-discovery";
+import { discoveryBatchLimit, discoveryBudget, discoveryFeedGroup, eligibleDiscoveryLead, evidenceRichPressLead, findIndependentDossier, rankDiscoveryCandidates, resolveFactualSourceUrl, temporaryDiscoveryFailure, vietnamDayStart, youthRelevanceForTitle } from "../src/lib/news/press-discovery";
 import { parseRss, pressDiscoveryFeedUrls, rssProvider, type NewsItem, type NewsSource } from "../src/lib/news/providers";
 
 const previousArticleConfirmation = process.env.NEWS_ARTICLE_FREE_TIER_CONFIRMED;
@@ -93,6 +93,21 @@ it("starts with a reviewed Vietnam newspaper over an equally available official 
     { item: { canonical_hash: "press", canonical_url: "https://news.tuoitre.vn/culture-news.htm", title: "Local heritage project opens", category: "Culture", published_at: "2026-11-10T04:00:00Z" } as NewsItem, source },
   ], new Map(), new Set());
   expect(ranked[0].item.canonical_hash).toBe("press");
+});
+
+it("uses the Free Tier research slot on a report with enough source detail", async () => {
+  const candidates = ["short", "rich"].map((hash) => ({
+    item: { canonical_hash: hash, canonical_url: `https://news.tuoitre.vn/${hash}.html` } as NewsItem, source,
+  }));
+  const visited: string[] = [];
+  const fetcher = (async (url: RequestInfo | URL) => {
+    visited.push(String(url));
+    const paragraphs = String(url).includes("rich") ? 16 : 4;
+    return new Response(`<article>${Array.from({ length: paragraphs }, (_, index) => `<p>Paragraph ${index + 1} records a distinct festival detail for readers in Vietnam, including the time, place, people involved and activities.</p>`).join("")}</article>`, { headers: { "Content-Type": "text/html" } });
+  }) as typeof fetch;
+  const selected = await evidenceRichPressLead(candidates, fetcher);
+  expect(selected.item.canonical_hash).toBe("rich");
+  expect(visited).toHaveLength(2);
 });
 
 it("allows a youth topic to recover after other leads in its category fail", () => {
