@@ -3,6 +3,7 @@ import { join } from "node:path";
 import { describe, expect, it } from "vitest";
 import { bandFile, bandIndex, levelRubric, practiceBands, reviewKey, type BandExercise } from "./band-practice";
 import { closestAnswer } from "./compare-words";
+import { hintLadder } from "./hint-ladder";
 import { practiceExerciseSchema } from "./schema";
 
 // The page fetches these files from /public; the test reads the same files from disk.
@@ -69,29 +70,22 @@ describe("band translation practice data", () => {
     }
   });
 
-  it("only shows step hints that quote the prompt and never the answer", async () => {
+  it("builds a hint ladder from the model answer for nearly every exercise", async () => {
     const exercises = [...(await allExercises()).values()].flat();
-    const hinted = exercises.filter((item) => item.hintsVi?.length);
-    expect(hinted.length).toBeGreaterThan(1800);
-    // Collect problems and assert once: ~130k individual expects ran past the 5 s timeout.
+    // Collect problems and assert once: per-hint expects across 2,000+ exercises are slow.
     const problems: string[] = [];
-    for (const item of hinted) {
-      if (item.hintsVi!.length > 3) problems.push(`${item.id}: more than 3 hints`);
-      const trigrams = item.referenceAnswers.flatMap((answer) => {
-        const words = answer.toLowerCase().match(/[a-z']+/g) ?? [];
-        return words.slice(0, -2).map((_, index) => words.slice(index, index + 3).join(" "));
-      });
-      for (const hint of item.hintsVi!) {
-        if (/bắt đầu bằng chữ|chữ cái|→ “/.test(hint)) problems.push(`${item.id}: spelling or translation cue`);
-        for (const quote of hint.match(/“[^”]*”/g) ?? []) {
-          if (!item.promptVi.includes(quote.slice(1, -1).replace(/(…|\.\.\.)$/, "").trim())) problems.push(`${item.id}: quote not in prompt`);
-        }
-        const text = hint.toLowerCase();
-        const leaked = trigrams.find((trigram) => text.includes(trigram));
-        if (leaked) problems.push(`${item.id}: repeats "${leaked}"`);
+    let framed = 0;
+    for (const item of exercises) {
+      const ladder = hintLadder(item);
+      if (ladder.some((hint) => hint.kind === "frame")) framed++;
+      for (const hint of ladder) {
+        if (item.referenceAnswers.some((answer) => answer.trim().toLowerCase() === hint.text.trim().toLowerCase())) problems.push(`${item.id}: ${hint.kind} equals the answer`);
       }
+      const order = ladder.map((hint) => hint.kind).filter((kind) => kind !== "keyword");
+      if (order.join() !== ["frame", "grammar", "letters"].filter((kind) => order.includes(kind as never)).join()) problems.push(`${item.id}: order ${order}`);
     }
     expect(problems).toEqual([]);
+    expect(framed).toBeGreaterThan(1900);
   });
 });
 

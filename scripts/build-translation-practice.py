@@ -14,7 +14,6 @@ SOURCE = ROOT / "data/translation-practice/starter-51.json"
 BANDS_DEST = ROOT / "public/practice-data/translation"
 INDEX_DEST = ROOT / "src/data/translation/band-index.json"
 ESL_V2 = ROOT / "data/translation-practice/esl-v2-additions.json"
-HINTS = ROOT / "data/translation-practice/hints-l1.json"
 ADDITIONAL = ROOT / "data/translation-practice/level-authored-34.json"
 EXPANDED = ROOT / "data/translation-practice/level-authored-expanded.json"
 ADVANCED_PARAGRAPHS = ROOT / "data/translation-practice/advanced-starter-paragraphs.json"
@@ -313,13 +312,6 @@ if __name__ == "__main__":
     core.extend(json.loads(ESL_V2.read_text(encoding="utf-8")))
     assert len({row["id"] for row in core}) == len(core), "duplicate exercise id"
     assert len({row["promptVi"].strip().lower() for row in core}) == len(core), "duplicate prompt"
-    # Step hints (scripts/import-translation-hints.py) add a field only; the exercise's
-    # content, ID and version stay the same, so progress is unaffected.
-    if HINTS.exists():
-        hints = json.loads(HINTS.read_text(encoding="utf-8"))
-        for row in core:
-            if hints.get(row["id"]):
-                row["hintsVi"] = hints[row["id"]]
 
     # One file per band, loaded only when the learner opens that band, plus a small index
     # with the counts and progress keys the band picker needs.

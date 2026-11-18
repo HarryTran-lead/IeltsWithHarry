@@ -671,13 +671,39 @@
 }
 .xp-session .xp-hints {
   display: grid;
-  gap: 6px;
-  padding: 10px 14px 10px 32px;
+  gap: 8px;
+  padding: 10px 14px;
   border-radius: var(--r-md);
   background: var(--sun-soft);
   color: var(--ink);
   font-size: var(--fs-sm);
   line-height: 1.5;
+  list-style: none;
+}
+.xp-hints li {
+  display: grid;
+  grid-template-columns: 112px 1fr;
+  gap: 2px 10px;
+  align-items: baseline;
+}
+.xp-hint-label {
+  color: var(--subtle);
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-bold);
+  text-transform: uppercase;
+}
+/* Frames and first-letter hints are read word by word, so give blanks room. */
+.xp-hints .is-frame .xp-hint-text,
+.xp-hints .is-letters .xp-hint-text {
+  color: var(--navy);
+  font-family: ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+  font-size: var(--fs-sm);
+  word-spacing: 0.15em;
+}
+@media (max-width: 560px) {
+  .xp-hints li {
+    grid-template-columns: 1fr;
+  }
 }
 
 .xp-session .practice-comparison {
