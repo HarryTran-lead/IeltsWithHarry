@@ -56,6 +56,20 @@ it("retries temporary article service failures with the dedicated key", async ()
   }
 });
 
+it("retries temporary quiz service failures with the separate quiz key", async () => {
+  await withKey(async () => {
+    let calls = 0;
+    const fetcher = (async (_url: RequestInfo | URL, init?: RequestInit) => {
+      expect((init?.headers as Record<string, string>)["x-goog-api-key"]).toBe("test-key");
+      calls++;
+      return calls === 1 ? new Response("", { status: 503 })
+        : Response.json({ candidates: [{ finishReason: "STOP", content: { parts: [{ text: "{}" }] } }] });
+    }) as typeof fetch;
+    await geminiJson("system", "user", {}, { fetcher, freeTierOnly: true });
+    expect(calls).toBe(2);
+  });
+});
+
 it("reserves quiz work even while translation, image and discovery backlogs exist", () => {
   const slot = (hour: number, minute: number) => scheduledNewsWorkSlot(new Date(`2026-11-11T${String(hour).padStart(2, "0")}:${String(minute).padStart(2, "0")}:00Z`));
   expect([5, 15, 25, 35, 45, 55].map((minute) => slot(0, minute))).toEqual(["quiz", "discovery", "image", "discovery", "translation", "discovery"]);
