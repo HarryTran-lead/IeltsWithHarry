@@ -43,7 +43,7 @@ for(const [title,fn] of [
 for(const [name,modify] of [
  ['reject tampered payload',r=>{r.payload.text='tampered'}],
  ['reject changed hash',r=>{r.payload_sha256='a'.repeat(64)}],
- ['reject duplicate record',r=>{}],
+ ['reject duplicate record',()=>{}],
  ['reject wrong namespace',r=>{r.namespace='wrong'}],
  ['reject visibility mismatch',r=>{r.visibility='server_only'}],
  ['reject row key mismatch',r=>{r.row_id='altered'}],
