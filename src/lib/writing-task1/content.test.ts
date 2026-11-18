@@ -1,8 +1,7 @@
 import { createHash } from "node:crypto";
 import { existsSync, readFileSync } from "node:fs";
 import { join } from "node:path";
-import { describe, expect, it } from "vitest";
-import { lockedLearnerPath } from "../runtime";
+import { afterEach, describe, expect, it, vi } from "vitest";
 import { countWords, essaySaved, parseTask1State, type Task1Lesson } from "./types";
 
 const root = join(process.cwd(), "content/writing-task1");
@@ -56,8 +55,25 @@ describe("Writing Task 1 Lab state", () => {
     expect(parseTask1State("{\"t2\":1}")).toBeNull();
   });
 
-  it("opens the route outside production", () => {
-    expect(lockedLearnerPath("/app/self-study/writing-task-1")).toBe(false);
-    expect(lockedLearnerPath("/app/self-study/writing-task-1/line")).toBe(false);
+});
+
+describe("Writing Task 1 Lab release", () => {
+  afterEach(() => vi.unstubAllEnvs());
+  const runtime = async () => { vi.resetModules(); return (await import("../runtime")).lockedLearnerPath; };
+
+  it("is open to learners in production while the other unfinished labs stay locked", async () => {
+    vi.stubEnv("NODE_ENV", "production");
+    vi.stubEnv("NEXT_PUBLIC_UNLOCK_DEV_FEATURES", "false");
+    const locked = await runtime();
+    expect(locked("/app/self-study/writing-task-1")).toBe(false);
+    expect(locked("/app/self-study/writing-task-1/line")).toBe(false);
+    expect(locked("/app/self-study/speaking")).toBe(true);
+  });
+
+  it("can be closed again with the emergency flag", async () => {
+    vi.stubEnv("NODE_ENV", "production");
+    vi.stubEnv("NEXT_PUBLIC_DISABLE_WRITING_TASK1_LAB", "true");
+    const locked = await runtime();
+    expect(locked("/app/self-study/writing-task-1/line")).toBe(true);
   });
 });
