@@ -217,7 +217,7 @@ it("press feeds return only event metadata even when RSS contains full prose and
   expect(result.items[0].publication_status).toBe("review");
 });
 
-it("uses a limited report excerpt for at most three cited facts after finding an original page", async () => {
+it("uses reviewed newspaper facts alongside an original page", async () => {
   const previous = process.env.NEWS_ARTICLE_GEMINI_API_KEY;
   process.env.NEWS_ARTICLE_GEMINI_API_KEY = "test-key";
   const report = "https://news.tuoitre.vn/students-event.html";
@@ -234,7 +234,32 @@ it("uses a limited report excerpt for at most three cited facts after finding an
     const result = await findIndependentDossier({ title: "Students gather for a new event", canonical_url: report, category: "Education" } as NewsItem, fetcher,
       [{ title: "Official student event", canonical_url: original }]);
     expect(result.success).toBe(true);
-    if (result.success) expect(result.data.facts.filter((fact) => fact.source_url === report)).toHaveLength(3);
+    if (result.success) expect(result.data.facts.filter((fact) => fact.source_url === report)).toHaveLength(5);
+  } finally { if (previous === undefined) delete process.env.NEWS_ARTICLE_GEMINI_API_KEY; else process.env.NEWS_ARTICLE_GEMINI_API_KEY = previous; }
+});
+
+it("builds a dossier from a reviewed Vietnam newspaper when no official page matches", async () => {
+  const previous = process.env.NEWS_ARTICLE_GEMINI_API_KEY;
+  process.env.NEWS_ARTICLE_GEMINI_API_KEY = "test-key";
+  const report = "https://news.tuoitre.vn/youth-festival.html";
+  let pageReads = 0;
+  let modelCalls = 0;
+  const fetcher = (async (url: RequestInfo | URL, init?: RequestInit) => {
+    if (String(url) === report) {
+      pageReads++;
+      return new Response(`<article>${Array.from({ length: 10 }, (_, index) => `<p>The festival report gives distinct objective detail number ${index + 1} about participants, timing, or activities in Vietnam.</p>`).join("")}</article>`, { headers: { "Content-Type": "text/html" } });
+    }
+    modelCalls++;
+    expect(String(init?.body)).not.toContain("googleSearch");
+    const facts = Array.from({ length: 10 }, (_, index) => ({ claim: `The festival report confirms objective detail number ${index + 1} about the Vietnamese event.`, source_url: report }));
+    return Response.json({ candidates: [{ finishReason: "STOP", content: { parts: [{ text: JSON.stringify({ topic: "A youth festival in Vietnam", facts }) }] } }] });
+  }) as typeof fetch;
+  try {
+    const result = await findIndependentDossier({ title: "Vietnam youth festival attracts students", canonical_url: report, category: "Culture" } as NewsItem, fetcher);
+    expect(result.success).toBe(true);
+    if (result.success) expect(result.data.facts).toHaveLength(10);
+    expect(pageReads).toBe(1);
+    expect(modelCalls).toBe(1);
   } finally { if (previous === undefined) delete process.env.NEWS_ARTICLE_GEMINI_API_KEY; else process.env.NEWS_ARTICLE_GEMINI_API_KEY = previous; }
 });
 

@@ -20,18 +20,18 @@ it("aims for IELTS passage length when the verified dossier is substantial", () 
   expect(passageWordRange(18)).toEqual({ min: 700, max: 900 });
 });
 
-it("requires enough distinct primary-source facts for a full reading passage", () => {
+it("requires enough distinct verified facts for a full reading passage", () => {
   expect(factDossierSchema.safeParse({ topic: "A new science launch", category: "Science", facts: facts.slice(0, 8) }).success).toBe(true);
 });
 
-it("allows a few press facts only alongside primary facts", () => {
+it("accepts factual notes from reviewed Vietnam newspapers", () => {
   const pressFacts = facts.slice(5, 8).map((fact) => ({ ...fact, source_url: "https://e.vnexpress.net/news/example" }));
   expect(factDossierSchema.safeParse({ topic: "A new science launch", category: "Science", facts: [...facts.slice(0, 5), ...pressFacts] }).success).toBe(true);
-  expect(factDossierSchema.safeParse({ topic: "A new science launch", category: "Science", facts: [...facts.slice(0, 4), ...facts.slice(4, 8).map((fact) => ({ ...fact, source_url: "https://news.tuoitre.vn/example" }))] }).success).toBe(false);
+  expect(factDossierSchema.safeParse({ topic: "A new science launch", category: "Science", facts: [...facts.slice(0, 4), ...facts.slice(4, 8).map((fact) => ({ ...fact, source_url: "https://news.tuoitre.vn/example" }))] }).success).toBe(true);
 });
 
-it("rejects a press-only, thin or duplicated dossier", () => {
-  expect(factDossierSchema.safeParse({ topic: "A new science launch", category: "Science", facts: facts.map((fact) => ({ ...fact, source_url: "https://e.vnexpress.net/example" })) }).success).toBe(false);
+it("accepts a press-only dossier but rejects thin, duplicated or unreviewed evidence", () => {
+  expect(factDossierSchema.safeParse({ topic: "A new science launch", category: "Science", facts: facts.map((fact) => ({ ...fact, source_url: "https://e.vnexpress.net/example" })) }).success).toBe(true);
   expect(factDossierSchema.safeParse({ topic: "A new science launch", category: "Science", facts: facts.slice(0, 7) }).success).toBe(false);
   expect(factDossierSchema.safeParse({ topic: "A new science launch", category: "Science", facts: facts.map(() => facts[0]) }).success).toBe(false);
   expect(factDossierSchema.safeParse({ topic: "A new science launch", category: "Science", facts: [...facts.slice(0, 5), ...facts.slice(5, 8).map((fact) => ({ ...fact, source_url: "https://e.vnexpress.net.evil.example/story" }))] }).success).toBe(false);
@@ -45,11 +45,11 @@ it("accepts relevant official Vietnam and regional sources without admitting loo
   expect(factDossierSchema.safeParse({ topic: "A regional policy change", category: "World News", facts: facts.map((fact) => ({ ...fact, source_url: "https://baochinhphu.vn.example.com/announcement" })) }).success).toBe(false);
 });
 
-it("limits newspaper evidence to a short excerpt and rejects unreviewed hosts", async () => {
-  const fetcher = (async () => new Response(`<article>${Array.from({ length: 8 }, (_, index) => `<p>Paragraph ${index + 1} contains factual details about a public event in Vietnam and its participants.</p>`).join("")}</article>`, { headers: { "Content-Type": "text/html" } })) as typeof fetch;
+it("bounds newspaper evidence and rejects unreviewed hosts", async () => {
+  const fetcher = (async () => new Response(`<article>${Array.from({ length: 12 }, (_, index) => `<p>Paragraph ${index + 1} contains factual details about a public event in Vietnam and its participants.</p>`).join("")}</article>`, { headers: { "Content-Type": "text/html" } })) as typeof fetch;
   const excerpt = await readFactualSource("https://news.tuoitre.vn/example.html", fetcher);
-  expect(excerpt).toContain("Paragraph 5");
-  expect(excerpt).not.toContain("Paragraph 6");
+  expect(excerpt).toContain("Paragraph 10");
+  expect(excerpt).not.toContain("Paragraph 11");
   await expect(readFactualSource("https://news.tuoitre.vn.evil.example/story", fetcher)).rejects.toThrow("not approved");
 });
 
