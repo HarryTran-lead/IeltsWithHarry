@@ -44,6 +44,7 @@ const SkillLabPath = dynamic(() => import("@/features/listening/skill-lab-path")
 const SkillLabCheck = dynamic(() => import("@/features/listening/skill-lab-path").then((module) => module.SkillLabCheck), { loading: SectionLoading });
 const ListeningMock = dynamic(() => import("@/features/listening/listening-mock").then((module) => module.ListeningMock), { loading: SectionLoading });
 const ListeningLab = dynamic(() => import("@/features/listening/listening-lab").then((module) => module.ListeningLab), { loading: SectionLoading });
+const WritingTask2Lab = dynamic(() => import("@/features/writing-task2/writing-task2-lab").then((module) => module.WritingTask2Lab), { loading: SectionLoading });
 const ListeningVocabularyPage = dynamic(() => import("@/features/listening/listening-vocabulary-page").then((module) => module.ListeningVocabularyPage), { loading: SectionLoading });
 const ReadingVocabularyPage = dynamic(() => import("@/features/reading/reading-vocabulary-page").then((module) => module.ReadingVocabularyPage), { loading: SectionLoading });
 const GrammarGarden = dynamic(() => import("@/features/grammar/grammar-garden").then((module) => module.GrammarGarden), { loading: SectionLoading });
@@ -80,6 +81,8 @@ function PortalContent({ canManage }: { canManage: boolean }) {
           smartNotebookV1 ? <SmartNotebook /> : <NotebookPage />
         ) : section === "self-study" && skillMode === "listening" ? (
           <ListeningLab />
+        ) : section === "self-study" && skillMode === "writing-task-2" ? (
+          <WritingTask2Lab />
         ) : section === "dictation" ? (
           !skillMode ? <DictationHome />
             : skillMode === "practice" ? <Suspense fallback={<PageSkeleton label="Đang mở Luyện nhanh…" />}><DictationQuickPractice /></Suspense>

@@ -1,0 +1,76 @@
+/* Writing Task 2 Lab: the Listening Lab layout (listening-lab.css) with a warm Writing band and the writing surfaces. */
+.t2-lab .t2-hero{background:radial-gradient(circle at 94% 0%,rgba(255,201,74,.42),transparent 34%),radial-gradient(circle at 0% 120%,rgba(242,102,95,.55),transparent 46%),linear-gradient(135deg,#c8473f 0%,#7a3557 50%,#10233f 100%);box-shadow:0 24px 50px -30px rgba(122,53,87,.75)}
+.t2-lab .ll-cta-icon{background:linear-gradient(135deg,#f2665f,#c8473f)}
+.t2-lab .ll-cta>svg{color:#c8473f}
+.t2-lab .ll-track-map{grid-template-columns:repeat(4,minmax(0,1fr))}
+.t2-lab .ll-track-map::before{left:12%;right:12%}
+.t2-lab .ll-track-map i{flex-wrap:wrap;justify-content:center;max-width:120px}
+.t2-lab .ll-track-map em{width:8px}
+
+/* Cards */
+.t2-card-prompt{display:-webkit-box;overflow:hidden;-webkit-line-clamp:3;-webkit-box-orient:vertical}
+.ll-card-types .t2-chip-model,.ll-chips .t2-chip-model{background:#fff4d6;color:#8a5e00}
+.ll-chips .t2-chip-model{border-color:#f0dcaa}
+.t2-lab .ll-pips{flex-wrap:wrap;max-width:60%}
+.t2-lab .ll-pips .t2-pip{width:9px}
+.t2-lab .ll-pips .t2-pip-essay{width:18px;margin-left:3px;background:#f2e3d0}
+.t2-lab .ll-pips .t2-pip-essay.is-pass{background:var(--ll-tone)}
+
+/* Prompt */
+.t2-prompt{margin-top:12px;padding:14px 18px;border:1px solid var(--ll-line);border-left:4px solid var(--ll-tone);border-radius:var(--r-md);background:#fff}
+.t2-prompt p{margin-top:4px;font-size:var(--fs-md);font-weight:650;line-height:1.55}
+.t2-prompt small{display:block;margin-top:6px;color:var(--ll-muted);font-size:var(--fs-xs)}
+
+/* Panels: guided steps, vocabulary, checklist, model essay */
+.t2-panel{margin-top:14px;padding:16px 18px;border:1px solid var(--ll-line);border-radius:var(--r-lg);background:#fff;box-shadow:0 1px 2px rgba(16,35,63,.04)}
+.t2-panel>h2{margin-bottom:10px;font-size:var(--fs-lg);letter-spacing:-.015em}
+.t2-steps{display:grid;gap:12px}
+.t2-steps li{display:flex;gap:12px;align-items:flex-start}
+.t2-step-num{display:grid;place-items:center;flex:none;width:30px;height:30px;border-radius:50%;background:var(--ll-soft);color:var(--ll-tone);font-weight:800}
+.t2-steps b{font-size:var(--fs-base)}
+.t2-steps p{margin-top:2px;color:#3b5068;font-size:var(--fs-sm);line-height:1.55}
+.t2-steps blockquote{margin:8px 0 0;padding:8px 12px;border-left:3px solid var(--ll-tone);border-radius:0 var(--r-sm) var(--r-sm) 0;background:color-mix(in srgb,var(--ll-soft) 55%,#fff);color:var(--ll-ink);font-size:var(--fs-sm);line-height:1.55}
+.t2-vocab{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:8px}
+.t2-vocab li{display:grid;gap:2px;padding:9px 12px;border:1px solid #edf1f5;border-radius:var(--r-md);background:#fbfcfd}
+.t2-vocab b{font-size:var(--fs-sm)}
+.t2-vocab span{color:var(--ll-muted);font-size:var(--fs-xs)}
+.t2-next{display:flex;justify-content:flex-end;margin-top:14px}
+
+/* Drills */
+.t2-drill.is-saved .ll-q-num{border-color:var(--ll-good);background:var(--ll-good);color:#fff}
+.t2-hint{color:var(--ll-muted)!important;font-weight:600!important;letter-spacing:0!important}
+.t2-text{display:block;width:100%;margin-top:10px;padding:10px 12px;border:1px solid #cfdbe6;border-radius:var(--r-sm);background:#fff;color:var(--ll-ink);font:inherit;font-size:var(--fs-base);line-height:1.6;resize:vertical;transition:border-color .15s,box-shadow .15s}
+.t2-text:focus{outline:none;border-color:var(--ll-tone);box-shadow:0 0 0 3px color-mix(in srgb,var(--ll-tone) 16%,transparent)}
+.t2-row{display:flex;align-items:center;justify-content:flex-end;flex-wrap:wrap;gap:8px 12px;margin-top:8px}
+.t2-row>small{margin-right:auto;color:#7a8ba1;font-size:var(--fs-xs);font-variant-numeric:tabular-nums}
+.t2-answer q{color:var(--ll-ink);font-weight:600;quotes:"“" "”"}
+
+/* Essay */
+.t2-essay{margin-top:14px;padding:16px 18px;border:1px solid var(--ll-line);border-radius:var(--r-lg);background:#fff}
+.t2-essay-text{margin-top:0}
+.t2-words{margin-right:auto;color:var(--ll-muted);font-size:var(--fs-sm);font-variant-numeric:tabular-nums}
+.t2-words b{color:var(--ll-ink);font-size:var(--fs-md)}
+.t2-words.is-fair b{color:#b97d05}
+.t2-words.is-good b{color:var(--ll-good)}
+.t2-notice{display:inline-flex;align-items:center;gap:5px;color:var(--ll-good);font-size:var(--fs-xs);font-weight:700}
+.t2-checklist{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px}
+.t2-checklist label{display:flex;align-items:flex-start;gap:9px;padding:8px 10px;border:1px solid #edf1f5;border-radius:var(--r-sm);background:#fbfcfd;font-size:var(--fs-sm);line-height:1.45;cursor:pointer}
+.t2-checklist label:has(input:checked){border-color:#bfe5d0;background:#f6fcf8}
+.t2-checklist input{flex:none;width:16px;height:16px;margin-top:2px;accent-color:var(--ll-good)}
+.t2-criterion{flex:none;min-width:34px;padding:1px 6px;border-radius:var(--r-sm);background:var(--ll-soft);color:var(--ll-tone);font-size:var(--fs-2xs);font-weight:800;text-align:center}
+.t2-model{border-color:#f0dcaa;background:linear-gradient(180deg,#fffaf0,#fff 140px)}
+.t2-model>h2{margin-top:4px}
+.t2-model-text{display:grid;gap:10px;font-size:var(--fs-base);line-height:1.7}
+.t2-model .ll-tip{margin-top:14px}
+.t2-outline{margin-top:10px;color:#3b5068;font-size:var(--fs-sm);line-height:1.55}
+
+@media (max-width:860px){
+  .t2-lab .ll-track-map{grid-template-columns:repeat(4,minmax(0,1fr));grid-auto-flow:row;overflow:visible;padding:4px 0}
+  .t2-lab .ll-track-map::before{display:none}
+}
+@media (max-width:640px){
+  .t2-lab .ll-track-map{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .t2-checklist{grid-template-columns:1fr}
+  .t2-panel,.t2-essay{padding:14px}
+  .t2-row .ll-btn{width:100%}
+}
