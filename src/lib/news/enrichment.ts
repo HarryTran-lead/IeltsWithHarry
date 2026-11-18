@@ -204,9 +204,16 @@ export function newsQuizFreeTierReady() {
     && process.env.AI_FACTORY_FREE_TIER_CONFIRMED === "true"
     && Boolean(process.env.AI_FACTORY_GEMINI_API_KEY);
 }
-export async function geminiJson<T>(system: string, user: string | GeminiPart[], schema: unknown, { fetcher = fetch, maxOutputTokens = 16000, temperature = 0.4, googleSearch = false, models, freeTierOnly = false }: { fetcher?: typeof fetch; maxOutputTokens?: number; temperature?: number; googleSearch?: boolean; models?: string[]; freeTierOnly?: boolean } = {}): Promise<{ model: string; data: T }> {
-  const key = freeTierOnly ? (newsQuizFreeTierReady() ? process.env.AI_FACTORY_GEMINI_API_KEY : undefined) : process.env.GEMINI_API_KEY;
-  if (!key) throw new Error(freeTierOnly ? "Confirmed free-tier Gemini key is not configured" : "GEMINI_API_KEY is not configured");
+export function newsArticleFreeTierReady() {
+  return process.env.NEWS_ARTICLE_FREE_TIER_CONFIRMED === "true"
+    && Boolean(process.env.NEWS_ARTICLE_GEMINI_API_KEY);
+}
+export async function geminiJson<T>(system: string, user: string | GeminiPart[], schema: unknown, { fetcher = fetch, maxOutputTokens = 16000, temperature = 0.4, googleSearch = false, models, freeTierOnly = false, articleOnly = false }: { fetcher?: typeof fetch; maxOutputTokens?: number; temperature?: number; googleSearch?: boolean; models?: string[]; freeTierOnly?: boolean; articleOnly?: boolean } = {}): Promise<{ model: string; data: T }> {
+  if (freeTierOnly && articleOnly) throw new Error("Choose one Gemini key purpose");
+  const key = articleOnly ? (newsArticleFreeTierReady() ? process.env.NEWS_ARTICLE_GEMINI_API_KEY : undefined)
+    : freeTierOnly ? (newsQuizFreeTierReady() ? process.env.AI_FACTORY_GEMINI_API_KEY : undefined) : process.env.GEMINI_API_KEY;
+  if (!key) throw new Error(articleOnly ? "Confirmed free-tier Gemini key is not configured for news articles"
+    : freeTierOnly ? "Confirmed free-tier Gemini key is not configured" : "GEMINI_API_KEY is not configured");
   const request = JSON.stringify({
     systemInstruction: { parts: [{ text: system }] },
     contents: [{ role: "user", parts: typeof user === "string" ? [{ text: user }] : user }],
