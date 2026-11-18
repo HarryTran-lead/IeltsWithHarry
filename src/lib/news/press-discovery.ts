@@ -197,7 +197,7 @@ export async function discoverPressFacts(db: Db, result: DiscoveryRun, settings:
     try {
       const dossier = await findIndependentDossier(item, fetcher, officialLeads);
       if (!dossier.success) {
-        await db.from("news_skipped_urls").upsert({ canonical_hash: item.canonical_hash, reason: "ai_rewrite", detail: "Insufficient independent primary-source facts" }, { onConflict: "canonical_hash" });
+        await db.from("news_skipped_urls").upsert({ canonical_hash: item.canonical_hash, reason: "ai_rewrite", detail: "Insufficient verified factual notes" }, { onConflict: "canonical_hash" });
         return;
       }
       const written = await writeArticleFromFacts(dossier.data, fetcher);
@@ -219,7 +219,7 @@ export async function discoverPressFacts(db: Db, result: DiscoveryRun, settings:
       const { error: bodyError } = await db.from("news_article_bodies").insert({
         article_id: id, body_text: written.body, source_url: sourceUrl, ai_generated: true,
         byline: "IeltsWithHarry editorial",
-        rights_basis: `Original AI-assisted draft from verified primary/open facts. Discovery lead: ${item.canonical_url}. Editorial dossier: ${JSON.stringify({ topic: written.dossier.topic, category: written.dossier.category, facts: written.dossier.facts, model: written.model, verified_with: written.verified_with, reviewed_with: written.reviewed_with })}`,
+        rights_basis: `Original AI-assisted draft from verified factual notes. Discovery lead: ${item.canonical_url}. Editorial dossier: ${JSON.stringify({ topic: written.dossier.topic, category: written.dossier.category, facts: written.dossier.facts, model: written.model, verified_with: written.verified_with, reviewed_with: written.reviewed_with })}`,
       });
       if (bodyError) { await db.from("news_articles").delete().eq("id", id); throw bodyError; }
       const { error: dossierError } = await db.from("news_fact_dossiers").insert({
