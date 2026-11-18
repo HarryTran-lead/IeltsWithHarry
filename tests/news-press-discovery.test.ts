@@ -40,9 +40,9 @@ it("keeps researching after thin topics while capping attempts and completed dra
   expect(discoveryBudget(0, 0, 0)).toBe(false);
 });
 
-it("uses three research slots when available and alternates feed groups every 20 minutes", () => {
-  expect(discoveryBatchLimit(0, 0, 50)).toBe(3);
-  expect(discoveryBatchLimit(48, 0, 50)).toBe(2);
+it("uses one Free Tier research slot per run and alternates feed groups every 20 minutes", () => {
+  expect(discoveryBatchLimit(0, 0, 50)).toBe(1);
+  expect(discoveryBatchLimit(48, 0, 50)).toBe(1);
   expect(discoveryBatchLimit(49, 0, 50)).toBe(1);
   expect(discoveryBatchLimit(0, 199, 50)).toBe(1);
   expect(discoveryBatchLimit(50, 0, 50)).toBe(0);

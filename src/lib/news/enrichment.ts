@@ -222,10 +222,16 @@ export async function geminiJson<T>(system: string, user: string | GeminiPart[],
   });
   let lastError: Error = new Error("AI service unavailable");
   for (const model of models ?? geminiModels()) {
-    const response = await fetcher(`https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent`, {
-      method: "POST", signal: AbortSignal.timeout(45000), cache: "no-store",
-      headers: { "x-goog-api-key": key, "Content-Type": "application/json" }, body: request,
-    });
+    let response: Response;
+    for (let attempt = 0; ; attempt++) {
+      response = await fetcher(`https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent`, {
+        method: "POST", signal: AbortSignal.timeout(45000), cache: "no-store",
+        headers: { "x-goog-api-key": key, "Content-Type": "application/json" }, body: request,
+      });
+      if (!articleOnly || response.status !== 503 || attempt >= 2) break;
+      await response.body?.cancel().catch(() => undefined);
+      await new Promise((resolve) => setTimeout(resolve, 750 * 2 ** attempt));
+    }
     if (response.status === 429) { lastError = await quotaError(response); continue; }
     if (response.status === 404) { lastError = new Error(`AI model ${model} is unavailable`); continue; }
     if (response.status >= 500) { lastError = new Error(`AI service returned HTTP ${response.status}`); continue; }
