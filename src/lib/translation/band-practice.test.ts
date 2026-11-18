@@ -68,6 +68,31 @@ describe("band translation practice data", () => {
       for (const error of item.commonErrors) expect(error.incorrect).not.toBe(error.correction);
     }
   });
+
+  it("only shows step hints that quote the prompt and never the answer", async () => {
+    const exercises = [...(await allExercises()).values()].flat();
+    const hinted = exercises.filter((item) => item.hintsVi?.length);
+    expect(hinted.length).toBeGreaterThan(1800);
+    // Collect problems and assert once: ~130k individual expects ran past the 5 s timeout.
+    const problems: string[] = [];
+    for (const item of hinted) {
+      if (item.hintsVi!.length > 3) problems.push(`${item.id}: more than 3 hints`);
+      const trigrams = item.referenceAnswers.flatMap((answer) => {
+        const words = answer.toLowerCase().match(/[a-z']+/g) ?? [];
+        return words.slice(0, -2).map((_, index) => words.slice(index, index + 3).join(" "));
+      });
+      for (const hint of item.hintsVi!) {
+        if (/bắt đầu bằng chữ|chữ cái|→ “/.test(hint)) problems.push(`${item.id}: spelling or translation cue`);
+        for (const quote of hint.match(/“[^”]*”/g) ?? []) {
+          if (!item.promptVi.includes(quote.slice(1, -1).replace(/(…|\.\.\.)$/, "").trim())) problems.push(`${item.id}: quote not in prompt`);
+        }
+        const text = hint.toLowerCase();
+        const leaked = trigrams.find((trigram) => text.includes(trigram));
+        if (leaked) problems.push(`${item.id}: repeats "${leaked}"`);
+      }
+    }
+    expect(problems).toEqual([]);
+  });
 });
 
 describe("closestAnswer", () => {

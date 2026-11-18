@@ -49,6 +49,12 @@ function firstPhase(item?: BandExercise): Phase {
 
 const allKeys = bandIndex.flatMap((summary) => summary.keys);
 
+/** Hints in the order they open: the key word first (if any), then the step hints. */
+function hintsFor(item?: BandExercise) {
+  if (!item) return [];
+  return [...(item.targetTerm ? [`Từ khóa: ${item.targetTerm} · ${item.meaningVi ?? ""}`] : []), ...(item.hintsVi ?? [])];
+}
+
 function interleavePatterns(items: BandExercise[]) {
   const groups = new Map<string, BandExercise[]>();
   for (const item of items) groups.set(item.source, [...(groups.get(item.source) ?? []), item]);
@@ -83,7 +89,7 @@ export function TranslationWorkspace() {
   const [copyAnswer, setCopyAnswer] = useState("");
   const [copyError, setCopyError] = useState(false);
   const [translation, setTranslation] = useState("");
-  const [showHint, setShowHint] = useState(false);
+  const [hintStep, setHintStep] = useState(0);
   const [finished, setFinished] = useState(false);
   const [message, setMessage] = useState("");
   const [loaded, setLoaded] = useState<{ band: string; items: BandExercise[] } | null>(null);
@@ -139,7 +145,7 @@ export function TranslationWorkspace() {
     setCopyAnswer("");
     setCopyError(false);
     setTranslation("");
-    setShowHint(false);
+    setHintStep(0);
     setFinished(false);
     setMessage("");
   }
@@ -166,7 +172,7 @@ export function TranslationWorkspace() {
     setCopyAnswer("");
     setCopyError(false);
     setTranslation("");
-    setShowHint(false);
+    setHintStep(0);
   }
 
   function leaveSession() {
@@ -178,18 +184,24 @@ export function TranslationWorkspace() {
   // Keyboard flow while practising: typing fields handle Enter themselves; these keys
   // work anywhere else. 1–4 rate the comparison, Enter continues after a round,
   // Alt+N plays the key word and Alt+G shows or hides the hint.
-  const keys = useRef({ rate, start, phase, finished, current, showHint });
+  // Each press opens the next hint; after the last one it hides them all.
+  function nextHint() {
+    const total = hintsFor(current).length;
+    setHintStep((step) => (step < total ? step + 1 : 0));
+  }
+
+  const keys = useRef({ rate, start, phase, finished, current, nextHint });
   useEffect(() => {
-    keys.current = { rate, start, phase, finished, current, showHint };
+    keys.current = { rate, start, phase, finished, current, nextHint };
   });
   useEffect(() => {
     if (!inSession) return;
     function onKey(event: KeyboardEvent) {
-      const { rate: rateNow, start: startNow, phase: phaseNow, finished: done, current: item, showHint: hint } = keys.current;
+      const { rate: rateNow, start: startNow, phase: phaseNow, finished: done, current: item, nextHint: openHint } = keys.current;
       if (event.altKey && !event.ctrlKey && !event.metaKey) {
         const key = event.key.toLowerCase();
         if (key === "n" && item?.targetTerm) { event.preventDefault(); speak(item.targetTerm); }
-        if (key === "g" && phaseNow === "translate" && item?.targetTerm) { event.preventDefault(); setShowHint(!hint); }
+        if (key === "g" && phaseNow === "translate" && hintsFor(item).length) { event.preventDefault(); openHint(); }
         return;
       }
       const target = event.target as HTMLElement | null;
@@ -301,10 +313,14 @@ export function TranslationWorkspace() {
           }} rows={current.type === "paragraph" ? 5 : 3} maxLength={2000} autoFocus spellCheck={false} placeholder="Viết bằng tiếng Anh…" /></label>
           <div className="practice-actions">
             <button className="practice-primary" type="button" disabled={!translation.trim()} onClick={() => setPhase("review")}>Xem câu mẫu <kbd>Enter</kbd></button>
-            {current.targetTerm && <button className="practice-hint-toggle" type="button" onClick={() => setShowHint(!showHint)}>{showHint ? "Ẩn gợi ý" : "Gợi ý từ khóa"} <kbd>Alt+G</kbd></button>}
+            {hintsFor(current).length > 0 && <button className="practice-hint-toggle" type="button" onClick={nextHint}>
+              {hintStep === 0 ? "Gợi ý" : hintStep < hintsFor(current).length ? `Gợi ý tiếp (${hintStep}/${hintsFor(current).length})` : "Ẩn gợi ý"} <kbd>Alt+G</kbd>
+            </button>}
             <small className="xp-key-note">Shift+Enter để xuống dòng</small>
           </div>
-          {showHint && current.targetTerm && <p className="practice-hint">{current.targetTerm} · {current.meaningVi}</p>}
+          {hintStep > 0 && <ol className="practice-hint xp-hints" aria-live="polite">
+            {hintsFor(current).slice(0, hintStep).map((hint) => <li key={hint}>{hint}</li>)}
+          </ol>}
         </div> : (() => {
           // Compare with the model answer the learner's wording is closest to.
           const closest = closestAnswer(translation, current.referenceAnswers);

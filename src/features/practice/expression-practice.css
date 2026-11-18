@@ -669,6 +669,16 @@
 .xp-session .practice-hint {
   margin: 10px 0 0;
 }
+.xp-session .xp-hints {
+  display: grid;
+  gap: 6px;
+  padding: 10px 14px 10px 32px;
+  border-radius: var(--r-md);
+  background: var(--sun-soft);
+  color: var(--ink);
+  font-size: var(--fs-sm);
+  line-height: 1.5;
+}
 
 .xp-session .practice-comparison {
   margin: 0 0 10px;
