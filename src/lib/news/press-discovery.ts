@@ -63,6 +63,18 @@ export function rankDiscoveryCandidates(candidates: DiscoveryCandidate[], publis
   return candidates.sort((a, b) => score(a) - score(b)
     || new Date(b.item.published_at).valueOf() - new Date(a.item.published_at).valueOf());
 }
+/** Sample a few ranked newspaper pages without spending Gemini calls on a thin report. */
+export async function evidenceRichPressLead(candidates: DiscoveryCandidate[], fetcher: typeof fetch = fetch) {
+  const press = candidates.filter(({ item }) => approvedPressFactSource(item.canonical_url)).slice(0, 8);
+  if (!press.length) return candidates[0];
+  const previews = await Promise.allSettled(press.map(async (candidate) => ({
+    candidate, words: (await readFactualSource(candidate.item.canonical_url, fetcher)).split(/\s+/).length,
+  })));
+  const readable = previews.flatMap((preview) => preview.status === "fulfilled" ? [preview.value] : []);
+  return readable.find(({ words }) => words >= 350)?.candidate
+    ?? readable.filter(({ words }) => words >= 250).sort((a, b) => b.words - a.words)[0]?.candidate
+    ?? candidates[0];
+}
 function repeatsHeadlinePhrase(text: string, headline: string) {
   const words = (value: string) => value.toLocaleLowerCase("en").match(/[a-z0-9]+/g) ?? [];
   const source = words(headline);
@@ -184,8 +196,9 @@ export async function discoverPressFacts(db: Db, result: DiscoveryRun, settings:
   const rejectedHashes = new Set((skipped.data ?? []).map((row) => row.canonical_hash));
   const selected: DiscoveryCandidate[] = [];
   for (let index = 0; index < batchLimit; index++) {
-    const candidate = rankDiscoveryCandidates(ordered, categoryCounts, rejectedHashes, sourceCounts)
-      .find(({ item }) => !seen.has(item.canonical_hash));
+    const ranked = rankDiscoveryCandidates(ordered, categoryCounts, rejectedHashes, sourceCounts)
+      .filter(({ item }) => !seen.has(item.canonical_hash));
+    const candidate = await evidenceRichPressLead(ranked, fetcher);
     if (!candidate) break;
     selected.push(candidate);
     seen.add(candidate.item.canonical_hash);

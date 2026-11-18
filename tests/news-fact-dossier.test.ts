@@ -46,10 +46,10 @@ it("accepts relevant official Vietnam and regional sources without admitting loo
 });
 
 it("bounds newspaper evidence and rejects unreviewed hosts", async () => {
-  const fetcher = (async () => new Response(`<article>${Array.from({ length: 12 }, (_, index) => `<p>Paragraph ${index + 1} contains factual details about a public event in Vietnam and its participants.</p>`).join("")}</article>`, { headers: { "Content-Type": "text/html" } })) as typeof fetch;
+  const fetcher = (async () => new Response(`<article>${Array.from({ length: 22 }, (_, index) => `<p>Paragraph ${index + 1} contains factual details about a public event in Vietnam and its participants.</p>`).join("")}</article>`, { headers: { "Content-Type": "text/html" } })) as typeof fetch;
   const excerpt = await readFactualSource("https://news.tuoitre.vn/example.html", fetcher);
-  expect(excerpt).toContain("Paragraph 10");
-  expect(excerpt).not.toContain("Paragraph 11");
+  expect(excerpt).toContain("Paragraph 20");
+  expect(excerpt).not.toContain("Paragraph 21");
   await expect(readFactualSource("https://news.tuoitre.vn.evil.example/story", fetcher)).rejects.toThrow("not approved");
 });
 
