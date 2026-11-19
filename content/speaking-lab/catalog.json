@@ -1,0 +1,3237 @@
+{
+ "source": {
+  "package": "IELTS_Speaking_M10_L80",
+  "milestones": [
+   "L41",
+   "L48",
+   "L65",
+   "L67",
+   "L79"
+  ],
+  "note_vi": "Tài liệu luyện tập do đội ngũ biên soạn, chưa được giáo viên duyệt toàn bộ; không quy đổi sang band."
+ },
+ "levels": [
+  {
+   "id": "foundation",
+   "label": "1.0–2.5",
+   "guidance_vi": "Mở đầu bằng câu ngắn và lý do rõ ràng."
+  },
+  {
+   "id": "build",
+   "label": "2.5–4.0",
+   "guidance_vi": "Phát triển ý và kể chuyện đơn giản."
+  },
+  {
+   "id": "apply",
+   "label": "4.0–5.5",
+   "guidance_vi": "Giải thích, so sánh và dùng ngôn ngữ chính xác."
+  },
+  {
+   "id": "develop",
+   "label": "5.5–6.5",
+   "guidance_vi": "Nói có cấu trúc và chuyển giao linh hoạt."
+  },
+  {
+   "id": "extend",
+   "label": "6.5–7.5+",
+   "guidance_vi": "Lập luận có điều kiện và thích ứng ngữ cảnh."
+  }
+ ],
+ "skills": [
+  {
+   "id": "FC01",
+   "criterion": "FC",
+   "title_vi": "Trả lời đúng trọng tâm",
+   "title_en": "Direct, relevant answers",
+   "objective_vi": "Trả lời thẳng một ý, rồi thêm chi tiết phù hợp.",
+   "objective_en": "Choose one main answer then support it with a relevant detail."
+  },
+  {
+   "id": "FC02",
+   "criterion": "FC",
+   "title_vi": "Lập luận có mạch",
+   "title_en": "Coherent reasoning",
+   "objective_vi": "Nêu nhận định → lý do → kết quả có thể xảy ra.",
+   "objective_en": "Use a claim → why → consequence sequence."
+  },
+  {
+   "id": "FC03",
+   "criterion": "FC",
+   "title_vi": "Kể chuyện theo trình tự",
+   "title_en": "Narrative sequencing",
+   "objective_vi": "Có bối cảnh, bước ngoặt, kết quả và suy ngẫm.",
+   "objective_en": "Give a beginning, turning point, result, then reflection."
+  },
+  {
+   "id": "FC04",
+   "criterion": "FC",
+   "title_vi": "Tranh luận cân bằng",
+   "title_en": "Balanced discussion",
+   "objective_vi": "Nêu quan điểm, công nhận giới hạn rồi giải thích lại.",
+   "objective_en": "State a view, acknowledge a limitation, and respond."
+  },
+  {
+   "id": "LR01",
+   "criterion": "LR",
+   "title_vi": "Từ vựng cụ thể",
+   "title_en": "Concrete vocabulary",
+   "objective_vi": "Thay từ mơ hồ bằng chi tiết dễ hiểu, cụ thể.",
+   "objective_en": "Replace a vague adjective with a precise everyday detail."
+  },
+  {
+   "id": "LR02",
+   "criterion": "LR",
+   "title_vi": "Diễn đạt lại khi bí từ",
+   "title_en": "Paraphrase under pressure",
+   "objective_vi": "Nếu quên từ, diễn đạt nghĩa bằng từ dễ hơn.",
+   "objective_en": "Explain the meaning with simpler words if a word is missing."
+  },
+  {
+   "id": "LR03",
+   "criterion": "LR",
+   "title_vi": "Kết hợp từ tự nhiên",
+   "title_en": "Natural word combinations",
+   "objective_vi": "Dùng ít cụm từ chính xác thay vì học thuộc nhiều thành ngữ.",
+   "objective_en": "Choose a small number of accurate phrases, not a memorised list."
+  },
+  {
+   "id": "LR04",
+   "criterion": "LR",
+   "title_vi": "Phân biệt sắc thái",
+   "title_en": "Nuanced distinctions",
+   "objective_vi": "So sánh các ý gần nhau nhưng không đánh đồng.",
+   "objective_en": "Compare similar ideas without claiming they are identical."
+  },
+  {
+   "id": "GR01",
+   "criterion": "GR",
+   "title_vi": "Dùng thì theo thời gian",
+   "title_en": "Time reference",
+   "objective_vi": "Xác định mốc thời gian rồi kiểm tra các động từ.",
+   "objective_en": "Anchor events to a timeline and keep verb forms consistent."
+  },
+  {
+   "id": "GR02",
+   "criterion": "GR",
+   "title_vi": "Cấu trúc so sánh",
+   "title_en": "Comparative structures",
+   "objective_vi": "Nêu hai đối tượng rõ ràng rồi so sánh đúng cấu trúc.",
+   "objective_en": "Use a clear comparison with accurate forms."
+  },
+  {
+   "id": "GR03",
+   "criterion": "GR",
+   "title_vi": "Lập luận điều kiện",
+   "title_en": "Conditional reasoning",
+   "objective_vi": "Nêu giả định hợp lý và giải thích hệ quả.",
+   "objective_en": "Express a plausible conditional and explain the result."
+  },
+  {
+   "id": "GR04",
+   "criterion": "GR",
+   "title_vi": "Mệnh đề phức chính xác",
+   "title_en": "Accurate complex clauses",
+   "objective_vi": "Nối ý chính xác, không cố viết câu dài mọi lúc.",
+   "objective_en": "Connect ideas accurately rather than making every sentence long."
+  },
+  {
+   "id": "PR01",
+   "criterion": "PR",
+   "title_vi": "Âm cuối dễ hiểu",
+   "title_en": "Final consonant clarity",
+   "objective_vi": "Nghe lại âm cuối trong bản ghi nếu tự nguyện ghi âm.",
+   "objective_en": "Listen to final sounds in your own recording if consented."
+  },
+  {
+   "id": "PR02",
+   "criterion": "PR",
+   "title_vi": "Trọng âm từ và câu",
+   "title_en": "Word and sentence prominence",
+   "objective_vi": "Chọn một từ mang thông tin đối lập để nhấn hợp lý.",
+   "objective_en": "Mark one contrast word to emphasise, then practise naturally."
+  },
+  {
+   "id": "PR03",
+   "criterion": "PR",
+   "title_vi": "Ngắt cụm ý có nghĩa",
+   "title_en": "Meaningful thought groups",
+   "objective_vi": "Dừng tại ranh giới ý, tránh ngắt giữa cụm ngắn.",
+   "objective_en": "Pause at ideas, not in the middle of short phrases."
+  },
+  {
+   "id": "PR04",
+   "criterion": "PR",
+   "title_vi": "Ngữ điệu và đối chiếu",
+   "title_en": "Intonation and contrast",
+   "objective_vi": "Dùng ngữ điệu để làm rõ đối chiếu, không cần bắt chước giọng bản xứ.",
+   "objective_en": "Use intonation to clarify a contrast; avoid artificial accents."
+  }
+ ],
+ "units": [
+  {
+   "id": "skill-FC01",
+   "kind": "skill",
+   "part": 1,
+   "criterion": "FC",
+   "skills": [
+    "FC01"
+   ],
+   "title_vi": "Trả lời đúng trọng tâm",
+   "title_en": "Direct, relevant answers",
+   "topic_en": "Conversation & belonging",
+   "target_vi": "Một câu trả lời trực tiếp, một lý do, một chi tiết thật về tình huống.",
+   "tasks": [
+    {
+     "id": "T1",
+     "phase": "independent_baseline",
+     "label": "Nói lần đầu",
+     "hint": "Tự trả lời trước khi xem gợi ý.",
+     "part": 1,
+     "mode": "short_spoken_answer",
+     "prep_seconds": 0,
+     "expected_seconds": {
+      "min": 20,
+      "max": 45
+     },
+     "gap_days": 0
+    },
+    {
+     "id": "T2",
+     "phase": "delayed_independent_transfer",
+     "label": "Nói câu mới",
+     "hint": "Câu hỏi khác, cùng kỹ năng. Nên nói sau vài ngày.",
+     "part": 1,
+     "mode": "short_spoken_answer",
+     "prep_seconds": 0,
+     "expected_seconds": {
+      "min": 20,
+      "max": 45
+     },
+     "gap_days": 7
+    }
+   ]
+  },
+  {
+   "id": "skill-FC02",
+   "kind": "skill",
+   "part": 3,
+   "criterion": "FC",
+   "skills": [
+    "FC02"
+   ],
+   "title_vi": "Lập luận có mạch",
+   "title_en": "Coherent reasoning",
+   "topic_en": "Public facilities & priorities",
+   "target_vi": "Nối rõ quyết định → lý do → tác động; không khẳng định tất cả cộng đồng giống nhau.",
+   "tasks": [
+    {
+     "id": "T1",
+     "phase": "independent_baseline",
+     "label": "Nói lần đầu",
+     "hint": "Tự trả lời trước khi xem gợi ý.",
+     "part": 3,
+     "mode": "short_spoken_answer",
+     "prep_seconds": 0,
+     "expected_seconds": {
+      "min": 30,
+      "max": 60
+     },
+     "gap_days": 0
+    },
+    {
+     "id": "T2",
+     "phase": "delayed_independent_transfer",
+     "label": "Nói câu mới",
+     "hint": "Câu hỏi khác, cùng kỹ năng. Nên nói sau vài ngày.",
+     "part": 3,
+     "mode": "short_spoken_answer",
+     "prep_seconds": 0,
+     "expected_seconds": {
+      "min": 30,
+      "max": 60
+     },
+     "gap_days": 7
+    }
+   ]
+  },
+  {
+   "id": "skill-FC03",
+   "kind": "skill",
+   "part": 2,
+   "criterion": "FC",
+   "skills": [
+    "FC03"
+   ],
+   "title_vi": "Kể chuyện theo trình tự",
+   "title_en": "Narrative sequencing",
+   "topic_en": "Changed plans",
+   "target_vi": "Bối cảnh → thay đổi → hành động → kết quả; giữ nhất quán thì quá khứ.",
+   "tasks": [
+    {
+     "id": "T1",
+     "phase": "independent_baseline",
+     "label": "Nói lần đầu",
+     "hint": "Tự trả lời trước khi xem gợi ý.",
+     "part": 2,
+     "mode": "full_cue",
+     "prep_seconds": 60,
+     "expected_seconds": {
+      "min": 85,
+      "max": 120
+     },
+     "gap_days": 0
+    },
+    {
+     "id": "T2",
+     "phase": "delayed_independent_transfer",
+     "label": "Nói câu mới",
+     "hint": "Câu hỏi khác, cùng kỹ năng. Nên nói sau vài ngày.",
+     "part": 2,
+     "mode": "full_cue",
+     "prep_seconds": 60,
+     "expected_seconds": {
+      "min": 85,
+      "max": 120
+     },
+     "gap_days": 7
+    }
+   ]
+  },
+  {
+   "id": "skill-FC04",
+   "kind": "skill",
+   "part": 3,
+   "criterion": "FC",
+   "skills": [
+    "FC04"
+   ],
+   "title_vi": "Tranh luận cân bằng",
+   "title_en": "Balanced discussion",
+   "topic_en": "Volunteering & fairness",
+   "target_vi": "Nêu một lợi ích rồi nhìn nhận giới hạn về thời gian và điều kiện của người tham gia.",
+   "tasks": [
+    {
+     "id": "T1",
+     "phase": "independent_baseline",
+     "label": "Nói lần đầu",
+     "hint": "Tự trả lời trước khi xem gợi ý.",
+     "part": 3,
+     "mode": "short_spoken_answer",
+     "prep_seconds": 0,
+     "expected_seconds": {
+      "min": 30,
+      "max": 60
+     },
+     "gap_days": 0
+    },
+    {
+     "id": "T2",
+     "phase": "delayed_independent_transfer",
+     "label": "Nói câu mới",
+     "hint": "Câu hỏi khác, cùng kỹ năng. Nên nói sau vài ngày.",
+     "part": 3,
+     "mode": "short_spoken_answer",
+     "prep_seconds": 0,
+     "expected_seconds": {
+      "min": 30,
+      "max": 60
+     },
+     "gap_days": 7
+    }
+   ]
+  },
+  {
+   "id": "skill-LR01",
+   "kind": "skill",
+   "part": 1,
+   "criterion": "LR",
+   "skills": [
+    "LR01"
+   ],
+   "title_vi": "Từ vựng cụ thể",
+   "title_en": "Concrete vocabulary",
+   "topic_en": "Places & details",
+   "target_vi": "Thay tính từ chung bằng một đặc điểm quan sát được và tác dụng của nó.",
+   "tasks": [
+    {
+     "id": "T1",
+     "phase": "independent_baseline",
+     "label": "Nói lần đầu",
+     "hint": "Tự trả lời trước khi xem gợi ý.",
+     "part": 1,
+     "mode": "short_spoken_answer",
+     "prep_seconds": 0,
+     "expected_seconds": {
+      "min": 20,
+      "max": 45
+     },
+     "gap_days": 0
+    },
+    {
+     "id": "T2",
+     "phase": "delayed_independent_transfer",
+     "label": "Nói câu mới",
+     "hint": "Câu hỏi khác, cùng kỹ năng. Nên nói sau vài ngày.",
+     "part": 1,
+     "mode": "short_spoken_answer",
+     "prep_seconds": 0,
+     "expected_seconds": {
+      "min": 20,
+      "max": 45
+     },
+     "gap_days": 7
+    }
+   ]
+  },
+  {
+   "id": "skill-LR02",
+   "kind": "skill",
+   "part": 1,
+   "criterion": "LR",
+   "skills": [
+    "LR02"
+   ],
+   "title_vi": "Diễn đạt lại khi bí từ",
+   "title_en": "Paraphrase under pressure",
+   "topic_en": "Everyday objects",
+   "target_vi": "Nếu quên một danh từ, diễn đạt công dụng bằng ngôn ngữ đơn giản rồi tiếp tục nói.",
+   "tasks": [
+    {
+     "id": "T1",
+     "phase": "independent_baseline",
+     "label": "Nói lần đầu",
+     "hint": "Tự trả lời trước khi xem gợi ý.",
+     "part": 1,
+     "mode": "short_spoken_answer",
+     "prep_seconds": 0,
+     "expected_seconds": {
+      "min": 20,
+      "max": 45
+     },
+     "gap_days": 0
+    },
+    {
+     "id": "T2",
+     "phase": "delayed_independent_transfer",
+     "label": "Nói câu mới",
+     "hint": "Câu hỏi khác, cùng kỹ năng. Nên nói sau vài ngày.",
+     "part": 1,
+     "mode": "short_spoken_answer",
+     "prep_seconds": 0,
+     "expected_seconds": {
+      "min": 20,
+      "max": 45
+     },
+     "gap_days": 7
+    }
+   ]
+  },
+  {
+   "id": "skill-LR03",
+   "kind": "skill",
+   "part": 2,
+   "criterion": "LR",
+   "skills": [
+    "LR03"
+   ],
+   "title_vi": "Kết hợp từ tự nhiên",
+   "title_en": "Natural word combinations",
+   "topic_en": "Working together",
+   "target_vi": "Dùng cụm từ tự nhiên trong ngữ cảnh: organise a schedule, divide tasks, prepare ingredients.",
+   "tasks": [
+    {
+     "id": "T1",
+     "phase": "independent_baseline",
+     "label": "Nói lần đầu",
+     "hint": "Tự trả lời trước khi xem gợi ý.",
+     "part": 2,
+     "mode": "full_cue",
+     "prep_seconds": 60,
+     "expected_seconds": {
+      "min": 85,
+      "max": 120
+     },
+     "gap_days": 0
+    },
+    {
+     "id": "T2",
+     "phase": "delayed_independent_transfer",
+     "label": "Nói câu mới",
+     "hint": "Câu hỏi khác, cùng kỹ năng. Nên nói sau vài ngày.",
+     "part": 2,
+     "mode": "full_cue",
+     "prep_seconds": 60,
+     "expected_seconds": {
+      "min": 85,
+      "max": 120
+     },
+     "gap_days": 7
+    }
+   ]
+  },
+  {
+   "id": "skill-LR04",
+   "kind": "skill",
+   "part": 3,
+   "criterion": "LR",
+   "skills": [
+    "LR04"
+   ],
+   "title_vi": "Phân biệt sắc thái",
+   "title_en": "Nuanced distinctions",
+   "topic_en": "Service & value",
+   "target_vi": "Phân biệt tiện lợi, chất lượng và giá trị thay vì coi các khái niệm là đồng nghĩa.",
+   "tasks": [
+    {
+     "id": "T1",
+     "phase": "independent_baseline",
+     "label": "Nói lần đầu",
+     "hint": "Tự trả lời trước khi xem gợi ý.",
+     "part": 3,
+     "mode": "short_spoken_answer",
+     "prep_seconds": 0,
+     "expected_seconds": {
+      "min": 30,
+      "max": 60
+     },
+     "gap_days": 0
+    },
+    {
+     "id": "T2",
+     "phase": "delayed_independent_transfer",
+     "label": "Nói câu mới",
+     "hint": "Câu hỏi khác, cùng kỹ năng. Nên nói sau vài ngày.",
+     "part": 3,
+     "mode": "short_spoken_answer",
+     "prep_seconds": 0,
+     "expected_seconds": {
+      "min": 30,
+      "max": 60
+     },
+     "gap_days": 7
+    }
+   ]
+  },
+  {
+   "id": "skill-GR01",
+   "kind": "skill",
+   "part": 2,
+   "criterion": "GR",
+   "skills": [
+    "GR01"
+   ],
+   "title_vi": "Dùng thì theo thời gian",
+   "title_en": "Time reference",
+   "topic_en": "Changing routines",
+   "target_vi": "Giữ mốc quá khứ và hiện tại rõ ràng; dùng used to phù hợp khi nói thói quen cũ.",
+   "tasks": [
+    {
+     "id": "T1",
+     "phase": "independent_baseline",
+     "label": "Nói lần đầu",
+     "hint": "Tự trả lời trước khi xem gợi ý.",
+     "part": 2,
+     "mode": "full_cue",
+     "prep_seconds": 60,
+     "expected_seconds": {
+      "min": 85,
+      "max": 120
+     },
+     "gap_days": 0
+    },
+    {
+     "id": "T2",
+     "phase": "delayed_independent_transfer",
+     "label": "Nói câu mới",
+     "hint": "Câu hỏi khác, cùng kỹ năng. Nên nói sau vài ngày.",
+     "part": 2,
+     "mode": "full_cue",
+     "prep_seconds": 60,
+     "expected_seconds": {
+      "min": 85,
+      "max": 120
+     },
+     "gap_days": 7
+    }
+   ]
+  },
+  {
+   "id": "skill-GR02",
+   "kind": "skill",
+   "part": 3,
+   "criterion": "GR",
+   "skills": [
+    "GR02"
+   ],
+   "title_vi": "Cấu trúc so sánh",
+   "title_en": "Comparative structures",
+   "topic_en": "Learning formats",
+   "target_vi": "So sánh hai nhóm theo cùng tiêu chí thay vì đưa hai nhận định không liên quan.",
+   "tasks": [
+    {
+     "id": "T1",
+     "phase": "independent_baseline",
+     "label": "Nói lần đầu",
+     "hint": "Tự trả lời trước khi xem gợi ý.",
+     "part": 3,
+     "mode": "short_spoken_answer",
+     "prep_seconds": 0,
+     "expected_seconds": {
+      "min": 30,
+      "max": 60
+     },
+     "gap_days": 0
+    },
+    {
+     "id": "T2",
+     "phase": "delayed_independent_transfer",
+     "label": "Nói câu mới",
+     "hint": "Câu hỏi khác, cùng kỹ năng. Nên nói sau vài ngày.",
+     "part": 3,
+     "mode": "short_spoken_answer",
+     "prep_seconds": 0,
+     "expected_seconds": {
+      "min": 30,
+      "max": 60
+     },
+     "gap_days": 7
+    }
+   ]
+  },
+  {
+   "id": "skill-GR03",
+   "kind": "skill",
+   "part": 3,
+   "criterion": "GR",
+   "skills": [
+    "GR03"
+   ],
+   "title_vi": "Lập luận điều kiện",
+   "title_en": "Conditional reasoning",
+   "topic_en": "Conditions & exceptions",
+   "target_vi": "Dùng if, unless, provided that để thể hiện điều kiện thực sự chứ không thêm câu phức cho dài.",
+   "tasks": [
+    {
+     "id": "T1",
+     "phase": "independent_baseline",
+     "label": "Nói lần đầu",
+     "hint": "Tự trả lời trước khi xem gợi ý.",
+     "part": 3,
+     "mode": "short_spoken_answer",
+     "prep_seconds": 0,
+     "expected_seconds": {
+      "min": 30,
+      "max": 60
+     },
+     "gap_days": 0
+    },
+    {
+     "id": "T2",
+     "phase": "delayed_independent_transfer",
+     "label": "Nói câu mới",
+     "hint": "Câu hỏi khác, cùng kỹ năng. Nên nói sau vài ngày.",
+     "part": 3,
+     "mode": "short_spoken_answer",
+     "prep_seconds": 0,
+     "expected_seconds": {
+      "min": 30,
+      "max": 60
+     },
+     "gap_days": 7
+    }
+   ]
+  },
+  {
+   "id": "skill-GR04",
+   "kind": "skill",
+   "part": 3,
+   "criterion": "GR",
+   "skills": [
+    "GR04"
+   ],
+   "title_vi": "Mệnh đề phức chính xác",
+   "title_en": "Accurate complex clauses",
+   "topic_en": "Heritage & public budgets",
+   "target_vi": "Giữ quan hệ ý chính – nhượng bộ – kết luận rõ ràng với although, whereas, even if.",
+   "tasks": [
+    {
+     "id": "T1",
+     "phase": "independent_baseline",
+     "label": "Nói lần đầu",
+     "hint": "Tự trả lời trước khi xem gợi ý.",
+     "part": 3,
+     "mode": "short_spoken_answer",
+     "prep_seconds": 0,
+     "expected_seconds": {
+      "min": 30,
+      "max": 60
+     },
+     "gap_days": 0
+    },
+    {
+     "id": "T2",
+     "phase": "delayed_independent_transfer",
+     "label": "Nói câu mới",
+     "hint": "Câu hỏi khác, cùng kỹ năng. Nên nói sau vài ngày.",
+     "part": 3,
+     "mode": "short_spoken_answer",
+     "prep_seconds": 0,
+     "expected_seconds": {
+      "min": 30,
+      "max": 60
+     },
+     "gap_days": 7
+    }
+   ]
+  },
+  {
+   "id": "skill-PR01",
+   "kind": "skill",
+   "part": 1,
+   "criterion": "PR",
+   "skills": [
+    "PR01"
+   ],
+   "title_vi": "Âm cuối dễ hiểu",
+   "title_en": "Final consonant clarity",
+   "topic_en": "Daily pronunciation",
+   "target_vi": "Nghe lại bản ghi xem âm cuối có đủ rõ để phân biệt ý, không chấm phát âm bằng transcript.",
+   "tasks": [
+    {
+     "id": "T1",
+     "phase": "independent_baseline",
+     "label": "Nói lần đầu",
+     "hint": "Tự trả lời trước khi xem gợi ý.",
+     "part": 1,
+     "mode": "short_spoken_answer",
+     "prep_seconds": 0,
+     "expected_seconds": {
+      "min": 20,
+      "max": 45
+     },
+     "gap_days": 0
+    },
+    {
+     "id": "T2",
+     "phase": "delayed_independent_transfer",
+     "label": "Nói câu mới",
+     "hint": "Câu hỏi khác, cùng kỹ năng. Nên nói sau vài ngày.",
+     "part": 1,
+     "mode": "short_spoken_answer",
+     "prep_seconds": 0,
+     "expected_seconds": {
+      "min": 20,
+      "max": 45
+     },
+     "gap_days": 7
+    }
+   ]
+  },
+  {
+   "id": "skill-PR02",
+   "kind": "skill",
+   "part": 3,
+   "criterion": "PR",
+   "skills": [
+    "PR02"
+   ],
+   "title_vi": "Trọng âm từ và câu",
+   "title_en": "Word and sentence prominence",
+   "topic_en": "Contrastive prominence",
+   "target_vi": "Ghi âm rồi nghe cách nhấn từ mang thông tin đối chiếu; trọng âm không chỉ là nói to.",
+   "tasks": [
+    {
+     "id": "T1",
+     "phase": "independent_baseline",
+     "label": "Nói lần đầu",
+     "hint": "Tự trả lời trước khi xem gợi ý.",
+     "part": 3,
+     "mode": "short_spoken_answer",
+     "prep_seconds": 0,
+     "expected_seconds": {
+      "min": 30,
+      "max": 60
+     },
+     "gap_days": 0
+    },
+    {
+     "id": "T2",
+     "phase": "delayed_independent_transfer",
+     "label": "Nói câu mới",
+     "hint": "Câu hỏi khác, cùng kỹ năng. Nên nói sau vài ngày.",
+     "part": 3,
+     "mode": "short_spoken_answer",
+     "prep_seconds": 0,
+     "expected_seconds": {
+      "min": 30,
+      "max": 60
+     },
+     "gap_days": 7
+    }
+   ]
+  },
+  {
+   "id": "skill-PR03",
+   "kind": "skill",
+   "part": 2,
+   "criterion": "PR",
+   "skills": [
+    "PR03"
+   ],
+   "title_vi": "Ngắt cụm ý có nghĩa",
+   "title_en": "Meaningful thought groups",
+   "topic_en": "Meaningful pausing",
+   "target_vi": "Chia ý theo cụm nghĩa; nghe bản ghi và kiểm tra chỗ ngắt có làm câu khó hiểu không.",
+   "tasks": [
+    {
+     "id": "T1",
+     "phase": "independent_baseline",
+     "label": "Nói lần đầu",
+     "hint": "Tự trả lời trước khi xem gợi ý.",
+     "part": 2,
+     "mode": "full_cue",
+     "prep_seconds": 60,
+     "expected_seconds": {
+      "min": 85,
+      "max": 120
+     },
+     "gap_days": 0
+    },
+    {
+     "id": "T2",
+     "phase": "delayed_independent_transfer",
+     "label": "Nói câu mới",
+     "hint": "Câu hỏi khác, cùng kỹ năng. Nên nói sau vài ngày.",
+     "part": 2,
+     "mode": "full_cue",
+     "prep_seconds": 60,
+     "expected_seconds": {
+      "min": 85,
+      "max": 120
+     },
+     "gap_days": 7
+    }
+   ]
+  },
+  {
+   "id": "skill-PR04",
+   "kind": "skill",
+   "part": 3,
+   "criterion": "PR",
+   "skills": [
+    "PR04"
+   ],
+   "title_vi": "Ngữ điệu và đối chiếu",
+   "title_en": "Intonation and contrast",
+   "topic_en": "Intonation & stance",
+   "target_vi": "Dùng ngữ điệu để phân biệt quan điểm chắc chắn, nghi vấn và ý nhượng bộ; phải nghe âm thanh thật.",
+   "tasks": [
+    {
+     "id": "T1",
+     "phase": "independent_baseline",
+     "label": "Nói lần đầu",
+     "hint": "Tự trả lời trước khi xem gợi ý.",
+     "part": 3,
+     "mode": "short_spoken_answer",
+     "prep_seconds": 0,
+     "expected_seconds": {
+      "min": 30,
+      "max": 60
+     },
+     "gap_days": 0
+    },
+    {
+     "id": "T2",
+     "phase": "delayed_independent_transfer",
+     "label": "Nói câu mới",
+     "hint": "Câu hỏi khác, cùng kỹ năng. Nên nói sau vài ngày.",
+     "part": 3,
+     "mode": "short_spoken_answer",
+     "prep_seconds": 0,
+     "expected_seconds": {
+      "min": 30,
+      "max": 60
+     },
+     "gap_days": 7
+    }
+   ]
+  },
+  {
+   "id": "topic-L01",
+   "kind": "topic",
+   "part": 1,
+   "skills": [
+    "FC01",
+    "GR02"
+   ],
+   "title_vi": "Thay đổi khu phố",
+   "title_en": "Neighbourhood changes",
+   "level": "Extend",
+   "order": 1,
+   "tasks": [
+    {
+     "id": "T1",
+     "phase": "independent_baseline",
+     "label": "Nói lần đầu",
+     "hint": "Tự trả lời trước khi xem gợi ý.",
+     "part": 1,
+     "mode": "short_spoken_answer",
+     "prep_seconds": 0,
+     "expected_seconds": {
+      "min": 20,
+      "max": 45
+     },
+     "gap_days": 0
+    },
+    {
+     "id": "T2",
+     "phase": "precision_and_condition",
+     "label": "Nói chính xác hơn",
+     "hint": "Giới hạn ý: đúng với ai, khi nào, trong điều kiện nào.",
+     "part": 1,
+     "mode": "short_spoken_answer",
+     "prep_seconds": 0,
+     "expected_seconds": {
+      "min": 20,
+      "max": 45
+     },
+     "gap_days": 0
+    },
+    {
+     "id": "T3",
+     "phase": "contrast_and_exception",
+     "label": "Đối chiếu và ngoại lệ",
+     "hint": "Nối hai phía bằng but / whereas / although.",
+     "part": 1,
+     "mode": "short_spoken_answer",
+     "prep_seconds": 0,
+     "expected_seconds": {
+      "min": 20,
+      "max": 45
+     },
+     "gap_days": 0
+    },
+    {
+     "id": "T4",
+     "phase": "targeted_repair",
+     "label": "Sửa có chủ đích",
+     "hint": "Nói lại, tập trung đúng một điểm cần sửa.",
+     "part": 1,
+     "mode": "short_spoken_answer",
+     "prep_seconds": 0,
+     "expected_seconds": {
+      "min": 20,
+      "max": 45
+     },
+     "gap_days": 0
+    },
+    {
+     "id": "T5",
+     "phase": "unexpected_followup",
+     "label": "Câu hỏi bất ngờ",
+     "hint": "Điều kiện thay đổi: nêu lý do mới, không lặp bài cũ.",
+     "part": 1,
+     "mode": "short_spoken_answer",
+     "prep_seconds": 0,
+     "expected_seconds": {
+      "min": 20,
+      "max": 45
+     },
+     "gap_days": 0
+    },
+    {
+     "id": "T6",
+     "phase": "unseen_transfer",
+     "label": "Tình huống mới",
+     "hint": "Tình huống liên quan nhưng khác, không nhìn mẫu.",
+     "part": 1,
+     "mode": "short_spoken_answer",
+     "prep_seconds": 0,
+     "expected_seconds": {
+      "min": 20,
+      "max": 45
+     },
+     "gap_days": 0
+    }
+   ]
+  },
+  {
+   "id": "topic-L02",
+   "kind": "topic",
+   "part": 1,
+   "skills": [
+    "FC01",
+    "LR03"
+   ],
+   "title_vi": "Nấu ăn tại nhà",
+   "title_en": "Cooking at home",
+   "level": "Extend",
+   "order": 2,
+   "tasks": [
+    {
+     "id": "T1",
+     "phase": "independent_baseline",
+     "label": "Nói lần đầu",
+     "hint": "Tự trả lời trước khi xem gợi ý.",
+     "part": 1,
+     "mode": "short_spoken_answer",
+     "prep_seconds": 0,
+     "expected_seconds": {
+      "min": 20,
+      "max": 45
+     },
+     "gap_days": 0
+    },
+    {
+     "id": "T2",
+     "phase": "precision_and_condition",
+     "label": "Nói chính xác hơn",
+     "hint": "Giới hạn ý: đúng với ai, khi nào, trong điều kiện nào.",
+     "part": 1,
+     "mode": "short_spoken_answer",
+     "prep_seconds": 0,
+     "expected_seconds": {
+      "min": 20,
+      "max": 45
+     },
+     "gap_days": 0
+    },
+    {
+     "id": "T3",
+     "phase": "contrast_and_exception",
+     "label": "Đối chiếu và ngoại lệ",
+     "hint": "Nối hai phía bằng but / whereas / although.",
+     "part": 1,
+     "mode": "short_spoken_answer",
+     "prep_seconds": 0,
+     "expected_seconds": {
+      "min": 20,
+      "max": 45
+     },
+     "gap_days": 0
+    },
+    {
+     "id": "T4",
+     "phase": "targeted_repair",
+     "label": "Sửa có chủ đích",
+     "hint": "Nói lại, tập trung đúng một điểm cần sửa.",
+     "part": 1,
+     "mode": "short_spoken_answer",
+     "prep_seconds": 0,
+     "expected_seconds": {
+      "min": 20,
+      "max": 45
+     },
+     "gap_days": 0
+    },
+    {
+     "id": "T5",
+     "phase": "unexpected_followup",
+     "label": "Câu hỏi bất ngờ",
+     "hint": "Điều kiện thay đổi: nêu lý do mới, không lặp bài cũ.",
+     "part": 1,
+     "mode": "short_spoken_answer",
+     "prep_seconds": 0,
+     "expected_seconds": {
+      "min": 20,
+      "max": 45
+     },
+     "gap_days": 0
+    },
+    {
+     "id": "T6",
+     "phase": "unseen_transfer",
+     "label": "Tình huống mới",
+     "hint": "Tình huống liên quan nhưng khác, không nhìn mẫu.",
+     "part": 1,
+     "mode": "short_spoken_answer",
+     "prep_seconds": 0,
+     "expected_seconds": {
+      "min": 20,
+      "max": 45
+     },
+     "gap_days": 0
+    }
+   ]
+  },
+  {
+   "id": "topic-L03",
+   "kind": "topic",
+   "part": 1,
+   "skills": [
+    "FC03",
+    "GR01"
+   ],
+   "title_vi": "Ảnh và ký ức",
+   "title_en": "Photographs and memories",
+   "level": "Extend",
+   "order": 3,
+   "tasks": [
+    {
+     "id": "T1",
+     "phase": "independent_baseline",
+     "label": "Nói lần đầu",
+     "hint": "Tự trả lời trước khi xem gợi ý.",
+     "part": 1,
+     "mode": "short_spoken_answer",
+     "prep_seconds": 0,
+     "expected_seconds": {
+      "min": 20,
+      "max": 45
+     },
+     "gap_days": 0
+    },
+    {
+     "id": "T2",
+     "phase": "precision_and_condition",
+     "label": "Nói chính xác hơn",
+     "hint": "Giới hạn ý: đúng với ai, khi nào, trong điều kiện nào.",
+     "part": 1,
+     "mode": "short_spoken_answer",
+     "prep_seconds": 0,
+     "expected_seconds": {
+      "min": 20,
+      "max": 45
+     },
+     "gap_days": 0
+    },
+    {
+     "id": "T3",
+     "phase": "contrast_and_exception",
+     "label": "Đối chiếu và ngoại lệ",
+     "hint": "Nối hai phía bằng but / whereas / although.",
+     "part": 1,
+     "mode": "short_spoken_answer",
+     "prep_seconds": 0,
+     "expected_seconds": {
+      "min": 20,
+      "max": 45
+     },
+     "gap_days": 0
+    },
+    {
+     "id": "T4",
+     "phase": "targeted_repair",
+     "label": "Sửa có chủ đích",
+     "hint": "Nói lại, tập trung đúng một điểm cần sửa.",
+     "part": 1,
+     "mode": "short_spoken_answer",
+     "prep_seconds": 0,
+     "expected_seconds": {
+      "min": 20,
+      "max": 45
+     },
+     "gap_days": 0
+    },
+    {
+     "id": "T5",
+     "phase": "unexpected_followup",
+     "label": "Câu hỏi bất ngờ",
+     "hint": "Điều kiện thay đổi: nêu lý do mới, không lặp bài cũ.",
+     "part": 1,
+     "mode": "short_spoken_answer",
+     "prep_seconds": 0,
+     "expected_seconds": {
+      "min": 20,
+      "max": 45
+     },
+     "gap_days": 0
+    },
+    {
+     "id": "T6",
+     "phase": "unseen_transfer",
+     "label": "Tình huống mới",
+     "hint": "Tình huống liên quan nhưng khác, không nhìn mẫu.",
+     "part": 1,
+     "mode": "short_spoken_answer",
+     "prep_seconds": 0,
+     "expected_seconds": {
+      "min": 20,
+      "max": 45
+     },
+     "gap_days": 0
+    }
+   ]
+  },
+  {
+   "id": "topic-L04",
+   "kind": "topic",
+   "part": 1,
+   "skills": [
+    "FC02",
+    "GR03"
+   ],
+   "title_vi": "Lựa chọn phương tiện công cộng",
+   "title_en": "Public transport choices",
+   "level": "Extend",
+   "order": 4,
+   "tasks": [
+    {
+     "id": "T1",
+     "phase": "independent_baseline",
+     "label": "Nói lần đầu",
+     "hint": "Tự trả lời trước khi xem gợi ý.",
+     "part": 1,
+     "mode": "short_spoken_answer",
+     "prep_seconds": 0,
+     "expected_seconds": {
+      "min": 20,
+      "max": 45
+     },
+     "gap_days": 0
+    },
+    {
+     "id": "T2",
+     "phase": "precision_and_condition",
+     "label": "Nói chính xác hơn",
+     "hint": "Giới hạn ý: đúng với ai, khi nào, trong điều kiện nào.",
+     "part": 1,
+     "mode": "short_spoken_answer",
+     "prep_seconds": 0,
+     "expected_seconds": {
+      "min": 20,
+      "max": 45
+     },
+     "gap_days": 0
+    },
+    {
+     "id": "T3",
+     "phase": "contrast_and_exception",
+     "label": "Đối chiếu và ngoại lệ",
+     "hint": "Nối hai phía bằng but / whereas / although.",
+     "part": 1,
+     "mode": "short_spoken_answer",
+     "prep_seconds": 0,
+     "expected_seconds": {
+      "min": 20,
+      "max": 45
+     },
+     "gap_days": 0
+    },
+    {
+     "id": "T4",
+     "phase": "targeted_repair",
+     "label": "Sửa có chủ đích",
+     "hint": "Nói lại, tập trung đúng một điểm cần sửa.",
+     "part": 1,
+     "mode": "short_spoken_answer",
+     "prep_seconds": 0,
+     "expected_seconds": {
+      "min": 20,
+      "max": 45
+     },
+     "gap_days": 0
+    },
+    {
+     "id": "T5",
+     "phase": "unexpected_followup",
+     "label": "Câu hỏi bất ngờ",
+     "hint": "Điều kiện thay đổi: nêu lý do mới, không lặp bài cũ.",
+     "part": 1,
+     "mode": "short_spoken_answer",
+     "prep_seconds": 0,
+     "expected_seconds": {
+      "min": 20,
+      "max": 45
+     },
+     "gap_days": 0
+    },
+    {
+     "id": "T6",
+     "phase": "unseen_transfer",
+     "label": "Tình huống mới",
+     "hint": "Tình huống liên quan nhưng khác, không nhìn mẫu.",
+     "part": 1,
+     "mode": "short_spoken_answer",
+     "prep_seconds": 0,
+     "expected_seconds": {
+      "min": 20,
+      "max": 45
+     },
+     "gap_days": 0
+    }
+   ]
+  },
+  {
+   "id": "topic-L05",
+   "kind": "topic",
+   "part": 1,
+   "skills": [
+    "LR04",
+    "PR02"
+   ],
+   "title_vi": "Âm nhạc khi làm việc",
+   "title_en": "Music while working",
+   "level": "Extend",
+   "order": 5,
+   "tasks": [
+    {
+     "id": "T1",
+     "phase": "independent_baseline",
+     "label": "Nói lần đầu",
+     "hint": "Tự trả lời trước khi xem gợi ý.",
+     "part": 1,
+     "mode": "short_spoken_answer",
+     "prep_seconds": 0,
+     "expected_seconds": {
+      "min": 20,
+      "max": 45
+     },
+     "gap_days": 0
+    },
+    {
+     "id": "T2",
+     "phase": "precision_and_condition",
+     "label": "Nói chính xác hơn",
+     "hint": "Giới hạn ý: đúng với ai, khi nào, trong điều kiện nào.",
+     "part": 1,
+     "mode": "short_spoken_answer",
+     "prep_seconds": 0,
+     "expected_seconds": {
+      "min": 20,
+      "max": 45
+     },
+     "gap_days": 0
+    },
+    {
+     "id": "T3",
+     "phase": "contrast_and_exception",
+     "label": "Đối chiếu và ngoại lệ",
+     "hint": "Nối hai phía bằng but / whereas / although.",
+     "part": 1,
+     "mode": "short_spoken_answer",
+     "prep_seconds": 0,
+     "expected_seconds": {
+      "min": 20,
+      "max": 45
+     },
+     "gap_days": 0
+    },
+    {
+     "id": "T4",
+     "phase": "targeted_repair",
+     "label": "Sửa có chủ đích",
+     "hint": "Nói lại, tập trung đúng một điểm cần sửa.",
+     "part": 1,
+     "mode": "short_spoken_answer",
+     "prep_seconds": 0,
+     "expected_seconds": {
+      "min": 20,
+      "max": 45
+     },
+     "gap_days": 0
+    },
+    {
+     "id": "T5",
+     "phase": "unexpected_followup",
+     "label": "Câu hỏi bất ngờ",
+     "hint": "Điều kiện thay đổi: nêu lý do mới, không lặp bài cũ.",
+     "part": 1,
+     "mode": "short_spoken_answer",
+     "prep_seconds": 0,
+     "expected_seconds": {
+      "min": 20,
+      "max": 45
+     },
+     "gap_days": 0
+    },
+    {
+     "id": "T6",
+     "phase": "unseen_transfer",
+     "label": "Tình huống mới",
+     "hint": "Tình huống liên quan nhưng khác, không nhìn mẫu.",
+     "part": 1,
+     "mode": "short_spoken_answer",
+     "prep_seconds": 0,
+     "expected_seconds": {
+      "min": 20,
+      "max": 45
+     },
+     "gap_days": 0
+    }
+   ]
+  },
+  {
+   "id": "topic-L06",
+   "kind": "topic",
+   "part": 1,
+   "skills": [
+    "GR03",
+    "PR04"
+   ],
+   "title_vi": "Thời tiết và kế hoạch",
+   "title_en": "Weather and plans",
+   "level": "Extend",
+   "order": 6,
+   "tasks": [
+    {
+     "id": "T1",
+     "phase": "independent_baseline",
+     "label": "Nói lần đầu",
+     "hint": "Tự trả lời trước khi xem gợi ý.",
+     "part": 1,
+     "mode": "short_spoken_answer",
+     "prep_seconds": 0,
+     "expected_seconds": {
+      "min": 20,
+      "max": 45
+     },
+     "gap_days": 0
+    },
+    {
+     "id": "T2",
+     "phase": "precision_and_condition",
+     "label": "Nói chính xác hơn",
+     "hint": "Giới hạn ý: đúng với ai, khi nào, trong điều kiện nào.",
+     "part": 1,
+     "mode": "short_spoken_answer",
+     "prep_seconds": 0,
+     "expected_seconds": {
+      "min": 20,
+      "max": 45
+     },
+     "gap_days": 0
+    },
+    {
+     "id": "T3",
+     "phase": "contrast_and_exception",
+     "label": "Đối chiếu và ngoại lệ",
+     "hint": "Nối hai phía bằng but / whereas / although.",
+     "part": 1,
+     "mode": "short_spoken_answer",
+     "prep_seconds": 0,
+     "expected_seconds": {
+      "min": 20,
+      "max": 45
+     },
+     "gap_days": 0
+    },
+    {
+     "id": "T4",
+     "phase": "targeted_repair",
+     "label": "Sửa có chủ đích",
+     "hint": "Nói lại, tập trung đúng một điểm cần sửa.",
+     "part": 1,
+     "mode": "short_spoken_answer",
+     "prep_seconds": 0,
+     "expected_seconds": {
+      "min": 20,
+      "max": 45
+     },
+     "gap_days": 0
+    },
+    {
+     "id": "T5",
+     "phase": "unexpected_followup",
+     "label": "Câu hỏi bất ngờ",
+     "hint": "Điều kiện thay đổi: nêu lý do mới, không lặp bài cũ.",
+     "part": 1,
+     "mode": "short_spoken_answer",
+     "prep_seconds": 0,
+     "expected_seconds": {
+      "min": 20,
+      "max": 45
+     },
+     "gap_days": 0
+    },
+    {
+     "id": "T6",
+     "phase": "unseen_transfer",
+     "label": "Tình huống mới",
+     "hint": "Tình huống liên quan nhưng khác, không nhìn mẫu.",
+     "part": 1,
+     "mode": "short_spoken_answer",
+     "prep_seconds": 0,
+     "expected_seconds": {
+      "min": 20,
+      "max": 45
+     },
+     "gap_days": 0
+    }
+   ]
+  },
+  {
+   "id": "topic-L07",
+   "kind": "topic",
+   "part": 1,
+   "skills": [
+    "LR02",
+    "FC02"
+   ],
+   "title_vi": "Học qua sách",
+   "title_en": "Learning from books",
+   "level": "Extend",
+   "order": 7,
+   "tasks": [
+    {
+     "id": "T1",
+     "phase": "independent_baseline",
+     "label": "Nói lần đầu",
+     "hint": "Tự trả lời trước khi xem gợi ý.",
+     "part": 1,
+     "mode": "short_spoken_answer",
+     "prep_seconds": 0,
+     "expected_seconds": {
+      "min": 20,
+      "max": 45
+     },
+     "gap_days": 0
+    },
+    {
+     "id": "T2",
+     "phase": "precision_and_condition",
+     "label": "Nói chính xác hơn",
+     "hint": "Giới hạn ý: đúng với ai, khi nào, trong điều kiện nào.",
+     "part": 1,
+     "mode": "short_spoken_answer",
+     "prep_seconds": 0,
+     "expected_seconds": {
+      "min": 20,
+      "max": 45
+     },
+     "gap_days": 0
+    },
+    {
+     "id": "T3",
+     "phase": "contrast_and_exception",
+     "label": "Đối chiếu và ngoại lệ",
+     "hint": "Nối hai phía bằng but / whereas / although.",
+     "part": 1,
+     "mode": "short_spoken_answer",
+     "prep_seconds": 0,
+     "expected_seconds": {
+      "min": 20,
+      "max": 45
+     },
+     "gap_days": 0
+    },
+    {
+     "id": "T4",
+     "phase": "targeted_repair",
+     "label": "Sửa có chủ đích",
+     "hint": "Nói lại, tập trung đúng một điểm cần sửa.",
+     "part": 1,
+     "mode": "short_spoken_answer",
+     "prep_seconds": 0,
+     "expected_seconds": {
+      "min": 20,
+      "max": 45
+     },
+     "gap_days": 0
+    },
+    {
+     "id": "T5",
+     "phase": "unexpected_followup",
+     "label": "Câu hỏi bất ngờ",
+     "hint": "Điều kiện thay đổi: nêu lý do mới, không lặp bài cũ.",
+     "part": 1,
+     "mode": "short_spoken_answer",
+     "prep_seconds": 0,
+     "expected_seconds": {
+      "min": 20,
+      "max": 45
+     },
+     "gap_days": 0
+    },
+    {
+     "id": "T6",
+     "phase": "unseen_transfer",
+     "label": "Tình huống mới",
+     "hint": "Tình huống liên quan nhưng khác, không nhìn mẫu.",
+     "part": 1,
+     "mode": "short_spoken_answer",
+     "prep_seconds": 0,
+     "expected_seconds": {
+      "min": 20,
+      "max": 45
+     },
+     "gap_days": 0
+    }
+   ]
+  },
+  {
+   "id": "topic-L08",
+   "kind": "topic",
+   "part": 1,
+   "skills": [
+    "FC01",
+    "PR03"
+   ],
+   "title_vi": "Vận động và năng lượng",
+   "title_en": "Exercise and energy",
+   "level": "Extend",
+   "order": 8,
+   "tasks": [
+    {
+     "id": "T1",
+     "phase": "independent_baseline",
+     "label": "Nói lần đầu",
+     "hint": "Tự trả lời trước khi xem gợi ý.",
+     "part": 1,
+     "mode": "short_spoken_answer",
+     "prep_seconds": 0,
+     "expected_seconds": {
+      "min": 20,
+      "max": 45
+     },
+     "gap_days": 0
+    },
+    {
+     "id": "T2",
+     "phase": "precision_and_condition",
+     "label": "Nói chính xác hơn",
+     "hint": "Giới hạn ý: đúng với ai, khi nào, trong điều kiện nào.",
+     "part": 1,
+     "mode": "short_spoken_answer",
+     "prep_seconds": 0,
+     "expected_seconds": {
+      "min": 20,
+      "max": 45
+     },
+     "gap_days": 0
+    },
+    {
+     "id": "T3",
+     "phase": "contrast_and_exception",
+     "label": "Đối chiếu và ngoại lệ",
+     "hint": "Nối hai phía bằng but / whereas / although.",
+     "part": 1,
+     "mode": "short_spoken_answer",
+     "prep_seconds": 0,
+     "expected_seconds": {
+      "min": 20,
+      "max": 45
+     },
+     "gap_days": 0
+    },
+    {
+     "id": "T4",
+     "phase": "targeted_repair",
+     "label": "Sửa có chủ đích",
+     "hint": "Nói lại, tập trung đúng một điểm cần sửa.",
+     "part": 1,
+     "mode": "short_spoken_answer",
+     "prep_seconds": 0,
+     "expected_seconds": {
+      "min": 20,
+      "max": 45
+     },
+     "gap_days": 0
+    },
+    {
+     "id": "T5",
+     "phase": "unexpected_followup",
+     "label": "Câu hỏi bất ngờ",
+     "hint": "Điều kiện thay đổi: nêu lý do mới, không lặp bài cũ.",
+     "part": 1,
+     "mode": "short_spoken_answer",
+     "prep_seconds": 0,
+     "expected_seconds": {
+      "min": 20,
+      "max": 45
+     },
+     "gap_days": 0
+    },
+    {
+     "id": "T6",
+     "phase": "unseen_transfer",
+     "label": "Tình huống mới",
+     "hint": "Tình huống liên quan nhưng khác, không nhìn mẫu.",
+     "part": 1,
+     "mode": "short_spoken_answer",
+     "prep_seconds": 0,
+     "expected_seconds": {
+      "min": 20,
+      "max": 45
+     },
+     "gap_days": 0
+    }
+   ]
+  },
+  {
+   "id": "topic-L09",
+   "kind": "topic",
+   "part": 1,
+   "skills": [
+    "LR04",
+    "GR04"
+   ],
+   "title_vi": "Quà tặng nhỏ",
+   "title_en": "Small gifts",
+   "level": "Extend",
+   "order": 9,
+   "tasks": [
+    {
+     "id": "T1",
+     "phase": "independent_baseline",
+     "label": "Nói lần đầu",
+     "hint": "Tự trả lời trước khi xem gợi ý.",
+     "part": 1,
+     "mode": "short_spoken_answer",
+     "prep_seconds": 0,
+     "expected_seconds": {
+      "min": 20,
+      "max": 45
+     },
+     "gap_days": 0
+    },
+    {
+     "id": "T2",
+     "phase": "precision_and_condition",
+     "label": "Nói chính xác hơn",
+     "hint": "Giới hạn ý: đúng với ai, khi nào, trong điều kiện nào.",
+     "part": 1,
+     "mode": "short_spoken_answer",
+     "prep_seconds": 0,
+     "expected_seconds": {
+      "min": 20,
+      "max": 45
+     },
+     "gap_days": 0
+    },
+    {
+     "id": "T3",
+     "phase": "contrast_and_exception",
+     "label": "Đối chiếu và ngoại lệ",
+     "hint": "Nối hai phía bằng but / whereas / although.",
+     "part": 1,
+     "mode": "short_spoken_answer",
+     "prep_seconds": 0,
+     "expected_seconds": {
+      "min": 20,
+      "max": 45
+     },
+     "gap_days": 0
+    },
+    {
+     "id": "T4",
+     "phase": "targeted_repair",
+     "label": "Sửa có chủ đích",
+     "hint": "Nói lại, tập trung đúng một điểm cần sửa.",
+     "part": 1,
+     "mode": "short_spoken_answer",
+     "prep_seconds": 0,
+     "expected_seconds": {
+      "min": 20,
+      "max": 45
+     },
+     "gap_days": 0
+    },
+    {
+     "id": "T5",
+     "phase": "unexpected_followup",
+     "label": "Câu hỏi bất ngờ",
+     "hint": "Điều kiện thay đổi: nêu lý do mới, không lặp bài cũ.",
+     "part": 1,
+     "mode": "short_spoken_answer",
+     "prep_seconds": 0,
+     "expected_seconds": {
+      "min": 20,
+      "max": 45
+     },
+     "gap_days": 0
+    },
+    {
+     "id": "T6",
+     "phase": "unseen_transfer",
+     "label": "Tình huống mới",
+     "hint": "Tình huống liên quan nhưng khác, không nhìn mẫu.",
+     "part": 1,
+     "mode": "short_spoken_answer",
+     "prep_seconds": 0,
+     "expected_seconds": {
+      "min": 20,
+      "max": 45
+     },
+     "gap_days": 0
+    }
+   ]
+  },
+  {
+   "id": "topic-L10",
+   "kind": "topic",
+   "part": 1,
+   "skills": [
+    "GR01",
+    "LR02"
+   ],
+   "title_vi": "Thói quen dùng màn hình",
+   "title_en": "Screen habits",
+   "level": "Extend",
+   "order": 10,
+   "tasks": [
+    {
+     "id": "T1",
+     "phase": "independent_baseline",
+     "label": "Nói lần đầu",
+     "hint": "Tự trả lời trước khi xem gợi ý.",
+     "part": 1,
+     "mode": "short_spoken_answer",
+     "prep_seconds": 0,
+     "expected_seconds": {
+      "min": 20,
+      "max": 45
+     },
+     "gap_days": 0
+    },
+    {
+     "id": "T2",
+     "phase": "precision_and_condition",
+     "label": "Nói chính xác hơn",
+     "hint": "Giới hạn ý: đúng với ai, khi nào, trong điều kiện nào.",
+     "part": 1,
+     "mode": "short_spoken_answer",
+     "prep_seconds": 0,
+     "expected_seconds": {
+      "min": 20,
+      "max": 45
+     },
+     "gap_days": 0
+    },
+    {
+     "id": "T3",
+     "phase": "contrast_and_exception",
+     "label": "Đối chiếu và ngoại lệ",
+     "hint": "Nối hai phía bằng but / whereas / although.",
+     "part": 1,
+     "mode": "short_spoken_answer",
+     "prep_seconds": 0,
+     "expected_seconds": {
+      "min": 20,
+      "max": 45
+     },
+     "gap_days": 0
+    },
+    {
+     "id": "T4",
+     "phase": "targeted_repair",
+     "label": "Sửa có chủ đích",
+     "hint": "Nói lại, tập trung đúng một điểm cần sửa.",
+     "part": 1,
+     "mode": "short_spoken_answer",
+     "prep_seconds": 0,
+     "expected_seconds": {
+      "min": 20,
+      "max": 45
+     },
+     "gap_days": 0
+    },
+    {
+     "id": "T5",
+     "phase": "unexpected_followup",
+     "label": "Câu hỏi bất ngờ",
+     "hint": "Điều kiện thay đổi: nêu lý do mới, không lặp bài cũ.",
+     "part": 1,
+     "mode": "short_spoken_answer",
+     "prep_seconds": 0,
+     "expected_seconds": {
+      "min": 20,
+      "max": 45
+     },
+     "gap_days": 0
+    },
+    {
+     "id": "T6",
+     "phase": "unseen_transfer",
+     "label": "Tình huống mới",
+     "hint": "Tình huống liên quan nhưng khác, không nhìn mẫu.",
+     "part": 1,
+     "mode": "short_spoken_answer",
+     "prep_seconds": 0,
+     "expected_seconds": {
+      "min": 20,
+      "max": 45
+     },
+     "gap_days": 0
+    }
+   ]
+  },
+  {
+   "id": "topic-L11",
+   "kind": "topic",
+   "part": 1,
+   "skills": [
+    "FC04",
+    "GR02"
+   ],
+   "title_vi": "Cửa hàng địa phương",
+   "title_en": "Local shops",
+   "level": "Extend",
+   "order": 11,
+   "tasks": [
+    {
+     "id": "T1",
+     "phase": "independent_baseline",
+     "label": "Nói lần đầu",
+     "hint": "Tự trả lời trước khi xem gợi ý.",
+     "part": 1,
+     "mode": "short_spoken_answer",
+     "prep_seconds": 0,
+     "expected_seconds": {
+      "min": 20,
+      "max": 45
+     },
+     "gap_days": 0
+    },
+    {
+     "id": "T2",
+     "phase": "precision_and_condition",
+     "label": "Nói chính xác hơn",
+     "hint": "Giới hạn ý: đúng với ai, khi nào, trong điều kiện nào.",
+     "part": 1,
+     "mode": "short_spoken_answer",
+     "prep_seconds": 0,
+     "expected_seconds": {
+      "min": 20,
+      "max": 45
+     },
+     "gap_days": 0
+    },
+    {
+     "id": "T3",
+     "phase": "contrast_and_exception",
+     "label": "Đối chiếu và ngoại lệ",
+     "hint": "Nối hai phía bằng but / whereas / although.",
+     "part": 1,
+     "mode": "short_spoken_answer",
+     "prep_seconds": 0,
+     "expected_seconds": {
+      "min": 20,
+      "max": 45
+     },
+     "gap_days": 0
+    },
+    {
+     "id": "T4",
+     "phase": "targeted_repair",
+     "label": "Sửa có chủ đích",
+     "hint": "Nói lại, tập trung đúng một điểm cần sửa.",
+     "part": 1,
+     "mode": "short_spoken_answer",
+     "prep_seconds": 0,
+     "expected_seconds": {
+      "min": 20,
+      "max": 45
+     },
+     "gap_days": 0
+    },
+    {
+     "id": "T5",
+     "phase": "unexpected_followup",
+     "label": "Câu hỏi bất ngờ",
+     "hint": "Điều kiện thay đổi: nêu lý do mới, không lặp bài cũ.",
+     "part": 1,
+     "mode": "short_spoken_answer",
+     "prep_seconds": 0,
+     "expected_seconds": {
+      "min": 20,
+      "max": 45
+     },
+     "gap_days": 0
+    },
+    {
+     "id": "T6",
+     "phase": "unseen_transfer",
+     "label": "Tình huống mới",
+     "hint": "Tình huống liên quan nhưng khác, không nhìn mẫu.",
+     "part": 1,
+     "mode": "short_spoken_answer",
+     "prep_seconds": 0,
+     "expected_seconds": {
+      "min": 20,
+      "max": 45
+     },
+     "gap_days": 0
+    }
+   ]
+  },
+  {
+   "id": "topic-L12",
+   "kind": "topic",
+   "part": 1,
+   "skills": [
+    "FC02",
+    "PR04"
+   ],
+   "title_vi": "Hoạt động tình nguyện cuối tuần",
+   "title_en": "Weekend volunteering",
+   "level": "Extend",
+   "order": 12,
+   "tasks": [
+    {
+     "id": "T1",
+     "phase": "independent_baseline",
+     "label": "Nói lần đầu",
+     "hint": "Tự trả lời trước khi xem gợi ý.",
+     "part": 1,
+     "mode": "short_spoken_answer",
+     "prep_seconds": 0,
+     "expected_seconds": {
+      "min": 20,
+      "max": 45
+     },
+     "gap_days": 0
+    },
+    {
+     "id": "T2",
+     "phase": "precision_and_condition",
+     "label": "Nói chính xác hơn",
+     "hint": "Giới hạn ý: đúng với ai, khi nào, trong điều kiện nào.",
+     "part": 1,
+     "mode": "short_spoken_answer",
+     "prep_seconds": 0,
+     "expected_seconds": {
+      "min": 20,
+      "max": 45
+     },
+     "gap_days": 0
+    },
+    {
+     "id": "T3",
+     "phase": "contrast_and_exception",
+     "label": "Đối chiếu và ngoại lệ",
+     "hint": "Nối hai phía bằng but / whereas / although.",
+     "part": 1,
+     "mode": "short_spoken_answer",
+     "prep_seconds": 0,
+     "expected_seconds": {
+      "min": 20,
+      "max": 45
+     },
+     "gap_days": 0
+    },
+    {
+     "id": "T4",
+     "phase": "targeted_repair",
+     "label": "Sửa có chủ đích",
+     "hint": "Nói lại, tập trung đúng một điểm cần sửa.",
+     "part": 1,
+     "mode": "short_spoken_answer",
+     "prep_seconds": 0,
+     "expected_seconds": {
+      "min": 20,
+      "max": 45
+     },
+     "gap_days": 0
+    },
+    {
+     "id": "T5",
+     "phase": "unexpected_followup",
+     "label": "Câu hỏi bất ngờ",
+     "hint": "Điều kiện thay đổi: nêu lý do mới, không lặp bài cũ.",
+     "part": 1,
+     "mode": "short_spoken_answer",
+     "prep_seconds": 0,
+     "expected_seconds": {
+      "min": 20,
+      "max": 45
+     },
+     "gap_days": 0
+    },
+    {
+     "id": "T6",
+     "phase": "unseen_transfer",
+     "label": "Tình huống mới",
+     "hint": "Tình huống liên quan nhưng khác, không nhìn mẫu.",
+     "part": 1,
+     "mode": "short_spoken_answer",
+     "prep_seconds": 0,
+     "expected_seconds": {
+      "min": 20,
+      "max": 45
+     },
+     "gap_days": 0
+    }
+   ]
+  },
+  {
+   "id": "topic-L13",
+   "kind": "topic",
+   "part": 2,
+   "skills": [
+    "FC03",
+    "GR01"
+   ],
+   "title_vi": "Kỹ năng học dần qua thời gian",
+   "title_en": "A skill learned gradually",
+   "level": "Extend",
+   "order": 13,
+   "tasks": [
+    {
+     "id": "T1",
+     "phase": "baseline_cue",
+     "label": "Cue card lần đầu",
+     "hint": "Chuẩn bị 1 phút, nói tối đa 2 phút.",
+     "part": 2,
+     "mode": "full_cue",
+     "prep_seconds": 60,
+     "expected_seconds": {
+      "min": 85,
+      "max": 120
+     },
+     "gap_days": 0
+    },
+    {
+     "id": "T2",
+     "phase": "chronology_drill",
+     "label": "Kể theo mốc thời gian",
+     "hint": "Bắt đầu, trở ngại, bước ngoặt.",
+     "part": 2,
+     "mode": "micro_spoken_drill",
+     "prep_seconds": 0,
+     "expected_seconds": {
+      "min": 20,
+      "max": 55
+     },
+     "gap_days": 0
+    },
+    {
+     "id": "T3",
+     "phase": "specificity_drill",
+     "label": "Chi tiết cụ thể",
+     "hint": "Một ví dụ thật, có việc làm và kết quả.",
+     "part": 2,
+     "mode": "micro_spoken_drill",
+     "prep_seconds": 0,
+     "expected_seconds": {
+      "min": 20,
+      "max": 55
+     },
+     "gap_days": 0
+    },
+    {
+     "id": "T4",
+     "phase": "targeted_repair",
+     "label": "Sửa có chủ đích",
+     "hint": "Nói lại, tập trung đúng một điểm cần sửa.",
+     "part": 2,
+     "mode": "micro_spoken_drill",
+     "prep_seconds": 0,
+     "expected_seconds": {
+      "min": 20,
+      "max": 55
+     },
+     "gap_days": 0
+    },
+    {
+     "id": "T5",
+     "phase": "unseen_transfer_cue",
+     "label": "Cue card mới",
+     "hint": "Đề liên quan nhưng khác, không nhìn mẫu.",
+     "part": 2,
+     "mode": "full_cue",
+     "prep_seconds": 60,
+     "expected_seconds": {
+      "min": 85,
+      "max": 120
+     },
+     "gap_days": 0
+    },
+    {
+     "id": "T6",
+     "phase": "delayed_retest_cue",
+     "label": "Nói lại sau vài ngày",
+     "hint": "Làm lại sau vài ngày để xem mình nhớ được gì.",
+     "part": 2,
+     "mode": "full_cue",
+     "prep_seconds": 60,
+     "expected_seconds": {
+      "min": 85,
+      "max": 120
+     },
+     "gap_days": 3
+    }
+   ]
+  },
+  {
+   "id": "topic-L14",
+   "kind": "topic",
+   "part": 2,
+   "skills": [
+    "FC03",
+    "GR04"
+   ],
+   "title_vi": "Thay đổi kế hoạch di chuyển bất ngờ",
+   "title_en": "An unexpected change of travel plans",
+   "level": "Extend",
+   "order": 14,
+   "tasks": [
+    {
+     "id": "T1",
+     "phase": "baseline_cue",
+     "label": "Cue card lần đầu",
+     "hint": "Chuẩn bị 1 phút, nói tối đa 2 phút.",
+     "part": 2,
+     "mode": "full_cue",
+     "prep_seconds": 60,
+     "expected_seconds": {
+      "min": 85,
+      "max": 120
+     },
+     "gap_days": 0
+    },
+    {
+     "id": "T2",
+     "phase": "chronology_drill",
+     "label": "Kể theo mốc thời gian",
+     "hint": "Bắt đầu, trở ngại, bước ngoặt.",
+     "part": 2,
+     "mode": "micro_spoken_drill",
+     "prep_seconds": 0,
+     "expected_seconds": {
+      "min": 20,
+      "max": 55
+     },
+     "gap_days": 0
+    },
+    {
+     "id": "T3",
+     "phase": "specificity_drill",
+     "label": "Chi tiết cụ thể",
+     "hint": "Một ví dụ thật, có việc làm và kết quả.",
+     "part": 2,
+     "mode": "micro_spoken_drill",
+     "prep_seconds": 0,
+     "expected_seconds": {
+      "min": 20,
+      "max": 55
+     },
+     "gap_days": 0
+    },
+    {
+     "id": "T4",
+     "phase": "targeted_repair",
+     "label": "Sửa có chủ đích",
+     "hint": "Nói lại, tập trung đúng một điểm cần sửa.",
+     "part": 2,
+     "mode": "micro_spoken_drill",
+     "prep_seconds": 0,
+     "expected_seconds": {
+      "min": 20,
+      "max": 55
+     },
+     "gap_days": 0
+    },
+    {
+     "id": "T5",
+     "phase": "unseen_transfer_cue",
+     "label": "Cue card mới",
+     "hint": "Đề liên quan nhưng khác, không nhìn mẫu.",
+     "part": 2,
+     "mode": "full_cue",
+     "prep_seconds": 60,
+     "expected_seconds": {
+      "min": 85,
+      "max": 120
+     },
+     "gap_days": 0
+    },
+    {
+     "id": "T6",
+     "phase": "delayed_retest_cue",
+     "label": "Nói lại sau vài ngày",
+     "hint": "Làm lại sau vài ngày để xem mình nhớ được gì.",
+     "part": 2,
+     "mode": "full_cue",
+     "prep_seconds": 60,
+     "expected_seconds": {
+      "min": 85,
+      "max": 120
+     },
+     "gap_days": 3
+    }
+   ]
+  },
+  {
+   "id": "topic-L15",
+   "kind": "topic",
+   "part": 2,
+   "skills": [
+    "FC02",
+    "LR03"
+   ],
+   "title_vi": "Tổ chức một sự kiện nhỏ",
+   "title_en": "Organising a small event",
+   "level": "Extend",
+   "order": 15,
+   "tasks": [
+    {
+     "id": "T1",
+     "phase": "baseline_cue",
+     "label": "Cue card lần đầu",
+     "hint": "Chuẩn bị 1 phút, nói tối đa 2 phút.",
+     "part": 2,
+     "mode": "full_cue",
+     "prep_seconds": 60,
+     "expected_seconds": {
+      "min": 85,
+      "max": 120
+     },
+     "gap_days": 0
+    },
+    {
+     "id": "T2",
+     "phase": "chronology_drill",
+     "label": "Kể theo mốc thời gian",
+     "hint": "Bắt đầu, trở ngại, bước ngoặt.",
+     "part": 2,
+     "mode": "micro_spoken_drill",
+     "prep_seconds": 0,
+     "expected_seconds": {
+      "min": 20,
+      "max": 55
+     },
+     "gap_days": 0
+    },
+    {
+     "id": "T3",
+     "phase": "specificity_drill",
+     "label": "Chi tiết cụ thể",
+     "hint": "Một ví dụ thật, có việc làm và kết quả.",
+     "part": 2,
+     "mode": "micro_spoken_drill",
+     "prep_seconds": 0,
+     "expected_seconds": {
+      "min": 20,
+      "max": 55
+     },
+     "gap_days": 0
+    },
+    {
+     "id": "T4",
+     "phase": "targeted_repair",
+     "label": "Sửa có chủ đích",
+     "hint": "Nói lại, tập trung đúng một điểm cần sửa.",
+     "part": 2,
+     "mode": "micro_spoken_drill",
+     "prep_seconds": 0,
+     "expected_seconds": {
+      "min": 20,
+      "max": 55
+     },
+     "gap_days": 0
+    },
+    {
+     "id": "T5",
+     "phase": "unseen_transfer_cue",
+     "label": "Cue card mới",
+     "hint": "Đề liên quan nhưng khác, không nhìn mẫu.",
+     "part": 2,
+     "mode": "full_cue",
+     "prep_seconds": 60,
+     "expected_seconds": {
+      "min": 85,
+      "max": 120
+     },
+     "gap_days": 0
+    },
+    {
+     "id": "T6",
+     "phase": "delayed_retest_cue",
+     "label": "Nói lại sau vài ngày",
+     "hint": "Làm lại sau vài ngày để xem mình nhớ được gì.",
+     "part": 2,
+     "mode": "full_cue",
+     "prep_seconds": 60,
+     "expected_seconds": {
+      "min": 85,
+      "max": 120
+     },
+     "gap_days": 3
+    }
+   ]
+  },
+  {
+   "id": "topic-L16",
+   "kind": "topic",
+   "part": 2,
+   "skills": [
+    "LR01",
+    "FC03",
+    "PR01"
+   ],
+   "title_vi": "Sửa một đồ vật hữu ích",
+   "title_en": "Repairing a useful object",
+   "level": "Extend",
+   "order": 16,
+   "tasks": [
+    {
+     "id": "T1",
+     "phase": "baseline_cue",
+     "label": "Cue card lần đầu",
+     "hint": "Chuẩn bị 1 phút, nói tối đa 2 phút.",
+     "part": 2,
+     "mode": "full_cue",
+     "prep_seconds": 60,
+     "expected_seconds": {
+      "min": 85,
+      "max": 120
+     },
+     "gap_days": 0
+    },
+    {
+     "id": "T2",
+     "phase": "chronology_drill",
+     "label": "Kể theo mốc thời gian",
+     "hint": "Bắt đầu, trở ngại, bước ngoặt.",
+     "part": 2,
+     "mode": "micro_spoken_drill",
+     "prep_seconds": 0,
+     "expected_seconds": {
+      "min": 20,
+      "max": 55
+     },
+     "gap_days": 0
+    },
+    {
+     "id": "T3",
+     "phase": "specificity_drill",
+     "label": "Chi tiết cụ thể",
+     "hint": "Một ví dụ thật, có việc làm và kết quả.",
+     "part": 2,
+     "mode": "micro_spoken_drill",
+     "prep_seconds": 0,
+     "expected_seconds": {
+      "min": 20,
+      "max": 55
+     },
+     "gap_days": 0
+    },
+    {
+     "id": "T4",
+     "phase": "targeted_repair",
+     "label": "Sửa có chủ đích",
+     "hint": "Nói lại, tập trung đúng một điểm cần sửa.",
+     "part": 2,
+     "mode": "micro_spoken_drill",
+     "prep_seconds": 0,
+     "expected_seconds": {
+      "min": 20,
+      "max": 55
+     },
+     "gap_days": 0
+    },
+    {
+     "id": "T5",
+     "phase": "unseen_transfer_cue",
+     "label": "Cue card mới",
+     "hint": "Đề liên quan nhưng khác, không nhìn mẫu.",
+     "part": 2,
+     "mode": "full_cue",
+     "prep_seconds": 60,
+     "expected_seconds": {
+      "min": 85,
+      "max": 120
+     },
+     "gap_days": 0
+    },
+    {
+     "id": "T6",
+     "phase": "delayed_retest_cue",
+     "label": "Nói lại sau vài ngày",
+     "hint": "Làm lại sau vài ngày để xem mình nhớ được gì.",
+     "part": 2,
+     "mode": "full_cue",
+     "prep_seconds": 60,
+     "expected_seconds": {
+      "min": 85,
+      "max": 120
+     },
+     "gap_days": 3
+    }
+   ]
+  },
+  {
+   "id": "topic-L17",
+   "kind": "topic",
+   "part": 2,
+   "skills": [
+    "LR04",
+    "PR03"
+   ],
+   "title_vi": "Cuộc trò chuyện có ý nghĩa",
+   "title_en": "A meaningful conversation",
+   "level": "Extend",
+   "order": 17,
+   "tasks": [
+    {
+     "id": "T1",
+     "phase": "baseline_cue",
+     "label": "Cue card lần đầu",
+     "hint": "Chuẩn bị 1 phút, nói tối đa 2 phút.",
+     "part": 2,
+     "mode": "full_cue",
+     "prep_seconds": 60,
+     "expected_seconds": {
+      "min": 85,
+      "max": 120
+     },
+     "gap_days": 0
+    },
+    {
+     "id": "T2",
+     "phase": "chronology_drill",
+     "label": "Kể theo mốc thời gian",
+     "hint": "Bắt đầu, trở ngại, bước ngoặt.",
+     "part": 2,
+     "mode": "micro_spoken_drill",
+     "prep_seconds": 0,
+     "expected_seconds": {
+      "min": 20,
+      "max": 55
+     },
+     "gap_days": 0
+    },
+    {
+     "id": "T3",
+     "phase": "specificity_drill",
+     "label": "Chi tiết cụ thể",
+     "hint": "Một ví dụ thật, có việc làm và kết quả.",
+     "part": 2,
+     "mode": "micro_spoken_drill",
+     "prep_seconds": 0,
+     "expected_seconds": {
+      "min": 20,
+      "max": 55
+     },
+     "gap_days": 0
+    },
+    {
+     "id": "T4",
+     "phase": "targeted_repair",
+     "label": "Sửa có chủ đích",
+     "hint": "Nói lại, tập trung đúng một điểm cần sửa.",
+     "part": 2,
+     "mode": "micro_spoken_drill",
+     "prep_seconds": 0,
+     "expected_seconds": {
+      "min": 20,
+      "max": 55
+     },
+     "gap_days": 0
+    },
+    {
+     "id": "T5",
+     "phase": "unseen_transfer_cue",
+     "label": "Cue card mới",
+     "hint": "Đề liên quan nhưng khác, không nhìn mẫu.",
+     "part": 2,
+     "mode": "full_cue",
+     "prep_seconds": 60,
+     "expected_seconds": {
+      "min": 85,
+      "max": 120
+     },
+     "gap_days": 0
+    },
+    {
+     "id": "T6",
+     "phase": "delayed_retest_cue",
+     "label": "Nói lại sau vài ngày",
+     "hint": "Làm lại sau vài ngày để xem mình nhớ được gì.",
+     "part": 2,
+     "mode": "full_cue",
+     "prep_seconds": 60,
+     "expected_seconds": {
+      "min": 85,
+      "max": 120
+     },
+     "gap_days": 3
+    }
+   ]
+  },
+  {
+   "id": "topic-L18",
+   "kind": "topic",
+   "part": 2,
+   "skills": [
+    "FC04",
+    "GR02"
+   ],
+   "title_vi": "Một cải thiện trong cộng đồng",
+   "title_en": "A local community improvement",
+   "level": "Extend",
+   "order": 18,
+   "tasks": [
+    {
+     "id": "T1",
+     "phase": "baseline_cue",
+     "label": "Cue card lần đầu",
+     "hint": "Chuẩn bị 1 phút, nói tối đa 2 phút.",
+     "part": 2,
+     "mode": "full_cue",
+     "prep_seconds": 60,
+     "expected_seconds": {
+      "min": 85,
+      "max": 120
+     },
+     "gap_days": 0
+    },
+    {
+     "id": "T2",
+     "phase": "chronology_drill",
+     "label": "Kể theo mốc thời gian",
+     "hint": "Bắt đầu, trở ngại, bước ngoặt.",
+     "part": 2,
+     "mode": "micro_spoken_drill",
+     "prep_seconds": 0,
+     "expected_seconds": {
+      "min": 20,
+      "max": 55
+     },
+     "gap_days": 0
+    },
+    {
+     "id": "T3",
+     "phase": "specificity_drill",
+     "label": "Chi tiết cụ thể",
+     "hint": "Một ví dụ thật, có việc làm và kết quả.",
+     "part": 2,
+     "mode": "micro_spoken_drill",
+     "prep_seconds": 0,
+     "expected_seconds": {
+      "min": 20,
+      "max": 55
+     },
+     "gap_days": 0
+    },
+    {
+     "id": "T4",
+     "phase": "targeted_repair",
+     "label": "Sửa có chủ đích",
+     "hint": "Nói lại, tập trung đúng một điểm cần sửa.",
+     "part": 2,
+     "mode": "micro_spoken_drill",
+     "prep_seconds": 0,
+     "expected_seconds": {
+      "min": 20,
+      "max": 55
+     },
+     "gap_days": 0
+    },
+    {
+     "id": "T5",
+     "phase": "unseen_transfer_cue",
+     "label": "Cue card mới",
+     "hint": "Đề liên quan nhưng khác, không nhìn mẫu.",
+     "part": 2,
+     "mode": "full_cue",
+     "prep_seconds": 60,
+     "expected_seconds": {
+      "min": 85,
+      "max": 120
+     },
+     "gap_days": 0
+    },
+    {
+     "id": "T6",
+     "phase": "delayed_retest_cue",
+     "label": "Nói lại sau vài ngày",
+     "hint": "Làm lại sau vài ngày để xem mình nhớ được gì.",
+     "part": 2,
+     "mode": "full_cue",
+     "prep_seconds": 60,
+     "expected_seconds": {
+      "min": 85,
+      "max": 120
+     },
+     "gap_days": 3
+    }
+   ]
+  },
+  {
+   "id": "topic-L19",
+   "kind": "topic",
+   "part": 2,
+   "skills": [
+    "FC02",
+    "PR02"
+   ],
+   "title_vi": "Giúp ai đó học kỹ năng",
+   "title_en": "Helping someone learn",
+   "level": "Extend",
+   "order": 19,
+   "tasks": [
+    {
+     "id": "T1",
+     "phase": "baseline_cue",
+     "label": "Cue card lần đầu",
+     "hint": "Chuẩn bị 1 phút, nói tối đa 2 phút.",
+     "part": 2,
+     "mode": "full_cue",
+     "prep_seconds": 60,
+     "expected_seconds": {
+      "min": 85,
+      "max": 120
+     },
+     "gap_days": 0
+    },
+    {
+     "id": "T2",
+     "phase": "chronology_drill",
+     "label": "Kể theo mốc thời gian",
+     "hint": "Bắt đầu, trở ngại, bước ngoặt.",
+     "part": 2,
+     "mode": "micro_spoken_drill",
+     "prep_seconds": 0,
+     "expected_seconds": {
+      "min": 20,
+      "max": 55
+     },
+     "gap_days": 0
+    },
+    {
+     "id": "T3",
+     "phase": "specificity_drill",
+     "label": "Chi tiết cụ thể",
+     "hint": "Một ví dụ thật, có việc làm và kết quả.",
+     "part": 2,
+     "mode": "micro_spoken_drill",
+     "prep_seconds": 0,
+     "expected_seconds": {
+      "min": 20,
+      "max": 55
+     },
+     "gap_days": 0
+    },
+    {
+     "id": "T4",
+     "phase": "targeted_repair",
+     "label": "Sửa có chủ đích",
+     "hint": "Nói lại, tập trung đúng một điểm cần sửa.",
+     "part": 2,
+     "mode": "micro_spoken_drill",
+     "prep_seconds": 0,
+     "expected_seconds": {
+      "min": 20,
+      "max": 55
+     },
+     "gap_days": 0
+    },
+    {
+     "id": "T5",
+     "phase": "unseen_transfer_cue",
+     "label": "Cue card mới",
+     "hint": "Đề liên quan nhưng khác, không nhìn mẫu.",
+     "part": 2,
+     "mode": "full_cue",
+     "prep_seconds": 60,
+     "expected_seconds": {
+      "min": 85,
+      "max": 120
+     },
+     "gap_days": 0
+    },
+    {
+     "id": "T6",
+     "phase": "delayed_retest_cue",
+     "label": "Nói lại sau vài ngày",
+     "hint": "Làm lại sau vài ngày để xem mình nhớ được gì.",
+     "part": 2,
+     "mode": "full_cue",
+     "prep_seconds": 60,
+     "expected_seconds": {
+      "min": 85,
+      "max": 120
+     },
+     "gap_days": 3
+    }
+   ]
+  },
+  {
+   "id": "topic-L20",
+   "kind": "topic",
+   "part": 2,
+   "skills": [
+    "GR04",
+    "LR04"
+   ],
+   "title_vi": "Một công trình cũ đáng giữ",
+   "title_en": "An old building worth keeping",
+   "level": "Extend",
+   "order": 20,
+   "tasks": [
+    {
+     "id": "T1",
+     "phase": "baseline_cue",
+     "label": "Cue card lần đầu",
+     "hint": "Chuẩn bị 1 phút, nói tối đa 2 phút.",
+     "part": 2,
+     "mode": "full_cue",
+     "prep_seconds": 60,
+     "expected_seconds": {
+      "min": 85,
+      "max": 120
+     },
+     "gap_days": 0
+    },
+    {
+     "id": "T2",
+     "phase": "chronology_drill",
+     "label": "Kể theo mốc thời gian",
+     "hint": "Bắt đầu, trở ngại, bước ngoặt.",
+     "part": 2,
+     "mode": "micro_spoken_drill",
+     "prep_seconds": 0,
+     "expected_seconds": {
+      "min": 20,
+      "max": 55
+     },
+     "gap_days": 0
+    },
+    {
+     "id": "T3",
+     "phase": "specificity_drill",
+     "label": "Chi tiết cụ thể",
+     "hint": "Một ví dụ thật, có việc làm và kết quả.",
+     "part": 2,
+     "mode": "micro_spoken_drill",
+     "prep_seconds": 0,
+     "expected_seconds": {
+      "min": 20,
+      "max": 55
+     },
+     "gap_days": 0
+    },
+    {
+     "id": "T4",
+     "phase": "targeted_repair",
+     "label": "Sửa có chủ đích",
+     "hint": "Nói lại, tập trung đúng một điểm cần sửa.",
+     "part": 2,
+     "mode": "micro_spoken_drill",
+     "prep_seconds": 0,
+     "expected_seconds": {
+      "min": 20,
+      "max": 55
+     },
+     "gap_days": 0
+    },
+    {
+     "id": "T5",
+     "phase": "unseen_transfer_cue",
+     "label": "Cue card mới",
+     "hint": "Đề liên quan nhưng khác, không nhìn mẫu.",
+     "part": 2,
+     "mode": "full_cue",
+     "prep_seconds": 60,
+     "expected_seconds": {
+      "min": 85,
+      "max": 120
+     },
+     "gap_days": 0
+    },
+    {
+     "id": "T6",
+     "phase": "delayed_retest_cue",
+     "label": "Nói lại sau vài ngày",
+     "hint": "Làm lại sau vài ngày để xem mình nhớ được gì.",
+     "part": 2,
+     "mode": "full_cue",
+     "prep_seconds": 60,
+     "expected_seconds": {
+      "min": 85,
+      "max": 120
+     },
+     "gap_days": 3
+    }
+   ]
+  },
+  {
+   "id": "topic-L21",
+   "kind": "topic",
+   "part": 2,
+   "skills": [
+    "LR01",
+    "PR04"
+   ],
+   "title_vi": "Một nơi ngoài trời yên bình",
+   "title_en": "A peaceful outdoor place",
+   "level": "Extend",
+   "order": 21,
+   "tasks": [
+    {
+     "id": "T1",
+     "phase": "baseline_cue",
+     "label": "Cue card lần đầu",
+     "hint": "Chuẩn bị 1 phút, nói tối đa 2 phút.",
+     "part": 2,
+     "mode": "full_cue",
+     "prep_seconds": 60,
+     "expected_seconds": {
+      "min": 85,
+      "max": 120
+     },
+     "gap_days": 0
+    },
+    {
+     "id": "T2",
+     "phase": "chronology_drill",
+     "label": "Kể theo mốc thời gian",
+     "hint": "Bắt đầu, trở ngại, bước ngoặt.",
+     "part": 2,
+     "mode": "micro_spoken_drill",
+     "prep_seconds": 0,
+     "expected_seconds": {
+      "min": 20,
+      "max": 55
+     },
+     "gap_days": 0
+    },
+    {
+     "id": "T3",
+     "phase": "specificity_drill",
+     "label": "Chi tiết cụ thể",
+     "hint": "Một ví dụ thật, có việc làm và kết quả.",
+     "part": 2,
+     "mode": "micro_spoken_drill",
+     "prep_seconds": 0,
+     "expected_seconds": {
+      "min": 20,
+      "max": 55
+     },
+     "gap_days": 0
+    },
+    {
+     "id": "T4",
+     "phase": "targeted_repair",
+     "label": "Sửa có chủ đích",
+     "hint": "Nói lại, tập trung đúng một điểm cần sửa.",
+     "part": 2,
+     "mode": "micro_spoken_drill",
+     "prep_seconds": 0,
+     "expected_seconds": {
+      "min": 20,
+      "max": 55
+     },
+     "gap_days": 0
+    },
+    {
+     "id": "T5",
+     "phase": "unseen_transfer_cue",
+     "label": "Cue card mới",
+     "hint": "Đề liên quan nhưng khác, không nhìn mẫu.",
+     "part": 2,
+     "mode": "full_cue",
+     "prep_seconds": 60,
+     "expected_seconds": {
+      "min": 85,
+      "max": 120
+     },
+     "gap_days": 0
+    },
+    {
+     "id": "T6",
+     "phase": "delayed_retest_cue",
+     "label": "Nói lại sau vài ngày",
+     "hint": "Làm lại sau vài ngày để xem mình nhớ được gì.",
+     "part": 2,
+     "mode": "full_cue",
+     "prep_seconds": 60,
+     "expected_seconds": {
+      "min": 85,
+      "max": 120
+     },
+     "gap_days": 3
+    }
+   ]
+  },
+  {
+   "id": "topic-L22",
+   "kind": "topic",
+   "part": 2,
+   "skills": [
+    "GR03",
+    "FC04"
+   ],
+   "title_vi": "Đưa ra một quyết định nhỏ nhưng khó",
+   "title_en": "Making a difficult small decision",
+   "level": "Extend",
+   "order": 22,
+   "tasks": [
+    {
+     "id": "T1",
+     "phase": "baseline_cue",
+     "label": "Cue card lần đầu",
+     "hint": "Chuẩn bị 1 phút, nói tối đa 2 phút.",
+     "part": 2,
+     "mode": "full_cue",
+     "prep_seconds": 60,
+     "expected_seconds": {
+      "min": 85,
+      "max": 120
+     },
+     "gap_days": 0
+    },
+    {
+     "id": "T2",
+     "phase": "chronology_drill",
+     "label": "Kể theo mốc thời gian",
+     "hint": "Bắt đầu, trở ngại, bước ngoặt.",
+     "part": 2,
+     "mode": "micro_spoken_drill",
+     "prep_seconds": 0,
+     "expected_seconds": {
+      "min": 20,
+      "max": 55
+     },
+     "gap_days": 0
+    },
+    {
+     "id": "T3",
+     "phase": "specificity_drill",
+     "label": "Chi tiết cụ thể",
+     "hint": "Một ví dụ thật, có việc làm và kết quả.",
+     "part": 2,
+     "mode": "micro_spoken_drill",
+     "prep_seconds": 0,
+     "expected_seconds": {
+      "min": 20,
+      "max": 55
+     },
+     "gap_days": 0
+    },
+    {
+     "id": "T4",
+     "phase": "targeted_repair",
+     "label": "Sửa có chủ đích",
+     "hint": "Nói lại, tập trung đúng một điểm cần sửa.",
+     "part": 2,
+     "mode": "micro_spoken_drill",
+     "prep_seconds": 0,
+     "expected_seconds": {
+      "min": 20,
+      "max": 55
+     },
+     "gap_days": 0
+    },
+    {
+     "id": "T5",
+     "phase": "unseen_transfer_cue",
+     "label": "Cue card mới",
+     "hint": "Đề liên quan nhưng khác, không nhìn mẫu.",
+     "part": 2,
+     "mode": "full_cue",
+     "prep_seconds": 60,
+     "expected_seconds": {
+      "min": 85,
+      "max": 120
+     },
+     "gap_days": 0
+    },
+    {
+     "id": "T6",
+     "phase": "delayed_retest_cue",
+     "label": "Nói lại sau vài ngày",
+     "hint": "Làm lại sau vài ngày để xem mình nhớ được gì.",
+     "part": 2,
+     "mode": "full_cue",
+     "prep_seconds": 60,
+     "expected_seconds": {
+      "min": 85,
+      "max": 120
+     },
+     "gap_days": 3
+    }
+   ]
+  },
+  {
+   "id": "topic-L23",
+   "kind": "topic",
+   "part": 2,
+   "skills": [
+    "FC04",
+    "PR03"
+   ],
+   "title_vi": "Làm việc với người tính cách khác",
+   "title_en": "Working with a different personality",
+   "level": "Extend",
+   "order": 23,
+   "tasks": [
+    {
+     "id": "T1",
+     "phase": "baseline_cue",
+     "label": "Cue card lần đầu",
+     "hint": "Chuẩn bị 1 phút, nói tối đa 2 phút.",
+     "part": 2,
+     "mode": "full_cue",
+     "prep_seconds": 60,
+     "expected_seconds": {
+      "min": 85,
+      "max": 120
+     },
+     "gap_days": 0
+    },
+    {
+     "id": "T2",
+     "phase": "chronology_drill",
+     "label": "Kể theo mốc thời gian",
+     "hint": "Bắt đầu, trở ngại, bước ngoặt.",
+     "part": 2,
+     "mode": "micro_spoken_drill",
+     "prep_seconds": 0,
+     "expected_seconds": {
+      "min": 20,
+      "max": 55
+     },
+     "gap_days": 0
+    },
+    {
+     "id": "T3",
+     "phase": "specificity_drill",
+     "label": "Chi tiết cụ thể",
+     "hint": "Một ví dụ thật, có việc làm và kết quả.",
+     "part": 2,
+     "mode": "micro_spoken_drill",
+     "prep_seconds": 0,
+     "expected_seconds": {
+      "min": 20,
+      "max": 55
+     },
+     "gap_days": 0
+    },
+    {
+     "id": "T4",
+     "phase": "targeted_repair",
+     "label": "Sửa có chủ đích",
+     "hint": "Nói lại, tập trung đúng một điểm cần sửa.",
+     "part": 2,
+     "mode": "micro_spoken_drill",
+     "prep_seconds": 0,
+     "expected_seconds": {
+      "min": 20,
+      "max": 55
+     },
+     "gap_days": 0
+    },
+    {
+     "id": "T5",
+     "phase": "unseen_transfer_cue",
+     "label": "Cue card mới",
+     "hint": "Đề liên quan nhưng khác, không nhìn mẫu.",
+     "part": 2,
+     "mode": "full_cue",
+     "prep_seconds": 60,
+     "expected_seconds": {
+      "min": 85,
+      "max": 120
+     },
+     "gap_days": 0
+    },
+    {
+     "id": "T6",
+     "phase": "delayed_retest_cue",
+     "label": "Nói lại sau vài ngày",
+     "hint": "Làm lại sau vài ngày để xem mình nhớ được gì.",
+     "part": 2,
+     "mode": "full_cue",
+     "prep_seconds": 60,
+     "expected_seconds": {
+      "min": 85,
+      "max": 120
+     },
+     "gap_days": 3
+    }
+   ]
+  },
+  {
+   "id": "topic-L24",
+   "kind": "topic",
+   "part": 2,
+   "skills": [
+    "LR02",
+    "PR02"
+   ],
+   "title_vi": "Bài học từ một sai lầm",
+   "title_en": "Learning from a mistake",
+   "level": "Extend",
+   "order": 24,
+   "tasks": [
+    {
+     "id": "T1",
+     "phase": "baseline_cue",
+     "label": "Cue card lần đầu",
+     "hint": "Chuẩn bị 1 phút, nói tối đa 2 phút.",
+     "part": 2,
+     "mode": "full_cue",
+     "prep_seconds": 60,
+     "expected_seconds": {
+      "min": 85,
+      "max": 120
+     },
+     "gap_days": 0
+    },
+    {
+     "id": "T2",
+     "phase": "chronology_drill",
+     "label": "Kể theo mốc thời gian",
+     "hint": "Bắt đầu, trở ngại, bước ngoặt.",
+     "part": 2,
+     "mode": "micro_spoken_drill",
+     "prep_seconds": 0,
+     "expected_seconds": {
+      "min": 20,
+      "max": 55
+     },
+     "gap_days": 0
+    },
+    {
+     "id": "T3",
+     "phase": "specificity_drill",
+     "label": "Chi tiết cụ thể",
+     "hint": "Một ví dụ thật, có việc làm và kết quả.",
+     "part": 2,
+     "mode": "micro_spoken_drill",
+     "prep_seconds": 0,
+     "expected_seconds": {
+      "min": 20,
+      "max": 55
+     },
+     "gap_days": 0
+    },
+    {
+     "id": "T4",
+     "phase": "targeted_repair",
+     "label": "Sửa có chủ đích",
+     "hint": "Nói lại, tập trung đúng một điểm cần sửa.",
+     "part": 2,
+     "mode": "micro_spoken_drill",
+     "prep_seconds": 0,
+     "expected_seconds": {
+      "min": 20,
+      "max": 55
+     },
+     "gap_days": 0
+    },
+    {
+     "id": "T5",
+     "phase": "unseen_transfer_cue",
+     "label": "Cue card mới",
+     "hint": "Đề liên quan nhưng khác, không nhìn mẫu.",
+     "part": 2,
+     "mode": "full_cue",
+     "prep_seconds": 60,
+     "expected_seconds": {
+      "min": 85,
+      "max": 120
+     },
+     "gap_days": 0
+    },
+    {
+     "id": "T6",
+     "phase": "delayed_retest_cue",
+     "label": "Nói lại sau vài ngày",
+     "hint": "Làm lại sau vài ngày để xem mình nhớ được gì.",
+     "part": 2,
+     "mode": "full_cue",
+     "prep_seconds": 60,
+     "expected_seconds": {
+      "min": 85,
+      "max": 120
+     },
+     "gap_days": 3
+    }
+   ]
+  }
+ ]
+}

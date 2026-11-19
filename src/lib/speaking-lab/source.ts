@@ -1,0 +1,53 @@
+import "server-only";
+/*
+ * Speaking Lab content. The public catalog is committed (titles and task shapes only). The private file
+ * (questions, coaching, models) is never committed because the repository is public: local development reads
+ * it from SPEAKING_LAB_DIR, production from the private Supabase Storage bucket SPEAKING_LAB_BUCKET with the
+ * server's service role key. scripts/import-speaking-lab.py writes both.
+ */
+import { readFile } from "node:fs/promises";
+import { join } from "node:path";
+import { createClient } from "@supabase/supabase-js";
+import catalogFile from "../../../content/speaking-lab/catalog.json";
+import type { SpeakingCatalog, SpeakingPrivateFile, SpeakingPrivateUnit, SpeakingUnit } from "./types";
+
+export const PRIVATE_FILE = "speaking-lab-private.json";
+export class SpeakingContentUnavailable extends Error {}
+
+const catalog = catalogFile as unknown as SpeakingCatalog;
+export const speakingCatalog = () => catalog;
+export const speakingUnit = (id: string): SpeakingUnit | null => catalog.units.find((unit) => unit.id === id) ?? null;
+
+/** Which private source is configured, without saying where. */
+export function speakingSource(): "dir" | "bucket" | null {
+  if (process.env.SPEAKING_LAB_DIR) return "dir";
+  if (process.env.SPEAKING_LAB_BUCKET && process.env.NEXT_PUBLIC_SUPABASE_URL && process.env.SUPABASE_SERVICE_ROLE_KEY) return "bucket";
+  return null;
+}
+
+const TTL = process.env.NODE_ENV === "production" ? 10 * 60_000 : 30_000;
+let cache: { at: number; value: Promise<SpeakingPrivateFile> } | null = null;
+
+async function readPrivate(): Promise<SpeakingPrivateFile> {
+  const source = speakingSource();
+  let text: string;
+  if (source === "dir") text = await readFile(join(process.env.SPEAKING_LAB_DIR!, PRIVATE_FILE), "utf8");
+  else if (source === "bucket") {
+    const admin = createClient(process.env.NEXT_PUBLIC_SUPABASE_URL!, process.env.SUPABASE_SERVICE_ROLE_KEY!, { auth: { persistSession: false, autoRefreshToken: false } });
+    const { data, error } = await admin.storage.from(process.env.SPEAKING_LAB_BUCKET!).download(PRIVATE_FILE);
+    if (error || !data) throw new SpeakingContentUnavailable("Speaking Lab private file is missing from the bucket.");
+    text = await data.text();
+  } else throw new SpeakingContentUnavailable("Speaking Lab private content is not configured.");
+  const parsed = JSON.parse(text) as SpeakingPrivateFile;
+  if (parsed.version !== 1 || !parsed.units) throw new SpeakingContentUnavailable("Speaking Lab private file is malformed.");
+  return parsed;
+}
+
+export async function speakingPrivateUnit(id: string): Promise<SpeakingPrivateUnit | null> {
+  if (!cache || Date.now() - cache.at > TTL) {
+    const value = readPrivate();
+    cache = { at: Date.now(), value };
+    value.catch(() => { cache = null; });
+  }
+  return (await cache.value).units[id] ?? null;
+}
