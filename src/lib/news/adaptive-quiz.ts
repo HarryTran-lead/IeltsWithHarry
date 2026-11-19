@@ -30,7 +30,9 @@ function promptWithNoteWordLimit(prompt: string, limit: number) {
 function schemaFor(candidatesByType: QuizTargets) { return {
   type: "object", additionalProperties: false, required: ["questions", "image_query"],
   properties: {
-    questions: { type: "array", minItems: Object.values(candidatesByType).reduce((sum, count) => sum + (count ?? 0), 0), maxItems: Object.values(candidatesByType).reduce((sum, count) => sum + (count ?? 0), 0), items: { type: "object", additionalProperties: false,
+    // Gemini rejects large arrays with exact item counts as too many schema states.
+    // The prompt requests the distribution; validation below limits what we save.
+    questions: { type: "array", items: { type: "object", additionalProperties: false,
       required: [...rawQuestionRequired, "needs_review", "review_reason"],
       properties: { ...rawQuestionProperties,
         type: { type: "string", enum: Object.entries(candidatesByType).filter(([, count]) => Boolean(count)).map(([type]) => type) },
@@ -181,7 +183,7 @@ async function reviewRiskyQuestions(
   const reviewText = batch.some(({ question }) => question.reviewReason.startsWith("Not Given")) ? fullArticle : excerpt;
   const reviewSchema = {
     type: "object", additionalProperties: false, required: ["reviews"],
-    properties: { reviews: { type: "array", minItems: batch.length, maxItems: batch.length, items: {
+    properties: { reviews: { type: "array", items: {
       type: "object", additionalProperties: false, required: ["id", "action", "reason"],
       properties: { id: { type: "integer" }, action: { type: "string", enum: ["keep", "fix", "drop"] }, reason: { type: "string" },
         question: { type: "object", additionalProperties: false, required: rawQuestionRequired, properties: {
