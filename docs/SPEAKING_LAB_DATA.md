@@ -15,9 +15,23 @@ not lessons.
 | L41 `repair_catalog.json` | Repair card for each route: goal, useful language, self-check |
 | L79 `lesson_catalog_METADATA_ONLY.json`, `questions_SERVER_ONLY.json`, `guidance_AFTER_CURRENT_ATTEMPT.json`, `models_AFTER_LESSON_COMPLETION.json` | 24 Part 1/2 topic lessons, each with 6 tasks, per-task tips, a teaching card and a model |
 
-Left for later phases:
-- L56–L60: Part 3 discussion, argumentation and repair.
-- L37–L40: pronunciation and audio drills.
+Phase 2 adds:
+
+| Source | Used for |
+| --- | --- |
+| L57 lessons, moves, questions, coaching, models | 16 Part 3 argumentation lessons (6 turns) |
+| L58 lessons, moves, questions, coaching, models, fallacy labs | 16 critical-thinking lessons (7 turns) |
+| L59 lessons, phase guide, questions, hints, models | 16 precision lessons (6 turns) |
+| L60 lessons, phase guide, 8 repair strategies, questions, guidance, models | 32 repair lessons (5 turns; 8 Part 1, 8 Part 2, 16 Part 3) |
+| L39 modules, lessons, listening items, answer key, 24 WAV previews; L40 transfers | 24 pronunciation lessons: listening check (vowel, consonant and final-sound modules), drill, transfer answer |
+
+Notes on phase 2:
+- L58–L60 have no Vietnamese titles. They take L57's title through their source links, tagged (A)/(B) for L57's two variants. L60's Part 1/2 titles are translated in the script.
+- The L39 audio is synthetic and unverified. It is used only to check listening, never as a pronunciation model.
+- Part 2 cue cards can be sent to the existing coaching queue. This reuses the practice room's `PracticeCoaching`. It runs only in live mode while coaching is enabled, and only when the learner chooses to upload.
+
+Still for later:
+- L56: adaptive discussion paths.
 - L61–L63, L67: mock sets.
 
 Not lessons, so not imported:
@@ -54,7 +68,7 @@ python -I scripts/import-speaking-lab.py <L80 folder> <private folder outside th
 - **Local and Preview:** `SPEAKING_LAB_DIR=<folder containing speaking-lab-private.json>`.
 - **Production:**
   1. Create a **private** Supabase Storage bucket.
-  2. Upload `speaking-lab-private.json` to its root.
+  2. Upload `speaking-lab-private.json` to its root, and the 24 files in `audio/` to an `audio/` folder.
   3. Set `SPEAKING_LAB_BUCKET=<bucket>`. The server reads it with `SUPABASE_SERVICE_ROLE_KEY`.
 - **Neither set:** the map still loads, and lessons say the content is being updated.
 

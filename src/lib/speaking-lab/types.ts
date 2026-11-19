@@ -1,10 +1,13 @@
 /*
- * Speaking Lab: 16 skill routes and 24 Part 1/2 topic lessons from the M10-L80 curriculum handoff.
+ * Speaking Lab: 16 skill routes, 24 Part 1/2 topic lessons, 80 Part 3 lessons (L57–L60) and 24 pronunciation
+ * lessons (L39–L40) from the M10-L80 curriculum handoff.
  * The public catalog (content/speaking-lab/catalog.json) has titles and task shapes only; question text,
  * coaching and models are private and reach the learner one stage at a time through the release route.
  */
 export const SPEAKING_BASE = "/app/self-study/speaking";
 export const SPEAKING_API = "/api/self-study/speaking";
+export const speakingAudioUrl = (itemId: string) => `${SPEAKING_API}/audio/${encodeURIComponent(itemId)}`;
+export const AUDIO_ID = /^SPK-M10L39-LS\d{2}$/;
 
 export type Criterion = "FC" | "LR" | "GR" | "PR";
 export const criterionOrder: Criterion[] = ["FC", "LR", "GR", "PR"];
@@ -19,12 +22,16 @@ export type SpeakingSkill = { id: string; criterion: Criterion; title_vi: string
 
 export type SpeakingTask = {
   id: string; phase: string; label: string; hint: string; part: 1 | 2 | 3;
-  mode: "short_spoken_answer" | "full_cue" | "micro_spoken_drill";
+  mode: "short_spoken_answer" | "full_cue" | "micro_spoken_drill" | "listen_choice";
   prep_seconds: number; expected_seconds: { min: number; max: number }; gap_days: number;
+  /** Listening check only: the words to choose between; the right one comes with the tip. */
+  items?: { id: string; options: { id: string; word: string }[] }[];
 };
 
 export type SpeakingUnit = {
-  id: string; kind: "skill" | "topic"; part: 1 | 2 | 3; criterion?: Criterion; skills: string[];
+  id: string; kind: "skill" | "topic" | "part3" | "pron"; part: 1 | 2 | 3; criterion?: Criterion; skills: string[];
+  /** Part 3 series (L57–L60) or pronunciation module code. */
+  series?: string; module?: string;
   title_vi: string; title_en: string; topic_en?: string; target_vi?: string; level?: string; order?: number;
   tasks: SpeakingTask[];
 };
@@ -33,6 +40,8 @@ export type SpeakingCatalog = {
   source: { package: string; milestones: string[]; note_vi: string };
   levels: { id: string; label: string; guidance_vi: string }[];
   skills: SpeakingSkill[];
+  series: { id: string; title_vi: string; about_vi: string }[];
+  modules: { code: string; title_vi: string; title_en: string; contrast: string }[];
   units: SpeakingUnit[];
 };
 
@@ -43,17 +52,33 @@ export type SpeakingRepair = {
   title_vi?: string; title_en?: string; goal_vi?: string; goal_en?: string;
   steps?: { label?: string; en?: string; vi?: string }[]; ideas_vi?: string; useful_language_en?: string; self_check_vi?: string[];
 };
-export type SpeakingTeach = { guide?: SpeakingGuide; repair?: SpeakingRepair; skills?: (SpeakingGuide & { id: string })[] };
-export type SpeakingPrompt = { prompt_en: string; cue_bullets?: string[]; instructions_vi?: string };
-export type SpeakingTip = { tip_vi?: string; tip_en?: string; focus_collocation_en?: string; error_to_avoid_en?: string };
-export type SpeakingCoaching = { focus_vi?: string; focus_en?: string; weak_en?: string; improved_en?: string; analysis_vi?: string; reflection_vi?: string; reflection_en?: string };
+export type SpeakingMove = { phase: string; title_vi: string; instruction_vi?: string; phrases?: string[] };
+export type SpeakingStrategy = { title_vi?: string; title_en?: string; guidance_vi?: string; example_en?: string };
+export type SpeakingPron = { goal_vi?: string; why_vi?: string; contrast?: string; tip_vi?: string; mistake_vi?: string; steps?: { label?: string; vi?: string }[] };
+export type SpeakingTeach = {
+  guide?: SpeakingGuide; repair?: SpeakingRepair; skills?: (SpeakingGuide & { id: string })[];
+  moves?: SpeakingMove[]; strategies?: SpeakingStrategy[]; pron?: SpeakingPron; self_check_vi?: string[];
+};
+export type SpeakingPrompt = { prompt_en: string; cue_bullets?: string[]; instructions_vi?: string; model_en?: string };
+export type SpeakingTip = {
+  tip_vi?: string; tip_en?: string; focus_collocation_en?: string; error_to_avoid_en?: string; phrases?: string[]; contrast_en?: string; note_vi?: string;
+  /** Listening check: item id → the option that was played. */
+  answers?: Record<string, string>;
+};
+export type SpeakingCoaching = {
+  focus_vi?: string; focus_en?: string; weak_en?: string; improved_en?: string; analysis_vi?: string; reflection_vi?: string; reflection_en?: string;
+  mistakes_vi?: string[]; self_review_vi?: string[]; steps_vi?: string[];
+};
 export type SpeakingCard = {
   teach_focus_vi?: string; teach_focus_en?: string; what_to_prepare_vi?: string; target_collocations_EN?: string[];
   common_weak_response_en?: string; improved_phrase_en?: string; why_improvement_vi?: string;
   learning_steps?: { phase: string; how_to_practise_vi?: string; how_to_practise_en?: string; topic_specific_vi?: string }[];
   self_review_vi?: string[]; pronunciation_note_vi?: string;
 };
-export type SpeakingModel = { model_en?: string; model_purpose_vi?: string; critical_improvement_en?: string; critical_improvement_vi?: string; self_review_questions_vi?: string[] };
+export type SpeakingModel = {
+  model_en?: string; model_purpose_vi?: string; critical_improvement_en?: string; critical_improvement_vi?: string; self_review_questions_vi?: string[];
+  weak_en?: string; improved_en?: string; analysis_vi?: string; extra?: { label: string; text: string; en?: boolean }[];
+};
 
 export type SpeakingPrivateUnit = {
   teach: SpeakingTeach;
@@ -88,11 +113,13 @@ export type SpeakingState = {
   notes: Record<string, string>;
   /** `${taskId}:${index}` → self-check ticked. */
   checks: Record<string, boolean>;
+  /** Listening check: `${taskId}:${itemId}` → the option the learner chose. */
+  choices: Record<string, string>;
   updatedAt: number;
 };
 
 export const speakingDraftSlug = (unitId: string) => `spk-lab:${unitId}`;
-export const emptySpeakingState = (): SpeakingState => ({ spk: 1, done: {}, seconds: {}, transcript: {}, notes: {}, checks: {}, updatedAt: 0 });
+export const emptySpeakingState = (): SpeakingState => ({ spk: 1, done: {}, seconds: {}, transcript: {}, notes: {}, checks: {}, choices: {}, updatedAt: 0 });
 
 const record = <T>(value: unknown, keep: (item: unknown) => item is T): Record<string, T> => {
   if (!value || typeof value !== "object" || Array.isArray(value)) return {};
@@ -109,7 +136,7 @@ export function parseSpeakingState(value: unknown): SpeakingState | null {
     if (parsed.spk !== 1) return null;
     return {
       spk: 1, done: record(parsed.done, isString), seconds: record(parsed.seconds, isNumber), transcript: record(parsed.transcript, isString),
-      notes: record(parsed.notes, isString), checks: record(parsed.checks, isBoolean), updatedAt: Number(parsed.updatedAt) || 0,
+      notes: record(parsed.notes, isString), checks: record(parsed.checks, isBoolean), choices: record(parsed.choices, isString), updatedAt: Number(parsed.updatedAt) || 0,
     };
   } catch { return null; }
 }

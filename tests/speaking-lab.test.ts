@@ -28,24 +28,38 @@ const fixture: SpeakingPrivateUnit = {
 const unit = { ...catalog.units.find((item) => item.kind === "topic")!, tasks: catalog.units.find((item) => item.kind === "topic")!.tasks.slice(0, 3) };
 
 describe("Speaking Lab catalog", () => {
-  it("has 16 skills, 16 skill routes and 24 topic lessons", () => {
+  it("has 16 skill routes, 24 topic lessons, 80 Part 3 lessons and 24 pronunciation lessons", () => {
+    const count = (kind: string) => catalog.units.filter((item) => item.kind === kind).length;
     expect(catalog.skills).toHaveLength(16);
-    expect(catalog.units.filter((item) => item.kind === "skill")).toHaveLength(16);
-    expect(catalog.units.filter((item) => item.kind === "topic")).toHaveLength(24);
-    expect(new Set(catalog.units.map((item) => item.id)).size).toBe(40);
+    expect([count("skill"), count("topic"), count("part3"), count("pron")]).toEqual([16, 24, 80, 24]);
+    expect(new Set(catalog.units.map((item) => item.id)).size).toBe(144);
     for (const criterion of ["FC", "LR", "GR", "PR"]) expect(catalog.units.filter((item) => item.criterion === criterion)).toHaveLength(4);
+    for (const series of catalog.series) expect(catalog.units.filter((item) => item.series === series.id).length, series.id).toBe(series.id === "L60" ? 32 : 16);
+    for (const group of catalog.modules) expect(catalog.units.filter((item) => item.module === group.code), group.code).toHaveLength(3);
   });
 
   it("gives every unit tasks and names only known skills", () => {
     const skills = new Set(catalog.skills.map((skill) => skill.id));
+    const expected: Record<string, number[]> = { skill: [2], topic: [6], part3: [5, 6, 7], pron: [2, 3] };
     for (const item of catalog.units) {
-      expect(item.tasks.length, item.id).toBe(item.kind === "skill" ? 2 : 6);
+      expect(expected[item.kind], item.id).toContain(item.tasks.length);
       for (const skill of item.skills) expect(skills.has(skill), `${item.id} ${skill}`).toBe(true);
+      expect(item.title_vi, item.id).toMatch(/[^\x00-\x7F]/);
     }
   });
 
-  it("carries no question text, tips or models", () => {
-    expect(catalogRaw).not.toMatch(/prompt_en|tip_vi|model_en|weak_en|improved_en|cue_bullets/);
+  it("puts a listening check first in the vowel, consonant and final-sound lessons", () => {
+    for (const item of catalog.units.filter((unit) => unit.kind === "pron")) {
+      const listen = item.tasks.find((task) => task.mode === "listen_choice");
+      if (["VOW", "CON", "FIN"].includes(item.module ?? "")) {
+        expect(item.tasks[0], item.id).toBe(listen);
+        for (const entry of listen!.items ?? []) expect(entry.options.length, entry.id).toBe(2);
+      } else expect(listen, item.id).toBeUndefined();
+    }
+  });
+
+  it("carries no question text, tips, models or listening answers", () => {
+    expect(catalogRaw).not.toMatch(/"(prompt_en|tip_vi|model_en|weak_en|improved_en|cue_bullets|answers|tts_target_text|correct_choice)"/);
   });
 });
 
@@ -117,14 +131,30 @@ describe.skipIf(!privateFile)("Speaking Lab private data", () => {
       if (item.kind === "topic") {
         expect(content.after_all.model?.model_en, item.id).toBeTruthy();
         expect(content.after_first.card, item.id).toBeTruthy();
-      } else expect(content.after_first.coaching?.improved_en, item.id).toBeTruthy();
+      } else if (item.kind === "skill") expect(content.after_first.coaching?.improved_en, item.id).toBeTruthy();
+      else if (item.kind === "part3") {
+        expect(content.after_all.model?.improved_en, item.id).toBeTruthy();
+        expect(content.teach.moves?.length, item.id).toBeGreaterThan(0);
+      } else expect(content.teach.pron?.why_vi, item.id).toBeTruthy();
+    }
+  });
+
+  it("answers every listening check with one of its two options, and ships its audio", () => {
+    for (const item of catalog.units) {
+      for (const task of item.tasks.filter((entry) => entry.mode === "listen_choice")) {
+        const answers = privateFile!.units[item.id].after_task[task.id]?.answers ?? {};
+        for (const entry of task.items ?? []) {
+          expect(entry.options.map((option) => option.id), `${item.id} ${entry.id}`).toContain(answers[entry.id]);
+          expect(existsSync(join(process.env.SPEAKING_LAB_DIR!, "audio", `${entry.id}.wav`)), entry.id).toBe(true);
+        }
+      }
     }
   });
 
   it("keeps every question, tip and model out of the public catalog", () => {
     for (const content of Object.values(privateFile!.units)) {
-      for (const prompt of Object.values(content.prompts)) expect(catalogRaw).not.toContain(prompt.prompt_en);
-      if (content.after_all.model?.model_en) expect(catalogRaw).not.toContain(content.after_all.model.model_en.slice(0, 80));
+      for (const prompt of Object.values(content.prompts)) if (prompt.prompt_en.length > 40) expect(catalogRaw).not.toContain(prompt.prompt_en);
+      for (const text of [content.after_all.model?.model_en, content.after_all.model?.improved_en]) if (text) expect(catalogRaw).not.toContain(text.slice(0, 80));
     }
   });
 

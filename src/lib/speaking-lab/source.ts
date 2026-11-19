@@ -9,7 +9,7 @@ import { readFile } from "node:fs/promises";
 import { join } from "node:path";
 import { createClient } from "@supabase/supabase-js";
 import catalogFile from "../../../content/speaking-lab/catalog.json";
-import type { SpeakingCatalog, SpeakingPrivateFile, SpeakingPrivateUnit, SpeakingUnit } from "./types";
+import { AUDIO_ID, type SpeakingCatalog, type SpeakingPrivateFile, type SpeakingPrivateUnit, type SpeakingUnit } from "./types";
 
 export const PRIVATE_FILE = "speaking-lab-private.json";
 export class SpeakingContentUnavailable extends Error {}
@@ -41,6 +41,22 @@ async function readPrivate(): Promise<SpeakingPrivateFile> {
   const parsed = JSON.parse(text) as SpeakingPrivateFile;
   if (parsed.version !== 1 || !parsed.units) throw new SpeakingContentUnavailable("Speaking Lab private file is malformed.");
   return parsed;
+}
+
+/** One listening-check clip (L39 synthetic previews), from the same private source as the lessons. */
+export async function speakingAudio(itemId: string): Promise<Uint8Array | null> {
+  if (!AUDIO_ID.test(itemId)) return null;
+  const name = `audio/${itemId}.wav`;
+  const source = speakingSource();
+  try {
+    if (source === "dir") return new Uint8Array(await readFile(join(process.env.SPEAKING_LAB_DIR!, name)));
+    if (source === "bucket") {
+      const admin = createClient(process.env.NEXT_PUBLIC_SUPABASE_URL!, process.env.SUPABASE_SERVICE_ROLE_KEY!, { auth: { persistSession: false, autoRefreshToken: false } });
+      const { data } = await admin.storage.from(process.env.SPEAKING_LAB_BUCKET!).download(name);
+      return data ? new Uint8Array(await data.arrayBuffer()) : null;
+    }
+  } catch { return null; }
+  return null;
 }
 
 export async function speakingPrivateUnit(id: string): Promise<SpeakingPrivateUnit | null> {
