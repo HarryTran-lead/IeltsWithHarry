@@ -140,8 +140,8 @@ export function validateAdaptiveQuiz(value: unknown, body: string, selected: Iel
   return grouped;
 }
 
-// One bounded review request can cover the whole largest set (13 plus three spares).
-const MAX_SECOND_PASS_QUESTIONS = 16;
+// One bounded review request can cover the largest set (13 plus two spares per type).
+const MAX_SECOND_PASS_QUESTIONS = 21;
 function candidateForReview(question: ReviewableQuestion) {
   return {
     type: question.type,
@@ -209,7 +209,7 @@ async function reviewRiskyQuestions(
   let response: ReviewResponse;
   try {
     const reviewed = await geminiJson<ReviewResponse>(reviewPrompt, "ARTICLE:\n" + reviewText, reviewSchema,
-      { fetcher, maxOutputTokens: Math.min(9500, 1200 + batch.length * 520), temperature: 0.1, freeTierOnly: true });
+      { fetcher, maxOutputTokens: Math.min(13000, 1200 + batch.length * 520), temperature: 0.1, freeTierOnly: true });
     response = reviewed.data;
   } catch (cause) {
     // If quota is exhausted here, publish only unflagged candidates.
@@ -294,16 +294,20 @@ function eligibleQuestionTypes(text: string, wordCount: number) {
 
 function selectQuestionTypes(text: string, wordCount: number, key: string) {
   const hash = stableHash(key);
-  const desired = wordCount < 150 ? 1 : wordCount < 300 ? 1 + (hash % 2) : wordCount < 500 ? 2 : 2 + (hash % 2);
+  const desired = wordCount < 150 ? 1 : wordCount < 300 ? 1 + (hash % 2) : wordCount < 500 ? 2
+    : wordCount < 700 ? 3 : 4;
   const ranked = eligibleQuestionTypes(text, wordCount).map(([type, weight]) => {
     const unit = (stableHash(`${key}:${type}`) + 1) / 4294967297;
     return { type, score: -Math.log(unit) / weight };
   }).sort((a, b) => a.score - b.score);
   const selected = ranked.slice(0, Math.min(desired, ranked.length)).map(({ type }) => type);
   const coreTypes: IeltsQuestionType[] = ["mcq", "tfng", "sentence_completion", "short_answer"];
-  if (!selected.some((type) => coreTypes.includes(type))) {
-    const core = ranked.find(({ type }) => coreTypes.includes(type))?.type;
-    if (core) selected[selected.length - 1] = core;
+  const minimumCore = wordCount >= 700 ? 3 : wordCount >= 500 ? 2 : 1;
+  for (const { type } of ranked) {
+    if (selected.filter((item) => coreTypes.includes(item)).length >= minimumCore) break;
+    if (!coreTypes.includes(type) || selected.includes(type)) continue;
+    const replace = selected.findLastIndex((item) => !coreTypes.includes(item));
+    if (replace >= 0) selected[replace] = type;
   }
   return selected;
 }
@@ -320,7 +324,7 @@ export async function generateAdaptiveNewsQuiz(title: string, body: string, key:
   const targetCount = targetQuestionCount(excerpt, wordCount);
   const targets: QuizTargets = Object.fromEntries(selected.map((type, index) => [type,
     Math.floor(targetCount / selected.length) + (index < targetCount % selected.length ? 1 : 0)]));
-  const candidatesByType = Object.fromEntries(selected.map((type) => [type, (targets[type] ?? 0) + 1])) as QuizTargets;
+  const candidatesByType = Object.fromEntries(selected.map((type) => [type, (targets[type] ?? 0) + (targetCount >= 11 ? 2 : 1)])) as QuizTargets;
   const candidateCount = Object.values(candidatesByType).reduce((sum, count) => sum + (count ?? 0), 0);
   const distribution = selected.map((type) => `${candidatesByType[type]} ${type} candidates (${targets[type]} kept)`).join(", ");
   const noteWordLimit = candidatesByType.note_completion ? noteWordLimitForKey(key) : null;
