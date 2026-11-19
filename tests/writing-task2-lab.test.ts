@@ -84,7 +84,7 @@ describe("Writing Task 2 Lab release", () => {
     const released = (await import("../src/lib/runtime")).lockedLearnerPath;
     expect(released("/app/self-study/writing-task-2")).toBe(false);
     expect(released("/app/self-study/writing-task-2/T2-M113-01")).toBe(false);
-    expect(released("/app/self-study/speaking")).toBe(true);
+    expect(released("/app/self-study/reading")).toBe(true);
 
     vi.stubEnv("NEXT_PUBLIC_DISABLE_WRITING_TASK2_LAB", "true");
     vi.resetModules();
@@ -98,6 +98,6 @@ describe("Writing Task 2 Lab release", () => {
     vi.resetModules();
     const { lockedLearnerPath } = await import("../src/lib/runtime");
     expect(lockedLearnerPath("/app/self-study/writing-task-2")).toBe(false);
-    for (const path of ["/app/self-study", "/app/self-study/speaking", "/app/self-study/reading"]) expect(lockedLearnerPath(path)).toBe(true);
+    for (const path of ["/app/self-study", "/app/self-study/reading"]) expect(lockedLearnerPath(path)).toBe(true);
   });
 });
