@@ -10,7 +10,7 @@ import "server-only";
 import { readFile } from "node:fs/promises";
 import { join } from "node:path";
 import { createClient } from "@supabase/supabase-js";
-import { buildCourseModule, type CourseSourceFile } from "./course-normalize";
+import { buildCourseFinal, buildCourseModule, type CourseSourceFile } from "./course-normalize";
 import { courseLayers, isCourseModule, type CourseAnswer, type CourseModule, type CourseModuleSummary } from "./course-types";
 
 type IndexEntry = { source_path: string; milestone: string; visibility: string };
@@ -71,4 +71,13 @@ export async function loadCourseSummaries(): Promise<CourseModuleSummary[]> {
   const ids = courseLayers.flatMap((layer) => layer.modules);
   const modules = await Promise.all(ids.map((id) => loadCourseModule(id)));
   return modules.map(({ module }) => ({ id: module.id, layer: module.layer, title: module.title, overview: module.overview, counts: module.counts }));
+}
+
+/** The R16 final assessment: learner-safe bundle plus the private prompts and models, read only by the final routes. */
+export function loadCourseFinal() {
+  return cached("final:R16", async () => {
+    const entries = (await index()).filter((entry) => entry.milestone === "R16" && /FINAL_ASSESSMENT|MISTAKE_BANK|FINAL_LOCKED|WORKED_FULL_ESSAYS/.test(entry.source_path));
+    const files: CourseSourceFile[] = await Promise.all(entries.map(async (entry) => ({ path: entry.source_path, visibility: entry.visibility, data: await readJson(entry.source_path) })));
+    return buildCourseFinal(files);
+  });
 }

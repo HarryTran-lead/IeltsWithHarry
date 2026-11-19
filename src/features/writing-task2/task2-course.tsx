@@ -6,13 +6,15 @@
  */
 import Link from "next/link";
 import { useEffect, useMemo, useState, type CSSProperties, type KeyboardEvent } from "react";
-import { ArrowLeft, ArrowRight, BookOpen, Check, ChevronDown, Clock3, Eye, Languages, Layers, Lightbulb, ListChecks, Play, Save, Sparkles, Target, Timer, X } from "lucide-react";
+import { ArrowLeft, ArrowRight, BookOpen, Check, ChevronDown, Clock3, Eye, Languages, Layers, Lightbulb, ListChecks, NotebookPen, Play, Save, Sparkles, Target, Timer, X } from "lucide-react";
 import {
   COURSE_API, COURSE_BASE, attemptDone, courseLayers, courseStageLabels,
   type CourseAnswer, type CourseAttempt, type CourseExample, type CourseField, type CourseModule, type CourseModuleSummary, type CoursePractice, type CourseSection, type CourseUnit,
 } from "@/lib/writing-task2/course-types";
+import { criterionOf } from "@/lib/writing-task2/final-types";
 import { TASK2_BASE, countWords, questionTypeLabels } from "@/lib/writing-task2/types";
 import { addPeek, loadCourseAttempts, loadCourseProgress, readPeeks, revealCourse, saveCourseAttempt } from "./course-state";
+import { FinalAssessment, MistakeLog, useFinalBundle, type MistakePrefill } from "./task2-final";
 import { withTerms } from "./task2-text";
 
 const layerTone: Record<string, { tone: string; soft: string }> = {
@@ -97,13 +99,16 @@ export function CourseHome({ onLessons }: { onLessons: () => void }) {
 
 /* ───────────── Milestone page ───────────── */
 
-type Step = "learn" | "examples" | "practice";
+type Step = "learn" | "examples" | "practice" | "final" | "mistakes";
+/** Milestones whose practice is about finding and fixing errors keep a mistake log; R16 adds the final assessment. */
+const LOG_MODULES = ["R13", "R14", "R16"];
 
 export function CourseModulePage({ id }: { id: string }) {
   const [load, setLoad] = useState<Load<{ module: CourseModule }>>({ state: "loading" });
   const [attempts, setAttempts] = useState<Record<string, CourseAttempt>>({});
   const [peeks, setPeeks] = useState<string[]>([]);
   const [step, setStep] = useState<Step>("learn");
+  const [prefill, setPrefill] = useState<MistakePrefill | null>(null);
 
   useEffect(() => {
     let alive = true;
@@ -112,7 +117,7 @@ export function CourseModulePage({ id }: { id: string }) {
       setLoad(result);
       setPeeks(readPeeks(id));
       const hash = window.location.hash.slice(1) as Step;
-      if (["learn", "examples", "practice"].includes(hash)) setStep(hash);
+      if (["learn", "examples", "practice", "final", "mistakes"].includes(hash)) setStep(hash);
       if (result.state === "ready") { const saved = await loadCourseAttempts(id).catch(() => ({})); if (alive) setAttempts(saved); }
     }).catch(() => { if (alive) setLoad({ state: "error", message: "Không tải được chặng học." }); });
     return () => { alive = false; };
@@ -133,7 +138,10 @@ export function CourseModulePage({ id }: { id: string }) {
     { id: "learn", label: "Bài giảng", hint: `${milestone.units.length} bài · ${milestone.sections.length} tài liệu`, score: "", pass: done > 0 },
     ...(milestone.examples.length ? [{ id: "examples" as Step, label: "Ví dụ mẫu", hint: "Xem trước khi tự viết", score: `${milestone.examples.length}`, pass: done > 0 }] : []),
     { id: "practice", label: "Luyện tập", hint: "Từng câu, có gợi ý", score: `${done}/${milestone.practice.length}`, pass: done === milestone.practice.length },
+    ...(milestone.id === "R16" ? [{ id: "final" as Step, label: "Bài thi cuối", hint: "7 đề, 40 phút", score: "", pass: false }] : []),
+    ...(LOG_MODULES.includes(milestone.id) ? [{ id: "mistakes" as Step, label: "Sổ lỗi", hint: "Ôn lại lỗi đã gặp", score: "", pass: false }] : []),
   ];
+  const logMistake = LOG_MODULES.includes(milestone.id) ? (fill: MistakePrefill) => { setPrefill(fill); go("mistakes"); } : undefined;
   const nextModule = courseLayers.flatMap((layer) => layer.modules)[courseLayers.flatMap((layer) => layer.modules).indexOf(milestone.id) + 1];
 
   return <div className="ll-page ll-module t2-lab t2-lesson t2-course" style={toneStyle(milestone.layer)}>
@@ -146,7 +154,7 @@ export function CourseModulePage({ id }: { id: string }) {
       </div>
     </header>
 
-    <ol className={`ll-stepper t2-stepper ${steps.length === 2 ? "is-two" : "is-three"}`} aria-label="Các bước học">{steps.map((item, i) => <li key={item.id} className={item.pass ? "is-pass" : ""}>
+    <ol className={`ll-stepper t2-stepper ${["", "", "is-two", "is-three", "is-four", "is-five"][steps.length]}`} aria-label="Các bước học">{steps.map((item, i) => <li key={item.id} className={item.pass ? "is-pass" : ""}>
       <button type="button" aria-current={step === item.id ? "step" : undefined} onClick={() => go(item.id)}>
         <span className="ll-step-dot">{item.pass && step !== item.id ? <Check size={15} strokeWidth={3}/> : i + 1}</span>
         <span className="ll-step-text"><b>{item.label}</b><small>{item.hint}</small></span>
@@ -164,12 +172,20 @@ export function CourseModulePage({ id }: { id: string }) {
         {step === "examples" && <ExampleViewer examples={milestone.examples} onDone={() => go("practice")}/>}
         {step === "practice" && <PracticeArea module={milestone} attempts={attempts} peeks={peeks}
           onSaved={(practiceId, attempt) => setAttempts((current) => ({ ...current, [practiceId]: attempt }))}
-          onPeek={(practiceId) => setPeeks(addPeek(milestone.id, practiceId))} nextModule={nextModule}/>}
+          onPeek={(practiceId) => setPeeks(addPeek(milestone.id, practiceId))} nextModule={nextModule} onLogMistake={logMistake}/>}
+        {(step === "final" || step === "mistakes") && <FinalSteps step={step} prefill={prefill} onPrefillUsed={() => setPrefill(null)} onLogMistake={(fill) => { setPrefill(fill); go("mistakes"); }}/>}
       </div>
       <ModuleDesk module={milestone}/>
     </div>
     <p className="ll-footnote">Học liệu luyện tập do đội ngũ biên soạn, không phải đề thi IELTS chính thức. Gợi ý mẫu là một cách làm đúng, không phải đáp án duy nhất; tiến độ không quy đổi sang band.</p>
   </div>;
+}
+
+function FinalSteps({ step, prefill, onPrefillUsed, onLogMistake }: { step: "final" | "mistakes"; prefill: MistakePrefill | null; onPrefillUsed: () => void; onLogMistake: (fill: MistakePrefill) => void }) {
+  const { bundle, error } = useFinalBundle();
+  if (error) return <p className="ll-error" role="alert">{error}</p>;
+  if (!bundle) return <div className="ll-skeleton ll-skeleton-card"/>;
+  return step === "final" ? <FinalAssessment bundle={bundle} onLogMistake={onLogMistake}/> : <MistakeLog bundle={bundle} prefill={prefill} onPrefillUsed={onPrefillUsed}/>;
 }
 
 function CourseCrumb({ current }: { current: string }) {
@@ -301,9 +317,10 @@ function ExampleViewer({ examples, onDone }: { examples: CourseExample[]; onDone
 type PracticeProps = {
   module: CourseModule; attempts: Record<string, CourseAttempt>; peeks: string[]; nextModule?: string;
   onSaved: (id: string, attempt: CourseAttempt) => void; onPeek: (id: string) => void;
+  onLogMistake?: (fill: MistakePrefill) => void;
 };
 
-function PracticeArea({ module, attempts, peeks, nextModule, onSaved, onPeek }: PracticeProps) {
+function PracticeArea({ module, attempts, peeks, nextModule, onSaved, onPeek, onLogMistake }: PracticeProps) {
   const groups = useMemo(() => [...new Set(module.practice.map((item) => item.group))], [module]);
   const stages = useMemo(() => ["foundation", "basic", "developing", "advanced"].filter((stage) => module.practice.some((item) => item.stage === stage)), [module]);
   const [group, setGroup] = useState(groups[0] ?? "");
@@ -365,7 +382,7 @@ function PracticeArea({ module, attempts, peeks, nextModule, onSaved, onPeek }: 
         })}
         <small>{list.filter((item) => attemptDone(attempts[item.id])).length}/{list.length} câu đã làm</small>
       </div>
-      <PracticeCard key={current.id} item={current} index={list.indexOf(current)} attempt={attempts[current.id]} answer={answers[current.id]} peeked={peeks.includes(current.id)} busy={busy === current.id}
+      <PracticeCard key={current.id} onLogMistake={onLogMistake} item={current} index={list.indexOf(current)} attempt={attempts[current.id]} answer={answers[current.id]} peeked={peeks.includes(current.id)} busy={busy === current.id}
         onSave={(text, choice) => void save(current, text, choice)} onPeek={() => void peek(current)}
         onPrev={list.indexOf(current) > 0 ? () => setIndex(list.indexOf(current) - 1) : undefined}
         onNext={list.indexOf(current) < list.length - 1 ? () => setIndex(list.indexOf(current) + 1) : undefined}/>
@@ -377,9 +394,10 @@ function PracticeArea({ module, attempts, peeks, nextModule, onSaved, onPeek }: 
 type CardProps = {
   item: CoursePractice; index: number; attempt?: CourseAttempt; answer?: CourseAnswer; peeked: boolean; busy: boolean;
   onSave: (text: string, choice?: string) => void; onPeek: () => void; onPrev?: () => void; onNext?: () => void;
+  onLogMistake?: (fill: MistakePrefill) => void;
 };
 
-function PracticeCard({ item, index, attempt, answer, peeked, busy, onSave, onPeek, onPrev, onNext }: CardProps) {
+function PracticeCard({ item, index, attempt, answer, peeked, busy, onSave, onPeek, onPrev, onNext, onLogMistake }: CardProps) {
   const [text, setText] = useState(attempt?.text ?? "");
   const [choice, setChoice] = useState(attempt?.choice ?? "");
   const [shown, setShown] = useState(0);
@@ -445,6 +463,12 @@ function PracticeCard({ item, index, attempt, answer, peeked, busy, onSave, onPe
       {answer.model_en && <div className="t2-model-answer"><span className="ll-kicker">Gợi ý mẫu</span><p lang="en">{answer.model_en}</p>{answer.model_vi && <p className="t2-vi">{answer.model_vi}</p>}</div>}
       <FieldRows fields={answer.fields}/>
       {!done && <p className="t2-retry">Bạn vừa xem gợi ý. Giờ hãy tự viết lại bằng lời của bạn rồi bấm lưu; đừng chép nguyên câu.</p>}
+      {onLogMistake && done && <div className="t2-row"><button type="button" className="ll-btn" onClick={() => onLogMistake({
+        criterion: criterionOf(item.fields.find((field) => field.label === "Tiêu chí")?.vi),
+        original_excerpt: item.stimulus[0]?.en ?? attempt?.text ?? "", revised_excerpt: answer.model_en ?? attempt?.text ?? "",
+        why_vi: (["Chẩn đoán", "Vì sao cách sửa hiệu quả", "Giải thích", "Vì sao"].map((label) => answer.fields.find((field) => field.label === label)?.vi).find(Boolean)
+          ?? answer.fields.find((field) => (field.vi?.length ?? 0) >= 20)?.vi) ?? "", source: item.id,
+      })}><NotebookPen size={15}/> Lưu lỗi này vào sổ</button></div>}
     </section>}
 
     {item.self_check.length > 0 && (done || answer || !item.reference) && <div className="t2-selfcheck">

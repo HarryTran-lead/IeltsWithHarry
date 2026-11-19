@@ -4,6 +4,7 @@
  * reads them by role, with a generic fallback that keeps any field it does not know as a labelled row.
  * It never copies a server_only file into the module; those only feed `answers`, which the reveal route serves.
  */
+import { criteria, type Criterion, type FinalBundle, type FinalModel, type FinalPrompt, type FinalReview, type MistakeCode } from "./final-types";
 import { questionTypeLabels } from "./types";
 import {
   courseLayers, courseStageLabels,
@@ -32,6 +33,7 @@ const META = new Set([
   "weakness_focus_code", "error_code", "reveal_policy", "prompt_state", "assessment_fields", "requires_human", "nonunique_answer_notice_vi", "practices_count",
   "unique_base_prompts", "timed_prompt_count", "total_practices", "question_types", "question_type", "stage", "response_type", "response_mode", "type",
   "practice_source_separation_vi", "word_count_en", "linked_lessons", "related_rubric", "linked_rubric", "skill_code",
+  "student_output", "feedback_policy", "worked_example_ids", "source_hash_scheme", "visibility",
 ]);
 
 const LABELS: Record<string, string> = {
@@ -84,6 +86,14 @@ const LABELS: Record<string, string> = {
   role_vi: "Vai trò đoạn", discourse_relation: "Quan hệ giữa hai đoạn", body1_main_idea_en: "Ý chính Body 1", body2_main_idea_en: "Ý chính Body 2",
   body1_core_en: "Ý chính Body 1", body2_core_en: "Ý chính Body 2", type_specific_check_vi: "Kiểm tra theo dạng đề", guided_questions_vi: "Câu hỏi gợi ý",
   label_vi: "Nhãn", stance: "Lập trường", paragraphs_vi_summary: "Tóm tắt đoạn", view_a: "Quan điểm A", view_b: "Quan điểm B",
+  pair: "Cặp dễ nhầm", rule: "Quy tắc", rule_vi: "Quy tắc", outline: "Dàn ý", outline_vi: "Dàn ý", scope_reference: "Phạm vi đề", length_by_stage: "Độ dài theo chặng",
+  frames: "Khung câu", frames_en: "Khung câu", goal: "Mục tiêu", must_do: "Phải làm", must_do_vi: "Phải làm", target: "Mục tiêu", target_vi: "Mục tiêu",
+  expected: "Kết quả cần có", expected_vi: "Kết quả cần có", relation: "Quan hệ ý", relation_vi: "Quan hệ ý", pair_coherence_check: "Kiểm tra liên kết hai đoạn",
+  pair_coherence_check_vi: "Kiểm tra liên kết hai đoạn", example_evidence: "Bằng chứng của ví dụ", example_evidence_vi: "Bằng chứng của ví dụ", logic: "Logic",
+  model_body1_en: "Body 1 mẫu", model_body2_en: "Body 2 mẫu", common_trap: "Bẫy hay gặp", common_trap_vi: "Bẫy hay gặp", introduction: "Mở bài", introduction_vi: "Mở bài",
+  conclusion: "Kết luận", conclusion_vi: "Kết luận", command: "Câu lệnh", command_en: "Câu lệnh", required: "Bắt buộc", required_vi: "Bắt buộc",
+  not_required: "Không bắt buộc", not_required_vi: "Không bắt buộc", subtype: "Dạng nhỏ", revised_vi_explanation: "Giải thích bản sửa", outcome: "Kết quả",
+  hints: "Gợi ý", recommended_minutes: "Thời gian gợi ý (phút)", product: "Sản phẩm", learning_instruction: "Cách học", body_1: "Body 1", body_2: "Body 2",
 };
 
 const humanise = (key: string) => {
@@ -329,7 +339,7 @@ export function buildCourseModule(id: string, files: CourseSourceFile[]): { modu
   const sorted = [...files].sort((a, b) => a.path.localeCompare(b.path));
 
   for (const file of sorted) {
-    if (file.visibility !== "learner_guided" || !isObj(file.data)) continue;
+    if (file.visibility !== "learner_guided" || !isObj(file.data) || /FINAL_ASSESSMENT|MISTAKE_BANK/.test(file.path)) continue;
     const data = file.data;
     const name = file.path.split("/").pop() ?? file.path;
     const list = (["items", "activities"] as const).map((key) => data[key]).find(Array.isArray) as unknown[] | undefined;
@@ -365,4 +375,57 @@ export function buildCourseModule(id: string, files: CourseSourceFile[]): { modu
     self_check: [...new Set(body.self_check)], notes: [...new Set(body.notes)].filter((note) => note !== meta.overview),
   };
   return { module: milestone, answers };
+}
+
+/* ───────────── Final assessment (R16) ───────────── */
+
+const PARA = String.fromCharCode(10, 10);
+
+const asCriterion = (value: unknown): Criterion | undefined => (typeof value === "string" && (criteria as readonly string[]).includes(value) ? value as Criterion : undefined);
+
+/**
+ * The R16 final assessment: learner-safe paper slots, rubric and mistake codes, plus the private prompts and
+ * models that the start and review routes hand out one paper at a time.
+ */
+export function buildCourseFinal(files: CourseSourceFile[]): { bundle: FinalBundle; prompts: Record<string, FinalPrompt & { requirement_vi?: string; ideas_en: string[] }>; models: Record<string, FinalModel> } {
+  const find = (pattern: RegExp, visibility: string) => files.find((file) => file.visibility === visibility && pattern.test(file.path))?.data;
+  const items = (data: unknown) => (isObj(data) && Array.isArray(data.items) ? data.items.filter(isObj) : []);
+
+  const papers = items(find(/FINAL_ASSESSMENT_METADATA/, "learner_guided")).map((item) => ({
+    id: String(item.id), question_type: str(item.question_type) ?? "", time_limit: Number(item.time_limit_minutes) || 40, min_words: Number(item.min_words) || 250,
+  }));
+  const rubricData = find(/FINAL_ASSESSMENT_RUBRIC/, "learner_guided");
+  const rubricObj = isObj(rubricData) ? rubricData : {};
+  const dimensions = isObj(rubricObj.dimensions) ? Object.entries(rubricObj.dimensions).flatMap(([id, value]) => {
+    const criterion = asCriterion(id);
+    return criterion && isObj(value) ? [{ id: criterion, question_vi: str(value.question_vi) ?? "", evidence_vi: strList(value.evidence_vi), repair_vi: str(value.repair_vi) ?? "" }] : [];
+  }) : [];
+  const levels = Array.isArray(rubricObj.levels) ? rubricObj.levels.filter(isObj).map((level) => ({ level: Number(level.level), vi: str(level.vi) ?? "" })) : [];
+  const mistakes: MistakeCode[] = items(find(/MISTAKE_BANK_TAXONOMY/, "learner_guided")).flatMap((item) => {
+    const criterion = asCriterion(item.criterion);
+    return criterion ? [{
+      id: String(item.id), criterion, name_vi: str(item.name_vi) ?? String(item.code ?? item.id), symptom_vi: str(item.symptom_vi) ?? "",
+      repair_vi: str(item.repair_strategy_vi) ?? "", evidence_vi: strList(item.evidence_to_record_vi),
+      review_days: Array.isArray(item.review_days) ? item.review_days.map(Number).filter((day) => day > 0) : [1, 3, 7, 14],
+    }] : [];
+  });
+
+  const prompts = Object.fromEntries(items(find(/FINAL_LOCKED_PROMPTS/, "server_only")).map((item) => [String(item.id), {
+    prompt_en: str(item.prompt_en) ?? "", prompt_vi: str(item.prompt_vi), requirement_vi: str(item.requirement_vi), ideas_en: strList(item.idea_guidance_after_submit_en),
+  }]));
+  const models = Object.fromEntries(items(find(/WORKED_FULL_ESSAYS/, "server_only")).map((item) => [str(item.question_type) ?? String(item.id), {
+    title: `${questionTypeLabels[str(item.question_type) ?? ""] ?? "Bài mẫu"}`, prompt_en: str(item.prompt_en),
+    essay_en: str(item.essay_en) ?? strList(item.paragraphs_en).join(PARA), essay_vi: str(item.essay_vi) ?? (strList(item.paragraphs_vi).join(PARA) || undefined),
+    word_count: Number(item.word_count) || undefined, structure_vi: strList(item.structure_vi).join(" ") || undefined, warning_vi: str(item.teaching_warning_vi),
+  } satisfies FinalModel]));
+
+  return {
+    bundle: { papers, rubric: { dimensions, levels, pass_vi: str(rubricObj.exam_pass_policy_vi), note_vi: str(rubricObj.scoring_policy) ? "Thang 0–3 là bằng chứng tự kiểm nội bộ, không quy đổi sang band IELTS." : undefined }, mistakes },
+    prompts, models,
+  };
+}
+
+/** Guidance for one submitted paper: the requirement, idea hints and the model essay of the same question type. */
+export function finalReviewOf(paper: { question_type: string }, prompt: { requirement_vi?: string; ideas_en: string[] } | undefined, models: Record<string, FinalModel>): FinalReview {
+  return { requirement_vi: prompt?.requirement_vi, ideas_en: prompt?.ideas_en ?? [], model: models[paper.question_type] };
 }
