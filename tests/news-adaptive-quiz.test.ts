@@ -77,12 +77,15 @@ describe("adaptive IELTS passage quiz", () => {
       `Researchers recorded detail${index + 1} during survey stage ${index + 1} and compared the measurement with earlier records to explain how the local environment changed across several months at the field station.`);
     const passage = Array.from({ length: 8 }, (_, index) => sentences.slice(index * 5, index * 5 + 5).join(" ")).join("\n\n");
     const requests: string[] = [];
+    const arraySchemas: { minItems?: number; maxItems?: number }[] = [];
     const reply = (value: unknown) => new Response(JSON.stringify({ candidates: [{ finishReason: "STOP", content: { parts: [{ text: JSON.stringify(value) }] } }] }), { status: 200 });
     const fetcher = async (_url: string | URL | Request, init?: RequestInit) => {
       expect(init?.headers).toMatchObject({ "x-goog-api-key": "test-key" });
-      const request = JSON.parse(String(init?.body)) as { systemInstruction: { parts: { text: string }[] } };
+      const request = JSON.parse(String(init?.body)) as { systemInstruction: { parts: { text: string }[] }; generationConfig: { responseFormat: { text: { schema: { properties: { questions?: { minItems?: number; maxItems?: number }; reviews?: { minItems?: number; maxItems?: number } } } } } } };
       const system = request.systemInstruction.parts[0].text;
       requests.push(system);
+      arraySchemas.push(request.generationConfig.responseFormat.text.schema.properties.questions
+        ?? request.generationConfig.responseFormat.text.schema.properties.reviews ?? {});
       if (system.includes("Focused second-pass quality check")) {
         const ids = [...system.matchAll(/"id":(\d+)/g)].map((match) => Number(match[1]));
         return reply({ reviews: ids.map((id) => ({ id, action: "keep", reason: "Evidence and answer checked." })) });
@@ -121,6 +124,8 @@ describe("adaptive IELTS passage quiz", () => {
       expect(directCount).toBeLessThanOrEqual(3);
       expect(new Set(result.questions.map((question) => question.type)).size).toBeGreaterThanOrEqual(2);
       expect(requests).toHaveLength(2);
+      expect(arraySchemas).toHaveLength(2);
+      expect(arraySchemas.every((schema) => schema.minItems === undefined && schema.maxItems === undefined)).toBe(true);
       expect(requests[0]).toContain("Balance the set across difficulty");
       const selectedTypes = [...requests[0].matchAll(/\d+ ([a-z_]+) candidates \(\d+ kept\)/g)].map((match) => match[1]);
       expect(selectedTypes).toHaveLength(4);
