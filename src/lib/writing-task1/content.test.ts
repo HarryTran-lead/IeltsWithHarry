@@ -68,7 +68,7 @@ describe("Writing Task 1 Lab release", () => {
     const locked = await runtime();
     expect(locked("/app/self-study/writing-task-1")).toBe(false);
     expect(locked("/app/self-study/writing-task-1/line")).toBe(false);
-    expect(locked("/app/self-study/speaking")).toBe(true);
+    expect(locked("/app/self-study/reading")).toBe(true);
   });
 
   it("can be closed again with the emergency flag", async () => {

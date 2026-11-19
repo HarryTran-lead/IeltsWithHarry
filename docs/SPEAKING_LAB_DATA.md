@@ -86,6 +86,6 @@ python -I scripts/import-speaking-lab.py <L80 folder> <private folder outside th
 
 ## Opening the lab
 
-The lab is locked everywhere unless `NEXT_PUBLIC_ENABLE_SPEAKING_LAB=true`. Keep it locked in production until:
-- teachers have reviewed the L79 samples (36 pending in the handoff);
-- a live account has been tested end to end.
+The lab is open everywhere; `NEXT_PUBLIC_DISABLE_SPEAKING_LAB=true` locks it again. Until the private bucket is set, the map loads but every lesson says its content is being updated. Still pending after release:
+- teachers review the L79 samples (36 pending in the handoff);
+- a live account is tested end to end.

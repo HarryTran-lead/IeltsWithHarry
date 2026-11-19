@@ -110,14 +110,17 @@ describe("Speaking Lab progress", () => {
     expect(speakingDraftSlug("skill-FC01")).toBe("spk-lab:skill-FC01");
   });
 
-  it("stays locked unless the enable flag is set", async () => {
+  it("is open in production and can be closed with the disable flag", async () => {
+    vi.stubEnv("NODE_ENV", "production");
+    vi.stubEnv("NEXT_PUBLIC_UNLOCK_DEV_FEATURES", "false");
     const runtime = await import("../src/lib/runtime");
-    expect(runtime.lockedLearnerPath("/app/self-study/speaking")).toBe(true);
-    vi.stubEnv("NEXT_PUBLIC_ENABLE_SPEAKING_LAB", "true");
+    expect(runtime.lockedLearnerPath("/app/self-study/speaking")).toBe(false);
+    expect(runtime.lockedLearnerPath("/app/self-study/speaking/skill-FC01")).toBe(false);
+    expect(runtime.lockedLearnerPath("/app/self-study/reading")).toBe(true);
+    vi.stubEnv("NEXT_PUBLIC_DISABLE_SPEAKING_LAB", "true");
     vi.resetModules();
-    const enabled = await import("../src/lib/runtime");
-    expect(enabled.lockedLearnerPath("/app/self-study/speaking/skill-FC01")).toBe(false);
-    expect(enabled.lockedLearnerPath("/app/self-study/reading")).toBe(true);
+    const closed = await import("../src/lib/runtime");
+    expect(closed.lockedLearnerPath("/app/self-study/speaking/skill-FC01")).toBe(true);
   });
 });
 
