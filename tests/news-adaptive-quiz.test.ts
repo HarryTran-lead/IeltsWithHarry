@@ -68,6 +68,9 @@ describe("adaptive IELTS passage quiz", () => {
     const varied = Array.from({ length: 40 }, (_, index) =>
       `Researchers measured feature ${index + 1} during the survey and recorded its distinct result at the field station for later comparison with earlier observations across several seasons in the region.`).join(" ");
     expect(targetQuestionCount(varied)).toBe(13);
+    expect(targetQuestionCount(varied, 600)).toBe(9);
+    expect(targetQuestionCount(varied, 650)).toBe(11);
+    expect(targetQuestionCount(varied, 700)).toBe(13);
   });
   it("reviews every flagged candidate in one call for a supported thirteen-question article", async () => {
     const sentences = Array.from({ length: 40 }, (_, index) =>
