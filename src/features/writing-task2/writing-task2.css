@@ -280,3 +280,98 @@
   .t2-drill-actions .ll-btn,.t2-row .ll-btn{flex:1 1 auto}
   .t2-drill-nav .ll-btn{flex:1}
 }
+
+/* Lab tabs: skills course | prompt lessons */
+.t2-lab-tabs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px;max-width:560px;margin-bottom:12px;padding:5px;border:1px solid var(--ll-line);border-radius:calc(var(--r-lg) + 4px);background:#fff}
+.t2-lab-tabs button{display:grid;gap:1px;padding:8px 12px;border:0;border-radius:var(--r-lg);background:none;color:var(--ll-muted);font:inherit;text-align:left;cursor:pointer;transition:background .15s,color .15s}
+.t2-lab-tabs button b{font-size:var(--fs-base)}
+.t2-lab-tabs button small{font-size:var(--fs-xs)}
+.t2-lab-tabs button[aria-selected=true]{background:linear-gradient(135deg,#c8473f,#7a3557);color:#fff;box-shadow:0 10px 22px -14px rgba(122,53,87,.9)}
+
+/* Course home */
+.t2-course-empty{max-width:720px}
+.t2-layer{margin-top:18px}
+.t2-layer>header{display:flex;align-items:baseline;flex-wrap:wrap;gap:6px 10px;margin-bottom:10px}
+.t2-layer>header h2{font-size:var(--fs-lg);letter-spacing:-.015em}
+.t2-layer>header small{color:var(--ll-muted);font-size:var(--fs-xs)}
+.t2-module-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.t2-module-card{display:flex;flex-direction:column;gap:6px;padding:12px 14px;border:1px solid var(--ll-line);border-top:3px solid var(--ll-tone);border-radius:var(--r-lg);background:#fff;transition:transform .18s,box-shadow .18s,border-color .18s}
+.t2-module-card:hover{transform:translateY(-2px);box-shadow:0 14px 30px -22px var(--ll-tone)}
+.t2-module-card.is-next{border-color:color-mix(in srgb,var(--ll-tone) 50%,#fff);box-shadow:0 0 0 3px color-mix(in srgb,var(--ll-tone) 14%,transparent)}
+.t2-module-card strong{font-size:var(--fs-base);line-height:1.35}
+.t2-module-card p{display:-webkit-box;overflow:hidden;color:#3b5068;font-size:var(--fs-xs);line-height:1.45;-webkit-line-clamp:3;-webkit-box-orient:vertical}
+.t2-module-top{display:flex;align-items:center;justify-content:space-between;gap:6px}
+.t2-module-id{padding:2px 8px;border-radius:var(--r-pill);background:var(--ll-soft);color:var(--ll-tone);font-size:var(--fs-2xs);font-weight:800;letter-spacing:.06em}
+.t2-module-meta{display:flex;flex-wrap:wrap;gap:4px 10px;margin-top:auto;color:var(--ll-muted);font-size:var(--fs-2xs);font-weight:700}
+.t2-module-meta span{display:inline-flex;align-items:center;gap:3px}
+.t2-module-bar{display:block;height:5px;overflow:hidden;border-radius:5px;background:#e6ecf2}
+.t2-module-bar i{display:block;height:100%;border-radius:inherit;background:var(--ll-tone)}
+
+/* Milestone page */
+.t2-stepper.is-two{grid-template-columns:repeat(2,minmax(0,1fr))}
+.t2-stepper.is-three{grid-template-columns:repeat(3,minmax(0,1fr))}
+.t2-desk.is-empty{display:none}
+.t2-desk-label{margin-top:12px;color:var(--ll-muted);font-size:var(--fs-2xs);font-weight:800;letter-spacing:.06em;text-transform:uppercase}
+.t2-bullets{display:grid;gap:5px;margin-top:6px;padding-left:18px!important;list-style:disc!important;color:#3b5068;font-size:var(--fs-sm);line-height:1.5}
+.t2-bullets.is-check li::marker{content:"✓  ";color:var(--ll-good)}
+.t2-fields{display:grid;gap:6px;margin-top:10px}
+.t2-fields>div{display:grid;grid-template-columns:minmax(120px,170px) minmax(0,1fr);gap:4px 12px;padding:6px 0;border-top:1px dashed #edf1f5;font-size:var(--fs-sm);line-height:1.5}
+.t2-fields>div:not(:has(dt)){grid-template-columns:1fr}
+.t2-fields dt{color:var(--ll-muted);font-size:var(--fs-xs);font-weight:750}
+.t2-fields dd{display:grid;gap:3px;min-width:0;color:#253a55}
+.t2-fields ul{display:grid;gap:3px;padding-left:16px;list-style:disc}
+.t2-en{color:var(--ll-ink);font-weight:600}
+.t2-units,.t2-sections{display:grid;gap:6px}
+.t2-units>li,.t2-sections>li{border:1px solid #edf1f5;border-radius:var(--r-md);background:#fbfcfd;transition:border-color .15s}
+.t2-units>li.is-open,.t2-sections>li.is-open{border-color:color-mix(in srgb,var(--ll-tone) 40%,#fff);background:#fff}
+.t2-unit-head{display:flex;align-items:center;gap:10px;width:100%;padding:9px 12px;border:0;background:none;color:var(--ll-ink);font:inherit;text-align:left;cursor:pointer}
+.t2-unit-head>span:not(.t2-step-num){display:grid;flex:1;min-width:0}
+.t2-unit-head b{font-size:var(--fs-base)}
+.t2-unit-head small{overflow:hidden;color:var(--ll-muted);font-size:var(--fs-xs);white-space:nowrap;text-overflow:ellipsis}
+.t2-unit-head>svg:last-child{flex:none;color:var(--ll-muted);transition:transform .2s}
+.t2-unit-head[aria-expanded=true]>svg:last-child{transform:rotate(180deg)}
+.t2-unit-head[aria-expanded=true] small{white-space:normal}
+.t2-unit-body{padding:0 14px 12px 50px}
+.t2-sections .t2-unit-body{padding-left:14px}
+.t2-unit-steps{display:grid;gap:4px;padding-left:18px!important;list-style:decimal!important;color:#3b5068;font-size:var(--fs-sm);line-height:1.55}
+.t2-frame-show em{flex-basis:100%;color:#3b5068;font-size:var(--fs-sm);font-style:normal}
+.t2-quote{display:grid;gap:4px;margin:10px 0 0;padding:8px 12px;border-left:3px solid var(--ll-tone);border-radius:0 var(--r-sm) var(--r-sm) 0;background:color-mix(in srgb,var(--ll-soft) 45%,#fff);font-size:var(--fs-sm);line-height:1.55}
+.t2-quote small{color:#3b5068}
+.t2-quote.is-stimulus b{color:var(--ll-muted);font-size:var(--fs-2xs);letter-spacing:.06em;text-transform:uppercase}
+.t2-cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:8px}
+.t2-cards article{padding:10px 12px;border:1px solid #edf1f5;border-radius:var(--r-md);background:#fbfcfd}
+.t2-cards article>b{font-size:var(--fs-sm)}
+.t2-cards .t2-fields>div{grid-template-columns:1fr;gap:1px}
+.t2-head-link{margin:0 0 0 auto}
+.t2-prompt-box{margin-top:10px;padding:10px 12px;border:1px solid var(--ll-line);border-left:4px solid var(--ll-tone);border-radius:var(--r-md);background:#fff}
+.t2-prompt-box p[lang=en]{margin-top:2px;font-size:var(--fs-base);font-weight:650;line-height:1.55}
+.t2-example-text{display:grid;gap:10px;margin-top:12px;font-size:var(--fs-base);line-height:1.75}
+.t2-notes.is-steps{grid-template-columns:1fr}
+.t2-notes.is-steps p[lang=en]{color:var(--ll-ink);font-weight:600}
+.t2-filters{display:flex;flex-wrap:wrap;gap:8px 16px;margin-bottom:10px}
+.t2-filters>div{display:flex;flex-wrap:wrap;gap:4px;padding:4px;border:1px solid var(--ll-line);border-radius:var(--r-md);background:#fff}
+.t2-filters button{display:inline-flex;align-items:center;gap:5px;padding:5px 10px;border:0;border-radius:var(--r-sm);background:none;color:var(--ll-muted);font:inherit;font-size:var(--fs-xs);font-weight:750;cursor:pointer}
+.t2-filters button small{color:inherit;opacity:.7}
+.t2-filters button[aria-pressed=true]{background:var(--ll-tone);color:#fff}
+.t2-practice-chips{margin-top:10px}
+.t2-practice-chips span{display:inline-flex;align-items:center;gap:4px}
+.t2-more{margin-top:8px;font-size:var(--fs-sm)}
+.t2-more summary{color:var(--ll-tone);font-size:var(--fs-xs);font-weight:750;cursor:pointer}
+.t2-selfcheck{margin-top:12px;padding:10px 12px;border:1px solid #d9eee2;border-radius:var(--r-md);background:#f6fcf8}
+.t2-selfcheck>b{display:flex;align-items:center;gap:6px;color:var(--ll-good);font-size:var(--fs-sm)}
+.t2-selfcheck ul{display:grid;gap:4px;margin-top:6px}
+.t2-selfcheck label{display:flex;gap:8px;align-items:flex-start;font-size:var(--fs-sm);line-height:1.45;cursor:pointer}
+.t2-selfcheck input{flex:none;margin-top:3px;accent-color:var(--ll-good)}
+.t2-timer-start{margin-bottom:6px}
+.t2-timer-start::before{content:none}
+.t2-timer{display:inline-flex;align-items:center;gap:6px;margin-bottom:6px;padding:4px 10px;border-radius:var(--r-pill);background:var(--ll-soft);color:var(--ll-tone);font-size:var(--fs-sm);font-weight:800;font-variant-numeric:tabular-nums}
+.t2-timer.is-low{background:#fff4d6;color:#8a5e00}
+.t2-timer.is-over{background:var(--ll-bad-soft);color:var(--ll-bad)}
+@media (max-width:1100px){.t2-module-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:640px){
+  .t2-module-grid{grid-template-columns:1fr}
+  .t2-lab-tabs{max-width:none}
+  .t2-fields>div{grid-template-columns:1fr;gap:1px}
+  .t2-unit-body{padding-left:14px}
+  .t2-stepper.is-two,.t2-stepper.is-three{grid-template-columns:repeat(3,minmax(0,1fr))}
+}

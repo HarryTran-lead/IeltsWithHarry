@@ -5,11 +5,12 @@
  * and only the learner's current stage expanded, so a newcomer sees where to begin without scrolling 36 cards.
  */
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { useEffect, useMemo, useState, type CSSProperties } from "react";
 import { ArrowRight, BookOpen, Check, ChevronDown, Clock3, Eye, Lightbulb, ListChecks, PenLine, Play, Sparkles } from "lucide-react";
 import { stageAbout } from "@/lib/writing-task2/guides";
 import { TASK2_API, TASK2_BASE, drillSaved, essaySaved, questionTypeLabels, stageInfo, stageOrder, type Task2LessonSummary, type Task2Stage, type Task2State } from "@/lib/writing-task2/types";
+import { CourseHome, CourseModulePage } from "./task2-course";
 import { LessonPage } from "./task2-lesson";
 import { loadAllTask2States } from "./task2-state";
 import "@/features/listening/listening-lab.css";
@@ -17,7 +18,23 @@ import "./writing-task2.css";
 
 export function WritingTask2Lab() {
   const parts = usePathname().split("/").filter(Boolean);
-  return parts[3] ? <LessonPage key={parts[3]} id={decodeURIComponent(parts[3])} /> : <RoadmapPage />;
+  if (parts[3] === "course") return parts[4] ? <CourseModulePage key={parts[4]} id={decodeURIComponent(parts[4])} /> : <LabHome />;
+  return parts[3] ? <LessonPage key={parts[3]} id={decodeURIComponent(parts[3])} /> : <LabHome />;
+}
+
+/** The lab's two halves: the R01–R16 skills course (default) and the 36 prompt-based lessons. */
+function LabHome() {
+  const params = useSearchParams();
+  const router = useRouter();
+  const tab = params.get("tab") === "luyen-de" ? "lessons" : "course";
+  const show = (next: "course" | "lessons") => router.replace(next === "lessons" ? `${TASK2_BASE}?tab=luyen-de` : TASK2_BASE, { scroll: false });
+  return <div className="ll-page ll-roadmap t2-lab">
+    <div className="t2-lab-tabs" role="tablist" aria-label="Writing Task 2 Lab">
+      <button type="button" role="tab" aria-selected={tab === "course"} onClick={() => show("course")}><b>Khoá kỹ năng</b><small>16 chặng R01–R16</small></button>
+      <button type="button" role="tab" aria-selected={tab === "lessons"} onClick={() => show("lessons")}><b>Luyện đề</b><small>36 bài theo đề</small></button>
+    </div>
+    {tab === "course" ? <CourseHome onLessons={() => show("lessons")}/> : <RoadmapPage />}
+  </div>;
 }
 
 const themeStyle = (stage: Task2Stage) => ({ "--ll-tone": stageInfo[stage].tone, "--ll-soft": stageInfo[stage].soft }) as CSSProperties;
@@ -73,8 +90,8 @@ function RoadmapPage() {
     return [...counts].sort((a, b) => b[1] - a[1]);
   }, [lessons]);
 
-  if (error) return <div className="ll-page t2-lab"><p className="ll-error" role="alert">{error}</p></div>;
-  if (!lessons) return <div className="ll-page t2-lab"><div className="ll-skeleton ll-skeleton-hero"/><div className="ll-skeleton ll-skeleton-row"/><div className="ll-skeleton ll-skeleton-card"/></div>;
+  if (error) return <p className="ll-error" role="alert">{error}</p>;
+  if (!lessons) return <><div className="ll-skeleton ll-skeleton-hero"/><div className="ll-skeleton ll-skeleton-row"/><div className="ll-skeleton ll-skeleton-card"/></>;
 
   const number = (id: string) => String(lessons.findIndex((lesson) => lesson.id === id) + 1).padStart(2, "0");
   const done = lessons.filter((lesson) => complete(lesson, progress[lesson.id])).length;
@@ -95,7 +112,7 @@ function RoadmapPage() {
     requestAnimationFrame(() => document.getElementById(`chang-${stageOrder.indexOf(stage) + 1}`)?.scrollIntoView({ behavior: "smooth", block: "start" }));
   }
 
-  return <div className="ll-page ll-roadmap t2-lab">
+  return <>
     <header className="ll-hero t2-hero">
       <div className="ll-hero-copy">
         <h1>Viết Task 2 theo lộ trình, <em>từng bước một.</em></h1>
@@ -174,7 +191,7 @@ function RoadmapPage() {
     })}
 
     <aside className="ll-note"><Sparkles size={16}/><p>Đề và bài mẫu là tài liệu luyện tập do đội ngũ biên soạn, không phải đề thi IELTS chính thức. Tiến độ ở đây không quy đổi sang band.</p></aside>
-  </div>;
+  </>;
 }
 
 function LessonCard({ lesson, number, progress, isNext }: { lesson: Task2LessonSummary; number: string; progress: LessonProgress; isNext: boolean }) {
