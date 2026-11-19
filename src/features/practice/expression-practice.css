@@ -1003,3 +1003,32 @@
   .xp-panel-top { padding-block: 6px; }
   .xp-panel-stats div { padding-block: 3px; }
 }
+.xp-session .practice-synonym-word {
+  display: inline;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+  text-align: left;
+}
+.xp-session .practice-synonym-word:hover,
+.xp-session .practice-synonym-word:focus-visible {
+  text-decoration: underline;
+  text-decoration-color: var(--teal-strong);
+  text-underline-offset: 3px;
+}
+.xp-session .practice-synonym-word.xp-diff-missing { background: #fff0a8; }
+.practice-synonym-panel {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 9px 0;
+  padding: 9px 12px;
+  border: 1px solid #b8e3df;
+  border-radius: 10px;
+  background: #effaf7;
+  font-size: 13px;
+}
+.practice-synonym-panel strong { color: #087f72; }

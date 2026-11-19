@@ -92,7 +92,25 @@ export function TranslationWorkspace() {
   const [hintStep, setHintStep] = useState(0);
   const [finished, setFinished] = useState(false);
   const [message, setMessage] = useState("");
+  const [synonym, setSynonym] = useState<{ word: string; terms: string[]; loading: boolean; error?: string } | null>(null);
   const [loaded, setLoaded] = useState<{ band: string; items: BandExercise[] } | null>(null);
+
+  async function lookUpSynonyms(raw: string) {
+    const word = raw.match(/[A-Za-z][A-Za-z'-]*/)?.[0]?.toLowerCase();
+    if (!word) return;
+    setSynonym({ word, terms: [], loading: true });
+    try {
+      const response = await fetch(`https://api.dictionaryapi.dev/api/v2/entries/en/${encodeURIComponent(word)}`);
+      if (!response.ok) throw new Error("Chưa tìm được từ đồng nghĩa.");
+      const entries = await response.json() as { meanings?: { synonyms?: string[]; definitions?: { synonyms?: string[] }[] }[] }[];
+      const terms = [...new Set(entries.flatMap((entry) => (entry.meanings ?? []).flatMap((meaning) => [
+        ...(meaning.synonyms ?? []), ...(meaning.definitions ?? []).flatMap((definition) => definition.synonyms ?? []),
+      ])))].filter((term) => term.toLowerCase() !== word).slice(0, 8);
+      setSynonym((current) => current?.word === word ? { word, terms, loading: false } : current);
+    } catch {
+      setSynonym((current) => current?.word === word ? { word, terms: [], loading: false, error: "Chưa tra được từ này. Hãy thử lại." } : current);
+    }
+  }
 
   useEffect(() => {
     let active = true;
@@ -148,6 +166,7 @@ export function TranslationWorkspace() {
     setHintStep(0);
     setFinished(false);
     setMessage("");
+    setSynonym(null);
   }
 
   function checkCopy() {
@@ -160,6 +179,7 @@ export function TranslationWorkspace() {
 
   function rate(rating: Rating) {
     if (!current || phase !== "review") return;
+    setSynonym(null);
     const next = { ...reviews, [reviewKey(current)]: { rating, reviewedAt: new Date().toISOString() } };
     setReviews(next);
     if (storageKey) {
@@ -179,6 +199,7 @@ export function TranslationWorkspace() {
     setSession([]);
     setFinished(false);
     setMessage("");
+    setSynonym(null);
   }
 
   // Keyboard flow while practising: typing fields handle Enter themselves; these keys
@@ -333,8 +354,9 @@ export function TranslationWorkspace() {
             <blockquote lang="vi" className="is-compact">{current.promptVi}</blockquote>
             <div className="practice-comparison">
               <div><small>Bạn viết</small><p lang="en">{diff.mine.map((token, index) => <span key={index} className={token.same ? undefined : "xp-diff-extra"}>{token.text} </span>)}</p></div>
-              <div><small>{closest ? "Cách diễn đạt gần với bạn nhất" : "Câu mẫu"}</small><p lang="en">{diff.model.map((token, index) => <span key={index} className={token.same ? undefined : "xp-diff-missing"}>{token.text} </span>)}</p></div>
+              <div><small>{closest ? "Cách diễn đạt gần với bạn nhất" : "Câu mẫu"}</small><p lang="en">{diff.model.map((token, index) => <button key={index} type="button" className={`practice-synonym-word ${token.same ? "" : "xp-diff-missing"}`} onClick={() => void lookUpSynonyms(token.text)} title={`Tìm từ đồng nghĩa của ${token.text}`}>{token.text} </button>)}</p></div>
             </div>
+            {synonym && <div className="practice-synonym-panel" role="status"><strong>{synonym.word}</strong>{synonym.loading ? <span>Đang tìm từ đồng nghĩa…</span> : synonym.error ? <span>{synonym.error}</span> : synonym.terms.length ? <span>Từ đồng nghĩa: {synonym.terms.join(", ")}</span> : <span>Chưa có từ đồng nghĩa trong từ điển.</span>}</div>}
             <p className="xp-diff-legend"><span className="xp-diff-extra">từ chỉ có trong câu của bạn</span><span className="xp-diff-missing">từ có trong câu mẫu</span> Một ý có nhiều cách diễn đạt đúng, nên chấm theo nghĩa, ngữ pháp và cách dùng từ.</p>
             {others.length > 0 && <div className="xp-alternatives">
               <strong>{closest ? "Câu mẫu" : "Cách diễn đạt khác cũng đúng"}</strong>

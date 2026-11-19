@@ -12,6 +12,7 @@ import { useNotebook } from "@/features/notebook/notebook-store";
 import { useDemo } from "@/features/demo/demo-store";
 import { NEWS_CATEGORIES, type NewsCategory } from "@/lib/news/constants";
 import { plainText } from "@/lib/news/plain-text";
+import { formatNewsParagraph } from "@/lib/news/reader-text";
 import { NewsRecommendations } from "./news-recommendations";
 import { NewsReadingTools } from "./news-reading-tools";
 import { NewsAutoQuiz, QuestionTypePicker, type QuestionType, type TypeCount } from "./news-auto-quiz";
@@ -121,6 +122,7 @@ function NewsHome() {
   const [saved, setSaved] = useState<string[]>([]);
   const [readIds, setReadIds] = useState<string[]>([]);
   const [quizCounts, setQuizCounts] = useState<Record<string, { total: number; types: Record<string, number> }>>({});
+  const [quizResults, setQuizResults] = useState<Record<string, { score: number; total: number }>>({});
   const [matchingIds, setMatchingIds] = useState<string[]>([]);
   const [readToday, setReadToday] = useState(0);
   const [latest, setLatest] = useState<string | null>(null);
@@ -247,10 +249,11 @@ function NewsHome() {
     // A slower, older request must not replace the list for the newest filters.
     if (request !== latestRequest.current) return;
     const ids = found.map((row) => row.id);
-    const [reads, quizzes] = found.length ? await Promise.all([
+    const [reads, quizzes, attempts] = found.length ? await Promise.all([
       db.from("user_news_article_reads").select("article_id").in("article_id", ids),
       db.from("news_auto_questions").select("article_id,question_type").in("article_id", ids).limit(PAGE_SIZE * 30),
-    ]) : [null, null];
+      db.from("news_auto_attempts").select("article_id,score,total,submitted_at").in("article_id", ids).order("submitted_at", { ascending: false }).limit(PAGE_SIZE * 10),
+    ]) : [null, null, null];
     if (request !== latestRequest.current) return;
     setRows(found); setCount(total);
     setReadIds((reads?.data ?? []).map((row) => row.article_id));
@@ -261,6 +264,7 @@ function NewsHome() {
       count.types[question.question_type] = (count.types[question.question_type] ?? 0) + 1;
     }
     setQuizCounts(counts);
+    setQuizResults(Object.fromEntries((attempts?.data ?? []).filter((item, index, all) => all.findIndex((other) => other.article_id === item.article_id) === index).map((item) => [item.article_id, { score: item.score, total: item.total }])));
     if (quizzes?.error) setError("Chưa tải được trạng thái luyện đề. Hãy thử tải lại trang.");
     setLoadedAt(new Date().toISOString()); setArrived(0);
     setLoading(false);
@@ -334,7 +338,7 @@ function NewsHome() {
       </div>
       {randomError && <p className="form-error" role="alert">{randomError}</p>}
       {error && <p className="form-error" role="alert">{error}</p>}
-      {loading && !rows.length ? <div className="news-grid" aria-busy="true">{[0, 1, 2].map((item) => <div key={item} className="news-card news-card-skeleton"><span className="skeleton" /><span className="skeleton" /><span className="skeleton" /></div>)}</div> : rows.length ? <div className={`news-grid stagger ${loading ? "is-loading" : ""}`} aria-busy={loading}>{rows.map((row) => <NewsCard key={row.id} row={row} saved={saved.includes(row.id)} read={readIds.includes(row.id)} quizInfo={quizCounts[row.id]} fresh={Date.parse(row.fetched_at) > Date.parse(seenBefore)} onSave={() => void toggleSave(row.id)} onSite={row.readable} image={newsImage(row)} learnSlug={releaseLocks ? undefined : learn.find((item) => item.related_news_id === row.id)?.slug} />)}</div> : <div className="news-empty"><Sticker name={feed === "today" ? "calendar" : feed === "hot" ? "flame" : "newspaper"} size={72} tilt={-6} /><h3>{questionType !== "all" ? `Chưa có bài với dạng ${typeLabels[questionType]}` : search ? `Không có tin nào khớp “${search}”` : feed === "today" ? "Hôm nay chưa có tin mới" : feed === "hot" ? "Chưa có tin nổi bật" : "Chưa có tin phù hợp"}</h3><p>{questionType !== "all" ? "Hãy thử dạng câu hỏi khác hoặc bỏ bớt bộ lọc." : feed === "archive" ? "Hãy đổi năm, nguồn hoặc thứ tự. Kho tin cũ đang được nhập thêm theo lịch." : feed === "latest" ? "Kho tin được đồng bộ theo lịch. Hãy thử danh mục khác." : "Thử danh mục khác hoặc xem tab Mới nhất."}</p>{feed === "latest" && !releaseLocks ? <Link href="/app/news/learn" className="button primary">Learn with News</Link> : <Link href="/app/news" scroll={false} className="button primary">Xem tin mới nhất</Link>}</div>}
+      {loading && !rows.length ? <div className="news-grid" aria-busy="true">{[0, 1, 2].map((item) => <div key={item} className="news-card news-card-skeleton"><span className="skeleton" /><span className="skeleton" /><span className="skeleton" /></div>)}</div> : rows.length ? <div className={`news-grid stagger ${loading ? "is-loading" : ""}`} aria-busy={loading}>{rows.map((row) => <NewsCard key={row.id} row={row} saved={saved.includes(row.id)} read={readIds.includes(row.id)} quizInfo={quizCounts[row.id]} quizResult={quizResults[row.id]} fresh={Date.parse(row.fetched_at) > Date.parse(seenBefore)} onSave={() => void toggleSave(row.id)} onSite={row.readable} image={newsImage(row)} learnSlug={releaseLocks ? undefined : learn.find((item) => item.related_news_id === row.id)?.slug} />)}</div> : <div className="news-empty"><Sticker name={feed === "today" ? "calendar" : feed === "hot" ? "flame" : "newspaper"} size={72} tilt={-6} /><h3>{questionType !== "all" ? `Chưa có bài với dạng ${typeLabels[questionType]}` : search ? `Không có tin nào khớp “${search}”` : feed === "today" ? "Hôm nay chưa có tin mới" : feed === "hot" ? "Chưa có tin nổi bật" : "Chưa có tin phù hợp"}</h3><p>{questionType !== "all" ? "Hãy thử dạng câu hỏi khác hoặc bỏ bớt bộ lọc." : feed === "archive" ? "Hãy đổi năm, nguồn hoặc thứ tự. Kho tin cũ đang được nhập thêm theo lịch." : feed === "latest" ? "Kho tin được đồng bộ theo lịch. Hãy thử danh mục khác." : "Thử danh mục khác hoặc xem tab Mới nhất."}</p>{feed === "latest" && !releaseLocks ? <Link href="/app/news/learn" className="button primary">Learn with News</Link> : <Link href="/app/news" scroll={false} className="button primary">Xem tin mới nhất</Link>}</div>}
       {pages > 1 && <div className="news-pagination"><button disabled={page === 0 || loading} onClick={() => goToPage(page - 1)}>← Trước</button><span>Trang <b>{page + 1}</b> / {pages}</span><button disabled={page + 1 >= pages || loading} onClick={() => goToPage(page + 1)}>Tiếp →</button></div>}
     </section>
       {!releaseLocks && learn.length > 0 && <section className="news-section"><div className="news-section-heading"><div><span className="eyebrow">HỌC QUA BÀI ĐỌC GỐC</span><h2>Learn with News</h2><p>Bài đọc và câu hỏi do người biên soạn, có đáp án rõ ràng.</p></div><Link href="/app/news/learn">Xem tất cả →</Link></div><div className="news-grid">{learn.slice(0,3).map((item) => <LearnCard key={item.id} item={item}/>)}</div></section>}
@@ -362,7 +366,7 @@ const quizTypeLabels: Record<string, string> = {
   diagram_label_completion: "Diagram-Label Completion",
   short_answer: "Short Answer",
 };
-function NewsCard({ row, saved, onSave, learnSlug, onSite = false, image, read = false, fresh = false, quizInfo }: { row: NewsRow; saved: boolean; onSave: () => void; learnSlug?: string; onSite?: boolean; image?: NewsImage; read?: boolean; fresh?: boolean; quizInfo?: { total: number; types: Record<string, number> } }) {
+function NewsCard({ row, saved, onSave, learnSlug, onSite = false, image, read = false, fresh = false, quizInfo, quizResult }: { row: NewsRow; saved: boolean; onSave: () => void; learnSlug?: string; onSite?: boolean; image?: NewsImage; read?: boolean; fresh?: boolean; quizInfo?: { total: number; types: Record<string, number> }; quizResult?: { score: number; total: number } }) {
   const href = `/app/news/${row.id}`;
   return <article className={`news-card ${read ? "is-read" : ""}`}>
     <Link href={href} className="news-card-art" tabIndex={-1} aria-hidden="true" style={{ background: `linear-gradient(135deg, ${accents[row.category]}45, #fffaf3)` }}>
@@ -374,6 +378,7 @@ function NewsCard({ row, saved, onSave, learnSlug, onSite = false, image, read =
     <div className="news-card-body">
       <div className="news-card-meta"><span>{row.publisher}{row.origin_region && <em className="news-origin-label"> · {row.origin_region === "vietnam" ? "Tin Việt Nam" : "Tin quốc tế"}</em>}</span><time dateTime={row.published_at} title={newsDate(row.published_at)}>{relativeTime(row.published_at)}</time></div>
       <h3><Link href={href}>{plainText(row.title)}</Link></h3>
+      <div className="news-card-progress"><span className={read ? "is-done" : ""}>{read ? "✓ Đã đọc" : "Chưa đọc"}</span><span className={quizResult ? "is-done" : ""}>{quizResult ? `Đã làm · ${quizResult.score} đúng, ${Math.max(0, quizResult.total - quizResult.score)} sai` : "Chưa làm đề"}</span></div>
       {quizInfo && quizInfo.total > 0 && <div className="news-card-quiz-wrap"><span className="news-card-quiz"><ListChecks size={14} aria-hidden="true"/> Có đề luyện · {quizInfo.total} câu</span><small className="news-card-quiz-types" aria-label="Question types">{Object.entries(quizInfo.types).map(([type, count]) => <span key={type}>{quizTypeLabels[type] ?? type} {count}</span>)}</small></div>}
       <div className="news-card-foot">
         <Link href={href} className="news-card-read">{onSite ? "Đọc tại đây" : "Chi tiết"} <ArrowRight size={15}/></Link>
@@ -426,7 +431,7 @@ function NewsDetail({ id }: { id: string }) {
     const suggestions=[...unique.filter((item)=>!readIds.has(item.id)),...unique.filter((item)=>readIds.has(item.id))].slice(0,3);
     if(active)setNextReads(suggestions);
   })();return()=>{active=false;};},[db,id,row]);
-  const paragraphs = useMemo(()=>body?body.body_text.split(/\n\n+/):[],[body]);
+  const paragraphs = useMemo(()=>body?body.body_text.split(/\n\n+/).map(formatNewsParagraph):[],[body]);
   async function toggle(){const result=saved?await db.from("user_saved_news").delete().eq("article_id",id):await db.from("user_saved_news").insert({article_id:id});if(!result.error)setSaved(!saved);}
   const markRead=useCallback(async()=>{if(read||marking)return;setMarking(true);setReadError("");try{const result=await db.rpc("news_mark_article_read",{p_article_id:id});if(result.error)throw result.error;setRead(true);window.dispatchEvent(new Event("learner-xp-updated"));}catch(error){setReadError(error instanceof Error?error.message:"Không thể kết nối để lưu tiến độ.");}finally{setMarking(false);}},[db,id,read,marking]);
   if(loading)return <div className="content-page news-page news-detail-page" aria-busy="true"><Link href="/app/news" className="news-back"><ArrowLeft size={17}/> Daily News</Link><div className="news-detail news-detail-skeleton"><span className="skeleton"/><div><span className="skeleton"/><span className="skeleton"/><span className="skeleton"/></div></div></div>;
@@ -443,8 +448,8 @@ function NewsDetail({ id }: { id: string }) {
   return <div className="content-page news-page news-detail-page"><Link href="/app/news" className="news-back"><ArrowLeft size={17}/> Daily News</Link><article className="news-detail"><header className="news-detail-lead"><div><div className="news-detail-art" style={{background:`linear-gradient(120deg,${accents[row.category]}55,#fffaf3)`}}>{image?<Image src={image.image_url} alt={image.image_alt} fill sizes="(max-width: 950px) 100vw, 48vw" unoptimized/>:<Sticker name={categorySticker(row.category)} size={88} tilt={-6} />}<span>{row.category}</span></div>{image&&<p className="news-image-credit">{image.ai ? <>Ảnh minh họa do AI tạo theo chủ đề bài viết, không phải ảnh thực tế của sự kiện · <a href={AI_ART_SOURCE} target="_blank" rel="noopener noreferrer">Pollinations.ai</a></> : row.illustration_source_url ? <>Ảnh minh họa: {image.image_credit} · <a href={safeExternal(row.illustration_source_url)} target="_blank" rel="noopener noreferrer">{row.illustration_source_url.startsWith("https://images.nasa.gov/") ? "NASA Image Library" : row.illustration_source_url.startsWith("https://www.flickr.com/") ? "Flickr" : "Wikimedia Commons"}</a> · {row.illustration_license_url ? <a href={safeExternal(row.illustration_license_url)} target="_blank" rel="noopener noreferrer">{row.illustration_license}</a> : row.illustration_license}</> : <>Ảnh: {image.image_credit} · <a href={safeExternal(row.canonical_url)} target="_blank" rel="noopener noreferrer">Nguồn bài gốc</a></>}</p>}</div><div className="news-detail-intro"><span className="eyebrow">{row.category} · {relativeTime(row.published_at)}</span><h1>{plainText(row.title)}</h1><p className="news-detail-source">{row.publisher} · {newsDate(row.published_at)}{read&&<span className="news-read-tag"><CheckCircle2 size={14}/> Đã đọc</span>}</p>{/* An AI rewrite already says so in the note below; its byline would repeat it. */}{body?.byline&&!body.ai_generated&&<p className="news-byline">By {body.byline} · <a href={safeExternal(row.canonical_url)} target="_blank" rel="noopener noreferrer">Bài gốc trên {row.publisher}</a></p>}<p className="news-attribution">{row.attribution_text} {row.attribution_text.includes("GDELT")&&<a href="https://www.gdeltproject.org/" target="_blank" rel="noopener noreferrer">The GDELT Project</a>}</p>{body?.ai_generated?<div className="news-rights-note news-ai-note" role="note"><BookOpenText size={20}/><p><strong>Bài đọc tiếng Anh viết độc lập từ dữ kiện đã kiểm tra.</strong> Nguồn dữ kiện: {(row.fact_source_urls?.length ? row.fact_source_urls : [row.canonical_url]).map((url, index) => <span key={url}>{index > 0 ? ", " : ""}<a href={safeExternal(url)} target="_blank" rel="noopener noreferrer">nguồn {index + 1}</a></span>)}. {row.report_url && <a href={safeExternal(row.report_url)} target="_blank" rel="noopener noreferrer">Tin gợi ý chủ đề</a>}</p></div>:body?<div className="news-rights-note"><BookOpenText size={20}/><p>Nội dung văn bản {onSitePublisher ?? row.publisher} được hiển thị tại đây với ghi nguồn. {rightsUrl&&<a href={rightsUrl} target="_blank" rel="noopener noreferrer">Xem hướng dẫn sử dụng của {onSitePublisher}</a>}</p></div>:<div className="news-rights-note"><BookOpenText size={20}/><p>Nguồn này chưa có quyền hiển thị toàn bài trên IeltsWithHarry. Bạn có thể đọc tại trang nhà xuất bản.</p></div>}</div></header>
     {body&&quizStatus==="pending"&&<div className="news-rights-note" role="status"><BookOpenText size={20}/><p><strong>Bộ câu hỏi đang chờ tạo.</strong> Bài này đã vào hàng đợi tự động; hãy quay lại sau để luyện đề.</p></div>}
     {body&&quizStatus==="error"&&<div className="news-rights-note" role="alert"><BookOpenText size={20}/><p>Chưa tải được câu hỏi của bài này. Hãy tải lại trang để thử lại.</p></div>}
-    {body?<NewsReadingTools articleId={id} title={plainText(row.title)} paragraphs={paragraphs} initialTranslations={body.translation_vi} onReadEnd={markRead} practice={{answered:progress.answered,correct:progress.correct,setup:<QuestionTypePicker available={quizAvailable} selected={quizTypes} onChange={setQuizTypes}/>,content:<NewsAutoQuiz articleId={id} types={quizTypes} onTypesChange={setQuizTypes} onAvailable={setQuizAvailable} onStatus={onQuizStatus} onProgress={onQuizProgress}/>}}>
-      <div className={`news-finish ${read ? "is-done" : ""}`}><span className="news-finish-main" role="status">{read?<CheckCircle2 size={18}/>:<BookOpenText size={18}/>} {read?"Đã ghi nhận bài đọc":marking?"Đang lưu tiến độ…":"Tiến độ tự lưu khi bạn đọc phần lớn bài và tới cuối"}</span>{links}<span className="news-finish-note">{read?"Bài đọc đã vào lịch sử. ":""}Kết quả luyện đề được lưu riêng sau khi nộp bài.</span></div>
+    {body?<NewsReadingTools articleId={id} title={plainText(row.title)} paragraphs={paragraphs} initialTranslations={body.translation_vi} onReadEnd={markRead} practice={{answered:progress.answered,correct:progress.correct,setup:<QuestionTypePicker available={quizAvailable} selected={quizTypes} onChange={setQuizTypes}/>,content:<NewsAutoQuiz articleId={id} types={quizTypes} onTypesChange={setQuizTypes} onAvailable={setQuizAvailable} onStatus={onQuizStatus} onProgress={onQuizProgress} onSubmitted={() => void markRead()}/>}}>
+      <div className={`news-finish ${read ? "is-done" : ""}`}><button type="button" className="news-finish-main" onClick={() => void markRead()} disabled={read || marking} aria-label={read ? "Đã đọc" : "Đánh dấu đã đọc"}>{read?<CheckCircle2 size={18}/>:<BookOpenText size={18}/>} {read?"Đã ghi nhận bài đọc":marking?"Đang lưu tiến độ…":"Đánh dấu đã đọc"}</button>{links}<span className="news-finish-note">{read?"Bài đọc đã vào lịch sử. ":""}Kết quả luyện đề được lưu riêng sau khi nộp bài.</span></div>
       {readError&&<p className="form-error" role="alert">Chưa lưu được tiến độ đọc: {readError} <button type="button" onClick={()=>void markRead()}>Thử lưu lại</button></p>}
     </NewsReadingTools>:<div className="news-detail-actions news-detail-actions-only"><a className="button primary" href={safeExternal(row.canonical_url)} target="_blank" rel="noopener noreferrer">Đọc bài gốc trên {row.publisher} <ExternalLink size={17}/></a><button className="button subtle" aria-pressed={saved} onClick={()=>void toggle()}><Bookmark size={17} fill={saved?"currentColor":"none"}/> {saved?"Đã lưu":"Lưu tin"}</button>{slug&&<Link className="button subtle" href={`/app/news/learn/${slug}`}>Learn with News →</Link>}</div>}
     {nextReads.length>0&&<section className="news-next-reads" aria-label="Bài đọc tiếp theo"><div><span className="eyebrow">ĐỌC TIẾP</span><h2>Có thể bạn muốn đọc tiếp</h2></div><div className="news-next-grid">{nextReads.map((item)=>{const nextImage=newsImage(item);return <Link key={item.id} href={`/app/news/${item.id}`}><div className="news-next-card-art" style={{background:`linear-gradient(135deg,${accents[item.category]}45,#fffaf3)`}}>{nextImage?<Image src={nextImage.image_url} alt="" fill sizes="(max-width: 800px) 100vw, 33vw" unoptimized/>:<Sticker name={categorySticker(item.category)} size={64} tilt={-6}/>}{nextImage?.ai&&<em className="news-ai-art-badge" title="Ảnh minh họa do AI tạo, không phải ảnh thực tế">Ảnh AI</em>}<small>{item.category}</small></div><div className="news-next-card-copy"><span>{item.category} · {relativeTime(item.published_at)}</span><strong>{plainText(item.title)}</strong><small>Đọc bài →</small></div></Link>})}</div></section>}
@@ -454,17 +459,25 @@ function NewsDetail({ id }: { id: string }) {
 function SavedNews(){
   const db=useMemo(()=>createClient(),[]);
   const [rows,setRows]=useState<ArchiveRow[]>([]);
+  const [readIds,setReadIds]=useState<string[]>([]);
+  const [quizResults,setQuizResults]=useState<Record<string,{score:number;total:number}>>({});
   const [loading,setLoading]=useState(true);
   useEffect(()=>{void (async()=>{
     const {data}=await db.from("user_saved_news").select("article_id").order("saved_at",{ascending:false}).limit(100);
     const ids=(data??[]).map((item)=>item.article_id);
     if(!ids.length){setRows([]);setLoading(false);return;}
+    const [reads,attempts]=await Promise.all([
+      db.from("user_news_article_reads").select("article_id").in("article_id",ids),
+      db.from("news_auto_attempts").select("article_id,score,total,submitted_at").in("article_id",ids).order("submitted_at",{ascending:false}).limit(1000),
+    ]);
+    setReadIds((reads.data??[]).map((item)=>item.article_id));
+    setQuizResults(Object.fromEntries((attempts.data??[]).filter((item,index,all)=>all.findIndex((other)=>other.article_id===item.article_id)===index).map((item)=>[item.article_id,{score:item.score,total:item.total}])));
     const archive=await db.from("news_archive_catalog").select(CATALOG_COLUMNS).in("id",ids).eq("publication_status","published").eq("sensitive",false).eq("readable",true);
     const byId=new Map((archive.data??[]).map((item)=>[item.id,item as ArchiveRow]));
     setRows(ids.flatMap((id)=>byId.has(id)?[byId.get(id)!]:[]));
     setLoading(false);
   })();},[db]);
-  return <div className="content-page news-page news-hub"><NewsMasthead active="saved"/><section className="news-section"><h2>Tin đã lưu</h2><p>Danh sách riêng của bạn. Mở bài gốc trên trang nhà xuất bản.</p><div className="news-grid">{rows.map((row)=><NewsCard key={row.id} row={row} saved onSite={row.readable} image={newsImage(row)} onSave={async()=>{await db.from("user_saved_news").delete().eq("article_id",row.id);setRows((current)=>current.filter((item)=>item.id!==row.id));}}/>)}</div>{!rows.length&&!loading&&<div className="news-empty"><Sticker name="newspaper" size={64} tilt={-6}/><h3>Bạn chưa lưu tin nào</h3><p>Bấm biểu tượng dấu trang trên thẻ tin để lưu lại đọc sau.</p><Link href="/app/news" className="button primary">Khám phá Daily News</Link></div>}</section></div>;
+  return <div className="content-page news-page news-hub"><NewsMasthead active="saved"/><section className="news-section"><h2>Tin đã lưu</h2><p>Danh sách riêng của bạn. Mở bài gốc trên trang nhà xuất bản.</p><div className="news-grid">{rows.map((row)=><NewsCard key={row.id} row={row} saved read={readIds.includes(row.id)} quizResult={quizResults[row.id]} onSite={row.readable} image={newsImage(row)} onSave={async()=>{await db.from("user_saved_news").delete().eq("article_id",row.id);setRows((current)=>current.filter((item)=>item.id!==row.id));}}/>)}</div>{!rows.length&&!loading&&<div className="news-empty"><Sticker name="newspaper" size={64} tilt={-6}/><h3>Bạn chưa lưu tin nào</h3><p>Bấm biểu tượng dấu trang trên thẻ tin để lưu lại đọc sau.</p><Link href="/app/news" className="button primary">Khám phá Daily News</Link></div>}</section></div>;
 }
 
 function NewsHistory(){

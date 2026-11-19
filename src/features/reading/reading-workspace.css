@@ -68,7 +68,7 @@
 .rw-cta-setup small { color: var(--muted); font-size: var(--fs-xs); font-weight: 700; }
 
 /* Practice mode: full screen, passage | questions */
-.rw.is-practice { position: fixed; inset: 0; z-index: 90; display: grid; grid-template-rows: auto minmax(0, 1fr) auto; background: var(--paper); animation: rw-in 0.25s var(--ease-out); }
+.rw.is-practice { position: fixed; inset: 0; height: 100dvh; z-index: 1000; display: grid; grid-template-rows: auto minmax(0, 1fr) auto; background: #fff; animation: rw-in 0.25s var(--ease-out); }
 @keyframes rw-in { from { opacity: 0; transform: translateY(8px); } }
 .rw.is-practice .rw-bar { position: static; flex-wrap: nowrap; border-width: 0 0 1px; border-radius: 0; padding: 8px 16px; box-shadow: none; }
 .rw-exit { display: inline-flex; align-items: center; gap: 5px; height: 34px; padding: 0 12px; border: 1px solid var(--line); border-radius: var(--r-md); background: #fff; color: var(--navy); font-size: var(--fs-sm); font-weight: 700; }
@@ -79,6 +79,11 @@
 .rw.is-practice .rw-body { display: grid; grid-template-columns: var(--rw-split) 12px minmax(0, 1fr); min-height: 0; }
 .rw.is-practice .rw-pane { min-height: 0; padding: 22px clamp(16px, 2.6vw, 40px) 40px; overflow: auto; overscroll-behavior: contain; }
 .rw.is-practice .rw-passage-pane { background: #fff; }
+.rw.is-practice.is-passage-wide .rw-body { grid-template-columns: minmax(0, 1fr); }
+.rw.is-practice.is-passage-wide .rw-divider, .rw.is-practice.is-passage-wide .rw-side-pane { display: none; }
+.rw.is-practice.is-passage-wide .rw-text { max-width: 85ch; margin: 0 auto; }
+.rw-wide-toggle { display: inline-flex; align-items: center; gap: 5px; padding: 6px 9px; border: 1px solid var(--line); border-radius: 9px; background: #fff; color: var(--navy); font-size: 12px; font-weight: 700; }
+.rw-scroll-hint { margin: -7px 0 14px; color: var(--muted); font: 500 12px/1.4 var(--font-sans); }
 .rw.is-practice .rw-side-pane { background: #fbfaf6; }
 .rw.is-practice .lesson-questions { margin: 0; }
 .rw.is-practice .lesson-questions > h2 { margin-top: 0; }
@@ -139,6 +144,7 @@
   .rw-divider, .rw-title { display: none; }
   .rw.is-practice[data-tab="questions"] .rw-passage-pane, .rw.is-practice[data-tab="passage"] .rw-side-pane { display: none; }
   .rw-tabs { display: inline-flex; padding: 3px; border-radius: var(--r-md); background: var(--surface-2); }
+  .rw-wide-toggle { display: none; }
   .rw-tabs button { display: inline-flex; align-items: center; gap: 4px; padding: 5px 9px; border-radius: var(--r-sm); color: var(--muted); font-size: var(--fs-xs); font-weight: 700; white-space: nowrap; }
   .rw-tabs button[aria-selected="true"] { background: #fff; color: var(--navy); }
   .rw.is-practice .rw-bar { gap: 8px; padding: 8px 10px; }
