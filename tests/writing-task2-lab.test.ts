@@ -101,3 +101,50 @@ describe("Writing Task 2 Lab release", () => {
     for (const path of ["/app/self-study", "/app/self-study/speaking", "/app/self-study/reading"]) expect(lockedLearnerPath(path)).toBe(true);
   });
 });
+
+describe("Writing Task 2 Lab enrichment", () => {
+  const countWordsIn = (text: string) => text.trim().split(/\s+/).length;
+
+  it("applies every enrichment file to its lesson version, with exactly one key per choice drill", async () => {
+    const { enrichmentProblem, readTask2Enrichments } = await import("../src/lib/writing-task2/content");
+    const files = readTask2Enrichments();
+    expect(files.length).toBeGreaterThan(0);
+    for (const file of files) expect(enrichmentProblem(lessons.find((lesson) => lesson.id === file.lesson_id), file), file.lesson_id).toBeNull();
+  });
+
+  it("keeps answers, option keys and models on the server side of the merge", async () => {
+    const { task2Answers, task2Lesson } = await import("../src/lib/writing-task2/content");
+    const lesson = task2Lesson("T2-M113-01")!;
+    expect(lesson.enriched).toBe(true);
+    // Grammar mini-drill answers and good/bad pairs are teaching material and stay visible; drill keys and the model do not.
+    expect(JSON.stringify(lesson.drills)).not.toMatch(/"correct"|feedback_vi|answer_en|why_vi|common_mistake|answer_vi|alternatives_en/);
+    expect(JSON.stringify(lesson)).not.toContain("I agree that local councils should organise free exchange markets.");
+    const answer = task2Answers(lesson)!;
+    expect(answer.drills["T2-M113-01-D1"].correct).toBe("a");
+    expect(answer.drills["T2-M113-01-D5"].answer_guide).toMatch(/household waste/);
+    expect(answer.model_essay?.kind).toBe("paragraph");
+    expect(lesson.has_model_essay).toBe(true);
+  });
+
+  it("states real word counts and teaches before it asks in the foundation lessons", async () => {
+    const { readTask2Enrichments } = await import("../src/lib/writing-task2/content");
+    for (const file of readTask2Enrichments()) {
+      if (file.model?.word_count) expect(Math.abs(file.model.word_count - countWordsIn(file.model.text_en)), file.lesson_id).toBeLessThanOrEqual(2);
+      const lesson = lessons.find((item) => item.id === file.lesson_id)!;
+      if (lesson.stage === "foundation" && file.drills) {
+        const guided = file.drills.filter((drill) => drill.level === "recognize" || drill.level === "complete").length;
+        expect(guided * 2, file.lesson_id).toBeGreaterThanOrEqual(file.drills.length);
+      }
+      const hints = (file.drills ?? []).flatMap((drill) => drill.hints ?? []);
+      expect(new Set(hints).size, `${file.lesson_id} repeats a hint`).toBe(hints.length);
+      for (const drill of file.drills ?? []) expect(drill.answer_en ?? "", drill.id).not.toMatch(/^(Keep|Explain|Use|Check|Make|Write|Add|Avoid)\b/);
+    }
+  });
+
+  it("lets a stuck learner open the answer before writing, without counting it as done", () => {
+    const peeked = parseTask2State(JSON.stringify({ t2: 1, answers: {}, saved: {}, peeked: { D1: "2026-11-18T00:00:00Z" }, essay: "", checklist: {}, updatedAt: 1 }))!;
+    expect(peeked.peeked.D1).toBeTruthy();
+    expect(drillSaved(peeked, "D1")).toBe(false);
+    expect(parseTask2State(JSON.stringify({ t2: 1, answers: {}, essay: "", updatedAt: 1 }))).toMatchObject({ peeked: {}, choices: {}, fills: {} });
+  });
+});

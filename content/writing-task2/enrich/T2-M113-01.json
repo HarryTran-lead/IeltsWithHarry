@@ -1,0 +1,204 @@
+{
+  "lesson_id": "T2-M113-01",
+  "content_sha256": "ff174ee5747695e656c586161935985682c907231ff40eb12a939b0a04ac7a84",
+  "topic_id": "TP-CIT",
+  "skill_ids": ["S01", "S03", "S04", "S06"],
+  "goal_vi": "Sau bài này bạn viết được một đoạn 3 câu: nêu ý kiến, đưa một lý do, thêm một ví dụ.",
+  "prompt_vi": "Chính quyền địa phương nên tổ chức các phiên chợ cuối tuần miễn phí, nơi người dân có thể trao đổi đồ dùng gia đình đã qua sử dụng. Bạn đồng ý hay không đồng ý đến mức nào?",
+  "prompt_analysis": {
+    "keywords": [
+      { "en": "Local councils", "vi": "chính quyền địa phương (người tổ chức)" },
+      { "en": "free weekend markets", "vi": "chợ cuối tuần miễn phí" },
+      { "en": "exchange", "vi": "trao đổi, đổi đồ cho nhau (không phải mua bán)" },
+      { "en": "used household items", "vi": "đồ dùng gia đình đã qua sử dụng" },
+      { "en": "To what extent do you agree or disagree?", "vi": "Bạn đồng ý đến mức nào? Phải nêu rõ ý kiến" }
+    ],
+    "task_vi": "Đề hỏi ý kiến của bạn: chính quyền có nên tổ chức chợ đổi đồ cũ miễn phí không. Bạn phải nói rõ mình đồng ý hay không đồng ý, rồi đưa lý do.",
+    "trap_vi": "Chỉ kể lợi ích của chợ mà không nói mình có đồng ý hay không. Câu hỏi cuối đề là \"đồng ý đến mức nào\", nên câu đầu tiên phải trả lời câu đó."
+  },
+  "mini_lesson": {
+    "explain_vi": "Một đoạn văn nêu ý kiến ở mức cơ bản chỉ cần ba câu, theo đúng thứ tự: (1) Ý kiến: bạn đồng ý hay không đồng ý. (2) Lý do: vì sao bạn nghĩ vậy, bắt đầu bằng \"This is because…\". (3) Ví dụ: một tình huống nhỏ, cụ thể, bắt đầu bằng \"For example,…\". Câu lý do trả lời câu hỏi \"tại sao?\". Câu ví dụ cho người đọc thấy lý do đó xảy ra thế nào trong đời thật. Xem ví dụ dưới đây (đề khác, cùng dạng) rồi bạn sẽ làm với đề của bài này.",
+    "frame_en": "I agree that ___. This is because ___. For example, ___.",
+    "worked_example_en": "I agree that schools should give students a free breakfast. This is because hungry children cannot focus in class. For example, a student who skips breakfast may feel tired before lunch.",
+    "worked_example_vi": "Tôi đồng ý rằng trường học nên cho học sinh ăn sáng miễn phí. Lý do là trẻ bị đói không thể tập trung trong lớp. Ví dụ, một học sinh bỏ bữa sáng có thể thấy mệt trước giờ ăn trưa.",
+    "annotations": [
+      { "quote_en": "I agree that schools should give students a free breakfast.", "label_vi": "Ý kiến", "note_vi": "Trả lời thẳng câu hỏi \"đồng ý đến mức nào\" ngay câu đầu. Người đọc biết ngay bạn đứng ở phía nào." },
+      { "quote_en": "This is because hungry children cannot focus in class.", "label_vi": "Lý do", "note_vi": "Giải thích vì sao. \"This is because\" nối lý do với ý kiến ở câu trước." },
+      { "quote_en": "For example, a student who skips breakfast may feel tired before lunch.", "label_vi": "Ví dụ", "note_vi": "Một người cụ thể (a student), một việc cụ thể (skips breakfast), một kết quả nhìn thấy được (feel tired)." }
+    ],
+    "good_vs_bad": [
+      { "bad_en": "Breakfast is good and important for many people.", "good_en": "I agree that schools should give students a free breakfast.", "why_vi": "Câu bên trái nói chung chung về bữa sáng, không trả lời đề. Câu bên phải nêu rõ ý kiến về đúng điều đề hỏi." },
+      { "bad_en": "For example, breakfast is very good.", "good_en": "For example, a student who skips breakfast may feel tired before lunch.", "why_vi": "Ví dụ bên trái chỉ lặp lại ý kiến. Ví dụ tốt có người, hành động và kết quả cụ thể." }
+    ]
+  },
+  "vocabulary": [
+    { "phrase_en": "exchange used items", "meaning_vi": "trao đổi đồ đã qua sử dụng", "example_en": "People can exchange used items at the market.", "example_vi": "Mọi người có thể trao đổi đồ cũ ở chợ.", "collocations_en": ["exchange clothes", "exchange books"] },
+    { "phrase_en": "household items", "meaning_vi": "đồ dùng trong gia đình", "example_en": "Chairs, lamps and plates are household items.", "example_vi": "Ghế, đèn và đĩa là đồ dùng gia đình." },
+    { "phrase_en": "save money", "meaning_vi": "tiết kiệm tiền", "example_en": "Families can save money because they do not buy new things.", "example_vi": "Các gia đình tiết kiệm được tiền vì không phải mua đồ mới.", "collocations_en": ["save household money", "help families save money"] },
+    { "phrase_en": "reduce waste", "meaning_vi": "giảm rác thải", "example_en": "Exchange markets can reduce waste in the city.", "example_vi": "Chợ trao đổi có thể giảm rác thải trong thành phố.", "collocations_en": ["reduce household waste"] },
+    { "phrase_en": "remain in use", "meaning_vi": "vẫn tiếp tục được dùng", "example_en": "An old chair can remain in use for many years.", "example_vi": "Một chiếc ghế cũ có thể tiếp tục được dùng nhiều năm." },
+    { "phrase_en": "throw away", "meaning_vi": "vứt đi", "example_en": "Many people throw away things that still work.", "example_vi": "Nhiều người vứt đi những thứ vẫn còn dùng được." },
+    { "phrase_en": "residents", "meaning_vi": "cư dân, người dân sống ở khu vực đó", "example_en": "Local residents can meet their neighbours at the market.", "example_vi": "Người dân địa phương có thể gặp hàng xóm ở chợ." },
+    { "phrase_en": "a safe venue", "meaning_vi": "một địa điểm an toàn", "example_en": "The council needs a safe venue for the market.", "example_vi": "Chính quyền cần một địa điểm an toàn cho phiên chợ." }
+  ],
+  "grammar_focus": {
+    "name_vi": "Nối lý do bằng because và so",
+    "explain_vi": "because đứng trước lý do (vì…), so đứng trước kết quả (nên…). Đừng dùng cả hai trong một câu. Sai: \"Because markets are free, so people go.\" Đúng: \"Because markets are free, people go.\" hoặc \"Markets are free, so people go.\"",
+    "examples": [
+      { "en": "Families save money because they do not buy new things.", "vi": "Các gia đình tiết kiệm tiền vì họ không phải mua đồ mới." },
+      { "en": "The markets are free, so many residents can join.", "vi": "Chợ miễn phí nên nhiều người dân có thể tham gia." }
+    ],
+    "drills": [
+      { "task_vi": "Nối hai câu bằng because: People throw away old chairs. They do not need them.", "answer_en": "People throw away old chairs because they do not need them." },
+      { "task_vi": "Nối hai câu bằng so: The market is on Saturday. Working parents can come.", "answer_en": "The market is on Saturday, so working parents can come." },
+      { "task_vi": "Sửa lỗi: Because the items are free, so families save money.", "answer_en": "Because the items are free, families save money." }
+    ]
+  },
+  "steps": [
+    { "title_vi": "Giải mã câu hỏi", "instruction_vi": "Đọc câu cuối của đề trước. \"To what extent do you agree or disagree?\" nghĩa là bạn phải nói mình đồng ý đến mức nào.", "sample_en": "The question asks me to say how much I agree that councils should organise free exchange markets.", "sample_vi": "Đề yêu cầu tôi nói tôi đồng ý đến mức nào việc chính quyền tổ chức chợ đổi đồ miễn phí." },
+    { "title_vi": "Chọn và nhóm ý", "instruction_vi": "Tìm hai ý khác nhau: một ý về tiền, một ý về môi trường.", "sample_en": "Idea A: Families can get useful things without buying new ones. Idea B: The markets may reduce household waste.", "sample_vi": "Ý A: Các gia đình có được đồ hữu ích mà không cần mua mới. Ý B: Chợ có thể giảm rác thải gia đình." },
+    { "title_vi": "Thêm chuỗi giải thích", "instruction_vi": "Với một ý, viết thêm câu \"vì sao\" và một ví dụ cụ thể.", "sample_en": "When people exchange items they no longer need, someone else can use them instead of paying for new ones. For example, a parent could exchange an outgrown school uniform for one in a larger size.", "sample_vi": "Khi mọi người đổi những món không còn cần, người khác có thể dùng chúng thay vì trả tiền mua mới. Ví dụ, một phụ huynh có thể đổi bộ đồng phục con đã mặc chật lấy một bộ cỡ lớn hơn." },
+    { "title_vi": "Giới hạn và kiểm tra logic", "instruction_vi": "Thêm một điều kiện để ý của bạn chính xác hơn, nhưng vẫn giữ nguyên ý kiến đồng ý.", "sample_en": "Organisers still need a safe venue and clear rules about damaged goods.", "sample_vi": "Ban tổ chức vẫn cần một địa điểm an toàn và quy định rõ về đồ bị hỏng." }
+  ],
+  "drills": [
+    {
+      "id": "T2-M113-01-D1",
+      "level": "recognize",
+      "how_to_vi": "Đọc câu cuối của đề: đó là câu hỏi bạn phải trả lời. \"To what extent do you agree or disagree?\" là dạng nêu ý kiến.",
+      "question_vi": "Đề này yêu cầu bạn làm gì?",
+      "hints": ["Câu cuối của đề hỏi bạn điều gì?", "\"Agree or disagree\" nghĩa là đồng ý hay không đồng ý."],
+      "options": [
+        { "id": "a", "text_en": "Give my opinion: how much I agree with free exchange markets.", "correct": true, "feedback_vi": "Đúng. \"To what extent do you agree or disagree?\" yêu cầu bạn nêu ý kiến và đồng ý đến mức nào." },
+        { "id": "b", "text_en": "List the advantages and disadvantages of markets.", "feedback_vi": "Đây là dạng đề khác (Ưu điểm – Nhược điểm). Đề này hỏi ý kiến của bạn." },
+        { "id": "c", "text_en": "Describe a market in my town.", "feedback_vi": "Lạc đề. Đề không yêu cầu mô tả, mà hỏi bạn có đồng ý không." },
+        { "id": "d", "text_en": "Explain why people throw away old things.", "feedback_vi": "Đây chỉ là một ý nhỏ có thể dùng làm lý do, không phải điều đề yêu cầu." }
+      ],
+      "answer_en": "Give my opinion: how much I agree with free exchange markets.",
+      "why_vi": "Dạng đề Đồng ý / Không đồng ý. Bài viết phải nói rõ ý kiến ngay từ câu đầu và giữ ý kiến đó đến hết."
+    },
+    {
+      "id": "T2-M113-01-D2",
+      "level": "complete",
+      "how_to_vi": "Hai ý phải khác nhau. Một ý nói về tiền, một ý nói về môi trường. Bấm vào từ gợi ý để điền vào chỗ trống.",
+      "question_vi": "Hoàn thành hai ý chính cho đề này.",
+      "hints": ["Chợ miễn phí giúp gia đình tiết kiệm điều gì?", "Đồ cũ không bị vứt đi thì rác thải sẽ thế nào?"],
+      "frame_en": "Idea A: Families can ___ without buying new things. Idea B: The markets can reduce ___.",
+      "word_bank_en": ["save money", "household waste", "traffic jams", "house prices"],
+      "answer_en": "Idea A: Families can save money without buying new things. Idea B: The markets can reduce household waste.",
+      "answer_vi": "Ý A: Các gia đình tiết kiệm được tiền mà không cần mua đồ mới. Ý B: Chợ có thể giảm rác thải gia đình.",
+      "why_vi": "Hai ý khác nhau (tiền và môi trường), cả hai đều ủng hộ ý kiến đồng ý. \"traffic jams\" và \"house prices\" không liên quan đến chợ đổi đồ.",
+      "alternatives_en": ["Idea A: People can get useful things for free. Idea B: Old things can remain in use."]
+    },
+    {
+      "id": "T2-M113-01-D3",
+      "level": "recognize",
+      "how_to_vi": "Câu ý kiến tốt có hai phần: bạn đồng ý (hay không) + vì sao. Nó phải nói về đúng điều đề hỏi.",
+      "question_vi": "Câu nào là câu ý kiến (thesis) tốt nhất cho đề này?",
+      "hints": ["Câu đúng phải trả lời câu hỏi \"đồng ý đến mức nào\".", "Tìm câu có \"I agree\" và có lý do rõ ràng."],
+      "options": [
+        { "id": "a", "text_en": "There are many advantages and disadvantages of markets.", "feedback_vi": "Câu này không nói bạn đồng ý hay không. Người chấm sẽ không biết lập trường của bạn." },
+        { "id": "b", "text_en": "I agree that free exchange markets are a good idea because they save families money and reduce waste.", "correct": true, "feedback_vi": "Đúng. Ý kiến rõ (I agree) và nêu luôn hai lý do sẽ viết tiếp." },
+        { "id": "c", "text_en": "Markets are places where people buy and sell things.", "feedback_vi": "Đây chỉ là định nghĩa chợ, không trả lời đề." },
+        { "id": "d", "text_en": "I agree because markets are good and also bad.", "feedback_vi": "Câu tự mâu thuẫn (tốt và cũng xấu) và lý do quá mơ hồ." }
+      ],
+      "answer_en": "I agree that free exchange markets are a good idea because they save families money and reduce waste.",
+      "why_vi": "Câu thesis tốt nêu lập trường và báo trước các lý do, không thêm ý mới."
+    },
+    {
+      "id": "T2-M113-01-D4",
+      "level": "complete",
+      "how_to_vi": "Chuỗi lập luận có 3 phần: ý chính → vì sao → ví dụ. Điền vào chỗ trống để câu thứ hai giải thích câu thứ nhất, câu thứ ba cho ví dụ.",
+      "question_vi": "Hoàn thành chuỗi Ý → Vì sao → Ví dụ.",
+      "hints": ["Ở chợ đổi đồ, người ta có được gì mà không phải làm gì?", "Ví dụ cụ thể: trẻ con lớn nhanh, quần áo nào hay bị chật?"],
+      "frame_en": "Exchange markets help families save money. This is because people can get ___ without ___. For example, a parent can exchange ___ for a bigger one.",
+      "word_bank_en": ["useful things", "paying for new ones", "a small school uniform", "a new car"],
+      "answer_en": "Exchange markets help families save money. This is because people can get useful things without paying for new ones. For example, a parent can exchange a small school uniform for a bigger one.",
+      "answer_vi": "Chợ trao đổi giúp các gia đình tiết kiệm tiền. Lý do là mọi người có được đồ hữu ích mà không phải trả tiền mua mới. Ví dụ, một phụ huynh có thể đổi bộ đồng phục nhỏ lấy một bộ lớn hơn.",
+      "why_vi": "Câu 2 trả lời \"tại sao tiết kiệm được tiền\". Câu 3 là một tình huống thật: có người (a parent), có việc làm (exchange), có kết quả (bộ lớn hơn, không tốn tiền).",
+      "common_mistake": { "wrong_en": "For example, markets are very useful.", "fix_en": "For example, a parent can exchange a small school uniform for a bigger one.", "why_vi": "Ví dụ sai chỉ lặp lại ý kiến. Ví dụ đúng phải là một tình huống cụ thể." }
+    },
+    {
+      "id": "T2-M113-01-D5",
+      "level": "produce",
+      "how_to_vi": "Làm lại đúng 3 phần như câu 4, nhưng với Ý B (giảm rác thải). Câu 1: ý chính. Câu 2: This is because… Câu 3: For example,…",
+      "question_vi": "Tự viết chuỗi lập luận cho Ý B: chợ giúp giảm rác thải.",
+      "hints": ["Nếu đồ cũ được người khác dùng, nó có bị vứt vào thùng rác không?", "Khung câu: The markets can also reduce waste. This is because ___. For example, ___.", "Ví dụ gợi ý: một gia đình đem chiếc ghế cũ đổi cho hàng xóm thay vì vứt đi."],
+      "answer_en": "The markets can also reduce household waste. This is because furniture and clothes stay in use instead of going to the rubbish bin. For example, a family can give an old chair to a neighbour instead of throwing it away.",
+      "answer_vi": "Chợ cũng có thể giảm rác thải gia đình. Lý do là đồ đạc và quần áo vẫn được dùng thay vì bị bỏ vào thùng rác. Ví dụ, một gia đình có thể đưa chiếc ghế cũ cho hàng xóm thay vì vứt đi.",
+      "why_vi": "Đủ 3 phần, và Ý B khác hẳn Ý A (môi trường, không phải tiền). Ví dụ cụ thể và đúng chủ đề chợ đổi đồ.",
+      "alternatives_en": ["Another benefit is less waste. This is because old things can remain in use. For example, children's books can go to another family."],
+      "common_mistake": { "wrong_en": "The markets reduce waste. Waste is bad for the environment.", "fix_en": "The markets reduce waste. This is because old things stay in use instead of being thrown away.", "why_vi": "Câu thứ hai chỉ nói rác là xấu, chưa giải thích vì sao chợ làm giảm rác." }
+    },
+    {
+      "id": "T2-M113-01-D6",
+      "level": "recognize",
+      "how_to_vi": "Câu giới hạn thêm một điều kiện để ý của bạn chính xác hơn. Nó không được đổi ý kiến của bạn từ đồng ý sang phản đối.",
+      "question_vi": "Câu nào thêm một điều kiện hợp lý mà vẫn giữ ý kiến đồng ý?",
+      "hints": ["Chợ cần những gì để tổ chức tốt?", "Câu đúng bắt đầu bằng However nhưng không nói \"I disagree\"."],
+      "options": [
+        { "id": "a", "text_en": "However, I completely disagree with these markets.", "feedback_vi": "Câu này lật ngược ý kiến, làm cả đoạn mâu thuẫn." },
+        { "id": "b", "text_en": "However, markets are very old.", "feedback_vi": "Không liên quan đến lập luận. Chợ cũ hay mới không làm ý của bạn chính xác hơn." },
+        { "id": "c", "text_en": "However, the markets only work well if there is a safe venue and clear rules.", "correct": true, "feedback_vi": "Đúng. Bạn vẫn đồng ý, chỉ thêm điều kiện để chợ hoạt động tốt." }
+      ],
+      "answer_en": "However, the markets only work well if there is a safe venue and clear rules.",
+      "why_vi": "Điều kiện làm lập luận thực tế hơn mà không phủ định ý kiến ban đầu."
+    },
+    {
+      "id": "T2-M113-01-D7",
+      "level": "recognize",
+      "how_to_vi": "Lỗi Task Response (TR) là lỗi trả lời sai hoặc thiếu yêu cầu của đề. Hãy nghĩ: với đề hỏi ý kiến, người viết hay quên điều gì?",
+      "question_vi": "Lỗi nào nghiêm trọng nhất khi viết đề này?",
+      "hints": ["Câu hỏi của đề là \"đồng ý đến mức nào\".", "Lỗi nặng nhất là lỗi khiến bài không trả lời câu hỏi."],
+      "options": [
+        { "id": "a", "text_en": "Writing the word \"market\" many times.", "feedback_vi": "Lặp từ là lỗi nhỏ về từ vựng (LR), không làm bài lạc đề." },
+        { "id": "b", "text_en": "Listing many benefits but never saying if I agree.", "correct": true, "feedback_vi": "Đúng. Đề hỏi ý kiến, nên không nêu ý kiến là thiếu phần quan trọng nhất của Task Response." },
+        { "id": "c", "text_en": "Giving an example about a parent and a school uniform.", "feedback_vi": "Đây là ví dụ tốt, không phải lỗi." }
+      ],
+      "answer_en": "Listing many benefits but never saying if I agree.",
+      "why_vi": "Với dạng Đồng ý / Không đồng ý, thiếu ý kiến rõ ràng là lỗi Task Response nặng nhất."
+    },
+    {
+      "id": "T2-M113-01-D8",
+      "level": "produce",
+      "how_to_vi": "Từ như everyone, always, never thường làm câu sai sự thật. Đổi sang many, often, some để câu chính xác hơn.",
+      "question_vi": "Sửa câu sau cho bớt tuyệt đối: \"Everyone always throws away good things.\"",
+      "hints": ["Có thật là MỌI người LUÔN LUÔN vứt đồ tốt không?", "Đổi Everyone → Many families, always → often (hoặc bỏ đi)."],
+      "answer_en": "Many families throw away things that are still useful.",
+      "answer_vi": "Nhiều gia đình vứt đi những thứ vẫn còn dùng được.",
+      "why_vi": "\"Many families\" đúng với thực tế hơn \"everyone\", và \"still useful\" nói rõ hơn \"good\". Ý vẫn giữ nguyên.",
+      "alternatives_en": ["Some people often throw away items that still work."],
+      "common_mistake": { "wrong_en": "Nobody throws away good things.", "fix_en": "Many families throw away things that are still useful.", "why_vi": "Đổi sang \"nobody\" vẫn là từ tuyệt đối, và còn đổi ngược nghĩa câu." }
+    }
+  ],
+  "model": {
+    "kind": "paragraph",
+    "title": "Free exchange markets",
+    "text_en": "I agree that local councils should organise free exchange markets. This is because families can get useful things without paying for new ones. For example, a parent can exchange a small school uniform for a bigger one.",
+    "text_vi": "Tôi đồng ý rằng chính quyền địa phương nên tổ chức các phiên chợ trao đổi miễn phí. Lý do là các gia đình có được đồ hữu ích mà không phải trả tiền mua mới. Ví dụ, một phụ huynh có thể đổi bộ đồng phục nhỏ lấy một bộ lớn hơn.",
+    "word_count": 37,
+    "why_vi": "Ba câu đúng thứ tự Ý kiến → Lý do → Ví dụ. Câu đầu trả lời thẳng đề, câu hai giải thích, câu ba là tình huống cụ thể.",
+    "annotations": [
+      { "quote_en": "I agree that local councils should organise free exchange markets.", "label_vi": "Ý kiến", "note_vi": "Dùng lại từ của đề (local councils, organise) để chắc chắn trả lời đúng câu hỏi." },
+      { "quote_en": "This is because families can get useful things without paying for new ones.", "label_vi": "Lý do", "note_vi": "Trả lời câu hỏi \"tại sao\" bằng một lợi ích cụ thể: tiết kiệm tiền." },
+      { "quote_en": "For example, a parent can exchange a small school uniform for a bigger one.", "label_vi": "Ví dụ", "note_vi": "Tình huống đời thường, ai cũng hình dung được, chứng minh trực tiếp cho lý do." }
+    ]
+  },
+  "self_check_vi": [
+    "Câu đầu tiên có nói rõ bạn đồng ý hay không đồng ý không?",
+    "Câu thứ hai có giải thích vì sao (This is because…) không?",
+    "Câu thứ ba có phải một tình huống cụ thể (có người, có việc làm) không?",
+    "Đã viết hoa đầu câu và chữ I, và mỗi câu có chủ ngữ và động từ chưa?"
+  ],
+  "review": {
+    "remember_vi": [
+      "Câu cuối của đề là câu hỏi thật. \"To what extent do you agree\" = phải nêu ý kiến.",
+      "Đoạn văn cơ bản: Ý kiến → Lý do (This is because…) → Ví dụ (For example,…).",
+      "Ví dụ tốt có người, hành động và kết quả cụ thể."
+    ],
+    "mistakes_vi": [
+      "Kể lợi ích mà quên nói mình có đồng ý hay không.",
+      "Ví dụ chỉ lặp lại ý kiến (For example, markets are good).",
+      "Dùng cả because và so trong cùng một câu."
+    ]
+  }
+}

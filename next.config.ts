@@ -8,7 +8,7 @@ const avatarPattern = avatarOrigin ? new URL("/storage/v1/object/public/user-ava
 
 const mockFiles = ["./content/listening-mocks/tests/*.json", "./content/dictation-skill-lab/audio-manifest.json"];
 const skillLabFiles = ["./content/dictation-skill-lab/lessons/*.json", "./content/dictation-skill-lab/audio-manifest.json"];
-const writingTask2Files = ["./content/writing-task2/lessons.json", "./content/writing-task2/answers.json"];
+const writingTask2Files = ["./content/writing-task2/lessons.json", "./content/writing-task2/answers.json", "./content/writing-task2/enrich/*.json"];
 const writingTask1Files = ["./content/writing-task1/lessons.json", "./content/writing-task1/answers.json", "./content/writing-task1/private/*.json"];
 
 const nextConfig: NextConfig = {
