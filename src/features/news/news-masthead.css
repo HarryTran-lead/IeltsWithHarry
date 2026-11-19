@@ -1228,14 +1228,15 @@
   font-size: var(--fs-sm);
 }
 
-/* Reading progress is a status line, not something to press. */
+/* Learners can confirm a read explicitly if automatic tracking misses it. */
 .news-finish:not(.is-done) .news-finish-main {
-  height: auto;
-  padding: 0;
-  background: transparent;
-  color: #3f6475;
-  font-weight: 700;
+  border: 1px solid #a3dadd;
+  cursor: pointer;
 }
+.news-finish:not(.is-done) .news-finish-main:hover { background: #d5edef; }
+.news-card-progress { display: flex; flex-wrap: wrap; gap: 5px; margin: -2px 0 11px; }
+.news-card-progress span { padding: 3px 7px; border-radius: 7px; background: #f1f5f7; color: #687d8c; font-size: 11px; font-weight: 750; }
+.news-card-progress span.is-done { background: #e6f7f1; color: #14765f; }
 
 @container news (max-width: 640px) {
   .news-tabs-list {
