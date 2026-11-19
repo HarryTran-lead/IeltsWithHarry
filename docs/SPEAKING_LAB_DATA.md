@@ -30,9 +30,21 @@ Notes on phase 2:
 - The L39 audio is synthetic and unverified. It is used only to check listening, never as a pronunciation model.
 - Part 2 cue cards can be sent to the existing coaching queue. This reuses the practice room's `PracticeCoaching`. It runs only in live mode while coaching is enabled, and only when the learner chooses to upload.
 
+Phase 3 adds 8 full mock tests in the **Thi thử** tab:
+- L61 M01–M04 and L63 M01–M04, 16 questions each, in Part 1 → Part 2 → Part 3 order.
+- One question opens at a time. There are no tips during the test.
+- After the last question the server releases:
+  - the debrief per part;
+  - for L61, sample excerpts.
+- The Part 2 take can go to the coaching queue from the review list.
+- The existing mock room (`/app/speaking/mock`) is unchanged. It loads whole exams from the question bank, which would expose questions the handoff keeps one-at-a-time.
+
+Teacher review: the script `teacher_qa.py` (kept outside the repo) writes `L79_teacher_review_36.csv` next to the private file. It covers the 36 sampled L79 prompts with their tip and lesson model, plus OK/Sửa columns for the six review categories.
+
 Still for later:
 - L56: adaptive discussion paths.
-- L61–L63, L67: mock sets.
+- L61's 32 repair-transfer drills.
+- L62's retention review paths.
 
 Not lessons, so not imported:
 - L66, L69–L78: staging matrices, synthetic histories, sync contracts.

@@ -37,12 +37,14 @@ const tone = (criterion: Criterion) => ({ "--ll-tone": criterionInfo[criterion].
 const swatch = (toneColor: string, soft: string) => ({ "--ll-tone": toneColor, "--ll-soft": soft }) as CSSProperties;
 const topicTone = swatch("#6a4fb3", "#efeafb");
 const pronTone = swatch("#0a7f89", "#e2f5f4");
+const mockTone = swatch("#c8473f", "#fdecea");
 const seriesTone: Record<string, CSSProperties> = {
   L57: swatch("#3b6fb6", "#e5eefb"), L58: swatch("#8a5bb8", "#f0e8f8"), L59: swatch("#2f7d6d", "#e3f3ee"), L60: swatch("#c0623b", "#fbece4"),
 };
 const unitTone = (unit: SpeakingUnit, catalog: SpeakingCatalog) => {
   if (unit.kind === "topic") return topicTone;
   if (unit.kind === "pron") return pronTone;
+  if (unit.kind === "mock") return mockTone;
   if (unit.kind === "part3") return seriesTone[unit.series ?? ""] ?? topicTone;
   const criterion = unit.criterion ?? catalog.skills.find((skill) => skill.id === unit.skills[0])?.criterion;
   return criterion ? tone(criterion) : topicTone;
@@ -52,12 +54,13 @@ function unitLabel(unit: SpeakingUnit, catalog: SpeakingCatalog) {
   if (unit.kind === "skill") return `Kỹ năng ${unit.skills[0]}`;
   if (unit.kind === "topic") return `Chủ đề ${unitNumber(unit)}`;
   if (unit.kind === "pron") return `Phát âm ${unitNumber(unit)}`;
+  if (unit.kind === "mock") return `Đề thi thử ${unitNumber(unit)}`;
   return `${catalog.series.find((series) => series.id === unit.series)?.title_vi ?? "Part 3"} · Bài ${unitNumber(unit)}`;
 }
 
-type Tab = "skills" | "topics" | "advanced" | "pron";
-const tabParam: Record<Tab, string> = { skills: "", topics: "chu-de", advanced: "nang-cao", pron: "phat-am" };
-const tabKinds: Record<Tab, SpeakingUnit["kind"]> = { skills: "skill", topics: "topic", advanced: "part3", pron: "pron" };
+type Tab = "skills" | "topics" | "advanced" | "pron" | "mocks";
+const tabParam: Record<Tab, string> = { skills: "", topics: "chu-de", advanced: "nang-cao", pron: "phat-am", mocks: "thi-thu" };
+const tabKinds: Record<Tab, SpeakingUnit["kind"]> = { skills: "skill", topics: "topic", advanced: "part3", pron: "pron", mocks: "mock" };
 const tabOf = (unit: SpeakingUnit) => (Object.keys(tabKinds) as Tab[]).find((key) => tabKinds[key] === unit.kind) ?? "skills";
 const mapHref = (unit: SpeakingUnit) => tabParam[tabOf(unit)] ? `${SPEAKING_BASE}?tab=${tabParam[tabOf(unit)]}` : SPEAKING_BASE;
 
@@ -135,6 +138,7 @@ function MapPage() {
       <button type="button" role="tab" aria-selected={tab === "topics"} onClick={() => show("topics")}><b>Chủ đề Part 1–2</b><small>{topicUnits.length} bài, mỗi bài 6 lượt</small></button>
       <button type="button" role="tab" aria-selected={tab === "advanced"} onClick={() => show("advanced")}><b>Nâng cao Part 3</b><small>{part3Units.length} bài thảo luận</small></button>
       <button type="button" role="tab" aria-selected={tab === "pron"} onClick={() => show("pron")}><b>Phát âm</b><small>{catalog.modules.length} nhóm, {pronUnits.length} bài</small></button>
+      <button type="button" role="tab" aria-selected={tab === "mocks"} onClick={() => show("mocks")}><b>Thi thử</b><small>{of("mock").length} đề đủ 3 phần</small></button>
     </div>
 
     {tab === "skills" && <>
@@ -180,6 +184,8 @@ function MapPage() {
     {tab === "pron" && catalog.modules.map((module, index) =>
       stage(`am-${module.code}`, pronTone, `Nhóm ${index + 1}`, module.title_vi, `${module.title_en} · ${module.contrast}`, pronUnits.filter((unit) => unit.module === module.code)))}
 
+    {tab === "mocks" && stage("thi-thu", mockTone, "Thi thử", "Đề thi thử đủ 3 phần", "16 câu, khoảng 11–14 phút. Mỗi lần chỉ hiện một câu; nhận xét và đoạn mẫu mở sau câu cuối.", of("mock"))}
+
     <aside className="ll-note"><Sparkles size={16}/><p>{catalog.source.note_vi} Bản ghi âm chỉ lưu trên trình duyệt này, trừ khi bạn tự gửi một bài Part 2 để nhận phân tích; tài khoản lưu tiến độ, ghi chú và phần tự kiểm tra.</p></aside>
   </div>;
 }
@@ -215,7 +221,7 @@ function Ring({ value, total }: { value: number; total: number }) {
 const stamp = () => ({ iso: new Date().toISOString(), at: Date.now() });
 const sentence = (line: string) => { const text = line.trim().replace(/[.;]+$/, ""); return text.charAt(0).toUpperCase() + text.slice(1); };
 const fallbackChecks = ["Mình trả lời thẳng vào câu hỏi.", "Có ít nhất một lý do hoặc chi tiết cụ thể.", "Mình nói bằng lời của mình, không đọc thuộc."];
-const badgeLabel: Record<SpeakingUnit["kind"], string> = { skill: "Kỹ năng", topic: "Chủ đề", part3: "Part 3", pron: "Phát âm" };
+const badgeLabel: Record<SpeakingUnit["kind"], string> = { skill: "Kỹ năng", topic: "Chủ đề", part3: "Part 3", pron: "Phát âm", mock: "Đề" };
 
 function UnitPage({ id }: { id: string }) {
   const [catalog, setCatalog] = useState<SpeakingCatalog | null>(null);
@@ -228,6 +234,8 @@ function UnitPage({ id }: { id: string }) {
   const [openedAt] = useState(() => stamp().at);
   const syncTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
   const urls = useRef<string[]>([]);
+  // The newest progress, so finishing a turn right after keeping a take does not drop the take's timing.
+  const latest = useRef<SpeakingState | null>(null);
 
   const unit = catalog?.units.find((item) => item.id === id) ?? null;
 
@@ -237,7 +245,7 @@ function UnitPage({ id }: { id: string }) {
     void Promise.all([getJson<CatalogResponse>(SPEAKING_API), loadSpeakingState(id).catch(() => emptySpeakingState())]).then(async ([{ catalog: loaded }, saved]) => {
       if (!alive) return;
       const found = loaded.units.find((item) => item.id === id);
-      setCatalog(loaded); setState(saved);
+      setCatalog(loaded); setState(saved); latest.current = saved;
       if (!found) { setError("Không tìm thấy bài học."); return; }
       setTeachOpen(!found.tasks.some((task) => saved.done[task.id]));
       // Kept takes come from this browser; load them alongside the server release, not before it.
@@ -258,6 +266,7 @@ function UnitPage({ id }: { id: string }) {
     setState((current) => {
       if (!current) return current;
       const next = { ...change(current), updatedAt: Date.now() };
+      latest.current = next;
       cacheSpeakingState(id, next);
       if (syncTimer.current) clearTimeout(syncTimer.current);
       syncTimer.current = setTimeout(() => { void saveSpeakingState(id, next).catch(() => undefined); }, 2500);
@@ -268,20 +277,27 @@ function UnitPage({ id }: { id: string }) {
   async function keepTake(task: SpeakingTask, index: number, take: { url: string; seconds: number; transcript: string }) {
     setTakes((current) => ({ ...current, [task.id]: take.url }));
     urls.current.push(take.url);
-    update((current) => ({ ...current, seconds: { ...current.seconds, [task.id]: take.seconds }, transcript: { ...current.transcript, [task.id]: take.transcript } }));
+    const current = latest.current;
+    if (current) {
+      const next = { ...current, seconds: { ...current.seconds, [task.id]: take.seconds }, transcript: { ...current.transcript, [task.id]: take.transcript }, updatedAt: stamp().at };
+      latest.current = next;
+      update(() => next);
+    }
     await keepRecording(id, index, take.url).catch(() => setError("Không lưu được bản ghi trên trình duyệt này; bạn vẫn nghe lại được tới khi rời trang."));
   }
 
-  async function finish(task: SpeakingTask) {
-    if (!state) return;
+  async function finish(task: SpeakingTask, scroll = true) {
+    const current = latest.current;
+    if (!current) return;
     const time = stamp();
-    const next: SpeakingState = { ...state, done: { ...state.done, [task.id]: time.iso }, updatedAt: time.at };
+    const next: SpeakingState = { ...current, done: { ...current.done, [task.id]: time.iso }, updatedAt: time.at };
     if (syncTimer.current) clearTimeout(syncTimer.current);
+    latest.current = next;
     setBusy(true); setError(""); setState(next);
     try {
       await saveSpeakingState(id, next);
       setRelease(await releaseSpeaking(id, next));
-      window.setTimeout(() => document.getElementById("spk-current")?.scrollIntoView({ behavior: "smooth", block: "start" }), 60);
+      if (scroll) window.setTimeout(() => document.getElementById("spk-current")?.scrollIntoView({ behavior: "smooth", block: "start" }), 60);
     } catch (failure) {
       setError(failure instanceof Error ? failure.message : "Chưa lưu được tiến độ.");
     } finally { setBusy(false); }
@@ -301,7 +317,8 @@ function UnitPage({ id }: { id: string }) {
   const kicker = unit.kind === "skill" && unit.criterion ? criterionInfo[unit.criterion].name
     : unit.kind === "topic" ? "Bài theo chủ đề"
       : unit.kind === "part3" ? `${seriesInfo?.title_vi ?? "Part 3"}${unit.level ? ` · ${unit.level}` : ""}`
-        : `Phát âm · ${unit.level}`;
+        : unit.kind === "mock" ? "Thi thử đủ 3 phần"
+          : `Phát âm · ${unit.level}`;
   const expectsModel = unit.kind === "topic" || unit.kind === "part3";
 
   return <div className="ll-page ll-module spk-lab" style={unitTone(unit, catalog)}>
@@ -309,7 +326,7 @@ function UnitPage({ id }: { id: string }) {
     <header className="ll-module-hero">
       <div className="ll-module-badge"><small>{badgeLabel[unit.kind]}</small><b>{unitNumber(unit)}</b></div>
       <div className="ll-module-copy">
-        <span className="ll-kicker">{kicker} · {partLabel(unit.part)}</span>
+        <span className="ll-kicker">{kicker}{unit.kind === "mock" ? ` · ${unit.level}` : ` · ${partLabel(unit.part)}`}</span>
         <h1>{unit.title_vi}</h1>
         <p lang="en">{unit.title_en}{unit.topic_en ? ` · ${unit.topic_en}` : ""}</p>
         <div className="ll-chips">{skills.map((skill) => <span key={skill.id}>{skill.id} · {skill.title_vi}</span>)}</div>
@@ -319,7 +336,10 @@ function UnitPage({ id }: { id: string }) {
 
     {unit.target_vi && <div className="ll-tip"><span><Target size={17}/></span><p><b>Mục tiêu</b>{unit.target_vi}</p></div>}
     {error && <p className="ll-error" role="alert">{error}</p>}
-    {!release ? <div className="ll-skeleton ll-skeleton-card"/> : <>
+    {!release ? <div className="ll-skeleton ll-skeleton-card"/> : unit.kind === "mock" ? <MockRunner
+      unit={unit} release={release} state={state} takes={takes} busy={busy}
+      onTake={(task, index, take) => keepTake(task, index, take)} onFinish={(task) => finish(task, false)}
+    /> : <>
       <TeachPanel release={release} open={teachOpen} onToggle={() => setTeachOpen((value) => !value)}/>
 
       <ol className="spk-tasks">{unit.tasks.map((task, index) => {
@@ -581,6 +601,97 @@ function SpokenTask({ unit, task, index, prompt, tip, state, take, checks, previ
       {tip.note_vi && <p className="spk-reflect">{tip.note_vi}</p>}
     </div>}
   </article>;
+}
+
+type Take = { url: string; seconds: number; transcript: string };
+
+/**
+ * A full mock test, run like the exam: one question on screen, answer, stop, and the next question opens.
+ * No tips during the test; the debrief and any sample excerpts come from the server after the last question.
+ */
+function MockRunner({ unit, release, state, takes, busy, onTake, onFinish }: {
+  unit: SpeakingUnit; release: SpeakingRelease; state: SpeakingState; takes: Record<string, string>; busy: boolean;
+  onTake: (task: SpeakingTask, index: number, take: Take) => Promise<void>; onFinish: (task: SpeakingTask) => Promise<void>;
+}) {
+  const mic = useMic();
+  const [prep, setPrep] = useState(0);
+  const [started, setStarted] = useState(Boolean(release.current && release.current !== unit.tasks[0]?.id));
+  const index = unit.tasks.findIndex((task) => task.id === release.current);
+  const task = index >= 0 ? unit.tasks[index] : null;
+  const prompt = task ? release.prompts[task.id] : undefined;
+
+  useEffect(() => {
+    if (prep <= 0) return;
+    const timer = window.setTimeout(() => setPrep((value) => value - 1), 1000);
+    return () => window.clearTimeout(timer);
+  }, [prep]);
+
+  async function answer() {
+    if (!task) return;
+    if (!mic.recording) { setPrep(0); await mic.start(); return; }
+    const take = await mic.stop();
+    if (take) await onTake(task, index, take);
+    await onFinish(task);
+  }
+
+  const parts = [1, 2, 3].map((part) => ({ part, tasks: unit.tasks.filter((item) => item.part === part) }));
+
+  if (task && !started) return <section className="spk-panel spk-mock-intro">
+    <h2>Trước khi bắt đầu</h2>
+    <ul className="spk-bullets">
+      <li>Đề có 3 phần, 16 câu: Part 1 phỏng vấn ngắn, Part 2 cue card (1 phút chuẩn bị, nói tối đa 2 phút) và Part 3 thảo luận.</li>
+      <li>Mỗi lần chỉ hiện một câu. Bấm <b>Trả lời</b> để ghi âm, bấm <b>Xong, câu tiếp</b> để chuyển câu; không quay lại câu trước.</li>
+      <li>Không có gợi ý trong lúc thi. Nhận xét và đoạn mẫu mở sau câu cuối. Bản ghi chỉ lưu trên trình duyệt này.</li>
+    </ul>
+    <div className="spk-row"><button type="button" className="ll-btn ll-btn-primary" onClick={() => { setStarted(true); void mic.open(); }}><Play size={15}/> Bắt đầu thi thử</button></div>
+  </section>;
+
+  return <>
+    <ol className="spk-mock-track" aria-label="Tiến độ đề thi">{parts.map(({ part, tasks }) => <li key={part}>
+      <b>{partLabel(part)}</b>
+      <span>{tasks.map((item) => <i key={item.id} className={state.done[item.id] ? "is-done" : item.id === release.current ? "is-here" : ""}/>)}</span>
+    </li>)}</ol>
+
+    {task && prompt ? <article className="ll-q spk-card spk-mock-card" id="spk-current">
+      <div className="ll-q-head">
+        <span className="ll-q-num">{index + 1}</span>
+        <div><small>{partLabel(task.part)} · {task.label} · câu {index + 1}/{unit.tasks.length}</small></div>
+      </div>
+      <div className="spk-prompt" lang="en">
+        <p>{prompt.prompt_en}</p>
+        {prompt.cue_bullets?.length ? <><small>You should say:</small><ul>{prompt.cue_bullets.map((line) => <li key={line}>{line}</li>)}</ul></> : null}
+      </div>
+      <div className="spk-recorder">
+        {task.prep_seconds > 0 && !mic.recording && <button type="button" className="ll-btn" onClick={() => setPrep(prep ? 0 : task.prep_seconds)}><Timer size={15}/>{prep ? `Chuẩn bị ${clock(prep)}` : "Chuẩn bị 1 phút"}</button>}
+        <button type="button" className={`ll-btn ${mic.recording ? "spk-rec-on" : "ll-btn-primary"}`} disabled={busy} onClick={() => void answer()}>
+          {mic.recording ? <><Square size={14} fill="currentColor"/> Xong, câu tiếp · {clock(mic.seconds)}</> : busy ? "Đang lưu…" : <><Mic size={15}/> Trả lời</>}
+        </button>
+        {mic.recording && <span className="spk-level" aria-hidden="true"><i style={{ width: `${Math.min(100, mic.level * 400)}%` }}/></span>}
+        {mic.recording && mic.seconds > task.expected_seconds.max && <small className="spk-over">Đã đủ thời gian, có thể chuyển câu.</small>}
+        {!mic.recording && <button type="button" className="ll-btn spk-skip" disabled={busy} onClick={() => void onFinish(task)}>Nói không ghi âm, câu tiếp</button>}
+      </div>
+      {mic.error && <p className="ll-error" role="alert"><MicOff size={14}/> {mic.error}</p>}
+    </article> : <>
+      <section className="spk-panel">
+        <span className="ll-kicker">Nghe lại bài thi</span>
+        <ol className="spk-review">{unit.tasks.map((item) => {
+          const itemPrompt = release.prompts[item.id];
+          const take = takes[item.id];
+          const seconds = state.seconds[item.id] ?? 0;
+          const cue: SpeakingItem | null = item.mode === "full_cue" && itemPrompt ? { id: `${unit.id}:${item.id}`, part: 2, kind: "cue", text: itemPrompt.prompt_en, bullets: itemPrompt.cue_bullets } : null;
+          return <li key={item.id}>
+            <small>{partLabel(item.part)} · {item.label}</small>
+            <p lang="en">{itemPrompt?.prompt_en}</p>
+            {take ? <div className="spk-take"><audio controls src={take} preload="none"/><small>{clock(seconds)}</small></div> : <small className="spk-review-none">Không ghi âm</small>}
+            {state.transcript[item.id] && <p className="spk-transcript"><small>Trình duyệt nghe được:</small> <span lang="en">{state.transcript[item.id]}</span></p>}
+            {cue && take && <PracticeCoaching examId={`speaking-lab:${unit.id}`} item={cue} take={{ url: take, seconds, transcript: state.transcript[item.id] ?? "" }}/>}
+          </li>;
+        })}</ol>
+      </section>
+      {release.model && <ModelPanel model={release.model}/>}
+      <div className="spk-finish"><Check size={18}/> Bạn đã hoàn thành đề này. <Link href={mapHref(unit)}>Về danh sách đề</Link></div>
+    </>}
+  </>;
 }
 
 function Breadcrumb({ current, back = SPEAKING_BASE }: { current: string; back?: string }) {

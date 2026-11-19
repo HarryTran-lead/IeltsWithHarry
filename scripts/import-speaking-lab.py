@@ -65,6 +65,21 @@ SOURCES = {
     "pron_items": "milestones/L39/data/public/listening_items.json",
     "pron_key": "milestones/L39/data/internal/listening_answer_key.json",
     "pron_transfers": "milestones/L40/data/public/pronunciation_transfer.json",
+    # Phase 3: eight full mock tests (L61 M01–M04, L63 M01–M04).
+    "l61_catalog": "milestones/L61/data/public/learner_catalog.json",
+    "l61_prompts": "milestones/L61/data/server/prompts_SERVER_ONLY.json",
+    "l61_debriefs": "milestones/L61/data/server/debrief_AFTER_COMPLETION.json",
+    "l61_samples": "milestones/L61/data/server/mock_sample_excerpts_AFTER_COMPLETION.json",
+    "l63_catalog": "milestones/L63/data/public/catalog.json",
+    "l63_questions": "milestones/L63/data/server/new_mock_questions_SERVER_ONLY.json",
+    "l63_coaching": "milestones/L63/data/server/after_attempt_coaching_SERVER_ONLY.json",
+}
+
+L61_MOCK_TITLES_VI = {
+    "SPK-M10L61-M01": "Không gian chung và thay đổi ở khu phố",
+    "SPK-M10L61-M02": "Cách học và công nghệ hữu ích",
+    "SPK-M10L61-M03": "Giao thông và thói quen thay đổi",
+    "SPK-M10L61-M04": "Hợp tác và những quyết định khó",
 }
 
 SERIES = [
@@ -335,10 +350,13 @@ def build(root):
     pron_units, pron_private, audio = build_pron(data)
     catalog_units += pron_units
     private_units.update(pron_private)
+    mock_units, mock_private = build_mocks(data)
+    catalog_units += mock_units
+    private_units.update(mock_private)
 
     levels = [{"id": level["id"], "label": level["label"], "guidance_vi": level["guidance"]} for level in data["onboarding"]["target_levels"]]
     catalog = {
-        "source": {"package": "IELTS_Speaking_M10_L80", "milestones": ["L39", "L40", "L41", "L48", "L57", "L58", "L59", "L60", "L65", "L67", "L79"], "note_vi": "Tài liệu luyện tập do đội ngũ biên soạn, chưa được giáo viên duyệt toàn bộ; không quy đổi sang band."},
+        "source": {"package": "IELTS_Speaking_M10_L80", "milestones": ["L39", "L40", "L41", "L48", "L57", "L58", "L59", "L60", "L61", "L63", "L65", "L67", "L79"], "note_vi": "Tài liệu luyện tập do đội ngũ biên soạn, chưa được giáo viên duyệt toàn bộ; không quy đổi sang band."},
         "levels": levels,
         "skills": skills,
         "series": SERIES,
@@ -498,6 +516,50 @@ def build_part3(data, skill_codes):
             "after_first": {"coaching": coaching} if coaching else {},
             "after_all": {"model": model} if model else {},
         }
+    return units, private
+
+
+def build_mocks(data):
+    """Eight full mock tests, one question at a time; the debrief (and L61's sample excerpts) only after the last."""
+    units, private = [], {}
+    debriefs = {d["entry_id"]: d for d in data["l61_debriefs"]["debriefs"]}
+    samples = {e["id"]: e for e in data["l61_samples"]["examples"]}
+    debriefs63 = {d["mock_id"]: d for d in data["l63_coaching"]["mock_debriefs"]}
+    mocks = []
+    for entry in data["l61_catalog"]["entries"]:
+        if entry["kind"] != "full_mock":
+            continue
+        qs = [{"seq": q["sequence"], "part": q["part"], "text": q["prompt_en"], "cue": q.get("cue_card"), "kind": q.get("phase", "")}
+              for q in data["l61_prompts"]["prompts"] if q["entry_id"] == entry["id"]]
+        d, ex = debriefs.get(entry["id"], {}), samples.get(entry["id"], {})
+        model = clean({"analysis_vi": d.get("debrief_vi"), "extra": [row for row in [
+            {"label": "Part 1", "text": d.get("part1_review_vi")}, {"label": "Part 2", "text": d.get("part2_review_vi")},
+            {"label": "Part 3", "text": d.get("part3_review_vi")},
+            {"label": "Đoạn mẫu Part 1", "text": ex.get("part1"), "en": True}, {"label": "Đoạn mẫu Part 2", "text": ex.get("part2"), "en": True},
+            {"label": "Đoạn mẫu Part 3", "text": ex.get("part3"), "en": True},
+        ] if row["text"]], "model_purpose_vi": "Đoạn mẫu minh hoạ cách triển khai ý, không phải bài được giám khảo chấm."})
+        mocks.append((entry["id"], L61_MOCK_TITLES_VI[entry["id"]], entry["topic_en"], qs, model))
+    for item in data["l63_catalog"]["new_mock_sets"]:
+        qs = [{"seq": q["sequence"], "part": q["part"], "text": q["question_en"], "cue": q.get("cue_bullets_en"), "kind": q.get("kind", "")}
+              for q in data["l63_questions"]["questions"] if q["mock_id"] == item["id"]]
+        model = clean({"analysis_vi": debriefs63.get(item["id"], {}).get("debrief_vi")})
+        mocks.append((item["id"], item["title_vi"], item["title_en"], qs, model))
+    for order, (mock_id, title_vi, title_en, qs, model) in enumerate(mocks, start=1):
+        qs.sort(key=lambda q: q["seq"])
+        if len(qs) != 16 or [q["part"] for q in qs] != sorted(q["part"] for q in qs):
+            fail(f"{mock_id} should have 16 questions in Part 1 → 3 order")
+        unit_id = f"mock-{mock_id.split('-')[1][-3:]}-{mock_id.rsplit('-', 1)[-1]}"
+        tasks, prompts, count = [], {}, {}
+        for number, q in enumerate(qs, start=1):
+            count[q["part"]] = count.get(q["part"], 0) + 1
+            cue = q["part"] == 2 and bool(q["cue"])
+            label = "Cue card" if cue else "Câu hỏi thêm" if q["part"] == 2 else f"Câu {count[q['part']]}"
+            tasks.append(task_entry(f"T{number}", f"part{q['part']}", label, "", q["part"], "full_cue" if cue else "short_spoken_answer", 60 if cue else 0,
+                                    None if cue or q["part"] != 2 else {"min": 10, "max": 30}))
+            prompts[f"T{number}"] = clean({"prompt_en": q["text"], "cue_bullets": q["cue"] if cue else None})
+        units.append({"id": unit_id, "kind": "mock", "part": 3, "skills": [], "title_vi": title_vi, "title_en": title_en,
+                      "level": "11–14 phút", "order": order, "tasks": tasks})
+        private[unit_id] = {"teach": {}, "prompts": prompts, "after_task": {}, "after_first": {}, "after_all": {"model": model} if model else {}}
     return units, private
 
 

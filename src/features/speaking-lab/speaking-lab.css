@@ -8,7 +8,7 @@
 .spk-lab .ll-track-map .ll-node{font-size:var(--fs-xs)}
 
 /* Tabs */
-.spk-tabs{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:6px;max-width:1000px;margin:14px 0 12px;padding:5px;border:1px solid var(--ll-line);border-radius:calc(var(--r-lg) + 4px);background:#fff}
+.spk-tabs{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:6px;max-width:none;margin:14px 0 12px;padding:5px;border:1px solid var(--ll-line);border-radius:calc(var(--r-lg) + 4px);background:#fff}
 .spk-tabs button{display:grid;gap:1px;padding:8px 12px;border:0;border-radius:var(--r-lg);background:none;color:var(--ll-muted);font:inherit;text-align:left;cursor:pointer;transition:background .15s,color .15s}
 .spk-tabs button b{font-size:var(--fs-base)}
 .spk-tabs button small{font-size:var(--fs-xs)}
@@ -152,6 +152,28 @@
 .spk-lab .bw-spin{animation:spk-spin .9s linear infinite}
 @keyframes spk-spin{to{transform:rotate(360deg)}}
 
+/* Mock test */
+.spk-mock-intro h2{font-size:var(--fs-lg)}
+.spk-mock-intro .spk-bullets{margin-top:8px!important}
+.spk-mock-track{display:grid;grid-template-columns:8fr 2fr 6fr;gap:10px;margin-top:14px}
+.spk-mock-track li{display:grid;gap:6px}
+.spk-mock-track b{color:var(--ll-muted);font-size:var(--fs-xs);letter-spacing:.06em;text-transform:uppercase}
+.spk-mock-track span{display:flex;gap:4px}
+.spk-mock-track i{flex:1;height:8px;border-radius:4px;background:#e3e8ee}
+.spk-mock-track i.is-done{background:var(--ll-tone)}
+.spk-mock-track i.is-here{background:color-mix(in srgb,var(--ll-tone) 40%,#fff);box-shadow:0 0 0 2px var(--ll-tone)}
+.spk-mock-card{margin-top:14px}
+.spk-mock-card .spk-prompt p{font-size:var(--fs-lg)}
+.spk-skip{margin-left:auto}
+.spk-review{display:grid;gap:12px;margin-top:10px}
+.spk-review>li{display:grid;gap:4px;padding:10px 12px;border:1px solid #edf1f5;border-radius:var(--r-md);background:#fbfcfd}
+.spk-review>li>small{color:var(--ll-muted);font-size:var(--fs-xs);font-weight:750}
+.spk-review>li>p{font-size:var(--fs-sm);font-weight:650}
+.spk-review-none{color:#8195a8;font-size:var(--fs-xs)}
+
+@media (max-width:1180px){
+  .spk-tabs{grid-template-columns:repeat(3,minmax(0,1fr))}
+}
 @media (max-width:1000px){
   .spk-tabs{grid-template-columns:repeat(2,minmax(0,1fr))}
 }

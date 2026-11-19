@@ -28,11 +28,11 @@ const fixture: SpeakingPrivateUnit = {
 const unit = { ...catalog.units.find((item) => item.kind === "topic")!, tasks: catalog.units.find((item) => item.kind === "topic")!.tasks.slice(0, 3) };
 
 describe("Speaking Lab catalog", () => {
-  it("has 16 skill routes, 24 topic lessons, 80 Part 3 lessons and 24 pronunciation lessons", () => {
+  it("has 16 skill routes, 24 topic lessons, 80 Part 3 lessons, 24 pronunciation lessons and 8 mocks", () => {
     const count = (kind: string) => catalog.units.filter((item) => item.kind === kind).length;
     expect(catalog.skills).toHaveLength(16);
-    expect([count("skill"), count("topic"), count("part3"), count("pron")]).toEqual([16, 24, 80, 24]);
-    expect(new Set(catalog.units.map((item) => item.id)).size).toBe(144);
+    expect([count("skill"), count("topic"), count("part3"), count("pron"), count("mock")]).toEqual([16, 24, 80, 24, 8]);
+    expect(new Set(catalog.units.map((item) => item.id)).size).toBe(152);
     for (const criterion of ["FC", "LR", "GR", "PR"]) expect(catalog.units.filter((item) => item.criterion === criterion)).toHaveLength(4);
     for (const series of catalog.series) expect(catalog.units.filter((item) => item.series === series.id).length, series.id).toBe(series.id === "L60" ? 32 : 16);
     for (const group of catalog.modules) expect(catalog.units.filter((item) => item.module === group.code), group.code).toHaveLength(3);
@@ -40,7 +40,7 @@ describe("Speaking Lab catalog", () => {
 
   it("gives every unit tasks and names only known skills", () => {
     const skills = new Set(catalog.skills.map((skill) => skill.id));
-    const expected: Record<string, number[]> = { skill: [2], topic: [6], part3: [5, 6, 7], pron: [2, 3] };
+    const expected: Record<string, number[]> = { skill: [2], topic: [6], part3: [5, 6, 7], pron: [2, 3], mock: [16] };
     for (const item of catalog.units) {
       expect(expected[item.kind], item.id).toContain(item.tasks.length);
       for (const skill of item.skills) expect(skills.has(skill), `${item.id} ${skill}`).toBe(true);
@@ -135,6 +135,10 @@ describe.skipIf(!privateFile)("Speaking Lab private data", () => {
       else if (item.kind === "part3") {
         expect(content.after_all.model?.improved_en, item.id).toBeTruthy();
         expect(content.teach.moves?.length, item.id).toBeGreaterThan(0);
+      } else if (item.kind === "mock") {
+        expect(content.after_all.model?.analysis_vi, item.id).toBeTruthy();
+        expect(item.tasks.filter((task) => task.mode === "full_cue"), item.id).toHaveLength(1);
+        expect(item.tasks.map((task) => task.part), item.id).toEqual([...item.tasks.map((task) => task.part)].sort());
       } else expect(content.teach.pron?.why_vi, item.id).toBeTruthy();
     }
   });

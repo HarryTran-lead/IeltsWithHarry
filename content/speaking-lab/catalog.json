@@ -10,6 +10,8 @@
    "L58",
    "L59",
    "L60",
+   "L61",
+   "L63",
    "L65",
    "L67",
    "L79"
@@ -12516,6 +12518,1894 @@
      "phase": "transfer",
      "label": "Dùng trong câu trả lời",
      "hint": "Trả lời câu hỏi, giữ đúng điểm phát âm vừa luyện.",
+     "part": 3,
+     "mode": "short_spoken_answer",
+     "prep_seconds": 0,
+     "expected_seconds": {
+      "min": 30,
+      "max": 60
+     },
+     "gap_days": 0
+    }
+   ]
+  },
+  {
+   "id": "mock-L61-M01",
+   "kind": "mock",
+   "part": 3,
+   "skills": [],
+   "title_vi": "Không gian chung và thay đổi ở khu phố",
+   "title_en": "Community spaces and neighbourhood changes",
+   "level": "11–14 phút",
+   "order": 1,
+   "tasks": [
+    {
+     "id": "T1",
+     "phase": "part1",
+     "label": "Câu 1",
+     "hint": "",
+     "part": 1,
+     "mode": "short_spoken_answer",
+     "prep_seconds": 0,
+     "expected_seconds": {
+      "min": 20,
+      "max": 45
+     },
+     "gap_days": 0
+    },
+    {
+     "id": "T2",
+     "phase": "part1",
+     "label": "Câu 2",
+     "hint": "",
+     "part": 1,
+     "mode": "short_spoken_answer",
+     "prep_seconds": 0,
+     "expected_seconds": {
+      "min": 20,
+      "max": 45
+     },
+     "gap_days": 0
+    },
+    {
+     "id": "T3",
+     "phase": "part1",
+     "label": "Câu 3",
+     "hint": "",
+     "part": 1,
+     "mode": "short_spoken_answer",
+     "prep_seconds": 0,
+     "expected_seconds": {
+      "min": 20,
+      "max": 45
+     },
+     "gap_days": 0
+    },
+    {
+     "id": "T4",
+     "phase": "part1",
+     "label": "Câu 4",
+     "hint": "",
+     "part": 1,
+     "mode": "short_spoken_answer",
+     "prep_seconds": 0,
+     "expected_seconds": {
+      "min": 20,
+      "max": 45
+     },
+     "gap_days": 0
+    },
+    {
+     "id": "T5",
+     "phase": "part1",
+     "label": "Câu 5",
+     "hint": "",
+     "part": 1,
+     "mode": "short_spoken_answer",
+     "prep_seconds": 0,
+     "expected_seconds": {
+      "min": 20,
+      "max": 45
+     },
+     "gap_days": 0
+    },
+    {
+     "id": "T6",
+     "phase": "part1",
+     "label": "Câu 6",
+     "hint": "",
+     "part": 1,
+     "mode": "short_spoken_answer",
+     "prep_seconds": 0,
+     "expected_seconds": {
+      "min": 20,
+      "max": 45
+     },
+     "gap_days": 0
+    },
+    {
+     "id": "T7",
+     "phase": "part1",
+     "label": "Câu 7",
+     "hint": "",
+     "part": 1,
+     "mode": "short_spoken_answer",
+     "prep_seconds": 0,
+     "expected_seconds": {
+      "min": 20,
+      "max": 45
+     },
+     "gap_days": 0
+    },
+    {
+     "id": "T8",
+     "phase": "part1",
+     "label": "Câu 8",
+     "hint": "",
+     "part": 1,
+     "mode": "short_spoken_answer",
+     "prep_seconds": 0,
+     "expected_seconds": {
+      "min": 20,
+      "max": 45
+     },
+     "gap_days": 0
+    },
+    {
+     "id": "T9",
+     "phase": "part2",
+     "label": "Cue card",
+     "hint": "",
+     "part": 2,
+     "mode": "full_cue",
+     "prep_seconds": 60,
+     "expected_seconds": {
+      "min": 85,
+      "max": 120
+     },
+     "gap_days": 0
+    },
+    {
+     "id": "T10",
+     "phase": "part2",
+     "label": "Câu hỏi thêm",
+     "hint": "",
+     "part": 2,
+     "mode": "short_spoken_answer",
+     "prep_seconds": 0,
+     "expected_seconds": {
+      "min": 10,
+      "max": 30
+     },
+     "gap_days": 0
+    },
+    {
+     "id": "T11",
+     "phase": "part3",
+     "label": "Câu 1",
+     "hint": "",
+     "part": 3,
+     "mode": "short_spoken_answer",
+     "prep_seconds": 0,
+     "expected_seconds": {
+      "min": 30,
+      "max": 60
+     },
+     "gap_days": 0
+    },
+    {
+     "id": "T12",
+     "phase": "part3",
+     "label": "Câu 2",
+     "hint": "",
+     "part": 3,
+     "mode": "short_spoken_answer",
+     "prep_seconds": 0,
+     "expected_seconds": {
+      "min": 30,
+      "max": 60
+     },
+     "gap_days": 0
+    },
+    {
+     "id": "T13",
+     "phase": "part3",
+     "label": "Câu 3",
+     "hint": "",
+     "part": 3,
+     "mode": "short_spoken_answer",
+     "prep_seconds": 0,
+     "expected_seconds": {
+      "min": 30,
+      "max": 60
+     },
+     "gap_days": 0
+    },
+    {
+     "id": "T14",
+     "phase": "part3",
+     "label": "Câu 4",
+     "hint": "",
+     "part": 3,
+     "mode": "short_spoken_answer",
+     "prep_seconds": 0,
+     "expected_seconds": {
+      "min": 30,
+      "max": 60
+     },
+     "gap_days": 0
+    },
+    {
+     "id": "T15",
+     "phase": "part3",
+     "label": "Câu 5",
+     "hint": "",
+     "part": 3,
+     "mode": "short_spoken_answer",
+     "prep_seconds": 0,
+     "expected_seconds": {
+      "min": 30,
+      "max": 60
+     },
+     "gap_days": 0
+    },
+    {
+     "id": "T16",
+     "phase": "part3",
+     "label": "Câu 6",
+     "hint": "",
+     "part": 3,
+     "mode": "short_spoken_answer",
+     "prep_seconds": 0,
+     "expected_seconds": {
+      "min": 30,
+      "max": 60
+     },
+     "gap_days": 0
+    }
+   ]
+  },
+  {
+   "id": "mock-L61-M02",
+   "kind": "mock",
+   "part": 3,
+   "skills": [],
+   "title_vi": "Cách học và công nghệ hữu ích",
+   "title_en": "Learning methods and useful technology",
+   "level": "11–14 phút",
+   "order": 2,
+   "tasks": [
+    {
+     "id": "T1",
+     "phase": "part1",
+     "label": "Câu 1",
+     "hint": "",
+     "part": 1,
+     "mode": "short_spoken_answer",
+     "prep_seconds": 0,
+     "expected_seconds": {
+      "min": 20,
+      "max": 45
+     },
+     "gap_days": 0
+    },
+    {
+     "id": "T2",
+     "phase": "part1",
+     "label": "Câu 2",
+     "hint": "",
+     "part": 1,
+     "mode": "short_spoken_answer",
+     "prep_seconds": 0,
+     "expected_seconds": {
+      "min": 20,
+      "max": 45
+     },
+     "gap_days": 0
+    },
+    {
+     "id": "T3",
+     "phase": "part1",
+     "label": "Câu 3",
+     "hint": "",
+     "part": 1,
+     "mode": "short_spoken_answer",
+     "prep_seconds": 0,
+     "expected_seconds": {
+      "min": 20,
+      "max": 45
+     },
+     "gap_days": 0
+    },
+    {
+     "id": "T4",
+     "phase": "part1",
+     "label": "Câu 4",
+     "hint": "",
+     "part": 1,
+     "mode": "short_spoken_answer",
+     "prep_seconds": 0,
+     "expected_seconds": {
+      "min": 20,
+      "max": 45
+     },
+     "gap_days": 0
+    },
+    {
+     "id": "T5",
+     "phase": "part1",
+     "label": "Câu 5",
+     "hint": "",
+     "part": 1,
+     "mode": "short_spoken_answer",
+     "prep_seconds": 0,
+     "expected_seconds": {
+      "min": 20,
+      "max": 45
+     },
+     "gap_days": 0
+    },
+    {
+     "id": "T6",
+     "phase": "part1",
+     "label": "Câu 6",
+     "hint": "",
+     "part": 1,
+     "mode": "short_spoken_answer",
+     "prep_seconds": 0,
+     "expected_seconds": {
+      "min": 20,
+      "max": 45
+     },
+     "gap_days": 0
+    },
+    {
+     "id": "T7",
+     "phase": "part1",
+     "label": "Câu 7",
+     "hint": "",
+     "part": 1,
+     "mode": "short_spoken_answer",
+     "prep_seconds": 0,
+     "expected_seconds": {
+      "min": 20,
+      "max": 45
+     },
+     "gap_days": 0
+    },
+    {
+     "id": "T8",
+     "phase": "part1",
+     "label": "Câu 8",
+     "hint": "",
+     "part": 1,
+     "mode": "short_spoken_answer",
+     "prep_seconds": 0,
+     "expected_seconds": {
+      "min": 20,
+      "max": 45
+     },
+     "gap_days": 0
+    },
+    {
+     "id": "T9",
+     "phase": "part2",
+     "label": "Cue card",
+     "hint": "",
+     "part": 2,
+     "mode": "full_cue",
+     "prep_seconds": 60,
+     "expected_seconds": {
+      "min": 85,
+      "max": 120
+     },
+     "gap_days": 0
+    },
+    {
+     "id": "T10",
+     "phase": "part2",
+     "label": "Câu hỏi thêm",
+     "hint": "",
+     "part": 2,
+     "mode": "short_spoken_answer",
+     "prep_seconds": 0,
+     "expected_seconds": {
+      "min": 10,
+      "max": 30
+     },
+     "gap_days": 0
+    },
+    {
+     "id": "T11",
+     "phase": "part3",
+     "label": "Câu 1",
+     "hint": "",
+     "part": 3,
+     "mode": "short_spoken_answer",
+     "prep_seconds": 0,
+     "expected_seconds": {
+      "min": 30,
+      "max": 60
+     },
+     "gap_days": 0
+    },
+    {
+     "id": "T12",
+     "phase": "part3",
+     "label": "Câu 2",
+     "hint": "",
+     "part": 3,
+     "mode": "short_spoken_answer",
+     "prep_seconds": 0,
+     "expected_seconds": {
+      "min": 30,
+      "max": 60
+     },
+     "gap_days": 0
+    },
+    {
+     "id": "T13",
+     "phase": "part3",
+     "label": "Câu 3",
+     "hint": "",
+     "part": 3,
+     "mode": "short_spoken_answer",
+     "prep_seconds": 0,
+     "expected_seconds": {
+      "min": 30,
+      "max": 60
+     },
+     "gap_days": 0
+    },
+    {
+     "id": "T14",
+     "phase": "part3",
+     "label": "Câu 4",
+     "hint": "",
+     "part": 3,
+     "mode": "short_spoken_answer",
+     "prep_seconds": 0,
+     "expected_seconds": {
+      "min": 30,
+      "max": 60
+     },
+     "gap_days": 0
+    },
+    {
+     "id": "T15",
+     "phase": "part3",
+     "label": "Câu 5",
+     "hint": "",
+     "part": 3,
+     "mode": "short_spoken_answer",
+     "prep_seconds": 0,
+     "expected_seconds": {
+      "min": 30,
+      "max": 60
+     },
+     "gap_days": 0
+    },
+    {
+     "id": "T16",
+     "phase": "part3",
+     "label": "Câu 6",
+     "hint": "",
+     "part": 3,
+     "mode": "short_spoken_answer",
+     "prep_seconds": 0,
+     "expected_seconds": {
+      "min": 30,
+      "max": 60
+     },
+     "gap_days": 0
+    }
+   ]
+  },
+  {
+   "id": "mock-L61-M03",
+   "kind": "mock",
+   "part": 3,
+   "skills": [],
+   "title_vi": "Giao thông và thói quen thay đổi",
+   "title_en": "Transport and changing habits",
+   "level": "11–14 phút",
+   "order": 3,
+   "tasks": [
+    {
+     "id": "T1",
+     "phase": "part1",
+     "label": "Câu 1",
+     "hint": "",
+     "part": 1,
+     "mode": "short_spoken_answer",
+     "prep_seconds": 0,
+     "expected_seconds": {
+      "min": 20,
+      "max": 45
+     },
+     "gap_days": 0
+    },
+    {
+     "id": "T2",
+     "phase": "part1",
+     "label": "Câu 2",
+     "hint": "",
+     "part": 1,
+     "mode": "short_spoken_answer",
+     "prep_seconds": 0,
+     "expected_seconds": {
+      "min": 20,
+      "max": 45
+     },
+     "gap_days": 0
+    },
+    {
+     "id": "T3",
+     "phase": "part1",
+     "label": "Câu 3",
+     "hint": "",
+     "part": 1,
+     "mode": "short_spoken_answer",
+     "prep_seconds": 0,
+     "expected_seconds": {
+      "min": 20,
+      "max": 45
+     },
+     "gap_days": 0
+    },
+    {
+     "id": "T4",
+     "phase": "part1",
+     "label": "Câu 4",
+     "hint": "",
+     "part": 1,
+     "mode": "short_spoken_answer",
+     "prep_seconds": 0,
+     "expected_seconds": {
+      "min": 20,
+      "max": 45
+     },
+     "gap_days": 0
+    },
+    {
+     "id": "T5",
+     "phase": "part1",
+     "label": "Câu 5",
+     "hint": "",
+     "part": 1,
+     "mode": "short_spoken_answer",
+     "prep_seconds": 0,
+     "expected_seconds": {
+      "min": 20,
+      "max": 45
+     },
+     "gap_days": 0
+    },
+    {
+     "id": "T6",
+     "phase": "part1",
+     "label": "Câu 6",
+     "hint": "",
+     "part": 1,
+     "mode": "short_spoken_answer",
+     "prep_seconds": 0,
+     "expected_seconds": {
+      "min": 20,
+      "max": 45
+     },
+     "gap_days": 0
+    },
+    {
+     "id": "T7",
+     "phase": "part1",
+     "label": "Câu 7",
+     "hint": "",
+     "part": 1,
+     "mode": "short_spoken_answer",
+     "prep_seconds": 0,
+     "expected_seconds": {
+      "min": 20,
+      "max": 45
+     },
+     "gap_days": 0
+    },
+    {
+     "id": "T8",
+     "phase": "part1",
+     "label": "Câu 8",
+     "hint": "",
+     "part": 1,
+     "mode": "short_spoken_answer",
+     "prep_seconds": 0,
+     "expected_seconds": {
+      "min": 20,
+      "max": 45
+     },
+     "gap_days": 0
+    },
+    {
+     "id": "T9",
+     "phase": "part2",
+     "label": "Cue card",
+     "hint": "",
+     "part": 2,
+     "mode": "full_cue",
+     "prep_seconds": 60,
+     "expected_seconds": {
+      "min": 85,
+      "max": 120
+     },
+     "gap_days": 0
+    },
+    {
+     "id": "T10",
+     "phase": "part2",
+     "label": "Câu hỏi thêm",
+     "hint": "",
+     "part": 2,
+     "mode": "short_spoken_answer",
+     "prep_seconds": 0,
+     "expected_seconds": {
+      "min": 10,
+      "max": 30
+     },
+     "gap_days": 0
+    },
+    {
+     "id": "T11",
+     "phase": "part3",
+     "label": "Câu 1",
+     "hint": "",
+     "part": 3,
+     "mode": "short_spoken_answer",
+     "prep_seconds": 0,
+     "expected_seconds": {
+      "min": 30,
+      "max": 60
+     },
+     "gap_days": 0
+    },
+    {
+     "id": "T12",
+     "phase": "part3",
+     "label": "Câu 2",
+     "hint": "",
+     "part": 3,
+     "mode": "short_spoken_answer",
+     "prep_seconds": 0,
+     "expected_seconds": {
+      "min": 30,
+      "max": 60
+     },
+     "gap_days": 0
+    },
+    {
+     "id": "T13",
+     "phase": "part3",
+     "label": "Câu 3",
+     "hint": "",
+     "part": 3,
+     "mode": "short_spoken_answer",
+     "prep_seconds": 0,
+     "expected_seconds": {
+      "min": 30,
+      "max": 60
+     },
+     "gap_days": 0
+    },
+    {
+     "id": "T14",
+     "phase": "part3",
+     "label": "Câu 4",
+     "hint": "",
+     "part": 3,
+     "mode": "short_spoken_answer",
+     "prep_seconds": 0,
+     "expected_seconds": {
+      "min": 30,
+      "max": 60
+     },
+     "gap_days": 0
+    },
+    {
+     "id": "T15",
+     "phase": "part3",
+     "label": "Câu 5",
+     "hint": "",
+     "part": 3,
+     "mode": "short_spoken_answer",
+     "prep_seconds": 0,
+     "expected_seconds": {
+      "min": 30,
+      "max": 60
+     },
+     "gap_days": 0
+    },
+    {
+     "id": "T16",
+     "phase": "part3",
+     "label": "Câu 6",
+     "hint": "",
+     "part": 3,
+     "mode": "short_spoken_answer",
+     "prep_seconds": 0,
+     "expected_seconds": {
+      "min": 30,
+      "max": 60
+     },
+     "gap_days": 0
+    }
+   ]
+  },
+  {
+   "id": "mock-L61-M04",
+   "kind": "mock",
+   "part": 3,
+   "skills": [],
+   "title_vi": "Hợp tác và những quyết định khó",
+   "title_en": "Collaboration and difficult decisions",
+   "level": "11–14 phút",
+   "order": 4,
+   "tasks": [
+    {
+     "id": "T1",
+     "phase": "part1",
+     "label": "Câu 1",
+     "hint": "",
+     "part": 1,
+     "mode": "short_spoken_answer",
+     "prep_seconds": 0,
+     "expected_seconds": {
+      "min": 20,
+      "max": 45
+     },
+     "gap_days": 0
+    },
+    {
+     "id": "T2",
+     "phase": "part1",
+     "label": "Câu 2",
+     "hint": "",
+     "part": 1,
+     "mode": "short_spoken_answer",
+     "prep_seconds": 0,
+     "expected_seconds": {
+      "min": 20,
+      "max": 45
+     },
+     "gap_days": 0
+    },
+    {
+     "id": "T3",
+     "phase": "part1",
+     "label": "Câu 3",
+     "hint": "",
+     "part": 1,
+     "mode": "short_spoken_answer",
+     "prep_seconds": 0,
+     "expected_seconds": {
+      "min": 20,
+      "max": 45
+     },
+     "gap_days": 0
+    },
+    {
+     "id": "T4",
+     "phase": "part1",
+     "label": "Câu 4",
+     "hint": "",
+     "part": 1,
+     "mode": "short_spoken_answer",
+     "prep_seconds": 0,
+     "expected_seconds": {
+      "min": 20,
+      "max": 45
+     },
+     "gap_days": 0
+    },
+    {
+     "id": "T5",
+     "phase": "part1",
+     "label": "Câu 5",
+     "hint": "",
+     "part": 1,
+     "mode": "short_spoken_answer",
+     "prep_seconds": 0,
+     "expected_seconds": {
+      "min": 20,
+      "max": 45
+     },
+     "gap_days": 0
+    },
+    {
+     "id": "T6",
+     "phase": "part1",
+     "label": "Câu 6",
+     "hint": "",
+     "part": 1,
+     "mode": "short_spoken_answer",
+     "prep_seconds": 0,
+     "expected_seconds": {
+      "min": 20,
+      "max": 45
+     },
+     "gap_days": 0
+    },
+    {
+     "id": "T7",
+     "phase": "part1",
+     "label": "Câu 7",
+     "hint": "",
+     "part": 1,
+     "mode": "short_spoken_answer",
+     "prep_seconds": 0,
+     "expected_seconds": {
+      "min": 20,
+      "max": 45
+     },
+     "gap_days": 0
+    },
+    {
+     "id": "T8",
+     "phase": "part1",
+     "label": "Câu 8",
+     "hint": "",
+     "part": 1,
+     "mode": "short_spoken_answer",
+     "prep_seconds": 0,
+     "expected_seconds": {
+      "min": 20,
+      "max": 45
+     },
+     "gap_days": 0
+    },
+    {
+     "id": "T9",
+     "phase": "part2",
+     "label": "Cue card",
+     "hint": "",
+     "part": 2,
+     "mode": "full_cue",
+     "prep_seconds": 60,
+     "expected_seconds": {
+      "min": 85,
+      "max": 120
+     },
+     "gap_days": 0
+    },
+    {
+     "id": "T10",
+     "phase": "part2",
+     "label": "Câu hỏi thêm",
+     "hint": "",
+     "part": 2,
+     "mode": "short_spoken_answer",
+     "prep_seconds": 0,
+     "expected_seconds": {
+      "min": 10,
+      "max": 30
+     },
+     "gap_days": 0
+    },
+    {
+     "id": "T11",
+     "phase": "part3",
+     "label": "Câu 1",
+     "hint": "",
+     "part": 3,
+     "mode": "short_spoken_answer",
+     "prep_seconds": 0,
+     "expected_seconds": {
+      "min": 30,
+      "max": 60
+     },
+     "gap_days": 0
+    },
+    {
+     "id": "T12",
+     "phase": "part3",
+     "label": "Câu 2",
+     "hint": "",
+     "part": 3,
+     "mode": "short_spoken_answer",
+     "prep_seconds": 0,
+     "expected_seconds": {
+      "min": 30,
+      "max": 60
+     },
+     "gap_days": 0
+    },
+    {
+     "id": "T13",
+     "phase": "part3",
+     "label": "Câu 3",
+     "hint": "",
+     "part": 3,
+     "mode": "short_spoken_answer",
+     "prep_seconds": 0,
+     "expected_seconds": {
+      "min": 30,
+      "max": 60
+     },
+     "gap_days": 0
+    },
+    {
+     "id": "T14",
+     "phase": "part3",
+     "label": "Câu 4",
+     "hint": "",
+     "part": 3,
+     "mode": "short_spoken_answer",
+     "prep_seconds": 0,
+     "expected_seconds": {
+      "min": 30,
+      "max": 60
+     },
+     "gap_days": 0
+    },
+    {
+     "id": "T15",
+     "phase": "part3",
+     "label": "Câu 5",
+     "hint": "",
+     "part": 3,
+     "mode": "short_spoken_answer",
+     "prep_seconds": 0,
+     "expected_seconds": {
+      "min": 30,
+      "max": 60
+     },
+     "gap_days": 0
+    },
+    {
+     "id": "T16",
+     "phase": "part3",
+     "label": "Câu 6",
+     "hint": "",
+     "part": 3,
+     "mode": "short_spoken_answer",
+     "prep_seconds": 0,
+     "expected_seconds": {
+      "min": 30,
+      "max": 60
+     },
+     "gap_days": 0
+    }
+   ]
+  },
+  {
+   "id": "mock-L63-M01",
+   "kind": "mock",
+   "part": 3,
+   "skills": [],
+   "title_vi": "Ẩm thực, chợ địa phương và cộng đồng",
+   "title_en": "Food, Markets & Community",
+   "level": "11–14 phút",
+   "order": 5,
+   "tasks": [
+    {
+     "id": "T1",
+     "phase": "part1",
+     "label": "Câu 1",
+     "hint": "",
+     "part": 1,
+     "mode": "short_spoken_answer",
+     "prep_seconds": 0,
+     "expected_seconds": {
+      "min": 20,
+      "max": 45
+     },
+     "gap_days": 0
+    },
+    {
+     "id": "T2",
+     "phase": "part1",
+     "label": "Câu 2",
+     "hint": "",
+     "part": 1,
+     "mode": "short_spoken_answer",
+     "prep_seconds": 0,
+     "expected_seconds": {
+      "min": 20,
+      "max": 45
+     },
+     "gap_days": 0
+    },
+    {
+     "id": "T3",
+     "phase": "part1",
+     "label": "Câu 3",
+     "hint": "",
+     "part": 1,
+     "mode": "short_spoken_answer",
+     "prep_seconds": 0,
+     "expected_seconds": {
+      "min": 20,
+      "max": 45
+     },
+     "gap_days": 0
+    },
+    {
+     "id": "T4",
+     "phase": "part1",
+     "label": "Câu 4",
+     "hint": "",
+     "part": 1,
+     "mode": "short_spoken_answer",
+     "prep_seconds": 0,
+     "expected_seconds": {
+      "min": 20,
+      "max": 45
+     },
+     "gap_days": 0
+    },
+    {
+     "id": "T5",
+     "phase": "part1",
+     "label": "Câu 5",
+     "hint": "",
+     "part": 1,
+     "mode": "short_spoken_answer",
+     "prep_seconds": 0,
+     "expected_seconds": {
+      "min": 20,
+      "max": 45
+     },
+     "gap_days": 0
+    },
+    {
+     "id": "T6",
+     "phase": "part1",
+     "label": "Câu 6",
+     "hint": "",
+     "part": 1,
+     "mode": "short_spoken_answer",
+     "prep_seconds": 0,
+     "expected_seconds": {
+      "min": 20,
+      "max": 45
+     },
+     "gap_days": 0
+    },
+    {
+     "id": "T7",
+     "phase": "part1",
+     "label": "Câu 7",
+     "hint": "",
+     "part": 1,
+     "mode": "short_spoken_answer",
+     "prep_seconds": 0,
+     "expected_seconds": {
+      "min": 20,
+      "max": 45
+     },
+     "gap_days": 0
+    },
+    {
+     "id": "T8",
+     "phase": "part1",
+     "label": "Câu 8",
+     "hint": "",
+     "part": 1,
+     "mode": "short_spoken_answer",
+     "prep_seconds": 0,
+     "expected_seconds": {
+      "min": 20,
+      "max": 45
+     },
+     "gap_days": 0
+    },
+    {
+     "id": "T9",
+     "phase": "part2",
+     "label": "Cue card",
+     "hint": "",
+     "part": 2,
+     "mode": "full_cue",
+     "prep_seconds": 60,
+     "expected_seconds": {
+      "min": 85,
+      "max": 120
+     },
+     "gap_days": 0
+    },
+    {
+     "id": "T10",
+     "phase": "part2",
+     "label": "Câu hỏi thêm",
+     "hint": "",
+     "part": 2,
+     "mode": "short_spoken_answer",
+     "prep_seconds": 0,
+     "expected_seconds": {
+      "min": 10,
+      "max": 30
+     },
+     "gap_days": 0
+    },
+    {
+     "id": "T11",
+     "phase": "part3",
+     "label": "Câu 1",
+     "hint": "",
+     "part": 3,
+     "mode": "short_spoken_answer",
+     "prep_seconds": 0,
+     "expected_seconds": {
+      "min": 30,
+      "max": 60
+     },
+     "gap_days": 0
+    },
+    {
+     "id": "T12",
+     "phase": "part3",
+     "label": "Câu 2",
+     "hint": "",
+     "part": 3,
+     "mode": "short_spoken_answer",
+     "prep_seconds": 0,
+     "expected_seconds": {
+      "min": 30,
+      "max": 60
+     },
+     "gap_days": 0
+    },
+    {
+     "id": "T13",
+     "phase": "part3",
+     "label": "Câu 3",
+     "hint": "",
+     "part": 3,
+     "mode": "short_spoken_answer",
+     "prep_seconds": 0,
+     "expected_seconds": {
+      "min": 30,
+      "max": 60
+     },
+     "gap_days": 0
+    },
+    {
+     "id": "T14",
+     "phase": "part3",
+     "label": "Câu 4",
+     "hint": "",
+     "part": 3,
+     "mode": "short_spoken_answer",
+     "prep_seconds": 0,
+     "expected_seconds": {
+      "min": 30,
+      "max": 60
+     },
+     "gap_days": 0
+    },
+    {
+     "id": "T15",
+     "phase": "part3",
+     "label": "Câu 5",
+     "hint": "",
+     "part": 3,
+     "mode": "short_spoken_answer",
+     "prep_seconds": 0,
+     "expected_seconds": {
+      "min": 30,
+      "max": 60
+     },
+     "gap_days": 0
+    },
+    {
+     "id": "T16",
+     "phase": "part3",
+     "label": "Câu 6",
+     "hint": "",
+     "part": 3,
+     "mode": "short_spoken_answer",
+     "prep_seconds": 0,
+     "expected_seconds": {
+      "min": 30,
+      "max": 60
+     },
+     "gap_days": 0
+    }
+   ]
+  },
+  {
+   "id": "mock-L63-M02",
+   "kind": "mock",
+   "part": 3,
+   "skills": [],
+   "title_vi": "Sáng tạo, làm đồ thủ công và học kỹ năng",
+   "title_en": "Making Things & Creative Skills",
+   "level": "11–14 phút",
+   "order": 6,
+   "tasks": [
+    {
+     "id": "T1",
+     "phase": "part1",
+     "label": "Câu 1",
+     "hint": "",
+     "part": 1,
+     "mode": "short_spoken_answer",
+     "prep_seconds": 0,
+     "expected_seconds": {
+      "min": 20,
+      "max": 45
+     },
+     "gap_days": 0
+    },
+    {
+     "id": "T2",
+     "phase": "part1",
+     "label": "Câu 2",
+     "hint": "",
+     "part": 1,
+     "mode": "short_spoken_answer",
+     "prep_seconds": 0,
+     "expected_seconds": {
+      "min": 20,
+      "max": 45
+     },
+     "gap_days": 0
+    },
+    {
+     "id": "T3",
+     "phase": "part1",
+     "label": "Câu 3",
+     "hint": "",
+     "part": 1,
+     "mode": "short_spoken_answer",
+     "prep_seconds": 0,
+     "expected_seconds": {
+      "min": 20,
+      "max": 45
+     },
+     "gap_days": 0
+    },
+    {
+     "id": "T4",
+     "phase": "part1",
+     "label": "Câu 4",
+     "hint": "",
+     "part": 1,
+     "mode": "short_spoken_answer",
+     "prep_seconds": 0,
+     "expected_seconds": {
+      "min": 20,
+      "max": 45
+     },
+     "gap_days": 0
+    },
+    {
+     "id": "T5",
+     "phase": "part1",
+     "label": "Câu 5",
+     "hint": "",
+     "part": 1,
+     "mode": "short_spoken_answer",
+     "prep_seconds": 0,
+     "expected_seconds": {
+      "min": 20,
+      "max": 45
+     },
+     "gap_days": 0
+    },
+    {
+     "id": "T6",
+     "phase": "part1",
+     "label": "Câu 6",
+     "hint": "",
+     "part": 1,
+     "mode": "short_spoken_answer",
+     "prep_seconds": 0,
+     "expected_seconds": {
+      "min": 20,
+      "max": 45
+     },
+     "gap_days": 0
+    },
+    {
+     "id": "T7",
+     "phase": "part1",
+     "label": "Câu 7",
+     "hint": "",
+     "part": 1,
+     "mode": "short_spoken_answer",
+     "prep_seconds": 0,
+     "expected_seconds": {
+      "min": 20,
+      "max": 45
+     },
+     "gap_days": 0
+    },
+    {
+     "id": "T8",
+     "phase": "part1",
+     "label": "Câu 8",
+     "hint": "",
+     "part": 1,
+     "mode": "short_spoken_answer",
+     "prep_seconds": 0,
+     "expected_seconds": {
+      "min": 20,
+      "max": 45
+     },
+     "gap_days": 0
+    },
+    {
+     "id": "T9",
+     "phase": "part2",
+     "label": "Cue card",
+     "hint": "",
+     "part": 2,
+     "mode": "full_cue",
+     "prep_seconds": 60,
+     "expected_seconds": {
+      "min": 85,
+      "max": 120
+     },
+     "gap_days": 0
+    },
+    {
+     "id": "T10",
+     "phase": "part2",
+     "label": "Câu hỏi thêm",
+     "hint": "",
+     "part": 2,
+     "mode": "short_spoken_answer",
+     "prep_seconds": 0,
+     "expected_seconds": {
+      "min": 10,
+      "max": 30
+     },
+     "gap_days": 0
+    },
+    {
+     "id": "T11",
+     "phase": "part3",
+     "label": "Câu 1",
+     "hint": "",
+     "part": 3,
+     "mode": "short_spoken_answer",
+     "prep_seconds": 0,
+     "expected_seconds": {
+      "min": 30,
+      "max": 60
+     },
+     "gap_days": 0
+    },
+    {
+     "id": "T12",
+     "phase": "part3",
+     "label": "Câu 2",
+     "hint": "",
+     "part": 3,
+     "mode": "short_spoken_answer",
+     "prep_seconds": 0,
+     "expected_seconds": {
+      "min": 30,
+      "max": 60
+     },
+     "gap_days": 0
+    },
+    {
+     "id": "T13",
+     "phase": "part3",
+     "label": "Câu 3",
+     "hint": "",
+     "part": 3,
+     "mode": "short_spoken_answer",
+     "prep_seconds": 0,
+     "expected_seconds": {
+      "min": 30,
+      "max": 60
+     },
+     "gap_days": 0
+    },
+    {
+     "id": "T14",
+     "phase": "part3",
+     "label": "Câu 4",
+     "hint": "",
+     "part": 3,
+     "mode": "short_spoken_answer",
+     "prep_seconds": 0,
+     "expected_seconds": {
+      "min": 30,
+      "max": 60
+     },
+     "gap_days": 0
+    },
+    {
+     "id": "T15",
+     "phase": "part3",
+     "label": "Câu 5",
+     "hint": "",
+     "part": 3,
+     "mode": "short_spoken_answer",
+     "prep_seconds": 0,
+     "expected_seconds": {
+      "min": 30,
+      "max": 60
+     },
+     "gap_days": 0
+    },
+    {
+     "id": "T16",
+     "phase": "part3",
+     "label": "Câu 6",
+     "hint": "",
+     "part": 3,
+     "mode": "short_spoken_answer",
+     "prep_seconds": 0,
+     "expected_seconds": {
+      "min": 30,
+      "max": 60
+     },
+     "gap_days": 0
+    }
+   ]
+  },
+  {
+   "id": "mock-L63-M03",
+   "kind": "mock",
+   "part": 3,
+   "skills": [],
+   "title_vi": "Hoạt động ngoài trời, thời tiết và không gian sống",
+   "title_en": "Outdoor Life & Changing Weather",
+   "level": "11–14 phút",
+   "order": 7,
+   "tasks": [
+    {
+     "id": "T1",
+     "phase": "part1",
+     "label": "Câu 1",
+     "hint": "",
+     "part": 1,
+     "mode": "short_spoken_answer",
+     "prep_seconds": 0,
+     "expected_seconds": {
+      "min": 20,
+      "max": 45
+     },
+     "gap_days": 0
+    },
+    {
+     "id": "T2",
+     "phase": "part1",
+     "label": "Câu 2",
+     "hint": "",
+     "part": 1,
+     "mode": "short_spoken_answer",
+     "prep_seconds": 0,
+     "expected_seconds": {
+      "min": 20,
+      "max": 45
+     },
+     "gap_days": 0
+    },
+    {
+     "id": "T3",
+     "phase": "part1",
+     "label": "Câu 3",
+     "hint": "",
+     "part": 1,
+     "mode": "short_spoken_answer",
+     "prep_seconds": 0,
+     "expected_seconds": {
+      "min": 20,
+      "max": 45
+     },
+     "gap_days": 0
+    },
+    {
+     "id": "T4",
+     "phase": "part1",
+     "label": "Câu 4",
+     "hint": "",
+     "part": 1,
+     "mode": "short_spoken_answer",
+     "prep_seconds": 0,
+     "expected_seconds": {
+      "min": 20,
+      "max": 45
+     },
+     "gap_days": 0
+    },
+    {
+     "id": "T5",
+     "phase": "part1",
+     "label": "Câu 5",
+     "hint": "",
+     "part": 1,
+     "mode": "short_spoken_answer",
+     "prep_seconds": 0,
+     "expected_seconds": {
+      "min": 20,
+      "max": 45
+     },
+     "gap_days": 0
+    },
+    {
+     "id": "T6",
+     "phase": "part1",
+     "label": "Câu 6",
+     "hint": "",
+     "part": 1,
+     "mode": "short_spoken_answer",
+     "prep_seconds": 0,
+     "expected_seconds": {
+      "min": 20,
+      "max": 45
+     },
+     "gap_days": 0
+    },
+    {
+     "id": "T7",
+     "phase": "part1",
+     "label": "Câu 7",
+     "hint": "",
+     "part": 1,
+     "mode": "short_spoken_answer",
+     "prep_seconds": 0,
+     "expected_seconds": {
+      "min": 20,
+      "max": 45
+     },
+     "gap_days": 0
+    },
+    {
+     "id": "T8",
+     "phase": "part1",
+     "label": "Câu 8",
+     "hint": "",
+     "part": 1,
+     "mode": "short_spoken_answer",
+     "prep_seconds": 0,
+     "expected_seconds": {
+      "min": 20,
+      "max": 45
+     },
+     "gap_days": 0
+    },
+    {
+     "id": "T9",
+     "phase": "part2",
+     "label": "Cue card",
+     "hint": "",
+     "part": 2,
+     "mode": "full_cue",
+     "prep_seconds": 60,
+     "expected_seconds": {
+      "min": 85,
+      "max": 120
+     },
+     "gap_days": 0
+    },
+    {
+     "id": "T10",
+     "phase": "part2",
+     "label": "Câu hỏi thêm",
+     "hint": "",
+     "part": 2,
+     "mode": "short_spoken_answer",
+     "prep_seconds": 0,
+     "expected_seconds": {
+      "min": 10,
+      "max": 30
+     },
+     "gap_days": 0
+    },
+    {
+     "id": "T11",
+     "phase": "part3",
+     "label": "Câu 1",
+     "hint": "",
+     "part": 3,
+     "mode": "short_spoken_answer",
+     "prep_seconds": 0,
+     "expected_seconds": {
+      "min": 30,
+      "max": 60
+     },
+     "gap_days": 0
+    },
+    {
+     "id": "T12",
+     "phase": "part3",
+     "label": "Câu 2",
+     "hint": "",
+     "part": 3,
+     "mode": "short_spoken_answer",
+     "prep_seconds": 0,
+     "expected_seconds": {
+      "min": 30,
+      "max": 60
+     },
+     "gap_days": 0
+    },
+    {
+     "id": "T13",
+     "phase": "part3",
+     "label": "Câu 3",
+     "hint": "",
+     "part": 3,
+     "mode": "short_spoken_answer",
+     "prep_seconds": 0,
+     "expected_seconds": {
+      "min": 30,
+      "max": 60
+     },
+     "gap_days": 0
+    },
+    {
+     "id": "T14",
+     "phase": "part3",
+     "label": "Câu 4",
+     "hint": "",
+     "part": 3,
+     "mode": "short_spoken_answer",
+     "prep_seconds": 0,
+     "expected_seconds": {
+      "min": 30,
+      "max": 60
+     },
+     "gap_days": 0
+    },
+    {
+     "id": "T15",
+     "phase": "part3",
+     "label": "Câu 5",
+     "hint": "",
+     "part": 3,
+     "mode": "short_spoken_answer",
+     "prep_seconds": 0,
+     "expected_seconds": {
+      "min": 30,
+      "max": 60
+     },
+     "gap_days": 0
+    },
+    {
+     "id": "T16",
+     "phase": "part3",
+     "label": "Câu 6",
+     "hint": "",
+     "part": 3,
+     "mode": "short_spoken_answer",
+     "prep_seconds": 0,
+     "expected_seconds": {
+      "min": 30,
+      "max": 60
+     },
+     "gap_days": 0
+    }
+   ]
+  },
+  {
+   "id": "mock-L63-M04",
+   "kind": "mock",
+   "part": 3,
+   "skills": [],
+   "title_vi": "Lịch sử địa phương, ký ức và câu chuyện cộng đồng",
+   "title_en": "Local History & Shared Stories",
+   "level": "11–14 phút",
+   "order": 8,
+   "tasks": [
+    {
+     "id": "T1",
+     "phase": "part1",
+     "label": "Câu 1",
+     "hint": "",
+     "part": 1,
+     "mode": "short_spoken_answer",
+     "prep_seconds": 0,
+     "expected_seconds": {
+      "min": 20,
+      "max": 45
+     },
+     "gap_days": 0
+    },
+    {
+     "id": "T2",
+     "phase": "part1",
+     "label": "Câu 2",
+     "hint": "",
+     "part": 1,
+     "mode": "short_spoken_answer",
+     "prep_seconds": 0,
+     "expected_seconds": {
+      "min": 20,
+      "max": 45
+     },
+     "gap_days": 0
+    },
+    {
+     "id": "T3",
+     "phase": "part1",
+     "label": "Câu 3",
+     "hint": "",
+     "part": 1,
+     "mode": "short_spoken_answer",
+     "prep_seconds": 0,
+     "expected_seconds": {
+      "min": 20,
+      "max": 45
+     },
+     "gap_days": 0
+    },
+    {
+     "id": "T4",
+     "phase": "part1",
+     "label": "Câu 4",
+     "hint": "",
+     "part": 1,
+     "mode": "short_spoken_answer",
+     "prep_seconds": 0,
+     "expected_seconds": {
+      "min": 20,
+      "max": 45
+     },
+     "gap_days": 0
+    },
+    {
+     "id": "T5",
+     "phase": "part1",
+     "label": "Câu 5",
+     "hint": "",
+     "part": 1,
+     "mode": "short_spoken_answer",
+     "prep_seconds": 0,
+     "expected_seconds": {
+      "min": 20,
+      "max": 45
+     },
+     "gap_days": 0
+    },
+    {
+     "id": "T6",
+     "phase": "part1",
+     "label": "Câu 6",
+     "hint": "",
+     "part": 1,
+     "mode": "short_spoken_answer",
+     "prep_seconds": 0,
+     "expected_seconds": {
+      "min": 20,
+      "max": 45
+     },
+     "gap_days": 0
+    },
+    {
+     "id": "T7",
+     "phase": "part1",
+     "label": "Câu 7",
+     "hint": "",
+     "part": 1,
+     "mode": "short_spoken_answer",
+     "prep_seconds": 0,
+     "expected_seconds": {
+      "min": 20,
+      "max": 45
+     },
+     "gap_days": 0
+    },
+    {
+     "id": "T8",
+     "phase": "part1",
+     "label": "Câu 8",
+     "hint": "",
+     "part": 1,
+     "mode": "short_spoken_answer",
+     "prep_seconds": 0,
+     "expected_seconds": {
+      "min": 20,
+      "max": 45
+     },
+     "gap_days": 0
+    },
+    {
+     "id": "T9",
+     "phase": "part2",
+     "label": "Cue card",
+     "hint": "",
+     "part": 2,
+     "mode": "full_cue",
+     "prep_seconds": 60,
+     "expected_seconds": {
+      "min": 85,
+      "max": 120
+     },
+     "gap_days": 0
+    },
+    {
+     "id": "T10",
+     "phase": "part2",
+     "label": "Câu hỏi thêm",
+     "hint": "",
+     "part": 2,
+     "mode": "short_spoken_answer",
+     "prep_seconds": 0,
+     "expected_seconds": {
+      "min": 10,
+      "max": 30
+     },
+     "gap_days": 0
+    },
+    {
+     "id": "T11",
+     "phase": "part3",
+     "label": "Câu 1",
+     "hint": "",
+     "part": 3,
+     "mode": "short_spoken_answer",
+     "prep_seconds": 0,
+     "expected_seconds": {
+      "min": 30,
+      "max": 60
+     },
+     "gap_days": 0
+    },
+    {
+     "id": "T12",
+     "phase": "part3",
+     "label": "Câu 2",
+     "hint": "",
+     "part": 3,
+     "mode": "short_spoken_answer",
+     "prep_seconds": 0,
+     "expected_seconds": {
+      "min": 30,
+      "max": 60
+     },
+     "gap_days": 0
+    },
+    {
+     "id": "T13",
+     "phase": "part3",
+     "label": "Câu 3",
+     "hint": "",
+     "part": 3,
+     "mode": "short_spoken_answer",
+     "prep_seconds": 0,
+     "expected_seconds": {
+      "min": 30,
+      "max": 60
+     },
+     "gap_days": 0
+    },
+    {
+     "id": "T14",
+     "phase": "part3",
+     "label": "Câu 4",
+     "hint": "",
+     "part": 3,
+     "mode": "short_spoken_answer",
+     "prep_seconds": 0,
+     "expected_seconds": {
+      "min": 30,
+      "max": 60
+     },
+     "gap_days": 0
+    },
+    {
+     "id": "T15",
+     "phase": "part3",
+     "label": "Câu 5",
+     "hint": "",
+     "part": 3,
+     "mode": "short_spoken_answer",
+     "prep_seconds": 0,
+     "expected_seconds": {
+      "min": 30,
+      "max": 60
+     },
+     "gap_days": 0
+    },
+    {
+     "id": "T16",
+     "phase": "part3",
+     "label": "Câu 6",
+     "hint": "",
      "part": 3,
      "mode": "short_spoken_answer",
      "prep_seconds": 0,

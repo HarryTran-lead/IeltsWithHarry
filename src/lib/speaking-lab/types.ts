@@ -29,7 +29,7 @@ export type SpeakingTask = {
 };
 
 export type SpeakingUnit = {
-  id: string; kind: "skill" | "topic" | "part3" | "pron"; part: 1 | 2 | 3; criterion?: Criterion; skills: string[];
+  id: string; kind: "skill" | "topic" | "part3" | "pron" | "mock"; part: 1 | 2 | 3; criterion?: Criterion; skills: string[];
   /** Part 3 series (L57–L60) or pronunciation module code. */
   series?: string; module?: string;
   title_vi: string; title_en: string; topic_en?: string; target_vi?: string; level?: string; order?: number;
