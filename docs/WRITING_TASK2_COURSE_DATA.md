@@ -6,9 +6,10 @@ repository is public, so **the data is never committed**. The code reads it at r
 | Where | Variable | Used for |
 | --- | --- | --- |
 | A folder outside the checkout | `TASK2_COURSE_DIR` | Local development and previews |
-| A private Supabase Storage bucket | `TASK2_COURSE_BUCKET` (+ `NEXT_PUBLIC_SUPABASE_URL`, `SUPABASE_SERVICE_ROLE_KEY`) | Production and the develop Preview |
+| A private Supabase Storage bucket | `TASK2_COURSE_BUCKET` (default `task2-course`; needs `NEXT_PUBLIC_SUPABASE_URL`, `SUPABASE_SERVICE_ROLE_KEY`) | Production and the develop Preview |
 
-When neither is set, the "Khoá kỹ năng" tab says the course is being updated and points learners to "Luyện đề".
+The private bucket `task2-course` exists (no policies, not public) in both the production and the development project, filled
+on 2026-11-19 with the 83 files below. When neither source can be read, the "Khoá kỹ năng" tab says the course is being updated and points learners to "Luyện đề".
 
 ## Layout (same in the folder and the bucket)
 
@@ -28,8 +29,7 @@ Files listed in the index with visibility `docs` or `shared` are not read.
 1. Supabase dashboard → Storage → **New bucket**, name e.g. `task2-course`, **Public bucket: off**. Add no policies:
    only the server's service role key reads it.
 2. Upload the layout above (drag the `R01` … `R16` folders and `DATASET_INDEX.json` into the bucket root).
-3. Vercel → Project → Settings → Environment Variables: add `TASK2_COURSE_BUCKET=task2-course` for Production
-   (and Preview if wanted), then redeploy.
+3. Only if the bucket has another name: set `TASK2_COURSE_BUCKET` on Vercel and redeploy.
 
 ## What reaches the browser
 

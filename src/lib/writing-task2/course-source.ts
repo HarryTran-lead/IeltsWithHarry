@@ -28,10 +28,13 @@ function cached<T>(key: string, load: () => Promise<T>): Promise<T> {
   return value;
 }
 
+/** The private bucket's name; `task2-course` unless a deployment overrides it. */
+const bucketName = () => process.env.TASK2_COURSE_BUCKET || "task2-course";
+
 /** Which source is configured, without saying where. */
 export function courseSource(): "dir" | "bucket" | null {
   if (process.env.TASK2_COURSE_DIR) return "dir";
-  if (process.env.TASK2_COURSE_BUCKET && process.env.NEXT_PUBLIC_SUPABASE_URL && process.env.SUPABASE_SERVICE_ROLE_KEY) return "bucket";
+  if (process.env.NEXT_PUBLIC_SUPABASE_URL && process.env.SUPABASE_SERVICE_ROLE_KEY) return "bucket";
   return null;
 }
 
@@ -41,7 +44,7 @@ async function readText(path: string): Promise<string> {
   if (dir) return readFile(join(dir, path), "utf8");
   if (courseSource() !== "bucket") throw new CourseUnavailable("Writing Task 2 course data is not configured.");
   const admin = createClient(process.env.NEXT_PUBLIC_SUPABASE_URL!, process.env.SUPABASE_SERVICE_ROLE_KEY!, { auth: { persistSession: false, autoRefreshToken: false } });
-  const { data, error } = await admin.storage.from(process.env.TASK2_COURSE_BUCKET!).download(path);
+  const { data, error } = await admin.storage.from(bucketName()).download(path);
   if (error || !data) throw new CourseUnavailable(`Course file missing: ${path}`);
   return data.text();
 }
