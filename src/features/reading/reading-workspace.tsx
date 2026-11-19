@@ -82,6 +82,7 @@ export function ReadingWorkspace({ docKey, title, paragraphs, translation, onSel
   const [saveStatus, setSaveStatus] = useState<"saved" | "saving" | "local">("saving");
   const [size, setSize] = useState(DEFAULT_SIZE);
   const [mode, setMode] = useState<"read" | "practice">("read");
+  const [passageWide, setPassageWide] = useState(false);
   const [setupOpen, setSetupOpen] = useState(false);
   const [tab, setTab] = useState<"passage" | "questions">("passage");
   const [split, setSplit] = useState(52);
@@ -279,6 +280,25 @@ export function ReadingWorkspace({ docKey, title, paragraphs, translation, onSel
       const mark = (event.target as Element).closest?.("mark[data-hl]");
       if (mark && root.contains(mark)) {
         setPopover({ ...anchor(mark.getBoundingClientRect(), event.type.startsWith("touch")), mark: mark.getAttribute("data-hl") ?? "" });
+      } else if (onSelectWord && "clientX" in event) {
+        const point = document.caretRangeFromPoint?.(event.clientX, event.clientY);
+        const node = point?.startContainer;
+        if (node?.nodeType === Node.TEXT_NODE && root.contains(node)) {
+          const source = node.textContent ?? "";
+          const offset = point?.startOffset ?? 0;
+          const word = [...source.matchAll(/[A-Za-z][A-Za-z'-]*/g)].find((match) => match.index <= offset && offset < match.index + match[0].length);
+          if (word) {
+            const wordRange = document.createRange();
+            wordRange.setStart(node, word.index);
+            wordRange.setEnd(node, word.index + word[0].length);
+            const position = anchor(wordRange.getBoundingClientRect(), false);
+            const margin = Math.min(170, window.innerWidth / 2);
+            position.x = Math.max(margin, Math.min(window.innerWidth - margin, position.x));
+            setSelectionTranslation(null);
+            setPopover({ ...position, word: word[0].toLowerCase() });
+            onSelectWord(word[0]);
+          }
+        }
       }
       return;
     }
@@ -294,7 +314,7 @@ export function ReadingWorkspace({ docKey, title, paragraphs, translation, onSel
     });
     if (!ranges.length) return;
     const word = selection.toString().trim();
-    const lookupWord = !practicing && onSelectWord && /^[A-Za-z][A-Za-z'-]*$/.test(word) ? word.toLowerCase() : undefined;
+    const lookupWord = onSelectWord && /^[A-Za-z][A-Za-z'-]*$/.test(word) ? word.toLowerCase() : undefined;
     const position = anchor(range.getBoundingClientRect(), event.type.startsWith("touch"));
     if (lookupWord || onTranslateSelection) { const margin = Math.min(onTranslateSelection ? 220 : 170, window.innerWidth / 2); position.x = Math.max(margin, Math.min(window.innerWidth - margin, position.x)); }
     setSelectionTranslation(null);
@@ -327,9 +347,10 @@ export function ReadingWorkspace({ docKey, title, paragraphs, translation, onSel
     }
   }
 
-  function enterPractice() { readStartedAt.current = 0; setMode("practice"); setTab("passage"); setActiveEvidence(null); setPopover(null); setOpenTool(null); window.getSelection()?.removeAllRanges(); }
+  function enterPractice() { readStartedAt.current = 0; setMode("practice"); setPassageWide(false); setTab("passage"); setActiveEvidence(null); setPopover(null); setOpenTool(null); window.getSelection()?.removeAllRanges(); }
   function requestPractice() { if (practice?.setup) setSetupOpen(true); else enterPractice(); }
   function jump(number: number) {
+    setPassageWide(false);
     setTab("questions");
     requestAnimationFrame(() => sideRef.current?.querySelector(`[data-q="${number}"]`)?.scrollIntoView({ behavior: "smooth", block: "center" }));
   }
@@ -371,12 +392,13 @@ export function ReadingWorkspace({ docKey, title, paragraphs, translation, onSel
     </div>)}
   </div> : null;
 
-  return <div className={`rw ${readingFont.variable} ${practicing ? "is-practice" : "is-read"} ${tools?.length ? "" : "no-tools"} ${toolsMin ? "tools-min" : ""}`} data-tab={tab} style={{ "--rw-split": `${split}%`, "--rw-size": `${sizes[size]}px` } as React.CSSProperties}>
+  return <div className={`rw ${readingFont.variable} ${practicing ? "is-practice" : "is-read"} ${passageWide ? "is-passage-wide" : ""} ${tools?.length ? "" : "no-tools"} ${toolsMin ? "tools-min" : ""}`} data-tab={tab} style={{ "--rw-split": `${split}%`, "--rw-size": `${sizes[size]}px` } as React.CSSProperties}>
     <div className="rw-bar" role="toolbar" aria-label={practicing ? "Thanh làm bài" : "Công cụ đọc"}>
       {practicing ? <>
         <button type="button" className="rw-exit" onClick={() => setMode("read")}><X size={17} /> Thoát</button>
         <strong className="rw-title">{title}</strong>
         <span className="rw-timer" title="Thời gian làm bài"><Timer size={16} /> {clock(seconds)}</span>
+        <button type="button" className="rw-wide-toggle" aria-pressed={passageWide} onClick={() => { setPassageWide((value) => !value); setTab("passage"); }}>{passageWide ? <Columns2 size={15} /> : <BookOpenText size={15} />}{passageWide ? "Chia đôi" : "Xem toàn bài"}</button>
         <div className="rw-tabs" role="tablist" aria-label="Chọn khung">
           <button type="button" role="tab" aria-selected={tab === "passage"} onClick={() => setTab("passage")}><BookOpenText size={15} /> Bài đọc</button>
           <button type="button" role="tab" aria-selected={tab === "questions"} onClick={() => setTab("questions")}><ListChecks size={15} /> Câu hỏi {done}/{total}</button>
@@ -395,6 +417,7 @@ export function ReadingWorkspace({ docKey, title, paragraphs, translation, onSel
     <div className="rw-body" ref={bodyRef}>
       <div className="rw-pane rw-passage-pane">
         {practicing && <h2 className="rw-pane-title">{title}</h2>}
+        {practicing && <p className="rw-scroll-hint">Cuộn trong khung này để xem hết bài đọc. Nhấn vào một từ để xem nghĩa.</p>}
         <div ref={textRef} className="rw-text" onMouseUp={onSelect} onTouchEnd={(event) => {
           // Mobile browsers finish their native text-selection gesture after touchend.
           event.persist();

@@ -25,6 +25,11 @@ describe("Daily News practice by question type", () => {
     expect(review?.[1]).toMatchObject({ acceptedAnswers: ["Kennedy Space Center"], supportingSentence: "s3", correctIndex: null });
   });
 
+  it("accepts a space in place of a hyphen in a written answer", () => {
+    const written: QuizKey = { ...keys[2], accepted_answers: ["fixed-price"] };
+    expect(gradePractice([written], { [written.id]: "fixed price" })?.[0].correct).toBe(true);
+  });
+
   it("rejects answers of the wrong kind or for questions outside the quiz", () => {
     expect(gradePractice(keys, { [id(2)]: "D" })).toBeNull();
     expect(gradePractice(keys, { [id(3)]: 2 })).toBeNull();

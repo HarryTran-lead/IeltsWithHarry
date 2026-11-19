@@ -97,12 +97,13 @@ export function QuestionTypePicker({ available, selected, onChange }: { availabl
   </div>;
 }
 
-export function NewsAutoQuiz({ articleId, types = ALL_TYPES, onTypesChange, onAvailable, onProgress, onStatus }: {
+export function NewsAutoQuiz({ articleId, types = ALL_TYPES, onTypesChange, onAvailable, onProgress, onStatus, onSubmitted }: {
   articleId: string;
   types?: QuestionType[];
   onTypesChange?: (next: QuestionType[]) => void;
   onAvailable?: (available: TypeCount[]) => void;
   onProgress?: (answered: boolean[], correct: (boolean | undefined)[]) => void;
+  onSubmitted?: () => void;
   onStatus?: (status: "ready" | "pending" | "error") => void;
 }) {
   const db = useMemo(() => createClient(), []);
@@ -266,6 +267,7 @@ export function NewsAutoQuiz({ articleId, types = ALL_TYPES, onTypesChange, onAv
     }
     setBusy(false);
     if (!review) return;
+    onSubmitted?.();
     const recovery = await db.rpc("streak_recovery_status");
     if (!recovery.error) setRecoveryFeedback(recovery.data as RecoveryFeedback);
     if (!partial) window.dispatchEvent(new Event("learner-xp-updated"));
