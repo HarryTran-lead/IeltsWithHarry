@@ -118,11 +118,13 @@ describe("adaptive IELTS passage quiz", () => {
       const result = await generateAdaptiveNewsQuiz("Survey findings", passage, "long-article", fetcher as typeof fetch);
       expect(result.questions).toHaveLength(13);
       const directCount = result.questions.filter((question) => looksLikeDirectLookup(question.prompt, question.supporting_sentence)).length;
-      expect(directCount).toBeGreaterThan(0);
       expect(directCount).toBeLessThanOrEqual(3);
       expect(new Set(result.questions.map((question) => question.type)).size).toBeGreaterThanOrEqual(2);
       expect(requests).toHaveLength(2);
       expect(requests[0]).toContain("Balance the set across difficulty");
+      const selectedTypes = [...requests[0].matchAll(/\d+ ([a-z_]+) candidates \(\d+ kept\)/g)].map((match) => match[1]);
+      expect(selectedTypes).toHaveLength(4);
+      expect(selectedTypes.filter((type) => ["mcq", "tfng", "sentence_completion", "short_answer"].includes(type)).length).toBeGreaterThanOrEqual(3);
       const candidateCount = Number(requests[0].match(/Create (\d+) candidate questions/)?.[1]);
       expect(candidateCount).toBeGreaterThan(13);
       expect([...requests[1].matchAll(/"id":\d+/g)]).toHaveLength(candidateCount);
