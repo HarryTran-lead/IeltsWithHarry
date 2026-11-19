@@ -1,7 +1,8 @@
 import { existsSync, readFileSync } from "node:fs";
 import { join } from "node:path";
 import { beforeAll, describe, expect, it } from "vitest";
-import { answerOf, buildCourseModule, exampleOf, practiceOf, unitOf, type CourseSourceFile } from "../src/lib/writing-task2/course-normalize";
+import { answerOf, buildCourseFinal, buildCourseModule, exampleOf, practiceOf, unitOf, type CourseSourceFile } from "../src/lib/writing-task2/course-normalize";
+import { criterionOf, finalSubmitted, mistakeDue, newMistake, reviewMistake } from "../src/lib/writing-task2/final-types";
 import { attemptDone, courseModuleIds, parseCourseAttempt } from "../src/lib/writing-task2/course-types";
 
 /*
@@ -82,5 +83,57 @@ describe.skipIf(!hasData)("Writing Task 2 course data (local private copy)", () 
     const learner = JSON.stringify(built.R16.module) + JSON.stringify(built.R16.answers);
     for (const prompt of prompts) expect(learner).not.toContain(prompt);
     expect(built.R16.module.practice.every((item) => !item.peek)).toBe(true);
+  });
+});
+
+describe("Writing Task 2 mistake log schedule", () => {
+  const base = new Date("2026-11-19T00:00:00Z");
+  it("comes back after 1, 3, 7, 14 days and is mastered after the fourth correct rewrite", () => {
+    let entry = newMistake({ criterion: "TR", error_code: "R16-E-TR-01", original_excerpt: "Bad.", revised_excerpt: "Good.", why_vi: "Vì câu gốc bỏ lệnh đề.", source: "test" }, [1, 3, 7, 14], base);
+    expect(entry.next_review_at).toBe("2026-11-20T00:00:00.000Z");
+    expect(mistakeDue(entry, base)).toBe(false);
+    // Each correct review (here all on the same day) schedules the next interval: +3, +7, +14 days.
+    for (const day of ["2026-11-22", "2026-11-26", "2026-12-03"]) {
+      entry = reviewMistake(entry, true, [1, 3, 7, 14], base);
+      expect(entry.next_review_at.slice(0, 10)).toBe(day);
+    }
+    entry = reviewMistake(entry, true, [1, 3, 7, 14], base);
+    expect(entry.review_status).toBe("mastered");
+    expect(mistakeDue(entry, new Date("2030-01-01"))).toBe(false);
+  });
+
+  it("brings a missed rewrite back the next day and reads criterion names", () => {
+    const entry = newMistake({ criterion: "GRA", error_code: "x", original_excerpt: "a b", revised_excerpt: "a c", why_vi: "Sai thì của động từ.", source: undefined }, [1, 3], base);
+    expect(reviewMistake(entry, false, [1, 3], base)).toMatchObject({ review_status: "attempted", review_attempts: 0, next_review_at: "2026-11-20T00:00:00.000Z" });
+    expect([criterionOf("Task Response"), criterionOf("Coherence and Cohesion"), criterionOf("Lexical Resource"), criterionOf("Grammatical Range and Accuracy")]).toEqual(["TR", "CC", "LR", "GRA"]);
+  });
+
+  it("opens final guidance only for a submitted essay of real length", () => {
+    const words = (n: number) => Array.from({ length: n }, (_, i) => `w${i}`).join(" ");
+    expect(finalSubmitted({ f: 1, startedAt: "s", essay: words(150), review: {}, evidence: {}, updatedAt: 1 })).toBe(false);
+    expect(finalSubmitted({ f: 1, startedAt: "s", submittedAt: "t", essay: words(99), review: {}, evidence: {}, updatedAt: 1 })).toBe(false);
+    expect(finalSubmitted({ f: 1, startedAt: "s", submittedAt: "t", essay: words(100), review: {}, evidence: {}, updatedAt: 1 })).toBe(true);
+  });
+});
+
+describe.skipIf(!hasData)("Writing Task 2 final assessment data (local private copy)", () => {
+  it("lists 7 papers with no prompt text, a 4-criterion rubric and the mistake codes", () => {
+    const { bundle, prompts, models } = buildCourseFinal(filesFor("R16"));
+    expect(bundle.papers).toHaveLength(7);
+    expect(new Set(bundle.papers.map((paper) => paper.question_type)).size).toBe(7);
+    expect(bundle.rubric.dimensions.map((dimension) => dimension.id)).toEqual(["TR", "CC", "LR", "GRA"]);
+    expect(bundle.mistakes.length).toBe(20);
+    const learner = JSON.stringify(bundle);
+    for (const prompt of Object.values(prompts)) expect(learner).not.toContain(prompt.prompt_en);
+    for (const model of Object.values(models)) expect(learner).not.toContain(model.essay_en.slice(0, 80));
+    for (const paper of bundle.papers) {
+      expect(prompts[paper.id]?.prompt_en, paper.id).toBeTruthy();
+      expect(models[paper.question_type]?.essay_en, paper.question_type).toBeTruthy();
+    }
+  });
+
+  it("keeps the final files out of the R16 module", () => {
+    const { module } = buildCourseModule("R16", filesFor("R16"));
+    expect(JSON.stringify(module)).not.toMatch(/LOCKED_SERVER_ONLY|R16-E-TR-01/);
   });
 });

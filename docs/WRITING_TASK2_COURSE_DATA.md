@@ -37,7 +37,11 @@ Files listed in the index with visibility `docs` or `shared` are not read.
   worked examples and practice items. Unknown fields are kept as labelled rows; record metadata is dropped.
 - `server_only` files only feed the reveal route (`/api/self-study/writing-task-2/course/[module]/reveal`), one item at a time,
   for signed-in learners. R01–R15 allow opening a reference before writing (the page marks it); R16 requires a saved attempt.
-- R16's `FINAL_LOCKED_PROMPTS_7` and `WORKED_FULL_ESSAYS_7` are not served at all yet.
+- R16's final assessment (`/course/final`): the 7 paper slots, rubric and mistake codes are public to signed-in learners;
+  `/final/[paper]/start` records the start in the learner's own `writing_drafts` row (`t2-final:<paper>`) and only then returns
+  the locked prompt; `/final/[paper]/review` returns the idea guidance and the `WORKED_FULL_ESSAYS_7` model of the same type
+  only after a submitted essay of 100+ words. Self-review is a 0–3 evidence check, never a band.
+- The mistake log stores one row per entry (`t2-mistake:<id>`), reviewed after 1, 3, 7 and 14 days.
 - Learner attempts are stored one row per item in `writing_drafts` (`t2-course:<module>:<practiceId>`); no migration.
 
 ## Updating the content
