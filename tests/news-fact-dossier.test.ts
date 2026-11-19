@@ -62,6 +62,7 @@ it("passes factual notes but no newspaper prose to the independent writer", asyn
     ...facts.slice(5, 8).map((fact) => ({ ...fact, source_url: report })),
   ] };
   let writerInput = "";
+  let writerModel = "";
   const fetcher = (async (url: RequestInfo | URL, init?: RequestInit) => {
     if (String(url).startsWith("https://www.nasa.gov/")) return new Response(`<main>${"Official event information. ".repeat(30)}</main>`, { headers: { "Content-Type": "text/html" } });
     if (String(url) === report) return new Response(`<article><p>${"Reporter descriptive prose must stay outside the writer prompt. ".repeat(15)}</p></article>`, { headers: { "Content-Type": "text/html" } });
@@ -71,12 +72,14 @@ it("passes factual notes but no newspaper prose to the independent writer", asyn
     if (system.startsWith("Check each atomic")) response = { evaluations: (request.contents[0].parts[0].text.includes(report) ? [6, 7, 8] : [1, 2, 3, 4, 5]).map((index) => ({ index, supported: true })) };
     else if (system.startsWith("Write an original")) {
       writerInput = request.contents[0].parts[0].text;
-      response = { title: "An independent student programme", body: Array.from({ length: 8 }, () => Array.from({ length: 85 }, () => "learning").join(" ")).join("\n\n") };
+      writerModel = String(url);
+      response = { title: "An independent student programme", paragraphs: Array.from({ length: 8 }, () => Array.from({ length: 85 }, () => "learning").join(" ")) };
     } else response = { grounded: true, independent_expression: true, unsupported: [] };
     return Response.json({ candidates: [{ finishReason: "STOP", content: { parts: [{ text: JSON.stringify(response) }] } }] });
   }) as typeof fetch;
   try {
     await writeArticleFromFacts(dossier, fetcher);
+    expect(writerModel).toContain("gemini-3.1-flash-lite");
     expect(writerInput).toContain(report);
     expect(writerInput).not.toContain("Reporter descriptive prose");
   } finally { if (previous === undefined) delete process.env.NEWS_ARTICLE_GEMINI_API_KEY; else process.env.NEWS_ARTICLE_GEMINI_API_KEY = previous; }
@@ -109,14 +112,14 @@ it("accepts a complete IELTS-length passage from eight verified facts", async ()
     const system = request.systemInstruction.parts[0].text;
     let response: unknown;
     if (system.startsWith("Check each atomic")) response = { evaluations: shortFacts.map((_, index) => ({ index: index + 1, supported: true })) };
-    else if (system.startsWith("Write an original")) response = { title: "A new science mission", body: Array.from({ length: 9 }, () => Array(75).fill("mission").join(" ")).join("\n\n") };
+    else if (system.startsWith("Write an original")) response = { title: "A new science mission", paragraphs: Array.from({ length: 8 }, () => Array(85).fill("mission").join(" ")) };
     else { reviews++; response = { grounded: true, independent_expression: true, unsupported: [] }; }
     return Response.json({ candidates: [{ finishReason: "STOP", content: { parts: [{ text: JSON.stringify(response) }] } }] });
   }) as typeof fetch;
   try {
     const article = await writeArticleFromFacts({ topic: "A new science launch", category: "Science", facts: shortFacts }, fetcher);
-    expect(article.body.split(/\s+/)).toHaveLength(675);
-    expect(article.body.split(/\n\s*\n/)).toHaveLength(9);
+    expect(article.body.split(/\s+/)).toHaveLength(680);
+    expect(article.body.split(/\n\s*\n/)).toHaveLength(8);
     expect(reviews).toBe(1);
   } finally { if (previous === undefined) delete process.env.NEWS_ARTICLE_GEMINI_API_KEY; else process.env.NEWS_ARTICLE_GEMINI_API_KEY = previous; }
 });
@@ -137,7 +140,7 @@ it("revises a near-complete short passage from the same facts before final revie
     else if (system.startsWith("Write an original")) {
       drafts++;
       revisionPrompt = request.contents[0].parts[0].text;
-      response = { title: "A new science mission", body: Array.from({ length: 8 }, () => Array(drafts === 3 ? 85 : 44).fill("mission").join(" ")).join("\n\n") };
+      response = { title: "A new science mission", paragraphs: Array.from({ length: 8 }, () => Array(drafts === 3 ? 85 : 44).fill("mission").join(" ")) };
     } else { reviews++; response = { grounded: true, independent_expression: true, unsupported: [] }; }
     return Response.json({ candidates: [{ finishReason: "STOP", content: { parts: [{ text: JSON.stringify(response) }] } }] });
   }) as typeof fetch;
@@ -163,7 +166,7 @@ it("retries a short draft once, then reviews only a complete article", async () 
     if (system.startsWith("Check each atomic")) response = { evaluations: facts.map((_, index) => ({ index: index + 1, supported: true })) };
     else if (system.startsWith("Write an original")) {
       drafts++;
-      response = { title: "A new science mission", body: Array.from({ length: 8 }, () => Array.from({ length: drafts === 1 ? 70 : 90 }, () => "mission").join(" ")).join("\n\n") };
+      response = { title: "A new science mission", paragraphs: Array.from({ length: 8 }, () => Array.from({ length: drafts === 1 ? 70 : 90 }, () => "mission").join(" ")) };
     } else { reviews++; response = { grounded: true, independent_expression: true, unsupported: [] }; }
     return Response.json({ candidates: [{ finishReason: "STOP", content: { parts: [{ text: JSON.stringify(response) }] } }] });
   }) as typeof fetch;
