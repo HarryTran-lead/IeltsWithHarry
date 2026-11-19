@@ -6,7 +6,7 @@
  */
 import { createClient } from "@/lib/supabase/browser";
 import { liveMode } from "@/lib/runtime";
-import { TASK1_API, parseTask1State, task1DraftSlug, type Task1CheckResult, type Task1Reveal, type Task1State } from "@/lib/writing-task1/types";
+import { TASK1_API, parseTask1State, task1DraftSlug, type Task1CheckResult, type Task1Model, type Task1Reveal, type Task1State } from "@/lib/writing-task1/types";
 
 export const emptyTask1State = (): Task1State => ({ t1: 1, choices: {}, results: {}, answers: {}, saved: {}, essay: "", checklist: {}, updatedAt: 0 });
 const storageKey = (lessonId: string) => `writing-task1-state:${lessonId}`;
@@ -71,6 +71,14 @@ async function postJson<T>(url: string, payload: unknown): Promise<T> {
 
 export const checkTask1 = (lessonId: string, choices: Record<string, string>) =>
   postJson<{ results: Record<string, Task1CheckResult> }>(`${TASK1_API}/${lessonId}/check`, { choices }).then((body) => body.results);
+
+/** The model to study before writing (foundation lessons only; the route refuses the others). */
+export async function learnTask1(lessonId: string): Promise<Task1Model | null> {
+  const response = await fetch(`${TASK1_API}/${lessonId}/learn`, { cache: "no-store" });
+  const body = await response.json().catch(() => ({}));
+  if (!response.ok) throw new Error(body.error ?? "Không tải được bài mẫu.");
+  return (body as { model: Task1Model | null }).model;
+}
 
 export function revealTask1(lessonId: string, targets: string[], state: Task1State): Promise<Task1Reveal> {
   const texts = liveMode ? undefined : Object.fromEntries(targets.map((key) => [key, key === "essay" ? state.essay : state.answers[key] ?? ""]));

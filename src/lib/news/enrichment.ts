@@ -204,9 +204,16 @@ export function newsQuizFreeTierReady() {
     && process.env.AI_FACTORY_FREE_TIER_CONFIRMED === "true"
     && Boolean(process.env.AI_FACTORY_GEMINI_API_KEY);
 }
-export async function geminiJson<T>(system: string, user: string | GeminiPart[], schema: unknown, { fetcher = fetch, maxOutputTokens = 16000, temperature = 0.4, googleSearch = false, models, freeTierOnly = false }: { fetcher?: typeof fetch; maxOutputTokens?: number; temperature?: number; googleSearch?: boolean; models?: string[]; freeTierOnly?: boolean } = {}): Promise<{ model: string; data: T }> {
-  const key = freeTierOnly ? (newsQuizFreeTierReady() ? process.env.AI_FACTORY_GEMINI_API_KEY : undefined) : process.env.GEMINI_API_KEY;
-  if (!key) throw new Error(freeTierOnly ? "Confirmed free-tier Gemini key is not configured" : "GEMINI_API_KEY is not configured");
+export function newsArticleFreeTierReady() {
+  return process.env.NEWS_ARTICLE_FREE_TIER_CONFIRMED === "true"
+    && Boolean(process.env.NEWS_ARTICLE_GEMINI_API_KEY);
+}
+export async function geminiJson<T>(system: string, user: string | GeminiPart[], schema: unknown, { fetcher = fetch, maxOutputTokens = 16000, temperature = 0.4, googleSearch = false, models, freeTierOnly = false, articleOnly = false }: { fetcher?: typeof fetch; maxOutputTokens?: number; temperature?: number; googleSearch?: boolean; models?: string[]; freeTierOnly?: boolean; articleOnly?: boolean } = {}): Promise<{ model: string; data: T }> {
+  if (freeTierOnly && articleOnly) throw new Error("Choose one Gemini key purpose");
+  const key = articleOnly ? (newsArticleFreeTierReady() ? process.env.NEWS_ARTICLE_GEMINI_API_KEY : undefined)
+    : freeTierOnly ? (newsQuizFreeTierReady() ? process.env.AI_FACTORY_GEMINI_API_KEY : undefined) : process.env.GEMINI_API_KEY;
+  if (!key) throw new Error(articleOnly ? "Confirmed free-tier Gemini key is not configured for news articles"
+    : freeTierOnly ? "Confirmed free-tier Gemini key is not configured" : "GEMINI_API_KEY is not configured");
   const request = JSON.stringify({
     systemInstruction: { parts: [{ text: system }] },
     contents: [{ role: "user", parts: typeof user === "string" ? [{ text: user }] : user }],
@@ -214,11 +221,19 @@ export async function geminiJson<T>(system: string, user: string | GeminiPart[],
     generationConfig: { maxOutputTokens, temperature, responseFormat: { text: { mimeType: "APPLICATION_JSON", schema } } },
   });
   let lastError: Error = new Error("AI service unavailable");
-  for (const model of models ?? geminiModels()) {
-    const response = await fetcher(`https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent`, {
-      method: "POST", signal: AbortSignal.timeout(45000), cache: "no-store",
-      headers: { "x-goog-api-key": key, "Content-Type": "application/json" }, body: request,
-    });
+  const modelChoices = models ?? (articleOnly || freeTierOnly
+    ? [...new Set([...geminiModels(), "gemini-3.1-flash-lite"])] : geminiModels());
+  for (const model of modelChoices) {
+    let response: Response;
+    for (let attempt = 0; ; attempt++) {
+      response = await fetcher(`https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent`, {
+        method: "POST", signal: AbortSignal.timeout(45000), cache: "no-store",
+        headers: { "x-goog-api-key": key, "Content-Type": "application/json" }, body: request,
+      });
+      if (!(articleOnly || freeTierOnly) || response.status !== 503 || attempt >= 2) break;
+      await response.body?.cancel().catch(() => undefined);
+      await new Promise((resolve) => setTimeout(resolve, 750 * 2 ** attempt));
+    }
     if (response.status === 429) { lastError = await quotaError(response); continue; }
     if (response.status === 404) { lastError = new Error(`AI model ${model} is unavailable`); continue; }
     if (response.status >= 500) { lastError = new Error(`AI service returned HTTP ${response.status}`); continue; }
@@ -592,7 +607,8 @@ export async function enrichNews({ scheduled = false }: { scheduled?: boolean } 
     result.translationsAdded = translated.added;
     if (translated.error) result.errors.push(`Translation: ${translated.error}`);
     if (translated.quotaLimited) result.quotaLimited = true;
-    if (translated.checked) return result;
+    // A failed legacy translation must not block a manual article run using its separate key.
+    if (translated.checked && (scheduled || !translated.error)) return result;
   }
   if (!scheduled || slot === "discovery") {
     const { discoverPressFacts } = await import("./press-discovery");

@@ -1,6 +1,13 @@
-import { expect, it } from "vitest";
+import { afterAll, beforeAll, expect, it } from "vitest";
 import { factDossierSchema } from "../src/lib/news/fact-dossier-schema";
 import { passageWordRange, readFactualSource, writeArticleFromFacts } from "../src/lib/news/fact-dossier";
+
+const previousArticleConfirmation = process.env.NEWS_ARTICLE_FREE_TIER_CONFIRMED;
+beforeAll(() => { process.env.NEWS_ARTICLE_FREE_TIER_CONFIRMED = "true"; });
+afterAll(() => {
+  if (previousArticleConfirmation === undefined) delete process.env.NEWS_ARTICLE_FREE_TIER_CONFIRMED;
+  else process.env.NEWS_ARTICLE_FREE_TIER_CONFIRMED = previousArticleConfirmation;
+});
 
 const facts = Array.from({ length: 14 }, (_, index) => ({
   claim: `NASA reported verified mission detail number ${index + 1} for the upcoming science launch.`,
@@ -8,23 +15,23 @@ const facts = Array.from({ length: 14 }, (_, index) => ({
 }));
 
 it("aims for IELTS passage length when the verified dossier is substantial", () => {
-  expect(passageWordRange(8)).toEqual({ min: 500, max: 650 });
-  expect(passageWordRange(12)).toEqual({ min: 650, max: 800 });
+  expect(passageWordRange(8)).toEqual({ min: 650, max: 800 });
+  expect(passageWordRange(12)).toEqual({ min: 700, max: 900 });
   expect(passageWordRange(18)).toEqual({ min: 700, max: 900 });
 });
 
-it("requires enough distinct primary-source facts for a full reading passage", () => {
+it("requires enough distinct verified facts for a full reading passage", () => {
   expect(factDossierSchema.safeParse({ topic: "A new science launch", category: "Science", facts: facts.slice(0, 8) }).success).toBe(true);
 });
 
-it("allows a few press facts only alongside primary facts", () => {
+it("accepts factual notes from reviewed Vietnam newspapers", () => {
   const pressFacts = facts.slice(5, 8).map((fact) => ({ ...fact, source_url: "https://e.vnexpress.net/news/example" }));
   expect(factDossierSchema.safeParse({ topic: "A new science launch", category: "Science", facts: [...facts.slice(0, 5), ...pressFacts] }).success).toBe(true);
-  expect(factDossierSchema.safeParse({ topic: "A new science launch", category: "Science", facts: [...facts.slice(0, 4), ...facts.slice(4, 8).map((fact) => ({ ...fact, source_url: "https://news.tuoitre.vn/example" }))] }).success).toBe(false);
+  expect(factDossierSchema.safeParse({ topic: "A new science launch", category: "Science", facts: [...facts.slice(0, 4), ...facts.slice(4, 8).map((fact) => ({ ...fact, source_url: "https://news.tuoitre.vn/example" }))] }).success).toBe(true);
 });
 
-it("rejects a press-only, thin or duplicated dossier", () => {
-  expect(factDossierSchema.safeParse({ topic: "A new science launch", category: "Science", facts: facts.map((fact) => ({ ...fact, source_url: "https://e.vnexpress.net/example" })) }).success).toBe(false);
+it("accepts a press-only dossier but rejects thin, duplicated or unreviewed evidence", () => {
+  expect(factDossierSchema.safeParse({ topic: "A new science launch", category: "Science", facts: facts.map((fact) => ({ ...fact, source_url: "https://e.vnexpress.net/example" })) }).success).toBe(true);
   expect(factDossierSchema.safeParse({ topic: "A new science launch", category: "Science", facts: facts.slice(0, 7) }).success).toBe(false);
   expect(factDossierSchema.safeParse({ topic: "A new science launch", category: "Science", facts: facts.map(() => facts[0]) }).success).toBe(false);
   expect(factDossierSchema.safeParse({ topic: "A new science launch", category: "Science", facts: [...facts.slice(0, 5), ...facts.slice(5, 8).map((fact) => ({ ...fact, source_url: "https://e.vnexpress.net.evil.example/story" }))] }).success).toBe(false);
@@ -38,23 +45,24 @@ it("accepts relevant official Vietnam and regional sources without admitting loo
   expect(factDossierSchema.safeParse({ topic: "A regional policy change", category: "World News", facts: facts.map((fact) => ({ ...fact, source_url: "https://baochinhphu.vn.example.com/announcement" })) }).success).toBe(false);
 });
 
-it("limits newspaper evidence to a short excerpt and rejects unreviewed hosts", async () => {
-  const fetcher = (async () => new Response(`<article>${Array.from({ length: 8 }, (_, index) => `<p>Paragraph ${index + 1} contains factual details about a public event in Vietnam and its participants.</p>`).join("")}</article>`, { headers: { "Content-Type": "text/html" } })) as typeof fetch;
+it("bounds newspaper evidence and rejects unreviewed hosts", async () => {
+  const fetcher = (async () => new Response(`<article>${Array.from({ length: 22 }, (_, index) => `<p>Paragraph ${index + 1} contains factual details about a public event in Vietnam and its participants.</p>`).join("")}</article>`, { headers: { "Content-Type": "text/html" } })) as typeof fetch;
   const excerpt = await readFactualSource("https://news.tuoitre.vn/example.html", fetcher);
-  expect(excerpt).toContain("Paragraph 5");
-  expect(excerpt).not.toContain("Paragraph 6");
+  expect(excerpt).toContain("Paragraph 20");
+  expect(excerpt).not.toContain("Paragraph 21");
   await expect(readFactualSource("https://news.tuoitre.vn.evil.example/story", fetcher)).rejects.toThrow("not approved");
 });
 
 it("passes factual notes but no newspaper prose to the independent writer", async () => {
-  const previous = process.env.GEMINI_API_KEY;
-  process.env.GEMINI_API_KEY = "test-key";
+  const previous = process.env.NEWS_ARTICLE_GEMINI_API_KEY;
+  process.env.NEWS_ARTICLE_GEMINI_API_KEY = "test-key";
   const report = "https://news.tuoitre.vn/public-event.html";
   const dossier = { topic: "A student programme in Vietnam", category: "Education", facts: [
     ...facts.slice(0, 5),
     ...facts.slice(5, 8).map((fact) => ({ ...fact, source_url: report })),
   ] };
   let writerInput = "";
+  let writerModel = "";
   const fetcher = (async (url: RequestInfo | URL, init?: RequestInit) => {
     if (String(url).startsWith("https://www.nasa.gov/")) return new Response(`<main>${"Official event information. ".repeat(30)}</main>`, { headers: { "Content-Type": "text/html" } });
     if (String(url) === report) return new Response(`<article><p>${"Reporter descriptive prose must stay outside the writer prompt. ".repeat(15)}</p></article>`, { headers: { "Content-Type": "text/html" } });
@@ -64,20 +72,22 @@ it("passes factual notes but no newspaper prose to the independent writer", asyn
     if (system.startsWith("Check each atomic")) response = { evaluations: (request.contents[0].parts[0].text.includes(report) ? [6, 7, 8] : [1, 2, 3, 4, 5]).map((index) => ({ index, supported: true })) };
     else if (system.startsWith("Write an original")) {
       writerInput = request.contents[0].parts[0].text;
-      response = { title: "An independent student programme", body: Array.from({ length: 6 }, () => Array.from({ length: 100 }, () => "learning").join(" ")).join("\n\n") };
+      writerModel = String(url);
+      response = { title: "An independent student programme", paragraphs: Array.from({ length: 8 }, () => Array.from({ length: 85 }, () => "learning").join(" ")) };
     } else response = { grounded: true, independent_expression: true, unsupported: [] };
     return Response.json({ candidates: [{ finishReason: "STOP", content: { parts: [{ text: JSON.stringify(response) }] } }] });
   }) as typeof fetch;
   try {
     await writeArticleFromFacts(dossier, fetcher);
+    expect(writerModel).toContain("gemini-3.1-flash-lite");
     expect(writerInput).toContain(report);
     expect(writerInput).not.toContain("Reporter descriptive prose");
-  } finally { if (previous === undefined) delete process.env.GEMINI_API_KEY; else process.env.GEMINI_API_KEY = previous; }
+  } finally { if (previous === undefined) delete process.env.NEWS_ARTICLE_GEMINI_API_KEY; else process.env.NEWS_ARTICLE_GEMINI_API_KEY = previous; }
 });
 
 it("checks factual notes against the cited page before asking AI to write", async () => {
-  const previous = process.env.GEMINI_API_KEY;
-  process.env.GEMINI_API_KEY = "test-key";
+  const previous = process.env.NEWS_ARTICLE_GEMINI_API_KEY;
+  process.env.NEWS_ARTICLE_GEMINI_API_KEY = "test-key";
   let modelCalls = 0;
   const fetcher = async (input: RequestInfo | URL) => {
     const url = String(input);
@@ -88,12 +98,12 @@ it("checks factual notes against the cited page before asking AI to write", asyn
   try {
     await expect(writeArticleFromFacts({ topic: "A new science launch", category: "Science", facts }, fetcher as typeof fetch)).rejects.toThrow("not verified");
     expect(modelCalls).toBe(1);
-  } finally { if (previous === undefined) delete process.env.GEMINI_API_KEY; else process.env.GEMINI_API_KEY = previous; }
+  } finally { if (previous === undefined) delete process.env.NEWS_ARTICLE_GEMINI_API_KEY; else process.env.NEWS_ARTICLE_GEMINI_API_KEY = previous; }
 });
 
-it("accepts a complete nine-paragraph passage from eight verified facts", async () => {
-  const previous = process.env.GEMINI_API_KEY;
-  process.env.GEMINI_API_KEY = "test-key";
+it("accepts a complete IELTS-length passage from eight verified facts", async () => {
+  const previous = process.env.NEWS_ARTICLE_GEMINI_API_KEY;
+  process.env.NEWS_ARTICLE_GEMINI_API_KEY = "test-key";
   const shortFacts = facts.slice(0, 8);
   let reviews = 0;
   const fetcher = (async (input: RequestInfo | URL, init?: RequestInit) => {
@@ -102,21 +112,21 @@ it("accepts a complete nine-paragraph passage from eight verified facts", async 
     const system = request.systemInstruction.parts[0].text;
     let response: unknown;
     if (system.startsWith("Check each atomic")) response = { evaluations: shortFacts.map((_, index) => ({ index: index + 1, supported: true })) };
-    else if (system.startsWith("Write an original")) response = { title: "A new science mission", body: Array.from({ length: 9 }, () => Array(60).fill("mission").join(" ")).join("\n\n") };
+    else if (system.startsWith("Write an original")) response = { title: "A new science mission", paragraphs: Array.from({ length: 8 }, () => Array(85).fill("mission").join(" ")) };
     else { reviews++; response = { grounded: true, independent_expression: true, unsupported: [] }; }
     return Response.json({ candidates: [{ finishReason: "STOP", content: { parts: [{ text: JSON.stringify(response) }] } }] });
   }) as typeof fetch;
   try {
     const article = await writeArticleFromFacts({ topic: "A new science launch", category: "Science", facts: shortFacts }, fetcher);
-    expect(article.body.split(/\s+/)).toHaveLength(540);
-    expect(article.body.split(/\n\s*\n/)).toHaveLength(9);
+    expect(article.body.split(/\s+/)).toHaveLength(680);
+    expect(article.body.split(/\n\s*\n/)).toHaveLength(8);
     expect(reviews).toBe(1);
-  } finally { if (previous === undefined) delete process.env.GEMINI_API_KEY; else process.env.GEMINI_API_KEY = previous; }
+  } finally { if (previous === undefined) delete process.env.NEWS_ARTICLE_GEMINI_API_KEY; else process.env.NEWS_ARTICLE_GEMINI_API_KEY = previous; }
 });
 
 it("revises a near-complete short passage from the same facts before final review", async () => {
-  const previous = process.env.GEMINI_API_KEY;
-  process.env.GEMINI_API_KEY = "test-key";
+  const previous = process.env.NEWS_ARTICLE_GEMINI_API_KEY;
+  process.env.NEWS_ARTICLE_GEMINI_API_KEY = "test-key";
   const shortFacts = facts.slice(0, 8);
   let drafts = 0;
   let reviews = 0;
@@ -130,7 +140,7 @@ it("revises a near-complete short passage from the same facts before final revie
     else if (system.startsWith("Write an original")) {
       drafts++;
       revisionPrompt = request.contents[0].parts[0].text;
-      response = { title: "A new science mission", body: Array.from({ length: 8 }, () => Array(drafts === 3 ? 65 : 44).fill("mission").join(" ")).join("\n\n") };
+      response = { title: "A new science mission", paragraphs: Array.from({ length: 8 }, () => Array(drafts === 3 ? 85 : 44).fill("mission").join(" ")) };
     } else { reviews++; response = { grounded: true, independent_expression: true, unsupported: [] }; }
     return Response.json({ candidates: [{ finishReason: "STOP", content: { parts: [{ text: JSON.stringify(response) }] } }] });
   }) as typeof fetch;
@@ -138,14 +148,14 @@ it("revises a near-complete short passage from the same facts before final revie
     const article = await writeArticleFromFacts({ topic: "A new science launch", category: "Science", facts: shortFacts }, fetcher);
     expect(drafts).toBe(3);
     expect(revisionPrompt).toContain("Revise this AI-created draft");
-    expect(article.body.split(/\s+/)).toHaveLength(520);
+    expect(article.body.split(/\s+/)).toHaveLength(680);
     expect(reviews).toBe(1);
-  } finally { if (previous === undefined) delete process.env.GEMINI_API_KEY; else process.env.GEMINI_API_KEY = previous; }
+  } finally { if (previous === undefined) delete process.env.NEWS_ARTICLE_GEMINI_API_KEY; else process.env.NEWS_ARTICLE_GEMINI_API_KEY = previous; }
 });
 
 it("retries a short draft once, then reviews only a complete article", async () => {
-  const previous = process.env.GEMINI_API_KEY;
-  process.env.GEMINI_API_KEY = "test-key";
+  const previous = process.env.NEWS_ARTICLE_GEMINI_API_KEY;
+  process.env.NEWS_ARTICLE_GEMINI_API_KEY = "test-key";
   let drafts = 0;
   let reviews = 0;
   const fetcher = (async (input: RequestInfo | URL, init?: RequestInit) => {
@@ -156,14 +166,14 @@ it("retries a short draft once, then reviews only a complete article", async () 
     if (system.startsWith("Check each atomic")) response = { evaluations: facts.map((_, index) => ({ index: index + 1, supported: true })) };
     else if (system.startsWith("Write an original")) {
       drafts++;
-      response = { title: "A new science mission", body: Array.from({ length: 6 }, () => Array.from({ length: drafts === 1 ? 70 : 110 }, () => "mission").join(" ")).join("\n\n") };
+      response = { title: "A new science mission", paragraphs: Array.from({ length: 8 }, () => Array.from({ length: drafts === 1 ? 70 : 90 }, () => "mission").join(" ")) };
     } else { reviews++; response = { grounded: true, independent_expression: true, unsupported: [] }; }
     return Response.json({ candidates: [{ finishReason: "STOP", content: { parts: [{ text: JSON.stringify(response) }] } }] });
   }) as typeof fetch;
   try {
     const article = await writeArticleFromFacts({ topic: "A new science launch", category: "Science", facts }, fetcher);
-    expect(article.body.split(/\s+/)).toHaveLength(660);
+    expect(article.body.split(/\s+/)).toHaveLength(720);
     expect(drafts).toBe(2);
     expect(reviews).toBe(1);
-  } finally { if (previous === undefined) delete process.env.GEMINI_API_KEY; else process.env.GEMINI_API_KEY = previous; }
+  } finally { if (previous === undefined) delete process.env.NEWS_ARTICLE_GEMINI_API_KEY; else process.env.NEWS_ARTICLE_GEMINI_API_KEY = previous; }
 });

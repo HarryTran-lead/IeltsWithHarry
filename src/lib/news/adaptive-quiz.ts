@@ -30,7 +30,9 @@ function promptWithNoteWordLimit(prompt: string, limit: number) {
 function schemaFor(candidatesByType: QuizTargets) { return {
   type: "object", additionalProperties: false, required: ["questions", "image_query"],
   properties: {
-    questions: { type: "array", minItems: Object.values(candidatesByType).reduce((sum, count) => sum + (count ?? 0), 0), maxItems: Object.values(candidatesByType).reduce((sum, count) => sum + (count ?? 0), 0), items: { type: "object", additionalProperties: false,
+    // Gemini rejects large arrays with exact item counts as too many schema states.
+    // The prompt requests the distribution; validation below limits what we save.
+    questions: { type: "array", items: { type: "object", additionalProperties: false,
       required: [...rawQuestionRequired, "needs_review", "review_reason"],
       properties: { ...rawQuestionProperties,
         type: { type: "string", enum: Object.entries(candidatesByType).filter(([, count]) => Boolean(count)).map(([type]) => type) },
@@ -140,8 +142,8 @@ export function validateAdaptiveQuiz(value: unknown, body: string, selected: Iel
   return grouped;
 }
 
-// One bounded review request can cover the whole largest set (13 plus three spares).
-const MAX_SECOND_PASS_QUESTIONS = 16;
+// One bounded review request can cover the largest set (13 plus two spares per type).
+const MAX_SECOND_PASS_QUESTIONS = 21;
 function candidateForReview(question: ReviewableQuestion) {
   return {
     type: question.type,
@@ -181,7 +183,7 @@ async function reviewRiskyQuestions(
   const reviewText = batch.some(({ question }) => question.reviewReason.startsWith("Not Given")) ? fullArticle : excerpt;
   const reviewSchema = {
     type: "object", additionalProperties: false, required: ["reviews"],
-    properties: { reviews: { type: "array", minItems: batch.length, maxItems: batch.length, items: {
+    properties: { reviews: { type: "array", items: {
       type: "object", additionalProperties: false, required: ["id", "action", "reason"],
       properties: { id: { type: "integer" }, action: { type: "string", enum: ["keep", "fix", "drop"] }, reason: { type: "string" },
         question: { type: "object", additionalProperties: false, required: rawQuestionRequired, properties: {
@@ -209,7 +211,7 @@ async function reviewRiskyQuestions(
   let response: ReviewResponse;
   try {
     const reviewed = await geminiJson<ReviewResponse>(reviewPrompt, "ARTICLE:\n" + reviewText, reviewSchema,
-      { fetcher, maxOutputTokens: Math.min(9500, 1200 + batch.length * 520), temperature: 0.1, freeTierOnly: true });
+      { fetcher, maxOutputTokens: Math.min(13000, 1200 + batch.length * 520), temperature: 0.1, freeTierOnly: true });
     response = reviewed.data;
   } catch (cause) {
     // If quota is exhausted here, publish only unflagged candidates.
@@ -254,13 +256,13 @@ function countWords(text: string) {
 
 export function targetQuestionCount(text: string, wordCount = countWords(text)) {
   const lengthTarget = wordCount < 150 ? 1 : wordCount < 300 ? 3 : wordCount < 500 ? 6
-    : wordCount < 700 ? 9 : wordCount < 1000 ? 11 : 13;
+    : wordCount < 650 ? 9 : wordCount < 700 ? 11 : 13;
   // Sentence diversity is a cheap upper bound, not a replacement for evidence checks.
   // It prevents a long but repetitive article from consuming tokens on 13 near-duplicates.
   const distinctSentences = new Set(text.split(/(?<=[.!?])\s+/).map(words)
     .filter((sentence) => sentence.split(" ").length >= 8)).size;
-  const evidenceTarget = distinctSentences >= 26 ? 13 : distinctSentences >= 20 ? 11
-    : distinctSentences >= 15 ? 9 : distinctSentences >= 10 ? 6
+  const evidenceTarget = distinctSentences >= 20 ? 13 : distinctSentences >= 15 ? 11
+    : distinctSentences >= 10 ? 9 : distinctSentences >= 6 ? 6
       : distinctSentences >= 6 ? 3 : 1;
   return Math.min(lengthTarget, evidenceTarget);
 }
@@ -294,16 +296,20 @@ function eligibleQuestionTypes(text: string, wordCount: number) {
 
 function selectQuestionTypes(text: string, wordCount: number, key: string) {
   const hash = stableHash(key);
-  const desired = wordCount < 150 ? 1 : wordCount < 300 ? 1 + (hash % 2) : wordCount < 500 ? 2 : 2 + (hash % 2);
+  const desired = wordCount < 150 ? 1 : wordCount < 300 ? 1 + (hash % 2) : wordCount < 500 ? 2
+    : wordCount < 700 ? 3 : 4;
   const ranked = eligibleQuestionTypes(text, wordCount).map(([type, weight]) => {
     const unit = (stableHash(`${key}:${type}`) + 1) / 4294967297;
     return { type, score: -Math.log(unit) / weight };
   }).sort((a, b) => a.score - b.score);
   const selected = ranked.slice(0, Math.min(desired, ranked.length)).map(({ type }) => type);
   const coreTypes: IeltsQuestionType[] = ["mcq", "tfng", "sentence_completion", "short_answer"];
-  if (!selected.some((type) => coreTypes.includes(type))) {
-    const core = ranked.find(({ type }) => coreTypes.includes(type))?.type;
-    if (core) selected[selected.length - 1] = core;
+  const minimumCore = wordCount >= 700 ? 3 : wordCount >= 500 ? 2 : 1;
+  for (const { type } of ranked) {
+    if (selected.filter((item) => coreTypes.includes(item)).length >= minimumCore) break;
+    if (!coreTypes.includes(type) || selected.includes(type)) continue;
+    const replace = selected.findLastIndex((item) => !coreTypes.includes(item));
+    if (replace >= 0) selected[replace] = type;
   }
   return selected;
 }
@@ -320,7 +326,7 @@ export async function generateAdaptiveNewsQuiz(title: string, body: string, key:
   const targetCount = targetQuestionCount(excerpt, wordCount);
   const targets: QuizTargets = Object.fromEntries(selected.map((type, index) => [type,
     Math.floor(targetCount / selected.length) + (index < targetCount % selected.length ? 1 : 0)]));
-  const candidatesByType = Object.fromEntries(selected.map((type) => [type, (targets[type] ?? 0) + 1])) as QuizTargets;
+  const candidatesByType = Object.fromEntries(selected.map((type) => [type, (targets[type] ?? 0) + (targetCount >= 11 ? 2 : 1)])) as QuizTargets;
   const candidateCount = Object.values(candidatesByType).reduce((sum, count) => sum + (count ?? 0), 0);
   const distribution = selected.map((type) => `${candidatesByType[type]} ${type} candidates (${targets[type]} kept)`).join(", ");
   const noteWordLimit = candidatesByType.note_completion ? noteWordLimitForKey(key) : null;

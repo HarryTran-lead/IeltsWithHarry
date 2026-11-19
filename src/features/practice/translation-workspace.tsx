@@ -8,6 +8,7 @@ import { createClient } from "@/lib/supabase/browser";
 import { demoMode } from "@/lib/runtime";
 import { bandIndex, levelRubric, loadBand, reviewKey, type BandExercise } from "@/lib/translation/band-practice";
 import { closestAnswer, compareWords } from "@/lib/translation/compare-words";
+import { hintLadder } from "@/lib/translation/hint-ladder";
 import "./translation-workspace.css";
 // Loaded after the older stylesheet so the "Luyện diễn đạt" layout wins equal-specificity ties.
 import "./expression-practice.css";
@@ -49,10 +50,9 @@ function firstPhase(item?: BandExercise): Phase {
 
 const allKeys = bandIndex.flatMap((summary) => summary.keys);
 
-/** Hints in the order they open: the key word first (if any), then the step hints. */
+/** Hints in the order they open: key word, sentence frame, grammar note, first letters. */
 function hintsFor(item?: BandExercise) {
-  if (!item) return [];
-  return [...(item.targetTerm ? [`Từ khóa: ${item.targetTerm} · ${item.meaningVi ?? ""}`] : []), ...(item.hintsVi ?? [])];
+  return item ? hintLadder(item) : [];
 }
 
 function interleavePatterns(items: BandExercise[]) {
@@ -319,7 +319,10 @@ export function TranslationWorkspace() {
             <small className="xp-key-note">Shift+Enter để xuống dòng</small>
           </div>
           {hintStep > 0 && <ol className="practice-hint xp-hints" aria-live="polite">
-            {hintsFor(current).slice(0, hintStep).map((hint) => <li key={hint}>{hint}</li>)}
+            {hintsFor(current).slice(0, hintStep).map((hint) => <li key={hint.kind} className={`is-${hint.kind}`}>
+              <span className="xp-hint-label">{hint.label}</span>
+              <span className="xp-hint-text" lang={hint.lang}>{hint.text}</span>
+            </li>)}
           </ol>}
         </div> : (() => {
           // Compare with the model answer the learner's wording is closest to.
