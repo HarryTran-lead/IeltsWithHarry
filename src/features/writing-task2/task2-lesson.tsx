@@ -446,5 +446,5 @@ function WriteStep({ lesson, state, answers, model, busy, notice, nextLesson, on
 }
 
 function Breadcrumb({ current }: { current: string }) {
-  return <nav className="ll-breadcrumb" aria-label="Vị trí"><Link href={TASK2_BASE}>Writing Task 2 Lab</Link><span aria-hidden="true">›</span><span>{current}</span></nav>;
+  return <nav className="ll-breadcrumb" aria-label="Vị trí"><Link href={`${TASK2_BASE}?tab=luyen-de`}>Writing Task 2 Lab · Luyện đề</Link><span aria-hidden="true">›</span><span>{current}</span></nav>;
 }

@@ -2,7 +2,7 @@
 /* Learner-facing text helpers: glossary terms explained in place, and model answers with their annotations marked. */
 import type { ReactNode } from "react";
 import { glossary } from "@/lib/writing-task2/guides";
-import type { Task2Annotation } from "@/lib/writing-task2/types";
+import { questionTypeLabels, type Task2Annotation } from "@/lib/writing-task2/types";
 
 const termPattern = new RegExp(glossary.map((entry) => `(${entry.match.source})`).join("|"), "gi");
 
@@ -11,9 +11,12 @@ export function Term({ children, explain, term }: { children: ReactNode; explain
   return <span className="t2-term" tabIndex={0}>{children}<span role="tooltip" className="t2-term-tip"><b>{term}</b>{explain}</span></span>;
 }
 
-/** Wraps glossary terms in a Vietnamese sentence; each term is explained once per text. */
-export function withTerms(text: string | undefined): ReactNode {
-  if (!text) return text;
+const typeIdPattern = new RegExp(`\\b(${Object.keys(questionTypeLabels).sort((a, b) => b.length - a.length).join("|")})\\b`, "g");
+
+/** Wraps glossary terms in a Vietnamese sentence; each term is explained once per text. Question-type ids read as their names. */
+export function withTerms(raw: string | undefined): ReactNode {
+  if (!raw) return raw;
+  const text = raw.replace(typeIdPattern, (id) => questionTypeLabels[id] ?? id);
   const seen = new Set<string>();
   const out: ReactNode[] = [];
   let last = 0;
