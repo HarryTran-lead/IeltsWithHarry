@@ -254,13 +254,13 @@ function countWords(text: string) {
 
 export function targetQuestionCount(text: string, wordCount = countWords(text)) {
   const lengthTarget = wordCount < 150 ? 1 : wordCount < 300 ? 3 : wordCount < 500 ? 6
-    : wordCount < 700 ? 9 : wordCount < 1000 ? 11 : 13;
+    : wordCount < 650 ? 9 : wordCount < 700 ? 11 : 13;
   // Sentence diversity is a cheap upper bound, not a replacement for evidence checks.
   // It prevents a long but repetitive article from consuming tokens on 13 near-duplicates.
   const distinctSentences = new Set(text.split(/(?<=[.!?])\s+/).map(words)
     .filter((sentence) => sentence.split(" ").length >= 8)).size;
-  const evidenceTarget = distinctSentences >= 26 ? 13 : distinctSentences >= 20 ? 11
-    : distinctSentences >= 15 ? 9 : distinctSentences >= 10 ? 6
+  const evidenceTarget = distinctSentences >= 20 ? 13 : distinctSentences >= 15 ? 11
+    : distinctSentences >= 10 ? 9 : distinctSentences >= 6 ? 6
       : distinctSentences >= 6 ? 3 : 1;
   return Math.min(lengthTarget, evidenceTarget);
 }
