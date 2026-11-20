@@ -81,7 +81,7 @@ python -I scripts/import-speaking-lab.py <L80 folder> <private folder outside th
 - **Production:**
   1. Create a **private** Supabase Storage bucket.
   2. Upload `speaking-lab-private.json` to its root, and the 24 files in `audio/` to an `audio/` folder.
-  3. Set `SPEAKING_LAB_BUCKET=<bucket>`. The server reads it with `SUPABASE_SERVICE_ROLE_KEY`.
+  3. The server reads the bucket `speaking-lab` with `SUPABASE_SERVICE_ROLE_KEY`; set `SPEAKING_LAB_BUCKET` only to use another name. Done for prod and dev on 2026-11-20 (25 files).
 - **Neither set:** the map still loads, and lessons say the content is being updated.
 
 ## Opening the lab
