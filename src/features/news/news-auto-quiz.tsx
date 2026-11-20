@@ -155,7 +155,7 @@ export function NewsAutoQuiz({ articleId, types = ALL_TYPES, examMode = false, o
       if (!previous || examMode) return;
       setAnswers(Object.fromEntries(list.filter((question) => previous.answers[question.id] !== undefined).map((question) => {
         const value = previous.answers[question.id];
-        return [question.id, choiceTypes.has(question.question_type) ? Number(value) : value];
+        return [question.id, choiceTypes.has(question.question_type) && value !== "" ? Number(value) : value];
       })));
       setReviews(Object.fromEntries(previous.review.map((item) => [item.id, item])));
       setSaved({ submittedAt: previous.submittedAt, attempts: previous.attempts });
