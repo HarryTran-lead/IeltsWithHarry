@@ -10,16 +10,20 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useMemo, useRef, useState, type CSSProperties, type ReactNode } from "react";
 import {
-  AlertTriangle, ArrowLeft, ArrowRight, BookOpen, BookOpenCheck, Check, CheckCircle2, ChevronDown, Clock3, Compass, Eye, Image as ImageIcon,
-  Languages, Lightbulb, ListChecks, PenLine, Play, Save, Sparkles, Target, Wand2, X, XCircle,
+  AlertTriangle, ArrowRight, BookOpen, BookOpenCheck, Check, CheckCircle2, ChevronDown, Clock3, Compass, Eye, Image as ImageIcon,
+  Languages, Lightbulb, ListChecks, PenLine, Save, Sparkles, Target, Wand2, X, XCircle,
 } from "lucide-react";
 import {
-  TASK1_API, TASK1_BASE, countWords, drillModeLabels, drillSaved, essaySaved, groupLabels, lessonDone, modelFirst, modelParagraphs, partLabels,
-  reportChecklist, stageInfo, stageOrder, writingTargets,
+  TASK1_API, TASK1_BASE, countWords, drillModeLabels, drillSaved, essaySaved, modelFirst, modelParagraphs, partLabels,
+  reportChecklist, stageInfo, writingTargets,
   type Task1Check, type Task1DrillAnswer, type Task1Lesson, type Task1LessonSummary, type Task1Model, type Task1Part, type Task1ScaffoldPart,
   type Task1Stage, type Task1State,
 } from "@/lib/writing-task1/types";
 import { TASK1_GUIDE_ID, drillFrames, essayFrame, groupGuides, guideFor, introGuide } from "@/lib/writing-task1/guide";
+import { buildPath } from "@/lib/self-study-path/path";
+import { TASK1_GUIDE_READ_KEY, task1Course, task1Progress } from "@/lib/self-study-path/task1";
+import { useLearnerStreak } from "@/features/account/use-learner-streak";
+import { LessonDone, LessonFoot, LessonLocked, LessonSteps, LessonTopBar, StudyPath } from "@/features/self-study-path/study-path";
 import { Task1Figure } from "./task1-figure";
 import { cacheTask1State, checkTask1, emptyTask1State, learnTask1, loadAllTask1States, loadTask1State, revealTask1, saveTask1State } from "./task1-state";
 import "@/features/listening/listening-lab.css";
@@ -33,16 +37,7 @@ export function WritingTask1Lab() {
 }
 
 const themeStyle = (stage: Task1Stage) => ({ "--ll-tone": stageInfo[stage].tone, "--ll-soft": stageInfo[stage].soft }) as CSSProperties;
-const groupLabel = (group: string) => groupLabels[group] ?? group;
 const guideHref = `${TASK1_BASE}/${TASK1_GUIDE_ID}`;
-
-type LessonProgress = { checks: number; drills: number; essay: boolean; started: boolean };
-function progressOf(state: Task1State | undefined, stage: Task1Stage): LessonProgress {
-  if (!state) return { checks: 0, drills: 0, essay: false, started: false };
-  const drills = Object.keys(state.saved).filter((id) => drillSaved(state, id)).length;
-  const checks = Object.keys(state.results).length;
-  return { checks, drills, essay: lessonDone(state, stage), started: checks > 0 || drills > 0 || Boolean(state.essay.trim()) || Object.values(state.answers).some((text) => text.trim()) };
-}
 
 async function getJson<T>(url: string): Promise<T> {
   const response = await fetch(url, { cache: "no-store" });
@@ -78,16 +73,20 @@ function plain(text: string) {
 
 /* ───────────────────────── Roadmap ───────────────────────── */
 
-function RoadmapPage() {
+const readGuideFlag = () => { try { return localStorage.getItem(TASK1_GUIDE_READ_KEY) === "1"; } catch { return false; } };
+
+/** Lessons, the learner's saved work and the shared path built from both. Null until both have loaded. */
+function useTask1Path() {
   const [lessons, setLessons] = useState<Task1LessonSummary[] | null>(null);
-  const [states, setStates] = useState<Record<string, Task1State>>({});
+  const [states, setStates] = useState<Record<string, Task1State> | null>(null);
+  const [guideRead, setGuideRead] = useState(false);
   const [error, setError] = useState("");
-  const [groupFilter, setGroupFilter] = useState("all");
 
   useEffect(() => {
     let alive = true;
     void getJson<{ lessons: Task1LessonSummary[] }>(TASK1_API).then(async ({ lessons: list }) => {
       if (!alive) return;
+      setGuideRead(readGuideFlag());
       setLessons(list);
       const saved = await loadAllTask1States(list.map((lesson) => lesson.id)).catch(() => ({}));
       if (alive) setStates(saved);
@@ -95,113 +94,19 @@ function RoadmapPage() {
     return () => { alive = false; };
   }, []);
 
-  const progress = useMemo(() => Object.fromEntries((lessons ?? []).map((lesson) => [lesson.id, progressOf(states[lesson.id], lesson.stage)])), [lessons, states]);
-  const groupCounts = useMemo(() => {
-    const counts = new Map<string, number>();
-    for (const lesson of lessons ?? []) counts.set(lesson.group, (counts.get(lesson.group) ?? 0) + 1);
-    return [...counts].sort((a, b) => Object.keys(groupLabels).indexOf(a[0]) - Object.keys(groupLabels).indexOf(b[0]));
-  }, [lessons]);
+  const course = useMemo(() => lessons ? task1Course(lessons) : null, [lessons]);
+  const view = useMemo(() => course && lessons && states ? buildPath(course, task1Progress(lessons, states, guideRead)) : null, [course, lessons, states, guideRead]);
+  return { lessons, course, view, error };
+}
 
+function RoadmapPage() {
+  const { course, view, error } = useTask1Path();
+  const streak = useLearnerStreak();
   if (error) return <div className="ll-page t1-lab"><p className="ll-error" role="alert">{error}</p></div>;
-  if (!lessons) return <div className="ll-page t1-lab"><div className="ll-skeleton ll-skeleton-hero"/><div className="ll-skeleton ll-skeleton-row"/><div className="ll-skeleton ll-skeleton-card"/></div>;
-
-  const number = (id: string) => String(lessons.findIndex((lesson) => lesson.id === id) + 1).padStart(2, "0");
-  const done = lessons.filter((lesson) => progress[lesson.id].essay).length;
-  const anyStarted = lessons.some((lesson) => progress[lesson.id].started);
-  const next = lessons.find((lesson) => progress[lesson.id].started && !progress[lesson.id].essay) ?? lessons.find((lesson) => !progress[lesson.id].essay) ?? lessons[0];
-  const checksDone = lessons.reduce((sum, lesson) => sum + progress[lesson.id].checks, 0);
-  const visible = (lesson: Task1LessonSummary) => groupFilter === "all" || lesson.group === groupFilter;
-
-  return <div className="ll-page ll-roadmap t1-lab">
-    <header className="ll-hero t1-hero">
-      <div className="ll-hero-copy">
-        <h1>Đọc hình, viết Task 1 <em>từng bước một.</em></h1>
-        <div className="ll-hero-actions">
-          <Link className="ll-cta" href={anyStarted ? `${TASK1_BASE}/${next.id}` : guideHref}>
-            <span className="ll-cta-icon"><Play size={18} fill="currentColor"/></span>
-            {anyStarted
-              ? <span><b>{done ? "Bài tiếp theo" : "Học tiếp"}</b><small>Bài {number(next.id)} · {guideFor(next.group).name_vi} · {next.title}</small></span>
-              : <span><b>Bắt đầu từ Bài 0</b><small>Task 1 là gì và làm thế nào · 8 phút đọc</small></span>}
-            <ArrowRight size={18}/>
-          </Link>
-          <span className="ll-draft-pill" title="Nội dung luyện tập do đội ngũ biên soạn, không phải đề thi chính thức">Thử nghiệm</span>
-        </div>
-      </div>
-      <div className="ll-stats">
-        <div className="ll-stats-ring"><Ring value={done} total={lessons.length}/><div><strong>Bài đã hoàn thành</strong><span>Còn {lessons.length - done} bài</span></div></div>
-        <dl><div><dt>Câu đọc hình</dt><dd>{checksDone}</dd></div><div><dt>Bài viết đã lưu</dt><dd>{done}</dd></div><div><dt>Có bài mẫu</dt><dd>{lessons.filter((lesson) => lesson.has_model).length}</dd></div></dl>
-      </div>
-    </header>
-
-    <Link href={guideHref} className="t1-guide-banner">
-      <span className="t1-guide-icon"><Compass size={20}/></span>
-      <span><b>Bài 0 · Task 1 là gì và làm thế nào</b><small>Đề yêu cầu gì, 4 tiêu chí chấm, bố cục 4 đoạn, cách tìm Overview và cách đọc 7 dạng hình. Nên đọc trước bài 01.</small></span>
-      <ArrowRight size={18}/>
-    </Link>
-
-    <section className="ll-journey t1-journey" aria-labelledby="t1-journey-title">
-      <div className="ll-section-head"><div><span className="ll-kicker">Bản đồ lộ trình</span><h2 id="t1-journey-title">{stageOrder.length} chặng, {lessons.length} bài</h2></div><small>Mức 1.0–7.0+ là mức luyện nội bộ, không phải band IELTS.</small></div>
-      <ol className="ll-track-map">{stageOrder.map((stage, index) => {
-        const units = lessons.filter((lesson) => lesson.stage === stage);
-        const count = units.filter((lesson) => progress[lesson.id].essay).length;
-        const here = next.stage === stage;
-        return <li key={stage} style={themeStyle(stage)} className={`${here ? "is-here" : ""} ${units.length && count === units.length ? "is-done" : ""}`}>
-          <a href={`#chang-${index + 1}`}>
-            <span className="ll-node">{units.length && count === units.length ? <Check size={16} strokeWidth={3}/> : index + 1}</span>
-            <b>{stageInfo[stage].name}</b><small>{units[0]?.target_range} · {writingTargets[stage].label} · {units.length} bài</small>
-            <i aria-label={`${count}/${units.length} bài hoàn thành`}>{units.map((lesson) => <em key={lesson.id} className={progress[lesson.id].essay ? "is-on" : ""}/>)}</i>
-            {here && <span className="ll-here">Bạn ở đây</span>}
-          </a>
-        </li>;
-      })}</ol>
-    </section>
-
-    <div className="ll-typebar" role="group" aria-label="Lọc theo dạng bài">
-      <span><ListChecks size={16}/> Dạng bài</span>
-      <button type="button" aria-pressed={groupFilter === "all"} onClick={() => setGroupFilter("all")}>Tất cả<small>{lessons.length}</small></button>
-      {groupCounts.map(([group, count]) => <button type="button" key={group} aria-pressed={groupFilter === group} onClick={() => setGroupFilter(group)}>{groupLabel(group)}<small>{count}</small></button>)}
-    </div>
-
-    {stageOrder.map((stage, index) => {
-      const all = lessons.filter((lesson) => lesson.stage === stage);
-      const units = all.filter(visible);
-      if (!units.length) return null;
-      const count = all.filter((lesson) => progress[lesson.id].essay).length;
-      return <section className="ll-stage" id={`chang-${index + 1}`} key={stage} style={themeStyle(stage)}>
-        <header><span className="ll-stage-tag">Chặng {index + 1}</span><h2>{stageInfo[stage].name}<small>{all[0].target_range} · {writingTargets[stage].label} ({writingTargets[stage].hint})</small></h2><span className="ll-stage-progress"><i><em style={{ width: `${(count / all.length) * 100}%` }}/></i>{count}/{all.length} xong</span></header>
-        <div className="ll-grid">{units.map((lesson) => <LessonCard key={lesson.id} lesson={lesson} number={number(lesson.id)} progress={progress[lesson.id]} isNext={anyStarted && lesson.id === next.id}/>)}</div>
-      </section>;
-    })}
-
-    <aside className="ll-note"><Sparkles size={16}/><p>Đề, hình và bài mẫu là tài liệu luyện tập do đội ngũ biên soạn, không phải đề thi IELTS chính thức. Bài hoàn thành khi bạn lưu bài viết đủ độ dài; tiến độ ở đây không quy đổi sang band.</p></aside>
-  </div>;
-}
-
-function LessonCard({ lesson, number, progress, isNext }: { lesson: Task1LessonSummary; number: string; progress: LessonProgress; isNext: boolean }) {
-  const done = progress.essay;
-  const status = done ? { label: "Hoàn thành", cls: "is-done" } : isNext ? { label: progress.started ? "Đang học" : "Tiếp theo", cls: "is-next" } : progress.started ? { label: "Đang học", cls: "is-tried" } : null;
-  return <Link href={`${TASK1_BASE}/${lesson.id}`} className={`ll-card ${isNext ? "is-next" : ""} ${done ? "is-done" : ""}`}>
-    <div className="ll-card-top"><span className="ll-number">{number}</span>{status && <span className={`ll-status ${status.cls}`}>{status.label}</span>}</div>
-    <strong>{lesson.title}</strong>
-    <p className="t1-card-what">{guideFor(lesson.group).name_vi}{lesson.kind === "process" && lesson.subtopic ? ` · ${lesson.subtopic.toLowerCase()}` : ""} · {writingTargets[lesson.stage].label.toLowerCase()}</p>
-    <div className="ll-card-types"><span>{groupLabel(lesson.group)}</span>{lesson.has_model && <span className="t1-chip-model">Có bài mẫu</span>}</div>
-    <div className="ll-card-foot">
-      <span className="ll-pips" aria-label={`${progress.checks}/${lesson.check_count} câu đọc hình, ${progress.drills}/${lesson.drill_count} bài luyện, bài viết ${progress.essay ? "đã lưu" : "chưa lưu"}`}>
-        <i className={`t1-pip-read ${progress.checks >= lesson.check_count ? "is-pass" : progress.checks ? "is-part" : ""}`} title="Đọc hình"/>
-        {Array.from({ length: lesson.drill_count }, (_, index) => <i key={index} className={`t1-pip ${index < progress.drills ? "is-pass" : ""}`}/>)}
-        <i className={`t1-pip-essay ${progress.essay ? "is-pass" : ""}`} title="Bài viết"/>
-      </span>
-      <small><Clock3 size={12}/> {lesson.minutes} phút</small>
-      <ArrowRight size={16}/>
-    </div>
-  </Link>;
-}
-
-function Ring({ value, total }: { value: number; total: number }) {
-  return <span className="ll-ring is-hero" role="img" aria-label={`${value}/${total} bài hoàn thành`}>
-    <svg viewBox="0 0 44 44" aria-hidden="true"><circle cx="22" cy="22" r="19"/>{value > 0 && <circle cx="22" cy="22" r="19" strokeDasharray={`${(value / total) * 119.4} 119.4`}/>}</svg>
-    <span><b>{value}</b><small>/{total}</small></span>
-  </span>;
+  if (!course || !view) return <div className="ll-page t1-lab"><div className="ll-skeleton ll-skeleton-hero"/><div className="ll-skeleton ll-skeleton-row"/><div className="ll-skeleton ll-skeleton-card"/></div>;
+  return <StudyPath course={course} view={view} streak={streak?.current ?? 0}>
+    <p className="sp-footnote"><Sparkles size={15} aria-hidden/> Đề, hình và bài mẫu là tài liệu luyện tập do đội ngũ biên soạn, không phải đề thi IELTS chính thức. Bài hoàn thành khi bạn lưu bài viết đủ độ dài; mức band ở đây là mức luyện nội bộ, không quy đổi sang band IELTS.</p>
+  </StudyPath>;
 }
 
 /* ───────────────────────── Bài 0 guide ───────────────────────── */
@@ -209,6 +114,8 @@ function Ring({ value, total }: { value: number; total: number }) {
 function GuidePage() {
   const [group, setGroup] = useState("line");
   useEffect(() => {
+    // Opening Bài 0 ticks it off on the path, so the first numbered lesson becomes the next step.
+    try { localStorage.setItem(TASK1_GUIDE_READ_KEY, "1"); } catch { /* the path then waits for the first lesson */ }
     const hash = window.location.hash.slice(1);
     // Opening a type's guide from a lesson ("#dang-process") selects that tab.
     if (hash.startsWith("dang-") && groupGuides[hash.slice(5)]) queueMicrotask(() => setGroup(hash.slice(5)));
@@ -232,7 +139,7 @@ function GuidePage() {
       <GroupGuideBody group={group}/>
       <p className="t1-guide-note"><b>Thì nên dùng:</b> {guide.tense_vi}</p>
     </section>
-    <div className="t1-guide-foot"><Link className="ll-btn ll-btn-primary" href={TASK1_BASE}>Vào lộ trình <ArrowRight size={16}/></Link></div>
+    <div className="t1-guide-foot"><Link className="ll-btn ll-btn-primary" href={TASK1_BASE}>Xong Bài 0 · về lộ trình <ArrowRight size={16}/></Link></div>
   </div>;
 }
 
@@ -272,6 +179,8 @@ function LessonPage({ id }: { id: string }) {
   const [error, setError] = useState("");
   const [notice, setNotice] = useState("");
   const [sheet, setSheet] = useState(false);
+  const [reached, setReached] = useState(0);
+  const [locked, setLocked] = useState<{ title: string; href?: string } | null>(null);
   const syncTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
   const topRef = useRef<HTMLDivElement | null>(null);
 
@@ -290,9 +199,24 @@ function LessonPage({ id }: { id: string }) {
       const hash = window.location.hash.slice(1) as Step;
       const drillsDone = loaded.drills.filter((drill) => drillSaved(saved, drill.id));
       const anyRead = loaded.checks.some((check) => saved.results[check.id]);
-      setStep(stepIds.includes(hash) ? hash
-        : essaySaved(saved, loaded.stage) || drillsDone.length === loaded.drills.length ? "essay"
-          : drillsDone.length ? "drills" : anyRead ? "read" : "understand");
+      const resume: Step = essaySaved(saved, loaded.stage) || drillsDone.length === loaded.drills.length ? "essay"
+        : drillsDone.length ? "drills" : anyRead ? "read" : "understand";
+      // A link may point at a later step (#essay), but not past the furthest step the learner has reached.
+      const opening = stepIds.includes(hash) && stepIds.indexOf(hash) <= stepIds.indexOf(resume) ? hash : resume;
+      setStep(opening);
+      setReached(stepIds.indexOf(resume));
+      // Lessons open in path order: a lesson that is not reached yet sends the learner to the one that is.
+      if (lessons.length) {
+        const all = await loadAllTask1States(lessons.map((item) => item.id)).catch(() => null);
+        if (!alive) return;
+        if (all) {
+          const guideRead = (() => { try { return localStorage.getItem(TASK1_GUIDE_READ_KEY) === "1"; } catch { return false; } })();
+          const view = buildPath(task1Course(lessons), task1Progress(lessons, { ...all, [loaded.id]: saved }, guideRead));
+          const node = view.stages.flatMap((stage) => stage.nodes).find((item) => item.id === loaded.id);
+          const next = view.next?.node;
+          if (node?.status === "locked") setLocked({ title: next ? (next.number ? `Bài ${next.number} · ${next.title}` : next.title) : "", href: next?.href });
+        }
+      }
       // Guides already earned in an earlier visit open again without another click.
       const targets = [...drillsDone.map((drill) => drill.id), ...(essaySaved(saved, loaded.stage) ? ["essay"] : [])];
       if (targets.length) {
@@ -352,6 +276,7 @@ function LessonPage({ id }: { id: string }) {
 
   function go(target: Step) {
     setStep(target);
+    setReached((value) => Math.max(value, stepIds.indexOf(target)));
     history.replaceState(null, "", `#${target}`);
     topRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
   }
@@ -373,27 +298,23 @@ function LessonPage({ id }: { id: string }) {
     { id: "essay", label: "Viết bài", status: done ? `${words} từ` : `~${target.goal} từ`, pass: done },
   ];
   const index = stepIds.indexOf(step);
+  const lessonName = `${number ? `Bài ${Number(number)} · ` : ""}${lesson.title}`;
 
-  return <div className="ll-page t1-lab t1-lesson" style={themeStyle(lesson.stage)}>
-    <Breadcrumb current={`${number ? `Bài ${number} · ` : ""}${lesson.title}`}/>
-    <header className="t1-head">
-      <div className="ll-module-badge"><small>Bài</small><b>{number || "–"}</b></div>
-      <div>
-        <span className="ll-kicker">{stageInfo[lesson.stage].name} · mức luyện {lesson.target_range}</span>
-        <h1>{lesson.title}</h1>
-        <div className="ll-chips"><span>{guideFor(lesson.group).name_vi}</span>{lesson.kind === "process" && lesson.subtopic && <span>{lesson.subtopic}</span>}<span><Clock3 size={12}/> {lesson.minutes} phút</span>{lesson.has_model && <span className="t1-chip-model">Có bài mẫu</span>}</div>
-      </div>
-      <Link className="ll-btn t1-help" href={`${guideHref}#dang-${lesson.group}`}><Compass size={15}/> Hướng dẫn</Link>
+  if (locked) return <LessonLocked title={lessonName} nextTitle={locked.title} nextHref={locked.href} pathHref={TASK1_BASE}/>;
+
+  return <div className="ll-page t1-lab t1-lesson sp-kit" style={themeStyle(lesson.stage)}>
+    <header className="t1-lessonbar">
+      <LessonTopBar exitHref={TASK1_BASE} step={index} title={<>
+        <span>Writing Task 1 · {stageInfo[lesson.stage].name}</span>
+        <b>{lessonName}</b>
+        <span className="t1-lessonbar-meta">{guideFor(lesson.group).name_vi} · <Clock3 size={12} aria-hidden/> {lesson.minutes} phút · <Link href={`${guideHref}#dang-${lesson.group}`}><Compass size={13} aria-hidden/> Cách làm dạng này</Link></span>
+      </>}/>
+      <LessonSteps steps={steps.map((item) => ({ label: item.label, note: item.status, pass: item.pass }))} step={index}
+        reached={Math.max(reached, ...steps.map((item, position) => item.pass ? Math.min(position + 1, stepIds.length - 1) : 0))}
+        onPick={(position) => go(stepIds[position])}/>
     </header>
 
     <div className="t1-work" ref={topRef} data-step={step}>
-      <ol className="t1-rail" aria-label="Các bước học">{steps.map((item, position) => <li key={item.id} className={item.pass ? "is-pass" : ""}>
-          <button type="button" aria-current={step === item.id ? "step" : undefined} onClick={() => go(item.id)}>
-            <span className="t1-rail-dot">{item.pass && step !== item.id ? <Check size={13} strokeWidth={3}/> : position + 1}</span>
-            <span className="t1-rail-text"><b>{item.label}</b><small>{item.status}</small></span>
-          </button>
-        </li>)}</ol>
-
       <aside className="t1-side" aria-label="Đề bài và hình">
         <PromptCard lesson={lesson}/>
       </aside>
@@ -411,13 +332,18 @@ function LessonPage({ id }: { id: string }) {
           {step === "essay" && <EssayStep lesson={lesson} state={state} model={model} busy={busy} notice={notice} words={words}
             onType={(value) => update((current) => ({ ...current, essay: value }))}
             onCheck={(itemId, value) => update((current) => ({ ...current, checklist: { ...current.checklist, [itemId]: value } }))}
-            onSave={() => void saveAndReveal("essay")} nextId={nextId}/>}
+            onSave={() => void saveAndReveal("essay")}/>}
+          {step === "essay" && done && <LessonDone embedded title={`Xong ${lessonName}`}
+            stats={[
+              { label: "Đọc hình đúng", value: `${correct}/${lesson.checks.length}` },
+              { label: "Phần luyện", value: `${savedDrills}/${lesson.drills.length}` },
+              { label: "Bài viết", value: `${words} từ` },
+            ]}
+            note={checked.length > correct ? `Có ${checked.length - correct} câu đọc hình chưa đúng: xem lại lời giải ở bước Đọc hình trước khi sang bài mới.` : undefined}
+            nextLabel={nextId ? "Sang bài tiếp theo" : undefined} nextHref={nextId ? `${TASK1_BASE}/${nextId}` : undefined} pathHref={TASK1_BASE}/>}
         </section>
 
-        <nav className="t1-stepnav" aria-label="Chuyển bước">
-          {index < stepIds.length - 1 && <button type="button" className="ll-btn ll-btn-primary" onClick={() => go(stepIds[index + 1])}>Tiếp: {steps[index + 1].label} <ArrowRight size={16}/></button>}
-          {index > 0 && <button type="button" className="ll-btn" onClick={() => go(stepIds[index - 1])}><ArrowLeft size={16}/> {steps[index - 1].label}</button>}
-        </nav>
+        <LessonFoot step={index} labels={steps.map((item) => item.label)} onStep={(position) => go(stepIds[position])}/>
       </div>
     </div>
 
@@ -659,9 +585,9 @@ function ChooseBetter({ choose }: { choose: NonNullable<Task1ScaffoldPart["choos
 }
 
 /* Step 5 — write, with the learner's own notes beside the editor */
-function EssayStep({ lesson, state, model, busy, notice, words, onType, onCheck, onSave, nextId }: {
+function EssayStep({ lesson, state, model, busy, notice, words, onType, onCheck, onSave }: {
   lesson: Task1Lesson; state: Task1State; model: Task1Model | null | undefined; busy: string; notice: string; words: number;
-  onType: (value: string) => void; onCheck: (id: string, value: boolean) => void; onSave: () => void; nextId: string;
+  onType: (value: string) => void; onCheck: (id: string, value: boolean) => void; onSave: () => void;
 }) {
   const target = writingTargets[lesson.stage];
   const done = essaySaved(state, lesson.stage);
@@ -698,7 +624,6 @@ function EssayStep({ lesson, state, model, busy, notice, words, onType, onCheck,
     {model ? <ModelView model={model} phrases={lesson.phrases} open={done && !modelFirst(lesson)}/>
       : done ? <p className="t1-callout"><BookOpenCheck size={16}/> Bài này chưa có bài mẫu. Đối chiếu từng câu của bạn với hình và bảng tự kiểm tra ở trên.</p>
         : lesson.has_model ? <p className="t1-callout"><BookOpenCheck size={16}/> Bài mẫu sẽ hiện ở đây sau khi bạn lưu bài từ {target.min} từ trở lên.</p> : null}
-    {done && nextId && <div className="t1-row t1-finish"><CheckCircle2 size={18}/> <b>Hoàn thành bài này.</b><Link className="ll-btn ll-btn-primary" href={`${TASK1_BASE}/${nextId}`}>Bài tiếp theo <ArrowRight size={15}/></Link></div>}
   </>;
 }
 
