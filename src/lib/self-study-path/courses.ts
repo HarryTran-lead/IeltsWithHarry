@@ -8,9 +8,9 @@ import { speakingCatalog } from "@/lib/speaking-lab/source";
 import { SPEAKING_BASE, criterionInfo, partLabel } from "@/lib/speaking-lab/types";
 import { task1Summaries } from "@/lib/writing-task1/content";
 import { task2Summaries } from "@/lib/writing-task2/content";
-import { TASK2_BASE, questionTypeLabels, stageInfo as task2Stages, stageOrder as task2Order } from "@/lib/writing-task2/types";
-import { bandSpan, type PathCourse, type PathStage } from "./path";
+import type { PathCourse, PathStage } from "./path";
 import { task1Course } from "./task1";
+import { task2LessonsCourse } from "./task2";
 
 export type LabId = "writing-task-1" | "writing-task-2" | "speaking" | "listening";
 export const labOrder: LabId[] = ["writing-task-1", "writing-task-2", "speaking", "listening"];
@@ -23,21 +23,7 @@ function writingTask1(): PathCourse {
 }
 
 function writingTask2(): PathCourse {
-  const lessons = task2Summaries();
-  return {
-    lab: "writing-task-2", name: "Writing Task 2", base: TASK2_BASE,
-    stages: task2Order.map((stage) => {
-      const own = lessons.filter((lesson) => lesson.stage === stage);
-      return {
-        id: stage, title: task2Stages[stage].name, band: bandSpan(own.map((lesson) => lesson.target_range)),
-        lessons: own.map((lesson) => ({
-          id: lesson.id, title: lesson.topic, meta: questionTypeLabels[lesson.question_type] ?? lesson.question_type, goal: lesson.goal_vi, minutes: lesson.minutes, href: `${TASK2_BASE}/${lesson.id}`,
-        })),
-        review, checkpoint: check(),
-      };
-    }),
-    steps: ["Đọc đề: dạng đề, từ khoá, bẫy cần tránh", "Học: bài học ngắn, khung câu và từ vựng", "Làm mẫu: xem từng bước của bài mẫu có chú thích", "Luyện: nhận diện → hoàn thành → tự viết câu", "Viết bài: viết đoạn hoặc cả bài, tự chấm"],
-  };
+  return task2LessonsCourse(task2Summaries(), { withChecks: true });
 }
 
 function speaking(): PathCourse {

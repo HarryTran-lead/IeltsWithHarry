@@ -20,7 +20,7 @@ const nodeIcon = (node: PathNode) => {
   return <Play size={22} aria-hidden />;
 };
 
-function nodeNote(node: PathNode) {
+function nodeNote(node: PathNode, steps: number) {
   if (node.kind === "review") return node.status === "open" ? `${node.mistakes} câu sai đang chờ · không bắt buộc` : "Chưa có câu sai để ôn";
   if (node.kind === "checkpoint") {
     if (node.status === "done") return `Đã qua · ${Math.round((node.score ?? 0) * 100)}%`;
@@ -28,14 +28,21 @@ function nodeNote(node: PathNode) {
     return `Xong mọi bài của chặng để mở · đạt ${PASS_MARK * 100}%`;
   }
   const progress = node.progress;
+  if (node.status === "done" && progress?.note) return `Đã xong · ${progress.note}`;
   if (node.status === "done") return progress?.total ? `Đúng ${progress.right ?? 0}/${progress.total}${progress.mistakes ? ` · ${progress.mistakes} câu sai` : ""}` : "Đã xong";
-  if (node.status === "current") return progress?.step ? `Đang học · bước ${progress.step + 1}/${STEP_COUNT}` : "Bài tiếp theo";
+  if (node.status === "current" && progress?.note) return `Đang học · ${progress.note}`;
+  if (node.status === "current") return progress?.step ? `Đang học · bước ${progress.step + 1}/${steps}` : "Bài tiếp theo";
   return node.lesson?.meta ?? "";
 }
 
 /* ───────────── Screen 1 · the path map ───────────── */
 
-export function StudyPath({ course, view, href, streak = 0, target, children }: { course: PathCourse; view: PathView; href?: Href; streak?: number; target?: string; children?: ReactNode }) {
+export function StudyPath({ course, view, href, streak = 0, target, top, intro, children }: {
+  course: PathCourse; view: PathView; href?: Href; streak?: number; target?: string;
+  /** Above the header, e.g. a Lab's own tabs. */ top?: ReactNode;
+  /** Between the header and the stages, e.g. a first-visit guide. */ intro?: ReactNode;
+  children?: ReactNode;
+}) {
   const resolve: Href = href ?? ((node) => node.href);
   const percent = view.total ? Math.round((view.done / view.total) * 100) : 0;
   const next = view.next;
@@ -43,6 +50,7 @@ export function StudyPath({ course, view, href, streak = 0, target, children }: 
 
   return (
     <div className="sp-page">
+      {top}
       <header className="sp-head">
         <div className="sp-head-top">
           <div>
@@ -55,25 +63,27 @@ export function StudyPath({ course, view, href, streak = 0, target, children }: 
           </div>
         </div>
         <div className="sp-bar" role="progressbar" aria-valuenow={percent} aria-valuemin={0} aria-valuemax={100} aria-label="Tiến độ lộ trình"><span style={{ width: `${percent}%` }} /></div>
-        {next && <ContinueCard node={next.node} href={resolve(next.node)} />}
+        {next && <ContinueCard node={next.node} href={resolve(next.node)} steps={course.stepCount ?? STEP_COUNT} />}
       </header>
+      {intro}
 
       <ol className="sp-stages">
-        {view.stages.map((stage) => <StageBlock key={stage.stage.id} stage={stage} href={resolve} />)}
+        {view.stages.map((stage) => <StageBlock key={stage.stage.id} stage={stage} href={resolve} isNext={stage.index === next?.stage.index} steps={course.stepCount ?? STEP_COUNT} />)}
       </ol>
       {children}
     </div>
   );
 }
 
-function ContinueCard({ node, href }: { node: PathNode; href?: string }) {
+function ContinueCard({ node, href, steps }: { node: PathNode; href?: string; steps: number }) {
   const isCheck = node.kind === "checkpoint";
   const minutes = node.lesson?.minutes;
   const step = node.progress?.step;
+  const note = node.progress?.note;
   return (
     <div className="sp-continue">
       <div className="sp-continue-copy">
-        <span>{isCheck ? "Mốc cuối chặng" : step ? `Học tiếp từ bước ${step + 1}/${STEP_COUNT}` : "Bài tiếp theo"}{minutes ? <> · <Clock3 size={13} aria-hidden /> {minutes} phút</> : null}</span>
+        <span>{isCheck ? "Mốc cuối chặng" : note ? `Học tiếp · ${note}` : step ? `Học tiếp từ bước ${step + 1}/${steps}` : "Bài tiếp theo"}{minutes ? <> · <Clock3 size={13} aria-hidden /> {minutes} phút</> : null}</span>
         <b>{isCheck || !node.number ? node.title : `Bài ${node.number} · ${node.title}`}</b>
         {node.lesson?.meta && <small>{node.lesson.meta}</small>}
       </div>
@@ -84,8 +94,9 @@ function ContinueCard({ node, href }: { node: PathNode; href?: string }) {
 
 const OFFSETS = [0, 1, 2, 1];
 
-function StageBlock({ stage, href }: { stage: StageView; href: Href }) {
-  const [open, setOpen] = useState(stage.status === "current");
+function StageBlock({ stage, href, isNext, steps }: { stage: StageView; href: Href; isNext: boolean; steps: number }) {
+  // Only the stage holding the next step starts open; finished stages and stages opened out of order fold.
+  const [open, setOpen] = useState(isNext);
   const title = <>Chặng {stage.index + 1} · {stage.stage.title}{stage.stage.band ? <em> · band {stage.stage.band}</em> : null}</>;
 
   if (stage.status === "locked") {
@@ -94,10 +105,10 @@ function StageBlock({ stage, href }: { stage: StageView; href: Href }) {
 
   return (
     <li className={`sp-stage is-${stage.status}`}>
-      {stage.status === "done"
-        ? <button type="button" className="sp-stage-row" aria-expanded={open} onClick={() => setOpen((value) => !value)}><Check size={16} aria-hidden /><span>{title}</span><small>Đã xong · {open ? "thu gọn" : "mở lại để ôn"}</small><ChevronDown size={16} aria-hidden className={open ? "is-flipped" : ""} /></button>
+      {!isNext
+        ? <button type="button" className="sp-stage-row" aria-expanded={open} onClick={() => setOpen((value) => !value)}>{stage.status === "done" ? <Check size={16} aria-hidden /> : <Play size={16} aria-hidden />}<span>{title}</span><small>{stage.status === "done" ? "Đã xong" : `${stage.done}/${stage.total} bài`} · {open ? "thu gọn" : stage.status === "done" ? "mở lại để ôn" : "xem bài"}</small><ChevronDown size={16} aria-hidden className={open ? "is-flipped" : ""} /></button>
         : <div className="sp-stage-title"><h2>{title}</h2><small>{stage.done}/{stage.total} bài{stage.stage.about ? ` · ${stage.stage.about}` : ""}</small></div>}
-      {open && <StageNodes stage={stage} href={href} />}
+      {open && <StageNodes stage={stage} href={href} steps={steps} />}
     </li>
   );
 }
@@ -106,7 +117,7 @@ function StageBlock({ stage, href }: { stage: StageView; href: Href }) {
 const KEEP_BEFORE = 2;
 const KEEP_AFTER = 2;
 
-function StageNodes({ stage, href }: { stage: StageView; href: Href }) {
+function StageNodes({ stage, href, steps }: { stage: StageView; href: Href; steps: number }) {
   const [all, setAll] = useState(false);
   const lessons = stage.nodes.filter((node) => node.kind === "lesson");
   const extras = stage.nodes.filter((node) => node.kind !== "lesson");
@@ -117,7 +128,7 @@ function StageNodes({ stage, href }: { stage: StageView; href: Href }) {
   const fold = (key: string, label: string) => (
     <li key={key} className="sp-fold"><button type="button" onClick={() => setAll(true)}><ChevronDown size={15} aria-hidden /> {label}</button></li>
   );
-  const step = (node: PathNode, index: number) => <PathStep key={node.id} node={node} href={href(node)} offset={OFFSETS[index % OFFSETS.length]} />;
+  const step = (node: PathNode, index: number) => <PathStep key={node.id} node={node} href={href(node)} offset={OFFSETS[index % OFFSETS.length]} steps={steps} />;
   const visible = lessons.slice(from, to);
   return (
     <ol className="sp-path">
@@ -130,11 +141,11 @@ function StageNodes({ stage, href }: { stage: StageView; href: Href }) {
   );
 }
 
-function PathStep({ node, href, offset }: { node: PathNode; href?: string; offset: number }) {
+function PathStep({ node, href, offset, steps }: { node: PathNode; href?: string; offset: number; steps: number }) {
   const label = node.kind === "lesson" && node.number ? `Bài ${node.number} · ${node.title}` : node.title;
   const body = <>
     <span className="sp-node" aria-hidden>{nodeIcon(node)}</span>
-    <span className="sp-node-copy"><b>{label}</b><small>{nodeNote(node)}</small></span>
+    <span className="sp-node-copy"><b>{label}</b><small>{nodeNote(node, steps)}</small></span>
   </>;
   const className = `sp-step kind-${node.kind} is-${node.status}`;
   return (

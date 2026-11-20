@@ -46,6 +46,8 @@ export type PathCourse = {
   lab: string;
   name: string;
   base: string;
+  /** How many steps a lesson has here; 5 unless the Lab's lessons use fewer. */
+  stepCount?: number;
   /** What each of the five step slots means in this Lab (one short line each). */
   steps: readonly [string, string, string, string, string];
   stages: PathStage[];
@@ -59,12 +61,16 @@ export type LessonProgress = {
   total?: number;
   /** Wrong answers this lesson sent to the mistake log. */
   mistakes?: number;
+  /** How far along, in the Lab's own words ("Đã làm 4/12 câu"), shown instead of the step number. */
+  note?: string;
 };
 
 export type PathProgress = {
   lessons: Record<string, LessonProgress>;
   /** Best end-of-stage score per stage, 0..1. */
   checkpoints: Record<string, number>;
+  /** A stage the learner chose to start from: it and every stage before it are open, and "next" starts there. */
+  startAt?: string;
 };
 
 export type NodeStatus = "done" | "current" | "open" | "locked";
@@ -109,10 +115,12 @@ export function buildPath(course: PathCourse, progress: PathProgress): PathView 
   let number = 0;
   let previousComplete = true;
   let next: PathView["next"] = null;
+  let fallback: PathView["next"] = null;
+  const startIndex = progress.startAt ? course.stages.findIndex((stage) => stage.id === progress.startAt) : -1;
 
   course.stages.forEach((stage, index) => {
     const worked = stage.lessons.some((lesson) => progress.lessons[lesson.id]?.done || progress.lessons[lesson.id]?.step !== undefined);
-    const open = previousComplete || worked;
+    const open = previousComplete || worked || index <= startIndex;
     let currentGiven = !open;
     const nodes: PathNode[] = [];
     let done = 0;
@@ -145,17 +153,16 @@ export function buildPath(course: PathCourse, progress: PathProgress): PathView 
     const total = stage.lessons.filter((lesson) => !lesson.unnumbered).length;
     const view: StageView = { stage, index, status: !open ? "locked" : complete ? "done" : "current", nodes, done: open ? done : 0, total };
     stages.push(view);
-    if (!next && open) {
-      const current = nodes.find((node) => node.status === "current");
-      if (current) next = { node: current, stage: view };
-    }
+    const current = open ? nodes.find((node) => node.status === "current") : undefined;
+    if (current && !next && index >= startIndex) next = { node: current, stage: view };
+    if (current && !fallback) fallback = { node: current, stage: view };
     previousComplete = open && complete;
   });
 
   const done = stages.reduce((sum, stage) => sum + stage.done, 0);
   const total = stages.reduce((sum, stage) => sum + stage.total, 0);
   const mistakes = stages.reduce((sum, stage) => sum + (stage.nodes.find((node) => node.kind === "review")?.mistakes ?? 0), 0);
-  return { stages, next, done, total, mistakes };
+  return { stages, next: next ?? fallback, done, total, mistakes };
 }
 
 /** "1.0–4.0" + "3.0–5.0" → "1.0–5.0"; ignores ranges it cannot read. */

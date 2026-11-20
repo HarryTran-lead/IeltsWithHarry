@@ -5,8 +5,8 @@
  * at the reference (not in the final milestone) and a self-check. Data comes normalised from the course API.
  */
 import Link from "next/link";
-import { useEffect, useMemo, useState, type CSSProperties, type KeyboardEvent } from "react";
-import { ArrowLeft, ArrowRight, BookOpen, Check, ChevronDown, Clock3, Eye, Languages, Layers, Lightbulb, ListChecks, NotebookPen, Play, Save, Sparkles, Target, Timer, X } from "lucide-react";
+import { useEffect, useMemo, useState, type CSSProperties, type KeyboardEvent, type ReactNode } from "react";
+import { ArrowLeft, ArrowRight, Check, ChevronDown, Clock3, Eye, Languages, Layers, Lightbulb, ListChecks, NotebookPen, Save, Sparkles, Target, Timer, X } from "lucide-react";
 import {
   COURSE_API, COURSE_BASE, attemptDone, courseLayers, courseStageLabels,
   type CourseAnswer, type CourseAttempt, type CourseExample, type CourseField, type CourseModule, type CourseModuleSummary, type CoursePractice, type CourseSection, type CourseUnit,
@@ -16,6 +16,10 @@ import { TASK2_BASE, countWords, questionTypeLabels } from "@/lib/writing-task2/
 import { addPeek, loadCourseAttempts, loadCourseProgress, readPeeks, revealCourse, saveCourseAttempt } from "./course-state";
 import { FinalAssessment, MistakeLog, useFinalBundle, type MistakePrefill } from "./task2-final";
 import { withTerms } from "./task2-text";
+import { useLearnerStreak } from "@/features/account/use-learner-streak";
+import { LessonLocked, LessonSteps, LessonTopBar, StudyPath } from "@/features/self-study-path/study-path";
+import { buildPath } from "@/lib/self-study-path/path";
+import { task2SkillsCourse, task2SkillsProgress } from "@/lib/self-study-path/task2";
 
 const layerTone: Record<string, { tone: string; soft: string }> = {
   "1": { tone: "#0a7f89", soft: "#e2f5f4" }, "2": { tone: "#2577c8", soft: "#e6f0fb" }, "3": { tone: "#7c66dc", soft: "#f1eefe" },
@@ -35,9 +39,15 @@ async function fetchCourse<T>(url: string): Promise<Load<T>> {
 
 /* ───────────── Course home ───────────── */
 
-export function CourseHome({ onLessons }: { onLessons: () => void }) {
+/** Loading and error states keep the Lab's page frame and tabs. */
+export function LabShell({ tabs, children }: { tabs: ReactNode; children: ReactNode }) {
+  return <div className="ll-page ll-roadmap t2-lab">{tabs}{children}</div>;
+}
+
+export function CourseHome({ tabs, onLessons }: { tabs: ReactNode; onLessons: () => void }) {
   const [load, setLoad] = useState<Load<{ modules: CourseModuleSummary[] }>>({ state: "loading" });
-  const [progress, setProgress] = useState<Record<string, number>>({});
+  const [progress, setProgress] = useState<Record<string, number> | null>(null);
+  const streak = useLearnerStreak();
   useEffect(() => {
     let alive = true;
     void fetchCourse<{ modules: CourseModuleSummary[] }>(COURSE_API).then(async (result) => {
@@ -47,54 +57,21 @@ export function CourseHome({ onLessons }: { onLessons: () => void }) {
     }).catch(() => { if (alive) setLoad({ state: "error", message: "Không tải được khoá học." }); });
     return () => { alive = false; };
   }, []);
+  const modules = load.state === "ready" ? load.data.modules : null;
+  const course = useMemo(() => modules ? task2SkillsCourse(modules) : null, [modules]);
+  const view = useMemo(() => course && modules && progress ? buildPath(course, task2SkillsProgress(modules, progress)) : null, [course, modules, progress]);
 
-  if (load.state === "loading") return <><div className="ll-skeleton ll-skeleton-hero"/><div className="ll-skeleton ll-skeleton-card"/></>;
-  if (load.state !== "ready") return <section className="t2-panel t2-course-empty">
+  if (load.state === "loading" || (load.state === "ready" && !view)) return <LabShell tabs={tabs}><div className="ll-skeleton ll-skeleton-hero"/><div className="ll-skeleton ll-skeleton-card"/></LabShell>;
+  if (load.state !== "ready" || !course || !view) return <LabShell tabs={tabs}><section className="t2-panel t2-course-empty">
     <span className="ll-kicker">Khoá kỹ năng R01–R16</span>
     <h2>{load.state === "unavailable" ? "Khoá kỹ năng đang được cập nhật" : "Chưa tải được khoá học"}</h2>
-    <p className="t2-lead">{load.message} Trong lúc chờ, bạn có thể luyện theo đề trong phần Luyện đề.</p>
+    <p className="t2-lead">{load.state === "ready" ? "" : load.message} Trong lúc chờ, bạn có thể luyện theo đề trong phần Luyện đề.</p>
     <div className="t2-next"><button type="button" className="ll-btn ll-btn-primary" onClick={onLessons}>Sang Luyện đề <ArrowRight size={16}/></button></div>
-  </section>;
+  </section></LabShell>;
 
-  const modules = load.data.modules;
-  const byId = new Map(modules.map((module) => [module.id, module]));
-  const done = (module: CourseModuleSummary) => Math.min(progress[module.id] ?? 0, module.counts.practice);
-  const next = modules.find((module) => done(module) > 0 && done(module) < module.counts.practice) ?? modules.find((module) => done(module) < module.counts.practice) ?? modules[0];
-  const totalPractice = modules.reduce((sum, module) => sum + module.counts.practice, 0);
-  const totalDone = modules.reduce((sum, module) => sum + done(module), 0);
-
-  return <>
-    <header className="ll-hero t2-hero">
-      <div className="ll-hero-copy">
-        <h1>Khoá kỹ năng Task 2, <em>học đâu chắc đó.</em></h1>
-        <div className="ll-hero-actions">
-          <Link className="ll-cta" href={`${COURSE_BASE}/${next.id}`}>
-            <span className="ll-cta-icon"><Play size={18} fill="currentColor"/></span>
-            <span><b>{totalDone ? "Học tiếp" : "Bắt đầu khoá học"}</b><small>{next.id} · {next.title}</small></span>
-            <ArrowRight size={18}/>
-          </Link>
-        </div>
-      </div>
-      <div className="ll-stats">
-        <dl><div><dt>Chặng</dt><dd>{modules.length}</dd></div><div><dt>Câu đã làm</dt><dd>{totalDone}</dd></div><div><dt>Tổng câu luyện</dt><dd>{totalPractice}</dd></div></dl>
-      </div>
-    </header>
-
-    {courseLayers.map((layer) => <section key={layer.id} className="t2-layer" style={toneStyle(layer.id)}>
-      <header><span className="ll-stage-tag">Lớp {layer.id}</span><h2>{layer.name}</h2><small>{layer.about}</small></header>
-      <div className="t2-module-grid">{layer.modules.map((id) => byId.get(id)).filter((module): module is CourseModuleSummary => Boolean(module)).map((module) => {
-        const count = done(module);
-        return <Link key={module.id} href={`${COURSE_BASE}/${module.id}`} className={`t2-module-card ${module.id === next.id ? "is-next" : ""} ${count >= module.counts.practice ? "is-done" : ""}`}>
-          <div className="t2-module-top"><span className="t2-module-id">{module.id}</span>{module.id === next.id && <span className="ll-status is-next">{count ? "Đang học" : "Tiếp theo"}</span>}</div>
-          <strong>{module.title}</strong>
-          <p>{module.overview}</p>
-          <div className="t2-module-meta"><span><BookOpen size={12}/> {module.counts.units} bài giảng</span>{module.counts.examples > 0 && <span><Sparkles size={12}/> {module.counts.examples} ví dụ</span>}<span><ListChecks size={12}/> {module.counts.practice} câu</span></div>
-          <span className="t2-module-bar" aria-label={`${count}/${module.counts.practice} câu đã làm`}><i style={{ width: `${(count / Math.max(1, module.counts.practice)) * 100}%` }}/></span>
-        </Link>;
-      })}</div>
-    </section>)}
-    <aside className="ll-note"><Sparkles size={16}/><p>Học liệu do đội ngũ biên soạn, không phải đề thi IELTS chính thức. Mức Nền tảng–Nâng cao là chặng học nội bộ, không quy đổi sang band.</p></aside>
-  </>;
+  return <StudyPath course={course} view={view} streak={streak?.current ?? 0} top={tabs}>
+    <p className="sp-footnote"><Sparkles size={15} aria-hidden/> Học liệu do đội ngũ biên soạn, không phải đề thi IELTS chính thức. Một chặng hoàn thành khi bạn đã làm hết câu luyện của chặng đó; tiến độ không quy đổi sang band.</p>
+  </StudyPath>;
 }
 
 /* ───────────── Milestone page ───────────── */
@@ -109,6 +86,8 @@ export function CourseModulePage({ id }: { id: string }) {
   const [peeks, setPeeks] = useState<string[]>([]);
   const [step, setStep] = useState<Step>("learn");
   const [prefill, setPrefill] = useState<MistakePrefill | null>(null);
+  const [visited, setVisited] = useState<Step[]>(["learn"]);
+  const [locked, setLocked] = useState<{ title: string; href?: string } | null>(null);
 
   useEffect(() => {
     let alive = true;
@@ -117,14 +96,24 @@ export function CourseModulePage({ id }: { id: string }) {
       setLoad(result);
       setPeeks(readPeeks(id));
       const hash = window.location.hash.slice(1) as Step;
-      if (["learn", "examples", "practice", "final", "mistakes"].includes(hash)) setStep(hash);
-      if (result.state === "ready") { const saved = await loadCourseAttempts(id).catch(() => ({})); if (alive) setAttempts(saved); }
+      if (["learn", "examples", "practice", "final", "mistakes"].includes(hash)) { setStep(hash); setVisited((list) => [...list, hash]); }
+      if (result.state !== "ready") return;
+      const saved = await loadCourseAttempts(id).catch(() => ({}));
+      if (alive) setAttempts(saved);
+      // Milestones open in path order: one not reached yet sends the learner to the one that is.
+      const [list, counts] = await Promise.all([fetchCourse<{ modules: CourseModuleSummary[] }>(COURSE_API).catch(() => null), loadCourseProgress().catch(() => null)]);
+      if (!alive || list?.state !== "ready" || !counts) return;
+      const view = buildPath(task2SkillsCourse(list.data.modules), task2SkillsProgress(list.data.modules, counts));
+      const node = view.stages.flatMap((stage) => stage.nodes).find((item) => item.id === id);
+      const next = view.next?.node;
+      if (node?.status === "locked") setLocked({ title: next ? `${next.lesson?.meta?.split(" · ")[0] ?? ""} · ${next.title}` : "", href: next?.href });
     }).catch(() => { if (alive) setLoad({ state: "error", message: "Không tải được chặng học." }); });
     return () => { alive = false; };
   }, [id]);
 
   function go(target: Step) {
     setStep(target);
+    setVisited((list) => list.includes(target) ? list : [...list, target]);
     history.replaceState(null, "", `#${target}`);
     window.scrollTo({ top: 0, behavior: "smooth" });
   }
@@ -143,24 +132,21 @@ export function CourseModulePage({ id }: { id: string }) {
   ];
   const logMistake = LOG_MODULES.includes(milestone.id) ? (fill: MistakePrefill) => { setPrefill(fill); go("mistakes"); } : undefined;
   const nextModule = courseLayers.flatMap((layer) => layer.modules)[courseLayers.flatMap((layer) => layer.modules).indexOf(milestone.id) + 1];
+  const position = Math.max(0, steps.findIndex((item) => item.id === step));
+  // Steps open in order; once practice has started every step of the milestone is open.
+  const reached = done > 0 ? steps.length - 1 : Math.max(0, ...visited.map((item) => steps.findIndex((entry) => entry.id === item)));
 
-  return <div className="ll-page ll-module t2-lab t2-lesson t2-course" style={toneStyle(milestone.layer)}>
-    <CourseCrumb current={`${milestone.id} · ${milestone.title}`}/>
-    <header className="t2-head">
-      <div className="t2-head-copy">
-        <span className="ll-kicker">Lớp {milestone.layer} · {courseLayers.find((layer) => layer.id === milestone.layer)?.name} · {milestone.id}</span>
-        <h1>{milestone.title}</h1>
-        <p>{withTerms(milestone.overview)}</p>
-      </div>
+  if (locked) return <LessonLocked title={`${milestone.id} · ${milestone.title}`} nextTitle={locked.title} nextHref={locked.href} pathHref={TASK2_BASE}/>;
+
+  return <div className="ll-page ll-module t2-lab t2-lesson t2-course sp-kit" style={toneStyle(milestone.layer)}>
+    <header className="t2-lessonbar">
+      <LessonTopBar exitHref={TASK2_BASE} step={position} count={steps.length} title={<>
+        <span>Khoá kỹ năng · Lớp {milestone.layer} · {courseLayers.find((layer) => layer.id === milestone.layer)?.name}</span>
+        <b>{milestone.id} · {milestone.title}</b>
+        <span className="t1-lessonbar-meta">{withTerms(milestone.overview)}</span>
+      </>}/>
+      <LessonSteps steps={steps.map((item) => ({ label: item.label, note: item.score || item.hint, pass: item.pass }))} step={position} reached={reached} onPick={(index) => go(steps[index].id)}/>
     </header>
-
-    <ol className={`ll-stepper t2-stepper ${["", "", "is-two", "is-three", "is-four", "is-five"][steps.length]}`} aria-label="Các bước học">{steps.map((item, i) => <li key={item.id} className={item.pass ? "is-pass" : ""}>
-      <button type="button" aria-current={step === item.id ? "step" : undefined} onClick={() => go(item.id)}>
-        <span className="ll-step-dot">{item.pass && step !== item.id ? <Check size={15} strokeWidth={3}/> : i + 1}</span>
-        <span className="ll-step-text"><b>{item.label}</b><small>{item.hint}</small></span>
-        {item.score && <span className="ll-step-score">{item.score}</span>}
-      </button>
-    </li>)}</ol>
 
     <div className="t2-layout">
       <div className="t2-main">

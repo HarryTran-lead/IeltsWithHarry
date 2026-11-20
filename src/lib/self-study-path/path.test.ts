@@ -54,6 +54,16 @@ describe("buildPath", () => {
     expect([view.done, view.total]).toEqual([0, 2]);
   });
 
+  it("starts from the stage the learner picked, keeping earlier stages open", () => {
+    const view = buildPath(course, { lessons: {}, checkpoints: {}, startAt: "s2" });
+    expect(view.stages.map((stage) => stage.status)).toEqual(["current", "current", "locked"]);
+    expect(view.next?.node.id).toBe("c");
+    const later = buildPath(course, { lessons: { c: { done: true }, d: { done: true } }, checkpoints: {}, startAt: "s2" });
+    expect(later.next?.node.id).toBe("e");
+    const back = buildPath(course, { lessons: { c: { done: true }, d: { done: true }, e: { done: true } }, checkpoints: {}, startAt: "s2" });
+    expect(back.next?.node.id).toBe("a");
+  });
+
   it("returns no next step when the course is finished", () => {
     const lessons = Object.fromEntries(["a", "b", "c", "d", "e"].map((id) => [id, { done: true }]));
     expect(buildPath(course, { lessons, checkpoints: { s1: 1 } }).next).toBeNull();
