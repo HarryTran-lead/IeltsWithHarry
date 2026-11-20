@@ -18,6 +18,7 @@ import { NewsReadingTools } from "./news-reading-tools";
 import { NewsAutoQuiz, QuestionTypePicker, type QuestionType, type TypeCount } from "./news-auto-quiz";
 import { countNewsSince, newsSeenBefore } from "./news-unread";
 import { formatDuration, percent, questionTypes, sumBreakdowns, summarizeAttempts, typeLabels, type PracticeAttempt } from "@/lib/news/practice-stats";
+import { dailyNewsPicks, originalNewsSource, readingMinutes } from "@/lib/news/daily-plan";
 import "./news-masthead.css";
 
 type NewsRow = { id: string; title: string; publisher: string; canonical_url: string; report_url: string | null; fact_source_urls: string[]; category: NewsCategory; published_at: string; fetched_at: string; attribution_text: string; sensitive: boolean; origin_region?: "vietnam" | "international" };
@@ -91,7 +92,7 @@ function NewsMasthead({ active, meta }: { active: NewsTab; meta?: React.ReactNod
 
 const PAGE_SIZE = 12;
 const CATALOG_COLUMNS = "id,source_id,title,publisher,canonical_url,report_url,fact_source_urls,category,published_at,fetched_at,attribution_text,sensitive,readable,image_url,image_alt,image_credit,illustration_source_url,illustration_license,illustration_license_url,origin_region,interest_topics";
-const interestFilters = [{ id: "all", label: "Mọi chủ đề" }, { id: "conflict", label: "Thế giới & xung đột" }, { id: "entertainment", label: "Giải trí & phim ảnh" }, { id: "curious", label: "Chuyện vui & lạ" }] as const;
+const interestFilters = [{ id: "all", label: "Mọi chủ đề" }, { id: "study", label: "Học tập" }, { id: "career", label: "Việc làm" }, { id: "technology", label: "Công nghệ & game" }, { id: "lifestyle", label: "Du lịch & đời sống" }, { id: "sports", label: "Thể thao" }, { id: "entertainment", label: "Giải trí & phim ảnh" }, { id: "curious", label: "Chuyện vui & lạ" }, { id: "conflict", label: "Thế giới & xung đột" }] as const;
 
 function NewsHome() {
   const db = useMemo(() => createClient(), []);
@@ -104,6 +105,7 @@ function NewsHome() {
   const [region, setRegion] = useState<"all" | "vietnam" | "international">("all");
   const [interest, setInterest] = useState("all");
   const [questionType, setQuestionType] = useState<QuestionType | "all">("all");
+  const [readyOnly, setReadyOnly] = useState(false);
   const [randomBusy, setRandomBusy] = useState(false);
   const [randomError, setRandomError] = useState("");
   const [query, setQuery] = useState("");
@@ -122,6 +124,9 @@ function NewsHome() {
   const [saved, setSaved] = useState<string[]>([]);
   const [readIds, setReadIds] = useState<string[]>([]);
   const [quizCounts, setQuizCounts] = useState<Record<string, { total: number; types: Record<string, number> }>>({});
+  const [wordCounts, setWordCounts] = useState<Record<string, number>>({});
+  const [preferredTopics, setPreferredTopics] = useState<string[]>([]);
+  const [weakCategories, setWeakCategories] = useState<string[]>([]);
   const [quizResults, setQuizResults] = useState<Record<string, { score: number; total: number }>>({});
   const [matchingIds, setMatchingIds] = useState<string[]>([]);
   const [readToday, setReadToday] = useState(0);
@@ -144,7 +149,7 @@ function NewsHome() {
   const loadStats = useCallback(async () => {
     const start = new Date(); start.setHours(0,0,0,0);
     const end = new Date(start); end.setDate(end.getDate()+1);
-    const [saves, freshness, readings, progress, today, recentReads, sourceList, oldest] = await Promise.all([
+    const [saves, freshness, readings, progress, today, recentReads, sourceList, oldest, preferences, recentAttempts] = await Promise.all([
       db.from("user_saved_news").select("article_id").limit(500),
       db.rpc("news_freshness"),
       db.from("news_learning_articles").select("id,slug,title,summary,category,stage_id,audio_url,source_url,rights_status,related_news_id,created_at").eq("published", true).limit(6),
@@ -153,6 +158,8 @@ function NewsHome() {
       db.from("user_news_article_reads").select("article_id",{count:"exact",head:true}).gte("read_at",start.toISOString()).lt("read_at",end.toISOString()),
       db.from("news_source_options").select("id,name").order("name"),
       db.from("news_archive_catalog").select("published_at").eq("publication_status","published").eq("sensitive",false).order("published_at",{ascending:true}).limit(1),
+      db.from("user_news_preferences").select("topics").maybeSingle(),
+      db.from("news_auto_attempts").select("article_id,score,total").order("submitted_at", { ascending: false }).limit(30),
     ]);
     setSources((sourceList.data ?? []) as {id:string;name:string}[]);
     if (oldest.data?.[0]?.published_at) setOldestYear(new Date(oldest.data[0].published_at).getUTCFullYear());
@@ -163,6 +170,15 @@ function NewsHome() {
     setCompleted((progress.data??[]).filter((item)=>item.completed_at).length);
     setXp((progress.data??[]).reduce((sum,item)=>sum+(item.xp_awarded??0),0));
     setTodayCount(today.count??0);
+    setPreferredTopics((preferences.data?.topics ?? []) as string[]);
+    const attemptedIds = [...new Set((recentAttempts.data ?? []).map((item) => item.article_id))];
+    if (attemptedIds.length) {
+      const articles = await db.from("news_archive_catalog").select("id,category").in("id", attemptedIds);
+      const byId = new Map((articles.data ?? []).map((item) => [item.id, item.category]));
+      const weak = new Set((recentAttempts.data ?? []).filter((item) => item.total > 0 && item.score / item.total < 0.7)
+        .map((item) => byId.get(item.article_id)).filter((value): value is string => Boolean(value)));
+      setWeakCategories([...weak]);
+    }
   }, [db]);
 
   const loadList = useCallback(async () => {
@@ -182,7 +198,7 @@ function NewsHome() {
     // Only articles readable on site are listed; teaser-only items wait until their text arrives.
     let found: ArchiveRow[];
     let total: number;
-    if (questionType === "all") {
+    if (questionType === "all" && !readyOnly) {
       let list = db.from("news_archive_catalog").select(CATALOG_COLUMNS, { count: "exact" }).eq("publication_status", "published").eq("sensitive", false).eq("readable", true);
       if (region !== "all") list = list.eq("origin_region", region);
       if (interest !== "all") list = list.contains("interest_topics", [interest]);
@@ -206,7 +222,9 @@ function NewsHome() {
       // Resolve the whole filtered result before slicing; page-local filtering would skip matches.
       const matches = new Set<string>();
       for (let offset = 0; ; offset += 1000) {
-        const result = await db.from("news_auto_questions").select("article_id").eq("question_type", questionType).order("article_id").order("sort_order").range(offset, offset + 999);
+        const result = questionType === "all"
+          ? await db.rpc("news_ready_article_ids").order("article_id").range(offset, offset + 999)
+          : await db.from("news_auto_questions").select("article_id").eq("question_type", questionType).order("article_id").order("sort_order").range(offset, offset + 999);
         if (request !== latestRequest.current) return;
         if (result.error) { setError(result.error.message); setLoading(false); return; }
         for (const row of result.data ?? []) matches.add(row.article_id);
@@ -249,11 +267,12 @@ function NewsHome() {
     // A slower, older request must not replace the list for the newest filters.
     if (request !== latestRequest.current) return;
     const ids = found.map((row) => row.id);
-    const [reads, quizzes, attempts] = found.length ? await Promise.all([
+    const [reads, quizzes, attempts, bodies] = found.length ? await Promise.all([
       db.from("user_news_article_reads").select("article_id").in("article_id", ids),
       db.from("news_auto_questions").select("article_id,question_type").in("article_id", ids).limit(PAGE_SIZE * 30),
       db.from("news_auto_attempts").select("article_id,score,total,submitted_at").in("article_id", ids).order("submitted_at", { ascending: false }).limit(PAGE_SIZE * 10),
-    ]) : [null, null, null];
+      db.from("news_article_bodies").select("article_id,body_text").in("article_id", ids),
+    ]) : [null, null, null, null];
     if (request !== latestRequest.current) return;
     setRows(found); setCount(total);
     setReadIds((reads?.data ?? []).map((row) => row.article_id));
@@ -264,11 +283,12 @@ function NewsHome() {
       count.types[question.question_type] = (count.types[question.question_type] ?? 0) + 1;
     }
     setQuizCounts(counts);
+    setWordCounts(Object.fromEntries((bodies?.data ?? []).map((item) => [item.article_id, item.body_text?.match(/[\p{L}\p{N}]+(?:[’'-][\p{L}\p{N}]+)*/gu)?.length ?? 0])));
     setQuizResults(Object.fromEntries((attempts?.data ?? []).filter((item, index, all) => all.findIndex((other) => other.article_id === item.article_id) === index).map((item) => [item.article_id, { score: item.score, total: item.total }])));
     if (quizzes?.error) setError("Chưa tải được trạng thái luyện đề. Hãy thử tải lại trang.");
     setLoadedAt(new Date().toISOString()); setArrived(0);
     setLoading(false);
-  }, [db, feed, category, region, interest, questionType, search, sort, source, year, page]);
+  }, [db, feed, category, region, interest, questionType, readyOnly, search, sort, source, year, page]);
 
   useEffect(() => { const timer = setTimeout(() => setSearch(query), 300); return () => clearTimeout(timer); }, [query]);
   useEffect(() => { void Promise.resolve().then(loadStats); }, [loadStats]);
@@ -291,20 +311,32 @@ function NewsHome() {
     if (randomBusy) return;
     setRandomBusy(true); setRandomError("");
     try {
-      if (questionType !== "all") {
-        if (!matchingIds.length) { setRandomError("Chưa có bài đọc phù hợp với dạng câu hỏi này."); return; }
+      if (questionType !== "all" || readyOnly) {
+        if (!matchingIds.length) { setRandomError("Chưa có bài đọc phù hợp với bộ lọc hiện tại."); return; }
         router.push(`/app/news/${matchingIds[Math.floor(Math.random() * matchingIds.length)]}`);
         return;
       }
       let pool = db.from("news_archive_catalog").select("id", { count: "exact", head: true })
         .eq("publication_status", "published").eq("sensitive", false).eq("readable", true);
       if (category !== "All News") pool = pool.eq("category", category);
+      if (region !== "all") pool = pool.eq("origin_region", region);
+      if (interest !== "all") pool = pool.contains("interest_topics", [interest]);
+      if (feed === "today") { const start = new Date(); start.setHours(0,0,0,0); const end = new Date(start); end.setDate(end.getDate()+1); pool = pool.gte("published_at", start.toISOString()).lt("published_at", end.toISOString()); }
+      if (feed === "archive" && source !== "all") pool = pool.eq("source_id", source);
+      if (feed === "archive" && year !== "all") pool = pool.gte("published_at", `${year}-01-01T00:00:00Z`).lt("published_at", `${Number(year)+1}-01-01T00:00:00Z`);
+      if (search.trim()) pool = pool.ilike("title", `%${search.trim().replace(/[%_,]/g, "")}%`);
       const counted = await pool;
       if (counted.error) throw counted.error;
       if (!counted.count) { setRandomError("Chưa có bài đọc phù hợp. Hãy chọn danh mục khác."); return; }
       let pick = db.from("news_archive_catalog").select("id")
         .eq("publication_status", "published").eq("sensitive", false).eq("readable", true);
       if (category !== "All News") pick = pick.eq("category", category);
+      if (region !== "all") pick = pick.eq("origin_region", region);
+      if (interest !== "all") pick = pick.contains("interest_topics", [interest]);
+      if (feed === "today") { const start = new Date(); start.setHours(0,0,0,0); const end = new Date(start); end.setDate(end.getDate()+1); pick = pick.gte("published_at", start.toISOString()).lt("published_at", end.toISOString()); }
+      if (feed === "archive" && source !== "all") pick = pick.eq("source_id", source);
+      if (feed === "archive" && year !== "all") pick = pick.gte("published_at", `${year}-01-01T00:00:00Z`).lt("published_at", `${Number(year)+1}-01-01T00:00:00Z`);
+      if (search.trim()) pick = pick.ilike("title", `%${search.trim().replace(/[%_,]/g, "")}%`);
       const offset = Math.floor(Math.random() * counted.count);
       const chosen = await pick.order("id").range(offset, offset);
       if (chosen.error || !chosen.data?.[0]) throw chosen.error ?? new Error("Không tìm thấy bài phù hợp.");
@@ -318,13 +350,18 @@ function NewsHome() {
   }
   const yearOptions = Array.from({ length: Math.max(1, new Date().getFullYear() - oldestYear + 1) }, (_, i) => new Date().getFullYear() - i);
   const pages = Math.ceil(count / PAGE_SIZE);
+  const showDailyPicks = feed === "latest" && page === 0 && region === "all" && category === "All News"
+    && interest === "all" && questionType === "all" && !readyOnly && !search;
+  const picks = showDailyPicks ? dailyNewsPicks(rows, new Set(Object.keys(quizCounts)), new Set(readIds), preferredTopics, weakCategories) : [];
+  const featuredIds = new Set(picks.map((row) => row.id));
+  const displayRows = showDailyPicks ? [...picks, ...rows.filter((row) => !featuredIds.has(row.id))] : rows;
   return <div className="content-page news-page news-hub news-home">
     <NewsMasthead active={feed}
       meta={<><span><Newspaper /> <b>{todayCount}</b> tin hôm nay</span><span><Clock3 /> Cập nhật {latest ? relativeTime(latest).toLowerCase() : "—"}</span><span title={`${xp} XP từ bài luyện`}><Trophy /> Đã đọc <b>{readToday}</b> · <b>{completed}</b> bài luyện</span></>} />
     {latest && now - new Date(latest).valueOf() > 2 * 3600000 && <p className="news-stale">Tin đã lưu vẫn xem được. Lần đồng bộ gần nhất: {newsDate(latest)}.</p>}
     <section className="news-feed" id="news-archive" ref={listTop}>
       <div className="news-feed-bar" role="group" aria-label="Lọc tin tức">
-        <label className="news-filter-select" data-active={region !== "all" || undefined}><Globe2 className="news-filter-icon" aria-hidden /><span>Khu vực</span><ChevronDown className="news-filter-caret" aria-hidden /><select value={region} onChange={(event) => { setRegion(event.target.value as typeof region); setPage(0); }}>{([["all", "Tất cả khu vực"], ["vietnam", "Tin Việt Nam"], ["international", "Tin quốc tế"]] as const).map(([id, label]) => <option key={id} value={id}>{label}</option>)}</select></label>
+        <label className="news-filter-select" data-active={region !== "all" || undefined}><Globe2 className="news-filter-icon" aria-hidden /><span>Nguồn tin</span><ChevronDown className="news-filter-caret" aria-hidden /><select value={region} onChange={(event) => { setRegion(event.target.value as typeof region); setPage(0); }}>{([["all", "Mọi nguồn tin"], ["vietnam", "Báo Việt Nam"], ["international", "Nguồn quốc tế"]] as const).map(([id, label]) => <option key={id} value={id}>{label}</option>)}</select></label>
         <label className="news-filter-select" data-active={category !== "All News" || undefined}><LayoutGrid className="news-filter-icon" aria-hidden /><span>Danh mục</span><ChevronDown className="news-filter-caret" aria-hidden /><select value={category} onChange={(event) => { setCategory(event.target.value); setPage(0); }}>{["All News", ...NEWS_CATEGORIES].map((item) => <option key={item} value={item}>{item}</option>)}</select></label>
         <label className="news-filter-select" data-active={interest !== "all" || undefined}><Tag className="news-filter-icon" aria-hidden /><span>Chủ đề</span><ChevronDown className="news-filter-caret" aria-hidden /><select value={interest} onChange={(event) => { setInterest(event.target.value); setPage(0); }}>{interestFilters.map((item) => <option key={item.id} value={item.id}>{item.label}</option>)}</select></label>
         <label className="news-filter-select" data-active={questionType !== "all" || undefined}><ListChecks className="news-filter-icon" aria-hidden /><span>Dạng câu hỏi</span><ChevronDown className="news-filter-caret" aria-hidden /><select value={questionType} onChange={(event) => { setQuestionType(event.target.value as QuestionType | "all"); setPage(0); }}><option value="all">Mọi dạng câu hỏi</option>{questionTypes.map((type) => <option key={type} value={type}>{typeLabels[type]}</option>)}</select></label>
@@ -334,11 +371,13 @@ function NewsHome() {
       <div className="news-feed-tools">
         <div className="news-feed-count"><feedInfo.icon size={15} /><b>{loading ? "…" : count.toLocaleString("vi-VN")} bài</b><span>{feedInfo.hint}</span>
           {arrived > 0 && <button type="button" className="news-arrived" onClick={() => { if (page) setPage(0); else void loadList(); }}><Sparkles size={14} /> {arrived} tin mới · Xem ngay</button>}</div>
+        <button type="button" className={`news-ready-filter ${readyOnly ? "active" : ""}`} aria-pressed={readyOnly} onClick={() => { setReadyOnly((value) => !value); setPage(0); }}><ListChecks size={15}/> Có đề luyện</button>
         <div className="news-random-picker"><button type="button" className="button subtle" aria-label="Chọn bài ngẫu nhiên" onClick={() => void openRandomArticle()} disabled={randomBusy || loading}><Sparkles size={15}/><span>{randomBusy ? "Đang chọn…" : "Ngẫu nhiên"}</span></button></div>
       </div>
+      {showDailyPicks && rows.length > 0 && <div className="news-daily-plan"><strong>4 bài nên đọc hôm nay</strong><span>Chọn 1 bài → đọc & làm quiz → <Link href="/app/vocabulary">ôn 3 từ</Link></span></div>}
       {randomError && <p className="form-error" role="alert">{randomError}</p>}
       {error && <p className="form-error" role="alert">{error}</p>}
-      {loading && !rows.length ? <div className="news-grid" aria-busy="true">{[0, 1, 2].map((item) => <div key={item} className="news-card news-card-skeleton"><span className="skeleton" /><span className="skeleton" /><span className="skeleton" /></div>)}</div> : rows.length ? <div className={`news-grid stagger ${loading ? "is-loading" : ""}`} aria-busy={loading}>{rows.map((row) => <NewsCard key={row.id} row={row} saved={saved.includes(row.id)} read={readIds.includes(row.id)} quizInfo={quizCounts[row.id]} quizResult={quizResults[row.id]} fresh={Date.parse(row.fetched_at) > Date.parse(seenBefore)} onSave={() => void toggleSave(row.id)} onSite={row.readable} image={newsImage(row)} learnSlug={releaseLocks ? undefined : learn.find((item) => item.related_news_id === row.id)?.slug} />)}</div> : <div className="news-empty"><Sticker name={feed === "today" ? "calendar" : feed === "hot" ? "flame" : "newspaper"} size={72} tilt={-6} /><h3>{questionType !== "all" ? `Chưa có bài với dạng ${typeLabels[questionType]}` : search ? `Không có tin nào khớp “${search}”` : feed === "today" ? "Hôm nay chưa có tin mới" : feed === "hot" ? "Chưa có tin nổi bật" : "Chưa có tin phù hợp"}</h3><p>{questionType !== "all" ? "Hãy thử dạng câu hỏi khác hoặc bỏ bớt bộ lọc." : feed === "archive" ? "Hãy đổi năm, nguồn hoặc thứ tự. Kho tin cũ đang được nhập thêm theo lịch." : feed === "latest" ? "Kho tin được đồng bộ theo lịch. Hãy thử danh mục khác." : "Thử danh mục khác hoặc xem tab Mới nhất."}</p>{feed === "latest" && !releaseLocks ? <Link href="/app/news/learn" className="button primary">Learn with News</Link> : <Link href="/app/news" scroll={false} className="button primary">Xem tin mới nhất</Link>}</div>}
+      {loading && !rows.length ? <div className="news-grid" aria-busy="true">{[0, 1, 2, 3].map((item) => <div key={item} className="news-card news-card-skeleton"><span className="skeleton" /><span className="skeleton" /><span className="skeleton" /></div>)}</div> : rows.length ? <div className={`news-grid stagger ${loading ? "is-loading" : ""}`} aria-busy={loading}>{displayRows.map((row) => <NewsCard key={row.id} row={row} featured={featuredIds.has(row.id)} wordCount={wordCounts[row.id]} saved={saved.includes(row.id)} read={readIds.includes(row.id)} quizInfo={quizCounts[row.id]} quizResult={quizResults[row.id]} fresh={Date.parse(row.fetched_at) > Date.parse(seenBefore)} onSave={() => void toggleSave(row.id)} onSite={row.readable} image={newsImage(row)} learnSlug={releaseLocks ? undefined : learn.find((item) => item.related_news_id === row.id)?.slug} />)}</div> : <div className="news-empty"><Sticker name={feed === "today" ? "calendar" : feed === "hot" ? "flame" : "newspaper"} size={72} tilt={-6} /><h3>{questionType !== "all" ? `Chưa có bài với dạng ${typeLabels[questionType]}` : search ? `Không có tin nào khớp “${search}”` : feed === "today" ? "Hôm nay chưa có tin mới" : feed === "hot" ? "Chưa có tin nổi bật" : "Chưa có tin phù hợp"}</h3><p>{questionType !== "all" ? "Hãy thử dạng câu hỏi khác hoặc bỏ bớt bộ lọc." : feed === "archive" ? "Hãy đổi năm, nguồn hoặc thứ tự. Kho tin cũ đang được nhập thêm theo lịch." : feed === "latest" ? "Kho tin được đồng bộ theo lịch. Hãy thử danh mục khác." : "Thử danh mục khác hoặc xem tab Mới nhất."}</p>{feed === "latest" && !releaseLocks ? <Link href="/app/news/learn" className="button primary">Learn with News</Link> : <Link href="/app/news" scroll={false} className="button primary">Xem tin mới nhất</Link>}</div>}
       {pages > 1 && <div className="news-pagination"><button disabled={page === 0 || loading} onClick={() => goToPage(page - 1)}>← Trước</button><span>Trang <b>{page + 1}</b> / {pages}</span><button disabled={page + 1 >= pages || loading} onClick={() => goToPage(page + 1)}>Tiếp →</button></div>}
     </section>
       {!releaseLocks && learn.length > 0 && <section className="news-section"><div className="news-section-heading"><div><span className="eyebrow">HỌC QUA BÀI ĐỌC GỐC</span><h2>Learn with News</h2><p>Bài đọc và câu hỏi do người biên soạn, có đáp án rõ ràng.</p></div><Link href="/app/news/learn">Xem tất cả →</Link></div><div className="news-grid">{learn.slice(0,3).map((item) => <LearnCard key={item.id} item={item}/>)}</div></section>}
@@ -350,36 +389,21 @@ function categorySticker(category: string): StickerName {
   return category === "Technology" ? "bulb" : category === "Science" ? "rocket" : category === "Environment" ? "mountain" : category === "Education" ? "book" : "globe";
 }
 
-const quizTypeLabels: Record<string, string> = {
-  mcq: "Multiple Choice",
-  tfng: "True/False/Not Given",
-  ynng: "Yes/No/Not Given",
-  matching_headings: "Matching Headings",
-  matching_information: "Matching Information",
-  matching_features: "Matching Features",
-  matching_sentence_endings: "Matching Sentence Endings",
-  sentence_completion: "Sentence Completion",
-  summary_completion: "Summary Completion",
-  note_completion: "Note Completion",
-  table_completion: "Table Completion",
-  flow_chart_completion: "Flow-Chart Completion",
-  diagram_label_completion: "Diagram-Label Completion",
-  short_answer: "Short Answer",
-};
-function NewsCard({ row, saved, onSave, learnSlug, onSite = false, image, read = false, fresh = false, quizInfo, quizResult }: { row: NewsRow; saved: boolean; onSave: () => void; learnSlug?: string; onSite?: boolean; image?: NewsImage; read?: boolean; fresh?: boolean; quizInfo?: { total: number; types: Record<string, number> }; quizResult?: { score: number; total: number } }) {
+function NewsCard({ row, saved, onSave, learnSlug, onSite = false, image, read = false, fresh = false, featured = false, wordCount, quizInfo, quizResult }: { row: NewsRow; saved: boolean; onSave: () => void; learnSlug?: string; onSite?: boolean; image?: NewsImage; read?: boolean; fresh?: boolean; featured?: boolean; wordCount?: number; quizInfo?: { total: number; types: Record<string, number> }; quizResult?: { score: number; total: number } }) {
   const href = `/app/news/${row.id}`;
-  return <article className={`news-card ${read ? "is-read" : ""}`}>
+  return <article className={`news-card ${read ? "is-read" : ""} ${featured ? "is-featured" : ""}`}>
     <Link href={href} className="news-card-art" tabIndex={-1} aria-hidden="true" style={{ background: `linear-gradient(135deg, ${accents[row.category]}45, #fffaf3)` }}>
-      {image ? <Image src={image.image_url} alt="" fill sizes="(max-width: 650px) 100vw, (max-width: 1050px) 50vw, 33vw" unoptimized/> : <Sticker name={categorySticker(row.category)} size={64} tilt={-6} />}
+      {image ? <Image src={image.image_url} alt="" fill sizes="(max-width: 560px) 108px, (max-width: 900px) 50vw, (max-width: 1280px) 33vw, 25vw" unoptimized/> : <Sticker name={categorySticker(row.category)} size={48} tilt={-6} />}
       {image?.ai && <em className="news-ai-art-badge" title="Ảnh minh họa do AI tạo, không phải ảnh thực tế">Ảnh AI</em>}
       <small>{row.category}</small>
-      {read ? <em className="news-card-flag read"><CheckCircle2 size={13} /> Đã đọc</em> : fresh ? <em className="news-card-flag">Mới</em> : null}
+      {featured ? <em className="news-card-flag">Gợi ý hôm nay</em> : read ? <em className="news-card-flag read"><CheckCircle2 size={13} /> Đã đọc</em> : fresh ? <em className="news-card-flag">Mới</em> : null}
     </Link>
     <div className="news-card-body">
-      <div className="news-card-meta"><span>{row.publisher}{row.origin_region && <em className="news-origin-label"> · {row.origin_region === "vietnam" ? "Tin Việt Nam" : "Tin quốc tế"}</em>}</span><time dateTime={row.published_at} title={newsDate(row.published_at)}>{relativeTime(row.published_at)}</time></div>
+      <div className="news-card-meta"><span title={row.publisher === "IeltsWithHarry" ? "Bài đọc do IeltsWithHarry viết từ dữ kiện của nguồn này" : undefined}>Nguồn: {originalNewsSource(row.report_url, row.canonical_url, row.publisher)}</span><time dateTime={row.published_at} title={newsDate(row.published_at)}>{relativeTime(row.published_at)}</time></div>
       <h3><Link href={href}>{plainText(row.title)}</Link></h3>
+      {wordCount ? <p className="news-card-length">{wordCount} từ · ~{readingMinutes(wordCount)} phút đọc</p> : null}
       <div className="news-card-progress"><span className={read ? "is-done" : ""}>{read ? "✓ Đã đọc" : "Chưa đọc"}</span><span className={quizResult ? "is-done" : ""}>{quizResult ? `Đã làm · ${quizResult.score} đúng, ${Math.max(0, quizResult.total - quizResult.score)} sai` : "Chưa làm đề"}</span></div>
-      {quizInfo && quizInfo.total > 0 && <div className="news-card-quiz-wrap"><span className="news-card-quiz"><ListChecks size={14} aria-hidden="true"/> Có đề luyện · {quizInfo.total} câu</span><small className="news-card-quiz-types" aria-label="Question types">{Object.entries(quizInfo.types).map(([type, count]) => <span key={type}>{quizTypeLabels[type] ?? type} {count}</span>)}</small></div>}
+      <div className="news-card-quiz-wrap"><span className={`news-card-quiz ${quizInfo?.total ? "" : "is-pending"}`}><ListChecks size={14} aria-hidden="true"/>{quizInfo?.total ? `Đọc & luyện ngay · ${quizInfo.total} câu` : "Đang chuẩn bị đề luyện"}</span></div>
       <div className="news-card-foot">
         <Link href={href} className="news-card-read">{onSite ? "Đọc tại đây" : "Chi tiết"} <ArrowRight size={15}/></Link>
         <div className="news-card-icons">
@@ -414,6 +438,7 @@ function NewsDetail({ id }: { id: string }) {
   const [progress,setProgress]=useState<{answered:boolean[];correct:(boolean|undefined)[]}>({answered:[],correct:[]});
   const onQuizProgress=useCallback((answered:boolean[],correct:(boolean|undefined)[])=>setProgress({answered,correct}),[]);
   const [quizTypes,setQuizTypes]=useState<QuestionType[]>([]);
+  const [examMode,setExamMode]=useState(false);
   const [quizAvailable,setQuizAvailable]=useState<TypeCount[]>([]);
   const [quizState,setQuizState]=useState<{articleId:string;status:"ready"|"pending"|"error"}|null>(null);
   const quizStatus=quizState?.articleId===id?quizState.status:"loading";
@@ -445,10 +470,10 @@ function NewsDetail({ id }: { id: string }) {
   const rightsUrl = onSitePublisher ? rightsUrls[onSitePublisher] : null;
   const image = newsImage(row);
   const links = <div className="news-detail-actions"><a className="button subtle" href={safeExternal(row.report_url || row.canonical_url)} target="_blank" rel="noopener noreferrer">Nguồn tin <ExternalLink size={16}/></a><button className={`button subtle ${saved ? "is-saved" : ""}`} aria-pressed={saved} onClick={()=>void toggle()}><Bookmark size={16} fill={saved?"currentColor":"none"}/> {saved?"Đã lưu":"Lưu tin"}</button>{slug&&<Link className="button subtle" href={`/app/news/learn/${slug}`}>Learn with News →</Link>}</div>;
-  return <div className="content-page news-page news-detail-page"><Link href="/app/news" className="news-back"><ArrowLeft size={17}/> Daily News</Link><article className="news-detail"><header className="news-detail-lead"><div><div className="news-detail-art" style={{background:`linear-gradient(120deg,${accents[row.category]}55,#fffaf3)`}}>{image?<Image src={image.image_url} alt={image.image_alt} fill sizes="(max-width: 950px) 100vw, 48vw" unoptimized/>:<Sticker name={categorySticker(row.category)} size={88} tilt={-6} />}<span>{row.category}</span></div>{image&&<p className="news-image-credit">{image.ai ? <>Ảnh minh họa do AI tạo theo chủ đề bài viết, không phải ảnh thực tế của sự kiện · <a href={AI_ART_SOURCE} target="_blank" rel="noopener noreferrer">Pollinations.ai</a></> : row.illustration_source_url ? <>Ảnh minh họa: {image.image_credit} · <a href={safeExternal(row.illustration_source_url)} target="_blank" rel="noopener noreferrer">{row.illustration_source_url.startsWith("https://images.nasa.gov/") ? "NASA Image Library" : row.illustration_source_url.startsWith("https://www.flickr.com/") ? "Flickr" : "Wikimedia Commons"}</a> · {row.illustration_license_url ? <a href={safeExternal(row.illustration_license_url)} target="_blank" rel="noopener noreferrer">{row.illustration_license}</a> : row.illustration_license}</> : <>Ảnh: {image.image_credit} · <a href={safeExternal(row.canonical_url)} target="_blank" rel="noopener noreferrer">Nguồn bài gốc</a></>}</p>}</div><div className="news-detail-intro"><span className="eyebrow">{row.category} · {relativeTime(row.published_at)}</span><h1>{plainText(row.title)}</h1><p className="news-detail-source">{row.publisher} · {newsDate(row.published_at)}{read&&<span className="news-read-tag"><CheckCircle2 size={14}/> Đã đọc</span>}</p>{/* An AI rewrite already says so in the note below; its byline would repeat it. */}{body?.byline&&!body.ai_generated&&<p className="news-byline">By {body.byline} · <a href={safeExternal(row.canonical_url)} target="_blank" rel="noopener noreferrer">Bài gốc trên {row.publisher}</a></p>}<p className="news-attribution">{row.attribution_text} {row.attribution_text.includes("GDELT")&&<a href="https://www.gdeltproject.org/" target="_blank" rel="noopener noreferrer">The GDELT Project</a>}</p>{body?.ai_generated?<div className="news-rights-note news-ai-note" role="note"><BookOpenText size={20}/><p><strong>Bài đọc tiếng Anh viết độc lập từ dữ kiện đã kiểm tra.</strong> Nguồn dữ kiện: {(row.fact_source_urls?.length ? row.fact_source_urls : [row.canonical_url]).map((url, index) => <span key={url}>{index > 0 ? ", " : ""}<a href={safeExternal(url)} target="_blank" rel="noopener noreferrer">nguồn {index + 1}</a></span>)}. {row.report_url && <a href={safeExternal(row.report_url)} target="_blank" rel="noopener noreferrer">Tin gợi ý chủ đề</a>}</p></div>:body?<div className="news-rights-note"><BookOpenText size={20}/><p>Nội dung văn bản {onSitePublisher ?? row.publisher} được hiển thị tại đây với ghi nguồn. {rightsUrl&&<a href={rightsUrl} target="_blank" rel="noopener noreferrer">Xem hướng dẫn sử dụng của {onSitePublisher}</a>}</p></div>:<div className="news-rights-note"><BookOpenText size={20}/><p>Nguồn này chưa có quyền hiển thị toàn bài trên IeltsWithHarry. Bạn có thể đọc tại trang nhà xuất bản.</p></div>}</div></header>
+  return <div className="content-page news-page news-detail-page"><Link href="/app/news" className="news-back"><ArrowLeft size={17}/> Daily News</Link><article className="news-detail"><header className="news-detail-lead"><div><div className="news-detail-art" style={{background:`linear-gradient(120deg,${accents[row.category]}55,#fffaf3)`}}>{image?<Image src={image.image_url} alt={image.image_alt} fill sizes="(max-width: 950px) 100vw, 48vw" unoptimized/>:<Sticker name={categorySticker(row.category)} size={88} tilt={-6} />}<span>{row.category}</span></div>{image&&<p className="news-image-credit">{image.ai ? <>Ảnh minh họa do AI tạo theo chủ đề bài viết, không phải ảnh thực tế của sự kiện · <a href={AI_ART_SOURCE} target="_blank" rel="noopener noreferrer">Pollinations.ai</a></> : row.illustration_source_url ? <>Ảnh minh họa: {image.image_credit} · <a href={safeExternal(row.illustration_source_url)} target="_blank" rel="noopener noreferrer">{row.illustration_source_url.startsWith("https://images.nasa.gov/") ? "NASA Image Library" : row.illustration_source_url.startsWith("https://www.flickr.com/") ? "Flickr" : "Wikimedia Commons"}</a> · {row.illustration_license_url ? <a href={safeExternal(row.illustration_license_url)} target="_blank" rel="noopener noreferrer">{row.illustration_license}</a> : row.illustration_license}</> : <>Ảnh: {image.image_credit} · <a href={safeExternal(row.canonical_url)} target="_blank" rel="noopener noreferrer">Nguồn bài gốc</a></>}</p>}</div><div className="news-detail-intro"><span className="eyebrow">{row.category} · {relativeTime(row.published_at)}</span><h1>{plainText(row.title)}</h1><p className="news-detail-source">Nguồn: {originalNewsSource(row.report_url, row.canonical_url, row.publisher)} · {newsDate(row.published_at)}{read&&<span className="news-read-tag"><CheckCircle2 size={14}/> Đã đọc</span>}</p>{/* An AI rewrite already says so in the note below; its byline would repeat it. */}{body?.byline&&!body.ai_generated&&<p className="news-byline">By {body.byline} · <a href={safeExternal(row.canonical_url)} target="_blank" rel="noopener noreferrer">Bài gốc trên {row.publisher}</a></p>}<p className="news-attribution">{row.attribution_text} {row.attribution_text.includes("GDELT")&&<a href="https://www.gdeltproject.org/" target="_blank" rel="noopener noreferrer">The GDELT Project</a>}</p>{body?.ai_generated?<div className="news-rights-note news-ai-note" role="note"><BookOpenText size={20}/><p><strong>Bài đọc tiếng Anh viết độc lập từ dữ kiện đã kiểm tra.</strong> Nguồn dữ kiện: {(row.fact_source_urls?.length ? row.fact_source_urls : [row.canonical_url]).map((url, index) => <span key={url}>{index > 0 ? ", " : ""}<a href={safeExternal(url)} target="_blank" rel="noopener noreferrer">nguồn {index + 1}</a></span>)}. {row.report_url && <a href={safeExternal(row.report_url)} target="_blank" rel="noopener noreferrer">Tin gợi ý chủ đề</a>}</p></div>:body?<div className="news-rights-note"><BookOpenText size={20}/><p>Nội dung văn bản {onSitePublisher ?? row.publisher} được hiển thị tại đây với ghi nguồn. {rightsUrl&&<a href={rightsUrl} target="_blank" rel="noopener noreferrer">Xem hướng dẫn sử dụng của {onSitePublisher}</a>}</p></div>:<div className="news-rights-note"><BookOpenText size={20}/><p>Nguồn này chưa có quyền hiển thị toàn bài trên IeltsWithHarry. Bạn có thể đọc tại trang nhà xuất bản.</p></div>}</div></header>
     {body&&quizStatus==="pending"&&<div className="news-rights-note" role="status"><BookOpenText size={20}/><p><strong>Bộ câu hỏi đang chờ tạo.</strong> Bài này đã vào hàng đợi tự động; hãy quay lại sau để luyện đề.</p></div>}
     {body&&quizStatus==="error"&&<div className="news-rights-note" role="alert"><BookOpenText size={20}/><p>Chưa tải được câu hỏi của bài này. Hãy tải lại trang để thử lại.</p></div>}
-    {body?<NewsReadingTools articleId={id} title={plainText(row.title)} paragraphs={paragraphs} initialTranslations={body.translation_vi} onReadEnd={markRead} practice={{answered:progress.answered,correct:progress.correct,setup:<QuestionTypePicker available={quizAvailable} selected={quizTypes} onChange={setQuizTypes}/>,content:<NewsAutoQuiz articleId={id} types={quizTypes} onTypesChange={setQuizTypes} onAvailable={setQuizAvailable} onStatus={onQuizStatus} onProgress={onQuizProgress} onSubmitted={() => void markRead()}/>}}>
+    {body?<NewsReadingTools articleId={id} title={plainText(row.title)} paragraphs={paragraphs} initialTranslations={body.translation_vi} onReadEnd={markRead} examMode={examMode} onExamModeChange={(value) => { setExamMode(value); if (value) setQuizTypes([]); }} practice={{answered:progress.answered,correct:progress.correct,setup:examMode ? undefined : <QuestionTypePicker available={quizAvailable} selected={quizTypes} onChange={setQuizTypes}/>,content:<NewsAutoQuiz key={examMode ? "exam" : "practice"} articleId={id} types={quizTypes} examMode={examMode} onTypesChange={setQuizTypes} onAvailable={setQuizAvailable} onStatus={onQuizStatus} onProgress={onQuizProgress} onSubmitted={() => void markRead()}/>}}>
       <div className={`news-finish ${read ? "is-done" : ""}`}><button type="button" className="news-finish-main" onClick={() => void markRead()} disabled={read || marking} aria-label={read ? "Đã đọc" : "Đánh dấu đã đọc"}>{read?<CheckCircle2 size={18}/>:<BookOpenText size={18}/>} {read?"Đã ghi nhận bài đọc":marking?"Đang lưu tiến độ…":"Đánh dấu đã đọc"}</button>{links}<span className="news-finish-note">{read?"Bài đọc đã vào lịch sử. ":""}Kết quả luyện đề được lưu riêng sau khi nộp bài.</span></div>
       {readError&&<p className="form-error" role="alert">Chưa lưu được tiến độ đọc: {readError} <button type="button" onClick={()=>void markRead()}>Thử lưu lại</button></p>}
     </NewsReadingTools>:<div className="news-detail-actions news-detail-actions-only"><a className="button primary" href={safeExternal(row.canonical_url)} target="_blank" rel="noopener noreferrer">Đọc bài gốc trên {row.publisher} <ExternalLink size={17}/></a><button className="button subtle" aria-pressed={saved} onClick={()=>void toggle()}><Bookmark size={17} fill={saved?"currentColor":"none"}/> {saved?"Đã lưu":"Lưu tin"}</button>{slug&&<Link className="button subtle" href={`/app/news/learn/${slug}`}>Learn with News →</Link>}</div>}

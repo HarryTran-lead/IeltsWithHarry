@@ -611,6 +611,13 @@ export async function enrichNews({ scheduled = false }: { scheduled?: boolean } 
     if (translated.checked && (scheduled || !translated.error)) return result;
   }
   if (!scheduled || slot === "discovery") {
+    if (scheduled && slot === "discovery") {
+      const backlog = await db.rpc("news_quiz_backlog");
+      if (!backlog.error && Number(backlog.data ?? 0) >= 8) {
+        await enrichQuiz(db, result, settings, true);
+        if (result.quizzesChecked) return result;
+      }
+    }
     const { discoverPressFacts } = await import("./press-discovery");
     await discoverPressFacts(db, result, settings, fetch, scheduled);
     if (result.rewritesChecked) return result;
@@ -717,7 +724,13 @@ async function enrichQuiz(db: Db, result: EnrichResult, settings: Awaited<Return
       result.errors.push(`Quiz ${article.article_id}: ${message}`);
       // A quota error is not the article's fault: retry it as soon as quota returns.
       if (cause instanceof AiQuotaError) { result.quotaLimited = true; await finish(db, article.article_id, "quiz", "error", message, cause.retryAfterMs); }
-      else await finish(db, article.article_id, "quiz", "error", message);
+      else await finish(db, article.article_id, "quiz", "error", message, transientQuizRetryMs(message));
     }
   }
+}
+
+/** Temporary model and network failures should not hide a quiz for a full day. */
+export function transientQuizRetryMs(message: string) {
+  return /HTTP 50[0234]|AI response was incomplete|AI returned no content|fetch failed|timed out|TimeoutError/i.test(message)
+    ? 30 * 60_000 : undefined;
 }

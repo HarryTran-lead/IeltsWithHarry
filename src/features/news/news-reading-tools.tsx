@@ -12,7 +12,7 @@ import { ReadingWorkspace, type ReadingPractice } from "@/features/reading/readi
 
 type Lookup = { word: string; phonetic: string; part: string; definition: string; example: string; meaningVi: string };
 
-export function NewsReadingTools({ articleId, title, paragraphs, initialTranslations, onReadEnd, practice, children }: { articleId: string; title: string; paragraphs: string[]; initialTranslations?: string[] | null; onReadEnd?: () => void; practice?: ReadingPractice; children: React.ReactNode }) {
+export function NewsReadingTools({ articleId, title, paragraphs, initialTranslations, onReadEnd, practice, examMode = false, onExamModeChange, children }: { articleId: string; title: string; paragraphs: string[]; initialTranslations?: string[] | null; onReadEnd?: () => void; practice?: ReadingPractice; examMode?: boolean; onExamModeChange?: (value: boolean) => void; children: React.ReactNode }) {
   const db = useMemo(() => createClient(), []);
   const { entries, ready, addEntry } = useNotebook();
   const [bilingual, setBilingual] = useState(false);
@@ -97,11 +97,11 @@ export function NewsReadingTools({ articleId, title, paragraphs, initialTranslat
     } finally { setTranslating(false); }
   }
 
-  return <ReadingWorkspace docKey={`news:${articleId}`} title={title} paragraphs={paragraphs} onSelectWord={lookUpWord} onTranslateSelection={async (text) => (await translateEnglishToVietnamese([text]))[0]} lookupPreview={lookup ? { word: lookup.word, meaning: lookup.meaningVi, loading: lookupBusy } : null} onReadEnd={onReadEnd} practice={practice}
-    translation={bilingual ? (index) => translations[index] ? <p lang="vi" className="rw-translation">{translations[index]}</p> : null : undefined}
-    toolbar={<><button className="button subtle" type="button" disabled={translating} onClick={()=>void showBilingual()}><Languages size={16}/>{translating?`Đang dịch ${translationProgress}/${paragraphs.length}…`:bilingual?"Chỉ tiếng Anh":"Xem song ngữ"}</button>{translationError && <span className="news-translation-error" role="alert">{translationError} <button type="button" onClick={() => void showBilingual(true)}>Thử lại</button></span>}</>}
+  return <ReadingWorkspace docKey={`news:${articleId}`} title={title} paragraphs={paragraphs} onSelectWord={examMode ? undefined : lookUpWord} onTranslateSelection={examMode ? undefined : async (text) => (await translateEnglishToVietnamese([text]))[0]} lookupPreview={examMode ? null : lookup ? { word: lookup.word, meaning: lookup.meaningVi, loading: lookupBusy } : null} onReadEnd={onReadEnd} practice={practice} practiceLimitSeconds={examMode ? 1200 : undefined}
+    translation={!examMode && bilingual ? (index) => translations[index] ? <p lang="vi" className="rw-translation">{translations[index]}</p> : null : undefined}
+    toolbar={<>{onExamModeChange && <button className="button subtle" type="button" aria-pressed={examMode} onClick={() => onExamModeChange(!examMode)}>{examMode ? "✓ Mô phỏng 20 phút" : "Mô phỏng IELTS · 20 phút"}</button>}{!examMode && <button className="button subtle" type="button" disabled={translating} onClick={()=>void showBilingual()}><Languages size={16}/>{translating?`Đang dịch ${translationProgress}/${paragraphs.length}…`:bilingual?"Chỉ tiếng Anh":"Xem song ngữ"}</button>}{!examMode && translationError && <span className="news-translation-error" role="alert">{translationError} <button type="button" onClick={() => void showBilingual(true)}>Thử lại</button></span>}</>}
     after={<>{children}</>}
-    tools={[
+    tools={examMode ? [] : [
       { id: "lookup", label: "Tra từ trong bài", icon: <Search size={18}/>, onSelect: true, content:
         <section className="news-tool-card is-compact">
           <header className="news-tool-head"><Sticker name="abc" size={38} tilt={-8} pop={false}/><div><span className="news-tool-tag">Word Explorer</span><h2>Tra từ trong bài</h2></div></header>
@@ -117,6 +117,6 @@ export function NewsReadingTools({ articleId, title, paragraphs, initialTranslat
           </div> : <p className="news-tool-hint">Bôi đen một từ tiếng Anh trong bài để tra nhanh; từ sẽ tự lưu vào sổ của bài.</p>}
           {lookupError&&<p className="form-error" role="alert">{lookupError}</p>}
         </section> },
-      { id: "saved", label: `Sổ từ của bài (${articleWords.length})`, icon: <BookOpenText size={18}/>, count: articleWords.length, content: <section className="news-tool-card is-compact"><header className="news-tool-head"><Sticker name="notebook" size={38} tilt={6} pop={false}/><div><span className="news-tool-tag sun">Sổ từ của bài</span><h2>Đã lưu {articleWords.length} từ</h2></div></header>{articleWords.length?<div className="news-saved-words">{articleWords.map((entry)=><div key={entry.id}><strong>{entry.title}</strong><span>{entry.meaningVi}</span></div>)}</div>:<p className="news-tool-hint">Chưa có từ nào. Từ bạn tra sẽ hiện ở đây.</p>}<Link href="/app/notebook">Mở sổ tay của tôi →</Link></section> },
+      { id: "saved", label: `Sổ từ của bài (${articleWords.length})`, icon: <BookOpenText size={18}/>, count: articleWords.length, content: <section className="news-tool-card is-compact"><header className="news-tool-head"><Sticker name="notebook" size={38} tilt={6} pop={false}/><div><span className="news-tool-tag sun">Sổ từ của bài</span><h2>Đã lưu {articleWords.length} từ</h2></div></header>{articleWords.length?<div className="news-saved-words">{articleWords.map((entry)=><div key={entry.id}><strong>{entry.title}</strong><span>{entry.meaningVi}</span>{entry.example && <small>{entry.example}</small>}</div>)}</div>:<p className="news-tool-hint">Chưa có từ nào. Từ bạn tra sẽ hiện ở đây.</p>}<Link href="/app/vocabulary">Ôn từ theo lịch →</Link></section> },
     ]} />;
 }

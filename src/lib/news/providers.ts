@@ -22,6 +22,11 @@ export function interestTopicsForTitle(title: string): string[] {
   if (/\b(war|conflict|invasion|ceasefire|military|airstrike|battle|refugees?)\b/i.test(title)) topics.push("conflict");
   if (/\b(film|movie|cinema|music|concert|actor|actress|celebrity|drama|television|festival)\b/i.test(title)) topics.push("entertainment");
   if (/\b(humou?r|funny|quirky|unusual|good news|uplifting|heartwarming|surprise)\b/i.test(title)) topics.push("curious");
+  if (/\b(student|school|university|college|education|scholarship|exam|campus)\b/i.test(title)) topics.push("study");
+  if (/\b(career|job|workplace|internship|startup|entrepreneur|employment)\b/i.test(title)) topics.push("career");
+  if (/\b(technology|digital|app|gaming|game|esports|artificial intelligence|ai)\b/i.test(title)) topics.push("technology");
+  if (/\b(travel|tourism|tourist|festival|food|restaurant|destination)\b/i.test(title)) topics.push("lifestyle");
+  if (/\b(sport|football|soccer|basketball|athlete|olympic|match)\b/i.test(title)) topics.push("sports");
   return topics;
 }
 const cleanText = (value: unknown, max: number) => String(value ?? "").replace(/<[^>]*>/g, "").replace(/\s+/g, " ").trim().slice(0, max);
