@@ -1,5 +1,11 @@
 import { describe, expect, it } from "vitest";
-import { AiQuotaError, findNewsIllustration, geminiJson, generateNewsQuiz, imageClaimLimit, imageKeywords, newsArticleFreeTierReady, normalizeAnswer, quizExcerpt, scheduledNewsWorkSlot, tfngOptions, validateGeneratedQuiz as validateWithPlan } from "../src/lib/news/enrichment";
+import { AiQuotaError, findNewsIllustration, geminiJson, generateNewsQuiz, imageClaimLimit, imageKeywords, newsArticleFreeTierReady, normalizeAnswer, quizExcerpt, scheduledNewsWorkSlot, tfngOptions, transientQuizRetryMs, validateGeneratedQuiz as validateWithPlan } from "../src/lib/news/enrichment";
+
+it("retries temporary quiz failures sooner without repeating permanent errors", () => {
+  expect(transientQuizRetryMs("AI service returned HTTP 503")).toBe(30 * 60_000);
+  expect(transientQuizRetryMs("AI response was incomplete")).toBe(30 * 60_000);
+  expect(transientQuizRetryMs("AI service returned HTTP 400: invalid schema")).toBeUndefined();
+});
 
 it("routes article research only through its confirmed free-tier key", async () => {
   const previous = {

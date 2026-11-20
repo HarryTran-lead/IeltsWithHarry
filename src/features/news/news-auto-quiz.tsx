@@ -97,9 +97,10 @@ export function QuestionTypePicker({ available, selected, onChange }: { availabl
   </div>;
 }
 
-export function NewsAutoQuiz({ articleId, types = ALL_TYPES, onTypesChange, onAvailable, onProgress, onStatus, onSubmitted }: {
+export function NewsAutoQuiz({ articleId, types = ALL_TYPES, examMode = false, onTypesChange, onAvailable, onProgress, onStatus, onSubmitted }: {
   articleId: string;
   types?: QuestionType[];
+  examMode?: boolean;
   onTypesChange?: (next: QuestionType[]) => void;
   onAvailable?: (available: TypeCount[]) => void;
   onProgress?: (answered: boolean[], correct: (boolean | undefined)[]) => void;
@@ -123,7 +124,15 @@ export function NewsAutoQuiz({ articleId, types = ALL_TYPES, onTypesChange, onAv
   const [duration, setDuration] = useState<number | null>(null);
   const [history, setHistory] = useState<PracticeAttempt[]>([]);
   const [recoveryFeedback, setRecoveryFeedback] = useState<RecoveryFeedback | null>(null);
+  const [wrongIds, setWrongIds] = useState<string[]>([]);
+  const [secondsLeft, setSecondsLeft] = useState(1200);
   const clock = usePracticeClock();
+  const examExpired = examMode && secondsLeft === 0;
+  useEffect(() => {
+    if (!examMode) return;
+    const timer = window.setInterval(() => setSecondsLeft(Math.max(0, 1200 - clock.elapsed())), 1000);
+    return () => window.clearInterval(timer);
+  }, [examMode, clock]);
   const resultRef = useRef<HTMLDivElement>(null);
   useEffect(() => {
     let live = true;
@@ -143,7 +152,7 @@ export function NewsAutoQuiz({ articleId, types = ALL_TYPES, onTypesChange, onAv
       })));
       // A finished quiz opens with the saved answers and review instead of a blank sheet.
       const previous = last.data as SavedResult | null;
-      if (!previous) return;
+      if (!previous || examMode) return;
       setAnswers(Object.fromEntries(list.filter((question) => previous.answers[question.id] !== undefined).map((question) => {
         const value = previous.answers[question.id];
         return [question.id, choiceTypes.has(question.question_type) ? Number(value) : value];
@@ -153,7 +162,7 @@ export function NewsAutoQuiz({ articleId, types = ALL_TYPES, onTypesChange, onAv
       setDuration(previous.durationSeconds ?? null);
     });
     return () => { live = false; };
-  }, [articleId, db, onStatus]);
+  }, [articleId, db, onStatus, examMode]);
 
   // This article's past attempts, for "so với lần trước" and the attempt list.
   useEffect(() => {
@@ -174,8 +183,9 @@ export function NewsAutoQuiz({ articleId, types = ALL_TYPES, onTypesChange, onAv
   }, [questions]);
   useEffect(() => { onAvailable?.(available); }, [available, onAvailable]);
 
-  const partial = types.length > 0 && available.some((item) => !types.includes(item.type));
-  const shown = useMemo(() => partial ? questions.filter((question) => types.includes(question.question_type)) : questions, [partial, questions, types]);
+  const partial = wrongIds.length > 0 || (types.length > 0 && available.some((item) => !types.includes(item.type)));
+  const shown = useMemo(() => wrongIds.length ? questions.filter((question) => wrongIds.includes(question.id))
+    : partial ? questions.filter((question) => types.includes(question.question_type)) : questions, [wrongIds, partial, questions, types]);
   const graded = shown.length > 0 && shown.every((question) => reviews[question.id]);
   const answered = shown.filter((question) => isAnswered(answers[question.id])).length;
   const score = shown.filter((question) => reviews[question.id]?.correct).length;
@@ -235,22 +245,24 @@ export function NewsAutoQuiz({ articleId, types = ALL_TYPES, onTypesChange, onAv
   }
 
   async function submit() {
-    if (!shown.length || answered !== shown.length || busy) return;
+    if (!shown.length || (!examMode && answered !== shown.length) || busy) return;
     setBusy(true); setError("");
     const payload = Object.fromEntries(shown.map((question) => {
       const value = answers[question.id];
-      return [question.id, typeof value === "string" ? value.trim() : value];
+      return [question.id, value === undefined ? "" : typeof value === "string" ? value.trim() : value];
     }));
-    const seconds = clock.elapsed();
+    const seconds = Math.min(clock.elapsed(), 1200);
     let review: Review[] | null = null;
-    const practice = await db.rpc("news_submit_auto_practice", { p_article_id: articleId, p_answers: payload, p_seconds: seconds });
+    const practice = examMode
+      ? await db.rpc("news_submit_auto_exam", { p_article_id: articleId, p_answers: payload, p_seconds: seconds })
+      : await db.rpc("news_submit_auto_practice", { p_article_id: articleId, p_answers: payload, p_seconds: seconds });
     if (!practice.error) {
       review = (practice.data as { review: Review[] }).review;
       const attempt: PracticeAttempt = { id: crypto.randomUUID(), article_id: articleId, score: review.filter((item) => item.correct).length, total: review.length,
         submitted_at: new Date().toISOString(), partial, breakdown: (practice.data as { breakdown: Breakdown }).breakdown, duration_seconds: seconds };
       setHistory((current) => [attempt, ...current].slice(0, 10));
       if (!partial) setSaved((current) => ({ submittedAt: attempt.submitted_at, attempts: (current?.attempts ?? 0) + 1 }));
-    } else if (practice.error.code !== "PGRST202") setError(practice.error.message);
+    } else if (examMode || practice.error.code !== "PGRST202") setError(practice.error.message);
     // Until the practice-history migration is applied, fall back to the older endpoints.
     else if (partial) {
       const response = await fetch("/api/news/quiz-check", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ articleId, answers: payload }) }).catch(() => null);
@@ -286,12 +298,23 @@ export function NewsAutoQuiz({ articleId, types = ALL_TYPES, onTypesChange, onAv
     clock.restart();
   }
 
+  function retryWrong() {
+    const ids = shown.filter((question) => !reviews[question.id]?.correct).map((question) => question.id);
+    if (!ids.length) return;
+    setWrongIds(ids);
+    setAnswers((current) => Object.fromEntries(Object.entries(current).filter(([id]) => !ids.includes(id))));
+    setReviews((current) => Object.fromEntries(Object.entries(current).filter(([id]) => !ids.includes(id))));
+    setDuration(null);
+    clock.restart();
+  }
+
   if (!questions.length && !error) return null;
   return <section className="news-auto-quiz" aria-label="Câu hỏi luyện đọc IELTS từ bài báo">
     <div className="news-auto-quiz-heading"><span className="eyebrow"><Sparkles size={15}/> IELTS READING TỪ BÀI BÁO</span>
-      <h2>{shown.length} câu hỏi {partial ? `· ${types.map((type) => groups[type].short).join(" + ")}` : "theo dạng đề IELTS"}</h2>
-      <p>{partial ? "Đang luyện riêng các dạng đã chọn. Kết quả được lưu vào lịch sử nhưng không thay bài làm đầy đủ." : "Câu hỏi do AI soạn từ toàn văn bài này. Làm hết các phần rồi nộp bài để xem đáp án và câu dẫn chứng."}</p>
-      {onTypesChange && <QuestionTypePicker available={available} selected={partial ? types : []} onChange={onTypesChange} />}
+      <h2>{wrongIds.length ? `Ôn lại ${shown.length} câu sai` : `${shown.length} câu hỏi ${partial ? `· ${types.map((type) => groups[type].short).join(" + ")}` : "theo dạng đề IELTS"}`}</h2>
+      <p>{examMode ? `Mô phỏng 20 phút · còn ${Math.floor(secondsLeft / 60)}:${String(secondsLeft % 60).padStart(2, "0")}. Không có dịch hoặc tra từ; câu bỏ trống được tính sai.` : wrongIds.length ? "Luyện lại các câu vừa trả lời sai. Kết quả được lưu riêng trong lịch sử." : partial ? "Đang luyện riêng các dạng đã chọn. Kết quả được lưu vào lịch sử nhưng không thay bài làm đầy đủ." : "Câu hỏi do AI soạn từ toàn văn bài này. Làm hết các phần rồi nộp bài để xem đáp án và câu dẫn chứng."}</p>
+      {wrongIds.length ? <button type="button" className="button subtle" onClick={() => setWrongIds([])}>Xem lại toàn bộ câu hỏi</button> : !examMode && onTypesChange && <QuestionTypePicker available={available} selected={partial ? types : []} onChange={onTypesChange} />}
+      {examExpired && !graded && <p className="form-error" role="status">Hết giờ. Bài đã khóa; nộp để xem kết quả, kể cả câu bỏ trống.</p>}
     </div>
     {error && <p className="form-error" role="alert">{error}</p>}
     {sections.map((section) => {
@@ -322,12 +345,12 @@ export function NewsAutoQuiz({ articleId, types = ALL_TYPES, onTypesChange, onAv
               const marker = /_{3,}|\.{3,}|…/.exec(row.value)!;
               return <tr key={question.id} className={review ? review.correct ? "is-correct" : "is-wrong" : ""}>
                 <th scope="row"><small className="news-completion-number">Câu {number}</small>{row.label}
-                  <button type="button" className="news-completion-translate" onClick={() => void toggleTranslation(question)} disabled={translatingId === question.id}>
-                    <Languages size={13}/>{translatingId === question.id ? "Đang dịch…" : translationVisible[question.id] ? "Ẩn bản dịch" : "Dịch câu hỏi"}</button>
-                  {translationVisible[question.id] && translations[question.id] && <small className="news-completion-translation" lang="vi">{translations[question.id]}</small>}
+                   {!examMode && <button type="button" className="news-completion-translate" onClick={() => void toggleTranslation(question)} disabled={translatingId === question.id}>
+                    <Languages size={13}/>{translatingId === question.id ? "Đang dịch…" : translationVisible[question.id] ? "Ẩn bản dịch" : "Dịch câu hỏi"}</button>}
+                   {!examMode && translationVisible[question.id] && translations[question.id] && <small className="news-completion-translation" lang="vi">{translations[question.id]}</small>}
                 </th>
                 <td>{row.value.slice(0, marker.index)}<input className="news-auto-written" type="text" maxLength={60} autoComplete="off"
-                  aria-label={`Từ còn thiếu câu ${number}, ${row.label}`} value={typeof value === "string" ? value : ""} disabled={graded}
+                   aria-label={`Từ còn thiếu câu ${number}, ${row.label}`} value={typeof value === "string" ? value : ""} disabled={graded || examExpired}
                   onChange={(event) => setAnswers((current) => ({ ...current, [question.id]: event.target.value }))} placeholder="Điền từ"/>{row.value.slice(marker.index + marker[0].length)}
                   {review && <small className="news-completion-feedback">{review.correct ? "✓ Chính xác" : `✗ Đáp án: ${review.acceptedAnswers?.[0] ?? ""}`}</small>}
                 </td>
@@ -366,8 +389,8 @@ export function NewsAutoQuiz({ articleId, types = ALL_TYPES, onTypesChange, onAv
                 ? <mark key={part.start} data-question-hl={part.highlight.id} className={`news-question-mark ${part.highlight.color}`}>{part.text}</mark>
                 : <span key={part.start}>{part.text}</span>)}</h3>}
             {question.question_type === "note_completion" && !sharedNoteWordLimit && <small className="news-note-word-limit">Write NO MORE THAN {wordLimitText(noteWordLimit)} from the article.</small>}
-            <div className="news-question-tools"><button type="button" onClick={()=>void toggleTranslation(question)} disabled={translatingId===question.id}><Languages size={14}/>{translatingId===question.id?"Đang dịch…":translationVisible[question.id]?"Ẩn bản dịch":"Dịch câu hỏi"}</button><span><Highlighter size={13}/> Bôi đen câu hỏi để highlight</span></div>
-            {translationVisible[question.id]&&translations[question.id]&&<p className="news-question-translation" lang="vi">{translations[question.id]}</p>}
+             <div className="news-question-tools">{!examMode && <button type="button" onClick={()=>void toggleTranslation(question)} disabled={translatingId===question.id}><Languages size={14}/>{translatingId===question.id?"Đang dịch…":translationVisible[question.id]?"Ẩn bản dịch":"Dịch câu hỏi"}</button>}<span><Highlighter size={13}/> Bôi đen câu hỏi để highlight</span></div>
+             {!examMode && translationVisible[question.id]&&translations[question.id]&&<p className="news-question-translation" lang="vi">{translations[question.id]}</p>}
             {selection?.questionId===question.id&&<div className="news-question-highlight-menu" role="group" aria-label={`Highlight câu ${number}`}>
               {highlightColors.map((color)=><button type="button" key={color} className={color} onClick={()=>paintQuestion(question,color)} aria-label={`Highlight màu ${color}`}/>)}
               {selection.mark&&<button type="button" className="remove" onClick={()=>{const next=(questionHighlights[question.id]??[]).filter((item)=>item.id!==selection.mark);setQuestionHighlights((current)=>({...current,[question.id]:next}));try{localStorage.setItem(`ieltswithharry-question-highlights:${articleId}:${question.id}`,JSON.stringify(next));}catch{}setSelection(null);}}>Bỏ highlight</button>}
@@ -378,17 +401,17 @@ export function NewsAutoQuiz({ articleId, types = ALL_TYPES, onTypesChange, onAv
                 const isGap = table.gap.row === rowIndex && table.gap.column === columnIndex;
                 const marker = isGap ? /_{3,}|\.{3,}|…/.exec(cell) : null;
                 return <td key={columnIndex}>{marker ? <>{cell.slice(0, marker.index)}<input className="news-auto-written" type="text" maxLength={60} autoComplete="off"
-                  aria-label={`Từ còn thiếu câu ${number}, cột ${table.headers[columnIndex]}`} value={typeof value === "string" ? value : ""} disabled={graded}
+                   aria-label={`Từ còn thiếu câu ${number}, cột ${table.headers[columnIndex]}`} value={typeof value === "string" ? value : ""} disabled={graded || examExpired}
                   onChange={(event) => setValue(event.target.value)} placeholder="Điền từ"/>{cell.slice(marker.index + marker[0].length)}</> : cell}</td>;
               })}</tr>)}</tbody>
             </table></div>}
             {!choice && !gapTypes.has(question.question_type) && <input className="news-auto-written" type="text" maxLength={60} autoComplete="off" aria-label={`Câu trả lời câu ${number}`}
-              value={typeof value === "string" ? value : ""} disabled={graded} onChange={(event) => setValue(event.target.value)} placeholder="Tối đa 3 từ"/>}
+               value={typeof value === "string" ? value : ""} disabled={graded || examExpired} onChange={(event) => setValue(event.target.value)} placeholder="Tối đa 3 từ"/>}
             {gapTypes.has(question.question_type) && !table && <input className="news-auto-written" type="text" maxLength={60} autoComplete="off" aria-label={`Từ còn thiếu câu ${number}`}
-              value={typeof value === "string" ? value : ""} disabled={graded} onChange={(event) => setValue(event.target.value)} placeholder={`Điền vào chỗ trống · tối đa ${question.question_type === "note_completion" ? noteWordLimit : 3} từ`}/>}
+               value={typeof value === "string" ? value : ""} disabled={graded || examExpired} onChange={(event) => setValue(event.target.value)} placeholder={`Điền vào chỗ trống · tối đa ${question.question_type === "note_completion" ? noteWordLimit : 3} từ`}/>}
             {choice && <div className={`news-auto-options ${question.question_type === "tfng" || question.question_type === "ynng" ? "tfng" : ""}`}>{question.options.map((option, index) =>
               <label key={index} className={`${value === index ? "selected" : ""} ${review?.correctIndex === index ? "correct" : ""} ${review && value === index && index !== review.correctIndex ? "wrong" : ""}`}>
-                <input type="radio" name={`news-ai-${question.id}`} checked={value === index} disabled={graded} onChange={() => setValue(index)}/>
+                 <input type="radio" name={`news-ai-${question.id}`} checked={value === index} disabled={graded || examExpired} onChange={() => setValue(index)}/>
                 {question.question_type !== "tfng" && question.question_type !== "ynng" && <span>{"ABCD"[index]}</span>}<em>{question.question_type === "tfng" || question.question_type === "ynng" ? option.toUpperCase() : option}</em>
                 {review?.optionNotes?.[index] && <small className="news-auto-note">{index === review.correctIndex ? "✓ " : "✗ "}{review.optionNotes[index]}</small>}
               </label>)}</div>}
@@ -401,23 +424,23 @@ export function NewsAutoQuiz({ articleId, types = ALL_TYPES, onTypesChange, onAv
         })}
       </div>;
     })}
-    {shown.length > 0 && !graded && <div className="news-auto-submit"><span>Đã làm {answered}/{shown.length} câu{answered<shown.length&&<small>Trả lời đủ {shown.length-answered} câu còn lại trước khi nộp.</small>}</span>
-      <button type="button" className="button primary" disabled={busy || answered !== shown.length} onClick={() => void submit()}>{busy ? "Đang chấm…" : "Nộp bài và xem đáp án"}</button></div>}
+    {shown.length > 0 && !graded && <div className="news-auto-submit"><span>Đã làm {answered}/{shown.length} câu{answered<shown.length&&<small>{examMode ? `${shown.length-answered} câu chưa trả lời sẽ tính sai.` : `Trả lời đủ ${shown.length-answered} câu còn lại trước khi nộp.`}</small>}</span>
+      <button type="button" className="button primary" disabled={busy || (!examMode && answered !== shown.length)} onClick={() => void submit()}>{busy ? "Đang chấm…" : examExpired ? "Hết giờ · Nộp bài" : "Nộp bài và xem đáp án"}</button></div>}
     {graded && <div ref={resultRef}><QuizResult score={score} total={shown.length} partial={partial} duration={duration}
       breakdown={sumBreakdowns([Object.fromEntries(available.map(({ type }) => {
         const items = shown.filter((question) => question.question_type === type);
         return [type, { correct: items.filter((question) => reviews[question.id]?.correct).length, total: items.length }];
       }))])}
-      saved={saved && !partial ? saved : null} history={history} onRetry={retry} />
+      saved={saved && !partial ? saved : null} history={history} onRetry={retry} onRetryWrong={examMode ? undefined : retryWrong} />
       {recoveryFeedback?.restoredToday ? <p role="status">Đã khôi phục chuỗi học! <Link href="/app/profile">Xem hồ sơ →</Link></p>
         : recoveryFeedback?.active ? <p role="status">Thử thách khôi phục chuỗi: {recoveryFeedback.completed}/{recoveryFeedback.required} bài đạt yêu cầu. Chỉ bài đã đọc xong và trả lời đúng toàn bộ câu hỏi mới được tính. <Link href="/app/profile">Xem tiến độ →</Link></p> : null}
     </div>}
   </section>;
 }
-function QuizResult({ score, total, partial, duration, breakdown, saved, history, onRetry }: {
+function QuizResult({ score, total, partial, duration, breakdown, saved, history, onRetry, onRetryWrong }: {
   score: number; total: number; partial: boolean; duration: number | null;
   breakdown: ReturnType<typeof sumBreakdowns>; saved: { submittedAt: string; attempts: number } | null;
-  history: PracticeAttempt[]; onRetry: () => void;
+  history: PracticeAttempt[]; onRetry: () => void; onRetryWrong?: () => void;
 }) {
   const pct = percent(score, total);
   // Compare with the attempt before this one, of the same kind (full quiz or chosen types).
@@ -447,6 +470,7 @@ function QuizResult({ score, total, partial, duration, breakdown, saved, history
     <div className="news-quiz-result-actions">
       <span>{partial ? "Đã lưu vào lịch sử luyện theo dạng." : saved ? `Đã lưu lần làm thứ ${saved.attempts} lúc ${new Date(saved.submittedAt).toLocaleString("vi-VN", { dateStyle: "short", timeStyle: "short" })}.` : "Đã lưu vào lịch sử."}</span>
       <Link href="/app/news/history" className="button subtle">Xem phân tích</Link>
+      {score < total && onRetryWrong && <button type="button" className="button subtle" onClick={onRetryWrong}><RotateCcw size={15} /> Ôn {total - score} câu sai</button>}
       <button type="button" className="button primary" onClick={onRetry}><RotateCcw size={15} /> Làm lại</button>
     </div>
   </section>;

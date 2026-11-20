@@ -59,7 +59,7 @@ function anchor(rect: DOMRect, touch: boolean): Pick<Popover, "x" | "y" | "below
  * at the bottom. Highlights are synced to the learner account with a scoped
  * local copy; text size is a device preference.
  */
-export function ReadingWorkspace({ docKey, title, paragraphs, translation, onSelectWord, onTranslateSelection, lookupPreview, onReadEnd, toolbar, tools, after, practice }: {
+export function ReadingWorkspace({ docKey, title, paragraphs, translation, onSelectWord, onTranslateSelection, lookupPreview, onReadEnd, toolbar, tools, after, practice, practiceLimitSeconds }: {
   docKey: string;
   title: string;
   paragraphs: string[];
@@ -72,6 +72,7 @@ export function ReadingWorkspace({ docKey, title, paragraphs, translation, onSel
   tools?: ReadingTool[];
   after?: React.ReactNode;
   practice?: ReadingPractice;
+  practiceLimitSeconds?: number;
 }) {
   const textKey = paragraphs.join("\u0000");
   const text = useMemo(() => textKey.split("\u0000"), [textKey]);
@@ -217,11 +218,11 @@ export function ReadingWorkspace({ docKey, title, paragraphs, translation, onSel
 
   useEffect(() => {
     if (!practicing) return;
-    const timer = window.setInterval(() => setSeconds((value) => value + 1), 1000);
+    const timer = window.setInterval(() => setSeconds((value) => Math.min(value + 1, practiceLimitSeconds ?? 36000)), 1000);
     const overflow = document.body.style.overflow;
     document.body.style.overflow = "hidden";
     return () => { window.clearInterval(timer); document.body.style.overflow = overflow; };
-  }, [practicing]);
+  }, [practicing, practiceLimitSeconds]);
 
   useEffect(() => {
     function onKey(event: KeyboardEvent) {
@@ -397,7 +398,7 @@ export function ReadingWorkspace({ docKey, title, paragraphs, translation, onSel
       {practicing ? <>
         <button type="button" className="rw-exit" onClick={() => setMode("read")}><X size={17} /> Thoát</button>
         <strong className="rw-title">{title}</strong>
-        <span className="rw-timer" title="Thời gian làm bài"><Timer size={16} /> {clock(seconds)}</span>
+        <span className="rw-timer" title={practiceLimitSeconds ? "Thời gian còn lại" : "Thời gian làm bài"}><Timer size={16} /> {clock(practiceLimitSeconds ? Math.max(0, practiceLimitSeconds - seconds) : seconds)}</span>
         <button type="button" className="rw-wide-toggle" aria-pressed={passageWide} onClick={() => { setPassageWide((value) => !value); setTab("passage"); }}>{passageWide ? <Columns2 size={15} /> : <BookOpenText size={15} />}{passageWide ? "Chia đôi" : "Xem toàn bài"}</button>
         <div className="rw-tabs" role="tablist" aria-label="Chọn khung">
           <button type="button" role="tab" aria-selected={tab === "passage"} onClick={() => setTab("passage")}><BookOpenText size={15} /> Bài đọc</button>
