@@ -37,6 +37,8 @@ export type PathStage = {
   /** Band range like "3.0–4.5"; empty when the Lab has none for this stage. */
   band?: string;
   about?: string;
+  /** The stage's colour in its Lab (banner, road, current node); a default palette is used without it. */
+  tone?: { color: string; soft: string };
   lessons: PathLesson[];
   review?: { href?: string };
   checkpoint?: { title: string; href?: string };

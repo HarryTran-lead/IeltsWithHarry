@@ -5,8 +5,8 @@
  * order, the same unlock rules and the same single "Học tiếp" button wherever they study.
  */
 import Link from "next/link";
-import { useState, type ReactNode } from "react";
-import { ArrowLeft, ArrowRight, Check, ChevronDown, Clock3, Flame, Lock, Play, RotateCcw, Trophy, X } from "lucide-react";
+import { useEffect, useRef, useState, type CSSProperties, type ReactNode } from "react";
+import { ArrowLeft, ArrowRight, Check, ChevronDown, Clock3, Flag, Flame, Lock, Play, RotateCcw, Trophy, X } from "lucide-react";
 import { PASS_MARK, STEP_COUNT, STEP_SLOTS, type PathCourse, type PathNode, type PathView, type StageView } from "@/lib/self-study-path/path";
 import "./study-path.css";
 
@@ -37,40 +37,64 @@ function nodeNote(node: PathNode, steps: number) {
 
 /* ───────────── Screen 1 · the path map ───────────── */
 
+/** Stage colours for Labs that do not give their own. */
+const PALETTE = [
+  { color: "#0a7f89", soft: "#e2f5f4" }, { color: "#2577c8", soft: "#e6f0fb" }, { color: "#7c66dc", soft: "#f1eefe" }, { color: "#d2524a", soft: "#fdeeec" },
+  { color: "#b97d05", soft: "#fff4d9" }, { color: "#4f5fd6", soft: "#ecedfc" }, { color: "#2f7d6d", soft: "#e3f3ee" }, { color: "#10233f", soft: "#e8edf3" },
+];
+const toneOf = (stage: StageView) => stage.stage.tone ?? PALETTE[stage.index % PALETTE.length];
+const toneStyle = (stage: StageView) => ({ "--sp-tone": toneOf(stage).color, "--sp-tone-soft": toneOf(stage).soft }) as CSSProperties;
+const stageAnchor = (stage: StageView) => `sp-stage-${stage.index + 1}`;
+
 export function StudyPath({ course, view, href, streak = 0, target, top, intro, children }: {
   course: PathCourse; view: PathView; href?: Href; streak?: number; target?: string;
-  /** Above the header, e.g. a Lab's own tabs. */ top?: ReactNode;
-  /** Between the header and the stages, e.g. a first-visit guide. */ intro?: ReactNode;
+  /** Above the map and side panel, e.g. a Lab's own tabs. */ top?: ReactNode;
+  /** Above the stages, e.g. a first-visit guide or shortcuts. */ intro?: ReactNode;
   children?: ReactNode;
 }) {
   const resolve: Href = href ?? ((node) => node.href);
   const percent = view.total ? Math.round((view.done / view.total) * 100) : 0;
   const next = view.next;
   const current = next?.stage ?? view.stages[view.stages.length - 1];
+  const steps = course.stepCount ?? STEP_COUNT;
 
   return (
-    <div className="sp-page">
+    <div className="sp-page sp-map-page">
       {top}
-      <header className="sp-head">
-        <div className="sp-head-top">
-          <div>
+      <div className="sp-layout">
+        <aside className="sp-side" aria-label="Tiến độ lộ trình">
+          <header className="sp-head" style={current ? toneStyle(current) : undefined}>
             <span className="sp-kicker">Tự học · {course.name}{target ? ` · mục tiêu band ${target}` : ""}</span>
             <h1>{next ? <>Chặng {current.index + 1} · {current.stage.title}</> : "Đã xong toàn bộ lộ trình"}</h1>
-          </div>
-          <div className="sp-pills">
-            {streak > 0 && <span className="sp-pill sp-pill-sun"><Flame size={14} aria-hidden /> {streak} ngày liên tiếp</span>}
-            <span className="sp-pill sp-pill-good">{view.done}/{view.total} bài</span>
-          </div>
-        </div>
-        <div className="sp-bar" role="progressbar" aria-valuenow={percent} aria-valuemin={0} aria-valuemax={100} aria-label="Tiến độ lộ trình"><span style={{ width: `${percent}%` }} /></div>
-        {next && <ContinueCard node={next.node} href={resolve(next.node)} steps={course.stepCount ?? STEP_COUNT} />}
-      </header>
-      {intro}
+            <div className="sp-head-stats">
+              <span><b>{view.done}/{view.total}</b><small>bài xong</small></span>
+              {streak > 0 && <span className="is-sun"><b><Flame size={16} aria-hidden /> {streak}</b><small>ngày liên tiếp</small></span>}
+              <span><b>{percent}%</b><small>lộ trình</small></span>
+            </div>
+            <div className="sp-bar" role="progressbar" aria-valuenow={percent} aria-valuemin={0} aria-valuemax={100} aria-label="Tiến độ lộ trình"><span style={{ width: `${percent}%` }} /></div>
+            {next && <ContinueCard node={next.node} href={resolve(next.node)} steps={steps} />}
+          </header>
+          <nav className="sp-overview" aria-label="Các chặng">
+            <b>Toàn bộ lộ trình</b>
+            <ol>{view.stages.map((stage) => <li key={stage.stage.id} className={`is-${stage.status} ${stage.index === next?.stage.index ? "is-here" : ""}`} style={toneStyle(stage)}>
+              <a href={`#${stageAnchor(stage)}`}>
+                <span className="sp-overview-dot" aria-hidden>{stage.status === "done" ? <Check size={12} strokeWidth={3} /> : stage.status === "locked" ? <Lock size={11} /> : stage.index + 1}</span>
+                <span className="sp-overview-name">{stage.stage.title}</span>
+                <span className="sp-overview-count">{stage.done}/{stage.total}</span>
+                <i aria-hidden><em style={{ width: `${stage.total ? (stage.done / stage.total) * 100 : 0}%` }} /></i>
+              </a>
+            </li>)}</ol>
+          </nav>
+        </aside>
 
-      <ol className="sp-stages">
-        {view.stages.map((stage) => <StageBlock key={stage.stage.id} stage={stage} href={resolve} isNext={stage.index === next?.stage.index} steps={course.stepCount ?? STEP_COUNT} />)}
-      </ol>
-      {children}
+        <div className="sp-main">
+          {intro}
+          <ol className="sp-stages">
+            {view.stages.map((stage) => <StageBlock key={stage.stage.id} stage={stage} href={resolve} isNext={stage.index === next?.stage.index} steps={steps} />)}
+          </ol>
+          {children}
+        </div>
+      </div>
     </div>
   );
 }
@@ -92,65 +116,129 @@ function ContinueCard({ node, href, steps }: { node: PathNode; href?: string; st
   );
 }
 
-const OFFSETS = [0, 1, 2, 1];
-
 function StageBlock({ stage, href, isNext, steps }: { stage: StageView; href: Href; isNext: boolean; steps: number }) {
   // Only the stage holding the next step starts open; finished stages and stages opened out of order fold.
   const [open, setOpen] = useState(isNext);
   const title = <>Chặng {stage.index + 1} · {stage.stage.title}{stage.stage.band ? <em> · band {stage.stage.band}</em> : null}</>;
 
   if (stage.status === "locked") {
-    return <li className="sp-stage is-locked"><div className="sp-stage-row"><Lock size={16} aria-hidden /><span>{title}</span><small>{stage.total} bài</small></div></li>;
+    return <li id={stageAnchor(stage)} className="sp-stage is-locked"><div className="sp-stage-row"><Lock size={16} aria-hidden /><span>{title}</span><small>{stage.total} bài</small></div></li>;
   }
 
   return (
-    <li className={`sp-stage is-${stage.status}`}>
-      {!isNext
-        ? <button type="button" className="sp-stage-row" aria-expanded={open} onClick={() => setOpen((value) => !value)}>{stage.status === "done" ? <Check size={16} aria-hidden /> : <Play size={16} aria-hidden />}<span>{title}</span><small>{stage.status === "done" ? "Đã xong" : `${stage.done}/${stage.total} bài`} · {open ? "thu gọn" : stage.status === "done" ? "mở lại để ôn" : "xem bài"}</small><ChevronDown size={16} aria-hidden className={open ? "is-flipped" : ""} /></button>
-        : <div className="sp-stage-title"><h2>{title}</h2><small>{stage.done}/{stage.total} bài{stage.stage.about ? ` · ${stage.stage.about}` : ""}</small></div>}
-      {open && <StageNodes stage={stage} href={href} steps={steps} />}
+    <li id={stageAnchor(stage)} className={`sp-stage is-${stage.status} ${isNext ? "is-next" : ""}`} style={toneStyle(stage)}>
+      {isNext
+        ? <header className="sp-banner">
+          <div>
+            <small>Chặng {stage.index + 1}{stage.stage.band ? ` · band ${stage.stage.band}` : ""}</small>
+            <h2>{stage.stage.title}</h2>
+            {stage.stage.about && <p>{stage.stage.about}</p>}
+          </div>
+          <span className="sp-banner-count"><b>{stage.done}/{stage.total}</b><small>bài xong</small></span>
+          <Flag className="sp-banner-art" size={120} strokeWidth={1.2} aria-hidden />
+        </header>
+        : <button type="button" className="sp-stage-row" aria-expanded={open} onClick={() => setOpen((value) => !value)}>{stage.status === "done" ? <Check size={16} aria-hidden /> : <Play size={16} aria-hidden />}<span>{title}</span><small>{stage.status === "done" ? "Đã xong" : `${stage.done}/${stage.total} bài`} · {open ? "thu gọn" : stage.status === "done" ? "mở lại để ôn" : "xem bài"}</small><ChevronDown size={16} aria-hidden className={open ? "is-flipped" : ""} /></button>}
+      {open && <StageRoad stage={stage} href={href} steps={steps} />}
     </li>
   );
 }
 
-/** Lessons kept in view around the current one; the rest fold into one row so a long stage stays short. */
+/* The road: nodes sit on a winding SVG line whose bends are worked out from the width the map really has, so the
+ * path fills a wide screen, narrows to a gentle wave on a phone and follows browser zoom. */
+
+/** Lessons kept in view around the current one; the rest fold into one stop on the road. */
 const KEEP_BEFORE = 2;
 const KEEP_AFTER = 2;
+const WIDE = 560;
 
-function StageNodes({ stage, href, steps }: { stage: StageView; href: Href; steps: number }) {
+type Stop = { key: string; kind: "node"; node: PathNode } | { key: string; kind: "fold"; label: string; open: boolean };
+
+function StageRoad({ stage, href, steps }: { stage: StageView; href: Href; steps: number }) {
   const [all, setAll] = useState(false);
+  const [width, setWidth] = useState(720);
+  const box = useRef<HTMLOListElement | null>(null);
+  useEffect(() => {
+    const element = box.current;
+    if (!element) return;
+    const measure = () => setWidth(Math.round(element.clientWidth));
+    measure();
+    const observer = new ResizeObserver(measure);
+    observer.observe(element);
+    return () => observer.disconnect();
+  }, []);
+
   const lessons = stage.nodes.filter((node) => node.kind === "lesson");
   const extras = stage.nodes.filter((node) => node.kind !== "lesson");
   const at = lessons.findIndex((node) => node.status === "current");
   const pivot = at === -1 ? lessons.length - 1 : at;
   const from = all ? 0 : Math.max(0, pivot - KEEP_BEFORE);
   const to = all ? lessons.length : Math.min(lessons.length, pivot + KEEP_AFTER + 1);
-  const fold = (key: string, label: string) => (
-    <li key={key} className="sp-fold"><button type="button" onClick={() => setAll(true)}><ChevronDown size={15} aria-hidden /> {label}</button></li>
-  );
-  const step = (node: PathNode, index: number) => <PathStep key={node.id} node={node} href={href(node)} offset={OFFSETS[index % OFFSETS.length]} steps={steps} />;
-  const visible = lessons.slice(from, to);
+  const stops: Stop[] = [
+    ...(from > 0 ? [{ key: "before", kind: "fold" as const, label: `${from} bài đã xong · xem lại`, open: false }] : []),
+    ...lessons.slice(from, to).map((node) => ({ key: node.id, kind: "node" as const, node })),
+    ...(lessons.length > to ? [{ key: "after", kind: "fold" as const, label: `Còn ${lessons.length - to} bài nữa trong chặng`, open: false }] : []),
+    ...extras.map((node) => ({ key: node.id, kind: "node" as const, node })),
+    ...(all && lessons.length > KEEP_BEFORE + KEEP_AFTER + 1 ? [{ key: "less", kind: "fold" as const, label: "Thu gọn", open: true }] : []),
+  ];
+
+  // Wide: the road swings across the middle with labels on the open side. Narrow: a gentle wave on the left, labels right.
+  const wide = width >= WIDE;
+  const swing = wide ? [0.5, 0.72, 0.5, 0.28] : [0.06, 0.16, 0.06, 0];
+  const isCurrent = (stop: Stop) => stop.kind === "node" && stop.node.status === "current";
+  const points: { x: number; y: number }[] = [];
+  let y = isCurrent(stops[0]) ? 80 : 54;
+  stops.forEach((stop, index) => {
+    // The current stop carries a bigger card with a button, so the road leaves it more room on both sides.
+    if (index) y += (stops[index - 1].kind === "fold" || stop.kind === "fold" ? 74 : wide ? 104 : 92) + (isCurrent(stop) || isCurrent(stops[index - 1]) ? (wide ? 22 : 52) : 0);
+    const x = Math.round(Math.max(36, Math.min(width - 36, swing[index % swing.length] * width + (wide ? 0 : 36))));
+    points.push({ x, y });
+  });
+  const height = y + (isCurrent(stops[stops.length - 1]) ? 90 : 64);
+  const curve = (list: { x: number; y: number }[]) => list.map((point, index) => {
+    if (!index) return `M${point.x},${point.y}`;
+    const before = list[index - 1];
+    const middle = (before.y + point.y) / 2;
+    return `C${before.x},${middle} ${point.x},${middle} ${point.x},${point.y}`;
+  }).join(" ");
+  const reached = stops.reduce((last, stop, index) => stop.kind === "node" && (stop.node.status === "done" || stop.node.status === "current") ? index : last, -1);
+
   return (
-    <ol className="sp-path">
-      {from > 0 && fold("before", `${from} bài đã xong · xem lại`)}
-      {visible.map(step)}
-      {lessons.length > to && fold("after", `Còn ${lessons.length - to} bài nữa trong chặng`)}
-      {extras.map((node, index) => step(node, visible.length + index))}
-      {all && lessons.length > KEEP_BEFORE + KEEP_AFTER + 1 && <li className="sp-fold"><button type="button" onClick={() => setAll(false)}><ChevronDown size={15} aria-hidden className="is-flipped" /> Thu gọn</button></li>}
-    </ol>
+    <div className="sp-road-wrap">
+      <svg className="sp-road" width={width} height={height} viewBox={`0 0 ${width} ${height}`} aria-hidden="true">
+        <path d={curve(points)} className="sp-road-base" />
+        <path d={curve(points)} className="sp-road-dash" />
+        {reached > 0 && <path d={curve(points.slice(0, reached + 1))} className="sp-road-done" />}
+      </svg>
+      <ol ref={box} className="sp-road-stops" style={{ height }}>
+        {stops.map((stop, index) => {
+          const { x } = points[index];
+          const side = wide && x > width * 0.6 ? "left" : "right";
+          const room = side === "left" ? x - 56 : width - x - 56;
+          const place = { left: x, top: points[index].y, ["--sp-room" as string]: `${Math.max(150, Math.min(340, room))}px` } as CSSProperties;
+          if (stop.kind === "fold") return <li key={stop.key} className="sp-road-fold" style={place}>
+            <button type="button" onClick={() => setAll(!stop.open)}><ChevronDown size={15} aria-hidden className={stop.open ? "is-flipped" : ""} /> {stop.label}</button>
+          </li>;
+          return <RoadStop key={stop.key} node={stop.node} href={href(stop.node)} side={side} place={place} steps={steps} />;
+        })}
+      </ol>
+    </div>
   );
 }
 
-function PathStep({ node, href, offset, steps }: { node: PathNode; href?: string; offset: number; steps: number }) {
+function RoadStop({ node, href, side, place, steps }: { node: PathNode; href?: string; side: "left" | "right"; place: CSSProperties; steps: number }) {
   const label = node.kind === "lesson" && node.number ? `Bài ${node.number} · ${node.title}` : node.title;
+  const current = node.status === "current";
   const body = <>
     <span className="sp-node" aria-hidden>{nodeIcon(node)}</span>
-    <span className="sp-node-copy"><b>{label}</b><small>{nodeNote(node, steps)}</small></span>
+    <span className="sp-node-copy">
+      <b>{label}</b>
+      <small>{nodeNote(node, steps)}</small>
+      {current && href && <span className="sp-node-go">{node.kind === "checkpoint" ? "Làm bài kiểm tra" : node.progress?.step || node.progress?.note ? "Học tiếp" : "Bắt đầu"} <ArrowRight size={14} aria-hidden /></span>}
+    </span>
   </>;
-  const className = `sp-step kind-${node.kind} is-${node.status}`;
   return (
-    <li className={className} style={{ ["--sp-offset" as string]: offset }}>
-      {href && node.status !== "locked" ? <Link href={href} aria-current={node.status === "current" ? "step" : undefined}>{body}</Link> : <div aria-disabled="true">{body}</div>}
+    <li className={`sp-stop kind-${node.kind} is-${node.status} is-${side}`} style={place}>
+      {href && node.status !== "locked" ? <Link href={href} aria-current={current ? "step" : undefined}>{body}</Link> : <div aria-disabled="true">{body}</div>}
     </li>
   );
 }

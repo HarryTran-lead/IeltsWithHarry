@@ -19,7 +19,7 @@ export function listeningCourse(): PathCourse {
   return {
     lab: "listening", name: "Listening", base: BASE, stepCount: 3,
     stages: stageLevels.map((level) => ({
-      id: level, title: themeFor(level).name, band: level,
+      id: level, title: themeFor(level).name, band: level, tone: { color: themeFor(level).tone, soft: themeFor(level).soft },
       lessons: listeningModules.filter((unit) => unit.level === level).map((unit) => ({
         id: unit.id, title: unit.title, meta: `Mô-đun ${unit.id}`, goal: unit.objective, href: `${BASE}/module/${unit.id}`,
       })),
