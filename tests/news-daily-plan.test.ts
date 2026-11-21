@@ -17,4 +17,10 @@ describe("daily news plan", () => {
     expect(originalNewsSource(null, "https://example.com", "NASA")).toBe("NASA");
     expect(readingMinutes(758)).toBe(6);
   });
+  it("places a preferred topic first while retaining category variety", () => {
+    const rows = ["Science", "Health", "Culture", "Education", "Business"].map((category, index) => ({ id: String(index), category, published_at: `2026-11-20T0${index}:00:00Z`, origin_region: "vietnam" }));
+    const picks = dailyNewsPicks(rows, new Set(rows.map((row) => row.id)), new Set(), ["Science"]);
+    expect(picks[0].category).toBe("Science");
+    expect(new Set(picks.map((row) => row.category)).size).toBe(4);
+  });
 });
