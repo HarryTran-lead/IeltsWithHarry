@@ -14,7 +14,7 @@ export function task1Course(lessons: Task1LessonSummary[], { withChecks = false 
   const stages: PathStage[] = stageOrder.map((stage) => {
     const own = lessons.filter((lesson) => lesson.stage === stage);
     return {
-      id: stage, title: stageInfo[stage].name, band: bandSpan(own.map((lesson) => lesson.target_range)),
+      id: stage, title: stageInfo[stage].name, tone: { color: stageInfo[stage].tone, soft: stageInfo[stage].soft }, band: bandSpan(own.map((lesson) => lesson.target_range)),
       lessons: own.map((lesson) => ({
         id: lesson.id, title: lesson.title, meta: `${lesson.group_label}${lesson.kind === "process" && lesson.subtopic ? ` · ${lesson.subtopic}` : ""}`,
         goal: lesson.question, minutes: lesson.minutes, href: `${TASK1_BASE}/${lesson.id}`,
