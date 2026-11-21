@@ -65,7 +65,7 @@ function anchor(rect: DOMRect, touch: boolean): Pick<Popover, "x" | "y" | "below
  * at the bottom. Highlights are synced to the learner account with a scoped
  * local copy; text size is a device preference.
  */
-export function ReadingWorkspace({ docKey, title, paragraphs, translation, onSelectWord, onTranslateSelection, lookupPreview, onReadEnd, toolbar, tools, after, practice, practiceLimitSeconds }: {
+export function ReadingWorkspace({ docKey, title, paragraphs, translation, onSelectWord, onTranslateSelection, lookupPreview, onReadEnd, toolbar, tools, after, practice, practiceLimitSeconds, timedPractice }: {
   docKey: string;
   title: string;
   paragraphs: string[];
@@ -79,6 +79,7 @@ export function ReadingWorkspace({ docKey, title, paragraphs, translation, onSel
   after?: React.ReactNode;
   practice?: ReadingPractice;
   practiceLimitSeconds?: number;
+  timedPractice?: { label: string; onStart: () => void; onExit: () => void };
 }) {
   const textKey = paragraphs.join("\u0000");
   const text = useMemo(() => textKey.split("\u0000"), [textKey]);
@@ -235,7 +236,7 @@ export function ReadingWorkspace({ docKey, title, paragraphs, translation, onSel
       if (event.key !== "Escape") return;
       if (popover) setPopover(null);
       else if (openTool) setOpenTool(null);
-      else if (practicing) setMode("read");
+      else if (practicing) { setMode("read"); timedPractice?.onExit(); }
     }
     function onPointer(event: PointerEvent) {
       const target = event.target as Element;
@@ -251,7 +252,7 @@ export function ReadingWorkspace({ docKey, title, paragraphs, translation, onSel
       window.removeEventListener("pointerdown", onPointer);
       window.removeEventListener("scroll", onScroll, true);
     };
-  }, [popover, practicing, openTool]);
+  }, [popover, practicing, openTool, timedPractice]);
 
   useEffect(() => {
     if (!onReadEnd || practicing || readCompleted.current || !readEndRef.current || !textRef.current) return;
@@ -361,6 +362,8 @@ export function ReadingWorkspace({ docKey, title, paragraphs, translation, onSel
   }
 
   function enterPractice() { readStartedAt.current = 0; setMode("practice"); setPassageWide(false); setTab("passage"); setActiveEvidence(null); setPopover(null); setOpenTool(null); window.getSelection()?.removeAllRanges(); }
+  function exitPractice() { setMode("read"); timedPractice?.onExit(); }
+  function enterTimedPractice() { if (!total || !timedPractice) return; secondsRef.current = 0; setSeconds(0); timedPractice.onStart(); enterPractice(); }
   function requestPractice() { if (practice?.setup) setSetupOpen(true); else enterPractice(); }
   function jump(number: number) {
     setPassageWide(false);
@@ -408,7 +411,7 @@ export function ReadingWorkspace({ docKey, title, paragraphs, translation, onSel
   return <div className={`rw ${readingFont.variable} ${practicing ? "is-practice" : "is-read"} ${passageWide ? "is-passage-wide" : ""} ${tools?.length ? "" : "no-tools"} ${toolsMin ? "tools-min" : ""}`} data-tab={tab} style={{ "--rw-split": `${split}%`, "--rw-size": `${sizes[size]}px` } as React.CSSProperties}>
     <div className="rw-bar" role="toolbar" aria-label={practicing ? "Thanh làm bài" : "Công cụ đọc"}>
       {practicing ? <>
-        <button type="button" className="rw-exit" onClick={() => setMode("read")}><X size={17} /> Thoát</button>
+        <button type="button" className="rw-exit" onClick={exitPractice}><X size={17} /> Thoát</button>
         <strong className="rw-title">{title}</strong>
         <span className="rw-timer" title={practiceLimitSeconds ? "Thời gian còn lại" : "Thời gian làm bài"}><Timer size={16} /> {clock(practiceLimitSeconds ? Math.max(0, practiceLimitSeconds - seconds) : seconds)}</span>
         <button type="button" className="rw-wide-toggle" aria-pressed={passageWide} onClick={() => { setPassageWide((value) => !value); setTab("passage"); }}>{passageWide ? <Columns2 size={15} /> : <BookOpenText size={15} />}{passageWide ? "Chia đôi" : "Xem toàn bài"}</button>
@@ -422,6 +425,7 @@ export function ReadingWorkspace({ docKey, title, paragraphs, translation, onSel
           {total > 0 && <button type="button" aria-pressed="false" onClick={requestPractice}><Columns2 size={16} /> Luyện đề · {total} câu</button>}
         </div>
         <span className="rw-meta"><Clock3 size={15} /> ~{minutes} phút đọc</span>
+        {timedPractice && <button className="button subtle" type="button" disabled={!total} title={!total ? "Bài này chưa có câu hỏi để mô phỏng" : undefined} onClick={enterTimedPractice}>{total ? timedPractice.label : "Chưa có đề mô phỏng"}</button>}
         {toolbar}
       </>}
       <div className="rw-bar-end">{clearControl}{sizeControl}</div>
@@ -430,7 +434,7 @@ export function ReadingWorkspace({ docKey, title, paragraphs, translation, onSel
     <div className="rw-body" ref={bodyRef}>
       <div className="rw-pane rw-passage-pane">
         {practicing && <h2 className="rw-pane-title">{title}</h2>}
-        {practicing && <p className="rw-scroll-hint">Cuộn trong khung này để xem hết bài đọc. Nhấn vào một từ để xem nghĩa.</p>}
+        {practicing && <p className="rw-scroll-hint">{practiceLimitSeconds ? "Mô phỏng 20 phút: đọc bài và trả lời câu hỏi trong thời gian còn lại." : "Cuộn trong khung này để xem hết bài đọc. Nhấn vào một từ để xem nghĩa."}</p>}
         <div ref={textRef} className="rw-text" onMouseUp={onSelect} onTouchEnd={(event) => {
           // Mobile browsers finish their native text-selection gesture after touchend.
           event.persist();
