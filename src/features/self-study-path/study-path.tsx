@@ -258,8 +258,24 @@ export function LessonBar({ exitHref, kicker, title, info, steps, step, count, r
 }) {
   const total = count ?? steps?.length ?? STEP_COUNT;
   const shown = Math.min(Math.max(step, 0) + 1, total);
+  // The bar (or the Lab's wrapper around it) sticks under the app header; once it does, it tightens up.
+  const bar = useRef<HTMLDivElement | null>(null);
+  const [stuck, setStuck] = useState(false);
+  useEffect(() => {
+    const element = bar.current;
+    if (!element) return;
+    const pinned = getComputedStyle(element).position === "sticky" ? element : element.parentElement ?? element;
+    const check = () => {
+      const top = parseFloat(getComputedStyle(pinned).top) || 0;
+      setStuck(window.scrollY > 0 && pinned.getBoundingClientRect().top <= top + 1);
+    };
+    check();
+    window.addEventListener("scroll", check, { passive: true });
+    window.addEventListener("resize", check);
+    return () => { window.removeEventListener("scroll", check); window.removeEventListener("resize", check); };
+  }, []);
   return (
-    <div className="sp-lessonbar">
+    <div ref={bar} className={`sp-lessonbar ${stuck ? "is-stuck" : ""}`}>
       <Link className="sp-icon-btn" href={exitHref} aria-label="Về lộ trình"><X size={20} aria-hidden /></Link>
       <div className="sp-lessonbar-name"><small>{kicker}</small><b title={title}>{title}</b></div>
       {steps && <ol className="sp-pills" aria-label="Các bước học">
