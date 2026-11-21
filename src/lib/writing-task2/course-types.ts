@@ -52,7 +52,28 @@ export type CoursePractice = {
 export type CourseModuleSummary = {
   id: string; layer: string; title: string; overview: string;
   counts: { units: number; examples: number; practice: number };
+  /** Practice ids by level (foundation…advanced); "any" holds items every level does (timed essays, self-revision). */
+  levels?: Record<string, string[]>;
 };
+
+/** Practice ids grouped by level, for the summary. */
+export function practiceLevels(practice: { id: string; stage?: string }[]): Record<string, string[]> {
+  const levels: Record<string, string[]> = {};
+  for (const item of practice) (levels[item.stage && isStage(item.stage) ? item.stage : "any"] ??= []).push(item.id);
+  return levels;
+}
+
+/**
+ * What a learner must finish for a milestone to count as done: the items at their own level plus the items every
+ * level does. A milestone without items at that level falls back to its nearest lower level, then to everything.
+ */
+export function requiredPractice(levels: Record<string, string[]>, level: string): string[] {
+  const order = ["foundation", "basic", "developing", "advanced"];
+  const at = order.indexOf(level);
+  const own = [...order.slice(0, Math.max(at, 0) + 1)].reverse().map((stage) => levels[stage] ?? []).find((ids) => ids.length);
+  if (!own) return Object.values(levels).flat();
+  return [...own, ...(levels.any ?? [])];
+}
 
 export type CourseModule = CourseModuleSummary & {
   prerequisites: string[]; stage_targets: { stage: string; text: string }[];

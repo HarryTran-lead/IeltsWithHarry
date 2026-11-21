@@ -11,7 +11,7 @@ import { readFile } from "node:fs/promises";
 import { join } from "node:path";
 import { createClient } from "@supabase/supabase-js";
 import { buildCourseFinal, buildCourseModule, type CourseSourceFile } from "./course-normalize";
-import { courseLayers, isCourseModule, type CourseAnswer, type CourseModule, type CourseModuleSummary } from "./course-types";
+import { courseLayers, isCourseModule, practiceLevels, type CourseAnswer, type CourseModule, type CourseModuleSummary } from "./course-types";
 
 type IndexEntry = { source_path: string; milestone: string; visibility: string };
 export class CourseUnavailable extends Error {}
@@ -70,7 +70,7 @@ export function loadCourseModule(id: string): Promise<{ module: CourseModule; an
 export async function loadCourseSummaries(): Promise<CourseModuleSummary[]> {
   const ids = courseLayers.flatMap((layer) => layer.modules);
   const modules = await Promise.all(ids.map((id) => loadCourseModule(id)));
-  return modules.map(({ module }) => ({ id: module.id, layer: module.layer, title: module.title, overview: module.overview, counts: module.counts }));
+  return modules.map(({ module }) => ({ id: module.id, layer: module.layer, title: module.title, overview: module.overview, counts: module.counts, levels: practiceLevels(module.practice) }));
 }
 
 /** The R16 final assessment: learner-safe bundle plus the private prompts and models, read only by the final routes. */
