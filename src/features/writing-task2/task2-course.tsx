@@ -8,7 +8,7 @@ import Link from "next/link";
 import { useEffect, useMemo, useState, type CSSProperties, type KeyboardEvent, type ReactNode } from "react";
 import { ArrowLeft, ArrowRight, Check, ChevronDown, Clock3, Eye, Languages, Layers, Lightbulb, ListChecks, NotebookPen, Save, Sparkles, Target, Timer, X } from "lucide-react";
 import {
-  COURSE_API, COURSE_BASE, attemptDone, courseLayers, courseStageLabels, practiceLevels, requiredPractice,
+  COURSE_API, COURSE_BASE, attemptDone, courseLayers, courseQuestionTypes, courseStageLabels, practiceLevels, requiredPractice,
   type CourseAnswer, type CourseAttempt, type CourseExample, type CourseField, type CourseModule, type CourseModuleSummary, type CoursePractice, type CourseSection, type CourseUnit,
 } from "@/lib/writing-task2/course-types";
 import { criterionOf } from "@/lib/writing-task2/final-types";
@@ -20,6 +20,7 @@ import { useLearnerStreak } from "@/features/account/use-learner-streak";
 import { LessonBar, LessonLocked, StudyPath } from "@/features/self-study-path/study-path";
 import { buildPath } from "@/lib/self-study-path/path";
 import { readTask2Level, task2SkillsCourse, task2SkillsProgress } from "@/lib/self-study-path/task2";
+import { useTask2Path } from "./task2-path";
 
 const layerTone: Record<string, { tone: string; soft: string }> = {
   "1": { tone: "#0a7f89", soft: "#e2f5f4" }, "2": { tone: "#2577c8", soft: "#e6f0fb" }, "3": { tone: "#7c66dc", soft: "#f1eefe" },
@@ -160,12 +161,44 @@ export function CourseModulePage({ id }: { id: string }) {
         {step === "practice" && <PracticeArea module={milestone} attempts={attempts} peeks={peeks}
           onSaved={(practiceId, attempt) => setAttempts((current) => ({ ...current, [practiceId]: attempt }))}
           onPeek={(practiceId) => setPeeks(addPeek(milestone.id, practiceId))} nextModule={nextModule} onLogMistake={logMistake}/>}
+        {step === "practice" && <ApplyCard milestoneId={milestone.id} complete={required.length > 0 && requiredDone === required.length}/>}
         {(step === "final" || step === "mistakes") && <FinalSteps step={step} prefill={prefill} onPrefillUsed={() => setPrefill(null)} onLogMistake={(fill) => { setPrefill(fill); go("mistakes"); }}/>}
       </div>
       <ModuleDesk module={milestone}/>
     </div>
     <p className="ll-footnote">Học liệu luyện tập do đội ngũ biên soạn, không phải đề thi IELTS chính thức. Gợi ý mẫu là một cách làm đúng, không phải đáp án duy nhất; tiến độ không quy đổi sang band.</p>
   </div>;
+}
+
+/**
+ * Bridges the skills course to the prompt lessons: after (or while) practising a milestone, point at the learner's
+ * next prompt lesson, and for the type milestones (R09–R12) at every lesson of that type with where it stands.
+ * Lessons not reached yet stay locked on the prompt path, so they are listed without a link.
+ */
+function ApplyCard({ milestoneId, complete }: { milestoneId: string; complete: boolean }) {
+  const { lessons, view } = useTask2Path();
+  if (!lessons || !view) return null;
+  const typeOf = new Map(lessons.map((lesson) => [lesson.id, lesson.question_type]));
+  const nodes = view.stages.flatMap((stage) => stage.nodes).filter((node) => node.kind === "lesson");
+  const next = view.next?.node;
+  const types = courseQuestionTypes[milestoneId];
+  const matching = types ? nodes.filter((node) => types.includes(typeOf.get(node.id) ?? "")) : [];
+  const status = { done: "Đã xong", current: "Bài tiếp theo", open: "Mở", locked: "Chưa tới lượt" } as const;
+  return <section className="t2-panel t2-apply" aria-labelledby="t2-apply-title">
+    <span className="ll-kicker">Áp dụng vào đề</span>
+    <h3 id="t2-apply-title">{complete ? "Xong chặng này. Áp dụng ngay vào một đề thật" : "Học xong chặng này, áp dụng vào đề"}</h3>
+    {next?.href && <Link className="t2-apply-next" href={next.href}>
+      <span><small>Bài Luyện đề tiếp theo của bạn</small><b>Bài {next.number} · {next.title}</b><em>{questionTypeLabels[typeOf.get(next.id) ?? ""] ?? next.lesson?.meta}</em></span>
+      <ArrowRight size={18} aria-hidden/>
+    </Link>}
+    {matching.length > 0 && <>
+      <p className="t2-apply-lead">Đề dạng {types!.map((type) => questionTypeLabels[type] ?? type).join(", ")} trong Luyện đề:</p>
+      <ul className="t2-apply-list">{matching.map((node) => <li key={node.id} className={`is-${node.status}`}>
+        {node.href && node.status !== "locked" ? <Link href={node.href}>Bài {node.number} · {node.title}</Link> : <span>Bài {node.number} · {node.title}</span>}
+        <small>{status[node.status]}</small>
+      </li>)}</ul>
+    </>}
+  </section>;
 }
 
 function FinalSteps({ step, prefill, onPrefillUsed, onLogMistake }: { step: "final" | "mistakes"; prefill: MistakePrefill | null; onPrefillUsed: () => void; onLogMistake: (fill: MistakePrefill) => void }) {

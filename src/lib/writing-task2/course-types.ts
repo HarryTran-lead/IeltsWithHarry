@@ -17,6 +17,15 @@ export const courseLayers: { id: string; name: string; about: string; modules: s
   { id: "6", name: "Cuối khoá", about: "Viết độc lập, có giờ, tự chữa", modules: ["R16"] },
 ];
 export const courseModuleIds = courseLayers.flatMap((layer) => layer.modules);
+
+/** The milestones that teach one family of prompts, by question type (the prompt lessons use the same types). */
+export const courseQuestionTypes: Record<string, string[]> = {
+  R09: ["agree_disagree"],
+  R10: ["discuss_both_views"],
+  R11: ["advantages_disadvantages", "advantages_outweigh_disadvantages"],
+  R12: ["problem_solution", "causes_solutions", "double_question"],
+};
+export const skillForType = (questionType: string) => Object.keys(courseQuestionTypes).find((id) => courseQuestionTypes[id].includes(questionType));
 export const isCourseModule = (id: string) => courseModuleIds.includes(id);
 
 /** A labelled piece of content: English, Vietnamese, or a list. */

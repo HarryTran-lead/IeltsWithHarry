@@ -5,17 +5,16 @@
  * locked until the earlier ones are done. A newcomer can still pick the level to start from.
  */
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
-import { useEffect, useMemo, useState, type CSSProperties, type ReactNode } from "react";
+import { type CSSProperties, type ReactNode } from "react";
 import { BookOpen, Eye, Lightbulb, PenLine, Sparkles } from "lucide-react";
 import { useLearnerStreak } from "@/features/account/use-learner-streak";
 import { StudyPath } from "@/features/self-study-path/study-path";
-import { buildPath } from "@/lib/self-study-path/path";
-import { TASK2_LEVEL_KEY, readTask2Level, task2LessonsCourse, task2LessonsProgress } from "@/lib/self-study-path/task2";
+import { TASK2_LEVEL_KEY } from "@/lib/self-study-path/task2";
 import { stageAbout } from "@/lib/writing-task2/guides";
-import { TASK2_API, TASK2_BASE, stageInfo, stageOrder, type Task2LessonSummary, type Task2Stage, type Task2State } from "@/lib/writing-task2/types";
+import { TASK2_BASE, stageInfo, stageOrder, type Task2Stage } from "@/lib/writing-task2/types";
 import { CourseHome, CourseModulePage, LabShell } from "./task2-course";
 import { LessonPage } from "./task2-lesson";
-import { loadAllTask2States } from "./task2-state";
+import { useTask2Path } from "./task2-path";
 import "@/features/listening/listening-lab.css";
 import "./writing-task2.css";
 
@@ -40,12 +39,6 @@ function LabHome() {
 
 const themeStyle = (stage: Task2Stage) => ({ "--ll-tone": stageInfo[stage].tone, "--ll-soft": stageInfo[stage].soft }) as CSSProperties;
 
-async function getJson<T>(url: string): Promise<T> {
-  const response = await fetch(url, { cache: "no-store" });
-  const body = await response.json().catch(() => ({}));
-  if (!response.ok) throw new Error(body.error ?? "Không tải được dữ liệu.");
-  return body as T;
-}
 
 const howItWorks = [
   { icon: BookOpen, title: "Hiểu đề", text: "Đề hỏi gì, bẫy ở đâu, sẽ viết những câu nào." },
@@ -53,30 +46,6 @@ const howItWorks = [
   { icon: Sparkles, title: "Luyện từng câu", text: "Mỗi câu có cách làm, gợi ý 3 bậc, đáp án mẫu." },
   { icon: PenLine, title: "Viết và tự kiểm", text: "Ghép các câu đã viết thành bài, so với bài mẫu." },
 ];
-
-/** Prompt lessons, the learner's saved work and chosen level, and the path built from them. */
-export function useTask2Path() {
-  const [lessons, setLessons] = useState<Task2LessonSummary[] | null>(null);
-  const [states, setStates] = useState<Record<string, Task2State> | null>(null);
-  const [level, setLevel] = useState<Task2Stage | undefined>(undefined);
-  const [error, setError] = useState("");
-
-  useEffect(() => {
-    let alive = true;
-    void getJson<{ lessons: Task2LessonSummary[] }>(TASK2_API).then(async ({ lessons: list }) => {
-      if (!alive) return;
-      setLevel(readTask2Level());
-      setLessons(list);
-      const saved = await loadAllTask2States(list.map((lesson) => lesson.id)).catch(() => ({}));
-      if (alive) setStates(saved);
-    }).catch((failure: unknown) => { if (alive) setError(failure instanceof Error ? failure.message : "Không tải được lộ trình."); });
-    return () => { alive = false; };
-  }, []);
-
-  const course = useMemo(() => lessons ? task2LessonsCourse(lessons) : null, [lessons]);
-  const view = useMemo(() => course && lessons && states ? buildPath(course, task2LessonsProgress(lessons, states, level)) : null, [course, lessons, states, level]);
-  return { lessons, course, view, error, level, setLevel };
-}
 
 function RoadmapPage({ tabs }: { tabs: ReactNode }) {
   const { course, view, error, level, setLevel } = useTask2Path();
