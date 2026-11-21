@@ -19,7 +19,7 @@ const PLACEMENT_PASS = 0.75;
 const TEST_PER_LESSON = 3;
 export const TEST_PASS = 0.8;
 
-export type Placement = { level: GrammarLevel; at: string; scores: Partial<Record<GrammarLevel, { correct: number; graded: number }>> };
+export type Placement = { level: GrammarLevel; at: string; scores: Partial<Record<GrammarLevel, { correct: number; graded: number; answered?: number }>> };
 
 const shuffle = <T,>(items: T[]) => items.map((item) => [Math.random(), item] as const).sort((a, b) => a[0] - b[0]).map(([, item]) => item);
 export const levelChapters = (level: GrammarLevel) => {
@@ -82,9 +82,9 @@ export function PlacementPage() {
 
   function finishBlock(level: GrammarLevel, result: SessionResult) {
     const score = sessionScore(result);
-    scores.current = { ...scores.current, [level]: { correct: score.correct, graded: score.graded } };
+    scores.current = { ...scores.current, [level]: { correct: score.correct, graded: score.graded, answered: score.answered } };
     const next = grammarLevels[grammarLevels.indexOf(level) + 1];
-    const passed = score.graded > 0 && score.correct / score.graded >= PLACEMENT_PASS;
+    const passed = score.answered > 0 && score.correct / score.answered >= PLACEMENT_PASS;
     if (passed && next) { void startBlock(next); return; }
     const placement: Placement = { level, at: clockNow(), scores: scores.current };
     savePlacement(placement);
@@ -113,7 +113,7 @@ function PlacementResult({ placement, onRetry }: { placement: Placement; onRetry
     <span className="gg-eyebrow">KẾT QUẢ XẾP LỚP</span>
     <h2>Gợi ý bắt đầu ở {placement.level} · {world.name}</h2>
     <p className="gg-summary-score">{world.description}</p>
-    <div className="gg-placement-levels">{grammarLevels.map((level) => { const score = placement.scores[level]; return <div key={level} className={level === placement.level ? "is-target" : score ? "" : "is-skipped"}><strong>{level}</strong><span>{score ? `${score.correct}/${score.graded}` : "—"}</span></div>; })}</div>
+    <div className="gg-placement-levels">{grammarLevels.map((level) => { const score = placement.scores[level]; return <div key={level} className={level === placement.level ? "is-target" : score ? "" : "is-skipped"}><strong>{level}</strong><span>{score ? `${score.correct}/${score.answered ?? score.graded}` : "—"}</span></div>; })}</div>
     <div className="gg-summary-note">Cấp gợi ý là cấp đầu tiên bạn đúng dưới 3/4 câu. Các bài ở cấp thấp hơn vẫn mở để ôn khi cần.</div>
     <div className="gg-summary-actions"><Link className="gg-primary" href={`${ROOT}/level/${placement.level}`}>Vào lộ trình {placement.level} <ArrowRight size={16} /></Link><button className="gg-secondary" onClick={onRetry}><RotateCcw size={14} aria-hidden="true" /> Làm lại</button></div>
   </section>;
@@ -142,8 +142,8 @@ export function ChapterTestsPage({ progress, update, initialLevel, unlocked }: {
 
   function finish(chapter: number, result: SessionResult) {
     const score = sessionScore(result);
-    const share = score.graded ? score.correct / score.graded : 0;
-    const passed = score.graded > 0 && share >= TEST_PASS;
+    const share = score.answered ? score.correct / score.answered : 0;
+    const passed = score.answered > 0 && share >= TEST_PASS;
     const first = chapters[chapter - 1][0].code;
     if (score.graded) update(first, (value) => {
       const best = Math.max(share, value.chapterTest?.best ?? 0);

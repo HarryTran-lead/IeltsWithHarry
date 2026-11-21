@@ -46,14 +46,20 @@ export function gradeEditorialAnswer(question: SourceQuestion, answer: string) {
   const accepted = [question.correct_answer, ...(question.accepted_answers ?? [])];
   const isChoice = ["mcq", "error_choice"].includes(question.type);
   const validChoice = !isChoice || (question.options ?? []).some((option) => normalizeAnswer(option, question.grading) === response);
+  const exactMatch = validChoice && accepted.some((candidate) => normalizeAnswer(candidate, question.grading) === response);
+  const freeTextBlank = question.type === "fill_blank" || question.type === "fill";
+  // An unlisted English phrase may still match the Vietnamese meaning. Let the
+  // learner compare it with the model without recording an automatic mistake.
   const correct = question.auto_gradable === false || question.auto_gradable == null
     ? null
-    : validChoice && accepted.some((candidate) => normalizeAnswer(candidate, question.grading) === response);
+    : freeTextBlank && !exactMatch ? null : exactMatch;
   return {
     correct,
     referenceAnswer: question.correct_answer,
     explanation: question.explanation_correct_vi ?? "",
-    feedback: correct === false ? wrongFeedback(question, answer) : "",
+    feedback: freeTextBlank && correct === null && question.auto_gradable === true
+      ? "Câu điền từ có thể có nhiều cách viết đúng. Hãy so sánh câu của bạn với đáp án tham khảo và nghĩa tiếng Việt, rồi tự đánh giá."
+      : correct === false ? wrongFeedback(question, answer) : "",
     errorTag: correct === false ? question.error_tag ?? null : null,
     publishable: question.publishable,
   };
