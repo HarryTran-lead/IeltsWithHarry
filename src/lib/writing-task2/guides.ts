@@ -41,7 +41,7 @@ export const drillGuides: Record<string, DrillGuide> = {
   paraphrase: {
     name: "Paraphrase đề",
     what_vi: "Viết lại ý của đề bằng từ của bạn, dùng làm câu đầu của mở bài.",
-    steps_vi: ["Giữ nguyên ý chính: ai, làm gì, ở đâu.", "Đổi một vài từ sang từ cùng nghĩa (cities → urban areas, free → at no cost).", "Không thêm ý kiến hay chi tiết mới."],
+    steps_vi: ["Giữ nguyên ý chính: ai, làm gì, ở đâu.", "Đổi một vài từ sang từ cùng nghĩa, ví dụ important → essential, people → individuals, should → ought to.", "Không thêm ý kiến hay chi tiết mới."],
     think_vi: "Đổi cách mở câu của đề (ví dụ dùng 'It is often argued that…' hoặc 'Many people believe…'), rồi viết phần còn lại bằng từ khác.",
     frame_en: "It is often argued that ___ should ___.",
   },
