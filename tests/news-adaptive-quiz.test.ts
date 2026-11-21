@@ -64,13 +64,19 @@ describe("adaptive IELTS passage quiz", () => {
   });
   it("does not request thirteen questions from a repetitive long article", () => {
     const sentence = "Researchers measured the same feature during the survey and wrote down the same result for the field station.";
-    expect(targetQuestionCount(Array(50).fill(sentence).join(" "))).toBe(1);
+    expect(targetQuestionCount(Array(50).fill(sentence).join(" "))).toBe(0);
     const varied = Array.from({ length: 40 }, (_, index) =>
       `Researchers measured feature ${index + 1} during the survey and recorded its distinct result at the field station for later comparison with earlier observations across several seasons in the region.`).join(" ");
     expect(targetQuestionCount(varied)).toBe(13);
     expect(targetQuestionCount(varied, 600)).toBe(9);
     expect(targetQuestionCount(varied, 650)).toBe(11);
     expect(targetQuestionCount(varied, 700)).toBe(13);
+    expect(targetQuestionCount(varied, 399)).toBe(0);
+    expect(targetQuestionCount(varied, 400)).toBe(6);
+  });
+  it("does not generate a quiz from an article too short for six IELTS-style questions", async () => {
+    await expect(generateAdaptiveNewsQuiz("Short article", body, "short-article"))
+      .rejects.toThrow(/at least 400 words/);
   });
   it("reviews every flagged candidate in one call for a supported thirteen-question article", async () => {
     const sentences = Array.from({ length: 40 }, (_, index) =>

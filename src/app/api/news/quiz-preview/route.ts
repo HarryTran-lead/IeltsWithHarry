@@ -1,8 +1,8 @@
 import { NextRequest, NextResponse } from "next/server";
 import { createClient } from "@/lib/supabase/server";
 import { newsAdminClient } from "@/lib/news/sync";
-import { generateAdaptiveNewsQuiz } from "@/lib/news/adaptive-quiz";
-import { newsQuizFreeTierReady } from "@/lib/news/enrichment";
+import { generateAdaptiveNewsQuiz, targetQuestionCount } from "@/lib/news/adaptive-quiz";
+import { newsQuizFreeTierReady, quizExcerpt } from "@/lib/news/enrichment";
 
 export const runtime = "nodejs";
 export const maxDuration = 60;
@@ -26,7 +26,7 @@ export async function POST(request: NextRequest) {
     const { data: article, error: articleError } = await db.from("news_articles").select("id,title,sensitive").eq("id", payload.articleId).single();
     if (articleError || !article || article.sensitive) return NextResponse.json({ error: "Không tìm thấy bài phù hợp." }, { status: 404 });
     const { data: body, error: bodyError } = await db.from("news_article_bodies").select("body_text").eq("article_id", article.id).single();
-    if (bodyError || !body || body.body_text.length < 2000) return NextResponse.json({ error: "Bài cần ít nhất 2.000 ký tự toàn văn (khoảng 330 từ) để tạo bộ câu hỏi." }, { status: 400 });
+    if (bodyError || !body || targetQuestionCount(quizExcerpt(body.body_text)) < 6) return NextResponse.json({ error: "Bài cần ít nhất 400 từ và đủ dữ kiện riêng biệt để tạo 6 câu hỏi IELTS." }, { status: 400 });
     return NextResponse.json(await generateAdaptiveNewsQuiz(article.title, body.body_text, article.id, fetch, payload.prompt));
   } catch (cause) {
     return NextResponse.json({ error: cause instanceof Error ? cause.message : "Không thể thử prompt." }, { status: 502 });
