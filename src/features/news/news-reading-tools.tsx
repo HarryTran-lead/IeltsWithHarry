@@ -6,11 +6,12 @@ import { BookOpenText, Languages, MessageSquareText, Search, Volume2 } from "luc
 import { createClient } from "@/lib/supabase/browser";
 import { useNotebook } from "@/features/notebook/notebook-store";
 import { Sticker } from "@/components/stickers/stickers";
-import { translateEnglishToVietnamese } from "@/lib/news/browser-translation";
+import { translateEnglishToVietnamese, translateWordInContext } from "@/lib/news/browser-translation";
 import { quickDefine as define } from "@/lib/vocabulary/quick-define";
+import { lookupNewsWord, type NewsWordDefinition } from "@/lib/news/word-lookup";
 import { ReadingWorkspace, type ReadingPractice } from "@/features/reading/reading-workspace";
 
-type Lookup = { word: string; phonetic: string; part: string; definition: string; example: string; meaningVi: string };
+type Lookup = NewsWordDefinition;
 
 export function NewsReadingTools({ articleId, title, paragraphs, initialTranslations, onReadEnd, practice, examMode = false, onExamModeChange, children }: { articleId: string; title: string; paragraphs: string[]; initialTranslations?: string[] | null; onReadEnd?: () => void; practice?: ReadingPractice; examMode?: boolean; onExamModeChange?: (value: boolean) => void; children: React.ReactNode }) {
   const db = useMemo(() => createClient(), []);
@@ -23,6 +24,8 @@ export function NewsReadingTools({ articleId, title, paragraphs, initialTranslat
   const [lookup, setLookup] = useState<Lookup | null>(null);
   const [searchTerm, setSearchTerm] = useState("");
   const [lookupBusy, setLookupBusy] = useState(false);
+  const [meaningBusy, setMeaningBusy] = useState(false);
+  const [hasLookupContext, setHasLookupContext] = useState(false);
   const [lookupError, setLookupError] = useState("");
   const [suggestionOpen, setSuggestionOpen] = useState(false);
   const [suggestedMeaning, setSuggestedMeaning] = useState("");
@@ -30,6 +33,8 @@ export function NewsReadingTools({ articleId, title, paragraphs, initialTranslat
   const [suggesting, setSuggesting] = useState(false);
   const pendingWords = useRef(new Set<string>());
   const latestLookup = useRef(0);
+  const wordCache = useRef(new Map<string, Lookup>());
+  const lookupContext = useRef("");
   const sourcePath = `/app/news/${articleId}`;
   const articleWords = useMemo(() => entries.filter((entry) => entry.kind === "word" && entry.sourcePath === sourcePath), [entries, sourcePath]);
 
@@ -48,25 +53,59 @@ export function NewsReadingTools({ articleId, title, paragraphs, initialTranslat
     }
   }
 
-  function lookUpWord(raw: string) {
+  function lookUpWord(raw: string, context?: string) {
     const word = raw.trim().replace(/^[^a-z]+|[^a-z]+$/gi, "").toLowerCase();
     if (!/^[a-z][a-z'-]{0,59}$/.test(word)) return;
+    lookupContext.current = context?.trim().slice(0, 600) ?? "";
+    setHasLookupContext(Boolean(lookupContext.current));
+    const contextKey = `${word}\u0000${lookupContext.current}`;
     setSearchTerm(word);
     setSuggestionOpen(false); setSuggestedMeaning(""); setSuggestionStatus("");
     const request = ++latestLookup.current;
+    const previous = wordCache.current.get(contextKey) ?? wordCache.current.get(word);
+    if (previous) { setLookup(previous); setLookupBusy(false); setMeaningBusy(false); setLookupError(""); return; }
     setLookup({ word, phonetic: "", part: "", definition: "", example: "", meaningVi: "" });
-    setLookupBusy(true); setLookupError("");
-    // Start browser translation during the selection gesture, before awaiting a dictionary response.
-    const translated = translateEnglishToVietnamese([word]);
-    void Promise.allSettled([define(word), translated]).then(async ([dictionary, vietnamese]) => {
+    setLookupBusy(true); setMeaningBusy(false); setLookupError("");
+    void (async () => {
+      let value: Lookup;
+      try { value = await lookupNewsWord(word); }
+      catch {
+        const found = await Promise.race([define(word), new Promise<Partial<Lookup>>((resolve) => setTimeout(() => resolve({}), 8000))]);
+        value = { word, phonetic: found.phonetic ?? "", part: found.part ?? "", definition: found.definition ?? "", example: found.example ?? "", meaningVi: "" };
+      }
       if (request !== latestLookup.current) return;
-      const found = dictionary.status === "fulfilled" ? dictionary.value : {};
-      const meaningVi = vietnamese.status === "fulfilled" ? vietnamese.value[0] : "";
-      const value: Lookup = { word, phonetic: found.phonetic ?? "", part: found.part ?? "", definition: found.definition ?? "", example: found.example ?? "", meaningVi };
       setLookup(value); setLookupBusy(false);
-      if (vietnamese.status === "rejected") setLookupError(vietnamese.reason instanceof Error ? vietnamese.reason.message : "Chưa dịch được từ này.");
-      if (meaningVi) await saveWord(value);
-    });
+      if (value.meaningVi.trim()) {
+        if ((value.alternatives?.length ?? 0) < 2) { wordCache.current.set(word, value); await saveWord(value); }
+        return;
+      }
+      setMeaningBusy(true);
+      try {
+        const meaningVi = lookupContext.current ? await translateWordInContext(word, lookupContext.current)
+          : (await translateEnglishToVietnamese([word]))[0];
+        if (request !== latestLookup.current) return;
+        const completed = { ...value, meaningVi };
+        setLookup(completed); wordCache.current.set(lookupContext.current ? contextKey : word, completed);
+        await saveWord(completed);
+      } catch (error) {
+        if (request === latestLookup.current) setLookupError(error instanceof Error ? error.message : "Chưa dịch được từ này.");
+      } finally { if (request === latestLookup.current) setMeaningBusy(false); }
+    })();
+  }
+  async function chooseContextMeaning() {
+    if (!lookup || !lookupContext.current || meaningBusy) return;
+    const request = latestLookup.current;
+    const context = lookupContext.current;
+    setMeaningBusy(true); setLookupError("");
+    try {
+      const meaningVi = await translateWordInContext(lookup.word, context);
+      if (request !== latestLookup.current) return;
+      const completed = { ...lookup, meaningVi };
+      setLookup(completed); wordCache.current.set(`${lookup.word}\u0000${context}`, completed);
+      await saveWord(completed);
+    } catch (error) {
+      if (request === latestLookup.current) setLookupError(error instanceof Error ? error.message : "Chưa tìm được nghĩa theo ngữ cảnh.");
+    } finally { if (request === latestLookup.current) setMeaningBusy(false); }
   }
   function pronounce(word: string) { if ("speechSynthesis" in window) { const utterance = new SpeechSynthesisUtterance(word); utterance.lang = "en-US"; window.speechSynthesis.speak(utterance); } }
 
@@ -97,7 +136,7 @@ export function NewsReadingTools({ articleId, title, paragraphs, initialTranslat
     } finally { setTranslating(false); }
   }
 
-  return <ReadingWorkspace docKey={`news:${articleId}`} title={title} paragraphs={paragraphs} onSelectWord={examMode ? undefined : lookUpWord} onTranslateSelection={examMode ? undefined : async (text) => (await translateEnglishToVietnamese([text]))[0]} lookupPreview={examMode ? null : lookup ? { word: lookup.word, meaning: lookup.meaningVi, loading: lookupBusy } : null} onReadEnd={onReadEnd} practice={practice} practiceLimitSeconds={examMode ? 1200 : undefined}
+  return <ReadingWorkspace docKey={`news:${articleId}`} title={title} paragraphs={paragraphs} onSelectWord={examMode ? undefined : lookUpWord} onTranslateSelection={examMode ? undefined : async (text) => (await translateEnglishToVietnamese([text]))[0]} lookupPreview={examMode ? null : lookup ? { word: lookup.word, meaning: lookup.meaningVi, loading: lookupBusy || meaningBusy } : null} onReadEnd={onReadEnd} practice={practice} practiceLimitSeconds={examMode ? 1200 : undefined}
     translation={!examMode && bilingual ? (index) => translations[index] ? <p lang="vi" className="rw-translation">{translations[index]}</p> : null : undefined}
     toolbar={<>{onExamModeChange && <button className="button subtle" type="button" aria-pressed={examMode} onClick={() => onExamModeChange(!examMode)}>{examMode ? "✓ Mô phỏng 20 phút" : "Mô phỏng IELTS · 20 phút"}</button>}{!examMode && <button className="button subtle" type="button" disabled={translating} onClick={()=>void showBilingual()}><Languages size={16}/>{translating?`Đang dịch ${translationProgress}/${paragraphs.length}…`:bilingual?"Chỉ tiếng Anh":"Xem song ngữ"}</button>}{!examMode && translationError && <span className="news-translation-error" role="alert">{translationError} <button type="button" onClick={() => void showBilingual(true)}>Thử lại</button></span>}</>}
     after={<>{children}</>}
@@ -109,7 +148,10 @@ export function NewsReadingTools({ articleId, title, paragraphs, initialTranslat
           {lookup ? <div className="news-word-result">
             <div className="news-word-title"><strong>{lookup.word} <small>{lookup.phonetic}</small></strong><button type="button" aria-label={`Nghe phát âm ${lookup.word}`} onClick={()=>pronounce(lookup.word)}><Volume2 size={18}/></button></div>
             {lookupBusy ? <p>Đang tra từ…</p> : <><small>{lookup.part}</small>{lookup.definition&&<p>{lookup.definition}</p>}
-              <div className="news-word-meaning"><strong>Nghĩa tiếng Việt</strong><p>{lookup.meaningVi || "Chưa có nghĩa tiếng Việt."}</p></div>
+              <div className="news-word-meaning"><strong>Nghĩa tiếng Việt</strong><p>{lookup.meaningVi || (meaningBusy ? "Đang tìm nghĩa tiếng Việt…" : "Chưa có nghĩa tiếng Việt.")}</p></div>
+              {(lookup.alternatives?.length ?? 0) > 1 && <small>Các nghĩa khác: {lookup.alternatives?.join(" · ")}</small>}
+              {(lookup.alternatives?.length ?? 0) > 1 && hasLookupContext && <button type="button" className="news-word-suggest-toggle" disabled={meaningBusy} onClick={() => void chooseContextMeaning()}>Chọn nghĩa trong câu</button>}
+              {lookup.sourceUrl && <small>Nguồn từ điển: <a href={lookup.sourceUrl} target="_blank" rel="noopener noreferrer">Wiktionary</a></small>}
               <button type="button" className="news-word-suggest-toggle" onClick={()=>{setSuggestionOpen((open)=>!open);setSuggestionStatus("");}}><MessageSquareText size={15}/> Góp ý về nghĩa</button>
               {suggestionOpen && <form className="news-word-suggestion" onSubmit={(event)=>{event.preventDefault();void sendSuggestion();}}><label>Nghĩa bạn đề xuất<textarea value={suggestedMeaning} onChange={(event)=>setSuggestedMeaning(event.target.value)} maxLength={200} required placeholder="Viết nghĩa phù hợp hơn trong ngữ cảnh bài"/></label><button type="submit" disabled={suggesting||!suggestedMeaning.trim()}>{suggesting?"Đang gửi…":"Gửi góp ý"}</button></form>}
               {suggestionStatus&&<p className="news-word-suggestion-status" role="status">{suggestionStatus}</p>}
