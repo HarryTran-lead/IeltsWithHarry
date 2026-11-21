@@ -6,15 +6,17 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useMemo, useState, type CSSProperties } from "react";
-import { ArrowRight, BookOpenCheck, Check, Clock3, Compass, Headphones, Layers, ListChecks, Map as MapIcon, Play, RotateCcw, Sparkles, Target } from "lucide-react";
+import { ArrowRight, BookOpenCheck, Compass, Headphones, Map as MapIcon, RotateCcw, Sparkles, Target } from "lucide-react";
 import type { GradedQuestion, PublicLesson } from "@/lib/dictation-skill-lab/lessons";
-import { listeningModules, listeningTypeLabels, type ListeningModule } from "@/lib/listening-lab/curriculum";
+import { listeningModules, listeningTypeLabels } from "@/lib/listening-lab/curriculum";
 import type { ListeningPhase } from "@/lib/listening-lab/plan";
 import {
-  BASE, errorPrefix, fetchLesson, mastered, minutes, phaseInfo, phasePassed, phaseResult, phases, placementStartPrefix,
-  REVIEW_DELAY_MS, stageLevels, themeFor, useModuleSummaries, usePrefixResults, type Progress,
+  BASE, errorPrefix, fetchLesson, phaseInfo, REVIEW_DELAY_MS, themeFor, usePrefixResults,
 } from "./listening-lab-shared";
 import { Breadcrumb, Evidence, ModulePage, PlacementPage } from "./listening-lab-session";
+import { useLearnerStreak } from "@/features/account/use-learner-streak";
+import { StudyPath } from "@/features/self-study-path/study-path";
+import { suggestedModule, useListeningPath } from "./listening-path";
 import "./listening-lab.css";
 
 export function ListeningLab() {
@@ -27,147 +29,31 @@ export function ListeningLab() {
 }
 
 const themeStyle = (level: string) => ({ "--ll-tone": themeFor(level).tone, "--ll-soft": themeFor(level).soft }) as CSSProperties;
-const nextPhaseOf = (id: string, progress: Progress): ListeningPhase =>
-  phases.find((phase) => !phaseResult(progress, id, phase)?.checked) ?? phases.find((phase) => !phasePassed(phaseResult(progress, id, phase), phase)) ?? "transfer";
 const isDue = (updatedAt?: string) => !updatedAt || new Date(updatedAt).getTime() + REVIEW_DELAY_MS <= Date.now();
 
 /* ───────────────────────── Roadmap ───────────────────────── */
 
 function RoadmapPage() {
-  const progress = usePrefixResults("listening-lab:v1:") ?? {};
-  const placement = usePrefixResults(placementStartPrefix);
-  const errors = usePrefixResults(errorPrefix);
-  const summaries = useModuleSummaries();
-  const [typeFilter, setTypeFilter] = useState("all");
+  const { course, view, data } = useListeningPath();
+  const streak = useLearnerStreak();
+  if (!view || !data) return <div className="ll-page ll-roadmap"><div className="ll-skeleton ll-skeleton-hero"/><div className="ll-skeleton ll-skeleton-row"/><div className="ll-skeleton ll-skeleton-card"/></div>;
 
-  const suggested = useMemo(() => {
-    const latest = Object.entries(placement ?? {}).sort((a, b) => (b[1].updatedAt ?? "").localeCompare(a[1].updatedAt ?? ""))[0];
-    return latest ? latest[0].slice(placementStartPrefix.length) : null;
-  }, [placement]);
-  const startIndex = Math.max(0, listeningModules.findIndex((item) => item.id === (suggested ?? "01")));
-  const next = listeningModules.slice(startIndex).find((item) => !mastered(item.id, progress)) ?? listeningModules.find((item) => !mastered(item.id, progress)) ?? listeningModules.at(-1)!;
-  const nextPhase = nextPhaseOf(next.id, progress);
-  const started = phases.some((phase) => phaseResult(progress, next.id, phase)?.checked);
+  const suggested = suggestedModule(data.placement);
+  const due = Object.values(data.errors).filter((item) => item.correct === 0 && isDue(item.updatedAt)).length;
+  // Placement, the mistake review and Dictation stay one click away; the path itself carries the order.
+  const intro = <nav className="ll-path-actions ll-actions" aria-label="Lối tắt">
+    <ActionCard href={`${BASE}/placement`} tone="sun" icon={<Compass size={20}/>} title={suggested ? `Đầu vào · gợi ý mô-đun ${suggested}` : "Làm bài đầu vào"}/>
+    <ActionCard href={`${BASE}/review`} tone="coral" icon={<RotateCcw size={20}/>} title="Ôn lỗi của tôi" badge={due || undefined}/>
+    <ActionCard href="/app/dictation" tone="teal" icon={<Headphones size={20}/>} title="Nghe chép Dictation"/>
+  </nav>;
 
-  const done = listeningModules.filter((item) => mastered(item.id, progress)).length;
-  const attempts = Object.entries(progress).filter(([slug]) => /^listening-lab:v1:\d+:/.test(slug)).map(([, value]) => value);
-  const checked = attempts.reduce((sum, item) => sum + item.checked, 0);
-  const correct = attempts.reduce((sum, item) => sum + item.correct, 0);
-  const wrong = Object.values(errors ?? {}).filter((item) => item.correct === 0);
-  const due = wrong.filter((item) => isDue(item.updatedAt)).length;
-
-  const typesOf = (unit: ListeningModule) => {
-    const real = summaries[unit.id]?.types;
-    return real ? Object.keys(real).filter((type) => real[type] > 0) : unit.types;
-  };
-  const typeCounts = useMemo(() => {
-    const counts = new Map<string, number>();
-    for (const unit of listeningModules) for (const type of (summaries[unit.id] ? Object.keys(summaries[unit.id].types) : unit.types)) counts.set(type, (counts.get(type) ?? 0) + 1);
-    return [...counts].sort((a, b) => b[1] - a[1]);
-  }, [summaries]);
-  const visible = (unit: ListeningModule) => typeFilter === "all" || typesOf(unit).includes(typeFilter);
-
-  return <div className="ll-page ll-roadmap">
-    <header className="ll-hero">
-      <Wave/>
-      <div className="ll-hero-copy">
-        <h1>Nghe theo lộ trình, <em>luyện đúng từng dạng.</em></h1>
-        <div className="ll-hero-actions">
-          <Link className="ll-cta" href={`${BASE}/module/${next.id}#${nextPhase}`}>
-            <span className="ll-cta-icon"><Play size={18} fill="currentColor"/></span>
-            <span><b>{started ? "Học tiếp" : done ? "Mô-đun tiếp theo" : "Bắt đầu học"}</b><small>Mô-đun {next.id} · {next.title} · bước {phaseInfo[nextPhase].step}/3</small></span>
-            <ArrowRight size={18}/>
-          </Link>
-          {!suggested && <Link className="ll-ghost" href={`${BASE}/placement`}><Compass size={15}/> Chưa biết bắt đầu từ đâu?</Link>}
-          <span className="ll-draft-pill" title="Bài nghe nguồn đang chờ giáo viên kiểm duyệt">Thử nghiệm</span>
-        </div>
-      </div>
-      <div className="ll-stats">
-        <div className="ll-stats-ring"><Ring value={done} total={28}/><div><strong>Mô-đun đã đạt</strong><span>Còn {28 - done} mô-đun</span></div></div>
-        <dl><div><dt>Câu đã làm</dt><dd>{checked}</dd></div><div><dt>Độ chính xác</dt><dd>{checked ? `${Math.round((correct / checked) * 100)}%` : "—"}</dd></div><div><dt>Lỗi đến hạn</dt><dd>{due}</dd></div></dl>
-      </div>
-    </header>
-
-    <nav className="ll-actions" aria-label="Lối tắt">
-      <ActionCard href={`${BASE}/placement`} tone="sun" icon={<Compass size={20}/>} title={suggested ? `Đầu vào · gợi ý ${suggested}` : "Kiểm tra đầu vào"}/>
-      <ActionCard href={`${BASE}/review`} tone="coral" icon={<RotateCcw size={20}/>} title="Ôn lỗi của tôi" badge={due || undefined}/>
-      <ActionCard href="#luyen-theo-dang" tone="lav" icon={<Layers size={20}/>} title="Luyện theo dạng"/>
-      <ActionCard href="/app/dictation" tone="teal" icon={<Headphones size={20}/>} title="Nghe chép Dictation"/>
-    </nav>
-
-    <section className="ll-journey" aria-labelledby="ll-journey-title">
-      <div className="ll-section-head"><div><span className="ll-kicker">Bản đồ lộ trình</span><h2 id="ll-journey-title">7 chặng, 28 mô-đun</h2></div><small>Mức 1.0–7.0+ là mức luyện nội bộ, không phải band IELTS.</small></div>
-      <ol className="ll-track-map">{stageLevels.map((level, index) => {
-        const units = listeningModules.filter((item) => item.level === level);
-        const count = units.filter((item) => mastered(item.id, progress)).length;
-        const here = next.level === level;
-        return <li key={level} style={themeStyle(level)} className={`${here ? "is-here" : ""} ${count === units.length ? "is-done" : ""}`}>
-          <a href={`#chang-${index + 1}`}>
-            <span className="ll-node">{count === units.length ? <Check size={16} strokeWidth={3}/> : index + 1}</span>
-            <b>{level}</b><small>{themeFor(level).name}</small>
-            <i aria-label={`${count}/${units.length} mô-đun đạt`}>{units.map((unit) => <em key={unit.id} className={mastered(unit.id, progress) ? "is-on" : ""}/>)}</i>
-            {here && <span className="ll-here">Bạn ở đây</span>}
-          </a>
-        </li>;
-      })}</ol>
-    </section>
-
-    <div id="luyen-theo-dang" className="ll-typebar" role="group" aria-label="Luyện theo dạng câu hỏi">
-      <span><ListChecks size={16}/> Dạng câu hỏi</span>
-      <button type="button" aria-pressed={typeFilter === "all"} onClick={() => setTypeFilter("all")}>Tất cả</button>
-      {typeCounts.map(([type, count]) => <button type="button" key={type} aria-pressed={typeFilter === type} onClick={() => setTypeFilter(type)}>{listeningTypeLabels[type] ?? type}<small>{count}</small></button>)}
-    </div>
-
-    {stageLevels.map((level, index) => {
-      const units = listeningModules.filter((item) => item.level === level && visible(item));
-      if (!units.length) return null;
-      const all = listeningModules.filter((item) => item.level === level);
-      const count = all.filter((item) => mastered(item.id, progress)).length;
-      return <section className="ll-stage" id={`chang-${index + 1}`} key={level} style={themeStyle(level)}>
-        <header><span className="ll-stage-tag">Chặng {index + 1}</span><h2>{themeFor(level).name}<small>{level}</small></h2><span className="ll-stage-progress"><i><em style={{ width: `${(count / all.length) * 100}%` }}/></i>{count}/{all.length} đạt</span></header>
-        <div className="ll-grid">{units.map((unit) => <ModuleCard key={unit.id} unit={unit} progress={progress} types={typesOf(unit)} isNext={unit.id === next.id} isSuggested={unit.id === suggested}
-          size={summaries[unit.id] ? { questions: Object.values(summaries[unit.id].counts).reduce((a, b) => a + b, 0), minutes: minutes(summaries[unit.id].durationMs) } : undefined}/>)}</div>
-      </section>;
-    })}
-    {typeFilter !== "all" && !listeningModules.some(visible) && <p className="ll-empty">Chưa có mô-đun nào dùng dạng này.</p>}
-
-    <aside className="ll-note"><Sparkles size={16}/><p>Bài nghe nguồn đang ở trạng thái bản nháp và cần giáo viên rà soát audio, đáp án, sơ đồ trước khi phát hành chính thức. Kết quả tại đây là điểm luyện tập, không quy đổi sang band.</p></aside>
-  </div>;
-}
-
-function ModuleCard({ unit, progress, types, isNext, isSuggested, size }: { unit: ListeningModule; progress: Progress; types: string[]; isNext: boolean; isSuggested: boolean; size?: { questions: number; minutes: number } }) {
-  const done = mastered(unit.id, progress);
-  const tried = phases.some((phase) => phaseResult(progress, unit.id, phase)?.checked);
-  const status = done ? { label: "Đã đạt", cls: "is-done" } : isNext ? { label: tried ? "Đang học" : "Tiếp theo", cls: "is-next" } : isSuggested ? { label: "Gợi ý bắt đầu", cls: "is-suggested" } : tried ? { label: "Đang học", cls: "is-tried" } : null;
-  return <Link href={`${BASE}/module/${unit.id}${tried && !done ? `#${nextPhaseOf(unit.id, progress)}` : ""}`} className={`ll-card ${isNext ? "is-next" : ""} ${done ? "is-done" : ""}`}>
-    <div className="ll-card-top"><span className="ll-number">{unit.id}</span>{status && <span className={`ll-status ${status.cls}`}>{status.label}</span>}</div>
-    <strong>{unit.title}</strong>
-    <p>{unit.objective}</p>
-    <div className="ll-card-types">{types.slice(0, 3).map((type) => <span key={type}>{listeningTypeLabels[type] ?? type}</span>)}{types.length > 3 && <span>+{types.length - 3}</span>}</div>
-    <div className="ll-card-foot">
-      <span className="ll-pips" aria-label="Ba bước luyện">{phases.map((phase) => { const result = phaseResult(progress, unit.id, phase); const pass = phasePassed(result, phase);
-        return <i key={phase} className={pass ? "is-pass" : result?.checked ? "is-tried" : ""} title={`${phaseInfo[phase].label}: ${result?.checked ? `${result.correct}/${result.checked}` : "chưa làm"}`}/>; })}</span>
-      <small>{size ? <><Clock3 size={12}/> {size.questions} câu · {size.minutes} phút</> : `${unit.stages.join(" · ")}`}</small>
-      <ArrowRight size={16}/>
-    </div>
-  </Link>;
+  return <StudyPath course={course} view={view} streak={streak?.current ?? 0} intro={intro}>
+    <p className="sp-footnote"><Sparkles size={15} aria-hidden/> Bài nghe nguồn đang ở trạng thái bản nháp và cần giáo viên rà soát audio, đáp án, sơ đồ trước khi phát hành chính thức. Một mô-đun đạt khi bước Độc lập đúng từ 8/10 và bước Chuyển giao đúng từ 75%; mức 1.0–7.0+ là mức luyện nội bộ, không quy đổi sang band.</p>
+  </StudyPath>;
 }
 
 function ActionCard({ href, tone, icon, title, badge }: { href: string; tone: string; icon: React.ReactNode; title: string; badge?: number }) {
-  const body = <><span className="ll-action-icon">{icon}</span><span className="ll-action-text"><strong>{title}</strong></span>{badge ? <span className="ll-badge">{badge}</span> : <ArrowRight className="ll-action-arrow" size={16}/>}</>;
-  return href.startsWith("#") ? <a className={`ll-action is-${tone}`} href={href}>{body}</a> : <Link className={`ll-action is-${tone}`} href={href}>{body}</Link>;
-}
-
-function Ring({ value, total }: { value: number; total: number }) {
-  return <span className="ll-ring is-hero" role="img" aria-label={`${value}/${total} mô-đun đạt`}>
-    <svg viewBox="0 0 44 44" aria-hidden="true"><circle cx="22" cy="22" r="19"/>{value > 0 && <circle cx="22" cy="22" r="19" strokeDasharray={`${(value / total) * 119.4} 119.4`}/>}</svg>
-    <span><b>{value}</b><small>/{total}</small></span>
-  </span>;
-}
-
-function Wave() {
-  const bars = [14, 26, 40, 22, 52, 34, 64, 30, 46, 72, 38, 56, 28, 44, 66, 34, 50, 24, 58, 36, 20, 42, 30, 16];
-  return <svg className="ll-wave" viewBox="0 0 480 80" preserveAspectRatio="none" aria-hidden="true">{bars.map((height, index) => <rect key={index} x={index * 20 + 4} y={(80 - height) / 2} width="9" height={height} rx="4.5"/>)}</svg>;
+  return <Link className={`ll-action is-${tone}`} href={href}><span className="ll-action-icon">{icon}</span><span className="ll-action-text"><strong>{title}</strong></span>{badge ? <span className="ll-badge">{badge}</span> : <ArrowRight className="ll-action-arrow" size={16}/>}</Link>;
 }
 
 /* ───────────────────────── Review ───────────────────────── */

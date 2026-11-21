@@ -59,7 +59,7 @@ export type LessonProgress = {
   step?: number;
   right?: number;
   total?: number;
-  /** Wrong answers this lesson sent to the mistake log. */
+  /** Wrong answers this lesson sent to the mistake log, counted whether or not the lesson is finished. */
   mistakes?: number;
   /** How far along, in the Lab's own words ("Đã làm 4/12 câu"), shown instead of the step number. */
   note?: string;
@@ -131,7 +131,8 @@ export function buildPath(course: PathCourse, progress: PathProgress): PathView 
       if (!lesson.unnumbered) number += 1;
       const state = progress.lessons[lesson.id];
       let status: NodeStatus = "locked";
-      if (open && state?.done) { status = "done"; finished += 1; if (!lesson.unnumbered) done += 1; mistakes += state.mistakes ?? 0; }
+      if (open) mistakes += state?.mistakes ?? 0;
+      if (open && state?.done) { status = "done"; finished += 1; if (!lesson.unnumbered) done += 1; }
       else if (!currentGiven) { status = "current"; currentGiven = true; }
       nodes.push({ kind: "lesson", id: lesson.id, title: lesson.title, status, href: status === "locked" ? undefined : lesson.href, number: lesson.unnumbered ? undefined : number, lesson, progress: state });
     }

@@ -466,3 +466,8 @@
 }
 /* The portal bottom tab bar (60px + 10px gap) appears at 700px and below. */
 @media (max-width:700px){.ll-submitbar{bottom:82px;margin-right:58px}}
+
+/* Shortcuts shown inside the shared study path (sp-page), outside .ll-page. */
+.ll-path-actions{--ll-ink:#10233f;--ll-muted:#5d6f8c;--ll-line:#e3e8ee;--ll-teal:#0a7f89;margin:14px 0 0;grid-template-columns:repeat(3,minmax(0,1fr))}
+@media (max-width:700px){.ll-path-actions{grid-template-columns:1fr}}
+.ll-lessonbar{display:grid;gap:10px;margin-bottom:12px}
