@@ -587,7 +587,7 @@ export async function enrichNews({ scheduled = false, photoOnly = false }: { sch
   const settings = await loadNewsSettings(db);
   const result = { imagesChecked: 0, imagesAdded: 0, inlineImagesChecked: 0, inlineImagesAdded: 0, coverUpgradesChecked: 0, coverUpgradesAdded: 0, quizzesChecked: 0, quizzesAdded: 0, rewritesChecked: 0, rewritesAdded: 0, translationsChecked: 0, translationsAdded: 0, aiConfigured: Boolean(process.env.GEMINI_API_KEY) || newsArticleFreeTierReady(), paused: scheduled && !settings.auto_enrich_enabled, quotaLimited: false, errors: [] as string[] };
   if (result.paused) return result;
-  if (photoOnly && !scheduled) {
+  if (photoOnly) {
     await enrichPhotoWork(db, result);
     return result;
   }

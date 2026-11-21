@@ -27,7 +27,7 @@ export async function POST(request: NextRequest) {
     }
   }
   if (!authorized) return NextResponse.json({ error: "Forbidden" }, { status: 403 });
-  try { return NextResponse.json(await enrichNews({ scheduled, photoOnly: !scheduled && request.nextUrl.searchParams.get("work") === "photo" })); }
+  try { return NextResponse.json(await enrichNews({ scheduled, photoOnly: request.nextUrl.searchParams.get("work") === "photo" })); }
   catch (cause) {
     const message = cause && typeof cause === "object" && "message" in cause && typeof cause.message === "string"
       ? cause.message : "Enrichment failed";
