@@ -574,10 +574,10 @@ async function createAiIllustration(db: Db, article: Claim, query: string, fetch
 
 export function scheduledNewsWorkSlot(now: Date): "quiz" | "image" | "photo" | "translation" | "discovery" {
   const minute = now.getUTCMinutes();
-  if (minute % 20 === 15) return "discovery";
   if (minute === 25) return "image";
   if (minute === 35) return "photo";
   if (minute === 45 && now.getUTCHours() % 2 === 0) return "translation";
+  if (minute % 20 === 15) return "discovery";
   return "quiz";
 }
 
@@ -646,7 +646,9 @@ async function enrichPhotoWork(db: Db, result: PhotoWorkResult, onlyKind?: "inli
     if (onlyKind && kind !== onlyKind) continue;
     const { data, error } = await db.rpc("news_claim_photo_work", { p_kind: kind, p_limit: 1 });
     if (error) { result.errors.push(`Photo work: ${error.message}`); continue; }
-    for (const article of (data ?? []) as PhotoClaim[]) {
+    const claims = (data ?? []) as PhotoClaim[];
+    const queries = await imageQueries(db, claims.map((article) => article.article_id));
+    for (const article of claims) {
       if (kind === "inline_image") result.inlineImagesChecked++;
       else result.coverUpgradesChecked++;
       try {
@@ -654,6 +656,7 @@ async function enrichPhotoWork(db: Db, result: PhotoWorkResult, onlyKind?: "inli
         // so the in-passage photo still adds a distinct visual.
         const found = await findNewsIllustrationResult(article.title, fetch, {
           body: article.body_text ?? "",
+          query: queries.get(article.article_id) ?? "",
           excludeUrls: [article.cover_image_url],
         });
         if (!found.image) { await finish(db, article.article_id, kind, "none", found.reason); continue; }
