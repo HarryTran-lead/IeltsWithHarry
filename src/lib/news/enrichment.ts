@@ -161,7 +161,7 @@ function shuffleOptions(question: GeneratedQuestion, random = Math.random): Gene
     option_notes: question.option_notes ? order.map((index) => question.option_notes![index]) : null };
 }
 
-/** About 3,000 tokens of input, cut at a paragraph: enough for twenty questions and gentle on free-tier token limits. */
+/** About 3,000 tokens of input, cut at a paragraph for the adaptive 6–13 question set. */
 export function quizExcerpt(body: string, max = 12000) {
   if (body.length <= max) return body;
   const cut = body.lastIndexOf("\n\n", max);
