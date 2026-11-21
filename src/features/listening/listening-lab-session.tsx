@@ -12,7 +12,7 @@ import type { GradedQuestion, PublicLesson, PublicQuestion } from "@/lib/dictati
 import { listeningModuleById, listeningModules, listeningTypeLabels } from "@/lib/listening-lab/curriculum";
 import type { ListeningModulePlan, ListeningPhase, ListeningTask } from "@/lib/listening-lab/plan";
 import { listPracticeResults, loadPracticeResults, savePracticeSnapshot } from "@/features/learning/practice-results";
-import { LessonLocked, LessonSteps, LessonTopBar } from "@/features/self-study-path/study-path";
+import { LessonBar, LessonLocked } from "@/features/self-study-path/study-path";
 import { buildPath } from "@/lib/self-study-path/path";
 import { listeningCourse, listeningProgress, nextPhaseOf } from "./listening-path";
 import {
@@ -140,12 +140,12 @@ export function ModulePage({ id }: { id: string }) {
 
   return <div className="ll-page ll-module sp-kit" style={themeStyle(unit.level)}>
     <header className="ll-lessonbar">
-      <LessonTopBar exitHref={BASE} step={position} count={phases.length} title={<>
-        <span>Listening · {themeFor(unit.level).name} · mức {unit.level}</span>
-        <b>{lessonName}</b>
-        <span className="t1-lessonbar-meta">Mô-đun {unit.id} · {unit.objective} · <Target size={12} aria-hidden/> Đạt khi Độc lập ≥ 8/10 và Chuyển giao ≥ 75%{mastered(unit.id, progress) && <> · <CheckCircle2 size={12} aria-hidden/> Đã đạt</>}</span>
-      </>}/>
-      <LessonSteps steps={phases.map((item) => {
+      <LessonBar exitHref={BASE} kicker={`Listening · ${themeFor(unit.level).name} · mức ${unit.level}`} title={lessonName}
+        info={<>
+          <p>Mô-đun {unit.id} · {unit.objective}</p>
+          <p><Target size={12} aria-hidden/> Đạt khi Độc lập ≥ 8/10 và Chuyển giao ≥ 75%{mastered(unit.id, progress) && <> · <CheckCircle2 size={12} aria-hidden/> Đã đạt</>}</p>
+        </>}
+        steps={phases.map((item) => {
         const result = phaseResult(progress, unit.id, item);
         return { label: phaseInfo[item].label, note: result?.checked ? `${result.correct}/${result.checked} đúng` : `${plan.counts[item]} câu · ${phaseInfo[item].rule}`, pass: phasePassed(result, item) };
       })} step={position} reached={reached} onPick={(index) => choosePhase(phases[index])}/>

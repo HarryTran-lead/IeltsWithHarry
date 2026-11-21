@@ -132,25 +132,49 @@ button.sp-stage-row:hover{background:#f7fafb}
   .sp-stop.is-current>a,.sp-stop.is-current>div{transform:translate(-31px,-50%)}
 }
 
-/* Screen 2 · lesson frame */
+/* Screen 2 · the one-row lesson bar */
 .sp-lesson{max-width:760px}
-.sp-lesson-top{display:flex;align-items:center;gap:12px}
-.sp-lesson-top .sp-bar{flex:1}
-.sp-lesson-top .sp-bar>span{background:var(--sp-teal)}
-.sp-icon-btn{display:grid;place-items:center;width:36px;height:36px;border-radius:50%;color:var(--sp-muted)!important}
+.sp-icon-btn{display:grid;flex:none;place-items:center;width:36px;height:36px;border-radius:50%;color:var(--sp-muted)!important}
 .sp-icon-btn:hover{background:#eef3f6}
-.sp-count{color:var(--sp-muted);font-size:var(--fs-xs);font-weight:700}
-.sp-lesson-name{margin:12px 0 10px!important;color:var(--sp-muted);font-size:var(--fs-sm);font-weight:650}
-.sp-steps{display:grid;grid-auto-flow:column;grid-auto-columns:minmax(0,1fr);gap:6px}
-.sp-steps button{display:grid;justify-items:center;align-content:start;gap:4px;width:100%;height:100%;padding:8px 2px;border:0;border-top:4px solid #e9eef3;background:none;color:var(--sp-muted);font:inherit;font-size:var(--fs-xs);cursor:pointer}
-.sp-steps button:disabled{cursor:default;color:var(--sp-lock)}
-.sp-steps button small{max-width:100%;overflow:hidden;color:var(--sp-muted);font-size:var(--fs-2xs);font-weight:500;white-space:nowrap;text-overflow:ellipsis}
-.sp-steps .is-open button{color:var(--sp-ink)}
-.sp-step-dot{display:grid;place-items:center;width:24px;height:24px;border-radius:50%;background:#eef3f6;font-weight:800}
-.sp-steps .is-done button{border-top-color:var(--sp-teal)}
-.sp-steps .is-done .sp-step-dot{background:var(--sp-teal-soft);color:var(--sp-teal)}
-.sp-steps .is-current button{border-top-color:var(--sp-teal);color:var(--sp-ink);font-weight:800}
-.sp-steps .is-current .sp-step-dot{background:var(--sp-teal);color:#fff}
+.sp-lessonbar{container-type:inline-size;display:flex;flex-wrap:wrap;align-items:center;gap:10px;min-height:56px;padding:6px 10px 6px 6px;border:1px solid var(--sp-line);border-radius:var(--r-lg,16px);background:#fff;color:var(--sp-ink)}
+.sp-lessonbar-name{display:grid;flex:0 1 auto;min-width:0;max-width:34%}
+.sp-lessonbar-name small{overflow:hidden;color:var(--sp-teal);font-size:var(--fs-2xs);font-weight:800;letter-spacing:.05em;text-transform:uppercase;text-overflow:ellipsis;white-space:nowrap}
+.sp-lessonbar-name b{overflow:hidden;font-size:var(--fs-md);font-weight:800;line-height:1.3;text-overflow:ellipsis;white-space:nowrap}
+.sp-pills{display:flex;flex:1 1 auto;justify-content:center;gap:4px;min-width:0;margin:0;padding:0;list-style:none}
+.sp-pill{min-width:0}
+.sp-pill button{display:inline-flex;align-items:center;gap:6px;max-width:100%;height:34px;padding:0 10px 0 4px;border:1px solid transparent;border-radius:999px;background:#f2f5f8;color:var(--sp-muted);font:inherit;font-size:var(--fs-xs);font-weight:700;white-space:nowrap;cursor:pointer}
+.sp-pill button:hover:not(:disabled){border-color:#9fd8dc}
+.sp-pill button:disabled{cursor:default;opacity:.6}
+.sp-pill-dot{display:grid;flex:none;place-items:center;width:26px;height:26px;border-radius:50%;background:#fff;font-size:var(--fs-2xs);font-weight:800}
+.sp-pill-label{overflow:hidden;text-overflow:ellipsis}
+.sp-pill-note{display:none}
+.sp-pill.is-done button{background:var(--sp-good-soft);color:var(--sp-good)}
+.sp-pill.is-done .sp-pill-dot{background:var(--sp-good);color:#fff}
+.sp-pill.is-open button{background:#fff;border-color:var(--sp-line);color:var(--sp-ink)}
+.sp-pill.is-current button{background:var(--sp-teal);color:#fff}
+.sp-pill.is-current .sp-pill-dot{color:var(--sp-teal)}
+.sp-lessonbar-count{display:inline-flex;flex:none;align-items:center;gap:8px;color:var(--sp-muted);font-size:var(--fs-xs);font-weight:800}
+.sp-lessonbar-count i{display:block;width:72px;height:6px;border-radius:999px;background:#e9eef3;overflow:hidden}
+.sp-lessonbar-count em{display:block;height:100%;border-radius:inherit;background:var(--sp-teal)}
+.sp-info{position:relative;flex:none}
+.sp-info summary{display:grid;place-items:center;width:34px;height:34px;border-radius:50%;color:var(--sp-muted);cursor:pointer;list-style:none}
+.sp-info summary::-webkit-details-marker{display:none}
+.sp-info summary:hover,.sp-info[open] summary{background:#eef3f6;color:var(--sp-teal)}
+.sp-info-pop{position:absolute;z-index:40;top:calc(100% + 8px);right:0;display:grid;gap:8px;width:min(340px,80vw);padding:12px 14px;border:1px solid var(--sp-line);border-radius:12px;background:#fff;box-shadow:0 18px 40px -22px rgba(16,35,63,.5);color:var(--sp-ink);font-size:var(--fs-sm);line-height:1.5}
+.sp-info-pop p{display:flex;flex-wrap:wrap;align-items:center;gap:4px;margin:0}
+.sp-info-pop a{display:inline-flex;align-items:center;gap:4px;color:var(--sp-teal)!important;font-weight:700}
+.sp-info-note{color:var(--sp-muted);font-size:var(--fs-xs)}
+/* Narrower rows keep every step but name only the current one. */
+@container (max-width:1120px){
+  .sp-pill:not(.is-current) .sp-pill-label{display:none}
+  .sp-pill:not(.is-current) button{padding:0 4px}
+  .sp-lessonbar-count i{width:44px}
+}
+/* Phones: the steps move to a second row, numbers only except the current one. */
+@container (max-width:560px){
+  .sp-lessonbar-name{max-width:none;flex:1}
+  .sp-pills{order:5;flex-basis:100%;justify-content:flex-start;padding:2px 0 0 4px}
+}
 .sp-lesson-body{display:grid;gap:10px;min-height:260px;margin-top:14px;padding:18px 20px;border:1px solid var(--sp-line);border-radius:var(--r-lg,16px);background:#fff;font-size:var(--fs-md);line-height:1.6}
 .sp-lesson-foot{display:flex;flex-wrap:wrap;justify-content:flex-start;gap:8px;margin-top:14px;padding-top:12px;border-top:1px solid var(--sp-line)}
 
@@ -172,8 +196,6 @@ button.sp-stage-row:hover{background:#f7fafb}
   .sp-stage-row{flex-wrap:wrap;padding:12px 14px}
   .sp-stage-row>span{flex-basis:calc(100% - 60px)}
   .sp-stage-row>small{order:3;flex-basis:100%;padding-left:26px}
-  .sp-steps .sp-step-label{font-size:11px}
-  .sp-steps button small{display:none}
   .sp-lesson-foot .sp-btn{flex:1}
 }
 
@@ -189,8 +211,3 @@ button.sp-stage-row:hover{background:#f7fafb}
 .sp-done-badge.is-locked{background:var(--sp-lock-soft);color:var(--sp-muted);box-shadow:0 0 0 8px #f7f9fb}
 .sp-footnote{display:flex;gap:8px;align-items:flex-start;margin-top:16px!important;color:var(--sp-muted);font-size:var(--fs-xs);line-height:1.55}
 .sp-footnote svg{flex:none;margin-top:2px;color:var(--sp-teal)}
-.sp-lesson-name{display:grid;gap:1px}
-.sp-lesson-name>span:first-child{color:var(--sp-teal);font-size:var(--fs-2xs);font-weight:800;letter-spacing:.06em;text-transform:uppercase}
-.sp-lesson-name>b{color:var(--sp-ink);font-size:clamp(1.05rem,.95rem + .5vw,1.35rem);line-height:1.3}
-.t1-lessonbar-meta{display:inline-flex;flex-wrap:wrap;align-items:center;gap:4px;color:var(--sp-muted);font-size:var(--fs-xs);font-weight:500}
-.t1-lessonbar-meta a{display:inline-flex;align-items:center;gap:3px;color:var(--sp-teal)!important;font-weight:700}

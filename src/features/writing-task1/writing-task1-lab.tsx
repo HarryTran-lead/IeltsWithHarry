@@ -23,7 +23,7 @@ import { TASK1_GUIDE_ID, drillFrames, essayFrame, groupGuides, guideFor, introGu
 import { buildPath } from "@/lib/self-study-path/path";
 import { TASK1_GUIDE_READ_KEY, task1Course, task1Progress } from "@/lib/self-study-path/task1";
 import { useLearnerStreak } from "@/features/account/use-learner-streak";
-import { LessonDone, LessonFoot, LessonLocked, LessonSteps, LessonTopBar, StudyPath } from "@/features/self-study-path/study-path";
+import { LessonBar, LessonDone, LessonFoot, LessonLocked, StudyPath } from "@/features/self-study-path/study-path";
 import { Task1Figure } from "./task1-figure";
 import { cacheTask1State, checkTask1, emptyTask1State, learnTask1, loadAllTask1States, loadTask1State, revealTask1, saveTask1State } from "./task1-state";
 import "@/features/listening/listening-lab.css";
@@ -304,12 +304,13 @@ function LessonPage({ id }: { id: string }) {
 
   return <div className="ll-page t1-lab t1-lesson sp-kit" style={themeStyle(lesson.stage)}>
     <header className="t1-lessonbar">
-      <LessonTopBar exitHref={TASK1_BASE} step={index} title={<>
-        <span>Writing Task 1 · {stageInfo[lesson.stage].name}</span>
-        <b>{lessonName}</b>
-        <span className="t1-lessonbar-meta">{guideFor(lesson.group).name_vi} · <Clock3 size={12} aria-hidden/> {lesson.minutes} phút · <Link href={`${guideHref}#dang-${lesson.group}`}><Compass size={13} aria-hidden/> Cách làm dạng này</Link></span>
-      </>}/>
-      <LessonSteps steps={steps.map((item) => ({ label: item.label, note: item.status, pass: item.pass }))} step={index}
+      <LessonBar exitHref={TASK1_BASE} kicker={`Writing Task 1 · ${stageInfo[lesson.stage].name}`} title={lessonName}
+        info={<>
+          <p>{guideFor(lesson.group).name_vi} · <Clock3 size={12} aria-hidden/> {lesson.minutes} phút · mức luyện {lesson.target_range}</p>
+          <p><Link href={`${guideHref}#dang-${lesson.group}`}><Compass size={13} aria-hidden/> Cách làm dạng này</Link></p>
+          <p className="sp-info-note">Nội dung luyện tập do đội ngũ biên soạn, không phải đề thi IELTS chính thức. Bài làm được lưu vào tài khoản của bạn; tiến độ không quy đổi sang band.</p>
+        </>}
+        steps={steps.map((item) => ({ label: item.label, note: item.status, pass: item.pass }))} step={index}
         reached={Math.max(reached, ...steps.map((item, position) => item.pass ? Math.min(position + 1, stepIds.length - 1) : 0))}
         onPick={(position) => go(stepIds[position])}/>
     </header>
@@ -361,13 +362,16 @@ function LessonPage({ id }: { id: string }) {
 
 function PromptCard({ lesson }: { lesson: Task1Lesson }) {
   const [vi, setVi] = useState(false);
+  // On a laptop the prompt folds to three lines so the figure stays in view; the button only shows there.
+  const [full, setFull] = useState(false);
   const target = writingTargets[lesson.stage];
   return <div className="t1-prompt-card">
     <div className="t1-prompt-top">
       <span className="ll-kicker">Đề bài</span>
       {lesson.question_vi && <button type="button" className="t1-toggle" aria-pressed={vi} onClick={() => setVi((value) => !value)}><Languages size={14}/> {vi ? "Xem tiếng Anh" : "Dịch đề"}</button>}
     </div>
-    <p className="t1-prompt-en" lang={vi ? "vi" : "en"}>{vi && lesson.question_vi ? lesson.question_vi : lesson.question}</p>
+    <p className={`t1-prompt-en ${full ? "" : "is-folded"}`} lang={vi ? "vi" : "en"}>{vi && lesson.question_vi ? lesson.question_vi : lesson.question}</p>
+    <button type="button" className="t1-prompt-more" aria-expanded={full} onClick={() => setFull((value) => !value)}>{full ? "Thu gọn đề" : "Xem đủ đề"}</button>
     <p className="t1-prompt-target"><Target size={13}/> Bài này: {target.label.toLowerCase()} · {target.hint}</p>
     <Task1Figure visual={lesson.visual} unit={lesson.unit}/>
   </div>;
