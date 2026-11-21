@@ -211,3 +211,17 @@ button.sp-stage-row:hover{background:#f7fafb}
 .sp-done-badge.is-locked{background:var(--sp-lock-soft);color:var(--sp-muted);box-shadow:0 0 0 8px #f7f9fb}
 .sp-footnote{display:flex;gap:8px;align-items:flex-start;margin-top:16px!important;color:var(--sp-muted);font-size:var(--fs-xs);line-height:1.55}
 .sp-footnote svg{flex:none;margin-top:2px;color:var(--sp-teal)}
+
+/* The lesson bar stays pinned under the app header while the lesson scrolls, and tightens once it sticks. */
+:is(.t1-lessonbar,.t2-lessonbar,.spk-lessonbar,.ll-lessonbar),.sp-lesson>.sp-lessonbar{position:sticky;top:calc(var(--app-header-height,64px) + 6px);z-index:30}
+.sp-lessonbar{transition:min-height .15s ease,padding .15s ease,box-shadow .15s ease}
+.sp-lessonbar.is-stuck{min-height:46px;padding-block:3px;background:rgba(255,255,255,.97);box-shadow:0 12px 26px -18px rgba(16,35,63,.6);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px)}
+.sp-lessonbar.is-stuck .sp-lessonbar-name small{display:none}
+.sp-lessonbar.is-stuck .sp-lessonbar-name b{font-size:var(--fs-sm)}
+.sp-lessonbar.is-stuck .sp-pill button{height:30px}
+.sp-lessonbar.is-stuck .sp-pill-dot{width:22px;height:22px}
+.sp-lessonbar.is-stuck .sp-icon-btn,.sp-lessonbar.is-stuck .sp-info summary{width:30px;height:30px}
+@media (prefers-reduced-motion:reduce){.sp-lessonbar{transition:none}}
+/* Cover the gap above the pinned bar so the lesson does not show through it. */
+.sp-lessonbar{position:relative}
+.sp-lessonbar.is-stuck::before{content:"";position:absolute;z-index:-1;left:-10px;right:-10px;top:-10px;height:14px;background:var(--paper,#f7f6f1)}
