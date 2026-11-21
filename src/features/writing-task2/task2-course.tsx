@@ -8,18 +8,18 @@ import Link from "next/link";
 import { useEffect, useMemo, useState, type CSSProperties, type KeyboardEvent, type ReactNode } from "react";
 import { ArrowLeft, ArrowRight, Check, ChevronDown, Clock3, Eye, Languages, Layers, Lightbulb, ListChecks, NotebookPen, Save, Sparkles, Target, Timer, X } from "lucide-react";
 import {
-  COURSE_API, COURSE_BASE, attemptDone, courseLayers, courseStageLabels,
+  COURSE_API, COURSE_BASE, attemptDone, courseLayers, courseStageLabels, practiceLevels, requiredPractice,
   type CourseAnswer, type CourseAttempt, type CourseExample, type CourseField, type CourseModule, type CourseModuleSummary, type CoursePractice, type CourseSection, type CourseUnit,
 } from "@/lib/writing-task2/course-types";
 import { criterionOf } from "@/lib/writing-task2/final-types";
-import { TASK2_BASE, countWords, questionTypeLabels } from "@/lib/writing-task2/types";
-import { addPeek, loadCourseAttempts, loadCourseProgress, readPeeks, revealCourse, saveCourseAttempt } from "./course-state";
+import { TASK2_BASE, countWords, questionTypeLabels, type Task2Stage } from "@/lib/writing-task2/types";
+import { addPeek, loadCourseAttempts, loadCourseDone, readPeeks, revealCourse, saveCourseAttempt } from "./course-state";
 import { FinalAssessment, MistakeLog, useFinalBundle, type MistakePrefill } from "./task2-final";
 import { withTerms } from "./task2-text";
 import { useLearnerStreak } from "@/features/account/use-learner-streak";
 import { LessonBar, LessonLocked, StudyPath } from "@/features/self-study-path/study-path";
 import { buildPath } from "@/lib/self-study-path/path";
-import { task2SkillsCourse, task2SkillsProgress } from "@/lib/self-study-path/task2";
+import { readTask2Level, task2SkillsCourse, task2SkillsProgress } from "@/lib/self-study-path/task2";
 
 const layerTone: Record<string, { tone: string; soft: string }> = {
   "1": { tone: "#0a7f89", soft: "#e2f5f4" }, "2": { tone: "#2577c8", soft: "#e6f0fb" }, "3": { tone: "#7c66dc", soft: "#f1eefe" },
@@ -46,20 +46,21 @@ export function LabShell({ tabs, children }: { tabs: ReactNode; children: ReactN
 
 export function CourseHome({ tabs, onLessons }: { tabs: ReactNode; onLessons: () => void }) {
   const [load, setLoad] = useState<Load<{ modules: CourseModuleSummary[] }>>({ state: "loading" });
-  const [progress, setProgress] = useState<Record<string, number> | null>(null);
+  const [progress, setProgress] = useState<Record<string, string[]> | null>(null);
+  const [level, setLevel] = useState<Task2Stage>("foundation");
   const streak = useLearnerStreak();
   useEffect(() => {
     let alive = true;
     void fetchCourse<{ modules: CourseModuleSummary[] }>(COURSE_API).then(async (result) => {
       if (!alive) return;
       setLoad(result);
-      if (result.state === "ready") { const saved = await loadCourseProgress().catch(() => ({})); if (alive) setProgress(saved); }
+      if (result.state === "ready") { const saved = await loadCourseDone().catch(() => ({})); if (alive) { setLevel(readTask2Level() ?? "foundation"); setProgress(saved); } }
     }).catch(() => { if (alive) setLoad({ state: "error", message: "Không tải được khoá học." }); });
     return () => { alive = false; };
   }, []);
   const modules = load.state === "ready" ? load.data.modules : null;
   const course = useMemo(() => modules ? task2SkillsCourse(modules) : null, [modules]);
-  const view = useMemo(() => course && modules && progress ? buildPath(course, task2SkillsProgress(modules, progress)) : null, [course, modules, progress]);
+  const view = useMemo(() => course && modules && progress ? buildPath(course, task2SkillsProgress(modules, progress, level)) : null, [course, modules, progress, level]);
 
   if (load.state === "loading" || (load.state === "ready" && !view)) return <LabShell tabs={tabs}><div className="ll-skeleton ll-skeleton-hero"/><div className="ll-skeleton ll-skeleton-card"/></LabShell>;
   if (load.state !== "ready" || !course || !view) return <LabShell tabs={tabs}><section className="t2-panel t2-course-empty">
@@ -101,9 +102,9 @@ export function CourseModulePage({ id }: { id: string }) {
       const saved = await loadCourseAttempts(id).catch(() => ({}));
       if (alive) setAttempts(saved);
       // Milestones open in path order: one not reached yet sends the learner to the one that is.
-      const [list, counts] = await Promise.all([fetchCourse<{ modules: CourseModuleSummary[] }>(COURSE_API).catch(() => null), loadCourseProgress().catch(() => null)]);
+      const [list, counts] = await Promise.all([fetchCourse<{ modules: CourseModuleSummary[] }>(COURSE_API).catch(() => null), loadCourseDone().catch(() => null)]);
       if (!alive || list?.state !== "ready" || !counts) return;
-      const view = buildPath(task2SkillsCourse(list.data.modules), task2SkillsProgress(list.data.modules, counts));
+      const view = buildPath(task2SkillsCourse(list.data.modules), task2SkillsProgress(list.data.modules, counts, readTask2Level()));
       const node = view.stages.flatMap((stage) => stage.nodes).find((item) => item.id === id);
       const next = view.next?.node;
       if (node?.status === "locked") setLocked({ title: next ? `${next.lesson?.meta?.split(" · ")[0] ?? ""} · ${next.title}` : "", href: next?.href });
@@ -123,10 +124,13 @@ export function CourseModulePage({ id }: { id: string }) {
 
   const milestone = load.data.module;
   const done = milestone.practice.filter((item) => attemptDone(attempts[item.id])).length;
+  // The milestone counts as done once the learner's own level (plus the items every level does) is finished.
+  const required = requiredPractice(practiceLevels(milestone.practice), readTask2Level() ?? "foundation");
+  const requiredDone = required.filter((practiceId) => attemptDone(attempts[practiceId])).length;
   const steps: { id: Step; label: string; hint: string; score: string; pass: boolean }[] = [
     { id: "learn", label: "Bài giảng", hint: `${milestone.units.length} bài · ${milestone.sections.length} tài liệu`, score: "", pass: done > 0 },
     ...(milestone.examples.length ? [{ id: "examples" as Step, label: "Ví dụ mẫu", hint: "Xem trước khi tự viết", score: `${milestone.examples.length}`, pass: done > 0 }] : []),
-    { id: "practice", label: "Luyện tập", hint: "Từng câu, có gợi ý", score: `${done}/${milestone.practice.length}`, pass: done === milestone.practice.length },
+    { id: "practice", label: "Luyện tập", hint: "Từng câu, có gợi ý", score: `${requiredDone}/${required.length}`, pass: required.length > 0 && requiredDone === required.length },
     ...(milestone.id === "R16" ? [{ id: "final" as Step, label: "Bài thi cuối", hint: "7 đề, 40 phút", score: "", pass: false }] : []),
     ...(LOG_MODULES.includes(milestone.id) ? [{ id: "mistakes" as Step, label: "Sổ lỗi", hint: "Ôn lại lỗi đã gặp", score: "", pass: false }] : []),
   ];
@@ -307,10 +311,12 @@ function PracticeArea({ module, attempts, peeks, nextModule, onSaved, onPeek, on
   const groups = useMemo(() => [...new Set(module.practice.map((item) => item.group))], [module]);
   const stages = useMemo(() => ["foundation", "basic", "developing", "advanced"].filter((stage) => module.practice.some((item) => item.stage === stage)), [module]);
   const [group, setGroup] = useState(groups[0] ?? "");
-  const [stage, setStage] = useState(() => {
-    try { const saved = localStorage.getItem("writing-task2-level"); if (saved && stages.includes(saved)) return saved; } catch { /* default below */ }
+  // The learner's own level (picked in Luyện đề) opens first and is marked, so the four level tabs are not a guess.
+  const [ownStage] = useState(() => {
+    try { const saved = localStorage.getItem("writing-task2-level"); if (saved && stages.includes(saved)) return saved; } catch { /* no saved level */ }
     return stages[0] ?? "";
   });
+  const [stage, setStage] = useState(ownStage);
   const inGroup = module.practice.filter((item) => groups.length < 2 || item.group === group);
   const groupStages = stages.filter((name) => inGroup.some((item) => item.stage === name));
   const activeStage = groupStages.includes(stage) ? stage : groupStages[0] ?? "";
@@ -353,7 +359,8 @@ function PracticeArea({ module, attempts, peeks, nextModule, onSaved, onPeek, on
   return <>
     {(groups.length > 1 || groupStages.length > 1) && <div className="t2-filters">
       {groups.length > 1 && <div role="group" aria-label="Loại bài">{groups.map((name) => <button key={name} type="button" aria-pressed={group === name} onClick={() => pick(name, stage)}>{name}<small>{module.practice.filter((item) => item.group === name).length}</small></button>)}</div>}
-      {groupStages.length > 1 && <div role="group" aria-label="Chặng">{groupStages.map((name) => <button key={name} type="button" aria-pressed={activeStage === name} onClick={() => pick(group, name)}>{courseStageLabels[name]}</button>)}</div>}
+      {groupStages.length > 1 && <div role="group" aria-label="Mức luyện">{groupStages.map((name) => <button key={name} type="button" aria-pressed={activeStage === name} onClick={() => pick(group, name)}>{courseStageLabels[name]}{name === ownStage && <small className="t2-own-level">Mức của bạn</small>}</button>)}</div>}
+      {groupStages.length > 1 && <p className="t2-level-note">Chặng sau mở khi bạn làm xong các câu ở mức của bạn{module.practice.some((item) => !item.stage) ? " và các bài viết chung" : ""}. Các mức khác để luyện thêm, không bắt buộc.</p>}
     </div>}
     {error && <p className="ll-error" role="alert">{error}</p>}
     {!current ? <p className="t2-soft">Chưa có câu luyện cho lựa chọn này.</p> : <>
@@ -361,7 +368,7 @@ function PracticeArea({ module, attempts, peeks, nextModule, onSaved, onPeek, on
         {list.map((item, i) => {
           const done = attemptDone(attempts[item.id]);
           const peeked = !done && peeks.includes(item.id);
-          return <button key={item.id} type="button" role="tab" aria-selected={item.id === current.id} className={`${done ? "is-done" : ""} ${peeked ? "is-peeked" : ""}`} title={item.id} onClick={() => setIndex(i)}>{done ? <Check size={13} strokeWidth={3}/> : i + 1}</button>;
+          return <button key={item.id} type="button" role="tab" aria-selected={item.id === current.id} className={`${done ? "is-done" : ""} ${peeked ? "is-peeked" : ""}`} aria-label={`Câu ${i + 1}${done ? " · đã làm" : peeked ? " · đã xem gợi ý" : ""}`} title={`Câu ${i + 1}${done ? " · đã làm" : peeked ? " · đã xem gợi ý" : ""}`} onClick={() => setIndex(i)}>{done ? <Check size={13} strokeWidth={3}/> : i + 1}</button>;
         })}
         <small>{list.filter((item) => attemptDone(attempts[item.id])).length}/{list.length} câu đã làm</small>
       </div>
