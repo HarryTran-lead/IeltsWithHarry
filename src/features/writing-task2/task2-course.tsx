@@ -17,7 +17,7 @@ import { addPeek, loadCourseAttempts, loadCourseProgress, readPeeks, revealCours
 import { FinalAssessment, MistakeLog, useFinalBundle, type MistakePrefill } from "./task2-final";
 import { withTerms } from "./task2-text";
 import { useLearnerStreak } from "@/features/account/use-learner-streak";
-import { LessonLocked, LessonSteps, LessonTopBar, StudyPath } from "@/features/self-study-path/study-path";
+import { LessonBar, LessonLocked, StudyPath } from "@/features/self-study-path/study-path";
 import { buildPath } from "@/lib/self-study-path/path";
 import { task2SkillsCourse, task2SkillsProgress } from "@/lib/self-study-path/task2";
 
@@ -140,12 +140,9 @@ export function CourseModulePage({ id }: { id: string }) {
 
   return <div className="ll-page ll-module t2-lab t2-lesson t2-course sp-kit" style={toneStyle(milestone.layer)}>
     <header className="t2-lessonbar">
-      <LessonTopBar exitHref={TASK2_BASE} step={position} count={steps.length} title={<>
-        <span>Khoá kỹ năng · Lớp {milestone.layer} · {courseLayers.find((layer) => layer.id === milestone.layer)?.name}</span>
-        <b>{milestone.id} · {milestone.title}</b>
-        <span className="t1-lessonbar-meta">{withTerms(milestone.overview)}</span>
-      </>}/>
-      <LessonSteps steps={steps.map((item) => ({ label: item.label, note: item.score || item.hint, pass: item.pass }))} step={position} reached={reached} onPick={(index) => go(steps[index].id)}/>
+      <LessonBar exitHref={TASK2_BASE} kicker={`Khoá kỹ năng · Lớp ${milestone.layer} · ${courseLayers.find((layer) => layer.id === milestone.layer)?.name ?? ""}`} title={`${milestone.id} · ${milestone.title}`}
+        info={<p>{withTerms(milestone.overview)}</p>}
+        steps={steps.map((item) => ({ label: item.label, note: item.score || item.hint, pass: item.pass }))} step={position} reached={reached} onPick={(index) => go(steps[index].id)}/>
     </header>
 
     <div className="t2-layout">

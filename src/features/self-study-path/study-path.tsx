@@ -6,7 +6,7 @@
  */
 import Link from "next/link";
 import { useEffect, useRef, useState, type CSSProperties, type ReactNode } from "react";
-import { ArrowLeft, ArrowRight, Check, ChevronDown, Clock3, Flag, Flame, Lock, Play, RotateCcw, Trophy, X } from "lucide-react";
+import { ArrowLeft, ArrowRight, Check, ChevronDown, Clock3, Flag, Flame, Info, Lock, Play, RotateCcw, Trophy, X } from "lucide-react";
 import { PASS_MARK, STEP_COUNT, STEP_SLOTS, type PathCourse, type PathNode, type PathView, type StageView } from "@/lib/self-study-path/path";
 import "./study-path.css";
 
@@ -245,37 +245,46 @@ function RoadStop({ node, href, side, place, steps }: { node: PathNode; href?: s
 
 /* ───────────── Screen 2 · the lesson frame ───────────── */
 
-/** Top of every lesson: leave to the path, how far along, which lesson. */
-export function LessonTopBar({ exitHref, step, count = STEP_COUNT, title }: { exitHref: string; step: number; count?: number; title: ReactNode }) {
-  return <>
-    <div className="sp-lesson-top">
-      <Link className="sp-icon-btn" href={exitHref} aria-label="Về lộ trình"><X size={20} aria-hidden /></Link>
-      <div className="sp-bar" role="progressbar" aria-valuenow={step + 1} aria-valuemin={1} aria-valuemax={count} aria-label="Bước trong bài"><span style={{ width: `${((step + 1) / count) * 100}%` }} /></div>
-      <span className="sp-count">{step + 1}/{count}</span>
-    </div>
-    <p className="sp-lesson-name">{title}</p>
-  </>;
-}
-
 export type LessonStepItem = { label: string; note?: string; pass?: boolean };
 
-/** The five steps in a row. Steps past the furthest one reached stay closed so the lesson is done in order. */
-export function LessonSteps({ steps, step, reached, onPick }: { steps: LessonStepItem[]; step: number; reached: number; onPick: (step: number) => void }) {
+/**
+ * The lesson header in one row, so the work below gets the screen: leave to the path, the lesson name, the steps as
+ * small pills (steps past the furthest one reached stay closed, so a lesson is done in order), how far along, and an
+ * "i" holding the lesson's details. Narrow rows show only the current step's name.
+ */
+export function LessonBar({ exitHref, kicker, title, info, steps, step, count, reached = step, onPick }: {
+  exitHref: string; kicker: ReactNode; title: string; info?: ReactNode;
+  steps?: LessonStepItem[]; step: number; count?: number; reached?: number; onPick?: (step: number) => void;
+}) {
+  const total = count ?? steps?.length ?? STEP_COUNT;
+  const shown = Math.min(Math.max(step, 0) + 1, total);
   return (
-    <ol className="sp-steps" aria-label="Các bước học">
-      {steps.map((item, index) => {
-        const state = index === step ? "current" : item.pass || index < step ? "done" : index <= reached ? "open" : "locked";
-        return (
-          <li key={item.label} className={`is-${state}`}>
-            <button type="button" disabled={state === "locked"} onClick={() => onPick(index)} aria-current={state === "current" ? "step" : undefined} title={state === "locked" ? "Làm xong các bước trước để mở" : undefined}>
-              <span className="sp-step-dot">{state === "done" ? <Check size={14} strokeWidth={3} aria-hidden /> : index + 1}</span>
-              <span className="sp-step-label">{item.label}</span>
-              {item.note && <small>{item.note}</small>}
-            </button>
-          </li>
-        );
-      })}
-    </ol>
+    <div className="sp-lessonbar">
+      <Link className="sp-icon-btn" href={exitHref} aria-label="Về lộ trình"><X size={20} aria-hidden /></Link>
+      <div className="sp-lessonbar-name"><small>{kicker}</small><b title={title}>{title}</b></div>
+      {steps && <ol className="sp-pills" aria-label="Các bước học">
+        {steps.map((item, index) => {
+          const state = index === step ? "current" : item.pass || (step >= 0 && index < step) ? "done" : index <= reached ? "open" : "locked";
+          return (
+            <li key={item.label} className={`sp-pill is-${state}`}>
+              <button type="button" disabled={state === "locked" || !onPick} onClick={() => onPick?.(index)} aria-current={state === "current" ? "step" : undefined}
+                title={state === "locked" ? "Làm xong các bước trước để mở" : [item.label, item.note].filter(Boolean).join(" · ")}>
+                <span className="sp-pill-dot">{state === "done" ? <Check size={12} strokeWidth={3} aria-hidden /> : index + 1}</span>
+                <span className="sp-pill-label">{item.label}</span>
+                {item.note && <small className="sp-pill-note">{item.note}</small>}
+              </button>
+            </li>
+          );
+        })}
+      </ol>}
+      <span className="sp-lessonbar-count" role="progressbar" aria-valuenow={shown} aria-valuemin={1} aria-valuemax={total} aria-label="Bước trong bài">
+        <i aria-hidden><em style={{ width: `${(shown / total) * 100}%` }} /></i>{shown}/{total}
+      </span>
+      {info && <details className="sp-info">
+        <summary aria-label="Thông tin bài học"><Info size={17} aria-hidden /></summary>
+        <div className="sp-info-pop">{info}</div>
+      </details>}
+    </div>
   );
 }
 
@@ -297,8 +306,7 @@ export function LessonFrame({ course, lessonTitle, number, step, reached, exitHr
 }) {
   return (
     <div className="sp-page sp-lesson">
-      <LessonTopBar exitHref={exitHref} step={step} title={<>{course.name} · {number ? `Bài ${number} · ` : ""}{lessonTitle}</>} />
-      <LessonSteps steps={STEP_SLOTS.map((label) => ({ label }))} step={step} reached={reached} onPick={onStep} />
+      <LessonBar exitHref={exitHref} kicker={course.name} title={`${number ? `Bài ${number} · ` : ""}${lessonTitle}`} steps={STEP_SLOTS.map((label) => ({ label }))} step={step} reached={reached} onPick={onStep} />
       <section className="sp-lesson-body" aria-live="polite">
         <span className="sp-kicker">Bước {step + 1} · {STEP_SLOTS[step]}</span>
         {children}

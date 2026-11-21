@@ -187,3 +187,6 @@
   .vocabulary-layout .reading-vocab-tabs button { padding: 7px 11px; }
 
 }
+
+/* Focus pages use the trimmed 56px header; layouts sized to the screen read it from here. */
+.app-frame.learning-focus { --app-header-height: 56px; }

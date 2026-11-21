@@ -15,7 +15,7 @@ import {
 import { DrillCard, type DrillSave } from "./task2-drill";
 import { cacheTask2State, emptyTask2State, loadTask2State, revealTask2, saveTask2State } from "./task2-state";
 import { AnnotatedText, AnnotationList, emptyExplanation, withTerms } from "./task2-text";
-import { LessonDone, LessonLocked, LessonSteps, LessonTopBar } from "@/features/self-study-path/study-path";
+import { LessonBar, LessonDone, LessonLocked } from "@/features/self-study-path/study-path";
 import { buildPath } from "@/lib/self-study-path/path";
 import { readTask2Level, task2LessonsCourse, task2LessonsProgress } from "@/lib/self-study-path/task2";
 import { loadAllTask2States } from "./task2-state";
@@ -191,12 +191,12 @@ export function LessonPage({ id }: { id: string }) {
 
   return <div className="ll-page ll-module t2-lab t2-lesson sp-kit" style={themeStyle(lesson.stage)}>
     <header className="t2-lessonbar">
-      <LessonTopBar exitHref={`${TASK2_BASE}?tab=luyen-de`} step={position} count={stepIds.length} title={<>
-        <span>Writing Task 2 · Luyện đề · {stageInfo[lesson.stage].name}</span>
-        <b>{lessonName}</b>
-        <span className="t1-lessonbar-meta">{typeLabel(lesson.question_type)} · {lesson.minutes} phút · {withTerms(lesson.goal_vi)}</span>
-      </>}/>
-      <LessonSteps steps={steps.map((item) => ({ label: item.label, note: item.score || item.hint, pass: item.pass }))} step={position}
+      <LessonBar exitHref={`${TASK2_BASE}?tab=luyen-de`} kicker={`Writing Task 2 · Luyện đề · ${stageInfo[lesson.stage].name}`} title={lessonName}
+        info={<>
+          <p>{typeLabel(lesson.question_type)} · {lesson.minutes} phút · mức luyện {lesson.target_range}</p>
+          <p>{withTerms(lesson.goal_vi)}</p>
+        </>}
+        steps={steps.map((item) => ({ label: item.label, note: item.score || item.hint, pass: item.pass }))} step={position}
         reached={Math.max(visited, ...steps.map((item, index) => item.pass ? Math.min(index + 1, stepIds.length - 1) : 0))}
         onPick={(index) => go(stepIds[index])}/>
     </header>

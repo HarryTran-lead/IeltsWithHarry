@@ -202,6 +202,9 @@ function AppShellContent({ children, canManage }: { children: React.ReactNode; c
   const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
   const vocabularyLayout = /^\/app\/(?:vocabulary(?:\/|$)|reading\/vocabulary(?:\/|$)|listening\/vocabulary(?:\/|$))/.test(pathname);
   const learningRoute = /^\/app\/(?:vocabulary\/(?:study|review|practice|listening|collocations|word-formation|translation)(?:\/|$)|reading\/vocabulary(?:\/|$)|listening\/vocabulary(?:\/|$))/.test(pathname);
+  // A self-study lesson (anything below a Lab's path map) gets the same trimmed header and quiet corners, so the work fits one screen.
+  const lessonRoute = /^\/app\/self-study\/(?:writing-task-1|writing-task-2|speaking|listening)\/.+/.test(pathname);
+  const focusRoute = learningRoute || lessonRoute;
   const { online: studyOnline } = useStudyPresence();
   const learnerStreak = useLearnerStreak();
   const streakCount = demoMode ? 12 : learnerStreak?.current;
@@ -314,7 +317,7 @@ function AppShellContent({ children, canManage }: { children: React.ReactNode; c
 
   return (
     <div
-      className={`app-frame ${sidebarCollapsed ? "sidebar-collapsed" : ""} ${vocabularyLayout ? "vocabulary-layout" : ""} ${learningRoute ? "learning-focus" : ""} ${mode !== "off" ? weatherStyles.skyFrame : ""}`}
+      className={`app-frame ${sidebarCollapsed ? "sidebar-collapsed" : ""} ${vocabularyLayout ? "vocabulary-layout" : ""} ${focusRoute ? "learning-focus" : ""} ${lessonRoute ? "lesson-focus" : ""} ${mode !== "off" ? weatherStyles.skyFrame : ""}`}
       data-sky-phase={mode !== "off" ? phase : undefined}
     >
       <header className={`topbar ${mode !== "off" ? weatherStyles.headerSurface : ""}`}>
@@ -572,9 +575,9 @@ function AppShellContent({ children, canManage }: { children: React.ReactNode; c
           ),
         )}
       </nav>
-      {!learningRoute && <NotebookWidget />}
+      {!focusRoute && <NotebookWidget />}
       <StreakCelebration streak={learnerStreak} />
-      <StudyCompanion streak={learnerStreak} newsUnread={newsUnread} name={learnerName} hidden={learningRoute} />
+      <StudyCompanion streak={learnerStreak} newsUnread={newsUnread} name={learnerName} hidden={focusRoute} />
     </div>
   );
 }
