@@ -348,6 +348,26 @@ describe("illustration search checked by AI vision", () => {
     expect(seen.prompts.filter((prompt) => prompt.includes("inlineData"))).toHaveLength(2);
     expect(image?.image_url).toBe(laterPhoto);
   });
+  it("uses a named place in the article and survives an Openverse timeout", async () => {
+    const { fetcher } = fetcherFor([], [], { best: 1, fit: 9 });
+    const searches: string[] = [];
+    const withSlowOpenverse = (async (url: string | URL | Request, init?: RequestInit) => {
+      const href = String(url);
+      if (href.startsWith("https://api.openverse.org/")) throw new Error("Openverse timeout");
+      if (href.startsWith("https://commons.wikimedia.org/w/api.php")) {
+        const query = new URL(href).searchParams.get("gsrsearch") ?? "";
+        searches.push(query);
+        return Response.json({ query: { pages: query.includes("Long Thanh Expressway") ? [commonsPage("Public domain", "Long Thanh Expressway bridge")] : [] } });
+      }
+      return fetcher(url, init);
+    }) as typeof fetch;
+    const image = await run(() => findNewsIllustration("Expanding Vietnam's roads", withSlowOpenverse, {
+      query: "modern highway expansion bridge construction",
+      body: "The Ho Chi Minh City-Long Thanh Expressway serves as a vital transport link in Vietnam.",
+    }));
+    expect(searches[0]).toBe("Ho Chi Minh City-Long Thanh Expressway");
+    expect(image?.image_source_url).toContain("Long_Thanh_Expressway_bridge");
+  });
   it("never offers unlicensed or third-party images to the AI", async () => {
     const { fetcher, seen } = fetcherFor([commonsPage("All rights reserved")], [nasaItem({ secondary_creator: "Intuitive Machines" })], { best: 1, fit: 10 });
     expect(await run(() => findNewsIllustration("Artemis spacecraft Moon mission", fetcher))).toBeNull();
