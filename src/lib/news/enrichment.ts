@@ -581,12 +581,20 @@ export function scheduledNewsWorkSlot(now: Date): "quiz" | "image" | "photo" | "
   return "quiz";
 }
 
-export async function enrichNews({ scheduled = false }: { scheduled?: boolean } = {}) {
+export async function enrichNews({ scheduled = false, photoOnly = false }: { scheduled?: boolean; photoOnly?: boolean } = {}) {
   const db = newsAdminClient();
   await pauseLegacyPressRewrites(db);
   const settings = await loadNewsSettings(db);
   const result = { imagesChecked: 0, imagesAdded: 0, inlineImagesChecked: 0, inlineImagesAdded: 0, coverUpgradesChecked: 0, coverUpgradesAdded: 0, quizzesChecked: 0, quizzesAdded: 0, rewritesChecked: 0, rewritesAdded: 0, translationsChecked: 0, translationsAdded: 0, aiConfigured: Boolean(process.env.GEMINI_API_KEY) || newsArticleFreeTierReady(), paused: scheduled && !settings.auto_enrich_enabled, quotaLimited: false, errors: [] as string[] };
   if (result.paused) return result;
+  if (photoOnly && !scheduled) {
+    await enrichPhotoWork(db, result);
+    return result;
+  }
+  if (!scheduled) {
+    await Promise.all([enrichImages(db, result), enrichQuiz(db, result, settings, false)]);
+    return result;
+  }
   const slot = scheduled ? scheduledNewsWorkSlot(new Date()) : null;
   // Reserve 36 quiz slots, 24 image slots, 12 translation slots and 72 fact
   // discovery slots per day. A busy backlog in one kind cannot starve quizzes.
@@ -602,7 +610,7 @@ export async function enrichNews({ scheduled = false }: { scheduled?: boolean } 
     await enrichPhotoWork(db, result, new Date().getUTCHours() % 2 ? "real_cover_upgrade" : "inline_image");
     if (result.inlineImagesChecked || result.coverUpgradesChecked) return result;
   }
-  if (!scheduled || slot === "translation") {
+  if (slot === "translation") {
     const { translateNextNewsArticle } = await import("./article-translation");
     const translated = await translateNextNewsArticle(db, fetch, true);
     result.translationsChecked = translated.checked;
@@ -610,9 +618,9 @@ export async function enrichNews({ scheduled = false }: { scheduled?: boolean } 
     if (translated.error) result.errors.push(`Translation: ${translated.error}`);
     if (translated.quotaLimited) result.quotaLimited = true;
     // A failed legacy translation must not block a manual article run using its separate key.
-    if (translated.checked && (scheduled || !translated.error)) return result;
+    if (translated.checked) return result;
   }
-  if (!scheduled || slot === "discovery") {
+  if (slot === "discovery") {
     if (scheduled && slot === "discovery") {
       const backlog = await db.rpc("news_quiz_backlog");
       if (!backlog.error && Number(backlog.data ?? 0) >= 8) {
@@ -624,13 +632,8 @@ export async function enrichNews({ scheduled = false }: { scheduled?: boolean } 
     await discoverPressFacts(db, result, settings, fetch, scheduled);
     if (result.rewritesChecked) return result;
   }
-  if (scheduled) {
-    if (slot !== "image") await enrichImages(db, result);
-    if (!result.imagesChecked && slot !== "quiz") await enrichQuiz(db, result, settings, true);
-  } else {
-    await Promise.all([enrichImages(db, result), enrichQuiz(db, result, settings, scheduled)]);
-    await enrichPhotoWork(db, result);
-  }
+  if (slot !== "image") await enrichImages(db, result);
+  if (!result.imagesChecked && slot !== "quiz") await enrichQuiz(db, result, settings, true);
   return result;
 }
 
