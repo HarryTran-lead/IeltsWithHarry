@@ -417,27 +417,32 @@ const maxCandidates = 6;
  * three per library so one library cannot crowd out the other.
  */
 async function gatherCandidates(title: string, body: string, query: string, fetcher: typeof fetch, expanded = false) {
-  const keywords = imageKeywords(title, body, query);
+  const namedPlace = body.slice(0, 1500).match(/\b((?:[A-Z][a-z]+[\s-]+){2,8}(?:Expressway|Airport|Bridge|Highway|River|University|Hospital|Stadium|Station|Museum|Park))\b/)?.[1]
+    ?.replace(/^(?:The|A|An)\s+/, "").trim() ?? "";
+  const keywords = [...new Set([...words(namedPlace), ...imageKeywords(title, body, query)])].slice(0, 10);
   if (keywords.length < 2) return [];
-  const subject = query && words(query).length >= 2 ? words(query).join(" ") : "";
+  const subjectTerms = words(query).filter((word) => !["modern", "expansion", "development", "project", "facility"].includes(word));
+  const subject = subjectTerms.length >= 2 ? subjectTerms.slice(0, 3).join(" ") : "";
   // Vietnamese stories look for photos taken in Vietnam first; the AI rejects scenes from elsewhere.
   const local = subject && /\bviet ?nam(ese)?\b/i.test(`${title} ${body.slice(0, 1500)}`) && !/vietnam/.test(subject) ? `${subject} vietnam` : "";
   const bodyTerms = imageKeywords("", body).slice(0, 3).join(" ");
   // Reserve the third query for articles whose first two searches found no
   // suitable photo, keeping Openverse within its anonymous daily budget.
-  const searches = [...new Set([local, subject, keywords.slice(0, 3).join(" "), bodyTerms, keywords.slice(3, 6).join(" ")].filter(Boolean))]
+  const searches = [...new Set([namedPlace, local, subject, keywords.slice(0, 3).join(" "), bodyTerms, keywords.slice(3, 6).join(" ")].filter(Boolean))]
     .slice(expanded ? 2 : 0, expanded ? 3 : 2);
   const found = new Map<string, Candidate & { library: string }>();
   let failure: unknown = null;
+  let successfulSearches = 0;
   const libraries = ["openverse", "commons", "nasa"] as const;
   for (const search of searches) {
     const results = await Promise.allSettled([openverseCandidates(search, keywords, fetcher), commonsCandidates(search, keywords, fetcher), nasaLibraryCandidates(search, keywords, fetcher)]);
     results.forEach((outcome, index) => {
       if (outcome.status === "rejected") { failure = outcome.reason; return; }
+      successfulSearches++;
       for (const candidate of outcome.value) if (!found.has(candidate.value.image_url)) found.set(candidate.value.image_url, { ...candidate, library: libraries[index] });
     });
   }
-  if (!found.size && failure) throw failure;
+  if (!found.size && !successfulSearches && failure) throw failure;
   const ranked = [...found.values()].sort((a, b) => b.score - a.score);
   // Openverse covers everyday subjects best; for space and aerospace stories the NASA
   // library holds the real photos (engine tests, launches, spacecraft), so it gets more slots.
