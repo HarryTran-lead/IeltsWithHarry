@@ -102,8 +102,8 @@ it("retries temporary quiz service failures with the separate quiz key", async (
 
 it("reserves quiz work even while translation, image and discovery backlogs exist", () => {
   const slot = (hour: number, minute: number) => scheduledNewsWorkSlot(new Date(`2026-11-11T${String(hour).padStart(2, "0")}:${String(minute).padStart(2, "0")}:00Z`));
-  expect([5, 15, 25, 35, 45, 55].map((minute) => slot(0, minute))).toEqual(["quiz", "discovery", "image", "discovery", "translation", "discovery"]);
-  expect([5, 15, 25, 35, 45, 55].map((minute) => slot(1, minute))).toEqual(["quiz", "discovery", "image", "discovery", "quiz", "discovery"]);
+  expect([5, 15, 25, 35, 45, 55].map((minute) => slot(0, minute))).toEqual(["quiz", "discovery", "image", "photo", "translation", "discovery"]);
+  expect([5, 15, 25, 35, 45, 55].map((minute) => slot(1, minute))).toEqual(["quiz", "discovery", "image", "photo", "quiz", "discovery"]);
 });
 
 const passage = "The Artemis team tested a new spacecraft on Tuesday. The spacecraft will carry instruments to study the Moon. Scientists will use the results to prepare later missions. The test took place at Kennedy Space Center in Florida. Engineers measured the heat shield during the flight.";
