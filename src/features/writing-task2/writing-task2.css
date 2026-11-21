@@ -428,3 +428,11 @@
   .t2-papers li .ll-btn{width:100%}
   .t2-form-row{grid-template-columns:1fr}
 }
+
+/* Tabs and the first-visit guide sit inside the shared study path (sp-page), outside .ll-page. */
+.t2-path{--ll-ink:#10233f;--ll-muted:#5d6f8c;--ll-line:#e3e8ee;--ll-tone:#c8473f;--ll-soft:#fdeeec;color:var(--ll-ink)}
+.t2-path .ll-kicker{display:block;color:var(--ll-tone);font-size:var(--fs-2xs);font-weight:800;letter-spacing:.1em;text-transform:uppercase}
+.t2-path ol{margin:0;padding:0;list-style:none}
+.t2-path :is(h2,h3,p){margin:0}
+.sp-page .t2-start{margin:14px 0 0}
+.t2-lessonbar{display:grid;gap:10px}

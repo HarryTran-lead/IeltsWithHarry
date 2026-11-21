@@ -193,3 +193,9 @@
   .spk-listen-options button{flex:1;justify-content:center}
 }
 .spk-model .ll-tip q{display:block;margin-top:4px;font-weight:650}
+
+/* Tabs and notices that sit inside the shared study path (sp-page), outside .ll-page. */
+.spk-path{--ll-ink:#10233f;--ll-muted:#5d6f8c;--ll-line:#e3e8ee;--ll-tone:#6a4fb3;--ll-soft:#efeafb;color:var(--ll-ink)}
+.sp-page .spk-path .spk-tabs{margin:0 0 12px}
+.sp-page p.spk-path{margin-top:14px}
+.spk-lessonbar{display:grid;gap:10px;margin-bottom:12px}

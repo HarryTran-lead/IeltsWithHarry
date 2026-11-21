@@ -38,6 +38,7 @@
 .t1-head .ll-chips span{display:inline-flex;align-items:center;gap:4px}
 
 /* Workspace: the prompt and figure stay pinned beside the step on wide screens */
+.t1-lessonbar{display:grid;gap:10px}
 .t1-work{display:grid;grid-template-columns:minmax(0,1fr);gap:14px;margin-top:14px;scroll-margin-top:84px}
 .t1-side{min-width:0}
 .t1-main{min-width:0}
@@ -51,7 +52,7 @@
 @media (min-width:1100px){
   .t1-work{grid-template-columns:minmax(0,.92fr) minmax(0,1.08fr);grid-template-rows:auto 1fr;align-items:start;gap:12px 18px}
   .t1-work>.t1-side{grid-column:1;grid-row:1 / 3;align-self:start;position:sticky;top:76px;max-height:calc(100vh - 92px);overflow:auto;overscroll-behavior:contain;scrollbar-width:thin}
-  .t1-work>.t1-rail,.t1-work>.t1-main{grid-column:2}
+  .t1-work>.t1-main{grid-column:2}
   .t1-only-narrow{display:none}
 }
 @media (max-width:1099px){
@@ -67,16 +68,6 @@
 .t1-icon-btn{display:grid;place-items:center;width:34px;height:34px;border:1px solid var(--ll-line);border-radius:50%;background:#fff;color:var(--ll-ink);cursor:pointer}
 
 /* Step rail */
-.t1-rail{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:6px;margin:0;padding:0;list-style:none}
-.t1-rail button{display:flex;flex-direction:column;align-items:center;gap:4px;width:100%;height:100%;padding:8px 6px;text-align:center;border:1px solid var(--ll-line);border-radius:var(--r-md);background:#fff;color:var(--ll-ink);font:inherit;text-align:left;cursor:pointer;transition:border-color .15s,background .15s}
-.t1-rail button:hover{border-color:color-mix(in srgb,var(--ll-tone) 45%,#fff)}
-.t1-rail button[aria-current=step]{border-color:var(--ll-tone);background:color-mix(in srgb,var(--ll-soft) 55%,#fff);box-shadow:0 0 0 3px color-mix(in srgb,var(--ll-tone) 14%,transparent)}
-.t1-rail-dot{display:grid;place-items:center;flex:none;width:24px;height:24px;border-radius:50%;background:#eef3f7;color:#3b5068;font-size:var(--fs-xs);font-weight:800}
-.t1-rail [aria-current=step] .t1-rail-dot{background:var(--ll-tone);color:#fff}
-.t1-rail .is-pass .t1-rail-dot{background:var(--ll-good);color:#fff}
-.t1-rail-text{display:grid;justify-items:center;min-width:0}
-.t1-rail-text b{font-size:var(--fs-xs);line-height:1.25}
-.t1-rail-text small{max-width:100%;overflow:hidden;color:var(--ll-muted);font-size:var(--fs-2xs);white-space:nowrap;text-overflow:ellipsis}
 
 /* Step body */
 .t1-stage{display:grid;gap:12px;margin-top:12px}
@@ -176,8 +167,6 @@ details[open]>summary .t1-chev{transform:rotate(180deg)}
 .t1-checklist label:has(input:checked){border-color:#bfe5d0;background:#f6fcf8}
 .t1-checklist input{flex:none;width:16px;height:16px;margin-top:2px;accent-color:var(--ll-good)}
 .t1-criterion{flex:none;min-width:34px;padding:1px 6px;border-radius:var(--r-sm);background:var(--ll-soft);color:var(--ll-tone);font-size:var(--fs-2xs);font-weight:800;text-align:center}
-.t1-finish{justify-content:flex-start;padding:12px 14px;border-radius:var(--r-lg);background:var(--ll-good-soft);color:var(--ll-good)}
-.t1-finish .ll-btn{margin-left:8px}
 
 /* Model answer */
 .t1-model{border-color:#f0dcaa;background:linear-gradient(180deg,#fffaf0,#fff 140px)}
@@ -190,8 +179,6 @@ details[open]>summary .t1-chev{transform:rotate(180deg)}
 .t1-model .ll-tip{margin-top:14px}
 .t1-outline{margin-top:10px;color:#3b5068;font-size:var(--fs-sm);line-height:1.55}
 
-/* Left-aligned so the floating companion and chat buttons at the bottom right never cover "next". */
-.t1-stepnav{display:flex;flex-wrap:wrap;justify-content:flex-start;gap:8px;margin-top:14px;padding-top:12px;border-top:1px solid var(--ll-line)}
 
 /* Bài 0 guide */
 .t1-guide-page .t1-head{grid-template-columns:auto minmax(0,1fr)}
@@ -264,9 +251,6 @@ details[open]>summary .t1-chev{transform:rotate(180deg)}
 @media (max-width:860px){
   .t1-lab .ll-track-map{grid-template-columns:repeat(3,minmax(0,1fr));grid-auto-flow:row;overflow:visible;padding:4px 0}
   .t1-lab .ll-track-map::before{display:none}
-  .t1-rail{display:flex;overflow-x:auto;scrollbar-width:none;margin:0 -2px;padding:2px}
-  .t1-rail li{flex:0 0 auto}
-  .t1-rail button{padding:7px 10px}
 }
 @media (max-width:700px){
   /* Clear the app's bottom navigation bar (portal-responsive.css shows it up to 700px). */
@@ -277,14 +261,8 @@ details[open]>summary .t1-chev{transform:rotate(180deg)}
   .t1-head{grid-template-columns:auto minmax(0,1fr);padding:10px 12px}
   .t1-head .t1-help{grid-column:1 / -1;justify-self:start}
   .t1-head .ll-module-badge{width:46px;height:46px}
-  /* All five steps fit on a phone: drop the status line and let the label wrap. */
-  .t1-rail{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));overflow:visible;margin:0;padding:0}
-  .t1-rail button{padding:6px 2px}
-  .t1-rail-text small{display:none}
-  .t1-rail-text b{font-size:var(--fs-2xs)}
   .t1-checklist{grid-template-columns:1fr}
   .t1-card-box,.t1-drill,.t1-panel{padding:12px}
   .t1-notes dl>div{grid-template-columns:1fr}
   .t1-guide-grid{grid-template-columns:1fr}
-  .t1-stepnav .ll-btn{flex:1}
 }
