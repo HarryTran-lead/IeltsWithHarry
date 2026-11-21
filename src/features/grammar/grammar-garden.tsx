@@ -190,7 +190,7 @@ function LessonWorkspace({ code, progress, update, initialTab, initialStage, ini
     let review = lessonProgress?.review;
     const learned = !review && mainStagesDone(items, lessonProgress);
     if (learned) review = scheduleAfterLearn(now);
-    else if (kind === "spaced" && review && score.answered) review = scheduleAfterReview(review, score.graded ? score.correct / score.graded : 1, now);
+    else if (kind === "spaced" && review && score.answered) review = scheduleAfterReview(review, score.correct / score.answered, now);
     if (review !== lessonProgress?.review) update(code, (value) => ({ ...value, review }));
     setView({ type: "summary", kind, stage, result, review, learned });
   }
@@ -238,9 +238,9 @@ function LessonSummary({ code, view, items, progress, next, onStage, onSpaced, o
   const teachingLeft = !mainStagesDone(items, lessonProgress);
   const stage = openStage(items, lessonProgress);
   const left = items.filter((item) => item.stage === stage && !answered(lessonProgress, item.id)).length;
-  const passed = score.graded ? score.correct / score.graded >= REVIEW_PASS : true;
+  const passed = score.answered > 0 && score.correct / score.answered >= REVIEW_PASS;
   if (view.kind === "check") {
-    const allRight = score.graded > 0 && score.correct === score.graded;
+    const allRight = score.answered > 0 && score.correct === score.answered;
     return <SessionSummary result={view.result} progress={progress} title="Kiểm tra nhanh" note={allRight ? "Bạn đã nắm quy tắc chính. Vào luyện tập để làm chắc hơn." : "Có câu chưa đúng. Đọc lại quy tắc liên quan trước khi luyện sẽ đỡ sai lặp lại."}>
       <button className="gg-primary" onClick={() => onStage(stage)}>Bắt đầu luyện tập <ArrowRight size={16} /></button>
       {!allRight && <button className="gg-secondary" onClick={onTheory}><BookOpen size={14} aria-hidden="true" /> Đọc lại lý thuyết</button>}
@@ -414,7 +414,7 @@ function ProgressPage({ progress, ready, unlocked }: { progress: GrammarProgress
     {!ready ? <div className="gg-loading"><LoadingBlock label="Đang tải tiến độ…" /></div> : <>
       <div className="gg-stat-tiles">
         <div><strong>{learned}</strong><span>Bài đã học xong</span></div>
-        <div><strong>{responses.filter((response) => response.status === "UNDERSTOOD" || response.status === "NEED_REVIEW").length}</strong><span>Câu đã làm</span></div>
+        <div><strong>{responses.filter((response) => response.status === "UNDERSTOOD" || response.status === "NEED_REVIEW" || response.status === "SELF_CHECKED").length}</strong><span>Câu đã làm</span></div>
         <div><strong>{firsts.length ? `${Math.round(firstRight / firsts.length * 100)}%` : "—"}</strong><span>Đúng ngay lần đầu</span></div>
         <Link href={due.length ? `${ROOT}/lesson/${due[0]}?stage=spaced_review` : ROOT}><strong>{due.length}</strong><span>Bài đến hạn ôn</span></Link>
       </div>

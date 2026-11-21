@@ -220,3 +220,10 @@
   .gg-placement-levels { grid-template-columns: repeat(3, minmax(0, 1fr)); }
   .gg-tests article > button { width: 100%; justify-content: center; }
 }
+
+.gg-question-meaning { margin-top: 12px; padding: 12px 14px; border: 1px solid var(--gg-line-strong); border-radius: var(--r-md); background: var(--gg-surface); }
+.gg-question-meaning > strong { display: block; margin-bottom: 7px; color: var(--gg-brand-strong); font-size: var(--fs-sm); }
+.gg-question .gg-question-meaning blockquote { margin: 0; font-size: var(--fs-md); line-height: 1.55; }
+.gg-self-review { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
+.gg-self-review p { flex-basis: 100%; }
+.gg-self-review button[aria-pressed="true"] { border-color: var(--gg-brand); background: var(--gg-brand-soft); color: var(--gg-brand-ink); }

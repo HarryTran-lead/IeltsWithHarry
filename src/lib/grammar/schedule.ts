@@ -14,7 +14,7 @@ const addDays = (now: string, days: number) => new Date(new Date(now).getTime() 
 
 export const answered = (lesson: GrammarLessonProgress | undefined, id: string) => {
   const status = lesson?.responses[id]?.status;
-  return status === "UNDERSTOOD" || status === "NEED_REVIEW";
+  return status === "UNDERSTOOD" || status === "NEED_REVIEW" || status === "SELF_CHECKED";
 };
 
 export function scheduleAfterLearn(now: string): GrammarReview {

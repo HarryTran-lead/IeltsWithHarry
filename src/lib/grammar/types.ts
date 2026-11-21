@@ -75,7 +75,7 @@ export type GrammarPracticeItem = {
   publishable: boolean;
 };
 
-export type ReviewStatus = "UNDERSTOOD" | "NEED_REVIEW" | "SKIPPED";
+export type ReviewStatus = "UNDERSTOOD" | "NEED_REVIEW" | "SKIPPED" | "PENDING_REVIEW" | "SELF_CHECKED";
 /** The latest result is shown on screen; `first` keeps the first submission so a retry cannot hide a mistake. */
 export type GrammarResponse = {
   answer: string; status?: ReviewStatus; correct?: boolean | null; referenceAnswer?: string; explanation?: string;
@@ -110,7 +110,7 @@ export const grammarWorlds: Record<GrammarLevel, { name: string; icon: string; s
 export const editorialId = (id: string) => /-(?:Q|SR-)\d+$/.test(id);
 
 export function reviewedCount(progress?: GrammarLessonProgress) {
-  return Object.entries(progress?.responses ?? {}).filter(([id, response]) => editorialId(id) &&(response.status === "UNDERSTOOD" || response.status === "NEED_REVIEW")).length;
+  return Object.entries(progress?.responses ?? {}).filter(([id, response]) => editorialId(id) &&(response.status === "UNDERSTOOD" || response.status === "NEED_REVIEW" || response.status === "SELF_CHECKED")).length;
 }
 
 /** A lesson counts as learned once its teaching stages are done (it then has a review schedule). */
@@ -130,12 +130,24 @@ const day = (iso: string) => new Date(iso).toDateString();
  */
 export function applyGrade(previous: GrammarResponse, answer: string, grade: GrammarGrade, prompt: string, now = new Date().toISOString()): GrammarResponse {
   const wrongAt = grade.correct === false ? now : previous.wrongAt ?? (previous.status === "NEED_REVIEW" ? previous.updatedAt : undefined);
-  const status: ReviewStatus = grade.correct === false || (previous.status === "NEED_REVIEW" && wrongAt && day(wrongAt) === day(now)) ? "NEED_REVIEW" : "UNDERSTOOD";
+  const status: ReviewStatus = grade.correct === null ? "PENDING_REVIEW"
+    : grade.correct === false || (previous.status === "NEED_REVIEW" && wrongAt && day(wrongAt) === day(now)) ? "NEED_REVIEW" : "UNDERSTOOD";
   return {
     ...previous, ...grade, answer, prompt, status, updatedAt: now, retrying: false,
     first: previous.first ?? { answer, correct: grade.correct, at: now },
     attempts: (previous.attempts ?? 0) + 1,
     ...(wrongAt ? { wrongAt } : {}),
     ...(grade.correct === false ? { lastWrong: answer } : {}),
+  };
+}
+
+/** A learner's comparison completes practice without becoming a verified correct answer. */
+export function confirmSelfReview(previous: GrammarResponse, matches: boolean, now = new Date().toISOString()): GrammarResponse {
+  if (previous.correct !== null || !previous.referenceAnswer) throw new Error("Câu này chưa sẵn sàng để tự đối chiếu.");
+  return {
+    ...previous,
+    status: matches ? "SELF_CHECKED" : "NEED_REVIEW",
+    updatedAt: now,
+    ...(matches ? {} : { wrongAt: now, lastWrong: previous.answer }),
   };
 }

@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState, type ReactNode } from "react";
 import { ArrowRight, BookOpen, Check, Languages, RotateCcw, X } from "lucide-react";
 import { Sticker } from "@/components/stickers/stickers";
-import { applyGrade, grammarTypeLabels, type GrammarGrade, type GrammarPracticeItem, type GrammarProgress, type GrammarResponse } from "@/lib/grammar/types";
+import { applyGrade, confirmSelfReview, grammarTypeLabels, type GrammarGrade, type GrammarPracticeItem, type GrammarProgress, type GrammarResponse } from "@/lib/grammar/types";
 import type { GrammarUpdate } from "./grammar-progress";
 
 export type SessionEntry = { code: string; item: GrammarPracticeItem };
@@ -63,6 +63,12 @@ export function PracticeSession({ entries, progress, update, title, label, onFin
     setFirstTry({ ...firstTry, [key]: grade.correct });
     if (grade.correct === false && requeue) setQueue([...queue, queue[position]]);
   };
+  const selfReview = (matches: boolean) => {
+    update(entry.code, (value) => ({ ...value, responses: {
+      ...value.responses,
+      [entry.item.id]: confirmSelfReview(value.responses[entry.item.id], matches),
+    } }));
+  };
   const again = queue.indexOf(queue[position]) < position;
   return <>
     <div className="gg-focus-bar">
@@ -74,7 +80,7 @@ export function PracticeSession({ entries, progress, update, title, label, onFin
     <span className="gg-eyebrow gg-focus-eyebrow">{label(entry)} · {grammarTypeLabels[entry.item.type] ?? entry.item.type}{again ? " · làm lại" : ""}</span>
     <QuestionCard key={`${entryKey(entry)}:${position}`} code={entry.code} item={entry.item} response={response} guided={entry.item.stage === "guided"}
       nextLabel={last ? "Xem kết quả buổi" : "Câu tiếp"}
-      onAnswer={(patch) => patchResponse(update, entry, patch)} onGraded={graded} onNext={advance}
+      onAnswer={(patch) => patchResponse(update, entry, patch)} onGraded={graded} onSelfReview={selfReview} onNext={advance}
       onRetry={() => patchResponse(update, entry, { answer: "", order: [], retrying: true })}
       onSkip={() => { if (!response.status) patchResponse(update, entry, { status: "SKIPPED" }); advance(); }} />
     <p className="gg-session-foot">{requeue ? "Câu sai lần đầu sẽ quay lại cuối buổi. " : "Mỗi câu chỉ chấm một lần. "}Bấm ✕ để dừng và xem kết quả.</p>
@@ -83,12 +89,12 @@ export function PracticeSession({ entries, progress, update, title, label, onFin
 
 export function SessionSummary({ result, progress, title, note, children }: { result: SessionResult; progress: GrammarProgress; title: string; note?: ReactNode; children: ReactNode }) {
   const score = sessionScore(result);
-  const share = score.graded ? score.correct / score.graded : 0;
+  const share = score.answered ? score.correct / score.answered : 0;
   return <section className="gg-summary-card" aria-live="polite">
     <Sticker name={share >= 0.8 ? "star" : share >= 0.5 ? "target" : "bulb"} size={64} tilt={-6} pop={false} />
     <span className="gg-eyebrow">KẾT QUẢ BUỔI HỌC</span>
     <h2>{title}</h2>
-    {score.graded ? <><p className="gg-summary-score"><strong>{score.correct}/{score.graded}</strong> câu đúng ngay lần đầu</p><div className="gg-meter"><span style={{ width: `${share * 100}%` }} /></div></>
+    {score.graded ? <><p className="gg-summary-score"><strong>{score.correct}/{score.answered}</strong> câu được xác nhận đúng ngay lần đầu</p><div className="gg-meter"><span style={{ width: `${share * 100}%` }} /></div>{score.answered > score.graded && <p>{score.answered - score.graded} câu tự đối chiếu không tính là đúng tự động.</p>}</>
       : <p className="gg-summary-score">{score.answered ? `${score.answered} câu tự đối chiếu` : "Bạn chưa trả lời câu nào trong buổi này."}</p>}
     {note && <div className="gg-summary-note">{note}</div>}
     {score.wrong.length > 0 && <div className="gg-summary-wrong"><h3>Câu cần ôn ({score.wrong.length})</h3>{score.wrong.map((entry) => { const response = progress[entry.code]?.responses[entry.item.id]; return <div key={entryKey(entry)}><strong>{entry.item.prompt}</strong><p>{response?.lastWrong && <span className="gg-bad"><X size={13} aria-label="Bạn trả lời" /> {response.lastWrong}</span>}{response?.referenceAnswer && <span className="gg-good"><Check size={13} aria-label="Đáp án" /> {response.referenceAnswer}</span>}</p></div>; })}</div>}
@@ -102,9 +108,10 @@ const sameAnswer = (a = "", b = "") => {
   return clean(a) === clean(b);
 };
 
-function QuestionCard({ code, item, response, guided, nextLabel, onAnswer, onGraded, onNext, onRetry, onSkip }: {
+function QuestionCard({ code, item, response, guided, nextLabel, onAnswer, onGraded, onSelfReview, onNext, onRetry, onSkip }: {
   code: string; item: GrammarPracticeItem; response: GrammarResponse; guided: boolean; nextLabel: string;
   onAnswer: (patch: Partial<GrammarResponse>) => void; onGraded: (grade: GrammarGrade, answer: string) => void;
+  onSelfReview: (matches: boolean) => void;
   onNext: () => void; onRetry: () => void; onSkip: () => void;
 }) {
   const [checking, setChecking] = useState(false);
@@ -115,6 +122,7 @@ function QuestionCard({ code, item, response, guided, nextLabel, onAnswer, onGra
   const resultRef = useRef<HTMLDivElement>(null);
   const continueRef = useRef<HTMLButtonElement>(null);
   const graded = Boolean(response.referenceAnswer) && !response.retrying;
+  const reviewPending = graded && response.correct === null && response.status === "PENDING_REVIEW";
   const order = response.order ?? [];
   const ordering = item.chunks.length > 0;
   const answer = ordering ? order.map((position) => item.chunks[position]).join(" ") : response.answer;
@@ -146,7 +154,7 @@ function QuestionCard({ code, item, response, guided, nextLabel, onAnswer, onGra
       if (event.key === "Enter") {
         if (target.closest("button, select, a, textarea")) return;
         event.preventDefault();
-        if (graded) onNext(); else void submit();
+        if (graded && !reviewPending) onNext(); else if (!graded) void submit();
       } else if (item.options && !graded && /^[1-9]$/.test(event.key) && !target.closest("input, textarea, select")) {
         const option = item.options[Number(event.key) - 1];
         if (option) onAnswer({ answer: option });
@@ -163,9 +171,9 @@ function QuestionCard({ code, item, response, guided, nextLabel, onAnswer, onGra
 
   return <>
     <div className="gg-question">
-      {item.instruction && <small className="gg-instruction">{item.instruction}</small>}
+      {item.instruction && <small className="gg-instruction">{item.type === "fill_blank" && item.translation ? "Dựa vào nghĩa tiếng Việt bên dưới, chỉ điền phần còn thiếu trong câu tiếng Anh." : item.instruction}</small>}
       <p>{item.prompt}</p>
-      {item.translation ? (showTranslation || graded ? <blockquote>{item.translation}</blockquote> : <button type="button" className="gg-reveal" onClick={() => setShowTranslation(true)}><Languages size={15} aria-hidden="true" /> Xem nghĩa tiếng Việt</button>)
+      {item.translation ? (item.type === "fill_blank" || showTranslation || graded ? <div className={item.type === "fill_blank" ? "gg-question-meaning" : undefined}>{item.type === "fill_blank" && <strong>Nghĩa tiếng Việt · dữ kiện để trả lời</strong>}<blockquote>{item.translation}</blockquote></div> : <button type="button" className="gg-reveal" onClick={() => setShowTranslation(true)}><Languages size={15} aria-hidden="true" /> Xem nghĩa tiếng Việt</button>)
         : code.startsWith("C2-") && <small>Bản dịch tiếng Việt đang được bổ sung.</small>}
       {item.hint && guided && <p className="gg-hint"><small>Gợi ý: {item.hint}</small></p>}
     </div>
@@ -176,16 +184,17 @@ function QuestionCard({ code, item, response, guided, nextLabel, onAnswer, onGra
     {error && <p role="alert" className="gg-skip-note">{error}</p>}
     <div ref={resultRef} className="gg-result" aria-live="polite">{graded && <div className={`gg-reference is-${tone}`}>
       {tone !== "right" && <p><b>Đáp án:</b> {response.referenceAnswer}</p>}
-      {tone === "wrong" && !item.options && <p><b>Bạn trả lời:</b> {response.answer}</p>}
+      {tone !== "right" && !item.options && <p><b>Bạn trả lời:</b> {response.answer}</p>}
       {response.feedback && <p>{response.feedback}</p>}
       {response.explanation && <p><b>Vì sao:</b> {response.explanation}</p>}
+      {response.correct === null && <div className="gg-self-review" role="group" aria-label="Tự đối chiếu câu trả lời"><p>So sánh nghĩa và ngữ pháp. Nếu cách viết của bạn cũng đúng, chọn “Cách của tôi cũng đúng”. Tự xác nhận không được tính là câu đúng tự động.</p><button type="button" className="gg-secondary" aria-pressed={response.status === "SELF_CHECKED"} onClick={() => onSelfReview(true)}>Cách của tôi cũng đúng</button><button type="button" className="gg-secondary" aria-pressed={response.status === "NEED_REVIEW"} onClick={() => onSelfReview(false)}>Tôi cần ôn lại</button></div>}
       {missedFirst && <p className="gg-first-note">Lần đầu bạn trả lời chưa đúng, nên câu này vẫn nằm trong Sổ ôn. Làm đúng vào một ngày khác để đưa nó ra.</p>}
       <small>Kết quả dùng cho tự luyện trên dữ liệu biên tập, chưa phải chứng nhận năng lực.</small>
     </div>}</div>
     <div className={`gg-actionbar ${graded ? `is-${tone}` : ""}`}>
       {graded ? <><strong className="gg-verdict">{tone === "right" ? <><Check size={18} aria-hidden="true" /> Chính xác!</> : tone === "wrong" ? <><X size={18} aria-hidden="true" /> Chưa đúng<span className="gg-verdict-answer"> · Đáp án: {response.referenceAnswer}</span></> : "Tự đối chiếu với đáp án mẫu"}</strong>
         <button className="gg-secondary" onClick={onRetry}><RotateCcw size={14} aria-hidden="true" /> Thử lại</button>
-        <button ref={continueRef} className="gg-primary" onClick={onNext}>{nextLabel} <ArrowRight size={16} /></button></>
+        <button ref={continueRef} className="gg-primary" disabled={reviewPending} onClick={onNext}>{nextLabel} <ArrowRight size={16} /></button></>
         : <><button className="gg-secondary" onClick={onSkip}>Để sau</button>
           <span className="gg-keys">{item.options ? `Phím 1–${item.options.length} để chọn · ` : ""}Enter để kiểm tra</span>
           <button disabled={!answer.trim() || checking} className="gg-primary" onClick={() => void submit()}>{checking ? "Đang kiểm tra…" : "Kiểm tra"}</button></>}
