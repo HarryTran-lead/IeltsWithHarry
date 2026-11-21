@@ -41,6 +41,12 @@ function offsetIn(element: HTMLElement, node: Node, offset: number) {
 }
 function letter(index: number) { return index < 26 ? String.fromCharCode(65 + index) : String(index + 1); }
 function clock(seconds: number) { return `${String(Math.floor(seconds / 60)).padStart(2, "0")}:${String(seconds % 60).padStart(2, "0")}`; }
+function sentenceAt(paragraph: string, offset: number) {
+  const before = paragraph.slice(0, offset);
+  const start = Math.max(before.lastIndexOf("."), before.lastIndexOf("?"), before.lastIndexOf("!")) + 1;
+  const after = paragraph.slice(offset).search(/[.!?]/);
+  return paragraph.slice(start, after < 0 ? undefined : offset + after + 1).trim().slice(0, 600);
+}
 /**
  * Places the highlight menu under the selection. Browsers put their own
  * selection menus (copy, search, translate) above it, which used to cover
@@ -64,7 +70,7 @@ export function ReadingWorkspace({ docKey, title, paragraphs, translation, onSel
   title: string;
   paragraphs: string[];
   translation?: (index: number) => React.ReactNode;
-  onSelectWord?: (word: string) => void;
+  onSelectWord?: (word: string, context?: string) => void;
   onTranslateSelection?: (text: string) => Promise<string>;
   lookupPreview?: { word: string; meaning: string; loading: boolean } | null;
   onReadEnd?: () => void;
@@ -92,7 +98,7 @@ export function ReadingWorkspace({ docKey, title, paragraphs, translation, onSel
   useEffect(() => { secondsRef.current = seconds; }, [seconds]);
   const practiceClock = useMemo<PracticeClock>(() => ({ elapsed: () => secondsRef.current, restart: () => { secondsRef.current = 0; setSeconds(0); } }), []);
   const [popover, setPopover] = useState<Popover | null>(null);
-  const [selectionTranslation, setSelectionTranslation] = useState<{ source: string; result: string; busy: boolean } | null>(null);
+  const [selectionTranslation, setSelectionTranslation] = useState<{ source: string; paragraph: number; result: string; error: string; busy: boolean } | null>(null);
   const [activeEvidence, setActiveEvidence] = useState<EvidenceLocation | null>(null);
   const [toolsMin, setToolsMin] = useState(false);
   const [openTool, setOpenTool] = useState<string | null>(null);
@@ -274,6 +280,7 @@ export function ReadingWorkspace({ docKey, title, paragraphs, translation, onSel
 
   function onSelect(event: React.MouseEvent | React.TouchEvent) {
     if (!ready) return;
+    if ((event.target as Element).closest?.(".rw-inline-translation")) return;
     const root = textRef.current;
     const selection = window.getSelection();
     if (!root || !selection) return;
@@ -297,7 +304,9 @@ export function ReadingWorkspace({ docKey, title, paragraphs, translation, onSel
             position.x = Math.max(margin, Math.min(window.innerWidth - margin, position.x));
             setSelectionTranslation(null);
             setPopover({ ...position, word: word[0].toLowerCase() });
-            onSelectWord(word[0]);
+            const paragraph = node.parentElement?.closest<HTMLElement>("p[data-p]");
+            const index = Number(paragraph?.getAttribute("data-p"));
+            onSelectWord(word[0], paragraph && Number.isInteger(index) ? sentenceAt(text[index], offsetIn(paragraph, node, offset)) : undefined);
           }
         }
       }
@@ -321,7 +330,8 @@ export function ReadingWorkspace({ docKey, title, paragraphs, translation, onSel
     setSelectionTranslation(null);
     setPopover({ ...position, ranges, word: lookupWord, selectedText: word });
     if (lookupWord && onSelectWord) {
-      onSelectWord(word);
+      const first = ranges[0];
+      onSelectWord(word, sentenceAt(text[first.p], first.start));
       if (toolsMin) setOpenTool(tools?.find((tool) => tool.onSelect)?.id ?? null);
     }
   }
@@ -336,15 +346,17 @@ export function ReadingWorkspace({ docKey, title, paragraphs, translation, onSel
     setPopover(null);
   }
 
-  async function translateSelection() {
-    if (!popover?.selectedText || !onTranslateSelection || selectionTranslation?.busy) return;
-    const source = popover.selectedText;
-    setSelectionTranslation({ source, result: "", busy: true });
+  async function translateSelection(retry?: { source: string; paragraph: number }) {
+    const source = retry?.source ?? popover?.selectedText;
+    const paragraph = retry?.paragraph ?? popover?.ranges?.[0]?.p;
+    if (!source || paragraph === undefined || !onTranslateSelection || selectionTranslation?.busy) return;
+    setPopover(null);
+    setSelectionTranslation({ source, paragraph, result: "", error: "", busy: true });
     try {
       const result = await onTranslateSelection(source);
-      setSelectionTranslation({ source, result, busy: false });
+      setSelectionTranslation({ source, paragraph, result, error: "", busy: false });
     } catch (error) {
-      setSelectionTranslation({ source, result: error instanceof Error ? error.message : "Chưa dịch được đoạn đã chọn.", busy: false });
+      setSelectionTranslation({ source, paragraph, result: "", error: error instanceof Error ? error.message : "Chưa dịch được đoạn đã chọn.", busy: false });
     }
   }
 
@@ -431,6 +443,12 @@ export function ReadingWorkspace({ docKey, title, paragraphs, translation, onSel
               ? <mark key={part.start} data-hl={part.highlight.id} data-evidence={part.highlight.id === "active-evidence" ? "true" : undefined} className={`rw-mark ${part.highlight.id === "active-evidence" ? "rw-evidence" : part.highlight.color}`}>{part.text}</mark>
               : <Fragment key={part.start}>{part.text}</Fragment>)}</p>
             {translation?.(index)}
+            {!practicing && selectionTranslation?.paragraph === index && <aside className="rw-inline-translation" lang="vi" aria-live="polite">
+              <div><strong>Dịch đoạn đã chọn</strong><button type="button" onClick={() => setSelectionTranslation(null)}>Ẩn</button></div>
+              {selectionTranslation.busy ? <p>Đang dịch…</p> : selectionTranslation.error
+                ? <p role="alert">{selectionTranslation.error} <button type="button" onClick={() => void translateSelection(selectionTranslation)}>Thử lại</button></p>
+                : <p>{selectionTranslation.result}</p>}
+            </aside>}
           </div>)}
         </div>
         {!practicing && onReadEnd && <div ref={readEndRef} className="rw-read-end" aria-hidden="true" />}
@@ -474,7 +492,6 @@ export function ReadingWorkspace({ docKey, title, paragraphs, translation, onSel
       {popover.mark && <button type="button" className="rw-unmark" onClick={() => { save(highlights.filter((item) => item.id !== popover.mark)); setPopover(null); }}><X size={14} /> Bỏ</button>}
       {popover.selectedText && onTranslateSelection && !practicing && <button type="button" className="rw-translate-selection" disabled={popover.selectedText.length > 3500 || selectionTranslation?.busy} onClick={() => void translateSelection()} title={popover.selectedText.length > 3500 ? "Chọn tối đa 3.500 ký tự để dịch" : "Dịch phần đã chọn"}><Languages size={14} /> {selectionTranslation?.busy ? "Đang dịch…" : "Dịch đoạn chọn"}</button>}
       {popover.word && <span className="rw-lookup-preview" role="status"><strong>{popover.word}</strong>{lookupPreview?.word === popover.word ? lookupPreview.loading ? "Đang tra nghĩa…" : lookupPreview.meaning || "Chưa có nghĩa tiếng Việt" : "Đang tra nghĩa…"}</span>}
-      {selectionTranslation && selectionTranslation.source === popover.selectedText && selectionTranslation.result && <span className="rw-selection-translation" lang="vi" role="status">{selectionTranslation.result}</span>}
     </div>}
   </div>;
 }

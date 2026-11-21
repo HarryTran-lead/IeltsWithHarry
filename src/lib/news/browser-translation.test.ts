@@ -19,4 +19,11 @@ describe("news translation fallback", () => {
     expect(progress.at(-1)).toBe(3);
     expect(translated).toContainEqual([1, "VI:Second paragraph."]);
   });
+  it("reuses a successful result without sending the same text again", async () => {
+    const fetcher = vi.fn(async () => ({ ok: true, json: async () => ({ translations: ["Bản dịch"] }) }));
+    vi.stubGlobal("fetch", fetcher);
+    expect(await translateEnglishToVietnamese(["A unique sentence for cache."])).toEqual(["Bản dịch"]);
+    expect(await translateEnglishToVietnamese(["A unique sentence for cache."])).toEqual(["Bản dịch"]);
+    expect(fetcher).toHaveBeenCalledTimes(1);
+  });
 });

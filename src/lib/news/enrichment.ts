@@ -208,10 +208,10 @@ export function newsArticleFreeTierReady() {
   return process.env.NEWS_ARTICLE_FREE_TIER_CONFIRMED === "true"
     && Boolean(process.env.NEWS_ARTICLE_GEMINI_API_KEY);
 }
-export async function geminiJson<T>(system: string, user: string | GeminiPart[], schema: unknown, { fetcher = fetch, maxOutputTokens = 16000, temperature = 0.4, googleSearch = false, models, freeTierOnly = false, articleOnly = false }: { fetcher?: typeof fetch; maxOutputTokens?: number; temperature?: number; googleSearch?: boolean; models?: string[]; freeTierOnly?: boolean; articleOnly?: boolean } = {}): Promise<{ model: string; data: T }> {
-  if (freeTierOnly && articleOnly) throw new Error("Choose one Gemini key purpose");
-  const key = articleOnly ? (newsArticleFreeTierReady() ? process.env.NEWS_ARTICLE_GEMINI_API_KEY : undefined)
-    : freeTierOnly ? (newsQuizFreeTierReady() ? process.env.AI_FACTORY_GEMINI_API_KEY : undefined) : process.env.GEMINI_API_KEY;
+export async function geminiJson<T>(system: string, user: string | GeminiPart[], schema: unknown, { fetcher = fetch, maxOutputTokens = 16000, temperature = 0.4, googleSearch = false, models, freeTierOnly = false, articleOnly = false, apiKey, timeoutMs = 45000 }: { fetcher?: typeof fetch; maxOutputTokens?: number; temperature?: number; googleSearch?: boolean; models?: string[]; freeTierOnly?: boolean; articleOnly?: boolean; apiKey?: string; timeoutMs?: number } = {}): Promise<{ model: string; data: T }> {
+  if ((freeTierOnly && articleOnly) || (apiKey && (freeTierOnly || articleOnly))) throw new Error("Choose one Gemini key purpose");
+  const key = apiKey ?? (articleOnly ? (newsArticleFreeTierReady() ? process.env.NEWS_ARTICLE_GEMINI_API_KEY : undefined)
+    : freeTierOnly ? (newsQuizFreeTierReady() ? process.env.AI_FACTORY_GEMINI_API_KEY : undefined) : process.env.GEMINI_API_KEY);
   if (!key) throw new Error(articleOnly ? "Confirmed free-tier Gemini key is not configured for news articles"
     : freeTierOnly ? "Confirmed free-tier Gemini key is not configured" : "GEMINI_API_KEY is not configured");
   const request = JSON.stringify({
@@ -227,7 +227,7 @@ export async function geminiJson<T>(system: string, user: string | GeminiPart[],
     let response: Response;
     for (let attempt = 0; ; attempt++) {
       response = await fetcher(`https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent`, {
-        method: "POST", signal: AbortSignal.timeout(45000), cache: "no-store",
+        method: "POST", signal: AbortSignal.timeout(timeoutMs), cache: "no-store",
         headers: { "x-goog-api-key": key, "Content-Type": "application/json" }, body: request,
       });
       if (!(articleOnly || freeTierOnly) || response.status !== 503 || attempt >= 2) break;
