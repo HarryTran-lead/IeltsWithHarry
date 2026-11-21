@@ -15,8 +15,13 @@ import {
 import { DrillCard, type DrillSave } from "./task2-drill";
 import { cacheTask2State, emptyTask2State, loadTask2State, revealTask2, saveTask2State } from "./task2-state";
 import { AnnotatedText, AnnotationList, emptyExplanation, withTerms } from "./task2-text";
+import { LessonDone, LessonLocked, LessonSteps, LessonTopBar } from "@/features/self-study-path/study-path";
+import { buildPath } from "@/lib/self-study-path/path";
+import { readTask2Level, task2LessonsCourse, task2LessonsProgress } from "@/lib/self-study-path/task2";
+import { loadAllTask2States } from "./task2-state";
 
 type Step = "read" | "learn" | "drills" | "write";
+const stepIds: Step[] = ["read", "learn", "drills", "write"];
 const themeStyle = (stage: Task2Stage) => ({ "--ll-tone": stageInfo[stage].tone, "--ll-soft": stageInfo[stage].soft }) as CSSProperties;
 const typeLabel = (type: string) => questionTypeLabels[type] ?? type;
 
@@ -38,6 +43,8 @@ export function LessonPage({ id }: { id: string }) {
   const [busy, setBusy] = useState("");
   const [error, setError] = useState("");
   const [notice, setNotice] = useState("");
+  const [visited, setVisited] = useState(0);
+  const [locked, setLocked] = useState<{ title: string; href?: string } | null>(null);
   const syncTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   useEffect(() => {
@@ -53,7 +60,20 @@ export function LessonPage({ id }: { id: string }) {
       const hash = window.location.hash.slice(1) as Step;
       const firstOpen = loaded.drills.findIndex((drill) => !drillSaved(saved, drill.id));
       setCurrent(firstOpen >= 0 ? firstOpen : 0);
-      setStep(["read", "learn", "drills", "write"].includes(hash) ? hash : essaySaved(saved, loaded.stage) || done.length === loaded.drills.length ? "write" : done.length ? "drills" : "read");
+      const resume: Step = essaySaved(saved, loaded.stage) || done.length === loaded.drills.length ? "write" : done.length ? "drills" : "read";
+      // A link may point at a later step, but not past the furthest step the learner has reached.
+      setStep(stepIds.includes(hash) && stepIds.indexOf(hash) <= stepIds.indexOf(resume) ? hash : resume);
+      setVisited(stepIds.indexOf(resume));
+      // Lessons open in path order: a lesson not reached yet sends the learner to the one that is.
+      if (lessons.length) {
+        void loadAllTask2States(lessons.map((item) => item.id)).then((all) => {
+          if (!alive) return;
+          const view = buildPath(task2LessonsCourse(lessons), task2LessonsProgress(lessons, { ...all, [loaded.id]: saved }, readTask2Level()));
+          const node = view.stages.flatMap((stage) => stage.nodes).find((item) => item.id === loaded.id);
+          const next = view.next?.node;
+          if (node?.status === "locked") setLocked({ title: next ? `Bài ${next.number} · ${next.title}` : "", href: next?.href });
+        }).catch(() => undefined);
+      }
       // Answers the learner already earned or opened come back without another click.
       const targets = [...new Set([...done.map((drill) => drill.id), ...Object.keys(saved.peeked).filter((key) => key !== "essay")])];
       if (essaySaved(saved, loaded.stage) || saved.peeked.essay) targets.push("essay");
@@ -138,6 +158,7 @@ export function LessonPage({ id }: { id: string }) {
 
   function go(target: Step) {
     setStep(target);
+    setVisited((value) => Math.max(value, stepIds.indexOf(target)));
     history.replaceState(null, "", `#${target}`);
     window.scrollTo({ top: 0, behavior: "smooth" });
   }
@@ -162,25 +183,23 @@ export function LessonPage({ id }: { id: string }) {
     { id: "write", label: target.label, hint: "Ghép nháp, tự kiểm tra", score: essayDone ? `${countWords(state.essay)} từ` : "", pass: essayDone },
   ];
   const drill = lesson.drills[current];
+  const position = stepIds.indexOf(step);
+  const lessonName = `${number ? `Bài ${Number(number)} · ` : ""}${lesson.topic}`;
+  const complete = essayDone && savedDrills === lesson.drills.length;
 
-  return <div className="ll-page ll-module t2-lab t2-lesson" style={themeStyle(lesson.stage)}>
-    <Breadcrumb current={`${number ? `Bài ${number} · ` : ""}${lesson.topic}`}/>
-    <header className="t2-head">
-      <div className="t2-head-copy">
-        <span className="ll-kicker">{stageInfo[lesson.stage].name} · mức luyện {lesson.target_range}{number && ` · Bài ${number}`}</span>
-        <h1>{lesson.topic}</h1>
-        <p>{withTerms(lesson.goal_vi)}</p>
-      </div>
-      <div className="ll-chips"><span>{typeLabel(lesson.question_type)}</span><span>{lesson.minutes} phút</span>{lesson.has_model_essay && <span className="t2-chip-model">Có bài mẫu</span>}</div>
+  if (locked) return <LessonLocked title={lessonName} nextTitle={locked.title} nextHref={locked.href} pathHref={`${TASK2_BASE}?tab=luyen-de`}/>;
+
+  return <div className="ll-page ll-module t2-lab t2-lesson sp-kit" style={themeStyle(lesson.stage)}>
+    <header className="t2-lessonbar">
+      <LessonTopBar exitHref={`${TASK2_BASE}?tab=luyen-de`} step={position} count={stepIds.length} title={<>
+        <span>Writing Task 2 · Luyện đề · {stageInfo[lesson.stage].name}</span>
+        <b>{lessonName}</b>
+        <span className="t1-lessonbar-meta">{typeLabel(lesson.question_type)} · {lesson.minutes} phút · {withTerms(lesson.goal_vi)}</span>
+      </>}/>
+      <LessonSteps steps={steps.map((item) => ({ label: item.label, note: item.score || item.hint, pass: item.pass }))} step={position}
+        reached={Math.max(visited, ...steps.map((item, index) => item.pass ? Math.min(index + 1, stepIds.length - 1) : 0))}
+        onPick={(index) => go(stepIds[index])}/>
     </header>
-
-    <ol className="ll-stepper t2-stepper" aria-label="Các bước học">{steps.map((item, i) => <li key={item.id} className={item.pass ? "is-pass" : ""}>
-      <button type="button" aria-current={step === item.id ? "step" : undefined} onClick={() => go(item.id)}>
-        <span className="ll-step-dot">{item.pass && step !== item.id ? <Check size={15} strokeWidth={3}/> : i + 1}</span>
-        <span className="ll-step-text"><b>{item.label}</b><small>{item.hint}</small></span>
-        {item.score && <span className="ll-step-score">{item.score}</span>}
-      </button>
-    </li>)}</ol>
 
     {error && <p className="ll-error" role="alert">{error}</p>}
 
@@ -207,10 +226,14 @@ export function LessonPage({ id }: { id: string }) {
             onNext={() => current < lesson.drills.length - 1 ? goDrill(current + 1) : go("write")}
             nextLabel={current < lesson.drills.length - 1 ? "Câu tiếp" : `Sang bước ${target.label.toLowerCase()}`}/>
         </>}
-        {step === "write" && <WriteStep lesson={lesson} state={state} answers={answers} model={model} busy={busy} notice={notice} nextLesson={nextLesson}
+        {step === "write" && <WriteStep lesson={lesson} state={state} answers={answers} model={model} busy={busy} notice={notice}
           onEssay={(essay) => update((previous) => ({ ...previous, essay }))}
           onCheck={(key, checked) => update((previous) => ({ ...previous, checklist: { ...previous.checklist, [key]: checked } }))}
           onSave={() => void saveEssay()} onPeek={() => void peek("essay")}/>}
+        {step === "write" && complete && <LessonDone embedded title={`Xong ${lessonName}`}
+          stats={[{ label: "Câu luyện", value: `${savedDrills}/${lesson.drills.length}` }, { label: "Bài viết", value: `${countWords(state.essay)} từ` }, { label: "Thời lượng", value: `${lesson.minutes} phút` }]}
+          nextLabel={nextLesson ? "Sang bài tiếp theo" : undefined} nextHref={nextLesson ? `${TASK2_BASE}/${nextLesson.id}` : undefined} pathHref={`${TASK2_BASE}?tab=luyen-de`}/>}
+        {step === "write" && essayDone && !complete && <p className="ll-tip"><ListChecks size={16}/> Bài viết đã lưu. Còn {lesson.drills.length - savedDrills} câu luyện ở bước “Luyện từng câu” chưa làm; làm xong mới hoàn thành bài và mở bài tiếp theo.</p>}
       </div>
       <PromptDesk lesson={lesson}/>
     </div>
@@ -358,11 +381,11 @@ function draftFrom(lesson: Task2Lesson, state: Task2State, answers: Record<strin
 }
 
 type WriteProps = {
-  lesson: Task2Lesson; state: Task2State; answers: Record<string, Task2DrillAnswer>; model: Task2ModelEssay | null | undefined; busy: string; notice: string; nextLesson?: Task2LessonSummary;
+  lesson: Task2Lesson; state: Task2State; answers: Record<string, Task2DrillAnswer>; model: Task2ModelEssay | null | undefined; busy: string; notice: string;
   onEssay: (essay: string) => void; onCheck: (key: string, checked: boolean) => void; onSave: () => void; onPeek: () => void;
 };
 
-function WriteStep({ lesson, state, answers, model, busy, notice, nextLesson, onEssay, onCheck, onSave, onPeek }: WriteProps) {
+function WriteStep({ lesson, state, answers, model, busy, notice, onEssay, onCheck, onSave, onPeek }: WriteProps) {
   const [vi, setVi] = useState(false);
   const area = useRef<HTMLTextAreaElement>(null);
   const target = writingTargets[lesson.stage];
@@ -439,9 +462,6 @@ function WriteStep({ lesson, state, answers, model, busy, notice, nextLesson, on
       </div>
     </section>}
 
-    {nextLesson && done && <Link className="t2-next-lesson" href={`${TASK2_BASE}/${nextLesson.id}`}>
-      <span><small>Bài tiếp theo</small><b>{nextLesson.topic}</b></span><ArrowRight size={18}/>
-    </Link>}
   </>;
 }
 

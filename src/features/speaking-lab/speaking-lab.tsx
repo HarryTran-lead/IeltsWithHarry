@@ -9,14 +9,18 @@
 import Link from "next/link";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { useCallback, useEffect, useMemo, useRef, useState, type CSSProperties } from "react";
-import { ArrowRight, BookOpenCheck, CalendarClock, Check, ChevronDown, Headphones, Lightbulb, Mic, MicOff, Pause, Play, RotateCcw, Sparkles, Square, Target, Timer } from "lucide-react";
+import { BookOpenCheck, CalendarClock, Check, ChevronDown, Headphones, Lightbulb, Mic, MicOff, Pause, Play, RotateCcw, Sparkles, Square, Target, Timer } from "lucide-react";
 import { clock, useMic, type SpeakingItem } from "@/features/ielts/speaking-kit";
 import { PracticeCoaching } from "@/features/ielts/speaking-practice-coaching";
 import {
-  SPEAKING_API, SPEAKING_BASE, criterionInfo, criterionOrder, emptySpeakingState, partLabel, secondsLabel, speakingAudioUrl, tasksDone, unitDone,
+  SPEAKING_API, SPEAKING_BASE, criterionInfo, emptySpeakingState, partLabel, secondsLabel, speakingAudioUrl, tasksDone,
   type Criterion, type SpeakingCatalog, type SpeakingModel, type SpeakingRelease, type SpeakingState, type SpeakingTask, type SpeakingUnit,
 } from "@/lib/speaking-lab/types";
 import { cacheSpeakingState, keepRecording, loadAllSpeakingStates, loadSpeakingState, recordingUrl, releaseSpeaking, saveSpeakingState } from "./speaking-state";
+import { useLearnerStreak } from "@/features/account/use-learner-streak";
+import { LessonDone, LessonLocked, LessonSteps, LessonTopBar, StudyPath } from "@/features/self-study-path/study-path";
+import { buildPath } from "@/lib/self-study-path/path";
+import { speakingCourse, speakingProgress, speakingTabOf, type SpeakingTab } from "@/lib/self-study-path/speaking";
 import "@/features/listening/listening-lab.css";
 import "./speaking-lab.css";
 
@@ -49,33 +53,17 @@ const unitTone = (unit: SpeakingUnit, catalog: SpeakingCatalog) => {
   const criterion = unit.criterion ?? catalog.skills.find((skill) => skill.id === unit.skills[0])?.criterion;
   return criterion ? tone(criterion) : topicTone;
 };
-const unitNumber = (unit: SpeakingUnit) => unit.kind === "skill" ? unit.skills[0] : unit.kind === "pron" ? unit.id.replace("pron-", "") : String(unit.order ?? 0).padStart(2, "0");
-function unitLabel(unit: SpeakingUnit, catalog: SpeakingCatalog) {
-  if (unit.kind === "skill") return `Kỹ năng ${unit.skills[0]}`;
-  if (unit.kind === "topic") return `Chủ đề ${unitNumber(unit)}`;
-  if (unit.kind === "pron") return `Phát âm ${unitNumber(unit)}`;
-  if (unit.kind === "mock") return `Đề thi thử ${unitNumber(unit)}`;
-  return `${catalog.series.find((series) => series.id === unit.series)?.title_vi ?? "Part 3"} · Bài ${unitNumber(unit)}`;
-}
-
-type Tab = "skills" | "topics" | "advanced" | "pron" | "mocks";
-const tabParam: Record<Tab, string> = { skills: "", topics: "chu-de", advanced: "nang-cao", pron: "phat-am", mocks: "thi-thu" };
-const tabKinds: Record<Tab, SpeakingUnit["kind"]> = { skills: "skill", topics: "topic", advanced: "part3", pron: "pron", mocks: "mock" };
-const tabOf = (unit: SpeakingUnit) => (Object.keys(tabKinds) as Tab[]).find((key) => tabKinds[key] === unit.kind) ?? "skills";
-const mapHref = (unit: SpeakingUnit) => tabParam[tabOf(unit)] ? `${SPEAKING_BASE}?tab=${tabParam[tabOf(unit)]}` : SPEAKING_BASE;
 
 /* ───────────────────────── Map ───────────────────────── */
 
-function MapPage() {
-  const router = useRouter();
-  const param = useSearchParams().get("tab") ?? "";
-  const tab = (Object.keys(tabParam) as Tab[]).find((key) => tabParam[key] && tabParam[key] === param) ?? "skills";
-  const [data, setData] = useState<CatalogResponse | null>(null);
-  const [states, setStates] = useState<Record<string, SpeakingState>>({});
-  const [error, setError] = useState("");
-  const [part, setPart] = useState<0 | 1 | 2>(0);
-  const [series, setSeries] = useState("");
+const tabParam: Record<SpeakingTab, string> = { skills: "", topics: "chu-de", advanced: "nang-cao", pron: "phat-am", mocks: "thi-thu" };
+const mapHref = (unit: SpeakingUnit) => tabParam[speakingTabOf(unit)] ? `${SPEAKING_BASE}?tab=${tabParam[speakingTabOf(unit)]}` : SPEAKING_BASE;
 
+/** The catalogue, every unit's saved turns, and the path of one tab built from them. */
+function useSpeakingPath(tab: SpeakingTab | null) {
+  const [data, setData] = useState<CatalogResponse | null>(null);
+  const [states, setStates] = useState<Record<string, SpeakingState> | null>(null);
+  const [error, setError] = useState("");
   useEffect(() => {
     let alive = true;
     void getJson<CatalogResponse>(SPEAKING_API).then(async (loaded) => {
@@ -86,134 +74,35 @@ function MapPage() {
     }).catch((failure: unknown) => { if (alive) setError(failure instanceof Error ? failure.message : "Không tải được lộ trình."); });
     return () => { alive = false; };
   }, []);
-
-  if (error) return <div className="ll-page spk-lab"><p className="ll-error" role="alert">{error}</p></div>;
-  if (!data) return <div className="ll-page spk-lab"><div className="ll-skeleton ll-skeleton-hero"/><div className="ll-skeleton ll-skeleton-row"/><div className="ll-skeleton ll-skeleton-card"/></div>;
-
-  const { catalog } = data;
-  const units = catalog.units;
-  const of = (kind: SpeakingUnit["kind"]) => units.filter((unit) => unit.kind === kind);
-  const skillUnits = of("skill");
-  const topicUnits = of("topic");
-  const part3Units = of("part3");
-  const pronUnits = of("pron");
-  const started = (unit: SpeakingUnit) => tasksDone(unit, states[unit.id]) > 0;
-  const finished = (list: SpeakingUnit[]) => list.filter((unit) => unitDone(unit, states[unit.id])).length;
-  const pool = of(tabKinds[tab]);
-  const next = pool.find((unit) => started(unit) && !unitDone(unit, states[unit.id])) ?? pool.find((unit) => !unitDone(unit, states[unit.id])) ?? pool[0];
-  const done = finished(units);
-  const turns = units.reduce((sum, unit) => sum + tasksDone(unit, states[unit.id]), 0);
-  const allTurns = units.reduce((sum, unit) => sum + unit.tasks.length, 0);
-  const show = (target: Tab) => router.replace(tabParam[target] ? `${SPEAKING_BASE}?tab=${tabParam[target]}` : SPEAKING_BASE, { scroll: false });
-  const card = (unit: SpeakingUnit) => <UnitCard key={unit.id} unit={unit} state={states[unit.id]} isNext={unit.id === next?.id} catalog={catalog}/>;
-  const stage = (key: string, style: CSSProperties, tag: string, title: string, sub: string, list: SpeakingUnit[], shown = list) =>
-    <section className="ll-stage" id={key} key={key} style={style}>
-      <header><span className="ll-stage-tag">{tag}</span><h2>{title}<small>{sub}</small></h2><span className="ll-stage-progress"><i><em style={{ width: `${(finished(list) / Math.max(1, list.length)) * 100}%` }}/></i>{finished(list)}/{list.length} xong</span></header>
-      <div className="ll-grid">{shown.map(card)}</div>
-    </section>;
-
-  return <div className="ll-page ll-roadmap spk-lab">
-    <header className="ll-hero spk-hero">
-      <div className="ll-hero-copy">
-        <h1>Luyện Speaking theo kỹ năng, <em>từng lượt nói một.</em></h1>
-        <div className="ll-hero-actions">
-          {next && <Link className="ll-cta" href={`${SPEAKING_BASE}/${next.id}`}>
-            <span className="ll-cta-icon"><Play size={18} fill="currentColor"/></span>
-            <span><b>{started(next) ? "Học tiếp" : "Bắt đầu"}</b><small>{unitLabel(next, catalog)} · {next.title_vi}</small></span>
-            <ArrowRight size={18}/>
-          </Link>}
-          <span className="ll-draft-pill" title="Nội dung luyện tập do đội ngũ biên soạn, chưa được giáo viên duyệt toàn bộ">Thử nghiệm</span>
-        </div>
-      </div>
-      <div className="ll-stats">
-        <div className="ll-stats-ring"><Ring value={done} total={units.length}/><div><strong>Bài đã hoàn thành</strong><span>Còn {units.length - done} bài</span></div></div>
-        <dl><div><dt>Lượt đã xong</dt><dd>{turns}/{allTurns}</dd></div><div><dt>Kỹ năng</dt><dd>{catalog.skills.length}</dd></div><div><dt>Bài học</dt><dd>{units.length}</dd></div></dl>
-      </div>
-    </header>
-
-    {!data.ready && <p className="ll-error" role="status">Nội dung câu hỏi đang được cập nhật. Bạn vẫn xem được lộ trình; bài học sẽ mở khi dữ liệu sẵn sàng.</p>}
-
-    <div className="spk-tabs" role="tablist" aria-label="Speaking Lab">
-      <button type="button" role="tab" aria-selected={tab === "skills"} onClick={() => show("skills")}><b>16 kỹ năng</b><small>Theo 4 tiêu chí chấm</small></button>
-      <button type="button" role="tab" aria-selected={tab === "topics"} onClick={() => show("topics")}><b>Chủ đề Part 1–2</b><small>{topicUnits.length} bài, mỗi bài 6 lượt</small></button>
-      <button type="button" role="tab" aria-selected={tab === "advanced"} onClick={() => show("advanced")}><b>Nâng cao Part 3</b><small>{part3Units.length} bài thảo luận</small></button>
-      <button type="button" role="tab" aria-selected={tab === "pron"} onClick={() => show("pron")}><b>Phát âm</b><small>{catalog.modules.length} nhóm, {pronUnits.length} bài</small></button>
-      <button type="button" role="tab" aria-selected={tab === "mocks"} onClick={() => show("mocks")}><b>Thi thử</b><small>{of("mock").length} đề đủ 3 phần</small></button>
-    </div>
-
-    {tab === "skills" && <>
-      <section className="ll-journey spk-journey" aria-labelledby="spk-journey-title">
-        <div className="ll-section-head"><div><span className="ll-kicker">Bản đồ kỹ năng</span><h2 id="spk-journey-title">4 tiêu chí, 16 kỹ năng</h2></div><small>Mỗi kỹ năng: học → nói lần đầu → xem cách sửa → nói câu mới.</small></div>
-        <ol className="ll-track-map">{criterionOrder.map((criterion) => {
-          const group = skillUnits.filter((unit) => unit.criterion === criterion);
-          const count = finished(group);
-          const here = next?.criterion === criterion;
-          return <li key={criterion} style={tone(criterion)} className={`${here ? "is-here" : ""} ${group.length && count === group.length ? "is-done" : ""}`}>
-            <a href={`#tieu-chi-${criterion}`}>
-              <span className="ll-node">{group.length && count === group.length ? <Check size={16} strokeWidth={3}/> : criterion}</span>
-              <b>{criterionInfo[criterion].name}</b><small>{group.length} kỹ năng</small>
-              <i aria-label={`${count}/${group.length} kỹ năng hoàn thành`}>{group.map((unit) => <em key={unit.id} className={unitDone(unit, states[unit.id]) ? "is-on" : ""}/>)}</i>
-              {here && <span className="ll-here">Bạn ở đây</span>}
-            </a>
-          </li>;
-        })}</ol>
-      </section>
-      {criterionOrder.map((criterion) => stage(`tieu-chi-${criterion}`, tone(criterion), criterion, criterionInfo[criterion].name, criterionInfo[criterion].en, skillUnits.filter((unit) => unit.criterion === criterion)))}
-    </>}
-
-    {tab === "topics" && <>
-      <div className="ll-typebar" role="group" aria-label="Lọc theo phần thi">
-        <span><Mic size={16}/> Phần thi</span>
-        {([0, 1, 2] as const).map((value) => <button type="button" key={value} aria-pressed={part === value} onClick={() => setPart(value)}>
-          {value ? partLabel(value) : "Tất cả"}<small>{value ? topicUnits.filter((unit) => unit.part === value).length : topicUnits.length}</small>
-        </button>)}
-      </div>
-      {stage("chu-de", topicTone, "Chủ đề", "Bài theo chủ đề", "Mỗi bài 6 lượt nói, từ trả lời đầu tiên đến tình huống mới", topicUnits, topicUnits.filter((unit) => !part || unit.part === part))}
-    </>}
-
-    {tab === "advanced" && <>
-      <div className="ll-typebar" role="group" aria-label="Lọc theo chuỗi bài">
-        <span><Target size={16}/> Chuỗi bài</span>
-        <button type="button" aria-pressed={!series} onClick={() => setSeries("")}>Tất cả<small>{part3Units.length}</small></button>
-        {catalog.series.map((item) => <button type="button" key={item.id} aria-pressed={series === item.id} onClick={() => setSeries(item.id)}>{item.title_vi}<small>{part3Units.filter((unit) => unit.series === item.id).length}</small></button>)}
-      </div>
-      {catalog.series.filter((item) => !series || series === item.id).map((item) =>
-        stage(`chuoi-${item.id}`, seriesTone[item.id] ?? topicTone, `Chuỗi ${catalog.series.indexOf(item) + 1}`, item.title_vi, item.about_vi, part3Units.filter((unit) => unit.series === item.id)))}
-    </>}
-
-    {tab === "pron" && catalog.modules.map((module, index) =>
-      stage(`am-${module.code}`, pronTone, `Nhóm ${index + 1}`, module.title_vi, `${module.title_en} · ${module.contrast}`, pronUnits.filter((unit) => unit.module === module.code)))}
-
-    {tab === "mocks" && stage("thi-thu", mockTone, "Thi thử", "Đề thi thử đủ 3 phần", "16 câu, khoảng 11–14 phút. Mỗi lần chỉ hiện một câu; nhận xét và đoạn mẫu mở sau câu cuối.", of("mock"))}
-
-    <aside className="ll-note"><Sparkles size={16}/><p>{catalog.source.note_vi} Bản ghi âm chỉ lưu trên trình duyệt này, trừ khi bạn tự gửi một bài Part 2 để nhận phân tích; tài khoản lưu tiến độ, ghi chú và phần tự kiểm tra.</p></aside>
-  </div>;
+  const course = useMemo(() => data && tab ? speakingCourse(data.catalog, tab) : null, [data, tab]);
+  const view = useMemo(() => data && tab && course && states ? buildPath(course, speakingProgress(data.catalog, tab, states)) : null, [data, tab, course, states]);
+  return { data, states, course, view, error };
 }
 
-function UnitCard({ unit, state, isNext, catalog }: { unit: SpeakingUnit; state: SpeakingState | undefined; isNext: boolean; catalog?: SpeakingCatalog }) {
-  const count = tasksDone(unit, state);
-  const done = unitDone(unit, state);
-  const status = done ? { label: "Hoàn thành", cls: "is-done" } : isNext ? { label: count ? "Đang học" : "Tiếp theo", cls: "is-next" } : count ? { label: "Đang học", cls: "is-tried" } : null;
-  const skillNames = catalog ? unit.skills.map((id) => catalog.skills.find((skill) => skill.id === id)?.title_vi ?? id) : [];
-  return <Link href={`${SPEAKING_BASE}/${unit.id}`} className={`ll-card ${isNext ? "is-next" : ""} ${done ? "is-done" : ""}`}>
-    <div className="ll-card-top"><span className="ll-number">{unitNumber(unit)}</span>{status && <span className={`ll-status ${status.cls}`}>{status.label}</span>}</div>
-    <strong>{unit.title_vi}</strong>
-    <p className="spk-card-en" lang="en">{unit.title_en}</p>
-    {unit.target_vi && <p className="spk-card-target">{unit.target_vi}</p>}
-    <div className="ll-card-types"><span>{partLabel(unit.part)}</span>{unit.kind === "pron" && unit.level && <span>{unit.level}</span>}{skillNames.map((name) => <span key={name}>{name}</span>)}</div>
-    <div className="ll-card-foot">
-      <span className="ll-pips" aria-label={`${count}/${unit.tasks.length} lượt nói`}>{unit.tasks.map((task) => <i key={task.id} className={`spk-pip ${state?.done[task.id] ? "is-pass" : ""}`}/>)}</span>
-      <small><Mic size={12}/> {unit.tasks.length} lượt</small>
-      <ArrowRight size={16}/>
-    </div>
-  </Link>;
-}
+function MapPage() {
+  const router = useRouter();
+  const param = useSearchParams().get("tab") ?? "";
+  const tab = (Object.keys(tabParam) as SpeakingTab[]).find((key) => tabParam[key] && tabParam[key] === param) ?? "skills";
+  const { data, course, view, error } = useSpeakingPath(tab);
+  const streak = useLearnerStreak();
+  const show = (target: SpeakingTab) => router.replace(tabParam[target] ? `${SPEAKING_BASE}?tab=${tabParam[target]}` : SPEAKING_BASE, { scroll: false });
 
-function Ring({ value, total }: { value: number; total: number }) {
-  return <span className="ll-ring is-hero" role="img" aria-label={`${value}/${total} bài hoàn thành`}>
-    <svg viewBox="0 0 44 44" aria-hidden="true"><circle cx="22" cy="22" r="19"/>{value > 0 && <circle cx="22" cy="22" r="19" strokeDasharray={`${(value / total) * 119.4} 119.4`}/>}</svg>
-    <span><b>{value}</b><small>/{total}</small></span>
-  </span>;
+  const of = (kind: SpeakingUnit["kind"]) => data?.catalog.units.filter((unit) => unit.kind === kind) ?? [];
+  const tabs = <div className="spk-path"><div className="spk-tabs" role="tablist" aria-label="Speaking Lab">
+    <button type="button" role="tab" aria-selected={tab === "skills"} onClick={() => show("skills")}><b>16 kỹ năng</b><small>Theo 4 tiêu chí chấm</small></button>
+    <button type="button" role="tab" aria-selected={tab === "topics"} onClick={() => show("topics")}><b>Chủ đề Part 1–2</b><small>{of("topic").length} bài, mỗi bài 6 lượt</small></button>
+    <button type="button" role="tab" aria-selected={tab === "advanced"} onClick={() => show("advanced")}><b>Nâng cao Part 3</b><small>{of("part3").length} bài thảo luận</small></button>
+    <button type="button" role="tab" aria-selected={tab === "pron"} onClick={() => show("pron")}><b>Phát âm</b><small>{data?.catalog.modules.length ?? 8} nhóm, {of("pron").length} bài</small></button>
+    <button type="button" role="tab" aria-selected={tab === "mocks"} onClick={() => show("mocks")}><b>Thi thử</b><small>{of("mock").length} đề đủ 3 phần</small></button>
+  </div></div>;
+
+  if (error) return <div className="ll-page spk-lab">{tabs}<p className="ll-error" role="alert">{error}</p></div>;
+  if (!data || !course || !view) return <div className="ll-page spk-lab">{tabs}<div className="ll-skeleton ll-skeleton-hero"/><div className="ll-skeleton ll-skeleton-row"/><div className="ll-skeleton ll-skeleton-card"/></div>;
+
+  const intro = !data.ready && <p className="spk-path ll-error" role="status">Nội dung câu hỏi đang được cập nhật. Bạn vẫn xem được lộ trình; bài học sẽ mở khi dữ liệu sẵn sàng.</p>;
+  return <StudyPath course={course} view={view} streak={streak?.current ?? 0} top={tabs} intro={intro}>
+    <p className="sp-footnote"><Sparkles size={15} aria-hidden/> {data.catalog.source.note_vi} Mỗi tab là một lộ trình riêng, đi theo thứ tự. Bản ghi âm chỉ lưu trên trình duyệt này, trừ khi bạn tự gửi một bài Part 2 để nhận phân tích; tài khoản lưu tiến độ, ghi chú và phần tự kiểm tra.</p>
+  </StudyPath>;
 }
 
 /* ───────────────────────── Unit ───────────────────────── */
@@ -221,7 +110,6 @@ function Ring({ value, total }: { value: number; total: number }) {
 const stamp = () => ({ iso: new Date().toISOString(), at: Date.now() });
 const sentence = (line: string) => { const text = line.trim().replace(/[.;]+$/, ""); return text.charAt(0).toUpperCase() + text.slice(1); };
 const fallbackChecks = ["Mình trả lời thẳng vào câu hỏi.", "Có ít nhất một lý do hoặc chi tiết cụ thể.", "Mình nói bằng lời của mình, không đọc thuộc."];
-const badgeLabel: Record<SpeakingUnit["kind"], string> = { skill: "Kỹ năng", topic: "Chủ đề", part3: "Part 3", pron: "Phát âm", mock: "Đề" };
 
 function UnitPage({ id }: { id: string }) {
   const [catalog, setCatalog] = useState<SpeakingCatalog | null>(null);
@@ -232,6 +120,7 @@ function UnitPage({ id }: { id: string }) {
   const [busy, setBusy] = useState(false);
   const [teachOpen, setTeachOpen] = useState(false);
   const [openedAt] = useState(() => stamp().at);
+  const [locked, setLocked] = useState<{ title: string; href?: string } | null>(null);
   const syncTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
   const urls = useRef<string[]>([]);
   // The newest progress, so finishing a turn right after keeping a take does not drop the take's timing.
@@ -248,6 +137,16 @@ function UnitPage({ id }: { id: string }) {
       setCatalog(loaded); setState(saved); latest.current = saved;
       if (!found) { setError("Không tìm thấy bài học."); return; }
       setTeachOpen(!found.tasks.some((task) => saved.done[task.id]));
+      // Units open in path order within their tab: one not reached yet sends the learner to the one that is.
+      const tab = speakingTabOf(found);
+      const siblings = loaded.units.filter((item) => item.kind === found.kind);
+      void loadAllSpeakingStates(siblings.map((item) => item.id)).then((all) => {
+        if (!alive) return;
+        const view = buildPath(speakingCourse(loaded, tab), speakingProgress(loaded, tab, { ...all, [id]: saved }));
+        const node = view.stages.flatMap((stage) => stage.nodes).find((item) => item.id === id);
+        const next = view.next?.node;
+        if (node?.status === "locked") setLocked({ title: next ? `Bài ${next.number} · ${next.title}` : "", href: next?.href });
+      }).catch(() => undefined);
       // Kept takes come from this browser; load them alongside the server release, not before it.
       void Promise.all(found.tasks.map(async (task, index) => [task.id, await recordingUrl(id, index)] as const)).then((entries) => {
         const kept = Object.fromEntries(entries.filter((entry): entry is readonly [string, string] => Boolean(entry[1])));
@@ -320,18 +219,26 @@ function UnitPage({ id }: { id: string }) {
         : unit.kind === "mock" ? "Thi thử đủ 3 phần"
           : `Phát âm · ${unit.level}`;
   const expectsModel = unit.kind === "topic" || unit.kind === "part3";
+  const pathLessons = speakingCourse(catalog, speakingTabOf(unit)).stages.flatMap((item) => item.lessons);
+  const position = pathLessons.findIndex((item) => item.id === unit.id);
+  const following = position >= 0 ? pathLessons[position + 1] : undefined;
+  const lessonName = `${position >= 0 ? `Bài ${position + 1} · ` : ""}${unit.title_vi}`;
+  const currentTurn = release?.current ? unit.tasks.findIndex((task) => task.id === release.current) : count;
+  const turn = Math.min(Math.max(0, currentTurn), unit.tasks.length - 1);
+  const spoken = unit.tasks.reduce((sum, task) => sum + (state.seconds[task.id] ?? 0), 0);
 
-  return <div className="ll-page ll-module spk-lab" style={unitTone(unit, catalog)}>
-    <Breadcrumb current={`${unitLabel(unit, catalog)} · ${unit.title_vi}`} back={mapHref(unit)}/>
-    <header className="ll-module-hero">
-      <div className="ll-module-badge"><small>{badgeLabel[unit.kind]}</small><b>{unitNumber(unit)}</b></div>
-      <div className="ll-module-copy">
-        <span className="ll-kicker">{kicker}{unit.kind === "mock" ? ` · ${unit.level}` : ` · ${partLabel(unit.part)}`}</span>
-        <h1>{unit.title_vi}</h1>
-        <p lang="en">{unit.title_en}{unit.topic_en ? ` · ${unit.topic_en}` : ""}</p>
-        <div className="ll-chips">{skills.map((skill) => <span key={skill.id}>{skill.id} · {skill.title_vi}</span>)}</div>
-      </div>
-      <dl className="ll-facts"><div><dt>Lượt</dt><dd>{count}/{unit.tasks.length}</dd></div><div><dt>Phần thi</dt><dd>{unit.part}</dd></div></dl>
+  if (locked) return <LessonLocked title={lessonName} nextTitle={locked.title} nextHref={locked.href} pathHref={mapHref(unit)}/>;
+
+  return <div className="ll-page ll-module spk-lab sp-kit" style={unitTone(unit, catalog)}>
+    <header className="spk-lessonbar">
+      <LessonTopBar exitHref={mapHref(unit)} step={release?.current === null ? unit.tasks.length - 1 : turn} count={unit.tasks.length} title={<>
+        <span>Speaking · {kicker}{unit.kind === "mock" ? ` · ${unit.level}` : ` · ${partLabel(unit.part)}`}</span>
+        <b>{lessonName}</b>
+        <span className="t1-lessonbar-meta"><span lang="en">{unit.title_en}{unit.topic_en ? ` · ${unit.topic_en}` : ""}</span>{skills.map((skill) => <span key={skill.id}>· {skill.id} {skill.title_vi}</span>)}</span>
+      </>}/>
+      {unit.kind !== "mock" && <LessonSteps steps={unit.tasks.map((task) => ({ label: task.label, note: state.done[task.id] ? "Đã xong" : task.hint, pass: Boolean(state.done[task.id]) }))}
+        step={release?.current === null ? -1 : turn} reached={release?.current === null ? unit.tasks.length - 1 : turn}
+        onPick={(index) => document.getElementById(`spk-task-${index}`)?.scrollIntoView({ behavior: "smooth", block: "start" })}/>}
     </header>
 
     {unit.target_vi && <div className="ll-tip"><span><Target size={17}/></span><p><b>Mục tiêu</b>{unit.target_vi}</p></div>}
@@ -346,9 +253,9 @@ function UnitPage({ id }: { id: string }) {
         const prompt = release.prompts[task.id];
         const isDone = Boolean(state.done[task.id]);
         const isCurrent = release.current === task.id;
-        if (!prompt) return <li key={task.id} className="spk-task is-locked"><span className="spk-task-num">{index + 1}</span><div><b>{task.label}</b><small>{task.hint}</small></div><span className="spk-lock">Mở sau lượt {index}</span></li>;
+        if (!prompt) return <li key={task.id} id={`spk-task-${index}`} className="spk-task is-locked"><span className="spk-task-num">{index + 1}</span><div><b>{task.label}</b><small>{task.hint}</small></div><span className="spk-lock">Mở sau lượt {index}</span></li>;
         const previous = index > 0 ? state.done[unit.tasks[index - 1].id] : undefined;
-        return <li key={task.id} id={isCurrent ? "spk-current" : undefined} className={`spk-task ${isDone ? "is-done" : ""} ${isCurrent ? "is-current" : ""}`}>
+        return <li key={task.id} id={isCurrent ? "spk-current" : `spk-task-${index}`} className={`spk-task ${isDone ? "is-done" : ""} ${isCurrent ? "is-current" : ""}`}>
           <TaskCard
             unit={unit} task={task} index={index} prompt={prompt} tip={release.tips[task.id]} state={state} take={takes[task.id]}
             checks={checks} previousDoneAt={previous} openedAt={openedAt} busy={busy} recent={isDone && (release.current ? unit.tasks[index + 1]?.id === release.current : index === unit.tasks.length - 1)}
@@ -361,7 +268,9 @@ function UnitPage({ id }: { id: string }) {
       {release.model ? <ModelPanel model={release.model}/>
         : expectsModel && release.current !== null && <p className="ll-empty">Phần tham khảo mở sau khi bạn xong cả {unit.tasks.length} lượt nói.</p>}
 
-      {release.current === null && <div className="spk-finish"><Check size={18}/> Bạn đã xong bài này. <Link href={mapHref(unit)}>Về lộ trình</Link></div>}
+      {release.current === null && <LessonDone embedded title={`Xong ${lessonName}`}
+        stats={[{ label: "Lượt nói", value: `${count}/${unit.tasks.length}` }, { label: "Thời gian nói", value: spoken ? clock(spoken) : "–" }, { label: "Phần thi", value: partLabel(unit.part) }]}
+        nextLabel={following ? "Sang bài tiếp theo" : undefined} nextHref={following?.href} pathHref={mapHref(unit)}/>}
     </>}
 
     <p className="ll-footnote">Nội dung luyện tập do đội ngũ biên soạn, không phải đề thi IELTS chính thức, và không chấm điểm. Bản ghi âm chỉ ở trên trình duyệt này, trừ khi bạn tự gửi bài Part 2 để phân tích; tài khoản lưu tiến độ, ghi chú và phần tự kiểm tra.</p>
