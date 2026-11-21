@@ -2,6 +2,7 @@
 
 import { useMemo, useRef, useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { BookOpenText, Languages, MessageSquareText, Search, Volume2 } from "lucide-react";
 import { createClient } from "@/lib/supabase/browser";
 import { useNotebook } from "@/features/notebook/notebook-store";
@@ -10,10 +11,12 @@ import { translateEnglishToVietnamese, translateWordInContext } from "@/lib/news
 import { quickDefine as define } from "@/lib/vocabulary/quick-define";
 import { lookupNewsWord, type NewsWordDefinition } from "@/lib/news/word-lookup";
 import { ReadingWorkspace, type ReadingPractice } from "@/features/reading/reading-workspace";
+import { inlinePhotoAfterParagraph } from "@/lib/news/inline-photo-layout";
 
 type Lookup = NewsWordDefinition;
 
-export function NewsReadingTools({ articleId, title, paragraphs, initialTranslations, onReadEnd, practice, examMode = false, onExamModeChange, children }: { articleId: string; title: string; paragraphs: string[]; initialTranslations?: string[] | null; onReadEnd?: () => void; practice?: ReadingPractice; examMode?: boolean; onExamModeChange?: (value: boolean) => void; children: React.ReactNode }) {
+type InlinePhoto = { position: 1 | 2; image_url: string; image_alt: string; image_credit: string; image_source_url: string; license_name: string; license_url: string | null };
+export function NewsReadingTools({ articleId, title, paragraphs, inlineImages = [], initialTranslations, onReadEnd, onParagraphSeen, resumeAt, resumeRequested, practice, examMode = false, onExamModeChange, children }: { articleId: string; title: string; paragraphs: string[]; inlineImages?: InlinePhoto[]; initialTranslations?: string[] | null; onReadEnd?: () => void; onParagraphSeen?: (index: number) => void; resumeAt?: number | null; resumeRequested?: boolean; practice?: ReadingPractice; examMode?: boolean; onExamModeChange?: (value: boolean) => void; children: React.ReactNode }) {
   const db = useMemo(() => createClient(), []);
   const { entries, ready, addEntry } = useNotebook();
   const [bilingual, setBilingual] = useState(false);
@@ -136,9 +139,10 @@ export function NewsReadingTools({ articleId, title, paragraphs, initialTranslat
     } finally { setTranslating(false); }
   }
 
-  return <ReadingWorkspace docKey={`news:${articleId}`} title={title} paragraphs={paragraphs} onSelectWord={examMode ? undefined : lookUpWord} onTranslateSelection={examMode ? undefined : async (text) => (await translateEnglishToVietnamese([text]))[0]} lookupPreview={examMode ? null : lookup ? { word: lookup.word, meaning: lookup.meaningVi, loading: lookupBusy || meaningBusy } : null} onReadEnd={onReadEnd} practice={practice} practiceLimitSeconds={examMode ? 1200 : undefined}
+  return <ReadingWorkspace docKey={`news:${articleId}`} title={title} paragraphs={paragraphs} onSelectWord={examMode ? undefined : lookUpWord} onTranslateSelection={examMode ? undefined : async (text) => (await translateEnglishToVietnamese([text]))[0]} lookupPreview={examMode ? null : lookup ? { word: lookup.word, meaning: lookup.meaningVi, loading: lookupBusy || meaningBusy } : null} onReadEnd={onReadEnd} onParagraphSeen={onParagraphSeen} resumeAt={resumeAt} resumeRequested={resumeRequested} practice={practice} practiceLimitSeconds={examMode ? 1200 : undefined}
     timedPractice={onExamModeChange ? { label: "Bắt đầu mô phỏng · 20 phút", onStart: () => onExamModeChange(true), onExit: () => onExamModeChange(false) } : undefined}
     translation={!examMode && bilingual ? (index) => translations[index] ? <p lang="vi" className="rw-translation">{translations[index]}</p> : null : undefined}
+    afterParagraph={(index) => inlineImages.filter((photo) => inlinePhotoAfterParagraph(paragraphs.length, photo.position) === index).map((photo) => <figure key={photo.position} className="news-inline-photo"><div className="news-inline-photo-frame"><Image src={photo.image_url} alt={photo.image_alt} fill sizes="(max-width: 800px) 100vw, 760px" loading="lazy" unoptimized /></div><figcaption>Ảnh tư liệu minh họa: <a href={photo.image_source_url} target="_blank" rel="noopener noreferrer">{photo.image_credit}</a> · {photo.license_url ? <a href={photo.license_url} target="_blank" rel="noopener noreferrer">{photo.license_name}</a> : photo.license_name}</figcaption></figure>)}
     toolbar={<>{!examMode && <button className="button subtle" type="button" disabled={translating} onClick={()=>void showBilingual()}><Languages size={16}/>{translating?`Đang dịch ${translationProgress}/${paragraphs.length}…`:bilingual?"Chỉ tiếng Anh":"Xem song ngữ"}</button>}{!examMode && translationError && <span className="news-translation-error" role="alert">{translationError} <button type="button" onClick={() => void showBilingual(true)}>Thử lại</button></span>}</>}
     after={<>{children}</>}
     tools={examMode ? [] : [
