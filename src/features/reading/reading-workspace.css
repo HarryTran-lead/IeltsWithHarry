@@ -44,6 +44,12 @@
 .rw-flyout-close:hover { background: #fff0ee; color: #b4372f; }
 .rw-text { color: var(--rw-ink); font-family: var(--font-reading), Georgia, serif; font-size: var(--rw-size); line-height: 1.8; transition: font-size 0.2s var(--ease-out); }
 .rw.is-read .rw-text { max-width: 70ch; margin: 0 auto; }
+.rw-reading-progress { display: flex; align-items: center; gap: 10px; max-width: 70ch; margin: 0 auto 18px; color: var(--muted); font: 700 var(--fs-xs)/1.3 var(--font-sans); }
+.rw-reading-progress > div { display: flex; flex: 1; gap: 3px; }
+.rw-reading-progress i { flex: 1; height: 5px; border-radius: 99px; background: #e8eef0; }
+.rw-reading-progress i.seen { background: var(--teal); }
+.rw-reading-progress strong { color: var(--teal-strong); white-space: nowrap; }
+.rw-text [data-p] { scroll-margin-top: 150px; }
 .rw-text p { margin: 0 0 1.05em; overflow-wrap: break-word; }
 .rw-text ::selection { background: #bfe9ec; }
 .rw-letter { display: none; }

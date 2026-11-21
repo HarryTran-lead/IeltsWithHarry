@@ -65,15 +65,19 @@ function anchor(rect: DOMRect, touch: boolean): Pick<Popover, "x" | "y" | "below
  * at the bottom. Highlights are synced to the learner account with a scoped
  * local copy; text size is a device preference.
  */
-export function ReadingWorkspace({ docKey, title, paragraphs, translation, onSelectWord, onTranslateSelection, lookupPreview, onReadEnd, toolbar, tools, after, practice, practiceLimitSeconds, timedPractice }: {
+export function ReadingWorkspace({ docKey, title, paragraphs, translation, afterParagraph, onSelectWord, onTranslateSelection, lookupPreview, onReadEnd, onParagraphSeen, resumeAt, resumeRequested, toolbar, tools, after, practice, practiceLimitSeconds, timedPractice }: {
   docKey: string;
   title: string;
   paragraphs: string[];
   translation?: (index: number) => React.ReactNode;
+  afterParagraph?: (index: number) => React.ReactNode;
   onSelectWord?: (word: string, context?: string) => void;
   onTranslateSelection?: (text: string) => Promise<string>;
   lookupPreview?: { word: string; meaning: string; loading: boolean } | null;
   onReadEnd?: () => void;
+  onParagraphSeen?: (index: number) => void;
+  resumeAt?: number | null;
+  resumeRequested?: boolean;
   toolbar?: React.ReactNode;
   tools?: ReadingTool[];
   after?: React.ReactNode;
@@ -95,6 +99,7 @@ export function ReadingWorkspace({ docKey, title, paragraphs, translation, onSel
   const [tab, setTab] = useState<"passage" | "questions">("passage");
   const [split, setSplit] = useState(52);
   const [seconds, setSeconds] = useState(0);
+  const [paragraphsSeen, setParagraphsSeen] = useState(0);
   const secondsRef = useRef(0);
   useEffect(() => { secondsRef.current = seconds; }, [seconds]);
   const practiceClock = useMemo<PracticeClock>(() => ({ elapsed: () => secondsRef.current, restart: () => { secondsRef.current = 0; setSeconds(0); } }), []);
@@ -109,6 +114,7 @@ export function ReadingWorkspace({ docKey, title, paragraphs, translation, onSel
   const readEndRef = useRef<HTMLDivElement>(null);
   const readStartedAt = useRef(0);
   const readCompleted = useRef(false);
+  const resumeDone = useRef(false);
   const readSeen = useRef(new Set<number>());
   const userIdRef = useRef<string | null>(null);
   const saveQueue = useRef<Promise<void>>(Promise.resolve());
@@ -279,6 +285,27 @@ export function ReadingWorkspace({ docKey, title, paragraphs, translation, onSel
     return () => { observer.disconnect(); window.clearInterval(timer); };
   }, [onReadEnd, practicing, text.length]);
 
+  useEffect(() => {
+    if (!onParagraphSeen || practicing || !textRef.current) return;
+    const observer = new IntersectionObserver((entries) => {
+      for (const entry of entries) if (entry.isIntersecting) {
+        const index = Number((entry.target as HTMLElement).dataset.p);
+        if (!Number.isInteger(index)) continue;
+        setParagraphsSeen((count) => Math.max(count, index + 1));
+        onParagraphSeen(index);
+      }
+    }, { threshold: 0.4 });
+    textRef.current.querySelectorAll("p[data-p]").forEach((paragraph) => observer.observe(paragraph));
+    return () => observer.disconnect();
+  }, [onParagraphSeen, practicing, text.length]);
+
+  useEffect(() => {
+    if (resumeDone.current || !resumeRequested || resumeAt == null || practicing || resumeAt < 0 || resumeAt >= text.length) return;
+    resumeDone.current = true;
+    const frame = requestAnimationFrame(() => textRef.current?.querySelector(`[data-p="${resumeAt}"]`)?.scrollIntoView({ block: "start", behavior: "smooth" }));
+    return () => cancelAnimationFrame(frame);
+  }, [resumeAt, resumeRequested, practicing, text.length]);
+
   function onSelect(event: React.MouseEvent | React.TouchEvent) {
     if (!ready) return;
     if ((event.target as Element).closest?.(".rw-inline-translation")) return;
@@ -435,6 +462,7 @@ export function ReadingWorkspace({ docKey, title, paragraphs, translation, onSel
       <div className="rw-pane rw-passage-pane">
         {practicing && <h2 className="rw-pane-title">{title}</h2>}
         {practicing && <p className="rw-scroll-hint">{practiceLimitSeconds ? "Mô phỏng 20 phút: đọc bài và trả lời câu hỏi trong thời gian còn lại." : "Cuộn trong khung này để xem hết bài đọc. Nhấn vào một từ để xem nghĩa."}</p>}
+        {!practicing && onParagraphSeen && text.length > 1 && <div className="rw-reading-progress" role="status" aria-label={`Đã đến đoạn ${Math.max(paragraphsSeen, resumeAt == null ? 0 : resumeAt + 1)} trên ${text.length}`}><span>Tiến độ đọc</span><div aria-hidden="true">{text.map((_, index) => <i key={index} className={index < Math.max(paragraphsSeen, resumeAt == null ? 0 : resumeAt + 1) ? "seen" : ""} />)}</div><strong>{Math.max(paragraphsSeen, resumeAt == null ? 0 : resumeAt + 1)}/{text.length} đoạn</strong></div>}
         <div ref={textRef} className="rw-text" onMouseUp={onSelect} onTouchEnd={(event) => {
           // Mobile browsers finish their native text-selection gesture after touchend.
           event.persist();
@@ -447,6 +475,7 @@ export function ReadingWorkspace({ docKey, title, paragraphs, translation, onSel
               ? <mark key={part.start} data-hl={part.highlight.id} data-evidence={part.highlight.id === "active-evidence" ? "true" : undefined} className={`rw-mark ${part.highlight.id === "active-evidence" ? "rw-evidence" : part.highlight.color}`}>{part.text}</mark>
               : <Fragment key={part.start}>{part.text}</Fragment>)}</p>
             {translation?.(index)}
+            {!practicing && afterParagraph?.(index)}
             {!practicing && selectionTranslation?.paragraph === index && <aside className="rw-inline-translation" lang="vi" aria-live="polite">
               <div><strong>Dịch đoạn đã chọn</strong><button type="button" onClick={() => setSelectionTranslation(null)}>Ẩn</button></div>
               {selectionTranslation.busy ? <p>Đang dịch…</p> : selectionTranslation.error

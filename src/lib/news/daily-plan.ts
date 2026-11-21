@@ -16,9 +16,9 @@ export function dailyNewsPicks<T extends DailyCandidate>(
   while (picks.length < count && remaining.length) {
     remaining.sort((a, b) => {
       const score = (row: T) => Number(ready.has(row.id)) * 8 + Number(row.origin_region === "vietnam") * 4
-        + Number(!read.has(row.id)) * 3 + Number(preferredTopics.includes(row.category)) * 2
+        + Number(!read.has(row.id)) * 3 + Number(preferredTopics.includes(row.category)) * 7
         + Number(weakCategories.includes(row.category)) * 2
-        + Number((row.interest_topics ?? []).some((topic) => preferredTopics.includes(topic))) * 2
+        + Number((row.interest_topics ?? []).some((topic) => preferredTopics.includes(topic))) * 5
         + Number(!categories.has(row.category)) * 5;
       return score(b) - score(a) || b.published_at.localeCompare(a.published_at) || a.id.localeCompare(b.id);
     });
