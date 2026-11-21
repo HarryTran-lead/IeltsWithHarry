@@ -307,10 +307,12 @@ function PracticeArea({ module, attempts, peeks, nextModule, onSaved, onPeek, on
   const groups = useMemo(() => [...new Set(module.practice.map((item) => item.group))], [module]);
   const stages = useMemo(() => ["foundation", "basic", "developing", "advanced"].filter((stage) => module.practice.some((item) => item.stage === stage)), [module]);
   const [group, setGroup] = useState(groups[0] ?? "");
-  const [stage, setStage] = useState(() => {
-    try { const saved = localStorage.getItem("writing-task2-level"); if (saved && stages.includes(saved)) return saved; } catch { /* default below */ }
+  // The learner's own level (picked in Luyện đề) opens first and is marked, so the four level tabs are not a guess.
+  const [ownStage] = useState(() => {
+    try { const saved = localStorage.getItem("writing-task2-level"); if (saved && stages.includes(saved)) return saved; } catch { /* no saved level */ }
     return stages[0] ?? "";
   });
+  const [stage, setStage] = useState(ownStage);
   const inGroup = module.practice.filter((item) => groups.length < 2 || item.group === group);
   const groupStages = stages.filter((name) => inGroup.some((item) => item.stage === name));
   const activeStage = groupStages.includes(stage) ? stage : groupStages[0] ?? "";
@@ -353,7 +355,8 @@ function PracticeArea({ module, attempts, peeks, nextModule, onSaved, onPeek, on
   return <>
     {(groups.length > 1 || groupStages.length > 1) && <div className="t2-filters">
       {groups.length > 1 && <div role="group" aria-label="Loại bài">{groups.map((name) => <button key={name} type="button" aria-pressed={group === name} onClick={() => pick(name, stage)}>{name}<small>{module.practice.filter((item) => item.group === name).length}</small></button>)}</div>}
-      {groupStages.length > 1 && <div role="group" aria-label="Chặng">{groupStages.map((name) => <button key={name} type="button" aria-pressed={activeStage === name} onClick={() => pick(group, name)}>{courseStageLabels[name]}</button>)}</div>}
+      {groupStages.length > 1 && <div role="group" aria-label="Mức luyện">{groupStages.map((name) => <button key={name} type="button" aria-pressed={activeStage === name} onClick={() => pick(group, name)}>{courseStageLabels[name]}{name === ownStage && <small className="t2-own-level">Mức của bạn</small>}</button>)}</div>}
+      {groupStages.length > 1 && <p className="t2-level-note">Làm mức của bạn trước. Chặng sau mở khi bạn đã làm đủ câu ở cả {groupStages.length} mức.</p>}
     </div>}
     {error && <p className="ll-error" role="alert">{error}</p>}
     {!current ? <p className="t2-soft">Chưa có câu luyện cho lựa chọn này.</p> : <>
@@ -361,7 +364,7 @@ function PracticeArea({ module, attempts, peeks, nextModule, onSaved, onPeek, on
         {list.map((item, i) => {
           const done = attemptDone(attempts[item.id]);
           const peeked = !done && peeks.includes(item.id);
-          return <button key={item.id} type="button" role="tab" aria-selected={item.id === current.id} className={`${done ? "is-done" : ""} ${peeked ? "is-peeked" : ""}`} title={item.id} onClick={() => setIndex(i)}>{done ? <Check size={13} strokeWidth={3}/> : i + 1}</button>;
+          return <button key={item.id} type="button" role="tab" aria-selected={item.id === current.id} className={`${done ? "is-done" : ""} ${peeked ? "is-peeked" : ""}`} aria-label={`Câu ${i + 1}${done ? " · đã làm" : peeked ? " · đã xem gợi ý" : ""}`} title={`Câu ${i + 1}${done ? " · đã làm" : peeked ? " · đã xem gợi ý" : ""}`} onClick={() => setIndex(i)}>{done ? <Check size={13} strokeWidth={3}/> : i + 1}</button>;
         })}
         <small>{list.filter((item) => attemptDone(attempts[item.id])).length}/{list.length} câu đã làm</small>
       </div>

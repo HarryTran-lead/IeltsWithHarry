@@ -436,3 +436,8 @@
 .t2-path :is(h2,h3,p){margin:0}
 .sp-page .t2-start{margin:14px 0 0}
 .t2-lessonbar{display:grid;gap:10px}
+
+/* Practice level tabs: the learner's own level is marked, and the rule for opening the next milestone is said. */
+.t2-filters button small.t2-own-level{padding:1px 6px;border-radius:var(--r-pill);background:var(--ll-soft);color:var(--ll-tone);font-size:var(--fs-2xs);font-weight:800;opacity:1}
+.t2-filters button[aria-pressed=true] small.t2-own-level{background:rgba(255,255,255,.22);color:inherit}
+.t2-level-note{flex-basis:100%;margin:0;color:var(--ll-muted);font-size:var(--fs-xs)}
