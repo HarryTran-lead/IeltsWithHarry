@@ -23,7 +23,7 @@ export function speakingCourse(catalog: SpeakingCatalog, tab: SpeakingTab): Path
   let stages: PathStage[];
   if (tab === "skills") {
     stages = criterionOrder.map((criterion) => ({
-      id: criterion, title: criterionInfo[criterion].name, about: criterionInfo[criterion].en,
+      id: criterion, title: criterionInfo[criterion].name, about: criterionInfo[criterion].en, tone: { color: criterionInfo[criterion].tone, soft: criterionInfo[criterion].soft },
       lessons: units.filter((unit) => unit.criterion === criterion).map((unit) => lesson(unit, `${unit.skills[0]} · ${unit.title_en}`)),
     }));
   } else if (tab === "topics") {

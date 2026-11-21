@@ -64,6 +64,12 @@ describe("buildPath", () => {
     expect(back.next?.node.id).toBe("a");
   });
 
+  it("opens review for mistakes from a lesson still in progress", () => {
+    const view = buildPath(course, { lessons: { a: { step: 1, mistakes: 3 } }, checkpoints: {} });
+    expect(view.stages[0].nodes.find((node) => node.kind === "review")).toMatchObject({ status: "open", mistakes: 3, href: "/r1" });
+    expect(view.mistakes).toBe(3);
+  });
+
   it("returns no next step when the course is finished", () => {
     const lessons = Object.fromEntries(["a", "b", "c", "d", "e"].map((id) => [id, { done: true }]));
     expect(buildPath(course, { lessons, checkpoints: { s1: 1 } }).next).toBeNull();

@@ -11,9 +11,12 @@ import { celebrate } from "@/lib/celebrate";
 import type { GradedQuestion, PublicLesson, PublicQuestion } from "@/lib/dictation-skill-lab/lessons";
 import { listeningModuleById, listeningModules, listeningTypeLabels } from "@/lib/listening-lab/curriculum";
 import type { ListeningModulePlan, ListeningPhase, ListeningTask } from "@/lib/listening-lab/plan";
-import { loadPracticeResults, savePracticeSnapshot } from "@/features/learning/practice-results";
+import { listPracticeResults, loadPracticeResults, savePracticeSnapshot } from "@/features/learning/practice-results";
+import { LessonLocked, LessonSteps, LessonTopBar } from "@/features/self-study-path/study-path";
+import { buildPath } from "@/lib/self-study-path/path";
+import { listeningCourse, listeningProgress, nextPhaseOf } from "./listening-path";
 import {
-  BASE, clock, errorReasons, errorSlug, fetchLesson, gradeTask, mastered, phaseInfo, phasePassed, phaseResult, phases, phaseSlug,
+  BASE, clock, errorPrefix, errorReasons, errorSlug, fetchLesson, gradeTask, mastered, phaseInfo, phasePassed, phaseResult, phases, phaseSlug,
   placementStartPrefix, questionKey, stageLevels, themeFor, type Progress,
 } from "./listening-lab-shared";
 
@@ -47,7 +50,22 @@ export function ModulePage({ id }: { id: string }) {
   const [attempt, setAttempt] = useState(0);
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState("");
+  const [locked, setLocked] = useState<{ title: string; href?: string } | null>(null);
   const resultRef = useRef<HTMLDivElement>(null);
+
+  // Modules open in path order: one not reached yet sends the learner to the one that is.
+  useEffect(() => {
+    let alive = true;
+    const safe = (prefix: string) => listPracticeResults(prefix).catch(() => null);
+    void Promise.all([safe("listening-lab:v1:"), safe(errorPrefix), safe(placementStartPrefix)]).then(([all, errors, placement]) => {
+      if (!alive || !all) return;
+      const view = buildPath(listeningCourse(), listeningProgress(all, errors ?? {}, placement ?? {}));
+      const node = view.stages.flatMap((stage) => stage.nodes).find((item) => item.id === id);
+      const next = view.next?.node;
+      if (node?.status === "locked") setLocked({ title: next ? `Bài ${next.number} · ${next.title}` : "", href: next?.href });
+    });
+    return () => { alive = false; };
+  }, [id]);
 
   useEffect(() => { const requested = window.location.hash.slice(1) as ListeningPhase; if (phases.includes(requested)) queueMicrotask(() => setPhase(requested)); }, []);
   useEffect(() => {
@@ -55,7 +73,12 @@ export function ModulePage({ id }: { id: string }) {
     void Promise.all([
       fetch(`/api/listening-lab/modules/${id}`, { cache: "no-store" }).then(async (res) => { const json = await res.json(); if (!res.ok) throw new Error(json.error ?? "Không tải được bài."); return json.plan as ListeningModulePlan; }),
       loadPracticeResults(phases.map((item) => phaseSlug(id, item))).catch(() => ({})),
-    ]).then(([loaded, saved]) => { if (alive) { setPlan(loaded); setProgress(saved); } })
+    ]).then(([loaded, saved]) => {
+      if (!alive) return;
+      setPlan(loaded); setProgress(saved);
+      // Without a #phase in the link, reopen the module where the learner stopped.
+      if (!phases.includes(window.location.hash.slice(1) as ListeningPhase)) setPhase(nextPhaseOf(id, saved));
+    })
       .catch((failure: unknown) => { if (alive) setError(failure instanceof Error ? failure.message : "Không tải được bài."); });
     return () => { alive = false; };
   }, [id]);
@@ -108,36 +131,27 @@ export function ModulePage({ id }: { id: string }) {
   const ready = tasks.length > 0 && tasks.every((task) => lessons[task.lessonId]);
   const totalMs = tasks.reduce((sum, task) => sum + lessonDuration(lessons[task.lessonId]), 0);
   const starts = startNumbers(tasks);
+  const position = phases.indexOf(phase);
+  // Phases open in order: the one after the furthest phase already submitted, or any phase visited from a link.
+  const reached = Math.min(phases.length - 1, Math.max(position, ...phases.map((item, index) => phaseResult(progress, unit.id, item)?.checked ? index + 1 : 0)));
+  const lessonName = `Bài ${listeningModules.findIndex((item) => item.id === unit.id) + 1} · ${unit.title}`;
 
-  return <div className="ll-page ll-module" style={themeStyle(unit.level)}>
-    <Breadcrumb current={`${unit.id}. ${unit.title}`}/>
-    <header className="ll-module-hero">
-      <div className="ll-module-badge"><small>Mô-đun</small><b>{unit.id}</b></div>
-      <div className="ll-module-copy">
-        <span className="ll-kicker">Chặng {unit.level} · {themeFor(unit.level).name}</span>
-        <h1>{unit.title}</h1>
-        <p>{unit.objective}</p>
-        <div className="ll-chips">{unit.types.map((type) => <span key={type}>{listeningTypeLabels[type] ?? type}</span>)}<span className="is-draft">Bản thử nghiệm</span></div>
-      </div>
-      <aside className="ll-goal" aria-label="Điều kiện đạt mô-đun">
-        <strong><Target size={15}/> Đạt mô-đun khi</strong>
-        <GoalRow label="Độc lập" need="≥ 8/10" result={phaseResult(progress, unit.id, "independent")} pass={phasePassed(phaseResult(progress, unit.id, "independent"), "independent")}/>
-        <GoalRow label="Chuyển giao" need="≥ 75%" result={phaseResult(progress, unit.id, "transfer")} pass={phasePassed(phaseResult(progress, unit.id, "transfer"), "transfer")}/>
-        {mastered(unit.id, progress) && <em><CheckCircle2 size={14}/> Đã đạt mô-đun</em>}
-      </aside>
+  if (locked) return <LessonLocked title={lessonName} nextTitle={locked.title} nextHref={locked.href} pathHref={BASE}/>;
+
+  return <div className="ll-page ll-module sp-kit" style={themeStyle(unit.level)}>
+    <header className="ll-lessonbar">
+      <LessonTopBar exitHref={BASE} step={position} count={phases.length} title={<>
+        <span>Listening · {themeFor(unit.level).name} · mức {unit.level}</span>
+        <b>{lessonName}</b>
+        <span className="t1-lessonbar-meta">Mô-đun {unit.id} · {unit.objective} · <Target size={12} aria-hidden/> Đạt khi Độc lập ≥ 8/10 và Chuyển giao ≥ 75%{mastered(unit.id, progress) && <> · <CheckCircle2 size={12} aria-hidden/> Đã đạt</>}</span>
+      </>}/>
+      <LessonSteps steps={phases.map((item) => {
+        const result = phaseResult(progress, unit.id, item);
+        return { label: phaseInfo[item].label, note: result?.checked ? `${result.correct}/${result.checked} đúng` : `${plan.counts[item]} câu · ${phaseInfo[item].rule}`, pass: phasePassed(result, item) };
+      })} step={position} reached={reached} onPick={(index) => choosePhase(phases[index])}/>
     </header>
 
     <div className="ll-tip"><span><Lightbulb size={17}/></span><p><b>Mẹo trước khi nghe</b>{unit.strategy}</p></div>
-
-    <ol className="ll-stepper" aria-label="Các bước luyện">{phases.map((item) => {
-      const result = phaseResult(progress, unit.id, item);
-      const pass = phasePassed(result, item);
-      return <li key={item}><button type="button" aria-current={phase === item ? "step" : undefined} className={`${pass ? "is-pass" : result?.checked ? "is-tried" : ""}`} onClick={() => choosePhase(item)}>
-        <span className="ll-step-dot">{pass ? <Check size={15} strokeWidth={3}/> : phaseInfo[item].step}</span>
-        <span className="ll-step-text"><b>{phaseInfo[item].label}</b><small>{plan.counts[item]} câu · {phaseInfo[item].rule}</small></span>
-        <span className="ll-step-score">{result?.checked ? `${result.correct}/${result.checked}` : "Chưa làm"}</span>
-      </button></li>;
-    })}</ol>
 
     <section className="ll-brief" aria-live="polite">
       <div><span className="ll-kicker">Bước {info.step}/3</span><h2>{info.label}</h2><p>{info.hint}</p></div>
@@ -162,9 +176,6 @@ export function ModulePage({ id }: { id: string }) {
   </div>;
 }
 
-function GoalRow({ label, need, result, pass }: { label: string; need: string; result?: { correct: number; checked: number }; pass: boolean }) {
-  return <div className={`ll-goal-row ${pass ? "is-pass" : ""}`}><span>{pass ? <Check size={13} strokeWidth={3}/> : null}{label}</span><small>{need}</small><b>{result?.checked ? `${result.correct}/${result.checked}` : "—"}</b></div>;
-}
 
 export function Breadcrumb({ current }: { current: string }) {
   return <nav className="ll-breadcrumb" aria-label="Vị trí"><Link href="/app/self-study/listening">Listening Lab</Link><span aria-hidden="true">›</span><span>{current}</span></nav>;
