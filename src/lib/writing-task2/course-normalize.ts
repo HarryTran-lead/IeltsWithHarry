@@ -94,13 +94,16 @@ const LABELS: Record<string, string> = {
   conclusion: "Kết luận", conclusion_vi: "Kết luận", command: "Câu lệnh", command_en: "Câu lệnh", required: "Bắt buộc", required_vi: "Bắt buộc",
   not_required: "Không bắt buộc", not_required_vi: "Không bắt buộc", subtype: "Dạng nhỏ", revised_vi_explanation: "Giải thích bản sửa", outcome: "Kết quả",
   hints: "Gợi ý", recommended_minutes: "Thời gian gợi ý (phút)", product: "Sản phẩm", learning_instruction: "Cách học", body_1: "Body 1", body_2: "Body 2",
+  // R01's worked example walks the six-step prompt reading by numbered stage.
+  stage1: "Bước 1 · Chủ đề và đối tượng", stage2: "Bước 2 · Câu lệnh", stage3: "Bước 3 · Các nhiệm vụ", stage4: "Bước 4 · Phạm vi",
+  stage5: "Bước 5 · Lập trường", stage6: "Bước 6 · Dàn ý",
 };
 
 const humanise = (key: string) => {
   const base = key.replace(/_(en|vi)$/, "").replace(/_/g, " ");
   return base.charAt(0).toUpperCase() + base.slice(1);
 };
-export const labelOf = (key: string) => LABELS[key] ?? (questionTypeLabels[key] || courseStageLabels[key] || humanise(key));
+export const labelOf = (key: string) => LABELS[key] ?? LABELS[key.toLowerCase()] ?? LABELS[key.replace(/_(en|vi)$/, "").toLowerCase()] ?? (questionTypeLabels[key] || courseStageLabels[key] || humanise(key));
 
 function summarise(o: Obj): string {
   return Object.entries(o).filter(([key, value]) => !META.has(key) && (typeof value === "string" || typeof value === "number") && String(value).trim())
@@ -364,7 +367,12 @@ export function buildCourseModule(id: string, files: CourseSourceFile[]): { modu
   for (const item of practice) { const parts = answerParts.get(item.id); if (parts) { answers[item.id] = answerOf(parts); item.reference = true; } }
 
   // Some milestones publish the same worked example or reference block in two files.
-  const seenExamples = new Set<string>(), seenSections = new Set<string>();
+  const seenExamples = new Set<string>(), seenSections = new Set<string>(), seenUnits = new Set<string>();
+  // R01's requirement guide repeats its six reading steps under a second key; keep each teaching unit once.
+  body.units = body.units.filter((unit) => {
+    const key = JSON.stringify([unit.title, unit.goal, unit.steps, unit.example_en, unit.good_en, unit.fields]);
+    return !seenUnits.has(key) && Boolean(seenUnits.add(key));
+  });
   body.examples = body.examples.filter((example) => !seenExamples.has(example.id) && Boolean(seenExamples.add(example.id)));
   body.sections = body.sections.filter((section) => { const key = JSON.stringify([section.list, section.cards]); return !seenSections.has(key) && Boolean(seenSections.add(key)); });
 
