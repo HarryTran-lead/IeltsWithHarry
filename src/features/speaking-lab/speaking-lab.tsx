@@ -18,7 +18,7 @@ import {
 } from "@/lib/speaking-lab/types";
 import { cacheSpeakingState, keepRecording, loadAllSpeakingStates, loadSpeakingState, recordingUrl, releaseSpeaking, saveSpeakingState } from "./speaking-state";
 import { useLearnerStreak } from "@/features/account/use-learner-streak";
-import { LessonDone, LessonLocked, LessonSteps, LessonTopBar, StudyPath } from "@/features/self-study-path/study-path";
+import { LessonBar, LessonDone, LessonLocked, StudyPath } from "@/features/self-study-path/study-path";
 import { buildPath } from "@/lib/self-study-path/path";
 import { speakingCourse, speakingProgress, speakingTabOf, type SpeakingTab } from "@/lib/self-study-path/speaking";
 import "@/features/listening/listening-lab.css";
@@ -231,14 +231,15 @@ function UnitPage({ id }: { id: string }) {
 
   return <div className="ll-page ll-module spk-lab sp-kit" style={unitTone(unit, catalog)}>
     <header className="spk-lessonbar">
-      <LessonTopBar exitHref={mapHref(unit)} step={release?.current === null ? unit.tasks.length - 1 : turn} count={unit.tasks.length} title={<>
-        <span>Speaking · {kicker}{unit.kind === "mock" ? ` · ${unit.level}` : ` · ${partLabel(unit.part)}`}</span>
-        <b>{lessonName}</b>
-        <span className="t1-lessonbar-meta"><span lang="en">{unit.title_en}{unit.topic_en ? ` · ${unit.topic_en}` : ""}</span>{skills.map((skill) => <span key={skill.id}>· {skill.id} {skill.title_vi}</span>)}</span>
-      </>}/>
-      {unit.kind !== "mock" && <LessonSteps steps={unit.tasks.map((task) => ({ label: task.label, note: state.done[task.id] ? "Đã xong" : task.hint, pass: Boolean(state.done[task.id]) }))}
-        step={release?.current === null ? -1 : turn} reached={release?.current === null ? unit.tasks.length - 1 : turn}
-        onPick={(index) => document.getElementById(`spk-task-${index}`)?.scrollIntoView({ behavior: "smooth", block: "start" })}/>}
+      <LessonBar exitHref={mapHref(unit)} kicker={`Speaking · ${kicker}${unit.kind === "mock" ? ` · ${unit.level}` : ` · ${partLabel(unit.part)}`}`} title={lessonName}
+        info={<>
+          <p lang="en">{unit.title_en}{unit.topic_en ? ` · ${unit.topic_en}` : ""}</p>
+          {skills.length > 0 && <p>{skills.map((skill) => `${skill.id} ${skill.title_vi}`).join(" · ")}</p>}
+        </>}
+        count={unit.tasks.length}
+        steps={unit.kind === "mock" ? undefined : unit.tasks.map((task) => ({ label: task.label, note: state.done[task.id] ? "Đã xong" : task.hint, pass: Boolean(state.done[task.id]) }))}
+        step={release?.current === null ? unit.tasks.length : turn} reached={release?.current === null ? unit.tasks.length - 1 : turn}
+        onPick={(index) => document.getElementById(`spk-task-${index}`)?.scrollIntoView({ behavior: "smooth", block: "start" })}/>
     </header>
 
     {unit.target_vi && <div className="ll-tip"><span><Target size={17}/></span><p><b>Mục tiêu</b>{unit.target_vi}</p></div>}
