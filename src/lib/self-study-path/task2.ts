@@ -4,7 +4,7 @@
  * - "Khoá kỹ năng": the R01–R16 milestones grouped in six layers.
  * Client-safe: built from the summaries the Lab APIs return and the learner's saved work.
  */
-import { COURSE_BASE, courseLayers, type CourseModuleSummary } from "@/lib/writing-task2/course-types";
+import { COURSE_BASE, courseLayers, requiredPractice, type CourseModuleSummary } from "@/lib/writing-task2/course-types";
 import { TASK2_BASE, drillSaved, essaySaved, questionTypeLabels, stageInfo, stageOrder, type Task2LessonSummary, type Task2Stage, type Task2State } from "@/lib/writing-task2/types";
 import { bandSpan, type LessonProgress, type PathCourse, type PathProgress, type PathStage } from "./path";
 
@@ -75,13 +75,20 @@ export function task2SkillsCourse(modules: CourseModuleSummary[]): PathCourse {
   };
 }
 
-/** A milestone is complete once every practice item has a saved attempt. `counts` comes from loadCourseProgress. */
-export function task2SkillsProgress(modules: CourseModuleSummary[], counts: Record<string, number>): PathProgress {
+/**
+ * A milestone is complete once the learner has a saved attempt for every item at their own level plus the items every
+ * level does (see requiredPractice). `done` holds the attempted practice ids per milestone (loadCourseDone).
+ */
+export function task2SkillsProgress(modules: CourseModuleSummary[], done: Record<string, string[]>, level: Task2Stage = "foundation"): PathProgress {
   const progress: PathProgress = { lessons: {}, checkpoints: {} };
   for (const item of modules) {
-    const done = Math.min(counts[item.id] ?? 0, item.counts.practice);
-    if (item.counts.practice > 0 && done >= item.counts.practice) progress.lessons[item.id] = { done: true, note: `Đã làm ${done}/${item.counts.practice} câu` };
-    else if (done > 0) progress.lessons[item.id] = { step: 0, note: `Đã làm ${done}/${item.counts.practice} câu` };
+    const attempted = new Set(done[item.id] ?? []);
+    const required = item.levels ? requiredPractice(item.levels, level) : null;
+    const total = required ? required.length : item.counts.practice;
+    const count = required ? required.filter((id) => attempted.has(id)).length : Math.min(attempted.size, total);
+    const note = `Đã làm ${count}/${total} câu${required ? ` · mức ${stageInfo[level].name}` : ""}`;
+    if (total > 0 && count >= total) progress.lessons[item.id] = { done: true, note };
+    else if (attempted.size > 0) progress.lessons[item.id] = { step: 0, note };
   }
   return progress;
 }

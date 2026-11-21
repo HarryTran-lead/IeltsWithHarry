@@ -60,8 +60,8 @@ export async function saveCourseAttempt(moduleId: string, id: string, attempt: C
   return true;
 }
 
-/** How many practice items each milestone has a saved attempt for, read from slugs only. */
-export async function loadCourseProgress(): Promise<Record<string, number>> {
+/** The practice items each milestone has a saved attempt for, read from slugs only. */
+export async function loadCourseDone(): Promise<Record<string, string[]>> {
   const ids: Record<string, Set<string>> = {};
   for (const [moduleId, attempts] of Object.entries(localAttempts())) for (const [id, attempt] of Object.entries(attempts)) if (attemptDone(attempt)) (ids[moduleId] ??= new Set()).add(id);
   if (liveMode) {
@@ -72,7 +72,7 @@ export async function loadCourseProgress(): Promise<Record<string, number>> {
       if (moduleId && rest.length) (ids[moduleId] ??= new Set()).add(rest.join(":"));
     }
   }
-  return Object.fromEntries(Object.entries(ids).map(([moduleId, set]) => [moduleId, set.size]));
+  return Object.fromEntries(Object.entries(ids).map(([moduleId, set]) => [moduleId, [...set]]));
 }
 
 export function readPeeks(moduleId: string): string[] {
