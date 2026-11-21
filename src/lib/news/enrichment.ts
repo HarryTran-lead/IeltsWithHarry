@@ -607,7 +607,7 @@ export async function enrichNews({ scheduled = false, photoOnly = false }: { sch
     if (result.imagesChecked) return result;
   }
   if (slot === "photo") {
-    await enrichPhotoWork(db, result, new Date().getUTCHours() % 2 ? "real_cover_upgrade" : "inline_image");
+    await enrichPhotoWork(db, result);
     if (result.inlineImagesChecked || result.coverUpgradesChecked) return result;
   }
   if (slot === "translation") {
@@ -650,10 +650,10 @@ async function enrichPhotoWork(db: Db, result: PhotoWorkResult, onlyKind?: "inli
       if (kind === "inline_image") result.inlineImagesChecked++;
       else result.coverUpgradesChecked++;
       try {
-        // The middle of the passage gives the second photo a different subject from the cover.
-        const middle = article.body_text?.slice(Math.floor(article.body_text.length / 3)) ?? "";
+        // Search with the full article for strong matches, then exclude the cover
+        // so the in-passage photo still adds a distinct visual.
         const found = await findNewsIllustrationResult(article.title, fetch, {
-          body: kind === "inline_image" ? middle : article.body_text ?? "",
+          body: article.body_text ?? "",
           excludeUrls: [article.cover_image_url],
         });
         if (!found.image) { await finish(db, article.article_id, kind, "none", found.reason); continue; }
