@@ -19,6 +19,7 @@ import { LessonBar, LessonDone, LessonLocked } from "@/features/self-study-path/
 import { buildPath } from "@/lib/self-study-path/path";
 import { readTask2Level, task2LessonsCourse, task2LessonsProgress } from "@/lib/self-study-path/task2";
 import { loadAllTask2States } from "./task2-state";
+import { useSkillFor } from "./task2-path";
 
 type Step = "read" | "learn" | "drills" | "write";
 const stepIds: Step[] = ["read", "learn", "drills", "write"];
@@ -300,8 +301,22 @@ function ReadStep({ lesson, onNext }: { lesson: Task2Lesson; onNext: () => void 
         : <ol className="t2-outline-list">{(type?.plan_vi ?? []).map((part) => <li key={part}><b>{withTerms(part)}</b></li>)}</ol>}
       <p className="t2-target"><Target size={15}/><span><b>Mục tiêu hoàn thành:</b> {withTerms(lesson.target_vi)}</span></p>
     </section>
+    <SkillLink questionType={lesson.question_type}/>
     <div className="t2-next"><button type="button" className="ll-btn ll-btn-primary" onClick={onNext}>Tiếp: học cách làm <ArrowRight size={16}/></button></div>
   </>;
+}
+
+/** Points a prompt lesson back at the skills milestone that teaches its question type (R09–R12). */
+function SkillLink({ questionType }: { questionType: string }) {
+  const found = useSkillFor(questionType);
+  if (!found) return null;
+  const { module: milestone, node } = found;
+  const open = node && node.status !== "locked" && node.href;
+  const state = node?.status === "done" ? "Bạn đã học xong chặng này, xem lại khi cần." : open ? "Nên học chặng này trước hoặc song song với đề này." : "Chặng này mở khi bạn học tới đó trong Khoá kỹ năng.";
+  return <aside className="t2-skill-link">
+    <span><small>Kỹ năng cho dạng đề này · Khoá kỹ năng</small><b>{milestone.id} · {milestone.title}</b><em>{state}</em></span>
+    {open && <Link className="ll-btn" href={node.href!}>Học kỹ năng <ArrowRight size={15}/></Link>}
+  </aside>;
 }
 
 /* ───────────── Step 2: learn how ───────────── */

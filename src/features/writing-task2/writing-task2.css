@@ -441,3 +441,25 @@
 .t2-filters button small.t2-own-level{padding:1px 6px;border-radius:var(--r-pill);background:var(--ll-soft);color:var(--ll-tone);font-size:var(--fs-2xs);font-weight:800;opacity:1}
 .t2-filters button[aria-pressed=true] small.t2-own-level{background:rgba(255,255,255,.22);color:inherit}
 .t2-level-note{flex-basis:100%;margin:0;color:var(--ll-muted);font-size:var(--fs-xs)}
+
+/* Bridges between the skills course and the prompt lessons */
+.t2-apply h3{margin:2px 0 10px;font-size:var(--fs-md)}
+.t2-apply-next{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 14px;border:1px solid color-mix(in srgb,var(--ll-tone) 35%,#fff);border-radius:var(--r-md);background:color-mix(in srgb,var(--ll-soft) 55%,#fff);color:var(--ll-ink)!important;text-decoration:none!important}
+.t2-apply-next:hover{border-color:var(--ll-tone)}
+.t2-apply-next>span{display:grid;gap:1px;min-width:0}
+.t2-apply-next small{color:var(--ll-tone);font-size:var(--fs-2xs);font-weight:800;letter-spacing:.06em;text-transform:uppercase}
+.t2-apply-next b{font-size:var(--fs-md)}
+.t2-apply-next em{color:var(--ll-muted);font-size:var(--fs-xs);font-style:normal}
+.t2-apply-lead{margin:12px 0 6px!important;color:var(--ll-muted);font-size:var(--fs-sm)}
+.t2-apply-list{display:grid;gap:4px;margin:0;padding:0;list-style:none}
+.t2-apply-list li{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:7px 10px;border-radius:var(--r-sm);background:#f6f8fa;font-size:var(--fs-sm)}
+.t2-apply-list a{color:var(--ll-tone);font-weight:700}
+.t2-apply-list small{flex:none;color:var(--ll-muted);font-size:var(--fs-2xs);font-weight:800}
+.t2-apply-list .is-done small{color:var(--ll-good)}
+.t2-apply-list .is-current small{color:var(--ll-tone)}
+.t2-apply-list .is-locked{color:var(--ll-muted)}
+.t2-skill-link{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px;margin-top:12px;padding:12px 14px;border:1px dashed color-mix(in srgb,var(--ll-tone) 40%,#fff);border-radius:var(--r-md);background:#fff}
+.t2-skill-link>span{display:grid;gap:1px;min-width:0}
+.t2-skill-link small{color:var(--ll-tone);font-size:var(--fs-2xs);font-weight:800;letter-spacing:.06em;text-transform:uppercase}
+.t2-skill-link b{font-size:var(--fs-sm)}
+.t2-skill-link em{color:var(--ll-muted);font-size:var(--fs-xs);font-style:normal}
