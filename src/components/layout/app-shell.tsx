@@ -203,7 +203,7 @@ function AppShellContent({ children, canManage }: { children: React.ReactNode; c
   const vocabularyLayout = /^\/app\/(?:vocabulary(?:\/|$)|reading\/vocabulary(?:\/|$)|listening\/vocabulary(?:\/|$))/.test(pathname);
   const learningRoute = /^\/app\/(?:vocabulary\/(?:study|review|practice|listening|collocations|word-formation|translation)(?:\/|$)|reading\/vocabulary(?:\/|$)|listening\/vocabulary(?:\/|$))/.test(pathname);
   // A self-study lesson (anything below a Lab's path map) gets the same trimmed header and quiet corners, so the work fits one screen.
-  const lessonRoute = /^\/app\/self-study\/(?:writing-task-1|writing-task-2|speaking|listening)\/.+/.test(pathname);
+  const lessonRoute = /^\/app\/(?:self-study\/(?:writing-task-1|writing-task-2|speaking|listening)|reading\/lab)\/.+/.test(pathname);
   const focusRoute = learningRoute || lessonRoute;
   const { online: studyOnline } = useStudyPresence();
   const learnerStreak = useLearnerStreak();

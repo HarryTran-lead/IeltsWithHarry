@@ -27,7 +27,7 @@ export function learnStageAvailable(stageId: string) {
 }
 
 export function lockedLearnerPath(pathname: string) {
-  if (pathname === "/app/reading/lab")
+  if (pathname === "/app/reading/lab" || pathname.startsWith("/app/reading/lab/"))
     return process.env.NEXT_PUBLIC_DISABLE_READING_LAB === "true";
   if (pathname === "/app/self-study/listening" || pathname.startsWith("/app/self-study/listening/"))
     return process.env.NEXT_PUBLIC_DISABLE_LISTENING_LAB === "true";
