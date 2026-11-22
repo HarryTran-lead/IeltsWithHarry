@@ -411,12 +411,15 @@ async function openverseCandidates(query: string, keywords: string[], fetcher: t
 }
 
 const maxCandidates = 6;
+type PhotoSearchTrace = { queries: string[]; rejectedUrls: string[] };
+type IllustrationOptions = { body?: string; query?: string; excludeUrls?: string[]; triedQueries?: string[]; trace?: PhotoSearchTrace };
 /**
  * Licensed photos that might illustrate the article, best keyword match first:
  * the AI's visual subject is searched first, then the article's main terms. At most
  * three per library so one library cannot crowd out the other.
  */
-async function gatherCandidates(title: string, body: string, query: string, fetcher: typeof fetch, expanded = false) {
+async function gatherCandidates(title: string, body: string, query: string, fetcher: typeof fetch, expanded = false,
+  triedQueries: string[] = [], trace?: PhotoSearchTrace) {
   const namedPlace = body.slice(0, 1500).match(/\b((?:[A-Z][a-z]+[\s-]+){2,8}(?:Expressway|Airport|Bridge|Highway|River|University|Hospital|Stadium|Station|Museum|Park))\b/)?.[1]
     ?.replace(/^(?:The|A|An)\s+/, "").trim() ?? "";
   const keywords = [...new Set([...words(namedPlace), ...imageKeywords(title, body, query)])].slice(0, 10);
@@ -426,15 +429,25 @@ async function gatherCandidates(title: string, body: string, query: string, fetc
   // Vietnamese stories look for photos taken in Vietnam first; the AI rejects scenes from elsewhere.
   const local = subject && /\bviet ?nam(ese)?\b/i.test(`${title} ${body.slice(0, 1500)}`) && !/vietnam/.test(subject) ? `${subject} vietnam` : "";
   const bodyTerms = imageKeywords("", body).slice(0, 3).join(" ");
-  // Reserve the third query for articles whose first two searches found no
-  // suitable photo, keeping Openverse within its anonymous daily budget.
-  const searches = [...new Set([namedPlace, local, subject, keywords.slice(0, 3).join(" "), bodyTerms, keywords.slice(3, 6).join(" ")].filter(Boolean))]
+  const titleTerms = words(title);
+  const middleTerms = imageKeywords("", body.slice(Math.floor(body.length / 3))).slice(0, 3).join(" ");
+  const vietnam = /\bviet ?nam(ese)?\b/i.test(`${title} ${body.slice(0, 1500)}`);
+  // Each retry moves to fresh place, title, subject and later-passage terms.
+  const allSearches = [...new Set([namedPlace, local, subject, keywords.slice(0, 3).join(" "), bodyTerms,
+    keywords.slice(3, 6).join(" "), words(namedPlace).slice(-3).join(" "),
+    titleTerms.slice(0, 3).join(" "), titleTerms.slice(-3).join(" "),
+    vietnam ? `${titleTerms.slice(0, 2).join(" ")} vietnam` : "",
+    subjectTerms.slice(-2).join(" "), middleTerms,
+    vietnam && middleTerms ? `${middleTerms} vietnam` : ""].map((value) => value.trim().replace(/\s+/g, " ")).filter(Boolean))];
+  const previous = new Set(triedQueries.map((value) => value.toLowerCase()));
+  const searches = allSearches.filter((value) => !previous.has(value.toLowerCase()))
     .slice(expanded ? 2 : 0, expanded ? 3 : 2);
   const found = new Map<string, Candidate & { library: string }>();
   let failure: unknown = null;
   let successfulSearches = 0;
   const libraries = ["openverse", "commons", "nasa"] as const;
   for (const search of searches) {
+    trace?.queries.push(search);
     const results = await Promise.allSettled([openverseCandidates(search, keywords, fetcher), commonsCandidates(search, keywords, fetcher), nasaLibraryCandidates(search, keywords, fetcher)]);
     results.forEach((outcome, index) => {
       if (outcome.status === "rejected") { failure = outcome.reason; return; }
@@ -488,7 +501,8 @@ export const minimumImageFit = 7;
  */
 /** `query` is the visual subject used for the search; it also guides an AI illustration. */
 type IllustrationResult = { image: Illustration | null; reason: string; query: string };
-async function findNewsIllustrationResult(title: string, fetcher: typeof fetch = fetch, { body = "", query = "", excludeUrls = [] }: { body?: string; query?: string; excludeUrls?: string[] } = {}): Promise<IllustrationResult> {
+async function findNewsIllustrationResult(title: string, fetcher: typeof fetch = fetch,
+  { body = "", query = "", excludeUrls = [], triedQueries = [], trace }: IllustrationOptions = {}): Promise<IllustrationResult> {
   if (!process.env.GEMINI_API_KEY && !newsArticleFreeTierReady()) return { image: null, reason: "AI image selection is not configured", query };
   // Articles quizzed before the visual subject was stored (or too short for a quiz) get one
   // from a small text request: searching by headline words alone rarely finds a fitting photo.
@@ -501,7 +515,7 @@ async function findNewsIllustrationResult(title: string, fetcher: typeof fetch =
   let previewsFound = false;
   let bestFit = 0;
   for (const expanded of [false, true]) {
-    const candidates = (await gatherCandidates(title, body, query, fetcher, expanded))
+    const candidates = (await gatherCandidates(title, body, query, fetcher, expanded, triedQueries, trace))
       .filter((candidate) => !seen.has(candidate.value.image_url) && !excludeUrls.includes(candidate.value.image_url));
     candidates.forEach((candidate) => seen.add(candidate.value.image_url));
     if (!candidates.length) continue;
@@ -517,13 +531,14 @@ async function findNewsIllustrationResult(title: string, fetcher: typeof fetch =
     const chosen = typeof data.best === "number" ? batch[data.best - 1] : undefined;
     bestFit = Math.max(bestFit, data.fit ?? 0);
     if (chosen && (data.fit ?? 0) >= minimumImageFit) return { image: chosen.candidate.value, reason: "", query };
+    trace?.rejectedUrls.push(...batch.map((entry) => entry.candidate.value.image_url));
   }
   if (!candidatesFound) return { image: null, reason: "No licensed image matched the article search", query };
   if (!previewsFound) return { image: null, reason: "Licensed image previews were unavailable", query };
   return { image: null, reason: `AI found no suitable image (best fit ${Math.max(0, Math.min(10, bestFit))}/10)`, query };
 }
 
-export async function findNewsIllustration(title: string, fetcher: typeof fetch = fetch, options: { body?: string; query?: string; excludeUrls?: string[] } = {}): Promise<Illustration | null> {
+export async function findNewsIllustration(title: string, fetcher: typeof fetch = fetch, options: IllustrationOptions = {}): Promise<Illustration | null> {
   return (await findNewsIllustrationResult(title, fetcher, options)).image;
 }
 
@@ -645,6 +660,18 @@ export async function enrichNews({ scheduled = false, photoOnly = false }: { sch
 type EnrichResult = { imagesChecked: number; imagesAdded: number; quizzesChecked: number; quizzesAdded: number; aiConfigured: boolean; quotaLimited: boolean; errors: string[] };
 type PhotoWorkResult = EnrichResult & { inlineImagesChecked: number; inlineImagesAdded: number; coverUpgradesChecked: number; coverUpgradesAdded: number };
 type PhotoClaim = Claim & { cover_image_url: string };
+type PhotoAttemptState = { photo_attempt_count: number; photo_search_queries: string[]; photo_rejected_urls: string[] };
+const minute = 60_000;
+const hour = 60 * minute;
+const day = 24 * hour;
+export function photoRetryDelayMs(reason: "none" | "timeout" | "error", attempts: number) {
+  const index = Math.min(Math.max(attempts, 1), 4) - 1;
+  return ({ none: [6 * hour, day, 3 * day, 7 * day], timeout: [20 * minute, 6 * hour, day, 7 * day],
+    error: [hour, 6 * hour, day, 7 * day] } as const)[reason][index];
+}
+function photoHistory(previous: string[], added: string[], limit: number) {
+  return [...new Set([...previous, ...added])].slice(-limit);
+}
 async function enrichPhotoWork(db: Db, result: PhotoWorkResult, onlyKind?: "inline_image" | "real_cover_upgrade") {
   if (!result.aiConfigured) return;
   for (const kind of ["inline_image", "real_cover_upgrade"] as const) {
@@ -656,27 +683,46 @@ async function enrichPhotoWork(db: Db, result: PhotoWorkResult, onlyKind?: "inli
     for (const article of claims) {
       if (kind === "inline_image") result.inlineImagesChecked++;
       else result.coverUpgradesChecked++;
+      const trace: PhotoSearchTrace = { queries: [], rejectedUrls: [] };
+      let state: PhotoAttemptState | null = null;
+      const extra = () => state ? {
+        photo_search_queries: photoHistory(state.photo_search_queries, trace.queries, 24),
+        photo_rejected_urls: photoHistory(state.photo_rejected_urls, trace.rejectedUrls, 48),
+      } : {};
       try {
+        const attempt = await db.from("news_enrichment_attempts")
+          .select("photo_attempt_count,photo_search_queries,photo_rejected_urls")
+          .eq("article_id", article.article_id).eq("kind", kind).single();
+        if (attempt.error) throw attempt.error;
+        state = attempt.data as PhotoAttemptState;
         // Search with the full article for strong matches, then exclude the cover
         // so the in-passage photo still adds a distinct visual.
         const found = await findNewsIllustrationResult(article.title, fetch, {
           body: article.body_text ?? "",
           query: queries.get(article.article_id) ?? "",
-          excludeUrls: [article.cover_image_url],
+          excludeUrls: [article.cover_image_url, ...state.photo_rejected_urls],
+          triedQueries: state.photo_search_queries,
+          trace,
         });
-        if (!found.image) { await finish(db, article.article_id, kind, "none", found.reason); continue; }
+        if (!found.image) {
+          await finish(db, article.article_id, kind, "none", found.reason,
+            photoRetryDelayMs("none", state.photo_attempt_count), extra());
+          continue;
+        }
         const saved = kind === "inline_image"
           ? await db.from("news_inline_images").upsert({ article_id: article.article_id, position: 1, ...found.image }, { onConflict: "article_id,position" })
           : await db.from("news_auto_illustrations").upsert({ article_id: article.article_id, ...found.image }, { onConflict: "article_id" });
         if (saved.error) throw saved.error;
         if (kind === "inline_image") result.inlineImagesAdded++;
         else result.coverUpgradesAdded++;
-        await finish(db, article.article_id, kind, "success");
+        await finish(db, article.article_id, kind, "success", "", undefined, extra());
       } catch (cause) {
         if (cause instanceof AiQuotaError) result.quotaLimited = true;
         const message = cause instanceof Error ? cause.message : "Licensed photo lookup failed";
         result.errors.push(`${kind} ${article.article_id}: ${message}`);
-        await finish(db, article.article_id, kind, "error", message, cause instanceof AiQuotaError ? cause.retryAfterMs : 3600000);
+        const timeout = cause instanceof Error && (cause.name === "TimeoutError" || /timed out|aborted due to timeout/i.test(message));
+        await finish(db, article.article_id, kind, "error", message,
+          cause instanceof AiQuotaError ? cause.retryAfterMs : photoRetryDelayMs(timeout ? "timeout" : "error", state?.photo_attempt_count ?? 1), extra());
       }
     }
   }
