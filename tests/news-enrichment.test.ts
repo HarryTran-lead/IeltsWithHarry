@@ -379,6 +379,19 @@ describe("illustration search checked by AI vision", () => {
     expect(second.queries.length).toBeGreaterThan(0);
     expect(second.queries.every((query) => !first.queries.includes(query))).toBe(true);
   });
+  it("does not search Vietnam for a Vietnamese person whose story is set abroad", async () => {
+    const { fetcher } = fetcherFor([], [], { best: -1, fit: 0 });
+    const body = "Minh Phuong, a teacher from Vietnam, works in the Australian desert. After completing her studies in Melbourne, she moved to the outback.";
+    const triedQueries: string[] = [];
+    for (let pass = 0; pass < 4; pass++) {
+      const trace = { queries: [] as string[], rejectedUrls: [] as string[] };
+      await run(() => findNewsIllustration("A New Horizon in the Australian Outback", fetcher,
+        { body, query: "australian desert outback", triedQueries, trace }));
+      triedQueries.push(...trace.queries);
+    }
+    expect(triedQueries.length).toBeGreaterThan(3);
+    expect(triedQueries.every((query) => !/vietnam|\bher\b|\bshe\b/i.test(query))).toBe(true);
+  });
   it("backs off photo retries and caps a weekly cycle", () => {
     expect(photoRetryDelayMs("timeout", 1)).toBe(20 * 60_000);
     expect(photoRetryDelayMs("none", 1)).toBe(6 * 3600_000);
