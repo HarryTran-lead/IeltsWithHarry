@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { AiQuotaError, findNewsIllustration, geminiJson, generateNewsQuiz, imageClaimLimit, imageKeywords, newsArticleFreeTierReady, normalizeAnswer, quizExcerpt, scheduledNewsWorkSlot, tfngOptions, transientQuizRetryMs, validateGeneratedQuiz as validateWithPlan } from "../src/lib/news/enrichment";
+import { AiQuotaError, findNewsIllustration, geminiJson, generateNewsQuiz, imageClaimLimit, imageKeywords, newsArticleFreeTierReady, normalizeAnswer, photoRetryDelayMs, quizExcerpt, scheduledNewsWorkSlot, tfngOptions, transientQuizRetryMs, validateGeneratedQuiz as validateWithPlan } from "../src/lib/news/enrichment";
 
 it("retries temporary quiz failures sooner without repeating permanent errors", () => {
   expect(transientQuizRetryMs("AI service returned HTTP 503")).toBe(30 * 60_000);
@@ -367,6 +367,24 @@ describe("illustration search checked by AI vision", () => {
     }));
     expect(searches[0]).toBe("Ho Chi Minh City-Long Thanh Expressway");
     expect(image?.image_source_url).toContain("Long_Thanh_Expressway_bridge");
+  });
+  it("tries fresh image searches on the next photo pass", async () => {
+    const { fetcher } = fetcherFor([], [], { best: -1, fit: 0 });
+    const first = { queries: [] as string[], rejectedUrls: [] as string[] };
+    const second = { queries: [] as string[], rejectedUrls: [] as string[] };
+    await run(() => findNewsIllustration("Concert tickets resold in Hanoi", fetcher, { query: "concert crowd", trace: first }));
+    await run(() => findNewsIllustration("Concert tickets resold in Hanoi", fetcher,
+      { query: "concert crowd", triedQueries: first.queries, excludeUrls: first.rejectedUrls, trace: second }));
+    expect(first.queries).toHaveLength(3);
+    expect(second.queries.length).toBeGreaterThan(0);
+    expect(second.queries.every((query) => !first.queries.includes(query))).toBe(true);
+  });
+  it("backs off photo retries and caps a weekly cycle", () => {
+    expect(photoRetryDelayMs("timeout", 1)).toBe(20 * 60_000);
+    expect(photoRetryDelayMs("none", 1)).toBe(6 * 3600_000);
+    expect(photoRetryDelayMs("none", 2)).toBe(24 * 3600_000);
+    expect(photoRetryDelayMs("none", 3)).toBe(72 * 3600_000);
+    expect(photoRetryDelayMs("error", 4)).toBe(7 * 24 * 3600_000);
   });
   it("never offers unlicensed or third-party images to the AI", async () => {
     const { fetcher, seen } = fetcherFor([commonsPage("All rights reserved")], [nasaItem({ secondary_creator: "Intuitive Machines" })], { best: 1, fit: 10 });
