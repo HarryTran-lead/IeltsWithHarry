@@ -80,7 +80,7 @@ const groups: SidebarGroup[] = [
       { href: "/app/self-study/writing-task-1", label: "Writing Task 1 Lab", icon: PenLine, tone: "sun" },
       { href: "/app/self-study/writing-task-2", label: "Writing Task 2 Lab", icon: PenLine, tone: "coral" },
       { href: "/app/self-study/speaking", label: "Speaking Lab", icon: Mic, tone: "lavender" },
-      { href: "/app/self-study/reading", label: "Reading Lab", icon: BookOpenText, tone: "coral", locked: true },
+      { href: "/app/reading/lab", label: "Reading Lab", icon: BookOpenText, tone: "coral" },
       { href: "/app/self-study/listening", label: "Listening Lab", icon: Headphones, tone: "teal" },
     ],
   },
