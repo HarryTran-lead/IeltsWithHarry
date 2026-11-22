@@ -4,6 +4,7 @@ import { XMLParser } from "fast-xml-parser";
 import { load } from "cheerio";
 import { NEWS_CATEGORIES, type NewsCategory } from "./constants";
 import { pressDiscoveryFeedUrls } from "./press-feeds";
+import { isPublisherBoilerplate } from "./source-blocks";
 
 export { pressDiscoveryFeedUrls } from "./press-feeds";
 
@@ -228,7 +229,7 @@ export function nasaArticleText(html: string): string {
     const lines = tag === "ul" || tag === "ol" ? el.find("li").toArray().map((li) => $(li).text()) : [el.text()];
     // Press contacts (names with e-mail addresses or phone numbers) are not reading material.
     const texts = lines.map((line) => line.replace(/\s+/g, " ").trim())
-      .filter((line) => line.length >= 12 && !/^-?end-?$/i.test(line) && !(line.length < 300 && /[\w.-]+@[\w-]+\.gov\b|\b\d{3}-\d{3}-\d{4}\b/.test(line)));
+      .filter((line) => line.length >= 12 && !isPublisherBoilerplate(line) && !/^-?end-?$/i.test(line) && !(line.length < 300 && /[\w.-]+@[\w-]+\.gov\b|\b\d{3}-\d{3}-\d{4}\b/.test(line)));
     if (/^h/.test(tag) && nasaBoilerplate.test(texts[0] ?? "")) break;
     blocks.push(...texts);
   }
@@ -330,7 +331,7 @@ export function parseGlobalVoicesBodies(xml: string, source: NewsSource): NewsBo
     $("script,style,iframe,figure,figcaption,blockquote,.wp-caption,.gv-rss-footer,.originally-published,.gv-donate,.gv-support,.gv-special-coverage,.post-excerpt").remove();
     $("p").each((_,node)=>{
       const value=$(node).text().replace(/\s+/g," ").trim();
-      if(value.length<300&&/^(?:Support Global Voices|Donate (?:now|to Global Voices)|This (?:post|story|article) is part of (?:our|the) (?:special coverage|spotlight)|Please (?:consider )?(?:donating|supporting Global Voices))/i.test(value))$(node).remove();
+      if(isPublisherBoilerplate(value))$(node).remove();
     });
     // Translators' notes such as "[AN: ...]" are editorial leftovers, not article text.
     const paragraphs = $("body").children("p,h2,h3,ul,ol").toArray().flatMap((node) => /^(ul|ol)$/i.test(node.tagName) ? $(node).find("li").toArray() : [node])

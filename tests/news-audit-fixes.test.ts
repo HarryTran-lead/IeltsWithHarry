@@ -5,8 +5,14 @@ import { parseQuestionDiagram,sharedMatchingOptions } from "../src/lib/news/ques
 import { parseReadingSections } from "../src/lib/news/reading-sections";
 import { nextNewsReads } from "../src/lib/news/daily-plan";
 import { inlinePhotoAnchor } from "../src/lib/news/inline-photo-layout";
+import { isPublisherBoilerplate } from "../src/lib/news/source-blocks";
 
 describe("Daily News audit regressions",()=>{
+  it("excludes publisher spotlights and image credits while retaining factual leads",()=>{
+    expect(isPublisherBoilerplate("This post is part of Global Voices’ November 2026 Spotlight series, Justice as infrastructure. You can support our work.")).toBe(true);
+    expect(isPublisherBoilerplate("Image credit: NASA/JPL-Caltech/MSSS")).toBe(true);
+    expect(isPublisherBoilerplate("Over 223,700 children have dropped out of school in Cameroon’s Northwest and Southwest regions.")).toBe(false);
+  });
   it("keeps full and partial outcomes distinct even if attempts arrive out of order",()=>{
     expect(cardResults([
       {article_id:"a",score:9,total:11,submitted_at:"2026-11-20",partial:false},
