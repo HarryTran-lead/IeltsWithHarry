@@ -431,6 +431,23 @@ describe("illustration search checked by AI vision", () => {
     const image = await run(() => findNewsIllustration("Artemis spacecraft Moon mission", fetcher));
     expect(image).toMatchObject({ image_credit: "NASA", license_url: "https://creativecommons.org/licenses/by-sa/4.0/" });
   });
+  it("accepts Commons category context and canonicalizes a licence URL without its final slash", async () => {
+    const page = commonsPage("CC BY-SA 4.0", "Dji-0031-2479-7509-26233946999421542541397");
+    page.imageinfo[0].extmetadata.ImageDescription.value = "Sân bay quốc tế Long Thành năm 2025";
+    page.imageinfo[0].extmetadata.LicenseUrl.value = "https://creativecommons.org/licenses/by-sa/4.0";
+    const withCategories = {
+      ...page,
+      imageinfo: [{ ...page.imageinfo[0], extmetadata: {
+        ...page.imageinfo[0].extmetadata,
+        Categories: { value: "Self-published work|Airport terminals in Vietnam|Long Thanh International Airport" },
+      } }],
+    };
+    const { fetcher } = fetcherFor([withCategories], [], { best: 1, fit: 9 });
+    const image = await run(() => findNewsIllustration("Architectural Innovation at Long Thanh International Airport", fetcher,
+      { query: "Long Thanh airport terminal", body: "The Long Thanh International Airport passenger terminal is under construction." }));
+    expect(image?.license_url).toBe("https://creativecommons.org/licenses/by-sa/4.0/");
+    expect(image?.image_source_url).toContain("Dji-0031");
+  });
   it("searches with the AI's visual subject and words the article repeats", () => {
     expect(imageKeywords("NASA Marks Milestone", "The coral reef grows. Coral reef scientists study the coral reef. Reef coral.", "coral reef survey")).toEqual(["coral", "reef", "survey", "marks", "milestone"]);
   });
