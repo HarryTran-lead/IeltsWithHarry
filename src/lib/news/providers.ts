@@ -4,6 +4,7 @@ import { XMLParser } from "fast-xml-parser";
 import { load } from "cheerio";
 import { NEWS_CATEGORIES, type NewsCategory } from "./constants";
 import { pressDiscoveryFeedUrls } from "./press-feeds";
+import { isPublisherBoilerplate } from "./source-blocks";
 
 export { pressDiscoveryFeedUrls } from "./press-feeds";
 
@@ -215,7 +216,7 @@ const nasaBoilerplate = /^(?:about the author|share|details|explore more|keep ex
 /** Article text from NASA's WordPress markup: top-level prose only, no cards or carousels. */
 export function nasaArticleText(html: string): string {
   const $ = load(html);
-  $("script,style,nav,form,svg,iframe,figure,figcaption,blockquote").remove();
+  $("script,style,nav,form,svg,iframe,figure,figcaption,blockquote,[class*='hds-about-the-author'],[class*='hds-byline'],[class*='hds-article-author'],[class*='hds-article-date'],[rel='author'],time").remove();
   const blocks: string[] = [];
   for (const node of $("body").children().toArray()) {
     const el = $(node);
@@ -228,7 +229,7 @@ export function nasaArticleText(html: string): string {
     const lines = tag === "ul" || tag === "ol" ? el.find("li").toArray().map((li) => $(li).text()) : [el.text()];
     // Press contacts (names with e-mail addresses or phone numbers) are not reading material.
     const texts = lines.map((line) => line.replace(/\s+/g, " ").trim())
-      .filter((line) => line.length >= 12 && !/^-?end-?$/i.test(line) && !(line.length < 300 && /[\w.-]+@[\w-]+\.gov\b|\b\d{3}-\d{3}-\d{4}\b/.test(line)));
+      .filter((line) => line.length >= 12 && !isPublisherBoilerplate(line) && !/^-?end-?$/i.test(line) && !(line.length < 300 && /[\w.-]+@[\w-]+\.gov\b|\b\d{3}-\d{3}-\d{4}\b/.test(line)));
     if (/^h/.test(tag) && nasaBoilerplate.test(texts[0] ?? "")) break;
     blocks.push(...texts);
   }
@@ -327,7 +328,11 @@ export function parseGlobalVoicesBodies(xml: string, source: NewsSource): NewsBo
     // partner outlet carry that outlet's licence, so they stay link-only.
     const prose = $("body").text().replace(/\s+/g, " ");
     if (/©|all rights reserved|content[- ]sharing (agreement|partnership)|republished (here )?(with permission|as part of|under)|originally (published|appeared) (on|in|by) (?!Global Voices)/i.test(prose)) return [];
-    $("script,style,iframe,figure,figcaption,blockquote,.wp-caption,.gv-rss-footer,.originally-published").remove();
+    $("script,style,iframe,figure,figcaption,blockquote,.wp-caption,.gv-rss-footer,.originally-published,.gv-donate,.gv-support,.gv-special-coverage,.post-excerpt").remove();
+    $("p").each((_,node)=>{
+      const value=$(node).text().replace(/\s+/g," ").trim();
+      if(isPublisherBoilerplate(value))$(node).remove();
+    });
     // Translators' notes such as "[AN: ...]" are editorial leftovers, not article text.
     const paragraphs = $("body").children("p,h2,h3,ul,ol").toArray().flatMap((node) => /^(ul|ol)$/i.test(node.tagName) ? $(node).find("li").toArray() : [node])
       .map((node) => $(node).text().replace(/\s*\[(?:AN|TN|Ed|Editor's note):[^\]]*\]/gi, "").replace(/\s+/g, " ").trim()).filter((text) => text.length >= 12);

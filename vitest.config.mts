@@ -11,6 +11,6 @@ export default defineConfig({
   },
   test: {
     // Git worktrees under .claude/ carry their own copies of tests/.
-    exclude: ["**/node_modules/**", "**/.next/**", ".claude/**"],
+    exclude: ["**/node_modules/**", "node_modules_shared_junction/**", "**/.next/**", ".claude/**", "artifacts/**", ".cache/**"],
   },
 });

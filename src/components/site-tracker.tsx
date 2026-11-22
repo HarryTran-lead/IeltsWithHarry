@@ -8,6 +8,7 @@ import { useEffect } from "react";
 import { usePathname } from "next/navigation";
 import { liveMode } from "@/lib/runtime";
 import { createClient } from "@/lib/supabase/browser";
+import { isNewsQaMode } from "@/lib/news/qa-mode";
 
 const STORE = "iwh.analytics";
 const SESSION_IDLE_MS = 30 * 60 * 1000;
@@ -38,6 +39,7 @@ function externalReferrer() {
   } catch { return null; }
 }
 function send(kind: "page_view" | "sign_in", path: string, ids: Ids, extra: { referrer?: string | null; method?: string | null } = {}) {
+  if(isNewsQaMode())return;
   void createClient().rpc("track_site_event", {
     p_kind: kind, p_path: path, p_visitor: ids.visitor, p_session: ids.session, p_device: device(),
     p_referrer: extra.referrer ?? null, p_method: extra.method ?? null,

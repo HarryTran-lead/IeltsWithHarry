@@ -173,3 +173,23 @@
 .rw-setup-dialog h2{margin:8px 0;font-size:26px}.rw-setup-dialog p{margin:0 0 18px;color:#536779}
 .rw-setup-close{position:absolute;right:16px;top:16px;display:grid;place-items:center;width:32px;height:32px;border:0;border-radius:50%;background:#eef5f6;color:#32505d}
 .rw-setup-actions{display:flex;justify-content:flex-end;gap:10px;margin-top:22px}
+
+/* Keep the reader's controls reachable without taking a second sticky row. */
+.rw,.rw-pane,.rw-questions,.rw-side-pane{min-width:0;max-width:100%}
+.rw.is-news.is-read .rw-bar{flex-wrap:nowrap;gap:6px;min-height:48px}
+.rw.is-news.is-read .rw-bar .button{min-height:34px;padding:5px 10px;font-size:13px;white-space:nowrap}
+.rw-options{position:relative}.rw-options-menu{position:absolute;right:0;top:calc(100% + 8px);width:min(310px,calc(100vw - 32px));display:grid;gap:10px;padding:14px;border:1px solid var(--line);border-radius:14px;background:#fff;box-shadow:var(--shadow)}
+.rw.is-news.is-read .rw-body,.rw.is-news.is-read.tools-min .rw-body{grid-template-columns:minmax(0,1fr)}
+.rw.is-news.is-read .rw-side-pane{position:fixed;right:18px;top:138px;width:0;z-index:30}
+.rw.is-news.is-read .rw-tools{position:static;display:block}
+.rw.is-news.is-read .rw-tools:not(.is-min){width:min(360px,calc(100vw - 32px));position:fixed;right:16px;top:140px;max-height:calc(100dvh - 170px);overflow:auto}
+.rw.is-news.is-read .rw-tools.is-min .rw-rail{display:none}
+.rw.is-news.is-read .rw-flyout{position:fixed;right:16px;top:140px;width:min(360px,calc(100vw - 32px));max-height:calc(100dvh - 170px);overflow:auto;border:1px solid var(--line);background:#fff}
+.rw-tool-switch{display:flex;gap:6px;margin-bottom:10px}.rw-tool-switch button{padding:6px 9px;border:1px solid var(--line);border-radius:8px;font-size:12px}
+.rw-tool-switch button[aria-pressed=true]{background:var(--teal-soft);color:var(--teal-strong)}
+.rw.is-practice .rw-text,.rw.is-practice .rw-questions{overflow-wrap:anywhere}
+.rw.is-practice .rw-size{flex:none}
+@media(max-width:650px){.rw.is-news.is-read .rw-meta{display:none}.rw.is-news.is-read .rw-timed-start{font-size:0!important;padding:6px!important}.rw.is-news.is-read .rw-timed-start::after{content:'20 phút';font-size:12px}.rw.is-news.is-read .rw-modes button{padding:5px 7px;font-size:12px}.rw.is-news.is-read .rw-bar{gap:4px}.rw.is-practice .rw-bar-end{display:none}.rw.is-news.is-read .rw-flyout,.rw.is-news.is-read .rw-tools:not(.is-min){top:auto;bottom:12px;right:12px;max-height:70dvh}}
+
+.rw-section-title{clear:both;margin:1.8em 0 .6em;font:700 1.15em/1.4 var(--font-sans);color:var(--navy)}
+@media(max-width:520px){.rw.is-news.is-read .rw-lookup-toggle{font-size:0!important;gap:0;padding:7px!important}.rw.is-news.is-read .rw-options>.button{font-size:12px;padding:5px 7px}.rw.is-news.is-read .rw-modes button{font-size:11px;gap:4px}.rw.is-news.is-read .rw-bar-end{min-width:0;margin-left:0}}

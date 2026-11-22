@@ -799,10 +799,17 @@ async function enrichImages(db: Db, result: EnrichResult) {
         await finish(db, id, "image", "none", `${reason ? `${reason}; ` : ""}Waiting for a licensed photo or AI image budget`, 86400000, { ai_art_pending: false });
         continue;
       }
+      const reservation=await db.rpc("news_claim_ai_cover_slot",{p_article_id:id});
+      if(reservation.error||reservation.data!==true){
+        await finish(db,id,"image","none","Waiting for eight real covers in the latest ten; AI is capped at two",86400000,{ai_art_pending:false});
+        continue;
+      }
       const image = await createAiIllustration(db, article, lookup.query);
       await saveIllustration(db, id, image); result.imagesAdded++;
+      await db.from("news_ai_cover_reservations").delete().eq("article_id",id);
       await finish(db, id, "image", "success", "AI-generated illustration", undefined, { ai_art_pending: false });
     } catch (cause) {
+      await db.from("news_ai_cover_reservations").delete().eq("article_id",id);
       const message = cause instanceof Error ? cause.message : "Image lookup failed";
       result.errors.push(`Image ${id}: ${message}`);
       if (cause instanceof AiQuotaError) result.quotaLimited = true;

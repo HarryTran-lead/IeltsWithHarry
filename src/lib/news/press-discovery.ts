@@ -231,7 +231,7 @@ export async function discoverPressFacts(db: Db, result: DiscoveryRun, settings:
       });
       if (articleError) throw articleError;
       const { error: bodyError } = await db.from("news_article_bodies").insert({
-        article_id: id, body_text: written.body, source_url: sourceUrl, ai_generated: true,
+        article_id: id, body_text: written.body, reading_sections:written.sections, source_url: sourceUrl, ai_generated: true,
         byline: "IeltsWithHarry editorial",
         rights_basis: `Original AI-assisted draft from verified factual notes. Discovery lead: ${item.canonical_url}. Editorial dossier: ${JSON.stringify({ topic: written.dossier.topic, category: written.dossier.category, facts: written.dossier.facts, model: written.model, verified_with: written.verified_with, reviewed_with: written.reviewed_with })}`,
       });

@@ -8,6 +8,8 @@ import { createClient } from "@/lib/supabase/browser";
 import { liveMode } from "@/lib/runtime";
 import { readingBlocks, readingComplete } from "@/lib/news/reading-progress";
 import { findEvidenceLocation, type EvidenceLocation } from "@/lib/news/evidence-location";
+import { readingMinutes } from "@/lib/news/daily-plan";
+import { elapsedSeconds } from "@/lib/news/exam-session";
 import "./reading-workspace.css";
 
 // A book face for long passages, loaded only on pages with a reader.
@@ -24,8 +26,8 @@ type Popover = { x: number; y: number; below: boolean; touch: boolean; ranges?: 
 
 /** Questions shown beside the passage in practice mode. `setup` opens before a news practice starts. */
 export type ReadingPractice = { answered: boolean[]; content: React.ReactNode; setup?: React.ReactNode; correct?: (boolean | undefined)[] };
-type PracticeClock = { elapsed: () => number; restart: () => void };
-const PracticeClockContext = createContext<PracticeClock>({ elapsed: () => 0, restart: () => {} });
+type PracticeClock = { elapsed: () => number; restart: () => void; stop: (seconds?: number) => void };
+const PracticeClockContext = createContext<PracticeClock>({ elapsed: () => 0, restart: () => {}, stop: () => {} });
 /** Seconds on the practice timer, and a way to start it again for a new round. */
 export function usePracticeClock() { return useContext(PracticeClockContext); }
 const EvidenceNavigationContext = createContext<((quote: string) => boolean) | null>(null);
@@ -66,10 +68,12 @@ function anchor(rect: DOMRect, touch: boolean): Pick<Popover, "x" | "y" | "below
  * at the bottom. Highlights are synced to the learner account with a scoped
  * local copy; text size is a device preference.
  */
-export function ReadingWorkspace({ docKey, title, paragraphs, translation, afterParagraph, onSelectWord, onTranslateSelection, lookupPreview, onReadEnd, onParagraphSeen, resumeAt, resumeRequested, toolbar, tools, after, practice, practiceLimitSeconds, timedPractice }: {
+export function ReadingWorkspace({ docKey, title, paragraphs, persist = true, sectionHeadings, translation, afterParagraph, onSelectWord, onTranslateSelection, lookupPreview, onReadEnd, onParagraphSeen, resumeAt, resumeRequested, toolbar, tools, after, practice, practiceLimitSeconds, practiceStartedAt, timedPractice }: {
   docKey: string;
   title: string;
   paragraphs: string[];
+  persist?: boolean;
+  sectionHeadings?: Record<number,string>;
   translation?: (index: number) => React.ReactNode;
   afterParagraph?: (index: number) => React.ReactNode;
   onSelectWord?: (word: string, context?: string) => void;
@@ -84,13 +88,15 @@ export function ReadingWorkspace({ docKey, title, paragraphs, translation, after
   after?: React.ReactNode;
   practice?: ReadingPractice;
   practiceLimitSeconds?: number;
-  timedPractice?: { label: string; onStart: () => void; onExit: () => void };
+  practiceStartedAt?: number;
+  timedPractice?: { label: string; active?: boolean; onStart: () => Promise<boolean> | boolean | void; onExit: () => void };
 }) {
+  const newsReader=docKey.includes("news:");
   const textKey = paragraphs.join("\u0000");
   const text = useMemo(() => textKey.split("\u0000"), [textKey]);
   const blocks = useMemo(() => readingBlocks(text), [text]);
   const storageKey = `ieltswithharry-highlights:${docKey}`;
-  const db = useMemo(() => liveMode ? createClient() : null, []);
+  const db = useMemo(() => liveMode && persist ? createClient() : null, [persist]);
   const [highlights, setHighlights] = useState<Highlight[]>([]);
   const [ready, setReady] = useState(false);
   const [saveStatus, setSaveStatus] = useState<"saved" | "saving" | "local">("saving");
@@ -98,17 +104,26 @@ export function ReadingWorkspace({ docKey, title, paragraphs, translation, after
   const [mode, setMode] = useState<"read" | "practice">("read");
   const [passageWide, setPassageWide] = useState(false);
   const [setupOpen, setSetupOpen] = useState(false);
+  const [timedSetup, setTimedSetup] = useState(false);
+  const [starting, setStarting] = useState(false);
   const [tab, setTab] = useState<"passage" | "questions">("passage");
   const [split, setSplit] = useState(52);
   const [seconds, setSeconds] = useState(0);
   const [paragraphsSeen, setParagraphsSeen] = useState(0);
   const secondsRef = useRef(0);
-  useEffect(() => { secondsRef.current = seconds; }, [seconds]);
-  const practiceClock = useMemo<PracticeClock>(() => ({ elapsed: () => secondsRef.current, restart: () => { secondsRef.current = 0; setSeconds(0); } }), []);
+  const epochRef = useRef<number | null>(null);
+  const stoppedRef = useRef<number | null>(null);
+  const returnPosition = useRef<{ paragraph: number; top: number; scrollY: number } | null>(null);
+  const [toolMenu, setToolMenu] = useState(false);
+  const practiceClock = useMemo<PracticeClock>(() => ({
+    elapsed: () => stoppedRef.current ?? (epochRef.current === null ? secondsRef.current : elapsedSeconds(epochRef.current)),
+    restart: () => { epochRef.current = Date.now(); stoppedRef.current = null; secondsRef.current = 0; setSeconds(0); },
+    stop: (value) => { const elapsed = value ?? (epochRef.current === null ? 0 : elapsedSeconds(epochRef.current)); stoppedRef.current = elapsed; secondsRef.current = elapsed; setSeconds(elapsed); },
+  }), []);
   const [popover, setPopover] = useState<Popover | null>(null);
   const [selectionTranslation, setSelectionTranslation] = useState<{ source: string; paragraph: number; result: string; error: string; busy: boolean } | null>(null);
   const [activeEvidence, setActiveEvidence] = useState<EvidenceLocation | null>(null);
-  const [toolsMin, setToolsMin] = useState(false);
+  const [toolsMin, setToolsMin] = useState(newsReader);
   const [openTool, setOpenTool] = useState<string | null>(null);
   const textRef = useRef<HTMLDivElement>(null);
   const bodyRef = useRef<HTMLDivElement>(null);
@@ -121,6 +136,7 @@ export function ReadingWorkspace({ docKey, title, paragraphs, translation, after
   const saveQueue = useRef<Promise<void>>(Promise.resolve());
   const saveVersion = useRef(0);
   const practicing = mode === "practice";
+  const exitPractice=useCallback(()=>{if(!practiceLimitSeconds){secondsRef.current=practiceClock.elapsed();epochRef.current=null;}setMode("read");timedPractice?.onExit();},[practiceLimitSeconds,practiceClock,timedPractice]);
   const showEvidence = useCallback((quote: string) => {
     const location = findEvidenceLocation(text, quote);
     if (!location) return false;
@@ -141,7 +157,7 @@ export function ReadingWorkspace({ docKey, title, paragraphs, translation, after
   const done = practice?.answered.filter(Boolean).length ?? 0;
   const graded = Boolean(practice?.correct?.length) && practice!.correct!.every((item) => item !== undefined);
   const right = practice?.correct?.filter(Boolean).length ?? 0;
-  const minutes = Math.max(1, Math.round(text.join(" ").split(/\s+/).length / 200));
+  const minutes = readingMinutes(text.join(" ").match(/[\p{L}\p{N}]+(?:[’'-][\p{L}\p{N}]+)*/gu)?.length ?? 0);
 
   const syncRemote = useCallback((userId: string, next: Highlight[], updatedAt: string) => {
     if (!db) return;
@@ -177,7 +193,7 @@ export function ReadingWorkspace({ docKey, title, paragraphs, translation, after
         local = parseHighlightCache(localStorage.getItem(scopedKey), text);
         const saved = localStorage.getItem(SIZE_KEY);
         if (saved !== null && Number.isInteger(Number(saved)) && Number(saved) >= 0 && Number(saved) < sizes.length) setSize(Number(saved));
-        setToolsMin(localStorage.getItem(TOOLS_KEY) === "min");
+        setToolsMin(newsReader || localStorage.getItem(TOOLS_KEY) === "min");
       } catch { /* Private windows can block storage; the reader still works. */ }
       let latest = local;
       let status: "saved" | "local" = userId ? "saved" : "local";
@@ -205,7 +221,7 @@ export function ReadingWorkspace({ docKey, title, paragraphs, translation, after
       if (syncLocal && userId) syncRemote(userId, local.highlights, local.updatedAt);
     })();
     return () => { active = false; };
-  }, [db, docKey, storageKey, syncRemote, text]);
+  }, [db, docKey, storageKey, syncRemote, text, newsReader]);
 
   const save = useCallback((next: Highlight[]) => {
     setHighlights(next);
@@ -232,23 +248,51 @@ export function ReadingWorkspace({ docKey, title, paragraphs, translation, after
 
   useEffect(() => {
     if (!practicing) return;
-    const timer = window.setInterval(() => setSeconds((value) => Math.min(value + 1, practiceLimitSeconds ?? 36000)), 1000);
+    epochRef.current ??= Date.now();
+    const update = () => { const value = Math.min(practiceClock.elapsed(), practiceLimitSeconds ?? 36000); secondsRef.current = value; setSeconds(value); };
+    update();
+    const timer = window.setInterval(update, 250);
+    document.addEventListener("visibilitychange", update);
+    window.addEventListener("pageshow", update);
     const overflow = document.body.style.overflow;
     document.body.style.overflow = "hidden";
-    return () => { window.clearInterval(timer); document.body.style.overflow = overflow; };
-  }, [practicing, practiceLimitSeconds]);
+    return () => { window.clearInterval(timer); document.removeEventListener("visibilitychange", update); window.removeEventListener("pageshow", update); document.body.style.overflow = overflow; };
+  }, [practicing, practiceLimitSeconds, practiceClock]);
+
+  useEffect(() => {
+    if (practiceStartedAt === undefined) return;
+    epochRef.current = practiceStartedAt;
+    stoppedRef.current = null;
+    // A recovered timed session reopens the same workspace after reload.
+    const frame=requestAnimationFrame(()=>{setSeconds(elapsedSeconds(practiceStartedAt, Date.now(), practiceLimitSeconds));setMode("practice");});
+    return()=>cancelAnimationFrame(frame);
+  }, [practiceStartedAt, practiceLimitSeconds]);
+
+  useEffect(() => {
+    if (practicing || !returnPosition.current) return;
+    const position = returnPosition.current;
+    returnPosition.current = null;
+    const frame = requestAnimationFrame(() => requestAnimationFrame(() => {
+      const paragraph = textRef.current?.querySelector<HTMLElement>(`[data-p="${position.paragraph}"]`);
+      window.scrollTo({ top: paragraph ? window.scrollY + paragraph.getBoundingClientRect().top - position.top : position.scrollY, behavior: "instant" });
+    }));
+    return () => cancelAnimationFrame(frame);
+  }, [practicing]);
 
   useEffect(() => {
     function onKey(event: KeyboardEvent) {
       if (event.key !== "Escape") return;
       if (popover) setPopover(null);
       else if (openTool) setOpenTool(null);
-      else if (practicing) { setMode("read"); timedPractice?.onExit(); }
+      else if (toolMenu) setToolMenu(false);
+      else if (timedSetup) setTimedSetup(false);
+      else if (practicing) exitPractice();
     }
     function onPointer(event: PointerEvent) {
       const target = event.target as Element;
       if (popover && !target.closest?.(".rw-popover")) setPopover(null);
       if (openTool && !target.closest?.(".rw-tools")) setOpenTool(null);
+      if (toolMenu && !target.closest?.(".rw-options")) setToolMenu(false);
     }
     function onScroll() { if (popover) setPopover(null); }
     window.addEventListener("keydown", onKey);
@@ -259,7 +303,7 @@ export function ReadingWorkspace({ docKey, title, paragraphs, translation, after
       window.removeEventListener("pointerdown", onPointer);
       window.removeEventListener("scroll", onScroll, true);
     };
-  }, [popover, practicing, openTool, timedPractice]);
+  }, [popover, practicing, openTool, timedPractice, toolMenu, timedSetup, exitPractice]);
 
   useEffect(() => {
     const identity = `${docKey}\u0000${textKey}`;
@@ -404,9 +448,20 @@ export function ReadingWorkspace({ docKey, title, paragraphs, translation, after
     }
   }
 
-  function enterPractice() { setMode("practice"); setPassageWide(false); setTab("passage"); setActiveEvidence(null); setPopover(null); setOpenTool(null); window.getSelection()?.removeAllRanges(); }
-  function exitPractice() { setMode("read"); timedPractice?.onExit(); }
-  function enterTimedPractice() { if (!total || !timedPractice) return; secondsRef.current = 0; setSeconds(0); timedPractice.onStart(); enterPractice(); }
+  function enterPractice() {
+    const paragraphs = Array.from(textRef.current?.querySelectorAll<HTMLElement>("p[data-p]") ?? []);
+    const visible = paragraphs.find((item) => item.getBoundingClientRect().bottom > 140);
+    returnPosition.current = { paragraph: Number(visible?.dataset.p ?? 0), top: visible?.getBoundingClientRect().top ?? 140, scrollY: window.scrollY };
+    if(!practiceLimitSeconds&&stoppedRef.current===null)epochRef.current=Date.now()-secondsRef.current*1000;
+    epochRef.current ??= Date.now();
+    setMode("practice"); setPassageWide(false); setTab("passage"); setActiveEvidence(null); setPopover(null); setOpenTool(null); window.getSelection()?.removeAllRanges();
+  }
+  async function enterTimedPractice() {
+    if (!total || !timedPractice || starting) return;
+    setStarting(true);
+    try { if (await timedPractice.onStart() === false) return; setTimedSetup(false); enterPractice(); }
+    finally { setStarting(false); }
+  }
   function requestPractice() { if (practice?.setup) setSetupOpen(true); else enterPractice(); }
   function jump(number: number) {
     setPassageWide(false);
@@ -442,6 +497,7 @@ export function ReadingWorkspace({ docKey, title, paragraphs, translation, after
     </div>
     {flyout && <div className="rw-flyout" role="dialog" aria-label={flyout.label}>
       <button type="button" className="rw-flyout-close" onClick={() => setOpenTool(null)} aria-label="Đóng"><X size={16} /></button>
+      <div className="rw-tool-switch">{tools.map((tool)=><button type="button" key={tool.id} aria-pressed={tool.id===openTool} onClick={()=>setOpenTool(tool.id)}>{tool.icon}{newsReader?(tool.id==="saved"?"Sổ từ":"Tra từ"):tool.label}</button>)}</div>
       {flyout.content}
     </div>}
   </div> : <div className="rw-tools">
@@ -451,7 +507,7 @@ export function ReadingWorkspace({ docKey, title, paragraphs, translation, after
     </div>)}
   </div> : null;
 
-  return <div className={`rw ${readingFont.variable} ${practicing ? "is-practice" : "is-read"} ${passageWide ? "is-passage-wide" : ""} ${tools?.length ? "" : "no-tools"} ${toolsMin ? "tools-min" : ""}`} data-tab={tab} style={{ "--rw-split": `${split}%`, "--rw-size": `${sizes[size]}px` } as React.CSSProperties}>
+  return <div className={`rw ${newsReader?"is-news":""} ${readingFont.variable} ${practicing ? "is-practice" : "is-read"} ${passageWide ? "is-passage-wide" : ""} ${tools?.length ? "" : "no-tools"} ${toolsMin ? "tools-min" : ""}`} data-tab={tab} style={{ "--rw-split": `${split}%`, "--rw-size": `${sizes[size]}px` } as React.CSSProperties}>
     <div className="rw-bar" role="toolbar" aria-label={practicing ? "Thanh làm bài" : "Công cụ đọc"}>
       {practicing ? <>
         <button type="button" className="rw-exit" onClick={exitPractice}><X size={17} /> Thoát</button>
@@ -468,10 +524,11 @@ export function ReadingWorkspace({ docKey, title, paragraphs, translation, after
           {total > 0 && <button type="button" aria-pressed="false" onClick={requestPractice}><Columns2 size={16} /> Luyện đề · {total} câu</button>}
         </div>
         <span className="rw-meta"><Clock3 size={15} /> ~{minutes} phút đọc</span>
-        {timedPractice && <button className="button subtle" type="button" disabled={!total} title={!total ? "Bài này chưa có câu hỏi để mô phỏng" : undefined} onClick={enterTimedPractice}>{total ? timedPractice.label : "Chưa có đề mô phỏng"}</button>}
-        {toolbar}
+        {timedPractice && <button className="button subtle rw-timed-start" type="button" disabled={!total} onClick={() => setTimedSetup(true)}>{total ? timedPractice.label : "Chưa có đề luyện"}</button>}
+        {tools?.length ? <button type="button" className="button subtle rw-lookup-toggle" aria-label="Tra từ và sổ từ" onClick={() => { setToolsMin(true); setOpenTool(openTool ? null : tools[0].id); }}><BookOpenText size={16}/>Tra cứu</button> : null}
+        {!newsReader&&toolbar}
       </>}
-      <div className="rw-bar-end">{clearControl}{sizeControl}</div>
+      <div className="rw-bar-end">{practicing || !newsReader ? <>{clearControl}{sizeControl}</> : <div className="rw-options"><button className="button subtle" type="button" aria-expanded={toolMenu} onClick={() => setToolMenu(!toolMenu)}>Tùy chọn</button>{toolMenu && <div className="rw-options-menu">{toolbar}{sizeControl}{clearControl}</div>}</div>}</div>
     </div>
 
     <div className="rw-body" ref={bodyRef}>
@@ -486,6 +543,7 @@ export function ReadingWorkspace({ docKey, title, paragraphs, translation, after
         }}>
           {text.map((paragraph, index) => <div className="rw-para" key={index}>
             <span className="rw-letter" aria-hidden="true">{letter(index)}</span>
+            {!practicing&&sectionHeadings?.[index]&&<h2 className="rw-section-title">{sectionHeadings[index]}</h2>}
             <p data-p={index} lang="en">{segments(paragraph, index, activeEvidence?.paragraph === index
               ? addHighlight(highlights, { id: "active-evidence", p: index, start: activeEvidence.start, end: activeEvidence.end, color: "sun" }) : highlights).map((part) => part.highlight
               ? <mark key={part.start} data-hl={part.highlight.id} data-evidence={part.highlight.id === "active-evidence" ? "true" : undefined} className={`rw-mark ${part.highlight.id === "active-evidence" ? "rw-evidence" : part.highlight.color}`}>{part.text}</mark>
@@ -516,6 +574,7 @@ export function ReadingWorkspace({ docKey, title, paragraphs, translation, after
       </div>
     </div>
 
+    {timedSetup && <div className="rw-setup-backdrop" onMouseDown={(event) => { if (event.target === event.currentTarget && !starting) setTimedSetup(false); }}><section className="rw-setup-dialog" role="dialog" aria-modal="true" aria-labelledby="timed-title"><button type="button" className="rw-setup-close" disabled={starting} onClick={() => setTimedSetup(false)} aria-label="Đóng"><X size={16}/></button><h2 id="timed-title">Luyện một bài đọc · 20 phút</h2><p>{total} câu hỏi từ bài này. Đây là lượt luyện một passage, không phải đề IELTS đầy đủ và không quy đổi band.</p><p>Không dùng dịch hoặc tra từ. Thời gian vẫn chạy khi đổi tab hoặc thoát màn luyện. Đáp án được tự lưu; tải lại sẽ khôi phục lượt đang làm. Hết giờ chỉ chấm bản nháp máy chủ đã nhận đúng hạn; hệ thống thử nộp khi tab hoạt động. Câu trống tính sai.</p><button type="button" className="button primary" disabled={starting} onClick={() => void enterTimedPractice()}>{starting ? "Đang mở lượt làm…" : "Bắt đầu / tiếp tục lượt đang làm"}</button></section></div>}
     {setupOpen && practice?.setup && <div className="rw-setup-backdrop" onMouseDown={(event) => { if (event.target === event.currentTarget) setSetupOpen(false); }}>
       <section className="rw-setup-dialog" role="dialog" aria-modal="true" aria-labelledby="rw-setup-title" onKeyDown={(event) => { if (event.key === "Escape") setSetupOpen(false); }}>
         <button type="button" className="rw-setup-close" onClick={() => setSetupOpen(false)} aria-label="Đóng"><X size={18}/></button>
