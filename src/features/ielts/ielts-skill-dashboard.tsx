@@ -131,6 +131,7 @@ export function IeltsSkillDashboard({ skill }: { skill: IeltsSkill }) {
     // The shelf's own head carries the title, filters and word-list link; the page title stays for screen readers.
     return <main className={`ielts-dashboard ielts-dashboard-${config.tone} has-library`}>
       <h1 className="bl-sr-only">{config.title}</h1>
+      {skill === "reading" && (process.env.NODE_ENV === "production" || process.env.NEXT_PUBLIC_READING_LAB_PREVIEW === "true") && <section className="card section-card" style={{ margin: "1.25rem 0" }}><span className="ielts-dashboard-kicker">READING SKILL LAB</span><h2>Luyện theo Passage và xem lời giải 5 bước</h2><p>36 bài đọc Academic, làm từng Passage hoặc full bài và lưu kết quả sau khi nộp.</p><Link className="button primary" href="/app/reading/lab">Mở Reading Lab <ArrowRight size={16} /></Link></section>}
       <BankLibrary skill={bankSkill} />
     </main>;
   }
