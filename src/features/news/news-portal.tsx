@@ -67,8 +67,8 @@ const newsPages = [
 ] as const;
 type NewsTab = Feed | (typeof newsPages)[number]["id"];
 
-/** One compact header for every Daily News page; the tab row is the section menu and stays pinned while scrolling. */
-function NewsMasthead({ active, meta }: { active: NewsTab; meta?: React.ReactNode }) {
+/** One compact header for every Daily News page. Where there is room the title and the section menu share one pinned row; on narrow screens only the menu stays pinned. */
+function NewsMasthead({ active }: { active: NewsTab }) {
   const today = new Intl.DateTimeFormat("vi-VN", { weekday: "long", day: "numeric", month: "long", year: "numeric" }).format(new Date());
   const list = useRef<HTMLDivElement>(null);
   // On narrow screens the menu scrolls sideways; keep the open tab in view.
@@ -77,10 +77,9 @@ function NewsMasthead({ active, meta }: { active: NewsTab; meta?: React.ReactNod
     const current = element?.querySelector<HTMLElement>(".active");
     if (element && current && element.scrollWidth > element.clientWidth) element.scrollTo({ left: current.offsetLeft - (element.clientWidth - current.offsetWidth) / 2, behavior: "smooth" });
   }, [active]);
-  return <>
+  return <div className="news-topbar">
     <header className="news-masthead">
       <div className="news-masthead-title"><Sticker name="globe" size={50} tilt={-8} /><div><span className="eyebrow news-masthead-date">Daily News<i aria-hidden="true">·</i><time suppressHydrationWarning>{today}</time></span><h1>Daily English News</h1></div></div>
-      {meta && <div className="news-masthead-meta">{meta}</div>}
     </header>
     <nav className="news-tabs" aria-label="Mục lục Daily News">
       <div className="news-tabs-list" ref={list}>
@@ -89,7 +88,7 @@ function NewsMasthead({ active, meta }: { active: NewsTab; meta?: React.ReactNod
         {newsPages.filter((item) => !releaseLocks || item.id !== "learn").map(({ id, label, href, icon: Icon }) => <Link key={id} href={href} className={active === id ? "active" : ""} aria-current={active === id ? "page" : undefined}><Icon size={16} />{label}</Link>)}
       </div>
     </nav>
-  </>;
+  </div>;
 }
 
 const PAGE_SIZE = 12;
@@ -372,8 +371,7 @@ function NewsHome() {
   const featuredIds = new Set(picks.map((row) => row.id));
   const displayRows = showDailyPicks ? [...picks, ...rows.filter((row) => !featuredIds.has(row.id))] : rows;
   return <div className="content-page news-page news-hub news-home">
-    <NewsMasthead active={feed}
-      meta={<><span><Newspaper /> <b>{todayCount}</b> tin hôm nay</span><span><Clock3 /> Cập nhật {latest ? relativeTime(latest).toLowerCase() : "—"}</span><span title={`${xp} XP từ bài luyện`}><Trophy /> Đã đọc <b>{readToday}</b> · <b>{completed}</b> bài luyện</span></>} />
+    <NewsMasthead active={feed} />
     {latest && now - new Date(latest).valueOf() > 2 * 3600000 && <p className="news-stale">Tin đã lưu vẫn xem được. Lần đồng bộ gần nhất: {newsDate(latest)}.</p>}
     <section className="news-feed" id="news-archive" ref={listTop}>
       <div className="news-feed-bar" role="group" aria-label="Lọc tin tức">
@@ -387,11 +385,14 @@ function NewsHome() {
       <div className="news-feed-tools">
         <div className="news-feed-count"><feedInfo.icon size={15} /><b>{loading ? "…" : count.toLocaleString("vi-VN")} bài</b><span>{feedInfo.hint}</span>
           {arrived > 0 && <button type="button" className="news-arrived" onClick={() => { if (page) setPage(0); else void loadList(); }}><Sparkles size={14} /> {arrived} tin mới · Xem ngay</button>}</div>
+        <div className="news-feed-stats"><span><Newspaper /> <b>{todayCount}</b> tin hôm nay</span><span><Clock3 /> Cập nhật {latest ? relativeTime(latest).toLowerCase() : "—"}</span><span title={`${xp} XP từ bài luyện`}><Trophy /> Đã đọc <b>{readToday}</b> · <b>{completed}</b> bài luyện</span></div>
         <button type="button" className={`news-ready-filter ${readyOnly ? "active" : ""}`} aria-pressed={readyOnly} onClick={() => { setReadyOnly((value) => !value); setPage(0); }}><ListChecks size={15}/> Có đề luyện</button>
         <div className="news-random-picker"><button type="button" className="button subtle" aria-label="Chọn bài ngẫu nhiên" onClick={() => void openRandomArticle()} disabled={randomBusy || loading}><Sparkles size={15}/><span>{randomBusy ? "Đang chọn…" : "Ngẫu nhiên"}</span></button></div>
       </div>
-      {showDailyPicks && rows.length > 0 && <div className="news-daily-plan"><strong>4 bài nên đọc hôm nay</strong><span>Chọn 1 bài → đọc & làm quiz → <Link href="/app/vocabulary">ôn 3 từ</Link></span></div>}
-      {showDailyPicks && rows.length > 0 && <div className="news-interest-picks"><span>Bạn thích đọc về</span><div>{NEWS_CATEGORIES.map((topic) => <button key={topic} type="button" aria-pressed={preferredTopics.includes(topic)} onClick={() => void togglePreferredTopic(topic)}>{topic}</button>)}</div></div>}
+      {showDailyPicks && rows.length > 0 && <div className="news-today-strip">
+        <div className="news-daily-plan"><strong>4 bài nên đọc hôm nay</strong><span>Đọc 1 bài → làm quiz → <Link href="/app/vocabulary">ôn 3 từ</Link></span></div>
+        <div className="news-interest-picks"><span>Bạn thích đọc về</span><div>{NEWS_CATEGORIES.map((topic) => <button key={topic} type="button" aria-pressed={preferredTopics.includes(topic)} onClick={() => void togglePreferredTopic(topic)}>{topic}</button>)}</div></div>
+      </div>}
       {randomError && <p className="form-error" role="alert">{randomError}</p>}
       {error && <p className="form-error" role="alert">{error}</p>}
       {loading && !rows.length ? <div className="news-grid" aria-busy="true">{[0, 1, 2, 3].map((item) => <div key={item} className="news-card news-card-skeleton"><span className="skeleton" /><span className="skeleton" /><span className="skeleton" /></div>)}</div> : rows.length ? <div className={`news-grid stagger ${loading ? "is-loading" : ""}`} aria-busy={loading}>{displayRows.map((row) => <NewsCard key={row.id} row={row} featured={featuredIds.has(row.id)} wordCount={wordCounts[row.id]} saved={saved.includes(row.id)} read={readIds.includes(row.id)} readingProgress={readingProgress[row.id]} quizInfo={quizCounts[row.id]} quizResult={quizResults[row.id]} fresh={Date.parse(row.fetched_at) > Date.parse(seenBefore)} onSave={() => void toggleSave(row.id)} onSite={row.readable} image={newsImage(row)} learnSlug={releaseLocks ? undefined : learn.find((item) => item.related_news_id === row.id)?.slug} />)}</div> : <div className="news-empty"><Sticker name={feed === "today" ? "calendar" : feed === "hot" ? "flame" : "newspaper"} size={72} tilt={-6} /><h3>{questionType !== "all" ? `Chưa có bài với dạng ${typeLabels[questionType]}` : search ? `Không có tin nào khớp “${search}”` : feed === "today" ? "Hôm nay chưa có tin mới" : feed === "hot" ? "Chưa có tin nổi bật" : "Chưa có tin phù hợp"}</h3><p>{questionType !== "all" ? "Hãy thử dạng câu hỏi khác hoặc bỏ bớt bộ lọc." : feed === "archive" ? "Hãy đổi năm, nguồn hoặc thứ tự. Kho tin cũ đang được nhập thêm theo lịch." : feed === "latest" ? "Kho tin được đồng bộ theo lịch. Hãy thử danh mục khác." : "Thử danh mục khác hoặc xem tab Mới nhất."}</p>{feed === "latest" && !releaseLocks ? <Link href="/app/news/learn" className="button primary">Learn with News</Link> : <Link href="/app/news" scroll={false} className="button primary">Xem tin mới nhất</Link>}</div>}
