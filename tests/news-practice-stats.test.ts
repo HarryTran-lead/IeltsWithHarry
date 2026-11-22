@@ -22,7 +22,7 @@ describe("Daily News practice statistics", () => {
       attempt("1", 10, 20),
     ]);
     expect(stats).toMatchObject({ attempts: 3, questions: 44, correct: 27, accuracy: 61, secondsPerQuestion: 25 });
-    expect(stats.weakest).toMatchObject({ type: "mcq", percent: 50 });
+    expect(stats.weakest).toBeNull(); // Repeated/partial attempts on one article do not establish a weak skill.
     expect(stats.trend.map((item) => item.id)).toEqual(["1", "2", "3"]);
     expect(stats.trend[2]).toMatchObject({ percent: 75, partial: true });
   });

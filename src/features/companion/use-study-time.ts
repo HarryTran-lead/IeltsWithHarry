@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { isNewsQaMode } from "@/lib/news/qa-mode";
 
 /*
  * Counts how long the learner actually studies today on this device: time
@@ -58,7 +59,7 @@ export function useStudyTime(): StudyTime {
       const day = localDay();
       let seconds = readSeconds(day);
       const active = document.visibilityState === "visible" && (now - lastInput < ACTIVE_WINDOW_MS || mediaPlaying());
-      if (count && active) {
+      if (count && active && !isNewsQaMode()) {
         if (now - lastActive > SESSION_GAP_MS) sessionSeconds = 0;
         seconds += TICK_MS / 1000;
         sessionSeconds += TICK_MS / 1000;

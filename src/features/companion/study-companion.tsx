@@ -479,7 +479,8 @@ export function StudyCompanion({ streak, newsUnread = 0, name, hidden = false }:
     close();
   }
 
-  if (!ready || quiet) return null;
+  // Reading and practice controls must remain unobstructed. Chat is still available.
+  if (!ready || quiet || pathname.startsWith("/app/news")) return null;
 
   if (tucked) {
     return (

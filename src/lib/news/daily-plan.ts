@@ -43,3 +43,18 @@ export function originalNewsSource(reportUrl: string | null, canonicalUrl: strin
 export function readingMinutes(wordCount: number) {
   return Math.max(1, Math.ceil(wordCount / 150));
 }
+
+/** Give each next-read slot a purpose while keeping unseen stories ahead of rereads. */
+export function nextNewsReads<T extends DailyCandidate>(articles:T[],read:Set<string>,currentCategory:string,preferred:string[],quizTypes:Map<string,string[]>,weakType?:string){
+  const remaining=[...articles].sort((a,b)=>Number(read.has(a.id))-Number(read.has(b.id))||Number(b.origin_region==="vietnam")-Number(a.origin_region==="vietnam")||b.published_at.localeCompare(a.published_at));
+  const result:(T&{recommendationReason:string})[]=[];
+  const take=(predicate:(item:T)=>boolean,reason:string)=>{
+    const unread=remaining.filter((item)=>!read.has(item.id));const eligible=unread.length?unread:remaining;
+    const chosen=eligible.find(predicate)??eligible[0];if(!chosen)return;
+    remaining.splice(remaining.findIndex((item)=>item.id===chosen.id),1);result.push({...chosen,recommendationReason:predicate(chosen)?reason:"Khám phá bài đọc tiếp theo"});
+  };
+  take((item)=>preferred.includes(item.category)||(item.interest_topics??[]).some((topic)=>preferred.includes(topic))||item.category===currentCategory,"Gần chủ đề bạn quan tâm");
+  take((item)=>weakType?quizTypes.get(item.id)?.includes(weakType)===true:quizTypes.has(item.id),weakType?"Có dạng câu hỏi bạn cần luyện":"Có câu hỏi để luyện tiếp");
+  take((item)=>item.category!==currentCategory&&!result.some((selected)=>selected.category===item.category),"Khám phá một chủ đề khác");
+  return result;
+}

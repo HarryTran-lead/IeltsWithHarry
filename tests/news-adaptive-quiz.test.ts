@@ -10,7 +10,7 @@ function generated(types: IeltsQuestionType[]) {
   return { questions: types.flatMap((type) => Array.from({ length: 4 }, (_, index) => {
     const options = type === "tfng" ? ["True", "False", "Not Given"] : type === "ynng" ? ["Yes", "No", "Not Given"] : ["Solar panels", "Wind turbines", "Diesel engines"];
     const choice = choiceTypes.has(type);
-    return { type, prompt: `${type} question ${index + 1}: ${gapTypes.has(type) ? "The station uses ______ for power." : type === "short_answer" ? "What powered the station?" : "What powered the research station?"}`,
+    return { type, prompt: type === "diagram_label_completion" ? `[DIAGRAM:{"title":"Station components ${index+1}","labels":["upper cover","______","lower frame"],"gap":1}] Label the missing component.` : `${type} question ${index + 1}: ${gapTypes.has(type) ? "The station uses ______ for power." : type === "short_answer" ? "What powered the station?" : "What powered the research station?"}`,
       options: choice ? options : [], correct_index: choice ? 0 : -1, answer: choice ? "" : "solar panels",
       supporting_sentence: quote, explanation, option_notes: choice ? options.map(() => note) : [] };
   })) };

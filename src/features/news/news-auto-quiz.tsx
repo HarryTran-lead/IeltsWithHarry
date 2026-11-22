@@ -1,11 +1,13 @@
 "use client";
 
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useEffect, useEffectEvent, useMemo, useRef, useState } from "react";
 import Link from "next/link";
 import { ChartNoAxesColumn, Check, CheckCircle2, Clock3, Highlighter, Languages, RotateCcw, Sparkles, TrendingDown, TrendingUp, XCircle } from "lucide-react";
 import { createClient } from "@/lib/supabase/browser";
 import { celebrateScore } from "@/lib/celebrate";
 import { usePracticeClock, useReadingEvidenceNavigation } from "@/features/reading/reading-workspace";
+import { recoverExamAnswers, type NewsExamSession } from "@/lib/news/exam-session";
+import { parseQuestionDiagram, sharedMatchingOptions } from "@/lib/news/question-presentation";
 import { addHighlight, highlightColors, parseHighlights, segments, type Highlight, type HighlightColor } from "@/lib/highlights";
 import { translateEnglishToVietnamese } from "@/lib/news/browser-translation";
 import { formatDuration, percent, sumBreakdowns, typeLabels, type Breakdown, type PracticeAttempt, type QuestionType } from "@/lib/news/practice-stats";
@@ -31,7 +33,7 @@ function EvidenceLink({ quote }: { quote: string }) {
     {missing && <span role="status">Không tìm thấy câu này trong bài đọc.</span>}
   </small>;
 }
-const ATTEMPT_COLUMNS = "id,article_id,score,total,submitted_at,partial,breakdown,duration_seconds";
+const ATTEMPT_COLUMNS = "id,article_id,score,total,submitted_at,partial,breakdown,duration_seconds,mode";
 
 function parseFlowChartPrompt(prompt: string) {
   const steps: { text: string; start: number }[] = [];
@@ -97,10 +99,13 @@ export function QuestionTypePicker({ available, selected, onChange }: { availabl
   </div>;
 }
 
-export function NewsAutoQuiz({ articleId, types = ALL_TYPES, examMode = false, onTypesChange, onAvailable, onProgress, onStatus, onSubmitted }: {
+export function NewsAutoQuiz({ articleId, types = ALL_TYPES, examMode = false, examSession, qaMode = false, onNewExam, onTypesChange, onAvailable, onProgress, onStatus, onSubmitted }: {
   articleId: string;
   types?: QuestionType[];
   examMode?: boolean;
+  examSession?: NewsExamSession | null;
+  qaMode?: boolean;
+  onNewExam?:()=>Promise<boolean>;
   onTypesChange?: (next: QuestionType[]) => void;
   onAvailable?: (available: TypeCount[]) => void;
   onProgress?: (answered: boolean[], correct: (boolean | undefined)[]) => void;
@@ -109,7 +114,18 @@ export function NewsAutoQuiz({ articleId, types = ALL_TYPES, examMode = false, o
 }) {
   const db = useMemo(() => createClient(), []);
   const [questions, setQuestions] = useState<Question[]>([]);
-  const [answers, setAnswers] = useState<Record<string, number | string>>({});
+  const [answers, setAnswers] = useState<Record<string, number | string>>(() => {
+    if(!examSession)return {};
+    try{return recoverExamAnswers(examSession,localStorage.getItem(`news-exam-draft:${examSession.id}`));}catch{return examSession.answers;}
+  });
+  const latestAnswers=useRef(answers);
+  useEffect(()=>{latestAnswers.current=answers;},[answers]);
+  const revision = useRef(examSession?.revision ?? 0);
+  const saveQueue = useRef<Promise<void>>(Promise.resolve());
+  const saveConflict = useRef(false);
+  const [draftStatus,setDraftStatus] = useState("");
+  const [draftRetry,setDraftRetry]=useState(0);
+  const expiredSubmission = useRef(false);
   // Reviews by question id. A full submission or the saved attempt covers every question; a practice round covers its own.
   const [reviews, setReviews] = useState<Record<string, Review>>({});
   const [busy, setBusy] = useState(false);
@@ -126,12 +142,15 @@ export function NewsAutoQuiz({ articleId, types = ALL_TYPES, examMode = false, o
   const [recoveryFeedback, setRecoveryFeedback] = useState<RecoveryFeedback | null>(null);
   const [wrongIds, setWrongIds] = useState<string[]>([]);
   const [secondsLeft, setSecondsLeft] = useState(1200);
+  const submitting=useRef(false);
   const clock = usePracticeClock();
   const examExpired = examMode && secondsLeft === 0;
   useEffect(() => {
     if (!examMode) return;
-    const timer = window.setInterval(() => setSecondsLeft(Math.max(0, 1200 - clock.elapsed())), 1000);
-    return () => window.clearInterval(timer);
+    const update=()=>setSecondsLeft(Math.max(0,1200-clock.elapsed()));
+    const timer = window.setInterval(update, 250);
+    document.addEventListener("visibilitychange",update);window.addEventListener("pageshow",update);
+    return () => {window.clearInterval(timer);document.removeEventListener("visibilitychange",update);window.removeEventListener("pageshow",update);};
   }, [examMode, clock]);
   const resultRef = useRef<HTMLDivElement>(null);
   useEffect(() => {
@@ -152,7 +171,7 @@ export function NewsAutoQuiz({ articleId, types = ALL_TYPES, examMode = false, o
       })));
       // A finished quiz opens with the saved answers and review instead of a blank sheet.
       const previous = last.data as SavedResult | null;
-      if (!previous || examMode) return;
+      if (!previous || examMode || qaMode) return;
       setAnswers(Object.fromEntries(list.filter((question) => previous.answers[question.id] !== undefined).map((question) => {
         const value = previous.answers[question.id];
         return [question.id, choiceTypes.has(question.question_type) && value !== "" ? Number(value) : value];
@@ -160,9 +179,10 @@ export function NewsAutoQuiz({ articleId, types = ALL_TYPES, examMode = false, o
       setReviews(Object.fromEntries(previous.review.map((item) => [item.id, item])));
       setSaved({ submittedAt: previous.submittedAt, attempts: previous.attempts });
       setDuration(previous.durationSeconds ?? null);
+      clock.stop(previous.durationSeconds ?? 0);
     });
     return () => { live = false; };
-  }, [articleId, db, onStatus, examMode]);
+  }, [articleId, db, onStatus, examMode, qaMode, clock]);
 
   // This article's past attempts, for "so với lần trước" and the attempt list.
   useEffect(() => {
@@ -193,7 +213,34 @@ export function NewsAutoQuiz({ articleId, types = ALL_TYPES, examMode = false, o
   useEffect(() => { onProgress?.(shown.map((question) => isAnswered(answers[question.id])), shown.map((question) => graded ? reviews[question.id]?.correct : undefined)); }, [answers, shown, graded, reviews, onProgress]);
   // A different set of question types is a new round with its own timer.
   const roundKey = shown.map((question) => question.id).join();
-  useEffect(() => { clock.restart(); }, [roundKey, clock]);
+  useEffect(() => { if (roundKey && !examMode) { if(graded)clock.stop(duration??0);else clock.restart(); } }, [roundKey, clock, examMode, graded, duration]);
+
+  useEffect(()=>{
+    if(!examSession||!examMode||graded||!questions.length||examExpired||busy)return;
+    try{localStorage.setItem(`news-exam-draft:${examSession.id}`,JSON.stringify({revision:revision.current,answers}));}catch{/* Server autosave still works. */}
+    const timer=window.setTimeout(()=>{
+      saveQueue.current=saveQueue.current.catch(()=>{}).then(async()=>{
+        if(saveConflict.current)return;
+        setDraftStatus("Đang lưu…");
+        const {data,error:saveError}=await db.rpc("news_save_auto_exam",{p_session_id:examSession.id,p_answers:answers,p_revision:revision.current});
+        if(saveError){
+          if(/Another tab|Questions changed/i.test(saveError.message)){saveConflict.current=true;setError("Lượt làm đã thay đổi ở tab khác hoặc đề đã đổi. Tải lại để khôi phục trước khi tiếp tục.");}
+          setDraftStatus("Chưa đồng bộ. Bản nháp còn trên thiết bị; kiểm tra kết nối và thử lưu lại.");return;
+        }
+        revision.current=(data as NewsExamSession).revision;
+        try{localStorage.setItem(`news-exam-draft:${examSession.id}`,JSON.stringify({revision:revision.current,answers:latestAnswers.current}));}catch{/* Optional device journal. */}
+        setDraftStatus("Đã lưu đáp án");
+      }).catch(()=>setDraftStatus("Mất kết nối. Bản nháp còn trên thiết bị; hãy thử lưu lại."));
+    },400);
+    return()=>window.clearTimeout(timer);
+  },[answers,examSession,examMode,graded,questions.length,examExpired,busy,db,draftRetry]);
+  useEffect(()=>{const retry=()=>setDraftRetry((value)=>value+1);window.addEventListener("online",retry);return()=>window.removeEventListener("online",retry);},[]);
+
+  const submitCurrent=useEffectEvent(async()=>{await submit();});
+  useEffect(()=>{
+    if(!examExpired||graded||busy||!questions.length||expiredSubmission.current)return;
+    expiredSubmission.current=true;void submitCurrent();
+  },[examExpired,graded,busy,questions.length]);
   const sections = useMemo(() => {
     const list: { type: QuestionType; items: { question: Question; number: number }[] }[] = [];
     shown.forEach((question, index) => {
@@ -245,21 +292,29 @@ export function NewsAutoQuiz({ articleId, types = ALL_TYPES, examMode = false, o
   }
 
   async function submit() {
-    if (!shown.length || (!examMode && answered !== shown.length) || busy) return;
+    if (!shown.length || (!examMode && answered !== shown.length) || busy || submitting.current || saveConflict.current) return;
+    submitting.current=true;
     setBusy(true); setError("");
+    try {
     const payload = Object.fromEntries(shown.map((question) => {
       const value = answers[question.id];
       return [question.id, value === undefined ? "" : typeof value === "string" ? value.trim() : value];
     }));
-    const seconds = Math.min(clock.elapsed(), 1200);
+    let seconds = Math.min(clock.elapsed(), examMode ? 1200 : 36000);
     let review: Review[] | null = null;
-    const practice = examMode
-      ? await db.rpc("news_submit_auto_exam", { p_article_id: articleId, p_answers: payload, p_seconds: seconds })
+    await saveQueue.current;
+    if(saveConflict.current){setBusy(false);return;}
+    if(examMode&&!examSession){setError("Chưa có lượt làm được máy chủ xác nhận. Hãy thoát và mở lại luyện có thời gian.");setBusy(false);return;}
+    const practice = qaMode&&!examMode
+      ? await fetch("/api/news/quiz-check",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({articleId,answers:payload})}).then(async(response)=>{const data=await response.json();return response.ok?{data,error:null}:{data:null,error:{message:data.error,code:"QA"}};}).catch(()=>({data:null,error:{message:"Chưa kiểm tra được đáp án. Hãy thử lại.",code:"QA"}}))
+      : examMode
+      ? await db.rpc("news_finish_auto_exam", { p_session_id: examSession!.id, p_answers: payload, p_revision: revision.current })
       : await db.rpc("news_submit_auto_practice", { p_article_id: articleId, p_answers: payload, p_seconds: seconds });
     if (!practice.error) {
+      if(examMode){const result=practice.data as {durationSeconds:number;answers:Record<string,number|string>};seconds=result.durationSeconds;setAnswers(result.answers);try{localStorage.removeItem(`news-exam-draft:${examSession!.id}`);}catch{/* Optional device journal. */}}
       review = (practice.data as { review: Review[] }).review;
       const attempt: PracticeAttempt = { id: crypto.randomUUID(), article_id: articleId, score: review.filter((item) => item.correct).length, total: review.length,
-        submitted_at: new Date().toISOString(), partial, breakdown: (practice.data as { breakdown: Breakdown }).breakdown, duration_seconds: seconds };
+        submitted_at: new Date().toISOString(), partial, mode:examMode?"timed":"practice", breakdown: (practice.data as { breakdown: Breakdown }).breakdown, duration_seconds: seconds };
       setHistory((current) => [attempt, ...current].slice(0, 10));
       if (!partial) setSaved((current) => ({ submittedAt: attempt.submitted_at, attempts: (current?.attempts ?? 0) + 1 }));
     } else if (examMode || practice.error.code !== "PGRST202") setError(practice.error.message);
@@ -280,17 +335,21 @@ export function NewsAutoQuiz({ articleId, types = ALL_TYPES, examMode = false, o
     setBusy(false);
     if (!review) return;
     onSubmitted?.();
-    const recovery = await db.rpc("streak_recovery_status");
+    if(!qaMode){const recovery = await db.rpc("streak_recovery_status");
     if (!recovery.error) setRecoveryFeedback(recovery.data as RecoveryFeedback);
-    if (!partial) window.dispatchEvent(new Event("learner-xp-updated"));
+    if (!partial) window.dispatchEvent(new Event("learner-xp-updated"));}
     const result = review;
     setReviews((current) => ({ ...current, ...Object.fromEntries(result.map((item) => [item.id, item])) }));
     setDuration(seconds);
-    celebrateScore(result.filter((item) => item.correct).length, result.length);
+    clock.stop(seconds);
+    if(!qaMode)celebrateScore(result.filter((item) => item.correct).length, result.length);
     requestAnimationFrame(() => resultRef.current?.scrollIntoView({ behavior: "smooth", block: "nearest" }));
+    }catch{setError("Mất kết nối khi nộp bài. Đáp án còn lưu; hãy thử nộp lại.");}
+    finally{submitting.current=false;setBusy(false);}
   }
 
   function retry() {
+    if(examMode){if(onNewExam)void onNewExam();return;}
     const ids = new Set(shown.map((question) => question.id));
     setAnswers((current) => Object.fromEntries(Object.entries(current).filter(([id]) => !ids.has(id))));
     setReviews((current) => Object.fromEntries(Object.entries(current).filter(([id]) => !ids.has(id))));
@@ -312,7 +371,8 @@ export function NewsAutoQuiz({ articleId, types = ALL_TYPES, examMode = false, o
   return <section className="news-auto-quiz" aria-label="Câu hỏi luyện đọc IELTS từ bài báo">
     <div className="news-auto-quiz-heading"><span className="eyebrow"><Sparkles size={15}/> IELTS READING TỪ BÀI BÁO</span>
       <h2>{wrongIds.length ? `Ôn lại ${shown.length} câu sai` : `${shown.length} câu hỏi ${partial ? `· ${types.map((type) => groups[type].short).join(" + ")}` : "theo dạng đề IELTS"}`}</h2>
-      <p>{examMode ? `Mô phỏng 20 phút · còn ${Math.floor(secondsLeft / 60)}:${String(secondsLeft % 60).padStart(2, "0")}. Không có dịch hoặc tra từ; câu bỏ trống được tính sai.` : wrongIds.length ? "Luyện lại các câu vừa trả lời sai. Kết quả được lưu riêng trong lịch sử." : partial ? "Đang luyện riêng các dạng đã chọn. Kết quả được lưu vào lịch sử nhưng không thay bài làm đầy đủ." : "Câu hỏi do AI soạn từ toàn văn bài này. Làm hết các phần rồi nộp bài để xem đáp án và câu dẫn chứng."}</p>
+      <p>{examMode ? `Luyện một bài đọc · 20 phút · còn ${Math.floor(secondsLeft / 60)}:${String(secondsLeft % 60).padStart(2, "0")}. Không có dịch hoặc tra từ; câu bỏ trống được tính sai.` : wrongIds.length ? "Luyện lại các câu vừa trả lời sai. Kết quả được lưu riêng trong lịch sử." : partial ? "Đang luyện riêng các dạng đã chọn. Kết quả được lưu vào lịch sử nhưng không thay bài làm đầy đủ." : "Câu hỏi do AI soạn từ toàn văn bài này. Làm hết các phần rồi nộp bài để xem đáp án và câu dẫn chứng."}</p>
+      {examMode&&<p role="status">{draftStatus||"Đáp án sẽ tự lưu khi thay đổi."}{!graded&&!examExpired&&<button type="button" onClick={()=>setDraftRetry((value)=>value+1)}>Lưu lại</button>}</p>}
       {wrongIds.length ? <button type="button" className="button subtle" onClick={() => setWrongIds([])}>Xem lại toàn bộ câu hỏi</button> : !examMode && onTypesChange && <QuestionTypePicker available={available} selected={partial ? types : []} onChange={onTypesChange} />}
       {examExpired && !graded && <p className="form-error" role="status">Hết giờ. Bài đã khóa; nộp để xem kết quả, kể cả câu bỏ trống.</p>}
     </div>
@@ -328,12 +388,22 @@ export function NewsAutoQuiz({ articleId, types = ALL_TYPES, examMode = false, o
         ? section.items.map(({ question }) => noteWordLimitForPrompt(question.prompt)) : [];
       const sharedNoteWordLimit = noteWordLimits.length && noteWordLimits.every((limit) => limit === noteWordLimits[0])
         ? noteWordLimits[0] : null;
+      const matching=section.type.startsWith("matching_")?sharedMatchingOptions(section.items.map((item)=>item.question)):null;
+      const groupedCompletion=["summary_completion","note_completion"].includes(section.type);
       return <div className={`news-auto-group${section.type === "flow_chart_completion" ? " news-auto-flow-group" : ""}`} key={`${section.type}-${first}`}>
         <div className="news-auto-group-head"><strong>Questions {first}{last > first ? `–${last}` : ""} · {group.title}</strong><p>{section.type === "note_completion"
           ? sharedNoteWordLimit
             ? `${group.instruction} Write NO MORE THAN ${wordLimitText(sharedNoteWordLimit)} from the article for each answer.`
             : `${group.instruction} Follow the word limit shown with each question.`
           : group.instruction}</p><small>{group.hint}</small></div>
+        {matching&&<div className="news-matching-pool" aria-label="Danh sách lựa chọn dùng chung"><strong>Danh sách lựa chọn</strong><ol type="A">{matching.map((option,index)=><li key={index}>{option}</li>)}</ol><small>Chọn chữ cái cho từng câu. Chỉ dùng lại khi hướng dẫn nhóm cho phép.</small></div>}
+        {groupedCompletion&&<div className={`news-group-completion ${section.type}`} aria-label={section.type==="summary_completion"?"Đoạn tóm tắt":"Ghi chú"}>
+          <strong>{section.type==="summary_completion"?"Complete the summary":"Complete the notes"}</strong>
+          {section.items.map(({question,number})=>{
+            const prompt=promptWithoutWordLimit(question.prompt);const gap=/_{3,}|\.{3,}|…/.exec(prompt);const value=answers[question.id];
+            return <span className="news-group-gap" key={question.id} data-q={number}>{gap?prompt.slice(0,gap.index):prompt} <label><b>({number})</b><input type="text" maxLength={60} autoComplete="off" aria-label={`Chỗ trống ${number}`} value={typeof value==="string"?value:""} disabled={graded||examExpired} onChange={(event)=>setAnswers((current)=>({...current,[question.id]:event.target.value}))}/></label>{gap?prompt.slice(gap.index+gap[0].length):""}{" "}</span>;
+          })}
+        </div>}
         {arrowTable && <>
           <p className="news-completion-instruction">{arrowTable.instruction}</p>
           <div className="news-completion-table-scroll"><table className="news-completion-table" aria-label={`Bảng điền từ câu ${first} đến ${last}`}>
@@ -369,17 +439,21 @@ export function NewsAutoQuiz({ articleId, types = ALL_TYPES, examMode = false, o
           })}
         </>}
         {!arrowTable && section.items.map(({ question, number }) => {
+          if(groupedCompletion&&!graded)return null;
           const review = graded ? reviews[question.id] : undefined;
           const value = answers[question.id];
           const choice = choiceTypes.has(question.question_type);
           const table = question.question_type === "table_completion" ? parseTableCompletion(question.prompt) : null;
           const cleanPrompt = promptWithoutWordLimit(question.prompt);
+          const diagram=question.question_type==="diagram_label_completion"?parseQuestionDiagram(cleanPrompt):null;
           const noteWordLimit = noteWordLimitForPrompt(question.prompt);
           const flowChart = question.question_type === "flow_chart_completion" ? parseFlowChartPrompt(cleanPrompt) : null;
-          const visiblePrompt = table?.instruction ?? cleanPrompt;
+          const visiblePrompt = table?.instruction ?? diagram?.prompt ?? cleanPrompt;
           const setValue = (next: number | string) => setAnswers((current) => ({ ...current, [question.id]: next }));
           return <div className={`news-auto-question ${review ? (review.correct ? "is-correct" : "is-wrong") : ""}`} key={question.id} data-q={number}>
             <strong>Câu {number}</strong>
+            {diagram&&<svg className="news-question-diagram" viewBox={`0 0 460 ${80+diagram.labels.length*56}`} role="img" aria-label={`${diagram.title}. ${diagram.labels.map((label,index)=>index===diagram.gap?`Vị trí ${number} cần điền`:label).join("; ")}`}><title>{diagram.title}</title><text x="20" y="28">{diagram.title}</text>{diagram.labels.map((label,index)=><g key={index}><rect x="24" y={48+index*56} width="408" height="42" rx="8" fill={index===diagram.gap?"#fff5d5":"#eaf7f6"} stroke="#74b9bf"/><text x="40" y={74+index*56}>{index===diagram.gap?`(${number}) ______`:label}</text>{index<diagram.labels.length-1&&<path d={`M228 ${90+index*56} v14 m-4 -5 l4 5 4 -5`} stroke="#287e88" fill="none"/>}</g>)}</svg>}
+            {question.question_type==="diagram_label_completion"&&!diagram&&<p className="news-form-note">Mẫu cũ chưa có sơ đồ. Câu này hiện chỉ phù hợp luyện đọc mô tả; chưa dùng để đánh giá kỹ năng đọc sơ đồ.</p>}
             {flowChart ? <div className="news-flow-chart" role="list" aria-label={question.prompt}>{flowChart.map((step,index)=><div className="news-flow-chart-unit" key={`${step.start}-${index}`}>
               <div className="news-flow-chart-step" role="listitem" onMouseUp={(event)=>selectQuestion(event.currentTarget,event.target,question,step.start)} onTouchEnd={(event)=>{const root=event.currentTarget;const target=event.target;requestAnimationFrame(()=>selectQuestion(root,target,question,step.start));}}>{segments(step.text,step.start,questionHighlights[question.id]??[]).map((part)=>part.highlight
                 ? <mark key={part.start} data-question-hl={part.highlight.id} className={`news-question-mark ${part.highlight.color}`}>{part.text}</mark>
@@ -407,9 +481,9 @@ export function NewsAutoQuiz({ articleId, types = ALL_TYPES, examMode = false, o
             </table></div>}
             {!choice && !gapTypes.has(question.question_type) && <input className="news-auto-written" type="text" maxLength={60} autoComplete="off" aria-label={`Câu trả lời câu ${number}`}
                value={typeof value === "string" ? value : ""} disabled={graded || examExpired} onChange={(event) => setValue(event.target.value)} placeholder="Tối đa 3 từ"/>}
-            {gapTypes.has(question.question_type) && !table && <input className="news-auto-written" type="text" maxLength={60} autoComplete="off" aria-label={`Từ còn thiếu câu ${number}`}
+            {gapTypes.has(question.question_type) && !table && !groupedCompletion && <input className="news-auto-written" type="text" maxLength={60} autoComplete="off" aria-label={`Từ còn thiếu câu ${number}`}
                value={typeof value === "string" ? value : ""} disabled={graded || examExpired} onChange={(event) => setValue(event.target.value)} placeholder={`Điền vào chỗ trống · tối đa ${question.question_type === "note_completion" ? noteWordLimit : 3} từ`}/>}
-            {choice && <div className={`news-auto-options ${question.question_type === "tfng" || question.question_type === "ynng" ? "tfng" : ""}`}>{question.options.map((option, index) =>
+            {choice&&matching?<label className="news-matching-answer">Lựa chọn câu {number}<select aria-label={`Ghép đáp án câu ${number}`} value={typeof value==="number"?value:""} disabled={graded||examExpired} onChange={(event)=>setValue(event.target.value===""?"":Number(event.target.value))}><option value="">Chọn chữ cái</option>{matching.map((_,index)=><option key={index} value={index}>{String.fromCharCode(65+index)}</option>)}</select></label>:choice && <div className={`news-auto-options ${question.question_type === "tfng" || question.question_type === "ynng" ? "tfng" : ""}`}>{question.options.map((option, index) =>
               <label key={index} className={`${value === index ? "selected" : ""} ${review?.correctIndex === index ? "correct" : ""} ${review && value === index && index !== review.correctIndex ? "wrong" : ""}`}>
                  <input type="radio" name={`news-ai-${question.id}`} checked={value === index} disabled={graded || examExpired} onChange={() => setValue(index)}/>
                 {question.question_type !== "tfng" && question.question_type !== "ynng" && <span>{"ABCD"[index]}</span>}<em>{question.question_type === "tfng" || question.question_type === "ynng" ? option.toUpperCase() : option}</em>
@@ -431,20 +505,20 @@ export function NewsAutoQuiz({ articleId, types = ALL_TYPES, examMode = false, o
         const items = shown.filter((question) => question.question_type === type);
         return [type, { correct: items.filter((question) => reviews[question.id]?.correct).length, total: items.length }];
       }))])}
-      saved={saved && !partial ? saved : null} history={history} onRetry={retry} onRetryWrong={examMode ? undefined : retryWrong} />
+      qaMode={qaMode} mode={examMode?"timed":"practice"} saved={saved && !partial ? saved : null} history={history} onRetry={retry} onRetryWrong={examMode ? undefined : retryWrong} />
       {recoveryFeedback?.restoredToday ? <p role="status">Đã khôi phục chuỗi học! <Link href="/app/profile">Xem hồ sơ →</Link></p>
         : recoveryFeedback?.active ? <p role="status">Thử thách khôi phục chuỗi: {recoveryFeedback.completed}/{recoveryFeedback.required} bài đạt yêu cầu. Chỉ bài đã đọc xong và trả lời đúng toàn bộ câu hỏi mới được tính. <Link href="/app/profile">Xem tiến độ →</Link></p> : null}
     </div>}
   </section>;
 }
-function QuizResult({ score, total, partial, duration, breakdown, saved, history, onRetry, onRetryWrong }: {
-  score: number; total: number; partial: boolean; duration: number | null;
+function QuizResult({ score, total, partial, duration, breakdown, saved, history, qaMode, mode, onRetry, onRetryWrong }: {
+  qaMode:boolean;mode:"timed"|"practice";score: number; total: number; partial: boolean; duration: number | null;
   breakdown: ReturnType<typeof sumBreakdowns>; saved: { submittedAt: string; attempts: number } | null;
   history: PracticeAttempt[]; onRetry: () => void; onRetryWrong?: () => void;
 }) {
   const pct = percent(score, total);
   // Compare with the attempt before this one, of the same kind (full quiz or chosen types).
-  const same = history.filter((item) => Boolean(item.partial) === partial);
+  const same = history.filter((item) => Boolean(item.partial) === partial && (item.mode??"practice")===mode);
   const previous = same.length > 1 && same[0].score === score && same[0].total === total ? same[1] : null;
   const change = previous ? pct - percent(previous.score, previous.total) : null;
   const weakest = breakdown.length > 1 ? [...breakdown].sort((a, b) => a.percent - b.percent)[0] : null;
@@ -464,14 +538,14 @@ function QuizResult({ score, total, partial, duration, breakdown, saved, history
     {history.length > 1 && <details className="news-quiz-result-history">
       <summary>Các lần làm bài này ({history.length})</summary>
       <ol>{history.map((item) => <li key={item.id}><time>{new Date(item.submitted_at).toLocaleString("vi-VN", { dateStyle: "short", timeStyle: "short" })}</time>
-        <span>{item.partial ? "Theo dạng" : "Đầy đủ"}</span><b>{item.score}/{item.total}</b><em>{percent(item.score, item.total)}%</em>
+        <span>{item.mode==="timed"?"Có thời gian":item.partial ? "Theo dạng" : "Đầy đủ"}</span><b>{item.score}/{item.total}</b><em>{percent(item.score, item.total)}%</em>
         {item.duration_seconds ? <small>{formatDuration(item.duration_seconds)}</small> : <small>—</small>}</li>)}</ol>
     </details>}
     <div className="news-quiz-result-actions">
-      <span>{partial ? "Đã lưu vào lịch sử luyện theo dạng." : saved ? `Đã lưu lần làm thứ ${saved.attempts} lúc ${new Date(saved.submittedAt).toLocaleString("vi-VN", { dateStyle: "short", timeStyle: "short" })}.` : "Đã lưu vào lịch sử."}</span>
+      <span>{qaMode?"Kết quả kiểm thử, không ghi vào lịch sử học hoặc XP.":partial ? "Đã lưu vào lịch sử luyện theo dạng." : saved ? `Đã lưu lần làm thứ ${saved.attempts} lúc ${new Date(saved.submittedAt).toLocaleString("vi-VN", { dateStyle: "short", timeStyle: "short" })}.` : "Đã lưu vào lịch sử."}</span>
       <Link href="/app/news/history" className="button subtle">Xem phân tích</Link>
       {score < total && onRetryWrong && <button type="button" className="button subtle" onClick={onRetryWrong}><RotateCcw size={15} /> Ôn {total - score} câu sai</button>}
-      <button type="button" className="button primary" onClick={onRetry}><RotateCcw size={15} /> Làm lại</button>
+      <button type="button" className="button primary" onClick={onRetry}><RotateCcw size={15} /> {mode==="timed"?"Luyện lượt mới":"Làm lại"}</button>
     </div>
   </section>;
 }
