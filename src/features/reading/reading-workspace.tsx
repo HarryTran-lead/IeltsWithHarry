@@ -6,6 +6,7 @@ import { addHighlight, highlightColors, parseHighlightCache, parseHighlights, se
 import { Literata } from "next/font/google";
 import { createClient } from "@/lib/supabase/browser";
 import { liveMode } from "@/lib/runtime";
+import { readingBlocks, readingComplete } from "@/lib/news/reading-progress";
 import { findEvidenceLocation, type EvidenceLocation } from "@/lib/news/evidence-location";
 import "./reading-workspace.css";
 
@@ -87,6 +88,7 @@ export function ReadingWorkspace({ docKey, title, paragraphs, translation, after
 }) {
   const textKey = paragraphs.join("\u0000");
   const text = useMemo(() => textKey.split("\u0000"), [textKey]);
+  const blocks = useMemo(() => readingBlocks(text), [text]);
   const storageKey = `ieltswithharry-highlights:${docKey}`;
   const db = useMemo(() => liveMode ? createClient() : null, []);
   const [highlights, setHighlights] = useState<Highlight[]>([]);
@@ -111,11 +113,10 @@ export function ReadingWorkspace({ docKey, title, paragraphs, translation, after
   const textRef = useRef<HTMLDivElement>(null);
   const bodyRef = useRef<HTMLDivElement>(null);
   const sideRef = useRef<HTMLDivElement>(null);
-  const readEndRef = useRef<HTMLDivElement>(null);
-  const readStartedAt = useRef(0);
   const readCompleted = useRef(false);
   const resumeDone = useRef(false);
-  const readSeen = useRef(new Set<number>());
+  const readTimes = useRef<number[]>([]);
+  const readDocument = useRef("");
   const userIdRef = useRef<string | null>(null);
   const saveQueue = useRef<Promise<void>>(Promise.resolve());
   const saveVersion = useRef(0);
@@ -261,29 +262,44 @@ export function ReadingWorkspace({ docKey, title, paragraphs, translation, after
   }, [popover, practicing, openTool, timedPractice]);
 
   useEffect(() => {
-    if (!onReadEnd || practicing || readCompleted.current || !readEndRef.current || !textRef.current) return;
-    if (!readStartedAt.current) readStartedAt.current = Date.now();
-    let visible = false;
-    const finish = () => {
-      if (!visible || document.visibilityState !== "visible" || readCompleted.current) return;
-      if (Date.now() - readStartedAt.current < 20000) return;
-      if (readSeen.current.size < Math.max(1, Math.ceil(text.length * 0.8))) return;
-      readCompleted.current = true;
-      onReadEnd();
-    };
-    const end = readEndRef.current;
-    const observer = new IntersectionObserver((entries) => {
-      for (const entry of entries) {
-        if (entry.target === end) visible = entry.isIntersecting;
-        else if (entry.isIntersecting) readSeen.current.add(Number((entry.target as HTMLElement).dataset.p));
+    const identity = `${docKey}\u0000${textKey}`;
+    if (readDocument.current !== identity) {
+      readDocument.current = identity;
+      readTimes.current = blocks.map(() => 0);
+      readCompleted.current = false;
+    }
+    if (!onReadEnd || practicing || readCompleted.current || !textRef.current || !blocks.length) return;
+    const paragraphElements = Array.from(textRef.current.querySelectorAll<HTMLElement>("p[data-p]"));
+    let previous = performance.now();
+    const tick = () => {
+      const now = performance.now();
+      const elapsed = now - previous;
+      previous = now;
+      // Delayed timers cannot credit time spent in another tab or app.
+      if (elapsed > 750 || document.visibilityState !== "visible" || !document.hasFocus()) return;
+      const viewportHeight = window.innerHeight;
+      const rects = paragraphElements.map((paragraph) => paragraph.getBoundingClientRect());
+      for (const [index, block] of blocks.entries()) {
+        if (readTimes.current[index] >= block.targetMs) continue;
+        const rect = rects[block.paragraphIndex];
+        if (!rect || rect.height <= 0) continue;
+        const bandHeight = rect.height / block.count;
+        const top = rect.top + bandHeight * block.blockIndex;
+        const visibleHeight = Math.min(top + bandHeight, viewportHeight) - Math.max(top, 0);
+        if (visibleHeight >= Math.min(bandHeight, viewportHeight) * 0.5) {
+          readTimes.current[index] = Math.min(block.targetMs, readTimes.current[index] + elapsed);
+          // A large viewport cannot earn time for several blocks simultaneously.
+          break;
+        }
       }
-      finish();
-    }, { threshold: 0.1 });
-    observer.observe(readEndRef.current);
-    textRef.current.querySelectorAll("p[data-p]").forEach((paragraph) => observer.observe(paragraph));
-    const timer = window.setInterval(finish, 1000);
-    return () => { observer.disconnect(); window.clearInterval(timer); };
-  }, [onReadEnd, practicing, text.length]);
+      if (readingComplete(blocks, readTimes.current)) {
+        readCompleted.current = true;
+        onReadEnd();
+      }
+    };
+    const timer = window.setInterval(tick, 250);
+    return () => window.clearInterval(timer);
+  }, [blocks, docKey, onReadEnd, practicing, textKey]);
 
   useEffect(() => {
     if (!onParagraphSeen || practicing || !textRef.current) return;
@@ -388,7 +404,7 @@ export function ReadingWorkspace({ docKey, title, paragraphs, translation, after
     }
   }
 
-  function enterPractice() { readStartedAt.current = 0; setMode("practice"); setPassageWide(false); setTab("passage"); setActiveEvidence(null); setPopover(null); setOpenTool(null); window.getSelection()?.removeAllRanges(); }
+  function enterPractice() { setMode("practice"); setPassageWide(false); setTab("passage"); setActiveEvidence(null); setPopover(null); setOpenTool(null); window.getSelection()?.removeAllRanges(); }
   function exitPractice() { setMode("read"); timedPractice?.onExit(); }
   function enterTimedPractice() { if (!total || !timedPractice) return; secondsRef.current = 0; setSeconds(0); timedPractice.onStart(); enterPractice(); }
   function requestPractice() { if (practice?.setup) setSetupOpen(true); else enterPractice(); }
@@ -462,7 +478,7 @@ export function ReadingWorkspace({ docKey, title, paragraphs, translation, after
       <div className="rw-pane rw-passage-pane">
         {practicing && <h2 className="rw-pane-title">{title}</h2>}
         {practicing && <p className="rw-scroll-hint">{practiceLimitSeconds ? "Mô phỏng 20 phút: đọc bài và trả lời câu hỏi trong thời gian còn lại." : "Cuộn trong khung này để xem hết bài đọc. Nhấn vào một từ để xem nghĩa."}</p>}
-        {!practicing && onParagraphSeen && text.length > 1 && <div className="rw-reading-progress" role="status" aria-label={`Đã đến đoạn ${Math.max(paragraphsSeen, resumeAt == null ? 0 : resumeAt + 1)} trên ${text.length}`}><span>Tiến độ đọc</span><div aria-hidden="true">{text.map((_, index) => <i key={index} className={index < Math.max(paragraphsSeen, resumeAt == null ? 0 : resumeAt + 1) ? "seen" : ""} />)}</div><strong>{Math.max(paragraphsSeen, resumeAt == null ? 0 : resumeAt + 1)}/{text.length} đoạn</strong></div>}
+        {!practicing && onParagraphSeen && text.length > 1 && <div className="rw-reading-progress" role="status" aria-label={`Đã xem đến đoạn ${Math.max(paragraphsSeen, resumeAt == null ? 0 : resumeAt + 1)} trên ${text.length}`}><span>Vị trí đã xem</span><div aria-hidden="true">{text.map((_, index) => <i key={index} className={index < Math.max(paragraphsSeen, resumeAt == null ? 0 : resumeAt + 1) ? "seen" : ""} />)}</div><strong>{Math.max(paragraphsSeen, resumeAt == null ? 0 : resumeAt + 1)}/{text.length} đoạn</strong></div>}
         <div ref={textRef} className="rw-text" onMouseUp={onSelect} onTouchEnd={(event) => {
           // Mobile browsers finish their native text-selection gesture after touchend.
           event.persist();
@@ -484,7 +500,6 @@ export function ReadingWorkspace({ docKey, title, paragraphs, translation, after
             </aside>}
           </div>)}
         </div>
-        {!practicing && onReadEnd && <div ref={readEndRef} className="rw-read-end" aria-hidden="true" />}
         {!practicing && <p className="rw-hint" role="status"><Highlighter size={15} /> {ready ? saveStatus === "local" ? "Bôi đen để highlight. Bản này đang lưu trên thiết bị; sẽ thử đồng bộ khi có kết nối." : saveStatus === "saving" ? "Đang đồng bộ highlight…" : "Bôi đen để highlight. Highlight tự lưu vào tài khoản của bạn." : "Đang tải highlight…"}</p>}
         {!practicing && after}
         {!practicing && total > 0 && <div className="rw-cta">
