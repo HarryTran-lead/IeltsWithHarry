@@ -369,7 +369,7 @@ function NewsHome() {
       </div>
       {showDailyPicks && rows.length > 0 && <div className="news-today-strip">
         <div className="news-daily-plan"><strong>4 bài nên đọc hôm nay</strong><span>Đọc 1 bài → làm quiz → <Link href="/app/vocabulary">ôn 3 từ</Link></span></div>
-        <div className="news-interest-picks"><span>Bạn thích đọc về</span><div>{NEWS_CATEGORIES.map((topic) => <button key={topic} type="button" aria-pressed={preferredTopics.includes(topic)} onClick={() => void togglePreferredTopic(topic)}>{topic}</button>)}</div></div>
+        <div className="news-interest-picks"><span>Bạn thích đọc về</span><div>{NEWS_CATEGORIES.map((topic) => <button key={topic} type="button" aria-pressed={preferredTopics.includes(topic)} onClick={() => void togglePreferredTopic(topic)}>{newsCategoryLabel(topic)}</button>)}</div></div>
       </div>}
       {(category!=="All News"||region!=="all"||interest!=="all"||questionType!=="all"||readyOnly||query||source!=="all"||year!=="all")&&<button type="button" className="news-clear-filters" onClick={()=>{setCategory("All News");setRegion("all");setInterest("all");setQuestionType("all");setReadyOnly(false);setQuery("");setSource("all");setYear("all");setPage(0);}}>Xóa tất cả bộ lọc</button>}
       {randomError && <p className="form-error" role="alert">{randomError}</p>}

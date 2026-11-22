@@ -192,3 +192,4 @@
 @media(max-width:650px){.rw.is-news.is-read .rw-meta{display:none}.rw.is-news.is-read .rw-timed-start{font-size:0!important;padding:6px!important}.rw.is-news.is-read .rw-timed-start::after{content:'20 phút';font-size:12px}.rw.is-news.is-read .rw-modes button{padding:5px 7px;font-size:12px}.rw.is-news.is-read .rw-bar{gap:4px}.rw.is-practice .rw-bar-end{display:none}.rw.is-news.is-read .rw-flyout,.rw.is-news.is-read .rw-tools:not(.is-min){top:auto;bottom:12px;right:12px;max-height:70dvh}}
 
 .rw-section-title{clear:both;margin:1.8em 0 .6em;font:700 1.15em/1.4 var(--font-sans);color:var(--navy)}
+@media(max-width:520px){.rw.is-news.is-read .rw-lookup-toggle{font-size:0!important;gap:0;padding:7px!important}.rw.is-news.is-read .rw-options>.button{font-size:12px;padding:5px 7px}.rw.is-news.is-read .rw-modes button{font-size:11px;gap:4px}.rw.is-news.is-read .rw-bar-end{min-width:0;margin-left:0}}

@@ -525,7 +525,7 @@ export function ReadingWorkspace({ docKey, title, paragraphs, persist = true, se
         </div>
         <span className="rw-meta"><Clock3 size={15} /> ~{minutes} phút đọc</span>
         {timedPractice && <button className="button subtle rw-timed-start" type="button" disabled={!total} onClick={() => setTimedSetup(true)}>{total ? timedPractice.label : "Chưa có đề luyện"}</button>}
-        {tools?.length ? <button type="button" className="button subtle" onClick={() => { setToolsMin(true); setOpenTool(openTool ? null : tools[0].id); }}><BookOpenText size={16}/>Tra cứu</button> : null}
+        {tools?.length ? <button type="button" className="button subtle rw-lookup-toggle" aria-label="Tra từ và sổ từ" onClick={() => { setToolsMin(true); setOpenTool(openTool ? null : tools[0].id); }}><BookOpenText size={16}/>Tra cứu</button> : null}
         {!newsReader&&toolbar}
       </>}
       <div className="rw-bar-end">{practicing || !newsReader ? <>{clearControl}{sizeControl}</> : <div className="rw-options"><button className="button subtle" type="button" aria-expanded={toolMenu} onClick={() => setToolMenu(!toolMenu)}>Tùy chọn</button>{toolMenu && <div className="rw-options-menu">{toolbar}{sizeControl}{clearControl}</div>}</div>}</div>

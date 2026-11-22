@@ -63,7 +63,7 @@ export function NewsReadingTools({ qaMode = false, articleId, title, paragraphs,
     if (qaMode || !ready || !value.meaningVi.trim() || pendingWords.current.has(key) || existing) return;
     pendingWords.current.add(key);
     try {
-      const input = { kind: "word" as const, title: value.word, body: "" as const, meaningVi: value.meaningVi.trim().slice(0, 200), example: (lookupContext.current || value.example).slice(0, 500), phonetic:value.phonetic,partOfSpeech:value.part,definition:value.definition };
+      const input = { kind: "word" as const, title: value.word, body: "" as const, meaningVi: value.meaningVi.trim().slice(0, 200), example: (lookupContext.current || value.example).slice(0, 500), phonetic:value.phonetic.slice(0,100),partOfSpeech:value.part.slice(0,50),definition:value.definition.slice(0,500) };
       await addEntry(input, sourcePath);
     } catch (error) {
       setLookupError(error instanceof Error ? error.message : "Không thể lưu từ vào sổ tay.");
