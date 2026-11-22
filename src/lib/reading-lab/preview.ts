@@ -79,7 +79,8 @@ export async function catalog(): Promise<ReadingLabSummary[]> {
       const questions = content.sections.flatMap((section) => section.questions);
       return { id, title: exam.title, sections: content.sections.length, questions: questions.length,
         minutes: exam.duration_minutes, fullTest: exam.mode === "full_mock",
-        questionTypes: [...new Set(questions.map((question) => question.type))] };
+        questionTypes: [...new Set(questions.map((question) => question.type))],
+        passages: content.sections.map((section) => section.title) };
     });
   }
   const files = await readdir(join(readingLabRoot(), "learner"));
@@ -94,6 +95,7 @@ export async function catalog(): Promise<ReadingLabSummary[]> {
       questions: questions.length, minutes: exam.durationMinutes as number,
       fullTest: exam.mode === "full_mock",
       questionTypes: [...new Set(questions.map((question) => question.type))],
+      passages: content.sections.map((section) => section.title),
     };
   }));
 }
