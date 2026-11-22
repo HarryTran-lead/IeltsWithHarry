@@ -213,7 +213,7 @@ button.sp-stage-row:hover{background:#f7fafb}
 .sp-footnote svg{flex:none;margin-top:2px;color:var(--sp-teal)}
 
 /* The lesson bar stays pinned under the app header while the lesson scrolls, and tightens once it sticks. */
-:is(.t1-lessonbar,.t2-lessonbar,.spk-lessonbar,.ll-lessonbar),.sp-lesson>.sp-lessonbar{position:sticky;top:calc(var(--app-header-height,64px) + 6px);z-index:30}
+:is(.t1-lessonbar,.t2-lessonbar,.spk-lessonbar,.ll-lessonbar,.rl-lessonbar),.sp-lesson>.sp-lessonbar{position:sticky;top:calc(var(--app-header-height,64px) + 6px);z-index:30}
 .sp-lessonbar{transition:min-height .15s ease,padding .15s ease,box-shadow .15s ease}
 .sp-lessonbar.is-stuck{min-height:46px;padding-block:3px;background:rgba(255,255,255,.97);box-shadow:0 12px 26px -18px rgba(16,35,63,.6);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px)}
 .sp-lessonbar.is-stuck .sp-lessonbar-name small{display:none}

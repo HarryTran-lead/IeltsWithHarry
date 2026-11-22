@@ -49,7 +49,7 @@ const SpeakingLab = dynamic(() => import("@/features/speaking-lab/speaking-lab")
 const WritingTask1Lab = dynamic(() => import("@/features/writing-task1/writing-task1-lab").then((module) => module.WritingTask1Lab), { loading: SectionLoading });
 const ListeningVocabularyPage = dynamic(() => import("@/features/listening/listening-vocabulary-page").then((module) => module.ListeningVocabularyPage), { loading: SectionLoading });
 const ReadingVocabularyPage = dynamic(() => import("@/features/reading/reading-vocabulary-page").then((module) => module.ReadingVocabularyPage), { loading: SectionLoading });
-const ReadingLabPreview = dynamic(() => import("@/features/ielts/reading-lab-preview").then((module) => module.ReadingLabPreview), { loading: SectionLoading });
+const ReadingLab = dynamic(() => import("@/features/ielts/reading-lab").then((module) => module.ReadingLab), { loading: SectionLoading });
 const GrammarGarden = dynamic(() => import("@/features/grammar/grammar-garden").then((module) => module.GrammarGarden), { loading: SectionLoading });
 const Community = dynamic(() => import("@/features/community/community").then((module) => module.Community), { loading: SectionLoading });
 
@@ -119,7 +119,7 @@ function PortalContent({ canManage }: { canManage: boolean }) {
         ) : skill === "vocabulary" && skillMode === "listening" ? (
           <ListeningVocabularyPage />
         ) : skill === "reading" && skillMode === "lab" ? (
-          <ReadingLabPreview />
+          <ReadingLab />
         ) : skill && !skillMode ? (
           <IeltsSkillDashboard key={skill} skill={skill} />
         ) : skill === "speaking" && skillMode === "mock" ? (
