@@ -291,7 +291,7 @@ ${customPrompt.slice(0, 4000)}`, `Article title: ${title}\n\nArticle text:\n${ex
 
 type CommonsResult = { query?: { pages?: { title?: string; imageinfo?: {
   thumburl?: string; descriptionurl?: string; width?: number; height?: number;
-  extmetadata?: { LicenseShortName?: { value?: string }; LicenseUrl?: { value?: string }; Artist?: { value?: string }; ImageDescription?: { value?: string } };
+  extmetadata?: { LicenseShortName?: { value?: string }; LicenseUrl?: { value?: string }; Artist?: { value?: string }; ImageDescription?: { value?: string }; Categories?: { value?: string } };
 }[] }[] } };
 type NasaLibraryResult = { collection?: { items?: { data?: { title?: string; nasa_id?: string; media_type?: string; center?: string; photographer?: string; secondary_creator?: string; description?: string; keywords?: string[] }[]; links?: { href?: string; rel?: string; width?: number }[] }[] } };
 export type Illustration = { image_url: string; image_alt: string; image_credit: string; image_source_url: string; license_name: string; license_url: string | null };
@@ -312,6 +312,14 @@ function approvedUrl(raw: string, hosts: string[]) {
   try { const url = new URL(raw); return url.protocol === "https:" && hosts.includes(url.hostname) ? url.toString() : null; }
   catch { return null; }
 }
+function approvedCcLicenseUrl(raw: string, license: string) {
+  const match = /^CC (BY(?:-SA)?) ([234]\.\d)(?: .*)?$/.exec(license);
+  const approved = approvedUrl(raw, ["creativecommons.org"]);
+  if (!match || !approved) return null;
+  const url = new URL(approved);
+  const path = `/licenses/${match[1].toLowerCase()}/${match[2]}/`;
+  return url.pathname === path || url.pathname === path.slice(0, -1) ? `${url.origin}${path}` : null;
+}
 const imageAgent = { Accept: "application/json", "User-Agent": "IeltsWithHarry/1.0 (https://ieltswithharry.vercel.app; educational image attribution)" };
 
 async function commonsCandidates(query: string, keywords: string[], fetcher: typeof fetch): Promise<Candidate[]> {
@@ -327,14 +335,15 @@ async function commonsCandidates(query: string, keywords: string[], fetcher: typ
     if (!image || !page.title?.startsWith("File:") || !/\.(jpe?g|png|webp)$/i.test(page.title)) return [];
     const license = image.extmetadata?.LicenseShortName?.value ?? "";
     const freeUse = license === "Public domain" || license === "CC0";
-    const licenseUrl = freeUse ? null : approvedUrl(image.extmetadata?.LicenseUrl?.value ?? "", ["creativecommons.org"]);
-    if (!freeUse && (!/^CC BY(?:-SA)? [234]\.\d(?: .*)?$/.test(license) || !licenseUrl || !/^\/licenses\/by(?:-sa)?\/[234]\.\d\//.test(new URL(licenseUrl).pathname))) return [];
+    const licenseUrl = freeUse ? null : approvedCcLicenseUrl(image.extmetadata?.LicenseUrl?.value ?? "", license);
+    if (!freeUse && !licenseUrl) return [];
     const imageUrl = approvedUrl(image.thumburl ?? "", ["thumb.wikimedia.org", "upload.wikimedia.org"]);
     const sourceUrl = approvedUrl(image.descriptionurl ?? "", ["commons.wikimedia.org"]);
     if (!imageUrl || !sourceUrl || !sourceUrl.includes("/wiki/File:") || (image.width ?? 0) < 500) return [];
     const description = plain(image.extmetadata?.ImageDescription?.value ?? "").slice(0, 1200).toLowerCase();
+    const categories = plain(image.extmetadata?.Categories?.value ?? "").slice(0, 1200).toLowerCase();
     const caption = page.title.slice(5).replace(/\.[^.]+$/, "").replaceAll("_", " ");
-    const matches = keywords.filter((word) => `${caption.toLowerCase()} ${description}`.includes(word));
+    const matches = keywords.filter((word) => `${caption.toLowerCase()} ${description} ${categories}`.includes(word));
     if (!matches.length) return [];
     const artist = plain(image.extmetadata?.Artist?.value ?? "").slice(0, 160);
     if (!freeUse && !artist) return [];
@@ -397,7 +406,7 @@ async function openverseCandidates(query: string, keywords: string[], fetcher: t
     if (!imageUrl || !sourceUrl || !sourceUrl.includes("/photos/") || !/\.jpe?g$/i.test(imageUrl) || Math.max(item.width ?? 0, item.height ?? 0) < 500) return [];
     const freeUse = item.license === "cc0" || item.license === "pdm";
     const name = freeUse ? (item.license === "cc0" ? "CC0" : "Public domain") : openverseLicences[item.license ?? ""] ? `${openverseLicences[item.license!]} ${item.license_version}` : "";
-    const licenseUrl = freeUse ? null : approvedUrl(item.license_url ?? "", ["creativecommons.org"]);
+    const licenseUrl = freeUse ? null : approvedCcLicenseUrl(item.license_url ?? "", name);
     if (!name || (!freeUse && (!/^CC BY(?:-SA)? [234]\.\d$/.test(name) || !licenseUrl))) return [];
     const creator = plain(item.creator ?? "").slice(0, 160);
     if (!freeUse && !creator) return [];
