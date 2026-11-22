@@ -298,7 +298,8 @@ export type Illustration = { image_url: string; image_alt: string; image_credit:
 /** `preview` is a small rendition the AI looks at; `value` is what gets stored. */
 type Candidate = { score: number; preview: string; value: Illustration };
 const stop = new Set(["about","after","agency","also","amid","among","and","announces","apod","april","are","august","been","behind","bonanza","but","can","could","december","during","each","ends","february","first","for","from","future","has","have","help","how","including","into","its","iii","january","july","june","leaves","march","may","mission","more","most","news","nasa","noaa","november","new","not","october","one","operations","other","our","over","part","partnership","releases","research","said","says","scientific","september","such","than","that","the","their","them","these","they","this","those","through","today","two","use","used","was","were","what","when","which","while","who","will","with","would","year","years","you"]);
-function words(text: string) { return text.toLowerCase().match(/[a-z][a-z0-9-]{2,}/g)?.filter((word) => !stop.has(word)) ?? []; }
+const nonvisualWords = new Set(["her", "hers", "herself", "him", "himself", "his", "she", "they", "them", "we", "our", "ours", "us"]);
+function words(text: string) { return text.toLowerCase().match(/[a-z][a-z0-9-]{2,}/g)?.filter((word) => !stop.has(word) && !nonvisualWords.has(word)) ?? []; }
 /** Search terms from the AI's visual subject, then the headline, then words the article repeats. */
 export function imageKeywords(title: string, body = "", aiQuery = "") {
   const counts = new Map<string, number>();
@@ -426,19 +427,20 @@ async function gatherCandidates(title: string, body: string, query: string, fetc
   if (keywords.length < 2) return [];
   const subjectTerms = words(query).filter((word) => !["modern", "expansion", "development", "project", "facility"].includes(word));
   const subject = subjectTerms.length >= 2 ? subjectTerms.slice(0, 3).join(" ") : "";
-  // Vietnamese stories look for photos taken in Vietnam first; the AI rejects scenes from elsewhere.
-  const local = subject && /\bviet ?nam(ese)?\b/i.test(`${title} ${body.slice(0, 1500)}`) && !/vietnam/.test(subject) ? `${subject} vietnam` : "";
+  // A Vietnamese person abroad does not make Vietnam the photo's setting.
+  const vietnamSetting = /\bVietnam\b/i.test(title)
+    || /\b(?:in|across|throughout|within|around)\s+(?:the\s+)?Vietnam\b/i.test(body.slice(0, 1500));
+  const local = subject && vietnamSetting && !/vietnam/.test(subject) ? `${subject} vietnam` : "";
   const bodyTerms = imageKeywords("", body).slice(0, 3).join(" ");
   const titleTerms = words(title);
   const middleTerms = imageKeywords("", body.slice(Math.floor(body.length / 3))).slice(0, 3).join(" ");
-  const vietnam = /\bviet ?nam(ese)?\b/i.test(`${title} ${body.slice(0, 1500)}`);
   // Each retry moves to fresh place, title, subject and later-passage terms.
   const allSearches = [...new Set([namedPlace, local, subject, keywords.slice(0, 3).join(" "), bodyTerms,
     keywords.slice(3, 6).join(" "), words(namedPlace).slice(-3).join(" "),
     titleTerms.slice(0, 3).join(" "), titleTerms.slice(-3).join(" "),
-    vietnam ? `${titleTerms.slice(0, 2).join(" ")} vietnam` : "",
+    vietnamSetting ? `${titleTerms.slice(0, 2).join(" ")} vietnam` : "",
     subjectTerms.slice(-2).join(" "), middleTerms,
-    vietnam && middleTerms ? `${middleTerms} vietnam` : ""].map((value) => value.trim().replace(/\s+/g, " ")).filter(Boolean))];
+    vietnamSetting && middleTerms ? `${middleTerms} vietnam` : ""].map((value) => value.trim().replace(/\s+/g, " ")).filter(Boolean))];
   const previous = new Set(triedQueries.map((value) => value.toLowerCase()));
   const searches = allSearches.filter((value) => !previous.has(value.toLowerCase()))
     .slice(expanded ? 2 : 0, expanded ? 3 : 2);
