@@ -20,8 +20,8 @@ type Review = { id: string; given: string; correct: boolean; answers: string[]; 
 type Result = { score: number; total: number; review: Review[] };
 
 const stepLabels: [keyof Step, string][] = [
-  ["understand", "1. Hiểu câu hỏi"], ["wordClass", "2. Từ loại"],
-  ["paraphrase", "3. Paraphrase"], ["evidence", "4. Dẫn chứng"], ["final", "5. Kết luận"],
+  ["understand", "Hiểu câu hỏi"], ["wordClass", "Từ loại"],
+  ["paraphrase", "Paraphrase"], ["evidence", "Dẫn chứng"], ["final", "Kết luận"],
 ];
 
 async function jsonResponse<T>(response: Response): Promise<T> {
@@ -132,7 +132,7 @@ export function ReadingLabPreview() {
   return <main className="reading-lab content-page">
     <Link href="/app/reading" className="rl-back"><ArrowLeft size={16} /> Reading Skill</Link>
     <header className="rl-header"><span>READING SKILL · LAB</span><h1>Luyện Reading theo từng Passage</h1>
-      <p>Chọn một bài, tự làm trước khi xem đáp án, rồi đối chiếu 5 bước giải thích và dẫn chứng trong bài đọc.</p>
+      <p>Chọn một bài, tự làm trước khi xem đáp án, rồi đối chiếu lời giải song ngữ và dẫn chứng trong bài đọc.</p>
       <small>Điểm bài luyện không phải band IELTS chính thức.</small>
     </header>
     {error && <p className="rl-error" role="alert">{error}</p>}
