@@ -108,3 +108,5 @@
 .news-matching-pool{padding:14px;border:1px solid var(--line);border-radius:12px;background:#f5fafb}.news-matching-pool ol{padding-left:24px}.news-matching-pool li{padding:4px}.news-matching-pool small{color:var(--muted)}
 .news-matching-answer{display:flex;gap:10px;align-items:center}.news-matching-answer select{padding:8px;border:1px solid var(--line);border-radius:8px}
 .news-question-diagram{width:100%;max-width:460px;height:auto;font:14px var(--font-sans)}.news-form-note{font-size:12px;color:#856118;background:#fff9e8;padding:10px;border-radius:8px}
+
+.news-group-word-limit{font-size:12px;color:var(--muted)}.news-group-translation{display:block;font-size:13px;line-height:1.6;color:var(--teal-strong);background:#e6f5f1;padding:6px 10px;border-radius:6px}
