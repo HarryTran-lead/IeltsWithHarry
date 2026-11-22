@@ -36,6 +36,11 @@
     ".next/dev/types/**/*.ts"
   ],
   "exclude": [
-    "node_modules"
+    "node_modules",
+    "node_modules_shared_junction",
+    ".claude/worktrees",
+    ".vercel",
+    ".cache",
+    "artifacts"
   ]
 }

@@ -26,4 +26,19 @@ describe("news translation fallback", () => {
     expect(await translateEnglishToVietnamese(["A unique sentence for cache."])).toEqual(["Bản dịch"]);
     expect(fetcher).toHaveBeenCalledTimes(1);
   });
+  it("retains a completed paragraph when a larger request and a later paragraph fail",async()=>{
+    let fail=true;
+    const fetcher=vi.fn(async(_url:string,init:RequestInit)=>{
+      const {texts}=JSON.parse(String(init.body)) as {texts:string[]};
+      if(texts.length>1||fail&&texts[0]==="Later unique paragraph.")return {ok:false,status:502,json:async()=>({error:"Unavailable"})};
+      return {ok:true,status:200,json:async()=>({translations:texts.map((value)=>`VI:${value}`)})};
+    });
+    vi.stubGlobal("fetch",fetcher);
+    const done:[number,string][]=[];
+    await expect(translateEnglishToVietnamese(["Completed unique paragraph.","Later unique paragraph."],undefined,(index,value)=>done.push([index,value]))).rejects.toThrow("Unavailable");
+    expect(done).toEqual([[0,"VI:Completed unique paragraph."]]);
+    fail=false;fetcher.mockClear();
+    expect(await translateEnglishToVietnamese(["Completed unique paragraph.","Later unique paragraph."])).toEqual(["VI:Completed unique paragraph.","VI:Later unique paragraph."]);
+    expect(JSON.parse(String(fetcher.mock.calls[0][1].body)).texts).toEqual(["Later unique paragraph."]);
+  });
 });

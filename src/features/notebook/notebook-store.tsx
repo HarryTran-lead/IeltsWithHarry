@@ -5,6 +5,7 @@ import { usePathname } from "next/navigation";
 import { z } from "zod";
 import { demoMode } from "@/lib/runtime";
 import { createClient } from "@/lib/supabase/browser";
+import { isNewsQaMode } from "@/lib/news/qa-mode";
 import { fetchAllRows } from "@/lib/supabase/fetch-all";
 import { notebookInputSchema, type NotebookInput } from "@/lib/validation/notebook";
 
@@ -118,6 +119,7 @@ export function NotebookProvider({ children }: { children: React.ReactNode }) {
   }, [entries, visits, ready]);
 
   const recordVisit = useCallback(async (path: string) => {
+    if(isNewsQaMode())return;
     const title = visitTitle(path);
     if (!title) return;
     if (demoMode) {

@@ -5,6 +5,7 @@ export type Breakdown = Partial<Record<QuestionType, TypeScore>>;
 export type PracticeAttempt = {
   id: string; article_id: string; score: number; total: number; submitted_at: string;
   partial?: boolean; breakdown?: Breakdown | null; duration_seconds?: number | null;
+  mode?: "practice" | "timed";
 };
 
 export const questionTypes: QuestionType[] = [...ieltsQuestionTypes];
@@ -44,8 +45,11 @@ export function summarizeAttempts(attempts: PracticeAttempt[]) {
   const timed = attempts.filter((item) => typeof item.duration_seconds === "number" && item.duration_seconds > 0);
   const timedQuestions = timed.reduce((sum, item) => sum + item.total, 0);
   const types = sumBreakdowns(attempts.map((item) => item.breakdown));
-  // A type needs a few answers before it is called a weak spot.
-  const weakest = types.filter((item) => item.total >= 3).sort((a, b) => a.percent - b.percent)[0] ?? null;
+  // Repeated reviews must not turn into evidence about first-attempt proficiency.
+  const seen=new Set<string>();
+  const firstFull=[...attempts].reverse().filter((item)=>{if(item.partial||seen.has(item.article_id))return false;seen.add(item.article_id);return true;});
+  const firstTypes=sumBreakdowns(firstFull.map((item)=>item.breakdown));
+  const weakest = firstTypes.filter((item) => item.total >= 10&&firstFull.filter((attempt)=>(attempt.breakdown?.[item.type]?.total??0)>0).length>=3).sort((a, b) => a.percent - b.percent)[0] ?? null;
   return {
     attempts: attempts.length,
     questions,

@@ -5,6 +5,9 @@ type TranslatorFactory = { create(options: { sourceLanguage: "en"; targetLanguag
 let translator: Promise<TranslatorInstance> | null = null;
 const translatedCache = new Map<string, string>();
 const contextualCache = new Map<string, string>();
+class TranslationRequestError extends Error {
+  constructor(message: string, readonly status: number) { super(message); }
+}
 
 function withTimeout<T>(task: Promise<T>, milliseconds: number): Promise<T> {
   return new Promise((resolve, reject) => {
@@ -19,10 +22,10 @@ function browserFactory(): TranslatorFactory | undefined {
 }
 
 async function translateCloud(texts: string[]): Promise<string[]> {
-  const response = await fetch("/api/news/translate", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ texts }) });
+  const response = await fetch("/api/news/translate", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ texts }), signal: AbortSignal.timeout(55000) });
   const data = await response.json() as { translations?: string[]; error?: string };
-  if (!response.ok || !data.translations) throw new Error(data.error ?? "Dịch máy hiện chưa khả dụng.");
-  return data.translations;
+  if (!response.ok || !Array.isArray(data.translations) || data.translations.length!==texts.length || data.translations.some((value)=>typeof value!=="string"||!value.trim())) throw new TranslationRequestError(data.error ?? "Dịch máy hiện chưa khả dụng.", response.status);
+  return data.translations.map((value)=>value.trim());
 }
 
 export async function translateWordInContext(word: string, context: string): Promise<string> {
@@ -67,7 +70,19 @@ export async function translateEnglishToVietnamese(texts: string[], onProgress?:
       length += chunks[cursor].part.length;
       cursor++;
     }
-    const translated = await translateBatch(batch.map((item) => item.part));
+    let translated: string[];
+    let batchFailure:unknown;
+    try { translated = await translateBatch(batch.map((item) => item.part)); }
+    catch(error){
+      // An unavailable long batch need not discard translations already shown.
+      // Retrying smaller requests is bounded; quota/auth errors wait for user action.
+      if(batch.length===1 || error instanceof TranslationRequestError && [401,403,429].includes(error.status))throw error;
+      translated=[];
+      for(const item of batch){
+        try{translated.push((await translateBatch([item.part]))[0]);}
+        catch(cause){batchFailure=cause;break;}
+      }
+    }
     translated.forEach((value, batchIndex) => {
       const paragraph = batch[batchIndex].index;
       output[paragraph] = output[paragraph] ? `${output[paragraph]} ${value}` : value;
@@ -78,6 +93,7 @@ export async function translateEnglishToVietnamese(texts: string[], onProgress?:
         onProgress?.(++done);
       }
     });
+    if(batchFailure)throw batchFailure;
   }
   return output;
 }
