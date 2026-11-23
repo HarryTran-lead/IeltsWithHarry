@@ -8,8 +8,8 @@
   position: absolute;
   z-index: -1;
   top: -10px;
-  right: -26px;
-  left: -26px;
+  right: 0;
+  left: 0;
   height: 300px;
   background: url("/images/news-minty-waves.png") center -50px / cover no-repeat;
   content: "";
@@ -24,10 +24,10 @@
   z-index: 1;
   display: flex;
   align-items: flex-end;
-  gap: 20px;
-  min-height: 111px;
-  margin: 0 0 18px;
-  padding: 12px 4px 0;
+  gap: 14px;
+  min-height: 92px;
+  margin: 0 0 10px;
+  padding: 4px 4px 0;
   border: 0;
   border-radius: 0;
   background: none;
@@ -35,7 +35,7 @@
 }
 
 .news-home .news-topbar > .news-masthead {
-  flex: 1 1 38%;
+  flex: 1 1 36%;
   align-self: flex-start;
   min-width: 0;
   padding: 0;
@@ -52,7 +52,7 @@
 .news-home .news-masthead h1 {
   margin: 5px 0 7px;
   color: #11294a;
-  font-size: clamp(27px, 2.5vw, 34px);
+  font-size: clamp(25px, 2.2vw, 30px);
   font-weight: 800;
   letter-spacing: -.035em;
   white-space: normal;
@@ -69,7 +69,7 @@
 .news-home .news-home-subtitle {
   margin: 0;
   color: #617895;
-  font-size: 12px;
+  font-size: 11px;
   line-height: 1.4;
   white-space: normal;
 }
@@ -79,9 +79,9 @@
   top: auto;
   flex: 0 1 auto;
   min-width: 0;
-  max-width: 65%;
-  height: 49px;
-  margin: 0 0 10px;
+  max-width: 64%;
+  height: 44px;
+  margin: 0 0 6px;
   padding: 4px;
   border: 1px solid #b9dce0;
   border-radius: 999px;
@@ -92,9 +92,9 @@
 .news-home .news-tabs-list { gap: 2px; }
 .news-home .news-tabs-list a {
   gap: 7px;
-  padding: 8px 13px;
+  padding: 7px 10px;
   border-radius: 999px;
-  font-size: 13px;
+  font-size: 12px;
   font-weight: 700;
 }
 .news-home .news-tabs-list a.active { background: #10233f; color: #fff; }
@@ -102,8 +102,8 @@
 
 .news-home .news-feed-bar {
   display: grid;
-  grid-template-columns: minmax(280px, 1.05fr) minmax(0, 1.2fr);
-  gap: 36px;
+  grid-template-columns: minmax(300px, .9fr) minmax(530px, 1.3fr);
+  gap: 16px;
   align-items: center;
   padding: 0 4px;
   border: 0;
@@ -113,7 +113,7 @@
 }
 .news-home .news-feed-search {
   order: 0;
-  height: 48px;
+  height: 42px;
   padding: 0 18px;
   border: 1px solid #e3e9ec;
   border-radius: 999px;
@@ -140,7 +140,7 @@
 .news-home .news-feed-filter-list .news-filter-select {
   flex: 1 1 0;
   min-width: 0;
-  height: 42px;
+  height: 40px;
   border: 1px solid #e0e9ec;
   border-radius: 999px;
   background: #fff;
@@ -168,7 +168,7 @@
   align-items: center;
   justify-content: center;
   gap: 9px;
-  height: 42px;
+  height: 40px;
   min-width: 116px;
   padding: 0 18px;
   border: 0;
@@ -208,9 +208,9 @@
 .news-home .news-feed-tools {
   flex-wrap: nowrap;
   gap: 10px;
-  min-height: 62px;
-  margin: 21px 0 16px;
-  padding: 8px 12px;
+  min-height: 54px;
+  margin: 10px 0 10px;
+  padding: 6px 10px;
   border: 1px solid #edf3f3;
   border-radius: 18px;
   background: rgba(255, 255, 255, .9);
@@ -267,9 +267,9 @@
 .news-home .news-today-strip {
   flex-wrap: nowrap;
   gap: 18px;
-  min-height: 61px;
-  margin: 0 0 28px;
-  padding: 8px 12px;
+  min-height: 54px;
+  margin: 0 0 12px;
+  padding: 6px 10px;
   border-color: #edf3f3;
   border-radius: 17px;
   background: rgba(255, 255, 255, .9);
@@ -303,7 +303,7 @@
 }
 .news-home .news-interest-picks button svg { color: #0097a3; }
 
-@container news (max-width: 1120px) {
+@container news (max-width: 920px) {
   .news-home .news-topbar { align-items: flex-start; flex-direction: column; gap: 12px; min-height: 0; padding-top: 18px; }
   .news-home .news-topbar > .news-tabs { max-width: 100%; }
   .news-home .news-feed-bar { grid-template-columns: minmax(0, 1fr); gap: 10px; }
