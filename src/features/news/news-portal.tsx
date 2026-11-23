@@ -3,7 +3,7 @@ import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
-import { Archive, ArrowLeft, ArrowRight, Bookmark, BookOpenText, CalendarDays, CalendarPlus, ChartNoAxesColumn, CheckCircle2, ChevronDown, Clock3, ExternalLink, Flame, Globe2, Headphones, History, LayoutGrid, ListChecks, Newspaper, Search, Sparkles, Tag, Trophy, Volume2, type LucideIcon } from "lucide-react";
+import { Archive, ArrowLeft, ArrowRight, Bookmark, BookOpenText, CalendarDays, CalendarPlus, ChartNoAxesColumn, CheckCircle2, ChevronDown, Clock3, ExternalLink, Flame, FlaskConical, Globe2, GraduationCap, Heart, Headphones, History, Laptop, Layers3, LayoutGrid, Leaf, ListChecks, Newspaper, Search, Shuffle, Sparkles, Tag, Trophy, UsersRound, Volume2, type LucideIcon } from "lucide-react";
 import { createClient } from "@/lib/supabase/browser";
 import { releaseLocks } from "@/lib/runtime";
 import { Sticker, type StickerName } from "@/components/stickers/stickers";
@@ -22,6 +22,7 @@ import { dailyNewsPicks, nextNewsReads, originalNewsSource, readingMinutes } fro
 import { localExamEpoch, type NewsExamSession } from "@/lib/news/exam-session";
 import { cardResults, type CardResult } from "@/lib/news/card-progress";
 import "./news-masthead.css";
+import "./news-home-reference.css";
 
 type NewsRow = { id: string; title: string; publisher: string; canonical_url: string; report_url: string | null; fact_source_urls: string[]; category: NewsCategory; published_at: string; fetched_at: string; attribution_text: string; sensitive: boolean; origin_region?: "vietnam" | "international" };
 type ArchiveRow = NewsRow & { source_id: string; origin_region: "vietnam" | "international"; interest_topics: string[]; readable: boolean; image_url: string | null; image_alt: string | null; image_credit: string | null; illustration_source_url: string | null; illustration_license: string | null; illustration_license_url: string | null };
@@ -69,8 +70,8 @@ const newsPages = [
 ] as const;
 type NewsTab = Feed | (typeof newsPages)[number]["id"];
 
-/** One compact header for every Daily News page. Where there is room the title and the section menu share one pinned row; on narrow screens only the menu stays pinned. */
-function NewsMasthead({ active }: { active: NewsTab }) {
+/** Shared news navigation; the home page gives it a wider illustrated masthead. */
+function NewsMasthead({ active, home = false }: { active: NewsTab; home?: boolean }) {
   const today = new Intl.DateTimeFormat("vi-VN", { weekday: "long", day: "numeric", month: "long", year: "numeric" }).format(new Date());
   const list = useRef<HTMLDivElement>(null);
   // On narrow screens the menu scrolls sideways; keep the open tab in view.
@@ -81,7 +82,7 @@ function NewsMasthead({ active }: { active: NewsTab }) {
   }, [active]);
   return <div className="news-topbar">
     <header className="news-masthead">
-      <div className="news-masthead-title"><Sticker name="globe" size={50} tilt={-8} /><div><span className="eyebrow news-masthead-date">Daily News<i aria-hidden="true">·</i><time suppressHydrationWarning>{today}</time></span><h1>Daily English News</h1></div></div>
+      <div className="news-masthead-title"><Sticker name="globe" size={50} tilt={-8} /><div><span className="eyebrow news-masthead-date">Daily News<i aria-hidden="true">·</i><time suppressHydrationWarning>{today}</time></span><h1>Daily English News</h1>{home && <p className="news-home-subtitle">Cập nhật tin tức thế giới mỗi ngày · Đọc, học từ vựng và rèn kỹ năng tiếng Anh</p>}</div></div>
     </header>
     <nav className="news-tabs" aria-label="Mục lục Daily News">
       <div className="news-tabs-list" ref={list}>
@@ -96,6 +97,7 @@ function NewsMasthead({ active }: { active: NewsTab }) {
 const PAGE_SIZE = 12;
 const CATALOG_COLUMNS = "id,source_id,title,publisher,canonical_url,report_url,fact_source_urls,category,published_at,fetched_at,attribution_text,sensitive,readable,image_url,image_alt,image_credit,illustration_source_url,illustration_license,illustration_license_url,origin_region,interest_topics";
 const interestFilters = [{ id: "all", label: "Mọi chủ đề" }, { id: "study", label: "Học tập" }, { id: "career", label: "Việc làm" }, { id: "technology", label: "Công nghệ & game" }, { id: "lifestyle", label: "Du lịch & đời sống" }, { id: "sports", label: "Thể thao" }, { id: "entertainment", label: "Giải trí & phim ảnh" }, { id: "curious", label: "Chuyện vui & lạ" }, { id: "conflict", label: "Thế giới & xung đột" }] as const;
+const categoryIcons: Record<NewsCategory, LucideIcon> = { Technology: Laptop, Science: FlaskConical, Education: GraduationCap, Health: Heart, Environment: Leaf, Business: ChartNoAxesColumn, Culture: UsersRound, "World News": Globe2 };
 
 function NewsHome() {
   const db = useMemo(() => createClient(), []);
@@ -108,6 +110,7 @@ function NewsHome() {
   const [region, setRegion] = useState<"all" | "vietnam" | "international">("all");
   const [interest, setInterest] = useState("all");
   const [questionType, setQuestionType] = useState<QuestionType | "all">(()=>{const type=params.get("questionType");return questionTypes.includes(type as QuestionType)?type as QuestionType:"all";});
+  const [showMoreFilters, setShowMoreFilters] = useState(false);
   const [readyOnly, setReadyOnly] = useState(false);
   const [randomBusy, setRandomBusy] = useState(false);
   const [randomError, setRandomError] = useState("");
@@ -349,29 +352,30 @@ function NewsHome() {
   const featuredIds = new Set(picks.map((row) => row.id));
   const displayRows = showDailyPicks ? [...picks, ...rows.filter((row) => !featuredIds.has(row.id))] : rows;
   return <div className="content-page news-page news-hub news-home">
-    <NewsMasthead active={feed} />
+    <NewsMasthead active={feed} home />
     {latest && now - new Date(latest).valueOf() > 2 * 3600000 && <p className="news-stale">Tin đã lưu vẫn xem được. Lần đồng bộ gần nhất: {newsDate(latest)}.</p>}
     <section className="news-feed" id="news-archive" ref={listTop}>
       <div className="news-feed-bar" role="group" aria-label="Lọc tin tức">
-        <label className="news-feed-search"><Search size={18} aria-hidden="true" /><input type="search" value={query} onChange={(event) => { setQuery(event.target.value); setPage(0); }} placeholder="Tìm theo tiêu đề..." aria-label="Tìm tin theo tiêu đề" /></label>
+        <label className="news-feed-search"><Search size={18} aria-hidden="true" /><input type="search" value={query} onChange={(event) => { setQuery(event.target.value); setPage(0); }} placeholder="Tìm theo tiêu đề, từ khóa hoặc nội dung bài báo..." aria-label="Tìm tin theo tiêu đề" /></label>
         <div className="news-feed-filter-list">
-          <label className="news-filter-select" data-active={region !== "all" || undefined}><Globe2 className="news-filter-icon" aria-hidden /><span>Nguồn tin</span><ChevronDown className="news-filter-caret" aria-hidden /><select aria-label="Nguồn tin" value={region} onChange={(event) => { setRegion(event.target.value as typeof region); setPage(0); }}>{([["all", "Mọi nguồn tin"], ["vietnam", "Báo Việt Nam"], ["international", "Nguồn quốc tế"]] as const).map(([id, label]) => <option key={id} value={id}>{label}</option>)}</select></label>
-          <label className="news-filter-select" data-active={category !== "All News" || undefined}><LayoutGrid className="news-filter-icon" aria-hidden /><span>Lĩnh vực</span><ChevronDown className="news-filter-caret" aria-hidden /><select aria-label="Lĩnh vực" value={category} onChange={(event) => { setCategory(event.target.value); setPage(0); }}>{["All News", ...NEWS_CATEGORIES].map((item) => <option key={item} value={item}>{item==="All News"?"Mọi lĩnh vực":newsCategoryLabel(item)}</option>)}</select></label>
-          <label className="news-filter-select" data-active={interest !== "all" || undefined}><Tag className="news-filter-icon" aria-hidden /><span>Mối quan tâm</span><ChevronDown className="news-filter-caret" aria-hidden /><select aria-label="Chủ đề" value={interest} onChange={(event) => { setInterest(event.target.value); setPage(0); }}>{interestFilters.map((item) => <option key={item.id} value={item.id}>{item.label}</option>)}</select></label>
-          <label className="news-filter-select" data-active={questionType !== "all" || undefined}><ListChecks className="news-filter-icon" aria-hidden /><span>Dạng câu hỏi</span><ChevronDown className="news-filter-caret" aria-hidden /><select aria-label="Dạng câu hỏi" value={questionType} onChange={(event) => { setQuestionType(event.target.value as QuestionType | "all"); setPage(0); }}><option value="all">Mọi dạng câu hỏi</option>{questionTypes.map((type) => <option key={type} value={type}>{typeLabels[type]}</option>)}</select></label>
+          <label className="news-filter-select" data-active={region !== "all" || undefined}><Layers3 className="news-filter-icon" aria-hidden /><span>Nguồn tin</span><ChevronDown className="news-filter-caret" aria-hidden /><select aria-label="Nguồn tin" value={region} onChange={(event) => { setRegion(event.target.value as typeof region); setPage(0); }}>{([["all", "Nguồn tin"], ["vietnam", "Báo Việt Nam"], ["international", "Nguồn quốc tế"]] as const).map(([id, label]) => <option key={id} value={id}>{label}</option>)}</select></label>
+          <label className="news-filter-select" data-active={category !== "All News" || undefined}><LayoutGrid className="news-filter-icon" aria-hidden /><span>Lĩnh vực</span><ChevronDown className="news-filter-caret" aria-hidden /><select aria-label="Lĩnh vực" value={category} onChange={(event) => { setCategory(event.target.value); setPage(0); }}>{["All News", ...NEWS_CATEGORIES].map((item) => <option key={item} value={item}>{item==="All News"?"Lĩnh vực":newsCategoryLabel(item)}</option>)}</select></label>
+          <label className="news-filter-select" data-active={interest !== "all" || undefined}><Tag className="news-filter-icon" aria-hidden /><span>Mối quan tâm</span><ChevronDown className="news-filter-caret" aria-hidden /><select aria-label="Chủ đề" value={interest} onChange={(event) => { setInterest(event.target.value); setPage(0); }}>{interestFilters.map((item) => <option key={item.id} value={item.id}>{item.id === "all" ? "Chủ đề" : item.label}</option>)}</select></label>
+          <button type="button" className="news-more-filters-button" data-active={questionType !== "all" || undefined} aria-expanded={showMoreFilters} aria-controls="news-more-filters" onClick={() => setShowMoreFilters((value) => !value)}><ListChecks size={17} aria-hidden="true" />Bộ lọc</button>
         </div>
       </div>
+      {showMoreFilters && <div className="news-more-filters" id="news-more-filters"><label htmlFor="news-question-type">Dạng câu hỏi</label><select id="news-question-type" value={questionType} onChange={(event) => { setQuestionType(event.target.value as QuestionType | "all"); setPage(0); }}><option value="all">Mọi dạng câu hỏi</option>{questionTypes.map((type) => <option key={type} value={type}>{typeLabels[type]}</option>)}</select></div>}
       {feed === "archive" && <div className="news-archive-filters"><select aria-label="Nguồn tin" value={source} onChange={(event) => { setSource(event.target.value); setPage(0); }}><option value="all">Mọi nguồn</option>{sources.map((item)=><option key={item.id} value={item.id}>{item.name}</option>)}</select><select aria-label="Năm xuất bản" value={year} onChange={(event) => { setYear(event.target.value); setPage(0); }}><option value="all">Mọi năm</option>{yearOptions.map((value)=><option key={value} value={value}>{value}</option>)}</select><select aria-label="Sắp xếp tin" value={sort} onChange={(event) => { setSort(event.target.value); setPage(0); }}><option value="newest">Mới nhất</option><option value="oldest">Cũ nhất</option><option value="added">Mới thêm</option><option value="category">Danh mục</option></select></div>}
       <div className="news-feed-tools">
         <div className="news-feed-count"><feedInfo.icon size={15} /><b>{loading ? "…" : count.toLocaleString("vi-VN")} bài</b><span>{feedInfo.hint}</span>
           {arrived > 0 && <button type="button" className="news-arrived" onClick={() => { if (page) setPage(0); else void loadList(); }}><Sparkles size={14} /> {arrived} tin mới · Xem ngay</button>}</div>
-        <div className="news-feed-stats"><span><Newspaper /> <b>{todayCount}</b> tin hôm nay</span><span><Clock3 /> Cập nhật {latest ? relativeTime(latest).toLowerCase() : "—"}</span><span title={`${xp} XP từ bài luyện`}><Trophy /> Đã đọc <b>{readToday}</b> · <b>{completed}</b> bài luyện</span></div>
+        <div className="news-feed-stats"><span><CalendarDays /> <b>{todayCount}</b> tin hôm nay</span><span><Clock3 /> Cập nhật {latest ? relativeTime(latest).toLowerCase() : "—"}</span><span title={`${xp} XP từ bài luyện`}><BookOpenText /> Đã đọc <b>{readToday}</b> · <b>{completed}</b> bài luyện</span></div>
         <button type="button" className={`news-ready-filter ${readyOnly ? "active" : ""}`} aria-pressed={readyOnly} onClick={() => { setReadyOnly((value) => !value); setPage(0); }}><ListChecks size={15}/> Có đề luyện</button>
-        <div className="news-random-picker"><button type="button" className="button subtle" aria-label="Chọn bài ngẫu nhiên" onClick={() => void openRandomArticle()} disabled={randomBusy || loading}><Sparkles size={15}/><span>{randomBusy ? "Đang chọn…" : "Ngẫu nhiên"}</span></button></div>
+        <div className="news-random-picker"><button type="button" className="button subtle" aria-label="Chọn bài ngẫu nhiên" onClick={() => void openRandomArticle()} disabled={randomBusy || loading}><Shuffle size={15}/><span>{randomBusy ? "Đang chọn…" : "Ngẫu nhiên"}</span></button></div>
       </div>
       {showDailyPicks && rows.length > 0 && <div className="news-today-strip">
-        <div className="news-daily-plan"><strong>4 bài nên đọc hôm nay</strong><span>Đọc 1 bài → làm quiz → <Link href="/app/vocabulary">ôn 3 từ</Link></span></div>
-        <div className="news-interest-picks"><span>Bạn thích đọc về</span><div>{NEWS_CATEGORIES.map((topic) => <button key={topic} type="button" aria-pressed={preferredTopics.includes(topic)} onClick={() => void togglePreferredTopic(topic)}>{newsCategoryLabel(topic)}</button>)}</div></div>
+        <div className="news-daily-plan"><Newspaper size={19} aria-hidden="true" /><div><strong>4 bài nên đọc hôm nay</strong><span>Đọc 1 bài → làm quiz → <Link href="/app/vocabulary">ôn 3 từ</Link></span></div></div>
+        <div className="news-interest-picks"><span>Bạn thích đọc về</span><div>{NEWS_CATEGORIES.map((topic) => { const Icon = categoryIcons[topic]; return <button key={topic} type="button" aria-pressed={preferredTopics.includes(topic)} onClick={() => void togglePreferredTopic(topic)}><Icon size={13} aria-hidden="true" />{newsCategoryLabel(topic)}</button>; })}</div></div>
       </div>}
       {(category!=="All News"||region!=="all"||interest!=="all"||questionType!=="all"||readyOnly||query||source!=="all"||year!=="all")&&<button type="button" className="news-clear-filters" onClick={()=>{setCategory("All News");setRegion("all");setInterest("all");setQuestionType("all");setReadyOnly(false);setQuery("");setSource("all");setYear("all");setPage(0);}}>Xóa tất cả bộ lọc</button>}
       {randomError && <p className="form-error" role="alert">{randomError}</p>}
