@@ -6,6 +6,18 @@ export type DailyCandidate = {
   interest_topics?: string[] | null;
 };
 
+export const AI_ART_SOURCE = "https://pollinations.ai/";
+
+export function hasRealNewsPhoto(row: {
+  image_url: string | null;
+  image_alt: string | null;
+  image_credit: string | null;
+  illustration_source_url: string | null;
+}) {
+  return Boolean(row.image_url?.trim() && row.image_alt?.trim() && row.image_credit?.trim()
+    && row.illustration_source_url !== AI_ART_SOURCE);
+}
+
 /** Stable daily choices favour ready, unread Vietnamese news without repeating one category. */
 export function dailyNewsPicks<T extends DailyCandidate>(
   articles: T[], ready: Set<string>, read: Set<string>, preferredTopics: string[] = [], weakCategories: string[] = [], count = 4,
