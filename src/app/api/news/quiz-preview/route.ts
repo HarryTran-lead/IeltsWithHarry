@@ -4,6 +4,7 @@ import { newsAdminClient } from "@/lib/news/sync";
 import { generateAdaptiveNewsQuiz, targetQuestionCount } from "@/lib/news/adaptive-quiz";
 import { newsQuizFreeTierReady, quizExcerpt } from "@/lib/news/enrichment";
 import { generateNewsQuizV2 } from "@/lib/news/question-factory-v2";
+import { newsQuestionFactoryV2Enabled } from "@/lib/news/question-factory-v2/activation";
 
 export const runtime = "nodejs";
 export const maxDuration = 60;
@@ -28,7 +29,7 @@ export async function POST(request: NextRequest) {
     if (articleError || !article || article.sensitive) return NextResponse.json({ error: "Không tìm thấy bài phù hợp." }, { status: 404 });
     const { data: body, error: bodyError } = await db.from("news_article_bodies").select("body_text").eq("article_id", article.id).single();
     if (bodyError || !body || targetQuestionCount(quizExcerpt(body.body_text)) < 6) return NextResponse.json({ error: "Bài cần ít nhất 400 từ và đủ dữ kiện riêng biệt để tạo 6 câu hỏi IELTS." }, { status: 400 });
-    if (payload.factoryVersion === "v2") {
+    if (payload.factoryVersion === "v2" || (payload.factoryVersion !== "legacy" && newsQuestionFactoryV2Enabled())) {
       const output = await generateNewsQuizV2(article.title, body.body_text, article.id, fetch, payload.prompt);
       return NextResponse.json(output, { status: output.state === "READY" ? 200 : 422 });
     }
