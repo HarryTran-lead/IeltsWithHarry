@@ -1,0 +1,18 @@
+
+> ieltswithharry@0.1.0 lint
+> eslint .
+
+
+C:\Users\RAZER\.codex\worktrees\daily-news-question-factory-v2\Ielts-learning website\services\writing-cloudflare-proxy\src\index.js
+  3:1  warning  Assign object to a variable before exporting as module default  import/no-anonymous-default-export
+
+C:\Users\RAZER\.codex\worktrees\daily-news-question-factory-v2\Ielts-learning website\src\features\ielts\bank-library.tsx
+  563:144  warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+  564:52   warning  Unused eslint-disable directive (no problems were reported from '@next/next/no-img-element')
+  648:8    warning  Unused eslint-disable directive (no problems were reported from '@next/next/no-img-element')
+  650:113  warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+  656:57   warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+✖ 6 problems (0 errors, 6 warnings)
+  0 errors and 2 warnings potentially fixable with the `--fix` option.
+
