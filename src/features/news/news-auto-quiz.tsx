@@ -18,7 +18,7 @@ import "@/app/news-enrichment.css";
 
 export type { QuestionType };
 export type TypeCount = { type: QuestionType; count: number };
-type Question = { id: string; sort_order: number; question_type: QuestionType; prompt: string; options: string[]; supporting_sentence: string };
+type Question = { id: string; sort_order: number; question_type: QuestionType; prompt: string; options: string[] };
 type Review = { id: string; correct: boolean; correctIndex: number | null; acceptedAnswers: string[] | null; explanation: string; optionNotes: string[] | null; supportingSentence: string };
 type SavedResult = { score: number; total: number; review: Review[]; answers: Record<string, string>; submittedAt: string; attempts: number; durationSeconds?: number | null };
 type RecoveryFeedback = { active: boolean; required: number; completed: number; restoredToday: boolean };
@@ -157,7 +157,7 @@ export function NewsAutoQuiz({ articleId, types = ALL_TYPES, examMode = false, e
   useEffect(() => {
     let live = true;
     void Promise.all([
-      db.from("news_auto_questions").select("id,sort_order,question_type,prompt,options,supporting_sentence").eq("article_id", articleId).order("sort_order"),
+      db.from("news_auto_questions").select("id,sort_order,question_type,prompt,options").eq("article_id", articleId).order("sort_order"),
       db.rpc("news_auto_quiz_last_result", { p_article_id: articleId }),
     ]).then(([loaded, last]) => {
       if (!live) return;

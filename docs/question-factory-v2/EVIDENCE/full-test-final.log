@@ -1,0 +1,35 @@
+
+> ieltswithharry@0.1.0 test
+> vitest run
+
+
+ RUN  v5.0.5 C:/Users/RAZER/.codex/worktrees/daily-news-question-factory-v2/Ielts-learning website
+
+ ❯ src/lib/listening-lab/plan.test.ts (6 tests | 1 failed) 20763ms
+   ❯ Listening Lab source index (6)
+     × fills every step of all 28 modules from distinct recordings 20126ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/lib/listening-lab/plan.test.ts > Listening Lab source index > fills every step of all 28 modules from distinct recordings
+Error: Test timed out in 20000ms.
+If this is a long-running test, pass a timeout value as the last argument or configure it globally with "testTimeout".
+ ❯ src/lib/listening-lab/plan.test.ts:8:3
+      6|
+      7| describe("Listening Lab source index", () => {
+      8|   it("fills every step of all 28 modules from distinct recordings", ()…
+       |   ^
+      9|     expect(listeningModules).toHaveLength(28);
+     10|     for (const unit of listeningModules) {
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed | 139 passed | 2 skipped (142)
+      Tests  1 failed | 704 passed | 12 skipped (717)
+   Start at  23:24:19
+   Duration  116.60s (tests 84%, import 13%, transform 2%, worker 1%)
+
+    Isolate  142 workers spawned · ~889ms startup each (spawn + environment, per file)
+             at least ~17.15s faster with isolate: false — reuses workers across files instead of one per file
+

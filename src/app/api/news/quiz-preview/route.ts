@@ -3,6 +3,7 @@ import { createClient } from "@/lib/supabase/server";
 import { newsAdminClient } from "@/lib/news/sync";
 import { generateAdaptiveNewsQuiz, targetQuestionCount } from "@/lib/news/adaptive-quiz";
 import { newsQuizFreeTierReady, quizExcerpt } from "@/lib/news/enrichment";
+import { generateNewsQuizV2 } from "@/lib/news/question-factory-v2";
 
 export const runtime = "nodejs";
 export const maxDuration = 60;
@@ -15,7 +16,7 @@ export async function POST(request: NextRequest) {
   const { data: isAdmin } = await viewer.rpc("is_admin");
   if (isAdmin !== true) return NextResponse.json({ error: "Forbidden" }, { status: 403 });
 
-  const payload = await request.json().catch(() => null) as { articleId?: unknown; prompt?: unknown } | null;
+  const payload = await request.json().catch(() => null) as { articleId?: unknown; prompt?: unknown; factoryVersion?: unknown } | null;
   if (!payload || typeof payload.articleId !== "string" || !/^[0-9a-f-]{36}$/i.test(payload.articleId)
     || typeof payload.prompt !== "string" || payload.prompt.length > 4000) {
     return NextResponse.json({ error: "Dữ liệu không hợp lệ." }, { status: 400 });
@@ -27,6 +28,10 @@ export async function POST(request: NextRequest) {
     if (articleError || !article || article.sensitive) return NextResponse.json({ error: "Không tìm thấy bài phù hợp." }, { status: 404 });
     const { data: body, error: bodyError } = await db.from("news_article_bodies").select("body_text").eq("article_id", article.id).single();
     if (bodyError || !body || targetQuestionCount(quizExcerpt(body.body_text)) < 6) return NextResponse.json({ error: "Bài cần ít nhất 400 từ và đủ dữ kiện riêng biệt để tạo 6 câu hỏi IELTS." }, { status: 400 });
+    if (payload.factoryVersion === "v2") {
+      const output = await generateNewsQuizV2(article.title, body.body_text, article.id, fetch, payload.prompt);
+      return NextResponse.json(output, { status: output.state === "READY" ? 200 : 422 });
+    }
     return NextResponse.json(await generateAdaptiveNewsQuiz(article.title, body.body_text, article.id, fetch, payload.prompt));
   } catch (cause) {
     return NextResponse.json({ error: cause instanceof Error ? cause.message : "Không thể thử prompt." }, { status: 502 });
