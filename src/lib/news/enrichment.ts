@@ -823,6 +823,8 @@ async function enrichImages(db: Db, result: EnrichResult) {
 
 async function enrichQuiz(db: Db, result: EnrichResult, settings: Awaited<ReturnType<typeof loadNewsSettings>>, scheduled: boolean) {
   if (!newsQuizFreeTierReady()) { result.errors.push("Confirmed free-tier Gemini key is not configured for news quizzes"); return; }
+  const { newsQuestionFactoryV2Enabled } = await import("./question-factory-v2/activation");
+  const v2Enabled = newsQuestionFactoryV2Enabled();
   if (scheduled) {
     const today = new Date(); today.setUTCHours(0, 0, 0, 0);
     const { count, error } = await db.from("news_enrichment_attempts").select("article_id", { count: "exact", head: true }).eq("kind", "quiz").gte("attempted_at", today.toISOString());
@@ -834,7 +836,7 @@ async function enrichQuiz(db: Db, result: EnrichResult, settings: Awaited<Return
   for (const article of (quizClaims ?? []) as Claim[]) {
     result.quizzesChecked++;
     try {
-      if (process.env.NEWS_QUESTION_FACTORY_V2_PUBLISH_ENABLED === "true") {
+      if (v2Enabled) {
         // A claimed article may already have used its two calls before a worker crash.
         // Keep automatic reclaim disabled until a human reviews its immutable fingerprint.
         const holdUntil = new Date(Date.now() + 365 * 86400000).toISOString();
@@ -872,7 +874,7 @@ async function enrichQuiz(db: Db, result: EnrichResult, settings: Awaited<Return
       const message = cause instanceof Error ? cause.message : "Quiz generation failed";
       result.errors.push(`Quiz ${article.article_id}: ${message}`);
       // A quota error is not the article's fault: retry it as soon as quota returns.
-      if (process.env.NEWS_QUESTION_FACTORY_V2_PUBLISH_ENABLED === "true")
+      if (v2Enabled)
         await finish(db, article.article_id, "quiz", "error", message, 365 * 86400000);
       else if (cause instanceof AiQuotaError) { result.quotaLimited = true; await finish(db, article.article_id, "quiz", "error", message, cause.retryAfterMs); }
       else await finish(db, article.article_id, "quiz", "error", message, transientQuizRetryMs(message));

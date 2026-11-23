@@ -43,9 +43,9 @@ export function AdminNewsSettings({ db, settings, eligible, reload, setError, se
       const response = await fetch("/api/news/quiz-preview", { method: "POST", headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ articleId, prompt: draft.quiz_prompt }) });
       const result = await response.json();
-      if (!response.ok) throw new Error(result.error ?? "Không thể thử prompt.");
+      if (!response.ok) throw new Error(result.error ?? result.audit?.issues?.join(", ") ?? "Không thể thử prompt.");
       setPreview(result.questions as PreviewQuestion[]);
-      setNotice("Đã tạo bản xem trước. Câu hỏi này chưa được xuất bản.");
+      setNotice(`Đã tạo bản xem trước${result.audit?.version ? " bằng Question Factory V2" : ""}. Câu hỏi này chưa được xuất bản.`);
     } catch (cause) { setError(cause instanceof Error ? cause.message : "Không thể thử prompt."); }
     finally { setBusy(false); }
   }
