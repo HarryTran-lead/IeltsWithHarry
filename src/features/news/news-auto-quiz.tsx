@@ -8,7 +8,8 @@ import { celebrateScore } from "@/lib/celebrate";
 import { usePracticeClock, useReadingEvidenceNavigation } from "@/features/reading/reading-workspace";
 import { recoverExamAnswers, type NewsExamSession } from "@/lib/news/exam-session";
 import { parseQuestionDiagram, sharedMatchingOptions } from "@/lib/news/question-presentation";
-import { addHighlight, highlightColors, parseHighlights, segments, type Highlight, type HighlightColor } from "@/lib/highlights";
+import { addHighlight, highlightColors, parseHighlights, type Highlight, type HighlightColor } from "@/lib/highlights";
+import { questionHighlightSlice } from "@/lib/news/question-highlights";
 import { translateEnglishToVietnamese } from "@/lib/news/browser-translation";
 import { formatDuration, percent, sumBreakdowns, typeLabels, type Breakdown, type PracticeAttempt, type QuestionType } from "@/lib/news/practice-stats";
 import { choiceTypes, gapTypes } from "@/lib/news/ielts-passage";
@@ -134,7 +135,7 @@ export function NewsAutoQuiz({ articleId, types = ALL_TYPES, examMode = false, e
   const [translationVisible, setTranslationVisible] = useState<Record<string, boolean>>({});
   const [translatingId, setTranslatingId] = useState<string | null>(null);
   const [questionHighlights, setQuestionHighlights] = useState<Record<string, Highlight[]>>({});
-  const [selection, setSelection] = useState<{ questionId: string; start: number; end: number; mark?: string } | null>(null);
+  const [selection, setSelection] = useState<{ questionId: string; p: number; start: number; end: number; mark?: string } | null>(null);
   const [saved, setSaved] = useState<{ submittedAt: string; attempts: number } | null>(null);
   // Time spent on the round shown in the result card; the practice timer restarts with each new round.
   const [duration, setDuration] = useState<number | null>(null);
@@ -167,7 +168,7 @@ export function NewsAutoQuiz({ articleId, types = ALL_TYPES, examMode = false, e
       setQuestionHighlights(Object.fromEntries(list.map((question) => {
         let raw: string | null = null;
         try { raw = localStorage.getItem(`ieltswithharry-question-highlights:${articleId}:${question.id}`); } catch { /* Optional device storage. */ }
-        return [question.id, parseHighlights(raw, [question.prompt])];
+        return [question.id, parseHighlights(raw, [question.prompt, ...question.options])];
       })));
       // A finished quiz opens with the saved answers and review instead of a blank sheet.
       const previous = last.data as SavedResult | null;
@@ -262,33 +263,66 @@ export function NewsAutoQuiz({ articleId, types = ALL_TYPES, examMode = false, e
     finally { setTranslatingId(null); }
   }
 
-  function selectQuestion(root: HTMLElement, target: EventTarget, question: Question, promptOffset = 0) {
+  function selectQuestion(root: HTMLElement, target: EventTarget, question: Question, paragraph = 0) {
     const selected = window.getSelection();
     if (!selected?.rangeCount || selected.isCollapsed) {
-      const mark = (target as Element).closest("mark[data-question-hl]");
-      if (mark) setSelection({ questionId: question.id, start: 0, end: 0, mark: mark.getAttribute("data-question-hl") ?? "" });
+      const element = target instanceof Element ? target : target instanceof Node ? target.parentElement : null;
+      const mark = element?.closest("mark[data-question-hl]");
+      if (mark && root.contains(mark)) setSelection({ questionId: question.id, p: paragraph, start: 0, end: 0, mark: mark.getAttribute("data-question-hl") ?? "" });
       else setSelection(null);
       return;
     }
     const range = selected.getRangeAt(0);
     if (!root.contains(range.startContainer) || !root.contains(range.endContainer)) return;
-    const before = document.createRange();
-    before.selectNodeContents(root);
-    before.setEnd(range.startContainer, range.startOffset);
-    const start = promptOffset + before.toString().length;
-    const end = start + range.toString().length;
-    if (start < end) setSelection({ questionId: question.id, start, end });
+    const offsetFor = (node: Node, offset: number) => {
+      const element = node instanceof Element ? node : node.parentElement;
+      const fragment = element?.closest<HTMLElement>("[data-question-offset]");
+      if (!fragment || !root.contains(fragment)) return null;
+      const before = document.createRange();
+      before.selectNodeContents(fragment);
+      try { before.setEnd(node, offset); } catch { return null; }
+      return Number(fragment.dataset.questionOffset) + before.toString().length;
+    };
+    const start = offsetFor(range.startContainer, range.startOffset);
+    const end = offsetFor(range.endContainer, range.endOffset);
+    if (start !== null && end !== null && start < end) setSelection({ questionId: question.id, p: paragraph, start, end });
+  }
+
+  function questionText(question: Question, start = 0, end = question.prompt.length, paragraph = 0) {
+    const source = paragraph ? question.options[paragraph - 1] : question.prompt;
+    return <span data-question-offset={start}>{questionHighlightSlice(source, start, end, questionHighlights[question.id] ?? [], paragraph).map((part) => part.highlight
+      ? <mark key={part.start} data-question-hl={part.highlight.id} className={`news-question-mark ${part.highlight.color}`}>{part.text}</mark>
+      : <span key={part.start}>{part.text}</span>)}</span>;
   }
 
   function paintQuestion(question: Question, color: HighlightColor) {
     if (!selection || selection.questionId !== question.id) return;
     const previous = questionHighlights[question.id] ?? [];
     const next = selection.mark ? previous.map((item) => item.id === selection.mark ? { ...item, color } : item)
-      : addHighlight(previous, { id: crypto.randomUUID(), p: 0, start: selection.start, end: selection.end, color });
+      : addHighlight(previous, { id: crypto.randomUUID(), p: selection.p, start: selection.start, end: selection.end, color });
     setQuestionHighlights((current) => ({ ...current, [question.id]: next }));
     try { localStorage.setItem(`ieltswithharry-question-highlights:${articleId}:${question.id}`, JSON.stringify(next)); } catch { /* Keep highlights for this visit. */ }
     window.getSelection()?.removeAllRanges();
     setSelection(null);
+  }
+
+  function highlightMenu(question: Question, number: number) {
+    if (selection?.questionId !== question.id) return null;
+    return <div className="news-question-highlight-menu" role="group" aria-label={`Highlight câu ${number}`} onMouseUp={(event) => event.stopPropagation()} onTouchEnd={(event) => event.stopPropagation()}>
+      {highlightColors.map((color) => <button type="button" key={color} className={color} onClick={() => paintQuestion(question, color)} aria-label={`Highlight màu ${color}`} />)}
+      {selection.mark && <button type="button" className="remove" onClick={() => {
+        const next = (questionHighlights[question.id] ?? []).filter((item) => item.id !== selection.mark);
+        setQuestionHighlights((current) => ({ ...current, [question.id]: next }));
+        try { localStorage.setItem(`ieltswithharry-question-highlights:${articleId}:${question.id}`, JSON.stringify(next)); } catch { /* Keep highlights for this visit. */ }
+        setSelection(null);
+      }}>Bỏ highlight</button>}
+    </div>;
+  }
+
+  function questionTextInSource(question: Question, text: string, after = 0) {
+    if (!text) return null;
+    const start = question.prompt.indexOf(text, after);
+    return start < 0 ? text : questionText(question, start, start + text.length);
   }
 
   async function submit() {
@@ -401,7 +435,11 @@ export function NewsAutoQuiz({ articleId, types = ALL_TYPES, examMode = false, e
           <strong>{section.type==="summary_completion"?"Complete the summary":"Complete the notes"}</strong>
           {section.items.map(({question,number})=>{
             const prompt=promptWithoutWordLimit(question.prompt);const gap=/_{3,}|\.{3,}|…/.exec(prompt);const value=answers[question.id];
-            return <span className="news-group-gap" key={question.id} data-q={number}>{gap?prompt.slice(0,gap.index):prompt} <label><b>({number})</b><input type="text" maxLength={60} autoComplete="off" aria-label={`Chỗ trống ${number}`} value={typeof value==="string"?value:""} disabled={graded||examExpired} onChange={(event)=>setAnswers((current)=>({...current,[question.id]:event.target.value}))}/></label>{gap?prompt.slice(gap.index+gap[0].length):""}{section.type==="note_completion"&&!sharedNoteWordLimit&&<small className="news-group-word-limit"> (tối đa {noteWordLimitForPrompt(question.prompt)} từ)</small>}{!examMode&&<button type="button" className="news-completion-translate" aria-label={`Dịch câu ${number}`} disabled={translatingId===question.id} onClick={()=>void toggleTranslation(question)}><Languages size={12}/>{translatingId===question.id?"…":translationVisible[question.id]?"Ẩn dịch":"Dịch"}</button>}{!examMode&&translationVisible[question.id]&&translations[question.id]&&<small className="news-group-translation" lang="vi">{translations[question.id]}</small>}{" "}</span>;
+            return <div className="news-group-gap" key={question.id} data-q={number} onMouseUp={(event)=>selectQuestion(event.currentTarget,event.target,question)} onTouchEnd={(event)=>{const root=event.currentTarget;const target=event.target;requestAnimationFrame(()=>selectQuestion(root,target,question));}}>
+              {questionText(question,0,gap?.index??prompt.length)} <label><b>({number})</b><input type="text" maxLength={60} autoComplete="off" aria-label={`Chỗ trống ${number}`} value={typeof value==="string"?value:""} disabled={graded||examExpired} onChange={(event)=>setAnswers((current)=>({...current,[question.id]:event.target.value}))}/></label>{gap&&questionText(question,gap.index+gap[0].length,prompt.length)}
+              {section.type==="note_completion"&&!sharedNoteWordLimit&&<small className="news-group-word-limit"> (tối đa {noteWordLimitForPrompt(question.prompt)} từ)</small>}{!examMode&&<button type="button" className="news-completion-translate" aria-label={`Dịch câu ${number}`} disabled={translatingId===question.id} onClick={()=>void toggleTranslation(question)}><Languages size={12}/>{translatingId===question.id?"…":translationVisible[question.id]?"Ẩn dịch":"Dịch"}</button>}{!examMode&&translationVisible[question.id]&&translations[question.id]&&<small className="news-group-translation" lang="vi">{translations[question.id]}</small>}
+              {highlightMenu(question,number)}
+            </div>;
           })}
         </div>}
         {arrowTable && <>
@@ -413,20 +451,22 @@ export function NewsAutoQuiz({ articleId, types = ALL_TYPES, examMode = false, e
               const value = answers[question.id];
               const review = graded ? reviews[question.id] : undefined;
               const marker = /_{3,}|\.{3,}|…/.exec(row.value)!;
+              const valueStart = question.prompt.indexOf(row.value);
               return <tr key={question.id} className={review ? review.correct ? "is-correct" : "is-wrong" : ""}>
-                <th scope="row"><small className="news-completion-number">Câu {number}</small>{row.label}
+                <th scope="row" onMouseUp={(event)=>selectQuestion(event.currentTarget,event.target,question)} onTouchEnd={(event)=>{const root=event.currentTarget;const target=event.target;requestAnimationFrame(()=>selectQuestion(root,target,question));}}><small className="news-completion-number">Câu {number}</small>{questionTextInSource(question,row.label)}
                    {!examMode && <button type="button" className="news-completion-translate" onClick={() => void toggleTranslation(question)} disabled={translatingId === question.id}>
                     <Languages size={13}/>{translatingId === question.id ? "Đang dịch…" : translationVisible[question.id] ? "Ẩn bản dịch" : "Dịch câu hỏi"}</button>}
                    {!examMode && translationVisible[question.id] && translations[question.id] && <small className="news-completion-translation" lang="vi">{translations[question.id]}</small>}
                 </th>
-                <td>{row.value.slice(0, marker.index)}<input className="news-auto-written" type="text" maxLength={60} autoComplete="off"
+                <td onMouseUp={(event)=>selectQuestion(event.currentTarget,event.target,question)} onTouchEnd={(event)=>{const root=event.currentTarget;const target=event.target;requestAnimationFrame(()=>selectQuestion(root,target,question));}}>{questionTextInSource(question,row.value.slice(0, marker.index),Math.max(0,valueStart))}<input className="news-auto-written" type="text" maxLength={60} autoComplete="off"
                    aria-label={`Từ còn thiếu câu ${number}, ${row.label}`} value={typeof value === "string" ? value : ""} disabled={graded || examExpired}
-                  onChange={(event) => setAnswers((current) => ({ ...current, [question.id]: event.target.value }))} placeholder="Điền từ"/>{row.value.slice(marker.index + marker[0].length)}
+                   onChange={(event) => setAnswers((current) => ({ ...current, [question.id]: event.target.value }))} placeholder="Điền từ"/>{questionTextInSource(question,row.value.slice(marker.index + marker[0].length),Math.max(0,valueStart+marker.index+marker[0].length))}
                   {review && <small className="news-completion-feedback">{review.correct ? "✓ Chính xác" : `✗ Đáp án: ${review.acceptedAnswers?.[0] ?? ""}`}</small>}
                 </td>
-              </tr>;
+               </tr>;
             })}</tbody>
-          </table></div>
+           </table></div>
+           {section.items.map(({question,number})=>selection?.questionId===question.id&&highlightMenu(question,number))}
           {graded && section.items.map(({ question, number }) => {
             const review = reviews[question.id];
             if (!review) return null;
@@ -455,30 +495,24 @@ export function NewsAutoQuiz({ articleId, types = ALL_TYPES, examMode = false, e
             {diagram&&<svg className="news-question-diagram" viewBox={`0 0 460 ${80+diagram.labels.length*56}`} role="img" aria-label={`${diagram.title}. ${diagram.labels.map((label,index)=>index===diagram.gap?`Vị trí ${number} cần điền`:label).join("; ")}`}><title>{diagram.title}</title><text x="20" y="28">{diagram.title}</text>{diagram.labels.map((label,index)=><g key={index}><rect x="24" y={48+index*56} width="408" height="42" rx="8" fill={index===diagram.gap?"#fff5d5":"#eaf7f6"} stroke="#74b9bf"/><text x="40" y={74+index*56}>{index===diagram.gap?`(${number}) ______`:label}</text>{index<diagram.labels.length-1&&<path d={`M228 ${90+index*56} v14 m-4 -5 l4 5 4 -5`} stroke="#287e88" fill="none"/>}</g>)}</svg>}
             {question.question_type==="diagram_label_completion"&&!diagram&&<p className="news-form-note">Mẫu cũ chưa có sơ đồ. Câu này hiện chỉ phù hợp luyện đọc mô tả; chưa dùng để đánh giá kỹ năng đọc sơ đồ.</p>}
             {flowChart ? <div className="news-flow-chart" role="list" aria-label={question.prompt}>{flowChart.map((step,index)=><div className="news-flow-chart-unit" key={`${step.start}-${index}`}>
-              <div className="news-flow-chart-step" role="listitem" onMouseUp={(event)=>selectQuestion(event.currentTarget,event.target,question,step.start)} onTouchEnd={(event)=>{const root=event.currentTarget;const target=event.target;requestAnimationFrame(()=>selectQuestion(root,target,question,step.start));}}>{segments(step.text,step.start,questionHighlights[question.id]??[]).map((part)=>part.highlight
-                ? <mark key={part.start} data-question-hl={part.highlight.id} className={`news-question-mark ${part.highlight.color}`}>{part.text}</mark>
-                : <span key={part.start}>{part.text}</span>)}</div>
+              <div className="news-flow-chart-step" role="listitem" onMouseUp={(event)=>selectQuestion(event.currentTarget,event.target,question)} onTouchEnd={(event)=>{const root=event.currentTarget;const target=event.target;requestAnimationFrame(()=>selectQuestion(root,target,question));}}>{questionText(question,step.start,step.start+step.text.length)}</div>
               {index < flowChart.length - 1 && <span className="news-flow-chart-arrow" aria-hidden="true">↓</span>}
-            </div>)}</div> : <h3 className="news-question-text" onMouseUp={(event)=>selectQuestion(event.currentTarget,event.target,question)} onTouchEnd={(event)=>{const root=event.currentTarget;const target=event.target;requestAnimationFrame(()=>selectQuestion(root,target,question));}}>{segments(visiblePrompt,0,questionHighlights[question.id]??[]).map((part)=>part.highlight
-                ? <mark key={part.start} data-question-hl={part.highlight.id} className={`news-question-mark ${part.highlight.color}`}>{part.text}</mark>
-                : <span key={part.start}>{part.text}</span>)}</h3>}
+            </div>)}</div> : <h3 className="news-question-text" onMouseUp={(event)=>selectQuestion(event.currentTarget,event.target,question)} onTouchEnd={(event)=>{const root=event.currentTarget;const target=event.target;requestAnimationFrame(()=>selectQuestion(root,target,question));}}>{question.prompt.includes(visiblePrompt)?questionText(question,question.prompt.indexOf(visiblePrompt),question.prompt.indexOf(visiblePrompt)+visiblePrompt.length):visiblePrompt}</h3>}
             {question.question_type === "note_completion" && !sharedNoteWordLimit && <small className="news-note-word-limit">Write NO MORE THAN {wordLimitText(noteWordLimit)} from the article.</small>}
              <div className="news-question-tools">{!examMode && <button type="button" onClick={()=>void toggleTranslation(question)} disabled={translatingId===question.id}><Languages size={14}/>{translatingId===question.id?"Đang dịch…":translationVisible[question.id]?"Ẩn bản dịch":"Dịch câu hỏi"}</button>}<span><Highlighter size={13}/> Bôi đen câu hỏi để highlight</span></div>
              {!examMode && translationVisible[question.id]&&translations[question.id]&&<p className="news-question-translation" lang="vi">{translations[question.id]}</p>}
-            {selection?.questionId===question.id&&<div className="news-question-highlight-menu" role="group" aria-label={`Highlight câu ${number}`}>
-              {highlightColors.map((color)=><button type="button" key={color} className={color} onClick={()=>paintQuestion(question,color)} aria-label={`Highlight màu ${color}`}/>)}
-              {selection.mark&&<button type="button" className="remove" onClick={()=>{const next=(questionHighlights[question.id]??[]).filter((item)=>item.id!==selection.mark);setQuestionHighlights((current)=>({...current,[question.id]:next}));try{localStorage.setItem(`ieltswithharry-question-highlights:${articleId}:${question.id}`,JSON.stringify(next));}catch{}setSelection(null);}}>Bỏ highlight</button>}
-            </div>}
+            {selection?.p===0&&!table&&highlightMenu(question,number)}
             {table && <div className="news-completion-table-scroll"><table className="news-completion-table" aria-label={`Bảng điền từ câu ${number}`}>
               <thead><tr>{table.headers.map((header, index) => <th scope="col" key={index}>{header}</th>)}</tr></thead>
               <tbody>{table.rows.map((row, rowIndex) => <tr key={rowIndex}>{row.map((cell, columnIndex) => {
                 const isGap = table.gap.row === rowIndex && table.gap.column === columnIndex;
                 const marker = isGap ? /_{3,}|\.{3,}|…/.exec(cell) : null;
-                return <td key={columnIndex}>{marker ? <>{cell.slice(0, marker.index)}<input className="news-auto-written" type="text" maxLength={60} autoComplete="off"
+                return <td key={columnIndex} onMouseUp={(event)=>selectQuestion(event.currentTarget,event.target,question)} onTouchEnd={(event)=>{const root=event.currentTarget;const target=event.target;requestAnimationFrame(()=>selectQuestion(root,target,question));}}>{marker ? <>{questionTextInSource(question,cell.slice(0, marker.index))}<input className="news-auto-written" type="text" maxLength={60} autoComplete="off"
                    aria-label={`Từ còn thiếu câu ${number}, cột ${table.headers[columnIndex]}`} value={typeof value === "string" ? value : ""} disabled={graded || examExpired}
-                  onChange={(event) => setValue(event.target.value)} placeholder="Điền từ"/>{cell.slice(marker.index + marker[0].length)}</> : cell}</td>;
+                  onChange={(event) => setValue(event.target.value)} placeholder="Điền từ"/>{questionTextInSource(question,cell.slice(marker.index + marker[0].length))}</> : questionTextInSource(question,cell)}</td>;
               })}</tr>)}</tbody>
             </table></div>}
+            {table&&selection?.p===0&&highlightMenu(question,number)}
             {!choice && !gapTypes.has(question.question_type) && <input className="news-auto-written" type="text" maxLength={60} autoComplete="off" aria-label={`Câu trả lời câu ${number}`}
                value={typeof value === "string" ? value : ""} disabled={graded || examExpired} onChange={(event) => setValue(event.target.value)} placeholder="Tối đa 3 từ"/>}
             {gapTypes.has(question.question_type) && !table && !groupedCompletion && <input className="news-auto-written" type="text" maxLength={60} autoComplete="off" aria-label={`Từ còn thiếu câu ${number}`}
@@ -486,9 +520,10 @@ export function NewsAutoQuiz({ articleId, types = ALL_TYPES, examMode = false, e
             {choice&&matching?<label className="news-matching-answer">Lựa chọn câu {number}<select aria-label={`Ghép đáp án câu ${number}`} value={typeof value==="number"?value:""} disabled={graded||examExpired} onChange={(event)=>setValue(event.target.value===""?"":Number(event.target.value))}><option value="">Chọn chữ cái</option>{matching.map((_,index)=><option key={index} value={index}>{String.fromCharCode(65+index)}</option>)}</select></label>:choice && <div className={`news-auto-options ${question.question_type === "tfng" || question.question_type === "ynng" ? "tfng" : ""}`}>{question.options.map((option, index) =>
               <label key={index} className={`${value === index ? "selected" : ""} ${review?.correctIndex === index ? "correct" : ""} ${review && value === index && index !== review.correctIndex ? "wrong" : ""}`}>
                  <input type="radio" name={`news-ai-${question.id}`} checked={value === index} disabled={graded || examExpired} onChange={() => setValue(index)}/>
-                {question.question_type !== "tfng" && question.question_type !== "ynng" && <span>{"ABCD"[index]}</span>}<em>{question.question_type === "tfng" || question.question_type === "ynng" ? option.toUpperCase() : option}</em>
+                {question.question_type !== "tfng" && question.question_type !== "ynng" && <span>{"ABCD"[index]}</span>}<em className={question.question_type === "tfng" || question.question_type === "ynng" ? "news-option-uppercase" : undefined} onMouseUp={(event)=>selectQuestion(event.currentTarget,event.target,question,index+1)} onTouchEnd={(event)=>{const root=event.currentTarget;const target=event.target;requestAnimationFrame(()=>selectQuestion(root,target,question,index+1));}} onClick={(event)=>{if(!window.getSelection()?.isCollapsed)event.preventDefault();}}>{questionText(question,0,option.length,index+1)}</em>
                 {review?.optionNotes?.[index] && <small className="news-auto-note">{index === review.correctIndex ? "✓ " : "✗ "}{review.optionNotes[index]}</small>}
               </label>)}</div>}
+            {selection?.questionId===question.id&&selection.p>0&&highlightMenu(question,number)}
             {review && <div className={`news-auto-explanation ${review.correct ? "" : "wrong"}`}>{review.correct ? <CheckCircle2 size={17}/> : <XCircle size={17}/>}<div>
               <strong>{review.correct ? "Chính xác! " : "Chưa đúng. "}{review.correctIndex !== null ? `Đáp án: ${question.question_type === "tfng" || question.question_type === "ynng" ? question.options[review.correctIndex].toUpperCase() : question.options[review.correctIndex]}` : `Đáp án: ${review.acceptedAnswers?.[0] ?? ""}`}</strong>
               {!review.correct && !choice && <p>Bạn trả lời: “{String(value ?? "")}”</p>}

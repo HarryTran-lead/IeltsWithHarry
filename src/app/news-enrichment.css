@@ -53,6 +53,9 @@
 .news-question-highlight-menu button:not(.remove){width:24px;height:24px;border:2px solid #fff;border-radius:50%}
 .news-question-highlight-menu .sun{background:#ffd84d}.news-question-highlight-menu .mint{background:#6fd7a5}.news-question-highlight-menu .rose{background:#ff98b2}
 .news-question-highlight-menu .remove{padding:3px 5px;color:#fff;font-size:var(--fs-xs)}
+.news-option-uppercase{text-transform:uppercase}
+.news-group-gap .news-question-highlight-menu{display:flex;width:max-content;max-width:100%;margin:7px 0 8px}
+.summary_completion>.news-group-gap{display:inline}
 .news-completion-table-scroll{max-width:100%;margin:2px 0 14px;overflow-x:auto;border:1px solid #bfdbe0;border-radius:var(--r-md)}
 .news-completion-table{width:100%;min-width:360px;border-collapse:collapse;color:#17324d;font-size:var(--fs-md);line-height:1.45}
 .news-completion-table th,.news-completion-table td{width:auto;padding:12px 14px;border-right:1px solid #d3e4e8;border-bottom:1px solid #d3e4e8;text-align:left;vertical-align:middle;overflow-wrap:anywhere}
