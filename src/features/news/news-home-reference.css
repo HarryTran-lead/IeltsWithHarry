@@ -1,9 +1,23 @@
 /* Daily News home follows the supplied mint-wave reference. Other news pages keep their own header. */
+@property --news-sky-top { syntax: "<color>"; inherits: false; initial-value: #f2f7f5; }
+@property --news-sky-mid { syntax: "<color>"; inherits: false; initial-value: #f3f7f4; }
+
 .main-area:has(.news-home) {
+  --news-sky-top: #f2f7f5;
+  --news-sky-mid: #f3f7f4;
   background:
     radial-gradient(rgba(25, 115, 123, .035) 1px, transparent 1.3px) 0 0 / 22px 22px,
-    linear-gradient(180deg, #f7e3bd 0, #faf1df 125px, #edf7f3 335px, #f6f5f0 680px);
+    linear-gradient(180deg, var(--news-sky-top) 0, var(--news-sky-mid) 125px, #edf7f3 335px, #f6f5f0 680px);
+  transition: --news-sky-top 1.8s ease-in-out, --news-sky-mid 1.8s ease-in-out;
 }
+
+.app-frame[data-sky-phase="earlyMorning"] .main-area:has(.news-home) { --news-sky-top: #e9e1e9; --news-sky-mid: #f3f0ed; }
+.app-frame[data-sky-phase="lateMorning"] .main-area:has(.news-home) { --news-sky-top: #e8f1f6; --news-sky-mid: #f2f6f3; }
+.app-frame[data-sky-phase="midday"] .main-area:has(.news-home) { --news-sky-top: #f4f0e2; --news-sky-mid: #f5f5ec; }
+.app-frame[data-sky-phase="lateAfternoon"] .main-area:has(.news-home) { --news-sky-top: #f7e3bd; --news-sky-mid: #faf1df; }
+.app-frame[data-sky-phase="sunset"] .main-area:has(.news-home) { --news-sky-top: #f3d6c7; --news-sky-mid: #f7e8df; }
+.app-frame[data-sky-phase="night"] .main-area:has(.news-home) { --news-sky-top: #d7e0ef; --news-sky-mid: #e7edf4; }
+.app-frame[data-sky-phase="lateNight"] .main-area:has(.news-home) { --news-sky-top: #cdd9ea; --news-sky-mid: #e3eaf3; }
 
 .news-home {
   position: relative;
