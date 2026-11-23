@@ -19,9 +19,12 @@ export function readSound() {
  * Overlay + card shared by the streak popups: portal, Escape, backdrop click,
  * scroll lock and a short exit animation before `onClose`.
  */
-export function StreakShell({ tier, className, labelledBy, describedBy, onClose, sound, onToggleSound, children }: {
+export function StreakShell({ tier, className, labelledBy, describedBy, onClose, sound, onToggleSound, overlay, children }: {
   tier: StreakTier; className: string; labelledBy: string; describedBy: string; onClose: () => void;
-  sound?: boolean; onToggleSound?: () => void; children: (close: () => void) => ReactNode;
+  sound?: boolean; onToggleSound?: () => void;
+  /** Full-screen layer (e.g. confetti) kept outside the card: the card's transform would trap `position: fixed`. */
+  overlay?: ReactNode;
+  children: (close: () => void) => ReactNode;
 }) {
   const [closing, setClosing] = useState(false);
   const card = useRef<HTMLDivElement>(null);
@@ -45,6 +48,7 @@ export function StreakShell({ tier, className, labelledBy, describedBy, onClose,
       role="dialog" aria-modal="true" aria-labelledby={labelledBy} aria-describedby={describedBy}
       onClick={(event) => { if (event.target === event.currentTarget) close(); }}>
       <div className="streak-backdrop" aria-hidden="true" />
+      {overlay}
       <div className="streak-card" ref={card}>
         <div className="streak-tools">
           {onToggleSound ? <button type="button" onClick={onToggleSound} aria-label={sound ? "Tắt âm thanh" : "Bật âm thanh"}>{sound ? <Volume2 size={16} /> : <VolumeX size={16} />}</button> : <span />}

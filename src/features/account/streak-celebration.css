@@ -566,8 +566,62 @@
   .streak-road li { width: 28px; height: 28px; font-size: 9.5px; }
   .streak-quick-item { padding: 8px; gap: 8px; }
 }
-@media (max-height: 760px) {
-  .streak-celebrate { place-items: start center; }
+/*
+ * Reminder: a quick nudge, so it is always compact — the whole card fits a
+ * laptop screen without scrolling (flame, count, copy, week, 4 quick wins, CTA).
+ */
+.is-reminder .streak-card { width: min(400px, 100%); padding: 16px 18px 12px; border-radius: 24px; }
+.is-reminder .streak-hero.is-small { height: 84px; margin-top: 0; }
+.is-reminder .streak-halo { --w: 110px; --h: 110px; width: 110px; height: 110px; }
+.is-reminder .streak-flame { --w: 66px; --h: 82px; width: 66px; height: 82px; }
+.is-reminder .streak-hero > .streak-hourglass { bottom: 2px; margin-left: 22px; font-size: 20px; }
+.is-reminder .streak-count { margin-top: 0; height: 50px; font-size: 48px; line-height: 50px; text-shadow: 0 2px 0 color-mix(in srgb, var(--flame-a) 55%, #3a1f0f); }
+.is-reminder .streak-unit { margin-top: 0; font-size: 11.5px; }
+.is-reminder .streak-title { margin: 8px 0 2px; font-size: 20px; }
+.is-reminder .streak-message { font-size: 13.5px; line-height: 1.45; }
+.is-reminder .streak-timer { gap: 6px; margin-top: 8px; padding: 4px 12px; font-size: 12.5px; }
+.is-reminder .streak-timer b { font-size: 15px; }
+.is-reminder .streak-week-strip { gap: 4px; margin-top: 10px; padding: 6px; border-radius: 14px; }
+.is-reminder .streak-week-strip li { gap: 2px; }
+.is-reminder .streak-week-strip li > span { width: 26px; height: 26px; }
+.is-reminder .streak-week-strip small { font-size: 10.5px; }
+.is-reminder .streak-goal { margin-top: 8px; font-size: 12.5px; }
+.is-reminder .streak-quick { gap: 6px; margin-top: 8px; }
+.is-reminder .streak-quick-item { gap: 8px; padding: 6px 8px; border-radius: 12px; }
+.is-reminder .streak-quick-item b { font-size: 12.5px; }
+.is-reminder .streak-quick-item small { font-size: 11px; }
+.is-reminder .streak-quick-icon { width: 28px; height: 28px; border-radius: 8px; }
+.is-reminder .streak-quick-icon svg { width: 16px; height: 16px; }
+.is-reminder .streak-actions { gap: 0; margin-top: 10px; }
+.is-reminder .streak-continue { height: 42px; border-radius: 14px; font-size: 15px; box-shadow: 0 4px 0 color-mix(in srgb, var(--flame-a) 60%, #3a1f0f); }
+.is-reminder .streak-link { padding: 6px 8px 2px; font-size: 13px; }
+
+/* Celebration on short screens: shrink the hero and spacing instead of scrolling the page. */
+@media (max-height: 860px) {
+  .is-celebration .streak-card { padding: 16px 18px 12px; }
+  .is-celebration .streak-hero { height: 124px; }
+  .is-celebration .streak-flame { --w: 90px; --h: 112px; width: 90px; height: 112px; }
+  .is-celebration .streak-count { height: 56px; font-size: 54px; line-height: 56px; }
+  .is-celebration .streak-title { margin-top: 8px; font-size: 21px; }
+  .is-celebration .streak-message { font-size: 13.5px; }
+  .is-celebration .streak-badges { margin-top: 8px; }
+  .is-celebration .streak-week-strip { margin-top: 10px; padding: 6px; }
+  .is-celebration .streak-week-strip li > span { width: 28px; height: 28px; }
+  .is-celebration .streak-next { margin-top: 10px; }
+  .is-celebration .streak-road { margin-top: 10px; }
+  .is-celebration .streak-actions { margin-top: 12px; }
+  .is-celebration .streak-continue { height: 44px; }
+}
+
+/* Last resort on very small screens: the card scrolls inside itself, never the page. */
+.streak-celebrate { padding: 12px; }
+@media (max-height: 640px) {
+  .streak-card { max-height: calc(100dvh - 24px); overflow-y: auto; overscroll-behavior: contain; scrollbar-width: thin; }
+  .is-reminder .streak-hero.is-small { height: 64px; }
+  .is-reminder .streak-flame { --w: 50px; --h: 62px; width: 50px; height: 62px; }
+  .is-reminder .streak-halo { --w: 84px; --h: 84px; width: 84px; height: 84px; }
+  .is-reminder .streak-count { height: 42px; font-size: 40px; line-height: 42px; }
+  .is-reminder .streak-goal { display: none; }
 }
 
 /*
