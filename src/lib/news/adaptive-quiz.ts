@@ -301,7 +301,7 @@ function eligibleQuestionTypes(text: string, wordCount: number) {
   return [...weights.entries()];
 }
 
-function selectQuestionTypes(text: string, wordCount: number, key: string) {
+export function selectQuestionTypes(text: string, wordCount: number, key: string) {
   const hash = stableHash(key);
   const desired = wordCount < 150 ? 1 : wordCount < 300 ? 1 + (hash % 2) : wordCount < 500 ? 2
     : wordCount < 700 ? 3 : 4;

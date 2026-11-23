@@ -1,0 +1,16 @@
+
+> ieltswithharry@0.1.0 test
+> vitest run
+
+
+ RUN  v5.0.5 C:/Users/RAZER/.codex/worktrees/daily-news-question-factory-v2/Ielts-learning website
+
+
+ Test Files  140 passed | 2 skipped (142)
+      Tests  704 passed | 12 skipped (716)
+   Start at  23:15:49
+   Duration  99.55s (tests 88%, import 10%, transform 1%, worker 1%)
+
+    Isolate  142 workers spawned · ~807ms startup each (spawn + environment, per file)
+             at least ~15.56s faster with isolate: false — reuses workers across files instead of one per file
+

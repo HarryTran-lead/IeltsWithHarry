@@ -1,0 +1,293 @@
+
+> ieltswithharry@0.1.0 build
+> next build
+
+▲ Next.js 16.4.6 (Turbopack)
+✓ Running next.config.ts took 105ms
+
+  Creating an optimized production build ...
+✓ Compiled successfully in 21.6s
+  Running TypeScript ...
+  Finished TypeScript in 25.7s ...
+  Collecting page data using 7 workers ...
+  Generating static pages using 7 workers (0/69) ...
+  Generating static pages using 7 workers (17/69) 
+  Generating static pages using 7 workers (34/69) 
+  Generating static pages using 7 workers (51/69) 
+✓ Generating static pages using 7 workers (69/69) in 2.9s
+Turbopack build encountered 5 warnings:
+./src/lib/writing-task2/content.ts:48:44
+Warning: The file pattern (<dynamic> '/' <dynamic> | '/ROOT/content/writing-task2/enrich/' <dynamic> | <dynamic> | '/ROOT/content/writing-task2/enrich' <dynamic>) matches 18734 files in [project]/
+  46 |   if (!existsSync(dir)) return [];
+  47 |   return readdirSync(dir).filter((name) => name.endsWith(".json")).sort()
+> 48 |     .map((name) => JSON.parse(readFileSync(join(dir, name), "utf8")) as Task2Enrichment);
+     |                                            ^^^^^^^^^^^^^^^
+  49 | }
+  50 |
+  51 | /** Why an enrichment cannot apply to its lesson, or null when it fits. */
+
+Overly broad patterns can lead to build performance issues and over bundling.
+
+Import traces:
+  #1 [App Route]:
+    ./src/lib/writing-task2/content.ts
+    ./src/app/api/self-study/writing-task-2/[id]/reveal/route.ts
+
+  #2 [App Route]:
+    ./src/lib/writing-task2/content.ts
+    ./src/lib/writing-task2/content.ts
+    ./src/app/api/self-study/writing-task-2/[id]/route.ts
+
+  #3 [Server Component]:
+    ./src/lib/writing-task2/content.ts
+    ./src/lib/self-study-path/courses.ts
+    ./src/app/app/self-study/preview/page.tsx
+
+
+./src/lib/writing-task2/content.ts:46:8
+Warning: Dynamic filesystem access causes tracing of the whole project
+  44 |
+  45 | export function readTask2Enrichments(dir = join(root, "enrich")): Task2Enrichment[] {
+> 46 |   if (!existsSync(dir)) return [];
+     |        ^^^^^^^^^^^^^^^
+  47 |   return readdirSync(dir).filter((name) => name.endsWith(".json")).sort()
+  48 |     .map((name) => JSON.parse(readFileSync(join(dir, name), "utf8")) as Task2Enrichment);
+  49 | }
+
+Static analysis determined that this filesystem access causes the whole project to be traced and included in the output.
+This is usually unintentional and leads to all source files (including the public folder) to be deployed as part of the server code.
+This can slow down deployments or lead to failures when size limits are exceeded.
+To resolve this, you can
+- make sure the path is statically scoped to some subfolder, for example path.join(process.cwd(), 'data', bar), or
+- only use them in development, or
+- opt out by adding an ignore comment to the highlighted call: fs.existsSync(/*turbopackIgnore: true*/ ...), or
+- remove them.
+
+Import traces:
+  #1 [App Route]:
+    ./src/lib/writing-task2/content.ts
+    ./src/app/api/self-study/writing-task-2/[id]/reveal/route.ts
+
+  #2 [App Route]:
+    ./src/lib/writing-task2/content.ts
+    ./src/lib/writing-task2/content.ts
+    ./src/app/api/self-study/writing-task-2/[id]/route.ts
+
+  #3 [Server Component]:
+    ./src/lib/writing-task2/content.ts
+    ./src/lib/self-study-path/courses.ts
+    ./src/app/app/self-study/preview/page.tsx
+
+
+./src/lib/writing-task2/content.ts:48:31
+Warning: Dynamic filesystem access causes tracing of the whole project
+  46 |   if (!existsSync(dir)) return [];
+  47 |   return readdirSync(dir).filter((name) => name.endsWith(".json")).sort()
+> 48 |     .map((name) => JSON.parse(readFileSync(join(dir, name), "utf8")) as Task2Enrichment);
+     |                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  49 | }
+  50 |
+  51 | /** Why an enrichment cannot apply to its lesson, or null when it fits. */
+
+Static analysis determined that this filesystem access causes the whole project to be traced and included in the output.
+This is usually unintentional and leads to all source files (including the public folder) to be deployed as part of the server code.
+This can slow down deployments or lead to failures when size limits are exceeded.
+To resolve this, you can
+- make sure the path is statically scoped to some subfolder, for example path.join(process.cwd(), 'data', bar), or
+- only use them in development, or
+- opt out by adding an ignore comment to the highlighted call: fs.readFileSync(/*turbopackIgnore: true*/ ...), or
+- remove them.
+
+Import traces:
+  #1 [App Route]:
+    ./src/lib/writing-task2/content.ts
+    ./src/app/api/self-study/writing-task-2/[id]/reveal/route.ts
+
+  #2 [App Route]:
+    ./src/lib/writing-task2/content.ts
+    ./src/lib/writing-task2/content.ts
+    ./src/app/api/self-study/writing-task-2/[id]/route.ts
+
+  #3 [Server Component]:
+    ./src/lib/writing-task2/content.ts
+    ./src/lib/self-study-path/courses.ts
+    ./src/app/app/self-study/preview/page.tsx
+
+
+./src/lib/writing-task2/content.ts:47:10
+Warning: Dynamic filesystem access causes tracing of the whole project
+  45 | export function readTask2Enrichments(dir = join(root, "enrich")): Task2Enrichment[] {
+  46 |   if (!existsSync(dir)) return [];
+> 47 |   return readdirSync(dir).filter((name) => name.endsWith(".json")).sort()
+     |          ^^^^^^^^^^^^^^^^
+  48 |     .map((name) => JSON.parse(readFileSync(join(dir, name), "utf8")) as Task2Enrichment);
+  49 | }
+  50 |
+
+Static analysis determined that this filesystem access causes the whole project to be traced and included in the output.
+This is usually unintentional and leads to all source files (including the public folder) to be deployed as part of the server code.
+This can slow down deployments or lead to failures when size limits are exceeded.
+To resolve this, you can
+- make sure the path is statically scoped to some subfolder, for example path.join(process.cwd(), 'data', bar), or
+- only use them in development, or
+- opt out by adding an ignore comment to the highlighted call: fs.readdir(/*turbopackIgnore: true*/ ...), or
+- remove them.
+
+Import traces:
+  #1 [App Route]:
+    ./src/lib/writing-task2/content.ts
+    ./src/app/api/self-study/writing-task-2/[id]/reveal/route.ts
+
+  #2 [App Route]:
+    ./src/lib/writing-task2/content.ts
+    ./src/lib/writing-task2/content.ts
+    ./src/app/api/self-study/writing-task-2/[id]/route.ts
+
+  #3 [Server Component]:
+    ./src/lib/writing-task2/content.ts
+    ./src/lib/self-study-path/courses.ts
+    ./src/app/app/self-study/preview/page.tsx
+
+
+./src/lib/writing-task2/content.ts:48:44
+Warning: Dynamic filesystem access causes tracing of the whole project
+  46 |   if (!existsSync(dir)) return [];
+  47 |   return readdirSync(dir).filter((name) => name.endsWith(".json")).sort()
+> 48 |     .map((name) => JSON.parse(readFileSync(join(dir, name), "utf8")) as Task2Enrichment);
+     |                                            ^^^^^^^^^^^^^^^
+  49 | }
+  50 |
+  51 | /** Why an enrichment cannot apply to its lesson, or null when it fits. */
+
+Static analysis determined that this filesystem access causes the whole project to be traced and included in the output.
+This is usually unintentional and leads to all source files (including the public folder) to be deployed as part of the server code.
+This can slow down deployments or lead to failures when size limits are exceeded.
+To resolve this, you can
+- make sure the path is statically scoped to some subfolder, for example path.join(process.cwd(), 'data', bar), or
+- only use them in development, or
+- opt out by adding an ignore comment to the highlighted call: path.join(/*turbopackIgnore: true*/ ...), or
+- remove them.
+
+Import traces:
+  #1 [App Route]:
+    ./src/lib/writing-task2/content.ts
+    ./src/app/api/self-study/writing-task-2/[id]/reveal/route.ts
+
+  #2 [App Route]:
+    ./src/lib/writing-task2/content.ts
+    ./src/lib/writing-task2/content.ts
+    ./src/app/api/self-study/writing-task-2/[id]/route.ts
+
+  #3 [Server Component]:
+    ./src/lib/writing-task2/content.ts
+    ./src/lib/self-study-path/courses.ts
+    ./src/app/app/self-study/preview/page.tsx
+
+
+  Finalizing page optimization ...
+
+Route (app)
+┌ ○ /
+├ ○ /_not-found
+├ ○ /about
+├ ƒ /admin/[[...slug]]
+├ ƒ /api/admin/ai-content-factory
+├ ƒ /api/admin/listening-audio
+├ ƒ /api/admin/users
+├ ƒ /api/admin/vocabulary-phase5
+├ ƒ /api/book2/lessons/[slug]
+├ ƒ /api/community
+├ ƒ /api/dictation/clip/[id]
+├ ƒ /api/dictation/skill-lab
+├ ƒ /api/dictation/skill-lab/[id]
+├ ƒ /api/dictation/skill-lab/[id]/dictation
+├ ƒ /api/dictation/skill-lab/[id]/grade
+├ ƒ /api/dictation/skill-lab/check
+├ ƒ /api/dictation/skill-lab/practice
+├ ƒ /api/grammar/guided-check
+├ ƒ /api/grammar/labs
+├ ƒ /api/grammar/lesson/[code]
+├ ƒ /api/grammar/placement
+├ ƒ /api/ielts/bank/admin
+├ ƒ /api/ielts/bank/attempt
+├ ƒ /api/ielts/bank/catalog
+├ ƒ /api/ielts/bank/library
+├ ƒ /api/ielts/bank/review-highlights
+├ ƒ /api/ielts/bank/scheduled
+├ ƒ /api/ielts/bank/share
+├ ƒ /api/ielts/bank/speaking-coaching
+├ ƒ /api/ielts/bank/writing-feedback
+├ ƒ /api/ielts/bank/writing-grading
+├ ƒ /api/ielts/bank/writing-insights
+├ ƒ /api/ielts/bank/writing-review
+├ ƒ /api/ielts/bank/writing-source-facts
+├ ƒ /api/ielts/live
+├ ƒ /api/listening-lab/modules
+├ ƒ /api/listening-lab/modules/[id]
+├ ƒ /api/listening-lab/placement
+├ ƒ /api/listening/mocks
+├ ƒ /api/listening/mocks/[id]
+├ ƒ /api/listening/mocks/[id]/submit
+├ ƒ /api/news/enrich
+├ ƒ /api/news/fact-article
+├ ƒ /api/news/quiz-check
+├ ƒ /api/news/quiz-preview
+├ ƒ /api/news/sync
+├ ƒ /api/news/translate
+├ ƒ /api/progress
+├ ƒ /api/progress/insights
+├ ƒ /api/reading-lab
+├ ƒ /api/reading-lab/asset
+├ ƒ /api/self-study/speaking
+├ ƒ /api/self-study/speaking/[id]
+├ ƒ /api/self-study/speaking/audio/[item]
+├ ƒ /api/self-study/writing-task-1
+├ ƒ /api/self-study/writing-task-1/[id]
+├ ƒ /api/self-study/writing-task-1/[id]/check
+├ ƒ /api/self-study/writing-task-1/[id]/learn
+├ ƒ /api/self-study/writing-task-1/[id]/reveal
+├ ƒ /api/self-study/writing-task-2
+├ ƒ /api/self-study/writing-task-2/[id]
+├ ƒ /api/self-study/writing-task-2/[id]/reveal
+├ ƒ /api/self-study/writing-task-2/course
+├ ƒ /api/self-study/writing-task-2/course/[module]
+├ ƒ /api/self-study/writing-task-2/course/[module]/reveal
+├ ƒ /api/self-study/writing-task-2/course/final
+├ ƒ /api/self-study/writing-task-2/course/final/[paper]/review
+├ ƒ /api/self-study/writing-task-2/course/final/[paper]/start
+├ ƒ /api/streak-leaderboard
+├ ƒ /api/voa/audio/[id]
+├ ƒ /api/vocabulary/lookup
+├ ƒ /api/vocabulary/vi-en
+├ ƒ /app/[[...slug]]
+├ ƒ /app/check/[slug]
+├ ƒ /app/lesson/[slug]
+├ ○ /app/listening/preview
+├ ƒ /app/listening/preview/asset
+├ ○ /app/listening/voa
+├ ○ /app/reading/preview
+├ ○ /app/self-study/preview
+├ ƒ /auth/callback
+├ ƒ /auth/demo
+├ ○ /courses
+├ ƒ /courses/[slug]
+├ ○ /forgot-password
+├ ○ /icon.png
+├ ○ /login
+├ ƒ /notebook/share/[token]
+├ ○ /preview-companion
+├ ○ /preview-notebook
+├ ○ /preview-progress
+├ ○ /preview-weather
+├ ○ /preview-word-formation
+├ ○ /reading-lab/rights
+├ ƒ /reading/share/[token]
+├ ○ /register
+└ ○ /reset-password
+
+
+ƒ Proxy (Middleware)
+
+○  (Static)   prerendered as static content
+ƒ  (Dynamic)  server-rendered on demand
+

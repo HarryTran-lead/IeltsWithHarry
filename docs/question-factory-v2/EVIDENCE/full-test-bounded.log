@@ -1,0 +1,12 @@
+
+ RUN  v5.0.5 C:/Users/RAZER/.codex/worktrees/daily-news-question-factory-v2/Ielts-learning website
+
+
+ Test Files  140 passed | 2 skipped (142)
+      Tests  705 passed | 12 skipped (717)
+   Start at  23:26:43
+   Duration  109.51s (tests 88%, import 11%, transform 1%, worker 1%)
+
+    Isolate  142 workers spawned · ~234ms startup each (spawn + environment, per file)
+             at least ~16.35s faster with isolate: false — reuses workers across files instead of one per file
+

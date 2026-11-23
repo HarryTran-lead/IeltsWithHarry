@@ -834,6 +834,32 @@ async function enrichQuiz(db: Db, result: EnrichResult, settings: Awaited<Return
   for (const article of (quizClaims ?? []) as Claim[]) {
     result.quizzesChecked++;
     try {
+      if (process.env.NEWS_QUESTION_FACTORY_V2_PUBLISH_ENABLED === "true") {
+        // A claimed article may already have used its two calls before a worker crash.
+        // Keep automatic reclaim disabled until a human reviews its immutable fingerprint.
+        const holdUntil = new Date(Date.now() + 365 * 86400000).toISOString();
+        const { error: holdError } = await db.from("news_enrichment_attempts")
+          .update({ retry_after: holdUntil, error_message: "V2 request budget reserved; manual review required before retry" })
+          .eq("article_id", article.article_id).eq("kind", "quiz").eq("status", "running");
+        if (holdError) throw holdError;
+        const { generateNewsQuizV2 } = await import("./question-factory-v2");
+        const output = await generateNewsQuizV2(article.title, article.body_text ?? "", article.article_id, fetch, settings.quiz_prompt);
+        if (output.state !== "READY") {
+          result.errors.push(`Quiz ${article.article_id}: V2 ${output.state} (${output.audit.issues.join(", ")})`);
+          if (output.state === "PENDING_QUOTA") result.quotaLimited = true;
+          await finish(db, article.article_id, "quiz", "error",
+            `V2 ${output.state}; requests=${output.audit.requests}; hash=${output.audit.fingerprint.slice(0, 16)}`, 365 * 86400000);
+          continue;
+        }
+        const { data: savedV2, error: saveV2Error } = await db.rpc("news_publish_auto_quiz", {
+          p_article_id: article.article_id, p_model: output.model, p_questions: output.questions,
+        });
+        if (saveV2Error) throw saveV2Error;
+        if (savedV2) result.quizzesAdded++;
+        await finish(db, article.article_id, "quiz", "success");
+        await saveImageQuery(db, article.article_id, output.imageQuery);
+        continue;
+      }
       const { generateAdaptiveNewsQuiz } = await import("./adaptive-quiz");
       const generated = await generateAdaptiveNewsQuiz(article.title, article.body_text ?? "", article.article_id, fetch, settings.quiz_prompt);
       const { data: saved, error } = await db.rpc("news_publish_auto_quiz", { p_article_id: article.article_id, p_model: generated.model, p_questions: generated.questions });
@@ -846,7 +872,9 @@ async function enrichQuiz(db: Db, result: EnrichResult, settings: Awaited<Return
       const message = cause instanceof Error ? cause.message : "Quiz generation failed";
       result.errors.push(`Quiz ${article.article_id}: ${message}`);
       // A quota error is not the article's fault: retry it as soon as quota returns.
-      if (cause instanceof AiQuotaError) { result.quotaLimited = true; await finish(db, article.article_id, "quiz", "error", message, cause.retryAfterMs); }
+      if (process.env.NEWS_QUESTION_FACTORY_V2_PUBLISH_ENABLED === "true")
+        await finish(db, article.article_id, "quiz", "error", message, 365 * 86400000);
+      else if (cause instanceof AiQuotaError) { result.quotaLimited = true; await finish(db, article.article_id, "quiz", "error", message, cause.retryAfterMs); }
       else await finish(db, article.article_id, "quiz", "error", message, transientQuizRetryMs(message));
     }
   }
