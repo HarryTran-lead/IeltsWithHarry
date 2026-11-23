@@ -1,4 +1,4 @@
-# Release gate — HOLD
+# Release gate — production activation
 
 | Gate | Result | Evidence |
 | --- | --- | --- |
@@ -10,7 +10,7 @@
 | Local full tests | PASS with bounded workers | 708 passed, 12 skipped; two unbounded runs timed out in unrelated modules. |
 | Final build | PASS | `EVIDENCE/build-verified.log`, exit 0. |
 | Hosted CI | NOT RUN | No push/PR. |
-| Real Gemini Free Tier response quality | NOT RUN | No real API calls. |
+| Real Gemini Free Tier response quality | NOT RUN | No authenticated production test or real API call from this checkout. |
 | Production data and learner evidence ACL | NOT RUN / BLOCKED | See BLOCKERS.md. |
 
-The publish feature flag is disabled by default. Do not enable it in production until the blocked privacy and durable-budget items are resolved, a real Free Tier smoke test and expert item review pass, and hosted CI is green. No release, deployment or data migration is part of this handoff.
+The owner requested activation after the initial code deployment. V2 now activates in Vercel production if the existing confirmed Free Tier configuration is present. A missing key or confirmation fails before any Gemini request; `NEWS_QUESTION_FACTORY_V2_PUBLISH_ENABLED=false` disables V2 publication. The privacy and durable-budget limitations remain in `BLOCKERS.md`; no real Gemini response or learner difficulty has been verified by these offline tests.
