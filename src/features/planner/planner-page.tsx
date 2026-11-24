@@ -1,7 +1,7 @@
 "use client";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import Link from "next/link";
-import { AlertTriangle, CalendarRange, ChevronDown, ChevronLeft, ChevronRight, Lightbulb, ListChecks, Plus, Sparkles, Target, X } from "lucide-react";
+import { AlertTriangle, ArrowLeft, ArrowRight, CalendarDays, ChevronDown, ChevronLeft, ChevronRight, Lightbulb, List, Plus, Sparkles, Target, X } from "lucide-react";
 import { PageHeader } from "@/components/ui/page-header";
 import { HeadIcon } from "@/components/ui/head-icon";
 import { type Skill, type StudyTask, skillColors } from "@/lib/demo-data";
@@ -11,9 +11,12 @@ import { buildSuggestions, focusSkills, generateWeekPlan, type TaskDraft } from 
 import { useDemo } from "@/features/demo/demo-store";
 import { DragHandle, TaskRow, Toast, lessonOpen, plannerSkills, skillLabel, useTaskActions, type RowHandlers, type ToastState } from "./planner-widgets";
 import { TaskSheet } from "./task-sheet";
+import { CalendarView, type CalendarMode } from "./calendar-view";
 import { usePlannerSignals } from "./use-planner-signals";
 
-type View = "day" | "all";
+type View = "day" | "all" | "calendar";
+const VIEW_KEY = "planner-view";
+const CALENDAR_KEY = "planner-calendar-mode";
 
 export function PlannerPage() {
   const { tasks, ready, addTask, addTasks, updateTask, reorderDay, refreshTasks } = useDemo();
@@ -22,6 +25,7 @@ export function PlannerPage() {
   const { handlers, hidden, today } = useTaskActions(setToast);
   const [selected, setSelected] = useState(today);
   const [view, setView] = useState<View>("day");
+  const [calMode, setCalMode] = useState<CalendarMode>("month");
   const [sheet, setSheet] = useState<{ task?: StudyTask; date: string } | null>(null);
   const [planOpen, setPlanOpen] = useState(false);
   const [lateOpen, setLateOpen] = useState(true);
@@ -30,6 +34,26 @@ export function PlannerPage() {
 
   // A task finished elsewhere is ticked by the database; read the list again when the page opens.
   useEffect(() => { void refreshTasks(); }, [refreshTasks]);
+
+  // The learner's last choice of list or calendar, read after mount so server and client render alike.
+  useEffect(() => {
+    let saved: { view: string | null; mode: string | null } = { view: null, mode: null };
+    try { saved = { view: localStorage.getItem(VIEW_KEY), mode: localStorage.getItem(CALENDAR_KEY) }; } catch { /* storage unavailable: keep the defaults */ }
+    if (saved.view === "calendar") setView("calendar"); // eslint-disable-line react-hooks/set-state-in-effect -- localStorage is only readable after mount
+    if (saved.mode === "month" || saved.mode === "week") setCalMode(saved.mode); // eslint-disable-line react-hooks/set-state-in-effect -- localStorage is only readable after mount
+  }, []);
+  function chooseView(next: View) {
+    setView(next);
+    try { localStorage.setItem(VIEW_KEY, next === "calendar" ? "calendar" : "list"); } catch { /* not saved */ }
+  }
+  function chooseCalendar(mode: CalendarMode) {
+    setCalMode(mode);
+    try { localStorage.setItem(CALENDAR_KEY, mode); } catch { /* not saved */ }
+  }
+  function showToday() {
+    setSelected(today);
+    if (view === "all") setView("day");
+  }
 
   const visible = useMemo(() => tasks.filter((task) => !hidden.has(task.id)), [tasks, hidden]);
   const summary = plannerSummary(visible, today);
@@ -70,10 +94,10 @@ export function PlannerPage() {
       />
 
       <div className="pl-stats" role="group" aria-label="Tóm tắt kế hoạch">
-        <button type="button" className={`pl-stat${view === "day" && selected === today ? " is-on" : ""}`} onClick={() => { setView("day"); setSelected(today); }}>
+        <button type="button" className={`pl-stat${view !== "all" && selected === today ? " is-on" : ""}`} onClick={showToday}>
           <small>Hôm nay</small><strong>{summary.today.done}/{summary.today.total}</strong><span>{summary.today.total ? `~${minutesLabel(summary.today.minutes)}` : "chưa có việc"}</span>
         </button>
-        <button type="button" className="pl-stat" onClick={() => { setView("day"); setSelected(today); }}>
+        <button type="button" className="pl-stat" onClick={showToday}>
           <small>Tuần này</small><strong>{summary.week.done}/{summary.week.total}</strong>
           <span className="pl-stat-bar" aria-hidden="true"><i style={{ width: `${summary.week.total ? Math.round((summary.week.done / summary.week.total) * 100) : 0}%` }} /></span>
         </button>
@@ -94,7 +118,7 @@ export function PlannerPage() {
         </div>
       </section>}
 
-      <div className="pl-layout">
+      <div className={`pl-layout${view === "calendar" ? " is-wide" : ""}`}>
         <div className="pl-main">
           {late.length > 0 && <section id="qua-han" className="card pl-late" aria-labelledby="pl-late-title">
             <div className="pl-section-head">
@@ -109,8 +133,8 @@ export function PlannerPage() {
           <section className="card pl-board" aria-label="Lịch học">
             <div className="pl-board-head">
               <div className="pl-view-switch" role="tablist" aria-label="Cách xem">
-                <button type="button" role="tab" aria-selected={view === "day"} onClick={() => setView("day")}><CalendarRange size={15} aria-hidden="true" /> Theo ngày</button>
-                <button type="button" role="tab" aria-selected={view === "all"} onClick={() => setView("all")}><ListChecks size={15} aria-hidden="true" /> Tất cả việc</button>
+                <button type="button" role="tab" aria-selected={view !== "calendar"} onClick={() => chooseView(view === "all" ? "all" : "day")}><List size={15} aria-hidden="true" /> Danh sách</button>
+                <button type="button" role="tab" aria-selected={view === "calendar"} onClick={() => chooseView("calendar")}><CalendarDays size={15} aria-hidden="true" /> Lịch</button>
               </div>
               {view === "day" && <div className="pl-week-nav">
                 <button type="button" className="icon-button" aria-label="Tuần trước" onClick={() => setSelected(addDay(selected, -7))}><ChevronLeft size={18} /></button>
@@ -120,7 +144,9 @@ export function PlannerPage() {
               </div>}
             </div>
 
-            {view === "day" ? <>
+            {view === "calendar" ? <CalendarView tasks={visible} today={today} selected={selected} onSelect={setSelected}
+              mode={calMode} onMode={chooseCalendar} handlers={rowHandlers} onAdd={(day) => setSheet({ date: day })} examDate={signals.examDate} />
+            : view === "day" ? <>
               <div className="pl-week" role="tablist" aria-label="Chọn ngày">
                 {week.map((day, index) => {
                   const count = counts.get(day)!;
@@ -152,7 +178,11 @@ export function PlannerPage() {
                 return addTask({ title, skill, date: selected, time: "", completed: false, priority: "Medium", source: "manual", duration: 20 })
                   .then(() => setToast({ message: `Đã thêm vào ${dayLabel(selected, today).toLowerCase()} · kỹ năng ${skillLabel(skill)}` }));
               }} onMore={() => setSheet({ date: selected })} />}
-            </> : <AllTasks tasks={visible} today={today} handlers={rowHandlers} />}
+              <button type="button" className="pl-link-button" onClick={() => setView("all")}>Xem tất cả việc sắp tới <ArrowRight size={14} aria-hidden="true" /></button>
+            </> : <>
+              <button type="button" className="pl-link-button" onClick={() => setView("day")}><ArrowLeft size={14} aria-hidden="true" /> Xem theo ngày</button>
+              <AllTasks tasks={visible} today={today} handlers={rowHandlers} />
+            </>}
           </section>
         </div>
 
