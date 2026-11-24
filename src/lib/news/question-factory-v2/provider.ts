@@ -1,3 +1,4 @@
+import { recordAiUsage } from "../ai-usage";
 import { newsQuizFreeTierReady, providerErrorDetail } from "../enrichment";
 import type { TokenUsage } from "./types";
 
@@ -49,8 +50,10 @@ export async function strictGeminiJson<T>(
       }),
     });
   } catch {
+    await recordAiUsage("quiz", model, null);
     throw new FactoryProviderError("unavailable", "Gemini request failed or timed out");
   }
+  await recordAiUsage("quiz", model, response.status);
   if (response.status === 429) {
     const detail = await response.json().then((body: { error?: { message?: string } }) => body.error?.message ?? "", () => "");
     const metric = /tokens? per minute|\bTPM\b/i.test(detail) ? "TPM"
