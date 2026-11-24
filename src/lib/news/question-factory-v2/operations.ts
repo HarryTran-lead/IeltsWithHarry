@@ -95,7 +95,11 @@ export function countedQuizAttempts(rows: Pick<QuizAttemptRow, "error_message">[
 }
 
 export function quizFailureMessage(output: Pick<FactoryResult, "state" | "audit">, reason: QuizFailureReason, plan: FailurePlan) {
-  return `V2 ${output.state}; reason=${reason}; retry=${plan.retriesUsed}/${QUIZ_RETRY_LIMIT}; requests=${output.audit.requests}; hash=${output.audit.fingerprint.slice(0, 16)}`;
+  const base = `V2 ${output.state}; reason=${reason}; retry=${plan.retriesUsed}/${QUIZ_RETRY_LIMIT}; requests=${output.audit.requests}; hash=${output.audit.fingerprint.slice(0, 16)}`;
+  // For provider failures keep Google's own message (status, text, wait) for diagnosis.
+  const provider = reason === "unavailable" || reason === "rejected" || reason === "config" || reason === "quota"
+    ? output.audit.issues.find((issue) => issue.startsWith("Gemini")) : undefined;
+  return provider ? `${base}; detail=${provider}`.slice(0, 300) : base;
 }
 export function quizSuccessMessage(output: Pick<FactoryResult, "questions" | "audit">) {
   const tokens = (output.audit.generation_tokens?.total ?? 0) + (output.audit.qa_tokens?.total ?? 0);
