@@ -1,7 +1,7 @@
 import { afterEach, beforeAll, describe, expect, it } from "vitest";
 import { ieltsQuestionTypes } from "../src/lib/news/ielts-passage";
 import { ArticleRequestBudget, FactoryProviderError, alternateV2Model, strictGeminiJson } from "../src/lib/news/question-factory-v2/provider";
-import { generateNewsQuizV2, v2Timing } from "../src/lib/news/question-factory-v2";
+import { MAX_ARTICLE_REQUESTS, generateNewsQuizV2, v2Timing } from "../src/lib/news/question-factory-v2";
 import { selectQuestionTypes } from "../src/lib/news/adaptive-quiz";
 import { blindQaPayload, generationPrompt, generationSchema } from "../src/lib/news/question-factory-v2/prompts";
 import { paragraphLabel, validateBlindReview, validateCandidate, validateGeneration, validatePassageMap } from "../src/lib/news/question-factory-v2/validate";
@@ -124,6 +124,7 @@ describe("passage map paragraph labels", () => {
 });
 
 beforeAll(() => { v2Timing.outageRetryDelayMs = 0; });
+afterEach(() => { v2Timing.runBudgetMs = 120_000; });
 
 describe("two request free-tier budget", () => {
   const oldEnv = {
@@ -161,9 +162,9 @@ describe("two request free-tier budget", () => {
     const output = await generateNewsQuizV2("Outage", passage, "outage-case", fake);
     expect(output.state).toBe("PENDING_PROVIDER");
     expect(output.audit.retryable).toBe(true);
-    // One generation request plus the single outage retry on the other model; never a third generation.
-    expect(output.audit.requests).toBe(2);
-    expect(calls).toBe(3);
+    // Three attempts on each Flash-Lite model, then the article waits for the next run.
+    expect(output.audit.requests).toBe(6);
+    expect(calls).toBe(7);
   });
   it("does not mark a malformed 4xx request as retryable", async () => {
     process.env.AI_FACTORY_FREE_TIER_ONLY = "true";
@@ -194,15 +195,16 @@ describe("two request free-tier budget", () => {
     const short = await generateNewsQuizV2("Short", "Too short for a quiz.", "reason-short", (async () => { throw Error("must not call"); }) as typeof fetch);
     expect(short.audit).toMatchObject({ failure: "too_short", requests: 0 });
   });
-  it("grants the outage retry once and pairs the Flash-Lite models", () => {
-    const budget = new ArticleRequestBudget();
-    expect(budget.grantOutageRetry()).toBe(true);
-    expect(budget.grantOutageRetry()).toBe(false);
+  it("caps requests per article and pairs the Flash-Lite models", async () => {
+    expect(MAX_ARTICLE_REQUESTS).toBe(12);
+    const budget = new ArticleRequestBudget(3);
+    for (let i = 0; i < 3; i++) budget.reserve();
+    expect(() => budget.reserve()).toThrow("budget exhausted");
     expect(alternateV2Model("gemini-3.5-flash-lite")).toBe("gemini-3.1-flash-lite");
     expect(alternateV2Model("gemini-3.1-flash-lite")).toBe("gemini-3.5-flash-lite");
     expect(alternateV2Model("gemini-9-pro")).toBe("gemini-9-pro");
   });
-  it("retries generation once on the other model after a 503 and publishes with three requests", async () => {
+  it("retries a 503 three times per model, switches model, and publishes", async () => {
     process.env.AI_FACTORY_FREE_TIER_ONLY = "true";
     process.env.AI_FACTORY_FREE_TIER_CONFIRMED = "true";
     process.env.AI_FACTORY_GEMINI_API_KEY = "offline-test-key";
@@ -224,17 +226,34 @@ describe("two request free-tier budget", () => {
     const urls: string[] = [];
     const fake = (async (url: string | URL | Request) => {
       urls.push(String(url));
-      if (urls.length === 1) return new Response("", { status: 503 });
-      const data = urls.length === 2 ? { passage_map: map, questions, image_query: "harbor water" } : reviewed;
+      if (urls.length <= 3) return new Response("", { status: 503 });
+      const data = urls.length === 4 ? { passage_map: map, questions, image_query: "harbor water" } : reviewed;
       return Response.json({ candidates: [{ finishReason: "STOP", content: { parts: [{ text: JSON.stringify(data) }] } }] });
     }) as typeof fetch;
     const output = await generateNewsQuizV2("Water checks", passage, id, fake);
     expect(output.state).toBe("READY");
-    expect(output.audit.requests).toBe(3);
+    expect(output.audit.requests).toBe(5);
     expect(output.model).toBe("gemini-3.1-flash-lite");
-    expect(urls.map((url) => /models\/([^:]+):/.exec(url)?.[1])).toEqual(["gemini-3.5-flash-lite", "gemini-3.1-flash-lite", "gemini-3.1-flash-lite"]);
+    expect(urls.map((url) => /models\/([^:]+):/.exec(url)?.[1])).toEqual([
+      "gemini-3.5-flash-lite", "gemini-3.5-flash-lite", "gemini-3.5-flash-lite", "gemini-3.1-flash-lite", "gemini-3.1-flash-lite"]);
   });
-  it("does not retry a 4xx at generation or an outage at blind QA", async () => {
+  it("stops after six generation attempts, or earlier when the run time budget is spent", async () => {
+    process.env.AI_FACTORY_FREE_TIER_ONLY = "true";
+    process.env.AI_FACTORY_FREE_TIER_CONFIRMED = "true";
+    process.env.AI_FACTORY_GEMINI_API_KEY = "offline-test-key";
+    const passage = article + " " + "Residents compared monthly readings and kept printed records for later discussion. ".repeat(40);
+    let calls = 0;
+    const output = await generateNewsQuizV2("Budget", passage, "retry-run-budget", (async () => { calls++; return new Response("", { status: 503 }); }) as typeof fetch);
+    expect(calls).toBe(6);
+    v2Timing.runBudgetMs = 0;
+    let late = 0;
+    const capped = await generateNewsQuizV2("Budget", passage, "retry-run-budget-2", (async () => { late++; return new Response("", { status: 503 }); }) as typeof fetch);
+    // No retry starts when a full request would overrun the function's time budget.
+    expect(late).toBe(1);
+    expect(capped.audit).toMatchObject({ failure: "unavailable", requests: 1 });
+    expect(output.audit.requests).toBe(6);
+  });
+  it("does not retry a 4xx, and retries a QA outage like generation", async () => {
     process.env.AI_FACTORY_FREE_TIER_ONLY = "true";
     process.env.AI_FACTORY_FREE_TIER_CONFIRMED = "true";
     process.env.AI_FACTORY_GEMINI_API_KEY = "offline-test-key";
@@ -265,8 +284,9 @@ describe("two request free-tier budget", () => {
     expect(output.audit.deterministic_pass).toBe(6);
     expect(output.state).toBe("PENDING_PROVIDER");
     expect(output.audit.failure).toBe("unavailable");
-    expect(output.audit.requests).toBe(2);
-    expect(qaCalls).toBe(2);
+    // One generation plus three QA attempts on each model.
+    expect(output.audit.requests).toBe(7);
+    expect(qaCalls).toBe(7);
   });
   it("halts before any call without confirmed free tier", async () => {
     delete process.env.AI_FACTORY_FREE_TIER_CONFIRMED;
