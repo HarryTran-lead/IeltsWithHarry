@@ -124,6 +124,32 @@ describe("passage map paragraph labels", () => {
 });
 
 beforeAll(() => { v2Timing.outageRetryDelayMs = 0; });
+/** Blind QA reply for exactly the ids in the request payload; ids in `wrong` get a disagreeing answer. */
+function qaReplyFor(text: string, pool: typeof positiveFixtures, wrong = new Set<string>()) {
+  const listed = JSON.parse(text.slice(text.indexOf("ANSWER-STRIPPED ITEMS:") + "ANSWER-STRIPPED ITEMS:".length)) as { id: string }[];
+  return { reviews: listed.map(({ id }) => {
+    const item = pool.find((candidate) => candidate.id === id)!;
+    return { id, status: "answerable", independent_answer: wrong.has(id) ? "a different answer"
+      : item.correct_index < 0 ? item.answer : item.options[item.correct_index],
+    competing_answers: [], paraphrase_faithful: true, distractors_fair: true, form_valid: true, reason_vi: "Câu này có một đáp án rõ ràng." };
+  }) };
+}
+/** A passage and article id that select mcq and short_answer, with six valid fixtures. */
+function sixItemCase(prefix: string) {
+  const filler = Array.from({ length: 12 }, (_, i) =>
+    `The community bulletin number ${i + 1} explained how residents could compare readings from different months, ask the local office for help, and keep printed records for later discussion.`).join(" ");
+  const passage = article + " " + filler;
+  const words = passage.match(/[\p{L}\p{N}]+/gu)?.length ?? 0;
+  const id = Array.from({ length: 20000 }, (_, n) => `${prefix}-${n}`).find((key) => {
+    const selected = selectQuestionTypes(passage, words, key);
+    return selected.includes("mcq") && selected.includes("short_answer");
+  })!;
+  const questions = positiveFixtures.filter((item) => item.type === "mcq" || item.type === "short_answer")
+    .map((item) => ({ ...item, difficulty: item.id === "short_answer_p1" ? "P2" as const : item.difficulty,
+      paraphrase_depth: item.id === "short_answer_p1" ? 2 as const : item.paraphrase_depth }));
+  return { passage, id, questions };
+}
+const modelOf = (url: string | URL | Request) => /models\/([^:]+):/.exec(String(url))?.[1];
 afterEach(() => { v2Timing.runBudgetMs = 120_000; });
 
 describe("two request free-tier budget", () => {
@@ -196,7 +222,7 @@ describe("two request free-tier budget", () => {
     expect(short.audit).toMatchObject({ failure: "too_short", requests: 0 });
   });
   it("caps requests per article and pairs the Flash-Lite models", async () => {
-    expect(MAX_ARTICLE_REQUESTS).toBe(12);
+    expect(MAX_ARTICLE_REQUESTS).toBe(15);
     const budget = new ArticleRequestBudget(3);
     for (let i = 0; i < 3; i++) budget.reserve();
     expect(() => budget.reserve()).toThrow("budget exhausted");
@@ -219,23 +245,20 @@ describe("two request free-tier budget", () => {
     const questions = positiveFixtures.filter((item) => item.type === "mcq" || item.type === "short_answer")
       .map((item) => ({ ...item, difficulty: item.id === "short_answer_p1" ? "P2" as const : item.difficulty,
         paraphrase_depth: item.id === "short_answer_p1" ? 2 as const : item.paraphrase_depth }));
-    const reviewed = { reviews: questions.map((item) => ({
-      id: item.id, status: "answerable", independent_answer: item.correct_index < 0 ? item.answer : item.options[item.correct_index],
-      competing_answers: [], paraphrase_faithful: true, distractors_fair: true, form_valid: true, reason_vi: "Câu này có một đáp án rõ ràng.",
-    })) };
     const urls: string[] = [];
-    const fake = (async (url: string | URL | Request) => {
+    const fake = (async (url: string | URL | Request, init?: RequestInit) => {
       urls.push(String(url));
       if (urls.length <= 3) return new Response("", { status: 503 });
-      const data = urls.length === 4 ? { passage_map: map, questions, image_query: "harbor water" } : reviewed;
+      const data = urls.length === 4 ? { passage_map: map, questions, image_query: "harbor water" }
+        : qaReplyFor(JSON.parse(String(init?.body)).contents[0].parts[0].text, questions);
       return Response.json({ candidates: [{ finishReason: "STOP", content: { parts: [{ text: JSON.stringify(data) }] } }] });
     }) as typeof fetch;
     const output = await generateNewsQuizV2("Water checks", passage, id, fake);
     expect(output.state).toBe("READY");
-    expect(output.audit.requests).toBe(5);
+    expect(output.audit.requests).toBe(6);
     expect(output.model).toBe("gemini-3.1-flash-lite");
-    expect(urls.map((url) => /models\/([^:]+):/.exec(url)?.[1])).toEqual([
-      "gemini-3.5-flash-lite", "gemini-3.5-flash-lite", "gemini-3.5-flash-lite", "gemini-3.1-flash-lite", "gemini-3.1-flash-lite"]);
+    expect(urls.map(modelOf)).toEqual(["gemini-3.5-flash-lite", "gemini-3.5-flash-lite", "gemini-3.5-flash-lite",
+      "gemini-3.1-flash-lite", "gemini-3.1-flash-lite", "gemini-3.5-flash-lite"]);
   });
   it("stops after six generation attempts, or earlier when the run time budget is spent", async () => {
     process.env.AI_FACTORY_FREE_TIER_ONLY = "true";
@@ -308,7 +331,7 @@ describe("two request free-tier budget", () => {
     expect(calls).toBe(1);
     expect(budget.used).toBe(1);
   });
-  it("runs generation and independent QA in exactly two mocked API requests", async () => {
+  it("runs generation, blind QA and a cross-model check of risky items", async () => {
     process.env.AI_FACTORY_FREE_TIER_ONLY = "true";
     process.env.AI_FACTORY_FREE_TIER_CONFIRMED = "true";
     process.env.AI_FACTORY_GEMINI_API_KEY = "offline-test-key";
@@ -327,11 +350,6 @@ describe("two request free-tier budget", () => {
       .map((item) => ({ ...item, difficulty: item.id === "short_answer_p1" ? "P2" as const : item.difficulty,
         paraphrase_depth: item.id === "short_answer_p1" ? 2 as const : item.paraphrase_depth }));
     const generated = { passage_map: map, questions, image_query: "harbor water" };
-    const reviewed = { reviews: questions.map((item) => ({
-      id: item.id, status: "answerable", independent_answer: item.correct_index < 0 ? item.answer : item.options[item.correct_index],
-      competing_answers: [], paraphrase_faithful: true, distractors_fair: true, form_valid: true,
-      reason_vi: "Câu này có một đáp án rõ ràng.",
-    })) };
     let calls = 0;
     const fake = (async (_url: string | URL | Request, init?: RequestInit) => {
       calls++;
@@ -342,7 +360,12 @@ describe("two request free-tier budget", () => {
         expect(qaText).not.toContain('"correct_index"');
         expect(qaText).not.toContain('"supporting_sentence"');
       }
-      const data = calls === 1 ? generated : reviewed;
+      const data = calls === 1 ? generated : qaReplyFor(body.contents[0].parts[0].text as string, questions);
+      if (calls === 3) {
+        // The cross check sees only the risky items, on the other Flash-Lite model.
+        expect(modelOf(_url)).toBe("gemini-3.1-flash-lite");
+        expect((data as { reviews: { id: string }[] }).reviews.map((review) => review.id).sort()).toEqual(["mcq_p3", "short_answer_p3"]);
+      }
       return Response.json({ candidates: [{ finishReason: "STOP", content: { parts: [{ text: JSON.stringify(data) }] } }],
         usageMetadata: { promptTokenCount: calls * 100, candidatesTokenCount: calls * 50, totalTokenCount: calls * 150 } });
     }) as typeof fetch;
@@ -350,13 +373,57 @@ describe("two request free-tier budget", () => {
     expect(output.state).toBe("READY");
     expect(output.audit.failure).toBeNull();
     expect(output.questions).toHaveLength(6);
-    expect(output.audit.requests).toBe(2);
+    expect(output.audit.requests).toBe(3);
     expect(output.audit.generation_tokens?.total).toBe(150);
-    expect(output.audit.qa_tokens?.total).toBe(300);
-    expect(calls).toBe(2);
+    expect(output.audit.qa_tokens?.total).toBe(750);
+    expect(calls).toBe(3);
     const cached = await generateNewsQuizV2("Water checks", passage, id, fake);
     expect(cached.audit.requests).toBe(0);
-    expect(calls).toBe(2);
+    expect(calls).toBe(3);
+  });
+  it("repairs a rejected item once instead of dropping the whole quiz", async () => {
+    process.env.AI_FACTORY_FREE_TIER_ONLY = "true";
+    process.env.AI_FACTORY_FREE_TIER_CONFIRMED = "true";
+    process.env.AI_FACTORY_GEMINI_API_KEY = "offline-test-key";
+    const { passage, id, questions } = sixItemCase("repair");
+    const systems: string[] = [];
+    const fake = (async (_url: string | URL | Request, init?: RequestInit) => {
+      const body = JSON.parse(String(init?.body));
+      const system = body.systemInstruction.parts[0].text as string;
+      const text = body.contents[0].parts[0].text as string;
+      systems.push(system.includes("REPAIR TASK") ? "repair" : system.startsWith("Independent IELTS") ? "qa" : "generate");
+      const data = systems.length === 1 ? { passage_map: map, questions, image_query: "" }
+        : system.includes("REPAIR TASK") ? { questions: questions.filter((item) => item.id === "mcq_p2") }
+          // The first QA disagrees on one item; every later check agrees.
+          : qaReplyFor(text, questions, systems.length === 2 ? new Set(["mcq_p2"]) : new Set());
+      return Response.json({ candidates: [{ finishReason: "STOP", content: { parts: [{ text: JSON.stringify(data) }] } }] });
+    }) as typeof fetch;
+    const output = await generateNewsQuizV2("Repair", passage, id, fake);
+    expect(systems).toEqual(["generate", "qa", "repair", "qa", "qa"]);
+    expect(output.state).toBe("READY");
+    expect(output.questions).toHaveLength(6);
+    expect(output.audit.requests).toBe(5);
+    expect(output.audit.issues).toContain("REPAIR:1/1");
+    // A per-item disagreement is recorded but no longer blocks a set that ends with six approved items.
+    expect(output.audit.issues).toContain("mcq_p2:QA_MISMATCH");
+  });
+  it("drops a risky item the second model disagrees with", async () => {
+    process.env.AI_FACTORY_FREE_TIER_ONLY = "true";
+    process.env.AI_FACTORY_FREE_TIER_CONFIRMED = "true";
+    process.env.AI_FACTORY_GEMINI_API_KEY = "offline-test-key";
+    const { passage, id, questions } = sixItemCase("cross");
+    let calls = 0;
+    const fake = (async (_url: string | URL | Request, init?: RequestInit) => {
+      calls++;
+      const text = JSON.parse(String(init?.body)).contents[0].parts[0].text as string;
+      const data = calls === 1 ? { passage_map: map, questions, image_query: "" }
+        : qaReplyFor(text, questions, calls === 3 ? new Set(["mcq_p3"]) : new Set());
+      return Response.json({ candidates: [{ finishReason: "STOP", content: { parts: [{ text: JSON.stringify(data) }] } }] });
+    }) as typeof fetch;
+    const output = await generateNewsQuizV2("Cross", passage, id, fake);
+    expect(output.state).toBe("PENDING_QUALITY");
+    expect(output.audit.issues).toEqual(expect.arrayContaining(["CROSS_QA_DROPPED:1", "TOO_FEW_APPROVED"]));
+    expect(output.audit.failure).toBe("quality");
   });
   it("sends complete source text to generation even beyond the legacy excerpt", async () => {
     process.env.AI_FACTORY_FREE_TIER_ONLY = "true";
