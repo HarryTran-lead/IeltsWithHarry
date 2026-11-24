@@ -1,5 +1,5 @@
 import { afterAll, beforeAll, expect, it } from "vitest";
-import { discoveryBatchLimit, hotReserve, leadHeat, leadPublisher, leadTitleTokens, sameEventTitles, discoveryBudget, discoveryFeedGroup, eligibleDiscoveryLead, evidenceRichPressLead, findIndependentDossier, rankDiscoveryCandidates, resolveFactualSourceUrl, temporaryDiscoveryFailure, vietnamDayStart, youthRelevanceForTitle } from "../src/lib/news/press-discovery";
+import { discoveryBatchLimit, englishLeadTitles, hotReserve, leadHeat, leadPublisher, leadTitleTokens, sameEventTitles, discoveryBudget, discoveryFeedGroup, eligibleDiscoveryLead, evidenceRichPressLead, findIndependentDossier, rankDiscoveryCandidates, resolveFactualSourceUrl, temporaryDiscoveryFailure, vietnamDayStart, youthRelevanceForTitle } from "../src/lib/news/press-discovery";
 import { parseRss, pressDiscoveryFeedUrls, rssProvider, type NewsItem, type NewsSource } from "../src/lib/news/providers";
 
 const previousArticleConfirmation = process.env.NEWS_ARTICLE_FREE_TIER_CONFIRMED;
@@ -390,4 +390,31 @@ it("skips thin newspaper reports instead of spending Gemini requests on them", a
   const official = hotLead("official", "https://baochinhphu.vn/official.htm", "Official notice", source);
   expect((await evidenceRichPressLead([hotLead("thin", "https://news.tuoitre.vn/thin.html", "Thin report", source), official], fetcher))?.item.canonical_hash).toBe("official");
   expect((await evidenceRichPressLead([hotLead("enough", "https://news.tuoitre.vn/enough.html", "Enough report", source)], fetcher))?.item.canonical_hash).toBe("enough");
+});
+
+const government: NewsSource = { ...source, name: "Government News Latest", feed_url: "https://baochinhphu.vn/home.rss" };
+it("matches a Vietnamese Government News headline with English coverage through one translation request", async () => {
+  const leads = [
+    hotLead("gov", "https://baochinhphu.vn/metro.htm", "Hà Nội khai trương tuyến metro đầu tiên đến sân bay Nội Bài", government),
+    hotLead("vne", "https://e.vnexpress.net/news/metro.html", "Hanoi opens first metro line to Noi Bai airport", vnexpressTech),
+  ];
+  expect(leadHeat(leads).get("vne")?.hot).toBe(false);
+  const previous = process.env.NEWS_ARTICLE_GEMINI_API_KEY;
+  process.env.NEWS_ARTICLE_GEMINI_API_KEY = "test-key";
+  try {
+    let requests = 0;
+    const fetcher = (async (_url: RequestInfo | URL, init?: RequestInit) => {
+      requests++;
+      expect(String(init?.body)).toContain("Nội Bài");
+      return Response.json({ candidates: [{ finishReason: "STOP", content: { parts: [{ text: JSON.stringify({ titles: ["Hanoi opens first metro line to Noi Bai airport"] }) }] } }] });
+    }) as typeof fetch;
+    const titles = await englishLeadTitles(leads, fetcher);
+    expect(requests).toBe(1);
+    const heat = leadHeat(leads, titles);
+    expect(heat.get("vne")?.hot).toBe(true);
+    expect(heat.get("gov")).toEqual({ publishers: 2, frontPage: true, hot: true });
+    // One language only: nothing to translate, no request.
+    expect((await englishLeadTitles([leads[1]], fetcher)).size).toBe(0);
+    expect(requests).toBe(1);
+  } finally { if (previous === undefined) delete process.env.NEWS_ARTICLE_GEMINI_API_KEY; else process.env.NEWS_ARTICLE_GEMINI_API_KEY = previous; }
 });
