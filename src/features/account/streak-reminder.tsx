@@ -2,10 +2,15 @@
 
 import { useEffect, useState, type CSSProperties } from "react";
 import Link from "next/link";
-import { BookOpenText, Headphones, NotebookPen, Newspaper } from "lucide-react";
+import { BookOpenText, CalendarCheck, Headphones, NotebookPen, Newspaper } from "lucide-react";
 import type { Streak } from "@/lib/account";
 import { tierFor, timeLeftToday, type Reminder } from "@/lib/streak-milestones";
 import { FlameArt, StreakShell, WeekStrip } from "./streak-fx";
+import { useOptionalDemo } from "@/features/demo/demo-store";
+import { todayISO } from "@/lib/demo-data";
+import { minutesOf } from "@/lib/planner/core";
+import { lessonInfo } from "@/lib/planner/links";
+import { lockedLearnerPath } from "@/lib/runtime";
 
 /** Quick things that count toward the streak (each one is tracked by the database). */
 const quickWins = [
@@ -30,6 +35,15 @@ export function StreakReminderDialog({ reminder, streak, onClose }: { reminder: 
   const atRisk = reminder.kind === "at-risk";
   const tier = tierFor(atRisk ? reminder.current : 1);
   const daysToNext = reminder.next.days - (atRisk ? reminder.current : 0);
+  // The learner's own plan comes first: the earliest open task for today (or a late one) that links to a lesson.
+  const store = useOptionalDemo();
+  const today = todayISO();
+  const planned = store?.tasks.filter((task) => !task.completed && task.date <= today)
+    .map((task) => ({ task, href: lessonInfo(task.lesson)?.href ?? null }))
+    .find(({ href }) => href && !lockedLearnerPath(href.split("?")[0]));
+  const wins = planned
+    ? [{ href: planned.href!, icon: CalendarCheck, title: planned.task.title, time: `Trong kế hoạch · ~${minutesOf(planned.task)} phút` }, ...quickWins.filter((item) => item.href !== planned.href).slice(0, 3)]
+    : quickWins;
 
   return (
     <StreakShell tier={tier} className={`is-reminder ${left.urgent ? "is-urgent" : ""}`} labelledBy="streak-remind-title" describedBy="streak-remind-message" onClose={onClose}>
@@ -73,7 +87,7 @@ export function StreakReminderDialog({ reminder, streak, onClose }: { reminder: 
           </p>
 
           <div className="streak-quick" role="list">
-            {quickWins.map(({ href, icon: Icon, title, time }, index) => (
+            {wins.map(({ href, icon: Icon, title, time }, index) => (
               <Link key={href} href={href} role="listitem" className="streak-quick-item" onClick={close} style={{ "--i": index } as CSSProperties}>
                 <span className="streak-quick-icon"><Icon size={18} /></span>
                 <span><b>{title}</b><small>{time}</small></span>

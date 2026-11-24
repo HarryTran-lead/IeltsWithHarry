@@ -114,7 +114,7 @@ export function DictationHome() {
 
   async function addToPlanner() {
     setPlannerState("saving");
-    try { await addTask({ title: "Dictation 15 phút", skill: "Listening", date: todayISO(), time: "", completed: false, priority: "Medium", lesson: "dictation" }); setPlannerState("added"); }
+    try { await addTask({ title: "Dictation 15 phút", skill: "Listening", date: todayISO(), time: "", completed: false, priority: "Medium", lesson: "dictation", duration: 15, source: "dictation" }); setPlannerState("added"); }
     catch { setPlannerState("error"); }
   }
 
@@ -183,8 +183,8 @@ export function DictationHome() {
         </Link>
         <button type="button" className={`dh-action is-plan${plannerState === "added" ? " is-done" : ""}`} disabled={plannerState === "saving" || plannerState === "added"} onClick={() => void addToPlanner()}>
           <span className="dh-action-icon">{plannerState === "added" ? <Check size={20} aria-hidden /> : <CalendarPlus size={20} aria-hidden />}</span>
-          <span className="dh-action-text"><strong>{plannerState === "added" ? "Đã thêm vào Planner" : "Đặt lịch hôm nay"}</strong>
-            <span>{plannerState === "saving" ? "Đang thêm…" : plannerState === "error" ? "Chưa thêm được, bấm để thử lại." : plannerState === "added" ? "Đánh dấu xong trong Planner để giữ chuỗi ngày học." : "Thêm “Dictation 15 phút” vào Planner hôm nay."}</span></span>
+          <span className="dh-action-text"><strong>{plannerState === "added" ? "Đã có trong kế hoạch hôm nay" : "Đặt lịch hôm nay"}</strong>
+            <span>{plannerState === "saving" ? "Đang thêm…" : plannerState === "error" ? "Chưa thêm được, bấm để thử lại." : plannerState === "added" ? "Tự đánh dấu xong khi bạn chép câu đầu tiên hôm nay." : "Thêm “Dictation 15 phút” vào kế hoạch hôm nay."}</span></span>
         </button>
       </section>
 

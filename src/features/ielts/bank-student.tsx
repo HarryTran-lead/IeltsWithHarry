@@ -3,6 +3,7 @@ import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { X } from "lucide-react";
+import { todayISO } from "@/lib/demo-data";
 import { attemptContent, attemptMinutes, type ExamContent } from "@/lib/ielts-bank/schema";
 import { catalogHref, catalogSkills } from "@/lib/ielts-bank/catalog";
 import { BankCatalog } from "./bank-catalog";
@@ -112,9 +113,9 @@ export function BankStudent({ examId, resultId, attemptId }: { examId?: string; 
   if (!exam) return <main className="bx-page"><div className="bx-loading"><span /><span /><span /></div></main>;
   if (!attempt && exam.skill === "Speaking" && focusQuestion && !error) return <main className="bx-page"><div className="bx-loading"><span /><span /><span /></div></main>;
   if (!attempt) return <ExamIntro exam={exam} backHref={backHref} busy={busy} error={error} resumable={resumable} onStart={(scope, options) => void start(scope, options)} scheduleSlot={<div className="bx-schedule">
-    <input type="date" value={dueDate} onChange={(e) => setDueDate(e.target.value)} aria-label="Ngày luyện" />
-    <button type="button" className="bx-ghost" disabled={!dueDate || busy} onClick={() => { void api("attempt", { action: "schedule", examId: exam.id, dueDate }).then(() => setScheduled(true)).catch((e) => setError(String(e))); }}>Lưu lịch</button>
-    {scheduled && <span role="status">Đã thêm vào Study Planner.</span>}
+    <input type="date" value={dueDate} min={todayISO()} disabled={scheduled} onChange={(e) => setDueDate(e.target.value)} aria-label="Ngày luyện" />
+    <button type="button" className="bx-ghost" disabled={!dueDate || busy || scheduled} onClick={() => { void api("attempt", { action: "schedule", examId: exam.id, dueDate }).then(() => { setScheduled(true); window.dispatchEvent(new Event("planner-tasks-changed")); }).catch(() => setError("Chưa lưu được lịch. Kiểm tra kết nối rồi thử lại.")); }}>{scheduled ? "Đã lưu lịch" : "Lưu lịch"}</button>
+    {scheduled && <span role="status">Đã thêm vào kế hoạch học · <Link href="/app/planner">Xem kế hoạch</Link></span>}
   </div>} />;
   const q = questions[active]; const section = content?.sections.find((s) => s.questions.some((item) => item.id === q?.id)) || content?.sections[0];
   const inScope = scope ? questions.filter((item) => scope.includes(item.id)) : questions;

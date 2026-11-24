@@ -17,16 +17,14 @@ import {
   PenLine,
   Route,
   Sun,
-  Target,
   Zap,
 } from "lucide-react";
 import { Sticker, Tape, type StickerName } from "@/components/stickers/stickers";
 import { HeadIcon } from "@/components/ui/head-icon";
 import { HarryBuddy } from "@/components/fx/harry-buddy";
-import { celebrate } from "@/lib/celebrate";
-import { PlannerMini } from "@/features/planner/planner-widgets";
+import { TodayPlanCard } from "@/features/planner/planner-widgets";
 import { useDemo } from "@/features/demo/demo-store";
-import { offsetISO, recommendations, skillColors, todayISO, type Skill } from "@/lib/demo-data";
+import { offsetISO, recommendations, todayISO, type Skill } from "@/lib/demo-data";
 import { demoMode, releaseLocks } from "@/lib/runtime";
 import { LatestNews, StreakLeaderboardCard, StudyRoomCard } from "./dashboard-widgets";
 import { StudyProgress } from "./study-progress";
@@ -48,11 +46,14 @@ const skillIcons: Partial<Record<Skill, typeof BookOpenText>> = {
 };
 
 function WelcomeBanner() {
-  const { tasks, goal } = useDemo();
+  const { tasks } = useDemo();
   const hour = new Date().getHours();
   const greeting =
     hour < 12 ? "Chào buổi sáng" : hour < 18 ? "Chào buổi chiều" : "Chào buổi tối";
-  const doneToday = tasks.filter((t) => t.date === todayISO() && t.completed).length;
+  const today = todayISO();
+  const todays = tasks.filter((t) => t.date === today);
+  const doneToday = todays.filter((t) => t.completed).length;
+  const lateCount = tasks.filter((t) => !t.completed && t.date < today).length;
   return (
     <section className="welcome-banner">
       <Tape tone="teal" className="welcome-tape" />
@@ -68,7 +69,8 @@ function WelcomeBanner() {
             Học tiếp <ArrowRight size={16} />
           </Link>}
           <Link href="/app/planner" className="button ghost">
-            <CalendarDays size={16} /> {doneToday}/{goal} nhiệm vụ<span className="welcome-plan-extra"> hôm nay</span>
+            <CalendarDays size={16} /> {todays.length ? <>{doneToday}/{todays.length} việc<span className="welcome-plan-extra"> hôm nay</span></> : "Lên kế hoạch hôm nay"}
+            {lateCount > 0 && <span className="welcome-plan-late"> · {lateCount} trễ</span>}
           </Link>
         </div>
         </div>
@@ -169,67 +171,6 @@ function ContinueBody() {
           )}
         </div>
       </div>
-  );
-}
-
-function TodayGoal() {
-  const { tasks, goal, setGoal, updateTask } = useDemo();
-  const todays = tasks.filter((t) => t.date === todayISO());
-  const done = todays.filter((t) => t.completed).length;
-  const pct = Math.min(100, Math.round((done / goal) * 100));
-  const quests = [...todays].sort((a, b) => Number(a.completed) - Number(b.completed)).slice(0, 3);
-  async function toggle(id: string, completed: boolean, target: HTMLElement) {
-    if (!completed) {
-      const reached = done + 1 >= goal;
-      celebrate(target, { label: reached ? "Đạt mục tiêu!" : "Tuyệt!", pieces: reached ? 44 : 22 });
-    }
-    await updateTask(id, { completed: !completed }).catch(() => {});
-  }
-  return (
-    <section className="card goal-card">
-      <div className="card-head">
-        <div className="head-title">
-          <HeadIcon icon={Target} tone="coral" />
-          <h2>Nhiệm vụ hôm nay</h2>
-        </div>
-        <button
-          className="text-link"
-          onClick={() => {
-            const value = prompt(
-              "Mỗi ngày bạn muốn hoàn thành bao nhiêu nhiệm vụ?",
-              String(goal),
-            );
-            if (value && /^\d+$/.test(value)) void setGoal(Number(value)).catch(() => {});
-          }}
-        >
-          Mục tiêu {goal} <ChevronRight size={14} />
-        </button>
-      </div>
-      <div className="goal-content">
-        <div
-          className={`progress-ring ${pct >= 100 ? "complete" : ""}`}
-          style={{ "--pct": `${pct}%` } as React.CSSProperties}
-        >
-          <div>
-            <strong>{pct}%</strong>
-            <span>
-              {done} / {goal}
-            </span>
-          </div>
-        </div>
-        <div className="quest-list">
-          {quests.length ? quests.map((task) => (
-            <button key={task.id} type="button" className={`quest-item ${task.completed ? "done" : ""}`} onClick={(event) => void toggle(task.id, task.completed, event.currentTarget)} aria-pressed={task.completed}>
-              <i style={{ background: skillColors[task.skill] }} aria-hidden="true">{task.completed && <Check size={12} strokeWidth={3.5} />}</i>
-              <span>{task.title}</span>
-            </button>
-          )) : <p>Chưa có nhiệm vụ cho hôm nay. Thêm một việc nhỏ trong Planner nhé!</p>}
-          <small className={pct >= 100 ? "goal-state done" : "goal-state"}>
-            {pct >= 100 ? "Đạt mục tiêu hôm nay rồi!" : `Còn ${Math.max(0, goal - done)} nhiệm vụ nữa thôi`}
-          </small>
-        </div>
-      </div>
-    </section>
   );
 }
 
@@ -397,7 +338,7 @@ function DashboardTabs() {
           <LearningPath withContinue />
           <GrammarTodayCard />
           <DictationWeekCard />
-          {releaseLocks ? <TodayGoal /> : <><div className="dashboard-duo"><TodayGoal /><PracticeNow /></div><Recommended /></>}
+          {!releaseLocks && <><PracticeNow /><Recommended /></>}
         </div>
         <div className="dash-overview-side">
           <StreakLeaderboardCard />
@@ -405,7 +346,7 @@ function DashboardTabs() {
         </div>
       </>)}
       {panel("today", "dash-today", <>
-        <TodayGoal />
+        <TodayPlanCard />
         <ContinueCard />
         <GrammarTodayCard />
         <DictationWeekCard />
@@ -428,8 +369,8 @@ export function Dashboard() {
         <DashboardTabs />
       </div>
       <aside className="dashboard-aside stagger">
+        <TodayPlanCard />
         <StudyRoomCard />
-        <PlannerMini />
       </aside>
     </div>
   );
