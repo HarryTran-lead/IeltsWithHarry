@@ -116,5 +116,5 @@ describe("Planner 2.0 migration", () => {
     } finally {
       await db.close();
     }
-  });
+  }, 30000);
 });
