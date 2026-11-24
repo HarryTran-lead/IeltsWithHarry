@@ -4,6 +4,7 @@ import {
   type PipelineArticle, type PipelineAttempt, type UsageRow,
 } from "../src/lib/news/admin-pipeline";
 import { aiUsageOutcome } from "../src/lib/news/ai-usage";
+import { quizKeySource, withQuizKeySource } from "../src/lib/news/question-factory-v2/provider";
 
 const now = new Date("2026-11-24T15:00:00Z");
 const attempt = (patch: Partial<PipelineAttempt>): PipelineAttempt => ({
@@ -84,5 +85,13 @@ describe("Daily News admin pipeline", () => {
     expect(isPipelineFilter("toString")).toBe(false);
     expect(isPipelineAction("quiz_now")).toBe(true);
     expect(isPipelineAction("drop_table")).toBe(false);
+  });
+});
+
+describe("quiz key source", () => {
+  it("uses the quiz key unless a diagnostic run asks for the article key", async () => {
+    expect(quizKeySource()).toBe("quiz");
+    expect(await withQuizKeySource("article", async () => { await Promise.resolve(); return quizKeySource(); })).toBe("article");
+    expect(quizKeySource()).toBe("quiz");
   });
 });

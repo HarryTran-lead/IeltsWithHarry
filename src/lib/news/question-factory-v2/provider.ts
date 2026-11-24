@@ -1,6 +1,17 @@
 import { recordAiUsage } from "../ai-usage";
-import { newsQuizFreeTierReady, providerErrorDetail } from "../enrichment";
+import { AsyncLocalStorage } from "node:async_hooks";
+import { newsArticleFreeTierReady, newsQuizFreeTierReady, providerErrorDetail } from "../enrichment";
 import type { TokenUsage } from "./types";
+
+/**
+ * Which confirmed Free Tier key the question factory uses. Scheduled work always uses the quiz key;
+ * a one-off diagnostic run may use the article key to tell a project problem from a Google-wide outage.
+ */
+export type QuizKeySource = "quiz" | "article";
+const keyScope = new AsyncLocalStorage<QuizKeySource>();
+export function withQuizKeySource<T>(source: QuizKeySource, run: () => Promise<T>) { return keyScope.run(source, run); }
+export function quizKeySource(): QuizKeySource { return keyScope.getStore() ?? "quiz"; }
+export function quizKeyReady() { return quizKeySource() === "article" ? newsArticleFreeTierReady() : newsQuizFreeTierReady(); }
 
 export type FactoryProviderKind = "quota" | "unavailable" | "configuration" | "rejected" | "incomplete" | "provider";
 export class FactoryProviderError extends Error {
@@ -30,9 +41,10 @@ export async function strictGeminiJson<T>(
   system: string, user: string, schema: unknown, budget: ArticleRequestBudget,
   fetcher: typeof fetch = fetch, maxOutputTokens = 12000, model = v2Model(),
 ): Promise<ModelReply<T>> {
-  if (!newsQuizFreeTierReady()) throw new FactoryProviderError("configuration", "Confirmed Gemini Free Tier key is required");
+  const source = quizKeySource();
+  if (!quizKeyReady()) throw new FactoryProviderError("configuration", "Confirmed Gemini Free Tier key is required");
   if (!/^gemini-[a-z0-9.-]+$/.test(model)) throw new FactoryProviderError("configuration", "Invalid V2 Gemini model");
-  const key = process.env.AI_FACTORY_GEMINI_API_KEY;
+  const key = source === "article" ? process.env.NEWS_ARTICLE_GEMINI_API_KEY : process.env.AI_FACTORY_GEMINI_API_KEY;
   budget.reserve(); // Count before network activity; timeout and ambiguous failure still consume a request.
   let response: Response;
   const startedAt = Date.now();
@@ -50,10 +62,10 @@ export async function strictGeminiJson<T>(
       }),
     });
   } catch {
-    await recordAiUsage("quiz", model, null);
+    await recordAiUsage(source, model, null);
     throw new FactoryProviderError("unavailable", "Gemini request failed or timed out");
   }
-  await recordAiUsage("quiz", model, response.status);
+  await recordAiUsage(source, model, response.status);
   if (response.status === 429) {
     const detail = await response.json().then((body: { error?: { message?: string } }) => body.error?.message ?? "", () => "");
     const metric = /tokens? per minute|\bTPM\b/i.test(detail) ? "TPM"
