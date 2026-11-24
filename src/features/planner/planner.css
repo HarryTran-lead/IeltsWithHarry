@@ -1,6 +1,14 @@
 /* Planner 2.0 — the Kế hoạch học page, its add/edit sheet and the Dashboard "Hôm nay" card. */
 
 .pl-page { display: grid; gap: 16px; }
+/* Grid items default to min-width:auto, so the one-line page intro pushed the whole column wider
+   than the page around 850px and clipped every row's right edge. */
+.pl-page > * { min-width: 0; }
+/* Keep a lane for the floating quick-notes button (fixed at the right edge, 56px wide) so it never
+   sits on a row's ⋯ menu. Wide screens already have that much margin, so the lane fades out. */
+@media (min-width: 701px) {
+  .planner-route .pl-page { padding-right: clamp(0px, calc(1720px - 100vw), 64px); }
+}
 .pl-page .page-head-actions { gap: 8px; }
 .pl-page .page-head p a { color: var(--teal-strong); font-weight: var(--fw-bold); }
 
