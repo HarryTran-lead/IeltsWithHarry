@@ -849,8 +849,12 @@ async function enrichQuiz(db: Db, result: EnrichResult, settings: Awaited<Return
         if (output.state !== "READY") {
           result.errors.push(`Quiz ${article.article_id}: V2 ${output.state} (${output.audit.issues.join(", ")})`);
           if (output.state === "PENDING_QUOTA") result.quotaLimited = true;
+          // Provider outages (5xx, timeout) and quota limits are not the article's fault: try again later
+          // instead of holding the article for a year. Quality failures still wait for human review.
+          const holdMs = !output.audit.retryable ? 365 * 86400000
+            : output.state === "PENDING_QUOTA" ? 24 * 3600000 : 3 * 3600000;
           await finish(db, article.article_id, "quiz", "error",
-            `V2 ${output.state}; requests=${output.audit.requests}; hash=${output.audit.fingerprint.slice(0, 16)}`, 365 * 86400000);
+            `V2 ${output.state}; requests=${output.audit.requests}; retryable=${output.audit.retryable}; hash=${output.audit.fingerprint.slice(0, 16)}`, holdMs);
           continue;
         }
         const { data: savedV2, error: saveV2Error } = await db.rpc("news_publish_auto_quiz", {

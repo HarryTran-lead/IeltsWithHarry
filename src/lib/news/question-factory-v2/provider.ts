@@ -2,7 +2,7 @@ import { newsQuizFreeTierReady } from "../enrichment";
 import type { TokenUsage } from "./types";
 
 export class FactoryProviderError extends Error {
-  constructor(readonly kind: "quota" | "provider" | "configuration", message: string) { super(message); }
+  constructor(readonly kind: "quota" | "unavailable" | "provider" | "configuration", message: string) { super(message); }
 }
 export class ArticleRequestBudget {
   private count = 0;
@@ -37,7 +37,7 @@ export async function strictGeminiJson<T>(
       }),
     });
   } catch {
-    throw new FactoryProviderError("provider", "Gemini request failed or timed out");
+    throw new FactoryProviderError("unavailable", "Gemini request failed or timed out");
   }
   if (response.status === 429) {
     const detail = await response.json().then((body: { error?: { message?: string } }) => body.error?.message ?? "", () => "");
@@ -47,6 +47,8 @@ export async function strictGeminiJson<T>(
     const retryAfter = response.headers.get("retry-after");
     throw new FactoryProviderError("quota", `Gemini quota ${metric}; retry-after=${retryAfter ?? "unspecified"}`);
   }
+  // 5xx means Google could not serve the request (for example 503 overloaded); the article is not at fault.
+  if (response.status >= 500) throw new FactoryProviderError("unavailable", `Gemini returned HTTP ${response.status}`);
   if (!response.ok) throw new FactoryProviderError("provider", `Gemini returned HTTP ${response.status}`);
   let raw: {
     candidates?: { finishReason?: string; content?: { parts?: { text?: string }[] } }[];

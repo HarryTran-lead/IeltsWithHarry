@@ -14,6 +14,19 @@ const needsGroup = new Set<IeltsQuestionType>([
 ]);
 const otherGap = /_{3,}|\.{3,}|…/g;
 
+const PARAGRAPH_LETTERS = "ABCDEFGHIJKL";
+/** Accepts "A", "a", "A.", "(A)", "Paragraph A", "1", "P1" or "Paragraph 1"; anything else keeps source position. */
+export function paragraphLabel(raw: unknown, index: number): string {
+  const text = typeof raw === "string" ? raw.trim() : typeof raw === "number" ? String(raw) : "";
+  const letter = /^(?:paragraph\s+)?\(?([A-Za-z])\)?\.?$/i.exec(text);
+  if (letter) return letter[1].toUpperCase();
+  const number = /^(?:paragraph\s+|p)?(\d{1,2})\.?$/i.exec(text);
+  if (number && Number(number[1]) >= 1 && Number(number[1]) <= 26) return String.fromCharCode(64 + Number(number[1]));
+  return PARAGRAPH_LETTERS[index] ?? "";
+}
+/** Map issues that cannot be trusted for paragraph-referencing forms. */
+export const PARAGRAPH_MAP_ISSUES = new Set(["PASSAGE_MAP_PARAGRAPH", "PASSAGE_MAP_COUNT"]);
+
 export function validatePassageMap(map: PassageMap, article: string): string[] {
   const issues: string[] = [];
   if (!map || !Array.isArray(map.paragraphs) || !Array.isArray(map.opportunities)
@@ -22,11 +35,12 @@ export function validatePassageMap(map: PassageMap, article: string): string[] {
     || !Array.isArray(map.causal_links)
     || typeof map.writer_view !== "string") return ["PASSAGE_MAP_SCHEMA"];
   const ids = new Set<string>();
-  for (const paragraph of map.paragraphs) {
-    if (!paragraph || !/^[A-Z]$/.test(paragraph.id) || ids.has(paragraph.id)
+  map.paragraphs.forEach((paragraph, index) => {
+    const id = paragraph ? paragraphLabel(paragraph.id, index) : "";
+    if (!paragraph || !/^[A-Z]$/.test(id) || ids.has(id)
       || !paragraph.main_idea || !Array.isArray(paragraph.key_facts)) issues.push("PASSAGE_MAP_PARAGRAPH");
-    ids.add(paragraph?.id);
-  }
+    ids.add(id);
+  });
   if (map.paragraphs.length < 1 || map.paragraphs.length > 12) issues.push("PASSAGE_MAP_COUNT");
   for (const opportunity of map.opportunities) {
     if (!knownTypes.has(opportunity?.type) || !opportunity.skill || !opportunity.evidence
@@ -93,7 +107,11 @@ export function validateCandidate(item: Candidate, article: string, map: Passage
 
 export function validateGeneration(data: Generation, article: string, selected: IeltsQuestionType[]): Validation {
   const issues = validatePassageMap(data?.passage_map, article);
-  if (issues.length || !Array.isArray(data?.questions)) return { valid: [], issues: [...issues, ...(!Array.isArray(data?.questions) ? ["QUESTIONS_SCHEMA"] : [])] };
+  // Only a broken map shape is fatal. Paragraph and opportunity notes are metadata: every question is still
+  // checked against the exact article and by blind QA, so they are recorded instead of discarding the whole set.
+  if (issues.includes("PASSAGE_MAP_SCHEMA") || !Array.isArray(data?.questions))
+    return { valid: [], issues: [...issues, ...(!Array.isArray(data?.questions) ? ["QUESTIONS_SCHEMA"] : [])] };
+  const paragraphMapReliable = !issues.some((issue) => PARAGRAPH_MAP_ISSUES.has(issue));
   const valid: Candidate[] = [];
   const ids = new Set<string>();
   const prompts = new Set<string>();
@@ -101,6 +119,8 @@ export function validateGeneration(data: Generation, article: string, selected: 
   for (const item of data.questions) {
     const errors = validateCandidate(item, article, data.passage_map);
     if (!selected.includes(item?.type)) errors.push("UNSELECTED_TYPE");
+    if (!paragraphMapReliable && (item?.type === "matching_headings" || item?.type === "matching_information"))
+      errors.push("PARAGRAPH_MAP_UNRELIABLE");
     if (ids.has(item?.id)) errors.push("DUPLICATE_ID");
     if (prompts.has(normalize(item?.prompt ?? ""))) errors.push("DUPLICATE_PROMPT");
     const testedFact = normalize(item?.supporting_sentence ?? "") + "|" + normalize(

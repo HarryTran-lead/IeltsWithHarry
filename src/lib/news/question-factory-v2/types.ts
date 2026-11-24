@@ -1,7 +1,7 @@
 import type { IeltsQuestionType } from "../ielts-passage";
 import type { AdaptiveQuestion } from "../adaptive-quiz";
 
-export const FACTORY_VERSION = "daily-news-question-factory-v2.0.0";
+export const FACTORY_VERSION = "daily-news-question-factory-v2.0.1";
 export type Difficulty = "P1" | "P2" | "P3";
 export type Scope = "sentence" | "paragraph" | "multiple_paragraphs" | "whole_passage";
 export type Candidate = {
@@ -53,6 +53,8 @@ export type FactoryResult = {
     version: string;
     fingerprint: string;
     requests: number;
+    /** True when the provider was unavailable or rate limited, so the article itself is not at fault. */
+    retryable: boolean;
     generation_tokens: TokenUsage | null;
     qa_tokens: TokenUsage | null;
     candidate_count: number;
