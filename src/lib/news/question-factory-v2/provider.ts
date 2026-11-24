@@ -5,19 +5,13 @@ export type FactoryProviderKind = "quota" | "unavailable" | "configuration" | "r
 export class FactoryProviderError extends Error {
   constructor(readonly kind: FactoryProviderKind, message: string, readonly retryAfterMs: number | null = null) { super(message); }
 }
-/** Two requests per article (generation + blind QA); one extra only after a generation outage with no reply. */
+/** Hard cap on Gemini requests for one article; every attempt counts, including timeouts. */
 export class ArticleRequestBudget {
   private count = 0;
-  private limit = 2;
+  constructor(private readonly limit = 2) {}
   reserve() {
     if (this.count >= this.limit) throw new FactoryProviderError("provider", "Article request budget exhausted");
     return ++this.count;
-  }
-  /** Grants the single outage retry; false when it was already used. */
-  grantOutageRetry() {
-    if (this.limit > 2) return false;
-    this.limit = 3;
-    return true;
   }
   get used() { return this.count; }
 }
