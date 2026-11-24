@@ -171,6 +171,25 @@ describe("two request free-tier budget", () => {
     const output = await generateNewsQuizV2("Bad request", passage, "bad-request-case", fake);
     expect(output.state).toBe("PENDING_PROVIDER");
     expect(output.audit.retryable).toBe(false);
+    expect(output.audit.failure).toBe("rejected");
+  });
+  it("labels each provider failure with the reason the worker acts on", async () => {
+    process.env.AI_FACTORY_FREE_TIER_ONLY = "true";
+    process.env.AI_FACTORY_FREE_TIER_CONFIRMED = "true";
+    process.env.AI_FACTORY_GEMINI_API_KEY = "offline-test-key";
+    const passage = article + " " + "Residents compared monthly readings and kept printed records for later discussion. ".repeat(40);
+    const run = (id: string, reply: () => Response) => generateNewsQuizV2("Reason", passage, id, (async () => reply()) as typeof fetch);
+    expect((await run("reason-503", () => new Response("", { status: 503 }))).audit.failure).toBe("unavailable");
+    expect((await run("reason-401", () => new Response("", { status: 401 }))).audit.failure).toBe("config");
+    expect((await run("reason-404", () => new Response("", { status: 404 }))).audit.failure).toBe("config");
+    const truncated = await run("reason-cut", () => Response.json({ candidates: [{ finishReason: "MAX_TOKENS", content: { parts: [{ text: "{" }] } }] }));
+    expect(truncated.audit.failure).toBe("incomplete");
+    const quota = await run("reason-429", () => Response.json({ error: { message: "Requests per day limit exceeded" } },
+      { status: 429, headers: { "retry-after": "60" } }));
+    expect(quota.state).toBe("PENDING_QUOTA");
+    expect(quota.audit).toMatchObject({ failure: "quota", retryable: true, retry_after_ms: 60000 });
+    const short = await generateNewsQuizV2("Short", "Too short for a quiz.", "reason-short", (async () => { throw Error("must not call"); }) as typeof fetch);
+    expect(short.audit).toMatchObject({ failure: "too_short", requests: 0 });
   });
   it("halts before any call without confirmed free tier", async () => {
     delete process.env.AI_FACTORY_FREE_TIER_CONFIRMED;
@@ -232,6 +251,7 @@ describe("two request free-tier budget", () => {
     }) as typeof fetch;
     const output = await generateNewsQuizV2("Water checks", passage, id, fake);
     expect(output.state).toBe("READY");
+    expect(output.audit.failure).toBeNull();
     expect(output.questions).toHaveLength(6);
     expect(output.audit.requests).toBe(2);
     expect(output.audit.generation_tokens?.total).toBe(150);
