@@ -1,7 +1,7 @@
-import { afterEach, describe, expect, it } from "vitest";
+import { afterEach, beforeAll, describe, expect, it } from "vitest";
 import { ieltsQuestionTypes } from "../src/lib/news/ielts-passage";
-import { ArticleRequestBudget, FactoryProviderError, strictGeminiJson } from "../src/lib/news/question-factory-v2/provider";
-import { generateNewsQuizV2 } from "../src/lib/news/question-factory-v2";
+import { ArticleRequestBudget, FactoryProviderError, alternateV2Model, strictGeminiJson } from "../src/lib/news/question-factory-v2/provider";
+import { generateNewsQuizV2, v2Timing } from "../src/lib/news/question-factory-v2";
 import { selectQuestionTypes } from "../src/lib/news/adaptive-quiz";
 import { blindQaPayload, generationPrompt, generationSchema } from "../src/lib/news/question-factory-v2/prompts";
 import { paragraphLabel, validateBlindReview, validateCandidate, validateGeneration, validatePassageMap } from "../src/lib/news/question-factory-v2/validate";
@@ -123,6 +123,8 @@ describe("passage map paragraph labels", () => {
   });
 });
 
+beforeAll(() => { v2Timing.outageRetryDelayMs = 0; });
+
 describe("two request free-tier budget", () => {
   const oldEnv = {
     only: process.env.AI_FACTORY_FREE_TIER_ONLY,
@@ -159,8 +161,9 @@ describe("two request free-tier budget", () => {
     const output = await generateNewsQuizV2("Outage", passage, "outage-case", fake);
     expect(output.state).toBe("PENDING_PROVIDER");
     expect(output.audit.retryable).toBe(true);
-    expect(output.audit.requests).toBe(1);
-    expect(calls).toBe(2);
+    // One generation request plus the single outage retry on the other model; never a third generation.
+    expect(output.audit.requests).toBe(2);
+    expect(calls).toBe(3);
   });
   it("does not mark a malformed 4xx request as retryable", async () => {
     process.env.AI_FACTORY_FREE_TIER_ONLY = "true";
@@ -190,6 +193,80 @@ describe("two request free-tier budget", () => {
     expect(quota.audit).toMatchObject({ failure: "quota", retryable: true, retry_after_ms: 60000 });
     const short = await generateNewsQuizV2("Short", "Too short for a quiz.", "reason-short", (async () => { throw Error("must not call"); }) as typeof fetch);
     expect(short.audit).toMatchObject({ failure: "too_short", requests: 0 });
+  });
+  it("grants the outage retry once and pairs the Flash-Lite models", () => {
+    const budget = new ArticleRequestBudget();
+    expect(budget.grantOutageRetry()).toBe(true);
+    expect(budget.grantOutageRetry()).toBe(false);
+    expect(alternateV2Model("gemini-3.5-flash-lite")).toBe("gemini-3.1-flash-lite");
+    expect(alternateV2Model("gemini-3.1-flash-lite")).toBe("gemini-3.5-flash-lite");
+    expect(alternateV2Model("gemini-9-pro")).toBe("gemini-9-pro");
+  });
+  it("retries generation once on the other model after a 503 and publishes with three requests", async () => {
+    process.env.AI_FACTORY_FREE_TIER_ONLY = "true";
+    process.env.AI_FACTORY_FREE_TIER_CONFIRMED = "true";
+    process.env.AI_FACTORY_GEMINI_API_KEY = "offline-test-key";
+    const filler = Array.from({ length: 12 }, (_, i) =>
+      `The community bulletin number ${i + 1} explained how residents could compare readings from different months, ask the local office for help, and keep printed records for later discussion.`).join(" ");
+    const passage = article + " " + filler;
+    const words = passage.match(/[\p{L}\p{N}]+/gu)?.length ?? 0;
+    const id = Array.from({ length: 10000 }, (_, n) => `outage-retry-${n}`).find((key) => {
+      const selected = selectQuestionTypes(passage, words, key);
+      return selected.includes("mcq") && selected.includes("short_answer");
+    })!;
+    const questions = positiveFixtures.filter((item) => item.type === "mcq" || item.type === "short_answer")
+      .map((item) => ({ ...item, difficulty: item.id === "short_answer_p1" ? "P2" as const : item.difficulty,
+        paraphrase_depth: item.id === "short_answer_p1" ? 2 as const : item.paraphrase_depth }));
+    const reviewed = { reviews: questions.map((item) => ({
+      id: item.id, status: "answerable", independent_answer: item.correct_index < 0 ? item.answer : item.options[item.correct_index],
+      competing_answers: [], paraphrase_faithful: true, distractors_fair: true, form_valid: true, reason_vi: "Câu này có một đáp án rõ ràng.",
+    })) };
+    const urls: string[] = [];
+    const fake = (async (url: string | URL | Request) => {
+      urls.push(String(url));
+      if (urls.length === 1) return new Response("", { status: 503 });
+      const data = urls.length === 2 ? { passage_map: map, questions, image_query: "harbor water" } : reviewed;
+      return Response.json({ candidates: [{ finishReason: "STOP", content: { parts: [{ text: JSON.stringify(data) }] } }] });
+    }) as typeof fetch;
+    const output = await generateNewsQuizV2("Water checks", passage, id, fake);
+    expect(output.state).toBe("READY");
+    expect(output.audit.requests).toBe(3);
+    expect(output.model).toBe("gemini-3.1-flash-lite");
+    expect(urls.map((url) => /models\/([^:]+):/.exec(url)?.[1])).toEqual(["gemini-3.5-flash-lite", "gemini-3.1-flash-lite", "gemini-3.1-flash-lite"]);
+  });
+  it("does not retry a 4xx at generation or an outage at blind QA", async () => {
+    process.env.AI_FACTORY_FREE_TIER_ONLY = "true";
+    process.env.AI_FACTORY_FREE_TIER_CONFIRMED = "true";
+    process.env.AI_FACTORY_GEMINI_API_KEY = "offline-test-key";
+    const passage = article + " " + "Residents compared monthly readings and kept printed records for later discussion. ".repeat(40);
+    let calls = 0;
+    const rejected = await generateNewsQuizV2("Rejected", passage, "no-retry-400", (async () => { calls++; return new Response("", { status: 400 }); }) as typeof fetch);
+    expect(rejected.audit.requests).toBe(1);
+    expect(calls).toBe(1);
+    const filler = Array.from({ length: 12 }, (_, i) =>
+      `The community bulletin number ${i + 1} explained how residents could compare readings from different months, ask the local office for help, and keep printed records for later discussion.`).join(" ");
+    const longer = article + " " + filler;
+    const words = longer.match(/[\p{L}\p{N}]+/gu)?.length ?? 0;
+    const id = Array.from({ length: 10000 }, (_, n) => `qa-outage-${n}`).find((key) => {
+      const selected = selectQuestionTypes(longer, words, key);
+      return selected.includes("mcq") && selected.includes("short_answer");
+    })!;
+    const questions = positiveFixtures.filter((item) => item.type === "mcq" || item.type === "short_answer")
+      .map((item) => ({ ...item, difficulty: item.id === "short_answer_p1" ? "P2" as const : item.difficulty,
+        paraphrase_depth: item.id === "short_answer_p1" ? 2 as const : item.paraphrase_depth }));
+    let qaCalls = 0;
+    const qaOutage = (async () => {
+      qaCalls++;
+      if (qaCalls === 1) return Response.json({ candidates: [{ finishReason: "STOP", content: { parts: [{ text: JSON.stringify({
+        passage_map: map, questions, image_query: "" }) }] } }] });
+      return new Response("", { status: 503 });
+    }) as typeof fetch;
+    const output = await generateNewsQuizV2("QA outage", longer, id, qaOutage);
+    expect(output.audit.deterministic_pass).toBe(6);
+    expect(output.state).toBe("PENDING_PROVIDER");
+    expect(output.audit.failure).toBe("unavailable");
+    expect(output.audit.requests).toBe(2);
+    expect(qaCalls).toBe(2);
   });
   it("halts before any call without confirmed free tier", async () => {
     delete process.env.AI_FACTORY_FREE_TIER_CONFIRMED;
