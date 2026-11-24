@@ -58,6 +58,7 @@ const pages: Page[] = [
   { slug: "speaking", title: "Speaking", icon: Mic, description: "Đề Speaking luyện thi và bài Speaking trong lộ trình." },
   { slug: "dictation", title: "Dictation", icon: AudioLines, description: "Kiểm duyệt bài nghe chép chính tả: transcript, mốc thời gian, CEFR và quyền sử dụng." },
   { slug: "news", title: "Daily News", tab: "Tổng quan", icon: Newspaper, description: "Tin tự đồng bộ, tin thêm tay và bài luyện đọc. Chỉ tin đã duyệt mới hiện cho học viên." },
+  { slug: "news/pipeline", parent: "news", title: "Daily News", tab: "Quản lý chuyên sâu", icon: Newspaper, description: "Từng bài: ảnh, quiz, bản dịch, từ vựng; xem và gỡ câu hỏi AI, tạo quiz ngay, request Gemini đã dùng." },
   { slug: "news/review", parent: "news", title: "Daily News", tab: "Duyệt tin", icon: Newspaper, description: "Kiểm duyệt tin nhập về: xuất bản, ẩn, lưu trữ hoặc xóa." },
   { slug: "news/manual", parent: "news", title: "Daily News", tab: "Thêm tin", icon: Newspaper, description: "Thêm tin thủ công kèm toàn văn, ảnh và hồ sơ quyền." },
   { slug: "news/facts", parent: "news", title: "Daily News", tab: "Bài từ dữ kiện", icon: Newspaper, description: "Viết bài mới từ dữ kiện đã kiểm chứng, có danh sách nguồn đi kèm." },

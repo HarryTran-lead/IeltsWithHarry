@@ -1,3 +1,4 @@
+import { recordAiUsage, type AiUsageKey } from "./ai-usage";
 import { load } from "cheerio";
 import { z } from "zod";
 import { newsAdminClient } from "./sync";
@@ -226,6 +227,7 @@ export async function geminiJson<T>(system: string, user: string | GeminiPart[],
     : freeTierOnly ? (newsQuizFreeTierReady() ? process.env.AI_FACTORY_GEMINI_API_KEY : undefined) : process.env.GEMINI_API_KEY);
   if (!key) throw new Error(articleOnly ? "Confirmed free-tier Gemini key is not configured for news articles"
     : freeTierOnly ? "Confirmed free-tier Gemini key is not configured" : "GEMINI_API_KEY is not configured");
+  const usageKey: AiUsageKey = apiKey ? "custom" : articleOnly ? "article" : freeTierOnly ? "quiz" : "shared";
   const request = JSON.stringify({
     systemInstruction: { parts: [{ text: system }] },
     contents: [{ role: "user", parts: typeof user === "string" ? [{ text: user }] : user }],
@@ -242,10 +244,13 @@ export async function geminiJson<T>(system: string, user: string | GeminiPart[],
     let startedAt = Date.now();
     for (let attempt = 0; ; attempt++) {
       startedAt = Date.now();
-      response = await fetcher(`https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent`, {
-        method: "POST", signal: AbortSignal.timeout(timeoutMs), cache: "no-store",
-        headers: { "x-goog-api-key": key, "Content-Type": "application/json" }, body: request,
-      });
+      try {
+        response = await fetcher(`https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent`, {
+          method: "POST", signal: AbortSignal.timeout(timeoutMs), cache: "no-store",
+          headers: { "x-goog-api-key": key, "Content-Type": "application/json" }, body: request,
+        });
+      } catch (cause) { await recordAiUsage(usageKey, model, null); throw cause; }
+      await recordAiUsage(usageKey, model, response.status);
       if (!resilient || response.status !== 503 || attempt >= 2) break;
       await response.body?.cancel().catch(() => undefined);
       await new Promise((resolve) => setTimeout(resolve, 750 * 2 ** attempt));
@@ -904,63 +909,115 @@ async function enrichQuiz(db: Db, result: EnrichResult, settings: Awaited<Return
   }
   const { data: quizClaims, error: quizClaimError } = await db.rpc("news_claim_enrichment", { p_kind: "quiz", p_limit: 1 });
   if (quizClaimError) throw quizClaimError;
-  for (const article of (quizClaims ?? []) as Claim[]) {
-    result.quizzesChecked++;
-    try {
-      if (v2Enabled) {
-        // A claimed article may already have used its two calls before a worker crash.
-        // Keep automatic reclaim disabled until a human reviews its immutable fingerprint.
-        const holdUntil = new Date(Date.now() + 365 * 86400000).toISOString();
-        const { error: holdError } = await db.from("news_enrichment_attempts")
-          .update({ retry_after: holdUntil, error_message: "V2 request budget reserved; manual review required before retry" })
-          .eq("article_id", article.article_id).eq("kind", "quiz").eq("status", "running");
-        if (holdError) throw holdError;
-        const { data: retryRow } = await db.from("news_enrichment_attempts").select(ops.QUIZ_RETRY_COUNT_COLUMN)
-          .eq("article_id", article.article_id).eq("kind", "quiz").maybeSingle();
-        const retriesUsed = Number((retryRow as Record<string, unknown> | null)?.[ops.QUIZ_RETRY_COUNT_COLUMN] ?? 0);
-        const { generateNewsQuizV2 } = await import("./question-factory-v2");
-        const output = await generateNewsQuizV2(article.title, article.body_text ?? "", article.article_id, fetch, settings.quiz_prompt);
-        if (output.state !== "READY") {
-          const reason = output.audit.failure ?? "internal";
-          result.errors.push(`Quiz ${article.article_id}: V2 ${output.state} [${reason}] (${output.audit.issues.join(", ")})`);
-          if (output.state === "PENDING_QUOTA") result.quotaLimited = true;
-          // Outages, quota and configuration errors are not the article's fault and retry later; a model-quality
-          // or truncated reply gets one more try; anything else waits for an admin to unlock it.
-          const plan = ops.quizFailurePlan(reason, retriesUsed, {
-            quotaDaily: output.audit.issues.some((issue) => /quota RPD/.test(issue)), retryAfterMs: output.audit.retry_after_ms,
-          });
-          await finish(db, article.article_id, "quiz", "error", ops.quizFailureMessage(output, reason, plan), plan.holdMs,
-            { [ops.QUIZ_RETRY_COUNT_COLUMN]: plan.retriesUsed });
-          continue;
-        }
-        const { data: savedV2, error: saveV2Error } = await db.rpc("news_publish_auto_quiz", {
-          p_article_id: article.article_id, p_model: output.model, p_questions: output.questions,
+  for (const article of (quizClaims ?? []) as Claim[]) await runQuizClaim(db, result, settings, article, v2Enabled, ops);
+}
+
+type QuizOps = typeof import("./question-factory-v2/operations");
+/** Generates and saves the quiz for one claimed article, then records the outcome on its attempt row. */
+async function runQuizClaim(db: Db, result: EnrichResult, settings: Awaited<ReturnType<typeof loadNewsSettings>>, article: Claim, v2Enabled: boolean, ops: QuizOps) {
+  result.quizzesChecked++;
+  try {
+    if (v2Enabled) {
+      // A claimed article may already have used its two calls before a worker crash.
+      // Keep automatic reclaim disabled until a human reviews its immutable fingerprint.
+      const holdUntil = new Date(Date.now() + 365 * 86400000).toISOString();
+      const { error: holdError } = await db.from("news_enrichment_attempts")
+        .update({ retry_after: holdUntil, error_message: "V2 request budget reserved; manual review required before retry" })
+        .eq("article_id", article.article_id).eq("kind", "quiz").eq("status", "running");
+      if (holdError) throw holdError;
+      const { data: retryRow } = await db.from("news_enrichment_attempts").select(ops.QUIZ_RETRY_COUNT_COLUMN)
+        .eq("article_id", article.article_id).eq("kind", "quiz").maybeSingle();
+      const retriesUsed = Number((retryRow as Record<string, unknown> | null)?.[ops.QUIZ_RETRY_COUNT_COLUMN] ?? 0);
+      const { generateNewsQuizV2 } = await import("./question-factory-v2");
+      const output = await generateNewsQuizV2(article.title, article.body_text ?? "", article.article_id, fetch, settings.quiz_prompt);
+      if (output.state !== "READY") {
+        const reason = output.audit.failure ?? "internal";
+        result.errors.push(`Quiz ${article.article_id}: V2 ${output.state} [${reason}] (${output.audit.issues.join(", ")})`);
+        if (output.state === "PENDING_QUOTA") result.quotaLimited = true;
+        // Outages, quota and configuration errors are not the article's fault and retry later; a model-quality
+        // or truncated reply gets one more try; anything else waits for an admin to unlock it.
+        const plan = ops.quizFailurePlan(reason, retriesUsed, {
+          quotaDaily: output.audit.issues.some((issue) => /quota RPD/.test(issue)), retryAfterMs: output.audit.retry_after_ms,
         });
-        if (saveV2Error) throw saveV2Error;
-        if (savedV2) result.quizzesAdded++;
-        // The READY marker lets the admin health panel find the latest V2 quiz without a schema change.
-        await finish(db, article.article_id, "quiz", "success", ops.quizSuccessMessage(output));
-        await saveImageQuery(db, article.article_id, output.imageQuery);
-        continue;
+        await finish(db, article.article_id, "quiz", "error", ops.quizFailureMessage(output, reason, plan), plan.holdMs,
+          { [ops.QUIZ_RETRY_COUNT_COLUMN]: plan.retriesUsed });
+        return;
       }
-      const { generateAdaptiveNewsQuiz } = await import("./adaptive-quiz");
-      const generated = await generateAdaptiveNewsQuiz(article.title, article.body_text ?? "", article.article_id, fetch, settings.quiz_prompt);
-      const { data: saved, error } = await db.rpc("news_publish_auto_quiz", { p_article_id: article.article_id, p_model: generated.model, p_questions: generated.questions });
-      if (error) throw error;
-      if (saved) result.quizzesAdded++;
-      await finish(db, article.article_id, "quiz", "success");
-      // The visual subject named by the quiz request becomes the image search query.
-      await saveImageQuery(db, article.article_id, generated.imageQuery);
-    } catch (cause) {
-      const message = cause instanceof Error ? cause.message : "Quiz generation failed";
-      result.errors.push(`Quiz ${article.article_id}: ${message}`);
-      // A quota error is not the article's fault: retry it as soon as quota returns.
-      if (v2Enabled)
-        await finish(db, article.article_id, "quiz", "error", message, 365 * 86400000);
-      else if (cause instanceof AiQuotaError) { result.quotaLimited = true; await finish(db, article.article_id, "quiz", "error", message, cause.retryAfterMs); }
-      else await finish(db, article.article_id, "quiz", "error", message, transientQuizRetryMs(message));
+      const { data: savedV2, error: saveV2Error } = await db.rpc("news_publish_auto_quiz", {
+        p_article_id: article.article_id, p_model: output.model, p_questions: output.questions,
+      });
+      if (saveV2Error) throw saveV2Error;
+      if (savedV2) result.quizzesAdded++;
+      // The READY marker lets the admin health panel find the latest V2 quiz without a schema change.
+      await finish(db, article.article_id, "quiz", "success", ops.quizSuccessMessage(output));
+      await saveImageQuery(db, article.article_id, output.imageQuery);
+      return;
     }
+    const { generateAdaptiveNewsQuiz } = await import("./adaptive-quiz");
+    const generated = await generateAdaptiveNewsQuiz(article.title, article.body_text ?? "", article.article_id, fetch, settings.quiz_prompt);
+    const { data: saved, error } = await db.rpc("news_publish_auto_quiz", { p_article_id: article.article_id, p_model: generated.model, p_questions: generated.questions });
+    if (error) throw error;
+    if (saved) result.quizzesAdded++;
+    await finish(db, article.article_id, "quiz", "success");
+    // The visual subject named by the quiz request becomes the image search query.
+    await saveImageQuery(db, article.article_id, generated.imageQuery);
+  } catch (cause) {
+    const message = cause instanceof Error ? cause.message : "Quiz generation failed";
+    result.errors.push(`Quiz ${article.article_id}: ${message}`);
+    // A quota error is not the article's fault: retry it as soon as quota returns.
+    if (v2Enabled)
+      await finish(db, article.article_id, "quiz", "error", message, 365 * 86400000);
+    else if (cause instanceof AiQuotaError) { result.quotaLimited = true; await finish(db, article.article_id, "quiz", "error", message, cause.retryAfterMs); }
+    else await finish(db, article.article_id, "quiz", "error", message, transientQuizRetryMs(message));
   }
+}
+
+/** Minimum words a body needs before a quiz is written for it, as in news_claim_enrichment. */
+export const QUIZ_MIN_WORDS = 400;
+const RUNNING_STALE_MS = 15 * 60_000;
+export type ArticleQuizRun = { status: "ready" | "failed" | "skipped"; message: string; questions: number };
+
+/**
+ * Admin-requested quiz for one article, outside the schedule: it ignores the circuit breaker,
+ * the daily limit and the article's retry wait, but still refuses a second run in progress.
+ */
+export async function generateQuizForArticle(articleId: string): Promise<ArticleQuizRun> {
+  if (!newsQuizFreeTierReady()) return { status: "skipped", message: "Chưa cấu hình khóa Gemini Free Tier cho quiz.", questions: 0 };
+  const db = newsAdminClient();
+  const settings = await loadNewsSettings(db);
+  const [article, body, quizSet, attempt] = await Promise.all([
+    db.from("news_articles").select("id,title,publication_status,sensitive").eq("id", articleId).maybeSingle(),
+    db.from("news_article_bodies").select("body_text").eq("article_id", articleId).maybeSingle(),
+    db.from("news_auto_quiz_sets").select("article_id").eq("article_id", articleId).maybeSingle(),
+    db.from("news_enrichment_attempts").select("status,attempted_at").eq("article_id", articleId).eq("kind", "quiz").maybeSingle(),
+  ]);
+  const failed = article.error ?? body.error ?? quizSet.error ?? attempt.error;
+  if (failed) throw failed;
+  if (!article.data) return { status: "skipped", message: "Không tìm thấy bài.", questions: 0 };
+  if (article.data.publication_status !== "published" || article.data.sensitive)
+    return { status: "skipped", message: "Chỉ tạo quiz cho bài đã xuất bản và không bị đánh dấu nhạy cảm.", questions: 0 };
+  const text = (body.data?.body_text as string | null) ?? "";
+  if (text.trim().split(/\s+/).filter(Boolean).length < QUIZ_MIN_WORDS)
+    return { status: "skipped", message: `Bài chưa đủ ${QUIZ_MIN_WORDS} từ nên không tạo quiz.`, questions: 0 };
+  if (quizSet.data) return { status: "skipped", message: "Bài đã có bộ quiz. Hãy gỡ bộ cũ trước nếu muốn tạo lại.", questions: 0 };
+  if (attempt.data?.status === "running" && Date.parse(attempt.data.attempted_at as string) > Date.now() - RUNNING_STALE_MS)
+    return { status: "skipped", message: "Bài đang có một lượt tạo quiz chạy dở. Hãy đợi vài phút.", questions: 0 };
+  // Claim the article the same way news_claim_enrichment does, keeping its retry count.
+  const { error: claimError } = await db.from("news_enrichment_attempts").upsert({
+    article_id: articleId, kind: "quiz", status: "running", attempted_at: new Date().toISOString(),
+    retry_after: new Date(Date.now() + 86400000).toISOString(), error_message: null,
+  }, { onConflict: "article_id,kind" });
+  if (claimError) throw claimError;
+  const { newsQuestionFactoryV2Enabled } = await import("./question-factory-v2/activation");
+  const ops = await import("./question-factory-v2/operations");
+  const result: EnrichResult = { imagesChecked: 0, imagesAdded: 0, quizzesChecked: 0, quizzesAdded: 0, aiConfigured: true, quotaLimited: false, errors: [] };
+  await runQuizClaim(db, result, settings, { article_id: articleId, title: article.data.title as string, body_text: text }, newsQuestionFactoryV2Enabled(), ops);
+  const [{ data: saved }, { data: outcome }] = await Promise.all([
+    db.from("news_auto_quiz_sets").select("question_count").eq("article_id", articleId).maybeSingle(),
+    db.from("news_enrichment_attempts").select("error_message").eq("article_id", articleId).eq("kind", "quiz").maybeSingle(),
+  ]);
+  if (result.quizzesAdded && saved) return { status: "ready", message: `Đã tạo ${saved.question_count} câu hỏi.`, questions: Number(saved.question_count) };
+  return { status: "failed", message: (outcome?.error_message as string | null) ?? result.errors[0] ?? "Không tạo được quiz.", questions: 0 };
 }
 
 /** Temporary model and network failures should not hide a quiz for a full day. */
