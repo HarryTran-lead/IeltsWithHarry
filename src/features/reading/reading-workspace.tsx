@@ -19,6 +19,8 @@ const sizes = [15, 16, 17, 18, 20, 22, 24];
 const DEFAULT_SIZE = 3;
 const SIZE_KEY = "ieltswithharry-reader-size";
 const TOOLS_KEY = "ieltswithharry-reader-tools";
+/** Screens wide enough to show the word-lookup panel beside the passage without covering it. */
+const WIDE_LOOKUP_QUERY = "(min-width: 1200px)";
 const colorName: Record<HighlightColor, string> = { sun: "vàng", mint: "xanh", rose: "hồng" };
 
 type Range = Pick<Highlight, "p" | "start" | "end">;
@@ -125,6 +127,7 @@ export function ReadingWorkspace({ docKey, title, paragraphs, persist = true, se
   const [activeEvidence, setActiveEvidence] = useState<EvidenceLocation | null>(null);
   const [toolsMin, setToolsMin] = useState(newsReader);
   const [openTool, setOpenTool] = useState<string | null>(null);
+  const lookupToolId = tools?.find((tool) => tool.onSelect)?.id ?? null;
   const textRef = useRef<HTMLDivElement>(null);
   const bodyRef = useRef<HTMLDivElement>(null);
   const sideRef = useRef<HTMLDivElement>(null);
@@ -420,7 +423,9 @@ export function ReadingWorkspace({ docKey, title, paragraphs, persist = true, se
     if (lookupWord && onSelectWord) {
       const first = ranges[0];
       onSelectWord(word, sentenceAt(text[first.p], first.start));
-      if (toolsMin) setOpenTool(tools?.find((tool) => tool.onSelect)?.id ?? null);
+      // Wide screens open the lookup panel beside the text; on phones and tablets it would cover the passage,
+      // so the popover shows the meaning and opens the full panel only when tapped.
+      if (toolsMin && window.matchMedia(WIDE_LOOKUP_QUERY).matches) setOpenTool(lookupToolId);
     }
   }
 
@@ -598,7 +603,12 @@ export function ReadingWorkspace({ docKey, title, paragraphs, persist = true, se
       {highlightColors.map((color) => <button type="button" key={color} className={`rw-swatch ${color}`} onClick={() => paint(color)} aria-label={`Highlight màu ${colorName[color]}`} />)}
       {popover.mark && <button type="button" className="rw-unmark" onClick={() => { save(highlights.filter((item) => item.id !== popover.mark)); setPopover(null); }}><X size={14} /> Bỏ</button>}
       {popover.selectedText && onTranslateSelection && !practicing && <button type="button" className="rw-translate-selection" disabled={popover.selectedText.length > 3500 || selectionTranslation?.busy} onClick={() => void translateSelection()} title={popover.selectedText.length > 3500 ? "Chọn tối đa 3.500 ký tự để dịch" : "Dịch phần đã chọn"}><Languages size={14} /> {selectionTranslation?.busy ? "Đang dịch…" : "Dịch đoạn chọn"}</button>}
-      {popover.word && <span className="rw-lookup-preview" role="status"><strong>{popover.word}</strong>{lookupPreview?.word === popover.word ? lookupPreview.loading ? "Đang tra nghĩa…" : lookupPreview.meaning || "Chưa có nghĩa tiếng Việt" : "Đang tra nghĩa…"}</span>}
+      {popover.word && (() => {
+        const meaning = lookupPreview?.word === popover.word ? lookupPreview.loading ? "Đang tra nghĩa…" : lookupPreview.meaning || "Chưa có nghĩa tiếng Việt" : "Đang tra nghĩa…";
+        return lookupToolId && toolsMin && openTool !== lookupToolId
+          ? <button type="button" className="rw-lookup-preview is-action" onClick={() => { setOpenTool(lookupToolId); setPopover(null); }} title="Mở bảng tra từ đầy đủ"><strong>{popover.word}</strong>{meaning}<small>Xem chi tiết ›</small></button>
+          : <span className="rw-lookup-preview" role="status"><strong>{popover.word}</strong>{meaning}</span>;
+      })()}
     </div>}
   </div>;
 }
