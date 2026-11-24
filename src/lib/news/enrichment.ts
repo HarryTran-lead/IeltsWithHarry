@@ -614,21 +614,30 @@ export function scheduledNewsWorkSlot(now: Date): "quiz" | "image" | "photo" | "
   return "quiz";
 }
 
-async function runTranslation(db: Db, result: { translationsChecked: number; translationsAdded: number; quotaLimited: boolean; errors: string[] }) {
+type IdleResult = { translationsChecked: number; translationsAdded: number; vocabularyChecked: number; vocabularyAdded: number; quotaLimited: boolean; errors: string[] };
+/** Idle slots finish a Vietnamese translation first, then add key vocabulary to an article. */
+async function runTranslation(db: Db, result: IdleResult) {
   const { translateNextNewsArticle } = await import("./article-translation");
   const translated = await translateNextNewsArticle(db, fetch, true);
   result.translationsChecked += translated.checked;
   result.translationsAdded += translated.added;
   if (translated.error) result.errors.push(`Translation: ${translated.error}`);
   if (translated.quotaLimited) result.quotaLimited = true;
-  return translated.checked > 0;
+  if (translated.checked > 0) return true;
+  const { addVocabularyToNextArticle } = await import("./article-vocabulary");
+  const vocabulary = await addVocabularyToNextArticle(db, fetch);
+  result.vocabularyChecked += vocabulary.checked;
+  result.vocabularyAdded += vocabulary.added;
+  if (vocabulary.error) result.errors.push(`Vocabulary: ${vocabulary.error}`);
+  if (vocabulary.quotaLimited) result.quotaLimited = true;
+  return vocabulary.checked > 0;
 }
 
 export async function enrichNews({ scheduled = false, photoOnly = false }: { scheduled?: boolean; photoOnly?: boolean } = {}) {
   const db = newsAdminClient();
   await pauseLegacyPressRewrites(db);
   const settings = await loadNewsSettings(db);
-  const result = { imagesChecked: 0, imagesAdded: 0, inlineImagesChecked: 0, inlineImagesAdded: 0, coverUpgradesChecked: 0, coverUpgradesAdded: 0, quizzesChecked: 0, quizzesAdded: 0, rewritesChecked: 0, rewritesAdded: 0, translationsChecked: 0, translationsAdded: 0, aiConfigured: Boolean(process.env.GEMINI_API_KEY) || newsArticleFreeTierReady(), paused: scheduled && !settings.auto_enrich_enabled, quotaLimited: false, errors: [] as string[], quizPause: null as { reason: string | null; until: string | null } | null };
+  const result = { imagesChecked: 0, imagesAdded: 0, inlineImagesChecked: 0, inlineImagesAdded: 0, coverUpgradesChecked: 0, coverUpgradesAdded: 0, quizzesChecked: 0, quizzesAdded: 0, rewritesChecked: 0, rewritesAdded: 0, translationsChecked: 0, translationsAdded: 0, vocabularyChecked: 0, vocabularyAdded: 0, aiConfigured: Boolean(process.env.GEMINI_API_KEY) || newsArticleFreeTierReady(), paused: scheduled && !settings.auto_enrich_enabled, quotaLimited: false, errors: [] as string[], quizPause: null as { reason: string | null; until: string | null } | null };
   if (result.paused) return result;
   if (photoOnly) {
     await enrichPhotoWork(db, result);
