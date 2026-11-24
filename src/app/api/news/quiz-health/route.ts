@@ -4,6 +4,7 @@ import { newsAdminClient } from "@/lib/news/sync";
 import { loadNewsSettings } from "@/lib/news/settings";
 import { newsQuizFreeTierReady } from "@/lib/news/enrichment";
 import { newsQuestionFactoryV2Enabled } from "@/lib/news/question-factory-v2/activation";
+import { alternateV2Model, v2Model } from "@/lib/news/question-factory-v2/provider";
 import {
   QUIZ_RETRY_COUNT_COLUMN, parseQuizReason, quizHealth, type HeldQuizArticle, type QuizAttemptRow,
 } from "@/lib/news/question-factory-v2/operations";
@@ -59,7 +60,7 @@ export async function GET() {
     }));
     return NextResponse.json(quizHealth({
       now, v2Enabled: newsQuestionFactoryV2Enabled(), freeTierReady: newsQuizFreeTierReady(),
-      model: process.env.NEWS_QUESTION_FACTORY_V2_MODEL ?? "gemini-3.5-flash-lite",
+      model: alternateV2Model(v2Model()) === v2Model() ? v2Model() : `${v2Model()} (dự phòng khi quá tải: ${alternateV2Model(v2Model())})`,
       autoEnrich: settings.auto_enrich_enabled, dailyLimit: settings.daily_quiz_limit,
       recent: (recent.data ?? []) as QuizAttemptRow[], lastV2Success: (lastSuccess.data?.attempted_at as string | undefined) ?? null,
       backlog: Number(backlog.data ?? 0), waitingRetry: waiting.count ?? 0, held: heldArticles,
