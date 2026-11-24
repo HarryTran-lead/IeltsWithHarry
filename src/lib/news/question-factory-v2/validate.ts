@@ -154,6 +154,9 @@ export function validateGeneration(data: Generation, article: string, selected: 
   return { valid: valid.filter((item) => !rejectedGroups.has(item.group_id)), issues };
 }
 
+/** QA problems that make the whole review untrustworthy; a per-item mismatch only drops that item. */
+export const BLOCKING_QA_ISSUES = new Set(["QA_SCHEMA", "QA_ID", "QA_COVERAGE"]);
+
 export function validateBlindReview(review: BlindReview, candidates: Candidate[]): { accepted: Candidate[]; issues: string[] } {
   const issues: string[] = [];
   if (!Array.isArray(review?.reviews)) return { accepted: [], issues: ["QA_SCHEMA"] };
