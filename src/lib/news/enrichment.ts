@@ -208,6 +208,18 @@ export function newsArticleFreeTierReady() {
   return process.env.NEWS_ARTICLE_FREE_TIER_CONFIRMED === "true"
     && Boolean(process.env.NEWS_ARTICLE_GEMINI_API_KEY);
 }
+/**
+ * Google's own status and message for a failed request, plus how long it took, so logs can tell an overloaded
+ * model from a deadline or account problem. Google's error text never echoes the prompt; it is trimmed anyway.
+ */
+export async function providerErrorDetail(response: Response, startedAt: number) {
+  const body = await response.json().then((value: { error?: { status?: unknown; message?: unknown } }) => value.error, () => undefined);
+  const status = typeof body?.status === "string" ? body.status : "";
+  const message = typeof body?.message === "string" ? body.message : "";
+  const text = [status, message].filter(Boolean).join(": ").replace(/[\u0000-\u001f]+/g, " ").replace(/\s+/g, " ").trim().slice(0, 140);
+  return `${text || "no error body"}; after ${((Date.now() - startedAt) / 1000).toFixed(1)} s`;
+}
+
 export async function geminiJson<T>(system: string, user: string | GeminiPart[], schema: unknown, { fetcher = fetch, maxOutputTokens = 16000, temperature = 0.4, googleSearch = false, models, freeTierOnly = false, articleOnly = false, apiKey, timeoutMs = 45000, retryOutages = false }: { fetcher?: typeof fetch; maxOutputTokens?: number; temperature?: number; googleSearch?: boolean; models?: string[]; freeTierOnly?: boolean; articleOnly?: boolean; apiKey?: string; timeoutMs?: number; retryOutages?: boolean } = {}): Promise<{ model: string; data: T }> {
   if ((freeTierOnly && articleOnly) || (apiKey && (freeTierOnly || articleOnly))) throw new Error("Choose one Gemini key purpose");
   const key = apiKey ?? (articleOnly ? (newsArticleFreeTierReady() ? process.env.NEWS_ARTICLE_GEMINI_API_KEY : undefined)
@@ -227,7 +239,9 @@ export async function geminiJson<T>(system: string, user: string | GeminiPart[],
     ? [...new Set([...geminiModels(), "gemini-3.1-flash-lite"])] : geminiModels());
   for (const model of modelChoices) {
     let response: Response;
+    let startedAt = Date.now();
     for (let attempt = 0; ; attempt++) {
+      startedAt = Date.now();
       response = await fetcher(`https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent`, {
         method: "POST", signal: AbortSignal.timeout(timeoutMs), cache: "no-store",
         headers: { "x-goog-api-key": key, "Content-Type": "application/json" }, body: request,
@@ -238,7 +252,7 @@ export async function geminiJson<T>(system: string, user: string | GeminiPart[],
     }
     if (response.status === 429) { lastError = await quotaError(response); continue; }
     if (response.status === 404) { lastError = new Error(`AI model ${model} is unavailable`); continue; }
-    if (response.status >= 500) { lastError = new Error(`AI service returned HTTP ${response.status}`); continue; }
+    if (response.status >= 500) { lastError = new Error(`AI service returned HTTP ${response.status} (${model}: ${await providerErrorDetail(response, startedAt)})`); continue; }
     if (!response.ok) {
       const detail = await response.json().then((body: { error?: { message?: string } }) => body.error?.message ?? "", () => "");
       throw new Error(`AI service returned HTTP ${response.status}${detail ? `: ${detail.slice(0, 200)}` : ""}`);

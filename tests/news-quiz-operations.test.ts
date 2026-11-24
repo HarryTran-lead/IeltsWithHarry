@@ -80,6 +80,11 @@ describe("daily limit and messages", () => {
     expect(message).toBe("V2 PENDING_PROVIDER; reason=unavailable; retry=0/1; requests=1; hash=0123456789abcdef");
     expect(parseQuizReason(message)).toBe("unavailable");
     expect(parseQuizReason("reason=bogus")).toBeNull();
+    const withDetail = quizFailureMessage({ state: "PENDING_PROVIDER", audit: audit({ failure: "unavailable",
+      issues: ["Gemini returned HTTP 503 (gemini-3.5-flash-lite: UNAVAILABLE: The model is overloaded.; after 5.1 s)"] }) },
+    "unavailable", quizFailurePlan("unavailable", 0, { now }));
+    expect(withDetail).toContain("; detail=Gemini returned HTTP 503 (gemini-3.5-flash-lite: UNAVAILABLE");
+    expect(parseQuizReason(withDetail)).toBe("unavailable");
     const success = quizSuccessMessage({ questions: new Array(8).fill(null), audit: audit({ requests: 2 }) });
     expect(success).toBe("V2 READY; questions=8; requests=2; tokens=900; hash=0123456789abcdef");
     expect(parseQuizReason(success)).toBeNull();

@@ -192,6 +192,17 @@ describe("two request free-tier budget", () => {
     expect(output.audit.requests).toBe(6);
     expect(calls).toBe(7);
   });
+  it("keeps Google's error status, message and wait for diagnosis", async () => {
+    process.env.AI_FACTORY_FREE_TIER_ONLY = "true";
+    process.env.AI_FACTORY_FREE_TIER_CONFIRMED = "true";
+    process.env.AI_FACTORY_GEMINI_API_KEY = "offline-test-key";
+    const fake = (async () => Response.json({ error: { code: 503, status: "UNAVAILABLE", message: "The model is overloaded. Please try again later." } },
+      { status: 503 })) as typeof fetch;
+    await expect(strictGeminiJson("system", "user", {}, new ArticleRequestBudget(), fake))
+      .rejects.toThrow("Gemini returned HTTP 503 (gemini-3.5-flash-lite: UNAVAILABLE: The model is overloaded. Please try again later.; after");
+    const empty = (async () => new Response("", { status: 503 })) as typeof fetch;
+    await expect(strictGeminiJson("system", "user", {}, new ArticleRequestBudget(), empty)).rejects.toThrow("no error body");
+  });
   it("does not mark a malformed 4xx request as retryable", async () => {
     process.env.AI_FACTORY_FREE_TIER_ONLY = "true";
     process.env.AI_FACTORY_FREE_TIER_CONFIRMED = "true";

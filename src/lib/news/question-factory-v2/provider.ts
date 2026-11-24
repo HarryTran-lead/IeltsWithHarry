@@ -1,4 +1,4 @@
-import { newsQuizFreeTierReady } from "../enrichment";
+import { newsQuizFreeTierReady, providerErrorDetail } from "../enrichment";
 import type { TokenUsage } from "./types";
 
 export type FactoryProviderKind = "quota" | "unavailable" | "configuration" | "rejected" | "incomplete" | "provider";
@@ -34,6 +34,7 @@ export async function strictGeminiJson<T>(
   const key = process.env.AI_FACTORY_GEMINI_API_KEY;
   budget.reserve(); // Count before network activity; timeout and ambiguous failure still consume a request.
   let response: Response;
+  const startedAt = Date.now();
   try {
     response = await fetcher(`https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent`, {
       method: "POST", cache: "no-store", signal: AbortSignal.timeout(45000),
@@ -61,10 +62,14 @@ export async function strictGeminiJson<T>(
       Number.isFinite(seconds) && seconds > 0 ? seconds * 1000 : null);
   }
   // 5xx means Google could not serve the request (for example 503 overloaded); the article is not at fault.
-  if (response.status >= 500) throw new FactoryProviderError("unavailable", `Gemini returned HTTP ${response.status}`);
-  // 401/403/404 mean the key, its permissions or the model name are wrong for every article.
-  if ([401, 403, 404].includes(response.status)) throw new FactoryProviderError("configuration", `Gemini returned HTTP ${response.status}`);
-  if (!response.ok) throw new FactoryProviderError("rejected", `Gemini returned HTTP ${response.status}`);
+  if (!response.ok) {
+    // Google's own status and message, and the wait, tell an overloaded model from a deadline or account problem.
+    const detail = `Gemini returned HTTP ${response.status} (${model}: ${await providerErrorDetail(response, startedAt)})`;
+    if (response.status >= 500) throw new FactoryProviderError("unavailable", detail);
+    // 401/403/404 mean the key, its permissions or the model name are wrong for every article.
+    if ([401, 403, 404].includes(response.status)) throw new FactoryProviderError("configuration", detail);
+    throw new FactoryProviderError("rejected", detail);
+  }
   let raw: {
     candidates?: { finishReason?: string; content?: { parts?: { text?: string }[] } }[];
     usageMetadata?: { promptTokenCount?: number; candidatesTokenCount?: number; totalTokenCount?: number };
