@@ -1,7 +1,7 @@
 import type { IeltsQuestionType } from "../ielts-passage";
 import type { AdaptiveQuestion } from "../adaptive-quiz";
 
-export const FACTORY_VERSION = "daily-news-question-factory-v2.0.1";
+export const FACTORY_VERSION = "daily-news-question-factory-v2.1.0";
 export type Difficulty = "P1" | "P2" | "P3";
 export type Scope = "sentence" | "paragraph" | "multiple_paragraphs" | "whole_passage";
 export type Candidate = {

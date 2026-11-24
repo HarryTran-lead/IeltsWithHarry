@@ -1,11 +1,11 @@
 import { createHash } from "node:crypto";
 import { quizExcerpt } from "../enrichment";
 import { selectQuestionTypes, targetQuestionCount, type AdaptiveQuestion } from "../adaptive-quiz";
-import type { BlindVerdict, Candidate, FactoryResult, Generation, BlindReview, QuizFailureReason, TokenUsage } from "./types";
+import type { BlindVerdict, Candidate, FactoryResult, Generation, BlindReview, PassageMap, QuizFailureReason, TokenUsage } from "./types";
 import { FACTORY_VERSION } from "./types";
 import { ArticleRequestBudget, FactoryProviderError, alternateV2Model, strictGeminiJson, v2Model, type FactoryProviderKind } from "./provider";
-import { blindQaPayload, blindQaSystem, generationPrompt, generationSchema, qaSchema, repairPayload, repairSchema, repairSystem } from "./prompts";
-import { BLOCKING_QA_ISSUES, validateBlindReview, validateGeneration } from "./validate";
+import { MAP_SYSTEM, batchSchema, batchSystem, blindQaPayload, blindQaSystem, mapSchema, planBatches, qaSchema, repairPayload, repairSchema, repairSystem, typeCounts } from "./prompts";
+import { BLOCKING_QA_ISSUES, PARAGRAPH_MAP_ISSUES, validateBlindReview, validateGeneration, validatePassageMap } from "./validate";
 
 type Provider = typeof strictGeminiJson;
 const providerReasons: Record<FactoryProviderKind, QuizFailureReason> = {
@@ -67,8 +67,28 @@ function result(state: FactoryResult["state"], model: string, fingerprintValue: 
 
 /** Like the legacy generator: retry a Google outage up to 3 times per model, then the other Flash-Lite model. */
 export const OUTAGE_ATTEMPTS_PER_MODEL = 3;
-/** Generation and blind QA, each up to 3 attempts on two models, plus one try each for repair, repair QA and cross QA. */
-export const MAX_ARTICLE_REQUESTS = 2 * 2 * OUTAGE_ATTEMPTS_PER_MODEL + 3;
+/** Hard cap for one article: map, up to three question batches and QA with outage retries, plus repair and cross QA. */
+export const MAX_ARTICLE_REQUESTS = 30;
+/** Evidence offsets come from the exact supporting sentence, so the model never has to count characters. */
+export function withEvidenceSpans(item: Candidate, article: string): Candidate {
+  const quote = typeof item?.supporting_sentence === "string" ? item.supporting_sentence : "";
+  const start = quote ? article.indexOf(quote) : -1;
+  return { ...item, evidence_spans: start >= 0 ? [{ start, end: start + quote.length, quote }] : [] };
+}
+/** Keeps ids and group ids from different batches apart without splitting a group inside one batch. */
+function separateBatch(items: Candidate[], batch: number, usedIds: Set<string>, usedGroups: Set<string>) {
+  const groupNames = new Map<string, string>();
+  const renamed = items.filter((item) => item && typeof item === "object").map((item) => {
+    const group = String(item.group_id ?? "");
+    if (!groupNames.has(group)) groupNames.set(group, usedGroups.has(group) ? `${group}-b${batch}` : group);
+    let id = String(item.id ?? "");
+    if (usedIds.has(id)) id = `${id}-b${batch}`;
+    usedIds.add(id);
+    return { ...item, id, group_id: groupNames.get(group)! };
+  });
+  for (const name of groupNames.values()) usedGroups.add(name);
+  return renamed;
+}
 /** Items an independent second model must also answer: deep inference and every Not Given key. */
 export function riskyItem(item: Candidate) {
   return item.difficulty === "P3"
@@ -107,8 +127,10 @@ async function withOutageRetry<T>(call: (model: string) => Promise<T>, models: s
 const modelOrder = (first: string) => [...new Set([first, alternateV2Model(first)])];
 
 /**
- * One generation and one independent blind QA. A Google outage at either step is retried like the legacy
- * generator (3 attempts per model, then the other Flash-Lite model) within MAX_ARTICLE_REQUESTS.
+ * Split factory: a small passage-map request, question batches of at most five items, then independent blind
+ * QA. Small replies are less likely to be refused when Gemini is busy, and a failed batch keeps the others.
+ * A Google outage at any step is retried like the legacy generator (3 attempts per model, then the other
+ * Flash-Lite model) within MAX_ARTICLE_REQUESTS and the run time budget.
  */
 export async function generateNewsQuizV2(
   title: string, fullArticle: string, articleId: string, fetcher: typeof fetch = fetch,
@@ -124,6 +146,7 @@ export async function generateNewsQuizV2(
   const run = async () => {
     const budget = new ArticleRequestBudget(MAX_ARTICLE_REQUESTS);
     const deadline = Date.now() + v2Timing.runBudgetMs;
+    const timeLeft = () => Date.now() + v2Timing.requestTimeoutMs <= deadline;
     const target = targetQuestionCount(excerpt);
     if (target < 6) return result("PENDING_QUALITY", model, key, budget, null, null, 0, 0, [], ["PASSAGE_TOO_SHORT"]);
     const selected = selectQuestionTypes(excerpt, excerpt.match(/[\p{L}\p{N}]+/gu)?.length ?? 0, articleId);
@@ -133,19 +156,47 @@ export async function generateNewsQuizV2(
     let deterministicPass = 0;
     let usedModel = model;
     try {
-      const { reply: generated, model: generationModel } = await withOutageRetry((attemptModel) => provider<Generation>(
-        generationPrompt(selected, target, customPrompt),
-        `TITLE: ${title}\n\nARTICLE:\n${fullArticle}`,
-        generationSchema(selected), budget, fetcher, 16000, attemptModel,
+      // Step 1: the passage map alone, a small reply.
+      const { reply: mapped, model: mapModel } = await withOutageRetry((attemptModel) => provider<{ passage_map?: PassageMap; image_query?: string }>(
+        MAP_SYSTEM, `TITLE: ${title}\n\nARTICLE:\n${fullArticle}`, mapSchema, budget, fetcher, 4000, attemptModel,
       ), modelOrder(model), deadline);
-      usedModel = generationModel;
-      generationTokens = generated.usage;
-      candidateCount = Array.isArray(generated.data?.questions) ? generated.data.questions.length : 0;
+      usedModel = mapModel;
+      generationTokens = mapped.usage;
+      const passageMap = mapped.data?.passage_map as PassageMap;
+      const paragraphMapUsable = !validatePassageMap(passageMap, fullArticle)
+        .some((issue) => issue === "PASSAGE_MAP_SCHEMA" || PARAGRAPH_MAP_ISSUES.has(issue));
+      // Step 2: small batches of at most five items; an outage in one batch keeps the others.
+      const questions: Candidate[] = [];
+      const usedIds = new Set<string>();
+      const usedGroups = new Set<string>();
+      let batchOutage: unknown = null;
+      for (const [index, batch] of planBatches(selected, typeCounts(selected, target)).entries()) {
+        if (!timeLeft()) break;
+        const tested = questions.map((item) => item.supporting_sentence).filter(Boolean).slice(0, 20);
+        try {
+          const { reply } = await withOutageRetry((attemptModel) => provider<{ questions?: Candidate[] }>(
+            batchSystem(batch.types, batch.counts, customPrompt, tested, paragraphMapUsable),
+            `TITLE: ${title}\n\nARTICLE:\n${fullArticle}\n\nPASSAGE MAP (metadata, not learner content):\n${JSON.stringify(passageMap ?? {})}`,
+            batchSchema(batch.types), budget, fetcher, 6000, attemptModel,
+          ), modelOrder(usedModel), deadline);
+          generationTokens = addUsage(generationTokens, reply.usage);
+          const items = Array.isArray(reply.data?.questions) ? reply.data.questions : [];
+          questions.push(...separateBatch(items, index, usedIds, usedGroups).map((item) => withEvidenceSpans(item, fullArticle)));
+        } catch (cause) {
+          if (!(cause instanceof FactoryProviderError) || cause.kind !== "unavailable") throw cause;
+          batchOutage = cause;
+        }
+      }
+      const generated = { data: { passage_map: passageMap, questions, image_query: mapped.data?.image_query ?? "" } as Generation };
+      candidateCount = questions.length;
       const structural = validateGeneration(generated.data, fullArticle, selected);
       deterministicPass = structural.valid.length;
-      if (structural.valid.length < 6)
+      if (structural.valid.length < 6) {
+        // Too few items because Google failed a batch is an outage, not an article problem.
+        if (batchOutage) throw batchOutage;
         return result("PENDING_QUALITY", usedModel, key, budget, generationTokens, null,
           candidateCount, deterministicPass, [], [...structural.issues, "TOO_FEW_STRUCTURAL"]);
+      }
       // QA starts with the model that answered generation.
       const { reply: reviewed } = await withOutageRetry((attemptModel) => provider<BlindReview>(
         blindQaSystem, blindQaPayload(fullArticle, structural.valid), qaSchema, budget, fetcher, 6000, attemptModel,
@@ -154,7 +205,6 @@ export async function generateNewsQuizV2(
       const qa = validateBlindReview(reviewed.data, structural.valid);
       const issues = [...qa.issues];
       const blocked = qa.issues.some((issue) => BLOCKING_QA_ISSUES.has(issue));
-      const timeLeft = () => Date.now() + v2Timing.requestTimeoutMs <= deadline;
       // Optional quality steps get one attempt each; an outage there skips the step, never the article.
       const optional = async <T>(label: string, call: () => Promise<T>) => {
         try { return await call(); }
@@ -177,7 +227,8 @@ export async function generateNewsQuizV2(
         if (repaired) {
           qaTokens = addUsage(qaTokens, repaired.usage);
           const rejectedIds = new Set(rejected.map((item) => item.id));
-          const fixes = (Array.isArray(repaired.data?.questions) ? repaired.data.questions : []).filter((item) => rejectedIds.has(item?.id));
+          const fixes = (Array.isArray(repaired.data?.questions) ? repaired.data.questions : [])
+            .filter((item) => rejectedIds.has(item?.id)).map((item) => withEvidenceSpans(item, fullArticle));
           const recheck = validateGeneration({ passage_map: generated.data.passage_map, questions: [...approved, ...fixes], image_query: "" },
             fullArticle, selected);
           const fixed = recheck.valid.filter((item) => !approvedIds.has(item.id));
