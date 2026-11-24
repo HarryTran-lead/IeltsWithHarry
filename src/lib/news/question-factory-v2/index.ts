@@ -43,12 +43,12 @@ function selectPublished(items: Candidate[], target: number) {
 }
 function result(state: FactoryResult["state"], model: string, fingerprintValue: string,
   budget: ArticleRequestBudget, generationTokens: TokenUsage | null, qaTokens: TokenUsage | null,
-  candidates: number, deterministic: number, accepted: Candidate[], issues: string[], imageQuery = ""): FactoryResult {
+  candidates: number, deterministic: number, accepted: Candidate[], issues: string[], imageQuery = "", retryable = false): FactoryResult {
   return {
     state, model, questions: state === "READY" ? accepted.map(toLegacy) : [],
     imageQuery: state === "READY" ? imageQuery.replace(/[^\p{L}\p{N} -]/gu, " ").trim().slice(0, 80) : "",
     audit: {
-      version: FACTORY_VERSION, fingerprint: fingerprintValue, requests: budget.used,
+      version: FACTORY_VERSION, fingerprint: fingerprintValue, requests: budget.used, retryable,
       generation_tokens: generationTokens, qa_tokens: qaTokens,
       candidate_count: candidates, deterministic_pass: deterministic,
       qa_pass: accepted.length, issues,
@@ -115,7 +115,8 @@ export async function generateNewsQuizV2(
       const kind = cause instanceof FactoryProviderError ? cause.kind : "provider";
       return result(kind === "quota" ? "PENDING_QUOTA" : "PENDING_PROVIDER",
         model, key, budget, generationTokens, qaTokens, candidateCount, deterministicPass,
-        [], [cause instanceof Error ? cause.message : "Unknown provider failure"]);
+        [], [cause instanceof Error ? cause.message : "Unknown provider failure"], "",
+        kind === "quota" || kind === "unavailable");
     }
   };
   const promise = run();

@@ -60,6 +60,26 @@ export function weekdayName(day: string, today: string) {
   return weekdayLong[weekdayOf(day) - 1];
 }
 
+/** First day of the month `offset` months away from the month holding `day`. */
+export function addMonths(day: string, offset: number) {
+  const index = Number(day.slice(0, 4)) * 12 + Number(day.slice(5, 7)) - 1 + offset;
+  return `${Math.floor(index / 12)}-${String((index % 12) + 1).padStart(2, "0")}-01`;
+}
+
+/** "Tháng 11/2026". */
+export function monthLabel(day: string) {
+  return `Tháng ${Number(day.slice(5, 7))}/${day.slice(0, 4)}`;
+}
+
+/** Monday-first weeks covering the whole month of `day`: 4 to 6 rows of 7 days, edges spilling into the next months. */
+export function monthGrid(day: string) {
+  const first = `${day.slice(0, 7)}-01`;
+  const last = addDay(addMonths(day, 1), -1);
+  const start = mondayOf(first);
+  const days = daysBetween(start, addDay(mondayOf(last), 6)) + 1;
+  return Array.from({ length: days }, (_, index) => addDay(start, index));
+}
+
 export function weekRangeLabel(day: string) {
   const week = weekOfDay(day);
   return `${shortDate(week[0])} – ${shortDate(week[6])}`;
