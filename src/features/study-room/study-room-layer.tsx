@@ -64,6 +64,8 @@ export function StudyRoomLayer({ canManage }: { canManage: boolean }) {
   const [chatPeek, setChatPeek] = useState(false);
   const [chatPinned, setChatPinned] = useState(false);
   const [headerPeek, setHeaderPeek] = useState(false);
+  // Touch screens have no hover, so the hover-to-reveal header (with the close button) would never appear.
+  const [canHover, setCanHover] = useState(true);
   const [bounds, setBounds] = useState<Bounds | null>(null);
   const gesture = useRef<Gesture | null>(null);
   const previousBounds = useRef<Bounds | null>(null);
@@ -89,6 +91,14 @@ export function StudyRoomLayer({ canManage }: { canManage: boolean }) {
   }, []);
 
   useEffect(() => () => { void player.current?.stop(); }, []);
+
+  useEffect(() => {
+    const query = window.matchMedia("(hover: hover) and (pointer: fine)");
+    const sync = () => setCanHover(query.matches);
+    const frame = window.requestAnimationFrame(sync);
+    query.addEventListener("change", sync);
+    return () => { window.cancelAnimationFrame(frame); query.removeEventListener("change", sync); };
+  }, []);
 
   useEffect(() => {
     if (!quietPage) return;
@@ -260,15 +270,16 @@ export function StudyRoomLayer({ canManage }: { canManage: boolean }) {
   const clock = `${String(Math.floor(studySeconds / 60)).padStart(2, "0")}:${String(studySeconds % 60).padStart(2, "0")}`;
   const compactYoutube = !inRoom && pipMode === "clock" && videoMode === "youtube";
   const compactChatVisible = compactYoutube && (chatPeek || chatPinned);
-  const videoHeight = bounds ? Math.max(headerPeek ? 200 : 208, Math.ceil(bounds.width * 9 / 16)) + (headerPeek ? 47 : 2) : 210;
+  const showHeader = headerPeek || !canHover;
+  const videoHeight = bounds ? Math.max(showHeader ? 200 : 208, Math.ceil(bounds.width * 9 / 16)) + (showHeader ? 47 : 2) : 210;
   const peekHeight = compactChatVisible ? Math.max(0, Math.min(260, window.innerHeight - videoHeight - 16)) : 0;
   const windowHeight = pipMode === "bar" && !inRoom ? 47 : compactYoutube ? videoHeight + peekHeight : bounds?.height;
   const windowTop = compactYoutube && bounds ? Math.min(bounds.y, window.innerHeight - (windowHeight ?? videoHeight) - 8) : bounds?.y;
   const activePlaying = videoMode === "youtube" ? youtubePlaying : musicPlaying;
   const activeVolume = videoMode === "youtube" ? youtubeVolume : volume;
   const youtubeHidden = videoMode === "youtube" && pipMode === "bar";
-  return <div className={`study-room-host ${inRoom ? "full" : `pip pip-${pipMode}${videoMode === "youtube" ? " pip-youtube" : ""}${compactChatVisible ? " chat-peek" : ""}${compactYoutube && headerPeek ? " header-peek" : ""}`}`} style={!inRoom && bounds ? { left: bounds.x, top: windowTop, width: bounds.width, height: windowHeight } : undefined} onPointerEnter={() => { if (compactYoutube) { setHeaderPeek(true); setChatPeek(true); } }} onPointerLeave={() => { setHeaderPeek(false); setChatPeek(false); }} onFocusCapture={() => { if (compactYoutube) setHeaderPeek(true); }}>
-    {compactYoutube && !headerPeek && <div className="study-pip-header-trigger" aria-hidden="true" onPointerEnter={() => { setHeaderPeek(true); setChatPeek(true); }} />}
+  return <div className={`study-room-host ${inRoom ? "full" : `pip pip-${pipMode}${videoMode === "youtube" ? " pip-youtube" : ""}${compactChatVisible ? " chat-peek" : ""}${compactYoutube && showHeader ? " header-peek" : ""}`}`} style={!inRoom && bounds ? { left: bounds.x, top: windowTop, width: bounds.width, height: windowHeight } : undefined} onPointerEnter={() => { if (compactYoutube) { setHeaderPeek(true); setChatPeek(true); } }} onPointerLeave={(event) => { if (event.pointerType !== "mouse") return; setHeaderPeek(false); setChatPeek(false); }} onFocusCapture={() => { if (compactYoutube) setHeaderPeek(true); }}>
+    {compactYoutube && !showHeader && <div className="study-pip-header-trigger" aria-hidden="true" onPointerEnter={() => { setHeaderPeek(true); setChatPeek(true); }} />}
     {!inRoom && <div className="study-pip-header" onPointerDown={(event) => begin(event, "drag")} onPointerMove={move} onPointerUp={end} onPointerCancel={end}>
       <GripHorizontal size={17} aria-hidden="true" /><strong>Cùng học</strong><span className={sessionActive ? "active" : ""}>{clock}</span>
       <button type="button" onClick={() => setSessionActive(!sessionActive)} aria-label={sessionActive ? "Dừng tính thời gian học" : "Tiếp tục tính thời gian học"} title={sessionActive ? "Dừng học" : "Tiếp tục học"}>{sessionActive ? <Pause size={16} /> : <Play size={16} />}</button>
