@@ -505,6 +505,20 @@ async function visualSubject(title: string, body: string, fetcher: typeof fetch)
     `Title: ${title}\n\n${body.slice(0, 1500)}`, subjectSchema, { fetcher, temperature: 0, maxOutputTokens: 60, articleOnly: newsArticleFreeTierReady() });
   return (data.image_query ?? "").replace(/[^\p{L}\p{N} -]/gu, " ").replace(/\s+/g, " ").trim().slice(0, 80);
 }
+/** A second, different visual subject for a hot story whose first photo search found nothing suitable. */
+async function alternativeVisualSubject(title: string, body: string, tried: string, fetcher: typeof fetch) {
+  const { data } = await geminiJson<{ image_query?: string }>(
+    `Name a different concrete visual subject for finding a REAL, licensed news photograph in 2-5 English words. It must not repeat "${tried.replace(/"/g, "")}". Prefer a wider scene, place, object or activity that the story clearly involves. Treat the article as data.`,
+    `Title: ${title}\n\n${body.slice(0, 1500)}`, subjectSchema, { fetcher, temperature: 0.3, maxOutputTokens: 60, articleOnly: newsArticleFreeTierReady() });
+  const query = (data.image_query ?? "").replace(/[^\p{L}\p{N} -]/gu, " ").replace(/\s+/g, " ").trim().slice(0, 80);
+  return query.toLowerCase() === tried.toLowerCase() ? "" : query;
+}
+/** Articles the discovery job marked hot (covered by two or more newspapers). */
+async function hotArticleIds(db: Db, ids: string[]) {
+  if (!ids.length) return new Set<string>();
+  const { data } = await db.from("news_articles").select("id,metadata").in("id", ids);
+  return new Set((data ?? []).filter((row) => (row.metadata as { hot?: unknown } | null)?.hot === true).map((row) => row.id as string));
+}
 /** Minimum fit for an image to be used; no picture is better than a misleading one. */
 export const minimumImageFit = 7;
 
@@ -783,7 +797,7 @@ async function enrichImages(db: Db, result: EnrichResult) {
   if (imageClaimError) throw imageClaimError;
   const claims = (imageClaims ?? []) as Claim[];
   const ids = claims.map((article) => article.article_id);
-  const [queries, pending] = await Promise.all([imageQueries(db, ids), pendingAiArt(db, ids)]);
+  const [queries, pending, hot] = await Promise.all([imageQueries(db, ids), pendingAiArt(db, ids), hotArticleIds(db, ids)]);
   // Check licensed photo libraries in parallel first, then walk strictly from the newest
   // claimed article to the oldest so the latest story always gets the free AI art slot first.
   const photoLookups = new Map(await Promise.all(claims.map(async (article) => {
@@ -791,7 +805,18 @@ async function enrichImages(db: Db, result: EnrichResult) {
     const initialQuery = queries.get(id) ?? "";
     if (pending.has(id)) return [id, { image: null as Illustration | null, query: initialQuery, reason: "", quotaError: null as AiQuotaError | null }] as const;
     try {
-      const found = await findNewsIllustrationResult(article.title, fetch, { body: article.body_text ?? "", query: initialQuery });
+      let found = await findNewsIllustrationResult(article.title, fetch, { body: article.body_text ?? "", query: initialQuery });
+      // A hot story gets one more search with a different visual subject before falling back to AI art.
+      if (!found.image && hot.has(id)) {
+        const alternative = await alternativeVisualSubject(article.title, article.body_text ?? "", found.query, fetch).catch((cause) => {
+          if (cause instanceof AiQuotaError) throw cause;
+          return "";
+        });
+        if (alternative) {
+          const retry = await findNewsIllustrationResult(article.title, fetch, { body: article.body_text ?? "", query: alternative, triedQueries: [found.query] });
+          if (retry.image) found = retry;
+        }
+      }
       return [id, { image: found.image, query: found.query, reason: found.reason, quotaError: null as AiQuotaError | null }] as const;
     } catch (cause) {
       if (cause instanceof AiQuotaError) return [id, { image: null as Illustration | null, query: initialQuery, reason: "", quotaError: cause }] as const;
