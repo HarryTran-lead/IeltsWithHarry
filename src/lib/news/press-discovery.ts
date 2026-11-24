@@ -107,10 +107,10 @@ export function rankDiscoveryCandidates(candidates: DiscoveryCandidate[], publis
     || new Date(b.item.published_at).valueOf() - new Date(a.item.published_at).valueOf());
 }
 /**
- * Sample a few ranked newspaper pages without spending Gemini calls on a thin report. A hot story needs
- * 400 words, any other 500; a thin newspaper report is skipped instead of researched.
+ * Sample a few ranked newspaper pages without spending Gemini calls on a thin report: prefer 500 words,
+ * then 400, then the longest of at least 300. A report below 300 words is skipped rather than researched.
  */
-export async function evidenceRichPressLead(candidates: DiscoveryCandidate[], fetcher: typeof fetch = fetch, heat = new Map<string, LeadHeat>()) {
+export async function evidenceRichPressLead(candidates: DiscoveryCandidate[], fetcher: typeof fetch = fetch) {
   const press = candidates.filter(({ item }) => approvedPressFactSource(item.canonical_url)).slice(0, 12);
   const official = candidates.find(({ item }) => !approvedPressFactSource(item.canonical_url)) ?? null;
   if (!press.length) return official;
@@ -118,8 +118,9 @@ export async function evidenceRichPressLead(candidates: DiscoveryCandidate[], fe
     candidate, words: (await readFactualSource(candidate.item.canonical_url, fetcher)).split(/\s+/).length,
   })));
   const readable = previews.flatMap((preview) => preview.status === "fulfilled" ? [preview.value] : []);
-  // Keep the ranked order: the first report that is rich enough for its heat wins.
-  return readable.find(({ candidate, words }) => words >= (heat.get(candidate.item.canonical_hash)?.hot ? 400 : 500))?.candidate
+  return readable.find(({ words }) => words >= 500)?.candidate
+    ?? readable.find(({ words }) => words >= 400)?.candidate
+    ?? readable.filter(({ words }) => words >= 300).sort((a, b) => b.words - a.words)[0]?.candidate
     ?? official;
 }
 function repeatsHeadlinePhrase(text: string, headline: string) {
@@ -248,7 +249,7 @@ export async function discoverPressFacts(db: Db, result: DiscoveryRun, settings:
   for (let index = 0; index < batchLimit; index++) {
     const ranked = rankDiscoveryCandidates(ordered, categoryCounts, rejectedHashes, sourceCounts, heat)
       .filter(({ item }) => !seen.has(item.canonical_hash) && (!hotOnly || heat.get(item.canonical_hash)?.hot));
-    const candidate = await evidenceRichPressLead(ranked, fetcher, heat);
+    const candidate = await evidenceRichPressLead(ranked, fetcher);
     if (!candidate) break;
     selected.push(candidate);
     seen.add(candidate.item.canonical_hash);

@@ -382,13 +382,12 @@ it("ranks a hot story before a youth topic and keeps hot slots in reserve", () =
 
 it("skips thin newspaper reports instead of spending Gemini requests on them", async () => {
   const page = (words: number) => `<article><p>${Array.from({ length: words }, (_, index) => `word${index}`).join(" ")}</p></article>`;
-  const lengths: Record<string, number> = { thin: 200, mid: 450 };
+  const lengths: Record<string, number> = { thin: 200, enough: 350 };
   const fetcher = (async (url: RequestInfo | URL) => new Response(page(lengths[String(url).split("/").pop()!.replace(".html", "")] ?? 0),
     { headers: { "Content-Type": "text/html" } })) as typeof fetch;
-  const thin = [hotLead("thin", "https://news.tuoitre.vn/thin.html", "Thin report", source)];
-  expect(await evidenceRichPressLead(thin, fetcher)).toBeNull();
-  const mid = [hotLead("mid", "https://news.tuoitre.vn/mid.html", "Mid report", source)];
-  expect(await evidenceRichPressLead(mid, fetcher)).toBeNull();
-  const hotMid = await evidenceRichPressLead(mid, fetcher, new Map([["mid", { publishers: 2, frontPage: false, hot: true }]]));
-  expect(hotMid?.item.canonical_hash).toBe("mid");
+  // Before, a thin report was still researched when nothing better was found.
+  expect(await evidenceRichPressLead([hotLead("thin", "https://news.tuoitre.vn/thin.html", "Thin report", source)], fetcher)).toBeNull();
+  const official = hotLead("official", "https://baochinhphu.vn/official.htm", "Official notice", source);
+  expect((await evidenceRichPressLead([hotLead("thin", "https://news.tuoitre.vn/thin.html", "Thin report", source), official], fetcher))?.item.canonical_hash).toBe("official");
+  expect((await evidenceRichPressLead([hotLead("enough", "https://news.tuoitre.vn/enough.html", "Enough report", source)], fetcher))?.item.canonical_hash).toBe("enough");
 });
