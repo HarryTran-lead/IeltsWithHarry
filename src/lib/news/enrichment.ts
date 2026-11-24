@@ -208,7 +208,7 @@ export function newsArticleFreeTierReady() {
   return process.env.NEWS_ARTICLE_FREE_TIER_CONFIRMED === "true"
     && Boolean(process.env.NEWS_ARTICLE_GEMINI_API_KEY);
 }
-export async function geminiJson<T>(system: string, user: string | GeminiPart[], schema: unknown, { fetcher = fetch, maxOutputTokens = 16000, temperature = 0.4, googleSearch = false, models, freeTierOnly = false, articleOnly = false, apiKey, timeoutMs = 45000 }: { fetcher?: typeof fetch; maxOutputTokens?: number; temperature?: number; googleSearch?: boolean; models?: string[]; freeTierOnly?: boolean; articleOnly?: boolean; apiKey?: string; timeoutMs?: number } = {}): Promise<{ model: string; data: T }> {
+export async function geminiJson<T>(system: string, user: string | GeminiPart[], schema: unknown, { fetcher = fetch, maxOutputTokens = 16000, temperature = 0.4, googleSearch = false, models, freeTierOnly = false, articleOnly = false, apiKey, timeoutMs = 45000, retryOutages = false }: { fetcher?: typeof fetch; maxOutputTokens?: number; temperature?: number; googleSearch?: boolean; models?: string[]; freeTierOnly?: boolean; articleOnly?: boolean; apiKey?: string; timeoutMs?: number; retryOutages?: boolean } = {}): Promise<{ model: string; data: T }> {
   if ((freeTierOnly && articleOnly) || (apiKey && (freeTierOnly || articleOnly))) throw new Error("Choose one Gemini key purpose");
   const key = apiKey ?? (articleOnly ? (newsArticleFreeTierReady() ? process.env.NEWS_ARTICLE_GEMINI_API_KEY : undefined)
     : freeTierOnly ? (newsQuizFreeTierReady() ? process.env.AI_FACTORY_GEMINI_API_KEY : undefined) : process.env.GEMINI_API_KEY);
@@ -221,7 +221,9 @@ export async function geminiJson<T>(system: string, user: string | GeminiPart[],
     generationConfig: { maxOutputTokens, temperature, responseFormat: { text: { mimeType: "APPLICATION_JSON", schema } } },
   });
   let lastError: Error = new Error("AI service unavailable");
-  const modelChoices = models ?? (articleOnly || freeTierOnly
+  // Free Tier work (and callers that ask for it) retries a 503 and falls back to the second Flash-Lite model.
+  const resilient = articleOnly || freeTierOnly || retryOutages;
+  const modelChoices = models ?? (resilient
     ? [...new Set([...geminiModels(), "gemini-3.1-flash-lite"])] : geminiModels());
   for (const model of modelChoices) {
     let response: Response;
@@ -230,7 +232,7 @@ export async function geminiJson<T>(system: string, user: string | GeminiPart[],
         method: "POST", signal: AbortSignal.timeout(timeoutMs), cache: "no-store",
         headers: { "x-goog-api-key": key, "Content-Type": "application/json" }, body: request,
       });
-      if (!(articleOnly || freeTierOnly) || response.status !== 503 || attempt >= 2) break;
+      if (!resilient || response.status !== 503 || attempt >= 2) break;
       await response.body?.cancel().catch(() => undefined);
       await new Promise((resolve) => setTimeout(resolve, 750 * 2 ** attempt));
     }
@@ -612,6 +614,16 @@ export function scheduledNewsWorkSlot(now: Date): "quiz" | "image" | "photo" | "
   return "quiz";
 }
 
+async function runTranslation(db: Db, result: { translationsChecked: number; translationsAdded: number; quotaLimited: boolean; errors: string[] }) {
+  const { translateNextNewsArticle } = await import("./article-translation");
+  const translated = await translateNextNewsArticle(db, fetch, true);
+  result.translationsChecked += translated.checked;
+  result.translationsAdded += translated.added;
+  if (translated.error) result.errors.push(`Translation: ${translated.error}`);
+  if (translated.quotaLimited) result.quotaLimited = true;
+  return translated.checked > 0;
+}
+
 export async function enrichNews({ scheduled = false, photoOnly = false }: { scheduled?: boolean; photoOnly?: boolean } = {}) {
   const db = newsAdminClient();
   await pauseLegacyPressRewrites(db);
@@ -642,14 +654,8 @@ export async function enrichNews({ scheduled = false, photoOnly = false }: { sch
     if (result.inlineImagesChecked || result.coverUpgradesChecked) return result;
   }
   if (slot === "translation") {
-    const { translateNextNewsArticle } = await import("./article-translation");
-    const translated = await translateNextNewsArticle(db, fetch, true);
-    result.translationsChecked = translated.checked;
-    result.translationsAdded = translated.added;
-    if (translated.error) result.errors.push(`Translation: ${translated.error}`);
-    if (translated.quotaLimited) result.quotaLimited = true;
     // A failed legacy translation must not block a manual article run using its separate key.
-    if (translated.checked) return result;
+    if (await runTranslation(db, result)) return result;
   }
   if (slot === "discovery") {
     if (scheduled && slot === "discovery") {
@@ -662,6 +668,8 @@ export async function enrichNews({ scheduled = false, photoOnly = false }: { sch
     const { discoverPressFacts } = await import("./press-discovery");
     await discoverPressFacts(db, result, settings, fetch, scheduled);
     if (result.rewritesChecked) return result;
+    // With fewer, better articles a day, idle discovery slots finish Vietnamese translations.
+    if (await runTranslation(db, result)) return result;
   }
   if (slot !== "image") await enrichImages(db, result);
   if (!result.imagesChecked && slot !== "quiz") await enrichQuiz(db, result, settings, true);

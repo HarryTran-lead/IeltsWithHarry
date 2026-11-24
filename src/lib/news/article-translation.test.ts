@@ -2,7 +2,7 @@ import { readFile } from "node:fs/promises";
 import { join } from "node:path";
 import { PGlite } from "@electric-sql/pglite";
 import { describe, expect, it } from "vitest";
-import { completeTranslation, nextTranslationBatch, translationPlan } from "./article-translation";
+import { MAX_TRANSLATION_BATCHES, completeTranslation, nextTranslationBatch, translateRemaining, translationPlan } from "./article-translation";
 
 describe("stored news translations", () => {
   it("keeps a long paragraph and the following paragraph aligned across batches", () => {
@@ -14,6 +14,33 @@ describe("stored news translations", () => {
     expect(nextTranslationBatch(chunks, 2)).toEqual([{ paragraph: 1, text: "Second paragraph." }]);
     expect(completeTranslation(chunks, ["Đầu", "cuối", "Đoạn hai"], 2)).toEqual(["Đầu cuối", "Đoạn hai"]);
     expect(completeTranslation(chunks, ["Đầu"], 2)).toBeNull();
+  });
+
+  it("finishes a full article in one run instead of one batch per slot", async () => {
+    const source = Array.from({ length: 4 }, (_, index) => `${String(index)}${"x".repeat(2300)}`).join("\n\n");
+    const { paragraphs, chunks } = translationPlan(source);
+    expect(chunks).toHaveLength(4);
+    let requests = 0;
+    const run = await translateRemaining(chunks, [], async (texts) => { requests++; return { translations: texts.map(() => "Bản dịch"), model: "m" }; });
+    expect(requests).toBe(2);
+    expect(run.error).toBeNull();
+    expect(completeTranslation(chunks, run.output, paragraphs.length)).toHaveLength(4);
+  });
+
+  it("keeps finished batches when a later batch fails, and never exceeds the batch cap", async () => {
+    const chunks = Array.from({ length: 8 }, (_, paragraph) => ({ paragraph, text: "y".repeat(2400) }));
+    let requests = 0;
+    const failing = await translateRemaining(chunks, [], async (texts) => {
+      requests++;
+      if (requests === 2) throw new Error("503");
+      return { translations: texts.map(() => "Đã dịch"), model: "m" };
+    });
+    expect(failing.output).toHaveLength(2);
+    expect((failing.error as Error).message).toBe("503");
+    let capped = 0;
+    const partial = await translateRemaining(chunks, [], async (texts) => { capped++; return { translations: texts.map(() => "Đã dịch"), model: "m" }; });
+    expect(capped).toBe(MAX_TRANSLATION_BATCHES);
+    expect(partial.output).toHaveLength(2 * MAX_TRANSLATION_BATCHES);
   });
 
   it("preserves a translation on an unchanged feed upsert and clears it after an English edit", async () => {
