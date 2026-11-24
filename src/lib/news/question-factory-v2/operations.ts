@@ -114,6 +114,8 @@ export type QuizHealth = {
   backlog: number;
   waitingRetry: number;
   held: HeldQuizArticle[];
+  /** Added by the admin route: today's AI-written articles (Vietnam day). */
+  articles?: { written: number; limit: number; hotReserve: number; hot: number; complete: number };
 };
 
 const clock = (iso: string) => new Intl.DateTimeFormat("vi-VN", { timeZone: "Asia/Ho_Chi_Minh", hour: "2-digit", minute: "2-digit", day: "2-digit", month: "2-digit" }).format(new Date(iso));

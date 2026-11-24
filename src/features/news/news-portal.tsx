@@ -59,7 +59,7 @@ export function NewsPortal() {
 type Feed = "latest" | "hot" | "today" | "archive";
 const feeds: { id: Feed; label: string; icon: LucideIcon; hint: string }[] = [
   { id: "latest", label: "Mới nhất", icon: Clock3, hint: "Tin mới nhất có toàn văn để đọc ngay tại đây." },
-  { id: "hot", label: "Nổi bật", icon: Flame, hint: "Tin Việt Nam đang được đọc nhiều trên VnExpress và Tuổi Trẻ, viết lại bằng tiếng Anh." },
+  { id: "hot", label: "Nổi bật", icon: Flame, hint: "Tin Việt Nam trong tuần được nhiều báo cùng đưa tin hoặc lên trang nhất, viết lại bằng tiếng Anh, đã có ảnh và đề luyện." },
   { id: "today", label: "Hôm nay", icon: CalendarDays, hint: "Tin được xuất bản trong ngày hôm nay." },
   { id: "archive", label: "Lưu trữ", icon: Archive, hint: "Chọn nguồn, năm và thứ tự để xem lại tin cũ." },
 ];
@@ -95,6 +95,8 @@ function NewsMasthead({ active, home = false }: { active: NewsTab; home?: boolea
 }
 
 const PAGE_SIZE = 12;
+/** Below this many hot or front-page articles, "Nổi bật" also shows other complete articles from the week. */
+const HOT_FEED_MINIMUM = 12;
 const CATALOG_COLUMNS = "id,source_id,title,publisher,canonical_url,report_url,fact_source_urls,category,published_at,fetched_at,attribution_text,sensitive,readable,image_url,image_alt,image_credit,illustration_source_url,illustration_license,illustration_license_url,origin_region,interest_topics";
 const interestFilters = [{ id: "all", label: "Mọi chủ đề" }, { id: "study", label: "Học tập" }, { id: "career", label: "Việc làm" }, { id: "technology", label: "Công nghệ & game" }, { id: "lifestyle", label: "Du lịch & đời sống" }, { id: "sports", label: "Thể thao" }, { id: "entertainment", label: "Giải trí & phim ảnh" }, { id: "curious", label: "Chuyện vui & lạ" }, { id: "conflict", label: "Thế giới & xung đột" }] as const;
 const categoryIcons: Record<NewsCategory, LucideIcon> = { Technology: Laptop, Science: FlaskConical, Education: GraduationCap, Health: Heart, Environment: Leaf, Business: ChartNoAxesColumn, Culture: UsersRound, "World News": Globe2 };
@@ -194,13 +196,24 @@ function NewsHome() {
     setLoading(true); setError("");
     const start = new Date(); start.setHours(0,0,0,0);
     const end = new Date(start); end.setDate(end.getDate()+1);
-    // Hot stories are the Vietnamese stories the rewrite job picked from Most read and Trending lists.
+    // Hot stories are this week's complete Vietnam articles (with a quiz) that several newspapers covered
+    // or that led a newspaper's front page; until there are enough, other complete articles fill in.
     let hotIds: string[] | null = null;
     if (feed === "hot") {
-      const hot = await db.from("news_article_bodies").select("article_id").eq("ai_generated", true).order("ingested_at", { ascending: false }).limit(150);
+      const since = new Date(Date.now() - 7 * 86400000).toISOString();
+      const [written, ready] = await Promise.all([
+        db.from("news_articles").select("id,metadata").like("external_id", "press-discovery:%").eq("publication_status", "published")
+          .gte("published_at", since).order("published_at", { ascending: false }).limit(200),
+        db.rpc("news_ready_article_ids").order("article_id").range(0, 4999),
+      ]);
       if (request !== latestRequest.current) return;
-      if (hot.error) { setError(hot.error.message); setLoading(false); return; }
-      hotIds = (hot.data ?? []).map((row) => row.article_id);
+      const failure = written.error ?? ready.error;
+      if (failure) { setError(failure.message); setLoading(false); return; }
+      const readyIds = new Set(((ready.data ?? []) as { article_id: string }[]).map((row) => row.article_id));
+      const complete = ((written.data ?? []) as { id: string; metadata: { hot?: unknown; front_page?: unknown } | null }[])
+        .filter((row) => readyIds.has(row.id));
+      const flagged = complete.filter((row) => row.metadata?.hot === true || row.metadata?.front_page === true);
+      hotIds = (flagged.length >= HOT_FEED_MINIMUM ? flagged : complete).map((row) => row.id);
     }
     const archive = feed === "archive";
     // Only articles readable on site are listed; teaser-only items wait until their text arrives.
@@ -211,7 +224,7 @@ function NewsHome() {
       if (region !== "all") list = list.eq("origin_region", region);
       if (interest !== "all") list = list.contains("interest_topics", [interest]);
       if (category !== "All News") list = list.eq("category", category);
-      if (hotIds) list = list.in("id", hotIds.length ? hotIds : ["00000000-0000-0000-0000-000000000000"]);
+      if (hotIds) list = list.in("id", hotIds.length ? hotIds : ["00000000-0000-0000-0000-000000000000"]).not("image_url", "is", null);
       if (feed === "today") list = list.gte("published_at", start.toISOString()).lt("published_at", end.toISOString());
       if (archive && source !== "all") list = list.eq("source_id", source);
       if (archive && year !== "all") list = list.gte("published_at", `${year}-01-01T00:00:00Z`).lt("published_at", `${Number(year) + 1}-01-01T00:00:00Z`);
@@ -243,7 +256,7 @@ function NewsHome() {
         if (region !== "all") list = list.eq("origin_region", region);
         if (interest !== "all") list = list.contains("interest_topics", [interest]);
         if (category !== "All News") list = list.eq("category", category);
-        if (hotIds) list = list.in("id", hotIds.length ? hotIds : ["00000000-0000-0000-0000-000000000000"]);
+        if (hotIds) list = list.in("id", hotIds.length ? hotIds : ["00000000-0000-0000-0000-000000000000"]).not("image_url", "is", null);
         if (feed === "today") list = list.gte("published_at", start.toISOString()).lt("published_at", end.toISOString());
         if (archive && source !== "all") list = list.eq("source_id", source);
         if (archive && year !== "all") list = list.gte("published_at", `${year}-01-01T00:00:00Z`).lt("published_at", `${Number(year) + 1}-01-01T00:00:00Z`);

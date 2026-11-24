@@ -5,6 +5,7 @@ import { loadNewsSettings } from "@/lib/news/settings";
 import { newsQuizFreeTierReady } from "@/lib/news/enrichment";
 import { newsQuestionFactoryV2Enabled } from "@/lib/news/question-factory-v2/activation";
 import { alternateV2Model, v2Model } from "@/lib/news/question-factory-v2/provider";
+import { hotReserve, vietnamDayStart } from "@/lib/news/press-discovery";
 import {
   QUIZ_RETRY_COUNT_COLUMN, parseQuizReason, quizHealth, type HeldQuizArticle, type QuizAttemptRow,
 } from "@/lib/news/question-factory-v2/operations";
@@ -58,13 +59,30 @@ export async function GET() {
       article_id: row.article_id, title: titles.get(row.article_id) ?? row.article_id, attempted_at: row.attempted_at,
       reason: parseQuizReason(row.error_message), error_message: row.error_message,
     }));
-    return NextResponse.json(quizHealth({
+    // Today's AI-written articles: how many were hot and how many are complete (quiz and picture).
+    const { data: written, error: writtenError } = await db.from("news_articles").select("id,metadata")
+      .like("external_id", "press-discovery:%").gte("published_at", vietnamDayStart(now).toISOString()).limit(200);
+    if (writtenError) throw writtenError;
+    const writtenIds = (written ?? []).map((row) => row.id as string);
+    const [quizzed, pictured] = writtenIds.length ? await Promise.all([
+      db.from("news_auto_quiz_sets").select("article_id").in("article_id", writtenIds),
+      db.from("news_archive_catalog").select("id").in("id", writtenIds).not("image_url", "is", null),
+    ]) : [{ data: [], error: null }, { data: [], error: null }];
+    if (quizzed.error ?? pictured.error) throw quizzed.error ?? pictured.error;
+    const withQuiz = new Set((quizzed.data ?? []).map((row) => row.article_id as string));
+    const withPicture = new Set((pictured.data ?? []).map((row) => row.id as string));
+    const articles = {
+      written: writtenIds.length, limit: settings.daily_rewrite_limit, hotReserve: hotReserve(settings.daily_rewrite_limit),
+      hot: (written ?? []).filter((row) => (row.metadata as { hot?: unknown } | null)?.hot === true).length,
+      complete: writtenIds.filter((id) => withQuiz.has(id) && withPicture.has(id)).length,
+    };
+    return NextResponse.json({ ...quizHealth({
       now, v2Enabled: newsQuestionFactoryV2Enabled(), freeTierReady: newsQuizFreeTierReady(),
       model: alternateV2Model(v2Model()) === v2Model() ? v2Model() : `${v2Model()} (dự phòng khi quá tải: ${alternateV2Model(v2Model())})`,
       autoEnrich: settings.auto_enrich_enabled, dailyLimit: settings.daily_quiz_limit,
       recent: (recent.data ?? []) as QuizAttemptRow[], lastV2Success: (lastSuccess.data?.attempted_at as string | undefined) ?? null,
       backlog: Number(backlog.data ?? 0), waitingRetry: waiting.count ?? 0, held: heldArticles,
-    }), { headers: { "Cache-Control": "no-store" } });
+    }), articles }, { headers: { "Cache-Control": "no-store" } });
   } catch (cause) {
     const message = cause && typeof cause === "object" && "message" in cause && typeof cause.message === "string" ? cause.message : "Không đọc được trạng thái quiz.";
     return NextResponse.json({ error: message }, { status: 500 });
