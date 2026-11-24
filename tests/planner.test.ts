@@ -1,8 +1,8 @@
 import { describe, expect, it } from "vitest";
 import type { StudyTask } from "../src/lib/demo-data";
 import {
-  addDay, dayCounts, dayLabel, daysBetween, findPlanned, inferSkill, lateDays, minutesLabel, minutesOf, mondayOf,
-  overdueTasks, plannerSummary, seriesDates, tasksForDay, weekOfDay, weekdayOf,
+  addDay, addMonths, dayCounts, dayLabel, daysBetween, findPlanned, inferSkill, lateDays, minutesLabel, minutesOf, mondayOf,
+  monthGrid, monthLabel, overdueTasks, plannerSummary, seriesDates, tasksForDay, weekOfDay, weekdayOf,
 } from "../src/lib/planner/core";
 import { lessonInfo, lessonSlug } from "../src/lib/planner/links";
 import { buildSuggestions, focusSkills, generateWeekPlan } from "../src/lib/planner/suggest";
@@ -11,6 +11,25 @@ const task = (id: string, date: string, extra: Partial<StudyTask> = {}): StudyTa
   id, title: id, skill: "Reading", date, time: "", completed: false, priority: "Medium", ...extra,
 });
 const open = () => true;
+
+describe("planner calendar", () => {
+  it("steps whole months across year ends", () => {
+    expect(addMonths("2026-11-24", 1)).toBe("2026-12-01");
+    expect(addMonths("2026-12-31", 1)).toBe("2027-01-01");
+    expect(addMonths("2026-01-15", -1)).toBe("2025-12-01");
+    expect(monthLabel("2026-11-24")).toBe("Tháng 11/2026");
+  });
+  it("lays a month out in Monday-first weeks", () => {
+    const november = monthGrid("2026-11-24");
+    expect(november[0]).toBe("2026-10-26");
+    expect(november.at(-1)).toBe("2026-12-06");
+    expect(november.length).toBe(42);
+    expect(monthGrid("2027-02-10")).toHaveLength(28);
+    expect(monthGrid("2027-02-10")[0]).toBe("2027-02-01");
+    expect(monthGrid("2026-02-10")).toHaveLength(35);
+    expect(monthGrid("2026-06-01")[0]).toBe("2026-06-01");
+  });
+});
 
 describe("planner dates", () => {
   it("does day arithmetic on calendar days", () => {
