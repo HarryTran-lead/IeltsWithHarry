@@ -46,7 +46,47 @@ export function youthRelevanceForTitle(title: string, category: string) {
   const topic = /\b(student|school|university|education|youth|young|career|job|startup|gaming|games?|esports?|music|concert|film|cinema|festival|travel|tourism|sport|football|food|fashion|creator|streaming|social media|digital|technology|apps?|ai|mental health|environment|sinh vien|hoc sinh|truong hoc|dai hoc|giao duc|viec lam|nghe nghiep|khoi nghiep|tro choi|the thao dien tu|am nhac|hoa nhac|phim|le hoi|du lich|bong da|am thuc|thoi trang|mang xa hoi|chuyen doi so|cong nghe|suc khoe tinh than|moi truong)\b/i;
   return (category === "Education" ? 2 : 0) + (topic.test(normalized) ? 3 : 0);
 }
-export function rankDiscoveryCandidates(candidates: DiscoveryCandidate[], published: Map<string, number>, rejectedHashes: Set<string>, publishedSources = new Map<string, number>()) {
+/** Main front-page feeds of each newspaper: a story there is prominent even before another paper covers it. */
+const FRONT_PAGE_FEEDS = new Set(["https://e.vnexpress.net/rss/news.rss", "https://news.tuoitre.vn/rss", "https://baochinhphu.vn/home.rss"]);
+const TITLE_STOPWORDS = new Set(("about after again against also amid among announce announces before being between from have into more most news over says said than that their there these this those through under until upon what when where which while will with year years vietnam vietnamese viet").split(" "));
+/** Newspaper behind a URL: e.vnexpress.net and vnexpress.net are one publisher. */
+export function leadPublisher(url: string) {
+  try {
+    const labels = new URL(url).hostname.replace(/^www\./, "").split(".");
+    return labels.slice(/^(gov|com|org|edu)$/.test(labels[labels.length - 2] ?? "") ? -3 : -2).join(".");
+  } catch { return ""; }
+}
+/** Distinctive title words, accent-free so Vietnamese and English spellings of a place can meet. */
+export function leadTitleTokens(title: string) {
+  const plain = title.normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/đ/gi, "d").toLowerCase();
+  return new Set((plain.match(/[a-z0-9]+/g) ?? []).filter((word) => (/^\d{2,}$/.test(word) || word.length >= 4) && !TITLE_STOPWORDS.has(word)));
+}
+export function sameEventTitles(a: Set<string>, b: Set<string>) {
+  let shared = 0;
+  for (const word of a) if (b.has(word)) shared++;
+  return shared >= 3 && shared / Math.max(1, Math.min(a.size, b.size)) >= 0.5;
+}
+export type LeadHeat = { publishers: number; frontPage: boolean; hot: boolean };
+/**
+ * How widely a story is covered among the leads fetched in this run, at no Gemini cost: a story that
+ * two or more different newspapers report is hot; one on a newspaper's front-page feed is prominent.
+ */
+export function leadHeat(candidates: DiscoveryCandidate[]) {
+  const rows = candidates.map(({ item, source }) => ({ item, source, publisher: leadPublisher(item.canonical_url), tokens: leadTitleTokens(item.title ?? "") }));
+  const heat = new Map<string, LeadHeat>();
+  for (const row of rows) {
+    const publishers = new Set([row.publisher]);
+    for (const other of rows) if (other.publisher && other.publisher !== row.publisher && sameEventTitles(row.tokens, other.tokens)) publishers.add(other.publisher);
+    const frontPage = Boolean(row.source.feed_url && FRONT_PAGE_FEEDS.has(row.source.feed_url));
+    heat.set(row.item.canonical_hash, { publishers: publishers.size, frontPage, hot: publishers.size >= 2 });
+  }
+  return heat;
+}
+/** Article slots kept for hot stories each day; the rest of the limit is for a varied mix. */
+export function hotReserve(dailyLimit: number) {
+  return Math.min(5, Math.floor(dailyLimit / 3));
+}
+export function rankDiscoveryCandidates(candidates: DiscoveryCandidate[], published: Map<string, number>, rejectedHashes: Set<string>, publishedSources = new Map<string, number>(), heat = leadHeat(candidates)) {
   const rejected = new Map<string, number>();
   const rejectedSources = new Map<string, number>();
   for (const { item } of candidates) if (rejectedHashes.has(item.canonical_hash)) {
@@ -59,14 +99,21 @@ export function rankDiscoveryCandidates(candidates: DiscoveryCandidate[], publis
     + 2 * (publishedSources.get(source.name) ?? 0)
     + Math.min(rejectedSources.get(source.name) ?? 0, 2)
     - youthRelevanceForTitle(item.title, item.category)
-    - 6 * Number(approvedPressFactSource(item.canonical_url));
+    - 6 * Number(approvedPressFactSource(item.canonical_url))
+    // Hot stories go first so every story several newspapers cover gets an article.
+    - 10 * Number(heat.get(item.canonical_hash)?.hot ?? false)
+    - 3 * Number(heat.get(item.canonical_hash)?.frontPage ?? false);
   return candidates.sort((a, b) => score(a) - score(b)
     || new Date(b.item.published_at).valueOf() - new Date(a.item.published_at).valueOf());
 }
-/** Sample a few ranked newspaper pages without spending Gemini calls on a thin report. */
+/**
+ * Sample a few ranked newspaper pages without spending Gemini calls on a thin report: prefer 500 words,
+ * then 400, then the longest of at least 300. A report below 300 words is skipped rather than researched.
+ */
 export async function evidenceRichPressLead(candidates: DiscoveryCandidate[], fetcher: typeof fetch = fetch) {
   const press = candidates.filter(({ item }) => approvedPressFactSource(item.canonical_url)).slice(0, 12);
-  if (!press.length) return candidates[0];
+  const official = candidates.find(({ item }) => !approvedPressFactSource(item.canonical_url)) ?? null;
+  if (!press.length) return official;
   const previews = await Promise.allSettled(press.map(async (candidate) => ({
     candidate, words: (await readFactualSource(candidate.item.canonical_url, fetcher)).split(/\s+/).length,
   })));
@@ -74,7 +121,7 @@ export async function evidenceRichPressLead(candidates: DiscoveryCandidate[], fe
   return readable.find(({ words }) => words >= 500)?.candidate
     ?? readable.find(({ words }) => words >= 400)?.candidate
     ?? readable.filter(({ words }) => words >= 300).sort((a, b) => b.words - a.words)[0]?.candidate
-    ?? candidates[0];
+    ?? official;
 }
 function repeatsHeadlinePhrase(text: string, headline: string) {
   const words = (value: string) => value.toLocaleLowerCase("en").match(/[a-z0-9]+/g) ?? [];
@@ -195,10 +242,13 @@ export async function discoverPressFacts(db: Db, result: DiscoveryRun, settings:
   if (existing.error || skipped.error) throw existing.error ?? skipped.error;
   const seen = new Set([...(existing.data ?? []), ...(skipped.data ?? [])].map((row) => row.canonical_hash));
   const rejectedHashes = new Set((skipped.data ?? []).map((row) => row.canonical_hash));
+  const heat = leadHeat(ordered);
+  // Once the varied share of today's limit is used, only hot stories may take the reserved slots.
+  const hotOnly = (drafts.count ?? 0) >= settings.daily_rewrite_limit - hotReserve(settings.daily_rewrite_limit);
   const selected: DiscoveryCandidate[] = [];
   for (let index = 0; index < batchLimit; index++) {
-    const ranked = rankDiscoveryCandidates(ordered, categoryCounts, rejectedHashes, sourceCounts)
-      .filter(({ item }) => !seen.has(item.canonical_hash));
+    const ranked = rankDiscoveryCandidates(ordered, categoryCounts, rejectedHashes, sourceCounts, heat)
+      .filter(({ item }) => !seen.has(item.canonical_hash) && (!hotOnly || heat.get(item.canonical_hash)?.hot));
     const candidate = await evidenceRichPressLead(ranked, fetcher);
     if (!candidate) break;
     selected.push(candidate);
@@ -227,6 +277,8 @@ export async function discoverPressFacts(db: Db, result: DiscoveryRun, settings:
         origin_region: source.origin_region ?? "vietnam", interest_topics: item.interest_topics,
         publication_status: "review", sensitive: false, attribution_text: "Independent factual sources in editorial dossier",
         metadata: { discovery_url: item.canonical_url, discovery_source: source.name,
+          hot: heat.get(item.canonical_hash)?.hot ?? false, hot_publishers: heat.get(item.canonical_hash)?.publishers ?? 1,
+          front_page: heat.get(item.canonical_hash)?.frontPage ?? false,
           fact_source_urls: [...new Set(written.dossier.facts.map((fact) => fact.source_url))] },
       });
       if (articleError) throw articleError;

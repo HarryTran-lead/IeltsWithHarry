@@ -52,7 +52,7 @@ export function AdminNewsQuizHealth({ compact = false }: { compact?: boolean }) 
   }
 
   return <section className="card admin-news-panel admin-news-quiz-health">
-    <h3>Tình trạng tạo quiz tự động</h3>
+    <h3>Tình trạng Daily News tự động</h3>
     {alerts}
     {health.status === "ok" && <AdminNotice tone="success">Đang hoạt động bình thường.</AdminNotice>}
     {notice && <AdminNotice tone="success">{notice}</AdminNotice>}
@@ -68,6 +68,9 @@ export function AdminNewsQuizHealth({ compact = false }: { compact?: boolean }) 
       Hôm nay đã dùng <b>{health.today.counted}/{health.today.limit}</b> lượt hạn mức (lượt Gemini quá tải, hết hạn mức hoặc lỗi cấu hình không bị tính).
       {failures && <><br/>Lỗi trong ngày: {failures}</>}
     </p>
+    {health.articles && <p>
+      Bài AI viết hôm nay: <b>{health.articles.written}/{health.articles.limit}</b> (dành {health.articles.hotReserve} chỗ cho tin hot) · Tin hot: <b>{health.articles.hot}</b> · Đủ bộ ảnh và quiz: <b>{health.articles.complete}</b>
+    </p>}
     <p>Tự ngắt: {health.breaker.open && health.breaker.until ? `đang tạm dừng đến ${when(health.breaker.until)}` : "không kích hoạt"}</p>
     <div className="admin-news-actions">
       <button type="button" className="button subtle" disabled={busy} onClick={() => void load()}><RefreshCcw size={15}/> Tải lại</button>
