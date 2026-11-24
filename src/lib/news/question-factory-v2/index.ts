@@ -1,13 +1,17 @@
 import { createHash } from "node:crypto";
 import { quizExcerpt } from "../enrichment";
 import { selectQuestionTypes, targetQuestionCount, type AdaptiveQuestion } from "../adaptive-quiz";
-import type { Candidate, FactoryResult, Generation, BlindReview, TokenUsage } from "./types";
+import type { Candidate, FactoryResult, Generation, BlindReview, QuizFailureReason, TokenUsage } from "./types";
 import { FACTORY_VERSION } from "./types";
-import { ArticleRequestBudget, FactoryProviderError, strictGeminiJson } from "./provider";
+import { ArticleRequestBudget, FactoryProviderError, strictGeminiJson, type FactoryProviderKind } from "./provider";
 import { blindQaPayload, blindQaSystem, generationPrompt, generationSchema, qaSchema } from "./prompts";
 import { validateBlindReview, validateGeneration } from "./validate";
 
 type Provider = typeof strictGeminiJson;
+const providerReasons: Record<FactoryProviderKind, QuizFailureReason> = {
+  quota: "quota", unavailable: "unavailable", configuration: "config",
+  rejected: "rejected", incomplete: "incomplete", provider: "internal",
+};
 const successCache = new Map<string, FactoryResult>();
 const inFlight = new Map<string, Promise<FactoryResult>>();
 const MAX_CACHE = 64;
@@ -43,12 +47,17 @@ function selectPublished(items: Candidate[], target: number) {
 }
 function result(state: FactoryResult["state"], model: string, fingerprintValue: string,
   budget: ArticleRequestBudget, generationTokens: TokenUsage | null, qaTokens: TokenUsage | null,
-  candidates: number, deterministic: number, accepted: Candidate[], issues: string[], imageQuery = "", retryable = false): FactoryResult {
+  candidates: number, deterministic: number, accepted: Candidate[], issues: string[], imageQuery = "",
+  providerFailure: { reason: QuizFailureReason; retryAfterMs: number | null } | null = null): FactoryResult {
+  const failure: QuizFailureReason | null = state === "READY" ? null : providerFailure?.reason
+    ?? (issues.includes("PASSAGE_TOO_SHORT") ? "too_short" : "quality");
   return {
     state, model, questions: state === "READY" ? accepted.map(toLegacy) : [],
     imageQuery: state === "READY" ? imageQuery.replace(/[^\p{L}\p{N} -]/gu, " ").trim().slice(0, 80) : "",
     audit: {
-      version: FACTORY_VERSION, fingerprint: fingerprintValue, requests: budget.used, retryable,
+      version: FACTORY_VERSION, fingerprint: fingerprintValue, requests: budget.used,
+      retryable: failure === "quota" || failure === "unavailable", failure,
+      retry_after_ms: providerFailure?.retryAfterMs ?? null,
       generation_tokens: generationTokens, qa_tokens: qaTokens,
       candidate_count: candidates, deterministic_pass: deterministic,
       qa_pass: accepted.length, issues,
@@ -116,7 +125,7 @@ export async function generateNewsQuizV2(
       return result(kind === "quota" ? "PENDING_QUOTA" : "PENDING_PROVIDER",
         model, key, budget, generationTokens, qaTokens, candidateCount, deterministicPass,
         [], [cause instanceof Error ? cause.message : "Unknown provider failure"], "",
-        kind === "quota" || kind === "unavailable");
+        { reason: providerReasons[kind], retryAfterMs: cause instanceof FactoryProviderError ? cause.retryAfterMs : null });
     }
   };
   const promise = run();

@@ -23,6 +23,7 @@ import { YoutubeLessonsAdmin } from "./youtube-lessons";
 import { VoaDictationAdmin } from "./voa-dictation-admin";
 import { AdminAnalytics } from "./admin-analytics";
 import { AdminAudit, AdminBroadcast, AdminLearnerDetail, AdminLearners } from "./admin-learners";
+import { AdminNewsQuizHealth } from "./admin-news-quiz-health";
 
 type Course = { id: string; stage_id: string; slug: string; title: string; description: string; published: boolean };
 type Unit = { id: string; course_id: string; slug: string; title: string; published: boolean };
@@ -219,7 +220,7 @@ export function AdminEditor() {
     tabs={tabGroups ? <AdminTabs label={`Mục trong ${page.title}`} groups={tabGroups} /> : undefined}>
     {error && <AdminNotice tone="error">{error}</AdminNotice>}
     {loading && (section === "overview" || section === "curriculum" || currentSkill) ? <section className="card admin-card admin-loading" role="status"><span className="skeleton" /><span className="skeleton" /><span className="skeleton" />Đang tải dữ liệu quản trị…</section> : <>
-    {section === "overview" && <><div className="admin-stats stagger">
+    {section === "overview" && <><AdminNewsQuizHealth compact /><div className="admin-stats stagger">
       <article><HeadIcon icon={FolderTree} /><span>Khóa học</span><strong>{courses.length}</strong><small>{published(courses)} đã xuất bản</small></article>
       <article><HeadIcon icon={Layers} tone="sky" /><span>Unit</span><strong>{units.length}</strong><small>{published(units)} đã xuất bản</small></article>
       <article><HeadIcon icon={BookOpen} tone="coral" /><span>Bài học</span><strong>{lessons.length}</strong><small>{published(lessons)} đã xuất bản</small></article>

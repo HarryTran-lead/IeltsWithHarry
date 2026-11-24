@@ -55,6 +55,10 @@ export type FactoryResult = {
     requests: number;
     /** True when the provider was unavailable or rate limited, so the article itself is not at fault. */
     retryable: boolean;
+    /** Why a run did not publish; null when READY. */
+    failure: QuizFailureReason | null;
+    /** Provider-suggested wait (Retry-After) for a quota failure. */
+    retry_after_ms: number | null;
     generation_tokens: TokenUsage | null;
     qa_tokens: TokenUsage | null;
     candidate_count: number;
@@ -63,4 +67,13 @@ export type FactoryResult = {
     issues: string[];
   };
 };
+export type QuizFailureReason =
+  | "unavailable" // 5xx, timeout or network error at Google
+  | "quota"       // HTTP 429
+  | "config"      // missing Free Tier confirmation, invalid model, 401/403/404
+  | "rejected"    // any other 4xx, for example a schema Gemini does not accept
+  | "incomplete"  // truncated, empty or non-JSON reply
+  | "quality"     // too few questions passed structural checks or blind QA
+  | "too_short"   // passage too short for six questions
+  | "internal";   // our own failure, such as the request budget guard
 export type TokenUsage = { prompt: number | null; candidates: number | null; total: number | null };

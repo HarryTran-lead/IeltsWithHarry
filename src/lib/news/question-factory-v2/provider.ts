@@ -1,8 +1,9 @@
 import { newsQuizFreeTierReady } from "../enrichment";
 import type { TokenUsage } from "./types";
 
+export type FactoryProviderKind = "quota" | "unavailable" | "configuration" | "rejected" | "incomplete" | "provider";
 export class FactoryProviderError extends Error {
-  constructor(readonly kind: "quota" | "unavailable" | "provider" | "configuration", message: string) { super(message); }
+  constructor(readonly kind: FactoryProviderKind, message: string, readonly retryAfterMs: number | null = null) { super(message); }
 }
 export class ArticleRequestBudget {
   private count = 0;
@@ -45,24 +46,28 @@ export async function strictGeminiJson<T>(
       : /requests? per day|\bRPD\b/i.test(detail) ? "RPD"
         : /requests? per minute|\bRPM\b/i.test(detail) ? "RPM" : "UNKNOWN";
     const retryAfter = response.headers.get("retry-after");
-    throw new FactoryProviderError("quota", `Gemini quota ${metric}; retry-after=${retryAfter ?? "unspecified"}`);
+    const seconds = Number(retryAfter);
+    throw new FactoryProviderError("quota", `Gemini quota ${metric}; retry-after=${retryAfter ?? "unspecified"}`,
+      Number.isFinite(seconds) && seconds > 0 ? seconds * 1000 : null);
   }
   // 5xx means Google could not serve the request (for example 503 overloaded); the article is not at fault.
   if (response.status >= 500) throw new FactoryProviderError("unavailable", `Gemini returned HTTP ${response.status}`);
-  if (!response.ok) throw new FactoryProviderError("provider", `Gemini returned HTTP ${response.status}`);
+  // 401/403/404 mean the key, its permissions or the model name are wrong for every article.
+  if ([401, 403, 404].includes(response.status)) throw new FactoryProviderError("configuration", `Gemini returned HTTP ${response.status}`);
+  if (!response.ok) throw new FactoryProviderError("rejected", `Gemini returned HTTP ${response.status}`);
   let raw: {
     candidates?: { finishReason?: string; content?: { parts?: { text?: string }[] } }[];
     usageMetadata?: { promptTokenCount?: number; candidatesTokenCount?: number; totalTokenCount?: number };
   };
   try { raw = await response.json(); }
-  catch { throw new FactoryProviderError("provider", "Gemini returned invalid JSON"); }
+  catch { throw new FactoryProviderError("incomplete", "Gemini returned invalid JSON"); }
   const candidate = raw.candidates?.[0];
-  if (candidate?.finishReason !== "STOP") throw new FactoryProviderError("provider", "Gemini response incomplete");
+  if (candidate?.finishReason !== "STOP") throw new FactoryProviderError("incomplete", "Gemini response incomplete");
   const content = candidate.content?.parts?.map((part) => part.text ?? "").join("");
-  if (!content) throw new FactoryProviderError("provider", "Gemini returned empty content");
+  if (!content) throw new FactoryProviderError("incomplete", "Gemini returned empty content");
   let data: T;
   try { data = JSON.parse(content) as T; }
-  catch { throw new FactoryProviderError("provider", "Gemini response content is not JSON"); }
+  catch { throw new FactoryProviderError("incomplete", "Gemini response content is not JSON"); }
   const usage = raw.usageMetadata
     ? {
       prompt: raw.usageMetadata.promptTokenCount ?? null,
