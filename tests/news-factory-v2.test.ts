@@ -3,8 +3,8 @@ import { ieltsQuestionTypes } from "../src/lib/news/ielts-passage";
 import { ArticleRequestBudget, FactoryProviderError, strictGeminiJson } from "../src/lib/news/question-factory-v2/provider";
 import { generateNewsQuizV2 } from "../src/lib/news/question-factory-v2";
 import { selectQuestionTypes } from "../src/lib/news/adaptive-quiz";
-import { blindQaPayload, generationPrompt } from "../src/lib/news/question-factory-v2/prompts";
-import { validateBlindReview, validateCandidate, validateGeneration } from "../src/lib/news/question-factory-v2/validate";
+import { blindQaPayload, generationPrompt, generationSchema } from "../src/lib/news/question-factory-v2/prompts";
+import { paragraphLabel, validateBlindReview, validateCandidate, validateGeneration, validatePassageMap } from "../src/lib/news/question-factory-v2/validate";
 import { article, map, positiveFixtures } from "./fixtures/news-factory-v2";
 
 describe("Question Factory V2 editorial corpus", () => {
@@ -87,6 +87,42 @@ describe("Question Factory V2 editorial corpus", () => {
   });
 });
 
+describe("passage map paragraph labels", () => {
+  it("normalises common model spellings to source-order letters", () => {
+    expect(["A", "b", "B.", "(C)", "Paragraph D", "1", "P2", "Paragraph 3", "intro"].map(paragraphLabel))
+      .toEqual(["A", "B", "B", "C", "D", "A", "B", "C", "I"]);
+  });
+  it("accepts a map whose ids came back as P1, P2 ... (the production failure)", () => {
+    const numbered = { ...map, paragraphs: map.paragraphs.map((paragraph, index) => ({ ...paragraph, id: `P${index + 1}` })) };
+    expect(validatePassageMap(numbered, article)).not.toContain("PASSAGE_MAP_PARAGRAPH");
+  });
+  it("keeps valid questions when only paragraph metadata is wrong, but drops paragraph matching", () => {
+    const broken = { ...map, paragraphs: map.paragraphs.map((paragraph) => ({ ...paragraph, main_idea: "" })) };
+    const mcq = positiveFixtures.filter((item) => item.type === "mcq");
+    const info = positiveFixtures.filter((item) => item.type === "matching_information");
+    const result = validateGeneration({ passage_map: broken, questions: [...mcq, ...info], image_query: "" },
+      article, ["mcq", "matching_information"]);
+    expect(result.issues).toContain("PASSAGE_MAP_PARAGRAPH");
+    expect(result.valid.map((item) => item.id)).toEqual(mcq.map((item) => item.id));
+    expect(result.issues.some((issue) => issue.endsWith("PARAGRAPH_MAP_UNRELIABLE"))).toBe(true);
+  });
+  it("still rejects everything when the map shape itself is broken", () => {
+    const mcq = positiveFixtures.filter((item) => item.type === "mcq");
+    const result = validateGeneration({ passage_map: { ...map, paragraphs: undefined } as unknown as typeof map,
+      questions: mcq, image_query: "" }, article, ["mcq"]);
+    expect(result.valid).toEqual([]);
+    expect(result.issues).toContain("PASSAGE_MAP_SCHEMA");
+  });
+  it("tells the model the exact id format in both prompt and schema", () => {
+    expect(generationPrompt(["mcq"], 6, "")).toContain("exactly one capital letter");
+    const schema = generationSchema(["mcq"]) as unknown as { properties: { passage_map: { properties: {
+      paragraphs: { maxItems: number; items: { properties: { id: { enum: string[] } } } } } } } };
+    const paragraphs = schema.properties.passage_map.properties.paragraphs;
+    expect(paragraphs.maxItems).toBe(12);
+    expect(paragraphs.items.properties.id.enum).toEqual(["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L"]);
+  });
+});
+
 describe("two request free-tier budget", () => {
   const oldEnv = {
     only: process.env.AI_FACTORY_FREE_TIER_ONLY,
@@ -110,6 +146,31 @@ describe("two request free-tier budget", () => {
     await expect(strictGeminiJson("system", "user", {}, budget, fake)).rejects.toThrow("budget exhausted");
     expect(calls).toBe(2);
     expect(budget.used).toBe(2);
+  });
+  it("marks a Gemini 503 as a retryable outage instead of an article failure", async () => {
+    process.env.AI_FACTORY_FREE_TIER_ONLY = "true";
+    process.env.AI_FACTORY_FREE_TIER_CONFIRMED = "true";
+    process.env.AI_FACTORY_GEMINI_API_KEY = "offline-test-key";
+    let calls = 0;
+    const fake = (async () => { calls++; return new Response("", { status: 503 }); }) as typeof fetch;
+    await expect(strictGeminiJson("system", "user", {}, new ArticleRequestBudget(), fake))
+      .rejects.toMatchObject({ kind: "unavailable" });
+    const passage = article + " " + "Residents compared monthly readings and kept printed records for later discussion. ".repeat(40);
+    const output = await generateNewsQuizV2("Outage", passage, "outage-case", fake);
+    expect(output.state).toBe("PENDING_PROVIDER");
+    expect(output.audit.retryable).toBe(true);
+    expect(output.audit.requests).toBe(1);
+    expect(calls).toBe(2);
+  });
+  it("does not mark a malformed 4xx request as retryable", async () => {
+    process.env.AI_FACTORY_FREE_TIER_ONLY = "true";
+    process.env.AI_FACTORY_FREE_TIER_CONFIRMED = "true";
+    process.env.AI_FACTORY_GEMINI_API_KEY = "offline-test-key";
+    const fake = (async () => new Response("", { status: 400 })) as typeof fetch;
+    const passage = article + " " + "Residents compared monthly readings and kept printed records for later discussion. ".repeat(40);
+    const output = await generateNewsQuizV2("Bad request", passage, "bad-request-case", fake);
+    expect(output.state).toBe("PENDING_PROVIDER");
+    expect(output.audit.retryable).toBe(false);
   });
   it("halts before any call without confirmed free tier", async () => {
     delete process.env.AI_FACTORY_FREE_TIER_CONFIRMED;
