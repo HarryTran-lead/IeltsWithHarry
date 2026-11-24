@@ -3,7 +3,7 @@ import { quizExcerpt } from "../enrichment";
 import { selectQuestionTypes, targetQuestionCount, type AdaptiveQuestion } from "../adaptive-quiz";
 import type { Candidate, FactoryResult, Generation, BlindReview, QuizFailureReason, TokenUsage } from "./types";
 import { FACTORY_VERSION } from "./types";
-import { ArticleRequestBudget, FactoryProviderError, strictGeminiJson, type FactoryProviderKind } from "./provider";
+import { ArticleRequestBudget, FactoryProviderError, alternateV2Model, strictGeminiJson, v2Model, type FactoryProviderKind } from "./provider";
 import { blindQaPayload, blindQaSystem, generationPrompt, generationSchema, qaSchema } from "./prompts";
 import { validateBlindReview, validateGeneration } from "./validate";
 
@@ -65,13 +65,19 @@ function result(state: FactoryResult["state"], model: string, fingerprintValue: 
   };
 }
 
-/** One generation request and one independent blind QA request; no top-up or retry. */
+/** Pause before the single outage retry; tests set it to 0. */
+export const v2Timing = { outageRetryDelayMs: 3000 };
+
+/**
+ * One generation request and one independent blind QA request. Only when generation fails with an
+ * outage (5xx, timeout) and no reply, generation is tried once more on the other Flash-Lite model.
+ */
 export async function generateNewsQuizV2(
   title: string, fullArticle: string, articleId: string, fetcher: typeof fetch = fetch,
   customPrompt = "", provider: Provider = strictGeminiJson,
 ): Promise<FactoryResult> {
   const excerpt = quizExcerpt(fullArticle);
-  const model = process.env.NEWS_QUESTION_FACTORY_V2_MODEL ?? "gemini-3.5-flash-lite";
+  const model = v2Model();
   const key = fingerprint(articleId, title, fullArticle, customPrompt, model);
   const cached = successCache.get(key);
   if (cached) return { ...cached, audit: { ...cached.audit, requests: 0 } };
@@ -86,21 +92,30 @@ export async function generateNewsQuizV2(
     let qaTokens: TokenUsage | null = null;
     let candidateCount = 0;
     let deterministicPass = 0;
+    let usedModel = model;
     try {
-      const generated = await provider<Generation>(
+      const generate = () => provider<Generation>(
         generationPrompt(selected, target, customPrompt),
         `TITLE: ${title}\n\nARTICLE:\n${fullArticle}`,
-        generationSchema(selected), budget, fetcher, 16000,
+        generationSchema(selected), budget, fetcher, 16000, usedModel,
       );
+      let generated: Awaited<ReturnType<typeof generate>>;
+      try { generated = await generate(); }
+      catch (cause) {
+        if (!(cause instanceof FactoryProviderError && cause.kind === "unavailable") || !budget.grantOutageRetry()) throw cause;
+        await new Promise((resolve) => setTimeout(resolve, v2Timing.outageRetryDelayMs));
+        usedModel = alternateV2Model(model);
+        generated = await generate();
+      }
       generationTokens = generated.usage;
       candidateCount = Array.isArray(generated.data?.questions) ? generated.data.questions.length : 0;
       const structural = validateGeneration(generated.data, fullArticle, selected);
       deterministicPass = structural.valid.length;
       if (structural.valid.length < 6)
-        return result("PENDING_QUALITY", model, key, budget, generationTokens, null,
+        return result("PENDING_QUALITY", usedModel, key, budget, generationTokens, null,
           candidateCount, deterministicPass, [], [...structural.issues, "TOO_FEW_STRUCTURAL"]);
       const reviewed = await provider<BlindReview>(
-        blindQaSystem, blindQaPayload(fullArticle, structural.valid), qaSchema, budget, fetcher, 6000,
+        blindQaSystem, blindQaPayload(fullArticle, structural.valid), qaSchema, budget, fetcher, 6000, usedModel,
       );
       qaTokens = reviewed.usage;
       const qa = validateBlindReview(reviewed.data, structural.valid);
@@ -113,7 +128,7 @@ export async function generateNewsQuizV2(
       if (direct > Math.floor(chosen.length / 4)) issues.push("TOO_MANY_DIRECT");
       if (skills.size < 2 || areas.size < 2) issues.push("LOW_DIVERSITY");
       const state = issues.length ? "PENDING_QUALITY" : "READY";
-      const output = result(state, model, key, budget, generationTokens, qaTokens,
+      const output = result(state, usedModel, key, budget, generationTokens, qaTokens,
         candidateCount, deterministicPass, chosen, [...structural.issues, ...issues], generated.data.image_query);
       if (state === "READY") {
         if (successCache.size >= MAX_CACHE) successCache.delete(successCache.keys().next().value!);
@@ -123,7 +138,7 @@ export async function generateNewsQuizV2(
     } catch (cause) {
       const kind = cause instanceof FactoryProviderError ? cause.kind : "provider";
       return result(kind === "quota" ? "PENDING_QUOTA" : "PENDING_PROVIDER",
-        model, key, budget, generationTokens, qaTokens, candidateCount, deterministicPass,
+        usedModel, key, budget, generationTokens, qaTokens, candidateCount, deterministicPass,
         [], [cause instanceof Error ? cause.message : "Unknown provider failure"], "",
         { reason: providerReasons[kind], retryAfterMs: cause instanceof FactoryProviderError ? cause.retryAfterMs : null });
     }

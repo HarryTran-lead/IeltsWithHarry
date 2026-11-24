@@ -5,21 +5,37 @@ export type FactoryProviderKind = "quota" | "unavailable" | "configuration" | "r
 export class FactoryProviderError extends Error {
   constructor(readonly kind: FactoryProviderKind, message: string, readonly retryAfterMs: number | null = null) { super(message); }
 }
+/** Two requests per article (generation + blind QA); one extra only after a generation outage with no reply. */
 export class ArticleRequestBudget {
   private count = 0;
+  private limit = 2;
   reserve() {
-    if (this.count >= 2) throw new FactoryProviderError("provider", "Two-request article budget exhausted");
+    if (this.count >= this.limit) throw new FactoryProviderError("provider", "Article request budget exhausted");
     return ++this.count;
   }
+  /** Grants the single outage retry; false when it was already used. */
+  grantOutageRetry() {
+    if (this.limit > 2) return false;
+    this.limit = 3;
+    return true;
+  }
   get used() { return this.count; }
+}
+export const DEFAULT_V2_MODEL = "gemini-3.5-flash-lite";
+export function v2Model(env: Record<string, string | undefined> = process.env) {
+  return env.NEWS_QUESTION_FACTORY_V2_MODEL ?? DEFAULT_V2_MODEL;
+}
+/** The other Free Tier Flash-Lite model, tried once when Google is overloaded for the first. */
+export function alternateV2Model(model: string) {
+  return model === "gemini-3.5-flash-lite" ? "gemini-3.1-flash-lite"
+    : model === "gemini-3.1-flash-lite" ? "gemini-3.5-flash-lite" : model;
 }
 export type ModelReply<T> = { model: string; data: T; usage: TokenUsage | null };
 export async function strictGeminiJson<T>(
   system: string, user: string, schema: unknown, budget: ArticleRequestBudget,
-  fetcher: typeof fetch = fetch, maxOutputTokens = 12000,
+  fetcher: typeof fetch = fetch, maxOutputTokens = 12000, model = v2Model(),
 ): Promise<ModelReply<T>> {
   if (!newsQuizFreeTierReady()) throw new FactoryProviderError("configuration", "Confirmed Gemini Free Tier key is required");
-  const model = process.env.NEWS_QUESTION_FACTORY_V2_MODEL ?? "gemini-3.5-flash-lite";
   if (!/^gemini-[a-z0-9.-]+$/.test(model)) throw new FactoryProviderError("configuration", "Invalid V2 Gemini model");
   const key = process.env.AI_FACTORY_GEMINI_API_KEY;
   budget.reserve(); // Count before network activity; timeout and ambiguous failure still consume a request.
