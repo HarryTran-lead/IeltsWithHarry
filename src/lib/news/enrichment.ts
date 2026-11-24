@@ -616,7 +616,7 @@ export async function enrichNews({ scheduled = false, photoOnly = false }: { sch
   const db = newsAdminClient();
   await pauseLegacyPressRewrites(db);
   const settings = await loadNewsSettings(db);
-  const result = { imagesChecked: 0, imagesAdded: 0, inlineImagesChecked: 0, inlineImagesAdded: 0, coverUpgradesChecked: 0, coverUpgradesAdded: 0, quizzesChecked: 0, quizzesAdded: 0, rewritesChecked: 0, rewritesAdded: 0, translationsChecked: 0, translationsAdded: 0, aiConfigured: Boolean(process.env.GEMINI_API_KEY) || newsArticleFreeTierReady(), paused: scheduled && !settings.auto_enrich_enabled, quotaLimited: false, errors: [] as string[] };
+  const result = { imagesChecked: 0, imagesAdded: 0, inlineImagesChecked: 0, inlineImagesAdded: 0, coverUpgradesChecked: 0, coverUpgradesAdded: 0, quizzesChecked: 0, quizzesAdded: 0, rewritesChecked: 0, rewritesAdded: 0, translationsChecked: 0, translationsAdded: 0, aiConfigured: Boolean(process.env.GEMINI_API_KEY) || newsArticleFreeTierReady(), paused: scheduled && !settings.auto_enrich_enabled, quotaLimited: false, errors: [] as string[], quizPause: null as { reason: string | null; until: string | null } | null };
   if (result.paused) return result;
   if (photoOnly) {
     await enrichPhotoWork(db, result);
@@ -668,7 +668,7 @@ export async function enrichNews({ scheduled = false, photoOnly = false }: { sch
   return result;
 }
 
-type EnrichResult = { imagesChecked: number; imagesAdded: number; quizzesChecked: number; quizzesAdded: number; aiConfigured: boolean; quotaLimited: boolean; errors: string[] };
+type EnrichResult = { imagesChecked: number; imagesAdded: number; quizzesChecked: number; quizzesAdded: number; aiConfigured: boolean; quotaLimited: boolean; errors: string[]; quizPause?: { reason: string | null; until: string | null } | null };
 type PhotoWorkResult = EnrichResult & { inlineImagesChecked: number; inlineImagesAdded: number; coverUpgradesChecked: number; coverUpgradesAdded: number };
 type PhotoClaim = Claim & { cover_image_url: string };
 type PhotoAttemptState = { photo_attempt_count: number; photo_search_queries: string[]; photo_rejected_urls: string[] };
@@ -825,11 +825,26 @@ async function enrichQuiz(db: Db, result: EnrichResult, settings: Awaited<Return
   if (!newsQuizFreeTierReady()) { result.errors.push("Confirmed free-tier Gemini key is not configured for news quizzes"); return; }
   const { newsQuestionFactoryV2Enabled } = await import("./question-factory-v2/activation");
   const v2Enabled = newsQuestionFactoryV2Enabled();
+  const ops = await import("./question-factory-v2/operations");
   if (scheduled) {
-    const today = new Date(); today.setUTCHours(0, 0, 0, 0);
-    const { count, error } = await db.from("news_enrichment_attempts").select("article_id", { count: "exact", head: true }).eq("kind", "quiz").gte("attempted_at", today.toISOString());
+    const now = new Date();
+    const { data: recent, error } = await db.from("news_enrichment_attempts")
+      .select("attempted_at,retry_after,status,error_message").eq("kind", "quiz")
+      .gte("attempted_at", new Date(now.getTime() - 86400000).toISOString())
+      .order("attempted_at", { ascending: false }).limit(300);
     if (error) throw error;
-    if ((count ?? 0) >= settings.daily_quiz_limit) { result.quotaLimited = true; return; }
+    const rows = (recent ?? []) as import("./question-factory-v2/operations").QuizAttemptRow[];
+    // A systemic Gemini problem pauses the worker instead of failing article after article.
+    const breaker = ops.quizBreaker(rows, now);
+    if (breaker.open) {
+      result.quizPause = { reason: breaker.reason, until: breaker.until };
+      if (breaker.reason === "quota") result.quotaLimited = true;
+      return;
+    }
+    const today = new Date(now); today.setUTCHours(0, 0, 0, 0);
+    // Outages, quota and configuration failures do not use the daily limit.
+    const counted = ops.countedQuizAttempts(rows.filter((row) => Date.parse(row.attempted_at) >= today.getTime()));
+    if (counted >= settings.daily_quiz_limit) { result.quotaLimited = true; return; }
   }
   const { data: quizClaims, error: quizClaimError } = await db.rpc("news_claim_enrichment", { p_kind: "quiz", p_limit: 1 });
   if (quizClaimError) throw quizClaimError;
@@ -844,17 +859,22 @@ async function enrichQuiz(db: Db, result: EnrichResult, settings: Awaited<Return
           .update({ retry_after: holdUntil, error_message: "V2 request budget reserved; manual review required before retry" })
           .eq("article_id", article.article_id).eq("kind", "quiz").eq("status", "running");
         if (holdError) throw holdError;
+        const { data: retryRow } = await db.from("news_enrichment_attempts").select(ops.QUIZ_RETRY_COUNT_COLUMN)
+          .eq("article_id", article.article_id).eq("kind", "quiz").maybeSingle();
+        const retriesUsed = Number((retryRow as Record<string, unknown> | null)?.[ops.QUIZ_RETRY_COUNT_COLUMN] ?? 0);
         const { generateNewsQuizV2 } = await import("./question-factory-v2");
         const output = await generateNewsQuizV2(article.title, article.body_text ?? "", article.article_id, fetch, settings.quiz_prompt);
         if (output.state !== "READY") {
-          result.errors.push(`Quiz ${article.article_id}: V2 ${output.state} (${output.audit.issues.join(", ")})`);
+          const reason = output.audit.failure ?? "internal";
+          result.errors.push(`Quiz ${article.article_id}: V2 ${output.state} [${reason}] (${output.audit.issues.join(", ")})`);
           if (output.state === "PENDING_QUOTA") result.quotaLimited = true;
-          // Provider outages (5xx, timeout) and quota limits are not the article's fault: try again later
-          // instead of holding the article for a year. Quality failures still wait for human review.
-          const holdMs = !output.audit.retryable ? 365 * 86400000
-            : output.state === "PENDING_QUOTA" ? 24 * 3600000 : 3 * 3600000;
-          await finish(db, article.article_id, "quiz", "error",
-            `V2 ${output.state}; requests=${output.audit.requests}; retryable=${output.audit.retryable}; hash=${output.audit.fingerprint.slice(0, 16)}`, holdMs);
+          // Outages, quota and configuration errors are not the article's fault and retry later; a model-quality
+          // or truncated reply gets one more try; anything else waits for an admin to unlock it.
+          const plan = ops.quizFailurePlan(reason, retriesUsed, {
+            quotaDaily: output.audit.issues.some((issue) => /quota RPD/.test(issue)), retryAfterMs: output.audit.retry_after_ms,
+          });
+          await finish(db, article.article_id, "quiz", "error", ops.quizFailureMessage(output, reason, plan), plan.holdMs,
+            { [ops.QUIZ_RETRY_COUNT_COLUMN]: plan.retriesUsed });
           continue;
         }
         const { data: savedV2, error: saveV2Error } = await db.rpc("news_publish_auto_quiz", {
@@ -862,7 +882,8 @@ async function enrichQuiz(db: Db, result: EnrichResult, settings: Awaited<Return
         });
         if (saveV2Error) throw saveV2Error;
         if (savedV2) result.quizzesAdded++;
-        await finish(db, article.article_id, "quiz", "success");
+        // The READY marker lets the admin health panel find the latest V2 quiz without a schema change.
+        await finish(db, article.article_id, "quiz", "success", ops.quizSuccessMessage(output));
         await saveImageQuery(db, article.article_id, output.imageQuery);
         continue;
       }
