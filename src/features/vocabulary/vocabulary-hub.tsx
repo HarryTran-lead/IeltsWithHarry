@@ -226,9 +226,9 @@ export function VocabularyHub() {
     if (!due.length) return;
     setError("");
     try {
-      await addTask({ title: `Ôn ${due.length} từ vựng đến hạn`, skill: "Review", date: today, time: "", completed: false, priority: "Medium", lesson: "vocabulary-review" });
-      router.push("/app/planner");
-    } catch (cause) { setError(cause instanceof Error ? cause.message : "Không thêm được việc vào Planner."); }
+      // Stay on this page; the button confirms the task was added (or already planned).
+      await addTask({ title: `Ôn ${due.length} từ vựng đến hạn`, skill: "Vocabulary", date: today, time: "", completed: false, priority: "Medium", lesson: "vocabulary-review", duration: Math.max(5, Math.min(30, Math.ceil(due.length / 3))), source: "vocabulary" });
+    } catch (cause) { setError("Chưa thêm được việc vào kế hoạch. Thử lại sau ít phút."); throw cause; }
   }
 
   // The old overview and the unpaginated word list are replaced by the landing page and the library.
@@ -732,6 +732,7 @@ function Explore({ terms, saved, savedByWord, saveWord }: Pick<Common, "terms" |
 }
 
 function Progress({ saved, reviewById, now, due, reviewedToday, totalCorrect, totalQuestions, attempts, addReviewTask }: { saved: WordEntry[]; reviewById: Map<string, WordReview>; now: number; due: WordEntry[]; reviewedToday: number; totalCorrect: number; totalQuestions: number; attempts: PracticeAttempt[]; addReviewTask: () => Promise<void> }) {
+  const [planned, setPlanned] = useState(false);
   const counts = { new: 0, learning: 0, reviewing: 0, mastered: 0 } as Record<WordState, number>;
   saved.forEach((entry) => { counts[wordState(reviewById.get(entry.id))] += 1; });
   // Cards due on each of the next seven days, so learners can see tomorrow's load.
@@ -747,7 +748,7 @@ function Progress({ saved, reviewById, now, due, reviewedToday, totalCorrect, to
     <div className="vocab-state-grid">{(Object.keys(wordStateLabels) as WordState[]).map((state) => <div className={`vocab-panel vocab-state-tile ${state}`} key={state}><span className={`vocab-state ${state}`}>{wordStateLabels[state]}</span><strong>{counts[state]}</strong><small>{state === "new" ? "chưa ôn lần nào" : state === "learning" ? "đang ở bước học đầu" : state === "reviewing" ? "khoảng ôn < 21 ngày" : "khoảng ôn ≥ 21 ngày"}</small></div>)}</div>
     <div className="vocab-progress-grid">
       <section className="vocab-panel"><h2>Lịch ôn 7 ngày tới</h2><div className="vocab-forecast" role="img" aria-label={forecast.map((item) => `${item.label}: ${item.count} thẻ`).join(", ")}>{forecast.map((item) => <div key={item.label}><span>{item.count}</span><i style={{ height: `${Math.max(4, (item.count / peak) * 100)}%` }} /><small>{item.label}</small></div>)}</div><p className="vocab-muted">Đã ôn hôm nay: {reviewedToday} thẻ · Tỉ lệ làm đúng: {totalQuestions ? `${Math.round(totalCorrect / totalQuestions * 100)}%` : "—"}</p>
-        <div className="vocab-detail-actions">{due.length > 0 && <Link className="vocab-button primary" href="/app/vocabulary/review">Ôn {due.length} thẻ đến hạn <ArrowRight size={16}/></Link>}{due.length > 0 && <button className="vocab-button soft" onClick={() => void addReviewTask()}>Thêm vào Planner</button>}</div></section>
+        <div className="vocab-detail-actions">{due.length > 0 && <Link className="vocab-button primary" href="/app/vocabulary/review">Ôn {due.length} thẻ đến hạn <ArrowRight size={16}/></Link>}{due.length > 0 && <button className="vocab-button soft" disabled={planned} onClick={() => void addReviewTask().then(() => setPlanned(true)).catch(() => {})}>{planned ? "✓ Đã có trong kế hoạch hôm nay" : "Thêm vào kế hoạch hôm nay"}</button>}{planned && <Link className="vocab-button soft" href="/app/planner">Mở kế hoạch</Link>}</div></section>
       <section className="vocab-panel"><h2>Kiểm tra gần đây</h2>{attempts.length ? <div className="vocab-history">{attempts.slice(0, 8).map((attempt, index) => <div key={attempt.id ?? index}><span>{formatDate(attempt.submitted_at)}</span><strong>{attempt.score}/{attempt.total} câu đúng</strong><small>{attempt.wrong_words.length ? `Ôn thêm: ${attempt.wrong_words.join(", ")}` : "Hoàn thành tốt"}</small></div>)}</div> : <p>Chưa có bài kiểm tra nào.</p>}<Link className="vocab-button soft" href="/app/vocabulary/practice">Làm bài kiểm tra <ArrowRight size={16}/></Link></section>
     </div>
   </>;

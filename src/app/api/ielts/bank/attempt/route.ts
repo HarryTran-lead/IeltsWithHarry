@@ -45,10 +45,18 @@ export async function POST(request: Request) {
       return Response.json({ attempt: data, serverNow: Date.now() });
     }
     if (body.action === "schedule") {
-      const { data: exam, error } = await client.from("ielts_exams").select("id,title,skill").eq("id", body.examId).not("published_version_id", "is", null).single();
+      const { data: exam, error } = await client.from("ielts_exams").select("id,title,skill,duration_minutes").eq("id", body.examId).not("published_version_id", "is", null).single();
       if (error || !exam) throw new Error("Exam unavailable");
       if (!learnerSkillAvailable(exam.skill)) return unavailable();
-      const { error: taskError } = await client.from("study_tasks").insert({ user_id: user.id, title: exam.title.slice(0, 100), skill: exam.skill, due_date: body.dueDate, priority: "Medium", lesson_slug: `ielts:${exam.id}` });
+      const lessonSlug = `ielts:${exam.id}`;
+      // Saving the same exam for the same day twice keeps one task.
+      const { data: existing } = await client.from("study_tasks").select("id").eq("user_id", user.id).eq("lesson_slug", lessonSlug).eq("due_date", body.dueDate).eq("completed", false).limit(1);
+      if (existing?.length) return Response.json({ ok: true, existing: true });
+      const row = { user_id: user.id, title: exam.title.slice(0, 100), skill: exam.skill, due_date: body.dueDate, priority: "Medium", lesson_slug: lessonSlug };
+      const planner = { duration_minutes: Math.max(5, Math.min(240, Number(exam.duration_minutes) || 20)), source: "exam" };
+      let { error: taskError } = await client.from("study_tasks").insert({ ...row, ...planner });
+      // Before the Planner 2.0 migration those two columns do not exist yet.
+      if (taskError && (taskError.code === "PGRST204" || taskError.code === "42703")) ({ error: taskError } = await client.from("study_tasks").insert(row));
       if (taskError) throw new Error(taskError.message);
       return Response.json({ ok: true });
     }

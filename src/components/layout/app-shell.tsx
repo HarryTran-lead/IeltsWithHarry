@@ -41,6 +41,7 @@ import { communityEnabled, demoMode, liveMode, lockedLearnerPath } from "@/lib/r
 import { useLearnerStreak } from "@/features/account/use-learner-streak";
 import { StreakCelebration } from "@/features/account/streak-celebration";
 import { StudyCompanion } from "@/features/companion/study-companion";
+import { todayISO } from "@/lib/demo-data";
 import { tierFor } from "@/lib/streak-milestones";
 import { createClient } from "@/lib/supabase/browser";
 import { NotebookWidget } from "@/features/notebook/notebook-ui";
@@ -205,6 +206,9 @@ function AppShellContent({ children, canManage }: { children: React.ReactNode; c
   // A self-study lesson (anything below a Lab's path map) gets the same trimmed header and quiet corners, so the work fits one screen.
   const lessonRoute = /^\/app\/(?:self-study\/(?:writing-task-1|writing-task-2|speaking|listening)|reading\/lab)\/.+/.test(pathname);
   const focusRoute = learningRoute || lessonRoute;
+  const plannerRoute = pathname === "/app/planner";
+  // Tasks still waiting today, late ones included: the number that should pull a learner back to the plan.
+  const plannerDue = (() => { const day = todayISO(); return tasks.filter((task) => !task.completed && task.date <= day).length; })();
   const { online: studyOnline } = useStudyPresence();
   const learnerStreak = useLearnerStreak();
   const streakCount = demoMode ? 12 : learnerStreak?.current;
@@ -317,7 +321,7 @@ function AppShellContent({ children, canManage }: { children: React.ReactNode; c
 
   return (
     <div
-      className={`app-frame ${sidebarCollapsed ? "sidebar-collapsed" : ""} ${vocabularyLayout ? "vocabulary-layout" : ""} ${focusRoute ? "learning-focus" : ""} ${lessonRoute ? "lesson-focus" : ""} ${mode !== "off" ? weatherStyles.skyFrame : ""}`}
+      className={`app-frame ${sidebarCollapsed ? "sidebar-collapsed" : ""} ${vocabularyLayout ? "vocabulary-layout" : ""} ${focusRoute ? "learning-focus" : ""} ${lessonRoute ? "lesson-focus" : ""} ${plannerRoute ? "planner-route" : ""} ${mode !== "off" ? weatherStyles.skyFrame : ""}`}
       data-sky-phase={mode !== "off" ? phase : undefined}
     >
       <header className={`topbar ${mode !== "off" ? weatherStyles.headerSurface : ""}`}>
@@ -518,6 +522,7 @@ function AppShellContent({ children, canManage }: { children: React.ReactNode; c
                     <b className={`nav-icon tone-${tone}`}><Icon size={17} strokeWidth={2.2} /></b>
                     <span>{label}</span>
                     {practiceLinks && <ChevronDown className="nav-skill-chevron" size={15} aria-hidden="true" />}
+                    {href === "/app/planner" && plannerDue > 0 && <span className="study-nav-count planner-nav-count has-new" aria-label={`${plannerDue} việc đang chờ hôm nay`} title={`${plannerDue} việc đang chờ hôm nay`}><b>{plannerDue > 99 ? "99+" : plannerDue}</b></span>}
                     {href === "/app/study-together" && <span className="study-nav-count" aria-label={`${studyOnline ?? "Đang kết nối"} người đang học trực tiếp`}><i />{studyOnline ?? "…"}</span>}
                     {href === "/app/news" && liveMode && <span className={`study-nav-count news-nav-count ${newsUnread ? "has-new" : ""}`} aria-label={`${newsUnread} tin mới`} title={`${newsUnread} tin mới`}><b>+{newsUnread > 99 ? "99" : newsUnread}</b><small> mới</small></span>}
                   </Link>
@@ -571,13 +576,14 @@ function AppShellContent({ children, canManage }: { children: React.ReactNode; c
             >
               <Icon size={20} />
               <span>{label}</span>
+              {href === "/app/planner" && plannerDue > 0 && <i className="bottom-nav-badge" aria-label={`${plannerDue} việc đang chờ`}>{plannerDue > 99 ? "99+" : plannerDue}</i>}
             </Link>
           ),
         )}
       </nav>
       {!focusRoute && <NotebookWidget />}
       <StreakCelebration streak={learnerStreak} />
-      <StudyCompanion streak={learnerStreak} newsUnread={newsUnread} name={learnerName} hidden={focusRoute} />
+      <StudyCompanion streak={learnerStreak} newsUnread={newsUnread} name={learnerName} hidden={focusRoute || plannerRoute} />
     </div>
   );
 }

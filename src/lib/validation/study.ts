@@ -7,7 +7,11 @@ export const taskSchema = z.object({
   time: z.union([z.iso.time({ precision: -1 }), z.literal("")]),
   priority: z.enum(["Low", "Medium", "High"]),
   completed: z.boolean(),
-  lesson: z.string().regex(/^[a-z0-9-]+$/).optional(),
+  /** A plain slug ("vocabulary-review") or kind:reference ("news:my-article", "ielts:<uuid>"). */
+  lesson: z.string().max(160).regex(/^[a-z0-9-]+(:[A-Za-z0-9._/-]+)?$/).optional(),
+  duration: z.number().int().min(5).max(240).optional(),
+  source: z.enum(["manual", "exam", "dictation", "vocabulary", "grammar", "news", "lab", "practice", "suggestion", "plan", "teacher"]).optional(),
+  seriesId: z.uuid().optional(),
 });
 export const dailyGoalSchema = z.number().int().min(1).max(20);
 export const draftSchema = z.string().max(20000);

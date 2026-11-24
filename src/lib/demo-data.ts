@@ -16,7 +16,18 @@ export type StudyTask = {
   completed: boolean;
   priority: "Low" | "Medium" | "High";
   lesson?: string;
+  /** Planned length in minutes; unset on tasks made before Planner 2.0. */
+  duration?: number;
+  /** Where the task came from: the planner itself, a feature's "Đặt lịch" button, a suggestion or a teacher. */
+  source?: TaskSource;
+  /** Tasks created together as a repeating series share this id. */
+  seriesId?: string;
+  completedAt?: string;
+  sortOrder?: number;
+  /** Handed out by Harry (an admin) rather than planned by the learner. */
+  assigned?: boolean;
 };
+export type TaskSource = "manual" | "exam" | "dictation" | "vocabulary" | "grammar" | "news" | "lab" | "practice" | "suggestion" | "plan" | "teacher";
 export type Attempt = {
   id: string;
   lesson: string;
