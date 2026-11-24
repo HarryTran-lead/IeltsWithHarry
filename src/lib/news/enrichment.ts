@@ -982,7 +982,8 @@ export type ArticleQuizRun = { status: "ready" | "failed" | "skipped"; message: 
  * the daily limit and the article's retry wait, but still refuses a second run in progress.
  */
 export async function generateQuizForArticle(articleId: string): Promise<ArticleQuizRun> {
-  if (!newsQuizFreeTierReady()) return { status: "skipped", message: "Chưa cấu hình khóa Gemini Free Tier cho quiz.", questions: 0 };
+  const { quizKeyReady } = await import("./question-factory-v2/provider");
+  if (!quizKeyReady()) return { status: "skipped", message: "Chưa cấu hình khóa Gemini Free Tier cho quiz.", questions: 0 };
   const db = newsAdminClient();
   const settings = await loadNewsSettings(db);
   const [article, body, quizSet, attempt] = await Promise.all([

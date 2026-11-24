@@ -27,6 +27,20 @@ export async function POST(request: NextRequest) {
     }
   }
   if (!authorized) return NextResponse.json({ error: "Forbidden" }, { status: 403 });
+  // Diagnostic: one quiz for one article using the article Free Tier key. Only the cron secret can ask for it.
+  const probeArticle = request.nextUrl.searchParams.get("articleId") ?? "";
+  if (request.nextUrl.searchParams.get("quizKey") === "article") {
+    if (!scheduled || !/^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i.test(probeArticle))
+      return NextResponse.json({ error: "Forbidden" }, { status: 403 });
+    try {
+      const [{ withQuizKeySource }, { generateQuizForArticle }] = await Promise.all([
+        import("@/lib/news/question-factory-v2/provider"), import("@/lib/news/enrichment"),
+      ]);
+      return NextResponse.json(await withQuizKeySource("article", () => generateQuizForArticle(probeArticle)));
+    } catch (cause) {
+      return NextResponse.json({ error: cause instanceof Error ? cause.message : "Quiz probe failed" }, { status: 500 });
+    }
+  }
   try { return NextResponse.json(await enrichNews({ scheduled, photoOnly: request.nextUrl.searchParams.get("work") === "photo" })); }
   catch (cause) {
     const message = cause && typeof cause === "object" && "message" in cause && typeof cause.message === "string"
