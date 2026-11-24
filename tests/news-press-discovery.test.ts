@@ -1,5 +1,5 @@
 import { afterAll, beforeAll, expect, it } from "vitest";
-import { discoveryBatchLimit, discoveryBudget, discoveryFeedGroup, eligibleDiscoveryLead, evidenceRichPressLead, findIndependentDossier, rankDiscoveryCandidates, resolveFactualSourceUrl, temporaryDiscoveryFailure, vietnamDayStart, youthRelevanceForTitle } from "../src/lib/news/press-discovery";
+import { discoveryBatchLimit, hotReserve, leadHeat, leadPublisher, leadTitleTokens, sameEventTitles, discoveryBudget, discoveryFeedGroup, eligibleDiscoveryLead, evidenceRichPressLead, findIndependentDossier, rankDiscoveryCandidates, resolveFactualSourceUrl, temporaryDiscoveryFailure, vietnamDayStart, youthRelevanceForTitle } from "../src/lib/news/press-discovery";
 import { parseRss, pressDiscoveryFeedUrls, rssProvider, type NewsItem, type NewsSource } from "../src/lib/news/providers";
 
 const previousArticleConfirmation = process.env.NEWS_ARTICLE_FREE_TIER_CONFIRMED;
@@ -106,7 +106,7 @@ it("uses the Free Tier research slot on a report with enough source detail", asy
     return new Response(`<article>${Array.from({ length: paragraphs }, (_, index) => `<p>Paragraph ${index + 1} records a distinct festival detail for readers in Vietnam, including the time, place, people involved and activities.</p>`).join("")}</article>`, { headers: { "Content-Type": "text/html" } });
   }) as typeof fetch;
   const selected = await evidenceRichPressLead(candidates, fetcher);
-  expect(selected.item.canonical_hash).toBe("rich");
+  expect(selected?.item.canonical_hash).toBe("rich");
   expect(visited).toHaveLength(2);
 });
 
@@ -336,4 +336,59 @@ it("selects recent official feed pages from the event title without grounding or
     expect(request).not.toContain(item.canonical_url);
     expect(request).not.toContain("Publisher's full prose");
   } finally { if (previous === undefined) delete process.env.NEWS_ARTICLE_GEMINI_API_KEY; else process.env.NEWS_ARTICLE_GEMINI_API_KEY = previous; }
+});
+
+const vnexpress: NewsSource = { ...source, name: "VnExpress International", feed_url: "https://e.vnexpress.net/rss/news.rss" };
+const vnexpressTech: NewsSource = { ...source, name: "VnExpress International Tech", feed_url: "https://e.vnexpress.net/rss/tech.rss" };
+const tuoitreSection: NewsSource = { ...source, name: "Tuoi Tre News", feed_url: "https://news.tuoitre.vn/rss/business" };
+const hotLead = (hash: string, url: string, title: string, from: NewsSource) => ({
+  item: { canonical_hash: hash, canonical_url: url, title, category: "Business", published_at: "2026-11-24T05:00:00Z" } as NewsItem, source: from,
+});
+
+it("groups newspapers by publisher and compares accent-free title words", () => {
+  expect(leadPublisher("https://e.vnexpress.net/news/a.html")).toBe("vnexpress.net");
+  expect(leadPublisher("https://news.tuoitre.vn/b.htm")).toBe("tuoitre.vn");
+  expect(leadPublisher("https://mst.gov.vn/c.htm")).toBe("mst.gov.vn");
+  expect([...leadTitleTokens("Đà Nẵng opens new metro line in 2026")]).toEqual(["nang", "opens", "metro", "line", "2026"]);
+  expect(sameEventTitles(leadTitleTokens("Hanoi opens first metro line to Noi Bai airport"),
+    leadTitleTokens("First metro line to Noi Bai airport opens in Hanoi"))).toBe(true);
+  expect(sameEventTitles(leadTitleTokens("Hanoi opens first metro line"), leadTitleTokens("Hanoi hosts film festival"))).toBe(false);
+});
+
+it("marks a story hot only when two different newspapers cover it", () => {
+  const heat = leadHeat([
+    hotLead("vne", "https://e.vnexpress.net/news/metro.html", "Hanoi opens first metro line to Noi Bai airport", vnexpressTech),
+    hotLead("tt", "https://news.tuoitre.vn/metro.htm", "First metro line to Noi Bai airport opens in Hanoi", tuoitreSection),
+    hotLead("vne2", "https://e.vnexpress.net/news/metro-2.html", "Noi Bai airport metro line opens first trains in Hanoi", vnexpressTech),
+    hotLead("solo", "https://e.vnexpress.net/news/coffee.html", "Coffee exports reach record value this season", vnexpress),
+  ]);
+  expect(heat.get("vne")).toEqual({ publishers: 2, frontPage: false, hot: true });
+  expect(heat.get("tt")?.hot).toBe(true);
+  expect(heat.get("solo")).toEqual({ publishers: 1, frontPage: true, hot: false });
+});
+
+it("ranks a hot story before a youth topic and keeps hot slots in reserve", () => {
+  const leads = [
+    hotLead("youth", "https://e.vnexpress.net/news/students.html", "Students win university music festival award", vnexpressTech),
+    hotLead("hot-a", "https://e.vnexpress.net/news/metro.html", "Hanoi opens first metro line to Noi Bai airport", vnexpressTech),
+    hotLead("hot-b", "https://news.tuoitre.vn/metro.htm", "First metro line to Noi Bai airport opens in Hanoi", tuoitreSection),
+  ];
+  const ranked = rankDiscoveryCandidates(leads, new Map(), new Set());
+  expect(ranked.slice(0, 2).map(({ item }) => item.canonical_hash).sort()).toEqual(["hot-a", "hot-b"]);
+  expect(hotReserve(15)).toBe(5);
+  expect(hotReserve(50)).toBe(5);
+  expect(hotReserve(6)).toBe(2);
+});
+
+it("skips thin newspaper reports instead of spending Gemini requests on them", async () => {
+  const page = (words: number) => `<article><p>${Array.from({ length: words }, (_, index) => `word${index}`).join(" ")}</p></article>`;
+  const lengths: Record<string, number> = { thin: 200, mid: 450 };
+  const fetcher = (async (url: RequestInfo | URL) => new Response(page(lengths[String(url).split("/").pop()!.replace(".html", "")] ?? 0),
+    { headers: { "Content-Type": "text/html" } })) as typeof fetch;
+  const thin = [hotLead("thin", "https://news.tuoitre.vn/thin.html", "Thin report", source)];
+  expect(await evidenceRichPressLead(thin, fetcher)).toBeNull();
+  const mid = [hotLead("mid", "https://news.tuoitre.vn/mid.html", "Mid report", source)];
+  expect(await evidenceRichPressLead(mid, fetcher)).toBeNull();
+  const hotMid = await evidenceRichPressLead(mid, fetcher, new Map([["mid", { publishers: 2, frontPage: false, hot: true }]]));
+  expect(hotMid?.item.canonical_hash).toBe("mid");
 });
