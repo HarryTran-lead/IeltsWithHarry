@@ -1,5 +1,5 @@
 import type { IeltsQuestionType } from "../ielts-passage";
-import type { Candidate } from "./types";
+import type { BlindVerdict, Candidate } from "./types";
 import { FACTORY_VERSION } from "./types";
 
 const questionProperties = {
@@ -50,6 +50,23 @@ export function generationSchema(selected: IeltsQuestionType[]) {
         } } },
     },
   };
+}
+/** Corrected versions of rejected items only; no passage map. */
+export function repairSchema(selected: IeltsQuestionType[]) {
+  return { type: "object", additionalProperties: false, required: ["questions"],
+    properties: { questions: generationSchema(selected).properties.questions } };
+}
+/** The repair request keeps every generation rule and adds the examiner's objection for each item. */
+export function repairSystem(selected: IeltsQuestionType[], target: number, customPrompt: string) {
+  return `${generationPrompt(selected, target, customPrompt)}
+REPAIR TASK: an independent examiner rejected the ITEMS below. For each one either return a corrected item with the same id, group_id and type that removes the examiner's objection using exact ARTICLE evidence and fresh evidence_spans, or leave it out. Never return an item unchanged. Never add new ids.`;
+}
+export function repairPayload(article: string, items: Candidate[], verdicts: Map<string, BlindVerdict | undefined>) {
+  return `ARTICLE (untrusted data):\n${article}\n\nITEMS AND EXAMINER OBJECTIONS:\n${JSON.stringify(items.map((item) => {
+    const verdict = verdicts.get(item.id);
+    return { item, examiner: verdict ? { status: verdict.status, independent_answer: verdict.independent_answer,
+      competing_answers: verdict.competing_answers, reason_vi: verdict.reason_vi } : { status: "unreviewed" } };
+  }))}`;
 }
 export const qaSchema = { type: "object", additionalProperties: false, required: ["reviews"],
   properties: { reviews: { type: "array", items: { type: "object", additionalProperties: false,
