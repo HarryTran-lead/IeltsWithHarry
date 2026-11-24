@@ -18,7 +18,8 @@ const roadStops = [3, 7, 14, 30, 50, 100, 200, 365];
 /** When the grey flame ignites, in ms after the popup opens; the CSS uses the same beat. */
 const igniteAt = 820;
 /** Screens where a reminder would interrupt real work; it waits for the next page instead. */
-const busyRoute = /^\/app\/(lesson|check)\/|\/(exam|test|attempt)(\/|$)/;
+// The planner shows its own late and due tasks, so the reminder waits for the next page there.
+const busyRoute = /^\/app\/(lesson|check)\/|\/(exam|test|attempt)(\/|$)|^\/app\/planner$/;
 
 function read(key: string) {
   try { return window.localStorage.getItem(key); } catch { return null; }
