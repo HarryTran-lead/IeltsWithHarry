@@ -199,3 +199,44 @@
   .pg-history-table td:nth-child(5) { order: 5; }
   .pg-history-table td:nth-child(6) { order: 6; color: var(--muted); font-size: 12px; }
 }
+
+/* Exam plan, behaviour notes, margins, criteria and skipped attempts. */
+.pg-plan-line { margin: 0 0 10px; color: var(--ink); font-size: 14px; line-height: 1.55; }
+.pg-plan-line .pg-chip { margin-right: 6px; }
+.pg-plan-pace { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 18px; margin: 4px 0 10px; }
+.pg-plan-pace > div { display: grid; gap: 1px; min-width: 120px; padding: 10px 12px; border-radius: 12px; background: var(--surface-2); }
+.pg-plan-pace small { color: var(--muted); font-size: 11.5px; font-weight: 700; }
+.pg-plan-pace strong { color: var(--navy); font-size: 26px; line-height: 1.1; }
+.pg-plan-pace span { color: var(--muted); font-size: 12px; }
+.pg-plan .pg-muted { margin: 0 0 8px; font-size: 13px; }
+.pg-link { display: inline-flex; align-items: center; gap: 4px; color: var(--teal-strong); font-size: 13px; font-weight: 800; }
+.pg-note-list { display: grid; gap: 8px; margin: 0; padding: 0; list-style: none; }
+.pg-note-list li { display: grid; gap: 4px; padding: 10px 12px; border-left: 4px solid var(--line-strong); border-radius: 10px; background: var(--surface-2); }
+.pg-note-list li.is-warn { border-left-color: #e0685c; background: color-mix(in srgb, var(--coral-soft) 55%, #fff); }
+.pg-note-list li.is-good { border-left-color: #2fa36f; background: color-mix(in srgb, var(--mint) 55%, #fff); }
+.pg-note-list li.is-info { border-left-color: #4b8fd6; }
+.pg-note-list p { margin: 0; color: var(--ink); font-size: 13px; line-height: 1.5; }
+.pg-note-list a { justify-self: start; display: inline-flex; align-items: center; gap: 4px; color: var(--teal-strong); font-size: 12.5px; font-weight: 800; }
+.pg-margin { color: var(--muted); font-size: 13px; font-weight: 800; }
+.pg-skill-need { margin: 0; color: var(--muted); font-size: 11.5px; line-height: 1.4; }
+.pg-criteria { display: grid; gap: 4px; margin: 0; padding: 0; list-style: none; }
+.pg-criteria li { display: grid; grid-template-columns: 34px minmax(0, 1fr) 30px; align-items: center; gap: 6px; font-size: 11.5px; font-weight: 800; color: var(--muted); }
+.pg-criteria i { height: 6px; border-radius: 99px; background: color-mix(in srgb, var(--pg-accent) 14%, #fff); overflow: hidden; }
+.pg-criteria b { display: block; height: 100%; border-radius: 99px; background: var(--pg-accent); }
+.pg-criteria em { color: var(--ink); font-style: normal; text-align: right; }
+.pg-trend-dot.partial { fill: #fff; stroke: var(--pg-accent); }
+.pg-type-goal { position: absolute; top: -3px; width: 2px; height: 16px; margin-left: -1px; border-radius: 2px; background: var(--ink); opacity: 0.45; }
+.pg-type-practice { display: inline-flex; align-items: center; gap: 3px; margin-top: 4px; color: var(--teal-strong); font-size: 12px; font-weight: 800; }
+.pg-history-table tr.is-skipped { opacity: 0.72; }
+.pg-skip-note { display: flex; flex-wrap: wrap; align-items: center; gap: 4px; margin-top: 3px; }
+.pg-band-pill.muted { background: var(--surface-2); color: var(--muted); text-decoration: line-through; }
+.pg-grade-link { color: #b26a00 !important; font-weight: 800; }
+@container (max-width: 560px) {
+  /* Titles that differ only at the end (Writing prompts) wrap instead of being cut. */
+  .pg-history-table .pg-title { white-space: normal; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; }
+  .pg-plan-pace > div { flex: 1 1 120px; }
+}
+@media (max-width: 767px) {
+  /* Room for the floating helpers above the bottom navigation. */
+  .progress-page { padding-bottom: 96px; }
+}
