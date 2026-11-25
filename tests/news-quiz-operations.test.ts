@@ -118,3 +118,12 @@ describe("admin quiz health", () => {
     expect(health.alerts.map((alert) => alert.code)).toEqual(["free_tier", "breaker_config"]);
   });
 });
+
+describe("quality failure summary", () => {
+  it("counts the failing checks so admins can see why a set was not published", async () => {
+    const { summarizeIssues } = await import("../src/lib/news/question-factory-v2/operations");
+    expect(summarizeIssues(["mcq_1:EVIDENCE,EXPLANATION", "mcq_2:EVIDENCE", "PASSAGE_MAP_OPPORTUNITY", "REPAIR:1/3", "TOO_FEW_STRUCTURAL"]))
+      .toBe("EVIDENCE×2,EXPLANATION,PASSAGE_MAP_OPPORTUNITY,REPAIR,TOO_FEW_STRUCTURAL");
+    expect(summarizeIssues([])).toBe("none");
+  });
+});
