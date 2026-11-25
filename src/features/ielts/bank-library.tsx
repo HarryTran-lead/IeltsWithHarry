@@ -637,6 +637,11 @@ export function ExamCard({ exam, attempt, section }: { exam: CatalogExam; attemp
       : null
     : exam.image_url;
   const aiCover = Boolean(!exam.visual && (coverUrl?.includes("/ielts-images/covers/") || (section && suppliedReadingTest && Number(suppliedReadingTest) >= 6)));
+  // Reading never shows generated AI covers: those cards use the brand cover. Supplied test pictures stay.
+  const readingBrandCover = exam.skill === "Reading" && (readingFullCover
+    ? !suppliedReadingTest
+    : Boolean(coverUrl?.includes("/ielts-images/covers/")));
+  const showAiBadge = aiCover && !readingBrandCover;
   // Writing has its own card: the task figure or a theme sticker, never a stock picture.
   if (exam.skill === "Writing") return <WritingShelfCard exam={exam} facets={writingFacets(exam)} attempt={attempt} />;
 
@@ -648,7 +653,7 @@ export function ExamCard({ exam, attempt, section }: { exam: CatalogExam; attemp
       {/* eslint-disable-next-line @next/next/no-img-element */}
       {/* A full test shows its three supplied passage covers side by side. */}
       {readingFullCover && suppliedReadingTest ? <figure className="bl-art bl-collage">{[1, 2, 3].map((part) => <img key={part} src={`/images/ielts/reading/test-${suppliedReadingTest}-passage-${part}.${suppliedCoverExtension}`} alt="" loading="lazy" />)}</figure>
-      : readingFullCover ? <figure className="bl-art bl-brand-art">
+      : readingBrandCover ? <figure className="bl-art bl-brand-art">
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img src="/ieltswithharry-mascot.webp" alt="" loading="lazy" />
         <span className="bl-brand-wordmark">Ielts<b>WithHarry</b></span>
@@ -656,7 +661,7 @@ export function ExamCard({ exam, attempt, section }: { exam: CatalogExam; attemp
       </figure> : coverUrl ? <figure className="bl-art"><img src={coverUrl} alt="" loading="lazy" /></figure> : <TopicArt topic={artTopic(exam)} className="bl-art" />}
       {usage}
       <b className="bl-badge">{section ? `${exam.skill === "Reading" ? "Passage" : "Section"} ${section.part}` : partBadge(exam)}</b>
-      {aiCover && <em className="bl-ai-badge" title="Ảnh minh họa do AI tạo theo chủ đề bài luyện">Ảnh AI</em>}
+      {showAiBadge && <em className="bl-ai-badge" title="Ảnh minh họa do AI tạo theo chủ đề bài luyện">Ảnh AI</em>}
     </span>
     <span className="bl-body">
       <strong className="bl-title">{shelfTitle(displayExamTitle(section?.title ?? exam.title))}</strong>
