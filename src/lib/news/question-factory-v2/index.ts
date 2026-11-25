@@ -3,7 +3,7 @@ import { quizExcerpt } from "../enrichment";
 import { selectQuestionTypes, targetQuestionCount, type AdaptiveQuestion } from "../adaptive-quiz";
 import type { BlindVerdict, Candidate, FactoryResult, Generation, BlindReview, PassageMap, QuizFailureReason, TokenUsage } from "./types";
 import { FACTORY_VERSION } from "./types";
-import { choiceTypes, gapTypes } from "../ielts-passage";
+import { choiceTypes, gapTypes, type IeltsQuestionType } from "../ielts-passage";
 import { ArticleRequestBudget, FactoryProviderError, alternateV2Model, strictGeminiJson, v2Model, type FactoryProviderKind } from "./provider";
 import { MAP_SYSTEM, batchSchema, batchSystem, blindQaPayload, blindQaSystem, mapSchema, planBatches, qaSchema, repairPayload, repairSchema, repairSystem, typeCounts } from "./prompts";
 import { BLOCKING_QA_ISSUES, PARAGRAPH_MAP_ISSUES, isVietnameseNote, validateBlindReview, validateGeneration, validatePassageMap } from "./validate";
@@ -124,6 +124,29 @@ function sampleRejected(articleId: string, items: Candidate[], issues: string[])
     `${item.id} [${item.type}] ${errors.get(item.id)} | prompt=${String(item.prompt ?? "").slice(0, 220)} | answer=${String(item.answer ?? "")} | key=${item.correct_index} | options=${JSON.stringify(item.options ?? []).slice(0, 160)} | notes=${JSON.stringify(item.option_notes ?? []).slice(0, 160)} | evidence=${String(item.supporting_sentence ?? "").slice(0, 160)}`));
   if (rejectedSamples.size > 50) rejectedSamples.delete(rejectedSamples.keys().next().value!);
 }
+/**
+ * Matching items in one group must share one option list. When the model reorders or varies the list,
+ * every item takes the first item's list and its key follows the same answer text; an item whose answer
+ * is not in that list is left as is for validation to reject.
+ */
+export function unifyMatchingPools(items: Candidate[]): Candidate[] {
+  const pools = new Map<string, string[]>();
+  return items.map((item) => {
+    if (!item?.type?.startsWith?.("matching_") || !Array.isArray(item.options)) return item;
+    const pool = pools.get(item.group_id);
+    if (!pool) { pools.set(item.group_id, item.options); return item; }
+    const answer = item.options[item.correct_index];
+    const index = typeof answer === "string" ? pool.findIndex((option) => option.trim().toLowerCase() === answer.trim().toLowerCase()) : -1;
+    if (index < 0) return item;
+    const notes = Array.isArray(item.option_notes) && item.option_notes.length === item.options.length
+      ? pool.map((option) => item.option_notes[item.options.findIndex((own) => own.trim().toLowerCase() === option.trim().toLowerCase())])
+      : [];
+    return { ...item, options: pool, correct_index: index, option_notes: notes.every((note) => typeof note === "string") ? notes : [] };
+  });
+}
+/** Single-item forms used to top up a set that is short after checks; groups need two or more items. */
+const TOP_UP_FORMS: IeltsQuestionType[] = ["tfng", "mcq", "sentence_completion", "short_answer", "ynng"];
+const MAX_TOP_UPS = 2;
 /** Keeps ids and group ids from different batches apart without splitting a group inside one batch. */
 function separateBatch(items: Candidate[], batch: number, usedIds: Set<string>, usedGroups: Set<string>) {
   const groupNames = new Map<string, string>();
@@ -219,23 +242,36 @@ export async function generateNewsQuizV2(
       const usedIds = new Set<string>();
       const usedGroups = new Set<string>();
       let batchOutage: unknown = null;
-      // Ask for a few spare items: one rejected item must not sink a set that only just reaches six.
-      for (const [index, batch] of planBatches(selected, typeCounts(selected, Math.min(MAX_CANDIDATES, target + spareItems(target)))).entries()) {
-        if (!timeLeft()) break;
+      const runBatch = async (index: number, types: IeltsQuestionType[], counts: number[]) => {
         const tested = questions.map((item) => item.supporting_sentence).filter(Boolean).slice(0, 20);
         try {
           const { reply } = await withOutageRetry((attemptModel) => provider<{ questions?: Candidate[] }>(
-            batchSystem(batch.types, batch.counts, customPrompt, tested, paragraphMapUsable),
+            batchSystem(types, counts, customPrompt, tested, paragraphMapUsable),
             `TITLE: ${title}\n\nARTICLE:\n${fullArticle}\n\nPASSAGE MAP (metadata, not learner content):\n${JSON.stringify(passageMap ?? {})}`,
-            batchSchema(batch.types), budget, fetcher, 6000, attemptModel,
+            batchSchema(types), budget, fetcher, 6000, attemptModel,
           ), modelOrder(usedModel), deadline);
           generationTokens = addUsage(generationTokens, reply.usage);
           const items = Array.isArray(reply.data?.questions) ? reply.data.questions : [];
-          questions.push(...separateBatch(items, index, usedIds, usedGroups).map((item) => withEvidenceSpans(normalizeCandidate(item), fullArticle)));
+          questions.push(...unifyMatchingPools(separateBatch(items, index, usedIds, usedGroups).map(normalizeCandidate))
+            .map((item) => withEvidenceSpans(item, fullArticle)));
         } catch (cause) {
           if (!(cause instanceof FactoryProviderError) || cause.kind !== "unavailable") throw cause;
           batchOutage = cause;
         }
+      };
+      // Ask for a few spare items: one rejected item must not sink a set that only just reaches six.
+      const batches = planBatches(selected, typeCounts(selected, Math.min(MAX_CANDIDATES, target + spareItems(target))));
+      for (const [index, batch] of batches.entries()) {
+        if (!timeLeft()) break;
+        await runBatch(index, batch.types, batch.counts);
+      }
+      // Top up with single-item forms while the checked set is still short of the target.
+      const topUpForms = TOP_UP_FORMS.filter((type) => selected.includes(type));
+      for (let round = 0; round < MAX_TOP_UPS && topUpForms.length && timeLeft(); round++) {
+        const passing = validateGeneration({ passage_map: passageMap, questions, image_query: "" }, fullArticle, selected).valid.length;
+        if (passing >= target) break;
+        const missing = Math.min(5, target - passing + 2);
+        await runBatch(batches.length + round, topUpForms, typeCounts(topUpForms, missing));
       }
       const generated = { data: { passage_map: passageMap, questions, image_query: mapped.data?.image_query ?? "" } as Generation };
       candidateCount = questions.length;
