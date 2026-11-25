@@ -317,7 +317,8 @@ type CommonsResult = { query?: { pages?: { title?: string; imageinfo?: {
 type NasaLibraryResult = { collection?: { items?: { data?: { title?: string; nasa_id?: string; media_type?: string; center?: string; photographer?: string; secondary_creator?: string; description?: string; keywords?: string[] }[]; links?: { href?: string; rel?: string; width?: number }[] }[] } };
 export type Illustration = { image_url: string; image_alt: string; image_credit: string; image_source_url: string; license_name: string; license_url: string | null };
 /** `preview` is a small rendition the AI looks at; `value` is what gets stored. */
-type Candidate = { score: number; preview: string; value: Illustration };
+/** `useUrl`: a ping the library asks for when its photo is used (Unsplash download tracking). */
+type Candidate = { score: number; preview: string; value: Illustration; useUrl?: string };
 const stop = new Set(["about","after","agency","also","amid","among","and","announces","apod","april","are","august","been","behind","bonanza","but","can","could","december","during","each","ends","february","first","for","from","future","has","have","help","how","including","into","its","iii","january","july","june","leaves","march","may","mission","more","most","news","nasa","noaa","november","new","not","october","one","operations","other","our","over","part","partnership","releases","research","said","says","scientific","september","such","than","that","the","their","them","these","they","this","those","through","today","two","use","used","was","were","what","when","which","while","who","will","with","would","year","years","you"]);
 const nonvisualWords = new Set(["her", "hers", "herself", "him", "himself", "his", "she", "they", "them", "we", "our", "ours", "us"]);
 function words(text: string) { return text.toLowerCase().match(/[a-z][a-z0-9-]{2,}/g)?.filter((word) => !stop.has(word) && !nonvisualWords.has(word)) ?? []; }
@@ -441,7 +442,75 @@ async function openverseCandidates(query: string, keywords: string[], fetcher: t
   });
 }
 
-const maxCandidates = 6;
+type PexelsResult = { photos?: { id?: number; width?: number; height?: number; url?: string; photographer?: string; alt?: string; src?: { large?: string; medium?: string } }[] };
+export const PEXELS_LICENSE_URL = "https://www.pexels.com/license/";
+/**
+ * Pexels: modern, everyday photography (streets, shops, offices, kitchens) that the
+ * archival libraries rarely hold. Free to use under the Pexels License; used only when
+ * PEXELS_API_KEY is set. The photographer is credited on the article.
+ */
+export async function pexelsCandidates(query: string, keywords: string[], fetcher: typeof fetch): Promise<Candidate[]> {
+  const key = process.env.PEXELS_API_KEY;
+  if (!key) return [];
+  const url = new URL("https://api.pexels.com/v1/search");
+  Object.entries({ query, per_page: "15", orientation: "landscape" }).forEach(([name, value]) => url.searchParams.set(name, value));
+  const response = await fetcher(url, { signal: AbortSignal.timeout(7000), headers: { ...imageAgent, Authorization: key } });
+  if (!response.ok) throw new Error(`Pexels image search returned HTTP ${response.status}`);
+  const data = await response.json() as PexelsResult;
+  return (data.photos ?? []).flatMap((item) => {
+    const imageUrl = approvedUrl(item.src?.large ?? "", ["images.pexels.com"]);
+    const preview = approvedUrl(item.src?.medium ?? "", ["images.pexels.com"]);
+    const sourceUrl = approvedUrl(item.url ?? "", ["www.pexels.com"]);
+    if (!imageUrl || !preview || !sourceUrl || !sourceUrl.includes("/photo/") || Math.max(item.width ?? 0, item.height ?? 0) < 800) return [];
+    const alt = plain(item.alt ?? "");
+    const matches = keywords.filter((word) => alt.toLowerCase().includes(word));
+    const photographer = plain(item.photographer ?? "").slice(0, 150);
+    return [{ score: matches.length * 10 + 6, preview, value: {
+      image_url: imageUrl, image_alt: `Ảnh minh họa: ${alt || query}`.slice(0, 300), image_credit: `${photographer || "Pexels photographer"} / Pexels`.slice(0, 200),
+      image_source_url: sourceUrl, license_name: "Pexels License", license_url: PEXELS_LICENSE_URL,
+    } }];
+  });
+}
+
+type UnsplashResult = { results?: { width?: number; height?: number; description?: string | null; alt_description?: string | null; urls?: { regular?: string; small?: string }; links?: { html?: string; download_location?: string }; user?: { name?: string } }[] };
+export const UNSPLASH_LICENSE_URL = "https://unsplash.com/license";
+/**
+ * Unsplash: high-quality free photos under the Unsplash License; used only when
+ * UNSPLASH_ACCESS_KEY is set. Images are hotlinked, the photographer is credited and
+ * the download is reported when a photo is used, as the Unsplash API guidelines ask.
+ */
+export async function unsplashCandidates(query: string, keywords: string[], fetcher: typeof fetch): Promise<Candidate[]> {
+  const key = process.env.UNSPLASH_ACCESS_KEY;
+  if (!key) return [];
+  const url = new URL("https://api.unsplash.com/search/photos");
+  Object.entries({ query, per_page: "15", orientation: "landscape", content_filter: "high" }).forEach(([name, value]) => url.searchParams.set(name, value));
+  const response = await fetcher(url, { signal: AbortSignal.timeout(7000), headers: { ...imageAgent, Authorization: `Client-ID ${key}`, "Accept-Version": "v1" } });
+  if (!response.ok) throw new Error(`Unsplash image search returned HTTP ${response.status}`);
+  const data = await response.json() as UnsplashResult;
+  return (data.results ?? []).flatMap((item) => {
+    const imageUrl = approvedUrl(item.urls?.regular ?? "", ["images.unsplash.com"]);
+    const preview = approvedUrl(item.urls?.small ?? "", ["images.unsplash.com"]);
+    const sourceUrl = approvedUrl(item.links?.html ?? "", ["unsplash.com"]);
+    const useUrl = approvedUrl(item.links?.download_location ?? "", ["api.unsplash.com"]);
+    if (!imageUrl || !preview || !sourceUrl || !sourceUrl.includes("/photos/") || Math.max(item.width ?? 0, item.height ?? 0) < 800) return [];
+    const alt = plain(item.alt_description ?? item.description ?? "");
+    const matches = keywords.filter((word) => alt.toLowerCase().includes(word));
+    const photographer = plain(item.user?.name ?? "").slice(0, 150);
+    return [{ score: matches.length * 10 + 6, preview, useUrl: useUrl ?? undefined, value: {
+      image_url: imageUrl, image_alt: `Ảnh minh họa: ${alt || query}`.slice(0, 300), image_credit: `${photographer || "Unsplash photographer"} / Unsplash`.slice(0, 200),
+      image_source_url: sourceUrl.split("?")[0], license_name: "Unsplash License", license_url: UNSPLASH_LICENSE_URL,
+    } }];
+  });
+}
+/** Reports a used Unsplash photo (best effort; never blocks saving). */
+async function reportPhotoUse(candidate: Candidate, fetcher: typeof fetch) {
+  const key = process.env.UNSPLASH_ACCESS_KEY;
+  if (!candidate.useUrl || !key) return;
+  await fetcher(candidate.useUrl, { signal: AbortSignal.timeout(5000), headers: { Authorization: `Client-ID ${key}`, "Accept-Version": "v1" } }).catch(() => null);
+}
+
+/** Images shown to the vision check per batch; more libraries get a slightly larger batch. */
+const MAX_VISION_CANDIDATES = 8;
 type PhotoSearchTrace = { queries: string[]; rejectedUrls: string[] };
 type IllustrationOptions = { body?: string; query?: string; excludeUrls?: string[]; triedQueries?: string[]; trace?: PhotoSearchTrace };
 /**
@@ -477,10 +546,11 @@ async function gatherCandidates(title: string, body: string, query: string, fetc
   const found = new Map<string, Candidate & { library: string }>();
   let failure: unknown = null;
   let successfulSearches = 0;
-  const libraries = ["openverse", "commons", "nasa"] as const;
+  const libraries = ["openverse", "commons", "nasa", "pexels", "unsplash"] as const;
   for (const search of searches) {
     trace?.queries.push(search);
-    const results = await Promise.allSettled([openverseCandidates(search, keywords, fetcher), commonsCandidates(search, keywords, fetcher), nasaLibraryCandidates(search, keywords, fetcher)]);
+    const results = await Promise.allSettled([openverseCandidates(search, keywords, fetcher), commonsCandidates(search, keywords, fetcher),
+      nasaLibraryCandidates(search, keywords, fetcher), pexelsCandidates(search, keywords, fetcher), unsplashCandidates(search, keywords, fetcher)]);
     results.forEach((outcome, index) => {
       if (outcome.status === "rejected") { failure = outcome.reason; return; }
       successfulSearches++;
@@ -492,8 +562,9 @@ async function gatherCandidates(title: string, body: string, query: string, fetc
   // Openverse covers everyday subjects best; for space and aerospace stories the NASA
   // library holds the real photos (engine tests, launches, spacecraft), so it gets more slots.
   const spaceStory = /\b(nasa|space|rocket|engine test|launch|moon|lunar|mars|orbit|satellite|astronaut|spacecraft|telescope|artemis|aeronautics|aircraft)\b/i.test(`${title} ${query}`);
-  const share = spaceStory ? { openverse: 2, commons: 1, nasa: 3 } : { openverse: 3, commons: 2, nasa: 1 };
-  return libraries.flatMap((library) => ranked.filter((candidate) => candidate.library === library).slice(0, share[library])).sort((a, b) => b.score - a.score).slice(0, maxCandidates);
+  // Pexels and Unsplash (when configured) cover modern everyday scenes; the vision check still decides.
+  const share = spaceStory ? { openverse: 1, commons: 1, nasa: 3, pexels: 1, unsplash: 1 } : { openverse: 2, commons: 1, nasa: 1, pexels: 2, unsplash: 2 };
+  return libraries.flatMap((library) => ranked.filter((candidate) => candidate.library === library).slice(0, share[library])).sort((a, b) => b.score - a.score).slice(0, MAX_VISION_CANDIDATES);
 }
 
 /** A small image as Gemini inline data, or null when it cannot be read. */
@@ -531,12 +602,6 @@ async function alternativeVisualSubject(title: string, body: string, tried: stri
     `Title: ${title}\n\n${body.slice(0, 1500)}`, subjectSchema, { fetcher, temperature: 0.3, maxOutputTokens: 60, articleOnly: newsArticleFreeTierReady() });
   const query = (data.image_query ?? "").replace(/[^\p{L}\p{N} -]/gu, " ").replace(/\s+/g, " ").trim().slice(0, 80);
   return query.toLowerCase() === tried.toLowerCase() ? "" : query;
-}
-/** Articles the discovery job marked hot (covered by two or more newspapers). */
-async function hotArticleIds(db: Db, ids: string[]) {
-  if (!ids.length) return new Set<string>();
-  const { data } = await db.from("news_articles").select("id,metadata").in("id", ids);
-  return new Set((data ?? []).filter((row) => (row.metadata as { hot?: unknown } | null)?.hot === true).map((row) => row.id as string));
 }
 /** Minimum fit for an image to be used; no picture is better than a misleading one. */
 export const minimumImageFit = 7;
@@ -576,7 +641,10 @@ async function findNewsIllustrationResult(title: string, fetcher: typeof fetch =
     const { data } = await geminiJson<{ best?: number; fit?: number }>(visionPrompt, parts, visionSchema, { fetcher, temperature: 0, maxOutputTokens: 200, articleOnly: newsArticleFreeTierReady() });
     const chosen = typeof data.best === "number" ? batch[data.best - 1] : undefined;
     bestFit = Math.max(bestFit, data.fit ?? 0);
-    if (chosen && (data.fit ?? 0) >= minimumImageFit) return { image: chosen.candidate.value, reason: "", query };
+    if (chosen && (data.fit ?? 0) >= minimumImageFit) {
+      await reportPhotoUse(chosen.candidate, fetcher);
+      return { image: chosen.candidate.value, reason: "", query };
+    }
     trace?.rejectedUrls.push(...batch.map((entry) => entry.candidate.value.image_url));
   }
   if (!candidatesFound) return { image: null, reason: "No licensed image matched the article search", query };
@@ -791,14 +859,19 @@ async function enrichPhotoWork(db: Db, result: PhotoWorkResult, onlyKind?: "inli
   }
 }
 
+/**
+ * Largest share of pictured articles (rolling seven days) that may carry an AI illustration.
+ * AI art is only the last resort, after two licensed-photo searches found nothing that fits.
+ */
+export const AI_COVER_SHARE = 0.4;
 async function availableAiArtSlots(db: Db) {
   const since = new Date(Date.now() - 7 * 86400000).toISOString();
   const base = () => db.from("news_archive_catalog").select("id", { count: "exact", head: true })
     .eq("publication_status", "published").eq("sensitive", false).eq("readable", true).gte("published_at", since);
   const [pictured, ai] = await Promise.all([base().not("image_url", "is", null), base().eq("illustration_source_url", aiArtSourceUrl)]);
   if (pictured.error || ai.error) return 0;
-  // A new AI cover is allowed only when it keeps the rolling seven-day share at or below 20%.
-  return Math.max(0, Math.floor(((pictured.count ?? 0) + 1) / 5) - (ai.count ?? 0));
+  // A new AI cover is allowed only when it keeps the rolling seven-day share at or below AI_COVER_SHARE.
+  return Math.max(0, Math.floor(((pictured.count ?? 0) + 1) * AI_COVER_SHARE) - (ai.count ?? 0));
 }
 async function enrichImages(db: Db, result: EnrichResult) {
   // Spread image work over the day so the older backlog cannot consume every
@@ -818,7 +891,7 @@ async function enrichImages(db: Db, result: EnrichResult) {
   if (imageClaimError) throw imageClaimError;
   const claims = (imageClaims ?? []) as Claim[];
   const ids = claims.map((article) => article.article_id);
-  const [queries, pending, hot] = await Promise.all([imageQueries(db, ids), pendingAiArt(db, ids), hotArticleIds(db, ids)]);
+  const [queries, pending] = await Promise.all([imageQueries(db, ids), pendingAiArt(db, ids)]);
   // Check licensed photo libraries in parallel first, then walk strictly from the newest
   // claimed article to the oldest so the latest story always gets the free AI art slot first.
   const photoLookups = new Map(await Promise.all(claims.map(async (article) => {
@@ -827,8 +900,8 @@ async function enrichImages(db: Db, result: EnrichResult) {
     if (pending.has(id)) return [id, { image: null as Illustration | null, query: initialQuery, reason: "", quotaError: null as AiQuotaError | null }] as const;
     try {
       let found = await findNewsIllustrationResult(article.title, fetch, { body: article.body_text ?? "", query: initialQuery });
-      // A hot story gets one more search with a different visual subject before falling back to AI art.
-      if (!found.image && hot.has(id)) {
+      // Every story gets one more search with a different visual subject before falling back to AI art.
+      if (!found.image) {
         const alternative = await alternativeVisualSubject(article.title, article.body_text ?? "", found.query, fetch).catch((cause) => {
           if (cause instanceof AiQuotaError) throw cause;
           return "";
