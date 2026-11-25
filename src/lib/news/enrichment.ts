@@ -975,7 +975,7 @@ async function runQuizClaim(db: Db, result: EnrichResult, settings: Awaited<Retu
 /** Minimum words a body needs before a quiz is written for it, as in news_claim_enrichment. */
 export const QUIZ_MIN_WORDS = 400;
 const RUNNING_STALE_MS = 15 * 60_000;
-export type ArticleQuizRun = { status: "ready" | "failed" | "skipped"; message: string; questions: number };
+export type ArticleQuizRun = { status: "ready" | "failed" | "skipped"; message: string; questions: number; rejected?: string[] };
 
 /**
  * Admin-requested quiz for one article, outside the schedule: it ignores the circuit breaker,
@@ -1018,7 +1018,9 @@ export async function generateQuizForArticle(articleId: string): Promise<Article
     db.from("news_enrichment_attempts").select("error_message").eq("article_id", articleId).eq("kind", "quiz").maybeSingle(),
   ]);
   if (result.quizzesAdded && saved) return { status: "ready", message: `Đã tạo ${saved.question_count} câu hỏi.`, questions: Number(saved.question_count) };
-  return { status: "failed", message: (outcome?.error_message as string | null) ?? result.errors[0] ?? "Không tạo được quiz.", questions: 0 };
+  const { lastRejectedSamples } = await import("./question-factory-v2");
+  return { status: "failed", message: (outcome?.error_message as string | null) ?? result.errors[0] ?? "Không tạo được quiz.", questions: 0,
+    rejected: lastRejectedSamples(articleId) };
 }
 
 /** Temporary model and network failures should not hide a quiz for a full day. */
