@@ -35,27 +35,24 @@ export function StudyLearners() {
   if (demoMode || status !== "live") return null;
   const others = learners.filter((item) => !item.self);
 
+  const studying = others.filter((item) => item.active).length;
   return <section className="study-learners" aria-label="Người đang học cùng">
     <div className="study-learners-head">
-      <span>Đang học cùng <b>{others.filter((item) => item.active).length}</b></span>
-      <button type="button" aria-pressed={hideName} onClick={() => setHideName(!hideName)}>{hideName ? "Đang ẩn tên bạn" : "Ẩn tên tôi"}</button>
+      <span>{others.length === 0 ? "Chỉ có bạn trong phòng" : <>Đang học cùng <b>{studying}</b></>}</span>
+      {others.length === 0 && <button type="button" onClick={() => void copyInvite()}>{copied ? <Check size={13} /> : <Link2 size={13} />}{copied ? "Đã chép link" : "Mời bạn học"}</button>}
+      <button type="button" aria-pressed={hideName} onClick={() => setHideName(!hideName)}>{hideName ? "Hiện tên tôi" : "Ẩn tên tôi"}</button>
     </div>
-    {others.length === 0
-      ? <div className="study-learners-empty">
-        <p>Chỉ có bạn trong phòng lúc này. Người vào sau sẽ thấy mục tiêu của bạn.</p>
-        <button type="button" onClick={() => void copyInvite()}>{copied ? <Check size={14} /> : <Link2 size={14} />}{copied ? "Đã chép link" : "Mời bạn học"}</button>
-      </div>
-      : <ul className="study-learner-strip">
-        {others.map((item) => {
-          const minutes = minutesSince(item.since, now);
-          return <li key={item.id} className={item.active ? "active" : ""} title={`${item.name}${item.goal ? ` · ${item.goal}` : ""}`}>
-            <span className="study-learner-avatar" aria-hidden="true">{item.name.slice(0, 1).toUpperCase()}</span>
-            <span className="study-learner-copy">
-              <strong>{item.name}{item.active && minutes !== null ? <small> · {minutes}′</small> : null}</strong>
-              <span>{item.active ? item.goal || "Đang học" : "Tạm vắng"}</span>
-            </span>
-          </li>;
-        })}
-      </ul>}
+    {others.length > 0 && <ul className="study-learner-strip">
+      {others.map((item) => {
+        const minutes = minutesSince(item.since, now);
+        return <li key={item.id} className={item.active ? "active" : ""} title={`${item.name}${item.goal ? ` · ${item.goal}` : ""}`}>
+          <span className="study-learner-avatar" aria-hidden="true">{item.name.slice(0, 1).toUpperCase()}</span>
+          <span className="study-learner-copy">
+            <strong>{item.name}{item.active && minutes !== null ? <small> · {minutes}′</small> : null}</strong>
+            <span>{item.active ? item.goal || "Đang học" : "Tạm vắng"}</span>
+          </span>
+        </li>;
+      })}
+    </ul>}
   </section>;
 }
