@@ -32,7 +32,7 @@ select a.user_id, public.learner_local_day(a.user_id, a.submitted_at), array['ie
  where a.state <> 'in_progress' and a.submitted_at is not null and public.ielts_attempt_has_answer(a.answers)
  group by a.user_id, public.learner_local_day(a.user_id, a.submitted_at)
 on conflict (user_id, day) do update set
-  kinds = case when 'ielts_test' = any(d.kinds) then d.kinds else d.kinds || 'ielts_test' end,
+  kinds = case when 'ielts_test' = any(d.kinds) then d.kinds else d.kinds || 'ielts_test'::text end,
   events = d.events + excluded.events,
   first_at = least(d.first_at, excluded.first_at),
   last_at = greatest(d.last_at, excluded.last_at);
