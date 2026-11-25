@@ -56,12 +56,14 @@ type EntryRow = {
   id: string; kind: "note" | "word"; title: string; body: string;
   meaning_vi: string; example: string; source_path: string;
   phonetic: string; part_of_speech: string; topic: string; definition: string; source_url: string;
+  skill: string; review_at: string | null; review_prompt: string; review_count: number;
   created_at: string; updated_at: string;
 };
 type VisitRow = { id: string; path: string; title: string; visited_at: string };
 const fromEntryRow = (row: EntryRow): NotebookEntry => ({
   id: row.id, kind: row.kind, title: row.title, body: row.body,
   meaningVi: row.meaning_vi, example: row.example, sourcePath: row.source_path,
+  ...(row.kind === "note" && { skill: row.skill ?? "general", reviewAt: row.review_at ?? null, reviewPrompt: row.review_prompt ?? "", reviewCount: row.review_count ?? 0 }),
   ...(row.kind === "word" && { phonetic: row.phonetic ?? "", partOfSpeech: row.part_of_speech ?? "", topic: row.topic ?? "", definition: row.definition ?? "", sourceUrl: row.source_url ?? "" }),
   createdAt: row.created_at, updatedAt: row.updated_at,
 } as NotebookEntry);
@@ -158,6 +160,7 @@ export function NotebookProvider({ children }: { children: React.ReactNode }) {
         const result = await supabase!.from("notebook_entries").insert({
           kind: valid.kind, title: valid.title, body: valid.body,
           meaning_vi: valid.meaningVi, example: valid.example, source_path: sourcePath,
+          ...(valid.kind === "note" && { skill: valid.skill ?? "general", review_at: valid.reviewAt ?? null, review_prompt: valid.reviewPrompt ?? "", review_count: valid.reviewCount ?? 0 }),
           ...(valid.kind === "word" && { phonetic: valid.phonetic ?? "", part_of_speech: valid.partOfSpeech ?? "", topic: valid.topic ?? "", definition: valid.definition ?? "", source_url: valid.sourceUrl ?? "" }),
         }).select("*").single();
         if (result.error) {
@@ -180,6 +183,12 @@ export function NotebookProvider({ children }: { children: React.ReactNode }) {
         const result = await supabase!.from("notebook_entries").update({
           title: valid.title, body: valid.body, meaning_vi: valid.meaningVi,
           example: valid.example, updated_at: new Date().toISOString(),
+          ...(valid.kind === "note" && {
+            ...(valid.skill !== undefined && { skill: valid.skill }),
+            ...(valid.reviewAt !== undefined && { review_at: valid.reviewAt }),
+            ...(valid.reviewPrompt !== undefined && { review_prompt: valid.reviewPrompt }),
+            ...(valid.reviewCount !== undefined && { review_count: valid.reviewCount }),
+          }),
         }).eq("id", id).select("*").single();
         if (result.error) { setError(result.error.message); throw result.error; }
         setEntries((current) => current.map((entry) => entry.id === id ? fromEntryRow(result.data as EntryRow) : entry));

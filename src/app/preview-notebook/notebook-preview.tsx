@@ -3,15 +3,16 @@
 import { useEffect, useState } from "react";
 import { NotesWorkspace } from "@/features/notebook/quick-notes-workspace";
 import type { NotebookEntry } from "@/features/notebook/notebook-store";
-import type { NotebookInput } from "@/lib/validation/notebook";
+import type { NotebookInput, NoteSkill } from "@/lib/validation/notebook";
+import { reviewDate } from "@/features/notebook/notes-model";
 
 const ago = (days: number, hours = 0) => new Date(Date.now() - days * 86400000 - hours * 3600000).toISOString();
-const note = (id: string, title: string, body: string, days: number, sourcePath = "/app/notebook"): NotebookEntry => ({
-  id, kind: "note", title, body, meaningVi: "", example: "", sourcePath, createdAt: ago(days + 2), updatedAt: ago(days, 1),
+const note = (id: string, title: string, body: string, days: number, sourcePath = "/app/notebook", skill: NoteSkill = "general", reviewAt: string | null = null, reviewPrompt = ""): NotebookEntry => ({
+  id, kind: "note", title, body, meaningVi: "", example: "", sourcePath, skill, reviewAt, reviewPrompt, reviewCount: 0, createdAt: ago(days + 2), updatedAt: ago(days, 1),
 });
 
 const makeSeed = (): NotebookEntry[] => [
-  note("00000000-0000-4000-8000-000000000001", "Lỗi sai: since vs for", "## Mình đã viết\n> I have lived here since 5 years.\n\n## Câu đúng\n> I have lived here **for** 5 years.\n\n## Vì sao sai\n- *since* + mốc thời gian (since 2020)\n- *for* + khoảng thời gian (for 5 years)\n\n## Lần sau nhớ\n- [x] Đọc lại quy tắc\n- [ ] Viết 3 câu tương tự\n\n#mistakes #grammar", 0),
+  note("00000000-0000-4000-8000-000000000001", "Lỗi sai: since vs for", "## Mình đã viết\n> I have lived here since 5 years.\n\n## Câu đúng\n> I have lived here **for** 5 years.\n\n## Vì sao sai\n- *since* + mốc thời gian (since 2020)\n- *for* + khoảng thời gian (for 5 years)\n\n## Lần sau nhớ\n- [x] Đọc lại quy tắc\n- [ ] Viết 3 câu tương tự\n\n#mistakes #grammar", 0, "/app/notebook", "grammar", reviewDate(), "Khi nào dùng since, khi nào dùng for?"),
   note("00000000-0000-4000-8000-000000000002", "Dàn ý Task 2: Remote work and cities", "## Đề bài\n> More people work from home. Is this a positive or negative development?\n\n## Quan điểm\n- Mostly ==positive== for workers, but cities must adapt\n\n## Body 1\n- Ý chính: saves commuting time\n- Ví dụ: 2 hours/day in Ho Chi Minh City\n\n## Từ vựng ăn điểm\n- **work-life balance**\n- **urban congestion**\n\n#writing #task2", 1),
   note("00000000-0000-4000-8000-000000000003", "Từ mới: mitigate", "## Từ / cụm từ\n**mitigate** (v) /ˈmɪtɪɡeɪt/\n\n## Nghĩa\n- giảm nhẹ, làm dịu\n\n## Collocation hay đi kèm\n- mitigate the impact / risk / effects\n\n#vocabulary #environment", 3, "/app/lesson/starter-u01-reading-city-gardens"),
   note("00000000-0000-4000-8000-000000000004", "Speaking Part 2: a place I'd like to visit", "## Cue card\n> Describe a place you would like to visit\n\n## Ý chính\n- What: Kyoto in autumn\n- Why it matters: temples + maple leaves\n\n#speaking", 9),
