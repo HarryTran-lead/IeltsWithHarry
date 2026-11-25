@@ -17,6 +17,8 @@ export async function GET(request: Request) {
       let query = client.from("ielts_exams")
         .select("id,title,skill,practice_type,format,duration_minutes,attribution,license,ai_generated,created_at,topic,difficulty,source_id,external_id,published_version_id")
         .not("published_version_id", "is", null)
+        // Reading Lab sets (M08.xx) live in the same table but belong to /app/reading/lab only.
+        .not("external_id", "like", "reading-lab-%")
         .order("created_at", { ascending: false })
         .order("id", { ascending: true })
         .range(offset, offset + pageSize - 1);
