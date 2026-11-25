@@ -99,7 +99,7 @@ export async function createExamCover(client: BankDb, exam: CoverExamRow, fetche
 }
 
 /**
- * Generates AI cover illustrations for published Reading, Listening and Writing
+ * Generates AI cover illustrations for published Listening and Writing
  * (Task 2 / General Training Task 1) exams that do not yet have one.
  */
 export async function enrichIeltsCovers(client: BankDb, fetcher: typeof fetch = fetch) {
@@ -109,7 +109,8 @@ export async function enrichIeltsCovers(client: BankDb, fetcher: typeof fetch = 
     .select("id,skill,practice_type,title,topic,created_at,ielts_exam_versions!ielts_published_version_fk(content)")
     .not("published_version_id", "is", null)
     .is("cover_image_url", null)
-    .in("skill", ["Reading", "Listening", "Writing"] as CatalogSkill[])
+    // Reading cards use the brand cover, so no AI pictures are generated for Reading.
+    .in("skill", ["Listening", "Writing"] as CatalogSkill[])
     .neq("practice_type", "task1_academic")
     .order("created_at", { ascending: false })
     .order("id", { ascending: true });
