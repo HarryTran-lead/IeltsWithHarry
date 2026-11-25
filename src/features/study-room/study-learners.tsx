@@ -1,11 +1,9 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { Check, Link2, UsersRound } from "lucide-react";
+import { Check, Link2 } from "lucide-react";
 import { demoMode } from "@/lib/runtime";
 import { useStudyPresence } from "./study-presence";
-
-const shown = 7;
 
 function minutesSince(since: string | null, now: number) {
   if (!since || !now) return null;
@@ -13,6 +11,7 @@ function minutesSince(since: string | null, now: number) {
   return minutes >= 0 ? minutes : null;
 }
 
+/** A compact strip of who is studying now, shown at the top of the room chat. */
 export function StudyLearners() {
   const { learners, status, hideName, setHideName } = useStudyPresence();
   const [now, setNow] = useState(0);
@@ -33,36 +32,30 @@ export function StudyLearners() {
     } catch { /* Clipboard may be blocked; the button stays as it was. */ }
   }
 
+  if (demoMode || status !== "live") return null;
   const others = learners.filter((item) => !item.self);
-  const studying = others.filter((item) => item.active).length;
 
   return <section className="study-learners" aria-label="Người đang học cùng">
-    <header>
-      <h2><UsersRound size={18} /> Đang học cùng bạn <span>{studying}</span></h2>
-      {!demoMode && <label className="study-hide-name"><input type="checkbox" checked={hideName} onChange={(event) => setHideName(event.target.checked)} /> Ẩn tên tôi</label>}
-    </header>
-
-    {status !== "live" && !demoMode
-      ? <p className="study-learners-note">{status === "connecting" ? "Đang kết nối phòng học…" : "Chưa kết nối được phòng học. Tải lại trang để thử lại."}</p>
-      : others.length === 0
-        ? <div className="study-learners-empty">
-          <strong>Bạn đang mở phòng hôm nay</strong>
-          <p>Cứ bắt đầu phiên học, người vào sau sẽ thấy bạn và mục tiêu của bạn. Bạn cũng có thể để lại lời nhắn trong phòng chat.</p>
-          <button type="button" onClick={() => void copyInvite()}>{copied ? <Check size={15} /> : <Link2 size={15} />}{copied ? "Đã sao chép link" : "Mời bạn học cùng"}</button>
-        </div>
-        : <ul className="study-learner-list">
-          {others.slice(0, shown).map((item) => {
-            const minutes = minutesSince(item.since, now);
-            return <li key={item.id} className={item.active ? "active" : ""}>
-              <span className="study-learner-avatar" aria-hidden="true">{item.name.slice(0, 1).toUpperCase()}</span>
-              <span className="study-learner-copy">
-                <strong>{item.name}</strong>
-                <small>{item.goal || "Chưa đặt mục tiêu"}</small>
-              </span>
-              <span className="study-learner-state">{item.active ? (minutes !== null ? `${minutes} phút` : "Đang học") : "Tạm vắng"}</span>
-            </li>;
-          })}
-          {others.length > shown && <li className="study-learner-more">+{others.length - shown} người khác</li>}
-        </ul>}
+    <div className="study-learners-head">
+      <span>Đang học cùng <b>{others.filter((item) => item.active).length}</b></span>
+      <button type="button" aria-pressed={hideName} onClick={() => setHideName(!hideName)}>{hideName ? "Đang ẩn tên bạn" : "Ẩn tên tôi"}</button>
+    </div>
+    {others.length === 0
+      ? <div className="study-learners-empty">
+        <p>Chỉ có bạn trong phòng lúc này. Người vào sau sẽ thấy mục tiêu của bạn.</p>
+        <button type="button" onClick={() => void copyInvite()}>{copied ? <Check size={14} /> : <Link2 size={14} />}{copied ? "Đã chép link" : "Mời bạn học"}</button>
+      </div>
+      : <ul className="study-learner-strip">
+        {others.map((item) => {
+          const minutes = minutesSince(item.since, now);
+          return <li key={item.id} className={item.active ? "active" : ""} title={`${item.name}${item.goal ? ` · ${item.goal}` : ""}`}>
+            <span className="study-learner-avatar" aria-hidden="true">{item.name.slice(0, 1).toUpperCase()}</span>
+            <span className="study-learner-copy">
+              <strong>{item.name}{item.active && minutes !== null ? <small> · {minutes}′</small> : null}</strong>
+              <span>{item.active ? item.goal || "Đang học" : "Tạm vắng"}</span>
+            </span>
+          </li>;
+        })}
+      </ul>}
   </section>;
 }

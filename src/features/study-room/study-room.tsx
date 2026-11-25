@@ -8,7 +8,7 @@ import { demoMode } from "@/lib/runtime";
 import { createClient } from "@/lib/supabase/browser";
 import { liveStreams } from "./live-streams";
 import { useStudyPresence, type StudyRoomMessage } from "./study-presence";
-import { StudySessionCard } from "./study-session-card";
+import { StudySessionDock, StudyTodayChip, useStudySession } from "./study-session-card";
 import { StudyLearners } from "./study-learners";
 import { loadYouTubeIframeApi, type YouTubePlayer } from "@/lib/youtube-iframe-api";
 
@@ -93,6 +93,7 @@ export function StudyRoom({ canManage = false, showVideo, videoMode, streamId, m
   const [messages, setMessages] = useState<Message[]>([]);
   const [currentUser, setCurrentUser] = useState("");
   const { online, status, subscribeMessages } = useStudyPresence();
+  const session = useStudySession();
   const [error, setError] = useState("");
   const [draft, setDraft] = useState("");
   const [sending, setSending] = useState(false);
@@ -182,8 +183,7 @@ export function StudyRoom({ canManage = false, showVideo, videoMode, streamId, m
   }
 
   return <main className="study-room-page">
-    <div className="study-room-heading"><div><span className="study-eyebrow"><span className="study-live-dot" /> PHÒNG HỌC TRỰC TIẾP</span><h1>Cùng học, cùng tiến bộ <Sticker name="coffee" size={38} tilt={-8} /></h1></div><div className="study-room-stats"><div className="study-online"><UsersRound size={18} /><strong>{online ?? "…"}</strong><span>đang học cùng</span></div></div></div>
-    <div className="study-session-row"><StudySessionCard /><StudyLearners /></div>
+    <div className="study-room-heading"><div><span className="study-eyebrow"><span className="study-live-dot" /> PHÒNG HỌC TRỰC TIẾP</span><h1>Cùng học, cùng tiến bộ <Sticker name="coffee" size={38} tilt={-8} /></h1></div><div className="study-room-stats"><div className="study-online"><UsersRound size={18} /><strong>{online ?? "…"}</strong><span>đang học cùng</span></div><StudyTodayChip /></div></div>
     <section className="study-control-bar" aria-label="Chọn nhạc nền">
       <div className="study-control-top"><div className="study-video-tabs" role="group" aria-label="Chọn không gian học">
         <button type="button" className={videoMode === "youtube" ? "selected" : ""} onClick={() => void onSelectVideo("youtube")} aria-pressed={videoMode === "youtube"}>● YouTube live</button>
@@ -198,10 +198,10 @@ export function StudyRoom({ canManage = false, showVideo, videoMode, streamId, m
       {showVideo && <div className={`study-room-main ${videoMode === "youtube" ? "has-youtube" : ""}`}>
         <section className="study-visual-card">
           {videoMode === "youtube" ? <StudyYouTube streamId={selectedStream.id} title={`${selectedStream.title} — ${selectedStream.channel}`} onReady={onYoutubeReady} onStateChange={onYoutubeStateChange} onDispose={onYoutubeDispose} /> : <StudyScene />}
-          <div className="study-visual-footer"><div><span className="study-on-air"><i /> {videoMode === "youtube" ? "YOUTUBE LIVE" : "STUDY SESSION"}</span><strong>{videoMode === "youtube" ? selectedStream.title : "Một góc nhỏ để tập trung mỗi ngày"}</strong><small>{videoMode === "youtube" ? <>{selectedStream.channel} · <a href={`https://www.youtube.com/watch?v=${selectedStream.id}`} target="_blank" rel="noopener noreferrer">Mở livestream trên YouTube ↗</a></> : "Hoạt cảnh và nhạc lặp tạo riêng cho IeltsWithHarry"}</small></div><Sticker name="headphones" size={40} tilt={8} className="study-visual-sparkle" /></div>
+          <StudySessionDock session={session} />
         </section>
       </div>}
-      <section className="study-chat-card" aria-label="Phòng chat cùng học"><header className="study-chat-header"><div className="study-chat-icon"><MessageCircle size={22} /></div><div><strong>Phòng chat chung</strong><span>{demoMode ? "Bản xem trước" : status === "live" ? "Đang kết nối trực tiếp" : status === "connecting" ? "Đang kết nối…" : "Chưa có kết nối trực tiếp"}</span></div><span className={`study-chat-status ${status}`} /></header>
+      <section className="study-chat-card" aria-label="Phòng chat cùng học"><header className="study-chat-header"><div className="study-chat-icon"><MessageCircle size={22} /></div><div><strong>Phòng chat chung</strong><span>{demoMode ? "Bản xem trước" : status === "live" ? "Đang kết nối trực tiếp" : status === "connecting" ? "Đang kết nối…" : "Chưa có kết nối trực tiếp"}</span></div><span className={`study-chat-status ${status}`} /></header><StudyLearners />
         <div className="study-chat-messages" ref={listRef} aria-live="polite">{hasOlder && <button className="study-older" type="button" onClick={() => void loadOlder()} disabled={loadingOlder}>{loadingOlder ? "Đang tải…" : "Xem tin nhắn cũ"}</button>}{messages.length === 0 && <div className="study-chat-empty"><HarryMascot size={100} /><h2>Chào mừng vào phòng!</h2><p>Chia sẻ mục tiêu học hôm nay hoặc gửi lời chào tới mọi người nhé.</p></div>}{messages.map((item) => <article className={`study-message ${item.user_id === currentUser ? "mine" : ""} ${item.is_admin ? "is-admin" : ""}`} key={item.id}><span className="study-message-avatar">{item.is_admin ? <HarryMascot size={28} /> : item.display_name.slice(0, 1).toUpperCase()}</span><div><div className="study-message-meta">{item.is_admin && <span className="study-message-admin-label">ADMIN</span>}<strong>{item.user_id === currentUser ? "Bạn" : item.display_name}</strong><time dateTime={item.created_at}>{new Date(item.created_at).toLocaleTimeString("vi-VN", { hour: "2-digit", minute: "2-digit" })}</time>{(item.user_id === currentUser || canManage) && <button type="button" onClick={() => void deleteMessage(item.id)} aria-label="Xóa tin nhắn"><Trash2 size={13} /></button>}</div><p>{item.body}</p></div></article>)}</div>
         {error && <p className="study-chat-error" role="alert">{error}</p>}
         {demoMode ? <div className="study-chat-demo">Đăng ký tài khoản để tham gia trò chuyện trực tiếp.</div> : <form className="study-chat-compose" onSubmit={(event) => void sendMessage(event)}><label className="sr-only" htmlFor="study-message">Tin nhắn của bạn</label><input id="study-message" value={draft} onChange={(event) => setDraft(event.target.value)} placeholder="Viết lời chào hoặc mục tiêu học tập…" maxLength={500} autoComplete="off" disabled={!currentUser || sending} /><button type="submit" aria-label="Gửi tin nhắn" disabled={!draft.trim() || !currentUser || sending}><Send size={18} /></button></form>}<p className="study-chat-note">Tôn trọng nhau và giữ cuộc trò chuyện phù hợp với việc học.</p>
