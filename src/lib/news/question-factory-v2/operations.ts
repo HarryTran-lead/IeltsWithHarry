@@ -99,7 +99,22 @@ export function quizFailureMessage(output: Pick<FactoryResult, "state" | "audit"
   // For provider failures keep Google's own message (status, text, wait) for diagnosis.
   const provider = reason === "unavailable" || reason === "rejected" || reason === "config" || reason === "quota"
     ? output.audit.issues.find((issue) => issue.startsWith("Gemini")) : undefined;
-  return provider ? `${base}; detail=${provider}`.slice(0, 300) : base;
+  if (provider) return `${base}; detail=${provider}`.slice(0, 300);
+  if (reason !== "quality" && reason !== "incomplete") return base;
+  // For quality failures keep how far the set got and which checks failed most, so admins can see why.
+  const counts = `items=${output.audit.candidate_count}/${output.audit.deterministic_pass}/${output.audit.qa_pass}`;
+  return `${base}; ${counts}; issues=${summarizeIssues(output.audit.issues)}`.slice(0, 600);
+}
+/** Most frequent check codes in an audit, e.g. "EVIDENCE×4,QA_MISMATCH×2,TOO_FEW_STRUCTURAL". */
+export function summarizeIssues(issues: string[]) {
+  const counts = new Map<string, number>();
+  for (const issue of issues) {
+    // Per-item issues look like "mcq_1:EVIDENCE,EXPLANATION"; set-level ones like "TOO_FEW_APPROVED" or "REPAIR:1/3".
+    const match = /^[^:]*:([A-Z_,]+)$/.exec(issue);
+    const codes = match ? match[1].split(",") : [issue.replace(/:.*$/, "")];
+    for (const code of codes) if (code) counts.set(code, (counts.get(code) ?? 0) + 1);
+  }
+  return [...counts].sort((a, b) => b[1] - a[1]).map(([code, count]) => count > 1 ? `${code}×${count}` : code).join(",") || "none";
 }
 export function quizSuccessMessage(output: Pick<FactoryResult, "questions" | "audit">) {
   const tokens = (output.audit.generation_tokens?.total ?? 0) + (output.audit.qa_tokens?.total ?? 0);
