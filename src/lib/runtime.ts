@@ -15,8 +15,18 @@ export const communityEnabled = process.env.NODE_ENV !== "production" || process
 export const smartNotebookV1 = liveMode && process.env.NEXT_PUBLIC_SMART_NOTEBOOK_V1 === "true";
 /** Keep launch locks in production; the isolated develop Preview can expose work in progress. */
 export const releaseLocks = process.env.NODE_ENV === "production" && process.env.NEXT_PUBLIC_UNLOCK_DEV_FEATURES !== "true";
+/**
+ * Closes every "Tự học IELTS" lab and every "Luyện đề" route (Reading, Listening, Writing, Speaking,
+ * Ngân hàng đề, Thi thử Speaking) for learners on the live site. Set to false to reopen them;
+ * the per-lab NEXT_PUBLIC_DISABLE_* flags then apply again.
+ */
+const ieltsPracticeLocked = true;
+const ieltsPracticePath = /^\/app\/(self-study|reading|listening|writing|speaking|question-bank)(?:\/|$)/;
+// Reading vocabulary lives under Vocabulary in the sidebar, so it stays open.
+const openDuringIeltsLock = ["/app/reading/vocabulary"];
+
 export function learnerSkillAvailable(skill: string | null | undefined) {
-  return !releaseLocks || ["Reading", "reading", "Writing", "writing", "Speaking", "speaking"].includes(skill ?? "");
+  return !releaseLocks || (!ieltsPracticeLocked && ["Reading", "reading", "Writing", "writing", "Speaking", "speaking"].includes(skill ?? ""));
 }
 export const productionLearnStage = "ielts-builder";
 // Learn is locked for learners for now; add stage ids here (e.g. productionLearnStage) to reopen them.
@@ -27,6 +37,7 @@ export function learnStageAvailable(stageId: string) {
 }
 
 export function lockedLearnerPath(pathname: string) {
+  if (releaseLocks && ieltsPracticeLocked && ieltsPracticePath.test(pathname) && !openDuringIeltsLock.includes(pathname)) return true;
   if (pathname === "/app/reading/lab" || pathname.startsWith("/app/reading/lab/"))
     return process.env.NEXT_PUBLIC_DISABLE_READING_LAB === "true";
   if (pathname === "/app/self-study/listening" || pathname.startsWith("/app/self-study/listening/"))

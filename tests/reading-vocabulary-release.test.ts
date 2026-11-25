@@ -5,41 +5,60 @@ afterEach(() => {
   vi.resetModules();
 });
 
+const lockedInProduction = [
+  // Tự học IELTS
+  "/app/self-study",
+  "/app/self-study/writing-task-1",
+  "/app/self-study/writing-task-2/T2-M113-01",
+  "/app/self-study/speaking/skill-FC01",
+  "/app/reading/lab",
+  "/app/reading/lab/M08_02",
+  "/app/self-study/listening",
+  // Luyện đề
+  "/app/reading",
+  "/app/reading/live",
+  "/app/listening",
+  "/app/listening/vocabulary",
+  "/app/writing",
+  "/app/writing/task-1",
+  "/app/writing/task-2",
+  "/app/speaking",
+  "/app/speaking/live",
+  "/app/speaking/part-3",
+  "/app/question-bank",
+  "/app/question-bank/exam/reading-id",
+  "/app/question-bank/attempt/reading-id",
+  "/app/question-bank/result/reading-id",
+  "/app/speaking/mock",
+];
+
 describe("production learner routes", () => {
-  it("opens Reading, Writing and Speaking practice while Listening and unreleased modes remain closed", async () => {
+  it("locks every self-study lab and every exam practice route", async () => {
     vi.stubEnv("NODE_ENV", "production");
     vi.stubEnv("NEXT_PUBLIC_UNLOCK_DEV_FEATURES", "false");
     vi.resetModules();
 
     const { learnerSkillAvailable, lockedLearnerPath } = await import("../src/lib/runtime");
-    expect(lockedLearnerPath("/app/reading/vocabulary")).toBe(false);
-    expect(lockedLearnerPath("/app/reading")).toBe(false);
-    expect(lockedLearnerPath("/app/reading/live")).toBe(false);
-    expect(lockedLearnerPath("/app/question-bank/exam/reading-id")).toBe(false);
-    expect(lockedLearnerPath("/app/question-bank/attempt/reading-id")).toBe(false);
-    expect(lockedLearnerPath("/app/question-bank/result/reading-id")).toBe(false);
-    expect(lockedLearnerPath("/app/reading/mock")).toBe(true);
-    expect(lockedLearnerPath("/app/listening")).toBe(true);
-    expect(lockedLearnerPath("/app/listening/mock")).toBe(true);
-    expect(lockedLearnerPath("/app/listening/vocabulary")).toBe(true);
-    expect(lockedLearnerPath("/app/writing")).toBe(false);
-    expect(lockedLearnerPath("/app/writing/live")).toBe(false);
-    expect(lockedLearnerPath("/app/writing/task-1")).toBe(false);
-    expect(lockedLearnerPath("/app/writing/task-2")).toBe(false);
-    expect(lockedLearnerPath("/app/writing/mode/unreleased")).toBe(true);
-    expect(lockedLearnerPath("/app/speaking")).toBe(false);
-    expect(lockedLearnerPath("/app/speaking/mock")).toBe(false);
-    expect(lockedLearnerPath("/app/speaking/live")).toBe(false);
-    expect(lockedLearnerPath("/app/speaking/part-3")).toBe(false);
-    expect(lockedLearnerPath("/app/speaking/mode/unreleased")).toBe(true);
-    expect(lockedLearnerPath("/app/question-bank")).toBe(true);
-    expect(learnerSkillAvailable("Reading")).toBe(true);
-    expect(learnerSkillAvailable("reading")).toBe(true);
-    expect(learnerSkillAvailable("Listening")).toBe(false);
-    expect(learnerSkillAvailable("Writing")).toBe(true);
-    expect(learnerSkillAvailable("writing")).toBe(true);
-    expect(learnerSkillAvailable("Speaking")).toBe(true);
-    expect(learnerSkillAvailable("speaking")).toBe(true);
-    expect(learnerSkillAvailable(null)).toBe(false);
+    for (const path of lockedInProduction) expect(lockedLearnerPath(path), path).toBe(true);
+    for (const skill of ["Reading", "reading", "Listening", "Writing", "writing", "Speaking", "speaking", null]) expect(learnerSkillAvailable(skill), String(skill)).toBe(false);
+  });
+
+  it("keeps Reading vocabulary and the supporting practice open", async () => {
+    vi.stubEnv("NODE_ENV", "production");
+    vi.stubEnv("NEXT_PUBLIC_UNLOCK_DEV_FEATURES", "false");
+    vi.resetModules();
+
+    const { lockedLearnerPath } = await import("../src/lib/runtime");
+    for (const path of ["/app/reading/vocabulary", "/app/vocabulary", "/app/grammar", "/app/dictation", "/app/news", "/app/notebook"]) expect(lockedLearnerPath(path), path).toBe(false);
+  });
+
+  it("leaves the released labs reachable in the unlocked preview", async () => {
+    vi.stubEnv("NODE_ENV", "production");
+    vi.stubEnv("NEXT_PUBLIC_UNLOCK_DEV_FEATURES", "true");
+    vi.resetModules();
+
+    const { lockedLearnerPath } = await import("../src/lib/runtime");
+    for (const path of ["/app/self-study/writing-task-1", "/app/self-study/speaking", "/app/reading/lab", "/app/reading", "/app/writing", "/app/speaking/mock"]) expect(lockedLearnerPath(path), path).toBe(false);
+    expect(lockedLearnerPath("/app/self-study")).toBe(true);
   });
 });
