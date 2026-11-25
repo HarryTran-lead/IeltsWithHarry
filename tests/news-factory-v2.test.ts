@@ -32,7 +32,7 @@ describe("Question Factory V2 editorial corpus", () => {
     { type: "ynng", change: (item) => item, code: "NO_WRITER_VIEW" },
     { type: "matching_headings", change: (item) => ({ ...item, prompt: "Choose the best heading for this section." }), code: "HEADING_PARAGRAPH" },
     { type: "matching_information", change: (item) => ({ ...item, options: ["A", "B", "C"] }), code: "INFORMATION_PARAGRAPHS" },
-    { type: "matching_features", change: (item) => ({ ...item, option_notes: [] }), code: "OPTION_NOTES" },
+    { type: "matching_features", change: (item) => ({ ...item, option_notes: item.option_notes.slice(1) }), code: "OPTION_NOTES" },
     { type: "matching_sentence_endings", change: (item) => ({ ...item, prompt: item.prompt + "." }), code: "SENTENCE_STEM" },
     { type: "sentence_completion", change: (item) => ({ ...item, prompt: item.prompt.replace("______", "some") }), code: "ONE_GAP" },
     { type: "summary_completion", change: (item) => ({ ...item, prompt: item.prompt + " and ______" }), code: "ONE_GAP" },
@@ -46,6 +46,17 @@ describe("Question Factory V2 editorial corpus", () => {
     const item = positiveFixtures.find((candidate) => candidate.type === type)!;
     const alteredMap = type === "ynng" ? { ...map, writer_view: "" } : map;
     expect(validateCandidate(change(item), article, alteredMap)).toContain(code);
+  });
+  it("lets a matching item leave out per-option notes but not give a partial set", () => {
+    const item = positiveFixtures.find((candidate) => candidate.type === "matching_features")!;
+    expect(validateCandidate({ ...item, option_notes: [] }, article, map)).not.toContain("OPTION_NOTES");
+    const mcq = positiveFixtures.find((candidate) => candidate.type === "mcq")!;
+    expect(validateCandidate({ ...mcq, option_notes: [] }, article, map)).toContain("OPTION_NOTES");
+  });
+  it("asks for spare candidates beyond the published target", async () => {
+    const { spareItems } = await import("../src/lib/news/question-factory-v2");
+    expect(spareItems(6)).toBe(3);
+    expect(spareItems(13)).toBe(4);
   });
   it("rejects incorrect matching pools and repeated facts", () => {
     const matching = positiveFixtures.filter((item) => item.type === "matching_features").map((item) => ({ ...item }));
@@ -486,6 +497,10 @@ describe("candidate normalization", () => {
     expect(ellipsis.prompt).toBe("Engineers fitted ______ to the rotor");
     const spelled = normalizeCandidate({ type: "note_completion", prompt: "Cameras built by Malin Space Science Systems [W3]", answer: "Malin Space Science", options: [], option_notes: [], correct_index: -1 } as never);
     expect(spelled.prompt).toBe("Cameras built by ______ Systems [W3]");
+    const pool = normalizeCandidate({ type: "matching_sentence_endings", answer: "", options: ["a end", "b end", "c end"], option_notes: ["Ghi chú đúng ở đây"], correct_index: 0, prompt: "Engineers chose nuclear power to" } as never);
+    expect(pool.option_notes).toEqual([]);
+    const mcq = normalizeCandidate({ type: "mcq", answer: "", options: ["a", "b", "c", "d"], option_notes: ["Chỉ một ghi chú"], correct_index: 0, prompt: "Which is true?" } as never);
+    expect(mcq.option_notes).toEqual(["Chỉ một ghi chú"]);
     const two = normalizeCandidate({ type: "sentence_completion", prompt: "A ______ and a ______.", answer: "x", options: [], option_notes: [], correct_index: -1 } as never);
     expect(two.prompt).toBe("A ______ and a ______.");
   });

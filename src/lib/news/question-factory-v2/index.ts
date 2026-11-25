@@ -77,6 +77,10 @@ export function withEvidenceSpans(item: Candidate, article: string): Candidate {
   return { ...item, evidence_spans: start >= 0 ? [{ start, end: start + quote.length, quote }] : [] };
 }
 const GAP = "______";
+/** Most candidates one article may request across all batches. */
+const MAX_CANDIDATES = 16;
+/** Spare candidates beyond the published target, so checks can drop items without failing the set. */
+export function spareItems(target: number) { return Math.max(3, Math.ceil(target * 0.3)); }
 const GAP_VARIANTS = /\[\s*(?:gap|blank)\s*\]|\(\s*(?:gap|blank)?\s*\)|\[\s*\]|\{\s*gap\s*\}|(?:_\s){2,}_|—{2,}|–{2,}/gi;
 const UNDERSCORE_GAP = /_{3,}/g;
 /**
@@ -86,7 +90,12 @@ const UNDERSCORE_GAP = /_{3,}/g;
  */
 export function normalizeCandidate(item: Candidate): Candidate {
   if (!item || typeof item !== "object") return item;
-  if (choiceTypes.has(item.type)) return { ...item, answer: "" };
+  if (choiceTypes.has(item.type)) {
+    // Matching forms share one pool of options; per-option notes are an optional extra for learners,
+    // so a pool whose notes do not line up keeps the item and drops only the notes.
+    const notesMismatch = !Array.isArray(item.option_notes) || !Array.isArray(item.options) || item.option_notes.length !== item.options.length;
+    return { ...item, answer: "", ...(item.type.startsWith("matching_") && notesMismatch ? { option_notes: [] } : {}) };
+  }
   let prompt = typeof item.prompt === "string" ? item.prompt.replace(GAP_VARIANTS, GAP) : item.prompt;
   if (gapTypes.has(item.type) && typeof prompt === "string" && item.type !== "diagram_label_completion") {
     const gaps = prompt.match(UNDERSCORE_GAP)?.length ?? 0;
@@ -107,7 +116,7 @@ export function lastRejectedSamples(articleId: string) { return rejectedSamples.
 function sampleRejected(articleId: string, items: Candidate[], issues: string[]) {
   const errors = new Map(issues.map((issue) => /^([^:]+):([A-Z_,]+)$/.exec(issue)).filter(Boolean).map((match) => [match![1], match![2]]));
   rejectedSamples.set(articleId, items.filter((item) => errors.has(item?.id)).slice(0, 8).map((item) =>
-    `${item.id} [${item.type}] ${errors.get(item.id)} | prompt=${String(item.prompt ?? "").slice(0, 220)} | answer=${String(item.answer ?? "")} | key=${item.correct_index} | options=${JSON.stringify(item.options ?? []).slice(0, 160)} | evidence=${String(item.supporting_sentence ?? "").slice(0, 160)}`));
+    `${item.id} [${item.type}] ${errors.get(item.id)} | prompt=${String(item.prompt ?? "").slice(0, 220)} | answer=${String(item.answer ?? "")} | key=${item.correct_index} | options=${JSON.stringify(item.options ?? []).slice(0, 160)} | notes=${JSON.stringify(item.option_notes ?? []).slice(0, 160)} | evidence=${String(item.supporting_sentence ?? "").slice(0, 160)}`));
   if (rejectedSamples.size > 50) rejectedSamples.delete(rejectedSamples.keys().next().value!);
 }
 /** Keeps ids and group ids from different batches apart without splitting a group inside one batch. */
@@ -205,7 +214,8 @@ export async function generateNewsQuizV2(
       const usedIds = new Set<string>();
       const usedGroups = new Set<string>();
       let batchOutage: unknown = null;
-      for (const [index, batch] of planBatches(selected, typeCounts(selected, target)).entries()) {
+      // Ask for a few spare items: one rejected item must not sink a set that only just reaches six.
+      for (const [index, batch] of planBatches(selected, typeCounts(selected, Math.min(MAX_CANDIDATES, target + spareItems(target)))).entries()) {
         if (!timeLeft()) break;
         const tested = questions.map((item) => item.supporting_sentence).filter(Boolean).slice(0, 20);
         try {
