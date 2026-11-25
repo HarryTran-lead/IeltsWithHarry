@@ -153,7 +153,12 @@ export const listeningFullMinutes = [30, 35, 40, 45] as const;
 export const listeningPartMinutes = [10, 15, 20] as const;
 export const customAttemptMinutes = (value: number) => Number.isInteger(value) && value >= 5 && value <= 180;
 
+/** "Tự do thời gian": a practice passage with no countdown. A day still closes it, so an abandoned attempt ends. */
+export const untimedLimitMinutes = 24 * 60;
+export const untimedAttempt = (notes: Record<string, string> | null | undefined) => notes?.__untimed === "1";
+
 export function attemptMinutes(skill: string, examMinutes: number, notes: Record<string, string> | null | undefined) {
+  if (untimedAttempt(notes)) return untimedLimitMinutes;
   const selected = Number(notes?.__minutes);
   if (notes?.__section) {
     if (skill === "Reading") return customAttemptMinutes(selected) ? selected : 20;

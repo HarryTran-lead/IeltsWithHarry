@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { attemptMinutes, customAttemptMinutes } from "./schema";
+import { attemptMinutes, customAttemptMinutes, untimedAttempt, untimedLimitMinutes } from "./schema";
 
 describe("Reading attempt duration", () => {
   it("uses the selected full-test duration and preserves older attempts", () => {
@@ -19,5 +19,10 @@ describe("Reading attempt duration", () => {
     expect(attemptMinutes("Listening", 40, { __section: "s1" })).toBe(10);
     expect(customAttemptMinutes(4)).toBe(false);
     expect(customAttemptMinutes(181)).toBe(false);
+  });
+  it("gives an untimed passage a one-day limit, ignoring any minutes", () => {
+    expect(untimedAttempt({ __section: "p1", __untimed: "1" })).toBe(true);
+    expect(untimedAttempt({ __section: "p1" })).toBe(false);
+    expect(attemptMinutes("Reading", 60, { __section: "p1", __untimed: "1", __minutes: "25" })).toBe(untimedLimitMinutes);
   });
 });

@@ -4,7 +4,7 @@ import { useRouter, useSearchParams } from "next/navigation";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { X } from "lucide-react";
 import { todayISO } from "@/lib/demo-data";
-import { attemptContent, attemptMinutes, type ExamContent } from "@/lib/ielts-bank/schema";
+import { attemptContent, attemptMinutes, untimedAttempt, type ExamContent } from "@/lib/ielts-bank/schema";
 import { catalogHref, catalogSkills } from "@/lib/ielts-bank/catalog";
 import { BankCatalog } from "./bank-catalog";
 import { type ResumableAttempt, AnswerInput, ExamBar, ExamIntro, ExamResult, QuestionNav, RichText, SpeakingAnswer, SubmitDialog, toneOf, typeLabel } from "./bank-exam";
@@ -43,6 +43,7 @@ export function BankStudent({ examId, resultId, attemptId }: { examId?: string; 
       setResumable((data.attempts ?? []).filter((item) => item.exam_id === exam.id && item.state === "in_progress").map((item) => ({
         id: item.id,
         part: Number(item.notes?.__part) || 0,
+        untimed: untimedAttempt(item.notes),
         minutesLeft: Math.max(0, Math.ceil((new Date(item.started_at).getTime() + attemptMinutes(exam.skill, exam.duration_minutes, item.notes) * 60000 - Date.now()) / 60000)),
       })));
     }).catch(() => { /* The cover page works without the list. */ });
@@ -62,7 +63,7 @@ export function BankStudent({ examId, resultId, attemptId }: { examId?: string; 
   useEffect(() => { if (!attempt || attempt.state !== "in_progress") return; const timer = setTimeout(() => { setSaveState("saving"); void api("attempt", { action: "save", attemptId: attempt.id, answers, flags, notes }).then((data) => { setSaveState("saved"); if (typeof data.score === "number") { setResult(data); setAttempt({ ...attempt, state: "expired" }); if (exam?.skill === "Listening") void loadAttempt(attempt.id).catch(() => {}); } }).catch((e) => { setSaveState("error"); setError(String(e)); }); }, 1200); return () => clearTimeout(timer); }, [answers, flags, notes, attempt, exam?.skill, loadAttempt]);
   const submit = useCallback(async (expired = false) => { if (!attempt || busy) return; setBusy(true); try { const data = await api("attempt", { action: "submit", attemptId: attempt.id, answers, flags, notes, expired }); setResult(data); setAttempt({ ...attempt, state: expired ? "expired" : "submitted", submitted_at: new Date(Date.now() + serverOffset).toISOString() }); if (exam?.id) sessionStorage.removeItem(`ielts-attempt:${exam.id}:${attempt.notes?.__section ?? "full"}`); if (exam?.skill === "Listening") void loadAttempt(attempt.id).catch(() => { /* The scored result remains available even if transcript reload fails. */ }); } catch (e) { setError(String(e)); } finally { setBusy(false); } }, [attempt, answers, flags, notes, busy, exam, loadAttempt, serverOffset]);
   useEffect(() => { if (clock && attempt?.state === "in_progress" && exam && remaining === 0) { const timer = setTimeout(() => void submit(true), 0); return () => clearTimeout(timer); } }, [clock, attempt?.state, exam, remaining, submit]);
-  async function start(scope?: { section: string; ids: string[] }, options?: { view: "practice" | "exam"; minutes?: number }) { if (!exam) return; setBusy(true); try { const data = await api("attempt", { action: "start", examId: exam.id, sectionId: scope?.section, ...options }); sessionStorage.setItem(`ielts-attempt:${exam.id}:${scope?.section ?? "full"}`, data.attempt.id); setAttempt(data.attempt); setNotes(data.attempt.notes || {}); setServerOffset(typeof data.serverNow === "number" ? data.serverNow - Date.now() : 0); setClock(Date.now()); if (exam.skill === "Reading" || exam.skill === "Listening") router.replace(`/app/question-bank/attempt/${data.attempt.id}`); } catch (e) { setError(String(e)); } finally { setBusy(false); } }
+  async function start(scope?: { section: string; ids: string[] }, options?: { view: "practice" | "exam"; minutes?: number; untimed?: boolean }) { if (!exam) return; setBusy(true); try { const data = await api("attempt", { action: "start", examId: exam.id, sectionId: scope?.section, ...options }); sessionStorage.setItem(`ielts-attempt:${exam.id}:${scope?.section ?? "full"}`, data.attempt.id); setAttempt(data.attempt); setNotes(data.attempt.notes || {}); setServerOffset(typeof data.serverNow === "number" ? data.serverNow - Date.now() : 0); setClock(Date.now()); if (exam.skill === "Reading" || exam.skill === "Listening") router.replace(`/app/question-bank/attempt/${data.attempt.id}`); } catch (e) { setError(String(e)); } finally { setBusy(false); } }
   useEffect(() => {
     if (!exam || exam.skill !== "Speaking" || !focusQuestion || attempt || result || resultId || attemptId || autoStarted.current === exam.id) return;
     autoStarted.current = exam.id;
@@ -135,7 +136,7 @@ export function BankStudent({ examId, resultId, attemptId }: { examId?: string; 
   // Reading and Listening run as a full test sheet; Writing and Speaking as studios.
   if (content && (exam.skill === "Reading" || exam.skill === "Listening")) return <main className={`bx-page bx-run bx-exam-mode ${exam.skill === "Listening" ? "bx-listening-mode" : "bx-reading-mode"} ${notes.__view !== "exam" ? "bx-practice-mode" : "bx-real-mode"} bl-tone-${toneOf(exam.skill)}`}>
     {notes.__view !== "exam" && <div className="br-practice-ribbon"><strong>Ielts<span>WithHarry</span></strong><nav aria-label="Điều hướng kỹ năng"><span>{exam.skill}</span><span>{scope ? `${exam.skill === "Listening" ? "Part" : "Passage"} ${part || 1}` : "Full test"}</span></nav><small>Giao diện luyện tập</small></div>}
-    <ExamBar exam={exam} answered={answered} total={inScope.length} remaining={remaining} busy={busy} saveState={saveState} onExit={() => setLeaving(true)} onSubmit={() => setConfirming(true)} />
+    <ExamBar exam={exam} answered={answered} total={inScope.length} remaining={remaining} untimed={untimedAttempt(notes)} busy={busy} saveState={saveState} onExit={() => setLeaving(true)} onSubmit={() => setConfirming(true)} />
     {error && <p className="bx-error" role="alert">{error}</p>}
     <TestRunner exam={exam} content={content} scope={scope} answers={answers} setAnswer={setAnswer} flags={flags} setFlags={setFlags} notes={notes} setNotes={setNotes} onFinish={() => setConfirming(true)} jumpTo={jump} />
     {dialog}

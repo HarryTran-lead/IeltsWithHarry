@@ -13,7 +13,7 @@ function withEvidence(result: ReturnType<typeof scoreAnswers>) {
 }
 
 const bodySchema = z.discriminatedUnion("action", [
-  z.object({ action: z.literal("start"), examId: z.uuid(), sectionId: z.string().min(1).max(100).optional(), view: z.enum(["practice", "exam"]).optional(), minutes: z.number().int().optional() }),
+  z.object({ action: z.literal("start"), examId: z.uuid(), sectionId: z.string().min(1).max(100).optional(), view: z.enum(["practice", "exam"]).optional(), minutes: z.number().int().optional(), untimed: z.boolean().optional() }),
   z.object({ action: z.literal("schedule"), examId: z.uuid(), dueDate: z.iso.date() }),
   z.object({ action: z.literal("save"), attemptId: z.uuid(), answers: z.record(z.string(), z.string().max(20000)), flags: z.array(z.string()).max(100).optional(), notes: z.record(z.string(), z.string().max(16000)).optional() }),
   z.object({ action: z.literal("submit"), attemptId: z.uuid(), answers: z.record(z.string(), z.string().max(20000)), flags: z.array(z.string()).max(100).optional(), notes: z.record(z.string(), z.string().max(16000)).optional(), expired: z.boolean().optional(), difficulty: z.enum(["easy", "balanced", "hard"]).optional() }),
@@ -28,6 +28,10 @@ export async function POST(request: Request) {
       if (body.minutes !== undefined && (!(exam.skill === "Reading" || exam.skill === "Listening") || !customAttemptMinutes(body.minutes))) {
         return Response.json({ error: "Thời gian làm bài không hợp lệ." }, { status: 400 });
       }
+      // Untimed practice is for one passage/part in the practice view only.
+      if (body.untimed && (!body.sectionId || body.view === "exam" || body.minutes !== undefined || !(exam.skill === "Reading" || exam.skill === "Listening"))) {
+        return Response.json({ error: "Chế độ tự do thời gian chỉ dùng khi luyện từng phần." }, { status: 400 });
+      }
       let notes: Record<string, string> = {};
       if (body.sectionId) {
         if (exam.skill !== "Reading" && exam.skill !== "Listening") throw new Error("Section practice unavailable");
@@ -39,7 +43,7 @@ export async function POST(request: Request) {
         if (!section) throw new Error("Section unavailable");
         notes = { __section: section.id, __part: String(sectionIndex + 1), __scope: section.questions.map((question) => question.id).join(",") };
       }
-      if (exam.skill === "Reading" || exam.skill === "Listening") notes = { ...notes, __view: body.view || "practice", ...(body.minutes !== undefined ? { __minutes: String(body.minutes) } : {}) };
+      if (exam.skill === "Reading" || exam.skill === "Listening") notes = { ...notes, __view: body.view || "practice", ...(body.untimed ? { __untimed: "1" } : body.minutes !== undefined ? { __minutes: String(body.minutes) } : {}) };
       const { data, error: insertError } = await client.from("ielts_attempts").insert({ user_id: user.id, exam_id: exam.id, version_id: exam.published_version_id, notes }).select("id,started_at,state,answers,flags,notes").single();
       if (insertError) throw new Error(insertError.message);
       return Response.json({ attempt: data, serverNow: Date.now() });
