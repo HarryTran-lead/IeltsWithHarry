@@ -311,10 +311,11 @@ describe("two request free-tier budget", () => {
     const output = await generateNewsQuizV2("Water checks", passage, id, fake);
     expect(output.state).toBe("READY");
     expect(output.model).toBe("gemini-3.1-flash-lite");
-    // map x3 on 3.5 (503), map + two batches + QA on 3.1, cross QA on 3.5.
+    // map x3 on 3.5 (503); map, two batches, two top-ups (the fixture only repeats items) and QA on 3.1; cross QA on 3.5.
     expect(urls.map(modelOf)).toEqual(["gemini-3.5-flash-lite", "gemini-3.5-flash-lite", "gemini-3.5-flash-lite",
-      "gemini-3.1-flash-lite", "gemini-3.1-flash-lite", "gemini-3.1-flash-lite", "gemini-3.1-flash-lite", "gemini-3.5-flash-lite"]);
-    expect(output.audit.requests).toBe(8);
+      "gemini-3.1-flash-lite", "gemini-3.1-flash-lite", "gemini-3.1-flash-lite", "gemini-3.1-flash-lite", "gemini-3.1-flash-lite",
+      "gemini-3.1-flash-lite", "gemini-3.5-flash-lite"]);
+    expect(output.audit.requests).toBe(10);
   });
   it("stops after six generation attempts, or earlier when the run time budget is spent", async () => {
     process.env.AI_FACTORY_FREE_TIER_ONLY = "true";
@@ -351,9 +352,9 @@ describe("two request free-tier budget", () => {
     expect(output.audit.deterministic_pass).toBe(6);
     expect(output.state).toBe("PENDING_PROVIDER");
     expect(output.audit.failure).toBe("unavailable");
-    // Map, two batches, then three QA attempts on each model.
+    // Map, two batches, two top-ups, then three QA attempts on each model.
     expect(qaCalls).toBe(6);
-    expect(output.audit.requests).toBe(9);
+    expect(output.audit.requests).toBe(11);
   });
   it("halts before any call without confirmed free tier", async () => {
     delete process.env.AI_FACTORY_FREE_TIER_CONFIRMED;
@@ -391,20 +392,23 @@ describe("two request free-tier budget", () => {
         expect(text).not.toContain('"correct_index"');
         expect(text).not.toContain('"supporting_sentence"');
       }
-      if (calls === 5) expect(modelOf(url)).toBe("gemini-3.1-flash-lite");
+      // The last call is the cross-model check on the other model.
+      if (calls === 7) expect(modelOf(url)).toBe("gemini-3.1-flash-lite");
       return gemini(factoryData(init, questions), calls);
     }) as typeof fetch;
     const output = await generateNewsQuizV2("Water checks", passage, id, fake);
-    expect(steps).toEqual(["map", "batch", "batch", "qa", "qa"]);
+    // Planned batches, then two top-up batches because six checked items leave no margin for QA drops
+    // (this fixture only repeats items, so the top-ups add nothing).
+    expect(steps).toEqual(["map", "batch", "batch", "batch", "batch", "qa", "qa"]);
     expect(output.state).toBe("READY");
     expect(output.audit.failure).toBeNull();
     expect(output.questions).toHaveLength(6);
-    expect(output.audit.requests).toBe(5);
-    expect(output.audit.generation_tokens?.total).toBe(150 + 300 + 450);
-    expect(output.audit.qa_tokens?.total).toBe(600 + 750);
+    expect(output.audit.requests).toBe(7);
+    expect(output.audit.generation_tokens?.total).toBe(150 * (1 + 2 + 3 + 4 + 5));
+    expect(output.audit.qa_tokens?.total).toBe(150 * (6 + 7));
     const cached = await generateNewsQuizV2("Water checks", passage, id, fake);
     expect(cached.audit.requests).toBe(0);
-    expect(calls).toBe(5);
+    expect(calls).toBe(7);
   });
   it("repairs a rejected item once instead of dropping the whole quiz", async () => {
     process.env.AI_FACTORY_FREE_TIER_ONLY = "true";
@@ -421,10 +425,10 @@ describe("two request free-tier budget", () => {
       return gemini(factoryData(init, questions, firstQa ? new Set(["mcq_p2"]) : new Set()));
     }) as typeof fetch;
     const output = await generateNewsQuizV2("Repair", passage, id, fake);
-    expect(steps).toEqual(["map", "batch", "batch", "qa", "repair", "qa", "qa"]);
+    expect(steps).toEqual(["map", "batch", "batch", "batch", "batch", "qa", "repair", "qa", "qa"]);
     expect(output.state).toBe("READY");
     expect(output.questions).toHaveLength(6);
-    expect(output.audit.requests).toBe(7);
+    expect(output.audit.requests).toBe(9);
     expect(output.audit.issues).toContain("REPAIR:1/1");
     // A per-item disagreement is recorded but no longer blocks a set that ends with six approved items.
     expect(output.audit.issues).toContain("mcq_p2:QA_MISMATCH");

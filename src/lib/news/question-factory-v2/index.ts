@@ -147,6 +147,8 @@ export function unifyMatchingPools(items: Candidate[]): Candidate[] {
 /** Single-item forms used to top up a set that is short after checks; groups need two or more items. */
 const TOP_UP_FORMS: IeltsQuestionType[] = ["tfng", "mcq", "sentence_completion", "short_answer", "ynng"];
 const MAX_TOP_UPS = 2;
+/** Checked items to hold beyond the target before QA, so later drops do not sink the set. */
+const TOP_UP_MARGIN = 2;
 /** Keeps ids and group ids from different batches apart without splitting a group inside one batch. */
 function separateBatch(items: Candidate[], batch: number, usedIds: Set<string>, usedGroups: Set<string>) {
   const groupNames = new Map<string, string>();
@@ -265,12 +267,13 @@ export async function generateNewsQuizV2(
         if (!timeLeft()) break;
         await runBatch(index, batch.types, batch.counts);
       }
-      // Top up with single-item forms while the checked set is still short of the target.
+      // Top up with single-item forms while the checked set is short of the target plus a margin.
       const topUpForms = TOP_UP_FORMS.filter((type) => selected.includes(type));
       for (let round = 0; round < MAX_TOP_UPS && topUpForms.length && timeLeft(); round++) {
         const passing = validateGeneration({ passage_map: passageMap, questions, image_query: "" }, fullArticle, selected).valid.length;
-        if (passing >= target) break;
-        const missing = Math.min(5, target - passing + 2);
+        // Keep a margin: blind QA and the cross-model check may still drop items.
+        if (passing >= target + TOP_UP_MARGIN) break;
+        const missing = Math.min(5, target + TOP_UP_MARGIN - passing);
         await runBatch(batches.length + round, topUpForms, typeCounts(topUpForms, missing));
       }
       const generated = { data: { passage_map: passageMap, questions, image_query: mapped.data?.image_query ?? "" } as Generation };
