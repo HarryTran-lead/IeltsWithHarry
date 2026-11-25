@@ -67,17 +67,17 @@ describe("Question Factory V2 editorial corpus", () => {
     const vietnamese = ["Đúng vì bài nói rõ", "Sai vì bài nói ngược lại", "Bài không hề nhắc tới"];
     expect(normalizeCandidate({ type: "tfng", answer: "", options: ["True", "False", "Not Given"], option_notes: vietnamese, correct_index: 0, prompt: "x" } as never).option_notes).toEqual(vietnamese);
   });
-  it("publishes harder items first and keeps direct-lookup items within a quarter of the set", async () => {
+  it("publishes harder items first and keeps direct-lookup items within a third of the set", async () => {
     const { selectPublished } = await import("../src/lib/news/question-factory-v2");
     const item = (id: string, difficulty: "P1" | "P2") => ({ id, group_id: id, type: "tfng", difficulty, options: ["True", "False", "Not Given"], prompt: id }) as never;
-    // Reading order: four direct items first, then five harder ones.
+    // Reading order: four direct items first, then four harder ones; a third of six allows two direct items.
     const pool = [item("d1", "P1"), item("d2", "P1"), item("d3", "P1"), item("d4", "P1"),
-      item("h1", "P2"), item("h2", "P2"), item("h3", "P2"), item("h4", "P2"), item("h5", "P2")];
+      item("h1", "P2"), item("h2", "P2"), item("h3", "P2"), item("h4", "P2")];
     const chosen = selectPublished(pool, 6) as { id: string; difficulty: string }[];
     expect(chosen).toHaveLength(6);
-    expect(chosen.filter((entry) => entry.difficulty === "P1")).toHaveLength(1);
+    expect(chosen.filter((entry) => entry.difficulty === "P1")).toHaveLength(2);
     // Published in the article's reading order.
-    expect(chosen.map((entry) => entry.id)).toEqual(["d1", "h1", "h2", "h3", "h4", "h5"]);
+    expect(chosen.map((entry) => entry.id)).toEqual(["d1", "d2", "h1", "h2", "h3", "h4"]);
   });
   it("asks for spare candidates beyond the published target", async () => {
     const { spareItems } = await import("../src/lib/news/question-factory-v2");
