@@ -53,12 +53,10 @@ describe("Question Factory V2 editorial corpus", () => {
     const mcq = positiveFixtures.find((candidate) => candidate.type === "mcq")!;
     expect(validateCandidate({ ...mcq, option_notes: [] }, article, map)).toContain("OPTION_NOTES");
   });
-  it("accepts a larger shared pool for matching forms but not for MCQ", () => {
+  it("keeps every choice pool within the four options the database stores", () => {
     const item = positiveFixtures.find((candidate) => candidate.type === "matching_features")!;
-    const pool = [...item.options, "Extra pool option one", "Extra pool option two"].slice(0, 7);
-    expect(validateCandidate({ ...item, options: pool, option_notes: [] }, article, map)).not.toContain("CHOICE_POOL");
-    const mcq = positiveFixtures.find((candidate) => candidate.type === "mcq")!;
-    expect(validateCandidate({ ...mcq, options: [...mcq.options, "A fifth choice"] }, article, map)).toContain("CHOICE_POOL");
+    const pool = [...item.options, "Extra pool option one", "Extra pool option two"].slice(0, 5);
+    expect(validateCandidate({ ...item, options: pool, option_notes: [] }, article, map)).toContain("CHOICE_POOL");
   });
   it("drops English per-option notes on matching items only", async () => {
     const { normalizeCandidate } = await import("../src/lib/news/question-factory-v2");

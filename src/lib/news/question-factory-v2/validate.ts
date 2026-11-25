@@ -64,23 +64,23 @@ export function validateCandidate(item: Candidate, article: string, map: Passage
   if (!["detail", "paraphrase", "main_idea", "inference", "writer_view", "process"].includes(item.skill)) errors.push("SKILL");
   if (!["sentence", "paragraph", "multiple_paragraphs", "whole_passage"].includes(item.evidence_scope)) errors.push("SCOPE");
   if (typeof item.prompt !== "string" || item.prompt.trim().length < 10 || item.prompt.length > 500) errors.push("PROMPT");
-  if (typeof item.supporting_sentence !== "string" || item.supporting_sentence.length < 12
+  // Length bounds match the database checks on news_auto_questions and news_auto_answer_keys.
+  if (typeof item.supporting_sentence !== "string" || item.supporting_sentence.length < 15 || item.supporting_sentence.length > 500
     || !article.includes(item.supporting_sentence)) errors.push("EVIDENCE");
   if (!Array.isArray(item.evidence_spans) || item.evidence_spans.length < 1
     || item.evidence_spans.some((span) => !Number.isInteger(span?.start) || !Number.isInteger(span?.end)
       || span.start < 0 || span.end <= span.start || span.end > article.length
       || article.slice(span.start, span.end) !== span.quote)
     || !item.evidence_spans.some((span) => span.quote === item.supporting_sentence)) errors.push("EVIDENCE_OFFSETS");
-  if (typeof item.explanation !== "string" || item.explanation.length < 25 || !vi.test(item.explanation)) errors.push("EXPLANATION");
+  if (typeof item.explanation !== "string" || item.explanation.length < 25 || item.explanation.length > 2000 || !vi.test(item.explanation)) errors.push("EXPLANATION");
   if (typeof item.explanation_en !== "string" || item.explanation_en.length < 20) errors.push("EXPLANATION_EN");
   if (!Array.isArray(item.options) || !Array.isArray(item.option_notes)) return [...errors, "OPTIONS_SCHEMA"];
   const type = item.type;
   if (choiceTypes.has(type)) {
     const fixed = type === "tfng" ? ["True", "False", "Not Given"] : type === "ynng" ? ["Yes", "No", "Not Given"] : null;
     if (fixed ? JSON.stringify(item.options) !== JSON.stringify(fixed)
-      // Matching forms share one larger pool (IELTS uses more endings, features or headings than items).
-      : item.options.length < 3 || item.options.length > (type.startsWith("matching_") ? 10 : 4)
-        || new Set(item.options.map(normalize)).size !== item.options.length) errors.push("CHOICE_POOL");
+      // The database stores three or four options per item (news_auto_questions_options_check).
+      : item.options.length < 3 || item.options.length > 4 || new Set(item.options.map(normalize)).size !== item.options.length) errors.push("CHOICE_POOL");
     if (!Number.isInteger(item.correct_index) || item.correct_index < 0 || item.correct_index >= item.options.length) errors.push("KEY");
     if (item.answer !== "") errors.push("CHOICE_ANSWER");
     // Matching forms may leave per-option notes out (a shared pool); when present they must all be valid.

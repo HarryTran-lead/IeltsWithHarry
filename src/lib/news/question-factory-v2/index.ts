@@ -26,7 +26,7 @@ function toLegacy(item: Candidate): AdaptiveQuestion {
     accepted_answers: item.correct_index < 0 ? [item.answer] : null,
     supporting_sentence: item.supporting_sentence,
     explanation: item.explanation,
-    option_notes: item.correct_index < 0 ? null : item.option_notes,
+    option_notes: item.correct_index < 0 || !item.option_notes.length ? null : item.option_notes,
   };
 }
 function selectPublished(items: Candidate[], target: number) {

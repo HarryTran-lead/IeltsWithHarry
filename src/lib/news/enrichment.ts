@@ -962,7 +962,10 @@ async function runQuizClaim(db: Db, result: EnrichResult, settings: Awaited<Retu
     // The visual subject named by the quiz request becomes the image search query.
     await saveImageQuery(db, article.article_id, generated.imageQuery);
   } catch (cause) {
-    const message = cause instanceof Error ? cause.message : "Quiz generation failed";
+    // Database errors arrive as plain objects with a message, not Error instances.
+    const message = cause instanceof Error ? cause.message
+      : cause && typeof cause === "object" && "message" in cause && typeof cause.message === "string"
+        ? `Database: ${cause.message}`.slice(0, 300) : "Quiz generation failed";
     result.errors.push(`Quiz ${article.article_id}: ${message}`);
     // A quota error is not the article's fault: retry it as soon as quota returns.
     if (v2Enabled)
