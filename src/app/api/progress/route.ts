@@ -29,13 +29,14 @@ export async function GET(request: Request) {
     // A day boundary in any time zone lies within a day of UTC midnight.
     const since = `${addDays(from, -1)}T00:00:00Z`, until = `${addDays(to, 2)}T00:00:00Z`;
 
+    // Every read is filtered to the viewer: RLS lets admins read all learners, which must not leak into their own progress.
     const [bank, exercises, practice, learningDays, activeTime, voaDictation, clipDictation, newsAuto, newsReading] = await Promise.all([
       bankClient().from("ielts_attempts").select("id,started_at,submitted_at,state,score,total,answers,ielts_exams(title,skill,duration_minutes)")
         .eq("user_id", user.id).gte("started_at", `${addDays(from, -2)}T00:00:00Z`).lt("started_at", until).limit(1500),
-      db.from("exercise_attempts").select("lesson_slug,submitted_at,score,total").gte("submitted_at", since).lt("submitted_at", until).limit(1500),
-      db.from("package_practice_results").select("lesson_slug,updated_at").gte("updated_at", since).lt("updated_at", until).limit(1500),
-      db.from("learner_activity_days").select("day").gt("events", 0).gte("day", from).lte("day", to),
-      db.from("learner_active_time").select("day,seconds").gte("day", from).lte("day", to),
+      db.from("exercise_attempts").select("lesson_slug,submitted_at,score,total").eq("user_id", user.id).gte("submitted_at", since).lt("submitted_at", until).limit(1500),
+      db.from("package_practice_results").select("lesson_slug,updated_at").eq("user_id", user.id).gte("updated_at", since).lt("updated_at", until).limit(1500),
+      db.from("learner_activity_days").select("day").eq("user_id", user.id).gt("events", 0).gte("day", from).lte("day", to),
+      db.from("learner_active_time").select("day,seconds").eq("user_id", user.id).gte("day", from).lte("day", to),
       db.from("voa_dictation_attempts").select("created_at").eq("user_id", user.id).gte("created_at", since).lt("created_at", until).limit(1000),
       db.from("dictation_clip_attempts").select("created_at").eq("user_id", user.id).gte("created_at", since).lt("created_at", until).limit(1000),
       db.from("news_auto_attempts").select("submitted_at,score,total,news_articles(id,title)").eq("user_id", user.id).gte("submitted_at", since).lt("submitted_at", until).limit(1000),
