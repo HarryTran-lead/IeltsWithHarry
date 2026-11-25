@@ -8,13 +8,21 @@ describe("Reading Lab release gate", () => {
     return (await import("../runtime")).lockedLearnerPath;
   }
 
-  it("opens the published Lab while keeping unreleased Reading routes closed", async () => {
+  it("keeps the Lab and every Reading route closed in production", async () => {
     vi.stubEnv("NODE_ENV", "production");
     vi.stubEnv("NEXT_PUBLIC_UNLOCK_DEV_FEATURES", "false");
     const isLocked = await locked();
+    expect(isLocked("/app/reading/lab")).toBe(true);
+    expect(isLocked("/app/reading/lab/M08_02")).toBe(true);
+    expect(isLocked("/app/reading/unreleased")).toBe(true);
+  });
+
+  it("opens the published Lab in the unlocked preview", async () => {
+    vi.stubEnv("NODE_ENV", "production");
+    vi.stubEnv("NEXT_PUBLIC_UNLOCK_DEV_FEATURES", "true");
+    const isLocked = await locked();
     expect(isLocked("/app/reading/lab")).toBe(false);
     expect(isLocked("/app/reading/lab/M08_02")).toBe(false);
-    expect(isLocked("/app/reading/unreleased")).toBe(true);
   });
 
   it("can close the Lab with the emergency flag", async () => {

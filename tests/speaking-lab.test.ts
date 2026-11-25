@@ -110,9 +110,19 @@ describe("Speaking Lab progress", () => {
     expect(speakingDraftSlug("skill-FC01")).toBe("spk-lab:skill-FC01");
   });
 
-  it("is open in production and can be closed with the disable flag", async () => {
+  it("is locked in production while IELTS practice is closed", async () => {
     vi.stubEnv("NODE_ENV", "production");
     vi.stubEnv("NEXT_PUBLIC_UNLOCK_DEV_FEATURES", "false");
+    vi.resetModules();
+    const production = await import("../src/lib/runtime");
+    expect(production.lockedLearnerPath("/app/self-study/speaking")).toBe(true);
+    expect(production.lockedLearnerPath("/app/self-study/speaking/skill-FC01")).toBe(true);
+  });
+
+  it("is open in the unlocked preview and can be closed with the disable flag", async () => {
+    vi.stubEnv("NODE_ENV", "production");
+    vi.stubEnv("NEXT_PUBLIC_UNLOCK_DEV_FEATURES", "true");
+    vi.resetModules();
     const runtime = await import("../src/lib/runtime");
     expect(runtime.lockedLearnerPath("/app/self-study/speaking")).toBe(false);
     expect(runtime.lockedLearnerPath("/app/self-study/speaking/skill-FC01")).toBe(false);
