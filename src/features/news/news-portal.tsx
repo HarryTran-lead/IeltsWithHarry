@@ -410,8 +410,10 @@ function NewsCard({ row, saved, onSave, learnSlug, onSite = false, image, read =
   const href = `/app/news/${row.id}`;
   const resumable = !read && readingProgress && readingProgress.paragraph_index > 0;
   return <article className={`news-card ${read ? "is-read" : ""} ${featured ? "is-featured" : ""}`}>
-    <Link href={href} className="news-card-art" tabIndex={-1} aria-hidden="true" style={{ background: `linear-gradient(135deg, ${accents[row.category]}45, #fffaf3)` }}>
-      {image ? <Image src={image.image_url} alt="" fill sizes="(max-width: 560px) 108px, (max-width: 900px) 50vw, (max-width: 1280px) 33vw, 25vw" unoptimized/> : <Sticker name={categorySticker(row.category)} size={48} tilt={-6} />}
+    <Link href={href} className={`news-card-art${image ? "" : " is-cover"}`} tabIndex={-1} aria-hidden="true"
+      style={{ background: image ? `linear-gradient(135deg, ${accents[row.category]}45, #fffaf3)` : `radial-gradient(circle at 78% 18%, #ffffffb0 0 18%, transparent 19%), linear-gradient(150deg, ${accents[row.category]}d9, ${accents[row.category]}66 58%, #fffaf3)` }}>
+      {image ? <Image src={image.image_url} alt="" fill sizes="(max-width: 560px) 108px, (max-width: 900px) 50vw, (max-width: 1280px) 33vw, 25vw" unoptimized/>
+        : <><Sticker name={categorySticker(row.category)} size={48} tilt={-6} /><span className="news-card-cover-source">{row.publisher}</span></>}
       {image?.ai && <em className="news-ai-art-badge" title="Ảnh minh họa do AI tạo, không phải ảnh thực tế">Ảnh AI</em>}
       <small>{newsCategoryLabel(row.category)}</small>
       {featured ? <em className="news-card-flag">Gợi ý hôm nay</em> : read ? <em className="news-card-flag read"><CheckCircle2 size={13} /> Đã đọc</em> : fresh ? <em className="news-card-flag">Mới</em> : null}
