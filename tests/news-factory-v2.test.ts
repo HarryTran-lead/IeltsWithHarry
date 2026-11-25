@@ -53,6 +53,19 @@ describe("Question Factory V2 editorial corpus", () => {
     const mcq = positiveFixtures.find((candidate) => candidate.type === "mcq")!;
     expect(validateCandidate({ ...mcq, option_notes: [] }, article, map)).toContain("OPTION_NOTES");
   });
+  it("accepts a larger shared pool for matching forms but not for MCQ", () => {
+    const item = positiveFixtures.find((candidate) => candidate.type === "matching_features")!;
+    const pool = [...item.options, "Extra pool option one", "Extra pool option two"].slice(0, 7);
+    expect(validateCandidate({ ...item, options: pool, option_notes: [] }, article, map)).not.toContain("CHOICE_POOL");
+    const mcq = positiveFixtures.find((candidate) => candidate.type === "mcq")!;
+    expect(validateCandidate({ ...mcq, options: [...mcq.options, "A fifth choice"] }, article, map)).toContain("CHOICE_POOL");
+  });
+  it("drops English per-option notes on matching items only", async () => {
+    const { normalizeCandidate } = await import("../src/lib/news/question-factory-v2");
+    const english = ["Correct: matches", "Incorrect: not stated", "Incorrect: wrong one"];
+    expect(normalizeCandidate({ type: "matching_sentence_endings", answer: "", options: ["a", "b", "c"], option_notes: english, correct_index: 0, prompt: "x" } as never).option_notes).toEqual([]);
+    expect(normalizeCandidate({ type: "tfng", answer: "", options: ["True", "False", "Not Given"], option_notes: english, correct_index: 0, prompt: "x" } as never).option_notes).toEqual(english);
+  });
   it("asks for spare candidates beyond the published target", async () => {
     const { spareItems } = await import("../src/lib/news/question-factory-v2");
     expect(spareItems(6)).toBe(3);

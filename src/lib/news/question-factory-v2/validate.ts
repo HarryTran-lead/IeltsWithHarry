@@ -27,6 +27,9 @@ export function paragraphLabel(raw: unknown, index: number): string {
 /** Map issues that cannot be trusted for paragraph-referencing forms. */
 export const PARAGRAPH_MAP_ISSUES = new Set(["PASSAGE_MAP_PARAGRAPH", "PASSAGE_MAP_COUNT"]);
 
+/** Vietnamese text check shared with the factory's normalization. */
+export function isVietnameseNote(note: unknown) { return typeof note === "string" && note.length >= 8 && vi.test(note); }
+
 export function validatePassageMap(map: PassageMap, article: string): string[] {
   const issues: string[] = [];
   if (!map || !Array.isArray(map.paragraphs) || !Array.isArray(map.opportunities)
@@ -75,7 +78,9 @@ export function validateCandidate(item: Candidate, article: string, map: Passage
   if (choiceTypes.has(type)) {
     const fixed = type === "tfng" ? ["True", "False", "Not Given"] : type === "ynng" ? ["Yes", "No", "Not Given"] : null;
     if (fixed ? JSON.stringify(item.options) !== JSON.stringify(fixed)
-      : item.options.length < 3 || item.options.length > 4 || new Set(item.options.map(normalize)).size !== item.options.length) errors.push("CHOICE_POOL");
+      // Matching forms share one larger pool (IELTS uses more endings, features or headings than items).
+      : item.options.length < 3 || item.options.length > (type.startsWith("matching_") ? 10 : 4)
+        || new Set(item.options.map(normalize)).size !== item.options.length) errors.push("CHOICE_POOL");
     if (!Number.isInteger(item.correct_index) || item.correct_index < 0 || item.correct_index >= item.options.length) errors.push("KEY");
     if (item.answer !== "") errors.push("CHOICE_ANSWER");
     // Matching forms may leave per-option notes out (a shared pool); when present they must all be valid.

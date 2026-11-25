@@ -6,7 +6,7 @@ import { FACTORY_VERSION } from "./types";
 import { choiceTypes, gapTypes } from "../ielts-passage";
 import { ArticleRequestBudget, FactoryProviderError, alternateV2Model, strictGeminiJson, v2Model, type FactoryProviderKind } from "./provider";
 import { MAP_SYSTEM, batchSchema, batchSystem, blindQaPayload, blindQaSystem, mapSchema, planBatches, qaSchema, repairPayload, repairSchema, repairSystem, typeCounts } from "./prompts";
-import { BLOCKING_QA_ISSUES, PARAGRAPH_MAP_ISSUES, validateBlindReview, validateGeneration, validatePassageMap } from "./validate";
+import { BLOCKING_QA_ISSUES, PARAGRAPH_MAP_ISSUES, isVietnameseNote, validateBlindReview, validateGeneration, validatePassageMap } from "./validate";
 
 type Provider = typeof strictGeminiJson;
 const providerReasons: Record<FactoryProviderKind, QuizFailureReason> = {
@@ -92,8 +92,9 @@ export function normalizeCandidate(item: Candidate): Candidate {
   if (!item || typeof item !== "object") return item;
   if (choiceTypes.has(item.type)) {
     // Matching forms share one pool of options; per-option notes are an optional extra for learners,
-    // so a pool whose notes do not line up keeps the item and drops only the notes.
-    const notesMismatch = !Array.isArray(item.option_notes) || !Array.isArray(item.options) || item.option_notes.length !== item.options.length;
+    // so a pool whose notes do not line up or are not Vietnamese keeps the item and drops only the notes.
+    const notesMismatch = !Array.isArray(item.option_notes) || !Array.isArray(item.options) || item.option_notes.length !== item.options.length
+      || !item.option_notes.every(isVietnameseNote);
     return { ...item, answer: "", ...(item.type.startsWith("matching_") && notesMismatch ? { option_notes: [] } : {}) };
   }
   let prompt = typeof item.prompt === "string" ? item.prompt.replace(GAP_VARIANTS, GAP) : item.prompt;
