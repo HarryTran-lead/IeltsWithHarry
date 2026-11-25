@@ -31,6 +31,9 @@ function toLegacy(item: Candidate): AdaptiveQuestion {
 }
 /** Fewest questions a published set needs. */
 const MIN_SET = 6;
+/** Largest share of a set that may be direct-lookup (P1) items: two in six, three in nine. */
+export const DIRECT_SHARE = 1 / 3;
+const directLimit = (size: number) => Math.floor(size * DIRECT_SHARE + 1e-9);
 export function selectPublished(items: Candidate[], target: number) {
   const groups = new Map<string, Candidate[]>();
   for (const item of items) groups.set(item.group_id, [...(groups.get(item.group_id) ?? []), item]);
@@ -44,11 +47,11 @@ export function selectPublished(items: Candidate[], target: number) {
     return !(type === "flow_chart_completion" && group.some((item, index) => !new RegExp(`^Step ${index + 1}:`, "i").test(item.prompt)));
   });
   const directIn = (group: Candidate[]) => group.filter((item) => item.difficulty === "P1").length;
-  // Harder groups first; direct-lookup (P1) items only while they stay within a quarter of the set.
+  // Harder groups first; direct-lookup (P1) items only while they stay within DIRECT_SHARE of the set.
   let direct = 0;
   for (const group of [...usable.filter((group) => !directIn(group)), ...usable.filter(directIn)]) {
     if (selected.length + group.length > target) continue;
-    if (directIn(group) && direct + directIn(group) > Math.floor(Math.max(selected.length + group.length, MIN_SET) / 4)) continue;
+    if (directIn(group) && direct + directIn(group) > directLimit(Math.max(selected.length + group.length, MIN_SET))) continue;
     selected.push(...group);
     direct += directIn(group);
   }
@@ -365,7 +368,7 @@ export async function generateNewsQuizV2(
       const gates: string[] = [];
       if (blocked) gates.push("QA_BLOCKED");
       if (chosen.length < 6) gates.push("TOO_FEW_APPROVED");
-      if (direct > Math.floor(chosen.length / 4)) gates.push("TOO_MANY_DIRECT");
+      if (direct > directLimit(chosen.length)) gates.push("TOO_MANY_DIRECT");
       if (skills.size < 2 || areas.size < 2) gates.push("LOW_DIVERSITY");
       issues.push(...gates);
       const state = gates.length ? "PENDING_QUALITY" : "READY";
