@@ -199,3 +199,89 @@
   .pg-history-table td:nth-child(5) { order: 5; }
   .pg-history-table td:nth-child(6) { order: 6; color: var(--muted); font-size: 12px; }
 }
+
+/* Exam plan, behaviour notes, margins, criteria and skipped attempts. */
+.pg-plan-line { margin: 0 0 10px; color: var(--ink); font-size: 14px; line-height: 1.55; }
+.pg-plan-line .pg-chip { margin-right: 6px; }
+.pg-plan-pace { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 18px; margin: 4px 0 10px; }
+.pg-plan-pace > div { display: grid; gap: 1px; min-width: 120px; padding: 10px 12px; border-radius: 12px; background: var(--surface-2); }
+.pg-plan-pace small { color: var(--muted); font-size: 11.5px; font-weight: 700; }
+.pg-plan-pace strong { color: var(--navy); font-size: 26px; line-height: 1.1; }
+.pg-plan-pace span { color: var(--muted); font-size: 12px; }
+.pg-plan .pg-muted { margin: 0 0 8px; font-size: 13px; }
+.pg-link { display: inline-flex; align-items: center; gap: 4px; color: var(--teal-strong); font-size: 13px; font-weight: 800; }
+.pg-note-list { display: grid; gap: 8px; margin: 0; padding: 0; list-style: none; }
+.pg-note-list li { display: grid; gap: 4px; padding: 10px 12px; border-left: 4px solid var(--line-strong); border-radius: 10px; background: var(--surface-2); }
+.pg-note-list li.is-warn { border-left-color: #e0685c; background: color-mix(in srgb, var(--coral-soft) 55%, #fff); }
+.pg-note-list li.is-good { border-left-color: #2fa36f; background: color-mix(in srgb, var(--mint) 55%, #fff); }
+.pg-note-list li.is-info { border-left-color: #4b8fd6; }
+.pg-note-list p { margin: 0; color: var(--ink); font-size: 13px; line-height: 1.5; }
+.pg-note-list a { justify-self: start; display: inline-flex; align-items: center; gap: 4px; color: var(--teal-strong); font-size: 12.5px; font-weight: 800; }
+.pg-margin { color: var(--muted); font-size: 13px; font-weight: 800; }
+.pg-skill-need { margin: 0; color: var(--muted); font-size: 11.5px; line-height: 1.4; }
+.pg-criteria { display: grid; gap: 4px; margin: 0; padding: 0; list-style: none; }
+.pg-criteria li { display: grid; grid-template-columns: 34px minmax(0, 1fr) 30px; align-items: center; gap: 6px; font-size: 11.5px; font-weight: 800; color: var(--muted); }
+.pg-criteria i { height: 6px; border-radius: 99px; background: color-mix(in srgb, var(--pg-accent) 14%, #fff); overflow: hidden; }
+.pg-criteria b { display: block; height: 100%; border-radius: 99px; background: var(--pg-accent); }
+.pg-criteria em { color: var(--ink); font-style: normal; text-align: right; }
+.pg-trend-dot.partial { fill: #fff; stroke: var(--pg-accent); }
+.pg-type-goal { position: absolute; top: -3px; width: 2px; height: 16px; margin-left: -1px; border-radius: 2px; background: var(--ink); opacity: 0.45; }
+.pg-type-practice { display: inline-flex; align-items: center; gap: 3px; margin-top: 4px; color: var(--teal-strong); font-size: 12px; font-weight: 800; }
+.pg-history-table tr.is-skipped { opacity: 0.72; }
+.pg-skip-note { display: flex; flex-wrap: wrap; align-items: center; gap: 4px; margin-top: 3px; }
+.pg-band-pill.muted { background: var(--surface-2); color: var(--muted); text-decoration: line-through; }
+.pg-grade-link { color: #b26a00 !important; font-weight: 800; }
+@container (max-width: 560px) {
+  /* Titles that differ only at the end (Writing prompts) wrap instead of being cut. */
+  .pg-history-table .pg-title { white-space: normal; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; }
+  .pg-plan-pace > div { flex: 1 1 120px; }
+}
+@media (max-width: 767px) {
+  /* Room for the floating helpers above the bottom navigation. */
+  .progress-page { padding-bottom: 96px; }
+}
+
+/* Tabs: one question per tab instead of one long page. */
+.pg-tabs {
+  position: sticky; top: 0; z-index: 6; display: flex; gap: 6px; overflow-x: auto; scrollbar-width: none;
+  padding: 6px; border: 1px solid var(--line); border-radius: 16px;
+  background: color-mix(in srgb, var(--surface, #fff) 92%, transparent); backdrop-filter: blur(10px);
+  box-shadow: 0 6px 18px rgb(15 40 70 / 0.06); scroll-margin-top: 80px;
+}
+.pg-tabs::-webkit-scrollbar { display: none; }
+.pg-tabs button {
+  display: inline-flex; flex: 0 0 auto; align-items: center; gap: 7px; padding: 9px 14px; border: 0; border-radius: 11px;
+  background: transparent; color: var(--muted); font-size: 14px; font-weight: 800; white-space: nowrap; cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+}
+.pg-tabs button:hover { background: var(--surface-2); color: var(--navy); }
+.pg-tabs button:focus-visible { outline: 2px solid var(--teal); outline-offset: 2px; }
+.pg-tabs button.active { background: var(--teal-soft); color: var(--teal-strong); }
+.pg-tabs small { min-width: 20px; padding: 1px 6px; border-radius: 99px; background: var(--surface-2); color: var(--muted); font-size: 11px; font-weight: 800; text-align: center; }
+.pg-tabs small.warn { background: var(--coral-soft); color: #b2392f; }
+.pg-panel { display: grid; grid-template-columns: minmax(0, 1fr); gap: 18px; min-width: 0; }
+.pg-panel > * { min-width: 0; }
+.pg-footer[hidden] { display: none; }
+
+/* Overview: the five bands in one row. */
+.pg-strip { display: grid; grid-template-columns: 1.1fr repeat(4, minmax(0, 1fr)); gap: 10px; padding: 12px; }
+.pg-strip-overall, .pg-strip-skill { display: grid; align-content: start; gap: 2px; min-width: 0; padding: 12px 14px; border-radius: 14px; text-align: left; }
+.pg-strip-overall { background: linear-gradient(135deg, #0f9d8f, #0b7d84); color: #fff; }
+.pg-strip-overall span { display: inline-flex; align-items: center; font-size: 12px; font-weight: 800; letter-spacing: 0.04em; text-transform: uppercase; opacity: 0.9; }
+.pg-strip-overall strong { font-size: 34px; line-height: 1.1; }
+.pg-strip-overall small { font-size: 12px; opacity: 0.9; }
+.pg-strip-skill { border: 1px solid color-mix(in srgb, var(--pg-accent) 22%, transparent); background: var(--pg-wash); color: var(--ink); cursor: pointer; transition: transform 0.15s; }
+.pg-strip-skill:hover { transform: translateY(-2px); }
+.pg-strip-skill:focus-visible { outline: 2px solid var(--pg-accent); outline-offset: 2px; }
+.pg-strip-skill span { display: inline-flex; align-items: center; gap: 6px; color: var(--pg-accent); font-size: 13px; font-weight: 800; }
+.pg-strip-skill strong { color: var(--navy); font-size: 28px; line-height: 1.15; }
+.pg-strip-skill strong em { margin-left: 4px; color: var(--muted); font-size: 13px; font-style: normal; }
+.pg-strip-skill small { overflow: hidden; color: var(--muted); font-size: 12px; text-overflow: ellipsis; white-space: nowrap; }
+@container (max-width: 1100px) {
+  .pg-strip { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .pg-strip-overall { grid-column: 1 / -1; }
+}
+@container (max-width: 560px) {
+  .pg-tabs { margin: 0 -4px; border-radius: 14px; }
+  .pg-tabs button { padding: 8px 11px; font-size: 13px; }
+}

@@ -1,0 +1,15 @@
+.info-tip { position: relative; display: inline-flex; vertical-align: middle; margin-left: 4px; }
+.info-tip > button {
+  display: inline-grid; place-items: center; width: 18px; height: 18px; padding: 0; border: 0; border-radius: 999px;
+  background: color-mix(in srgb, currentColor 10%, transparent); color: inherit; opacity: 0.7; cursor: help;
+}
+.info-tip > button:hover, .info-tip > button:focus-visible { opacity: 1; outline: 2px solid var(--teal, #0f9d8f); outline-offset: 1px; }
+.info-tip-box {
+  position: absolute; z-index: 40; top: calc(100% + 6px); left: 50%; transform: translateX(-50%);
+  width: max-content; max-width: min(280px, 80vw); padding: 9px 11px; border-radius: 10px;
+  background: #1f2937; color: #f9fafb; font-size: 12px; font-weight: 500; line-height: 1.45; text-align: left;
+  text-transform: none; letter-spacing: normal; white-space: normal; box-shadow: 0 10px 24px rgb(0 0 0 / 0.18);
+}
+@media (max-width: 640px) {
+  .info-tip-box { left: auto; right: -8px; transform: none; }
+}
