@@ -4,7 +4,7 @@ import Link from "next/link";
 import { useEffect, useMemo, useRef, useState, useSyncExternalStore, type KeyboardEvent, type ReactNode } from "react";
 import {
   ArrowDownRight, ArrowRight, ArrowUpRight, BookOpenText, CalendarCheck, CalendarClock, ChartColumn, CircleCheck, Clock3, Compass, Flame,
-  Headphones, History, LayoutDashboard, Layers, Lightbulb, ListChecks, Mic, Newspaper, PenLine, Target, Trophy, Type,
+  Headphones, History, LayoutDashboard, Layers, Lightbulb, Sparkles, ListChecks, Mic, Newspaper, PenLine, Target, Trophy, Type,
 } from "lucide-react";
 import { HeadIcon } from "@/components/ui/head-icon";
 import { InfoTip } from "@/components/ui/info-tip";
@@ -14,7 +14,7 @@ import { useDemo } from "@/features/demo/demo-store";
 import { activityLabels, type LearnerOverview } from "@/lib/account";
 import { todayISO } from "@/lib/demo-data";
 import {
-  behaviorInsights, examPlan, formatMinutes, isCounted, overallBand, periodTotals, skillSummaries, TESTS_PER_HALF_BAND, TYPE_MIN_ANSWERED, weakTypes, weeklyRows,
+  behaviorInsights, examPlan, formatMinutes, isCounted, nextSteps, overallBand, periodTotals, skillSummaries, TESTS_PER_HALF_BAND, TYPE_MIN_ANSWERED, weakTypes, weeklyRows,
   type InsightAttempt, type ProgressInsights, type SkillSummary, type SpeakingStats, type TypeStat, type WeekRow,
 } from "@/lib/progress-insights";
 import { demoMode } from "@/lib/runtime";
@@ -132,8 +132,21 @@ export function ProgressView({ today, days, goals, overview, insights, loading, 
     const rows = (insights?.questionTypes ?? []).filter((row) => row.skill === skill);
     return sum + Math.min(3, weakTypes(rows, skill, goals[skill] ?? goals.overall).weak.length);
   }, 0), [insights, goals]);
+  const steps = useMemo(() => insights ? nextSteps({ notes, plan, summaries, goals }) : [], [insights, notes, plan, summaries, goals]);
   const [tab, setTab] = useHashTab();
   const bar = useRef<HTMLDivElement>(null);
+  const [edges, setEdges] = useState({ left: false, right: false });
+  // Show a fade on the side where more tabs are hidden, and keep the open tab in view on narrow screens.
+  useEffect(() => {
+    const node = bar.current;
+    if (!node) return;
+    const update = () => setEdges({ left: node.scrollLeft > 4, right: node.scrollLeft + node.clientWidth < node.scrollWidth - 4 });
+    node.querySelector<HTMLElement>("[aria-selected=true]")?.scrollIntoView({ block: "nearest", inline: "nearest" });
+    const frame = window.requestAnimationFrame(update);
+    node.addEventListener("scroll", update, { passive: true });
+    window.addEventListener("resize", update);
+    return () => { window.cancelAnimationFrame(frame); node.removeEventListener("scroll", update); window.removeEventListener("resize", update); };
+  }, [tab]);
   // A tab opened from a link further down the page starts at the top of its content.
   useEffect(() => {
     const top = bar.current?.getBoundingClientRect().top ?? 0;
@@ -162,7 +175,7 @@ export function ProgressView({ today, days, goals, overview, insights, loading, 
       </>}
     />
     {error && <p className="pg-error" role="alert">{error}</p>}
-    <div ref={bar} className="pg-tabs" role="tablist" aria-label="Các phần của trang tiến độ" onKeyDown={onKey}>
+    <div ref={bar} className={`pg-tabs ${edges.left ? "fade-left" : ""} ${edges.right ? "fade-right" : ""}`} role="tablist" aria-label="Các phần của trang tiến độ" onKeyDown={onKey}>
       {tabs.map((item) => {
         const Icon = item.icon, selected = item.id === tab, count = badge[item.id];
         return <button key={item.id} type="button" role="tab" id={`pg-tab-${item.id}`} aria-selected={selected} aria-controls="pg-panel" tabIndex={selected ? 0 : -1}
@@ -173,9 +186,10 @@ export function ProgressView({ today, days, goals, overview, insights, loading, 
     </div>
     <div id="pg-panel" role="tabpanel" aria-labelledby={`pg-tab-${tab}`} className="pg-panel">
       {tab === "tong-quan" && <>
-        <KpiRow overview={overview} period={period} attempts={attempts} insightsLoaded={Boolean(insights)} loading={loading} today={today} />
+        <NextStepCard steps={steps} loading={!insights} />
         <BandStrip summaries={summaries} goals={goals} loading={!insights} onOpen={() => setTab("ky-nang")} />
-        <div className="pg-split pg-split-even">
+        <KpiRow overview={overview} period={period} attempts={attempts} insightsLoaded={Boolean(insights)} loading={loading} today={today} />
+        <div className="pg-split pg-split-even pg-split-plan">
           <PlanCard plan={plan} loading={!insights} />
           <BehaviorCard notes={notes} loading={!insights} />
         </div>
@@ -196,6 +210,26 @@ export function ProgressView({ today, days, goals, overview, insights, loading, 
       {tab === "muc-tieu" && !footer && <p className="pg-muted">Đăng nhập để đặt mục tiêu và ngày thi.</p>}
     </div>
   </div>;
+}
+
+const StepLink = ({ href, className, children }: { href: string; className?: string; children: ReactNode }) =>
+  href.startsWith("#") ? <a className={className} href={href}>{children}</a> : <Link className={className} href={href}>{children}</Link>;
+
+/** The one thing to do today, chosen from the plan and the learner's habits, with up to two alternatives. */
+function NextStepCard({ steps, loading }: { steps: ReturnType<typeof nextSteps>; loading: boolean }) {
+  const [main, ...rest] = steps;
+  return <section className="card pg-card pg-next" aria-label="Hôm nay nên làm gì">
+    <span className="pg-next-icon" aria-hidden="true"><Sparkles size={20} /></span>
+    <div className="pg-next-body">
+      <small>Hôm nay nên làm</small>
+      {loading || !main ? <h2>Đang xem bạn nên làm gì tiếp…</h2> : <>
+        <h2>{main.title}</h2>
+        <p>{main.reason}</p>
+        {rest.length > 0 && <div className="pg-next-more"><span>Hoặc:</span>{rest.map((step) => <StepLink key={step.id} href={step.href} className="pg-next-chip">{step.title}</StepLink>)}</div>}
+      </>}
+    </div>
+    {main && !loading && <StepLink href={main.href} className="button primary pg-next-cta">{main.label} <ArrowRight size={15} /></StepLink>}
+  </section>;
 }
 
 /** One line per skill for the overview tab: band, margin and target, linking to the full skill cards. */
@@ -291,13 +325,15 @@ function PlanCard({ plan, loading }: { plan: ReturnType<typeof examPlan>; loadin
   </section>;
 }
 
-function BehaviorCard({ notes, loading }: { notes: ReturnType<typeof behaviorInsights>; loading: boolean }) {
+function BehaviorCard({ notes: all, loading }: { notes: ReturnType<typeof behaviorInsights>; loading: boolean }) {
+  const [more, setMore] = useState(false);
+  const notes = more ? all : all.slice(0, 2);
   return <section className="card pg-card pg-notes">
     <div className="card-head"><div className="head-title"><HeadIcon icon={Lightbulb} tone="sun" /><div><h2>Nhận xét từ cách bạn học</h2><p>Rút ra từ bài nộp và lịch học của bạn</p></div></div></div>
     {loading ? <p className="pg-muted">Đang phân tích…</p> : notes.length ? <ul className="pg-note-list">{notes.map((note) => <li key={note.id} className={`is-${note.tone}`}>
       <p>{note.text}</p>
       {note.action && (note.action.href.startsWith("#") ? <a href={note.action.href}>{note.action.label} <ArrowRight size={13} /></a> : <Link href={note.action.href}>{note.action.label} <ArrowRight size={13} /></Link>)}
-    </li>)}</ul> : <p className="pg-muted">Chưa có nhận xét nào. Làm thêm vài bài để Harry nhận ra thói quen học của bạn.</p>}
+    </li>)}{all.length > 2 && <li className="pg-note-toggle"><button type="button" onClick={() => setMore((value) => !value)}>{more ? "Thu gọn" : `Xem thêm ${all.length - 2} nhận xét`}</button></li>}</ul> : <p className="pg-muted">Chưa có nhận xét nào. Làm thêm vài bài để Harry nhận ra thói quen học của bạn.</p>}
   </section>;
 }
 

@@ -151,3 +151,23 @@ describe("behaviour notes", () => {
     expect(notes.length).toBeLessThanOrEqual(4);
   });
 });
+
+describe("next steps", () => {
+  it("leads with finishing a test when most tests are abandoned, then the waiting essay", async () => {
+    const { nextSteps } = await import("../src/lib/progress-insights");
+    const attempts = [attempt({ band: 5.5 }), attempt({ skill: "Writing", band: 6.5, task: 2, score: null, total: null })];
+    const steps = nextSteps({
+      notes: [{ id: "abandoned", tone: "warn", text: "" }, { id: "ungraded", tone: "info", text: "" }],
+      plan: { status: "no-exam" }, summaries: skillSummaries(attempts), goals: emptyGoals,
+    });
+    expect(steps.map((step) => step.id)).toEqual(["finish", "grade", "fill"]);
+    expect(steps[2].title).toContain("Listening");
+  });
+
+  it("asks for a goal when nothing else is pressing", async () => {
+    const { nextSteps } = await import("../src/lib/progress-insights");
+    const attempts = [attempt({ band: 6 }), attempt({ skill: "Listening", band: 6 }), attempt({ skill: "Writing", band: 6, task: 2, score: null, total: null })];
+    const steps = nextSteps({ notes: [], plan: { status: "no-exam" }, summaries: skillSummaries(attempts), goals: emptyGoals });
+    expect(steps[0].id).toBe("goal");
+  });
+});

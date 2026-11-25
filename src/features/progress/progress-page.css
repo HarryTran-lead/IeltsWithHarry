@@ -285,3 +285,59 @@
   .pg-tabs { margin: 0 -4px; border-radius: 14px; }
   .pg-tabs button { padding: 8px 11px; font-size: 13px; }
 }
+
+/* UX pass: today's action first, bands in one row, compact numbers, plan beside notes. */
+.pg-next { display: grid; grid-template-columns: auto minmax(0, 1fr) auto; align-items: center; gap: 14px 16px; border: 1.5px solid color-mix(in srgb, var(--teal) 35%, transparent); background: linear-gradient(120deg, color-mix(in srgb, var(--teal-soft) 70%, #fff), #fff 70%); }
+.pg-next-icon { display: grid; place-items: center; width: 44px; height: 44px; border-radius: 14px; background: var(--teal); color: #fff; }
+.pg-next-body { display: grid; gap: 4px; min-width: 0; }
+.pg-next-body > small { color: var(--teal-strong); font-size: 12px; font-weight: 800; letter-spacing: 0.05em; text-transform: uppercase; }
+.pg-next-body h2 { margin: 0; color: var(--navy); font-size: 19px; line-height: 1.3; }
+.pg-next-body p { margin: 0; color: var(--muted); font-size: 13.5px; line-height: 1.5; }
+.pg-next-more { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; margin-top: 4px; color: var(--muted); font-size: 12.5px; }
+.pg-next-chip { padding: 4px 10px; border: 1px solid var(--line); border-radius: 99px; background: #fff; color: var(--navy); font-weight: 700; }
+.pg-next-chip:hover { border-color: var(--teal); color: var(--teal-strong); }
+.pg-next-cta { display: inline-flex; align-items: center; gap: 6px; white-space: nowrap; }
+.pg-note-toggle { padding: 0 !important; border: 0 !important; background: none !important; }
+.pg-note-toggle button { justify-self: start; padding: 4px 0; border: 0; background: none; color: var(--teal-strong); font-size: 12.5px; font-weight: 800; cursor: pointer; }
+
+/* Tabs: fade the side that hides more tabs. */
+.pg-tabs.fade-right { -webkit-mask-image: linear-gradient(90deg, #000 85%, transparent); mask-image: linear-gradient(90deg, #000 85%, transparent); }
+.pg-tabs.fade-left { -webkit-mask-image: linear-gradient(90deg, transparent, #000 15%); mask-image: linear-gradient(90deg, transparent, #000 15%); }
+.pg-tabs.fade-left.fade-right { -webkit-mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent); mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent); }
+
+/* Bigger tap area for the "i" without a bigger icon. */
+.info-tip > button { position: relative; }
+.info-tip > button::after { content: ""; position: absolute; inset: -8px; }
+
+/* Bands stay in one row down to tablet width; the plan sits beside the notes. */
+@container (max-width: 1100px) {
+  .pg-strip { grid-template-columns: 1.1fr repeat(4, minmax(0, 1fr)); }
+  .pg-strip-overall { grid-column: auto; }
+  .pg-kpi { padding: 12px 14px; }
+  .pg-kpi strong { font-size: 24px; }
+  .pg-split-plan { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
+}
+@container (max-width: 760px) {
+  .pg-strip { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .pg-strip-overall { grid-column: 1 / -1; grid-template-columns: auto auto minmax(0, 1fr); align-items: baseline; column-gap: 12px; }
+  .pg-strip-overall strong { font-size: 28px; }
+  .pg-split-plan { grid-template-columns: minmax(0, 1fr); }
+  .pg-next { grid-template-columns: auto minmax(0, 1fr); }
+  .pg-next-cta { grid-column: 1 / -1; justify-content: center; }
+}
+@container (max-width: 560px) {
+  /* Six numbers as one swipeable row instead of three screens of cards. */
+  .pg-kpis { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; gap: 10px; margin: 0 -4px; padding: 2px 4px 6px; scrollbar-width: none; }
+  .pg-kpis::-webkit-scrollbar { display: none; }
+  .pg-kpi { flex: 0 0 158px; scroll-snap-align: start; padding: 11px 12px; gap: 4px; }
+  .pg-kpi > span { font-size: 11.5px; }
+  .pg-kpi strong { font-size: 22px; }
+  .pg-kpi strong.pg-kpi-time { font-size: 17px; }
+  .pg-kpi .pg-delta { font-size: 11px; }
+  .pg-strip { gap: 8px; padding: 10px; }
+  .pg-strip-skill { padding: 10px 12px; }
+  .pg-strip-skill strong { font-size: 22px; }
+  .pg-next { gap: 10px 12px; padding: 14px; }
+  .pg-next-icon { width: 36px; height: 36px; border-radius: 11px; }
+  .pg-next-body h2 { font-size: 16.5px; }
+}
