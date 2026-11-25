@@ -62,9 +62,17 @@ describe("Writing Task 1 Lab release", () => {
   afterEach(() => vi.unstubAllEnvs());
   const runtime = async () => { vi.resetModules(); return (await import("../runtime")).lockedLearnerPath; };
 
-  it("is open to learners in production while the other unfinished labs stay locked", async () => {
+  it("is locked in production while IELTS practice is closed", async () => {
     vi.stubEnv("NODE_ENV", "production");
     vi.stubEnv("NEXT_PUBLIC_UNLOCK_DEV_FEATURES", "false");
+    const production = await runtime();
+    expect(production("/app/self-study/writing-task-1")).toBe(true);
+    expect(production("/app/self-study/writing-task-1/line")).toBe(true);
+  });
+
+  it("is open in the unlocked preview while the other unfinished labs stay locked", async () => {
+    vi.stubEnv("NODE_ENV", "production");
+    vi.stubEnv("NEXT_PUBLIC_UNLOCK_DEV_FEATURES", "true");
     const locked = await runtime();
     expect(locked("/app/self-study/writing-task-1")).toBe(false);
     expect(locked("/app/self-study/writing-task-1/line")).toBe(false);

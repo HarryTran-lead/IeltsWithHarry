@@ -77,9 +77,18 @@ describe("Writing Task 2 Lab progress rules", () => {
 });
 
 describe("Writing Task 2 Lab release", () => {
-  it("opens in production, and the disable flag locks it again", async () => {
+  it("is locked in production while IELTS practice is closed", async () => {
     vi.stubEnv("NODE_ENV", "production");
     vi.stubEnv("NEXT_PUBLIC_UNLOCK_DEV_FEATURES", "false");
+    vi.resetModules();
+    const production = (await import("../src/lib/runtime")).lockedLearnerPath;
+    expect(production("/app/self-study/writing-task-2")).toBe(true);
+    expect(production("/app/self-study/writing-task-2/T2-M113-01")).toBe(true);
+  });
+
+  it("opens in the unlocked preview, and the disable flag locks it again", async () => {
+    vi.stubEnv("NODE_ENV", "production");
+    vi.stubEnv("NEXT_PUBLIC_UNLOCK_DEV_FEATURES", "true");
     vi.resetModules();
     const released = (await import("../src/lib/runtime")).lockedLearnerPath;
     expect(released("/app/self-study/writing-task-2")).toBe(false);
