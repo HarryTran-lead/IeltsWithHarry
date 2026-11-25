@@ -29,22 +29,32 @@ function toLegacy(item: Candidate): AdaptiveQuestion {
     option_notes: item.correct_index < 0 || !item.option_notes.length ? null : item.option_notes,
   };
 }
-function selectPublished(items: Candidate[], target: number) {
+/** Fewest questions a published set needs. */
+const MIN_SET = 6;
+export function selectPublished(items: Candidate[], target: number) {
   const groups = new Map<string, Candidate[]>();
   for (const item of items) groups.set(item.group_id, [...(groups.get(item.group_id) ?? []), item]);
   const selected: Candidate[] = [];
-  // Whole groups are atomic; never publish a broken matching, note or flow set.
-  for (const group of groups.values()) {
+  const usable = [...groups.values()].filter((group) => {
     const type = group[0].type;
+    // Whole groups are atomic; never publish a broken matching, note or flow set.
     if ((type.startsWith("matching_") || ["summary_completion", "note_completion", "table_completion", "flow_chart_completion"].includes(type))
-      && group.length < 2) continue;
-    if (type === "matching_headings" && group[0].options.length <= group.length) continue;
-    if (type === "flow_chart_completion"
-      && group.some((item, index) => !new RegExp(`^Step ${index + 1}:`, "i").test(item.prompt))) continue;
+      && group.length < 2) return false;
+    if (type === "matching_headings" && group[0].options.length <= group.length) return false;
+    return !(type === "flow_chart_completion" && group.some((item, index) => !new RegExp(`^Step ${index + 1}:`, "i").test(item.prompt)));
+  });
+  const directIn = (group: Candidate[]) => group.filter((item) => item.difficulty === "P1").length;
+  // Harder groups first; direct-lookup (P1) items only while they stay within a quarter of the set.
+  let direct = 0;
+  for (const group of [...usable.filter((group) => !directIn(group)), ...usable.filter(directIn)]) {
     if (selected.length + group.length > target) continue;
+    if (directIn(group) && direct + directIn(group) > Math.floor(Math.max(selected.length + group.length, MIN_SET) / 4)) continue;
     selected.push(...group);
+    direct += directIn(group);
   }
-  return selected;
+  // Keep the article's reading order for learners.
+  const order = new Map(items.map((item, index) => [item.id, index]));
+  return selected.sort((a, b) => (order.get(a.id) ?? 0) - (order.get(b.id) ?? 0));
 }
 function result(state: FactoryResult["state"], model: string, fingerprintValue: string,
   budget: ArticleRequestBudget, generationTokens: TokenUsage | null, qaTokens: TokenUsage | null,
@@ -91,11 +101,11 @@ const UNDERSCORE_GAP = /_{3,}/g;
 export function normalizeCandidate(item: Candidate): Candidate {
   if (!item || typeof item !== "object") return item;
   if (choiceTypes.has(item.type)) {
-    // Matching forms share one pool of options; per-option notes are an optional extra for learners,
-    // so a pool whose notes do not line up or are not Vietnamese keeps the item and drops only the notes.
+    // Per-option notes are an optional extra for learners (the explanation stays required), so notes
+    // that do not line up with the options or are not Vietnamese are dropped and the item is kept.
     const notesMismatch = !Array.isArray(item.option_notes) || !Array.isArray(item.options) || item.option_notes.length !== item.options.length
       || !item.option_notes.every(isVietnameseNote);
-    return { ...item, answer: "", ...(item.type.startsWith("matching_") && notesMismatch ? { option_notes: [] } : {}) };
+    return { ...item, answer: "", ...(notesMismatch ? { option_notes: [] } : {}) };
   }
   let prompt = typeof item.prompt === "string" ? item.prompt.replace(GAP_VARIANTS, GAP) : item.prompt;
   if (gapTypes.has(item.type) && typeof prompt === "string" && item.type !== "diagram_label_completion") {

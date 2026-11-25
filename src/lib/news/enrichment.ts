@@ -700,7 +700,9 @@ export async function enrichNews({ scheduled = false, photoOnly = false }: { sch
     if (await runTranslation(db, result)) return result;
   }
   if (slot === "discovery") {
-    if (scheduled && slot === "discovery") {
+    // Only the :55 discovery slot may go to a large quiz backlog; :15 always looks for news,
+    // so Vietnamese articles keep coming while quizzes catch up.
+    if (scheduled && slot === "discovery" && new Date().getUTCMinutes() >= 50) {
       const backlog = await db.rpc("news_quiz_backlog");
       if (!backlog.error && Number(backlog.data ?? 0) >= 8) {
         await enrichQuiz(db, result, settings, true);
