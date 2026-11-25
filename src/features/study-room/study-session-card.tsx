@@ -178,7 +178,7 @@ export function StudySessionDock({ session }: { session: StudySession }) {
     setSaved(false);
   }
 
-  const pauseButton = <button type="button" className="study-dock-button light" onClick={session.togglePause}>
+  const pauseButton = <button type="button" className="study-dock-button outline" onClick={session.togglePause}>
     {isPaused ? <Play size={15} fill="currentColor" /> : <Pause size={15} fill="currentColor" />}{isPaused ? "Tiếp tục" : "Tạm dừng"}
   </button>;
 
@@ -218,24 +218,20 @@ export function StudySessionDock({ session }: { session: StudySession }) {
       <span className="study-dock-progress" aria-hidden="true"><i style={{ width: `${progress}%` }} /></span>
 
       <div className="study-dock-clock">
-        <span className="study-dock-phase"><i />{inRound ? (isPaused ? "Tạm dừng" : phaseName) : timer.phase === "done" ? "Hoàn thành" : "Sẵn sàng"}</span>
+        <span className="study-dock-phase"><i />{inRound ? (isPaused ? "Tạm dừng" : phaseName) : timer.phase === "done" ? "Hoàn thành" : "Sẵn sàng"}{inRound && <em> · Vòng {timer.round}/{sessionRounds}</em>}</span>
         <strong role="timer" aria-label={`Đồng hồ ${clock}`}>{timer.phase === "done" ? formatClock(timer.focusedSeconds) : clock}</strong>
-        <span className="study-dock-rounds" aria-label={`Vòng ${timer.round} trên ${sessionRounds}`}>
-          {Array.from({ length: sessionRounds }, (_, index) => <i key={index} className={index + 1 < timer.round || timer.phase === "done" ? "done" : index + 1 === timer.round && inRound ? "now" : ""} />)}
-        </span>
       </div>
 
       <div className="study-dock-goal">
-        <span className="study-dock-label">Mục tiêu hôm nay</span>
         {!goal || editingGoal
           ? <form onSubmit={saveGoal} className="study-dock-goal-form">
             <label htmlFor="study-goal" className="sr-only">Mục tiêu hôm nay</label>
-            <input id="study-goal" list="study-goal-ideas" value={draft} onChange={(event) => setDraft(event.target.value)} maxLength={80} placeholder="Ví dụ: 2 bài Reading" autoComplete="off" />
+            <input id="study-goal" list="study-goal-ideas" value={draft} onChange={(event) => setDraft(event.target.value)} maxLength={80} placeholder="Mục tiêu hôm nay, ví dụ: 2 bài Reading" autoComplete="off" />
             <datalist id="study-goal-ideas">{goalSuggestions.map((item) => <option key={item} value={item} />)}</datalist>
             <button type="submit" disabled={!draft.trim()} aria-label="Lưu mục tiêu"><Check size={16} /></button>
           </form>
           : <button type="button" className="study-dock-goal-text" onClick={() => { setDraft(goal); setEditingGoal(true); }} title="Đổi mục tiêu">
-            <strong>{goal}</strong><Pencil size={13} aria-hidden="true" />
+            <span>Mục tiêu</span><strong>{goal}</strong><Pencil size={13} aria-hidden="true" />
           </button>}
       </div>
 
