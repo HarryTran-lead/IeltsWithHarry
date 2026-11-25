@@ -481,6 +481,37 @@ describe("two request free-tier budget", () => {
     expect(output.state).toBe("PENDING_PROVIDER");
     expect(output.audit.retryable).toBe(true);
   });
+  it("tops up a short set with single-item forms instead of failing it", async () => {
+    process.env.AI_FACTORY_FREE_TIER_ONLY = "true";
+    process.env.AI_FACTORY_FREE_TIER_CONFIRMED = "true";
+    process.env.AI_FACTORY_GEMINI_API_KEY = "offline-test-key";
+    const { passage, id, questions } = sixItemCase("top-up");
+    const steps: string[] = [];
+    const fake = (async (_url: string | URL | Request, init?: RequestInit) => {
+      const { step, types } = stepOf(init);
+      steps.push(step === "batch" ? `batch:${types.join("+")}` : step);
+      // The planned short-answer batch comes back empty; the top-up asks again.
+      if (step === "batch" && types.length === 1 && types[0] === "short_answer") return gemini({ questions: [] });
+      return gemini(factoryData(init, questions));
+    }) as typeof fetch;
+    const output = await generateNewsQuizV2("Top up", passage, id, fake);
+    expect(steps).toContain("batch:mcq+short_answer");
+    expect(output.state).toBe("READY");
+    expect(output.questions.length).toBeGreaterThanOrEqual(6);
+  });
+  it("gives every matching item in a group the first item's options, following the answer text", async () => {
+    const { unifyMatchingPools } = await import("../src/lib/news/question-factory-v2");
+    const pool = ["alpha end", "beta end", "gamma end", "delta end"];
+    const [first, second, stranger] = unifyMatchingPools([
+      { id: "m1", group_id: "g", type: "matching_sentence_endings", options: pool, correct_index: 0, option_notes: [] },
+      { id: "m2", group_id: "g", type: "matching_sentence_endings", options: ["delta end", "gamma end", "beta end", "alpha end"], correct_index: 1, option_notes: [] },
+      { id: "m3", group_id: "g", type: "matching_sentence_endings", options: ["omega end", "beta end", "gamma end", "delta end"], correct_index: 0, option_notes: [] },
+    ] as never);
+    expect(first.options).toBe(pool);
+    expect(second.options).toEqual(pool);
+    expect(second.options[second.correct_index]).toBe("gamma end");
+    expect(stranger.options[0]).toBe("omega end");
+  });
   it("renames ids that two batches both used", async () => {
     process.env.AI_FACTORY_FREE_TIER_ONLY = "true";
     process.env.AI_FACTORY_FREE_TIER_CONFIRMED = "true";
