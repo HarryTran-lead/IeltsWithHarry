@@ -216,11 +216,12 @@ export function periodTotals(days: ProgressDay[], today: string, length = 28) {
 /** Rough coaching rule: about six valid scored tests (with review) per half band gained. */
 export const TESTS_PER_HALF_BAND = 6;
 
+type PacePlan = { daysLeft: number; target: number; current: number; gap: number; perWeekNeeded: number; perWeekNow: number; focus: ProgressSkill | "overall" };
 export type ExamPlan =
-  | { status: "no-exam" | "past" }
-  | { status: "no-target" | "no-band"; daysLeft: number }
+  | { status: "no-exam" } | { status: "past" }
+  | { status: "no-target"; daysLeft: number } | { status: "no-band"; daysLeft: number }
   | { status: "reached"; daysLeft: number; target: number; current: number }
-  | { status: "on-track" | "behind"; daysLeft: number; target: number; current: number; gap: number; perWeekNeeded: number; perWeekNow: number; focus: ProgressSkill | "overall" };
+  | ({ status: "on-track" } & PacePlan) | ({ status: "behind" } & PacePlan);
 
 /**
  * Links target, exam date and pace: how many valid tests a week the remaining gap needs,
@@ -246,7 +247,7 @@ export function examPlan(goals: ProgressGoals, summaries: SkillSummary[], attemp
   const since = addDays(today, -27);
   const recent = attempts.filter((item) => isCounted(item) && item.submittedAt.slice(0, 10) >= since && (item.band !== null || item.skill === "Writing"));
   const perWeekNow = Math.round((recent.reduce((sum, item) => sum + attemptWeight(item), 0) / 4) * 10) / 10;
-  return { status: perWeekNow >= perWeekNeeded ? "on-track" : "behind", daysLeft, target: pick.target, current: pick.current, gap, perWeekNeeded, perWeekNow, focus: pick.focus };
+  return { status: perWeekNow >= perWeekNeeded ? "on-track" as const : "behind" as const, daysLeft, target: pick.target, current: pick.current, gap, perWeekNeeded, perWeekNow, focus: pick.focus };
 }
 
 export type BehaviorInsight = { id: string; tone: "warn" | "info" | "good"; text: string; action?: { label: string; href: string } };
