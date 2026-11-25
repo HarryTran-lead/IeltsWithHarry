@@ -22,11 +22,11 @@ function legacyWritingBand(notes: Record<string, string> | null) {
   try { const overall = Number(JSON.parse(raw).overall); return Number.isFinite(overall) && overall > 0 ? overall : null; } catch { return null; }
 }
 
-async function speakingStats(): Promise<SpeakingStats | null> {
+async function speakingStats(userId: string): Promise<SpeakingStats | null> {
   const db = await createClient();
   const [sessions, coached] = await Promise.all([
-    db.from("speaking_mock_sessions").select("completed_at,speaking_seconds").order("completed_at", { ascending: false }).limit(500),
-    db.from("speaking_coaching_jobs").select("id", { count: "exact", head: true }).eq("status", "completed"),
+    db.from("speaking_mock_sessions").select("completed_at,speaking_seconds").eq("user_id", userId).order("completed_at", { ascending: false }).limit(500),
+    db.from("speaking_coaching_jobs").select("id", { count: "exact", head: true }).eq("user_id", userId).eq("status", "completed"),
   ]);
   if (sessions.error) return null;
   const rows = sessions.data ?? [];
@@ -59,7 +59,7 @@ export async function GET() {
       versionIds.length ? client.from("ielts_exam_versions").select("id,content").in("id", versionIds) : Promise.resolve({ data: [], error: null }),
       writing.length ? client.from("writing_grading_results").select("attempt_id,result,created_at").eq("user_id", user.id)
         .in("attempt_id", writing.map((row) => row.id)).order("created_at", { ascending: false }) : Promise.resolve({ data: [], error: null }),
-      speakingStats().catch(() => null),
+      speakingStats(user.id).catch(() => null),
     ]);
     if (versions.error) throw new Error(versions.error.message);
     const contents = new Map((versions.data ?? []).map((version) => [version.id as string, version.content]));
