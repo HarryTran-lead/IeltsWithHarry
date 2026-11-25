@@ -514,6 +514,10 @@ describe("candidate normalization", () => {
     expect(pool.option_notes).toEqual([]);
     const mcq = normalizeCandidate({ type: "mcq", answer: "", options: ["a", "b", "c", "d"], option_notes: ["Chỉ một ghi chú"], correct_index: 0, prompt: "Which is true?" } as never);
     expect(mcq.option_notes).toEqual(["Chỉ một ghi chú"]);
+    const tag = normalizeCandidate({ type: "sentence_completion", prompt: "NASA expects the system to be ready by [W1].", answer: "2030", options: [], option_notes: [], correct_index: -1 } as never);
+    expect(tag.prompt).toBe("NASA expects the system to be ready by ______.");
+    const note = normalizeCandidate({ type: "note_completion", prompt: "Launch year: ______ [W1]", answer: "2030", options: [], option_notes: [], correct_index: -1 } as never);
+    expect(note.prompt).toBe("Launch year: ______ [W1]");
     const two = normalizeCandidate({ type: "sentence_completion", prompt: "A ______ and a ______.", answer: "x", options: [], option_notes: [], correct_index: -1 } as never);
     expect(two.prompt).toBe("A ______ and a ______.");
   });
