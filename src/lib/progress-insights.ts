@@ -281,6 +281,37 @@ export function behaviorInsights(input: { attempts: InsightAttempt[]; days: Prog
   return out.slice(0, 4);
 }
 
+export type NextStep = { id: string; title: string; reason: string; href: string; label: string };
+
+/**
+ * What to do today, most useful first: catch up with the exam plan, finish a test that counts,
+ * grade a waiting essay, fill a skill with no band, then set a goal. The first is the main call to action.
+ */
+export function nextSteps(input: { notes: BehaviorInsight[]; plan: ExamPlan; summaries: SkillSummary[]; goals: ProgressGoals }): NextStep[] {
+  const { notes, plan, summaries, goals } = input;
+  const has = (id: string) => notes.find((note) => note.id === id);
+  const steps: NextStep[] = [];
+  if (plan.status === "behind") {
+    const skill = plan.focus === "overall" ? "Reading" : plan.focus;
+    steps.push({ id: "plan", title: `Làm 1 đề ${skill} hôm nay`, reason: `Bạn cần khoảng ${plan.perWeekNeeded} đề/tuần để đạt ${plan.target.toFixed(1)} kịp ngày thi, hiện đang ${plan.perWeekNow}.`, href: `/app/${skill.toLowerCase()}`, label: `Làm đề ${skill}` });
+  }
+  const abandoned = has("abandoned"), stale = has("no-test");
+  if (abandoned || stale) steps.push({
+    id: "finish", title: "Làm trọn 1 passage Reading (20 phút)",
+    reason: abandoned ? "Phần lớn đề gần đây bị bỏ dở nên band chưa đáng tin. Một passage làm trọn giá trị hơn một full test bỏ giữa chừng." : "Lâu rồi chưa có đề nào được tính, band ước tính đang cũ dần.",
+    href: "/app/reading?type=passage", label: "Chọn passage",
+  });
+  const ungraded = has("ungraded");
+  if (ungraded) steps.push({ id: "grade", title: "Chấm bài Writing đang chờ", reason: "Bài đã đủ dài; chấm xong bạn có band và nhận xét 4 tiêu chí ngay.", href: "#lich-su", label: "Mở bài Writing" });
+  const missing = summaries.filter((item) => item.current === null && item.skill !== "Speaking").map((item) => item.skill);
+  if (missing.length) steps.push({ id: "fill", title: `Làm 1 đề ${missing[0]} đầu tiên`, reason: `Chưa có band ${missing.join(", ")} nên chưa tính được Overall.`, href: `/app/${missing[0].toLowerCase()}`, label: `Làm đề ${missing[0]}` });
+  if (!goals.examDate || (goals.overall === null && progressSkills.every((skill) => goals[skill] === null))) {
+    steps.push({ id: "goal", title: "Đặt mục tiêu và ngày thi", reason: "Có mục tiêu, Harry tính được mỗi tuần bạn cần làm bao nhiêu đề.", href: "#muc-tieu", label: "Đặt mục tiêu" });
+  }
+  if (!steps.length) steps.push({ id: "keep", title: "Giữ nhịp: 1 đề hôm nay", reason: "Bạn đang đúng hướng. Làm đều mỗi ngày giúp band ước tính chính xác hơn.", href: "/app/reading", label: "Làm đề Reading" });
+  return steps.slice(0, 3);
+}
+
 export function formatMinutes(minutes: number) {
   if (minutes < 60) return `${minutes} phút`;
   const hours = Math.floor(minutes / 60), rest = minutes % 60;
