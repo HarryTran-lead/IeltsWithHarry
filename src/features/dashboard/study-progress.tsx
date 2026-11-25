@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useMemo, useState } from "react";
-import { BookOpenText, CalendarClock, ChevronLeft, ChevronRight, Flame, Headphones, ListChecks, Mic, PenLine, Target } from "lucide-react";
+import { ArrowRight, BookOpenText, CalendarClock, ChevronLeft, ChevronRight, Flame, Headphones, ListChecks, Mic, PenLine, Target } from "lucide-react";
 import { HeadIcon } from "@/components/ui/head-icon";
 import Link from "next/link";
 import { useDemo } from "@/features/demo/demo-store";
@@ -10,8 +10,8 @@ import { demoMode } from "@/lib/runtime";
 import { createClient } from "@/lib/supabase/browser";
 import { activityLabels, type LearnerOverview } from "@/lib/account";
 import {
-  addMonths, asProgressSkill, bandOptions, bucketActivity, dayDiff, dayTotal, emptyDay, emptyGoals, monthWeeks, progressSkills, skillFromSlug, weekOf,
-  type ActivityItem, type ProgressDay, type ProgressGoals, type ProgressReport, type ProgressSkill,
+  addMonths, asProgressSkill, bandOptions, bucketActivity, dayDiff, dayIntensity, dayTotal, derivedOverallGoal, emptyDay, emptyGoals, monthWeeks, progressSkills, skillFromSlug, weekOf,
+  type ActivityItem, type DayEntry, type ProgressDay, type ProgressGoals, type ProgressReport, type ProgressSkill,
 } from "@/lib/study-progress";
 import "./study-progress.css";
 
@@ -68,7 +68,10 @@ function useLiveReport(month: string, enabled: boolean) {
 }
 
 /** `page` drops the summary row (the Progress page has its own) and reports saved goals to the parent. */
-export function StudyProgress({ variant = "dashboard", onGoalsChange }: { variant?: "dashboard" | "page"; onGoalsChange?: (goals: ProgressGoals) => void } = {}) {
+/** Which cards a host page shows; the component stays mounted so month, selection and saved goals persist across tabs. */
+export type StudyProgressPart = "all" | "goals" | "calendar" | "none";
+
+export function StudyProgress({ variant = "dashboard", onGoalsChange, show = "all" }: { variant?: "dashboard" | "page"; onGoalsChange?: (goals: ProgressGoals) => void; show?: StudyProgressPart } = {}) {
   const [month, setMonth] = useState(() => todayISO().slice(0, 7));
   const demo = useDemoReport(month);
   const live = useLiveReport(month, !demoMode);
@@ -86,9 +89,16 @@ export function StudyProgress({ variant = "dashboard", onGoalsChange }: { varian
   }, []);
   const goals = goalsOverride ?? report?.goals ?? emptyGoals;
   const days = useMemo(() => new Map((report?.days ?? []).map((day) => [day.day, day])), [report]);
+  const entries = useMemo(() => {
+    const byDay = new Map<string, DayEntry[]>();
+    for (const item of report?.entries ?? []) byDay.set(item.day, [...(byDay.get(item.day) ?? []), item]);
+    return byDay;
+  }, [report]);
   const selected = selection ?? { kind: "week", days: weekOf(today) };
 
-  async function saveGoals(next: ProgressGoals) {
+  async function saveGoals(input: ProgressGoals) {
+    // Four skill targets fix the overall target; the server applies the same rule.
+    const next = { ...input, overall: derivedOverallGoal(input) ?? input.overall };
     setGoalsOverride(next);
     onGoalsChange?.(next);
     setStatus("Đang lưu…");
@@ -114,20 +124,25 @@ export function StudyProgress({ variant = "dashboard", onGoalsChange }: { varian
       <div><span>Bài đã làm trong tháng</span><strong>{report ? monthExercises : "…"}</strong><small>theo hoạt động đã lưu</small></div>
       <div><span>Tổng ngày học</span><strong>{demoMode ? "—" : overview?.streak.totalDays ?? "…"}</strong><small>từ lúc tạo tài khoản</small></div>
     </div>}
-    <div className="sp-grid">
+    {show !== "none" && <div className="sp-grid">
+    {(show === "all" || show === "goals") && <>
     <GoalsCard goals={goals} onChange={(next) => void saveGoals(next)} status={status} />
     <ExamCard examDate={goals.examDate} today={today} onChange={(examDate) => void saveGoals({ ...goals, examDate })} />
+    </>}
+    {(show === "all" || show === "calendar") && <>
     <ActivityCalendar month={month} today={today} days={days} selection={selected} loading={!report} error={demoMode ? "" : live.error}
       onMonth={(offset) => { setMonth((current) => addMonths(current, offset)); setSelection(null); }}
       onSelect={setSelection} />
-    <WeekStats selection={selected} days={days} today={today} loading={!report} />
+    <WeekStats selection={selected} days={days} entries={entries} today={today} loading={!report} />
+    </>}
     {overview && variant === "dashboard" && <section className="card sp-card sp-recent"><div className="card-head"><div className="head-title"><HeadIcon icon={ListChecks} tone="teal" /><div><h2>Hoạt động gần đây</h2><p>{overview.stats.lessons} bài học · {overview.stats.newsQuizzes} quiz tin tức · {overview.stats.words} từ đã lưu</p></div></div><Link href="/app/profile">Xem hồ sơ</Link></div>
       {overview.timeline.length ? <ol>{overview.timeline.slice(0, 6).map((item, index) => <li key={`${item.at}-${index}`}><span>{activityLabels[item.kind] ?? item.kind}</span>{item.link ? <Link href={item.link}>{item.title}</Link> : <strong>{item.title}</strong>}<time dateTime={item.at}>{new Date(item.at).toLocaleDateString("vi-VN")}</time></li>)}</ol> : <p>Chưa có hoạt động. Hoàn thành một bài luyện để bắt đầu theo dõi.</p>}
     </section>}
-  </div></section>;
+  </div>}</section>;
 }
 
 function GoalsCard({ goals, onChange, status }: { goals: ProgressGoals; onChange: (goals: ProgressGoals) => void; status: string }) {
+  const derived = derivedOverallGoal(goals);
   return <section className="card sp-card sp-goals">
     <div className="card-head">
       <div className="head-title"><HeadIcon icon={Target} tone="coral" /><div><h2>Mục tiêu của bạn</h2><p>Chọn band bạn muốn đạt cho từng kỹ năng.</p></div></div>
@@ -136,11 +151,11 @@ function GoalsCard({ goals, onChange, status }: { goals: ProgressGoals; onChange
     <div className="sp-goal-grid">
       <label className="sp-goal sp-goal-overall">
         <span>Overall</span>
-        <select value={goals.overall ?? ""} onChange={(event) => onChange({ ...goals, overall: event.target.value ? Number(event.target.value) : null })} aria-label="Band mục tiêu Overall">
+        <select value={derived ?? goals.overall ?? ""} disabled={derived !== null} onChange={(event) => onChange({ ...goals, overall: event.target.value ? Number(event.target.value) : null })} aria-label="Band mục tiêu Overall">
           <option value="">–</option>
           {bandOptions.map((band) => <option key={band} value={band}>{band.toFixed(1)}</option>)}
         </select>
-        <small>{goals.overall === null ? "Chưa đặt" : "Band tổng"}</small>
+        <small>{derived !== null ? "Tự tính từ 4 kỹ năng" : goals.overall === null ? "Chưa đặt" : "Đặt đủ 4 kỹ năng để tự tính"}</small>
       </label>
       {progressSkills.map((skill) => {
         const Icon = skillMeta[skill].icon;
@@ -158,6 +173,7 @@ function GoalsCard({ goals, onChange, status }: { goals: ProgressGoals; onChange
 
 function ExamCard({ examDate, today, onChange }: { examDate: string | null; today: string; onChange: (examDate: string | null) => void }) {
   const left = examDate ? dayDiff(today, examDate) : null;
+  const [invalid, setInvalid] = useState("");
   return <section className="card sp-card sp-exam">
     <div className="card-head"><div className="head-title"><HeadIcon icon={CalendarClock} tone="sky" /><h2>Lịch thi</h2></div></div>
     <div className={`sp-countdown ${left !== null && left >= 0 && left <= 30 ? "soon" : ""}`}>
@@ -168,7 +184,14 @@ function ExamCard({ examDate, today, onChange }: { examDate: string | null; toda
     </div>
     <label className="sp-date">
       <span>Ngày thi dự kiến</span>
-      <input type="date" value={examDate ?? ""} onChange={(event) => onChange(event.target.value || null)} />
+      <input type="date" value={examDate ?? ""} min={today} aria-label="Ngày thi dự kiến" aria-invalid={Boolean(invalid)}
+        onChange={(event) => {
+          const value = event.target.value || null;
+          if (value && value < today) { setInvalid("Chọn một ngày từ hôm nay trở đi."); return; }
+          setInvalid("");
+          onChange(value);
+        }} />
+      {invalid && <small className="sp-error" role="alert">{invalid}</small>}
     </label>
   </section>;
 }
@@ -197,12 +220,12 @@ function ActivityCalendar({ month, today, days, selection, loading, error, onMon
         return <div key={week[0]} className="sp-cal-row">
           <button type="button" className={`sp-cal-week ${weekSelected ? "selected" : ""}`} aria-pressed={weekSelected} onClick={() => onSelect({ kind: "week", days: week })} aria-label={`Xem tuần ${shortDate(week[0])} – ${shortDate(week[6])}`}>{index + 1}</button>
           {week.map((day) => {
-            const info = days.get(day), future = day > today, inMonth = day.startsWith(month);
+            const info = days.get(day), future = day > today, inMonth = day.startsWith(month), level = dayIntensity(info);
             const isSelected = selection.kind === "day" ? selection.day === day : selectedDays.has(day);
             return <button key={day} type="button" disabled={future}
-              className={`sp-cal-day ${info?.active ? "active" : ""} ${inMonth ? "" : "outside"} ${day === today ? "today" : ""} ${isSelected ? "selected" : ""}`}
+              className={`sp-cal-day ${info?.active ? `active level-${level}` : ""} ${inMonth ? "" : "outside"} ${day === today ? "today" : ""} ${isSelected ? "selected" : ""}`}
               aria-pressed={selection.kind === "day" && selection.day === day}
-              aria-label={`${shortDate(day)}${info?.active ? `, có học, ${dayTotal(info)} bài` : ""}`}
+              aria-label={`${shortDate(day)}${future ? "" : info?.active ? `, có học, ${dayTotal(info)} bài, ${info.minutes} phút` : ", chưa học"}`}
               onClick={() => onSelect(selection.kind === "day" && selection.day === day ? { kind: "week", days: week } : { kind: "day", day })}>
               {Number(day.slice(8, 10))}
             </button>;
@@ -210,11 +233,13 @@ function ActivityCalendar({ month, today, days, selection, loading, error, onMon
         </div>;
       })}
     </div>
-    <div className="sp-legend"><span><i className="active" /> Có học</span><span><i /> Chưa học</span><span><i className="today" /> Hôm nay</span></div>
+    <div className="sp-legend"><span><i /> Chưa học</span><span className="sp-legend-scale" aria-label="Ít đến nhiều">Ít {[1, 2, 3, 4].map((level) => <i key={level} className={`active level-${level}`} />)} Nhiều</span><span><i className="today" /> Hôm nay</span></div>
   </section>;
 }
 
-function WeekStats({ selection, days, today, loading }: { selection: Selection; days: Map<string, ProgressDay>; today: string; loading: boolean }) {
+const entryKind: Record<DayEntry["kind"], string> = { test: "Đề IELTS", lesson: "Bài học", practice: "Bài luyện", news: "Daily News", dictation: "Dictation" };
+
+function WeekStats({ selection, days, entries, today, loading }: { selection: Selection; days: Map<string, ProgressDay>; entries: Map<string, DayEntry[]>; today: string; loading: boolean }) {
   const list = selection.kind === "day" ? [selection.day] : selection.days;
   const rows = list.map((day) => days.get(day) ?? emptyDay(day));
   const total = rows.reduce((sum, row) => {
@@ -232,7 +257,7 @@ function WeekStats({ selection, days, today, loading }: { selection: Selection; 
           <th scope="col">Ngày</th>
           {progressSkills.map((skill) => <th key={skill} scope="col" className={`sp-tone-${skill.toLowerCase()}`} title={skill}><i aria-hidden="true">{skillMeta[skill].short}</i><span className="sp-th-label">{skill}</span></th>)}
           <th scope="col" title="Từ vựng, ngữ pháp và bài khác">Khác</th>
-          <th scope="col" title="Thời gian làm bài thi, tính từ lúc bắt đầu đến lúc nộp">Phút</th>
+          <th scope="col" title="Phút học: số lớn hơn giữa thời gian làm đề và thời gian học thật trên trang bài học">Phút</th>
         </tr></thead>
         <tbody>
           {rows.map((row) => {
@@ -253,5 +278,15 @@ function WeekStats({ selection, days, today, loading }: { selection: Selection; 
         </tr></tfoot>}
       </table>
     </div>
+    {selection.kind === "day" && !loading && <div className="sp-day-list">
+      <h3>Bài đã làm ngày {shortDate(selection.day)}</h3>
+      {(entries.get(selection.day) ?? []).length ? <ol>{(entries.get(selection.day) ?? []).map((item, index) => <li key={`${item.at}-${index}`}>
+        <span className={`sp-entry-kind sp-tone-${item.skill === "other" ? "other" : item.skill.toLowerCase()}`}>{entryKind[item.kind]}</span>
+        {item.link ? <Link href={item.link}>{item.title}</Link> : <strong>{item.title}</strong>}
+        {item.total ? <b>{item.score}/{item.total}</b> : <i />}
+        <time dateTime={item.at}>{new Date(item.at).toLocaleTimeString("vi-VN", { hour: "2-digit", minute: "2-digit" })}</time>
+      </li>)}</ol> : <p>{days.get(selection.day)?.active ? "Ngày này bạn có học (lưu từ, đọc báo hoặc học trên trang bài học) nhưng không nộp bài nào." : "Không có bài nào trong ngày này."}</p>}
+      {(entries.get(selection.day) ?? []).some((item) => item.link) && <small>Bấm tên bài để xem lại <ArrowRight size={12} /></small>}
+    </div>}
   </section>;
 }

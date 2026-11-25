@@ -40,6 +40,7 @@ import { useDemo } from "@/features/demo/demo-store";
 import { communityEnabled, demoMode, liveMode, lockedLearnerPath } from "@/lib/runtime";
 import { useLearnerStreak } from "@/features/account/use-learner-streak";
 import { StreakCelebration } from "@/features/account/streak-celebration";
+import { ActiveTimeTracker } from "@/features/progress/active-time-tracker";
 import { StudyCompanion } from "@/features/companion/study-companion";
 import { todayISO } from "@/lib/demo-data";
 import { tierFor } from "@/lib/streak-milestones";
@@ -583,6 +584,7 @@ function AppShellContent({ children, canManage }: { children: React.ReactNode; c
       </nav>
       {!focusRoute && <NotebookWidget />}
       <StreakCelebration streak={learnerStreak} />
+      {!demoMode && learnerStreak && <ActiveTimeTracker />}
       <StudyCompanion streak={learnerStreak} newsUnread={newsUnread} name={learnerName} hidden={focusRoute || plannerRoute} />
     </div>
   );

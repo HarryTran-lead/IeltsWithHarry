@@ -119,3 +119,28 @@
 .sp-recent li span, .sp-recent time { color: var(--muted); }
 .sp-recent li a { color: var(--teal-strong); font-weight: 700; }
 @media (max-width: 700px) { .sp-overview { grid-template-columns: repeat(2, minmax(0, 1fr)); } .sp-recent li { grid-template-columns: 1fr auto; } .sp-recent li span { grid-column: 1 / -1; } }
+
+/* Study intensity: lighter green for a short day, deeper for a long one. */
+.sp-cal-day.active.level-1 { background: #b7e8c9; color: #0f5132; }
+.sp-cal-day.active.level-2 { background: #6fcf97; color: #0b3d25; }
+.sp-cal-day.active.level-3 { background: #2fa866; color: #fff; }
+.sp-cal-day.active.level-4 { background: #157a45; color: #fff; }
+.sp-legend-scale { display: inline-flex; align-items: center; gap: 3px; }
+.sp-legend-scale i { width: 11px; height: 11px; border-radius: 3px; display: inline-block; }
+.sp-legend-scale i.level-1 { background: #b7e8c9; }
+.sp-legend-scale i.level-2 { background: #6fcf97; }
+.sp-legend-scale i.level-3 { background: #2fa866; }
+.sp-legend-scale i.level-4 { background: #157a45; }
+.sp-date .sp-error { display: block; margin: 6px 0 0; }
+
+.sp-day-list { margin-top: 14px; padding-top: 12px; border-top: 1px solid var(--line); }
+.sp-day-list h3 { margin: 0 0 8px; color: var(--navy); font-size: var(--fs-sm); }
+.sp-day-list ol { display: grid; margin: 0; padding: 0; list-style: none; }
+.sp-day-list li { display: grid; grid-template-columns: auto minmax(0, 1fr) auto auto; align-items: center; gap: 8px; padding: 7px 0; border-top: 1px solid var(--line); font-size: var(--fs-xs); }
+.sp-day-list li:first-child { border-top: 0; }
+.sp-day-list li > a, .sp-day-list li > strong { overflow: hidden; color: var(--navy); font-weight: 700; text-overflow: ellipsis; white-space: nowrap; }
+.sp-day-list li > b { padding: 1px 7px; border-radius: 99px; background: var(--teal-soft); color: var(--teal-strong); }
+.sp-day-list time { color: var(--muted); }
+.sp-day-list p { margin: 0; color: var(--muted); font-size: var(--fs-xs); line-height: 1.5; }
+.sp-day-list > small { display: inline-flex; align-items: center; gap: 3px; margin-top: 6px; color: var(--muted); font-size: var(--fs-2xs); }
+.sp-entry-kind { padding: 1px 7px; border-radius: 99px; background: var(--surface-2); color: var(--muted); font-size: var(--fs-2xs); font-weight: 800; white-space: nowrap; }

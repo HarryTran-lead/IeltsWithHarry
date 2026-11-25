@@ -349,10 +349,14 @@ export function ExamResult({ title, skill, format = "Academic", score, total, re
         <p className="bx-verdict">{verdict}</p>
         {total > 0 && <div className="bx-tally"><span className="is-right">Đúng <b>{score}</b></span><span className="is-wrong">Sai <b>{wrong}</b></span><span>Bỏ qua <b>{skipped}</b></span></div>}
         <p className="bx-muted">{total ? `Band quy đổi theo bảng điểm IELTS${total !== 40 ? ", ước tính từ số câu bạn đã làm" : ""}; đây là bài luyện tập, không phải điểm chính thức.` : "Bài của bạn đã được lưu để xem lại."}</p>
-        <div className="bx-hero-actions">{skill === "Writing" && <a className="bx-ghost" href="#writing-review">Xem đánh giá ↓</a>}{onRetry ? <button type="button" className="bx-start" onClick={onRetry}><RotateCcw size={17} /> Làm lại</button> : retryHref && <Link className="bx-start" href={retryHref}><RotateCcw size={17} /> Làm lại</Link>}<Link className="bx-ghost" href={backHref}>Về ngân hàng đề <ArrowRight size={16} /></Link></div>
+        <div className="bx-hero-actions">{skill === "Writing" && extra && <a className="bx-ghost" href="#writing-review">Xem đánh giá ↓</a>}{onRetry ? <button type="button" className="bx-start" onClick={onRetry}><RotateCcw size={17} /> Làm lại</button> : retryHref && <Link className="bx-start" href={retryHref}><RotateCcw size={17} /> Làm lại</Link>}<Link className="bx-ghost" href={backHref}>Về ngân hàng đề <ArrowRight size={16} /></Link></div>
       </div>
     </section>
     {extra}
+    {(skill === "Writing" || skill === "Speaking") && !response && !extra && <section className="bx-card bx-response bx-empty-response">
+      <h2><NotebookPen size={17} /> Chưa có bài làm</h2>
+      <p>Bài này không có nội dung được lưu, thường do hết giờ trước khi bạn kịp viết hoặc bài được nộp trống. Bài trống không được tính vào tiến độ và không thể chấm điểm.</p>
+    </section>}
     {response && !extra && <section className="bx-card bx-response"><h2><NotebookPen size={17} /> Bài làm của bạn</h2><p>{response}</p></section>}
     {byType.length > 0 && <section className="bx-card bx-types-table"><h2><ListChecks size={17} /> Bảng dữ liệu chi tiết</h2><div className="bq-table-wrap"><table>
       <thead><tr><th>Loại câu hỏi</th><th>Số câu</th><th className="is-right">Đúng</th><th className="is-wrong">Sai</th><th>Bỏ qua</th></tr></thead>
