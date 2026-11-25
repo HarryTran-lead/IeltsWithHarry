@@ -68,7 +68,7 @@ function MockList() {
               <span className="lm-card-body">
                 <strong>{test.title}</strong>
                 <span>{test.part_titles.map((title, index) => `Part ${index + 1}: ${title}`).join(" · ")}</span>
-                <span className="lm-card-foot"><span><Clock3 size={14} /> {clock(test.duration_ms)} audio · 40 câu</span><span>{done[test.test_id] !== undefined ? `Đã làm: ${done[test.test_id]}/40` : "Chưa làm"} <ArrowRight size={15} /></span></span>
+                <span className="lm-card-foot"><span><Clock3 size={14} /> {clock(test.duration_ms)} audio · 40 câu</span><span className={done[test.test_id] !== undefined ? "lm-status is-done" : "lm-status"}>{done[test.test_id] !== undefined ? `✓ Đã làm: ${done[test.test_id]}/40` : "Chưa làm"} <ArrowRight size={15} /></span></span>
               </span>
             </button>
           ))}

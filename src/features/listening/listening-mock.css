@@ -11,6 +11,7 @@
 .lm-card-body>span:nth-child(2){color:var(--voa-muted);font-size:var(--fs-xs);line-height:1.45}
 .lm-card-foot{display:flex;justify-content:space-between;align-items:center;gap:8px;margin-top:4px;color:var(--teal-strong);font-size:var(--fs-xs);font-weight:750}
 .lm-card-foot span{display:inline-flex;align-items:center;gap:5px}
+.lm-card-foot .lm-status.is-done{padding:2px 8px;border-radius:999px;background:#e6f7f1;color:#14765f}
 .lm-empty{padding:20px}
 .lm-head{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:12px;margin-bottom:12px}
 .lm-head h1{margin:3px 0 0;font-size:clamp(26px,3vw,34px)}

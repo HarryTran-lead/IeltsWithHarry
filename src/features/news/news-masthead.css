@@ -1210,6 +1210,10 @@
 .news-card-progress { display: flex; flex-wrap: wrap; gap: 5px; margin: -2px 0 11px; }
 .news-card-progress span { padding: 3px 7px; border-radius: 7px; background: #f1f5f7; color: #687d8c; font-size: 11px; font-weight: 750; }
 .news-card-progress span.is-done { background: #e6f7f1; color: #14765f; }
+/* Quiz ready to practise (purple, as the former "Đọc & luyện ngay" badge); still being prepared (dashed, muted). */
+.news-card-progress span { display: inline-flex; align-items: center; gap: 4px; }
+.news-card-progress span.is-quiz { background: #eee9ff; color: #5b3d96; }
+.news-card-progress span.is-pending { background: transparent; box-shadow: inset 0 0 0 1px #d3dde3; color: #8a9aa6; font-weight: 650; }
 
 @container news (max-width: 640px) {
   .news-tabs-list {
