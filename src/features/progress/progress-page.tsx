@@ -1,15 +1,15 @@
 "use client";
 
 import Link from "next/link";
-import { useEffect, useMemo, useState, type ReactNode } from "react";
+import { useEffect, useMemo, useRef, useState, useSyncExternalStore, type KeyboardEvent, type ReactNode } from "react";
 import {
   ArrowDownRight, ArrowRight, ArrowUpRight, BookOpenText, CalendarCheck, CalendarClock, ChartColumn, CircleCheck, Clock3, Compass, Flame,
-  Headphones, History, Layers, Lightbulb, ListChecks, Mic, Newspaper, PenLine, Target, Trophy, Type,
+  Headphones, History, LayoutDashboard, Layers, Lightbulb, ListChecks, Mic, Newspaper, PenLine, Target, Trophy, Type,
 } from "lucide-react";
 import { HeadIcon } from "@/components/ui/head-icon";
 import { InfoTip } from "@/components/ui/info-tip";
 import { PageHeader } from "@/components/ui/page-header";
-import { StudyProgress } from "@/features/dashboard/study-progress";
+import { StudyProgress, type StudyProgressPart } from "@/features/dashboard/study-progress";
 import { useDemo } from "@/features/demo/demo-store";
 import { activityLabels, type LearnerOverview } from "@/lib/account";
 import { todayISO } from "@/lib/demo-data";
@@ -41,7 +41,9 @@ const bandText = (band: number | null) => (band === null ? "—" : band.toFixed(
 
 export type ProgressViewProps = {
   today: string; days: ProgressDay[]; goals: ProgressGoals; overview: LearnerOverview | null; insights: ProgressInsights | null;
-  loading: boolean; error?: string; footer?: ReactNode;
+  loading: boolean; error?: string;
+  /** Goals, exam date and the study calendar; rendered in one place so it stays mounted while tabs change. */
+  footer?: (part: StudyProgressPart) => ReactNode;
 };
 
 /** Live account data: 12 weeks of daily activity, scored tests and the account overview. */
@@ -96,8 +98,27 @@ export function ProgressPage() {
     insights={demoMode ? { attempts: [], questionTypes: [] } : live.insights}
     loading={!demoMode && !live.report && !live.error}
     error={live.error}
-    footer={<StudyProgress variant="page" onGoalsChange={setGoals} />}
+    footer={(part) => <StudyProgress variant="page" onGoalsChange={setGoals} show={part} />}
   />;
+}
+
+const tabs = [
+  { id: "tong-quan", label: "Tổng quan", icon: LayoutDashboard },
+  { id: "ky-nang", label: "Kỹ năng", icon: Layers },
+  { id: "thoi-quen", label: "Thói quen học", icon: CalendarCheck },
+  { id: "lich-su", label: "Lịch sử đề", icon: History },
+  { id: "muc-tieu", label: "Mục tiêu", icon: Target },
+] as const;
+type TabId = (typeof tabs)[number]["id"];
+const isTab = (value: string): value is TabId => tabs.some((tab) => tab.id === value);
+
+/** The open tab lives in the URL hash, so links like #muc-tieu and the back button switch tabs. */
+function useHashTab(): [TabId, (tab: TabId) => void] {
+  const hash = useSyncExternalStore(
+    (notify) => { window.addEventListener("hashchange", notify); return () => window.removeEventListener("hashchange", notify); },
+    () => window.location.hash.slice(1), () => "",
+  );
+  return [isTab(hash) ? hash : "tong-quan", (tab) => { window.location.hash = tab; }];
 }
 
 export function ProgressView({ today, days, goals, overview, insights, loading, error, footer }: ProgressViewProps) {
@@ -107,7 +128,28 @@ export function ProgressView({ today, days, goals, overview, insights, loading, 
   const period = useMemo(() => periodTotals(days, today), [days, today]);
   const plan = useMemo(() => examPlan(goals, summaries, attempts, today), [goals, summaries, attempts, today]);
   const notes = useMemo(() => insights ? behaviorInsights({ attempts, days, today, speaking: insights.speaking }) : [], [insights, attempts, days, today]);
+  const weakCount = useMemo(() => (["Reading", "Listening"] as const).reduce((sum, skill) => {
+    const rows = (insights?.questionTypes ?? []).filter((row) => row.skill === skill);
+    return sum + Math.min(3, weakTypes(rows, skill, goals[skill] ?? goals.overall).weak.length);
+  }, 0), [insights, goals]);
+  const [tab, setTab] = useHashTab();
+  const bar = useRef<HTMLDivElement>(null);
+  // A tab opened from a link further down the page starts at the top of its content.
+  useEffect(() => {
+    const top = bar.current?.getBoundingClientRect().top ?? 0;
+    if (top < 0) bar.current?.scrollIntoView({ block: "start" });
+  }, [tab]);
   const left = plan.status === "no-exam" || plan.status === "past" ? null : plan.daysLeft;
+  const badge: Partial<Record<TabId, number>> = { "ky-nang": weakCount, "lich-su": attempts.length };
+  const onKey = (event: KeyboardEvent<HTMLDivElement>) => {
+    if (event.key !== "ArrowRight" && event.key !== "ArrowLeft" && event.key !== "Home" && event.key !== "End") return;
+    event.preventDefault();
+    const index = tabs.findIndex((item) => item.id === tab);
+    const next = event.key === "Home" ? 0 : event.key === "End" ? tabs.length - 1 : (index + (event.key === "ArrowRight" ? 1 : -1) + tabs.length) % tabs.length;
+    setTab(tabs[next].id);
+    bar.current?.querySelectorAll<HTMLButtonElement>("[role=tab]")[next]?.focus();
+  };
+  const footerPart: StudyProgressPart = tab === "thoi-quen" ? "calendar" : tab === "muc-tieu" ? "goals" : "none";
   return <div className="content-page progress-page">
     <PageHeader
       eyebrow="HÀNH TRÌNH CỦA BẠN"
@@ -120,26 +162,60 @@ export function ProgressView({ today, days, goals, overview, insights, loading, 
       </>}
     />
     {error && <p className="pg-error" role="alert">{error}</p>}
-    <KpiRow overview={overview} period={period} attempts={attempts} insightsLoaded={Boolean(insights)} loading={loading} today={today} />
-    <div className="pg-split pg-split-even">
-      <PlanCard plan={plan} loading={!insights} />
-      <BehaviorCard notes={notes} loading={!insights} />
+    <div ref={bar} className="pg-tabs" role="tablist" aria-label="Các phần của trang tiến độ" onKeyDown={onKey}>
+      {tabs.map((item) => {
+        const Icon = item.icon, selected = item.id === tab, count = badge[item.id];
+        return <button key={item.id} type="button" role="tab" id={`pg-tab-${item.id}`} aria-selected={selected} aria-controls="pg-panel" tabIndex={selected ? 0 : -1}
+          className={selected ? "active" : ""} onClick={() => setTab(item.id)}>
+          <Icon size={16} aria-hidden="true" /> {item.label}{count ? <small className={item.id === "ky-nang" ? "warn" : ""}>{count}</small> : null}
+        </button>;
+      })}
     </div>
-    <BandSection summaries={summaries} goals={goals} speaking={insights?.speaking ?? null} loading={!insights} />
-    <div className="pg-split">
-      <WeeklyChart weeks={weeks} loading={loading} />
-      <TypeAccuracy stats={insights?.questionTypes ?? []} goals={goals} validTests={attempts.filter((item) => isCounted(item) && (item.skill === "Reading" || item.skill === "Listening")).length} loading={!insights} />
+    <div id="pg-panel" role="tabpanel" aria-labelledby={`pg-tab-${tab}`} className="pg-panel">
+      {tab === "tong-quan" && <>
+        <KpiRow overview={overview} period={period} attempts={attempts} insightsLoaded={Boolean(insights)} loading={loading} today={today} />
+        <BandStrip summaries={summaries} goals={goals} loading={!insights} onOpen={() => setTab("ky-nang")} />
+        <div className="pg-split pg-split-even">
+          <PlanCard plan={plan} loading={!insights} />
+          <BehaviorCard notes={notes} loading={!insights} />
+        </div>
+      </>}
+      {tab === "ky-nang" && <>
+        <BandSection summaries={summaries} goals={goals} speaking={insights?.speaking ?? null} loading={!insights} />
+        <TypeAccuracy stats={insights?.questionTypes ?? []} goals={goals} validTests={attempts.filter((item) => isCounted(item) && (item.skill === "Reading" || item.skill === "Listening")).length} loading={!insights} />
+      </>}
+      {tab === "thoi-quen" && <>
+        <WeeklyChart weeks={weeks} loading={loading} />
+      </>}
+      {tab === "lich-su" && <AttemptHistory attempts={attempts} loading={!insights} />}
+      {footer && <div className="pg-footer" hidden={footerPart === "none"}>{footer(footerPart)}</div>}
+      {tab === "thoi-quen" && <div className="pg-split pg-split-even">
+        <OtherStats overview={overview} />
+        <RecentActivity overview={overview} />
+      </div>}
+      {tab === "muc-tieu" && !footer && <p className="pg-muted">Đăng nhập để đặt mục tiêu và ngày thi.</p>}
     </div>
-    <AttemptHistory attempts={attempts} loading={!insights} />
-    <div className="pg-split pg-split-even">
-      <OtherStats overview={overview} />
-      <RecentActivity overview={overview} />
-    </div>
-    {footer && <section id="muc-tieu" className="pg-footer" aria-label="Mục tiêu và lịch học">
-      <h2 className="pg-section-title"><CalendarCheck size={18} /> Mục tiêu &amp; lịch học</h2>
-      {footer}
-    </section>}
   </div>;
+}
+
+/** One line per skill for the overview tab: band, margin and target, linking to the full skill cards. */
+function BandStrip({ summaries, goals, loading, onOpen }: { summaries: SkillSummary[]; goals: ProgressGoals; loading: boolean; onOpen: () => void }) {
+  const overall = overallBand(summaries);
+  return <section className="card pg-card pg-strip" aria-label="Band ước tính">
+    <div className="pg-strip-overall">
+      <span>Overall<InfoTip>Cần band Reading, Listening và Writing. Speaking chưa có band tự động nên Overall ghi rõ “chưa gồm Speaking”.</InfoTip></span>
+      <strong>{loading ? "…" : bandText(overall.band)}</strong>
+      <small>{overall.band !== null ? `± ${overall.margin?.toFixed(1)} · mục tiêu ${bandText(goals.overall)}` : loading ? "" : `Thiếu ${overall.missing.join(", ")}`}</small>
+    </div>
+    {summaries.map((item) => {
+      const Icon = skillMeta[item.skill].icon, target = goals[item.skill];
+      return <button key={item.skill} type="button" className={`pg-strip-skill pg-tone-${item.skill.toLowerCase()}`} onClick={onOpen}>
+        <span><Icon size={14} aria-hidden="true" /> {item.skill}</span>
+        <strong>{loading ? "…" : bandText(item.current)}{item.margin !== null && <em>±{item.margin.toFixed(1)}</em>}</strong>
+        <small>{item.current === null ? (item.skill === "Speaking" ? "Theo dõi bằng phút nói" : "Chưa có band") : target !== null ? (target - item.current <= 0 ? "Đạt mục tiêu" : `Còn ${(target - item.current).toFixed(1)} tới ${target.toFixed(1)}`) : `${item.valid} bài được tính`}</small>
+      </button>;
+    })}
+  </section>;
 }
 
 function Delta({ now, before, unit = "" }: { now: number; before: number; unit?: string }) {
@@ -415,7 +491,7 @@ function AttemptHistory({ attempts, loading }: { attempts: InsightAttempt[]; loa
   const shown = attempts.filter((item) => (filter === "all" || item.skill === filter) && (!hideSkipped || isCounted(item)));
   const counts = Object.fromEntries(progressSkills.map((skill) => [skill, attempts.filter((item) => item.skill === skill).length]));
   const notCounted = attempts.filter((item) => !isCounted(item)).length;
-  return <section id="lich-su" className="card pg-card pg-history">
+  return <section className="card pg-card pg-history">
     <div className="card-head">
       <div className="head-title"><HeadIcon icon={History} tone="teal" /><div><h2>Lịch sử làm đề</h2><p>{loading ? "Đang tải…" : `${attempts.length} đề gần nhất${notCounted ? ` · ${notCounted} đề không tính vào band` : ""} · bấm “Xem lại” để xem đáp án và giải thích`}</p></div></div>
       <div className="pg-filters" role="group" aria-label="Lọc theo kỹ năng">

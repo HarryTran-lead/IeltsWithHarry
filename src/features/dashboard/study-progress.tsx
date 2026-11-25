@@ -68,7 +68,10 @@ function useLiveReport(month: string, enabled: boolean) {
 }
 
 /** `page` drops the summary row (the Progress page has its own) and reports saved goals to the parent. */
-export function StudyProgress({ variant = "dashboard", onGoalsChange }: { variant?: "dashboard" | "page"; onGoalsChange?: (goals: ProgressGoals) => void } = {}) {
+/** Which cards a host page shows; the component stays mounted so month, selection and saved goals persist across tabs. */
+export type StudyProgressPart = "all" | "goals" | "calendar" | "none";
+
+export function StudyProgress({ variant = "dashboard", onGoalsChange, show = "all" }: { variant?: "dashboard" | "page"; onGoalsChange?: (goals: ProgressGoals) => void; show?: StudyProgressPart } = {}) {
   const [month, setMonth] = useState(() => todayISO().slice(0, 7));
   const demo = useDemoReport(month);
   const live = useLiveReport(month, !demoMode);
@@ -121,17 +124,21 @@ export function StudyProgress({ variant = "dashboard", onGoalsChange }: { varian
       <div><span>Bài đã làm trong tháng</span><strong>{report ? monthExercises : "…"}</strong><small>theo hoạt động đã lưu</small></div>
       <div><span>Tổng ngày học</span><strong>{demoMode ? "—" : overview?.streak.totalDays ?? "…"}</strong><small>từ lúc tạo tài khoản</small></div>
     </div>}
-    <div className="sp-grid">
+    {show !== "none" && <div className="sp-grid">
+    {(show === "all" || show === "goals") && <>
     <GoalsCard goals={goals} onChange={(next) => void saveGoals(next)} status={status} />
     <ExamCard examDate={goals.examDate} today={today} onChange={(examDate) => void saveGoals({ ...goals, examDate })} />
+    </>}
+    {(show === "all" || show === "calendar") && <>
     <ActivityCalendar month={month} today={today} days={days} selection={selected} loading={!report} error={demoMode ? "" : live.error}
       onMonth={(offset) => { setMonth((current) => addMonths(current, offset)); setSelection(null); }}
       onSelect={setSelection} />
     <WeekStats selection={selected} days={days} entries={entries} today={today} loading={!report} />
+    </>}
     {overview && variant === "dashboard" && <section className="card sp-card sp-recent"><div className="card-head"><div className="head-title"><HeadIcon icon={ListChecks} tone="teal" /><div><h2>Hoạt động gần đây</h2><p>{overview.stats.lessons} bài học · {overview.stats.newsQuizzes} quiz tin tức · {overview.stats.words} từ đã lưu</p></div></div><Link href="/app/profile">Xem hồ sơ</Link></div>
       {overview.timeline.length ? <ol>{overview.timeline.slice(0, 6).map((item, index) => <li key={`${item.at}-${index}`}><span>{activityLabels[item.kind] ?? item.kind}</span>{item.link ? <Link href={item.link}>{item.title}</Link> : <strong>{item.title}</strong>}<time dateTime={item.at}>{new Date(item.at).toLocaleDateString("vi-VN")}</time></li>)}</ol> : <p>Chưa có hoạt động. Hoàn thành một bài luyện để bắt đầu theo dõi.</p>}
     </section>}
-  </div></section>;
+  </div>}</section>;
 }
 
 function GoalsCard({ goals, onChange, status }: { goals: ProgressGoals; onChange: (goals: ProgressGoals) => void; status: string }) {
