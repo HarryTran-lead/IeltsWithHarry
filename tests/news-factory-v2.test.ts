@@ -47,22 +47,37 @@ describe("Question Factory V2 editorial corpus", () => {
     const alteredMap = type === "ynng" ? { ...map, writer_view: "" } : map;
     expect(validateCandidate(change(item), article, alteredMap)).toContain(code);
   });
-  it("lets a matching item leave out per-option notes but not give a partial set", () => {
+  it("lets a choice item leave out per-option notes but not give a partial set", () => {
     const item = positiveFixtures.find((candidate) => candidate.type === "matching_features")!;
     expect(validateCandidate({ ...item, option_notes: [] }, article, map)).not.toContain("OPTION_NOTES");
     const mcq = positiveFixtures.find((candidate) => candidate.type === "mcq")!;
-    expect(validateCandidate({ ...mcq, option_notes: [] }, article, map)).toContain("OPTION_NOTES");
+    expect(validateCandidate({ ...mcq, option_notes: [] }, article, map)).not.toContain("OPTION_NOTES");
+    expect(validateCandidate({ ...mcq, option_notes: mcq.option_notes.slice(1) }, article, map)).toContain("OPTION_NOTES");
   });
   it("keeps every choice pool within the four options the database stores", () => {
     const item = positiveFixtures.find((candidate) => candidate.type === "matching_features")!;
     const pool = [...item.options, "Extra pool option one", "Extra pool option two"].slice(0, 5);
     expect(validateCandidate({ ...item, options: pool, option_notes: [] }, article, map)).toContain("CHOICE_POOL");
   });
-  it("drops English per-option notes on matching items only", async () => {
+  it("drops English or partial per-option notes and keeps the item", async () => {
     const { normalizeCandidate } = await import("../src/lib/news/question-factory-v2");
     const english = ["Correct: matches", "Incorrect: not stated", "Incorrect: wrong one"];
     expect(normalizeCandidate({ type: "matching_sentence_endings", answer: "", options: ["a", "b", "c"], option_notes: english, correct_index: 0, prompt: "x" } as never).option_notes).toEqual([]);
-    expect(normalizeCandidate({ type: "tfng", answer: "", options: ["True", "False", "Not Given"], option_notes: english, correct_index: 0, prompt: "x" } as never).option_notes).toEqual(english);
+    expect(normalizeCandidate({ type: "tfng", answer: "", options: ["True", "False", "Not Given"], option_notes: english, correct_index: 0, prompt: "x" } as never).option_notes).toEqual([]);
+    const vietnamese = ["Đúng vì bài nói rõ", "Sai vì bài nói ngược lại", "Bài không hề nhắc tới"];
+    expect(normalizeCandidate({ type: "tfng", answer: "", options: ["True", "False", "Not Given"], option_notes: vietnamese, correct_index: 0, prompt: "x" } as never).option_notes).toEqual(vietnamese);
+  });
+  it("publishes harder items first and keeps direct-lookup items within a quarter of the set", async () => {
+    const { selectPublished } = await import("../src/lib/news/question-factory-v2");
+    const item = (id: string, difficulty: "P1" | "P2") => ({ id, group_id: id, type: "tfng", difficulty, options: ["True", "False", "Not Given"], prompt: id }) as never;
+    // Reading order: four direct items first, then five harder ones.
+    const pool = [item("d1", "P1"), item("d2", "P1"), item("d3", "P1"), item("d4", "P1"),
+      item("h1", "P2"), item("h2", "P2"), item("h3", "P2"), item("h4", "P2"), item("h5", "P2")];
+    const chosen = selectPublished(pool, 6) as { id: string; difficulty: string }[];
+    expect(chosen).toHaveLength(6);
+    expect(chosen.filter((entry) => entry.difficulty === "P1")).toHaveLength(1);
+    // Published in the article's reading order.
+    expect(chosen.map((entry) => entry.id)).toEqual(["d1", "h1", "h2", "h3", "h4", "h5"]);
   });
   it("asks for spare candidates beyond the published target", async () => {
     const { spareItems } = await import("../src/lib/news/question-factory-v2");
@@ -546,7 +561,7 @@ describe("candidate normalization", () => {
     const pool = normalizeCandidate({ type: "matching_sentence_endings", answer: "", options: ["a end", "b end", "c end"], option_notes: ["Ghi chú đúng ở đây"], correct_index: 0, prompt: "Engineers chose nuclear power to" } as never);
     expect(pool.option_notes).toEqual([]);
     const mcq = normalizeCandidate({ type: "mcq", answer: "", options: ["a", "b", "c", "d"], option_notes: ["Chỉ một ghi chú"], correct_index: 0, prompt: "Which is true?" } as never);
-    expect(mcq.option_notes).toEqual(["Chỉ một ghi chú"]);
+    expect(mcq.option_notes).toEqual([]);
     const tag = normalizeCandidate({ type: "sentence_completion", prompt: "NASA expects the system to be ready by [W1].", answer: "2030", options: [], option_notes: [], correct_index: -1 } as never);
     expect(tag.prompt).toBe("NASA expects the system to be ready by ______.");
     const note = normalizeCandidate({ type: "note_completion", prompt: "Launch year: ______ [W1]", answer: "2030", options: [], option_notes: [], correct_index: -1 } as never);

@@ -83,8 +83,8 @@ export function validateCandidate(item: Candidate, article: string, map: Passage
       : item.options.length < 3 || item.options.length > 4 || new Set(item.options.map(normalize)).size !== item.options.length) errors.push("CHOICE_POOL");
     if (!Number.isInteger(item.correct_index) || item.correct_index < 0 || item.correct_index >= item.options.length) errors.push("KEY");
     if (item.answer !== "") errors.push("CHOICE_ANSWER");
-    // Matching forms may leave per-option notes out (a shared pool); when present they must all be valid.
-    if (!(type.startsWith("matching_") && item.option_notes.length === 0) && (item.option_notes.length !== item.options.length
+    // Per-option notes are optional; when present they must cover every option in Vietnamese.
+    if (item.option_notes.length !== 0 && (item.option_notes.length !== item.options.length
       || item.option_notes.some((note) => typeof note !== "string" || note.length < 8 || !vi.test(note)))) errors.push("OPTION_NOTES");
     if (type === "mcq" && item.options.length !== 4) errors.push("MCQ_FOUR");
     if (type === "ynng" && !map.writer_view.trim()) errors.push("NO_WRITER_VIEW");
