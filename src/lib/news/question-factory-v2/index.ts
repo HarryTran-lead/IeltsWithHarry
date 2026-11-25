@@ -99,6 +99,10 @@ export function normalizeCandidate(item: Candidate): Candidate {
   }
   let prompt = typeof item.prompt === "string" ? item.prompt.replace(GAP_VARIANTS, GAP) : item.prompt;
   if (gapTypes.has(item.type) && typeof prompt === "string" && item.type !== "diagram_label_completion") {
+    // Outside note completion, "[W1]" is the word-limit tag misused as the gap itself.
+    if (item.type !== "note_completion" && !UNDERSCORE_GAP.test(prompt) && /\[W[123]\]/.test(prompt))
+      prompt = prompt.replace(/\[W[123]\]/, GAP).replace(/\s*\[W[123]\]/g, "");
+    UNDERSCORE_GAP.lastIndex = 0;
     const gaps = prompt.match(UNDERSCORE_GAP)?.length ?? 0;
     // A sentence-ending ellipsis next to a real gap is punctuation, not a second gap.
     if (gaps === 1) prompt = prompt.replace(/\s*(?:…|\.{3,})/g, "");
