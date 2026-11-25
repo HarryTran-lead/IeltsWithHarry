@@ -471,3 +471,22 @@ describe("two request free-tier budget", () => {
     expect(output.audit.deterministic_pass).toBe(6);
   });
 });
+
+describe("candidate normalization", () => {
+  it("fixes presentation slips without touching what an item tests", async () => {
+    const { normalizeCandidate } = await import("../src/lib/news/question-factory-v2");
+    const choice = normalizeCandidate({ type: "mcq", answer: "B", options: ["a", "b", "c", "d"], correct_index: 1, prompt: "Which is true?" } as never);
+    expect(choice.answer).toBe("");
+    expect(choice.correct_index).toBe(1);
+    const bracket = normalizeCandidate({ type: "sentence_completion", prompt: "The probe was cooled to [gap] before launch.", answer: "minus 200", options: ["x"], option_notes: [], correct_index: 0 } as never);
+    expect(bracket.prompt).toBe("The probe was cooled to ______ before launch.");
+    expect(bracket.options).toEqual([]);
+    expect(bracket.correct_index).toBe(-1);
+    const ellipsis = normalizeCandidate({ type: "summary_completion", prompt: "Engineers fitted ______ to the rotor…", answer: "cameras", options: [], option_notes: [], correct_index: -1 } as never);
+    expect(ellipsis.prompt).toBe("Engineers fitted ______ to the rotor");
+    const spelled = normalizeCandidate({ type: "note_completion", prompt: "Cameras built by Malin Space Science Systems [W3]", answer: "Malin Space Science", options: [], option_notes: [], correct_index: -1 } as never);
+    expect(spelled.prompt).toBe("Cameras built by ______ Systems [W3]");
+    const two = normalizeCandidate({ type: "sentence_completion", prompt: "A ______ and a ______.", answer: "x", options: [], option_notes: [], correct_index: -1 } as never);
+    expect(two.prompt).toBe("A ______ and a ______.");
+  });
+});

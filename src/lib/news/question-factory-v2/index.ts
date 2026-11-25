@@ -3,6 +3,7 @@ import { quizExcerpt } from "../enrichment";
 import { selectQuestionTypes, targetQuestionCount, type AdaptiveQuestion } from "../adaptive-quiz";
 import type { BlindVerdict, Candidate, FactoryResult, Generation, BlindReview, PassageMap, QuizFailureReason, TokenUsage } from "./types";
 import { FACTORY_VERSION } from "./types";
+import { choiceTypes, gapTypes } from "../ielts-passage";
 import { ArticleRequestBudget, FactoryProviderError, alternateV2Model, strictGeminiJson, v2Model, type FactoryProviderKind } from "./provider";
 import { MAP_SYSTEM, batchSchema, batchSystem, blindQaPayload, blindQaSystem, mapSchema, planBatches, qaSchema, repairPayload, repairSchema, repairSystem, typeCounts } from "./prompts";
 import { BLOCKING_QA_ISSUES, PARAGRAPH_MAP_ISSUES, validateBlindReview, validateGeneration, validatePassageMap } from "./validate";
@@ -74,6 +75,40 @@ export function withEvidenceSpans(item: Candidate, article: string): Candidate {
   const quote = typeof item?.supporting_sentence === "string" ? item.supporting_sentence : "";
   const start = quote ? article.indexOf(quote) : -1;
   return { ...item, evidence_spans: start >= 0 ? [{ start, end: start + quote.length, quote }] : [] };
+}
+const GAP = "______";
+const GAP_VARIANTS = /\[\s*(?:gap|blank)\s*\]|\(\s*(?:gap|blank)?\s*\)|\[\s*\]|\{\s*gap\s*\}|(?:_\s){2,}_|—{2,}|–{2,}/gi;
+const UNDERSCORE_GAP = /_{3,}/g;
+/**
+ * Fixes presentation slips that do not change what an item tests, so a correct question is not thrown away:
+ * a choice item's redundant text answer, stray shape fields on written items, and non-standard gap markers.
+ * Anything about content (evidence, key, wording) is still left to validation and blind QA.
+ */
+export function normalizeCandidate(item: Candidate): Candidate {
+  if (!item || typeof item !== "object") return item;
+  if (choiceTypes.has(item.type)) return { ...item, answer: "" };
+  let prompt = typeof item.prompt === "string" ? item.prompt.replace(GAP_VARIANTS, GAP) : item.prompt;
+  if (gapTypes.has(item.type) && typeof prompt === "string" && item.type !== "diagram_label_completion") {
+    const gaps = prompt.match(UNDERSCORE_GAP)?.length ?? 0;
+    // A sentence-ending ellipsis next to a real gap is punctuation, not a second gap.
+    if (gaps === 1) prompt = prompt.replace(/\s*(?:…|\.{3,})/g, "");
+    // A prompt that spells out its own answer becomes a gap at that place.
+    else if (gaps === 0 && typeof item.answer === "string" && item.answer.trim()) {
+      const at = prompt.toLowerCase().indexOf(item.answer.trim().toLowerCase());
+      if (at >= 0 && prompt.toLowerCase().indexOf(item.answer.trim().toLowerCase(), at + 1) < 0)
+        prompt = prompt.slice(0, at) + GAP + prompt.slice(at + item.answer.trim().length);
+    }
+  }
+  return { ...item, prompt, options: [], option_notes: [], correct_index: -1 };
+}
+/** Rejected items from the latest run per article, kept in memory only for the cron-only diagnostic run. */
+const rejectedSamples = new Map<string, string[]>();
+export function lastRejectedSamples(articleId: string) { return rejectedSamples.get(articleId) ?? []; }
+function sampleRejected(articleId: string, items: Candidate[], issues: string[]) {
+  const errors = new Map(issues.map((issue) => /^([^:]+):([A-Z_,]+)$/.exec(issue)).filter(Boolean).map((match) => [match![1], match![2]]));
+  rejectedSamples.set(articleId, items.filter((item) => errors.has(item?.id)).slice(0, 8).map((item) =>
+    `${item.id} [${item.type}] ${errors.get(item.id)} | prompt=${String(item.prompt ?? "").slice(0, 220)} | answer=${String(item.answer ?? "")} | key=${item.correct_index} | options=${JSON.stringify(item.options ?? []).slice(0, 160)} | evidence=${String(item.supporting_sentence ?? "").slice(0, 160)}`));
+  if (rejectedSamples.size > 50) rejectedSamples.delete(rejectedSamples.keys().next().value!);
 }
 /** Keeps ids and group ids from different batches apart without splitting a group inside one batch. */
 function separateBatch(items: Candidate[], batch: number, usedIds: Set<string>, usedGroups: Set<string>) {
@@ -181,7 +216,7 @@ export async function generateNewsQuizV2(
           ), modelOrder(usedModel), deadline);
           generationTokens = addUsage(generationTokens, reply.usage);
           const items = Array.isArray(reply.data?.questions) ? reply.data.questions : [];
-          questions.push(...separateBatch(items, index, usedIds, usedGroups).map((item) => withEvidenceSpans(item, fullArticle)));
+          questions.push(...separateBatch(items, index, usedIds, usedGroups).map((item) => withEvidenceSpans(normalizeCandidate(item), fullArticle)));
         } catch (cause) {
           if (!(cause instanceof FactoryProviderError) || cause.kind !== "unavailable") throw cause;
           batchOutage = cause;
@@ -191,6 +226,7 @@ export async function generateNewsQuizV2(
       candidateCount = questions.length;
       const structural = validateGeneration(generated.data, fullArticle, selected);
       deterministicPass = structural.valid.length;
+      sampleRejected(articleId, questions, structural.issues);
       if (structural.valid.length < 6) {
         // Too few items because Google failed a batch is an outage, not an article problem.
         if (batchOutage) throw batchOutage;
@@ -228,7 +264,7 @@ export async function generateNewsQuizV2(
           qaTokens = addUsage(qaTokens, repaired.usage);
           const rejectedIds = new Set(rejected.map((item) => item.id));
           const fixes = (Array.isArray(repaired.data?.questions) ? repaired.data.questions : [])
-            .filter((item) => rejectedIds.has(item?.id)).map((item) => withEvidenceSpans(item, fullArticle));
+            .filter((item) => rejectedIds.has(item?.id)).map((item) => withEvidenceSpans(normalizeCandidate(item), fullArticle));
           const recheck = validateGeneration({ passage_map: generated.data.passage_map, questions: [...approved, ...fixes], image_query: "" },
             fullArticle, selected);
           const fixed = recheck.valid.filter((item) => !approvedIds.has(item.id));
