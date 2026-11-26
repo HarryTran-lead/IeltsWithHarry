@@ -10,8 +10,8 @@ import { contentHash, contentSchema, validateExam, type NormalizedExam } from ".
 
 const apply = process.argv.includes("--apply");
 const audioDir = join("content", "original-tests", "dist", "audio");
-const license = "Original IeltsWithHarry practice test (owner-confirmed rights)";
-const attribution = "IeltsWithHarry original practice test";
+const license = "Original Harry Up practice test (owner-confirmed rights)";
+const attribution = "Harry Up original practice test";
 const note = "Owner confirmed publication rights on 2026-10-27; Listening audio voiced with Gemini TTS.";
 
 const url = process.env.NEXT_PUBLIC_SUPABASE_URL;

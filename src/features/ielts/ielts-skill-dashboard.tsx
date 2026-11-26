@@ -13,6 +13,7 @@ import { plannedModes } from "./planned-modes";
 import { BankLibrary } from "./bank-library";
 import { SpeakingMockCta } from "./speaking-mock";
 import { catalogHref, catalogSkills } from "@/lib/ielts-bank/catalog";
+import { publisherLabel } from "@/lib/news/daily-plan";
 import { createClient } from "@/lib/supabase/browser";
 import { demoMode, lockedLearnerPath, releaseLocks } from "@/lib/runtime";
 import sourceTopics from "@/lib/vocabulary/source-topics.json";
@@ -101,7 +102,7 @@ export function IeltsSkillDashboard({ skill }: { skill: IeltsSkill }) {
   ] : skill === "reading" ? [
     { title: "607 từ IELTS Reading", detail: "Học 607 từ trong 11 chủ đề, ôn SRS và đi theo lộ trình 84 ngày.", source: "Bộ Reading do chủ dự án cung cấp", href: "/app/reading/vocabulary", available: true, icon: Languages, tag: "607 từ" },
     { title: "Sentence completion", detail: "Đọc văn bản thật và điền một từ được rút từ chính câu nguồn.", source: "Daily News toàn văn", href: "/app/reading/live", available: hasArticle, icon: FileText, tag: "Có đáp án" },
-    { title: "Đọc toàn văn", detail: "Mở bài gốc trong kho Daily News để đọc sâu và lưu từ.", source: latestArticle?.publisher ?? "Daily News", href: latestArticle ? `/app/news/${latestArticle.id}` : "/app/news", available: hasArticle, icon: BookOpen },
+    { title: "Đọc toàn văn", detail: "Mở bài gốc trong kho Daily News để đọc sâu và lưu từ.", source: latestArticle ? publisherLabel(latestArticle.publisher) : "Daily News", href: latestArticle ? `/app/news/${latestArticle.id}` : "/app/news", available: hasArticle, icon: BookOpen },
   ] : skill === "listening" ? [
     { title: "1.200 từ vựng Listening", detail: "Học theo 35 chủ đề, nghe chọn nghĩa và chép chính tả với ví dụ song ngữ.", source: "Bộ Listening do chủ dự án cung cấp", href: "/app/listening/vocabulary", available: !lockedLearnerPath("/app/listening/vocabulary"), icon: Languages, tag: "1.200 mục" },
     { title: "YouTube Shadowing & Listening Lab", detail: "Luyện shadowing, chép chính tả và câu hỏi với phụ đề được cấp quyền.", source: "Bài học do giáo viên xuất bản", href: "/app/listening/youtube", available: !lockedLearnerPath("/app/listening/youtube"), icon: Headphones, tag: "YouTube" },

@@ -342,7 +342,7 @@ function approvedCcLicenseUrl(raw: string, license: string) {
   const path = `/licenses/${match[1].toLowerCase()}/${match[2]}/`;
   return url.pathname === path || url.pathname === path.slice(0, -1) ? `${url.origin}${path}` : null;
 }
-const imageAgent = { Accept: "application/json", "User-Agent": "IeltsWithHarry/1.0 (https://ieltswithharry.vercel.app; educational image attribution)" };
+const imageAgent = { Accept: "application/json", "User-Agent": "HarryUp/1.0 (https://harryup.vercel.app; educational image attribution)" };
 
 async function commonsCandidates(query: string, keywords: string[], fetcher: typeof fetch): Promise<Candidate[]> {
   const url = new URL("https://commons.wikimedia.org/w/api.php");

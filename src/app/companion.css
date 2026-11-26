@@ -25,7 +25,7 @@
   aspect-ratio: 1;
   translate: -50% -50%;
   border-radius: 50%;
-  background: url("/ieltswithharry-mascot.webp") center / cover;
+  background: url("/harryup-mascot.webp") center / cover;
   animation: harry-3d-wait 1.2s ease-in-out infinite;
 }
 .harry-3d img {

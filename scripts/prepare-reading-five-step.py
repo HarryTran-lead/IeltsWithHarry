@@ -223,9 +223,9 @@ def convert_new(test_number, student, teacher, records):
         "format": "Academic",
         "mode": "practice",
         "durationMinutes": 60,
-        "sourceUrl": "https://ieltswithharry.vercel.app",
+        "sourceUrl": "https://harryup.vercel.app",
         "license": "Owner-supplied original IELTS-style practice; not an official IELTS exam",
-        "licenseUrl": "https://ieltswithharry.vercel.app",
+        "licenseUrl": "https://harryup.vercel.app",
         "attribution": "English Skill Lab",
         "content": {"sections": sections, "prompt": ""},
     }

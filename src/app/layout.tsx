@@ -55,9 +55,9 @@ const hand = Patrick_Hand({
 });
 
 export const metadata: Metadata = {
-  title: "IeltsWithHarry — Small steps, big progress",
+  title: "Harry Up — Small steps, big progress",
   description:
-    "Learn English and IELTS with Harry: lessons, daily news, vocabulary, a study notebook and a shared study room.",
+    "Learn English and IELTS with Harry Up: lessons, daily news, vocabulary, a study notebook and a shared study room.",
 };
 
 export default function RootLayout({

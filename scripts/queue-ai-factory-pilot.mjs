@@ -31,12 +31,12 @@ const content = pilot.pilotContent;
 if (content.sections.length !== 1 || content.sections[0].questions.length !== 10 || pilot.pilotTurns.length !== 20) {
   throw new Error("Pilot script or question count changed");
 }
-const sourceUrl = "https://ieltswithharry.vercel.app/app/question-bank";
+const sourceUrl = "https://harryup.vercel.app/app/question-bank";
 const title = "Urban ecology project discussion — Part 3";
 const meta = {
   skill: "Listening", title, format: "Academic", mode: "practice", topic: "Urban ecology", difficulty: "B2-C1",
   duration_minutes: 12, license: "Original AI-assisted practice", license_url: sourceUrl, source_url: sourceUrl,
-  attribution: "IeltsWithHarry Content Factory (AI-assisted)", ai_generated: true,
+  attribution: "Harry Up Content Factory (AI-assisted)", ai_generated: true,
 };
 const hash = createHash("sha256").update(JSON.stringify(content)).digest("hex");
 checked(await db.rpc("ielts_upsert_import", {

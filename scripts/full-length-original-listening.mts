@@ -135,7 +135,7 @@ function partPlan(paper: Paper, part: Part) {
   const testNumber = paper.id.slice(-2);
   const kind = part.number === 2 ? "talk" : "conversation";
   const steps: ({ say: string } | { pause: number } | { block: Block })[] = [];
-  if (part.number === 1) steps.push({ say: `IELTS with Harry. Original Listening Test ${testNumber}. In this test, you will hear four recordings, and you will answer forty questions. You will hear each recording once only. Before each section, you will have time to read the questions, and after each part, you will have time to check your answers. Now turn to Part 1.` }, { pause: 2 });
+  if (part.number === 1) steps.push({ say: `Harry Up. Original Listening Test ${testNumber}. In this test, you will hear four recordings, and you will answer forty questions. You will hear each recording once only. Before each section, you will have time to read the questions, and after each part, you will have time to check your answers. Now turn to Part 1.` }, { pause: 2 });
   else steps.push({ say: `Now turn to Part ${part.number}.` }, { pause: 1.5 });
   if (part.number === 4) {
     steps.push({ say: `Part 4. You will hear ${part.intro}. You now have ${PART4_LOOK_SECONDS} seconds to look at questions 31 to 40.` }, { pause: PART4_LOOK_SECONDS },

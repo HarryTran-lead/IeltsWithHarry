@@ -123,14 +123,14 @@ export const previewContent: ExamContent = { sections: [section1, section2, sect
 
 export const previewExam: BankExam = {
   id: "preview-reading", title: "Coastal Engineering, Pollination and Open Data", skill: "Reading", practice_type: "full_test", format: "Academic", mode: "full_test",
-  duration_minutes: 60, attribution: "IeltsWithHarry preview", license: "Preview only", license_url: "#", source_url: "#", ai_generated: false, topic: "science", content: previewContent,
+  duration_minutes: 60, attribution: "Harry Up preview", license: "Preview only", license_url: "#", source_url: "#", ai_generated: false, topic: "science", content: previewContent,
 };
 
 const sample = (index: number) => ["matching_headings", "true_false_not_given", "note_completion", "multiple_choice", "yes_no_not_given", "matching_information", "summary_completion", "matching_features", "multiple_answers", "sentence_completion"].filter((_, position) => (position + index) % 3 === 0 || position === index % 10);
 const titles = ["The rise of the ballpoint pen", "How popcorn came to the cinema", "The Lord Howe Island stick insect", "The World Cup ball", "The whale goes to court", "The importance of business cards", "The development of plastics", "Synaesthesia", "The story of the lawnmower", "Dark chocolate's health benefits", "Effect and cause", "The origin of weather forecasts", "A survivor's story", "Bondi beach", "Marketing and mind control", "Libraries that lend seeds"];
 export const previewCatalog: CatalogExam[] = titles.map((title, index): CatalogExam => ({
   id: `preview-${index}`, title: `Passage ${(index % 3) + 1}: ${title}`, skill: "Reading", practice_type: "passage", format: "Academic", duration_minutes: 20,
-  attribution: index % 2 ? "English Skill Lab · original" : "IeltsWithHarry Simulation", license: "Original", ai_generated: true, created_at: "2026-11-01", topic: "science",
+  attribution: index % 2 ? "English Skill Lab · original" : "Harry Up Simulation", license: "Original", ai_generated: true, created_at: "2026-11-01", topic: "science",
   question_types: sample(index), question_count: 13, attempt_count: index % 4 ? 120 * index : 0,
   image_url: `/images/ielts/reading/test-0${(index % 7) + 1}-passage-${(index % 3) + 1}.${(index % 7) + 1 >= 6 ? "webp" : "png"}`,
 })).concat([4, 5, 6].map((test): CatalogExam => ({
