@@ -4,11 +4,6 @@ export type NoteTemplate = { id: string; label: string; hint: string; title: str
 
 export const noteTemplates: NoteTemplate[] = [
   {
-    id: "vocab", label: "Từ vựng", hint: "Nghĩa, collocation, ví dụ",
-    title: "Từ mới: ",
-    body: "## Từ / cụm từ\n**word** (n/v/adj) /phiên âm/\n\n## Nghĩa\n- \n\n## Collocation hay đi kèm\n- \n\n## Ví dụ của mình\n- \n\n#vocabulary",
-  },
-  {
     id: "mistake", label: "Lỗi sai cần nhớ", hint: "Câu sai → câu đúng → lý do",
     title: "Lỗi sai: ",
     body: "## Mình đã viết\n> \n\n## Câu đúng\n> \n\n## Vì sao sai\n- \n\n## Lần sau nhớ\n- [ ] Đọc lại quy tắc\n- [ ] Viết 3 câu tương tự\n\n#mistakes",
@@ -29,6 +24,20 @@ export const noteTemplates: NoteTemplate[] = [
     body: "## 3 điều mình học được\n1. \n2. \n3. \n\n## Còn chưa hiểu\n- \n\n## Việc cần làm\n- [ ] Ôn lại sau 1 ngày\n- [ ] Làm bài luyện liên quan\n\n#lesson",
   },
 ];
+
+/** What a notebook entry is, for the type filter and list icons: saved words, mistakes, outlines or free notes. */
+export type EntryKind = "vocab" | "mistake" | "outline" | "free";
+export const entryKindLabels: Record<EntryKind, string> = { vocab: "Từ vựng", mistake: "Lỗi sai", outline: "Dàn ý", free: "Tự do" };
+
+export function entryKind(entry: { kind: "note" | "word"; title: string; body: string }): EntryKind {
+  if (entry.kind === "word") return "vocab";
+  const tags = noteTags(entry.body);
+  if (tags.includes("vocabulary")) return "vocab";
+  const title = entry.title.toLocaleLowerCase("vi");
+  if (tags.includes("mistakes") || tags.includes("mistake") || title.startsWith("lỗi sai")) return "mistake";
+  if (tags.includes("writing") || tags.includes("speaking") || title.startsWith("dàn ý") || title.startsWith("speaking part")) return "outline";
+  return "free";
+}
 
 const tagPattern = /(^|\s)#([\p{L}\p{N}_-]{2,30})/gu;
 

@@ -568,7 +568,7 @@ function AppShellContent({ children, canManage }: { children: React.ReactNode; c
         <div className="page-enter" key={section}>{children}</div>
       </main>
       <nav className="bottom-nav" aria-label="Mobile navigation">
-        {links.filter(({ href }) => ["/app/dashboard", "/app/learn", "/app/study-together", "/app/planner"].includes(href)).map(
+        {links.filter(({ href }) => ["/app/dashboard", "/app/learn", "/app/planner", "/app/notebook", "/app/study-together"].includes(href)).map(
           ({ href, label, icon: Icon }) => (
             <Link
               key={href}
