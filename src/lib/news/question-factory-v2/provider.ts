@@ -1,6 +1,6 @@
 import { recordAiUsage } from "../ai-usage";
 import { AsyncLocalStorage } from "node:async_hooks";
-import { newsArticleFreeTierReady, newsQuizFreeTierReady, providerErrorDetail } from "../enrichment";
+import { newsArticleFreeTierReady, newsQuizFreeTierReady, newsQuizKeyEnv, providerErrorDetail } from "../enrichment";
 import type { TokenUsage } from "./types";
 
 /**
@@ -44,7 +44,7 @@ export async function strictGeminiJson<T>(
   const source = quizKeySource();
   if (!quizKeyReady()) throw new FactoryProviderError("configuration", "Confirmed Gemini Free Tier key is required");
   if (!/^gemini-[a-z0-9.-]+$/.test(model)) throw new FactoryProviderError("configuration", "Invalid V2 Gemini model");
-  const key = source === "article" ? process.env.NEWS_ARTICLE_GEMINI_API_KEY : process.env.NEWS_QUIZ_GEMINI_API_KEY;
+  const key = source === "article" ? process.env.NEWS_ARTICLE_GEMINI_API_KEY : newsQuizKeyEnv().key;
   budget.reserve(); // Count before network activity; timeout and ambiguous failure still consume a request.
   let response: Response;
   const startedAt = Date.now();

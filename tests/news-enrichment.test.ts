@@ -452,3 +452,21 @@ describe("illustration search checked by AI vision", () => {
     expect(imageKeywords("NASA Marks Milestone", "The coral reef grows. Coral reef scientists study the coral reef. Reef coral.", "coral reef survey")).toEqual(["coral", "reef", "survey", "marks", "milestone"]);
   });
 });
+
+describe("news quiz key names", () => {
+  it("reads the NEWS_QUIZ set, or the old AI_FACTORY set as a whole until the new key exists", async () => {
+    const { newsQuizKeyEnv } = await import("../src/lib/news/enrichment");
+    const names = ["NEWS_QUIZ_GEMINI_API_KEY", "NEWS_QUIZ_FREE_TIER_ONLY", "NEWS_QUIZ_FREE_TIER_CONFIRMED", "AI_FACTORY_GEMINI_API_KEY", "AI_FACTORY_FREE_TIER_ONLY", "AI_FACTORY_FREE_TIER_CONFIRMED"];
+    const saved = Object.fromEntries(names.map((name) => [name, process.env[name]]));
+    try {
+      for (const name of names) delete process.env[name];
+      Object.assign(process.env, { AI_FACTORY_GEMINI_API_KEY: "old", AI_FACTORY_FREE_TIER_ONLY: "true", AI_FACTORY_FREE_TIER_CONFIRMED: "true" });
+      expect(newsQuizKeyEnv()).toEqual({ key: "old", freeTierOnly: true, confirmed: true });
+      process.env.NEWS_QUIZ_GEMINI_API_KEY = "new";
+      // A new key never borrows the old key's Free Tier confirmation.
+      expect(newsQuizKeyEnv()).toEqual({ key: "new", freeTierOnly: false, confirmed: false });
+    } finally {
+      for (const name of names) { if (saved[name] === undefined) delete process.env[name]; else process.env[name] = saved[name]; }
+    }
+  });
+});
