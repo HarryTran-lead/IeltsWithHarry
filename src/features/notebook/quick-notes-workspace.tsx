@@ -21,6 +21,8 @@ import { WordEditor, posLabel } from "./word-editor";
 import { applyFormat, dateGroup, entryKind, entryKindLabels, noteSnippet, noteStats, noteTags, noteTemplates, toggleTask, type DateGroup, type EntryKind, type NoteTemplate } from "./notes-model";
 import "./quick-notes-workspace.css";
 
+/** True when a word "saved" just now was already in the notebook (created more than 10 seconds ago). */
+function savedBefore(createdAt: string) { return Date.now() - new Date(createdAt).getTime() > 10000; }
 export type OldBook = { id: string; title: string; updated_at: string };
 type Sort = "updated" | "created" | "title";
 type Filter = "all" | "source" | "tasks";
@@ -425,7 +427,7 @@ export function NotesWorkspace({ entries, ready, error, books, booksError, addEn
         {view.type === "word" ? <WordEditor key={view.id ?? "new"} entry={selectedWord} review={selectedWord ? reviewById.get(selectedWord.id) : undefined}
           sourceLabel={hasSource(selectedWord) ? sourceLabel(selectedWord!.sourcePath) : undefined}
           addEntry={addEntry} updateEntry={updateEntry} removeEntry={removeEntry}
-          onSaved={(created) => { setFlash(Date.now() - new Date(created.createdAt).getTime() > 10000 ? "Từ này đã có trong Sổ từ" : "Đã lưu vào Sổ từ"); openWord(created); }}
+          onSaved={(created) => { setFlash(savedBefore(created.createdAt) ? "Từ này đã có trong Sổ từ" : "Đã lưu vào Sổ từ"); openWord(created); }}
           onBack={() => { setView({ type: "note" }); setSelectedId(null); setMobileEditor(false); }} /> : <>
         <header className="qn-editor-head">
           <button type="button" className="qn-back" onClick={() => setMobileEditor(false)} aria-label="Về danh sách"><ArrowLeft size={18} /></button>
