@@ -22,6 +22,6 @@ describe("notebook entry kinds", () => {
 
   it("classifies every template by its own tags", () => {
     const kinds = Object.fromEntries(noteTemplates.map((template) => [template.id, entryKind(note(template.title, template.body))]));
-    expect(kinds).toEqual({ mistake: "mistake", writing: "outline", speaking: "outline", lesson: "free" });
+    expect(kinds).toEqual({ mistake: "mistake", writing: "outline", task1: "outline", speaking: "outline", "reading-listening": "free", lesson: "free" });
   });
 });

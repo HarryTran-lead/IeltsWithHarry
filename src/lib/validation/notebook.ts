@@ -1,5 +1,8 @@
 import { z } from "zod";
 
+export const noteSkillSchema = z.enum(["general", "writing", "speaking", "reading", "listening", "vocabulary", "grammar"]);
+export type NoteSkill = z.infer<typeof noteSkillSchema>;
+
 export const notebookInputSchema = z.discriminatedUnion("kind", [
   z.object({
     kind: z.literal("note"),
@@ -7,6 +10,10 @@ export const notebookInputSchema = z.discriminatedUnion("kind", [
     body: z.string().trim().min(1).max(100000),
     meaningVi: z.literal(""),
     example: z.literal(""),
+    skill: noteSkillSchema.optional(),
+    reviewAt: z.union([z.iso.date(), z.null()]).optional(),
+    reviewPrompt: z.string().trim().max(500).optional(),
+    reviewCount: z.number().int().min(0).optional(),
   }),
   z.object({
     kind: z.literal("word"),

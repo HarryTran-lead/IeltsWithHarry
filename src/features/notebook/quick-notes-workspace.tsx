@@ -3,7 +3,7 @@
 import { useEffect, useMemo, useRef, useState, type FocusEvent, type KeyboardEvent } from "react";
 import Link from "next/link";
 import {
-  ArrowLeft, ArrowRight, Bold, BookOpen, CheckSquare, ChevronDown, CircleAlert, Copy, Download, Eye, FileText, Hash, Heading2, Highlighter, Italic,
+  ArrowLeft, ArrowRight, Bold, BookOpen, CalendarDays, CheckSquare, ChevronDown, CircleAlert, Copy, Download, Eye, FileText, Hash, Heading2, Highlighter, Italic,
   Link2, List, ListOrdered, Maximize2, Minimize2, MoreHorizontal, PencilLine, Plus, Quote, RotateCcw, Search, SquareStack, Trash2, X,
 } from "lucide-react";
 import { PageHeader } from "@/components/ui/page-header";
@@ -11,31 +11,28 @@ import { createClient } from "@/lib/supabase/browser";
 import { fetchAllRows } from "@/lib/supabase/fetch-all";
 import { demoMode } from "@/lib/runtime";
 import type { WordReview } from "@/lib/news/review";
-import { wordState, wordStateLabels } from "@/lib/vocabulary/study-session";
 import { flaggedQuestions } from "@/lib/grammar/schedule";
 import { useGrammarProgress } from "@/features/grammar/grammar-progress";
-import type { NotebookInput } from "@/lib/validation/notebook";
+import type { NotebookInput, NoteSkill } from "@/lib/validation/notebook";
 import { useNotebook, type NotebookEntry } from "./notebook-store";
 import { NoteMarkdown } from "./note-markdown";
-import { WordEditor, posLabel } from "./word-editor";
-import { applyFormat, dateGroup, entryKind, entryKindLabels, noteSnippet, noteStats, noteTags, noteTemplates, toggleTask, type DateGroup, type EntryKind, type NoteTemplate } from "./notes-model";
+import { applyFormat, dateGroup, entryKind, entryKindLabels, noteSnippet, noteStats, noteTags, noteTemplates, reviewDate, reviewDue, toggleTask, type DateGroup, type EntryKind, type NoteTemplate } from "./notes-model";
 import "./quick-notes-workspace.css";
 
-/** True when a word "saved" just now was already in the notebook (created more than 10 seconds ago). */
-function savedBefore(createdAt: string) { return Date.now() - new Date(createdAt).getTime() > 10000; }
 export type OldBook = { id: string; title: string; updated_at: string };
 type Sort = "updated" | "created" | "title";
-type Filter = "all" | "source" | "tasks";
-type View = { type: "note" } | { type: "word"; id: string | null };
+type Filter = "all" | "source" | "tasks" | "review";
 const REVIEW_COLUMNS = "notebook_entry_id,due_at,interval_days,repetitions,last_reviewed_at,fsrs_state";
 const kindOrder: EntryKind[] = ["vocab", "mistake", "outline", "free"];
+const skillLabels: Record<NoteSkill, string> = { general: "Chung", writing: "Writing", speaking: "Speaking", reading: "Reading", listening: "Listening", vocabulary: "Vocabulary", grammar: "Grammar" };
 
-const noteInput = (title: string, body: string): NotebookInput => ({
+const noteInput = (title: string, body: string, skill: NoteSkill = "general", reviewAt: string | null = null, reviewPrompt = "", reviewCount = 0): NotebookInput => ({
   kind: "note",
   title: (title.trim() || noteSnippet(body).slice(0, 60) || "Ghi chú mới").slice(0, 100),
   body: body.trim(),
   meaningVi: "",
   example: "",
+  skill, reviewAt, reviewPrompt, reviewCount,
 });
 const shortDate = (value: string) => new Intl.DateTimeFormat("vi-VN", { day: "numeric", month: "short" }).format(new Date(value));
 const clock = (value: Date) => new Intl.DateTimeFormat("vi-VN", { hour: "2-digit", minute: "2-digit" }).format(value);
@@ -105,6 +102,13 @@ export function NotesWorkspace({ entries, ready, error, books, booksError, addEn
   const [selectedId, setSelectedId] = useState<string | null>(null);
   const [title, setTitle] = useState("");
   const [body, setBody] = useState("");
+  const [skill, setSkill] = useState<NoteSkill>("general");
+  const [reviewAt, setReviewAt] = useState<string | null>(null);
+  const [reviewPrompt, setReviewPrompt] = useState("");
+  const [reviewCount, setReviewCount] = useState(0);
+  const [reviewOpen, setReviewOpen] = useState(false);
+  const [reviewRevealed, setReviewRevealed] = useState(false);
+  const [reviewBusy, setReviewBusy] = useState(false);
   const [mode, setMode] = useState<"edit" | "view">("edit");
   const [status, setStatus] = useState<{ tone: "idle" | "dirty" | "saving" | "saved" | "error"; text: string }>({ tone: "idle", text: "" });
   const [focus, setFocus] = useState(false);
@@ -113,16 +117,18 @@ export function NotesWorkspace({ entries, ready, error, books, booksError, addEn
   const [removing, setRemoving] = useState(false);
   const [flash, setFlash] = useState("");
   const [kindFilter, setKindFilter] = useState<"all" | EntryKind>("all");
-  const [view, setView] = useState<View>({ type: "note" });
   const [newMenu, setNewMenu] = useState(false);
   const [moreMenu, setMoreMenu] = useState(false);
+  const [showFilters, setShowFilters] = useState(false);
+  const [noteSession, setNoteSession] = useState(0);
   const [now] = useState(() => Date.now());
   const [weekAgo] = useState(() => new Date(Date.now() - 7 * 86400000).toISOString());
   const editor = useRef<HTMLTextAreaElement>(null);
   const titleInput = useRef<HTMLInputElement>(null);
-  const latest = useRef({ title: "", body: "" });
+  const latest = useRef({ title: "", body: "", skill: "general" as NoteSkill, reviewAt: null as string | null, reviewPrompt: "", reviewCount: 0 });
   const activeId = useRef<string | null>(null);
   const lastSaved = useRef("");
+  const openedInitial = useRef(false);
   const generation = useRef(0);
   const saving = useRef(false);
   const pending = useRef(false);
@@ -131,9 +137,9 @@ export function NotesWorkspace({ entries, ready, error, books, booksError, addEn
 
   async function saveCurrent() {
     if (saving.current) { pending.current = true; return; }
-    const { title: currentTitle, body: currentBody } = latest.current;
+    const { title: currentTitle, body: currentBody, skill: currentSkill, reviewAt: currentReviewAt, reviewPrompt: currentReviewPrompt, reviewCount: currentReviewCount } = latest.current;
     if (!currentBody.trim()) return;
-    const input = noteInput(currentTitle, currentBody);
+    const input = noteInput(currentTitle, currentBody, currentSkill, currentReviewAt, currentReviewPrompt, currentReviewCount);
     const fingerprint = JSON.stringify(input);
     if (fingerprint === lastSaved.current) return;
     const version = generation.current, id = activeId.current;
@@ -152,19 +158,19 @@ export function NotesWorkspace({ entries, ready, error, books, booksError, addEn
       if (version === generation.current) setStatus({ tone: "error", text: "Chưa lưu được — nhấn Lưu để thử lại" });
     } finally {
       saving.current = false;
-      const again = pending.current || (!failed && version === generation.current && JSON.stringify(noteInput(latest.current.title, latest.current.body)) !== lastSaved.current);
+      const again = pending.current || (!failed && version === generation.current && JSON.stringify(noteInput(latest.current.title, latest.current.body, latest.current.skill, latest.current.reviewAt, latest.current.reviewPrompt, latest.current.reviewCount)) !== lastSaved.current);
       pending.current = false;
       if (again) window.setTimeout(() => void saveCurrent(), 0);
     }
   }
 
   useEffect(() => {
-    if (!ready || !body.trim() || JSON.stringify(noteInput(title, body)) === lastSaved.current) return;
+    if (!ready || !body.trim() || JSON.stringify(noteInput(title, body, skill, reviewAt, reviewPrompt, reviewCount)) === lastSaved.current) return;
     const timer = window.setTimeout(() => void saveCurrent(), 900);
     return () => window.clearTimeout(timer);
     // The editor's refs keep the in-flight save on its original note.
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [title, body, selectedId, ready]);
+  }, [title, body, skill, reviewAt, reviewPrompt, reviewCount, selectedId, ready]);
 
   useEffect(() => {
     if (!flash) return;
@@ -173,50 +179,48 @@ export function NotesWorkspace({ entries, ready, error, books, booksError, addEn
   }, [flash]);
 
   function openNote(note: NotebookEntry | null, options: { savePrevious?: boolean; template?: NoteTemplate } = {}) {
+    openedInitial.current = true;
     if (options.savePrevious !== false) void saveCurrent();
     generation.current += 1;
-    setView({ type: "note" });
+    setNoteSession((value) => value + 1);
     setNewMenu(false);
     setMoreMenu(false);
     activeId.current = note?.id ?? null;
     setSelectedId(note?.id ?? null);
     const nextTitle = note?.title ?? options.template?.title ?? "";
     const nextBody = note?.body ?? options.template?.body ?? "";
-    latest.current = { title: nextTitle, body: nextBody };
-    lastSaved.current = note ? JSON.stringify(noteInput(nextTitle, nextBody)) : "";
+    const templateSkills: Record<string, NoteSkill> = { mistake: "grammar", writing: "writing", task1: "writing", speaking: "speaking", "reading-listening": "reading" };
+    const nextSkill = note?.kind === "note" ? note.skill ?? "general" : templateSkills[options.template?.id ?? ""] ?? "general";
+    const nextReviewAt = note?.kind === "note" ? note.reviewAt ?? null : null;
+    const nextReviewPrompt = note?.kind === "note" ? note.reviewPrompt ?? "" : "";
+    const nextReviewCount = note?.kind === "note" ? note.reviewCount ?? 0 : 0;
+    latest.current = { title: nextTitle, body: nextBody, skill: nextSkill, reviewAt: nextReviewAt, reviewPrompt: nextReviewPrompt, reviewCount: nextReviewCount };
+    lastSaved.current = note ? JSON.stringify(noteInput(nextTitle, nextBody, nextSkill, nextReviewAt, nextReviewPrompt, nextReviewCount)) : "";
     setTitle(nextTitle);
     setBody(nextBody);
+    setSkill(nextSkill); setReviewAt(nextReviewAt); setReviewPrompt(nextReviewPrompt); setReviewCount(nextReviewCount);
+    setReviewOpen(false); setReviewRevealed(false);
     setMode(note ? "view" : "edit");
     setStatus(note ? { tone: "saved", text: `Sửa lần cuối ${shortDate(note.updatedAt)}` } : { tone: "idle", text: "" });
     setMobileEditor(true);
     if (!note) window.requestAnimationFrame(() => titleInput.current?.focus());
   }
 
-  /** Opens a saved word (or a blank word card) in the structured word editor. */
-  function openWord(entry: NotebookEntry | null) {
-    void saveCurrent();
-    generation.current += 1;
-    activeId.current = null;
-    latest.current = { title: "", body: "" };
-    lastSaved.current = "";
-    setTitle("");
-    setBody("");
-    setStatus({ tone: "idle", text: "" });
-    setSelectedId(entry?.id ?? null);
-    setView({ type: "word", id: entry?.id ?? null });
-    setNewMenu(false);
-    setMoreMenu(false);
-    setFocus(false);
-    setMobileEditor(true);
-  }
   function startFromTemplate(id: string) {
-    if (id === "vocab") { openWord(null); return; }
     const template = noteTemplates.find((item) => item.id === id);
     openNote(null, { template });
   }
 
   function changeTitle(value: string) { latest.current = { ...latest.current, title: value }; setTitle(value); setStatus({ tone: "dirty", text: "Chưa lưu thay đổi" }); }
   function changeBody(value: string) { latest.current = { ...latest.current, body: value }; setBody(value); setStatus({ tone: "dirty", text: "Chưa lưu thay đổi" }); }
+  function changeLearning(next: { skill?: NoteSkill; reviewAt?: string | null; reviewPrompt?: string; reviewCount?: number }) {
+    latest.current = { ...latest.current, ...next };
+    if (next.skill !== undefined) setSkill(next.skill);
+    if (next.reviewAt !== undefined) setReviewAt(next.reviewAt);
+    if (next.reviewPrompt !== undefined) setReviewPrompt(next.reviewPrompt);
+    if (next.reviewCount !== undefined) setReviewCount(next.reviewCount);
+    setStatus({ tone: "dirty", text: "Chưa lưu thay đổi" });
+  }
 
   function format(id: (typeof tools)[number]["id"]) {
     const tool = tools.find((item) => item.id === id)!;
@@ -252,13 +256,13 @@ export function NotesWorkspace({ entries, ready, error, books, booksError, addEn
   useEffect(() => {
     function onKey(event: globalThis.KeyboardEvent) {
       if ((event.ctrlKey || event.metaKey) && event.key.toLowerCase() === "s") { event.preventDefault(); void saveCurrent(); }
-      if (event.key === "Escape" && focus) setFocus(false);
+      if (event.key === "Escape") { if (reviewOpen) setReviewOpen(false); else if (focus) setFocus(false); }
     }
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
     // saveCurrent reads refs only.
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [focus]);
+  }, [focus, reviewOpen]);
 
   async function deleteSelected() {
     if (!selectedId || !window.confirm("Xóa ghi chú này? Không thể hoàn tác.")) return;
@@ -270,7 +274,7 @@ export function NotesWorkspace({ entries, ready, error, books, booksError, addEn
   async function duplicate() {
     if (!body.trim()) return;
     await saveCurrent();
-    const created = await addEntry(noteInput(`${title || "Ghi chú"} (bản sao)`.slice(0, 100), body)).catch(() => undefined);
+    const created = await addEntry(noteInput(`${title || "Ghi chú"} (bản sao)`.slice(0, 100), body, skill, reviewAt, reviewPrompt)).catch(() => undefined);
     if (created) { openNote(created, { savePrevious: false }); setFlash("Đã tạo bản sao"); }
   }
   function download() {
@@ -286,12 +290,51 @@ export function NotesWorkspace({ entries, ready, error, books, booksError, addEn
   }
   function pickTag(value: string) { setTag((current) => (current === value ? null : value)); setMobileEditor(false); }
 
+  async function finishReview(remembered: boolean) {
+    if (!selectedId || status.tone !== "saved" || reviewBusy) return;
+    const nextDate = reviewDate(remembered ? 7 : 1);
+    const nextCount = reviewCount + 1;
+    setReviewBusy(true);
+    try {
+      await updateEntry(selectedId, noteInput(title, body, skill, nextDate, reviewPrompt, nextCount));
+      latest.current = { ...latest.current, reviewAt: nextDate, reviewCount: nextCount };
+      setReviewAt(nextDate); setReviewCount(nextCount);
+      lastSaved.current = JSON.stringify(noteInput(title, body, skill, nextDate, reviewPrompt, nextCount));
+      setStatus({ tone: "saved", text: `Đã lưu lúc ${clock(new Date())}` });
+      setReviewOpen(false); setReviewRevealed(false);
+      setFlash(remembered ? "Đã nhớ · ôn lại sau 7 ngày" : "Cần ôn · nhắc lại ngày mai");
+    } catch { setFlash("Chưa lưu được lịch ôn. Hãy thử lại."); }
+    finally { setReviewBusy(false); }
+  }
+
   const notes = useMemo(() => entries.filter((entry) => entry.kind === "note"), [entries]);
+  useEffect(() => {
+    if (!ready || openedInitial.current) return;
+    const recent = [...notes].sort((a, b) => b.updatedAt.localeCompare(a.updatedAt))[0];
+    if (!recent) return;
+    const frame = window.requestAnimationFrame(() => {
+      if (openedInitial.current || activeId.current || latest.current.title || latest.current.body) return;
+      openedInitial.current = true;
+      activeId.current = recent.id;
+      const recentSkill = recent.skill ?? "general";
+      const recentReviewAt = recent.reviewAt ?? null;
+      const recentReviewPrompt = recent.reviewPrompt ?? "";
+      const recentReviewCount = recent.reviewCount ?? 0;
+      latest.current = { title: recent.title, body: recent.body, skill: recentSkill, reviewAt: recentReviewAt, reviewPrompt: recentReviewPrompt, reviewCount: recentReviewCount };
+      lastSaved.current = JSON.stringify(noteInput(recent.title, recent.body, recentSkill, recentReviewAt, recentReviewPrompt, recentReviewCount));
+      setSelectedId(recent.id);
+      setTitle(recent.title);
+      setBody(recent.body);
+      setSkill(recentSkill); setReviewAt(recentReviewAt); setReviewPrompt(recentReviewPrompt); setReviewCount(recentReviewCount);
+      setMode("view");
+      setStatus({ tone: "saved", text: `Sửa lần cuối ${shortDate(recent.updatedAt)}` });
+    });
+    return () => window.cancelAnimationFrame(frame);
+  }, [ready, notes]);
   const words = useMemo(() => entries.filter((entry): entry is Extract<NotebookEntry, { kind: "word" }> => entry.kind === "word"), [entries]);
   const reviewById = useMemo(() => new Map((reviews ?? []).map((review) => [review.notebook_entry_id, review])), [reviews]);
-  const meta = useMemo(() => new Map(entries.map((entry) => [entry.id, entry.kind === "word"
-    ? { kind: "vocab" as EntryKind, tags: [] as string[], stats: noteStats(""), snippet: [entry.meaningVi, entry.topic].filter(Boolean).join(" · ") }
-    : { kind: entryKind(entry), tags: noteTags(entry.body), stats: noteStats(entry.body), snippet: noteSnippet(entry.body) }])), [entries]);
+  const meta = useMemo(() => new Map(notes.map((entry) => [entry.id,
+    { kind: entryKind(entry), tags: noteTags(entry.body), stats: noteStats(entry.body), snippet: noteSnippet(entry.body) }])), [notes]);
   const tagCounts = useMemo(() => {
     const counts = new Map<string, number>();
     for (const item of meta.values()) item.tags.forEach((value) => counts.set(value, (counts.get(value) ?? 0) + 1));
@@ -303,92 +346,78 @@ export function NotesWorkspace({ entries, ready, error, books, booksError, addEn
     return counts;
   }, [meta]);
   const needle = query.trim().toLocaleLowerCase("vi");
-  const shown = entries.filter((entry) => {
+  const shown = notes.filter((entry) => {
     const info = meta.get(entry.id)!;
     if (kindFilter !== "all" && info.kind !== kindFilter) return false;
     if (tag && !info.tags.includes(tag)) return false;
     if (filter === "source" && !hasSource(entry)) return false;
     if (filter === "tasks" && !(info.stats.tasks > info.stats.done)) return false;
-    const text = entry.kind === "word" ? `${entry.title} ${entry.meaningVi} ${entry.topic ?? ""}` : `${entry.title} ${entry.body}`;
-    return !needle || text.toLocaleLowerCase("vi").includes(needle);
+    if (filter === "review" && !reviewDue(entry.reviewAt)) return false;
+    return !needle || `${entry.title} ${entry.body}`.toLocaleLowerCase("vi").includes(needle);
   }).sort((a, b) => (sort === "title" ? a.title.localeCompare(b.title, "vi") : sort === "created" ? b.createdAt.localeCompare(a.createdAt) : b.updatedAt.localeCompare(a.updatedAt)));
   const grouped = sort === "title" ? [{ label: "A → Z", items: shown }] : groups.map((label) => ({ label, items: shown.filter((entry) => dateGroup(sort === "created" ? entry.createdAt : entry.updatedAt) === label) })).filter((group) => group.items.length);
   const selected = notes.find((note) => note.id === selectedId) ?? null;
-  const selectedWord = view.type === "word" && view.id ? words.find((entry) => entry.id === view.id) ?? null : null;
   const stats = noteStats(body);
 
-  // Review numbers for the summary cards and the "Ôn hôm nay" panel.
+  // Review numbers for the compact study links.
   const dueWords = words.filter((entry) => { const review = reviewById.get(entry.id); return review && new Date(review.due_at).getTime() <= now; })
     .sort((a, b) => reviewById.get(a.id)!.due_at.localeCompare(reviewById.get(b.id)!.due_at));
-  const dueIds = new Set(dueWords.map((entry) => entry.id));
-  const states = words.reduce((sum, entry) => { sum[wordState(reviewById.get(entry.id))] += 1; return sum; }, { new: 0, learning: 0, reviewing: 0, mastered: 0 });
-  const remembered = words.length ? Math.round(((states.reviewing + states.mastered) / words.length) * 100) : 0;
   const reviewsReady = reviews !== null;
   const notesThisWeek = notes.filter((note) => note.updatedAt >= weekAgo).length;
-  const minutes = (count: number) => `~${Math.max(1, Math.ceil(count / 2))} phút`;
+  const dueNotes = notes.filter((note) => reviewDue(note.reviewAt)).length;
 
   const kindIcon = (kind: EntryKind) => kind === "vocab" ? <b aria-hidden="true">Aa</b> : kind === "mistake" ? <CircleAlert size={16} aria-hidden="true" /> : kind === "outline" ? <List size={16} aria-hidden="true" /> : <FileText size={16} aria-hidden="true" />;
-  const templateChoices = [
-    { id: "vocab", label: "Từ vựng", hint: "Tự điền IPA, lưu vào Sổ từ", kind: "vocab" as EntryKind },
-    ...noteTemplates.map((template) => ({ id: template.id, label: template.label, hint: template.hint, kind: (template.id === "mistake" ? "mistake" : template.id === "lesson" ? "free" : "outline") as EntryKind })),
-  ];
+  const templateChoices = noteTemplates.map((template) => ({ id: template.id, label: template.label, hint: template.hint, kind: (template.id === "mistake" ? "mistake" : ["lesson", "reading-listening"].includes(template.id) ? "free" : "outline") as EntryKind }));
   const closeOnBlur = (close: () => void) => (event: FocusEvent<HTMLDivElement>) => { if (!event.currentTarget.contains(event.relatedTarget as Node | null)) close(); };
 
   return <div className={`content-page qn ${focus ? "qn-focus" : ""} ${mobileEditor ? "qn-show-editor" : ""}`}>
     <PageHeader
       className="qn-head"
       title="Ghi chú học tập"
-      description="Từ mới vào Sổ từ để ôn đúng lúc; lỗi sai, dàn ý, ý tưởng ở cùng một chỗ."
+      description="Ghi lại lỗi sai, dàn ý và ý tưởng IELTS để tìm lại khi cần."
       sticker="notebook"
       actions={<>
-        {dueWords.length > 0 && <Link className="button subtle" href="/app/vocabulary/review"><RotateCcw size={16} /> Ôn {dueWords.length} từ đến hạn</Link>}
         <div className="qn-new" onBlur={closeOnBlur(() => setNewMenu(false))} onKeyDown={(event) => { if (event.key === "Escape") setNewMenu(false); }}>
           <button type="button" className="button primary" aria-haspopup="menu" aria-expanded={newMenu} onClick={() => setNewMenu((value) => !value)}><Plus size={17} /> Ghi chú mới <ChevronDown size={15} /></button>
           {newMenu && <div className="qn-menu qn-new-menu" role="menu" onMouseDown={(event) => event.preventDefault()}>
             <button role="menuitem" type="button" onClick={() => openNote(null)}><span className="qn-kind free"><PencilLine size={15} aria-hidden="true" /></span><span><strong>Ghi chú trống</strong><small>Viết tự do</small></span></button>
             {templateChoices.map((item) => <button role="menuitem" type="button" key={item.id} onClick={() => startFromTemplate(item.id)}><span className={`qn-kind ${item.kind}`}>{kindIcon(item.kind)}</span><span><strong>{item.label}</strong><small>{item.hint}</small></span></button>)}
+            <Link role="menuitem" href="/app/vocabulary/notebook"><span className="qn-kind vocab"><b aria-hidden="true">Aa</b></span><span><strong>Thêm từ vựng</strong><small>Mở Sổ từ để lưu và ôn</small></span></Link>
           </div>}
         </div>
       </>}
     />
     {error && <p className="form-error" role="alert">{error}</p>}
 
-    <div className="qn-summary" role="group" aria-label="Tổng quan ghi chú và ôn tập">
-      <Link href="/app/vocabulary/review" className={`qn-stat${dueWords.length ? " is-on" : ""}`}>
-        <small>Cần ôn hôm nay</small><strong>{reviewsReady ? dueWords.length : "…"}</strong>
-        <span>{!reviewsReady ? "đang tải lịch ôn" : dueWords.length ? `từ đến hạn · ${minutes(dueWords.length)}` : states.new ? `${states.new} từ mới chờ học` : "đã ôn xong hôm nay"}</span>
-      </Link>
-      <Link href="/app/vocabulary/notebook" className="qn-stat">
-        <small>Sổ từ</small><strong>{ready ? words.length : "…"}</strong>
-        <span className="qn-stat-bar" aria-hidden="true"><i style={{ width: `${remembered}%` }} /></span>
-        <span>{reviewsReady ? `${states.learning + states.reviewing} đang ôn · ${states.mastered} đã thuộc · ${states.new} mới` : "…"}</span>
-      </Link>
-      <Link href="/app/grammar/review" className="qn-stat">
-        <small>Sổ lỗi Grammar</small><strong>{mistakeCount ?? "…"}</strong><span>câu chờ ôn lại</span>
-      </Link>
-      <div className="qn-stat">
-        <small>Ghi chú</small><strong>{ready ? notes.length : "…"}</strong><span>{ready ? `${notesThisWeek} cập nhật tuần này` : "…"}</span>
-      </div>
+    <div className="qn-overview" aria-label="Tổng quan ghi chú">
+      <p><strong>{ready ? notes.length : "…"} ghi chú</strong><span>·</span>{ready ? `${notesThisWeek} cập nhật tuần này` : "Đang tải"}{dueNotes > 0 && <><span>·</span><button type="button" className="qn-due-link" onClick={() => { setFilter("review"); setShowFilters(true); setMobileEditor(false); }}>{dueNotes} cần ôn</button></>}</p>
+      <nav aria-label="Các sổ ôn tập">
+        <Link href="/app/vocabulary/notebook"><BookOpen size={15} /> Sổ từ {ready ? words.length : "…"}</Link>
+        {reviewsReady && dueWords.length > 0 && <Link href="/app/vocabulary/review"><RotateCcw size={15} /> Ôn {dueWords.length} từ</Link>}
+        <Link href="/app/grammar/review"><CircleAlert size={15} /> Sổ lỗi {mistakeCount ?? "…"}</Link>
+        <button type="button" aria-expanded={showBooks} onClick={() => setShowBooks((value) => !value)}><BookOpen size={15} /> Sổ tay cũ ({books.length}) <ChevronDown size={13} className={showBooks ? "open" : ""} /></button>
+      </nav>
     </div>
+    {showBooks && <div className="qn-archive" aria-label="Sổ tay cũ">{books.map((book) => <Link href={`/app/notebook/${book.id}`} key={book.id}><BookOpen size={14} /><span>{book.title}</span><small>{shortDate(book.updated_at)}</small></Link>)}{booksError && <p>Chưa tải được danh sách sổ cũ. Hãy tải lại trang.</p>}<Link href="/app/notebook/library"><span>Quản lý sổ cũ</span><ArrowRight size={14} /></Link></div>}
 
-    <div className="qn-shell">
     <div className="qn-layout">
       <aside className="qn-side" aria-label="Danh sách ghi chú">
         <div className="qn-side-top">
-          <label className="qn-search"><Search size={17} /><input value={query} onChange={(event) => setQuery(event.target.value)} placeholder="Tìm từ, nội dung, #thẻ…" aria-label="Tìm trong ghi chú" />{query && <button type="button" onClick={() => setQuery("")} aria-label="Xóa tìm kiếm"><X size={15} /></button>}</label>
+          <label className="qn-search"><Search size={17} /><input value={query} onChange={(event) => setQuery(event.target.value)} placeholder="Tìm ghi chú, #thẻ…" aria-label="Tìm trong ghi chú" />{query && <button type="button" onClick={() => setQuery("")} aria-label="Xóa tìm kiếm"><X size={15} /></button>}</label>
           <div className="qn-kinds" role="group" aria-label="Lọc theo loại">
-            <button type="button" aria-pressed={kindFilter === "all"} onClick={() => setKindFilter("all")}>Tất cả <small>{entries.length}</small></button>
+            <button type="button" aria-pressed={kindFilter === "all"} onClick={() => setKindFilter("all")}>Tất cả <small>{notes.length}</small></button>
             {kindOrder.map((kind) => <button type="button" key={kind} aria-pressed={kindFilter === kind} onClick={() => setKindFilter(kind)}>{entryKindLabels[kind]} {kindCounts[kind] > 0 && <small>{kindCounts[kind]}</small>}</button>)}
           </div>
-          <div className="qn-filters">
+          <button type="button" className="qn-filter-toggle" aria-expanded={showFilters} onClick={() => setShowFilters((value) => !value)}>Lọc & sắp xếp {(filter !== "all" || tag || sort !== "updated") && <span>Đang lọc</span>} <ChevronDown size={14} className={showFilters ? "open" : ""} /></button>
+          {showFilters && <div className="qn-filters">
             <select value={filter} onChange={(event) => setFilter(event.target.value as Filter)} aria-label="Lọc thêm">
-              <option value="all">Mọi nguồn</option><option value="source">Từ bài học</option><option value="tasks">Còn việc chưa xong</option>
+              <option value="all">Mọi ghi chú</option><option value="source">Từ bài học</option><option value="tasks">Còn việc chưa xong</option><option value="review">Đến hạn ôn</option>
             </select>
             <select value={sort} onChange={(event) => setSort(event.target.value as Sort)} aria-label="Sắp xếp">
               <option value="updated">Mới sửa</option><option value="created">Mới tạo</option><option value="title">A → Z</option>
             </select>
-          </div>
-          {tagCounts.length > 0 && <div className="qn-tag-cloud" aria-label="Thẻ">
+          </div>}
+          {showFilters && tagCounts.length > 0 && <div className="qn-tag-cloud" aria-label="Thẻ">
             {tagCounts.slice(0, 8).map(([value, count]) => <button key={value} type="button" className={tag === value ? "active" : ""} aria-pressed={tag === value} onClick={() => pickTag(value)}>#{value} <small>{count}</small></button>)}
           </div>}
         </div>
@@ -399,16 +428,16 @@ export function NotesWorkspace({ entries, ready, error, books, booksError, addEn
             {group.items.map((entry) => {
               const info = meta.get(entry.id)!;
               const active = selectedId === entry.id;
-              const label = entry.kind === "word" ? `${entry.title}${entry.partOfSpeech ? ` (${posLabel(entry.partOfSpeech)})` : ""}` : entry.title;
-              return <button type="button" key={entry.id} className={`qn-item ${active ? "active" : ""}`} aria-current={active} aria-label={`${entryKindLabels[info.kind]}: ${label}`} onClick={() => entry.kind === "word" ? openWord(entry) : openNote(entry)}>
+              const label = entry.title;
+              return <button type="button" key={entry.id} className={`qn-item ${active ? "active" : ""}`} aria-current={active} aria-label={`${entryKindLabels[info.kind]}: ${label}`} onClick={() => openNote(entry)}>
                 <span className={`qn-kind ${info.kind}`}>{kindIcon(info.kind)}</span>
                 <span className="qn-item-text">
                   <strong>{label}</strong>
                   <span>{info.snippet || "Chưa có nội dung"}</span>
                   <small>
                     <time dateTime={entry.updatedAt}>{shortDate(entry.updatedAt)}</time>
-                    {entry.kind === "word" && reviewsReady && <em className={dueIds.has(entry.id) ? "due" : ""}>{dueIds.has(entry.id) ? "Đến hạn ôn" : wordStateLabels[wordState(reviewById.get(entry.id))]}</em>}
                     {info.stats.tasks > 0 && <em className={info.stats.done === info.stats.tasks ? "done" : ""}><CheckSquare size={12} /> {info.stats.done}/{info.stats.tasks}</em>}
+                    {reviewDue(entry.reviewAt) && <em className="due"><CalendarDays size={12} /> Cần ôn</em>}
                     {hasSource(entry) && <em><Link2 size={12} /> Bài học</em>}
                     {info.tags.slice(0, 2).map((value) => <b key={value}>#{value}</b>)}
                   </small>
@@ -417,18 +446,13 @@ export function NotesWorkspace({ entries, ready, error, books, booksError, addEn
             })}
           </section>)}
           {ready && !shown.length && <div className="qn-list-empty">
-            {entries.length ? <><p>Không có mục phù hợp{tag ? <> với <b>#{tag}</b></> : ""}.</p><button type="button" className="button ghost" onClick={() => { setQuery(""); setTag(null); setFilter("all"); setKindFilter("all"); }}>Bỏ lọc</button></>
+            {notes.length ? <><p>Không có ghi chú phù hợp{tag ? <> với <b>#{tag}</b></> : ""}.</p><button type="button" className="button ghost" onClick={() => { setQuery(""); setTag(null); setFilter("all"); setKindFilter("all"); }}>Bỏ lọc</button></>
               : <p>Chưa có ghi chú nào. Bấm “Ghi chú mới” và chọn một mẫu để bắt đầu nhanh.</p>}
           </div>}
         </div>
       </aside>
 
-      <section className="qn-editor" aria-label={view.type === "word" ? "Thẻ từ vựng" : "Soạn ghi chú"}>
-        {view.type === "word" ? <WordEditor key={view.id ?? "new"} entry={selectedWord} review={selectedWord ? reviewById.get(selectedWord.id) : undefined}
-          sourceLabel={hasSource(selectedWord) ? sourceLabel(selectedWord!.sourcePath) : undefined}
-          addEntry={addEntry} updateEntry={updateEntry} removeEntry={removeEntry}
-          onSaved={(created) => { setFlash(savedBefore(created.createdAt) ? "Từ này đã có trong Sổ từ" : "Đã lưu vào Sổ từ"); openWord(created); }}
-          onBack={() => { setView({ type: "note" }); setSelectedId(null); setMobileEditor(false); }} /> : <>
+      <section className="qn-editor" aria-label="Soạn ghi chú">
         <header className="qn-editor-head">
           <button type="button" className="qn-back" onClick={() => setMobileEditor(false)} aria-label="Về danh sách"><ArrowLeft size={18} /></button>
           {(selected || body.trim()) && <span className={`qn-kind-chip ${entryKind({ kind: "note", title, body })}`}>{entryKindLabels[entryKind({ kind: "note", title, body })]}</span>}
@@ -451,6 +475,15 @@ export function NotesWorkspace({ entries, ready, error, books, booksError, addEn
 
         <input ref={titleInput} className="qn-title" maxLength={100} value={title} onChange={(event) => changeTitle(event.target.value)} onKeyDown={(event) => { if (event.key === "Enter") { event.preventDefault(); setMode("edit"); window.requestAnimationFrame(() => editor.current?.focus()); } }} placeholder="Tiêu đề ghi chú" aria-label="Tiêu đề ghi chú" />
         {hasSource(selected) && <Link className="qn-source" href={selected!.sourcePath}><Link2 size={14} /> {sourceLabel(selected!.sourcePath)} <ArrowRight size={13} /></Link>}
+        <details key={noteSession} className="qn-learning">
+          <summary><span><CalendarDays size={15} /> Tùy chọn học tập{reviewAt && <small>Ôn {shortDate(reviewAt)}</small>}</span><ChevronDown size={15} /></summary>
+          <div className="qn-learning-fields">
+            <label>Kỹ năng<select value={skill} onChange={(event) => changeLearning({ skill: event.target.value as NoteSkill })}>{Object.entries(skillLabels).map(([value, label]) => <option key={value} value={value}>{label}</option>)}</select></label>
+            <label>Ngày ôn lại<input type="date" value={reviewAt ?? ""} onChange={(event) => changeLearning({ reviewAt: event.target.value || null })} /></label>
+            <label className="qn-prompt">Câu hỏi tự kiểm tra<input maxLength={500} value={reviewPrompt} onChange={(event) => changeLearning({ reviewPrompt: event.target.value })} placeholder="Bạn cần nhớ điều gì từ ghi chú này?" /></label>
+            <button type="button" className="qn-review-button" disabled={!selected || status.tone !== "saved"} onClick={() => { setReviewRevealed(false); setReviewOpen(true); }}><RotateCcw size={15} /> Tự kiểm tra</button>
+          </div>
+        </details>
 
         {mode === "edit" ? <>
           <div className="qn-toolbar" role="toolbar" aria-label="Định dạng">
@@ -463,37 +496,12 @@ export function NotesWorkspace({ entries, ready, error, books, booksError, addEn
         <footer className="qn-foot">
           <span>{stats.words ? `${stats.words} từ · ${stats.minutes} phút đọc` : "Chưa có nội dung"}</span>
           {stats.tasks > 0 && <span className="qn-progress"><CheckSquare size={13} /> {stats.done}/{stats.tasks} việc <i><b style={{ width: `${(stats.done / stats.tasks) * 100}%` }} /></i></span>}
+          {reviewAt && <span className="qn-review-foot"><CalendarDays size={13} /> Ôn {shortDate(reviewAt)}{reviewCount > 0 ? ` · ${reviewCount} lần` : ""}</span>}
           <span className="qn-keys"><kbd>Ctrl</kbd>+<kbd>S</kbd> lưu ngay · <kbd>Ctrl</kbd>+<kbd>B</kbd> đậm</span>
         </footer>
-        </>}
         {flash && <p className="qn-flash" role="status">{flash}</p>}
+        {reviewOpen && <div className="qn-review-backdrop" role="presentation"><section className="qn-review-dialog" role="dialog" aria-modal="true" aria-label="Tự kiểm tra ghi chú"><button type="button" className="qn-review-close" aria-label="Đóng" onClick={() => setReviewOpen(false)}><X size={18} /></button><span className="qn-review-kicker"><RotateCcw size={16} /> Ôn tập chủ động</span><h2>{reviewPrompt || `Bạn nhớ gì về “${title}”?`}</h2>{!reviewRevealed ? <><p>Thử trả lời trước khi xem lại ghi chú.</p><button type="button" className="button primary" onClick={() => setReviewRevealed(true)}>Hiện ghi chú</button></> : <><div className="qn-review-answer"><NoteMarkdown body={body} /></div><p>Bạn đã nhớ được nội dung này chưa?</p><div className="qn-review-choices"><button type="button" disabled={reviewBusy} onClick={() => void finishReview(false)}>Cần ôn lại ngày mai</button><button type="button" className="button primary" disabled={reviewBusy} onClick={() => void finishReview(true)}>Đã nhớ · sau 7 ngày</button></div></>}</section></div>}
       </section>
-    </div>
-
-    <aside className="qn-rail" aria-label="Ôn tập và tạo nhanh">
-      <section className="card qn-rail-card">
-        <h2><span className="qn-rail-icon sun"><RotateCcw size={16} aria-hidden="true" /></span> Ôn hôm nay</h2>
-        {!reviewsReady ? <p className="qn-rail-note">Đang tải lịch ôn…</p> : dueWords.length ? <ul className="qn-due">
-          {dueWords.slice(0, 4).map((entry) => <li key={entry.id}><button type="button" onClick={() => openWord(entry)}><b>{entry.title}</b><span>{entry.meaningVi}</span></button></li>)}
-          {dueWords.length > 4 && <li className="qn-due-more">và {dueWords.length - 4} từ khác</li>}
-        </ul> : <p className="qn-rail-note">{states.new ? `Không có từ đến hạn. ${states.new} từ mới trong Sổ từ đang chờ học.` : words.length ? "Bạn đã ôn hết từ đến hạn hôm nay." : "Lưu từ mới để bắt đầu ôn tập."}</p>}
-        {(dueWords.length > 0 || states.new > 0) && <Link className="button primary qn-rail-button" href="/app/vocabulary/review">{dueWords.length ? `Bắt đầu ôn · ${minutes(dueWords.length)}` : "Học từ mới"}</Link>}
-      </section>
-
-      <section className="card qn-rail-card">
-        <h2>Tạo nhanh từ mẫu</h2>
-        <div className="qn-quick">
-          {templateChoices.slice(0, 4).map((item) => <button type="button" key={item.id} onClick={() => startFromTemplate(item.id)}><span className={`qn-kind ${item.kind}`}>{kindIcon(item.kind)}</span><span><strong>{item.label}</strong><small>{item.hint}</small></span></button>)}
-        </div>
-      </section>
-
-      <nav className="card qn-rail-card qn-rail-links" aria-label="Sổ ôn tập">
-        <Link href="/app/vocabulary/notebook"><BookOpen size={16} aria-hidden="true" /><span>Mở Sổ từ đầy đủ</span><ArrowRight size={15} aria-hidden="true" /></Link>
-        <Link href="/app/grammar/review"><CircleAlert size={16} aria-hidden="true" /><span>Sổ lỗi Grammar</span><ArrowRight size={15} aria-hidden="true" /></Link>
-        <button type="button" aria-expanded={showBooks} onClick={() => setShowBooks((value) => !value)}><BookOpen size={16} aria-hidden="true" /><span>Sổ tay cũ ({books.length})</span><ChevronDown size={15} aria-hidden="true" className={showBooks ? "open" : ""} /></button>
-        {showBooks && <div className="qn-archive">{books.map((book) => <Link href={`/app/notebook/${book.id}`} key={book.id}><span>{book.title}</span><small>{shortDate(book.updated_at)}</small></Link>)}{booksError && <p>Chưa tải được danh sách sổ cũ. Hãy tải lại trang.</p>}<Link href="/app/notebook/library"><span>Quản lý sổ cũ</span><ArrowRight size={14} aria-hidden="true" /></Link></div>}
-      </nav>
-    </aside>
     </div>
   </div>;
 }
