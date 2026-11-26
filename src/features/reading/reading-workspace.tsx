@@ -79,7 +79,7 @@ export function ReadingWorkspace({ docKey, title, paragraphs, persist = true, se
   translation?: (index: number) => React.ReactNode;
   afterParagraph?: (index: number) => React.ReactNode;
   onSelectWord?: (word: string, context?: string) => void;
-  onTranslateSelection?: (text: string) => Promise<string>;
+  onTranslateSelection?: (text: string, paragraph: number) => Promise<string>;
   lookupPreview?: { word: string; meaning: string; loading: boolean } | null;
   onReadEnd?: () => void;
   onParagraphSeen?: (index: number) => void;
@@ -446,7 +446,7 @@ export function ReadingWorkspace({ docKey, title, paragraphs, persist = true, se
     setPopover(null);
     setSelectionTranslation({ source, paragraph, result: "", error: "", busy: true });
     try {
-      const result = await onTranslateSelection(source);
+      const result = await onTranslateSelection(source, paragraph);
       setSelectionTranslation({ source, paragraph, result, error: "", busy: false });
     } catch (error) {
       setSelectionTranslation({ source, paragraph, result: "", error: error instanceof Error ? error.message : "Chưa dịch được đoạn đã chọn.", busy: false });

@@ -1094,6 +1094,11 @@
 .news-word-meaning{display:grid;gap:3px}
 .news-word-meaning>strong{font-size:var(--fs-xs);color:var(--navy)}
 .news-word-meaning p{margin:0;padding:9px 11px;border:1px solid #d6e9ed;border-radius:var(--r-md);background:#fff;font-size:var(--fs-base);font-weight:700}
+.news-word-meaning>small{color:var(--muted,#5b6b7a);font-size:var(--fs-xs)}
+.news-word-sentence{display:grid;gap:4px;padding:9px 11px;border-radius:var(--r-md);background:#f4f9fa}
+.news-word-sentence>strong{font-size:var(--fs-xs);color:var(--navy)}
+.news-word-sentence p{margin:0;font-size:var(--fs-sm);line-height:1.5}
+.news-word-sentence p[lang="vi"]{font-weight:600;color:var(--navy)}
 .news-word-result .news-word-suggest-toggle{justify-self:start;padding:4px 0;background:transparent;color:var(--teal-strong);font-size:var(--fs-xs)}
 .news-word-suggestion{display:grid;gap:8px}
 .news-word-suggestion label{display:grid;gap:5px;font-size:var(--fs-xs);font-weight:700;color:var(--navy)}

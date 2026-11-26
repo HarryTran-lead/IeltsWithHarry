@@ -272,7 +272,9 @@ export async function POST(request: NextRequest) {
     }
     if (action === "translation_reset") {
       const { data, error } = await db.from("news_article_bodies").update({
-        translation_vi: null, translation_vi_draft: [], translation_model: null, translation_updated_at: null, translation_retry_after: null,
+        // A retry time (already passed) marks this as a deliberate reset, so the body trigger does not restore the old translation.
+        translation_vi: null, translation_vi_draft: [], translation_pairs: null, glossary: null, translation_model: null, translation_updated_at: null,
+        translation_retry_after: new Date(Date.now() - 1000).toISOString(),
       }).eq("article_id", articleId).select("article_id");
       if (error) throw error;
       return NextResponse.json({ message: data?.length ? "Đã xóa bản dịch. Bài sẽ được dịch lại ở lượt dịch kế tiếp." : "Bài chưa có toàn văn." });
