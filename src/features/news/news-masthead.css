@@ -1727,3 +1727,8 @@
 /* Cards switch to the side-by-side layout below 560px, so the grid must be a single column there too
    (two side-by-side cards pushed the save and source buttons outside the card on tablets). */
 @container news (max-width: 560px) { .news-home .news-feed .news-grid { grid-template-columns: minmax(0, 1fr); } }
+/* The IELTS passage an article reads like, and the question forms of its set, on the card. */
+.news-card-progress span.is-passage { background: #eef0fb; color: #3d4aa8; }
+.news-card-types { display: flex; flex-wrap: wrap; gap: 4px; margin: -6px 0 11px; }
+.news-card-types span { padding: 2px 7px; border: 1px solid #e3e8ec; border-radius: 6px; background: #fff; color: #4f6474; font-size: 10.5px; font-weight: 700; white-space: nowrap; }
+.news-card-types b { color: #8a9aa6; font-weight: 700; }
