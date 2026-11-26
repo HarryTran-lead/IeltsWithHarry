@@ -1,8 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { createClient } from "@/lib/supabase/server";
 import { newsAdminClient } from "@/lib/news/sync";
-import type { GlossaryEntry, SentencePair } from "@/lib/news/article-translation";
-import { glossaryMeaning, sentenceFor, wordForms } from "@/lib/news/word-meaning";
+import { glossaryMeaning, sentenceFor, wordForms, type GlossaryEntry, type SentencePair } from "@/lib/news/word-meaning";
 
 export const runtime = "nodejs";
 

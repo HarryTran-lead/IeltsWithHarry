@@ -7,8 +7,7 @@ import { BookOpenText, Languages, MessageSquareText, Search, Volume2 } from "luc
 import { createClient } from "@/lib/supabase/browser";
 import { useNotebook } from "@/features/notebook/notebook-store";
 import { Sticker } from "@/components/stickers/stickers";
-import type { SentencePair } from "@/lib/news/article-translation";
-import { selectionTranslation } from "@/lib/news/word-meaning";
+import { selectionTranslation, type SentencePair } from "@/lib/news/word-meaning";
 import { quickDefine as define } from "@/lib/vocabulary/quick-define";
 import { lookupNewsWord, type NewsWordDefinition } from "@/lib/news/word-lookup";
 import { ReadingWorkspace, type ReadingPractice } from "@/features/reading/reading-workspace";
@@ -143,7 +142,7 @@ export function NewsReadingTools({ qaMode = false, articleId, title, paragraphs,
           {lookup ? <div className="news-word-result">
             <div className="news-word-title"><strong>{lookup.word} <small>{lookup.phonetic}</small></strong><button type="button" aria-label={`Nghe phát âm ${lookup.word}`} onClick={()=>pronounce(lookup.word)}><Volume2 size={18}/></button></div>
             {lookupBusy ? <p>Đang tra từ…</p> : <><small>{lookup.part}</small>{lookup.definition&&<p>{lookup.definition}</p>}
-              <div className="news-word-meaning"><strong>Nghĩa tiếng Việt</strong><p>{lookup.meaningVi || "Chưa có nghĩa tiếng Việt."}</p>{lookup.meaningSource&&<small>{lookup.meaningSource==="article"?"Nghĩa trong bài này":lookup.meaningSource==="dictionary"?"Từ điển của Harry Up":"Wiktionary"}</small>}</div>
+              <div className="news-word-meaning"><strong>Nghĩa tiếng Việt</strong><p>{lookup.meaningVi || "Chưa có nghĩa tiếng Việt."}</p>{lookup.meaningSource&&<small>{lookup.meaningSource==="article"?"Nghĩa trong bài này":lookup.meaningSource==="dictionary"?"Kho từ vựng của web":"Wiktionary"}</small>}</div>
               {lookup.sentence&&<div className="news-word-sentence"><strong>Câu trong bài</strong><p lang="en">{lookup.sentence.en}</p><p lang="vi">{lookup.sentence.vi}</p></div>}
               {(lookup.alternatives?.length ?? 0) > 1 && <small>Các nghĩa khác: {lookup.alternatives?.join(" · ")}</small>}
               <button type="button" className="button subtle" disabled={qaMode||!lookup.meaningVi||articleWords.some((item)=>item.title.toLowerCase()===lookup.word.toLowerCase())} onClick={()=>void saveWord(lookup)}>{articleWords.some((item)=>item.title.toLowerCase()===lookup.word.toLowerCase())?"Đã lưu từ":"Lưu từ này"}</button>{lookup.sourceUrl && <small>Nguồn từ điển: <a href={lookup.sourceUrl} target="_blank" rel="noopener noreferrer">Wiktionary</a></small>}

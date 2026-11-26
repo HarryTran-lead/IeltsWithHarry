@@ -1,12 +1,12 @@
 import { AiQuotaError, geminiJson, newsArticleFreeTierReady, newsQuizFreeTierReady } from "./enrichment";
 import { newsAdminClient } from "./sync";
+import { glossaryKey, type GlossaryEntry, type SentencePair } from "./word-meaning";
+
+export type { GlossaryEntry, SentencePair };
 
 type Db = ReturnType<typeof newsAdminClient>;
 /** One English sentence of the article and the paragraph it belongs to. */
 export type Sentence = { paragraph: number; text: string };
-/** A learner word or short phrase with its Vietnamese meaning in this article. */
-export type GlossaryEntry = { word: string; pos: string; vi: string };
-export type SentencePair = { en: string; vi: string };
 
 const MAX_BATCH_CHARACTERS = 4800;
 const MAX_BATCH_SENTENCES = 60;
@@ -60,9 +60,6 @@ export function completeTranslation(sentences: Sentence[], translated: string[],
   sentences.forEach((sentence, index) => pairs[sentence.paragraph].push({ en: sentence.text, vi: translated[index].trim() }));
   return { paragraphs: pairs.map((paragraph) => paragraph.map((pair) => pair.vi).join(" ")), pairs };
 }
-
-/** Normalised form used to match glossary words and look-ups. */
-export function glossaryKey(word: string) { return word.toLowerCase().replace(/[’']/g, "'").replace(/[^a-z' -]/g, "").replace(/\s+/g, " ").trim(); }
 
 export function mergeGlossary(current: GlossaryEntry[], incoming: unknown, limit = GLOSSARY_LIMIT): GlossaryEntry[] {
   const merged = [...current];

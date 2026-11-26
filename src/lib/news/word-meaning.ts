@@ -1,4 +1,10 @@
-import { glossaryKey, type GlossaryEntry, type SentencePair } from "./article-translation";
+// Pure helpers shared by the server route and the reader (no server imports here).
+/** A learner word or short phrase with its Vietnamese meaning in this article. */
+export type GlossaryEntry = { word: string; pos: string; vi: string };
+export type SentencePair = { en: string; vi: string };
+
+/** Normalised form used to match glossary words and look-ups. */
+export function glossaryKey(word: string) { return word.toLowerCase().replace(/[’']/g, "'").replace(/[^a-z' -]/g, "").replace(/\s+/g, " ").trim(); }
 
 /** Base forms a word may appear as in a dictionary: "indicators" → indicator, "rising" → rise. */
 export function wordForms(raw: string): string[] {
