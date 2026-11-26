@@ -136,7 +136,7 @@ export function ExamIntro({ exam, backHref, busy, error, onStart, scheduleSlot, 
     const scopeName = chosen ? partName(readingPart - 1) : "Full test";
     const practiceTags = listening ? ["Điều khiển âm thanh", "Ghi chú", "Chuyển Part"] : ["Tô sáng", "Chỉnh cỡ chữ", "Bài đọc + câu hỏi 2 khung"];
     return <main className={`bx-reading-launch bl-tone-${toneOf(exam.skill)}`}>
-      <div className="br-launch-dialog brl" role="dialog" aria-modal="true" aria-labelledby="br-launch-title">
+      <div className={`br-launch-dialog brl ${listening ? "brl-listening" : ""}`} role="dialog" aria-modal="true" aria-labelledby="br-launch-title">
         <header className="br-launch-head brl-head">
           <div>
             <span className="brl-kicker"><b>{exam.skill}</b>{displayExamTitle(exam.title)} · {scopeName}</span>

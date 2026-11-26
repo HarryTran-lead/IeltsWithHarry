@@ -29,7 +29,9 @@ export function ListeningMock() {
   const id = usePathname().split("/")[4];
   const partValue = Number(useSearchParams().get("part"));
   const selectedPart = Number.isInteger(partValue) && partValue >= 1 && partValue <= 4 ? partValue : 0;
-  return id ? <MockExam key={`${id}:${selectedPart}`} testId={decodeURIComponent(id)} selectedPart={selectedPart} /> : <MockList />;
+  // ?start=1 comes from the catalog's setup dialog: the learner already pressed "Bắt đầu làm bài".
+  const autoStart = useSearchParams().get("start") === "1";
+  return id ? <MockExam key={`${id}:${selectedPart}`} testId={decodeURIComponent(id)} selectedPart={selectedPart} autoStart={autoStart} /> : <MockList />;
 }
 
 function MockList() {
@@ -82,7 +84,7 @@ function MockList() {
 
 type Phase = { kind: "intro" } | { kind: "reading"; part: number; left: number } | { kind: "playing"; part: number } | { kind: "review" } | { kind: "done" };
 
-function MockExam({ testId, selectedPart }: { testId: string; selectedPart: number }) {
+function MockExam({ testId, selectedPart, autoStart = false }: { testId: string; selectedPart: number; autoStart?: boolean }) {
   const router = useRouter();
   const audio = useRef<HTMLAudioElement>(null);
   const queue = useRef<{ part: number; turn: number } | null>(null);
@@ -107,9 +109,18 @@ function MockExam({ testId, selectedPart }: { testId: string; selectedPart: numb
       setTest(data.test);
       const draft = readDraft(testId, selectedPart);
       if (draft) { setAnswers(draft.answers ?? {}); if (draft.outcome) { setOutcome(draft.outcome); setPhase({ kind: "done" }); } }
+      if (autoStart && !draft?.outcome) {
+        const first = selectedPart || 1;
+        setStartedAt(Date.now()); setViewPart(first);
+        const groups = data.test.parts.find((item) => item.part_number === first)?.groups;
+        setPhase({ kind: "reading", part: first, left: Math.max(20, Math.min(60, groups?.reduce((sum, group) => sum + group.pre_read_seconds, 0) ?? 30)) });
+      }
+      if (autoStart) router.replace(`${window.location.pathname}${selectedPart ? `?part=${selectedPart}` : ""}`, { scroll: false });
       setRestored(true);
     });
     return () => { alive = false; };
+  // autoStart is read once, when the test first loads.
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [testId, selectedPart]);
   useEffect(() => { if (restored) writeDraft(testId, { answers, outcome, startedAt: startedAt ?? undefined }, selectedPart); }, [restored, testId, selectedPart, answers, outcome, startedAt]);
   useEffect(() => {

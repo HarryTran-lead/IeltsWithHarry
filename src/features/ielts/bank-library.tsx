@@ -12,7 +12,7 @@ import { gradedBand, speakingCardTitle, speakingFacets, speakingParts, speakingS
 import "./bank-library.css";
 import { Sticker } from "@/components/stickers/stickers";
 import { TaskFigure } from "./writing-figure";
-import { ReadingLaunchModal } from "./reading-launch-modal";
+import { MockLaunchModal, ReadingLaunchModal } from "./reading-launch-modal";
 
 export type Attempt = { id: string; exam_id: string; state: string; score: number | null; total: number | null; notes?: Record<string, string> | null; answered?: string[] };
 
@@ -563,7 +563,9 @@ function MockLibraryCard({ test, part, title, questionTypes }: { test: MockCatal
   const href = `/app/listening/mock/${test.test_id}${part ? `?part=${part}` : ""}`;
   const duration = section?.duration_ms ?? test.duration_ms;
   const types = catalogQuestionTypeIds(questionTypes).map((id) => catalogQuestionTypes.find((group) => group.id === id)?.label ?? "Other Types");
-  return <Link href={href} className="bl-card bl-card-shelf">
+  const [launchOpen, setLaunchOpen] = useState(false);
+  const minutes = Math.max(1, Math.ceil(duration / 60000));
+  return <><Link href={href} onNavigate={(event) => { event.preventDefault(); setLaunchOpen(true); }} className="bl-card bl-card-shelf">
     <span className="bl-thumb">
       {section ? <figure className="bl-art">{/* eslint-disable-next-line @next/next/no-img-element -- cover supplied in the owner's package */}<img src={section.cover_url} alt="" loading="lazy" /></figure>
         : <figure className="bl-art bl-brand-art">{/* eslint-disable-next-line @next/next/no-img-element -- local brand asset */}<img src="/harryup-mascot.webp" alt="" loading="lazy" /><span className="bl-brand-wordmark">Harry<b>Up</b></span><small>IELTS LISTENING</small></figure>}
@@ -574,7 +576,7 @@ function MockLibraryCard({ test, part, title, questionTypes }: { test: MockCatal
       {types.length ? <ul className="bl-types">{types.slice(0, 3).map((type) => <li key={type}>{type}</li>)}</ul> : <span className="bl-types-plain">{part ? 10 : 40} câu hỏi</span>}
       <span className="bl-foot"><span className="bl-source">English Skill Lab · bản luyện thử</span><span className="bl-cta">Luyện đề <ArrowRight size={15} /></span></span>
     </span>
-  </Link>;
+  </Link>{launchOpen && <MockLaunchModal href={href} title={title} scope={part ? `Section ${part}` : "Full test"} questions={part ? 10 : 40} minutes={minutes} onClose={() => setLaunchOpen(false)} />}</>;
 }
 
 /** A filter button that opens a checklist under it; closes on an outside click or Escape. */
@@ -618,7 +620,7 @@ function AttemptChip({ attempt }: { attempt?: Attempt }) {
 /** One exam on the shelf; its shape follows the skill, like a printed practice book. */
 export function ExamCard({ exam, attempt, section }: { exam: CatalogExam; attempt?: Attempt; section?: { part: number; title: string; questionTypes: string[]; questionCount: number } }) {
   const [launchOpen, setLaunchOpen] = useState(false);
-  const canLaunchInline = exam.skill === "Reading";
+  const canLaunchInline = exam.skill === "Reading" || exam.skill === "Listening";
   // A finished exam opens its result and review; "Làm lại" starts a fresh attempt.
   const done = Boolean(attempt && attempt.state !== "in_progress");
   const retryHref = section ? `/app/question-bank/exam/${exam.id}?part=${section.part}` : `/app/question-bank/exam/${exam.id}`;
@@ -677,7 +679,7 @@ export function ExamCard({ exam, attempt, section }: { exam: CatalogExam; attemp
       <span className="bl-foot"><AttemptChip attempt={attempt} /><span className="bl-source">{sourceLabel(exam)}</span>{cta}</span>
     </span>
   </Link>;
-  return <>{retry ? <div className="bl-card-slot">{card}{retry}</div> : card}{launchOpen && <ReadingLaunchModal examId={exam.id} part={section?.part ?? 0} onClose={() => setLaunchOpen(false)} />}</>;
+  return <>{retry ? <div className="bl-card-slot">{card}{retry}</div> : card}{launchOpen && <ReadingLaunchModal skill={exam.skill === "Listening" ? "Listening" : "Reading"} examId={exam.id} part={section?.part ?? 0} onClose={() => setLaunchOpen(false)} />}</>;
 }
 
 /** A small drawing of a Writing Task 1 visual: lines, bars, a pie, a table, a process or a map. */
