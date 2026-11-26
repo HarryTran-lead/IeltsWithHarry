@@ -159,7 +159,7 @@ export function NotebookPage({ compact = false, onImportWord }: { compact?: bool
     const file = new Blob([JSON.stringify({ exportedAt: new Date().toISOString(), entries, visits, attempts }, null, 2)], { type: "application/json" });
     const url = URL.createObjectURL(file);
     const link = document.createElement("a");
-    link.href = url; link.download = "ieltswithharry-notebook.json"; link.click();
+    link.href = url; link.download = "harryup-notebook.json"; link.click();
     window.setTimeout(() => URL.revokeObjectURL(url), 1000);
   }
   return <div className={compact ? "notebook-page smart-legacy" : "content-page notebook-page"}>{!compact && <PageHeader eyebrow="HÀNH TRÌNH CỦA BẠN" title="Sổ tay học tập" description="Ghi chú, từ mới và lịch sử học nằm cùng một chỗ. Mục được lưu khi đang học có liên kết về trang nguồn." sticker="notebook" actions={<><button type="button" className="button primary" onClick={() => { setEditing(null); setShowForm("note"); }}><Plus size={16} /> Ghi chú mới</button><button type="button" className="button subtle" onClick={() => { setEditing(null); setShowForm("word"); }}><Plus size={16} /> Lưu từ mới</button><button type="button" className="button subtle" onClick={exportNotebook}><Download size={16} /> Xuất JSON</button></>} />}

@@ -56,7 +56,7 @@ export function AdminShell({
       <button type="button" className="admin-drawer-close" aria-label="Đóng menu" onClick={() => setDrawerOpen(false)}><X size={18} /></button>
       <Link prefetch={false} href="/admin" className="admin-brand">
         <span className="admin-brand-mark"><HarryMascot size={34} /></span>
-        <span><strong>IeltsWithHarry</strong><small>ADMIN PORTAL</small></span>
+        <span><strong>Harry Up</strong><small>ADMIN PORTAL</small></span>
       </Link>
       <nav aria-label="Admin navigation">
         {groups.map((group) => <div className="admin-nav-group" key={group.label}>

@@ -109,7 +109,7 @@ export function Harry3D({ mood = "happy", width = 120, pulse = 0, yaw = 0, class
   return (
     <span className={`harry-3d is-${state} ${className}`.trim()} style={{ width, height }} role={title ? "img" : undefined} aria-label={title} aria-hidden={title ? undefined : true}>
       {state === "failed"
-        ? <Image src="/ieltswithharry-mascot.webp" alt="" width={width} height={width} />
+        ? <Image src="/harryup-mascot.webp" alt="" width={width} height={width} />
         : <canvas key={modelKey} ref={canvasRef} />}
     </span>
   );

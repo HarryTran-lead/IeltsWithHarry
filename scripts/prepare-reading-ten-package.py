@@ -18,7 +18,7 @@ TYPE_NAMES = {
     "multi_select": "multiple_answers",
     "diagram_completion": "diagram_labelling",
 }
-DIAGRAM_URL = "https://ieltswithharry.vercel.app/images/ielts/reading/m39-canal-lock-diagram.png"
+DIAGRAM_URL = "https://harryup.vercel.app/images/ielts/reading/m39-canal-lock-diagram.png"
 
 
 def option_list(value):
@@ -144,9 +144,9 @@ def convert(source, teacher, test_number):
         "format": "Academic",
         "mode": "practice",
         "durationMinutes": 60,
-        "sourceUrl": "https://ieltswithharry.vercel.app",
+        "sourceUrl": "https://harryup.vercel.app",
         "license": "Owner-supplied original IELTS-style practice; not an official IELTS exam",
-        "licenseUrl": "https://ieltswithharry.vercel.app",
+        "licenseUrl": "https://harryup.vercel.app",
         "attribution": "English Skill Lab",
         "content": {"sections": sections, "prompt": ""},
     }

@@ -1,7 +1,7 @@
 "use client";
 
 import { createContext, Fragment, useCallback, useContext, useEffect, useMemo, useRef, useState } from "react";
-import { AArrowDown, AArrowUp, BookOpenText, Clock3, Columns2, Highlighter, Languages, ListChecks, Minimize2, PanelRightOpen, Timer, Trash2, X } from "lucide-react";
+import { AArrowDown, AArrowUp, BookOpenText, Clock3, Columns2, Highlighter, Languages, ListChecks, Minimize2, PanelRightOpen, Search, Timer, Trash2, X } from "lucide-react";
 import { addHighlight, highlightColors, parseHighlightCache, parseHighlights, segments, trimRange, type Highlight, type HighlightColor } from "@/lib/highlights";
 import { Literata } from "next/font/google";
 import { createClient } from "@/lib/supabase/browser";
@@ -20,7 +20,6 @@ const DEFAULT_SIZE = 3;
 const SIZE_KEY = "ieltswithharry-reader-size";
 const TOOLS_KEY = "ieltswithharry-reader-tools";
 /** Screens wide enough to show the word-lookup panel beside the passage without covering it. */
-const WIDE_LOOKUP_QUERY = "(min-width: 1200px)";
 const colorName: Record<HighlightColor, string> = { sun: "vàng", mint: "xanh", rose: "hồng" };
 
 type Range = Pick<Highlight, "p" | "start" | "end">;
@@ -28,9 +27,9 @@ type Popover = { x: number; y: number; below: boolean; touch: boolean; ranges?: 
 
 /** Questions shown beside the passage in practice mode. `setup` opens before a news practice starts. */
 export type ReadingPractice = { answered: boolean[]; content: React.ReactNode; setup?: React.ReactNode; correct?: (boolean | undefined)[] };
-type PracticeClock = { elapsed: () => number; restart: () => void; stop: (seconds?: number) => void };
-const PracticeClockContext = createContext<PracticeClock>({ elapsed: () => 0, restart: () => {}, stop: () => {} });
-/** Seconds on the practice timer, and a way to start it again for a new round. */
+type PracticeClock = { elapsed: () => number; restart: () => void; stop: (seconds?: number) => void; resume: () => void };
+const PracticeClockContext = createContext<PracticeClock>({ elapsed: () => 0, restart: () => {}, stop: () => {}, resume: () => {} });
+/** Seconds on the practice timer, and ways to start it again, stop it, or carry on from where it stopped. */
 export function usePracticeClock() { return useContext(PracticeClockContext); }
 const EvidenceNavigationContext = createContext<((quote: string) => boolean) | null>(null);
 /** Jump from a graded question's citation to its location in the passage. */
@@ -70,7 +69,7 @@ function anchor(rect: DOMRect, touch: boolean): Pick<Popover, "x" | "y" | "below
  * at the bottom. Highlights are synced to the learner account with a scoped
  * local copy; text size is a device preference.
  */
-export function ReadingWorkspace({ docKey, title, paragraphs, persist = true, sectionHeadings, translation, afterParagraph, onSelectWord, onTranslateSelection, lookupPreview, onReadEnd, onParagraphSeen, resumeAt, resumeRequested, toolbar, tools, after, practice, practiceLimitSeconds, practiceStartedAt, timedPractice }: {
+export function ReadingWorkspace({ docKey, title, paragraphs, persist = true, sectionHeadings, translation, afterParagraph, onSelectWord, onTranslateSelection, lookupPreview, onReadEnd, onParagraphSeen, resumeAt, resumeRequested, startPractice = false, toolbar, tools, after, practice, practiceLimitSeconds, practiceStartedAt, timedPractice }: {
   docKey: string;
   title: string;
   paragraphs: string[];
@@ -79,19 +78,21 @@ export function ReadingWorkspace({ docKey, title, paragraphs, persist = true, se
   translation?: (index: number) => React.ReactNode;
   afterParagraph?: (index: number) => React.ReactNode;
   onSelectWord?: (word: string, context?: string) => void;
-  onTranslateSelection?: (text: string) => Promise<string>;
+  onTranslateSelection?: (text: string, paragraph: number) => Promise<string>;
   lookupPreview?: { word: string; meaning: string; loading: boolean } | null;
   onReadEnd?: () => void;
   onParagraphSeen?: (index: number) => void;
   resumeAt?: number | null;
   resumeRequested?: boolean;
+  /** Open straight into practice once the questions are ready (a "Luyện lại" link). */
+  startPractice?: boolean;
   toolbar?: React.ReactNode;
   tools?: ReadingTool[];
   after?: React.ReactNode;
   practice?: ReadingPractice;
   practiceLimitSeconds?: number;
   practiceStartedAt?: number;
-  timedPractice?: { label: string; active?: boolean; onStart: () => Promise<boolean> | boolean | void; onExit: () => void };
+  timedPractice?: { label: string; active?: boolean; questionCount?: number; onStart: () => Promise<boolean> | boolean | void; onExit: () => void };
 }) {
   const newsReader=docKey.includes("news:");
   const textKey = paragraphs.join("\u0000");
@@ -121,6 +122,8 @@ export function ReadingWorkspace({ docKey, title, paragraphs, persist = true, se
     elapsed: () => stoppedRef.current ?? (epochRef.current === null ? secondsRef.current : elapsedSeconds(epochRef.current)),
     restart: () => { epochRef.current = Date.now(); stoppedRef.current = null; secondsRef.current = 0; setSeconds(0); },
     stop: (value) => { const elapsed = value ?? (epochRef.current === null ? 0 : elapsedSeconds(epochRef.current)); stoppedRef.current = elapsed; secondsRef.current = elapsed; setSeconds(elapsed); },
+    // Only a stopped clock moves again; a running or paused one is left as it is.
+    resume: () => { if (stoppedRef.current === null) return; epochRef.current = Date.now() - stoppedRef.current * 1000; stoppedRef.current = null; },
   }), []);
   const [popover, setPopover] = useState<Popover | null>(null);
   const [selectionTranslation, setSelectionTranslation] = useState<{ source: string; paragraph: number; result: string; error: string; busy: boolean } | null>(null);
@@ -294,7 +297,8 @@ export function ReadingWorkspace({ docKey, title, paragraphs, persist = true, se
     function onPointer(event: PointerEvent) {
       const target = event.target as Element;
       if (popover && !target.closest?.(".rw-popover")) setPopover(null);
-      if (openTool && !target.closest?.(".rw-tools")) setOpenTool(null);
+      // While practising, tapping another word in the passage updates the open lookup panel instead of closing it.
+      if (openTool && !target.closest?.(practicing ? ".rw-tools, .rw-lookup-toggle, .rw-text" : ".rw-tools, .rw-lookup-toggle")) setOpenTool(null);
       if (toolMenu && !target.closest?.(".rw-options")) setToolMenu(false);
     }
     function onScroll() { if (popover) setPopover(null); }
@@ -423,9 +427,7 @@ export function ReadingWorkspace({ docKey, title, paragraphs, persist = true, se
     if (lookupWord && onSelectWord) {
       const first = ranges[0];
       onSelectWord(word, sentenceAt(text[first.p], first.start));
-      // Wide screens open the lookup panel beside the text; on phones and tablets it would cover the passage,
-      // so the popover shows the meaning and opens the full panel only when tapped.
-      if (toolsMin && window.matchMedia(WIDE_LOOKUP_QUERY).matches) setOpenTool(lookupToolId);
+      // On every screen size the popover shows the meaning first; the full lookup panel opens only from "Xem chi tiết".
     }
   }
 
@@ -446,7 +448,7 @@ export function ReadingWorkspace({ docKey, title, paragraphs, persist = true, se
     setPopover(null);
     setSelectionTranslation({ source, paragraph, result: "", error: "", busy: true });
     try {
-      const result = await onTranslateSelection(source);
+      const result = await onTranslateSelection(source, paragraph);
       setSelectionTranslation({ source, paragraph, result, error: "", busy: false });
     } catch (error) {
       setSelectionTranslation({ source, paragraph, result: "", error: error instanceof Error ? error.message : "Chưa dịch được đoạn đã chọn.", busy: false });
@@ -468,6 +470,14 @@ export function ReadingWorkspace({ docKey, title, paragraphs, persist = true, se
     finally { setStarting(false); }
   }
   function requestPractice() { if (practice?.setup) setSetupOpen(true); else enterPractice(); }
+  const startDone = useRef(false);
+  useEffect(() => {
+    if (startDone.current || !startPractice || practicing || !total) return;
+    startDone.current = true;
+    if (!practiceLimitSeconds && stoppedRef.current === null) epochRef.current = Date.now() - secondsRef.current * 1000;
+    epochRef.current ??= Date.now();
+    setMode("practice"); setTab("passage");
+  }, [startPractice, practicing, total, practiceLimitSeconds]);
   function jump(number: number) {
     setPassageWide(false);
     setTab("questions");
@@ -518,6 +528,7 @@ export function ReadingWorkspace({ docKey, title, paragraphs, persist = true, se
         <button type="button" className="rw-exit" onClick={exitPractice}><X size={17} /> Thoát</button>
         <strong className="rw-title">{title}</strong>
         <span className="rw-timer" title={practiceLimitSeconds ? "Thời gian còn lại" : "Thời gian làm bài"}><Timer size={16} /> {clock(practiceLimitSeconds ? Math.max(0, practiceLimitSeconds - seconds) : seconds)}</span>
+        {tools?.length ? <button type="button" className="rw-wide-toggle rw-lookup-toggle" aria-pressed={Boolean(openTool)} aria-label="Tra từ" onClick={() => setOpenTool(openTool ? null : lookupToolId ?? tools[0].id)}><Search size={15} />Tra từ</button> : null}
         <button type="button" className="rw-wide-toggle" aria-pressed={passageWide} onClick={() => { setPassageWide((value) => !value); setTab("passage"); }}>{passageWide ? <Columns2 size={15} /> : <BookOpenText size={15} />}{passageWide ? "Chia đôi" : "Xem toàn bài"}</button>
         <div className="rw-tabs" role="tablist" aria-label="Chọn khung">
           <button type="button" role="tab" aria-selected={tab === "passage"} onClick={() => setTab("passage")}><BookOpenText size={15} /> Bài đọc</button>
@@ -555,8 +566,8 @@ export function ReadingWorkspace({ docKey, title, paragraphs, persist = true, se
               : <Fragment key={part.start}>{part.text}</Fragment>)}</p>
             {translation?.(index)}
             {!practicing && afterParagraph?.(index)}
-            {!practicing && selectionTranslation?.paragraph === index && <aside className="rw-inline-translation" lang="vi" aria-live="polite">
-              <div><strong>Dịch đoạn đã chọn</strong><button type="button" onClick={() => setSelectionTranslation(null)}>Ẩn</button></div>
+            {selectionTranslation?.paragraph === index && <aside className="rw-inline-translation" lang="vi" aria-live="polite">
+              <div><strong>Bản dịch câu chứa phần bạn chọn</strong><button type="button" onClick={() => setSelectionTranslation(null)}>Ẩn</button></div>
               {selectionTranslation.busy ? <p>Đang dịch…</p> : selectionTranslation.error
                 ? <p role="alert">{selectionTranslation.error} <button type="button" onClick={() => void translateSelection(selectionTranslation)}>Thử lại</button></p>
                 : <p>{selectionTranslation.result}</p>}
@@ -574,12 +585,12 @@ export function ReadingWorkspace({ docKey, title, paragraphs, persist = true, se
       {practicing && <div className="rw-divider" role="separator" aria-orientation="vertical" aria-label="Kéo để đổi độ rộng hai khung" aria-valuemin={30} aria-valuemax={70} aria-valuenow={Math.round(split)} tabIndex={0}
         onPointerDown={drag} onKeyDown={(event) => { if (event.key === "ArrowLeft") setSplit((value) => Math.max(30, value - 4)); if (event.key === "ArrowRight") setSplit((value) => Math.min(70, value + 4)); }}><i /></div>}
       <div className="rw-pane rw-side-pane" ref={sideRef}>
-        {toolPanel}
+        {!practicing && toolPanel}
         {practice && <div className="rw-questions"><PracticeClockContext.Provider value={practiceClock}><EvidenceNavigationContext.Provider value={showEvidence}>{practice.content}</EvidenceNavigationContext.Provider></PracticeClockContext.Provider></div>}
       </div>
     </div>
 
-    {timedSetup && <div className="rw-setup-backdrop" onMouseDown={(event) => { if (event.target === event.currentTarget && !starting) setTimedSetup(false); }}><section className="rw-setup-dialog" role="dialog" aria-modal="true" aria-labelledby="timed-title"><button type="button" className="rw-setup-close" disabled={starting} onClick={() => setTimedSetup(false)} aria-label="Đóng"><X size={16}/></button><h2 id="timed-title">Luyện một bài đọc · 20 phút</h2><p>{total} câu hỏi từ bài này. Đây là lượt luyện một passage, không phải đề IELTS đầy đủ và không quy đổi band.</p><p>Không dùng dịch hoặc tra từ. Thời gian vẫn chạy khi đổi tab hoặc thoát màn luyện. Đáp án được tự lưu; tải lại sẽ khôi phục lượt đang làm. Hết giờ chỉ chấm bản nháp máy chủ đã nhận đúng hạn; hệ thống thử nộp khi tab hoạt động. Câu trống tính sai.</p><button type="button" className="button primary" disabled={starting} onClick={() => void enterTimedPractice()}>{starting ? "Đang mở lượt làm…" : "Bắt đầu / tiếp tục lượt đang làm"}</button></section></div>}
+    {timedSetup && <div className="rw-setup-backdrop" onMouseDown={(event) => { if (event.target === event.currentTarget && !starting) setTimedSetup(false); }}><section className="rw-setup-dialog" role="dialog" aria-modal="true" aria-labelledby="timed-title"><button type="button" className="rw-setup-close" disabled={starting} onClick={() => setTimedSetup(false)} aria-label="Đóng"><X size={16}/></button><h2 id="timed-title">Luyện một bài đọc · 20 phút</h2><p>{timedPractice?.questionCount ?? total} câu hỏi từ bài này. Đây là lượt luyện một passage, không phải đề IELTS đầy đủ và không quy đổi band.</p><p>Không dùng dịch hoặc tra từ. Thời gian vẫn chạy khi đổi tab hoặc thoát màn luyện. Đáp án được tự lưu; tải lại sẽ khôi phục lượt đang làm. Hết giờ chỉ chấm bản nháp máy chủ đã nhận đúng hạn; hệ thống thử nộp khi tab hoạt động. Câu trống tính sai.</p><button type="button" className="button primary" disabled={starting} onClick={() => void enterTimedPractice()}>{starting ? "Đang mở lượt làm…" : "Bắt đầu / tiếp tục lượt đang làm"}</button></section></div>}
     {setupOpen && practice?.setup && <div className="rw-setup-backdrop" onMouseDown={(event) => { if (event.target === event.currentTarget) setSetupOpen(false); }}>
       <section className="rw-setup-dialog" role="dialog" aria-modal="true" aria-labelledby="rw-setup-title" onKeyDown={(event) => { if (event.key === "Escape") setSetupOpen(false); }}>
         <button type="button" className="rw-setup-close" onClick={() => setSetupOpen(false)} aria-label="Đóng"><X size={18}/></button>
@@ -599,13 +610,20 @@ export function ReadingWorkspace({ docKey, title, paragraphs, persist = true, se
       })}</div>
     </nav>}
 
+    {/* Untimed practice keeps the lookup: a floating panel over the questions. Timed practice passes no tools. */}
+    {practicing && flyout && <div className="rw-tools rw-practice-tools"><div className="rw-flyout" role="dialog" aria-label={flyout.label}>
+      <button type="button" className="rw-flyout-close" onClick={() => setOpenTool(null)} aria-label="Đóng"><X size={16} /></button>
+      {tools && tools.length > 1 && <div className="rw-tool-switch">{tools.map((tool)=><button type="button" key={tool.id} aria-pressed={tool.id===openTool} onClick={()=>setOpenTool(tool.id)}>{tool.icon}{newsReader?(tool.id==="saved"?"Sổ từ":"Tra từ"):tool.label}</button>)}</div>}
+      {flyout.content}
+    </div></div>}
+
     {popover && <div className={`rw-popover ${popover.below ? "below" : ""} ${popover.touch ? "touch" : ""}`} style={{ left: popover.x, top: popover.y }} role="dialog" aria-label="Highlight">
       {highlightColors.map((color) => <button type="button" key={color} className={`rw-swatch ${color}`} onClick={() => paint(color)} aria-label={`Highlight màu ${colorName[color]}`} />)}
       {popover.mark && <button type="button" className="rw-unmark" onClick={() => { save(highlights.filter((item) => item.id !== popover.mark)); setPopover(null); }}><X size={14} /> Bỏ</button>}
-      {popover.selectedText && onTranslateSelection && !practicing && <button type="button" className="rw-translate-selection" disabled={popover.selectedText.length > 3500 || selectionTranslation?.busy} onClick={() => void translateSelection()} title={popover.selectedText.length > 3500 ? "Chọn tối đa 3.500 ký tự để dịch" : "Dịch phần đã chọn"}><Languages size={14} /> {selectionTranslation?.busy ? "Đang dịch…" : "Dịch đoạn chọn"}</button>}
+      {popover.selectedText && onTranslateSelection && <button type="button" className="rw-translate-selection" disabled={popover.selectedText.length > 3500 || selectionTranslation?.busy} onClick={() => void translateSelection()} title={popover.selectedText.length > 3500 ? "Chọn tối đa 3.500 ký tự để dịch" : "Dịch câu chứa phần đã chọn"}><Languages size={14} /> {selectionTranslation?.busy ? "Đang dịch…" : "Dịch câu"}</button>}
       {popover.word && (() => {
         const meaning = lookupPreview?.word === popover.word ? lookupPreview.loading ? "Đang tra nghĩa…" : lookupPreview.meaning || "Chưa có nghĩa tiếng Việt" : "Đang tra nghĩa…";
-        return lookupToolId && toolsMin && openTool !== lookupToolId
+        return lookupToolId && (toolsMin || practicing) && openTool !== lookupToolId
           ? <button type="button" className="rw-lookup-preview is-action" onClick={() => { setOpenTool(lookupToolId); setPopover(null); }} title="Mở bảng tra từ đầy đủ"><strong>{popover.word}</strong>{meaning}<small>Xem chi tiết ›</small></button>
           : <span className="rw-lookup-preview" role="status"><strong>{popover.word}</strong>{meaning}</span>;
       })()}

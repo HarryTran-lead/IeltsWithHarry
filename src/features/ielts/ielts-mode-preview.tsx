@@ -23,7 +23,7 @@ export function IeltsModePreview({ skill, modeId }: { skill: IeltsSkill; modeId:
   return <main className="ielts-mode-preview">
     <Link className="ielts-mode-preview-back" href={`/app/${skill}`}><ArrowLeft size={18} /> Dashboard {skillNames[skill]}</Link>
     <section className="ielts-mode-preview-hero">
-      <div><span className="ielts-dashboard-kicker">IELTSWITHHARRY / {skillNames[skill].toUpperCase()}</span><span className="ielts-mode-preview-status">Sắp triển khai</span>
+      <div><span className="ielts-dashboard-kicker">HARRY UP / {skillNames[skill].toUpperCase()}</span><span className="ielts-mode-preview-status">Sắp triển khai</span>
         <h1>{mode.title}</h1><p>{mode.detail}</p>
         <div className="ielts-mode-preview-source"><Database size={17} /> Nguồn nội dung: {mode.source}</div>
       </div>

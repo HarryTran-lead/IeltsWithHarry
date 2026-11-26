@@ -36,3 +36,25 @@ describe("Daily News practice by question type", () => {
     expect(gradePractice(keys, { [id(1)]: 1, [id(9)]: 1 })).toBeNull();
   });
 });
+
+describe("Daily News short-answer matching", () => {
+  const brands = "How many different brands are participating in the exhibition?";
+  const vehicles = "How many vehicles were chosen for the motorsport section?";
+  it("accepts what an IELTS examiner would", async () => {
+    const { answerMatches } = await import("../src/lib/news/quiz-check");
+    expect(answerMatches("44 brands", "44", brands)).toBe(true);
+    expect(answerMatches("300", "approximately 300", vehicles)).toBe(true);
+    expect(answerMatches("300 vehicles", "approximately 300", vehicles)).toBe(true);
+    expect(answerMatches("The Plastic Bags", "plastic bags", "What did the shop stop selling?")).toBe(true);
+    expect(answerMatches("1,200", "1200")).toBe(true);
+  });
+  it("still rejects wrong content, plural slips and blanks", async () => {
+    const { answerMatches } = await import("../src/lib/news/quiz-check");
+    expect(answerMatches("45", "44", brands)).toBe(false);
+    expect(answerMatches("44 cars", "44", brands)).toBe(false);
+    expect(answerMatches("brands", "44", brands)).toBe(false);
+    expect(answerMatches("plastic bag", "plastic bags", "What did the shop stop selling?")).toBe(false);
+    expect(answerMatches("more than 300", "300", vehicles)).toBe(false);
+    expect(answerMatches("", "44", brands)).toBe(false);
+  });
+});

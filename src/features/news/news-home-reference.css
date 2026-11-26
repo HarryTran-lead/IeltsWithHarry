@@ -361,3 +361,30 @@
   .news-home .news-feed-stats { order: 3; flex: 1 1 100%; flex-wrap: nowrap; overflow-x: auto; }
   .news-home .news-today-strip .news-daily-plan { flex-wrap: nowrap; }
 }
+
+/* Topic chips: one sideways row with arrow buttons at a clipped edge. */
+.news-interest-picks > .news-chip-rail, .news-home .news-interest-picks > .news-chip-rail { position: relative; display: block; flex: 1 1 auto; min-width: 0; overflow: visible; }
+.news-chip-track { display: flex; flex-wrap: nowrap; gap: 5px; min-width: 0; overflow-x: auto; scroll-behavior: smooth; scrollbar-width: none; }
+.news-chip-track::-webkit-scrollbar { display: none; }
+.news-chip-rail.can-right .news-chip-track { -webkit-mask-image: linear-gradient(to right, #000 calc(100% - 56px), transparent); mask-image: linear-gradient(to right, #000 calc(100% - 56px), transparent); }
+.news-chip-rail.can-left .news-chip-track { -webkit-mask-image: linear-gradient(to left, #000 calc(100% - 56px), transparent); mask-image: linear-gradient(to left, #000 calc(100% - 56px), transparent); }
+.news-chip-rail.can-left.can-right .news-chip-track { -webkit-mask-image: linear-gradient(to right, transparent, #000 56px, #000 calc(100% - 56px), transparent); mask-image: linear-gradient(to right, transparent, #000 56px, #000 calc(100% - 56px), transparent); }
+.news-interest-picks .news-chip-arrow, .news-home .news-interest-picks .news-chip-arrow { position: absolute; top: 50%; z-index: 2; display: grid; place-items: center; width: 28px; height: 28px; padding: 0; border: 1px solid #cfe5e7; border-radius: 999px; background: #fff; color: #0b7f89; box-shadow: 0 4px 12px -6px rgba(16, 42, 67, .45); transform: translateY(-50%); cursor: pointer; }
+.news-interest-picks .news-chip-arrow:hover { border-color: var(--teal, #0b8d98); background: #effafa; }
+.news-chip-arrow.is-left { left: -2px; }
+.news-chip-arrow.is-right { right: -2px; }
+
+/* Phones: the counters wrap onto their own scrolling row instead of being squeezed to nothing,
+   and "Ngẫu nhiên" becomes an icon button so nothing runs off the edge. */
+@media (max-width: 560px) {
+  .news-home .news-feed-tools { flex-wrap: wrap; row-gap: 8px; }
+  .news-home .news-feed-tools .news-feed-count { flex: 1 1 auto; }
+  .news-home .news-feed-tools .news-feed-stats { order: 3; flex: 1 1 100%; min-width: 0; }
+}
+@media (max-width: 440px) {
+  .news-home .news-random-picker .button { width: 38px; padding: 0 !important; gap: 0; }
+  .news-home .news-random-picker .button span { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+  .news-home .news-card button, .news-home .news-card a[aria-label] { min-width: 40px; min-height: 40px; }
+}
+.news-topic-notice { position: absolute; z-index: 5; top: calc(100% + 6px); right: 0; max-width: min(420px, 90vw); padding: 7px 11px; border-radius: 10px; background: #17324d; color: #fff; font-size: 12px; font-weight: 600; line-height: 1.4; box-shadow: 0 10px 24px -12px rgba(16, 42, 67, .6); }
+.news-home .news-interest-picks { position: relative; }

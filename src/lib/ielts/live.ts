@@ -69,7 +69,7 @@ async function newsArticles(): Promise<LiveArticle[]> {
 
 async function librivoxAudio(): Promise<LiveAudio[]> {
   const response = await fetch("https://librivox.org/api/feed/audiobooks/?format=json&limit=80&sort_order=desc&extended=1", {
-    headers: { Accept: "application/json", "User-Agent": "IeltsWithHarry/1.0 (IELTS listening practice)" },
+    headers: { Accept: "application/json", "User-Agent": "HarryUp/1.0 (IELTS listening practice)" },
     signal: AbortSignal.timeout(12000), next: { revalidate: 21600 },
   });
   if (!response.ok) throw new Error(`LibriVox: HTTP ${response.status}`);
@@ -95,7 +95,7 @@ async function librivoxAudio(): Promise<LiveAudio[]> {
 async function worldBankChart(): Promise<LiveDataPoint[]> {
   const currentYear = new Date().getUTCFullYear();
   const response = await fetch(`https://api.worldbank.org/v2/country/VNM;THA/indicator/SP.POP.TOTL?format=json&per_page=100&date=2010:${currentYear}`, {
-    headers: { Accept: "application/json", "User-Agent": "IeltsWithHarry/1.0 (IELTS writing practice)" },
+    headers: { Accept: "application/json", "User-Agent": "HarryUp/1.0 (IELTS writing practice)" },
     signal: AbortSignal.timeout(12000), next: { revalidate: 604800 },
   });
   if (!response.ok) throw new Error(`World Bank: HTTP ${response.status}`);

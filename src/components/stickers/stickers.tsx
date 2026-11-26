@@ -1,7 +1,7 @@
 import type { CSSProperties, ReactNode } from "react";
 
 /*
- * Hand-drawn sticker set for IeltsWithHarry. Every sticker shares one SVG
+ * Hand-drawn sticker set for Harry Up. Every sticker shares one SVG
  * filter (rendered once by <StickerDefs />) that grows a white die-cut border
  * around the artwork, so new stickers only need their coloured shapes.
  * Artwork stays inside the 8–92 range of the 100×100 box to leave room for it.
@@ -46,7 +46,7 @@ const ink = "#10233f";
 function art(name: StickerName, label?: string): ReactNode {
   switch (name) {
     case "harry":
-      return <image href="/ieltswithharry-mascot.webp" x="8" y="8" width="84" height="84" />;
+      return <image href="/harryup-mascot.webp" x="8" y="8" width="84" height="84" />;
     case "star":
       return <>
         <path d="M50 9c3 0 4.6 2 6 5l7.6 15.4 17 2.5c6.6 1 8 5.4 3.4 9.9L71.7 53.7l2.9 16.9c1.1 6.6-2.7 9.4-8.6 6.3L50.8 69l-15.2 8c-5.9 3.1-9.7.3-8.6-6.3l2.9-17L17.5 41.8c-4.7-4.5-3.2-8.9 3.3-9.9l17-2.5L45 14c1.4-3 2.9-5 5-5Z" fill="#ffc94a" stroke="#e8a21c" strokeWidth="3" strokeLinejoin="round" />

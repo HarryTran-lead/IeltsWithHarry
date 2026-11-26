@@ -1,8 +1,8 @@
 "use client";
 
-import { useEffect, useEffectEvent, useMemo, useRef, useState } from "react";
+import { useEffect, useEffectEvent, useMemo, useRef, useState, type MouseEvent as ReactMouseEvent, type TouchEvent as ReactTouchEvent } from "react";
 import Link from "next/link";
-import { ChartNoAxesColumn, Check, CheckCircle2, Clock3, Highlighter, Languages, RotateCcw, Sparkles, TrendingDown, TrendingUp, XCircle } from "lucide-react";
+import { ChartNoAxesColumn, Check, CheckCircle2, Clock3, Languages, Lightbulb, RotateCcw, Sparkles, TrendingDown, TrendingUp, X, XCircle } from "lucide-react";
 import { createClient } from "@/lib/supabase/browser";
 import { celebrateScore } from "@/lib/celebrate";
 import { usePracticeClock, useReadingEvidenceNavigation } from "@/features/reading/reading-workspace";
@@ -60,6 +60,57 @@ function noteWordLimitForPrompt(prompt: string) {
 function wordLimitText(limit: number) {
   return limit === 1 ? "ONE WORD" : limit === 2 ? "TWO WORDS" : "THREE WORDS";
 }
+
+/** Prints **word** in bold, as IELTS instructions bold their key words. */
+function BoldText({ text }: { text: string }) {
+  return <>{text.split(/\*\*(.+?)\*\*/).map((part, index) => index % 2 ? <strong key={index}>{part}</strong> : part)}</>;
+}
+
+/** The paragraph letter of a matching option such as "Paragraph C", or its position letter. */
+function optionLetter(option: string, index: number) {
+  return /^(?:paragraph\s+)?([A-Z])\.?$/i.exec(option.trim())?.[1].toUpperCase() ?? String.fromCharCode(65 + index);
+}
+
+function choiceLetters(count: number) {
+  const letters = Array.from({ length: Math.max(1, count) }, (_, index) => String.fromCharCode(65 + index));
+  return letters.length > 1 ? `${letters.slice(0, -1).join(", ")} or ${letters[letters.length - 1]}` : letters[0];
+}
+
+function wordLimitInstruction(limit = 3) {
+  return limit === 1 ? "Choose **ONE WORD ONLY** from the article for each answer."
+    : `Choose **NO MORE THAN ${wordLimitText(limit)}** from the article for each answer.`;
+}
+
+/** The instruction lines of an IELTS Academic Reading block for each form. */
+function blockInstructions(type: QuestionType, first: number, last: number, optionCount: number, pool: string[] | null, noteLimit: number | null) {
+  const span = last > first ? `${first}–${last}` : `${first}`;
+  switch (type) {
+    case "mcq": return [`Choose the correct letter, **${choiceLetters(optionCount)}**.`];
+    case "tfng": return ["Do the following statements agree with the information given in the article?",
+      "Choose **TRUE** if the statement agrees with the information", "Choose **FALSE** if the statement contradicts the information",
+      "Choose **NOT GIVEN** if there is no information on this"];
+    case "ynng": return ["Do the following statements agree with the claims of the writer?",
+      "Choose **YES** if the statement agrees with the claims of the writer", "Choose **NO** if the statement contradicts the claims of the writer",
+      "Choose **NOT GIVEN** if it is impossible to say what the writer thinks about this"];
+    case "matching_headings": return ["Choose the correct heading for each paragraph from the list of headings below."];
+    case "matching_information": return ["Which paragraph contains the following information?",
+      `Choose the correct letter, **${pool?.length ? `${optionLetter(pool[0], 0)}–${optionLetter(pool[pool.length - 1], pool.length - 1)}` : "A–F"}**.`];
+    case "matching_features": return [`Look at the following statements (Questions ${span}) and the list below.`,
+      "Match each statement with the correct person, organisation or place."];
+    case "matching_sentence_endings": return ["Complete each sentence with the correct ending below."];
+    case "sentence_completion": return ["Complete the sentences below.", wordLimitInstruction()];
+    case "summary_completion": return ["Complete the summary below.", wordLimitInstruction()];
+    case "note_completion": return ["Complete the notes below.", noteLimit ? wordLimitInstruction(noteLimit) : "Follow the word limit shown with each answer."];
+    case "table_completion": return ["Complete the table below."];
+    case "flow_chart_completion": return ["Complete the flow-chart below.", wordLimitInstruction()];
+    case "diagram_label_completion": return ["Label the diagram below.", wordLimitInstruction()];
+    case "short_answer": return ["Answer the questions below.", wordLimitInstruction()];
+    default: return [];
+  }
+}
+
+/** Written forms shown as one passage of gaps, like the completion boxes of an IELTS paper. */
+const GROUPED_COMPLETION = new Set<QuestionType>(["summary_completion", "note_completion", "sentence_completion", "short_answer"]);
 
 // Instructions follow the wording of IELTS Academic Reading papers.
 const groups: Record<QuestionType, { title: string; short: string; instruction: string; hint: string }> = {
@@ -137,14 +188,18 @@ export function NewsAutoQuiz({ articleId, types = ALL_TYPES, examMode = false, e
   const [questionHighlights, setQuestionHighlights] = useState<Record<string, Highlight[]>>({});
   const [selection, setSelection] = useState<{ questionId: string; p: number; start: number; end: number; mark?: string } | null>(null);
   const [saved, setSaved] = useState<{ submittedAt: string; attempts: number } | null>(null);
-  // Time spent on the round shown in the result card; the practice timer restarts with each new round.
+  // Time spent on the round shown in the result card. The practice timer runs for the whole sitting, across question types.
   const [duration, setDuration] = useState<number | null>(null);
   const [history, setHistory] = useState<PracticeAttempt[]>([]);
   const [recoveryFeedback, setRecoveryFeedback] = useState<RecoveryFeedback | null>(null);
   const [wrongIds, setWrongIds] = useState<string[]>([]);
   const [secondsLeft, setSecondsLeft] = useState(1200);
+  // A matching option picked by click, waiting to be placed in an answer box of the same block.
+  const [picked, setPicked] = useState<{ block: string; index: number } | null>(null);
   const submitting=useRef(false);
   const clock = usePracticeClock();
+  // Timer reading at the last practice submission: a round's time is what passed since then.
+  const roundStart = useRef(0);
   const examExpired = examMode && secondsLeft === 0;
   useEffect(() => {
     if (!examMode) return;
@@ -181,6 +236,7 @@ export function NewsAutoQuiz({ articleId, types = ALL_TYPES, examMode = false, e
       setSaved({ submittedAt: previous.submittedAt, attempts: previous.attempts });
       setDuration(previous.durationSeconds ?? null);
       clock.stop(previous.durationSeconds ?? 0);
+      roundStart.current = 0;
     });
     return () => { live = false; };
   }, [articleId, db, onStatus, examMode, qaMode, clock]);
@@ -205,16 +261,27 @@ export function NewsAutoQuiz({ articleId, types = ALL_TYPES, examMode = false, e
   useEffect(() => { onAvailable?.(available); }, [available, onAvailable]);
 
   const partial = wrongIds.length > 0 || (types.length > 0 && available.some((item) => !types.includes(item.type)));
-  const shown = useMemo(() => wrongIds.length ? questions.filter((question) => wrongIds.includes(question.id))
-    : partial ? questions.filter((question) => types.includes(question.question_type)) : questions, [wrongIds, partial, questions, types]);
+  // One block per form, in the order the forms first appear: sets published before blocks were enforced may interleave forms.
+  const ordered = useMemo(() => {
+    const rank = new Map<QuestionType, number>();
+    questions.forEach((question) => { if (!rank.has(question.question_type)) rank.set(question.question_type, rank.size); });
+    return [...questions].sort((a, b) => rank.get(a.question_type)! - rank.get(b.question_type)! || a.sort_order - b.sort_order);
+  }, [questions]);
+  const shown = useMemo(() => wrongIds.length ? ordered.filter((question) => wrongIds.includes(question.id))
+    : partial ? ordered.filter((question) => types.includes(question.question_type)) : ordered, [wrongIds, partial, ordered, types]);
   const graded = shown.length > 0 && shown.every((question) => reviews[question.id]);
+  // Timed sittings hide question translation until the answers are graded.
+  const canTranslate = !examMode || graded;
   const answered = shown.filter((question) => isAnswered(answers[question.id])).length;
+  const answerKey = JSON.stringify(shown.map((question) => [question.id, answers[question.id]]));
+  const [warningFor, setWarningFor] = useState<string | null>(null);
+  const blankWarning = warningFor === answerKey;
   const score = shown.filter((question) => reviews[question.id]?.correct).length;
   // The reader's question strip shows which questions have an answer and, once graded, which are right.
   useEffect(() => { onProgress?.(shown.map((question) => isAnswered(answers[question.id])), shown.map((question) => graded ? reviews[question.id]?.correct : undefined)); }, [answers, shown, graded, reviews, onProgress]);
-  // A different set of question types is a new round with its own timer.
+  // Switching question types stays in the same sitting: the timer carries on instead of starting again.
   const roundKey = shown.map((question) => question.id).join();
-  useEffect(() => { if (roundKey && !examMode) { if(graded)clock.stop(duration??0);else clock.restart(); } }, [roundKey, clock, examMode, graded, duration]);
+  useEffect(() => { if (roundKey && !examMode && !graded) clock.resume(); }, [roundKey, clock, examMode, graded]);
 
   useEffect(()=>{
     if(!examSession||!examMode||graded||!questions.length||examExpired||busy)return;
@@ -334,7 +401,8 @@ export function NewsAutoQuiz({ articleId, types = ALL_TYPES, examMode = false, e
       const value = answers[question.id];
       return [question.id, value === undefined ? "" : typeof value === "string" ? value.trim() : value];
     }));
-    let seconds = Math.min(clock.elapsed(), examMode ? 1200 : 36000);
+    const elapsedNow = clock.elapsed();
+    let seconds = examMode ? Math.min(elapsedNow, 1200) : Math.min(Math.max(0, elapsedNow - roundStart.current), 36000);
     let review: Review[] | null = null;
     await saveQueue.current;
     if(saveConflict.current){setBusy(false);return;}
@@ -375,11 +443,21 @@ export function NewsAutoQuiz({ articleId, types = ALL_TYPES, examMode = false, e
     const result = review;
     setReviews((current) => ({ ...current, ...Object.fromEntries(result.map((item) => [item.id, item])) }));
     setDuration(seconds);
-    clock.stop(seconds);
+    // The timer stops once every question of the article is graded; other question types left to do keep it running.
+    const gradedIds = new Set([...Object.keys(reviews), ...result.map((item) => item.id)]);
+    if (examMode) clock.stop(seconds);
+    else if (questions.every((question) => gradedIds.has(question.id))) clock.stop(elapsedNow);
+    roundStart.current = elapsedNow;
     if(!qaMode)celebrateScore(result.filter((item) => item.correct).length, result.length);
     requestAnimationFrame(() => resultRef.current?.scrollIntoView({ behavior: "smooth", block: "nearest" }));
     }catch{setError("Mất kết nối khi nộp bài. Đáp án còn lưu; hãy thử nộp lại.");}
     finally{submitting.current=false;setBusy(false);}
+  }
+
+  // A retry after the whole article is graded is a new sitting; mid-sitting the timer keeps running.
+  function newRound() {
+    if (questions.every((question) => reviews[question.id])) { roundStart.current = 0; clock.restart(); }
+    else roundStart.current = clock.elapsed();
   }
 
   function retry() {
@@ -388,7 +466,7 @@ export function NewsAutoQuiz({ articleId, types = ALL_TYPES, examMode = false, e
     setAnswers((current) => Object.fromEntries(Object.entries(current).filter(([id]) => !ids.has(id))));
     setReviews((current) => Object.fromEntries(Object.entries(current).filter(([id]) => !ids.has(id))));
     setDuration(null);
-    clock.restart();
+    newRound();
   }
 
   function retryWrong() {
@@ -398,22 +476,71 @@ export function NewsAutoQuiz({ articleId, types = ALL_TYPES, examMode = false, e
     setAnswers((current) => Object.fromEntries(Object.entries(current).filter(([id]) => !ids.includes(id))));
     setReviews((current) => Object.fromEntries(Object.entries(current).filter(([id]) => !ids.includes(id))));
     setDuration(null);
-    clock.restart();
+    newRound();
+  }
+
+  const locked = graded || examExpired;
+  const setAnswer = (id: string, next: number | string) => setAnswers((current) => ({ ...current, [id]: next }));
+  const selectHandlers = (question: Question, paragraph = 0) => ({
+    onMouseUp: (event: ReactMouseEvent<HTMLElement>) => selectQuestion(event.currentTarget, event.target, question, paragraph),
+    onTouchEnd: (event: ReactTouchEvent<HTMLElement>) => { const root = event.currentTarget; const target = event.target; requestAnimationFrame(() => selectQuestion(root, target, question, paragraph)); },
+  });
+
+  /** An IELTS answer gap: the question number and an underlined field, inside the sentence. */
+  function gapInput(question: Question, number: number, badge = true) {
+    const value = answers[question.id];
+    const review = graded ? reviews[question.id] : undefined;
+    return <span className={`news-gap${review ? review.correct ? " is-correct" : " is-wrong" : ""}`}>
+      {badge && <span className="news-q-badge">{number}</span>}
+      <input className="news-gap-input" type="text" maxLength={60} autoComplete="off" spellCheck={false} aria-label={`Câu ${number}: chỗ trống`}
+        value={typeof value === "string" ? value : ""} disabled={locked} onChange={(event) => setAnswer(question.id, event.target.value)} />
+    </span>;
+  }
+
+  /** Question translation stays available as a small icon, out of the way of the paper layout. */
+  function translateButton(question: Question, number: number) {
+    if (!canTranslate) return null;
+    const visible = translationVisible[question.id];
+    return <button type="button" className="news-q-translate" disabled={translatingId === question.id} onClick={() => void toggleTranslation(question)}
+      aria-label={`${visible ? "Ẩn bản dịch" : "Dịch"} câu ${number}`} title={visible ? "Ẩn bản dịch" : "Dịch câu hỏi"} aria-pressed={Boolean(visible)}>
+      <Languages size={14} /></button>;
+  }
+
+  function translationText(question: Question) {
+    return canTranslate && translationVisible[question.id] && translations[question.id]
+      ? <p className="news-question-translation" lang="vi">{translations[question.id]}</p> : null;
+  }
+
+  function explanation(question: Question, number: number, withNumber = true) {
+    const review = reviews[question.id];
+    if (!graded || !review) return null;
+    const value = answers[question.id];
+    const truth = question.question_type === "tfng" || question.question_type === "ynng";
+    const key = review.correctIndex !== null
+      ? truth ? question.options[review.correctIndex]?.toUpperCase() : question.options[review.correctIndex]
+      : review.acceptedAnswers?.[0] ?? "";
+    const given = typeof value === "number" ? question.options[value] ?? "" : String(value ?? "");
+    return <div className={`news-auto-explanation ${review.correct ? "" : "wrong"}`} key={question.id}>{review.correct ? <CheckCircle2 size={17}/> : <XCircle size={17}/>}<div>
+      <strong>{withNumber ? `Câu ${number}: ` : ""}{review.correct ? "Chính xác!" : `Chưa đúng. Đáp án: ${key}`}</strong>
+      {!review.correct && given && <p>Bạn trả lời: “{truth ? given.toUpperCase() : given}”</p>}
+      <p className="news-auto-why"><b>Vì sao:</b> {review.explanation}</p>
+      <EvidenceLink quote={review.supportingSentence} />
+    </div></div>;
   }
 
   if (!questions.length && !error) return null;
   return <section className="news-auto-quiz" aria-label="Câu hỏi luyện đọc IELTS từ bài báo">
     <div className="news-auto-quiz-heading"><span className="eyebrow"><Sparkles size={15}/> IELTS READING TỪ BÀI BÁO</span>
       <h2>{wrongIds.length ? `Ôn lại ${shown.length} câu sai` : `${shown.length} câu hỏi ${partial ? `· ${types.map((type) => groups[type].short).join(" + ")}` : "theo dạng đề IELTS"}`}</h2>
-      <p>{examMode ? `Luyện một bài đọc · 20 phút · còn ${Math.floor(secondsLeft / 60)}:${String(secondsLeft % 60).padStart(2, "0")}. Không có dịch hoặc tra từ; câu bỏ trống được tính sai.` : wrongIds.length ? "Luyện lại các câu vừa trả lời sai. Kết quả được lưu riêng trong lịch sử." : partial ? "Đang luyện riêng các dạng đã chọn. Kết quả được lưu vào lịch sử nhưng không thay bài làm đầy đủ." : "Câu hỏi do AI soạn từ toàn văn bài này. Làm hết các phần rồi nộp bài để xem đáp án và câu dẫn chứng."}</p>
+      <p>{examMode ? `Luyện một bài đọc · 20 phút${graded ? "" : ` · còn ${Math.floor(secondsLeft / 60)}:${String(secondsLeft % 60).padStart(2, "0")}`}. ${graded ? "Đã nộp bài: giờ có thể dịch bài đọc, dịch câu hỏi và tra từ để xem lại." : "Không có dịch hoặc tra từ; câu bỏ trống được tính sai."}` : wrongIds.length ? "Luyện lại các câu vừa trả lời sai. Kết quả được lưu riêng trong lịch sử." : partial ? "Đang luyện riêng các dạng đã chọn. Kết quả được lưu vào lịch sử nhưng không thay bài làm đầy đủ." : "Câu hỏi do AI soạn từ toàn văn bài này. Làm hết các phần rồi nộp bài để xem đáp án và câu dẫn chứng."}</p>
       {examMode&&<p role="status">{draftStatus||"Đáp án sẽ tự lưu khi thay đổi."}{!graded&&!examExpired&&<button type="button" onClick={()=>setDraftRetry((value)=>value+1)}>Lưu lại</button>}</p>}
       {wrongIds.length ? <button type="button" className="button subtle" onClick={() => setWrongIds([])}>Xem lại toàn bộ câu hỏi</button> : !examMode && onTypesChange && <QuestionTypePicker available={available} selected={partial ? types : []} onChange={onTypesChange} />}
       {examExpired && !graded && <p className="form-error" role="status">Hết giờ. Bài đã khóa; nộp để xem kết quả, kể cả câu bỏ trống.</p>}
     </div>
     {error && <p className="form-error" role="alert">{error}</p>}
     {sections.map((section) => {
-      const group = groups[section.type];
       const first = section.items[0].number; const last = section.items[section.items.length - 1].number;
+      const block = `${section.type}-${first}`;
       const tablePrompts = section.items.map(({ question }) => question.prompt.replace(/\n\[W[123]\]$/, ""));
       const arrowTable = section.type === "table_completion"
         ? parseArrowTableCompletion(tablePrompts) ?? parseQuestionTableCompletion(tablePrompts)
@@ -422,119 +549,170 @@ export function NewsAutoQuiz({ articleId, types = ALL_TYPES, examMode = false, e
         ? section.items.map(({ question }) => noteWordLimitForPrompt(question.prompt)) : [];
       const sharedNoteWordLimit = noteWordLimits.length && noteWordLimits.every((limit) => limit === noteWordLimits[0])
         ? noteWordLimits[0] : null;
-      const matching=section.type.startsWith("matching_")?sharedMatchingOptions(section.items.map((item)=>item.question)):null;
-      const groupedCompletion=["summary_completion","note_completion"].includes(section.type);
-      return <div className={`news-auto-group${section.type === "flow_chart_completion" ? " news-auto-flow-group" : ""}`} key={`${section.type}-${first}`}>
-        <div className="news-auto-group-head"><strong>Questions {first}{last > first ? `–${last}` : ""} · {group.title}</strong><p>{section.type === "note_completion"
-          ? sharedNoteWordLimit
-            ? `${group.instruction} Write NO MORE THAN ${wordLimitText(sharedNoteWordLimit)} from the article for each answer.`
-            : `${group.instruction} Follow the word limit shown with each question.`
-          : group.instruction}</p><small>{group.hint}</small></div>
-        {matching&&<div className="news-matching-pool" aria-label="Danh sách lựa chọn dùng chung"><strong>Danh sách lựa chọn</strong><ol type="A">{matching.map((option,index)=><li key={index}>{option}</li>)}</ol><small>Chọn chữ cái cho từng câu. Chỉ dùng lại khi hướng dẫn nhóm cho phép.</small></div>}
-        {groupedCompletion&&<div className={`news-group-completion ${section.type}`} aria-label={section.type==="summary_completion"?"Đoạn tóm tắt":"Ghi chú"}>
-          <strong>{section.type==="summary_completion"?"Complete the summary":"Complete the notes"}</strong>
-          {section.items.map(({question,number})=>{
-            const prompt=promptWithoutWordLimit(question.prompt);const gap=/_{3,}|\.{3,}|…/.exec(prompt);const value=answers[question.id];
-            return <div className="news-group-gap" key={question.id} data-q={number} onMouseUp={(event)=>selectQuestion(event.currentTarget,event.target,question)} onTouchEnd={(event)=>{const root=event.currentTarget;const target=event.target;requestAnimationFrame(()=>selectQuestion(root,target,question));}}>
-              {questionText(question,0,gap?.index??prompt.length)} <label><b>({number})</b><input type="text" maxLength={60} autoComplete="off" aria-label={`Chỗ trống ${number}`} value={typeof value==="string"?value:""} disabled={graded||examExpired} onChange={(event)=>setAnswers((current)=>({...current,[question.id]:event.target.value}))}/></label>{gap&&questionText(question,gap.index+gap[0].length,prompt.length)}
-              {section.type==="note_completion"&&!sharedNoteWordLimit&&<small className="news-group-word-limit"> (tối đa {noteWordLimitForPrompt(question.prompt)} từ)</small>}{!examMode&&<button type="button" className="news-completion-translate" aria-label={`Dịch câu ${number}`} disabled={translatingId===question.id} onClick={()=>void toggleTranslation(question)}><Languages size={12}/>{translatingId===question.id?"…":translationVisible[question.id]?"Ẩn dịch":"Dịch"}</button>}{!examMode&&translationVisible[question.id]&&translations[question.id]&&<small className="news-group-translation" lang="vi">{translations[question.id]}</small>}
-              {highlightMenu(question,number)}
+      const matching = section.type.startsWith("matching_") ? sharedMatchingOptions(section.items.map((item) => item.question)) : null;
+      // Matching Information is a grid of paragraph letters; the other matching forms place options into answer boxes.
+      const grid = section.type === "matching_information" ? matching : null;
+      const pool = matching && !grid ? matching : null;
+      const groupedCompletion = GROUPED_COMPLETION.has(section.type);
+      const instructions = blockInstructions(section.type, first, last, section.items[0].question.options.length, matching, sharedNoteWordLimit);
+      const explanations = graded && <div className="news-auto-explanations">{section.items.map(({ question, number }) => explanation(question, number))}</div>;
+      return <div className={`news-auto-group news-block-${section.type}${section.type === "flow_chart_completion" ? " news-auto-flow-group" : ""}`} key={block}>
+        <div className="news-auto-group-head"><h3>Questions {first}{last > first ? `–${last}` : ""}</h3>
+          {instructions.map((line, index) => <p key={index}><BoldText text={line} /></p>)}</div>
+
+        {groupedCompletion && <>
+          <div className={`news-group-completion ${section.type}`} aria-label={`Câu ${first}${last > first ? ` đến ${last}` : ""}`}>
+            {section.items.map(({ question, number }) => {
+              const prompt = promptWithoutWordLimit(question.prompt);
+              const gap = /_{3,}|\.{3,}|…/.exec(prompt);
+              return <div className="news-group-gap" key={question.id} data-q={number} {...selectHandlers(question)}>
+                {questionText(question, 0, gap?.index ?? prompt.length)}{" "}{gapInput(question, number)}{gap && questionText(question, gap.index + gap[0].length, prompt.length)}
+                {section.type === "note_completion" && !sharedNoteWordLimit && <small className="news-group-word-limit"> (tối đa {noteWordLimitForPrompt(question.prompt)} từ)</small>}
+                {translateButton(question, number)}
+                {canTranslate && translationVisible[question.id] && translations[question.id] && <small className="news-group-translation" lang="vi">{translations[question.id]}</small>}
+                {highlightMenu(question, number)}
+              </div>;
+            })}
+          </div>
+          {explanations}
+        </>}
+
+        {grid && <>
+          <div className="news-mi-scroll"><table className="news-mi-grid" aria-label={`Chọn đoạn cho câu ${first} đến ${last}`}>
+            <thead><tr><th scope="col" aria-label="Câu hỏi" />{grid.map((option, index) => <th scope="col" key={index} title={option}>{optionLetter(option, index)}</th>)}</tr></thead>
+            <tbody>{section.items.map(({ question, number }) => {
+              const value = answers[question.id];
+              const review = graded ? reviews[question.id] : undefined;
+              return <tr key={question.id} data-q={number} className={review ? review.correct ? "is-correct" : "is-wrong" : ""}>
+                <th scope="row"><div className="news-q-stem"><span className="news-q-badge">{number}</span>
+                  <span className="news-question-text" {...selectHandlers(question)}>{questionText(question)}</span>{translateButton(question, number)}</div>
+                  {translationText(question)}{highlightMenu(question, number)}</th>
+                {grid.map((option, index) => <td key={index}
+                  className={`${value === index ? "selected" : ""}${review?.correctIndex === index ? " correct" : ""}${review && value === index && index !== review.correctIndex ? " wrong" : ""}`}>
+                  <label><input type="radio" className="news-radio" name={`news-ai-${question.id}`} checked={value === index} disabled={locked}
+                    onChange={() => setAnswer(question.id, index)} aria-label={`Câu ${number}: đoạn ${optionLetter(option, index)}`} /></label></td>)}
+              </tr>;
+            })}</tbody>
+          </table></div>
+          {explanations}
+        </>}
+
+        {pool && (() => {
+          const used = new Set(section.items.map(({ question }) => answers[question.id]).filter((value): value is number => typeof value === "number"));
+          // An option stays in the list after use only when the block needs some options more than once.
+          const reusable = pool.length < section.items.length;
+          const chips = <div className="news-match-pool">
+            {section.type === "matching_headings" && <p className="news-match-pool-title">List of Headings</p>}
+            {!locked && <p className="news-drag-hint"><Lightbulb size={13} aria-hidden="true" /> Kéo đáp án thả vào ô trống, hoặc bấm chọn đáp án rồi bấm vào ô trống để điền.</p>}
+            <div className={`news-match-chips ${section.type}`}>{pool.map((option, index) => !reusable && used.has(index) ? null :
+              <button type="button" key={index} className="news-match-chip" disabled={locked} draggable={!locked}
+                aria-pressed={picked?.block === block && picked.index === index}
+                onClick={() => setPicked((current) => current?.block === block && current.index === index ? null : { block, index })}
+                onDragStart={(event) => { event.dataTransfer.setData("text/plain", String(index)); event.dataTransfer.effectAllowed = "move"; setPicked({ block, index }); }}
+                onDragEnd={() => setPicked(null)}>{option}</button>)}</div>
+          </div>;
+          const rows = section.items.map(({ question, number }) => {
+            const value = answers[question.id];
+            const filled = typeof value === "number" && value >= 0 && value < pool.length;
+            const review = graded ? reviews[question.id] : undefined;
+            const place = (index: number) => { if (locked) return; setAnswer(question.id, index); setPicked(null); };
+            const waiting = !locked && picked?.block === block;
+            const box = <span role="button" tabIndex={locked ? -1 : 0}
+              className={`news-match-box${filled ? " is-filled" : ""}${waiting ? " is-target" : ""}${review ? review.correct ? " is-correct" : " is-wrong" : ""}`}
+              aria-label={filled ? `Câu ${number}: ${pool[value as number]}` : `Ô trả lời câu ${number}, còn trống`}
+              onClick={() => { if (picked?.block === block) place(picked.index); }}
+              onKeyDown={(event) => { if ((event.key === "Enter" || event.key === " ") && picked?.block === block) { event.preventDefault(); place(picked.index); } }}
+              onDragOver={(event) => { if (!locked) event.preventDefault(); }}
+              onDrop={(event) => { event.preventDefault(); const index = Number(event.dataTransfer.getData("text/plain")); if (Number.isInteger(index) && index >= 0 && index < pool.length) place(index); }}>
+              {filled ? <><span className="news-match-value">{pool[value as number]}</span>
+                {!locked && <button type="button" className="news-match-clear" aria-label={`Bỏ đáp án câu ${number}`}
+                  onClick={(event) => { event.stopPropagation(); setAnswers((current) => { const next = { ...current }; delete next[question.id]; return next; }); }}><X size={14} /></button>}</>
+                : <span className="news-q-badge">{number}</span>}
+            </span>;
+            const text = <div className="news-match-text news-question-text" {...selectHandlers(question)}>{questionText(question)}</div>;
+            return <div className={`news-match-row ${section.type}`} key={question.id} data-q={number}>
+              <div className="news-match-line">{section.type === "matching_features" ? <>{box}{text}</> : <>{text}{box}</>}{translateButton(question, number)}</div>
+              {translationText(question)}{highlightMenu(question, number)}
+              {explanation(question, number, false)}
             </div>;
-          })}
-        </div>}
+          });
+          return section.type === "matching_headings" ? <>{chips}<div className="news-match-rows">{rows}</div></> : <><div className="news-match-rows">{rows}</div>{chips}</>;
+        })()}
+
         {arrowTable && <>
           <p className="news-completion-instruction">{arrowTable.instruction}</p>
           <div className="news-completion-table-scroll"><table className="news-completion-table" aria-label={`Bảng điền từ câu ${first} đến ${last}`}>
             <thead><tr>{arrowTable.headers.map((header, index) => <th scope="col" key={index}>{header}</th>)}</tr></thead>
             <tbody>{arrowTable.rows.map((row, index) => {
               const { question, number } = section.items[index];
-              const value = answers[question.id];
-              const review = graded ? reviews[question.id] : undefined;
               const marker = /_{3,}|\.{3,}|…/.exec(row.value)!;
               const valueStart = question.prompt.indexOf(row.value);
-              return <tr key={question.id} className={review ? review.correct ? "is-correct" : "is-wrong" : ""}>
-                <th scope="row" onMouseUp={(event)=>selectQuestion(event.currentTarget,event.target,question)} onTouchEnd={(event)=>{const root=event.currentTarget;const target=event.target;requestAnimationFrame(()=>selectQuestion(root,target,question));}}><small className="news-completion-number">Câu {number}</small>{questionTextInSource(question,row.label)}
-                   {!examMode && <button type="button" className="news-completion-translate" onClick={() => void toggleTranslation(question)} disabled={translatingId === question.id}>
-                    <Languages size={13}/>{translatingId === question.id ? "Đang dịch…" : translationVisible[question.id] ? "Ẩn bản dịch" : "Dịch câu hỏi"}</button>}
-                   {!examMode && translationVisible[question.id] && translations[question.id] && <small className="news-completion-translation" lang="vi">{translations[question.id]}</small>}
+              return <tr key={question.id} data-q={number}>
+                <th scope="row" {...selectHandlers(question)}>{questionTextInSource(question, row.label)}{translateButton(question, number)}
+                  {canTranslate && translationVisible[question.id] && translations[question.id] && <small className="news-completion-translation" lang="vi">{translations[question.id]}</small>}
                 </th>
-                <td onMouseUp={(event)=>selectQuestion(event.currentTarget,event.target,question)} onTouchEnd={(event)=>{const root=event.currentTarget;const target=event.target;requestAnimationFrame(()=>selectQuestion(root,target,question));}}>{questionTextInSource(question,row.value.slice(0, marker.index),Math.max(0,valueStart))}<input className="news-auto-written" type="text" maxLength={60} autoComplete="off"
-                   aria-label={`Từ còn thiếu câu ${number}, ${row.label}`} value={typeof value === "string" ? value : ""} disabled={graded || examExpired}
-                   onChange={(event) => setAnswers((current) => ({ ...current, [question.id]: event.target.value }))} placeholder="Điền từ"/>{questionTextInSource(question,row.value.slice(marker.index + marker[0].length),Math.max(0,valueStart+marker.index+marker[0].length))}
-                  {review && <small className="news-completion-feedback">{review.correct ? "✓ Chính xác" : `✗ Đáp án: ${review.acceptedAnswers?.[0] ?? ""}`}</small>}
-                </td>
-               </tr>;
+                <td {...selectHandlers(question)}>{questionTextInSource(question, row.value.slice(0, marker.index), Math.max(0, valueStart))}{gapInput(question, number)}{questionTextInSource(question, row.value.slice(marker.index + marker[0].length), Math.max(0, valueStart + marker.index + marker[0].length))}</td>
+              </tr>;
             })}</tbody>
-           </table></div>
-           {section.items.map(({question,number})=>selection?.questionId===question.id&&highlightMenu(question,number))}
-          {graded && section.items.map(({ question, number }) => {
-            const review = reviews[question.id];
-            if (!review) return null;
-            return <div className={`news-auto-explanation ${review.correct ? "" : "wrong"}`} key={question.id}>{review.correct ? <CheckCircle2 size={17}/> : <XCircle size={17}/>}<div>
-              <strong>Câu {number}: {review.correct ? "Chính xác!" : `Đáp án: ${review.acceptedAnswers?.[0] ?? ""}`}</strong>
-              {!review.correct && <p>Bạn trả lời: “{String(answers[question.id] ?? "")}”</p>}
-              <p className="news-auto-why"><b>Vì sao:</b> {review.explanation}</p>
-              <EvidenceLink quote={review.supportingSentence} />
-            </div></div>;
-          })}
+          </table></div>
+          {section.items.map(({ question, number }) => selection?.questionId === question.id && highlightMenu(question, number))}
+          {explanations}
         </>}
-        {!arrowTable && section.items.map(({ question, number }) => {
-          if(groupedCompletion&&!graded)return null;
+
+        {!arrowTable && !groupedCompletion && !grid && !pool && section.items.map(({ question, number }) => {
           const review = graded ? reviews[question.id] : undefined;
           const value = answers[question.id];
           const choice = choiceTypes.has(question.question_type);
+          const truth = question.question_type === "tfng" || question.question_type === "ynng";
           const table = question.question_type === "table_completion" ? parseTableCompletion(question.prompt) : null;
           const cleanPrompt = promptWithoutWordLimit(question.prompt);
-          const diagram=question.question_type==="diagram_label_completion"?parseQuestionDiagram(cleanPrompt):null;
+          const diagram = question.question_type === "diagram_label_completion" ? parseQuestionDiagram(cleanPrompt) : null;
           const noteWordLimit = noteWordLimitForPrompt(question.prompt);
           const flowChart = question.question_type === "flow_chart_completion" ? parseFlowChartPrompt(cleanPrompt) : null;
           const visiblePrompt = table?.instruction ?? diagram?.prompt ?? cleanPrompt;
-          const setValue = (next: number | string) => setAnswers((current) => ({ ...current, [question.id]: next }));
+          const at = question.prompt.indexOf(visiblePrompt);
           return <div className={`news-auto-question ${review ? (review.correct ? "is-correct" : "is-wrong") : ""}`} key={question.id} data-q={number}>
-            <strong>Câu {number}</strong>
-            {diagram&&<svg className="news-question-diagram" viewBox={`0 0 460 ${80+diagram.labels.length*56}`} role="img" aria-label={`${diagram.title}. ${diagram.labels.map((label,index)=>index===diagram.gap?`Vị trí ${number} cần điền`:label).join("; ")}`}><title>{diagram.title}</title><text x="20" y="28">{diagram.title}</text>{diagram.labels.map((label,index)=><g key={index}><rect x="24" y={48+index*56} width="408" height="42" rx="8" fill={index===diagram.gap?"#fff5d5":"#eaf7f6"} stroke="#74b9bf"/><text x="40" y={74+index*56}>{index===diagram.gap?`(${number}) ______`:label}</text>{index<diagram.labels.length-1&&<path d={`M228 ${90+index*56} v14 m-4 -5 l4 5 4 -5`} stroke="#287e88" fill="none"/>}</g>)}</svg>}
-            {question.question_type==="diagram_label_completion"&&!diagram&&<p className="news-form-note">Mẫu cũ chưa có sơ đồ. Câu này hiện chỉ phù hợp luyện đọc mô tả; chưa dùng để đánh giá kỹ năng đọc sơ đồ.</p>}
-            {flowChart ? <div className="news-flow-chart" role="list" aria-label={question.prompt}>{flowChart.map((step,index)=><div className="news-flow-chart-unit" key={`${step.start}-${index}`}>
-              <div className="news-flow-chart-step" role="listitem" onMouseUp={(event)=>selectQuestion(event.currentTarget,event.target,question)} onTouchEnd={(event)=>{const root=event.currentTarget;const target=event.target;requestAnimationFrame(()=>selectQuestion(root,target,question));}}>{questionText(question,step.start,step.start+step.text.length)}</div>
+            <div className="news-q-stem"><span className="news-q-badge">{number}</span>
+              {!flowChart && <h3 className="news-question-text" {...selectHandlers(question)}>{at >= 0 ? questionText(question, at, at + visiblePrompt.length) : visiblePrompt}</h3>}
+              {translateButton(question, number)}</div>
+            {flowChart && <div className="news-flow-chart" role="list" aria-label={question.prompt}>{flowChart.map((step, index) => <div className="news-flow-chart-unit" key={`${step.start}-${index}`}>
+              <div className="news-flow-chart-step" role="listitem" {...selectHandlers(question)}>{questionText(question, step.start, step.start + step.text.length)}</div>
               {index < flowChart.length - 1 && <span className="news-flow-chart-arrow" aria-hidden="true">↓</span>}
-            </div>)}</div> : <h3 className="news-question-text" onMouseUp={(event)=>selectQuestion(event.currentTarget,event.target,question)} onTouchEnd={(event)=>{const root=event.currentTarget;const target=event.target;requestAnimationFrame(()=>selectQuestion(root,target,question));}}>{question.prompt.includes(visiblePrompt)?questionText(question,question.prompt.indexOf(visiblePrompt),question.prompt.indexOf(visiblePrompt)+visiblePrompt.length):visiblePrompt}</h3>}
+            </div>)}</div>}
+            {diagram && <svg className="news-question-diagram" viewBox={`0 0 460 ${80 + diagram.labels.length * 56}`} role="img" aria-label={`${diagram.title}. ${diagram.labels.map((label, index) => index === diagram.gap ? `Vị trí ${number} cần điền` : label).join("; ")}`}><title>{diagram.title}</title><text x="20" y="28">{diagram.title}</text>{diagram.labels.map((label, index) => <g key={index}><rect x="24" y={48 + index * 56} width="408" height="42" rx="8" fill={index === diagram.gap ? "#fff5d5" : "#eaf7f6"} stroke="#74b9bf"/><text x="40" y={74 + index * 56}>{index === diagram.gap ? `(${number}) ______` : label}</text>{index < diagram.labels.length - 1 && <path d={`M228 ${90 + index * 56} v14 m-4 -5 l4 5 4 -5`} stroke="#287e88" fill="none"/>}</g>)}</svg>}
+            {question.question_type === "diagram_label_completion" && !diagram && <p className="news-form-note">Mẫu cũ chưa có sơ đồ. Câu này hiện chỉ phù hợp luyện đọc mô tả; chưa dùng để đánh giá kỹ năng đọc sơ đồ.</p>}
             {question.question_type === "note_completion" && !sharedNoteWordLimit && <small className="news-note-word-limit">Write NO MORE THAN {wordLimitText(noteWordLimit)} from the article.</small>}
-             <div className="news-question-tools">{!examMode && <button type="button" onClick={()=>void toggleTranslation(question)} disabled={translatingId===question.id}><Languages size={14}/>{translatingId===question.id?"Đang dịch…":translationVisible[question.id]?"Ẩn bản dịch":"Dịch câu hỏi"}</button>}<span><Highlighter size={13}/> Bôi đen câu hỏi để highlight</span></div>
-             {!examMode && translationVisible[question.id]&&translations[question.id]&&<p className="news-question-translation" lang="vi">{translations[question.id]}</p>}
-            {selection?.p===0&&!table&&highlightMenu(question,number)}
+            {translationText(question)}
+            {selection?.p === 0 && !table && highlightMenu(question, number)}
             {table && <div className="news-completion-table-scroll"><table className="news-completion-table" aria-label={`Bảng điền từ câu ${number}`}>
               <thead><tr>{table.headers.map((header, index) => <th scope="col" key={index}>{header}</th>)}</tr></thead>
               <tbody>{table.rows.map((row, rowIndex) => <tr key={rowIndex}>{row.map((cell, columnIndex) => {
                 const isGap = table.gap.row === rowIndex && table.gap.column === columnIndex;
                 const marker = isGap ? /_{3,}|\.{3,}|…/.exec(cell) : null;
-                return <td key={columnIndex} onMouseUp={(event)=>selectQuestion(event.currentTarget,event.target,question)} onTouchEnd={(event)=>{const root=event.currentTarget;const target=event.target;requestAnimationFrame(()=>selectQuestion(root,target,question));}}>{marker ? <>{questionTextInSource(question,cell.slice(0, marker.index))}<input className="news-auto-written" type="text" maxLength={60} autoComplete="off"
-                   aria-label={`Từ còn thiếu câu ${number}, cột ${table.headers[columnIndex]}`} value={typeof value === "string" ? value : ""} disabled={graded || examExpired}
-                  onChange={(event) => setValue(event.target.value)} placeholder="Điền từ"/>{questionTextInSource(question,cell.slice(marker.index + marker[0].length))}</> : questionTextInSource(question,cell)}</td>;
+                return <td key={columnIndex} {...selectHandlers(question)}>{marker ? <>{questionTextInSource(question, cell.slice(0, marker.index))}{gapInput(question, number)}{questionTextInSource(question, cell.slice(marker.index + marker[0].length))}</> : questionTextInSource(question, cell)}</td>;
               })}</tr>)}</tbody>
             </table></div>}
-            {table&&selection?.p===0&&highlightMenu(question,number)}
-            {!choice && !gapTypes.has(question.question_type) && <input className="news-auto-written" type="text" maxLength={60} autoComplete="off" aria-label={`Câu trả lời câu ${number}`}
-               value={typeof value === "string" ? value : ""} disabled={graded || examExpired} onChange={(event) => setValue(event.target.value)} placeholder="Tối đa 3 từ"/>}
-            {gapTypes.has(question.question_type) && !table && !groupedCompletion && <input className="news-auto-written" type="text" maxLength={60} autoComplete="off" aria-label={`Từ còn thiếu câu ${number}`}
-               value={typeof value === "string" ? value : ""} disabled={graded || examExpired} onChange={(event) => setValue(event.target.value)} placeholder={`Điền vào chỗ trống · tối đa ${question.question_type === "note_completion" ? noteWordLimit : 3} từ`}/>}
-            {choice&&matching?<label className="news-matching-answer">Lựa chọn câu {number}<select aria-label={`Ghép đáp án câu ${number}`} value={typeof value==="number"?value:""} disabled={graded||examExpired} onChange={(event)=>setValue(event.target.value===""?"":Number(event.target.value))}><option value="">Chọn chữ cái</option>{matching.map((_,index)=><option key={index} value={index}>{String.fromCharCode(65+index)}</option>)}</select></label>:choice && <div className={`news-auto-options ${question.question_type === "tfng" || question.question_type === "ynng" ? "tfng" : ""}`}>{question.options.map((option, index) =>
+            {table && selection?.p === 0 && highlightMenu(question, number)}
+            {!choice && !table && <div className="news-gap-line">{gapInput(question, number, false)}</div>}
+            {choice && <div className={`news-auto-options ${truth ? "tfng" : ""}`}>{question.options.map((option, index) =>
               <label key={index} className={`${value === index ? "selected" : ""} ${review?.correctIndex === index ? "correct" : ""} ${review && value === index && index !== review.correctIndex ? "wrong" : ""}`}>
-                 <input type="radio" name={`news-ai-${question.id}`} checked={value === index} disabled={graded || examExpired} onChange={() => setValue(index)}/>
-                {question.question_type !== "tfng" && question.question_type !== "ynng" && <span>{"ABCD"[index]}</span>}<em className={question.question_type === "tfng" || question.question_type === "ynng" ? "news-option-uppercase" : undefined} onMouseUp={(event)=>selectQuestion(event.currentTarget,event.target,question,index+1)} onTouchEnd={(event)=>{const root=event.currentTarget;const target=event.target;requestAnimationFrame(()=>selectQuestion(root,target,question,index+1));}} onClick={(event)=>{if(!window.getSelection()?.isCollapsed)event.preventDefault();}}>{questionText(question,0,option.length,index+1)}</em>
+                {!truth && <span className="news-option-letter">{String.fromCharCode(65 + index)}</span>}
+                <input type="radio" className="news-radio" name={`news-ai-${question.id}`} checked={value === index} disabled={locked} onChange={() => setAnswer(question.id, index)}/>
+                <em className={truth ? "news-option-uppercase" : undefined} {...selectHandlers(question, index + 1)} onClick={(event) => { if (!window.getSelection()?.isCollapsed) event.preventDefault(); }}>{questionText(question, 0, option.length, index + 1)}</em>
                 {review?.optionNotes?.[index] && <small className="news-auto-note">{index === review.correctIndex ? "✓ " : "✗ "}{review.optionNotes[index]}</small>}
               </label>)}</div>}
-            {selection?.questionId===question.id&&selection.p>0&&highlightMenu(question,number)}
-            {review && <div className={`news-auto-explanation ${review.correct ? "" : "wrong"}`}>{review.correct ? <CheckCircle2 size={17}/> : <XCircle size={17}/>}<div>
-              <strong>{review.correct ? "Chính xác! " : "Chưa đúng. "}{review.correctIndex !== null ? `Đáp án: ${question.question_type === "tfng" || question.question_type === "ynng" ? question.options[review.correctIndex].toUpperCase() : question.options[review.correctIndex]}` : `Đáp án: ${review.acceptedAnswers?.[0] ?? ""}`}</strong>
-              {!review.correct && !choice && <p>Bạn trả lời: “{String(value ?? "")}”</p>}
-              <p className="news-auto-why"><b>Vì sao:</b> {review.explanation}</p>
-              <EvidenceLink quote={review.supportingSentence} /></div></div>}
+            {selection?.questionId === question.id && selection.p > 0 && highlightMenu(question, number)}
+            {explanation(question, number, false)}
           </div>;
         })}
       </div>;
     })}
     {shown.length > 0 && !graded && <div className="news-auto-submit"><span>Đã làm {answered}/{shown.length} câu{answered<shown.length&&<small>{examMode ? `${shown.length-answered} câu chưa trả lời sẽ tính sai.` : `Trả lời đủ ${shown.length-answered} câu còn lại trước khi nộp.`}</small>}</span>
-      <button type="button" className="button primary" disabled={busy || (!examMode && answered !== shown.length)} onClick={() => void submit()}>{busy ? "Đang chấm…" : examExpired ? "Hết giờ · Nộp bài" : "Nộp bài và xem đáp án"}</button></div>}
+      {blankWarning && <p className="news-submit-warning" role="alert">Còn {shown.length - answered} câu chưa trả lời; câu trống được tính sai. Bấm lần nữa để vẫn nộp.</p>}<button type="button" className="button primary" disabled={busy || (!examMode && answered !== shown.length)} onClick={() => {
+        // A timed sitting with blanks asks once more, so a stray tap does not end the attempt.
+        if (examMode && !examExpired && answered < shown.length && !blankWarning) { setWarningFor(answerKey); return; }
+        void submit();
+      }}>{busy ? "Đang chấm…" : examExpired ? "Hết giờ · Nộp bài" : blankWarning ? "Vẫn nộp bài" : "Nộp bài và xem đáp án"}</button></div>}
     {graded && <div ref={resultRef}><QuizResult score={score} total={shown.length} partial={partial} duration={duration}
       breakdown={sumBreakdowns([Object.fromEntries(available.map(({ type }) => {
         const items = shown.filter((question) => question.question_type === type);

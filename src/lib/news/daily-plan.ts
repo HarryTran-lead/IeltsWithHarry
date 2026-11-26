@@ -6,6 +6,11 @@ export type DailyCandidate = {
   interest_topics?: string[] | null;
 };
 
+/** Publisher value stored on articles Harry Up writes itself. Kept as-is so existing rows still match. */
+export const OWN_PUBLISHER = "IeltsWithHarry";
+export const BRAND_NAME = "Harry Up";
+export function publisherLabel(publisher: string) { return publisher === OWN_PUBLISHER ? BRAND_NAME : publisher; }
+
 export const AI_ART_SOURCE = "https://pollinations.ai/";
 
 export function hasRealNewsPhoto(row: {
@@ -42,14 +47,14 @@ export function dailyNewsPicks<T extends DailyCandidate>(
 }
 
 export function originalNewsSource(reportUrl: string | null, canonicalUrl: string, publisher: string) {
-  if (publisher !== "IeltsWithHarry") return publisher;
+  if (publisher !== OWN_PUBLISHER) return publisher;
   try {
     const host = new URL(reportUrl || canonicalUrl).hostname.replace(/^www\./, "");
     if (host === "vnexpress.net" || host.endsWith(".vnexpress.net")) return "VnExpress";
     if (host === "tuoitrenews.vn" || host === "tuoitre.vn" || host.endsWith(".tuoitre.vn")) return "Tuổi Trẻ";
     if (host === "thanhnien.vn" || host.endsWith(".thanhnien.vn")) return "Thanh Niên";
     return host;
-  } catch { return publisher; }
+  } catch { return publisherLabel(publisher); }
 }
 
 export function readingMinutes(wordCount: number) {

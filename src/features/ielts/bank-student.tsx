@@ -135,7 +135,7 @@ export function BankStudent({ examId, resultId, attemptId }: { examId?: string; 
   </>;
   // Reading and Listening run as a full test sheet; Writing and Speaking as studios.
   if (content && (exam.skill === "Reading" || exam.skill === "Listening")) return <main className={`bx-page bx-run bx-exam-mode ${exam.skill === "Listening" ? "bx-listening-mode" : "bx-reading-mode"} ${notes.__view !== "exam" ? "bx-practice-mode" : "bx-real-mode"} bl-tone-${toneOf(exam.skill)}`}>
-    {notes.__view !== "exam" && <div className="br-practice-ribbon"><strong>Ielts<span>WithHarry</span></strong><nav aria-label="Điều hướng kỹ năng"><span>{exam.skill}</span><span>{scope ? `${exam.skill === "Listening" ? "Part" : "Passage"} ${part || 1}` : "Full test"}</span></nav><small>Giao diện luyện tập</small></div>}
+    {notes.__view !== "exam" && <div className="br-practice-ribbon"><strong>Harry<span>Up</span></strong><nav aria-label="Điều hướng kỹ năng"><span>{exam.skill}</span><span>{scope ? `${exam.skill === "Listening" ? "Part" : "Passage"} ${part || 1}` : "Full test"}</span></nav><small>Giao diện luyện tập</small></div>}
     <ExamBar exam={exam} answered={answered} total={inScope.length} remaining={remaining} untimed={untimedAttempt(notes)} busy={busy} saveState={saveState} onExit={() => setLeaving(true)} onSubmit={() => setConfirming(true)} />
     {error && <p className="bx-error" role="alert">{error}</p>}
     <TestRunner exam={exam} content={content} scope={scope} answers={answers} setAnswer={setAnswer} flags={flags} setFlags={setFlags} notes={notes} setNotes={setNotes} onFinish={() => setConfirming(true)} jumpTo={jump} />

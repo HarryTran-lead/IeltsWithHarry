@@ -301,24 +301,38 @@ function eligibleQuestionTypes(text: string, wordCount: number) {
   return [...weights.entries()];
 }
 
+/** Fewest questions in one block of a set: IELTS papers do not give a form only one or two items. */
+export const MIN_BLOCK = 3;
+
+/**
+ * IELTS Academic Reading gives each passage two or three question forms, each as one block, in a recognisable
+ * order. A set follows one of these templates; each slot lists interchangeable forms for that block.
+ */
+export const PASSAGE_TEMPLATES: IeltsQuestionType[][][] = [
+  // Passage 1: statements, then a completion task.
+  [["tfng"], ["note_completion", "table_completion", "sentence_completion", "short_answer"]],
+  // Passage 1, second pattern: choice, short written answers, then statements.
+  [["mcq"], ["short_answer", "sentence_completion", "note_completion"], ["tfng"]],
+  // Passage 2: matching paragraphs, then choice or features, then a completion task.
+  [["matching_headings", "matching_information"], ["mcq", "matching_features"], ["summary_completion", "sentence_completion"]],
+  // Passage 3: choice, then summary or sentence endings, then the writer's views.
+  [["mcq"], ["summary_completion", "matching_sentence_endings", "sentence_completion"], ["ynng", "tfng"]],
+];
+
+/**
+ * Picks the question forms for one article as IELTS blocks: two forms for a six-question set, at most three
+ * otherwise, chosen from one passage template and returned in the order the blocks appear.
+ */
 export function selectQuestionTypes(text: string, wordCount: number, key: string) {
-  const hash = stableHash(key);
-  const desired = wordCount < 150 ? 1 : wordCount < 300 ? 1 + (hash % 2) : wordCount < 500 ? 2
-    : wordCount < 700 ? 3 : 4;
-  const ranked = eligibleQuestionTypes(text, wordCount).map(([type, weight]) => {
-    const unit = (stableHash(`${key}:${type}`) + 1) / 4294967297;
-    return { type, score: -Math.log(unit) / weight };
-  }).sort((a, b) => a.score - b.score);
-  const selected = ranked.slice(0, Math.min(desired, ranked.length)).map(({ type }) => type);
-  const coreTypes: IeltsQuestionType[] = ["mcq", "tfng", "sentence_completion", "short_answer"];
-  const minimumCore = wordCount >= 700 ? 3 : wordCount >= 500 ? 2 : 1;
-  for (const { type } of ranked) {
-    if (selected.filter((item) => coreTypes.includes(item)).length >= minimumCore) break;
-    if (!coreTypes.includes(type) || selected.includes(type)) continue;
-    const replace = selected.findLastIndex((item) => !coreTypes.includes(item));
-    if (replace >= 0) selected[replace] = type;
-  }
-  return selected;
+  const weights = new Map(eligibleQuestionTypes(text, wordCount));
+  const blocks = targetQuestionCount(text, wordCount) >= MIN_BLOCK * 3 ? 3 : 2;
+  const pick = (slot: IeltsQuestionType[], position: number) => slot.filter((type) => weights.has(type))
+    .map((type) => ({ type, score: -Math.log((stableHash(`${key}:${position}:${type}`) + 1) / 4294967297) / weights.get(type)! }))
+    .sort((a, b) => a.score - b.score)[0]?.type;
+  const viable = PASSAGE_TEMPLATES.map((template) => template.slice(0, blocks).map(pick))
+    .filter((types): types is IeltsQuestionType[] => types.every(Boolean) && new Set(types).size === types.length);
+  // The core forms are always eligible, so the two Passage 1 templates are always viable.
+  return viable[stableHash(`${key}:template`) % viable.length] ?? (["tfng", "sentence_completion"] as IeltsQuestionType[]);
 }
 
 function noteWordLimitForKey(key: string) {
@@ -381,9 +395,10 @@ Editor guidance: ${customPrompt.slice(0, 4000)}`;
   }
   // A long passage sometimes loses an entire generated group during factual
   // review. One smaller request may fill the gap without relaxing validation.
-  if (targetCount >= 11 && finalCandidates.length > 0 && finalCandidates.length < 10) {
+  // Only forms already in the set: a top-up must not add a stray extra block.
+  const extraTypes = (["mcq", "short_answer"] as IeltsQuestionType[]).filter((type) => selected.includes(type));
+  if (extraTypes.length && targetCount >= 11 && finalCandidates.length > 0 && finalCandidates.length < 10) {
     const needed = 10 - finalCandidates.length;
-    const extraTypes: IeltsQuestionType[] = ["mcq", "short_answer"];
     const extraTargets: QuizTargets = { mcq: needed + 1, short_answer: needed + 1 };
     try {
       const followUp = await geminiJson<{ questions?: RawQuestion[] }>(
@@ -396,6 +411,7 @@ Editor guidance: ${customPrompt.slice(0, 4000)}`;
       const usedEvidence = new Set(finalCandidates.map((item) => words(item.supporting_sentence)));
       for (const item of verified) {
         if (finalCandidates.length >= 10) break;
+        if (!extraTypes.includes(item.type)) continue;
         if (usedPrompts.has(words(item.prompt)) || usedEvidence.has(words(item.supporting_sentence))) continue;
         if (looksLikeDirectLookup(item.prompt, item.supporting_sentence)) {
           if (directUsed >= maxDirect) continue;
@@ -408,6 +424,8 @@ Editor guidance: ${customPrompt.slice(0, 4000)}`;
     } catch { /* Preserve the validated first set if the optional request fails. */ }
   }
   if (finalCandidates.length < 6) throw new Error(`Only ${finalCandidates.length} questions passed quality review; at least six are required`);
+  // One block per form, in the template's order (a top-up item joins its own form's block).
+  finalCandidates.sort((a, b) => selected.indexOf(a.type) - selected.indexOf(b.type));
   const questions = finalCandidates.map(({ type, prompt, options, correct_index, accepted_answers, supporting_sentence, explanation, option_notes }) =>
     ({ type, prompt, options, correct_index, accepted_answers, supporting_sentence, explanation, option_notes }));
   return { model, questions,

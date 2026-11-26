@@ -100,7 +100,7 @@ export function matchesPipeline(article: PipelineArticle, filter: PipelineFilter
 export type UsageRow = { day: string; key_name: AiUsageKey; model: string; outcome: AiUsageOutcome; requests: number };
 export type UsageSummary = { key: AiUsageKey; total: number; ok: number; unavailable: number; quota: number; error: number; models: { model: string; total: number }[] };
 export const usageKeyLabels: Record<AiUsageKey, string> = {
-  quiz: "Khóa tạo quiz (AI_FACTORY)",
+  quiz: "Khóa tạo quiz (NEWS_QUIZ)",
   article: "Khóa viết bài, ảnh, dịch (NEWS_ARTICLE)",
   shared: "Khóa chung GEMINI_API_KEY",
   custom: "Khóa riêng khác",

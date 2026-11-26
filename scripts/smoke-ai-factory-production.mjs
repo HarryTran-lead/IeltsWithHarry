@@ -8,7 +8,7 @@ const url = process.env.NEXT_PUBLIC_SUPABASE_URL?.trim();
 const serviceKey = process.env.SUPABASE_SERVICE_ROLE_KEY?.trim();
 const publishableKey = process.env.NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY?.trim();
 if (!url || !serviceKey || !publishableKey) throw new Error("Supabase URL and both API keys are required");
-const site = "https://ieltswithharry.vercel.app";
+const site = "https://harryup.vercel.app";
 const examId = "5359bea5-c7ab-4efc-b4cd-acf3d5339cdf";
 const admin = createClient(url, serviceKey, { auth: { persistSession: false, autoRefreshToken: false } });
 const email = `codex-factory-smoke-${randomUUID()}@example.invalid`;

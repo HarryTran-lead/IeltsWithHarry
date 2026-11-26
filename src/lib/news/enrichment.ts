@@ -200,10 +200,18 @@ function geminiModels() {
  * configured model; anything else fails the request.
  */
 export type GeminiPart = { text: string } | { inlineData: { mimeType: string; data: string } };
+/**
+ * The Daily News quiz key and its Free Tier flags, always read as one set: the NEWS_QUIZ_* names,
+ * or the old AI_FACTORY_* names while NEWS_QUIZ_GEMINI_API_KEY is not set yet.
+ */
+export function newsQuizKeyEnv() {
+  const prefix = process.env.NEWS_QUIZ_GEMINI_API_KEY ? "NEWS_QUIZ" : "AI_FACTORY";
+  return { key: process.env[`${prefix}_GEMINI_API_KEY`], freeTierOnly: process.env[`${prefix}_FREE_TIER_ONLY`] === "true",
+    confirmed: process.env[`${prefix}_FREE_TIER_CONFIRMED`] === "true" };
+}
 export function newsQuizFreeTierReady() {
-  return process.env.AI_FACTORY_FREE_TIER_ONLY === "true"
-    && process.env.AI_FACTORY_FREE_TIER_CONFIRMED === "true"
-    && Boolean(process.env.AI_FACTORY_GEMINI_API_KEY);
+  const quiz = newsQuizKeyEnv();
+  return quiz.freeTierOnly && quiz.confirmed && Boolean(quiz.key);
 }
 export function newsArticleFreeTierReady() {
   return process.env.NEWS_ARTICLE_FREE_TIER_CONFIRMED === "true"
@@ -224,7 +232,7 @@ export async function providerErrorDetail(response: Response, startedAt: number)
 export async function geminiJson<T>(system: string, user: string | GeminiPart[], schema: unknown, { fetcher = fetch, maxOutputTokens = 16000, temperature = 0.4, googleSearch = false, models, freeTierOnly = false, articleOnly = false, apiKey, timeoutMs = 45000, retryOutages = false }: { fetcher?: typeof fetch; maxOutputTokens?: number; temperature?: number; googleSearch?: boolean; models?: string[]; freeTierOnly?: boolean; articleOnly?: boolean; apiKey?: string; timeoutMs?: number; retryOutages?: boolean } = {}): Promise<{ model: string; data: T }> {
   if ((freeTierOnly && articleOnly) || (apiKey && (freeTierOnly || articleOnly))) throw new Error("Choose one Gemini key purpose");
   const key = apiKey ?? (articleOnly ? (newsArticleFreeTierReady() ? process.env.NEWS_ARTICLE_GEMINI_API_KEY : undefined)
-    : freeTierOnly ? (newsQuizFreeTierReady() ? process.env.AI_FACTORY_GEMINI_API_KEY : undefined) : process.env.GEMINI_API_KEY);
+    : freeTierOnly ? (newsQuizFreeTierReady() ? newsQuizKeyEnv().key : undefined) : process.env.GEMINI_API_KEY);
   if (!key) throw new Error(articleOnly ? "Confirmed free-tier Gemini key is not configured for news articles"
     : freeTierOnly ? "Confirmed free-tier Gemini key is not configured" : "GEMINI_API_KEY is not configured");
   const usageKey: AiUsageKey = apiKey ? "custom" : articleOnly ? "article" : freeTierOnly ? "quiz" : "shared";
@@ -342,7 +350,7 @@ function approvedCcLicenseUrl(raw: string, license: string) {
   const path = `/licenses/${match[1].toLowerCase()}/${match[2]}/`;
   return url.pathname === path || url.pathname === path.slice(0, -1) ? `${url.origin}${path}` : null;
 }
-const imageAgent = { Accept: "application/json", "User-Agent": "IeltsWithHarry/1.0 (https://ieltswithharry.vercel.app; educational image attribution)" };
+const imageAgent = { Accept: "application/json", "User-Agent": "HarryUp/1.0 (https://harryup.vercel.app; educational image attribution)" };
 
 async function commonsCandidates(query: string, keywords: string[], fetcher: typeof fetch): Promise<Candidate[]> {
   const url = new URL("https://commons.wikimedia.org/w/api.php");
@@ -717,6 +725,8 @@ export function scheduledNewsWorkSlot(now: Date): "quiz" | "image" | "photo" | "
 
 type IdleResult = { translationsChecked: number; translationsAdded: number; vocabularyChecked: number; vocabularyAdded: number; quotaLimited: boolean; errors: string[] };
 /** Idle slots finish a Vietnamese translation first, then add key vocabulary to an article. */
+/** A run that finished its own work within this time also translates one batch. */
+const SPARE_TRANSLATION_BEFORE_MS = 60_000;
 async function runTranslation(db: Db, result: IdleResult) {
   const { translateNextNewsArticle } = await import("./article-translation");
   const translated = await translateNextNewsArticle(db, fetch, true);
@@ -749,23 +759,37 @@ export async function enrichNews({ scheduled = false, photoOnly = false }: { sch
     return result;
   }
   const slot = scheduled ? scheduledNewsWorkSlot(new Date()) : null;
+  const startedAt = Date.now();
+  // Every scheduled run with time to spare translates one more batch of the newest untranslated
+  // article, so articles are fully translated soon after they arrive (learners' look-ups use it).
+  // These extra batches never borrow the quiz key; only the translation slot falls back to it.
+  const withSpareTranslation = async () => {
+    if (!result.translationsChecked && Date.now() - startedAt < SPARE_TRANSLATION_BEFORE_MS) {
+      const { translateNextNewsArticle } = await import("./article-translation");
+      const spare = await translateNextNewsArticle(db, fetch, true, 1, false).catch((cause: unknown) => ({ checked: 0, added: 0, error: cause instanceof Error ? cause.message : "Translation failed", quotaLimited: false }));
+      result.translationsChecked += spare.checked;
+      result.translationsAdded += spare.added;
+      if (spare.error) result.errors.push(`Translation: ${spare.error}`);
+    }
+    return result;
+  };
   // Reserve 36 quiz slots, 24 image slots, 12 translation slots and 72 fact
   // discovery slots per day. A busy backlog in one kind cannot starve quizzes.
   if (slot === "quiz") {
     await enrichQuiz(db, result, settings, true);
-    if (result.quizzesChecked) return result;
+    if (result.quizzesChecked) return await withSpareTranslation();
   }
   if (slot === "image") {
     await enrichImages(db, result);
-    if (result.imagesChecked) return result;
+    if (result.imagesChecked) return await withSpareTranslation();
   }
   if (slot === "photo") {
     await enrichPhotoWork(db, result);
-    if (result.inlineImagesChecked || result.coverUpgradesChecked) return result;
+    if (result.inlineImagesChecked || result.coverUpgradesChecked) return await withSpareTranslation();
   }
   if (slot === "translation") {
     // A failed legacy translation must not block a manual article run using its separate key.
-    if (await runTranslation(db, result)) return result;
+    if (await runTranslation(db, result)) return await withSpareTranslation();
   }
   if (slot === "discovery") {
     // Only the :55 discovery slot may go to a large quiz backlog; :15 always looks for news,
@@ -774,18 +798,18 @@ export async function enrichNews({ scheduled = false, photoOnly = false }: { sch
       const backlog = await db.rpc("news_quiz_backlog");
       if (!backlog.error && Number(backlog.data ?? 0) >= 8) {
         await enrichQuiz(db, result, settings, true);
-        if (result.quizzesChecked) return result;
+        if (result.quizzesChecked) return await withSpareTranslation();
       }
     }
     const { discoverPressFacts } = await import("./press-discovery");
     await discoverPressFacts(db, result, settings, fetch, scheduled);
-    if (result.rewritesChecked) return result;
+    if (result.rewritesChecked) return await withSpareTranslation();
     // With fewer, better articles a day, idle discovery slots finish Vietnamese translations.
-    if (await runTranslation(db, result)) return result;
+    if (await runTranslation(db, result)) return await withSpareTranslation();
   }
   if (slot !== "image") await enrichImages(db, result);
   if (!result.imagesChecked && slot !== "quiz") await enrichQuiz(db, result, settings, true);
-  return result;
+  return await withSpareTranslation();
 }
 
 type EnrichResult = { imagesChecked: number; imagesAdded: number; quizzesChecked: number; quizzesAdded: number; aiConfigured: boolean; quotaLimited: boolean; errors: string[]; quizPause?: { reason: string | null; until: string | null } | null };

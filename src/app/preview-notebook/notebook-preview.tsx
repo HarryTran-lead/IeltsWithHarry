@@ -10,6 +10,9 @@ const ago = (days: number, hours = 0) => new Date(Date.now() - days * 86400000 -
 const note = (id: string, title: string, body: string, days: number, sourcePath = "/app/notebook", skill: NoteSkill = "general", reviewAt: string | null = null, reviewPrompt = ""): NotebookEntry => ({
   id, kind: "note", title, body, meaningVi: "", example: "", sourcePath, skill, reviewAt, reviewPrompt, reviewCount: 0, createdAt: ago(days + 2), updatedAt: ago(days, 1),
 });
+const words = Array.from({ length: 12 }, (_, index): NotebookEntry => ({
+  id: `00000000-0000-4000-8000-${String(100 + index).padStart(12, "0")}`, kind: "word", title: `sample ${index + 1}`, body: "", meaningVi: "từ mẫu", example: "", sourcePath: "/app/vocabulary", createdAt: ago(index + 1), updatedAt: ago(index + 1),
+}));
 
 const makeSeed = (): NotebookEntry[] => [
   note("00000000-0000-4000-8000-000000000001", "Lỗi sai: since vs for", "## Mình đã viết\n> I have lived here since 5 years.\n\n## Câu đúng\n> I have lived here **for** 5 years.\n\n## Vì sao sai\n- *since* + mốc thời gian (since 2020)\n- *for* + khoảng thời gian (for 5 years)\n\n## Lần sau nhớ\n- [x] Đọc lại quy tắc\n- [ ] Viết 3 câu tương tự\n\n#mistakes #grammar", 0, "/app/notebook", "grammar", reviewDate(), "Khi nào dùng since, khi nào dùng for?"),
@@ -17,6 +20,7 @@ const makeSeed = (): NotebookEntry[] => [
   note("00000000-0000-4000-8000-000000000003", "Từ mới: mitigate", "## Từ / cụm từ\n**mitigate** (v) /ˈmɪtɪɡeɪt/\n\n## Nghĩa\n- giảm nhẹ, làm dịu\n\n## Collocation hay đi kèm\n- mitigate the impact / risk / effects\n\n#vocabulary #environment", 3, "/app/lesson/starter-u01-reading-city-gardens"),
   note("00000000-0000-4000-8000-000000000004", "Speaking Part 2: a place I'd like to visit", "## Cue card\n> Describe a place you would like to visit\n\n## Ý chính\n- What: Kyoto in autumn\n- Why it matters: temples + maple leaves\n\n#speaking", 9),
   note("00000000-0000-4000-8000-000000000005", "Tóm tắt: Listening Section 1 tips", "## 3 điều mình học được\n1. Đọc trước câu hỏi trong 30 giây\n2. Chú ý số và tên riêng được đánh vần\n3. Bẫy: người nói đổi ý\n\n## Việc cần làm\n- [ ] Luyện 2 đề Section 1\n- [ ] Ôn bảng chữ cái tiếng Anh\n\n#listening #lesson", 40, "/app/lesson/starter-u01-listening-exchange-programme"),
+  ...words,
 ];
 
 export function NotebookPreview() {
