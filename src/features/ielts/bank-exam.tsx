@@ -171,12 +171,15 @@ export function ExamIntro({ exam, backHref, busy, error, onStart, scheduleSlot, 
             <div className="brl-times">
               <button type="button" aria-pressed={!custom && !untimed} className={custom || untimed ? "" : "is-on"} onClick={() => setMinutes(standard)}>{standard} phút · chuẩn</button>
               <button type="button" aria-pressed={custom} className={custom ? "is-on" : ""} disabled={examView} onClick={() => setMinutes(picked === standard ? standard + 5 : picked)}>Tự chọn</button>
+              {/* Stepper slides open between "Tự chọn" and "Tự do thời gian" only while "Tự chọn" is active. */}
+              <div className={`brl-stepper-slot ${custom ? "is-open" : ""}`} inert={!custom} aria-hidden={!custom}>
+                <div className="brl-stepper">
+                  <button type="button" aria-label="Giảm 5 phút" disabled={picked <= 5} onClick={() => setMinutes(picked - 5)}><Minus size={16} /></button>
+                  <span aria-live="polite">{picked} phút</span>
+                  <button type="button" aria-label="Tăng 5 phút" disabled={picked >= 180} onClick={() => setMinutes(picked + 5)}><Plus size={16} /></button>
+                </div>
+              </div>
               <button type="button" aria-pressed={untimed} className={untimed ? "is-on" : ""} disabled={examView} onClick={() => setPracticeUntimed(true)}>Tự do thời gian</button>
-              {custom && <div className="brl-stepper">
-                <button type="button" aria-label="Giảm 5 phút" disabled={picked <= 5} onClick={() => setMinutes(picked - 5)}><Minus size={16} /></button>
-                <span aria-live="polite">{picked} phút</span>
-                <button type="button" aria-label="Tăng 5 phút" disabled={picked >= 180} onClick={() => setMinutes(picked + 5)}><Plus size={16} /></button>
-              </div>}
             </div>
           </section>
         </div>
