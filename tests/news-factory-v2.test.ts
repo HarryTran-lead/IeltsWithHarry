@@ -500,6 +500,14 @@ describe("two request free-tier budget", () => {
     expect(output.state).toBe("PENDING_PROVIDER");
     expect(output.audit.retryable).toBe(true);
   });
+  it("asks for about a third Not Given in judgement forms", async () => {
+    const { answerMixRule, notGivenTarget, batchSystem } = await import("../src/lib/news/question-factory-v2/prompts");
+    expect([1, 2, 3, 4, 5, 7].map(notGivenTarget)).toEqual([0, 1, 1, 1, 2, 2]);
+    expect(answerMixRule(["mcq", "tfng"], [2, 4])).toContain("of the 4 tfng items, make 1 Not Given and split the rest between True and False");
+    expect(answerMixRule(["ynng"], [5])).toContain("make 2 Not Given and split the rest between Yes and No");
+    expect(answerMixRule(["mcq"], [4])).toBe("");
+    expect(batchSystem(["tfng"], [5], "", [], true)).toContain("A sound Not Given statement is a genuine absence");
+  });
   it("repairs a still-rejected item a second time while the set is short", async () => {
     process.env.NEWS_QUIZ_FREE_TIER_ONLY = "true";
     process.env.NEWS_QUIZ_FREE_TIER_CONFIRMED = "true";
