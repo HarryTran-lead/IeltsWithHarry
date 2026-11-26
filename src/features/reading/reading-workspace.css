@@ -196,3 +196,9 @@
 
 .rw-section-title{clear:both;margin:1.8em 0 .6em;font:700 1.15em/1.4 var(--font-sans);color:var(--navy)}
 @media(max-width:520px){.rw.is-news.is-read .rw-lookup-toggle{font-size:0!important;gap:0;padding:7px!important}.rw.is-news.is-read .rw-options>.button{font-size:12px;padding:5px 7px}.rw.is-news.is-read .rw-modes button{font-size:11px;gap:4px}.rw.is-news.is-read .rw-bar-end{min-width:0;margin-left:0}}
+
+/* Untimed practice: word lookup floats over the questions pane. */
+.rw.is-practice .rw-tools.rw-practice-tools{display:block;position:fixed;right:16px;top:84px;z-index:40;width:min(380px,calc(100vw - 32px))}
+.rw.is-practice .rw-practice-tools .rw-flyout{position:static;width:auto;max-height:calc(100dvh - 170px);overflow:auto;border:1px solid var(--line);background:#fff}
+.rw-wide-toggle.rw-lookup-toggle[aria-pressed="true"]{border-color:var(--teal);background:var(--teal-soft);color:var(--teal-strong)}
+@media(max-width:900px){.rw.is-practice .rw-wide-toggle.rw-lookup-toggle{display:inline-flex}.rw.is-practice .rw-tools.rw-practice-tools{top:auto;bottom:72px}}

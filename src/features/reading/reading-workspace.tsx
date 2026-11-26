@@ -1,7 +1,7 @@
 "use client";
 
 import { createContext, Fragment, useCallback, useContext, useEffect, useMemo, useRef, useState } from "react";
-import { AArrowDown, AArrowUp, BookOpenText, Clock3, Columns2, Highlighter, Languages, ListChecks, Minimize2, PanelRightOpen, Timer, Trash2, X } from "lucide-react";
+import { AArrowDown, AArrowUp, BookOpenText, Clock3, Columns2, Highlighter, Languages, ListChecks, Minimize2, PanelRightOpen, Search, Timer, Trash2, X } from "lucide-react";
 import { addHighlight, highlightColors, parseHighlightCache, parseHighlights, segments, trimRange, type Highlight, type HighlightColor } from "@/lib/highlights";
 import { Literata } from "next/font/google";
 import { createClient } from "@/lib/supabase/browser";
@@ -296,7 +296,8 @@ export function ReadingWorkspace({ docKey, title, paragraphs, persist = true, se
     function onPointer(event: PointerEvent) {
       const target = event.target as Element;
       if (popover && !target.closest?.(".rw-popover")) setPopover(null);
-      if (openTool && !target.closest?.(".rw-tools")) setOpenTool(null);
+      // While practising, tapping another word in the passage updates the open lookup panel instead of closing it.
+      if (openTool && !target.closest?.(practicing ? ".rw-tools, .rw-lookup-toggle, .rw-text" : ".rw-tools, .rw-lookup-toggle")) setOpenTool(null);
       if (toolMenu && !target.closest?.(".rw-options")) setToolMenu(false);
     }
     function onScroll() { if (popover) setPopover(null); }
@@ -427,7 +428,8 @@ export function ReadingWorkspace({ docKey, title, paragraphs, persist = true, se
       onSelectWord(word, sentenceAt(text[first.p], first.start));
       // Wide screens open the lookup panel beside the text; on phones and tablets it would cover the passage,
       // so the popover shows the meaning and opens the full panel only when tapped.
-      if (toolsMin && window.matchMedia(WIDE_LOOKUP_QUERY).matches) setOpenTool(lookupToolId);
+      // In practice the panel would cover the questions, so it opens only from the popover or the bar button.
+      if (toolsMin && !practicing && window.matchMedia(WIDE_LOOKUP_QUERY).matches) setOpenTool(lookupToolId);
     }
   }
 
@@ -520,6 +522,7 @@ export function ReadingWorkspace({ docKey, title, paragraphs, persist = true, se
         <button type="button" className="rw-exit" onClick={exitPractice}><X size={17} /> Thoát</button>
         <strong className="rw-title">{title}</strong>
         <span className="rw-timer" title={practiceLimitSeconds ? "Thời gian còn lại" : "Thời gian làm bài"}><Timer size={16} /> {clock(practiceLimitSeconds ? Math.max(0, practiceLimitSeconds - seconds) : seconds)}</span>
+        {tools?.length ? <button type="button" className="rw-wide-toggle rw-lookup-toggle" aria-pressed={Boolean(openTool)} aria-label="Tra từ" onClick={() => setOpenTool(openTool ? null : lookupToolId ?? tools[0].id)}><Search size={15} />Tra từ</button> : null}
         <button type="button" className="rw-wide-toggle" aria-pressed={passageWide} onClick={() => { setPassageWide((value) => !value); setTab("passage"); }}>{passageWide ? <Columns2 size={15} /> : <BookOpenText size={15} />}{passageWide ? "Chia đôi" : "Xem toàn bài"}</button>
         <div className="rw-tabs" role="tablist" aria-label="Chọn khung">
           <button type="button" role="tab" aria-selected={tab === "passage"} onClick={() => setTab("passage")}><BookOpenText size={15} /> Bài đọc</button>
@@ -576,7 +579,7 @@ export function ReadingWorkspace({ docKey, title, paragraphs, persist = true, se
       {practicing && <div className="rw-divider" role="separator" aria-orientation="vertical" aria-label="Kéo để đổi độ rộng hai khung" aria-valuemin={30} aria-valuemax={70} aria-valuenow={Math.round(split)} tabIndex={0}
         onPointerDown={drag} onKeyDown={(event) => { if (event.key === "ArrowLeft") setSplit((value) => Math.max(30, value - 4)); if (event.key === "ArrowRight") setSplit((value) => Math.min(70, value + 4)); }}><i /></div>}
       <div className="rw-pane rw-side-pane" ref={sideRef}>
-        {toolPanel}
+        {!practicing && toolPanel}
         {practice && <div className="rw-questions"><PracticeClockContext.Provider value={practiceClock}><EvidenceNavigationContext.Provider value={showEvidence}>{practice.content}</EvidenceNavigationContext.Provider></PracticeClockContext.Provider></div>}
       </div>
     </div>
@@ -601,13 +604,20 @@ export function ReadingWorkspace({ docKey, title, paragraphs, persist = true, se
       })}</div>
     </nav>}
 
+    {/* Untimed practice keeps the lookup: a floating panel over the questions. Timed practice passes no tools. */}
+    {practicing && flyout && <div className="rw-tools rw-practice-tools"><div className="rw-flyout" role="dialog" aria-label={flyout.label}>
+      <button type="button" className="rw-flyout-close" onClick={() => setOpenTool(null)} aria-label="Đóng"><X size={16} /></button>
+      {tools && tools.length > 1 && <div className="rw-tool-switch">{tools.map((tool)=><button type="button" key={tool.id} aria-pressed={tool.id===openTool} onClick={()=>setOpenTool(tool.id)}>{tool.icon}{newsReader?(tool.id==="saved"?"Sổ từ":"Tra từ"):tool.label}</button>)}</div>}
+      {flyout.content}
+    </div></div>}
+
     {popover && <div className={`rw-popover ${popover.below ? "below" : ""} ${popover.touch ? "touch" : ""}`} style={{ left: popover.x, top: popover.y }} role="dialog" aria-label="Highlight">
       {highlightColors.map((color) => <button type="button" key={color} className={`rw-swatch ${color}`} onClick={() => paint(color)} aria-label={`Highlight màu ${colorName[color]}`} />)}
       {popover.mark && <button type="button" className="rw-unmark" onClick={() => { save(highlights.filter((item) => item.id !== popover.mark)); setPopover(null); }}><X size={14} /> Bỏ</button>}
       {popover.selectedText && onTranslateSelection && !practicing && <button type="button" className="rw-translate-selection" disabled={popover.selectedText.length > 3500 || selectionTranslation?.busy} onClick={() => void translateSelection()} title={popover.selectedText.length > 3500 ? "Chọn tối đa 3.500 ký tự để dịch" : "Dịch phần đã chọn"}><Languages size={14} /> {selectionTranslation?.busy ? "Đang dịch…" : "Dịch đoạn chọn"}</button>}
       {popover.word && (() => {
         const meaning = lookupPreview?.word === popover.word ? lookupPreview.loading ? "Đang tra nghĩa…" : lookupPreview.meaning || "Chưa có nghĩa tiếng Việt" : "Đang tra nghĩa…";
-        return lookupToolId && toolsMin && openTool !== lookupToolId
+        return lookupToolId && (toolsMin || practicing) && openTool !== lookupToolId
           ? <button type="button" className="rw-lookup-preview is-action" onClick={() => { setOpenTool(lookupToolId); setPopover(null); }} title="Mở bảng tra từ đầy đủ"><strong>{popover.word}</strong>{meaning}<small>Xem chi tiết ›</small></button>
           : <span className="rw-lookup-preview" role="status"><strong>{popover.word}</strong>{meaning}</span>;
       })()}
