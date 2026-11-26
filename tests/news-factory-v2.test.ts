@@ -225,19 +225,19 @@ afterEach(() => { v2Timing.runBudgetMs = 120_000; });
 
 describe("two request free-tier budget", () => {
   const oldEnv = {
-    only: process.env.AI_FACTORY_FREE_TIER_ONLY,
-    confirmed: process.env.AI_FACTORY_FREE_TIER_CONFIRMED,
-    key: process.env.AI_FACTORY_GEMINI_API_KEY,
+    only: process.env.NEWS_QUIZ_FREE_TIER_ONLY,
+    confirmed: process.env.NEWS_QUIZ_FREE_TIER_CONFIRMED,
+    key: process.env.NEWS_QUIZ_GEMINI_API_KEY,
   };
   afterEach(() => {
-    if (oldEnv.only === undefined) delete process.env.AI_FACTORY_FREE_TIER_ONLY; else process.env.AI_FACTORY_FREE_TIER_ONLY = oldEnv.only;
-    if (oldEnv.confirmed === undefined) delete process.env.AI_FACTORY_FREE_TIER_CONFIRMED; else process.env.AI_FACTORY_FREE_TIER_CONFIRMED = oldEnv.confirmed;
-    if (oldEnv.key === undefined) delete process.env.AI_FACTORY_GEMINI_API_KEY; else process.env.AI_FACTORY_GEMINI_API_KEY = oldEnv.key;
+    if (oldEnv.only === undefined) delete process.env.NEWS_QUIZ_FREE_TIER_ONLY; else process.env.NEWS_QUIZ_FREE_TIER_ONLY = oldEnv.only;
+    if (oldEnv.confirmed === undefined) delete process.env.NEWS_QUIZ_FREE_TIER_CONFIRMED; else process.env.NEWS_QUIZ_FREE_TIER_CONFIRMED = oldEnv.confirmed;
+    if (oldEnv.key === undefined) delete process.env.NEWS_QUIZ_GEMINI_API_KEY; else process.env.NEWS_QUIZ_GEMINI_API_KEY = oldEnv.key;
   });
   it("counts attempts before a failed response and never invokes a third call", async () => {
-    process.env.AI_FACTORY_FREE_TIER_ONLY = "true";
-    process.env.AI_FACTORY_FREE_TIER_CONFIRMED = "true";
-    process.env.AI_FACTORY_GEMINI_API_KEY = "offline-test-key";
+    process.env.NEWS_QUIZ_FREE_TIER_ONLY = "true";
+    process.env.NEWS_QUIZ_FREE_TIER_CONFIRMED = "true";
+    process.env.NEWS_QUIZ_GEMINI_API_KEY = "offline-test-key";
     let calls = 0;
     const fake = (async () => { calls++; return new Response("", { status: 503 }); }) as typeof fetch;
     const budget = new ArticleRequestBudget();
@@ -248,9 +248,9 @@ describe("two request free-tier budget", () => {
     expect(budget.used).toBe(2);
   });
   it("marks a Gemini 503 as a retryable outage instead of an article failure", async () => {
-    process.env.AI_FACTORY_FREE_TIER_ONLY = "true";
-    process.env.AI_FACTORY_FREE_TIER_CONFIRMED = "true";
-    process.env.AI_FACTORY_GEMINI_API_KEY = "offline-test-key";
+    process.env.NEWS_QUIZ_FREE_TIER_ONLY = "true";
+    process.env.NEWS_QUIZ_FREE_TIER_CONFIRMED = "true";
+    process.env.NEWS_QUIZ_GEMINI_API_KEY = "offline-test-key";
     let calls = 0;
     const fake = (async () => { calls++; return new Response("", { status: 503 }); }) as typeof fetch;
     await expect(strictGeminiJson("system", "user", {}, new ArticleRequestBudget(), fake))
@@ -264,9 +264,9 @@ describe("two request free-tier budget", () => {
     expect(calls).toBe(7);
   });
   it("keeps Google's error status, message and wait for diagnosis", async () => {
-    process.env.AI_FACTORY_FREE_TIER_ONLY = "true";
-    process.env.AI_FACTORY_FREE_TIER_CONFIRMED = "true";
-    process.env.AI_FACTORY_GEMINI_API_KEY = "offline-test-key";
+    process.env.NEWS_QUIZ_FREE_TIER_ONLY = "true";
+    process.env.NEWS_QUIZ_FREE_TIER_CONFIRMED = "true";
+    process.env.NEWS_QUIZ_GEMINI_API_KEY = "offline-test-key";
     const fake = (async () => Response.json({ error: { code: 503, status: "UNAVAILABLE", message: "The model is overloaded. Please try again later." } },
       { status: 503 })) as typeof fetch;
     await expect(strictGeminiJson("system", "user", {}, new ArticleRequestBudget(), fake))
@@ -275,9 +275,9 @@ describe("two request free-tier budget", () => {
     await expect(strictGeminiJson("system", "user", {}, new ArticleRequestBudget(), empty)).rejects.toThrow("no error body");
   });
   it("does not mark a malformed 4xx request as retryable", async () => {
-    process.env.AI_FACTORY_FREE_TIER_ONLY = "true";
-    process.env.AI_FACTORY_FREE_TIER_CONFIRMED = "true";
-    process.env.AI_FACTORY_GEMINI_API_KEY = "offline-test-key";
+    process.env.NEWS_QUIZ_FREE_TIER_ONLY = "true";
+    process.env.NEWS_QUIZ_FREE_TIER_CONFIRMED = "true";
+    process.env.NEWS_QUIZ_GEMINI_API_KEY = "offline-test-key";
     const fake = (async () => new Response("", { status: 400 })) as typeof fetch;
     const passage = article + " " + "Residents compared monthly readings and kept printed records for later discussion. ".repeat(40);
     const output = await generateNewsQuizV2("Bad request", passage, "bad-request-case", fake);
@@ -286,9 +286,9 @@ describe("two request free-tier budget", () => {
     expect(output.audit.failure).toBe("rejected");
   });
   it("labels each provider failure with the reason the worker acts on", async () => {
-    process.env.AI_FACTORY_FREE_TIER_ONLY = "true";
-    process.env.AI_FACTORY_FREE_TIER_CONFIRMED = "true";
-    process.env.AI_FACTORY_GEMINI_API_KEY = "offline-test-key";
+    process.env.NEWS_QUIZ_FREE_TIER_ONLY = "true";
+    process.env.NEWS_QUIZ_FREE_TIER_CONFIRMED = "true";
+    process.env.NEWS_QUIZ_GEMINI_API_KEY = "offline-test-key";
     const passage = article + " " + "Residents compared monthly readings and kept printed records for later discussion. ".repeat(40);
     const run = (id: string, reply: () => Response) => generateNewsQuizV2("Reason", passage, id, (async () => reply()) as typeof fetch);
     expect((await run("reason-503", () => new Response("", { status: 503 }))).audit.failure).toBe("unavailable");
@@ -313,9 +313,9 @@ describe("two request free-tier budget", () => {
     expect(alternateV2Model("gemini-9-pro")).toBe("gemini-9-pro");
   });
   it("retries a 503 three times per model, switches model, and publishes", async () => {
-    process.env.AI_FACTORY_FREE_TIER_ONLY = "true";
-    process.env.AI_FACTORY_FREE_TIER_CONFIRMED = "true";
-    process.env.AI_FACTORY_GEMINI_API_KEY = "offline-test-key";
+    process.env.NEWS_QUIZ_FREE_TIER_ONLY = "true";
+    process.env.NEWS_QUIZ_FREE_TIER_CONFIRMED = "true";
+    process.env.NEWS_QUIZ_GEMINI_API_KEY = "offline-test-key";
     const { passage, id, questions } = sixItemCase("outage-retry");
     const urls: string[] = [];
     const fake = (async (url: string | URL | Request, init?: RequestInit) => {
@@ -333,9 +333,9 @@ describe("two request free-tier budget", () => {
     expect(output.audit.requests).toBe(10);
   });
   it("stops after six generation attempts, or earlier when the run time budget is spent", async () => {
-    process.env.AI_FACTORY_FREE_TIER_ONLY = "true";
-    process.env.AI_FACTORY_FREE_TIER_CONFIRMED = "true";
-    process.env.AI_FACTORY_GEMINI_API_KEY = "offline-test-key";
+    process.env.NEWS_QUIZ_FREE_TIER_ONLY = "true";
+    process.env.NEWS_QUIZ_FREE_TIER_CONFIRMED = "true";
+    process.env.NEWS_QUIZ_GEMINI_API_KEY = "offline-test-key";
     const passage = article + " " + "Residents compared monthly readings and kept printed records for later discussion. ".repeat(40);
     let calls = 0;
     const output = await generateNewsQuizV2("Budget", passage, "retry-run-budget", (async () => { calls++; return new Response("", { status: 503 }); }) as typeof fetch);
@@ -349,9 +349,9 @@ describe("two request free-tier budget", () => {
     expect(output.audit.requests).toBe(6);
   });
   it("does not retry a 4xx, and retries a QA outage like generation", async () => {
-    process.env.AI_FACTORY_FREE_TIER_ONLY = "true";
-    process.env.AI_FACTORY_FREE_TIER_CONFIRMED = "true";
-    process.env.AI_FACTORY_GEMINI_API_KEY = "offline-test-key";
+    process.env.NEWS_QUIZ_FREE_TIER_ONLY = "true";
+    process.env.NEWS_QUIZ_FREE_TIER_CONFIRMED = "true";
+    process.env.NEWS_QUIZ_GEMINI_API_KEY = "offline-test-key";
     const passage = article + " " + "Residents compared monthly readings and kept printed records for later discussion. ".repeat(40);
     let calls = 0;
     const rejected = await generateNewsQuizV2("Rejected", passage, "no-retry-400", (async () => { calls++; return new Response("", { status: 400 }); }) as typeof fetch);
@@ -372,16 +372,16 @@ describe("two request free-tier budget", () => {
     expect(output.audit.requests).toBe(11);
   });
   it("halts before any call without confirmed free tier", async () => {
-    delete process.env.AI_FACTORY_FREE_TIER_CONFIRMED;
+    delete process.env.NEWS_QUIZ_FREE_TIER_CONFIRMED;
     const budget = new ArticleRequestBudget();
     const fake = (async () => { throw Error("must not call"); }) as typeof fetch;
     await expect(strictGeminiJson("system", "user", {}, budget, fake)).rejects.toThrow("Free Tier");
     expect(budget.used).toBe(0);
   });
   it("classifies a quota response without a fallback request", async () => {
-    process.env.AI_FACTORY_FREE_TIER_ONLY = "true";
-    process.env.AI_FACTORY_FREE_TIER_CONFIRMED = "true";
-    process.env.AI_FACTORY_GEMINI_API_KEY = "offline-test-key";
+    process.env.NEWS_QUIZ_FREE_TIER_ONLY = "true";
+    process.env.NEWS_QUIZ_FREE_TIER_CONFIRMED = "true";
+    process.env.NEWS_QUIZ_GEMINI_API_KEY = "offline-test-key";
     let calls = 0;
     const fake = (async () => { calls++; return Response.json({
       error: { message: "Requests per day limit exceeded" },
@@ -392,9 +392,9 @@ describe("two request free-tier budget", () => {
     expect(budget.used).toBe(1);
   });
   it("runs generation, blind QA and a cross-model check of risky items", async () => {
-    process.env.AI_FACTORY_FREE_TIER_ONLY = "true";
-    process.env.AI_FACTORY_FREE_TIER_CONFIRMED = "true";
-    process.env.AI_FACTORY_GEMINI_API_KEY = "offline-test-key";
+    process.env.NEWS_QUIZ_FREE_TIER_ONLY = "true";
+    process.env.NEWS_QUIZ_FREE_TIER_CONFIRMED = "true";
+    process.env.NEWS_QUIZ_GEMINI_API_KEY = "offline-test-key";
     const { passage, id, questions } = sixItemCase("fixture");
     const steps: string[] = [];
     let calls = 0;
@@ -426,9 +426,9 @@ describe("two request free-tier budget", () => {
     expect(calls).toBe(7);
   });
   it("repairs a rejected item once instead of dropping the whole quiz", async () => {
-    process.env.AI_FACTORY_FREE_TIER_ONLY = "true";
-    process.env.AI_FACTORY_FREE_TIER_CONFIRMED = "true";
-    process.env.AI_FACTORY_GEMINI_API_KEY = "offline-test-key";
+    process.env.NEWS_QUIZ_FREE_TIER_ONLY = "true";
+    process.env.NEWS_QUIZ_FREE_TIER_CONFIRMED = "true";
+    process.env.NEWS_QUIZ_GEMINI_API_KEY = "offline-test-key";
     const { passage, id, questions } = sixItemCase("repair");
     const steps: string[] = [];
     const fake = (async (_url: string | URL | Request, init?: RequestInit) => {
@@ -449,9 +449,9 @@ describe("two request free-tier budget", () => {
     expect(output.audit.issues).toContain("mcq_p2:QA_MISMATCH");
   });
   it("drops a risky item the second model disagrees with", async () => {
-    process.env.AI_FACTORY_FREE_TIER_ONLY = "true";
-    process.env.AI_FACTORY_FREE_TIER_CONFIRMED = "true";
-    process.env.AI_FACTORY_GEMINI_API_KEY = "offline-test-key";
+    process.env.NEWS_QUIZ_FREE_TIER_ONLY = "true";
+    process.env.NEWS_QUIZ_FREE_TIER_CONFIRMED = "true";
+    process.env.NEWS_QUIZ_GEMINI_API_KEY = "offline-test-key";
     const { passage, id, questions } = sixItemCase("cross");
     let qa = 0;
     const fake = (async (_url: string | URL | Request, init?: RequestInit) => {
@@ -464,9 +464,9 @@ describe("two request free-tier budget", () => {
     expect(output.audit.failure).toBe("quality");
   });
   it("sends complete source text to every generation step even beyond the legacy excerpt", async () => {
-    process.env.AI_FACTORY_FREE_TIER_ONLY = "true";
-    process.env.AI_FACTORY_FREE_TIER_CONFIRMED = "true";
-    process.env.AI_FACTORY_GEMINI_API_KEY = "offline-test-key";
+    process.env.NEWS_QUIZ_FREE_TIER_ONLY = "true";
+    process.env.NEWS_QUIZ_FREE_TIER_CONFIRMED = "true";
+    process.env.NEWS_QUIZ_GEMINI_API_KEY = "offline-test-key";
     const longArticle = article + " " + "A routine report described another small water reading in the public register. ".repeat(220)
       + "TAIL FACT: private wells remained untested.";
     let calls = 0;
@@ -482,9 +482,9 @@ describe("two request free-tier budget", () => {
     expect(output.audit.requests).toBe(calls);
   });
   it("keeps the other batches when one batch hits an outage, and treats a short set as an outage", async () => {
-    process.env.AI_FACTORY_FREE_TIER_ONLY = "true";
-    process.env.AI_FACTORY_FREE_TIER_CONFIRMED = "true";
-    process.env.AI_FACTORY_GEMINI_API_KEY = "offline-test-key";
+    process.env.NEWS_QUIZ_FREE_TIER_ONLY = "true";
+    process.env.NEWS_QUIZ_FREE_TIER_CONFIRMED = "true";
+    process.env.NEWS_QUIZ_GEMINI_API_KEY = "offline-test-key";
     const { passage, id, questions } = sixItemCase("batch-outage");
     const steps: string[] = [];
     const fake = (async (_url: string | URL | Request, init?: RequestInit) => {
@@ -501,9 +501,9 @@ describe("two request free-tier budget", () => {
     expect(output.audit.retryable).toBe(true);
   });
   it("tops up a short set with single-item forms instead of failing it", async () => {
-    process.env.AI_FACTORY_FREE_TIER_ONLY = "true";
-    process.env.AI_FACTORY_FREE_TIER_CONFIRMED = "true";
-    process.env.AI_FACTORY_GEMINI_API_KEY = "offline-test-key";
+    process.env.NEWS_QUIZ_FREE_TIER_ONLY = "true";
+    process.env.NEWS_QUIZ_FREE_TIER_CONFIRMED = "true";
+    process.env.NEWS_QUIZ_GEMINI_API_KEY = "offline-test-key";
     const { passage, id, questions } = sixItemCase("top-up");
     const steps: string[] = [];
     const fake = (async (_url: string | URL | Request, init?: RequestInit) => {
@@ -532,9 +532,9 @@ describe("two request free-tier budget", () => {
     expect(stranger.options[0]).toBe("omega end");
   });
   it("renames ids that two batches both used", async () => {
-    process.env.AI_FACTORY_FREE_TIER_ONLY = "true";
-    process.env.AI_FACTORY_FREE_TIER_CONFIRMED = "true";
-    process.env.AI_FACTORY_GEMINI_API_KEY = "offline-test-key";
+    process.env.NEWS_QUIZ_FREE_TIER_ONLY = "true";
+    process.env.NEWS_QUIZ_FREE_TIER_CONFIRMED = "true";
+    process.env.NEWS_QUIZ_GEMINI_API_KEY = "offline-test-key";
     const { passage, id, questions } = sixItemCase("same-ids");
     const clash = questions.map((item, index) => ({ ...item, id: `q${index % 3}`, group_id: `g${index % 3}` }));
     const fake = (async (_url: string | URL | Request, init?: RequestInit) => gemini(factoryData(init, clash))) as typeof fetch;

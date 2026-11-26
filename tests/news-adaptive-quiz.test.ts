@@ -118,11 +118,11 @@ describe("adaptive IELTS passage quiz", () => {
         }));
       return reply({ questions, image_query: "research field station" });
     };
-    const previous = { key: process.env.AI_FACTORY_GEMINI_API_KEY,
-      confirmed: process.env.AI_FACTORY_FREE_TIER_CONFIRMED, only: process.env.AI_FACTORY_FREE_TIER_ONLY };
-    process.env.AI_FACTORY_GEMINI_API_KEY = "test-key";
-    process.env.AI_FACTORY_FREE_TIER_CONFIRMED = "true";
-    process.env.AI_FACTORY_FREE_TIER_ONLY = "true";
+    const previous = { key: process.env.NEWS_QUIZ_GEMINI_API_KEY,
+      confirmed: process.env.NEWS_QUIZ_FREE_TIER_CONFIRMED, only: process.env.NEWS_QUIZ_FREE_TIER_ONLY };
+    process.env.NEWS_QUIZ_GEMINI_API_KEY = "test-key";
+    process.env.NEWS_QUIZ_FREE_TIER_CONFIRMED = "true";
+    process.env.NEWS_QUIZ_FREE_TIER_ONLY = "true";
     try {
       const result = await generateAdaptiveNewsQuiz("Survey findings", passage, "long-article", fetcher as typeof fetch);
       expect(result.questions).toHaveLength(13);
@@ -140,9 +140,9 @@ describe("adaptive IELTS passage quiz", () => {
       expect(candidateCount).toBeGreaterThan(13);
       expect([...requests[1].matchAll(/"id":\d+/g)]).toHaveLength(candidateCount);
     } finally {
-      if (previous.key === undefined) delete process.env.AI_FACTORY_GEMINI_API_KEY; else process.env.AI_FACTORY_GEMINI_API_KEY = previous.key;
-      if (previous.confirmed === undefined) delete process.env.AI_FACTORY_FREE_TIER_CONFIRMED; else process.env.AI_FACTORY_FREE_TIER_CONFIRMED = previous.confirmed;
-      if (previous.only === undefined) delete process.env.AI_FACTORY_FREE_TIER_ONLY; else process.env.AI_FACTORY_FREE_TIER_ONLY = previous.only;
+      if (previous.key === undefined) delete process.env.NEWS_QUIZ_GEMINI_API_KEY; else process.env.NEWS_QUIZ_GEMINI_API_KEY = previous.key;
+      if (previous.confirmed === undefined) delete process.env.NEWS_QUIZ_FREE_TIER_CONFIRMED; else process.env.NEWS_QUIZ_FREE_TIER_CONFIRMED = previous.confirmed;
+      if (previous.only === undefined) delete process.env.NEWS_QUIZ_FREE_TIER_ONLY; else process.env.NEWS_QUIZ_FREE_TIER_ONLY = previous.only;
     }
   });
 });

@@ -12,7 +12,7 @@ it("routes article research only through its confirmed free-tier key", async () 
     article: process.env.NEWS_ARTICLE_GEMINI_API_KEY,
     confirmed: process.env.NEWS_ARTICLE_FREE_TIER_CONFIRMED,
     legacy: process.env.GEMINI_API_KEY,
-    quiz: process.env.AI_FACTORY_GEMINI_API_KEY,
+    quiz: process.env.NEWS_QUIZ_GEMINI_API_KEY,
   };
   const calls: string[] = [];
   const fetcher = (async (_url: RequestInfo | URL, init?: RequestInit) => {
@@ -23,7 +23,7 @@ it("routes article research only through its confirmed free-tier key", async () 
     process.env.NEWS_ARTICLE_GEMINI_API_KEY = "article-free-key";
     process.env.NEWS_ARTICLE_FREE_TIER_CONFIRMED = "true";
     process.env.GEMINI_API_KEY = "legacy-paid-key";
-    process.env.AI_FACTORY_GEMINI_API_KEY = "quiz-free-key";
+    process.env.NEWS_QUIZ_GEMINI_API_KEY = "quiz-free-key";
     expect(newsArticleFreeTierReady()).toBe(true);
     await geminiJson("system", "user", {}, { fetcher, articleOnly: true });
     expect(calls).toEqual(["article-free-key"]);
@@ -35,7 +35,7 @@ it("routes article research only through its confirmed free-tier key", async () 
       NEWS_ARTICLE_GEMINI_API_KEY: previous.article,
       NEWS_ARTICLE_FREE_TIER_CONFIRMED: previous.confirmed,
       GEMINI_API_KEY: previous.legacy,
-      AI_FACTORY_GEMINI_API_KEY: previous.quiz,
+      NEWS_QUIZ_GEMINI_API_KEY: previous.quiz,
     })) {
       if (value === undefined) delete process.env[name]; else process.env[name] = value;
     }
@@ -125,19 +125,19 @@ const fixedPlan = { tfng: 6, mcq: 6, sentence_completion: 4, short_answer: 4 };
 const validateGeneratedQuiz = (value: unknown, body: string) => validateWithPlan(value, body, fixedPlan);
 const geminiReply = (value: unknown) => new Response(JSON.stringify({ candidates: [{ finishReason: "STOP", content: { parts: [{ text: JSON.stringify(value) }] } }] }), { status: 200 });
 async function withKey<T>(run: () => Promise<T>, models?: string) {
-  const previous = { key: process.env.GEMINI_API_KEY, freeKey: process.env.AI_FACTORY_GEMINI_API_KEY,
-    confirmed: process.env.AI_FACTORY_FREE_TIER_CONFIRMED, only: process.env.AI_FACTORY_FREE_TIER_ONLY, models: process.env.GEMINI_MODELS };
+  const previous = { key: process.env.GEMINI_API_KEY, freeKey: process.env.NEWS_QUIZ_GEMINI_API_KEY,
+    confirmed: process.env.NEWS_QUIZ_FREE_TIER_CONFIRMED, only: process.env.NEWS_QUIZ_FREE_TIER_ONLY, models: process.env.GEMINI_MODELS };
   process.env.GEMINI_API_KEY = "paid-key-must-not-be-used";
-  process.env.AI_FACTORY_GEMINI_API_KEY = "test-key";
-  process.env.AI_FACTORY_FREE_TIER_CONFIRMED = "true";
-  process.env.AI_FACTORY_FREE_TIER_ONLY = "true";
+  process.env.NEWS_QUIZ_GEMINI_API_KEY = "test-key";
+  process.env.NEWS_QUIZ_FREE_TIER_CONFIRMED = "true";
+  process.env.NEWS_QUIZ_FREE_TIER_ONLY = "true";
   if (models) process.env.GEMINI_MODELS = models; else delete process.env.GEMINI_MODELS;
   try { return await run(); }
   finally {
     if (previous.key === undefined) delete process.env.GEMINI_API_KEY; else process.env.GEMINI_API_KEY = previous.key;
-    if (previous.freeKey === undefined) delete process.env.AI_FACTORY_GEMINI_API_KEY; else process.env.AI_FACTORY_GEMINI_API_KEY = previous.freeKey;
-    if (previous.confirmed === undefined) delete process.env.AI_FACTORY_FREE_TIER_CONFIRMED; else process.env.AI_FACTORY_FREE_TIER_CONFIRMED = previous.confirmed;
-    if (previous.only === undefined) delete process.env.AI_FACTORY_FREE_TIER_ONLY; else process.env.AI_FACTORY_FREE_TIER_ONLY = previous.only;
+    if (previous.freeKey === undefined) delete process.env.NEWS_QUIZ_GEMINI_API_KEY; else process.env.NEWS_QUIZ_GEMINI_API_KEY = previous.freeKey;
+    if (previous.confirmed === undefined) delete process.env.NEWS_QUIZ_FREE_TIER_CONFIRMED; else process.env.NEWS_QUIZ_FREE_TIER_CONFIRMED = previous.confirmed;
+    if (previous.only === undefined) delete process.env.NEWS_QUIZ_FREE_TIER_ONLY; else process.env.NEWS_QUIZ_FREE_TIER_ONLY = previous.only;
     if (previous.models === undefined) delete process.env.GEMINI_MODELS; else process.env.GEMINI_MODELS = previous.models;
   }
 }
@@ -231,7 +231,7 @@ describe("IELTS-style AI quiz validation", () => {
 describe("Gemini news quiz generation", () => {
   it("refuses the paid key when free-tier confirmation is absent", async () => {
     await withKey(async () => {
-      process.env.AI_FACTORY_FREE_TIER_CONFIRMED = "false";
+      process.env.NEWS_QUIZ_FREE_TIER_CONFIRMED = "false";
       const fetcher = async () => { throw new Error("Paid Gemini request must not be sent"); };
       await expect(generateNewsQuiz("Artemis test", passage, fetcher as typeof fetch)).rejects.toThrow("Confirmed free-tier Gemini key is not configured");
     });
