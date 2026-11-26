@@ -28,9 +28,9 @@ type Popover = { x: number; y: number; below: boolean; touch: boolean; ranges?: 
 
 /** Questions shown beside the passage in practice mode. `setup` opens before a news practice starts. */
 export type ReadingPractice = { answered: boolean[]; content: React.ReactNode; setup?: React.ReactNode; correct?: (boolean | undefined)[] };
-type PracticeClock = { elapsed: () => number; restart: () => void; stop: (seconds?: number) => void };
-const PracticeClockContext = createContext<PracticeClock>({ elapsed: () => 0, restart: () => {}, stop: () => {} });
-/** Seconds on the practice timer, and a way to start it again for a new round. */
+type PracticeClock = { elapsed: () => number; restart: () => void; stop: (seconds?: number) => void; resume: () => void };
+const PracticeClockContext = createContext<PracticeClock>({ elapsed: () => 0, restart: () => {}, stop: () => {}, resume: () => {} });
+/** Seconds on the practice timer, and ways to start it again, stop it, or carry on from where it stopped. */
 export function usePracticeClock() { return useContext(PracticeClockContext); }
 const EvidenceNavigationContext = createContext<((quote: string) => boolean) | null>(null);
 /** Jump from a graded question's citation to its location in the passage. */
@@ -121,6 +121,8 @@ export function ReadingWorkspace({ docKey, title, paragraphs, persist = true, se
     elapsed: () => stoppedRef.current ?? (epochRef.current === null ? secondsRef.current : elapsedSeconds(epochRef.current)),
     restart: () => { epochRef.current = Date.now(); stoppedRef.current = null; secondsRef.current = 0; setSeconds(0); },
     stop: (value) => { const elapsed = value ?? (epochRef.current === null ? 0 : elapsedSeconds(epochRef.current)); stoppedRef.current = elapsed; secondsRef.current = elapsed; setSeconds(elapsed); },
+    // Only a stopped clock moves again; a running or paused one is left as it is.
+    resume: () => { if (stoppedRef.current === null) return; epochRef.current = Date.now() - stoppedRef.current * 1000; stoppedRef.current = null; },
   }), []);
   const [popover, setPopover] = useState<Popover | null>(null);
   const [selectionTranslation, setSelectionTranslation] = useState<{ source: string; paragraph: number; result: string; error: string; busy: boolean } | null>(null);

@@ -137,7 +137,7 @@ export function NewsAutoQuiz({ articleId, types = ALL_TYPES, examMode = false, e
   const [questionHighlights, setQuestionHighlights] = useState<Record<string, Highlight[]>>({});
   const [selection, setSelection] = useState<{ questionId: string; p: number; start: number; end: number; mark?: string } | null>(null);
   const [saved, setSaved] = useState<{ submittedAt: string; attempts: number } | null>(null);
-  // Time spent on the round shown in the result card; the practice timer restarts with each new round.
+  // Time spent on the round shown in the result card. The practice timer runs for the whole sitting, across question types.
   const [duration, setDuration] = useState<number | null>(null);
   const [history, setHistory] = useState<PracticeAttempt[]>([]);
   const [recoveryFeedback, setRecoveryFeedback] = useState<RecoveryFeedback | null>(null);
@@ -145,6 +145,8 @@ export function NewsAutoQuiz({ articleId, types = ALL_TYPES, examMode = false, e
   const [secondsLeft, setSecondsLeft] = useState(1200);
   const submitting=useRef(false);
   const clock = usePracticeClock();
+  // Timer reading at the last practice submission: a round's time is what passed since then.
+  const roundStart = useRef(0);
   const examExpired = examMode && secondsLeft === 0;
   useEffect(() => {
     if (!examMode) return;
@@ -181,6 +183,7 @@ export function NewsAutoQuiz({ articleId, types = ALL_TYPES, examMode = false, e
       setSaved({ submittedAt: previous.submittedAt, attempts: previous.attempts });
       setDuration(previous.durationSeconds ?? null);
       clock.stop(previous.durationSeconds ?? 0);
+      roundStart.current = 0;
     });
     return () => { live = false; };
   }, [articleId, db, onStatus, examMode, qaMode, clock]);
@@ -212,9 +215,9 @@ export function NewsAutoQuiz({ articleId, types = ALL_TYPES, examMode = false, e
   const score = shown.filter((question) => reviews[question.id]?.correct).length;
   // The reader's question strip shows which questions have an answer and, once graded, which are right.
   useEffect(() => { onProgress?.(shown.map((question) => isAnswered(answers[question.id])), shown.map((question) => graded ? reviews[question.id]?.correct : undefined)); }, [answers, shown, graded, reviews, onProgress]);
-  // A different set of question types is a new round with its own timer.
+  // Switching question types stays in the same sitting: the timer carries on instead of starting again.
   const roundKey = shown.map((question) => question.id).join();
-  useEffect(() => { if (roundKey && !examMode) { if(graded)clock.stop(duration??0);else clock.restart(); } }, [roundKey, clock, examMode, graded, duration]);
+  useEffect(() => { if (roundKey && !examMode && !graded) clock.resume(); }, [roundKey, clock, examMode, graded]);
 
   useEffect(()=>{
     if(!examSession||!examMode||graded||!questions.length||examExpired||busy)return;
@@ -334,7 +337,8 @@ export function NewsAutoQuiz({ articleId, types = ALL_TYPES, examMode = false, e
       const value = answers[question.id];
       return [question.id, value === undefined ? "" : typeof value === "string" ? value.trim() : value];
     }));
-    let seconds = Math.min(clock.elapsed(), examMode ? 1200 : 36000);
+    const elapsedNow = clock.elapsed();
+    let seconds = examMode ? Math.min(elapsedNow, 1200) : Math.min(Math.max(0, elapsedNow - roundStart.current), 36000);
     let review: Review[] | null = null;
     await saveQueue.current;
     if(saveConflict.current){setBusy(false);return;}
@@ -375,11 +379,21 @@ export function NewsAutoQuiz({ articleId, types = ALL_TYPES, examMode = false, e
     const result = review;
     setReviews((current) => ({ ...current, ...Object.fromEntries(result.map((item) => [item.id, item])) }));
     setDuration(seconds);
-    clock.stop(seconds);
+    // The timer stops once every question of the article is graded; other question types left to do keep it running.
+    const gradedIds = new Set([...Object.keys(reviews), ...result.map((item) => item.id)]);
+    if (examMode) clock.stop(seconds);
+    else if (questions.every((question) => gradedIds.has(question.id))) clock.stop(elapsedNow);
+    roundStart.current = elapsedNow;
     if(!qaMode)celebrateScore(result.filter((item) => item.correct).length, result.length);
     requestAnimationFrame(() => resultRef.current?.scrollIntoView({ behavior: "smooth", block: "nearest" }));
     }catch{setError("Mất kết nối khi nộp bài. Đáp án còn lưu; hãy thử nộp lại.");}
     finally{submitting.current=false;setBusy(false);}
+  }
+
+  // A retry after the whole article is graded is a new sitting; mid-sitting the timer keeps running.
+  function newRound() {
+    if (questions.every((question) => reviews[question.id])) { roundStart.current = 0; clock.restart(); }
+    else roundStart.current = clock.elapsed();
   }
 
   function retry() {
@@ -388,7 +402,7 @@ export function NewsAutoQuiz({ articleId, types = ALL_TYPES, examMode = false, e
     setAnswers((current) => Object.fromEntries(Object.entries(current).filter(([id]) => !ids.has(id))));
     setReviews((current) => Object.fromEntries(Object.entries(current).filter(([id]) => !ids.has(id))));
     setDuration(null);
-    clock.restart();
+    newRound();
   }
 
   function retryWrong() {
@@ -398,7 +412,7 @@ export function NewsAutoQuiz({ articleId, types = ALL_TYPES, examMode = false, e
     setAnswers((current) => Object.fromEntries(Object.entries(current).filter(([id]) => !ids.includes(id))));
     setReviews((current) => Object.fromEntries(Object.entries(current).filter(([id]) => !ids.includes(id))));
     setDuration(null);
-    clock.restart();
+    newRound();
   }
 
   if (!questions.length && !error) return null;
