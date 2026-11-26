@@ -91,7 +91,7 @@ function PreviewBody({ tests }: { tests: PreviewTest[] }) {
     {leave}
   </>;
   return <main className="bx-page bx-run bx-exam-mode bx-listening-mode bx-practice-mode bl-tone-listening">
-    <div className="br-practice-ribbon"><strong>Ielts<span>WithHarry</span></strong><nav aria-label="Điều hướng kỹ năng"><span>Listening</span><span>{part ? `Part ${part}` : "Full test"}</span></nav><small>Giao diện luyện tập</small></div>
+    <div className="br-practice-ribbon"><strong>Harry<span>Up</span></strong><nav aria-label="Điều hướng kỹ năng"><span>Listening</span><span>{part ? `Part ${part}` : "Full test"}</span></nav><small>Giao diện luyện tập</small></div>
     <ExamBar exam={exam} answered={answered} total={inScope.length} remaining={remaining} busy={false} saveState="saved" onExit={() => setLeaving(true)} onSubmit={() => setConfirming(true)} />
     <TestRunner exam={exam} content={test.content} scope={scope} answers={answers} setAnswer={setAnswer} flags={flags} setFlags={setFlags} notes={notes} setNotes={setNotes} onFinish={() => setConfirming(true)} jumpTo={jump} />
     {dialog}{leave}

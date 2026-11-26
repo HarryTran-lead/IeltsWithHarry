@@ -339,7 +339,7 @@ function AppShellContent({ children, canManage }: { children: React.ReactNode; c
             <HarryMascot size={40} />
           </span>
           <span>
-            Ielts<b>WithHarry</b>
+            Harry<b>Up</b>
           </span>
         </Link>
         <div className="header-search">

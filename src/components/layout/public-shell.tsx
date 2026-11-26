@@ -13,7 +13,7 @@ export async function PublicShell({ children }: { children: React.ReactNode }) {
         <Link href="/" className="public-brand">
           <HarryMascot size={40} />
           <span>
-            Ielts<b>WithHarry</b>
+            Harry<b>Up</b>
           </span>
         </Link>
         <nav>
@@ -29,7 +29,7 @@ export async function PublicShell({ children }: { children: React.ReactNode }) {
             <Link href="/" className="public-brand">
               <HarryMascot size={36} />
               <span>
-                Ielts<b>WithHarry</b>
+                Harry<b>Up</b>
               </span>
             </Link>
             <p>Không gian học tiếng Anh và IELTS: bài học soạn sẵn, tin tức mỗi ngày, sổ tay và phòng học chung.</p>
