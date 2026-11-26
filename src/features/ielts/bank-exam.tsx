@@ -195,37 +195,41 @@ export function ExamIntro({ exam, backHref, busy, error, onStart, scheduleSlot, 
     </main>;
   }
   if (exam.skill === "Writing" && onClose) {
-    // Opened from the Writing catalog: the same dialog shell as Reading, in Writing's amber.
+    // Opened from the Writing catalog: the Reading setup dialog with only the view choice, in Writing's amber.
     const task = writingTasks.find((item) => item.id === exam.practice_type) ?? writingTasks[1];
-    const prompt = exam.content?.prompt?.trim();
+    const examView = readingView === "exam";
     return <main className={`bx-reading-launch bl-tone-${toneOf(exam.skill)}`}>
       <div className="br-launch-dialog brl brl-writing" role="dialog" aria-modal="true" aria-labelledby="br-launch-title">
         <header className="br-launch-head brl-head">
           <div>
             <span className="brl-kicker"><b>Writing</b>{task.label}</span>
             <h1 id="br-launch-title">{displayExamTitle(exam.title)}</h1>
-            <p>{exam.duration_minutes} phút · Tối thiểu {task.minimum} từ</p>
+            <p>{task.badge} · {exam.duration_minutes} phút · Tối thiểu {task.minimum} từ</p>
           </div>
           <button type="button" onClick={onClose} disabled={busy} aria-label="Đóng"><X size={19} /></button>
         </header>
         <div className="br-launch-scroll brl-scroll">
           <section className="brl-section">
-            <h2>Đề bài</h2>
-            <div className="brl-writing-task">
-              <WritingHeroArt exam={exam} />
-              {prompt ? <div className="bx-prompt-preview"><RichText text={prompt} /></div> : <p className="bx-prompt-preview">Đề bài sẽ hiện đầy đủ khi bạn bắt đầu viết.</p>}
+            <h2>Chọn giao diện làm bài</h2>
+            <div className="brl-views">
+              <label className={`brl-view ${examView ? "" : "is-on"}`}>
+                <div className="brl-preview is-practice" aria-hidden="true"><div><i /><i className="is-mark" /><i /><i /></div><div><i /><i /><i /></div></div>
+                <div className="brl-view-title"><input type="radio" name="exam-view" checked={!examView} onChange={() => setReadingView("practice")} /><strong>Luyện tập</strong><em className="brl-tag">Khuyên dùng</em></div>
+                <div className="brl-view-tags"><span>Đếm từ</span><span>Lưu tự động</span><span>Đề bài + bài viết 2 khung</span></div>
+              </label>
+              <label className={`brl-view ${examView ? "is-on" : ""}`}>
+                <div className="brl-preview is-exam" aria-hidden="true"><b>{exam.duration_minutes}:00</b><div><i /><i /><i /></div><div><i /><i /></div></div>
+                <div className="brl-view-title"><input type="radio" name="exam-view" checked={examView} onChange={() => setReadingView("exam")} /><strong>Thi thật</strong></div>
+                <div className="brl-view-tags"><span>Giống thi máy</span><span>Đồng hồ đếm ngược</span><span>Tập trung tối đa</span></div>
+              </label>
             </div>
-          </section>
-          <section className="brl-section">
-            <h2>Trước khi bắt đầu</h2>
-            <ul className="brl-tips">{beforeYouStart.Writing.map((tip) => <li key={tip}>{tip}</li>)}</ul>
           </section>
         </div>
         <footer className="br-launch-footer brl-footer">
-          <div><b>{task.badge} · {exam.duration_minutes} phút · Tối thiểu {task.minimum} từ</b></div>
+          <div><b>{task.badge} · {exam.duration_minutes} phút · {examView ? "Thi thật" : "Luyện tập"}</b></div>
           <div className="brl-actions">
             <button type="button" className="brl-cancel" onClick={onClose} disabled={busy}>Huỷ</button>
-            <button type="button" className="bx-start" disabled={busy} onClick={() => onStart()}>{busy ? "Đang mở đề…" : "Bắt đầu viết"} <ArrowRight size={18} /></button>
+            <button type="button" className="bx-start" disabled={busy} onClick={() => onStart(undefined, { view: readingView })}>{busy ? "Đang mở đề…" : "Bắt đầu làm bài"} <ArrowRight size={18} /></button>
           </div>
         </footer>
         {error && <p className="bx-error" role="alert">{error}</p>}

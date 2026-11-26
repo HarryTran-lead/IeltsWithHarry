@@ -44,6 +44,8 @@ export async function POST(request: Request) {
         notes = { __section: section.id, __part: String(sectionIndex + 1), __scope: section.questions.map((question) => question.id).join(",") };
       }
       if (exam.skill === "Reading" || exam.skill === "Listening") notes = { ...notes, __view: body.view || "practice", ...(body.untimed ? { __untimed: "1" } : body.minutes !== undefined ? { __minutes: String(body.minutes) } : {}) };
+      // Writing records which view the learner picked in the setup dialog; it has no custom timing.
+      else if (exam.skill === "Writing" && body.view) notes = { ...notes, __view: body.view };
       const { data, error: insertError } = await client.from("ielts_attempts").insert({ user_id: user.id, exam_id: exam.id, version_id: exam.published_version_id, notes }).select("id,started_at,state,answers,flags,notes").single();
       if (insertError) throw new Error(insertError.message);
       return Response.json({ attempt: data, serverNow: Date.now() });
