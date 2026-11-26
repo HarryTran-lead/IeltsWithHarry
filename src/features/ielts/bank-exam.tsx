@@ -12,7 +12,7 @@ import { customAttemptMinutes, untimedLimitMinutes } from "@/lib/ielts-bank/sche
 import { catalogGroups, type CatalogSkill } from "@/lib/ielts-bank/catalog";
 import { displayExamTitle } from "@/lib/ielts-bank/display-title";
 import { librarySkills } from "./bank-library";
-import { writingFacets, writingSticker } from "./bank-writing-library";
+import { writingFacets, writingSticker, writingTasks } from "./bank-writing-library";
 import { TaskFigure } from "./writing-figure";
 import { Sticker } from "@/components/stickers/stickers";
 import { RichText } from "./rich-text";
@@ -188,6 +188,44 @@ export function ExamIntro({ exam, backHref, busy, error, onStart, scheduleSlot, 
           <div className="brl-actions">
             {onClose ? <button type="button" className="brl-cancel" onClick={onClose} disabled={busy}>Huỷ</button> : <Link href={backHref} className="brl-cancel">Huỷ</Link>}
             <button type="button" className="bx-start" disabled={busy || (!untimed && !customAttemptMinutes(minutes))} onClick={() => onStart(chosen ? { section: chosen.id, ids: chosen.questions.map((question) => question.id) } : undefined, untimed ? { view: readingView, untimed: true } : { view: readingView, minutes })}>{busy ? "Đang mở đề…" : openParts.has(readingPart) ? "Bắt đầu lượt mới" : "Bắt đầu làm bài"} <ArrowRight size={18} /></button>
+          </div>
+        </footer>
+        {error && <p className="bx-error" role="alert">{error}</p>}
+      </div>
+    </main>;
+  }
+  if (exam.skill === "Writing" && onClose) {
+    // Opened from the Writing catalog: the same dialog shell as Reading, in Writing's amber.
+    const task = writingTasks.find((item) => item.id === exam.practice_type) ?? writingTasks[1];
+    const prompt = exam.content?.prompt?.trim();
+    return <main className={`bx-reading-launch bl-tone-${toneOf(exam.skill)}`}>
+      <div className="br-launch-dialog brl brl-writing" role="dialog" aria-modal="true" aria-labelledby="br-launch-title">
+        <header className="br-launch-head brl-head">
+          <div>
+            <span className="brl-kicker"><b>Writing</b>{task.label}</span>
+            <h1 id="br-launch-title">{displayExamTitle(exam.title)}</h1>
+            <p>{exam.duration_minutes} phút · Tối thiểu {task.minimum} từ</p>
+          </div>
+          <button type="button" onClick={onClose} disabled={busy} aria-label="Đóng"><X size={19} /></button>
+        </header>
+        <div className="br-launch-scroll brl-scroll">
+          <section className="brl-section">
+            <h2>Đề bài</h2>
+            <div className="brl-writing-task">
+              <WritingHeroArt exam={exam} />
+              {prompt ? <div className="bx-prompt-preview"><RichText text={prompt} /></div> : <p className="bx-prompt-preview">Đề bài sẽ hiện đầy đủ khi bạn bắt đầu viết.</p>}
+            </div>
+          </section>
+          <section className="brl-section">
+            <h2>Trước khi bắt đầu</h2>
+            <ul className="brl-tips">{beforeYouStart.Writing.map((tip) => <li key={tip}>{tip}</li>)}</ul>
+          </section>
+        </div>
+        <footer className="br-launch-footer brl-footer">
+          <div><b>{task.badge} · {exam.duration_minutes} phút · Tối thiểu {task.minimum} từ</b></div>
+          <div className="brl-actions">
+            <button type="button" className="brl-cancel" onClick={onClose} disabled={busy}>Huỷ</button>
+            <button type="button" className="bx-start" disabled={busy} onClick={() => onStart()}>{busy ? "Đang mở đề…" : "Bắt đầu viết"} <ArrowRight size={18} /></button>
           </div>
         </footer>
         {error && <p className="bx-error" role="alert">{error}</p>}
