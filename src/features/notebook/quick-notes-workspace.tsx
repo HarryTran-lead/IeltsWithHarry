@@ -359,7 +359,7 @@ export function NotesWorkspace({ entries, ready, error, books, booksError, addEn
   const selected = notes.find((note) => note.id === selectedId) ?? null;
   const stats = noteStats(body);
 
-  // Review numbers for the summary cards and the "Ôn hôm nay" panel.
+  // Review numbers for the compact study links.
   const dueWords = words.filter((entry) => { const review = reviewById.get(entry.id); return review && new Date(review.due_at).getTime() <= now; })
     .sort((a, b) => reviewById.get(a.id)!.due_at.localeCompare(reviewById.get(b.id)!.due_at));
   const reviewsReady = reviews !== null;
@@ -367,7 +367,7 @@ export function NotesWorkspace({ entries, ready, error, books, booksError, addEn
   const dueNotes = notes.filter((note) => reviewDue(note.reviewAt)).length;
 
   const kindIcon = (kind: EntryKind) => kind === "vocab" ? <b aria-hidden="true">Aa</b> : kind === "mistake" ? <CircleAlert size={16} aria-hidden="true" /> : kind === "outline" ? <List size={16} aria-hidden="true" /> : <FileText size={16} aria-hidden="true" />;
-  const templateChoices = noteTemplates.map((template) => ({ id: template.id, label: template.label, hint: template.hint, kind: (template.id === "mistake" ? "mistake" : template.id === "lesson" ? "free" : "outline") as EntryKind }));
+  const templateChoices = noteTemplates.map((template) => ({ id: template.id, label: template.label, hint: template.hint, kind: (template.id === "mistake" ? "mistake" : ["lesson", "reading-listening"].includes(template.id) ? "free" : "outline") as EntryKind }));
   const closeOnBlur = (close: () => void) => (event: FocusEvent<HTMLDivElement>) => { if (!event.currentTarget.contains(event.relatedTarget as Node | null)) close(); };
 
   return <div className={`content-page qn ${focus ? "qn-focus" : ""} ${mobileEditor ? "qn-show-editor" : ""}`}>

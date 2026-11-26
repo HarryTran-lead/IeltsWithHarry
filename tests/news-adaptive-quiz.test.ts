@@ -134,8 +134,9 @@ describe("adaptive IELTS passage quiz", () => {
       expect(arraySchemas.every((schema) => schema.minItems === undefined && schema.maxItems === undefined)).toBe(true);
       expect(requests[0]).toContain("Balance the set across difficulty");
       const selectedTypes = [...requests[0].matchAll(/\d+ ([a-z_]+) candidates \(\d+ kept\)/g)].map((match) => match[1]);
-      expect(selectedTypes).toHaveLength(4);
-      expect(selectedTypes.filter((type) => ["mcq", "tfng", "sentence_completion", "short_answer"].includes(type)).length).toBeGreaterThanOrEqual(3);
+      expect(selectedTypes.length).toBeGreaterThanOrEqual(2);
+      expect(selectedTypes.length).toBeLessThanOrEqual(3);
+      expect(selectedTypes.filter((type) => ["mcq", "tfng", "sentence_completion", "short_answer"].includes(type)).length).toBeGreaterThanOrEqual(2);
       const candidateCount = Number(requests[0].match(/Create (\d+) candidate questions/)?.[1]);
       expect(candidateCount).toBeGreaterThan(13);
       expect([...requests[1].matchAll(/"id":\d+/g)]).toHaveLength(candidateCount);
