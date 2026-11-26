@@ -235,9 +235,5 @@ body:has(.rw.is-practice, .rw-setup-backdrop, .rw-flyout, .rw-popover) .notebook
   .rw.is-news.is-read .rw-flyout { bottom: calc(76px + env(safe-area-inset-bottom)) !important; max-height: calc(100dvh - 170px) !important; }
 }
 
-/* Laptop reading: a comfortable line length, and the sticky bar no longer shows text through its edges. */
-@media (min-width: 1025px) {
-  .rw.is-news.is-read .rw-text { max-width: 74ch; margin-inline: auto; }
-  .rw.is-news.is-read .rw-reading-progress { max-width: 74ch; margin-inline: auto; }
-}
+/* Laptop reading: the sticky bar no longer shows text through its top edge. */
 .rw.is-news.is-read .rw-bar { box-shadow: 0 -12px 0 #fff, 0 8px 20px -14px rgba(16, 42, 67, 0.4); }
