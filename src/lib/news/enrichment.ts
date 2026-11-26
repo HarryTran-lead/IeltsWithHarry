@@ -1049,7 +1049,8 @@ async function runQuizClaim(db: Db, result: EnrichResult, settings: Awaited<Retu
       if (savedV2) result.quizzesAdded++;
       // The passage level the article was judged to read like replaces the old length-based guess.
       if (savedV2 && output.passageLevel) {
-        const { error: levelError } = await db.from("news_article_bodies").update({ reading_passage: output.passageLevel }).eq("article_id", article.article_id);
+        const { error: levelError } = await db.from("news_article_bodies").update({ reading_passage: output.passageLevel,
+          ...(output.passageScore !== undefined ? { passage_score: output.passageScore } : {}) }).eq("article_id", article.article_id);
         if (levelError) result.errors.push(`Quiz ${article.article_id}: passage level not saved (${levelError.message})`);
       }
       // The READY marker lets the admin health panel find the latest V2 quiz without a schema change.

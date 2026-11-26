@@ -3,9 +3,8 @@
 --  * mcq_multiple: "Choose TWO letters, A–E". One question is two rows with the same prompt and the same five
 --    options, each keyed to one of the two correct letters. The pair is graded as a set, so the order the two
 --    letters are given in never matters, and each correct letter scores one mark.
--- Only limits are widened; no existing row changes. Written answers keep the grading live in production
--- (normalised exact match); 202611260003 (news_answer_matches) is not applied yet, and whoever applies it must keep
--- the mcq_multiple branch and the 0–9 letters below in its news_grade_auto_answers.
+-- Only limits are widened; no existing row changes. Written answers use news_answer_matches from 202611260003,
+-- whose news_grade_auto_answers carries the same Choose TWO branch (production applied this file first, then 003).
 
 alter table public.news_auto_questions drop constraint news_auto_questions_type_check;
 alter table public.news_auto_questions add constraint news_auto_questions_type_check check (question_type = any (array[
@@ -58,7 +57,7 @@ begin
       correct := case when v_choice ~ '^[0-9]$' then v_choice::integer = v_question.correct_index else false end;
     else
       correct := exists (select 1 from jsonb_array_elements_text(v_question.accepted_answers) a(value)
-        where public.news_normalize_answer(a.value) = public.news_normalize_answer(coalesce(v_choice, '')));
+        where public.news_answer_matches(coalesce(v_choice, ''), a.value, v_question.prompt));
     end if;
     review := jsonb_build_object('id', v_question.id, 'type', v_question.question_type, 'correct', correct,
       'correctIndex', v_question.correct_index, 'acceptedAnswers', v_question.accepted_answers, 'explanation', v_question.explanation,

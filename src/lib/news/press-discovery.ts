@@ -1,6 +1,6 @@
 import { randomUUID } from "node:crypto";
 import { approvedFactualSource, approvedPressFactSource, factDossierSchema } from "./fact-dossier-schema";
-import { readFactualSource, writeArticleFromFacts } from "./fact-dossier";
+import { readFactualSource, writeArticleFromFacts, type PassageTarget } from "./fact-dossier";
 import { OWN_PUBLISHER } from "./daily-plan";
 import { AiQuotaError, geminiJson, newsArticleFreeTierReady } from "./enrichment";
 import { pressDiscoveryFeedUrls, rssProvider, type NewsItem, type NewsSource } from "./providers";
@@ -213,6 +213,34 @@ export async function findIndependentDossier(item: NewsItem, fetcher: typeof fet
   return extract([...pages, ...(await readPages(relatedUrls))]);
 }
 
+/**
+ * Passage levels for the next written articles, least represented first: written articles even out the mix
+ * that feed articles leave (news reporting reads mostly like Passage 1 or 2). Ties go to the harder passage.
+ */
+export function chooseTargets(counts: Record<PassageTarget, number>, count: number): PassageTarget[] {
+  const tally = { ...counts };
+  return Array.from({ length: count }, () => {
+    const next = ([3, 2, 1] as PassageTarget[]).sort((a, b) => tally[a] - tally[b] || b - a)[0];
+    tally[next]++;
+    return next;
+  });
+}
+/** Measured passage levels of the last three days (articles with a published question set). */
+async function passageTargets(db: Db, count: number) {
+  if (!count) return [];
+  const since = new Date(Math.max(Date.now() - 3 * 86_400_000, Date.parse("2026-11-26T16:48:56Z"))).toISOString();
+  const { data: sets, error: setError } = await db.from("news_auto_quiz_sets").select("article_id").gte("generated_at", since).limit(500);
+  if (setError) throw setError;
+  const ids = (sets ?? []).map((row) => row.article_id);
+  const counts: Record<PassageTarget, number> = { 1: 0, 2: 0, 3: 0 };
+  if (ids.length) {
+    const { data: bodies, error } = await db.from("news_article_bodies").select("reading_passage").in("article_id", ids).gte("ingested_at", since);
+    if (error) throw error;
+    for (const row of bodies ?? []) if (row.reading_passage === 1 || row.reading_passage === 2 || row.reading_passage === 3) counts[row.reading_passage as PassageTarget]++;
+  }
+  return chooseTargets(counts, count);
+}
+
 /** One candidate per Free Tier run avoids bursts of large model requests. */
 export async function discoverPressFacts(db: Db, result: DiscoveryRun, settings: NewsAdminSettings, fetcher: typeof fetch = fetch, scheduled = false) {
   if (!newsArticleFreeTierReady() || settings.daily_rewrite_limit <= 0) return;
@@ -285,7 +313,9 @@ export async function discoverPressFacts(db: Db, result: DiscoveryRun, settings:
     categoryCounts.set(candidate.item.category, (categoryCounts.get(candidate.item.category) ?? 0) + 1);
     sourceCounts.set(candidate.source.name, (sourceCounts.get(candidate.source.name) ?? 0) + 1);
   }
-  await Promise.all(selected.map(async ({ item, source }) => {
+  // Each written article aims at the IELTS passage least seen among recently measured articles.
+  const targets = await passageTargets(db, selected.length).catch(() => selected.map((_, index) => ((3 - (index % 3)) as PassageTarget)));
+  await Promise.all(selected.map(async ({ item, source }, position) => {
     result.rewritesChecked++;
     try {
       const dossier = await findIndependentDossier(item, fetcher, officialLeads);
@@ -293,7 +323,7 @@ export async function discoverPressFacts(db: Db, result: DiscoveryRun, settings:
         await db.from("news_skipped_urls").upsert({ canonical_hash: item.canonical_hash, reason: "ai_rewrite", detail: "Insufficient verified factual notes" }, { onConflict: "canonical_hash" });
         return;
       }
-      const written = await writeArticleFromFacts(dossier.data, fetcher);
+      const written = await writeArticleFromFacts(dossier.data, fetcher, { passage: targets[position] });
       if (repeatsHeadlinePhrase(`${written.title} ${written.body}`, item.title)) throw new Error("Original draft repeated the discovery headline");
       const { data: manual, error: manualError } = await db.from("news_sources").select("id").eq("provider", "manual").single();
       if (manualError || !manual) throw manualError ?? new Error("Manual source unavailable");
@@ -307,7 +337,7 @@ export async function discoverPressFacts(db: Db, result: DiscoveryRun, settings:
         publication_status: "review", sensitive: false, attribution_text: "Independent factual sources in editorial dossier",
         metadata: { discovery_url: item.canonical_url, discovery_source: source.name,
           hot: heat.get(item.canonical_hash)?.hot ?? false, hot_publishers: heat.get(item.canonical_hash)?.publishers ?? 1,
-          front_page: heat.get(item.canonical_hash)?.frontPage ?? false,
+          front_page: heat.get(item.canonical_hash)?.frontPage ?? false, target_passage: targets[position],
           fact_source_urls: [...new Set(written.dossier.facts.map((fact) => fact.source_url))] },
       });
       if (articleError) throw articleError;
